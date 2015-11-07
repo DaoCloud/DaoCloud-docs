@@ -1,0 +1,13 @@
+<input type="text" placeholder="Search..." value="{{ query }}" data-search-input="{{ base_url }}{{ config.plugins.simplesearch.route}}/query" />
+<script>
+jQuery(document).ready(function($){
+    var input = $('[data-search-input]');
+
+    input.on('keypress', function(event) {
+        if (event.which == 13 && input.val().length > 3) {
+            event.preventDefault();
+            window.location.href = input.data('search-input') + '{{ config.system.param_sep }}' + input.val();
+        }
+    });
+});
+</script>

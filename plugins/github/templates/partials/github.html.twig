@@ -1,0 +1,14 @@
+<h3>Examples</h3>
+
+<ul>
+    <li>Grav has currently <strong>{{ github.client.api('repo').show('getgrav', 'grav')['stargazers_count'] }}</strong> stargazers.</li>
+    <li>Repositories (<strong>{{ github.client.api('user').repositories('getgrav')|length }}</strong>):
+        <ul>
+        {% for repo in github.client.api('user').repositories('getgrav') %}
+            <li>{{ repo.name|e }} [<a href="{{ repo.html_url|e }}">link</a> | forks: <strong>{{ repo.forks_count|e }}</strong> | stargazers: <strong>{{ repo.stargazers_count|e }}</strong>]</li>
+        {% endfor %}
+        </ul>
+    </li>
+</ul>
+
+

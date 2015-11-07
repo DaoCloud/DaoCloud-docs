@@ -1,0 +1,15 @@
+{
+   "project":"grav-plugin-simplesearch",
+   "platforms":{
+      "grav":{
+         "nodes":{
+            "plugin":[
+               {
+                  "source":"/",
+                  "destination":"/user/plugins/simplesearch"
+               }
+            ]
+         }
+      }
+   }
+}

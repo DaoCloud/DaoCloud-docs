@@ -1,0 +1,15 @@
+{
+   "project":"grav-plugin-highlight",
+   "platforms":{
+      "grav":{
+         "nodes":{
+            "plugin":[
+               {
+                  "source":"/",
+                  "destination":"/user/plugins/highlight"
+               }
+            ]
+         }
+      }
+   }
+}

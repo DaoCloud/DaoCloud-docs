@@ -1,0 +1,15 @@
+{
+   "project":"grav-plugin-anchors",
+   "platforms":{
+      "grav":{
+         "nodes":{
+            "plugin":[
+               {
+                  "source":"/",
+                  "destination":"/user/plugins/anchors"
+               }
+            ]
+         }
+      }
+   }
+}

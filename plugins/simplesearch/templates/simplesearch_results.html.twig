@@ -1,0 +1,17 @@
+{% extends 'partials/simplesearch_base.html.twig' %}
+
+{% block content %}
+    <div class="content-padding simplesearch">
+    <h1 class="search-header">Search Results</h1>
+    <div class="center">
+        {% include 'partials/simplesearch_searchbox.html.twig' %}
+
+    </div>
+
+
+    <p>Query: <strong>{{ query }}</strong> found {{ search_results.count }} {{ 'result'|pluralize(search_results.count) }}</p>
+    {% for page in search_results %}
+        {% include 'partials/simplesearch_item.html.twig' with {'page':page} %}
+    {% endfor %}
+    </div>
+{% endblock %}

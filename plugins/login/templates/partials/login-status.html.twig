@@ -1,0 +1,5 @@
+<span class="login-status">
+    {% if grav.user.username %}
+        Welcome <strong>{{ grav.user.username }}</strong>, <a class="logout" href="{{ uri.url }}/task:login.logout">Logout</a>
+    {% endif %}
+</span>

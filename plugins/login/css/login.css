@@ -1,0 +1,23 @@
+#grav-login {
+    max-width: 30rem;
+    margin: 5rem auto;
+    background: #fcfcfc;
+    border: 4px solid #eee;
+    border-radius: 4px;
+    padding: 1rem 3rem 3rem 3rem;
+    text-align: center;
+}
+
+#grav-login .form-actions {
+    text-align: center;
+}
+
+#grav-logout {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.alert.info {
+    color: #c00;
+}
