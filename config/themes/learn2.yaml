@@ -1,7 +1,15 @@
-home_url: http://getgrav.org
+enabled: true
+top_level_version: false
 google_analytics_code: UA-57776306-2
+home_url: 'http://www.daocloud.io'
 github:
-    enabled: true
-    position: top
-    tree: https://github.com/getgrav/grav-learn/blob/develop/
-    commits: https://github.com/getgrav/grav-learn/commits/develop/
+  position: top
+  tree: 'https://github.com/DaoCloud/daocloud-docs/blob/develop/'
+  commits: 'https://github.com/DaoCloud/daocloud-docs/commits/develop/'
+  enabled: true
+streams:
+  schemes:
+    theme:
+      type: ReadOnlyStream
+      paths:
+        - user/themes/learn2
