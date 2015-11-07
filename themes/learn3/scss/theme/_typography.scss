@@ -1,0 +1,192 @@
+// Body Base
+body {
+	font-family: $font-family-default;
+	font-weight: 300;
+    line-height: 1.6;
+    font-size: 18px !important;
+}
+
+// Headings
+h2, h3, h4, h5, h6 {
+    font-family: $font-family-default;
+	text-rendering: optimizeLegibility;
+    color: #5e5e5e;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+
+h1 {
+    font-family: $font-family-header;
+	text-align: center;
+    text-transform: uppercase;
+    color: #222;
+    font-weight: 200;
+}
+
+
+// Blockquote
+blockquote {
+	border-left: 10px solid $rule-color;
+	p {
+		font-size: 1.1rem;
+		color: #999;
+	}
+	cite {
+		display: block;
+		text-align: right;
+		color: #666;
+		font-size: 1.2rem;
+	}
+}
+
+// NOTES!!!!
+blockquote {
+    position: relative;
+}
+
+blockquote blockquote {
+    position: static;
+}
+
+blockquote > blockquote > blockquote {
+
+	margin: 0;
+
+	p {
+		padding: 15px;
+		display: block;
+		font-size: 1rem;
+		margin-top: 0rem;
+		margin-bottom: 0rem;
+        color: #666;
+
+        &:first-child {
+            &:before {
+                position: absolute;
+                top: 2px;
+                color: $white;
+                font-family: FontAwesome;
+                content: '';
+                left: 10px;
+            }
+            &:after {
+                position: absolute;
+                top: 2px;
+                color: $white;
+                left: 2rem;
+                content: 'Info';
+            }
+        }
+	}
+
+	> p {
+		// Yellow
+		margin-left: -71px;
+		border-top: 30px solid #F0B37E;
+		background: #FFF2DB;
+	}
+
+	> blockquote > p {
+		// Red
+		margin-left: -94px;
+		border-top: 30px solid rgba(#D9534F, 0.8);
+		background: #FAE2E2;
+        &:first-child:after {
+            content: 'Warning';
+        }
+	}
+
+	> blockquote > blockquote > p {
+		// Blue
+		margin-left: -118px;
+		border-top: 30px solid #6AB0DE;
+		background: #E7F2FA;
+        &:first-child:after {
+            content: 'Note';
+        }
+	}
+
+	> blockquote > blockquote > blockquote > p {
+		// Green
+		margin-left: -142px;
+		border-top: 30px solid rgba(#5CB85C, 0.8);
+		background: #E6F9E6;
+        &:first-child:after {
+            content: 'Tip';
+        }
+	}
+
+}
+
+// Inline and Code
+code,
+kbd,
+pre,
+samp {
+	font-family: $font-family-mono;
+    font-size: 16px;
+}
+
+code {
+    border-radius: 2px;
+    white-space: nowrap;
+    color: #5e5e5e;
+    background: #fefaed;
+    border: 1px solid #fbf0cb;
+    padding: 0px 2px;
+}
+
+code + .copy-to-clipboard {
+    border: 1px solid #fbf0cb;
+    margin-left: -1px;
+    border-left: 0 !important;
+    font-size: inherit !important;
+    vertical-align: middle;
+    height: 21px;
+    top: 0;
+}
+
+pre {
+	padding: 1rem;
+	margin: 2rem 0;
+	background: $pre-bg;
+	border: 1px solid $core-border-color;
+	border-radius: 2px;
+	line-height: 1.15;
+
+	code {
+		color: $pre-text;
+		background: inherit;
+        white-space: inherit;
+        border: 0;
+        padding: 0;
+        margin: 0;
+	}
+}
+
+// Extras
+hr {
+	border-bottom: 4px solid $rule-color;
+}
+
+// Page Title
+.page-title {
+	margin-top: -25px;
+	padding: 25px;
+	float: left;
+	clear: both;
+	background: $core-accent;
+	color: $white;
+}
+
+// Anchor links
+#body {
+    a.anchor-link { color: #ccc; }
+    a.anchor-link:hover { color: $core-accent; }
+}
+
+// Scrollbar
+.scrollbar-inner > .scroll-element .scroll-element_track { background-color: rgba($white, 0.3); }
+.scrollbar-inner > .scroll-element .scroll-bar { background-color: lighten(#9C6FB6, 5%); }
+.scrollbar-inner > .scroll-element:hover .scroll-bar { background-color: #ccc; }
+.scrollbar-inner > .scroll-element.scroll-draggable .scroll-bar { background-color: #ccc; }

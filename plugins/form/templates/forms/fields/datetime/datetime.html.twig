@@ -1,0 +1,18 @@
+{% extends "forms/field.html.twig" %}
+
+{% set default_php_dateformat = "d-m-Y H:i" %}
+{% set php_dateformat = config.system.pages.dateformat.default ?: default_php_dateformat %}
+{% set js_dateformat = admin.dateformat2Kendo(php_dateformat) %}
+{% set value = (value is null ? field.default : value) %}
+{% set value = (value is null ? value : value|date(php_dateformat)) %}
+
+
+{% block input_attributes %}
+    type="text"
+    data-grav-field-datetime
+    data-date-formats="{{ {'format': js_dateformat} | json_encode | e('html_attr') }}"
+    {% if field.validate.min %}min="{{ (field.validate.min is null ? field.validate.min : field.validate.min|date(php_dateformat)) }}"{% endif %}
+    {% if field.validate.max %}max="{{ (field.validate.max is null ? field.validate.max : field.validate.max|date(php_dateformat)) }}"{% endif %}
+    {{ parent() }}
+{% endblock %}
+

@@ -1,0 +1,10 @@
+email: kay.yan@daocloud.io
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+fullname: 'Kay Yan'
+title: null
+hashed_password: $2y$10$p8ZhN3/ybUzyF57pzxmTReNQEkOL/7mVtCJomp5U4..3l4ekRFq4y

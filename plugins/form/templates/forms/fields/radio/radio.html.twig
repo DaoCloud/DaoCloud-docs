@@ -1,0 +1,21 @@
+{% extends "forms/field.html.twig" %}
+
+{% set originalValue = value %}
+{% set value = (value is null ? field.default : value) %}
+
+{% block input %}
+    {% for key, text in field.options %}
+        {% set id = field.id|default(field.name) ~ '-' ~ key %}
+
+        <span class="radio">
+            <input type="radio"
+                   value="{{ key|e }}"
+                   id="{{ id|e }}"
+                   name="{{ field.name|fieldName }}"
+                   {% if key == value %}checked="checked" {% endif %}
+                   {% if field.validate.required in ['on', 'true', 1] %}required="required"{% endif %}
+            />
+            <label style="display: inline" for="{{ id|e }}">{{ text|e }}</label>
+        </span>
+    {% endfor %}
+{% endblock %}
