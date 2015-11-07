@@ -1,0 +1,10 @@
+email: roby.chen@daocloud.io
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+fullname: 'Roby Chen'
+title: null
+hashed_password: $2y$10$dShlmxJQdxRl/ENUrzHBp.mHhUhnYRAF47VO2H056owJQJhAGZgRm

@@ -1,0 +1,10 @@
+email: frank.yu@daocloud.io
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+fullname: 'Frank Yu'
+title: null
+hashed_password: $2y$10$irtB0cFVBB7CdWo20L8VIuvqdRlMopLNMyaLWgcVVs4rOCGwAsMSK
