@@ -1,3 +1,0 @@
-{% for field in form.fields %}
-{{ field.name }}: {{ string(form.value(field.name)|e|nl2br)|replace({"\n":' ', "\r":' '}) }}
-{% endfor %}
