@@ -10,7 +10,7 @@ languages:
   http_accept_language: false
   override_locale: false
 home:
-  alias: /basics
+  alias: /update
 pages:
   theme: learn2
   order:
