@@ -1,12 +1,12 @@
 ---
-title: 开始您的容器化持续集成之旅
+title: 开始您的持续集成之旅
 taxonomy:
     category:
         - docs
 ---
 
-### Chapter 2
+### Chapter 4
 
-# Content
+# 开始您的持续集成之旅 
 
 In **Grav**, content is priority **#1**.  Find out how to create and organize your content quickly and intuitively.

@@ -5,8 +5,8 @@ taxonomy:
         - docs
 ---
 
-### Chapter 9
+### Chapter 15
 
-# Administration Panel
+# 视频演示
 
 The **Grav Administration Panel** is a dynamic administrative interface that makes managing your site, creating new content, and updating its components a breeze.

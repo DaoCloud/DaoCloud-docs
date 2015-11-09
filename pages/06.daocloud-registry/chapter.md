@@ -5,8 +5,8 @@ taxonomy:
         - docs
 ---
 
-### Chapter 2
+### Chapter 6
 
-# Content
+# 使用 DaoCloud 镜像仓库 
 
 In **Grav**, content is priority **#1**.  Find out how to create and organize your content quickly and intuitively.
