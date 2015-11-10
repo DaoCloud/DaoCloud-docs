@@ -7,56 +7,96 @@ process:
     twig: true
 ---
 
-![Grav Admin Page Editor](page_advanced.png)
+#### 公司及产品名称
+我们的公司及产品名称是「DaoCloud」。注意这是两个单词的合成词，所以中间沒有空格（參考：GitHub）。如作为 URL 的一部分，应该使用全小写的「daocloud」。
 
-The **Page Editor** in the admin is a powerful text editor and page manager that enables you to create your page's content (including media files), its publishing and taxonomy options, settings, overrides, and theme-specific options.
+#### 文案风格
+1. 一定多检查，确保没有错别字。
+2. 即使是流行语中故意的谐音错别字也不要使用，比如「墙裂」、「童鞋」等。
+3. 我们崇尚精练的文风。请在检查中把对表达意思没有明显作用的字、词、句删除，在不影响表达效果的前提下把文案长度减到最短。
+4. 记住，如果你写了一条文案觉得非常聪明非常好笑，很可能需要停下来想一下用户是否能理解了。（本条感谢 37signals 的文案建议）
 
-It's essentially a one-stop-shop for managing a specific page.
+#### 中文、英文、数字混合时空格的使用
+1. 英文与非标点的中文之间需要有一个空格，如「使用 DaoCloud 自动构建和部署」而不是「使用DaoCloud自动构建和部署」。[^1]
+2. 数字与非标点的中文之间需要有一个空格，如「我们发布了 5 个产品」而不是「我们发布了5个产品」。
+正确：「这是 1 款 Android 应用」，错误：「这是1款Android应用」。
+正确：「2014 年 2 月 14 日」，错误：「2014年2月14日」。
+3. 尽可能使用中文数词，特别是当前后都是中文时。上面的例子写为「我们发布了五个产品」会更好。
+4. 除了"%", "°C", 以及倍数单位(如 2x, 3n)之外，其余数字与单位之间需要加空格。
+5. 注意特殊名词的大小写：Android、iOS、iPhone、Google、Apple，无论是否在句首都应该以同样的方式写。
+6. 在官方文案中尽量使用中文，避免中英文混合的情况。例如「app」一般应写为「应用」或「移动应用」。品牌、产品名、人名、地名等特殊名词，如果来自英文，请使用英文以避免在不同译法间选择。
+7. 书写时括号中全为数字，则括号用半角括号且首括号前要空一格，例如「联系人 (22)」;
 
-In this page, we will go over the features and functionality found in the **Advanced** tab of the **Page Editor**.
 
->>> Accessing the Pages functionality requires an `access.admin.super` or `access.admin.pages` access level.
+#### 标点相关
+1. 只有中文或中英文混排中，一律使用中文/全角标点。
+2. 中英文混排中如果出现整句英文，则在这句英文中使用英文/半角标点。
+3. 中文标点与其他字符间一律不加空格。
+正确：「有：Apple，Android，诺基亚」错误：「有：Apple ， Android ，Nokia」
+4. 中文文案中使用中文引号「」和『』，其中「」为外层引号。Mac 上如「百度输入法」等都可以方便地输入中文引号。
+5. 省略号请使用「……」标准用法，不要使用「。。。」 ，也不要使用三个英文句点「.」。
+6. 感叹号：请勿使用「！！」。尽量避免使用「！」。请先冷静下来再坐电脑前敲键盘。
+7. 波浪号：请勿在文章内使用「`~`」，活泼卖萌有很多其他的表达方式。
+	
+#### 段落
+1. 如果是纯文本，段落之间使用一个空行隔开。如果是 HTML 或其他富文本格式，使用额外空白作为段落间的分隔。
+2. 段落开头不要留出空白字符。
 
->>>>> You might notice the check boxes to the left of some of the options in this area of the admin. These boxes indicate that you would like to override the default values for this page. Leaving them unchecked reverts to blank or default states.
+#### 引用来源
+1. 如果在正文中部分引用第三方内容，请使用恰当的引用格式并注明出处。如：
+One man’s constant is another man’s variable.
+— Alan Perlis
+2. 如果是全篇转载，请在全文开头显著位置注明作者和出处，并链接至原文，如：
+本文转载自 WikiQuote
+3. 如果格式不允许超链接，请以文本方式直接给出原文链接。如果原文链接太长影响美观，可以使用短链接服务。如：
+本文转载自 WikiQuote：http://bit.ly/UlHIdN
+4. 文中有使用外站图片，必须在文末标明。来源如果来自外站必须添加链接，来源如果来自外部作品则不需要。如：「本文部分图片来自 ifanr」「题图来自：《春娇与志明》截图」。
+5. 若文章为全文翻译，必须在注明作者和出处，并链接至原文。
+6. 若文章为部分编译，则需在文末注明作者和出处。如：「本文部分内容编译自 Apple」「本文部分观点来自 煮机网微博」。
 
-### Settings
+#### 细节问题
+1. 「你」和「您」：在不是很正式或没有明确的个体指代对象的时候请用「你」，如文档、博客、群发的邮件等；在指代特定个体时请用「您」，如活动邀请函等。
+2. 自我称呼：使用「我」，不推荐使用「小编」「笔者」「兼职编辑」「兼职作者」自称。
+3. 字体和字号的一致：在富文本格式文档中，特别是 HTML 邮件中，常有人因为从不同来源复制粘贴而导致同一层次的文本字体和字号不一致。这给人不专业的感觉，请避免。
+4. App 是 application 的缩写，发音为 /ˈæp/，所以要注意不要把三个字母拆开念。App 是一个普通名词而不是多个单词的首字母缩写，所以不应该用全大写的 APP。和其他词一样，大小写规则取决于是否处于句首、标题、或特殊短语（如 App Store）中。大多数情况下应该使用中文「应用」以避免这样的问题。
 
-![Grav Admin Page Editor](page_advanced_settings.png)
+#### 遣词造句
+1. 用主动语态，不要用被动语态。一般情况下，主动语态比被动语态更有力。
+2. 使用具体、明确、展示细节的词汇，能激发想象，使读者自己代入情境。「把硬币放进口袋里，他咧开嘴笑了」，远远强过「他满意地拿走了辛苦挣来的奖赏」。
+3. 减少形容词的使用，少用 「的」。
+4. 「的」「地」「得」要用对。是的，连小学都不要求了但是要用对。
 
-The **Settings** area focuses on various critical options for your page. This is where you would go to change the name of the folder the page is stored in, its parent, and the template used when displaying the page.
+#### 文章引言
 
-| Option                | Description                                                                                                                      |
-| :-----                | :-----                                                                                                                           |
-| Folder Numeric Prefix | Numeric prefix that provides manual ordering and implies visibility.                                                             |
-| Folder Name           | Sets the name of the folder the page is contained in.                                                                            |
-| Parent                | Sets the parent of the current page. This can be - Root- for top-level pages, or specific pages to have them appear as subpages. |
-| Display Template      | Sets the template (provided by the theme) to be applied to the page. This has a direct affect on how the page looks.             |
-| Body Classes          | Classes entered in this field are applied to the body of the page.                                                               |
+文章引言非常重要。它的作用主要是用于网站首页展示和微博分享，它是为了吸引读者阅读文章而存在，它的目的是让读者能够仅通过这一小段话，就能迅速了解到这篇文章的大致内容。因此，引言实际就是文章的「内容概要」，而非文章的开头首段。
 
-### Ordering
+我们建议通常在写完整篇文章后，再结合内容大纲撰写引言。引言务必要讲清两个问题：
 
-![Grav Admin Page Editor](page_advanced_ordering.png)
+1. 是什么？（例如：这是一款什么应用？这篇文章是讲的什么？）
+2. 为什么？（例如：这款应用之所以被推荐，是由于它有哪些特色/亮点？）
 
-The **Ordering** section gives you the ability to configuring page ordering of non-numbered folders.
+引言的语言文字务必要清晰、直观、简洁，通常字数需控制在 90 字左右。
 
-| Option     | Description                                         |
-| :-----     | :-----                                              |
-| Page Order | Enables you to configure the ordering for the page. |
+#### 一些常用名词的正确用法
+- App / 应用（错误：APP、软件、程序）
+- Android（错误：android、安卓）
+- iOS（错误：ios、IOS）
+- iPhone（错误：IPHONE、iphone）
+- App Store（中间有空格，错误：AppStore、app store）
+- WiFi（错误：wifi、Wifi、Wi-fi）
+- email （错误：E-mail、Email）
+- 账号（错误：帐号，账户，帐户）
+	[http://www.jianshu.com/p/baa85caede21]
+	苹果台湾用「帳號」，大陆用「账户」
+	谷歌用「帐户」，百度用「帐号」
+- 登录（错误：登陆）
+- P.S. （错误：PS、ps、Ps.）
 
-### Overrides
 
-![Grav Admin Page Editor](page_advanced_overrides.png)
+#### 推荐阅读
+[余光中：怎样改进英式中文？——论中文的常态与变态](http://open.leancloud.cn/improve-chinese.html "余光中：怎样改进英式中文？——论中文的常态与变态")
 
-Overrides are those options that give your page extra functionality, set its slug to something different than the default one based on the folder name, caching settings, navigation visibility, and make a page unreachable via a direct URL.
+#### 感谢
+我们的写作和格式规范，大量参考了 LeanCloud 的[这篇文章](http://open.leancloud.cn/copywriting-style-guide.html)，在此表示感谢！
 
-You can also use this area to turn on and off various processes for the page, such as twig which enables you to inject twig into your page content and have it render.
-
-| Options                | Description                                                                                                        |
-| :-----                 | :-----                                                                                                             |
-| Menu                   | The string to be used in a menu.  If not set, <b>Title</b> will be used.                                           |
-| Slug                   | The slug variable allows you to specifically set the page's portion of the URL.                                    |
-| Process                | Processes you would like to have run, and made available in the page's content.                                    |
-| Default Child Template | Sets a default page type for child pages.                                                                          |
-| Routable               | Sets whether or not this page is reachable by a URL. If disabled, the page will not be reachable on the front end. |
-| Caching                | Enables or disables caching for the page.                                                                          |
-| Visible                | Determines if a page is visible in the navigation.                                                                 |
+[^1]:	有研究显示，打字的時候不喜欢在中文和英文之间加空格的人，感情路都走得很辛苦，有七成的比例会在 34 歲的時候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫。毕竟爱情跟书写都需要适时地留白。 —vinta/paranoid-auto-spacing

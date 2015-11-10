@@ -1,0 +1,8 @@
+email: demo@daocloud.io
+access:
+  admin:
+    login: true
+    super: true
+fullname: Xiaowen
+title: Editor
+hashed_password: $2y$10$x/rSpvT3gsVn9lV3iKfwcuw1IfDFgqoyWCmFtN75zqFTf.0dkBCBK
