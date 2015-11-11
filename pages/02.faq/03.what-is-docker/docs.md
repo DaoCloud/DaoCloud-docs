@@ -5,22 +5,9 @@ taxonomy:
         - docs
 ---
 
-#### Docker 简介
+欢迎来到 DaoCloud！
 
-
-#### 什么是 Dockerfile
-
-
-#### Docker 学习资源
-
-
-
-
-## Docker 新手入门 30 min
-
-### 简介
-
-首先欢迎来到 DaoCloud，如果您是 Docker 新手请您花大约三十分钟的时间来了解 Docker 相关的知识和内容。由于在 DaoCloud 上的工作全部是围绕 Docker 展开的，同时 Docker 又与 Linux 息息相关，因此在阅读本文档之前请您确保以下条件：
+如果您是 Docker 新手，请您花大约三十分钟的时间来了解 Docker 相关的知识和内容。由于在 DaoCloud 上的工作全部是围绕 Docker 展开的，同时 Docker 又与 Linux 息息相关，因此在阅读本文档之前请您确保以下条件：
 
 1. 对 Linux 的命令行操作有一定了解，并且懂得一些基础命令。
 2. 对 Linux 服务管理有一定的了解。

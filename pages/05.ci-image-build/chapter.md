@@ -7,6 +7,6 @@ taxonomy:
 
 ### Chapter 5
 
-# 实现自动化的持续集成和镜像构建 
+# 自动化持续集成和镜像构建 
 
-In **Grav**, content is priority **#1**.  Find out how to create and organize your content quickly and intuitively.
+Build，Ship，Run！

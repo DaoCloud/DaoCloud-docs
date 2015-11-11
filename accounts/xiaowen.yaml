@@ -1,8 +1,10 @@
-email: demo@daocloud.io
+email: willwengunn@gmail.com
 access:
   admin:
     login: true
     super: true
-fullname: Xiaowen
+fullname: 'Will Wen Gunn'
 title: Editor
-hashed_password: $2y$10$x/rSpvT3gsVn9lV3iKfwcuw1IfDFgqoyWCmFtN75zqFTf.0dkBCBK
+hashed_password: $2y$10$Gs7OshAzLA/Bc.ONFNYHD.fIQiZmMtbjumYy3w0HNZSZKu9mhPQNy
+language: en
+reset: '03bcec0d5ece51f9016d40e59d98366e::1447829521'

@@ -9,4 +9,4 @@ taxonomy:
 
 # 开始您的持续集成之旅
 
-In **Grav**, content is priority **#1**.  Find out how to create and organize your content quickly and intuitively.
+Talk is cheap, show me the code!
