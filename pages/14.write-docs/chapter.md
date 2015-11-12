@@ -9,4 +9,4 @@ taxonomy:
 
 # 参与 DaoCloud 帮助文档的撰写
 
-The **Grav Administration Panel** is a dynamic administrative interface that makes managing your site, creating new content, and updating its components a breeze.
+众人拾柴火焰高

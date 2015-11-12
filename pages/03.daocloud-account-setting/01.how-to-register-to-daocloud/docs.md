@@ -79,6 +79,7 @@ GitHub 和微信注册的描述文字之后，增加一句如何使用 GitHub �
 ![](http://ww2.sinaimg.cn/large/7287333fgw1exx1wx33h9j20sr0hkdj4.jpg)
 
 点击这个按钮以后，浏览器会跳转到 GitHub 的应用授权页面上，我们可以在这里查看 DaoCloud 需要获取的权限。对应用信息确认无误后，您需要点击下方的「**Authorize application**」按钮，授权 DaoCloud 获取您的 GitHub 账号信息，完成授权以后便会自动回到 DaoCloud 的注册页面，您只需将您常用的（或指定的）电子邮箱填到页面相应的位置中，并点击「**注册**」按钮，便可完成 DaoCloud 账号的注册。
+![](http://ww1.sinaimg.cn/large/7287333fgw1exxf1wk8atj20ss0hkq59.jpg)
 
 ![](http://ww4.sinaimg.cn/large/7287333fgw1exx252w7soj20st0hjmyb.jpg)
 
