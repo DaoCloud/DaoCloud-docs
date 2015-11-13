@@ -4,8 +4,8 @@ google_analytics_code: UA-57776306-2
 home_url: 'http://www.daocloud.io'
 github:
   position: top
-  tree: 'https://github.com/DaoCloud/daocloud-docs/blob/develop/'
-  commits: 'https://github.com/DaoCloud/daocloud-docs/commits/develop/'
+  tree: 'https://github.com/DaoCloud/daocloud-docs/blob/master/'
+  commits: 'https://github.com/DaoCloud/daocloud-docs/commits/master/'
   enabled: true
 streams:
   schemes:

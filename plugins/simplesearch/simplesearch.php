@@ -109,33 +109,39 @@ class SimplesearchPlugin extends Plugin
         $filters = (array) $this->config->get('plugins.simplesearch.filters');
         $operator = $this->config->get('plugins.simplesearch.filter_combinator', 'and');
 
-        // see if the filter uses the new 'items-type' syntax
         $new_approach = false;
-        foreach ($filters as $filter) {
-            $filter_saved = $filter;
-            if (is_array($filter)) {
-                $filter = key($filter);
-            }
-            if (Utils::startsWith($filter, '@')) {
-                if ($filter == '@self') {
-                    $new_approach = true;
-                }
-                if ($filter == '@taxonomy') {
-                    $taxonomies = $filter_saved[$filter];
-                }
-            }
-        }
+        if ( ! $filters) {
+            /** @var \Grav\Common\Page\Pages $pages */
+            $pages = $this->grav['pages'];
 
-
-
-        if ($new_approach) {
-            $params = $page->header()->content;
-            $params['query'] = $this->config->get('plugins.simplesearch.query');
-            $this->collection = $page->collection($params, false);
+            $this->collection = $pages->all();
         } else {
-            $this->collection = new Collection();
-            $this->collection->append($taxonomy_map->findTaxonomy($filters, $operator)->toArray());
+            // see if the filter uses the new 'items-type' syntax
+            foreach ($filters as $filter) {
+                $filter_saved = $filter;
+                if (is_array($filter)) {
+                    $filter = key($filter);
+                }
+                if (Utils::startsWith($filter, '@')) {
+                    if ($filter == '@self') {
+                        $new_approach = true;
+                    }
+                    if ($filter == '@taxonomy') {
+                        $taxonomies = $filter_saved[$filter];
+                    }
+                }
+            }
+
+            if ($new_approach) {
+                $params = $page->header()->content;
+                $params['query'] = $this->config->get('plugins.simplesearch.query');
+                $this->collection = $page->collection($params, false);
+            } else {
+                $this->collection = new Collection();
+                $this->collection->append($taxonomy_map->findTaxonomy($filters, $operator)->toArray());
+            }
         }
+
 
         $extras = [];
 
@@ -158,7 +164,7 @@ class SimplesearchPlugin extends Plugin
                     }
                 }
 
-                if ($taxonomy_match === false && (mb_stripos($cpage->content(), $query) === false) && (mb_stripos($cpage->title(), $query) === false)) {
+                if ($taxonomy_match === false && (mb_stripos(strip_tags($cpage->content()), $query) === false) && (mb_stripos(strip_tags($cpage->title()), $query) === false)) {
                     $this->collection->remove($cpage);
                     continue;
                 }

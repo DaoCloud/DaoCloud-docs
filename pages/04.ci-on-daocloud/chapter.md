@@ -1,5 +1,5 @@
 ---
-title: 开始您的持续集成之旅
+title: 创建新项目
 taxonomy:
     category:
         - docs

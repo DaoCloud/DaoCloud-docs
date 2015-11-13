@@ -5,6 +5,8 @@ taxonomy:
         - docs
 ---
 
+<!-- 总体内容不修改，需要增加 Dao Pull 加速器等植入式宣传，让用户在试用学习时就开始密集使用 DaoCloud -->
+
 欢迎来到 DaoCloud！
 
 如果您是 Docker 新手，请您花大约三十分钟的时间来了解 Docker 相关的知识和内容。由于在 DaoCloud 上的工作全部是围绕 Docker 展开的，同时 Docker 又与 Linux 息息相关，因此在阅读本文档之前请您确保以下条件：
@@ -14,13 +16,13 @@ taxonomy:
 
 当阅读完本文之后您可以了解什么是 Docker、使用它有什么好处、以及 Docker 具体的使用方法。
 
-### 为什么选择 Docker？
+#### 为什么选择 Docker？
 
 1. 相对于虚拟机来说 Docker 有镜像管理。
 2. 相对于虚拟机来说更强大的迁移能力。
 3. 云计算的未来，再也不用受到环境 API 的限制。
 
-### 安装 Docker
+#### 安装 Docker
 
 Docker 的安装十分简单方便，如果您有 Linux 虚拟机 VPS 可以直接参考 **[Docker 极速下载](http://get.daocloud.io/)** 运行如下脚本来安装 Docker：
 
@@ -39,11 +41,11 @@ user$ curl -sSL https://get.daocloud.io/docker | sh
 
 <!-- TODO: Docker User Guide 链接？ -->
 
-### Hello World
+#### Hello World
 
 这部分的代码来自 Docker 用户指南，但是与用户指南不同的是我们会描述更多的执行过程。
 
-#### 案例 1 启动一个容器
+##### 案例 1 启动一个容器
 
 ```shell
 root# docker run ubuntu:14.04 /bin/echo 'Hello world'
@@ -60,7 +62,7 @@ Hello world
 
 从这句命令中我们可以看到 Docker 可以根据情况判断镜像存在的情况，在后文中会介绍镜像的管理。同时 `ubuntu:14.04` 将会被载入到缓存中，如果后面的镜像构建依赖于它并不会花费额外的网络带宽抓取，十分方便。
 
-#### 案例 2-1 以交互模式启动一个容器
+##### 案例 2-1 以交互模式启动一个容器
 
 ```shell
 root# docker run -t -i ubuntu:14.04 /bin/bash
@@ -76,7 +78,7 @@ root@af8bae53bdd3:/#
 
 > 提示：此程序运行完成之后，容器不会被销毁，但是状态为 `Exited`。此外对于以交互模式启动的容器可以先按下 `Ctrl+P` 然后按下 `Ctrl+Q` 这样的按键顺序脱离（detach）一个容器，脱离后的容器状态仍为 `Up` 并且程序会继续在后台运行，这时可以使用 `attach` 命令重新附到一个已经脱离的程序。
 
-#### 案例 2-2 查看容器内的文件以及容器本身
+##### 案例 2-2 查看容器内的文件以及容器本身
 
 在上一个例子中如果容器没有关闭通过如下命令可以看出：
 
@@ -101,7 +103,7 @@ root        16  0.0  0.0  15572  2200 ?        R+   09:04   0:00 ps aux
 
 并且 PID 号码是独立存在的，与宿主机完全没有关系。
 
-#### 案例 3 查看后台运行容器的日志信息
+##### 案例 3 查看后台运行容器的日志信息
 
 ```shell
 root# sudo docker run -t -i -d ubuntu:14.04 /bin/sh -c "while true; do echo hello world; sleep 1; done"
@@ -121,7 +123,7 @@ hello world
 
 从上面的命令来看，使用 logs 能看到程序的输出 log 过程，这样对服务的调试是非常有帮助的。如果容器没有自己设定的名字很难快速准确的调度容器。
 
-#### 案例 4 快速准确的调度容器--给容器起名字
+##### 案例 4 快速准确的调度容器--给容器起名字
 
 ```shell
 root# docker run -t -i -d --name helloubuntu ubuntu:14.04 /bin/sh -c "while true; do echo hello world; sleep 1; done"
@@ -132,7 +134,7 @@ root# docker run -t -i -d --name helloubuntu ubuntu:14.04 /bin/sh -c "while true
 
 > 注意：容器名必须以英文字母和数字开头，并且只能包含英文数字、下划线 `_`、小数点 `.`、和减号 `-`。
 
-#### 案例 5 列出所有正在运行的容器和它们的基本信息
+##### 案例 5 列出所有正在运行的容器和它们的基本信息
 
 ```shell
 root# docker ps -a
@@ -147,7 +149,7 @@ deaaa8e60c9f  ubuntu:14.04  [...]    14 min ago  Up 1 sec           distracted_d
 
 在 `# docker ps -a` 这个命令中我们可以看到容器的 ID、使用的镜像、启动的命令、创建的时间、当前状态、端口映射状态和名字。
 
-#### 案例 6 容器管理
+##### 案例 6 容器管理
 
 以下管理命令都可以通过传入容器的 ID 或者名字来管理指定的容器：
 
@@ -160,11 +162,11 @@ deaaa8e60c9f  ubuntu:14.04  [...]    14 min ago  Up 1 sec           distracted_d
 
 > 提示：如果要删除所有容器 `docker rm $(docker ps -q -a)`。
 
-#### 阶段总结
+##### 阶段总结
 
 当您看到这里的时候可以说对 Docker 已经有了初步的操作能力，包括运行容器中的程序、查看容器内容、运行容器、停止容器、查看容器、重启容器和删除容器。但是距离在 Docker 上运行自己的业务或者组织开发还是有一定距离的。接下来我们开始进阶学习，重点研究一下 Docker 操作的组成要素。
 
-### Docker 组成要素
+#### Docker 组成要素
 
 如果将轮船拉着集装箱运行在大海上，与 Docker 运行容器里面的程序类比：
 
@@ -181,7 +183,7 @@ deaaa8e60c9f  ubuntu:14.04  [...]    14 min ago  Up 1 sec           distracted_d
 
 <!-- TODO: 单独列出来 -->
 
-### 通过 Docker 运行您的 Web 应用，Step By Step
+#### 通过 Docker 运行您的 Web 应用，Step By Step
 
 代码文件请参考： **[DaoCloud 搭建静态博客](https://github.com/lijianying10/DaoCloudStaticBlog)** 以及 **[整个研究过程参考](http://open.daocloud.io/build-and-deploy-the-thinnest-docker-image/)**。
 
@@ -276,9 +278,9 @@ CMD ["/bin/bash"]
 
 在补充的这个例子中我们可以清楚的看到构建自己的镜像可以依赖于其他镜像构建环境基本上都已经准备好了，非常方便。第二个例子是构建 Hexo 博客环境的做法。
 
-### 管理 Docker 镜像
+#### 管理 Docker 镜像
 
-#### 拿来主义：pull（抓取）
+##### 拿来主义：pull（抓取）
 
 第一种是直接抓取比如说下载一个 docker 管理用的 dockerui 工具，我们可以直接告诉 docker pull 回来：
 
@@ -295,7 +297,7 @@ root# docker run -d -p 9000:9000 --privileged \
 
 这样用直接访问 `http://localhost:9000/` 的方法来管理 docker 了。
 
-#### 查看自己所有的镜像
+##### 查看自己所有的镜像
 
 ```
 root# docker images
@@ -308,13 +310,13 @@ garland/butterfly   latest   114f9c134231   3 months ago   394.5 MB
 progrium/busybox    latest   8cee90767cfe   4 months ago   4.789 MB
 ```
 
-#### 搜索需要的镜像
+##### 搜索需要的镜像
 
 推荐到 **[Docker Hub Registry](https://registry.hub.docker.com/)** 上搜索。
 
 但是也可以通过命令 `docker search 关键词` 进行搜索。
 
-#### 清空所有当前镜像
+##### 清空所有当前镜像
 
 使用命令：`docker rmi $(docker images -q) `。
 
@@ -322,13 +324,13 @@ progrium/busybox    latest   8cee90767cfe   4 months ago   4.789 MB
 
 > 警告：请谨慎清空所有镜像。
 
-#### 构建镜像的缓存
+##### 构建镜像的缓存
 
 <!-- TODO: 介绍 Docker 的缓存机制 -->
 
 在构建镜像时 Dockerfile 中的指令会进入缓存，如果构建时可以使用缓存，docker 可以做到快速完成构建。
 
-### Docker 数据卷的挂载与外部服务访问
+#### Docker 数据卷的挂载与外部服务访问
 
 首先要注意的一点：容器被删除后里面的数据会被删除，因此要注意挂载数据卷使数据持久化。
 
@@ -348,11 +350,11 @@ root# docker run -it -d -p 4000:4000 -v /root/blog/:/hexo --name hexo hexo3
 
 为了使 Hexo 博客可以被宿主机以外的设备访问，这里使用 `-p` 参数来发布 Docker 的端口到宿主机中。
 
-### Docker 学习建议：
+#### Docker 学习建议：
 
 1. 在详细实践完成本文之后如果您有精力，并且英文阅读能力还不错请您移步到 **[Docker官方文档](https://docs.docker.com/userguide/)** 继续更深入的学习。
 2. Docker 只是一种非常实用的工具，不要以 Docker 为目的去学习 Docker，重要的不是 Docker 而是您用 Docker 做什么。
 
-### 总结
+#### 总结
 
 由于篇幅有限新手教程就到这里，希望您在这半个小时到一个小时中能有一次非常完美的 Docker 学习体验，在接下来的学习中您还可以继续从 Docker 官方的文档中了解更多的 Docker 相关的信息，尤其是 Docker 容器与容器之间的问题解决，以及更多更加丰富的命令参数使用，比如环境变量的控制。

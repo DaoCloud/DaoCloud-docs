@@ -45,6 +45,8 @@ order:
 
 By creating the configuration file: `user/config/plugins/simplesearch.yaml` you have effectively created a site-wide configuration for SimpleSearch.  However, you may want to have multiple searches.  
 
+> NOTE: If you remove the `filters:` section SimpleSearch will search **ALL PAGES**
+
 To accomplish multiple search types in a single site, you should use **page-based** configuration. This is simple to do, simply provide any or all of the configuration options under a `simplesearch:` header in your page frontmatter.  For example:
 
 ```
@@ -56,15 +58,15 @@ simplesearch:
     filter_combinator: and
 ```    
  
- These page headers will only be taken into account of the search route points to this page.  For example here we have the route pointing to `/blog` and this header is within the `/user/pages/blog/blog.md` file.  We will cover this self-controlled form of search handling below.
+ These page headers will only be taken into account if the search route points to this page.  For example: here the the route points to `/blog`. This header is within the `/user/pages/blog/blog.md` file.  We will cover this self-controlled form of search handling below.
 
 # Usage
 
-There are really two approaches to using SimpleSearch.  
+There are two approaches to using SimpleSearch.  
 
 ## 1. Standalone Search Page
 
-This is the traditional approach and it involves having a searchbox 'somewhere' on your site, and then when you search you get a new page that displays the search results.  From this page you can see a summary of the results and then click to the actual page location within your site.  Think how **Google** works and other traditional search engines.
+This is the traditional approach and involves having a searchbox 'somewhere' on your site. When you search you are shown a new page that displays the search results.  On this page you will see a summary of the results and be able to click a link to visit each applicable page within your site.  Think about how **Google** and other traditional search engines work.
 
 After installing the SimpleSearch plugin, you can add a simple **searchbox** to your site by including the provided twig template.  Or copy it from the plugin to your theme and customize it as you please:
 

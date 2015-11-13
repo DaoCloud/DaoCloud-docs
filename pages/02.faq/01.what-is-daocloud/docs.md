@@ -40,13 +40,13 @@ DaoCloud 是业界领先的企业级容器云平台和解决方案提供商，�
 
 #### 文化氛围
 
-![IMG_7878.JPG](IMG_7878.JPG)
+![办公环境](IMG_7878.jpg)
 
-+ 工程师文化：全栈、技术驱动、参与感
++ 工程师文化：全员全栈、技术驱动、参与感
 + 持续迭代，持续交付，持续创新
 + 从敏捷到精益：需求驱动、产品思维、小步试错、运营指导
 + DevOps，代码驱动的自动化运维
-+ Talk is cheap，show me the code
++ Talk is cheap，show me the code「空谈误国，实干兴邦」
 + Eat your own dogfood
 + DaoKer Day
 
