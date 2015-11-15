@@ -1,0 +1,8 @@
+email: viz@viz.io
+access:
+  admin:
+    login: true
+    super: true
+fullname: 'Viz Zhao'
+title: Editor
+hashed_password: $2y$10$UQvTbUiepKWXOhFvqqj3QuhHqrbmkdkZk0Ns7Ah5N96fvYJfrZKjy
