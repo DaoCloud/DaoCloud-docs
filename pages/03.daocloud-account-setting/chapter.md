@@ -9,4 +9,4 @@ taxonomy:
 
 # 注册并配置 DaoCloud 账号 
 
-我要开户！
+注册 DaoCloud 账户，开启持续交付之门！
