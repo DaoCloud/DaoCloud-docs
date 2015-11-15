@@ -7,6 +7,8 @@ process:
     twig: true
 ---
 
+<!-- 参考 LeanCloud 的写法：https://github.com/leancloud/docs-->
+
 #### DaoCloud 文档后台
 
 DaoCloud 文档采用 Grav CMS，内容通过 Markdown 格式写作，并在 GitHub 上完成版本管理、协作开发等工作。

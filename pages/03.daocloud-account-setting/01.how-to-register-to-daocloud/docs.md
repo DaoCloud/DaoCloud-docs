@@ -52,19 +52,19 @@ GitHub 和微信注册的描述文字之后，增加一句如何使用 GitHub �
 
 首先，我们登陆 [DaoCloud 的首页](http://daocloud.io)，在页面的中央，可以使用我们的电子邮箱，注册 DaoCloud 账号。此处假设使用 me@example.com 作为账号邮箱。
 
-![](http://ww4.sinaimg.cn/large/7287333fgw1exx0h085j7j20sr0hjn0g.jpg)
+![](2.jpg)
 
 点击「加入」，浏览器便会跳转到注册页面中，这里您需要根据您的实际情况进行填写**用户名**和**密码**，根据屏幕提示正确填写**验证码**后，我们便可以点击「注册」按钮以使用电子邮箱注册 DaoCloud 账号了。
 
-![](http://ww1.sinaimg.cn/large/7287333fgw1exx0ildqtpj20st0hkjsm.jpg)
+![](3.jpg)
 
 注册完成后，浏览器会自动跳转到 DaoCloud 的账号后台。此时，我们需要到我们刚才使用的电子邮箱中查收来自 DaoCloud 的注册验证邮件。
 
-![](http://ww4.sinaimg.cn/large/7287333fgw1exx0opkr6cj20m90fd756.jpg)
+![](5.jpg)
 
 点击邮件中的「立即验证邮箱」按钮或点击下方的超链接即可验证该邮箱所对应的 DaoCloud 账号。
 
-![](http://ww2.sinaimg.cn/large/7287333fgw1exx0z1t73ij20ss0gz3zs.jpg)
+![](6.jpg)
 
 ---
 
@@ -74,12 +74,12 @@ GitHub 和微信注册的描述文字之后，增加一句如何使用 GitHub �
 
 同样的，我们登陆到 DaoCloud 的首页，在电子邮箱的填写处下方，有一个「用其他账号注册」的标示，其中第一个图标便是使用 GitHub 账号注册 DaoCloud 账号的入口。
 
-![](http://ww2.sinaimg.cn/large/7287333fgw1exx1wx33h9j20sr0hkdj4.jpg)
+![](1.jpg)
 
 点击这个按钮以后，浏览器会跳转到 GitHub 的应用授权页面上，我们可以在这里查看 DaoCloud 需要获取的权限。对应用信息确认无误后，您需要点击下方的「**Authorize application**」按钮，授权 DaoCloud 获取您的 GitHub 账号信息，完成授权以后便会自动回到 DaoCloud 的注册页面，您只需将您常用的（或指定的）电子邮箱填到页面相应的位置中，并点击「**注册**」按钮，便可完成 DaoCloud 账号的注册。
-![](http://ww1.sinaimg.cn/large/7287333fgw1exxf1wk8atj20ss0hkq59.jpg)
+![](github-2.jpg)
 
-![](http://ww4.sinaimg.cn/large/7287333fgw1exx252w7soj20st0hjmyb.jpg)
+![](github-3.jpg)
 
 ---
 
@@ -89,17 +89,17 @@ DaoCloud 考虑到国内的用户需要，提供了使用微信账号直接注�
 
 在 DaoCloud 首页的「用其他账号注册」部份出，第二个按钮便是使用微信账号注册 DaoCloud 账号的入口。
 
-![](http://ww4.sinaimg.cn/large/7287333fgw1exx291fjqgj20sr0hiwhq.jpg)
+![](wechat-1.jpg)
 
 点击后，便会跳转到微信二维码界面，您需要使用微信客户端的「扫一扫」功能对其进行扫描，便会看到 DaoCloud 的公众号页面，对其「关注」后，便可以在原本的页面中看到绑定成功的消息。
 
-![](http://ww1.sinaimg.cn/large/7287333fgw1exx2wzu8rqj20ss0hkmys.jpg)
+![](wechat-2.jpg)
 
-![](http://ww4.sinaimg.cn/large/7287333fgw1exx2xfgfr1j20k00zkn05.jpg)
+![](wechat-3.jpg)
 
 将您需要的用户名填写到页面中，点击「注册」按钮便可以完成 DaoCloud 账号的注册。
 
-![](http://ww2.sinaimg.cn/large/7287333fgw1exx2xw8mfnj20st0hkgmr.jpg)
+![](wechat-4.jpeg)
 
 >>>>> 现在绑定微信账号，在原有资源基础上，您还可以额外获得一个 256M 的容器资源和一个 DaoCloud 服务实例。
 
@@ -109,19 +109,19 @@ DaoCloud 考虑到国内的用户需要，提供了使用微信账号直接注�
 
 在您通过以上任意一种方式完成了 DaoCloud 账号的注册后，你便会跳转到 DaoCloud 的控制版面中，在第一次进入这个页面的时候，您会看到一个用于向您介绍 DaoCloud 基本功能的引导教程。
 
-![](http://ww4.sinaimg.cn/large/7287333fgw1exx8ya7z3dj20t70hj0uw.jpg)
+![](register-4.jpg)
 
 左边的是一个遮蔽层用于向您介绍「代码构建」和「镜像仓库」两个主要功能：
 
 #### 代码构建
 
-![](http://ww3.sinaimg.cn/large/7287333fgw1exx90iojx3j206d0810sz.jpg)
+![](register-7.jpg)
 
 「代码构建」是用于从 GitHub、Bitbucket、Coding 和 GitCafe 等第三方 Git 平台拉取项目代码并进行 Docker 镜像构建的功能。
 
 #### 镜像仓库
 
-![](http://ww3.sinaimg.cn/large/7287333fgw1exx94xhemoj206d085t8y.jpg)
+![](register-8.jpg)
 
 「镜像仓库」是一个包含您通过「代码构建」功能创建的 Docker 镜像、DaoCloud 官方提供的镜像和官方 DockerHub 提供的镜像的仓库，您可以通过它把各种 Docker 镜像部署到您套餐内包含的 DaoCloud 云平台或自有集群的主机上。
 

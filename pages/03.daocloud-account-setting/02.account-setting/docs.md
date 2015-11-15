@@ -27,51 +27,50 @@ taxonomy:
 
 在个人设置页面中，第一个标签页便是账户的基本信息设置页面。在这个页面中，你可以对账户当前使用套餐进行查看和更改。
 
-![](http://ww1.sinaimg.cn/large/7287333fgw1exx5k01qj5j20ss0hi402.jpg)
+![](account-1.jpg)
 
 一个新注册的账号默认使用的是免费套餐，DaoCloud 云资源的配额为 **2x**。
 
 <!-- 需要解析云资源的配额 -->
 
 你也可以根据实际需要随时更改账号的套餐，如专业套餐（8x、16x和64x）和企业套餐（128x、256x和512x）。
-
-![](http://ww3.sinaimg.cn/large/7287333fgw1exx6f67uh4j20sr0hj407.jpg)
+![](account-plan-1.jpg)
 
 若你要在 DaoCloud 上部署大型 Docker 容器集群，可以选择企业套餐中的 512x 集群。DaoCloud 提供非常便捷的账户余额充值方式，提供支付宝、微信和银行转账的付款方式（详细请浏览「[DaoCloud 的收费方案](http://docs.daocloud.io/pricing-plan)」），方便个人用户和企业用户体验更优质的 DaoCloud 服务。
 
-![](http://ww2.sinaimg.cn/large/7287333fgw1exxbp0fpv1j20h107pt8y.jpg)
+![](account-plan-3.jpg)
 
 如果你在各种渠道获得了 DaoCloud 发放的礼券，便可以在这个页面的下方「我的礼券」栏目中将其使用到 DaoCloud 账户中。
 
-![](http://ww1.sinaimg.cn/large/7287333fgw1exxbxtj773j20st0hk0ub.jpg)
+![](account-2.jpg)
 
-![](http://ww2.sinaimg.cn/large/7287333fgw1exy2yckcytj216s084mxu.jpg)
+![](ticket-1.jpg)
 
 ### 个人信息
 
 在这个页面中，你可以对 DaoCloud 账号的基本信息进行查看和修改，如上传头像、设置手机号和更改密码等。
 
-![](http://ww1.sinaimg.cn/large/7287333fgw1exxd4i83hvj20t70hiq43.jpg)
+![](profile-2.jpg)
 
 如果您需要更改密码，请点击「更改密码」，然后按提示输入**原密码**和**新密码**，并点击「保存」即可。
 
-![](http://ww3.sinaimg.cn/large/7287333fgw1exxdfkgr3qj20hf08vwem.jpg)
+![](profile-3.jpg)
 
 ### 邮箱
 
 DaoCloud 的用户系统允许您将多个电子邮箱绑定到同一个 DaoCloud 账号上，以发挥不同的用途。在这个「邮箱」标签页中，您可以关联和修改您的邮件地址，并设置其中的一个为主邮箱。您的主邮箱将被用于登陆账户以及接收相关的邮件通知（例如，账户提醒和计费收据）。
 
-![](http://ww2.sinaimg.cn/large/7287333fgw1exxe00fzqjj20t60hkq4i.jpg)
+![](email-1.jpg)
 
 如果您需要将其他电子邮箱与您的 DaoCloud 账号绑定，您可以将新的电子邮箱地址填写到「新邮件...」输入框中，并点击「添加」按钮。DaoCloud 会向新的电子邮箱中发送一封验证邮件，按照提示将新的电子邮箱验证即可。
 
-![](http://ww1.sinaimg.cn/large/7287333fgw1exxe1y3i8dj20t70hi75s.jpg)
+![](email-2.jpg)
 
 ### 第三方账户
 
 DaoCloud 为了提供更优质的用户服务，提供了[**微信**](http://weixin.qq.com)、[**GitHub**](https://github.com)、[**Bitbucket**](https://bitbucket.org/)、[**Coding**](https://coding.net/) 和 [**GitCafe**](https://gitcafe.com) 等第三方网站的账户绑定功能。
 
-![](http://ww3.sinaimg.cn/large/7287333fgw1exxerdp128j20sr0hi0v6.jpg)
+![](3rd-accounts-1.jpg)
 
 #### 绑定微信账号
 
@@ -79,9 +78,9 @@ DaoCloud 为了提供更优质的用户服务，提供了[**微信**](http://wei
 
 若需要将您的微信账号绑定到您的 DaoCloud 账号上，你需要点击「微信」栏目上的「绑定账户」按钮，页面上会弹出一个二维码，用微信客户端的「扫一扫」功能进行扫描，会看到 DaoCloud 的微信公众号，对其添加关注后，即可将您的微信账号跟 DaoCloud 账号绑定在一起。
 
-![](http://ww2.sinaimg.cn/large/7287333fgw1exxethf5pvj20o908e75w.jpg)
+![](3rd-accounts-wechat.jpg)
 
-![](http://ww4.sinaimg.cn/large/7287333fgw1exx2xfgfr1j20k00zkn05.jpg)
+![](wechat-4.jpeg)
 
 #### 绑定 GitHub 账号
 
@@ -89,7 +88,7 @@ DaoCloud 为用户提供 Docker 镜像构建服务「代码构建」，其中需
 
 如要将您的 DaoCloud 账号与 GitHub 账号绑定，则需要点击 **GitHub** 栏目的「绑定账户」按钮，浏览器会跳转到 GitHub 的应用授权页面。
 
-![](http://ww1.sinaimg.cn/large/7287333fgw1exxf1wk8atj20ss0hkq59.jpg)
+![](github-2.jpg)
 
 我们可以在这里查看 DaoCloud 需要获取的权限。对应用信息确认无误后，您需要点击下方的「**Authorize application**」按钮，授权 DaoCloud 获取您的 GitHub 账号信息，即可将 GitHub 账号绑定到您的 DaoCloud 账号上。
 
@@ -101,7 +100,7 @@ DaoCloud 为用户提供 Docker 镜像构建服务「代码构建」，其中需
 
 若您在 DaoCloud 上进行了充值或使用了礼券，那么就会在这里看到所有的记录。
 
-![](http://ww3.sinaimg.cn/large/7287333fgw1exy2ysaozfj21iu0b0t9v.jpg)
+![](check-2.jpg)
 
 >>>>> 更详细的 DaoCloud 收费、发票方案请浏览「[DaoCloud 的收费方案](http://docs.daocloud.io/pricing-plan)」
 
@@ -109,11 +108,11 @@ DaoCloud 为用户提供 Docker 镜像构建服务「代码构建」，其中需
 
 这个页面包含了您的 DaoCloud 账号所加入的组织，如团队或开源社区等。
 
-![](http://ww3.sinaimg.cn/large/7287333fgw1exxfn0otqaj20qs072q37.jpg)
+![](organizations-1.jpg)
 
 如要创建一个组织，您需要点击「创建组织」按钮，页面会跳转到创建组织的页面。
 
-![](http://ww4.sinaimg.cn/large/7287333fgw1exxfojhe9yj20ss0hiq4a.jpg)
+![](organizations-2.jpg)
 
 >>>>> 组织功能的详细使用方法将在「[组织的概念和用法](http://docs.daocloud.io/daocloud-account-setting/daocloud-org)」中阐述，此处不会详细介绍。
 
@@ -129,7 +128,7 @@ DaoCloud 为用户提供 Docker 镜像构建服务「代码构建」，其中需
 
 对于一些较为复杂的 Docker 镜像，构建用时可能会比较长，为了能尽快完成接下来的工作，我们建议你尽快完成 DaoCloud 主电子邮箱账号的验证并将微信账号与 DaoCloud 账号绑定。
 
-![](http://ww3.sinaimg.cn/large/7287333fgw1exy12skws6j20ss0hjq4a.jpg)
+![](notications-1.jpg)
 
 >>>>> 另外，为了更好地为开发者提供优质的服务，DaoCloud 也将微信作为我们的客服渠道之一。所以再次建议你尽快地将微信账号与 DaoCloud 账号进行绑定。
 
