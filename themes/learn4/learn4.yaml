@@ -13,4 +13,4 @@ streams:
     theme:
       type: ReadOnlyStream
       paths:
-        - user/themes/learn2
+        - user/themes/learn4
