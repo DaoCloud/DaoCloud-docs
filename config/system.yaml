@@ -12,7 +12,7 @@ languages:
 home:
   alias: /update
 pages:
-  theme: learn2
+  theme: learn4
   order:
     by: default
     dir: asc
