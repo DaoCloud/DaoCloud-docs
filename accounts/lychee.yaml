@@ -1,0 +1,8 @@
+email: lychee.li@daocloud.io
+access:
+  admin:
+    login: true
+    super: true
+fullname: 'Lychee Li'
+title: Editor
+hashed_password: $2y$10$3cAq0Ci/AL2uwXaSfozOsekFMdpw8MtlVjbGBjry5jI9fYuGExOlO

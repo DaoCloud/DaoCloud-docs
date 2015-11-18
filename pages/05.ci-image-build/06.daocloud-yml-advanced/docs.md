@@ -5,11 +5,7 @@ taxonomy:
         - docs
 ---
 
-## 测试结果
-
-我们会在持续集成日志中展示测试结果
-
-## 结果展示
+#### 结果展示
 
 结果展示文件需要使用测试脚本（命令）生成 junit 格式的 XML 文件，该文件路径由系统环境变量 ｀TEST_RESULT｀ 指定。例：
 
@@ -27,7 +23,7 @@ nosetests test.py --with-xunit --xunit-file=$TEST_DIR/result.xml
 </testsuite>
 ```
 
-## 覆盖测试
+#### 覆盖测试
 
 覆盖测试文件需要使用测试脚本（命令）生成 一个 xml 格式的 coverage 报告，该文件路径由系统环境变量 ｀TEST_COVERAGE｀ 指定。例：
 
@@ -72,7 +68,7 @@ coverage xml -o $TEST_DIR/coverage.xml test.py
 ```
 
 
-### 样例 daocloud.yml
+##### 样例 daocloud.yml
 
 代码参见 GitHub 上的 [样例程序](https://github.com/DaoCloud/python-mysql-sample) 
 
@@ -97,31 +93,9 @@ script:
 
 ```
 
-![持续集成：测试结果](/img/screenshots/features/build-flows/test-result.png)
+![](test-result.png)
 
-## 持续集成
-
-DaoCloud CI 是我们自主研发的 CI 执行引擎，目前支持如下语言和服务：
-
-* 语言：Golang、Python、Ruby、Java、Javascript（NodeJS）、PHP、C（gcc）
-* 服务：MySQL、Redis、MongoDB
-
-### 参照下面两步立刻触发第一次持续集成：
-
-1. 配置脚本
-2. 推送代码
-
-#### 1. 准备持续集成需要的配置文件
-
-您可以通过在代码根目录放置一个 `daocloud.yml` 文件来配置您的测试任务，详细格式请参考 [daocloud.yml](daocloud-yml.md) 以及我们维护在 GitHub 上的 [示例程序](https://github.com/DaoCloud?utf8=%E2%9C%93&query=sample)。
-
-#### 2. 推送代码
-
-对代码源的推送操作将自动触发持续集成，例如：
-
-```shell
-user$ git push
-```
+#### 特殊配置
 
 当所推送的最近一次提交信息中带有 `[CI SKIP]` 或者 `[SKIP CI]` 字段时，此次推送将不会触发持续集成，例如：
 

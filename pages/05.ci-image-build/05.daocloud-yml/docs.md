@@ -7,11 +7,9 @@ taxonomy:
 
 <!-- http://help.daocloud.io/features/continuous-integration/index.html 确定这些功能是否还有效-->
 
-## daocloud.yml
-
 DaoCloud CI 使用基于 Docker 的容器技术来运行您的测试任务，确保您的任务和其他租户的任务完全隔离并互不干扰。
 
-## 入门
+#### 入门
 
 您可以通过在代码根目录放置一个 `daocloud.yml` 文件来配置您的测试任务。
 
@@ -49,7 +47,7 @@ script:
     - ping -c 2 redis
 ```
 
-## 执行步骤
+#### 执行步骤
 
 1. 设置环境变量。
 2. 执行 `install` 脚本。
@@ -57,7 +55,7 @@ script:
 4. 执行 `before_script` 脚本。
 5. 执行 `script` 脚本。
 
-## 实现细节
+#### 实现细节
 
 DaoCloud 为您准备了多种编程语言的测试环境（这些测试环境是基于官方的 `ubuntu:14.04` 镜像），目前支持的编程语言包括：
 
@@ -81,7 +79,7 @@ DaoCloud 为您准备了多种编程语言的测试环境（这些测试环境�
 * 自定义镜像中需要预装 Git。
 
 
-### 指定测试镜像
+##### 指定测试镜像
 
 测试镜像代表了您的测试任务运行的环境。
 
@@ -135,7 +133,7 @@ image: daocloud/ci-golang:1.4
 * userxxx/python:3.0
 * useryyy/golang:1.1
 
-### 配置测试服务
+##### 配置测试服务
 
 您可以指定测试任务运行时依赖的服务，指定服务后，测试任务可以用 `docker link` 一致的方式去访问它。比如您指定要使用 `mysql`，那么您可以使用 `mysql` 作为主机名来访问服务节点, 或者通过环境变量 `MYSQL_PORT_3306_TCP_ADDR` 来访问。
 
@@ -148,7 +146,7 @@ services:
 
 目前 DaoCloud CI 支持的服务及访问方式如下表所示（该列表正在不断完善中）：
 
-#### MySQL
+###### MySQL
 
 Version：MySQL 5.5
 
@@ -172,7 +170,7 @@ Default Instance: test
 * MYSQL_PORT_3306_TCP_PROTO = tcp
 * MYSQL_PORT_3306_TCP_PORT = 3306
 
-#### Redis
+###### Redis
 
 Version：Redis 2.8
 
@@ -190,7 +188,7 @@ Port: 6379
 * REDIS_PORT_6379_TCP_PROTO = tcp
 * REDIS_PORT_6379_TCP_PORT = 6379
 
-#### MongoDB
+###### MongoDB
 
 Version：MongoDB 2.6
 
@@ -208,7 +206,7 @@ Port: 27017
 * MONGODB_PORT_27017_TCP_PROTO = tcp
 * MONGODB_PORT_27017_TCP_PORT = 27017
 
-### 设置测试环境变量
+##### 设置测试环境变量
 
 ```
 ＃ Environment variables
@@ -217,7 +215,7 @@ env:
   - MY_ENV = abc
 ```
 
-### 指定镜像初始化脚本
+##### 指定镜像初始化脚本
 
 您可以通过 `install` 标签来指定您对镜像的初始化脚本
 
@@ -228,7 +226,7 @@ install:
   - sudo apt-get -y install bzr
 ```
 
-### 指定测试准备脚本
+##### 指定测试准备脚本
 
 您可以通过 `before_script` 标签来为您的测试做准备
 
@@ -239,7 +237,7 @@ before_script:
   - go get labix.org/v2/mgo
 ```
 
-### 指定测试脚本
+##### 指定测试脚本
 
 您可以通过 `script` 标签来指定您的运行的测试任务
 

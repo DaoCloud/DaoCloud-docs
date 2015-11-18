@@ -33,6 +33,22 @@ ci 和 build 的配置
 
 -->
 
+##### 参照下面两步立刻触发第一次持续集成：
+
+1. 配置脚本
+2. 推送代码
+
+###### 1. 准备持续集成需要的配置文件
+
+您可以通过在代码根目录放置一个 `daocloud.yml` 文件来配置您的测试任务，详细格式请参考 [daocloud.yml](daocloud-yml.md) 以及我们维护在 GitHub 上的 [示例程序](https://github.com/DaoCloud?utf8=%E2%9C%93&query=sample)。
+
+###### 2. 推送代码
+
+对代码源的推送操作将自动触发持续集成，例如：
+
+```shell
+user$ git push
+```
 
 <!-- 
 
