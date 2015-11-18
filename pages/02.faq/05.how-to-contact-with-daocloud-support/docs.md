@@ -10,7 +10,7 @@ DaoCloud 提供以下几种技术支持方式
 
 #### 页面直接呼叫客服
 
-DaoCloud 网站和控制台页面右下角的问号按钮，是 DaoCloud 主要的服务入口。DaoCloud 实行开发运维一体化的运营理念，我们所有开发人员都是客服，通过点击页面右下角的问号按钮，DaoCloud 整个开发团队都会看到，并在第一时间响应。我们启用了基于「[朴素贝叶斯算法](http://baike.baidu.com/link?url=aoGwbBktsDtKNCA3M0wBtSa5vacD3-TnTxB-HqysRubDetPQvE3s8_0uLASDe015Rqm4XbQTpC9KvK03RdOhVq)」的智能应答机制，会根据您提问的内容关键字，自动提醒有关产品模块的同事，有直接负责开发这个模块的工程师实时解答您的疑问。
+DaoCloud 网站和控制台页面右下角的问号按钮，是 DaoCloud 主要的服务入口。DaoCloud 实行开发运维一体化的运营理念，我们所有开发人员都是客服，通过点击页面右下角的问号按钮，DaoCloud 整个开发团队都会看到，并在第一时间响应。我们启用了基于「[朴素贝叶斯算法](http://baike.baidu.com/link?url=aoGwbBktsDtKNCA3M0wBtSa5vacD3-TnTxB-HqysRubDetPQvE3s8_0uLASDe015Rqm4XbQTpC9KvK03RdOhVq)」的智能应答机制，会根据您提问的内容关键字，自动提醒有关产品模块的同事，由直接负责开发这个模块的工程师实时解答您的疑问。
 
 ![客服](DashboardDaoCloud.png)
 

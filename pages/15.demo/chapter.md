@@ -8,5 +8,3 @@ taxonomy:
 ### Chapter 15
 
 # 视频演示
-
-有图有真相

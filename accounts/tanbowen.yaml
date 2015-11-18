@@ -1,0 +1,10 @@
+email: bowen.tan@daocloud.io
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+fullname: 'Bowen Tan'
+title: null
+hashed_password: $2y$10$y1rwY7LW38p/kRSrUV9i6.ikxKZpEMpljFps0wjnygpRbTvEIKBRi

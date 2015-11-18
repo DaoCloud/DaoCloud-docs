@@ -1,5 +1,5 @@
 ---
-title: '传说中的 DaoCloud 加速器是什么？'
+title: 'DaoCloud 加速器和 Toolbox'
 taxonomy:
     category:
         - docs
@@ -9,18 +9,112 @@ DaoCloud 加速器是广受欢迎的 Docker 工具，解决了国内用户访问
 
 下面我们分别介绍这两个版本的具体细节。
 
-
 #### Docker 加速器 2.0
 
 Docker 加速器 2.0 是 DaoCloud Toolbox 的一部分。
 
-<!-- 2.0介绍，和FAQ，参考页面内容 -->
+![](toolbox1.png)
+
+##### DaoCloud Toolbox 是什么？
+
+![](toolbox2.png)
+
+DaoCloud Toolbox 由一系列 Linux 下的命令行工具和后台服务组成，是一款集成了 Docker Hub 下载加速、Docker 宿主垃圾回收、混合式容器管理等多种功能于一身的工具软件。
+
+##### 工具一：Docker 加速器升级版
+
+DaoCloud 在 2015 年年初推出的 Docker 加速器  提供 Docker Hub 镜像下载的加速功能，极大提升了国内网络访问 Docker Hub 的速度，拥有广泛的用户群体。然后，由于受到 Docker Registry 原理所限，使用加速器，仍无法避免直接连接 Docker Hub Index 元数据服务器时链接缓慢甚至中断的问题（如下图的故障）。
+
+![](toolbox4.png)
+
+DaoCloud 工具箱包含了 Docker 加速器的升级版「Docker 超速器」，使用 dao pull 命令行工具下载 Docker Hub 镜像，可以获得类似迅雷、BT 一般的超高速下载体验。dao pull 可以完全替代 docker pull，并且具备以下的特点：
+
+1. 充分利用了我们最新投入生产的分布式 Docker 镜像分发网络，具有云端智能路由与缓存功能。
+2. 采用 Docker 1.8 最新技术，实现多路并行下载，并在协议层优化，提升并发传输速度。
+3. 无缝兼容各类私有 Docker 镜像仓库的下载操作。
+
+##### 工具二：Docker 清道夫
+
+随着Docker 的使用和容器被创建、销毁， Docker 宿主机上往往会产生各类「垃圾」。DaoCloud Toolbox 提供了Docker 清道夫工具，可以有效的识别各类破损镜像、无主Volume 等Docker 运行过程中的垃圾，并且完成安全的清除工作。
+
+1. 运行 sudo dao clean，即可完成宿主机上的垃圾清理工作。
+2. 为了避免误删除，dao clean 命令还支持「试运行」功能，使用 –d 参数，可以列出所有已经被识别的垃圾，由用户决定是否需要清理。
+
+![](daoclean.png)
+
+##### 工具三：DaoCloud 自有主机管理
+
+接入自有主机到 DaoCloud 平台是一项我们推出已久的功能，这次发布 DaoCloud Toolbox，我们决定把自有主机的宿主机监控 Agent，集成进入DaoCloud Toolbox。
+
+自有主机管理服务是 DaoCloud 的一项独创技术，使用这项功能，DaoCloud 用户可以通过一致的界面和流程，管理在公有云、私有云甚至是企业防火墙之后的各类物理和虚拟主机资源，把这些资源汇聚成跨云跨网的分布式容器主机资源池，实现容器化应用的高速部署和灵活调度。
+
+##### DaoCloud Toolbox 使用指南
+
+** DaoCloud Toolbox 如何试用？** 
+
+请登录 DaoCloud 控制台，依次点击「我的主机」、「添加新主机」。点击「免费胶囊主机」，请根据屏幕提示，执行我们提供的安装命令。
+
+备注：免费胶囊主机，是客户无需预付款，即可获得的容器主机，每天我们会通过合理计算调度，从数据中心节点中腾挪出闲散的计算资源组成「胶囊集群」。 每台「胶囊主机」自带 Docker 运行环境，并自动接入 DaoCloud 容器管理平台。每颗「胶囊」的生命目前是 120 分钟，到期后会自动消失。装载到「胶囊」里的应用信息会保留并自动迁移。「胶囊主机」到期后可以重复创建。
+
+** DaoCloud Toolbox 如何安装？** 
+
+1. 请登录 DaoCloud 控制台，依次点击「我的主机」、「添加新主机」。
+2. 请根据屏幕提示，在需要安装 DaoCloud Toolbox 的主机终端，执行我们提供的安装命令。
+3. 安装完成后，可以主机终端执行sudo dao –version，验证安装成功与否。
+4. 您也会在 DaoCloud 控制台的「我的主机」的界面，看到刚才完成安装的主机信息。您可以在 DaoCloud 控制台，管理这台主机，具体方法，可以参考我们的帮助文档。
+
+** 使用DaoCloud Toolbox，对Docker客户端有什么要求？** 
+
+DaoCloud Toolbox 中的 dao 命令，会调用本机 Docker 客户端的 API，来完成各类操作。DaoCloud Toolbox 支持包括最新 Docker 1.8 在内的各个版本 Docker 客户端。
+
+** 是否支持 Boot2Docker、Kitematic？** 
+
+支持。安装时，请确保Boot2Docker、Kitematic 已经正确配置， Docker 客户端已经安装并且运行正常。
+
+** 之前推出的 Docker Hub 加速器是否会有变化？** 
+
+Docker 公司新近推出了 Docker 1.8，和 Docker Hub Registry v2 升级版本，我们的 Docker Hub 加速器已经完成了对新版本的支持工作。DaoCloud Toolbox 内置了加速器升级版本，不需要 VPN网络环境，下载速度更快。DaoCloud 将继续运营旧版本 Docker Hub 加速器，但是我们推荐用户使用 DaoCloud Toolbox中的升级版本。这两个版本的服务，我们都将保持永久免费的形态。
+
+** DaoCloud 加速器是否提供离线安装版？** 
+
+DaoCloud 加速器整合了宿主机工具包和自有主机监控管理，需要与用户的 DaoCloud ID 绑定，目前我们不提供离线单独安装的版本。
+
+** DaoCloud Toolbox今后会提供什么工具？** 
+
+我们将不断扩充 DaoCloud Toolbox，并且会考虑接纳各类第三方开发的工具。如果您有好的想法，欢迎跟我们联系，请发送邮件到 [support@daocloud.io](mailto:support@daocloud.io)。
+
+##### 常见问题
+
+**Docker 加速器是什么，我需要使用吗？**
+
+> 使用 Docker 的时候，需要经常从官方获取镜像，但是由于显而易见的网络原因，拉取镜像的过程非常耗时，严重影响使用 Docker 的体验。因此 DaoCloud 推出 Docker 加速器解决这个难题，通过智能路由和缓存机制，极大提升了国内网络访问 Docker Hub 的速度，目前已经拥有了广泛的用户群体，并得到了 Docker 官方的大力推荐。如果您是在国内的网络环境使用 Docker，那么 Docker 加速器一定能帮助到您。
+
+**Docker 加速器 2.0 与 1.0 有什么提升？**
+
+> DaoCloud 在 2015 年年初推出的 Docker 加速器 1.0，它基于 Docker Registry 原生的Mirror机制，是国内首个 Docker Hub 镜像下载加速产品，受到了广泛的关注和好评。然后，由于受到 Docker Registry 原理所限，使用了加速器 1.0，仍无法避免直接连接 Docker Hub 元数据服务器时链接缓慢甚至中断的问题。因此，我们又进一步推出了加速器 2.0，通过采用智能路由和缓存机制，结合Docker 1.8 最新技术，实现多路并行下载，使得国内网络拉取 Docker Hub 镜像的速度，较之加速器 1.0，又有了极大的提升。
+
+**为什么要接入 DaoCloud 自有主机才能安装加速器 2.0 ？**
+
+> Docker 加速器 2.0 整合了自有主机工具包，需要与 DaoCloud ID 绑定才能正常工作。接入 DaoCloud 自有主机的过程中会自动在主机上安装加速器并绑定您的 DaoCloud ID，极大的简化了安装过程，同时还提供给用户更方便管理和监控 Docker 主机的能力。
+
+**Docker 加速器 1.0 是否还能正常工作？**
+
+> DaoCloud 将继续维护和运营 Docker 加速器 1.0，但是我们强烈推荐用户使用加速器 2.0 获得更卓越的体验。
+
+**Docker 加速器的总使用量是如何计算的？可以申请更多吗？**
+
+> 加速器使用量的统计是每月重置清零的，由于 docker 镜像的分层存储特性，绝大多数情况下，用户的使用量是不会超过我们设置的阀值的，页面上显示的用量数据主要起到统计作用。对于有更大需求的用户可以联系客服免费申请更多的额度。
+
+**Docker 加速器是否收费？**
+
+> 我们承诺 DaoCloud 加速器服务是永久免费的，请放心使用。
 
 
+---
 
 #### Docker 加速器 1.0
 
->>> Docker 加速器 1.0 仍在正常运行，但我们推荐您使用 Docker 加速器 2.0，获得更好的用户体验。
+>>> Docker 加速器 1.0 仍在正常运行。我们列出以下文章内容的主要原因是帮助您了解 Docekr 加速器 1.0 的技术实现原理。我们推荐您使用 Docker 加速器 2.0，获得更好的用户体验。
 
 Docker 加速器是 DaoCloud 推出的 Docker Hub Mirror 服务的官方名称。
 
