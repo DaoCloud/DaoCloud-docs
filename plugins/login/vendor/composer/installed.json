@@ -1,0 +1,115 @@
+[
+    {
+        "name": "lusitanian/oauth",
+        "version": "v0.8.3",
+        "version_normalized": "0.8.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Lusitanian/PHPoAuthLib.git",
+            "reference": "d47849e3838a7ea738111e3f1d7c810cc950539a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Lusitanian/PHPoAuthLib/zipball/d47849e3838a7ea738111e3f1d7c810cc950539a",
+            "reference": "d47849e3838a7ea738111e3f1d7c810cc950539a",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*",
+            "predis/predis": "0.8.*@dev",
+            "squizlabs/php_codesniffer": "2.*",
+            "symfony/http-foundation": "~2.1"
+        },
+        "suggest": {
+            "ext-openssl": "Allows for usage of secure connections with the stream-based HTTP client.",
+            "predis/predis": "Allows using the Redis storage backend.",
+            "symfony/http-foundation": "Allows using the Symfony Session storage backend."
+        },
+        "time": "2015-11-17 21:54:31",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "OAuth": "src",
+                "OAuth\\Unit": "tests"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "David Desberg",
+                "email": "david@daviddesberg.com"
+            },
+            {
+                "name": "Elliot Chance",
+                "email": "elliotchance@gmail.com"
+            },
+            {
+                "name": "Pieter Hordijk",
+                "email": "info@pieterhordijk.com"
+            }
+        ],
+        "description": "PHP 5.3+ oAuth 1/2 Library",
+        "keywords": [
+            "Authentication",
+            "authorization",
+            "oauth",
+            "security"
+        ]
+    },
+    {
+        "name": "birke/rememberme",
+        "version": "1.0.4",
+        "version_normalized": "1.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/gbirke/rememberme.git",
+            "reference": "4e71b0d9c692db28ae78c7eea752c4599b87dc2c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/gbirke/rememberme/zipball/4e71b0d9c692db28ae78c7eea752c4599b87dc2c",
+            "reference": "4e71b0d9c692db28ae78c7eea752c4599b87dc2c",
+            "shasum": ""
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.*"
+        },
+        "time": "2015-07-22 18:26:14",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Birke\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Gabriel Birke",
+                "email": "gb@birke-software.de"
+            }
+        ],
+        "description": "Secure \"Remember Me\" functionality",
+        "homepage": "https://github.com/gbirke/rememberme",
+        "keywords": [
+            "cookie",
+            "remember",
+            "security"
+        ]
+    }
+]

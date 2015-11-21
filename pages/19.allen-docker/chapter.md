@@ -5,6 +5,4 @@ taxonomy:
         - docs
 ---
 
-### Chapter 19
-
 # Allen 谈 Docker 系列

@@ -5,6 +5,4 @@ taxonomy:
         - docs
 ---
 
-### Chapter 20
-
-# DaoCloud 译见系列
+# DaoCloud「译见」系列

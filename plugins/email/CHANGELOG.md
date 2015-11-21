@@ -1,3 +1,9 @@
+# v1.0.0
+## 11/20/2015
+
+1. [](#bugfix)
+    * Fix for issue with no body parameter specified
+
 # v0.2.1
 ## 09/11/2015
 

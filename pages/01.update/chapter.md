@@ -5,8 +5,6 @@ taxonomy:
         - docs
 ---
 
-### Chapter 1
-
 # 产品更新日志
 
 一直被模仿，从未被超越！

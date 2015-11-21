@@ -10,9 +10,9 @@
                 <label class="inline">
                 {% block label %}
                     {% if field.help %}
-                    <span class="tooltip" data-asTooltip-position="w" title="{{ field.help|e }}">{{ field.label }}</span>
+                    <span class="tooltip" data-asTooltip-position="w" title="{{ field.help|e }}">{{ field.label|default(field.name|capitalize) }}</span>
                     {% else %}
-                    {{ field.label }}
+                    {{ field.label|default(field.name|capitalize) }}
                     {% endif %}
                     {{ field.validate.required in ['on', 'true', 1] ? '<span class="required">*</span>' }}
                 {% endblock %}
@@ -31,7 +31,7 @@
                             <input
                                 {# required attribute structures #}
                                 name="{{ (scope ~ field.name)|fieldName }}"
-                                value="{{ value|join(', ') }}"
+                                value="{{ value|e('html_attr')|join(', ') }}"
                                 {# input attribute structures #}
                                 {% block input_attributes %}
                                     {% if field.classes is defined %}class="{{ field.classes }}" {% endif %}
@@ -45,8 +45,8 @@
                                     {% if field.autocomplete in ['on', 'off'] %}autocomplete="{{ field.autocomplete }}"{% endif %}
                                     {% if field.validate.required in ['on', 'true', 1] %}required="required"{% endif %}
                                     {% if field.validate.pattern %}pattern="{{ field.validate.pattern }}"{% endif %}
-                                    {% if field.validate.message %}title="{{ field.validate.message|e|tu }}"
-                                    {% elseif field.title is defined %}title="{{ field.title|e|tu }}" {% endif %}
+                                    {% if field.validate.message %}title="{{ field.validate.message|e|t }}"
+                                    {% elseif field.title is defined %}title="{{ field.title|e|t }}" {% endif %}
                                 {% endblock %}
                                 />
                         </div>

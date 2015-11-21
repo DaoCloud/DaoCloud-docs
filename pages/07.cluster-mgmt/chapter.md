@@ -5,6 +5,4 @@ taxonomy:
         - docs
 ---
 
-### Chapter 7
-
 # 创建和管理 DaoCloud 主机集群 

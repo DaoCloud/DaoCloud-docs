@@ -3,6 +3,95 @@ en:
     ACCESS_DENIED: Access denied...
     LOGIN_FAILED: Login failed...
     LOGIN_SUCCESSFUL: You have been successfully logged in.
+
     BTN_LOGIN: Login
     BTN_LOGOUT: Logout
     BTN_FORGOT: Forgot
+
+    SESSION: "&ldquo;Remember Me&rdquo;-Session"
+    REMEMBER_ME: Remember Me
+    REMEMBER_ME_HELP: "Sets a persistent cookie on your browser to allow persistent-login authentication between sessions."
+    REMEMBER_ME_STOLEN_COOKIE: "Someone else has used your login information to access this page! All sessions were logged out. Please log in with your credentials and check your data."
+
+    OAUTH_LOGIN: Sign in with %s
+    OAUTH_SIGNIN: Sign in with your username and password
+    OAUTH_CONNECT_MESSAGE: Connect with a social network
+    OAUTH_CONNECT_MESSAGE_EXTRA: other social networks
+    OAUTH_PROVIDER_NOT_SUPPORTED: OAuth provider "%s" is not supported
+    OR: or
+
+    PLUGIN_STATUS: Plugin status
+    BUILTIN_CSS: Use built in CSS
+    BUILTIN_CSS_HELP: Include the CSS provided by the admin plugin
+    ROUTE: Login path
+    ROUTE_HELP: Custom route to a custom login page that your theme provides
+
+    OAUTH_SECTION: OAuth
+    OAUTH_ENABLE: Enable OAuth
+    OAUTH_USER_AUTOCREATE: Auto-create user account
+    OAUTH_ACCESS: OAuth user access rights
+    OAUTH_PROVIDER_SECTION: OAuth providers
+    OAUTH_PROVIDER_FACEBOOK: Enable Facebook OAuth
+    OAUTH_PROVIDER_GOOGLE: Enable Google OAuth
+    OAUTH_PROVIDER_GITHUB: Enable GitHub OAuth
+    OAUTH_PROVIDER_TWITTER: Enable Twitter OAuth
+    OAUTH_CLIENT_ID: Client ID
+    OAUTH_CLIENT_SECRET: Client secret
+
+    FACEBOOK: Facebook
+    GOOGLE: Google
+    GITHUB: GitHub
+    TWITTER: Twitter
+
+fr:
+  LOGIN_PLUGIN:
+    ACCESS_DENIED: Accès non autorisé...
+    LOGIN_FAILED: Echec de la connexion...
+    LOGIN_SUCCESSFUL: Vous avez été connecté avec succès.
+    BTN_LOGIN: Connexion
+    BTN_LOGOUT: Déconnexion
+    BTN_FORGOT: Mot de passe oublié
+
+hu:
+  LOGIN_PLUGIN:
+    ACCESS_DENIED: Hozzáférés megtagadva...
+    LOGIN_FAILED: Sikertelen belépés...
+    LOGIN_SUCCESSFUL: Sikeresen beléptél.
+    BTN_LOGIN: Belépés
+    BTN_LOGOUT: Kilépés
+    BTN_FORGOT: Elfelejtettem
+    SESSION: "Munkamenet Megjegyzése"
+
+    REMEMBER_ME: Jegyezz Meg
+    REMEMBER_ME_HELP: "Elhelyezünk egy hosszú lejáratú sütit a böngésződben, hogy belépve maradhass két munkamenet között."
+    REMEMBER_ME_STOLEN_COOKIE: "Valaki a belépési adataid felhasználásával látogatta meg ezt az oldalt! Minden munkamenetet kiléptettünk. Kérlek, jelentkezz be ismét és ellenőrizd az adataidat."
+
+    OAUTH_LOGIN: Belépés %s használatával
+    OAUTH_SIGNIN: Belépés felhasználóneved és jelszavad megadásával
+    OAUTH_CONNECT_MESSAGE: Összekapcsolás egy közösségi oldallal
+    OAUTH_CONNECT_MESSAGE_EXTRA: más közösségi oldalak
+    OAUTH_PROVIDER_NOT_SUPPORTED: Az "%s" OAuth szolgáltató nem használható
+    OR: vagy
+
+    PLUGIN_STATUS: Plugin állapota
+    BUILTIN_CSS: Beépített CSS használata
+    BUILTIN_CSS_HELP: Az admin plugin által biztosított CSS beillesztése
+    ROUTE: Belépés útvonala
+    ROUTE_HELP: Egyedi útvonal egy egyedi belépő oldalhoz, melyet az aktuális téma biztosít
+
+    OAUTH_SECTION: OAuth
+    OAUTH_ENABLE: OAuth engedélyezése
+    OAUTH_USER_AUTOCREATE: Felhasználói fiók automatikus létrehozása
+    OAUTH_ACCESS: OAuth felhasználók jogai
+    OAUTH_PROVIDER_SECTION: OAuth szolgáltatók
+    OAUTH_PROVIDER_FACEBOOK: Facebook OAuth Enegdélyezése
+    OAUTH_PROVIDER_GOOGLE: Google OAuth Engedélyezése
+    OAUTH_PROVIDER_GITHUB: GitHub OAuth Engedélyezése
+    OAUTH_PROVIDER_TWITTER: Twitter OAuth Engeédlyezése
+    OAUTH_CLIENT_ID: Client ID
+    OAUTH_CLIENT_SECRET: Client secret
+
+    FACEBOOK: Facebook
+    GOOGLE: Google
+    GITHUB: GitHub
+    TWITTER: Twitter

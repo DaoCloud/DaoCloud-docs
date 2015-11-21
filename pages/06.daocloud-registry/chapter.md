@@ -5,6 +5,4 @@ taxonomy:
         - docs
 ---
 
-### Chapter 6
-
 # 使用 DaoCloud 镜像仓库 

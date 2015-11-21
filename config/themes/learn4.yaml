@@ -1,0 +1,12 @@
+enabled: true
+top_level_version: false
+github:
+  position: top
+  tree: 'https://github.com/DaoCloud/daocloud-docs/develop'
+  commits: 'https://github.com/DaoCloud/daocloud-docs/commits/develop/'
+streams:
+  schemes:
+    theme:
+      type: ReadOnlyStream
+      paths:
+        - user/themes/learn4

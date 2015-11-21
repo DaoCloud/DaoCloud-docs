@@ -1,4 +1,43 @@
 enabled: true
 built_in_css: true
 route: false
+redirect:
 
+rememberme:
+  enabled: true
+  timeout: 1800                        # Timeout in seconds
+  name: grav-rememberme                # Name prefix of the session cookie
+
+oauth:
+  enabled: false
+
+  user:
+    autocreate: false
+    access:
+      site:
+        login: true
+
+  providers:
+    Facebook:
+      enabled: false
+      credentials:
+        key:
+        secret:
+
+    Google:
+      enabled: false
+      credentials:
+        key:
+        secret:
+
+    GitHub:
+      enabled: false
+      credentials:
+        key:
+        secret:
+
+    Twitter:
+      enabled: false
+      credentials:
+        key:
+        secret:

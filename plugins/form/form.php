@@ -2,19 +2,12 @@
 namespace Grav\Plugin;
 
 use Grav\Common\Plugin;
-use Grav\Common\Page\Page;
-use Grav\Common\Page\Pages;
-use Grav\Common\Grav;
-use Grav\Common\Uri;
-use Grav\Common\Twig;
-use Grav\Plugin\Form;
-use RocketTheme\Toolbox\Event\Event;
-use RocketTheme\Toolbox\File\File;
 use Symfony\Component\Yaml\Yaml;
+use RocketTheme\Toolbox\File\File;
+use RocketTheme\Toolbox\Event\Event;
 
 class FormPlugin extends Plugin
 {
-
     /**
      * @var bool
      */
@@ -33,8 +26,7 @@ class FormPlugin extends Plugin
         return [
             'onPageInitialized' => ['onPageInitialized', 0],
             'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
-            'onTwigSiteVariables' => ['onTwigSiteVariables', 0],
-            'onFormProcessed' => ['onFormProcessed', 0]
+            'onTwigSiteVariables' => ['onTwigSiteVariables', 0]
         ];
     }
 
@@ -54,8 +46,13 @@ class FormPlugin extends Plugin
             $this->active = true;
 
             // Create form.
-            require_once __DIR__ . '/classes/form.php';
+            require_once(__DIR__ . '/classes/form.php');
             $this->form = new Form($page);
+
+            $this->enable([
+                'onFormProcessed' => ['onFormProcessed', 0],
+                'onFormValidationError' => ['onFormValidationError', 0]
+            ]);
 
             // Handle posting if needed.
             if (!empty($_POST)) {
@@ -64,7 +61,7 @@ class FormPlugin extends Plugin
         }
     }
 
-        /**
+    /**
      * Add current directory to twig lookup paths.
      */
     public function onTwigTemplatePaths()
@@ -95,30 +92,6 @@ class FormPlugin extends Plugin
         $action = $event['action'];
         $params = $event['params'];
 
-        if (!$this->active) {
-            return;
-        }
-
-        if (!$this->validate($form)) {
-            /** @var Language $l */
-            $l = $this->grav['language'];
-            $this->form->message = $l->translate('FORM_PLUGIN.NOT_VALIDATED');
-            $uri = $this->grav['uri'];
-            $route = $uri->route();
-
-            /** @var Twig $twig */
-            $twig = $this->grav['twig'];
-            $twig->twig_vars['form'] = $form;
-
-            /** @var Pages $pages */
-            $pages = $this->grav['pages'];
-            $page = $pages->dispatch($route, true);
-            unset($this->grav['page']);
-            $this->grav['page'] = $page;
-
-            return;
-        }
-
         $this->process($form);
 
         switch ($action) {
@@ -142,7 +115,7 @@ class FormPlugin extends Plugin
                 $this->grav->redirect((string) $params);
                 break;
             case 'reset':
-                if (in_array($params, array(true, 1, '1', 'yes', 'on', 'true'), true)) {
+                if (Utils::isPositive($params)) {
                     $this->form->reset();
                 }
                 break;
@@ -161,6 +134,11 @@ class FormPlugin extends Plugin
                 /** @var Pages $pages */
                 $pages = $this->grav['pages'];
                 $page = $pages->dispatch($route, true);
+
+                if (!$page) {
+                    throw new \RuntimeException('Display page not found. Please check the page exists.', 400);
+                }
+
                 unset($this->grav['page']);
                 $this->grav['page'] = $page;
                 break;
@@ -181,7 +159,9 @@ class FormPlugin extends Plugin
                     'form' => $this->form
                 );
 
-                $fullFileName = DATA_DIR . $this->form->name . '/' . $filename;
+                $locator = $this->grav['locator'];
+                $path = $locator->findResource('user://data', true);
+                $fullFileName = $path . DS . $this->form->name . DS . $filename;
 
                 $file = File::instance($fullFileName);
 
@@ -192,7 +172,7 @@ class FormPlugin extends Plugin
                     );
                     $file->save($body);
                 } elseif ($operation == 'add') {
-                    $vars = $vars['form']->value();
+                    $vars = $vars['form']->value()->toArray();
 
                     foreach ($form->fields as $field) {
                         if (isset($field['process']) && isset($field['process']['ignore']) && $field['process']['ignore']) {
@@ -218,21 +198,32 @@ class FormPlugin extends Plugin
     }
 
     /**
-     * Validate a form
+     * Handle form validation error
      *
-     * @param Form $form
-     * @return bool
+     * @param  Event  $event An event object
      */
-    protected function validate($form) {
-        foreach ($form->fields as $field) {
-            if (isset($field['validate']) && isset($field['validate']['required']) && $field['validate']['required']) {
-                if (!$form->value($field['name'])) {
-                    return false;
-                }
-            }
+    public function onFormValidationError(Event $event)
+    {
+        $form = $event['form'];
+        if (empty($form->message)) {
+            $form->message = $event['message'];
         }
 
-        return true;
+        $uri = $this->grav['uri'];
+        $route = $uri->route();
+
+        /** @var Twig $twig */
+        $twig = $this->grav['twig'];
+        $twig->twig_vars['form'] = $form;
+
+        /** @var Pages $pages */
+        $pages = $this->grav['pages'];
+        $page = $pages->dispatch($route, true);
+
+        unset($this->grav['page']);
+        $this->grav['page'] = $page;
+
+        $event->stopPropagation();
     }
 
     /**

@@ -1,8 +1,23 @@
+# v1.0.0
+## 11/21/2015
+
+1. [](#new)
+    * Server-side validation of forms #11
+    * Added french translation
+    * Added **nonce** form security
+1. [](#improved)
+    * Show a more meaningful error when the display page is not found
+    * Added links to learn site for form examples
+    * Label can be omitted
+    * Allow user to set the CSS class for buttons
+1. [](#bugfix)
+    * Fixed multi-language forms
+    * Checkbox is translatable
+    * Minor fixes
+
 # v0.6.0
 ## 10/21/2015
 
-1. [](#improved)
-    * Added links to learn site for form examples
 1. [](#bugfix)
     * Fixed for missing attributes in textarea field
     * Fixed checkbox inputs

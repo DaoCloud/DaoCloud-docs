@@ -77,8 +77,7 @@ class EmailPlugin extends Plugin
                 }
                 $subject = !empty($params['subject']) ?
                     $twig->processString($params['subject'], $vars) : $form->page()->title();
-                $body = !empty($params['body']) ?
-                    $twig->processString($params['body'], $vars) : '{% include "forms/data.html.twig" %}';
+                $body = $twig->processString(!empty($params['body']) ? $params['body'] : '{% include "forms/data.html.twig" %}', $vars);
 
                 $message = $this->email->message($subject, $body)
                     ->setFrom($from)

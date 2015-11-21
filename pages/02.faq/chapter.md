@@ -5,8 +5,4 @@ taxonomy:
         - docs
 ---
 
-### Chapter 2
-
 # 常见问题
-
-您想知道的，这里都有答案。

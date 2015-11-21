@@ -5,105 +5,37 @@ taxonomy:
         - docs
 ---
 
-MySQL，有管理直接点击，PHPMyAdmin
-Redis，无管理，现在无管理方案
-MongoDB，MongoExpress，部署镜像，不支持登陆
-InfluxDB，管理UI必须内网访问，用户不可见
+>>>> 警告：容器被设计为无状态的实例，任何需要持久化的数据，请采用数据库或文件系统保存在容器实例之外，我们不对保存在容器内的数据提供任何保障。当 DaoCloud 需要迁移，或用户扩容容器资源时，容器内的数据将会遗失，并且无法找回。
 
-<!--一个月后更新 -->
+## 使用数据库服务
 
-## 服务集成
+DaoCloud 在服务集成模块中提供了 MySQL、Redis、MongoDB、InfluxDB 等数据服务，如您需要做内容的持久化保存，可以选择使用 MySQL 和 MongoDB。创建数据服务实例用，可以与您的应用进行绑定。
 
-大部分情况下应用的运行离不开各类后台服务，尤其是数据库。DaoCloud 服务集成功能目前提供 MongoDB、MySQL、Redis 和 InfluxDB 服务。
+我们还将添加更多数据库服务。
 
-让我们配置一个常用的 MySQL 数据库来熟悉服务实例的创建和配置过程吧。
+有关服务集成模块的介绍，请参考仔细阅读本节内容。
 
-> 注意：服务集成目前不支持[自有主机](runtimes/README.md)，请将数据库服务以应用的方式部署到自有主机中。
+## 使用 Volume
 
-### 配置步骤
+除了数据库，您还可以使用 Volume 保存您在容器中产生或使用的文件。一个 Volume 就是在一个或者多个容器里有特殊用途的目录。它绕过了容器内部的文件系统为持久化数据、共享数据提供了下面这些有用的特性：
 
-第一步：在控制台点击「服务集成」。
++ 容器可以通过把数据写在 Volume 上来实现数据持久化
++ Volume 可以在不同的容器之间共享和重用数据
++ 容器数据的备份、恢复和迁移都可以通过 Volume 实现
++ 通过 Volume 实现多容器共享数据，从而实现应用的横向扩展
 
-![控制台：点击代码构建](/img/screenshots/features/services/dashboard.png)
+您可以在写 Dockerfile 时，把需要持久化，或者频繁更改的文件保存在 Volume 中，在程序运行时，可以通过 Volume 控制器直接修改这些文件（如替换博客主题，或修改程序的 config 文件等），避免重新构建和发布，非常方便。
 
----
+有关 Volume 的使用技巧和示例，请参考仔细阅读本节内容。
 
-第二步：在「Dao 服务」列表中选择「MySQL」图标。
+## 数据备份服务
 
-![服务集成：准备创建新服务](/img/screenshots/features/services/services-index.png)
-
----
-
-第三步：接下来点击「创建服务实例」。
-
-![服务集成：MySQL 服务](/img/screenshots/features/services/mysql.png)
+即将推出。
 
 ---
 
-第四步：为服务实例指定「服务实例名称」，服务实例名称只能包含英文数字、下划线 `_`、小数点 `.`、和减号 `-`，并且不能与现有服务实例重名。
+## DaoCloud 的「服务集成」模块设计理念和功能介绍
 
-![服务集成：配置新服务](/img/screenshots/features/services/new.png)
 
----
 
-第五步：选择配置：目前我们提供了从 50MB 到 100MB 不等的数据容量，可供绝大多数应用正常使用。
 
----
-
-第六步：点击「创建」，DaoCloud 将在云平台为您部署相应的服务实例。
-
----
-
-第七步：创建成功，进入服务实例页面。
-
-![服务集成：服务创建成功](/img/screenshots/features/services/service-overview.png)
-
----
-
-就这么简单，您的 MySQL 服务实例已经准备就绪可以和应用对接了。
-
-### 查看服务清单
-
-在「服务集成」页面中，点击「我的服务」即可列出服务清单。
-
-![服务集成：服务列表](/img/screenshots/features/services/services-index-with-service.png)
-
-在服务清单中点击服务实例名称，您可以进入项目的「概览」、「绑定的应用」和「设置」选项卡。
-
----
-
-概览选项卡可以查看服务的参数：连接地址、实例名、用户和密码。
-
-![「概览」选项卡](/img/screenshots/features/services/service-overview.png)
-
----
-
-绑定的应用选项卡提供了绑定该服务实例的应用列表。
-
-![「绑定的应用」选项卡](/img/screenshots/features/services/service-binding.png)
-
----
-
-设置选项卡则允许用户删除服务实例。
-
-![「设置」选项卡](/img/screenshots/features/services/service-settings.png)
-
-### SaaS 服务
-
-DaoCloud 服务市场还将陆续集成各类第三方 SaaS 化服务，目前已经提供 New Relic 服务（见下图）。
-
-![](/img/screenshots/features/services/saas.png)
-
-创建 New Relic 服务实例，输入 `APP_NAME` 和 `LICENSE_KEY` 后，将返回 `NEW_RELIC_APP_NAME` 和 `NEW_RELIC_LICENSE_KEY` 参数，用于和应用绑定。
-
-DaoCloud 会很快增加更多实用的 SaaS 化服务，如果您有感兴趣的服务希望我们集成，请来信告知。
-
-> 提示：请勿在这个环境中保存任何重要数据，请做必要的备份
-
-### 下一步
-
-至此，您已经掌握了如何在 DaoCloud 上创建和配置服务实例。
-
-下面您可以：
-
-* 了解如何部署一个应用镜像并绑定数据库服务：参考[应用部署](deployment.md)。

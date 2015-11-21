@@ -1,5 +1,5 @@
 <span class="login-status">
     {% if grav.user.username %}
-        Welcome <strong>{{ grav.user.username }}</strong>, <a class="logout" href="{{ uri.url }}/task:login.logout">Logout</a>
+        Welcome <strong>{{ grav.user.username }}</strong>, <a class="logout" href="{{ uri.addNonce(uri.url ~ '/task' ~ config.system.param_sep ~ 'login.logout', 'logout-form', 'logout-nonce') }}">Logout</a>
     {% endif %}
 </span>
