@@ -21,8 +21,11 @@ DaoCloud 文档采用 Grav CMS，内容通过 Markdown 格式写作，并在 Git
 4. 在 grav－core 根目录运行 `bin/grav install`  (e.g. `~/www/grav-core/`)完成以来安装
 5. 如需运行，请先安装 PHP，然后使用 `php -S localhost:8000`，启动程序
 
-注意：确保 daocloud-docs 文件夹下有 .dependencies 隐藏文件，否则无法完成 grav 插件的依赖安装
-如无此文件，可根据以下内容创建
+注意：
+
+我们推荐使用 Skitch 软件截屏并加标注，除了特别小的内容，截屏横向宽度不要小于 800px。另外，请确保 daocloud-docs 文件夹下有 .dependencies 隐藏文件，否则无法完成 grav 插件的依赖安装
+如无此文件，可根据以下内容创建。
+
 
 如遇到任何问题，请[联系我们](mailto:support@daocloud.io)
 

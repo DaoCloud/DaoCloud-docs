@@ -2,7 +2,7 @@ enabled: true
 top_level_version: false
 github:
   position: top
-  tree: 'https://github.com/DaoCloud/daocloud-docs/develop'
+  tree: 'https://github.com/DaoCloud/daocloud-docs/blob/master/'
   commits: 'https://github.com/DaoCloud/daocloud-docs/commits/develop/'
 streams:
   schemes:

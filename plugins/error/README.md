@@ -8,7 +8,7 @@ This plugin is required and you'll find it in any package distributed that conta
 
 # Installation
 
-Installing the Error plugin can be done in one of two ways. Our GPM (Grav Package Manager) installation method enables you to quickly and easily install the plugin with a simple terminal command, while the manual method enables you to do so via a zip file. 
+Installing the Error plugin can be done in one of two ways. Our GPM (Grav Package Manager) installation method enables you to quickly and easily install the plugin with a simple terminal command, while the manual method enables you to do so via a zip file.
 
 ## GPM Installation (Preferred)
 
@@ -36,7 +36,7 @@ Something you might want to do is to override the look and feel of the error pag
 
 ### Template
 
-Copy the template file [error.html.twig](templates/error.html.twig) into the `templates` folder of your custom theme and that is it. 
+Copy the template file [error.html.twig](templates/error.html.twig) into the `templates` folder of your custom theme and that is it.
 
 ```
 /your/site/grav/user/themes/custom-theme/templates/error.html.twig
@@ -46,13 +46,24 @@ You can now edit the override and tweak it however you prefer.
 
 ### Page
 
-Copy the page file [error.md](pages/error.error) into the `pages` folder of your user directory and that is it. 
+Copy the page file [error.md](pages/error.error) into the `pages` folder of your user directory and that is it.
 
 ```
 /your/site/grav/user/pages/error/error.md
 ```
 
 You can now edit the override and tweak it however you prefer.
+
+# CLI Usage
+The `error` plugin comes with a CLI command that outputs the `grav.log` in a beautified way, with possibility of limiting the amount of errors displayed, as well as include the trace in the output.
+
+### Commands
+
+| `bin/plugin error log` |                                                                 |
+|------------------------|-----------------------------------------------------------------|
+| [ --limit N \| -l N ]  | The amount of errors to display. Default is 5                   |
+| [ --trace \| -t ]      | When used, it will add the backtrace in the output of the error |
+
 
 # Updating
 
