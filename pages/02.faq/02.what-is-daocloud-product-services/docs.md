@@ -5,7 +5,7 @@ taxonomy:
         - docs
 ---
 
-![产品模块](products.png)
+![产品模块](products.png?resize=800)
 
 #### 核心产品模块
 

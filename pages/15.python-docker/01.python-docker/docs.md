@@ -71,7 +71,7 @@ Ruby 对以上两点持保留意见。
 
 欢迎进入由 DaoCloud 推出的「Docker 开发大礼包」第二季「Python 应用 Docker 开发大礼包」，四篇由浅入深、精心设计的系列文章，将带领 Python 开发者领略 Docker 化应用开发和发布的全新体验。
 
-* [如何开发一个基于 Docker 的 Python 应用（一）](http://open.daocloud.io/ru-he-kai-fa-yi-ge-ji-yu-docker-de-python-ying-yong/)
-* [如何制作一个定制的 Python 基础 Docker 镜像（二）](http://open.daocloud.io/ru-he-zhi-zuo-yi-ge-ding-zhi-de-python-ji-chu-docker-jing-xiang/)
-* [如何用 Docker Compose 配置 Django 应用开发环境（三）](http://open.daocloud.io/ru-he-yong-docker-compose-pei-zhi-django-ying-yong-kai-fa-huan-jing/)
-* [如何构建具有持续交付能力的 Docker 化 Django 应用（四）](http://open.daocloud.io/ru-he-gou-jian-ju-you-chi-xu-jiao-fu-neng-li-de-docker-hua-django-ying-yong/)
+* [如何开发一个基于 Docker 的 Python 应用（一）](../../python-docker/docker-python-001)
+* [如何制作一个定制的 Python 基础 Docker 镜像（二）](../../python-docker/python-docker-002)
+* [如何用 Docker Compose 配置 Django 应用开发环境（三）](../../python-docker/docker-compose-django)
+* [如何构建具有持续交付能力的 Docker 化 Django 应用（四）](../../python-docker/docker-django)

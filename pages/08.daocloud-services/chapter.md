@@ -1,8 +1,8 @@
 ---
-title: '熟悉 DaoCloud 的各类后台服务'
+title: '使用 DaoCloud 服务集成功能'
 taxonomy:
     category:
         - docs
 ---
 
-# 熟悉 DaoCloud 的各类后台服务 
+# 使用 DaoCloud 服务集成功能

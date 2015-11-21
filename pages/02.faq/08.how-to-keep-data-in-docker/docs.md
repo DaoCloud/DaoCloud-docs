@@ -1,5 +1,5 @@
 ---
-title: 如何在容器中实现数据持久化
+title: 如何在容器中保存数据？
 taxonomy:
     category:
         - docs
@@ -11,9 +11,11 @@ taxonomy:
 
 DaoCloud 在服务集成模块中提供了 MySQL、Redis、MongoDB、InfluxDB 等数据服务，如您需要做内容的持久化保存，可以选择使用 MySQL 和 MongoDB。创建数据服务实例用，可以与您的应用进行绑定。
 
-我们还将添加更多数据库服务，如您希望 DaoCloud 支持某款数据库服务，请跟[我们联系](mailto:support@daocloud.io)。
+我们还将添加更多数据库服务。
 
-有关服务集成模块的介绍，请参考仔细阅读本节内容。
+有关服务集成模块的介绍，请参考：「[使用 DaoCloud 服务集成功能](../../daocloud-services)」。
+
+---
 
 ## 使用 Volume
 
@@ -26,8 +28,12 @@ DaoCloud 在服务集成模块中提供了 MySQL、Redis、MongoDB、InfluxDB �
 
 您可以在写 Dockerfile 时，把需要持久化，或者频繁更改的文件保存在 Volume 中，在程序运行时，可以通过 Volume 控制器直接修改这些文件（如替换博客主题，或修改程序的 config 文件等），避免重新构建和发布，非常方便。
 
-有关 Volume 的使用技巧和示例，请参考仔细阅读本节内容。
+有关 Volume 的使用技巧和示例，您可以参考：「[使用 Volume 实现容器状态持久化](../../daocloud-services/use-volume)」
+
+---
 
 ## 数据备份服务
 
 即将推出。
+
+
