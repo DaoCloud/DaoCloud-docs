@@ -1,9 +1,0 @@
-email: fiona.feng@daocloud.io
-access:
-  admin:
-    login: true
-    super: true
-fullname: 'Fiona Feng'
-title: Editor
-state: enabled
-hashed_password: $2y$10$7vhlifZjNAbRPDp31E1E.uU7XyW9N9JyXAAmA7gIKrsDrsdeasxX6
