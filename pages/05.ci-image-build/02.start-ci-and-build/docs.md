@@ -10,10 +10,18 @@ process:
 <!--
 
 完整的 CI 流程
-daocloud.yml
-git commit
+daocloud.yml（细节在后面的daocloud.yml单独讲）
+触发的方式 
+	git commit
+    手工重新执行
+    触发配置界面
 ci 的 log 窗口
 邮件提醒
+
+CI的作用：
+1.提供自动化测试的基础设施
+2.提供代码进行自动化测试所需要的运行时环境和各类数据服务能力
+3.执行指定的自动化测试脚本，并反馈测试结果
 
 -->
 
@@ -21,7 +29,12 @@ ci 的 log 窗口
 
 完整的 build 流程
 dockerfile
-git tag commit
+触发的方式：
+
+	添加新项目时的首次init build（默认是 master 分支）
+	git tag commit（所有分支都会触发）
+    手动构建（可以选择代码分支，但是code是基于上次自动构建的 commit 版本）
+    触发配置界面
 build 的 log 窗口
 邮件提醒
 

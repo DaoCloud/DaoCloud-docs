@@ -21,19 +21,16 @@ process:
 
 第一步：在控制台点击「我的主机」。
 
-![控制台：点击我的主机](/img/screenshots/features/runtimes/new/dashboard.png)
 
 ---
 
 第二步：在「我的主机」的界面中点击「添加新主机」。
 
-![我的主机：准备添加新主机](/img/screenshots/features/runtimes/new/runtimes-index.png)
 
 ---
 
 第三步：在「添加新主机」的界面中点击「免费胶囊主机」。
 
-![添加新主机：免费胶囊主机](/img/screenshots/features/runtimes/new/try.png)
 
 ---
 
@@ -75,19 +72,13 @@ process:
 
 第一步：在控制台点击「我的主机」。
 
-![控制台：点击我的主机](/img/screenshots/features/runtimes/new/dashboard.png)
 
----
 
 第二步：在「我的主机」的界面中点击「添加新主机」。
-
-![我的主机：准备添加新主机](/img/screenshots/features/runtimes/new/runtimes-index.png)
 
 ---
 
 第三步：按照最新的安装步骤进行操作。
-
-![我的主机：手动添加](/img/screenshots/features/runtimes/new/manual.png)
 
 ---
 
@@ -120,13 +111,11 @@ process:
 
 第一步：访问腾讯云[服务市场](http://market.qcloud.com/detail.php?productId=143)并点击「立即使用」。
 
-![腾讯云：服务市场](/img/screenshots/features/runtimes/new/qcloud-market.png)
 
 ---
 
 第二步：登录腾讯云[云主机管理](http://console.qcloud.com/cvm/index)找到新创建的腾讯云主机并点击「登陆到 Web 客户端」。
 
-![腾讯云：管理云主机](/img/screenshots/features/runtimes/new/qcloud-manage.png)
 
 > 提示：如果找不到新创建的主机，请确认选择正确的区域，实例中为「华东区-上海」。
 
@@ -134,19 +123,19 @@ process:
 
 第三步：在 Web 客户端中找到绑定用的网址，并输入到浏览器中。
 
-![腾讯云：开启 Web 客户端](/img/screenshots/features/runtimes/new/qcloud-console.png)
+
 
 ---
 
 第四步：在打开的网页中选择要绑定到的账户，并点击「确认绑定」。
 
-![我的主机：主机绑定](/img/screenshots/features/runtimes/new/binding.png)
+
 
 ---
 
 就这么简单，这时您已经成功创建了一台腾讯云主机并和 DaoCloud 账户成功绑定了。您可以在主机列表中找到这台主机。
 
-![腾讯云：绑定成功](/img/screenshots/features/runtimes/new/qcloud-success.png)
+
 
 > **Aliyun 和 UCloud 即将上线。**
 

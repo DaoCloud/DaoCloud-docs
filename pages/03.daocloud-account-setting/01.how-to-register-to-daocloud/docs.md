@@ -21,7 +21,7 @@ process:
 
 您可以通过您的个人电子邮箱以注册 DaoCloud 的个人账号，或者用公司邮箱注册 DaoCloud 账号，然后创建组织并邀请同事进行协作开发。
 
-首先，我们登陆 [DaoCloud 的首页](http://www.daocloud.io)，在页面的中央，可以使用我们的电子邮箱，注册 DaoCloud 账号。此处假设使用 me@example.com 作为账号邮箱。
+首先，我们登陆 [DaoCloud 的首页](http://www.daocloud.io)，在页面的中央，可以使用您的电子邮箱，注册 DaoCloud 账号。此处假设使用 me@example.com 作为账号邮箱。
 
 ![DaoCloud 首页](2.jpg)
 
@@ -29,7 +29,7 @@ process:
 
 ![新用户注册页面](3.jpg)
 
-注册完成后，浏览器会自动跳转到 DaoCloud 的账号后台。此时，我们需要到我们刚才使用的电子邮箱中查收来自 DaoCloud 的注册验证邮件。
+注册完成后，浏览器会自动跳转到 DaoCloud 的账号后台。此时，请到您的电子邮箱查收来自 DaoCloud 的注册验证邮件。
 
 ![验证邮箱](5.jpg)
 
@@ -43,13 +43,13 @@ process:
 
 ### 使用 GitHub 账号注册 DaoCloud 账号
 
-我们除了可以使用电子邮箱注册 DaoCloud 账号以外，我们还可以直接使用 GitHub 账号进行注册并直接将其绑定到 DaoCloud 中，以便在以后的 DaoCloud 功能使用上更为便捷。
+除了可以使用电子邮箱注册 DaoCloud 账号以外，我们还可以直接使用 GitHub 账号进行注册并直接将其绑定到 DaoCloud 中，以便在以后的 DaoCloud 功能使用上更为便捷。
 
-同样的，我们登陆到 DaoCloud 的首页，在电子邮箱的填写处下方，有一个「用其他账号注册」的标示，其中第一个图标便是使用 GitHub 账号注册 DaoCloud 账号的入口。
+同样的，登陆到 DaoCloud 的首页，在电子邮箱的填写处下方，有一个「用其他账号注册」的标示，其中第一个图标便是使用 GitHub 账号注册 DaoCloud 账号的入口。
 
 ![GitHub 注册](1.jpg)
 
-点击这个按钮以后，浏览器会跳转到 GitHub 的应用授权页面上，我们可以在这里查看 DaoCloud 需要获取的权限。对应用信息确认无误后，您需要点击下方的「**Authorize application**」按钮，授权 DaoCloud 获取您的 GitHub 账号信息，完成授权以后便会自动回到 DaoCloud 的注册页面，您只需将您常用的（或指定的）电子邮箱填到页面相应的位置中，并点击「**注册**」按钮，便可完成 DaoCloud 账号的注册。
+点击这个按钮以后，浏览器会跳转到 GitHub 的应用授权页面上，可以在这里查看 DaoCloud 需要获取的权限。对应用信息确认无误后，您需要点击下方的「**Authorize application**」按钮，授权 DaoCloud 获取您的 GitHub 账号信息，完成授权以后便会自动回到 DaoCloud 的注册页面，您只需将您常用的（或指定的）电子邮箱填到页面相应的位置中，并点击「**注册**」按钮，便可完成 DaoCloud 账号的注册。
 
 >>>>> 请务必补全您的用户名和电子邮箱，今后您既可以使用 GitHub 登陆，也可以是直接使用用户名或邮箱登陆。补全信息，也有助于您收到我们的各类通知邮件。
 
