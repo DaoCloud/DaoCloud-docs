@@ -5,13 +5,13 @@ taxonomy:
         - docs
 ---
 
----
+<!-- reviewed by fiona -->
 
-在完成了 DaoCloud 账号的注册后，您大可不著急使用 DaoCloud 所提供的服务，而是可以先对您的 DaoCloud 账号进行一些必要了解和设置。
+在完成了 DaoCloud 账号的注册后，您大可不必着急使用 DaoCloud 所提供的服务，而是可以先对您的 DaoCloud 账号进行一些必要的了解和设置。
 
-### 账户信息
+### 账号信息
 
-在个人设置页面中，第一个标签页便是账户的基本信息设置页面。在这个页面中，您可以对账户当前使用套餐进行查看和更改。
+在个人设置页面中，第一个标签页便是账号的基本信息设置页面。在这个页面中，您可以查看并更改账号当前使用的套餐。
 
 ![更改套餐](account-1.jpg)
 
@@ -26,7 +26,7 @@ taxonomy:
 
 ![为账户充值](account-plan-3.jpg)
 
-如果您在各种渠道获得了 DaoCloud 发放的礼券，便可以在这个页面的下方「我的礼券」栏目中将其使用到 DaoCloud 账户中。
+如果您在各种渠道获得了 DaoCloud 发放的礼券，可以在这个页面的下方「我的礼券」栏目中将其兑换到 DaoCloud 账户中。
 
 ![使用礼券](account-2.jpg)
 
@@ -44,7 +44,7 @@ taxonomy:
 
 ### 邮箱
 
-DaoCloud 的用户系统允许您将多个电子邮箱绑定到同一个 DaoCloud 账号上，以发挥不同的用途。在这个「邮箱」标签页中，您可以关联和修改您的邮件地址，并设置其中的一个为主邮箱。您的主邮箱将被用于登陆账户以及接收相关的邮件通知（例如，账户提醒和计费收据）。
+DaoCloud 的用户系统允许您将多个电子邮箱绑定到同一个 DaoCloud 账号上，以发挥不同的用途。在这个「邮箱」标签页中，您可以关联和修改您的邮件地址，并设置其中的一个为主邮箱。您的主邮箱将被用于登录账号以及接收相关的邮件通知（例如，账号提醒和计费收据）。
 
 ![邮箱](email-1.jpg)
 
@@ -52,17 +52,17 @@ DaoCloud 的用户系统允许您将多个电子邮箱绑定到同一个 DaoClou
 
 ![绑定新邮箱](email-2.jpg)
 
-### 第三方账户
+### 第三方账号
 
-DaoCloud 为了提供更优质的用户服务，提供了[**微信**](http://weixin.qq.com)、[**GitHub**](https://github.com)、[**Bitbucket**](https://bitbucket.org/)、[**Coding**](https://coding.net/) 和 [**GitCafe**](https://gitcafe.com) 等第三方网站的账户绑定功能。
+DaoCloud 为了追求更优质的服务体验，提供了[**微信**](http://weixin.qq.com)、[**GitHub**](https://github.com)、[**Bitbucket**](https://bitbucket.org/)、[**Coding**](https://coding.net/) 和 [**GitCafe**](https://gitcafe.com) 等第三方网站的账号绑定功能。
 
 ![第三方账号](3rd-accounts-1.jpg)
 
 #### 绑定微信账号
 
-微信账号是登陆 DaoCloud 的方式之一，绑定微信账号后，DaoCloud 能为您提供更方便的服务，如微信安全登陆、代码构建状态变更等通知的推送等。
+微信账号是登陆 DaoCloud 的方式之一。绑定微信账号后，DaoCloud 能为您提供更方便的服务，如微信安全登陆、代码构建状态变更等通知的推送等。
 
-若需要将您的微信账号绑定到您的 DaoCloud 账号上，你需要点击「微信」栏目上的「绑定账户」按钮，页面上会弹出一个二维码，用微信客户端的「扫一扫」功能进行扫描，会看到 DaoCloud 的微信公众号，对其添加关注后，即可将您的微信账号跟 DaoCloud 账号绑定在一起。
+若需要将您的微信账号绑定到您的 DaoCloud 账号上，你需要点击「微信」栏目上的「绑定账户」按钮，页面上会弹出一个二维码，使用微信客户端的「扫一扫」功能进行扫描，会看到 DaoCloud 的微信公众号，对其添加关注后，即可将您的微信账号与 DaoCloud 账号绑定在一起。
 
 ![绑定微信账号](3rd-accounts-wechat.jpg)
 
@@ -76,11 +76,11 @@ DaoCloud 为用户提供 Docker 镜像构建服务「代码构建」，其中需
 
 ![授权 DaoCloud 的 GitHub 应用](github-2.jpg)
 
-我们可以在这里查看 DaoCloud 需要获取的权限。对应用信息确认无误后，您需要点击下方的「**Authorize application**」按钮，授权 DaoCloud 获取您的 GitHub 账号信息，即可将 GitHub 账号绑定到您的 DaoCloud 账号上。
+我们可以在这里查看 DaoCloud 需要获取的权限。核对应用信息，确认无误后，您需要点击下方的「**Authorize application**」按钮，授权 DaoCloud 获取您的 GitHub 账号信息，即可将 GitHub 账号绑定到您的 DaoCloud 账号上。
 
 >>>>> 每一个 GitHub 账号只能与一个 DaoCloud 账号进行绑定。
 
->>>>> 因为 Bitbucket、Coding 和 GitCafe 等平台的账号绑定流程与 GitHub 类似，故此处不再详细介绍。
+>>>>> 因为 Bitbucket、Coding 和 GitCafe 等平台的账号绑定流程与 GitHub 类似，故此处不再赘述。
 
 ### 交易记录
 
@@ -100,7 +100,7 @@ DaoCloud 为用户提供 Docker 镜像构建服务「代码构建」，其中需
 
 ![创建组织](organizations-2.jpg)
 
->>>>> 组织功能的详细使用方法将在「[组织的概念和用法](http://docs.daocloud.io/daocloud-account-setting/daocloud-org)」中阐述，此处不会详细介绍。
+>>>>> 组织功能的详细使用方法将在「[组织的概念和用法](http://docs.daocloud.io/daocloud-account-setting/daocloud-org)」中阐述，此处不进行详细介绍。
 
 ### 动态口令认证
 
@@ -110,10 +110,10 @@ DaoCloud 为用户提供 Docker 镜像构建服务「代码构建」，其中需
 
 ### 通知
 
-在 DaoCloud 所提供的「镜像构建」功能中，由于 Docker 镜像的构建和持续集成会以异步的返回的形式返回结果，所以 DaoCloud 会以**通知**的形式向您推送，其中推送的方式有电子邮件和微信消息两种方式。
+在 DaoCloud 所提供的「镜像构建」功能中，由于 Docker 镜像的构建和持续集成会以异步的形式返回结果，所以 DaoCloud 会以**通知**的形式向您推送，其中推送的方式有电子邮件和微信消息两种方式。
 
-对于一些较为复杂的 Docker 镜像，构建用时可能会比较长，为了能尽快完成接下来的工作，我们建议您尽快完成 DaoCloud 主电子邮箱账号的验证并将微信账号与 DaoCloud 账号绑定。
+对于一些较为复杂的 Docker 镜像，构建用时可能会比较长，为了能顺利完成接下来的工作，我们建议您尽快完成 DaoCloud 主电子邮箱账号的验证，并将微信账号与 DaoCloud 账号绑定。
 
 ![通知](notications-1.jpg)
 
->>>>> 另外，为了更好地为开发者提供优质的服务，DaoCloud 也将微信作为我们的客服渠道之一。所以再次建议您尽快地将微信账号与 DaoCloud 账号进行绑定。
+>>>>> 另外，为了更好地为开发者提供优质的服务，DaoCloud 也将微信作为我们的客服渠道之一。所以再次建议您尽快将微信账号与 DaoCloud 账号进行绑定。

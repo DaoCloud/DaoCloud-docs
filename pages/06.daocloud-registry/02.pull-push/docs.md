@@ -28,7 +28,9 @@ docker pull daocloud.io/frankyuyong/coding:v19
 ```
 
 ```
-docker pull daocloud.io/frankyuyong/coding:v19  
+docker push daocloud.io/frankyuyong/coding:v19  
 ```
+
+push 完成后，镜像会显示在「我的镜像」页面，您可以直接操作部署和其他修改。
 
 >>>>> 注意，我们对所有用户都开通了镜像的 pull 功能，但是仅限付费用户使用 push 功能。另外，我们也建议您通过 Dockerfile 的方式在 DaoCloud 完成镜像的构建，或者直接使用 Docker Hub 上的镜像，尽量避免 push 本地镜像到 DaoCloud 平台，由于一些版本问题，如果你呢镜像版本较久，可能无法在 DaoCloud 完成部署。

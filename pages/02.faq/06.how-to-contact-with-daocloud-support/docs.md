@@ -5,6 +5,8 @@ taxonomy:
         - docs
 ---
 
+<!-- reviewed by fiona -->
+
 DaoCloud 提供以下几种技术支持方式
 
 
@@ -16,7 +18,7 @@ DaoCloud 网站和控制台页面右下角的问号按钮，是 DaoCloud 主要�
 
 #### 电子邮件联系
 
-如果您遇到的问题比较复杂，或您有产品、技术合作等方面的建议，也可通过 [support@daocloud.io](support@daocloud.io) 与我们联系。但此邮箱的响应速度较慢，我们还是推荐用户使用第一种方式。
+如果您遇到的问题比较复杂，或您有产品、技术合作等方面的建议，也可通过 [support@daocloud.io](support@daocloud.io) 与我们联系。鉴于此邮箱的响应速度较慢，我们还是推荐用户使用第一种方式。
 
 #### 付费用户专属 400 电话
 

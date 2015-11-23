@@ -5,4 +5,6 @@ taxonomy:
         - docs
 ---
 
+<!-- reviewed by fiona -->
+
 # 注册并配置 DaoCloud 账号 

@@ -5,8 +5,9 @@ taxonomy:
         - docs
 ---
 
----
-密码是保证 DaoCloud 账号安全性的主要工具，如果密码泄露，请马上修改密码。
+<!-- reviewed by fiona -->
+
+密码是保证 DaoCloud 账号安全的主要工具，如果密码发生泄露，请马上进行修改。
 
 ### 修改密码
 
@@ -33,6 +34,8 @@ taxonomy:
 如果您的 DaoCloud 密码丢失或是忘记了密码，您可以通过「忘记密码」来将密码重置。
 
 #### 第一步
+<!-- reviewed by fiona -->
+
 
 在 DaoCloud 的登录界面上，点击「忘记密码？」按钮。
 
