@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url(//fonts.googleapis.com/css?family=Montserrat:400|Muli:300,400|Inconsolata);
 #top-github-link, #body #breadcrumbs {
   position: relative;
   top: 50%;
@@ -334,7 +333,7 @@ body {
   font-weight: 400; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-family: Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   line-height: 150%;
@@ -417,7 +416,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: "Inconsolata", monospace; }
+  font-family: Consolas, Monaco, monospace; }
 
 code {
   background: #f9f2f4;
