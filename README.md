@@ -15,6 +15,8 @@ DaoCloud 文档采用 Grav CMS，内容通过 Markdown 格式写作，并在 Git
 
 请您通过 pull reqesut 的方式提交您的文档修改，或新的内容。我们会仔细阅读所有的 PR，如果需要，会与您沟通讨论，修订完善后合并到我们的 master 分支并上线。
 
+在开始工作前，请您仔细阅读 DaoCloud 的[文档书写规范和提交流程](http://docs-static.daocloud.io/write-docs)。
+
 ## 感谢
 
 我们衷心感谢所有为 DaoCloud 添砖加瓦的用户。
