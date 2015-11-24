@@ -125,6 +125,8 @@ docker run -d -p 8888:8888 -e PASSWORD=admin ipython/notebook
 
 打开游览器，访问 8888 端口，就可以看到 IPython Notebook 了。
 
-![ipython login](http://blog.daocloud.io/wp-content/uploads/2015/09/QQ20150902-1.png)
+![](QQ20150902-1.png)
+
+---
 
 ![](http://blog.daocloud.io/wp-content/uploads/2015/09/QQ20150902-2.png)

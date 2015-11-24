@@ -95,19 +95,19 @@ CI log，可以展示CI的成功和失败次数,需要特定的设置在unit tes
 
 第一步：在控制台点击「代码构建」。
 
-![控制台：点击代码构建](/img/screenshots/features/build-flows/dashboard.png)
+
 
 ---
 
 第二步：在「代码构建」的界面中点击「创建新项目」。
 
-![代码构建：准备创建新项目](/img/screenshots/features/build-flows/build-flows-index.png)
+
 
 ---
 
 第三步：为项目指定「项目名称」，项目名称只能包含英文数字、下划线 `_`、小数点 `.`、和减号 `-`，并且不能与现有项目重名。
 
-![代码构建：配置新项目](/img/screenshots/features/build-flows/new.png)
+
 
 ---
 
@@ -151,19 +151,19 @@ CI log，可以展示CI的成功和失败次数,需要特定的设置在unit tes
 
 第十步：点击「开始创建」，系统将自动根据您代码仓库主分支的最新代码启动第一次应用构建过程（标签为 `master-init`）。
 
-![代码构建：项目开始构建](/img/screenshots/features/build-flows/build-start.png)
+
 
 ---
 
 就这么简单，经过短暂的等待您已经成功关联了代码库，并完成了第一次 Docker 镜像的构建。
 
-![代码构建：项目构建成功](/img/screenshots/features/build-flows/build-success.png)
+
 
 ### 查看项目清单
 
 在项目清单列表中，您可以看到您的项目的构建状态，同时也会显示出代码源、编程语言、CI 服务、构建时间和镜像名称。
 
-![代码构建：项目列表](/img/screenshots/features/build-flows/build-flows-index-with-project.png)
+
 
 在项目清单中点击项目名称，您可以进入项目的「镜像构建」、「持续集成」和「设置」选项卡。
 
@@ -171,19 +171,19 @@ CI log，可以展示CI的成功和失败次数,需要特定的设置在unit tes
 
 镜像构建选项卡可以查看 Docker 镜像的构建历史和在构建过程中产生的实时日志，了解镜像构建的历史和出错时的原因。
 
-![「镜像构建」选项卡](/img/screenshots/features/build-flows/build-history.png)
+
 
 ---
 
 持续集成选项卡提供了使用和触发 DaoCloud 持续集成的详细信息。
 
-![「持续集成」选项卡](/img/screenshots/features/build-flows/build-ci.png)
+
 
 ---
 
 设置界面中，可以重新配置持续集成服务、构建位置和镜像发布到的目标位置，也可以删除该项目。
 
-![「设置」选项卡](/img/screenshots/features/build-flows/build-settings.png)
+
 
 ### 使用 DaoCloud 构建镜像的优势
 
@@ -195,11 +195,11 @@ CI log，可以展示CI的成功和失败次数,需要特定的设置在unit tes
 
 如下图，在 Git 推送了名为「v1.0」的标签后 DaoCloud 会自动从 GitHub 拉取代码并完成 docker 镜像的自动构建。
 
-![基于新标签的自动构建](/img/screenshots/features/build-flows/tagging.png)
+
 
 这样的自动化触发，是通过 WebHook 机制完成的。我们可以在 `dao-2048` 项目的 GitHub 设置页中，看到这个 WebHook 回调的 URL。
 
-![GitHub 上的 WebHook](/img/screenshots/features/build-flows/webhook.png)
+
 
 > 警告：为了成功触发回调，请勿修改这个 URL。
 

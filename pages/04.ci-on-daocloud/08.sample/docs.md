@@ -12,15 +12,17 @@ process:
     twig: true
 ---
 
+<!-- reviewed by fiona -->
+
 <!--这篇也不需要修改了-->
 
 
 #### 基础示例
 
-为了帮助开发者快速上手，体验 Docker 和 DaoCloud 带来的便利性，我们针对各种开发语言和后台服务，编写了大量的示例程序，这些程序包含了基本的代码、数据库访问、Dockerfile和用于在 DaoCloud 平台上使用持续集成的 daocloud.yml 文件。在这些示例的基础上，您可以快速为您的项目添加 Dockerfile 和 daocloud.yml。DaoCloud 在 GitHub 的公有仓库分享了所有这些示例程序，我们为您列表如下：
+为了帮助开发者快速上手，体验 Docker 和 DaoCloud 带来的便利性，我们针对各种开发语言和后台服务，编写了大量的示例程序。这些程序包含了基本的代码、数据库访问、Dockerfile 和用于在 DaoCloud 平台上使用持续集成的 daocloud.yml 文件。在这些示例的基础上，您可以快速为您的项目添加 Dockerfile 和 daocloud.yml。DaoCloud 在 GitHub 的公有仓库分享了所有这些示例程序，我们为您列表如下：
 
 ##### 基础开发环境
-+ Python ＋ Iphthon 开发环境，包括 Dockerfile，[Fork 项目](https://github.com/DaoCloud/python-ipython-notebook) 
++ Python ＋ IPython 开发环境，包括 Dockerfile，[Fork 项目](https://github.com/DaoCloud/python-ipython-notebook) 
 + Python 开发环境，包括 Dockerfile，[Fork 项目](https://github.com/DaoCloud/python-sample-base-image)  
 + Diango 开发环境，包括 Dockerfile 和 compose 文件，[Fork 项目 ](https://github.com/DaoCloud/python-django-sample)
 + Diango 开发环境和持续集成，包括 Dockerfile、compose 文件和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/python-django-cd-sample)
@@ -42,8 +44,8 @@ process:
 + Golang ＋ Redis，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/golang-redis-sample) 
 + PHP ＋ Laravel ＋ MySQL 示例项目，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/php-laravel-mysql-sample) 
 + PHP ＋ Apache ＋ MySQL 运行环境，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/php-apache-mysql-sample)
-+ PHP ＋ Newrelic 监控，包括代码和Dockerfile，[Fork 项目](https://github.com/DaoCloud/php-newrelic-sample)
-+ PHP ＋ 透视包监控，包括代码和Dockerfile，[Fork 项目](https://github.com/DaoCloud/php-toushibao-sample)
++ PHP ＋ New Relic 监控，包括代码和Dockerfile，[Fork 项目](https://github.com/DaoCloud/php-newrelic-sample)
++ PHP ＋ 透视宝监控，包括代码和 Dockerfile，[Fork 项目](https://github.com/DaoCloud/php-toushibao-sample)
 + NodeJS ＋ MongoDB 开发示例，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/node-mongo-sample)
 + Golang ＋ InfluxDB 开发示例，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/golang-influxdb-sample)
 + Ruby ＋ MySQL 开发示例，包括代码、Dockerfile 和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/ruby-mysql-sample)
@@ -58,7 +60,7 @@ process:
 
 #### 开发者的 Docker 之旅
 
-在这部分的帮助文档中，我们将会针对不同的编程语言和框架详细介绍使用 Docker 和部署到 DaoCloud 上的最佳实践。
+在这部分的帮助文档中，我们将会针对不同的编程语言和框架详细介绍使用 Docker 并部署到 DaoCloud 上的最佳实践。
 
 包括：
 + PHP 开发者的 Docker 之旅
@@ -71,12 +73,12 @@ process:
 
 欢迎进入「PHP 应用 Docker 开发大礼包 - Powered by DaoCloud」，六篇由浅入深、精心设计的系列文章，带领 PHP 开发者领略 Docker 化应用开发和发布的全新体验。
 
-* [PHP 开发者的 Docker 之旅-开篇](../../php-docker/php-docker)
+* [PHP 开发者的 Docker 之旅 —— 开篇](../../php-docker/php-docker)
 * [如何制作一个定制的 PHP 基础 Docker 镜像（一）](../../php-docker/php-docker-001)
 * [如何开发一个 PHP 的 Docker 化应用（二）](../../php-docker/php-docker-002)
 * [如何开发一个 PHP + MySQL 的 Docker 化应用（三）](../../php-docker/php-mysql-docker-003)
 * [如何配置一个 Docker 化持续集成的 PHP 开发环境（四）](../../php-docker/docker-php-ci)
-* [如何开发一个 PHP + NewRelic 的生产级 Docker 化应用（五）](../../php-docker/php-newrelic-docker-05)
+* [如何开发一个 PHP + New Relic 的生产级 Docker 化应用（五）](../../php-docker/php-newrelic-docker-05)
 * [如何开发一个 Laravel + MySQL 框架的 Docker 化应用（六）](../../php-docker/laravel-mysql-docker-06)
 
 ##### Python 开发者的 Docker 之旅
@@ -84,7 +86,7 @@ process:
 「人生苦短，我用 Python」，四篇由浅入深、精心设计的系列文章，将带领 Python 开发者领略 Docker 化应用开发和发布的全新体验。
 
 
-* [Python 开发者的 Docker 之旅－开篇](../../python-docker/python-docker)
+* [Python 开发者的 Docker 之旅 —— 开篇](../../python-docker/python-docker)
 * [如何开发一个基于 Docker 的 Python 应用（一）](../../python-docker/docker-python-001)
 * [如何制作一个定制的 Python 基础 Docker 镜像（二）](../../python-docker/python-docker-002)
 * [如何用 Docker Compose 配置 Django 应用开发环境（三）](../../python-docker/docker-compose-django)
@@ -92,7 +94,7 @@ process:
 
 ##### 前端开发者的 Docker 之旅
 
-* [前端开发者的 Docker 之旅－开篇](../../docker-frontend/docker-frontend-open)
+* [前端开发者的 Docker 之旅 —— 开篇](../../docker-frontend/docker-frontend-open)
 * [运维也学学前端，那天下就太平了](../../docker-frontend/frontend-docker-together)
 * [Hello Docker](../../docker-frontend/hello-docker)
 * [Docker 和 Node Express 应用](../../docker-frontend/docker-node-express)
@@ -106,4 +108,4 @@ process:
 ---
 #### 扩展阅读
 
-您如果有好的 Docker 学习资料推荐，欢迎给我们的文档提 pull request。
+如果您有好的 Docker 学习资料推荐，欢迎给我们的文档提 Pull Request。

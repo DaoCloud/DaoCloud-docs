@@ -19,16 +19,21 @@ taxonomy:
 在您的 Docker 主机的命令行界面，首先您需要完成登录，输入您的 DaoCloud ID 和密码即可完成
 
 ```
-docker login
+sudo docker login daocloud.io
+Username:[您的 DaoCloud 用户名]
+Password:［您的 DaoCloud 密码］
+Email:［可以随便填］
+Login Successed
 
 ```
 
 ```
-docker pull daocloud.io/frankyuyong/coding:v19  
+docker pull daocloud.io/[你的 DaoCloud ID]/［镜像名称］:［Tag］  
 ```
 
 ```
-docker push daocloud.io/frankyuyong/coding:v19  
+docker tag
+docker push
 ```
 
 push 完成后，镜像会显示在「我的镜像」页面，您可以直接操作部署和其他修改。

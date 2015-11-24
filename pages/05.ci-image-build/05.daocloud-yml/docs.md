@@ -63,7 +63,7 @@ DaoCloud 为您准备了多种编程语言的测试环境（这些测试环境�
 * Python (2.6, 2.7, 3.1, 3.2, 3.3, 3.4)
 * Ruby (1.8.7, 1.9.3, 2.0.0, 2.1.2, 2.1.4, 2.1.6, 2.2.0, 2.2.2)
 * Java (openjdk6, openjdk7, oraclejdk6, oraclejdk7, oraclejdk8, oraclejdk9)
-* Javascript - NodeJS (0.6, 0.8, 0.10, 0.12)
+* JavaScript - NodeJS (0.6, 0.8, 0.10, 0.12)
 * PHP (5.5, 5.6)
 * C - gcc (4.4, 4.6, 4.7, 4.8, 4.9, 5)
 
