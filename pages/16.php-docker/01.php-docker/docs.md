@@ -2,15 +2,17 @@
 title: 'PHP 开发者的 Docker 之旅－开篇'
 ---
 
+<!-- reviewed by fiona -->
+
 ![](php.jpg)
 
-用 PHP 作为我们「Docker 开发大礼包」开篇是带着一些朝圣的心情的。这是一门堪称「古老」的语言，这也是一门争议最多的语言，这更是一门不断涅槃的语言。「PHP 是最好的语言」这个流传已久的梗，或许正是对我国最有群众基础的编程语言描述里，最经典的注解。
+用 PHP 作为我们「Docker 开发大礼包」开篇是带着一些朝圣的心情的。这是一门堪称「古老」的语言，也是一门争议最多的语言，更是一门不断涅槃的语言。「PHP 是最好的语言」这个流传已久的梗，或许正是对我国最有群众基础的编程语言描述里，最经典的注解。
 
 就让我们一起回顾一下 PHP 的发展历程作为此系列文章的开篇。历史是最好的老师，他给每个未来提供启示。
 
 ##### 谁创造了 PHP？
 
-Rasmus Lerdorf 在 1994 年创造了 PHP，Andi Gutmans 和 Zeev Suraski 之后于 1997 年重写了 PHP 的解析器，之后他们在以色列成立了著名的 Zend 公司来维护 PHP 的开发。
+Rasmus Lerdorf 在 1994 年创造了 PHP，Andi Gutmans 和 Zeev Suraski 于 1997 年重写了 PHP 的解析器，之后他们在以色列成立了著名的 Zend 公司来维护 PHP 的开发。
 
 ##### PHP 是什么的缩写？
 
@@ -22,7 +24,7 @@ PHP 5 发布于 2004 年 7 月 13 日，距今正好第十一个年头。
 
 ##### 下一个 PHP 版本？
 
-PHP 7 计划于 2015 年 11 月 12 日发布。
+PHP 7 计划于 2015 年 12 月 3 日发布。
 
 ##### PHP 的形象代言人？
 
@@ -34,7 +36,7 @@ PHP Group 来维护其标准，Zend 作为商业公司提供参考实现。
 
 ##### HHVM 又是什么？
 
-HipHop Virtual Machine (HHVM) 是 Facebook 对 PHP 的一次革命性衍进，HHVM 采用实时编译进程，使得 PHP 的执行效率大幅提升。Facebook 在 2013 年全面采用 HHVM 运行 PHP，间接拉升了 PHP 生态的逼格，激发了整个 PHPer 群体的活力。
+HipHop Virtual Machine (HHVM) 是 Facebook 对 PHP 的一次革命性衍进。HHVM 采用实时编译进程，使得 PHP 的执行效率大幅提升。Facebook 在 2013 年全面采用 HHVM 运行 PHP，间接拉升了 PHP 生态的逼格，激发了整个 PHPer 群体的活力。
 
 ##### PHP 的包依赖怎么做？
 

@@ -2,14 +2,16 @@
 title: '如何开发一个 PHP 的 Docker 化应用'
 ---
 
+<!-- reviewed by fiona -->
+
 > 目标：基于 PHP 的 Docker 基础镜像，开发一个 Docker 化的示例 PHP 应用 。
 
 > 本项目代码维护在 **[DaoCloud/php-sample](https://github.com/DaoCloud/php-sample)** 项目中。
 
 ### Docker 化应用的关键元素
-* 镜像是 Docker 应用的静态表示，是应用的交付件，镜像中包含了应用运行所需的所有依赖：包括应用代码、应用依赖库、应用运行时和操作系统。
-* Dockerfile 是一个描述文件，描述了产生 Docker 镜像的过程。详细文档请参见 [Dockerfile文档](https://docs.docker.com/reference/builder/)
-* 容器是镜像运行时的动态表示，如果把镜像想象为一个 Class 那么容器就是这个 Class 的 instance 实例。
+- 镜像是 Docker 应用的静态表示，是应用的交付件，镜像中包含了应用运行所需的所有依赖，包括应用代码、应用依赖库、应用运行时和操作系统。
+- Dockerfile 是一个描述文件，描述了产生 Docker 镜像的过程。详细文档请参见 [Dockerfile文档](https://docs.docker.com/reference/builder/)
+- 容器是镜像运行时的动态表示，如果把镜像想象为一个 Class 那么容器就是这个 Class 的 instance 实例。
 
 一个应用 Docker 化的第一步就是通过 Dockerfile 产生应用镜像。
 
@@ -21,7 +23,7 @@ title: '如何开发一个 PHP 的 Docker 化应用'
 
 官方镜像维护了自 5.4 版本起的所有 PHP 基础镜像，所有镜像均采用 `debian:jessie` 作为系统镜像。
 
-首先，选择官方的 `php:5.6-cli` 镜像作为项目的基础镜像。
+- 首先，选择官方的 `php:5.6-cli` 镜像作为项目的基础镜像。
 
 ```dockerfile
 FROM daocloud.io/php:5.6-cli
@@ -29,7 +31,7 @@ FROM daocloud.io/php:5.6-cli
 
 由于该示例代码较为简单，我们采用仅安装 PHP CLI 的 Docker 镜像来运行。
 
-接着，将代码复制到目标目录。
+- 接着，将代码复制到目标目录。
 
 ```dockerfile
 COPY . /app
@@ -47,7 +49,7 @@ Dockerfile 具体语法请参考：**[Dockerfile](https://docs.docker.com/refere
 
 `docker build -t my-php-app .`
 
-最后，让我们从镜像启动容器：
+- 最后，让我们从镜像启动容器：
 
 `docker run my-php-app`
 
