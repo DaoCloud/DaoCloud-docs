@@ -26,4 +26,4 @@ DaoCloud 文档采用 Grav CMS，内容通过 Markdown 格式写作，并在 Git
 
 ## 以下用户为本页内容做出了贡献
 
-* [imcaffrey](https://github.com/imcaffrey )修复了标点符号半角全角不一致的错误 (重度晚期强迫症患者)
+* [imcaffrey](https://github.com/imcaffrey) 修复了标点符号半角全角不一致的错误 (重度晚期强迫症患者)
