@@ -1,3 +1,10 @@
+# v1.01
+## 11/23/2015
+
+1. [](#improved)
+    * Hardening cookies with user-agent and system cache key instead of deprecated system hash
+    * Set a custom route for login only if it's not an admin path
+
 # v1.0.0
 ## 11/21/2015
 

@@ -2,7 +2,11 @@
 title: '「Allen 谈 Docker 系列」之 docker logs 实现剖析'
 ---
 
->「Allen 谈 Docker 系列」DaoCloud 正在启动 Docker 技术系列文章，每周都会为大家推送一期真材实料的精选 Docker 文章。主讲人为 DaoCloud 核心开发团队成员 Allen 孙宏亮，他是 InfoQ《Docker 源码分析》专栏作者，即将出版《Docker 源码分析》一书。Allen 接触 Docker 近两年，爱钻研系统实现原理，及 Linux 操作系统。
+<!-- reviewed by fiona -->
+
+>**「Allen 谈 Docker 系列」**
+
+>DaoCloud 正在启动 Docker 技术系列文章，每周都会为大家推送一期真材实料的精选 Docker 文章。主讲人为 DaoCloud 核心开发团队成员 Allen（孙宏亮），他是 InfoQ 「Docker 源码分析」专栏作者，已出版《Docker 源码分析》一书。Allen 接触 Docker 近两年，爱钻研系统实现原理，及 Linux 操作系统。
 
 Docker 完全可以轻易构建用户的应用，即为 build；
 
@@ -27,7 +31,9 @@ Build，Ship，Run，简单的3步，分分钟为 DevOps 创建了管理应用�
 ## 1. Docker 容器应用如何产生日志？
 
 大家可以试想一下，如果没有 Docker，您的应用如何打印日志？普遍情况有以下两种：
-第一，向标准输出（stdout）中打印日志；第二，设置日志文件 `app.log`（或其它文件名），向此文件中打印日志。
+
+- 第一，向标准输出（stdout）中打印日志；
+- 第二，设置日志文件 `app.log`（或其它文件名），向此文件中打印日志。
 
 Docker 从诞生伊始，就从未对用户应用做出标准性规范，日志也不例外，从未有过限制。既然如此，Docker 容器应用的日志也不外乎以上两种。第二种很好理解，依然往容器中某个日志文件打印；然而第一种，应用通过标准输出（stdout）的方式打印日志，该如何呈现给用户？
 
@@ -49,19 +55,18 @@ Docker 从诞生伊始，就从未对用户应用做出标准性规范，日志�
 
 以下简要介绍 `docker logs` 命令下各参数的含义：
 
-* 无参数：直接显示容器的所有日志信息
-* tail：从尾部开始按需显示容器日志
-* since：从某个时间开始显示容器日志
-* timestamp：显示容器日志时显示日志时间戳
-* f：将当前时间点，容器日志文件 `<container-id>-json.log` 中的日志信息全部打印；此时间点之后所有的日志信息与日志文件无关，直接接收goroutine 往日志文件中写的文件描述符，并显示
+- 无参数：直接显示容器的所有日志信息
+- tail：从尾部开始按需显示容器日志
+- since：从某个时间开始显示容器日志
+- timestamp：显示容器日志时显示日志时间戳
+- f：将当前时间点，容器日志文件 `<container-id>-json.log` 中的日志信息全部打印；此时间点之后所有的日志信息与日志文件无关，直接接收goroutine 往日志文件中写的文件描述符，并显示
 
 总而言之，Docker 容器日志的处理并不会很复杂。此文阅完，日志的来龙去脉，一清二楚。
 
 当然，您也可以做两个实验检验以上内容：
 
-* Experiement 1：通过 Docker 运行一个应用，日志会从标准输出打印日志，然后通过 `docker logs` 查看日志。
-* Experiement 2：运行一个 Docker 容器，随后 `docker exec` 命令进入这个容器，接着通过 `echo`、`cat` 等命令向容器的标准输出中打印内容，最后通过 `docker logs` 查看日志。
-
+- Experiement 1：通过 Docker 运行一个应用，日志会从标准输出打印日志，然后通过 `docker logs` 查看日志。
+- Experiement 2：运行一个 Docker 容器，随后 `docker exec` 命令进入这个容器，接着通过 `echo`、`cat` 等命令向容器的标准输出中打印内容，最后通过 `docker logs` 查看日志。
 
 实验是检验真理的唯一标准。您会发现，Experiement 1 中，查看日志会有日志；而 Experiement 2 中却找不到 `echo`、`cat` 等命令标准输出的日志内容。
 

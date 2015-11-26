@@ -133,8 +133,8 @@ docker run -d -p 8888:8888 -e PASSWORD=admin ipython/notebook
 
 打开游览器，访问 8888 端口，就可以看到 IPython Notebook 了。
 
-![](QQ20150902-1.png)
+![](QQ20150902-2.png)
 
----
+#### 以下用户为本页内容做出了贡献
 
-![](http://blog.daocloud.io/wp-content/uploads/2015/09/QQ20150902-2.png)
+* [shidenggui](https://github.com/shidenggui) 修复了 docker-entrypoint.sh 脚本缺少执行权限的问题

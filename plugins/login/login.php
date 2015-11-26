@@ -115,8 +115,13 @@ class LoginPlugin extends Plugin
         // Aborted OAuth authentication (invalidate it)
         unset($session->oauth);
 
+        $admin_route = $this->config->get('plugins.admin.route');
+
         // Register route to login page if it has been set.
-        $this->route = $this->config->get('plugins.login.route');
+        if ($uri->path() != $admin_route && substr($uri->path(), 0, strlen($admin_route) + 1) != ($admin_route . '/')) {
+            $this->route = $this->config->get('plugins.login.route');
+        }
+
         if ($this->route) {
             $this->enable([
                 'onPagesInitialized' => ['addLoginPage', 0]

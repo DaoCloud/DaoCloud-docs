@@ -3,6 +3,7 @@
 namespace Grav\Plugin\Login;
 
 use Grav\Common\Grav;
+use Grav\Common\Utils;
 use Grav\Plugin\Login\RememberMe;
 
 use Birke\Rememberme\Cookie;
@@ -149,9 +150,9 @@ class Controller implements ControllerInterface
             $this->rememberMe->setCookieName($config->get('plugins.login.rememberme.name'));
             $this->rememberMe->setExpireTime($config->get('plugins.login.rememberme.timeout'));
 
-            // Secure cookies with system based hash
-            $hash = $config->get('system.security.default_hash');
-            $this->rememberMe->setSalt($hash);
+            // Hardening cookies with user-agent and system based cache key
+            $data = $_SERVER['HTTP_USER_AGENT'] . $this->grav['cache']->getKey();
+            $this->rememberMe->setSalt(password_hash($data, PASSWORD_DEFAULT));
 
             // Set cookie with correct base path of Grav install
             $cookie = new Cookie();

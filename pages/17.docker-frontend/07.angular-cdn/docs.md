@@ -2,27 +2,29 @@
 title: 'Angular 应用根据环境变量切换不同的 CDN'
 ---
 
-###Angular 应用根据环境变量切换不同的 CDN
+<!-- reviewed by fiona -->
 
-在 Angular 项目在实际运用中，我们需要静态文件放在 CDN 上
+<!--我们基于 [Angular Docker]() 来做一些改进。——缺链接 已修改 叶挺-->
 
-怎么通过单一的 Docker image 实现 CDN 地址可变呢？
+### Angular 应用根据环境变量切换不同的 CDN
 
-我们基于 [Angular Docker]() 来做一些改进。
+在 Angular 项目在实际运用中，我们需要静态文件放在 CDN 上。那怎么通过单一的 Docker image 实现 CDN 地址可变呢？
 
-gulp 是一个很好用的构建工具，不紧是因为他的语法灵活，更是因为有非常多的插件我供我们使用。
+我们基于 [用 Docker 搭建 Angular 前端应用](../../docker-frontend/docker-angular) 来做一些改进。
 
-在这个例子中使用 [gulp-cdnizer](https://www.npmjs.com/package/gulp-cdnizer) 
+gulp 是一个很好用的构建工具，不仅是因为他的语法灵活，更是因为有非常多的插件供我们使用。
+
+在这个例子中，我们使用 [gulp-cdnizer](https://www.npmjs.com/package/gulp-cdnizer)。
 
 ### Angular 项目构建优化
 
-首先，安装插件 `gulp-cdnizer`
+**首先，安装插件 `gulp-cdnizer`**。
 
 ```
 npm install gulp-ng-config --save-dev
 ```
 
-接着，我们在 `/gulp/env.js` 文件下编写相应的 Task
+**接着，我们在 `/gulp/env.js` 文件下编写相应的 Task**。
 
 ```
 gulp.task('cdn', function () {
@@ -48,7 +50,7 @@ gulp.task('cdn', function () {
 
 ### 构建 Docker Image
 
-对 Dockerfile 启动命令 CMD 进行细微的调整。
+**对 Dockerfile 启动命令 CMD 进行细微的调整**。
 
 ```
 FROM node:0.12.7-wheezy
@@ -89,10 +91,10 @@ docker build -t my-angular-cdn-app .
 
 ### 部署 Docker Image
 
-最后，让我们从镜像启动容器：
+**最后，让我们从镜像启动容器**：
 
 ```
 docker run -p 80:80 -e "APP_CDN=这里填写你自己的CDN" my-angular-cdn-app
 ```
 
-这样子我们就能从 80 端口去访问我们的 Angular 应用，并且该 Angular 应用是对应着不同的 cdn
+这样子我们就能从 80 端口去访问我们的 Angular 应用，并且该 Angular 应用是对应着不同的 CDN。

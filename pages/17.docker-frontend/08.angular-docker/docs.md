@@ -2,23 +2,21 @@
 title: 'Angular 应用 Docker 启动加速'
 ---
 
-###Angular 应用 Docker 启动加速
+<!-- reviewed by fiona -->
 
-在 Angular 项目在实际运用中，我们的项目需要根据不同的开发要求，对接不同后端 API
+### Angular 应用 Docker 启动加速
 
-怎么通过单一的 Docker image 实现对接不同的后端API呢？
+在 Angular 项目在实际运用中，我们的项目需要根据不同的开发要求，对接不同后端 API。怎么通过单一的 Docker image 实现对接不同的后端 API 呢？
 
-这里我们给出了答案 ： [Angular 应用根据环境变量切换不同的后端 API](../angular-api)
+这里我们给出了答案：[Angular 应用根据环境变量切换不同的后端 API](../angular-api)。
 
-但是这样做导致了 Docker 启动时要经过一段时间的前端项目的构建，牺牲了 Docker 秒级启动的特性
-
-针对此，我们继续对这个流程进行优化。做到 Docker 秒级启动。
+但是这样做导致了 Docker 启动时要经过一段时间的前端项目的构建，牺牲了 Docker 秒级启动的特性。针对此，我们继续对这个流程进行优化。做到 Docker 秒级启动。
 
 思路很简单，就是把耗时的事情，放在 Docker Build 的时候做。
 
 ### Angular 项目构建优化
 
-首先，我们对 `/src/config.json` 文件，添加了 `needReplace` 
+**首先，我们对 `/src/config.json` 文件，添加了 `needReplace`**。
 
 ```
 {
@@ -45,7 +43,7 @@ title: 'Angular 应用 Docker 启动加速'
 }
 ```
 
-接着，我们修改 `/gulp/env.js` 文件，将 `env:config` 默认配置设置成 `needReplace`
+**接着，我们修改 `/gulp/env.js` 文件，将 `env:config` 默认配置设置成 `needReplace`**。
 
 添加 `env:replace` task ，将 `cdn` task 作为前置条件
 
@@ -89,7 +87,7 @@ gulp.task('env:replace', ['cdn'], function () {
 
 ### 构建 Docker Image
 
-Dockerfile
+**Dockerfile**
 
 ```
 
@@ -133,7 +131,7 @@ docker build -t my-angular-app .
 
 ### 部署 Docker Image
 
-最后，让我们从镜像启动容器：
+**最后，让我们从镜像启动容器**：
 
 ```
 docker run -p 80:80 -e "APP_ENV=production" my-angular-app

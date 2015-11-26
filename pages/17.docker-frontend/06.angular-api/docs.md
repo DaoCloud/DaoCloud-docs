@@ -2,27 +2,27 @@
 title: 'Angular 应用根据环境变量切换不同的后端 API'
 ---
 
+<!-- reviewed by fiona -->
+
+<!-- 我们基于 [Angular Docker]() 来做一些改进。——缺链接 已修改 叶挺 -->
+
 ### Angular 应用根据环境变量切换不同的后端 API
 
-在 Angular 项目在实际运用中，我们的项目需要根据不同的开发要求，对接不同后端 API
+在 Angular 项目在实际运用中，我们的项目需要根据不同的开发要求，对接不同后端 API。怎么通过单一的 Docker image 实现对接不同的后端 API 呢？
 
-怎么通过单一的 Docker image 实现对接不同的后端API呢？
+我们基于 [用 Docker 搭建 Angular 前端应用](../../docker-frontend/docker-angular) 来做一些改进。
 
-我们基于 [Angular Docker]() 来做一些改进。
-
-gulp 是一个很好用的构建工具，不紧是因为他的语法灵活，更是因为有非常多的插件我供我们使用。
-
-在这个例子中使用 [gulp-ng-config](https://www.npmjs.com/package/gulp-ng-config) 
+gulp 是一个很好用的构建工具，不仅是因为他的语法灵活，更是因为有非常多的插件可供我们使用。在这个例子中，我们使用 [gulp-ng-config](https://www.npmjs.com/package/gulp-ng-config)。
 
 ### Angular 项目构建优化
 
-首先，安装插件 `gulp-ng-config`
+**首先，安装插件 `gulp-ng-config`**。
 
 ```
 npm install gulp-ng-config --save-dev
 ```
 
-接着，我们在 `/gulp/env.js` 文件下编写相应的 Task
+**接着，我们在 `/gulp/env.js` 文件下编写相应的 Task**。
 
 ```
 gulp.task('env:config', function () {
@@ -39,12 +39,12 @@ gulp.task('env:config', function () {
 });
 ```
 
-并将 `env:config` task 加入到 `inject` task (`/gulp/inject.js:12`) 之前
+**并将 `env:config` task 加入到 `inject` task (`/gulp/inject.js:12`) 之前**。
 ```
 gulp.task('inject', ['scripts', 'styles','env:config'], function () { ...})
 ```
 
-然后，我们在 `/src/config.json` 文件下，不同的环境设置不同的 apiUrl 
+**然后，我们在 `/src/config.json` 文件下，不同的环境设置不同的 apiUrl**。
 
 ```
 {
@@ -67,7 +67,7 @@ gulp.task('inject', ['scripts', 'styles','env:config'], function () { ...})
 
 ```
 
-最后，修改 `/src/index.module.js` 引入配置 module
+**最后，修改 `/src/index.module.js` 引入配置 module**。
 
 ```
 (function() {
@@ -92,7 +92,7 @@ gulp.task('inject', ['scripts', 'styles','env:config'], function () { ...})
 
 ### 构建 Docker Image
 
-使用下面的 Dockerfile 
+使用下面的 Dockerfile。
 
 ```
 FROM node:0.12.7-wheezy
