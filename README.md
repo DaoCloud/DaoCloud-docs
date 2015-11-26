@@ -23,3 +23,7 @@ DaoCloud 文档采用 Grav CMS，内容通过 Markdown 格式写作，并在 Git
 您提出的文档修改如被我们接受，我们会在对应页面的底部，列出您的 ID，以表谢意。
 
 技术支持： [support@daoclod.io](mailto:support@daocloud.io)
+
+## 以下用户为本页内容做出了贡献
+
+* [imcaffrey](https://github.com/imcaffrey )修复了标点符号半角全角不一致的错误 
