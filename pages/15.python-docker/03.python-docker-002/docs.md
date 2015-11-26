@@ -104,3 +104,7 @@ WORKDIR /app
 EXPOSE 80
 CMD ["bash"]
 ```
+
+#### 以下用户为本页内容做出了贡献
+
+* [shidenggui](https://github.com/shidenggui)修复了 docker-entrypoint.sh 脚本缺少执行权限的问题
