@@ -107,6 +107,12 @@ ipython notebook --no-browser --port 8888 --ip=* --NotebookApp.password="$HASH"
 
 一般我们会将初始化应用的过程编写成一个启动脚本，在脚本里以环境变量或命令行参数的形式获取应用初始化所必须的信息，然后配置并启动应用。
 
+* 为 docker-entrypoint.sh 脚本添加执行权限
+
+```
+chmod +x docker-entrypoint.sh
+```
+
 #### 启动容器
 
 有了 Dockerfile 以后，我们可以运行下面的命令构建 Python 应用镜像并命名为 `ipython/notebook`：
