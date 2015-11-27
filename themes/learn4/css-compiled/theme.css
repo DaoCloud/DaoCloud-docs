@@ -238,7 +238,8 @@ textarea, input[type="email"], input[type="number"], input[type="password"], inp
   #body img, #body .video-container {
     margin: 3rem auto;
     display: block;
-    text-align: center; }
+    text-align: center;
+    box-shadow: #999 2px 2px 10px; }
     #body img.border, #body .video-container.border {
       border: 2px solid #e6e6e6 !important;
       padding: 2px; }
@@ -435,7 +436,8 @@ pre {
   pre code {
     color: #237794;
     background: inherit;
-    font-size: 1rem; }
+    font-size: 1rem;
+    line-height: 1.5em; }
 
 hr {
   border-bottom: 4px solid #F0F2F4; }
