@@ -6,7 +6,7 @@ title: 'Angular 应用根据环境变量切换不同的 CDN'
 
 <!--我们基于 [Angular Docker]() 来做一些改进。——缺链接 已修改 叶挺-->
 
-### Angular 应用根据环境变量切换不同的 CDN
+![](http://7xi8kv.com5.z0.glb.qiniucdn.com/ang.jpg)
 
 在 Angular 项目在实际运用中，我们需要静态文件放在 CDN 上。那怎么通过单一的 Docker image 实现 CDN 地址可变呢？
 

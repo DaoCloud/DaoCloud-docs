@@ -6,7 +6,7 @@ title: 'Angular 应用根据环境变量切换不同的后端 API'
 
 <!-- 我们基于 [Angular Docker]() 来做一些改进。——缺链接 已修改 叶挺 -->
 
-### Angular 应用根据环境变量切换不同的后端 API
+![](http://7xi8kv.com5.z0.glb.qiniucdn.com/ang.jpg)
 
 在 Angular 项目在实际运用中，我们的项目需要根据不同的开发要求，对接不同后端 API。怎么通过单一的 Docker image 实现对接不同的后端 API 呢？
 
