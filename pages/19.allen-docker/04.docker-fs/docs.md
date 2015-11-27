@@ -8,6 +8,8 @@ title: '「Allen 谈 Docker 系列」之一图看尽 docker 容器文件系统'
 
 >DaoCloud 正在启动 Docker 技术系列文章，每周都会为大家推送一期真材实料的精选 Docker 文章。主讲人为 DaoCloud 核心开发团队成员 Allen（孙宏亮），他是 InfoQ 「Docker 源码分析」专栏作者，已出版《Docker 源码分析》一书。Allen 接触 Docker 近两年，爱钻研系统实现原理，及 Linux 操作系统。
 
+---
+
 **Dockerfile** 是软件的原材料，**Docker 镜像**是软件的交付品，而 **Docker 容器**则可以认为是软件的运行态。从应用软件的角度来看，**Dockerfile**、**Docker 镜像**与 **Docker 容器**分别代表软件的三个不同阶段，**Dockerfile** 面向开发，**Docker 镜像**成为交付标准，**Docker 容器**则涉及部署与运维，三者缺一不可，合力充当 Docker 体系的基石。
 
 ## Docker 镜像

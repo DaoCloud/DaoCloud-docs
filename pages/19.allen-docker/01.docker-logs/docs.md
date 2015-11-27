@@ -8,6 +8,8 @@ title: '「Allen 谈 Docker 系列」之 docker logs 实现剖析'
 
 >DaoCloud 正在启动 Docker 技术系列文章，每周都会为大家推送一期真材实料的精选 Docker 文章。主讲人为 DaoCloud 核心开发团队成员 Allen（孙宏亮），他是 InfoQ 「Docker 源码分析」专栏作者，已出版《Docker 源码分析》一书。Allen 接触 Docker 近两年，爱钻研系统实现原理，及 Linux 操作系统。
 
+---
+
 Docker 完全可以轻易构建用户的应用，即为 build；
 
 Docker 还可以将应用快速分发，即为 ship；

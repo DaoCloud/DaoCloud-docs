@@ -9,18 +9,14 @@ taxonomy:
 
 #### 什么是 Redis
 
-Redis 是一个开源，基于内存的高性能 key-Value 数据库，它支持存储的 value 类型很丰富，包括 string (字符串)、list (链表)、set (集合)、zset (sortedset--有序集合)和 hash（哈希类型）。这些数据类型都支持 push/pop、add/remove 及取交集并集和差集及更丰富的操作，而且这些操作都是原子性的。Redis 对关系型数据库起到很重要的补充作用，并提供丰富的 API 供不同编程语言调用
+Redis 是一个开源，基于内存的高性能 key-Value 数据库，它支持存储的 value 类型很丰富，包括 string (字符串)、list (链表)、set (集合)、zset (sortedset--有序集合)和 hash（哈希类型）。这些数据类型都支持 push/pop、add/remove 及取交集并集和差集及更丰富的操作，而且这些操作都是原子性的。Redis 对关系型数据库起到很重要的补充作用，并提供丰富的 API 供不同编程语言调用。
 
-#### 在 DaoCloud 服务集成创建 Redis 服务。
+#### 在 DaoCloud 服务集成创建 Redis 服务
 
 1.登录 DaoCloud 控制台，选择「服务集成」。
-
 ![](image_1.png)
-
 2.在「Dao服务」里选择 Redis 服务。
-
 ![](image_2.png)
-
 3.点击 「创建服务实例」。
 
 ![](image_3.png)

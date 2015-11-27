@@ -8,6 +8,8 @@ title: '「Allen 谈 Docker 系列」docker commit 的来龙去脉'
 
 >DaoCloud 正在启动 Docker 技术系列文章，每周都会为大家推送一期真材实料的精选 Docker 文章。主讲人为 DaoCloud 核心开发团队成员 Allen（孙宏亮），他是 InfoQ 「Docker 源码分析」专栏作者，已出版《Docker 源码分析》一书。Allen 接触 Docker 近两年，爱钻研系统实现原理，及 Linux 操作系统。
 
+---
+
 相信无需再强调 Docker 镜像，大家都已经清楚 Docker 除了传统的 Linux 容器技术之外，还有另辟蹊径的镜像技术。镜像技术的采用，使得 Docker 自底向上打包一个完整的应用，将更多的精力专注于应用本身；而容器技术的延用，则更是在应用的基础上，囊括了应用对资源的需求，通过容器技术完成资源的隔离与管理。
 
 Docker 镜像与 Docker 容器相辅相成，共同作为技术基础支撑着 Docker， 为 Docker 的生态带来巨大的凝聚力。然而，这两项技术并非相互孤立，两者之间的互相转换使得 Docker 的使用变得尤为方便。说到，Docker 镜像与 Docker 容器之间的转化，自然需要从两个角度来看待：从 Docker 镜像转化为 Docker 容器一般是通过 docker run 命令，而从 Docker 容器转化为 Docker 镜像，则完全依靠 `docker commit` 的实现。

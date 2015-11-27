@@ -8,6 +8,8 @@ title: '「Allen 谈 Docker 系列」docker build 的 cache 机制'
 
 >DaoCloud 正在启动 Docker 技术系列文章，每周都会为大家推送一期真材实料的精选 Docker 文章。主讲人为 DaoCloud 核心开发团队成员 Allen（孙宏亮），他是 InfoQ 「Docker 源码分析」专栏作者，已出版《Docker 源码分析》一书。Allen 接触 Docker 近两年，爱钻研系统实现原理，及 Linux 操作系统。
 
+---
+
 Docker 的镜像技术一直是重中之重，《Allen 谈 Docker 系列》也已经有不少篇幅深入剖析 Docker 的镜像原理。从一开始，我们认识到 Docker 镜像的层级管理；而后我们开始窥探 Docker 镜像体积的含义；随后我们又深入解析了 Docker 镜像的包含的内容：镜像文件系统内容以及镜像 json 文件。随着循序渐进的深入分析，我们会发现对于 Docker 镜像的研究将无可避免地遇见一条 Docker 命令，那就是「docker build」。
 
 反复审视该命令，相信有两部分内容是 Docker 爱好者绝对不容错过的，那就是 `镜像 cache 机制` 和 `docker commit 原理`，本文首先带大家了解并深入 Docker 镜像的 cache 机制。

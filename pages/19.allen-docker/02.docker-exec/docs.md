@@ -8,6 +8,8 @@ title: '「Allen 谈 Docker 系列」之 docker exec 与容器日志'
 
 >DaoCloud 正在启动 Docker 技术系列文章，每周都会为大家推送一期真材实料的精选 Docker 文章。主讲人为 DaoCloud 核心开发团队成员 Allen（孙宏亮），他是 InfoQ 「Docker 源码分析」专栏作者，已出版《Docker 源码分析》一书。Allen 接触 Docker 近两年，爱钻研系统实现原理，及 Linux 操作系统。
 
+---
+
 翻看 Docker 的历史，您会发现 Docker 一直在强调「Application」一词，Docker 也希望能为分布式应用提供容器化的解决方案。
 
 从 Docker 化应用软件的生命周期来看，开发工作似乎位于 Docker 的构建之前，而后容器化的测试、部署与运维都与 Docker 容器息息相关。不得不说，Docker 思维下的应用软件，管理流程与传统场景有着很大的区别。

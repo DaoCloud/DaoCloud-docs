@@ -1,5 +1,5 @@
 ---
-title: 谁需要使用私有云？
+title: 企业版的主要功能
 taxonomy:
     category:
         - docs

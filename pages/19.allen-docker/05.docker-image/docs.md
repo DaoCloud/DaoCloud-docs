@@ -8,6 +8,8 @@ title: '「Allen 谈 Docker 系列」之深刻理解 Docker 镜像大小'
 
 >DaoCloud 正在启动 Docker 技术系列文章，每周都会为大家推送一期真材实料的精选 Docker 文章。主讲人为 DaoCloud 核心开发团队成员 Allen（孙宏亮），他是 InfoQ 「Docker 源码分析」专栏作者，已出版《Docker 源码分析》一书。Allen 接触 Docker 近两年，爱钻研系统实现原理，及 Linux 操作系统。
 
+---
+
 **都说容器大法好，但是如果没有 Docker 镜像，Docker 该是多无趣啊。**
 
 是否还记得第一个接触 Docker 的时候，你从 Docker Hub 下拉的那个镜像呢？在那个处女镜像的基础上，你运行了容器生涯的处女容器。镜像的基石作用已经很明显，在 Docker 的世界里，可以说是「No Image, No Container」。

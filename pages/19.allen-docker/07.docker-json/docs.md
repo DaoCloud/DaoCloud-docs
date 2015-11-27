@@ -8,6 +8,8 @@ title: '「Allen 谈 Docker 系列」深入理解 Docker 镜像 json 文件'
 
 >DaoCloud 正在启动 Docker 技术系列文章，每周都会为大家推送一期真材实料的精选 Docker 文章。主讲人为 DaoCloud 核心开发团队成员 Allen（孙宏亮），他是 InfoQ 「Docker 源码分析」专栏作者，已出版《Docker 源码分析》一书。Allen 接触 Docker 近两年，爱钻研系统实现原理，及 Linux 操作系统。
 
+---
+
 很多时候，当大家谈论起 Docker，经常会提到 Docker 作为容器解决方案，在虚拟化资源方面存在不小优势。轻量级虚拟化技术的优点暂且不谈，从软件生命周期来看，Docker 在打包软件、分发软件方面的能力同样出众。而后者很大程度上依赖于 Docker 的镜像技术。
 
 Docker 镜像技术提供了一套标准，创造性地使用 Dockerfile 来规范化 Docker 化应用的制作流程，结果产生的 Docker 镜像便于传输与管理，最终通过 Docker 镜像运行 Docker 容器，完成容器化应用的交付。

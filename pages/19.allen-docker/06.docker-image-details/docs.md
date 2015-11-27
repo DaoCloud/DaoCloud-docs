@@ -1,5 +1,5 @@
 ---
-title: '「Allen 谈 Docker 系列」之Docker 镜像内有啥，存哪？'
+title: '「Allen 谈 Docker 系列」之 Docker 镜像内有啥，存哪？'
 ---
 
 <!-- reviewed by fiona -->
@@ -9,6 +9,9 @@ title: '「Allen 谈 Docker 系列」之Docker 镜像内有啥，存哪？'
 >**「Allen 谈 Docker 系列」**
 
 >DaoCloud 正在启动 Docker 技术系列文章，每周都会为大家推送一期真材实料的精选 Docker 文章。主讲人为 DaoCloud 核心开发团队成员 Allen（孙宏亮），他是 InfoQ 「Docker 源码分析」专栏作者，已出版《Docker 源码分析》一书。Allen 接触 Docker 近两年，爱钻研系统实现原理，及 Linux 操作系统。
+
+---
+
 据说重要的事情要说三遍，那我再表述一下个人观点：`Docker 镜像`是 Docker 的灵魂所在。
 
 前两讲关于 Docker 镜像的描述，已经从宏观的角度涉及一二。一旦掌握 Docker 对于镜像的层级管理方式，以及 Docker 镜像大小的真实情况之后，再来了解 Docker 镜像包含的内容以及存储，就显得简单很多。
