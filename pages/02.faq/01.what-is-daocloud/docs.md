@@ -15,7 +15,7 @@ DaoCloud 是业界领先的企业级容器云平台和解决方案提供商，�
 
 ## 创始团队
 
-![DaoCloud创始团队](daocloud_founders.jpg?resize=800)
+![DaoCloud创始团队](daocloud_founders.jpg)
 <center>DaoCloud 创始团队，左起：颜开、陈齐彦、喻勇、郭峰</center>
 
 ### 陈齐彦 （首席执行官，联合创始人）
@@ -46,7 +46,7 @@ DaoCloud 是业界领先的企业级容器云平台和解决方案提供商，�
 
 ## 文化氛围
 
-![办公环境](IMG_7878.jpg?resize=800)
+![办公环境](IMG_7878.jpg)
 
 + 工程师文化：全员全栈、技术驱动、参与感
 + 持续迭代，持续交付，持续创新
@@ -99,8 +99,18 @@ DaoCloud 是业界领先的企业级容器云平台和解决方案提供商，�
 
 ## 视频资料
 
-+ DaoCloud 公司和产品介绍，[点击下载](http://7xo6wp.dl1.z0.glb.clouddn.com/DaoCloud.mp4)
-+ 2015 年大事记，[点击下载](http://7xo6wp.dl1.z0.glb.clouddn.com/DaoCloud_2015.mov)
+<video controls="1" style="width: 1000px;position: absolute;left: 50%;margin-left: -500px;"><source src="http://7xo6wp.dl1.z0.glb.clouddn.com/DaoCloud.mp4">Your browser does not support the <mark class="highlight">video</mark> tag.</video>
+
+<center>DaoCloud 公司和产品介绍</center>
+
+---
+
+<video controls="1" style="width: 1000px;position: absolute;left: 50%;margin-left: -500px;"><source src="http://7xo6wp.dl1.z0.glb.clouddn.com/DaoCloud_2015.mov">Your browser does not support the <mark class="highlight">video</mark> tag.</video>
+
+<center>DaoCloud 2015 年大事记</center>
+
+---
+
 + DaoCloud 陈齐彦：释放持续的创新原力，点击下载
 + DaoCloud 郭峰：精益研发，点击下载
 
