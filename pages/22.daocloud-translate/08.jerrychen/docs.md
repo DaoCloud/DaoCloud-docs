@@ -15,9 +15,9 @@ DaoCloud 曾在今年 6 月末举办的企业级容器技术研讨会上，与�
 
 ![](http://7xi8kv.com5.z0.glb.qiniucdn.com/yijian-1-1.jpg)
 
-作者 Jerry Chen 是硅谷著名风险投资机构 Greylock Partners 的合伙人，Docker 董事会成员。他曾在 VMware 担任副总裁，负责云和应用服务。
+Jerry Chen 是硅谷著名风险投资机构 Greylock Partners 的合伙人，Docker 董事会成员。他曾在 VMware 担任副总裁，负责云和应用服务。
 
-Jerry 在文章中提出了「Developer Defined Infrastructure，DDI」这一崭新概念，并结合 Docker 的特性，大胆预言了未来 15 年的 IT 基础架构发展趋势。
+Jerry 在文章中提出了「Developer Defined Infrastructure, DDI」这一崭新概念，并结合 Docker 的特性，大胆预测了未来 15 年的 IT 基础架构发展趋势。
 
 ---
 
