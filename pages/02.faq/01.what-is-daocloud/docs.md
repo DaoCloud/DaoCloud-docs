@@ -97,25 +97,6 @@ DaoCloud 是业界领先的企业级容器云平台和解决方案提供商，�
 
 ---
 
-## 视频资料
-
-<video controls="1" style="width: 1000px;position: absolute;left: 50%;margin-left: -500px;"><source src="http://7xo6wp.dl1.z0.glb.clouddn.com/DaoCloud.mp4">Your browser does not support the <mark class="highlight">video</mark> tag.</video>
-
-<center>DaoCloud 公司和产品介绍</center>
-
----
-
-<video controls="1" style="width: 1000px;position: absolute;left: 50%;margin-left: -500px;"><source src="http://7xo6wp.dl1.z0.glb.clouddn.com/DaoCloud_2015.mov">Your browser does not support the <mark class="highlight">video</mark> tag.</video>
-
-<center>DaoCloud 2015 年大事记</center>
-
----
-
-+ DaoCloud 陈齐彦：释放持续的创新原力，点击下载
-+ DaoCloud 郭峰：精益研发，点击下载
-
----
-
 ## 联系我们
 
 * 总部地址：上海市杨浦区政府路 18 号 901 室，200433

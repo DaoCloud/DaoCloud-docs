@@ -1,5 +1,5 @@
 ---
-title: 视频演示
+title: 视频和演示
 taxonomy:
     category:
         - docs

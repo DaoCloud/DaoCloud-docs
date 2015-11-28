@@ -38,4 +38,4 @@ DaoCloud 为大型企业客户提供全形态私有化部署，在 DaoShip、Dao
 + DaoCloud 负责核心产品和能力的输出，由合作伙伴完成二次开发、应用迁移和容器化等工作
 + DaoCloud 有超过 50 家公有、私有、系统集成、ISV 合作伙伴，覆盖各类行业和场景
 
-如想了解更多，请与我们[联系](mailto:sales@daocloud.io)。
+如想了解更多，请与我们[联系](mailto:sales@daocloud.io?subject=DaoCloud_提供私有化部署吗_FROM_DOCS_SITE)。
