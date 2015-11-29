@@ -1,5 +1,7 @@
 enabled: true
 top_level_version: false
+google_analytics_code: UA-57261294-2
+home_url: www.daocloud.io
 github:
   position: top
   tree: 'https://github.com/DaoCloud/daocloud-docs/blob/master/'

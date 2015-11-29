@@ -25,6 +25,10 @@ nosetests test.py --with-xunit --xunit-file=$TEST_DIR/result.xml
 </testsuite>
 ```
 
+展示效果如下：
+
+![](build-6.jpg)
+
 ### 覆盖测试
 
 覆盖测试文件需要使用测试脚本（命令）生成 一个 xml 格式的 coverage 报告，该文件路径由系统环境变量 ｀TEST_COVERAGE｀ 指定。例：
