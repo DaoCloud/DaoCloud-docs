@@ -1,5 +1,5 @@
 ---
-title: 加速器
+title: '加速器'
 taxonomy:
     category:
         - docs
