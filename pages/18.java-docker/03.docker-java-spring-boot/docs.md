@@ -4,7 +4,7 @@ title: '在 Docker 中使用 Java Spring Boot 框架'
 
 > 目标：用 Docker 的方式搭建一个 Java Spring Boot 应用
 > 
-> 本项目代码维护在 **[DaoCloud/docker-demo-java-springboot]()** 项目中。
+> 本项目代码维护在 **[DaoCloud/docker-demo-spring-boot]()** 项目中。
 >
 > 您可以在 GitHub 找到本项目并获取本文中所提到的所有代码文件。
 
@@ -30,87 +30,89 @@ Maven 自从公布以来，在 Java 应用构建和管理中一直处于最重�
 
 ![](spring.io.png)
 
-在我们的教程中，我们将基于 Spring Boot 开发一个 RESTful API 应用，使用 MongoDB 来持久化我们的数据，项目使用 Maven 构建。
+在整个 Java 教程中，我们将基于 Spring Boot 开发一个 RESTful API 应用，使用 MongoDB 来持久化我们的数据，项目使用 Maven 构建。
+
+现在，我们先建立一个 RESTful API 应用。
 
 所以，我们在 Dependencies 中填写 Web ，然后点击 Generate Project 按钮，将会下载回来一个基于 Maven 的项目模板。
 
-### 添加 Maven 插件及相关代码
+### 添加项目代码
 
-Maven 有非常丰富的插件，包括 Docker 插件，在我们的教程中，将会使用 `maven-docker-plugin` 插件来辅助构建我们的 Docker 镜像。
-
-在项目的 pom.xml 文件中，添加 `maven-docker-plugin` 插件配置，代码如下：
+编辑 `src/main/java/io/daocloud/demo/DockerDemoSpringBootApplication.java` 文件，添加一个方法，加上 `@RequestMapping` 注解，并添加类注解 `@RestController`。
 
 ```
-<plugin>
-	<groupId>com.spotify</groupId>
-	<artifactId>docker-maven-plugin</artifactId>
-	<version>0.3.6</version>
-	<executions>
-		<execution>
-			<phase>package</phase>
-			<goals>
-				<goal>build</goal>
-			</goals>
-		</execution>
-	</executions>
-	<configuration>
-	<imageName>${project.artifactId}</imageName>
-	<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
-	<resources>
-		<resource>
-			<targetPath>/</targetPath>
-			<directory>${project.build.directory}</directory>
-			<include>${project.build.finalName}.jar</include>
-		</resource>
-	</resources>
-	</configuration>
-</plugin>
+@RestController
+public class DockerDemoSpringBootApplication {
 
+    public static void main(String[] args) {
+        SpringApplication.run(DockerDemoSpringBootApplication.class, args);
+    }
+
+    @RequestMapping("")
+    public String hello(){
+        return "Hello! Docker!";
+    }
+}
+	
 ```
 
-在 `src/main` 目录下新建 docker 文件夹，在该文件夹中放置构建 Docker 镜像所需的 Dockerfile。
+### 添加 Dockerfile
+
+在应用根目录下建立 Dockerfile 文件，内容如下：
 
 ```
-FROM daocloud.io/java:8
+FROM maven:3.3.3
+
+ADD pom.xml /tmp/build/
+RUN cd /tmp/build && mvn -q dependency:resolve
+
+
+ADD src /tmp/build/src
+        #构建应用
+RUN cd /tmp/build && mvn -q -DskipTests=true package \
+        #拷贝编译结果到指定目录
+        && mv target/*.jar /app.jar \
+        #清理编译痕迹
+        && cd / && rm -rf /tmp/build
+		
 VOLUME /tmp
-ADD *.jar app.jar
-RUN bash -c 'touch /app.jar'
 EXPOSE 8080
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 
 ```
 
-编辑 `src/main/java/{pacakge}/*Application.java` 文件，添加一个方法，加上 `@RequestMapping` 注解，并添加类注解 `@RestController`。
+> 由于项目使用 Maven 构建，故本次基础镜像选用 `maven:3.3.3` 官方镜像。
 
-```
-@RequestMapping("")
-public String hello(){
-	return "Hello! Docker!";
-}
-	
-```
+> 官方维护的 Maven 镜像依赖于 Java 镜像构建，所以我们不需要使用 Java 镜像。
 
-> 本次基础镜像使用 Java 官方镜像，也可以根据自己的项目需求与环境依赖使用 [定制的 Java 基础镜像](http://open.daocloud.io/ru-he-zhi-zuo-yi-ge-ding-zhi-de-php-ji-chu-docker-jing-xiang/)。
+因为 Spring Boot 框架打包的应用是一个包含依赖的 jar 文件，内嵌了 Tomcat 和 Jetty 支持，所以我们只需要使用包含 Java 的 Maven 镜像即可，不需要 Tomcat 镜像。
 
-> 因所有官方镜像均位于境外服务器，为了确保所有示例能正常运行，DaoCloud 提供了一套境内镜像源，并与官方源保持同步。
-
-> 官方镜像维护了自 1.6 版本起的所有 Java 基础镜像，我们的选择官方的 `java:8` 镜像作为我们的基础镜像来构建我们的应用。
-
-因为 Spring Boot 框架打包的应用是一个包含依赖的 jar 文件，内嵌了 Tomcat 或者 Jetty 支持，所以我们只需要使用 Java 镜像即可，不需要 Tomcat 镜像。
-
-根据 pom.xml 文件的定义，将会在执行 `mvn package` 命令时，执行 `docker build` 命令，使用 `/src/main/docker` 路径下的 Dockerfile 文件。
+为了减少镜像大小，在执行 Maven 构建之后，清理了构建痕迹。
 
 在 Dockerfile 文件的最后，使用 `ENTRYPOINT` 指令执行启动 Java 应用的操作。
 
 Dockerfile 具体语法请参考：**[Dockerfile](https://docs.docker.com/reference/builder/)**。
 
-在一切准备好之后，在应用的根目录执行 `mvn package` 命令，Maven 将会自动下载应用依赖，并且打包 Docker 镜像，生成的镜像名称是应用的 `artifactId`，在本教程中，应用的 `artifactId` 为 `docker-java-demo`，所以镜像名称也是 `docker-java-demo`。
+### 进入 Docker 的世界
+
+在一切准备好之后，在应用根目录执行如下命令，构建 Docker 镜像：
+
+```
+docker build -t docker-demo-spring-boot .
+```
 
 最后，让我们从镜像启动容器： 
 
-`docker run -d -p 8080:8080 docker-java-demo`
+```
+docker run -d -p 8080:8080 docker-demo-spring-boot
+```
 
-打开浏览器，访问 `http://localhost:8080`，将会看到屏幕上显示 `Hello! Docker!` 文字。
+打开浏览器，或者使用 curl 访问如下地址：
+```
+http://127.0.0.1:8080
+```
+
+将会看到 `Hello! Docker!` 文字。
 
 如果看到这段字符串，那么就说明你成功将一个基于 Spring Boot 的应用 Docker 化了。
 

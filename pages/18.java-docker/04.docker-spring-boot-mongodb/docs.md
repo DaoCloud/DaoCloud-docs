@@ -30,7 +30,7 @@ title: 'Docker 环境下的 Spring Boot 和 MongoDB 集成'
 
 编辑 application.properties 文件，添加 MongoDB 连接信息
 ```
-spring.data.mongodb.host=mongo
+spring.data.mongodb.host=mongodb
 spring.data.mongodb.port=27017
 spring.data.mongodb.database=docker-demo-java-mongo
 spring.data.mongodb.repositories.enabled=true
@@ -63,15 +63,15 @@ public interface VisitorRepository extends MongoRepository<Visitor,String>{
 修改 DockerJavaDemoApplication.java 类，添加来访者记录：
 ```
 @SpringBootApplication
-public class DockerJavaDemoApplication {
+public class DockerDemoSpringBootApplication {
 	
-	@Resource
+    @Resource
     VisitorRepository visitorRepository;
-
+  
     public static void main(String[] args) {
         SpringApplication.run(DockerJavaDemoApplication.class, args);
     }
-	
+
 	@RequestMapping("")
 	public String visit(HttpServletRequest request){
 		
@@ -93,11 +93,13 @@ public class DockerJavaDemoApplication {
 
 ```
 web:
-  image: daocloid.io/docker-demo-java-mongo
+  build: .
+  ports:
+    - "8080:8080"
   links:
-    - mongo:mongo
+    - mongodb:mongodb
 
-mongo:
+mongodb:
   image: daocloud.io/library/mongo:latest
   ports:
     - "27017:27017"
@@ -108,6 +110,8 @@ mongo:
 - 基于我们应用构建的 docker-demo-java-mongo 镜像，用来提供 Web 服务
 - 基于 DaoCloud 提供的 MongoDB 镜像，提供存储服务
 - 通过 links 为 web 关联 mongo 服务
+
+> 如果您需要在 DaoCloud 集成环境中部署您的应用，请保持该配置文件中 links 配置的 MongoDB 服务名称为 `mongodb`,这是 DaoCloud 默认的 MongoDB 服务名称。
 
 ### 启动 Docker Compose，体验服务编排的魅力
 ```
