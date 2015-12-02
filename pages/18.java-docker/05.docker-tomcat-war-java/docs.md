@@ -4,7 +4,7 @@ title: '使用 Docker 运行 Tomcat ＋ WAR 包 Java 应用'
 
 > 目标：用 Tomcat 容器运行一个 J2EE 应用
 > 
-> 本项目代码维护在 **[DaoCloud/docker-demo-java-tomcat]()** 项目中。
+> 本项目代码维护在 **[DaoCloud/docker-demo-java-tomcat](https://github.com/DaoCloud/docker-demo-java-tomcat)** 项目中。
 >
 > 您可以在 GitHub 找到本项目并获取本文中所提到的所有代码文件。
 
@@ -25,7 +25,7 @@ title: '使用 Docker 运行 Tomcat ＋ WAR 包 Java 应用'
 
 ### 编写 Dockerfile 文件
 
-在教程 **[构建基于 Maven 和 Tomcat 的基础镜像](http://docs.daocloud.io/)** 中，构建了一个基于 Maven 和 Tomcat 的基础镜像，如果您还没来得及阅读，建议您先阅读该教程，可以在本教程中减少 Dockerfile 文件的复杂度和构建时间。
+在教程 **[构建基于 Maven 和 Tomcat 的基础镜像](http://docs.daocloud.io/java-docker/docker-build-base-image)** 中，构建了一个基于 Maven 和 Tomcat 的基础镜像，如果您还没来得及阅读，建议您先阅读该教程，可以在本教程中减少 Dockerfile 文件的复杂度和构建时间。
 
 #### 选择基础镜像
 

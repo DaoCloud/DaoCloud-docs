@@ -4,7 +4,7 @@ title: '构建基于 Maven 和 Tomcat 的基础镜像'
 
 > 目标：构建基于 Maven 和 Tomcat 的基础镜像
 > 
-> 本项目代码维护在 **[DaoCloud/docker-demo-build-base-image]()** 项目中。
+> 本项目代码维护在 **[DaoCloud/docker-demo-build-base-image](https://github.com/DaoCloud/docker-demo-build-base-image)** 项目中。
 >
 > 您可以在 GitHub 找到本项目并获取本文中所提到的所有代码文件。
 

@@ -4,7 +4,7 @@ title: '在 Docker 中使用 Java Spring Boot 框架'
 
 > 目标：用 Docker 的方式搭建一个 Java Spring Boot 应用
 > 
-> 本项目代码维护在 **[DaoCloud/docker-demo-spring-boot]()** 项目中。
+> 本项目代码维护在 **[DaoCloud/docker-demo-spring-boot](https://github.com/DaoCloud/docker-demo-spring-boot)** 项目中。
 >
 > 您可以在 GitHub 找到本项目并获取本文中所提到的所有代码文件。
 

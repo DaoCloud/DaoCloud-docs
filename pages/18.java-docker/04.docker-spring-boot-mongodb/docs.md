@@ -4,7 +4,7 @@ title: 'Docker 环境下的 Spring Boot 和 MongoDB 集成'
 
 > 目标：开发一个基于 Spring Boot 和 MongoDB 的应用，使用 MongoDB 记录访问者信息
 > 
-> 本项目代码维护在 **[DaoCloud/docker-demo-java-mongo]()** 项目中。
+> 本项目代码维护在 **[DaoCloud/docker-demo-java-mongo](https://github.com/DaoCloud/docker-demo-java-mongo)** 项目中。
 >
 > 您可以在 GitHub 找到本项目并获取本文中所提到的所有代码文件。
 
@@ -12,11 +12,11 @@ title: 'Docker 环境下的 Spring Boot 和 MongoDB 集成'
 
 生产环境中的应用，少不了数据库和缓存的配合，在我们的这个教程中，将会给大家演示如何基于 Spring Boot 和 MongoDB 来开发一个记录访问者次数的应用，并且将应用 Docker 化。
 
-在本教程中，我们将使用 Docker Compose 对我们服务进行编排，请按照[Docker Compose安装]()准备好 Docker Compose 环境。
+在本教程中，我们将使用 Docker Compose 对我们服务进行编排，请按照 **[安装 Docker Compose](http://get.daocloud.io/#install-compose)** 准备好 Docker Compose 环境。
 
 ### 创建应用
 
-请大家回到[开发一个基于 Spring Boot 框架的 Docker 化的 Java 应用]()这篇教程，准备好自己的应用框架。
+请大家回到 **[开发一个基于 Spring Boot 框架的 Docker 化的 Java 应用](http://docs.daocloud.io/java-docker/docker-java-spring-boot)** 这篇教程，准备好自己的应用框架。
 
 #### 添加 MongoDB 支持
 
@@ -123,7 +123,7 @@ mongodb:
 http://127.0.0.1:8080
 ```
 
-将会看到 "你是来自127.0.0.1的第1位访问者。"，多次访问后，能看到数字的累加，表示数据已经被持久化到 MongoDB 了，当然，如果要让服务停止后数据仍可以被记录，需要使用 Volume 指令挂载存储，请参阅[Volume]()
+将会看到 "你是来自127.0.0.1的第1位访问者。"，多次访问后，能看到数字的累加，表示数据已经被持久化到 MongoDB 了，当然，如果要让服务停止后数据仍可以被记录，需要使用 Volume 指令挂载存储，请参阅 **[使用 Volume 实现容器状态持久化](http://docs.daocloud.io/daocloud-services/use-volume)**
 
 #### 致谢
 
