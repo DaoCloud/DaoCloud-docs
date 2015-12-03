@@ -2,3 +2,4 @@
 title: 'JavaScript API'
 ---
 
+@ting
