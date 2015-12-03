@@ -4,16 +4,27 @@ title: 如何安装DaoVoice
 
 #### 在我的网站上安装DaoVoice
 
-@ting
+TODO
 
 
 #### 系统需求
 
-@ting
+DaoVoice Widget支持一下浏览器版本
 
+* Chrome 
+* Firefox
+* Safari 6+
+* Internet Explorer 9/10/11
+* Android 4+
+* IOS 6+
 
 #### 配置手册
 
 @kay
 
 
+[link](/daovoice-configuring/javascript-api)
+
+[link](/daovoice-configuring/secure-mode)
+
+[link](/daovoice-configuring/do-more-in-daovoice)

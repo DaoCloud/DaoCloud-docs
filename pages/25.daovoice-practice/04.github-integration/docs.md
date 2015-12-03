@@ -1,5 +1,5 @@
 ---
-title: GitHub 继承
+title: GitHub 集成
 ---
 
 #### 安装
