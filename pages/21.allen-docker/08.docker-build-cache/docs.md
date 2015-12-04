@@ -1,5 +1,5 @@
 ---
-title: '「Allen 谈 Docker 系列」docker build 的 cache 机制'
+title: 'docker build 的 cache 机制'
 ---
 
 <!-- reviewed by fiona -->

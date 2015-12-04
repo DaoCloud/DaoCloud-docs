@@ -1,5 +1,5 @@
 ---
-title: '「Allen 谈 Docker 系列」Docker 容器的 root 安全吗？'
+title: 'Docker 容器的 root 安全吗？'
 ---
 
 <!-- reviewed by fiona -->

@@ -1,5 +1,5 @@
 ---
-title: '「Allen 谈 Docker 系列」docker commit 的来龙去脉'
+title: 'docker commit 的来龙去脉'
 ---
 
 <!-- reviewed by fiona -->

@@ -1,5 +1,5 @@
 ---
-title: '「Allen 谈 Docker 系列」深入理解 Docker 镜像 json 文件'
+title: '深入理解 Docker 镜像 json 文件'
 ---
 
 <!-- reviewed by fiona -->

@@ -1,5 +1,5 @@
 ---
-title: '「Allen 谈 Docker 系列」之 Docker 容器日志的那些事儿'
+title: ' Docker 容器日志的那些事儿'
 ---
 
 <!-- reviewed by fiona -->
