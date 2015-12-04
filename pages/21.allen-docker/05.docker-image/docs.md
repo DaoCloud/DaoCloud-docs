@@ -1,5 +1,5 @@
 ---
-title: '「Allen 谈 Docker 系列」之深刻理解 Docker 镜像大小'
+title: '深刻理解 Docker 镜像大小'
 ---
 
 <!-- reviewed by fiona -->

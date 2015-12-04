@@ -1,5 +1,5 @@
 ---
-title: '「Allen 谈 Docker 系列」之 docker logs 实现剖析'
+title: 'docker logs 实现剖析'
 ---
 
 <!-- reviewed by fiona -->

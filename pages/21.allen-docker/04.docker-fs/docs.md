@@ -1,5 +1,5 @@
 ---
-title: '「Allen 谈 Docker 系列」之一图看尽 docker 容器文件系统'
+title: '一图看尽 docker 容器文件系统'
 ---
 
 <!-- reviewed by fiona -->

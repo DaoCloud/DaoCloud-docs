@@ -1,5 +1,5 @@
 ---
-title: '「Allen 谈 Docker 系列」存储类 Docker 容器的明文密码问题'
+title: '存储类 Docker 容器的明文密码问题'
 ---
 
 <!-- reviewed by fiona -->

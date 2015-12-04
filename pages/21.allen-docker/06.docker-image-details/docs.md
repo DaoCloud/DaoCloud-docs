@@ -1,5 +1,5 @@
 ---
-title: '「Allen 谈 Docker 系列」之 Docker 镜像内有啥，存哪？'
+title: 'Docker 镜像内有啥，存哪？'
 ---
 
 <!-- reviewed by fiona -->

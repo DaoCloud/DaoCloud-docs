@@ -1,5 +1,5 @@
 ---
-title: '「Allen 谈 Docker 系列」之 docker exec 与容器日志'
+title: ' docker exec 与容器日志'
 ---
 
 <!-- reviewed by fiona -->
