@@ -1,5 +1,5 @@
 ---
-title: 'Ghost Blog'
+title: '镜像部署指南：Ghost Blog'
 ---
 
 ## Ghost
