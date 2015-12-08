@@ -41,3 +41,15 @@ oauth:
       credentials:
         key:
         secret:
+
+user_registration:
+  enabled: true
+
+  fields:
+    - 'username'
+    - 'password'
+    - 'email'
+    - 'fullname'
+    - 'title'
+    - 'access'
+    - 'state'

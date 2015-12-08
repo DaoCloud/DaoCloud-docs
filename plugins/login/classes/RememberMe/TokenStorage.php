@@ -9,7 +9,9 @@ use Birke\Rememberme\Storage\StorageInterface;
 /**
  * Storage wrapper for Doctrine cache
  *
- * Used for storing the credential/token/persistentToken triplets
+ * Used for storing the credential/token/persistentToken triplets.
+ *
+ * @author  Sommerregen <sommerregen@benjamin-regler.de>
  */
 class TokenStorage implements StorageInterface
 {

@@ -54,7 +54,11 @@
                 </div>
             {% endif %}
 
+            <!--<a class="button secondary" href="{{ base_url_relative }}/forgot"><i class="fa fa-exclamation-circle"></i> {{ 'LOGIN_PLUGIN.BTN_FORGOT'|t }}</a>-->
+
             <button type="submit" class="button primary" name="task" value="login.login"><i class="fa fa-sign-in"></i> {{ 'LOGIN_PLUGIN.BTN_LOGIN'|t }}</button>
+
+            <a class="button secondary" href="{{ base_url_relative }}/register"><i class="fa fa-user"></i> {{ 'LOGIN_PLUGIN.BTN_REGISTER'|t }}</a>
         </div>
 
         {{ nonce_field('login-form', 'login-form-nonce') }}
