@@ -5,7 +5,9 @@ taxonomy:
         - docs
 ---
 
-#### 结果展示
+<!-- reviewed by fiona -->
+
+### 结果展示
 
 结果展示文件需要使用测试脚本（命令）生成 junit 格式的 XML 文件，该文件路径由系统环境变量 ｀TEST_RESULT｀ 指定。例：
 
@@ -23,7 +25,11 @@ nosetests test.py --with-xunit --xunit-file=$TEST_DIR/result.xml
 </testsuite>
 ```
 
-#### 覆盖测试
+展示效果如下：
+
+![](build-6.jpg)
+
+### 覆盖测试
 
 覆盖测试文件需要使用测试脚本（命令）生成 一个 xml 格式的 coverage 报告，该文件路径由系统环境变量 ｀TEST_COVERAGE｀ 指定。例：
 
@@ -33,6 +39,7 @@ coverage xml -o $TEST_DIR/coverage.xml test.py
 ```
 
 结果：
+
 ```xml
 <?xml version="1.0" ?>
 <coverage branch-rate="0.5" line-rate="1" timestamp="1445931368445" version="4.0.1">
@@ -68,9 +75,9 @@ coverage xml -o $TEST_DIR/coverage.xml test.py
 ```
 
 
-##### 样例 daocloud.yml
+#### 样例 daocloud.yml
 
-代码参见 GitHub 上的 [样例程序](https://github.com/DaoCloud/python-mysql-sample) 
+代码参见 GitHub 上的 [样例程序](https://github.com/DaoCloud/python-mysql-sample) 。
 
 ```yaml
 image: daocloud/ci-python:2.7
@@ -95,7 +102,7 @@ script:
 
 ![](test-result.png)
 
-#### 特殊配置
+### 特殊配置
 
 当所推送的最近一次提交信息中带有 `[CI SKIP]` 或者 `[SKIP CI]` 字段时，此次推送将不会触发持续集成，例如：
 

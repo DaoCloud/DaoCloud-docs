@@ -4,7 +4,8 @@ title: 'Hello Docker'
 
 <!-- reviewed by fiona -->
 
-## Hello Docker
+
+![](http://7xi8kv.com5.z0.glb.qiniucdn.com/docker.jpg)
 
 > 目标：使用静态页面来完成一个简单的 Docker Demo
 

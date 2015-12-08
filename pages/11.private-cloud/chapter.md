@@ -1,8 +1,8 @@
 ---
-title: 'DaoCloud 私有云的交付形式'
+title: 'DaoCloud 企业版和私有版'
 taxonomy:
     category:
         - docs
 ---
 
-# DaoCloud 私有云的交付形式
+# DaoCloud 企业版和私有版

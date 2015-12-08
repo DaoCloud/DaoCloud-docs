@@ -806,4 +806,18 @@ td {
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d; }
 
+#sidebar ul > li ul {
+  display: block !important;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 500ms, opacity 300ms;
+  -webkit-transition: max-height 500ms, opacity 300ms; }
+
+#sidebar ul > li:hover ul {
+  max-height: 500px;
+  opacity: 1;
+  transition: max-height 0, opacity 300ms;
+  -webkit-transition: max-height 0, opacity 300ms; }
+
 /*# sourceMappingURL=theme.css.map */

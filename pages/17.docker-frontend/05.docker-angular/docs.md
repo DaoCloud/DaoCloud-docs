@@ -4,7 +4,7 @@ title: '用 Docker 搭建 Angular 前端应用'
 
 <!-- reviewed by fiona -->
 
-## 用 Docker 搭建 Angular 前端应用
+![](http://7xi8kv.com5.z0.glb.qiniucdn.com/ang.jpg)
 
 > 目标：用 Docker 镜像的方式搭建 Angular 前端应用
 

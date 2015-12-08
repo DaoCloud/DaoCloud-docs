@@ -5,222 +5,134 @@ taxonomy:
         - docs
 ---
 
-MySQL，有管理直接点击，PHPMyAdmin
-Redis，无管理，现在无管理方案
-MongoDB，MongoExpress，部署镜像，不支持登陆
-InfluxDB，管理UI必须内网访问，用户不可见
+#### 什么是 MySQL
 
-<!--一个月后更新 -->
+MySQL 是一种开放源代码的关系型数据库管理系统（RDBMS），MySQL 数据库系统使用最常用的数据库管理语言--结构化查询语言（SQL）进行数据库管理。 MySQL由于其性能高、成本低、可靠性好，已经成为最流行的开源数据库，被广泛地应用在 Internet 上的中小型网站中。随着 MySQL 的不断成熟，它也逐渐用于更多大规模网站和应用，比如维基百科、Google 和 Facebook 等网站。非常流行的开源软件组合 LAMP 中的「M」指的就是 MySQL。
 
-创建 MySQL 服务
+#### 在 DaoCloud 服务集成创建 MySQL 服务
 
+1.登录 DaoCloud 控制台，选择「服务集成」。
 
-使用 MySQL 服务
+![](image_1.png)
 
+2.在「Dao服务」里选择 MySQL 服务。
 
-管理 MySQL 服务
+![](image_2.png)
 
+3.点击 「创建服务实例」。
 
-MySQL 使用注意事项
-－收费、备份、自有主机、等等
+![](image_3.png)
 
+4.输入服务实例名称，选择合适的配置（注意：在配置里 DaoCloud 提供了「基础服务」和「生产环境」两种类型的配置，您可以根据您的需求选择相应的配置类型），点击「创建」按钮创建 MySQL 服务实例
 
-## 服务集成
+![](image_4.png)
 
-大部分情况下应用的运行离不开各类后台服务，尤其是数据库。DaoCloud 服务集成功能目前提供 MongoDB、MySQL、Redis 和 InfluxDB 服务。
+5.创建完成，可以看到 MySQL 服务的相关参数。
 
-让我们配置一个常用的 MySQL 数据库来熟悉服务实例的创建和配置过程吧。
+![](image_5.png)
 
-> 注意：服务集成目前不支持[自有主机](runtimes/README.md)，请将数据库服务以应用的方式部署到自有主机中。
+6.在「我的服务」里查看已创建的 MySQL 服务
 
-### 配置步骤
+![](image_6.png)
 
-第一步：在控制台点击「服务集成」。
+#### MySQL 与应用绑定
 
+1.选择需要绑定 MySQL 服务的应用，在「应用配置」下的「服务绑定」里选择刚刚创建好的 MySQL 服务。(您可以在创建应用时绑定 MySQL 服务，也可以把 MySQL 服务绑定在现有的应用上)。
 
+![](image_7.png)
 
----
+2.当您选择了要绑定的 MySQL 服务以后，会发现下面出现了关于连接 MySQL 所需要的信息，在您选择保存更改以后，这些信息会写入到您绑定应用的环境变量里，这样您就可以在代码里通过读取相关环境变量来使用 MySQL 服务。在一些情况下，请根据代码内读取环境变量的约定，或开源项目 README 文件中的指导，修改环境变量的**服务别名**。
 
-第二步：在「Dao 服务」列表中选择「MySQL」图标。
+![](image_8.png)
 
----
+3.如何从代码中读取环境变量呢？下面我们使用 Ruby 语言来展示如何从环境变量里读取连接 MySQL 所需要的信息以及如何连接和操作 MySQL ，具体代码（完整的 Docker 镜像请前往 [GitHub](https://github.com/yxwzaxns/DaoCloud_MySQL.git) ，您可以 fork 到自己的项目里运行这个例子）
 
-第三步：接下来点击「创建服务实例」。
+```ruby
+require 'sinatra'
+require 'mysql2'
 
----
+module Sinatra
+    class Base
+        set :server, %w[thin mongrel webrick]
+        set :bind, '0.0.0.0'
+        set :port, 8080
+    end
+end
 
-第四步：为服务实例指定「服务实例名称」，服务实例名称只能包含英文数字、下划线 `_`、小数点 `.`、和减号 `-`，并且不能与现有服务实例重名。
+get '/' do
+    body 		"Welcome,this is a info about MySQL:
+    host:		#{ENV['MYSQL_PORT_3306_TCP_ADDR']}
+    username:	#{ENV['MYSQL_USERNAME']}
+    password:	#{ENV['MYSQL_PASSWORD']}
+    port:		#{ENV['MYSQL_PORT_3306_TCP_PORT']}
+    database:	#{ENV['MYSQL_INSTANCE_NAME']}"
+end
 
----
+get '/get/:score' do
+	$storage.populate(params['score'])
+end
 
-第五步：选择配置：目前我们提供了从 50MB 到 100MB 不等的数据容量，可供绝大多数应用正常使用。
+get '/get' do
+	"the score is: %d" % $storage.score
+end
 
----
+class Storage
+	def initialize()
+		@db = Mysql2::Client.new(
+                :host => 		ENV['MYSQL_PORT_3306_TCP_ADDR'],
+                :username => 	ENV['MYSQL_USERNAME'],
+                :password => 	ENV['MYSQL_PASSWORD'],
+                :port => 		ENV['MYSQL_PORT_3306_TCP_PORT'],
+                :database => 	ENV['MYSQL_INSTANCE_NAME']
+         )
+         @db.query("CREATE TABLE IF NOT EXISTS scores(score INT)")
+         end
 
-第六步：点击「创建」，DaoCloud 将在云平台为您部署相应的服务实例。
+    def populate(score)
+        @db.query("INSERT INTO scores(score) VALUES(#{score})")
+    end
 
----
+    def score
+        @db.query("SELECT * FROM scores").first['score']
+    end
+end
 
-第七步：创建成功，进入服务实例页面。
+$storage = Storage.new
+```
 
----
+成功部署后访问应用，便可以看到连接 MySQL 所需要的相关信息已经被成功读取出来。
 
-就这么简单，您的 MySQL 服务实例已经准备就绪可以和应用对接了。
+<!--
+![](image_9.png)
+-->
 
-### 查看服务清单
+#### 管理 MySQL 服务
 
-在「服务集成」页面中，点击「我的服务」即可列出服务清单。
+1.现在关于 MySQL 服务的管理工具有很多，DaoCloud 本身在 MySQL 服务里就集成了著名的 phpMyAdmin 管理工具。
 
++ 点击「服务集成」->「我的服务」选择对应的 MySQL 服务。
 
-在服务清单中点击服务实例名称，您可以进入项目的「概览」、「绑定的应用」和「设置」选项卡。
+![](image_1.png)
 
----
++ 在 MySQL 服务控制台，点击「管理 MySQL」按钮就可以进入 phpMyAdmin 管理界面。在这里您就可以执行常规的 MySQL 服务管理操作了。
 
-概览选项卡可以查看服务的参数：连接地址、实例名、用户和密码。
+![](image_10.png)
 
+![](image_11.png)
 
----
+2.您也可以用 DaoCloud 官方提供的 phpMyAdmin 镜像来创建自己的 MySQL 管理工具。
 
-绑定的应用选项卡提供了绑定该服务实例的应用列表。
++ 进入 DaoCloud 镜像仓库，选择 「DaoCloud镜像」下的 phpMyAdmin 镜像，点击「部署最新版本」。
 
----
+![](image_12.png)
+![](image_13.png)
 
-设置选项卡则允许用户删除服务实例。
++ 输入应用名称，选择运行环境，点击「基础设置」，进入下一步。
 
++ 选择绑定要使用的 MySQL 服务，点击「立即部署」，应用启动成功后点击应用 URL，输入用户名和密码就可以进入 phpMyAdmin 执行常规的 MySQL 服务管理操作了。
 
-### SaaS 服务
+![](image_14.png)
 
-DaoCloud 服务市场还将陆续集成各类第三方 SaaS 化服务，目前已经提供 New Relic 服务（见下图）。
+![](image_15.png)
 
-
-创建 New Relic 服务实例，输入 `APP_NAME` 和 `LICENSE_KEY` 后，将返回 `NEW_RELIC_APP_NAME` 和 `NEW_RELIC_LICENSE_KEY` 参数，用于和应用绑定。
-
-DaoCloud 会很快增加更多实用的 SaaS 化服务，如果您有感兴趣的服务希望我们集成，请来信告知。
-
-> 提示：请勿在这个环境中保存任何重要数据，请做必要的备份
-
-### 下一步
-
-至此，您已经掌握了如何在 DaoCloud 上创建和配置服务实例。
-
-下面您可以：
-
-* 了解如何部署一个应用镜像并绑定数据库服务：参考[应用部署](deployment.md)。
-
-
-
-## 服务集成
-
-大部分情况下应用的运行离不开各类后台服务，尤其是数据库。DaoCloud 服务集成功能目前提供 MongoDB、MySQL、Redis 和 InfluxDB 服务。
-
-让我们配置一个常用的 MySQL 数据库来熟悉服务实例的创建和配置过程吧。
-
-> 注意：服务集成目前不支持[自有主机](runtimes/README.md)，请将数据库服务以应用的方式部署到自有主机中。
-
-### 配置步骤
-
-第一步：在控制台点击「服务集成」。
-
-
----
-
-第二步：在「Dao 服务」列表中选择「MySQL」图标。
-
----
-
-第三步：接下来点击「创建服务实例」。
-
-
----
-
-第四步：为服务实例指定「服务实例名称」，服务实例名称只能包含英文数字、下划线 `_`、小数点 `.`、和减号 `-`，并且不能与现有服务实例重名。
-
-
----
-
-第五步：选择配置：目前我们提供了从 50MB 到 100MB 不等的数据容量，可供绝大多数应用正常使用。
-
----
-
-第六步：点击「创建」，DaoCloud 将在云平台为您部署相应的服务实例。
-
----
-
-第七步：创建成功，进入服务实例页面。
-
-
----
-
-就这么简单，您的 MySQL 服务实例已经准备就绪可以和应用对接了。
-
-### 查看服务清单
-
-在「服务集成」页面中，点击「我的服务」即可列出服务清单。
-
-
-在服务清单中点击服务实例名称，您可以进入项目的「概览」、「绑定的应用」和「设置」选项卡。
-
----
-
-概览选项卡可以查看服务的参数：连接地址、实例名、用户和密码。
-
-
----
-
-绑定的应用选项卡提供了绑定该服务实例的应用列表。
-
-
----
-
-设置选项卡则允许用户删除服务实例。
-
-
-### SaaS 服务
-
-DaoCloud 服务市场还将陆续集成各类第三方 SaaS 化服务，目前已经提供 New Relic 服务（见下图）。
-
-
-创建 New Relic 服务实例，输入 `APP_NAME` 和 `LICENSE_KEY` 后，将返回 `NEW_RELIC_APP_NAME` 和 `NEW_RELIC_LICENSE_KEY` 参数，用于和应用绑定。
-
-DaoCloud 会很快增加更多实用的 SaaS 化服务，如果您有感兴趣的服务希望我们集成，请来信告知。
-
-> 提示：请勿在这个环境中保存任何重要数据，请做必要的备份
-
-### 下一步
-
-至此，您已经掌握了如何在 DaoCloud 上创建和配置服务实例。
-
-下面您可以：
-
-* 了解如何部署一个应用镜像并绑定数据库服务：参考[应用部署](deployment.md)。
-
-![](http://blog.daocloud.io/wp-content/uploads/2015/05/phpmyadmin.png)
-
-## phpMyAdmin 是什么？
-
-**phpMyAdmin** 是使用 PHP 编写的，以网站的方式管理 MySQL 的数据库管理工具，让数据库管理员可以方便的管理 MySQL 数据库。
-
-它具有两大优势：
-
-1. phpMyAdmin 能够以简易的方式输入繁杂 SQL 语法，尤其是在处理大量数据的导入及导出时更为方便。
-
-2. 由于 phpMyAdmin 与其他 PHP 程序一样在网页服务器上运行，您可以在任何地方使用这些程序产生的 HTML 页面，远程管理 MySQL 数据库，从而方便地创建、查询、修改、删除数据库与表。也可借由 phpMyAdmin 生成 PHP 语句，在编写 PHP 互联网应用时轻松插入 SQL 查询。
-
-## 部署 phpMyAdmin？
-
-首先保证存在一个或新建一个需要被管理的 MySQL 服务实例（如果已有 MySQL 服务实例，可跳过这个步骤）
-
-在**镜像仓库**中选择 **phpMyAdmin**，点击「部署最新版本」。
-
-![](http://blog.daocloud.io/wp-content/uploads/2015/05/app-php-0.png)
-
-部署时在**服务&环境**绑定 MySQL 服务，切记此处需要使用 `mysql` 作为连接字符串的别名，然后点击**立即部署**。
-
-![](http://blog.daocloud.io/wp-content/uploads/2015/05/app-php-1.png)
-
-
-部署成功后打开应用的 URL，根据您的 MySQL 实例参数，在启动页面的填写相应的**用户名**和**密码**，您就可以开始管理 MySQL 数据库了。
-
-![](http://blog.daocloud.io/wp-content/uploads/2015/05/app-php-2.png)
-
-![](http://blog.daocloud.io/wp-content/uploads/2015/05/app-php-3.png)
+至此，我们已经掌握了如何创建和使用 DaoCloud 平台之上的 MySQL 服务。

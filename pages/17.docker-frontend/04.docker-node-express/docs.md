@@ -1,10 +1,11 @@
 ---
-title: '用 Docker搭建 Node Express 应用'
+title: '用 Docker 搭建 Node Express 应用'
 ---
 
 <!-- reviewed by fiona -->
 
-## Node Express Docker
+![](http://7xi8kv.com5.z0.glb.qiniucdn.com/node.jpg)
+
 > 目标： 用 Docker 镜像的方式搭建 Node Express 应用
 
 本项目代码：[node-express-docker-sample](https://github.com/Ye-Ting/node-express-docker-sample)

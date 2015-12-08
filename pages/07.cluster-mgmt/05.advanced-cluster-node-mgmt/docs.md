@@ -61,3 +61,8 @@ DaoCloud 智能集群
 
 问：在自有主机部署应用，或者进行容器管理时，响应速度较慢，是什么原因？<br>
 答：响应速度取决于自有主机的网络带宽，如果网络速度较慢，可能会引起镜像下载超时，与 DaoCloud 云端服务链接中断等问题。请确保您的自有主机接入高速稳定的网络，或在 DaoCloud 操作界面选择重试、重新部署或刷新页面。
+
+问：如何卸载主机监控程序？<br>
+答：如果您是 Ubuntu,Debian,可以通过 `dpkg -r daomonit` 卸载。
+如果您是 CentOS,AMZN,Fedora,可以通过 `rpm -e daomonit` 卸载。
+其他系统通过运行 `docker rm -f daomonit` 卸载。
