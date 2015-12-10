@@ -2,11 +2,13 @@
 namespace Grav\Plugin;
 
 use Grav\Plugin\Admin;
-use Grav\Common\Utils;
+use Grav\Common\File\CompiledYamlFile;
 use Grav\Common\Plugin;
 use Grav\Common\Page\Page;
 use Grav\Common\User\User;
+use Grav\Common\Utils;
 
+use RocketTheme\Toolbox\Event\Event;
 use RocketTheme\Toolbox\Session\Message;
 
 class LoginPlugin extends Plugin
@@ -37,7 +39,8 @@ class LoginPlugin extends Plugin
             'onTask.login.logout' => ['loginController', 0],
             'onPageInitialized' => ['authorizePage', 0],
             'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
-            'onTwigSiteVariables' => ['onTwigSiteVariables', -100000]
+            'onTwigSiteVariables' => ['onTwigSiteVariables', -100000],
+            'onFormProcessed' => ['onFormProcessed', 0]
         ];
     }
 
@@ -48,6 +51,11 @@ class LoginPlugin extends Plugin
     {
         /** @var Uri $uri */
         $uri = $this->grav['uri'];
+
+        // Check to ensure sessions are enabled.
+        if ($this->grav['config']->get('system.session.enabled') === false) {
+            throw new \RuntimeException('The Login plugin requires "system.session" to be enabled');
+        }
 
         /** @var Grav\Common\Session */
         $session = $this->grav['session'];
@@ -78,7 +86,7 @@ class LoginPlugin extends Plugin
                 $session->user = new User;
 
                 if ($c['config']->get('plugins.login.rememberme.enabled')) {
-                    $controller = new Login\Controller($this->grav, '');
+                    $controller = new Login\Controller($c, '');
                     $rememberMe = $controller->rememberMe();
 
                     // If we can present the correct tokens from the cookie, we are logged in
@@ -98,7 +106,7 @@ class LoginPlugin extends Plugin
 
                     // Check if the token was invalid
                     if ($rememberMe->loginTokenWasInvalid()) {
-                        $controller->setMessage($t->translate('LOGIN_PLUGIN.REMEMBER_ME_STOLEN_COOKIE'));
+                        $controller->setMessage($c['language']->translate('LOGIN_PLUGIN.REMEMBER_ME_STOLEN_COOKIE'));
                     }
                 }
             }
@@ -208,6 +216,10 @@ class LoginPlugin extends Plugin
         /** @var Page $page */
         $page = $this->grav['page'];
 
+        if (!$page) {
+            return;
+        }
+
         $header = $page->header();
         $rules = isset($header->access) ? (array) $header->access : [];
 
@@ -289,6 +301,130 @@ class LoginPlugin extends Plugin
         // add CSS for frontend if required
         if (!$this->isAdmin() && $this->config->get('plugins.login.built_in_css')) {
             $this->grav['assets']->add('plugin://login/css/login.css');
+        }
+    }
+
+    /**
+     * Validate a value. Currently validates
+     *
+     * - 'user' for username format and username availability.
+     * - 'password1' for password format
+     * - 'password2' for equality to password1
+     *
+     * @param        $type
+     * @param        $value
+     * @param string $extra
+     *
+     * @return mixed
+     */
+    protected function validate($type, $value, $extra = '')
+    {
+        switch ($type) {
+            case 'user':
+                if (!preg_match('/^[a-z0-9_-]{3,16}$/', $value)) {
+                    throw new \RuntimeException('Username should be between 3 and 16 characters, including lowercase letters, numbers, underscores, and hyphens. Uppercase letters, spaces, and special characters are not allowed');
+                }
+
+                if (file_exists($this->grav['locator']->findResource('user://accounts/' . $value . YAML_EXT))) {
+                    throw new \RuntimeException('Username "' . $value . '" already exists, please pick another username');
+                }
+
+                break;
+
+            case 'password1':
+                if (!preg_match('/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/', $value)) {
+                    throw new \RuntimeException('Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters');
+                }
+
+                break;
+
+            case 'password2':
+                if (strcmp($value, $extra)) {
+                    throw new \RuntimeException('Passwords did not match.');
+                }
+        }
+    }
+
+    /**
+     * Process a registration form. Handles the following actions:
+     *
+     * - validate_password: validates a password
+     * - register_user: registers a user
+     *
+     * @param Event $event
+     */
+    public function onFormProcessed(Event $event)
+    {
+        $form = $event['form'];
+        $action = $event['action'];
+        $params = $event['params'];
+
+        if (!$this->config->get('plugins.login.enabled')) {
+            throw new \RuntimeException($this->grav['language']->translate('LOGIN_PLUGIN.LOGIN_PLUGIN_DISABLED'));
+        }
+
+        if (!$this->config->get('plugins.login.user_registration.enabled')) {
+            throw new \RuntimeException($this->grav['language']->translate('LOGIN_PLUGIN.USER_REGISTRATION_DISABLED'));
+        }
+
+        switch ($action) {
+            case 'register_user':
+
+                $data = [];
+                $username = $form->value('username');
+                $this->validate('user', $username);
+
+                if (isset($params['options']['validate_password1_and_password2']) && $params['options']['validate_password1_and_password2']) {
+                    $this->validate('password1', $form->value('password1'));
+                    $this->validate('password2', $form->value('password2'), $form->value('password1'));
+                    $data['password'] = $form->value('password1');
+                }
+
+                if (isset($params['options']['validate_password']) && $params['options']['validate_password']) {
+                    $this->validate('password1', $form->value('password'));
+                }
+
+                $fields = $this->config->get('plugins.login.user_registration.fields', []);
+
+                foreach($fields as $field) {
+                    // Process value of field if set in the page process.register_user
+                    if (isset($params['fields'])) {
+                        foreach($params['fields'] as $key => $param) {
+                            if ($key == $field) {
+                                $data[$field] = $param;
+                            }
+                        }
+                    }
+
+                    if (!isset($data[$field]) && $form->value($field)) {
+                        $data[$field] = $form->value($field);
+                    }
+                }
+
+                if (isset($params['options']['validate_password1_and_password2']) && $params['options']['validate_password1_and_password2']) {
+                    unset($data['password1']);
+                    unset($data['password2']);
+                }
+
+                // Don't store the username: that is part of the filename
+                unset($data['username']);
+
+                // Create user object and save it
+                $user = new User($data);
+                $file = CompiledYamlFile::instance($this->grav['locator']->findResource('user://accounts/' . $username . YAML_EXT, true, true));
+                $user->file($file);
+                $user->save();
+
+                if (isset($params['options']['login_after_registration']) && $params['options']['login_after_registration']) {
+                    //Login user
+                    $user = User::load($username);
+                    $this->grav['session']->user = $user;
+                    unset($this->grav['user']);
+                    $this->grav['user'] = $user;
+                    $user->authenticated = $user->authorize('site.login');
+                }
+
+                break;
         }
     }
 }

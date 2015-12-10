@@ -64,7 +64,7 @@ Please choose the state for the account:
   [enabled ] Enabled
   [disabled] Disabled
  > enabled
- 
+
 Success! User joeuser created.
 ```
 
@@ -128,7 +128,7 @@ You can also copy this `login-status.html.twig` file into your theme and modify 
 
 # OAuth
 
-You can add OAuth providers to the login plugin as another method to have users on your site. To enable OAuth change `oauth.enabled` to `true` in `login.yaml`. By default OAuth allows users to login though they do not create an account file for the user. If you want an account file created (ex: for tracking purposes) change `oauth.user.autocreate` to `true` in `login.yaml`. 
+You can add OAuth providers to the login plugin as another method to have users on your site. To enable OAuth change `oauth.enabled` to `true` in `login.yaml`. By default OAuth allows users to login though they do not create an account file for the user. If you want an account file created (ex: for tracking purposes) change `oauth.user.autocreate` to `true` in `login.yaml`.
 >Note: OAuth has not been tested with Grav's multilang feature! Due to this, certain OAuth providers may not function properly on multilang sites
 
 >IMPORTANT: `localhost` may NOT be used for callback and allowed URLs when creating OAuth provider applications due to certificate verification issues. Some services allow other URLs and it may be possible to add custom domains pointing to 127.0.0.1 in your hosts file and point applications there.
@@ -149,7 +149,7 @@ In the **Basic** tab add your domain into the **App Domains** section as well as
 
 ## Github
 
-Visit Github's [Developer Applications Console](https://github.com/settings/developers) and press button **Register new application** (login if necesarry). ![](assets/github/github.png) 
+Visit Github's [Developer Applications Console](https://github.com/settings/developers) and press button **Register new application** (login if necesarry). ![](assets/github/github.png)
 
 Fill out the name and the URL (can be anything) and fill in the **callback**, which must be equal to where your grav site is located, generally just the host, i.e. `http://getgrav.org`. ![](assets/github/github_2.png)
 
@@ -161,9 +161,9 @@ Visit the [Google Developers Console](https://console.developers.google.com) (si
 
 Select **Create Project** and give the project a name (can be anything). Click **Create**. ![](assets/google/google.png)
 
-When it's finished creating in the left hand menu choose **Credentials** under **APIs & Auth** (you may need to click **APIs & Auth** in order to display **Credntials**). ![](assets/google/google_3.png) 
+When it's finished creating in the left hand menu choose **Credentials** under **APIs & Auth** (you may need to click **APIs & Auth** in order to display **Credntials**). ![](assets/google/google_3.png)
 
-Under **Add credentials** (center of screen) select **OAuth 2.0 client ID**.![](assets/google/google_4.png) 
+Under **Add credentials** (center of screen) select **OAuth 2.0 client ID**.![](assets/google/google_4.png)
 
 Then select **Configure consent screen** in the top right corner. ![](assets/google/google_5.png)
 
@@ -171,12 +171,194 @@ The only requirement is **Product name** which should be the name of your websit
 
 Then once you save the consent screen select **Web application** from the radio buttons and fill in the fields. **Name** being name of product/business. **Authorized Javascript origins** is the root domain name of the login page (no routes or wildcards) such as `http://getgrav.org`.
 
-If needed, enter multiple sub domains, creating an entry for each. **Authorized redirect URIs** include the **same** Authorized Javascript origins used along with the **route** to the login page such as `http://getgrav.org/login`. Click **create**. 
+If needed, enter multiple sub domains, creating an entry for each. **Authorized redirect URIs** include the **same** Authorized Javascript origins used along with the **route** to the login page such as `http://getgrav.org/login`. Click **create**.
 
-![](assets/google/google_7.png) 
+![](assets/google/google_7.png)
 
 Copy **Client ID** and **client secret** into login.yaml under Google. ![](assets/google/google_8.png)Be sure to change `Google.enabled` to `true`
 
 ## Twitter
 
 Login if necessary. Create a [new Twitter App](https://apps.twitter.com/app/new) , fill out name, application website, choose "Browser" as application type, choose the callback URL like above, default access type can be set to read-only, click on "Register application" and then you should be directed to your new application with the Client ID and secret ready to be copied and pasted into the YAML file.
+
+# Allow User Registration
+
+The login plugin handles user registration. You just need to follow this simple tutorial to make it work.
+
+First, create a registration form page.
+
+Create a folder `04.registration/form.md`. The folder name is just an example. Pick the one that suits you. The important part is the filename. Since we're building a form, we need a form.md file.
+
+Also, your theme needs to implement forms. Use Antimatter or another form-compatible theme if yours does not work, then once you're setup with the form you can migrate the forms files and make it work on your theme too.
+
+Add the following content to your registration form:
+
+```
+---
+form:
+  fields:
+    -
+      name: username
+      type: text
+      default: 'xxx'
+      validate:
+        required: true
+
+    -
+      name: email
+      type: text
+      default: 'xxx@te.it'
+      validate:
+        required: true
+
+    -
+      name: password1
+      type: password
+      label: Enter a password
+      default: '2e32Ejeoij32ie'
+      validate:
+        required: true
+
+    -
+      name: password2
+      type: password
+      label: Repeat the password
+      default: '2e32Ejeoij32ie'
+      validate:
+        required: true
+
+  buttons:
+      -
+          type: submit
+          value: Submit
+      -
+          type: reset
+          value: Reset
+
+  process:
+      -
+        register_user:
+          fields:
+            - access: ['site.login']
+            - state: 'enabled'
+      -
+        display: '/welcome'
+      -
+        message: "Welcome to my site!"
+---
+
+# Registration
+```
+
+This is a normal form. The only thing different from a contact form or another form that you might write on your site is the process field `register_user`, which takes care of processing the user registration.
+
+Once the user is registered, Grav redirects the user to the `display` page with the `message` message.
+
+The only field strictly required by Grav is `username`. Then the other fields can be added as needed.
+
+For example in this case we added
+
+- password1
+- password2
+
+to the form. And, we added to the `register_user.options` the field property `validate_password1_and_password2`. What this does is picking the password1 and password2 fields, validate them, and put the content in the `password` field.
+
+You can avoid having 2 fields for the password, which by the way is a recommended option, and just put a single `password` field, along with the option `validate_password`.
+
+If you don't add an option, the `password` field is considered like a normal field, so just the usual form validation is applied. The `validate_password1_and_password2` and `validate_password` checks ensure the password respects the Grav password standards: password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.
+
+## Enable the Login plugin registration
+
+Make sure in the Login plugin settings you have `user_registration.enabled` set to true, otherwise the registration will trigger an error.
+
+By default user registration is DISABLED.
+
+## Adding your own fields
+
+Just add fields to the form like you would with any other form.
+
+To let the Login plugin add those fields to the user yaml file, however, you also need to add it to the `user_registration.fields` property.
+
+By default we have
+
+```
+  fields:
+    - 'username'
+    - 'password'
+    - 'email'
+    - 'fullname'
+    - 'title'
+    - 'access'
+    - 'state'
+```
+
+Add your own as you prefer, to build any custom registration form you can think of.
+
+## Specifying a default value for a field
+
+If you want to pre-fill a field, without showing it to the user in the form, you could set it as an hidden field. But the user could see it - and modify it via the browser dev tools.
+
+To add a field and make sure the user cannot modify it, add it to `process.register_user.fields`.
+
+The example form shows:
+
+```
+  process:
+      -
+        register_user:
+          fields:
+            - access: ['site.login']
+            - state: 'enabled'
+```
+
+Access is set to `site.login`, and the user is set to be `enabled`.
+
+## Login users directly after the registration
+
+Just add the option `login_after_registration` and set it to true.
+
+Example:
+
+```
+  process:
+        -
+            register_user:
+                options:
+                    login_after_registration: true
+
+```
+
+## Add captcha to the user registration
+
+Add a captcha like you would with any form:
+
+Add
+
+```
+        - name: g-recaptcha-response
+          label: Captcha
+          type: captcha
+          recatpcha_site_key: aeio43kdk3idko3k4ikd4
+          recaptcha_not_validated: 'Captcha not valid!'
+          validate:
+            required: true
+```
+
+to the form field, and
+
+```
+process:
+  - captcha
+```
+
+to validate it server-side. Put this process action before all the other actions, so it's processed first and the user is not created if the captcha is not valid.
+
+## Redirect to another page after login
+
+Use the `process.display` property, and set it to your favourite page:
+
+```
+  process:
+     -
+       display: /welcome
+```

@@ -1,5 +1,5 @@
 name: Form
-version: 1.0.0
+version: 1.0.2
 description: Enables the forms handling
 icon: check-square
 author:
@@ -20,7 +20,38 @@ form:
       highlight: 1
       default: 0
       options:
-        1: Enabled
-        0: Disabled
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
       validate:
         type: bool
+    files:
+      type: section
+      title: PLUGIN_FORM.FILES
+
+      fields:
+        files.multiple:
+          type: toggle
+          label: PLUGIN_FORM.ALLOW_MULTIPLE
+          help: PLUGIN_FORM.ALLOW_MULTIPLE_HELP
+          highlight: 1
+          default: 0
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+        files.destination:
+          type: text
+          label: PLUGIN_FORM.DESTINATION
+          help: PLUGIN_FORM.DESTINATION_HELP
+          default: '@self'
+        files.accept:
+          type: selectize
+          size: large
+          label: PLUGIN_FORM.ACCEPT
+          help: PLUGIN_FORM.ACCEPT_HELP
+          classes: fancy
+          default:
+            - image/*
+          validate:
+              type: commalist

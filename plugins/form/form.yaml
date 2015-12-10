@@ -1,1 +1,6 @@
 enabled: true
+files:
+  multiple: false
+  destination: '@self'
+  accept:
+    - image/*

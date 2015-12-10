@@ -21,7 +21,9 @@ var bytesToSize = function(bytes) {
 var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
 var keepAlive = function keepAlive() {
-    $.post(GravAdmin.config.base_url_relative + '/task' + GravAdmin.config.param_sep + 'keepAlive');
+    $.post(GravAdmin.config.base_url_relative + '/task' + GravAdmin.config.param_sep + 'keepAlive', {
+        'admin-nonce': GravAdmin.config.admin_nonce
+    });
 };
 
 $(function () {
@@ -296,7 +298,7 @@ $(function () {
                 if (grav.isUpdatable) {
                     var icon    = '<i class="fa fa-bullhorn"></i> ';
                         content = 'Grav <b>v{available}</b> ' + translations.PLUGIN_ADMIN.IS_NOW_AVAILABLE + '! <span class="less">(' + translations.PLUGIN_ADMIN.CURRENT + ': v{version})</span> ',
-                        button  = '<button data-maintenance-update="' + GravAdmin.config.base_url_relative + '/update.json/' + task + 'updategrav" class="button button-small secondary" id="grav-update-button">' + translations.PLUGIN_ADMIN.UPDATE_GRAV_NOW + '</button>';
+                        button  = '<button data-maintenance-update="' + GravAdmin.config.base_url_relative + '/update.json/' + task + 'updategrav/admin-nonce' + GravAdmin.config.param_sep + GravAdmin.config.admin_nonce + '" class="button button-small secondary" id="grav-update-button">' + translations.PLUGIN_ADMIN.UPDATE_GRAV_NOW + '</button>';
 
                     if (grav.isSymlink) {
                         button = '<span class="hint--left" style="float: right;" data-hint="' + translations.PLUGIN_ADMIN.GRAV_SYMBOLICALLY_LINKED + '"><i class="fa fa-fw fa-link"></i></span>';
@@ -452,7 +454,7 @@ $(function () {
 
         // make sortable
         new Sortable(holder[0], {
-            filter: '.form-input-wrapper',
+            filter: '.form-input-wrapper, .form-markdown-wrapper',
             onUpdate: function () {
                 if (isArray)
                     reIndex(el);
@@ -488,6 +490,12 @@ $(function () {
 
             holder.append(newItem);
             button.data('key-index', ++key);
+
+            // process markdown editors
+            var field = newItem.find('[name]').filter('textarea');
+            if (field.length && field.data('grav-mdeditor') && typeof MDEditors !== 'undefined') {
+                MDEditors.add(field);
+            }
         });
     });
 

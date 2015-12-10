@@ -150,9 +150,10 @@ class Controller implements ControllerInterface
             $this->rememberMe->setCookieName($config->get('plugins.login.rememberme.name'));
             $this->rememberMe->setExpireTime($config->get('plugins.login.rememberme.timeout'));
 
-            // Hardening cookies with user-agent and system based cache key
-            $data = $_SERVER['HTTP_USER_AGENT'] . $this->grav['cache']->getKey();
-            $this->rememberMe->setSalt(password_hash($data, PASSWORD_DEFAULT));
+            // Hardening cookies with user-agent and random salt or
+            // fallback to use system based cache key
+            $data = $_SERVER['HTTP_USER_AGENT'] . $config->get('security.salt', $this->grav['cache']->getKey());
+            $this->rememberMe->setSalt(hash('sha512', $data));
 
             // Set cookie with correct base path of Grav install
             $cookie = new Cookie();

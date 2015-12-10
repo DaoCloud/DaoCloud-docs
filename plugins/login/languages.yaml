@@ -7,6 +7,7 @@ en:
     BTN_LOGIN: Login
     BTN_LOGOUT: Logout
     BTN_FORGOT: Forgot
+    BTN_REGISTER: Register
 
     SESSION: "&ldquo;Remember Me&rdquo;-Session"
     REMEMBER_ME: Remember Me

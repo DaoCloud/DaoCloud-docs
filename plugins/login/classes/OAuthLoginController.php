@@ -295,7 +295,7 @@ class OAuthLoginController extends Controller
      */
     protected function authenticate($username, $id, $email, $language = '')
     {
-        $accountFile = Inflector::underscorize($username);
+        $accountFile = $this->grav['inflector']->underscorize($username);
         $user = User::load(strtolower("$accountFile.{$this->action}"));
 
         if ($user->exists()) {
@@ -354,7 +354,7 @@ class OAuthLoginController extends Controller
         /** @var User $user */
         $user = $this->grav['user'];
 
-        $accountFile = Inflector::underscorize($data['username']);
+        $accountFile = $this->grav['inflector']->underscorize($data['username']);
         $accountFile = $this->grav['locator']->findResource('user://accounts/' . strtolower("$accountFile.{$this->action}") . YAML_EXT, true, true);
 
         $user->set('username', $data['username']);
