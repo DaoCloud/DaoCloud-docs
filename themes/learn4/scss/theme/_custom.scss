@@ -234,6 +234,10 @@
 
 #sidebar ul > li ul {
     display: block !important;
+    margin-left: -2rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     overflow: hidden;
     max-height: 0;
     opacity: 0;
