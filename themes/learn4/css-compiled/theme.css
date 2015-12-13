@@ -818,7 +818,7 @@ td {
   transition: max-height 500ms, opacity 300ms;
   -webkit-transition: max-height 500ms, opacity 300ms; }
 
-#sidebar ul > li:hover ul {
+#sidebar ul > li ul.open {
   max-height: 500px;
   opacity: 1;
   transition: max-height 0, opacity 300ms;
