@@ -824,4 +824,7 @@ td {
   transition: max-height 0, opacity 300ms;
   -webkit-transition: max-height 0, opacity 300ms; }
 
+#sidebar ul.topics > li > a {
+  cursor: pointer; }
+
 /*# sourceMappingURL=theme.css.map */
