@@ -14,8 +14,8 @@
 $(function(){
 	var links = $('#sidebar ul.topics>li>a');
 	links.removeAttr('href');
-	links.on('click',function(e){
-		$('#sidebar ul.topics>li>ul').removeClass('open');
-		$(e.target).parents('li').find('ul').addClass('open');
+	links.on('mouseover',function(e){
+		$('#sidebar ul.topics>li>ul').removeClass('active');
+		$(e.target).parents('li').find('ul').addClass('active');
 	})
 })
