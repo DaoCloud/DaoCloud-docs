@@ -252,7 +252,7 @@
     -webkit-transition: max-height 0, opacity 300ms;
 }
 
-#sidebar ul> li.active ul {
+#sidebar ul> li.parent ul {
     max-height: 500px;
     opacity: 1;
     transition: max-height 0, opacity 300ms;
