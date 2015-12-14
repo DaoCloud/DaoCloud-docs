@@ -13,7 +13,7 @@
                 <span><b>{% if data_level == 0 %}{{ loop.index }}. {% endif %}</b>{{ p.menu }}</span>
             </a>
             {% if p.children.count > 0 %}
-            <ul class="{{ current_page }}">
+            <ul>
                 {{ _self.loop(p, parent_loop+loop.index) }}
             </ul>
             {% endif %}
