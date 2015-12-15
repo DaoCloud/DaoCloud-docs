@@ -1,5 +1,5 @@
 en:
-  LOGIN_PLUGIN:
+  PLUGIN_LOGIN:
     ACCESS_DENIED: Access denied...
     LOGIN_FAILED: Login failed...
     LOGIN_SUCCESSFUL: You have been successfully logged in.
@@ -26,6 +26,8 @@ en:
     BUILTIN_CSS_HELP: Include the CSS provided by the admin plugin
     ROUTE: Login path
     ROUTE_HELP: Custom route to a custom login page that your theme provides
+    ROUTE_REGISTER: Registration path
+    ROUTE_REGISTER_HELP: Route to the registration page. Set this if you want to use the built-in registration page. Leave it empty if you have your own registration form
 
     OAUTH_SECTION: OAuth
     OAUTH_ENABLE: Enable OAuth
@@ -44,8 +46,66 @@ en:
     GITHUB: GitHub
     TWITTER: Twitter
 
+    USERNAME_NOT_VALID: "Username should be between 3 and 16 characters, including lowercase letters, numbers, underscores, and hyphens. Uppercase letters, spaces, and special characters are not allowed"
+    USERNAME_NOT_AVAILABLE: "Username %s already exists, please pick another username"
+    PASSWORD_NOT_VALID: "Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+    PASSWORDS_DO_NOT_MATCH: "Passwords do not match. Double-check you entered the same password twice"
+
+    EMAIL_NOT_CONFIGURED: "Email not configured"
+    USER_NEEDS_EMAIL_FIELD: "The user needs an email field"
+    EMAIL_SENDING_FAILURE: "An error occurred while sending the email"
+
+    ACTIVATION_EMAIL_SUBJECT: "Activate your account on %s"
+    ACTIVATION_EMAIL_BODY: "Hi %s, click %s to activate your account on %s"
+    WELCOME_EMAIL_SUBJECT: "Welcome to %s"
+    WELCOME_EMAIL_BODY: "Hi %s, welcome to %s!"
+
+    NOTIFICATION_EMAIL_SUBJECT: "New user on %s"
+    NOTIFICATION_EMAIL_BODY: "Hi, a new user registered on %s. Username: %s, email: %s"
+
+    EMAIL_FOOTER: "GetGrav.org"
+    ACTIVATION_LINK_EXPIRED: "Activation link expired"
+    USER_ACTIVATED_SUCCESSFULLY: "User activated successfully"
+    INVALID_REQUEST: "Invalid request"
+
+    USER_REGISTRATION: "User Registration"
+    USER_REGISTRATION_ENABLED_HELP: "Enable the user registration"
+
+    VALIDATE_PASSWORD1_AND_PASSWORD2: "Validate double entered password"
+    VALIDATE_PASSWORD1_AND_PASSWORD2_HELP: "Validate and compare two different fields for the passwords, named `password1` and `password2`. Enable this if you have two password fields in the registration form"
+
+    VALIDATE_PASSWORD: "Validate a single password"
+    VALIDATE_PASSWORD_HELP: "Validate a a single field for the passwords, named `password`. Enable this if you have a single password field in the registration form"
+
+    SET_USER_DISABLED: "Set the user as disabled"
+    SET_USER_DISABLED_HELP: "Best used along with the `Send activation email` email. Adds the user to Grav, but sets it as disabled"
+    LOGIN_AFTER_REGISTRATION: "Login the user after registration"
+    LOGIN_AFTER_REGISTRATION_HELP: "Immediately login the user after the registration. If email activation is required, the user will be logged in immediately after activating the account"
+    SEND_ACTIVATION_EMAIL:  "Send activation email"
+    SEND_ACTIVATION_EMAIL_HELP: "Sends and email to the user to activate his account. Enable the `Set the user as disabled` option when using this feature, so the user will be set as disabled and an email will be sent to activate the account"
+    SEND_NOTIFICATION_EMAIL: "Send notification email"
+    SEND_NOTIFICATION_EMAIL_HELP: "Notifies the site admin that a new user has registered. The email will be sent to the `To` field in the Email Plugin configuration"
+    SEND_WELCOME_EMAIL: "Send welcome email"
+    SEND_WELCOME_EMAIL_HELP: "Sends an email to the newly registered user"
+
+    DEFAULT_VALUES: "Default values"
+    DEFAULT_VALUES_HELP: "List of field names and values associated, that will be added to the user profile (yaml file) by default, without being configurable by the user. Separate multiple values with a comma, with no spaces between the values"
+    ADDITIONAL_PARAM_KEY: "Parameter"
+    ADDITIONAL_PARAM_VALUE: "Value"
+
+    REGISTRATION_FIELDS: "Registration fields"
+    REGISTRATION_FIELDS_HELP: "Add the fields that will be added to the user yaml file. Fields not listed here will not be added even if present in the registration form"
+    REGISTRATION_FIELD_KEY: "Field name"
+
+    REDIRECT_AFTER_LOGIN: "Redirect after login"
+    REDIRECT_AFTER_LOGIN_HELP: "Custom route to redirect after login"
+    REDIRECT_AFTER_REGISTRATION: "Redirect after registration"
+    REDIRECT_AFTER_REGISTRATION_HELP: "Custom route to redirect after the registration"
+
+    OPTIONS: Options
+
 fr:
-  LOGIN_PLUGIN:
+  PLUGIN_LOGIN:
     ACCESS_DENIED: Accès non autorisé...
     LOGIN_FAILED: Echec de la connexion...
     LOGIN_SUCCESSFUL: Vous avez été connecté avec succès.
@@ -54,13 +114,14 @@ fr:
     BTN_FORGOT: Mot de passe oublié
 
 hu:
-  LOGIN_PLUGIN:
+  PLUGIN_LOGIN:
     ACCESS_DENIED: Hozzáférés megtagadva...
     LOGIN_FAILED: Sikertelen belépés...
     LOGIN_SUCCESSFUL: Sikeresen beléptél.
     BTN_LOGIN: Belépés
     BTN_LOGOUT: Kilépés
     BTN_FORGOT: Elfelejtettem
+    BTN_REGISTER: Regisztráció
     SESSION: "Munkamenet Megjegyzése"
 
     REMEMBER_ME: Jegyezz Meg
@@ -71,7 +132,7 @@ hu:
     OAUTH_SIGNIN: Belépés felhasználóneved és jelszavad megadásával
     OAUTH_CONNECT_MESSAGE: Összekapcsolás egy közösségi oldallal
     OAUTH_CONNECT_MESSAGE_EXTRA: más közösségi oldalak
-    OAUTH_PROVIDER_NOT_SUPPORTED: Az "%s" OAuth szolgáltató nem használható
+    OAUTH_PROVIDER_NOT_SUPPORTED: A(z) "%s" OAuth szolgáltató nem használható
     OR: vagy
 
     PLUGIN_STATUS: Plugin állapota
@@ -79,6 +140,8 @@ hu:
     BUILTIN_CSS_HELP: Az admin plugin által biztosított CSS beillesztése
     ROUTE: Belépés útvonala
     ROUTE_HELP: Egyedi útvonal egy egyedi belépő oldalhoz, melyet az aktuális téma biztosít
+    ROUTE_REGISTER: Regisztráció útvonala
+    ROUTE_REGISTER_HELP: A regisztrációs oldal elérési útja. Akkor állítsd be, ha a beépített regisztrációs oldalt szeretnéd használni
 
     OAUTH_SECTION: OAuth
     OAUTH_ENABLE: OAuth engedélyezése
@@ -96,3 +159,8 @@ hu:
     GOOGLE: Google
     GITHUB: GitHub
     TWITTER: Twitter
+
+    USERNAME_NOT_VALID: "A felhasználónév 3-16 karakter hosszú legyen, tartalmazhat kisbetűket, számokat, aláhúzást és kötőjelet. Nagybetűk, szóköz és speciális karakterek használata nem megengedett"
+    USERNAME_NOT_AVAILABLE: "%s nevű felhasználó már létezik, kérlek válassz más felhasználónevet"
+    PASSWORD_NOT_VALID: "A jelszónak tartalmaznia kell legalább egy számot, egy kisbetűt és egy nagybetűt, valamint legalább 8 karakter hosszú kell, hogy legyen"
+    PASSWORDS_DO_NOT_MATCH: "A két jelszó nem egyezik meg. Győzödj meg róla, hogy azonos legyen a kettő"

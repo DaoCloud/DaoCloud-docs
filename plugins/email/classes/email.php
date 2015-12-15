@@ -102,7 +102,7 @@ class Email
         if (!$this->mailer) {
             /** @var Config $config */
             $config = self::getGrav()['config'];
-            $mailer = $config->get('plugins.email.mailer.default');
+            $mailer = $config->get('plugins.email.mailer.engine');
 
             // Create the Transport and initialize it.
             switch ($mailer) {

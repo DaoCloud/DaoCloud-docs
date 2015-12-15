@@ -9,7 +9,7 @@ TODO
 
 #### 系统需求
 
-DaoVoice Widget支持一下浏览器版本
+DaoVoice Widget支持以下浏览器版本
 
 * Chrome 
 * Firefox

@@ -1,5 +1,12 @@
+# v1.4.1
+## 12/11/2015
+
+1. [](#bugfix)
+    * Fixed CLI command for PHP 5.5 and lower
+
 # v1.4.0
 ## 11/21/2015
+
 1. [](#new)
     * Implemented CLI commands for the plugin
 

@@ -102,7 +102,7 @@ class OAuthLoginController extends Controller
         }
 
         if (!$this->service || empty($config)) {
-            $this->setMessage($t->translate(['LOGIN_PLUGIN.OAUTH_PROVIDER_NOT_SUPPORTED', $this->action]));
+            $this->setMessage($t->translate(['PLUGIN_LOGIN.OAUTH_PROVIDER_NOT_SUPPORTED', $this->action]));
             return true;
         }
 
@@ -111,16 +111,16 @@ class OAuthLoginController extends Controller
         if (is_bool($authenticated)) {
             $this->reset();
             if ($authenticated) {
-                $this->setMessage($t->translate('LOGIN_PLUGIN.LOGIN_SUCCESSFUL'));
+                $this->setMessage($t->translate('PLUGIN_LOGIN.LOGIN_SUCCESSFUL'));
             } else {
-                $this->setMessage($t->translate('LOGIN_PLUGIN.ACCESS_DENIED'));
+                $this->setMessage($t->translate('PLUGIN_LOGIN.ACCESS_DENIED'));
             }
 
             // Redirect to current URI
             $referrer = $this->grav['uri']->url(true);
             $this->setRedirect($referrer);
         } elseif (!$this->grav['session']->oauth) {
-            $this->setMessage($t->translate(['LOGIN_PLUGIN.OAUTH_PROVIDER_NOT_SUPPORTED', $this->action]));
+            $this->setMessage($t->translate(['PLUGIN_LOGIN.OAUTH_PROVIDER_NOT_SUPPORTED', $this->action]));
         }
 
         return true;

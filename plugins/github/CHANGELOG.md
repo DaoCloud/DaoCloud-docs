@@ -1,3 +1,10 @@
+# v1.2.2
+## 12/11/2015
+
+1. [](#new)
+    * New configuration settings for authentication, allowing to get past the 60/hr guest limit in favor of the 5000/hr authenticated limit
+    * New `paginator` class available that allows retrieving past the first page. GitHub API defaults to 30 items per page
+
 # v1.2.1
 ## 05/04/2015
 

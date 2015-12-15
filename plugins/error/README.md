@@ -46,7 +46,7 @@ You can now edit the override and tweak it however you prefer.
 
 ### Page
 
-Copy the page file [error.md](pages/error.error) into the `pages` folder of your user directory and that is it.
+Copy the page file [error.md](pages/error.md) into the `pages` folder of your user directory and that is it.
 
 ```
 /your/site/grav/user/pages/error/error.md

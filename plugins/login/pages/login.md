@@ -1,6 +1,5 @@
 ---
 title: Login
-template: form
 
 form:
     name: login

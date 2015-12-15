@@ -1,5 +1,5 @@
 name: Email
-version: 1.0.0
+version: 2.0.0
 description: Enables the emailing system for Grav
 icon: envelope
 author:
@@ -39,17 +39,44 @@ form:
         sendmail: Sendmail
         mail: PHP Mail
 
+    content_type:
+      type: select
+      label: Content type
+      size: medium
+      default: 'text/html'
+      options:
+        'text/plain': Plain text
+        'text/html': HTML
+
     from:
-      type: text
+      type: email
       size: medium
       label: Email from
       placeholder: "Default email from address"
+      validate:
+        required: true
+        type: email
 
-    to:
+    from_name:
       type: text
       size: medium
+      label: Email from name
+      placeholder: "Default email from name"
+
+    to:
+      type: email
+      size: medium
       label: Email to
-      placeholder: "Default email to address (can also be comma separated list)"
+      placeholder: "Default email to address"
+      validate:
+        required: true
+        type: email
+
+    to_name:
+      type: text
+      size: medium
+      label: Email to name
+      placeholder: "Default email to name"
 
     mailer.smtp.server:
       type: text

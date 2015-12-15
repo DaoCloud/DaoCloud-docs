@@ -4,8 +4,11 @@ taxonomy:
     category:
         - docs
 ---
+
 #### 什么是 PostgreSQL
+
 PostgreSQL 是以加州大学伯克利分校计算机系开发的 POSTGRES，现在已经更名为PostgreSQL，版本 4.2为基础的对象关系型数据库管理系统（ORDBMS）。PostgreSQL支持大部分 SQL标准并且提供了许多其他现代特性：复杂查询、外键、触发器、视图、事务完整性、MVCC。同样，PostgreSQL 可以用许多方法扩展，比如， 通过增加新的数据类型、函数、操作符、聚集函数、索引。免费使用、修改、和分发 PostgreSQL，不管是私用、商用、还是学术研究使用。
+
 #### 在 DaoCloud 服务集成创建 PostgreSQL 服务。
 
 1. 登录 DaoCloud 控制台，选择「服务集成」。
@@ -52,7 +55,7 @@ PostgreSQL 是以加州大学伯克利分校计算机系开发的 POSTGRES，现
 
   > 完整的 Docker 镜像请前往 [GitHub](https://github.com/allencloud/golang-postgres-web-sample.git) ，您可以 fork 到自己的项目里运行这个例子。
 
-  ```go
+```go
   package main
 
   import (
@@ -107,14 +110,14 @@ PostgreSQL 是以加州大学伯克利分校计算机系开发的 POSTGRES，现
 
   		fmt.Println(data)
   		c.JSON(200, data)
-  	})
+	})
 
-  	r.Run(":8080")
-  }
+	r.Run(":8080")
+}
 
-  ```
+```
 
-  成功部署后访问应用，便可以看到应用成功连接 PostgreSQL 并进行了相关的操作。
+成功部署后访问应用，便可以看到应用成功连接 PostgreSQL 并进行了相关的操作。
 
 #### 管理 PostgreSQL 服务
 * 在 GitHub 上有许多 PostgreSQL 服务管理工具，比如 [phpPgAdmin](https://github.com/phppgadmin/phppgadmin.git)，这里我们把 phpPgAdmin 构建成 Docker 镜像来管理我们的 PostgreSQL 服务。
@@ -125,4 +128,4 @@ PostgreSQL 是以加州大学伯克利分校计算机系开发的 POSTGRES，现
 
   ![](image_10.png)
 
-#### 至此，我们已经掌握了如何创建和使用 DaoCloud 平台之上的 PostgreSQL 服务。
+至此，我们已经掌握了如何创建和使用 DaoCloud 平台之上的 PostgreSQL 服务。

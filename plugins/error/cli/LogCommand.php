@@ -15,7 +15,7 @@ class LogCommand extends ConsoleCommand
     /**
      * @var string
      */
-    protected $logfile = LOG_DIR . 'grav.log';
+    protected $logfile;
     /**
      * @var array
      */
@@ -39,6 +39,7 @@ class LogCommand extends ConsoleCommand
      */
     protected function configure()
     {
+        $this->logfile = LOG_DIR . 'grav.log';
         $this
             ->setName("log")
             ->setDescription("Outputs the Error Log")
