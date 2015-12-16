@@ -97,4 +97,4 @@ docker run --name some-app --link some-mysql:mysql -d app-that-uses-mysql
 
 ### php-apache-mysql-sample 应用截图
 
-![php-apache-mysql-sample](/content/images/2015/07/php-apache-mysql.png "php-apache-mysql")
+![](php-apache-mysql.png)
