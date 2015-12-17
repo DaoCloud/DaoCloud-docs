@@ -18,6 +18,8 @@ DaoVoice Widget支持以下浏览器版本
 * Android 4+
 * IOS 6+
 
+DaoVoice Widget 需要浏览器支持HTTPS。
+
 #### 配置手册
 
 @kay
