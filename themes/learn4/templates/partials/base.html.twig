@@ -34,6 +34,7 @@
         {% do assets.addJs('theme://js/clipboard.min.js') %}
         {% do assets.addJs('theme://js/learn.js') %}
         {% do assets.addJs('theme://js/addTargetToAnchors.js') %}
+        {% do assets.addJs('theme://js/jquery.cookie.js') %}
         {{ assets.js() }}
     {% endblock %}
 
@@ -95,5 +96,84 @@
         {% include 'partials/analytics.html.twig' %}
         {% endif %}
     {% endblock %}
+
+
+<script>
+(function(i, s, o, g, r, a, m) {
+  i['DaoVoiceObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//widget.daovoice.io/widget/91af7bf3.js', 'daovoice');
+if (typeof $.cookie('token') != 'undefined') {
+  $.ajax({
+    url: "https://api.daocloud.io/get-token-info",
+    data: {},
+    type: 'GET',
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader('Authorization', $.cookie("token"));
+    },
+    success: function(res) {
+      if (res.user.tenant) {
+        var create_at_time = new Date(res.user.created_at).getTime() / 1000 - 28800;
+        var user_name = res.user.tenant.tenant_name;
+        var user_id = res.user.user_id;
+
+        $.ajax({
+          url: "https://api.daocloud.io/users/connections",
+          type: 'GET',
+          beforeSend: function(xhr) {
+            xhr.setRequestHeader('Authorization', $.cookie("token"));
+          },
+          success: function(res) {
+            var email = null;
+            for (i = 0; i < res.user.connections.length; i++) {
+              if (res.user.connections[i]['connect_type'] == 'email')
+                email = res.user.connections[i]['connect_value'];
+            }
+
+            daovoice('init', {
+              app_id: "91af7bf3",
+              user_id: user_id,
+              email: email,
+              name: user_name,
+              signed_up: create_at_time
+            });
+            daovoice('update');
+          },
+          error: function(res) {
+            daovoice('init', {
+              app_id: "91af7bf3"
+            });
+            daovoice('update');
+          }
+        });
+
+
+      }
+    },
+    error: function(XMLHttpRequest, textStatus, errorThrown) {
+      var status = XMLHttpRequest.status;
+      if (status == 401 || status == 404) {
+        daovoice('init', {
+          app_id: "91af7bf3"
+        });
+        daovoice('update');
+      }
+    }
+  });
+} else {
+  daovoice('init', {
+    app_id: "91af7bf3"
+  });
+  daovoice('update');
+}
+</script>
+
+
  </body>
 </html>
