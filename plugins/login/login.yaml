@@ -1,7 +1,36 @@
 enabled: true
 built_in_css: true
 route: false
+route_register: false
+route_activate: /activate_user
+route_forgot: /forgot_password
+route_reset: /reset_password
 redirect:
+parent_acl: false
+
+user_registration:
+  enabled: true
+
+  fields:
+    - 'username'
+    - 'password'
+    - 'email'
+    - 'fullname'
+    - 'title'
+    - 'access'
+    - 'state'
+
+  additional_params:
+    access: 'site.login'
+
+  options:
+    validate_password1_and_password2: true
+    validate_password: false
+    set_user_disabled: false
+    login_after_registration: true
+    send_activation_email: false
+    send_notification_email: false
+    send_welcome_email: false
 
 rememberme:
   enabled: true
@@ -41,15 +70,3 @@ oauth:
       credentials:
         key:
         secret:
-
-user_registration:
-  enabled: true
-
-  fields:
-    - 'username'
-    - 'password'
-    - 'email'
-    - 'fullname'
-    - 'title'
-    - 'access'
-    - 'state'

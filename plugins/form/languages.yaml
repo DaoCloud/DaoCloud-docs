@@ -9,6 +9,7 @@ en:
     DESTINATION_HELP: "The location where the files should be uploaded to"
     ACCEPT: "Allowed MIME Types"
     ACCEPT_HELP: "A list of MIME Types that are allowed for upload"
+    ERROR_VALIDATING_CAPTCHA: "Error validating the Captcha"
 
 it:
   PLUGIN_FORM:
@@ -21,6 +22,7 @@ it:
     DESTINATION_HELP: "La destinazione dove i files vengono uploadati"
     ACCEPT: "Tipi di MIME Concessi"
     ACCEPT_HELP: "Una lista di tipi di MIME che sono permessi per l'upload"
+    ERROR_VALIDATING_CAPTCHA: "Errore durante la validazione del Captcha"
 
 fr:
   PLUGIN_FORM:
@@ -36,3 +38,11 @@ hu:
   PLUGIN_FORM:
     NOT_VALIDATED: "Érvénytelen az űrlap. Egy vagy több kötelező mező nincs kitöltve."
     NONCE_NOT_VALIDATED: "Upsz, van egy kis probléma, kérlek nézd át az űrlapot, majd küld el újra."
+    FILES: "Fájlok Feltöltése"
+    ALLOW_MULTIPLE: "Több fájl feltöltése"
+    ALLOW_MULTIPLE_HELP: "Engedélyezi egyszerre több állomány felöltését."
+    DESTINATION: "Feltöltés Helye"
+    DESTINATION_HELP: "Ide lesznek feltöltve az állományok"
+    ACCEPT: "Engedélyezett MIME-típusok"
+    ACCEPT_HELP: "A feltölthető állományok MIME-típusainak listája"
+    ERROR_VALIDATING_CAPTCHA: "Hiba lépett fel a Captcha validálása során"

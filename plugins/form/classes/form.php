@@ -187,12 +187,23 @@ class Form extends Iterator
 
         $process = isset($this->items['process']) ? $this->items['process'] : array();
         if (is_array($process)) {
+            $event = null;
             foreach ($process as $action => $data) {
                 if (is_numeric($action)) {
                     $action = \key($data);
                     $data   = $data[$action];
                 }
-                self::getGrav()->fireEvent('onFormProcessed', new Event(['form' => $this, 'action' => $action, 'params' => $data]));
+
+                $previousEvent = $event;
+                $event = new Event(['form' => $this, 'action' => $action, 'params' => $data]);
+
+                if ($previousEvent) {
+                    if (!$previousEvent->isPropagationStopped()) {
+                        self::getGrav()->fireEvent('onFormProcessed', $event);
+                    }
+                } else {
+                    self::getGrav()->fireEvent('onFormProcessed', $event);
+                }
             }
         } else {
             // Default action.

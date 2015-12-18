@@ -1,5 +1,5 @@
 ---
-title: 'Docker 监控'
+title: 'Docker 监控（监控宝）'
 taxonomy:
     category:
         - docs

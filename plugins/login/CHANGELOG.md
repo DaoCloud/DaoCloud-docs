@@ -1,3 +1,20 @@
+# v1.2.0
+## 12/11/2015
+
+1. [](#new)
+    * Added account activation email upon registration
+    * Added forgot password functionality
+    * Support ACL from parent page
+    * Allow login immediately after account activation
+1. [](#improved)
+    * Handle admin login page if available
+    * Example registration form now provided by plugin
+    * Better error handling of registration
+    * Tab-based plugin configuration
+    * Updated translations
+1. [](#bugfix)
+    * Prevent failing when no efaul values are set
+
 # v1.1.0
 ## 12/01/2015
 

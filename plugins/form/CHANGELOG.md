@@ -1,5 +1,16 @@
+# v1.0.3
+## 12/11/2015
+
+1. [](#improved)
+    * Updated languages
+    * Allow an action to stop processing
+1. [](#bugfix)
+    * Fix captcha validation
+    * Fix issue where Form was unsetting valid page
+        
 # v1.0.2
 ## 12/01/2015
+
 1. [](#bugfix)
     * Fixed merge of defaults settings
     * Support for arrays in `data.txt.twig`

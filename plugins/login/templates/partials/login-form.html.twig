@@ -12,14 +12,14 @@
                 <input type="submit" name="task" value="login.login" tabindex="-1" />
 
                 {# Show OAuth authentication providers #}
-                <p>{{ 'LOGIN_PLUGIN.OAUTH_CONNECT_MESSAGE'|t }}
+                <p>{{ 'PLUGIN_LOGIN.OAUTH_CONNECT_MESSAGE'|t }}
                 {% if oauth.providers|count > 4 %}
-                    {{ 'LOGIN_PLUGIN.OR'|t }} <label for="oauth-input">{{ 'LOGIN_PLUGIN.OAUTH_CONNECT_MESSAGE_EXTRA'|t }}</label></p>
+                    {{ 'PLUGIN_LOGIN.OR'|t }} <label for="oauth-input">{{ 'PLUGIN_LOGIN.OAUTH_CONNECT_MESSAGE_EXTRA'|t }}</label></p>
                     <input type="checkbox" id="oauth-input" />
                     <ul class="oauth-provider-extra">
                         {% for provider,credentials in oauth.providers[4:] %}
                             {% set icon = icons[provider]|default(provider|lower) %}
-                            <li><button name="oauth" value="{{ provider }}" type="submit" class="button {{ provider|lower }}" href="{{ base_url_relative }}/login/oauth{{ config.system.param_sep }}{{ provider }}" title="{{ 'LOGIN_PLUGIN.OAUTH_LOGIN'|t(provider|ucwords) }}"><i class="fa fa-{{ icon }}"></i> {{ provider|ucwords }}</button></li>
+                            <li><button name="oauth" value="{{ provider }}" type="submit" class="button {{ provider|lower }}" href="{{ base_url_relative }}/login/oauth{{ config.system.param_sep }}{{ provider }}" title="{{ 'PLUGIN_LOGIN.OAUTH_LOGIN'|t(provider|ucwords) }}"><i class="fa fa-{{ icon }}"></i> {{ provider|ucwords }}</button></li>
                         {% endfor %}
                     </ul>
                 {% else %}
@@ -29,12 +29,12 @@
                 <ul class="oauth-provider">
                     {% for provider,credentials in oauth.providers[:4] %}
                         {% set icon = icons[provider]|default(provider|lower) %}
-                        <li><button name="oauth" value="{{ provider }}" type="submit" class="button {{ provider|lower }}" href="{{ base_url_relative }}/login/oauth{{ config.system.param_sep }}{{ provider }}" title="{{ 'LOGIN_PLUGIN.OAUTH_LOGIN'|t(provider|ucwords) }}"><i class="fa fa-{{ icon }}"></i> {{ provider|ucwords }}</button></li>
+                        <li><button name="oauth" value="{{ provider }}" type="submit" class="button {{ provider|lower }}" href="{{ base_url_relative }}/login/oauth{{ config.system.param_sep }}{{ provider }}" title="{{ 'PLUGIN_LOGIN.OAUTH_LOGIN'|t(provider|ucwords) }}"><i class="fa fa-{{ icon }}"></i> {{ provider|ucwords }}</button></li>
                     {% endfor %}
                 </ul>
             </div>
-            <span class="delimiter">{{ 'LOGIN_PLUGIN.OR'|t }}</span>
-            <p>{{ 'LOGIN_PLUGIN.OAUTH_SIGNIN'|t }}</p>
+            <span class="delimiter">{{ 'PLUGIN_LOGIN.OR'|t }}</span>
+            <p>{{ 'PLUGIN_LOGIN.OAUTH_SIGNIN'|t }}</p>
         {% endif %}
 
         {% for field in page.header.form.fields %}
@@ -49,16 +49,14 @@
                 <div class="form-data rememberme" data-grav-default="null" data-grav-disabled="true" data-grav-field="checkbox">
                     <div class="form-input-wrapper">
                         <input type="checkbox" value="1" name="rememberme" id="#rememberme">
-                        <label class="inline" for="#rememberme" title="{{ 'LOGIN_PLUGIN.REMEMBER_ME_HELP'|t }}">{{ 'LOGIN_PLUGIN.REMEMBER_ME'|t }}</label>
+                        <label class="inline" for="#rememberme" title="{{ 'PLUGIN_LOGIN.REMEMBER_ME_HELP'|t }}">{{ 'PLUGIN_LOGIN.REMEMBER_ME'|t }}</label>
                     </div>
                 </div>
             {% endif %}
 
-            <!--<a class="button secondary" href="{{ base_url_relative }}/forgot"><i class="fa fa-exclamation-circle"></i> {{ 'LOGIN_PLUGIN.BTN_FORGOT'|t }}</a>-->
+            <a class="button secondary" href="{{ base_url_relative }}{{ config.plugins.login.route_forgot }}"><i class="fa fa-exclamation-circle"></i> {{ 'PLUGIN_LOGIN.BTN_FORGOT'|t }}</a>
 
-            <button type="submit" class="button primary" name="task" value="login.login"><i class="fa fa-sign-in"></i> {{ 'LOGIN_PLUGIN.BTN_LOGIN'|t }}</button>
-
-            <a class="button secondary" href="{{ base_url_relative }}/register"><i class="fa fa-user"></i> {{ 'LOGIN_PLUGIN.BTN_REGISTER'|t }}</a>
+            <button type="submit" class="button primary" name="task" value="login.login"><i class="fa fa-sign-in"></i> {{ 'PLUGIN_LOGIN.BTN_LOGIN'|t }}</button>
         </div>
 
         {{ nonce_field('login-form', 'login-form-nonce') }}

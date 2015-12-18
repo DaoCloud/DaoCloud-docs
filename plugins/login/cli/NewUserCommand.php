@@ -202,6 +202,8 @@ class NewUserCommand extends ConsoleCommand
             $data['state'] = $this->options['state'] ?: 'enabled';
         }
 
+        // Lowercase the username for the filename
+        $username = strtolower($username);
 
         // Create user object and save it
         $user = new User($data);

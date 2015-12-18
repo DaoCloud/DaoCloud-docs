@@ -1,3 +1,10 @@
+# v1.4.1
+## 12/11/2015
+
+1. [](#new)
+    * Support new sidebar scrollbar
+    * New subtle `subtitle` styling
+
 # v1.4.0
 ## 10/07/2015
 

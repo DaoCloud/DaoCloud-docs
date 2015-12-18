@@ -17,12 +17,14 @@
     left: 0;
     font-weight: $font-weight-medium;
     font-size: 15px;
-    overflow-y: auto;
 
     a {
         color: $sidebar-link;
         &:hover {
             color: lighten($sidebar-link, 10%);
+        }
+        &.subtitle {
+            color: rgba($sidebar-link, 0.6);
         }
     }
 
@@ -110,7 +112,7 @@
         }
 
         &.topics {
-            margin: 2rem 1rem 2rem 1rem;
+            margin: 0 1rem;
 
             &.searched {
                 ul {

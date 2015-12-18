@@ -32,6 +32,7 @@
         {% do assets.addJs('theme://js/modernizr.custom.71422.js',100) %}
         {% do assets.addJs('theme://js/featherlight.min.js') %}
         {% do assets.addJs('theme://js/clipboard.min.js') %}
+        {% do assets.addJs('theme://js/jquery.scrollbar.min.js') %}
         {% do assets.addJs('theme://js/learn.js') %}
         {{ assets.js() }}
     {% endblock %}
@@ -41,18 +42,18 @@
 <body class="searchbox-hidden {{ page.header.body_classes }}" data-url="{{ page.route }}">
     {% block sidebar %}
     <nav id="sidebar">
-        <div id="header">
-            <a id="logo" href="{{ theme_config.home_url ?: base_url_absolute }}">{% include 'partials/logo.html.twig' %}</a>
-            <div class="searchbox">
-                <label for="search-by"><i class="fa fa-search"></i></label>
-                <input id="search-by" type="text" placeholder="{{ 'THEME_LEARN2_SEARCH_DOCUMENTATION'|t }}"
-                       data-search-input="{{ base_url_relative }}/search.json/query"/>
-                <span data-search-clear><i class="fa fa-close"></i></span>
+        <div id="header-wrapper">
+            <div id="header">
+                <a id="logo" href="{{ theme_config.home_url ?: base_url_absolute }}">{% include 'partials/logo.html.twig' %}</a>
+                <div class="searchbox">
+                    <label for="search-by"><i class="fa fa-search"></i></label>
+                    <input id="search-by" type="text" placeholder="{{ 'THEME_LEARN2_SEARCH_DOCUMENTATION'|t }}"
+                           data-search-input="{{ base_url_relative }}/search.json/query"/>
+                    <span data-search-clear><i class="fa fa-close"></i></span>
+                </div>
             </div>
         </div>
-        <div class="padding highlightable">
         {% include 'partials/sidebar.html.twig' %}
-        </div>
     </nav>
     {% endblock %}
 
