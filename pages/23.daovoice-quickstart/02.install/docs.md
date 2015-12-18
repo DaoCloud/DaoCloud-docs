@@ -28,3 +28,7 @@ DaoVoice Widget支持以下浏览器版本
 [link](/daovoice-configuring/secure-mode)
 
 [link](/daovoice-configuring/do-more-in-daovoice)
+
+#### 申请内测
+
+DaoVoice 目前还在内测阶段，如您有兴趣参与，请访问 [DaoVoice 网站](http://www.daovoice.com)， 提交内测申请。

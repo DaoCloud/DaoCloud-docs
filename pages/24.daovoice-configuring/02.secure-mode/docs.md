@@ -24,20 +24,20 @@ title: 安全模式
 
 **Python**
 
+```python
 	"app_id": "YOURS_APP_ID",
 	"user_id" : "{{ user_id }}" ,
 	"secure_digest": "{{ hmac.new(YOURS_APP_SECERT, user_id, hashlib.sha1).hexdigest() }}",
 	...
-
+```
 
 **PHP**
-
+```php
 	"app_id": "YOURS_APP_ID",
 	"user_id" : "<?php echo $user_id ?>" , 
 	"secure_digest": "<?php echo hash_hmac("sha1", $user_id, "YOURS_APP_SECERT");?>",
 	...
-
-
+```
 
 ##### 在单页面页面中使用安全模式
 
@@ -45,37 +45,37 @@ title: 安全模式
 
 
 **AngularJS**
-
+```javascript
 	"app_id": "YOURS_APP_ID",
 	"user_id" : user_id , 
 	"secure_digest": secure_digest ,
 	...
-
+```
 ##### 各语言中示例
 
 
 **NodeJS**
-
+```
     crypto.createHmac('sha1', YOURS_APP_SECERT).update(user_id).digest('hex')
-    
+```    
 **Python**
-
+```
     hmac.new(YOURS_APP_SECERT, user_id, hashlib.sha1).hexdigest() 
-
+```
 **Ruby**
-
+```
 	OpenSSL::HMAC.digest('sha1', YOURS_APP_SECERT, user_id)
-	
+```	
 **PHP**
-
+```
 	hash_hmac("sha1", $user_id, "YOURS_APP_SECERT")
-	
+```	
 **GO**
-	
+```	
 	h := hmac.New(sha1.New, YOURS_APP_SECERT)
 	h.Write(user_id)
 	secure_digest := h.Sum(nil)
-	
+```	
 #### 注意事项
 
 * 计算`secure_digest`的`user_id`和当前页面传入的`user_id`必须相同。

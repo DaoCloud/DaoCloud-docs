@@ -5,9 +5,9 @@ taxonomy:
         - docs
 ---
 
-在上一节里 [使用 Volume 实现容器状态持久化](url) 里我们介绍了 Volume 在 Docker 里的应用以及怎么创建 Volume 服务。在这一节我们将用搭建一个在 DaoCloud 搭建 Ghost 博客的例子来演示 Volume 的具体功能以及应用。
+在上一节里 [使用 Volume 实现容器状态持久化](../../daocloud-services/use-volume) 里我们介绍了 Volume 在 Docker 里的应用以及怎么创建 Volume 服务。在这一节我们将用搭建一个在 DaoCloud 搭建 Ghost 博客的例子来演示 Volume 的具体功能以及应用。
 
-## 首先介绍 Volume 控制台的功能
+## Volume 控制台的功能
 Volume 控制台为我们提供了很多关于 Volume 操作的功能，在 Volume 控制台除了有查看文件的功能以外，还有很多便捷的功能：
 1. 上传文件，点击「上传」按钮，可以选择上传本地文件也可以远程下载文件到 Volume 里。
 
