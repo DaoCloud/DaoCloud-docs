@@ -11,10 +11,10 @@
 // })
 
 //导航栏折叠功能
-$(function(){
-	var links = $('#sidebar ul.topics>li>a');
-	links.on('mouseover',function(e){
-		$('#sidebar ul.topics>li>ul').removeClass('active');
-		$(e.target).parents('li').find('ul').addClass('active');
-	})
-})
+// $(function(){
+// 	var links = $('#sidebar ul.topics>li>a');
+// 	links.on('mouseover',function(e){
+// 		$('#sidebar ul.topics>li>ul').removeClass('active');
+// 		$(e.target).parents('li').find('ul').addClass('active');
+// 	})
+// })
