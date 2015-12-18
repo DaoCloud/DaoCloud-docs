@@ -9,6 +9,7 @@ title: 'JavaScript API'
 * 发送事件
 * 控制聊天窗口
 
+如果您的程序不是JavaScript，可以使用我们的 [开放API](http://docs.daovoice.io/api/)
 
 #### 初始化JS Lib
 
