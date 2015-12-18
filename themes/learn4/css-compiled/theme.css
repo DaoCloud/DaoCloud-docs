@@ -806,31 +806,37 @@ td {
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d; }
 
+/*
 #sidebar ul > li ul {
-  display: block !important;
-  margin-left: -2rem;
-  margin-right: -1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 500ms, opacity 300ms;
-  -webkit-transition: max-height 500ms, opacity 300ms; }
+    display: block !important;
+    margin-left: -2rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 500ms, opacity 300ms;
+    -webkit-transition: max-height 500ms, opacity 300ms;
+}
 
-#sidebar ul > li ul.active {
-  max-height: 500px;
-  opacity: 1;
-  transition: max-height 0, opacity 300ms;
-  -webkit-transition: max-height 0, opacity 300ms; }
+#sidebar ul> li ul.active {
+    max-height: 500px;
+    opacity: 1;
+    transition: max-height 0, opacity 300ms;
+    -webkit-transition: max-height 0, opacity 300ms;
+}
 
-#sidebar ul > li.parent ul {
-  max-height: 500px;
-  opacity: 1;
-  transition: max-height 0, opacity 300ms;
-  -webkit-transition: max-height 0, opacity 300ms; }
+#sidebar ul> li.parent ul {
+    max-height: 500px;
+    opacity: 1;
+    transition: max-height 0, opacity 300ms;
+    -webkit-transition: max-height 0, opacity 300ms;
+}
+
 
 #sidebar ul.topics > li > a {
-  cursor: pointer; }
+    cursor: pointer;
+}*/
 
 /*# sourceMappingURL=theme.css.map */
