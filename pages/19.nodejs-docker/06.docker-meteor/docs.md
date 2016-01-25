@@ -32,6 +32,8 @@ echo "FROM meteorhacks/meteord:onbuild" > Dockerfile
 
 部署时，所有应用需要的环境变量直接传入容器即可。值得注意的是，`MONGO_URL` 和 `ROOT_URL` 是必须设定的。MongoDB 的连接字符串可以自己通过 DaoCloud 的服务绑定自行拼接出来。
 
+![](mongo-url.png)
+
 ```
 MONGO_URL=mongodb://user:pwd@host:port/instance
 ROOT_URL=http://myapp.daoapp.io
