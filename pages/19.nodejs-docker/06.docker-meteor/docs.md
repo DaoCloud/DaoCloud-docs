@@ -37,4 +37,20 @@ ROOT_URL=http://myapp.daoapp.io
 
 ##### 其他提示
 
-这样构建，每次都会下载 Meteor、构建、删除 Meteor。如果造成调试不方便，试试使用 devbuild 这个 tag 下的镜像。
+关于 `meteorhack/meteord`，可以查看 https://hub.docker.com/r/meteorhacks/meteord/ 以获得更多信息。
+
+##### 进阶
+
+###### Kadira.io 接入
+
+[Kadira.io](https://kadira.io) 是专业的 Meteor APM 平台。
+
+完成注册后，Kadira.io 会要求你安装 `meteorhacks:kadira` 并设置 App ID 和 Secret。请按照 Kadira.io 的提示安装好 `meteorhacks:kadira`。在 Docker 化的平台上，建议采用环境变量的方法接入。
+
+![kadira-env](kadira-env.png)
+
+根据这些提示，在 DaoCloud 上设置对应的环境变量：
+
+![daocloud-kadira-env](daocloud-kadira-env.png)
+
+最后推送安装了 `meteorhacks:kadira` 包的版本并部署就好了。
