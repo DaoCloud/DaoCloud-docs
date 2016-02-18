@@ -49,7 +49,7 @@ RUN gpg --keyserver pool.sks-keyservers.net --recv-keys \
 
 设置 Tomcat 版本变量，构建时可以传入相应参数更改 Tomcat 版本，随后使用 `curl` 执行下载，并且验证后解压，同时删除多余的 `bat` 脚本，该脚本仅用于 `Windows` 环境，在镜像中无用。		
 ```	
-ENV TOMCAT_VERSION 8.0.29
+ENV TOMCAT_VERSION 8.0.32
 ENV TOMCAT_TGZ_URL https://www.apache.org/dist/tomcat/tomcat-8/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz
 
 RUN set -x \
@@ -70,7 +70,7 @@ CMD ["catalina.sh", "run"]
 
 > 因为 `maven:3.3.3` 镜像依赖的 Java 版本是 1.8, 所以我们的 Tomcat 版本也选择 8.0 版本，保持一致可以最大化 Tomcat 的性能。
 
-在这个 Dockerfile 中，添加了 8.0.29 版本的 Tomcat，并且设置了相应的环境变量。
+在这个 Dockerfile 中，添加了 8.0.32 版本的 Tomcat，并且设置了相应的环境变量。
 
 ### 构建基础镜像
 
@@ -103,7 +103,7 @@ RUN gpg --keyserver pool.sks-keyservers.net --recv-keys \
 	F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE \
 	F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
 	
-ENV TOMCAT_VERSION 8.0.29
+ENV TOMCAT_VERSION 8.0.32
 ENV TOMCAT_TGZ_URL https://www.apache.org/dist/tomcat/tomcat-8/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz
 
 RUN set -x \
