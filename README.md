@@ -6,14 +6,14 @@ DaoCloud 文档采用 Grav CMS，内容通过 Markdown 格式写作，并在 Git
 ## 创建本地环境
 
 1. [下载 Grav 主程序](http://getgrav.org/downloads)
-2. 把 ZIP 包解压缩到您的 weboot 目录， (例如 `~/www/grav-core/`)
+2. 把 ZIP 包解压缩到您的 webroot 目录， (例如 `~/www/grav-core/`)
 3. [下载](https://github.com/DaoCloud/daocloud-docs/archive/master.zip) 并解压缩，或者直接[克隆](git@github.com:DaoCloud/daocloud-docs.git)， 用 daocloud-docs 项目内的内容替换 grav-core 的 user 目录（ `~/www/grav-core/user/`）
 4. 在 grav－core 根目录 (e.g. `~/www/grav-core/`) 运行 `bin/grav install` 完成以来安装
 5. 如需运行，请先安装 PHP，然后使用 `php -S localhost:8000`，启动程序，查看显示效果
 
 ## 提交文档修改
 
-请您通过 pull reqesut 的方式提交您的文档修改，或新的内容。我们会仔细阅读所有的 PR，如果需要，会与您沟通讨论，修订完善后合并到我们的 master 分支并上线。
+请您通过 pull request 的方式提交您的文档修改，或新的内容。我们会仔细阅读所有的 PR，如果需要，会与您沟通讨论，修订完善后合并到我们的 master 分支并上线。
 
 在开始工作前，请您仔细阅读 DaoCloud 的[文档书写规范和提交流程](http://docs-static.daocloud.io/write-docs)。
 
