@@ -74,6 +74,7 @@ DaoCloud 为您准备了多种编程语言的测试环境（这些测试环境�
 - MySQL (5.5)
 - Redis (2.8)
 - MongoDB (2.6)
+- RabbitMQ (3.6)
 
 同时，我们还支持自定义的测试镜像，让您更方便地配置个性化的测试环境，不过，目前自定义的镜像必须符合以下条件：
 
@@ -208,6 +209,24 @@ Port: 27017
 - MONGODB_PORT_27017_TCP = tcp://1.2.3.4:27017
 - MONGODB_PORT_27017_TCP_PROTO = tcp
 - MONGODB_PORT_27017_TCP_PORT = 27017
+
+##### RabbitMQ
+
+Version：RabbitMQ 3.6
+
+Docker Link Alias: rabbitmq
+
+Host: rabbitmq
+
+Port: 5672
+
+环境变量：
+
+- RABBITMQ_PORT_5672_TCP_ADDR = 1.2.3.4
+- RABBITMQ_PORT_5672_TCP = tcp://1.2.3.4:5672
+- RABBITMQ_PORT_5672_TCP_PROTO = tcp 
+- RABBITMQ_PORT_5672_TCP_PORT = 5672
+
 
 ### 设置测试环境变量
 
