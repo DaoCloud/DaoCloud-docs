@@ -61,7 +61,7 @@ script:
 
 DaoCloud 为您准备了多种编程语言的测试环境（这些测试环境是基于官方的 `ubuntu:14.04` 镜像），目前支持的编程语言包括：
 
-- Golang (1.0, 1.1, 1.2, 1.3, 1.4, 1.5.1)
+- Golang (1.0, 1.1, 1.2, 1.3, 1.4, 1.5.1 1.5 1.6)
 - Python (2.6, 2.7, 3.1, 3.2, 3.3, 3.4)
 - Ruby (1.8.7, 1.9.3, 2.0.0, 2.1.2, 2.1.4, 2.1.6, 2.2.0, 2.2.2)
 - Java (openjdk6, openjdk7, oraclejdk6, oraclejdk7, oraclejdk8, oraclejdk9)
@@ -105,6 +105,8 @@ image: daocloud/ci-golang:1.4
 - daocloud/ci-golang:1.3
 - daocloud/ci-golang:1.4
 - daocloud/ci-golang:1.5.1
+- daocloud/ci-golang:1.5
+- daocloud/ci-golang:1.6
 - daocloud/ci-node:0.6
 - daocloud/ci-node:0.8
 - daocloud/ci-node:0.10
