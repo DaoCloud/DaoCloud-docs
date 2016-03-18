@@ -13,3 +13,4 @@ mailer:
     password: ''
   sendmail:
     bin: '/usr/sbin/sendmail'
+content_type: text/html

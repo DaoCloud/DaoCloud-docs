@@ -87,7 +87,7 @@ DaoCloud 的价值关键字：DevOps、微服务、容器化、持续交付、�
 
 ---
 
-#### 谁在用 DaoClooud
+#### 谁在用 DaoCloud
 
 ##### 逐鹿 X 
 

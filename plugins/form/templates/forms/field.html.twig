@@ -4,15 +4,15 @@
 {% set vertical = true %}
 
 {% block field %}
-    <div class="form-field {% if vertical %} vertical{% endif %}">
+    <div class="form-field {% if vertical %} vertical{% endif %}{% if field.outerclasses is defined %} {{ field.outerclasses }}{% endif %}">
         {% block contents %}
             <div class="form-label{% if not vertical %} block size-1-3{% endif %}">
                 <label class="inline">
                 {% block label %}
                     {% if field.help %}
-                    <span class="tooltip" data-asTooltip-position="w" title="{{ field.help|e }}">{{ field.label|default(field.name|capitalize) }}</span>
+                    <span class="tooltip" data-asTooltip-position="w" title="{{ field.help|e|t }}">{{ field.label|default(field.name|capitalize)|t }}</span>
                     {% else %}
-                    {{ field.label|default(field.name|capitalize) }}
+                    {{ field.label|default(field.name|capitalize)|t }}
                     {% endif %}
                     {{ field.validate.required in ['on', 'true', 1] ? '<span class="required">*</span>' }}
                 {% endblock %}

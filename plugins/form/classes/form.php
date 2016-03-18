@@ -263,7 +263,7 @@ class Form extends Iterator
                         'route' => $page ? $path : null
                     ];
                 } else {
-                    throw new \RuntimeException('Unable to upload file(s). Error Code: ' . $error);
+                    throw new \RuntimeException("Unable to upload file(s) to $destination/$name");
                 }
             }
         }

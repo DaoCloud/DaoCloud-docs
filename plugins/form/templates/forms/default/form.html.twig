@@ -21,7 +21,7 @@
 
 	<div class="buttons">
 	{% for button in form.buttons %}
-	    <button class="{{ button.classes|default('button') }}" type="{{ button.type|default('submit') }}">{{ button.value|default('Submit') }}</button>
+	    <button class="{{ button.classes|default('button') }}" type="{{ button.type|default('submit') }}">{{ button.value|t|default('Submit') }}</button>
 	{% endfor %}
 	</div>
 

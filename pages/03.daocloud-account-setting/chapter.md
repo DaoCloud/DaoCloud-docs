@@ -1,5 +1,5 @@
 ---
-title: '注册并配置 DaoCloud 账号'
+title: 管理用户账号
 taxonomy:
     category:
         - docs
@@ -7,4 +7,4 @@ taxonomy:
 
 <!-- reviewed by fiona -->
 
-# 注册并配置 DaoCloud 账号 
+# 管理用户账号 

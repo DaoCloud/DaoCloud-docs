@@ -2,9 +2,6 @@
 
 The **login plugin** for [Grav](http://github.com/getgrav/grav) adds login, basic ACL, and session wide messages to Grav.  It is designed to provide a way to secure front-end and admin content throughout Grav.
 
-| IMPORTANT!!! This plugin is currently in development as is to be considered a **beta release**.  As such, use this in a production environment **at your own risk!**. More features will be added in the future.
-
-
 # Installation
 
 The **login** plugin actually requires the help of the **email** and **form** plugins. The **email** plugin is needed to ensure that you can recover a password via email if required.  The **form** plugin is used to generate the forms required.
@@ -176,12 +173,15 @@ form:
       type: text
       validate:
         required: true
+        message: PLUGIN_LOGIN.USERNAME_NOT_VALID
+        pattern: '^[a-z0-9_-]{3,16}$'
 
     -
       name: email
       type: text
       validate:
         required: true
+        message: PLUGIN_LOGIN.EMAIL_VALIDATION_MESSAGE
 
     -
       name: password1
@@ -189,6 +189,8 @@ form:
       label: Enter a password
       validate:
         required: true
+        message: PLUGIN_LOGIN.PASSWORD_VALIDATION_MESSAGE
+        pattern: '(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
 
     -
       name: password2
@@ -196,6 +198,8 @@ form:
       label: Repeat the password
       validate:
         required: true
+        message: PLUGIN_LOGIN.PASSWORD_VALIDATION_MESSAGE
+        pattern: '(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
 
   buttons:
       -
@@ -227,9 +231,7 @@ For example in this case we added
 
 to the form. And, in the Login plugin configuration we have by default enable the double password verification with the "Validate double entered password" option. What this does is picking the password1 and password2 fields, validate them, check they are equal and put the content in the `password` field.
 
-You can avoid having 2 fields for the password, which by the way is a recommended option, and just put a single `password` field. Then in the Login plugin option just enable "Validate a single password".
-
-If you don't add an option, the `password` field is considered like a normal field, so just the usual form validation is applied. "Validate a single password" and "Validate double entered password" checks ensure the password respects the Grav password standards: password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.
+You can avoid having 2 fields for the password, which by the way is a recommended option, and just put a single `password` field.
 
 Last important thing before the registration is correctly setup: make sure in the Login plugin settings you have the user registration enabled, otherwise the registration will trigger an error, as by default user registration is DISABLED.
 

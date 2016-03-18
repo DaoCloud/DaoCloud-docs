@@ -1,8 +1,8 @@
 ---
-title: '使用 DaoCloud 服务集成功能'
+title: 使用服务集成
 taxonomy:
     category:
         - docs
 ---
 
-# 使用 DaoCloud 服务集成功能
+# 使用服务集成

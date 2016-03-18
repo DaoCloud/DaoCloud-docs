@@ -1,3 +1,9 @@
+# v1.4.2
+## 12/18/2015
+
+1. [](#bugfix)
+    * Fixed clipboard for Safari
+
 # v1.4.1
 ## 12/11/2015
 

@@ -1,6 +1,6 @@
 {% extends "forms/field.html.twig" %}
 {% set defaults = config.plugins.form %}
-{% set files = defaults.files|merge(field.files|default([])) %}
+{% set files = defaults.files|merge(field|default([])) %}
 
 {% block input %}
     <div class="form-input-wrapper {{ field.size }}">

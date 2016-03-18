@@ -24,8 +24,8 @@ process:
 ##### 基础开发环境
 + Python ＋ IPython 开发环境，包括 Dockerfile，[Fork 项目](https://github.com/DaoCloud/python-ipython-notebook) 
 + Python 开发环境，包括 Dockerfile，[Fork 项目](https://github.com/DaoCloud/python-sample-base-image)  
-+ Diango 开发环境，包括 Dockerfile 和 compose 文件，[Fork 项目 ](https://github.com/DaoCloud/python-django-sample)
-+ Diango 开发环境和持续集成，包括 Dockerfile、compose 文件和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/python-django-cd-sample)
++ Django 开发环境，包括 Dockerfile 和 compose 文件，[Fork 项目 ](https://github.com/DaoCloud/python-django-sample)
++ Django 开发环境和持续集成，包括 Dockerfile、compose 文件和 daocloud.yml CI 配置文件，[Fork 项目](https://github.com/DaoCloud/python-django-cd-sample)
 + PHP 开发环境，包括 Dockerfile，[Fork 项目](https://github.com/DaoCloud/php-sample) 
 + PHP ＋ Apache 基础运行环境，包括 Dockerfile，[Fork 项目](https://github.com/DaoCloud/php-apache-image) 
 

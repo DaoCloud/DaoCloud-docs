@@ -518,56 +518,8 @@ class LoginPlugin extends Plugin
     }
 
     /**
-     * Validate a value. Currently validates
-     *
-     * - 'user' for username format and username availability.
-     * - 'password1' for password format
-     * - 'password2' for equality to password1
-     *
-     * @param object $form      The form
-     * @param string $type      The field type
-     * @param string $value     The field value
-     * @param string $extra     Any extra value required
-     *
-     * @return mixed
-     */
-    protected function validate($type, $value, $extra = '')
-    {
-        switch ($type) {
-            case 'username_format':
-                if (!preg_match('/^[a-z0-9_-]{3,16}$/', $value)) {
-                    return false;
-                }
-                return true;
-                break;
-
-            case 'username_is_available':
-                if (file_exists($this->grav['locator']->findResource('user://accounts/' . $value . YAML_EXT))) {
-                    return false;
-                }
-                return true;
-                break;
-
-            case 'password1':
-                if (!preg_match('/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/', $value)) {
-                    return false;
-                }
-                return true;
-                break;
-
-            case 'password2':
-                if (strcmp($value, $extra)) {
-                    return false;
-                }
-                return true;
-                break;
-        }
-    }
-
-    /**
      * Process a registration form. Handles the following actions:
      *
-     * - validate_password: validates a password
      * - register_user: registers a user
      *
      * @param Event $event
@@ -592,16 +544,8 @@ class LoginPlugin extends Plugin
 
                 $data = [];
                 $username = $form->value('username');
-                if (!$this->validate('username_format', $username)) {
-                    $this->grav->fireEvent('onFormValidationError',
-                        new Event([
-                            'form' => $form,
-                            'message' => $this->grav['language']->translate('PLUGIN_LOGIN.USERNAME_NOT_VALID')]));
-                    $event->stopPropagation();
-                    return;
-                }
 
-                if (!$this->validate('username_is_available', $username)) {
+                if (file_exists($this->grav['locator']->findResource('user://accounts/' . $username . YAML_EXT))) {
                     $this->grav->fireEvent('onFormValidationError',
                         new Event([
                             'form' => $form,
@@ -612,16 +556,7 @@ class LoginPlugin extends Plugin
                 }
 
                 if ($this->config->get('plugins.login.user_registration.options.validate_password1_and_password2', false)) {
-                    if (!$this->validate('password1', $form->value('password1'))) {
-                        $this->grav->fireEvent('onFormValidationError',
-                            new Event([
-                                'form' => $form,
-                                'message' => $this->grav['language']->translate('PLUGIN_LOGIN.PASSWORD_NOT_VALID')
-                            ]));
-                        $event->stopPropagation();
-                        return;
-                    }
-                    if (!$this->validate('password2', $form->value('password2'), $form->value('password1'))) {
+                    if ($form->value('password1') != $form->value('password2')) {
                         $this->grav->fireEvent('onFormValidationError',
                             new Event([
                                 'form' => $form,
@@ -631,18 +566,6 @@ class LoginPlugin extends Plugin
                         return;
                     }
                     $data['password'] = $form->value('password1');
-                }
-
-                if ($this->config->get('plugins.login.user_registration.options.validate_password', false)) {
-                    if (!$this->validate('password1', $form->value('password'))) {
-                        $this->grav->fireEvent('onFormValidationError',
-                            new Event([
-                                'form' => $form,
-                                'message' => $this->grav['language']->translate('PLUGIN_LOGIN.PASSWORD_NOT_VALID')
-                            ]));
-                        $event->stopPropagation();
-                        return;
-                    }
                 }
 
                 $fields = $this->config->get('plugins.login.user_registration.fields', []);

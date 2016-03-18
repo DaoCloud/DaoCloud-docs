@@ -1,3 +1,19 @@
+# v1.1.0
+## 12/18/2015
+
+1. [](#new)
+    * Croatian translation
+    * Added id, style, and disabled options to select fields
+1. [](#improved)
+    * Allow adding form labels and help text as lang strings
+    * Allow translating field content
+    * Allow translating button and checkbox labels
+    * Allow adding classes to the form field container with `field.outerclasses`
+    * Updated French translation
+1. [](#bugfix)
+    * Fixed error message on file upload
+    * Fixed overriding defaults for the file type in forms
+
 # v1.0.3
 ## 12/11/2015
 

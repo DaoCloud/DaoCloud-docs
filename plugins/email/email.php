@@ -83,7 +83,9 @@ class EmailPlugin extends Plugin
 
         // Extend parameters with defaults.
         $params += array(
+            'bcc' => array(),
             'body' => '{% include "forms/data.html.twig" %}',
+            'cc' => array(),
             'charset' => 'utf-8',
             'from' => $this->config->get('plugins.email.from'),
             'from_name' => $this->config->get('plugins.email.from_name'),

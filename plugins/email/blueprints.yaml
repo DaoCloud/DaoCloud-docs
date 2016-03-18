@@ -1,5 +1,5 @@
 name: Email
-version: 2.0.0
+version: 2.1.0
 description: Enables the emailing system for Grav
 icon: envelope
 author:
@@ -12,7 +12,7 @@ bugs: https://github.com/getgrav/grav-plugin-email/issues
 license: MIT
 
 form:
-  validation: strict
+  validation: loose
   fields:
     enabled:
       type: hidden
@@ -26,12 +26,8 @@ form:
         type: bool
 
     mailer.engine:
-      label: Mail Engine
-      type: hidden
-
-    mailer.default:
       type: select
-      label: Mailer
+      label: Mail Engine
       size: medium
       options:
         none: Disabled

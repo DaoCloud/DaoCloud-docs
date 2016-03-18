@@ -74,15 +74,12 @@ en:
     VALIDATE_PASSWORD1_AND_PASSWORD2: "Validate double entered password"
     VALIDATE_PASSWORD1_AND_PASSWORD2_HELP: "Validate and compare two different fields for the passwords, named `password1` and `password2`. Enable this if you have two password fields in the registration form"
 
-    VALIDATE_PASSWORD: "Validate a single password"
-    VALIDATE_PASSWORD_HELP: "Validate a a single field for the passwords, named `password`. Enable this if you have a single password field in the registration form"
-
     SET_USER_DISABLED: "Set the user as disabled"
     SET_USER_DISABLED_HELP: "Best used along with the `Send activation email` email. Adds the user to Grav, but sets it as disabled"
     LOGIN_AFTER_REGISTRATION: "Login the user after registration"
     LOGIN_AFTER_REGISTRATION_HELP: "Immediately login the user after the registration. If email activation is required, the user will be logged in immediately after activating the account"
     SEND_ACTIVATION_EMAIL:  "Send activation email"
-    SEND_ACTIVATION_EMAIL_HELP: "Sends and email to the user to activate his account. Enable the `Set the user as disabled` option when using this feature, so the user will be set as disabled and an email will be sent to activate the account"
+    SEND_ACTIVATION_EMAIL_HELP: "Sends an email to the user to activate his account. Enable the `Set the user as disabled` option when using this feature, so the user will be set as disabled and an email will be sent to activate the account"
     SEND_NOTIFICATION_EMAIL: "Send notification email"
     SEND_NOTIFICATION_EMAIL_HELP: "Notifies the site admin that a new user has registered. The email will be sent to the `To` field in the Email Plugin configuration"
     SEND_WELCOME_EMAIL: "Send welcome email"
@@ -103,6 +100,8 @@ en:
     REDIRECT_AFTER_REGISTRATION_HELP: "Custom route to redirect after the registration"
 
     OPTIONS: Options
+    EMAIL_VALIDATION_MESSAGE: "Must be a valid email address"
+    PASSWORD_VALIDATION_MESSAGE: "Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
 
 fr:
   PLUGIN_LOGIN:
@@ -112,6 +111,75 @@ fr:
     BTN_LOGIN: Connexion
     BTN_LOGOUT: Déconnexion
     BTN_FORGOT: Mot de passe oublié
+
+hr:
+  PLUGIN_LOGIN:
+    ACCESS_DENIED: Pristup odbijen...
+    LOGIN_FAILED: Prijava nije uspjela...
+
+    BTN_LOGIN: Prijava
+    BTN_LOGOUT: Odjava
+    BTN_FORGOT: Zaboravih
+    BTN_REGISTER: Registriraj
+
+    REMEMBER_ME: Zapamti me
+
+    OAUTH_LOGIN: Prijavi se sa %s
+    OAUTH_SIGNIN: Prijavi se sa svojim korisničkim imenom i lozinkom
+    OAUTH_CONNECT_MESSAGE: Poveži se preko socijalnih mreža
+    OAUTH_CONNECT_MESSAGE_EXTRA: druge socijalne mreže
+    OAUTH_PROVIDER_NOT_SUPPORTED: OAuth provider "%s" nije podržan
+    OR: ili
+
+    PLUGIN_STATUS: Plugin status
+    BUILTIN_CSS: Koristi ugrađeni CSS
+    BUILTIN_CSS_HELP: Uključi CSS koji dolazi sa admin pluginom
+    ROUTE: Putanja prijave
+
+    ROUTE_REGISTER: Putanja registracije
+
+
+    USERNAME_NOT_VALID: "Korisničko ime bi trebalo biti između 3 i 16 znakova, uključujući mala slova, brojeve, _, i crtice. VELIKA SLOVA, razmaci, i posebni znakovi nisu dopušteni"
+    USERNAME_NOT_AVAILABLE: "Korisničko ime %s već postoji, odaberi neko drugo"
+    PASSWORD_NOT_VALID: "Lozinka mora sadržavati bar jedan broj i jedno veliko i malo slovo, i bar još 8 ili više znakova"
+    PASSWORDS_DO_NOT_MATCH: "Lozinke se ne slažu. Poonovo provjeri da li si unio istu lozinku dva puta"
+
+    EMAIL_NOT_CONFIGURED: "Email nije konfiguriran"
+    USER_NEEDS_EMAIL_FIELD: "Korisnik treba email polje"
+    EMAIL_SENDING_FAILURE: "Došlo je do greške pri slanju emaila"
+
+    EMAIL_FOOTER: "GetGrav.org"
+    ACTIVATION_LINK_EXPIRED: "Aktivacijski link je istekao"
+    USER_ACTIVATED_SUCCESSFULLY: "Korisnik je uspješno aktiviran"
+    INVALID_REQUEST: "Nevaljani zahtjev"
+
+    USER_REGISTRATION: "Registracija korisnika"
+    USER_REGISTRATION_ENABLED_HELP: "Omogući registraciju korisnika"
+
+    VALIDATE_PASSWORD1_AND_PASSWORD2: "Validiraj duplo unesenu lozinku"
+    VALIDATE_PASSWORD1_AND_PASSWORD2_HELP: "Validiraj i usporedi dva različčita polja za lozinke, imenovana `lozinka1` i `lozinka2`. Omogući ovo ako imaš dva polja za lozinke u formularu registracije"
+
+    VALIDATE_PASSWORD: "Validiraj lozinku"
+
+    LOGIN_AFTER_REGISTRATION: "Ulogiraj korisnika nakon reegistracije"
+    LOGIN_AFTER_REGISTRATION_HELP: "Ulogiraj korisnika odmah nakon registracije. Ako je potrebna email aktivacija, korisnik će biti ulogiran odmah nakon aktiviranja računa"
+    SEND_ACTIVATION_EMAIL:  "Pošalji aktivacijski email"
+    SEND_ACTIVATION_EMAIL_HELP: "Šalje email korisniku da aktivira svoja račun."
+    SEND_NOTIFICATION_EMAIL: "Pošalji email obavijest"
+    SEND_NOTIFICATION_EMAIL_HELP: "Obavještava administratora da se novi korisnik registrirao. Email će biti poslan na `To` polje u Email Plugin konfiguraciji"
+    SEND_WELCOME_EMAIL: "Pošalji email dobrodošlice"
+    SEND_WELCOME_EMAIL_HELP: "Šalje email novoregistriranom korisniku"
+
+    DEFAULT_VALUES: "Određene vrijednosti"
+    DEFAULT_VALUES_HELP: "List of field names and values associated, that will be added to the user profile (yaml file) by default, without being configurable by the user. Separate multiple values with a comma, with no spaces between the values"
+    ADDITIONAL_PARAM_KEY: "Parametar"
+    ADDITIONAL_PARAM_VALUE: "Vrijednost"
+
+    REGISTRATION_FIELDS: "Registracijska polja"
+    REGISTRATION_FIELDS_HELP: "Add the fields that will be added to the user yaml file. Fields not listed here will not be added even if present in the registration form"
+    REGISTRATION_FIELD_KEY: "Ime polja"
+
+    OPTIONS: Opcije
 
 hu:
   PLUGIN_LOGIN:

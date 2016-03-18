@@ -24,6 +24,6 @@
             {% endblock %}
             />
 
-        <label class="inline">{{ field.label|e }} {{ field.validate.required in ['on', 'true', 1] ? '<span class="required">*</span>' }}</label>
+        <label class="inline">{{ field.label|e|t }} {{ field.validate.required in ['on', 'true', 1] ? '<span class="required">*</span>' }}</label>
     </div>
 {% endblock %}

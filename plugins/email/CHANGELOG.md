@@ -1,3 +1,13 @@
+# v2.1.0
+## 12/18/2015
+
+1. [](#new)
+    * Added missing `content_type` to email.yaml
+    * Added default values for CC and BCC
+ 1. [](#improved)
+    * Improved documentation of new email params in `README.md`
+    * Moved config setting of `mailer.default` to `mailer.engine`
+
 # v2.0.0
 ## 12/11/2015
 
