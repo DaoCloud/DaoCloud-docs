@@ -4,7 +4,7 @@ title: '安装 Docker 环境并配置 DaoCloud 加速器'
 
 ![](3logo.png)
 
-Docker 可以被安装在绝大多数主流的 Linux 发行版之上，由于内核差异，在 Windwos 和 Mac OS 上使用 Docker，需要采用 Boot2Docker 这个工具，它通过 VirtualBox 在 Windows 和 Mac OS 环境下一个 Linux 虚拟机，来提供 Docker 需要的内核环境。
+Docker 可以被安装在绝大多数主流的 Linux 发行版之上，由于内核差异，在 Windows 和 Mac OS 上使用 Docker，需要采用 Boot2Docker 这个工具，它通过 VirtualBox 在 Windows 和 Mac OS 环境下一个 Linux 虚拟机，来提供 Docker 需要的内核环境。
 
 由于众所周知的国内网络特殊性，保存在 AWS S3 之上的 Docker 的安装源文件，和 Boot2Docker 等在国内访问下载的速度非常缓慢，DaoCloud 提供了 Docker 安装源的镜像站点，[get.daocloud.io](http://get.daocloud.io)，这个网站提供了 Docker、Boot2Dcoker、Docker Toolbox、Docker Compose 等几乎所有主要的 Docker 安装包和工具包，我们采用了 CDN 加速，在国内访问和下载的速度非常快。
 
