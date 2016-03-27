@@ -24,7 +24,7 @@ taxonomy:
 关于对接 GitLab 的参数输入，详细解释如下：
 
 + 地址：请输入 GitLab 对应到外网的 IP 地址或域名，采用 http(s)://IP，或 http(s)://URL 的方式；
-+ 用户名：请使用您登陆 GitLab 的用户名 （请注意，这里填写用户的显示名会导致授权失败）
++ 用户名：请使用您登录 GitLab 的用户名 （请注意，这里填写用户的显示名会导致授权失败）
 + Token：在 GitLab 内生成，具体操作如下图
 
 ![](Account_%C2%B7_Profile_Settings_%C2%B7_GitLab.png)
