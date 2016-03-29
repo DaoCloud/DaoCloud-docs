@@ -75,6 +75,7 @@ DaoCloud 为您准备了多种编程语言的测试环境（这些测试环境�
 - Redis (2.8)
 - MongoDB (2.6)
 - RabbitMQ (3.6)
+- PostgreSQL (9.1)
 
 同时，我们还支持自定义的测试镜像，让您更方便地配置个性化的测试环境，不过，目前自定义的镜像必须符合以下条件：
 
@@ -229,6 +230,26 @@ Port: 5672
 - RABBITMQ_PORT_5672_TCP_PROTO = tcp 
 - RABBITMQ_PORT_5672_TCP_PORT = 5672
 
+##### PostgreSQL
+
+Version：PostgreSQL 9.1
+
+Docker Link Alias: postgres
+
+Host: postgres
+
+Port: 5432
+
+Username: postgres
+Password: 无
+
+环境变量：
+
+- POSTGRES_PORT_5432_TCP_ADDR=1.2.3.4
+- POSTGRES_PORT_5432_TCP_PORT=5432
+- POSTGRES_PORT_5432_TCP_PROTO=tcp
+- POSTGRES_PORT=tcp://1.2.3.4:5432
+- POSTGRES_PORT_5432_TCP=tcp://1.2.3.4:5432
 
 ### 设置测试环境变量
 
