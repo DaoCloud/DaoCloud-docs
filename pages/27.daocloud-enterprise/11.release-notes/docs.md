@@ -1,5 +1,5 @@
 ---
-title: 'DCE Release Note'
+title: 'Release Note'
 ---
 
 ## 版本 1.0.0

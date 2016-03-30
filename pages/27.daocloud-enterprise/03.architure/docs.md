@@ -1,5 +1,5 @@
 ---
-title: DaoCloud Enterprise 架构
+title: 架构
 ---
 
 ## 架构
