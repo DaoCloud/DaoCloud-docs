@@ -5,5 +5,5 @@ taxonomy:
         - docs
 ---
 
-# DaoVoice DaoCloud Enterpris
+# DaoCloud Enterprise
 

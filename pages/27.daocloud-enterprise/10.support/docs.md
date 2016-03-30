@@ -1,11 +1,8 @@
 ---
-title: 'GitHub 集成'
+title: 客户服务
 ---
 
-#### 安装
+#### 使用DaoVoice提供服务 
 
 
-#### 使用
-
-
-#### 通过GitHub和DaoCloud开发联动
+#### 获得您的系统信息
