@@ -22,8 +22,7 @@ DCE 提供了一整套安装套件。你可以在10分钟之内安装 DaoCloud E
 因为 DCE 依赖于 Dcoker，所以你需要在准备好用于安装的主机后，再在每台主机上安装 Docker。如果你的主机已经完成 Docker 的安装，请跳过当前步骤，直接进入下一步——安装控制器。
 Docker 安装方式如下：   
 	&ensp;&ensp;&ensp;&ensp;1，登录用于安装 DCE 的主机，进入控制台；  
-	&ensp;&ensp;&ensp;&ensp;2，执行 `sudo su` 切换到 # root 帐户状态；  
-	&ensp;&ensp;&ensp;&ensp;3，执行如下命令安装 Docker . 
+	&ensp;&ensp;&ensp;&ensp;2，执行如下命令安装 Docker . 
 
 	curl -sSL https://get.daocloud.io/docker | sh
 
@@ -32,27 +31,20 @@ Docker 安装方式如下：
 Client:
  Version:      1.10.3
  API version:  1.22
- Go version:   go1.5.3
- Git commit:   20f81dd
- Built:        Thu Mar 10 15:54:52 2016
- OS/Arch:      linux/amd64
-
-Server:
- Version:      1.10.3
- API version:  1.22
- Go version:   go1.5.3
- Git commit:   20f81dd
- Built:        Thu Mar 10 15:54:52 2016
- OS/Arch:      linux/amd64
-
-If you would like to use Docker as a non-root user, you should now consider
-adding your user to the "docker" group with something like:
-
-  sudo usermod -aG docker ubuntu
+......
 
 Remember that you will have to log out and back in for this to take effect!
 ```
->>>>> 这里使用 DaoCloud 的镜像仓库来完成 Docker 安装，你也可以使用 Dokcer Hub 的仓库安装 Docker。
+这里使用 DaoCloud 的镜像仓库来完成 Docker 安装，你也可以使用 Dokcer Hub 的仓库安装 Docker。
+
+>>>> 您可以通过NTP保证机器的时间同步，如果机器时间不同步，会导致集群异常。
+
+```
+# 立刻同步机器时间
+ntpdate -u  pool.ntp.org
+```
+
+你需要配置 NTP 后台进程来保持时间一直同步。
 
 
 ## 安装控制器
