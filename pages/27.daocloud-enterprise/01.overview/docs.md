@@ -1,5 +1,5 @@
 ---
-title: 'DaoCloud Enterprise 介绍'
+title: '介绍'
 ---
 
 DaoCloud Enterprise (DCE) 企业级容器集群解决方案。

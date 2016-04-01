@@ -60,6 +60,7 @@ Remember that you will have to log out and back in for this to take effect!
 在这一步，你需要登录到被指定为 DCE Controller 的机器（后文称为 Controller 主机），进行 DCE 的安装。
 为了安装 DCE，你需要先进入 Controller 机器终端，然后通过如下命令安装 DCE 控制器。
 
+	sudo su
 	bash -c "$(docker run -i --rm daocloud.io/daocloud/dce install)"
 
 当控制台输出如下，则安装成功。如果安装失败，请重新检查你的安装环境是否正确，再重新安装。如果你确保安装环境无误，而 DCE 安装失败，请通过 DaoVoice 联系 DaoCloud 的技术人员，获取服务支持。
@@ -91,6 +92,7 @@ DCE Engine 安装方法如下。
 	2，登录 Engine 主机，进入终端交互；
 	3，执行如下命令，安装 DCE Engine，将当前 Engine 机器加入 DCE。
 
+	sudo su
 	bash -c "$(docker run -i --rm daocloud.io/daocloud/dce join {你的控制器IP})"
 
 完成主机接入后，你可以在 DCE 控制台「主机」页面查看、管理新加入的主机。
