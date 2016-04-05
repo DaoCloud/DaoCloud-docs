@@ -58,7 +58,7 @@ docker run -d -e MYSQL_ROOT_PASSWORD=docker --name MySQL2 mysql
 
 以下的观点，相信很多人会认为同样是合理的解决方案。
 
-**明文密码固然是一个大问题，然而当 MySQL 容器创建完毕之后，用户完全有权限通过 mysql-client 等工具登陆 MySQL 引擎，实现 MySQL 引擎 root 密码的修改，最终的结果是：密码修改同样会作用到 volume 中的密文，使得充当明文密码的 Docker 容器环境变量失效。**
+**明文密码固然是一个大问题，然而当 MySQL 容器创建完毕之后，用户完全有权限通过 mysql-client 等工具登录 MySQL 引擎，实现 MySQL 引擎 root 密码的修改，最终的结果是：密码修改同样会作用到 volume 中的密文，使得充当明文密码的 Docker 容器环境变量失效。**
 
 不可否认，上述观点同样具有可行性。仔细分析和对比两种解决方案，可以看到两者之间存在一些明显的差异。
 

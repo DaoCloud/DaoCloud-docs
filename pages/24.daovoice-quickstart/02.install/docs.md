@@ -5,7 +5,7 @@ title: '如何安装 DaoVoice'
 #### 接入目的
 
 1. 通过在前端添加 DaoVoice 提供的若干代码，在您的网页页面右下方植入对话按钮，供网站用户与管理员交流
-2. 页面按钮接入完成后，管理员可以登陆 DaoVoice 后台，获取所有用户提交的消息，答复用户，并使用其它高级功能
+2. 页面按钮接入完成后，管理员可以登录 DaoVoice 后台，获取所有用户提交的消息，答复用户，并使用其它高级功能
 
 DaoVoice 植入到页面的对话按钮
 ![](000.png?resize=800)
@@ -39,7 +39,7 @@ DaoVoice 目前处于公测阶段，如您有兴趣参与，请访问 [DaoVoice 
 
 **步骤二：访问 DaoVoice 应用创建引导页面**
 
-在注册成为 DaoCloud 用户获取 DaoVoice 公测资格之后，您需要登陆 [DaoVoice 应用创建引导页面](http://dashboard.daovoice.io/#/get-started)。
+在注册成为 DaoCloud 用户获取 DaoVoice 公测资格之后，您需要登录 [DaoVoice 应用创建引导页面](http://dashboard.daovoice.io/#/get-started)。
 
 该页面将引导您将 DaoVoice 安装到您的网站，植入的 JavaScript 代码经过了大量的优化，所有的调用和通信都采用异步方式完成，不会影响您的网站的加载速度和性能。
 
@@ -59,20 +59,20 @@ DaoVoice 目前处于公测阶段，如您有兴趣参与，请访问 [DaoVoice 
 字段说明：
 
 * user_id
- * 必填: 在您系统上登陆用户的唯一ID，在 DaoVoice 上标识唯一用户
+ * 必填: 在您系统上登录用户的唯一ID，在 DaoVoice 上标识唯一用户
 * email
- * 选填: 您系统上登陆用户的主邮箱，DaoVoice 将根据该邮箱在各大社交平台上抓去用户信息，帮您描绘用户画像
+ * 选填: 您系统上登录用户的主邮箱，DaoVoice 将根据该邮箱在各大社交平台上抓去用户信息，帮您描绘用户画像
 * name
- * 选填: 在您系统上登陆用户的用户名，DaoVoice 根据该字段帮您快速定位用户
+ * 选填: 在您系统上登录用户的用户名，DaoVoice 根据该字段帮您快速定位用户
 * signed_up
- * 选填: 您系统上登陆用户的注册时间，DaoVoice 根据该字段帮您统计您系统中每天新用户数量，并发送通知邮件到管理员邮箱。
+ * 选填: 您系统上登录用户的注册时间，DaoVoice 根据该字段帮您统计您系统中每天新用户数量，并发送通知邮件到管理员邮箱。
 
-##### **登陆用户**接入示例代码
+##### **登录用户**接入示例代码
 
 ```
 // AnglarJS 风格， 通过调用 Ajax 获取用户信息返回 Promise 对象
 AuthService.user()
-  .then(function(user) {// user {object} 当前登陆的用户信息
+  .then(function(user) {// user {object} 当前登录的用户信息
 
     daovoice('init', {
         app_id: 'XXXXXX', 			// 您的 DaoVoice AppID，由 DaoVoice 提供，不需要修改
@@ -115,8 +115,8 @@ DaoVoice Widget 需要浏览器支持 HTTPS 和跨域。
 
 * 对话按钮不显示
 	* 您没有正确的将 DaoVoice Widget 接入您的网站，请参照上面重新接入
-* 登陆用户显示均为 道客船长 , 用户与用户之间没有区分
-	* 您需要将您系统中的用户信息传入 DaoVoice ，请参照上面针对登陆用户接入代码示例
+* 登录用户显示均为 道客船长 , 用户与用户之间没有区分
+	* 您需要将您系统中的用户信息传入 DaoVoice ，请参照上面针对登录用户接入代码示例
 
 #### 下一步
 

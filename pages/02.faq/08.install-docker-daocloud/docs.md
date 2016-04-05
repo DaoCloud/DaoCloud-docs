@@ -52,7 +52,7 @@ Docker Toolbox 启动了一个运行在 VirtualBox 虚拟机之上的 Linux，�
 
 现在，我们为 Windows 下的 Docker 环境安装配置 DaoCloud 加速器 v2，这样会成倍的提升下载 Docker Hub 镜像的速度。
 
-登陆到 DaoCloud 控制台，点击「加速器」按钮，点击「立即开始」，在「接入自有主机」界面，点击 Windows 按钮。
+登录到 DaoCloud 控制台，点击「加速器」按钮，点击「立即开始」，在「接入自有主机」界面，点击 Windows 按钮。
 
 ![](DashboardDaoCloud1.png)
 
