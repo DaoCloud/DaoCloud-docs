@@ -43,7 +43,7 @@ Coding 是国内新兴的第三方代码开发、托管和项目管理平台，�
 
 #### 第三步
 
-授权了 Coding 应用后，DaoCloud 将会自动完成与您的 GitHub 账号的绑定。
+授权了 Coding 应用后，DaoCloud 将会自动完成与您的 Coding 账号的绑定。
 
 ![完成绑定](http://docs-static.daocloud.io/user/pages/04.ci-on-daocloud/04.coding/coding-4.jpg)
 
