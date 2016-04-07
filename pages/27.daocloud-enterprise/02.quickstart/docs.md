@@ -4,25 +4,29 @@ title: 快速开始
 
 DCE 提供了一整套安装套件。你可以在10分钟之内安装 DaoCloud Enterprise (DCE)。 
 
-这个页面将帮助你在你的主机上安装一套简单的 DaoCloud Enterprise (DCE) ，并使用 DCE 控制台部署你的一些应用。本页面的安装方式适用于 Linux 操作系统。如果你熟悉 DCE 和 Docker，你可以直接前往[应用部署](http://docs.daocloud.io/daocloud-enterprise/deploy-an-application)查看更详细的 DCE 安装与部署方案。 
+这个页面将帮助你在你的主机上安装一套简单的 DaoCloud Enterprise (DCE) ，并使用 DCE 控制台部署你的一些应用。本页面的安装方式适用于 Linux，Mac OS X 或 windows 操作系统。如果你熟悉 DCE 和 Docker，你可以直接前往[应用部署](http://docs.daocloud.io/daocloud-enterprise/deploy-an-application)查看更详细的 DCE 安装与部署方案。 
 
-一个基础的 DCE 包含了 DCE Controller 和 DCE Engine，DCE Controller 主机控制管理所有的 DCE Engine 主机。这两种角色的安装都依赖于 Docker 技术，只要你拥有带有 Docker 的主机，你将能够在这些主机上轻松安装 DCE。
+
+一个基础的 DCE 包含了主控节点，副控节点和容器节点，其中，主控节点统筹者负责监控管理集群中的容器节点，副控节点作为主控节点的备份节点，保证 DCE 的高可用，容器节点运行所有 Docker 容器和应用，并接受主控节点的管理。所有节点的安装都依赖于 Docker 技术，如果你使用 Windows 或 Mac OS X 操作系统，你需要先安装 Docker Toolbox。
 ![](small-install.png)
+>>>>> 当我们使用 DCE 构建单节点集群时，主控节点、副控节点、容器节点在一台节点上，即一台节点承担三种角色。
+
 
 ## 简单介绍
 
-本次示例将向你介绍如何使用安装 DCE，如何使用 DCE 控制台快速部署一个简单的 2048 应用。部署完成后，便可以通过浏览器进入该游戏。
+本次示例将向你介绍如何安装 DCE 和如何使用 DCE 控制台快速部署一个简单的 2048 应用。部署完成后，便可以通过浏览器进入该游戏。为了保证简单快速，本次示例中使用一台节点安装 DCE，模拟为单节点集群。
 >>>>> DaoCloud 向用户提供了应用仓库，在本次示例中，只要在应用仓库中找到 2048，然后点击立即部署即可完成应用部署，不需要用户编写任何代码。
 
-## 准备环境
+## 第一步.准备环境
 
-在安装 DCE 之前，你需要准备至少一台主机作为安装环境。在 DCE 安装中，将会指定你的主机中的一台作为 DCE Controller，如果还有其余主机，它们将会作为 DCE Engine 加入 DCE 集群。你可以通过 VirturalBox 在本地虚拟化多个主机来完成本次安装，当然，你也可以通过 ssh 连接到远程服务器，在远程服务器上完成本次安装。
->>>>> 用于安装 DCE 的主机必须是  64 位架构的计算机，机器的操作系统必须是 Linux，同时建议将系统内核升级到Linux 3.8 或更高版本。
+在安装 DCE 之前，你需要准备至少一台主机作为安装环境。在 DCE 安装中，将会指定你的主机中的一台作为主控节点，如果还有其余主机，它们将会作为容器节点加入 DCE 集群，而副控节点的安装需要额外进行。
+由于 DCE 依赖于 Linux，所有你不能够直接在 Max 或 Windows 上直接安装 DCE。我们建议你在 Mac 或 Windows 上安装 Docker Toolbox。Docker Toolbox 会在你的主机上安装 Virtual Virtual Machine，Docker Engine 和 Docker Toolbox 命令行工具。这些工具将能够帮助你在你的主机上启动一个小型虚拟机来安装 DCE。
 
-因为 DCE 依赖于 Dcoker，所以你需要在准备好用于安装的主机后，再在每台主机上安装 Docker。如果你的主机已经完成 Docker 的安装，请跳过当前步骤，直接进入下一步——安装控制器。
-Docker 安装方式如下：   
+如果你使用 Linux 操作系统，你需要在主机上安装 Docker。如果你的主机已经完成 Docker 的安装，请跳过当前步骤，直接进入第二步。
+Linux 下 Docker 安装方式如下：   
 	&ensp;&ensp;&ensp;&ensp;1，登录用于安装 DCE 的主机，进入控制台；  
-	&ensp;&ensp;&ensp;&ensp;2，执行如下命令安装 Docker . 
+	&ensp;&ensp;&ensp;&ensp;2，执行 `sudo su` 切换到 # root 帐户状态；  
+	&ensp;&ensp;&ensp;&ensp;3，执行如下命令安装 Docker . 
 
 	curl -sSL https://get.daocloud.io/docker | sh
 
@@ -31,44 +35,97 @@ Docker 安装方式如下：
 Client:
  Version:      1.10.3
  API version:  1.22
-......
+ Go version:   go1.5.3
+ Git commit:   20f81dd
+ Built:        Thu Mar 10 15:54:52 2016
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.10.3
+ API version:  1.22
+ Go version:   go1.5.3
+ Git commit:   20f81dd
+ Built:        Thu Mar 10 15:54:52 2016
+ OS/Arch:      linux/amd64
+
+If you would like to use Docker as a non-root user, you should now consider
+adding your user to the "docker" group with something like:
+
+  sudo usermod -aG docker ubuntu
 
 Remember that you will have to log out and back in for this to take effect!
 ```
-这里使用 DaoCloud 的镜像仓库来完成 Docker 安装，你也可以使用 Dokcer Hub 的仓库安装 Docker。
+>>>>> 这里使用 DaoCloud 的镜像仓库来完成 Docker 安装，你也可以使用 Dokcer Hub 的仓库安装 Docker。国内主机建议使用 DaoCloud 的镜像仓库，保证快速的镜像拉取。
 
->>>> 您可以通过NTP保证机器的时间同步，如果机器时间不同步，会导致集群异常。
+如果你使用 Mac OS X 操作系统，你需要在主机上安装 Docker Toolbox。你可以从 [ DaoCloud 下载中心](http://get.daocloud.io/)下载 Mac 版的 Docker Toolbox，然后按照安装指引安装程序即可。
+安装完 Docker Toolbox 后，打开终端，通过如下命令创建一个虚拟节点并进入该节点。
+```
+docker-machine create --driver virtualbox default
 
 ```
-# 立刻同步机器时间
-ntpdate -u  pool.ntp.org
+输出如下时，安装成功：
 ```
 
-你需要配置 NTP 后台进程来保持时间一直同步。
+                        ##         .
+                  ## ## ##        ==
+               ## ## ## ## ##    ===
+           /"""""""""""""""""\___/ ===
+      ~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~
+           \______ o           __/
+             \    \         __/
+              \____\_______/
 
 
-## 安装控制器
+docker is configured to use the default machine with IP 192.168.99.100
+For help getting started, check out the docs at https://docs.docker.com
+```
 
-在这一步，你需要登录到被指定为 DCE Controller 的机器（后文称为 Controller 主机），进行 DCE 的安装。
-为了安装 DCE，你需要先进入 Controller 机器终端，然后通过如下命令安装 DCE 控制器。
+>>>>> Docker Toolbox 包含 VirtualBox VM，它通过 VirtualBox Vm 创建基于 `boot2docker.iso` 小型虚拟机，该镜像经过 Docker 公司优化，会在宿主机上安装一个命令行工具，并提供了一个 Docker 环境。更多关于 Docker Toolbox 的信息可以查看[Docker Toolbox 文档](https://docs.docker.com/toolbox/)
 
-	sudo su
+如果你使用 Windows 操作系统，你需要在主机上安装 Docker Toolbox。你可以从[ DaoCloud 下载中心](http://get.daocloud.io/)下载 Windows 版的 Docker Toolbox，然后按照安装指引安装程序即可。
+安装完 Docker Toolbox 后，打开 `Docker Toolbox terminal`，通过如下命令创建一个虚拟节点并进入该节点。
+```
+docker-machine create --driver virtualbox default
+
+```
+输出如下时，安装成功：
+```
+
+                        ##         .
+                  ## ## ##        ==
+               ## ## ## ## ##    ===
+           /"""""""""""""""""\___/ ===
+      ~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~
+           \______ o           __/
+             \    \         __/
+              \____\_______/
+
+
+docker is configured to use the default machine with IP 192.168.99.100
+For help getting started, check out the docs at https://docs.docker.com
+```
+
+## 第二步.安装主控节点
+
+在这一步，你需要登录到主控节点，进行 DCE 的安装。
+为了安装 DCE，你需要先进入主控节点终端，然后通过如下命令安装 DCE。
+```
 	bash -c "$(docker run -i --rm daocloud.io/daocloud/dce install)"
-
-当控制台输出如下，则安装成功。如果安装失败，请重新检查你的安装环境是否正确，再重新安装。如果你确保安装环境无误，而 DCE 安装失败，请通过 DaoVoice 联系 DaoCloud 的技术人员，获取服务支持。
+```
+当控制台输出如下，则安装成功。如果安装失败，请重新检查你的安装环境是否正确，再重新安装。如果你确保安装环境无误，而 DCE 安装失败，请通过点击浏览器右下方的 DaoVoice 联系 DaoCloud 的技术人员，获取更多服务支持。
 ```
 Installed DCE
 DCE CLI at 'export DOCKER_HOST="192.168.2.125:2375"; docker info'
 DCE WEB UI at http://192.169.2.125
 ```
-安装过程可能出现 `Please run the script to enable Overlay Network ` 提示，此时，请通过重启 Docker。
+安装过程可能出现 `Please run the script to enable Overlay Network ` 提示，此时，请重启 Docker。
 
-ubuntu下：
+ubuntu下重启 Docker：
 ```
 service docker restart
 ```
 
-centos下： 
+centos下重启 Docker：
 ```
 systemctl restart docker 
 ```
@@ -84,7 +141,6 @@ DCE Engine 安装方法如下。
 	2，登录 Engine 主机，进入终端交互；
 	3，执行如下命令，安装 DCE Engine，将当前 Engine 机器加入 DCE。
 
-	sudo su
 	bash -c "$(docker run -i --rm daocloud.io/daocloud/dce join {你的控制器IP})"
 
 完成主机接入后，你可以在 DCE 控制台「主机」页面查看、管理新加入的主机。
