@@ -74,7 +74,7 @@ mark {
 
 sub,
 sup {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   line-height: 0;
   position: relative;
   vertical-align: baseline; }
@@ -502,7 +502,7 @@ th {
         width: 100%; } }
 
 body {
-  font-size: 1.05rem;
+  font-size: 1rem;
   line-height: 1.7; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -510,22 +510,22 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility; }
 
 h1 {
-  font-size: 3.25rem; }
+  font-size: 3.2rem; }
 
 h2 {
-  font-size: 2.55rem; }
+  font-size: 2.5rem; }
 
 h3 {
-  font-size: 2.15rem; }
+  font-size: 2.1rem; }
 
 h4 {
-  font-size: 1.8rem; }
+  font-size: 1.75rem; }
 
 h5 {
-  font-size: 1.4rem; }
+  font-size: 1.35rem; }
 
 h6 {
-  font-size: 0.9rem; }
+  font-size: 0.85rem; }
 
 p {
   margin: 1.7rem 0; }
@@ -543,7 +543,7 @@ blockquote {
 
 cite {
   display: block;
-  font-size: 0.925rem; }
+  font-size: 0.875rem; }
   cite:before {
     content: "\2014 \0020"; }
 
@@ -555,7 +555,7 @@ code {
   vertical-align: bottom; }
 
 small {
-  font-size: 0.925rem; }
+  font-size: 0.875rem; }
 
 hr {
   border-left: none;
