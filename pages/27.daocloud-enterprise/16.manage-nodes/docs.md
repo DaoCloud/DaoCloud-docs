@@ -18,6 +18,7 @@ DCE 控制台具有管理主机的功能，点击 DCE 控制台「主机」即�
 
 ![](add_node.jpg)
 
+>>>>> 通过在需要接入的主机上使用上述命令，就能够将当前节点接入已有的容器集群。在主机管理中，接入的节点为容器节点。更多关于节点接入的信息可以参考 [生产环境安装 DCE ](http://docs.daocloud.io/daocloud-enterprise/install-for-production) 中的接入副控节点和接入容器节点。
 
 
 ## 查看主机详情
