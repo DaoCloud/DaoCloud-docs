@@ -16,27 +16,27 @@ DCE 安装包含了 Docker Engine CLI，DCE 通过使用 Docker Enging CLI 运�
 
 | Docker 客户端 | Docker 运行命令和参数 | DCE 镜像 | 运维套件子命令和参数 |
 | ------------ | ------------------  | -------- | -----------------|
-| docker  | run --rm -i | daocloud.io/daocloud/dce | install --help |
-| docker  | run --rm -i | daocloud.io/daocloud/dce | join --help |
-| docker  | run --rm -i | daocloud.io/daocloud/dce | uninstall --help |
+| `docker`  | `run --rm -i` | `daocloud.io/daocloud/dce` | `install --help` |
+| `docker`  | `run --rm -i` | `daocloud.io/daocloud/dce` | `join --help` |
+| `docker`  | `run --rm -i` | `daocloud.io/daocloud/dce` | `uninstall --help` |
 
 
 下表为 DCE 运维套件支持的命令：
 
 | 命令 | 说明 |
-|  |  |
-| install | 安装 DCE 主控节点和副控节点 |
-| join | 安装 ECE 容器节点 |
-| pull | 拉取 DCE 服务镜像 |
-| uninstall | 卸载现有的 DCE 主控节点，副控节点或容器节点 |
-| upgrade | 升级现有的 DCE 主控节点，副控节点或容器节点 |
-| setup-overlay | 建立 DCE Overlay 虚拟网络 |
-| start | 启动 DCE |
-| stop | 停止 DCE |
-| restart | 重启 DCE |
-| logs | 输出 DCE 日志 |
-| status | 输出 DCE 状态信息 |
-| info | 输出 DCE 信息 |
+| ---  | ---  |
+| `install`   | 安装 DCE 主控节点和副控节点 |
+| `join`    | 安装 ECE 容器节点 |
+| `pull`    | 拉取 DCE 服务镜像 |
+| `uninstall` | 卸载现有的 DCE 主控节点，副控节点或容器节点 |
+| `upgrade` | 升级现有的 DCE 主控节点，副控节点或容器节点 |
+| `setup-overlay` | 建立 DCE Overlay 虚拟网络 |
+| `start` | 启动 DCE |
+| `stop` | 停止 DCE |
+| `restart` | 重启 DCE |
+| `logs` | 输出 DCE 日志 |
+| `status` | 输出 DCE 状态信息 |
+| `info` | 输出 DCE 信息 |
 
 
 DCE 运维套件会从 DaoCloud Hub 拉取用于服务的镜像，并且运行基于这些镜像的容器。
