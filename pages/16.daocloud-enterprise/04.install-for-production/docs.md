@@ -8,11 +8,11 @@ title: 在生产环境安装
 
 ## DCE 安装
 
-DCE 安装包含了 Docker Engine CLI，DCE 通过使用 Docker Enging CLI 运行一套 DCE 运维套件。DCE 运维套件基于一个支持多种命令操作的 Docker 镜像，DCE 运维套件目前支持多种容器集群的安装管理操作，如安装 DCE 主控节点，接入容器节点等。
+DCE 安装包含了 Docker Engine CLI，DCE 通过使用 Docker Enging CLI 运行一套 DCE 运维套件。DCE 运维套件基于一个支持多种命令操作的 Docker 镜像，目前已经支持多种容器集群的安装管理操作，如安装 DCE 主控节点，接入容器节点等。
 
 运维套件命令格式说明：
 
-你能够通过加入 `-i` 参数交互式地使用 DCE 运维套件，下面是一条使用交互式 DCE 运维套件的命令：
+你能够通过加入 `-i` 参数交互式地使用 DCE 运维套件，下面是使用 DCE 运维套件的命令格式说明：
 
 | Docker 客户端 | Docker 运行命令和参数 | DCE 镜像 | 运维套件子命令和参数 |
 | ------------ | ------------------  | -------- | -----------------|
@@ -68,6 +68,9 @@ DCE 运维套件会从 DaoCloud Hub 拉取用于服务的镜像，并且运行�
 
 ```
 wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v3.19-vivid/linux-headers-3.19.0-031900-generic_3.19.0-031900.201504091832_amd64.deb
+wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v3.19-vivid/linux-headers-3.19.0-031900_3.19.0-031900.201504091832_all.deb
+wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v3.19-vivid/linux-image-3.19.0-031900-generic_3.19.0-031900.201504091832_amd64.deb
+
 ```
 
 安装这三个包：
@@ -91,7 +94,7 @@ Linux ubuntu 3.19.0-031900-generic #201504091832 SMP Thu Apr 9 17:35:46 UTC 2015
 
 #### Centos 下升级操作系统内核
 
-这里以在 Centos 下将 3.10 内核升级到最新版本 4.5。0 版本作为例子。
+这里以在 Centos 下将 3.10 内核升级到最新版本 4.5.0 作为例子。
 
 首先导入 ELRepo 的公钥:
 
@@ -99,7 +102,7 @@ Linux ubuntu 3.19.0-031900-generic #201504091832 SMP Thu Apr 9 17:35:46 UTC 2015
 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 ```
 
-更多关于 ELRepo GPK 公钥的信息可以查看[Key](https://www.elrepo.org/tiki/key)
+>>>>> 更多关于 ELRepo GPK 公钥的信息可以查看[Key](https://www.elrepo.org/tiki/key)
 
 安装 ELRepo，如果你使用 RHEL-7，SL-7 或 CentOS-7:
 
@@ -142,7 +145,7 @@ uname -a
 Linux localhost.localdomain 3.10.0-327.el7.x86_64 #1 SMP Thu Nov 19 22:10:57 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-这是系统只是有了新内核，但是还没有切换，所以显示的仍然是旧版本内核。
+这时系统只是有了新内核，但是还没有切换，所以显示的仍然是旧版本内核。
 
 
 设置 grub2 配置，来切换内核：
@@ -167,7 +170,7 @@ Linux localhost.localdomain 4.5.0-1.el7.elrepo.x86_64 #1 SMP Mon Mar 14 10:24:58
 
 ### 网络检查
 
-因为 DCE 会占用一部分端口来实现容器集群中各个节点间的数据通信，所以在安装 DCE 之前，需要检查集群中的所有节点都能够正常通信，并且保证 DCE 占用的端口是打开的，且未被其他程序占用。
+因为 DCE 会占用一部分端口来实现容器集群中各个节点间的数据通信，所以在安装 DCE 之前，需要检查集群中的所有节点是否都能够正常通信，并且保证 DCE 占用的端口是打开的，未被其他程序占用。
 
 下表是被 DCE 占用的端口：
 
@@ -210,8 +213,9 @@ Redirecting to /bin/systemctl status  docker.service
    Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; vendor preset: disabled)
    Active: inactive (dead)
      Docs: https://docs.docker.com
+```
 
-
+```
 service docker start
 ```
 
@@ -330,16 +334,18 @@ DCE WEB UI at http://192.168.2.126
 >* 容器节点的管理员账号信息
 
 容器节点安装方法如下：
-1. 登录到某个容器节点
-2. 运行如下 `join` 命令：
+
+登录到某个容器节点，运行如下 `join` 命令：
 
 ```
 bash -c "$(docker run --rm daocloud.io/daocloud/dce join －－force-pull 192.168.2.125)"
 ```
-`join` 命令将会拉取服务镜像并根据你提供的信息完成容器节点的接入。
 
-3. 在需要被接入的节点上，重复步骤 1 和步骤 2 
-4. 通过浏览器访问 DCE 控制台，你可以查看到容器集群的详细信息
+>>>>> `join` 命令将会拉取服务镜像并根据你提供的信息完成容器节点的接入。
+
+在需要被接入的节点上，重复上一步。
+
+安装完成后通过浏览器访问 DCE 控制台，你可以查看到容器集群的详细信息
 ![](dce.png)
 
 
