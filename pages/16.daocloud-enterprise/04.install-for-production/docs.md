@@ -58,8 +58,112 @@ DCE 运维套件会从 DaoCloud Hub 拉取用于服务的镜像，并且运行�
 >  * RHEL 7.0, 7.1
 >  * Ubuntu 14.04 LTS
 >  * CentOS 7.1
->* 3.10 或以上的内核版本
+>* 3.19 或以上的内核版本
 
+#### Ubuntu 下升级操作系统内核
+
+这里以在 Ubuntu 下将 3.13 内核升级到 3.19 版本作为例子。
+
+首先从 [kernel.ubuntu.com](kernel.ubuntu.com) 下载 3.19 内核的安装包，一共有三个包需要下载：
+
+```
+wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v3.19-vivid/linux-headers-3.19.0-031900-generic_3.19.0-031900.201504091832_amd64.deb
+```
+
+安装这三个包：
+
+```
+sudo dpkg -i linux-headers-3.19.0-031900*.deb linux-image-3.19.0-031900-generic_3.19.0-031900.201504091832_amd64.deb
+```
+
+重启系统：
+
+```
+sudo reboot
+```
+
+检查内核是否更新：
+```
+uname -a
+Linux ubuntu 3.19.0-031900-generic #201504091832 SMP Thu Apr 9 17:35:46 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+``` 
+
+
+#### Centos 下升级操作系统内核
+
+这里以在 Centos 下将 3.10 内核升级到最新版本 4.5。0 版本作为例子。
+
+首先导入 ELRepo 的公钥:
+
+```
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+```
+
+更多关于 ELRepo GPK 公钥的信息可以查看[Key](https://www.elrepo.org/tiki/key)
+
+安装 ELRepo，如果你使用 RHEL-7，SL-7 或 CentOS-7:
+
+```
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+```
+
+安装 ELRepo，如果你使用 RHEL-6，SL-6 或 CentOS-6:
+
+```
+rpm -Uvh http://www.elrepo.org/elrepo-release-6-6.el6.elrepo.noarch.rpm
+```
+
+安装 ELRepo，如果你使用 RHEL-5，SL-5 或 CentOS-5:
+
+```
+rpm -Uvh http://www.elrepo.org/elrepo-release-5-5.el5.elrepo.noarch.rpm
+```
+
+更新操作系统内核到最新版本内核：
+
+```
+yum install --enablerepo=elrepo-kernel kernel-ml
+```
+
+确定系统已经有了新的内核：
+
+```
+awk -F\' '$1=="menuentry " {print $2}' /etc/grub2.cfg
+CentOS Linux (4.5.0-1.el7.elrepo.x86_64) 7 (Core)
+CentOS Linux (3.10.0-327.el7.x86_64) 7 (Core)
+CentOS Linux (0-rescue-d6e1158788ae4521a9de3d1986b01bc8) 7 (Core)
+```
+
+
+查看当前系统内核：
+
+```
+uname -a
+Linux localhost.localdomain 3.10.0-327.el7.x86_64 #1 SMP Thu Nov 19 22:10:57 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+```
+
+这是系统只是有了新内核，但是还没有切换，所以显示的仍然是旧版本内核。
+
+
+设置 grub2 配置，来切换内核：
+
+```
+grub2-set-default 0
+grub2-mkconfig -o /boot/grub2/grub.cfg
+```
+
+重启系统：
+
+```
+reboot
+```
+
+检查内核是否更新：
+
+```
+uname -a
+Linux localhost.localdomain 4.5.0-1.el7.elrepo.x86_64 #1 SMP Mon Mar 14 10:24:58 EDT 2016 x86_64 x86_64 x86_64 GNU/Linux
+```
 
 ### 网络检查
 
@@ -83,15 +187,50 @@ DCE 安装之前，需要在容器集群的所有节点上安装 Docker Engine�
 
 在每一个节点，你能够通过运行下面的命令安装 Docker Engine：
 ```
-bash -c "$(docker run -i --rm daocloud.io/daocloud/dce join {你的控制器IP})"
+curl -sSL https://get.daocloud.io/docker | sh
 ```
+
+安装完成 Docker Engine 后需要检查 Docker 运行状态，确保 Docker 正在运行。
+
+```
+service docker status
+Redirecting to /bin/systemctl status  docker.service
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; vendor preset: disabled)
+   Active: active (running) since 二 2016-04-12 23:50:32 EDT; 8s ago
+     Docs: https://docs.docker.com
+```
+
+如果 Docker 未在运行，你需要手动启动 Docker：
+
+```
+service docker status
+Redirecting to /bin/systemctl status  docker.service
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; vendor preset: disabled)
+   Active: inactive (dead)
+     Docs: https://docs.docker.com
+
+
+service docker start
+```
+
+如果你使用 Centos，你还需要将 Docker 加入开机自启，并关闭 selinux 和防火墙：
+```
+chkconfig docker on
+setenforce 0 && sed -i '/^SELINUX=/c\SELINUX=disabled' /etc/selinux/config
+systemctl stop firewalld
+systemctl disable firewalld.service
+```
+
+
 >>>>> 更详细的 Docker Engine 安装可以参考[Docker Engine 安装](http://docs.daocloud.io/faq/install-docker-daocloud)
 
 ## 安装主控节点
 
 ### 1. 查看 DCE 运维套件可用的 `install` 命令选项
 ```
-bash -c "$(docker run --rm daocloud.io/daocloud/dce:1.0.0-dev install --help)"
+bash -c "$(docker run --rm daocloud.io/daocloud/dce install --help)"
 Install the DCE Controller.
 
 Usage: do-install [options]
@@ -111,7 +250,7 @@ Options:
 
 ### 2. 通过 `install` 完成安装
 ```
-bash -c "$(docker run --rm daocloud.io/daocloud/dce:1.0.0-dev install)"
+bash -c "$(docker run --rm daocloud.io/daocloud/dce install)"
 
 ```
 
@@ -141,7 +280,7 @@ DCE 已经支持高可用方案。当你在部署 DCE 的高可用容器集群�
 下面将会向你演示如何在已经有 `192.168.2.125` 主控节点的情况下，安装 `192.168.2.126` 副控节点：
 ### 1. 查看 DCE 运维套件可用的 `install` 命令选项
 ```
-bash -c "$(docker run --rm daocloud.io/daocloud/dce:1.0.0-dev install --help)"
+bash -c "$(docker run --rm daocloud.io/daocloud/dce install --help)"
 Install the DCE Controller.
 
 Usage: do-install [options]
@@ -161,7 +300,7 @@ Options:
 
 ### 2. 通过 `install` 完成安装
 ```
-bash -c "$(docker run --rm daocloud.io/daocloud/dce:1.0.0-dev install －－force-pull --replica --replica-controller 192.168.2.125)"
+bash -c "$(docker run --rm daocloud.io/daocloud/dce install －－force-pull --replica --replica-controller 192.168.2.125)"
 
 ```
 当出现如下输出时，程序安装完成：
@@ -195,7 +334,7 @@ DCE WEB UI at http://192.168.2.126
 2. 运行如下 `join` 命令：
 
 ```
-bash -c "$(docker run --rm daocloud.io/daocloud/dce:1.0.0-dev join －－force-pull 192.168.2.125)"
+bash -c "$(docker run --rm daocloud.io/daocloud/dce join －－force-pull 192.168.2.125)"
 ```
 `join` 命令将会拉取服务镜像并根据你提供的信息完成容器节点的接入。
 
@@ -213,7 +352,7 @@ bash -c "$(docker run --rm daocloud.io/daocloud/dce:1.0.0-dev join －－force-p
 1. 登录到你想要卸载 DCE 的节点
 2. 运行如下命令：
 ```
-bash -c "$(docker run --rm daocloud.io/daocloud/dce:1.0.0-dev uninstall)"
+bash -c "$(docker run --rm daocloud.io/daocloud/dce uninstall)"
 ```
 在卸载 DCE 后，会自动移除本地在 DCE 安装时从 Dokcer Hub 拉取的服务镜像
 3. 在容器集群中的每个节点上重复步骤1和步骤2。请确保主控节点最后卸载
