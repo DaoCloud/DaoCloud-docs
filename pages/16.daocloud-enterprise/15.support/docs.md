@@ -13,7 +13,4 @@ title: 技术支持
 
 >>>>> DaoVoice 是一款创新的融合式用户和产品运营管理平台，由 DaoCloud 开发并运营。更多关于 DaoVoice 的信息请参考 [DaoVoice 介绍](http://docs.daocloud.io/daovoice-quickstart/introduction)
 
-## 商业技术支持
-
-暂无
 

@@ -1,12 +1,12 @@
 ---
-title: 在生产环境安装
+title: 生产环境安装 DCE
 ---
 
 本篇文章将向你介绍安装 DCE 的预备知识和安装方法，你能够通过本篇文章了解到如何在生产环境中安装 DCE。
 
-如果你是初次使用 DCE 或 对 DCE 不太了解，建议你先阅读[快速开始](http://docs.daocloud.io/daocloud-enterprise/quickstart)和[DCE 架构](http://docs.daocloud.io/daocloud-enterprise/architure)。
+如果你是初次使用 DCE 或 对 DCE 不太了解，建议你先阅读[快速开始](http://docs.daocloud.io/daocloud-enterprise/quickstart)和 [DCE 架构](http://docs.daocloud.io/daocloud-enterprise/architure)。
 
-## DCE 安装
+## DCE 安装说明
 
 DCE 安装包含了 Docker Engine CLI，DCE 通过使用 Docker Enging CLI 运行一套 DCE 运维套件。DCE 运维套件基于一个支持多种命令操作的 Docker 镜像，目前已经支持多种容器集群的安装管理操作，如安装 DCE 主控节点，接入容器节点等。
 
@@ -88,6 +88,10 @@ sudo reboot
 检查内核是否更新：
 ```
 uname -a
+```
+
+显示已经已经切换到新版本内核：
+```
 Linux ubuntu 3.19.0-031900-generic #201504091832 SMP Thu Apr 9 17:35:46 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
 ``` 
 
@@ -132,6 +136,10 @@ yum install --enablerepo=elrepo-kernel kernel-ml
 
 ```
 awk -F\' '$1=="menuentry " {print $2}' /etc/grub2.cfg
+```
+
+输出系统已有的内核的信息：
+```
 CentOS Linux (4.5.0-1.el7.elrepo.x86_64) 7 (Core)
 CentOS Linux (3.10.0-327.el7.x86_64) 7 (Core)
 CentOS Linux (0-rescue-d6e1158788ae4521a9de3d1986b01bc8) 7 (Core)
@@ -142,6 +150,10 @@ CentOS Linux (0-rescue-d6e1158788ae4521a9de3d1986b01bc8) 7 (Core)
 
 ```
 uname -a
+```
+
+输出当前系统使用内核的信息：
+```
 Linux localhost.localdomain 3.10.0-327.el7.x86_64 #1 SMP Thu Nov 19 22:10:57 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
@@ -165,6 +177,10 @@ reboot
 
 ```
 uname -a
+```
+
+显示已经切换到新版本内核：
+```
 Linux localhost.localdomain 4.5.0-1.el7.elrepo.x86_64 #1 SMP Mon Mar 14 10:24:58 EDT 2016 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
@@ -197,6 +213,10 @@ curl -sSL https://get.daocloud.io/docker | sh
 
 ```
 service docker status
+```
+
+出现如下输出时，表示Docker 正在运行：
+```
 Redirecting to /bin/systemctl status  docker.service
 ● docker.service - Docker Application Container Engine
    Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; vendor preset: disabled)
@@ -208,6 +228,10 @@ Redirecting to /bin/systemctl status  docker.service
 
 ```
 service docker status
+```
+
+出现如下输出时，表示 Docker 未正常运行：
+```
 Redirecting to /bin/systemctl status  docker.service
 ● docker.service - Docker Application Container Engine
    Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; vendor preset: disabled)
@@ -215,6 +239,7 @@ Redirecting to /bin/systemctl status  docker.service
      Docs: https://docs.docker.com
 ```
 
+使用命令重启 Docker：
 ```
 service docker start
 ```
@@ -235,6 +260,11 @@ systemctl disable firewalld.service
 ### 1. 查看 DCE 运维套件可用的 `install` 命令选项
 ```
 bash -c "$(docker run --rm daocloud.io/daocloud/dce install --help)"
+```
+
+输出帮助文档：
+
+```
 Install the DCE Controller.
 
 Usage: do-install [options]
@@ -282,37 +312,19 @@ DCE WEB UI at http://192.168.2.125
 DCE 已经支持高可用方案。当你在部署 DCE 的高可用容器集群时，你需要为主控节点配置多个副控节点。
 
 下面将会向你演示如何在已经有 `192.168.2.125` 主控节点的情况下，安装 `192.168.2.126` 副控节点：
-### 1. 查看 DCE 运维套件可用的 `install` 命令选项
-```
-bash -c "$(docker run --rm daocloud.io/daocloud/dce install --help)"
-Install the DCE Controller.
-
-Usage: do-install [options]
-
-Description:
-  The command will install the DCE controller on this machine.
-
-Options:
-  -q, --quiet             Quiet. Do not ask for anything.
-  --force-pull            Always Pull Image, default is pull when missing.
-  --swarm-port PORT       Specify the swarm manager port(default: 2376).
-  --replica               Install as a replica for HA,
-  --replica-controller IP Specify the primary controller IP installed.
-  --no-overlay            Do not config Overlay network.
-  --no-experimental       Disable experimental Swarm Experimental Features.
-```
-
-### 2. 通过 `install` 完成安装
+### 1. 通过如下命令安装
 ```
 bash -c "$(docker run --rm daocloud.io/daocloud/dce install －－force-pull --replica --replica-controller 192.168.2.125)"
 
 ```
-当出现如下输出时，程序安装完成：
+
+当出现如下输出时，安装完成：
 ```
 Installed DCE
 DCE CLI at 'export DOCKER_HOST="192.168.2.126:2375"; docker info'
 DCE WEB UI at http://192.168.2.126
 ```
+>>>>> 不同主机上显示的 IP 信息不同。
 
 如果安装完成后，出现重启 Docker 的提示，请按照提示执行相关命令重启 Docker，保证 DCE 能够正常提供服务。
 ```

@@ -39,6 +39,10 @@ DCE 为应用管理、容器管理和网络管理提供了 CLI 操作，只需�
 
 ```
 docker -H tcp://10.1.0.121:2375 volume inspect localhost.localdomain/f881b50f1de42a3b1ee3b4bb044f447ec16ef94bc0f8722bb8be362e22eb2c05
+```
+
+输出存储卷的详细信息：
+```
 [
     {
         "Name": "f881b50f1de42a3b1ee3b4bb044f447ec16ef94bc0f8722bb8be362e22eb2c05",
