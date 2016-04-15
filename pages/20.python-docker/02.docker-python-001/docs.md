@@ -80,6 +80,17 @@ CMD [""]
 > 
 > `ENTRYPOINT` 指定了该镜像启动时的入口，`CMD` 则指定了容器启动时的命令，当两者共用时，完整的启动命令像是 `ENTRYPOINT + CMD` 这样。使用 `ENTRYPOINT` 的好处是在我们启动镜像就像是启动了一个可执行程序，在 `CMD` 上仅需要指定参数；另外在我们需要自定义 `CMD` 时不容易出错。
 
+#### 添加依赖文件（requirements.txt）
+
+
+```bash
+# pip requirements
+ipython[all]
+```
+
+我们将python所需的依赖写成一个文件，并通过Dockerfile中的```ADD requirements.txt requirements.txt```
+将```requirements.txt```放入image，之后在通过```RUN pip install -r requirements.txt```进行依赖的安装。
+
 #### 制作启动脚本（docker-entrypoint.sh）
 
 ```bash
