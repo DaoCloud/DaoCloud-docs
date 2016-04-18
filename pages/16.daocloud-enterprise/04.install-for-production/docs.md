@@ -60,42 +60,7 @@ DCE 运维套件会从 DaoCloud Hub 拉取用于服务的镜像，并且运行�
 >  * CentOS 7.1
 >* 3.19 或以上的内核版本
 
-#### Ubuntu 下升级操作系统内核
-
-首先从 [kernel.ubuntu.com](http://kernel.ubuntu.com/~kernel-ppa/mainline/) 下载你需要安装的内核版本的安装包，一共有三个包需要下载：
-
-```
-linux-headers-VERSION-NUMBER_all.deb
-linux-headers-VERSION-NUMBER_amd64.deb
-linux-image-VERSION-NUMBER_amd64.deb
-```
-
-安装并重启系统：
-
-```bash
-sudo dpkg -i *.deb
-sudo reboot
-```
-
-#### Centos 下升级操作系统内核
-
-这里以在 Centos 7 下将内核升级到最新版本 4.5.0 作为例子。
-
-首先导入 ELRepo 的公钥并安装 ELRepo:
-
-```bash
-rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.orguname
-rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm 
-```
-
-更新操作系统内核到最新版本内核并配置 grub2：
-
-```bash
-yum install --enablerepo=elrepo-kernel kernel-ml
-grub2-set-default 0
-grub2-mkconfig -o /boot/grub2/grub.cfg
-reboot
-```
+>>>>> 如果你的操作系统的内核版本过低，你可以在本页面最底部查看到 Ubuntu 和 Centos 下升级内核的方法。
 
 ### 网络检查
 
@@ -117,10 +82,17 @@ reboot
 
 DCE 安装之前，需要在容器集群的所有节点上安装 Docker Engine，包括主控节点，副控节点和容器节点。
 
-在每一个节点，你能够通过运行下面的命令安装 Docker Engine：
+在每一个节点，你能够通过运行下面的命令安装在线 Docker Engine：
 ```bash
 curl -sSL https://get.daocloud.io/docker | sh
 ```
+
+你也可以从[Docker Offline Release](https://github.com/DaoCloud/docker-offline)下载适合你的离线安装包, 然后通过如下命令，离线安装 Docker Engine：
+``` bash
+tar -zxvf docker-offline-all-<docker-version>.tar.gz
+./docker-offline/install.sh
+```
+
 
 安装完成 Docker Engine 后需要检查 Docker 运行状态，确保 Docker 正在运行。
 
@@ -273,7 +245,46 @@ bash -c "$(docker run --rm daocloud.io/daocloud/dce uninstall)"
 3. 在容器集群中的每个节点上重复步骤1和步骤2。请确保主控节点最后卸载
 
 
+## 升级内核
 
+如果你需要升级操作系统内核，你可以按照如下方法升级到新版内核。
+
+### Ubuntu 下升级操作系统内核
+
+首先从 [kernel.ubuntu.com](http://kernel.ubuntu.com/~kernel-ppa/mainline/) 下载你需要安装的内核版本的安装包，一共有三个包需要下载：
+
+```
+linux-headers-VERSION-NUMBER_all.deb
+linux-headers-VERSION-NUMBER_amd64.deb
+linux-image-VERSION-NUMBER_amd64.deb
+```
+
+安装并重启系统：
+
+```bash
+sudo dpkg -i *.deb
+sudo reboot
+```
+
+### Centos 下升级操作系统内核
+
+这里以在 Centos 7 下将内核升级到最新版本 4.5.0 作为例子。
+
+首先导入 ELRepo 的公钥并安装 ELRepo:
+
+```bash
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.orguname
+rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm 
+```
+
+更新操作系统内核到最新版本内核并配置 grub2：
+
+```bash
+yum install --enablerepo=elrepo-kernel kernel-ml
+grub2-set-default 0
+grub2-mkconfig -o /boot/grub2/grub.cfg
+reboot
+```
 
 
 
