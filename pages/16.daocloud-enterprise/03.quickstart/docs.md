@@ -27,106 +27,12 @@ DCE 提供了一整套安装套件。你可以在 10 分钟之内安装 DaoCloud
 
 在安装 DCE 之前，你需要准备至少一台主机作为安装环境。在 DCE 安装中，将会指定你的主机中的一台作为主控节点，如果还有其余主机，它们将会作为容器节点加入 DCE 集群。
 
-由于 DCE 依赖于 Linux，所以你不能够直接在 Max 或 Windows 上直接安装 DCE。我们建议你在 Mac 或 Windows 上安装 Docker Toolbox。Docker Toolbox 会在你的主机上安装 Virtual box、Docker Engine 和 CLI 命令行工具。这些工具将帮助你在你的主机上启动一个小型虚拟机，然后你就可以在该虚拟机中安装 DCE。
+这里我们建议你使用 DaoCloud 胶囊主机快速安装 DCE。如果你对胶囊主机不熟悉，你可以查看[添加胶囊主机](http://docs.daocloud.io/cluster-mgmt/add-cell-node)来了解胶囊主机的申请和使用。
 
+DaoCloud 胶囊主机配备了 Docker 环境，无需再安装 Docker。
 
-### Linux 下准备环境
+当你添加胶囊主机后，请先使用 SSH 连接到胶囊主机，然后再进行下一步。
 
-如果你使用 Linux 操作系统，你需要在主机上安装 Docker。如果你的主机已经完成 Docker 的安装，请跳过当前步骤，进行下一步。
-
-Linux 下 Docker 安装方式如下：   
-1. 登录用于安装 DCE 的主机，进入控制台
-2. 执行 `sudo su` 切换到 # root 帐户状态
-3. 执行如下命令安装 Docker
-
-```
- curl -sSL https://get.daocloud.io/docker | sh
-```
-出现如下输出时，表示 Docker 安装成功。
-```
-Client:
- Version:      1.10.3
- API version:  1.22
- Go version:   go1.5.3
- Git commit:   20f81dd
- Built:        Thu Mar 10 15:54:52 2016
- OS/Arch:      linux/amd64
-
-Server:
- Version:      1.10.3
- API version:  1.22
- Go version:   go1.5.3
- Git commit:   20f81dd
- Built:        Thu Mar 10 15:54:52 2016
- OS/Arch:      linux/amd64
-
-If you would like to use Docker as a non-root user, you should now consider
-adding your user to the "docker" group with something like:
-
-  sudo usermod -aG docker ubuntu
-
-Remember that you will have to log out and back in for this to take effect!
-```
->>>>> 这里使用 DaoCloud 的镜像仓库来完成 Docker 安装，你也可以使用 Dokcer Hub 的仓库安装 Docker。国内主机建议使用 DaoCloud 的镜像仓库，保证快速的镜像拉取。
-
-
-### Mac OS X 下准备环境
-
-如果你使用 Mac OS X 操作系统，你需要在主机上安装 Docker Toolbox。你可以从 [ DaoCloud 下载中心](http://get.daocloud.io/)下载 Mac 版的 Docker Toolbox，然后按照安装指引安装程序。
-
-安装完 Docker Toolbox 后，打开终端，通过如下命令创建一个虚拟节点并进入该节点。
-```
-docker-machine create --driver virtualbox default
-
-```
-
-
-输出如下时，安装成功：
-
-```
-
-                        ##         .
-                  ## ## ##        ==
-               ## ## ## ## ##    ===
-           /"""""""""""""""""\___/ ===
-      ~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~
-           \______ o           __/
-             \    \         __/
-              \____\_______/
-
-
-docker is configured to use the default machine with IP 192.168.99.100
-For help getting started, check out the docs at https://docs.docker.com
-```
-
->>>>> Docker Toolbox 包含 VirtualBox VM，它通过 VirtualBox 创建基于 `boot2docker.iso` 小型虚拟机，该镜像经过 Docker 公司优化，会在宿主机上安装一个命令行工具，并提供了一个 Docker 环境。更多关于 Docker Toolbox 的信息可以查看[Docker Toolbox 文档](https://docs.docker.com/toolbox/)
-
-### Windows 下准备环境
-
-如果你使用 Windows 操作系统，你需要在主机上安装 Docker Toolbox。你可以从[ DaoCloud 下载中心](http://get.daocloud.io/)下载 Windows 版的 Docker Toolbox，然后按照安装指引安装程序。
-
-安装完 Docker Toolbox 后，打开 Docker Toolbox 终端，通过如下命令创建一个虚拟节点并进入该节点终端环境：
-```
-docker-machine create --driver virtualbox default
-
-```
-
-输出如下时，安装成功：
-```
-
-                        ##         .
-                  ## ## ##        ==
-               ## ## ## ## ##    ===
-           /"""""""""""""""""\___/ ===
-      ~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~
-           \______ o           __/
-             \    \         __/
-              \____\_______/
-
-
-docker is configured to use the default machine with IP 192.168.99.100
-For help getting started, check out the docs at https://docs.docker.com
-```
 
 ## 第二步 安装主控节点
 
@@ -156,7 +62,7 @@ Centos下重启 Docker：
 systemctl restart docker 
 ```
 
- >>>>> 安装好 DCE 控制器后，便可以通过浏览器访问主控节点对应的 IP，进入 DCE 控制台。
+ >>>>> 安装好 DCE 控制器后，便可以通过浏览器访问主控节点对应的 IP，进入 DCE 控制台。需要注意的是，当你使用 DaoCloud 胶囊主机的时候，进入 DCE 控制台的 IP 是 DaoCloud Dashboard 页面显示的胶囊主机的外网 IP，而不是 DCE 安装完成后提示的 IP.
 ![](dce.png)
 
 ## 第三步 接入主机

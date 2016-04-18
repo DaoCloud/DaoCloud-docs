@@ -82,10 +82,17 @@ DCE 运维套件会从 DaoCloud Hub 拉取用于服务的镜像，并且运行�
 
 DCE 安装之前，需要在容器集群的所有节点上安装 Docker Engine，包括主控节点，副控节点和容器节点。
 
-在每一个节点，你能够通过运行下面的命令安装 Docker Engine：
+在每一个节点，你能够通过运行下面的命令安装在线 Docker Engine：
 ```bash
 curl -sSL https://get.daocloud.io/docker | sh
 ```
+
+你也可以从[Docker Offline Release](https://github.com/DaoCloud/docker-offline)下载适合你的离线安装包, 然后通过如下命令，离线安装 Docker Engine：
+``` bash
+tar -zxvf docker-offline-all-<docker-version>.tar.gz
+./docker-offline/install.sh
+```
+
 
 安装完成 Docker Engine 后需要检查 Docker 运行状态，确保 Docker 正在运行。
 
