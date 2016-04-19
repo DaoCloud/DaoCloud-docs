@@ -40,7 +40,7 @@ HAProxy 是一个提供高可用负载均衡的应用代理，支持虚拟主机
 在 DCE 中部署 Interlock 和 HAProxy 需要进入 DCE 控制台。
 
 首先，请你进入 DCE 控制台的应用子页面，并创建应用。创建应用方式选择「应用仓库」，镜像选择 `Interlock HAProxy`:
-![](interlock_1.png)
+![](Interlock_1.png)
 
 检查主控节点 IP 并设置 HAProxy 管理员密码：
 ![](interlock_2.png)
@@ -84,7 +84,7 @@ HAProxy 是一个提供高可用负载均衡的应用代理，支持虚拟主机
 ![](interlock_9.png)
 
 完成应用拓展，进入 HAProxy，可以看到新拓展的应用：
-![](interlock_10.png)
+![](interlock_10.jpg)
 
 配置 host 和 dns
 
