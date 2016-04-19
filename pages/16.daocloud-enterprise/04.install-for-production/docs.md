@@ -126,6 +126,18 @@ systemctl disable firewalld.service
 
 ## 安装主控节点
 
+DCE 目前支持两种安装模式：在线安装和离线安装。在线安装需要用户保证安装 DCE 的节点网络可以正常通信，这时使用 DCE 运维套件，能够自动从 DaoCloud 镜像仓库拉取 DCE 安装所需要的镜像。离线安装需要用户提前从 DaoCloud 下载站点下载合适的包，然后通过 scp 等工具分发到集群中安装 DCE 的节点并使用 Docker Engine 载入包中的镜像。
+
+如果你需要使用离线安装，请先下载 DCE 的包：
+[DCE 包地址](http://get.daocloud.io/dce/)
+
+然后使用 Docket 载入镜像 `dce.tar.gz`:
+```bash
+gzip -dc dce.tar.gz | docker load
+```
+
+
+
 ### 1. 查看 DCE 运维套件可用的 `install` 命令选项
 ```
 bash -c "$(docker run --rm daocloud.io/daocloud/dce install --help)"
@@ -175,6 +187,7 @@ DCE WEB UI at http://192.168.2.125
 ################################################################################
 ```
 
+>>>>> DCE 安装时，会先检查本地是否有 DCE 安装需要的镜像。如果你使用离线下载，那么此时将基于本地镜像安装 DCE 服务，不会再拉取在线镜像，如果你没有使用离线下载，本地没有对应版本的镜像，DCE 就会自动从镜像仓库拉取镜像。
 
 ## 安装副控节点
 
