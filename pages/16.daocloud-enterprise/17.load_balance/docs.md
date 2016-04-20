@@ -30,10 +30,11 @@ DaoCloud Enterprise（DCE）能够帮助用户更好的实践 DevOps 和 微服�
 
 ### Interlock 和 HAProxy 介绍
 
-Interlock 是一个容器化的事件驱动工具，它能够连接到 DCE 的主控节点并监控主控节点发生的事件。在这里，Interlock 负责监控和查找 DCE 容器集群中的容器节点的元数据 （metadata），如主机名和 lanbels。在获取到这些元数据后，Interlock 会使用这些数据向负载均衡后端程序注册（或注销）容器节点。需要注意的是，Interlock 和后端的负载均衡程序都是无状态的，以保证后期能够轻松对当前需要负载均衡服务的节点进行拓展。
+Interlock 是一个容器化的事件驱动工具，它能够连接到 DCE 的主控节点并监控主控节点发生的事件。
 
 HAProxy 是一个提供高可用负载均衡的应用代理，支持虚拟主机。HAProxy 官方数据显示，HAProxy 最高可以支持高达 10 G 的并发请求。这里是用 HAProxy 作为负载均衡代理，使得应用服务在快速拓展的同时，也具备高并发处理能力。
 
+在 DCE 中，Interlock 负责监控和查找 DCE 容器集群中的容器节点的元数据 （metadata），如主机名和 lanbels。在获取到这些元数据后，Interlock 会使用这些数据向负载均衡后端程序 (HAProxy) 注册（或注销）容器节点，然后由 HAProxy 接管应用的请求并处理多应用实例之间的负载均衡。需要注意的是，这里被管理的容器提供的服务都应该是无状态的，以保证能够平滑地进行拓展，如果容器中的应用是有状态的，那么 Interlock 和 HAProxy 将不能很好的支持该类应用的负载均衡，需要开发人员自己处理会话保存和状态共享等一致性问题。
 
 通过 Interlock 和 HAProxy 的组合，我们能够实现高可用的负载均衡。为了方便部署，DaoCloud 在应用仓库提供了已经配置好大部分功能的 `Interlock HAProxy` 镜像，大大降低了部署负载均衡的难度。
 
@@ -66,13 +67,17 @@ HAProxy 是一个提供高可用负载均衡的应用代理，支持虚拟主机
 ```
   labels:
   - "interlock.hostname=2048"
-  - "interlock.domain=local.com"
+  - "interlock.domain=applications.com"
 ```
 
 ![](interlock_6.jpg)
 
 追加说明：
-[list]()
+| 项目 | 项目说明 |
+| ---- | ------- |
+| interlock.hostname | 访问 Interlock 管理的众多应用中的某个应用的时候，使用的主机名 |
+| interlock.domain | 访问 Interlock 管理的应用时，使用的域名 |
+
 
 应用部署完成后，我们进入 HAProxy 页面，可以看到 HAProxy 已经发现了新应用：
 ![](interlock_7.jpg)
@@ -88,9 +93,22 @@ HAProxy 是一个提供高可用负载均衡的应用代理，支持虚拟主机
 完成应用拓展，进入 HAProxy，可以看到新拓展的应用：
 ![](interlock_10.jpg)
 
-配置 host 和 dns
+完成应用部署和拓展之后，还需要配置 DNS Server 或 hosts 文件才完成全部配置。这里示例中我们以修改 hosts 作为示例，hosts 文件格式如下：
 
-访问 2048
+```
+Interlock_IP  hostname.domain    
+```
+
+这里我们修改为：
+```
+192.168.2.125  2048.applications.com
+```
+
+>>>>> 如果你有多个被 Interlock 管理的不同应用，你需要在 hosts 或 DNS Server 中添加多条记录，每条记录的 hostname 不同，IP 和 domain 是一致的。
+
+
+现在你可以访问 2048 了，你只需要在浏览器输入前面设置的域名便能够进入 2048，在该示例中，访问地址为 `2048.applications.com`。需要注意的是，Interlock 部署过程默认是将主机的 80 端口映射到 Interlock 容器的 80 端口，如果你在部署过程中修改了端口关系，那么在访问应用的时候，需要加上端口，才能够正常访问。
+![](2048.png)
 
 
 [DevOps Needed for Operating Microservices](http://www.infoq.com/news/2015/03/operating-microservices)
