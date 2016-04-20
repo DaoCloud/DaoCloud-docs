@@ -4,75 +4,62 @@ title: 快速开始
 
 DCE 提供了一整套安装套件。你可以在 10 分钟之内安装 DaoCloud Enterprise (DCE)。 
 
-这个页面将帮助你在你的主机上安装一套简单的 DaoCloud Enterprise (DCE) ，并使用 DCE 控制台部署你的应用。本页面的安装方式适用于 Linux，Mac OS X 和 Windows 操作系统。
+这个页面将帮助你在 DaoCloud 胶囊主机上快速安装一套简单的 DaoCloud Enterprise (DCE) ，并使用 DCE 控制台部署你的应用。如果你对胶囊主机不熟悉，你可以查看[添加胶囊主机](http://docs.daocloud.io/cluster-mgmt/add-cell-node)来了解胶囊主机的申请和使用。
 
 如果你熟悉 DCE 和 Docker，你可以直接前往[应用部署](http://docs.daocloud.io/daocloud-enterprise/deploy-an-application)查看更详细的 DCE 安装与部署方案。 
 
-
 一个基础的 DCE 容器集群包含了主控节点、副控节点和容器节点，其中，主控节点作为统筹者负责监控管理集群中的容器节点，副控节点作为主控节点的备份节点，保证 DCE 的高可用，容器节点运行所有的 Docker 容器和应用，并接受主控节点的管理。
 
-所有节点的安装都依赖于 Docker 技术，如果你使用 Windows 或 Mac OS X 操作系统，你需要先安装 Docker Toolbox。
-![](small-install.png)
-
->>>>> 当我们使用 DCE 构建单节点容器集群时，主控节点、副控节点、容器节点在一台节点上，即一台节点承担三种角色。
+>>>>> 这里我们使用胶囊主机安装 DCE 构建单节点容器集群，这时主控节点、副控节点、容器节点在一台节点上，即一台节点承担三种角色。
 
 
 ## 简单介绍
 
-本次示例将向你介绍如何安装 DCE 和如何使用 DCE 控制台快速部署一个简单的 2048 应用。部署完成后，便可以通过浏览器进入该游戏。为了保证简单快速，本次示例中使用一台节点安装 DCE，模拟单节点集群。
+本次示例将向你介绍如何安装 DCE 和如何使用 DCE 控制台快速部署一个简单的 2048 应用。部署完成后，便可以通过浏览器进入该游戏。为了保证简单快速，本次示例中使用一台胶囊主机安装 DCE，模拟单节点集群。
 
 >>>>> DaoCloud 向用户提供了应用仓库，在本次示例中，只要在应用仓库中找到 2048，然后点击立即部署即可，不需要用户编写任何代码。
 
 ## 第一步 准备环境
 
-在安装 DCE 之前，你需要准备至少一台主机作为安装环境。在 DCE 安装中，将会指定你的主机中的一台作为主控节点，如果还有其余主机，它们将会作为容器节点加入 DCE 集群。
-
-这里我们建议你使用 DaoCloud 胶囊主机快速安装 DCE。如果你对胶囊主机不熟悉，你可以查看[添加胶囊主机](http://docs.daocloud.io/cluster-mgmt/add-cell-node)来了解胶囊主机的申请和使用。
+在安装 DCE 之前，你需要申请使用一台胶囊主机。
 
 DaoCloud 胶囊主机配备了 Docker 环境，无需再安装 Docker。
 
-当你添加胶囊主机后，请先使用 SSH 连接到胶囊主机，然后再进行下一步。
+当你添加胶囊主机后，请单击下图标示的连接连接到胶囊主机的终端环境，然后再进行下一步。
+![](daocloud_host.jpg)
 
 
 ## 第二步 安装主控节点
 
-在这一步，你需要登录到主控节点，进行 DCE 的安装。
-
-为了安装 DCE，你需要先进入主控节点终端，然后通过如下命令安装 DCE。
+在终端中使用如下命令安装 DCE。
 ```
 bash -c "$(docker run -i --rm daocloud.io/daocloud/dce install)"
 ```
 
-当控制台输出如下，则安装成功。如果安装失败，请重新检查你的安装环境是否正确，再重新安装。如果你确保安装环境无误，而 DCE 安装失败，请通过点击浏览器右下方的 DaoVoice 联系 DaoCloud 的技术人员，获取更多服务支持。
+当控制台输出类似下面的输出时，则安装成功。
 ```
 Installed DCE
 DCE CLI at 'export DOCKER_HOST="192.168.2.125:2375"; docker info'
 DCE WEB UI at http://192.169.2.125
 ```
 
-安装过程可能出现 Please run the script to enable Overlay Network  提示，此时，请重启 Docker。
-
-Ubuntu下重启 Docker：
+安装过程可能出现 `Please run the script to enable Overlay Network`  提示，此时，请使用如下命令重启 Docker。
 ```
 service docker restart
 ```
 
-Centos下重启 Docker：
-```
-systemctl restart docker 
-```
 
- >>>>> 安装好 DCE 控制器后，便可以通过浏览器访问主控节点对应的 IP，进入 DCE 控制台。需要注意的是，当你使用 DaoCloud 胶囊主机的时候，进入 DCE 控制台的 IP 是 DaoCloud Dashboard 页面显示的胶囊主机的外网 IP，而不是 DCE 安装完成后提示的 IP.
+ >>>>> 安装好 DCE 控制器后，便可以通过浏览器访问主控节点对应的 IP，进入 DCE 控制台。需要注意的是，当你使用 DaoCloud 胶囊主机的时候，进入 DCE 控制台的 IP 是 DaoCloud Dashboard 页面显示的胶囊主机的外网 IP，而不是 DCE 安装完成后提示的 IP。
 ![](dce.png)
 
 ## 第三步 接入主机
 
-目前你已经完成了主控节点的安装，如果你只有一台机器用于 DCE，你可以跳过当前步骤，进入下一步，开始部署应用。如果你有多台节点，那么当你在安装好主控节点后，你还需要在其他节点上安装 DCE 容器节点（简称为容器节点），从而使该节点接入 DCE。
+目前你已经完成了主控节点的安装，如果你只有一台胶囊主机用于 DCE，你可以跳过当前步骤，进入下一步，开始部署应用。如果你有多台胶囊主机，那么当你在安装好主控节点后，你还需要在其他胶囊主机上安装 DCE 容器节点（简称为容器节点），从而使该胶囊主机接入 DCE。
 
 容器节点安装方法如下
 
-1. 获取主控节点机器 IP
-2. 登录节点，进入终端
+1. 获取主控节点机器 IP，即上一步中胶囊节点的外网 IP
+2. 登录容器节点，进入终端
 3. 执行如下命令，安装容器节点程序，将当前节点加入 DCE
 
 ```
@@ -82,7 +69,6 @@ bash -c "$(docker run -i --rm daocloud.io/daocloud/dce join {你的控制器IP})
 完成主机接入后，你可以在 DCE 控制台「主机」页面查看、管理新加入的主机。
 ![DCE 主机列表](machine_list.png)
 
->>>>> 被接入的主机在接入前也需要安装 Docker。
 
 ## 第四步 部署应用
 
