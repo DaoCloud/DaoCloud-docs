@@ -40,6 +40,7 @@ Options:
 
 DCE 升级非常方便，你只需要需要升级的节点上运行如下命令，就能够自动地升级至新版本 DCE：
 ```
+	docker pull daocloud.io/daocloud/dce
 	bash -c "$(docker run -i --rm daocloud.io/daocloud/dce:{{当前版本号}} upgrade --force-pull {{新版本号}})"
 ```
 
