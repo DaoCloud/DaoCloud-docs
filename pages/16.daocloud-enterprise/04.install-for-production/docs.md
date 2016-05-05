@@ -26,7 +26,7 @@ DCE 安装包含了 Docker Engine CLI，DCE 通过使用 Docker Enging CLI 运�
 | 命令 | 说明 |
 | ---  | ---  |
 | `install`   | 安装 DCE 主控节点和副控节点 |
-| `join`    | 安装 ECE 容器节点 |
+| `join`    | 安装 DCE 容器节点 |
 | `pull`    | 拉取 DCE 服务镜像 |
 | `uninstall` | 卸载现有的 DCE 主控节点，副控节点或容器节点 |
 | `upgrade` | 升级现有的 DCE 主控节点，副控节点或容器节点 |
@@ -114,7 +114,7 @@ Redirecting to /bin/systemctl status  docker.service
 service docker start
 ```
 
-如果你使用 Centos，你还需要将 Docker 加入开机自启，并关闭 selinux 和防火墙：
+如果你使用 Centos，你还需要将 Docker 加入开机自启，并关闭 SELinux 和防火墙：
 ```bash
 chkconfig docker on
 setenforce 0 && sed -i '/^SELINUX=/c\SELINUX=disabled' /etc/selinux/config
@@ -196,7 +196,7 @@ DCE 已经支持高可用方案。当你在部署 DCE 的高可用容器集群�
 下面将会向你演示如何在已经有 `192.168.2.125` 主控节点的情况下，安装 `192.168.2.126` 副控节点：
 ### 1. 通过如下命令安装
 ```
-bash -c "$(docker run --rm daocloud.io/daocloud/dce install －－force-pull --replica --replica-controller 192.168.2.125)"
+bash -c "$(docker run --rm daocloud.io/daocloud/dce install --force-pull --replica --replica-controller 192.168.2.125)"
 
 ```
 
@@ -232,7 +232,7 @@ DCE WEB UI at http://192.168.2.126
 登录到某个容器节点，运行如下 `join` 命令：
 
 ```
-bash -c "$(docker run --rm daocloud.io/daocloud/dce join －－force-pull 192.168.2.125)"
+bash -c "$(docker run --rm daocloud.io/daocloud/dce join --force-pull 192.168.2.125)"
 ```
 
 >>>>> `join` 命令将会拉取服务镜像并根据你提供的信息完成容器节点的接入。
@@ -298,25 +298,3 @@ grub2-set-default 0
 grub2-mkconfig -o /boot/grub2/grub.cfg
 reboot
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
