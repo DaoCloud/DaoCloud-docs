@@ -18,11 +18,7 @@ title: '如何构建具有持续交付能力的 Docker 化 Django 应用'
 
 - 第一步：在控制台点击「代码构建」。
 
-![](http://help.daocloud.io/img/screenshots/features/build-flows/dashboard.png)
-
 - 第二步：在「代码构建」的界面中点击「创建新项目」。
-
-![](http://help.daocloud.io/img/screenshots/features/build-flows/build-flows-index.png)
 
 - 第三步：为项目指定「项目名称」并设置代码源。
 
@@ -62,7 +58,7 @@ class ChatTests(TestCase):
 
 当我们写完测试代码之后，我们需要一个持续集成环境来自动执行测试，报告项目的健康状况。
 
-我们只需要在源代码的根目录放置 `daocloud.yml` 文件便可以接入 DaoCloud 持续集成系统，每一次源代码的变更都会触发一次 DaoCloud 持续集成。关于 `daocloud.yml` 的格式，您可以参考 **[这里](http://help.daocloud.io/features/continuous-integration/daocloud-yml.html)**。
+我们只需要在源代码的根目录放置 `daocloud.yml` 文件便可以接入 DaoCloud 持续集成系统，每一次源代码的变更都会触发一次 DaoCloud 持续集成。关于 `daocloud.yml` 的格式，您可以参考 **[这里](http://docs.daocloud.io/ci-image-build/daocloud-yml)**。
 
 ***daocloud.yml***
 
