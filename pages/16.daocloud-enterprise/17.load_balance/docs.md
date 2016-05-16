@@ -12,8 +12,6 @@ DevOps 要求应用部署是可拓展的。这意味着应用不再是一个巨�
 
 DaoCloud Enterprise（DCE）能够帮助用户更好的实践 DevOps 和 微服务架构。DCE 具备服务发现，在 DCE 容器集群中，如果有新的容器或应用被部署，DCE 能够及时的、自动化的发现该容器或应用。除此之外，DCE 也能够对多个应用进行负载均衡处理，使微服务应用能够快速拓展。换句话说，容器集群中同时部署多个提供相同服务的应用实例，如果有服务请求，DCE 会自动接受该请求，并根据各个应用实例的负载情况，将请求转发给某个实例，通过这个中间层，实现平滑的服务拓展。通过 DCE 的服务发现和负载均衡，用户能够在不对代码进行任何更改的情况下，就将服务进行横向拓展，满足用户高可用和高性能的需求。
 
-![结构图]()
-
 
 ### 示例说明
 
@@ -45,7 +43,7 @@ HAProxy 是一个提供高可用负载均衡的应用代理，支持虚拟主机
 首先，请你进入 DCE 控制台的应用子页面，并创建应用。创建应用方式选择「应用仓库」，镜像选择 `Interlock HAProxy`:
 ![](Interlock_1.png)
 
-检查主控节点 IP 并设置 HAProxy 管理员密码：
+检查主控节点 IP 并设置 HAProxy 管理员密码，主控节点 IP 的 80 端口必须空闲：
 ![](interlock_2.png)
 
 填写应用名称并检查 YML 文件：
@@ -93,7 +91,7 @@ HAProxy 是一个提供高可用负载均衡的应用代理，支持虚拟主机
 完成应用拓展，进入 HAProxy，可以看到新拓展的应用：
 ![](interlock_10.jpg)
 
-完成应用部署和拓展之后，还需要配置 DNS Server 或 hosts 文件才完成全部配置。这里示例中我们以修改 hosts 作为示例，hosts 文件格式如下：
+完成应用部署和拓展之后，是通过域名访问 HAProxy 的主机，来使用后端的服务。所以需要将域名解析到 HAProxy 的 IP，可以配置 DNS Server 或 hosts 文件实现。这里示例中我们以修改 hosts 作为示例，hosts 文件格式如下：
 
 ```
 Interlock_IP  hostname.domain    
@@ -101,15 +99,20 @@ Interlock_IP  hostname.domain
 
 这里我们修改为：
 ```
-192.168.2.125  2048.applications.com
+192.168.1.30  2048.applications.com
 ```
 
 >>>>> 如果你有多个被 Interlock 管理的不同应用，你需要在 hosts 或 DNS Server 中添加多条记录，每条记录的 hostname 不同，IP 和 domain 是一致的。
 
 
 现在你可以访问 2048 了，你只需要在浏览器输入前面设置的域名便能够进入 2048，在该示例中，访问地址为 `2048.applications.com`。需要注意的是，Interlock 部署过程默认是将主机的 80 端口映射到 Interlock 容器的 80 端口，如果你在部署过程中修改了端口关系，那么在访问应用的时候，需要加上端口，才能够正常访问。
-![](2048.png)
+![](interlock_11.jpg)
 
+对于你已有的应用，若重新配置负载均衡，可以在服务的概况列表内选择 配置负载均衡。
+![](interlock_12.jpg)
+
+在域名中输入主机名加域名进行更改，待应用重新部署后即可生效。
+![](interlock_13.jpg)
 
 [DevOps Needed for Operating Microservices](http://www.infoq.com/news/2015/03/operating-microservices)
 
