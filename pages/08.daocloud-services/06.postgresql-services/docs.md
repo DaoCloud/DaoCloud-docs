@@ -122,7 +122,7 @@ PostgreSQL 是以加州大学伯克利分校计算机系开发的 POSTGRES，现
 #### 管理 PostgreSQL 服务
 * 在 GitHub 上有许多 PostgreSQL 服务管理工具，比如 [phpPgAdmin](https://github.com/phppgadmin/phppgadmin.git)，这里我们把 phpPgAdmin 构建成 Docker 镜像来管理我们的 PostgreSQL 服务。
 
-  > 镜像地址：[https://github.com/yxwzaxns/DaoCloud_phpPostgreAdmin.git](https://github.com/yxwzaxns/DaoCloud_phpPostgreAdmin.git)
+  > 镜像地址：[https://github.com/gewentao/DaoCloud_phpPgAdmin.git](https://github.com/gewentao/DaoCloud_phpPgAdmin.git)
 
   fork 上面的代码在 DaoCloud 构建镜像并创建 phpPgAdmin 应用，注意绑定要管理的的 PostgreSQL 服务，应用启动成功后就可以进行常规的 PostgreSQL 服务管理操作
 
