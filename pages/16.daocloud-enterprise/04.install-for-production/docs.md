@@ -254,7 +254,7 @@ bash -c "$(docker run --rm daocloud.io/daocloud/dce join --force-pull 192.168.2.
 ```
 bash -c "$(docker run --rm daocloud.io/daocloud/dce uninstall)"
 ```
-在卸载 DCE 后，会自动移除本地在 DCE 安装时从 Dokcer Hub 拉取的服务镜像
+在卸载 DCE 后，会自动移除本地在 DCE 安装时从 Docker Hub 拉取的服务镜像
 3. 在容器集群中的每个节点上重复步骤1和步骤2。请确保主控节点最后卸载
 
 
