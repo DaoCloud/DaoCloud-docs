@@ -56,7 +56,7 @@ New Relic是一款基于 SaaS 的云端应用监测与管理平台，可以监�
 
   ![](1.png)
 
-2. 登录 New Relic,选择 RPM 服务。
+2. 登录 New Relic,选择 APM 服务。
 
   ![](9.png)
 
