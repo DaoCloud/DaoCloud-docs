@@ -109,7 +109,7 @@ EXPOSE 80
 最后通过 `ENTRYPOINT` 指令，让 Node.js 程序作为该 Docker 镜像的主运行入口，并将其运行起来。
 
 ``` 
-ENTRYPOINT node server.js
+ENTRYPOINT ["node", "server.js"]
 ```
 
 ### 第四步：上传至 GitHub
