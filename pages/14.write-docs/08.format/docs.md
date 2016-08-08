@@ -91,7 +91,7 @@ One man’s constant is another man’s variable.
 	[http://www.jianshu.com/p/baa85caede21]
 	苹果台湾用「帳號」，大陆用「账户」
 	谷歌用「帐户」，百度用「帐号」
-- 登录（错误：登录）
+- 登陆（错误：登录）
 - P.S. （错误：PS、ps、Ps.）
 
 
