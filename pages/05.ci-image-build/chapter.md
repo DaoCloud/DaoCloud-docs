@@ -1,8 +1,8 @@
 ---
-title: 持续集成和镜像构建
+title: 镜像构建与持续集成
 taxonomy:
     category:
         - docs
 ---
 
-# 持续集成和镜像构建 
+# 镜像构建与持续集成

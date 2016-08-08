@@ -6,7 +6,7 @@ DCE 提供了一整套安装套件。你可以在 10 分钟之内安装 DaoCloud
 
 这个页面将帮助你在 DaoCloud 胶囊主机上快速安装一套简单的 DaoCloud Enterprise (DCE) ，并使用 DCE 控制台部署你的应用。如果你对胶囊主机不熟悉，你可以查看[添加胶囊主机](http://docs.daocloud.io/cluster-mgmt/add-cell-node)来了解胶囊主机的申请和使用。
 
-如果你熟悉 DCE 和 Docker，你可以直接前往[应用部署](http://docs.daocloud.io/daocloud-enterprise/deploy-an-application)查看更详细的 DCE 安装与部署方案。 
+如果你熟悉 DCE 和 Docker，你可以直接前往[应用部署](http://guide.daocloud.io/dce/部署应用-3998551.html)查看更详细的 DCE 安装与部署方案。 
 
 一个基础的 DCE 容器集群包含了主控节点、副控节点和容器节点，其中，主控节点作为统筹者负责监控管理集群中的容器节点，副控节点作为主控节点的备份节点，保证 DCE 的高可用，容器节点运行所有的 Docker 容器和应用，并接受主控节点的管理。
 
@@ -77,7 +77,7 @@ bash -c "$(docker run -i --rm daocloud.io/daocloud/dce join {你的控制器IP})
 首先在 DCE 控制台点击「应用」，接着点击「应用」创建，开始创建应用，填写应用名称，然后选择创建方式，这里选择「应用仓库」。
 ![](deploy_application_1.png)
 
->>>>> 更多创建方式的使用，可以参考[应用部署](http://localhost:8080/daocloud-enterprise/deploy-an-application)
+>>>>> 更多创建方式的使用，可以参考[应用部署](http://guide.daocloud.io/dce/部署应用-3998551.html)
 
 
 浏览 DaoCloud 提供的应用仓库，从中选择选择「2048」。
@@ -95,7 +95,7 @@ DCE 通过 WEB UI 提供了一套完整的 DCE 控制台。通过浏览器访问
 在本次示例中，安装完 2048 应用后，DCE 将自动跳转到应用管理页面，你可以在该页面对应用进行更加精细的控制和管理。
 ![](application_manage.png)
 
->>>>> 更多应用管理的信息，可以参考[应用管理](http://docs.daocloud.io/daocloud-enterprise/manage-applications)
+>>>>> 更多应用管理的信息，可以参考[应用管理](http://guide.daocloud.io/dce/dce-3998539.html)
 
 
 

@@ -8,9 +8,31 @@ taxonomy:
 # 产品更新日志
 
 一直被模仿，从未被超越！
+
+##### 2016 年 7 月
+
+>+ 新版[加速器](https://www.daocloud.io/mirror)上线
+>+ 云平台应用打开控制台功能支持指定实例
+>+ 更新了镜像构建模块，新增安全构建功能
+>+ 在集群页面中可以接入 DaoCloud Enterprise 版
+
+##### 2016 年 6 月
+
+>+ 手动构建支持指定的tag
+>+ 去掉了gitcafe的支持
+>+ 支持取消应用编排动作
+>+ 支持 bitbucket 触发 tag 构建
+
+##### 2016 年 5 月
+
+>+ 代码构建支持包含私有 [submodules](http://docs-static.daocloud.io/ci-image-build/submodule-support) 的项目
+>+ 优化了取消 App 操作
+>+ 增加分页，优化了列表效率
+>+ DaoCloud 平台的应用允许开启自定义端口
+
 ##### 2016 年 4 月
-​
->+ DaoShip 2.0 Beta 版上线，完美支持瘦镜像
+
+>+ [DaoShip 2.0 Beta](http://docs.daocloud.io/ci-image-build/daocloud-yml-2-0-preview) 版上线，完美支持瘦镜像
 
 
 ##### 2016 年 3 月

@@ -1,5 +1,5 @@
 ---
-title: '安装 Docker 环境并配置 DaoCloud 加速器'
+title: '安装 Docker'
 ---
 
 ![](3logo.png)

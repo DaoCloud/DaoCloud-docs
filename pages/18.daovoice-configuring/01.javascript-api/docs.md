@@ -9,8 +9,11 @@ title: 'JavaScript API'
 * 添加用户自定义属性
 * 发送自定义事件
 * 控制聊天窗口
+* 显示、隐藏消息窗口
+* 显示、隐藏方法钩子
 
 如果您的程序不是 JavaScript，可以使用我们的 [开放API](http://docs.daovoice.io/api/)
+
 
 #### 初始化JS Lib
 
@@ -26,6 +29,7 @@ DaoVoice 用户预定义属性有：
 * name
 * phone
 * signed_up
+* company
 
 
 同时 DaoVoice 还支持用户自定义属性哦！
@@ -44,6 +48,7 @@ daovoice('init', {
     name: '张三', // 可选，用户名称
     signed_up: 1450409868, // 可选，用户注册时间 (Unix时间戳)
     plan: 'pro' // 可选，自定义属性，用户当前订购的套餐
+    company: '' // 可选，用户公司信息
 });
 ```
 
@@ -129,7 +134,64 @@ daovoice('trackEvent', 'createOrder', {
 } )
 ```
 
+#### 显示消息窗口
+
+
+您可以通过show方法来打开消息列表。如果没有对话，它将打开新的消息视图，如果有它将打开消息列表。
+
+```
+/**
+ * @param { String } 显示
+ */
+daovoice('show')
+```
+
+#### 隐藏消息窗口
+
+
+您可以通过hide方法来关闭消息窗口。
+
+```
+/**
+ * @param { String } 隐藏
+ */
+daovoice('hide')
+```
+
+#### 显示方法钩子
+
+
+您可以通过onShow方法来添加show方法执行之后的事件。需要传入一个函数参数。
+
+```
+/**
+ * @param { String } show方法钩子
+ * @param { Function } show方法执行之后触发的事件
+ */
+daovoice('onShow', function() { // 做一些事情})
+```
+
+#### 隐藏方法钩子
+
+
+您可以通过onHide方法添加hide方法执行之后触发的事件。需要传入一个函数参数。
+
+```
+/**
+ * @param { String } hide方法钩子
+ * @param { Function } hide方法执行之后触发的事件
+ */
+daovoice('onHide', function() { // 做一些事情})
+```
+
+### 小建议
+
+
+* 检查您的接入网站是否加入<!DOCTYPE html>头文件
+* 检查您的接入网站是否加入utf-8的编码格式
+* 建议您的网站head标签内加入`<meta http-equiv="X-UA-Compatible" content="IE=11;IE=10;IE=9; IE8; IE=7; IE=EDGE">`为了产品在IE浏览器上有更好的用户体验.
+
 
 ### 小技巧
 
-我们在完成 DaoVoice 对接的网站上，可以通过 **控制台** 中来调用 JS API，立即能看到效果，非常好用哦！ 
+我们在完成 DaoVoice 对接的网站上，可以通过 **控制台** 中来调用 JS API，立即能看到效果，非常好用哦！

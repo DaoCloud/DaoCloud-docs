@@ -16,33 +16,29 @@ Volume 就是在一个或者多个容器里有特殊用途的目录。它绕过�
 
 ## 在 DaoCloud 服务集成创建 Volume 服务。
 
-1. 登录 DaoCloud 控制台，选择「服务集成」。
+1. 登录 DaoCloud 控制台，选择「volume」。
 
-  ![](image_1.png)
+  ![](volumes_1.png)
 
-2. 在「Dao服务」里选择 Volume 服务。
-
-  ![](image_2.png)
-
-3. 点击 「创建 Volume」。
+2. 点击 「创建 Volume」。
 
   ![](image_3.png)
 
-4. 输入服务实例名称，为 Volume  选择合适的容量，点击「开始创建」按钮创建 Volume 服务实例
+3. 输入服务实例名称，为 Volume  选择合适的容量，点击「开始创建」按钮创建 Volume 服务实例
 
   > 每 10G 容量需要消耗 1x 的资源配额
 
   ![](image_4.png)
 
-5. 创建完成，可以看到 Volume 服务的相关信息，比如 Volume 已使用存储容量。
+4. 创建完成，可以看到 Volume 服务的相关信息，比如 Volume 已使用存储容量。
 
   ![](image_5.png)
 
-6. 在「我的服务」里查看已创建的 Volume 服务
+5. 在「我的服务」里查看已创建的 Volume 服务
 
   ![](image_6.png)
 
-7. 在 Volume 服务页面，点击「管理 Volume」进入 Volume 的管理页面。
+6. 在 Volume 服务页面，点击「管理 Volume」进入 Volume 的管理页面。
 
   ![](image_7.png)
 
