@@ -16,7 +16,7 @@ taxonomy:
 |remote   |commit_push|pull_request|private_repo|set_commit_status|tag_build|
 |---------|-----------|------------|------------|-----------------|---------|
 |GitHub   |true       | true       |true        |true             |true     |
-|Bitbucket|true       | false      |true        |false            |false    |
+|Bitbucket|true       | false      |true        |false            |true     |
 |Coding   |true       | false      |true        |false            |true     |
 |GitCafe  |true       | false      |true        |false            |true     |
 |GitLab   |true       | false      |true        |false            |true     |

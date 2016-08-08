@@ -17,7 +17,7 @@ process:
 
 ## Docker Compose YML
 
-DaoCloud 应用可以提供 Docker Compose YML的支持(目前仅限自有主机的应用)，完全兼容[Docker Compose](https://docs.docker.com/compose/yml)，并有一些扩展的功能。您在界面里对应用做的更改都会提醒在这个YML里面。
+DaoCloud 应用可以提供 Docker Compose YML的支持(目前仅限自有主机的应用)，完全兼容[Docker Compose V2](https://docs.docker.com/compose/compose-file/)，并有一些扩展的功能。您在界面里对应用做的更改都会提醒在这个YML里面。
 
 Docker Compose YML是由若干Service组成，每个Service都必须包括Image。其他的字段都是可选的，功能和docker run命令保持一致。
 
@@ -137,7 +137,7 @@ hostname映射。相当于在Docker Run中--add-host 参数.
 
 ### labels
 
-可以通过Docker Lable给容器加一些元数据。DaoCloud也通过Label扩展功能。
+可以通过Docker Lable给容器加一些元数据。
 
 ```
 	labels:
@@ -262,16 +262,6 @@ hostname映射。相当于在Docker Run中--add-host 参数.
 	read_only: true
 ```
 
-### DaoCloud 扩展 Label
-
-DaoCloud在保持兼容性的基础上扩展了Docker Compose的功能。
-
-增加标签 io.daocloud.desired-num 支持定义多实例的APP
-
-```
-	labels:
-	  io.daocloud.desired-num: '2'
-```
 
 ### DaoCloud 不支持的功能
 
