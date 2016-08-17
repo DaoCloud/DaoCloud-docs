@@ -46,9 +46,9 @@ ubuntu	saucy	9f676bd305a4	5 weeks ago	178 MB
 ubuntu	raring	eb601b8965b8	5 weeks ago	166.5 MB
 ubuntu	13.04	eb601b8965b8	5 weeks ago	166.5 MB
 
-# docker tag 9f676bd305a4 daocloud.io/[ID]ubuntu
+# docker tag 9f676bd305a4 daocloud.io/[你的 DaoCloud ID]/ubuntu
 
-# docker push daocloud.io/ubuntu
+# docker push daocloud.io/[你的 DaoCloud Id]/ubuntu
 ```
 
 push 完成后，镜像会显示在「我的镜像」页面，并且被标示为来自本地 push。您可以直接操作部署和其他修改。
