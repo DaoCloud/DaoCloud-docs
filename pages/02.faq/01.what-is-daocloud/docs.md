@@ -18,7 +18,7 @@ DaoCloud 是业界领先的企业级容器云平台和解决方案提供商，�
 ![DaoCloud创始团队](daocloud_founders.jpg)
 <center>DaoCloud 创始团队，左起：颜开、陈齐彦、喻勇、郭峰</center>
 
-### 陈齐彦 （首席执行官，联合创始人）
+### 陈齐彦（首席执行官，联合创始人）
 
 负责 DaoCloud 整体战略、产品规划、技术方向和企业级客户营销。
 
@@ -70,7 +70,7 @@ DaoCloud 是业界领先的企业级容器云平台和解决方案提供商，�
 + 2015 年 7 月，DaoCloud 正式推出商业版容器云服务 [媒体报道](http://www.prnasia.com/story/127720-1.shtml)
 + 2015 年 8 月，DaoCloud 登陆 U 市场，打造混合式容器管理平台 [文章链接](http://blog.daocloud.io/daocloud-umarket/) 
 + 2015 年 8 月，DaoCloud 与极客学院合作，推出 Docker 系列课程 [文章链接](http://blog.daocloud.io/jikexueyuan/)
-+ 2015 年 8 月，DaoCloud 团队成员孙宏亮出版全球首本《 Docker 源码分析》[文章链接](http://blog.daocloud.io/docker_yuanma_fenxi_quanqiu_shoufa/)
++ 2015 年 8 月，DaoCloud 团队成员孙宏亮出版全球首本《Docker 源码分析》[文章链接](http://blog.daocloud.io/docker_yuanma_fenxi_quanqiu_shoufa/)
 + 2015 年 8 月，DaoCloud 与 Docker 同步推出 Toolbox，提升用户体验，[文章链接](http://blog.daocloud.io/toolbox/)
 + 2015 年 9 月，2015 年 Q3 Forrester Wave 出炉，DaoCloud 成唯一入选的容器云平台 [媒体报道](http://www.prnasia.com/story/133321-1.shtml)
 + 2015 年 10 月，释放创新原力，DaoCloud 成功举办企业级容器技术峰会 [媒体报道](http://www.prnasia.com/story/133570-1.shtml)、[峰会总结](http://blog.daocloud.io/rongqijishufenghui/) 
