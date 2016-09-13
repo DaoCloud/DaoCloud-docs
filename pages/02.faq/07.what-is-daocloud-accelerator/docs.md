@@ -13,11 +13,11 @@ taxonomy:
 
 请先确定您的 Docker 版本在 1.8 及以上。 
 登陆[加速器页面](https://www.daocloud.io/mirror#accelerator-doc)可以获取 mirror 地址。
-配置好后，您可以像往常一样使用docker pull命令，在拉取 Docker Hub 镜像时会自动采用加速器的镜像服务。
+配置好后，您可以像往常一样使用 docker pull 命令，在拉取 Docker Hub 镜像时会自动采用加速器的镜像服务。
 
 ## Linux
 ### 自动配置 Docker 加速器
-_适用于 Ubuntu14.04、Debian、CentOS6 、CentOS7_
+_适用于 Ubuntu14.04、Debian、CentOS6、CentOS7_
 
 登陆后参考[配置命令](https://www.daocloud.io/mirror#accelerator-doc)
 此命令会帮助您配置 registry-mirror 并重启 Docker Daemon。
@@ -25,14 +25,14 @@ _适用于 Ubuntu14.04、Debian、CentOS6 、CentOS7_
 ### 手动配置 Docker 加速器
 _适用于各种 Linux 发行版_
 
-您可以找到 Docker 配置文件，一般配置文件在```/etc/default/docker``` ，在配置文件中的```DOCKER_OPTS```加入
+您可以找到 Docker 配置文件，一般配置文件在```/etc/default/docker```，在配置文件中的```DOCKER_OPTS```加入
 
 
 ```
 --registry-mirror=加速地址
 ```
 
-重启Docker，一般可以用下面命令重启
+重启 Docker，一般可以用下面命令重启
 
 
 ```
@@ -45,7 +45,7 @@ service docker restart
 Docker for Windows 可以让您在 Mac 上使用 Docker。
 参考 [Docker for Mac](https://www.docker.com/products/docker#/mac) 安装文档进行安装。
 ### 配置 Docker 加速器
-右键点击桌面顶栏的 docker 图标，选择 Preferences ，在 Advanced 标签下的 Registry mirrors 列表中加入 加速地址 (在[加速器](https://www.daocloud.io/mirror#accelerator-doc)页面获取)。点击 Apply & Restart 按钮使设置生效。
+右键点击桌面顶栏的 docker 图标，选择 Preferences，在 Advanced 标签下的 Registry mirrors 列表中加入 加速地址 （在[加速器](https://www.daocloud.io/mirror#accelerator-doc)页面获取）。点击 Apply & Restart 按钮使设置生效。
 
 如图所示
 
@@ -58,7 +58,7 @@ Docker for Windows 可以让您在 Windows 10 pro 上使用 Docker。
 
 参考 [Docker for Windows](https://www.docker.com/products/docker#/windows) 安装文档进行安装。
 ### 配置 Docker 加速器
-在桌面右下角状态栏中右键 docker 图标，修改在 Docker Daemon 标签页中的 json ，把 加速地址(在[加速器](https://www.daocloud.io/mirror#accelerator-doc)页面获取)加到"registry-mirrors"的数组里。点击 Apply 使设置生效。
+在桌面右下角状态栏中右键 docker 图标，修改在 Docker Daemon 标签页中的 json，把 加速地址（在[加速器](https://www.daocloud.io/mirror#accelerator-doc)页面获取）加到「registry-mirrors」的数组里。点击 Apply 使设置生效。
 
 如图所示
 
