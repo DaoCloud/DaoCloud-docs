@@ -77,7 +77,7 @@ DaoCloud 是业界领先的企业级容器云平台和解决方案提供商，�
 + 2015 年 10 月，开箱即用的「容器云」，DaoCloud 与宝德、赛凡发布容器一体机 [文章链接](http://blog.daocloud.io/yitiji/)
 + 2015 年 10 月，DaoCloud 与通联数据达成战略合作，共建金融大数据云服务 [文章链接](http://blog.daocloud.io/tonglianshuju/) 
 + 2015 年 10 月，DaoCloud 与 EMC、VMware 达成战略合作协议，全力拓展企业市场 [文章链接](http://blog.daocloud.io/hezuoxieyi/)
-+ 2015 年 10 月，DaoCloud 发布「中国金融行业容器技术应用研究白皮书」 [文章链接](http://blog.daocloud.io/baipishu/)，[下载地址](http://7xi8kv.com5.z0.glb.qiniucdn.com/%E3%80%8A%E4%B8%AD%E5%9B%BD%E9%87%91%E8%9E%8D%E8%A1%8C%E4%B8%9A%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF%E5%92%8C%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8%E7%A0%94%E7%A9%B6%E3%80%8B%E7%99%BD%E7%9A%AE%E4%B9%A6update.pdf)
++ 2015 年 10 月，DaoCloud 发布「中国金融行业容器技术应用研究白皮书」[文章链接](http://blog.daocloud.io/baipishu/)，[下载地址](http://7xi8kv.com5.z0.glb.qiniucdn.com/%E3%80%8A%E4%B8%AD%E5%9B%BD%E9%87%91%E8%9E%8D%E8%A1%8C%E4%B8%9A%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF%E5%92%8C%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8%E7%A0%94%E7%A9%B6%E3%80%8B%E7%99%BD%E7%9A%AE%E4%B9%A6update.pdf)
 
 ---
 
