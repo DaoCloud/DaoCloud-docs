@@ -21,12 +21,15 @@ build:
         dockerfile_path: Dockerfile
         build_dir: /
         cache: true
+        args:
+            - user=build
 ```
 以上代码来源于 [golang-redis-sample](https://github.com/DaoCloud/golang-redis-sample/blob/ship2.0.normal/daocloud.yml)，
 该功能即我们常用的镜像构建功能，指定了三个参数：  
 `dockerfile_path`：Dockerfile 相对代码根目录的路径，默认值为 `Dockerfile`  
 `build_dir`：构建目录，`dockerfile_path` 必须在这个目录之下，默认是代码根目录，即 `/`  
 `cache`：是否开启缓存，值为 `true`（开启）和 `false`（关闭）
+`args`：构建参数，值为一个列表，分别对应了Dockerfile中`ARG`关键字声明的参数。详细使用可参考[Docker官方文档](https://docs.docker.com/engine/reference/builder/#/arg)。
 
 ## 安全镜像（lite_image） 功能
 
@@ -49,6 +52,8 @@ build:
               dockerfile_path: Dockerfile.sec
               build_dir: /
               cache: true
+              args:
+                  - user=build
 ```
 
 以上代码来源于 [golang-redis-sample](https://github.com/DaoCloud/golang-redis-sample/blob/ship2.0/daocloud.yml)。
@@ -58,6 +63,7 @@ build:
 `dockerfile_path`：Dockerfile 的相对代码根目录的路径，默认值为 `Dockerfile`  
 `build_dir`：构建目录，`dockerfile_path` 必须在这个目录之下，默认是代码根目录，即 `/`  
 `cache`：是否开启缓存，值为 `true`（开启）和 `false`（关闭）
+`args`：构建参数，值为一个列表，分别对应了Dockerfile中`ARG`关键字声明的参数。详细使用可参考[Docker官方文档](https://docs.docker.com/engine/reference/builder/#/arg)。
 
 ```Dockerfile
 FROM golang:1.5.1
@@ -68,6 +74,9 @@ MAINTAINER Sakeven "sakeven.jiang@daocloud.io"
 ADD . $GOPATH/src/app
 # 下载安装依赖
 RUN go get app
+# 定义ARG user，并让之后的命令使用该用户执行，若参数为空，则默认为root
+ARG user
+USER ${user:-root}
 # 静态编译安装，最终可执行文件为 /go/bin/app
 RUN CGO_ENABLED=0 go install -a app
 ```
