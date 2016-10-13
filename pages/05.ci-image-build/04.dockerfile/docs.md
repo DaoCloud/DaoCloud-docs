@@ -48,13 +48,13 @@ MAINTAINER <author name>
 - RUN：在 shell 或者 exec 的环境下执行的命令。`RUN`指令会在新创建的镜像上添加新的层面，接下来提交的结果用在Dockerfile的下一条指令中。语法如下：
 
 ```shell
-RUN 《command》
+RUN <command>
 ```
 
-- ADD：复制文件指令。它有两个参数<source>和<destination>。destination 是容器内的路径。source 可以是 URL 或者是启动配置上下文中的一个文件。语法如下：
+- ADD：复制文件指令。它有两个参数 source 和 destination。destination 是容器内的路径。source 可以是 URL 或者是启动配置上下文中的一个文件。语法如下：
 
 ```shell
-ADD 《src》 《destination》
+ADD <source> <destination>
 ```
 
 - CMD：提供了容器默认的执行命令。 Dockerfile 只允许使用一次 CMD 指令。 使用多个 CMD 会抵消之前所有的指令，只有最后一个指令生效。 CMD 有三种形式：
