@@ -75,7 +75,7 @@ EXPOSE <port>;
 
 ```shell
 ENTRYPOINT ["executable", "param1","param2"]
- ENTRYPOINT command param1 param2
+ENTRYPOINT command param1 param2
 ```
 
 - WORKDIR：指定`RUN`、`CMD`与`ENTRYPOINT`命令的工作目录。语法如下：
