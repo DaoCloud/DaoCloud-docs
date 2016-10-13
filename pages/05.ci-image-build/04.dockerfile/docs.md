@@ -61,8 +61,8 @@ ADD <source> <destination>
 
 ```shell
 CMD ["executable","param1","param2"]
- CMD ["param1","param2"]
- CMD command param1 param2
+CMD ["param1","param2"]
+CMD command param1 param2
 ```
 
 - EXPOSE：指定容器在运行时监听的端口。语法如下：
