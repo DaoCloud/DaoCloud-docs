@@ -21,7 +21,7 @@ DaoCloud 文档采用 Grav CMS，内容通过 Markdown 格式写作，并在 Git
 
 我们衷心感谢所有为 DaoCloud 添砖加瓦的用户。您提出的文档修改如被我们接受，我们会在对应页面的底部，列出您的 ID，以表谢意。
 
-技术支持： [support@daoclod.io](mailto:support@daocloud.io?subject=FROM_DOCS_README)
+技术支持： [support@daocloud.io](mailto:support@daocloud.io?subject=FROM_DOCS_README)
 
 ## 以下用户为本页内容做出了贡献
 
