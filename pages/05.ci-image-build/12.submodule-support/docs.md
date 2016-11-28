@@ -7,14 +7,15 @@ title: 'Submodule 支持'
 _下面的例子以 Github 为例_
 
 ### 创建项目
-按照正常流程创建代码构建项目，在项目页面可以查看 Deploy Key。
+按照正常流程创建代码构建项目，在项目“设置”页面可以查看 Deploy Key。
 
-![](step1.png)
+![](deploy_key.png)
 
 ### 复制 Deploy Key
-复制 Deploy Key。
+点击如下所示红框内的复制按钮，即可复制 Deploy key。
 
-![](step2.png)
+![](deploy_key_copy.png)
+
 
 ### 添加到用户的SSH_key
 在某个 Git 用户账户下添加上面复制的 Deploy Key 为用户的 SSH_Key。请注意，该用户需要有对应代码项目以及所有依赖的 submodule 项目的访问权限

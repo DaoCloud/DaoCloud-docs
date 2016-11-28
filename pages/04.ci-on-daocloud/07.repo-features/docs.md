@@ -18,7 +18,6 @@ taxonomy:
 |GitHub   |true       | true       |true        |true             |true     |
 |Bitbucket|true       | false      |true        |false            |true     |
 |Coding   |true       | false      |true        |false            |true     |
-|GitCafe  |true       | false      |true        |false            |true     |
 |GitLab   |true       | false      |true        |false            |true     |
 
 ##### 说明：
@@ -32,9 +31,6 @@ taxonomy:
 
 #### Coding
 由于受到 Coding 系统设置的限制，DaoCloud 保存的用于访问 Coding 的 Token（Deploye Key）会不定期失效，如您遇到无法访问 Coding 代码库的情况，可以尝试重新绑定，就会重新创建 Token。
-
-#### GitCafe
-如您在 GitCafe 以 Fork 的方式建立了新项目，这个项目不会在 DaoCloud 显示，您需要等待 15 分钟左右，这是 GitCafe 系统的一个限制，DaoCloud 无法调整改变。
 
 #### BitBucket
 如您在 BitBucket 以 Fork 的方式建立了新项目，这个项目不会在 DaoCloud 显示，您需要等待 15 分钟左右，这是 BitBucket 系统的一个限制，DaoCloud 无法调整改变。

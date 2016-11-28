@@ -1,5 +1,5 @@
 ---
-title: 'daocloud.yml 注意事项和高级功能'
+title: 持续集成注意事项和高级功能
 taxonomy:
     category:
         - docs
@@ -80,24 +80,25 @@ coverage xml -o $TEST_COVERAGE test.py
 代码参见 GitHub 上的 [样例程序](https://github.com/DaoCloud/python-mysql-sample) 。
 
 ```yaml
-image: daocloud/ci-python:2.7
+version: "2.0"
+test:
+    image: daocloud/ci-python:2.7
 
-services:
-  - mysql
+    services:
+      - mysql
 
-env:
-  - MYSQL_USERNAME="root"
-  - MYSQL_PASSWORD=""
-  - MYSQL_INSTANCE_NAME="test"
+    env:
+      - MYSQL_USERNAME="root"
+      - MYSQL_PASSWORD=""
+      - MYSQL_INSTANCE_NAME="test"
 
-script:
-  - pip install -r requirements.txt
-  - nosetests test.py --with-xunit --xunit-file=$TEST_RESULT
-  - coverage run --branch test.py
-  - coverage xml -o $TEST_COVERAGE test.py
-  - cat $TEST_RESULT
-  - cat $TEST_COVERAGE
-
+    script:
+      - pip install -r requirements.txt
+      - nosetests test.py --with-xunit --xunit-file=$TEST_RESULT
+      - coverage run --branch test.py
+      - coverage xml -o $TEST_COVERAGE test.py
+      - cat $TEST_RESULT
+      - cat $TEST_COVERAGE
 ```
 
 ![](test-result.png)
