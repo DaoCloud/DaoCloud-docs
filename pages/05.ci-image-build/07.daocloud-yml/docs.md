@@ -1,5 +1,5 @@
 ---
-title: 'daocloud.yml 的结构和写法'
+title: 持续集成的结构和写法
 taxonomy:
     category:
         - docs
@@ -16,58 +16,53 @@ DaoCloud CI 使用基于 Docker 的容器技术来运行您的测试任务，确
 您可以通过在代码根目录放置一个 `daocloud.yml` 文件来配置您的测试任务。
 
 ```
-image: daocloud/ci-golang:1.4
+version: "2.0"
+test:
+    image: daocloud/ci-golang:1.4
 
-services:
-    - mongodb
-    - mysql
-    - redis
+    services:
+        - mongodb
+        - mysql
+        - redis
 
-env:
-    - MYENV = "hello"
+    env:
+        - MYENV = "hello"
 
-install:
-    - echo $MYENV
-    - echo "This is an install segment"
-    - echo "Here, we usually run scripts to setup a base environment"
-    - echo "For customized base image, you need to install git here unless you have git installed in your base image"
-    - echo "e.g., apt-get install -y git-core"
+    install:
+        - echo $MYENV
+        - echo "This is an install segment"
+        - echo "Here, we usually run scripts to setup a base environment"
+        - echo "For customized base image, you need to install git here unless you have git installed in your base image"
+        - echo "e.g., apt-get install -y git-core"
 
-before_script:
-    - echo $MYENV
-    - echo "This is an before_script segment"
-    - echo "Here, we usually run scripts to prepare our test"
+    before_script:
+        - echo $MYENV
+        - echo "This is an before_script segment"
+        - echo "Here, we usually run scripts to prepare our test"
 
-script:
-    - echo $MYENV
-    - echo "This is an script segment"
-    - echo "Run test cases here"
-    - echo ""
-    - echo "Below shows how to use services, mongodb/mysql/redis are the hostnames of services"
-    - ping -c 2 mongodb
-    - ping -c 2 mysql
-    - ping -c 2 redis
+    script:
+        - echo $MYENV
+        - echo "This is an script segment"
+        - echo "Run test cases here"
+        - echo ""
+        - echo "Below shows how to use services, mongodb/mysql/redis are the hostnames of services"
+        - ping -c 2 mongodb
+        - ping -c 2 mysql
+        - ping -c 2 redis
 ```
 
 ## 执行步骤
 
-1. 设置环境变量。
-2. 执行 `install` 脚本。
-3. 克隆源代码，切换到对应的提交。
-4. 执行 `before_script` 脚本。
-5. 执行 `script` 脚本。
+1. 克隆源代码，切换到对应的提交。
+2. 挂载代码到测试环境。
+3. 设置环境变量。
+4. 执行 `install` 脚本。
+5. 执行 `before_script` 脚本。
+6. 执行 `script` 脚本。
 
 ## 实现细节
 
-DaoCloud 为您准备了多种编程语言的测试环境（这些测试环境是基于官方的 `ubuntu:14.04` 镜像），目前支持的编程语言包括：
-
-- Golang (1.0, 1.1, 1.2, 1.3, 1.4, 1.5.1 1.5 1.6)
-- Python (2.6, 2.7, 3.1, 3.2, 3.3, 3.4)
-- Ruby (1.8.7, 1.9.3, 2.0.0, 2.1.2, 2.1.4, 2.1.6, 2.2.0, 2.2.2)
-- Java (openjdk6, openjdk7, oraclejdk6, oraclejdk7, oraclejdk8, oraclejdk9)
-- JavaScript - NodeJS (0.6, 0.8, 0.10, 0.12)
-- PHP (5.5, 5.6)
-- C - gcc (4.4, 4.6, 4.7, 4.8, 4.9, 5.0)
+DaoCloud 支持**自定义的测试镜像**，让您更方便地配置个性化的测试环境。
 
 为了方便您准备测试环境，我们还提供了数据储存服务：
 
@@ -76,12 +71,6 @@ DaoCloud 为您准备了多种编程语言的测试环境（这些测试环境�
 - MongoDB (2.6)
 - RabbitMQ (3.6)
 - PostgreSQL (9.1)
-
-同时，我们还支持自定义的测试镜像，让您更方便地配置个性化的测试环境，不过，目前自定义的镜像必须符合以下条件：
-
-- 自定义镜像需要托管在 Docker Hub 上。
-- 自定义镜像中需要预装 Git。
-
 
 ### 指定测试镜像
 
@@ -92,7 +81,7 @@ DaoCloud 为您准备了多种编程语言的测试环境（这些测试环境�
 image: daocloud/ci-golang:1.4
 ```
 
-您可以从下面的列表（DaoCloud 准备好的镜像）中选择您希望的运行环境（该列表正在不断完善中）：
+您可以从下面的列表（DaoCloud 准备好的镜像）中选择您希望的运行环境，也可以使用**自定义的镜像**：
 
 - daocloud/ci-python:2.6
 - daocloud/ci-python:2.7
@@ -135,10 +124,11 @@ image: daocloud/ci-golang:1.4
 - daocloud/ci-gcc:4.9
 - daocloud/ci-gcc:5
 
-当然您可以使用自己托管在 Docker Hub 上的镜像，比如：
+当然您可以使用其他公开镜像，比如：
 
 - userxxx/python:3.0
 - useryyy/golang:1.1
+- daocloud.io/python:3.5
 
 ### 配置测试服务
 
@@ -153,7 +143,7 @@ services:
 
 目前 DaoCloud CI 支持的服务及访问方式如下表所示（该列表正在不断完善中）：
 
-##### MySQL
+#### MySQL
 
 Version：MySQL 5.5
 
@@ -177,7 +167,7 @@ Default Instance: test
 - MYSQL_PORT_3306_TCP_PROTO = tcp
 - MYSQL_PORT_3306_TCP_PORT = 3306
 
-##### Redis
+#### Redis
 
 Version：Redis 2.8
 
@@ -195,7 +185,7 @@ Port: 6379
 - REDIS_PORT_6379_TCP_PROTO = tcp
 - REDIS_PORT_6379_TCP_PORT = 6379
 
-##### MongoDB
+#### MongoDB
 
 Version：MongoDB 2.6
 
@@ -213,7 +203,7 @@ Port: 27017
 - MONGODB_PORT_27017_TCP_PROTO = tcp
 - MONGODB_PORT_27017_TCP_PORT = 27017
 
-##### RabbitMQ
+#### RabbitMQ
 
 Version：RabbitMQ 3.6
 
@@ -230,7 +220,7 @@ Port: 5672
 - RABBITMQ_PORT_5672_TCP_PROTO = tcp 
 - RABBITMQ_PORT_5672_TCP_PORT = 5672
 
-##### PostgreSQL
+#### PostgreSQL
 
 Version：PostgreSQL 9.1
 
