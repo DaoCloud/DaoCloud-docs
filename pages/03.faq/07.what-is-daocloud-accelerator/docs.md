@@ -42,7 +42,7 @@ service docker restart
 
 ## Docker for Mac
 ### 安装 Docker for Mac
-Docker for Windows 可以让您在 Mac 上使用 Docker。
+Docker for Mac 可以让您在 Mac 上使用 Docker。
 参考 [Docker for Mac](https://www.docker.com/products/docker#/mac) 安装文档进行安装。
 ### 配置 Docker 加速器
 右键点击桌面顶栏的 docker 图标，选择 Preferences ，在 Advanced 标签下的 Registry mirrors 列表中加入 加速地址 (在[加速器](https://www.daocloud.io/mirror#accelerator-doc)页面获取)。点击 Apply & Restart 按钮使设置生效。
