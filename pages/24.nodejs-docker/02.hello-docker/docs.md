@@ -51,7 +51,10 @@ function router(routes) {
 
   return function(req, res) {
     var i = 0
-    while (!regexes[i].test(req.url)) i++
+    while (!regexes[i].test(req.url)) {
+      if(regexes.length === i+1) break
+      i++
+    }
     return routes[paths[i]].call(null, req, res)
   }
 }
@@ -68,7 +71,10 @@ var server = http.createServer(router({
   '/bye': function(req, res) {
     res.writeHead(200, { 'Content-Type': 'text/plain' })
     res.end('Bye~')
-  }
+  },
+  '': function(req, res) {
+    res.writeHead(404, { 'Content-Type': 'text/plain' })
+    res.end('404')
 }))
 ```
 
