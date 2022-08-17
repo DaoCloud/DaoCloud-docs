@@ -1,3 +1,92 @@
 site_name: DaoCloud Enterprise
+copyright: Copyright &copy; 2016 - 2022 DaoCloud
+
+
 theme:
   name: material
+  include_homepage_in_sidebar: true
+  language: 'zh'
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - search.share
+    - content.code.annotate
+
+plugins:
+  - search:
+      separator: '[\\s\\u200b\\-]'
+
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+          remove_comments: true
+
+extra:
+  alternate:
+  - link: /zh/
+    name: zh - 简体中文
+    lang: zh
+  - link: /en/
+    name: en - English
+    lang: en
+
+
+extra_javascript:
+  - extra/zoom_image.js
+
+extra_css:
+  - extra/custom.css
+
+
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - tables
+
+  - toc:
+      permalink: true
+      title: 导航
+      toc_depth: 5
+
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.keys
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.inlinehilite
+#  - pymdownx.snippets:
+#      auto-append:
+#        - includes/glossary.md
+
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+  - pymdownx.arithmatex:
+      generic: true

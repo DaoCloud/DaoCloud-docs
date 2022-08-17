@@ -7,6 +7,12 @@ authors = ["samzong.lu <samzong.lu@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 mkdocs-material = "^8.3.9"
+mkdocs-embed-external-markdown = "^2.2.1"
+mkdocs-minify-plugin = "^0.5.0"
+mkdocs-multirepo-plugin = "^0.4.7"
+jieba = "^0.42.1"
+pymdown-extensions = "^9.5"
+ufile = "^3.2.6"
 
 [tool.poetry.dev-dependencies]
 

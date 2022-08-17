@@ -1,4 +1,31 @@
 [[package]]
+name = "asyncio"
+version = "3.4.3"
+description = "reference implementation of PEP 3156"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "certifi"
+version = "2022.6.15"
+description = "Python package for providing Mozilla's CA Bundle."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "charset-normalizer"
+version = "2.1.0"
+description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
+category = "main"
+optional = false
+python-versions = ">=3.6.0"
+
+[package.extras]
+unicode_backport = ["unicodedata2"]
+
+[[package]]
 name = "click"
 version = "8.1.3"
 description = "Composable command line interface toolkit"
@@ -18,6 +45,14 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "csscompressor"
+version = "0.9.5"
+description = "A python port of YUI CSS Compressor"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "ghp-import"
 version = "2.1.0"
 description = "Copy your docs directly to the gh-pages branch."
@@ -30,6 +65,22 @@ python-dateutil = ">=2.8.1"
 
 [package.extras]
 dev = ["twine", "markdown", "flake8", "wheel"]
+
+[[package]]
+name = "htmlmin"
+version = "0.1.12"
+description = "An HTML Minifier"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "idna"
+version = "3.3"
+description = "Internationalized Domain Names in Applications (IDNA)"
+category = "main"
+optional = false
+python-versions = ">=3.5"
 
 [[package]]
 name = "importlib-metadata"
@@ -48,6 +99,14 @@ perf = ["ipython"]
 testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-cov", "pytest-enabler (>=1.3)", "packaging", "pyfakefs", "flufl.flake8", "pytest-perf (>=0.9.2)", "pytest-black (>=0.3.7)", "pytest-mypy (>=0.9.1)", "importlib-resources (>=1.3)"]
 
 [[package]]
+name = "jieba"
+version = "0.42.1"
+description = "Chinese Words Segmentation Utilities"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "jinja2"
 version = "3.1.2"
 description = "A very fast and expressive template engine."
@@ -60,6 +119,14 @@ MarkupSafe = ">=2.0"
 
 [package.extras]
 i18n = ["Babel (>=2.7)"]
+
+[[package]]
+name = "jsmin"
+version = "3.0.1"
+description = "JavaScript minifier."
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "markdown"
@@ -115,6 +182,18 @@ watchdog = ">=2.0"
 i18n = ["babel (>=2.9.0)"]
 
 [[package]]
+name = "mkdocs-embed-external-markdown"
+version = "2.2.1"
+description = "Mkdocs plugin that allow to inject external markdown or markdown section from given url"
+category = "main"
+optional = false
+python-versions = ">=3.6,<4.0"
+
+[package.dependencies]
+Jinja2 = ">=3.0.3,<4.0.0"
+requests = ">=2.27.1,<3.0.0"
+
+[[package]]
 name = "mkdocs-material"
 version = "8.3.9"
 description = "Documentation that simply works"
@@ -137,6 +216,34 @@ description = "Extension pack for Python Markdown."
 category = "main"
 optional = false
 python-versions = ">=3.6"
+
+[[package]]
+name = "mkdocs-minify-plugin"
+version = "0.5.0"
+description = "An MkDocs plugin to minify HTML, JS or CSS files prior to being written to disk"
+category = "main"
+optional = false
+python-versions = ">=3.0"
+
+[package.dependencies]
+csscompressor = ">=0.9.5"
+htmlmin = ">=0.1.4"
+jsmin = ">=3.0.0"
+mkdocs = ">=1.0.4"
+
+[[package]]
+name = "mkdocs-multirepo-plugin"
+version = "0.4.7"
+description = "Build documentation in multiple repos into one site."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+asyncio = "*"
+mkdocs = ">=1.0.4"
+python-slugify = "*"
+tqdm = "*"
 
 [[package]]
 name = "packaging"
@@ -191,6 +298,20 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 six = ">=1.5"
 
 [[package]]
+name = "python-slugify"
+version = "6.1.2"
+description = "A Python slugify application that also handles Unicode"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
+
+[package.dependencies]
+text-unidecode = ">=1.3"
+
+[package.extras]
+unidecode = ["Unidecode (>=1.1.1)"]
+
+[[package]]
 name = "pyyaml"
 version = "6.0"
 description = "YAML parser and emitter for Python"
@@ -210,12 +331,79 @@ python-versions = ">=3.6"
 pyyaml = "*"
 
 [[package]]
+name = "requests"
+version = "2.28.1"
+description = "Python HTTP for Humans."
+category = "main"
+optional = false
+python-versions = ">=3.7, <4"
+
+[package.dependencies]
+certifi = ">=2017.4.17"
+charset-normalizer = ">=2,<3"
+idna = ">=2.5,<4"
+urllib3 = ">=1.21.1,<1.27"
+
+[package.extras]
+socks = ["PySocks (>=1.5.6,!=1.5.7)"]
+use_chardet_on_py3 = ["chardet (>=3.0.2,<6)"]
+
+[[package]]
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
 category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
+
+[[package]]
+name = "text-unidecode"
+version = "1.3"
+description = "The most basic Text::Unidecode port"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "tqdm"
+version = "4.64.0"
+description = "Fast, Extensible Progress Meter"
+category = "main"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
+
+[package.dependencies]
+colorama = {version = "*", markers = "platform_system == \"Windows\""}
+
+[package.extras]
+dev = ["py-make (>=0.1.0)", "twine", "wheel"]
+notebook = ["ipywidgets (>=6)"]
+slack = ["slack-sdk"]
+telegram = ["requests"]
+
+[[package]]
+name = "ufile"
+version = "3.2.6"
+description = "UCloud UFile Python SDK"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+requests = "*"
+
+[[package]]
+name = "urllib3"
+version = "1.26.11"
+description = "HTTP library with thread-safe connection pooling, file post, and more."
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, <4"
+
+[package.extras]
+brotli = ["brotlicffi (>=0.8.0)", "brotli (>=1.0.9)", "brotlipy (>=0.6.0)"]
+secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "certifi", "ipaddress"]
+socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
 name = "watchdog"
@@ -243,9 +431,23 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "8caa98c05af850b9f8bcee828ae2de700bae72db6dc90902b741d3b588ed0520"
+content-hash = "3837f9da746cee105de32d86f7384bcef599c2641cd228d619b6dbafa6081e1d"
 
 [metadata.files]
+asyncio = [
+    {file = "asyncio-3.4.3-cp33-none-win32.whl", hash = "sha256:b62c9157d36187eca799c378e572c969f0da87cd5fc42ca372d92cdb06e7e1de"},
+    {file = "asyncio-3.4.3-cp33-none-win_amd64.whl", hash = "sha256:c46a87b48213d7464f22d9a497b9eef8c1928b68320a2fa94240f969f6fec08c"},
+    {file = "asyncio-3.4.3-py3-none-any.whl", hash = "sha256:c4d18b22701821de07bd6aea8b53d21449ec0ec5680645e5317062ea21817d2d"},
+    {file = "asyncio-3.4.3.tar.gz", hash = "sha256:83360ff8bc97980e4ff25c964c7bd3923d333d177aa4f7fb736b019f26c7cb41"},
+]
+certifi = [
+    {file = "certifi-2022.6.15-py3-none-any.whl", hash = "sha256:fe86415d55e84719d75f8b69414f6438ac3547d2078ab91b67e779ef69378412"},
+    {file = "certifi-2022.6.15.tar.gz", hash = "sha256:84c85a9078b11105f04f3036a9482ae10e4621616db313fe045dd24743a0820d"},
+]
+charset-normalizer = [
+    {file = "charset-normalizer-2.1.0.tar.gz", hash = "sha256:575e708016ff3a5e3681541cb9d79312c416835686d054a23accb873b254f413"},
+    {file = "charset_normalizer-2.1.0-py3-none-any.whl", hash = "sha256:5189b6f22b01957427f35b6a08d9a0bc45b46d3788ef5a92e978433c7a35f8a5"},
+]
 click = [
     {file = "click-8.1.3-py3-none-any.whl", hash = "sha256:bb4d8133cb15a609f44e8213d9b391b0809795062913b383c62be0ee95b1db48"},
     {file = "click-8.1.3.tar.gz", hash = "sha256:7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"},
@@ -254,17 +456,33 @@ colorama = [
     {file = "colorama-0.4.5-py2.py3-none-any.whl", hash = "sha256:854bf444933e37f5824ae7bfc1e98d5bce2ebe4160d46b5edf346a89358e99da"},
     {file = "colorama-0.4.5.tar.gz", hash = "sha256:e6c6b4334fc50988a639d9b98aa429a0b57da6e17b9a44f0451f930b6967b7a4"},
 ]
+csscompressor = [
+    {file = "csscompressor-0.9.5.tar.gz", hash = "sha256:afa22badbcf3120a4f392e4d22f9fff485c044a1feda4a950ecc5eba9dd31a05"},
+]
 ghp-import = [
     {file = "ghp-import-2.1.0.tar.gz", hash = "sha256:9c535c4c61193c2df8871222567d7fd7e5014d835f97dc7b7439069e2413d343"},
     {file = "ghp_import-2.1.0-py3-none-any.whl", hash = "sha256:8337dd7b50877f163d4c0289bc1f1c7f127550241988d568c1db512c4324a619"},
+]
+htmlmin = [
+    {file = "htmlmin-0.1.12.tar.gz", hash = "sha256:50c1ef4630374a5d723900096a961cff426dff46b48f34d194a81bbe14eca178"},
+]
+idna = [
+    {file = "idna-3.3-py3-none-any.whl", hash = "sha256:84d9dd047ffa80596e0f246e2eab0b391788b0503584e8945f2368256d2735ff"},
+    {file = "idna-3.3.tar.gz", hash = "sha256:9d643ff0a55b762d5cdb124b8eaa99c66322e2157b69160bc32796e824360e6d"},
 ]
 importlib-metadata = [
     {file = "importlib_metadata-4.12.0-py3-none-any.whl", hash = "sha256:7401a975809ea1fdc658c3aa4f78cc2195a0e019c5cbc4c06122884e9ae80c23"},
     {file = "importlib_metadata-4.12.0.tar.gz", hash = "sha256:637245b8bab2b6502fcbc752cc4b7a6f6243bb02b31c5c26156ad103d3d45670"},
 ]
+jieba = [
+    {file = "jieba-0.42.1.tar.gz", hash = "sha256:055ca12f62674fafed09427f176506079bc135638a14e23e25be909131928db2"},
+]
 jinja2 = [
     {file = "Jinja2-3.1.2-py3-none-any.whl", hash = "sha256:6088930bfe239f0e6710546ab9c19c9ef35e29792895fed6e6e31a023a182a61"},
     {file = "Jinja2-3.1.2.tar.gz", hash = "sha256:31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"},
+]
+jsmin = [
+    {file = "jsmin-3.0.1.tar.gz", hash = "sha256:c0959a121ef94542e807a674142606f7e90214a2b3d1eb17300244bbb5cc2bfc"},
 ]
 markdown = [
     {file = "Markdown-3.3.7-py3-none-any.whl", hash = "sha256:f5da449a6e1c989a4cea2631aa8ee67caa5a2ef855d551c88f9e309f4634c621"},
@@ -320,6 +538,10 @@ mkdocs = [
     {file = "mkdocs-1.3.1-py3-none-any.whl", hash = "sha256:fda92466393127d2da830bc6edc3a625a14b436316d1caf347690648e774c4f0"},
     {file = "mkdocs-1.3.1.tar.gz", hash = "sha256:a41a2ff25ce3bbacc953f9844ba07d106233cd76c88bac1f59cb1564ac0d87ed"},
 ]
+mkdocs-embed-external-markdown = [
+    {file = "mkdocs-embed-external-markdown-2.2.1.tar.gz", hash = "sha256:aa367a66b59a956874be958d5548150c0fdf82a896bf20644aeeba4c6bcd04a8"},
+    {file = "mkdocs_embed_external_markdown-2.2.1-py3-none-any.whl", hash = "sha256:3776d48233f623848dabb21006adde8e86023dd5999074a75e720402b5c5e977"},
+]
 mkdocs-material = [
     {file = "mkdocs-material-8.3.9.tar.gz", hash = "sha256:dc82b667d2a83f0de581b46a6d0949732ab77e7638b87ea35b770b33bc02e75a"},
     {file = "mkdocs_material-8.3.9-py2.py3-none-any.whl", hash = "sha256:263f2721f3abe533b61f7c8bed435a0462620912742c919821ac2d698b4bfe67"},
@@ -327,6 +549,14 @@ mkdocs-material = [
 mkdocs-material-extensions = [
     {file = "mkdocs-material-extensions-1.0.3.tar.gz", hash = "sha256:bfd24dfdef7b41c312ede42648f9eb83476ea168ec163b613f9abd12bbfddba2"},
     {file = "mkdocs_material_extensions-1.0.3-py3-none-any.whl", hash = "sha256:a82b70e533ce060b2a5d9eb2bc2e1be201cf61f901f93704b4acf6e3d5983a44"},
+]
+mkdocs-minify-plugin = [
+    {file = "mkdocs-minify-plugin-0.5.0.tar.gz", hash = "sha256:32d9e8fbd89327a0f4f648f517297aad344c1bad64cfde110d059bd2f2780a6d"},
+    {file = "mkdocs_minify_plugin-0.5.0-py2-none-any.whl", hash = "sha256:487c31ae6b8b3230f56910ce6bcf5c7e6ad9a8c4f51c720a4b989f30c2b0233f"},
+]
+mkdocs-multirepo-plugin = [
+    {file = "mkdocs-multirepo-plugin-0.4.7.tar.gz", hash = "sha256:f95f9b2676a5b7992220d9d27c1207123721fe6cea685754ae899eebc644bb17"},
+    {file = "mkdocs_multirepo_plugin-0.4.7-py3-none-any.whl", hash = "sha256:0badf6a9ee63c843a74d91d8c19541ad2088c40487988086926df29e69cb3cff"},
 ]
 packaging = [
     {file = "packaging-21.3-py3-none-any.whl", hash = "sha256:ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522"},
@@ -347,6 +577,10 @@ pyparsing = [
 python-dateutil = [
     {file = "python-dateutil-2.8.2.tar.gz", hash = "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"},
     {file = "python_dateutil-2.8.2-py2.py3-none-any.whl", hash = "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"},
+]
+python-slugify = [
+    {file = "python-slugify-6.1.2.tar.gz", hash = "sha256:272d106cb31ab99b3496ba085e3fea0e9e76dcde967b5e9992500d1f785ce4e1"},
+    {file = "python_slugify-6.1.2-py2.py3-none-any.whl", hash = "sha256:7b2c274c308b62f4269a9ba701aa69a797e9bca41aeee5b3a9e79e36b6656927"},
 ]
 pyyaml = [
     {file = "PyYAML-6.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:d4db7c7aef085872ef65a8fd7d6d09a14ae91f691dec3e87ee5ee0539d516f53"},
@@ -387,9 +621,29 @@ pyyaml-env-tag = [
     {file = "pyyaml_env_tag-0.1-py3-none-any.whl", hash = "sha256:af31106dec8a4d68c60207c1886031cbf839b68aa7abccdb19868200532c2069"},
     {file = "pyyaml_env_tag-0.1.tar.gz", hash = "sha256:70092675bda14fdec33b31ba77e7543de9ddc88f2e5b99160396572d11525bdb"},
 ]
+requests = [
+    {file = "requests-2.28.1-py3-none-any.whl", hash = "sha256:8fefa2a1a1365bf5520aac41836fbee479da67864514bdb821f31ce07ce65349"},
+    {file = "requests-2.28.1.tar.gz", hash = "sha256:7c5599b102feddaa661c826c56ab4fee28bfd17f5abca1ebbe3e7f19d7c97983"},
+]
 six = [
     {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
     {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
+]
+text-unidecode = [
+    {file = "text-unidecode-1.3.tar.gz", hash = "sha256:bad6603bb14d279193107714b288be206cac565dfa49aa5b105294dd5c4aab93"},
+    {file = "text_unidecode-1.3-py2.py3-none-any.whl", hash = "sha256:1311f10e8b895935241623731c2ba64f4c455287888b18189350b67134a822e8"},
+]
+tqdm = [
+    {file = "tqdm-4.64.0-py2.py3-none-any.whl", hash = "sha256:74a2cdefe14d11442cedf3ba4e21a3b84ff9a2dbdc6cfae2c34addb2a14a5ea6"},
+    {file = "tqdm-4.64.0.tar.gz", hash = "sha256:40be55d30e200777a307a7585aee69e4eabb46b4ec6a4b4a5f2d9f11e7d5408d"},
+]
+ufile = [
+    {file = "ufile-3.2.6-py2-none-any.whl", hash = "sha256:281c89fb79421eb65f9ea91be98d8f2c025c83c4d841b39548b95f7d53ee548e"},
+    {file = "ufile-3.2.6.tar.gz", hash = "sha256:e8f9cb532f97800efabca100ba2ef70f6d53039e4a0775ba75a448ae3b5f4449"},
+]
+urllib3 = [
+    {file = "urllib3-1.26.11-py2.py3-none-any.whl", hash = "sha256:c33ccba33c819596124764c23a97d25f32b28433ba0dedeb77d873a38722c9bc"},
+    {file = "urllib3-1.26.11.tar.gz", hash = "sha256:ea6e8fb210b19d950fab93b60c9009226c63a28808bc8386e05301e25883ac0a"},
 ]
 watchdog = [
     {file = "watchdog-2.1.9-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:a735a990a1095f75ca4f36ea2ef2752c99e6ee997c46b0de507ba40a09bf7330"},
