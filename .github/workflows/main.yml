@@ -13,10 +13,10 @@ on:
 
 
 env:
-  UCLOUD_PUBLICKEY : 123
-  UCLOUD_PRIVATEKEY : 456
-  UCLOUD_REGION : 789
-  UCLOUD_BUCKET : 000
+  UCLOUD_PUBLICKEY : ${{ secrets.UCLOUD_PUBLICKEY }}
+  UCLOUD_PRIVATEKEY : ${{ secrets.UCLOUD_PRIVATEKEY }}
+  UCLOUD_REGION : ${{ secrets.UCLOUD_REGION }}
+  UCLOUD_BUCKET : ${{ secrets.UCLOUD_BUCKET }}
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -35,21 +35,21 @@ jobs:
           python-version: 3.x
 
       # Runs a single command using the runners shell
-      - run: apt-get -y install fontconfig xfonts-utils
-      - run: pip install mkdocs-material
-      - run: pip install mkdocs-git-revision-date-plugin
-      - run: pip install mkdocs-mermaid2-plugin
+      - run: pip install mkdocs-material \
+              mkdocs-git-revision-date-plugin \
+              mkdocs-mermaid2-plugin \
+              mkdocs-rss-plugin \
+              mkdocs-minify-plugin \
+              mkdocs-macros-plugin \
+              mkdocs-git-revision-date-localized-plugin \
+              mkdocs-awesome-pages-plugin
+      
+      # add custom plugin with pdf support
       - run: pip install git+https://github.com/SAMZONG/mkdocs-with-pdf-support-material-v8
 
-      # add plugin
-      - run: pip install mkdocs-rss-plugin
-      - run: pip install mkdocs-minify-plugin
-      - run: pip install mkdocs-macros-plugin
-      - run: pip install mkdocs-git-revision-date-localized-plugin
-      - run: pip install mkdocs-awesome-pages-plugin
 
       # build docs
-      - run: mkdocs build -d public
-      - run: cd public
       - run: pwd
-      - run: python ../scripts/upload-ucloud.py public_key=$UCLOUD_PUBLICKEY private_key=$UCLOUD_PRIVATEKEY region=$UCLOUD_REGION
+      - run: echo $UCLOUD_REGION && echo $UCLOUD_BUCKET
+      - run: mkdocs build -d public
+      - run: cd public && pwd && python ../scripts/upload-ucloud.py public_key=$UCLOUD_PUBLICKEY private_key=$UCLOUD_PRIVATEKEY region=$UCLOUD_REGION
