@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {{ super() }}
+
+    <!-- Utteranc.es -->
+    <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
+    <script src="https://utteranc.es/client.js"
+        repo="samzong/daocloud-docs"
+        issue-term="title"
+        label="QA"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+{% endblock %}

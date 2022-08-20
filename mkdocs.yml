@@ -1,92 +1,216 @@
+# Project information
 site_name: DaoCloud Enterprise
+site_url: https://docs.daocloud.io/
+site_author: DaoCloud
+site_description: >-
+  Create a branded static site from a set of Markdown files to host the
+  documentation of your Open Source or commercial project
+
+# copyright
 copyright: Copyright &copy; 2016 - 2022 DaoCloud
 
+# Repository
+repo_name: DaoClou/Community
+repo_url: https://github.com/DaoCloud/daocloud-docs
+edit_uri: edit/main/docs/
 
+# Configuration
 theme:
   name: material
-  include_homepage_in_sidebar: true
-  language: 'zh'
+  custom_dir: overrides
+  # custom_dir: !ENV [THEME_DIR, "material"]
 
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+  include_homepage_in_sidebar: false
+
+  # Static files
+  static_templates:
+    - 404.html
+
+  language: "zh"
   features:
+    - content.code.annotate
+    - content.tooltips
+    # - navigation.indexes
     - navigation.tabs
+    # - navigation.instant
+    # - navigation.prune
+    - navigation.sections
     - navigation.tabs.sticky
+    - navigation.tracking
     - navigation.top
     - search.highlight
     - search.suggest
     - search.share
-    - content.code.annotate
+    - toc.follow
+    # - toc.integrate
 
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
+  icon:
+    logo: logo
+
+# Plugins
 plugins:
   - search:
       separator: '[\\s\\u200b\\-]'
-
+  - mermaid2
   - minify:
       minify_html: true
       minify_js: true
       minify_css: true
       htmlmin_opts:
-          remove_comments: true
+        remove_comments: true
 
+  - git-revision-date #每页底部显示文档最后更新日期，安装 pip install mkdocs-git-revision-date-plugin
+  - git-revision-date-localized #每个页面底部添加本地化更新和创建日期，安装pip install mkdocs-git-revision-date-localized-plugin
+    # - type: datetime  #日期格式，有效值为date、datetime、iso_date、iso_datetimetimeago
+    # - fallback_to_build_date: true  #默认false，启用则回退到mkdocs build执行的时间
+    # - enable_creation_date: true  #最后更新日期旁边显示与页面关联的文件的创建日期
+
+  # auto desgin nav in dirs
+  # - awesome-pages:
+  #     filename: .pages.yml
+  #     collapse_single_pages: true
+  #     strict: false
+  - tags:
+      tags_file: stylesheets/tags.md
+
+# Customization
 extra:
+  # switch language
   alternate:
-  - link: /zh/
-    name: zh - 简体中文
-    lang: zh
-  - link: /en/
-    name: en - English
-    lang: en
+    - link: /
+      name: zh - 简体中文
+      lang: zh
+    - link: /en/
+      name: en - English
+      lang: en
+  generator: false
 
-
+# Customization Javascript
 extra_javascript:
-  - extra/zoom_image.js
+  - stylesheets/zoom_image.js
+  - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
 
+# Customization css
 extra_css:
-  - extra/custom.css
+  - stylesheets/custom.css
 
-
+# Extensions
 markdown_extensions:
-  - admonition
   - abbr
+  - admonition
   - attr_list
   - def_list
   - footnotes
   - meta
   - md_in_html
   - tables
-
   - toc:
       permalink: true
       title: 导航
       toc_depth: 5
-
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
   - pymdownx.caret
-  - pymdownx.mark
-  - pymdownx.tilde
-  - pymdownx.keys
-  - pymdownx.critic
   - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.highlight:
-      linenums: true
+      anchor_linenums: true
   - pymdownx.inlinehilite
-#  - pymdownx.snippets:
-#      auto-append:
-#        - includes/glossary.md
-
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: daocloud
+      repo: daocloud-docs
+  - pymdownx.mark
+  - pymdownx.smartsymbols
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-
   - pymdownx.tabbed:
       alternate_style: true
-
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.tilde
+  # - pymdownx.critic
 
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.snippets:
+      auto_append:
+        - includes/glossary.md
 
-  - pymdownx.arithmatex:
-      generic: true
+# Page tree
+nav:
+  - 首页: index.md
+  - 帮助文档:
+      - 产品介绍:
+          - 什么是 DCE5.0: dce-brief/what-is-dce.md
+          - DCE 生态模块: dce-brief/modules.md
+          - 平台功能: dce-brief/features.md
+          - 系统架构: dce-brief/architect.md
+          - 为什么选择 DCE: dce-brief/whyus.md
+          - 适用场景: dce-brief/scenarios.md
+          - DCE 5.0 重要更新: dce-brief/news.md
+      - 容器管理:
+          - 容器管理介绍:
+              - 什么是容器管理: zh/kpanda/03ProductBrief/WhatisKPanda.md
+              - 功能总览: zh/kpanda/03ProductBrief/Features.md
+              - 容器管理优势: zh/kpanda/03ProductBrief/Benefits.md
+              - 适用场景: zh/kpanda/03ProductBrief/Scenarios.md
+              - 基本概念: zh/kpanda/03ProductBrief/Concepts.md
+          - 集群管理:
+              - 创建集群: zh/kpanda/07UserGuide/Clusters/CreateCluster.md
+              - 接入集群: zh/kpanda/07UserGuide/Clusters/JoinACluster.md
+              - 使用 kubectl 访问集群: zh/kpanda/07UserGuide/Clusters/clusterwithcert.md
+              - 集群角色: zh/kpanda/07UserGuide/Clusters/ClusterRole.md
+              - 集群状态: zh/kpanda/07UserGuide/Clusters/ClusterStatus.md
+          - 节点管理: zh/kpanda/07UserGuide/Nodes/README.md
+          - 工作负载:
+              - 通过镜像创建无状态负载: zh/kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md
+              - 通过镜像创建有状态负载: zh/kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md
+              - 通过镜像创建守护进程集: zh/kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md
+              - 通过镜像创建定时任务: zh/kpanda/07UserGuide/Workloads/CreateCronJobByImage.md
+              - 通过镜像创建任务: zh/kpanda/07UserGuide/Workloads/CreateJobByImage.md
+              - 参数配置说明:
+                  - 任务的参数说明: zh/kpanda/07UserGuide/Workloads/PodConfig/JobParameters.md
+                  - 生命周期: zh/kpanda/07UserGuide/Workloads/PodConfig/lifescycle.md
+                  - 环境变量: zh/kpanda/07UserGuide/Workloads/PodConfig/EnvironmentVariables.md
+                  - 健康检查: zh/kpanda/07UserGuide/Workloads/PodConfig/healthcheck.md
+                  - 集群调度: zh/kpanda/07UserGuide/Workloads/PodConfig/SchedulingPolicy.md
+          - 服务与路由:
+              - 创建服务: zh/kpanda/07UserGuide/ServicesandRoutes/CreatingServices.md
+              - 创建路由: zh/kpanda/07UserGuide/ServicesandRoutes/CreatingIngress.md
+          - 自定义资源: zh/kpanda/07UserGuide/CustomResources/README.md
+          - 容器存储: zh/kpanda/07UserGuide/Storage/README.md
+          - 配置与密钥:
+              - 创建配置项: zh/kpanda/07UserGuide/ConfigMapsandSecrets/CreatConfigMap.md
+              - 使用配置项: zh/kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md
+          - 命名空间: zh/kpanda/07UserGuide/Namespaces/README.md
+          - 集群运维: zh/kpanda/07UserGuide/OperationandMaintenance/README.md
+          - 弹性伸缩: zh/kpanda/07UserGuide/Autoscaling/README.md
+          - 权限管理: zh/kpanda/07UserGuide/Permissions/README.md
+          - 策略管理: zh/kpanda/07UserGuide/Policies/README.md
