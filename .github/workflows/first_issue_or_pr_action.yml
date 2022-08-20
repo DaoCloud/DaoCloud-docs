@@ -1,0 +1,16 @@
+name: display on person first create issue or pr
+
+
+on:
+  - issue: 
+    types: [opened]
+  - pull_request: 
+    types: [opened]
+
+job:
+  steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: "## Hi Friends!\n It's your first time create issue, Thanks for your join now.\n\nPlease describe your problem or suggestion in detail."
+        pr-message: "## Hi Friends!\n\n It's your first time create PR, Thanks for your making it."
