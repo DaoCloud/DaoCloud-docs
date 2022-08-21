@@ -52,4 +52,8 @@ jobs:
       - run: pwd
       - run: echo $UCLOUD_REGION && echo $UCLOUD_BUCKET
       - run: mkdocs build -d public
-      - run: cd public && pwd && python ../scripts/upload-ucloud.py public_key=$UCLOUD_PUBLICKEY private_key=$UCLOUD_PRIVATEKEY region=$UCLOUD_REGION
+      - run: cd public && pwd && python ../scripts/upload-ucloud.py \
+                public_key=$UCLOUD_PUBLICKEY \
+                private_key=$UCLOUD_PRIVATEKEY \
+                region=$UCLOUD_REGION \
+                bucket=$UCLOUD_BUCKET
