@@ -43,7 +43,11 @@ build-job: # This job runs in the build stage, which runs first.
     - mkdocs build -d public
     - cd public
     - pwd
-    - python ../scripts/upload-ucloud.py public_key=${UCLOUD_PUBLICKEY} private_key=${UCLOUD_PRIVATEKEY} region=${UCLOUD_REGION}
+    - python ../scripts/upload-ucloud.py \
+            public_key=${UCLOUD_PUBLICKEY} \
+            private_key=${UCLOUD_PRIVATEKEY} \
+            region=${UCLOUD_REGION} \
+            bucket=${UCLOUD_BUCKET}
 
 
 #deploy-job: # This job runs in the deploy stage.

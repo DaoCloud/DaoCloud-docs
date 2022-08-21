@@ -7,3 +7,4 @@ _book/
 .vscode/
 public/
 scripts/config.py
+__pycache__
