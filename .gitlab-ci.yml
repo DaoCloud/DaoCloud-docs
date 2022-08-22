@@ -39,6 +39,8 @@ stages: # List of stages for jobs, and their order of execution
 
 build-job: # This job runs in the build stage, which runs first.
   stage: build
+  only:
+    - main
   script:
     - mkdocs build -d public
     - cd public
@@ -49,16 +51,7 @@ build-job: # This job runs in the build stage, which runs first.
             region=${UCLOUD_REGION} \
             bucket=${UCLOUD_BUCKET}
 
-
-#deploy-job: # This job runs in the deploy stage.
-#  stage: deploy
-#
-#  cache:
-#    key: build-cache
-#    paths:
-#      - public # It only runs when *both* jobs in the test stage complete successfully.
-#  script:
-#    - pwd
-#    - cd public
-#    - pwd
-#    - python ../scripts/upload-ucloud.py public_key=${UCLOUD_PUBLICKEY} private_key=${UCLOUD_PRIVATEKEY} region=${UCLOUD_REGION} bucket=${UCLOUD_BUCKET}
+    - python ../scripts/refresh_cdn_cache.py \
+            publickey=${u_publickey} \
+            privatekey=${u_privatekey} \
+            domain=${u_domain}
