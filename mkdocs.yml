@@ -226,10 +226,10 @@ nav:
       - DCE开发背景: zh/blogs/blog00.md
       - eBPF与可观测性: zh/blogs/blog01.md
   - 开源社区:
-      - 容器管理: zh/community/cloudtty.md
-      - 全局管理: zh/community/clusterpedia.md
-      - 可观测性: zh/community/hwameistor.md
-      - 应用工作台: zh/community/klts.md
-      - 服务网格: zh/community/kubean.md
-      - 微服务引擎: zh/community/merbridge.md
-      - 中间件: zh/vidcommunityeos/spiderpool.md
+      - CloudTTY: zh/community/cloudtty.md
+      - Clusterpedia: zh/community/clusterpedia.md
+      - HwameiStor: zh/community/hwameistor.md
+      - KLTS: zh/community/klts.md
+      - Kubean: zh/community/kubean.md
+      - Merbridge: zh/community/merbridge.md
+      - Spiderpool: zh/vidcommunityeos/spiderpool.md
