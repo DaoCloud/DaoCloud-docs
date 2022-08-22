@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 # DaoCloud Enterprise 5.0
 
 On the occasion of the golden Autumn of 2022, DaoCloud gladly launches the next-generation, cloud-native, containerized, comprehensive platform by fusing the most popular cloud-native technologies in the open source community. After two years of continuous development, testing, and verification by hundreds of diligent developers, the flower of idealism finally blooms in the land of romantic open-source community. The new plaform leads the paces and waves of cloud-native development globally.

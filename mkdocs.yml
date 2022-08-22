@@ -101,7 +101,7 @@ extra:
 
   # switch language
   alternate:
-    - link: /
+    - link: /zh/
       name: zh - 简体中文
       lang: zh
     - link: /en/
