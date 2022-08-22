@@ -64,6 +64,7 @@ theme:
     text: Roboto
     code: Roboto Mono
   favicon: assets/favicon.png
+  logo: images/DaoCloud.svg
   icon:
     logo: logo
 
@@ -95,6 +96,9 @@ plugins:
 
 # Customization
 extra:
+  
+  homepage: /zh/
+
   # switch language
   alternate:
     - link: /
