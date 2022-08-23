@@ -2,15 +2,17 @@
 
 {% block content %}
     {{ super() }}
-
-    <!-- Utteranc.es -->
+   {% if page.meta and page.meta.nocomment %}
+   {% else %}
+   <!-- Utteranc.es -->
     <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
     <script src="https://utteranc.es/client.js"
-        repo="samzong/daocloud-docs"
+        repo="daocloud/daocloud-docs"
         issue-term="title"
         label="QA"
         theme="github-light"
         crossorigin="anonymous"
         async>
     </script>
+    {% endif %}
 {% endblock %}
