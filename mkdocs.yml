@@ -10,7 +10,7 @@ site_description: >-
 copyright: Copyright &copy; 2016 - 2022 DaoCloud
 
 # Repository
-repo_name: DaoClou/Community
+repo_name: DaoCloud/daocloud-docs
 repo_url: https://github.com/DaoCloud/daocloud-docs
 edit_uri: edit/main/docs/
 
