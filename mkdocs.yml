@@ -183,7 +183,7 @@ nav:
           - 容器管理介绍:
               - 什么是容器管理: zh/kpanda/03ProductBrief/WhatisKPanda.md
               - 功能总览: zh/kpanda/03ProductBrief/Features.md
-              - 容器管理优势: zh/kpanda/03ProductBrief/Benefits.md
+              - 竞争优势: zh/kpanda/03ProductBrief/Benefits.md
               - 适用场景: zh/kpanda/03ProductBrief/Scenarios.md
               - 基本概念: zh/kpanda/03ProductBrief/Concepts.md
           - 集群管理:
@@ -220,28 +220,64 @@ nav:
           - 策略管理: zh/kpanda/07UserGuide/Policies/README.md
       - 微服务治理:
           - 微服务治理介绍:
-              - 功能总览: intro/features.md
-              - 使用场景: intro/scenarios.md
-              - 产品优势: intro/advantages.md  
-              - 系统架构: intro/architecture.md
-              - 组件版本: intro/components.md
-              - 名词解释: intro/GLOSSARY.md
+              - 功能总览: zh/skoala/intro/features.md
+              - 使用场景: zh/skoala/intro/scenarios.md
+              - 竞争优势: zh/skoala/intro/advantages.md  
+              - 系统架构: zh/skoala/intro/architecture.md
+              - 组件版本: zh/skoala/intro/components.md
+              - 名词解释: zh/skoala/intro/GLOSSARY.md
           - 微服务管理:
-              - 托管注册中心管理: ms-management/hosted/create-registry.md
-              - 微服务命名空间: ms-management/hosted/namespace.md
+              - 托管注册中心管理: zh/skoala/ms-management/hosted/create-registry.md
+              - 微服务命名空间: zh/skoala/ms-management/hosted/namespace.md
           - 微服务网关:
               - 网关管理:
-                  - 创建网关: ms-gateway/gateway/create-gateway.md
-                  - 查看网关详情: ms-gateway/gateway/check-details.md
-                  - 诊断网关: ms-gateway/gateway/delete-gateway.md
-                  - 更新网关: ms-gateway/gateway/update-gateway.md
-                  - 删除网关: ms-gateway/gateway/delete-gateway.md
+                  - 创建网关: zh/skoala/ms-gateway/gateway/create-gateway.md
+                  - 查看网关详情: zh/skoala/ms-gateway/gateway/check-details.md
+                  - 诊断网关: zh/skoala/ms-gateway/gateway/delete-gateway.md
+                  - 更新网关: zh/skoala/ms-gateway/gateway/update-gateway.md
+                  - 删除网关: zh/skoala/ms-gateway/gateway/delete-gateway.md
               - API:
-                  - 管理 API: ms-gateway/api/manage-api.md
-                  - 配置 API 策略: ms-gateway/api/api-policy.md
+                  - 管理 API: zh/skoala/ms-gateway/api/manage-api.md
+                  - 配置 API 策略: zh/skoala/ms-gateway/api/api-policy.md
               - 域名:
-                  - 管理域名: ms-gateway/domain/manage-domain.md
-                  - 配置域名策略: ms-gateway/domain/domain-policy.md   
+                  - 管理域名: zh/skoala/ms-gateway/domain/manage-domain.md
+                  - 配置域名策略: zh/skoala/ms-gateway/domain/domain-policy.md
+      - 中间件:
+          - RabbitMQ 消息队列:
+              - 什么是 RabbitMQ: zh/middleware/rabbitmq/intro/what.md
+              - 功能说明: zh/middleware/rabbitmq/intro/features.md
+              - 竞争优势: zh/middleware/rabbitmq/intro/benefits.md
+              - 适用场景: zh/middleware/rabbitmq/intro/scenarios.md
+              - 基本概念: zh/middleware/rabbitmq/intro/concepts.md
+              - 安装 RabbitMQ: zh/middleware/rabbitmq/quickstart/install.md
+              - 更新 RabbitMQ: zh/middleware/rabbitmq/userguide/update.md
+              - 删除 RabbitMQ: zh/middleware/rabbitmq/userguide/delete.md
+              - 查看消息队列: zh/middleware/rabbitmq/userguide/view.md
+              - 数据迁移: zh/middleware/rabbitmq/userguide/migrate.md
+              - 实例监控: zh/middleware/rabbitmq/userguide/insight.md
+          - Elasticsearch 搜索服务:
+              - 什么是 Elasticsearch: zh/middleware/elastic-search/intro/what.md
+              - 功能说明: zh/middleware/elastic-search/intro/features.md
+              - 竞争优势: zh/middleware/elastic-search/intro/benefits.md
+              - 适用场景: zh/middleware/elastic-search/intro/scenarios.md
+              - 基本概念: zh/middleware/elastic-search/intro/concepts.md
+              - 首次使用 Elasticsearch: zh/middleware/elastic-search/userguide/login.md
+              - 创建 Elasticsearch 实例: zh/middleware/elastic-search/userguide/create.md
+              - 更新 Elasticsearch 实例: zh/middleware/elastic-search/userguide/edit.md
+              - 删除 Elasticsearch 实例: zh/middleware/elastic-search/userguide/delete.md
+              - Elasticsearch 集群容量规划: zh/middleware/elastic-search/userguide/cluster-capacity-plan.md
+              - 查看列表: zh/middleware/elastic-search/userguide/view.md
+              - 概览: zh/middleware/userguide/elastic-search/basic.md
+              - 实例监控: zh/middleware/elastic-search/userguide/monitor.md
+          - MySQL 数据库:
+              - 什么是 MySQL: zh/middleware/mysql/intro/what.md
+              - 功能说明: zh/middleware/mysql/intro/features.md
+              - 竞争优势: zh/middleware/mysql/intro/benefits.md
+              - 基本概念: zh/middleware/mysql/intro/concepts.md
+              - 安装 MySQL: zh/middleware/mysql/quickstart/install.md
+              - 创建 MySQL: zh/middleware/mysql/userguide/create.md
+              - 更新 MySQL: zh/middleware/mysql/userguide/update.md
+              - 删除 MySQL: zh/middleware/mysql/userguide/delete.md
   - 视频教程:
       - 容器管理: zh/videos/kpanda.md
       - 全局管理: zh/videos/ghippo.md
