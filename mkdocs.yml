@@ -40,12 +40,12 @@ theme:
     - navigation.sections
     - navigation.tabs.sticky
     - navigation.tracking
-    # - navigation.top
+    - navigation.top
     - search.highlight
     - search.suggest
     - search.share
-    - toc.follow
-    # - toc.integrate
+    # - toc.follow
+    - toc.integrate
 
   palette:
     - scheme: default
