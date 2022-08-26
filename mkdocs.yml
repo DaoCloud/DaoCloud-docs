@@ -210,6 +210,79 @@ nav:
           - 配置与密钥:
               - 创建配置项: zh/kpanda/07UserGuide/ConfigMapsandSecrets/CreatConfigMap.md
               - 使用配置项: zh/kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md
+      - 全局管理:
+        - 全局管理介绍:
+          - 什么是全局管理: zh/ghippo/01ProductBrief/WhatisGhippo.md
+          - 功能总览: zh/ghippo/01ProductBrief/Features.md
+          - 系统架构: zh/ghippo/01ProductBrief/Architecture.md
+          - 常见术语: zh/ghippo/01ProductBrief/glossary.md
+        - 登录: zh/ghippo/04UserGuide/00Login.md
+        - 用户与访问控制:
+          - 什么是用户与访问控制: zh/ghippo/04UserGuide/01UserandAccess/iam.md
+          - 用户: zh/ghippo/04UserGuide/01UserandAccess/User.md
+          - 用户组: zh/ghippo/04UserGuide/01UserandAccess/Group.md
+        - 角色和权限管理: 
+          - zh/ghippo/04UserGuide/01UserandAccess/Role.md
+          - 全局管理角色: zh/ghippo/04UserGuide/01UserandAccess/global.md
+          - 资源管理（按角色）: zh/ghippo/04UserGuide/01UserandAccess/resource02.md
+          - 自定义角色: zh/ghippo/04UserGuide/01UserandAccess/customrole.md
+        - 身份提供商: 
+          - zh/ghippo/04UserGuide/01UserandAccess/idprovider.md
+          - LDAP: zh/ghippo/04UserGuide/01UserandAccess/ldap.md
+          - OIDC: zh/ghippo/04UserGuide/01UserandAccess/oidc.md
+        - 工作空间与层级: 
+          - zh/ghippo/04UserGuide/02Workspace/README.md
+          - 层级管理: zh/ghippo/04UserGuide/02Workspace/Folder.md
+          - 工作空间管理: zh/ghippo/04UserGuide/02Workspace/Workspaces.md
+          - 资源绑定: zh/ghippo/04UserGuide/02Workspace/Resources.md
+        - 审计日志: zh/ghippo/04UserGuide/03AuditLog.md
+        - 平台设置:
+          - 安全策略: zh/ghippo/04UserGuide/04PlatformSetting/policy.md
+          - 密码重置: zh/ghippo/06Troubleshooting/password.md
+          - 邮箱服务器设置: zh/ghippo/04UserGuide/04PlatformSetting/MailServer.md
+          - 外观定制: zh/ghippo/04UserGuide/04PlatformSetting/Appearance.md
+          - 正版授权: zh/ghippo/04UserGuide/04PlatformSetting/license.md
+          - 关于平台: zh/ghippo/04UserGuide/04PlatformSetting/about.md
+        - 消息盒子: zh/ghippo/04UserGuide/message.md
+        - 个人中心:
+          - 安全设置: zh/ghippo/04UserGuide/06PersonalCenter/SecuritySetting.md
+          - 访问密钥: zh/ghippo/04UserGuide/06PersonalCenter/Password.md
+          - 语言设置: zh/ghippo/04UserGuide/06PersonalCenter/Language.md      
+      - 可观测性：              
+          - 可观测介绍: 03ProductBrief/README.md
+            - 什么是 Insight: 03ProductBrief/WhatisKInsight.md
+            - 功能说明: 03ProductBrief/Features.md
+            - 产品架构: 03ProductBrief/architecture.md
+            - 产品优势: 03ProductBrief/benefits.md
+            - 常见术语: 03ProductBrief/glossary.md
+          - 概览: 06UserGuide/overview.md
+          - 仪表盘: 06UserGuide/02dashboard.md
+          - 场景监控: 06UserGuide/03scenarioinsight/README.md
+            - 集群监控: 06UserGuide/03scenarioinsight/clusterinsight.md
+            - 节点监控: 06UserGuide/03scenarioinsight/nodeinsight.md
+            - 容器监控: 06UserGuide/03scenarioinsight/containerinsight.md
+            - 服务监控: 06UserGuide/03scenarioinsight/serviceinsight.md
+          - 数据查询: 06UserGuide/04dataquery/README.md
+            - 日志查询: 06UserGuide/04dataquery/logquery.md
+            - 指标查询: 06UserGuide/04dataquery/metricquery.md
+            - 链路查询: 06UserGuide/04dataquery/tracequery.md
+          - 告警中心: 06UserGuide/05alertcenter/README.md
+            - 告警规则: 06UserGuide/05alertcenter/alertrule.md
+            - 通知配置: 06UserGuide/05alertcenter/message.md
+            - 消息模板: 06UserGuide/05alertcenter/messagetemplate.md
+          - 数据采集: 06UserGuide/07collectionmanag/Readme.md
+            - 采集管理: 06UserGuide/07collectionmanag/collectionmanag.md
+            - 服务监控: 06UserGuide/07collectionmanag/servicemonitor.md
+            - 开启采集日志: 09FAQs/collectauditlog.md
+          - 系统配置: 06UserGuide/08systemconfig/README.md
+            - 系统配置: 06UserGuide/08systemconfig/systemconfig.md
+            - 修改配置: 06UserGuide/08systemconfig/modifyconfig.md
+          - 常见问题: 09FAQs/README.md
+          - 可观测基本概念: concepts/README.md
+            - 指标类型: concepts/metrics.md
+            - 任务和实例: concepts/job-instance.md
+            - 数据模型: concepts/models.md
+            - 数据查询语言: concepts/promql.md
       - 微服务治理:
           - 微服务治理介绍:
               - 功能总览: zh/skoala/intro/features.md
