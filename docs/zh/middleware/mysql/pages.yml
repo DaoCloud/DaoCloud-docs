@@ -1,0 +1,19 @@
+site_name: mysql
+docs_dir: ./
+nav:
+- 产品介绍: intro/README.md
+  - 什么是 MySQL: intro/what.md
+  - 功能说明: intro/features.md
+  - 产品优势: intro/benefits.md
+  - 适用场景: intro/scenarios.md
+  - 基本概念: intro/concepts.md
+- 安装 MySQL: quickstart/install.md
+- 创建 MySQL 集群: quickstart/create.md
+- 创建 MySQL: userguide/create.md
+- 更新 MySQL: userguide/update.md
+- 删除 MySQL: userguide/delete.md
+- 查看 MySQL 实例: userguide/view.md
+  - 节点信息: userguide/nodes.md
+  - 参数配置: userguide/params.md
+- 创建/修改/查看备份: userguide/bake.md
+
