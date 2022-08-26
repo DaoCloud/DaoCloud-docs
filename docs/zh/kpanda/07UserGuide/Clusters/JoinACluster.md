@@ -33,12 +33,10 @@ DCE 支持接入多种主流的容器集群：
 ### 2. 基本信息配置
 
 1. 进入`集群列表`页面后，点击右上角的`接入集群`按钮。
-
   ![接入集群](../../images/join-cluster01.png)
 
 2. 在 `接入容器集群` 页面中，先配置基本信息。
-
-  <img src="../../images/join-cluster02.png" alt="接入集群" style="zoom:55%;" />
+  ![接入集群](../../images/join-cluster02.png)
 
 参照下表进行配置。
 
@@ -59,16 +57,13 @@ DCE 支持接入多种主流的容器集群：
 
 通过直接接入集群需要确保容器管理集群和待接入集群之间的网络通畅，然后获取并填写目标集群的 KubeConfig。
 
-1. 在`接入配置`区域，点击右上角的`如何获取 kubeConfig`。 
-
+1. 在`接入配置`区域，点击右上角的`如何获取 kubeConfig`。
   ![接入集群](../../images/join-cluster03.png)
 
 2. 遵循屏幕提示获取目标集群的 KubeConfig。
-
-  <img src="../../images/join-cluster04.png" alt="接入集群" style="zoom:60%;" />
+  ![接入集群](../../images/join-cluster04.png)
 
 3. 填写目标集群的 KubeConfig 后，点击`验证 Config`。如果信息无误，屏幕右上角将出现验证成功的提示。
-
   ![接入集群](../../images/join-cluster05.png)
 
 #### 代理接入
@@ -80,7 +75,6 @@ DCE 支持接入多种主流的容器集群：
 1. 确认所有参数输入完成后，点击`确定`按钮，完成集群的接入。
 
 2. 自动跳转至集群列表页面，查看刚接入的集群。起初的集群状态为`接入中`，接入成功后变为`运行中`。
-
   ![接入集群](../../images/join-cluster07.png)
 
 > 如集群状态出现异常，请查阅异常提示并参考[集群状态](ClusterStatus.md)。
