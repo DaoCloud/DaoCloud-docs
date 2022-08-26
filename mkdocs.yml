@@ -249,7 +249,7 @@ nav:
           - 访问密钥: zh/ghippo/04UserGuide/06PersonalCenter/Password.md
           - 语言设置: zh/ghippo/04UserGuide/06PersonalCenter/Language.md      
       - 可观测性：              
-          - 可观测介绍: 03ProductBrief/README.md
+          - 可观测介绍:
             - 什么是 Insight: 03ProductBrief/WhatisKInsight.md
             - 功能说明: 03ProductBrief/Features.md
             - 产品架构: 03ProductBrief/architecture.md
@@ -257,24 +257,24 @@ nav:
             - 常见术语: 03ProductBrief/glossary.md
           - 概览: 06UserGuide/overview.md
           - 仪表盘: 06UserGuide/02dashboard.md
-          - 场景监控: 06UserGuide/03scenarioinsight/README.md
+          - 场景监控:
             - 集群监控: 06UserGuide/03scenarioinsight/clusterinsight.md
             - 节点监控: 06UserGuide/03scenarioinsight/nodeinsight.md
             - 容器监控: 06UserGuide/03scenarioinsight/containerinsight.md
             - 服务监控: 06UserGuide/03scenarioinsight/serviceinsight.md
-          - 数据查询: 06UserGuide/04dataquery/README.md
+          - 数据查询:
             - 日志查询: 06UserGuide/04dataquery/logquery.md
             - 指标查询: 06UserGuide/04dataquery/metricquery.md
             - 链路查询: 06UserGuide/04dataquery/tracequery.md
-          - 告警中心: 06UserGuide/05alertcenter/README.md
+          - 告警中心:
             - 告警规则: 06UserGuide/05alertcenter/alertrule.md
             - 通知配置: 06UserGuide/05alertcenter/message.md
             - 消息模板: 06UserGuide/05alertcenter/messagetemplate.md
-          - 数据采集: 06UserGuide/07collectionmanag/Readme.md
+          - 数据采集:
             - 采集管理: 06UserGuide/07collectionmanag/collectionmanag.md
             - 服务监控: 06UserGuide/07collectionmanag/servicemonitor.md
             - 开启采集日志: 09FAQs/collectauditlog.md
-          - 系统配置: 06UserGuide/08systemconfig/README.md
+          - 系统配置:
             - 系统配置: 06UserGuide/08systemconfig/systemconfig.md
             - 修改配置: 06UserGuide/08systemconfig/modifyconfig.md
           - 常见问题: 09FAQs/README.md
