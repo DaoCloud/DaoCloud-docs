@@ -248,7 +248,7 @@ nav:
           - 安全设置: zh/ghippo/04UserGuide/06PersonalCenter/SecuritySetting.md
           - 访问密钥: zh/ghippo/04UserGuide/06PersonalCenter/Password.md
           - 语言设置: zh/ghippo/04UserGuide/06PersonalCenter/Language.md      
-      - 可观测性：              
+      - 可观测性:
           - 可观测介绍:
             - 什么是 Insight: 03ProductBrief/WhatisKInsight.md
             - 功能说明: 03ProductBrief/Features.md
