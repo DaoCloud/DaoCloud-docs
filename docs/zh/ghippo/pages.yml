@@ -1,0 +1,40 @@
+site_name: ghippo
+docs_dir: ./
+nav:
+- 全局管理:
+  - 什么是全局管理: 01ProductBrief/WhatisGhippo.md
+  - 功能总览: 01ProductBrief/Features.md
+  - 系统架构: 01ProductBrief/Architecture.md
+  - 常见术语: 01ProductBrief/glossary.md
+- 登录: 04UserGuide/00Login.md
+- 用户与访问控制:
+  - 什么是用户与访问控制: 04UserGuide/01UserandAccess/iam.md
+  - 用户: 04UserGuide/01UserandAccess/User.md
+  - 用户组: 04UserGuide/01UserandAccess/Group.md
+  - 角色和权限管理: 
+    - 04UserGuide/01UserandAccess/Role.md
+    - 全局管理角色: 04UserGuide/01UserandAccess/global.md
+    - 资源管理（按角色）: 04UserGuide/01UserandAccess/resource02.md
+    - 自定义角色: 04UserGuide/01UserandAccess/customrole.md
+  - 身份提供商: 
+    - 04UserGuide/01UserandAccess/idprovider.md
+    - LDAP: 04UserGuide/01UserandAccess/ldap.md
+    - OIDC: 04UserGuide/01UserandAccess/oidc.md
+- 工作空间与层级: 
+  - 04UserGuide/02Workspace/README.md
+  - 层级管理: 04UserGuide/02Workspace/Folder.md
+  - 工作空间管理: 04UserGuide/02Workspace/Workspaces.md
+  - 资源绑定: 04UserGuide/02Workspace/Resources.md
+- 审计日志: 04UserGuide/03AuditLog.md
+- 平台设置:
+  - 安全策略: 04UserGuide/04PlatformSetting/policy.md
+  - 密码重置: 06Troubleshooting/password.md
+  - 邮箱服务器设置: 04UserGuide/04PlatformSetting/MailServer.md
+  - 外观定制: 04UserGuide/04PlatformSetting/Appearance.md
+  - 正版授权: 04UserGuide/04PlatformSetting/license.md
+  - 关于平台: 04UserGuide/04PlatformSetting/about.md
+- 消息盒子: 04UserGuide/message.md
+- 个人中心:
+  - 安全设置: 04UserGuide/06PersonalCenter/SecuritySetting.md
+  - 访问密钥: 04UserGuide/06PersonalCenter/Password.md
+  - 语言设置: 04UserGuide/06PersonalCenter/Language.md
