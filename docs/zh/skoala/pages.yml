@@ -1,0 +1,81 @@
+site_name:  skoala
+docs_dir:  ./
+nav: 
+
+- 微服务治理介绍:
+  - 功能总览: intro/features.md
+  - 使用场景: intro/scenarios.md
+  - 产品优势: intro/advantages.md  
+  - 系统架构: intro/architecture.md
+  - 组件版本: intro/components.md
+  - 名词解释: intro/GLOSSARY.md
+- 快速入门:
+  - 选择工作空间: quick-start/select-workspace.md
+  - 接入注册中心: quick-start/integrate-registry.md
+  - 创建托管注册中心: quick-start/create-registry.md
+  - 创建微服务网关: quick-start/create-gateway.md
+  - 更新与升级: quick-start/update.md
+- 微服务管理:
+  - 托管型注册中心: ms-management/hosted/README.md
+    - 托管注册中心管理: ms-management/hosted/create-registry.md
+    - 微服务命名空间: ms-management/hosted/namespace.md
+    - 微服务列表:
+      - 创建微服务: ms-management/hosted/ms-list/create-ms.md
+      - 查看微服务详情: ms-management/hosted/ms-list/check-ms-details.md
+      - 管理微服务实例: ms-management/hosted/ms-list/manage-ms-instance.md
+      - 治理微服务流量: ms-management/hosted/ms-list/govern-ms-traffic.md
+      - 删除微服务: ms-management/hosted/ms-list/delete-ms.md
+    - 微服务治理策略:
+      - 流控规则: ms-management/hosted/governance-policy/traffic-control.md
+      - 降级规则: ms-management/hosted/governance-policy/degrade.md
+      - 热点规则: ms-management/hosted/governance-policy/hotspot.md
+      - 系统规则: ms-management/hosted/governance-policy/system.md
+      - 授权规则: ms-management/hosted/governance-policy/authorization.md
+      - 集群流控: ms-management/hosted/governance-policy/cluster-traffic-control.md
+    - 微服务配置中心:
+      - 创建配置: ms-management/hosted/config-center/create-config.md
+      - 导入/导出配置: ms-management/hosted/config-center/import-config.md
+      - 更新配置: ms-management/hosted/config-center/update-config.md
+      - 删除配置: ms-management/hosted/config-center/delete-config.md
+      - 恢复配置: ms-management/hosted/config-center/restore-config.md
+      - 监听查询: ms-management/hosted/config-center/search-listening.md
+      - 查看示例代码: ms-management/hosted/config-center/code-example.md
+    - 监控告警: ms-management/hosted/monitor&alert/README.md
+      - 业务监控: ms-management/hosted/monitor&alert/monitor-service.md
+      - 资源监控: ms-management/hosted/monitor&alert/monitor-resource.md
+    - 日志查看: ms-management/hosted/log.md
+    - 插件中心: ms-management/hosted/plugin-center.md
+  - 接入型注册中心:
+    - 接入注册中心: ms-management/integrated/integrate-registry.md
+    - 更新注册中心: ms-management/integrated/update-registry.md
+    - 查看微服务详情: ms-management/integrated/check-ms-details.md
+    - 微服务治理策略: ms-management/integrated/governance-policy.md
+    - 移除注册中心: ms-management/integrated/remove-registry.md
+- 微服务网关:
+  - 网关管理:
+    - 创建网关: ms-gateway/gateway/create-gateway.md
+    - 查看网关详情: ms-gateway/gateway/check-details.md
+    - 诊断网关: ms-gateway/gateway/delete-gateway.md
+    - 更新网关: ms-gateway/gateway/update-gateway.md
+    - 删除网关: ms-gateway/gateway/delete-gateway.md
+  - 服务管理: ms-gateway/service/README.md
+    - 接入服务: ms-gateway/service/add-service.md
+    - 删除服务: ms-gateway/service/delete-service.md
+    - 管理服务来源: ms-gateway/service/service-sources.md
+  - API:
+    - 管理 API: ms-gateway/api/manage-api.md
+    - 配置 API 策略: ms-gateway/api/api-policy.md
+  - 监控告警: ms-gateway/monitor&alert.md
+  - 日志管理: ms-gateway/log.md
+  - 插件中心: ms-gateway/plugin-center.md
+  - 域名:
+    - 管理域名: ms-gateway/domain/manage-domain.md
+    - 配置域名策略: ms-gateway/domain/domain-policy.md
+- 最佳实践: best-practice/README.md
+- 故障排查: 
+  - 注册配置问题: troubleshooting/registration&config/README.md
+  - 服务治理问题: troubleshooting/traffic-governance/README.md
+  - 网关管理问题: troubleshooting/gateway-management/README.md
+- 通用参考: 
+  - 微服务基础知识: reference/concepts.md
+  - 视频讲解和演示: reference/videos.md
