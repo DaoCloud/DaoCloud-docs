@@ -50,4 +50,3 @@
 
 - 提供了丰富的插件体系，扩充云容器集群功能，如：网络插件 Multus，Cillum, Contour 等组件 。
 
-![img](../images/ops-tech.png)
