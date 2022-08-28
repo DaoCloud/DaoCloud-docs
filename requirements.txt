@@ -54,6 +54,3 @@ watchdog==2.1.9
 wcmatch==8.4
 wheel==0.37.1
 zipp==3.8.1
-
-[notice] A new release of pip available: 22.1.2 -> 22.2.2
-[notice] To update, run: pip install --upgrade pip
