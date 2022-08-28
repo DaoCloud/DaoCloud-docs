@@ -283,76 +283,84 @@ nav:
             - 任务和实例: zh/insight/concepts/job-instance.md
             - 数据模型: zh/insight/concepts/models.md
             - 数据查询语言: zh/insight/concepts/promql.md
-      - 微服务治理:
-          - 介绍:
-              - 功能总览: zh/skoala/intro/features.md
-              - 使用场景: zh/skoala/intro/scenarios.md
-              - 竞争优势: zh/skoala/intro/advantages.md  
-              - 系统架构: zh/skoala/intro/architecture.md
-              - 组件版本: zh/skoala/intro/components.md
-              - 名词解释: zh/skoala/intro/GLOSSARY.md
-          - 微服务管理:
-              - 托管注册中心管理: zh/skoala/ms-management/hosted/create-registry.md
-              - 微服务命名空间: zh/skoala/ms-management/hosted/namespace.md
-          - 微服务网关:
-              - 网关管理:
-                  - 创建网关: zh/skoala/ms-gateway/gateway/create-gateway.md
-                  - 查看网关详情: zh/skoala/ms-gateway/gateway/check-details.md
-                  - 诊断网关: zh/skoala/ms-gateway/gateway/delete-gateway.md
-                  - 更新网关: zh/skoala/ms-gateway/gateway/update-gateway.md
-                  - 删除网关: zh/skoala/ms-gateway/gateway/delete-gateway.md
-              - API:
-                  - 管理 API: zh/skoala/ms-gateway/api/manage-api.md
-                  - 配置 API 策略: zh/skoala/ms-gateway/api/api-policy.md
-              - 域名:
-                  - 管理域名: zh/skoala/ms-gateway/domain/manage-domain.md
-                  - 配置域名策略: zh/skoala/ms-gateway/domain/domain-policy.md
+      - 应用工作台:
+        - 介绍:
+          - 什么是应用工作台？: zh/amamba/01ProductBrief/WhatisAmamba.md
+          - 功能总览: zh/amamba/01ProductBrief/Features.md
+          - 产品优势: zh/amamba/01ProductBrief/Benefits.md
+          - 适用场景: zh/amamba/01ProductBrief/Scenarios.md
+          - 使用约束: zh/amamba/01ProductBrief/Conventions.md
+          - 基本概念: zh/amamba/01ProductBrief/Concepts.md
+        - 快速创建流水线: zh/amamba/02QuickStart/deploypiplibe.md
+        - 应用的部署:
+          - 从 Git 代码构建应用: zh/amamba/03UserGuide/Deployapp/deployappfromgit.md
+          - 从 Jar 包构建应用: zh/amamba/03UserGuide/Deployapp/deployappfromjar.md
+          - 从 Yaml 部署应用: zh/amamba/03UserGuide/Deployapp/deployappfromyaml.md
+          - 从镜像部署应用: zh/amamba/03UserGuide/Deployapp/deployappfromimage.md
+          - 从 Helm Charts 部署应用: zh/amamba/03UserGuide/Deployapp/deployappfromhelm.md
+        - 基于微服务的应用:
+          - 部署基于微服务的应用: zh/amamba/03UserGuide/MicroServiceApp/deploymicroserviceapp.md
+          - 使用微服务注册发现能力: zh/amamba/03UserGuide/MicroServiceApp/microserviceregistry.md
+          - 使用微服务治理能力: zh/amamba/03UserGuide/MicroServiceApp/microservicegovernance.md
+        - 流水线:
+          - 自定义创建流水线: zh/amamba/03UserGuide/Pipeline/createpipelinebyself.md
+          - 使用 Jenkinsfile 创建单代码分支流水线: zh/amamba/03UserGuide/Pipeline/createpipelinebyjenkins.md
+          - 使用图形化编辑流水线流水线: zh/amamba/03UserGuide/Pipeline/graphicaleditingpipeline.md
+          - 凭证管理: zh/amamba/03UserGuide/Pipeline/Credential.md
+          - 流水线配置: zh/amamba/03UserGuide/Pipeline/pipelinesettings.md
+          - 流水线配置参数:
+            - 流水线中的概念: zh/amamba/03UserGuide/Pipeline/PipelineConfig/PipelineConcept.md
+            - 图形化任务模板参数说明: zh/amamba/03UserGuide/Pipeline/PipelineConfig/PipelineStep.md
+        - 灰度发布:
+          - 蓝绿发布: zh/amamba/03UserGuide/Greydeploy/blue-green.md
+          - 金丝雀发布: zh/amamba/03UserGuide/Greydeploy/canary.md
+          - A/B 测试: zh/amamba/03UserGuide/Greydeploy/ABtest.md 
       - 服务网格:
         - 介绍:
-          - 什么是服务网格: 01Intro/What'smSpider.md
-          - 功能总览: 01Intro/Features.md
-          - 产品优势: 01Intro/Benefits.md
-          - 系统架构: 01Intro/Architecture.md
-          - 适用场景: 01Intro/Scenarios.md
-          - 常见术语: 01Intro/Glossary.md
+          - 什么是服务网格: zh/mspider/01Intro/What'smSpider.md
+          - 功能总览: zh/mspider/01Intro/Features.md
+          - 产品优势: zh/mspider/01Intro/Benefits.md
+          - 系统架构: zh/mspider/01Intro/Architecture.md
+          - 适用场景: zh/mspider/01Intro/Scenarios.md
+          - 常见术语: zh/mspider/01Intro/Glossary.md
         - 创建/删除网格:
-          - 创建托管网格: 03UserGuide/servicemesh/createmanaged.md
-          - 创建专用网格: 03UserGuide/servicemesh/creatededicated.md
-          - 删除网格: 03UserGuide/servicemesh/delete.md
-        - 服务管理: 03UserGuide/01ServiceList/README.md
+          - 创建托管网格: zh/mspider/03UserGuide/servicemesh/createmanaged.md
+          - 创建专用网格: zh/mspider/03UserGuide/servicemesh/creatededicated.md
+          - 删除网格: zh/mspider/03UserGuide/servicemesh/delete.md
+        - 服务管理: zh/mspider/03UserGuide/01ServiceList/README.md
         - 流量治理:
-          - 虚拟服务: 03UserGuide/02TrafficGovernance/VirtualService.md
-          - 目标规则: 03UserGuide/02TrafficGovernance/TargetRules.md
-          - 网关规则: 03UserGuide/02TrafficGovernance/GatewayRules.md
-          - 虚拟服务参数配置: 03UserGuide/02TrafficGovernance/vsparams.md
+          - 虚拟服务: zh/mspider/03UserGuide/02TrafficGovernance/VirtualService.md
+          - 目标规则: zh/mspider/03UserGuide/02TrafficGovernance/TargetRules.md
+          - 网关规则: zh/mspider/03UserGuide/02TrafficGovernance/GatewayRules.md
+          - 虚拟服务参数配置: zh/mspider/03UserGuide/02TrafficGovernance/vsparams.md
         - 安全治理:
-          - 对等身份认证: 03UserGuide/05Security/peer.md
-          - 请求身份认证: 03UserGuide/05Security/request.md
-          - 授权策略: 03UserGuide/05Security/authorize.md
-          - 安全治理参数配置: 03UserGuide/05Security/params.md
+          - 对等身份认证: zh/mspider/03UserGuide/05Security/peer.md
+          - 请求身份认证: zh/mspider/03UserGuide/05Security/request.md
+          - 授权策略: zh/mspider/03UserGuide/05Security/authorize.md
+          - 安全治理参数配置: zh/mspider/03UserGuide/05Security/params.md
         - 边车管理:
-          - 命名空间边车管理: 03UserGuide/07SidecarManagement/NamespaceSidecar.md
-          - 工作负载边车管理: 03UserGuide/07SidecarManagement/WorkloadSidecar.md
-          - 全局边车管理: 03UserGuide/07SidecarManagement/GlobalSidecar.md
+          - 命名空间边车管理: zh/mspider/03UserGuide/07SidecarManagement/NamespaceSidecar.md
+          - 工作负载边车管理: zh/mspider/03UserGuide/07SidecarManagement/WorkloadSidecar.md
+          - 全局边车管理: zh/mspider/03UserGuide/07SidecarManagement/GlobalSidecar.md
         - 流量监控:
-          - 全局监控: 03UserGuide/06TrafficMonitor/global-monitor.md
-          - 服务监控: 03UserGuide/06TrafficMonitor/service-monitor.md
-          - 工作负载监控: 03UserGuide/06TrafficMonitor/workload-monitor.md
-          - 性能监控: 03UserGuide/06TrafficMonitor/perf-monitor.md
+          - 全局监控: zh/mspider/03UserGuide/06TrafficMonitor/global-monitor.md
+          - 服务监控: zh/mspider/03UserGuide/06TrafficMonitor/service-monitor.md
+          - 工作负载监控: zh/mspider/03UserGuide/06TrafficMonitor/workload-monitor.md
+          - 性能监控: zh/mspider/03UserGuide/06TrafficMonitor/perf-monitor.md
         - 网格网关:
-          - 创建网格网关: 03UserGuide/09GatewayInstance/create.md
-          - 删除网格网关: 03UserGuide/09GatewayInstance/delete.md
+          - 创建网格网关: zh/mspider/03UserGuide/09GatewayInstance/create.md
+          - 删除网格网关: zh/mspider/03UserGuide/09GatewayInstance/delete.md
         - 集群纳管:
-          - 添加集群: 03UserGuide/08ClusterManagement/join-clus.md
-          - 移除集群: 03UserGuide/08ClusterManagement/remov-clus.md
+          - 添加集群: zh/mspider/03UserGuide/08ClusterManagement/join-clus.md
+          - 移除集群: zh/mspider/03UserGuide/08ClusterManagement/remov-clus.md
         - 网格配置:
-          - 网格命名空间: 03UserGuide/10MeshConfiguration/MeshNamespace.md
-          - 系统组件管理: 03UserGuide/10MeshConfiguration/SystemComponents.md
-          - Istio 资源管理: 03UserGuide/10MeshConfiguration/IstioResources.md
+          - 网格命名空间: zh/mspider/03UserGuide/10MeshConfiguration/MeshNamespace.md
+          - 系统组件管理: zh/mspider/03UserGuide/10MeshConfiguration/SystemComponents.md
+          - Istio 资源管理: zh/mspider/03UserGuide/10MeshConfiguration/IstioResources.md
         - 基础知识:
-          - 流量治理: 06Reference/concepts/traffic.md
-          - 虚拟服务: 06Reference/concepts/virtual-service.md
-        - 常见问题: 07faq.md
+          - 流量治理: zh/mspider/06Reference/concepts/traffic.md
+          - 虚拟服务: zh/mspider/06Reference/concepts/virtual-service.md
+        - 常见问题: zh/mspider/07faq.md
       - 中间件:
           - RabbitMQ 消息队列:
               - 什么是 RabbitMQ: zh/middleware/rabbitmq/intro/what.md
