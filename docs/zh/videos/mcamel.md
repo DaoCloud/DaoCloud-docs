@@ -5,5 +5,5 @@
 ## RabbitMQ 消息实例管理
 
 <div class="responsive-video-container">
-<iframe src="http://harbor-test2.cn-sh2.ufileos.com/docs/videos/RabbitMQ-instance-management.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/RabbitMQ-instance-management.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
