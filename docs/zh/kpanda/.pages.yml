@@ -1,4 +1,5 @@
-title: 容器管理
+site_name: kpanda
+docs_dir: ./
 nav:
   - index.md
   - 容器管理介绍:

@@ -315,6 +315,101 @@ nav:
           - 蓝绿发布: zh/amamba/03UserGuide/Greydeploy/blue-green.md
           - 金丝雀发布: zh/amamba/03UserGuide/Greydeploy/canary.md
           - A/B 测试: zh/amamba/03UserGuide/Greydeploy/ABtest.md 
+      - 多云编排:
+        - 介绍:
+          - 什么是多云编排: zh/kairship/01product/whatiskair.md
+          - 功能总览: zh/kairship/01product/features.md
+          - 功能架构: zh/kairship/01product/architecture.md
+          - 产品优势: zh/kairship/01product/benefits.md
+          - 适用场景: zh/kairship/01product/scenarios.md
+          - 基本概念: zh/kairship/01product/concepts.md
+        - 准备及安装:
+          - 普通安装: zh/kairship/02install/normal.md
+          - kubectl 安装: zh/kairship/02install/kubectl.md
+          - 镜像安装: zh/kairship/02install/image.md
+        - 多云实例管理:
+          - 添加实例: zh/kairship/03instance/add.md
+          - 切换实例: zh/kairship/03instance/change.md
+          - 删除实例: zh/kairship/03instance/delete.md
+        - 工作集群管理:
+          - 接入集群: zh/kairship/04cluster/join.md
+          - 移除集群: zh/kairship/04cluster/remove.md
+        - 多云工作负载:
+          - 镜像创建: zh/kairship/05workload/image.md
+          - YAML创建: zh/kairship/05workload/yaml.md
+        - 资管管理:
+          - 多云服务与路由: zh/kairship/06resource/ingress.md
+          - 多云命名空间: zh/kairship/06resource/namespace.md
+          - 多云存储声明: zh/kairship/06resource/storage.md
+          - 多云配置与密钥: zh/kairship/06resource/configmap.md
+        - 策略管理:
+          - 部署策略: zh/kairship/07policy/deploy.md
+          - 差异化策略: zh/kairship/07policy/different.md
+      - 微服务治理:
+        - 介绍:
+          - 功能总览: zh/skoala/intro/features.md
+          - 使用场景: zh/skoala/intro/scenarios.md
+          - 产品优势: zh/skoala/intro/advantages.md  
+          - 系统架构: zh/skoala/intro/architecture.md
+          - 组件版本: zh/skoala/intro/components.md
+          - 名词解释: zh/skoala/intro/GLOSSARY.md
+        - 微服务管理:
+          - 托管型注册中心:
+            - 托管注册中心管理: zh/skoala/ms-management/hosted/create-registry.md
+            - 微服务命名空间: zh/skoala/ms-management/hosted/namespace.md
+            - 微服务列表:
+              - 创建微服务: zh/skoala/ms-management/hosted/ms-list/create-ms.md
+              - 查看微服务详情: zh/skoala/ms-management/hosted/ms-list/check-ms-details.md
+              - 管理微服务实例: zh/skoala/ms-management/hosted/ms-list/manage-ms-instance.md
+              - 治理微服务流量: zh/skoala/ms-management/hosted/ms-list/govern-ms-traffic.md
+              - 删除微服务: zh/skoala/ms-management/hosted/ms-list/delete-ms.md
+            - 微服务治理策略:
+              - 流控规则: zh/skoala/ms-management/hosted/governance-policy/traffic-control.md
+              - 降级规则: zh/skoala/ms-management/hosted/governance-policy/degrade.md
+              - 热点规则: zh/skoala/ms-management/hosted/governance-policy/hotspot.md
+              - 系统规则: zh/skoala/ms-management/hosted/governance-policy/system.md
+              - 授权规则: zh/skoala/ms-management/hosted/governance-policy/authorization.md
+              - 集群流控: zh/skoala/ms-management/hosted/governance-policy/cluster-traffic-control.md
+            - 微服务配置中心:
+              - 创建配置: zh/skoala/ms-management/hosted/config-center/create-config.md
+              - 导入/导出配置: zh/skoala/ms-management/hosted/config-center/import-config.md
+              - 更新配置: zh/skoala/ms-management/hosted/config-center/update-config.md
+              - 删除配置: zh/skoala/ms-management/hosted/config-center/delete-config.md
+              - 恢复配置: zh/skoala/ms-management/hosted/config-center/restore-config.md
+              - 监听查询: zh/skoala/ms-management/hosted/config-center/search-listening.md
+              - 查看示例代码: zh/skoala/ms-management/hosted/config-center/code-example.md
+            - 监控告警:
+              - 业务监控: zh/skoala/ms-management/hosted/monitor&alert/monitor-service.md
+              - 资源监控: zh/skoala/ms-management/hosted/monitor&alert/monitor-resource.md
+            - 日志查看: zh/skoala/ms-management/hosted/log.md
+            - 插件中心: zh/skoala/ms-management/hosted/plugin-center.md
+          - 接入型注册中心:
+            - 接入注册中心: zh/skoala/ms-management/integrated/integrate-registry.md
+            - 更新注册中心: zh/skoala/ms-management/integrated/update-registry.md
+            - 查看微服务详情: zh/skoala/ms-management/integrated/check-ms-details.md
+            - 微服务治理策略: zh/skoala/ms-management/integrated/governance-policy.md
+            - 移除注册中心: zh/skoala/ms-management/integrated/remove-registry.md
+        - 微服务网关:
+          - 网关管理:
+            - 创建网关: zh/skoala/ms-gateway/gateway/create-gateway.md
+            - 查看网关详情: zh/skoala/ms-gateway/gateway/check-details.md
+            - 诊断网关: zh/skoala/ms-gateway/gateway/delete-gateway.md
+            - 更新网关: zh/skoala/ms-gateway/gateway/update-gateway.md
+            - 删除网关: zh/skoala/ms-gateway/gateway/delete-gateway.md
+          - 服务管理:
+            - 接入服务: zh/skoala/ms-gateway/service/add-service.md
+            - 删除服务: zh/skoala/ms-gateway/service/delete-service.md
+            - 管理服务来源: zh/skoala/ms-gateway/service/service-sources.md
+          - API:
+            - 管理 API: zh/skoala/ms-gateway/api/manage-api.md
+            - 配置 API 策略: zh/skoala/ms-gateway/api/api-policy.md
+          - 监控告警: zh/skoala/ms-gateway/monitor&alert.md
+          - 日志管理: zh/skoala/ms-gateway/log.md
+          - 插件中心: zh/skoala/ms-gateway/plugin-center.md
+          - 域名:
+            - 管理域名: zh/skoala/ms-gateway/domain/manage-domain.md
+            - 配置域名策略: zh/skoala/ms-gateway/domain/domain-policy.md
+        - 微服务基础知识: zh/skoala/reference/concepts.md
       - 服务网格:
         - 介绍:
           - 什么是服务网格: zh/mspider/01Intro/What'smSpider.md
