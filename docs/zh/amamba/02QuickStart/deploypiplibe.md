@@ -4,8 +4,8 @@
 
 ## 前提条件
 
-- 您需要创建一个工作空间和一个用户，必须邀请该用户至工作空间中且赋予 `workspace edit` 角色。可参考[创建工作空间](https://ndx.gitpages.daocloud.io/ghippo/zh/02QuickStart/CreateWorkspace.html)、[用户和角色](https://ndx.gitpages.daocloud.io/ghippo/zh/02QuickStart/CreateUser.html)。
-- 创建可以访问镜像仓库、集群的两个凭证，分别命名为：`registry`、`kubeconfig`，创建凭证的更多信息，请参考[凭证管理](credential.md)。
+- 您需要创建一个工作空间和一个用户，必须邀请该用户至工作空间中且赋予 `workspace edit` 角色。可参考[创建工作空间](../../ghippo/04UserGuide/02Workspace/Workspaces.md)、[用户和角色](../../ghippo/04UserGuide/01UserandAccess/User.md)。
+- 创建可以访问镜像仓库、集群的两个凭证，分别命名为：`registry`、`kubeconfig`，创建凭证的更多信息，请参考[凭证管理](../03UserGuide/Pipeline/Credential.md)。
 - 准备一个GitHub 仓库、DockerHub 仓库。
 
 ## 创建凭证
@@ -111,4 +111,3 @@
 2. 在弹出的对话框中输入步骤二中的示例参数。点击`确定`即可成功运行该流水线。
 
    ![build-para](../images/build-para.png)
-

@@ -10,8 +10,8 @@
 
 支持两种创建方式：
 
-1. 图形化创建
-2. 通过 YAML 创建
+- 图形化创建
+- 通过 YAML 创建
 
 ## 前提条件
 
@@ -19,17 +19,16 @@
 
 - 已完成一个[命名空间的创建](../Namespaces/README.md)、[用户的创建]()，并将用户授权为`NS Edit`角色 ，详情可参考[命名空间授权]()
 
-## 操作步骤
-
-### 图形化创建
+## 图形化创建
 
 1. 点击一个集群名称，进入`集群详情`。
+
   ![集群详情](../../images/deploy01.png)
+2. 在左侧导航栏，点击`配置与密钥`，点击右上角`创建配置项`按钮。
 
-2. 在左侧导航栏，点击`配置与密钥`，点击右上角`创建配置项`按钮，
   ![创建配置项](../../images/config01.png)
-
 3. 在`创建配置项`页面中，参照下表配置参数后，点击`确定`。
+
   ![创建配置项](../../images/config02.png)
 
 | 参数         | 参数说明                                                     |
@@ -42,37 +41,38 @@
 | 标签         | 【类型】可选<br />【含义】标签其实就一对 Key/Value，被关联到对象上，比如 Pod。标签的使用我们倾向于能够标示对象的特殊特点，并且对用户而言是有意义的，但是标签对内核系统是没有直接意义的。 |
 | 注解         | 【类型】可选<br />【含义】注解（Annotation ）可以将 Kubernetes 资源对象关联到任意的非标识性元数据。可以通过注解检索到这些元数据。 |
 
-### 通过 YAML 创建
+## 通过 YAML 创建
 
 1. 点击一个集群名称，进入`集群详情`。
+
   ![集群详情](../../images/deploy01.png)
-
 2. 在左侧导航栏，点击`配置与密钥`，点击右上角`YAML 创建`按钮，
-  ![YAML 创建](../../images/config03.png)
 
+  ![YAML 创建](../../images/config03.png)
 3. 在 `YAML 创建`页面中，填写 YAML 语句后，点击`确定`。
+
   ![YAML 创建](../../images/config04.png)
 
-**配置项示例：**
+  **配置项示例：**
 
-```yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: game-demo
-data:
-  # 类属性键；每一个键都映射到一个简单的值
-  player_initial_lives: "3"
-  ui_properties_file_name: "user-interface.properties"
+  ```yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: game-demo
+  data:
+    # 类属性键；每一个键都映射到一个简单的值
+    player_initial_lives: "3"
+    ui_properties_file_name: "user-interface.properties"
 
-  # 类文件键
-  game.properties: |
-    enemy.types=aliens,monsters
-    player.maximum-lives=5    
-  user-interface.properties: |
-    color.good=purple
-    color.bad=yellow
-    allow.textmode=true  
-```
+    # 类文件键
+    game.properties: |
+      enemy.types=aliens,monsters
+      player.maximum-lives=5    
+    user-interface.properties: |
+      color.good=purple
+      color.bad=yellow
+      allow.textmode=true  
+  ```
 
-有关配置项的使用说明，请参考[使用配置项](UsedConfigMap.md)。
+  有关配置项的使用说明，请参考[使用配置项](UsedConfigMap.md)。
