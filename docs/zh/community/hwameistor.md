@@ -1,15 +1,7 @@
-# 开源社区
+# 本地存储解决方案
 
-- [Merbridge](https://merbridge.io/)：使用 eBPF 加速你的服务网格，就像利用虫洞在网络世界中穿梭
+传送门：[HwameiStor](https://hwameistor.io/)
 
-- [KLTS](https://klts.io/)：对 k8s 1.10 到（最新版本 - 0.03）的持续维护
+HwameiStor 是一款 Kubernetes 原生的容器附加存储 (CAS) 解决方案，将 HDD、SSD 和 NVMe 磁盘形成本地存储资源池进行统一管理，使用 CSI 架构提供分布式的本地数据卷服务，为有状态的云原生应用或组件提供数据持久化能力。
 
-- [Clusterpedia](https://clusterpedia.io/)：Kubernetes 多集群资源一站式百科全书
-
-- [HwameiStor](https://hwameistor.io/)：画眉鸟本地存储
-
-- [cloudtty](https://github.com/cloudtty/cloudtty)：第一个开源的 k8s 网页版控制台
-
-- [spiderpool](https://github.com/spidernet-io)：云原生网络方案
-
-- [Kubean](https://github.com/kubean-io/kubean)：集群生命周期管理
+[系统架构](images/hwa.png)
