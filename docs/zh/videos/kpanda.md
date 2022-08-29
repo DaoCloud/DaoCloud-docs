@@ -5,5 +5,11 @@
 ## 接入集群
 
 <div class="responsive-video-container">
-<iframe src="http://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-cluster.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-cluster.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+
+## 创建无状态负载
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-deployment.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
