@@ -8,7 +8,7 @@
 
 - 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
 
-- 已完成一个[命名空间的创建]()、[用户的创建]()，并将用户授权为`NS Edit`角色 ，详情可参考[命名空间授权]()。
+- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为`NS Edit`角色 ，详情可参考[命名空间授权](../Namespaces/createns.md)。
 
 - 如果需要为StatefulSet挂载存储卷，需要先创建存储卷。
 
@@ -113,7 +113,7 @@
 1. 点击`创建服务`按钮。
   ![服务配置](../../images/deploy12.png)
 
-2. 选择访问服务的各项信息，具体详情请参考[创建服务]()。
+2. 选择访问服务的各项信息，具体详情请参考[创建服务](../ServicesandRoutes/CreatingServices.md)。
   ![创建服务](../../images/deploy13.png)
 
 3. 点击`确定`，点击`下一步`。
@@ -179,4 +179,4 @@ Kubernetes v1.7 及其之后的版本可以通过 **.spec.podManagementPolicy** 
 
 ## 7. 完成创建
 
-确认所有参数输入完成后，点击`创建`按钮，完成工作负载创建。等待工作负载状态变为`运行中`。如果工作负载状态出现异常，请查看具体异常信息，可参考[工作负载状态]()。
+确认所有参数输入完成后，点击`创建`按钮，完成工作负载创建。等待工作负载状态变为`运行中`。如果工作负载状态出现异常，请查看具体异常信息，可参考[工作负载状态](PodConfig/workload-status.md)。
