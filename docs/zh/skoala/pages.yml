@@ -71,11 +71,5 @@ nav:
   - 域名:
     - 管理域名: ms-gateway/domain/manage-domain.md
     - 配置域名策略: ms-gateway/domain/domain-policy.md
-- 最佳实践: best-practice/README.md
-- 故障排查: 
-  - 注册配置问题: troubleshooting/registration&config/README.md
-  - 服务治理问题: troubleshooting/traffic-governance/README.md
-  - 网关管理问题: troubleshooting/gateway-management/README.md
-- 通用参考: 
-  - 微服务基础知识: reference/concepts.md
-  - 视频讲解和演示: reference/videos.md
+- 微服务基础知识: reference/concepts.md
+

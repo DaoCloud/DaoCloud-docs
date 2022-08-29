@@ -10,26 +10,27 @@
 
 支持两种创建方式：
 
-1. 图形化创建
-2. 通过 YAML 创建
+- 图形化创建
+- 通过 YAML 创建
 
 ## 前提条件
 
-- 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes]()，且能够访问集群的 UI 界面
+- 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面
 
-- 已完成一个[命名空间的创建](../Namespaces/README.md)、[用户的创建]()，并将用户授权为`NS Edit`角色 ，详情可参考[命名空间授权]()
+- 已完成一个[命名空间的创建](../Namespaces/README.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为 `NS Edit` 角色 ，详情可参考[命名空间授权](../../../ghippo/04UserGuide/02Workspace/Workspaces.md)
 
 ## 操作步骤
 
 ### 图形化创建
 
 1. 用户成功登录平台后，点击一个集群名称，进入`集群详情`。
+
   ![集群详情](../../images/deploy01.png)
+2. 在左侧导航栏，点击`配置与密钥`->`密钥`，点击右上角`创建密钥`按钮。
 
-2. 在左侧导航栏，点击`配置与密钥`->`密钥`，点击右上角`创建密钥`按钮，
   ![创建密钥](../../images/secret01.png)
-
 3. 在`创建密钥`页面中，参照下表配置参数后，点击`确定`。
+
   ![创建密钥](../../images/secret02.png)
 
 | 参数     | 参数说明                                                     |
@@ -44,25 +45,26 @@
 ### 通过 YAML 创建
 
 1. 用户成功登录平台后，点击一个集群名称，进入`集群详情`。
+
   ![集群详情](../../images/deploy01.png)
+2. 在左侧导航栏，点击`配置与密钥`->`密钥`，点击右上角`YAML 创建`按钮。
 
-2. 在左侧导航栏，点击`配置与密钥`->`密钥`，点击右上角`YAML 创建`按钮，
   ![YAML 创建](../../images/secret03.png)
-
 3. 在`YAML 创建`页面中，参照下表配置参数后，点击`确定`。
+
   ![YAML 创建](../../images/secret04.png)
 
-**密钥示例：**
+  **密钥示例：**
 
-```yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: secretdemo
-type: Opaque
-data:
-  username: ******
-  password: ******
-```
+  ```yaml
+  apiVersion: v1
+  kind: Secret
+  metadata:
+    name: secretdemo
+  type: Opaque
+  data:
+    username: ******
+    password: ******
+  ```
 
-下一步：[使用配置](use-secret.md)。
+  下一步：[使用配置](use-secret.md)。
