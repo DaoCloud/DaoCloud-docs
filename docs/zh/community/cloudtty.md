@@ -1,5 +1,7 @@
 # cloudtty：一款专用于 Kubernetes 的 Cloud Shell Operator
 
+传送门：[cloudtty](https://github.com/cloudtty/cloudtty)
+
 cloudtty 是专为 Kubernetes 云原生环境打造的 Web 终端和 Cloud Shell Operator。
 通过 cloudtty，您可以轻松用浏览器打开一个终端窗口，操控多云资源。
 
