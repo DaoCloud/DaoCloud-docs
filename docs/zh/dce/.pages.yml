@@ -1,6 +1,5 @@
 nav:
   - DCE 产品介绍:
     - 什么是 DCE 5.0: what-is-dce.md
-    - DCE 生态模块: modules.md
     - 平台功能: features.md
     - 为什么选择 DCE: whyus.md
