@@ -16,7 +16,7 @@ nav:
   - 创建微服务网关: quick-start/create-gateway.md
   - 更新与升级: quick-start/update.md
 - 微服务管理:
-  - 托管型注册中心: ms-management/hosted/README.md
+  - 托管型注册中心:
     - 托管注册中心管理: ms-management/hosted/create-registry.md
     - 微服务命名空间: ms-management/hosted/namespace.md
     - 微服务列表:
@@ -40,7 +40,7 @@ nav:
       - 恢复配置: ms-management/hosted/config-center/restore-config.md
       - 监听查询: ms-management/hosted/config-center/search-listening.md
       - 查看示例代码: ms-management/hosted/config-center/code-example.md
-    - 监控告警: ms-management/hosted/monitor&alert/README.md
+    - 监控告警:
       - 业务监控: ms-management/hosted/monitor&alert/monitor-service.md
       - 资源监控: ms-management/hosted/monitor&alert/monitor-resource.md
     - 日志查看: ms-management/hosted/log.md
@@ -58,7 +58,7 @@ nav:
     - 诊断网关: ms-gateway/gateway/delete-gateway.md
     - 更新网关: ms-gateway/gateway/update-gateway.md
     - 删除网关: ms-gateway/gateway/delete-gateway.md
-  - 服务管理: ms-gateway/service/README.md
+  - 服务管理:
     - 接入服务: ms-gateway/service/add-service.md
     - 删除服务: ms-gateway/service/delete-service.md
     - 管理服务来源: ms-gateway/service/service-sources.md
