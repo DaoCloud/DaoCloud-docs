@@ -8,3 +8,4 @@ _book/
 public/
 scripts/config.py
 __pycache__
+.VSCodeCounter
