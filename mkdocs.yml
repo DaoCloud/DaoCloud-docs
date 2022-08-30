@@ -74,7 +74,7 @@ theme:
 plugins:
   - search:
       separator: '[\\s\\u200b\\-]'
-  - mermaid2
+  # - mermaid2
   - minify:
       minify_html: true
       minify_js: true
