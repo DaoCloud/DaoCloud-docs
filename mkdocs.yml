@@ -176,7 +176,6 @@ nav:
   - 帮助文档:
       - DCE 产品介绍:
           - 什么是 DCE5.0: zh/dce/what-is-dce.md
-          - DCE 生态模块: zh/dce/modules.md
           - 平台功能: zh/dce/features.md
           - 为什么选择 DCE: zh/dce/whyus.md
       - 容器管理:
