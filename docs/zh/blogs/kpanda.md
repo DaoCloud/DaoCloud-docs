@@ -7,7 +7,7 @@ Daocloud 第五代云容器管理 (Kpanda）是基于 Kubernetes 开源技术构
 实现多云与多集群统一化管理，进一步简化企业的应用上云流程，降低运维管理和人力成本。
 支持一键式创建 Kubernetes 集群，帮助企业快速搭建企业级的容器云平台。云容器管理的主要功能如下：
 
-![img](https://docimg10.docs.qq.com/image/JUM_hyfxTS7NfbPor7JE_A.jpeg?w=1280&h=254.9486652977413)
+![img](images/kpanda01.jpeg)
 
 **集群管理**
 
@@ -80,7 +80,7 @@ Daocloud 第五代云容器管理 (Kpanda）是基于 Kubernetes 开源技术构
 
   答：第五代容器管理兼容包括亚马逊云、谷歌云、信创架构、边云融合等任何基于标准 Kubeneters ApiServer 的发行版容器集群。
 
-  ![img](https://docimg9.docs.qq.com/image/QA72Lt7ZHMFqAt7vmq_Yhg.png?w=2560&h=939)
+  ![img](images/kpanda02.png)
 
 - 问：如应对跨集群的网络中断问题？
 
@@ -94,7 +94,7 @@ Daocloud 第五代云容器管理 (Kpanda）是基于 Kubernetes 开源技术构
 
   答：借助自研开源组件 ClusterPedia 通过在目标集群上安装 Agent 组件，结合 Watch 机制能够实时将目标集群的资源变动信息同步到容器管理集群的 ETCD 内。
 
-  ![img](https://docimg10.docs.qq.com/image/dWbFy7GLd2DVJqBOoTAWqQ.png?w=1280&h=555.9296947271046)
+  ![img](images/kpanda03.png)
 
 - 问：容器管理在第五代产品中的定位？
 
@@ -132,7 +132,7 @@ Daocloud 第五代云容器管理 (Kpanda）是基于 Kubernetes 开源技术构
 
 首先前往目标集群的控制节点上获取它的 **KubeConfig** 文件，然后在容器管理的**集群列表**处点击接入集群按钮，并将 KubeConfig 文件内的内容作为参数复制粘贴到**接入参数**的表单内，既完成了对一个集群的接入操作。
 
-![img](https://docimg5.docs.qq.com/image/mM_ipAhnPxGOz4Vz3ilM5A.png?w=1280&h=553.2691072575466)
+![img](images/kpanda04.png)
 
 **创建集群**
 
