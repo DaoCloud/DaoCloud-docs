@@ -501,8 +501,9 @@ nav:
       - 微服务引擎: zh/videos/skoala.md
       - 中间件: zh/videos/mcamel.md
   - 博客:
-      - DCE开发背景: zh/blogs/blog00.md
-      - eBPF与可观测性: zh/blogs/blog01.md
+      - DCE 开发背景: zh/blogs/blog00.md
+      - 5.0 容器管理能力介绍: zh/blogs/kpanda.md
+      - 5.0 资源管理能力介绍: zh/blogs/resource.md
   - 开源社区:
       - CloudTTY: zh/community/cloudtty.md
       - Clusterpedia: zh/community/clusterpedia.md
