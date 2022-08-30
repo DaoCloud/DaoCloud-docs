@@ -18,8 +18,9 @@
   <h1>{{ page.title | d(config.site_name, true)}}</h1>
 {% endif %}
 {{ page.content }}
-{% include "partials/source-file.html" %}
-{% include "partials/feedback.html" %}
+
+
+
    {% if page.meta and page.meta.nocomment %}
    {% else %}
    <!-- Utteranc.es -->
