@@ -504,6 +504,7 @@ nav:
       - DCE 开发背景: zh/blogs/blog00.md
       - 5.0 容器管理能力介绍: zh/blogs/kpanda.md
       - 5.0 资源管理能力介绍: zh/blogs/resource.md
+      - 5.0 应用工作台能力介绍: zh/blogs/amamba.md
   - 开源社区:
       - CloudTTY: zh/community/cloudtty.md
       - Clusterpedia: zh/community/clusterpedia.md
