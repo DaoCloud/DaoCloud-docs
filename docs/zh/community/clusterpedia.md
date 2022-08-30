@@ -4,7 +4,7 @@
 
 ## Clusterpedia 入选云原生全景图
 
-在 CNCF 最新发布的云原生全景图 (Cloud Native Landscape) 中，Clusterpedia入选Orchestration & Management (编排与管理) 层的 Scheduling & Orchestration (调度与编排) 象限，成为 CNCF 推荐的云原生多集群复杂检索工具。
+在 CNCF 最新发布的云原生全景图 (Cloud Native Landscape) 中，Clusterpedia 入选 Orchestration & Management (编排与管理) 层的 Scheduling & Orchestration (调度与编排) 象限，成为 CNCF 推荐的云原生多集群复杂检索工具。
 
 <a href="https://landscape.cncf.io/card-mode?category=scheduling-orchestration&grouping=category&selected=clusterpedia"><img class="aligncenter wp-image-7957 size-full" src="https://p26.toutiaoimg.com/origin/tos-cn-i-qvj2lq49k0/3871965400044875af28b263a790504c"  alt="" width="800" height="500" data-tag="bdshare"></a>
 
