@@ -506,7 +506,7 @@ nav:
       - 5.0 多云编排能力介绍: zh/blogs/kairship.md
       - 5.0 服务网格能力介绍: zh/blogs/mspider.md
   - 开源社区:
-      - DaoCloud 开源生态: index.md
+      - DaoCloud 开源生态: zh/community/index.md
       - CloudTTY: zh/community/cloudtty.md
       - Clusterpedia: zh/community/clusterpedia.md
       - HwameiStor: zh/community/hwameistor.md
