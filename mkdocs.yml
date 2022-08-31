@@ -198,17 +198,26 @@ nav:
               - 通过镜像创建定时任务: zh/kpanda/07UserGuide/Workloads/CreateCronJobByImage.md
               - 通过镜像创建任务: zh/kpanda/07UserGuide/Workloads/CreateJobByImage.md
               - 参数配置说明:
+                  - 工作负载状态: zh/kpanda/07UserGuide/Workloads/PodConfig/workload-status.md
                   - 任务的参数说明: zh/kpanda/07UserGuide/Workloads/PodConfig/JobParameters.md
                   - 生命周期: zh/kpanda/07UserGuide/Workloads/PodConfig/lifescycle.md
                   - 环境变量: zh/kpanda/07UserGuide/Workloads/PodConfig/EnvironmentVariables.md
                   - 健康检查: zh/kpanda/07UserGuide/Workloads/PodConfig/healthcheck.md
                   - 集群调度: zh/kpanda/07UserGuide/Workloads/PodConfig/SchedulingPolicy.md
+          - Helm 应用:
+              - Helm 概述: zh/kpanda/07UserGuide/helm/README.md
+              - 管理 Helm 应用: zh/kpanda/07UserGuide/helm/helm-app.md
+              - 管理 Helm 仓库: zh/kpanda/07UserGuide/helm/helm-repo.md
           - 服务与路由:
               - 创建服务: zh/kpanda/07UserGuide/ServicesandRoutes/CreatingServices.md
               - 创建路由: zh/kpanda/07UserGuide/ServicesandRoutes/CreatingIngress.md
+          - 自定义资源:
+              - 创建自定义资源: zh/kpanda/07UserGuide/CustomResources/create.md
           - 配置与密钥:
-              - 创建配置项: zh/kpanda/07UserGuide/ConfigMapsandSecrets/CreatConfigMap.md
+              - 创建密钥: zh/kpanda/07UserGuide/ConfigMapsandSecrets/create-secret.md
+              - 使用密钥: zh/kpanda/07UserGuide/ConfigMapsandSecrets/use-secret.md
               - 使用配置项: zh/kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md
+          - 创建命名空间: zh/kpanda/07UserGuide/Namespaces/createns.md
       - 全局管理:
         - 介绍:
           - 什么是全局管理: zh/ghippo/01ProductBrief/WhatisGhippo.md
@@ -224,25 +233,20 @@ nav:
           - zh/ghippo/04UserGuide/01UserandAccess/Role.md
           - 全局管理角色: zh/ghippo/04UserGuide/01UserandAccess/global.md
           - 资源管理（按角色）: zh/ghippo/04UserGuide/01UserandAccess/resource02.md
-          - 自定义角色: zh/ghippo/04UserGuide/01UserandAccess/customrole.md
         - 身份提供商: 
           - zh/ghippo/04UserGuide/01UserandAccess/idprovider.md
           - LDAP: zh/ghippo/04UserGuide/01UserandAccess/ldap.md
           - OIDC: zh/ghippo/04UserGuide/01UserandAccess/oidc.md
         - 工作空间与层级: 
           - zh/ghippo/04UserGuide/02Workspace/README.md
-          - 层级管理: zh/ghippo/04UserGuide/02Workspace/Folder.md
           - 工作空间管理: zh/ghippo/04UserGuide/02Workspace/Workspaces.md
           - 资源绑定: zh/ghippo/04UserGuide/02Workspace/Resources.md
         - 审计日志: zh/ghippo/04UserGuide/03AuditLog.md
         - 平台设置:
-          - 安全策略: zh/ghippo/04UserGuide/04PlatformSetting/policy.md
           - 密码重置: zh/ghippo/06Troubleshooting/password.md
           - 邮箱服务器设置: zh/ghippo/04UserGuide/04PlatformSetting/MailServer.md
           - 外观定制: zh/ghippo/04UserGuide/04PlatformSetting/Appearance.md
-          - 正版授权: zh/ghippo/04UserGuide/04PlatformSetting/license.md
           - 关于平台: zh/ghippo/04UserGuide/04PlatformSetting/about.md
-        - 消息盒子: zh/ghippo/04UserGuide/message.md
         - 个人中心:
           - 安全设置: zh/ghippo/04UserGuide/06PersonalCenter/SecuritySetting.md
           - 访问密钥: zh/ghippo/04UserGuide/06PersonalCenter/Password.md
@@ -276,7 +280,9 @@ nav:
           - 系统配置:
             - 系统配置: zh/insight/06UserGuide/08systemconfig/systemconfig.md
             - 修改配置: zh/insight/06UserGuide/08systemconfig/modifyconfig.md
-          - 常见问题: zh/insight/09FAQs/README.md
+          - 常见问题: 
+            - zh/insight/09FAQs/README.md
+            - 收集采集日志: zh/insight/09FAQs/collectauditlog.md
           - 可观测基本概念:
             - 指标类型: zh/insight/concepts/metrics.md
             - 任务和实例: zh/insight/concepts/job-instance.md
@@ -306,7 +312,6 @@ nav:
           - 使用 Jenkinsfile 创建单代码分支流水线: zh/amamba/03UserGuide/Pipeline/createpipelinebyjenkins.md
           - 使用图形化编辑流水线流水线: zh/amamba/03UserGuide/Pipeline/graphicaleditingpipeline.md
           - 凭证管理: zh/amamba/03UserGuide/Pipeline/Credential.md
-          - 流水线配置: zh/amamba/03UserGuide/Pipeline/pipelinesettings.md
           - 流水线配置参数:
             - 流水线中的概念: zh/amamba/03UserGuide/Pipeline/PipelineConfig/PipelineConcept.md
             - 图形化任务模板参数说明: zh/amamba/03UserGuide/Pipeline/PipelineConfig/PipelineStep.md
