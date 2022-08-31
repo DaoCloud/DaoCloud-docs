@@ -2,6 +2,7 @@
   This file was automatically generated - do not edit
 -#}
 {% extends "overrides/main.html" %}
+
 {% block htmltitle %}
   <title>{{ config.site_name }}</title>
 {% endblock %}
@@ -14,7 +15,12 @@
 {% block hero %}
   {% include "overrides/partials/parallax.html" %}
 {% endblock %}
+
 {% block tabs %}{% endblock %}
+
+{#-
 {% block content %}{% endblock %}
+
 {% block footer %}{% endblock %}
 
+-#}
