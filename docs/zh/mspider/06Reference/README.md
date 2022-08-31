@@ -3,5 +3,4 @@
 本节列出有关服务网格的基础知识、常见术语和精心制作的一些视频教程。
 
 - [基础知识](concepts/README.md)
-- [常见术语](Glossary.md)
 - [视频教程](Videos.md)

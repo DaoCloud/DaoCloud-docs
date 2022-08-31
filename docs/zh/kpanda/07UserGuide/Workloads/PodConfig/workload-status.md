@@ -8,7 +8,7 @@
 - [任务](../CreateJobByImage.md)
 - [定时任务](../CreateCronJobByImage.md)
 
-您也可以通过设置[自定义资源 CRD](../../CustomResources/README.md) 来实现对工作负载资源的扩展。在第五代容器管理中，支持对工作负载进行创建、更新、扩容、监控、日志、删除、版本管理等全生命周期管理。
+您也可以通过设置[自定义资源 CRD](../../CustomResources/create.md) 来实现对工作负载资源的扩展。在第五代容器管理中，支持对工作负载进行创建、更新、扩容、监控、日志、删除、版本管理等全生命周期管理。
 
 ## Pod 状态
 
