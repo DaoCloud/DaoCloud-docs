@@ -15,7 +15,7 @@
 
 2. 点击列表`集群名称`进入采集配置详情。
 
-  ![集群列表](../../images/service-discovery.png)
+  ![集群列表](../../images/service-discover.png)
 
 3. 点击链接跳转到`容器管理` 中创建 Service Monitor。
 

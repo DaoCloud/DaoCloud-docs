@@ -354,7 +354,6 @@ nav:
           - 功能总览: zh/skoala/intro/features.md
           - 使用场景: zh/skoala/intro/scenarios.md
           - 产品优势: zh/skoala/intro/advantages.md  
-          - 系统架构: zh/skoala/intro/architecture.md
           - 组件版本: zh/skoala/intro/components.md
           - 名词解释: zh/skoala/intro/GLOSSARY.md
         - 微服务管理:
@@ -485,7 +484,7 @@ nav:
               - 删除 Elasticsearch 实例: zh/middleware/elastic-search/userguide/delete.md
               - Elasticsearch 集群容量规划: zh/middleware/elastic-search/userguide/cluster-capacity-plan.md
               - 查看列表: zh/middleware/elastic-search/userguide/view.md
-              - 概览: zh/middleware/userguide/elastic-search/basic.md
+              - 概览: zh/middleware/elastic-search/userguide/basic.md
               - 实例监控: zh/middleware/elastic-search/userguide/monitor.md
           - MySQL 数据库:
               - 什么是 MySQL: zh/middleware/mysql/intro/what.md

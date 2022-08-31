@@ -5,7 +5,7 @@
 ## 前提条件
 
 - 您需要创建一个工作空间和一个用户，必须邀请该用户至工作空间中且赋予 `workspace edit` 角色。可参考[创建工作空间](https://ndx.gitpages.daocloud.io/ghippo/zh/02QuickStart/CreateWorkspace.html)、[用户和角色](https://ndx.gitpages.daocloud.io/ghippo/zh/02QuickStart/CreateUser.html)。
-- 创建可以访问代码仓库、镜像仓库、集群的三个凭证，创建凭证的更多信息，请参考[凭证管理](credential.md)。
+- 创建可以访问代码仓库、镜像仓库、集群的三个凭证，创建凭证的更多信息，请参考[凭证管理](Credential.md)。
 - 创建一条自定义流水线，请参考[创建自定义流水线](createpipelinebyself.md)，其中创建自定义流水线时需要在构建参数中添加两个字符串参数，这些参数将用于镜像构建的命令中。参数说明如下：
 
 | 参数类型 | 参数名称 | 描述信息                                       |

@@ -175,4 +175,4 @@
 
 ![操作菜单](../../images/deploy18.png)
 
-等待工作负载状态变为`运行中`。如果工作负载状态出现异常，请查看具体异常信息，可参考[工作负载状态](Podconfig/workload-status.md)。
+等待工作负载状态变为`运行中`。如果工作负载状态出现异常，请查看具体异常信息，可参考[工作负载状态](../Workloads/PodConfig/workload-status.md)。

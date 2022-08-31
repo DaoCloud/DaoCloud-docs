@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-使用日志查询前，请确认集群已接入 insight-agent 且处于运行状态。如还未安装，请先[安装 insight-agent](../../05Installation/README.md)。
+使用日志查询前，请确认集群已接入 insight-agent 且处于运行状态。如还未安装，请先[安装 insight-agent](https://ndx.gitpages.daocloud.io/engineering/insight/insight/zh/05Installation/)。
 
 ## 普通查询
 
