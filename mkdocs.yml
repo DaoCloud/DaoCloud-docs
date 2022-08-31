@@ -222,7 +222,6 @@ nav:
         - 介绍:
           - 什么是全局管理: zh/ghippo/01ProductBrief/WhatisGhippo.md
           - 功能总览: zh/ghippo/01ProductBrief/Features.md
-          - 系统架构: zh/ghippo/01ProductBrief/Architecture.md
           - 常见术语: zh/ghippo/01ProductBrief/glossary.md
         - 登录: zh/ghippo/04UserGuide/00Login.md
         - 用户与访问控制:
@@ -255,7 +254,6 @@ nav:
           - 介绍:
             - 什么是可观测性: zh/insight/03ProductBrief/WhatisKInsight.md
             - 功能说明: zh/insight/03ProductBrief/Features.md
-            - 产品架构: zh/insight/03ProductBrief/architecture.md
             - 产品优势: zh/insight/03ProductBrief/benefits.md
             - 常见术语: zh/insight/03ProductBrief/glossary.md
           - 概览: zh/insight/06UserGuide/overview.md
@@ -323,7 +321,6 @@ nav:
         - 介绍:
           - 什么是多云编排: zh/kairship/01product/whatiskair.md
           - 功能总览: zh/kairship/01product/features.md
-          - 功能架构: zh/kairship/01product/architecture.md
           - 产品优势: zh/kairship/01product/benefits.md
           - 适用场景: zh/kairship/01product/scenarios.md
           - 基本概念: zh/kairship/01product/concepts.md
@@ -418,7 +415,6 @@ nav:
           - 什么是服务网格: zh/mspider/01Intro/What'smSpider.md
           - 功能总览: zh/mspider/01Intro/Features.md
           - 产品优势: zh/mspider/01Intro/Benefits.md
-          - 系统架构: zh/mspider/01Intro/Architecture.md
           - 适用场景: zh/mspider/01Intro/Scenarios.md
           - 常见术语: zh/mspider/01Intro/Glossary.md
         - 创建/删除网格:
@@ -511,6 +507,7 @@ nav:
       - 5.0 多云编排能力介绍: zh/blogs/kairship.md
       - 5.0 服务网格能力介绍: zh/blogs/mspider.md
   - 开源社区:
+      - DaoCloud 开源生态: index.md
       - CloudTTY: zh/community/cloudtty.md
       - Clusterpedia: zh/community/clusterpedia.md
       - HwameiStor: zh/community/hwameistor.md
@@ -518,3 +515,5 @@ nav:
       - Kubean: zh/community/kubean.md
       - Merbridge: zh/community/merbridge.md
       - Spiderpool: zh/community/spiderpool.md
+      - kwok: zh/community/kwok.md
+      - Ferry: zh/community/ferry.md
