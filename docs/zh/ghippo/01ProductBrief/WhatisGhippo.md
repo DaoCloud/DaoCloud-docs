@@ -32,10 +32,10 @@
 
 1. 使用 DCE 平台管理员（Admin）或具有管理员权限的用户登录 DCE 平台
 
-2. 进入`用户与访问控制`，[创建用户并授权](../02QuickStart/CreateUser.md)，创建用户组并授权，创建身份提供商
+2. 进入`用户与访问控制`，[创建用户并授权](../04UserGuide/01UserandAccess/User.md)，[创建用户组并授权](../04UserGuide/01UserandAccess/Group.md)，[创建身份提供商](../04UserGuide/01UserandAccess/idprovider.md)
 
-3. 进入`工作空间`，创建层级（企业层级关系），创建工作空间（租户）
+3. 进入`工作空间`，[创建层级（企业层级关系）](../04UserGuide/02Workspace/README.md)，[创建工作空间（租户）](../04UserGuide/02Workspace/Workspaces.md)
 
-4. 进入`审计日志`，查看并导出审计日志
+4. 进入`审计日志`，查看并[导出审计日志](../04UserGuide/03AuditLog.md)
 
 5. 进入`平台设置`，设置安全策略、邮件服务器、外观定制、正版授权
