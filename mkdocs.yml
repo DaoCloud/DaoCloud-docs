@@ -118,7 +118,7 @@ extra_javascript:
 # Customization css
 extra_css:
   - stylesheets/custom.css
-  - stylesheets/landing.css
+#  - stylesheets/landing.css
 
 # Extensions
 markdown_extensions:
