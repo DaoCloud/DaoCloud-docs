@@ -172,7 +172,7 @@ markdown_extensions:
 # Page tree
 nav:
   - 首页: index.md
-  - 首页2: index_2.md 
+  # - 首页2: index_2.md 
   - 帮助文档:
       - DCE 产品介绍:
           - 什么是 DCE5.0: zh/dce/what-is-dce.md
