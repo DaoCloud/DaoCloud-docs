@@ -3,8 +3,7 @@ site_name: DaoCloud Enterprise
 site_url: https://docs.daocloud.io/
 site_author: DaoCloud
 site_description: >-
-  Create a branded static site from a set of Markdown files to host the
-  documentation of your Open Source or commercial project
+  DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。
 
 # copyright
 copyright: Copyright &copy; 2016 - 2022 DaoCloud
