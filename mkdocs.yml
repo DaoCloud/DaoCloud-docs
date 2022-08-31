@@ -1,6 +1,6 @@
 # Project information
 site_name: DaoCloud Enterprise
-site_url: https://docs.daocloud.io/
+site_url: https://docs-alpha.daocloud.io/
 site_author: DaoCloud
 site_description: >-
   DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。
@@ -9,9 +9,9 @@ site_description: >-
 copyright: Copyright &copy; 2016 - 2022 DaoCloud
 
 # Repository
-repo_name: DaoCloud/daocloud-docs
+repo_name: DaoCloud/DaoCloud-docs
 
-repo_url: https://github.com/DaoCloud/daocloud-docs
+repo_url: https://github.com/DaoCloud/DaoCloud-docs
 edit_uri: edit/main/docs/
 
 # Configuration
@@ -117,7 +117,6 @@ extra_javascript:
 # Customization css
 extra_css:
   - stylesheets/custom.css
-#  - stylesheets/landing.css
 
 # Extensions
 markdown_extensions:
@@ -171,7 +170,6 @@ markdown_extensions:
 # Page tree
 nav:
   - 首页: index.md
-  # - 首页2: index_2.md 
   - 帮助文档:
       - DCE 产品介绍:
           - 什么是 DCE5.0: zh/dce/what-is-dce.md
