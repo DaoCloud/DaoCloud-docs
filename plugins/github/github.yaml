@@ -1,5 +1,0 @@
-enabled: true
-auth:
-    method: ''   # Can be either `api` or `password`. Empty for no Authentication [limit is 60 per hour]
-    token: ''       # If `api` method, token is the API generated on GH, otherwise the username
-    password: ''    # Only required when method is `password`, leave empty otherwise

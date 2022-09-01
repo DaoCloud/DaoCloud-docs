@@ -1,4 +1,0 @@
-{% for field in form.fields %}
-{% set value = form.value(field.name) %}
-{{ field.name }}: {{ string((value is iterable ? value|json_encode : value)|e|nl2br)|replace({"\n":' ', "\r":' '}) }}
-{% endfor %}

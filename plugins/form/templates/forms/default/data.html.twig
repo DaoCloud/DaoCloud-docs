@@ -1,5 +1,0 @@
-{% for field in form.fields %}
-{% block field %}
-    <div>{% block field_label %}<strong>{{ field.label }}</strong>{% endblock %}: {% block field_value %}{{ string(form.value(field.name)|e) }}{% endblock %}</div>
-{% endblock %}
-{% endfor %}
