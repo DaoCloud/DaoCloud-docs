@@ -1,0 +1,42 @@
+site_name: kpanda
+docs_dir: ./
+nav:
+  - index.md
+  - 容器管理介绍:
+    - 什么是容器管理: 03ProductBrief/WhatisKPanda.md
+    - 功能总览: 03ProductBrief/Features.md
+    - 容器管理优势: 03ProductBrief/Benefits.md
+    - 适用场景: 03ProductBrief/Scenarios.md
+    - 基本概念: 03ProductBrief/Concepts.md
+  - 集群管理:
+    - 创建集群: 07UserGuide/Clusters/CreateCluster.md
+    - 接入集群: 07UserGuide/Clusters/JoinACluster.md
+    - 使用 kubectl 访问集群: 07UserGuide/Clusters/clusterwithcert.md
+    - 集群角色: 07UserGuide/Clusters/ClusterRole.md
+    - 集群状态: 07UserGuide/Clusters/ClusterStatus.md
+  - 节点管理: 07UserGuide/Nodes/README.md
+  - 工作负载:
+    - 通过镜像创建无状态负载: 07UserGuide/Workloads/CreateDeploymentByImage.md
+    - 通过镜像创建有状态负载: 07UserGuide/Workloads/CreateStatefulSetByImage.md
+    - 通过镜像创建守护进程集: 07UserGuide/Workloads/CreateDaemonSetByImage.md
+    - 通过镜像创建定时任务: 07UserGuide/Workloads/CreateCronJobByImage.md
+    - 通过镜像创建任务: 07UserGuide/Workloads/CreateJobByImage.md
+    - 参数配置说明:
+      - 任务的参数说明: 07UserGuide/Workloads/PodConfig/JobParameters.md
+      - 生命周期: 07UserGuide/Workloads/PodConfig/lifescycle.md
+      - 环境变量: 07UserGuide/Workloads/PodConfig/EnvironmentVariables.md
+      - 健康检查: 07UserGuide/Workloads/PodConfig/healthcheck.md
+      - 集群调度: 07UserGuide/Workloads/PodConfig/SchedulingPolicy.md
+  - 服务与路由:
+    - 创建服务: 07UserGuide/ServicesandRoutes/CreatingServices.md
+    - 创建路由: 07UserGuide/ServicesandRoutes/CreatingIngress.md
+  - 自定义资源: 07UserGuide/CustomResources/README.md
+  - 容器存储: 07UserGuide/Storage/README.md
+  - 配置与密钥:
+    - 创建配置项: 07UserGuide/ConfigMapsandSecrets/CreatConfigMap.md
+    - 使用配置项: 07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md
+  - 命名空间: 07UserGuide/Namespaces/README.md
+  - 集群运维: 07UserGuide/OperationandMaintenance/README.md
+  - 弹性伸缩: 07UserGuide/Autoscaling/README.md
+  - 权限管理: 07UserGuide/Permissions/README.md
+  - 策略管理: 07UserGuide/Policies/README.md

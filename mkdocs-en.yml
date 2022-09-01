@@ -1,0 +1,110 @@
+site_name: DaoCloud Enterprise
+# site_dir: 'public/en/'
+copyright: Copyright &copy; 2016 - 2022 DaoCloud
+
+theme:
+  name: material
+  include_homepage_in_sidebar: true
+  language: 'en'
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - search.share
+    - content.code.annotate
+
+plugins:
+  - monorepo
+  - search:
+      lang: en
+
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+          remove_comments: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+  - extra/zoom_image.js
+
+extra_css:
+  - extra/custom.css
+
+extra:
+  alternate:
+  - link: /
+    name: zh - 简体中文
+    lang: zh
+  - link: /en/
+    name: en - English
+    lang: en
+
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - tables
+
+  - toc:
+      permalink: true
+      title: 导航
+      toc_depth: 5
+  
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.keys
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.snippets
+  - pymdownx.inlinehilite
+
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+  - pymdownx.arithmatex:
+      generic: true
+
+  
+# nav page tree
+nav:
+  - Home: en/index.md
+  - Documents:
+    - Index: en/index.md
+    - User Guide: 01-mkdocs-material.md
+    - Install: install.md
+    - Kapanda: '!include modules/kpanda/docs/honkit/en/pages.yml'
+  #  - Ghippo: '!include modules/ghippo/docs/honkit/en/pages.yml'
+  #  - Skoala: '!include modules/skoala/docs/honkit/en_us/pages.yml'
+    - Insight: '!include modules/insight/docs/book/en/pages.yml'
+    - mSpider: '!include modules/mspider/docs/honkit/en/pages.yml'
+  #  - Amamba: '!include modules/amamba/docs/honkit/en/pages.yml'
+  #  - Kubean: '!include modules/kubean/docs/honkit/zh/pages.yml'
+  - Blogs: blogs.md
+  - Videos: videos.md
+  - Community: community.md
+  - DaoCloud Website: https://www.daocloud.io/

@@ -1,0 +1,516 @@
+# Project information
+site_name: DaoCloud Enterprise
+site_url: https://docs-alpha.daocloud.io/
+site_author: DaoCloud
+site_description: >-
+  DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。
+
+# copyright
+copyright: Copyright &copy; 2016 - 2022 DaoCloud
+
+# Repository
+repo_name: DaoCloud/DaoCloud-docs
+
+repo_url: https://github.com/DaoCloud/DaoCloud-docs
+edit_uri: edit/main/docs/
+
+# Configuration
+theme:
+  name: material
+  custom_dir: "theme"
+  # custom_dir: !ENV [THEME_DIR, "material"]
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+  include_homepage_in_sidebar: false
+
+  # Static files
+  static_templates:
+    - 404.html
+
+  language: "zh"
+  features:
+    - content.code.annotate
+    - content.tooltips
+    # - navigation.indexes
+    - navigation.tabs
+    # - navigation.instant
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs.sticky
+    - navigation.tracking
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - search.share
+    # - toc.follow
+    - toc.integrate
+
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
+  logo: images/DaoCloud.svg
+  icon:
+    logo: logo
+    repo: fontawesome/brands/github
+
+# Plugins
+plugins:
+  - search:
+      separator: '[\\s\\u200b\\-]'
+  # - mermaid2
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+
+  - git-revision-date #每页底部显示文档最后更新日期，安装 pip install mkdocs-git-revision-date-plugin
+  - git-revision-date-localized #每个页面底部添加本地化更新和创建日期，安装pip install mkdocs-git-revision-date-localized-plugin
+    # - type: datetime  #日期格式，有效值为date、datetime、iso_date、iso_datetimetimeago
+    # - fallback_to_build_date: true  #默认false，启用则回退到mkdocs build执行的时间
+    # - enable_creation_date: true  #最后更新日期旁边显示与页面关联的文件的创建日期
+
+  # auto desgin nav in dirs
+  # - awesome-pages:
+  #     filename: .pages.yml
+  #     collapse_single_pages: true
+  #     strict: false
+  - tags:
+      tags_file: stylesheets/tags.md
+
+# Customization
+extra:
+  homepage: /
+
+  # switch language
+  alternate:
+    - link: /zh/
+      name: zh - 简体中文
+      lang: zh
+    - link: /en/
+      name: en - English
+      lang: en
+  generator: false
+
+# Customization Javascript
+extra_javascript:
+  - stylesheets/zoom_image.js
+  - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+
+# Customization css
+extra_css:
+  - stylesheets/custom.css
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      title: 导航
+      toc_depth: 5
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: daocloud
+      repo: daocloud-docs
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  # - pymdownx.critic
+
+  - pymdownx.snippets:
+      auto_append:
+        - includes/glossary.md
+
+# Page tree
+nav:
+  - 首页: index.md
+  - 帮助文档:
+      - DCE 产品介绍:
+          - 什么是 DCE5.0: zh/dce/what-is-dce.md
+          - 平台功能: zh/dce/features.md
+          - 为什么选择 DCE: zh/dce/whyus.md
+      - 容器管理:
+          - 介绍:
+              - 什么是容器管理: zh/kpanda/03ProductBrief/WhatisKPanda.md
+              - 功能总览: zh/kpanda/03ProductBrief/Features.md
+              - 竞争优势: zh/kpanda/03ProductBrief/Benefits.md
+              - 适用场景: zh/kpanda/03ProductBrief/Scenarios.md
+              - 基本概念: zh/kpanda/03ProductBrief/Concepts.md
+          - 集群管理:
+              - 创建集群: zh/kpanda/07UserGuide/Clusters/CreateCluster.md
+              - 接入集群: zh/kpanda/07UserGuide/Clusters/JoinACluster.md
+              - 使用 kubectl 访问集群: zh/kpanda/07UserGuide/Clusters/clusterwithcert.md
+              - 集群角色: zh/kpanda/07UserGuide/Clusters/ClusterRole.md
+              - 集群状态: zh/kpanda/07UserGuide/Clusters/ClusterStatus.md
+          - 工作负载:
+              - 通过镜像创建无状态负载: zh/kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md
+              - 通过镜像创建有状态负载: zh/kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md
+              - 通过镜像创建守护进程集: zh/kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md
+              - 通过镜像创建定时任务: zh/kpanda/07UserGuide/Workloads/CreateCronJobByImage.md
+              - 通过镜像创建任务: zh/kpanda/07UserGuide/Workloads/CreateJobByImage.md
+              - 参数配置说明:
+                  - 工作负载状态: zh/kpanda/07UserGuide/Workloads/PodConfig/workload-status.md
+                  - 任务的参数说明: zh/kpanda/07UserGuide/Workloads/PodConfig/JobParameters.md
+                  - 生命周期: zh/kpanda/07UserGuide/Workloads/PodConfig/lifescycle.md
+                  - 环境变量: zh/kpanda/07UserGuide/Workloads/PodConfig/EnvironmentVariables.md
+                  - 健康检查: zh/kpanda/07UserGuide/Workloads/PodConfig/healthcheck.md
+                  - 集群调度: zh/kpanda/07UserGuide/Workloads/PodConfig/SchedulingPolicy.md
+          - Helm 应用:
+              - Helm 概述: zh/kpanda/07UserGuide/helm/README.md
+              - 管理 Helm 应用: zh/kpanda/07UserGuide/helm/helm-app.md
+              - 管理 Helm 仓库: zh/kpanda/07UserGuide/helm/helm-repo.md
+          - 服务与路由:
+              - 创建服务: zh/kpanda/07UserGuide/ServicesandRoutes/CreatingServices.md
+              - 创建路由: zh/kpanda/07UserGuide/ServicesandRoutes/CreatingIngress.md
+          - 自定义资源:
+              - 创建自定义资源: zh/kpanda/07UserGuide/CustomResources/create.md
+          - 配置与密钥:
+              - 创建密钥: zh/kpanda/07UserGuide/ConfigMapsandSecrets/create-secret.md
+              - 使用密钥: zh/kpanda/07UserGuide/ConfigMapsandSecrets/use-secret.md
+              - 使用配置项: zh/kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md
+          - 创建命名空间: zh/kpanda/07UserGuide/Namespaces/createns.md
+      - 全局管理:
+        - 介绍:
+          - 什么是全局管理: zh/ghippo/01ProductBrief/WhatisGhippo.md
+          - 功能总览: zh/ghippo/01ProductBrief/Features.md
+          - 常见术语: zh/ghippo/01ProductBrief/glossary.md
+        - 登录: zh/ghippo/04UserGuide/00Login.md
+        - 用户与访问控制:
+          - 什么是用户与访问控制: zh/ghippo/04UserGuide/01UserandAccess/iam.md
+          - 用户: zh/ghippo/04UserGuide/01UserandAccess/User.md
+          - 用户组: zh/ghippo/04UserGuide/01UserandAccess/Group.md
+        - 角色和权限管理: 
+          - zh/ghippo/04UserGuide/01UserandAccess/Role.md
+          - 全局管理角色: zh/ghippo/04UserGuide/01UserandAccess/global.md
+          - 资源管理（按角色）: zh/ghippo/04UserGuide/01UserandAccess/resource02.md
+        - 身份提供商: 
+          - zh/ghippo/04UserGuide/01UserandAccess/idprovider.md
+          - LDAP: zh/ghippo/04UserGuide/01UserandAccess/ldap.md
+          - OIDC: zh/ghippo/04UserGuide/01UserandAccess/oidc.md
+        - 工作空间与层级: 
+          - zh/ghippo/04UserGuide/02Workspace/README.md
+          - 工作空间管理: zh/ghippo/04UserGuide/02Workspace/Workspaces.md
+          - 资源绑定: zh/ghippo/04UserGuide/02Workspace/Resources.md
+        - 审计日志: zh/ghippo/04UserGuide/03AuditLog.md
+        - 平台设置:
+          - 密码重置: zh/ghippo/06Troubleshooting/password.md
+          - 邮箱服务器设置: zh/ghippo/04UserGuide/04PlatformSetting/MailServer.md
+          - 外观定制: zh/ghippo/04UserGuide/04PlatformSetting/Appearance.md
+          - 关于平台: zh/ghippo/04UserGuide/04PlatformSetting/about.md
+        - 个人中心:
+          - 安全设置: zh/ghippo/04UserGuide/06PersonalCenter/SecuritySetting.md
+          - 访问密钥: zh/ghippo/04UserGuide/06PersonalCenter/Password.md
+          - 语言设置: zh/ghippo/04UserGuide/06PersonalCenter/Language.md      
+      - 可观测性:
+          - 介绍:
+            - 什么是可观测性: zh/insight/03ProductBrief/WhatisKInsight.md
+            - 功能说明: zh/insight/03ProductBrief/Features.md
+            - 产品优势: zh/insight/03ProductBrief/benefits.md
+            - 常见术语: zh/insight/03ProductBrief/glossary.md
+          - 概览: zh/insight/06UserGuide/overview.md
+          - 仪表盘: zh/insight/06UserGuide/02dashboard.md
+          - 场景监控:
+            - 集群监控: zh/insight/06UserGuide/03scenarioinsight/clusterinsight.md
+            - 节点监控: zh/insight/06UserGuide/03scenarioinsight/nodeinsight.md
+            - 容器监控: zh/insight/06UserGuide/03scenarioinsight/containerinsight.md
+            - 服务监控: zh/insight/06UserGuide/03scenarioinsight/serviceinsight.md
+          - 数据查询:
+            - 日志查询: zh/insight/06UserGuide/04dataquery/logquery.md
+            - 指标查询: zh/insight/06UserGuide/04dataquery/metricquery.md
+            - 链路查询: zh/insight/06UserGuide/04dataquery/tracequery.md
+          - 告警中心:
+            - 告警规则: zh/insight/06UserGuide/05alertcenter/alertrule.md
+            - 通知配置: zh/insight/06UserGuide/05alertcenter/message.md
+            - 消息模板: zh/insight/06UserGuide/05alertcenter/messagetemplate.md
+          - 数据采集:
+            - 采集管理: zh/insight/06UserGuide/07collectionmanag/collectionmanag.md
+            - 服务监控: zh/insight/06UserGuide/07collectionmanag/servicemonitor.md
+            - 开启采集日志: zh/insight/09FAQs/collectauditlog.md
+          - 系统配置:
+            - 系统配置: zh/insight/06UserGuide/08systemconfig/systemconfig.md
+            - 修改配置: zh/insight/06UserGuide/08systemconfig/modifyconfig.md
+          - 常见问题: 
+            - zh/insight/09FAQs/README.md
+            - 收集采集日志: zh/insight/09FAQs/collectauditlog.md
+          - 可观测基本概念:
+            - 指标类型: zh/insight/concepts/metrics.md
+            - 任务和实例: zh/insight/concepts/job-instance.md
+            - 数据模型: zh/insight/concepts/models.md
+            - 数据查询语言: zh/insight/concepts/promql.md
+      - 应用工作台:
+        - 介绍:
+          - 什么是应用工作台？: zh/amamba/01ProductBrief/WhatisAmamba.md
+          - 功能总览: zh/amamba/01ProductBrief/Features.md
+          - 产品优势: zh/amamba/01ProductBrief/Benefits.md
+          - 适用场景: zh/amamba/01ProductBrief/Scenarios.md
+          - 使用约束: zh/amamba/01ProductBrief/Conventions.md
+          - 基本概念: zh/amamba/01ProductBrief/Concepts.md
+        - 快速创建流水线: zh/amamba/02QuickStart/deploypiplibe.md
+        - 应用的部署:
+          - 从 Git 代码构建应用: zh/amamba/03UserGuide/Deployapp/deployappfromgit.md
+          - 从 Jar 包构建应用: zh/amamba/03UserGuide/Deployapp/deployappfromjar.md
+          - 从 Yaml 部署应用: zh/amamba/03UserGuide/Deployapp/deployappfromyaml.md
+          - 从镜像部署应用: zh/amamba/03UserGuide/Deployapp/deployappfromimage.md
+          - 从 Helm Charts 部署应用: zh/amamba/03UserGuide/Deployapp/deployappfromhelm.md
+        - 基于微服务的应用:
+          - 部署基于微服务的应用: zh/amamba/03UserGuide/MicroServiceApp/deploymicroserviceapp.md
+          - 使用微服务注册发现能力: zh/amamba/03UserGuide/MicroServiceApp/microserviceregistry.md
+          - 使用微服务治理能力: zh/amamba/03UserGuide/MicroServiceApp/microservicegovernance.md
+        - 流水线:
+          - 自定义创建流水线: zh/amamba/03UserGuide/Pipeline/createpipelinebyself.md
+          - 使用 Jenkinsfile 创建单代码分支流水线: zh/amamba/03UserGuide/Pipeline/createpipelinebyjenkins.md
+          - 使用图形化编辑流水线流水线: zh/amamba/03UserGuide/Pipeline/graphicaleditingpipeline.md
+          - 凭证管理: zh/amamba/03UserGuide/Pipeline/Credential.md
+          - 流水线配置参数:
+            - 流水线中的概念: zh/amamba/03UserGuide/Pipeline/PipelineConfig/PipelineConcept.md
+            - 图形化任务模板参数说明: zh/amamba/03UserGuide/Pipeline/PipelineConfig/PipelineStep.md
+        - 灰度发布:
+          - 蓝绿发布: zh/amamba/03UserGuide/Greydeploy/blue-green.md
+          - 金丝雀发布: zh/amamba/03UserGuide/Greydeploy/canary.md
+          - A/B 测试: zh/amamba/03UserGuide/Greydeploy/ABtest.md 
+      - 多云编排:
+        - 介绍:
+          - 什么是多云编排: zh/kairship/01product/whatiskair.md
+          - 功能总览: zh/kairship/01product/features.md
+          - 产品优势: zh/kairship/01product/benefits.md
+          - 适用场景: zh/kairship/01product/scenarios.md
+          - 基本概念: zh/kairship/01product/concepts.md
+        - 准备及安装:
+          - 普通安装: zh/kairship/02install/normal.md
+          - kubectl 安装: zh/kairship/02install/kubectl.md
+          - 镜像安装: zh/kairship/02install/image.md
+        - 多云实例管理:
+          - 添加实例: zh/kairship/03instance/add.md
+          - 切换实例: zh/kairship/03instance/change.md
+          - 删除实例: zh/kairship/03instance/delete.md
+        - 工作集群管理:
+          - 接入集群: zh/kairship/04cluster/join.md
+          - 移除集群: zh/kairship/04cluster/remove.md
+        - 多云工作负载:
+          - 镜像创建: zh/kairship/05workload/image.md
+          - YAML创建: zh/kairship/05workload/yaml.md
+        - 资管管理:
+          - 多云服务与路由: zh/kairship/06resource/ingress.md
+          - 多云命名空间: zh/kairship/06resource/namespace.md
+          - 多云存储声明: zh/kairship/06resource/storage.md
+          - 多云配置与密钥: zh/kairship/06resource/configmap.md
+        - 策略管理:
+          - 部署策略: zh/kairship/07policy/deploy.md
+          - 差异化策略: zh/kairship/07policy/different.md
+      - 微服务治理:
+        - 介绍:
+          - 功能总览: zh/skoala/intro/features.md
+          - 使用场景: zh/skoala/intro/scenarios.md
+          - 产品优势: zh/skoala/intro/advantages.md  
+          - 组件版本: zh/skoala/intro/components.md
+          - 名词解释: zh/skoala/intro/GLOSSARY.md
+        - 微服务管理:
+          - 托管型注册中心:
+            - 托管注册中心管理: zh/skoala/ms-management/hosted/create-registry.md
+            - 微服务命名空间: zh/skoala/ms-management/hosted/namespace.md
+            - 微服务列表:
+              - 创建微服务: zh/skoala/ms-management/hosted/ms-list/create-ms.md
+              - 查看微服务详情: zh/skoala/ms-management/hosted/ms-list/check-ms-details.md
+              - 管理微服务实例: zh/skoala/ms-management/hosted/ms-list/manage-ms-instance.md
+              - 治理微服务流量: zh/skoala/ms-management/hosted/ms-list/govern-ms-traffic.md
+              - 删除微服务: zh/skoala/ms-management/hosted/ms-list/delete-ms.md
+            - 微服务治理策略:
+              - 流控规则: zh/skoala/ms-management/hosted/governance-policy/traffic-control.md
+              - 降级规则: zh/skoala/ms-management/hosted/governance-policy/degrade.md
+              - 热点规则: zh/skoala/ms-management/hosted/governance-policy/hotspot.md
+              - 系统规则: zh/skoala/ms-management/hosted/governance-policy/system.md
+              - 授权规则: zh/skoala/ms-management/hosted/governance-policy/authorization.md
+              - 集群流控: zh/skoala/ms-management/hosted/governance-policy/cluster-traffic-control.md
+            - 微服务配置中心:
+              - 创建配置: zh/skoala/ms-management/hosted/config-center/create-config.md
+              - 导入/导出配置: zh/skoala/ms-management/hosted/config-center/import-config.md
+              - 更新配置: zh/skoala/ms-management/hosted/config-center/update-config.md
+              - 删除配置: zh/skoala/ms-management/hosted/config-center/delete-config.md
+              - 恢复配置: zh/skoala/ms-management/hosted/config-center/restore-config.md
+              - 监听查询: zh/skoala/ms-management/hosted/config-center/search-listening.md
+              - 查看示例代码: zh/skoala/ms-management/hosted/config-center/code-example.md
+            - 监控告警:
+              - 业务监控: zh/skoala/ms-management/hosted/monitor&alert/monitor-service.md
+              - 资源监控: zh/skoala/ms-management/hosted/monitor&alert/monitor-resource.md
+            - 日志查看: zh/skoala/ms-management/hosted/log.md
+            - 插件中心: zh/skoala/ms-management/hosted/plugin-center.md
+          - 接入型注册中心:
+            - 接入注册中心: zh/skoala/ms-management/integrated/integrate-registry.md
+            - 更新注册中心: zh/skoala/ms-management/integrated/update-registry.md
+            - 查看微服务详情: zh/skoala/ms-management/integrated/check-ms-details.md
+            - 微服务治理策略: zh/skoala/ms-management/integrated/governance-policy.md
+            - 移除注册中心: zh/skoala/ms-management/integrated/remove-registry.md
+        - 微服务网关:
+          - 网关管理:
+            - 创建网关: zh/skoala/ms-gateway/gateway/create-gateway.md
+            - 查看网关详情: zh/skoala/ms-gateway/gateway/check-details.md
+            - 诊断网关: zh/skoala/ms-gateway/gateway/delete-gateway.md
+            - 更新网关: zh/skoala/ms-gateway/gateway/update-gateway.md
+            - 删除网关: zh/skoala/ms-gateway/gateway/delete-gateway.md
+          - 服务管理:
+            - 接入服务: zh/skoala/ms-gateway/service/add-service.md
+            - 删除服务: zh/skoala/ms-gateway/service/delete-service.md
+            - 管理服务来源: zh/skoala/ms-gateway/service/service-sources.md
+          - API:
+            - 管理 API: zh/skoala/ms-gateway/api/manage-api.md
+            - 配置 API 策略: zh/skoala/ms-gateway/api/api-policy.md
+          - 监控告警: zh/skoala/ms-gateway/monitor&alert.md
+          - 日志管理: zh/skoala/ms-gateway/log.md
+          - 插件中心: zh/skoala/ms-gateway/plugin-center.md
+          - 域名:
+            - 管理域名: zh/skoala/ms-gateway/domain/manage-domain.md
+            - 配置域名策略: zh/skoala/ms-gateway/domain/domain-policy.md
+        - 微服务基础知识: zh/skoala/reference/concepts.md
+      - 服务网格:
+        - 介绍:
+          - 什么是服务网格: zh/mspider/01Intro/What'smSpider.md
+          - 功能总览: zh/mspider/01Intro/Features.md
+          - 产品优势: zh/mspider/01Intro/Benefits.md
+          - 适用场景: zh/mspider/01Intro/Scenarios.md
+          - 常见术语: zh/mspider/01Intro/Glossary.md
+        - 创建/删除网格:
+          - 创建托管网格: zh/mspider/03UserGuide/servicemesh/createmanaged.md
+          - 创建专用网格: zh/mspider/03UserGuide/servicemesh/creatededicated.md
+          - 删除网格: zh/mspider/03UserGuide/servicemesh/delete.md
+        - 服务管理: zh/mspider/03UserGuide/01ServiceList/README.md
+        - 流量治理:
+          - 虚拟服务: zh/mspider/03UserGuide/02TrafficGovernance/VirtualService.md
+          - 目标规则: zh/mspider/03UserGuide/02TrafficGovernance/TargetRules.md
+          - 网关规则: zh/mspider/03UserGuide/02TrafficGovernance/GatewayRules.md
+          - 虚拟服务参数配置: zh/mspider/03UserGuide/02TrafficGovernance/vsparams.md
+        - 安全治理:
+          - 对等身份认证: zh/mspider/03UserGuide/05Security/peer.md
+          - 请求身份认证: zh/mspider/03UserGuide/05Security/request.md
+          - 授权策略: zh/mspider/03UserGuide/05Security/authorize.md
+          - 安全治理参数配置: zh/mspider/03UserGuide/05Security/params.md
+        - 边车管理:
+          - 命名空间边车管理: zh/mspider/03UserGuide/07SidecarManagement/NamespaceSidecar.md
+          - 工作负载边车管理: zh/mspider/03UserGuide/07SidecarManagement/WorkloadSidecar.md
+          - 全局边车管理: zh/mspider/03UserGuide/07SidecarManagement/GlobalSidecar.md
+        - 流量监控:
+          - 全局监控: zh/mspider/03UserGuide/06TrafficMonitor/global-monitor.md
+          - 服务监控: zh/mspider/03UserGuide/06TrafficMonitor/service-monitor.md
+          - 工作负载监控: zh/mspider/03UserGuide/06TrafficMonitor/workload-monitor.md
+          - 性能监控: zh/mspider/03UserGuide/06TrafficMonitor/perf-monitor.md
+        - 网格网关:
+          - 创建网格网关: zh/mspider/03UserGuide/09GatewayInstance/create.md
+          - 删除网格网关: zh/mspider/03UserGuide/09GatewayInstance/delete.md
+        - 集群纳管:
+          - 添加集群: zh/mspider/03UserGuide/08ClusterManagement/join-clus.md
+          - 移除集群: zh/mspider/03UserGuide/08ClusterManagement/remov-clus.md
+        - 网格配置:
+          - 网格命名空间: zh/mspider/03UserGuide/10MeshConfiguration/MeshNamespace.md
+          - 系统组件管理: zh/mspider/03UserGuide/10MeshConfiguration/SystemComponents.md
+          - Istio 资源管理: zh/mspider/03UserGuide/10MeshConfiguration/IstioResources.md
+        - 基础知识:
+          - 流量治理: zh/mspider/06Reference/concepts/traffic.md
+          - 虚拟服务: zh/mspider/06Reference/concepts/virtual-service.md
+        - 常见问题: zh/mspider/07faq.md
+      - 中间件:
+          - RabbitMQ 消息队列:
+              - 什么是 RabbitMQ: zh/middleware/rabbitmq/intro/what.md
+              - 功能说明: zh/middleware/rabbitmq/intro/features.md
+              - 竞争优势: zh/middleware/rabbitmq/intro/benefits.md
+              - 适用场景: zh/middleware/rabbitmq/intro/scenarios.md
+              - 基本概念: zh/middleware/rabbitmq/intro/concepts.md
+              - 安装 RabbitMQ: zh/middleware/rabbitmq/quickstart/install.md
+              - 更新 RabbitMQ: zh/middleware/rabbitmq/userguide/update.md
+              - 删除 RabbitMQ: zh/middleware/rabbitmq/userguide/delete.md
+              - 查看消息队列: zh/middleware/rabbitmq/userguide/view.md
+              - 数据迁移: zh/middleware/rabbitmq/userguide/migrate.md
+              - 实例监控: zh/middleware/rabbitmq/userguide/insight.md
+          - Elasticsearch 搜索服务:
+              - 什么是 Elasticsearch: zh/middleware/elastic-search/intro/what.md
+              - 功能说明: zh/middleware/elastic-search/intro/features.md
+              - 竞争优势: zh/middleware/elastic-search/intro/benefits.md
+              - 适用场景: zh/middleware/elastic-search/intro/scenarios.md
+              - 基本概念: zh/middleware/elastic-search/intro/concepts.md
+              - 首次使用 Elasticsearch: zh/middleware/elastic-search/userguide/login.md
+              - 创建 Elasticsearch 实例: zh/middleware/elastic-search/userguide/create.md
+              - 更新 Elasticsearch 实例: zh/middleware/elastic-search/userguide/edit.md
+              - 删除 Elasticsearch 实例: zh/middleware/elastic-search/userguide/delete.md
+              - Elasticsearch 集群容量规划: zh/middleware/elastic-search/userguide/cluster-capacity-plan.md
+              - 查看列表: zh/middleware/elastic-search/userguide/view.md
+              - 概览: zh/middleware/elastic-search/userguide/basic.md
+              - 实例监控: zh/middleware/elastic-search/userguide/monitor.md
+          - MySQL 数据库:
+              - 什么是 MySQL: zh/middleware/mysql/intro/what.md
+              - 功能说明: zh/middleware/mysql/intro/features.md
+              - 竞争优势: zh/middleware/mysql/intro/benefits.md
+              - 基本概念: zh/middleware/mysql/intro/concepts.md
+              - 安装 MySQL: zh/middleware/mysql/quickstart/install.md
+              - 创建 MySQL: zh/middleware/mysql/userguide/create.md
+              - 更新 MySQL: zh/middleware/mysql/userguide/update.md
+              - 删除 MySQL: zh/middleware/mysql/userguide/delete.md
+  - 视频教程:
+      - 容器管理: zh/videos/kpanda.md
+      - 全局管理: zh/videos/ghippo.md
+      - 可观测性: zh/videos/insight.md
+      - 应用工作台: zh/videos/amamba.md
+      - 服务网格: zh/videos/mspider.md
+      - 微服务引擎: zh/videos/skoala.md
+      - 中间件: zh/videos/mcamel.md
+  - 博客:
+      - DCE 开发背景: zh/blogs/blog00.md
+      - 5.0 容器管理能力介绍: zh/blogs/kpanda.md
+      - 5.0 资源管理能力介绍: zh/blogs/resource.md
+      - 5.0 应用工作台能力介绍: zh/blogs/amamba.md
+      - 5.0 多云编排能力介绍: zh/blogs/kairship.md
+      - 5.0 服务网格能力介绍: zh/blogs/mspider.md
+  - 开源社区:
+      - DaoCloud 开源生态: zh/community/index.md
+      - CloudTTY: zh/community/cloudtty.md
+      - Clusterpedia: zh/community/clusterpedia.md
+      - HwameiStor: zh/community/hwameistor.md
+      - KLTS: zh/community/klts.md
+      - Kubean: zh/community/kubean.md
+      - Merbridge: zh/community/merbridge.md
+      - Spiderpool: zh/community/spiderpool.md
+      - kwok: zh/community/kwok.md
+      - Ferry: zh/community/ferry.md

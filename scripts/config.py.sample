@@ -1,0 +1,30 @@
+# /usr/bin/env python3
+# -*- coding: UTF-8 -*-
+
+
+"""
+
+Author: samzong.lu
+E-mail: samzong.lu@gmail.com
+
+"""
+
+
+class Config(object):
+    # 密钥可在 https://console.ucloud.cn/uapi/apikey中获取
+    public_key = ''  # 账户公钥
+    private_key = ''  # 账户私钥
+
+    bucket = ''  # 空间名称
+    upload_host = ''
+
+
+class ProdConfig(Config):
+
+    # 请更新下方配置信息
+    public_key = ''  # 账户公钥
+    private_key = ''  # 账户私钥
+
+    bucket = ''  # 空间名称
+    upload_host = ''
+
