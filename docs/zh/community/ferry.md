@@ -1,5 +1,22 @@
 # Ferry
 
-https://github.com/ferryproxy/ferry
+Ferry 是一个 Kubernetes 多集群通信组件，旨在消除集群复杂环境的差异性，让用户就像在单集群一样通信，无需考虑多集群所在的网络环境等问题。
 
-Ferry is a Kubernetes multi-cluster communication component that eliminates communication differences between clusters as if they were in a single cluster, regardless of the network environment those clusters are in.
+## 为什么需要 ferry
+
+- 避免被云服务商锁定
+  - 多云互联互通
+  - 多云无缝迁移
+- 开箱即用
+  - 提供命令行工具，方便安装和使用
+  - 集中定义通信和迁移规则
+- 无入侵
+  - 不依赖 Kubernetes 版本
+  - 不依赖任何 CNI 或网络环境
+  - 无需修改现有环境
+- 内网遍历
+  - 只需要一个公共 IP
+
+## 更多信息
+
+https://github.com/ferryproxy/ferry

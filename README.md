@@ -29,4 +29,3 @@
 我们衷心感谢所有为 DaoCloud 添砖加瓦的用户。您提出的文档修改如被我们接受，我们会在对应页面的底部，列出您的 ID，以表谢意。
 
 技术支持：[support@daocloud.io](mailto:support@daocloud.io?subject=FROM_DOCS_README)
-
