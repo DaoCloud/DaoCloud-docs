@@ -453,6 +453,18 @@ nav:
           - 流量治理: zh/mspider/06Reference/concepts/traffic.md
           - 虚拟服务: zh/mspider/06Reference/concepts/virtual-service.md
         - 常见问题: zh/mspider/07faq.md
+      - 网络:
+          - 介绍:
+            - 云原生网络方案: zh/network/intro/what-is-net.md
+            - 背景: zh/network/intro/background.md
+            - 挑战: zh/network/intro/challenges.md
+          - 模块:
+            - 网络组件: zh/network/modules/modules.md
+            - Spiderpool:
+              - 介绍: zh/network/modules/spiderpool/what.md
+              - 安装: zh/network/modules/spiderpool/install.md
+              - 配置参考: zh/network/modules/spiderpool/config.md
+              - 常用命令: zh/network/modules/spiderpool/command.md
       - 中间件:
           - RabbitMQ 消息队列:
               - 什么是 RabbitMQ: zh/middleware/rabbitmq/intro/what.md
