@@ -11,8 +11,8 @@
 
 - 如果待删除网关中有正在使用的 API，需要点击【API 管理】将所有 API 删除之后，再重新删除该网关。
 
-  ![提示释放 API](imgs/delete_api.png)
+    ![提示释放 API](imgs/delete_api.png)
 
 - 如果待删除网关中没有正在使用的 API，点击【立即删除】即可直接删除当前网关。
 
-  ![立即删除](imgs/delete_now.png)
+    ![立即删除](imgs/delete_now.png)

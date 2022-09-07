@@ -49,8 +49,8 @@
 
 2. 如果注册中心下面仍有未删除的实例，系统会提示存在资源无法删除，需要清理掉这些资源后才能继续删除该注册中心。
 
-   ![存在资源无法删除](../hosted/imgs/delete-resource.png)
+    ![存在资源无法删除](../hosted/imgs/delete-resource.png)
 
 3. 清理完注册中心下面的实例后，为了防止误删，需要输入注册中心的名称进行确认，最后点击`删除`即可。
 
-   ![删除注册中心](../hosted/imgs/delete-confirm.png)
+    ![删除注册中心](../hosted/imgs/delete-confirm.png)

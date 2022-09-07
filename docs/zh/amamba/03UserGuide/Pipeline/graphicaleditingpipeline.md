@@ -57,6 +57,7 @@
 2. 在步骤模块中选择开启`指定容器`，在弹出的对话框中填写容器名称：go，然后点击`确定`。
 
    <缺少图片>
+
 3. 点击`添加步骤`，在弹出的对话框中步骤类型下选择 shell，并在命令行中输入以下命令，然后点击`确定`。
 
     ```go
@@ -79,11 +80,11 @@
 
 3. 在步骤模块中选择开启`使用凭证`，在弹出的对话框中填写相关参数，然后点击`确定`。
 
-   - 凭证：选择创建的 docker hub 凭证，用户访问镜像仓库。选择已创建好的 “docker-credential” 凭证。
-   - 密码变量：PASS
-   - 用户名变量：USER
+    - 凭证：选择创建的 docker hub 凭证，用户访问镜像仓库。选择已创建好的 “docker-credential” 凭证。
+    - 密码变量：PASS
+    - 用户名变量：USER
 
-   ![build-credential](../../images/build-credential.png)
+    ![build-credential](../../images/build-credential.png)
 
 4. 点击`添加步骤`进行代码构建，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
 
@@ -124,21 +125,22 @@
 
 3. 在步骤模块中选择开启`使用凭证`，在弹出的对话框中填写相关参数，然后点击`确定`。
 
-   - 凭证：选择 kubeconfig 类型的凭证。
-   - kubeconfig 变量：如果使用的是 kubectl apply 的部署方式，变量值必须为 KUBECONFIG。                  |
+    - 凭证：选择 kubeconfig 类型的凭证。
+    - kubeconfig 变量：如果使用的是 kubectl apply 的部署方式，变量值必须为 KUBECONFIG。                  |
 
-   ![deploy](../../images/deploy.png)
+    ![deploy](../../images/deploy.png)
 
 4. 点击`添加步骤`以进行集群部署操作，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
 
     ```yaml
     kubectl apply -f deploy.yaml
     ```
+
 ### 运行流水线
 
 1. 在流水详情页面点击`立即执行`。在弹出的对话框中设置前提条件中定义的三个字符串参数，点击`确定`来运行流水线。
 
-   ![WechatIMG996](../../images/WechatIMG996.png)
+    ![WechatIMG996](../../images/WechatIMG996.png)
 
 2. 成功开始运行后，页面会自动切换到流水线详情页面，点击当前运行的流水线记录。
 
@@ -151,5 +153,5 @@
 1. 如果流水线的每个阶段都成功运行，则会自动构建一个 Docker 镜像并推送至您的 Docker Hub 仓库。最终，流水线将在您事先设置的项目中自动创建一个无状态负载。
 2. 前往容器管理平台，点击集群下的`工作负载`，您可以看到列表中显示的无状态工作负载。
 
-   ![deployment](../../images/deployment.png)
+    ![deployment](../../images/deployment.png)
    

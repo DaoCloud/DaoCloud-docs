@@ -21,19 +21,23 @@
 
 1. 在流水线列表页单击`创建流水线`。
 
-   ![pipeline](../images/pipelin01.png)
+    ![pipeline](../images/pipelin01.png)
+
 2. 在弹出的对话框中，选择`自定义创建流水线`，点击`确定`。
 
-   ![pipeline](../images/pipelin02.png)
+    ![pipeline](../images/pipelin02.png)
+
 3. 进入`自定义创建流水页面` ，输入流水线名称`pipeline-demo`。
 
-   ![pipeline](../images/pipelin03.png)
+    ![pipeline](../images/pipelin03.png)
+
 4. 在`构建参数`中添加三个字符串参数，这些参数将用于镜像构建的命令中。参数说明如下：
 
-   ![pipeline](../images/pipelin04.png)
-   - registry：镜像仓库地址。本例中使用 `release.daocloud.io`。
-   - project：镜像仓库中的项目名称。本例中使用`demo`。
-   - name：镜像的名称。本例中使用`http-hello` 。
+    ![pipeline](../images/pipelin04.png)
+
+      - registry：镜像仓库地址。本例中使用 `release.daocloud.io`。
+      - project：镜像仓库中的项目名称。本例中使用`demo`。
+      - name：镜像的名称。本例中使用`http-hello` 。
 
 5. 添加完成后，点击`确定`。
 
@@ -43,45 +47,58 @@
 
 2. 在编辑流水线详情页面点击`全局代理`，在全局代理抽屉上，从类型下拉列表中选择 node，从 label 下拉列表选择 go。
 
-  ![pipelisetting](../images/pipelisetting.png)
+    ![pipelisetting](../images/pipelisetting.png)
 
 3. 添加阶段 - 拉取源代码。
 
-- 点击画布中的`添加阶段`。在右侧的阶段设置中设置名称：git clone。
-- 点击`添加步骤`，在弹出的对话框中步骤类型下选择 git clone，对相关参数进行配置：
-  - 仓库 URL：输入 GitLab 仓库地址。
-  - 分支：不填写默认为 master 分支。
-  - 凭证：如果您的仓库属于私有仓库则需要提供一个凭证。
+    - 点击画布中的`添加阶段`。在右侧的阶段设置中设置名称：git clone。
+    - 点击`添加步骤`，在弹出的对话框中步骤类型下选择 git clone，对相关参数进行配置：
 
-  ![quickstart01](../images/quickstart01.png)
+        - 仓库 URL：输入 GitLab 仓库地址。
+        - 分支：不填写默认为 master 分支。
+        - 凭证：如果您的仓库属于私有仓库则需要提供一个凭证。
+
+        ![quickstart01](../images/quickstart01.png)
+
 4. 添加阶段 - 构建并推送镜像。
 
     - 点击画布中的`添加阶段`。在右侧的阶段设置中设置名称：build & push。
     - 在步骤模块中选择开启`指定容器`，在弹出的对话框中填写容器名称：go，然后点击`确定`。
 
     ![container](../images/container.png)
+
     - 在步骤模块中选择开启`使用凭证`，在弹出的对话框中填写相关参数，然后点击`确定`。
+
         - 凭证：选择创建的 docker hub凭证，用户访问镜像仓库。
         - 密码变量：PASS
         - 用户名变量：USER
 
       ![quickstart02](../images/quickstart02.png)
+
     - 点击`添加步骤`进行代码构建，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
+
     ```go
     go build -o simple-http-server main.go
     ```
+
     - 点击`添加步骤`以根据源码中的 Dockerfile 构建 Docker 镜像，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
+  
     ```docker
     docker build -f Dockerfile . -t $registry/$project/$name:latest
     ```
+
     - 点击`添加步骤`以登录镜像仓库，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
+  
     ```docker
     docker login $registry -u $USER -p $PASS
     ```
+
     - 点击`添加步骤`将镜像推送至镜像仓库中，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
+
     ```docker
     docker push $registry/$project/$name:latest
     ```
+
 5. 添加阶段 - 部署至集群
 
     - 点击画布中的`添加阶段`。在右侧的阶段设置中设置名称：deploy。
@@ -91,10 +108,10 @@
 
     - 在步骤模块中选择开启`使用凭证`，在弹出的对话框中填写相关参数，然后点击`确定`。
 
-      - 凭证：选择 kubeconfig 类型的凭证。
-      - kubeconfig 变量：如果您使用的是 kubectl apply 的部署方式，变量值必须为 KUBECONFIG。
+        - 凭证：选择 kubeconfig 类型的凭证。
+        - kubeconfig 变量：如果您使用的是 kubectl apply 的部署方式，变量值必须为 KUBECONFIG。
 
-      ![quickstart03](../images/quickstart03.png)
+        ![quickstart03](../images/quickstart03.png)
 
     - 点击`添加步骤`以进行集群部署操作，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
 
@@ -106,8 +123,8 @@
 
 1. 完成上一步后点击`保存并执行`。
 
-   ![quickstart05](../images/quickstart05.png)
+    ![quickstart05](../images/quickstart05.png)
 
 2. 在弹出的对话框中输入步骤二中的示例参数。点击`确定`即可成功运行该流水线。
 
-   ![build-para](../images/build-para.png)
+    ![build-para](../images/build-para.png)
