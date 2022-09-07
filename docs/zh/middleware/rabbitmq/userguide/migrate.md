@@ -26,24 +26,24 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 
 - 在 RabbitMQ Management Web UI 页面查看。
 
-  ![查看](../images/migrate01.png)
+    ![查看](../images/migrate01.png)
 
 - 调用 API 查看
 
-  ```shell
-  curl -s -u username:password -XGET http://ip:port/api/overview
-  ```
+    ```shell
+    curl -s -u username:password -XGET http://ip:port/api/overview
+    ```
 
-  参数说明：
+    参数说明：
 
-  - username：使用`rabbitmq-cluster-a`集群的RabbitMQ Management WebUI的帐号
-  - password：使用`rabbitmq-cluster-a`集群的RabbitMQ Management WebUI的密码
-  - ip：使用`rabbitmq-cluster-a`集群的RabbitMQ Management WebUI的IP地址
-  - port：使用`rabbitmq-cluster-a`集群的RabbitMQ Management WebUI的端口号
+    - username：使用`rabbitmq-cluster-a`集群的RabbitMQ Management WebUI的帐号
+    - password：使用`rabbitmq-cluster-a`集群的RabbitMQ Management WebUI的密码
+    - ip：使用`rabbitmq-cluster-a`集群的RabbitMQ Management WebUI的IP地址
+    - port：使用`rabbitmq-cluster-a`集群的RabbitMQ Management WebUI的端口号
 
 - 在 Overview 视图中，消费消息数（Ready）以及未确定的消息数（Unacked）都为 0，说明消费完成。
 
-  ![消息数为0](../images/migrate02.png)
+    ![消息数为0](../images/migrate02.png)
 
 ### 方案二
 
@@ -65,9 +65,10 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 - Add forwarding headers: 设置为 `true`，则会在转发的消息内添加 x-shovelled 的 header 属性。
 - Reconnect delay：指定在 Shovel link 失效的情况下，重新建立连接前需要等待的时间，单位为秒。如果设置为 0，则不会进行重连动作，即 Shovel 会在首次连接失效时停止工作。默认为 5 秒。
 - Acknowledgement mode：参考 Federation 的配置。
-  - `no ack` 表示无须任何消息确认行为；
-  - `on publish` 表示 Shovel 会把每一条消息发送到目的端之后再向源端发送消息确认；
-  - `on confirm` 表示 Shovel 会使用 publisher confirm 机制，在收到目的端的消息确认之后再向源端发送消息确认。
+
+    - `no ack` 表示无须任何消息确认行为；
+    - `on publish` 表示 Shovel 会把每一条消息发送到目的端之后再向源端发送消息确认；
+    - `on confirm` 表示 Shovel 会使用 publisher confirm 机制，在收到目的端的消息确认之后再向源端发送消息确认。
 
 #### 迁移前消息数量
 
@@ -87,8 +88,8 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 
 - rabbitmq-cluster-a 集群消息情况
 
-![集群消息](../images/migrate07.png)
+    ![集群消息](../images/migrate07.png)
 
 - rabbitmq-cluster-b 集群消息情况
 
-![集群消息](../images/migrate08.png)
+    ![集群消息](../images/migrate08.png)

@@ -251,7 +251,6 @@ nav:
       - 可观测性:
           - 介绍:
             - 什么是可观测性: zh/insight/03ProductBrief/WhatisKInsight.md
-            - 功能说明: zh/insight/03ProductBrief/Features.md
             - 产品优势: zh/insight/03ProductBrief/benefits.md
             - 常见术语: zh/insight/03ProductBrief/glossary.md
           - 概览: zh/insight/06UserGuide/overview.md

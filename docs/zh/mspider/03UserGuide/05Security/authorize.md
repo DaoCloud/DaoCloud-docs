@@ -15,13 +15,13 @@
 
     针对请求的发送方进行匹配，包括以下字段：
       
-      - principals：匹配发送方的身份
-    
-      在 Kubernetes 中可以认为是 pod 的 Service Account。使用这个字段时，首先需要开启 mTLS 功能。例如，当前请求是从 default namespace 中的 pod 中发出，且 pod 使用的 Service Account 名为 sleep，针对这个请求进行匹配，可将 principals 配置为 `cluster.local/ns/default/sa/sleep`。
-      
-      - requestPrincipals：匹配请求中的 JWT Token 的 `<issuer>/<subject>` 字段组合。
-      - Namespaces：匹配发送方 pod 所在的 namespace。
-      - ipBlocks：匹配请求的源 IP 地址段。
+        - principals：匹配发送方的身份
+        
+        在 Kubernetes 中可以认为是 pod 的 Service Account。使用这个字段时，首先需要开启 mTLS 功能。例如，当前请求是从 default namespace 中的 pod 中发出，且 pod 使用的 Service Account 名为 sleep，针对这个请求进行匹配，可将 principals 配置为 `cluster.local/ns/default/sa/sleep`。
+        
+        - requestPrincipals：匹配请求中的 JWT Token 的 `<issuer>/<subject>` 字段组合。
+        - Namespaces：匹配发送方 pod 所在的 namespace。
+        - ipBlocks：匹配请求的源 IP 地址段。
 
 - To
 
