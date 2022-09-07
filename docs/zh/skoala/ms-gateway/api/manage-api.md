@@ -63,11 +63,11 @@
 
 - 在 `API 列表`页面找到需要删除的 API，在该 API 的右侧 **`ⵗ`** 操作按钮下选择`删除`。
 
-  ![在列表页删除](imgs/add-api/delete-list.png)
+    ![在列表页删除](imgs/add-api/delete-list.png)
 
 - 在 `API 列表`点击需要删除的 API 的名称，进入该 API 的详情页，在页面右上角点击 **`ⵈ`** 操作按钮然后选择`删除`，
 
-  ![在详情页删除](imgs/add-api/delete-details.png)
+    ![在详情页删除](imgs/add-api/delete-details.png)
 
 为了防止误删，点击删除按钮后，需要输入 API 的名称进行二次确认。
 
