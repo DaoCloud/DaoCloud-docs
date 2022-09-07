@@ -9,20 +9,20 @@ DCE 5.0 目前开源的模块为[全局管理](../ghippo/01ProductBrief/WhatisGh
 
 1. 点击[这里](https://qingflow.com/f/58604bf8)开始申请许可证密钥，填写表单后点击`提交`。
 
-   ![license](../images/license011.png)
+    ![license](../images/license011.png)
 
 2. 按屏幕提示，打开邮箱查看包含许可证密钥的邮件，然后点击`换取离线授权码`（或者点击[这里](https://license.daocloud.io/dce5-license)）。
 
-   ![get-auth-code](../images/license012.png)
+    ![get-auth-code](../images/license012.png)
 
 3. 输入上一步的许可证密钥，输入设备独有的 ESN 后，点击`获取离线授权码`。
 
-   ![offline-auth-code](../images/license03.png)
+    ![offline-auth-code](../images/license03.png)
 
-   其中 ESN 是集群系统独有的设备编码。
-   具体获取方式为：打开 DCE，点击左侧导航栏`全局管理`->`平台设置`->`正版授权`，点击`管理许可证`按钮，打开`管理许可证`页面，复制 ESN 编码。
+    其中 ESN 是集群系统独有的设备编码。
+    具体获取方式为：打开 DCE，点击左侧导航栏`全局管理`->`平台设置`->`正版授权`，点击`管理许可证`按钮，打开`管理许可证`页面，复制 ESN 编码。
 
-   ![esn](../images/license02.png)
+    ![esn](../images/license02.png)
 
 4. 复制并粘贴上一步换取的离线授权码，点击`立即激活`。恭喜你！现在可以探索全新的 DCE 5.0 啦！
 

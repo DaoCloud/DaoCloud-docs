@@ -28,10 +28,12 @@
 ## 2. 镜像创建
 
 1. 点击一个集群名称，进入`集群详情`。
-  ![集群详情](../../images/deploy01.png)
+
+    ![集群详情](../../images/deploy01.png)
 
 2. 点击左侧导航栏的`工作负载`进入工作负载列表，点击`有状态负载`页签，点击右上角`镜像创建`按钮。
-  ![工作负载](../../images/state02.png)
+
+    ![工作负载](../../images/state02.png)
 
 3. 屏幕将显示`创建有状态负载`页面。
 
@@ -111,10 +113,12 @@
 对工作负载访问方式进行设置，可以设置服务访问方式。
 
 1. 点击`创建服务`按钮。
-  ![服务配置](../../images/deploy12.png)
+
+    ![服务配置](../../images/deploy12.png)
 
 2. 选择访问服务的各项信息，具体详情请参考[创建服务](../ServicesandRoutes/CreatingServices.md)。
-  ![创建服务](../../images/deploy13.png)
+
+    ![创建服务](../../images/deploy13.png)
 
 3. 点击`确定`，点击`下一步`。
 
@@ -138,11 +142,11 @@ Kubernetes v1.7 及其之后的版本可以通过 **.spec.podManagementPolicy** 
 
 - **按序策略**（OrderedReady）：默认 Pod 管理策略，对于包含 N 个 副本的 StatefulSet，当部署 Pod 时，顺序为 0..N-1。当删除 Pod 时，它们是逆序终止的。
 
-  顺序为 N-1..0。只有前一个 Pod 部署 Ready 或者删除完成后，有状态负载才会操作后一个 Pod。
+    顺序为 N-1..0。只有前一个 Pod 部署 Ready 或者删除完成后，有状态负载才会操作后一个 Pod。
 
 - **并行策略**（Parallel）：并行创建或删除 Pod，和 Deployment 类型的 Pod 一样。（不等待前面的 pod ready 就开始创建所有的 pod）。 StatefulSet 控制器并行的启动或终止所有的 Pod， 启动或者终止其他 Pod 前，无需等待 Pod 进入 Running 和 ready或者完全停止状态。 这个选项只会影响伸缩操作的行为，更新则不会被影响。
 
-![容器管理策略](../../images/state05.png)
+    ![容器管理策略](../../images/state05.png)
 
 ### 调度策略
 
