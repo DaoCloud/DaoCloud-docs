@@ -11,7 +11,7 @@ Kubernetes审计日志是对 Kubernetes API-Server的每个调用的详细描述
 
 ## 如何开启 Kubernetes 审计日志
 
-1. 配置审计日志 policy 文件，将以下的 yaml 放到 /etc/kubernetes/audit-policy/ 文件夹下，并命名为 `apiserver-audit-policy.yaml`
+1. 配置审计日志 policy 文件，将以下的 yaml 放到 `/etc/kubernetes/audit-policy/` 文件夹下，并命名为 `apiserver-audit-policy.yaml`
 
     ```yaml
     apiVersion: audit.k8s.io/v1
@@ -172,9 +172,10 @@ Kubernetes审计日志是对 Kubernetes API-Server的每个调用的详细描述
         - "RequestReceived"
     ```
 
-2. 打开 `api-server` 的配置文件 `kube-apiserver.yaml`，一般会在 /etc/kubernetes/manifests/ 文件夹，并添加以下配置信息:
+2. 打开 `api-server` 的配置文件 `kube-apiserver.yaml`，一般会在 `/etc/kubernetes/manifests/` 文件夹，并添加以下配置信息:
 
-	- 在 spec.containers.command 下添加命令：
+	- 在 `spec.containers.command` 下添加命令：
+
     ```yaml
     --audit-log-maxage=30
     --audit-log-maxbackup=1
@@ -183,16 +184,16 @@ Kubernetes审计日志是对 Kubernetes API-Server的每个调用的详细描述
     --audit-policy-file=/etc/kubernetes/audit-policy/apiserver-audit-policy.yaml
     ```
 
-    - 在 spec.containers.volumeMounts 下添加:
+    - 在 `spec.containers.volumeMounts` 下添加:
 
-    ```
+    ```yaml
     - mountPath: /var/log/audit
-    name: audit-logs
+        name: audit-logs
     - mountPath: /etc/kubernetes/audit-policy
-    name: audit-policy
+        name: audit-policy
     ```
 
-    - 在 spec.volumes 下添加：
+    - 在 `spec.volumes` 下添加：
 
     ```yaml
     - hostPath:
@@ -205,10 +206,9 @@ Kubernetes审计日志是对 Kubernetes API-Server的每个调用的详细描述
     name: audit-policy
     ```
 
-3. 等待几分钟 `api-server`重启成功后，在 /var/log/kubernetes/audit 目录下查看是否有审计日志生成，验证是否成功开启 Kubernetes 审计日志。
+3. 等待几分钟 `api-server`重启成功后，在 `/var/log/kubernetes/audit` 目录下查看是否有审计日志生成，验证是否成功开启 Kubernetes 审计日志。
 
-   > 如果想关闭，去掉 spec.containers.command 中的相关命令即可。
-
+> 如果想关闭，去掉 `spec.containers.command` 中的相关命令即可。
 
 ## 开启采集审计日志
 
@@ -235,9 +235,9 @@ Kubernetes审计日志是对 Kubernetes API-Server的每个调用的详细描述
             Refresh_Interval   10
     ```
 
-2. 重启 Master 节点上运行的 fluentbit pod，重启后的 FluentBit 将开启采集  `/var/log/kubernetes/audit` 下的日志。
+2. 重启 Master 节点上运行的 fluentbit pod，重启后的 FluentBit 将开启采集 `/var/log/kubernetes/audit` 下的日志。
 
-   > 如果需要停止采集 Kubernetes 审计日志，删除对应 `INPUT` 即可。
+> 如果需要停止采集 Kubernetes 审计日志，删除对应 `INPUT` 即可。
 
 ## 关闭采集审计日志
 

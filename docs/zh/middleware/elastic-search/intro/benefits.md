@@ -23,17 +23,10 @@ Elasticsearch 的分布式特性使得它可以扩展至数百台（甚至数千
 **Elasticsearch 支持多种编程语言**
 
 - Java
-
 - JavaScript (Node.js)
-
 - Go
-
 - .NET (C#)
-
 - PHP
-
 - Perl
-
 - Python
-
 - Ruby

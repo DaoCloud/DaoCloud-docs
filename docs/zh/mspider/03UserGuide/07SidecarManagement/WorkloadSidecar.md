@@ -34,15 +34,15 @@
 
 1. 选择一个或多个未启用边车注入的工作负载，点击右侧的`注入启用`按钮。
    
-   ![选择边车注入](../../images/wl-sidecar03.png)
+    ![选择边车注入](../../images/wl-sidecar03.png)
 
 2. 在弹出对话框中，确认选择的工作负载数量是否正确，确认无误后，勾选`立即重启`，点击`确定`。
    
-   <img src="../../images/wl-sidecar04.png" alt="边车注入确认" style="zoom:67%;" />
+    <img src="../../images/wl-sidecar04.png" alt="边车注入确认" style="zoom:67%;" />
 
 3. 返回工作负载的边车列表，可以看到所选工作负载的`状态`已变更为`已注入`。在完成工作负载的重启后，将完成边车注入，相关注入进度可查看`已注入 POD`这一列。
 
-  ![边车注入成功](../../images/wl-sidecar05.png)
+   ![边车注入成功](../../images/wl-sidecar05.png)
 
 > 注意！
 > 
@@ -54,15 +54,15 @@
 
 1. 选择一个或多个已启用边车注入的工作负载，点击右侧的`注入禁用`按钮。
    
-   ![选择边车禁用](../../images/wl-sidecar05.png)
+    ![选择边车禁用](../../images/wl-sidecar05.png)
 
 2. 在弹出对话框中，确认选择的工作负载数量是否正确，确认无误后，勾选`立即重启`，点击`确定`。
    
-   <img src="../../images/wl-sidecar06.png" alt="边车禁用确认" style="zoom:67%;" />
+    <img src="../../images/wl-sidecar06.png" alt="边车禁用确认" style="zoom:67%;" />
 
 3. 返回工作负载的边车列表，可以看到所选工作负载的`状态`已变更为`未注入`。相关卸载进度可查看`已注入 POD`这一列。
 
-  ![边车禁用成功](../../images/wl-sidecar07.png)
+   ![边车禁用成功](../../images/wl-sidecar07.png)
 
 ## 边车资源限制
 
@@ -70,10 +70,10 @@
 
 1. 选择一个（或多个）已启用边车注入的工作负载，点击`边车资源限制`按钮。
 
-   ![边车禁用成功](../../images/wl-sidecar05.png)
+    ![边车禁用成功](../../images/wl-sidecar05.png)
 
 2. 弹出对话框中，分别设置 CPU/内存的请求值与限制值。选中`立即重启`，点击`确定`。
 
-   <img src="../../images/wl-sidecar08.png" alt="边车禁用成功" style="zoom:67%;" />
+    <img src="../../images/wl-sidecar08.png" alt="边车禁用成功" style="zoom:67%;" />
 
 3. 在工作负载边车管理列表中，可以看到指定工作负载的`CPU申请值/限制值`和`内存申请值/限制值`内数据已更新。
