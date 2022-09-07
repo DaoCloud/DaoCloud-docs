@@ -1,10 +1,10 @@
 # 功能特性
 
-本页说明有关 RabbitMQ 的功能特性。
+RabbitMQ 的通用功能特性包括：
 
 - 可靠性（Reliability）
    
-   RabbitMQ 使用一些机制来保证可靠性，如持久化、传输确认、发布确认。
+  RabbitMQ 使用一些机制来保证可靠性，如持久化、传输确认、发布确认。
 
 - 消息集群（Clustering）
 
@@ -33,3 +33,11 @@
 - 插件机制（Plugin System）
 
   RabbitMQ 提供了许多插件，支持从多方面进行扩展，也可以编写自己的插件。
+
+在 DCE 5.0 中部署 RabbitMQ 后，还将支持以下特性：
+
+- 支持单节点和多节点 RabbitMQ 集群部署
+- 支持 RabbitMQ Managerment 插件，提供管理页面
+- 支持 RabbitMQ Prometheus 插件，暴露监控指标
+- 使用 ServiceMonitor 对接 Prometheus 抓取指标
+- 支持 RabbitMQ 集群的扩容和滚动升级

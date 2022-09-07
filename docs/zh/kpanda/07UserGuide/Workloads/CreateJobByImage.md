@@ -3,19 +3,24 @@
 任务（Job）适用于一次性的任务执行，会创建一个或者多个 Pod，并将继续重试 Pod 的执行，直到指定数量的 Pod 成功终止。 随着 Pod 成功结束，Job 将跟踪记录成功完成的 Pod 个数。 当数量达到指定的成功个数阈值时，Job 结束。 删除 Job 的操作会清除所创建的全部 Pod。 挂起 Job 的操作会删除 Job 的所有活跃 Pod，直到 Job 被再次恢复执行。Job 根据 `.spec.completions` 设定完成标注：
 
 1. 非并行 Job：
-   - 通常只启动一个 Pod，除非该 Pod 失败。
-   - 当 Pod 成功终止时，立即视 Job 为完成状态。
+
+    - 通常只启动一个 Pod，除非该 Pod 失败。
+    - 当 Pod 成功终止时，立即视 Job 为完成状态。
+   
 2. 具有确定完成计数的并行 Job：
-   - `.spec.completions` 字段设置为非 0 的正数值。
-   - Job 用来代表整个任务，当成功的 Pod 个数达到 `.spec.completions` 时，Job 被视为完成。
-   - 当使用 `.spec.completionMode="Indexed"` 时，每个 Pod 都会获得一个不同的 索引值，介于 0 和 `.spec.completions-1` 之间。
+
+    - `.spec.completions` 字段设置为非 0 的正数值。
+    - Job 用来代表整个任务，当成功的 Pod 个数达到 `.spec.completions` 时，Job 被视为完成。
+    - 当使用 `.spec.completionMode="Indexed"` 时，每个 Pod 都会获得一个不同的 索引值，介于 0 和 `.spec.completions-1` 之间。
+
 3. 带工作队列的并行 Job：
-   - 不设置 `spec.completions`，默认值为 `.spec.parallelism`。
-   - 多个 Pod 之间必须相互协调，或者借助外部服务确定每个 Pod 要处理哪个工作条目。 例如，任一 Pod 都可以从工作队列中取走最多 N 个工作条目。
-   - 每个 Pod 都可以独立确定是否其它 Pod 都已完成，进而确定 Job 是否完成。
-   - 当 Job 中 *任何* Pod 成功终止，不再创建新 Pod。
-   - 一旦至少 1 个 Pod 成功完成，并且所有 Pod 都已终止，即可宣告 Job 成功完成。
-   - 一旦任何 Pod 成功退出，任何其它 Pod 都不应再对此任务执行任何操作或生成任何输出。 所有 Pod 都应启动退出过程。
+
+    - 不设置 `spec.completions`，默认值为 `.spec.parallelism`。
+    - 多个 Pod 之间必须相互协调，或者借助外部服务确定每个 Pod 要处理哪个工作条目。 例如，任一 Pod 都可以从工作队列中取走最多 N 个工作条目。
+    - 每个 Pod 都可以独立确定是否其它 Pod 都已完成，进而确定 Job 是否完成。
+    - 当 Job 中 *任何* Pod 成功终止，不再创建新 Pod。
+    - 一旦至少 1 个 Pod 成功完成，并且所有 Pod 都已终止，即可宣告 Job 成功完成。
+    - 一旦任何 Pod 成功退出，任何其它 Pod 都不应再对此任务执行任何操作或生成任何输出。 所有 Pod 都应启动退出过程。
 
 ## 前提条件
 
@@ -41,10 +46,12 @@
 ## 2. 镜像创建
 
 1. 点击一个集群名称，进入`集群详情`。
-  ![集群详情](../../images/deploy01.png)
+
+    ![集群详情](../../images/deploy01.png)
 
 2. 点击左侧导航栏的`工作负载`进入工作负载列表，点击`任务`页签，点击右上角`镜像创建`按钮。
-  ![工作负载](../../images/job01.png)
+
+    ![工作负载](../../images/job01.png)
 
 3. 屏幕将显示`创建任务`页面。
 
@@ -124,10 +131,12 @@
 对工作负载访问方式进行设置，可以设置服务访问方式。
 
 1. 点击`创建服务`按钮。
-  ![服务配置](../../images/deploy12.png)
+
+    ![服务配置](../../images/deploy12.png)
 
 2. 选择访问服务的各项信息，具体详情请参考[创建服务](../ServicesandRoutes/CreatingServices.md)。
-  ![创建服务](../../images/deploy13.png)
+
+    ![创建服务](../../images/deploy13.png)
 
 3. 点击`确定`，点击`下一步`。
 

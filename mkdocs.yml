@@ -458,14 +458,25 @@ nav:
             - 云原生网络方案: zh/network/intro/what-is-net.md
             - 背景: zh/network/intro/background.md
             - 挑战: zh/network/intro/challenges.md
-          - 模块:
+          - 即插即用网络组件:
             - 网络组件: zh/network/modules/modules.md
             - Spiderpool:
               - 介绍: zh/network/modules/spiderpool/what.md
               - 安装: zh/network/modules/spiderpool/install.md
               - 配置参考: zh/network/modules/spiderpool/config.md
               - 常用命令: zh/network/modules/spiderpool/command.md
+            - Calico:
+              - 介绍: zh/network/modules/calico/what.md
+              - 安装: zh/network/modules/calico/install.md
+              - 配置参考: zh/network/modules/calico/config.md
+              - 常用命令: zh/network/modules/calico/command.md
+            - Cilium:
+              - 介绍: zh/network/modules/cilium/what.md
+              - 安装: zh/network/modules/cilium/install.md
+              - 配置参考: zh/network/modules/cilium/config.md
+              - 常用命令: zh/network/modules/cilium/command.md
       - 中间件:
+          - 中间件介绍: zh/middleware/midware.md
           - RabbitMQ 消息队列:
               - 什么是 RabbitMQ: zh/middleware/rabbitmq/intro/what.md
               - 功能说明: zh/middleware/rabbitmq/intro/features.md

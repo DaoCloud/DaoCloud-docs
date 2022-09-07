@@ -19,11 +19,11 @@
 
 * Kairship apiserver
 
-  Kairship 数据流入口，所有 API 的入口（protobuf 优先，通过 proto 定义所有的 API 接口，并以此生成对应的前后端代码，使用 grpw-gateway 实现同时支持 http restful 和 grpc）
+    Kairship 数据流入口，所有 API 的入口（protobuf 优先，通过 proto 定义所有的 API 接口，并以此生成对应的前后端代码，使用 grpw-gateway 实现同时支持 http restful 和 grpc）
 
 * Kairship controller-manager
 
-  Kairship 控制器，主要负责一些实例状态同步、资源搜集、Karmada 实例注册、全局资源注册等
+    Kairship 控制器，主要负责一些实例状态同步、资源搜集、Karmada 实例注册、全局资源注册等
 
 > 目前 Kairship 鉴权功能 只鉴权 Karmada 实例的权限。Kairship apiserver 校验来自阿猫的接口是否有权限操作、访问 Karmada 实例
 
@@ -41,23 +41,23 @@ Kairship apiserver 主要担负着 `Kairship` 所有流量的入口（openapi、
 
 * virtual-cluster-sync-controller
 
-  Kairship 实例 CRD 的 CRUD 事件监听，一旦创建 kariship 实例，则同步创建对应的 Kpanda cluster（virtual 类型，Kpanda 界面无须展示），Kairship 实例所有资源的检索（多云工作负载、pp、op） 都将通过 Kpanda 内部的加速机制完成（by clusterpedia），实现读写分离，进而提高性能。实例删除，则同步删除注册在 Kpanda 中的 virtual cluster。
+    Kairship 实例 CRD 的 CRUD 事件监听，一旦创建 kariship 实例，则同步创建对应的 Kpanda cluster（virtual 类型，Kpanda 界面无须展示），Kairship 实例所有资源的检索（多云工作负载、pp、op） 都将通过 Kpanda 内部的加速机制完成（by clusterpedia），实现读写分离，进而提高性能。实例删除，则同步删除注册在 Kpanda 中的 virtual cluster。
 
 * resource statistics controller
 
-  主要搜集 Kairship 实例中加入的所有 cluster 的统计信息，并将其回写到 Kairship 实例 crd 中（例如该实例所管理的集群中总共包含多少CPU、内存、节点数）。
+    主要搜集 Kairship 实例中加入的所有 cluster 的统计信息，并将其回写到 Kairship 实例 crd 中（例如该实例所管理的集群中总共包含多少CPU、内存、节点数）。
 
 * status sync controller
 
-  Kairship 实例本身的状态同步、统计。
+    Kairship 实例本身的状态同步、统计。
 
 * instance registry controller
 
-  `Kairship` 需要注册平台内所有 `Karmada` 实例到 Ghippo（通过 CRD）。完成权限资源的注册，这样才能在 Ghippo 中完成人与 Karmada 实例的绑定关系。最终这些绑定关系会同步回 Kairship。
+    `Kairship` 需要注册平台内所有 `Karmada` 实例到 Ghippo（通过 CRD）。完成权限资源的注册，这样才能在 Ghippo 中完成人与 Karmada 实例的绑定关系。最终这些绑定关系会同步回 Kairship。
 
 * Ghippo webhook controller
 
-  Ghippo 完成人与 Karmada 实例的绑定关系之后会通过 sdk 通知到 Kairship，Kairship 据此完成鉴权动作。
+    Ghippo 完成人与 Karmada 实例的绑定关系之后会通过 sdk 通知到 Kairship，Kairship 据此完成鉴权动作。
 
 上图 `Kairship` management 中有一个 instance proxy 的组件（内部组件），主要负责 `Kairship` 管理面同各个 `Karmada` 实例间的通信。可以理解成是一个Kubernetes clients 的集合，根据 Cluster Name 获取对应的 client，然后访问真正的 Karmada 实例。
 

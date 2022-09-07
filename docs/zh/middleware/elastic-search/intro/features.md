@@ -9,7 +9,7 @@ Elasticsearch 使用的是一种名为倒排索引的数据结构，这一结构
 在索引过程中，Elasticsearch 会存储文档并构建倒排索引，这样用户便可以近实时地对文档数据进行搜索。
 索引过程是在索引 API 中启动的，通过此 API 您既可向特定索引中添加 JSON 文档，也可更改特定索引中的 JSON 文档。
 
-Elasticsearch 支持的功能特性如下：
+Elasticsearch 支持的通用功能特性如下：
 
 | 分类       | 特性                                                         | 说明                                                 |
 | ---------- | ------------------------------------------------------------ | ---------------------------------------------------- |
@@ -18,3 +18,11 @@ Elasticsearch 支持的功能特性如下：
 | 全文搜索   | 搜索功能排序功能统计分析功能                                 | 通过 RESTful API 方式提供                            |
 | 数据采集   | ElasticSearch 数据导入 APIMaxcompute 数据导入工具全量、增量采集方式 | 丰富的原生数据采集接口，集成 Maxcompute 数据导入工具 |
 | 服务鉴权   | 服务级别的用户鉴权机制                                       | 统一的用户鉴权设置                                   |
+
+在 DCE 5.0 中部署 MySQL 后，还将支持以下特性：
+
+- 支持 Elasticsearch 专有节点、热数据节点、冷数据节点、数据节点角色部署
+- 集成 Kibana
+- 基于 elasticsearch-exporter 暴露指标
+- 基于 Grafana Operator 集成 Elasticsearch Dashboard，展示监控数据
+- 使用 ServiceMonitor 对接 Prometheus 抓取指标

@@ -25,3 +25,13 @@
 - 自动运维
   
   可设置自动备份策略、监控告警策略、自动扩容策略等。
+
+在 DCE 5.0 中部署 MySQL 后，还将支持以下特性：
+
+- 基于 Orchestrator 实现 MySQL 高可用和拓扑管理
+- 支持单节点和主备模式
+- 支持 phpmyadmin，提供管理页面
+- 基于 mysqld-exporter 暴露指标
+- 使用 Grafana Operator 集成 MySQL Dashboard，展示监控数据
+- 使用S erviceMonitor 对接 Prometheus 抓取指标
+- 支持备份、恢复（依赖支持 S3 协议的存储）

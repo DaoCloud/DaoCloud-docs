@@ -1,14 +1,14 @@
 # 安装
 
-Spiderpool 需要 kube-apiserver webhook，所以也需要tls 证书。
+Spiderpool 需要 kube-apiserver webhook，所以也需要 TLS（Transparent Layer Security，传输层安全性）证书。
 
-有两种安装方法。一种是通过自签名证书，一种是使用 cert-manager。
+有两种安装方法：一种是通过自签名证书，一种是使用 cert-manager。
 
 ## 通过自签名证书进行安装
 
 这种安装方法比较简单，不需要安装任何依赖项。我们提供了一个脚本来生成这个证书。
 
-以下是针对 IPv4 的示例。
+以下是针对 IPv4 单栈的示例。
 
 ```shell
 helm repo add spiderpool https://spidernet-io.github.io/spiderpool
@@ -42,7 +42,7 @@ helm install spiderpool spiderpool/spiderpool --wait --namespace kube-system \
   --set clusterDefaultPool.ipv4Gateway=${Ipv4Gateway}
 ```
 
-以下是一个双栈的示例。
+以下是一个同时支持 IPv4 和 IPv6 双栈的示例。
 
 ```shell
 helm repo add spiderpool https://spidernet-io.github.io/spiderpool
@@ -84,8 +84,8 @@ helm install spiderpool spiderpool/spiderpool --wait --namespace kube-system \
   --set clusterDefaultPool.ipv6Gateway=${Ipv6Gateway}
 ```
 
-> 注意：spiderpool-controller Pod 以 hostnetwork 模式运行，它需要占用 host 端口，所以使用 podAntiAffinity 来设置亲和性，
-这可以确保某个节点仅运行一个 spiderpool-controller Pod。因此如果你将 spiderpool-controller 的副本数设置为大于 2，则需要先确保有足够的节点。
+> 注意：spiderpool-controller Pod 以 hostNetwork 模式运行，它需要占用 host 端口，所以使用 `podAntiAffinity` 来设置亲和性，
+> 这可以确保某个节点仅运行一个 spiderpool-controller Pod。因此如果你将 spiderpool-controller 的副本数设置为大于 2，则需要先确保有足够的节点。
 
 ## 通过 cert-manager 进行安装
 
@@ -96,6 +96,8 @@ helm install spiderpool spiderpool/spiderpool --wait --namespace kube-system \
 - 通过自签名证书安装 Spiderpool 之后，且已部署 cert-manager，采用这种安装方式来变更 cert-manager 方案。
 
 - 在带有 [Multus CNI](https://github.com/k8snetworkplumbingwg/multus-cni) 的集群上，通过其他 CNI 部署 cert-manager Pod，然后通过 cert-manager 可以部署 Spiderpool。
+
+部署示例如下：
 
 ```shell
 helm repo add spiderpool https://spidernet-io.github.io/spiderpool
