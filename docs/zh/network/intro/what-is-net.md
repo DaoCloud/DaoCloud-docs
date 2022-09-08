@@ -33,13 +33,16 @@ DCE 5.0 云原生网络基于开源技术，不仅提供单 CNI 网络支持，�
 
 ![img](../images/solution02.png)
 
-## 默认安装的组件
+## 网络组件
 
-DCE 5.0 默认安装了以下网络组件：
+按照上述两种方案，DCE 5.0 可以安装的网络组件包括：
 
 - Cert Manager：证书管理器
-- SpiderPool：自动化管理 IP 资源
+- [Calico](../modules/calico/what.md)：基于 iptables 构建的网络方案
+- [Cilium](../modules/cilium/what.md)：基于 eBPF 内核构建的网络方案
+- MacVLAN：基于 Docker 构建的虚拟网络
 - Multus：多网卡多 CNI 支持的核心组件
 - Metalb：负载均衡器
+- [Spiderpool](../modules/spiderpool/what.md)：自动化管理 IP 资源
 
 其他 CNI 和 Ingress 等组件可以按需安装。
