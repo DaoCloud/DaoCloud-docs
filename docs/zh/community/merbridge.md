@@ -24,4 +24,6 @@ Merbridge 的核心特性包括：
 
     在 Istio 中，Envoy 使用当前 PodIP 加服务端口来访问应用程序。由于 PodIP 肯定也存在于 local_pod_ips ，所以请求就会被转发到 PodIP + 15006 端口。这样会造成无限递归，不能在 eBPF 获取当前命名空间的 IP 地址信息。因此，需要一套反馈机制：在 Envoy 尝试建立连接时仍然重定向到 15006 端口，在 sockops 阶段判断源 IP 和目的 IP 是否一致。如果一致，说明发送了错误的请求，需要在 sockops 丢弃该连接，并将当前的 ProcessID 和 IP 地址信息写入 process_ip map，让 eBPF 支持进程和 IP 的对应关系。下次发送请求时直接从 process_ip 表检查目的地址是否与当前 IP 地址一致。Envoy 会在请求失败时重试，且这个错误只会发生一次，后续的连接会非常快。
 
-更多信息，请访问 [Merbridge](https://github.com/merbridge/merbridge) 社区。
+[了解 Merbridge 社区](https://github.com/merbridge/merbridge){ .md-button }
+
+[查阅 Merbridge 官网](https://merbridge.io/){ .md-button }

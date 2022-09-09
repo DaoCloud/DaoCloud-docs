@@ -1,7 +1,5 @@
 # KLTS
 
-[KLTS](https://klts.io/)：对 k8s 1.10 到（最新版本 - 0.03）的持续维护
-
 KLTS 全称为 Kubernetes Long Term Support，主要使命是为 Kubernetes 早期版本提供长期免费的维护支持。
 
 之所以需要维护早期版本，是因为在实际生产环境中，最新版本不一定是最好的，也不是最稳定的。
@@ -57,4 +55,6 @@ KLTS 针对这一现状，默默修复了深受 [CVE-2021-3121](https://www.cved
 - v1.11.10
 - v1.10.13
 
-如果您觉得 KLTS 团队的付出有价值，让您值得信赖，欢迎任何开发者加入 [KLTS 社区](https://github.com/klts-io)交流并做出贡献。
+[了解 KLTS 社区](https://github.com/klts-io){ .md-button }
+
+[查阅 KLTS 官网](https://klts.io/){ .md-button }

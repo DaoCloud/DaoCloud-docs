@@ -1,7 +1,5 @@
 # 集群检索百科全书 Clusterpedia
 
-传送门：[Clusterpedia](https://github.com/clusterpedia-io)
-
 Clusterpedia 这个名字的灵感来自 Wikipedia（维基百科），我们希望这个项目像维基一样能够轻松检索容器化集群中所有资源，成为集群管理员的趁手工具，可以方便地同步、检索和控制多集群资源。
 
 Clusterpedia 兼容 Kubernetes OpenAPI，实现了多集群资源的同步，提供了更强大的搜索功能，可以快速、轻松、有效地获取集群内所有资源信息。
@@ -22,4 +20,6 @@ Clusterpedia 的能力不仅是搜索和查看，而且还可以简单地控制�
 
     云原生全景图由 CNCF 从 2016 年 12 月开始维护，汇总了社区成熟和使用范围较广、具有最佳实践的产品和方案，并加以分类，为企业构建云原生体系提供参考，在云生态研发、运维领域具有广泛影响力。
 
-[更多信息请移步 Clusterpedia 社区](https://github.com/clusterpedia-io){ .md-button }
+[了解 Clusterpedia 社区](https://github.com/clusterpedia-io){ .md-button }
+
+[查阅 Clusterpedia 官网](https://clusterpedia.io/){ .md-button }
