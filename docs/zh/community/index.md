@@ -12,4 +12,6 @@
 - [kwok](https://github.com/kubernetes-sigs/kwok)：用一台笔记本以最小资源模拟成千上万的 kubelet
 - [ferry](https://github.com/ferryproxy/ferry)：Kubernetes 多集群通信组件，消除多集群复杂度，让你就像管理一个单集群
 
-> 为方便检索，上述列表按字母排序。
+!!! note
+
+    为方便检索，上述列表按字母排序。

@@ -10,7 +10,9 @@
 
     <img src="../images/sql02.png" style="zoom:40%;" />
 
-    > 如果未出现弹窗，可手动点击左上角图标后选择一个工作空间。
+    !!! note
+    
+        如果未出现弹窗，可手动点击左上角图标后选择一个工作空间。
 
     <img src="../images/sql03.png" style="zoom:50%;" />
 

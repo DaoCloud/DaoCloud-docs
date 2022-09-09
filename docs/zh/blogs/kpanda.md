@@ -7,6 +7,8 @@ Daocloud 第五代[云容器管理 (Kpanda）](../kpanda/03ProductBrief/WhatisKP
 实现多云与多集群统一化管理，进一步简化企业的应用上云流程，降低运维管理和人力成本。
 支持一键式创建 Kubernetes 集群，帮助企业快速搭建企业级的容器云平台。
 
+[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+
 云容器管理的主要功能如下：
 
 ![img](images/kpanda01.jpeg)

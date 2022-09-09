@@ -6,7 +6,11 @@ RabbitMQ 的数据包括元数据（RabbitMQ 用户、vhost、队列、交换和
 
 ## 数据迁移步骤
 
-> 从 V3.7.0 开始，RabbitMQ 将所有消息数据存储在 `msg_stores/vhosts` 目录中，并存储在每个 vhost 的子目录中。每个 vhost 目录都以哈希命名，并包含一个带有 vhost 名称的 `.vhost` 文件，因此可以单独备份特定 vhost 的消息集。了解[更多信息](https://www.rabbitmq.com/backup.html)。
+!!! info
+
+    从 V3.7.0 开始，RabbitMQ 将所有消息数据存储在 `msg_stores/vhosts` 目录中，并存储在每个 vhost 的子目录中。
+    每个 vhost 目录都以哈希命名，并包含一个带有 vhost 名称的 `.vhost` 文件，因此可以单独备份特定 vhost 的消息集。
+    了解[更多信息](https://www.rabbitmq.com/backup.html)。
 
 RabbitMQ 数据迁移，可以采用如下两种方案：
 

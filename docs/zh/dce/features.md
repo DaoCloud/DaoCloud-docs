@@ -2,7 +2,7 @@
 
 DaoCloud Enterprise 5.0 融海量特性于一体，目前支持的典型功能如下。
 
-**[多集群管理](../kpanda/03ProductBrief/WhatisKPanda.md)**
+=== "[多集群管理](../kpanda/03ProductBrief/WhatisKPanda.md)"
 
 - 多集群的统一纳管，支持所有特定版本范围内任意 Kubernetes 集群纳入云容器管理范围，实现云上云下多云&混合云容器云平台的统一管理。
 
@@ -16,7 +16,7 @@ DaoCloud Enterprise 5.0 融海量特性于一体，目前支持的典型功能�
 
 - 开放式 API 能力，提供原生的 Kubernetes OpenAPI 能力。
 
-**云原生应用管理**
+=== "云原生应用管理"
 
 - 多形态云原生应用管理，实现不同类型的云原生应用的部署及全生命周期管理，支持云原生应用、Helm 应用、OAM 等，开放式多云应用兼容。
 
@@ -28,7 +28,7 @@ DaoCloud Enterprise 5.0 融海量特性于一体，目前支持的典型功能�
 
 - 跨集群负载统一管理能力。
 
-**[持续性业务交付](../amamba/01ProductBrief/WhatisAmamba.md)**
+=== "[持续性业务交付](../amamba/01ProductBrief/WhatisAmamba.md)"
 
 - 企业级云原生 CI/CD 能力，实现标准化的持续集成和交付能力，实现应用的敏捷迭代，快速满足业务新需求，提高应用的集成和发布效率。
 
@@ -41,7 +41,7 @@ DaoCloud Enterprise 5.0 融海量特性于一体，目前支持的典型功能�
 - 综合集成社区流行的 DevOps 工具，单个流水线中的步骤可以在多操作系统、多体系结构节点上运行，支持在公有云、私有云或主机上独立部署，能很好地集成企业自有的系统和平台。
   支持集成业界主流软件，如 Kubernetes、GitLab、SonarQube、Harbor 等。
 
-**[多云应用分发](../kairship/01product/whatiskair.md)**
+=== "[多云应用分发](../kairship/01product/whatiskair.md)"
 
 - 统一多云编排管理面，统一管理多个多云实例，统一请求入口。
 
@@ -51,7 +51,7 @@ DaoCloud Enterprise 5.0 融海量特性于一体，目前支持的典型功能�
 
 - 多云应用故障切换（Failover）功能。
 
-**[统一的用户权限体系](../ghippo/01ProductBrief/WhatisGhippo.md)**
+=== "[统一的用户权限体系](../ghippo/01ProductBrief/WhatisGhippo.md)"
 
 - 用户/用户组集中式管理，多功能模块统一用户/用户组管理，打通用户体系，降低管理运维成本。
 
@@ -63,7 +63,7 @@ DaoCloud Enterprise 5.0 融海量特性于一体，目前支持的典型功能�
 
 - 灵活的资源划分，基于资源粒度（命名空间、集群、注册中心等）进行资源划分及绑定，统一分配容器平台资源。
 
-**一站式[微服务治理](../skoala/intro/overview.md)**
+=== "一站式[微服务治理](../skoala/intro/overview.md)"
 
 - 微服务注册中心集中纳管集群所有动态微服务。
 
@@ -73,7 +73,7 @@ DaoCloud Enterprise 5.0 融海量特性于一体，目前支持的典型功能�
 
 - 微服务网关肩负管理微服务南北流量管控的重要作用。
 
-**[可观测](../insight/03ProductBrief/WhatisKInsight.md)**
+=== "[可观测](../insight/03ProductBrief/WhatisKInsight.md)"
 
 - 以应用为中心、开箱即用的新一代云原生可观测性运维平台，实现快速的故障定位和快捷的故障排查。
 
@@ -83,7 +83,7 @@ DaoCloud Enterprise 5.0 融海量特性于一体，目前支持的典型功能�
 
 - 提供了指标、日志、链路三合一的统一采集，支持对指标、日志进行多维度的告警并提供简洁明了的可视化管理界面。
 
-**精选[中间件](../middleware/midware.md)**
+=== "精选[中间件](../middleware/midware.md)"
 
 - 支持多种主流中间件：Redis、MySQL、Elasticsearch、RabbitMQ、Kafka、MinIO 等。
 
@@ -94,3 +94,5 @@ DaoCloud Enterprise 5.0 融海量特性于一体，目前支持的典型功能�
 - 支持实例资源和业务维度的统一监控。
 
 - 可基于工作空间实现多租户需求的权限管理。
+
+[申请社区免费体验](license0.md){ .md-button .md-button--primary }

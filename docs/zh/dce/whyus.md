@@ -52,3 +52,5 @@
 - 基于原生的 Kubernetes 和 Docker 技术，全面兼容 Kubernetes API 和 Kubectl 命令。
 
 - 提供了丰富的插件体系扩充云容器集群功能，例如 Multus、Cillum、Contour 等网络插件。
+
+[申请社区免费体验](license0.md){ .md-button .md-button--primary }
