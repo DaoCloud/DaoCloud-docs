@@ -513,6 +513,34 @@ nav:
               - 创建 MySQL: zh/middleware/mysql/userguide/create.md
               - 更新 MySQL: zh/middleware/mysql/userguide/update.md
               - 删除 MySQL: zh/middleware/mysql/userguide/delete.md
+      - HwameiStor:
+          - 介绍: zh/hwameistor/intro/what.md
+          - 模块: 
+              - 本地磁盘管理器: zh/hwameistor/intro/ldm.md
+              - 本地存储: zh/hwameistor/intro/ls.md
+              - DRBD 安装器: zh/hwameistor/intro/drbd.md
+              - 调度器: zh/hwameistor/intro/scheduler.md
+              - 准入控制器: zh/hwameistor/intro/admission-controller.md
+          - 资源: zh/hwameistor/intro/resources.md
+          - 安装管理:
+              - 准备工作: zh/hwameistor/install/prereq.md
+              - 通过 Helm Chart 安装: zh/hwameistor/install/deploy.md
+              - 安装后检查: zh/hwameistor/install/post-check.md
+              - 升级: zh/hwameistor/install/upgrade.md
+              - 卸载: zh/hwameistor/install/uninstall.md
+          - 资源管理:
+              - 创建存储池: zh/hwameistor/resources/storagepool.md
+              - 数据卷扩容: zh/hwameistor/resources/expand.md
+              - 数据卷迁移: zh/hwameistor/resources/migrate.md
+              - 节点扩展: zh/hwameistor/resources/node-expansion.md
+              - 数据盘扩展: zh/hwameistor/resources/disk-expansion.md
+          - 应用场景: 
+              - 部署有状态应用: 
+                  - 使用本地卷部署: zh/hwameistor/application/local.md
+                  - 使用高可用卷部署: zh/hwameistor/application/ha.md 
+              - TiDB: zh/hwameistor/application/tidb.md
+              - MinIO: zh/hwameistor/application/minio/minio.md
+          - 常见问题: zh/hwameistor/faqs.md
   - 视频教程:
       - 容器管理: zh/videos/kpanda.md
       - 全局管理: zh/videos/ghippo.md
