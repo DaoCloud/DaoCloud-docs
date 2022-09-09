@@ -28,7 +28,4 @@ Ferry 是一个 Kubernetes 多集群通信组件，旨在消除集群复杂环�
 
     - 只需要一个公共 IP
 
-## 更多信息
-
-https://github.com/ferryproxy/ferry
-
+[了解 ferry 社区](https://github.com/ferryproxy/ferry){ .md-button }

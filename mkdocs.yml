@@ -173,6 +173,7 @@ nav:
   - 帮助文档:
       - DCE 产品介绍:
           - 什么是 DCE5.0: zh/dce/what-is-dce.md
+          - 适用场景: zh/dce/scenario.md
           - 平台功能: zh/dce/features.md
           - 为什么选择 DCE: zh/dce/whyus.md
           - 申请社区免费体验: zh/dce/license0.md
