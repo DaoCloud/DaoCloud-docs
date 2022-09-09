@@ -26,8 +26,8 @@ helm upgrade --install MySQL-cluster-operator --create-namespace -n mcamel-syste
 helm upgrade --install MySQL --create-namespace -n mcamel-system --cleanup-on-fail --set MySQL.persistence.storageClassName=local-path mcamel-relea
 ```
 
-> 注意：
->
-> 1. 需要指定持久化存储数据参数，否则安装会失败。
->
-> 2. 安装 MySQL 集群前，先确保 MySQL Cluster Operator 已部署。
+!!! note
+
+    1. 需要指定持久化存储数据参数，否则安装会失败。
+
+    2. 安装 MySQL 集群前，先确保 MySQL Cluster Operator 已部署。

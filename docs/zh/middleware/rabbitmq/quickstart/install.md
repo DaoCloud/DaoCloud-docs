@@ -26,8 +26,8 @@ helm upgrade --install rabbitmq-cluster-operator --create-namespace -n mcamel-sy
 helm upgrade --install rabbitmq --create-namespace -n mcamel-system --cleanup-on-fail --set rabbitmq.persistence.storageClassName=local-path mcamel-relea
 ```
 
-> 注意：
->
-> 1. 需要指定持久化存储数据参数，否则安装会失败。
->
-> 2. 安装 RabbitMQ 集群前，先确保 RabbitMQ Cluster Operator 已部署。
+!!! note
+
+    1. 需要指定持久化存储数据参数，否则安装会失败。
+
+    2. 安装 RabbitMQ 集群前，先确保 RabbitMQ Cluster Operator 已部署。

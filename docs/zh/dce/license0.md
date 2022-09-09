@@ -7,11 +7,11 @@ DCE 5.0 目前开源的模块为[全局管理](../ghippo/01ProductBrief/WhatisGh
 
 具体操作步骤为：
 
-1. 点击[这里](https://qingflow.com/f/58604bf8)开始申请许可证密钥，填写表单后点击`提交`。
+1. 点击 [申请许可证密钥](https://qingflow.com/f/58604bf8){ .md-button }，填写表单后点击`提交`。
 
     ![license](../images/license011.png)
 
-2. 按屏幕提示，打开邮箱查看包含许可证密钥的邮件，然后点击`换取离线授权码`（或者点击[这里](https://license.daocloud.io/dce5-license)）。
+2. 按屏幕提示，打开邮箱查看包含许可证密钥的邮件，然后点击 [换取离线授权码](https://license.daocloud.io/dce5-license){ .md-button }。
 
     ![get-auth-code](../images/license012.png)
 
@@ -24,12 +24,12 @@ DCE 5.0 目前开源的模块为[全局管理](../ghippo/01ProductBrief/WhatisGh
 
     ![esn](../images/license02.png)
 
-4. 复制并粘贴上一步换取的离线授权码，点击`立即激活`。恭喜你！现在可以探索全新的 DCE 5.0 啦！
+4. 复制并粘贴上一步换取的离线授权码，点击`立即激活`。恭喜你！:smile: 现在可以探索全新的 DCE 5.0 啦！
 
-📢 **温馨提示：**
+!!! info "📢 温馨提示"
 
-有关激活过程中用到的几个 URL 如下：
+    上述激活过程中常用到的几个页面汇总如下：
 
-- 申请许可证密钥：https://qingflow.com/f/58604bf8
-- 换取离线授权码：https://license.daocloud.io/dce5-license
-- 查看许可证密钥：https://license.daocloud.io/dce5-licenses
+    [申请许可证密钥](https://qingflow.com/f/58604bf8){ .md-button .md-button--primary }
+    [查看许可证密钥](https://license.daocloud.io/dce5-licenses){ .md-button .md-button--primary }
+    [换取离线授权码](https://license.daocloud.io/dce5-license){ .md-button .md-button--primary }

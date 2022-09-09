@@ -208,7 +208,9 @@ Kubernetes审计日志是对 Kubernetes API-Server的每个调用的详细描述
 
 3. 等待几分钟 `api-server`重启成功后，在 `/var/log/kubernetes/audit` 目录下查看是否有审计日志生成，验证是否成功开启 Kubernetes 审计日志。
 
-> 如果想关闭，去掉 `spec.containers.command` 中的相关命令即可。
+!!! tip
+
+    如果想关闭，去掉 `spec.containers.command` 中的相关命令即可。
 
 ## 开启采集审计日志
 
@@ -237,7 +239,9 @@ Kubernetes审计日志是对 Kubernetes API-Server的每个调用的详细描述
 
 2. 重启 Master 节点上运行的 fluentbit pod，重启后的 FluentBit 将开启采集 `/var/log/kubernetes/audit` 下的日志。
 
-> 如果需要停止采集 Kubernetes 审计日志，删除对应 `INPUT` 即可。
+!!! tip
+
+    如果需要停止采集 Kubernetes 审计日志，删除对应 `INPUT` 即可。
 
 ## 关闭采集审计日志
 

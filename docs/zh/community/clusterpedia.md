@@ -16,10 +16,10 @@ Clusterpedia 的能力不仅是搜索和查看，而且还可以简单地控制�
 
 参见 [CNCF 全景图](https://landscape.cncf.io/card-mode?category=scheduling-orchestration&grouping=category&selected=clusterpedia)。
 
-> CNCF 全称 Cloud Native Computing Foundation (云原生计算基金会)，隶属于 Linux 基金会，成立于 2015 年 12 月，是非营利性组织，致力于培育和维护一个厂商中立的开源生态系统，来推广云原生技术，普及云原生应用。
-> 
-> 云原生全景图由 CNCF 从 2016 年 12 月开始维护，汇总了社区成熟和使用范围较广、具有最佳实践的产品和方案，并加以分类，为企业构建云原生体系提供参考，在云生态研发、运维领域具有广泛影响力。
+!!! info "关于 CNCF"
 
-## 更多信息
+    CNCF 全称 Cloud Native Computing Foundation (云原生计算基金会)，隶属于 Linux 基金会，成立于 2015 年 12 月，是非营利性组织，致力于培育和维护一个厂商中立的开源生态系统，来推广云原生技术，普及云原生应用。
 
-进一步了解 Clusterpedia，请移步 [Clusterpedia 社区](https://github.com/clusterpedia-io)。
+    云原生全景图由 CNCF 从 2016 年 12 月开始维护，汇总了社区成熟和使用范围较广、具有最佳实践的产品和方案，并加以分类，为企业构建云原生体系提供参考，在云生态研发、运维领域具有广泛影响力。
+
+[更多信息请移步 Clusterpedia 社区](https://github.com/clusterpedia-io){ .md-button }
