@@ -62,3 +62,5 @@ DaoCloud Enterprise 是基于 Kubernetes 云原生及相关技术，打造的领
 就像乐高搭积木一样，糅合社区最优秀的几十种开源技术，经过众多辩证选型、适配磨合、编码调试、海量测试，“十年磨一剑，一朝试锋芒”，全新搭建的新一代容器化平台能够满足企业上云的各类场景需求。
 
 ![img](../images/ops-tech.png)
+
+[了解 DCE 5.0 适用场景](scenario.md){ .md-button }
