@@ -173,6 +173,7 @@ nav:
   - 帮助文档:
       - DCE 产品介绍:
           - 什么是 DCE5.0: zh/dce/what-is-dce.md
+          - 适用场景: zh/dce/scenario.md
           - 平台功能: zh/dce/features.md
           - 为什么选择 DCE: zh/dce/whyus.md
           - 申请社区免费体验: zh/dce/license0.md
@@ -457,8 +458,8 @@ nav:
             - 云原生网络方案: zh/network/intro/what-is-net.md
             - 背景: zh/network/intro/background.md
             - 挑战: zh/network/intro/challenges.md
-          - 即插即用网络组件:
-            - 网络组件: zh/network/modules/modules.md
+          - 网络组件:
+            - 组件概述: zh/network/modules/modules.md
             - Spiderpool:
               - 介绍: zh/network/modules/spiderpool/what.md
               - 安装: zh/network/modules/spiderpool/install.md

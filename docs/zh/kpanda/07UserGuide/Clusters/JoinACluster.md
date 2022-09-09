@@ -81,4 +81,6 @@ DCE 支持接入多种主流的容器集群：
 
     ![接入集群](../../images/join-cluster07.png)
 
-    > 如集群状态出现异常，请查阅异常提示并参考[集群状态](ClusterStatus.md)。
+!!! note
+
+    如集群状态出现异常，请查阅异常提示并参考[集群状态](ClusterStatus.md)。

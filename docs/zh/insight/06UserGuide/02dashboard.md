@@ -20,4 +20,6 @@
 
         ![dashboard](../images/dashboard04.png)
 
-> 本页内容稍后还需补充。
+!!! tip
+
+    本页内容稍后还需补充。

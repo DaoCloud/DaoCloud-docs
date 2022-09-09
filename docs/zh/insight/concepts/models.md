@@ -10,7 +10,9 @@ Insight 基本上将所有数据存储为[时间序列](https://en.wikipedia.org
 **指标名称** 指定了监测系统的常规功能（例如 `http_requests_total`- 收到的 HTTP 请求总数）。
 指标名称可以包含 ASCII 字母和数字以及下划线和英文冒号。它必须与正则表达式`[a-zA-Z_:][a-zA-Z0-9_:]*`匹配。
 
-> 注：英文冒号保留用于用户自定义的规则。不能用于 exporter 或 direct instrumentation。
+!!! note
+
+    英文冒号保留用于用户自定义的规则。不能用于 exporter 或 direct instrumentation。
 
 Insight 采用标签实现多维度数据模型。相同指标名称的任何给定标签组合可以标识特定维度的指标（例如：所有使用 `POST` 方法到 `/api/tracks` 句柄的 HTTP 请求）。
 这种查询语言允许根据这些维度进行过滤和聚合。更改任何标签值（包括添加或删除标签）将创建新的时间序列数据。

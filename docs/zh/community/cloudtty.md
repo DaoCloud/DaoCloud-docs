@@ -1,7 +1,5 @@
 # cloudtty：一款专用于 Kubernetes 的 Cloud Shell Operator
 
-传送门：[cloudtty](https://github.com/cloudtty/cloudtty)
-
 cloudtty 是专为 Kubernetes 云原生环境打造的 Web 终端和 Cloud Shell Operator。
 通过 cloudtty，您可以轻松用浏览器打开一个终端窗口，操控多云资源。
 
@@ -9,9 +7,11 @@ cloudtty 意指云原生虚拟控制台，也称为 Cloud Shell（云壳）。
 想象一下，在复杂多变的多云环境中，嵌入这样一层 Shell 来操纵整个云资源。
 而这就是 cloudtty 的设计初衷，我们希望在日趋复杂的 Kubernetes 容器云环境中，能够为开发者提供一个简单的 Shell 入口。
 
-> TTY 全称为 TeleTYpe，即电传打字机、电报机。
-> 没错，就是那种很古老会发出滴滴答答声响、用线缆相连的有线电报机，那是一种只负责显示和打字的纯 IO 设备。
-> 近些年随着虚拟化技术的飞速发展，TTY 常指虚拟控制台或虚拟终端。
+!!! info "TTY 的由来"
+
+    TTY 全称为 TeleTYpe，即电传打字机、电报机。
+    没错，就是那种很古老会发出滴滴答答声响、用线缆相连的有线电报机，那是一种只负责显示和打字的纯 IO 设备。
+    近些年随着虚拟化技术的飞速发展，TTY 常指虚拟控制台或虚拟终端。
 
 ## 为什么需要 cloudtty?
 
@@ -40,6 +40,4 @@ cloudtty 的网页终端使用效果如下：
 
 ![demo_png](https://github.com/cloudtty/cloudtty/raw/main/docs/demo.png)
 
-## 更多信息
-
-更多信息，请移步 [cloudtty 社区](https://github.com/cloudtty/cloudtty)。
+[了解 cloudtty 社区](https://github.com/cloudtty/cloudtty){ .md-button }
