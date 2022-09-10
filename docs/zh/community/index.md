@@ -40,10 +40,10 @@ Kubernetes 多集群通信组件，消除多集群复杂度，让你就像管理
 
 云原生网络 IPAM 自动化管理软件，建议作为插件用于 Underlay CNI [:octicons-arrow-right-24: 了解更多](spiderpool.md)
 
-!!! quote
+!!! success
 
     上述开源项目只是「DaoCloud 道客」技术的冰山一角，更多项目请拭目以待！
 
     世界因技术而精彩，技术因分享而进步。
 
-    **Get open source, forget the rest!**
+    **Think Different, Think Open Source!**

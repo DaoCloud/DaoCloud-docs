@@ -76,3 +76,5 @@ CI/CD 流水线能力自动化完成应用构建、部署工作。创新性引�
 涉及模块：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[多云编排](../kairship/01product/whatiskair.md)、边云协同、信创云
 
 方案优势：创新性技术完成跨云容灾，跨云资源检索并发性能高，结合容器平台的能力适配边缘、信创场景。
+
+[申请社区免费体验](license0.md){ .md-button .md-button--primary }

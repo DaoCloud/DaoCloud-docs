@@ -111,3 +111,5 @@ DCE 采用业界领先的容器编排技术，产品能力涵盖云原生应用�
 无论云原生集群有多少台服务器，在 DCE 上部署应用程序的方法永远一样。
 
 进一步了解[什么是 DCE 5.0](../dce/what-is-dce.md)
+
+[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
