@@ -2,6 +2,8 @@
 
 DCE 5.0 云原生网络基于开源技术，不仅提供单 CNI 网络支持，同时提供了多个 CNI 组合方案。
 
+[申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }
+
 ## 方案一：Cillium + MacVLAN/SpiderFlat + SpiderPool + Multus
 
 此方案适用于高内核版本（4.19.57+）的 Linux 操作系统，以 Multus 为调度核心，搭配多 CNI，满足不同的网络场景，打造跨云跨集群的网络联通性。

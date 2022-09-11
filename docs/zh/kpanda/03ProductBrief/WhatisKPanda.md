@@ -44,3 +44,6 @@
 **产品逻辑架构**
 
 ![逻辑架构图](../images/kpanda_architect.png)
+
+[申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }
+

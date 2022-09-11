@@ -16,3 +16,5 @@ helm repo add mspider-ci https://release.daocloud.io/chartrepo/mspider-ci
 helm repo update
 helm upgrade --install --create-namespace -n mspider-system mspider mspider-ci/mspider --version=${VERSION} --set global.hub=release.daocloud.io/mspider-ci --set global.debug=true
 ```
+
+[申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

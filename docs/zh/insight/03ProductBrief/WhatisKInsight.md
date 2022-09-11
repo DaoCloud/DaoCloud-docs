@@ -20,3 +20,4 @@
 - 提供邮箱、企业微信、钉钉、Webhook 等多种通知方式
 - 持久化存储指标、日志、链路数据
 
+[申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }
