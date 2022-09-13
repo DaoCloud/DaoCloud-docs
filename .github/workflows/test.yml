@@ -31,7 +31,7 @@ jobs:
         with:
           python-version: 3.x
 
-      - run: pip install git+https://${{ secrets.G_USER }}:${{ secrets.G_TOKEN }}@github.com/DaoCloud/mkdocs-material-insiders.git
+      - run: pip install git+https://$G_USER:$G_TOKEN@github.com/daocloud/mkdocs-material-insiders.git
 
       # Runs a single command using the runners shell
       - run: pip install mkdocs-git-revision-date-plugin \
