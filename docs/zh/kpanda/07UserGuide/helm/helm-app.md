@@ -8,7 +8,7 @@
 
 - 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
 
-- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为 `NS Admin` 角色 ，详情可参考[命名空间授权](../Namespaces/createns.md)。
+- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为 [`NS Admin`](../Permissions/PermissionBrief.md#ns-admin) 角色 ，详情可参考[命名空间授权](../Permissions/Cluster-NSAuth.md)。
 
 ## 创建 Helm 应用
 
@@ -29,7 +29,7 @@
 
       ![helm](../../images/helm02.png)
 
-4. 配置 `名称`、`命名空间`及`版本信息`，也可以在下方的**参数配置**区域通过修改 YAML 来自定义参数。点击`确定`。
+4. 配置 `名称`、`命名空间`及`版本信息`，也可以在下方的 **参数配置** 区域通过修改 YAML 来自定义参数。点击`确定`。
 
       ![helm](../../images/helm03.png)
 

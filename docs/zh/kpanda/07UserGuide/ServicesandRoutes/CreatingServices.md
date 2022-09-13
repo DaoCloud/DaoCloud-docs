@@ -8,22 +8,13 @@
 
 - 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
 
-- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为 [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) 角色 ，详情可参考[命名空间授权](../Namespaces/createns.md)。
+- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为 [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) 角色 ，详情可参考[命名空间授权](../Permissions/Cluster-NSAuth.md)。
 
 - 单个实例中有多个容器时，请确保容器使用的端口不冲突，否则部署会失效。
 
-### 登录平台
-
-`NS Edit` 用户根据下表的信息成功登录后，点击左上角的`集群列表`进入`集群列表`页面。
-
-| 参数                   | 说明                                                         | 举例值                       |
-| :--------------------- | :----------------------------------------------------------- | :--------------------------- |
-| UI 账户和密码          | 【类型】必填<br />【含义】用来登录容器管理平台 Web UI 的管理员账户和密码 | 账户：root<br />密码：****** |
-| 容器平台的 Web UI 地址 | 【类型】必填<br />【含义】容器管理平台的 Web UI 的 IP 地址   | 10.6.124.110                 |
-
 ### 创建服务
 
-1. 在集群列表中，点击一个集群名称。
+1. 以 `NS Edit` 用户成功登录后，点击左上角的`集群列表`进入`集群列表`页面。在集群列表中，点击一个集群名称。
 
     ![集群列表](../../images/service01.png)
 
