@@ -351,10 +351,10 @@ nav:
           - 产品优势: zh/skoala/intro/advantages.md  
           - 组件版本: zh/skoala/intro/components.md
           - 名词解释: zh/skoala/intro/GLOSSARY.md
-        - 微服务管理:
+        - 注册中心:
           - 托管型注册中心:
-            - 托管注册中心管理: zh/skoala/registry/host/create-registry.md
-            - 微服务命名空间: zh/skoala/registry/ho s t/namespace.md
+            - 管理注册中心实例: zh/skoala/registry/host/manage-registry.md
+            - 微服务命名空间: zh/skoala/registry/host/namespace.md
             - 微服务列表:
               - 创建微服务: zh/skoala/registry/host/ms-list/create-ms.md
               - 查看微服务详情: zh/skoala/registry/host/ms-list/check-ms-details.md
@@ -382,18 +382,14 @@ nav:
             - 日志查看: zh/skoala/registry/host/log.md
             - 插件中心: zh/skoala/registry/host/plugin-center.md
           - 接入型注册中心:
-            - 接入注册中心: zh/skoala/registry/integrate/integrate-registry.md
-            - 更新注册中心: zh/skoala/registry/integrate/update-registry.md
+            - 管理注册中心实例: zh/skoala/registry/integrate/manage-registry.md
             - 查看微服务详情: zh/skoala/registry/integrate/check-ms-details.md
             - 微服务治理策略: zh/skoala/registry/integrate/governance-policy.md
-            - 移除注册中心: zh/skoala/registry/integrate/remove-registry.md
         - 微服务网关:
           - 网关管理:
-            - 创建网关: zh/skoala/ms-gateway/gateway/create-gateway.md
+            - 管理网关实例: zh/skoala/ms-gateway/gateway/manage-gateway.md
             - 查看网关详情: zh/skoala/ms-gateway/gateway/check-details.md
-            - 诊断网关: zh/skoala/ms-gateway/gateway/delete-gateway.md
-            - 更新网关: zh/skoala/ms-gateway/gateway/update-gateway.md
-            - 删除网关: zh/skoala/ms-gateway/gateway/delete-gateway.md
+            - 诊断网关: zh/skoala/ms-gateway/gateway/diagnose-gateway.md
           - 服务管理:
             - 接入服务: zh/skoala/ms-gateway/service/add-service.md
             - 删除服务: zh/skoala/ms-gateway/service/delete-service.md
