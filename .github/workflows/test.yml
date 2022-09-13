@@ -13,8 +13,8 @@ on:
   workflow_dispatch:
 
 env:
-  G_USER: ${{ secrets.G_USER }}
-  G_TOKEN: ${{ secrets.G_TOKEN }}
+  G_USER : ${{ secrets.G_USER }}
+  G_TOKEN : ${{ secrets.G_TOKEN }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -31,7 +31,7 @@ jobs:
         with:
           python-version: 3.x
 
-      - run: pip install git+https://${G_USER}:${G_TOKEN}@github.com/DaoCloud/mkdocs-material-insiders.git
+      - run: pip install git+https://$G_USER:$G_TOKEN@github.com/DaoCloud/mkdocs-material-insiders
 
       # Runs a single command using the runners shell
       - run: pip install mkdocs-git-revision-date-plugin \
