@@ -35,8 +35,8 @@ jobs:
           python-version: 3.x
 
       # Runs a single command using the runners shell
-      - run: pip install mkdocs-material \
-              mkdocs-git-revision-date-plugin \
+      - run: pip install git+https://github.com/DaoCloud/mkdocs-material-insiders.git
+      - run: pip install mkdocs-git-revision-date-plugin \
               mkdocs-mermaid2-plugin \
               mkdocs-rss-plugin \
               mkdocs-minify-plugin \

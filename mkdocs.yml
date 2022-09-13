@@ -44,7 +44,7 @@ theme:
     - search.highlight
     - search.suggest
     - search.share
-    # - toc.follow
+    - toc.follow
     - toc.integrate
 
   palette:
