@@ -7,26 +7,26 @@ sidebar_label: "准备工作"
 
 ## Kubernetes 平台
 
-1. Kubernetes `1.18+`
-2. 部署 CoreDNS
+- Kubernetes `1.18+`
+- 部署 CoreDNS
 
 ### 不支持的平台
 
-1. Openshift
-1. Rancher
+- Openshift
+- Rancher
 
-:::note
-暂时不支持以上平台，但是计划未来支持。
-:::
+!!! note
+  暂时不支持以上平台，但是计划未来支持。
+
 
 ## 主机配置
 
 ### Linux 发行版
 
-1. CentOS/RHEL `7.4+`
-2. Rocky Linux `8.4+`
-3. Ubuntu `18+`
-4. Kylin 麒麟`V10`
+- CentOS/RHEL `7.4+`
+- Rocky Linux `8.4+`
+- Ubuntu `18+`
+- Kylin 麒麟`V10`
 
 ### 处理器架构
 
