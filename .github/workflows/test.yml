@@ -6,13 +6,15 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   pull_request:
-    branches:    
+    branches:
       - main
-
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  G_USER: ${{ secrets.G_USER }}
+  G_TOKEN: ${{ secrets.G_TOKEN }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -29,19 +31,19 @@ jobs:
         with:
           python-version: 3.x
 
+      - run: pip install git+https://${G_USER}:${G_TOKEN}@github.com/DaoCloud/mkdocs-material-insiders
+
       # Runs a single command using the runners shell
-      - run: pip install mkdocs-material \
-              mkdocs-git-revision-date-plugin \
-              mkdocs-mermaid2-plugin \
-              mkdocs-rss-plugin \
-              mkdocs-minify-plugin \
-              mkdocs-macros-plugin \
-              mkdocs-git-revision-date-localized-plugin \
-              mkdocs-awesome-pages-plugin
-      
+      - run: pip install mkdocs-git-revision-date-plugin \
+          mkdocs-mermaid2-plugin \
+          mkdocs-rss-plugin \
+          mkdocs-minify-plugin \
+          mkdocs-macros-plugin \
+          mkdocs-git-revision-date-localized-plugin \
+          mkdocs-awesome-pages-plugin
+
       # add custom plugin with pdf support
       - run: pip install git+https://github.com/SAMZONG/mkdocs-with-pdf-support-material-v8
-
 
       # build docs
       - run: pwd
