@@ -14,7 +14,7 @@ Kubernetes 多集群资源一站式百科全书，已入选 CNCF 沙箱孵化，
 
 === "Ferry"
 
-Kubernetes 多集群通信组件，消除多集群复杂度，让你就像管理一个单集群 [:octicons-arrow-right-24: 了解更多](ferry.md)
+Kubernetes 多集群通信组件，消除多集群复杂度，让您就像管理一个单集群 [:octicons-arrow-right-24: 了解更多](ferry.md)
 
 === "HwameiStor"
 
@@ -34,7 +34,7 @@ Kubernetes 多集群通信组件，消除多集群复杂度，让你就像管理
 
 === "Merbridge"
 
-使用 eBPF 加速你的服务网格，就像利用虫洞在网络世界中穿梭 [:octicons-arrow-right-24: 了解更多](merbridge.md)
+使用 eBPF 加速您的服务网格，就像利用虫洞在网络世界中穿梭 [:octicons-arrow-right-24: 了解更多](merbridge.md)
 
 === "Spiderpool"
 

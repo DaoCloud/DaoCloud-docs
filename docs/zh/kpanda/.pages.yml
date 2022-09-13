@@ -37,6 +37,6 @@ nav:
     - 使用配置项: 07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md
   - 命名空间: 07UserGuide/Namespaces/README.md
   - 集群运维: 07UserGuide/OperationandMaintenance/README.md
-  - 弹性伸缩: 07UserGuide/Autoscaling/README.md
+  - 弹性扩缩: 07UserGuide/Autoscaling/README.md
   - 权限管理: 07UserGuide/Permissions/README.md
   - 策略管理: 07UserGuide/Policies/README.md

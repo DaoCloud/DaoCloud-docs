@@ -85,7 +85,7 @@ helm install spiderpool spiderpool/spiderpool --wait --namespace kube-system \
 ```
 
 > 注意：spiderpool-controller Pod 以 hostNetwork 模式运行，它需要占用 host 端口，所以使用 `podAntiAffinity` 来设置亲和性，
-> 这可以确保某个节点仅运行一个 spiderpool-controller Pod。因此如果你将 spiderpool-controller 的副本数设置为大于 2，则需要先确保有足够的节点。
+> 这可以确保某个节点仅运行一个 spiderpool-controller Pod。因此如果您将 spiderpool-controller 的副本数设置为大于 2，则需要先确保有足够的节点。
 
 ## 通过 cert-manager 进行安装
 

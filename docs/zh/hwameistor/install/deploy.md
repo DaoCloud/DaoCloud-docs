@@ -58,7 +58,7 @@ $ helm install hwameistor ./hwameistor \
 !!! warning
 
     默认的 `kubelet` 目录为 `/var/lib/kubelet`。
-    如果你的 Kubernetes 发行版使用不同的 `kubelet` 目录，必须设置参数 `kubeletRootDir`。
+    如果您的 Kubernetes 发行版使用不同的 `kubelet` 目录，必须设置参数 `kubeletRootDir`。
 
 例如，在将 `/var/snap/microk8s/common/var/lib/kubelet/` 用作 `kubelet` 目录的 [Canonical 的 MicroK8s](https://microk8s.io/) 上，HwameiStor 需要按以下方式安装：
  
