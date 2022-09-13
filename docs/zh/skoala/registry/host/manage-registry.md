@@ -8,23 +8,23 @@
 
 在托管注册中心列表页找到需要查看详情的托管注册中心，点击注册中心的名称，进入该注册中心的基础信息页面。
 
-![点击注册中心名称查看基础信息](../hosted/imgs/check-info-click-name.png)
+![点击注册中心名称查看基础信息](../host/imgs/check-info-click-name.png)
 
 在基础信息页面可以查看注册中心的`基础信息`、`服务治理信息`（需要开启服务治理功能）、`节点列表`。
 
-![查看基础信息](../hosted/imgs/check-info.png)
+![查看基础信息](../host/imgs/check-info.png)
 
 **相关操作**：
 
 - 全量重启实例：在页面右上角点击`重启`可以对整个托管注册中心实例进行重启
   
-    ![全量重启](../hosted/imgs/full-restart.png)
+    ![全量重启](../host/imgs/full-restart.png)
 
 - 单节点重启实例：在节点列表下对应节点的右侧先点击下线然后再点击上线
-    ![单节点重启](../hosted/imgs/single-node-restart.png)
+    ![单节点重启](../host/imgs/single-node-restart.png)
 
 - 查看节点元数据
-    ![节点元数据](../hosted/imgs/node-metadata.png)
+    ![节点元数据](../host/imgs/node-metadata.png)
 
 ## 更新托管注册中心
 
@@ -33,7 +33,7 @@
 3. 修改好之后，在页面右下角点击`确定`
 4. 更新托管实例之后，需要重启该托管注册中心。在该托管注册中心的右侧点击`⋯`操作按钮选择`重启`即可。
 
-    ![更新注册中心](../hosted/imgs/update-registry.png)
+    ![更新注册中心](../host/imgs/update-registry.png)
 
 **注意**：
 
@@ -49,8 +49,8 @@
 
 2. 如果注册中心下面仍有未删除的实例，系统会提示存在资源无法删除，需要清理掉这些资源后才能继续删除该注册中心。
 
-    ![存在资源无法删除](../hosted/imgs/delete-resource.png)
+    ![存在资源无法删除](../host/imgs/delete-resource.png)
 
 3. 清理完注册中心下面的实例后，为了防止误删，需要输入注册中心的名称进行确认，最后点击`删除`即可。
 
-    ![删除注册中心](../hosted/imgs/delete-confirm.png)
+    ![删除注册中心](../host/imgs/delete-confirm.png)
