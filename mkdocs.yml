@@ -239,10 +239,13 @@ nav:
           - LDAP: zh/ghippo/04UserGuide/01UserandAccess/ldap.md
           - OIDC: zh/ghippo/04UserGuide/01UserandAccess/oidc.md
         - 工作空间与层级: 
-          - zh/ghippo/04UserGuide/02Workspace/README.md
-          - 工作空间管理: zh/ghippo/04UserGuide/02Workspace/Workspaces.md
+          - zh/ghippo/04UserGuide/02Workspace/ws-folder.md
+          - 创建和删除工作空间: zh/ghippo/04UserGuide/02Workspace/Workspaces.md
+          - 工作空间最佳实践: zh/ghippo/04UserGuide/02Workspace/wsbp.md
           - 资源绑定: zh/ghippo/04UserGuide/02Workspace/Resources.md
-        - 审计日志: zh/ghippo/04UserGuide/03AuditLog.md
+        - 审计日志: 
+          - 开启和关闭审计日志: zh/ghippo/04UserGuide/open-audit.md
+          - 下载和导出审计日志: zh/ghippo/04UserGuide/03AuditLog.md
         - 平台设置:
           - 密码重置: zh/ghippo/06Troubleshooting/password.md
           - 邮箱服务器设置: zh/ghippo/04UserGuide/04PlatformSetting/MailServer.md

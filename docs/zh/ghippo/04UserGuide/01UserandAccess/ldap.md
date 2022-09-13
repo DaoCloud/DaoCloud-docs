@@ -7,11 +7,9 @@ LDAP 英文全称为 Lightweight Directory Access Protocol，即轻型目录访�
 
 在全局管理中，其操作步骤如下：
   
-1. 使用具有 `admin` 角色的用户登录 Web 控制台。
+1. 使用具有 `admin` 角色的用户登录 Web 控制台。点击左侧导航栏的左上角的`全局管理`。
 
-2. 点击左上角的 <img src="../../images/visual01.png" alt="icon" style="zoom:40%;" />，选择**全局管理**。
-
-    <img src="../../images/visual07.png" alt="login" style="zoom:50%;" />
+    ![global](../../images/ws01.png)
 
 3. 导航至`全局管理`下的`用户与访问控制`，选择`身份提供商`。
 

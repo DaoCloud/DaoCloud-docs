@@ -6,27 +6,26 @@ OIDC（OpenID Connect）是建立在 OAuth 2.0 基础上的一个身份层，是
 
 具体操作步骤如下。
 
-1. 使用具有 `admin` 角色的用户登录 Web 控制台。
-2. 点击左上角的 <img src="../../images/visual01.png" alt="icon" style="zoom:40%;" />，选择**全局管理**。
+1. 使用具有 `admin` 角色的用户登录 Web 控制台。点击左侧导航栏底部的`全局管理`。
 
-    <img src="../../images/visual07.png" alt="login" style="zoom:50%;" />
+    ![](../../images/ws01.png)
 
-3. 导航至`全局管理`下的`用户与访问控制`，选择`身份提供商`。
+2. 导航至`全局管理`下的`用户与访问控制`，选择`身份提供商`。
 
     ![身份提供商](../../images/ldap01.png)
 
-4. 在 `OIDC` 下，填写以下字段配身份提供商信息，可以在用户与访问控制中建立与身份提供商的信任关系。
+3. 在 `OIDC` 下，填写以下字段配身份提供商信息，可以在用户与访问控制中建立与身份提供商的信任关系。
 
-    - **重定向 URL**：重定向到 DCE 5.0 的 URL。
-    - **提供商ID：**系统默认填入 oidc，用户可手动更改，保存后不可变更。
-    - **提供商名称：**显示在登录页上，是身份提供商的入口。
-    - **认证方式：**客户端身份验证方法（cfr.https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication）。如果 JWT 使用私钥签名，请下拉选择 JWT 使用私钥签名。
-    - **客户端ID:**客户端 ID。
-    - **客户端密钥：**客户端密码。
-      - **客户端URL：**可通过身份提供商 well-known 接口一键获取登录 URL、Token URL、用户信息 URL 和登出 URL。
-    - **自动关联：**开启后当身份提供商用户名/邮箱与 DCE 5.0 用户名/邮箱重复时将自动使二者关联。
+    - 重定向 URL：重定向到 DCE 5.0 的 URL。
+    - 提供商 ID：系统默认填入 oidc，用户可手动更改，保存后不可变更。
+    - 提供商名称：显示在登录页上，是身份提供商的入口。
+    - 认证方式：客户端身份验证方法（cfr.https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication）。如果 JWT 使用私钥签名，请下拉选择 JWT 使用私钥签名。
+    - 客户端 ID：客户端 ID。
+    - 客户端密钥：客户端密码。
+    - 客户端 URL：可通过身份提供商 well-known 接口一键获取登录 URL、Token URL、用户信息 URL 和登出 URL。
+    - 自动关联：开启后当身份提供商用户名/邮箱与 DCE 5.0 用户名/邮箱重复时将自动使二者关联。
 
-5. 点击`保存`。
+4. 点击`保存`。
   
 !!! note
 

@@ -16,7 +16,7 @@
 
         ![dashboard](../images/dashboard03.png)
 
-    - 在页面右上角处，单击`刷新`界面，或者选择刷新时间间隔开启自动刷新。
+    - 在页面右上角处，点击`刷新`界面，或者选择刷新时间间隔开启自动刷新。
 
         ![dashboard](../images/dashboard04.png)
 

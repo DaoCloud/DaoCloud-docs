@@ -7,16 +7,14 @@
 
 具体操作步骤如下：
 
-1. 使用您的用户名/密码登录 Web 控制台。
+1. 使用您的用户名/密码登录 Web 控制台。点击左侧导航栏底部的`全局管理`。
 
-    <img src="../../images/lang00.png" style="zoom: 75%;" />
+    ![](../../images/ws01.png)
 
-2. 点击右上角的用户名位置，选择个人中心。
+2. 点击右上角的用户名位置，选择`个人中心`。
 
-    <img src="../../images/lang01.png" style="zoom: 75%;" />
+    ![](../../images/lang01.png)
 
-3. 点击`安全设置`页签。
+3. 点击`安全设置`页签。填写您的邮箱地址或修改登录密码。
 
-    <img src="../../images/security01.png" style="zoom: 75%;" />
-
-4. 填写您的邮箱地址或修改登录密码。
+    ![](../../images/security01.png)
