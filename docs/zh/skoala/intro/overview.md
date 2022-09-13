@@ -21,3 +21,6 @@ DME 目前支持的组件如下：
 | 微服务治理         | Mesh、Sentinel                             |
 | 微服务注册配置中心 | Nacos                                     |
 | 微服务网关                   |     Contour                                      |
+
+[申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }
+

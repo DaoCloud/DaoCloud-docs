@@ -27,3 +27,5 @@ HwameiStor 是一款 Kubernetes 原生的容器附加存储 (CAS) 解决方案�
 4. 灵活动态的线性扩展
 
    可以根据集群规模大小进行动态的扩容，灵活满足应用的数据持久化需求。
+
+[申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

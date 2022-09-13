@@ -39,3 +39,5 @@
 4. 进入`审计日志`，查看并[导出审计日志](../04UserGuide/03AuditLog.md)
 
 5. 进入`平台设置`，设置安全策略、邮件服务器、外观定制、正版授权
+
+[申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }
