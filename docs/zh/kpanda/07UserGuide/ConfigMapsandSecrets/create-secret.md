@@ -17,11 +17,9 @@
 
 - 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面
 
-- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为 `NS Edit` 角色 ，详情可参考[命名空间授权](../Namespaces/createns.md)
+- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为 [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) 角色 ，详情可参考[命名空间授权](../Permissions/Cluster-NSAuth.md)
 
-## 操作步骤
-
-### 图形化创建
+### 图形化创建的步骤
 
 1. 用户成功登录平台后，点击一个集群名称，进入`集群详情`。
 
@@ -44,7 +42,7 @@
 | 密钥数据 | 【类型】必填<br />【含义】密钥所存储的数据，依据密钥类型的不同，需要的配置也不同，具体如下：<br>当密钥类型为默认（Opaque）时，您可以填入多个键值对数据。<br>当密钥类型为TLS (kubernetes.io/tls)时，您需要填入证书凭证和私钥数据。证书是自签名或CA签名过的凭据，用来进行身份认证。证书请求是对签名的请求，需要使用私钥进行签名。<br/>当密钥类型为镜像仓库信息 (kubernetes.io/dockerconfigjson)时：需要填入私有镜像仓库的帐号和密码。<br/>当密钥类型为用户名和密码（kubernetes.io/basic-auth）：您需要指定用户名和密码。<br/>当密钥类型为自定义时：您可以填入多个键值对数据。 |
 | 标签     | 【类型】可选<br />【含义】为密钥添加标签。                   |
 
-### 通过 YAML 创建
+### 通过 YAML 创建的步骤
 
 1. 用户成功登录平台后，点击一个集群名称，进入`集群详情`。
 

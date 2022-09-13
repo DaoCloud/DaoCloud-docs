@@ -217,6 +217,9 @@ nav:
               - 使用密钥: zh/kpanda/07UserGuide/ConfigMapsandSecrets/use-secret.md
               - 使用配置项: zh/kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md
           - 创建命名空间: zh/kpanda/07UserGuide/Namespaces/createns.md
+          - 权限说明:
+            - 权限说明: zh/kpanda/07UserGuide/Permissions/PermissionBrief.md
+            - 集群和命名空间授权: zh/kpanda/07UserGuide/Permissions/Cluster-NSAuth.md       
       - 全局管理:
         - 介绍:
           - 什么是全局管理: zh/ghippo/01ProductBrief/WhatisGhippo.md
