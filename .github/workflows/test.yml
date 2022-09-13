@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: pll_request_check
 
 # Controls when the workflow will run
 on:
@@ -31,6 +31,7 @@ jobs:
         with:
           python-version: 3.x
 
+      - run: echo $G_USER
       - run: pip install git+https://$G_USER:$G_TOKEN@github.com/daocloud/mkdocs-material-insiders.git
 
       # Runs a single command using the runners shell
