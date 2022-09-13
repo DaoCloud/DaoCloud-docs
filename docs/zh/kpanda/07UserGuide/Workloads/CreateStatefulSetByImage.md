@@ -144,7 +144,7 @@ Kubernetes v1.7 及其之后的版本可以通过 **.spec.podManagementPolicy** 
 
     顺序为 N-1..0。只有前一个 Pod 部署 Ready 或者删除完成后，有状态负载才会操作后一个 Pod。
 
-- **并行策略**（Parallel）：并行创建或删除 Pod，和 Deployment 类型的 Pod 一样。（不等待前面的 pod ready 就开始创建所有的 pod）。 StatefulSet 控制器并行的启动或终止所有的 Pod， 启动或者终止其他 Pod 前，无需等待 Pod 进入 Running 和 ready或者完全停止状态。 这个选项只会影响伸缩操作的行为，更新则不会被影响。
+- **并行策略**（Parallel）：并行创建或删除 Pod，和 Deployment 类型的 Pod 一样。（不等待前面的 pod ready 就开始创建所有的 pod）。 StatefulSet 控制器并行的启动或终止所有的 Pod， 启动或者终止其他 Pod 前，无需等待 Pod 进入 Running 和 ready或者完全停止状态。 这个选项只会影响扩缩操作的行为，更新则不会被影响。
 
     ![容器管理策略](../../images/state05.png)
 

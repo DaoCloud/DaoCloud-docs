@@ -257,8 +257,8 @@ kubectl annotate pod  test-pod "cni.projectcalico.org/ipv4pools"='["extra-ippool
 
 场景：原有池地址不足，需要迁移到新的 `IPPOOL` 中
 
-> 注意！如果你按照以下这些规则，则现有的 Pod 连接将不会受到影响。
-> (如果你在创建和验证新的 IP 池之前删除旧的 IP 池，则现有的 Pod 将受到影响）。当 Pod 被删除时，业务会可能中断。
+> 注意！如果您按照以下这些规则，则现有的 Pod 连接将不会受到影响。
+> (如果您在创建和验证新的 IP 池之前删除旧的 IP 池，则现有的 Pod 将受到影响）。当 Pod 被删除时，业务会可能中断。
 
 - 创建新的 `ippool`
 
