@@ -4,23 +4,22 @@
 
 操作步骤如下。
 
-1. 使用具有 `admin` 角色的用户登录 Web 控制台。
-2. 点击左上角的 <img src="../../images/visual01.png" alt="icon" style="zoom:40%;" />，选择**全局管理**。
+1. 使用具有 `admin` 角色的用户登录 Web 控制台。点击左侧导航栏底部的`全局管理`。
 
-    <img src="../../images/visual07.png" alt="login" style="zoom:50%;" />
+    ![](../../images/ws01.png)
 
-3. 导航至`全局管理`下的`平台设置`，选择`外观定制`。
+2. 点击`平台设置`，选择`外观定制`。
 
     ![login](../../images/visual04.png)
 
-4. 在`外观定制`页面中，在`登录页定制`区域点击`编辑`，可以自定义登录页。
-
-    <img src="../../images/visual05.png" alt="login" style="zoom:50%;" />
+3. 在`登录页定制`页签中，修改登录页的图标和文字后，点击`保存`。
 
     ![login](../../images/visual02.png)
 
-5. 滚动到`导航栏定制`区域，点击`编辑`，可以自定义导航栏。
+4. 点击`顶部导航栏定制`页签，修改导航栏的图标和文字后，点击`保存`。
 
-    <img src="../../images/visual06.png" alt="login" style="zoom:50%;" />
+    ![login](../../images/visual06.png)
 
-    ![login](../../images/visual03.png)
+!!! note
+
+    如果想要恢复默认设置，可以点击`一键还原`。请注意，一键还原后将丢弃所有自定义设置。

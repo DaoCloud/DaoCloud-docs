@@ -8,7 +8,7 @@
 
 ## 操作步骤
 
-1. 在流水线列表页单击`创建流水线`。
+1. 在流水线列表页点击`创建流水线`。
 
     ![createpipelinbutton](../../images/createpipelinbutton.png)
 

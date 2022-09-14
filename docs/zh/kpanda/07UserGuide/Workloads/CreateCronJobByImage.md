@@ -89,9 +89,9 @@
 
 === "容器日志（选填）"
 
-    ![容器日志](../../images/deploy11.png)
-
     设置容器日志采集策略、配置日志目录。用于收集容器日志便于统一管理和分析。具体详情请参考[容器日志配置](PodConfig/EnvironmentVariables.md)。
+    
+    ![容器日志](../../images/deploy11.png)
 
 ## 定时任务配置
 
