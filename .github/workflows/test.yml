@@ -30,10 +30,11 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           repository: daocloud/mkdocs-material-insiders
-          token: $G_TOKEN
+          token: ${{ secrets.G_TOKEN }}
+          path: master
       
       # Run install mkdocs-material-insiders
       - run: cd mkdocs-material-insiders && pip install -e .
