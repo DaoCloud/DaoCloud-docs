@@ -52,11 +52,11 @@
   
 - Job（任务）
 
-    这是具有相同用途的目标任务集合，例如为可扩展性或可靠性而复制的一组类似进程。有关更多信息，参见[任务和实例](../concepts/job-instance.md)
+    这是具有相同用途的目标任务集合，例如为可扩展性或可靠性而复制的一组类似进程。有关更多信息，参见[任务和实例](../../reference/basic-knowledge/insight.md#任务和实例)
 
 - Metrics（指标）
 
-    使用 [open-metric](https://openmetrics.io/) 格式描述，衡量软件或硬件系统中某种属性的程度的标准。对资源性能的数据描述或状态描述，指标由命名空间、维度、指标名称和单位组成。有关更多信息，参见[指标类型](../concepts/metrics.md)。
+    使用 [open-metric](https://openmetrics.io/) 格式描述，衡量软件或硬件系统中某种属性的程度的标准。对资源性能的数据描述或状态描述，指标由命名空间、维度、指标名称和单位组成。有关更多信息，参见[指标类型](../../reference/basic-knowledge/insight.md#数据模型)。
 
 - Notification（通知）
 
@@ -64,7 +64,7 @@
 
 - PromQL
 
-    这是 Insight 内置的数据查询语言，提供了对时间序列数据的丰富查询功能，支持聚合和逻辑运算能力。有关更多信息，参见[数据查询语言](../concepts/promql.md)
+    这是 Insight 内置的数据查询语言，提供了对时间序列数据的丰富查询功能，支持聚合和逻辑运算能力。有关更多信息，参见[数据查询语言](../../reference/basic-knowledge/insight.md#查询语言-promql)
 
 - Pushgateway
 

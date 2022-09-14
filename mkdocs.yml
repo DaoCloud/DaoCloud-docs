@@ -247,7 +247,7 @@ nav:
           - 开启和关闭审计日志: zh/ghippo/04UserGuide/open-audit.md
           - 下载和导出审计日志: zh/ghippo/04UserGuide/03AuditLog.md
         - 平台设置:
-          - 密码重置: zh/ghippo/06Troubleshooting/password.md
+          - 密码重置: zh/ghippo/04UserGuide/password.md
           - 邮箱服务器设置: zh/ghippo/04UserGuide/04PlatformSetting/MailServer.md
           - 外观定制: zh/ghippo/04UserGuide/04PlatformSetting/Appearance.md
           - 关于平台: zh/ghippo/04UserGuide/04PlatformSetting/about.md
@@ -285,11 +285,6 @@ nav:
           - 常见问题: 
             - zh/insight/09FAQs/README.md
             - 收集采集日志: zh/insight/09FAQs/collectauditlog.md
-          - 可观测基本概念:
-            - 指标类型: zh/insight/concepts/metrics.md
-            - 任务和实例: zh/insight/concepts/job-instance.md
-            - 数据模型: zh/insight/concepts/models.md
-            - 数据查询语言: zh/insight/concepts/promql.md
       - 应用工作台:
         - 介绍:
           - 什么是应用工作台？: zh/amamba/01ProductBrief/WhatisAmamba.md
@@ -409,7 +404,6 @@ nav:
           - 域名:
             - 管理域名: zh/skoala/ms-gateway/domain/manage-domain.md
             - 配置域名策略: zh/skoala/ms-gateway/domain/domain-policy.md
-        - 微服务基础知识: zh/skoala/reference/concepts.md
       - 服务网格:
         - 介绍:
           - 什么是服务网格: zh/mspider/01Intro/What'smSpider.md
@@ -451,9 +445,6 @@ nav:
           - 网格命名空间: zh/mspider/03UserGuide/10MeshConfiguration/MeshNamespace.md
           - 系统组件管理: zh/mspider/03UserGuide/10MeshConfiguration/SystemComponents.md
           - Istio 资源管理: zh/mspider/03UserGuide/10MeshConfiguration/IstioResources.md
-        - 基础知识:
-          - 流量治理: zh/mspider/06Reference/concepts/traffic.md
-          - 虚拟服务: zh/mspider/06Reference/concepts/virtual-service.md
         - 常见问题: zh/mspider/07faq.md
       - 网络:
           - 介绍:
@@ -544,6 +535,15 @@ nav:
               - TiDB: zh/hwameistor/application/tidb.md
               - MinIO: zh/hwameistor/application/minio/minio.md
           - 常见问题: zh/hwameistor/faqs.md
+      - 通用参考:
+          - 术语表: zh/reference/terms.md
+          - 基础知识: 
+              - 云原生网关: zh/reference/basic-knowledge/gateway.md
+              - 微服务: zh/reference/basic-knowledge/microservice.md
+              - 注册中心: zh/reference/basic-knowledge/registry.md
+              - 虚拟服务: zh/reference/basic-knowledge/virtual-service.md
+              - 可观测性: zh/reference/basic-knowledge/insight.md
+              - 流量治理: zh/reference/basic-knowledge/traffic-control.md
   - 视频教程:
       - 容器管理: zh/videos/kpanda.md
       - 全局管理: zh/videos/ghippo.md
