@@ -8,7 +8,7 @@ DCE 5.0 以 [KLTS](../community/klts.md) 所维护久经生产验证的 Kubernet
 
 上述集群、节点、网络、存储等所有硬件资源就位后，由[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)统一纳管多集群、工作负载、存储方案、各类 CNI 网络和 API 接口，由[可观测模块](../insight/03ProductBrief/WhatisKInsight.md)多维度实时洞察集群状况，由[全局管理模块](../ghippo/01ProductBrief/WhatisGhippo.md)管控各级用户、用户组、角色、工作空间和资源等。
 
-随着业务发展，轻松搭配[多云编排](../kairship/01product/whatiskair.md)、[微服务引擎](../skoala/intro/overview.md)、[中间件](../middleware/midware.md)，通过应用工作台实现 CI/CD 流水线这类渐进式交付流程，赋予云原生操作系统的表层丰富功能。
+随着业务发展，轻松搭配[多云编排](../kairship/01product/whatiskair.md)、[微服务治理](../skoala/intro/overview.md)、[中间件](../middleware/midware.md)等模块，通过应用工作台实现 CI/CD 流水线这类渐进式交付流程，赋予云原生操作系统的表层丰富功能。
 
 [申请社区免费体验](license0.md){ .md-button .md-button--primary }
 
@@ -23,9 +23,9 @@ DCE 5.0 以 [KLTS](../community/klts.md) 所维护久经生产验证的 Kubernet
 全局管理是以用户为中心的综合性服务板块，包含用户与访问控制、企业空间、审计日志、平台设置等基础服务模块。
 进一步了解[全局管理](../ghippo/01ProductBrief/WhatisGhippo.md)。
 
-- 用户与访问控制：帮助用户安全的管理资源的访问权限，您可以通过用户与访问控制创建、管理、删除用户/用户组，并灵活配置用户/用户组权限，来完成用户职能权限的划分。
+- 用户与访问控制：帮助用户安全地管理资源的访问权限，您可以创建、管理、删除用户/用户组，并灵活配置用户/用户组权限，来完成用户职能权限的划分。
 
-- 企业空间：是具有层级结构和访问权限控制的资源隔离单元，您可以按照企业开发环境、部门结构等设置层级结构，并控制哪些人对哪些资源具有访问权限
+- 工作空间与层级：是具有层级结构和访问权限控制的资源隔离单元，您可以按照企业开发环境、部门结构等设置层级结构，并控制哪些人对哪些资源具有访问权限。
 
 - 审计日志：为您提供资源的操作记录，通过操作记录您可以快速实现安全分析、资源变更、问题定位等。
 

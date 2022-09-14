@@ -1,6 +1,6 @@
 # 适用场景
 
-DCE 5.0 集成社区最优秀的众多技术，内置依赖项数以万计，经海量调测后熔于一炉，铸就新一代 PaaS 服务平台，应对企业各类使用场景。
+DCE 5.0 集成社区最优秀的众多技术，内置依赖项数以万计，经海量调测后熔于一炉，铸就新一代 PaaS 服务平台，在各类使用场景中都游刃有余。
 
 === "生产级容器管理"
 
@@ -10,7 +10,7 @@ DCE 5.0 集成社区最优秀的众多技术，内置依赖项数以万计，经
 
 方案优势：提供集群从部署、升级、证书变更、配置变更、回收等全集群生命周期管理管理能力。
 尽可能复用当前企业环境中网络基础设施，针对其环境针实施最佳方案：MacVLAN 网络方案、SR-IOV 智能网卡加速方案、[SpiderPool](../network/modules/spiderpool/what.md) 云原生 IPAM 方案、[Clilum](../network/modules/cilium/what.md) eBPF 网络加速方案、Underlay 和 Overlay 协同网络方案。
-通过自主开源的 [Clusterpedia](../community/clusterpedia.md) 统一控制平面管理所有集群及负载信息，兼容标准 K8S 集群接入，突破 k8s API 性能瓶颈支持上千人同时使用。
+通过自主开源的 [Clusterpedia](../community/clusterpedia.md) 统一控制平面管理所有集群及负载信息，兼容标准 Kubernetes 集群接入，突破 Kubernetes API 性能瓶颈，支持上千人同时使用。
 
 === "云边协同"
 
