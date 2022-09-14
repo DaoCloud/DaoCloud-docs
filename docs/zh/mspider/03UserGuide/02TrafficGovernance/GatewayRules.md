@@ -1,6 +1,6 @@
 # 网关规则
 
-网关规则用于将服务暴露于网格之外，相较于 k8s 的 ingress 对象，istio-gateway 增加了更多的功能：
+网关规则用于将服务暴露于网格之外，相较于 Kubernetes 的 ingress 对象，istio-gateway 增加了更多的功能：
 
 - L4-L6 负载均衡
 - 对外 mTLS
