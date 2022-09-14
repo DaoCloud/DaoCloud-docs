@@ -1,6 +1,6 @@
 # 管理接入型注册中心
 
-注册中心支持接入 [Nacos 注册中心](../../reference/concepts.md#nacos-注册中心)、[Eureka 注册中心](../../reference/concepts.md#eureka-注册中心)、[Zookeeper 注册中心](../../reference/concepts.md#zookeeper-注册中心)、[Kubernetes 注册中心](../../reference/concepts.md#kubernetes-注册中心)、[Mesh 注册中心](../../reference/concepts.md#service-mesh-注册中心)。
+注册中心支持接入 [Nacos 注册中心](../../../reference/basic-knowledge/registry.md#nacos-注册中心)、[Eureka 注册中心](../../../reference/basic-knowledge/registry.md#eureka-注册中心)、[Zookeeper 注册中心](../../../reference/basic-knowledge/registry.md#zookeeper-注册中心)、[Kubernetes 注册中心](../../../reference/basic-knowledge/registry.md#kubernetes-注册中心)、[Mesh 注册中心](../../../reference/basic-knowledge/registry.md#service-mesh-注册中心)。
 
 本页介绍如何接入注册中心、更新注册中心，以及如何移除注册中心。
 

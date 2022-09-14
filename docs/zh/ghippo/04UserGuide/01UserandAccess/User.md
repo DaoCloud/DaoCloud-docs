@@ -86,7 +86,7 @@
 
     ![个人中心](../../images/mailbox.png)
 
-如果用户登录时忘记密码，请参考[重置密码](../../06Troubleshooting/password.md)。
+如果用户登录时忘记密码，请参考[重置密码](../password.md)。
 
 ### 删除用户
 
