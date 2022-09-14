@@ -72,7 +72,7 @@ BGP 客户端负责：
     BGP 路由反射器通常是为大型部署而配置的，而不是一个标准的 BGP 客户端。BGP 路由反射器作为连接 BGP 客户端的一个中心点。
     (标准 BGP 要求每个 BGP 客户端在网状拓扑结构中与其他每个 BGP 客户端连接，这很难维护)。
 
-    为了实现冗余，你可以无缝部署多个 BGP 路由反射器。BGP 路由反射器只参与网络的控制：没有终端数据通过它们。
+    为了实现冗余，您可以无缝部署多个 BGP 路由反射器。BGP 路由反射器只参与网络的控制：没有终端数据通过它们。
     当 Calico BGP 客户端将其 FIB 中的路由通告给路由反射器时，路由反射器将这些路由通告给部署中的其他节点。
 
 ### confd
@@ -86,14 +86,14 @@ confd 根据存储中的数据更新，动态生成 BIRD 配置文件。当配�
 执行 Istio 服务网格的网络策略。作为 Istio Envoy 的一个 Sidecar 代理，在集群上运行。
 
 Dikastes 是可选的。Calico 在 Linux 内核（使用 iptables，在三、四层）和三到七层使用 Envoy 的 Sidecar 代理 Dikastes 为工作负载执行网络策略，对请求进行加密认证。
-使用多个执行点可以根据多个标准确定远程端点的身份。即使工作负载 Pod 破坏，Envoy 代理被绕过，主机 Linux 内核的执行也能保护你的工作负载。
+使用多个执行点可以根据多个标准确定远程端点的身份。即使工作负载 Pod 破坏，Envoy 代理被绕过，主机 Linux 内核的执行也能保护您的工作负载。
 
 ### CNI 插件
 
 为 Kubernetes 集群提供 Calico 网络。
 
 向 Kubernetes 展示该 API 的 Calico 二进制文件被称为 CNI 插件，必须安装在 Kubernetes 集群的每个节点上。
-Calico CNI 插件允许你为任何使用 CNI 网络规范的编排调度器使用 Calico 网络。
+Calico CNI 插件允许您为任何使用 CNI 网络规范的编排调度器使用 Calico 网络。
 
 ### 数据存储插件
 
@@ -112,9 +112,9 @@ Calico CNI 插件允许你为任何使用 CNI 网络规范的编排调度器使�
 etcd 是一个一致的、高可用的分布式键值存储，为 Calico 网络提供数据存储，并用于组件之间的通信。
 etcd 仅支持保护非集群主机（从 Calico v3.1 开始）。etcd 的优点是：
 
-- 让你在非 Kubernetes 平台上运行 Calico
-- 分离 Kubernetes 和 Calico 资源之间的关注点，例如允许你独立地扩展数据存储。
-- 让你运行的 Calico 集群不仅仅包含一个 Kubernetes 集群，例如让带有 Calico 主机保护的裸机服务器与 Kubernetes 集群互通；或者多个 Kubernetes 集群。
+- 让您在非 Kubernetes 平台上运行 Calico
+- 分离 Kubernetes 和 Calico 资源之间的关注点，例如允许您独立地扩展数据存储。
+- 让您运行的 Calico 集群不仅仅包含一个 Kubernetes 集群，例如让带有 Calico 主机保护的裸机服务器与 Kubernetes 集群互通；或者多个 Kubernetes 集群。
 
 ### IPAM 插件
 

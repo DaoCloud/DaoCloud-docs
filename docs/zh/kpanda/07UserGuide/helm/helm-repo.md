@@ -17,13 +17,13 @@ Helm 应用模块支持通过 HTTP(s) 协议来访问存储库中的 Chart 包�
 
 - 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面
 
-- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为`NS Admin`角色 ，详情可参考[命名空间授权](../Namespaces/createns.md)。
+- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为 [`NS Admin`](../Permissions/PermissionBrief.md#ns-admin) 角色 ，详情可参考[命名空间授权](../Permissions/Cluster-NSAuth.md)。
 
-- 如果使用私有的仓库，需要拥有对此仓库的读写权限的账户。
+- 如果使用私有仓库，当前操作用户应拥有对此仓库的读写权限。
 
 ## 引入第三方 Helm 仓库
 
-本节将以 kubevela 公开的镜像仓库为例，引入 Helm 仓库并管理。
+本节将以 Kubevela 公开的镜像仓库为例，引入 Helm 仓库并管理。
 
 1. 点击一个集群名称，进入`集群详情`。
 
@@ -35,11 +35,11 @@ Helm 应用模块支持通过 HTTP(s) 协议来访问存储库中的 Chart 包�
 
 3. 在 Helm 仓库页面点击`创建仓库`按钮，进入创建仓库页面，按照下表配置相关参数。
 
-    - 仓库名称：设置新接入的仓库名称。最长63个字符，只能包含小写字母、数字及分隔符（“_”）,且必须以小写字母或数字开头及结尾。例如 kubevela
+    - 仓库名称：设置新接入的仓库名称。最长 63 个字符，只能包含小写字母、数字及分隔符 `_`，且必须以小写字母或数字开头及结尾，例如 kubevela
     - 仓库地址：用来指向目标 Helm 仓库的 http（s）地址。例如 https://charts.kubevela.net/core
     - 认证方式：连接仓库地址后用来进行身份校验的方式。对于公开仓库，可以选择 `None`，私有的仓库需要输入用户名/密码以进行身份校验。
-    - 标签：为即将创建的 Helm 仓库添加标签。例如 key: repo4，value: Kubevela
-    - 注解：为即将创建的 Helm 仓库添加注解。例如 key: repo4，value: Kubevela
+    - 标签：为即将创建的 Helm 仓库添加标签。例如 key: repo4；value: Kubevela
+    - 注解：为即将创建的 Helm 仓库添加注解。例如 key: repo4；value: Kubevela
     - 描述：为即将创建的 Helm 仓库添加描述。例如：这是一个 Kubevela 公开 Helm 仓库
 
     ![helm-repo](../../images/helmrepo02.png)

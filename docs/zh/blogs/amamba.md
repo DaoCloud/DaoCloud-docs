@@ -54,7 +54,7 @@
 
 ![img](images/amamba03.png)
 
-应用工作台面向应用开发和运维，覆盖应用全生命周期，包括应用的创建、删除、 配置修改、自动伸缩及自动运维。
+应用工作台面向应用开发和运维，覆盖应用全生命周期，包括应用的创建、删除、 配置修改、自动扩缩及自动运维。
 并且支持 SpringCloud、Dubbo、ServiceMesh 服务治理架构，与 [5.0 微服务引擎](../skoala/intro/overview.md)、[5.0 服务网格](../mspider/01Intro/What'smSpider.md)无缝集成：
 
 ![img](images/amamba04.png)

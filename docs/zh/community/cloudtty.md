@@ -20,7 +20,7 @@ cloudtty 意指云原生虚拟控制台，也称为 Cloud Shell（云壳）。
 但是在 Kubernetes 的场景下，这些 TTY 项目还需要更加云原生的能力拓展。
 如何让 ttyd 在容器内运行，如何通过 NodePort\Ingress 等方式访问，如何用 CRD 的方式创建多个实例？
 
-恭喜你，cloudtty 提供了这些问题的解决方案，欢迎试用 cloudtty 🎉!
+恭喜您，cloudtty 提供了这些问题的解决方案，欢迎试用 cloudtty 🎉!
 
 ## 适用场景
 

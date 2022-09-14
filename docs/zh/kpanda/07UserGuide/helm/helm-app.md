@@ -1,18 +1,18 @@
 # 管理 Helm 应用
 
-您可以使用 Helm 应用模块快速方便的对 Helm 进行界面化管理，包括使用 Helm 模板创建 Helm 实例、自定义 Helm 实例参数、对 Helm 实例进行全生命周期管理等功能。
+容器管理模块支持对 Helm 进行界面化管理，包括使用 Helm 模板创建 Helm 实例、自定义 Helm 实例参数、对 Helm 实例进行全生命周期管理等功能。
 
-本节将以 [cert-manager](https://cert-manager.io/docs/) 的 Chart 模板为例，介绍如何通过容器管理界面创建及管理 Chart。
+本节将以 [cert-manager](https://cert-manager.io/docs/) 的 Chart 模板为例，介绍如何通过容器管理界面创建并管理 Chart。
 
 ## 前提条件
 
 - 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
 
-- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为 `NS Admin` 角色 ，详情可参考[命名空间授权](../Namespaces/createns.md)。
+- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为 [`NS Admin`](../Permissions/PermissionBrief.md#ns-admin) 角色 ，详情可参考[命名空间授权](../Permissions/Cluster-NSAuth.md)。
 
 ## 创建 Helm 应用
 
-参照以下步骤创建一个 Helm 应用。
+参照以下步骤创建 Helm 应用。
 
 1. 点击一个集群名称，进入`集群详情`。
 
@@ -29,7 +29,7 @@
 
       ![helm](../../images/helm02.png)
 
-4. 配置 `名称`、`命名空间`及`版本信息`，也可以在下方的**参数配置**区域通过修改 YAML 来自定义参数。点击`确定`。
+4. 配置 `名称`、`命名空间`及`版本信息`，也可以在下方的 **参数配置** 区域通过修改 YAML 来自定义参数。点击`确定`。
 
       ![helm](../../images/helm03.png)
 
@@ -45,7 +45,7 @@
 
     ![helm](../../images/helm05.png)
 
-2. 在列表右侧，点击 `⋮`，在弹出菜单中选择 `日志`。
+2. 在列表右侧点击 `⋮`，在弹出菜单中选择 `日志`。
 
     ![helm](../../images/helm06.png)
 

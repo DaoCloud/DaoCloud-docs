@@ -1,6 +1,6 @@
 # 集群和命名空间授权
 
-容器管理基于 全局权限管理及 全局用户/用户组管理实现授权，如需授权 容器管理的最高权限用户（可以创建、管理、删除所有集群），请参考[什么是用户与访问控制](../../../ghippo/04UserGuide/01UserandAccess/iam.md)。
+容器管理基于全局权限管理及全局用户/用户组管理实现授权，如需为用户授予容器管理的最高权限（可以创建、管理、删除所有集群），请参见[什么是用户与访问控制](../../../ghippo/04UserGuide/01UserandAccess/iam.md)。
 
 ## 前提条件
 
@@ -8,11 +8,9 @@
 
 - 已在全局管理中创建了待授权的用户/用户组，请参考[用户](../../../ghippo/04UserGuide/01UserandAccess/User.md)。
 
-- 集群授权时，仅有 `Kpanda Owner`（可参考[全局管理角色](../../../ghippo/04UserGuide/01UserandAccess/global.md）及当前集群的 [`Cluster Admin`](PermissionBrief.md#cluster-admin) 具备集群授权能力，如需集群授权，请保障当前用户权限。详情可参考[权限说明](PermissionBrief.md)。
+- 集群授权时，仅有 `Kpanda Owner`（可参考[全局管理角色](../../../ghippo/04UserGuide/01UserandAccess/global.md））及当前集群的 [`Cluster Admin`](PermissionBrief.md#cluster-admin) 具备集群授权能力。如需集群授权，请保障当前用户权限。详情可参考[权限说明](PermissionBrief.md)。
 
 - 命名空间授权时，`Kpanda Owner`（可参考[集群权限](PermissionBrief.md)）及当前集群的 [`Cluster Admin`](PermissionBrief.md#cluster-admin)，当前命名空间的 [`NS Admin`](PermissionBrief.md#ns-admin) 具备集群授权能力，如需集群授权，请保障当前用户权限。
-
-参考以下步骤，创建一个 CronJob。
 
 ## 集群授权
 

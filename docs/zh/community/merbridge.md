@@ -1,6 +1,6 @@
 # Merbridge
 
-[Merbridge](https://merbridge.io/)：使用 eBPF 加速你的服务网格，就像利用虫洞在网络世界中穿梭
+[Merbridge](https://merbridge.io/)：使用 eBPF 加速您的服务网格，就像利用虫洞在网络世界中穿梭
 
 只需要在 Istio 集群执行一条命令，即可直接使用 eBPF 代替 iptables 实现网络加速！
 
