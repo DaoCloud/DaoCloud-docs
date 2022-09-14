@@ -13,19 +13,19 @@
 ```yaml
 apiVersion: audit.k8s.io/v1
 kind: Policy
-# Don't generate audit events for all requests in RequestReceived stage.
+# 不为 RequestReceived 阶段的所有请求生成审计事件
 omitStages:
   - "ResponseStarted"
   - "RequestReceived"
   - "Panic"
 rules:
-  # The following requests were manually identified as high-volume and low-risk,
-  # so drop them.
+  # 以下请求被手动标识为大容量和低风险，
+  # 因此丢弃这些请求。
   - level: None
     users: ["system:kube-proxy"]
     verbs: ["watch"]
     resources:
-      - group: "" # core
+      - group: "" # 核心
         resources: ["endpoints", "services", "services/status"]
   - level: None
     # Ingress controller reads `configmaps/ingress-uid` through the unsecured port.
@@ -34,19 +34,19 @@ rules:
     namespaces: ["kube-system"]
     verbs: ["get"]
     resources:
-      - group: "" # core
+      - group: "" # 核心
         resources: ["configmaps"]
   - level: None
     users: ["kubelet"] # legacy kubelet identity
     verbs: ["get"]
     resources:
-      - group: "" # core
+      - group: "" # 核心
         resources: ["nodes", "nodes/status"]
   - level: None
     userGroups: ["system:nodes"]
     verbs: ["get"]
     resources:
-      - group: "" # core
+      - group: "" # 核心
         resources: ["nodes", "nodes/status"]
   - level: None
     users:
@@ -56,13 +56,13 @@ rules:
    verbs: ["get", "update"]
    namespaces: ["kube-system"]
    resources:
-     - group: "" # core
+     - group: "" # 核心
        resources: ["endpoints"]
   - level: None
     users: ["system:apiserver"]
     verbs: ["get"]
     resources:
-      - group: "" # core
+      - group: "" # 核心
         resources: ["namespaces", "namespaces/status", "namespaces/finalize"]
   # Don't log HPA fetching metrics.
   - level: None
@@ -80,20 +80,20 @@ rules:
   # Don't log events requests.
   - level: None
     resources:
-      - group: "" # core
+      - group: "" # 核心
         resources: ["events"]
    
-  # new start
+  # 新的开始
   # 忽略所有访问非认证端口的 API，通常是系统组件如 Kube-Controller 等。
   - level: None
    users: ["system:unsecured"]
   # 忽略 kube-admin 的审计日志
   - level: None
     users: ["kube-admin"]
-  # 忽略所有资源状态更新的 API need add
+  # 忽略所有资源状态更新的 API
   - level: None
     resources:
-      - group: "" # core
+      - group: "" # 核心
         resources: ["events", "nodes/status", "pods/status", "services/status"]
       - group: "authorization.k8s.io"
         resources: ["selfsubjectrulesreviews"]
@@ -111,7 +111,7 @@ rules:
   # so only log at the Metadata level.
   - level: Metadata
     resources:
-      - group: "" # core
+      - group: "" # 核心
         resources: ["secrets", "configmaps"]
       - group: authentication.k8s.io
         resources: ["tokenreviews"]
@@ -121,7 +121,7 @@ rules:
   - level: Request
     verbs: ["get", "list", "watch"]
     resources:
-      - group: "" # core
+      - group: "" # 核心
       - group: "admissionregistration.k8s.io"
       - group: "apiextensions.k8s.io"
       - group: "apiregistration.k8s.io"
@@ -143,7 +143,7 @@ rules:
   # Default level for known APIs
   - level: RequestResponse
     resources:
-      - group: "" # core
+      - group: "" # 核心
       - group: "admissionregistration.k8s.io"
       - group: "apiextensions.k8s.io"
       - group: "apiregistration.k8s.io"
@@ -189,23 +189,23 @@ rules:
 2. 在 `spec.containers.volumeMounts` 下添加：
 
     ```yaml
-    - mountPath``:` `/var/log/audit
-    ``name:` `audit-logs
-    - mountPath``:` `/etc/kubernetes/audit-policy
-    ``name:` `audit-policy
+    - mountPath: /var/log/audit
+      name: audit-logs
+    - mountPath: /etc/kubernetes/audit-policy
+      name: audit-policy
     ```
 
 3. 在 `spec.volumes` 下添加：
 
     ```yaml
-    - hostPath``:
-    ``path:` `/var/log/kubernetes/audit
-    ``type:` `""
-    ``name:` `audit-logs
-    - hostPath``:
-    ``path:` `/etc/kubernetes/audit-policy
-    ``type:` `""
-    ``name:` `audit-policy
+    - hostPath:
+        path: /var/log/kubernetes/audit
+        type: ""
+      name: audit-logs
+    - hostPath:
+        path: /etc/kubernetes/audit-policy
+        type: ""
+      name: audit-policy
     ```
 
 ## 测试并验证
@@ -228,20 +228,20 @@ rules:
 
 1. 查询 chart 版本并保存当前 value
 
-    ```
+    ```shell
     helm list -n insight-system
     helm get values insight-agent -n insight-system -o yaml > insight-agent-values-bak.yaml
     ```
 
     输出类似于：
 
-    ```
+    ```none
     NAME        NAMESPACE     REVISION      UPDATED                      STATUS       CHART                  APP VERSION     insight      insight-system  27          2022-08-29 15:45:23.517801658 +0000 UTC deployed      insight-0.8.7-2-g8db2367f     0.8.7-2-g8db2367f insight-agent  insight-system  33          2022-08-29 23:56:52.215048268 +0800 CST deployed      insight-agent-0.8.7-2-g8db2367f 0.8.7-2-g8db2367f
     ```
 
 2. 修改当前 insight-agent release 的 value
 
-    ```
+    ```shell
     helm upgrade --install --create-namespace --version v0.8.7-2-g8db2367f --cleanup-on-fail insight-agent insight-release/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.enabled=true
     ```
 
