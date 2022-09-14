@@ -2,13 +2,13 @@
 
 在 Kubernetes 中一切对象都被抽象为资源，如 Pod、Deployment、Service、Volume 等是 Kubernetes 提供的默认资源，
 这为我们的日常运维和管理工作提供了重要支撑，但是在一些特殊的场景中，现有的预置资源并不能满足业务的需要，
-因此我们希望去扩展 Kubernetes API 的能力，自定义资源（CustomResourceDefinition, CRD）正式在这样的需求下运用而生。
+因此我们希望去扩展 Kubernetes API 的能力，自定义资源（CustomResourceDefinition, CRD）正是基于这样的需求应运而生。
 
-第五代容器管理模块支持对自定义资源的界面化管理，主要功能如下：
+容器管理平台支持对自定义资源的界面化管理，主要功能如下：
 
 - 获取集群下自定义资源列表和详细信息
 - 基于 YAML 创建自定资源
-- 基于 YAML 创建自定义资源示例CR（Custom Resource）
+- 基于 YAML 创建自定义资源示例 CR（Custom Resource）
 - 删除自定义资源
 
 ## 前提条件

@@ -1,8 +1,8 @@
 # 管理 Helm 应用
 
-您可以使用 Helm 应用模块快速方便的对 Helm 进行界面化管理，包括使用 Helm 模板创建 Helm 实例、自定义 Helm 实例参数、对 Helm 实例进行全生命周期管理等功能。
+容器管理模块支持对 Helm 进行界面化管理，包括使用 Helm 模板创建 Helm 实例、自定义 Helm 实例参数、对 Helm 实例进行全生命周期管理等功能。
 
-本节将以 [cert-manager](https://cert-manager.io/docs/) 的 Chart 模板为例，介绍如何通过容器管理界面创建及管理 Chart。
+本节将以 [cert-manager](https://cert-manager.io/docs/) 的 Chart 模板为例，介绍如何通过容器管理界面创建并管理 Chart。
 
 ## 前提条件
 
@@ -12,7 +12,7 @@
 
 ## 创建 Helm 应用
 
-参照以下步骤创建一个 Helm 应用。
+参照以下步骤创建 Helm 应用。
 
 1. 点击一个集群名称，进入`集群详情`。
 
@@ -45,7 +45,7 @@
 
     ![helm](../../images/helm05.png)
 
-2. 在列表右侧，点击 `⋮`，在弹出菜单中选择 `日志`。
+2. 在列表右侧点击 `⋮`，在弹出菜单中选择 `日志`。
 
     ![helm](../../images/helm06.png)
 
