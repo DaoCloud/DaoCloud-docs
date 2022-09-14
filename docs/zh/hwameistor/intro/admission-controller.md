@@ -5,7 +5,7 @@ sidebar_label: "准入控制器"
 
 # 准入控制器
 
-准入控制器是一种 webhook，可以自动验证 HwameiStor 数据卷，协助将 `schedulerName` 修改为 hwameistor-scheduler。具体信息，请参见 [K8S 动态准入控制](https://kubernetes.io/zh-cn/docs/reference/access-authn-authz/extensible-admission-controllers/)。
+准入控制器是一种 webhook，可以自动验证 HwameiStor 数据卷，协助将 `schedulerName` 修改为 hwameistor-scheduler。具体信息，请参见 [Kubernetes 动态准入控制](https://kubernetes.io/zh-cn/docs/reference/access-authn-authz/extensible-admission-controllers/)。
 
 ## 识别 HwameiStor 数据卷
 

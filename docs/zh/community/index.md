@@ -10,7 +10,7 @@ Kubernetes 多集群资源一站式百科全书，已入选 CNCF 沙箱孵化，
 
 === "cloutty"
 
-迄今为止，社区首个开源的 k8s 网页版控制台，非常好用 👍 [:octicons-arrow-right-24: 了解更多](cloudtty.md)
+迄今为止，社区首个开源的 Kubernetes 网页版控制台，非常好用 👍 [:octicons-arrow-right-24: 了解更多](cloudtty.md)
 
 === "Ferry"
 
@@ -47,3 +47,9 @@ Kubernetes 多集群通信组件，消除多集群复杂度，让您就像管理
     世界因技术而精彩，技术因分享而进步。
 
     **Think Different, Think Open Source!**
+
+<p align="center">
+<img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
+<br/><br/>
+Clusterpedia 和 Merbridge 已入选 <a href="https://landscape.cncf.io/?selected=merbridge">CNCF 云原生全景图。</a>
+</p>

@@ -214,7 +214,7 @@ Kubernetes审计日志是对 Kubernetes API-Server的每个调用的详细描述
 
 ## 开启采集审计日志
 
-可观测性通过 `FluentBit` 采集审计日志。默认 `FluentBit` 不会采集 `/var/log/kubernetes/audit` 下的日志文件(k8s 审计日志) 。操作以下步骤开启采集审计日志：
+可观测性通过 `FluentBit` 采集审计日志。默认 `FluentBit` 不会采集 `/var/log/kubernetes/audit` 下的日志文件(Kubernetes 审计日志) 。操作以下步骤开启采集审计日志：
 
 1. 修改 `FluentBit` 的 ConfigMap ，执行以下命令
 

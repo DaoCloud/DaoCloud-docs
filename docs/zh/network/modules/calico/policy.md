@@ -49,7 +49,7 @@
 
 - host
 
-    Calico 通过 `GlobalNetworkPolicy` 支持对 K8s 节点进行管控。
+    Calico 通过 `GlobalNetworkPolicy` 支持对 Kubernetes 节点进行管控。
 
 - VMs
 

@@ -172,7 +172,7 @@ Daocloud 第五代容器管理模块引入了自研开源组件 CloudTTY，支�
 
 - 问：容器管理在第五代产品中的定位？
 
-  答：在第五代产品中，容器管理模块处于承上启下的核心位置，对上：对接DCE 5.0 产品模块及未来定制化模块。对上层的场景化管理模块而言，容器管理模块能够把任何一个标准的 k8s API 对上暴露，无论是制品中心、Karmada、还是应用商店等，只要需要调用 k8s API，就能够通过容器管理这个模块去调用底层的任何平台的 Kube  API。对下：对接 Any K8s ，例如边缘的 K3S undefined信创环境、DCE、DKG、DKE、以及外部的 Openshift，Tanzu、CCE等等都是基于容器管理这个模块。
+  答：在第五代产品中，容器管理模块处于承上启下的核心位置，对上：对接DCE 5.0 产品模块及未来定制化模块。对上层的场景化管理模块而言，容器管理模块能够把任何一个标准的 Kubernetes API 对上暴露，无论是制品中心、Karmada、还是应用商店等，只要需要调用 Kubernetes API，就能够通过容器管理这个模块去调用底层的任何平台的 Kube  API。对下：对接 Any Kubernetes ，例如边缘的 K3S undefined信创环境、DCE、DKG、DKE、以及外部的 Openshift，Tanzu、CCE等等都是基于容器管理这个模块。
 
 - 问：谁能够创建集群？
 
@@ -181,3 +181,7 @@ Daocloud 第五代容器管理模块引入了自研开源组件 CloudTTY，支�
 - 问：谁能管理集群？
 
   答：取决于用户所采用的权限控制解决方案，一般来说除了拥有 Global Admin、Kpanda Owner、Cluster Admin、Cluster Admin角色的用户外，拥有 Cluster Edit 角色的用户及拥有强绑定的 Floder Admin、WorkerSpace Admin 角色的用户也能够实现对集群内资源的增删改查操作，以及对用户进行授权。
+
+[了解容器管理](../kpanda/03ProductBrief/WhatisKPanda.md){ .md-button }
+
+[申请社区免费体验](../dce/license0.md){ .md-button }
