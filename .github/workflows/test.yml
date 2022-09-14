@@ -32,7 +32,7 @@ jobs:
           python-version: 3.x
       
       # Run install mkdocs-material-insiders
-      - run: pip install it+https://samzong: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@github.com/daocloud/mkdocs-material-insiders.git
+      - run: pip install git+https://samzong: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@github.com/daocloud/mkdocs-material-insiders
 
       # Runs a single command using the runners shell
       - run: pip install mkdocs-git-revision-date-plugin \
