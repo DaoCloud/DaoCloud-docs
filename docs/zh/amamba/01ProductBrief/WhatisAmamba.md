@@ -21,7 +21,7 @@
 === "以云原生应用为中心"
 
 支持云原生场景下的“多形态”的云原生应用，包括 Kubernetes 原生应用、Helm 应用、OAM 应用等。
-能够接入 SpingCloud、Dubbo、ServiceMesh 框架的微服务应用，实现微服务的治理，与 DCE 5.0 的[微服务引擎](../../skoala/intro/overview.md)、[服务网格](../../mspider/01Intro/What'smSpider.md)无缝集成。
+能够接入 SpingCloud、Dubbo、ServiceMesh 框架的微服务应用，实现微服务的治理，与 DCE 5.0 的[微服务引擎](../../skoala/intro/features.md)、[服务网格](../../mspider/01Intro/What'smSpider.md)无缝集成。
 支持云原生应用的全生命周期管理，例如应用的扩缩容、日志、监控查看、更新应用等等。
 
 ![](../images/what02.png)
