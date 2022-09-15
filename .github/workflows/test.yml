@@ -30,7 +30,7 @@ jobs:
         with:
           repository: daocloud/mkdocs-material-insiders
           token: ${{ secrets.GH_PAT || github.token }}
-          ref: master
+          ref: ${{ github.event.pull_request.head.sha }}
       
       # Run install mkdocs-material-insiders
       - run: cd mkdocs-material-insiders && pip install -e .
