@@ -51,7 +51,8 @@ jobs:
       # build docs
       - run: pwd
       - run: echo $UCLOUD_REGION && echo $UCLOUD_BUCKET
-      - run: mkdocs build -d public
+      - run: mkdocs build -f mkdocs.yml -d public/
+      - run: mkdocs build -f mkdocs-en.yml -d public/en/
       - run: cd public && pwd && python ../scripts/upload-ucloud.py \
                 public_key=$UCLOUD_PUBLICKEY \
                 private_key=$UCLOUD_PRIVATEKEY \
