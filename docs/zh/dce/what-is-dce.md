@@ -8,7 +8,7 @@ DCE 5.0 以 [KLTS](../community/klts.md) 所维护久经生产验证的 Kubernet
 
 上述集群、节点、网络、存储等所有硬件资源就位后，由[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)统一纳管多集群、工作负载、存储方案、各类 CNI 网络和 API 接口，由[可观测模块](../insight/03ProductBrief/WhatisKInsight.md)多维度实时洞察集群状况，由[全局管理模块](../ghippo/01ProductBrief/WhatisGhippo.md)管控各级用户、用户组、角色、工作空间和资源等。
 
-随着业务发展，轻松搭配[多云编排](../kairship/01product/whatiskair.md)、[微服务治理](../skoala/intro/overview.md)、[中间件](../middleware/midware.md)等模块，通过应用工作台实现 CI/CD 流水线这类渐进式交付流程，赋予云原生操作系统的表层丰富功能。
+随着业务发展，轻松搭配[多云编排](../kairship/01product/whatiskair.md)、[微服务治理](../skoala/intro/features.md)、[中间件](../middleware/midware.md)等模块，通过应用工作台实现 CI/CD 流水线这类渐进式交付流程，赋予云原生操作系统的表层丰富功能。
 
 [申请社区免费体验](license0.md){ .md-button .md-button--primary }
 
@@ -58,7 +58,7 @@ DCE 5.0 以 [KLTS](../community/klts.md) 所维护久经生产验证的 Kubernet
 | 镜像仓库                                        | 容器镜像及 Helm Charts 标准制品的全生命周期管理，提供简单易用、安全可靠的制品管理功能，同容器平台无缝结合，帮助企业降低交付复杂度，打造云原生应用部署一站式解决方案。 |
 | [多云编排](../kairship/01product/whatiskair.md) | 多云分发，多集群容灾 ，跨集群网络。结合底层存储技术，可实现跨级群双活架构。多云编排是一个以应用为中心、开箱即用的多云应用编排平台。实现了多云和混合云的集中管理，提供跨云的应用部署、发布和运维的能力；支持基于集群资源的应用弹性扩缩，实现全局负载均衡；提供了故障恢复的能力，彻底解决多云应用灾备的问题。 |
 | [中间件](../middleware/rabbitmq/intro/what.md)  | 精选中间件，可以在生产环境可靠运行的有状态中间件，包括 RabbitMQ 高性能消息队列、Kafka 日常消息队列、MySQL 关系型数据库、Redis 内存数据库、Elasticsearch 日志检索等等。 |
-| [微服务治理](../skoala/intro/overview.md)       | 为客户提供一站式微服务治理解决方案平台软件，基于传统微服务治理及云原生微服务治理提供统一的产品功能和体验，并解决客户从传统微服务迁移至云原生微服务过程中的各种问题。 |
+| [微服务引擎](../skoala/intro/features.md)       | 为客户提供一站式微服务治理解决方案平台软件，基于传统微服务治理及云原生微服务治理提供统一的产品功能和体验，并解决客户从传统微服务迁移至云原生微服务过程中的各种问题。 |
 | [服务网格](../mspider/01Intro/What'smSpider.md) | 提供非侵入式流量治理功能，解决用户在多云多集群复杂云原生容器环境下的服务治理问题，实现统一治理、统一监控的目标。并为综合微服务管理引擎提供容器化微服务的治理能力支持和传统微服务接入支持。 |
 
 就像乐高搭积木一样，糅合社区最优秀的几十种开源技术，经过众多辩证选型、适配磨合、编码调试、海量测试，“十年磨一剑，一朝试锋芒”，全新搭建的新一代容器化平台能够满足企业上云的各类场景需求。
