@@ -67,7 +67,7 @@ TiDB 分布式数据库将整体架构拆分成了多个模块，各模块之间
 
 本次测试使用三台虚拟机节点部署 Kubernetes 集群，包括 1 个 master 节点和 2 个 worker节点。Kubelete 版本为 1.22.0。
 
-![k8s cluster](img/k8scluster.png)
+![Kubernetes cluster](img/k8scluster.png)
 
 ### HwameiStor 本地存储
 

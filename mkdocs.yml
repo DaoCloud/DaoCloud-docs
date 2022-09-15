@@ -291,19 +291,8 @@ nav:
           - 功能总览: zh/amamba/01ProductBrief/Features.md
           - 产品优势: zh/amamba/01ProductBrief/Benefits.md
           - 适用场景: zh/amamba/01ProductBrief/Scenarios.md
-          - 使用约束: zh/amamba/01ProductBrief/Conventions.md
           - 基本概念: zh/amamba/01ProductBrief/Concepts.md
-        - 快速创建流水线: zh/amamba/02QuickStart/deploypiplibe.md
-        - 应用的部署:
-          - 从 Git 代码构建应用: zh/amamba/03UserGuide/Deployapp/deployappfromgit.md
-          - 从 Jar 包构建应用: zh/amamba/03UserGuide/Deployapp/deployappfromjar.md
-          - 从 Yaml 部署应用: zh/amamba/03UserGuide/Deployapp/deployappfromyaml.md
-          - 从镜像部署应用: zh/amamba/03UserGuide/Deployapp/deployappfromimage.md
-          - 从 Helm Charts 部署应用: zh/amamba/03UserGuide/Deployapp/deployappfromhelm.md
-        - 基于微服务的应用:
-          - 部署基于微服务的应用: zh/amamba/03UserGuide/MicroServiceApp/deploymicroserviceapp.md
-          - 使用微服务注册发现能力: zh/amamba/03UserGuide/MicroServiceApp/microserviceregistry.md
-          - 使用微服务治理能力: zh/amamba/03UserGuide/MicroServiceApp/microservicegovernance.md
+        - 快速创建流水线: zh/amamba/02QuickStart/deploypipline.md
         - 流水线:
           - 自定义创建流水线: zh/amamba/03UserGuide/Pipeline/createpipelinebyself.md
           - 使用 Jenkinsfile 创建单代码分支流水线: zh/amamba/03UserGuide/Pipeline/createpipelinebyjenkins.md
@@ -311,11 +300,7 @@ nav:
           - 凭证管理: zh/amamba/03UserGuide/Pipeline/Credential.md
           - 流水线配置参数:
             - 流水线中的概念: zh/amamba/03UserGuide/Pipeline/PipelineConfig/PipelineConcept.md
-            - 图形化任务模板参数说明: zh/amamba/03UserGuide/Pipeline/PipelineConfig/PipelineStep.md
-        - 灰度发布:
-          - 蓝绿发布: zh/amamba/03UserGuide/Greydeploy/blue-green.md
-          - 金丝雀发布: zh/amamba/03UserGuide/Greydeploy/canary.md
-          - A/B 测试: zh/amamba/03UserGuide/Greydeploy/ABtest.md 
+            - 图形化任务模板参数: zh/amamba/03UserGuide/Pipeline/PipelineConfig/PipelineStep.md
       - 多云编排:
         - 介绍:
           - 什么是多云编排: zh/kairship/01product/whatiskair.md
