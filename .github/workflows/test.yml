@@ -12,10 +12,6 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-env:
-  G_USER : ${{ secrets.G_USER }}
-  G_TOKEN : ${{ secrets.G_TOKEN }}
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -30,10 +26,10 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           repository: daocloud/mkdocs-material-insiders
-          token: ${{ secrets.G_TOKEN }}
+          token: ${{ secrets.GH_PAT }}
           path: master
       
       # Run install mkdocs-material-insiders
