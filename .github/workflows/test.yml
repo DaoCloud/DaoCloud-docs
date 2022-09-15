@@ -17,23 +17,12 @@ jobs:
   # This workflow contains a single job called "build"
   build-test:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ghcr.io/samzong/docs-insider:v1.0.0
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
-      - uses: actions/checkout@v3
-        with:
-          repository: daocloud/mkdocs-material-insiders
-          token: ${{ secrets.GH_PAT || github.token }}
-          ref: ${{ github.event.pull_request.head.sha }}
-      
-      # Run install mkdocs-material-insiders
-      - run: cd mkdocs-material-insiders && pip install -e .
 
       # Runs a single command using the runners shell
       - run: pip install mkdocs-git-revision-date-plugin \
