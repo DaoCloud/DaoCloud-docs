@@ -2,74 +2,61 @@ site_name:  skoala
 docs_dir:  ./
 nav: 
 
-- 微服务治理介绍:
-  - 功能总览: intro/features.md
-  - 使用场景: intro/scenarios.md
-  - 产品优势: intro/advantages.md  
-  - 系统架构: intro/architecture.md
-  - 组件版本: intro/components.md
-  - 名词解释: intro/GLOSSARY.md
-- 快速入门:
-  - 选择工作空间: quick-start/select-workspace.md
-  - 接入注册中心: quick-start/integrate-registry.md
-  - 创建托管注册中心: quick-start/create-registry.md
-  - 创建微服务网关: quick-start/create-gateway.md
-  - 更新与升级: quick-start/update.md
-- 微服务管理:
-  - 托管型注册中心:
-    - 托管注册中心管理: registry/host/create-registry.md
-    - 微服务命名空间: registry/host/namespace.md
-    - 微服务列表:
-      - 创建微服务: registry/host/ms-list/create-ms.md
-      - 查看微服务详情: registry/host/ms-list/check-ms-details.md
-      - 管理微服务实例: registry/host/ms-list/manage-ms-instance.md
-      - 治理微服务流量: registry/host/ms-list/govern-ms-traffic.md
-      - 删除微服务: registry/host/ms-list/delete-ms.md
-    - 微服务治理策略:
-      - 流控规则: registry/host/governance-policy/traffic-control.md
-      - 降级规则: registry/host/governance-policy/degrade.md
-      - 热点规则: registry/host/governance-policy/hotspot.md
-      - 系统规则: registry/host/governance-policy/system.md
-      - 授权规则: registry/host/governance-policy/authorization.md
-      - 集群流控: registry/host/governance-policy/cluster-traffic-control.md
-    - 微服务配置中心:
-      - 创建配置: registry/host/config-center/create-config.md
-      - 导入/导出配置: registry/host/config-center/import-config.md
-      - 更新配置: registry/host/config-center/update-config.md
-      - 删除配置: registry/host/config-center/delete-config.md
-      - 恢复配置: registry/host/config-center/restore-config.md
-      - 监听查询: registry/host/config-center/search-listening.md
-      - 查看示例代码: registry/host/config-center/code-example.md
-    - 监控告警:
-      - 业务监控: registry/host/monitor&alert/monitor-service.md
-      - 资源监控: registry/host/monitor&alert/monitor-resource.md
-    - 日志查看: registry/host/log.md
-    - 插件中心: registry/host/plugin-center.md
-  - 接入型注册中心:
-    - 接入注册中心: registry/integrate/integrate-registry.md
-    - 更新注册中心: registry/integrate/update-registry.md
-    - 查看微服务详情: registry/integrate/check-ms-details.md
-    - 微服务治理策略: registry/integrate/governance-policy.md
-    - 移除注册中心: registry/integrate/remove-registry.md
-- 微服务网关:
-  - 网关管理:
-    - 创建网关: ms-gateway/gateway/create-gateway.md
-    - 查看网关详情: ms-gateway/gateway/check-details.md
-    - 诊断网关: ms-gateway/gateway/delete-gateway.md
-    - 更新网关: ms-gateway/gateway/update-gateway.md
-    - 删除网关: ms-gateway/gateway/delete-gateway.md
-  - 服务管理:
-    - 接入服务: ms-gateway/service/add-service.md
-    - 删除服务: ms-gateway/service/delete-service.md
-    - 管理服务来源: ms-gateway/service/service-sources.md
-  - API:
-    - 管理 API: ms-gateway/api/manage-api.md
-    - 配置 API 策略: ms-gateway/api/api-policy.md
-  - 监控告警: ms-gateway/monitor&alert.md
-  - 日志管理: ms-gateway/log.md
-  - 插件中心: ms-gateway/plugin-center.md
-  - 域名:
-    - 管理域名: ms-gateway/domain/manage-domain.md
-    - 配置域名策略: ms-gateway/domain/domain-policy.md
-- 微服务基础知识: reference/concepts.md
-
+      - 微服务引擎:
+        - 介绍:
+          - 功能总览: zh/skoala/intro/features.md
+          - 使用场景: zh/skoala/intro/scenarios.md
+          - 产品优势: zh/skoala/intro/advantages.md  
+          - 环境要求: zh/skoala/intro/components.md
+        - 微服务治理中心:
+          - 托管型注册中心:
+            - 管理注册中心实例: zh/skoala/registry/host/manage-registry.md
+            - 微服务命名空间: zh/skoala/registry/host/namespace.md
+            - 微服务列表:
+              - 创建微服务: zh/skoala/registry/host/ms-list/create-ms.md
+              - 查看微服务详情: zh/skoala/registry/host/ms-list/check-ms-details.md
+              - 管理微服务实例: zh/skoala/registry/host/ms-list/manage-ms-instance.md
+              - 治理微服务流量: zh/skoala/registry/host/ms-list/govern-ms-traffic.md
+              - 删除微服务: zh/skoala/registry/host/ms-list/delete-ms.md
+            - 微服务治理策略:
+              - 流控规则: zh/skoala/registry/host/governance-policy/traffic-control.md
+              - 降级规则: zh/skoala/registry/host/governance-policy/degrade.md
+              - 热点规则: zh/skoala/registry/host/governance-policy/hotspot.md
+              - 系统规则: zh/skoala/registry/host/governance-policy/system.md
+              - 授权规则: zh/skoala/registry/host/governance-policy/authorization.md
+              - 集群流控: zh/skoala/registry/host/governance-policy/cluster-traffic-control.md
+            - 微服务配置中心:
+              - 创建配置: zh/skoala/registry/host/config-center/create-config.md
+              - 导入/导出配置: zh/skoala/registry/host/config-center/import-config.md
+              - 更新配置: zh/skoala/registry/host/config-center/update-config.md
+              - 删除配置: zh/skoala/registry/host/config-center/delete-config.md
+              - 恢复配置: zh/skoala/registry/host/config-center/restore-config.md
+              - 监听查询: zh/skoala/registry/host/config-center/search-listening.md
+              - 查看示例代码: zh/skoala/registry/host/config-center/code-example.md
+            - 监控告警:
+              - 业务监控: zh/skoala/registry/host/monitor&alert/monitor-service.md
+              - 资源监控: zh/skoala/registry/host/monitor&alert/monitor-resource.md
+            - 日志查看: zh/skoala/registry/host/log.md
+            - 插件中心: zh/skoala/registry/host/plugin-center.md
+          - 接入型注册中心:
+            - 管理注册中心实例: zh/skoala/registry/integrate/manage-registry.md
+            - 查看微服务详情: zh/skoala/registry/integrate/check-ms-details.md
+            - 微服务治理策略: zh/skoala/registry/integrate/governance-policy.md
+        - 微服务网关:
+          - 网关管理:
+            - 管理网关实例: zh/skoala/ms-gateway/gateway/manage-gateway.md
+            - 查看网关详情: zh/skoala/ms-gateway/gateway/check-details.md
+            - 诊断网关: zh/skoala/ms-gateway/gateway/diagnose-gateway.md
+          - 服务管理:
+            - 接入服务: zh/skoala/ms-gateway/service/add-service.md
+            - 删除服务: zh/skoala/ms-gateway/service/delete-service.md
+            - 管理服务来源: zh/skoala/ms-gateway/service/service-sources.md
+          - API:
+            - 管理 API: zh/skoala/ms-gateway/api/manage-api.md
+            - 配置 API 策略: zh/skoala/ms-gateway/api/api-policy.md
+          - 监控告警: zh/skoala/ms-gateway/monitor&alert.md
+          - 日志管理: zh/skoala/ms-gateway/log.md
+          - 插件中心: zh/skoala/ms-gateway/plugin-center.md
+          - 域名:
+            - 管理域名: zh/skoala/ms-gateway/domain/manage-domain.md
+            - 配置域名策略: zh/skoala/ms-gateway/domain/domain-policy.md
