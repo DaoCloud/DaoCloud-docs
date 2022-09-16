@@ -101,7 +101,7 @@ extra:
 
   # switch language
   alternate:
-    - link: /zh/
+    - link: /
       name: zh - 简体中文
       lang: zh
     - link: /en/
@@ -296,7 +296,7 @@ nav:
         - 流水线:
           - 自定义创建流水线: zh/amamba/03UserGuide/Pipeline/createpipelinebyself.md
           - 使用 Jenkinsfile 创建单代码分支流水线: zh/amamba/03UserGuide/Pipeline/createpipelinebyjenkins.md
-          - 使用图形化编辑流水线流水线: zh/amamba/03UserGuide/Pipeline/graphicaleditingpipeline.md
+          - 使用图形化编辑流水线: zh/amamba/03UserGuide/Pipeline/graphicaleditingpipeline.md
           - 凭证管理: zh/amamba/03UserGuide/Pipeline/Credential.md
           - 流水线配置参数:
             - 流水线中的概念: zh/amamba/03UserGuide/Pipeline/PipelineConfig/PipelineConcept.md
