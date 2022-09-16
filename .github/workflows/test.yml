@@ -45,4 +45,5 @@ jobs:
 
       # build docs
       - run: pwd
-      - run: mkdocs build -d public
+      - run: mkdocs build -f mkdocs.yml -d public/
+      - run: mkdocs build -f mkdocs-en.yml -d public/en/
