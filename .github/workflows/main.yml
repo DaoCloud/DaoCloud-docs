@@ -36,7 +36,7 @@ jobs:
         with:
           python-version: 3.x
       
-      - run: pip install git+https://$G_USER:$G_TOKEN@gitee.com/samzong_lu/zcon-desgin.git
+      - run: pip install git+https://$G_USER:$G_TOKEN@github.com/DaoCloud/mkdocs-material-insiders.git
 
       # Runs a single command using the runners shell
       - run: pip install mkdocs-git-revision-date-plugin \
