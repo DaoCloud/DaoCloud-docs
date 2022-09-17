@@ -21,7 +21,7 @@ jobs:
   # This workflow contains a single job called "build"
   build-test:
     # The type of runner that the job will run on
-    runs-on: ghcr.io/samzong/docs-insider:v1.0.0
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
