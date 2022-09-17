@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: deploy-test-for-pr
 
 # Controls when the workflow will run
 on:
@@ -25,13 +25,25 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # Required for mkdocs to be able to display pages last update info
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
 
+      # Add ssh private key
+      - name: Setup SSH
+        uses: MrSquaare/ssh-setup-action@v1
+        with:
+          host: github.com
+          private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      
+      # Install mkdocs-material-insiders
+      - run: git clone git@github.com:DaoCloud/mkdocs-material-insiders.git mkdocs-material
+      - run: pip install -e mkdocs-material
+
       # Runs a single command using the runners shell
-      - run: pip install mkdocs-material \
-              mkdocs-git-revision-date-plugin \
+      - run: pip install mkdocs-git-revision-date-plugin \
               mkdocs-mermaid2-plugin \
               mkdocs-rss-plugin \
               mkdocs-minify-plugin \
@@ -41,7 +53,6 @@ jobs:
       
       # add custom plugin with pdf support
       - run: pip install git+https://github.com/SAMZONG/mkdocs-with-pdf-support-material-v8
-
 
       # build docs
       - run: pwd

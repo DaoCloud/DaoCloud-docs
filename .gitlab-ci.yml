@@ -53,5 +53,4 @@ build-job: # This job runs in the build stage, which runs first.
 
     - python ../scripts/refresh_cdn_cache.py \
             publickey=${u_publickey} \
-            privatekey=${u_privatekey} \
-            domain=${u_domain}
+            privatekey=${u_privatekey}
