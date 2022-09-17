@@ -203,6 +203,9 @@ nav:
                   - 环境变量: zh/kpanda/07UserGuide/Workloads/PodConfig/EnvironmentVariables.md
                   - 健康检查: zh/kpanda/07UserGuide/Workloads/PodConfig/healthcheck.md
                   - 集群调度: zh/kpanda/07UserGuide/Workloads/PodConfig/SchedulingPolicy.md
+          - 弹性伸缩:
+              - 指标弹性伸缩 HPA: /zh/kpanda/07UserGuide/Scale/Create-HPA.md
+              - 安装 metrics-server: /zh/kpanda/07UserGuide/Scale/Install-metrics-server.md
           - Helm 应用:
               - Helm 概述: zh/kpanda/07UserGuide/helm/README.md
               - 管理 Helm 应用: zh/kpanda/07UserGuide/helm/helm-app.md
