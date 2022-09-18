@@ -31,19 +31,20 @@ jobs:
         with:
           python-version: 3.x
 
-      # Add ssh private key
-      - name: Setup SSH
-        uses: MrSquaare/ssh-setup-action@v1
-        with:
-          host: github.com
-          private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+#       # Add ssh private key
+#       - name: Setup SSH
+#         uses: MrSquaare/ssh-setup-action@v1
+#         with:
+#           host: github.com
+#           private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       
-      # Install mkdocs-material-insiders
-      - run: git clone git@github.com:DaoCloud/mkdocs-material-insiders.git mkdocs-material
-      - run: pip install -e mkdocs-material
+#       # Install mkdocs-material-insiders
+#       - run: git clone git@github.com:DaoCloud/mkdocs-material-insiders.git mkdocs-material
+#       - run: pip install -e mkdocs-material
 
       # Runs a single command using the runners shell
-      - run: pip install mkdocs-git-revision-date-plugin \
+      - run: pip install mkdocs-material \
+              mkdocs-git-revision-date-plugin \
               mkdocs-mermaid2-plugin \
               mkdocs-rss-plugin \
               mkdocs-minify-plugin \
