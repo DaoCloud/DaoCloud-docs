@@ -53,3 +53,6 @@ Kubernetes 多集群通信组件，消除多集群复杂度，让您就像管理
 <br/><br/>
 Clusterpedia 和 Merbridge 已入选 <a href="https://landscape.cncf.io/?selected=merbridge">CNCF 云原生全景图。</a>
 </p>
+
+[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/install-dce.md){ .md-button .md-button--primary }
