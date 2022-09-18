@@ -189,9 +189,8 @@ nav:
           - 什么是 DCE5.0: zh/dce/what-is-dce.md
           - 适用场景: zh/dce/scenario.md
           - 平台功能: zh/dce/features.md
-          - 为什么选择 DCE: zh/dce/whyus.md
+          - 产品优势: zh/dce/whyus.md
           - 申请社区免费体验: zh/dce/license0.md
-          - 快速安装步骤: zh/dce/install.md
       - 安装:
         - 部署 k8s 集群: zh/install/install-k8s.md
         - 安装依赖项: zh/install/install-tools.md
