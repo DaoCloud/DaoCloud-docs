@@ -13,11 +13,9 @@
 - 内存 > 10 GB
 - 硬盘 > 40 GB
 
-支持的 Linux 发行版包括：
-
-支持的 k8s 版本：1.23.7
-
-支持的 CRI 版本：任意
+- 支持的 Linux 发行版：任意
+- 支持的 k8s 版本：1.23.7
+- 支持的 CRI 版本：任意
 
 ## 在线安装步骤
 
@@ -80,19 +78,21 @@
 
 4. 导入镜像。
 
-    - 如果使用镜像仓库，请将离线包的镜像推送到镜像仓库。下载以下命令中所用的 [offline_image_import.sh](#offlineimageimportsh) 脚本。
+    - 如果使用镜像仓库，请将离线包的镜像推送到镜像仓库。
 
         ```bash
         # 指定镜像仓库地址
         $ export REGISTRY_ADDR=registry.daocloud.io:30080
         # 指定离线包解压目录
         $ export OFFLINE_DIR=$(pwd)/offline
-        # 执行脚本导入镜像
+        # 执行脚本导入镜像，该脚本内容见下文
         $ ./utils/offline_image_import.sh
         ```
 
-        > 注: 若导入镜像的过程出现失败, 则失败会被跳过且脚本将继续执行，
-        > 失败镜像信息将被记录在脚本同级目录 `import_image_failed.list` 文件中，便于定位。
+        !!! note
+
+            注: 若导入镜像的过程出现失败, 则失败会被跳过且脚本将继续执行，
+            失败镜像信息将被记录在脚本同级目录 `import_image_failed.list` 文件中，便于定位。
 
     - 如果没有镜像仓库，请将离线包拷贝到每一台节点之后，通过 `docker load/nerdctl load` 加载:
 
@@ -108,7 +108,7 @@
 
 ## offline_image_import.sh
 
-为了方便查阅和修改，在此处列出上述离线安装中所调用的 .sh 脚本内容：
+为了方便查阅和修改，在此处列出上述离线安装中所调用的 `offline_image_import.sh` 脚本内容：
 
 ```bash
 #!/bin/bash

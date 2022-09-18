@@ -1,14 +1,11 @@
 # 部署 Kubernetes 集群
 
-DCE 5.0 支持的操作系统和 k8s
+DCE 5.0 支持：
 
-| 名称       | 版本                                                         | 说明 |
-| ---------- | ------------------------------------------------------------ | ---- |
-| Linux      |                                                              |      |
-| Kubernetes | [1.23.7](https://github.com/kubernetes/kubernetes/releases/tag/v1.23.7) |      |
-|            |                                                              |      |
+- Linux 发行版：任意
+- Kubernetes：[1.23.7](https://github.com/kubernetes/kubernetes/releases/tag/v1.23.7)
 
-建议使用以下两种方案来安装 Kubernetes。
+建议使用以下两种方案来部署 Kubernetes 集群。
 
 ## 方案 1：通过 kind 部署 k8s 集群
 

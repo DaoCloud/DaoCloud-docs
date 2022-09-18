@@ -65,4 +65,5 @@ DCE 5.0 以 [KLTS](../community/klts.md) 所维护久经生产验证的 Kubernet
 
 ![img](../images/ops-tech.png)
 
-[了解 DCE 5.0 适用场景](scenario.md){ .md-button }
+[了解 DCE 5.0 适用场景](scenario.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/install-dce.md){ .md-button .md-button--primary }
