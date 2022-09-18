@@ -1,7 +1,7 @@
 # 申请社区免费体验
 
 DCE 5.0 目前开源的模块为[全局管理](../ghippo/01ProductBrief/WhatisGhippo.md)、[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[应用工作台](../amamba/01ProductBrief/WhatisAmamba.md)和[可观测性](../insight/03ProductBrief/WhatisKInsight.md)四个模块。
-建议下载并安装好 DCE 5.0 之后，激活的大致步骤如下图所示。
+建议下载并[安装 DCE 5.0](../install/install-dce.md) 之后，激活的大致步骤如下图所示。
 
 ![license](../images/license01.png)
 
@@ -33,3 +33,4 @@ DCE 5.0 目前开源的模块为[全局管理](../ghippo/01ProductBrief/WhatisGh
     [申请许可证密钥](https://qingflow.com/f/58604bf8){ .md-button .md-button--primary }
     [查看许可证密钥](https://license.daocloud.io/dce5-licenses){ .md-button .md-button--primary }
     [换取离线授权码](https://license.daocloud.io/dce5-license){ .md-button .md-button--primary }
+    [安装 DCE 5.0](../install/install-dce.md){ .md-button .md-button--primary }
