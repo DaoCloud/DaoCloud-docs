@@ -45,7 +45,7 @@ theme:
     - search.highlight
     - search.suggest
     - search.share
-    # - toc.follow
+    - toc.follow
     - toc.integrate
 
   palette:
@@ -109,6 +109,9 @@ extra:
       name: en - English
       lang: en
   generator: false
+
+  status:
+    new: Recently added
 
 # Customization Javascript
 extra_javascript:

@@ -44,22 +44,29 @@ theme:
     - search.highlight
     - search.suggest
     - search.share
-    # - toc.follow
+    - toc.follow
     - toc.integrate
 
   palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    - scheme: slate
-      primary: indigo
-      accent: indigo
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       toggle:
         icon: material/brightness-4
-        name: Switch to light mode
+        name: Switch to system preference
   font:
     text: Roboto
     code: Roboto Mono
@@ -94,6 +101,9 @@ plugins:
   #     strict: false
   - tags:
       tags_file: stylesheets/tags.md
+  
+  # with mkdocs-git-authors-plugin
+  # - git-authors
 
 # Customization
 extra:
@@ -108,6 +118,10 @@ extra:
       name: en - English
       lang: en
   generator: false
+
+  status:
+    new: 最近添加
+
 
 # Customization Javascript
 extra_javascript:
