@@ -1,6 +1,6 @@
 # 安装依赖项
 
-部署好 k8s 集群后，若想安装 DCE 5.0，还需要安装一些依赖项。
+[部署好 k8s 集群](install-k8s.md)后，若想安装 DCE 5.0，还需要安装一些依赖项。
 
 ## 一条命令安装所有依赖项
 
@@ -12,7 +12,7 @@ curl -s https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/insta
 
 !!! note
 
-    目前此脚本安装的依赖项包括：
+    这条命令中的脚本内容见下文。目前此脚本安装的依赖项包括：
 
     - Docker 17.03.2
     - helm 3.9.4

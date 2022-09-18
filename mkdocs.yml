@@ -252,7 +252,6 @@ nav:
         - 角色和权限管理: 
           - zh/ghippo/04UserGuide/01UserandAccess/Role.md
           - 全局管理角色: zh/ghippo/04UserGuide/01UserandAccess/global.md
-          - 资源管理（按角色）: zh/ghippo/04UserGuide/01UserandAccess/resource02.md
         - 身份提供商: 
           - zh/ghippo/04UserGuide/01UserandAccess/idprovider.md
           - LDAP: zh/ghippo/04UserGuide/01UserandAccess/ldap.md
@@ -262,6 +261,7 @@ nav:
           - 创建和删除工作空间: zh/ghippo/04UserGuide/02Workspace/Workspaces.md
           - 工作空间最佳实践: zh/ghippo/04UserGuide/02Workspace/wsbp.md
           - 资源绑定: zh/ghippo/04UserGuide/02Workspace/Resources.md
+          - 文件夹与工作空间角色权限: zh/ghippo/04UserGuide/01UserandAccess/resource02.md
         - 审计日志: 
           - 开启和关闭审计日志: zh/ghippo/04UserGuide/open-audit.md
           - 下载和导出审计日志: zh/ghippo/04UserGuide/03AuditLog.md
