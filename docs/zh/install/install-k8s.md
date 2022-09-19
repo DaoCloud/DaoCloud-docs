@@ -1,9 +1,4 @@
-# 部署 Kubernetes 集群
-
-DCE 5.0 支持：
-
-- 操作系统：CentOS 7.0
-- Kubernetes：1.24
+# 用 DaoCloud 加速器部署 Kubernetes 集群
 
 建议使用以下两种方案来部署 Kubernetes 集群。
 
@@ -22,7 +17,7 @@ DCE 5.0 支持：
 ## 方案 2：通过 Kubeadm 部署 k8s 集群
 
 1. 下载 kubeadm 二进制文件。
- 
+
     https://files.m.daocloud.io/storage.googleapis.com/kubernetes-release/release/v1.24.4/bin/linux/amd64/kubeadm
 
 2. 拉取 k8s 镜像。
