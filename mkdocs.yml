@@ -260,7 +260,7 @@ nav:
           - 创建和删除工作空间: zh/ghippo/04UserGuide/02Workspace/Workspaces.md
           - 工作空间最佳实践: zh/ghippo/04UserGuide/02Workspace/wsbp.md
           - 资源绑定: zh/ghippo/04UserGuide/02Workspace/Resources.md
-          - 文件夹与工作空间角色权限: zh/ghippo/04UserGuide/01UserandAccess/resource02.md
+          - 文件夹与工作空间角色权限: zh/ghippo/04UserGuide/02Workspace/resource02.md
         - 审计日志: 
           - 开启和关闭审计日志: zh/ghippo/04UserGuide/open-audit.md
           - 下载和导出审计日志: zh/ghippo/04UserGuide/03AuditLog.md
@@ -377,10 +377,9 @@ nav:
           - 功能总览: zh/mspider/01Intro/Features.md
           - 产品优势: zh/mspider/01Intro/Benefits.md
           - 适用场景: zh/mspider/01Intro/Scenarios.md
-          - 常见术语: zh/mspider/01Intro/Glossary.md
         - 创建/删除网格:
-          - 创建托管网格: zh/mspider/03UserGuide/servicemesh/createmanaged.md
-          - 创建专用网格: zh/mspider/03UserGuide/servicemesh/creatededicated.md
+          - 创建托管网格: zh/mspider/03UserGuide/servicemesh/create-mesh.md
+          - 创建专用网格: zh/mspider/03UserGuide/servicemesh/integrate-mesh.md
           - 删除网格: zh/mspider/03UserGuide/servicemesh/delete.md
         - 服务管理: zh/mspider/03UserGuide/01ServiceList/README.md
         - 流量治理:
