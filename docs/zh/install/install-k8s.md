@@ -2,8 +2,8 @@
 
 DCE 5.0 支持：
 
-- Linux 发行版：任意
-- Kubernetes：[1.23.7](https://github.com/kubernetes/kubernetes/releases/tag/v1.23.7)
+- 操作系统：CentOS 7.0
+- Kubernetes：1.24
 
 建议使用以下两种方案来部署 Kubernetes 集群。
 
@@ -13,7 +13,7 @@ DCE 5.0 支持：
 
     https://files.m.daocloud.io/github.com/kubernetes-sigs/kind/releases/download/v0.15.0/kind-linux-amd64
 
-2. 用 kind 创建 k8s 集群
+2. 用 kind 创建 k8s 集群。
 
 	```shell
 	kind create cluster --name kind --image docker.m.daocloud.io/kindest/node:v1.22.1

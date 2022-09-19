@@ -9,13 +9,14 @@
 - 主机节点：
     - 正常：1 个 Master，3 个 Worker
     - 高可用：3 个 Master，3 个 Worker
+
 - CPU > 10 核
 - 内存 > 10 GB
 - 硬盘 > 40 GB
 
-- 支持的 Linux 发行版：任意
-- 支持的 k8s 版本：1.23.7
-- 支持的 CRI 版本：任意
+- 操作系统：CentOS 7.0
+- Kubernetes 版本：1.24
+- 支持的 CRI：Docker 和 containerd
 
 ## 在线安装步骤
 
@@ -41,8 +42,8 @@
         kind: ClusterConfig
         spec:
         LoadBalancer: metallb
-        istioGatewayVip: 10.6.229.59/32     # 这是istio gateway的VIP，用于如控制台等的入口
-        insightVip: 10.6.229.57/32          # 这是Global集群的Insight-Server采集所有子集群的日志/指标/链路的网络路径所用的VIP
+        istioGatewayVip: 10.6.229.59/32     # 这是 Istio gateway 的 VIP，用于如控制台等的入口
+        insightVip: 10.6.229.57/32          # 这是 Global 集群的 Insight-Server 采集所有子集群的日志/指标/链路的网络路径所用的 VIP
         ```
     
     - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 k8s 负载均衡能力, 则上述文件改为:

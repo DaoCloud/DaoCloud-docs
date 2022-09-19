@@ -54,15 +54,15 @@ curl -s https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/insta
 ```shell
 #!/bin/bash
 #
-# offline and online modes are currently supported.
-# ONLY Works for CentOS X86-64 for now !!
+# 目前支持在线和离线两种模式。
+# 现在仅适用于 CentOS X86-64！！！
 set -e
 
 OPTION=${1:-'online'}
 BINARY_PATH="pre_pkgs"
 BINARY_TAR_FILE=${BINARY_TAR_FILE:-"${BINARY_PATH}.tar.gz"}
 
-################# Binary files download config #################
+################# 二进制文件下载的配置如下 #################
 ARCH=amd64
 
 # name: docker-ce
