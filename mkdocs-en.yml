@@ -1,6 +1,6 @@
 # Project information
 site_name: DaoCloud Enterprise
-site_url: https://docs-alpha.daocloud.io/
+site_url: https://docs.daocloud.io/
 site_author: DaoCloud
 site_description: >-
   DaoCloud Enterprise 5.0 is the next-generation PaaS platform, created with many leading cloud-native technologies,
@@ -18,7 +18,7 @@ edit_uri: edit/main/docs/
 # Configuration
 theme:
   name: material
-  custom_dir: "theme"
+  custom_dir: "theme_en"
   # custom_dir: !ENV [THEME_DIR, "material"]
 
   # Don't include MkDocs' JavaScript
@@ -167,13 +167,13 @@ markdown_extensions:
   - pymdownx.tilde
   # - pymdownx.critic
 
-  - pymdownx.snippets:
-      auto_append:
-        - includes/glossary.md
+  # - pymdownx.snippets:
+  #     auto_append:
+  #       - includes/glossary.md
 
 # Page tree
 nav:
-  - Home: index.md
+  - Home: /en/
   - Documentation:
       - DCE Profile:
           - What is DCE 5.0: zh/dce/what-is-dce.md
