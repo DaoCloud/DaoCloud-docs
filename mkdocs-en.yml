@@ -173,7 +173,7 @@ markdown_extensions:
 
 # Page tree
 nav:
-  - Home: http://wc-book.natapp1.cc/dce_5.0
+  - DaocDloud Home: https://www.daocloud.io/dce_5.0
   - Documentation:
       - DCE Profile:
           - What is DCE 5.0: zh/dce/what-is-dce.md
