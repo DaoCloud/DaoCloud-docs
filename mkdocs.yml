@@ -195,6 +195,7 @@ nav:
         - 部署 k8s 集群: zh/install/install-k8s.md
         - 安装依赖项: zh/install/install-tools.md
         - 安装 DCE 5.0: zh/install/install-dce.md
+        - 卸载: zh/install/uninstall.md
       - 容器管理:
           - 介绍:
               - 什么是容器管理: zh/kpanda/03ProductBrief/WhatisKPanda.md
