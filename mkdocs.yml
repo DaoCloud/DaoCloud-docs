@@ -502,6 +502,7 @@ nav:
               - 可观测性: zh/reference/basic-knowledge/insight.md
               - 流量治理: zh/reference/basic-knowledge/traffic-control.md
   - 视频教程:
+      - 社区版部署 Demo: zh/videos/install.md
       - 容器管理: zh/videos/kpanda.md
       - 全局管理: zh/videos/ghippo.md
       - 可观测性: zh/videos/insight.md

@@ -2,6 +2,10 @@
 
 本页简要说明 DCE 5.0 社区版的安装步骤。
 
+!!! note
+
+    点击[社区版部署 Demo](../videos/install.md)可观看视频演示。
+
 ## 前提条件
 
 - 准备一个 k8s 集群，参阅[如何部署 k8s 集群](install-k8s.md)
