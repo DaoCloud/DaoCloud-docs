@@ -549,13 +549,13 @@ nav:
       - Introduce Multi-Cloud Orchestration: zh/blogs/kairship.md
       - Introduce Service Mesh: zh/blogs/mspider.md
   - Open Source Projects:
-      - DaoCloud Ecosystem: zh/community/index.md
-      - CloudTTY: zh/community/cloudtty.md
-      - Clusterpedia: zh/community/clusterpedia.md
-      - HwameiStor: zh/community/hwameistor.md
-      - KLTS: zh/community/klts.md
-      - Kubean: zh/community/kubean.md
-      - Merbridge: zh/community/merbridge.md
-      - Spiderpool: zh/community/spiderpool.md
-      - kwok: zh/community/kwok.md
-      - Ferry: zh/community/ferry.md
+      - DaoCloud Ecosystem: en/community/index.md
+      - CloudTTY: en/community/cloudtty.md
+      - Clusterpedia: en/community/clusterpedia.md
+      - HwameiStor: en/community/hwameistor.md
+      - KLTS: en/community/klts.md
+      - Kubean: en/community/kubean.md
+      - Merbridge: en/community/merbridge.md
+      - Spiderpool: en/community/spiderpool.md
+      - kwok: en/community/kwok.md
+      - Ferry: en/community/ferry.md
