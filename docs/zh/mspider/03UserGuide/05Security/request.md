@@ -1,7 +1,7 @@
 # 请求身份认证
 
 用于外部用户对网格内部服务发起请求的认证，用户使用 JSON Web Token (JWT) 实现请求请求加密；
-每个请求身份认证需要配置一个授权策略；参见[请求授权](https://jimmysong.io/istio-handbook/config/security/request-authentication.html)。
+每个请求身份认证需要配置一个授权策略；参见[请求授权](https://istio.io/latest/docs/reference/config/security/request_authentication/)。
 
 所有标签为 app: httpbin 的工作负载需要使用 JWT 认证。示例如下：
 
