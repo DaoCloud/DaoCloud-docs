@@ -7,6 +7,10 @@
 - SNI 的支持
 - 其他 Istio 中已经实现的内部网络功能：Fault Injection、Traffic Shifting、Circuit Breaking、Mirroring
 
+
+## 概念介绍
+
+
 对于 L7 的支持，网关规则通过与虚拟服务配合实现。几个重要主字段如下：
 
 - Selector
