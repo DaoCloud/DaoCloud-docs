@@ -1,6 +1,6 @@
 # Project information
 site_name: DaoCloud Enterprise
-site_url: https://docs-alpha.daocloud.io/
+site_url: https://docs.daocloud.io/
 site_author: DaoCloud
 site_description: >-
   DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。
@@ -177,13 +177,13 @@ markdown_extensions:
   - pymdownx.tilde
   # - pymdownx.critic
 
-  - pymdownx.snippets:
-      auto_append:
-        - includes/glossary.md
+  # - pymdownx.snippets:
+  #     auto_append:
+  #       - includes/glossary.md
 
 # Page tree
 nav:
-  - 首页: index.md
+  - 首页: /
   - 帮助文档:
       - DCE 产品介绍:
           - 什么是 DCE5.0: zh/dce/what-is-dce.md
