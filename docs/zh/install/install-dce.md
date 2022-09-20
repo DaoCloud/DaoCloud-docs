@@ -24,7 +24,7 @@
     !!! note
 
         如果集群中已安装所有依赖项，请确保依赖项版本符合要求：
-
+        
         - helm ≥ 3.9.4
         - skopeo ≥ 1.9.2
         - kubectl ≥ 1.22.0
@@ -54,9 +54,9 @@
         apiVersion: provision.daocloud.io/v1alpha1
         kind: ClusterConfig
         spec:
-        loadBalancer: metallb
-        istioGatewayVip: 10.6.229.10/32     # 这是 Istio gateway 的 VIP，也会是DCE5.0的控制台的浏览器访问IP
-        insightVip: 10.6.229.11/32          # 这是 Global 集群的 Insight-Server 采集所有子集群的日志/指标/链路的网络路径所用的 VIP
+        	loadBalancer: metallb
+        	istioGatewayVip: 10.6.229.10/32     # 这是 Istio gateway 的 VIP，也会是DCE5.0的控制台的浏览器访问IP
+        	insightVip: 10.6.229.11/32          # 这是 Global 集群的 Insight-Server 采集所有子集群的日志/指标/链路的网络路径所用的 VIP
         ```
 
     - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 k8s 负载均衡能力, 配置文件范例如下:
@@ -65,10 +65,10 @@
         apiVersion: provision.daocloud.io/v1alpha1
         kind: ClusterConfig
         spec:
-        loadBalancer: cloudLB
+        	loadBalancer: cloudLB
         ```
 
-    - 如果使用 NodePort 暴露控制台（PoC 方式），可以不指定任何 clusterConfig 文件，直接执行第 3 步。
+    - 如果使用 NodePort 暴露控制台（仅推荐 PoC 使用），直接执行第 3 步。
 
 3. 安装 DCE 5.0。
 
@@ -80,13 +80,15 @@
 
         如果使用 NodePort 暴露控制台，则命令不需要指定 `-c` 参数。
 
-4. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 探索全新的 DCE 5.0 啦！
+4. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
 
     ![success](images/success.png)
 
     !!! note
 
          请记录好提示的 URL，方便下次访问。
+
+5. 另外，安装 DCE 5.0 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](../dce/license0.md)。
 
 ## 离线安装
 
@@ -102,34 +104,34 @@
 2. 导入镜像。
 
     !!! note
-        
+
         这一步所用的脚本下载地址为： https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline_image_handler.sh
-
+    
     - 如果使用镜像仓库，请将离线包的镜像推送到镜像仓库。
-
+    
         ```bash
         # 指定镜像仓库地址, 比如:
         export REGISTRY_ADDR=registry.daocloud.io:30080
         # 指定离线包解压目录, 比如:
         export OFFLINE_DIR=$(pwd)/offline
         # 执行脚本导入镜像
-        ./utils/offline_image_handler.sh import
+        ./offline_image_handler.sh import
         ```
-
+    
         !!! note
-
+    
             若导入镜像的过程出现失败, 则失败会被跳过且脚本将继续执行，
             失败镜像信息将被记录在脚本同级目录 `import_image_failed.list` 文件中，便于定位。
-
+    
     - 如果没有镜像仓库，请将离线包拷贝到每一台节点之后，通过 `docker load/nerdctl load` 命令加载：
-
+    
         ```shell
         # 指定离线包解压目录
         export OFFLINE_DIR=$(pwd)/offline
         # 执行脚本加载镜像
-        ./utils/offline_image_handler.sh load
+        ./offline_image_handler.sh load
         ```
-
+    
 3. 解压安装。
 
     ``` shell
@@ -139,13 +141,15 @@
     !!! note
 
         参数 -p 指定解压离线包的 offline 目录。
-
+        
         有关 clusterConfig.yaml 文件设置，请参考上文的 **在线安装第 2 步** 。
 
-4. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 探索全新的 DCE 5.0 啦！
+4. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
 
     ![success](images/success.png)
 
     !!! note
 
          请记录好提示的 URL，方便下次访问。
+
+5. 另外，安装 DCE 5.0 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](../dce/license0.md)。
