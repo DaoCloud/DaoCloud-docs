@@ -35,11 +35,11 @@ Application workbench introduces a concept of continuous deployment for cloud na
 
 !!! info
 
-```go
-Progressive delivery is an approach to gradually expose a new version to few initial users, and then become a larger subset to mitigate the risk of negative impacts (such as errors).
+    ```go
+    Progressive delivery is an approach to gradually expose a new version to few initial users, and then become a larger subset to mitigate the risk of negative impacts (such as errors).
 
-Argo-Rollout Kubernetes Progressive Delivery Controller，provide powerful deployment capabilities. Including grayscale publishing, blue-green deployment, experimentation, progressive delivery and so on.
-```
+    Argo-Rollout Kubernetes Progressive Delivery Controller，provide powerful deployment capabilities. Including grayscale publishing, blue-green deployment, experimentation, progressive delivery and so on.
+    ```
 
 ## Status in DCE 5.0
 
