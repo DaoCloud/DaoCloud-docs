@@ -58,7 +58,7 @@ if __name__ == '__main__':
     privatekey = argv[2].split('=')[1]
     # domain = argv[3].split('=')[1]
 
-    domains = ["http://docs-alpha.daocloud.io/","https://docs-alpha.daocloud.io/"]
+    domains = ["https://docs-alpha.daocloud.io/","https://docs.daocloud.io/"]
 
     for domain in domains:
         refresh_cdn_cache(privatekey, publickey, domain)

@@ -1,6 +1,6 @@
 # Project information
 site_name: DaoCloud Enterprise
-site_url: https://docs-alpha.daocloud.io/
+site_url: https://docs.daocloud.io/
 site_author: DaoCloud
 site_description: >-
   DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。
@@ -177,14 +177,14 @@ markdown_extensions:
   - pymdownx.tilde
   # - pymdownx.critic
 
-  - pymdownx.snippets:
-      auto_append:
-        - includes/glossary.md
+  # - pymdownx.snippets:
+  #     auto_append:
+  #       - includes/glossary.md
 
 # Page tree
 nav:
-  - 首页: index.md
-  - 帮助文档:
+  - DaoCloud 官网: https://www.daocloud.io/
+  - 产品文档:
       - DCE 产品介绍:
           - 什么是 DCE5.0: zh/dce/what-is-dce.md
           - 适用场景: zh/dce/scenario.md
@@ -195,6 +195,7 @@ nav:
         - 部署 k8s 集群: zh/install/install-k8s.md
         - 安装依赖项: zh/install/install-tools.md
         - 安装 DCE 5.0: zh/install/install-dce.md
+        - 卸载: zh/install/uninstall.md
       - 容器管理:
           - 介绍:
               - 什么是容器管理: zh/kpanda/03ProductBrief/WhatisKPanda.md
@@ -260,7 +261,7 @@ nav:
           - 创建和删除工作空间: zh/ghippo/04UserGuide/02Workspace/Workspaces.md
           - 工作空间最佳实践: zh/ghippo/04UserGuide/02Workspace/wsbp.md
           - 资源绑定: zh/ghippo/04UserGuide/02Workspace/Resources.md
-          - 文件夹与工作空间角色权限: zh/ghippo/04UserGuide/01UserandAccess/resource02.md
+          - 文件夹与工作空间角色权限: zh/ghippo/04UserGuide/02Workspace/resource02.md
         - 审计日志: 
           - 开启和关闭审计日志: zh/ghippo/04UserGuide/open-audit.md
           - 下载和导出审计日志: zh/ghippo/04UserGuide/03AuditLog.md
@@ -377,10 +378,9 @@ nav:
           - 功能总览: zh/mspider/01Intro/Features.md
           - 产品优势: zh/mspider/01Intro/Benefits.md
           - 适用场景: zh/mspider/01Intro/Scenarios.md
-          - 常见术语: zh/mspider/01Intro/Glossary.md
         - 创建/删除网格:
-          - 创建托管网格: zh/mspider/03UserGuide/servicemesh/createmanaged.md
-          - 创建专用网格: zh/mspider/03UserGuide/servicemesh/creatededicated.md
+          - 创建托管网格: zh/mspider/03UserGuide/servicemesh/create-mesh.md
+          - 创建专用网格: zh/mspider/03UserGuide/servicemesh/integrate-mesh.md
           - 删除网格: zh/mspider/03UserGuide/servicemesh/delete.md
         - 服务管理: zh/mspider/03UserGuide/01ServiceList/README.md
         - 流量治理:
@@ -396,22 +396,12 @@ nav:
         - 边车管理:
           - 命名空间边车管理: zh/mspider/03UserGuide/07SidecarManagement/NamespaceSidecar.md
           - 工作负载边车管理: zh/mspider/03UserGuide/07SidecarManagement/WorkloadSidecar.md
-          - 全局边车管理: zh/mspider/03UserGuide/07SidecarManagement/GlobalSidecar.md
-        - 流量监控:
-          - 全局监控: zh/mspider/03UserGuide/06TrafficMonitor/global-monitor.md
-          - 服务监控: zh/mspider/03UserGuide/06TrafficMonitor/service-monitor.md
-          - 工作负载监控: zh/mspider/03UserGuide/06TrafficMonitor/workload-monitor.md
-          - 性能监控: zh/mspider/03UserGuide/06TrafficMonitor/perf-monitor.md
         - 网格网关:
           - 创建网格网关: zh/mspider/03UserGuide/09GatewayInstance/create.md
           - 删除网格网关: zh/mspider/03UserGuide/09GatewayInstance/delete.md
         - 集群纳管:
           - 添加集群: zh/mspider/03UserGuide/08ClusterManagement/join-clus.md
           - 移除集群: zh/mspider/03UserGuide/08ClusterManagement/remov-clus.md
-        - 网格配置:
-          - 网格命名空间: zh/mspider/03UserGuide/10MeshConfiguration/MeshNamespace.md
-          - 系统组件管理: zh/mspider/03UserGuide/10MeshConfiguration/SystemComponents.md
-          - Istio 资源管理: zh/mspider/03UserGuide/10MeshConfiguration/IstioResources.md
         - 常见问题: zh/mspider/07faq.md
       - 网络:
           - 介绍:
@@ -512,6 +502,7 @@ nav:
               - 可观测性: zh/reference/basic-knowledge/insight.md
               - 流量治理: zh/reference/basic-knowledge/traffic-control.md
   - 视频教程:
+      - 社区版部署 Demo: zh/videos/install.md
       - 容器管理: zh/videos/kpanda.md
       - 全局管理: zh/videos/ghippo.md
       - 可观测性: zh/videos/insight.md

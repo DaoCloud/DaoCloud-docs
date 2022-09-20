@@ -1,0 +1,26 @@
+{#-
+  This file was automatically generated - do not edit
+-#}
+{% extends "overrides/main.html" %}
+
+{% block htmltitle %}
+  <title>{{ config.site_name }}</title>
+{% endblock %}
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="https://squidfunk.github.io/mkdocs-material/overrides/assets/stylesheets/home.def3a648.min.css">
+  <script>"Apple Computer, Inc."===navigator.vendor&&document.documentElement.classList.add("safari")</script>
+{% endblock %}
+{% block announce %}{% endblock %}
+{% block hero %}
+  {% include "overrides/partials/parallax.html" %}
+{% endblock %}
+
+{% block tabs %}{% endblock %}
+
+{#-
+{% block content %}{% endblock %}
+
+{% block footer %}{% endblock %}
+
+-#}

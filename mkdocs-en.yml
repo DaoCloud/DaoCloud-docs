@@ -1,6 +1,6 @@
 # Project information
 site_name: DaoCloud Enterprise
-site_url: https://docs-alpha.daocloud.io/
+site_url: https://docs.daocloud.io/
 site_author: DaoCloud
 site_description: >-
   DaoCloud Enterprise 5.0 is the next-generation PaaS platform, created with many leading cloud-native technologies,
@@ -18,7 +18,7 @@ edit_uri: edit/main/docs/
 # Configuration
 theme:
   name: material
-  custom_dir: "theme"
+  custom_dir: "theme_en"
   # custom_dir: !ENV [THEME_DIR, "material"]
 
   # Don't include MkDocs' JavaScript
@@ -167,20 +167,25 @@ markdown_extensions:
   - pymdownx.tilde
   # - pymdownx.critic
 
-  - pymdownx.snippets:
-      auto_append:
-        - includes/glossary.md
+  # - pymdownx.snippets:
+  #     auto_append:
+  #       - includes/glossary.md
 
 # Page tree
 nav:
-  - Home: index.md
+  - DaocDloud Home: https://www.daocloud.io/
   - Documentation:
       - DCE Profile:
           - What is DCE 5.0: zh/dce/what-is-dce.md
           - Scenarios: zh/dce/scenario.md
           - Features: zh/dce/features.md
           - Why DCE: zh/dce/whyus.md
-          - Free Trial: zh/dce/license0.md
+          - Free Trial: en/dce/license0.md
+      - Install:
+        - Deploy K8S Clusters: en/install/install-k8s.md
+        - Install Dependencies: en/install/install-tools.md
+        - Install DCE 5.0: en/install/install-dce.md
+        - Uninstall: en/install/uninstall.md
       - Container Manager:
           - Introduction:
               - What is Container Manager: zh/kpanda/03ProductBrief/WhatisKPanda.md
@@ -534,13 +539,13 @@ nav:
               - Observability: zh/reference/basic-knowledge/insight.md
               - Traffice Governance: zh/reference/basic-knowledge/traffic-control.md
   - Videos:
-      - Container Manager: zh/videos/kpanda.md
-      - Global Manager: zh/videos/ghippo.md
-      - Observability: zh/videos/insight.md
-      - App Workbench: zh/videos/amamba.md
-      - Service Mesh: zh/videos/mspider.md
-      - Microservice Engine: zh/videos/skoala.md
-      - Middelware: zh/videos/mcamel.md
+      - Container Manager: en/videos/kpanda.md
+      - Global Manager: en/videos/ghippo.md
+      - Observability: en/videos/insight.md
+      - App Workbench: en/videos/amamba.md
+      - Service Mesh: en/videos/mspider.md
+      - Microservice Engine: en/videos/skoala.md
+      - Middelware: en/videos/mcamel.md
   - Blogs:
       - DCE Development Background: zh/blogs/blog00.md
       - Introduce Container Manager: zh/blogs/kpanda.md
@@ -549,13 +554,13 @@ nav:
       - Introduce Multi-Cloud Orchestration: zh/blogs/kairship.md
       - Introduce Service Mesh: zh/blogs/mspider.md
   - Open Source Projects:
-      - DaoCloud Ecosystem: zh/community/index.md
-      - CloudTTY: zh/community/cloudtty.md
-      - Clusterpedia: zh/community/clusterpedia.md
-      - HwameiStor: zh/community/hwameistor.md
-      - KLTS: zh/community/klts.md
-      - Kubean: zh/community/kubean.md
-      - Merbridge: zh/community/merbridge.md
-      - Spiderpool: zh/community/spiderpool.md
-      - kwok: zh/community/kwok.md
-      - Ferry: zh/community/ferry.md
+      - DaoCloud Ecosystem: en/community/index.md
+      - CloudTTY: en/community/cloudtty.md
+      - Clusterpedia: en/community/clusterpedia.md
+      - HwameiStor: en/community/hwameistor.md
+      - KLTS: en/community/klts.md
+      - Kubean: en/community/kubean.md
+      - Merbridge: en/community/merbridge.md
+      - Spiderpool: en/community/spiderpool.md
+      - kwok: en/community/kwok.md
+      - Ferry: en/community/ferry.md
