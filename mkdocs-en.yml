@@ -261,7 +261,7 @@ nav:
           - Choose Language: zh/ghippo/04UserGuide/06PersonalCenter/Language.md      
       - Observability:
           - Introduction:
-            - What is Observability: zh/insight/03ProductBrief/WhatisKInsight.md
+            - What is Observability: en/insight/03ProductBrief/WhatisKInsight.md
             - Benefits: zh/insight/03ProductBrief/benefits.md
             - Glossary: zh/insight/03ProductBrief/glossary.md
           - Overview: zh/insight/06UserGuide/overview.md
@@ -291,7 +291,7 @@ nav:
             - Collection Log: zh/insight/09FAQs/collectauditlog.md
       - App Workbench:
         - Introduction:
-          - What is App Workbench: zh/amamba/01ProductBrief/WhatisAmamba.md
+          - What is App Workbench: en/amamba/01ProductBrief/WhatisAmamba.md
           - Features: zh/amamba/01ProductBrief/Features.md
           - Benefits: zh/amamba/01ProductBrief/Benefits.md
           - Scenarios: zh/amamba/01ProductBrief/Scenarios.md
@@ -307,7 +307,7 @@ nav:
             - Job Template Parameter with GUI: zh/amamba/03UserGuide/Pipeline/PipelineConfig/PipelineStep.md
       - Multi-Cloud Orchestration:
         - Introduction:
-          - What is Multi-Cloud Orchestration: zh/kairship/01product/whatiskair.md
+          - What is Multi-Cloud Orchestration: en/kairship/01product/whatiskair.md
           - Features: zh/kairship/01product/features.md
           - Benefits: zh/kairship/01product/benefits.md
           - Scenarios: zh/kairship/01product/scenarios.md
