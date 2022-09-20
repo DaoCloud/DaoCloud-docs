@@ -16,7 +16,7 @@
 	
 !!! info
 
-	DaoCloud 设立了国内镜像站，便于国内用户下载。链接中带有 `https://files.m.daocloud.io/` 表示已提供国内镜像加速。
+	DaoCloud 设立了国内镜像站，便于国内用户下载。链接中带有 `https://*.daocloud.io/` 表示已提供国内镜像加速。
 
 ## 方案 2：通过 Kubeadm 部署 k8s 集群
 
