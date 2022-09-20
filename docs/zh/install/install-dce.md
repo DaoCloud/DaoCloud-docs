@@ -54,7 +54,7 @@
         apiVersion: provision.daocloud.io/v1alpha1
         kind: ClusterConfig
         spec:
-        LoadBalancer: metallb
+        loadBalancer: metallb
         istioGatewayVip: 10.6.229.10/32     # 这是 Istio gateway 的 VIP，也会是DCE5.0的控制台的浏览器访问IP
         insightVip: 10.6.229.11/32          # 这是 Global 集群的 Insight-Server 采集所有子集群的日志/指标/链路的网络路径所用的 VIP
         ```
@@ -65,7 +65,7 @@
         apiVersion: provision.daocloud.io/v1alpha1
         kind: ClusterConfig
         spec:
-        LoadBalancer: cloudLB
+        loadBalancer: cloudLB
         ```
 
     - 如果使用 NodePort 暴露控制台（PoC 方式），可以不指定任何 clusterConfig 文件，直接执行第 3 步。
