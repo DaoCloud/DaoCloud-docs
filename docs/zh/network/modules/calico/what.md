@@ -15,18 +15,22 @@ Calico 基于 iptables 提供了丰富而灵活的网络 Policy，保证通过�
 
 Calico 由以下组件组成，在部署 Calico 的时候部分组件是可选的。
 
-- [Calico API Server](#calico-api-server)
-- [Felix](#felix)
-- [BIRD](#bird)
-- [confd](#confd)
-- [Dikastes](#dikastes)
-- [CNI 插件](#cni-插件)
-- [数据存储插件](#数据存储插件)
-- [IPAM 插件](#ipam-插件)
-- [kube-controllers](#kube-controller)
-- [Typha](#typha)
-- [calicoctl](#calicoctl)
-- [云编排器插件](#云编排器插件)
+- [什么是 Calico](#什么是-calico)
+  - [Calico 组件](#calico-组件)
+    - [Calico API Server](#calico-api-server)
+    - [Felix](#felix)
+    - [BIRD](#bird)
+    - [confd](#confd)
+    - [Dikastes](#dikastes)
+    - [CNI 插件](#cni-插件)
+    - [数据存储插件](#数据存储插件)
+      - [Kubernetes API datastore（kdd）](#kubernetes-api-datastorekdd)
+      - [etcd](#etcd)
+    - [IPAM 插件](#ipam-插件)
+    - [kube-controller](#kube-controller)
+    - [Typha](#typha)
+    - [calicoctl](#calicoctl)
+    - [云编排器插件](#云编排器插件)
 
 ### Calico API Server
 
@@ -67,10 +71,10 @@ BGP 客户端负责：
 
     当 Felix 将路由插入 Linux 内核的 FIB 时，BGP 客户端将它们分配给部署中的其他节点。这确保了部署中的有效流量路由。
 
-- BGP路由反射器的配置
+- BGP 路由反射器的配置
 
     BGP 路由反射器通常是为大型部署而配置的，而不是一个标准的 BGP 客户端。BGP 路由反射器作为连接 BGP 客户端的一个中心点。
-    (标准 BGP 要求每个 BGP 客户端在网状拓扑结构中与其他每个 BGP 客户端连接，这很难维护)。
+    (标准 BGP 要求每个 BGP 客户端在网格拓扑结构中与其他每个 BGP 客户端连接，这很难维护。)
 
     为了实现冗余，您可以无缝部署多个 BGP 路由反射器。BGP 路由反射器只参与网络的控制：没有终端数据通过它们。
     当 Calico BGP 客户端将其 FIB 中的路由通告给路由反射器时，路由反射器将这些路由通告给部署中的其他节点。
