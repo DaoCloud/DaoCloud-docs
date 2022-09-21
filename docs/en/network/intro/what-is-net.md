@@ -2,7 +2,7 @@
 
 Based on open source projects, DCE 5.0 Cloud Native Networking provides not only single CNI network support, but also multiple CNI portfolio solutions.
 
-[Apply for free community experience](../../dce/license0.md) { .md-button .md-button--primary }
+[Apply for free community experience](../../dce/license0.md){ .md-button .md-button--primary }
 
 ## Solution 1: Cillium + MacVLAN/SpiderFlat + SpiderPool + Multus
 

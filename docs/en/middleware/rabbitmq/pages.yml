@@ -1,0 +1,18 @@
+site_name: rabbitmq
+docs_dir: ./
+nav:
+- RabbitMQ 介绍: 
+  - 什么是 RabbitMQ: intro/what.md
+  - 功能说明: intro/features.md
+  - 产品优势: intro/benefits.md
+  - 适用场景: intro/scenarios.md
+  - 基本概念: intro/concepts.md
+- 操作说明:
+  - 安装 RabbitMQ: quickstart/install.md
+  - 创建 RabbitMQ: userguide/create.md
+  - 更新 RabbitMQ: userguide/update.md
+  - 删除 RabbitMQ: userguide/delete.md
+  - 查看消息队列: userguide/view.md
+    - 节点信息: userguide/nodes.md
+    - 参数配置: userguide/params.md
+  - RabbitMQ 数据迁移: userguide/migrate.md
