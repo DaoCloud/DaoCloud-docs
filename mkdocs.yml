@@ -183,7 +183,7 @@ markdown_extensions:
 
 # Page tree
 nav:
-  - DaoCloud 官网: https://www.daocloud.io/dce_5.0
+  - DaoCloud 官网: https://www.daocloud.io/
   - 产品文档:
       - DCE 产品介绍:
           - 什么是 DCE5.0: zh/dce/what-is-dce.md

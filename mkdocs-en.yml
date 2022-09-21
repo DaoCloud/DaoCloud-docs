@@ -173,14 +173,19 @@ markdown_extensions:
 
 # Page tree
 nav:
-  - DaocDloud Home: https://www.daocloud.io/dce_5.0
+  - DaocDloud Home: https://www.daocloud.io/
   - Documentation:
       - DCE Profile:
           - What is DCE 5.0: zh/dce/what-is-dce.md
           - Scenarios: zh/dce/scenario.md
           - Features: zh/dce/features.md
           - Why DCE: zh/dce/whyus.md
-          - Free Trial: zh/dce/license0.md
+          - Free Trial: en/dce/license0.md
+      - Install:
+        - Deploy K8S Clusters: en/install/install-k8s.md
+        - Install Dependencies: en/install/install-tools.md
+        - Install DCE 5.0: en/install/install-dce.md
+        - Uninstall: en/install/uninstall.md
       - Container Manager:
           - Introduction:
               - What is Container Manager: zh/kpanda/03ProductBrief/WhatisKPanda.md
@@ -534,13 +539,13 @@ nav:
               - Observability: zh/reference/basic-knowledge/insight.md
               - Traffice Governance: zh/reference/basic-knowledge/traffic-control.md
   - Videos:
-      - Container Manager: zh/videos/kpanda.md
-      - Global Manager: zh/videos/ghippo.md
-      - Observability: zh/videos/insight.md
-      - App Workbench: zh/videos/amamba.md
-      - Service Mesh: zh/videos/mspider.md
-      - Microservice Engine: zh/videos/skoala.md
-      - Middelware: zh/videos/mcamel.md
+      - Container Manager: en/videos/kpanda.md
+      - Global Manager: en/videos/ghippo.md
+      - Observability: en/videos/insight.md
+      - App Workbench: en/videos/amamba.md
+      - Service Mesh: en/videos/mspider.md
+      - Microservice Engine: en/videos/skoala.md
+      - Middelware: en/videos/mcamel.md
   - Blogs:
       - DCE Development Background: zh/blogs/blog00.md
       - Introduce Container Manager: zh/blogs/kpanda.md
