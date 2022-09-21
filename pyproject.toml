@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "community"
-version = "0.1.0"
+name = "DaoCloud-docs"
+version = "0.2.0"
 description = "DaoCloud Product Documents Repo."
 authors = ["samzong.lu <samzong.lu@gmail.com>"]
 
@@ -19,6 +19,8 @@ mkdocs-git-revision-date-plugin = "^0.3.2"
 mkdocs-mermaid2-plugin = "^0.6.0"
 mkdocs-git-committers-plugin-2 = "^1.1.0"
 mkdocs-git-authors-plugin = "^0.6.4"
+mkdocs-material-extensions = "^1.0.3"
+regex = "^2022.9.13"
 
 [tool.poetry.dev-dependencies]
 

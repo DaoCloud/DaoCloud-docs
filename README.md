@@ -8,11 +8,24 @@
 
 ## 创建本地预览环境
 
-1. [快速使用 Mkdocs 环境](https://www.mkdocs.org/getting-started/)
+### 快捷指令
+
+> 待补充
+
+### 使用 Git repo 运行
+
+1. [快速使用 Mkdocs 环境](https://squidfunk.github.io/mkdocs-material/getting-started/)
 2. [下载项目](https://github.com/DaoCloud/daocloud-docs/archive/main.zip)并解压缩，或者直接[克隆](https://github.com/DaoCloud/DaoCloud-docs.git)
-3. 安装基础依赖 `poetry install`
-4. 启动项目 `poetry run mkdocs serve -f mkdocs.yml`
-5. 访问本地 http://127.0.0.1:8000/
+3. 安装开发环境： Poetry 和 Python 3.9 以上
+   1. 配置poetry: `poetry config virtualenvs.in-project true`
+   2. 开启 venv: `poetry env use 3.9`
+4. 安装基础依赖：  `poetry install` 
+5. 启动项目 `poetry run mkdocs serve -f mkdocs.yml`  # 默认为中文
+6. 访问本地 http://127.0.0.1:8000/
+
+### 使用 Docker 运行
+
+> 待补充
 
 ## 提交 PR 修改文档
 

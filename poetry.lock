@@ -1211,7 +1211,7 @@ reference = "tsinghua"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "4f0626750eb966e52268cb5353741457570fcc8389f7e5161dc5e354273ed9be"
+content-hash = "8aa99fca2cebcfb8ec1ed488db8fc157f7f028c5105f5ea8c634c0eff9cc46ba"
 
 [metadata.files]
 asyncio = [
