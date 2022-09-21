@@ -8,9 +8,25 @@
 
 ## 创建本地预览环境
 
-### 快捷指令
+### 使用 docker 快速运行
 
-> 待补充
+1. 需要本地安装好 Docker，并启动
+2. 直接使用 make serve ， 这会运行在本地 8000 端口
+
+```bash
+~ make
+使用:
+    make [指令]
+
+指令:
+    serve                使用 docker 启动服务，默认端口8000
+    in-serve             内部使用，使用 docker 启动服务，默认端口8000
+    clean                清理静态文件
+    help                 显示帮助信息
+
+版本: DaoCloud-docs 1.0.0 20220921
+```
+
 
 ### 使用 Git repo 运行
 
@@ -22,10 +38,6 @@
 4. 安装基础依赖：  `poetry install` 
 5. 启动项目 `poetry run mkdocs serve -f mkdocs.yml`  # 默认为中文
 6. 访问本地 http://127.0.0.1:8000/
-
-### 使用 Docker 运行
-
-> 待补充
 
 ## 提交 PR 修改文档
 
