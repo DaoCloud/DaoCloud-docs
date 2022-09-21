@@ -1,0 +1,30 @@
+site_name: hwameistor
+docs_dir: ./
+nav:
+- HwameiStor: intro/what.md
+  - 架构:
+    - 本地磁盘管理器: intro/ldm.md
+    - 本地存储: intro/ls.md
+    - DRBD 安装器: intro/drbd.md
+    - 调度器: intro/scheduler.md
+    - 准入控制器: intro/admission-controller.md
+  - 资源: intro/resources.md
+- 安装管理:
+  - 准备工作: install/prereq.md
+  - 通过 Helm Chart 安装: install/deploy.md
+  - 安装后检查: install/post-check.md
+  - 升级: install/upgrade.md
+  - 卸载: install/uninstall.md
+- 资源管理:
+  - 创建存储池: resources/storagepool.md
+  - 数据卷扩容: resources/expand.md
+  - 数据卷迁移: resources/migrate.md
+  - 节点扩展: resources/node-expansion.md
+  - 数据盘扩展: resources/disk-expansion.md
+- 应用场景: application/overview.md
+  - 部署有状态应用: 
+    - 使用本地卷部署: application/local.md
+    - 使用高可用卷部署: application/ha.md 
+  - TiDB: application/tidb.md
+  - MinIO: application/minio/minio.md
+- 常见问题: faqs.md
