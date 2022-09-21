@@ -2,7 +2,7 @@
 
 Cloud computing has been developed for nearly 15 years in China. With the maturity of technology, enterprise applications are not only simple to the cloud, but also more complex multi-cloud requirements. The development process of cloud computing from single cloud to multi-cloud as shown below.
 
-![Single cloud to multi-cloud](../01product/images./Single-cloud-to-multi-cloud.png)
+![Single cloud to multi-cloud](../images/Single-cloud-to-multi-cloud.png)
 
 Enterprises from simply go to the cloud to build their own cloud environment.
 
