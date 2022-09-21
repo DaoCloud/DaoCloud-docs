@@ -20,4 +20,4 @@ The main functions as following:
 - Multiple notification channels, such as email, WeChat, nail and Webhook.
 - Persistence of metics, logs, and tracing data.
 
-[Free trial of community version](../../dce/license0.md){ .md-button .md-button--primary }
+[Free trial now](../../dce/license0.md){ .md-button .md-button--primary }
