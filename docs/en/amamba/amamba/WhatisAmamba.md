@@ -13,25 +13,25 @@ Taking the [workspace](../../ghippo/04UserGuide/02Workspace/ws-folder.md) as a m
 - Workspace management members can create namespace resources in the associated cluster.
 - Self service resource creation mode. Users can self create namespaces in the workspace to divide resources.
 
-![multi-tenancy resources](../amamba/images/what01.png)
+![Multi-tenancy resources](../amamba/images/what01.png)
 
 === "Cloud Native Based"
 
 Support popular cloud native applications such as kubernetes manifests, Helm, OAM,OLM, etc. And it can seamlessly integrate with SpingCloud, Dubbo and ServiceMesh frameworks to achieve SOA (Service-Oriented Architecture). In additionally, DCE 5.0 [micro service engine](../../skoala/intro/features.md) and [service mesh](../../mspider/01Intro/What'smSpider.md), enables scaling , logging, monitoring and upgrading for applications.
 
-![Cloud Native Based](../amamba/images/what02.png)
+![App-centered](../amamba/images/what02.png)
 
 === "Efficient Continuous Integration"
 
 You can use both Jenkins and Tekton in the same time. The pipeline can be edited simply by web UI. In the maintime, applications workbench support multiple SCM (Source Code Management).
 
-![Efficient Continuous Integration](../amamba/images/what03.png)
+![CI/CD](../amamba/images/what03.png)
 
 === "Automated Secure Progressive Delivery"
 
 Application workbench introduces a concept of continuous deployment for cloud native, which designed for cooperate with GitOps. It integrates the progressive delivery component with Argo Rollout and supports grayscale publishing that improved the efficiency of application delivery.
 
-![Automated Secure Progressive Delivery](../amamba/images/what04.png)
+![Delivery one-by-one](../amamba/images/what04.png)
 
 !!! info
 
@@ -45,7 +45,7 @@ Application workbench introduces a concept of continuous deployment for cloud na
 
 The application workbench has a significant role in the roadmap of DCE 5.0 as shown below.
 
-![locations](../amamba/images/what00.png)
+![Locations](../amamba/images/what00.png)
 
 Application workbench is developed on the basis of container manager and global manager. It implements the hierarchical resource management and progressive delivery with CI/CD pipelines and GitOps workflow.
 
