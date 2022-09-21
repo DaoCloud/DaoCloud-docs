@@ -7,30 +7,30 @@ Small-scall deployments can be interconnected directly through a BGP client, whi
 
 Powerd by iptables, Calico provides rich and flexible network policies, securing multi-tenant segregation of workloads, security groups and other access restrictions through ACLs on each node.
 
-> Calico literally means tabby cats, or cats with three colors as its logo shown below.
+!!! info
 
-  ![calico](../../images/cat.jpeg)
+    Calico literally means tabby cats, or cats with three colors as its logo shown below.
+
+    ![calico](../../images/cat.jpeg)
 
 ## Calico Components
 
 Calico is composed of the following components, some of which are optional when deploying.
 
-- [What is Calico](#what-is-calico)
-  - [Calico Components](#calico-components)
-    - [Calico API Server](#calico-api-server)
-    - [Felix](#felix)
-    - [BIRD](#bird)
-    - [confd](#confd)
-    - [Dikastes](#dikastes)
-    - [CNI plugin](#cni-plugin)
-    - [Datastore plugin](#datastore-plugin)
-      - [Kubernetes API datastore（kdd）](#kubernetes-api-datastorekdd)
-      - [etcd](#etcd)
-    - [IPAM plugin](#ipam-plugin)
-    - [kube-controller](#kube-controller)
-    - [Typha](#typha)
-    - [calicoctl](#calicoctl)
-    - [Plugins for cloud orchestrators](#plugins-for-cloud-orchestrators)
+- [Calico API Server](#calico-api-server)
+- [Felix](#felix)
+- [BIRD](#bird)
+- [confd](#confd)
+- [Dikastes](#dikastes)
+- [CNI plugin](#cni-plugin)
+- [Datastore plugin](#datastore-plugin)
+    - [Kubernetes API datastore（kdd）](#kubernetes-api-datastorekdd)
+    - [etcd](#etcd)
+- [IPAM plugin](#ipam-plugin)
+- [kube-controller](#kube-controller)
+- [Typha](#typha)
+- [calicoctl](#calicoctl)
+- [Plugins for cloud orchestrators](#plugins-for-cloud-orchestrators)
 
 ### Calico API Server
 
@@ -44,7 +44,9 @@ Depending on the specific orchestrator environment, Felix is responsible for:
 
 - Interface management
 
-    Program information about interfaces is written into the kernel so the kernel can correctly handle the traffic from that endpoint. In particular, it ensures that the host responds to ARP requests from each workload with the MAC of the host, and enables IP forwarding for interfaces that it manages. It also monitors interfaces to ensure that the programming is applied at the appropriate time.
+    Program information about interfaces is written into the kernel so the kernel can correctly handle the traffic from that endpoint.
+    In particular, it ensures that the host responds to ARP requests from each workload with the MAC of the host, and enables IP forwarding
+    for interfaces that it manages. It also monitors interfaces to ensure that the programming is applied at the appropriate time.
 
 - Route programming
 
@@ -57,7 +59,8 @@ Depending on the specific orchestrator environment, Felix is responsible for:
 
 - State reporting
 
-    Provide network health data. In particular, it reports errors and problems when configuring its host. This data is written to the datastore so it is visible to other components and operators of the network.
+    Provide network health data. In particular, it reports errors and problems when configuring its host.
+    This data is written to the datastore so it is visible to other components and operators of the network.
 
 ### BIRD
 

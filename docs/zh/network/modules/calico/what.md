@@ -7,30 +7,30 @@ Calico 创建和管理一个扁平的三层网络（不需要 overlay），每�
 
 Calico 基于 iptables 提供了丰富而灵活的网络 Policy，保证通过各个节点上的 ACL 来提供 Workload 的多租户隔离、安全组以及其他可达性限制等功能。
 
-> Calico 原意为”有斑点的“花猫，也叫三色猫，所以 Calico 的 logo 是一只三色猫。
+!!! info
 
-  ![calico](../../images/cat.jpeg)
+    Calico 原意为”有斑点的“花猫，也叫三色猫，所以 Calico 的 logo 是一只三色猫。
+
+    ![calico](../../images/cat.jpeg)
 
 ## Calico 组件
 
 Calico 由以下组件组成，在部署 Calico 的时候部分组件是可选的。
 
-- [什么是 Calico](#什么是-calico)
-  - [Calico 组件](#calico-组件)
-    - [Calico API Server](#calico-api-server)
-    - [Felix](#felix)
-    - [BIRD](#bird)
-    - [confd](#confd)
-    - [Dikastes](#dikastes)
-    - [CNI 插件](#cni-插件)
-    - [数据存储插件](#数据存储插件)
-      - [Kubernetes API datastore（kdd）](#kubernetes-api-datastorekdd)
-      - [etcd](#etcd)
-    - [IPAM 插件](#ipam-插件)
-    - [kube-controller](#kube-controller)
-    - [Typha](#typha)
-    - [calicoctl](#calicoctl)
-    - [云编排器插件](#云编排器插件)
+- [Calico API Server](#calico-api-server)
+- [Felix](#felix)
+- [BIRD](#bird)
+- [confd](#confd)
+- [Dikastes](#dikastes)
+- [CNI 插件](#cni)
+- [数据存储插件](#数据存储插件)
+    - [Kubernetes API datastore](#kubernetes-api-datastore)
+    - [etcd](#etcd)
+- [IPAM 插件](#ipam)
+- [kube-controller](#kube-controller)
+- [Typha](#typha)
+- [calicoctl](#calicoctl)
+- [云编排器插件](#云编排器插件)
 
 ### Calico API Server
 
@@ -92,7 +92,7 @@ confd 根据存储中的数据更新，动态生成 BIRD 配置文件。当配�
 Dikastes 是可选的。Calico 在 Linux 内核（使用 iptables，在三、四层）和三到七层使用 Envoy 的 Sidecar 代理 Dikastes 为工作负载执行网络策略，对请求进行加密认证。
 使用多个执行点可以根据多个标准确定远程端点的身份。即使工作负载 Pod 破坏，Envoy 代理被绕过，主机 Linux 内核的执行也能保护您的工作负载。
 
-### CNI 插件
+### CNI
 
 为 Kubernetes 集群提供 Calico 网络。
 
@@ -103,7 +103,7 @@ Calico CNI 插件允许您为任何使用 CNI 网络规范的编排调度器使�
 
 通过减少每个节点对数据存储的影响来增加规模。它是 Calico CNI 的插件之一。
 
-#### Kubernetes API datastore（kdd）
+#### Kubernetes API datastore
 
 在 Calico 中使用 Kubernetes API 数据存储（kdd）的优点是：
 
@@ -120,7 +120,7 @@ etcd 仅支持保护非集群主机（从 Calico v3.1 开始）。etcd 的优点
 - 分离 Kubernetes 和 Calico 资源之间的关注点，例如允许您独立地扩展数据存储。
 - 让您运行的 Calico 集群不仅仅包含一个 Kubernetes 集群，例如让带有 Calico 主机保护的裸机服务器与 Kubernetes 集群互通；或者多个 Kubernetes 集群。
 
-### IPAM 插件
+### IPAM
 
 使用 Calico 的 IP 池资源来控制如何将 IP 地址分配给集群中的 Pod。
 它是大多数 Calico 安装所使用的默认插件。它是 Calico CNI 插件之一。
