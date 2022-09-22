@@ -192,9 +192,10 @@ nav:
           - 产品优势: zh/dce/whyus.md
           - 申请社区免费体验: zh/dce/license0.md
       - 安装:
-        - 部署 k8s 集群: zh/install/install-k8s.md
+        - 部署 Kubernetes 集群: zh/install/install-k8s.md
         - 安装依赖项: zh/install/install-tools.md
-        - 安装 DCE 5.0: zh/install/install-dce.md
+        - 在线安装 DCE 5.0: zh/install/install-dce.md
+        - 离线安装 DCE 5.0: zh/install/offline-install.md
         - 卸载: zh/install/uninstall.md
       - 容器管理:
           - 介绍:
@@ -334,13 +335,8 @@ nav:
           - 产品优势: zh/kairship/01product/benefits.md
           - 适用场景: zh/kairship/01product/scenarios.md
           - 基本概念: zh/kairship/01product/concepts.md
-        - 准备及安装:
-          - 普通安装: zh/kairship/02install/normal.md
-          - kubectl 安装: zh/kairship/02install/kubectl.md
-          - 镜像安装: zh/kairship/02install/image.md
         - 多云实例管理:
           - 添加实例: zh/kairship/03instance/add.md
-          - 切换实例: zh/kairship/03instance/change.md
           - 删除实例: zh/kairship/03instance/delete.md
         - 工作集群管理:
           - 接入集群: zh/kairship/04cluster/join.md
@@ -348,14 +344,6 @@ nav:
         - 多云工作负载:
           - 镜像创建: zh/kairship/05workload/image.md
           - YAML创建: zh/kairship/05workload/yaml.md
-        - 资管管理:
-          - 多云服务与路由: zh/kairship/06resource/ingress.md
-          - 多云命名空间: zh/kairship/06resource/namespace.md
-          - 多云存储声明: zh/kairship/06resource/storage.md
-          - 多云配置与密钥: zh/kairship/06resource/configmap.md
-        - 策略管理:
-          - 部署策略: zh/kairship/07policy/deploy.md
-          - 差异化策略: zh/kairship/07policy/different.md
       - 微服务引擎:
         - 介绍:
           - 功能总览: zh/skoala/intro/features.md
@@ -410,7 +398,7 @@ nav:
           - 添加集群: zh/mspider/03UserGuide/08ClusterManagement/join-clus.md
           - 移除集群: zh/mspider/03UserGuide/08ClusterManagement/remov-clus.md
         - 常见问题: zh/mspider/07faq.md
-      - 网络:
+      - 云原生网络:
           - 介绍:
             - 云原生网络方案: zh/network/intro/what-is-net.md
             - 背景: zh/network/intro/background.md

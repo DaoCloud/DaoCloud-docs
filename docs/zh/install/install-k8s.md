@@ -1,20 +1,20 @@
-# 部署 k8s 集群
+# 部署 Kubernetes 集群
 
-建议使用以下两种方案来部署 k8s 集群。
+建议使用以下两种方案来部署 Kubernetes 集群。
 
-## 方案 1：通过 Kubeadm 部署 k8s 集群
+## 方案 1：通过 Kubeadm 部署 Kubernetes 集群
 
 1. 下载 kubeadm 二进制文件。
 
     https://files.m.daocloud.io/storage.googleapis.com/kubernetes-release/release/v1.24.4/bin/linux/amd64/kubeadm
 
-2. 拉取 k8s 镜像。
+2. 拉取 Kubernetes 镜像。
 
 	```
 	kubeadm config images pull --image-repository k8s-gcr.m.daocloud.io
 	```
 
-3. 执行 `kubeadm init` 初始化第一个 k8s 节点，执行 `kubeadm join` 接入其他节点。详细命令参数参见 [kubeadm 官方文档](https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)。
+3. 执行 `kubeadm init` 初始化第一个 Kubernetes 节点，执行 `kubeadm join` 接入其他节点。详细命令参数参见 [kubeadm 官方文档](https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)。
 
 4. 安装 CNI。如果选用 Calico，请参见 [Calico 安装文档](https://projectcalico.docs.tigera.io/getting-started/kubernetes/self-managed-onprem/onpremises)。如果选用其他 CNI，请参见对应文档。
 
@@ -30,13 +30,13 @@
 	kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 	```
 
-## 方案 2：通过 kind 部署 k8s 集群
+## 方案 2：通过 kind 部署 Kubernetes 集群
 
 1. 下载 kind 二进制文件。
 
     https://files.m.daocloud.io/github.com/kubernetes-sigs/kind/releases/download/v0.15.0/kind-linux-amd64
 
-2. 用 kind 创建 k8s 集群。
+2. 用 kind 创建 Kubernetes 集群。
 
 	```shell
 	kind create cluster --name kind --image docker.m.daocloud.io/kindest/node:v1.22.1
