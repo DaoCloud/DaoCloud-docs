@@ -18,4 +18,13 @@
 {% block scripts %}
   {{ super() }}
   <script src="{{ 'overrides/assets/javascripts/bundle.b97a6647.min.js' | url }}"></script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6b117ea770a78bebf27e63b402da0c4e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
 {% endblock %}
