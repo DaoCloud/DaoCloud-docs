@@ -11,4 +11,4 @@ including [SRI-OV](https://github.com/k8snetworkplumbingwg/sriov-cni),
 [MacVLAN](https://github.com/containernetworking/plugins/tree/main/plugins/main/macvlan),
 [IPVLAN](https://github.com/containernetworking/plugins/tree/main/plugins/main/ipvlan),
 [OVS-CNI](https://github.com/k8snetworkplumbingwg/ovs-cni), etc.
-Some overlay CNIs come with their own IPAM , so the Spiderpool is not intentionally designed for these cases, but still can be integrated with them.
+Some overlay CNIs come with their own IPAM , so Spiderpool is not intentionally designed for these cases, but still can be integrated with them.

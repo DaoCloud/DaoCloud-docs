@@ -3,9 +3,9 @@
 Calico creates and manages a flat, three-layer network (no overlay required), with each container assigned a routable IP.
 Without packet encap/decap for communication, it has low network performance loss, and the convenience of both troubleshoot and horizontal scale.
 
-Small-scall deployments can be interconnected directly through a BGP client, while large ones can be done through a designated BGP Route Reflector, which ensures that all data traffic is interconnected by IP routing.
+Small-scale deployments can be interconnected directly through a BGP client, while large ones can be done through a designated BGP Route Reflector, which ensures that all data traffic is interconnected by IP routing.
 
-Powerd by iptables, Calico provides rich and flexible network policies, securing multi-tenant segregation of workloads, security groups and other access restrictions through ACLs on each node.
+Powered by iptables, Calico provides rich and flexible network policies, securing multi-tenant segregation of workloads, security groups and other access restrictions through ACLs on each node.
 
 !!! info
 

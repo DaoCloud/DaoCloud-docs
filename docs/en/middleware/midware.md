@@ -11,5 +11,5 @@ Users can install/enable the following middleware on demand, and plug and play.
 - Redis: in-memory database
 - MinIO: object storage solution
 
-[Apply for free community experience](../dce/license0.md){ .md-button .md-button--primary }
+[[Free Trial Now](../dce/license0.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/install-dce.md){ .md-button .md-button--primary }
