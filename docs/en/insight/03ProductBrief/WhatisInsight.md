@@ -1,4 +1,4 @@
-# What is Insight？
+# What is Observability？
 
 The application Insight is a new generation cloud native observability platform that focuses on applications analyzing. It provides the out-of-the-box real-time resources monitoring, metrics, logs, events and other data to help you analyzing  application status. In additionally, it is compatible with popular open source components, and provides alerting, multi-dimensions data visualization, fault locating,one-click monitoring and diagnosing capabilities.
 
