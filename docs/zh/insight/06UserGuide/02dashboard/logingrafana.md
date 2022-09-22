@@ -1,26 +1,21 @@
-# 以管理员身份登陆 Grafana
+# 以管理员身份登录 Grafana
 
-## 前提条件
+请确认您的全局管理集群中 Helm 应用 `Insight` 处于 `运行中` 状态，然后执行以下步骤：
 
-- 请确认您的全局管理集群中 Helm 应用 `Insight` 处于 `运行中` 状态。
+1. 登录控制台，访问原生 Grafana 。
 
+    访问地址： http://ip:访问端口/ui/insight-grafana
 
-## 操作步骤
+    例如： http://10.6.10.233:30209/ui/insight-grafana
 
-1. 登陆控制台，访问原生 Grafana 。
+2. 点击右下角的登录，使用默认用户名、密码进行登录。
 
-- 访问地址：http://ip:访问端口/ui/insight-grafana。例如：http://10.6.10.233:30209/ui/insight-grafana 。
+    - 默认用户名：admin
 
-2. 点击右下角的登陆，使用默认用户名、密码进行登录。
+    - 默认密码：admin
 
-- 默认用户名：admin
+    ![登录 grafana](../../images/grafana02.png)
 
-- 默认密码：admin
+3. 点击 `Log in` 完成登录。
 
-  ![登陆 grafana](../../images/grafana02.png)
-
-3. 点击 `Log in` 完成登陆。
-
-  ![成功登陆 grafana](../../images/grafana03.png)
-
-
+    ![成功登录 grafana](../../images/grafana03.png)

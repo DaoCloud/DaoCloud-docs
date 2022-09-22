@@ -73,7 +73,7 @@ DaoCloud Enterprise 5.0 融海量特性于一体，目前支持的典型功能�
 
 - 微服务网关肩负管理微服务南北流量管控的重要作用。
 
-=== "[可观测](../insight/03ProductBrief/WhatisKInsight.md)"
+=== "[可观测](../insight/03ProductBrief/WhatisInsight.md)"
 
 - 以应用为中心、开箱即用的新一代云原生可观测性运维平台，实现快速的故障定位和快捷的故障排查。
 

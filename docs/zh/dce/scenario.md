@@ -42,7 +42,7 @@ CI/CD 流水线能力自动化完成应用构建、部署工作。创新性引�
 
 用户对运行应用观测能力较弱，希望能轻量级或无改造接入就能完成观测接入，完成全方位的应用运行观测（日志、指标、链路）。
 
-涉及模块：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[可观测性](../insight/03ProductBrief/WhatisKInsight.md)、网络观测、边云协同、信创云
+涉及模块：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[可观测性](../insight/03ProductBrief/WhatisInsight.md)、网络观测、边云协同、信创云
 
 方案优势：观测数据统一汇总，一个控制面板就能查询到所有集群及负载观测数据，并且深入支持微服务架构、[服务网格](../mspider/01Intro/What'smSpider.md)、网络 EBPF 观测能力。
 
@@ -50,7 +50,7 @@ CI/CD 流水线能力自动化完成应用构建、部署工作。创新性引�
 
 用户应用架构决定采用微服务架构或已经采用微服务，希望得到全方位的微服务框架等技术支持及运维兜底能力，或希望引入服务网格技术，并且在技术更迭的过程中实现平滑过度。
 
-涉及模块：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[微服务引擎](../skoala/intro/features.md)、[服务网格](../mspider/01Intro/What'smSpider.md)、[可观测性](../insight/03ProductBrief/WhatisKInsight.md)、[应用工作台](../amamba/01ProductBrief/WhatisAmamba.md)
+涉及模块：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[微服务引擎](../skoala/intro/features.md)、[服务网格](../mspider/01Intro/What'smSpider.md)、[可观测性](../insight/03ProductBrief/WhatisInsight.md)、[应用工作台](../amamba/01ProductBrief/WhatisAmamba.md)
 
 方案优势：无缝融合以 SpringCloud、Dubbo 为代表的初代微服务与 Istio 服务网格代表的新一代微服务技术，完成从开发、部署、接入、对外、观测、运维全生命周期微服务管理能力。
 
