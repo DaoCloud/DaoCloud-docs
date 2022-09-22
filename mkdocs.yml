@@ -312,6 +312,8 @@ nav:
           - 适用场景: zh/amamba/01ProductBrief/Scenarios.md
           - 基本概念: zh/amamba/01ProductBrief/Concepts.md
         - 快速创建流水线: zh/amamba/02QuickStart/deploypipline.md
+        - 命名空间:
+          - 命名空间管理: zh/amamba/03UserGuide/Namespace/namespace.md
         - 流水线:
           - 自定义创建流水线: zh/amamba/03UserGuide/Pipeline/createpipelinebyself.md
           - 使用 Jenkinsfile 创建单代码分支流水线: zh/amamba/03UserGuide/Pipeline/createpipelinebyjenkins.md
@@ -501,6 +503,10 @@ nav:
               - 虚拟服务: zh/reference/basic-knowledge/virtual-service.md
               - 可观测性: zh/reference/basic-knowledge/insight.md
               - 流量治理: zh/reference/basic-knowledge/traffic-control.md
+      - 故障排查: 
+              - istio-ingressgateway 无法启动: zh/reference/troubleshooting/ghippo01.md
+              - 登录无限循环并报错 401 或 403: zh/reference/troubleshooting/ghippo02.md
+              - keycloak 无法启动: zh/reference/troubleshooting/ghippo03.md
   - 视频教程:
       - 社区版部署 Demo: zh/videos/install.md
       - 容器管理: zh/videos/kpanda.md
