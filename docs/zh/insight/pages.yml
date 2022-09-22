@@ -3,8 +3,7 @@ docs_dir: ./
 nav:
 - 可观测介绍: 03ProductBrief/README.md
   - 什么是 Insight: 03ProductBrief/WhatisKInsight.md
-  - 功能说明: 03ProductBrief/Features.md
-  - 产品架构: 03ProductBrief/architecture.md
+  - 基本概念: 03ProductBrief/concepts.md
   - 产品优势: 03ProductBrief/benefits.md
   - 常见术语: 03ProductBrief/glossary.md
 - 概览: 06UserGuide/overview.md
