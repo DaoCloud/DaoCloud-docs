@@ -2,20 +2,20 @@
 
 Based on open source projects, DCE 5.0 Cloud Native Networking provides not only single CNI network support, but also multiple CNI portfolio solutions.
 
-[Apply for free community experience](../../dce/license0.md){ .md-button .md-button--primary }
+[[Free Trial Now](../../dce/license0.md){ .md-button .md-button--primary }
 
-## Solution 1: Cillium + MacVLAN/SpiderFlat + SpiderPool + Multus
+## Solution 1: Cilium + MacVLAN/SpiderFlat + SpiderPool + Multus
 
 This solution is suitable for Linux OS with high kernel version (4.19.57+), using Multus as the scheduling core and multiple CNIs to meet different network scenarios and create cross-cloud and cross-cluster network connectivity.  
 Moreover, SpiderFlat and SpiderPool is employed to strengthen the IP management allocation and IP recovery of Underlay network, realizing flexible IPAM management.  
-Different IP pools meets various scenarios of application communication. The main features of thisportfolio are as follows:
+Different IP pools meets various scenarios of application communication. The main features of this portfolio are as follows:
 
 1. With Multus as the scheduling core, it achieves multi CNI IP allocation to Pod and polymorphic network communication for an application. Open source solutions are used to realize cross CNI Pod communication within the cluster.
    The installation of Multus is not a must, if the application does not require multiple Pod NICs and different network modes.
 2. Spiderpool serves as the IPAM management component of Underlay CNI to achieve fine-grained IP management and flexible IP planning and allocation.
    The installation of SpiderPool is not a must, if Underlay CNI is not installed in the application scenario.
-3. Cillium, a high-performance Overlay CNI, provides many capabilities, including eBPF kernel acceleration, cross-cluster Pod communication, cross-cluster Service communication, flexible fine-grained network policy distribution, and traffic observation.
-   Cillium is a must-have network CNI in this portfolio.
+3. Cilium, a high-performance Overlay CNI, provides many capabilities, including eBPF kernel acceleration, cross-cluster Pod communication, cross-cluster Service communication, flexible fine-grained network policy distribution, and traffic observation.
+   Cilium is a must-have network CNI in this portfolio.
 4. The external access IP provided through SpiderFlat / MacVLAN CNI / SRI-OV CNI enables Pod Layer 2 external communication. Complemented by Calico dynamic virtual network, it reduces chores of network operation and maintenance and also saves IP resources.
    If there is no external access requirement in the application scenario, you do not need to install Underlay CNI.
 
