@@ -4,7 +4,7 @@
 
 - [容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)
 - [全局管理](../ghippo/01ProductBrief/WhatisGhippo.md)
-- [可观测性](../insight/03ProductBrief/WhatisKInsight.md)
+- [可观测性](../insight/03ProductBrief/WhatisInsight.md)
 - [应用工作台](../amamba/01ProductBrief/WhatisAmamba.md)
 - [微服务引擎](../skoala/intro/components.md)
 - [服务网格](../mspider/01Intro/What'smSpider.md)
