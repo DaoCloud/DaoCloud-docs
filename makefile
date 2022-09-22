@@ -31,4 +31,4 @@ clean:
 	rm -rf public site
 
 
-.PHONY: clean serve help
+.PHONY: clean serve in-serve help
