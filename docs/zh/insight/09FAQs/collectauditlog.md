@@ -1,15 +1,13 @@
 # 如何开启采集审计日志
 
-Kubernetes审计日志是对 Kubernetes API-Server的每个调用的详细描述。
+Kubernetes 审计日志是对 Kubernetes API Server 每次调用的详细描述。
 审计提供了安全相关的时序操作记录（包括时间、来源、操作结果、发起操作的用户、操作的资源以及请求/响应的详细信息等）。
 第五代产品主要采集的审计日志数据来自 Kubernetes 审计日志以及 `全局管理`的审计日志。
 考虑到审计日志的数据量大小，Insight 默认不采集 Kubernetes 的审计日志，仅采集`全局管理`的审计日志。
 
-## 前提条件
+**前提条件**：目标集群已安装 `insight-agent` 且处于`运行中`状态。
 
-目标集群已安装 `insight-agent` 且处于`运行中`状态。
-
-## 如何开启 Kubernetes 审计日志
+## 开启 Kubernetes 审计日志
 
 1. 配置审计日志 policy 文件，将以下的 yaml 放到 `/etc/kubernetes/audit-policy/` 文件夹下，并命名为 `apiserver-audit-policy.yaml`
 
@@ -172,41 +170,41 @@ Kubernetes审计日志是对 Kubernetes API-Server的每个调用的详细描述
         - "RequestReceived"
     ```
 
-2. 打开 `api-server` 的配置文件 `kube-apiserver.yaml`，一般会在 `/etc/kubernetes/manifests/` 文件夹，并添加以下配置信息:
+2. 打开 `api-server` 的配置文件 `kube-apiserver.yaml`，该文件通常位于 `/etc/kubernetes/manifests/` 文件夹，然后添加以下配置信息:
 
 	- 在 `spec.containers.command` 下添加命令：
 
-    ```yaml
-    --audit-log-maxage=30
-    --audit-log-maxbackup=1
-    --audit-log-maxsize=100
-    --audit-log-path=/var/log/audit/kube-apiserver-audit.log
-    --audit-policy-file=/etc/kubernetes/audit-policy/apiserver-audit-policy.yaml
-    ```
+        ```yaml
+        --audit-log-maxage=30
+        --audit-log-maxbackup=1
+        --audit-log-maxsize=100
+        --audit-log-path=/var/log/audit/kube-apiserver-audit.log
+        --audit-policy-file=/etc/kubernetes/audit-policy/apiserver-audit-policy.yaml
+        ```
 
     - 在 `spec.containers.volumeMounts` 下添加:
 
-    ```yaml
-    - mountPath: /var/log/audit
-        name: audit-logs
-    - mountPath: /etc/kubernetes/audit-policy
-        name: audit-policy
-    ```
+        ```yaml
+        - mountPath: /var/log/audit
+            name: audit-logs
+        - mountPath: /etc/kubernetes/audit-policy
+            name: audit-policy
+        ```
 
     - 在 `spec.volumes` 下添加：
 
-    ```yaml
-    - hostPath:
-        path: /var/log/kubernetes/audit
-        type: ""
-    name: audit-logs
-    - hostPath:
-        path: /etc/kubernetes/audit-policy
-        type: ""
-    name: audit-policy
-    ```
+        ```yaml
+        - hostPath:
+            path: /var/log/kubernetes/audit
+            type: ""
+        name: audit-logs
+        - hostPath:
+            path: /etc/kubernetes/audit-policy
+            type: ""
+        name: audit-policy
+        ```
 
-3. 等待几分钟 `api-server`重启成功后，在 `/var/log/kubernetes/audit` 目录下查看是否有审计日志生成，验证是否成功开启 Kubernetes 审计日志。
+3. 等待几分钟 `api-server` 重启成功后，在 `/var/log/kubernetes/audit` 目录下查看是否有审计日志生成，验证是否成功开启 Kubernetes 审计日志。
 
 !!! tip
 
@@ -214,17 +212,17 @@ Kubernetes审计日志是对 Kubernetes API-Server的每个调用的详细描述
 
 ## 开启采集审计日志
 
-可观测性通过 `FluentBit` 采集审计日志。默认 `FluentBit` 不会采集 `/var/log/kubernetes/audit` 下的日志文件(Kubernetes 审计日志) 。操作以下步骤开启采集审计日志：
+可观测性通过 `FluentBit` 采集审计日志。默认 `FluentBit` 不会采集 `/var/log/kubernetes/audit` 下的日志文件（Kubernetes 审计日志）。操作以下步骤开启采集审计日志：
 
-1. 修改 `FluentBit` 的 ConfigMap ，执行以下命令
+1. 修改 `FluentBit` 的 ConfigMap ，执行以下命令：
 
     ```
     kubectl edit cm insight-agent-fluent-bit -n insight-system
     ```
 
-2. 在 `INPUT`下添加以下内容并保存：
+2. 在 `INPUT` 下添加以下内容并保存：
 
-    ```yaml
+    ```none
         [INPUT]
             Name               tail
             Tag                audit_log.k8s.*
@@ -237,7 +235,7 @@ Kubernetes审计日志是对 Kubernetes API-Server的每个调用的详细描述
             Refresh_Interval   10
     ```
 
-2. 重启 Master 节点上运行的 fluentbit pod，重启后的 FluentBit 将开启采集 `/var/log/kubernetes/audit` 下的日志。
+2. 重启 Master 节点上运行的 fluentbit Pod，重启后的 FluentBit 将开启采集 `/var/log/kubernetes/audit` 下的日志。
 
 !!! tip
 
@@ -247,7 +245,7 @@ Kubernetes审计日志是对 Kubernetes API-Server的每个调用的详细描述
 
 1. 如果需要停止采集 `全局管理` 的审计日志，删除以下 `INPUT` 并保存：
 
-    ```
+    ```none
         [INPUT] 
             Name               tail 
             Tag                audit_log.ghippo.* 
@@ -261,4 +259,4 @@ Kubernetes审计日志是对 Kubernetes API-Server的每个调用的详细描述
             Refresh_Interval   10
     ```
 
-2. 重启 Master 节点上运行的 fluentbit pod 即可停止收集`全局管理`的审计日志。
+2. 重启 Master 节点上运行的 fluentbit Pod 即可停止收集`全局管理`的审计日志。

@@ -4,22 +4,19 @@
 
 1. 在左侧导航栏选择`仪表盘`。
 
-    ![dashboard](../images/dashboard01.png)
+    ![dashboard](../../images/dashboard01.png)
 
 2. 以 APIServer 为例，执行以下步骤，设置相关参数，查看集群指标。
 
     - 在页面左上角处，选择命名空间、集群。
 
-        ![dashboard](../images/dashboard02.png)
+        ![dashboard](../../images/dashboard02.png)
 
     - 在页面右上角处，选择时间段，或者自定义时间。
 
-        ![dashboard](../images/dashboard03.png)
+        ![dashboard](../../images/dashboard03.png)
 
     - 在页面右上角处，点击`刷新`界面，或者选择刷新时间间隔开启自动刷新。
 
-        ![dashboard](../images/dashboard04.png)
+        ![dashboard](../../images/dashboard04.png)
 
-!!! tip
-
-    本页内容稍后还需补充。

@@ -276,11 +276,16 @@ nav:
           - 语言设置: zh/ghippo/04UserGuide/06PersonalCenter/Language.md      
       - 可观测性:
           - 介绍:
-            - 什么是可观测性: zh/insight/03ProductBrief/WhatisKInsight.md
+            - 什么是可观测性: zh/insight/03ProductBrief/WhatisInsight.md
             - 产品优势: zh/insight/03ProductBrief/benefits.md
             - 常见术语: zh/insight/03ProductBrief/glossary.md
-          - 概览: zh/insight/06UserGuide/overview.md
-          - 仪表盘: zh/insight/06UserGuide/02dashboard.md
+            - 概览: zh/insight/06UserGuide/overview.md
+          - 快速入门: 
+            - 获取 host 地址: zh/insight/06UserGuide/01quickstart/gethosturl.md
+            - 安装 insight-agent 采集数据: zh/insight/06UserGuide/01quickstart/installagent.md
+          - 仪表盘: 
+            - 仪表盘: zh/insight/06UserGuide/02dashboard/dashboard.md
+            - 以管理员身份登录 Grafana: zh/insight/06UserGuide/02dashboard/logingrafana.md
           - 场景监控:
             - 集群监控: zh/insight/06UserGuide/03scenarioinsight/clusterinsight.md
             - 节点监控: zh/insight/06UserGuide/03scenarioinsight/nodeinsight.md
@@ -303,7 +308,7 @@ nav:
             - 修改配置: zh/insight/06UserGuide/08systemconfig/modifyconfig.md
           - 常见问题: 
             - zh/insight/09FAQs/README.md
-            - 收集采集日志: zh/insight/09FAQs/collectauditlog.md
+            - 导入自定义仪表盘: zh/insight/09FAQs/importdashboard.md
       - 应用工作台:
         - 介绍:
           - 什么是应用工作台？: zh/amamba/01ProductBrief/WhatisAmamba.md
