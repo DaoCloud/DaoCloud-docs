@@ -1,4 +1,4 @@
-# Benefits of Insight
+# Benefits of Observability
 
 - Multi-cluster Management
 
@@ -6,19 +6,18 @@
 
 - Out-of-the-box
 
-    - Dashboard: Insight provides a variety of out-of-the-box prefabricated monitoring dashboards. You can comprehensively monitor clusters, nodes, workloads and other components through built-in the dashboards.
+    - Dashboard: Observability provides a variety of out-of-the-box prefabricated monitoring dashboards. You can comprehensively monitor clusters, nodes, workloads and other components through the built-in dashboards.
 
-    - Alert rules: Insight provides built-in alarm rules that enable you to monitor cluster resources, system components and other basic indicators out of the box without configuration.
+    - Alert rules: Observability provides built-in alarm rules that enable you to monitor cluster resources, system components, and other basic metrics out of the box without configuration.
 
 - High Availability
 
-    - Lightweight agent, which supports one-click install the Helm.
+    - Lightweight agent, which supports for one-click installation with Helm.
 
-    - The data storage component supports multi copies to ensure high availability of data.
+    - The data storage component supports multiple replicas to guarantee the high availability of your data.
 
 - Open Source
 
-    - It is compatible with standard open source Prometheus and supports native PromQL to query metrics.
-    - It is compatible with standard Open Source ` Prometheus Yaml ` to collect configuration file and suitable for customizing the monitoring collection rule ServiceMonitor in Kubernetes.
-    - Follow the open source OpenTelemetry specification and support Jaeger's link data access.
-
+    - Compatible with Prometheus and supporting for the native PromQL to query metrics.
+    - Compatible with Prometheus YAML to collect profiles and suitable for customizing the `ServiceMonitor` rule in a Kubernetes cluster.
+    - Follow the OpenTelemetry specification and support for data access with the Jaeger's link.
