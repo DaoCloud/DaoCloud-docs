@@ -1,6 +1,6 @@
 # What is Elasticsearch
 
-Elasticsearch (hereafter referred to as Elastic) , the current full-text search engine of choice, can quickly store, search and analyze a sea of data. Elastic is built on top of Lucene that cannot be used directly. It encapsulates Lucene and provids out-of-box REST APIs.
+Elasticsearch, the current full-text search engine of the best choice, can quickly store, search, and analyze a sea of data. Elasticsearch is built on top of Lucene that cannot be used directly. It encapsulates Lucene and provides out-of-box REST APIs.
 
 Based on Elasticsearch, the search service built into DCE 5.0 offers a distributed search service,  provides users with structured and unstructured text as well as AI vector-based multi-criteria search, statistics, and reports. It is fully compatible with Elasticsearch native interface. It can help websites and APPs build search boxes to improve users' search experience; it can also be used to build log analysis platforms to realize data-driven operation and maintenance; its vector search can help users quickly build rich applications such as AI-based image search, recommendation, semantic search and face recognition.
 
