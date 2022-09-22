@@ -37,7 +37,7 @@ DCE 5.0 云原生操作系统的功能丰富，具体组成模块如下图所示
 
 提供 Metrics、Log、Tracing 三合一的云原生可观测性。可观测性是以云原生可观测性为核心实现的新一代运维产品，支持实时采集指标、日志和链路的数据，提供告警及灵活的通知配置，实现快速的故障定位和快捷的故障排查。
 
-进一步了解[可观测性](../insight/03ProductBrief/WhatisKInsight.md)。
+进一步了解[可观测性](../insight/03ProductBrief/WhatisInsight.md)。
 
 === "应用工作台"
 

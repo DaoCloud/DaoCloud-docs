@@ -192,9 +192,10 @@ nav:
           - 产品优势: zh/dce/whyus.md
           - 申请社区免费体验: zh/dce/license0.md
       - 安装:
-        - 部署 k8s 集群: zh/install/install-k8s.md
+        - 部署 Kubernetes 集群: zh/install/install-k8s.md
         - 安装依赖项: zh/install/install-tools.md
-        - 安装 DCE 5.0: zh/install/install-dce.md
+        - 在线安装 DCE 5.0: zh/install/install-dce.md
+        - 离线安装 DCE 5.0: zh/install/offline-install.md
         - 卸载: zh/install/uninstall.md
       - 容器管理:
           - 介绍:
@@ -276,11 +277,16 @@ nav:
           - 语言设置: zh/ghippo/04UserGuide/06PersonalCenter/Language.md      
       - 可观测性:
           - 介绍:
-            - 什么是可观测性: zh/insight/03ProductBrief/WhatisKInsight.md
+            - 什么是可观测性: zh/insight/03ProductBrief/WhatisInsight.md
             - 产品优势: zh/insight/03ProductBrief/benefits.md
             - 常见术语: zh/insight/03ProductBrief/glossary.md
-          - 概览: zh/insight/06UserGuide/overview.md
-          - 仪表盘: zh/insight/06UserGuide/02dashboard.md
+            - 概览: zh/insight/06UserGuide/overview.md
+          - 快速入门: 
+            - 获取 host 地址: zh/insight/06UserGuide/01quickstart/gethosturl.md
+            - 安装 insight-agent 采集数据: zh/insight/06UserGuide/01quickstart/installagent.md
+          - 仪表盘: 
+            - 仪表盘: zh/insight/06UserGuide/02dashboard/dashboard.md
+            - 以管理员身份登录 Grafana: zh/insight/06UserGuide/02dashboard/logingrafana.md
           - 场景监控:
             - 集群监控: zh/insight/06UserGuide/03scenarioinsight/clusterinsight.md
             - 节点监控: zh/insight/06UserGuide/03scenarioinsight/nodeinsight.md
@@ -303,7 +309,7 @@ nav:
             - 修改配置: zh/insight/06UserGuide/08systemconfig/modifyconfig.md
           - 常见问题: 
             - zh/insight/09FAQs/README.md
-            - 收集采集日志: zh/insight/09FAQs/collectauditlog.md
+            - 导入自定义仪表盘: zh/insight/09FAQs/importdashboard.md
       - 应用工作台:
         - 介绍:
           - 什么是应用工作台？: zh/amamba/01ProductBrief/WhatisAmamba.md
@@ -312,6 +318,8 @@ nav:
           - 适用场景: zh/amamba/01ProductBrief/Scenarios.md
           - 基本概念: zh/amamba/01ProductBrief/Concepts.md
         - 快速创建流水线: zh/amamba/02QuickStart/deploypipline.md
+        - 命名空间:
+          - 命名空间管理: zh/amamba/03UserGuide/Namespace/namespace.md
         - 流水线:
           - 自定义创建流水线: zh/amamba/03UserGuide/Pipeline/createpipelinebyself.md
           - 使用 Jenkinsfile 创建单代码分支流水线: zh/amamba/03UserGuide/Pipeline/createpipelinebyjenkins.md
@@ -327,13 +335,8 @@ nav:
           - 产品优势: zh/kairship/01product/benefits.md
           - 适用场景: zh/kairship/01product/scenarios.md
           - 基本概念: zh/kairship/01product/concepts.md
-        - 准备及安装:
-          - 普通安装: zh/kairship/02install/normal.md
-          - kubectl 安装: zh/kairship/02install/kubectl.md
-          - 镜像安装: zh/kairship/02install/image.md
         - 多云实例管理:
           - 添加实例: zh/kairship/03instance/add.md
-          - 切换实例: zh/kairship/03instance/change.md
           - 删除实例: zh/kairship/03instance/delete.md
         - 工作集群管理:
           - 接入集群: zh/kairship/04cluster/join.md
@@ -341,14 +344,6 @@ nav:
         - 多云工作负载:
           - 镜像创建: zh/kairship/05workload/image.md
           - YAML创建: zh/kairship/05workload/yaml.md
-        - 资管管理:
-          - 多云服务与路由: zh/kairship/06resource/ingress.md
-          - 多云命名空间: zh/kairship/06resource/namespace.md
-          - 多云存储声明: zh/kairship/06resource/storage.md
-          - 多云配置与密钥: zh/kairship/06resource/configmap.md
-        - 策略管理:
-          - 部署策略: zh/kairship/07policy/deploy.md
-          - 差异化策略: zh/kairship/07policy/different.md
       - 微服务引擎:
         - 介绍:
           - 功能总览: zh/skoala/intro/features.md
@@ -403,7 +398,7 @@ nav:
           - 添加集群: zh/mspider/03UserGuide/08ClusterManagement/join-clus.md
           - 移除集群: zh/mspider/03UserGuide/08ClusterManagement/remov-clus.md
         - 常见问题: zh/mspider/07faq.md
-      - 网络:
+      - 云原生网络:
           - 介绍:
             - 云原生网络方案: zh/network/intro/what-is-net.md
             - 背景: zh/network/intro/background.md
@@ -501,6 +496,10 @@ nav:
               - 虚拟服务: zh/reference/basic-knowledge/virtual-service.md
               - 可观测性: zh/reference/basic-knowledge/insight.md
               - 流量治理: zh/reference/basic-knowledge/traffic-control.md
+      - 故障排查: 
+              - istio-ingressgateway 无法启动: zh/reference/troubleshooting/ghippo01.md
+              - 登录无限循环并报错 401 或 403: zh/reference/troubleshooting/ghippo02.md
+              - keycloak 无法启动: zh/reference/troubleshooting/ghippo03.md
   - 视频教程:
       - 社区版部署 Demo: zh/videos/install.md
       - 容器管理: zh/videos/kpanda.md

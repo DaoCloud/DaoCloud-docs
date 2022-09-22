@@ -1,10 +1,10 @@
 # 安装依赖项
 
-[部署好 k8s 集群](install-k8s.md)后，还需要安装一些依赖项，才能安装 DCE 5.0 体验新一代云原生操作系统的魅力。
+[部署好 Kubernetes 集群](install-k8s.md)后，还需要安装一些依赖项，才能安装 DCE 5.0 体验新一代云原生操作系统的魅力。
 
 ## 一条命令安装所有依赖项
 
-在 k8s 集群的控制平面（Master 节点）上，执行以下一条命令安装依赖项：
+在 Kubernetes 集群的控制平面（Master 节点）上，执行以下一条命令安装依赖项：
 
 ```shell
 curl -s https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh | bash
