@@ -45,4 +45,4 @@ Support namespace or cluster-level policies for network, quota, resource limit, 
 
 ![logical architecture](../images/kpanda_architect.png)
 
-[Apply for free commmunity experience](../../dce/license0.md){ .md-button .md-button--primary }
+[Apply for free community experience](../../dce/license0.md){ .md-button .md-button--primary }
