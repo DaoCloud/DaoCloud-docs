@@ -14,12 +14,13 @@
 
     !!! note
 
-        - 集群可用资源：CPU > 10 核、内存 > 12 GB、磁盘空间 > 100 GB（目前默认多副本运行，后续单副本预计资源消耗为 2 核 4 GB）
+        - 集群可用资源：CPU > 10 核、内存 > 12 GB、磁盘空间 > 100 GB（目前默认多副本运行，后续单副本预计资源消耗为 4 核 8 GB）
         - 集群版本：推荐 Kubernetes 官方最高稳定版本，目前推荐版本是 v1.24，最低版本支持 v1.21
         - 支持的 CRI：Docker、containerd
         - 存储：需要提前准备好 StorageClass，并设置为默认 SC。详情参见[部署 k8s 集群](install-k8s.md)
         - 目前仅支持 X86_64 架构
         - 确保集群已安装 CoreDNS
+        - 如果是单节点集群，请确保您已移除该节点的污点
     
 - [安装依赖项](install-tools.md)
 
@@ -37,8 +38,8 @@
 1. 在 k8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件。
 
     ```shell
-    # 假定 VERSION 为 v0.3.12
-    export VERSION=v0.3.12
+    # 假定 VERSION 为 v0.3.16
+    export VERSION=v0.3.16
     curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-${VERSION}
     ```
 
@@ -58,7 +59,7 @@
         spec:
         	loadBalancer: metallb
         	istioGatewayVip: 10.6.229.10/32     # 这是 Istio gateway 的 VIP，也会是DCE5.0的控制台的浏览器访问IP
-        	insightVip: 10.6.229.11/32          # 这是 Global 集群的 Insight-Server 采集所有子集群的日志/指标/链路的网络路径所用的 VIP
+        	insightVip: 10.6.229.11/32          # 这是 Global 集群的 Insight-Server 采集所有子集群的监控指标的网络路径所用的 VIP
         ```
 
     - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 k8s 负载均衡能力, 配置文件范例如下:
@@ -87,8 +88,7 @@
     ![success](images/success.png)
 
     !!! success
-ß
+
          请记录好提示的 URL，方便下次访问。
 
 5. 另外，安装 DCE 5.0 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](../dce/license0.md)。
-
