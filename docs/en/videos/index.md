@@ -2,11 +2,11 @@
 
 We've produced great video tutorials for you to get started quickly.
 
-- [Container Manager](../kpanda/03ProductBrief/WhatisKPanda.md)
-- [Global Manager](../ghippo/01ProductBrief/WhatisGhippo.md)
-- [Observability](../insight/03ProductBrief/WhatisKInsight.md)
-- [App Workbench](../amamba/01ProductBrief/WhatisAmamba.md)
-- [Microservice Engine](../skoala/intro/components.md)
+- [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md)
+- [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md)
+- [Insight](../insight/03ProductBrief/WhatisKInsight.md)
+- [Workbench](../amamba/01ProductBrief/WhatisAmamba.md)
+- [Microservices](../skoala/intro/components.md)
 - [Service Mesh](../mspider/01Intro/What'smSpider.md)
 - [Middleware](../middleware/midware.md)
 

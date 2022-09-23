@@ -10,19 +10,19 @@ On the occasion of the golden Autumn of 2022, DaoCloud gladly launches the next-
 
 DaoCloud Enterprise 5.0 or DCE 5.0 for short, is a high-performance and scalable cloud-native operating system. It is developed with many independent modules. You can use each of them like LEGO bricks, with zero downtime while upgrading one of modules. DCE 5.0 is easy to integrate with hundreds of cloud-native plugins, so you can simply custom solutions for different scenarios. Things go better with such as modular construction.
 
-DCE 5.0 has built a highly adaptable container manager, which can uniformly manage almost all kinds of containerized clusters on the market, with the feature of multi-cloud orchestration to use OpenShift, VMware, and public clouds at the same time. It can centrally control the apps from app stores and registry, natively integrates the CI/CD pipeline and application workbench, and endows the most cutting-edge service mesh and microservice technology. You can easily get insight from detailed and customized metrics of clusters, nodes, workloads, and services. With the support of various types of selected databases and middleware such as RabbitMQ, Elasticsearch, MySQL, Redis, etc., you can easily learn the current service status in time from the dynamically updated dashboard and topology map, through which you can deep dive into your business data to help you make valuable decisions in advance to boost your business.
+DCE 5.0 has built a highly adaptable Container Management, which can uniformly manage almost all kinds of containerized clusters on the market, with the feature of Multicloud Management to use OpenShift, VMware, and public clouds at the same time. It can centrally control the apps from app stores and registry, natively integrates the CI/CD pipeline and application workbench, and endows the most cutting-edge service mesh and microservice technology. You can easily get insight from detailed and customized metrics of clusters, nodes, workloads, and services. With the support of various types of selected databases and middleware such as RabbitMQ, Elasticsearch, MySQL, Redis, etc., you can easily learn the current service status in time from the dynamically updated dashboard and topology map, through which you can deep dive into your business data to help you make valuable decisions in advance to boost your business.
 
 ![modules](images/dce-modules02.png)
 
 DCE 5.0 features with cutting-edge capabilities as a cloud-native operating system to cope with different scenarios with custom solutions as below.
 
-=== "Multi-Cloud Orchestration"
+=== "Multicloud Management"
 
     **Applicable scenarios**: The deployment of multi-cloud and multi-cluster in an enterprise has become the norm, and it is hoped to have the capabilities of multi-cloud app release and cross-cloud disaster recovery.
 
-    **Benefits**: Using innovative technologies to orchestrate disaster recovery (DR) across clouds, this solution has high concurrent performance of cross-cloud resource retrieval, and can help your IT departments quickly plan and implement DR capabilities in combination with the capabilities of the container manager to adapt to various scenarios such as edge and Xinchuang.
+    **Benefits**: Using innovative technologies to orchestrate disaster recovery (DR) across clouds, this solution has high concurrent performance of cross-cloud resource retrieval, and can help your IT departments quickly plan and implement DR capabilities in combination with the capabilities of the Container Management to adapt to various scenarios such as edge and Xinchuang.
 
-    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Multi-Cloud Orchestration](kairship/01product/whatiskair.md), cloud to edge continuum, Xinchuang Heterogeneous
+    **Modules**: [Container Management](kpanda/03ProductBrief/WhatisKPanda.md), [Multicloud Management](kairship/01product/whatiskair.md), cloud to edge continuum, Xinchuang Heterogeneous
 
     ![multi-cloud](images/01multi-cloud.png)
 
@@ -32,7 +32,7 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
 
     **Benefits**: This solution has selected middlewares with a consistent UI to manage, with the help of HwameiStor capabilities designed for stateful applications, providing features of multi-tenant, deployment, observation, backup, operation and maintenance of the whole lifecycle of middleware management capabilities.
 
-    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [HwameiStor](hwameistor/intro/what.md), [Middleware](middleware/midware.md)
+    **Modules**: [Container Management](kpanda/03ProductBrief/WhatisKPanda.md), [HwameiStor](hwameistor/intro/what.md), [Middleware](middleware/midware.md)
 
     ![data](images/02data.png)
 
@@ -51,19 +51,19 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
 
     Seamless integrate with legacy and popular microservice technologies, such as the first-generation microservices represented by SpringCloud and Dubbo and the new generation of microservices represented by Istio service mesh, with the lifecycle management capabilities of development, deployment, joining, exposing to external, observation, and O&M. Seamlessly add the existing microservice system of the enterprise, provide the complete capabilities of managed microservice governance, and offer the high-performance cloud-native microservice gateway.
 
-    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Microservice Engine](skoala/intro/features.md), [Service Mesh](mspider/01Intro/What'smSpider.md), [Observability](insight/03ProductBrief/WhatisInsight.md), [App Workbench](amamba/01ProductBrief/WhatisAmamba.md)
+    **Modules**: [Container Management](kpanda/03ProductBrief/WhatisKPanda.md), [Microservice Engine](skoala/intro/features.md), [Service Mesh](mspider/01Intro/What'smSpider.md), [Insight](insight/03ProductBrief/WhatisInsight.md), [App Workbench](amamba/01ProductBrief/WhatisAmamba.md)
 
     ![Microservie](images/03msgov.png)
 
-=== "Observability"
+=== "Insight"
 
-    **Applicable scenarios**: An enterprise has a weak capability to watch running applications, and hopes to complete the observability through a lightweight or unmodified method, to get a panaramic view for current apps with logs, metrics, traces.
+    **Applicable scenarios**: An enterprise has a weak capability to watch running applications, and hopes to complete the Insight through a lightweight or unmodified method, to get a panaramic view for current apps with logs, metrics, traces.
 
     **Benefits**: This solution provides in-depth and subtle observation of the current app status. With a comprehensive dashboard, you can query all cluster and workload data. It supports for microservice architecture, service mesh, eBPF-based network, and other observation capabilities.
 
-    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Observability](insight/03ProductBrief/WhatisInsight.md)
+    **Modules**: [Container Management](kpanda/03ProductBrief/WhatisKPanda.md), [Insight](insight/03ProductBrief/WhatisInsight.md)
 
-    ![observability](images/04insight.png)
+    ![Insight](images/04insight.png)
 
 === "App Store"
 
@@ -71,7 +71,7 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
 
     **Benefits**: This solution provides the ecological capabilities including software products from partners,  with a complete software stack to meet the actual business needs. Where, you can easily find, test, and deploy middlewares running on DaoCloud Enterprise 5.0 with a development process of low-code or no-code.
 
-    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), App Store, Product Ecosystem
+    **Modules**: [Container Management](kpanda/03ProductBrief/WhatisKPanda.md), App Store, Product Ecosystem
 
 === "App Delivery"
 
@@ -79,7 +79,7 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
 
     **Benefits**: With a consistent workflow to deliver apps, this solution supports a hierarchical multi-tenant system, seamlessly adapts to the user's organizational structure to plan resource allocation, automates app build and deployment with the CI/CD pipelines, and innovatively introduces the GitOps progressive delivery capability.
 
-    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [App Workbench](amamba/01ProductBrief/WhatisAmamba.md), Registry
+    **Modules**: [Container Management](kpanda/03ProductBrief/WhatisKPanda.md), [App Workbench](amamba/01ProductBrief/WhatisAmamba.md), Registry
 
     ![App Delivery](images/06appdeliv.png)
 
@@ -99,7 +99,7 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
 
     All clusters and workloads are managed through Clusterpedia. This solution is compatible with joining standard Kubernetes clusters, breaking through the performance bottleneck of Kubernetes API and supporting thousands of users using it at the same time.
 
-    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](community/kubean.md), [Network](network/), [HwameiStor](hwameistor/)
+    **Modules**: [Container Management](kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](community/kubean.md), [Network](network/), [HwameiStor](hwameistor/)
 
     ![Cloud Native Base](images/07base.png)
 
@@ -109,7 +109,7 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
 
     **Benefits**: This solution can consolidate Xinchuang cloud-native capabilities for government sectors and state-owned factories, supports domestic chips and servers in the north, and supports Xinchuang operating system and app ecosystem in containers in the south.
 
-    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](community/kubean.md), [信创中间件](middleware/midware.md)
+    **Modules**: [Container Management](kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](community/kubean.md), [信创中间件](middleware/midware.md)
 
     ![Xinchuang](images/08xinchuan.png)
 
@@ -119,7 +119,7 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
 
     **Benefits**: This solution extends the general cloud-native framework, empowers the edge computing capability, uniformly manages and controls all edge clusters and nodes. Based on the traditional three-tier model of cloud, edge, and terminal. To meet the strict edge computing requirements, this solution provides a four-tier model from cloud to edge continuum by adding the edge clusters and nodes.
 
-    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](community/kubean.md), Edge nodes, clusters in the weak network
+    **Modules**: [Container Management](kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](community/kubean.md), Edge nodes, clusters in the weak network
 
     ![cloud-edge](images/09cloud-edge.png)
 

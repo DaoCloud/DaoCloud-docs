@@ -1,6 +1,6 @@
 # Free Trial
 
-The modules included in DCE 5.0 Community are [Global Manager](../ghippo/01ProductBrief/WhatisGhippo.md), [Container Manager](../kpanda/03ProductBrief/WhatisKPanda.md), [App Workbench](../amamba/01ProductBrief/WhatisAmamba.md), [Observability](../insight/03ProductBrief/WhatisInsight.md), and more.
+The modules included in DCE 5.0 Community are [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md), [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [App Workbench](../amamba/01ProductBrief/WhatisAmamba.md), [Insight](../insight/03ProductBrief/WhatisInsight.md), and more.
 
 Follow the steps below to get a license for your DCE 5.0 Community Package:
 
@@ -17,7 +17,7 @@ Follow the steps below to get a license for your DCE 5.0 Community Package:
     ![offline-auth-code](../images/license03.png)
 
     ESN is the unique device code of the cluster system.
-    Follow the steps to get your ESN: Open DCE, click `Global Manager`->`Settings`->`Licensing`, click `Manage License` to open the `Manage License` page, and copy the ESN code.
+    Follow the steps to get your ESN: Open DCE, click `Global Management`->`Settings`->`Licensing`, click `Manage License` to open the `Manage License` page, and copy the ESN code.
 
     ![esn](../images/license02.png)
 

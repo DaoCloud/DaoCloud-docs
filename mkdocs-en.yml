@@ -264,11 +264,11 @@ nav:
           - Security Settings: zh/ghippo/04UserGuide/06PersonalCenter/SecuritySetting.md
           - Access Key: zh/ghippo/04UserGuide/06PersonalCenter/Password.md
           - Choose Language: zh/ghippo/04UserGuide/06PersonalCenter/Language.md      
-      - Observability:
+      - Insight:
           - Introduction:
-            - What is Observability: en/insight/03ProductBrief/WhatisKInsight.md
-            - Benefits: zh/insight/03ProductBrief/benefits.md
-            - Glossary: zh/insight/03ProductBrief/glossary.md
+            - What is Insight: en/insight/03ProductBrief/WhatisKInsight.md
+            - Benefits: en/insight/03ProductBrief/benefits.md
+            - Glossary: en/insight/03ProductBrief/glossary.md
           - Overview: zh/insight/06UserGuide/overview.md
           - Dashboard: zh/insight/06UserGuide/02dashboard.md
           - Cloud Insight:
@@ -536,15 +536,16 @@ nav:
               - Microservice: zh/reference/basic-knowledge/microservice.md
               - Registry: zh/reference/basic-knowledge/registry.md
               - Virtual Service: zh/reference/basic-knowledge/virtual-service.md
-              - Observability: zh/reference/basic-knowledge/insight.md
+              - Insight: zh/reference/basic-knowledge/insight.md
               - Traffice Governance: zh/reference/basic-knowledge/traffic-control.md
   - Videos:
-      - Container Manager: en/videos/kpanda.md
-      - Global Manager: en/videos/ghippo.md
-      - Observability: en/videos/insight.md
-      - App Workbench: en/videos/amamba.md
+      - Video Tutorial: en/videos/index.md
+      - Container Management: en/videos/kpanda.md
+      - Global Management: en/videos/ghippo.md
+      - Insight: en/videos/insight.md
+      - Workbench: en/videos/amamba.md
       - Service Mesh: en/videos/mspider.md
-      - Microservice Engine: en/videos/skoala.md
+      - Microservices: en/videos/skoala.md
       - Middelware: en/videos/mcamel.md
   - Blogs:
       - DCE Development Background: zh/blogs/blog00.md
@@ -553,8 +554,8 @@ nav:
       - Introduce App Workbench: zh/blogs/amamba.md
       - Introduce Multi-Cloud Orchestration: zh/blogs/kairship.md
       - Introduce Service Mesh: zh/blogs/mspider.md
-  - Open Source Projects:
-      - DaoCloud Ecosystem: en/community/index.md
+  - DaoCloud Ecosystem:
+      - Ecosystem Intro: en/community/index.md
       - CloudTTY: en/community/cloudtty.md
       - Clusterpedia: en/community/clusterpedia.md
       - HwameiStor: en/community/hwameistor.md

@@ -1,6 +1,6 @@
-# What is Global Manager (Ghippo)？
+# What is Global Management (Ghippo)？
 
-Global Manager (Ghippo) is a comprehensive user-centered service, including user and access control, enterprise space, audit log, platform configuration and other basic modules.
+Global Management (Ghippo) is a comprehensive user-centered service, including user and access control, enterprise space, audit log, platform configuration and other basic modules.
 
 - [User and access control](../04UserGuide/01UserandAccess/global.md)：Help users manage access to resources. Users are allowed to create, manage, and delete users/user groups, and flexibly configure user/user group permissions to divide users' functional rights.
 
