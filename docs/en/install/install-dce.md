@@ -88,9 +88,9 @@ This page describes the installation procedure of DCE 5.0.
 
         Please remember or mark down the on-screen URL for your next login.
 
-## Offline installation
+## Air-gap installation
 
-1. Download and unzip the offline package.
+1. Download and unzip the air-gap package.
 
     ``` bash
     # Assume VERSION=0.3.12
@@ -105,12 +105,12 @@ This page describes the installation procedure of DCE 5.0.
         
         You can manually download the script in this step: https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline_image_handler.sh
 
-    - If you use a registry, push the offline package image to the registry.
+    - If you use a registry, push the air-gap package image to the registry.
 
         ```bash
         # Specify the registry URL
         export REGISTRY_ADDR=registry.daocloud.io:30080
-        # Specify the folder to unzip the offline package
+        # Specify the folder to unzip the air-gap package
         export OFFLINE_DIR=$(pwd)/offline
         # Import the image
         ./utils/offline_image_handler.sh import
@@ -121,10 +121,10 @@ This page describes the installation procedure of DCE 5.0.
             If failed to import the image, the failure will be skipped and the script will continue to run.
             The failure log will be recorded in the `import_image_failed.list` file.
 
-    - If no any registry, copy the offline package to each node in your cluster and load it by running `docker load/nerdctl load`.
+    - If no any registry, copy the air-gap package to each node in your cluster and load it by running `docker load/nerdctl load`.
 
         ```shell
-        # Specify the folder to unzip the offline package
+        # Specify the folder to unzip the air-gap package
         export OFFLINE_DIR=$(pwd)/offline
         # Load the image
         ./utils/offline_image_handler.sh load
@@ -138,7 +138,7 @@ This page describes the installation procedure of DCE 5.0.
     
     !!! note
 
-        The flag `-p` specifies the offline folder to unzip the offline package.
+        The flag `-p` specifies the air-gap folder to unzip the air-gap package.
 
         For clusterConfig.yaml, see **step 2 of online installation** as above.
 
