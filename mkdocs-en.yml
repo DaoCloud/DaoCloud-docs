@@ -176,7 +176,7 @@ nav:
   - DaocDloud Home: https://www.daocloud.io/
   - Documentation:
       - DCE Profile:
-          - What is DCE 5.0: zh/dce/what-is-dce.md
+          - What is DCE 5.0: en/dce/what-is-dce.md
           - Scenarios: zh/dce/scenario.md
           - Features: zh/dce/features.md
           - Why DCE: zh/dce/whyus.md
