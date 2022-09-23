@@ -1,6 +1,6 @@
-# What is Container Manager (Kpanda)？
+# What is Container Management (Kpanda)？
 
-Container Manager (Kpanda) is a container management platform for cloud-native applications built on Kubernetes. Based on the native multi-cluster architecture, it decouples the underlying infrastructure platform, unifies multi-cloud and multi-cluster management, simplifies the migration of enterprise applications to cloud, and reduces operation and human cost.
+Container Management (Kpanda) is a container management platform for cloud-native applications built on Kubernetes. Based on the native multi-cluster architecture, it decouples the underlying infrastructure platform, unifies multi-cloud and multi-cluster management, simplifies the migration of enterprise applications to cloud, and reduces operation and human cost.
 It facilitates the creation of Kubernetes clusters and helps enterprises quickly build enterprise-class container cloud platforms. The main features of Kpanda are as follows:
 
 **Cluster management**

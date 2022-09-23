@@ -45,6 +45,6 @@ The application workbench has a significant role in the roadmap of DCE 5.0 as sh
 
 ![Locations](../images/what00.png)
 
-Application workbench is developed on the basis of container manager and global manager. It implements the hierarchical resource management and progressive delivery with CI/CD pipelines and GitOps workflow.
+Application workbench is developed on the basis of Container Management and Global Management. It implements the hierarchical resource management and progressive delivery with CI/CD pipelines and GitOps workflow.
 
 [Free trial now](../../dce/license0.md){ .md-button .md-button--primary }

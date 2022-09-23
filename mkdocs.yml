@@ -461,6 +461,13 @@ nav:
               - 创建 MySQL: zh/middleware/mysql/userguide/create.md
               - 更新 MySQL: zh/middleware/mysql/userguide/update.md
               - 删除 MySQL: zh/middleware/mysql/userguide/delete.md
+          - Redis 缓存服务:
+              - 什么是 Redis: zh/middleware/redis/intro/what.md
+              - 适用场景: zh/middleware/redis/intro/features.md
+              - 首次使用 Redis: zh/middleware/redis/userguide/login.md
+              - 创建 Redis 实例: zh/middleware/redis/userguide/create.md
+              - 更新 Redis 实例: zh/middleware/redis/userguide/update.md
+              - 删除 Redis 实例: zh/middleware/redis/userguide/delete.md
       - HwameiStor:
           - 介绍: zh/hwameistor/intro/what.md
           - 模块: 
