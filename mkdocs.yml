@@ -375,12 +375,15 @@ nav:
           - 功能总览: zh/mspider/01Intro/Features.md
           - 产品优势: zh/mspider/01Intro/Benefits.md
           - 适用场景: zh/mspider/01Intro/Scenarios.md
+          - UI 支持的特性: zh/mspider/01Intro/meshes.md
+          - 网格架构: zh/mspider/01Intro/Architecture.md
         - 创建/删除网格:
           - 创建托管网格: zh/mspider/03UserGuide/servicemesh/create-mesh.md
           - 创建专用网格: zh/mspider/03UserGuide/servicemesh/integrate-mesh.md
           - 删除网格: zh/mspider/03UserGuide/servicemesh/delete.md
         - 服务管理: zh/mspider/03UserGuide/01ServiceList/README.md
         - 流量治理:
+          - zh/mspider/03UserGuide/02TrafficGovernance/README.md
           - 虚拟服务: zh/mspider/03UserGuide/02TrafficGovernance/VirtualService.md
           - 目标规则: zh/mspider/03UserGuide/02TrafficGovernance/TargetRules.md
           - 网关规则: zh/mspider/03UserGuide/02TrafficGovernance/GatewayRules.md
@@ -393,6 +396,10 @@ nav:
         - 边车管理:
           - 命名空间边车管理: zh/mspider/03UserGuide/07SidecarManagement/NamespaceSidecar.md
           - 工作负载边车管理: zh/mspider/03UserGuide/07SidecarManagement/WorkloadSidecar.md
+          - 全局边车管理: zh/mspider/03UserGuide/07SidecarManagement/GlobalSidecar.md
+        - 流量监控: 
+          - zh/mspider/03UserGuide/06TrafficMonitor/README.md
+          - 流量拓扑: zh/mspider/03UserGuide/06TrafficMonitor/connTopo.md
         - 网格网关:
           - 创建网格网关: zh/mspider/03UserGuide/09GatewayInstance/create.md
           - 删除网格网关: zh/mspider/03UserGuide/09GatewayInstance/delete.md
@@ -468,7 +475,7 @@ nav:
               - 创建 Redis 实例: zh/middleware/redis/userguide/create.md
               - 更新 Redis 实例: zh/middleware/redis/userguide/update.md
               - 删除 Redis 实例: zh/middleware/redis/userguide/delete.md
-      - HwameiStor:
+      - 云原生本地存储:
           - 介绍: zh/hwameistor/intro/what.md
           - 模块: 
               - 本地磁盘管理器: zh/hwameistor/intro/ldm.md
@@ -510,7 +517,7 @@ nav:
               - 登录报错 401 或 403: zh/reference/troubleshooting/ghippo02.md
               - keycloak 无法启动: zh/reference/troubleshooting/ghippo03.md
   - 视频教程:
-      - 社区版部署 Demo: zh/videos/install.md
+      - 安装社区版 Demo: zh/videos/install.md
       - 容器管理: zh/videos/kpanda.md
       - 全局管理: zh/videos/ghippo.md
       - 可观测性: zh/videos/insight.md

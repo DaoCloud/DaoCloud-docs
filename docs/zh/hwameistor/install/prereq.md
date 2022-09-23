@@ -1,52 +1,51 @@
----
-sidebar_position: 1
-sidebar_label: "准备工作"
----
-
 # 准备工作
 
-## Kubernetes 平台
+- Kubernetes
 
-- Kubernetes `1.18+`
-- 部署 CoreDNS
+  - Kubernetes 1.18+
+  - 部署 CoreDNS
 
-### 不支持的平台
+- 不支持的平台
 
-- Openshift
-- Rancher
+  - Openshift
+  - Rancher
 
 !!! note
-  暂时不支持以上平台，但是计划未来支持。
 
+    暂时不支持以上平台，但是计划未来支持。
 
 ## 主机配置
 
-### Linux 发行版
+- Linux 发行版：
 
-- CentOS/RHEL `7.4+`
-- Rocky Linux `8.4+`
-- Ubuntu `18+`
-- Kylin 麒麟`V10`
+  - CentOS/RHEL 7.4+
+  - Rocky Linux 8.4+
+  - Ubuntu 18+
+  - Kylin 麒麟 V10
 
-### 处理器架构
+- 处理器架构：
 
-1. x86_64
-1. ARM64
+  - x86_64
+  - ARM64
 
-### 软件依赖
+- 软件依赖：
 
-1. 安装 `LVM2`
-2. 高可用功能需要安装和当前运行的 kernel 版本一致的 `kernel-devel`
+  1. 安装 `LVM2`
+  2. 高可用功能需要安装和当前运行的 kernel 版本一致的 `kernel-devel`
 
-```console title="CentOS/RHEL, Rocky 和 Kylin"
-$ yum install -y lvm2
-$ yum install -y kernel-devel-$(uname -r)
-```
+=== "CentOS/RHEL, Rocky 和 Kylin"
 
-```console title="Ubuntu"
-$ apt-get install -y lvm2
-$ apt-get install -y linux-headers-$(uname -r)
-```
+    ```console
+    yum install -y lvm2
+    yum install -y kernel-devel-$(uname -r)
+    ```
+    
+=== "Ubuntu"
+
+    ```console
+    apt-get install -y lvm2
+    apt-get install -y linux-headers-$(uname -r)
+    ```
 
 ### 数据盘
 

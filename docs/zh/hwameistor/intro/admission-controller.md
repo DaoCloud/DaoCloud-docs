@@ -1,8 +1,3 @@
----
-sidebar_position: 5
-sidebar_label: "准入控制器"
----
-
 # 准入控制器
 
 准入控制器是一种 webhook，可以自动验证 HwameiStor 数据卷，协助将 `schedulerName` 修改为 hwameistor-scheduler。具体信息，请参见 [Kubernetes 动态准入控制](https://kubernetes.io/zh-cn/docs/reference/access-authn-authz/extensible-admission-controllers/)。
@@ -15,6 +10,7 @@ sidebar_label: "准入控制器"
 
 准入控制器只验证 `POD` 资源，并在创建资源时就进行验证。
 
-:::info
-为确保 HwameiStor 的 Pod 可以顺利启动，不会校验 HwameiStor 所在的命名空间下的 Pod。
-:::
+!!! info
+
+    为确保 HwameiStor 的 Pod 可以顺利启动，不会校验 HwameiStor 所在的命名空间下的 Pod。
+

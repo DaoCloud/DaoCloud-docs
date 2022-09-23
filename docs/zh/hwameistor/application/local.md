@@ -1,8 +1,3 @@
----
-sidebar_position: 1
-sidebar_label:  "本地卷"
----
-
 # 本地卷
 
 使用 HwameiStor 能非常轻松的运行有状态的应用
@@ -10,6 +5,7 @@ sidebar_label:  "本地卷"
 这里我们使用一个 MySQL 应用作为例子。
 
 !!! note
+
     下面的 MySQL Yaml 文件来自于 [Kubernetes 的官方 Repo](https://github.com/kubernetes/website/blob/main/content/en/examples/application/mysql/mysql-statefulset.yaml)
 
 ## 查看 `StorageClass`
@@ -40,7 +36,7 @@ allowVolumeExpansion: true
 如果这个 `storageClass` 没有在安装时生成，可以运行以下的 yaml 文件重新生成它：
 
 ```console
-$ kubectl apply -f examples/sc-local.yaml
+kubectl apply -f examples/sc-local.yaml
 ```
 
 ## 创建 `StatefulSet`

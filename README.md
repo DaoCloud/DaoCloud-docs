@@ -1,4 +1,3 @@
-
 # DaoCloud Enterprise 5.0 Documentation
 
 [![Contributors](https://img.shields.io/github/contributors/daocloud/daocloud-docs?color=purple)](CONTRIBUTING.md)
@@ -45,7 +44,8 @@ See [MkDocs documents to install](https://squidfunk.github.io/mkdocs-material/ge
 - Provide a space between zh and en chars
 - Provide a blank line before and after a para, an image, a heading, or a list
 - Do not add any punctuation by the end of a heading
-- Do not your a null link
+- Care about links to avoid any null or dead link
+- Give a consistent experience to explore all pages herein
 
 ## Acknowledgements
 

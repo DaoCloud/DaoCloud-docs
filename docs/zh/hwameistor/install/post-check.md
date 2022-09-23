@@ -1,11 +1,6 @@
----
-sidebar_position: 3
-sidebar_label: "安装后检查"
----
-
 # 安装后检查
 
-下文的示例来自一个 4 节点的 Kubernetes 集群
+下文的示例来自一个 4 节点的 Kubernetes 集群。
 
 ```console
 $ kubectl get no
@@ -105,7 +100,7 @@ k8s-worker-3-sdb   k8s-worker-3           Unclaimed
 k8s-worker-3-sdc   k8s-worker-3           Unclaimed
 ```
 
-## [可选] 检查 DRBD 的安装
+## （可选）检查 DRBD 的安装
 
 `drbd-adapter` Pod 需要在每个 Worker 节点上运行：
 

@@ -1,8 +1,3 @@
----
-sidebar_position: 2
-sidebar_label:  "高可用卷"
----
-
 # 高可用卷
 
 HwameiStor 使用开源的 DRBD 数据同步技术创建**高可用卷**，又叫 **HA 卷**。
@@ -10,6 +5,7 @@ HwameiStor 使用开源的 DRBD 数据同步技术创建**高可用卷**，又�
 这里我们使用一个 MySQL 应用作为例子。
 
 !!! note
+
     下面的 MySQL Yaml 文件来自于 [Kubernetes 的官方 Repo](https://github.com/kubernetes/website/blob/main/content/en/examples/application/mysql/mysql-statefulset.yaml)
 
 ## 查看 `StorageClass`
@@ -18,7 +14,6 @@ HwameiStor 使用开源的 DRBD 数据同步技术创建**高可用卷**，又�
 
 ```console
 $ kubectl apply -f examples/sc_ha.yaml
-
 $ kubectl get sc hwameistor-storage-lvm-hdd-ha -o yaml
 
 apiVersion: storage.k8s.io/v1
@@ -44,7 +39,7 @@ allowVolumeExpansion: true
 在 HwameiStor 和 `StorageClass` 就绪后, 一条命令就能创建 MySQL 容器和它的数据卷:
 
 ```Console
-$ kubectl apply -f exapmles/sts-mysql_ha.yaml
+kubectl apply -f exapmles/sts-mysql_ha.yaml
 ```
 
 请注意 `volumeClaimTemplates` 使用 `storageClassName: hwameistor-storage-lvm-hdd-ha`:
