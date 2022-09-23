@@ -188,7 +188,7 @@ nav:
         - Uninstall: en/install/uninstall.md
       - Container Manager:
           - Introduction:
-              - What is Container Manager: zh/kpanda/03ProductBrief/WhatisKPanda.md
+              - What is Container Manager: en/kpanda/03ProductBrief/WhatisKPanda.md
               - Features: zh/kpanda/03ProductBrief/Features.md
               - Benefits: zh/kpanda/03ProductBrief/Benefits.md
               - Scenarios: zh/kpanda/03ProductBrief/Scenarios.md
@@ -231,7 +231,7 @@ nav:
             - Authorize to Cluster and Namespace: zh/kpanda/07UserGuide/Permissions/Cluster-NSAuth.md       
       - Global Manager:
         - Introduction:
-          - What is Global Manager: zh/ghippo/01ProductBrief/WhatisGhippo.md
+          - What is Global Manager: en/ghippo/01ProductBrief/WhatisGhippo.md
           - Features: zh/ghippo/01ProductBrief/Features.md
           - Glossary: zh/ghippo/01ProductBrief/glossary.md
         - Login: zh/ghippo/04UserGuide/00Login.md
@@ -442,30 +442,30 @@ nav:
         - FAQs: zh/mspider/07faq.md
       - Network Manager:
           - Introduction:
-            - What is Network Manager: zh/network/intro/what-is-net.md
+            - What is Network Manager: en/network/intro/what-is-net.md
             - Background: zh/network/intro/background.md
             - Challenges: zh/network/intro/challenges.md
           - Network Plugins:
             - Overview: zh/network/modules/modules.md
             - Spiderpool:
-              - Introduction: zh/network/modules/spiderpool/what.md
+              - Introduction: en/network/modules/spiderpool/what.md
               - Installation: zh/network/modules/spiderpool/install.md
               - Parameters: zh/network/modules/spiderpool/config.md
               - Commands: zh/network/modules/spiderpool/command.md
             - Calico:
-              - Introduction: zh/network/modules/calico/what.md
+              - Introduction: en/network/modules/calico/what.md
               - Installation: zh/network/modules/calico/install.md
               - ippool: zh/network/modules/calico/ippool.md
               - Monitor Metrics: zh/network/modules/calico/metrics.md
               - Calico Policies: zh/network/modules/calico/policy.md
               - Troubleshooting: zh/network/modules/calico/debug.md
             - Cilium:
-              - Introduction: zh/network/modules/cilium/what.md
+              - Introduction: en/network/modules/cilium/what.md
               - Installation: zh/network/modules/cilium/install.md
               - Parameters: zh/network/modules/cilium/config.md
               - Commands: zh/network/modules/cilium/command.md
       - Middleware:
-          - What is Middleware: zh/middleware/midware.md
+          - What is Middleware: en/middleware/midware.md
           - RabbitMQ Message Queue:
               - What is RabbitMQ: zh/middleware/rabbitmq/intro/what.md
               - Features: zh/middleware/rabbitmq/intro/features.md
@@ -502,7 +502,7 @@ nav:
               - Update MySQL: zh/middleware/mysql/userguide/update.md
               - Delete MySQL: zh/middleware/mysql/userguide/delete.md
       - HwameiStor:
-          - Introduction: zh/hwameistor/intro/what.md
+          - Introduction: en/hwameistor/intro/what.md
           - Modules: 
               - Local Disk Manager: zh/hwameistor/intro/ldm.md
               - Local Storage: zh/hwameistor/intro/ls.md

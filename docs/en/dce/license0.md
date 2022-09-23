@@ -1,6 +1,6 @@
 # Free Trial
 
-The modules included in DCE 5.0 Community are [Global Manager](../ghippo/01ProductBrief/WhatisGhippo.md), [Container Manager](../kpanda/03ProductBrief/WhatisKPanda.md), [App Workbench](../amamba/01ProductBrief/WhatisAmamba.md), [Observability](../insight/03ProductBrief/WhatisKInsight.md), and more.
+The modules included in DCE 5.0 Community are [Global Manager](../ghippo/01ProductBrief/WhatisGhippo.md), [Container Manager](../kpanda/03ProductBrief/WhatisKPanda.md), [App Workbench](../amamba/01ProductBrief/WhatisAmamba.md), [Observability](../insight/03ProductBrief/WhatisInsight.md), and more.
 
 Follow the steps below to get a license for your DCE 5.0 Community Package:
 

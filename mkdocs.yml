@@ -260,6 +260,7 @@ nav:
         - 工作空间与层级: 
           - zh/ghippo/04UserGuide/02Workspace/ws-folder.md
           - 创建和删除工作空间: zh/ghippo/04UserGuide/02Workspace/Workspaces.md
+          - 创建和删除文件夹: zh/ghippo/04UserGuide/02Workspace/folders.md
           - 工作空间最佳实践: zh/ghippo/04UserGuide/02Workspace/wsbp.md
           - 资源绑定: zh/ghippo/04UserGuide/02Workspace/Resources.md
           - 文件夹与工作空间角色权限: zh/ghippo/04UserGuide/02Workspace/resource02.md
@@ -498,8 +499,8 @@ nav:
               - 可观测性: zh/reference/basic-knowledge/insight.md
               - 流量治理: zh/reference/basic-knowledge/traffic-control.md
       - 故障排查: 
-              - istio-ingressgateway 无法启动: zh/reference/troubleshooting/ghippo01.md
-              - 登录无限循环并报错 401 或 403: zh/reference/troubleshooting/ghippo02.md
+              - ingressgateway 无法启动: zh/reference/troubleshooting/ghippo01.md
+              - 登录报错 401 或 403: zh/reference/troubleshooting/ghippo02.md
               - keycloak 无法启动: zh/reference/troubleshooting/ghippo03.md
   - 视频教程:
       - 社区版部署 Demo: zh/videos/install.md
