@@ -1,4 +1,3 @@
-
 # DaoCloud Enterprise 5.0 文档站
 
 [![Contributors](https://img.shields.io/github/contributors/daocloud/daocloud-docs?color=purple)](CONTRIBUTING.md)
@@ -45,7 +44,7 @@
 - 中英字符之间 1 个空格
 - 段前段后分别空一行，包括图片前后、嵌套列表前后
 - 标题尾部不要加标点符号
-- 请勿使用空链接
+- 请勿使用空链接、死链接
 - 标题层级依次增加，不要跳级
 
 ## 感谢
