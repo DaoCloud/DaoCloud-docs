@@ -364,13 +364,16 @@ nav:
           - 接入型注册中心:
             - 管理注册中心实例: zh/skoala/registry/integrate/manage-registry.md
         - 微服务网关:
-          - 网关管理:
+          - 网关:
             - 管理网关实例: zh/skoala/ms-gateway/gateway/manage-gateway.md
             - 查看网关详情: zh/skoala/ms-gateway/gateway/check-details.md
             - 诊断网关: zh/skoala/ms-gateway/gateway/diagnose-gateway.md
           - API:
             - 管理 API: zh/skoala/ms-gateway/api/manage-api.md
             - 配置 API 策略: zh/skoala/ms-gateway/api/api-policy.md
+          - 服务:
+            - 管理服务: zh/skoala/ms-gateway/service/manage-service.md
+          - 日志: zh/skoala/ms-gateway/log.md
           - 域名:
             - 管理域名: zh/skoala/ms-gateway/domain/manage-domain.md
             - 配置域名策略: zh/skoala/ms-gateway/domain/domain-policy.md
