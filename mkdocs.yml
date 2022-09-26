@@ -334,16 +334,18 @@ nav:
         - 介绍:
           - 什么是多云编排: zh/kairship/01product/whatiskair.md
           - 功能总览: zh/kairship/01product/features.md
+          - 产品架构: zh/kairship/01product/architecture.md
           - 产品优势: zh/kairship/01product/benefits.md
-          - 适用场景: zh/kairship/01product/scenarios.md
           - 基本概念: zh/kairship/01product/concepts.md
         - 多云实例管理:
+          - 多云实例介绍: zh/kairship/03instance/README.md
           - 添加实例: zh/kairship/03instance/add.md
           - 删除实例: zh/kairship/03instance/delete.md
         - 工作集群管理:
           - 接入集群: zh/kairship/04cluster/join.md
           - 移除集群: zh/kairship/04cluster/remove.md
         - 多云工作负载:
+          - 工作负载简介: zh/kairship/05workload/README.md
           - 镜像创建: zh/kairship/05workload/image.md
           - YAML创建: zh/kairship/05workload/yaml.md
       - 微服务引擎:
@@ -378,10 +380,13 @@ nav:
           - UI 支持的特性: zh/mspider/01Intro/meshes.md
           - 网格架构: zh/mspider/01Intro/Architecture.md
         - 创建/删除网格:
+          - 网格介绍: zh/mspider/03UserGuide/servicemesh/README.md
           - 创建托管网格: zh/mspider/03UserGuide/servicemesh/create-mesh.md
           - 创建专用网格: zh/mspider/03UserGuide/servicemesh/integrate-mesh.md
           - 删除网格: zh/mspider/03UserGuide/servicemesh/delete.md
-        - 服务管理: zh/mspider/03UserGuide/01ServiceList/README.md
+        - 服务管理: 
+          - zh/mspider/03UserGuide/01ServiceList/README.md
+          - 从网格外部访问服务: zh/mspider/03UserGuide/01ServiceList/out-to-in.md
         - 流量治理:
           - zh/mspider/03UserGuide/02TrafficGovernance/README.md
           - 虚拟服务: zh/mspider/03UserGuide/02TrafficGovernance/VirtualService.md
@@ -389,6 +394,7 @@ nav:
           - 网关规则: zh/mspider/03UserGuide/02TrafficGovernance/GatewayRules.md
           - 虚拟服务参数配置: zh/mspider/03UserGuide/02TrafficGovernance/vsparams.md
         - 安全治理:
+          - 安全治理介绍: zh/mspider/03UserGuide/05Security/README.md
           - 对等身份认证: zh/mspider/03UserGuide/05Security/peer.md
           - 请求身份认证: zh/mspider/03UserGuide/05Security/request.md
           - 授权策略: zh/mspider/03UserGuide/05Security/authorize.md
@@ -400,12 +406,15 @@ nav:
         - 流量监控: 
           - zh/mspider/03UserGuide/06TrafficMonitor/README.md
           - 流量拓扑: zh/mspider/03UserGuide/06TrafficMonitor/connTopo.md
+        - 集群纳管:
+          - 集群纳管介绍: zh/mspider/03UserGuide/08ClusterManagement/README.md
+          - 添加集群: zh/mspider/03UserGuide/08ClusterManagement/join-clus.md
+          - 移除集群: zh/mspider/03UserGuide/08ClusterManagement/remov-clus.md
         - 网格网关:
           - 创建网格网关: zh/mspider/03UserGuide/09GatewayInstance/create.md
           - 删除网格网关: zh/mspider/03UserGuide/09GatewayInstance/delete.md
-        - 集群纳管:
-          - 添加集群: zh/mspider/03UserGuide/08ClusterManagement/join-clus.md
-          - 移除集群: zh/mspider/03UserGuide/08ClusterManagement/remov-clus.md
+        - 网格配置:
+          - Istio 资源管理: zh/mspider/03UserGuide/10MeshConfiguration/IstioResources.md
         - 常见问题: zh/mspider/07faq.md
       - 云原生网络:
           - 介绍:
@@ -439,9 +448,11 @@ nav:
               - 竞争优势: zh/middleware/rabbitmq/intro/benefits.md
               - 适用场景: zh/middleware/rabbitmq/intro/scenarios.md
               - 基本概念: zh/middleware/rabbitmq/intro/concepts.md
+              - 首次使用 RabbitMQ: zh/middleware/rabbitmq/userguide/login.md
               - 安装 RabbitMQ: zh/middleware/rabbitmq/quickstart/install.md
-              - 更新 RabbitMQ: zh/middleware/rabbitmq/userguide/update.md
-              - 删除 RabbitMQ: zh/middleware/rabbitmq/userguide/delete.md
+              - 创建 RabbitMQ 实例: zh/middleware/rabbitmq/userguide/create.md
+              - 更新 RabbitMQ 实例: zh/middleware/rabbitmq/userguide/update.md
+              - 删除 RabbitMQ 实例: zh/middleware/rabbitmq/userguide/delete.md
               - 查看消息队列: zh/middleware/rabbitmq/userguide/view.md
               - 数据迁移: zh/middleware/rabbitmq/userguide/migrate.md
               - 实例监控: zh/middleware/rabbitmq/userguide/insight.md
@@ -465,12 +476,13 @@ nav:
               - 竞争优势: zh/middleware/mysql/intro/benefits.md
               - 基本概念: zh/middleware/mysql/intro/concepts.md
               - 安装 MySQL: zh/middleware/mysql/quickstart/install.md
+              - 首次使用 MySQL: zh/middleware/mysql/userguide/login.md
               - 创建 MySQL: zh/middleware/mysql/userguide/create.md
               - 更新 MySQL: zh/middleware/mysql/userguide/update.md
               - 删除 MySQL: zh/middleware/mysql/userguide/delete.md
           - Redis 缓存服务:
               - 什么是 Redis: zh/middleware/redis/intro/what.md
-              - 适用场景: zh/middleware/redis/intro/features.md
+              - 适用场景: zh/middleware/redis/intro/scenarios.md
               - 首次使用 Redis: zh/middleware/redis/userguide/login.md
               - 创建 Redis 实例: zh/middleware/redis/userguide/create.md
               - 更新 Redis 实例: zh/middleware/redis/userguide/update.md
@@ -497,11 +509,20 @@ nav:
               - 节点扩展: zh/hwameistor/resources/node-expansion.md
               - 数据盘扩展: zh/hwameistor/resources/disk-expansion.md
           - 应用场景: 
+              - 应用场景概述: zh/hwameistor/application/overview.md
               - 部署有状态应用: 
                   - 使用本地卷部署: zh/hwameistor/application/local.md
                   - 使用高可用卷部署: zh/hwameistor/application/ha.md 
               - TiDB: zh/hwameistor/application/tidb.md
               - MinIO: zh/hwameistor/application/minio/minio.md
+          - 存储基本概念:
+              - Kubernetes 存储: zh/hwameistor/terms/k8s_storage.md
+              - CAS 存储: zh/hwameistor/terms/cas.md
+              - CSI 接口: zh/hwameistor/terms/csi.md
+              - CRD 和 CR: zh/hwameistor/terms/crd_and_cr.md
+              - 存储卷: zh/hwameistor/terms/volume.md
+              - LVM: zh/hwameistor/terms/lvm.md
+              - PV 和 PVC: zh/hwameistor/terms/pv_pvc.md
           - 常见问题: zh/hwameistor/faqs.md
       - 通用参考:
           - 术语表: zh/reference/terms.md
@@ -517,6 +538,7 @@ nav:
               - 登录报错 401 或 403: zh/reference/troubleshooting/ghippo02.md
               - keycloak 无法启动: zh/reference/troubleshooting/ghippo03.md
   - 视频教程:
+      - 介绍: zh/videos/index.md
       - 安装社区版 Demo: zh/videos/install.md
       - 容器管理: zh/videos/kpanda.md
       - 全局管理: zh/videos/ghippo.md
