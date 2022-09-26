@@ -35,8 +35,8 @@
 1. 下载社区版的对应离线包并解压。
 
     ``` bash
-    # 假定版本 VERSION=0.3.12
-    export VERSION=v0.3.12
+    # 假定版本 VERSION=0.3.18
+    export VERSION=v0.3.18
     wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-${VERSION}.tar
     tar -zxvf offline-community-${VERSION}.tar
     ```
