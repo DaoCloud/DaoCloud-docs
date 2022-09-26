@@ -1,10 +1,8 @@
 # 产品架构
 
-## 整体架构
+为了方便描述，下文以代号 Kairship 描述多云编排。
 
-![整体架构](../images/arch_summary.png)
-
-`Kairship` 管理面主要负责以下功能:
+`Kairship` 管理面主要负责以下功能：
 
 * 多云实例（基于 Karmada）的 LCM
 * 作为多云产品统一的流量入口（OpenAPI、Kairship UI、内部模块 GRPC 调用）

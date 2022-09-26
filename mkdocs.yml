@@ -211,11 +211,11 @@ nav:
               - 集群角色: zh/kpanda/07UserGuide/Clusters/ClusterRole.md
               - 集群状态: zh/kpanda/07UserGuide/Clusters/ClusterStatus.md
           - 工作负载:
-              - 通过镜像创建无状态负载: zh/kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md
-              - 通过镜像创建有状态负载: zh/kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md
-              - 通过镜像创建守护进程集: zh/kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md
-              - 通过镜像创建定时任务: zh/kpanda/07UserGuide/Workloads/CreateCronJobByImage.md
-              - 通过镜像创建任务: zh/kpanda/07UserGuide/Workloads/CreateJobByImage.md
+              - 创建 Deployment: zh/kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md
+              - 创建 StatefulSet: zh/kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md
+              - 创建 DaemonSet: zh/kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md
+              - 创建 CronJob: zh/kpanda/07UserGuide/Workloads/CreateCronJobByImage.md
+              - 创建 Job: zh/kpanda/07UserGuide/Workloads/CreateJobByImage.md
               - 参数配置说明:
                   - 工作负载状态: zh/kpanda/07UserGuide/Workloads/PodConfig/workload-status.md
                   - 任务的参数说明: zh/kpanda/07UserGuide/Workloads/PodConfig/JobParameters.md
@@ -224,8 +224,8 @@ nav:
                   - 健康检查: zh/kpanda/07UserGuide/Workloads/PodConfig/healthcheck.md
                   - 集群调度: zh/kpanda/07UserGuide/Workloads/PodConfig/SchedulingPolicy.md
           - 弹性伸缩:
-              - 指标弹性伸缩 HPA: /zh/kpanda/07UserGuide/Scale/Create-HPA.md
-              - 安装 metrics-server: /zh/kpanda/07UserGuide/Scale/Install-metrics-server.md
+              - 指标弹性伸缩 HPA: zh/kpanda/07UserGuide/Scale/Create-HPA.md
+              - 安装 metrics-server: zh/kpanda/07UserGuide/Scale/Install-metrics-server.md
           - Helm 应用:
               - Helm 概述: zh/kpanda/07UserGuide/helm/README.md
               - 管理 Helm 应用: zh/kpanda/07UserGuide/helm/helm-app.md
