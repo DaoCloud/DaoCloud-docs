@@ -43,13 +43,12 @@ nav:
             - 查看微服务详情: zh/skoala/registry/integrate/check-ms-details.md
             - 微服务治理策略: zh/skoala/registry/integrate/governance-policy.md
         - 微服务网关:
-          - 网关管理:
+          - 网关:
             - 管理网关实例: zh/skoala/ms-gateway/gateway/manage-gateway.md
             - 查看网关详情: zh/skoala/ms-gateway/gateway/check-details.md
             - 诊断网关: zh/skoala/ms-gateway/gateway/diagnose-gateway.md
-          - 服务管理:
-            - 接入服务: zh/skoala/ms-gateway/service/add-service.md
-            - 删除服务: zh/skoala/ms-gateway/service/delete-service.md
+          - 服务:
+            - 管理服务: zh/skoala/ms-gateway/service/add-service.md
             - 管理服务来源: zh/skoala/ms-gateway/service/service-sources.md
           - API:
             - 管理 API: zh/skoala/ms-gateway/api/manage-api.md

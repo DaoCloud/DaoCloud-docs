@@ -357,12 +357,14 @@ nav:
           - 使用场景: zh/skoala/intro/scenarios.md
           - 产品优势: zh/skoala/intro/advantages.md  
           - 环境要求: zh/skoala/intro/components.md
+        - 选择工作空间: zh/skoala/select-workspace.md
         - 微服务治理中心:
           - 托管型注册中心:
             - 管理注册中心实例: zh/skoala/registry/host/manage-registry.md
             - 微服务命名空间: zh/skoala/registry/host/namespace.md
           - 接入型注册中心:
             - 管理注册中心实例: zh/skoala/registry/integrate/manage-registry.md
+            - 微服务管理: zh/skoala/registry/integrate/manage-service.md
         - 微服务网关:
           - 网关:
             - 管理网关实例: zh/skoala/ms-gateway/gateway/manage-gateway.md
