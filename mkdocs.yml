@@ -322,7 +322,6 @@ nav:
           - 产品优势: zh/amamba/01ProductBrief/Benefits.md
           - 适用场景: zh/amamba/01ProductBrief/Scenarios.md
           - 基本概念: zh/amamba/01ProductBrief/Concepts.md
-        - 快速创建流水线: zh/amamba/02QuickStart/deploypipline.md
         - 命名空间:
           - 命名空间管理: zh/amamba/03UserGuide/Namespace/namespace.md
         - 流水线:
@@ -333,6 +332,10 @@ nav:
           - 流水线配置参数:
             - 流水线中的概念: zh/amamba/03UserGuide/Pipeline/PipelineConfig/PipelineConcept.md
             - 图形化任务模板参数: zh/amamba/03UserGuide/Pipeline/PipelineConfig/PipelineStep.md
+        - 最佳实践:
+          - 快速创建流水线: zh/amamba/02QuickStart/deploypipline.md
+          - 使用流水线实现代码扫描: zh/amamba/02QuickStart/scan-with-pipeline.md
+          - 集成 Harbor 实现镜像安全扫描: zh/amamba/02QuickStart/scan-with-harbor.md
       - 多云编排:
         - 介绍:
           - 什么是多云编排: zh/kairship/01product/whatiskair.md
@@ -532,6 +535,7 @@ nav:
               - LVM: zh/hwameistor/terms/lvm.md
               - PV 和 PVC: zh/hwameistor/terms/pv_pvc.md
           - 常见问题: zh/hwameistor/faqs.md
+      - 镜像仓库: zh/kangaroo/intro.md
       - 通用参考:
           - 术语表: zh/reference/terms.md
           - 基础知识: 
