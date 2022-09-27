@@ -207,9 +207,15 @@ nav:
           - 集群管理:
               - 创建集群: zh/kpanda/07UserGuide/Clusters/CreateCluster.md
               - 接入集群: zh/kpanda/07UserGuide/Clusters/JoinACluster.md
-              - 使用 kubectl 访问集群: zh/kpanda/07UserGuide/Clusters/clusterwithcert.md
+              - 访问集群: zh/kpanda/07UserGuide/Clusters/AccessCluster.md
+              - 升级集群: zh/kpanda/07UserGuide/Clusters/UpgradeCluster.md
+              - 删除集群: zh/kpanda/07UserGuide/Clusters/DeleteCluster.md
               - 集群角色: zh/kpanda/07UserGuide/Clusters/ClusterRole.md
               - 集群状态: zh/kpanda/07UserGuide/Clusters/ClusterStatus.md
+          - 节点管理:
+              - 节点扩容: zh/kpanda/07UserGuide/Nodes/AddNode.md
+              - 节点缩容: zh/kpanda/07UserGuide/Nodes/DeleteNode.md
+              - 污点管理: zh/kpanda/07UserGuide/Nodes/Taints.md
           - 工作负载:
               - 创建 Deployment: zh/kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md
               - 创建 StatefulSet: zh/kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md
