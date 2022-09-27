@@ -62,7 +62,29 @@
     
             若导入镜像的过程出现失败, 则失败会被跳过且脚本将继续执行，
             失败镜像信息将被记录在脚本同级目录 `import_image_failed.list` 文件中，便于定位。
-    
+        
+        如果 docker pull 镜像时报错：http: server gave HTTP response to HTTPS client，
+        请启用 Insecure Registry：
+            
+        - 在集群的每个节点上运行 `vim /etc/docker/daemon.json` 命令以编辑 daemon.json 文件，输入以下内容并保存更改。
+
+            ```shell
+            {
+            "insecure-registries" : ["172.30.120.180:80"]
+            }
+            ```
+
+            !!! note
+
+                请确保将 `172.30.120.180:80` 替换为您自己的 Harbor 仓库地址。对于 Linux，daemon.json 文件的路径为 /etc/docker/daemon.json。
+
+        - 运行以下命令重启 Docker。
+
+            ```bash
+            sudo systemctl daemon-reload
+            sudo systemctl restart docker
+            ```
+
     - 如果没有镜像仓库，请将离线包拷贝到每一台节点之后，通过 `docker load/nerdctl load` 命令加载：
     
         ```shell
