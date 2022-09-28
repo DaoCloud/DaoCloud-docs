@@ -37,7 +37,7 @@ This page describes the installation procedure of DCE 5.0.
     ```shell
     # Assume VERSION is v0.3.12
     export VERSION=v0.3.12
-    curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-${VERSION}
+    curl -Lo ./dce5-installer http://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-${VERSION}
     ```
 
     Add the executable permission to `dce5-installer`:
@@ -95,7 +95,7 @@ This page describes the installation procedure of DCE 5.0.
     ``` bash
     # Assume VERSION=0.3.12
     export VERSION=v0.3.12
-    wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-${VERSION}.tar
+    wget http://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-${VERSION}.tar
     tar -zxvf offline-community-${VERSION}.tar
     ```
 
@@ -103,7 +103,7 @@ This page describes the installation procedure of DCE 5.0.
 
     !!! note
         
-        You can manually download the script in this step: https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline_image_handler.sh
+        You can manually download the script in this step: http://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline_image_handler.sh
 
     - If you use a registry, push the air-gap package image to the registry.
 

@@ -37,7 +37,7 @@
     ``` bash
     # 假定版本 VERSION=0.3.18
     export VERSION=v0.3.18
-    wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-${VERSION}.tar
+    wget http://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-${VERSION}.tar
     tar -zxvf offline-community-${VERSION}.tar
     ```
 
@@ -46,7 +46,7 @@
     - 下载镜像导入脚本。
 
         ```bash
-        wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline_image_handler.sh
+        wget http://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline_image_handler.sh
         ```
 
         为 `offline_image_handler.sh` 添加可执行权限：
@@ -107,7 +107,7 @@
     ```shell
     # 假定 VERSION 为 v0.3.18
     export VERSION=v0.3.18
-    curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-${VERSION}
+    curl -Lo ./dce5-installer http://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-${VERSION}
     ```
 
     为 `dce5-installer` 添加可执行权限：

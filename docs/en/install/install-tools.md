@@ -7,7 +7,7 @@ After [deploying k8s clusters](install-k8s.md), you shall install some dependenc
 On the k8s control plane (or master node), run the following command to install dependencies:
 
 ```shell
-curl -s https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh | bash
+curl -s http://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh | bash
 ```
 
 !!! note

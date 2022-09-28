@@ -7,7 +7,7 @@
 在 Kubernetes 集群的控制平面（Master 节点）上，执行以下一条命令安装依赖项：
 
 ```shell
-curl -s https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh | bash
+curl -s http://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh | bash
 ```
 
 !!! note
