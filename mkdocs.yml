@@ -543,7 +543,10 @@ nav:
               - LVM: zh/hwameistor/terms/lvm.md
               - PV 和 PVC: zh/hwameistor/terms/pv_pvc.md
           - 常见问题: zh/hwameistor/faqs.md
-      - 镜像仓库: zh/kangaroo/intro.md
+      - 镜像仓库: 
+          - zh/kangaroo/intro.md
+      - Release Notes:
+          - zh/release/rn5.0.md
       - 通用参考:
           - 术语表: zh/reference/terms.md
           - 基础知识: 
