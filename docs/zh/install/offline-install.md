@@ -115,6 +115,7 @@
     ```bash
     chmod +x dce5-installer
     ```
+    
 4. 设置配置文件 clusterConfig.yaml
 
     - 如果是非公有云环境（虚拟机、物理机），请启用负载均衡 (metallb)，以规避 NodePort 因节点 IP 变动造成的不稳定。请仔细规划您的网络，设置 2 个必要的 VIP，配置文件范例如下：
