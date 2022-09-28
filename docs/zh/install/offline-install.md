@@ -32,7 +32,7 @@
 
 ## 离线安装
 
-1. 下载社区版的对应离线包并解压。
+1. 在 k8s 集群控制平面节点（Master 节点）下载社区版的对应离线包并解压。
 
     ``` bash
     # 假定版本 VERSION=0.3.18
@@ -43,10 +43,18 @@
 
 2. 导入镜像。
 
-    !!! note
+    - 下载镜像导入脚本。
 
-        这一步所用的脚本下载地址为： https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline_image_handler.sh
-    
+        ```bash
+        wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline_image_handler.sh
+        ```
+
+        为 `offline_image_handler.sh` 添加可执行权限：
+
+        ```bash
+        chmod +x offline_image_handler.sh
+        ```
+
     - 如果使用镜像仓库，请将离线包的镜像推送到镜像仓库。
     
         ```bash
@@ -93,8 +101,55 @@
         # 执行脚本加载镜像
         ./offline_image_handler.sh load
         ```
-    
-3. 解压安装。
+
+3. 在 k8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件。
+
+    ```shell
+    # 假定 VERSION 为 v0.3.18
+    export VERSION=v0.3.18
+    curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-${VERSION}
+    ```
+
+    为 `dce5-installer` 添加可执行权限：
+
+    ```bash
+    chmod +x dce5-installer
+    ```
+4. 设置配置文件 clusterConfig.yaml
+
+    - 如果是非公有云环境（虚拟机、物理机），请启用负载均衡 (metallb)，以规避 NodePort 因节点 IP 变动造成的不稳定。请仔细规划您的网络，设置 2 个必要的 VIP，配置文件范例如下：
+
+        ```yaml
+        apiVersion: provision.daocloud.io/v1alpha1
+        kind: ClusterConfig
+        spec:
+        	loadBalancer: metallb
+        	istioGatewayVip: 10.6.229.10/32     # 这是 Istio gateway 的 VIP，也会是DCE5.0的控制台的浏览器访问IP
+        	insightVip: 10.6.229.11/32          # 这是 Global 集群的 Insight-Server 采集所有子集群的监控指标的网络路径所用的 VIP
+            persistentRegistryDomainName: 172.30.120.180:80
+        ```
+
+    - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 k8s 负载均衡能力, 配置文件范例如下:
+
+        ``` yaml
+        apiVersion: provision.daocloud.io/v1alpha1
+        kind: ClusterConfig
+        spec:
+        	loadBalancer: cloudLB
+            persistentRegistryDomainName: 172.30.120.180:80 # 这是 Harbor 仓库地址
+        ```
+
+    - 如果使用 NodePort 暴露控制台（仅推荐 PoC 使用），配置文件范例如下:
+
+        ``` yaml
+        apiVersion: provision.daocloud.io/v1alpha1
+        kind: ClusterConfig
+        spec:
+            loadBalancer: NodePort
+            persistentRegistryDomainName: 172.30.120.180:80 # 这是 Harbor 仓库地址
+        ```
+
+5. 解压安装。
 
     ``` shell
     ./dce5-installer install-app -c clusterConfig.yaml -p offline
@@ -106,7 +161,7 @@
         
         有关 clusterConfig.yaml 文件设置，请参考上文的 **在线安装第 2 步** 。
 
-4. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
+6. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
 
     ![success](images/success.png)
 
@@ -114,4 +169,4 @@
 
          请记录好提示的 URL，方便下次访问。
 
-5. 另外，安装 DCE 5.0 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](../dce/license0.md)。
+7. 另外，安装 DCE 5.0 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](../dce/license0.md)。
