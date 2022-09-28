@@ -92,3 +92,26 @@
          请记录好提示的 URL，方便下次访问。
 
 5. 另外，安装 DCE 5.0 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](../dce/license0.md)。
+
+## 在 Kind 集群中安装
+
+!!! note
+
+    如果是Kind内的环境，仅可使用NodePort模式。
+
+1. 确保 kind 创建集群时，暴露集群内的32000端口(固定)到kind对外的8888端口(可自行修改),kind配置文件形如:
+        
+    ``` yaml
+    apiVersion: provision.daocloud.io/v1alpha1
+    kind: ClusterConfig
+    spec:
+        loadBalancer: cloudLB
+    ```
+
+2. 获取 kind 所在主机的IP，假定为 `10.6.3.1`， 进行安装。
+
+    ```shell
+    ./dce5-installer install-app -z -k 10.6.3.1:8888
+    ```
+
+3. 安装成功后，您可以前往 `https://10.6.3.1:8888` 访问 DCE 5.0 ！
