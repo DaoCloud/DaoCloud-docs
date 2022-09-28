@@ -371,6 +371,8 @@ nav:
           - 托管型注册中心:
             - 管理注册中心实例: zh/skoala/registry/host/manage-registry.md
             - 微服务命名空间: zh/skoala/registry/host/namespace.md
+            - 服务治理策略: zh/skoala/registry/host/governance-policy.md
+            - 配置中心: zh/skoala/registry/host/configcenter.md
           - 接入型注册中心:
             - 管理注册中心实例: zh/skoala/registry/integrate/manage-registry.md
             - 微服务管理: zh/skoala/registry/integrate/manage-service.md
