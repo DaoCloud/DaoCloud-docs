@@ -8,4 +8,11 @@
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-mesh-gateway.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
+## 通过外部应用访问网格服务
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/visit-from-external.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+
+
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

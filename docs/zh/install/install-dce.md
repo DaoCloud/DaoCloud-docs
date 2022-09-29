@@ -15,7 +15,7 @@
     !!! note
 
         - 集群可用资源：CPU > 10 核、内存 > 12 GB、磁盘空间 > 100 GB（目前默认多副本运行，后续单副本预计资源消耗为 4 核 8 GB）
-        - 集群版本：推荐 Kubernetes 官方最高稳定版本，目前推荐版本是 v1.24，最低版本支持 v1.21
+        - 集群版本：推荐 Kubernetes 官方最高稳定版本，目前推荐版本是 v1.24，最低版本支持 v1.20
         - 支持的 CRI：Docker、containerd
         - 存储：需要提前准备好 StorageClass，并设置为默认 SC。详情参见[部署 k8s 集群](install-k8s.md)
         - 目前仅支持 X86_64 架构
@@ -40,7 +40,7 @@
     ```shell
     # 假定 VERSION 为 v0.3.18
     export VERSION=v0.3.18
-    curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-${VERSION}
+    curl -Lo ./dce5-installer http://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-${VERSION}
     ```
 
     为 `dce5-installer` 添加可执行权限：
@@ -92,3 +92,26 @@
          请记录好提示的 URL，方便下次访问。
 
 5. 另外，安装 DCE 5.0 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](../dce/license0.md)。
+
+## 在 Kind 集群中安装
+
+!!! note
+
+    如果是 kind 内的环境，仅可使用 NodePort 模式。
+
+1. 确保 kind 创建集群时，暴露集群内的 32000 端口(固定)到 kind 对外的 8888 端口（可自行修改），kind 配置文件如下：
+        
+    ``` yaml
+    apiVersion: provision.daocloud.io/v1alpha1
+    kind: ClusterConfig
+    spec:
+        loadBalancer: cloudLB
+    ```
+
+2. 获取 kind 所在主机的 IP，假定为 `10.6.3.1`，进行安装。
+
+    ```shell
+    ./dce5-installer install-app -z -k 10.6.3.1:8888
+    ```
+
+3. 安装成功后，您可以前往 `https://10.6.3.1:8888` 访问 DCE 5.0！

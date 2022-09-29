@@ -207,9 +207,15 @@ nav:
           - 集群管理:
               - 创建集群: zh/kpanda/07UserGuide/Clusters/CreateCluster.md
               - 接入集群: zh/kpanda/07UserGuide/Clusters/JoinACluster.md
-              - 使用 kubectl 访问集群: zh/kpanda/07UserGuide/Clusters/clusterwithcert.md
+              - 访问集群: zh/kpanda/07UserGuide/Clusters/AccessCluster.md
+              - 升级集群: zh/kpanda/07UserGuide/Clusters/UpgradeCluster.md
+              - 删除集群: zh/kpanda/07UserGuide/Clusters/DeleteCluster.md
               - 集群角色: zh/kpanda/07UserGuide/Clusters/ClusterRole.md
               - 集群状态: zh/kpanda/07UserGuide/Clusters/ClusterStatus.md
+          - 节点管理:
+              - 节点扩容: zh/kpanda/07UserGuide/Nodes/AddNode.md
+              - 节点缩容: zh/kpanda/07UserGuide/Nodes/DeleteNode.md
+              - 污点管理: zh/kpanda/07UserGuide/Nodes/Taints.md
           - 工作负载:
               - 创建 Deployment: zh/kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md
               - 创建 StatefulSet: zh/kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md
@@ -322,7 +328,6 @@ nav:
           - 产品优势: zh/amamba/01ProductBrief/Benefits.md
           - 适用场景: zh/amamba/01ProductBrief/Scenarios.md
           - 基本概念: zh/amamba/01ProductBrief/Concepts.md
-        - 快速创建流水线: zh/amamba/02QuickStart/deploypipline.md
         - 命名空间:
           - 命名空间管理: zh/amamba/03UserGuide/Namespace/namespace.md
         - 流水线:
@@ -333,6 +338,10 @@ nav:
           - 流水线配置参数:
             - 流水线中的概念: zh/amamba/03UserGuide/Pipeline/PipelineConfig/PipelineConcept.md
             - 图形化任务模板参数: zh/amamba/03UserGuide/Pipeline/PipelineConfig/PipelineStep.md
+        - 最佳实践:
+          - 快速创建流水线: zh/amamba/02QuickStart/deploypipline.md
+          - 使用流水线实现代码扫描: zh/amamba/02QuickStart/scan-with-pipeline.md
+          - 集成 Harbor 实现镜像安全扫描: zh/amamba/02QuickStart/scan-with-harbor.md
       - 多云编排:
         - 介绍:
           - 什么是多云编排: zh/kairship/01product/whatiskair.md
@@ -362,6 +371,8 @@ nav:
           - 托管型注册中心:
             - 管理注册中心实例: zh/skoala/registry/host/manage-registry.md
             - 微服务命名空间: zh/skoala/registry/host/namespace.md
+            - 服务治理策略: zh/skoala/registry/host/governance-policy.md
+            - 配置中心: zh/skoala/registry/host/configcenter.md
           - 接入型注册中心:
             - 管理注册中心实例: zh/skoala/registry/integrate/manage-registry.md
             - 微服务管理: zh/skoala/registry/integrate/manage-service.md
@@ -532,6 +543,10 @@ nav:
               - LVM: zh/hwameistor/terms/lvm.md
               - PV 和 PVC: zh/hwameistor/terms/pv_pvc.md
           - 常见问题: zh/hwameistor/faqs.md
+      - 镜像仓库: 
+          - zh/kangaroo/intro.md
+      - Release Notes:
+          - zh/release/rn5.0.md
       - 通用参考:
           - 术语表: zh/reference/terms.md
           - 基础知识: 
