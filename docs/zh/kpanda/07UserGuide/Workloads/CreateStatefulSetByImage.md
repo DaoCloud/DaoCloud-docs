@@ -10,7 +10,7 @@
 
 - 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
 
-- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为 [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) 角色 ，详情可参考[命名空间授权](../Namespaces/createns.md)。
+- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，用户应具有 [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) 或更高权限，详情可参考[命名空间授权](../Namespaces/createns.md)。
 
 - 如果需要为 StatefulSet 挂载存储卷，需要先创建存储卷。
 
@@ -18,7 +18,7 @@
 
 ## 镜像创建
 
-参考以下步骤，使用镜像创建一个无状态工作负载。
+参考以下步骤，使用镜像创建一个有状态工作负载。
 
 ### 基本信息配置
 
@@ -90,7 +90,7 @@
 
     ![安全设置](../../images/deploy10.png)
 
-### 服务配置{#5-服务配置}
+### 服务配置
 
 为有状态负载配置[服务](../ServicesandRoutes/CreatingServices.md)，使有状态负载能够被外部访问。
 

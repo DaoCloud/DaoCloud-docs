@@ -6,9 +6,9 @@
 
 ## 前提条件
 
-- 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
+- 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
 
-- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为 [`NS Admin`](../Permissions/PermissionBrief.md#ns-admin) 角色 ，详情可参考[命名空间授权](../Permissions/Cluster-NSAuth.md)。
+- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并为用户授予 [`NS Admin`](../Permissions/PermissionBrief.md#ns-admin) 或更高权限，详情可参考[命名空间授权](../Permissions/Cluster-NSAuth.md)。
 
 ## 创建 Helm 应用
 
@@ -20,7 +20,7 @@
 
 2. 在左侧导航栏，依次点击 `Helm 应用` -> `Helm 模板`，进入 Helm 模板页面。
 
-      在 Helm 模板页面选择名为 `addon` 的 [Helm 仓库](#)，此时界面上将呈现 `addon` 仓库下所有的 Helm chart 模板。
+      在 Helm 模板页面选择名为 `addon` 的 [Helm 仓库](./helm-repo.md)，此时界面上将呈现 `addon` 仓库下所有的 Helm chart 模板。
       点击名称为 `cert-manager` 的 Chart。
 
       ![helm](../../images/helm01.png)
