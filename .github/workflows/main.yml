@@ -30,11 +30,11 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0 # Required for mkdocs to be able to display pages last update info
-      - uses: actions/setup-python@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v2
+#       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
-          cache: 'pip'
+#           cache: 'pip'
       
       # Add ssh private key
       - name: Setup SSH
@@ -43,23 +43,23 @@ jobs:
           host: github.com
           private-key: ${{ secrets.SSH_PRIVATE_KEY }}
         
-      - run: pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+#       - run: pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+
       # Install mkdocs-material-insiders
       - run: git clone git@github.com:DaoCloud/mkdocs-material-insiders.git mkdocs-material
       - run: pip install -e mkdocs-material
 
       # Runs a single command using the runners shell
-#       - run: pip install mkdocs-git-revision-date-plugin \
-#               mkdocs-mermaid2-plugin \
-#               mkdocs-rss-plugin \
-#               mkdocs-minify-plugin \
-#               mkdocs-macros-plugin \
-#               mkdocs-git-revision-date-localized-plugin \
-#               mkdocs-awesome-pages-plugin
+      - run: pip install mkdocs-git-revision-date-plugin \
+              mkdocs-mermaid2-plugin \
+              mkdocs-rss-plugin \
+              mkdocs-minify-plugin \
+              mkdocs-macros-plugin \
+              mkdocs-git-revision-date-localized-plugin \
+              mkdocs-awesome-pages-plugin
       
       # add custom plugin with pdf support
-#       - run: pip install git+https://github.com/SAMZONG/mkdocs-with-pdf-support-material-v8
-
+      - run: pip install git+https://github.com/SAMZONG/mkdocs-with-pdf-support-material-v8
 
       # build docs
       - run: pwd
