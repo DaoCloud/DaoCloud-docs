@@ -22,7 +22,7 @@ jobs:
   # This workflow contains a single job called "build"
   deploy:
     # The type of runner that the job will run on
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -31,8 +31,10 @@ jobs:
         with:
           fetch-depth: 0 # Required for mkdocs to be able to display pages last update info
       - uses: actions/setup-python@v2
+#       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
+#           cache: 'pip'
       
       # Add ssh private key
       - name: Setup SSH
@@ -40,7 +42,9 @@ jobs:
         with:
           host: github.com
           private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      
+        
+#       - run: pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+
       # Install mkdocs-material-insiders
       - run: git clone git@github.com:DaoCloud/mkdocs-material-insiders.git mkdocs-material
       - run: pip install -e mkdocs-material
@@ -56,7 +60,6 @@ jobs:
       
       # add custom plugin with pdf support
       - run: pip install git+https://github.com/SAMZONG/mkdocs-with-pdf-support-material-v8
-
 
       # build docs
       - run: pwd
