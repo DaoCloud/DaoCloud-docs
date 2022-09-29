@@ -15,7 +15,7 @@ DCE 5.0 的服务网格兼容社区原生 Istio 开源服务网格，提供原�
 export VERSION=v0.8.4 # 修改为实际部署的版本。
 helm repo add mspider-release https://release.daocloud.io/chartrepo/mspider
 helm repo update
-helm upgrade --install --create-namespace -n mspider-system mspider mspider-release/mspider --version=${VERSION} --set global.hub=release.daocloud.io/mspider
+helm upgrade --install --create-namespace -n mspider-system mspider mspider-release/mspider --version=${VERSION}
 ```
 
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }
