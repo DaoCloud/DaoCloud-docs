@@ -2,6 +2,13 @@
 
 可观测性 Insight 提供服务指标的监控，可查看服务的实时吞吐量、请求数、请求延时和错误率等关键指标。
 
+## 前提条件
+
+- 集群中已安装 insight-agent 且应用处于 `运行中` 状态。若未安装，请参考：[安装 insight-agent 采集数据](../../06UserGuide/01quickstart/installagent.md)
+
+
+## 查看节点详情
+
 1. 在左侧导航栏选择 `场景监控` -> `服务监控`。
 
     ![](../../images/service01.png)
