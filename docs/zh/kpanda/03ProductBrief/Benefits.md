@@ -33,7 +33,7 @@
 - 跨地域应用高可用，支持跨地域部署不同的容器集群，能够同时将业务部署在不同地域的多个云容器集群上，帮助应用实现多地域的流量分发。
   当某个云容器集群发生故障、机房宕机或者自然灾害时，通过统一流量分发的机制，自动将业务流量切换到其他云容器平台上，保障应用的高可用。
 
-- 完善的用户权限体系，整合 Kubernetes RBAC 权限体系，支持为不同用户设置不同粒度权限。
+- 完善的用户权限体系，整合 [Kubernetes RBAC 权限体系](https://kubernetes.io/zh-cn/docs/reference/access-authn-authz/rbac/)，支持为不同用户设置不同粒度权限。
 
 **异构兼容**
 
@@ -45,4 +45,4 @@
 
 - 基于原生的 Kubernetes 和 Docker 技术，完全兼容 Kubernetes API 和 Kubectl 命令。
 
-- 提供了丰富的插件体系，扩充云容器集群功能，例如网络插件 Multus、[Cillum](../../network/modules/cilium/what.md)、Contour 等组件。
+- 提供了丰富的插件体系，扩充云容器集群功能，例如网络插件 [Multus](https://github.com/k8snetworkplumbingwg/multus-cni)、[Cillum](../../network/modules/cilium/what.md)、[Contour](https://projectcontour.io/) 等组件。

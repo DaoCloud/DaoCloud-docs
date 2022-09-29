@@ -95,4 +95,4 @@
 
 #### 拓扑域
 
-指定调度时的影响范围，如 指定为 kubernetes.io/Clustername 那就是以 Node 节点为区分范围。
+指定调度时的影响范围，如指定为 kubernetes.io/Clustername 那就是以 Node 节点为区分范围。
