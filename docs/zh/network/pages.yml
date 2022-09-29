@@ -12,3 +12,7 @@ nav:
     - 安装: modules/spiderpool/install.md
     - 配置参考: modules/spiderpool/config.md
     - 常用命令: modules/spiderpool/command.md
+  - Ingress Nginx:
+    - 安装: modules/ingress-nginx/install.md
+  - Contour:
+    - 安装: modules/contour/install.md
