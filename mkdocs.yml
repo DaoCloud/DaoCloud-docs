@@ -192,7 +192,6 @@ nav:
           - 产品优势: zh/dce/whyus.md
           - 申请社区免费体验: zh/dce/license0.md
       - 安装:
-        - 部署 Kubernetes 集群: zh/install/install-k8s.md
         - 安装依赖项: zh/install/install-tools.md
         - 在线安装 DCE 5.0: zh/install/install-dce.md
         - 离线安装 DCE 5.0: zh/install/offline-install.md

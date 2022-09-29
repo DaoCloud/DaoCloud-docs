@@ -8,14 +8,14 @@
 
 ## 准备工作
 
-- 准备一个 Kubernetes 集群，参阅[如何部署 Kubernetes 集群](install-k8s.md)
+- 准备一个 Kubernetes 集群
 
     !!! note
 
         - 集群可用资源：CPU > 10 核、内存 > 12 GB、磁盘空间 > 100 GB（目前默认多副本运行，后续单副本预计资源消耗为 4 核 8 GB）
         - 集群版本：推荐 Kubernetes 官方最高稳定版本，目前推荐版本是 v1.24，最低版本支持 v1.20
         - 支持的 CRI：Docker、containerd
-        - 存储：需要提前准备好 StorageClass，并设置为默认 SC。详情参见[部署 k8s 集群](install-k8s.md)
+        - 存储：需要提前准备好 StorageClass，并设置为默认 SC
         - 目前仅支持 X86_64 架构
         - 确保集群已安装 CoreDNS
         - 如果是单节点集群，请确保您已移除该节点的污点
