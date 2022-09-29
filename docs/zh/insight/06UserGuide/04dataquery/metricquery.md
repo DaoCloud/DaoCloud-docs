@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-使用日志查询前，请确认集群已接入 insight-agent 且处于运行状态。如还未安装，请先[安装 insight-agent]()。
+- 集群中已[安装 insight-agent](../../06UserGuide/01quickstart/installagent.md) 且应用处于 `运行中` 状态。
 
 ## 普通查询
 
@@ -12,9 +12,6 @@
 
     ![查询结果](../../images/metric01.png)
 
-    
-
-    
 
 2. 选择集群、类型、节点、指标名称等查询条件后，点击`搜索`，屏幕右侧将显示对应指标图表及数据详情。
 
