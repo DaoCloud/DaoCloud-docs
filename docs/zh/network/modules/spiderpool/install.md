@@ -1,120 +1,94 @@
 # 安装
 
-Spiderpool 需要 kube-apiserver webhook，所以也需要 TLS（Transparent Layer Security，传输层安全性）证书。
+本章节，介绍如何进行产品化安装spiderpool组件
 
-有两种安装方法：一种是通过自签名证书，一种是使用 cert-manager。
+## 安装步骤
 
-## 通过自签名证书进行安装
+1. 拥有一个 DCE 集群，登录 global 集群的 WEBUI 管理界面，在导航的"容器管理"->"集群列表"中，登录希望安装 spiderpool 的集群
 
-这种安装方法比较简单，不需要安装任何依赖项。我们提供了一个脚本来生成这个证书。
 
-以下是针对 IPv4 单栈的示例。
+2. 在"helm应用"->"helm模板"中，选择"system"仓库和"网络"组件，点击安装"spiderpool"
 
-```shell
-helm repo add spiderpool https://spidernet-io.github.io/spiderpool
+    ![spiderpool helm](../../images/spiderpool-helm.png)
 
-git clone https://github.com/spidernet-io/spiderpool.git
-cd spiderpool
 
-# 生成证书
-tools/cert/generateCert.sh "/tmp/tls"
-CA=`cat /tmp/tls/ca.crt  | base64 -w0 | tr -d '\n' `
-SERVER_CERT=` cat /tmp/tls/server.crt | base64 -w0 | tr -d '\n' `
-SERVER_KEY=` cat /tmp/tls/server.key | base64 -w0 | tr -d '\n' `
+3. 在"版本选择"中选择希望安装的版本，点击"安装"
 
-# 针对默认的 ipv4 ippool
-# CIDR
-Ipv4Subnet="172.20.0.0/16"
-# 可用的 IP 资源
-Ipv4Range="172.20.0.10-172.20.0.200"
-Ipv4Gateway="172.20.0.1"
 
-# 部署 spiderpool
-helm install spiderpool spiderpool/spiderpool --wait --namespace kube-system \
-  --set spiderpoolController.tls.method=provided \
-  --set spiderpoolController.tls.provided.tlsCert="${SERVER_CERT}" \
-  --set spiderpoolController.tls.provided.tlsKey="${SERVER_KEY}" \
-  --set spiderpoolController.tls.provided.tlsCa="${CA}" \
-  --set feature.enableIPv4=true --set feature.enableIPv6=false \
-  --set clusterDefaultPool.installIPv4IPPool=true  \
-  --set clusterDefaultPool.ipv4Subnet=${Ipv4Subnet} \
-  --set clusterDefaultPool.ipv4IPRanges={${Ipv4Range}} \
-  --set clusterDefaultPool.ipv4Gateway=${Ipv4Gateway}
-```
+4. 在安装参数界面，进行如下信息的填写
 
-以下是一个同时支持 IPv4 和 IPv6 双栈的示例。
+    ![spiderpool instal1](../../images/spiderpool-install1.png)
+    在如上界面中，填写"安装名称"，"命名空间"，"版本"
 
-```shell
-helm repo add spiderpool https://spidernet-io.github.io/spiderpool
+    ![spiderpool instal2](../../images/spiderpool-install2.png)
 
-# 生成证书
-tools/cert/generateCert.sh "/tmp/tls"
-CA=`cat /tmp/tls/ca.crt  | base64 -w0 | tr -d '\n' `
-SERVER_CERT=` cat /tmp/tls/server.crt | base64 -w0 | tr -d '\n' `
-SERVER_KEY=` cat /tmp/tls/server.key | base64 -w0 | tr -d '\n' `
+    在如上界面中:
 
-# 针对默认的 ipv4 ippool
-# CIDR
-Ipv4Subnet="172.20.0.0/16"
-# 可用的 IP 资源
-Ipv4Range="172.20.0.10-172.20.0.200"
-Ipv4Gateway="172.20.0.1"
+    * "global image Registry"：设置所有镜像的仓库地址，默认已经填写了可用的在线仓库，如果是私有化环境，可修改为私有仓库地址
 
-# 针对默认的 ipv6 ippool
-# CIDR
-Ipv6Subnet="fd00::/112"
-# 可用的 IP 资源
-Ipv6Range="fd00::10-fd00::200"
-Ipv6Gateway="fd00::1"
+    * "Spiderpool Agent Image repository"：设置镜像名，保持默认即可
 
-# 部署 spiderpool
-helm install spiderpool spiderpool/spiderpool --wait --namespace kube-system \
-  --set spiderpoolController.tls.method=provided \
-  --set spiderpoolController.tls.provided.tlsCert="${SERVER_CERT}" \
-  --set spiderpoolController.tls.provided.tlsKey="${SERVER_KEY}" \
-  --set spiderpoolController.tls.provided.tlsCa="${CA}" \
-  --set feature.enableIPv4=true --set feature.enableIPv6=true \
-  --set clusterDefaultPool.installIPv4IPPool=true  \
-  --set clusterDefaultPool.installIPv6IPPool=true  \
-  --set clusterDefaultPool.ipv4Subnet=${Ipv4Subnet} \
-  --set clusterDefaultPool.ipv4IPRanges={${Ipv4Range}} \
-  --set clusterDefaultPool.ipv4Gateway=${Ipv4Gateway} \
-  --set clusterDefaultPool.ipv6Subnet=${Ipv6Subnet} \
-  --set clusterDefaultPool.ipv6IPRanges={${Ipv6Range}} \
-  --set clusterDefaultPool.ipv6Gateway=${Ipv6Gateway}
-```
+    * "Spiderpool Agent Prometheus -> Enable Metrics"：如果打开，Spiderpool Agent组件会收集指标信息，以供外部采集
 
-> 注意：spiderpool-controller Pod 以 hostNetwork 模式运行，它需要占用 host 端口，所以使用 `podAntiAffinity` 来设置亲和性，
-> 这可以确保某个节点仅运行一个 spiderpool-controller Pod。因此如果您将 spiderpool-controller 的副本数设置为大于 2，则需要先确保有足够的节点。
+    * "Spiderpool Agent ServiceMonitor -> Install"：是否安装 Spiderpool Agent 的 ServiceMonitor 对象，这要求集群内安装好了 promethues，否则创建失败
 
-## 通过 cert-manager 进行安装
+    * "Spiderpool Agent PrometheusRule -> Install": 是否安装 Spiderpool Agent 的 promethuesRule 对象，这要求集群内安装好了 promethues，否则创建失败
 
-这种安装方法不通用，因为 cert-manager 需要 CNI 创建一个 Pod，但作为 IPAM，Spiderpool 还未安装提供 IP 资源。这意味着 cert-manager 和 Spiderpool 需要先自己独立走完安装步骤。
+    ![spiderpool instal3](../../images/spiderpool-install3.png)
 
-这种安装方式适用于以下场景：
+    在如上界面中:
+  
+    * "Spiderpool Controller Setting -> replicas number"：设置Spiderpool Controller的副本数，该主要负责spiderpool的控制器逻辑，注意，该pod是hostnetwork模式，并且pod之间设置了反亲和性，
+    所以，一个node上最多部署一个pod。因此，如果要部署大于 1 的副本数量，确保集群的节点数要充足，否则导致部分pod无法得到调度
 
-- 通过自签名证书安装 Spiderpool 之后，且已部署 cert-manager，采用这种安装方式来变更 cert-manager 方案。
+    * "Spiderpool Controller Image -> repository": 设置镜像名，保持默认即可
 
-- 在带有 [Multus CNI](https://github.com/k8snetworkplumbingwg/multus-cni) 的集群上，通过其他 CNI 部署 cert-manager Pod，然后通过 cert-manager 可以部署 Spiderpool。
+    * "Spiderpool Controller Prometheus -> Enable Metrics"：如果打开，Spiderpool Controller 组件会收集指标信息，以供外部采集
 
-部署示例如下：
+    * "Spiderpool Controller ServiceMonitor -> Install"：是否安装 Spiderpool Controller 的 ServiceMonitor 对象，这要求集群内安装好了 promethues，否则创建失败
 
-```shell
-helm repo add spiderpool https://spidernet-io.github.io/spiderpool
+    * "Spiderpool Controller PrometheusRule -> Install": 是否安装 Spiderpool Controller 的 promethuesRule 对象，这要求集群内安装好了 promethues，否则创建失败
 
-# 针对默认的 ipv4 ippool
-# CIDR
-ipv4_subnet="172.20.0.0/16"
-# 可用的 IP 资源
-ipv4_range="172.20.0.10-172.20.0.200"
-Ipv4Gateway="172.20.0.1"
+    * "IP Family Setting -> enable IPv4": 是否开启 IPv4 支持。注意，若开启，给 pod 分配 IP 时，务必会尝试分配 IPv4 地址，否分会导致 pod 启动失败
+    所以，务必打开后续的 "Cluster Default Ippool Installation -> install IPv4 ippool"，以创建集群的缺省 IPv4 池
 
-helm install spiderpool spiderpool/spiderpool --wait --namespace kube-system \
-  --set spiderpoolController.tls.method=certmanager \
-  --set spiderpoolController.tls.certmanager.issuerName=${CERT_MANAGER_ISSUER_NAME} \
-  --set feature.enableIPv4=true --set feature.enableIPv6=false \
-  --set clusterDefaultPool.installIPv4IPPool=true --set clusterDefaultPool.installIPv6IPPool=false \
-  --set clusterDefaultPool.ipv4Subnet=${ipv4_subnet} \
-  --set clusterDefaultPool.ipv4IPRanges={${ipv4_ip_range}} \
-  --set clusterDefaultPool.ipv4Gateway=${Ipv4Gateway}
-```
+    * "IP Family Setting -> enable IPv6": 是否开启 IPv6 支持。注意，若开启，给 pod 分配 IP 时，务必会尝试分配 IPv6 地址，否分会导致 pod 启动失败
+     所以，务必打开后续的 "Cluster Default Ippool Installation -> install IPv6 ippool"，以创建集群的缺省 IPv6 池
+
+    ![spiderpool instal4](../../images/spiderpool-install4.png)
+
+    在如上界面中:
+
+    * "install IPv4 ippool"：是否安装 IPv4 IP 池
+
+    * "install IPv6 ippool"：是否安装 IPv6 IP 池
+
+    * "IPv4 subnet name"：IPv4 subnet的名字。如果未开启"install IPv4 ippool"，忽略本设置
+    
+    * "IPv4 ippool name"：IPv4 ippool 的名字。如果未开启"install IPv4 ippool"，忽略本设置
+    
+    * "IPv6 subnet name"：IPv6 subnet的名字。如果未开启"install IPv6 ippool"，忽略本设置
+    
+    * "IPv6 ippool name"：IPv6 ippool 的名字。如果未开启"install IPv6 ippool"，忽略本设置
+    
+    * "IPv4 ippool subnet"：设置默认池中的 IPv4 子网号，例如"192.168.0.0/16"。如果未开启"install IPv4 ippool"，忽略本设置
+
+    * "IPv6 ippool subnet"：设置默认池中的 IPv6 子网号，例如"fd00::/112"。如果未开启"install IPv6 ippool"，忽略本设置
+
+    * "IPv4 ippool gateway"：设置 IPv4 网关，例如"192.168.0.1"，该 IP 地址务必属于"IPv4 ippool subnet"。如果未开启"install IPv4 ippool"，忽略本设置
+
+    * "IPv6 ippool gateway"：设置 IPv6 网关，例如"fd00::1"，该 IP 地址务必属于"IPv6 ippool subnet"。如果未开启"install IPv6 ippool"，忽略本设置
+
+    * "IP Ranges for default IPv4 ippool"：设置哪些 IP 地址可分配给 pod，可设置多个成员，每个成员只支持 2 种输入格式的字符串，一种是诸如 "192.168.0.10-192.168.0.100" 设置一段连续的IP，一种是诸如 "192.168.0.200" 设置单个IP地址。注意，并不支持输入CIDR格式。
+      这些 IP 地址务必属于"IPv4 ippool subnet"。如果未开启"install IPv4 ippool"，忽略本设置
+
+    * "IP Ranges for default IPv6 ippool"：设置哪些 IP 地址可分配给 pod，可设置多个成员，每个成员只支持 2 种输入格式的字符串，一种是诸如 "fd00::10-fd00::100" 设置一段连续的IP，一种是诸如 "fd00::200" 设置单个IP地址。注意，并不支持输入CIDR格式。
+     这些 IP 地址务必属于"IPv6 ippool subnet"。如果未开启"install IPv6 ippool"，忽略本设置
+
+
+5. 最终点击"安装"
+
+
+## 说明
+
+1. 在安装流程中，能够完成单个subnet和ippool的创建，在完成安装后，能够在使用界面中完成更多的subnet和ippool的创建
