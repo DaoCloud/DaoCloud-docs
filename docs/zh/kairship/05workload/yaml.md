@@ -1,7 +1,109 @@
-# 通过 YAML 创建
+# 通过 YAML 创建多云工作负载
 
-另外，如果已经有了现成的 YAML 文件，可以直接点击 `YAML 创建`按钮，在多云编排软件自带的 YAML 编辑器中编辑 YAML 语句，语法检测正确后点击`下一步`。
+除了通过镜像创建工作负载外，还可以通过输入 YAML 语句来创建。
 
-![image](../images/deployment07.png)
+这种创建方式的步骤比较简单，如下所述。
 
-依次配置部署策略和差异化策略后点击`确认`，即可创建一个 deployment 工作负载。
+1. 在左侧导航栏中，点击`多云工作负载`，点击右上角的`YAML 创建`按钮。
+
+    ![image](../images/depyaml01.png)
+
+2. 例如输入创建 Deployment 的 YAML 语句后，点击`下一步`。
+
+    ![image](../images/depyaml02.png)
+
+3. 输入部署策略的 YAML 语句后，点击`下一步`。
+
+    ![image](../images/depyaml03.png)
+
+4. 输入差异化策略的 YAML 语句后，点击`确定`。
+
+    ![image](../images/depyaml04.png)
+
+5. 自动返回多云工作负载列表，点击列表右侧的 `⋮`，可以编辑修改 YAML，还可以暂停、重启和删除该负载。
+
+    ![image](../images/depyaml05.png)
+
+## YAML 示例
+
+多云编排模块自带的 YAML 编辑器中会自动检测 YAML 语法，如有错误，会出现相关提示。
+以下列出一些常用的示例，您稍加修改就可以使用。
+
+***Deployment 示例***
+
+```yaml
+# Kubernetes Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-nginx
+  labels:
+    app: demo-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-nginx
+  template:
+    metadata:
+      labels:
+        app: demo-nginx
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+```
+
+**部署策略示例**
+
+```yaml
+# Karmada PropagationPolicy
+apiVersion: policy.karmada.io/v1alpha1
+kind: PropagationPolicy
+metadata:
+  name: demo-nginx-pp # The default namespace is `default`.
+spec:
+  resourceSelectors:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: demo-nginx # If no namespace is specified, the namespace is inherited from the parent object scope.
+  placement:
+    clusterAffinity:
+      clusterNames:
+        - skoala-stage
+        - skoala-dev
+```
+
+**差异化策略示例**
+
+```yaml
+# Karmada OverridePolicy
+apiVersion: policy.karmada.io/v1alpha1
+kind: OverridePolicy
+metadata:
+  name: demo-nginx-op
+spec:
+  resourceSelectors:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: demo-nginx
+  overrideRules:
+    - targetCluster:
+        clusterNames:
+          - skoala-dev
+      overriders:
+        plaintext:
+          - path: "/metadata/labels"
+            operator: add
+            value:
+              env: skoala-dev
+    - targetCluster:
+        clusterNames:
+          - skoala-stage
+      overriders:
+        plaintext:
+          - path: "/metadata/labels"
+            operator: add
+            value:
+              env: skoala-stage
+```

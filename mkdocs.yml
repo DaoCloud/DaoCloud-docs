@@ -360,11 +360,19 @@ nav:
           - 工作负载简介: zh/kairship/05workload/README.md
           - 镜像创建: zh/kairship/05workload/image.md
           - YAML创建: zh/kairship/05workload/yaml.md
+        - 资源管理:
+          - 多云服务: zh/kairship/06resource/service.md
+          - 多云命名空间: zh/kairship/06resource/ns.md
+          - 多云配置项: zh/kairship/06resource/configmap.md
+          - 多云密钥: zh/kairship/06resource/secret.md
+        - 策略管理:
+          - 部署策略: zh/kairship/07policy/deploy.md
+          - 差异化策略: zh/kairship/07policy/diff.md
       - 微服务引擎:
         - 介绍:
           - 功能总览: zh/skoala/intro/features.md
           - 使用场景: zh/skoala/intro/scenarios.md
-          - 产品优势: zh/skoala/intro/advantages.md  
+          - 产品优势: zh/skoala/intro/advantages.md
           - 环境要求: zh/skoala/intro/components.md
         - 选择工作空间: zh/skoala/select-workspace.md
         - 微服务治理中心:
