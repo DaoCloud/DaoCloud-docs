@@ -33,6 +33,7 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
+          cache: 'pip'
       
       # Add ssh private key
       - name: Setup SSH
@@ -56,7 +57,7 @@ jobs:
 #               mkdocs-awesome-pages-plugin
       
       # add custom plugin with pdf support
-      - run: pip install git+https://github.com/SAMZONG/mkdocs-with-pdf-support-material-v8
+#       - run: pip install git+https://github.com/SAMZONG/mkdocs-with-pdf-support-material-v8
 
 
       # build docs
