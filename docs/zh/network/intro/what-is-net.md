@@ -4,7 +4,7 @@ DCE 5.0 云原生网络基于开源技术，不仅提供单 CNI 网络支持，�
 
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }
 
-## 方案一：Cillium + MacVLAN/SpiderFlat + SpiderPool + Multus
+## 方案一：Cilium + MacVLAN/SpiderFlat + SpiderPool + Multus
 
 此方案适用于高内核版本（4.19.57+）的 Linux 操作系统，以 Multus 为调度核心，搭配多 CNI，满足不同的网络场景，打造跨云跨集群的网络联通性。
 同时基于 SpiderFlat 及 SpiderPool 加强 Underlay 网络的 IP 管理分配及 IP 回收能力，具备灵活的 IPAM 管理能力。
@@ -40,11 +40,11 @@ DCE 5.0 云原生网络基于开源技术，不仅提供单 CNI 网络支持，�
 按照上述两种方案，DCE 5.0 可以安装的网络组件包括：
 
 - Cert Manager：证书管理器
-- [Calico](../modules/calico/what.md)：基于 iptables 构建的网络方案
+- [Calico](../modules/calico/what.md)：基于 Linux kernel 技术实现的 Virtual Router,完成数据平面的转发。
 - [Cilium](../modules/cilium/what.md)：基于 eBPF 内核构建的网络方案
-- MacVLAN：基于 Docker 构建的虚拟网络
-- Multus：多网卡多 CNI 支持的核心组件
-- Metalb：负载均衡器
+- MacVLAN：基于 Linux 3.0 以后支持的虚拟网卡技术，可以在一张物理网卡上基于 mac 地址虚拟出多个子接口。
+- [Multus-underlay](../modules/multus-underlay/what.md): 基于 Multus、搭配 Macvlan + SRIOV-CNI 的多网卡实现
+- [Metalb](../modules/metallb/what.md): 裸金属版的Kubernetes 负载均衡器实现
 - [Spiderpool](../modules/spiderpool/what.md)：自动化管理 IP 资源
 
 其他 CNI 和 Ingress 等组件可以按需安装。
