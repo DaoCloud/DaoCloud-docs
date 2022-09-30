@@ -226,25 +226,29 @@ rules:
 
 具体步骤如下：
 
-1. 查询 chart 版本并保存当前 value
+1. 保存当前 value
 
     ```shell
-    helm list -n insight-system
     helm get values insight-agent -n insight-system -o yaml > insight-agent-values-bak.yaml
     ```
 
-    输出类似于：
 
-    ```none
-    NAME        NAMESPACE     REVISION      UPDATED                      STATUS       CHART                  APP VERSION     insight      insight-system  27          2022-08-29 15:45:23.517801658 +0000 UTC deployed      insight-0.8.7-2-g8db2367f     0.8.7-2-g8db2367f insight-agent  insight-system  33          2022-08-29 23:56:52.215048268 +0800 CST deployed      insight-agent-0.8.7-2-g8db2367f 0.8.7-2-g8db2367f
-    ```
-
-2. 修改当前 insight-agent release 的 value
+2. 获取当前版本号 ${insight_version_code}，然后更新配置
 
     ```shell
-    helm upgrade --install --create-namespace --version v0.8.7-2-g8db2367f --cleanup-on-fail insight-agent insight-release/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.enabled=true
+    insight_version_code=`helm list -n insight-system |grep insight-agent | awk {'print $10'}` 
     ```
-
+    
+    ```shell
+    helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent insight-release/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=true 
+    ```
+    
+    如果因为版本未找到而 upgrade 失败，请检查命令中使用的 helm repo 是否有这版本，若没有，请尝试更新helm repo后重试
+    
+    ```shell
+    helm repo update insight-release
+    ```
+    
 3. 重启所有 Pod
 
     重启所有 master 节点的 FluentBit Pod，重启后的 FluentBit 将会采集 `/var/log/kubernetes/audit` 下的日志。
