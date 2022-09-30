@@ -467,6 +467,12 @@ nav:
               - 安装: zh/network/modules/cilium/install.md
               - 配置参考: zh/network/modules/cilium/config.md
               - 常用命令: zh/network/modules/cilium/command.md
+            - Contour:
+              - 介绍: docs/zh/network/modules/contour/what.md
+              - 安装: docs/zh/network/modules/contour/install.md
+            - Ingress-nginx:
+              - 介绍: docs/zh/network/modules/ingress-nginx/what.md
+              - 安装: docs/zh/network/modules/ingress-nginx/install.md
             - F5networks:
               - 介绍: zh/network/modules/f5networks/what.md
               - 安装: zh/network/modules/f5networks/install.md
