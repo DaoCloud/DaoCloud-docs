@@ -88,6 +88,10 @@ plugins:
       htmlmin_opts:
         remove_comments: true
 
+  - redirects:
+        redirect_maps:
+          'api.md': "zh/dce/what-is-dce.md"
+
   - git-revision-date #每页底部显示文档最后更新日期，安装 pip install mkdocs-git-revision-date-plugin
   - git-revision-date-localized #每个页面底部添加本地化更新和创建日期，安装pip install mkdocs-git-revision-date-localized-plugin
     # - type: datetime  #日期格式，有效值为date、datetime、iso_date、iso_datetimetimeago

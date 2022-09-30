@@ -21,6 +21,7 @@ mkdocs-git-committers-plugin-2 = "^1.1.0"
 mkdocs-git-authors-plugin = "^0.6.4"
 mkdocs-material-extensions = "^1.0.3"
 regex = "^2022.9.13"
+mkdocs-redirects = "^1.2.0"
 
 [tool.poetry.dev-dependencies]
 

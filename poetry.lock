@@ -729,6 +729,27 @@ url = "https://pypi.tuna.tsinghua.edu.cn/simple"
 reference = "tsinghua"
 
 [[package]]
+name = "mkdocs-redirects"
+version = "1.2.0"
+description = "A MkDocs plugin for dynamic page redirects to prevent broken links."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+mkdocs = ">=1.1.1"
+
+[package.extras]
+dev = ["autoflake", "black", "isort", "pytest", "twine (>=1.13.0)"]
+release = ["twine (>=1.13.0)"]
+test = ["autoflake", "black", "isort", "pytest"]
+
+[package.source]
+type = "legacy"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+reference = "tsinghua"
+
+[[package]]
 name = "natsort"
 version = "8.1.0"
 description = "Simple yet flexible natural sorting in Python."
@@ -1211,7 +1232,7 @@ reference = "tsinghua"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "8aa99fca2cebcfb8ec1ed488db8fc157f7f028c5105f5ea8c634c0eff9cc46ba"
+content-hash = "1b9913c200dd60c83de4eb641ceb50d90542c0484c8dd2edd2d347834e5e26af"
 
 [metadata.files]
 asyncio = [
@@ -1544,6 +1565,9 @@ mkdocs-minify-plugin = [
 mkdocs-multirepo-plugin = [
     {file = "mkdocs-multirepo-plugin-0.4.7.tar.gz", hash = "sha256:f95f9b2676a5b7992220d9d27c1207123721fe6cea685754ae899eebc644bb17"},
     {file = "mkdocs_multirepo_plugin-0.4.7-py3-none-any.whl", hash = "sha256:0badf6a9ee63c843a74d91d8c19541ad2088c40487988086926df29e69cb3cff"},
+]
+mkdocs-redirects = [
+    {file = "mkdocs-redirects-1.2.0.tar.gz", hash = "sha256:ddd38267d49fdfa19fb2f25b4aed2fb53f0496c818bf3018009c8eaf6676a327"},
 ]
 natsort = [
     {file = "natsort-8.1.0-py3-none-any.whl", hash = "sha256:f59988d2f24e77b6b56f8a8f882d5df6b3b637e09e075abc67b486d59fba1a4b"},
