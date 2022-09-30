@@ -16,3 +16,10 @@ nav:
     - 安装: modules/ingress-nginx/install.md
   - Contour:
     - 安装: modules/contour/install.md
+  - Metallb:
+    - 介绍: modules/metallb/what.md
+    - 安装: modules/metallb/install.md
+    - 使用: module/metallb/usage.md
+  - Multus-underlay:
+    - 介绍: modules/multus-underlay/what.md
+    - 安装: modules/multus-underlay/install.md
