@@ -192,7 +192,6 @@ nav:
           - 产品优势: zh/dce/whyus.md
           - 申请社区免费体验: zh/dce/license0.md
       - 安装:
-        - 部署 Kubernetes 集群: zh/install/install-k8s.md
         - 安装依赖项: zh/install/install-tools.md
         - 在线安装 DCE 5.0: zh/install/install-dce.md
         - 离线安装 DCE 5.0: zh/install/offline-install.md
@@ -360,11 +359,19 @@ nav:
           - 工作负载简介: zh/kairship/05workload/README.md
           - 镜像创建: zh/kairship/05workload/image.md
           - YAML创建: zh/kairship/05workload/yaml.md
+        - 资源管理:
+          - 多云服务: zh/kairship/06resource/service.md
+          - 多云命名空间: zh/kairship/06resource/ns.md
+          - 多云配置项: zh/kairship/06resource/configmap.md
+          - 多云密钥: zh/kairship/06resource/secret.md
+        - 策略管理:
+          - 部署策略: zh/kairship/07policy/deploy.md
+          - 差异化策略: zh/kairship/07policy/diff.md
       - 微服务引擎:
         - 介绍:
           - 功能总览: zh/skoala/intro/features.md
           - 使用场景: zh/skoala/intro/scenarios.md
-          - 产品优势: zh/skoala/intro/advantages.md  
+          - 产品优势: zh/skoala/intro/advantages.md
           - 环境要求: zh/skoala/intro/components.md
         - 选择工作空间: zh/skoala/select-workspace.md
         - 微服务治理中心:
@@ -464,6 +471,13 @@ nav:
               - 介绍: zh/network/modules/f5networks/what.md
               - 安装: zh/network/modules/f5networks/install.md
               - 使用: zh/network/modules/f5networks/usage.md
+            - Metallb:
+              - 介绍: zh/network/modules/metallb/what.md
+              - 安装: zh/network/modules/metallb/install.md
+              - 使用: zh/network/modules/metallb/usage.md
+            - Multus-underlay:
+              - 介绍: zh/network/modules/multus-underlay/what.md
+              - 安装: zh/network/modules/multus-underlay/install.md
       - 中间件:
           - 中间件介绍: zh/middleware/midware.md
           - RabbitMQ 消息队列:

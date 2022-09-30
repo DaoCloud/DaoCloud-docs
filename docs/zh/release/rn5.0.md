@@ -19,7 +19,7 @@
 
 ### 基础设施
 
-**新增** `kpanda`增加 release-notes 生成功能
+**新增** `kpanda` 增加 release-notes 生成功能
 
 **改进** 修改 e2e 为调用 SDK 的方式
 
@@ -31,7 +31,7 @@
 
 **改进** 更新测试用例文档
 
-**新增** `kpanda`增加 release-notes 生成功能
+**新增** `kpanda` 增加 release-notes 生成功能
 
 **新增** `helm install` 后打印 helm notes
 
@@ -105,15 +105,25 @@
 
 **新增** 新增 e2e 测试
 
+**改进** 修复 e2e 部署失败任然 job succeeded 的问题
+
+**改进** 提升 pr 识别运行 e2e 精准度
+
+**改进** 修复每日构建 benchmark 失败的问题
+
+**改进** pr 识别 e2e 过滤 md 文件
+
+**新增** 新增 quota 相关 e2ecase
+
 ### API
 
-**新增** `kpanda`增加 configmap CRUD
+**新增** `kpanda` 增加 configmap CRUD
 
-**新增** `kpanda`支持工作负载全生命周期管理
+**新增** `kpanda` 支持工作负载全生命周期管理
 
 **新增** CRD、CR 的 crud 支持
 
-**新增** `kpanda`可安装在任意 namespace 下
+**新增** `kpanda` 可安装在任意 namespace 下
 
 **优化** `listWorkload`、`listAllWorkload`和`listClusterWorkload` 三个接口进行拆分，细分到具体的 workload kind
 
@@ -121,31 +131,31 @@
 
 **优化** `kpanda` proto 文件注释补全
 
-**新增** `kpanda`增加节点查看、编辑 yaml 功能
+**新增** `kpanda` 增加节点查看、编辑 yaml 功能
 
-**新增** `kpanda`支持节点列表根据状态筛选功能
+**新增** `kpanda` 支持节点列表根据状态筛选功能
 
-**新增** `kpanda`支持 Job、CronJob、Ingress、Pod 事件列表
+**新增** `kpanda` 支持 Job、CronJob、Ingress、Pod 事件列表
 
-**新增** `kpanda`新增支持 HPA CRUD
+**新增** `kpanda` 新增支持 HPA CRUD
 
-**新增** `kpanda`新增支持 插件检测 controller
+**新增** `kpanda` 新增支持 插件检测 controller
 
-**新增** `kpanda`新增支持 pvc storageClass CRUD
+**新增** `kpanda` 新增支持 pvc storageClass CRUD
 
-**新增** `kpanda`新增支持 volume snapshot CRUD
+**新增** `kpanda` 新增支持 volume snapshot CRUD
 
-**新增** `kpanda`所有资源增加名称模糊搜索功能
+**新增** `kpanda` 所有资源增加名称模糊搜索功能
 
-**新增** `kpanda`支持配额管理功能
+**新增** `kpanda` 支持配额管理功能
 
-**新增** `kpanda`新增 all namesapces 的 list pvc 和快照 接口
+**新增** `kpanda` 新增 all namesapces 的 list pvc 和快照 接口
 
-**新增** `kpanda`新增支持 返回 pvc list 中的 pvc 是否支持快照，和扩容
+**新增** `kpanda` 新增支持 返回 pvc list 中的 pvc 是否支持快照，和扩容
 
-**修复** `kpanda`clustersummary 空指针问题
+**修复** `kpanda` clustersummary 空指针问题
 
-**优化** `kpanda`对 insight 的依赖改为弱依赖
+**优化** `kpanda` 对 insight 的依赖改为弱依赖
 
 **新增** `kpanda` 新增 CRD 和 CR 详情
 
@@ -189,19 +199,57 @@
 
 **优化** `kpanda` get cluster 接口可以动态获取网络模式
 
+**改进** `kpanda` 在创建 Helm 应用时进行名称校验
+
+**新增** `kpanda` secret 列表新增根据类型筛选
+
+**新增** `kpanda` 支持显示全部的 Repo
+
+**新增** `kpanda` ListConfigMaps 和 ListSecrets 接口提供只返回 metadata 的功能
+
+**新增** `kpanda` 支持网络模式为 none
+
+**新增** `kpanda` 支持 ntp 网络参数配置
+
+**新增** `kpanda` 支持节点角色筛选
+
+**新增** `kpanda` 新增默认参数 `calico_feature_detect_override`
+
+**新增** `kpanda` 新增 cilium 参数
+
+**新增** `kpanda` 新增 helm release 历史版本及回滚功能
+
+**新增** `kpanda` 新增 NetworkPolicy 的 CRUD
+
+**新增** `kpanda` 新增 cluster 列表针对 kubernetesVersion 和 managedBy 的模糊搜索、namespace 列表针对 workspaceAlias 的模糊搜索
+
+**新增** `kpanda` 除工作负载外所有 list 接口移植 customEngine
+
+**新增** `kpanda` 创建升级集群时记录 k8s 版本号
+
+**新增** `kpanda` 新增 LimitRange 的 CRUD
+
+**新增** `kpanda` 新增 支持cluster ！的lableSelect 的操作
+
+**新增** `kpanda` 新增 支持 node 的 cpu 和 memory 的 request 和 limit 从k8s 获取
+
+**新增** `kpanda` 支持 clusterlcm 离线安装
+
+**优化** `kpanda` 将 apiResourcesList 移动到 cluster 的 status.APIEnablements
+
 ### api-service
 
-**新增** `kpanda`增加权限管理 CRUD
+**新增** `kpanda` 增加权限管理 CRUD
 
-**新增** `kpanda`新增 redis chart
+**新增** `kpanda` 新增 redis chart
 
-**新增** `kpanda`新增 bindingsync controller
+**新增** `kpanda` 新增 bindingsync controller
 
-**新增** `kpanda`支持 rabc 精细化授权
+**新增** `kpanda` 支持 rabc 精细化授权
 
-**新增** `kpanda`支持 rabc 精细化鉴权
+**新增** `kpanda` 支持 rabc 精细化鉴权
 
-**新增** `kpanda`支持 AccessScopeList 精细化查询
+**新增** `kpanda` 支持 AccessScopeList 精细化查询
 
 **新增** 添加 `cloudshell` 的 helm 部署方式并集成到 `kpanda` 中
 
@@ -223,11 +271,11 @@
 
 **新增** `kpanda` watch workspace 变化信息给对应 workspace role 创建 RBAC
 
-**修复** `kpanda`支持跨集群可见性搜索支持原生 sql 查询
+**修复** `kpanda` 支持跨集群可见性搜索支持原生 sql 查询
 
 **修复** `kpanda`修复 ListNamespaceSummary
 
-**改进** 升级 cloudtty ，增加 readiness 的功能
+**改进** 升级 cloudtty，增加 readiness 的功能
 
 **修复** `kpanda` 下载证书优化(支持集群 pod 外部访问)
 
@@ -235,7 +283,7 @@
 
 ### work-api
 
-**新增** 和前端对接按照 insight 的接口类型，新增 cpu 资源使用率，node 资源使用率，workload 资源使用率，pod 资源使用率 接口
+**新增** 和前端对接按照 insight 的接口类型，新增 cpu 资源使用率，node 资源使用率，workload 资源使用率，pod 资源使用率接口
 
 **修复** BFF 中的 node 相关 clust 相关，pod 相关的接口中添加了 insight 的数据
 
@@ -260,6 +308,26 @@
 **新增** `kpanda` 将 namespace quota 上报 gproductresources
 
 **新增** `kpanda` 新增 gproductresources gc 多余 ns 逻辑
+
+**修复** `kpanda` 修复 clusterlcm 新增错误节点导致集群无法卸载 bug
+
+**修复** `kpanda` 修复 kubean 版本升级管理集群标签检测失败
+
+**修复** `kpanda` 修复 1.20 以下 k8s 版本无法更新 APIResource
+
+**修复** `kpanda` 修复更新集群 kubeconfig 的 secret 不存在 bug
+
+**修复** `kpanda` 修复 apply 资源失败的 bug
+
+**修复** `kpanda` 修复获取 clusterCIDR 错误的 bug
+
+**修复** `kpanda` insight 安装的 namespace 错误的 bug
+
+### 安装
+
+**新增** `kpanda` 安装时可指定 redis PVC 的 storageClassName
+
+**新增** `kpanda` 支持 arm 架构
 
 ## 全局管理
 
@@ -297,17 +365,79 @@
 
 **新增** 工作空间 - GProduct 资源配额注册
 
-**新增** 用户与访问控制 - 鉴权(APIServer/SDK)
+**新增** 用户与访问控制 - 鉴权 (APIServer/SDK)
 
 **新增** 审计日志 - 展示(查看/列表/清理设置/导出)
 
 **新增** 审计日志 - 批量插入
 
-**新增** 身份提供商 - 对接 LDAP-用户/用户组同步设置(创建/编辑/删除/查看/同步)
+**新增** 身份提供商 - 对接 LDAP - 用户/用户组同步设置(创建/编辑/删除/查看/同步)
 
-**新增** 平台设置 - 安全策略-密码策略设置
+**新增** 平台设置 - 安全策略 - 密码策略设置
 
 **优化** 工作空间 - 代码架构调整
+
+**新增** 个人中心 - 访问密钥(创建/编辑/删除/查看/列表)
+
+**新增** 审计日志 - 全局管理操作插入审计日志
+
+**新增** 审计日志 - 对接 insight 来收集审计日志
+
+**新增** 平台设置 - 安全策略 - 账号锁定策略
+
+**新增** 平台设置 - 安全策略 - 浏览器关闭策略
+
+**新增** 身份提供商 - 对接 IDP (OIDC 协议)
+
+**新增** 工作空间 - 共享集群权限管理
+
+**新增** 工作空间 - 共享集群配额管理 - 存储
+
+**新增** 平台设置 - 顶部导航外观定制 - 重置功能
+
+**新增** 平台设置 - 安全策略 - 会话超时策略
+
+**新增** 审计日志 - 自动清理功能
+
+**新增** 平台设置 - 安全策略 - 账号锁定策略
+
+**新增** 平台设置 - 顶部导航外观定制 - 还原功能
+
+**新增** 平台设置 - 登录页外观定制 - 还原功能
+
+**新增** 产品导航 - 首页仅对 admin 用户展示
+
+**新增** 工作空间 - 用户仅能查看有权限的 WS & folder 树状结构
+
+**新增** Keycloak 高可用
+
+**新增** 邮件服务器配置 - 支持 insight 和应用工作台发送邮件
+
+**新增** 满足 Helm 规范，支持安装器和离线化
+
+**新增** 许可证 - 未灌入或错误情况处理
+
+**新增** 审计日志 - 数据库自动创建和合并分区
+
+**新增** 支持 arm64 架构
+
+**新增** 支持 https
+
+**新增** 登录 - 背景 theme 支持动画
+
+**新增** 授权鉴权 - 给前端提供当前登录用户的 permissions 列表
+
+**优化** 授权鉴权 - 提供一个 job 来确保 db 和 cr 的同步
+
+**新增** 关于-软件版本 - 模块支持中文名
+
+**优化** LDAP - 配置错误检查
+
+**优化** 各功能操作反馈和提示语报错支持中英文
+
+**优化** 工作空间及层级 - 删除前对是否存在子资源进行检查
+
+**优化** 优化 keycloak jvm 参数
 
 ### API
 
