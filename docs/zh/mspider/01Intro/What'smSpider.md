@@ -10,13 +10,13 @@ DCE 5.0 的服务网格兼容社区原生 Istio 开源服务网格，提供原�
 
 ## 部署方法
 
-参考 `make deploy` 命令，使用内部的构建可以按照以下方式部署。
+依次执行以下命令进行部署。
 
 ```console
-export VERSION=0.0.0-xxxxx # xxxxx means the commit sha of main branch, you can get with `git rev-parse --short HEAD`
-helm repo add mspider-ci https://release.daocloud.io/chartrepo/mspider-ci
+export VERSION=v0.8.4 # 修改为实际部署的版本。
+helm repo add mspider-release https://release.daocloud.io/chartrepo/mspider
 helm repo update
-helm upgrade --install --create-namespace -n mspider-system mspider mspider-ci/mspider --version=${VERSION} --set global.hub=release.daocloud.io/mspider-ci --set global.debug=true
+helm upgrade --install --create-namespace -n mspider-system mspider mspider-release/mspider --version=${VERSION}
 ```
 
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }
