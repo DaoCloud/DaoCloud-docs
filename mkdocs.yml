@@ -452,6 +452,7 @@ nav:
             - Spiderpool:
               - 介绍: zh/network/modules/spiderpool/what.md
               - 安装: zh/network/modules/spiderpool/install.md
+              - 使用: zh/network/modules/spiderpool/usage.md
               - 配置参考: zh/network/modules/spiderpool/config.md
               - 常用命令: zh/network/modules/spiderpool/command.md
             - Calico:
@@ -466,6 +467,10 @@ nav:
               - 安装: zh/network/modules/cilium/install.md
               - 配置参考: zh/network/modules/cilium/config.md
               - 常用命令: zh/network/modules/cilium/command.md
+            - F5networks:
+              - 介绍: zh/network/modules/f5networks/what.md
+              - 安装: zh/network/modules/f5networks/install.md
+              - 使用: zh/network/modules/f5networks/usage.md
             - Metallb:
               - 介绍: zh/network/modules/metallb/what.md
               - 安装: zh/network/modules/metallb/install.md
