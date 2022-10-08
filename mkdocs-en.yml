@@ -445,25 +445,24 @@ nav:
             - What is Network Manager: en/network/intro/what-is-net.md
             - Background: zh/network/intro/background.md
             - Challenges: zh/network/intro/challenges.md
-          - Network Plugins:
-            - Overview: zh/network/modules/modules.md
-            - Spiderpool:
-              - Introduction: en/network/modules/spiderpool/what.md
-              - Installation: zh/network/modules/spiderpool/install.md
-              - Parameters: zh/network/modules/spiderpool/config.md
-              - Commands: zh/network/modules/spiderpool/command.md
-            - Calico:
-              - Introduction: en/network/modules/calico/what.md
-              - Installation: zh/network/modules/calico/install.md
-              - ippool: zh/network/modules/calico/ippool.md
-              - Monitor Metrics: zh/network/modules/calico/metrics.md
-              - Calico Policies: zh/network/modules/calico/policy.md
-              - Troubleshooting: zh/network/modules/calico/debug.md
-            - Cilium:
-              - Introduction: en/network/modules/cilium/what.md
-              - Installation: zh/network/modules/cilium/install.md
-              - Parameters: zh/network/modules/cilium/config.md
-              - Commands: zh/network/modules/cilium/command.md
+            - Network Components: zh/network/modules/modules.md
+          - Calico:
+            - Introduction: en/network/modules/calico/what.md
+            - Installation: zh/network/modules/calico/install.md
+            - ippool: zh/network/modules/calico/ippool.md
+            - Monitor Metrics: zh/network/modules/calico/metrics.md
+            - Calico Policies: zh/network/modules/calico/policy.md
+            - Troubleshooting: zh/network/modules/calico/debug.md
+          - Cilium:
+            - Introduction: en/network/modules/cilium/what.md
+            - Installation: zh/network/modules/cilium/install.md
+            - Parameters: zh/network/modules/cilium/config.md
+            - Commands: zh/network/modules/cilium/command.md
+          - Spiderpool:
+            - Introduction: en/network/modules/spiderpool/what.md
+            - Installation: zh/network/modules/spiderpool/install.md
+            - Parameters: zh/network/modules/spiderpool/config.md
+            - Commands: zh/network/modules/spiderpool/command.md
       - Middleware:
           - What is Middleware: en/middleware/midware.md
           - RabbitMQ Message Queue:

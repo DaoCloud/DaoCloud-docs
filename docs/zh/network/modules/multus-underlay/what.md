@@ -1,32 +1,33 @@
 # 什么是 Multus-underlay
 
-`Multus-underlay` 基于 `Multus` 并搭配一些 Underlay 类型的 CNI 插件(如 Macvlan 或 SRIOV-CNI等)，可为 Pod 插入多张网卡。此外，`Multus-underlay` 还
-解决了 Underlay-CNI 的一些通讯问题。 比如当 Macvlan 作为 CNI 时，它无法与集群 ClusterIP 直接通讯，并且它也无法直接与主机 Macvlan Master 接口通讯的(这是 Linux Macvlan技术的限制)。
+`Multus-underlay` 基于 `Multus` 并搭配一些 Underlay 类型的 CNI 插件（如 MacVLAN 或 SRIOV-CNI 等)，可为 Pod 插入多张网卡。
+此外，`Multus-underlay` 还解决了 Underlay-CNI 的一些通信问题。比如当 MacVLAN 作为 CNI 时，它无法与集群 ClusterIP 直接通信，并且它也无法直接与主机 MacVLAN Master 接口通信的（这是 Linux MacVLAN 技术的限制）。
 
 ## 解决的问题
 
-- Underlay-CNI 类型的 Pod 无法访问集群ClusterIP
+- Underlay-CNI 类型的 Pod 无法访问集群 ClusterIP
 - Underlay-CNI 类型的 Pod 无法通过健康检测
 
 ## 包含的组件
 
-Multus-underlay` 包含下面几个组件: 
+Multus-underlay 包含下面几个组件：
 
-- Multus: 调度多个 CNI 插件，按需为 Pod 插入一张或者多张网卡
-- Meta-plugins: 包括 Veth 和 Router 两个插件, 解决 Underlay-CNI 的一些通讯问题
-- SRIOV-CNI(可选): 可选安装 SRIOV-CNI,但需要硬件支持
+- Multus：调度多个 CNI 插件，按需为 Pod 插入一张或者多张网卡
+- Meta-plugins：包括 Veth 和 Router 两个插件，解决 Underlay-CNI 的一些通信问题
+- SRIOV-CNI（可选）：可选安装 SRIOV-CNI，但需要硬件支持
 
 ### Meta-plugins
 
-[Meta-plugins](https://github.com/spidernet-io/cni-plugins) 包含两个 Meta 插件。分别是 `Veth` 和 `Router`, 它们以 CNI-Chain 的方式被 CRI 调用。在 Macvlan/SRIOV 类的插件调用完成之后再调用，
-通过在 Pod 的 NetNs 中设置一些规则，解决各种通讯问题。
+[Meta-plugins](https://github.com/spidernet-io/cni-plugins) 包含两个 Meta 插件。
+分别是 `Veth` 和 `Router`，它们以 CNI-Chain 的方式被 CRI 调用。在 MacVLAN/SRIOV 类的插件调用完成之后再调用，
+通过在 Pod 的 NetNs 中设置一些规则，解决各种通信问题。
 
 ### Veth-Plugin
 
-Veth 插件与 [ptp](https://github.com/containernetworking/plugins/tree/main/plugins/main/ptp) 有些类似，通过在 Pod NetNs 中床架一对 Veth-Peer 设备, 并劫持来自主机、集群中的流量从 Veth 设备通过。而集群南北向流量仍然从 `eth0` 通过。 下面是 veth 插件搭配 macvlan 的
-multus CRD实例的配置示意：
+Veth 插件与 [ptp](https://github.com/containernetworking/plugins/tree/main/plugins/main/ptp) 有些类似，通过在 Pod NetNs 中添加一对 Veth-Peer 设备，并劫持来自主机、集群中的流量从 Veth 设备通过。
+而集群南北向流量仍然从 `eth0` 通过。下面是 veth 插件搭配 MacVLAN 的 multus CRD 实例的配置示例：
 
-```shell
+```yaml
 apiVersion: k8s.cni.cncf.io/v1
 kind: NetworkAttachmentDefinition
 metadata:
@@ -71,9 +72,10 @@ spec:
 
 ### Router-Plugin
 
-Router 插件通过在 Pod Netns 中设置一些路由规则, 使来自主机、集群内的数据包从 Pod 的 eth0(缺省CNI创建的网卡) 转发, 而来自于集群外的数据包从 Macvlan/SRIOV 创建的网卡转发。下面是 Router 插件搭配 Macvlan 的 Multus CRD实例的配置示意:
+Router 插件通过在 Pod Netns 中设置一些路由规则，使来自主机、集群内的数据包从 Pod 的 eth0（默认 CNI 创建的网卡）转发，而来自于集群外的数据包从 MacVLAN/SRIOV 创建的网卡转发。
+下面是 Router 插件搭配 MacVLAN 的 Multus CRD实例的配置示例：
 
-```shell
+```yaml
 apiVersion: k8s.cni.cncf.io/v1
 kind: NetworkAttachmentDefinition
 metadata:

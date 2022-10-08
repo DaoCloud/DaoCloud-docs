@@ -6,7 +6,7 @@
 
     calico 支持通过 `GlobalNetworkPolicy` 和 `NetworkPolicy` 对 Pod 的 Egress/Ingress 流量进行管控。
 
-    特定 Namespace 的 Pod 只能与此 Namespace 下的 Pod 通讯，如下具有 Label: `environment == "development` 的 namespace 下的 Pod 只能与其 namespace 下的 Pod 通讯：
+    特定 Namespace 的 Pod 只能与此 Namespace 下的 Pod 通信，如下具有 Label: `environment == "development` 的 namespace 下的 Pod 只能与其 namespace 下的 Pod 通信：
 
     ```yaml
     apiVersion: projectcalico.org/v3
@@ -255,19 +255,21 @@ Calico 的 Policy 实现依赖于 `IPtables`。
 当策略增多，节点对应的 `iptables` 数量也会增多，这会影响到性能。
 下面测试关于当策略增加，不同模式下如 `iptables`、`ipset`、`tc-bpf`、`cilium`、`calico` 性能变化（包括 CPU 开销、吞吐量、延迟）。
 
-> NOTE: 这个测试场景是测试Policy的数量对集群内部的流量访问外部CIDR出口流量的影响,其中Calico使用 `GlobalNetworkSet API` 传递想要拒绝出口的 CIDR 列表，然后通过标签选择器引用 `GlobalNetworkPolicy` 中的 `GlobalNetworkSet` 资源。
-> 实际上，这种方式本质使用的 `IPset`，所以我们更应该参考 `IPtables` 模式的数据。
+!!! note
+
+    这个测试场景是测试 Policy 的数量对集群内部的流量访问外部 CIDR 出口流量的影响，其中 Calico 使用 `GlobalNetworkSet API` 传递想要拒绝出口的 CIDR 列表，然后通过标签选择器引用 `GlobalNetworkPolicy` 中的 `GlobalNetworkSet` 资源。
+    实际上，这种方式本质使用的 `IPset`，所以我们更应该参考 `IPtables` 模式的数据。
 
 仅供参考:
 
 ![Throughput](../../images/throughput.svg)
 
-可以看到当规则数增加到 1000 条以上，`IPtables` 的吞吐量大幅度增加
+可以看到当规则数增加到 1000 条以上，`IPtables` 的吞吐量大幅度增加。
 
 ![CPU Usage](../../images/cpu-saturated.svg)
 
-同样增加到 1000 条规则以上, `IPtables` 模式下的 CPU 使用量大幅度增加
+同样增加到 1000 条规则以上，`IPtables` 模式下的 CPU 使用量大幅度增加。
 
 ![Latency](../../images/latency-with-iptables.svg)
 
-同样增加到 1000 条规则以上, `IPtables` 模式下的延迟大幅度增加
+同样增加到 1000 条规则以上，`IPtables` 模式下的延迟大幅度增加。

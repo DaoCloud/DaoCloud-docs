@@ -1,6 +1,6 @@
 # 安装
 
-本页说明如何用 Kubespray 安装 Calico 的配置说明。
+本页说明用 Kubespray 安装 Calico 时各项参数的配置。
 
 ### `enable_dual_stack_networks`
 
@@ -38,17 +38,17 @@
 
 ### `calico_vxlan_mode`
 
-表示是否启用 vxlan 隧道模式。
+表示是否启用 VXLAN 隧道模式。
 
-默认启用。如没特殊要求，默认启用 vxlan 模式。
+默认启用。如没特殊要求，默认启用 VXLAN 模式。
 
 可在安装时暴露配置项，默认 always。
 
 ### `calico_ipip_mode`
 
-表示是否启用 ipip 隧道模式。
+表示是否启用 IPIP 隧道模式。
 
-默认关闭。如没特殊要求，默认启用 vxlan 模式。
+默认关闭。如没特殊要求，默认启用 VXLAN 模式。
 
 可在安装时暴露配置项，默认 Never。
 
@@ -91,4 +91,3 @@ CentOS 8.0 下的 `calico iptables backend mode` 需要和主机的 iptables 模
 需要和主机的 iptables 模式保持一致。
 
 只针对于 CentOS 8.0。
-
