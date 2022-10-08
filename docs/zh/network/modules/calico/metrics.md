@@ -6,29 +6,29 @@
 
 通过 `kubespray` 部署时可根据 `calico_felix_prometheusmetricsenabled` 参数决定是否打开，默认为 false. 或者通过下面的方式手动开启：
 
-开启 `calico_felix_prometheusmetricsenabled`：
+1. 开启 `calico_felix_prometheusmetricsenabled`：
 
-```shell
-calicoctl patch felixconfiguration default  --patch '{"spec":{"prometheusMetricsEnabled": true}}'
-```
+    ```shell
+    calicoctl patch felixconfiguration default  --patch '{"spec":{"prometheusMetricsEnabled": true}}'
+    ```
 
-或者
+    或者
 
-```shell
-kubectl patch felixconfiguration default --type merge --patch '{"spec":{"prometheusMetricsEnabled": true}}'
-```
+    ```shell
+    kubectl patch felixconfiguration default --type merge --patch '{"spec":{"prometheusMetricsEnabled": true}}'
+    ```
 
-开启 `calico_kube_controller_metrics`：
+2. 开启 `calico_kube_controller_metrics`：
 
-```shell
-calicoctl patch kubecontrollersconfiguration default  --patch '{"spec":{"prometheusMetricsPort": 9095}}'
-```
+    ```shell
+    calicoctl patch kubecontrollersconfiguration default  --patch '{"spec":{"prometheusMetricsPort": 9095}}'
+    ```
 
-或者
+    或者
 
-```shell
-kubectl patch kubecontrollersconfiguration default --type=merge  --patch '{"spec":{"prometheusMetricsPort": 9095}}'
-```
+    ```shell
+    kubectl patch kubecontrollersconfiguration default --type=merge  --patch '{"spec":{"prometheusMetricsPort": 9095}}'
+    ```
 
 ## 创建各自组件的 metrics service
 

@@ -451,43 +451,42 @@ nav:
             - 云原生网络方案: zh/network/intro/what-is-net.md
             - 背景: zh/network/intro/background.md
             - 挑战: zh/network/intro/challenges.md
-          - 网络组件:
-            - 组件概述: zh/network/modules/modules.md
-            - Spiderpool:
-              - 介绍: zh/network/modules/spiderpool/what.md
-              - 安装: zh/network/modules/spiderpool/install.md
-              - 使用: zh/network/modules/spiderpool/usage.md
-              - 配置参考: zh/network/modules/spiderpool/config.md
-              - 常用命令: zh/network/modules/spiderpool/command.md
-            - Calico:
-              - 介绍: zh/network/modules/calico/what.md
-              - 安装: zh/network/modules/calico/install.md
-              - ippool: zh/network/modules/calico/ippool.md
-              - 监控指标: zh/network/modules/calico/metrics.md
-              - Calico 网络策略: zh/network/modules/calico/policy.md
-              - 故障排查: zh/network/modules/calico/debug.md
-            - Cilium:
-              - 介绍: zh/network/modules/cilium/what.md
-              - 安装: zh/network/modules/cilium/install.md
-              - 配置参考: zh/network/modules/cilium/config.md
-              - 常用命令: zh/network/modules/cilium/command.md
-            - Contour:
-              - 介绍: zh/network/modules/contour/what.md
-              - 安装: zh/network/modules/contour/install.md
-            - Ingress-nginx:
-              - 介绍: zh/network/modules/ingress-nginx/what.md
-              - 安装: zh/network/modules/ingress-nginx/install.md
-            - F5networks:
-              - 介绍: zh/network/modules/f5networks/what.md
-              - 安装: zh/network/modules/f5networks/install.md
-              - 使用: zh/network/modules/f5networks/usage.md
-            - Metallb:
-              - 介绍: zh/network/modules/metallb/what.md
-              - 安装: zh/network/modules/metallb/install.md
-              - 使用: zh/network/modules/metallb/usage.md
-            - Multus-underlay:
-              - 介绍: zh/network/modules/multus-underlay/what.md
-              - 安装: zh/network/modules/multus-underlay/install.md
+            - 网络组件: zh/network/modules/modules.md
+          - Calico:
+            - 介绍: zh/network/modules/calico/what.md
+            - 安装: zh/network/modules/calico/install.md
+            - ippool: zh/network/modules/calico/ippool.md
+            - 监控指标: zh/network/modules/calico/metrics.md
+            - Calico 网络策略: zh/network/modules/calico/policy.md
+            - 故障排查: zh/network/modules/calico/debug.md
+          - Cilium:
+            - 介绍: zh/network/modules/cilium/what.md
+            - 安装: zh/network/modules/cilium/install.md
+            - 配置参考: zh/network/modules/cilium/config.md
+            - 常用命令: zh/network/modules/cilium/command.md
+          - Contour:
+            - 介绍: zh/network/modules/contour/what.md
+            - 安装: zh/network/modules/contour/install.md
+          - F5networks:
+            - 介绍: zh/network/modules/f5networks/what.md
+            - 安装: zh/network/modules/f5networks/install.md
+            - 使用: zh/network/modules/f5networks/usage.md
+          - Ingress-nginx:
+            - 介绍: zh/network/modules/ingress-nginx/what.md
+            - 安装: zh/network/modules/ingress-nginx/install.md
+          - Metallb:
+            - 介绍: zh/network/modules/metallb/what.md
+            - 安装: zh/network/modules/metallb/install.md
+            - 使用: zh/network/modules/metallb/usage.md
+          - Multus-underlay:
+            - 介绍: zh/network/modules/multus-underlay/what.md
+            - 安装: zh/network/modules/multus-underlay/install.md
+          - Spiderpool:
+            - 介绍: zh/network/modules/spiderpool/what.md
+            - 安装: zh/network/modules/spiderpool/install.md
+            - 使用: zh/network/modules/spiderpool/usage.md
+            - 配置参考: zh/network/modules/spiderpool/config.md
+            - 常用命令: zh/network/modules/spiderpool/command.md
       - 中间件:
           - 中间件介绍: zh/middleware/midware.md
           - RabbitMQ 消息队列:
