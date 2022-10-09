@@ -287,7 +287,9 @@ nav:
         - 个人中心:
           - 安全设置: zh/ghippo/04UserGuide/06PersonalCenter/SecuritySetting.md
           - 访问密钥: zh/ghippo/04UserGuide/06PersonalCenter/Password.md
-          - 语言设置: zh/ghippo/04UserGuide/06PersonalCenter/Language.md      
+          - 语言设置: zh/ghippo/04UserGuide/06PersonalCenter/Language.md
+        - 权限说明: 
+          - 微服务引擎权限: zh/ghippo/permissions/skoala.md   
       - 可观测性:
           - 介绍:
             - 什么是可观测性: zh/insight/03ProductBrief/WhatisInsight.md
