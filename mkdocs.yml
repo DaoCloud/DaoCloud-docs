@@ -536,6 +536,17 @@ nav:
               - 创建 Redis 实例: zh/middleware/redis/userguide/create.md
               - 更新 Redis 实例: zh/middleware/redis/userguide/update.md
               - 删除 Redis 实例: zh/middleware/redis/userguide/delete.md
+          - Kafka 消息队列:
+              - 什么是 Kafka: zh/middleware/kafka/intro/what.md
+              - 适用场景: zh/middleware/kafka/intro/scenarios.md
+              - 首次使用 Kafka: zh/middleware/kafka/userguide/login.md
+              - 安装和卸载 Kafka: zh/middleware/kafka/quickstart/install.md
+              - 创建 Kafka 实例: zh/middleware/kafka/userguide/create.md
+              - 更新 Kafka 实例: zh/middleware/kafka/userguide/update.md
+              - 删除 Kafka 实例: zh/middleware/kafka/userguide/delete.md
+              - 查看消息队列: zh/middleware/kafka/userguide/view.md
+              - 实例监控: zh/middleware/kafka/userguide/insight.md
+              - 配置参数: zh/middleware/kafka/userguide/config.md
       - 云原生本地存储:
           - 介绍: zh/hwameistor/intro/what.md
           - 模块: 
