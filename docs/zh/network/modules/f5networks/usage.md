@@ -46,9 +46,9 @@
 
 4. 在集群外发，访问 F5 分配到的 VIP ，即可访问到服务。
 
-## 7 层负载均衡
+## 7层负载均衡 http
 
-当组件安装为 4 层负载均衡模式时，可为集群中的 ingress 创建 F5 的负载均衡服务，具体用法请参考 [F5 官方文档](https://clouddocs.f5.com/containers/latest/userguide/ingress.html)。
+当组件安装为 7 层负载均衡模式时，可为集群中的 ingress 创建 F5 的负载均衡服务，具体使用，可参考 [F5 官方文档](https://clouddocs.f5.com/containers/latest/userguide/ingress.html)
 
 以下给出简单的例子：
 
@@ -114,3 +114,31 @@
    ![f5network usage4](../../images/f5-usage4.png)
 
 5. 在集群外发，访问 F5 分配到 URL http://VIP/http-server，即可访问到服务。
+
+## 7层负载均衡 https
+
+1. 创建 一组 TLS 证书
+
+2. 创建 secret （注意！ secert 的 key 必须是 tls.key 和 tls.crt）
+        kubectl  delete secret ingress1-ssl
+        kubectl create secret generic ingress1-ssl \
+            --from-file=./tls.crt --from-file=./tls.key
+
+3. 创建 ingress 对象
+
+        apiVersion: networking.k8s.io/v1
+        kind: Ingress
+        metadata:
+          name: $NAME
+          annotations:
+            # http 重定向到 https 来访问
+            ingress.kubernetes.io/ssl-redirect: "true"
+            ingress.kubernetes.io/allow-http: "false"
+        spec:
+          ingressClassName: ${INGRESS_CLASS}
+          tls:
+          - hosts:
+             - test.example.com
+             secretName: ingress1-ssl
+          rules:
+          ....
