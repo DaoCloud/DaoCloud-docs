@@ -61,7 +61,8 @@ spec:
 apiVersion: policy.karmada.io/v1alpha1
 kind: PropagationPolicy
 metadata:
-  name: demo-nginx-pp # The default namespace is `default`.
+  name: demo-nginx-pp
+  namespace: default    # The default namespace is `default`.
 spec:
   resourceSelectors:
     - apiVersion: apps/v1
@@ -102,8 +103,7 @@ spec:
           - skoala-stage
       overriders:
         plaintext:
-          - path: "/metadata/labels"
+          - path: "/metadata/labels/env"
             operator: add
-            value:
-              env: skoala-stage
+            value: skoala-stage
 ```

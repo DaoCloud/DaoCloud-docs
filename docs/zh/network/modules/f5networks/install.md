@@ -54,7 +54,7 @@
 
 1. 拥有一个 DCE 集群，登录 global 集群的 WEBUI 管理界面，在导航的`容器管理`->`集群列表`中，登录希望安装本组件的集群。
 
-2. 在 `helm 应用`->`helm 模板`中，选择 `system` 仓库和`网络`组件，点击安装 `f5network`。
+2. 在 `Helm 应用` -> `Helm 模板`中，选择 `system` 仓库和`网络`组件，点击安装 `f5network`。
 
     ![f5network helm](../../images/f5network-helm.png)
 
