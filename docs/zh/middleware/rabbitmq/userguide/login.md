@@ -1,6 +1,6 @@
 # 首次进入 RabbitMQ
 
-请提前联系管理员在 `容器管理 -> helm 应用` 安装好 RabbitMQ-Operator 后，执行以下操作。
+请提前联系管理员在`容器管理` -> `Helm 应用`安装好 RabbitMQ-Operator 后，执行以下操作。
 
 1. 在左侧导航栏中选择 `RabbitMQ 消息队列`。
 
