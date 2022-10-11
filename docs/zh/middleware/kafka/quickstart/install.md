@@ -86,11 +86,11 @@ helm uninstall mcamel-kafka -n mcamel-system
 
 1. 在 Helm 应用列表中，点击最右侧的 `⋮`，在弹出菜单中选择`删除`。
 
-    ![](../images/install03.png)
+    ![](../images/uninstall01.png)
 
 2. 在弹窗中输入要删除的名称，确认无误后，点击`删除`。
 
-    ![](../images/install03.png)
+    ![](../images/uninstall02.png)
 
 ## 安装参数说明
 
