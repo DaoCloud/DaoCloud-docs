@@ -1,20 +1,20 @@
-# 安装 Kafka
+# 安装 Redis
 
-因为 Kafka 分属于 DCE 5.0 的应用层，所以需要先准备一个 DCE 环境。
+因为 Redis 分属于 DCE 5.0 的应用层，所以需要先准备一个 DCE 环境。
 
-按照以下步骤安装 Kafka。
+按照以下步骤安装 Redis。
 
-## 安装 kafka-operator
+## 安装 redis-operator
 
 1. 在左侧导航栏点击`容器管理` -> `集群列表`。
 
     ![](../images/install01.png)
 
-2. 选择要安装 Kafka 的集群，点击集群名称。
+2. 选择要安装 Redis 的集群，点击集群名称。
 
     ![](../images/install02.png)
 
-3. 在左侧导航栏点击 `Helm 应用` -> `Helm 模板`，在搜索框中输入 `kafka`，敲击回车键，点击 kafka-operator 磁贴卡片。
+3. 在左侧导航栏点击 `Helm 应用` -> `Helm 模板`，在搜索框中输入 `redis`，敲击回车键，点击 Redis 磁贴卡片。
 
     ![](../images/install03.png)
 
@@ -26,13 +26,11 @@
 
     ![](../images/install05.png)
 
-    ![](../images/install06.png)
-
 6. 系统返回 `Helm 应用`列表，屏幕提示创建成功，刷新页面后刚刚创建的应用位于第一个。
 
-    ![](../images/install07.png)
+    ![](../images/install06.png)
 
-## 安装 mcamel-kafka
+## 安装 mcamel-redis
 
 1. 配置仓库。
 
@@ -44,45 +42,45 @@
 2. 查看版本。
 
     ```shell
-    helm search repo mcamel-release/mcamel-kafka --versions
-    NAME                            CHART VERSION   APP VERSION     DESCRIPTION                
-    mcamel-release/mcamel-kafka  0.1.0           0.1.0           A Helm chart for Kubernetes
+    helm search repo mcamel-release/mcamel-redis --versions
+    NAME                            CHART VERSION   APP VERSION     DESCRIPTION
+    mcamel-release/mcamel-redis     0.1.3           0.1.3           A Helm chart for Kubernetes
     ```
 
 3. 安装和升级。
 
     ```shell
-    helm upgrade --install mcamel-kafka --create-namespace -n mcamel-system --cleanup-on-fail \
-    --set global.mcamel.imageTag=v0.1.0 \
+    helm upgrade --install mcamel-redis --create-namespace -n mcamel-system --cleanup-on-fail \
+    --set global.mcamel.imageTag=v0.1.3 \
     --set global.imageRegistry=release.daocloud.io \
-    mcamel-release/mcamel-kafka \
-    --version 0.1.0
+    mcamel-release/mcamel-redis \
+    --version 0.1.3
     ```
 
     参数说明：
 
     ```shell
-    --set ui.image.tag  # 指定前端镜像版本
-    --set ghippo.createCrd  # 注册ghippo路由,默认开启
-    --set insight.serviceMonitor.enabled  # 开启监控,默认开启
-    --set insight.grafanaDashboard.enabled  # 开启监控面板,默认开启
+    --set ui.image.tag: 指定前端镜像版本
+    --set ghippo.createCrd: 注册ghippo路由,默认开启
+    --set insight.serviceMonitor.enabled: 开启监控,默认开启
+    --set insight.grafanaDashboard.enabled: 开启监控面板,默认开启
 
     # 全局参数
-    --set global.mcamel.imageTag  # mcamel-kafka 镜像版本
-    --set global.imageRegistry  # 镜像仓库地址
+    --set global.mcamel.imageTag: mcamel-redis 镜像版本
+    --set global.imageRegistry: 镜像仓库地址
     ```
 
 ## 卸载
 
-卸载时先卸载 mcamel-kafka，再删除 kafka-operator，释放相关资源。
+卸载时先卸载 mcamel-redis，再删除 redis-operator，释放相关资源。
 
-### 卸载 mcamel-kafka
+### 卸载 mcamel-Redis
 
 ```shell
-helm uninstall mcamel-kafka -n mcamel-system
+helm uninstall mcamel-redis -n mcamel-system
 ```
 
-### 删除 kafka-operator
+### 删除 redis-operator
 
 1. 在 Helm 应用列表中，点击最右侧的 `⋮`，在弹出菜单中选择`删除`。
 
@@ -99,8 +97,8 @@ helm uninstall mcamel-kafka -n mcamel-system
 | apiServer.affinity | object | `{}` |  |
 | apiServer.image.pullPolicy | string | `"IfNotPresent"` |  |
 | apiServer.image.registry | string | `"release.daocloud.io"` |  |
-| apiServer.image.repository | string | `"mcamel/mcamel-kafka-apiserver"` |  |
-| apiServer.image.tag | string | `"v0.0.2"` |  |
+| apiServer.image.repository | string | `"mcamel/mcamel-redis-apiserver"` |  |
+| apiServer.image.tag | string | `"v0.0.1"` |  |
 | apiServer.imagePullSecrets | list | `[]` |  |
 | apiServer.livenessProbe.enabled | bool | `true` |  |
 | apiServer.livenessProbe.failureThreshold | int | `3` |  |
@@ -130,22 +128,22 @@ helm uninstall mcamel-kafka -n mcamel-system
 | apiServer.service.httpTargetPort | int | `8080` |  |
 | apiServer.service.type | string | `"ClusterIP"` |  |
 | apiServer.tolerations | list | `[]` |  |
-| ghippo.createCrd | bool | `true` |  |
-| ghippo.version | string | `"v0.1.0"` |  |
+| ghippo.createCrd | bool | `false` |  |
+| ghippo.version | string | `"v0.1.3"` |  |
 | global.imagePullSecrets | list | `[]` |  |
 | global.imageRegistry | string | `""` |  |
 | global.mcamel.imageTag | string | `""` |  |
-| insight.grafanaDashboard.enabled | bool | `true` |  |
+| insight.grafanaDashboard.enabled | bool | `false` |  |
 | insight.grafanaDashboard.metadataLabels | string | `"insight"` |  |
-| insight.serviceMonitor.enabled | bool | `true` |  |
+| insight.serviceMonitor.enabled | bool | `false` |  |
 | insight.serviceMonitor.metadataLabels | string | `"insight"` |  |
-| insight.serviceMonitor.name | string | `"mcamel-kafka"` |  |
-| insight.serviceMonitor.selectorMatchLabels | string | `"kafka"` |  |
+| insight.serviceMonitor.name | string | `"mcamel-redis"` |  |
+| insight.serviceMonitor.selectorMatchLabels | string | `"redis"` |  |
 | ui.affinity | object | `{}` |  |
 | ui.enabled | bool | `true` |  |
 | ui.image.pullPolicy | string | `"IfNotPresent"` |  |
 | ui.image.registry | string | `"release.daocloud.io"` |  |
-| ui.image.repository | string | `"mcamel/mcamel-kafka-ui"` |  |
+| ui.image.repository | string | `"mcamel/mcamel-redis-ui"` |  |
 | ui.image.tag | string | `"v0.0.1"` |  |
 | ui.imagePullSecrets | list | `[]` |  |
 | ui.nodeSelector | object | `{}` |  |

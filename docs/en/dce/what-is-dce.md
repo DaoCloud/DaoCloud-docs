@@ -8,7 +8,7 @@ DCE 5.0 has built a highly adaptable Container Management, which can uniformly m
 
 ![modules](../images/dce-modules02.png)
 
-DCE 5.0 features with cutting-edge capabilities as a cloud-native operating system to cope with different scenarios with custom solutions as below.
+DaoCloud Enterprise 5.0 is a high-performance and scalable cloud-native operating system. In the past eight years, DaoCloud has invested huge to explore and develop a cloud-native operating system with custom and scalable modules to facilitate your business digitalization. You can use each module like a LEGO brick, with zero downtime while upgrading any module. DCE 5.0 is also easy to integrate with hundreds of cloud-native ecological plugins, so you can simply customize solutions for different scenarios. Things go better with such a kind of modular style to grow day by day.
 
 === "Multicloud Management"
 
