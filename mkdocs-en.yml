@@ -182,9 +182,9 @@ nav:
           - Why DCE: zh/dce/whyus.md
           - Free Trial: en/dce/license0.md
       - Install:
-        - Deploy K8S Clusters: en/install/install-k8s.md
         - Install Dependencies: en/install/install-tools.md
-        - Install DCE 5.0: en/install/install-dce.md
+        - Online Install DCE 5.0: en/install/install-dce.md
+        - Air-gap Install DCE 5.0: en/install/offline-install.md
         - Uninstall: en/install/uninstall.md
       - Container Manager:
           - Introduction:
