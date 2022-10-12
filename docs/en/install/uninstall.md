@@ -4,7 +4,7 @@ Run the following commands in sequence to uninstall DCE 5.0 Community Pacakge fr
 
 !!! warning
 
-    Your data will not be backed up.
+    Your data will not be backed up. Please proceed with caution.
 
 ```shell
 kubectl -n mcamel-system delete mysql mcamel-common-mysql-cluster

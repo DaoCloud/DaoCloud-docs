@@ -57,9 +57,9 @@
         apiVersion: provision.daocloud.io/v1alpha1
         kind: ClusterConfig
         spec:
-        	loadBalancer: metallb
-        	istioGatewayVip: 10.6.229.10/32     # 这是 Istio gateway 的 VIP，也会是DCE5.0的控制台的浏览器访问IP
-        	insightVip: 10.6.229.11/32          # 这是 Global 集群的 Insight-Server 采集所有子集群的监控指标的网络路径所用的 VIP
+          loadBalancer: metallb
+          istioGatewayVip: 10.6.229.10/32     # 这是 Istio gateway 的 VIP，也会是DCE5.0的控制台的浏览器访问IP
+          insightVip: 10.6.229.11/32          # 这是 Global 集群的 Insight-Server 采集所有子集群的监控指标的网络路径所用的 VIP
         ```
 
     - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 k8s 负载均衡能力, 配置文件范例如下:
@@ -68,7 +68,7 @@
         apiVersion: provision.daocloud.io/v1alpha1
         kind: ClusterConfig
         spec:
-        	loadBalancer: cloudLB
+          loadBalancer: cloudLB
         ```
 
     - 如果使用 NodePort 暴露控制台（仅推荐 PoC 使用），直接执行第 3 步。
@@ -105,7 +105,7 @@
     apiVersion: provision.daocloud.io/v1alpha1
     kind: ClusterConfig
     spec:
-        loadBalancer: cloudLB
+      loadBalancer: cloudLB
     ```
 
 2. 获取 kind 所在主机的 IP，假定为 `10.6.3.1`，进行安装。

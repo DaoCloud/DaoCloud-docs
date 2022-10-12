@@ -1,35 +1,51 @@
 # Install Dependencies
 
-After [deploying k8s clusters](install-k8s.md), you shall install some dependencies before you explore the capabilities of DCE 5.0.
+After deploying k8s clusters, you shall install some dependencies before you explore the capabilities of DCE 5.0.
 
-## Install dependencies online
+## Install online
 
-On the k8s control plane (or master node), run the following command to install dependencies:
+1. On the k8s control plane (master node), download the dce5-installer binary package.
 
-```shell
-curl -s http://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh | bash
-```
+    ```shell
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
+    ```
 
-!!! note
+    Add the executable permission to `install_prerequisite.sh`:
 
-    This curl command will run the `install_prerequisite.sh` script and will install:
+    ```bash
+    chmod +x install_prerequisite.sh
+    ```
 
-    - helm 3.9.4
-    - skopeo 1.9.2
-    - kubectl 1.25.0
-    - yq 4.27.5
+2. Start to install all prerequisites dependencies.
 
-## Install dependencies offline
+    ```bash
+    bash install_prerequisite.sh online community
+    ```
+
+    !!! note
+
+        Currently, this script includes the following dependencies:
+
+        - helm 3.9.4
+        - skopeo 1.9.2
+        - kubectl 1.25.0
+        - yq 4.27.5
+
+## Install offline
 
 Offline installation means that your hosts are offline and you cannot download the required dependencies, so you need to make an offline package in an online environment.
 
 1. Make the offline package.
 
     ```bash
-    bash install_prerequisite.sh export
+    bash install_prerequisite.sh export community
     ```
 
-2. Upload all files in the directory to the offline environment and perform offline installation.
+    !!! note
+
+        When you performed the above command, `pre_pkgs.tar.gz` will be generated in the current directory.
+
+2. Upload all files in the directory to the offline environment.
 
     ``` bash
     # The script is in the same folder as the offline package
@@ -37,7 +53,11 @@ Offline installation means that your hosts are offline and you cannot download t
     .
     ├── install_prerequisite.sh
     └── pre_pkgs.tar.gz
-
-    # Perform the offline instalaltion
-    $ bash install_prerequisite.sh offline
     ```
+
+3. Perform offline installation.
+
+    ``` bash
+    bash install_prerequisite.sh offline community
+    ```
+    
