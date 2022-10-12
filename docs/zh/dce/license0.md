@@ -7,11 +7,11 @@ DCE 5.0 社区版包含的模块为[全局管理](../ghippo/01ProductBrief/Whati
 
 具体操作步骤为：
 
-1. 点击 [申请许可证密钥](https://qingflow.com/f/58604bf8){ .md-button }，填写表单后点击`提交`。
+1. 点击[申请许可证密钥](https://qingflow.com/f/58604bf8){ .md-button }，填写表单后点击`提交`。
 
     ![license](../images/license011.png)
 
-2. 按屏幕提示，打开邮箱查看包含许可证密钥的邮件，然后点击 [换取离线授权码](https://license.daocloud.io/dce5-license){ .md-button }。
+2. 按屏幕提示，打开邮箱查看包含许可证密钥的邮件，然后点击[换取离线授权码](https://license.daocloud.io/dce5-license){ .md-button }。
 
     ![get-auth-code](../images/license012.png)
 
