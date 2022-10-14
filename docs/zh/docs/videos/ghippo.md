@@ -14,4 +14,10 @@
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/manage-folder.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
+## 管理工作空间 (Workspace)
+
+<div class="responsive-video-container">
+<iframe src="http://harbor-test2.cn-sh2.ufileos.com/docs/videos/workspace.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
