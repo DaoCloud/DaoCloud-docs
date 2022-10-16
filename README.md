@@ -7,6 +7,9 @@
 
 DCE 5.0 docsite is created with MkDocs. All pages are written in markdown. We use GitOps to control workflow and versions.
 
+## Release Notes
+
+- [Release v1.0](docs/README.md)
 ## Open a PR
 
 This docsite uses Pull Request (PR) to modify, translate, and manage all pages.
