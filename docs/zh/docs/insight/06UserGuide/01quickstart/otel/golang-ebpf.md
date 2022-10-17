@@ -1,4 +1,4 @@
-# 使用 OpenTelemetry 自动探针增强 Go 应用
+# 使用 OpenTelemetry 自动探针增强 Go 应用程序（实验性功能）
 
 如果不想手动更改应用代码，您可以尝试使用本文基于 eBPF 的自动增强方式。
 该功能目前还处于捐献到 OpenTelemetry 社区的评审阶段，还不支持 Operator 通过注解方式注入（未来会支持），因此需要手动更改 Deployment YAML 或采用 patch 的方式。
@@ -9,7 +9,7 @@
 
 - 为 Insight-agent 开启 trace 功能
 - trace 数据的地址以及端口是否填写正确
-- opentelemetry-operator-controller-manager-xxx 以及 insight-agent-opentelemetry-collector- xxx 这两个 Pod 是否已准备就绪？
+- deployment/opentelemetry-operator-controller-manager 和 deployment/insight-agent-opentelemetry-collector 对应的 Pod 已经准备就绪？
 
 ## 安装 Instrumentation CR
 

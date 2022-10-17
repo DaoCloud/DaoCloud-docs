@@ -8,13 +8,14 @@
 
 - 为 Insight-agent 开启 trace 功能
 - trace 数据的地址以及端口是否填写正确
-- opentelemetry-operator-controller-manager-xxx 以及 insight-agent-opentelemetry-collector- xxx 这两个 Pod 是否已准备就绪？
+- deployment/opentelemetry-operator-controller-manager 和 deployment/insight-agent-opentelemetry-collector 对应的 Pod 已经准备就绪？
 
 ## 安装 Instrumentation CR
 
 在 Insight-System 命名空间下安装，如已安装可跳过该步骤：
 
-```yaml
+```bash
+kubectl apply -f - <<EOF
 apiVersion: opentelemetry.io/v1alpha1
 kind: Instrumentation
 metadata:
@@ -45,6 +46,7 @@ spec:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python::0.33b0
   dotnet:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.3.1-beta.1
+EOF
 ```
 
 ## 添加注解（接入链路）
@@ -125,7 +127,8 @@ spec:
 
 最终生成的 Yaml 内容如下：
 
-```yaml
+```bash
+kubectl apply -f - <<EOF
 apiVersion: v1
 kind: Pod
 metadata:
@@ -263,6 +266,7 @@ spec:
   priority: 0
   enableServiceLinks: true
   preemptionPolicy: PreemptLowerPriority
+EOF
 ```
 
 ## 链路查询
