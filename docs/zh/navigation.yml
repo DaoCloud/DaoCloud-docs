@@ -118,6 +118,7 @@ nav:
           - 快速入门:
               - 获取 host 地址: insight/06UserGuide/01quickstart/gethosturl.md
               - 安装 insight-agent 采集数据: insight/06UserGuide/01quickstart/installagent.md
+              - 使用 Opentelemetry 让你的应用具备可观测性: insight/06UserGuide/01quickstart/otel/otel.md
           - 仪表盘:
               - 仪表盘: insight/06UserGuide/02dashboard/dashboard.md
               - 以管理员身份登录 Grafana: insight/06UserGuide/02dashboard/logingrafana.md
