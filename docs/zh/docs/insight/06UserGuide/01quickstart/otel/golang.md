@@ -22,18 +22,12 @@ go get go.opentelemetry.io/otel \
 package main
 
 import (
-  "context"
-  "fmt"
-  "io/ioutil"
-  "net"
-  "os"
-  "strings"
+  ······
 
   "github.com/sirupsen/logrus"
   "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
   "go.opentelemetry.io/otel"
   "go.opentelemetry.io/otel/attribute"
-  otelcodes "go.opentelemetry.io/otel/codes"
   "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
   "go.opentelemetry.io/otel/propagation"
   sdktrace "go.opentelemetry.io/otel/sdk/trace"

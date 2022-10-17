@@ -3,11 +3,12 @@
 
 ## 前提条件
 请确保 Insight Agent 已经就绪，如若没有，请参考 [安装 insight-agent 采集数据](../installagent.md) 并确保以下三项就绪：
+
 - Insight-agent 是否开始了 trace 功能？
 - trace 数据的地址以及端口是否填写正确？
 - opentelemetry-operator-controller-manager-xxx 以及 insight-agent-opentelemetry-collector- xxx 这两个 pod 是否已经准备就绪？
 
-## 安装 CR
+## 安装 Instrumentation CR
 在 Insight-System 命名空间下安装，如已安装可跳过该步骤：
 ```yaml
 apiVersion: opentelemetry.io/v1alpha1

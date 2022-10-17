@@ -3,11 +3,12 @@
 
 ## 前提条件
 请确保 Insight Agent 已经就绪，如若没有，请参考 [安装 insight-agent 采集数据](../installagent.md) 并确保以下三项就绪：
+
 - Insight-agent 是否开始了 trace 功能？
 - trace 数据的地址以及端口是否填写正确？
 - opentelemetry-operator-controller-manager-xxx 以及 insight-agent-opentelemetry-collector- xxx 这两个 pod 是否已经准备就绪？
 
-## 安装CR
+## 安装 Instrumentation CR
 在 Insight-system namespace下安装，如已安装可跳过该步骤。
 
 注意：该 CR 目前只支持注入对接 Insight 所需要的环境变量（包括服务名，链路上报地址等等），未来会支持注入 Golang 探针。
