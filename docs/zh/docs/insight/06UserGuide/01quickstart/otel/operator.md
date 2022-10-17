@@ -1,14 +1,19 @@
 # 通过 Operator 实现应用程序无侵入增强
-> 目前只有 Java, NodeJs, Python, .Net 支持 Operator 的方式无侵入接入，Golang 后续会完善。
+
+> 目前只有 Java、NodeJs、Python、.Net 支持 Operator 的方式无侵入接入，Golang 后续会完善。
 
 ## 前提条件
-请确保 Insight Agent 已经就绪，如若没有，请参考 [安装 insight-agent 采集数据](../installagent.md) 并确保以下三项就绪：
-- Insight-agent 是否开始了 trace 功能？
-- trace 数据的地址以及端口是否填写正确？
-- opentelemetry-operator-controller-manager-xxx 以及 insight-agent-opentelemetry-collector- xxx 这两个 pod 是否已经准备就绪？
 
-## 安装 CR
+请确保 Insight Agent 已经就绪。如若没有，请参考[安装 insight-agent 采集数据](../installagent.md) 并确保以下三项就绪：
+
+- 为 Insight-agent 开启 trace 功能
+- trace 数据的地址以及端口是否填写正确
+- opentelemetry-operator-controller-manager-xxx 以及 insight-agent-opentelemetry-collector- xxx 这两个 Pod 是否已准备就绪？
+
+## 安装 Instrumentation CR
+
 在 Insight-System 命名空间下安装，如已安装可跳过该步骤：
+
 ```yaml
 apiVersion: opentelemetry.io/v1alpha1
 kind: Instrumentation
@@ -43,37 +48,51 @@ spec:
 ```
 
 ## 添加注解（接入链路）
-以上就绪之后，你就可以通过注解（Annotation）方式为你的应用程序接入链路追踪了，Otel 目前支持通过注解的方式接入链路，根据服务语言，需要添加上不同的 pod annotations。
-每个服务可添加两类注解之一：
-- 只注入环境变量注解
-这类注解只有一个，用于添加 otel 相关的环境变量，比如链路上报地址，容器所在的集群 id, 命名空间等（这个注解在应用在不支持自动探针语言上十分有用）
-```bash
-instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
-```
 
-其中 value 被 / 分成两部分，第一个值(insight-system) 是上一步安装的 CR 的命名空间，第二个值(insight-opentelemetry-autoinstrumentation) 是这个 CR 的名字。
+以上就绪之后，您就可以通过注解（Annotation）方式为应用程序接入链路追踪了，Otel 目前支持通过注解的方式接入链路。根据服务语言，需要添加上不同的 pod annotations。
+每个服务可添加两类注解之一：
+
+- 只注入环境变量注解
+
+    这类注解只有一个，用于添加 otel 相关的环境变量，比如链路上报地址、容器所在的集群 id、命名空间等（这个注解在应用不支持自动探针语言时十分有用）
+
+    ```bash
+    instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
+    ```
+
+    其中 value 被 / 分成两部分，第一个值(insight-system) 是上一步安装的 CR 的命名空间，第二个值(insight-opentelemetry-autoinstrumentation) 是这个 CR 的名字。
 
 - 自动探针注入以及环境变量注入注解
-这个类注解目前有4个，分别对应4种不同的编程语言 java, nodejs, python, dotnet，使用它后就会对 spec.pod 下的第一个容器注入自动探针以及 otel 默认环境变量：
-  - 1. Java 应用：
-```bash
-   instrumentation.opentelemetry.io/inject-java: "insight-system/insight-opentelemetry-autoinstrumentation"
-```
-  - 2. NodeJs 应用：
-```bash
-instrumentation.opentelemetry.io/inject-nodejs: "insight-system/insight-opentelemetry-autoinstrumentation"
-```
-  - 3. Python 应用：
-```bash
-instrumentation.opentelemetry.io/inject-python: "insight-system/insight-opentelemetry-autoinstrumentation"
-```
-  - 4. Dotnet 应用：
-```bash
-instrumentation.opentelemetry.io/inject-dotnet: "insight-system/insight-opentelemetry-autoinstrumentation"
-```
+
+    这类注解目前有 4 个，分别对应 4 种不同的编程语言：java、nodejs、python、dotnet，使用它后就会对 spec.pod 下的第一个容器注入自动探针以及 otel 默认环境变量：
+
+    1. Java 应用
+
+        ```bash
+          instrumentation.opentelemetry.io/inject-java: "insight-system/insight-opentelemetry-autoinstrumentation"
+        ```
+
+    2. NodeJs 应用
+
+        ```bash
+        instrumentation.opentelemetry.io/inject-nodejs: "insight-system/insight-opentelemetry-autoinstrumentation"
+        ```
+
+    3. Python 应用
+
+        ```bash
+        instrumentation.opentelemetry.io/inject-python: "insight-system/insight-opentelemetry-autoinstrumentation"
+        ```
+
+    4. Dotnet 应用
+
+        ```bash
+        instrumentation.opentelemetry.io/inject-dotnet: "insight-system/insight-opentelemetry-autoinstrumentation"
+        ```
 
 ## 自动注入示例 Demo
-> 注意这个 annotations 是加在  spec.annotations 下的
+
+> 注意这个 annotations 是加在 spec.annotations 下的。
 
 ```yaml
 apiVersion: apps/v1
@@ -105,6 +124,7 @@ spec:
 ```
 
 最终生成的 Yaml 内容如下：
+
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -246,5 +266,6 @@ spec:
 ```
 
 ## 链路查询
-如何查询已经接入的服务，参考：[链路查询](../../04dataquery/tracequery.md)
+
+如何查询已经接入的服务，参考[链路查询](../../04dataquery/tracequery.md)。
 
