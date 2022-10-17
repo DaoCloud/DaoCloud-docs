@@ -44,7 +44,7 @@ DCE 5.0 云原生网络基于开源技术，不仅提供单 CNI 网络支持，�
 - [Contour](../modules/contour/what.md)：一个开源的 Kubernetes Ingress 控制器，使用 Envoy 作为数据面。
 - [f5networks](../modules/f5networks/what.md)：全面控制 F5 设备，将集群中 service 和 ingress 配置同步到 F5 硬件设备上，实现集群北向入口的负载均衡。
 - [Ingress-nginx](../modules/metallb/what.md)：是 Kubernetes 官方社区托管的 Ingress 控制器，使用 nginx 作为反向代理和负载均衡
-- [Metalb](../modules/metallb/what.md)：裸金属版的 Kubernetes 负载均衡器实现
+- [MetalLB](../modules/metallb/what.md)：裸金属版的 Kubernetes 负载均衡器实现
 - [Multus-underlay](../modules/multus-underlay/what.md)：基于 Multus、搭配 Macvlan + SRIOV-CNI 的多网卡实现
 - [Spiderpool](../modules/spiderpool/what.md)：自动化管理 IP 资源
 

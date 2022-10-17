@@ -44,7 +44,7 @@ Regrading the two solutions mentioned above, DCE 5.0 allows to install the follo
 - [Cilium](../modules/cilium/what.md)：a network solution based on eBPF kernel
 - MacVLAN：virtual network based on Docker
 - Multus：core component for multi-NIC and multi-CNI support
-- Metalb：load balancer
+- MetalLB: A load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols.
 - [Spiderpool](../modules/spiderpool/what.md)：an automation tool to manage IP resources
 
 Other components such as CNI and Ingress can be installed on demand.
