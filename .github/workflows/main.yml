@@ -16,6 +16,7 @@ env:
   UCLOUD_PRIVATEKEY : ${{ secrets.UCLOUD_PRIVATEKEY }}
   UCLOUD_REGION : ${{ secrets.UCLOUD_REGION }}
   UCLOUD_BUCKET : ${{ secrets.UCLOUD_BUCKET }}
+  CI: 1
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

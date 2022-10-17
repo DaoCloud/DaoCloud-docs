@@ -22,10 +22,10 @@ help:
 	@echo
 
 serve:
-	docker run --rm -it -p 8000:8000 -v ${PWD}:/docs ${BASE_IMAGE}:${BASE_IMAGE_VERSION}
+	docker run --rm -it -e ENABLED_GIT_REVISION_DATE="false" -p 8000:8000 -v ${PWD}/docs/zh:/docs ${BASE_IMAGE}:${BASE_IMAGE_VERSION}
 
 in-serve:
-	docker run --rm -it -p 8000:8000 -v ${PWD}:/docs ${INS_IMAGE}:${INS_IMAGE_VERSION}
+	docker run --rm -it -e ENABLED_GIT_REVISION_DATE="false" -p 8000:8000 -v ${PWD}:/docs ${INS_IMAGE}:${INS_IMAGE_VERSION}
 
 clean:
 	rm -rf public site
