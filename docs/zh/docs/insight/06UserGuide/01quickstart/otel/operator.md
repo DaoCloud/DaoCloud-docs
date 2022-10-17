@@ -10,7 +10,9 @@
 
 ## 安装 Instrumentation CR
 在 Insight-System 命名空间下安装，如已安装可跳过该步骤：
-```yaml
+
+```bash
+kubectl apply -f - <<EOF
 apiVersion: opentelemetry.io/v1alpha1
 kind: Instrumentation
 metadata:
@@ -38,9 +40,10 @@ spec:
   nodejs:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.31.0
   python:
-    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python::0.33b0
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.34b0
   dotnet:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.3.1-beta.1
+EOF
 ```
 
 ## 添加注解（接入链路）

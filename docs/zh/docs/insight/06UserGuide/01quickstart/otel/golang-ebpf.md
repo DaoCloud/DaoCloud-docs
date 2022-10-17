@@ -13,7 +13,8 @@
 
 注意：该 CR 目前只支持注入对接 Insight 所需要的环境变量（包括服务名，链路上报地址等等），未来会支持注入 Golang 探针。
 
-```yaml
+```bash
+kubectl apply -f - <<EOF
 apiVersion: opentelemetry.io/v1alpha1
 kind: Instrumentation
 metadata:
@@ -44,6 +45,7 @@ spec:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.34b0
   dotnet:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.3.1-beta.1
+EOF
 ```
 
 ## 更改应用程序部署文件
