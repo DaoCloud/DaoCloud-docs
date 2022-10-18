@@ -85,6 +85,16 @@ plugins:
   - search:
       separator: '[\\s\\u200b\\-]'
   # - mermaid2
+
+  # - with-pdf:
+  #     cover: true
+  #     # back_cover: true
+  #     # cover_title: DaoCloud
+  #     # enabled_if_env: ENABLE_PDF_EXPORT
+  #     verbose: false
+
+  - print-site
+
   - minify:
       minify_html: true
       minify_js: true
