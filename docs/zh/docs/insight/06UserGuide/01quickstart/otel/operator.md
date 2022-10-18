@@ -8,7 +8,7 @@
 
 - 为 Insight-agent 开启 trace 功能
 - trace 数据的地址以及端口是否填写正确
-- deployment/opentelemetry-operator-controller-manager 和 deployment/insight-agent-opentelemetry-collector 对应的 Pod 已经准备就绪？
+- deployment/opentelemetry-operator-controller-manager 和 deployment/insight-agent-opentelemetry-collector 对应的 Pod 已经准备就绪
 
 ## 安装 Instrumentation CR
 
@@ -49,7 +49,7 @@ spec:
 EOF
 ```
 
-## 添加注解（接入链路）
+## 添加注解，自动接入链路
 
 以上就绪之后，您就可以通过注解（Annotation）方式为应用程序接入链路追踪了，Otel 目前支持通过注解的方式接入链路。根据服务语言，需要添加上不同的 pod annotations。
 每个服务可添加两类注解之一：
@@ -103,8 +103,6 @@ metadata:
   name: my-app
   labels:
     app: my-app
-  annotations:
-    instrumentation.opentelemetry.io/inject-java: "insight-system/insight-opentelemetry-autoinstrumentation" # ❌
 spec:
   selector:
     matchLabels:
@@ -115,7 +113,7 @@ spec:
       labels:
         app: my-app
       annotations:
-        instrumentation.opentelemetry.io/inject-java: "insight-system/insight-opentelemetry-autoinstrumentation" # ☑️
+        instrumentation.opentelemetry.io/inject-java: "insight-system/insight-opentelemetry-autoinstrumentation"
     spec:
       containers:
       - name: myapp
@@ -128,7 +126,6 @@ spec:
 最终生成的 Yaml 内容如下：
 
 ```bash
-kubectl apply -f - <<EOF
 apiVersion: v1
 kind: Pod
 metadata:
@@ -266,7 +263,6 @@ spec:
   priority: 0
   enableServiceLinks: true
   preemptionPolicy: PreemptLowerPriority
-EOF
 ```
 
 ## 链路查询

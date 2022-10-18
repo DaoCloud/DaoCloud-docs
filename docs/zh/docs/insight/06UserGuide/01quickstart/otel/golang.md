@@ -25,42 +25,56 @@ go get go.opentelemetry.io/otel \
 为了让应用程序能够发送数据，需要一个函数来初始化 OpenTelemetry。在 `main.go` 文件中添加以下代码片段:
 
 ```golang
-package main
-
 import (
-  "context"
-  "fmt"
-  "io/ioutil"
-  "net"
-  "os"
-  "strings"
+    .....
 
-  "github.com/sirupsen/logrus"
-  "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
-  "go.opentelemetry.io/otel"
-  "go.opentelemetry.io/otel/attribute"
-  otelcodes "go.opentelemetry.io/otel/codes"
-  "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
-  "go.opentelemetry.io/otel/propagation"
-  sdktrace "go.opentelemetry.io/otel/sdk/trace"
-  "go.opentelemetry.io/otel/trace"
+    "github.com/gin-gonic/gin"
+    "go.opentelemetry.io/otel"
+    "go.opentelemetry.io/otel/attribute"
+    "go.opentelemetry.io/otel/exporters/otlp/otlptrace"
+    "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
+
+    "go.opentelemetry.io/otel/sdk/resource"
+    sdktrace "go.opentelemetry.io/otel/sdk/trace"
 )
 
-var (
-  log     *logrus.Logger
-)
+func initTracer() func(context.Context) error {
 
-func initTracerProvider() *sdktrace.TracerProvider {
-  ctx := context.Background()
+    secureOption := otlptracegrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, ""))
+    if len(insecure) > 0 {
+        secureOption = otlptracegrpc.WithInsecure()
+    }
 
-  exporter, err := otlptracegrpc.New(ctx)
-  if err != nil {
-    log.Fatalf("OTLP Trace gRPC Creation: %v", err)
-  }
-  tp := sdktrace.NewTracerProvider(sdktrace.WithBatcher(exporter))
-  otel.SetTracerProvider(tp)
-  otel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(propagation.TraceContext{}, propagation.Baggage{}))
-  return tp
+    exporter, err := otlptrace.New(
+        context.Background(),
+        otlptracegrpc.NewClient(
+            secureOption,
+            otlptracegrpc.WithEndpoint(collectorURL),
+        ),
+    )
+
+    if err != nil {
+        log.Fatal(err)
+    }
+    resources, err := resource.New(
+        context.Background(),
+        resource.WithAttributes(
+            attribute.String("service.name", "my-app"),
+            attribute.String("library.language", "go"),
+        ),
+    )
+    if err != nil {
+        log.Printf("Could not set resources: ", err)
+    }
+
+    otel.SetTracerProvider(
+        sdktrace.NewTracerProvider(
+            sdktrace.WithSampler(sdktrace.AlwaysSample()),
+            sdktrace.WithBatcher(exporter),
+            sdktrace.WithResource(resources),
+        ),
+    )
+    return exporter.Shutdown
 }
 ```
 
@@ -71,11 +85,8 @@ func initTracerProvider() *sdktrace.TracerProvider {
 ```golang
 func main() {
     cleanup := initTracer()
-    defer func() {
-        if err := cleanup.Shutdown(context.Background()); err != nil {
-            log.Fatalf("Tracer Provider Shutdown: %v", err)
-        }
-    }()
+    defer cleanup(context.Background())
+
     ......
 }
 ```
@@ -165,6 +176,19 @@ import (
 
 通过这种方式，您可以确保使用 othttp 包装的每个函数都会自动收集其元数据并启动相应的跟踪。
 
+## 自定义 Span
+
+很多时候，OpenTelemetry 提供的中间件不能帮助我们记录更多内部调用的函数，需要我们自定义 Span 来记录
+
+```golang
+ ······
+	_, span := otel.Tracer("GetServiceDetail").Start(ctx,
+		"spanMetricDao.GetServiceDetail",
+		trace.WithSpanKind(trace.SpanKindInternal))
+	defer span.End()
+  ······
+```
+
 ## 向 span 添加自定义属性和自定义事件
 
 也可以将自定义属性或标签设置为 Span。要添加自定义属性和事件，请按照以下步骤操作：
@@ -234,4 +258,6 @@ span.SetStatus(codes.Error, "internal error")
 
 ## 参考
 
-有关 Demo 演示请参考 [opentelemetry-demo/productcatalogservice/](https://github.com/open-telemetry/opentelemetry-demo/tree/main/src/productcatalogservice)。
+有关 Demo 演示请参考：
+- [opentelemetry-demo/productcatalogservice/](https://github.com/open-telemetry/opentelemetry-demo/tree/main/src/productcatalogservice)。
+- [opentelemetry-collector-contrib/demo](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/examples/demo)

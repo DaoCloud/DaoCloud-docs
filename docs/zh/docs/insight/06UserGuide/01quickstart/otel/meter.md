@@ -11,14 +11,14 @@ Golang 可以通过 sdk 暴露 runtime 指标，具体来说，在应用中添�
 ```golang
 func (s *insightServer) initMeter() *otelPrometheus.Exporter {
     s.meter = global.Meter("xxx")
- 
+
     config := otelPrometheus.Config{
         DefaultHistogramBoundaries: []float64{1, 2, 5, 10, 20, 50},
         Gatherer:                   prometheus.DefaultGatherer,
         Registry:                   prometheus.NewRegistry(),
         Registerer:                 prometheus.DefaultRegisterer,
     }
- 
+
     c := controller.New(
         processor.NewFactory(
             selector.NewWithHistogramDistribution(
@@ -28,20 +28,20 @@ func (s *insightServer) initMeter() *otelPrometheus.Exporter {
             processor.WithMemory(true),
         ),
     )
- 
+
     exporter, err := otelPrometheus.New(config, c)
     if err != nil {
         zap.S().Panicf("failed to initialize prometheus exporter %v", err)
     }
- 
+
     global.SetMeterProvider(exporter.MeterProvider())
- 
+
     http.HandleFunc("/metrics", exporter.ServeHTTP)
- 
+
     go func() {
         _ = http.ListenAndServe(fmt.Sprintf(":%d", 8888), nil)
     }()
- 
+
     zap.S().Info("Prometheus server running on ", fmt.Sprintf(":%d", port))
     return exporter
 }

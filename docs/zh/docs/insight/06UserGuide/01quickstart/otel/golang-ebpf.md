@@ -9,7 +9,7 @@
 
 - 为 Insight-agent 开启 trace 功能
 - trace 数据的地址以及端口是否填写正确
-- deployment/opentelemetry-operator-controller-manager 和 deployment/insight-agent-opentelemetry-collector 对应的 Pod 已经准备就绪？
+- deployment/opentelemetry-operator-controller-manager 和 deployment/insight-agent-opentelemetry-collector 对应的 Pod 已经准备就绪
 
 ## 安装 Instrumentation CR
 
@@ -17,7 +17,7 @@
 
 注意：该 CR 目前只支持注入对接 Insight 所需要的环境变量（包括服务名、链路上报地址等等），未来会支持注入 Golang 探针。
 
-```yaml
+```bash
 kubectl apply -f - <<EOF
 apiVersion: opentelemetry.io/v1alpha1
 kind: Instrumentation
@@ -49,7 +49,7 @@ spec:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.34b0
   dotnet:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.3.1-beta.1
-EOF 
+EOF
 ```
 
 ## 更改应用程序部署文件
