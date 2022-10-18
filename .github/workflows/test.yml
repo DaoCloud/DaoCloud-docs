@@ -51,7 +51,8 @@ jobs:
               mkdocs-macros-plugin \
               mkdocs-git-revision-date-localized-plugin \
               mkdocs-awesome-pages-plugin \
-              mkdocs-redirects
+              mkdocs-redirects \
+              mkdocs-print-site-plugin
       
       # add custom plugin with pdf support
       - run: pip install git+https://github.com/SAMZONG/mkdocs-with-pdf-support-material-v8
