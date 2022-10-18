@@ -114,12 +114,12 @@ nav:
           - 快速入门:
               - 获取 host 地址: insight/06UserGuide/01quickstart/gethosturl.md
               - 安装 insight-agent 采集数据: insight/06UserGuide/01quickstart/installagent.md
-              - 使用 OpenTelemetry 让应用具备可观测性: 
+              - 使用 OTel 赋予应用可观测性: 
                 - insight/06UserGuide/01quickstart/otel/otel.md
-                - 通过 Operator 实现应用程序无侵入增强: insight/06UserGuide/01quickstart/otel/operator.md
-                - 使用 OpenTelemetry SDK 增强 Go 应用程序: insight/06UserGuide/01quickstart/otel/golang.md
-                - 使用 OpenTelemetry SDK 为应用程序暴露指标: insight/06UserGuide/01quickstart/otel/meter.md
-                - 使用 OpenTelemetry 自动探针增强 Go 应用程序: insight/06UserGuide/01quickstart/otel/golang-ebpf.md
+                - 用 Operator 无侵入增强应用: insight/06UserGuide/01quickstart/otel/operator.md
+                - 用 OTel SDK 增强 Go 应用: insight/06UserGuide/01quickstart/otel/golang.md
+                - 用 OTel SDK 为应用暴露指标: insight/06UserGuide/01quickstart/otel/meter.md
+                - 用 OTel 自动探针增强 Go 应用: insight/06UserGuide/01quickstart/otel/golang-ebpf.md
           - 仪表盘:
               - 仪表盘: insight/06UserGuide/02dashboard/dashboard.md
               - 以管理员身份登录 Grafana: insight/06UserGuide/02dashboard/logingrafana.md
@@ -157,7 +157,7 @@ nav:
               - 命名空间管理: amamba/03UserGuide/Namespace/namespace.md
           - 流水线:
               - 自定义创建流水线: amamba/03UserGuide/Pipeline/createpipelinebyself.md
-              - 使用 Jenkinsfile 创建单代码分支流水线: amamba/03UserGuide/Pipeline/createpipelinebyjenkins.md
+              - Jenkinsfile 创建单代码分支流水线: amamba/03UserGuide/Pipeline/createpipelinebyjenkins.md
               - 使用图形化编辑流水线: amamba/03UserGuide/Pipeline/graphicaleditingpipeline.md
               - 凭证管理: amamba/03UserGuide/Pipeline/Credential.md
               - 流水线配置参数:

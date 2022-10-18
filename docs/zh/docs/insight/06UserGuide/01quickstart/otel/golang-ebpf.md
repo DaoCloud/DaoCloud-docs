@@ -1,4 +1,4 @@
-# 使用 OpenTelemetry 自动探针增强 Go 应用程序（实验性功能）
+# 使用 OTel 自动探针增强 Go 应用程序（实验性功能）
 
 如果不想手动更改应用代码，您可以尝试使用本文基于 eBPF 的自动增强方式。
 该功能目前还处于捐献到 OpenTelemetry 社区的评审阶段，还不支持 Operator 通过注解方式注入（未来会支持），因此需要手动更改 Deployment YAML 或采用 patch 的方式。
