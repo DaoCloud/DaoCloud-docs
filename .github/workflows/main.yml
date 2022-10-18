@@ -16,6 +16,7 @@ env:
   UCLOUD_PRIVATEKEY : ${{ secrets.UCLOUD_PRIVATEKEY }}
   UCLOUD_REGION : ${{ secrets.UCLOUD_REGION }}
   UCLOUD_BUCKET : ${{ secrets.UCLOUD_BUCKET }}
+  CI: 1
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -64,8 +65,8 @@ jobs:
 
       # build docs
       - run: pwd
-      - run: mkdocs build -f docs/zh/navigation.yml -d ../../public/
-      - run: mkdocs build -f docs/en/navigation.yml -d ../../public/en/
+      - run: mkdocs build -f docs/zh/mkdocs.yml -d ../../public/
+      - run: mkdocs build -f docs/en/mkdocs.yml -d ../../public/en/
 
       # upload to ucloud bucket
       - run: cd public && pwd && python ../scripts/upload-ucloud.py \

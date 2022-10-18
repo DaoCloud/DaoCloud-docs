@@ -1,7 +1,3 @@
----
-# This file is used to split config and docs navigation
-INHERIT: mkdocs.yml
-
 # Page tree
 nav:
   - DaoCloud 官网: https://www.daocloud.io/
@@ -118,6 +114,12 @@ nav:
           - 快速入门:
               - 获取 host 地址: insight/06UserGuide/01quickstart/gethosturl.md
               - 安装 insight-agent 采集数据: insight/06UserGuide/01quickstart/installagent.md
+              - 使用 OpenTelemetry 让应用具备可观测性: 
+                - insight/06UserGuide/01quickstart/otel/otel.md
+                - 通过 Operator 实现应用程序无侵入增强: insight/06UserGuide/01quickstart/otel/operator.md
+                - 使用 OpenTelemetry SDK 增强 Go 应用程序: insight/06UserGuide/01quickstart/otel/golang.md
+                - 使用 OpenTelemetry SDK 为应用程序暴露指标: insight/06UserGuide/01quickstart/otel/meter.md
+                - 使用 OpenTelemetry 自动探针增强 Go 应用程序: insight/06UserGuide/01quickstart/otel/golang-ebpf.md
           - 仪表盘:
               - 仪表盘: insight/06UserGuide/02dashboard/dashboard.md
               - 以管理员身份登录 Grafana: insight/06UserGuide/02dashboard/logingrafana.md
