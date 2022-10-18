@@ -1,4 +1,4 @@
-# 使用 OpenTelemetry SDK 增强 Go 应用程序
+# 使用 OTel SDK 增强 Go 应用程序
 
 本文包含如何在 Go 应用程序中设置 OpenTelemetry 增强的说明。
 

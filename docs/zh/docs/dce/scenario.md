@@ -42,7 +42,7 @@ CI/CD 流水线能力自动化完成应用构建、部署工作。创新性引�
 
 用户对运行应用观测能力较弱，希望能轻量级或无改造接入就能完成观测接入，完成全方位的应用运行观测（日志、指标、链路）。
 
-涉及模块：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[可观测性](../insight/03ProductBrief/WhatisInsight.md)、[容器网络](../network/intro/what-is-net.md)、、边云协同、信创云
+涉及模块：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[可观测性](../insight/03ProductBrief/WhatisInsight.md)、[容器网络](../network/intro/what-is-net.md)、边云协同、信创云
 
 方案优势：观测数据统一汇总，一个控制面板就能查询到所有集群及负载观测数据，并且深入支持微服务架构、[服务网格](../mspider/01Intro/WhatismSpider.md)、网络 EBPF 观测能力。
 
