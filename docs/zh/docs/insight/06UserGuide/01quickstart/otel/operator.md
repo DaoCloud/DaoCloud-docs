@@ -125,7 +125,7 @@ spec:
 
 最终生成的 Yaml 内容如下：
 
-```bash
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:

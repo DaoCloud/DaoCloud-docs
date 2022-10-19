@@ -8,7 +8,34 @@ OpenTelemetry 项目要求以必须在 OpenTelemetry 协议 (OTLP) 中发出数�
 
 Golang 可以通过 sdk 暴露 runtime 指标，具体来说，在应用中添加以下方法开启 metrics 暴露器：
 
+### 安装相关依赖
+切换/进入到应用程序源文件夹后运行以下命令：
+
 ```golang
+go get go.opentelemetry.io/otel \
+  go.opentelemetry.io/otel/attribute \
+  go.opentelemetry.io/otel/exporters/prometheus \
+  go.opentelemetry.io/otel/metric/global \
+  go.opentelemetry.io/otel/metric/instrument \
+  go.opentelemetry.io/otel/sdk/metric
+```
+
+### 使用 OpenTelemetry SDK 创建初始化函数
+
+```golang
+import (
+    .....
+
+    "go.opentelemetry.io/otel/attribute"
+    otelPrometheus "go.opentelemetry.io/otel/exporters/prometheus"
+    "go.opentelemetry.io/otel/metric/global"
+    "go.opentelemetry.io/otel/metric/instrument"
+    "go.opentelemetry.io/otel/sdk/metric/aggregator/histogram"
+    controller "go.opentelemetry.io/otel/sdk/metric/controller/basic"
+    "go.opentelemetry.io/otel/sdk/metric/export/aggregation"
+    processor "go.opentelemetry.io/otel/sdk/metric/processor/basic"
+    selector "go.opentelemetry.io/otel/sdk/metric/selector/simple"
+)
 func (s *insightServer) initMeter() *otelPrometheus.Exporter {
     s.meter = global.Meter("xxx")
 
@@ -66,7 +93,7 @@ func main() {
 // exposeClusterMetric expose metric like "insight_logging_count{} 1"
 func (s *insightServer) exposeLoggingMetric(lserver *log.LogService) {
     s.meter = global.Meter("insight.io/basic")
- 
+
     var lock sync.Mutex
     logCounter, err := s.meter.AsyncFloat64().Counter("insight_log_total")
     if err != nil {
@@ -116,14 +143,14 @@ OTEL_METRICS_EXPORTER=prometheus
     * Copyright The OpenTelemetry Authors
     * SPDX-License-Identifier: Apache-2.0
     */
-    
+
     package io.opentelemetry.example.prometheus;
-    
+
     import io.opentelemetry.api.metrics.MeterProvider;
     import io.opentelemetry.exporter.prometheus.PrometheusHttpServer;
     import io.opentelemetry.sdk.metrics.SdkMeterProvider;
     import io.opentelemetry.sdk.metrics.export.MetricReader;
-    
+
     public final class ExampleConfiguration {
     
       /**

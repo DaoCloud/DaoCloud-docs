@@ -130,6 +130,144 @@ EOF
                 path: /sys/kernel/debug
     ```
 
+最终生成的 Yaml 内容如下：
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: voting-84b696c897-p9xbp
+  generateName: voting-84b696c897-
+  namespace: default
+  uid: 742639b0-db6e-4f06-ac90-68a80e2b8a11
+  resourceVersion: '65560793'
+  creationTimestamp: '2022-10-19T07:08:56Z'
+  labels:
+    app: voting-svc
+    pod-template-hash: 84b696c897
+    version: v11
+  annotations:
+    cni.projectcalico.org/containerID: 0a987cf0055ce0dfbe75c3f30d580719eb4fbbd7e1af367064b588d4d4e4c7c7
+    cni.projectcalico.org/podIP: 192.168.141.218/32
+    cni.projectcalico.org/podIPs: 192.168.141.218/32
+    instrumentation.opentelemetry.io/inject-sdk: insight-system/insight-opentelemetry-autoinstrumentation
+spec:
+  volumes:
+    - name: launcherdir
+      emptyDir: {}
+    - name: kernel-debug
+      hostPath:
+        path: /sys/kernel/debug
+        type: ''
+    - name: kube-api-access-gwj5v
+      projected:
+        sources:
+          - serviceAccountToken:
+              expirationSeconds: 3607
+              path: token
+          - configMap:
+              name: kube-root-ca.crt
+              items:
+                - key: ca.crt
+                  path: ca.crt
+          - downwardAPI:
+              items:
+                - path: namespace
+                  fieldRef:
+                    apiVersion: v1
+                    fieldPath: metadata.namespace
+        defaultMode: 420
+  containers:
+    - name: voting-svc
+      image: docker.l5d.io/buoyantio/emojivoto-voting-svc:v11
+      command:
+        - /odigos-launcher/launch
+        - /usr/local/bin/emojivoto-voting-svc
+      ports:
+        - name: grpc
+          containerPort: 8080
+          protocol: TCP
+        - name: prom
+          containerPort: 8801
+          protocol: TCP
+      env:
+        - name: GRPC_PORT
+          value: '8080'
+        - name: PROM_PORT
+          value: '8801'
+        - name: OTEL_TRACES_EXPORTER
+          value: otlp
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          value: >-
+            http://insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317
+        - name: OTEL_EXPORTER_OTLP_TIMEOUT
+          value: '200'
+        - name: SPLUNK_TRACE_RESPONSE_HEADER_ENABLED
+          value: 'true'
+        - name: OTEL_SERVICE_NAME
+          value: voting
+        - name: OTEL_RESOURCE_ATTRIBUTES_POD_NAME
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.name
+        - name: OTEL_RESOURCE_ATTRIBUTES_POD_UID
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.uid
+        - name: OTEL_RESOURCE_ATTRIBUTES_NODE_NAME
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: spec.nodeName
+        - name: OTEL_PROPAGATORS
+          value: jaeger,b3
+        - name: OTEL_TRACES_SAMPLER
+          value: always_on
+        - name: OTEL_RESOURCE_ATTRIBUTES
+          value: >-
+            k8s.container.name=voting-svc,k8s.deployment.name=voting,k8s.deployment.uid=79e015e2-4643-44c0-993c-e486aebaba10,k8s.namespace.name=default,k8s.node.name=$(OTEL_RESOURCE_ATTRIBUTES_NODE_NAME),k8s.pod.name=$(OTEL_RESOURCE_ATTRIBUTES_POD_NAME),k8s.pod.uid=$(OTEL_RESOURCE_ATTRIBUTES_POD_UID),k8s.replicaset.name=voting-84b696c897,k8s.replicaset.uid=63f56167-6632-415d-8b01-43a3db9891ff
+      resources:
+        requests:
+          cpu: 100m
+      volumeMounts:
+        - name: launcherdir
+          mountPath: /odigos-launcher
+        - name: kube-api-access-gwj5v
+          readOnly: true
+          mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      imagePullPolicy: IfNotPresent
+    - name: emojivoto-voting-instrumentation
+      image: keyval/otel-go-agent:v0.6.0
+      env:
+        - name: OTEL_TARGET_EXE
+          value: /usr/local/bin/emojivoto-voting-svc
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          value: jaeger:4317
+        - name: OTEL_SERVICE_NAME
+          value: emojivoto-voting
+      resources: {}
+      volumeMounts:
+        - name: kernel-debug
+          mountPath: /sys/kernel/debug
+        - name: kube-api-access-gwj5v
+          readOnly: true
+          mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      imagePullPolicy: IfNotPresent
+      securityContext:
+        capabilities:
+          add:
+            - SYS_PTRACE
+        privileged: true
+        runAsUser: 0
+······
+```
+
 ## 更多请参考
 
 - [Go OpenTelemetry Automatic Instrumentation 入门](https://github.com/keyval-dev/opentelemetry-go-instrumentation/blob/master/docs/getting-started/README.md)

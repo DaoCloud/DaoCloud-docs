@@ -17,7 +17,7 @@ go get go.opentelemetry.io/otel \
   go.opentelemetry.io/otel/sdk \
   go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin \
   go.opentelemetry.io/otel/exporters/otlp/otlptrace \
-  go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc \
+  go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc
 ```
 
 ### 使用 OpenTelemetry SDK 创建初始化函数
@@ -44,12 +44,21 @@ func initTracer() func(context.Context) error {
     if len(insecure) > 0 {
         secureOption = otlptracegrpc.WithInsecure()
     }
+    serviceName, ok := os.LookupEnv("OTEL_SERVICE_NAME")
+    if !ok {
+      serviceName = "my-app"
+    }
+
+    otelAgentAddr, ok := os.LookupEnv("OTEL_EXPORTER_OTLP_ENDPOINT")
+    if !ok {
+      otelAgentAddr = "0.0.0.0:4317"
+    }
 
     exporter, err := otlptrace.New(
         context.Background(),
         otlptracegrpc.NewClient(
             secureOption,
-            otlptracegrpc.WithEndpoint(collectorURL),
+            otlptracegrpc.WithEndpoint(otelAgentAddr),
         ),
     )
 
@@ -59,7 +68,7 @@ func initTracer() func(context.Context) error {
     resources, err := resource.New(
         context.Background(),
         resource.WithAttributes(
-            attribute.String("service.name", "my-app"),
+            attribute.String("service.name", serviceName),
             attribute.String("library.language", "go"),
         ),
     )
@@ -120,13 +129,16 @@ func main() {
     因此，可以在你本地启动应用程序的时候添加如下环境变量：
 
     ```bash
-    OTEL_SERVICE_NAME=my-golang-app
-    OTEL_EXPORTER_OTLP_ENDPOINT=http://insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317
+    OTEL_SERVICE_NAME=my-golang-app OTEL_EXPORTER_OTLP_ENDPOINT=http://insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317 go run main.go...
     ```
 
 - 生产环境运行
 
-请参考[通过 Operator 实现应用程序无侵入增强](./operator.md) 中 `只注入环境变量注解` 相关介绍。
+请参考[通过 Operator 实现应用程序无侵入增强](./operator.md) 中 `只注入环境变量注解` 相关介绍，为 deployment yaml 添加注解：
+
+```bash
+    instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
+```
 
 ## 请求路由
 
@@ -154,6 +166,24 @@ middleware "go.opentelemetry.io/contrib/instrumentation/github.com/gorilla/mux/o
 
 ```golang
 router.Use(middleware.Middleware("my-app"))
+```
+
+### gRPC 增强
+
+同样，OpenTelemetry 也可以帮助您自动检测 gRPC 请求。要检测您拥有的任何 gRPC 服务器，请将拦截器添加到服务器的实例化中。
+
+```golang
+import (
+  grpcotel "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
+)
+func main() {
+  [...]
+
+    s := grpc.NewServer(
+        grpc.UnaryInterceptor(grpcotel.UnaryServerInterceptor()),
+        grpc.StreamInterceptor(grpcotel.StreamServerInterceptor()),
+    )
+}
 ```
 
 ### 如果不使用请求路由
@@ -221,24 +251,6 @@ span.SetAttributes(attribute.String("controller", "books"))
 
 ```golang
 span.AddEvent(msg)
-```
-
-## gRPC 增强
-
-同样，OpenTelemetry 也可以帮助您自动检测 gRPC 请求。要检测您拥有的任何 gRPC 服务器，请将拦截器添加到服务器的实例化中。
-
-```golang
-import (
-  grpcotel "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
-)
-func main() {
-  [...]
-
-    s := grpc.NewServer(
-        grpc.UnaryInterceptor(grpcotel.UnaryServerInterceptor()),
-        grpc.StreamInterceptor(grpcotel.StreamServerInterceptor()),
-    )
-}
 ```
 
 ## 记录错误和异常
