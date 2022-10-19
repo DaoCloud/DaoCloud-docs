@@ -1,6 +1,8 @@
 # 安装依赖项
 
-部署好 Kubernetes 集群后，还需要安装一些依赖项，才能安装 DCE 5.0 体验新一代云原生操作系统的魅力。
+[部署好 Kubernetes 集群](./install-k8s.md)后，还需要安装一些依赖项，才能安装 DCE 5.0 体验新一代云原生操作系统的魅力。
+
+您可以根据自己的实际情况选择在线或离线安装。
 
 ## 在线安装
 
@@ -60,3 +62,5 @@
     ``` bash
     bash install_prerequisite.sh offline community
     ```
+
+接下来就可以[安装 DCE 5.0](./install-dce.md) 了。
