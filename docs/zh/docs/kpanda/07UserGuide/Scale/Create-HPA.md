@@ -8,8 +8,8 @@ DaoCloud Enterprise 5.0 支持 Pod 资源基于指标进行弹性伸缩（Horizo
 
 !!! note
 
-    1. HPA 仅适用于 Deployment 和 StatefulSet，每个 Pod 只能创建一个 HPA。
-    2. 创建 HPA 策略之前，必须限制工作负载能使用的 CPU 最大配额，否则无法计算 CPU 利用率。
+    1. HPA 仅适用于 Deployment 和 StatefulSet，每个工作负载只能创建一个 HPA。
+    2. 如果基于 CPU 利用率创建 HPA 策略，必须事先限制工作负载能使用的 CPU 最大配额，否则无法计算 CPU 利用率。
     3. 如果同时使用 CPU 和内存指标，HPA 策略会根据两项指标分别计算目标副本数，取较大值（但不得超过设置 HPA 策略时配置的最大副本数）。
 
 ## 前提条件
