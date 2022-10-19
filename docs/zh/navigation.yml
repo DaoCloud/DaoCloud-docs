@@ -9,8 +9,8 @@ nav:
           - 产品优势: dce/whyus.md
           - 申请社区免费体验: dce/license0.md
       - 安装:
-          - 安装依赖项: install/install-tools.md
           - 安装 Kubernetes: install/install-k8s.md
+          - 安装依赖项: install/install-tools.md
           - 在线安装 DCE 5.0: install/install-dce.md
           - 离线安装 DCE 5.0: install/offline-install.md
           - 卸载: install/uninstall.md
