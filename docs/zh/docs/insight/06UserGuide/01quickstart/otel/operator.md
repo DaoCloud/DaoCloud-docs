@@ -208,7 +208,7 @@ spec:
           value: '0.85'
         - name: SPLUNK_TRACE_RESPONSE_HEADER_ENABLED
           value: 'true'
-        - name: s
+        - name: OTEL_SERVICE_NAME
           value: my-deployment-with-sidecar
         - name: OTEL_RESOURCE_ATTRIBUTES_POD_NAME
           valueFrom:
