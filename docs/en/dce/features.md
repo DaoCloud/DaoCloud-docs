@@ -1,16 +1,16 @@
 # features
 
-DaoCloud Enterprise 5.0 combines a large number of featuere, and the typical featuers currently supported are as follows. 
+DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typical featuers currently supported are as follows. 
 
 === "[multi-cluster management](../kpanda/03ProductBrief/WhatisKPanda.md)"
 
-- Unified management of multi-cluster, supporting any Kubernetes cluster within all specific version range to be included in the container management scope, 
+- Unified management of multi-cluster, supporting Kubernetes clusters in all version ranges to be included in the container management scope. 
 
-- Rapid cluster deployment. Rapidly deploys enterprise-level Kubernetes cluster on the Web UI, quickly builds enterprise-level container cloud platform, and adapt to the underlying environment of physical machines and VMS. 
+- Rapid cluster deployment. Rapidly deploys enterprise-level Kubernetes clusters on the Web UI, quickly builds enterprise-level container cloud platform, and adapt to the underlying environment of physical machines and VMs. 
 
 - One-click cluster upgrade. Upgrade the Kubernetes version with one click, and manage the upgrade of system components. 
 
-- Cluster high avalability,the built-in cluster disaster recovery and backup abilities ensure that business system can recover from host failures, equipment room interruptions, and natural disasters, improving the stability of the production environment and reducing the risk of business interruption.
+- Cluster high avalability,the built-in cluster disaster recovery and backup abilities ensure that business systems can recover from host failures, equipment room interruptions, and natural disasters, improving the stability of the production environment and reducing the risk of business interruption.
 
 - Full lifecycle management of clusters, realizing the full lifecycle management of self-build cloud native clusters. 
 
@@ -18,13 +18,13 @@ DaoCloud Enterprise 5.0 combines a large number of featuere, and the typical fea
 
 === "Cloud native application management"
 
-- Multi-form cloud native application management, realizing the deployment and lifecycle management of different types of cloud native application, supporting cloud native application, Helm, OEM,  etc., and open multi-cloud application compatibility. 
+- Multi-form cloud native application management, realizing the deployment and lifecycle management of different types of cloud native application, supporting cloud native application, Helm, OEM, etc., and open multi-cloud application compatibility. 
 
 - One-stop deployment to decouple the underlying Kubernetes platform. One-stop deployment, operation and maintenance of service application to realize the lifecycle-management of application. 
 
-- Expansion and reduction of application load. It can manually/automatically expand and reduce the application load,应用负载的扩缩容，通过界面可实现应用负载的手动/自动扩缩容能力，自定义扩缩容策略，应对流量高峰。
+- Expansion and reduction of application load. It can manually/automatically expand and reduce the application load, and customize the policies of expansion and reduction to cope with the traffic peak. 
 
-- The full lifecycle of application， supporting lifecycle-management of application such as application view, update, delete, rollback, time view, and upgrade. 
+- The full lifecycle of application, supporting lifecycle-management of application such as application view, update, delete, rollback, time view, and upgrade. 
 
 - Unified load management abbility of cross-cluster. 
 
@@ -34,12 +34,12 @@ DaoCloud Enterprise 5.0 combines a large number of featuere, and the typical fea
 
 - Cloud-native ability of continuous delivery, containerized management of application construction environment, and custom build machine and other resources to ensure pipeline-level resource isolation, and supporting multiple types of application deployment, making the delivery of cloud-native application easier. 
 
-- Improve R&D(Research and Development) efficiency. In a visual pipeline construction environment, declarative steps are pre packaged, and complex pipelines can be created without scripts, making operation simple. The environment can be automatically created/destroyed according to the resource size to avoid resource waste. 
+- Improve R&D (Research and Development) efficiency. In a visual pipeline construction environment, declarative steps are pre-packaged, and complex pipelines can be created without scripts, making operation simpler. The environment can be automatically created/destroyed according to the resource size to avoid resource waste. 
 
 - Pipelines are code. Pipelines based on declarative (grammar) are easy to learn. The grammar of different steps is standardized. Its configuration is characterized by controllable version, modularization, reusability and declarative. 
 
 - DevOps tools popular in the community are integrated. Stepes in a single pipelines can run on multiple operating systems and multiple architecture nodes. Independent deployment on public cloud, private cloud or host is supported, and enterprise owned systems and platform can be well integrated. 
-  The integration of mainstream software in the industry, such as Kubernetes, Gitlab, SonarQube, Harbor, etc. are supported. 
+  The integration of mainstream software in the industry, such as Kubernetes, Gitlab, SonarQube, Harbor, are supported. 
 
 === "[Multi-cloud application dispatch](../kairship/01product/whatiskair.md)"
 
@@ -61,7 +61,7 @@ DaoCloud Enterprise 5.0 combines a large number of featuere, and the typical fea
 
 - Provide workspace/hierarchy management which is highly compatibel with enterprise business level, and meets the resource isolation and management requirements between departement levels.
 
-- Flexible resource division. Resource division and binding based on resource granularity(namespace, cluster, registry, etc.), and unified allocation of container platform resources.
+- Flexible resource division. Resource division and binding based on resource granularity (namespace, cluster, registry, etc.), and unified allocation of container platform resources.
 
 === "One-stop[Microservice governance](../skoala/intro/features.md)"
 
@@ -87,7 +87,7 @@ DaoCloud Enterprise 5.0 combines a large number of featuere, and the typical fea
 
 - It supports a variety of mainstream middleware: Redis, MySQL, Elasticsearch, RabbitMQ, Kafka, MinIO, etc.
 
-- It supports life-cycle management of the instance, meets a variety of high-availability cluster modes, and can custom the replica and configuration according to the needs of the scene.
+- It supports life-cycle management of instances, meets a variety of high-availability cluster modes, and can custom the replicas and configuration according to the needs of the scene.
 
 - It supports online resource and storage expansion.
 
