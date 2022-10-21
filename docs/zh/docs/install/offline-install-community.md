@@ -36,9 +36,9 @@
 1. 在 k8s 集群控制平面节点（Master 节点）下载社区版的对应离线包并解压。
 
     ``` bash
-    # 假定版本 VERSION=0.3.20
-    export VERSION=v0.3.20
-    wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-${VERSION}.tar
+    # 假定版本 VERSION=0.3.22
+    export VERSION=v0.3.22
+    wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-${VERSION}.tar
     tar -zxvf offline-community-${VERSION}.tar
     ```
 
@@ -47,7 +47,7 @@
     - 下载镜像导入脚本。
 
         ```bash
-        wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline_image_handler.sh
+        wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline_image_handler.sh
         ```
 
         为 `offline_image_handler.sh` 添加可执行权限：
@@ -106,9 +106,9 @@
 3. 在 k8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件。
 
     ```shell
-    # 假定 VERSION 为 v0.3.20
-    export VERSION=v0.3.20
-    curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-${VERSION}
+    # 假定 VERSION 为 v0.3.22
+    export VERSION=v0.3.22
+    curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-${VERSION}
     ```
 
     为 `dce5-installer` 添加可执行权限：
@@ -117,7 +117,7 @@
     chmod +x dce5-installer
     ```
     
-4. 设置配置文件 clusterConfig.yaml
+4. 设置集群配置文件 clusterConfig.yaml
 
     - 如果是非公有云环境（虚拟机、物理机），请启用负载均衡 (metallb)，以规避 NodePort 因节点 IP 变动造成的不稳定。请仔细规划您的网络，设置 2 个必要的 VIP，配置文件范例如下：
 
