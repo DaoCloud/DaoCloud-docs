@@ -10,8 +10,8 @@ nav:
           - Free Trial: dce/license0.md
       - Install:
           - Install Dependencies: install/install-tools.md
-          - Online Install DCE 5.0: install/install-dce.md
-          - Air-gap Install DCE 5.0: install/offline-install.md
+          - Online Install DCE 5.0: install/install-dce-community.md
+          - Air-gap Install DCE 5.0: install/offline-install-community.md
           - Uninstall: install/uninstall.md
       - Container Manager:
           - Introduction:

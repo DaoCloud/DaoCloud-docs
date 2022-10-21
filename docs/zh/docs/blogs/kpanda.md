@@ -184,4 +184,4 @@ Daocloud 第五代容器管理模块引入了自研开源组件 CloudTTY，支�
 
 [了解容器管理](../kpanda/03ProductBrief/WhatisKPanda.md){ .md-button }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/install-dce.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/install-dce-community.md){ .md-button .md-button--primary }

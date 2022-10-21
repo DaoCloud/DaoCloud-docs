@@ -55,4 +55,4 @@ Clusterpedia、Merbridge 和 HwameiStor 已入选 <a href="https://landscape.cnc
 </p>
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/install-dce.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/install-dce-community.md){ .md-button .md-button--primary }

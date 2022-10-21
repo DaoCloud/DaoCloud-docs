@@ -6,7 +6,7 @@ This page describes the installation procedure of DCE 5.0.
 
     Click to [watch installation video](../videos/install.md).
 
-    For offline installation, see [offline installation](offline-intall.md)
+    For offline installation, see [offline installation](offline-install-community.md)
 
 ## Preparation
 

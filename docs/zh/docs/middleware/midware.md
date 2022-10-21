@@ -12,4 +12,4 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件，通过前
 - MinIO 对象存储方案
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/install-dce.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/install-dce-community.md){ .md-button .md-button--primary }

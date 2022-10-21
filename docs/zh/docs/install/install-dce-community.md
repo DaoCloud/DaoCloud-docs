@@ -6,7 +6,7 @@
 
     点击[社区版部署 Demo](../videos/install.md)可观看视频演示。
 
-    如果需要离线安装，请查阅[离线安装步骤](offline-install.md)。
+    如果需要离线安装，请查阅[离线安装步骤](offline-install-community.md)。
 
 ## 准备工作
 

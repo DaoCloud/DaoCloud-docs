@@ -1,7 +1,7 @@
 # 申请社区免费体验
 
 DCE 5.0 社区版包含的模块为[全局管理](../ghippo/01ProductBrief/WhatisGhippo.md)和[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)等模块。
-建议下载并[安装 DCE 5.0](../install/install-dce.md) 之后，参照以下步骤进行激活。
+建议下载并[安装 DCE 5.0](../install/install-dce-community.md) 之后，参照以下步骤进行激活。
 
 ![license](../images/license01.png)
 
@@ -33,4 +33,4 @@ DCE 5.0 社区版包含的模块为[全局管理](../ghippo/01ProductBrief/Whati
     [申请许可证密钥](https://qingflow.com/f/58604bf8){ .md-button .md-button--primary }
     [查看许可证密钥](https://license.daocloud.io/dce5-licenses){ .md-button .md-button--primary }
     [换取离线授权码](https://license.daocloud.io/dce5-license){ .md-button .md-button--primary }
-    [安装 DCE 5.0](../install/install-dce.md){ .md-button .md-button--primary }
+    [安装 DCE 5.0](../install/install-dce-community.md){ .md-button .md-button--primary }
