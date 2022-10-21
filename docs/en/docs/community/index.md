@@ -57,4 +57,4 @@ Clusterpedia and Merbridge have been selected and listed in the <a href="https:/
 </p>
 
 [Free Trial Now](../dce/license0.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/install-dce.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/install-dce-community.md){ .md-button .md-button--primary }

@@ -434,6 +434,7 @@ nav:
       - 应用工作台: videos/amamba.md
       - 服务网格: videos/mspider.md
       - 微服务引擎: videos/skoala.md
+      - 多云编排: videos/kairship.md
       - 中间件: videos/mcamel.md
   - 博客:
       - DCE 开发背景: blogs/blog00.md

@@ -11,4 +11,4 @@ We've produced great video tutorials for you to get started quickly.
 - [Middleware](../middleware/midware.md)
 
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/install-dce.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/install-dce-community.md){ .md-button .md-button--primary }

@@ -12,4 +12,4 @@ Users can install/enable the following middleware on demand, and plug and play.
 - MinIO: object storage solution
 
 [[Free Trial Now](../dce/license0.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/install-dce.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/install-dce-community.md){ .md-button .md-button--primary }
