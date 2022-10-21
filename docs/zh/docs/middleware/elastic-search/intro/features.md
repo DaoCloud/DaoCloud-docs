@@ -26,4 +26,4 @@ Elasticsearch 支持的通用功能特性如下：
 - 基于 elasticsearch-exporter 暴露指标
 - 基于 Grafana Operator 集成 Elasticsearch Dashboard，展示监控数据
 - 使用 ServiceMonitor 对接 Prometheus 抓取指标
-- 基于「工作空间 Workspace」多租户化管理
+- 基于[工作空间 Workspace](../../../ghippo/04UserGuide/02Workspace/Workspaces.md) 多租户化管理

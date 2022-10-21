@@ -11,10 +11,9 @@
     ![](../images/login02.png)
 
     !!! note
-    
+
         如果未出现弹窗，可手动点击左上角图标选择一个工作空间。
 
 3. 点击`立即部署`即可开始部署 Elasticsearch 实例。
 
     ![](../images/login03.png)
-    
