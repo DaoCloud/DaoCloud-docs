@@ -4,12 +4,24 @@
 
 您可以根据自己的实际情况选择在线或离线安装。
 
+!!! note
+
+    安装的这些工具包括：
+
+    - podman
+    - helm
+    - skopeo
+    - kind
+    - kubectl
+    - yq
+    - minio client
+
 ## 在线安装
 
 1. 在 Kubernetes 集群的控制平面（Master 节点）上，下载脚本。
 
     ```shell
-    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
+    curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
     ```
 
     为 `install_prerequisite.sh` 添加可执行权限：
@@ -20,18 +32,17 @@
 
 2. 开始在线安装前置依赖。
 
-    ```bash
-    bash install_prerequisite.sh online community
-    ```
+    - 社区版本安装
 
-    !!! note
+        ```bash
+        bash install_prerequisite.sh online community
+        ```
 
-        目前此脚本安装的依赖项包括：
+    - 全模式安装
 
-        - helm 3.9.4
-        - skopeo 1.9.2
-        - kubectl 1.25.0
-        - yq 4.27.5
+        ```bash
+        bash install_prerequisite.sh online full
+        ```
 
 ## 离线安装
 
@@ -39,9 +50,17 @@
 
 1. 制作离线包。
 
-    ```bash
-    bash install_prerequisite.sh export community
-    ```
+    - 社区版制作命令
+
+        ```bash
+        bash install_prerequisite.sh export community
+        ```
+
+    - 全模式制作命令
+
+        ```bash
+        bash install_prerequisite.sh export full
+        ```
 
     !!! note
 
@@ -59,8 +78,16 @@
 
 3. 执行离线安装。
 
-    ``` bash
-    bash install_prerequisite.sh offline community
-    ```
+    - 社区版制作命令
 
-接下来就可以[安装 DCE 5.0](./install-dce.md) 了。
+        ```bash
+        bash install_prerequisite.sh offline community
+        ```
+
+    - 全模式制作命令
+
+        ```bash
+         bash install_prerequisite.sh offline full
+        ```
+
+接下来就可以安装 DCE 5.0 了。

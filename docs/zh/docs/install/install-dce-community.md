@@ -21,7 +21,7 @@
         - 目前仅支持 X86_64 架构
         - 确保集群已安装 CoreDNS
         - 如果是单节点集群，请确保您已移除该节点的污点
-    
+
 - [安装依赖项](install-tools.md)
 
     !!! note
@@ -38,9 +38,9 @@
 1. 在 k8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件。
 
     ```shell
-    # 假定 VERSION 为 v0.3.20
-    export VERSION=v0.3.20
-    curl -Lo ./dce5-installer  https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-${VERSION}
+    # 假定 VERSION 为 v0.3.22
+    export VERSION=v0.3.22
+    curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-${VERSION}
     ```
 
     为 `dce5-installer` 添加可执行权限：
@@ -78,7 +78,7 @@
     ```shell
     ./dce5-installer install-app -c clusterConfig.yaml
     ```
-    
+
     !!! note
 
         如果使用 NodePort 暴露控制台，则命令不需要指定 `-c` 参数。
