@@ -170,7 +170,7 @@ nav:
               - 集成 Harbor 实现镜像安全扫描: amamba/02QuickStart/scan-with-harbor.md
       - 多云编排:
           - 介绍:
-              - 什么是多云编排: kairship/01product/whatiskair.md
+              - 什么是多云编排: kairship/01product/whatiskairship.md
               - 功能总览: kairship/01product/features.md
               - 产品架构: kairship/01product/architecture.md
               - 产品优势: kairship/01product/benefits.md
