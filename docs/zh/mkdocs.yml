@@ -16,7 +16,7 @@ copyright: Copyright &copy; 2016 - 2022 DaoCloud
 repo_name: DaoCloud/DaoCloud-docs
 
 repo_url: https://github.com/DaoCloud/DaoCloud-docs
-edit_uri: edit/main/docs/
+edit_uri: edit/main/docs/zh/docs/
 
 # Configuration
 theme:
