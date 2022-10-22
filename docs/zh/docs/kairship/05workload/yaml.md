@@ -71,8 +71,8 @@ spec:
   placement:
     clusterAffinity:
       clusterNames:
-        - skoala-stage
-        - skoala-dev
+        - demo-stage
+        - demo-dev
 ```
 
 **差异化策略示例**
@@ -91,19 +91,18 @@ spec:
   overrideRules:
     - targetCluster:
         clusterNames:
-          - skoala-dev
-      overriders:
-        plaintext:
-          - path: "/metadata/labels"
-            operator: add
-            value:
-              env: skoala-dev
-    - targetCluster:
-        clusterNames:
-          - skoala-stage
+          - demo-dev
       overriders:
         plaintext:
           - path: "/metadata/labels/env"
             operator: add
-            value: skoala-stage
+            value: demo-dev
+    - targetCluster:
+        clusterNames:
+          - demo-stage
+      overriders:
+        plaintext:
+          - path: "/metadata/labels/env"
+            operator: add
+            value: demo-stage
 ```
