@@ -160,10 +160,12 @@ nav:
               - 自定义创建流水线: amamba/03UserGuide/Pipeline/createpipelinebyself.md
               - Jenkinsfile 创建单代码分支流水线: amamba/03UserGuide/Pipeline/createpipelinebyjenkins.md
               - 使用图形化编辑流水线: amamba/03UserGuide/Pipeline/graphicaleditingpipeline.md
+              - 触发器触发流水线: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineTrigger.md
               - 凭证管理: amamba/03UserGuide/Pipeline/Credential.md
               - 流水线配置参数:
                   - 流水线中的概念: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineConcept.md
                   - 图形化任务模板参数: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineStep.md
+                  - 流水线节点（Agent）: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineAgent.md
           - 最佳实践:
               - 快速创建流水线: amamba/02QuickStart/deploypipline.md
               - 使用流水线实现代码扫描: amamba/02QuickStart/scan-with-pipeline.md
