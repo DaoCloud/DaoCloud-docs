@@ -1,0 +1,181 @@
+---
+# This file is used to split config and docs navigation
+INHERIT: navigation.yml
+
+# Project information
+site_name: DaoCloud Enterprise
+site_url: https://docs.daocloud.io/
+site_author: DaoCloud
+site_description: >-
+  DaoCloud Enterprise 5.0 is the next-generation PaaS platform, created with many leading cloud-native technologies,
+  to easily promote and boost your digital business.
+
+# copyright
+copyright: Copyright &copy; 2016 - 2022 DaoCloud
+
+# Repository
+repo_name: DaoCloud/DaoCloud-docs
+
+repo_url: https://github.com/DaoCloud/DaoCloud-docs
+edit_uri: edit/main/docs/en/docs/
+
+# Configuration
+theme:
+  name: material
+  custom_dir: "theme"
+  # custom_dir: !ENV [THEME_DIR, "material"]
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+  include_homepage_in_sidebar: false
+
+  # Static files
+  static_templates:
+    - 404.html
+
+  language: "en"
+  features:
+    - content.code.annotate
+    - content.tooltips
+    # - navigation.indexes
+    - navigation.tabs
+    # - navigation.instant
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs.sticky
+    - navigation.tracking
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - search.share
+    - toc.follow
+    - toc.integrate
+
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
+  logo: images/DaoCloud.svg
+  icon:
+    logo: logo
+    repo: fontawesome/brands/github
+
+# Plugins
+plugins:
+  - search:
+      separator: '[\\s\\u200b\\-]'
+  # - mermaid2
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+
+  - git-revision-date: #每页底部显示文档最后更新日期，安装 pip install mkdocs-git-revision-date-plugin
+      enabled_if_env: "CI"
+  - git-revision-date-localized: #每个页面底部添加本地化更新和创建日期，安装pip install mkdocs-git-revision-date-localized-plugin
+      timezone: Asia/Shanghai
+      type: timeago #日期格式，有效值为date、datetime、iso_date、iso_datetimetimeago
+      fallback_to_build_date: true #默认false，启用则回退到mkdocs build执行的时间
+      enable_creation_date: true #最后更新日期旁边显示与页面关联的文件的创建日期
+      exclude:
+        - index.md
+      enabled: !ENV [ENABLED_GIT_REVISION_DATE, true]
+
+  # auto desgin nav in dirs
+  # - awesome-pages:
+  #     filename: .pages.yml
+  #     collapse_single_pages: true
+  #     strict: false
+  # - tags:
+  #     tags_file: stylesheets/tags.md
+
+# Customization
+extra:
+  homepage: /
+
+  # switch language
+  alternate:
+    - link: /
+      name: zh - 简体中文
+      lang: zh
+    - link: /
+      name: en - English
+      lang: en
+  generator: false
+
+  status:
+    new: Recently added
+
+# Customization Javascript
+extra_javascript:
+  - /stylesheets/zoom_image.js
+  - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+
+# Customization css
+extra_css:
+  - /stylesheets/custom.css
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      title: nav
+      toc_depth: 5
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: daocloud
+      repo: daocloud-docs
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  # - pymdownx.critic
+
+  # - pymdownx.snippets:
+  #     auto_append:
+  #       - includes/glossary.md

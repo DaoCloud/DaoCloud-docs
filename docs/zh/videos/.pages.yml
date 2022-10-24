@@ -1,8 +1,0 @@
-nav:
-- 应用工作台: amamba.md
-- 容器管理: kpanda.md
-- 微服务治理: skoala.md
-- 可观测性: insight.md
-- 服务网格: mspider.md
-- 中间件: mcamel.md
-- 全局管理: ghippo.md

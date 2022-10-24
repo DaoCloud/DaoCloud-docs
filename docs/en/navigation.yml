@@ -1,0 +1,393 @@
+# Page tree
+nav:
+  - DaocDloud Home: https://www.daocloud.io/
+  - Documentation:
+      - DCE Profile:
+          - What is DCE 5.0: dce/what-is-dce.md
+          - Scenarios: /dce/scenario/
+          - Features: /dce/features/
+          - Why DCE: /dce/whyus/
+          - Free Trial: dce/license0.md
+      - Install:
+          - Install Dependencies: install/install-tools.md
+          - Online Install DCE 5.0: install/install-dce-community.md
+          - Air-gap Install DCE 5.0: install/offline-install-community.md
+          - Uninstall: install/uninstall.md
+      - Container Manager:
+          - Introduction:
+              - What is Container Manager: kpanda/03ProductBrief/WhatisKPanda.md
+              - Features: /kpanda/03ProductBrief/Features/
+              - Benefits: /kpanda/03ProductBrief/Benefits/
+              - Scenarios: /kpanda/03ProductBrief/Scenarios/
+              - Concepts: /kpanda/03ProductBrief/Concepts/
+          - Clusters:
+              - Create Cluster: /kpanda/07UserGuide/Clusters/CreateCluster/
+              - Join Cluster: /kpanda/07UserGuide/Clusters/JoinACluster/
+              - Access a Cluster with kubectl: /kpanda/07UserGuide/Clusters/clusterwithcert/
+              - Cluster Roles: /kpanda/07UserGuide/Clusters/ClusterRole/
+              - Cluster Status: /kpanda/07UserGuide/Clusters/ClusterStatus/
+          - Workloads:
+              - Create a Deployent: /kpanda/07UserGuide/Workloads/CreateDeploymentByImage/
+              - Create a StatefulSet: /kpanda/07UserGuide/Workloads/CreateStatefulSetByImage/
+              - Create a DaemonSet: /kpanda/07UserGuide/Workloads/CreateDaemonSetByImage/
+              - Create a CronJob: /kpanda/07UserGuide/Workloads/CreateCronJobByImage/
+              - Create a Job: /kpanda/07UserGuide/Workloads/CreateJobByImage/
+              - Workload Parameters:
+                  - Workload Status: /kpanda/07UserGuide/Workloads/PodConfig/workload-status/
+                  - Job Parameters: /kpanda/07UserGuide/Workloads/PodConfig/JobParameters/
+                  - Lifecycle: /kpanda/07UserGuide/Workloads/PodConfig/lifescycle/
+                  - Environment Variables: /kpanda/07UserGuide/Workloads/PodConfig/EnvironmentVariables/
+                  - Health Check: /kpanda/07UserGuide/Workloads/PodConfig/healthcheck/
+                  - Cluster Scheduling: /kpanda/07UserGuide/Workloads/PodConfig/SchedulingPolicy/
+          - Helm App:
+              - What is Helm: /kpanda/07UserGuide/helm/
+              - Manage Helm Apps: /kpanda/07UserGuide/helm/helm-app/
+              - Manage Helm Repos: /kpanda/07UserGuide/helm/helm-repo/
+          - Service and Ingress:
+              - Create Service: /kpanda/07UserGuide/ServicesandRoutes/CreatingServices/
+              - Create Ingress: /kpanda/07UserGuide/ServicesandRoutes/CreatingIngress/
+          - CustomResourceDefinition:
+              - Create CRD: /kpanda/07UserGuide/CustomResources/create/
+          - ConfigMap and Secret:
+              - Create Secret: /kpanda/07UserGuide/ConfigMapsandSecrets/create-secret/
+              - Use Secret: /kpanda/07UserGuide/ConfigMapsandSecrets/use-secret/
+              - Use ConfigMap: /kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap/
+          - Create Namespace: /kpanda/07UserGuide/Namespaces/createns/
+          - Permissions:
+              - What is Permission: /kpanda/07UserGuide/Permissions/PermissionBrief/
+              - Authorize to Cluster and Namespace: /kpanda/07UserGuide/Permissions/Cluster-NSAuth/
+      - Global Manager:
+          - Introduction:
+              - What is Global Manager: ghippo/01ProductBrief/WhatisGhippo.md
+              - Features: /ghippo/01ProductBrief/Features/
+              - Glossary: /ghippo/01ProductBrief/glossary/
+          - Login: /ghippo/04UserGuide/00Login/
+          - Access Control:
+              - What is Access Control: /ghippo/04UserGuide/01UserandAccess/iam/
+              - User: /ghippo/04UserGuide/01UserandAccess/User/
+              - Group: /ghippo/04UserGuide/01UserandAccess/Group/
+          - Roles and Permissions:
+              - /ghippo/04UserGuide/01UserandAccess/Role/
+              - Roles: /ghippo/04UserGuide/01UserandAccess/global/
+              - Resource Management (by Role): /ghippo/04UserGuide/01UserandAccess/resource02/
+          - Identity Provider:
+              - /ghippo/04UserGuide/01UserandAccess/idprovider/
+              - LDAP: /ghippo/04UserGuide/01UserandAccess/ldap/
+              - OIDC: /ghippo/04UserGuide/01UserandAccess/oidc/
+          - Workspaces and Folders:
+              - /ghippo/04UserGuide/02Workspace/ws-folder/
+              - Workspace Management: /ghippo/04UserGuide/02Workspace/Workspaces/
+              - Workspace Best Practice: /ghippo/04UserGuide/02Workspace/wsbp/
+              - Bind Resources: /ghippo/04UserGuide/02Workspace/Resources/
+          - Audit Logs:
+              - Enable/Disable Audit Logs: /ghippo/04UserGuide/open-audit/
+              - Download/Export Audit Logs: /ghippo/04UserGuide/03AuditLog/
+          - Settings:
+              - Reset Password: /ghippo/04UserGuide/password/
+              - Configure Mail Server: /ghippo/04UserGuide/04PlatformSetting/MailServer/
+              - Custom Appearance: /ghippo/04UserGuide/04PlatformSetting/Appearance/
+              - About: /ghippo/04UserGuide/04PlatformSetting/about/
+          - Personal Center:
+              - Security Settings: /ghippo/04UserGuide/06PersonalCenter/SecuritySetting/
+              - Access Key: /ghippo/04UserGuide/06PersonalCenter/Password/
+              - Choose Language: /ghippo/04UserGuide/06PersonalCenter/Language/
+      - Insight:
+          - Introduction:
+              - What is Insight: insight/03ProductBrief/WhatisKInsight.md
+              - Benefits: insight/03ProductBrief/benefits.md
+              - Glossary: insight/03ProductBrief/glossary.md
+          - Overview: /insight/06UserGuide/overview/
+          - Dashboard: /insight/06UserGuide/02dashboard/
+          - Cloud Insight:
+              - Cluster Insight: /insight/06UserGuide/03scenarioinsight/clusterinsight/
+              - Node Insight: /insight/06UserGuide/03scenarioinsight/nodeinsight/
+              - Container Insight: /insight/06UserGuide/03scenarioinsight/containerinsight/
+              - Service Insight: /insight/06UserGuide/03scenarioinsight/serviceinsight/
+          - Data Query:
+              - Log Query: /insight/06UserGuide/04dataquery/logquery/
+              - Metric Query: /insight/06UserGuide/04dataquery/metricquery/
+              - Trace Query: /insight/06UserGuide/04dataquery/tracequery/
+          - Alert Center:
+              - Alert Rules: /insight/06UserGuide/05alertcenter/alertrule/
+              - Notifications: /insight/06UserGuide/05alertcenter/message/
+              - Message Template: /insight/06UserGuide/05alertcenter/messagetemplate/
+          - Data Collection:
+              - Collection Management: /insight/06UserGuide/07collectionmanag/collectionmanag/
+              - Service Insight: /insight/06UserGuide/07collectionmanag/servicemonitor/
+              - Enable Collection Log: /insight/09FAQs/collectauditlog/
+          - System Configuration:
+              - System Configuration: /insight/06UserGuide/08systemconfig/systemconfig/
+              - Modify Configuration: /insight/06UserGuide/08systemconfig/modifyconfig/
+          - FAQs:
+              - /insight/09FAQs/
+              - Collection Log: /insight/09FAQs/collectauditlog/
+      - App Workbench:
+          - Introduction:
+              - What is App Workbench: amamba/01ProductBrief/WhatisAmamba.md
+              - Features: /amamba/01ProductBrief/Features/
+              - Benefits: /amamba/01ProductBrief/Benefits/
+              - Scenarios: /amamba/01ProductBrief/Scenarios/
+              - Concepts: /amamba/01ProductBrief/Concepts/
+          - Create Pipeline: /amamba/02QuickStart/deploypipline/
+          - Pipelines:
+              - Custom Pipeline: /amamba/03UserGuide/Pipeline/createpipelinebyself/
+              - Create Pipeline with Jenkinsfile: /amamba/03UserGuide/Pipeline/createpipelinebyjenkins/
+              - Edit Pipeline with GUI: /amamba/03UserGuide/Pipeline/graphicaleditingpipeline/
+              - Credentials: /amamba/03UserGuide/Pipeline/Credential/
+              - Pipeline Parameters:
+                  - Pipeline Concepts: /amamba/03UserGuide/Pipeline/PipelineConfig/PipelineConcept/
+                  - Job Template Parameter with GUI: /amamba/03UserGuide/Pipeline/PipelineConfig/PipelineStep/
+      - Multi-Cloud Orchestration:
+          - Introduction:
+              - What is Multi-Cloud Orchestration: kairship/01product/whatiskair.md
+              - Features: /kairship/01product/features/
+              - Benefits: /kairship/01product/benefits/
+              - Scenarios: /kairship/01product/scenarios/
+              - Concepts: /kairship/01product/concepts/
+          - Installation:
+              - Normal Installation: /kairship/02install/normal/
+              - Installation with kubectl: /kairship/02install/kubectl/
+              - Installation with an Image: /kairship/02install/image/
+          - Multi-Cloud Instances:
+              - Add Instance: /kairship/03instance/add/
+              - Change Instance: /kairship/03instance/change/
+              - Delete Instance: /kairship/03instance/delete/
+          - Clusters:
+              - Join Cluster: /kairship/04cluster/join/
+              - Remove Cluster: /kairship/04cluster/remove/
+          - Multi-Cloud Workloads:
+              - Create with an Image: /kairship/05workload/image/
+              - Create with YAML: /kairship/05workload/yaml/
+          - Resources:
+              - Multi-Cloud Service and Ingress: /kairship/06resource/ingress/
+              - Multi-Cloud Namespace: /kairship/06resource/namespace/
+              - Multi-Cloud Storage Claims: /kairship/06resource/storage/
+              - Multi-Cloud ConfigMap and Secret: /kairship/06resource/configmap/
+          - Policies:
+              - Deployment Policies: /kairship/07policy/deploy/
+              - Differentiation Policies: /kairship/07policy/different/
+      - Microservice Engine:
+          - Introduction:
+              - Features: /skoala/intro/features/
+              - Scenarios: /skoala/intro/scenarios/
+              - Benefits: /skoala/intro/advantages/
+              - Component Versions: /skoala/intro/components/
+              - Glossary: /skoala/intro/GLOSSARY/
+          - Registry:
+              - Managed Registry:
+                  - Manage Registry Instances: /skoala/registry/host/manage-registry/
+                  - Microservice Namespace: /skoala/registry/host/namespace/
+                  - Microservice List:
+                      - Create Microservice: /skoala/registry/host/ms-list/create-ms/
+                      - View Microservice Details: /skoala/registry/host/ms-list/check-ms-details/
+                      - Manage Microservice Instances: /skoala/registry/host/ms-list/manage-ms-instance/
+                      - Microservice Traffic Governance: /skoala/registry/host/ms-list/govern-ms-traffic/
+                      - Delete Microservice: /skoala/registry/host/ms-list/delete-ms/
+                  - Microservice Governance Policies:
+                      - Traffic Control Rules: /skoala/registry/host/governance-policy/traffic-control/
+                      - Degradation Rules: /skoala/registry/host/governance-policy/degrade/
+                      - Hot Spot Rules: /skoala/registry/host/governance-policy/hotspot/
+                      - System Rules: /skoala/registry/host/governance-policy/system/
+                      - Authorization Rules: /skoala/registry/host/governance-policy/authorization/
+                      - Cluster Traffic Control: /skoala/registry/host/governance-policy/cluster-traffic-control/
+                  - Microservice Configuration Center:
+                      - Create Configuration: /skoala/registry/host/config-center/create-config/
+                      - Import/Export Configuration: /skoala/registry/host/config-center/import-config/
+                      - Update Configuration: /skoala/registry/host/config-center/update-config/
+                      - Delete Configuration: /skoala/registry/host/config-center/delete-config/
+                      - Restore Configuration: /skoala/registry/host/config-center/restore-config/
+                      - Query Listener: /skoala/registry/host/config-center/search-listening/
+                      - View Sample Code: /skoala/registry/host/config-center/code-example/
+                  - Alerts:
+                      - Service Alert: /skoala/registry/host/monitor&alert/monitor-service/
+                      - Resource Alert: /skoala/registry/host/monitor&alert/monitor-resource/
+                  - Logs: /skoala/registry/host/log/
+                  - Plugin Center: /skoala/registry/host/plugin-center/
+              - Join Registry:
+                  - Manage Registry Instances: /skoala/registry/integrate/manage-registry/
+                  - View Microservice Details: /skoala/registry/integrate/check-ms-details/
+                  - Microservice Governance Policies: /skoala/registry/integrate/governance-policy/
+          - Microservice Gateway:
+              - Gateway Management:
+                  - Manage Gateway Instances: /skoala/ms-gateway/gateway/manage-gateway/
+                  - View Gateway Details: /skoala/ms-gateway/gateway/check-details/
+                  - Gateway Diagnosis: /skoala/ms-gateway/gateway/diagnose-gateway/
+              - Service Management:
+                  - Add Service: /skoala/ms-gateway/service/add-service/
+                  - Delete Service: /skoala/ms-gateway/service/delete-service/
+                  - Manage Service Source: /skoala/ms-gateway/service/service-sources/
+              - API:
+                  - Manage API: /skoala/ms-gateway/api/manage-api/
+                  - Configure API Policies: /skoala/ms-gateway/api/api-policy/
+              - Alerts: /skoala/ms-gateway/monitor&alert/
+              - Logs: /skoala/ms-gateway/log/
+              - Plugins: /skoala/ms-gateway/plugin-center/
+              - Domains:
+                  - Manage Domains: /skoala/ms-gateway/domain/manage-domain/
+                  - Configure Domain Policies: /skoala/ms-gateway/domain/domain-policy/
+      - Service Mesh:
+          - Introduction:
+              - What is Service Mesh: /mspider/01Intro/WhatsmSpider/
+              - Features: /mspider/01Intro/Features/
+              - Benefits: /mspider/01Intro/Benefits/
+              - Scenarios: /mspider/01Intro/Scenarios/
+              - Glossary: /mspider/01Intro/Glossary/
+          - Mesh Management:
+              - Create Managed Mesh: /mspider/03UserGuide/servicemesh/createmanaged/
+              - Create Dedicated Mesh: /mspider/03UserGuide/servicemesh/creatededicated/
+              - Delete Mesh: /mspider/03UserGuide/servicemesh/delete/
+          - Service Management: /mspider/03UserGuide/01ServiceList/
+          - Traffic Governance:
+              - Virtual Services: /mspider/03UserGuide/02TrafficGovernance/VirtualService/
+              - Destination Rules: /mspider/03UserGuide/02TrafficGovernance/TargetRules/
+              - Gateway Rules: /mspider/03UserGuide/02TrafficGovernance/GatewayRules/
+              - Virtual Service Parameters: /mspider/03UserGuide/02TrafficGovernance/vsparams/
+          - Security Governance:
+              - Peer Authentication: /mspider/03UserGuide/05Security/peer/
+              - Request Authentication: /mspider/03UserGuide/05Security/request/
+              - Authorization Policies: /mspider/03UserGuide/05Security/authorize/
+              - Security Governance Parameters: /mspider/03UserGuide/05Security/params/
+          - Sidecars:
+              - Namespace Sidecars: /mspider/03UserGuide/07SidecarManagement/NamespaceSidecar/
+              - Workload Sidecars: /mspider/03UserGuide/07SidecarManagement/WorkloadSidecar/
+              - Global Sidecars: /mspider/03UserGuide/07SidecarManagement/GlobalSidecar/
+          - Traffic Monitor:
+              - Global Monitor: /mspider/03UserGuide/06TrafficMonitor/global-monitor/
+              - Service Monitor: /mspider/03UserGuide/06TrafficMonitor/service-monitor/
+              - Workload Monitor: /mspider/03UserGuide/06TrafficMonitor/workload-monitor/
+              - Performance Monitor: /mspider/03UserGuide/06TrafficMonitor/perf-monitor/
+          - Mesh Gateway:
+              - Create Mesh Gateway: /mspider/03UserGuide/09GatewayInstance/create/
+              - Delete Mesh Gateway: /mspider/03UserGuide/09GatewayInstance/delete/
+          - Clusters:
+              - Add Cluster: /mspider/03UserGuide/08ClusterManagement/join-clus/
+              - Remove Cluster: /mspider/03UserGuide/08ClusterManagement/remov-clus/
+          - Mesh Configuration:
+              - Mesh Namespace: /mspider/03UserGuide/10MeshConfiguration/MeshNamespace/
+              - System Components: /mspider/03UserGuide/10MeshConfiguration/SystemComponents/
+              - Istio Resources: /mspider/03UserGuide/10MeshConfiguration/IstioResources/
+          - FAQs: /mspider/07faq/
+      - Network Manager:
+          - Introduction:
+              - What is Network Manager: network/intro/what-is-net.md
+              - Background: /network/intro/background/
+              - Challenges: /network/intro/challenges/
+              - Network Components: /network/modules/modules/
+          - Calico:
+              - Introduction: network/modules/calico/what.md
+              - Installation: /network/modules/calico/install/
+              - ippool: /network/modules/calico/ippool/
+              - Monitor Metrics: /network/modules/calico/metrics/
+              - Calico Policies: /network/modules/calico/policy/
+              - Troubleshooting: /network/modules/calico/debug/
+          - Cilium:
+              - Introduction: network/modules/cilium/what.md
+              - Installation: /network/modules/cilium/install/
+              - Parameters: /network/modules/cilium/config/
+              - Commands: /network/modules/cilium/command/
+          - Spiderpool:
+              - Introduction: network/modules/spiderpool/what.md
+              - Installation: /network/modules/spiderpool/install/
+              - Parameters: /network/modules/spiderpool/config/
+              - Commands: /network/modules/spiderpool/command/
+      - Middleware:
+          - What is Middleware: middleware/midware/
+          - RabbitMQ Message Queue:
+              - What is RabbitMQ: /middleware/rabbitmq/intro/what/
+              - Features: /middleware/rabbitmq/intro/features/
+              - Benefits: /middleware/rabbitmq/intro/benefits/
+              - Scenarios: /middleware/rabbitmq/intro/scenarios/
+              - Concepts: /middleware/rabbitmq/intro/concepts/
+              - Install RabbitMQ: /middleware/rabbitmq/quickstart/install/
+              - Update RabbitMQ: /middleware/rabbitmq/userguide/update/
+              - Delete RabbitMQ: /middleware/rabbitmq/userguide/delete/
+              - View Message Queue: /middleware/rabbitmq/userguide/view/
+              - Data Migration: /middleware/rabbitmq/userguide/migrate/
+              - Monitor Instances: /middleware/rabbitmq/userguide/insight/
+          - Elasticsearch Service:
+              - What is Elasticsearch: /middleware/elastic-search/intro/what/
+              - Features: /middleware/elastic-search/intro/features/
+              - Benefits: /middleware/elastic-search/intro/benefits/
+              - Scenarios: /middleware/elastic-search/intro/scenarios/
+              - Concepts: /middleware/elastic-search/intro/concepts/
+              - First use of Elasticsearch: /middleware/elastic-search/userguide/login/
+              - Create Elasticsearch Instance: /middleware/elastic-search/userguide/create/
+              - Update Elasticsearch Instance: /middleware/elastic-search/userguide/edit/
+              - Delete Elasticsearch Instance: /middleware/elastic-search/userguide/delete/
+              - Elasticsearch Cluster Capacity Plan: /middleware/elastic-search/userguide/cluster-capacity-plan/
+              - View List: /middleware/elastic-search/userguide/view/
+              - Overview: /middleware/elastic-search/userguide/basic/
+              - Monitor Instances: /middleware/elastic-search/userguide/monitor/
+          - MySQL Database:
+              - What is MySQL: /middleware/mysql/intro/what/
+              - Features: /middleware/mysql/intro/features/
+              - Benefits: /middleware/mysql/intro/benefits/
+              - Concepts: /middleware/mysql/intro/concepts/
+              - Install MySQL: /middleware/mysql/quickstart/install/
+              - Create MySQL: /middleware/mysql/userguide/create/
+              - Update MySQL: /middleware/mysql/userguide/update/
+              - Delete MySQL: /middleware/mysql/userguide/delete/
+      - HwameiStor:
+          - Introduction: hwameistor/intro/what.md
+          - Modules:
+              - Local Disk Manager: /hwameistor/intro/ldm/
+              - Local Storage: /hwameistor/intro/ls/
+              - DRBD Installer: /hwameistor/intro/drbd/
+              - Scheduler: /hwameistor/intro/scheduler/
+              - Admission Controller: /hwameistor/intro/admission-controller/
+          - Resources: /hwameistor/intro/resources/
+          - Installation:
+              - Prepration: /hwameistor/install/prereq/
+              - Install with Helm Chart: /hwameistor/install/deploy/
+              - Post-Check: /hwameistor/install/post-check/
+              - Upgrade: /hwameistor/install/upgrade/
+              - Uninstall: /hwameistor/install/uninstall/
+          - Resources:
+              - Create Storage Pool: /hwameistor/resources/storagepool/
+              - Expand Volume: /hwameistor/resources/expand/
+              - Migrate Volume: /hwameistor/resources/migrate/
+              - Expand Node: /hwameistor/resources/node-expansion/
+              - Expand Disk: /hwameistor/resources/disk-expansion/
+          - Scenarios:
+              - Create Stateful App:
+                  - Deploy with Local Volume: /hwameistor/application/local/
+                  - Deploy with HA Volume: /hwameistor/application/ha/
+              - TiDB: /hwameistor/application/tidb/
+              - MinIO: /hwameistor/application/minio/minio/
+          - FAQs: /hwameistor/faqs/
+      - References:
+          - Glossary: /reference/terms/
+          - Concepts:
+              - Gateway: /reference/basic-knowledge/gateway/
+              - Microservice: /reference/basic-knowledge/microservice/
+              - Registry: /reference/basic-knowledge/registry/
+              - Virtual Service: /reference/basic-knowledge/virtual-service/
+              - Insight: /reference/basic-knowledge/insight/
+              - Traffice Governance: /reference/basic-knowledge/traffic-control/
+  - Videos:
+      - Video Tutorial: videos/index.md
+      - Container Management: videos/kpanda.md
+      - Global Management: videos/ghippo.md
+      - Insight: videos/insight.md
+      - Workbench: videos/amamba.md
+      - Service Mesh: videos/mspider.md
+      - Microservices: videos/skoala.md
+      - Middelware: videos/mcamel.md
+  - Blogs:
+      - DCE Development Background: /blogs/blog00/
+      - Introduce Container Manager: /blogs/kpanda/
+      - Introduce Resource Management: /blogs/resource/
+      - Introduce App Workbench: /blogs/amamba/
+      - Introduce Multi-Cloud Orchestration: /blogs/kairship/
+      - Introduce Service Mesh: /blogs/mspider/
+  - DaoCloud Ecosystem:
+      - Ecosystem Intro: community/index.md
+      - CloudTTY: community/cloudtty.md
+      - Clusterpedia: community/clusterpedia.md
+      - HwameiStor: community/hwameistor.md
+      - KLTS: community/klts.md
+      - Kubean: community/kubean.md
+      - Merbridge: community/merbridge.md
+      - Spiderpool: community/spiderpool.md
+      - kwok: community/kwok.md
+      - Ferry: community/ferry.md
