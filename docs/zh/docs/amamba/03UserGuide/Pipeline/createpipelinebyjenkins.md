@@ -4,21 +4,22 @@
 
 ## 前提条件
 
-- 您需要创建一个工作空间和一个用户，必须邀请该用户至工作空间中且赋予 `workspace edit` 角色。可参考[创建工作空间](../../../ghippo/04UserGuide/02Workspace/Workspaces.md)、[用户和角色](../../../ghippo/04UserGuide/01UserandAccess/User.md)。
+- 需要创建一个工作空间和一个用户，必须邀请该用户至工作空间中且赋予 `workspace edit` 角色。
+  参考[创建工作空间](../../../ghippo/04UserGuide/02Workspace/Workspaces.md)、[用户和角色](../../../ghippo/04UserGuide/01UserandAccess/User.md)。
 
-- 您需要有一个代码仓库，并且代码仓库中的源码有一个 Jenkinsfile 文本文件。
+- 需要有一个代码仓库，并且代码仓库中的源码有一个 Jenkinsfile 文本文件。
 
 ## 操作步骤
 
-1. 在流水线列表页点击`创建流水线`
+1. 在流水线列表页点击`创建流水线`。
 
     ![createpipelinbutton](../../images/createpipelinbutton.png)
 
-2. 在弹出的对话框中，选择`自定义创建流水线`，点击`确定`
+2. 在弹出的对话框中，选择`自定义创建流水线`，点击`确定`。
 
     ![selecttype](../../images/selecttype.png)
 
-3. 进入`基于代码仓库的 Jenkinsfile 创建流水线` ，并配置相关参数
+3. 进入`基于代码仓库的 Jenkinsfile 创建流水线`，并配置相关参数。
 
     ![gitpipeline](../../images/gitpipeline.png)
 
@@ -46,7 +47,9 @@
 
     - 不允许并发构建：如果开启，则不能并发运行多个构建。
 
-7. 填写构建参数。参数化的构建过程允许您在开始运行流水线时传入一个或多个参数。默认提供五种参数类型，包括**字符串**、**多行字符串**、**布尔值**、**选项**以及**密码**。当参数化项目时，构建会被替换为参数化构建，其中将提示用户为每个定义的参数输入值。
+7. 填写构建参数。参数化的构建过程允许您在开始运行流水线时传入一个或多个参数。
+   默认提供五种参数类型：`字符串`、`多行字符串`、`布尔值`、`选项`以及`密码`。
+   当参数化项目时，构建会被替换为参数化构建，其中将提示用户为每个定义的参数输入值。
 
     ![pipeline03](../../images/pipeline03.png)
 
@@ -60,4 +63,4 @@
 
 9. 完成创建。确认所有参数输入完成后，点击`确定`按钮，完成自定义流水线创建，自动返回流水线列表。点击列表右侧的 `︙` 可以执行各项操作。
 
-   ![pipeline05](../../images/pipeline05.png)
+    ![pipeline05](../../images/pipeline05.png)

@@ -131,4 +131,4 @@
 
     答：拥有 Global Admin、Kairship Owner 角色的用户能够去创建多云集群。
 
-[了解多云编排](../kairship/01product/whatiskair.md){ .md-button }
+[了解多云编排](../kairship/01product/whatiskairship.md){ .md-button }

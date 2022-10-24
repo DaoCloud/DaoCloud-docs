@@ -4,18 +4,18 @@
 
 ## 前提条件
 
-- 您需要创建一个工作空间和一个用户，必须邀请该用户至工作空间中且赋予 `workspace edit` 角色。可参考[创建工作空间](../../ghippo/04UserGuide/02Workspace/Workspaces.md)、[用户和角色](../../ghippo/04UserGuide/01UserandAccess/User.md)。
-- 创建可以访问镜像仓库、集群的两个凭证，分别命名为：`registry`、`kubeconfig`，创建凭证的更多信息，请参考[凭证管理](../03UserGuide/Pipeline/Credential.md)。
+- 需创建一个工作空间和一个用户，该用户需加入该工作空间并赋予 `workspace edit` 角色。参考[创建工作空间](../../ghippo/04UserGuide/02Workspace/Workspaces.md)、[用户和角色](../../ghippo/04UserGuide/01UserandAccess/User.md)。
+- 创建可以访问镜像仓库、集群的两个凭证，分别命名为：`registry`、`kubeconfig`。创建凭证的更多信息，请参考[凭证管理](../03UserGuide/Pipeline/Credential.md)。
 - 准备一个 GitHub 仓库、DockerHub 仓库。
 
 ## 创建凭证
 
-1. 在`凭证`页面创建两个凭证，例如：
+1. 在`凭证`页面创建两个凭证：
 
     - docker-credential：用户名和密码，用于访问镜像仓库。
-    - demo-dev-kubeconfig：kubeconfig，用户访问 kubernetes 集群。
+    - demo-dev-kubeconfig：用于使用这个 kubeconfig 访问 kubernetes 集群。
 
-2. 创建完成后，您可以在`凭证列表`页面看到凭证信息。
+2. 创建完成后，可以在`凭证列表`页面看到凭证信息。
 
 ## 创建自定义流水线
 
@@ -31,11 +31,11 @@
 
     ![pipeline](../images/pipelin03.png)
 
-4. 在`构建参数`中添加三个字符串参数，这些参数将用于镜像构建的命令中。参数说明如下：
+4. 在`构建参数`中添加三个字符串参数，这些参数将用于镜像构建的命令中。
 
-    - registry：镜像仓库地址。本例中使用 `release.daocloud.io`。
-    - project：镜像仓库中的项目名称。本例中使用`demo`。
-    - name：镜像的名称。本例中使用`http-hello`。
+    - registry：镜像仓库地址。示例值：`release.daocloud.io`。
+    - project：镜像仓库中的项目名称。示例值：`demo`。
+    - name：镜像的名称。示例值：`http-hello`。
 
     ![pipeline](../images/pipelin04.png)
 
@@ -43,23 +43,33 @@
 
 ## 编辑流水线
 
-1. 在流水线列表页面点击 `pipeline-demo` 进入流水线详情页面，然后点击`编辑流水线`，进入编辑流水线页面。
+1. 在流水线列表页面点击一个流水线的名称。
 
-2. 在编辑流水线详情页面点击`全局代理`，在全局代理抽屉上，从类型下拉列表中选择 node，从 label 下拉列表选择 go。
+    ![pipelisetting](../images/editpipe01.png)
 
-    ![pipelisetting](../images/pipelisetting.png)
+2. 在右上角点击`编辑流水线`，
 
-3. 添加阶段 - 拉取源代码。
+    ![pipelisetting](../images/editpipe02.png)
+
+3. 在右上角点击`全局设置`。
+
+    ![pipelisetting](../images/editpipe03.png)
+
+4. 类型设为 node，且 label 设为 go，点击`确定`。
+
+    ![pipelisetting](../images/editpipe04.png)
+
+5. 添加阶段 - 拉取源代码。
 
     - 点击画布中的`添加阶段`。在右侧的阶段设置中设置名称：git clone。
-    - 点击`添加步骤`，在弹出的对话框中步骤类型下选择 git clone，对相关参数进行配置：
-    - 仓库 URL：输入 GitLab 仓库地址。
-    - 分支：不填写默认为 master 分支。
-    - 凭证：如果您的仓库属于私有仓库则需要提供一个凭证。
+    - 点击`添加步骤`，在弹出对话框中步骤类型下选择 git clone，配置相关参数：
+        - 仓库 URL：输入 GitLab 仓库地址。
+        - 分支：不填写默认为 master 分支。
+        - 凭证：如果属于私有仓库，则需要提供一个凭证。
 
     ![quickstart01](../images/quickstart01.png)
 
-4. 添加阶段 - 构建并推送镜像。
+6. 添加阶段 - 构建并推送镜像。
 
     - 点击画布中的`添加阶段`。在右侧的阶段设置中设置名称：build & push。
 
@@ -99,7 +109,7 @@
         docker push $registry/$project/$name:latest
         ```
 
-5. 添加阶段 - 部署至集群
+7. 添加阶段 - 部署至集群
 
     - 点击画布中的`添加阶段`。在右侧的阶段设置中设置名称：deploy。
 

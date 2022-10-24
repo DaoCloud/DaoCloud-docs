@@ -182,7 +182,7 @@
 
 ### 输入 YAML
 
-参考下面的 YAML 模版，创建一个名为 `nginx-deployment` 的无状态负载。
+参考下面的 YAML 模板，创建一个名为 `nginx-deployment` 的无状态负载。
 
 ```yaml
 apiVersion: apps/v1

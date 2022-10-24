@@ -1,8 +1,8 @@
-# DCE 5.0 社区版 Release Notes
+# DCE 5.0 社区版 Release Notes - 202209
 
 ![DCE 5.0 ](images/rn01.png)
 
-由于 DCE 5.0 社区版 release notes 详细的内容比较庞杂，所以本章将按以下模块列出一些主要的特性变化：
+2022 年 DCE 5.0 社区版发布，由于 release notes 详细的内容比较庞杂，所以本页按以下模块列出一些主要的特性变化：
 
 - [全局管理](../ghippo/01ProductBrief/WhatisGhippo.md)
 - [容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)

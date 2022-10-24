@@ -22,7 +22,7 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
 
     **Benefits**: Using innovative technologies to orchestrate disaster recovery (DR) across clouds, this solution has high concurrent performance of cross-cloud resource retrieval, and can help your IT departments quickly plan and implement DR capabilities in combination with the capabilities of the container manager to adapt to various scenarios such as edge and Xinchuang.
 
-    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Multi-Cloud Orchestration](kairship/01product/whatiskair.md), cloud to edge continuum, Xinchuang Heterogeneous
+    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Multi-Cloud Orchestration](kairship/01product/whatiskairship.md), cloud to edge continuum, Xinchuang Heterogeneous
 
     ![multi-cloud](images/01multi-cloud.png)
 
