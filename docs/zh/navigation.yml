@@ -109,9 +109,8 @@ nav:
           - 介绍:
               - 什么是可观测性: insight/03ProductBrief/WhatisInsight.md
               - 产品优势: insight/03ProductBrief/benefits.md
-              - 常见术语: insight/03ProductBrief/glossary.md
               - 基本概念: insight/03ProductBrief/concepts.md
-              - 概览: insight/06UserGuide/overview.md
+              - 应用场景: insight/03ProductBrief/scenarios.md
           - 快速入门:
               - 获取 host 地址: insight/06UserGuide/01quickstart/gethosturl.md
               - 安装 insight-agent 采集数据: insight/06UserGuide/01quickstart/installagent.md
@@ -121,6 +120,8 @@ nav:
                 - 用 OTel SDK 增强 Go 应用: insight/06UserGuide/01quickstart/otel/golang.md
                 - 用 OTel SDK 为应用暴露指标: insight/06UserGuide/01quickstart/otel/meter.md
                 - 用 OTel 自动探针增强 Go 应用: insight/06UserGuide/01quickstart/otel/golang-ebpf.md
+          - 概览: 
+              - insight/06UserGuide/overview.md
           - 仪表盘:
               - 仪表盘: insight/06UserGuide/02dashboard/dashboard.md
               - 以管理员身份登录 Grafana: insight/06UserGuide/02dashboard/logingrafana.md
@@ -147,6 +148,8 @@ nav:
           - 常见问题:
               - insight/09FAQs/README.md
               - 导入自定义仪表盘: insight/09FAQs/importdashboard.md
+              - 日志采集排障指南: insight/09FAQs/debuglog.md
+              - 链路采集排障指南: insight/09FAQs/debugtrace.md
       - 应用工作台:
           - 介绍:
               - 什么是应用工作台？: amamba/01ProductBrief/WhatisAmamba.md
