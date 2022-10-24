@@ -16,7 +16,7 @@ DaoCloud Enterprise 5.0 is a high-performance and scalable cloud-native operatin
 
     **Benefits**: Using innovative technologies to orchestrate disaster recovery (DR) across clouds, this solution has high concurrent performance of cross-cloud resource retrieval, and can help your IT departments quickly plan and implement DR capabilities in combination with the capabilities of the Container Management to adapt to various scenarios such as edge and Xinchuang.
 
-    **Modules**: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Multicloud Management](../kairship/01product/whatiskair.md), cloud to edge continuum, Xinchuang Heterogeneous
+    **Modules**: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Multicloud Management](../kairship/01product/whatiskairship.md), cloud to edge continuum, Xinchuang Heterogeneous
 
     ![multi-cloud](../images/01multi-cloud.png)
 

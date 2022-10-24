@@ -139,7 +139,7 @@ nav:
                   - Job Template Parameter with GUI: /amamba/03UserGuide/Pipeline/PipelineConfig/PipelineStep/
       - Multi-Cloud Orchestration:
           - Introduction:
-              - What is Multi-Cloud Orchestration: kairship/01product/whatiskair.md
+              - What is Multi-Cloud Orchestration: kairship/01product/whatiskairship.md
               - Features: /kairship/01product/features/
               - Benefits: /kairship/01product/benefits/
               - Scenarios: /kairship/01product/scenarios/

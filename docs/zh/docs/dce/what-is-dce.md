@@ -10,7 +10,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     支持多云和混合云的统一集中管理，提供跨云资源检索及跨云的应用部署、发布和运维能力，实现多云应用高效管控，提供基于集群资源的应用弹性扩缩，实现全局负载均衡，具备故障恢复能力，有效解决多云应用灾备问题，助力企业构建多云、混合云的数字基础设施。
 
-    **涉及的模块**：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[多云编排](../kairship/01product/whatiskair.md)、边云协同、信创异构
+    **涉及的模块**：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[多云编排](../kairship/01product/whatiskairship.md)、边云协同、信创异构
 
     ![多云](../images/01multi-cloud.png)
 

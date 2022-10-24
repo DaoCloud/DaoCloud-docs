@@ -185,7 +185,7 @@
 
 ### 输入 Yaml
 
-参考下面的 Yaml 模版，创建一个名为 `test-mysql-123-mysql` 的有状态负载。
+参考下面的 Yaml 模板，创建一个名为 `test-mysql-123-mysql` 的有状态负载。
 
 ```yaml
 kind: StatefulSet

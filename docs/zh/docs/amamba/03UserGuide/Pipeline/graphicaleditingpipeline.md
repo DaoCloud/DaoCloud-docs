@@ -31,13 +31,13 @@
 
 ## 操作步骤
 
-点击创建好的自定义流水线进入其详情页面。点击`编辑流水线`，进入图形化编辑页面。该演示流水线包括以下阶段，请参考图示例设置每个阶段。
+点击一个创建好的自定义流水线。在右上角点击`编辑流水线`，进入图形化编辑页面。
 
-<缺少图片>
+![pipelisetting](../../images/editpipe02.png)
 
 ### 配置全局设置
 
-点击全局代理，在全局代理抽屉上，从类型下拉列表中选择 node，从 label 下拉列表选择 go 16。
+点击`全局设置`，从`类型`下拉列表中选择 node，从 label 下拉列表选择 go 16。
 
 ![pipelisetting](../../images/pipelisetting.png)
 
@@ -115,7 +115,7 @@
 
 !!! note
     
-    镜像更新后还可以实现触发流水线，详细操作请[参考文档]()。
+    镜像更新后还可以实现触发流水线，具体操作请参考[触发流水线](./PipelineConfig/PipelineTrigger.md)。
 
 ### 添加阶段 - 审核
 
@@ -137,7 +137,7 @@
 
     - 凭证：选择 kubeconfig 类型的凭证。
 
-    - kubeconfig 变量：如果使用的是 kubectl apply 的部署方式，变量值必须为 KUBECONFIG。                  |
+    - kubeconfig 变量：如果使用的是 kubectl apply 的部署方式，变量值必须为 KUBECONFIG。
 
     ![credentials2](../../images/credentials2.png)
 
@@ -166,4 +166,3 @@
 2. 前往容器管理平台，点击集群下的`工作负载`，您可以看到列表中显示的无状态工作负载。
 
     ![deployment](../../images/deployment.png)
-   
