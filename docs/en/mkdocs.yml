@@ -85,6 +85,10 @@ plugins:
       minify_css: true
       htmlmin_opts:
         remove_comments: true
+  
+  - redirects:
+      redirect_maps:
+        "en/en/install/install-dce.md": "en/install/install-dce-community.md"
 
   - git-revision-date: #每页底部显示文档最后更新日期，安装 pip install mkdocs-git-revision-date-plugin
       enabled_if_env: "CI"
