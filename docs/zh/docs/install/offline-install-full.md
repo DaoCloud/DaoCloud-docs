@@ -39,7 +39,7 @@
     ```shell
     # 假定 VERSION 为 v0.3.24
     export VERSION=v0.3.24
-    curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-${VERSION}
+    curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     ```
 
     为 `dce5-installer` 添加可执行权限：
@@ -53,8 +53,8 @@
     ```shell
     # 假定 VERSION 为 v0.3.24
     export VERSION=v0.3.24
-    wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-${VERSION}.tar
-    tar -zxvf offline-${VERSION}.tar
+    wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-$VERSION.tar
+    tar -zxvf offline-$VERSION.tar
     ```
 
 3. 设置集群配置文件 clusterConfig.yaml，可以在离线包 `offline/sample` 下获取该文件并按需修改。
