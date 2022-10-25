@@ -1,6 +1,6 @@
 # 安装依赖项
 
-[部署好 Kubernetes 集群](./install-k8s.md)后，还需要安装一些依赖项，才能安装 DCE 5.0 体验新一代云原生操作系统的魅力。
+需要在你的环境中安装一些依赖项，才能安装 DCE 5.0 体验新一代云原生操作系统的魅力。
 
 您可以根据自己的实际情况选择在线或离线安装。
 
@@ -18,7 +18,7 @@
 
 ## 在线安装
 
-1. 在 Kubernetes 集群的控制平面（Master 节点）上，下载脚本。
+1. 在机器上，下载脚本。
 
     ```shell
     curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
@@ -38,7 +38,7 @@
         bash install_prerequisite.sh online community
         ```
 
-    - 全模式安装
+    - 商业版安装
 
         ```bash
         bash install_prerequisite.sh online full
@@ -56,7 +56,7 @@
         bash install_prerequisite.sh export community
         ```
 
-    - 全模式制作命令
+    - 商业版制作命令
 
         ```bash
         bash install_prerequisite.sh export full
@@ -78,13 +78,13 @@
 
 3. 执行离线安装。
 
-    - 社区版制作命令
+    - 社区版安装命令
 
         ```bash
         bash install_prerequisite.sh offline community
         ```
 
-    - 全模式制作命令
+    - 商业版安装
 
         ```bash
          bash install_prerequisite.sh offline full
