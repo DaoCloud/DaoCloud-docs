@@ -13,7 +13,7 @@ nav:
           - 安装依赖项: install/install-tools.md
           - 在线安装 DCE 5.0 社区版: install/install-dce-community.md
           - 离线安装 DCE 5.0 社区版: install/offline-install-community.md
-          - 离线安装 DCE 5.0 非社区版: install/offline-install-full.md
+          - 离线安装 DCE 5.0 商业版: install/offline-install-full.md
           - 卸载: install/uninstall.md
       - 容器管理:
           - 介绍:
