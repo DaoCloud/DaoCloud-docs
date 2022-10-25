@@ -57,13 +57,12 @@ nav:
           - 服务与路由:
               - 创建服务: kpanda/07UserGuide/ServicesandRoutes/CreatingServices.md
               - 创建路由: kpanda/07UserGuide/ServicesandRoutes/CreatingIngress.md
-          - 自定义资源:
-              - 创建自定义资源: kpanda/07UserGuide/CustomResources/create.md
+          - 自定义资源: kpanda/07UserGuide/CustomResources/create.md
           - 配置与密钥:
               - 创建密钥: kpanda/07UserGuide/ConfigMapsandSecrets/create-secret.md
               - 使用密钥: kpanda/07UserGuide/ConfigMapsandSecrets/use-secret.md
               - 使用配置项: kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md
-          - 创建命名空间: kpanda/07UserGuide/Namespaces/createns.md
+          - 命名空间: kpanda/07UserGuide/Namespaces/createns.md
           - 权限说明:
               - 权限说明: kpanda/07UserGuide/Permissions/PermissionBrief.md
               - 集群和命名空间授权: kpanda/07UserGuide/Permissions/Cluster-NSAuth.md
@@ -103,14 +102,14 @@ nav:
               - 安全设置: ghippo/04UserGuide/06PersonalCenter/SecuritySetting.md
               - 访问密钥: ghippo/04UserGuide/06PersonalCenter/Password.md
               - 语言设置: ghippo/04UserGuide/06PersonalCenter/Language.md
-          - 权限说明:
-              - 微服务引擎权限: ghippo/permissions/skoala.md
+          - 权限说明: ghippo/permissions/skoala.md
       - 可观测性:
           - 介绍:
               - 什么是可观测性: insight/03ProductBrief/WhatisInsight.md
               - 产品优势: insight/03ProductBrief/benefits.md
               - 基本概念: insight/03ProductBrief/concepts.md
               - 应用场景: insight/03ProductBrief/scenarios.md
+              - 权限说明: insight/06UserGuide/permission.md
           - 快速入门:
               - 获取 host 地址: insight/06UserGuide/01quickstart/gethosturl.md
               - 安装 insight-agent 采集数据: insight/06UserGuide/01quickstart/installagent.md
@@ -120,8 +119,7 @@ nav:
                 - 用 OTel SDK 增强 Go 应用: insight/06UserGuide/01quickstart/otel/golang.md
                 - 用 OTel SDK 为应用暴露指标: insight/06UserGuide/01quickstart/otel/meter.md
                 - 用 OTel 自动探针增强 Go 应用: insight/06UserGuide/01quickstart/otel/golang-ebpf.md
-          - 概览: 
-              - insight/06UserGuide/overview.md
+          - 概览: insight/06UserGuide/overview.md
           - 仪表盘:
               - 仪表盘: insight/06UserGuide/02dashboard/dashboard.md
               - 以管理员身份登录 Grafana: insight/06UserGuide/02dashboard/logingrafana.md
@@ -157,8 +155,7 @@ nav:
               - 产品优势: amamba/01ProductBrief/Benefits.md
               - 适用场景: amamba/01ProductBrief/Scenarios.md
               - 基本概念: amamba/01ProductBrief/Concepts.md
-          - 命名空间:
-              - 命名空间管理: amamba/03UserGuide/Namespace/namespace.md
+          - 命名空间管理: amamba/03UserGuide/Namespace/namespace.md
           - 流水线:
               - 自定义创建流水线: amamba/03UserGuide/Pipeline/createpipelinebyself.md
               - Jenkinsfile 创建单代码分支流水线: amamba/03UserGuide/Pipeline/createpipelinebyjenkins.md
@@ -224,8 +221,7 @@ nav:
               - API:
                   - 管理 API: skoala/ms-gateway/api/manage-api.md
                   - 配置 API 策略: skoala/ms-gateway/api/api-policy.md
-              - 服务:
-                  - 管理服务: skoala/ms-gateway/service/manage-service.md
+              - 管理服务: skoala/ms-gateway/service/manage-service.md
               - 日志: skoala/ms-gateway/log.md
               - 域名:
                   - 管理域名: skoala/ms-gateway/domain/manage-domain.md
@@ -272,8 +268,7 @@ nav:
           - 网格网关:
               - 创建网格网关: mspider/03UserGuide/09GatewayInstance/create.md
               - 删除网格网关: mspider/03UserGuide/09GatewayInstance/delete.md
-          - 网格配置:
-              - Istio 资源管理: mspider/03UserGuide/10MeshConfiguration/IstioResources.md
+          - Istio 资源管理: mspider/03UserGuide/10MeshConfiguration/IstioResources.md
           - 常见问题: mspider/07faq.md
       - 云原生网络:
           - 介绍:

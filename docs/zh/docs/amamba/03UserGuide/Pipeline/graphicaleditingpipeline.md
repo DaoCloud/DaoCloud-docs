@@ -115,7 +115,7 @@
 
 !!! note
     
-    镜像更新后还可以实现触发流水线，具体操作请参考[触发流水线](./PipelineConfig/PipelineTrigger.md)。
+    镜像更新后还可以实现触发流水线，具体操作请参考[触发流水线](./PipelineTrigger.md)。
 
 ### 添加阶段 - 审核
 

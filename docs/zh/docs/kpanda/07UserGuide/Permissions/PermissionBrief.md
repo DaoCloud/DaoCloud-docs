@@ -14,6 +14,8 @@
 
 3. 可授权用户为集群内角色 (Cluster Admin、NS Admin、NS Edit、NS View)
 
+该集群角色的 YAML 示例如下：
+
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -53,6 +55,8 @@ rules:
 
 3. 可授权用户为对应命名空间角色 (NS Edit、NS View)
 
+该集群角色的 YAML 示例如下：
+
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -85,6 +89,8 @@ rules:
 1. 可查看对应有权限的命名空间
 
 2. 管理、编辑、查看 命名空间下的所有工作负载
+
+该集群角色的 YAML 示例如下：
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -208,6 +214,8 @@ rules:
 1. 可查看对应命名空间
 
 2. 可查看对应命名空间下的所有工作负载，及自定义资源
+
+该集群角色的 YAML 示例如下：
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -344,10 +352,11 @@ rules:
 
 ## 权限 FAQ
 
-1. **全局权限和容器管理权限管理的关系？**
+1. 全局权限和容器管理权限管理的关系？
 
-    答： 全局权限仅授权为粗粒度权限，可管理所有集群的创建，编辑，删除；而对于细粒度的权限，如单个集群的管理权限，单个命名空间的管理，编辑，删除权限，需要依赖于基于 Kubernetes RBAC 的容器管理权限进行实现。 一般权限的用户仅需要在容器管理中进行授权即可。
+    答：全局权限仅授权为粗粒度权限，可管理所有集群的创建、编辑、删除；而对于细粒度的权限，如单个集群的管理权限，单个命名空间的管理、编辑、删除权限，需要基于 Kubernetes RBAC 的容器管理权限进行实现。
+    一般权限的用户仅需要在容器管理中进行授权即可。
 
-2. **目前仅支持四个默认角， 后台自定义的角色的 RoleBinding 以及 ClusterRoleBinding（Kubernetes 细粒度的 RBAC）是否也能生效？**
+2. 目前仅支持四个默认角色，后台自定义角色的 `RoleBinding` 以及 `ClusterRoleBinding`（Kubernetes 细粒度的 RBAC）是否也能生效？
 
-    答：目前自定义权限暂时无法通过界面进行管理，但是通过 kubectl 创建的权限规则，同样能生效。
+    答：目前自定义权限暂时无法通过图形界面进行管理，但是通过 kubectl 创建的权限规则同样能生效。
