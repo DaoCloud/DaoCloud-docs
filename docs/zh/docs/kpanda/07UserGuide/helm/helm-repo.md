@@ -5,7 +5,7 @@ Helm 仓库是用来存储和发布 Chart 的存储库。Helm 应用模块支持
 | 仓库      | 描述                                                         | 示例  |
 | --------- | ------------------------------------------------------------ | ------------ |
 | partner   | 由生态合作伙伴所提供的各类优质特色 Chart                     | tidb         |
-| system    | 系统核心功能组件及部分高级功能所必需依赖的 Chart，如必需安装 insight-agent 才能够获取集群的监控信息。| Insight      |
+| system    | 系统核心功能组件及部分高级功能所必需依赖的 Chart，如必需安装 insight-agent 才能够获取集群的监控信息| Insight      |
 | addon     | 业务场景中常见的 Chart                                       | cert-manager |
 | community | Kubernetes 社区较为热门的开源组件 Chart                      | Istio        |
 
