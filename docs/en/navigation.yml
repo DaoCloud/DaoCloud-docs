@@ -239,7 +239,7 @@ nav:
           - Service Management: /mspider/03UserGuide/01ServiceList/
           - Traffic Governance:
               - Virtual Services: /mspider/03UserGuide/02TrafficGovernance/VirtualService/
-              - Destination Rules: /mspider/03UserGuide/02TrafficGovernance/TargetRules/
+              - Destination Rules: /mspider/03UserGuide/02TrafficGovernance/DestinationRules/
               - Gateway Rules: /mspider/03UserGuide/02TrafficGovernance/GatewayRules/
               - Virtual Service Parameters: /mspider/03UserGuide/02TrafficGovernance/vsparams/
           - Security Governance:
