@@ -1,0 +1,458 @@
+# Page tree
+nav:
+  - DaoCloud 官网: https://www.daocloud.io/
+  - 产品文档:
+      - DCE 产品介绍:
+          - 什么是 DCE5.0: dce/what-is-dce.md
+          - 适用场景: dce/scenario.md
+          - 平台功能: dce/features.md
+          - 产品优势: dce/whyus.md
+          - 申请社区免费体验: dce/license0.md
+      - 安装:
+          - 安装 Kubernetes: install/install-k8s.md
+          - 安装依赖项: install/install-tools.md
+          - 在线安装 DCE 5.0 社区版: install/install-dce-community.md
+          - 离线安装 DCE 5.0 社区版: install/offline-install-community.md
+          - 离线安装 DCE 5.0 商业版: install/offline-install-full.md
+          - 卸载: install/uninstall.md
+      - 容器管理:
+          - 介绍:
+              - 什么是容器管理: kpanda/03ProductBrief/WhatisKPanda.md
+              - 功能总览: kpanda/03ProductBrief/Features.md
+              - 竞争优势: kpanda/03ProductBrief/Benefits.md
+              - 适用场景: kpanda/03ProductBrief/Scenarios.md
+              - 基本概念: kpanda/03ProductBrief/Concepts.md
+          - 集群管理:
+              - 创建集群: kpanda/07UserGuide/Clusters/CreateCluster.md
+              - 接入集群: kpanda/07UserGuide/Clusters/JoinACluster.md
+              - 访问集群: kpanda/07UserGuide/Clusters/AccessCluster.md
+              - 升级集群: kpanda/07UserGuide/Clusters/UpgradeCluster.md
+              - 删除集群: kpanda/07UserGuide/Clusters/DeleteCluster.md
+              - 集群角色: kpanda/07UserGuide/Clusters/ClusterRole.md
+              - 集群状态: kpanda/07UserGuide/Clusters/ClusterStatus.md
+          - 节点管理:
+              - 节点扩容: kpanda/07UserGuide/Nodes/AddNode.md
+              - 节点缩容: kpanda/07UserGuide/Nodes/DeleteNode.md
+              - 污点管理: kpanda/07UserGuide/Nodes/Taints.md
+          - 工作负载:
+              - 创建 Deployment: kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md
+              - 创建 StatefulSet: kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md
+              - 创建 DaemonSet: kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md
+              - 创建 CronJob: kpanda/07UserGuide/Workloads/CreateCronJobByImage.md
+              - 创建 Job: kpanda/07UserGuide/Workloads/CreateJobByImage.md
+              - 参数配置说明:
+                  - 工作负载状态: kpanda/07UserGuide/Workloads/PodConfig/workload-status.md
+                  - 任务的参数说明: kpanda/07UserGuide/Workloads/PodConfig/JobParameters.md
+                  - 生命周期: kpanda/07UserGuide/Workloads/PodConfig/lifescycle.md
+                  - 环境变量: kpanda/07UserGuide/Workloads/PodConfig/EnvironmentVariables.md
+                  - 健康检查: kpanda/07UserGuide/Workloads/PodConfig/healthcheck.md
+                  - 集群调度: kpanda/07UserGuide/Workloads/PodConfig/SchedulingPolicy.md
+          - 弹性伸缩:
+              - 指标弹性伸缩 HPA: kpanda/07UserGuide/Scale/Create-HPA.md
+              - 安装 metrics-server: kpanda/07UserGuide/Scale/Install-metrics-server.md
+          - Helm 应用:
+              - Helm 概述: kpanda/07UserGuide/helm/README.md
+              - 管理 Helm 应用: kpanda/07UserGuide/helm/helm-app.md
+              - 管理 Helm 仓库: kpanda/07UserGuide/helm/helm-repo.md
+          - 服务与路由:
+              - 创建服务: kpanda/07UserGuide/ServicesandRoutes/CreatingServices.md
+              - 创建路由: kpanda/07UserGuide/ServicesandRoutes/CreatingIngress.md
+          - 自定义资源: kpanda/07UserGuide/CustomResources/create.md
+          - 配置与密钥:
+              - 创建密钥: kpanda/07UserGuide/ConfigMapsandSecrets/create-secret.md
+              - 使用密钥: kpanda/07UserGuide/ConfigMapsandSecrets/use-secret.md
+              - 使用配置项: kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md
+          - 命名空间: kpanda/07UserGuide/Namespaces/createns.md
+          - 权限说明:
+              - 权限说明: kpanda/07UserGuide/Permissions/PermissionBrief.md
+              - 集群和命名空间授权: kpanda/07UserGuide/Permissions/Cluster-NSAuth.md
+      - 全局管理:
+          - 介绍:
+              - 什么是全局管理: ghippo/01ProductBrief/WhatisGhippo.md
+              - 功能总览: ghippo/01ProductBrief/Features.md
+              - 常见术语: ghippo/01ProductBrief/glossary.md
+          - 登录: ghippo/04UserGuide/00Login.md
+          - 用户与访问控制:
+              - 什么是用户与访问控制: ghippo/04UserGuide/01UserandAccess/iam.md
+              - 用户: ghippo/04UserGuide/01UserandAccess/User.md
+              - 用户组: ghippo/04UserGuide/01UserandAccess/Group.md
+          - 角色和权限管理:
+              - ghippo/04UserGuide/01UserandAccess/Role.md
+              - 全局管理角色: ghippo/04UserGuide/01UserandAccess/global.md
+          - 身份提供商:
+              - ghippo/04UserGuide/01UserandAccess/idprovider.md
+              - LDAP: ghippo/04UserGuide/01UserandAccess/ldap.md
+              - OIDC: ghippo/04UserGuide/01UserandAccess/oidc.md
+          - 工作空间与层级:
+              - ghippo/04UserGuide/02Workspace/ws-folder.md
+              - 创建和删除工作空间: ghippo/04UserGuide/02Workspace/Workspaces.md
+              - 创建和删除文件夹: ghippo/04UserGuide/02Workspace/folders.md
+              - 工作空间最佳实践: ghippo/04UserGuide/02Workspace/wsbp.md
+              - 资源绑定: ghippo/04UserGuide/02Workspace/Resources.md
+              - 文件夹与工作空间角色权限: ghippo/04UserGuide/02Workspace/resource02.md
+          - 审计日志:
+              - 开启和关闭审计日志: ghippo/04UserGuide/open-audit.md
+              - 下载和导出审计日志: ghippo/04UserGuide/03AuditLog.md
+          - 平台设置:
+              - 密码重置: ghippo/04UserGuide/password.md
+              - 邮箱服务器设置: ghippo/04UserGuide/04PlatformSetting/MailServer.md
+              - 外观定制: ghippo/04UserGuide/04PlatformSetting/Appearance.md
+              - 关于平台: ghippo/04UserGuide/04PlatformSetting/about.md
+          - 个人中心:
+              - 安全设置: ghippo/04UserGuide/06PersonalCenter/SecuritySetting.md
+              - 访问密钥: ghippo/04UserGuide/06PersonalCenter/Password.md
+              - 语言设置: ghippo/04UserGuide/06PersonalCenter/Language.md
+          - 权限说明: ghippo/permissions/skoala.md
+      - 可观测性:
+          - 介绍:
+              - 什么是可观测性: insight/03ProductBrief/WhatisInsight.md
+              - 产品优势: insight/03ProductBrief/benefits.md
+              - 基本概念: insight/03ProductBrief/concepts.md
+              - 应用场景: insight/03ProductBrief/scenarios.md
+              - 权限说明: insight/06UserGuide/permission.md
+          - 快速入门:
+              - 获取 host 地址: insight/06UserGuide/01quickstart/gethosturl.md
+              - 安装 insight-agent 采集数据: insight/06UserGuide/01quickstart/installagent.md
+              - 使用 OTel 赋予应用可观测性: 
+                - insight/06UserGuide/01quickstart/otel/otel.md
+                - 用 Operator 无侵入增强应用: insight/06UserGuide/01quickstart/otel/operator.md
+                - 用 OTel SDK 增强 Go 应用: insight/06UserGuide/01quickstart/otel/golang.md
+                - 用 OTel SDK 为应用暴露指标: insight/06UserGuide/01quickstart/otel/meter.md
+                - 用 OTel 自动探针增强 Go 应用: insight/06UserGuide/01quickstart/otel/golang-ebpf.md
+          - 概览: insight/06UserGuide/overview.md
+          - 仪表盘:
+              - 仪表盘: insight/06UserGuide/02dashboard/dashboard.md
+              - 以管理员身份登录 Grafana: insight/06UserGuide/02dashboard/logingrafana.md
+          - 场景监控:
+              - 集群监控: insight/06UserGuide/03scenarioinsight/clusterinsight.md
+              - 节点监控: insight/06UserGuide/03scenarioinsight/nodeinsight.md
+              - 容器监控: insight/06UserGuide/03scenarioinsight/containerinsight.md
+              - 服务监控: insight/06UserGuide/03scenarioinsight/serviceinsight.md
+          - 数据查询:
+              - 日志查询: insight/06UserGuide/04dataquery/logquery.md
+              - 指标查询: insight/06UserGuide/04dataquery/metricquery.md
+              - 链路查询: insight/06UserGuide/04dataquery/tracequery.md
+          - 告警中心:
+              - 告警规则: insight/06UserGuide/05alertcenter/alertrule.md
+              - 通知配置: insight/06UserGuide/05alertcenter/message.md
+              - 消息模板: insight/06UserGuide/05alertcenter/messagetemplate.md
+          - 数据采集:
+              - 采集管理: insight/06UserGuide/07collectionmanag/collectionmanag.md
+              - 服务监控: insight/06UserGuide/07collectionmanag/servicemonitor.md
+              - 开启采集日志: insight/09FAQs/collectauditlog.md
+          - 系统配置:
+              - 系统配置: insight/06UserGuide/08systemconfig/systemconfig.md
+              - 修改配置: insight/06UserGuide/08systemconfig/modifyconfig.md
+          - 常见问题:
+              - insight/09FAQs/README.md
+              - 导入自定义仪表盘: insight/09FAQs/importdashboard.md
+              - 日志采集排障指南: insight/09FAQs/debuglog.md
+              - 链路采集排障指南: insight/09FAQs/debugtrace.md
+      - 应用工作台:
+          - 介绍:
+              - 什么是应用工作台？: amamba/01ProductBrief/WhatisAmamba.md
+              - 功能总览: amamba/01ProductBrief/Features.md
+              - 产品优势: amamba/01ProductBrief/Benefits.md
+              - 适用场景: amamba/01ProductBrief/Scenarios.md
+              - 基本概念: amamba/01ProductBrief/Concepts.md
+          - 命名空间管理: amamba/03UserGuide/Namespace/namespace.md
+          - 流水线:
+              - 自定义创建流水线: amamba/03UserGuide/Pipeline/createpipelinebyself.md
+              - Jenkinsfile 创建单代码分支流水线: amamba/03UserGuide/Pipeline/createpipelinebyjenkins.md
+              - 使用图形化编辑流水线: amamba/03UserGuide/Pipeline/graphicaleditingpipeline.md
+              - 触发器触发流水线: amamba/03UserGuide/Pipeline/PipelineTrigger.md
+              - 手动执行流水线: amamba/03UserGuide/Pipeline/PipelineHand.md
+              - 凭证管理: amamba/03UserGuide/Pipeline/Credential.md
+              - 流水线配置参数:
+                  - 流水线中的概念: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineConcept.md
+                  - 图形化任务模板参数: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineStep.md
+                  - 流水线节点（Agent）: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineAgent.md
+          - 最佳实践:
+              - 快速创建流水线: amamba/02QuickStart/deploypipline.md
+              - 使用流水线实现代码扫描: amamba/02QuickStart/scan-with-pipeline.md
+              - 集成 Harbor 实现镜像安全扫描: amamba/02QuickStart/scan-with-harbor.md
+      - 多云编排:
+          - 介绍:
+              - 什么是多云编排: kairship/01product/whatiskairship.md
+              - 功能总览: kairship/01product/features.md
+              - 产品架构: kairship/01product/architecture.md
+              - 产品优势: kairship/01product/benefits.md
+              - 基本概念: kairship/01product/concepts.md
+          - 多云实例管理:
+              - 多云实例介绍: kairship/03instance/README.md
+              - 添加实例: kairship/03instance/add.md
+              - 删除实例: kairship/03instance/delete.md
+          - 工作集群管理:
+              - 接入集群: kairship/04cluster/join.md
+              - 移除集群: kairship/04cluster/remove.md
+          - 多云工作负载:
+              - 工作负载简介: kairship/05workload/README.md
+              - 镜像创建: kairship/05workload/image.md
+              - YAML创建: kairship/05workload/yaml.md
+          - 资源管理:
+              - 多云服务: kairship/06resource/service.md
+              - 多云命名空间: kairship/06resource/ns.md
+              - 多云配置项: kairship/06resource/configmap.md
+              - 多云密钥: kairship/06resource/secret.md
+          - 策略管理:
+              - 部署策略: kairship/07policy/deploy.md
+              - 差异化策略: kairship/07policy/diff.md
+      - 微服务引擎:
+          - 介绍:
+              - 功能总览: skoala/intro/features.md
+              - 使用场景: skoala/intro/scenarios.md
+              - 产品优势: skoala/intro/advantages.md
+              - 环境要求: skoala/intro/components.md
+          - 选择工作空间: skoala/select-workspace.md
+          - 微服务治理中心:
+              - 托管型注册中心:
+                  - 管理注册中心实例: skoala/registry/host/manage-registry.md
+                  - 微服务命名空间: skoala/registry/host/namespace.md
+                  - 服务治理策略: skoala/registry/host/governance-policy.md
+                  - 配置中心: skoala/registry/host/configcenter.md
+              - 接入型注册中心:
+                  - 管理注册中心实例: skoala/registry/integrate/manage-registry.md
+                  - 微服务管理: skoala/registry/integrate/manage-service.md
+          - 微服务网关:
+              - 网关:
+                  - 管理网关实例: skoala/ms-gateway/gateway/manage-gateway.md
+                  - 查看网关详情: skoala/ms-gateway/gateway/check-details.md
+                  - 诊断网关: skoala/ms-gateway/gateway/diagnose-gateway.md
+              - API:
+                  - 管理 API: skoala/ms-gateway/api/manage-api.md
+                  - 配置 API 策略: skoala/ms-gateway/api/api-policy.md
+              - 管理服务: skoala/ms-gateway/service/manage-service.md
+              - 日志: skoala/ms-gateway/log.md
+              - 域名:
+                  - 管理域名: skoala/ms-gateway/domain/manage-domain.md
+                  - 配置域名策略: skoala/ms-gateway/domain/domain-policy.md
+      - 服务网格:
+          - 介绍:
+              - 什么是服务网格: mspider/01Intro/WhatismSpider.md
+              - 功能总览: mspider/01Intro/Features.md
+              - 产品优势: mspider/01Intro/Benefits.md
+              - 适用场景: mspider/01Intro/Scenarios.md
+              - UI 支持的特性: mspider/01Intro/meshes.md
+              - 网格架构: mspider/01Intro/Architecture.md
+          - 创建/删除网格:
+              - 网格介绍: mspider/03UserGuide/servicemesh/README.md
+              - 创建托管网格: mspider/03UserGuide/servicemesh/create-mesh.md
+              - 创建专用网格: mspider/03UserGuide/servicemesh/integrate-mesh.md
+              - 删除网格: mspider/03UserGuide/servicemesh/delete.md
+          - 服务管理:
+              - mspider/03UserGuide/01ServiceList/README.md
+              - 从网格外部访问服务: mspider/03UserGuide/01ServiceList/out-to-in.md
+          - 流量治理:
+              - mspider/03UserGuide/02TrafficGovernance/README.md
+              - 虚拟服务: mspider/03UserGuide/02TrafficGovernance/VirtualService.md
+              - 目标规则: mspider/03UserGuide/02TrafficGovernance/TargetRules.md
+              - 网关规则: mspider/03UserGuide/02TrafficGovernance/GatewayRules.md
+              - 虚拟服务参数配置: mspider/03UserGuide/02TrafficGovernance/vsparams.md
+          - 安全治理:
+              - 安全治理介绍: mspider/03UserGuide/05Security/README.md
+              - 对等身份认证: mspider/03UserGuide/05Security/peer.md
+              - 请求身份认证: mspider/03UserGuide/05Security/request.md
+              - 授权策略: mspider/03UserGuide/05Security/authorize.md
+              - 安全治理参数配置: mspider/03UserGuide/05Security/params.md
+          - 边车管理:
+              - 命名空间边车管理: mspider/03UserGuide/07SidecarManagement/NamespaceSidecar.md
+              - 工作负载边车管理: mspider/03UserGuide/07SidecarManagement/WorkloadSidecar.md
+              - 全局边车管理: mspider/03UserGuide/07SidecarManagement/GlobalSidecar.md
+          - 流量监控:
+              - mspider/03UserGuide/06TrafficMonitor/README.md
+              - 流量拓扑: mspider/03UserGuide/06TrafficMonitor/connTopo.md
+          - 集群纳管:
+              - 集群纳管介绍: mspider/03UserGuide/08ClusterManagement/README.md
+              - 添加集群: mspider/03UserGuide/08ClusterManagement/join-clus.md
+              - 移除集群: mspider/03UserGuide/08ClusterManagement/remov-clus.md
+          - 网格网关:
+              - 创建网格网关: mspider/03UserGuide/09GatewayInstance/create.md
+              - 删除网格网关: mspider/03UserGuide/09GatewayInstance/delete.md
+          - Istio 资源管理: mspider/03UserGuide/10MeshConfiguration/IstioResources.md
+          - 常见问题: mspider/07faq.md
+      - 云原生网络:
+          - 介绍:
+              - 云原生网络方案: network/intro/what-is-net.md
+              - 背景: network/intro/background.md
+              - 挑战: network/intro/challenges.md
+              - 网络组件: network/modules/modules.md
+          - Calico:
+              - 介绍: network/modules/calico/what.md
+              - 安装: network/modules/calico/install.md
+              - ippool: network/modules/calico/ippool.md
+              - 监控指标: network/modules/calico/metrics.md
+              - Calico 网络策略: network/modules/calico/policy.md
+              - 故障排查: network/modules/calico/debug.md
+          - Cilium:
+              - 介绍: network/modules/cilium/what.md
+              - 安装: network/modules/cilium/install.md
+              - 配置参考: network/modules/cilium/config.md
+              - 常用命令: network/modules/cilium/command.md
+          - Contour:
+              - 介绍: network/modules/contour/what.md
+              - 安装: network/modules/contour/install.md
+          - F5networks:
+              - 介绍: network/modules/f5networks/what.md
+              - 安装: network/modules/f5networks/install.md
+              - 使用: network/modules/f5networks/usage.md
+          - Ingress-nginx:
+              - 介绍: network/modules/ingress-nginx/what.md
+              - 安装: network/modules/ingress-nginx/install.md
+              - IngressClass: network/modules/ingress-nginx/ingressclass.md
+          - Metallb:
+              - 介绍: network/modules/metallb/what.md
+              - 安装: network/modules/metallb/install.md
+              - 使用: network/modules/metallb/usage.md
+          - Multus-underlay:
+              - 介绍: network/modules/multus-underlay/what.md
+              - 安装: network/modules/multus-underlay/install.md
+          - Spiderpool:
+              - 介绍: network/modules/spiderpool/what.md
+              - 安装: network/modules/spiderpool/install.md
+              - 使用: network/modules/spiderpool/usage.md
+              - 配置参考: network/modules/spiderpool/config.md
+              - 常用命令: network/modules/spiderpool/command.md
+      - 中间件:
+          - 中间件介绍: middleware/midware.md
+          - RabbitMQ 消息队列:
+              - 什么是 RabbitMQ: middleware/rabbitmq/intro/what.md
+              - 功能说明: middleware/rabbitmq/intro/features.md
+              - 竞争优势: middleware/rabbitmq/intro/benefits.md
+              - 适用场景: middleware/rabbitmq/intro/scenarios.md
+              - 基本概念: middleware/rabbitmq/intro/concepts.md
+              - 首次使用 RabbitMQ: middleware/rabbitmq/userguide/login.md
+              - 安装和卸载 RabbitMQ: middleware/rabbitmq/quickstart/install.md
+              - 创建 RabbitMQ 实例: middleware/rabbitmq/userguide/create.md
+              - 更新 RabbitMQ 实例: middleware/rabbitmq/userguide/update.md
+              - 删除 RabbitMQ 实例: middleware/rabbitmq/userguide/delete.md
+              - 查看消息队列: middleware/rabbitmq/userguide/view.md
+              - 数据迁移: middleware/rabbitmq/userguide/migrate.md
+              - 实例监控: middleware/rabbitmq/userguide/insight.md
+          - Elasticsearch 搜索服务:
+              - 什么是 Elasticsearch: middleware/elastic-search/intro/what.md
+              - 功能说明: middleware/elastic-search/intro/features.md
+              - 竞争优势: middleware/elastic-search/intro/benefits.md
+              - 适用场景: middleware/elastic-search/intro/scenarios.md
+              - 基本概念: middleware/elastic-search/intro/concepts.md
+              - 安装和卸载 Elasticsearch: middleware/elastic-search/userguide/install.md
+              - 首次使用 Elasticsearch: middleware/elastic-search/userguide/login.md
+              - 创建 Elasticsearch 实例: middleware/elastic-search/userguide/create.md
+              - 更新 Elasticsearch 实例: middleware/elastic-search/userguide/edit.md
+              - 删除 Elasticsearch 实例: middleware/elastic-search/userguide/delete.md
+              - Elasticsearch 集群容量规划: middleware/elastic-search/userguide/cluster-capacity-plan.md
+              - 查看列表: middleware/elastic-search/userguide/view.md
+              - 概览: middleware/elastic-search/userguide/basic.md
+              - 实例监控: middleware/elastic-search/userguide/monitor.md
+          - MySQL 数据库:
+              - 什么是 MySQL: middleware/mysql/intro/what.md
+              - 功能说明: middleware/mysql/intro/features.md
+              - 竞争优势: middleware/mysql/intro/benefits.md
+              - 基本概念: middleware/mysql/intro/concepts.md
+              - 安装 MySQL: middleware/mysql/quickstart/install.md
+              - 首次使用 MySQL: middleware/mysql/userguide/login.md
+              - 创建 MySQL: middleware/mysql/userguide/create.md
+              - 更新 MySQL: middleware/mysql/userguide/update.md
+              - 删除 MySQL: middleware/mysql/userguide/delete.md
+          - Redis 缓存服务:
+              - 什么是 Redis: middleware/redis/intro/what.md
+              - 适用场景: middleware/redis/intro/scenarios.md
+              - 安装和卸载 Redis: middleware/redis/userguide/install.md
+              - 首次使用 Redis: middleware/redis/userguide/login.md
+              - 创建 Redis 实例: middleware/redis/userguide/create.md
+              - 更新 Redis 实例: middleware/redis/userguide/update.md
+              - 删除 Redis 实例: middleware/redis/userguide/delete.md
+          - Kafka 消息队列:
+              - 什么是 Kafka: middleware/kafka/intro/what.md
+              - 适用场景: middleware/kafka/intro/scenarios.md
+              - 常见术语: middleware/kafka/intro/concepts.md
+              - 安装和卸载 Kafka: middleware/kafka/quickstart/install.md
+              - 首次使用 Kafka: middleware/kafka/userguide/login.md
+              - 创建 Kafka 实例: middleware/kafka/userguide/create.md
+              - 更新 Kafka 实例: middleware/kafka/userguide/update.md
+              - 删除 Kafka 实例: middleware/kafka/userguide/delete.md
+              - 查看消息队列: middleware/kafka/userguide/view.md
+              - 实例监控: middleware/kafka/userguide/insight.md
+              - 配置参数: middleware/kafka/userguide/config.md
+      - 云原生本地存储:
+          - 介绍: hwameistor/intro/what.md
+          - 模块:
+              - 本地磁盘管理器: hwameistor/intro/ldm.md
+              - 本地存储: hwameistor/intro/ls.md
+              - DRBD 安装器: hwameistor/intro/drbd.md
+              - 调度器: hwameistor/intro/scheduler.md
+              - 准入控制器: hwameistor/intro/admission-controller.md
+          - 资源: hwameistor/intro/resources.md
+          - 安装管理:
+              - 准备工作: hwameistor/install/prereq.md
+              - 通过 Helm Chart 安装: hwameistor/install/deploy.md
+              - 安装后检查: hwameistor/install/post-check.md
+              - 升级: hwameistor/install/upgrade.md
+              - 卸载: hwameistor/install/uninstall.md
+          - 资源管理:
+              - 创建存储池: hwameistor/resources/storagepool.md
+              - 数据卷扩容: hwameistor/resources/expand.md
+              - 数据卷迁移: hwameistor/resources/migrate.md
+              - 节点扩展: hwameistor/resources/node-expansion.md
+              - 数据盘扩展: hwameistor/resources/disk-expansion.md
+          - 应用场景:
+              - 应用场景概述: hwameistor/application/overview.md
+              - 部署有状态应用:
+                  - 使用本地卷部署: hwameistor/application/local.md
+                  - 使用高可用卷部署: hwameistor/application/ha.md
+              - TiDB: hwameistor/application/tidb.md
+              - MinIO: hwameistor/application/minio/minio.md
+          - 存储基本概念:
+              - Kubernetes 存储: hwameistor/terms/k8s_storage.md
+              - CAS 存储: hwameistor/terms/cas.md
+              - CSI 接口: hwameistor/terms/csi.md
+              - CRD 和 CR: hwameistor/terms/crd_and_cr.md
+              - 存储卷: hwameistor/terms/volume.md
+              - LVM: hwameistor/terms/lvm.md
+              - PV 和 PVC: hwameistor/terms/pv_pvc.md
+          - 常见问题: hwameistor/faqs.md
+      - 镜像仓库:
+          - kangaroo/intro.md
+      - Release Notes:
+          - release/rn5.0.md
+      - 通用参考:
+          - 术语表: reference/terms.md
+          - 基础知识:
+              - 云原生网关: reference/basic-knowledge/gateway.md
+              - 微服务: reference/basic-knowledge/microservice.md
+              - 注册中心: reference/basic-knowledge/registry.md
+              - 虚拟服务: reference/basic-knowledge/virtual-service.md
+              - 可观测性: reference/basic-knowledge/insight.md
+              - 流量治理: reference/basic-knowledge/traffic-control.md
+      - 故障排查:
+          - ingressgateway 无法启动: reference/troubleshooting/ghippo01.md
+          - 登录报错 401 或 403: reference/troubleshooting/ghippo02.md
+          - keycloak 无法启动: reference/troubleshooting/ghippo03.md
+  - 视频教程:
+      - 介绍: videos/index.md
+      - 安装社区版 Demo: videos/install.md
+      - 容器管理: videos/kpanda.md
+      - 全局管理: videos/ghippo.md
+      - 可观测性: videos/insight.md
+      - 应用工作台: videos/amamba.md
+      - 服务网格: videos/mspider.md
+      - 微服务引擎: videos/skoala.md
+      - 多云编排: videos/kairship.md
+      - 中间件: videos/mcamel.md
+  - 博客:
+      - DCE 开发背景: blogs/blog00.md
+      - 5.0 容器管理能力介绍: blogs/kpanda.md
+      - 5.0 资源管理能力介绍: blogs/resource.md
+      - 5.0 应用工作台能力介绍: blogs/amamba.md
+      - 5.0 多云编排能力介绍: blogs/kairship.md
+      - 5.0 服务网格能力介绍: blogs/mspider.md
+  - 开源社区:
+      - DaoCloud 开源生态: community/index.md
+      - CloudTTY: community/cloudtty.md
+      - Clusterpedia: community/clusterpedia.md
+      - Ferry: community/ferry.md
+      - HwameiStor: community/hwameistor.md
+      - KLTS: community/klts.md
+      - Kubean: community/kubean.md
+      - kwok: community/kwok.md
+      - Merbridge: community/merbridge.md
+      - Spiderpool: community/spiderpool.md

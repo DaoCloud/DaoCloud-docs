@@ -50,12 +50,14 @@ jobs:
               mkdocs-minify-plugin \
               mkdocs-macros-plugin \
               mkdocs-git-revision-date-localized-plugin \
-              mkdocs-awesome-pages-plugin
+              mkdocs-awesome-pages-plugin \
+              mkdocs-redirects \
+              mkdocs-print-site-plugin
       
       # add custom plugin with pdf support
       - run: pip install git+https://github.com/SAMZONG/mkdocs-with-pdf-support-material-v8
 
       # build docs
       - run: pwd
-      - run: mkdocs build -f mkdocs.yml -d public/
-      - run: mkdocs build -f mkdocs-en.yml -d public/en/
+      - run: mkdocs build -f docs/zh/mkdocs.yml -d ../../public/
+      - run: mkdocs build -f docs/en/mkdocs.yml -d ../../public/en/

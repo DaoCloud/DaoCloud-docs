@@ -1,11 +1,11 @@
 # support mkdocs-material-insider
 IMAGE_HUB ?= release.daocloud.io/
 BASE_IMAGE ?= ${IMAGE_HUB}daocloud/ndx-mkdocs-material
-BASE_IMAGE_VERSION ?= v1.1.0
+BASE_IMAGE_VERSION ?= v1.1.1
 
 INS_IMAGE_HUB ?= release-ci.daocloud.io/
 INS_IMAGE ?= ${INS_IMAGE_HUB}product/ndx-mkdocs-material-insider
-INS_IMAGE_VERSION ?= v1.1.0
+INS_IMAGE_VERSION ?= v1.1.1
 
 help:
 	@echo
@@ -22,10 +22,10 @@ help:
 	@echo
 
 serve:
-	docker run --rm -it -p 8000:8000 -v ${PWD}:/docs ${BASE_IMAGE}:${BASE_IMAGE_VERSION}
+	docker run --rm -it -e ENABLED_GIT_REVISION_DATE="false" -p 8000:8000 -v ${PWD}/docs/zh:/docs ${BASE_IMAGE}:${BASE_IMAGE_VERSION}
 
 in-serve:
-	docker run --rm -it -p 8000:8000 -v ${PWD}:/docs ${INS_IMAGE}:${INS_IMAGE_VERSION}
+	docker run --rm -it -e ENABLED_GIT_REVISION_DATE="false" -p 8000:8000 -v ${PWD}:/docs ${INS_IMAGE}:${INS_IMAGE_VERSION}
 
 clean:
 	rm -rf public site
