@@ -245,7 +245,7 @@ nav:
           - 流量治理:
               - mspider/03UserGuide/02TrafficGovernance/README.md
               - 虚拟服务: mspider/03UserGuide/02TrafficGovernance/VirtualService.md
-              - 目标规则: mspider/03UserGuide/02TrafficGovernance/TargetRules.md
+              - 目标规则: mspider/03UserGuide/02TrafficGovernance/DestinationRules.md
               - 网关规则: mspider/03UserGuide/02TrafficGovernance/GatewayRules.md
               - 虚拟服务参数配置: mspider/03UserGuide/02TrafficGovernance/vsparams.md
           - 安全治理:
