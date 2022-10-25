@@ -1,6 +1,6 @@
 # 虚拟服务
 
-在虚拟服务中，可以通过多种匹配方式（端口、host、header 等）实现对不同的地域、用户请求做路由转发，分发至特定的服务版本中，并按权重比划分负载。
+在虚拟服务（VirtualService）中，可以通过多种匹配方式（端口、host、header 等）实现对不同的地域、用户请求做路由转发，分发至特定的服务版本中，并按权重比划分负载。
 
 虚拟服务提供了 HTTP、TCP、TLS 三种协议的路由支持。
 
@@ -52,19 +52,19 @@ http 下主要字段：
 
     http规则可以重定向或转发（默认）流量。
 
-- redirect
+- Redirect
 
     http 规则可以重定向或转发（默认）流量. 如果在规则中指定了流量通过选项，则将忽略路由/重定向。重定向原语可用于将 HTTP 301 重定向发送到其他 URI 或 Authority。
 
-- rewrite
+- Rewrite
 
     重写 HTTP URI 和 Authority header，重写不能与重定向原语一起使用。
 
-- fault
+- Fault
 
     故障注入策略，适用于客户端的 HTTP 通信。如果在客户端启用了故障注入策略，则不会启用超时或重试。
 
-- Mirror/mirrorPercent
+- Mirror/MirrorPercent
 
     将 HTTP 流量镜像到另一个目标，并可以设置镜像比例。
 
