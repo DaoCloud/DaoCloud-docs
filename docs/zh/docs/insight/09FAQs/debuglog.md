@@ -35,15 +35,15 @@
 | tail.syslog.messages   | 采集主机常用日志           | /var/log/secure, /var/log/messages, /var/log/syslog,/var/log/auth.log |
 | syslog.syslog.RSyslog  | 采集 RSyslog 日志      |                                                                     |
 | systemd.syslog.systemd | 采集 Journald daemon 日志   |                                                                     |
-| tail.audit_log.k8s    | 采集 Kubernetes audit 日志   | /var/log/*/audit/*.log                                            |
-| tail.audit_log.ghippo | 采集全局管理 audit 日志 | /var/log/containers/*_ghippo-system_audit-log*.log              |
+| tail.audit_log.k8s    | 采集 Kubernetes 审计日志   | /var/log/*/audit/*.log                                            |
+| tail.audit_log.ghippo | 采集全局管理审计日志 | /var/log/containers/*_ghippo-system_audit-log*.log              |
 | tail.skoala-gw         | 采集微服务网关日志     | /var/log/containers/*_skoala-gw*.log                             |
 
 **日志过滤插件**
 
 | filter plugin      | 插件介绍 |
 | ------------------------ | ---------------------------------- |
-| Lua.audit_log.k8s | 使用 lua 过滤符合条件的 kube audit 日志 |
+| Lua.audit_log.k8s | 使用 lua 过滤符合条件的 Kubernetes 审计日志 |
 
 !!! note
 
@@ -53,6 +53,6 @@
 
 | output plugin            | 插件介绍                               |
 | ------------------------ | ---------------------------------- |
-| es.kube.kubeevent.syslog | 把 kube 审计日志、事件日志，syslog 日志写入 ElasticSearch 集群 |
-| forward.audit_log | 把 Kubernetes 审计日志和 `全局管理` 的审计日志发送到 `全局管理`   |
-| es.skoala | 把微服务网关日志写入到  ElasticSearch 集群             |
+| es.kube.kubeevent.syslog | 把 Kubernetes 审计日志、事件日志，syslog 日志写入 [ElasticSearch 集群](../../middleware/elastic-search/intro/what.md) |
+| forward.audit_log | 把 Kubernetes 审计日志和[全局管理的审计日志](../../ghippo/04UserGuide/03AuditLog.md)发送到`全局管理`   |
+| es.skoala | 把[微服务网关日志](../../skoala/ms-gateway/log.md)写入到 ElasticSearch 集群            |
