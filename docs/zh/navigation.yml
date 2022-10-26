@@ -86,10 +86,12 @@ nav:
           - 工作空间与层级:
               - ghippo/04UserGuide/02Workspace/ws-folder.md
               - 创建和删除工作空间: ghippo/04UserGuide/02Workspace/Workspaces.md
-              - 创建和删除文件夹: ghippo/04UserGuide/02Workspace/folders.md
+              - 工作空间权限: ghippo/04UserGuide/02Workspace/wspermission.md
               - 工作空间最佳实践: ghippo/04UserGuide/02Workspace/wsbp.md
-              - 资源绑定: ghippo/04UserGuide/02Workspace/Resources.md
-              - 文件夹与工作空间角色权限: ghippo/04UserGuide/02Workspace/resource02.md
+              - 创建和删除文件夹: ghippo/04UserGuide/02Workspace/folders.md
+              - 文件夹权限: ghippo/04UserGuide/02Workspace/fdpermission.md
+              - 文件夹最佳实践: ghippo/04UserGuide/02Workspace/fdpractice.md
+              - 资源配额: ghippo/04UserGuide/02Workspace/quota.md
           - 审计日志:
               - 开启和关闭审计日志: ghippo/04UserGuide/open-audit.md
               - 下载和导出审计日志: ghippo/04UserGuide/03AuditLog.md
