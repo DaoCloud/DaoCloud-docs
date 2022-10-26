@@ -104,7 +104,11 @@ nav:
               - 安全设置: ghippo/04UserGuide/06PersonalCenter/SecuritySetting.md
               - 访问密钥: ghippo/04UserGuide/06PersonalCenter/Password.md
               - 语言设置: ghippo/04UserGuide/06PersonalCenter/Language.md
-          - 权限说明: ghippo/permissions/skoala.md
+          - 权限说明: 
+              - 微服务引擎权限说明: ghippo/permissions/skoala.md
+              - 应用工作台权限说明: ghippo/permissions/amamba.md
+              - 可观测性权限说明: ghippo/permissions/insight.md
+
       - 可观测性:
           - 介绍:
               - 什么是可观测性: insight/03ProductBrief/WhatisInsight.md
