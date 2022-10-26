@@ -172,12 +172,12 @@ OTEL_METRICS_EXPORTER=prometheus
 
     ```java
     package io.opentelemetry.example.prometheus;
-    
+
     import io.opentelemetry.api.common.Attributes;
     import io.opentelemetry.api.metrics.Meter;
     import io.opentelemetry.api.metrics.MeterProvider;
     import java.util.concurrent.ThreadLocalRandom;
-    
+
     /**
     * Example of using the PrometheusHttpServer to convert OTel metrics to Prometheus format and expose
     * these to a Prometheus instance via a HttpServer exporter.
@@ -187,7 +187,7 @@ OTEL_METRICS_EXPORTER=prometheus
     */
     public final class PrometheusExample {
       private long incomingMessageCount;
-    
+
       public PrometheusExample(MeterProvider meterProvider) {
         Meter meter = meterProvider.get("PrometheusExample");
         meter
@@ -196,7 +196,7 @@ OTEL_METRICS_EXPORTER=prometheus
             .setUnit("message")
             .buildWithCallback(result -> result.record(incomingMessageCount, Attributes.empty()));
       }
-    
+
       void simulate() {
         for (int i = 500; i > 0; i--) {
           try {
@@ -209,17 +209,17 @@ OTEL_METRICS_EXPORTER=prometheus
           }
         }
       }
-    
+
       public static void main(String[] args) {
         int prometheusPort = 8888;
-    
+
         // it is important to initialize the OpenTelemetry SDK as early as possible in your process.
         MeterProvider meterProvider = ExampleConfiguration.initializeOpenTelemetry(prometheusPort);
-    
+
         PrometheusExample prometheusExample = new PrometheusExample(meterProvider);
-    
+
         prometheusExample.simulate();
-    
+
         System.out.println("Exiting");
       }
     }

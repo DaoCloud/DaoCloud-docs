@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-- 当前工作空间已经拥有集群资源，参考[绑定资源](../../../ghippo/04UserGuide/02Workspace/Resources.md)。
+- 当前工作空间已经拥有集群资源，参考[绑定资源](../../../ghippo/04UserGuide/02Workspace/quota.md)。
 - 当前用户授权为 `Workspace Admin` 角色，详情参考[工作空间最佳实践](../../../ghippo/04UserGuide/02Workspace/wsbp.md)。
 
 ## 创建命名空间
