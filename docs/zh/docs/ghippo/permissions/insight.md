@@ -1,6 +1,6 @@
 # 可观测性权限说明
 
-可观测性模块支持以下几种角色：
+[可观测性模块](../../insight/03ProductBrief/WhatisInsight.md)支持以下几种角色：
 
 - Admin / Kpanda Owner
 - Cluster Admin
@@ -9,7 +9,7 @@
 
 对各项特性的具体权限见下表。
 
-| 菜单   | 操作              | Admin / Kpanda Owner | Cluster Admin | NS Admin / NS Edit | NS View |
+| 菜单对象 | 操作              | Admin / Kpanda Owner | Cluster Admin | NS Admin / NS Edit | NS View |
 | ---- | --------------- | -------------------- | ------------- | ------------------ | ------- |
 | 概览   | 查看概览            | &check;                    |               |                    |         |
 | 仪表盘  | 查看仪表盘           | &check;                    |               |                    |         |
@@ -50,4 +50,4 @@
 |      | 查看 Agent 详情     | &check;                    | &check;             | &check;                  | &check;       |
 | 系统配置 | 查看系统配置          | &check;                    |               |                    |         |
 
-有关权限的更多信息，请参阅[容器管理权限说明](../../kpanda/07UserGuide/Permissions/PermissionBrief.md)。
+参阅[容器管理权限说明](../../kpanda/07UserGuide/Permissions/PermissionBrief.md)和[完整的角色和权限定义](../04UserGuide/01UserandAccess/Role.md)。

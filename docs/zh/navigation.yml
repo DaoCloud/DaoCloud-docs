@@ -107,10 +107,7 @@ nav:
           - 权限说明: 
               - 微服务引擎权限说明: ghippo/permissions/skoala.md
               - 应用工作台权限说明: ghippo/permissions/amamba.md
-<<<<<<< HEAD
-=======
-              - 可观测性权限说明: ghippo/permissions/insight.md
->>>>>>> 8a5cce7 (modify nav)
+              - 服务网格权限说明: ghippo/permissions/mspider.md
       - 可观测性:
           - 介绍:
               - 什么是可观测性: insight/03ProductBrief/WhatisInsight.md
@@ -175,6 +172,7 @@ nav:
                   - 流水线中的概念: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineConcept.md
                   - 图形化任务模板参数: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineStep.md
                   - 流水线节点（Agent）: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineAgent.md
+          - 应用工作台权限说明: ghippo/permissions/amamba.md
           - 最佳实践:
               - 快速创建流水线: amamba/02QuickStart/deploypipline.md
               - 使用流水线实现代码扫描: amamba/02QuickStart/scan-with-pipeline.md
@@ -241,6 +239,7 @@ nav:
               - 产品优势: mspider/01Intro/Benefits.md
               - 适用场景: mspider/01Intro/Scenarios.md
               - UI 支持的特性: mspider/01Intro/meshes.md
+              - 服务网格权限说明: ghippo/permissions/mspider.md
               - 网格架构: mspider/01Intro/Architecture.md
           - 创建/删除网格:
               - 网格介绍: mspider/03UserGuide/servicemesh/README.md
@@ -250,6 +249,7 @@ nav:
           - 服务管理:
               - mspider/03UserGuide/01ServiceList/README.md
               - 从网格外部访问服务: mspider/03UserGuide/01ServiceList/out-to-in.md
+              - 服务条目: mspider/03UserGuide/01ServiceList/service-entry.md
           - 流量治理:
               - mspider/03UserGuide/02TrafficGovernance/README.md
               - 虚拟服务: mspider/03UserGuide/02TrafficGovernance/VirtualService.md
