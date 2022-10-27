@@ -16,9 +16,9 @@ kind: "PeerAuthentication"
 metadata:
   name: "default"
   namespace: "istio-system"  #生效的名称空间
-  spec:
-   mtls:
-      mode: STRICT      #策略 
+spec:
+  mtls:
+    mode: STRICT      #策略 
 ```
 
 服务网格提供了两种创建方式：向导和 YAML。通过向导创建的具体操作步骤如下：

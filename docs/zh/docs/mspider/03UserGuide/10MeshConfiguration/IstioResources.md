@@ -56,19 +56,19 @@
     apiVersion: telemetry.istio.io/v1alpha1
     kind: Telemetry
     metadata:
-    name: namespace-metrics
-    namespace: default
+      name: namespace-metrics
+      namespace: default
     spec:
-        # 未指定选择算符，应用到命名空间中的所有工作负载
-        metrics:
-        - providers:
-            - name: prometheus
-            overrides:
-            - tagOverrides:
-        ​        request_method:
-        ​          value: "request.method"
-        ​        request_host:
-        ​          value: "request.host"
+      # 未指定选择算符，应用到命名空间中的所有工作负载
+      metrics:
+      - providers:
+        - name: prometheus
+        overrides:
+        - tagOverrides:
+    ​        request_method:
+    ​          value: "request.method"
+    ​        request_host:
+    ​          value: "request.host"
     ```
 
 3. 返回资源列表，点击操作一列的 `⋮` 按钮，可以从弹出菜单中选择编辑和删除等更多操作。

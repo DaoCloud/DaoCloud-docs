@@ -41,8 +41,8 @@ spec:
 
 ```yaml
 gateways:
-  - bookinfo-gateway
-  - mesh
+- bookinfo-gateway
+- mesh
 ```
 
 ### http
