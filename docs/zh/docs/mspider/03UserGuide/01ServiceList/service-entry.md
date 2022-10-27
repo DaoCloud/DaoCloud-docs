@@ -72,20 +72,20 @@ metadata:
   uid: 549dfdd6-ccaf-4304-a49b-a4541aecb9fc
 spec:
   addresses:
-    - 127.10.18.65
+  - 127.10.18.65
   endpoints:
-    - address: 127.10.18.78
-      ports:
-        test: 9980
+  - address: 127.10.18.78
+    ports:
+      test: 9980
   exportTo:
-    - istio-system
+  - istio-system
   hosts:
-    - test.service
+  - test.service
   location: MESH_INTERNAL
   ports:
-    - name: test
-      number: 9980
-      protocol: HTTP
+  - name: test
+    number: 9980
+    protocol: HTTP
   workloadSelector: {}
 status: {}
 ```

@@ -24,17 +24,17 @@
     apiVersion: networking.istio.io/v1beta1
     kind: Gateway
     metadata:
-    name: bookinfo-gateway
+      name: bookinfo-gateway
     spec:
-    selector:
+      selector:
         istio: ingressgateway # 使用默认控制器
-    servers:
-    - port:
-        number: 80
-        name: http
-        protocol: HTTP
+      servers:
+      - port:
+          number: 80
+          name: http
+          protocol: HTTP
         hosts:
-        bookinfo.com
+        - bookinfo.com
     ```
 
 3. 点击`确定`回到网关规则列表，可见创建成功。
@@ -51,27 +51,27 @@
     apiVersion: networking.istio.io/v1beta1
     kind: VirtualService
     metadata:
-    name: bookinfo
+      name: bookinfo
     spec:
-    hosts:
-    - bookinfo.com
-    gateways:
-    - bookinfo-gateway
-    http:
-    - match:
-        - uri:
-            exact: /productpage
-        - uri:
-            exact: /login
-        - uri:
-            exact: /logout
-        - uri:
-            prefix: /api/v1/products
+      hosts:
+      - bookinfo.com
+      gateways:
+      - bookinfo-gateway
+      http:
+      - match:
+          - uri:
+              exact: /productpage
+          - uri:
+              exact: /login
+          - uri:
+              exact: /logout
+          - uri:
+              prefix: /api/v1/products
         route:
         - destination:
             host: productpage
             port:
-            number: 9080
+              number: 9080
     ```
 
 5. 点击`确定`回到虚拟服务列表，可以看到创建成功的提示。
