@@ -414,6 +414,8 @@ nav:
           - 常见问题: hwameistor/faqs.md
       - 镜像仓库:
           - kangaroo/intro.md
+          - kangaroo/imagelist.md
+          - kangaroo/related-registry.md
       - Release Notes:
           - release/rn5.0.md
       - 通用参考:
