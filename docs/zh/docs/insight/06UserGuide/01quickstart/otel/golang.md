@@ -12,12 +12,12 @@ OpenTelemetry 也简称为 OTel，是一个开源的可观测性框架，可以�
 切换/进入到应用程序源文件夹后运行以下命令：
 
 ```golang
-go get go.opentelemetry.io/otel \
-  go.opentelemetry.io/otel/trace \
-  go.opentelemetry.io/otel/sdk \
-  go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin \
-  go.opentelemetry.io/otel/exporters/otlp/otlptrace \
-  go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc
+go get go.opentelemetry.io/otel@v1.8.0 \
+  go.opentelemetry.io/otel/trace@v1.8.0 \
+  go.opentelemetry.io/otel/sdk@v1.8.0 \
+  go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.33.0 \
+  go.opentelemetry.io/otel/exporters/otlp/otlptrace@v1.7.0 \
+  go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc@v1.4.1
 ```
 
 ### 使用 OpenTelemetry SDK 创建初始化函数
