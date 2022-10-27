@@ -104,16 +104,18 @@ nav:
               - 安全设置: ghippo/04UserGuide/06PersonalCenter/SecuritySetting.md
               - 访问密钥: ghippo/04UserGuide/06PersonalCenter/Password.md
               - 语言设置: ghippo/04UserGuide/06PersonalCenter/Language.md
-          - 权限说明: ghippo/permissions/skoala.md
+          - 权限说明: 
+              - 微服务引擎权限说明: ghippo/permissions/skoala.md
+              - 应用工作台权限说明: ghippo/permissions/amamba.md
+              - 服务网格权限说明: ghippo/permissions/mspider.md
       - 可观测性:
           - 介绍:
               - 什么是可观测性: insight/03ProductBrief/WhatisInsight.md
               - 产品优势: insight/03ProductBrief/benefits.md
               - 基本概念: insight/03ProductBrief/concepts.md
               - 应用场景: insight/03ProductBrief/scenarios.md
-              - 权限说明: insight/06UserGuide/permission.md
           - 快速入门:
-              - 获取 host 地址: insight/06UserGuide/01quickstart/gethosturl.md
+              - 获取 managed 地址: insight/06UserGuide/01quickstart/gethosturl.md
               - 安装 insight-agent 采集数据: insight/06UserGuide/01quickstart/installagent.md
               - OTel 赋能应用可观测性: 
                 - insight/06UserGuide/01quickstart/otel/otel.md
@@ -145,6 +147,7 @@ nav:
           - 系统配置:
               - 系统配置: insight/06UserGuide/08systemconfig/systemconfig.md
               - 修改配置: insight/06UserGuide/08systemconfig/modifyconfig.md
+          - 权限说明: insight/06UserGuide/permission.md
           - 常见问题:
               - insight/09FAQs/README.md
               - 导入自定义仪表盘: insight/09FAQs/importdashboard.md
@@ -169,6 +172,7 @@ nav:
                   - 流水线中的概念: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineConcept.md
                   - 图形化任务模板参数: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineStep.md
                   - 流水线节点（Agent）: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineAgent.md
+          - 应用工作台权限说明: ghippo/permissions/amamba.md
           - 最佳实践:
               - 快速创建流水线: amamba/02QuickStart/deploypipline.md
               - 使用流水线实现代码扫描: amamba/02QuickStart/scan-with-pipeline.md
@@ -208,13 +212,15 @@ nav:
           - 选择工作空间: skoala/select-workspace.md
           - 微服务治理中心:
               - 托管型注册中心:
-                  - 管理注册中心实例: skoala/registry/host/manage-registry.md
-                  - 微服务命名空间: skoala/registry/host/namespace.md
-                  - 服务治理策略: skoala/registry/host/governance-policy.md
-                  - 配置中心: skoala/registry/host/configcenter.md
+                  - 管理注册中心实例: skoala/registry/managed/manage-registry.md
+                  - 微服务命名空间: skoala/registry/managed/namespace.md
+                  - 微服务列表: skoala/registry/managed/servicelist/intro.md
+                  - 服务治理策略: skoala/registry/managed/governance-policy.md
+                  - 配置中心: skoala/registry/managed/configcenter.md
+                  - 插件中心: skoala/registry/managed/plugin-center.md
               - 接入型注册中心:
-                  - 管理注册中心实例: skoala/registry/integrate/manage-registry.md
-                  - 微服务管理: skoala/registry/integrate/manage-service.md
+                  - 管理注册中心实例: skoala/registry/integrated/manage-registry.md
+                  - 微服务管理: skoala/registry/integrated/manage-service.md
           - 微服务网关:
               - 网关:
                   - 管理网关实例: skoala/ms-gateway/gateway/manage-gateway.md
@@ -235,6 +241,7 @@ nav:
               - 产品优势: mspider/01Intro/Benefits.md
               - 适用场景: mspider/01Intro/Scenarios.md
               - UI 支持的特性: mspider/01Intro/meshes.md
+              - 服务网格权限说明: ghippo/permissions/mspider.md
               - 网格架构: mspider/01Intro/Architecture.md
           - 创建/删除网格:
               - 网格介绍: mspider/03UserGuide/servicemesh/README.md
@@ -244,6 +251,7 @@ nav:
           - 服务管理:
               - mspider/03UserGuide/01ServiceList/README.md
               - 从网格外部访问服务: mspider/03UserGuide/01ServiceList/out-to-in.md
+              - 服务条目: mspider/03UserGuide/01ServiceList/service-entry.md
           - 流量治理:
               - mspider/03UserGuide/02TrafficGovernance/README.md
               - 虚拟服务: mspider/03UserGuide/02TrafficGovernance/VirtualService.md
@@ -414,6 +422,8 @@ nav:
           - 常见问题: hwameistor/faqs.md
       - 镜像仓库:
           - kangaroo/intro.md
+          - kangaroo/imagelist.md
+          - kangaroo/related-registry.md
       - Release Notes:
           - release/rn5.0.md
       - 通用参考:

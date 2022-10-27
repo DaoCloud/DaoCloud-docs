@@ -7,9 +7,7 @@
 - SNI 的支持
 - 其他 Istio 中已经实现的内部网络功能：Fault Injection、Traffic Shifting、Circuit Breaking、Mirroring
 
-
 ## 概念介绍
-
 
 对于 L7 的支持，网关规则通过与虚拟服务配合实现。几个重要主字段如下：
 
@@ -33,10 +31,11 @@ spec:
     istio: ingressgateway
   servers: 
   - port: 
-    number: 80 
-    name: http 
-    protocol: HTTP 
-  hosts: - istio-grafana.frognew.com
+      number: 80 
+      name: http 
+      protocol: HTTP 
+    hosts: 
+    - istio-grafana.frognew.com
 ```
 
 ## 操作步骤
@@ -49,12 +48,12 @@ spec:
 
 2. 在`创建网关规则`界面中，配置基本信息，并根据需要添加服务端后点击`确定`。
 
-    ![创建](../../images/gaterule02.png)
+    ![创建网关规则](../../images/gaterule02.png)
 
 3. 返回网关规则列表，屏幕提示创建成功。
 
-    ![创建](../../images/gaterule03.png)
+    ![创建成功](../../images/gaterule03.png)
 
 4. 在列表右侧，点击操作一列的 `⋮`，可通过弹出菜单进行更多操作。
 
-    ![创建](../../images/gaterule04.png)
+    ![更多操作](../../images/gaterule04.png)
