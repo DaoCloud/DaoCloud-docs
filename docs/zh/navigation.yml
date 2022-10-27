@@ -245,8 +245,8 @@ nav:
               - 网格架构: mspider/01Intro/Architecture.md
           - 创建/删除网格:
               - 网格介绍: mspider/03UserGuide/servicemesh/README.md
-              - 创建托管网格: mspider/03UserGuide/servicemesh/create-mesh.md
-              - 创建专用网格: mspider/03UserGuide/servicemesh/integrate-mesh.md
+              - 创建托管/专有网格: mspider/03UserGuide/servicemesh/create-mesh.md
+              - 创建外接网格: mspider/03UserGuide/servicemesh/integrate-mesh.md
               - 删除网格: mspider/03UserGuide/servicemesh/delete.md
           - 服务管理:
               - mspider/03UserGuide/01ServiceList/README.md
