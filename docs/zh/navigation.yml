@@ -115,7 +115,7 @@ nav:
               - 基本概念: insight/03ProductBrief/concepts.md
               - 应用场景: insight/03ProductBrief/scenarios.md
           - 快速入门:
-              - 获取 host 地址: insight/06UserGuide/01quickstart/gethosturl.md
+              - 获取 managed 地址: insight/06UserGuide/01quickstart/gethosturl.md
               - 安装 insight-agent 采集数据: insight/06UserGuide/01quickstart/installagent.md
               - OTel 赋能应用可观测性: 
                 - insight/06UserGuide/01quickstart/otel/otel.md
@@ -212,13 +212,15 @@ nav:
           - 选择工作空间: skoala/select-workspace.md
           - 微服务治理中心:
               - 托管型注册中心:
-                  - 管理注册中心实例: skoala/registry/host/manage-registry.md
-                  - 微服务命名空间: skoala/registry/host/namespace.md
-                  - 服务治理策略: skoala/registry/host/governance-policy.md
-                  - 配置中心: skoala/registry/host/configcenter.md
+                  - 管理注册中心实例: skoala/registry/managed/manage-registry.md
+                  - 微服务命名空间: skoala/registry/managed/namespace.md
+                  - 微服务列表: skoala/registry/managed/servicelist/intro.md
+                  - 服务治理策略: skoala/registry/managed/governance-policy.md
+                  - 配置中心: skoala/registry/managed/configcenter.md
+                  - 插件中心: skoala/registry/managed/plugin-center.md
               - 接入型注册中心:
-                  - 管理注册中心实例: skoala/registry/integrate/manage-registry.md
-                  - 微服务管理: skoala/registry/integrate/manage-service.md
+                  - 管理注册中心实例: skoala/registry/integrated/manage-registry.md
+                  - 微服务管理: skoala/registry/integrated/manage-service.md
           - 微服务网关:
               - 网关:
                   - 管理网关实例: skoala/ms-gateway/gateway/manage-gateway.md
