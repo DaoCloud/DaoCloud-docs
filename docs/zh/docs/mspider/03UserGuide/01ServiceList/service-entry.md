@@ -45,31 +45,8 @@
 apiVersion: networking.istio.io/v1beta1
 kind: ServiceEntry
 metadata:
-  annotations:
-    ckube.daocloud.io/indexes: '{"cluster":"kay181","createdAt":"2022-10-27T03:09:46Z","hosts":"[\"test.service\"]","is_deleted":"false","labels":"","location":"MESH_INTERNAL","name":"entry01","namespace":"istio-system"}'
-    ckube.doacloud.io/cluster: kay181
-  creationTimestamp: "2022-10-27T03:09:46Z"
-  generation: 1
-  managedFields:
-    - apiVersion: networking.istio.io/v1beta1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:spec:
-          .: {}
-          f:addresses: {}
-          f:endpoints: {}
-          f:exportTo: {}
-          f:hosts: {}
-          f:location: {}
-          f:ports: {}
-          f:workloadSelector: {}
-      manager: cacheproxy
-      operation: Update
-      time: "2022-10-27T03:09:46Z"
   name: entry01
   namespace: istio-system
-  resourceVersion: "3521271"
-  uid: 549dfdd6-ccaf-4304-a49b-a4541aecb9fc
 spec:
   addresses:
   - 127.10.18.65
@@ -90,39 +67,49 @@ spec:
 status: {}
 ```
 
-## Parameters
+## 概念介绍
 
 上述 YAML 文件和创建向导中各项参数的含义简单说明如下。
 
-**hosts**
+- Hosts
 
-服务名。可用于流量治理策略（虚拟服务、目标规则等）中的 hosts 字段匹配。
+    服务名。可用于流量治理策略（虚拟服务、目标规则等）中的 hosts 字段匹配。
 
-- 在 HTTP 流量中，服务名将是 HTTP 主机或 Authority 头
-- 在具有 SNI 名称的 HTTP、TLS 流量中，服务名将是 SNI 名称
+    - 在 HTTP 流量中，服务名将是 HTTP 主机或 Authority 头
+    - 在具有 SNI 名称的 HTTP、TLS 流量中，服务名将是 SNI 名称
 
-**addresses**
+- Addresses
 
-服务地址。与服务关联的虚拟 IP 地址，也可以是 CIDR 前缀。
+    服务地址。与服务关联的虚拟 IP 地址，也可以是 CIDR 前缀。
 
-- 如果设置了 Addresses 字段，将对请求 HTTP 流量的 服务名和 IP/CIDR 做匹配，确认是否属于该服务。
-- 如果 Addresses 字段为空，则仅根据目标端口识别流量。此时网格中的任何其他服务都不能共享使用该端口，边车将会转发所有该端口的传入流量至指定目标 IP/主机。
+    - 如果设置了 Addresses 字段，将对请求 HTTP 流量的 服务名和 IP/CIDR 做匹配，确认是否属于该服务。
+    - 如果 Addresses 字段为空，则仅根据目标端口识别流量。此时网格中的任何其他服务都不能共享使用该端口，边车将会转发所有该端口的传入流量至指定目标 IP/主机。
 
-**ports**：服务端口。与服务相关联的端口。如果端点是 Unix 域套接字地址，则必须有一个端口。
+- Ports
+  
+    服务端口。与服务相关联的端口。如果端点是 Unix 域套接字地址，则必须有一个端口。
 
-**location**：服务地址。需要输入一个有效的 IP 地址。用于标明服务是否处于网格内部。
+- Location
+    
+    服务地址。需要输入一个有效的 IP 地址。用于标明服务是否处于网格内部。
 
-**resolution**：解析方式。提供了对服务地址的多种解析方式：
+- Resolution
 
-- NONE：直接将流量转发至服务地址或服务端点的地址（如果存在）。
-- STATIC：使用服务端点中的静态地址。
-- DNS：尝试通过异步查询环境 DNS 来解析 IP 地址。
-- 如果未设置服务端点，并且未使用通配符，将解析服务名字段中指定的 DNS 地址。
-- 如果指定了服务端点，将解析服务端点中指定的DNS地址。DNS 解析不能与 Unix 域套接字服务端点一起使用。
-- DNS_ROUND_ROBIN：尝试通过异步查询环境DNS来解析 IP 地址。与 DNS 方式不同的是，DNS_ROUND_ROBIN 方式仅使用连接建立后返回的第一个 IP 地址，而不依赖于 DNS 解析的完整结果。
+    解析方式。提供了对服务地址的多种解析方式：
 
-**endpoint**：服务端点。与服务相关的端点信息，包含 IP 地址、端口和服务端口名称等。
+    - NONE：直接将流量转发至服务地址或服务端点的地址（如果存在）。
+    - STATIC：使用服务端点中的静态地址。
+    - DNS：尝试通过异步查询环境 DNS 来解析 IP 地址。
+    - 如果未设置服务端点，并且未使用通配符，将解析服务名字段中指定的 DNS 地址。
+    - 如果指定了服务端点，将解析服务端点中指定的DNS地址。DNS 解析不能与 Unix 域套接字服务端点一起使用。
+    - DNS_ROUND_ROBIN：尝试通过异步查询环境DNS来解析 IP 地址。与 DNS 方式不同的是，DNS_ROUND_ROBIN 方式仅使用连接建立后返回的第一个 IP 地址，而不依赖于 DNS 解析的完整结果。
 
-**workloadSelector**：工作负载选择标签。一个键值对，用于选择网格内部服务的工作负载，该项和服务端点为二选一。
+- Endpoint
+
+    服务端点。与服务相关的端点信息，包含 IP 地址、端口和服务端口名称等。
+
+- WorkloadSelector
+
+    工作负载选择标签。一个键值对，用于选择网格内部服务的工作负载，该项和服务端点为二选一。
 
 <!-- 创建后如何使用这些服务条目？ -->
