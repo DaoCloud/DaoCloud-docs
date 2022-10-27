@@ -42,16 +42,16 @@
 
 2. 在`创建目标`界面中，先进行基本配置后点击`下一步`。
 
-    ![创建](../../images/destirule02.png)
+    ![创建目标](../../images/destirule02.png)
 
 3. 按屏幕提示选择进行路由配置后，点击`确定`。
 
-    ![创建](../../images/destirule03.png)
+    ![路由配置](../../images/destirule03.png)
 
 4. 返回目标规则列表，屏幕提示创建成功。
 
-    ![创建](../../images/destirule04.png)
+    ![创建成功](../../images/destirule04.png)
 
 5. 在列表右侧，点击操作一列的 `⋮`，可通过弹出菜单进行更多操作。
 
-    ![创建](../../images/destirule05.png)
+    ![更多操作](../../images/destirule05.png)

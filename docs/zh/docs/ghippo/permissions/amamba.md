@@ -1,18 +1,20 @@
 # 应用工作台权限说明
 
-应用工作台支持三种用户角色：Workspace Admin、Workspace Editor、Workspace Viewer。每种角色具有不同的权限，具体说明如下。
+[应用工作台](../../amamba/01ProductBrief/WhatisAmamba.md)支持三种用户角色：
+
+- Workspace Admin
+- Workspace Editor
+- Workspace Viewer
+
+每种角色具有不同的权限，具体说明如下。
 
 <!--
 有权限使用`&check;`，无权限使用`&cross;`
 -->
 
-!!! note
-
-    有关角色和权限管理的完整介绍，请参考[角色和权限管理](../04UserGuide/01UserandAccess/Role.md)。
-
 ## 权限说明
 
-| 对象     | 操作                               | Workspace Admin | Workspace Editor | Workspace Viewer |
+| 菜单对象   | 操作                               | Workspace Admin | Workspace Editor | Workspace Viewer |
 | -------- | ---------------------------------- | --------------- | ---------------- | ---------------- |
 | 应用     | 查看应用列表                       | &check;         | &check;          | &check;          |
 |          | 查看详情（跳转到容器管理）         | &check;         | &check;                 | &check;                 |
@@ -61,3 +63,7 @@
 |          | 更新                               | &check;         | &check;          | &cross;          |
 |          | 回滚                               | &check;         | &check;          | &cross;          |
 |          | 删除                               | &check;         | &check;          | &cross;          |
+
+!!! note
+
+    有关角色和权限管理的完整介绍，请参考[角色和权限管理](../04UserGuide/01UserandAccess/Role.md)。
