@@ -46,10 +46,13 @@ var tracerExp *otlptrace.Exporter
 func retryInitTracer() {
 	go func() {
 		for {
-			// otel will reconnect and re-send spans when otel col recover. so, we don't need to re-init tracer exporter.
+
+			// otel will reconnected and re-send spans when otel col recover. so, we don't need to re-init tracer exporter.
 			if tracerExp == nil {
 				shutdown := initTracer()
-				defer shutdown()
+				if shutdown != nil {
+					defer shutdown()
+				}
 			} else {
 				break
 			}
@@ -112,7 +115,6 @@ func handleErr(err error, message string) {
 		zap.S().Errorf("%s: %v", message, err)
 	}
 }
-
 ```
 
 ### 在 main.go 中初始化跟踪器
