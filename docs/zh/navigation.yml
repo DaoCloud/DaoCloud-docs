@@ -210,8 +210,10 @@ nav:
               - 托管型注册中心:
                   - 管理注册中心实例: skoala/registry/managed/manage-registry.md
                   - 微服务命名空间: skoala/registry/managed/namespace.md
+                  - 微服务列表: skoala/registry/managed/servicelist/intro.md
                   - 服务治理策略: skoala/registry/managed/governance-policy.md
                   - 配置中心: skoala/registry/managed/configcenter.md
+                  - 插件中心: skoala/registry/managed/plugin-center.md
               - 接入型注册中心:
                   - 管理注册中心实例: skoala/registry/integrated/manage-registry.md
                   - 微服务管理: skoala/registry/integrated/manage-service.md
