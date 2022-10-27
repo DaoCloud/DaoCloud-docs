@@ -4,7 +4,9 @@
 
 ## 集群权限
 
-集群权限基于 Kubernetes RBAC  的 ClusterRolebinding 授权，集群权限设置可让用户/用户组具备集群相关权限，目前的默认集群角色为 `Cluster Admin`（不具备集群的创建、删除权限）。
+集群权限基于 Kubernetes RBAC 的 ClusterRolebinding 授权，集群权限设置可让用户/用户组具备集群相关权限，目前的默认集群角色为 `Cluster Admin`（不具备集群的创建、删除权限）。
+
+### `Cluster Admin`
 
 `Cluster Admin` 具有以下权限：
 

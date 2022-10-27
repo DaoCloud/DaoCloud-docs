@@ -1,8 +1,15 @@
 # 可观测性权限说明
 
-本页说明不同角色所具备的权限。
+可观测性模块使用以下角色：
 
-| 菜单   | 操作              | Admin / Kpanda Owner | Cluster Admin | NS Admin / NS Edit | NS View |
+- Admin / Kpanda Owner
+- [Cluster Admin](../../kpanda/07UserGuide/Permissions/PermissionBrief.md#cluster-admin)
+- [NS Admin](../../kpanda/07UserGuide/Permissions/PermissionBrief.md#ns-admin) / [NS Edit](../../kpanda/07UserGuide/Permissions/PermissionBrief.md#ns-edit)
+- [NS View](../../kpanda/07UserGuide/Permissions/PermissionBrief.md#ns-view)
+
+各角色所具备的权限如下：
+
+| 菜单   | 操作              | Admin / Kpanda Owner | Cluster Admin| NS Admin / NS Edit | NS View |
 | ---- | --------------- | -------------------- | ------------- | ------------------ | ------- |
 | 概览   | 查看概览            | &check;                    |               |                    |         |
 | 仪表盘  | 查看仪表盘           | &check;                    |               |                    |         |
@@ -44,3 +51,5 @@
 | 系统配置 | 查看系统配置          | &check;                    |               |                    |         |
 
 有关权限的更多信息，请参阅[容器管理权限说明](../../kpanda/07UserGuide/Permissions/PermissionBrief.md)。
+
+有关角色的创建、管理和删除，请参阅[角色和权限管理](../../ghippo/04UserGuide/01UserandAccess/Role.md)。
