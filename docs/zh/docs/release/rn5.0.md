@@ -4,14 +4,14 @@
 
 2022 年 DCE 5.0 社区版发布，由于 release notes 详细的内容比较庞杂，所以本页按以下模块列出一些主要的特性变化：
 
-- [全局管理](../ghippo/01ProductBrief/WhatisGhippo.md)
-- [容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)
-- [CloudTTY](../community/cloudtty.md)
-- [Clusterpedia](../community/clusterpedia.md)
-- [Kubean](../community/kubean.md)
-- [KLTS](../community/klts.md)
-- [SpiderNetwork](../community/spiderpool.md)
-- [HwameiStor](../community/hwameistor.md)
+- [容器管理](#容器管理)
+- [全局管理](#全局管理)
+- [CloudTTY](#cloudtty)
+- [Clusterpedia](#clusterpedia)
+- [Kubean](#kubean)
+- [KLTS](#klts)
+- [Spiderpool](#spiderpool)
+- [HwameiStor](#hwameistor)
 
 ## 容器管理
 
@@ -512,6 +512,42 @@ KLTS 是「DaoCloud 道客」独立开发的开源项目，请参阅 [KLTS Relea
 ## Spiderpool
 
 Spiderpool 是「DaoCloud 道客」独立开发的开源项目，请参阅 [Spiderpool Release Notes](https://github.com/spidernet-io/spiderpool/releases)。
+
+### Spiderpool 2022-10
+
+**新增** gRPC 最大传输数据量 20M
+
+**新增** `spiderpool` 相关 API
+
+**新增** `spidernet-ui` chart 模板
+
+**新增** 为 SpiderEndpoint 新增修改性质的 Webhook，参见 [PR 933](https://github.com/spidernet-io/spiderpool/pull/933)
+
+**新增** 为 SpiderSubnet Informer 启用了 RESYNC 机制，参见 [PR 931](https://github.com/spidernet-io/spiderpool/pull/931)
+
+**新增** 支持在自动创建的 spiderippool 中扩缩 IP，参见 [PR 834](https://github.com/spidernet-io/spiderpool/pull/834)
+
+**修复** 修复了标记 IP 分配会失败的问题，参见 [PR 929](https://github.com/spidernet-io/spiderpool/pull/929)
+
+**修复** 修复了 SpiderSubnet 中无法移除空闲 IP 地址的问题，参见 [PR 936](https://github.com/spidernet-io/spiderpool/pull/936)
+
+### 相关 CNI 插件  2022-10
+
+**新增** 碎片扫描功能，参见 [PR 53](https://github.com/spidernet-io/cni-plugins/pull/53)
+
+**修复** 当删除规则不存在时忽略错误的问题，参见 [PR 48](https://github.com/spidernet-io/cni-plugins/pull/48)
+
+**新增** 新增 e2e kind，参见 [PR 62](https://github.com/spidernet-io/cni-plugins/pull/62)
+
+**新增** 新增 GitHub 操作流，参见 [PR 65](https://github.com/spidernet-io/cni-plugins/pull/65)
+
+**修复** 修复了 Pod 和主机之间 IPv6 通信失败的问题，参见 [PR 44](https://github.com/spidernet-io/cni-plugins/pull/44)
+
+**修复** e2e 加载镜像错误，参见 [PR 67](https://github.com/spidernet-io/cni-plugins/pull/67)
+
+**修复** e2e kind-init 初始化问题，参见 [PR 70](https://github.com/spidernet-io/cni-plugins/pull/70)
+
+**修复** 修复和优化 CI，参见 [PR 78](https://github.com/spidernet-io/cni-plugins/pull/78) 和 [PR 79](https://github.com/spidernet-io/cni-plugins/pull/79)
 
 ## HwameiStor
 
