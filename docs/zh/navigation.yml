@@ -114,6 +114,7 @@ nav:
               - 产品优势: insight/03ProductBrief/benefits.md
               - 基本概念: insight/03ProductBrief/concepts.md
               - 应用场景: insight/03ProductBrief/scenarios.md
+              - 最新动态: insight/03ProductBrief/releasenote.md
           - 快速入门:
               - 获取 managed 地址: insight/06UserGuide/01quickstart/gethosturl.md
               - 安装 insight-agent 采集数据: insight/06UserGuide/01quickstart/installagent.md
