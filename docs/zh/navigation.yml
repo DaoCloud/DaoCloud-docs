@@ -196,6 +196,7 @@ nav:
               - 工作负载简介: kairship/05workload/README.md
               - 镜像创建: kairship/05workload/image.md
               - YAML创建: kairship/05workload/yaml.md
+              - 一键升级为多云工作负载: kairship/05workload/promote.md
           - 资源管理:
               - 多云服务: kairship/06resource/service.md
               - 多云命名空间: kairship/06resource/ns.md
