@@ -317,6 +317,9 @@ nav:
           - Multus-underlay:
               - 介绍: network/modules/multus-underlay/what.md
               - 安装: network/modules/multus-underlay/install.md
+              - MacVLAN: network/modules/multus-underlay/macvlan.md
+              - SR-IOV: network/modules/multus-underlay/sriov.md
+              - NmState: network/modules/multus-underlay/nmstat.md
           - Spiderpool:
               - 介绍: network/modules/spiderpool/what.md
               - 安装: network/modules/spiderpool/install.md
