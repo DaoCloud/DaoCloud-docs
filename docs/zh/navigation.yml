@@ -310,6 +310,7 @@ nav:
               - 安装: network/modules/cilium/install.md
               - 配置参考: network/modules/cilium/config.md
               - 常用命令: network/modules/cilium/command.md
+              - 未支持功能说明: network/modules/cilium/notSupport.md
           - Contour:
               - 介绍: network/modules/contour/what.md
               - 安装: network/modules/contour/install.md
