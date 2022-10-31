@@ -108,6 +108,10 @@ nav:
               - 微服务引擎权限说明: ghippo/permissions/skoala.md
               - 应用工作台权限说明: ghippo/permissions/amamba.md
               - 服务网格权限说明: ghippo/permissions/mspider.md
+          - GProduct 对接全局管理:
+              - ghippo/gproduct/intro.md
+              - 接入导航栏: ghippo/gproduct/nav.md
+              - 接入路由和登录认证: ghippo/gproduct/route-authn.md
       - 可观测性:
           - 介绍:
               - 什么是可观测性: insight/03ProductBrief/WhatisInsight.md
@@ -161,6 +165,7 @@ nav:
               - 产品优势: amamba/01ProductBrief/Benefits.md
               - 适用场景: amamba/01ProductBrief/Scenarios.md
               - 基本概念: amamba/01ProductBrief/Concepts.md
+              - 最新动态: amamba/01ProductBrief/releasenote.md
           - 命名空间管理: amamba/03UserGuide/Namespace/namespace.md
           - 流水线:
               - 自定义创建流水线: amamba/03UserGuide/Pipeline/createpipelinebyself.md
@@ -196,6 +201,7 @@ nav:
               - 工作负载简介: kairship/05workload/README.md
               - 镜像创建: kairship/05workload/image.md
               - YAML创建: kairship/05workload/yaml.md
+              - 一键升级为多云工作负载: kairship/05workload/promote.md
           - 资源管理:
               - 多云服务: kairship/06resource/service.md
               - 多云命名空间: kairship/06resource/ns.md
