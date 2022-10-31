@@ -111,7 +111,7 @@ nav:
           - GProduct 对接全局管理:
               - ghippo/gproduct/intro.md
               - 接入导航栏: ghippo/gproduct/nav.md
-              - 接入路由和 AuthN: ghippo/gproduct/route-authn.md
+              - 接入路由和登录认证: ghippo/gproduct/route-authn.md
       - 可观测性:
           - 介绍:
               - 什么是可观测性: insight/03ProductBrief/WhatisInsight.md

@@ -1,4 +1,4 @@
-# 接入路由和 AuthN
+# 接入路由和登录认证
 
 接入后统一登录和密码验证，效果如下图：
 
@@ -15,7 +15,7 @@
 以 `kpanda` 为例注册 GProductProxy CR。
 
 ```yaml
-# GProductProxy CR 示例, 包含路由和 AuthN
+# GProductProxy CR 示例, 包含路由和登录认证
  
 # spec.proxies: 后写的路由不能是先写的路由子集, 反之可以
 # spec.proxies.match.uri.prefix: 如果是后端 api, 建议在 prefix 末尾添加 "/" 表述这段 path 结束（特殊需求可以不用加）
@@ -62,75 +62,4 @@ spec:
       host: kpanda-service.kpanda-system.svc.cluster.local
       port: 80
     authnCheck: true
-```
-
-!!! note
-
-    `ghippo-controller-manager` 会把 GProductProxy 转换成 Istio CR 资源 VirtualService 和 AuthorizationPolicy。
-
-转换后的 Istio VirtualService CR 示例：
-
-```yaml
-apiVersion: networking.istio.io/v1alpha3
-kind: VirtualService
-metadata:
-  name: kpanda-vs
-  namespace: kpanda-system
-spec:
-  exportTo:
-    - "*"  # Match all namespaces
-  hosts:
-    - "*"  # Allow IP access
-  gateways:
-    - ghippo-system/ghippo-gateway
-  http:
-  - match:
-    - uri:
-        prefix: /kpanda
-    rewrite:
-      uri: /index.html
-    route:
-    - destination:
-        host: ghippo-anakin.ghippo-system.svc.cluster.local  # Parent APP UI
-        port:
-          number: 80
-  - match:
-    - uri:
-        prefix: /ui/kpanda
-    route:
-    - destination:
-        host: kpanda-ui.kpanda-system.svc.cluster.local  # GProduct UI
-        port:
-          number: 80
-  - match:
-    - uri:
-        prefix: /apis/kpanda.io/v1
-    route:
-    - destination:
-        host: kpanda-service.kpanda-system.svc.cluster.local  # GProduct Service
-        port:
-          number: 80  # GProduct Service port
-```
-
-转换后的 Istio AuthorizationPolicy CR 示例：
-
-```yaml
-apiVersion: security.istio.io/v1beta1
-kind: AuthorizationPolicy
-metadata:
-  name: kpanda-ap
-  namespace: istio-system
-spec:
-  selector:
-    matchLabels:
-      app: istio-ingressgateway
-  action: ALLOW
-  rules:
-  - to:
-    - operation:
-        # 列出不需要作AuthN验证就能通过的api
-        paths:
-        - /apis/kpanda.io/v1/swagger/*
-        - /ui/kpanda*
-        - /kpanda*
 ```
