@@ -2,8 +2,8 @@
 
 本页说明如何在 DCE 5.0 中安装 Cilium。
 
+本文介绍了 Kubean 安装 cilium 主要功能开启情况及相关说明
 
-# Kubean 安装 cilium 主要功能开启情况及相关说明
 
 ## cilium 数据模式
 
