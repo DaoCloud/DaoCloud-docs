@@ -12,12 +12,12 @@ OpenTelemetry 也简称为 OTel，是一个开源的可观测性框架，可以�
 切换/进入到应用程序源文件夹后运行以下命令：
 
 ```golang
-go get go.opentelemetry.io/otel \
-  go.opentelemetry.io/otel/trace \
-  go.opentelemetry.io/otel/sdk \
-  go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin \
-  go.opentelemetry.io/otel/exporters/otlp/otlptrace \
-  go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc
+go get go.opentelemetry.io/otel@v1.8.0 \
+  go.opentelemetry.io/otel/trace@v1.8.0 \
+  go.opentelemetry.io/otel/sdk@v1.8.0 \
+  go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.33.0 \
+  go.opentelemetry.io/otel/exporters/otlp/otlptrace@v1.7.0 \
+  go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc@v1.4.1
 ```
 
 ### 使用 OpenTelemetry SDK 创建初始化函数
@@ -26,64 +26,93 @@ go get go.opentelemetry.io/otel \
 
 ```golang
 import (
-    .....
-
-    "github.com/gin-gonic/gin"
-    "go.opentelemetry.io/otel"
-    "go.opentelemetry.io/otel/attribute"
-    "go.opentelemetry.io/otel/exporters/otlp/otlptrace"
-    "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
-
-    "go.opentelemetry.io/otel/sdk/resource"
-    sdktrace "go.opentelemetry.io/otel/sdk/trace"
+	"context"
+	"go.opentelemetry.io/contrib/propagators/ot"
+	"go.opentelemetry.io/otel"
+	"go.opentelemetry.io/otel/exporters/otlp/otlptrace"
+	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
+	"go.opentelemetry.io/otel/propagation"
+	"go.opentelemetry.io/otel/sdk/resource"
+	sdktrace "go.opentelemetry.io/otel/sdk/trace"
+	semconv "go.opentelemetry.io/otel/semconv/v1.7.0"
+	"go.uber.org/zap"
+	"google.golang.org/grpc"
+	"os"
+	"time"
 )
 
-func initTracer() func(context.Context) error {
+var tracerExp *otlptrace.Exporter
 
-    secureOption := otlptracegrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, ""))
-    if len(insecure) > 0 {
-        secureOption = otlptracegrpc.WithInsecure()
-    }
-    serviceName, ok := os.LookupEnv("OTEL_SERVICE_NAME")
-    if !ok {
-      serviceName = "my-app"
-    }
+func retryInitTracer() {
+	go func() {
+		for {
 
-    otelAgentAddr, ok := os.LookupEnv("OTEL_EXPORTER_OTLP_ENDPOINT")
-    if !ok {
-      otelAgentAddr = "0.0.0.0:4317"
-    }
+			// otel will reconnected and re-send spans when otel col recover. so, we don't need to re-init tracer exporter.
+			if tracerExp == nil {
+				shutdown := initTracer()
+				if shutdown != nil {
+					defer shutdown()
+				}
+			} else {
+				break
+			}
+			time.Sleep(time.Minute * 5)
+		}
+	}()
+}
 
-    exporter, err := otlptrace.New(
-        context.Background(),
-        otlptracegrpc.NewClient(
-            secureOption,
-            otlptracegrpc.WithEndpoint(otelAgentAddr),
-        ),
-    )
+func initTracer() func() {
+	// temporarily set timeout to 10s
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
 
-    if err != nil {
-        log.Fatal(err)
-    }
-    resources, err := resource.New(
-        context.Background(),
-        resource.WithAttributes(
-            attribute.String("service.name", serviceName),
-            attribute.String("library.language", "go"),
-        ),
-    )
-    if err != nil {
-        log.Printf("Could not set resources: ", err)
-    }
+	serviceName, ok := os.LookupEnv("OTEL_SERVICE_NAME")
+	if !ok {
+		serviceName = "insight"
+	}
 
-    otel.SetTracerProvider(
-        sdktrace.NewTracerProvider(
-            sdktrace.WithSampler(sdktrace.AlwaysSample()),
-            sdktrace.WithBatcher(exporter),
-            sdktrace.WithResource(resources),
-        ),
-    )
-    return exporter.Shutdown
+	otelAgentAddr, ok := os.LookupEnv("OTEL_EXPORTER_OTLP_ENDPOINT")
+	if !ok {
+		otelAgentAddr = "0.0.0.0:4317"
+	}
+
+	client := otlptracegrpc.NewClient(
+		otlptracegrpc.WithInsecure(),
+		otlptracegrpc.WithEndpoint(otelAgentAddr),
+		otlptracegrpc.WithDialOption(grpc.WithBlock()))
+
+	traceExporter, err := otlptrace.New(ctx, client)
+	if err != nil {
+		handleErr(err, "failed to creating OTLP trace exporter")
+		return nil
+	}
+
+	tracerProvider := sdktrace.NewTracerProvider(
+		sdktrace.WithSampler(sdktrace.AlwaysSample()),
+		sdktrace.WithResource(resource.NewWithAttributes(
+			semconv.SchemaURL,
+			semconv.ServiceNameKey.String(serviceName),
+		)),
+		sdktrace.WithSpanProcessor(sdktrace.NewBatchSpanProcessor(traceExporter)),
+	)
+
+	otel.SetTracerProvider(tracerProvider)
+	otel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(
+		propagation.TraceContext{},
+		propagation.Baggage{},
+	))
+
+	tracerExp = traceExporter
+	return func() {
+		// Shutdown will flush any remaining spans and shut down the exporter.
+		handleErr(tracerProvider.Shutdown(ctx), "failed to shutdown TracerProvider")
+	}
+}
+
+func handleErr(err error, message string) {
+	if err != nil {
+		zap.S().Errorf("%s: %v", message, err)
+	}
 }
 ```
 
@@ -93,9 +122,7 @@ func initTracer() func(context.Context) error {
 
 ```golang
 func main() {
-    cleanup := initTracer()
-    defer cleanup(context.Background())
-
+    retryInitTracer()
     ......
 }
 ```
@@ -138,6 +165,35 @@ func main() {
 
 ```bash
     instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
+```
+
+如果无法使用注解的方式，您可以手动在 deployment yaml 添加如下环境变量：
+
+```yaml
+······
+env:
+  - name: OTEL_EXPORTER_OTLP_ENDPOINT
+    value: 'http://insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317'
+  - name: OTEL_SERVICE_NAME
+    value: "your depolyment name" # modify it.
+  - name: OTEL_K8S_NAMESPACE
+    valueFrom:
+      fieldRef:
+        apiVersion: v1
+        fieldPath: metadata.namespace
+  - name: OTEL_RESOURCE_ATTRIBUTES_NODE_NAME
+    valueFrom:
+      fieldRef:
+        apiVersion: v1
+        fieldPath: spec.nodeName
+  - name: OTEL_RESOURCE_ATTRIBUTES_POD_NAME
+    valueFrom:
+      fieldRef:
+        apiVersion: v1
+        fieldPath: metadata.name
+  - name: OTEL_RESOURCE_ATTRIBUTES
+    value: 'k8s.namespace.name=$(OTEL_K8S_NAMESPACE),k8s.node.name=$(OTEL_RESOURCE_ATTRIBUTES_NODE_NAME),k8s.pod.name=$(OTEL_RESOURCE_ATTRIBUTES_POD_NAME)'
+······
 ```
 
 ## 请求路由

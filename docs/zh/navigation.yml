@@ -57,13 +57,12 @@ nav:
           - 服务与路由:
               - 创建服务: kpanda/07UserGuide/ServicesandRoutes/CreatingServices.md
               - 创建路由: kpanda/07UserGuide/ServicesandRoutes/CreatingIngress.md
-          - 自定义资源:
-              - 创建自定义资源: kpanda/07UserGuide/CustomResources/create.md
+          - 自定义资源: kpanda/07UserGuide/CustomResources/create.md
           - 配置与密钥:
               - 创建密钥: kpanda/07UserGuide/ConfigMapsandSecrets/create-secret.md
               - 使用密钥: kpanda/07UserGuide/ConfigMapsandSecrets/use-secret.md
               - 使用配置项: kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md
-          - 创建命名空间: kpanda/07UserGuide/Namespaces/createns.md
+          - 命名空间: kpanda/07UserGuide/Namespaces/createns.md
           - 权限说明:
               - 权限说明: kpanda/07UserGuide/Permissions/PermissionBrief.md
               - 集群和命名空间授权: kpanda/07UserGuide/Permissions/Cluster-NSAuth.md
@@ -87,10 +86,12 @@ nav:
           - 工作空间与层级:
               - ghippo/04UserGuide/02Workspace/ws-folder.md
               - 创建和删除工作空间: ghippo/04UserGuide/02Workspace/Workspaces.md
-              - 创建和删除文件夹: ghippo/04UserGuide/02Workspace/folders.md
+              - 工作空间权限: ghippo/04UserGuide/02Workspace/wspermission.md
               - 工作空间最佳实践: ghippo/04UserGuide/02Workspace/wsbp.md
-              - 资源绑定: ghippo/04UserGuide/02Workspace/Resources.md
-              - 文件夹与工作空间角色权限: ghippo/04UserGuide/02Workspace/resource02.md
+              - 创建和删除文件夹: ghippo/04UserGuide/02Workspace/folders.md
+              - 文件夹权限: ghippo/04UserGuide/02Workspace/fdpermission.md
+              - 文件夹最佳实践: ghippo/04UserGuide/02Workspace/fdpractice.md
+              - 资源配额: ghippo/04UserGuide/02Workspace/quota.md
           - 审计日志:
               - 开启和关闭审计日志: ghippo/04UserGuide/open-audit.md
               - 下载和导出审计日志: ghippo/04UserGuide/03AuditLog.md
@@ -103,24 +104,32 @@ nav:
               - 安全设置: ghippo/04UserGuide/06PersonalCenter/SecuritySetting.md
               - 访问密钥: ghippo/04UserGuide/06PersonalCenter/Password.md
               - 语言设置: ghippo/04UserGuide/06PersonalCenter/Language.md
-          - 权限说明:
-              - 微服务引擎权限: ghippo/permissions/skoala.md
+          - 权限说明: 
+              - 微服务引擎权限说明: ghippo/permissions/skoala.md
+              - 应用工作台权限说明: ghippo/permissions/amamba.md
+              - 服务网格权限说明: ghippo/permissions/mspider.md
+          - GProduct 对接全局管理:
+              - ghippo/gproduct/intro.md
+              - 接入导航栏: ghippo/gproduct/nav.md
+              - 接入路由和登录认证: ghippo/gproduct/route-authn.md
       - 可观测性:
           - 介绍:
               - 什么是可观测性: insight/03ProductBrief/WhatisInsight.md
               - 产品优势: insight/03ProductBrief/benefits.md
-              - 常见术语: insight/03ProductBrief/glossary.md
               - 基本概念: insight/03ProductBrief/concepts.md
-              - 概览: insight/06UserGuide/overview.md
+              - 应用场景: insight/03ProductBrief/scenarios.md
+              - 功能列表: insight/03ProductBrief/feature.md
+              - 最新动态: insight/03ProductBrief/releasenote.md
           - 快速入门:
-              - 获取 host 地址: insight/06UserGuide/01quickstart/gethosturl.md
+              - 获取 managed 地址: insight/06UserGuide/01quickstart/gethosturl.md
               - 安装 insight-agent 采集数据: insight/06UserGuide/01quickstart/installagent.md
-              - 使用 OTel 赋予应用可观测性: 
+              - OTel 赋能应用可观测性: 
                 - insight/06UserGuide/01quickstart/otel/otel.md
-                - 用 Operator 无侵入增强应用: insight/06UserGuide/01quickstart/otel/operator.md
-                - 用 OTel SDK 增强 Go 应用: insight/06UserGuide/01quickstart/otel/golang.md
-                - 用 OTel SDK 为应用暴露指标: insight/06UserGuide/01quickstart/otel/meter.md
-                - 用 OTel 自动探针增强 Go 应用: insight/06UserGuide/01quickstart/otel/golang-ebpf.md
+                - Operator 无侵入增强应用: insight/06UserGuide/01quickstart/otel/operator.md
+                - OTel SDK 增强 Go 应用: insight/06UserGuide/01quickstart/otel/golang.md
+                - OTel SDK 为应用暴露指标: insight/06UserGuide/01quickstart/otel/meter.md
+                - OTel 自动探针增强 Go 应用: insight/06UserGuide/01quickstart/otel/golang-ebpf.md
+          - 概览: insight/06UserGuide/overview.md
           - 仪表盘:
               - 仪表盘: insight/06UserGuide/02dashboard/dashboard.md
               - 以管理员身份登录 Grafana: insight/06UserGuide/02dashboard/logingrafana.md
@@ -144,9 +153,12 @@ nav:
           - 系统配置:
               - 系统配置: insight/06UserGuide/08systemconfig/systemconfig.md
               - 修改配置: insight/06UserGuide/08systemconfig/modifyconfig.md
+          - 权限说明: insight/06UserGuide/permission.md
           - 常见问题:
               - insight/09FAQs/README.md
               - 导入自定义仪表盘: insight/09FAQs/importdashboard.md
+              - 日志采集排障指南: insight/09FAQs/debuglog.md
+              - 链路采集排障指南: insight/09FAQs/debugtrace.md
       - 应用工作台:
           - 介绍:
               - 什么是应用工作台？: amamba/01ProductBrief/WhatisAmamba.md
@@ -154,8 +166,8 @@ nav:
               - 产品优势: amamba/01ProductBrief/Benefits.md
               - 适用场景: amamba/01ProductBrief/Scenarios.md
               - 基本概念: amamba/01ProductBrief/Concepts.md
-          - 命名空间:
-              - 命名空间管理: amamba/03UserGuide/Namespace/namespace.md
+              - 最新动态: amamba/01ProductBrief/releasenote.md
+          - 命名空间管理: amamba/03UserGuide/Namespace/namespace.md
           - 流水线:
               - 自定义创建流水线: amamba/03UserGuide/Pipeline/createpipelinebyself.md
               - Jenkinsfile 创建单代码分支流水线: amamba/03UserGuide/Pipeline/createpipelinebyjenkins.md
@@ -167,6 +179,7 @@ nav:
                   - 流水线中的概念: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineConcept.md
                   - 图形化任务模板参数: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineStep.md
                   - 流水线节点（Agent）: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineAgent.md
+          - 应用工作台权限说明: ghippo/permissions/amamba.md
           - 最佳实践:
               - 快速创建流水线: amamba/02QuickStart/deploypipline.md
               - 使用流水线实现代码扫描: amamba/02QuickStart/scan-with-pipeline.md
@@ -189,6 +202,7 @@ nav:
               - 工作负载简介: kairship/05workload/README.md
               - 镜像创建: kairship/05workload/image.md
               - YAML创建: kairship/05workload/yaml.md
+              - 一键升级为多云工作负载: kairship/05workload/promote.md
           - 资源管理:
               - 多云服务: kairship/06resource/service.md
               - 多云命名空间: kairship/06resource/ns.md
@@ -206,13 +220,15 @@ nav:
           - 选择工作空间: skoala/select-workspace.md
           - 微服务治理中心:
               - 托管型注册中心:
-                  - 管理注册中心实例: skoala/registry/host/manage-registry.md
-                  - 微服务命名空间: skoala/registry/host/namespace.md
-                  - 服务治理策略: skoala/registry/host/governance-policy.md
-                  - 配置中心: skoala/registry/host/configcenter.md
+                  - 管理注册中心实例: skoala/registry/managed/manage-registry.md
+                  - 微服务命名空间: skoala/registry/managed/namespace.md
+                  - 微服务列表: skoala/registry/managed/servicelist/intro.md
+                  - 服务治理策略: skoala/registry/managed/governance-policy.md
+                  - 配置中心: skoala/registry/managed/configcenter.md
+                  - 插件中心: skoala/registry/managed/plugin-center.md
               - 接入型注册中心:
-                  - 管理注册中心实例: skoala/registry/integrate/manage-registry.md
-                  - 微服务管理: skoala/registry/integrate/manage-service.md
+                  - 管理注册中心实例: skoala/registry/integrated/manage-registry.md
+                  - 微服务管理: skoala/registry/integrated/manage-service.md
           - 微服务网关:
               - 网关:
                   - 管理网关实例: skoala/ms-gateway/gateway/manage-gateway.md
@@ -221,8 +237,7 @@ nav:
               - API:
                   - 管理 API: skoala/ms-gateway/api/manage-api.md
                   - 配置 API 策略: skoala/ms-gateway/api/api-policy.md
-              - 服务:
-                  - 管理服务: skoala/ms-gateway/service/manage-service.md
+              - 管理服务: skoala/ms-gateway/service/manage-service.md
               - 日志: skoala/ms-gateway/log.md
               - 域名:
                   - 管理域名: skoala/ms-gateway/domain/manage-domain.md
@@ -234,19 +249,21 @@ nav:
               - 产品优势: mspider/01Intro/Benefits.md
               - 适用场景: mspider/01Intro/Scenarios.md
               - UI 支持的特性: mspider/01Intro/meshes.md
+              - 服务网格权限说明: ghippo/permissions/mspider.md
               - 网格架构: mspider/01Intro/Architecture.md
           - 创建/删除网格:
               - 网格介绍: mspider/03UserGuide/servicemesh/README.md
-              - 创建托管网格: mspider/03UserGuide/servicemesh/create-mesh.md
-              - 创建专用网格: mspider/03UserGuide/servicemesh/integrate-mesh.md
+              - 创建托管/专有网格: mspider/03UserGuide/servicemesh/create-mesh.md
+              - 创建外接网格: mspider/03UserGuide/servicemesh/integrate-mesh.md
               - 删除网格: mspider/03UserGuide/servicemesh/delete.md
           - 服务管理:
               - mspider/03UserGuide/01ServiceList/README.md
               - 从网格外部访问服务: mspider/03UserGuide/01ServiceList/out-to-in.md
+              - 服务条目: mspider/03UserGuide/01ServiceList/service-entry.md
           - 流量治理:
               - mspider/03UserGuide/02TrafficGovernance/README.md
               - 虚拟服务: mspider/03UserGuide/02TrafficGovernance/VirtualService.md
-              - 目标规则: mspider/03UserGuide/02TrafficGovernance/TargetRules.md
+              - 目标规则: mspider/03UserGuide/02TrafficGovernance/DestinationRules.md
               - 网关规则: mspider/03UserGuide/02TrafficGovernance/GatewayRules.md
               - 虚拟服务参数配置: mspider/03UserGuide/02TrafficGovernance/vsparams.md
           - 安全治理:
@@ -269,8 +286,7 @@ nav:
           - 网格网关:
               - 创建网格网关: mspider/03UserGuide/09GatewayInstance/create.md
               - 删除网格网关: mspider/03UserGuide/09GatewayInstance/delete.md
-          - 网格配置:
-              - Istio 资源管理: mspider/03UserGuide/10MeshConfiguration/IstioResources.md
+          - Istio 资源管理: mspider/03UserGuide/10MeshConfiguration/IstioResources.md
           - 常见问题: mspider/07faq.md
       - 云原生网络:
           - 介绍:
@@ -308,6 +324,9 @@ nav:
           - Multus-underlay:
               - 介绍: network/modules/multus-underlay/what.md
               - 安装: network/modules/multus-underlay/install.md
+              - MacVLAN: network/modules/multus-underlay/macvlan.md
+              - SR-IOV: network/modules/multus-underlay/sriov.md
+              - NmState: network/modules/multus-underlay/nmstat.md
           - Spiderpool:
               - 介绍: network/modules/spiderpool/what.md
               - 安装: network/modules/spiderpool/install.md
@@ -414,6 +433,8 @@ nav:
           - 常见问题: hwameistor/faqs.md
       - 镜像仓库:
           - kangaroo/intro.md
+          - kangaroo/imagelist.md
+          - kangaroo/related-registry.md
       - Release Notes:
           - release/rn5.0.md
       - 通用参考:

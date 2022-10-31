@@ -44,8 +44,6 @@ spec:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.31.0
   python:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python::0.33b0
-  dotnet:
-    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.3.1-beta.1
 EOF
 ```
 
@@ -89,8 +87,8 @@ EOF
     4. Dotnet 应用
 
         ```bash
-        instrumentation.opentelemetry.io/inject-dotnet: "insight-system/insight-opentelemetry-autoinstrumentation"
-        ```
+       暂不支持，社区bug修复中... 
+       ```
 
 ## 自动注入示例 Demo
 
