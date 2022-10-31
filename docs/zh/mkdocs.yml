@@ -147,6 +147,7 @@ extra:
 
   status:
     new: 最近添加
+    beta: beta
 
 # Customization Javascript
 extra_javascript:

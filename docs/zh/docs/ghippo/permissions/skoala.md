@@ -1,18 +1,20 @@
 # 微服务引擎权限说明
 
-微服务引擎包括微服务治理中心和微服务网关两部分。微服务引擎支持三种用户角色：Workspace Admin, Workspace Editor, Workspace Viewer。每种角色具有不同的权限，具体说明如下。
+[微服务引擎](../../skoala/intro/features.md)包括微服务治理中心和微服务网关两部分。微服务引擎支持三种用户角色：
+
+- Workspace Admin
+- Workspace Editor
+- Workspace Viewer
+
+每种角色具有不同的权限，具体说明如下。
 
 <!--
 有权限使用`&check;`，无权限使用`&cross;`
 -->
 
-!!! note
-
-    有关角色和权限管理的完整介绍，请参考[角色和权限管理](../04UserGuide/01UserandAccess/Role.md)。
-
 ## 微服务治理中心权限说明
 
-|对象|操作|Workspace Admin|Workspace Editor|Workspace Viewer|
+|菜单对象|操作|Workspace Admin|Workspace Editor|Workspace Viewer|
 |--|--|--|--|--|
 |托管注册中心列表|查看列表|&check; |&check; |&check;|
 |托管注册中心|查看基础信息|&check; |&check; |&check;|
@@ -117,3 +119,7 @@
 ||编辑|&check; |&check; |&cross;|
 ||删除|&check; |&check; |&check;|
 |监控告警|查看|&check; |&check; |&check;|
+
+!!! note
+
+    有关角色和权限管理的完整介绍，请参考[角色和权限管理](../04UserGuide/01UserandAccess/Role.md)。

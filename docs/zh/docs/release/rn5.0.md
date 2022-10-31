@@ -4,14 +4,14 @@
 
 2022 年 DCE 5.0 社区版发布，由于 release notes 详细的内容比较庞杂，所以本页按以下模块列出一些主要的特性变化：
 
-- [全局管理](../ghippo/01ProductBrief/WhatisGhippo.md)
-- [容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)
-- [CloudTTY](../community/cloudtty.md)
-- [Clusterpedia](../community/clusterpedia.md)
-- [Kubean](../community/kubean.md)
-- [KLTS](../community/klts.md)
-- [SpiderNetwork](../community/spiderpool.md)
-- [HwameiStor](../community/hwameistor.md)
+- [容器管理](#容器管理)
+- [全局管理](#全局管理)
+- [CloudTTY](#cloudtty)
+- [Clusterpedia](#clusterpedia)
+- [Kubean](#kubean)
+- [KLTS](#klts)
+- [Spiderpool](#spiderpool)
+- [HwameiStor](#hwameistor)
 
 ## 容器管理
 
@@ -117,21 +117,21 @@
 
 ### API
 
-**新增** `kpanda` 增加 configmap CRUD
+**新增** `kpanda` 增加 [configmap](../kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md) CRUD
 
-**新增** `kpanda` 支持工作负载全生命周期管理
+**新增** `kpanda` 支持[工作负载全生命周期管理](../kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md)
 
 **新增** CRD、CR 的 crud 支持
 
 **新增** `kpanda` 可安装在任意 namespace 下
 
-**优化** `listWorkload`、`listAllWorkload`和`listClusterWorkload` 三个接口进行拆分，细分到具体的 workload kind
+**优化** `listWorkload`、`listAllWorkload` 和 `listClusterWorkload` 三个接口进行拆分，细分到具体的 workload kind
 
-**优化** `kpanda` engine 层 get 请求走 clusterpedia
+**优化** `kpanda` engine 层 get 请求走 [clusterpedia](../community/clusterpedia.md)
 
 **优化** `kpanda` proto 文件注释补全
 
-**新增** `kpanda` 增加节点查看、编辑 yaml 功能
+**新增** `kpanda` 增加[节点](../kpanda/07UserGuide/Nodes/AddNode.md)查看、编辑 yaml 功能
 
 **新增** `kpanda` 支持节点列表根据状态筛选功能
 
@@ -139,7 +139,7 @@
 
 **新增** `kpanda` 新增支持 HPA CRUD
 
-**新增** `kpanda` 新增支持 插件检测 controller
+**新增** `kpanda` 新增支持插件检测 controller
 
 **新增** `kpanda` 新增支持 pvc storageClass CRUD
 
@@ -149,9 +149,9 @@
 
 **新增** `kpanda` 支持配额管理功能
 
-**新增** `kpanda` 新增 all namesapces 的 list pvc 和快照 接口
+**新增** `kpanda` 新增 all namesapces 的 list pvc 和快照接口
 
-**新增** `kpanda` 新增支持 返回 pvc list 中的 pvc 是否支持快照，和扩容
+**新增** `kpanda` 新增支持返回 pvc list 中的 pvc 是否支持快照和扩容
 
 **修复** `kpanda` clustersummary 空指针问题
 
@@ -161,21 +161,21 @@
 
 **新增** `kpanda` 新增修改集群设置的 api
 
-**新增** `kpanda` ListCluster AND GetCluster 接入 clustersetting
+**新增** `kpanda` ListCluster 和 GetCluster 接入 clustersetting
 
-**新增** `kpanda` 新增 支持 集群状态检索
+**新增** `kpanda` 新增支持集群状态检索
 
-**新增** `kpanda` 新增 支持 label selector 和 field selector
+**新增** `kpanda` 新增支持 label selector 和 field selector
 
 **修复** `kpanda` 修复 global cluster 重复显示
 
 **修复** `kpanda` 修复 ListClusterRoleBindings 根据 name 查询返回为空
 
-**修复** `kpanda` 修复修改集群接入的 kube-config 后，不能够生效
+**修复** `kpanda` 修复修改集群接入的 kube-config 后不能够生效的问题
 
 **修复** `kpanda` 修复 global cluster secret 不刷新的问题
 
-**修复** `kpanda` 用户获取集群 config 信息，用户填入什么信息，获取什么信息，不在初始化
+**修复** `kpanda` 用户获取集群 config 信息，用户填入什么信息，获取什么信息，不再初始化
 
 **新增** `kpanda` helm repo 支持设置自动刷新频率
 
@@ -229,9 +229,9 @@
 
 **新增** `kpanda` 新增 LimitRange 的 CRUD
 
-**新增** `kpanda` 新增 支持cluster ！的lableSelect 的操作
+**新增** `kpanda` 新增支持 cluster 的 lableSelect 的操作
 
-**新增** `kpanda` 新增 支持 node 的 cpu 和 memory 的 request 和 limit 从k8s 获取
+**新增** `kpanda` 新增支持 node 的 cpu 和 memory 的 request 和 limit 从 k8s 获取
 
 **新增** `kpanda` 支持 clusterlcm 离线安装
 
@@ -259,11 +259,11 @@
 
 **新增** 支持多窗口显示和日志滚动
 
-**新增** `kpanda`利用 fake clusterpedia 增加单元测试
+**新增** `kpanda` 利用 fake clusterpedia 增加单元测试
 
 **改进** 使用 cloudtty 的 virtualService 模式来暴露服务
 
-**新增**  权限调整 有一个 ns 权限就要返回这个 cluster
+**新增**  权限调整有一个 ns 权限就要返回这个 cluster
 
 **新增** `kpanda` 上报 cluster 和 namespace 信息到 CRD 中
 
@@ -277,15 +277,15 @@
 
 **改进** 升级 cloudtty，增加 readiness 的功能
 
-**修复** `kpanda` 下载证书优化(支持集群 pod 外部访问)
+**修复** `kpanda` 下载证书优化（支持集群 Pod 外部访问）
 
 **优化** `kpanda` 缩短打开 cloudshell 的时间
 
 ### work-api
 
-**新增** 和前端对接按照 insight 的接口类型，新增 cpu 资源使用率，node 资源使用率，workload 资源使用率，pod 资源使用率接口
+**新增** 和前端对接按照 insight 的接口类型，新增 cpu、node、workload、pod 资源使用率接口
 
-**修复** BFF 中的 node 相关 clust 相关，pod 相关的接口中添加了 insight 的数据
+**修复** BFF 中的 node、cluster、pod 相关的接口中添加了 insight 的数据
 
 **优化** 修复了 insight 的部分数据返回类型错误的 bug
 
@@ -339,45 +339,45 @@
 
 **新增** Ghippo 支持 OPA 权限管理
 
-**新增** 工作空间 - 生命周期管理(创建/编辑/删除/查看/列表)
+**新增** 工作空间 - 生命周期管理（创建/编辑/删除/查看/列表）
 
-**新增** 工作空间 - 层级关系管理(绑定/列表)
+**新增** 工作空间 - 层级关系管理（绑定/列表）
 
-**新增** 工作空间 - 工作空间与资源关系管理(绑定/解绑/列表)
+**新增** 工作空间 - 工作空间与资源关系管理（绑定/解绑/列表）
 
-**新增** 工作空间 - 工作空间和角色和用户(组)关系管理(绑定/解绑/列表)(API/SDK)
+**新增** 工作空间 - 工作空间和角色和用户（组）关系管理（绑定/解绑/列表）(API/SDK)
 
-**新增** 工作空间 - 鉴权(API/SDK)
+**新增** 工作空间 - 鉴权 (API/SDK)
 
 **新增** 工作空间 - GProduct 资源名字注册
 
-**新增** 关于 - 产品版本(创建/编辑/删除/查看/列表)
+**新增** 关于 - 产品版本（创建/编辑/删除/查看/列表）
 
-**新增** 关于 - 开源软件(列表/初始化)
+**新增** 关于 - 开源软件（列表/初始化)
 
-**新增** 关于 - 技术团队(列表/初始化)
+**新增** 关于 - 技术团队（列表/初始化）
 
-**新增** 许可证 - 生命周期管理(创建/编辑/删除/查看/列表)
+**新增** 许可证 - 生命周期管理（创建/编辑/删除/查看/列表）
 
 **新增** 许可证 - 获取 ESN 序列号
 
-**新增** 工作空间 - 资源配额管理(创建/编辑/删除/查看/列表/计算已分配)
+**新增** 工作空间 - 资源配额管理（创建/编辑/删除/查看/列表/计算已分配）
 
 **新增** 工作空间 - GProduct 资源配额注册
 
 **新增** 用户与访问控制 - 鉴权 (APIServer/SDK)
 
-**新增** 审计日志 - 展示(查看/列表/清理设置/导出)
+**新增** 审计日志 - 展示（查看/列表/清理设置/导出）
 
 **新增** 审计日志 - 批量插入
 
-**新增** 身份提供商 - 对接 LDAP - 用户/用户组同步设置(创建/编辑/删除/查看/同步)
+**新增** 身份提供商 - 对接 LDAP - 用户/用户组同步设置（创建/编辑/删除/查看/同步）
 
 **新增** 平台设置 - 安全策略 - 密码策略设置
 
 **优化** 工作空间 - 代码架构调整
 
-**新增** 个人中心 - 访问密钥(创建/编辑/删除/查看/列表)
+**新增** 个人中心 - 访问密钥（创建/编辑/删除/查看/列表）
 
 **新增** 审计日志 - 全局管理操作插入审计日志
 
@@ -387,7 +387,7 @@
 
 **新增** 平台设置 - 安全策略 - 浏览器关闭策略
 
-**新增** 身份提供商 - 对接 IDP (OIDC 协议)
+**新增** 身份提供商 - 对接 IDP（OIDC 协议）
 
 **新增** 工作空间 - 共享集群权限管理
 
@@ -429,7 +429,7 @@
 
 **优化** 授权鉴权 - 提供一个 job 来确保 db 和 cr 的同步
 
-**新增** 关于-软件版本 - 模块支持中文名
+**新增** 关于 - 软件版本 - 模块支持中文名
 
 **优化** LDAP - 配置错误检查
 
@@ -457,6 +457,42 @@
 
 **新增** Ghippo 支持 user role 权限管理 CRUD
 
+### 开发进展 2022-10
+
+**修复** 修复资源组接口按资源类型筛选数据库报错问题
+
+**新增** 给第三方应用提供接口在 Keycloak 创建 SSO 对接 client
+  
+**新增** 支持 MySQL 8.0
+  
+**新增** 对接 Insight (metrics, log, otel tracing)
+  
+**新增** License 模块名支持 i18n
+  
+**新增** 支持一个 License 中可以包含多个 Gproduct
+  
+**新增** 资源组新增绑定集群类型资源
+  
+**新增** 资源组列表增加`模块`字段
+  
+**新增** 资源组列表增加已绑定标识
+  
+**新增** 资源绑定接口支持 registry 资源种类
+  
+**优化** 资源种类改枚举
+  
+**优化** GProduct license 是否需要灌入变量改为可配
+  
+**优化** 优化 CICD 流程
+  
+**修复** 修复已经删除的集群依然存在问题
+  
+**修复** 修复 keycloak jwks 变化后没有重置 Istio 缓存问题
+  
+**修复** 修复用户组创建时间零值问题
+  
+**修复** 修复访问密钥`最后使用时间`字段在未使用时返回空字符
+
 ## CloudTTY
 
 CloudTTY 是「DaoCloud 道客」独立开发的开源项目，请参阅 [CloudTTY Release Notes](https://github.com/cloudtty/cloudtty/releases)。
@@ -476,6 +512,42 @@ KLTS 是「DaoCloud 道客」独立开发的开源项目，请参阅 [KLTS Relea
 ## Spiderpool
 
 Spiderpool 是「DaoCloud 道客」独立开发的开源项目，请参阅 [Spiderpool Release Notes](https://github.com/spidernet-io/spiderpool/releases)。
+
+### Spiderpool 2022-10
+
+**新增** gRPC 最大传输数据量 20M
+
+**新增** `spiderpool` 相关 API
+
+**新增** `spidernet-ui` chart 模板
+
+**新增** 为 SpiderEndpoint 新增修改性质的 Webhook，参见 [PR 933](https://github.com/spidernet-io/spiderpool/pull/933)
+
+**新增** 为 SpiderSubnet Informer 启用了 RESYNC 机制，参见 [PR 931](https://github.com/spidernet-io/spiderpool/pull/931)
+
+**新增** 支持在自动创建的 spiderippool 中扩缩 IP，参见 [PR 834](https://github.com/spidernet-io/spiderpool/pull/834)
+
+**修复** 修复了标记 IP 分配会失败的问题，参见 [PR 929](https://github.com/spidernet-io/spiderpool/pull/929)
+
+**修复** 修复了 SpiderSubnet 中无法移除空闲 IP 地址的问题，参见 [PR 936](https://github.com/spidernet-io/spiderpool/pull/936)
+
+### 相关 CNI 插件  2022-10
+
+**新增** 碎片扫描功能，参见 [PR 53](https://github.com/spidernet-io/cni-plugins/pull/53)
+
+**修复** 当删除规则不存在时忽略错误的问题，参见 [PR 48](https://github.com/spidernet-io/cni-plugins/pull/48)
+
+**新增** 新增 e2e kind，参见 [PR 62](https://github.com/spidernet-io/cni-plugins/pull/62)
+
+**新增** 新增 GitHub 操作流，参见 [PR 65](https://github.com/spidernet-io/cni-plugins/pull/65)
+
+**修复** 修复了 Pod 和主机之间 IPv6 通信失败的问题，参见 [PR 44](https://github.com/spidernet-io/cni-plugins/pull/44)
+
+**修复** e2e 加载镜像错误，参见 [PR 67](https://github.com/spidernet-io/cni-plugins/pull/67)
+
+**修复** e2e kind-init 初始化问题，参见 [PR 70](https://github.com/spidernet-io/cni-plugins/pull/70)
+
+**修复** 修复和优化 CI，参见 [PR 78](https://github.com/spidernet-io/cni-plugins/pull/78) 和 [PR 79](https://github.com/spidernet-io/cni-plugins/pull/79)
 
 ## HwameiStor
 
