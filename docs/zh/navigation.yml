@@ -13,7 +13,11 @@ nav:
           - 安装依赖项: install/install-tools.md
           - 在线安装 DCE 5.0 社区版: install/install-dce-community.md
           - 离线安装 DCE 5.0 社区版: install/offline-install-community.md
-          - 离线安装 DCE 5.0 商业版: install/offline-install-full.md
+          - 离线安装 DCE 5.0 商业版:
+              - 部署规划: install/Air-Gap-install-full/deploy-plan.md
+              - 文件下载: install/Air-Gap-install-full/download-file.md
+              - 集群配置文件说明: install/Air-Gap-install-full/clusterconfig-introduction.md
+              - 开始安装: install/Air-Gap-install-full/start-install.md
           - 卸载: install/uninstall.md
       - 容器管理:
           - 介绍:
@@ -118,6 +122,7 @@ nav:
               - 产品优势: insight/03ProductBrief/benefits.md
               - 基本概念: insight/03ProductBrief/concepts.md
               - 应用场景: insight/03ProductBrief/scenarios.md
+              - 功能列表: insight/03ProductBrief/feature.md
               - 最新动态: insight/03ProductBrief/releasenote.md
           - 快速入门:
               - 获取 managed 地址: insight/06UserGuide/01quickstart/gethosturl.md
@@ -324,6 +329,10 @@ nav:
           - Multus-underlay:
               - 介绍: network/modules/multus-underlay/what.md
               - 安装: network/modules/multus-underlay/install.md
+              - MacVLAN: network/modules/multus-underlay/macvlan.md
+              - SR-IOV: network/modules/multus-underlay/sriov.md
+              - DPDK: network/modules/multus-underlay/dpdk.md
+              - NmState: network/modules/multus-underlay/nmstat.md
           - Spiderpool:
               - 介绍: network/modules/spiderpool/what.md
               - 安装: network/modules/spiderpool/install.md
