@@ -41,7 +41,7 @@
 !!! info
 
     渐进式交付是一种将应用程序的新版本逐步暴露给最初的一小部分用户，然后逐渐变得越来越大的子集的做法，以减轻负面影响（例如错误）的风险。
-
+    
     Argo-Rollout Kubernetes Progressive Delivery Controller，提供更强大的部署能力。包括灰度发布、蓝绿部署、更新测试 (experimentation)、渐进式交付 (progressive delivery) 等特性。
 
 ## 在 DCE 5.0 中的地位
@@ -51,5 +51,16 @@
 ![应用工作台在 DCE 5.0 中的地位](../images/what00.png)
 
 以容器管理为底座，借助全局管理实现层级资源管理，以 CI/CD 流水线和 GitOps 流程增删改查云原生应用，实现渐进式交付。
+
+## 部署方法
+
+依次执行以下命令进行部署。
+
+```bash
+export VERSION=**** # 修改为实际部署的版本。
+helm repo add mspider-release https://release.daocloud.io/chartrepo/amamba
+helm repo update amamba
+helm upgrade --install --create-namespace --cleanup-on-fail amamba amamba-release/amamba -n amamba-system --version=${VERSION}
+```
 
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

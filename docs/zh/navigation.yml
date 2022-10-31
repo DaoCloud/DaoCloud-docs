@@ -165,6 +165,7 @@ nav:
               - 产品优势: amamba/01ProductBrief/Benefits.md
               - 适用场景: amamba/01ProductBrief/Scenarios.md
               - 基本概念: amamba/01ProductBrief/Concepts.md
+              - 最新动态: amamba/01ProductBrief/releasenote.md
           - 命名空间管理: amamba/03UserGuide/Namespace/namespace.md
           - 流水线:
               - 自定义创建流水线: amamba/03UserGuide/Pipeline/createpipelinebyself.md
