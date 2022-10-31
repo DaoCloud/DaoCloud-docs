@@ -100,7 +100,6 @@ func initTracer() func() {
 	otel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(
 		propagation.TraceContext{},
 		propagation.Baggage{},
-		&ot.OT{},
 	))
 
 	tracerExp = traceExporter
