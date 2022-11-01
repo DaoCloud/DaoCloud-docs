@@ -4,8 +4,8 @@ DCE 5.0 微服务网关支持九种 API 策略：负载均衡、路径改写、�
 
 有两种方式可以配置 API 策略：
 
-- 在创建 API 的过程中设置策略，参考[添加 API](manage-api.md#添加-api)。
-- 在 API 创建完成后通过[更新 API 策略配置](manage-api.md#更新-api)进行调整。
+- 在创建 API 的过程中设置策略，参考[添加 API](manage-api.md#api_1)。
+- 在 API 创建完成后通过[更新 API 策略配置](manage-api.md#api_2)进行调整。
 
 **每一项策略的配置说明如下**:
 
