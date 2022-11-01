@@ -17,7 +17,7 @@
 
     !!! note
 
-        目前仅支持 HTTPS，HTTPS 正在规划中。
+        目前仅支持 HTTP，HTTPS 正在规划中。
 
     ![填写配置](imgs/add-domain-2.png)
     <!--
