@@ -13,19 +13,19 @@
 ```yaml
 apiVersion: audit.k8s.io/v1
 kind: Policy
-# 不为 RequestReceived 阶段的所有请求生成审计事件
+# Don't generate audit events for all requests in RequestReceived stage.
 omitStages:
   - "ResponseStarted"
   - "RequestReceived"
   - "Panic"
 rules:
-  # 以下请求被手动标识为大容量和低风险，
-  # 因此丢弃这些请求。
+  # The following requests were manually identified as high-volume and low-risk,
+  # so drop them.
   - level: None
     users: ["system:kube-proxy"]
     verbs: ["watch"]
     resources:
-      - group: "" # 核心
+      - group: "" # core
         resources: ["endpoints", "services", "services/status"]
   - level: None
     # Ingress controller reads `configmaps/ingress-uid` through the unsecured port.
@@ -34,40 +34,40 @@ rules:
     namespaces: ["kube-system"]
     verbs: ["get"]
     resources:
-      - group: "" # 核心
+      - group: "" # core
         resources: ["configmaps"]
   - level: None
     users: ["kubelet"] # legacy kubelet identity
     verbs: ["get"]
     resources:
-      - group: "" # 核心
+      - group: "" # core
         resources: ["nodes", "nodes/status"]
   - level: None
     userGroups: ["system:nodes"]
     verbs: ["get"]
     resources:
-      - group: "" # 核心
+      - group: "" # core
         resources: ["nodes", "nodes/status"]
   - level: None
     users:
       - system:kube-controller-manager
       - system:kube-scheduler
       - system:serviceaccount:kube-system:endpoint-controller
-   verbs: ["get", "update"]
-   namespaces: ["kube-system"]
-   resources:
-     - group: "" # 核心
-       resources: ["endpoints"]
+    verbs: ["get", "update"]
+    namespaces: ["kube-system"]
+    resources:
+      - group: "" # core
+        resources: ["endpoints"]
   - level: None
     users: ["system:apiserver"]
     verbs: ["get"]
     resources:
-      - group: "" # 核心
+      - group: "" # core
         resources: ["namespaces", "namespaces/status", "namespaces/finalize"]
   # Don't log HPA fetching metrics.
   - level: None
     users:
-      - system: kube-controller-manager
+      - system:kube-controller-manager
     verbs: ["get", "list"]
     resources:
       - group: "metrics.k8s.io"
@@ -80,28 +80,29 @@ rules:
   # Don't log events requests.
   - level: None
     resources:
-      - group: "" # 核心
+      - group: "" # core
         resources: ["events"]
-   
-  # 新的开始
+        
+  # new start
   # 忽略所有访问非认证端口的 API，通常是系统组件如 Kube-Controller 等。
   - level: None
-   users: ["system:unsecured"]
+    users: ["system:unsecured"]
+
   # 忽略 kube-admin 的审计日志
   - level: None
     users: ["kube-admin"]
-  # 忽略所有资源状态更新的 API
+  # 忽略所有资源状态更新的 API need add
   - level: None
     resources:
-      - group: "" # 核心
-        resources: ["events", "nodes/status", "pods/status", "services/status"]
-      - group: "authorization.k8s.io"
-        resources: ["selfsubjectrulesreviews"]
+    - group: "" # core
+      resources: ["events", "nodes/status", "pods/status", "services/status"]
+    - group: "authorization.k8s.io"
+      resources: ["selfsubjectrulesreviews"]
   # 忽略leases need add
   - level: None
     resources:
-      - group: "coordination.k8s.io"
-        resources: ["leases"]
+    - group: "coordination.k8s.io"
+      resources: ["leases"]
   - level: Request
     verbs: ["create", "update", "patch", "delete"]
     users: ["kube-admin"]
@@ -111,7 +112,7 @@ rules:
   # so only log at the Metadata level.
   - level: Metadata
     resources:
-      - group: "" # 核心
+      - group: "" # core
         resources: ["secrets", "configmaps"]
       - group: authentication.k8s.io
         resources: ["tokenreviews"]
@@ -121,7 +122,7 @@ rules:
   - level: Request
     verbs: ["get", "list", "watch"]
     resources:
-      - group: "" # 核心
+      - group: "" # core
       - group: "admissionregistration.k8s.io"
       - group: "apiextensions.k8s.io"
       - group: "apiregistration.k8s.io"
@@ -143,7 +144,7 @@ rules:
   # Default level for known APIs
   - level: RequestResponse
     resources:
-      - group: "" # 核心
+      - group: "" # core
       - group: "admissionregistration.k8s.io"
       - group: "apiextensions.k8s.io"
       - group: "apiregistration.k8s.io"
@@ -166,6 +167,7 @@ rules:
   - level: Metadata
     omitStages:
       - "RequestReceived"
+
 ```
 
 将以上审计日志文件放到 `/etc/kubernetes/audit-policy/` 文件夹下，并取名为 apiserver-audit-policy.yaml
