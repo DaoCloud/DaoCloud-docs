@@ -88,10 +88,10 @@
 
     配置 SRIOV Net-Device Plugin：
 
-    - `vendors`：PCI 设备厂商号，如 '8086' 代表 Intel。
-    - `devices`：PCI 设备型号，如 '154c'。
-    - `drivers`：PCI 设备驱动，如 'mlx5_core'。
-    - `pfNames`：PF 设备的名称列表。
+    - `vendors`：PCI 设备厂商号，如 '8086' 代表 Intel
+    - `devices`：PCI 设备型号，如 '154c'
+    - `drivers`：PCI 设备驱动，如 'mlx5_core'
+    - `pfNames`：PF 设备的名称列表
 
     ![sriov-net-device](../../images/sriov-net-device.png)
 
@@ -318,9 +318,9 @@ MacVLAN 网卡的 IP 地址段从宿主机分配，所以在宿主机网络路�
     </html>
     ```
 
-## Uninstall
+## 卸载
 
-卸载 Multus-underlay 还需要删除 **每个节点** 上 Multus 的配置文件：
+卸载 Multus-underlay 还需要删除每个节点上的 Multus 配置文件：
 
 ```shell
 root@master:~# rm /etc/cni/net.d/00-multus.conf
