@@ -234,18 +234,28 @@ nav:
                   - 管理注册中心实例: skoala/registry/integrated/manage-registry.md
                   - 微服务管理: skoala/registry/integrated/manage-service.md
           - 微服务网关:
-              - 网关:
-                  - 管理网关实例: skoala/ms-gateway/gateway/manage-gateway.md
+              - 网关管理:
+                  - 创建网关: skoala/ms-gateway/gateway/create-gateway.md
                   - 查看网关详情: skoala/ms-gateway/gateway/check-details.md
+                  - 更新网关: skoala/ms-gateway/gateway/update-gateway.md
                   - 诊断网关: skoala/ms-gateway/gateway/diagnose-gateway.md
-              - API:
-                  - 管理 API: skoala/ms-gateway/api/manage-api.md
+                  - 移除网关: skoala/ms-gateway/gateway/delete-gateway.md
+              - API 管理:
+                  - 添加 API: skoala/ms-gateway/api/add-api.md
+                  - 更新 API: skoala/ms-gateway/api/update-api.md
                   - 配置 API 策略: skoala/ms-gateway/api/api-policy.md
-              - 管理服务: skoala/ms-gateway/service/manage-service.md
-              - 日志: skoala/ms-gateway/log.md
-              - 域名:
-                  - 管理域名: skoala/ms-gateway/domain/manage-domain.md
+                  - 移除 API: skoala/ms-gateway/api/delete-api.md
+              - 服务接入: 
+                  - 手动接入: skoala/ms-gateway/service/manual-integrate.md
+                  - 自动纳管: skoala/ms-gateway/service/auto-manage.md
+              - 日志查看: 
+                  - 请求日志: skoala/ms-gateway/reqlog.md
+                  - 实例日志: skoala/ms-gateway/inslog.md
+              - 域名管理:
+                  - 添加域名: skoala/ms-gateway/domain/add-domain.md
+                  - 更新域名: skoala/ms-gateway/domain/update-domain.md
                   - 配置域名策略: skoala/ms-gateway/domain/domain-policy.md
+                  - 删除域名: skoala/ms-gateway/domain/delete-domain.md
       - 服务网格:
           - 介绍:
               - 什么是服务网格: mspider/01Intro/WhatismSpider.md
