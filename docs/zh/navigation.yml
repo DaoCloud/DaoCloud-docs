@@ -236,7 +236,7 @@ nav:
           - 微服务网关:
               - 网关管理:
                   - 创建网关: skoala/ms-gateway/gateway/create-gateway.md
-                  - 查看网关详情: skoala/ms-gateway/gateway/check-details.md
+                  - 查看网关: skoala/ms-gateway/gateway/check-details.md
                   - 更新网关: skoala/ms-gateway/gateway/update-gateway.md
                   - 诊断网关: skoala/ms-gateway/gateway/diagnose-gateway.md
                   - 移除网关: skoala/ms-gateway/gateway/delete-gateway.md
@@ -249,8 +249,8 @@ nav:
                   - 手动接入: skoala/ms-gateway/service/manual-integrate.md
                   - 自动纳管: skoala/ms-gateway/service/auto-manage.md
               - 日志查看: 
-                  - 请求日志: skoala/ms-gateway/reqlog.md
-                  - 实例日志: skoala/ms-gateway/inslog.md
+                  - 请求日志: skoala/ms-gateway/logs/reqlog.md
+                  - 实例日志: skoala/ms-gateway/logs/inslog.md
               - 域名管理:
                   - 添加域名: skoala/ms-gateway/domain/add-domain.md
                   - 更新域名: skoala/ms-gateway/domain/update-domain.md
