@@ -1,12 +1,12 @@
 # DPDK
 
-本篇文章主要是将在 DCE5.0 中如何快速的创建第一个 DPDK 应用.
+本文主要介绍如何在 DCE 5.0 中快速创建第一个 DPDK 应用。
 
 ## 前置依赖
 
-- 安装 Multus-underlay , 并启用安装 SRIOV 组件, 参考[安装](install.md)。
-- 需要硬件支持: 拥有支持 SR-IOV 系列的网卡并设置 VFs,参考[SR-IOV](sriov.md)
-- 需要切换网卡驱动为用户态驱动:
+- 安装 Multus-underlay，并启用安装 SRIOV 组件，参考[安装](install.md)
+- 需要硬件支持：拥有支持 SR-IOV 系列的网卡并设置虚拟功能（VF），参考[SR-IOV](sriov.md)
+- 需要切换网卡驱动为用户态驱动
 
 ```shell
 # 下载 dpdk 源码
@@ -30,20 +30,20 @@ Network devices using kernel driver
 0000:04:01.1 'MT27800 Family [ConnectX-5 Virtual Function] 1018' if=enp4s0f0v6 drv=mlx5_core unused=vfio-pci
 ```
 
-以`0000:04:00.2 'MT27800 Family [ConnectX-5 Virtual Function] 1018' if=enp4s0f0v0 drv=mlx5_core unused=vfio-pci`: 为例：
+以 `0000:04:00.2 'MT27800 Family [ConnectX-5 Virtual Function] 1018' if=enp4s0f0v0 drv=mlx5_core unused=vfio-pci` 为例：
 
-    a. 0000:04:00.2 : 该 VF PCI 地址
-    b. if=enp4s0f0v0 : 该 VF 网卡名称
-    c. drv=mlx5_core : 当前网卡驱动
-    d. unused=vfio-pci : 可切换的网卡驱动
+- 0000:04:00.2：该 VF PCI 地址
+- if=enp4s0f0v0：该 VF 网卡名称
+- drv=mlx5_core：当前网卡驱动
+- unused=vfio-pci：可切换的网卡驱动
 
-DPDK支持的用户态驱动有三种:
-    
-    a. vfio-pci: 在启用 IoMMU 情况下, 推荐使用此驱动, 性能安全性最好
-    b. igb-uio: 适用性较 uio_pci_generic 更强, 支持 SR-IOV VF , 但需手动编译 module 并加载到内核
-    c. uio_pci_generic: 内核原生驱动, 不兼容 SR-IOV VF , 但支持在 VM 上使用 
+DPDK 支持的用户态驱动有三种：
 
-切换网卡驱动为 vfio-pci :
+- vfio-pci：在启用 IoMMU 情况下，推荐使用此驱动，性能安全性最好
+- igb-uio：适用性较 uio_pci_generic 更强，支持 SR-IOV VF，但需手动编译 module 并加载到内核
+- uio_pci_generic：内核原生驱动，不兼容 SR-IOV VF，但支持在 VM 上使用
+
+切换网卡驱动为 vfio-pci：
 
 ```shell
 root@172-17-8-120:~/cyclinder/sriov/dpdk-22.07/usertools# ./dpdk-devbind.py --bind=vfio-pci 0000:04:01.1
@@ -74,98 +74,100 @@ Network devices using kernel driver
 0000:04:00.7 'MT27800 Family [ConnectX-5 Virtual Function] 1018' if=enp4s0f0v5 drv=mlx5_core unused=vfio-pci
 ```
 
-`0000:04:01.1`: 已经变为 vfio-pci 驱动
+`0000:04:01.1`：已经变为 vfio-pci 驱动
 
-- 设置大页内存 和 开启 IoMMU(vfio-pci驱动依赖 IOMMU 技术): 
+- 设置大页内存和开启 IoMMU（vfio-pci 驱动依赖 IOMMU 技术）：
 
-编辑`/etc/default/grub`,在`GRUB_CMDLINE_LINUX`中加入一下内容:
+编辑 `/etc/default/grub`，在 `GRUB_CMDLINE_LINUX` 中加入以下内容：
 
 ```shell
 GRUB_CMDLINE_LINUX='default_hugepagesz=1GB hugepagesz=1GB hugepages=6 isolcpus=1-3 intel_iommu=on iommu=pt'
 update-grab && reboot
 ```
 
-> NOTE: 更新上述配置,需要重启系统,重启系统前最好备份系统
-> 如果不能更新配置, 驱动需要切换为 igb-uio 驱动, 需手动build && insmod && modprobe,参考https://github.com/atsgen/dpdk-kmod
+!!! note
+
+    更新上述配置，需要重启系统，重启系统前最好备份。
+    如果不能更新配置，驱动需要切换为 igb-uio 驱动，需手动 build && insmod && modprobe，具体参考 https://github.com/atsgen/dpdk-kmod
 
 ## 配置 SRIOV-Device-Plugin
 
-- 更新 SRIOV-Device-plugin的configmap: 新建资源池 sriov_netdevice_dpdk, 让其能够找到支持 dpdk 的 VF:
+- 更新 SRIOV-Device-plugin 的 configmap：新建资源池 sriov_netdevice_dpdk，让其能够找到支持 dpdk 的 VF：
 
-```shell
-kubectl edit cm -n kube-system sriov-0.1.1-config
-apiVersion: v1
-data:
-  config.json: |-
-    {
-      "resourceList":
-      [{
-        "resourceName": "sriov_netdevice",
-        "resourcePrefix": "intel.com",
-        "selectors": {
-          "device": ["1018"],
-          "vendors": ["15b3"],
-          "drivers": ["mlx5_core"],
-          "pfNames": []
+    ```shell
+    kubectl edit cm -n kube-system sriov-0.1.1-config
+    apiVersion: v1
+    data:
+      config.json: |-
+        {
+          "resourceList":
+          [{
+            "resourceName": "sriov_netdevice",
+            "resourcePrefix": "intel.com",
+            "selectors": {
+              "device": ["1018"],
+              "vendors": ["15b3"],
+              "drivers": ["mlx5_core"],
+              "pfNames": []
+            }
+          },{
+            "resourceName": "sriov_netdevice_dpdk",
+            "resourcePrefix": "intel.com",
+            "selectors": {
+              "drivers": ["vfio-pci"]
+            }
+          }]
         }
-      },{
-        "resourceName": "sriov_netdevice_dpdk",
-        "resourcePrefix": "intel.com",
-        "selectors": {
-          "drivers": ["vfio-pci"]
+    ```
+
+    新增 sriov_netdevice_dpdk。注意 selectors 中 driver 指定 vfio-pci 后将重启 sriov-device-plugin。
+
+    ```shell
+    kubectl delete po -n kube-system -l app=sriov-dp
+    ```
+
+    等待重启完成, 查看 Node 是否加载 sriov_netdevice_dpdk 资源：
+
+    ```sh
+    kubectl describe nodes 172-17-8-120
+    ...
+    Allocatable:
+      cpu:                             24
+      ephemeral-storage:               881675818368
+      hugepages-1Gi:                   6Gi
+      hugepages-2Mi:                   0
+      intel.com/sriov_netdevice:       6
+      intel.com/sriov_netdevice_dpdk:  1  # 这里显示表示已经可用了
+    ```
+
+- 创建 Multus DPDK CRD：
+
+    ```shell
+    cat EOF | kubectl apply -f -
+    > apiVersion: k8s.cni.cncf.io/v1
+    kind: NetworkAttachmentDefinition
+    metadata:
+      annotations:
+        helm.sh/hook: post-install
+        helm.sh/resource-policy: keep
+        k8s.v1.cni.cncf.io/resourceName: intel.com/sriov_netdevice_dpdk
+        v1.multus-underlay-cni.io/coexist-types: '["default"]'
+        v1.multus-underlay-cni.io/default-cni: "false"
+        v1.multus-underlay-cni.io/instance-type: sriov_dpdk
+        v1.multus-underlay-cni.io/underlay-cni: "true"
+        v1.multus-underlay-cni.io/vlanId: "0"
+      name: sriov-dpdk-vlan0
+      namespace: kube-system
+    spec:
+      config: |-
+        {
+          "cniVersion": "0.3.1",
+          "name": "sriov-dpdk",
+          "type": "sriov",
+          "vlan": 0
         }
-      }]
-    }
-```
-
-新增 sriov_netdevice_dpdk: 注意 selectors 中driver 指定 vfio-pci。后重启 sriov-device-plugin:
-
-```shell
-kubectl delete po -n kube-system -l app=sriov-dp
-```
-
-等待重启完成, 查看 Node 是否加载 sriov_netdevice_dpdk 资源 :
-
-```
-kubectl describe nodes 172-17-8-120
-...
-Allocatable:
-  cpu:                             24
-  ephemeral-storage:               881675818368
-  hugepages-1Gi:                   6Gi
-  hugepages-2Mi:                   0
-  intel.com/sriov_netdevice:       6
-  intel.com/sriov_netdevice_dpdk:  1  ## 这里显示表示已经可用了
-```
-
-- 创建 Multus DPDK CRD:
-
-```shell
-cat EOF | kubectl apply -f -
-> apiVersion: k8s.cni.cncf.io/v1
-kind: NetworkAttachmentDefinition
-metadata:
-  annotations:
-    helm.sh/hook: post-install
-    helm.sh/resource-policy: keep
-    k8s.v1.cni.cncf.io/resourceName: intel.com/sriov_netdevice_dpdk
-    v1.multus-underlay-cni.io/coexist-types: '["default"]'
-    v1.multus-underlay-cni.io/default-cni: "false"
-    v1.multus-underlay-cni.io/instance-type: sriov_dpdk
-    v1.multus-underlay-cni.io/underlay-cni: "true"
-    v1.multus-underlay-cni.io/vlanId: "0"
-  name: sriov-dpdk-vlan0
-  namespace: kube-system
-spec:
-  config: |-
-    {
-      "cniVersion": "0.3.1",
-      "name": "sriov-dpdk",
-      "type": "sriov",
-      "vlan": 0
-    }
-> EOF
-```
+    > EOF
+    ```
 
 ## 创建 DPDK 测试 Pod
 
@@ -224,7 +226,7 @@ spec:
 > EOF
 ```
 
-等待 Pod Running, 进入 Pod 中:
+等待 Pod Running，然后进入 Pod 中：
 
 ```shell
 root@172-17-8-120:~# kubectl exec -it sriov-pod-2 sh
@@ -248,4 +250,5 @@ Couldn't get CPU info, err code: 1
  dpdk-app -n 4 -l 1 --master-lcore 1 -w 0000:04:01.1 -- -p 0x1 -P --config="(0,0,1)" --parse-ptype
 ```
 
-dpdk-app 会打印出当前 pod 的相关信息，包括 eth0 的 ip、mac和 type 等。其中值得注意: net1 网卡没有任何 IP 和 Mac等网络信息, 这符合DPDK的特性,不需要内核网络协议栈也能工作。
+dpdk-app 会打印出当前 Pod 的相关信息，包括 eth0 的 IP、MAC 和 type 等。
+其中值得注意: net1 网卡没有任何 IP 和 MAC 等网络信息，这符合 DPDK 的特性，不需要内核网络协议栈也能工作。

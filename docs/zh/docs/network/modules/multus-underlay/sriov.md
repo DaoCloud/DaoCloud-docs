@@ -1,12 +1,14 @@
-# SRIOV-CNI 配置
+# SR-IOV CNI 配置
 
 ## 环境要求
 
-使用 SRIOV-CNI 需要先确认节点是否为物理主机并且节点拥有支持 SRIOV 的物理网卡。如果节点为 VM 虚拟机或者没有支持 SRIOV 的网卡，那么 SRIOV 将无法工作。可通过下面的方式检查节点是否存在支持 SRIOV 功能的网卡:
+使用 SR-IOV CNI 需要先确认节点是否为物理主机并且节点拥有支持 SR-IOV 的物理网卡。
+如果节点为 VM 虚拟机或者没有支持 SR-IOV 的网卡，那么 SR-IOV 将无法工作。
+可通过下面的方式检查节点是否存在支持 SR-IOV 功能的网卡。
 
-- 检查是否支持 SRIOV
+### 检查是否支持 SR-IOV
 
-通过`ip link show`获取所有网卡:
+通过 `ip link show` 获取所有网卡：
 
 ```shell
 root@172-17-8-120:~# ip link show
@@ -32,7 +34,7 @@ root@172-17-8-120:~# ip link show
     link/ether 02:42:60:cb:04:10 brd ff:ff:ff:ff:ff:ff
 ```
 
-过滤常见的虚拟网卡(如docker0、cali*、vlan子接口等), 以 `enp4s0f0np0` 为例, 确认其是否支持 SRIOV :
+过滤常见的虚拟网卡（如 docker0、cali*、vlan 子接口等），以 `enp4s0f0np0` 为例，确认其是否支持 SR-IOV：
 
 ```shell
 root@172-17-8-120:~# ethtool -i enp4s0f0np0
@@ -48,34 +50,34 @@ supports-register-dump: no
 supports-priv-flags: yes
 ```
 
-通过 `bus-info` 查询其 pci 设备详细信息:
+通过 `bus-info` 查询其 PCI 设备详细信息：
 
 ```shell
 root@172-17-8-120:~# lspci -s 0000:04:00.0 -v | grep SR-IOV
 	Capabilities: [180] Single Root I/O Virtualization (SR-IOV)
 ```
 
-如果输出有上面此行, 说明此网卡支持 SRIOV 。 获取此网卡的 vendor 和 device :
+如果输出有上面此行，说明此网卡支持 SR-IOV。获取此网卡的 vendor 和 device：
 
 ```shell
 root@172-17-8-120:~# lspci -s 0000:04:00.0 -n
 04:00.0 0200: 15b3:1017
 ```
+其中，
+- `15b3`：表示此 PCI 设备的厂商号，如 `15b3` 表示 Mellanox。
+- `1017`：表示此 PCI 设备的设备型号，如 `1017` 表示 Mellanox MT27800 Family [ConnectX-5] 系列网卡。
 
-- `15b3`: 表示此 PCI 设备的厂商号, 如`15b3`表示 Mellanox.
-- `1017`: 表示此 PCI 设备的设备型号, 如`1017`表示 Mellanox  MT27800 Family [ConnectX-5] 系列网卡.
+> 可通过 `https://devicehunt.com/all-pci-vendors` 查询所有 PCI 设备信息。
 
-> 可通过`https://devicehunt.com/all-pci-vendors`查询所有PCI设备信息
+### 配置 VF（虚拟功能）
 
-- 配置 VFs
-
-通过下面的方式为 支持SRIOV 网卡配置 VFs:
+通过下面的方式为支持 SR-IOV 的网卡配置 VF：
 
 ```shell
 root@172-17-8-120:~# echo 8 > /sys/class/net/enp4s0f0np0/device/sriov_numvfs
 ```
 
-确认 VFs 配置成功:
+确认 VF 配置成功：
 
 ```shell
 root@172-17-8-120:~# cat /sys/class/net/enp4s0f0np0/device/sriov_numvfs
@@ -93,16 +95,17 @@ root@172-17-8-120:~# ip l show enp4s0f0np0
     vf 7     link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff, spoof checking off, link-state auto, trust off, query_rss off
 ```
 
-输出上图内容, 表示配置成功.
+输出上图内容，表示配置成功。
 
-## 安装 SRIOV-CNI
+## 安装 SR-IOV CNI
 
-通过安装 Multus-underlay 来安装 SRIOV-CNI ,具体安装流程参考 [安装](install.md). 注意, 安装时需正确配置 `sriov-device-plugin` resource资源, 包括vendor、device等信息。否则 SRIOV-Device-Plugin
-无法找到正确的 VFs .
+通过安装 Multus-underlay 来安装 SR-IOV CNI，具体安装流程参考[安装](install.md)。
+注意, 安装时需正确配置 `sriov-device-plugin` resource 资源，包括 vendor、device 等信息。
+否则 SRIOV-Device-Plugin 无法找到正确的 VF。
 
 ## 配置 SRIOV-Device-Plugin
 
-安装完 SRIOV-CNI 之后, 通过下面的方式查看 SRIOV-CNI 是否发现了主机上的 VFs :
+安装完 SR-IOV CNI 之后，通过下面的方式查看 SR-IOV CNI 是否发现了主机上的 VF：
 
 ```shell
 root@172-17-8-110:~# kubectl describe nodes 172-17-8-110
@@ -112,33 +115,33 @@ Allocatable:
   ephemeral-storage:             881675818368
   hugepages-1Gi:                 0
   hugepages-2Mi:                 0
-  intel.com/sriov-netdevice:     8      # 此行表示 SRIOV-CNI 成功的发现了该主机上的 VFs 
+  intel.com/sriov-netdevice:     8      # 此行表示 SR-IOV CNI 成功的发现了该主机上的 VFs 
   memory:                        16250260Ki
   pods:                          110
 ```
 
 ## 使用
 
-使用 SRIOV-CNI 创建工作负载需要注意下面三个方面:
+使用 SR-IOV CNI 创建工作负载需要注意下面三个方面：
 
-- 确认 SRIOV multus network-attachment-definition对象中存在 `sriov-device-plugin` resource:
+- 确认 SR-IOV multus network-attachment-definition 对象中存在 `sriov-device-plugin` resource：
 
-```shell
-root@172-17-8-110:~# kubectl get network-attachment-definitions.k8s.cni.cncf.io -n kube-system sriov-vlan0 -o yaml
-apiVersion: k8s.cni.cncf.io/v1
-kind: NetworkAttachmentDefinition
-metadata:
-  annotations:
-    k8s.v1.cni.cncf.io/resourceName: intel.com/sriov_netdevice
-  name: sriov-vlan0
-  namespace: kube-system
-```
+    ```shell
+    root@172-17-8-110:~# kubectl get network-attachment-definitions.k8s.cni.cncf.io -n kube-system sriov-vlan0 -o yaml
+    apiVersion: k8s.cni.cncf.io/v1
+    kind: NetworkAttachmentDefinition
+    metadata:
+      annotations:
+        k8s.v1.cni.cncf.io/resourceName: intel.com/sriov_netdevice
+      name: sriov-vlan0
+      namespace: kube-system
+    ```
 
-`resourceName`必须与注册到 `kubelet` 中的资源名称保持一致(即和 Node 对象中的名称保持一致)。
+    `resourceName` 必须与注册到 `kubelet` 中的资源名称保持一致（即和 Node 对象中的名称保持一致）。
 
-> 创建 network-attachment-definition 对象后, 再更新 annotations: `k8s.v1.cni.cncf.io/resourceName` 不会生效！
+    > 创建 network-attachment-definition 对象后，再更新 annotations: `k8s.v1.cni.cncf.io/resourceName` 不会生效！
 
-- 创建工作负载时, 需要在 Pod 的 annotations 字段中通过 multus 的注解绑定指定的 network-attachment-definition 对象:
+- 创建工作负载时，需要在 Pod 的 annotations 字段中通过 multus 的注解绑定指定的 network-attachment-definition 对象:
 
     - 如果 type 为 sriov-overlay，那么需要在 Pod 的 Annotations 中插入以下的注解：
 
@@ -147,7 +150,7 @@ metadata:
             k8s.v1.cni.cncf.io/networks: kube-system/sriov-overlay-vlan0
         ```
 
-        `k8s.v1.cni.cncf.io/networks`：表示会在 Pod 中除默认 CNI 之外再插入一张 SRIOV-CNI 网卡。
+        `k8s.v1.cni.cncf.io/networks`：表示会在 Pod 中除默认 CNI 之外再插入一张 SR-IOV CNI 网卡。
 
     - 如果 type 为 sriov-standalone，那么需要在 Pod 的 Annotations 中插入以下的注解：
 
@@ -158,17 +161,18 @@ metadata:
 
         `v1.multus-cni.io/default-network`：修改 Pod 的默认网卡。如果不指定，将通过集群默认 CNI 为 Pod 分配第一张网卡。
 
-- 在 Pod 的 Resource 字段中给予容器 SRIOV 资源配额:
+- 在 Pod 的 Resource 字段中给予容器 SR-IOV 资源配额:
 
-```yaml
-...
-    containers:
-        resources:
-          requests:
-            intel.com/sriov-netdevice: '1'
-          limits:
-            intel.com/sriov-netdevice: '1'
-...
-```
+    ```yaml
+    ...
+        containers:
+            resources:
+              requests:
+                intel.com/sriov-netdevice: '1'
+              limits:
+                intel.com/sriov-netdevice: '1'
+    ...
+    ```
 
-名称需要保持一致, 否则 Pod 会因为请求不到 VF 而创建失败。
+    名称需要保持一致, 否则 Pod 会因为请求不到 VF 而创建失败。
+    

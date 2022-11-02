@@ -1,20 +1,20 @@
 # 什么是 Multus-underlay
 
-`Multus-underlay` 基于 `Multus` 并搭配一些 Underlay 类型的 CNI 插件（如 MacVLAN 或 SRIOV-CNI 等)，可为 Pod 插入多张网卡。
-此外，`Multus-underlay` 还解决了 Underlay-CNI 的一些通信问题。比如当 MacVLAN 作为 CNI 时，它无法与集群 ClusterIP 直接通信，并且它也无法直接与主机 MacVLAN Master 接口通信的（这是 Linux MacVLAN 技术的限制）。
+`Multus-underlay` 基于 `Multus` 并搭配一些 Underlay 类型的 CNI 插件（如 MacVLAN 或 SR-IOV CNI 等)，可为 Pod 插入多张网卡。
+此外，`Multus-underlay` 还解决了 Underlay CNI 的一些通信问题。比如当 MacVLAN 作为 CNI 时，它无法与集群 ClusterIP 直接通信，并且它也无法直接与主机 MacVLAN Master 接口通信的（这是 Linux MacVLAN 技术的限制）。
 
 ## 解决的问题
 
-- Underlay-CNI 类型的 Pod 无法访问集群 ClusterIP
-- Underlay-CNI 类型的 Pod 无法通过健康检测
+- Underlay CNI 类型的 Pod 无法访问集群 ClusterIP
+- Underlay CNI 类型的 Pod 无法通过健康检测
 
 ## 包含的组件
 
 Multus-underlay 包含下面几个组件：
 
 - Multus：调度多个 CNI 插件，按需为 Pod 插入一张或者多张网卡
-- Meta-plugins：包括 Veth 和 Router 两个插件，解决 Underlay-CNI 的一些通信问题
-- SRIOV-CNI（可选）：可选安装 SRIOV-CNI，但需要硬件支持
+- Meta-plugins：包括 Veth 和 Router 两个插件，解决 Underlay CNI 的一些通信问题
+- SR-IOV CNI（可选）：可选安装 SR-IOV CNI，但需要硬件支持
 
 ### Meta-plugins
 
@@ -73,7 +73,7 @@ spec:
 ### Router-Plugin
 
 Router 插件通过在 Pod Netns 中设置一些路由规则，使来自主机、集群内的数据包从 Pod 的 eth0（默认 CNI 创建的网卡）转发，而来自于集群外的数据包从 MacVLAN/SRIOV 创建的网卡转发。
-下面是 Router 插件搭配 MacVLAN 的 Multus CRD实例的配置示例：
+下面是 Router 插件搭配 MacVLAN 的 Multus CRD 实例的配置示例：
 
 ```yaml
 apiVersion: k8s.cni.cncf.io/v1

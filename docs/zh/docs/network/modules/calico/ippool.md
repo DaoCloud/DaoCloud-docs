@@ -179,7 +179,9 @@ kubectl annotate pod  test-pod "cni.projectcalico.org/ipv4pools"='["extra-ippool
     natOutgoing: true
     ```
 
-    > NOTE：注意不要跟现有的 `ippool` 子网冲突。
+    !!! note
+    
+        注意不要跟现有的 `ippool` 子网冲突。
 
 - 将 `default-ipv4-ippool` 设置为 `disable`
 
