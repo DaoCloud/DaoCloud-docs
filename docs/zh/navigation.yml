@@ -304,6 +304,9 @@ nav:
               - 创建网格网关: mspider/03UserGuide/09GatewayInstance/create.md
               - 删除网格网关: mspider/03UserGuide/09GatewayInstance/delete.md
           - Istio 资源管理: mspider/03UserGuide/10MeshConfiguration/IstioResources.md
+          - 升级:
+              - Istio 版本升级: mspider/03UserGuide/upgrade/IstioUpdate.md
+              - 边车版本升级: mspider/03UserGuide/upgrade/SidecarUpdate.md
           - 常见问题: mspider/07faq.md
       - 云原生网络:
           - 介绍:
