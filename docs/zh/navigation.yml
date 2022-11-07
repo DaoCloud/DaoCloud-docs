@@ -413,6 +413,18 @@ nav:
               - 查看消息队列: middleware/kafka/userguide/view.md
               - 实例监控: middleware/kafka/userguide/insight.md
               - 配置参数: middleware/kafka/userguide/config.md
+          - MinIO 对象存储:
+              - 什么是 MinIO: middleware/minio/intro/what.md
+              - 适用场景: middleware/minio/intro/scenarios.md
+              - 常见术语: middleware/minio/intro/concepts.md
+              - 安装和卸载 MinIO: middleware/minio/quickstart/install.md
+              - 首次使用 MinIO: middleware/minio/userguide/login.md
+              - 创建 MinIO 实例: middleware/minio/userguide/create.md
+              - 更新 MinIO 实例: middleware/minio/userguide/update.md
+              - 删除 MinIO 实例: middleware/minio/userguide/delete.md
+              - 查看消息队列: middleware/minio/userguide/view.md
+              - 实例监控: middleware/minio/userguide/insight.md
+              - 配置参数: middleware/minio/userguide/config.md
       - 云原生本地存储:
           - 介绍: hwameistor/intro/what.md
           - 模块:
