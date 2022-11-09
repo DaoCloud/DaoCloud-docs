@@ -18,7 +18,9 @@
 
     ![安装采集器](../../images/installagent02.png)
 
-4. 填入名称，选择命名空间和版本后，点击`确定`。
+4. 填入名称，选择命名空间和版本后，在 yaml 文件中分别填写 logging 、metric 、audit、trace 上报数据的地址。
+
+	如何获取数据上报地址，请参考：[获取数据上报的地](insight/06UserGuide/01quickstart/gethosturl.md)
 
     ![安装采集器](../../images/installagent03.png)
 
