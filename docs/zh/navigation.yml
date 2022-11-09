@@ -4,6 +4,7 @@ nav:
   - 产品文档:
       - DCE 产品介绍:
           - 什么是 DCE 5.0: dce/what-is-dce.md
+          - CNCF 认证的 KCSP: dce/kcsp.md
           - 适用场景: dce/scenario.md
           - 平台功能: dce/features.md
           - 产品优势: dce/whyus.md
