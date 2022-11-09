@@ -334,6 +334,7 @@ nav:
               - 介绍: network/modules/f5networks/what.md
               - 安装: network/modules/f5networks/install.md
               - 使用: network/modules/f5networks/usage.md
+              - 调试: network/modules/f5networks/debug.md
           - Ingress-nginx:
               - 介绍: network/modules/ingress-nginx/what.md
               - 安装: network/modules/ingress-nginx/install.md
