@@ -56,7 +56,7 @@ letter again because the reader cannot view it clearly!
 
 ### Good example 1
 
-Run the comman to get current pods:
+Run the following command to check current pods:
 
 ```sh
 kubectl get pods
@@ -154,19 +154,32 @@ One suggestion is to put all parameter tables in a page.
 Alternatively, a table can easily show comparison, for example:
 
 ```none
-Do	                        | Don't
-----------------------------|------------------------------------
-To create a ReplicaSet,	    | In order to create a ReplicaSet,
-See the configuration file.	| Please see the configuration file.
-View the pods.	| With this next command, we'll view the pods.
+| Do                          | Don't                                        |
+| --------------------------- | -------------------------------------------- |
+| To create a ReplicaSet,     | In order to create a ReplicaSet,             |
+| See the configuration file. | Please see the configuration file.           |
+| View the pods.              | With this next command, we'll view the pods. |
 ```
 
 The output is:
 
-Do	                        | Don't
-----------------------------|------------------------------------
-To create a ReplicaSet,	    | In order to create a ReplicaSet,
-See the configuration file.	| Please see the configuration file.
-View the pods.	| With this next command, we'll view the pods.
+| Do                          | Don't                                        |
+| --------------------------- | -------------------------------------------- |
+| To create a ReplicaSet,     | In order to create a ReplicaSet,             |
+| See the configuration file. | Please see the configuration file.           |
+| View the pods.              | With this next command, we'll view the pods. |
 
 Refer to [MkDocs table](https://squidfunk.github.io/mkdocs-material/reference/data-tables/).
+
+## Tips
+
+Before you push your changes, it is recommended to run the following command to make your markdown beautiful:
+
+```
+npx prettier --w filename
+```
+
+See [prettier documentation](https://prettier.io/docs/en/install.html), it's very easy to use.
+
+> Note: You shall manually check the format and layout again after you run the prettier command,
+> which can automatically adjust your markdown to the standard format.
