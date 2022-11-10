@@ -17,7 +17,7 @@ nav:
           - 离线安装 DCE 5.0 商业版:
               - 部署规划: install/Air-Gap-install-full/deploy-plan.md
               - 文件下载: install/Air-Gap-install-full/download-file.md
-              - 集群配置文件说明: install/Air-Gap-install-full/clusterconfig-introduction.md
+              - 集群配置文件说明: install/Air-Gap-install-full/clusterconfig.md
               - 开始安装: install/Air-Gap-install-full/start-install.md
           - 卸载: install/uninstall.md
       - 容器管理:
