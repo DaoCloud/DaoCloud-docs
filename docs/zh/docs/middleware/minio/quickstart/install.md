@@ -45,7 +45,7 @@
 
     ```shell
     helm search repo mcamel-release/mcamel-minio --versions
-    NAME                            CHART VERSION   APP VERSION     DESCRIPTION                
+    NAME                            CHART VERSION   APP VERSION     DESCRIPTION
     mcamel-release/mcamel-MinIO  0.1.0           0.1.0           A Helm chart for Kubernetes
     ```
 
