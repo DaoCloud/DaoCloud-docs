@@ -1,4 +1,4 @@
-# Writing Style Guide
+# DaoCloud Style Guide of Writing
 
 This style guide is applicable to DaoCloud documentation.
 

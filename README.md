@@ -5,11 +5,13 @@
 
 [中文版](README_zh.md) ｜ English
 
-DCE 5.0 docsite is created with MkDocs. All pages are written in markdown. We use GitOps to control workflow and versions.
+DCE 5.0 docsite is created with MkDocs. All pages are written in markdown.
+We use GitOps to control workflow and versions.
 
-## Release Notes
+## Release notes
 
-- [Release v1.0](docs/README.md)
+[Release v1.0](docs/README.md)
+
 ## Open a PR
 
 This docsite uses Pull Request (PR) to modify, translate, and manage all pages.
@@ -21,14 +23,14 @@ This docsite uses Pull Request (PR) to modify, translate, and manage all pages.
 5. Open a PR in this repo
 6. Successfully merge after reviewing, thanks.
 
-Please read through [writing style](http://docs-static.daocloud.io/write-docs) before any change.
+## Preview locally
 
-## Create a local preview environment
+This section describes how you can preview your changes before commit.
 
 ### With Docker
 
-1. Install and run Docker
-2. Run `make serve` and preview your changes
+1. Install and run [Docker](https://www.docker.com/).
+2. Run `make serve` and preview your changes.
 
 ### With Git repo
 
@@ -50,8 +52,16 @@ See [MkDocs documents to install](https://squidfunk.github.io/mkdocs-material/ge
 - Care about links to avoid any null or dead link
 - Give a consistent experience to explore all pages herein
 
+For more details refer to [DaoCloud Style Guide of Writing](./style.md).
+
 ## Acknowledgements
 
-We sincerely thank all the contributors who contribute to DaoCloud docsite. Once a PR you opened have been successfully merged, your ID will appear at the bottom of the page as an author.
+We sincerely thank all the contributors who contribute to DaoCloud docsite.
+Once a PR you opened have been successfully merged, your ID will appear at the bottom of the page as an author.
 
 If any problem, feel free to reach out to us: [support@daocloud.io](mailto:support@daocloud.io?subject=FROM_DOCS_README)
+
+## References
+
+- [DaoCloud Style Guide of Writing](./style.md)
+- [Contribution Guideline](./CONTRIBUTING.md)

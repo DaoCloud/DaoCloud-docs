@@ -26,7 +26,7 @@ stay informed and involved.
 ### Style guides and templates
 
 Before submitting a pull request to create new content, please review the
-[tips about writing](./README.md##tips-about-writing).
+[tips about writing](./style.md).
 
 ## Contributing to documentation
 

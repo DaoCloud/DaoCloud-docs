@@ -5,7 +5,7 @@
 
 中文版 ｜ [English](README.md)
 
-本文档站采用 Mkdocs 编译而成，文档内容通过 Markdown 格式写作，并在 GitHub 上完成版本管理、协作开发等工作。
+本文档站采用 MkDocs 编译而成，文档内容通过 Markdown 格式写作，并在 GitHub 上完成版本管理、协作开发等工作。
 
 ## 提交 PR 修改文档
 
@@ -18,13 +18,13 @@
 5. 进入本 repo 页面发起 PR
 6. PR 评审后成功合并，谢谢。
 
-在修改文档前，请仔细阅读 DaoCloud 的[文档书写规范](http://docs-static.daocloud.io/write-docs)。
-
 ## 创建本地预览环境
+
+本节说明如何在你的本机上预览修改效果。
 
 ### 使用 Docker 预览
 
-1. 需要本地安装好 Docker，启动 Docker
+1. 需要本地安装好 Docker，启动 [Docker](https://www.docker.com/)
 2. 运行 `make serve`
 
 ### 使用 Git repo 预览
@@ -47,8 +47,12 @@
 - 请勿使用空链接、死链接
 - 标题层级依次增加，不要跳级
 
+在修改文档时，请参阅 DaoCloud 的[文档书写规范](./style.md)。
+
 ## 感谢
 
-我们衷心感谢所有为 DaoCloud 添砖加瓦的贡献者。您提出的文档修改成功合并后，您的 ID 将出现对应页面的底部，以表谢意。
+特别感谢 [SAMZONG](https://github.com/SAMZONG) 对文档站后台技术的强劲支撑。
+
+衷心感谢所有为 DaoCloud 文档站添砖加瓦的所有贡献者们，感谢数百位 DCE 开发者日以继夜的辛勤付出，愿云原生社区进一步发展壮大。技术无国界，欢迎你我他 🤝
 
 技术支持：[support@daocloud.io](mailto:support@daocloud.io?subject=FROM_DOCS_README)
