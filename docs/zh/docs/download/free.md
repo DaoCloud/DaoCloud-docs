@@ -7,7 +7,7 @@
 | 名称     | 文件大小 | 下载                                                                                                         |
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------ |
 | 离线包   | 5.8 GB   | [点击下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.28.tar) |
-| 校验文件 | 0.6 KB   | [点击下载](./checksumf.txt.zip)                                                                              |
+| 校验文件 | 0.6 KB   | [点击下载](./free/checksum.txt.zip)                                                                              |
 
 ## 校验
 
