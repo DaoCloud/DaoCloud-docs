@@ -517,5 +517,4 @@ nav:
       - Merbridge: community/merbridge.md
       - Spiderpool: community/spiderpool.md
   - 下载中心:
-      - 云原生应用云平台 DCE: download/dce.md
-      - DCE 下载详情页: download/details.md
+      - DaoCloud Enterprise 5.0: download/dce.md
