@@ -23,7 +23,7 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 !!! note
 
     - DaoCloud Enterprise 5.0 还处于发布初期，目前版本更新较频繁。为保证您的使用体验，请及时更新。
-    
+
     - 若有任何安装或使用问题，请[提出反馈](https://github.com/DaoCloud/DaoCloud-docs/issues)。
 
     - 欢迎扫描二维码，与开发者畅快交流：

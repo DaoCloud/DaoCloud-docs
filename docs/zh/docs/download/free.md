@@ -7,7 +7,7 @@
 | 名称     | 文件大小 | 下载                                                                                                         |
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------ |
 | 离线包   | 5.8 GB   | [点击下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.28.tar) |
-| 校验文件 | 0.6 KB   | [点击下载](./free/checksum.txt.zip)                                                                              |
+| 校验文件 | 0.6 KB   | [点击下载](./free/checksum.txt.zip)                                                                          |
 
 ## 校验
 
@@ -29,7 +29,7 @@ offline-community-v0.3.28.tar: OK
 
 成功安装之后请[申请免费社区体验](../dce/license0.md)。
 
-## 包含的模块
+## 模块
 
 DCE 5.0 社区版默认包含以下模块：
 
