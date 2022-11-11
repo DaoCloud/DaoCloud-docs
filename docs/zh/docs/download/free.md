@@ -4,14 +4,28 @@
 
 ## 下载
 
-| 名称     | 文件大小 | 下载                                                                                                                  |
-| -------- | -------- | --------------------------------------------------------------------------------------------------------------------- |
-| 离线包   | 5.8 GB   | [点击下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.28.tar)          |
-| 校验文件 | 0.1 KB   | [点击下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.28-checksum.txt) |
+| 名称     | 文件大小 | 下载                                                                                                         |
+| -------- | -------- | ------------------------------------------------------------------------------------------------------------ |
+| 离线包   | 5.8 GB   | [点击下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.28.tar) |
+| 校验文件 | 0.6 KB   | [点击下载](./checksumf.txt.zip)                                                                              |
 
-## 安装和授权
+## 校验
 
-下载完整的离线包之后，请参阅[社区版安装流程](../install/install-dce-community.md)。
+解压缩 `checksum.txt.zip`，将 txt 文件与 tar 包置于同一个目录。执行以下命令校验安装包：
+
+```sh
+echo "$(cat checksum.txt)" | sha512sum -c
+```
+
+校验成功会打印：
+
+```none
+offline-community-v0.3.28.tar: OK
+```
+
+## 安装
+
+成功校验离线包之后，请参阅[社区版安装流程](../install/install-dce-community.md)进行安装。
 
 成功安装之后请[申请免费社区体验](../dce/license0.md)。
 
