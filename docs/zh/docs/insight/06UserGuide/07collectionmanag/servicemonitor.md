@@ -20,21 +20,23 @@
 3. 点击链接跳转到`容器管理` 中创建 Service Monitor。
 
 	```yaml
-	apiVersion: monitoring.coreos.com/v1 
-		kind: ServiceMonitor 
-		metadata: 
-			name: micrometer-demo 
-			namespace: default 
-		spec: 
-			endpoints: 
-				- interval: 15s 
-				path: /actuator/prometheus 
-				port: metrics 
-			namespaceSelector: 
-				any: true 
-			selector:
-				matchLabels: 
-					micrometer-prometheus-discovery: 'true'
+	apiVersion: monitoring.coreos.com/v1
+	kind: ServiceMonitor
+	metadata:
+	name: micrometer-demo
+	namespace: insight-system
+	spec:
+	endpoints:
+		- honorLabels: true
+		- interval: 15s 
+		path: /actuator/prometheus
+		port: http
+	namespaceSelector:
+		matchNames:
+		- default
+	selector:
+		matchLabels:
+		micrometer-prometheus-discovery: 'true'
 	```
 
 在这段YAML文件中，各代码段的含义如下：
