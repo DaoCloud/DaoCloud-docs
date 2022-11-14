@@ -2,7 +2,9 @@
 
 需要在你的环境中安装一些依赖项，才能安装 DCE 5.0 体验新一代云原生操作系统的魅力。
 
-您可以根据自己的实际情况选择在线或离线安装。
+如果是安装社区版，请在 K8s 集群控制平面节点（Master 节点）上执行下述命令。
+
+如果是安装商业版，请在火种机器上执行下述命令。
 
 !!! note
 
@@ -18,7 +20,8 @@
 
 ## 在线安装
 
-1. 在机器上，下载脚本。
+
+1. 下载脚本
 
     ```shell
     curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
@@ -35,13 +38,13 @@
     - 社区版本安装
 
         ```bash
-        bash install_prerequisite.sh online community
+        sudo bash install_prerequisite.sh online community
         ```
 
     - 商业版安装
 
         ```bash
-        bash install_prerequisite.sh online full
+        sudo bash install_prerequisite.sh online full
         ```
 
 ## 离线安装
@@ -81,13 +84,13 @@
     - 社区版安装命令
 
         ```bash
-        bash install_prerequisite.sh offline community
+        sudo bash install_prerequisite.sh offline community
         ```
 
     - 商业版安装
 
         ```bash
-         bash install_prerequisite.sh offline full
+         sudo bash install_prerequisite.sh offline full
         ```
 
 接下来就可以安装 DCE 5.0 了。
