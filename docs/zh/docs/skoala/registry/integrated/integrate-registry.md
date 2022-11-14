@@ -2,6 +2,8 @@
 
 注册中心支持接入 [Nacos 注册中心](../../../reference/basic-knowledge/registry.md#nacos-注册中心)、[Eureka 注册中心](../../../reference/basic-knowledge/registry.md#eureka-注册中心)、[Zookeeper 注册中心](../../../reference/basic-knowledge/registry.md#zookeeper-注册中心)、[Kubernetes 注册中心](../../../reference/basic-knowledge/registry.md#kubernetes-注册中心)、[Mesh 注册中心](../../../reference/basic-knowledge/registry.md#service-mesh-注册中心)。
 
+相对于托管型注册中心而言，接入型注册中心只支持一些基础操作，例如查看基本信息、监控信息等。如需体验更高级更全面的管理操作，需要创建[托管注册中心](../managed/registry-lcm/create-registry.md)。
+
 接入注册中心的步骤如下：
 
 1. 进入注册中心接入页面。
@@ -14,7 +16,7 @@
 
     接入不同类型的注册中心需要填写不同的配置信息。
 
-    - Kubernetes/Mesh 注册中心：直接集群或网格服务，然后在页面底部点击`确定`。
+    - Kubernetes/Mesh 注册中心：直接选择集群或网格服务，然后在页面底部点击`确定`。
 
         - 如果找不到想要添加的 Kubernetes 集群，可以去容器管理模块[接入集群](../../../kpanda/07UserGuide/Clusters/JoinACluster.md)或[创建集群](../../../kpanda/07UserGuide/Clusters/CreateCluster.md)。
 

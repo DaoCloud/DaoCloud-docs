@@ -226,9 +226,11 @@ nav:
           - 选择工作空间: skoala/select-workspace.md
           - 微服务治理中心:
               - 托管型注册中心:
-                  - 创建注册中心: skoala/registry/managed/create-registry.md
-                  - 更新注册中心: skoala/registry/managed/update-registry.md
-                  - 删除注册中心: skoala/registry/managed/delete-registry.md
+                  - 注册中心管理: 
+                      - 创建注册中心: skoala/registry/managed/registry-lcm/create-registry.md
+                      - 更新注册中心: skoala/registry/managed/registry-lcm/update-registry.md
+                      - 查看注册中心: skoala/registry/managed/registry-lcm/check-registry.md
+                      - 删除注册中心: skoala/registry/managed/registry-lcm/delete-registry.md
                   - 微服务命名空间: skoala/registry/managed/namespace.md
                   - 微服务列表: skoala/registry/managed/servicelist/intro.md
                   - 服务治理策略: skoala/registry/managed/governance-policy.md
