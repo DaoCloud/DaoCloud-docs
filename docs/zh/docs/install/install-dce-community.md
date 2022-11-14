@@ -10,7 +10,7 @@
 
 ## 准备工作
 
-- 准备一个 k8s 集群
+- 准备一个 K8s 集群
 
     !!! note
 
@@ -35,7 +35,7 @@
 
 ## 在线安装（推荐）
 
-1. 在 k8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件。
+1. 在 K8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件。
 
     ```shell
     # 假定 VERSION 为 v0.3.24
@@ -62,7 +62,7 @@
           insightVip: 10.6.229.11/32          # 这是 Global 集群的 Insight-Server 采集所有子集群的监控指标的网络路径所用的 VIP
         ```
 
-    - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 k8s 负载均衡能力, 配置文件范例如下:
+    - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 K8s 负载均衡能力, 配置文件范例如下:
 
         ``` yaml
         apiVersion: provision.daocloud.io/v1alpha1
@@ -118,6 +118,6 @@
 
 !!! note
 
-    如果安装过程中遇到什么问题，欢迎扫描二维码进群，与开发者交流：
+    如果安装过程中遇到什么问题，欢迎扫描二维码，与开发者畅快交流：
 
-    ![企业微信群](images/wechat.png)
+    ![社区版交流群](images/wechat.png)
