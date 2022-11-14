@@ -5,7 +5,7 @@
 **前提条件**
 
 - 有可选的域名，可参考[域名管理](../domain/add-domain.md)创建域名。
-- 如果 API 的目标服务为后端服务，则需要确保有可选的后端服务，可参考通过[手动](../../../service/manual-integrate.md)或[自动](../service/auto-manage.md)方式接入服务。
+- 如果 API 的目标服务为后端服务，则需要确保有可选的后端服务，可参考通过[手动](../service/manual-integrate.md)或[自动](../service/auto-manage.md)方式接入服务。
 
 创建 API 的步骤如下：
 
@@ -52,5 +52,3 @@
 !!! info
 
     点击 API 名称进入 API 详情，可查看 API 的详细配置信息，例如上下线状态、域名、匹配规则、目标服务、策略配置等。
-
-![API 详情](imgs/details.png)
