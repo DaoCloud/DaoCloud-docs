@@ -242,6 +242,17 @@ func main() {
 }
 ```
 
+需要注意的是，如果你的程序里面使用到了 Grpc Client 调用第三方服务，你还需要对 Grpc Client 添加拦截器：
+
+```golang
+  	[...]
+
+	conn, err := grpc.Dial(addr, grpc.WithTransportCredentials(insecure.NewCredentials()),
+		grpc.WithUnaryInterceptor(otelgrpc.UnaryClientInterceptor()),
+		grpc.WithStreamInterceptor(otelgrpc.StreamClientInterceptor()),
+	)
+```
+
 ### 如果不使用请求路由
 
 ```golang
@@ -327,5 +338,6 @@ span.SetStatus(codes.Error, "internal error")
 ## 参考
 
 有关 Demo 演示请参考：
+- [otel-grpc-examples](https://github.com/openinsight-proj/otel-grpc-examples/tree/no-metadata-grpcgateway-v1.11.1)
 - [opentelemetry-demo/productcatalogservice/](https://github.com/open-telemetry/opentelemetry-demo/tree/main/src/productcatalogservice)。
 - [opentelemetry-collector-contrib/demo](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/examples/demo)
