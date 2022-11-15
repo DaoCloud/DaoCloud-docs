@@ -127,8 +127,8 @@ nav:
               - 功能列表: insight/03ProductBrief/feature.md
               - 最新动态: insight/03ProductBrief/releasenote.md
           - 快速入门:
-              - 获取 managed 地址: insight/06UserGuide/01quickstart/gethosturl.md
-              - 安装 insight-agent 采集数据: insight/06UserGuide/01quickstart/installagent.md
+              - 获取数据上传地址: insight/06UserGuide/01quickstart/gethosturl.md
+              - 安装 insight-agent: insight/06UserGuide/01quickstart/installagent.md
               - OTel 赋能应用可观测性: 
                 - insight/06UserGuide/01quickstart/otel/otel.md
                 - Operator 无侵入增强应用: insight/06UserGuide/01quickstart/otel/operator.md
