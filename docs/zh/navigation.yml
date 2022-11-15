@@ -233,10 +233,14 @@ nav:
                       - 查看注册中心: skoala/registry/managed/registry-lcm/check-registry.md
                       - 删除注册中心: skoala/registry/managed/registry-lcm/delete-registry.md
                   - 微服务命名空间: skoala/registry/managed/namespace.md
-                  - 微服务列表: skoala/registry/managed/servicelist/intro.md
-                  - 服务治理策略: skoala/registry/managed/governance-policy.md
-                  - 配置中心: skoala/registry/managed/configcenter.md
-                  - 插件中心: skoala/registry/managed/plugin-center.md
+                  - 微服务列表: 
+                      - skoala/registry/managed/servicelist/intro.md
+                      - 服务治理策略: skoala/registry/managed/servicelist/governance-policy.md
+                  - 微服务配置列表: skoala/registry/managed/configcenter.md
+                  - 插件中心: 
+                      - skoala/registry/managed/plugins/plugin-center.md
+                      - 启用 Sentinel 治理: skoala/registry/managed/plugins/sentinel.md
+                      - 启用 Mesh 治理: skoala/registry/managed/plugins/mesh.md
               - 接入型注册中心:
                   - 接入注册中心: skoala/registry/integrated/integrate-registry.md
                   - 更新注册中心: skoala/registry/integrated/update-registry.md
