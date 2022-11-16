@@ -40,6 +40,9 @@ nav:
               - 节点扩容: kpanda/07UserGuide/Nodes/AddNode.md
               - 节点缩容: kpanda/07UserGuide/Nodes/DeleteNode.md
               - 污点管理: kpanda/07UserGuide/Nodes/Taints.md
+              - 节点调度: kpanda/07UserGuide/Nodes/schedule.md
+              - 节点详情: kpanda/07UserGuide/Nodes/node-details.md
+              - 标签与注解: kpanda/07UserGuide/Nodes/labels&annotations.md
           - 工作负载:
               - 创建 Deployment: kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md
               - 创建 StatefulSet: kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md
