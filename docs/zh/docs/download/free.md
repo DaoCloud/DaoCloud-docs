@@ -1,12 +1,18 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 # DCE 5.0 社区版
 
 本页可下载 DCE 5.0 社区版的离线安装包和校验文件。
 
 ## 下载
 
-| 名称     | 文件大小 | 下载                                                                                                         | 更新日期   |
+| 版本名称 | 文件大小 | 下载                                                                                                         | 更新日期   |
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------ | ---------- |
-| 离线包   | 5.8 GB   | [点击下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.28.tar) | 2022-11-11 |
+| v0.3.28  | 5.8 GB   | [点击下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.28.tar) | 2022-11-11 |
 | 校验文件 | 0.6 KB   | [点击下载](./free/checksum.txt.zip)                                                                          | 2022-11-11 |
 
 ## 校验
