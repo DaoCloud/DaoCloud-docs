@@ -28,4 +28,4 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
     - 欢迎扫描二维码，与开发者畅快交流：
 
-    ![社区版交流群](../install/images/wechat.png)
+    ![社区版交流群](../images/assist.png)

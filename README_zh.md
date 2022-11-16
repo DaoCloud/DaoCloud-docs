@@ -5,6 +5,23 @@
 
 中文版 ｜ [English](README.md)
 
+DaoCloud 是经认证的 K8s 服务提供商。目前 DCE 经 CNCF 认证可以完美支撑以下版本：
+
+当前版本：
+
+[![1.23](./docs/zh/docs/images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
+[![1.24](./docs/zh/docs/images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
+[![1.25](./docs/zh/docs/images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
+
+历史版本：
+
+[![1.7](./docs/zh/docs/images/1.7.png)](https://github.com/cncf/k8s-conformance/pull/68)
+[![1.9](./docs/zh/docs/images/1.9.png)](https://github.com/cncf/k8s-conformance/pull/210)
+[![1.13](./docs/zh/docs/images/1.13.png)](https://github.com/cncf/k8s-conformance/pull/418)
+[![1.15](./docs/zh/docs/images/1.15.png)](https://github.com/cncf/k8s-conformance/pull/794)
+[![1.18](./docs/zh/docs/images/1.18.png)](https://github.com/cncf/k8s-conformance/pull/1144)
+[![1.20](./docs/zh/docs/images/1.20.png)](https://github.com/cncf/k8s-conformance/pull/1463)
+
 本文档站采用 MkDocs 编译而成，文档内容通过 Markdown 格式写作，并在 GitHub 上完成版本管理、协作开发等工作。
 
 ## 提交 PR 修改文档
@@ -55,4 +72,10 @@
 
 衷心感谢所有为 DaoCloud 文档站添砖加瓦的所有贡献者们，感谢数百位 DCE 开发者日以继夜的辛勤付出，愿云原生社区进一步发展壮大。技术无国界，欢迎你我他 🤝
 
+## 联系我们
+
 技术支持：[support@daocloud.io](mailto:support@daocloud.io?subject=FROM_DOCS_README)
+
+扫描二维码与开发者畅快交流：
+
+![](./docs/zh/docs/images/assist.png)
