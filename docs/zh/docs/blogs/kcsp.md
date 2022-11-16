@@ -59,7 +59,8 @@ DaoCloud 在推动社区技术演进的同时，对 Kubernetes 为首的云原�
 附带 5 万多行真实的 E2E 测试报告、完善的[中英文档站](https://docs.daocloud.io/)、详尽的资料素材，
 于 2022-11-04 成功通过了 v1.25 的 KCSP 审查。
 
-目前能对 Kubernetes 1.25 完美支持并经官方认证的**国内厂商不超过 5 家** 。有鉴于此，华为云在[元宇宙云边协同超融合一体机](http://blog.daocloud.io/8542.html)方面与 DaoCloud 建立战略合作关系，双方在多云编排、智能存储等方面也有深度合作关系。
+目前能对 Kubernetes 1.25 完美支持并经官方认证的 **国内厂商不超过 5 家** 。
+有鉴于此，华为云在[元宇宙云边协同超融合一体机](http://blog.daocloud.io/8542.html)方面与 DaoCloud 建立战略合作关系，双方在多云编排、智能存储等方面也有深度合作关系。
 
 DaoCloud 围绕 Kubernetes 生态自主开源的社区项目有：
 
@@ -77,19 +78,19 @@ DaoCloud 围绕 Kubernetes 生态自主开源的社区项目有：
 
 考量一家云原生企业的指标之一是社区贡献，DaoCloud 在 CNCF 社区各云原生项目的总体贡献全球排名领先，在国内首屈一指。
 
-过去 365 天内 DaoCloud 对 **Kubernetes** 社区的贡献**全球排名第 3**
+过去 365 天内 DaoCloud 对 **Kubernetes** 社区的贡献 **全球排名第 3**
 
 ![Kubernetes](./images/cncf01.png)
 
-过去 365 天内 DaoCloud 对 **containerd** 社区的贡献**全球排名第 5**
+过去 365 天内 DaoCloud 对 **containerd** 社区的贡献 **全球排名第 5**
 
 **![containerd](./images/cncf02.png)**
 
-过去 365 天内 DaoCloud 对 **Istio** 社区的贡献**全球排名第 3**
+过去 365 天内 DaoCloud 对 **Istio** 社区的贡献 **全球排名第 3**
 
 **![Istio](./images/cncf03.png)**
 
-过去 365 天内 DaoCloud 对 **CNCF 社区**所有项目的累计贡献**全球排名第 7**
+过去 365 天内 DaoCloud 对 **CNCF 社区**所有项目的累计贡献 **全球排名第 7**
 
 ![CNCF](./images/cncf04.png)
 
