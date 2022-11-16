@@ -27,7 +27,9 @@ go get go.opentelemetry.io/otel@v1.8.0 \
 ```golang
 import (
 	"context"
-	"go.opentelemetry.io/contrib/propagators/ot"
+	"os"
+	"time"
+
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace"
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
@@ -37,8 +39,6 @@ import (
 	semconv "go.opentelemetry.io/otel/semconv/v1.7.0"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
-	"os"
-	"time"
 )
 
 var tracerExp *otlptrace.Exporter
@@ -46,7 +46,6 @@ var tracerExp *otlptrace.Exporter
 func retryInitTracer() {
 	go func() {
 		for {
-
 			// otel will reconnected and re-send spans when otel col recover. so, we don't need to re-init tracer exporter.
 			if tracerExp == nil {
 				shutdown := initTracer()
@@ -68,39 +67,29 @@ func initTracer() func() {
 
 	serviceName, ok := os.LookupEnv("OTEL_SERVICE_NAME")
 	if !ok {
-		serviceName = "insight"
+		serviceName = "server_name"
+		os.Setenv("OTEL_SERVICE_NAME", serviceName)
 	}
-
 	otelAgentAddr, ok := os.LookupEnv("OTEL_EXPORTER_OTLP_ENDPOINT")
 	if !ok {
-		otelAgentAddr = "0.0.0.0:4317"
+		otelAgentAddr = "http://localhost:4317"
+		os.Setenv("OTEL_EXPORTER_OTLP_ENDPOINT", otelAgentAddr)
 	}
+	zap.S().Infof("OTLP Trace connect to: %s with service name: %s", otelAgentAddr, serviceName)
 
-	client := otlptracegrpc.NewClient(
-		otlptracegrpc.WithInsecure(),
-		otlptracegrpc.WithEndpoint(otelAgentAddr),
-		otlptracegrpc.WithDialOption(grpc.WithBlock()))
-
-	traceExporter, err := otlptrace.New(ctx, client)
+	traceExporter, err := otlptracegrpc.New(ctx, otlptracegrpc.WithInsecure(), otlptracegrpc.WithDialOption(grpc.WithBlock()))
 	if err != nil {
-		handleErr(err, "failed to creating OTLP trace exporter")
-		return nil
+		handleErr(err, "OTLP Trace gRPC Creation: %v")
 	}
 
 	tracerProvider := sdktrace.NewTracerProvider(
+		sdktrace.WithBatcher(traceExporter),
 		sdktrace.WithSampler(sdktrace.AlwaysSample()),
-		sdktrace.WithResource(resource.NewWithAttributes(
-			semconv.SchemaURL,
-			semconv.ServiceNameKey.String(serviceName),
-		)),
-		sdktrace.WithSpanProcessor(sdktrace.NewBatchSpanProcessor(traceExporter)),
+		sdktrace.WithResource(resource.NewWithAttributes(semconv.SchemaURL)),
 	)
 
 	otel.SetTracerProvider(tracerProvider)
-	otel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(
-		propagation.TraceContext{},
-		propagation.Baggage{},
-	))
+	otel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(propagation.TraceContext{}, propagation.Baggage{}))
 
 	tracerExp = traceExporter
 	return func() {
@@ -338,6 +327,7 @@ span.SetStatus(codes.Error, "internal error")
 ## 参考
 
 有关 Demo 演示请参考：
+
 - [otel-grpc-examples](https://github.com/openinsight-proj/otel-grpc-examples/tree/no-metadata-grpcgateway-v1.11.1)
-- [opentelemetry-demo/productcatalogservice/](https://github.com/open-telemetry/opentelemetry-demo/tree/main/src/productcatalogservice)。
+- [opentelemetry-demo/productcatalogservice](https://github.com/open-telemetry/opentelemetry-demo/tree/main/src/productcatalogservice)
 - [opentelemetry-collector-contrib/demo](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/examples/demo)

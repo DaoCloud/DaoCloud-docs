@@ -4,7 +4,7 @@ nav:
   - 产品文档:
       - DCE 产品介绍:
           - 什么是 DCE 5.0: dce/what-is-dce.md
-          - CNCF 认证的 KCSP: dce/kcsp.md
+          - K8s 认证服务商: dce/kcsp.md
           - 适用场景: dce/scenario.md
           - 平台功能: dce/features.md
           - 产品优势: dce/whyus.md
@@ -60,18 +60,25 @@ nav:
               - 指标弹性伸缩 HPA: kpanda/07UserGuide/Scale/Create-HPA.md
               - 安装 metrics-server: kpanda/07UserGuide/Scale/Install-metrics-server.md
           - Helm 应用:
-              - Helm 概述: kpanda/07UserGuide/helm/README.md
+              - Helm 模板: kpanda/07UserGuide/helm/README.md
               - 管理 Helm 应用: kpanda/07UserGuide/helm/helm-app.md
               - 管理 Helm 仓库: kpanda/07UserGuide/helm/helm-repo.md
-          - 服务与路由:
+          - 容器网络:
               - 创建服务: kpanda/07UserGuide/ServicesandRoutes/CreatingServices.md
               - 创建路由: kpanda/07UserGuide/ServicesandRoutes/CreatingIngress.md
+              - 网络策略: kpanda/07UserGuide/ServicesandRoutes/network-policy.md
           - 自定义资源: kpanda/07UserGuide/CustomResources/create.md
+          - 容器存储:
+              - 数据卷: kpanda/07UserGuide/storage/pvc.md
+              - 存储池: kpanda/07UserGuide/storage/storage-pool.md
           - 配置与密钥:
               - 创建密钥: kpanda/07UserGuide/ConfigMapsandSecrets/create-secret.md
               - 使用密钥: kpanda/07UserGuide/ConfigMapsandSecrets/use-secret.md
               - 使用配置项: kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md
           - 命名空间: kpanda/07UserGuide/Namespaces/createns.md
+          - 集群运维:
+              - 最近操作: kpanda/07UserGuide/clusterops/latest-operations.md
+              - 集群设置: kpanda/07UserGuide/clusterops/cluster-settings.md
           - 权限说明:
               - 权限说明: kpanda/07UserGuide/Permissions/PermissionBrief.md
               - 集群和命名空间授权: kpanda/07UserGuide/Permissions/Cluster-NSAuth.md
@@ -514,6 +521,7 @@ nav:
       - 中间件: videos/mcamel.md
       - 云原生网络: videos/network.md
   - 博客:
+      - DaoCloud 是 K8s 资深认证服务商: blogs/kcsp.md
       - DCE 开发背景: blogs/blog00.md
       - 5.0 容器管理能力介绍: blogs/kpanda.md
       - 5.0 资源管理能力介绍: blogs/resource.md
