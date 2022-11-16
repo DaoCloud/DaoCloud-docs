@@ -43,21 +43,20 @@ import (
 
 var tracerExp *otlptrace.Exporter
 
-func retryInitTracer() {
+func retryInitTracer() func() {
+	var shutdown func()
 	go func() {
 		for {
 			// otel will reconnected and re-send spans when otel col recover. so, we don't need to re-init tracer exporter.
 			if tracerExp == nil {
-				shutdown := initTracer()
-				if shutdown != nil {
-					defer shutdown()
-				}
+				shutdown = initTracer()
 			} else {
 				break
 			}
 			time.Sleep(time.Minute * 5)
 		}
 	}()
+	return shutdown
 }
 
 func initTracer() func() {
@@ -79,14 +78,13 @@ func initTracer() func() {
 
 	traceExporter, err := otlptracegrpc.New(ctx, otlptracegrpc.WithInsecure(), otlptracegrpc.WithDialOption(grpc.WithBlock()))
 	if err != nil {
-		handleErr(err, "OTLP Trace gRPC Creation: %v")
+		handleErr(err, "OTLP Trace gRPC Creation")
 	}
 
 	tracerProvider := sdktrace.NewTracerProvider(
 		sdktrace.WithBatcher(traceExporter),
 		sdktrace.WithSampler(sdktrace.AlwaysSample()),
-		sdktrace.WithResource(resource.NewWithAttributes(semconv.SchemaURL)),
-	)
+    sdktrace.WithResource(resource.NewWithAttributes(semconv.SchemaURL)))
 
 	otel.SetTracerProvider(tracerProvider)
 	otel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(propagation.TraceContext{}, propagation.Baggage{}))
@@ -103,6 +101,7 @@ func handleErr(err error, message string) {
 		zap.S().Errorf("%s: %v", message, err)
 	}
 }
+
 ```
 
 ### 在 main.go 中初始化跟踪器
@@ -111,7 +110,10 @@ func handleErr(err error, message string) {
 
 ```golang
 func main() {
-    retryInitTracer()
+  	// start otel tracing
+  	if shutdown := retryInitTracer(); shutdown != nil {
+			defer shutdown()
+		}
     ......
 }
 ```
