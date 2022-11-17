@@ -4,7 +4,9 @@
 
 ![](../images/bug01.png)
 
-可能原因：RequestAuthentication CR 的 jwtsUri 地址无法访问，导致 istiod 无法下发配置给 istio-ingressgateway（Istio 1.15 可以规避这个 bug: [https://github.com/istio/istio/pull/39341/](https://github.com/istio/istio/pull/39341/files)）
+可能原因：RequestAuthentication CR 的 jwtsUri 地址无法访问，
+导致 istiod 无法下发配置给 istio-ingressgateway（Istio 1.15 可以规避这个 bug：
+[https://github.com/istio/istio/pull/39341/](https://github.com/istio/istio/pull/39341/files)）
 
 解决方法：
 

@@ -81,6 +81,7 @@ NAME          AGE
     ```
 
     其中，
+    
     - `nodeSelector`：表示此网络配置将会在哪个节点上生效
     - `desiredState`：表示期望的配置，包括网卡、IP 等等
 

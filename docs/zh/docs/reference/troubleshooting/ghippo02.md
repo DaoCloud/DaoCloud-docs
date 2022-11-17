@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 登录无限循环，报错 401 或 403
 
 出现这个问题原因为：ghippo-keycloak 连接的 Mysql 数据库出现故障, 导致 `OIDC Public keys` 被重置

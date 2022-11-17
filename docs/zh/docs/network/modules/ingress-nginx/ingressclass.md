@@ -9,7 +9,7 @@ IngressClass 代表 Ingress 的类，被 Ingress 的 spec 引用。
 * 同一个集群中，有内部 Ingress 和外部 Ingress 需求
 * 同一个集群同一个租户中，不同团队使用不同 Ingress 实例
 * 同一个集群，不同应用对 Ingress 实例资源配比要求
-  * 例如某些业务需要独享 4C 4G 的数据面网关资源
+    * 例如某些业务需要独享 4C 4G 的数据面网关资源
 
 ## 使用
 

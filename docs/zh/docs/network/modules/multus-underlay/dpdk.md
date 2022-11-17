@@ -78,17 +78,17 @@ Network devices using kernel driver
 
 - 设置大页内存和开启 IoMMU（vfio-pci 驱动依赖 IOMMU 技术）：
 
-编辑 `/etc/default/grub`，在 `GRUB_CMDLINE_LINUX` 中加入以下内容：
+    编辑 `/etc/default/grub`，在 `GRUB_CMDLINE_LINUX` 中加入以下内容：
 
-```shell
-GRUB_CMDLINE_LINUX='default_hugepagesz=1GB hugepagesz=1GB hugepages=6 isolcpus=1-3 intel_iommu=on iommu=pt'
-update-grab && reboot
-```
+    ```shell
+    GRUB_CMDLINE_LINUX='default_hugepagesz=1GB hugepagesz=1GB hugepages=6 isolcpus=1-3 intel_iommu=on iommu=pt'
+    update-grab && reboot
+    ```
 
-!!! note
+    !!! note
 
-    更新上述配置，需要重启系统，重启系统前最好备份。
-    如果不能更新配置，驱动需要切换为 igb-uio 驱动，需手动 build && insmod && modprobe，具体参考 https://github.com/atsgen/dpdk-kmod
+        更新上述配置，需要重启系统，重启系统前最好备份。
+        如果不能更新配置，驱动需要切换为 igb-uio 驱动，需手动 build && insmod && modprobe，具体参考 https://github.com/atsgen/dpdk-kmod
 
 ## 配置 SRIOV-Device-Plugin
 
