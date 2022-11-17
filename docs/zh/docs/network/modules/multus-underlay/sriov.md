@@ -63,9 +63,11 @@ root@172-17-8-120:~# lspci -s 0000:04:00.0 -v | grep SR-IOV
 root@172-17-8-120:~# lspci -s 0000:04:00.0 -n
 04:00.0 0200: 15b3:1017
 ```
+
 其中，
-- `15b3`：表示此 PCI 设备的厂商号，如 `15b3` 表示 Mellanox。
-- `1017`：表示此 PCI 设备的设备型号，如 `1017` 表示 Mellanox MT27800 Family [ConnectX-5] 系列网卡。
+
+- `15b3`：表示此 PCI 设备的厂商号，如 `15b3` 表示 Mellanox
+- `1017`：表示此 PCI 设备的设备型号，如 `1017` 表示 Mellanox MT27800 Family [ConnectX-5] 系列网卡
 
 > 可通过 `https://devicehunt.com/all-pci-vendors` 查询所有 PCI 设备信息。
 
@@ -124,7 +126,7 @@ Allocatable:
 
 使用 SR-IOV CNI 创建工作负载需要注意下面三个方面：
 
-- 确认 SR-IOV multus network-attachment-definition 对象中存在 `sriov-device-plugin` resource：
+- 确认 SR-IOV multus network-attachment-definition 对象中存在 `sriov-device-plugin` 资源：
 
     ```shell
     root@172-17-8-110:~# kubectl get network-attachment-definitions.k8s.cni.cncf.io -n kube-system sriov-vlan0 -o yaml
@@ -141,7 +143,7 @@ Allocatable:
 
     > 创建 network-attachment-definition 对象后，再更新 annotations: `k8s.v1.cni.cncf.io/resourceName` 不会生效！
 
-- 创建工作负载时，需要在 Pod 的 annotations 字段中通过 multus 的注解绑定指定的 network-attachment-definition 对象:
+- 创建工作负载时，需要在 Pod 的 annotations 字段中通过 multus 的注解绑定指定的 network-attachment-definition 对象。
 
     - 如果 type 为 sriov-overlay，那么需要在 Pod 的 Annotations 中插入以下的注解：
 
@@ -175,4 +177,3 @@ Allocatable:
     ```
 
     名称需要保持一致, 否则 Pod 会因为请求不到 VF 而创建失败。
-    

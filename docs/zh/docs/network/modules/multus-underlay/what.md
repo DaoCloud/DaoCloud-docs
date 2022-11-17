@@ -1,7 +1,8 @@
 # 什么是 Multus-underlay
 
 `Multus-underlay` 基于 `Multus` 并搭配一些 Underlay 类型的 CNI 插件（如 MacVLAN 或 SR-IOV CNI 等)，可为 Pod 插入多张网卡。
-此外，`Multus-underlay` 还解决了 Underlay CNI 的一些通信问题。比如当 MacVLAN 作为 CNI 时，它无法与集群 ClusterIP 直接通信，并且它也无法直接与主机 MacVLAN Master 接口通信的（这是 Linux MacVLAN 技术的限制）。
+此外，`Multus-underlay` 还解决了 Underlay CNI 的一些通信问题。
+比如当 MacVLAN 作为 CNI 时，它无法与集群 ClusterIP 直接通信，并且它也无法直接与主机 MacVLAN Master 接口通信的（这是 Linux MacVLAN 技术的限制）。
 
 ## 解决的问题
 

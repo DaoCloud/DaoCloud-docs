@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 什么是 Spiderpool
 
 Spiderpool 是一个 IP 地址管理 (IPAM) 插件，可为容器云平台分配 IP 地址。

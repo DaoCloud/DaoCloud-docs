@@ -1,15 +1,20 @@
+---
+hide:
+  - toc
+---
+
 # 使用 Jenkinsfile 创建单代码分支流水线
 
 应用工作台流水线支持使用代码仓库中的 Jenkinsfile 创建流水线。
 
-## 前提条件
+**前提条件**
 
 - 需要创建一个工作空间和一个用户，必须邀请该用户至工作空间中且赋予 `workspace edit` 角色。
   参考[创建工作空间](../../../ghippo/04UserGuide/02Workspace/Workspaces.md)、[用户和角色](../../../ghippo/04UserGuide/01UserandAccess/User.md)。
 
 - 需要有一个代码仓库，并且代码仓库中的源码有一个 Jenkinsfile 文本文件。
 
-## 操作步骤
+**具体操作步骤如下：**
 
 1. 在流水线列表页点击`创建流水线`。
 

@@ -68,4 +68,4 @@ Multus + Macvlan 一般会有两种使用场景：
 - 创建不同的 Spiderpool IP 池
 - 在 Pod 的 annotations 中指定对应的实例和选择对应的 spiderpool IP 池
 
-在主机上创建 bond 和 vlan 等接口，可以参考 [nmstat使用](nmstat.md)。
+在主机上创建 bond 和 vlan 等接口，可以参考 [nmstat 用法](nmstat.md)。
