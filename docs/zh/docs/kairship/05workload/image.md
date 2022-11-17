@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 通过表单创建多云工作负载
 
 参照以下步骤创建一个无状态负载（Deployment）。
@@ -25,4 +30,3 @@
 6. 屏幕出现创建成功提示，您现在可以[创建多云服务](../06resource/service.md)了！
 
     ![image](../images/deployment07.png)
-    

@@ -1,7 +1,6 @@
 ---
-id: "intro"
-sidebar_position: 1
-sidebar_label: "什么是 HwameiStor"
+hide:
+  - toc
 ---
 
 # 什么是 HwameiStor
@@ -10,7 +9,7 @@ HwameiStor 是一款 Kubernetes 原生的容器附加存储 (CAS) 解决方案�
 
 ![System architecture](../img/architecture.png)
 
-## 功能特性
+具体的功能特性如下：
 
 1. 自动化运维管理
 

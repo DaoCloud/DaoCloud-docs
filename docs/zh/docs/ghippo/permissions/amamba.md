@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 应用工作台权限说明
 
 [应用工作台](../../amamba/01ProductBrief/WhatisAmamba.md)支持三种用户角色：
@@ -11,9 +16,6 @@
 <!--
 有权限使用`&check;`，无权限使用`&cross;`
 -->
-
-## 权限说明
-
 | 菜单对象   | 操作                               | Workspace Admin | Workspace Editor | Workspace Viewer |
 | -------- | ---------------------------------- | --------------- | ---------------- | ---------------- |
 | 应用     | 查看应用列表                       | &check;         | &check;          | &check;          |

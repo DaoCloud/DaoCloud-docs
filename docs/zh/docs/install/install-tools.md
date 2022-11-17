@@ -20,8 +20,7 @@
 
 ## 在线安装
 
-
-1. 下载脚本
+1. 下载脚本。
 
     ```shell
     curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
@@ -35,13 +34,13 @@
 
 2. 开始在线安装前置依赖。
 
-    - 社区版本安装
+    - 安装社区版
 
         ```bash
         sudo bash install_prerequisite.sh online community
         ```
 
-    - 商业版安装
+    - 安装商业版
 
         ```bash
         sudo bash install_prerequisite.sh online full

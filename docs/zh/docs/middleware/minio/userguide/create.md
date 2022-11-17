@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 创建 MinIO
 
 在 MinIO 实例列表中，执行以下操作创建 MinIO 实例。

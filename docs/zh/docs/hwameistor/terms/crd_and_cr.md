@@ -1,8 +1,3 @@
----
-sidebar_position: 4
-sidebar_label: "CRD 和 CR"
----
-
 # CRD 和 CR
 
 ## CRD

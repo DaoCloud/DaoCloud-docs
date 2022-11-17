@@ -1,8 +1,3 @@
----
-sidebar_position: 2
-sidebar_label: "本地存储"
----
-
 # 本地存储
 
 本地存储 (local Storage, LS) 是 HwameiStor 的一个模块，它旨在为应用提供高性能的本地持久化 LVM 存储卷。

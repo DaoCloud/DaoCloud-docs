@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 首次进入 MinIO
 
 请提前联系管理员在`容器管理` -> `Helm 应用`[安装好 MinIO-operator](../quickstart/install.md) 后，执行以下操作。

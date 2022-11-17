@@ -49,7 +49,7 @@ theme:
     - search.suggest
     - search.share
     - toc.follow
-    - toc.integrate
+    # - toc.integrate
 
   palette:
     # Palette toggle for automatic mode

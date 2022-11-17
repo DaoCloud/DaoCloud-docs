@@ -36,4 +36,3 @@
 |                             | 新增共享 | &check;            | &cross;             | &cross;             |
 |                             | 解除共享 | &check;            | &cross;             | &cross;             |
 |                             | 资源限额 | &check;            | &cross;             | &cross;             |
-

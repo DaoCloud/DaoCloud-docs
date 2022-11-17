@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 使用场景
 
 MinIO 是一个基于 Apache License v2.0 开源协议的对象存储服务。

@@ -1,8 +1,3 @@
----
-sidebar_position: 3
-sidebar_label: "CSI 接口"
----
-
 # CSI 接口
 
 CSI 即 Container Storage Interfaces，容器存储接口。目前，Kubernetes 中的存储子系统仍存在一些问题。存储驱动程序代码在 Kubernetes 核心存储库中进行维护，这很难测试。Kubernetes 还需要授予存储供应商许可，便于将代码嵌入 Kubernetes 核心存储库。

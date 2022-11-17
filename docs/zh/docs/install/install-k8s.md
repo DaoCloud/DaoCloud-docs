@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 部署 Kubernetes 集群
 
 [安装 DCE 5.0](./install-dce-community.md) 之前，需要先参照以下步骤部署一个或多个 Kubernetes 集群，本例采用 Kubeadm 来部署。
