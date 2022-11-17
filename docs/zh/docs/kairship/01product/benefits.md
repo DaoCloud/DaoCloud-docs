@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 产品优势
 
 让开发者使用多云像使用一个 Kubernetes 集群，多云编排 Kairship 具有以下优势：

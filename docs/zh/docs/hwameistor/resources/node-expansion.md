@@ -1,8 +1,3 @@
----
-sidebar_position: 1
-sidebar_label: "节点扩展"
----
-
 # 节点扩展
 
 存储系统可以通过增加存储节点实现扩容。在 HwameiStor 里，通过下列步骤可以添加新的存储节点。

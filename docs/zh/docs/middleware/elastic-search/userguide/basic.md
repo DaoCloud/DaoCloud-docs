@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 节点信息
 
 本节说明 Elasticsearch 集群的基本信息，包括：

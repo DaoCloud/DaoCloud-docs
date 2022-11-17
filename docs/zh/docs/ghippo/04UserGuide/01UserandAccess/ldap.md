@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # LDAP
 
 LDAP 英文全称为 Lightweight Directory Access Protocol，即轻型目录访问协议，这是一个开放的、中立的，工业标准的应用协议，通过 IP 协议提供访问控制和维护分布式信息的目录信息。

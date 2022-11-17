@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 更新 Elasticsearch 实例
 
 如果想要更新或修改 Elasticsearch 实例的资源配置，可以按照本页说明操作。

@@ -1,3 +1,9 @@
+---
+title: K8s 认证服务商
+hide:
+  - toc
+---
+
 # K8s 认证服务商
 
 DaoCloud 是经 CNCF 官方认证的 Kubernetes 提供商，即 Kubernetes Certified Service Provider (KCSP)，早在 2017 年就顺利通过了 Kubernetes 的官方认证，是国内最早涉足并得到 CNCF 官方认可的提供商。

@@ -13,4 +13,3 @@
 !!! info
 
     为确保 HwameiStor 的 Pod 可以顺利启动，不会校验 HwameiStor 所在的命名空间下的 Pod。
-

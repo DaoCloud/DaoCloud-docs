@@ -1,3 +1,9 @@
+---
+date: 2022-11-16
+categories: blog
+authors: windsonsea
+---
+
 # DaoCloud 是 K8s 资深认证服务商
 
 在云原生领域有这样一个词：KCSP，英文全称 Kubernetes Certified Service Provider，即 CNCF 官方认证的 Kubernetes 服务提供商。
