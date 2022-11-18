@@ -16,22 +16,23 @@ hide:
 <!--
 有权限使用`&check;`，无权限使用`&cross;`
 -->
-| 菜单对象   | 操作                               | Workspace Admin | Workspace Editor | Workspace Viewer |
+
+| 菜单对象 | 操作                               | Workspace Admin | Workspace Editor | Workspace Viewer |
 | -------- | ---------------------------------- | --------------- | ---------------- | ---------------- |
 | 应用     | 查看应用列表                       | &check;         | &check;          | &check;          |
-|          | 查看详情（跳转到容器管理）         | &check;         | &check;                 | &check;                 |
-|          | 查看应用日志（跳转到可观测）       | &check;         | &check;                 | &check;                 |
-|          | 查看应用监控（跳转到可观测）       | &check;         | &check;                 | &check;                 |
-|          | 查看 RabbitMQ 详情 - 基本信息        | &check;         | &check;                 | &check;                 |
-|          | 查看服务网格（跳转到服务网格）     | &check;         | &check;                 | &check;                 |
-|          | 查看微服务引擎（跳转到微服务引擎） | &check;         | &check;                 | &check;                 |
-|          | 创建应用                           | &check;         | &check;                 | &cross;          |
-|          | 编辑YAML                           | &check;         | &check;                 | &cross;          |
-|          | 更新副本数量                       | &check;         | &check;                 | &cross;          |
-|          | 更新容器镜像                       | &check;         | &check;                 | &cross;          |
-|          | 编辑流水线                         | &check;         | &check;                 | &cross;          |
-|          | 应用分组                           | &check;         | &check;                 | &cross;          |
-|          | 删除                               | &check;         | &check;                 | &cross;          |
+|          | 查看详情（跳转到容器管理）         | &check;         | &check;          | &check;          |
+|          | 查看应用日志（跳转到可观测）       | &check;         | &check;          | &check;          |
+|          | 查看应用监控（跳转到可观测）       | &check;         | &check;          | &check;          |
+|          | 查看 RabbitMQ 详情 - 基本信息      | &check;         | &check;          | &check;          |
+|          | 查看服务网格（跳转到服务网格）     | &check;         | &check;          | &check;          |
+|          | 查看微服务引擎（跳转到微服务引擎） | &check;         | &check;          | &check;          |
+|          | 创建应用                           | &check;         | &check;          | &cross;          |
+|          | 编辑 YAML                          | &check;         | &check;          | &cross;          |
+|          | 更新副本数量                       | &check;         | &check;          | &cross;          |
+|          | 更新容器镜像                       | &check;         | &check;          | &cross;          |
+|          | 编辑流水线                         | &check;         | &check;          | &cross;          |
+|          | 应用分组                           | &check;         | &check;          | &cross;          |
+|          | 删除                               | &check;         | &check;          | &cross;          |
 | 命名空间 | 查看                               | &check;         | &check;          | &check;          |
 |          | 创建                               | &check;         | &cross;          | &cross;          |
 |          | 编辑标签                           | &check;         | &cross;          | &cross;          |
