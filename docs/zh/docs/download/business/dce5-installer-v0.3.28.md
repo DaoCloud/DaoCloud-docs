@@ -10,7 +10,7 @@ hide:
 
 ## 下载
 
-| 版本名称 | 文件大小 | 下载                                                                                               | 更新日期   |
+| 版本/名称 | 文件大小 | 下载                                                                                               | 更新日期   |
 | -------- | -------- | -------------------------------------------------------------------------------------------------- | ---------- |
 | v0.3.28  | 21 GB    | [点击下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.3.28.tar) | 2022-11-11 |
 | 校验文件 | 0.6 KB   | [点击下载](./checksum.txt.zip)                                                            | 2022-11-11 |
@@ -55,5 +55,5 @@ DCE 5.0 商业版包含以下模块，按需即插即用满足各类应用场景
 
 ## 更多
 
-- [在线文档](https://docs.daocloud.io/dce/what-is-dce/)
+- [在线文档](../../dce/what-is-dce.md)
 - [报告 bug](https://github.com/DaoCloud/DaoCloud-docs/issues)
