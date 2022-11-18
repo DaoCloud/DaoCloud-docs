@@ -12,16 +12,16 @@
     apiVersion: projectcalico.org/v3
     kind: GlobalNetworkPolicy
     metadata:
-    name: restrict-development-access
+      name: restrict-development-access
     spec:
-    namespaceSelector: 'environment == "development"'
-    ingress:
+      namespaceSelector: 'environment == "development"'
+      ingress:
         - action: Allow
-        source:
+          source:
             namespaceSelector: 'environment == "development"'
-    egress:
+      egress:
         - action: Allow
-        destination:
+          destination:
             namespaceSelector: 'environment == "development"'
     ```
 
@@ -33,16 +33,16 @@
     apiVersion: projectcalico.org/v3
     kind: NetworkPolicy
     metadata:
-    name: allow-api-access
-    namespace: my-app
+      name: allow-api-access
+      namespace: my-app
     spec:
-    selector: all()
-    egress:
+      selector: all()
+      egress:
         - action: Allow
-        destination:
+          destination:
             services:
-            name: kubernetes
-            namespace: default
+              name: kubernetes
+              namespace: default
     ```
 
     这个 Policy 意思是允许所有 Pod 访问 Kubernetes 这个 Service。
@@ -65,17 +65,17 @@
         apiVersion: projectcalico.org/v3
         kind: NetworkPolicy
         metadata:
-        name: demo-calico
-        namespace: prod-engineering
+          name: demo-calico
+          namespace: prod-engineering
         spec:
-        ingress:
+          ingress:
             - action: Allow
-            source:
+              source:
                 serviceAccounts:
-                names:
+                  names:
                     - api-service
                     - user-auth-service
-        selector: 'app == "db"'
+          selector: 'app == "db"'
         ```
 
     2. 使用 `ServiceAccount` 的 Label 限制工作负载的入口流量：
@@ -86,15 +86,15 @@
         apiVersion: projectcalico.org/v3
         kind: NetworkPolicy
         metadata:
-        name: allow-web-frontend
-        namespace: prod-engineering
+          name: allow-web-frontend
+          namespace: prod-engineering
         spec:
-        ingress:
+          ingress:
             - action: Allow
-            source:
+              source:
                 serviceAccounts:
-                selector: 'app == "web-frontend"'
-        selector: 'app == "db"'
+                  selector: 'app == "web-frontend"'
+          selector: 'app == "db"'
         ```
 
     3. 使用 `serviceAccountSelector` 筛选 Policy 的作用目标：
@@ -105,20 +105,20 @@
         apiVersion: projectcalico.org/v3
         kind: NetworkPolicy
         metadata:
-        name: restrict-intern-access
-        namespace: prod-engineering
+          name: restrict-intern-access
+          namespace: prod-engineering
         spec:
-        serviceAccountSelector: 'role == "intern"'
-        ingress:
+          serviceAccountSelector: 'role == "intern"'
+          ingress:
             - action: Allow
-            source:
+              source:
                 serviceAccounts:
-                selector: 'role == "intern"'
-        egress:
+                  selector: 'role == "intern"'
+          egress:
             - action: Allow
-            destination:
+              destination:
                 serviceAccounts:
-                selector: 'role == "intern"'
+                  selector: 'role == "intern"'
         ```
 
 ## 对流量的双向管控
@@ -168,27 +168,27 @@ Kubernetes 默认采用零信任模型，即集群内所有 Pod、主机之间�
     apiVersion: projectcalico.org/v3
     kind: GlobalNetworkPolicy
     metadata:
-    name: deny-tcp-8080
+      name: deny-tcp-8080
     spec:
-    order: 1
-    selector: app == 'server'  
-    types:
-    - Ingress
-    - Egress
-    ingress:
-    - action: Deny
-        metadata:
-        annotations:
+      order: 1
+      selector: app == 'server'  
+      types:
+        - Ingress
+        - Egress
+      ingress:
+        - action: Deny
+          metadata:
+          annotations:
             from: client
             to: server
-        protocol: TCP
-        source:
-        selector: app == 'client'
-        destination:
-        ports:
-        - 8080
-    egress:
-    - action: Allow
+          protocol: TCP
+          source:
+            selector: app == 'client'
+          destination:
+            ports:
+            - 8080
+      egress:
+        - action: Allow
     ```
 
     其中，
@@ -214,27 +214,27 @@ Kubernetes 默认采用零信任模型，即集群内所有 Pod、主机之间�
     apiVersion: projectcalico.org/v3
     kind: NetworkPolicy
     metadata:
-    name: allow-tcp-8080
-    namespace: production
+      name: allow-tcp-8080
+      namespace: production
     spec:
-    selector: app == 'server'
-    types:
-    - Ingress
-    - Egress
-    ingress:
-    - action: Allow
-        metadata:
-        annotations:
-            from: frontend
-            to: database
-        protocol: TCP
-        source:
-        selector: app == 'client'
-        destination:
-        ports:
-        - 8080
-    egress:
-    - action: Allow
+      selector: app == 'server'
+      types:
+      - Ingress
+      - Egress
+      ingress:
+        - action: Allow
+          metadata:
+            annotations:
+              from: frontend
+              to: database
+          protocol: TCP
+            source:
+              selector: app == 'client'
+            destination:
+              ports:
+               - 8080
+      egress:
+        - action: Allow
     ```
 
     与上面 `GlobalNetworkPolicy` 唯一不同的是：`metadata` 多了一个 namespace 字段，规定了这个策略作用的 namespace。
