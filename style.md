@@ -171,15 +171,60 @@ The output is:
 
 Refer to [MkDocs table](https://squidfunk.github.io/mkdocs-material/reference/data-tables/).
 
-## Tips
+## Text
 
-Before you push your changes, it is recommended to run the following command to make your markdown beautiful:
+A successful manual provides users with quick answers to the questions that they might have.
+
+## Keep simple and consistent
+
+Using overly technical jargon will only serve to confuse your readers and frustrate them when they are looking for a simple answer.
+Use language that your customers will find easy to understand. If you must use a technical term, explain it or link to a glossary.
+
+To keep your documentation consistent, the topic you write shall be clear and easy to follow, and include the vital components needed for each step.
+Keep your content consistent including but not limited to:
+
+- Steps
+- Warnings and call-outs
+- Font
+- Size
+- Color
+- Glossary
+
+### Example: You or We
+
+User manuals should always focus on the reader.
+When writing information that involves the reader, such as instructions, use **you** and the active voice.
+Speaking directly to the reader will:
+
+- Reinforce the message that the information is intended for the reader
+- Pull readers into the document and make it relevant to them
+- Help to avoid passive voice by focusing on the reader
+
+A bad example due to lack of reader focus:
+
+```none
+There are three options for viewing content in the editor.
+We have three options for viewing content in the editor.
+```
+
+A good example due to reader focus:
+
+```none
+You can choose one of three options for viewing content in the editor.
+```
+
+The sentence that uses “you” focuses on the reader and makes it clear that the reader is the person doing the action.
+You should aim to use “you” in your writing to make the content more relevant to the reader.
+
+## Tips about markdown
+
+Before you push your changes to a markdown file, it is recommended to run the following command to make your markdown beautiful:
 
 ```
 npx prettier --w filename
 ```
 
-See [prettier documentation](https://prettier.io/docs/en/install.html), it's very easy to use.
+See [prettier documentation](https://prettier.io/docs/en/install.html) to install, it's very easy to use.
 
 > Note: You shall manually check the format and layout again after you run the prettier command,
 > which can automatically adjust your markdown to the standard format.
