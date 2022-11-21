@@ -11,7 +11,7 @@ Cilium 通过 `CiliumEgressGatewayPolicy` 来定义哪些流量离开集群时�
 
 ### 开启条件
 
-```
+```yaml
 enable-bpf-masquerade: true
 enable-ipv4-egress-gateway: true
 enable-l7-proxy: false
@@ -77,7 +77,7 @@ cilium  clustermesh enable --context x2 --service-type NodePort
 
 只要在一个集群中执行连接其他集群即可。
 
-```
+```sh
 cilium  clustermesh connect --context x1 --destination-context x2
 ```
 
@@ -153,7 +153,7 @@ Kubespray 支持使用参数 “cilium_kube_proxy_replacement” 启用该功能
 - maglev.hashSeed：建议设置 maglev.hashSeed 选项，以使 Cilium 不依赖固定的内置种子。
   种子是一个 base64 编码的 12 字节的随机数。可运行以下命令
 
-    ```
+    ```sh
     head -c12 /dev/urandom | base64 -w0
     ```
 
@@ -161,7 +161,7 @@ Kubespray 支持使用参数 “cilium_kube_proxy_replacement” 启用该功能
 
     具体设置方式为：
 
-    ```
+    ```sh
         --set maglev.tableSize=65521 \
         --set maglev.hashSeed=$SEED \
     ```
@@ -173,7 +173,7 @@ Kubespray 支持使用参数 “cilium_kube_proxy_replacement” 启用该功能
 
 ### 直接 SVC 返回 (DSR)
 
-```
+```sh
     --set tunnel=disabled \ 
     --set autoDirectNodeRoutes=true \ 
     --set loadBalancer.mode=dsr \ 
@@ -191,7 +191,7 @@ Cilium 将此信息编码在 Cilium 特定的 IPv4 选项或 IPv6 目标选项�
 
 ### 混合 DSR 和 SNAT 模式
 
-```
+```sh
     --set tunnel=disabled \
     --set autoDirectNodeRoutes=true \
     --set loadBalancer.mode=hybrid \
@@ -204,7 +204,7 @@ loadBalancer.mode 默认为 snat，还可以支持 dsr、hybrid 模式。
 
 ### XDP 加速
 
-```
+```sh
 --set loadBalancer.acceleration=native \
 ```
 
@@ -223,7 +223,7 @@ driver: vmxnet3     # 网卡驱动
 
 ### 在 Pod 命名空间中绕过 Socket LoadBalancer
 
-```
+```sh
     --set tunnel=disabled \
     --set autoDirectNodeRoutes=true \
     --set socketLB.hostNamespaceOnly=true
@@ -235,7 +235,7 @@ Cilium 默认在 Pod 中访问的是 SVC IP，则在 Pod 中就会做后端选�
 
 ### 开启拓扑感知提示
 
-```
+```sh
     --set loadBalancer.serviceTopology=true \
 ```
 
@@ -243,7 +243,7 @@ Cilium kube-proxy 也实现了 K8s 服务 Topology Aware Hints 功能，可以�
 
 ### 邻居发现
 
-```
+```sh
     --set --arping-refresh-period=30s \
 ```
 
@@ -254,7 +254,7 @@ Cilium 1.11 版本后，已经将邻居发现的库删除，完全依赖于 Linu
 
 ### clusterIP 对外可访问
 
-```
+```sh
     --set bpf.lbExternalClusterIP=true  \
 ```
 

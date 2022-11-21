@@ -167,12 +167,12 @@ Allocatable:
 
     ```yaml
     ...
-        containers:
-            resources:
-              requests:
-                intel.com/sriov-netdevice: '1'
-              limits:
-                intel.com/sriov-netdevice: '1'
+      containers:
+        resources:
+          requests:
+            intel.com/sriov-netdevice: '1'
+          limits:
+            intel.com/sriov-netdevice: '1'
     ...
     ```
 

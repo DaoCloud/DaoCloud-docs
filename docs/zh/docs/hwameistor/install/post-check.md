@@ -51,8 +51,9 @@ hwameistor-storage-disk-hdd   disk.hwameistor.io   Delete          WaitForFirstC
 
 运行以下命令通过 HwameiStor CRD 创建 API。
 
-```console
-$ kubectl api-resources --api-group hwameistor.io
+```sh
+kubectl api-resources --api-group hwameistor.io
+```
 
 ```console
 NAME                       SHORTNAMES   APIVERSION               NAMESPACED   KIND

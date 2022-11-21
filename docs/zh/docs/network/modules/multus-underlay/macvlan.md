@@ -20,16 +20,16 @@ Multus + Macvlan 一般会有两种使用场景：
     类型为 `macvlan-standalone`，意味着 Pod 的第一张网卡 (eth0) 为 macvlan 分配的网卡，通过在 Pod 的 `annotations` 中插入如下字段：
 
     ```yaml
-              annotations:
-                v1.multus-cni.io/default-network: kube-system/macvlan-standalone-vlan0
+    annotations:
+      v1.multus-cni.io/default-network: kube-system/macvlan-standalone-vlan0
     ```
 
     注意：macvlan-standalone 只与 macvlan-standalone 类型搭配，不能与 macvlan-overlay 搭配。你可以通过下面的方式为 Pod 插入多张 macvlan 网卡：
 
     ```yaml
-              annotations:
-                v1.multus-cni.io/default-network: kube-system/macvlan-standalone-vlan0
-                k8s.v1.cni.cncf.io/networks: kube-system/macvlan-standalone-vlan0
+    annotations:
+      v1.multus-cni.io/default-network: kube-system/macvlan-standalone-vlan0
+      k8s.v1.cni.cncf.io/networks: kube-system/macvlan-standalone-vlan0
     ```
 
 - macvlan-overlay
@@ -38,8 +38,8 @@ Multus + Macvlan 一般会有两种使用场景：
     所以 macvlan-overlay 类型的 Pod 要与 overlay 类型的 Pod 能够正常通讯。你可以通过下面的方式为 Pod 多分配一张网卡：
 
     ```yaml
-              annotations:
-                k8s.v1.cni.cncf.io/networks: kube-system/macvlan-overlay-vlan0
+    annotations:
+      k8s.v1.cni.cncf.io/networks: kube-system/macvlan-overlay-vlan0
     ```
 
     !!! caution

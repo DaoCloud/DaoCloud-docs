@@ -11,85 +11,85 @@
 apiVersion: provision.daocloud.io/v1alpha1
 kind: ClusterConfig
 metadata:
-    creationTimestamp: null
+  creationTimestamp: null
 spec:
-    loadBalancer: NodePort  # NodePort(default), metallb, cloudLB (Cloud Controller)
-    istioGatewayVip: 10.6.127.254/32 # if loadBalancer is metallb，is requireded.
-                                     #  Provides UI and OpenAPI access to DCE.
-    registryVip: 10.6.127.253/32 # if loadBalancer is metallb，is requireded.
-                                 # Access entry for the mirror repository of the Global cluster
-    insightVip: 10.6.127.252/32 # if loadBalancer is metallb，is requireded.
-                                # It is used for the insight data collection portal of the GLobal cluster,
-                                # and the insight-agent of the sub-cluster can report data to this VIP
-    compactClusterMode: false
-    globalClusterName: my-global-cluster
-    mgmtClusterName: my-mgmt-cluster
-    mgmtMasterNodes:
-        - nodeName: "rm-master1" # Node Name will override the hostName, should align with RFC1123 stsandard
-        ip: 10.6.127.232
-        ansibleUser: "root" # username
-        ansiblePass: "123456" # password
-    mgmtMasterNodes:
-        - nodeName: "rm-master1" # Node Name will override the hostName, should align with RFC1123 stsandard
-        ip: 10.6.127.230
-        ansibleUser: "root" # username
-        ansiblePass: "123456" # password
-    globalMasterNodes:
-        - nodeName: "rg-master1"
-        ip: 10.6.127.231
-        ansibleUser: "root"
-        ansiblePass: "123456"
-    globalWorkerNodes:
-        - nodeName: "rg-worker1"
-        ip: 10.6.127.234
-        ansibleUser: "root"
-        ansiblePass: "123456"
-    ntpServer:
-        - "172.30.120.197 iburst" # time synchronization server
-        - 0.pool.ntp.org
-        - ntp1.aliyun.com
-        - ntp.ntsc.ac.cn
-    persistentRegistryDomainName: temp-registry.daocloud.io # The local image registry which images come from.
-    imageConfig: # the kubean image config as below
-        imageRepository: temp-registry.daocloud.io
-        binaryRepository: http://temp-registry.daocloud.io:9000/kubean
-    repoConfig: # the kubean rpm/deb source configuration as below
-        # `centos` using CentOS, RedHat, AlmaLinux or Fedora
-        # `debian` using Debian
-        # `ubuntu` using Ubuntu
-        repoType: centos
-        dockerRepo: "http://temp-registry.daocloud.io:9000/kubean/centos/$releasever/os/$basearch"
-        extraRepos:
-        - http://temp-registry.daocloud.io:9000/kubean/centos-iso/\$releasever/os/\$basearch
-        - http://temp-registry.daocloud.io:9000/kubean/centos/\$releasever/os/\$basearch
+  loadBalancer: NodePort  # NodePort(default), metallb, cloudLB (Cloud Controller)
+  istioGatewayVip: 10.6.127.254/32 # if loadBalancer is metallb，is requireded.
+                                   #  Provides UI and OpenAPI access to DCE.
+  registryVip: 10.6.127.253/32     # if loadBalancer is metallb，is requireded.
+                                   # Access entry for the mirror repository of the Global cluster
+  insightVip: 10.6.127.252/32 # if loadBalancer is metallb，is requireded.
+                              # It is used for the insight data collection portal of the GLobal cluster,
+                              # and the insight-agent of the sub-cluster can report data to this VIP
+  compactClusterMode: false
+  globalClusterName: my-global-cluster
+  mgmtClusterName: my-mgmt-cluster
+  mgmtMasterNodes:
+    - nodeName: "rm-master1" # Node Name will override the hostName, should align with RFC1123 stsandard
+      ip: 10.6.127.232
+      ansibleUser: "root"   # username
+      ansiblePass: "123456" # password
+  mgmtMasterNodes:
+    - nodeName: "rm-master1" # Node Name will override the hostName, should align with RFC1123 stsandard
+      ip: 10.6.127.230
+      ansibleUser: "root"   # username
+      ansiblePass: "123456" # password
+  globalMasterNodes:
+    - nodeName: "rg-master1"
+      ip: 10.6.127.231
+      ansibleUser: "root"
+      ansiblePass: "123456"
+  globalWorkerNodes:
+    - nodeName: "rg-worker1"
+      ip: 10.6.127.234
+      ansibleUser: "root"
+      ansiblePass: "123456"
+  ntpServer:
+    - "172.30.120.197 iburst" # time synchronization server
+    - 0.pool.ntp.org
+    - ntp1.aliyun.com
+    - ntp.ntsc.ac.cn
+  persistentRegistryDomainName: temp-registry.daocloud.io # The local image registry which images come from.
+  imageConfig: # the kubean image config as below
+    imageRepository: temp-registry.daocloud.io
+    binaryRepository: http://temp-registry.daocloud.io:9000/kubean
+  repoConfig: # the kubean rpm/deb source configuration as below
+    # `centos` using CentOS, RedHat, AlmaLinux or Fedora
+    # `debian` using Debian
+    # `ubuntu` using Ubuntu
+    repoType: centos
+    dockerRepo: "http://temp-registry.daocloud.io:9000/kubean/centos/$releasever/os/$basearch"
+    extraRepos:
+    - http://temp-registry.daocloud.io:9000/kubean/centos-iso/\$releasever/os/\$basearch
+    - http://temp-registry.daocloud.io:9000/kubean/centos/\$releasever/os/\$basearch
     # k8sVersion only take effect in online mode, dont set it in offline mode
     # k8sVersion: v1.24.6
-    auditConfig:
-        logPath: /var/log/audit/kube-apiserver-audit.log
-        logHostPath: /var/log/kubernetes/audit
-        # policyFile: /etc/kubernetes/audit-policy/apiserver-audit-policy.yaml
-        # logMaxAge: 30
-        # logMaxBackups: 10
-        # logMaxSize: 100
-        # policyCustomRules: >
-        #   - level: None
-        #     users: []
-        #     verbs: []
-        #     resources: []
-    network:
-        cni: calico
-        clusterCIDR: 100.96.0.0/11
-        serviceCIDR: 100.64.0.0/13
-    cri:
-        criProvider: containerd
-        # criVersion only take effect in online mode, dont set it in offline mode
-        # criVersion: 1.6.8
-    addons:
-        ingress:
-        version: 1.2.3
-        dns:
-        type: CoreDNS
-        version: v1.8.4
+  auditConfig:
+    logPath: /var/log/audit/kube-apiserver-audit.log
+    logHostPath: /var/log/kubernetes/audit
+    # policyFile: /etc/kubernetes/audit-policy/apiserver-audit-policy.yaml
+    # logMaxAge: 30
+    # logMaxBackups: 10
+    # logMaxSize: 100
+    # policyCustomRules: >
+    #   - level: None
+    #     users: []
+    #     verbs: []
+    #     resources: []
+  network:
+    cni: calico
+    clusterCIDR: 100.96.0.0/11
+    serviceCIDR: 100.64.0.0/13
+  cri:
+    criProvider: containerd
+    # criVersion only take effect in online mode, dont set it in offline mode
+    # criVersion: 1.6.8
+  addons:
+    ingress:
+      version: 1.2.3
+    dns:
+      type: CoreDNS
+      version: v1.8.4
 ```
 
 ## 关键字段说明

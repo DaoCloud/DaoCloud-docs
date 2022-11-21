@@ -31,10 +31,10 @@
 
 4. 重新 apply RequestAuthentication ghippo CR。
 
-    ```
+    ```sh
     kubectl apply -f ghippo-ra.yaml 
     ```
 
     !!! note
-    
+
         apply RequestAuthentication ghippo CR 之前，请确保 ghippo-apiserver 和 ghippo-keycloak 已经正常启动。

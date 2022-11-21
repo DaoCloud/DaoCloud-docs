@@ -14,21 +14,21 @@ Kubernetes 审计日志是对 Kubernetes API Server 每次调用的详细描述�
     ```yaml
     apiVersion: audit.k8s.io/v1
     kind: Policy
-    # Don't generate audit events for all requests in RequestReceived stage.
-    omitStages:
-    - "ResponseStarted"
-    - "RequestReceived"
-    - "Panic"
-    rules:
-    # The following requests were manually identified as high-volume and low-risk,
-    # so drop them.
-    - level: None
+      # Don't generate audit events for all requests in RequestReceived stage.
+      omitStages:
+      - "ResponseStarted"
+      - "RequestReceived"
+      - "Panic"
+      rules:
+      # The following requests were manually identified as high-volume and low-risk,
+      # so drop them.
+      - level: None
         users: ["system:kube-proxy"]
         verbs: ["watch"]
         resources:
         - group: "" # core
-            resources: ["endpoints", "services", "services/status"]
-    - level: None
+          resources: ["endpoints", "services", "services/status"]
+      - level: None
         # Ingress controller reads `configmaps/ingress-uid` through the unsecured port.
         # TODO(#46983): Change this to the ingress controller service account.
         users: ["system:unsecured"]
@@ -36,20 +36,20 @@ Kubernetes 审计日志是对 Kubernetes API Server 每次调用的详细描述�
         verbs: ["get"]
         resources:
         - group: "" # core
-            resources: ["configmaps"]
-    - level: None
+          resources: ["configmaps"]
+      - level: None
         users: ["kubelet"] # legacy kubelet identity
         verbs: ["get"]
         resources:
         - group: "" # core
-            resources: ["nodes", "nodes/status"]
-    - level: None
+          resources: ["nodes", "nodes/status"]
+      - level: None
         userGroups: ["system:nodes"]
         verbs: ["get"]
         resources:
         - group: "" # core
-            resources: ["nodes", "nodes/status"]
-    - level: None
+          resources: ["nodes", "nodes/status"]
+      - level: None
         users:
         - system:kube-controller-manager
         - system:kube-scheduler
@@ -58,69 +58,69 @@ Kubernetes 审计日志是对 Kubernetes API Server 每次调用的详细描述�
         namespaces: ["kube-system"]
         resources:
         - group: "" # core
-            resources: ["endpoints"]
-    - level: None
+          resources: ["endpoints"]
+      - level: None
         users: ["system:apiserver"]
         verbs: ["get"]
         resources:
         - group: "" # core
-            resources: ["namespaces", "namespaces/status", "namespaces/finalize"]
-    # Don't log HPA fetching metrics.
-    - level: None
+          resources: ["namespaces", "namespaces/status", "namespaces/finalize"]
+      # Don't log HPA fetching metrics.
+      - level: None
         users:
         - system:kube-controller-manager
         verbs: ["get", "list"]
         resources:
         - group: "metrics.k8s.io"
-    # Don't log these read-only URLs.
-    - level: None
+      # Don't log these read-only URLs.
+      - level: None
         nonResourceURLs:
         - /healthz*
         - /version
         - /swagger*
-    # Don't log events requests.
-    - level: None
+      # Don't log events requests.
+      - level: None
         resources:
         - group: "" # core
-            resources: ["events"]
+          resources: ["events"]
             
-    # new start
-    # 忽略所有访问非认证端口的 API，通常是系统组件如 Kube-Controller 等。
-    - level: None
+      # new start
+      # 忽略所有访问非认证端口的 API，通常是系统组件如 Kube-Controller 等。
+      - level: None
         users: ["system:unsecured"]
 
-    # 忽略 kube-admin 的审计日志
-    - level: None
+      # 忽略 kube-admin 的审计日志
+      - level: None
         users: ["kube-admin"]
-    # 忽略所有资源状态更新的 API need add
-    - level: None
+      # 忽略所有资源状态更新的 API need add
+      - level: None
         resources:
         - group: "" # core
         resources: ["events", "nodes/status", "pods/status", "services/status"]
         - group: "authorization.k8s.io"
         resources: ["selfsubjectrulesreviews"]
-    # 忽略leases need add
-    - level: None
+      # 忽略leases need add
+      - level: None
         resources:
         - group: "coordination.k8s.io"
         resources: ["leases"]
-    - level: Request
+      - level: Request
         verbs: ["create", "update", "patch", "delete"]
         users: ["kube-admin"]
-    #new end
+      #new end
 
-    # Secrets, ConfigMaps, and TokenReviews can contain sensitive & binary data,
-    # so only log at the Metadata level.
-    - level: Metadata
+      # Secrets, ConfigMaps, and TokenReviews can contain sensitive & binary data,
+      # so only log at the Metadata level.
+      - level: Metadata
         resources:
         - group: "" # core
-            resources: ["secrets", "configmaps"]
+          resources: ["secrets", "configmaps"]
         - group: authentication.k8s.io
-            resources: ["tokenreviews"]
+          resources: ["tokenreviews"]
         omitStages:
         - "RequestReceived"
-    # Get responses can be large; skip them.
-    - level: Request
+      # Get responses can be large; skip them.
+      - level: Request
         verbs: ["get", "list", "watch"]
         resources:
         - group: "" # core
@@ -142,8 +142,8 @@ Kubernetes 审计日志是对 Kubernetes API Server 每次调用的详细描述�
         - group: "storage.k8s.io"
         omitStages:
         - "RequestReceived"
-    # Default level for known APIs
-    - level: RequestResponse
+      # Default level for known APIs
+      - level: RequestResponse
         resources:
         - group: "" # core
         - group: "admissionregistration.k8s.io"
@@ -164,8 +164,8 @@ Kubernetes 审计日志是对 Kubernetes API Server 每次调用的详细描述�
         - group: "storage.k8s.io"
         omitStages:
         - "RequestReceived"
-    # Default level for all other requests.
-    - level: Metadata
+      # Default level for all other requests.
+      - level: Metadata
         omitStages:
         - "RequestReceived"
     ```
@@ -174,7 +174,7 @@ Kubernetes 审计日志是对 Kubernetes API Server 每次调用的详细描述�
 
 	- 在 `spec.containers.command` 下添加命令：
 
-        ```yaml
+        ```sh
         --audit-log-maxage=30
         --audit-log-maxbackup=1
         --audit-log-maxsize=100
@@ -186,21 +186,21 @@ Kubernetes 审计日志是对 Kubernetes API Server 每次调用的详细描述�
 
         ```yaml
         - mountPath: /var/log/audit
-            name: audit-logs
+          name: audit-logs
         - mountPath: /etc/kubernetes/audit-policy
-            name: audit-policy
+          name: audit-policy
         ```
 
     - 在 `spec.volumes` 下添加：
 
         ```yaml
         - hostPath:
-            path: /var/log/kubernetes/audit
-            type: ""
+          path: /var/log/kubernetes/audit
+          type: ""
         name: audit-logs
         - hostPath:
-            path: /etc/kubernetes/audit-policy
-            type: ""
+          path: /etc/kubernetes/audit-policy
+          type: ""
         name: audit-policy
         ```
 

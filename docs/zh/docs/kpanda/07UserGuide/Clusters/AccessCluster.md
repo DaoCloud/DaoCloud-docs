@@ -48,13 +48,13 @@ kubectl 工具默认会从本地节点的 `$HOME/.kube` 目录下查找名为 `c
 
 2. 在本地节点上执行如下命令验证集群的连通性:
 
-    ```
+    ```sh
     kubectl get pod -n default
     ```
-    
+
     预期的输出类似于:
 
-    ```
+    ```none
     NAME                            READY   STATUS      RESTARTS    AGE
     dao-2048-2048-58c7f7fc5-mq7h4   1/1     Running     0           30h
     ```

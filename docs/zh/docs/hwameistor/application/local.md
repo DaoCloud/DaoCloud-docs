@@ -1,6 +1,6 @@
 # 本地卷
 
-使用 HwameiStor 能非常轻松的运行有状态的应用
+使用 HwameiStor 能非常轻松的运行有状态的应用。
 
 这里我们使用一个 MySQL 应用作为例子。
 
@@ -10,11 +10,16 @@
 
 ## 查看 `StorageClass`
 
-HwameiStor 的 Helm charts 会默认安装一个 名为 `hwameistor-storage-lvm-hdd` 的 `StorageClass`. 它可以创建本地卷。
+HwameiStor 的 Helm charts 会默认安装一个名为 `hwameistor-storage-lvm-hdd` 的 `StorageClass`，它可以创建本地卷。
 
-```console
-$ kubectl get sc hwameistor-storage-lvm-hdd -o yaml
+运行以下命令打开 YAML 文件。
+```sh
+kubectl get sc hwameistor-storage-lvm-hdd -o yaml
+```
 
+修改以下 YAML 文件。
+
+```yaml
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
@@ -35,7 +40,7 @@ allowVolumeExpansion: true
 
 如果这个 `storageClass` 没有在安装时生成，可以运行以下的 yaml 文件重新生成它：
 
-```console
+```sh
 kubectl apply -f examples/sc-local.yaml
 ```
 
@@ -43,8 +48,8 @@ kubectl apply -f examples/sc-local.yaml
 
 在 HwameiStor 和 `StorageClass` 就绪后, 一条命令就能创建 MySQL 容器和它的数据卷:
 
-```Console
-$ kubectl apply -f sts-mysql_local.yaml
+```sh
+kubectl apply -f sts-mysql_local.yaml
 ```
 
 请注意 `volumeClaimTemplates` 使用 `storageClassName: hwameistor-storage-lvm-hdd`:

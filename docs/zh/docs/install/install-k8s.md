@@ -13,7 +13,7 @@ hide:
 
 2. 拉取 Kubernetes 镜像。
 
-	```
+	```sh
 	kubeadm config images pull --image-repository k8s-gcr.m.daocloud.io
 	```
 
@@ -23,13 +23,13 @@ hide:
 
 5. 部署 StorageClass，可选择 local-path 的开源存储，参见 [local-path 官方文档](https://github.com/rancher/local-path-provisioner)。
 
-	```
+	```sh
 	kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.22/deploy/local-path-storage.yaml
 	```
 
 	把 local-path 设置为默认 StorageClass。
 
-	```
+	```sh
 	kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 	```
 	
