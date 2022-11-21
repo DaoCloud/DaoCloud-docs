@@ -24,8 +24,8 @@ metadata:
   uid: c94af437-5a37-46c8-b521-641724b86ff8
 spec:
   allowedUses:
-  - Workload
-  - Tunnel
+    - Workload
+    - Tunnel
   blockSize: 26
   cidr: 10.244.0.0/18
   ipipMode: Never
@@ -121,13 +121,13 @@ EOF
     apiVersion: projectcalico.org/v3
     kind: IPPool
     metadata:
-    name: extra-ippool
+      name: extra-ippool
     spec:
-    cidr: 192.168.0.0/20
-    blockSize: 26
-    vxlanMode: Always
-    natOutgoing: true
-    nodeSelector: type=="test"
+      cidr: 192.168.0.0/20
+      blockSize: 26
+      vxlanMode: Always
+      natOutgoing: true
+      nodeSelector: type=="test"
     EOF
     ```
 
@@ -172,11 +172,11 @@ kubectl annotate pod  test-pod "cni.projectcalico.org/ipv4pools"='["extra-ippool
     apiVersion: projectcalico.org/v3
     kind: IPPool
     metadata:
-    name: temporary-pool
+      name: temporary-pool
     spec:
-    cidr: 10.0.0.0/16
-    ipipMode: Always
-    natOutgoing: true
+      cidr: 10.0.0.0/16
+      ipipMode: Always
+      natOutgoing: true
     ```
 
     !!! note
@@ -236,12 +236,12 @@ kubectl annotate pod  test-pod "cni.projectcalico.org/ipv4pools"='["extra-ippool
     apiVersion: projectcalico.org/v3
     kind: IPPool
     metadata:
-    name: default-ipv4-ippool
+      name: default-ipv4-ippool
     spec:
-    blockSize: 27   # change blockSize from 26 to 27
-    cidr: 192.0.0.0/16
-    ipipMode: Always
-    natOutgoing: true
+      blockSize: 27   # change blockSize from 26 to 27
+      cidr: 192.0.0.0/16
+      ipipMode: Always
+      natOutgoing: true
     EOF
     ```
 
