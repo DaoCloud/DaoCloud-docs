@@ -381,20 +381,6 @@ nav:
               - 常用命令: network/modules/spiderpool/command.md
       - 中间件:
           - 中间件介绍: middleware/midware.md
-          - RabbitMQ 消息队列:
-              - 什么是 RabbitMQ: middleware/rabbitmq/intro/what.md
-              - 功能说明: middleware/rabbitmq/intro/features.md
-              - 竞争优势: middleware/rabbitmq/intro/benefits.md
-              - 适用场景: middleware/rabbitmq/intro/scenarios.md
-              - 基本概念: middleware/rabbitmq/intro/concepts.md
-              - 首次使用 RabbitMQ: middleware/rabbitmq/userguide/login.md
-              - 安装和卸载 RabbitMQ: middleware/rabbitmq/quickstart/install.md
-              - 创建 RabbitMQ 实例: middleware/rabbitmq/userguide/create.md
-              - 更新 RabbitMQ 实例: middleware/rabbitmq/userguide/update.md
-              - 删除 RabbitMQ 实例: middleware/rabbitmq/userguide/delete.md
-              - 查看消息队列: middleware/rabbitmq/userguide/view.md
-              - 数据迁移: middleware/rabbitmq/userguide/migrate.md
-              - 实例监控: middleware/rabbitmq/userguide/insight.md
           - Elasticsearch 搜索服务:
               - 什么是 Elasticsearch: middleware/elastic-search/intro/what.md
               - 功能说明: middleware/elastic-search/intro/features.md
@@ -410,24 +396,6 @@ nav:
               - 查看列表: middleware/elastic-search/userguide/view.md
               - 概览: middleware/elastic-search/userguide/basic.md
               - 实例监控: middleware/elastic-search/userguide/monitor.md
-          - MySQL 数据库:
-              - 什么是 MySQL: middleware/mysql/intro/what.md
-              - 功能说明: middleware/mysql/intro/features.md
-              - 竞争优势: middleware/mysql/intro/benefits.md
-              - 基本概念: middleware/mysql/intro/concepts.md
-              - 安装 MySQL: middleware/mysql/quickstart/install.md
-              - 首次使用 MySQL: middleware/mysql/userguide/login.md
-              - 创建 MySQL: middleware/mysql/userguide/create.md
-              - 更新 MySQL: middleware/mysql/userguide/update.md
-              - 删除 MySQL: middleware/mysql/userguide/delete.md
-          - Redis 缓存服务:
-              - 什么是 Redis: middleware/redis/intro/what.md
-              - 适用场景: middleware/redis/intro/scenarios.md
-              - 安装和卸载 Redis: middleware/redis/userguide/install.md
-              - 首次使用 Redis: middleware/redis/userguide/login.md
-              - 创建 Redis 实例: middleware/redis/userguide/create.md
-              - 更新 Redis 实例: middleware/redis/userguide/update.md
-              - 删除 Redis 实例: middleware/redis/userguide/delete.md
           - Kafka 消息队列:
               - 什么是 Kafka: middleware/kafka/intro/what.md
               - 适用场景: middleware/kafka/intro/scenarios.md
@@ -452,6 +420,38 @@ nav:
               - 查看消息队列: middleware/minio/userguide/view.md
               - 实例监控: middleware/minio/userguide/insight.md
               - 配置参数: middleware/minio/userguide/config.md
+          - MySQL 数据库:
+              - 什么是 MySQL: middleware/mysql/intro/what.md
+              - 功能说明: middleware/mysql/intro/features.md
+              - 竞争优势: middleware/mysql/intro/benefits.md
+              - 基本概念: middleware/mysql/intro/concepts.md
+              - 安装 MySQL: middleware/mysql/quickstart/install.md
+              - 首次使用 MySQL: middleware/mysql/userguide/login.md
+              - 创建 MySQL: middleware/mysql/userguide/create.md
+              - 更新 MySQL: middleware/mysql/userguide/update.md
+              - 删除 MySQL: middleware/mysql/userguide/delete.md
+          - RabbitMQ 消息队列:
+              - 什么是 RabbitMQ: middleware/rabbitmq/intro/what.md
+              - 功能说明: middleware/rabbitmq/intro/features.md
+              - 竞争优势: middleware/rabbitmq/intro/benefits.md
+              - 适用场景: middleware/rabbitmq/intro/scenarios.md
+              - 基本概念: middleware/rabbitmq/intro/concepts.md
+              - 首次使用 RabbitMQ: middleware/rabbitmq/userguide/login.md
+              - 安装和卸载 RabbitMQ: middleware/rabbitmq/quickstart/install.md
+              - 创建 RabbitMQ 实例: middleware/rabbitmq/userguide/create.md
+              - 更新 RabbitMQ 实例: middleware/rabbitmq/userguide/update.md
+              - 删除 RabbitMQ 实例: middleware/rabbitmq/userguide/delete.md
+              - 查看消息队列: middleware/rabbitmq/userguide/view.md
+              - 数据迁移: middleware/rabbitmq/userguide/migrate.md
+              - 实例监控: middleware/rabbitmq/userguide/insight.md
+          - Redis 缓存服务:
+              - 什么是 Redis: middleware/redis/intro/what.md
+              - 适用场景: middleware/redis/intro/scenarios.md
+              - 安装和卸载 Redis: middleware/redis/userguide/install.md
+              - 首次使用 Redis: middleware/redis/userguide/login.md
+              - 创建 Redis 实例: middleware/redis/userguide/create.md
+              - 更新 Redis 实例: middleware/redis/userguide/update.md
+              - 删除 Redis 实例: middleware/redis/userguide/delete.md
       - 云原生本地存储:
           - 介绍: hwameistor/intro/what.md
           - 模块:
