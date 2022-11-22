@@ -22,3 +22,27 @@ helm upgrade --install --create-namespace -n mspider-system mspider mspider-rele
 ```
 
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }
+
+## 服务网格学习路径
+
+```mermaid
+graph TD
+    A(创建网格) -->B(接入集群)
+    B --> C{注入边车}
+    C -.->|按需| D[网格网关]
+    C -.->|按需| E[服务管理]
+    C -.->|按需| F[流量治理]
+    C -.->|按需| G[安全治理]
+    C -.->|按需| H[流量监控]
+    C -.->|按需| I[版本升级]
+    
+    click A "https://docs.daocloud.io/mspider/03UserGuide/servicemesh/create-mesh/"
+    click B "https://docs.daocloud.io/mspider/03UserGuide/08ClusterManagement/join-clus/"
+    click C "https://docs.daocloud.io/mspider/03UserGuide/07SidecarManagement/NamespaceSidecar/"
+    click D "https://docs.daocloud.io/mspider/03UserGuide/09GatewayInstance/create/"
+    click E "https://docs.daocloud.io/mspider/03UserGuide/01ServiceList/"
+    click F "https://docs.daocloud.io/mspider/03UserGuide/02TrafficGovernance/"
+    click G "https://docs.daocloud.io/mspider/03UserGuide/05Security/"
+    click H "https://docs.daocloud.io/mspider/03UserGuide/06TrafficMonitor/"
+    click I "https://docs.daocloud.io/mspider/03UserGuide/upgrade/IstioUpdate/"
+```
