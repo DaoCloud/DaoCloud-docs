@@ -8,7 +8,7 @@
 
 1. 执行以下命令：
 
-    ```
+    ```sh
     kubectl edit vmcluster insight-victoria-metrics-k8s-stack -n insight-system
     ```
 
@@ -18,33 +18,33 @@
     apiVersion: operator.victoriametrics.com/v1beta1
     kind: VMCluster
     metadata:
-    annotations:
+      annotations:
         meta.helm.sh/release-name: insight
         meta.helm.sh/release-namespace: insight-system
-    creationTimestamp: "2022-08-25T04:31:02Z"
-    finalizers:
-    - apps.victoriametrics.com/finalizer
-    generation: 2
-    labels:
+      creationTimestamp: "2022-08-25T04:31:02Z"
+      finalizers:
+      - apps.victoriametrics.com/finalizer
+      generation: 2
+      labels:
         app.kubernetes.io/instance: insight
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: victoria-metrics-k8s-stack
         app.kubernetes.io/version: 1.77.2
         helm.sh/chart: victoria-metrics-k8s-stack-0.9.3
-    name: insight-victoria-metrics-k8s-stack
-    namespace: insight-system
-    resourceVersion: "123007381"
-    uid: 55cee8d6-c651-404b-b2c9-50603b405b54
+      name: insight-victoria-metrics-k8s-stack
+      namespace: insight-system
+      resourceVersion: "123007381"
+      uid: 55cee8d6-c651-404b-b2c9-50603b405b54
     spec:
-    replicationFactor: 1
-    retentionPeriod: "14"
-    vminsert:
+      replicationFactor: 1
+      retentionPeriod: "14"
+      vminsert:
         extraArgs:
-        maxLabelsPerTimeseries: "45"
+          maxLabelsPerTimeseries: "45"
         image:
-        repository: docker.m.daocloud.io/victoriametrics/vminsert
-        tag: v1.80.0-cluster
-        replicaCount: 1
+          repository: docker.m.daocloud.io/victoriametrics/vminsert
+          tag: v1.80.0-cluster
+          replicaCount: 1
     ```
 
 3. 保存修改后，负责存储指标的组件的容器组会自动重启，稍等片刻即可。
@@ -56,7 +56,7 @@
 ### 方法一：修改 Json 文件
 
 1. 修改以下文件中 `rollover` 字段中的 `max_age` 参数，并设置保留期限，默认存储时长为 `7d`。将 `http://localhost:9200` 修改为 `elastic` 的地址。
- 
+
     ```json
     curl -X PUT "http://localhost:9200/_ilm/policy/insight-es-k8s-logs-policy?pretty" -H 'Content-Type: application/json' -d'
     {
@@ -126,7 +126,7 @@
 ### 方法一：修改 Json 文件
 
 1. 修改以下文件中 `rollover` 字段中的 `max_age` 参数，并设置保留期限，默认存储时长为 `7d`。同时将 `http://localhost:9200` 修改为 `elastic` 的访问地址。
- 
+
     ```json
     curl -X PUT "http://localhost:9200/_ilm/policy/jaeger-ilm-policy?pretty" -H 'Content-Type: application/json' -d'
     {
@@ -161,7 +161,6 @@
         }
     }
     }
-
     ```
 
 2. 修改完后，在控制台执行以上命令。它会打印出如下所示内容，则修改成功。

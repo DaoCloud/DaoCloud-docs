@@ -40,7 +40,6 @@
 		  micrometer-prometheus-discovery: "true"
 	```
 
-
 	在以上 YAML 文件中，各字段的含义如下：
 
 	- `metadata` 下的 `name` 和 `namespace` 将指定 ServiceMonitor 所需的一些关键元信息。

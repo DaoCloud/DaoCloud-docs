@@ -38,7 +38,7 @@ allowVolumeExpansion: true
 
 在 HwameiStor 和 `StorageClass` 就绪后, 一条命令就能创建 MySQL 容器和它的数据卷:
 
-```Console
+```sh
 kubectl apply -f exapmles/sts-mysql_ha.yaml
 ```
 

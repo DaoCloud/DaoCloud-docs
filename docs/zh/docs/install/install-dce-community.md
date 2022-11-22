@@ -64,7 +64,7 @@
 
     - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 K8s 负载均衡能力, 配置文件范例如下:
 
-        ``` yaml
+        ```yaml
         apiVersion: provision.daocloud.io/v1alpha1
         kind: ClusterConfig
         spec:
@@ -101,7 +101,7 @@
 
 1. 确保 kind 创建集群时，暴露集群内的 32000 端口(固定)到 kind 对外的 8888 端口（可自行修改），kind 配置文件如下：
         
-    ``` yaml
+    ```yaml
     apiVersion: provision.daocloud.io/v1alpha1
     kind: ClusterConfig
     spec:
