@@ -12,7 +12,7 @@
 
 ## API 策略的高级配置（1）
 
-文档地址：[API 策略配置](../skoala/ms-gateway/api/api-policy.md)
+参阅 [API 策略配置](../skoala/ms-gateway/api/api-policy.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/apipolicy1.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
