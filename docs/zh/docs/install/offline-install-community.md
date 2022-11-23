@@ -19,7 +19,7 @@
         - 目前仅支持 X86_64 架构
         - 确保集群已安装 CoreDNS
         - 如果是单节点集群，请确保您已移除该节点的污点
-    
+
 - [安装依赖项](install-tools.md)
 
     !!! note
@@ -33,7 +33,7 @@
 
 ## 离线安装
 
-1. 在 k8s 集群控制平面节点（Master 节点）下载社区版的对应离线包并解压。
+1. 在 k8s 集群控制平面节点（Master 节点）下载社区版的对应离线包并解压，或者从[下载中心](../download/free/dce5-installer-v0.3.28.md)下载离线包并解压。
 
     ```bash
     # 假定版本 VERSION=0.3.22
@@ -57,7 +57,7 @@
         ```
 
     - 如果使用镜像仓库，请将离线包的镜像推送到镜像仓库。
-    
+
         ```bash
         # 指定镜像仓库地址, 比如:
         export REGISTRY_ADDR=registry.daocloud.io:30080
@@ -66,18 +66,18 @@
         # 执行脚本导入镜像
         ./offline_image_handler.sh import
         ```
-    
+
         !!! note
-    
+
             若导入镜像的过程出现失败, 则失败会被跳过且脚本将继续执行，
             失败镜像信息将被记录在脚本同级目录 `import_image_failed.list` 文件中，便于定位。
-        
+
         如果 docker pull 镜像时报错：http: server gave HTTP response to HTTPS client，
         请启用 Insecure Registry：
-            
+
         - 在集群的每个节点上运行 `vim /etc/docker/daemon.json` 命令以编辑 daemon.json 文件，输入以下内容并保存更改。
 
-            ```shell
+            ```json
             {
             "insecure-registries" : ["172.30.120.180:80"]
             }
@@ -95,7 +95,7 @@
             ```
 
     - 如果没有镜像仓库，请将离线包拷贝到每一台节点之后，通过 `docker load/nerdctl load` 命令加载：
-    
+
         ```shell
         # 指定离线包解压目录
         export OFFLINE_DIR=$(pwd)/offline
