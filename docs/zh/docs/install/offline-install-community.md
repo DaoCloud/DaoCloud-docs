@@ -36,8 +36,8 @@
 1. 在 k8s 集群控制平面节点（Master 节点）下载社区版的对应离线包并解压，或者从[下载中心](../download/free/dce5-installer-v0.3.28.md)下载离线包并解压。
 
     ```bash
-    # 假定版本 VERSION=0.3.22
-    export VERSION=v0.3.24
+    # 假定版本 VERSION=0.3.28
+    export VERSION=v0.3.28
     wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION.tar
     tar -zxvf offline-community-$VERSION.tar
     ```
@@ -106,8 +106,8 @@
 3. 在 k8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件。
 
     ```shell
-    # 假定 VERSION 为 v0.3.24
-    export VERSION=v0.3.24
+    # 假定 VERSION 为 v0.3.28
+    export VERSION=v0.3.28
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     ```
 

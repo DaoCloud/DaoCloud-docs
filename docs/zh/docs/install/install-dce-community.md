@@ -38,8 +38,8 @@
 1. 在 K8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件。
 
     ```shell
-    # 假定 VERSION 为 v0.3.24
-    export VERSION=v0.3.24
+    # 假定 VERSION 为 v0.3.28
+    export VERSION=v0.3.28
     curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     ```
 
@@ -102,10 +102,13 @@
 1. 确保 kind 创建集群时，暴露集群内的 32000 端口(固定)到 kind 对外的 8888 端口（可自行修改），kind 配置文件如下：
 
     ```yaml
-    apiVersion: provision.daocloud.io/v1alpha1
-    kind: ClusterConfig
-    spec:
-      loadBalancer: cloudLB
+    apiVersion: kind.x-k8s.io/v1alpha4
+    kind: Cluster
+    nodes:
+    - role: control-plane
+      extraPortMappings:
+      - containerPort: 32088
+        hostPort: 8888
     ```
 
 2. 获取 kind 所在主机的 IP，假定为 `10.6.3.1`，进行安装。
