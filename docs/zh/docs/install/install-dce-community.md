@@ -100,7 +100,7 @@
     如果是 kind 内的环境，仅可使用 NodePort 模式。
 
 1. 确保 kind 创建集群时，暴露集群内的 32000 端口(固定)到 kind 对外的 8888 端口（可自行修改），kind 配置文件如下：
-        
+
     ```yaml
     apiVersion: provision.daocloud.io/v1alpha1
     kind: ClusterConfig
