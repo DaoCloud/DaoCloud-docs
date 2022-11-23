@@ -94,27 +94,27 @@ spec:
 
 ## 关键字段说明
 
-| 字段                         | 说明                                                                                                                                                                           | 默认值                                                 |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------ |
-| compactClusterMode           | 简约模式：如果开启后会把全局服务集群建立在管理集群上，系统也会忽略 globalXXXNode 的设置，一体机模式也适用。默认使用简约模式。<br />如果设置为 `false` ，部署模式则为经典模式。 | true                                                   |
-| loadBalancer                 | 所使用的 LoadBalancer 的模式，物理环境用 metallb，POC 用 NodePort，公有云和 SDN CNI 环境用 cloudLB                                                                             | NodePort(default), metallb, cloudLB (Cloud Controller) |
-| xxVIP                        | 不同作用的 VIP（专供 Metallb），注意格式如 10.6.229.58/32， 或者 1.2.3.4-1.2.3.5                                                                                               | NA                                                     |
-| mgmtClusterName              | 在 KuBean 里的管理集群命名                                                                                                                                                     | NA                                                     |
-| globalClusterName            | 在 KuBean 里的 Global 集群命名                                                                                                                                                 | NA                                                     |
-| istioGatewayVip              | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 DCE 的 UI 界面和 OpenAPI 访问入口                                                                                         | NA                                                     |
-| registryVip                  | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 Global 集群的镜像仓库的访问入口                                                                                           | NA                                                     |
-| insightVip                   | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 GLobal 集群的 insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP                                       | NA                                                     |
-| persistentRegistryDomainName | 如果是离线安装，需要指定该字段，指定临时和未来的仓库的域名                                                                                                                     | NA                                                     |
-| imageConfig.imageRepository  | 如果是离线安装，kuBean 安装集群时的本地镜像仓库来源                                                                                                                            | NA                                                     |
-| imageConfig.binaryRepository | 如果是离线安装，kuBean 安装集群时的本地二进制仓库来源                                                                                                                          | https://files.m.daocloud.io                            |
-| repoConfig                   | RPM 或者 DEB 安装的源头，如果离线模式下,是安装器启动的 MinIO                                                                                                                   | NA                                                     |
-| k8sVersion                   | kuBean 安装集群的 k8s 版本-必须跟 KuBean 和离线包相匹配                                                                                                                        | NA                                                     |
-| mgmtMasterNodes              | 管理集群：Master 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段                                                                                               | NA                                                     |
-| mgmtWorkerNodes              | 管理集群：Worker 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段                                                                                               | NA                                                     |
-| globalMasterNodes            | 全局集群：Master 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段                                                                                               | NA                                                     |
-| globalWorkerNodes            | 全局集群：Worker 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段                                                                                               | NA                                                     |
-| ntpServer                    | 可用的 NTP 服务器，供给新节点同步时间                                                                                                                                          | NA                                                     |
-| network.cni                  | CNI 选择，比如 calico, cilium                                                                                                                                                  | calico                                                 |
-| network.clusterCIDR          | Cluster CIDR                                                                                                                                                                   | NA                                                     |
-| network.serviceCIDR          | Service CIDR                                                                                                                                                                   | NA                                                     |
-| auditConfig                  | k8s api-server 的审计日志配置                                                                                                                                                  | 默认关闭                                               |
+| 字段                         | 说明                                                         | 默认值                                                 |
+| ---------------------------- | ------------------------------------------------------------ | ------------------------------------------------------ |
+| compactClusterMode           | 简约模式：如果开启后会把全局服务集群建立在管理集群上，系统也会忽略 globalXXXNode 的设置，只需要设置 mgmtXXXNode 的参数信息，一体机模式也适用。默认使用简约模式。<br />如果设置为 `false` ，部署模式则为经典模式。 | true                                                   |
+| loadBalancer                 | 所使用的 LoadBalancer 的模式，物理环境用 metallb，POC 用 NodePort，公有云和 SDN CNI 环境用 cloudLB | NodePort(default), metallb, cloudLB (Cloud Controller) |
+| xxVIP                        | 不同作用的 VIP（专供 Metallb），注意格式如 10.6.229.58/32， 或者 1.2.3.4-1.2.3.5 | NA                                                     |
+| mgmtClusterName              | 在 KuBean 里的管理集群命名                                   | NA                                                     |
+| globalClusterName            | 在 KuBean 里的 Global 集群命名                               | NA                                                     |
+| istioGatewayVip              | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 DCE 的 UI 界面和 OpenAPI 访问入口 | NA                                                     |
+| registryVip                  | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 Global 集群的镜像仓库的访问入口 | NA                                                     |
+| insightVip                   | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 GLobal 集群的 insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP | NA                                                     |
+| persistentRegistryDomainName | 如果是离线安装，需要指定该字段，指定临时和未来的仓库的域名   | NA                                                     |
+| imageConfig.imageRepository  | 如果是离线安装，kuBean 安装集群时的本地镜像仓库来源          | NA                                                     |
+| imageConfig.binaryRepository | 如果是离线安装，kuBean 安装集群时的本地二进制仓库来源        | https://files.m.daocloud.io                            |
+| repoConfig                   | RPM 或者 DEB 安装的源头，如果离线模式下,是安装器启动的 MinIO | NA                                                     |
+| k8sVersion                   | kuBean 安装集群的 k8s 版本-必须跟 KuBean 和离线包相匹配      | NA                                                     |
+| mgmtMasterNodes              | 管理集群：Master 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | NA                                                     |
+| mgmtWorkerNodes              | 管理集群：Worker 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | NA                                                     |
+| globalMasterNodes            | 全局集群：Master 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | NA                                                     |
+| globalWorkerNodes            | 全局集群：Worker 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | NA                                                     |
+| ntpServer                    | 可用的 NTP 服务器，供给新节点同步时间                        | NA                                                     |
+| network.cni                  | CNI 选择，比如 calico, cilium                                | calico                                                 |
+| network.clusterCIDR          | Cluster CIDR                                                 | NA                                                     |
+| network.serviceCIDR          | Service CIDR                                                 | NA                                                     |
+| auditConfig                  | k8s api-server 的审计日志配置                                | 默认关闭                                               |
