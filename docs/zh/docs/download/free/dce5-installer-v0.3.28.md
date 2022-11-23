@@ -10,17 +10,16 @@ hide:
 
 ## 下载
 
-| 版本名称 | 文件大小 | 下载                                                                                                         | 更新日期   |
-| -------- | -------- | ------------------------------------------------------------------------------------------------------------ | ---------- |
-| v0.3.28  | 5.8 GB   | [点击下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.28.tar) | 2022-11-11 |
-| 校验文件 | 0.6 KB   | [点击下载](./checksum.txt.zip)                                                                          | 2022-11-11 |
+| 版本名称 | 安装包 |
+| ----- | ----- |
+| DaoCloud Enterprise 社区版 | [下载](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.28.tar) |
 
 ## 校验
 
-解压缩 `checksum.txt.zip`，将 txt 文件与 tar 包置于同一个目录。执行以下命令校验安装包：
+进入离线安装包下载目录。执行以下命令校验安装包：
 
 ```sh
-echo "$(cat checksum.txt)" | sha512sum -c
+echo "4e1d839ee51f6ff837e2363576cd7ccb794bf81de5fac3c840d14781abc3e077f9014466a3f21d29b83af12643e59e4fa310ecd08831266d2b361ba9e9b81933  offline-community-v0.3.28.tar" | sha512sum -c
 ```
 
 校验成功会打印：
