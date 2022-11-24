@@ -27,7 +27,7 @@ nav:
               - 竞争优势: kpanda/03ProductBrief/Benefits.md
               - 适用场景: kpanda/03ProductBrief/Scenarios.md
               - 基本概念: kpanda/03ProductBrief/Concepts.md
-              - 最新动态: kpanda/03ProductBrief/release-notes.md
+              - Release Notes: kpanda/03ProductBrief/release-notes.md
           - 集群管理:
               - 创建集群: kpanda/07UserGuide/Clusters/CreateCluster.md
               - 接入集群: kpanda/07UserGuide/Clusters/JoinACluster.md
@@ -87,6 +87,7 @@ nav:
               - 什么是全局管理: ghippo/01ProductBrief/WhatisGhippo.md
               - 功能总览: ghippo/01ProductBrief/Features.md
               - 常见术语: ghippo/01ProductBrief/glossary.md
+              - Release Notes: ghippo/01ProductBrief/release-notes.md
           - 登录: ghippo/04UserGuide/00Login.md
           - 用户与访问控制:
               - 什么是用户与访问控制: ghippo/04UserGuide/01UserandAccess/iam.md
