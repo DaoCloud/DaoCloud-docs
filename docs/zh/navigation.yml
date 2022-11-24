@@ -136,7 +136,7 @@ nav:
               - 基本概念: insight/03ProductBrief/concepts.md
               - 应用场景: insight/03ProductBrief/scenarios.md
               - 功能列表: insight/03ProductBrief/feature.md
-              - 最新动态: insight/03ProductBrief/releasenote.md
+              - Release Notes: insight/03ProductBrief/releasenote.md
           - 快速入门:
               - 获取数据上传地址: insight/06UserGuide/01quickstart/gethosturl.md
               - 安装 insight-agent: insight/06UserGuide/01quickstart/installagent.md
@@ -183,7 +183,7 @@ nav:
               - 产品优势: amamba/01ProductBrief/Benefits.md
               - 适用场景: amamba/01ProductBrief/Scenarios.md
               - 基本概念: amamba/01ProductBrief/Concepts.md
-              - 最新动态: amamba/01ProductBrief/releasenote.md
+              - Release Notes: amamba/01ProductBrief/release-notes.md
           - 命名空间管理: amamba/03UserGuide/Namespace/namespace.md
           - 流水线:
               - 自定义创建流水线: amamba/03UserGuide/Pipeline/createpipelinebyself.md
@@ -208,7 +208,7 @@ nav:
               - 产品架构: kairship/01product/architecture.md
               - 产品优势: kairship/01product/benefits.md
               - 基本概念: kairship/01product/concepts.md
-              - 最新动态: kairship/01product/release-notes.md
+              - Release Notes: kairship/01product/release-notes.md
           - 多云实例管理:
               - 多云实例介绍: kairship/03instance/README.md
               - 添加实例: kairship/03instance/add.md
@@ -291,7 +291,7 @@ nav:
               - UI 支持的特性: mspider/01Intro/meshes.md
               - 服务网格权限说明: ghippo/permissions/mspider.md
               - 网格架构: mspider/01Intro/Architecture.md
-              - 最新动态: mspider/01Intro/release-notes.md
+              - Release Notes: mspider/01Intro/release-notes.md
           - 创建/删除网格:
               - 网格介绍: mspider/03UserGuide/servicemesh/README.md
               - 创建托管/专有网格: mspider/03UserGuide/servicemesh/create-mesh.md
