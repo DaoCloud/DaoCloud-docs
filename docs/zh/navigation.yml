@@ -87,6 +87,7 @@ nav:
               - 什么是全局管理: ghippo/01ProductBrief/WhatisGhippo.md
               - 功能总览: ghippo/01ProductBrief/Features.md
               - 常见术语: ghippo/01ProductBrief/glossary.md
+              - Release Notes: ghippo/01ProductBrief/release-notes.md
           - 登录: ghippo/04UserGuide/00Login.md
           - 用户与访问控制:
               - 什么是用户与访问控制: ghippo/04UserGuide/01UserandAccess/iam.md
