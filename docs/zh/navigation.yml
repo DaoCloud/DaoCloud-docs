@@ -27,7 +27,7 @@ nav:
               - 竞争优势: kpanda/03ProductBrief/Benefits.md
               - 适用场景: kpanda/03ProductBrief/Scenarios.md
               - 基本概念: kpanda/03ProductBrief/Concepts.md
-              - 最新动态: kpanda/03ProductBrief/release-notes.md
+              - Release Notes: kpanda/03ProductBrief/release-notes.md
           - 集群管理:
               - 创建集群: kpanda/07UserGuide/Clusters/CreateCluster.md
               - 接入集群: kpanda/07UserGuide/Clusters/JoinACluster.md
