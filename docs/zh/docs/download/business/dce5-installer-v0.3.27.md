@@ -4,39 +4,33 @@ hide:
   - navigation
 ---
 
-# DCE 5.0 商业版 v0.3.28
+# DCE 5.0 商业版 v0.3.27
 
 本页可下载 DCE 5.0 商业版的离线安装包和校验文件。
 
 ## 下载
 
-| 版本名称                   | 安装包                                                                                               |
-| -------------------------- | ---------------------------------------------------------------------------------------------------- |
-| offline-v0.3.28.tar | [下载](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.3.28.tar) |
+| 版本名称 | 安装包 |
+| ----- | ----- |
+| offline-v0.3.27.tar | [下载](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.3.27.tar) |
 
 ## 校验
 
 进入离线安装包下载目录。执行以下命令校验安装包：
 
 ```sh
-echo "88d89872d04d95ee44073c70460c2eb3ae4785a150fbfce672a5882c6f7d77f0d8f58359c5c8695e80d7e5fce93431c0c5ec6b710c080f4840d8adbb25daeb55  offline-v0.3.28.tar" | sha512sum -c
+echo "f637ec103af6e77d1af85bf0708bef71aee123ce4ac71c4a0adef539492cdbb1661a479d3e999cd51aa7cb47d49e001565908b237ef7999140e3435f6219bb08  offline-v0.3.27.tar" | sha512sum -c
 ```
 
 校验成功会打印：
 
 ```none
-offline-v0.3.28.tar: OK
+offline-v0.3.27.tar: OK
 ```
 
 ## 安装
 
-成功校验离线包之后，解压缩 tar 包：
-
-```sh
-tar -zxvf offline-v0.3.28.tar
-```
-
-然后参阅[安装 DCE 5.0 商业版](../../install/Air-Gap-install-full/start-install.md)进行安装。
+成功校验离线包之后，请参阅[商业版安装流程](../../install/Air-Gap-install-full/start-install.md)进行安装。
 
 成功安装之后请进行[正版授权](https://qingflow.com/f/e3291647)。
 
@@ -44,8 +38,8 @@ tar -zxvf offline-v0.3.28.tar
 
 DCE 5.0 商业版包含以下模块，按需即插即用满足各类应用场景：
 
-| 模块       | 介绍                                                                     | 最新动态                                                      |
-| ---------- | ------------------------------------------------------------------------ | ------------------------------------------------------------- |
+| 模块       | 介绍                                                                     | 最新动态                                                   |
+| ---------- | ------------------------------------------------------------------------ | ---------------------------------------------------------- |
 | 全局管理   | 负责用户访问控制、权限、企业空间、审计日志、个性化外观设置等             | [发布说明](../../release/rn5.0.md#_4)                         |
 | 容器管理   | 管理集群、节点、工作负载、Helm 应用、CRD、命名空间等 K8s 核心功能        | [v0.12.0](../../kpanda/03ProductBrief/release-notes.md#v0120) |
 | 可观测性   | 提供丰富的仪表盘、场景监控、数据查询、告警等图文信息                     | [v0.11.1](../../insight/03ProductBrief/releasenote.md#v0111)  |
