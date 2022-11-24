@@ -235,6 +235,7 @@ nav:
               - 使用场景: skoala/intro/scenarios.md
               - 产品优势: skoala/intro/advantages.md
               - 环境要求: skoala/intro/components.md
+              - Release Notes: skoala/intro/release-notes.md
           - 选择工作空间: skoala/select-workspace.md
           - 微服务治理中心:
               - 托管型注册中心:
