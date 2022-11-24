@@ -1,0 +1,3 @@
+files:
+  - source: docs/zh/docs/
+    translation: '%two_letters_code%'
