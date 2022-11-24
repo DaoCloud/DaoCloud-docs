@@ -96,7 +96,7 @@
 - Jaeger support elasticsearch output skip verfify TLS.
 - Disable jaeger components in Mode A.
 
-#### 其他
+### 其他
 
 - Add otel collector grafana dashboard.
 - Add Insight Overview Chinese version.
@@ -221,8 +221,8 @@
 
 - 新增文档站术语表
 - 新增文档站基本概念任务和实例、数据模型、查询语言等 4 个页面
-- 新增用户指南 - [场景监控](../06UserGuide/03scenarioinsight/README.md)，[数据查询](../06UserGuide/04dataquery/README.md)，[告警中心](../06UserGuide/05alertcenter/README.md)等文档
-- 文档站新增：[产品优势](../03ProductBrief/benefits.md)、[指标查询](../06UserGuide/04dataquery/metricquery.md)、[链路查询](../06UserGuide/04dataquery/tracequery.md)、[仪表盘](../06UserGuide/02dashboard.md)、[概述](../06UserGuide/overview.md)
+- 新增用户指南 - 场景监控、数据查询、告警中心等文档
+- 文档站新增：[产品优势](../03ProductBrief/benefits.md)、[指标查询](../06UserGuide/04dataquery/metricquery.md)、[链路查询](../06UserGuide/04dataquery/tracequery.md)、仪表盘、[概述](../06UserGuide/overview.md)
 
 ## v0.4
 
