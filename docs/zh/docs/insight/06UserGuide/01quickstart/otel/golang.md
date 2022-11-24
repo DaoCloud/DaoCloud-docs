@@ -79,6 +79,7 @@ func initTracer() func() {
 	traceExporter, err := otlptracegrpc.New(ctx, otlptracegrpc.WithInsecure(), otlptracegrpc.WithDialOption(grpc.WithBlock()))
 	if err != nil {
 		handleErr(err, "OTLP Trace gRPC Creation")
+		return nil
 	}
 
 	tracerProvider := sdktrace.NewTracerProvider(
