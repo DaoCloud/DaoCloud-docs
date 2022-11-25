@@ -1,8 +1,10 @@
-# 最新动态
+# Insight Release Notes
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
 ## v0.11
+
+发布日期：2022-11-21
 
 ### 功能
 
@@ -26,6 +28,8 @@
 - `kubernetes-event-exporter` helm chart 从 v1.4.21 升级至 v2.0.0
 
 ## v0.10
+
+发布日期：2022-10-20
 
 ### 功能特性
 
@@ -74,6 +78,8 @@
 
 ## v0.9
 
+发布日期：2022-9-25
+
 ### 功能特性
 
 - Support kpanda service name associated with the otel service name, identify whether the service tracing enabled.
@@ -103,6 +109,8 @@
 
 ## v0.8
 
+发布日期：2022-8-21
+
 ### 功能特性
 
 - Migrate graph server into insight server.
@@ -127,6 +135,8 @@
 - Move Fluentbit config to a ConfigMap.
 
 ## v0.7
+
+发布日期：2022-7-20
 
 ### 破坏变更
 
@@ -156,6 +166,8 @@
 - Add GrafanaDashboard, GrafanaDatasource CRDs.
 
 ## v0.6
+
+发布日期：2022-6-23
 
 ### 破坏变更
 
@@ -194,6 +206,8 @@
 
 ## v0.5
 
+发布日期：2022-5-18
+
 ### 功能特性
 
 - 添加通知模板 API
@@ -226,6 +240,8 @@
 
 ## v0.4
 
+发布日期：2022-4-22
+
 ### 功能特性
 
 - 增加告警通知模块主要 API
@@ -253,6 +269,8 @@
 - 更新文档结构
 
 ## v0.3
+
+发布日期：2022-3-18
 
 ### 功能特性
 
