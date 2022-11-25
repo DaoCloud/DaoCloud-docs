@@ -4,6 +4,8 @@
 
 ## v0.1.2
 
+发布日期：2022-10-28
+
 - **新增** `mcamel-kafka-ui` 同步 pod 状态到实例详情页
 - **优化** `mcamel-kafka-ui` workspace 界面逻辑调整
 - **优化** `mcamel-kafka-ui` 不符合设计规范的样式调整
@@ -11,6 +13,8 @@
 - **优化** `mcamel-kafka-ui` cpu&内存请求量应该小于限制量逻辑调整
 
 ## v0.1.1
+
+发布日期：2022-9-25
 
 - **新增** `mcamel-kafka` 支持 kafka 列表查询，状态查询，创建，删除和修改
 - **新增** `mcamel-kafka` 支持 kafka-manager 对 kafka 进行管理
