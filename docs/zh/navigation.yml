@@ -398,6 +398,7 @@ nav:
               - 查看列表: middleware/elastic-search/userguide/view.md
               - 概览: middleware/elastic-search/userguide/basic.md
               - 实例监控: middleware/elastic-search/userguide/monitor.md
+              - Release Notes: middleware/elastic-search/release-notes.md
           - Kafka 消息队列:
               - 什么是 Kafka: middleware/kafka/intro/what.md
               - 适用场景: middleware/kafka/intro/scenarios.md
@@ -410,6 +411,7 @@ nav:
               - 查看消息队列: middleware/kafka/userguide/view.md
               - 实例监控: middleware/kafka/userguide/insight.md
               - 配置参数: middleware/kafka/userguide/config.md
+              - Release Notes: middleware/kafka/release-notes.md
           - MinIO 对象存储:
               - 什么是 MinIO: middleware/minio/intro/what.md
               - 适用场景: middleware/minio/intro/scenarios.md
@@ -422,6 +424,7 @@ nav:
               - 查看消息队列: middleware/minio/userguide/view.md
               - 实例监控: middleware/minio/userguide/insight.md
               - 配置参数: middleware/minio/userguide/config.md
+              - Release Notes: middleware/minio/release-notes.md
           - MySQL 数据库:
               - 什么是 MySQL: middleware/mysql/intro/what.md
               - 功能说明: middleware/mysql/intro/features.md
@@ -432,6 +435,7 @@ nav:
               - 创建 MySQL: middleware/mysql/userguide/create.md
               - 更新 MySQL: middleware/mysql/userguide/update.md
               - 删除 MySQL: middleware/mysql/userguide/delete.md
+              - Release Notes: middleware/mysql/release-notes.md
           - RabbitMQ 消息队列:
               - 什么是 RabbitMQ: middleware/rabbitmq/intro/what.md
               - 功能说明: middleware/rabbitmq/intro/features.md
@@ -446,6 +450,7 @@ nav:
               - 查看消息队列: middleware/rabbitmq/userguide/view.md
               - 数据迁移: middleware/rabbitmq/userguide/migrate.md
               - 实例监控: middleware/rabbitmq/userguide/insight.md
+              - Release Notes: middleware/rabbitmq/release-notes.md
           - Redis 缓存服务:
               - 什么是 Redis: middleware/redis/intro/what.md
               - 适用场景: middleware/redis/intro/scenarios.md
@@ -454,6 +459,7 @@ nav:
               - 创建 Redis 实例: middleware/redis/userguide/create.md
               - 更新 Redis 实例: middleware/redis/userguide/update.md
               - 删除 Redis 实例: middleware/redis/userguide/delete.md
+              - Release Notes: middleware/redis/release-notes.md
       - 云原生本地存储:
           - 介绍: hwameistor/intro/what.md
           - 模块:
@@ -543,3 +549,8 @@ nav:
       - Spiderpool: community/spiderpool.md
   - 下载中心:
       - DaoCloud Enterprise 5.0: download/dce5.md
+  - 云原生研究院:
+      - 社区要闻: native/news.md
+      - 商业产品: native/commerce.md
+      - 开源项目: native/open.md
+      - 知识分享: native/knowledge.md

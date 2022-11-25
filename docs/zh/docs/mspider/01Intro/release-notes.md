@@ -4,6 +4,8 @@
 
 ## v0.10
 
+发布日期：2022-10-28
+
 ### API
 
 - **改进** 边车升级接口新增工作负载与边车升级信息字段：
@@ -77,6 +79,8 @@
 
 ## v0.9
 
+发布日期：2022-9-25
+
 ### API
 
 - **改进** 服务列表接口 page.search 只支持 字段搜索，不支持 ckube 索引搜索。
@@ -111,7 +115,7 @@
 - **修复** 外部网格模式删除检测不需要检测网格网关与边车资源
 - **修复** admin 判断无效，导致无法获取正确的集群和命名空间数据
 - **修复** authorizationpolicies 资源中 .spec.action 为 ALLOW 时，字段为空，导致无法搜索其的相关资源
-- **移除** 命名空间接口的系统命名空间（istio-system, mspider-system等）的过滤
+- **移除** 命名空间接口的系统命名空间（istio-system, mspider-system 等）的过滤
 - **优化** 集群列表接口根据用户名和其所在用户组授权情况进行对应展示
 - **优化** 工作空间绑定资源流程，避免出现和 ghippo 资源绑定不同步的情况
 
@@ -174,7 +178,7 @@
 - **改进** 删除 1.14.2 版本支持，新增 1.14.4 版本支持
 - **新增** 默认将 tracing 发往 Insight
 - **新增** 在不设置 global.imageRegistry 的情况下，默认全部使用公网镜像，不再使用 release.daocloud.io/mspider 作为默认镜像仓库
-- **新增** 在 Mspider 相关 Pod 上新增 label: sidecar.istio.io/inject: "true"，解决Mspider 默认注入无效问题
+- **新增** 在 Mspider 相关 Pod 上新增 label: sidecar.istio.io/inject: "true"，解决 Mspider 默认注入无效问题
 - **新增** Istio 1.14.4 的 patch 文件
 - **修复** 服务面板第一行默认被折叠的问题
 - **修复** MSpider 部署无法接受 ui.version 参数导致开发环境 UI 镜像被回滚
@@ -182,6 +186,8 @@
 - **优化** 统一 Grafana 面板的自动刷新时间枚举：5s、10s、30s、1m、5m、15m、30m、1h、2h、1d
 
 ## v0.8
+
+发布日期：2022-8-23
 
 ### API
 
@@ -233,9 +239,9 @@
 ### work-api
 
 - **新增** grpc 请求支持根据用户名做授权。
-- **修复** 查询服务详情接口，replicas和availableReplicas都为0，为其添加实例信息
-- **修复** 请求修改服务列表中【不存在的服务】的端口协议接口时，返回200
-- **优化** 优化AggregationService{}逻辑
+- **修复** 查询服务详情接口，replicas 和 availableReplicas 都为 0，为其添加实例信息
+- **修复** 请求修改服务列表中【不存在的服务】的端口协议接口时，返回 200
+- **优化** 优化 AggregationService{}逻辑
 - **优化** 生成服务端口名时，增加端口列表的命名唯一检测优化：追加端口号
 - **优化** 命名空间列表支持 user group。
 
@@ -283,7 +289,7 @@
 
 - **新增** manifests 中 global.imageRegistry
 - **新增** helm 增加通用参数： resources, imagePullPolicy, imagePullSecrets
-- **新增** helm chart 包新增 _common.tpl, 用于定义通用的模板:
+- **新增** helm chart 包新增 \_common.tpl, 用于定义通用的模板:
     - 核心原则：
         - .Values > .Values.global
         - common.images.pullSecrets: 按照优先级合并 imagePullSecrets
@@ -306,6 +312,8 @@
 - **新增** 9 月文档页面：添加集群、移除集群、创建网格网关、删除网格网关、新增截图无数
 
 ## v0.7
+
+发布日期：2022-7-21
 
 ### API
 
@@ -330,7 +338,7 @@
 
 ### work-api
 
-- **修复** 查询服务详情接口，replicas和availableReplicas都为0，为其添加实例信息
+- **修复** 查询服务详情接口，replicas 和 availableReplicas 都为 0，为其添加实例信息
 
 ### 基础设施
 
@@ -340,11 +348,11 @@
 - **新增** 为控制面组件增加 HPA
 - **新增** 增加控制面组件高可用部署方案文档
 - **新增** `api-service`、`work-api`、`mcpc-controller`、`gsc-controller`、`reg-proxy` 指标接口 `/metrics`
-- **新增** 组件 `api-service`、`work-api`、`mcpc-controller`、`gsc-controller`、`reg-proxy` 组件 Up 指标：`up` Component up status. type: `Gauge`.  
+- **新增** 组件 `api-service`、`work-api`、`mcpc-controller`、`gsc-controller`、`reg-proxy` 组件 Up 指标：`up` Component up status. type: `Gauge`.
 - **新增** 组件 `api-service` 与 `work-api` http 相关指标如下：
-    - `http_request_duration_seconds` The latency of the HTTP requests. type: `Histogram`.
-    - `http_response_size_bytes` The size of the HTTP responses. type: `Histogram`.
-    - `http_requests_inflight` The number of inflight requests being handled at the same time. type: `Gauge`.  
+    - `http_request_duration_seconds` The latency of the HTTP requests. type: `Histogram`
+    - `http_response_size_bytes` The size of the HTTP responses. type: `Histogram`
+    - `http_requests_inflight` The number of inflight requests being handled at the same time. type: `Gauge`
 
 ### 控制器
 
@@ -370,28 +378,30 @@
 
 ### 文档
 
-- **新增** 增加api benchmark测试, 此测试只做接口benchmark稳定  
+- **新增** 增加 api benchmark 测试, 此测试只做接口 benchmark 稳定
 - **新增** 多区域负载均衡与区域容灾治理文档
-- **新增** 文档页面描述：系统架构、服务管理、网关规则、目标规则、虚拟服务、对等身份认证、请求身份认证、授权策略等  
+- **新增** 文档页面描述：系统架构、服务管理、网关规则、目标规则、虚拟服务、对等身份认证、请求身份认证、授权策略等
 
 ## v0.6
 
-### api
+发布日期：2022-6-23
 
-- **改进** 目前某些字段还保留了下划线模式，但是同时增加了一个驼峰模式的 Key  
-- **改进** 查询服务版本列表返回参数 items 类型由 string 变更为 Subset 对象  
+### API
+
+- **改进** 目前某些字段还保留了下划线模式，但是同时增加了一个驼峰模式的 Key
+- **改进** 查询服务版本列表返回参数 items 类型由 string 变更为 Subset 对象
 - **改进** 将 `mspider.io/synced-from` 的 Label 定义移动到 api
 - **改进** Page 参数，按照第五代产品规范，重新修改分页逻辑，page_size = -1 表示全量，原有的 page=0&page_size=0 表示全量的逻辑废弃，在这种情况下，将视为默认参数（page=1&page_size=10）
 - **新增** 网格网关创建失败时的失败原因字段 `failure_reason`
-- **新增**  新增获取 ServiceInstance 列表接口实现
+- **新增** 新增获取 ServiceInstance 列表接口实现
 - **新增** 新增拓扑接口定义，并引入 insight graph.proto 定义
-- **新增** 将 Istio 的 extensions、telemetry、security 的 proto 定义加入 ts sdk  
+- **新增** 将 Istio 的 extensions、telemetry、security 的 proto 定义加入 ts sdk
 - **新增** global.mesh_capacity 参数，用于定义网格规模
 - **新增** 新增网格网关 API 定义
 - **新增** 新增网格更新接口
 - **新增** 指标查询接口定义
 - **新增** 网格统计信息接口定义
-- **新增**  新增获取 ServiceInstance 列表接口
+- **新增** 新增获取 ServiceInstance 列表接口
 - **新增** 将 TS 生成的 OneOf 类型 export，便于前端使用
 - **新增** 网格列表，网格为失败情况下失败原因字段 `failure_reason`
 - **新增** 集群纳管列表，集群接入失败时失败原因字段 `failure_reason`
@@ -403,7 +413,7 @@
 - **修复** 将接口的全部改为驼峰格式，弃用原有的下划线模式
 - **修复** 将所有 CKube 的 index key 改为驼峰模式，便于前端统一
 - **修复** 修复 DELETE 方法 SDK 无法拼接 query, 改为 body 传递参数
-- **修复** 在某些时候命名执行了 make gen，却还是报 Gen Check Error，是因为没有在 gen-proto 之前执行 format proto。 ([Issue #67](https://gitlab.daocloud.cn/ndx/mspider/-/issues/67)) 
+- **修复** 在某些时候命名执行了 make gen，却还是报 Gen Check Error，是因为没有在 gen-proto 之前执行 format proto。 ([Issue #67](https://gitlab.daocloud.cn/ndx/mspider/-/issues/67))
 - **修复** sidecar 接口无效
 - **修复** 因为合并时序问题导致更新网格接口的风格没有修改
 - **升级** 更新 insight version to v0.6.2
@@ -411,11 +421,11 @@
 - **优化** 优化 mesh-gateway 字段
 - **优化** 将边车管理接口独立到 `apis/management-api/sidecar` 位置
 
-### api-service
+### API-service
 
 - **新增** mspider 权限实现
 - **新增** 网格网关相关实现
-- **新增**  新增获取 ServiceInstance 列表接口单元测试
+- **新增** 新增获取 ServiceInstance 列表接口单元测试
 - **新增** 新增网格更新实现
 - **新增** 网格接入、集群纳管、工作负载边车、全局边车失败原因
 - **新增** 新增拓扑接口实现，通过调用 insight graph server
@@ -448,7 +458,7 @@
 
 - **新增** mspider 权限实现
 - **新增** Nacos 注册中心适配
-- **修复** 服务地址没有对应排序字段导致的组件crash
+- **修复** 服务地址没有对应排序字段导致的组件 crash
 - **修复** work-api 因分页问题导致的 crash
 - **修复** namespace 角色可以获取全部 namespace
 - **修复** page.Search 驼峰格式报错问题
@@ -481,7 +491,7 @@
 - **新增** 实现 ClusterID 的同步逻辑，为适配 Insight 做准备
 - **修复** workloadShadow 的创建逻辑，即使没有注入 sidecar 我们也应该创建 workloadShadow
 - **修复** interceptor 某些请求被错误拦截的情况
-- **修复** InternalToken 没有被正确使用的情况（方便e2e测试）
+- **修复** InternalToken 没有被正确使用的情况（方便 e2e 测试）
 - **修复** 自定义 Pilot IP 同时会影响到主 Istiod 的情况
 - **修复** 集群在某些情况下无法移除
 - **修复** 缺少聚合集群 kube config 状态判断
@@ -503,7 +513,7 @@
 
 ### 外部
 
-- **新增** GProductNavigator、GProductProxy添加spec.gproduct字段
+- **新增** GProductNavigator、GProductProxy 添加 spec.gproduct 字段
 - **修复** 无法同步所有 KPanda 集群信息
 - **修复** GHippo 删除了 iconName 字段，等待新 icon 被提供出来
 - **升级** KPanda API 版本
@@ -513,28 +523,29 @@
 ### 安装
 
 - **改进** 全局菜单栏侧边显示支持国际化
-- **新增** 增加 GProductVersion 的 CR。 ([Issue #62](https://gitlab.daocloud.cn/ndx/mspider/-/issues/62)) 
+- **新增** 增加 GProductVersion 的 CR
 - **移除** BFF Service，应该是以前复制代码的时候没注意
 
 ### 文档
 
-- **改进** 把e2e test合并到nightly test，merge request可选择跑e2e test
+- **改进** 把 e2e test 合并到 nightly test，merge request 可选择跑 e2e test
 - **改进** 拆分网格管理 API
     1. 网格管理
     2. 网格中集群管理
     3. 全局边车管理
     4. 工作负载边车管理
-    5. 命名空间边车管理  
-- **新增** 文档站页面：[创建托管网格](../03UserGuide/servicemesh/createmanaged.md)、[创建专用网格](../03UserGuide/servicemesh/creatededicated.md)、[删除网格](../03UserGuide/servicemesh/delete.md)、[集群纳管](../03UserGuide/08ClusterManagement/README.md)、[命名空间边车管理](../03UserGuide/07SidecarManagement/NamespaceSidecar.md)、[工作负载边车管理](../03UserGuide/07SidecarManagement/WorkloadSidecar.md)  
-- **新增** 针对不同集群的主要k8s资源check  
-- **新增** istio resource 虚拟服务, 以及部分目标规则e2e测试  
+    5. 命名空间边车管理
+- **新增** 针对不同集群的主要 k8s 资源 check
+- **新增** istio resource 虚拟服务, 以及部分目标规则 e2e 测试
 - **新增** 某些 Istio 资源的翻译，按照原型的说明进行对应
-- **新增** 中英 pages.yml 文件，作为文档站总站对外目录的一部分  
+- **新增** 中英 pages.yml 文件，作为文档站总站对外目录的一部分
 - **新增** 注册中心代理组件设计文档
-- **新增** 部署mspider环境，增加创建sleep资源，用于网格sidecar注入的e2e测试使用  
-- **新增** 更新e2e测试用例代码跳转链接  
+- **新增** 部署 mspider 环境，增加创建 sleep 资源，用于网格 sidecar 注入的 e2e 测试使用
+- **新增** 更新 e2e 测试用例代码跳转链接
 
 ## v0.5
+
+发布日期：2022-5-21
 
 ### API
 
@@ -595,7 +606,7 @@
 - **修复** mcpc-controller 启动时 --deniedNamespaces 默认命名空间无效的问题
 - **修复** namespace informer 无效导致的 ns 没有在托管控制集群创建的问题，改用 watcher
 - **修复** 网格就绪条件判断，避免在托管网格未就绪的情况下，无法获得 Pilot IP 而导致 Workload 集群无法安装
-- **修复** 创建托管网格后，一直处于CREATING状态，因为没有配置 DeployNamespace，为其设置默认值 `istio-system`
+- **修复** 创建托管网格后，一直处于 CREATING 状态，因为没有配置 DeployNamespace，为其设置默认值 `istio-system`
 - **修复** Annotation 位置之后代码没更新
 - **修复** DEDICATED 模式下 MCPC Controller 因为 ConfigMap 为空导致无法启动
 - **修复** 网格配置更新后，会覆盖掉 Workload 集群原有的配置，如 Sidecar 资源用量等
@@ -610,20 +621,19 @@
 
 - **升级** 前端版本
 - **升级** 前端版本至 v0.2.0
-
-### 安装
-
 - **新增** Istio CRD Ckube 配置
 
 ### 文档
 
 - **改进** 网格管理服务 api 测试用例：a. 网格/添加集群增删查; b. 工作负载/命名空间以及 global 的 sidecar 的配置及获取信息
 - **新增** mspider work api NodePort SVC 在部署 mspider 环境时
-- **新增** 目标规则、网关规则、yaml资源、虚拟服务 api 测试用例
+- **新增** 目标规则、网关规则、yaml 资源、虚拟服务 api 测试用例
 - **新增** istio 资源管理、网格边车管理测试覆盖率
 - **新增** 文档页面：产品优势、适用场景、功能总览、常见术语以及和两个基础知识（流量治理和虚拟服务）
 
 ## v0.4
+
+发布日期：2022-4-22
 
 ### API
 
@@ -684,7 +694,7 @@
 
 ### 基础设施
 
-- **新增** 对 releasenotes 格式的检查，禁止多个不同类型的releasenotes
+- **新增** 对 releasenotes 格式的检查，禁止多个不同类型的 releasenotes
 - **新增** 在发布版本的脚本中，增加自动发布 GitLab Release 的操作
 - **新增** 使用 Nexus Cache Go Module
 - **新增** 切换 Go 到 1.18.2
@@ -692,13 +702,13 @@
 
 ### 控制器
 
-- **新增** 对 workloadShadow 的API部分新增的状态的同步，同时对 workloadShadow 的资源情况进行同步
+- **新增** 对 workloadShadow 的 API 部分新增的状态的同步，同时对 workloadShadow 的资源情况进行同步
 - **新增** 服务 annotation "controller.mspider.io/workload-id"，用于关联 workloadShadow，避免 service 多次不必要的查询
 - **新增** 为 controller 的 serviceAccount 新增一些关键的权限，比如 deployment 的 CRUD 等等
 - **修复** mcpc-controller 没有正确同步 service 的问题
 - **修复** mcpc-controller status 不正确的问题
-- **修复** workloadShadow controller 没有正确启动问题（ckube watch导致）
-- **修复** remote-kube-api-server 的 configmap 中多余的config，由于托管集群可被纳管导致
+- **修复** workloadShadow controller 没有正确启动问题（ckube watch 导致）
+- **修复** remote-kube-api-server 的 configmap 中多余的 config，由于托管集群可被纳管导致
 - **修复** controller 未能正确识别托管模式的问题，导致 wls 被创建到 ownerCluster 中
 - **修复** 独立部署集群无法注入 Sidecar，mutatingwebhookconfigurations 的逻辑已经在 IOP 的 Template 中处理
 - **优化** 去除一些暂时不需要的 remote ckube 的 config watch，否则会有很多报错的 log
@@ -711,7 +721,7 @@
 - **新增** controller.mspider.io/proxy-version 注解，用于标注 pod 上的实际边车注入版本
 - **修复** mcpc-controller 启动时 --deniedNamespaces 默认命名空间无效的问题
 - **修复** namespace informer 无效导致的 ns 没有在托管控制集群创建的问题，改用 watcher
-- **修复** 创建托管网格后，一直处于CREATING状态，因为没有配置 DeployNamespace，为其设置默认值 `istio-system`
+- **修复** 创建托管网格后，一直处于 CREATING 状态，因为没有配置 DeployNamespace，为其设置默认值 `istio-system`
 - **修复** 网格一直处于刷新中的状态，无法完全删除
 - **修复** 同步 kpanda 集群状态时空指针异常
 - **优化** mcpc-controller 对于已经存在 service 名称的 workloadShadow 的逻辑
@@ -725,22 +735,21 @@
 
 - **升级** Ckube 到 1.0.5，增加可以在 ckube 里面使用 kubectl 操作多集群资源的能力
 - **升级** Ckube 到 1.0.7，修复 CKube watch 可能错误的问题
-
-### 安装
-
 - **新增** 开发环境 CI 不修改 ui 版本
 - **新增** 新增 Istio CRD Ckube 配置
 
 ### 文档
 
 - **新增** e2e 冒烟测试
-- **改进** e2e 自动创建kind集群->部署mspider->e2e冒烟测试->e2e API测试->clear集群 的 nightly test
-- **改进** 网格管理服务api测试用例：a. 网格/添加集群增删查; b. 工作负载/命名空间以及global的sidecar的配置及获取信息
-- **新增** 新增目标规则、网关规则、yaml资源、虚拟服务 api测试用例
-- **新增**  新增istio资源管理、网格边车管理测试覆盖率
+- **改进** e2e 自动创建 kind 集群->部署 mspider->e2e 冒烟测试->e2e API 测试->clear 集群 的 nightly test
+- **改进** 网格管理服务 api 测试用例：a. 网格/添加集群增删查; b. 工作负载/命名空间以及 global 的 sidecar 的配置及获取信息
+- **新增** 新增目标规则、网关规则、yaml 资源、虚拟服务 api 测试用例
+- **新增** 新增 istio 资源管理、网格边车管理测试覆盖率
 - **新增** 文档页面：产品优势、适用场景、功能总览、常见术语以及和两个基础知识（流量治理和虚拟服务）
 
 ## v0.3
+
+发布日期：2022-3-23
 
 ### API
 
@@ -766,7 +775,7 @@
 - **优化** 使用 github.com/golang/protobuf/jsonpb 代替 gogo protobuf
 - **优化** enum 的字段，统一所有 enum 为大写加下划线命名法的常用规范（可能导致前段部分 enum 失效）,同时为没有注释的值增加注释
 - **优化** 边车管理相关 api，查询时从 workload 名称变成了 workload_id
-- **优化** 资源对象，和 kpandas 中统一，提供的 CPU 资源的数值单位为（m），提供的内存的数值的单位为（Mi * 1000）
+- **优化** 资源对象，和 kpandas 中统一，提供的 CPU 资源的数值单位为（m），提供的内存的数值的单位为（Mi \* 1000）
 - **改进** 将 CRD 的 Status 和 Spec 字段换成 Pointer，防止 NoCopy 导致的问题
 - **修复** enum 默认值问题，将所有 enumerate 类型默认值（0）设置为 `Unspecified`
 - **修复** 因 enum 改动而影响的代码逻辑、测试逻辑
@@ -791,7 +800,7 @@
 
 - **新增** 为 hosted etcd 增加 pv 防止数据丢失
 - **新增** 发布版本时自动发布 js sdk
-- **新增** 在CI中增加gomod依赖包版本自动扫描job, 此job定义为gitlab CI schedule每个月执行一次; 如扫描出更新版本, 则自动创建PR由开发人员评判是否合入此PR更新依赖包版本
+- **新增** 在 CI 中增加 gomod 依赖包版本自动扫描 job, 此 job 定义为 gitlab CI schedule 每个月执行一次; 如扫描出更新版本, 则自动创建 PR 由开发人员评判是否合入此 PR 更新依赖包版本
 - **新增** 静态检查增加 helm chart render 检查
 - **新增** 自动发布版本的时候，在 tag 里面带上 release notes
 - **新增** 按照大版本划分 release-notes 目录
@@ -820,7 +829,7 @@
 - **修复** controller status 同步问题
 - **修复** 多集群多 kubeconfig 时的启动问题
 - **修复** 独立部署模式下 GlobalMesh Reconcile 的 MeshCluster 角色不对
-- **修复** WorkloadShadow 生成 Kubernetes CRD 中枚举类型，将 `type` 字段重命名为 `kind`，并增加对应 kubebuilder 注释。 问题现象：枚举类型为 integer，导致无法  MCPC Controller 创建与更新 WorkloadShadow
+- **修复** WorkloadShadow 生成 Kubernetes CRD 中枚举类型，将 `type` 字段重命名为 `kind`，并增加对应 kubebuilder 注释。 问题现象：枚举类型为 integer，导致无法 MCPC Controller 创建与更新 WorkloadShadow
 - **修复** MCPC Controller informer 没有数据同步的问题
 - **修复** GSC Controller reconcileIOPConfigParams 安装参数 `global.clusterRole` 错误
 - **修复** 某些情况下，Globalmesh 资源没有被 Reconcile，修改为，只要不是成功或失败的情况下，都每隔 10s Reconcile 一次
@@ -839,17 +848,14 @@
 - **升级** Ckube 到 1.0.4，修复当配置变更时，老的 Watcher 依然存在，导致 Server 负载过高的问题
 - **升级** Ckube 到 1.0.5，增加可以在 ckube 里面使用 kubectl 操作多集群资源的能力
 - **修复** KPanda Service 名字错误
-
-### 安装
-
 - **新增** 开发环境 CI 不修改 ui 版本
 
 ### 文档
 
-- **新增** 文档站，部署了 [honkit](https://github.com/honkit)
+- **新增** 文档站部署了 [honkit](https://github.com/honkit)
 - **新增** 中英文档站的大纲
 - **新增** 文档站的 roadmap
-- **新增** 4-9 月的 RoadMap 文档
-- **新增** e2e测试用例的 coverage
+- **新增** 4 - 9 月的 RoadMap 文档
+- **新增** e2e 测试用例的 coverage
 - **新增** MSpider 权限设计文档
 - **新增** 梳理 release notes 到文档站，方便项目跟踪和展示
