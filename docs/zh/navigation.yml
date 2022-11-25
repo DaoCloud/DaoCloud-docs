@@ -550,7 +550,7 @@ nav:
   - 下载中心:
       - DaoCloud Enterprise 5.0: download/dce5.md
   - 云原生研究院:
-      - 社区要闻: news.md
-      - 商业产品: commerce.md
-      - 开源项目: open.md
-      - 知识分享: knowledge.md
+      - 社区要闻: native/news.md
+      - 商业产品: native/commerce.md
+      - 开源项目: native/open.md
+      - 知识分享: native/knowledge.md
