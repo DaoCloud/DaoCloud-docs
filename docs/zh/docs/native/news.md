@@ -8,7 +8,7 @@
 
 - [12 月 21 日全球分布式云大会·深圳站议题征集中](https://mp.weixin.qq.com/s/d5j4WawE_fzHuh4ZyRsixg)
 
-    由全球分布式云联盟、众视 Tech 主办的的 2022 全球分布式云大会·深圳站将于 12 月 21 日召开。大会以“云筑数字新基 远见数智未来”为主题，
+    由全球分布式云联盟、众视 Tech 主办的 2022 全球分布式云大会·深圳站将于 12 月 21 日召开。大会以“云筑数字新基 远见数智未来”为主题，
     将设立分布式主题报告会以及分布式算力、分布式数据库、云原生开源实践三大主题分论坛。
 
 - [12 月 17 日中国 DevOps 社区峰会·武汉定档](https://mp.weixin.qq.com/s/eZjuwOym4OwgJX3UEy75Cg)
@@ -33,7 +33,8 @@
 - [12 月 7 日 CNCF 发起地区性云原生系列活动 KubeDay，首场在日本拉开帷幕](https://www.cncf.io/blog/2022/08/17/introducing-kubeday-event-series-kicking-off-with-kubeday-japan-this-december/)
 
     首次 KubeDay 活动 将于 12 月 7 日在日本横滨举行。[演讲提案申请](https://events.linuxfoundation.org/kubeday-japan/program/cfp/)现已开放（截至 9 月 6 日 23:59），
-    演讲者需亲临现场。CNCF 社区计划在 2023 年将这一活动推广到全球各地，主要针对社区发展活跃和对 Kubernetes 等云原生技术感兴趣的地区。KubeDay 将分为初级和高级板块，当地和国际演讲者约各占一半。
+    演讲者需亲临现场。CNCF 社区计划在 2023 年将这一活动推广到全球各地，主要针对社区发展活跃和对 Kubernetes 等云原生技术感兴趣的地区。
+    KubeDay 将分为初级和高级板块，当地和国际演讲者约各占一半。
 
 - [12 月 7 日 KubeDay Japan 会议议程发布](https://events.linuxfoundation.org/kubeday-japan/program/schedule/)
 
@@ -45,7 +46,7 @@
     论坛由工业和信息化部主办，聚焦主题“软件架构的变革、新生产力的飞跃”。
     届时将发布和应用现代化、金融行业湖仓、Serverless 相关的报告，以及公布云原生存储、大数据、混部、安全、弹性算力、中间件领域的评估结果。
 
-- [12 月 3 日上海 Meetup：微服务 x 容器开源开发者 Meetup 由阿里云飞天 club 与云原生应用平台共同打造](https://mp.weixin.qq.com/s?__biz=MzUzNzYxNjAzMg==&mid=2247547325&idx=2&sn=92452e2aec3c83df7bb0f24782519e46&chksm=fae63272cd91bb648d4b1ab1e6003137084dac4902ce0eff540a8e67a866436f6000850842d6&mpshare=1&scene=1&srcid=1126cHki8U6bIAY3HPrftcoN&sharer_sharetime=1669441607353&sharer_shareid=0955de63068953635fe389414acc156f&version=4.0.2.6061&platform=win#rd)
+- [12 月 3 日微服务 x 容器开源开发者 Meetup 在上海举行](https://mp.weixin.qq.com/s/OlGXER4RgfyCwKT0at_6ug)
 
     百花齐放逐梦云原生，开源分享赋能开发者。12 月 03 日上海站，微服务x容器开源开发者 Meetup 将围绕云原生领域当下 11 个热门开源项目的技术分享和企业实践展开，
     邀请到 Spring Cloud Alibaba、Dubbo、OpenYurt、KubeVela、OpenSergo 等云原生领域传统&新锐开源项目核心维护者，为大家分享社区最近动态、架构实践及企业应用案例等精彩内容。
@@ -54,12 +55,6 @@
 
     此次云原生 Meetup 长沙站由云原生社区主办，演讲者来自极狐 GitLab、中国移动、中国电信等公司，
     演讲内容涵盖 DevSecOps、ClusterAPI、云桌面等技术和话题。
-
-- [12 月 3 日微服务 x 容器开源开发者 Meetup 在上海举行](https://mp.weixin.qq.com/s/OlGXER4RgfyCwKT0at_6ug)
-
-    微服务 x 容器开源开发者 Meetup 由阿里云飞天 club 与云原生应用平台共同打造。
-    本次 Meetup 邀请到 Spring Cloud Alibaba、Dubbo、OpenYurt、KubeVela、OpenSergo 等项目的核心维护者，
-    演讲内容围绕 11 个云原生开源项目的技术分享和企业实践展开。
 
 ## 2022 年 11 月
 
