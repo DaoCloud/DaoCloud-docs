@@ -15,11 +15,6 @@
 
     峰会设置 1 个主会场和 4 个分会场。主会场分享最新 DevOps 成功实践案例，分会场包括精益敏捷专场、工程卓越专场、数字化转型专场、DevOps 流水线工作坊。
 
-- [12 月 7 日 CNCF 发起地区性云原生系列活动 KubeDay，首场在日本拉开帷幕](https://www.cncf.io/blog/2022/08/17/introducing-kubeday-event-series-kicking-off-with-kubeday-japan-this-december/)
-
-    首次 KubeDay 活动 将于 12 月 7 日在日本横滨举行。[演讲提案申请](https://events.linuxfoundation.org/kubeday-japan/program/cfp/)现已开放（截至 9 月 6 日 23:59），
-    演讲者需亲临现场。CNCF 社区计划在 2023 年将这一活动推广到全球各地，主要针对社区发展活跃和对 Kubernetes 等云原生技术感兴趣的地区。KubeDay 将分为初级和高级板块，当地和国际演讲者约各占一半。
-
 - [12 月 16 日 Linux 基金会亚太团队正式启动 OSPO Summit 2022，共话本地和全球的开源发展](https://mp.weixin.qq.com/s/W9kb4YeuqC77pfpBAdFUOQ)
 
     峰会定于 12 月 16 日在北京举行，将重点讨论 Upstream First 的成功实践和开源办公室（OSPO）的工作实践。
@@ -35,6 +30,11 @@
     在信通院云原生产业联盟和 CNCF 的指导下，云原生技术实践联盟面向全行业，征集利用云原生技术实现降本增效、结构升级、管理优化、业务创新等价值的案例。
     申报案例所涉及技术领域包括但不限于容器、DevOps、微服务、Serverless、云原生存储、云原生安全、云原生网络、云原生数据库、云原生中间件等方向。
 
+- [12 月 7 日 CNCF 发起地区性云原生系列活动 KubeDay，首场在日本拉开帷幕](https://www.cncf.io/blog/2022/08/17/introducing-kubeday-event-series-kicking-off-with-kubeday-japan-this-december/)
+
+    首次 KubeDay 活动 将于 12 月 7 日在日本横滨举行。[演讲提案申请](https://events.linuxfoundation.org/kubeday-japan/program/cfp/)现已开放（截至 9 月 6 日 23:59），
+    演讲者需亲临现场。CNCF 社区计划在 2023 年将这一活动推广到全球各地，主要针对社区发展活跃和对 Kubernetes 等云原生技术感兴趣的地区。KubeDay 将分为初级和高级板块，当地和国际演讲者约各占一半。
+
 - [12 月 7 日 KubeDay Japan 会议议程发布](https://events.linuxfoundation.org/kubeday-japan/program/schedule/)
 
     KubeDay 是 CNCF 主办的地区性云原生系列活动，首场将于下月初在日本举行。目前，会议的议程已经发布。
@@ -44,6 +44,11 @@
 
     论坛由工业和信息化部主办，聚焦主题“软件架构的变革、新生产力的飞跃”。
     届时将发布和应用现代化、金融行业湖仓、Serverless 相关的报告，以及公布云原生存储、大数据、混部、安全、弹性算力、中间件领域的评估结果。
+
+- [12 月 3 日上海 Meetup：微服务 x 容器开源开发者 Meetup 由阿里云飞天 club 与云原生应用平台共同打造](https://mp.weixin.qq.com/s?__biz=MzUzNzYxNjAzMg==&mid=2247547325&idx=2&sn=92452e2aec3c83df7bb0f24782519e46&chksm=fae63272cd91bb648d4b1ab1e6003137084dac4902ce0eff540a8e67a866436f6000850842d6&mpshare=1&scene=1&srcid=1126cHki8U6bIAY3HPrftcoN&sharer_sharetime=1669441607353&sharer_shareid=0955de63068953635fe389414acc156f&version=4.0.2.6061&platform=win#rd)
+
+    百花齐放逐梦云原生，开源分享赋能开发者。12 月 03 日上海站，微服务x容器开源开发者 Meetup 将围绕云原生领域当下 11 个热门开源项目的技术分享和企业实践展开，
+    邀请到 Spring Cloud Alibaba、Dubbo、OpenYurt、KubeVela、OpenSergo 等云原生领域传统&新锐开源项目核心维护者，为大家分享社区最近动态、架构实践及企业应用案例等精彩内容。
 
 - [12 月 3 日云原生社区举行 Meetup 长沙站](https://mp.weixin.qq.com/s/vSp6j_Mu5g4uF0mp4t1PeA)
 
