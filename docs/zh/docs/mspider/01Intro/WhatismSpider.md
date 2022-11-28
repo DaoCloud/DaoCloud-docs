@@ -65,7 +65,7 @@ flowchart TD
     security -.-> request[请求身份认证]
     security -.-> authorize[授权策略]
 
-    click install "https://docs.daocloud.io/kpanda/07UserGuide/helm/"
+    click install "https://docs.daocloud.io/mspider/install/"
     click managed "https://docs.daocloud.io/mspider/03UserGuide/servicemesh/create-mesh/"
     click private "https://docs.daocloud.io/mspider/03UserGuide/servicemesh/create-mesh/"
     click external "https://docs.daocloud.io/mspider/03UserGuide/servicemesh/integrate-mesh/"
