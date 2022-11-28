@@ -90,6 +90,9 @@ nav:
               - 常见术语: ghippo/01ProductBrief/glossary.md
               - Release Notes: ghippo/01ProductBrief/release-notes.md
           - 登录: ghippo/04UserGuide/00Login.md
+          - 安装:
+              - 离线安装全局管理: ghippo/install/offlineInstall.md
+              - 自定义反向代理服务器地址: ghippo/install/reverseProxy.md
           - 用户与访问控制:
               - 什么是用户与访问控制: ghippo/04UserGuide/01UserandAccess/iam.md
               - 用户: ghippo/04UserGuide/01UserandAccess/User.md
@@ -217,6 +220,7 @@ nav:
               - 多云实例介绍: kairship/03instance/README.md
               - 添加实例: kairship/03instance/add.md
               - 删除实例: kairship/03instance/delete.md
+              - 工作空间: kairship/03instance/workspace.md
           - 工作集群管理:
               - 接入集群: kairship/04cluster/join.md
               - 移除集群: kairship/04cluster/remove.md
@@ -231,8 +235,8 @@ nav:
               - 多云配置项: kairship/06resource/configmap.md
               - 多云密钥: kairship/06resource/secret.md
           - 策略管理:
-              - 部署策略: kairship/07policy/deploy.md
-              - 差异化策略: kairship/07policy/diff.md
+              - 部署策略: kairship/07policy/propagationpolicy.md
+              - 差异化策略: kairship/07policy/overridepolicy.md
       - 微服务引擎:
           - 介绍:
               - 功能总览: skoala/intro/features.md
@@ -509,7 +513,7 @@ nav:
             - kangaroo/related-registry.md
             - 镜像空间绑定工作空间: kangaroo/bind-to-ws.md
           - 托管 Harbor: kangaroo/hosted.md
-          - 仓库集成: kangaroo/integrated.md
+          - 仓库集成: kangaroo/integrate.md
           - 创建镜像空间: kangaroo/create-registry.md
       - Release Notes:
           - release/rn5.0.md
