@@ -18,11 +18,11 @@
 
     ![harbor](../images/harbor03.png)
 
-3. 在弹出的对话框中输入上述 Harbor 配置的项目中的镜像仓库地址。
+1. 在弹出的对话框中输入上述 Harbor 配置的项目中的镜像仓库地址。
 
     ![harbor](../images/harbor04.png)
 
-4. 等待流水线执行成功。
+1. 等待流水线执行成功。
 
 ## 在 Harbor 中查看镜像安全扫描信息
 
