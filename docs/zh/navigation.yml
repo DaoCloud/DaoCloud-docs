@@ -30,7 +30,7 @@ nav:
               - Release Notes: kpanda/03ProductBrief/release-notes.md
           - 集群管理:
               - 创建集群: kpanda/07UserGuide/Clusters/CreateCluster.md
-                  - 节点配置: kpanda/07UserGuide/Clusters/Node/NodeConfig
+                  - 节点配置: kpanda/07UserGuide/Clusters/Node/NodeConfig.md
               - 接入集群: kpanda/07UserGuide/Clusters/JoinACluster.md
               - 访问集群: kpanda/07UserGuide/Clusters/AccessCluster.md
               - 升级集群: kpanda/07UserGuide/Clusters/UpgradeCluster.md
