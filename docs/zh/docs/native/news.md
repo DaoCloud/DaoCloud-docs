@@ -8,9 +8,9 @@
 
 - [12 月 21 日全球分布式云大会·深圳站议题征集中](https://mp.weixin.qq.com/s/d5j4WawE_fzHuh4ZyRsixg)
 
-    由全球分布式云联盟、众视 Tech 主办的 2022 全球分布式云大会·深圳站将于 12 月 21 日召开。
+    由全球分布式云联盟、众视 Tech 主办的 2022 全球分布式云大会 · 深圳站将于 12 月 21 日召开。
 
-    大会以“云筑数字新基 远见数智未来”为主题，将设立分布式主题报告会以及分布式算力、分布式数据库、云原生开源实践三大主题分论坛。
+    大会以 **云筑数字新基 远见数智未来** 为主题，将设立分布式主题报告会以及分布式算力、分布式数据库、云原生开源实践三大主题分论坛。
 
 - [12 月 17 日中国 DevOps 社区峰会·武汉定档](https://mp.weixin.qq.com/s/eZjuwOym4OwgJX3UEy75Cg)
 
@@ -41,9 +41,6 @@
     CNCF 社区计划在 2023 年将这一活动推广到全球各地，主要针对社区发展活跃和对 Kubernetes 等云原生技术感兴趣的地区。
     KubeDay 将分为初级和高级板块，当地和国际演讲者约各占一半。
 
-- [12 月 7 日 KubeDay Japan 会议议程发布](https://events.linuxfoundation.org/kubeday-japan/program/schedule/)
-
-    KubeDay 是 CNCF 主办的地区性云原生系列活动，首场将于下月初在日本举行。目前，会议的议程已经发布。
     所有的主题演讲和会议的录制视频将于 12 月中旬在 CNCF 的 YouTube 频道上发布。
 
 - [12 月 5 日 ICT 中国·云原生发展论坛将在北京拉开帷幕](https://mp.weixin.qq.com/s/vMRtNDE0dMgV0I0T2Wf92w)
@@ -53,7 +50,9 @@
 
 - [12 月 3 日微服务 x 容器开源开发者 Meetup 在上海举行](https://mp.weixin.qq.com/s/OlGXER4RgfyCwKT0at_6ug)
 
-    百花齐放逐梦云原生，开源分享赋能开发者。12 月 03 日上海站，微服务x容器开源开发者 Meetup 将围绕云原生领域当下 11 个热门开源项目的技术分享和企业实践展开，
+    百花齐放逐梦云原生，开源分享赋能开发者。
+
+    12 月 03 日上海站，微服务x容器开源开发者 Meetup 将围绕云原生领域当下 11 个热门开源项目的技术分享和企业实践展开，
     邀请到 Spring Cloud Alibaba、Dubbo、OpenYurt、KubeVela、OpenSergo 等云原生领域传统&新锐开源项目核心维护者，为大家分享社区最近动态、架构实践及企业应用案例等精彩内容。
 
 - [12 月 3 日云原生社区举行 Meetup 长沙站](https://mp.weixin.qq.com/s/vSp6j_Mu5g4uF0mp4t1PeA)
@@ -66,7 +65,13 @@
 - [11 月 30 日全球分布式云大会年终盛典开启奖项申报](https://mp.weixin.qq.com/s/wtUyNpv9Q6gbtI1L3Odfng)
 
     全球分布式云大会年终盛典由全球分布式云联盟和众视 Tech 主办，旨在表彰在全球范围内分布式云领域的佼佼者，
-    具体奖项设置包括：分布式云原生企业 TOP3、中国算力先锋企业 TOP3、分布式操作系统 TOP3、边缘云建设贡献奖、分布式数据库奖等。
+    具体奖项设置包括：
+
+    - 分布式云原生企业 TOP3
+    - 中国算力先锋企业 TOP3
+    - 分布式操作系统 TOP3
+    - 边缘云建设贡献奖
+    - 分布式数据库奖等。
 
 - [11 月 20 日 QCon 全球软件开发大会（北京站）2022 会议日程发布](https://qcon.infoq.cn/2022/beijing/schedule?utm_source=wechat&utm_medium=infoq&utm_campaign=10&utm_term=1026&utm_content=arti4)
 
@@ -99,12 +104,20 @@
 - [11 月 8 日国际开源节 CNCF 云原生论坛嘉宾阵容揭晓](https://mp.weixin.qq.com/s/mFN3A2sdVvuBxYKrrveBCQ)
 
     2022 国际开源节 CNCF 云原生论坛将于 11 月 8 日在深圳举办。
-    届时，来自 DaoCloud、阿里巴巴、OPPO、腾讯等厂商的专家将围绕“DevOps，CI/CD”、“容器，多云管理”、“云原生安全”、“监视，可观测性”、“虚拟化、原生应用案例”、
-    “云原生和其他技术整合(云原生+)”等专题，在专场论坛上共话云原生。
+    来自 DaoCloud、阿里巴巴、OPPO、腾讯等厂商的专家围绕以下专题在专场论坛上共话云原生：
+
+    - DevOps，CI/CD
+    - 容器，多云管理
+    - 云原生安全
+    - 监视，可观测性
+    - 虚拟化、原生应用案例
+    - 云原生和其他技术整合(云原生+)
 
 - [11 月 3 日杭州云栖大会定档](https://yunqi.aliyun.com/?spm=5176.27296252.J_9252124580.2.672d3b19iHUjCB)
 
-    今年云栖大会以“计算·进化·未来”为主题，将于 11.3-5 举行。大会设置两场主论坛，70 多场数字技术、产业和生态分论坛。其中，云计算论坛将聚焦云原生前沿技术、云上安全和合规、专有云等内容。目前，大会已开放[参会门票免费申领](https://yunqi.aliyun.com/2022/ticket?activityId=MjU2NA==&ticketId=MTU=&channelId=Mzgw)。
+    今年云栖大会以 **计算·进化·未来** 为主题，将于 11.3-5 举行。大会设置两场主论坛，70 多场数字技术、产业和生态分论坛。
+    其中，云计算论坛将聚焦云原生前沿技术、云上安全和合规、专有云等内容。
+    目前，大会已开放[参会门票免费申领](https://yunqi.aliyun.com/2022/ticket?activityId=MjU2NA==&ticketId=MTU=&channelId=Mzgw)。
 
 - [11 月全球开源技术峰会 GOTC 在深圳开启](https://mp.weixin.qq.com/s/qlHG3yjr1YRlZ-2Np8LzaQ)
 
@@ -132,13 +145,13 @@
 
 - [10 月 26-27 日全球分布式云大会·上海站报名开启](https://mp.weixin.qq.com/s/a3XLPWril5CngjJjtjmYPg)
 
-    2022 全球分布式云大会·上海站由全球分布式云联盟、众视 Tech 主办，以“万象智算”为主题，将关注分布式基础设施、分布式云服务、分布式云管理平台、容器应用平台、数据库云原生化、边缘云等内容。
+    2022 全球分布式云大会·上海站由全球分布式云联盟、众视 Tech 主办，以 **万象智算** 为主题，将关注分布式基础设施、分布式云服务、分布式云管理平台、容器应用平台、数据库云原生化、边缘云等内容。
 
 - [10 月 24 至 28 日 KubeCon + CloudNativeCon North America 会议议程发布](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/)
 
     KubeCon + CloudNativeCon 北美将于 10 月 24 日至 28 日在美国底特律举行，共包括 189 场会议、主题演讲和闪电演讲。
 
-    线上与会方式：<https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/register/>
+    点击查阅[线上与会方式](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/register/)
 
 - [10 月 24 日 CNCF 宣布首批通过云原生网络功能认证计划的产品](https://mp.weixin.qq.com/s/2AJi1d-Edwjq-Bm7knRbPw)
 
@@ -165,7 +178,8 @@
 
 - [10 月 16 日全球开源技术峰会 GOTC 2023 议题征集中](https://mp.weixin.qq.com/s/88zMjvR6SkaAE7McdM7CPQ)
 
-    GOTC 2023 由 Linux 基金会、开源中国和开源社区联合发起的，将于 2023 年 2 月 25-26 日在深圳举行。会议聚焦云原生、元宇宙、eBPF、Web3.0、开源治理、前端、基础软件、AI、IoT 等热门话题。
+    GOTC 2023 由 Linux 基金会、开源中国和开源社区联合发起的，将于 2023 年 2 月 25-26 日在深圳举行。
+    会议聚焦云原生、元宇宙、eBPF、Web3.0、开源治理、前端、基础软件、AI、IoT 等热门话题。
 
 - [10 月 9 日下半年『可信云·云原生类评估』报名正式启动](https://mp.weixin.qq.com/s/aLaMkm-ObK_Q1E5HtDbtFA)
 
@@ -235,7 +249,7 @@
 - [9 月 15-17 日国际开源节，云原生成为焦点](https://mp.weixin.qq.com/s/wrEzT5xXGCvijZ-sK4v21A)
 
     2022 国际开源节由 OSTech 联合中国信通院、Linux 基金会发起，展会将于 9 月 15-17 日在深圳举办。
-    CNCF 云原生论坛作为其中重要专题技术论坛之一，将重点围绕“DevOps，CI/CD”、“容器，多云管理”、“云原生安全”、“监视，可观测性”、“虚拟化，原生应用案例”、“云原生和其他技术整合(云原生+)”等专题。 
+    CNCF 云原生论坛作为其中重要专题技术论坛之一，将重点围绕“DevOps，CI/CD”、“容器，多云管理”、“云原生安全”、“监视，可观测性”、“虚拟化，原生应用案例”、“云原生和其他技术整合(云原生+)”等专题。
 
     合作申请：<http://iosf-world.mikecrm.com/Dd9SsbA>
 
@@ -263,13 +277,16 @@
 
 - [9 月 9 日 Cisco 发布《2022 年全球混合云发展趋势报告》](https://mp.weixin.qq.com/s/115gcNpsYk7uIkB35B7bgA)
 
-    报告显示，混合多云将成为常态，82% 的受访者使用混合多云架构来支撑其应用程序。混合云发展面临安全，运营，成本三大挑战。边缘计算、基础设施自动化和可组合基础设施将成为未来混合云领域的三个技术热点。云原生技术加速发展、基础设施即代码的广泛应用、及开放文化的积极作用是未来混合云发展的三大趋势。
+    报告显示，混合多云将成为常态，82% 的受访者使用混合多云架构来支撑其应用程序。
+    混合云发展面临安全，运营，成本三大挑战。边缘计算、基础设施自动化和可组合基础设施将成为未来混合云领域的三个技术热点。
+    云原生技术加速发展、基础设施即代码的广泛应用、及开放文化的积极作用是未来混合云发展的三大趋势。
 
     点击查阅[完整版报告](https://d110erj175o600.cloudfront.net/wp-content/uploads/2022/07/07143944/nb-06-2022-trends-report-cte.pdf)
 
 - [9 月 8 日 CNCF Prometheus 职业资格认证考试升级为 GA](https://www.cncf.io/announcements/2022/09/08/prometheus-certified-associate-exam-is-now-generally-available/?utm_source=thenewstack&utm_medium=website)
 
     在 Beta 测试版发布数月后，CNCF 宣布 [Prometheus 职业资格认证（PCA）考试](https://training.linuxfoundation.org/certification/prometheus-certified-associate/)已升级为 GA。
+    
     PCA 是一门在线认证的多项选择测试，专为对可观测性和监控感兴趣的工程师或应用开发人员设计，旨在测试考生使用 Prometheus 监控云原生应用和基础设施及通过可观测数据提高应用性能等相关基础知识的掌握情况。
 
 ## 2022-08
@@ -292,7 +309,7 @@
 
 - [8 月 19 日智能云边开源峰会于线上召开](https://mp.weixin.qq.com/s/2PMvlypUjmtM0fHp6Y5DSQ)
 
-    VMWare 携手 Intel、EMQ、Kyligence 等将于 8 月 19 日- 20 日举办“2022 智能云边开源峰会”。会上多位来自开源领域的技术领导者将分享“人工智能、云原生、边缘计算”三大热门技术的趋势及洞察。
+    VMWare 携手 Intel、EMQ、Kyligence 等将于 8 月 19-20 日举办 **2022 智能云边开源峰会** 。会上多位来自开源领域的技术领导者将分享 **人工智能、云原生、边缘计算** 三大热门技术的趋势及洞察。
 
 - [8 月 19 日全球分布式云大会拟在上海召开（内附报名方式）](https://mp.weixin.qq.com/s/Z9yoAkquE4eVTkxPuZAhHQ)
 
@@ -301,7 +318,7 @@
 - [8 月 17 日业界首个产学研 eBPF 技术探索 SIG 成立](https://mp.weixin.qq.com/s/ObuuknjGxbT0i4an5ugD5g)
 
     在 Linux 内核专家的引领下，龙蜥社区成立 eBPF 技术探索 SIG，打造一个适合业界和学术界深入研究 eBPF 技术、落地效果的良好生态。
-    同时，也带来了两大开源项目 [Coolbpf](https://github.com/aliyun/coolbpf) 和 [LMP](https://github.com/linuxkerneltravel/lmp)，Coolbpf 着重于提升开发效率，
+    同时，也带来了两大开源项目 [Coolbpf](https://github.com/aliyun/coolbpf) 和 [LMP](https://github.com/linuxkerneltravel/lmp)，其中 Coolbpf 着重于提升开发效率，
     后续会从 Security 角度深入探索；LMP 通过机器学习模型等方案，从可视化平台的角度基于 eBPF 技术深入调试内核。
 
 - [8 月中旬 2022“科创中国”开源创新榜评选全面开启](https://cccst.org.cn/osis)
@@ -310,7 +327,8 @@
 
 - [8 月 13 日论道原生云原生 Meetup 南京站报名开启](https://mp.weixin.qq.com/s/f5I4hn_lHf9x9oDBUgAIIQ)
 
-    论道原生 Meetup 南京站由道客、鹏云网络等主办，聚焦服务网格、云原生存储、云原生安全等话题及相关开源项目。本次活动将于 8 月 13 日举行，采取线下 + 线上直播的形式。
+    论道原生 Meetup 南京站由道客、鹏云网络等主办，聚焦服务网格、云原生存储、云原生安全等话题及相关开源项目。
+    本次活动将于 8 月 13 日举行，采取线下 + 线上直播的形式。
 
 - [8 月 10 日 CloudNativeDay 2022 于线上举行](https://www.techstrongevents.com/cloud-native-days-2022?ref=in-article-ad&utm_source=Container+Journal&utm_medium=Referral&utm_campaign=in-article-ad)
 
@@ -322,7 +340,7 @@
     报告显示，中国开源项目技术领域正在从优势领域数据库向操作系统 & 人工智能和云原生等方向进行升级聚焦。
     非互联网行业中，对开源模式认知度最高的分别是制造、金融、政府 / 非营利机构。开发者（互联网 + 非互联网）整体关注的技术领域相对平均，排名前三的是数据库、云原生和工具。中国开源代码质量与社区活跃度呈正相关。
 
-    报告阅读：<http://d.dachang.tobdev.com/2022/open-source-2022-infoq.pdf>
+    点击[阅读 PDF 报告](http://d.dachang.tobdev.com/2022/open-source-2022-infoq.pdf)
 
 - [8 月 6 日云原生技术交流 Meetup 广州站议题征集开启](https://mp.weixin.qq.com/s/AQvbEvvaZY_taqxHpCELUA)
 
@@ -341,11 +359,12 @@
     最终报告显示：中国企业 DevOps 落地成熟度不断提升，近六成企业向全面级迈进；近九成企业在不同程度上实践敏捷开发模式；
     自动化代码扫描、单元测试在自动化测试中的占比首次超七成；实践 DevSecOps 的企业首次突破六成。
 
-    报告阅读：<http://d.dachang.tobdev.com/2022/china-devops-2022-08.pdf>
+    点击[查阅报告](http://d.dachang.tobdev.com/2022/china-devops-2022-08.pdf)
 
 - [8 月 1 日 CNCF 开启 2022 年有关云原生普及趋势的调查](https://www.research.net/r/T6D29LS?lang=zh-tw&utm)
 
-    今年，CNCF 与 Linux 基金会合作发起云原生调查，总结容器、Kubernetes 以及其他云原生技术的普及趋势，以及用户使用的工具、项目和面对的挑战。调查是匿名的，截止时间为 8 月 1 日。
+    今年，CNCF 与 Linux 基金会合作发起云原生调查，总结容器、Kubernetes 以及其他云原生技术的普及趋势，以及用户使用的工具、项目和面对的挑战。
+    调查是匿名的，截止时间为 8 月 1 日。
 
 - [8 月开发者平台服务商 Humanitec 发布《2022 Kubernetes 基准研究》](https://f.hubspotusercontent40.net/hubfs/5890440/Reports/Kubernetes%20Benchmarking%20Study%202022%20-%202022-02-16.pdf)
 
@@ -364,7 +383,8 @@
 - [7 月 28 日国际分析机构 GigaOm 发布 2022 云原生数据存储雷达报告](https://research.gigaom.com/reprint/gigaom-radar-for-cloud-native-kubernetes-data-storage-portworx/)
 
     如雷达图所示，右下象限的厂商将持久性存储视为其差异化竞争优势。
-    这一组的共同点是将存储平台与 Kubernetes 发行版和集群管理产品结合起来，为 Kubernetes 用户提供一个高度集成的整体方案。而左下象限的厂商更多面向特定功能、部署模式或个性化使用案例。
+    这一组的共同点是将存储平台与 Kubernetes 发行版和集群管理产品结合起来，为 Kubernetes 用户提供一个高度集成的整体方案。
+    而左下象限的厂商更多面向特定功能、部署模式或个性化使用案例。
 
     ![radar](./images/storage.jpg)
 
@@ -377,7 +397,7 @@
 
 - [7 月 21 日中国信通院发布《云计算白皮书（2022 年）》](https://mp.weixin.qq.com/s/jl4Lz_1BMcC_-gpI3fukbw)
 
-    今年的白皮书聚焦“新经济，上云用云新周期”。
+    今年的白皮书聚焦 **新经济，上云用云新周期** 。
     新周期指的是用云原生改造应用架构，以算力服务为资源调度手段，实现高效、安全、精益上云用云的新阶段。
     新周期下，云计算发展的五个重点：规模化建设、算力服务、稳定性、云安全和云成本优化。
 
@@ -397,7 +417,7 @@
 
 - [7 月 14 - 15 日 2022 云原生边缘计算峰会议程发布](https://mp.weixin.qq.com/s/NBMIaH_Gq5sxuoPQm5zusg)
 
-    首届云原生边缘计算峰会 (KubeEdge Summit 2022) 由 CNCF、KubeEdge 社区主办，将于 7 月 14 日- 15 日以线上方式召开。峰会分为主论坛和技术前沿、生态创新、应用实践三个分论坛。
+    首届云原生边缘计算峰会 (KubeEdge Summit 2022) 由 CNCF、KubeEdge 社区主办，将于 7 月 14-15 日以线上方式召开。峰会分为主论坛和技术前沿、生态创新、应用实践三个分论坛。
 
 - [7 月 13 日云原生技术实践联盟联合云原生技术社区发布《（2021-2022）传统行业云原生技术落地调研——央国企篇》](https://mp.weixin.qq.com/s/0lWnhrlaakpoum3lbgTiQA)
 
@@ -422,14 +442,15 @@
     报告提出，当下云原生厂商容器产品的竞争关键在于“产品在相应场景中的能力，而产品能力的关键在于开放生态的建设”。
     此外，报告基于应用、产品及生态三大维度对华为云、阿里云、腾讯云等主流容器厂商的核心竞争优势及综合壁垒进行了评价。
 
-    完整版报告：<https://pdf.dfcfw.com/pdf/H3_AP202207041575792777_1.pdf?1656970762000.pdf>
+    点击[查阅完整版报告 PDF](https://pdf.dfcfw.com/pdf/H3_AP202207041575792777_1.pdf?1656970762000.pdf)
 
 ## 2022-06
 
 - [6 月 25 日首届云原生边缘计算峰会，演讲议题火热征集中（内附议题提交方式）](https://mp.weixin.qq.com/s/6IG8A-UamAtc63Mks0Av6w)
 
     CNCF KubeEdge 社区宣布，将于今年 6 月 25 日举办首届云原生边缘计算峰会（KubeEdge Summit 2022）。
-    会议地点暂定于北京，采取线下会议+线上直播的形式。议题聚焦 KubeEdge 技术干货分享、KubeEdge 社区生态发展和 KubeEdge 在传统与新领域的落地实践案例。目前，大会议题征集通道已开放。
+    会议地点暂定于北京，采取线下会议+线上直播的形式。议题聚焦 KubeEdge 技术干货分享、KubeEdge 社区生态发展和 KubeEdge 在传统与新领域的落地实践案例。
+    目前，大会议题征集通道已开放。
 
 - [6 月 22 日 Rust For Linux 或将并入 Linux 5.20 内核中](https://mp.weixin.qq.com/s/zypQAkiHnXleDcEGpMioJA)
 
@@ -483,9 +504,10 @@
 
     云原生安全实验室由中国信通院联合腾讯云等发起成立，成立后发布的一个主要成果是云原生安全测试平台。
     该平台由开放的安全测试框架和独立的安全测试工具组成。
+
     共计集成 75 个安全能力测试工具，评估能力覆盖容器安全和研发运维安全，并能自动生成详细的评估报告和改进建议，支持 SaaS 接入和私有化部署。
 
-- [6 月 14 日云原生词汇表中文版上线](https://www.cncf.io/blog/2022/06/14/cloud-native-glossary-the-chinese-version-is-live/)
+- [6 月 14 日 CNCF Glossary 云原生词汇表中文版上线](https://www.cncf.io/blog/2022/06/14/cloud-native-glossary-the-chinese-version-is-live/)
 
     云原生词汇表是由 CNCF 商业价值小组委员会领导的一个项目，旨在以清晰通俗的语言解释云原生概念。
 
@@ -570,9 +592,10 @@
 
 - [6 月 1 日 CNCF 发布 《kubernetes 2021 年度报告》](https://www.cncf.io/reports/kubernetes-annual-report-2021/)
 
-    报告记录了 2021 年关于 Kubernetes 社区发展状况的定量指标：过去一年有 62000 人参与贡献、新增一个新的 SIG K8s Infra 等；
+    报告记录了 2021 年关于 Kubernetes 社区发展状况的定量指标：过去一年有 62,000 人参与贡献、新增一个新的 SIG K8s Infra 等；
+
     也记录了社区 leader 和项目贡献者报告的定性总结：
-    v 1.21-1.24 正式 GA 或取得显著进展的功能、供应链安全性方面取得的成果、社区未来工作计划（包括建立“项目健康”指标、增加小组审查员、长期贡献等）以及不同 SIG 面临的困境等。
+    v1.21-1.24 正式 GA 或取得显著进展的功能、供应链安全性方面取得的成果、社区未来工作计划（包括建立“项目健康”指标、增加小组审查员、长期贡献等）以及不同 SIG 面临的困境等。
 
 - [6 月云边协同创新实践案例火热征集中（内附申报方式）](https://mp.weixin.qq.com/s/MZfKLH2Yc4JL5HzhqHCB6g)
 
@@ -598,13 +621,14 @@
 
 - [OpenLogic 和 Open Source Initiative 发布《2021 全球开源趋势报告》](https://www.openlogic.com/resources/2022-open-source-report#top)
 
-    报告对全球 2660 个企业用户进行了调研。
-    报告主要内容：用户使用开源软件的首要原因是创新，其次是降低成本，补丁的安全性和可用性也排名靠前；
-    采用开源软件的第一大障碍是缺乏测试、使用、集成和支持的内部技能；
-    使用率总体增幅最高的是开源 DevOps 工具，云原生 CI/CD 工具的使用率显著提高；
-    最令人向往的新技术是容器和 Kubernetes，但目前只有 18% 的受访者使用 Kubernetes，39% 使用云，29% 采用容器化方案。
+    报告对全球 2660 个企业用户进行了调研。报告主要内容：
 
-    完整版报告下载: <https://pan.baidu.com/s/1nGUluXwARnRK55-EG9WRfQ> 提取码：ny5a
+    - 用户使用开源软件的首要原因是创新，其次是降低成本，补丁的安全性和可用性也排名靠前；
+    - 采用开源软件的第一大障碍是缺乏测试、使用、集成和支持的内部技能；
+    - 使用率总体增幅最高的是开源 DevOps 工具，云原生 CI/CD 工具的使用率显著提高；
+    - 最令人向往的新技术是容器和 Kubernetes，但目前只有 18% 的受访者使用 Kubernetes，39% 使用云，29% 采用容器化方案。
+
+    点击下载[完整版报告](https://pan.baidu.com/s/1nGUluXwARnRK55-EG9WRfQ) 提取码：ny5a
 
 - [5 月 23 日艾瑞咨询发布《2022 年中国云服务行业应用白皮书》](https://mp.weixin.qq.com/s/p_jlxYkr5JL8A34OxoLcSA)
 
@@ -625,7 +649,7 @@
     云原生成熟度模型由 CNCF 社区 Cartografos 工作组推出，旨在帮助采用者和最终用户在 CNCF 景观和更广泛的云原生生态系统中导航。
     成熟度模型包括 5 个级别，每个级别涵盖人员、流程、策略和技术。
     
-    v2.0 版本更新包括三个方面：
+    v2.0 更新包括三个方面：
 
     - 新增业务成果部分：该部分包括云原生相关的业务目标、定量和定性 KPI 等
     - 流程更新：更新 GitOps 和 CI/CD 相关内容
@@ -650,7 +674,13 @@
 
     报告显示，2021 年下半年中国公有云服务整体市场规模（IaaS/PaaS/SaaS）达到 151.3 亿美元，其中 IaaS 市场同比增长 40.1%，PaaS 市场同比增速为 55.7%。
     预计到 2026 年，中国公有云市场规模将达到 1057.6 亿美元，全球占比将从 2021 年的 6.7% 提升为 9.9%。
-    下半年中国公有云市场发展的主要特点有：企业数字化转型加速推动云需求保持高增长态势、部分互联网行业增长放缓、“双碳”政策和数据安全法规的推动、云服务商向关注可持续发展和行业生态能力建设迈进。
+
+    下半年中国公有云市场发展的主要特点有：
+
+    - 企业数字化转型加速推动云需求保持高增长态势
+    - 部分互联网行业增长放缓
+    - “双碳”政策和数据安全法规的推动
+    - 云服务商向关注可持续发展和行业生态能力建设迈进
 
 - [5 月 14 日云原生 Meetup 成都站开启](https://mp.weixin.qq.com/s/W0KmJ4lBxu7Qh5TQltHY0g)
 
@@ -694,14 +724,10 @@
 
     IstioCon 2022 议程已正式公布，本次活动为线上会议，时间为 4 月 25 到 29 日。本次会议有适应北京时间的中文演讲。
 
-    注册地址：<https://events.istio.io/istiocon-2022/>
-
-    会议日程参见:
-    <https://events.istio.io/istiocon-2022/schedule/grid/>
-
 - [4 月 25 - 29 日 IstioCon 2022 开幕](https://events.istio.io/istiocon-2022/)  
 
-    北京时间 4 月 25 - 29 日，第二届 IstioCon IstioCon 以线上会议的方式举行，来自华为、Google、IBM 等公司的 80+ 服务网格技术专家带来了 60+ 场技术分享。大会聚焦社区新特性、生产落地案例、动手实战、社区生态发展等话题。
+    北京时间 4 月 25 - 29 日，第二届 IstioCon IstioCon 以线上会议的方式举行，来自华为、Google、IBM 等公司的 80+ 服务网格技术专家带来了 60+ 场技术分享。
+    大会聚焦社区新特性、生产落地案例、动手实战、社区生态发展等话题。
 
 - [4 月 25 日 Istio 申请加入 CNCF](https://istio.io/latest/blog/2022/istio-has-applied-to-join-the-cncf/)
 
@@ -732,7 +758,7 @@
     智能营销作为数字产业化的核心场景之一，在企业数字化转型中广泛落地。
     面向市场解决方案多元割裂、客户效果诉求提升等现状，云原生与智能营销的融合为企业提供了更优的解决方案。
 
-    完整报告下载：<https://www.iresearch.com.cn/Detail/report?id=3892&isfree=0>
+    点击下载[完整报告](https://www.iresearch.com.cn/Detail/report?id=3892&isfree=0)
 
 - [4 月 9 日云原生 Meetup 成都站延期](https://mp.weixin.qq.com/s/9QuaMuWmce3Z-UX3056tRg)
 
@@ -740,11 +766,11 @@
 
 - [4 月 8 日申报启动！“分布式云全景生态图谱”优秀案例征集（内附申报方式）](https://mp.weixin.qq.com/s/Rsm0mWA0GMneqCQcJ3aw1w)
 
-    值 2022 全球分布式云大会召开之际，“分布式云全景生态图谱”计划第一阶段正式启动。面向全行业征集边缘计算、云原生、数据库、分布式存储等领域的优秀案例。
+    值 2022 全球分布式云大会召开之际，“分布式云全景生态图谱”计划第一阶段正式启动。
+    面向全行业征集边缘计算、云原生、数据库、分布式存储等领域的优秀案例。
     入选企业将获得全球分布式云联盟组织的专访和专题报道。
 
 - [4 月 7 日云原生批处理系统 Volcano 升级到 CNCF 孵化阶段](https://www.cncf.io/blog/2022/04/07/cloud-native-batch-system-volcano-moves-to-the-cncf-incubator/)
 
-    Volcano 是一个云原生批处理系统，也是 CNCF 的第一个批处理计算项目。4 月 7 日，CNCF 技术监督委员会（TOC）投票接受 Volcano 作为 CNCF 孵化项目。
-
-
+    Volcano 是一个云原生批处理系统，也是 CNCF 的第一个批处理计算项目。
+    4 月 7 日，CNCF 技术监督委员会（TOC）投票接受 Volcano 作为 CNCF 孵化项目。
