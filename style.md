@@ -147,7 +147,7 @@ Refer to [MkDocs list](https://squidfunk.github.io/mkdocs-material/reference/lis
 
 The semantic purpose of a data table is to present tabular data.
 
-DCE docs is written with markdown. The table is not recommneded but sometimes hard to avoid.
+DCE docs is written with markdown. The table is not recommended but sometimes hard to avoid.
 In this case, a table cannot be indented, otherwise the table style will be lost.
 One suggestion is to put all parameter tables in a page.
 
