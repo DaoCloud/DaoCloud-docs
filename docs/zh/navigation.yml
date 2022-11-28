@@ -105,10 +105,8 @@ nav:
               - ghippo/04UserGuide/02Workspace/ws-folder.md
               - 创建和删除工作空间: ghippo/04UserGuide/02Workspace/Workspaces.md
               - 工作空间权限: ghippo/04UserGuide/02Workspace/wspermission.md
-              - 工作空间最佳实践: ghippo/04UserGuide/02Workspace/wsbp.md
               - 创建和删除文件夹: ghippo/04UserGuide/02Workspace/folders.md
               - 文件夹权限: ghippo/04UserGuide/02Workspace/fdpermission.md
-              - 文件夹最佳实践: ghippo/04UserGuide/02Workspace/fdpractice.md
               - 资源配额: ghippo/04UserGuide/02Workspace/quota.md
           - 审计日志:
               - 开启和关闭审计日志: ghippo/04UserGuide/open-audit.md
@@ -126,10 +124,15 @@ nav:
               - 微服务引擎权限说明: ghippo/permissions/skoala.md
               - 应用工作台权限说明: ghippo/permissions/amamba.md
               - 服务网格权限说明: ghippo/permissions/mspider.md
-          - GProduct 对接全局管理:
-              - ghippo/gproduct/intro.md
-              - 接入导航栏: ghippo/gproduct/nav.md
-              - 接入路由和登录认证: ghippo/gproduct/route-authn.md
+          - 最佳实践:
+              - 工作空间最佳实践: ghippo/04UserGuide/02Workspace/wsbp.md
+              - 工作空间绑定命名空间: ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus.md
+              - 一个集群分配给多个工作空间: ghippo/04UserGuide/02Workspace/a-cluster-to-multi-ws.md
+              - 文件夹最佳实践: ghippo/04UserGuide/02Workspace/fdpractice.md
+              - GProduct 对接全局管理: 
+                - ghippo/gproduct/intro.md
+                - 接入导航栏: ghippo/gproduct/nav.md
+                - 接入路由和登录认证: ghippo/gproduct/route-authn.md
       - 可观测性:
           - 介绍:
               - 什么是可观测性: insight/03ProductBrief/WhatisInsight.md
