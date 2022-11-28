@@ -1,62 +1,66 @@
-# 自定义 DCE5.0 反向代理服务器地址
+# 自定义 DCE 5.0 反向代理服务器地址
 
-1. 设置环境变量，方便在下文中使用
+参照以下步骤为 DCE 5.0 自定义反向代理服务器地址。
 
-```shell
-# 您的反向代理地址，例如：`export DCE_PROXY="https://demo-alpha.daocloud.io"`
-export DCE_PROXY="https://domain:port"
+1. 设置环境变量，方便在下文中使用。
 
-# helm --set 参数备份文件
-export GHIPPO_VALUES_BAK="ghippo-values-bak.yaml"
+    ```shell
+    # 您的反向代理地址，例如：`export DCE_PROXY="https://demo-alpha.daocloud.io"`
+    export DCE_PROXY="https://domain:port"
 
-# 获取当前 ghippo 的版本号
-export GHIPPO_HELM_VERSION=$(helm get notes ghippo -n ghippo-system | grep "Chart Version" | awk -F ': ' '{ print $2 }')
-```
+    # helm --set 参数备份文件
+    export GHIPPO_VALUES_BAK="ghippo-values-bak.yaml"
 
-2. 更新 ghippo helm 仓库
+    # 获取当前 ghippo 的版本号
+    export GHIPPO_HELM_VERSION=$(helm get notes ghippo -n ghippo-system | grep "Chart Version" | awk -F ': ' '{ print $2 }')
+    ```
 
-```shell
-helm repo update ghippo
-```
+2. 更新全局管理 Helm 仓库。
 
-3. 备份 --set 参数
+    ```shell
+    helm repo update ghippo
+    ```
 
-```shell
-helm get values ghippo -n ghippo-system -o yaml > ${GHIPPO_VALUES_BAK}
-```
+3. 备份 --set 参数。
 
-4. 添加您的反向代理地址
+    ```shell
+    helm get values ghippo -n ghippo-system -o yaml > ${GHIPPO_VALUES_BAK}
+    ```
 
-> 如果可以，您可以使用 `yq` 命令
+4. 添加您的反向代理地址。
 
-```shell
-yq -i ".global.reverseProxy = \"${DCE_PROXY}\"" ${GHIPPO_VALUES_BAK}
-```
+    !!! note
 
-> 或者您可以使用 `vim` 命令编辑并且保存它
+        - 如果可以，您可以使用 `yq` 命令：
 
-```shell
-vim ${GHIPPO_VALUES_BAK}
+            ```shell
+            yq -i ".global.reverseProxy = \"${DCE_PROXY}\"" ${GHIPPO_VALUES_BAK}
+            ```
 
-USER-SUPPLIED VALUES:
-...
-global:
-  ...
-  reverseProxy: ${DCE_PROXY} # 只需要修改这一行
-```
+        - 或者您可以使用 `vim` 命令编辑并保存：
 
-5. 执行 helm upgrade 使配置生效
+            ```shell
+            vim ${GHIPPO_VALUES_BAK}
 
-```shell
-helm upgrade ghippo ghippo/ghippo \
--n ghippo-system \
--f ${GHIPPO_VALUES_BAK} \
---version ${GHIPPO_HELM_VERSION}
-```
+            USER-SUPPLIED VALUES:
+            ...
+            global:
+              ...
+              reverseProxy: ${DCE_PROXY} # 只需要修改这一行
+            ```
 
-6. 使用 `kubectl` 重启 ghippo pod，使配置生效
+5. 执行 `helm upgrade` 使配置生效。
 
-```shell
-kubectl rollout restart deploy/ghippo-apiserver -n ghippo-system
-kubectl rollout restart statefulset/ghippo-keycloak -n ghippo-system
-```
+    ```shell
+    helm upgrade ghippo ghippo/ghippo \
+    -n ghippo-system \
+    -f ${GHIPPO_VALUES_BAK} \
+    --version ${GHIPPO_HELM_VERSION}
+    ```
+
+6. 使用 `kubectl` 重启全局管理 Pod，使配置生效。
+
+    ```shell
+    kubectl rollout restart deploy/ghippo-apiserver -n ghippo-system
+    kubectl rollout restart statefulset/ghippo-keycloak -n ghippo-system
+    ```

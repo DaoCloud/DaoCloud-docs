@@ -42,7 +42,9 @@ kairship apiserver 主要担负着多云编排所有流量的入口（openapi、
 - virtual-cluster-sync-controller
 
     多云编排实例 CRD 的 CRUD 事件监听，一旦创建 kariship 实例，则同步创建对应的 Kpanda cluster（virtual 类型，容器管理界面无须展示）。
+
     多云编排实例所有资源的检索（多云工作负载、pp、op）都将通过[容器管理模块](../../kpanda/03ProductBrief/WhatisKPanda.md)内部的加速机制完成（借助 [Clusterpedia](../../community/clusterpedia.md)），实现读写分离，进而提高性能。
+    
     实例删除，则同步删除注册在容器管理模块中的 virtual cluster。
 
 - resource statistics controller
