@@ -37,6 +37,7 @@ nav:
               - 集群角色: kpanda/07UserGuide/Clusters/ClusterRole.md
               - 集群状态: kpanda/07UserGuide/Clusters/ClusterStatus.md
           - 节点管理:
+              - 节点配置: kpanda/07UserGuide/Nodes/NodeConfig.md
               - 节点扩容: kpanda/07UserGuide/Nodes/AddNode.md
               - 节点缩容: kpanda/07UserGuide/Nodes/DeleteNode.md
               - 污点管理: kpanda/07UserGuide/Nodes/Taints.md
