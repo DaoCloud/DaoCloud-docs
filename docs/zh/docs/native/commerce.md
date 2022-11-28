@@ -58,8 +58,6 @@
 
     Grafana Cloud 引入负载测试项目 [k6](https://github.com/grafana/k6) 和分布式追踪后端 [Tempo](https://github.com/grafana/tempo)（k6 x Tempo）的集成，缩小性能测试的黑盒数据和系统内部白盒数据之间的差距。该集成允许关联 k6 的测试运行数据和服务器端的追踪数据，从而进行根本原因分析；汇总收集的追踪数据以生成实时指标，帮助用户缩小搜索空间并快速发现异常行为。
 
-## Lacework
-
 - [**Lacework Platform 云安全平台十一月更新**](https://docs.lacework.com/releases/2022-11-platform-releases)
 
     更新内容：平台扫描器支持多架构的容器镜像、提供攻击路径分析功能、无代理工作负载扫描功能普遍可用、在不活动的主机内核上发现的漏洞会自动被标记为例外、CIS GCP 1.3.0 基准报告和策略普遍可用、新增主机策略用于检测反向 shell 连接和加密劫持工件。
@@ -183,8 +181,6 @@
 - [**腾讯云容器服务 TKE 9 月更新**](https://mp.weixin.qq.com/s/6_TSSHhU0L8mSbqEMWyu4g)
 
     更新内容：支持镜像仓库签名镜像的可信验证、kubelet 自定义参数功能全量开放、提供异常 Service/Ingress 事件信息错误码的说明、灰度上线超级节点上运行 Daemonset 能力、新增按照Label 配置和管理 Pod 安全组的功能。
-
-## 天翼云
 
 - [**天翼云发布云原生安全产品——红盾 1.0**](https://mp.weixin.qq.com/s/9crAAOde9_spFmk5TZcY2A)
 
