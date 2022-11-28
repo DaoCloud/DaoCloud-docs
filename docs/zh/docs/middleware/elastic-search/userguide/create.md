@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 创建 Elasticsearch 实例
 
 在 Elasticsearch 实例列表中，执行以下操作创建一个新的实例。

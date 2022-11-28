@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 开源社区
 
 !!! info
@@ -51,7 +56,7 @@ Kubernetes 多集群通信组件，消除多集群复杂度，让您就像管理
 <p align="center">
 <img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
 <br/><br/>
-Clusterpedia、Merbridge 和 HwameiStor 已入选 <a href="https://landscape.cncf.io/?selected=merbridge">CNCF 云原生全景图，</a> 而 Clusterpedia 已进入 CNCF Sandbox。
+Clusterpedia、Merbridge 和 HwameiStor 已入选 <a href="https://landscape.cncf.io">CNCF 云原生全景图</a>，而 Clusterpedia 已进入 <a href="https://www.cncf.io/projects/clusterpedia/">CNCF 沙箱孵化</a>。
 </p>
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

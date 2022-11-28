@@ -11,52 +11,55 @@
 
 1. 选择左侧导航栏的`采集管理`，查看全部集群采集插件的状态。
 
-  	![集群列表](../../images/collectmanage02.png)
+    ![集群列表](../../images/collectmanage02.png)
 
 2. 点击列表`集群名称`进入采集配置详情。
 
-	![集群列表](../../images/service-discover.png)
+    ![集群列表](../../images/service-discover.png)
 
 3. 点击链接跳转到`容器管理` 中创建 Service Monitor。
 
 	```yaml
-	apiVersion: monitoring.coreos.com/v1 
-		kind: ServiceMonitor 
-		metadata: 
-			name: micrometer-demo 
-			namespace: default 
-		spec: 
-			endpoints: 
-				- interval: 15s 
-				path: /actuator/prometheus 
-				port: metrics 
-			namespaceSelector: 
-				any: true 
-			selector:
-				matchLabels: 
-					micrometer-prometheus-discovery: 'true'
+	apiVersion: monitoring.coreos.com/v1
+	kind: ServiceMonitor
+	metadata:
+	  name: micrometer-demo
+	  namespace: insight-system
+	  operator.insight.io/managed-by: insight
+	spec:
+	  endpoints:
+	    - honorLabels: true
+		  interval: 15s
+		  path: /actuator/prometheus
+		  port: http
+	  namespaceSelector:
+		matchNames:
+		  - insight-system
+	  selector:
+		matchLabels:
+		  micrometer-prometheus-discovery: "true"
 	```
 
-在这段YAML文件中，各代码段的含义如下：
+	在以上 YAML 文件中，各字段的含义如下：
 
-- `metadata` 下的 `name` 和 `namespace` 将指定 ServiceMonitor 所需的一些关键元信息。
+	- `metadata` 下的 `name` 和 `namespace` 将指定 ServiceMonitor 所需的一些关键元信息。
 
-- `spec` 的 `endpoints` 为服务端点，代表 Prometheus 所需的采集 Metrics 的地址。`endpoints` 为一个数组，同时可以创建多个 `endpoints`。每个 `endpoints` 包含三个字段，每个字段的含义如下：
+	- `spec` 的 `endpoints` 为服务端点，代表 Prometheus 所需的采集 Metrics 的地址。`endpoints` 为一个数组，同时可以创建多个 `endpoints`。每个 `endpoints` 包含三个字段，每个字段的含义如下：
 
-    - `interval`：指定 Prometheus 对当前 `endpoints` 采集的周期。单位为秒，在本次示例中设定为 `15s`。
-    - `path`：指定 Prometheus 的采集路径。在本次示例中，指定为 `/actuator/prometheus`。
-    - `port`：指定采集数据需要通过的端口，设置的端口为采集的 Service 端口所设置的 `name`。
+	  - `interval`：指定 Prometheus 对当前 `endpoints` 采集的周期。单位为秒，在本次示例中设定为 `15s`。
+	  - `path`：指定 Prometheus 的采集路径。在本次示例中，指定为 `/actuator/prometheus`。
+	  - `port`：指定采集数据需要通过的端口，设置的端口为采集的 Service 端口所设置的 `name`。
 
-- `spec` 的 `namespaceSelector` 为需要发现的 Service 的范围。`namespaceSelector` 包含两个互斥字段，字段的含义如下：
+	- `spec` 的 `namespaceSelector` 为需要发现的 Service 的范围。`namespaceSelector` 包含两个互斥字段，字段的含义如下：
 
-	- `any`：有且仅有一个值 `true`，当该字段被设置时，将监听所有符合 Selector 过滤条件的 Service 的变动。
-	- `matchNames`：数组值，指定需要监听的 `namespace` 的范围。例如，只想监听 default 和 kpanda-system 两个命名空间中的 Service，那么 `matchNames` 设置如下：
+	  - `any`：有且仅有一个值 `true`，当该字段被设置时，将监听所有符合 Selector 过滤条件的 Service 的变动。
+	  - `matchNames`：数组值，指定需要监听的 `namespace` 的范围。例如，只想监听 default 和 insight-system 两个命名空间中的 Service，那么 `matchNames` 设置如下：
 
-	```yaml
-	namespaceSelector: 
-		matchNames: 
-		- default 
-		- kpanda-system
-	```
-
-- `spec` 的 `selector` 用于选择 Service。
+         ```yaml
+		namespaceSelector:
+		  matchNames:
+		    - default
+			- insight-system
+        ```
+			
+	- `spec` 的 `selector` 用于选择 Service。

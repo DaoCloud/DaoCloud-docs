@@ -1,3 +1,9 @@
+---
+date: 2022-11-17
+hide:
+  - toc
+---
+
 # 安装 insight-agent 采集数据
 
 请确认您的集群已成功接入`容器管理`平台，然后执行以下步骤安装 insight-agent 来采集数据。
@@ -18,7 +24,10 @@
 
     ![安装采集器](../../images/installagent02.png)
 
-4. 填入名称，选择命名空间和版本后，点击`确定`。
+4. 填入名称，选择命名空间和版本后，在 yaml 文件中分别填写 logging 、metric 、audit、trace 上报数据的地址。
+
+
+	如何获取数据上报地址，请参考[获取数据上报地址](gethosturl.md)。
 
     ![安装采集器](../../images/installagent03.png)
 

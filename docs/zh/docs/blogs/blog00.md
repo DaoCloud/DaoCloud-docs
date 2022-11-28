@@ -1,3 +1,9 @@
+---
+date: 2022-10-08
+categories: blog
+authors: windsonsea
+---
+
 # DCE 研发背景
 
 时下元宇宙概念方兴未艾，预期万物皆有虚拟化身，行业巨头正在模仿现实世界构建沉浸式数字体验，建立另一个完整的数字平行时空。
@@ -34,7 +40,11 @@ DaoCloud 多年深耕容器云技术，是国内容器领域的佼佼者。
 
 ![img](images/ops-rank.png)
 
-2020 年 7 月，Gartner 2020 中国 ICT 技术成熟度曲线报告作为专业容器厂商提及 DaoCloud。容器技术的主体力量在开源社区，而开源社区的贡献度排名可以证明容器厂商对容器技术的深度理解。DaoCloud 近几年在全球开源社区的影响力斐然，stackalytics.io 统计数据表明，过去一年来 DaoCloud 对 Kubernetes 的全球排名第 3，国内第 1。这充分证明了 DaoCloud 开发团队对云原生技术的深刻理解，从网络、存储、算力等资源编排，到大屏可视化监控，再到多集群管理和客户场景化解决方案定制，DaoCloud 全面引领国内千行百业实现云原生数字化转型，与华为云和近百家国内厂家建立战略合作关系，响应国家号召构建信创产业生态。
+2020 年 7 月，Gartner 2020 中国 ICT 技术成熟度曲线报告作为专业容器厂商提及 DaoCloud。
+容器技术的主体力量在开源社区，而开源社区的贡献度排名可以证明容器厂商对容器技术的深度理解。
+DaoCloud 近几年在全球开源社区的影响力斐然，stackalytics.io 统计数据表明，过去一年来 DaoCloud 对 Kubernetes 的全球排名第 3，国内第 1。
+这充分证明了 DaoCloud 开发团队对云原生技术的深刻理解，从网络、存储、算力等资源编排，到大屏可视化监控，再到多集群管理和客户场景化解决方案定制，
+DaoCloud 全面引领国内千行百业实现云原生数字化转型，与华为云和近百家国内厂家建立战略合作关系，响应国家号召构建信创产业生态。
 
 ## 容器 vs 虚拟化
 
@@ -109,6 +119,25 @@ DCE 采用业界领先的容器编排技术，产品能力涵盖云原生应用�
 对应用开发人员而言，可以把 DCE 看成是一个集群操作系统。DCE 提供服务发现、扩缩、负载均衡、自愈甚至选举等功能，
 让开发人员从基础设施相关配置等解脱出来。DCE 可以把大量的服务器看做一台巨大的服务器，在一台大服务器上面运行应用程序。
 无论云原生集群有多少台服务器，在 DCE 上部署应用程序的方法永远一样。
+
+## 经 CNCF 认证的 KCSP
+
+目前 DaoCloud 经授权合规的 Kubernetes 版本包括但不限于：
+
+当前版本：
+
+[![1.23](../images/1.23.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/2072)
+[![1.24](../images/1.24.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/2239)
+[![1.25](../images/1.25.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/2240)
+
+历史版本：
+
+[![1.7](../images/1.7.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/68)
+[![1.9](../images/1.9.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/210)
+[![1.13](../images/1.13.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/418)
+[![1.15](../images/1.15.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/794)
+[![1.18](../images/1.18.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/1144)
+[![1.20](../images/1.20.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/1463)
 
 进一步了解[什么是 DCE 5.0](../dce/what-is-dce.md)
 

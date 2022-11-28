@@ -2,7 +2,7 @@
 name: "\U0001F6D1 Report a bug in the DaoCloud Enterprise Documents"
 about: Create a report to help us improve
 title: ''
-labels: bug, documentation
+labels: bug
 assignees: ''
 
 ---

@@ -3,8 +3,11 @@
 ## 注意事项
 
 - 默认 CNI：安装 Multus-underlay 之前，需要确认当前集群是否存在默认 CNI, 比如 Calico 或者 Cilium，否则 Multus 可能会无法工作。
-- Spiderpool：Multus-underlay 依赖 [spiderpool](https://github.com/spidernet-io/spiderpool) 作为 `ipam`。安装 `Spiderpool` 请参考 [Install Spiderpool](../spiderpool/install.md)。
-- 如需安装 SRIOV-CNI, 需要确认节点是否为物理主机且节点拥有支持 SRIOV 的物理网卡。如果节点为 VM 虚拟机或者没有支持 SRIOV 的网卡，那么 SRIOV 将无法工作。详情参考 [sriov-device-plugin](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin)。
+- Spiderpool：Multus-underlay 依赖 [spiderpool](https://github.com/spidernet-io/spiderpool) 作为 `ipam`。
+  安装 `Spiderpool` 请参考 [Install Spiderpool](../spiderpool/install.md)。
+- 如需安装 SRIOV-CNI, 需要确认节点是否为物理主机且节点拥有支持 SRIOV 的物理网卡。
+  如果节点为 VM 虚拟机或者没有支持 SRIOV 的网卡，那么 SRIOV 将无法工作。
+  详情参考 [sriov-device-plugin](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin)。
 - 不建议同时安装 MacVLAN 和 SRIOV。
 
 ## 安装步骤
@@ -23,7 +26,8 @@
 
     !!! Note:
 
-        如果当前通过 kubean 安装的集群，那么 value 为 calico 或者 cilium 中二选一。或通过查看主机：`/etc/cni/net.d/` 路径，按照字典顺序第一个 CNI 配置文件的 `name` key 所对应的 Value 值就为默认 CNI。比如：
+        如果当前通过 kubean 安装的集群，那么 value 为 calico 或者 cilium 中二选一。
+        或通过查看主机：`/etc/cni/net.d/` 路径，按照字典顺序第一个 CNI 配置文件的 `name` key 所对应的 Value 值就为默认 CNI。比如：
 
         ```shell
         root@master:~# ls /etc/cni/net.d/
@@ -35,7 +39,7 @@
         ...
         ```
 
-        `name` 的值如果为 `k8s-pod-network`，那么这里就应该选中：`k8s-pod-network`。
+        `name` 的值如果为 `k8s-pod-network`，那么这里就应该选中 `k8s-pod-network`。
 
         ![Default CNI](../../images/install2.png)
          
@@ -65,7 +69,8 @@
     - `Install Macvlan CNI`：true/false，是否创建 MacVLAN 的 Multus CRD 实例。
     - `Macvlan Type`：macvlan-overlay/macvlan-standalone，安装 MacVLAN CRD 实例的类型。
 
-        - `macvlan-overlay`：此类型下，MacVLAN 会与默认 CNI 搭配使用（比如 Calico），这样会在 Pod 中插入两张网卡。分别是默认 CNI 和 MacVLAN 的网卡，前者用于解决 Pod 与集群东西向通信问题；后者用于 Pod 集群南北向通信。
+        - `macvlan-overlay`：此类型下，MacVLAN 会与默认 CNI 搭配使用（比如 Calico），这样会在 Pod 中插入两张网卡。
+           分别是默认 CNI 和 MacVLAN 的网卡，前者用于解决 Pod 与集群东西向通信问题；后者用于 Pod 集群南北向通信。
         - `macvlan-standalone`：此类型下，Pod 中只会插入一张 MacVLAN 的网卡，只由其完成与集群东西向和南北向的通信问题。
       
     - `Multus CR Name`：Multus CRD 实例的名称。
@@ -80,18 +85,20 @@
 
     - `Install SRIOV CNI`：是否安装 SRIOV，默认不安装。
     - `SRIOV Type`：安装 SRIOV 的 Multus CRD 实例的类型，有以下几种：
-      - `sriov-overlay`：此类型下，SRIOV 会与默认 CNI 搭配使用（比如 Calico），这样会在 Pod 中插入两张网卡。分别是默认 CNI 和 SRIOV 的网卡，前者用于解决 Pod 与集群东西向通信问题；后者用于 Pod 集群南北向通信。
+      - `sriov-overlay`：此类型下，SRIOV 会与默认 CNI 搭配使用（比如 Calico），这样会在 Pod 中插入两张网卡。
+          分别是默认 CNI 和 SRIOV 的网卡，前者用于解决 Pod 与集群东西向通信问题；后者用于 Pod 集群南北向通信。
       - `sriov-standalone`：此类型下，Pod 中只会插入一张 SRIOV 的网卡，只由其完成与集群东西向和南北向的通信问题。
     - `SRIOV CR Name`：Multus CRD 实例的名称。
     - `Vlan ID`：可选，SRIOV PF 的 Vlan tag。
-    - `SRIOV Device Plugin Configuration`：用于发现主机上的 SRIOV PF 和 VF device，筛选方式可以为：`vendors`、`devices`、`drivers`、`pfNames`。具体参考 [sriov-device-plugin-readme.md](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin/blob/master/README.md)。
+    - `SRIOV Device Plugin Configuration`：用于发现主机上的 SRIOV PF 和 VF device，筛选方式可以为：`vendors`、`devices`、`drivers`、`pfNames`。
+        具体参考 [sriov-device-plugin-readme.md](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin/blob/master/README.md)。
 
     配置 SRIOV Net-Device Plugin：
 
-    - `vendors`：PCI 设备厂商号，如 '8086' 代表 Intel。
-    - `devices`：PCI 设备型号，如 '154c'。
-    - `drivers`：PCI 设备驱动，如 'mlx5_core'。
-    - `pfNames`：PF 设备的名称列表。
+    - `vendors`：PCI 设备厂商号，如 '8086' 代表 Intel
+    - `devices`：PCI 设备型号，如 '154c'
+    - `drivers`：PCI 设备驱动，如 'mlx5_core'
+    - `pfNames`：PF 设备的名称列表
 
     ![sriov-net-device](../../images/sriov-net-device.png)
 
@@ -160,7 +167,8 @@
                 ...
         ```
 
-        `ipam.spidernet.io/ippool`：指定从哪一个 IP 池为 MacVLAN 网卡分配 IP 地址。如果不指定，将会从默认池中分配。更多 Spiderpool 使用说明请参考 [Spiderpool](../spiderpool)。
+        `ipam.spidernet.io/ippool`：指定从哪一个 IP 池为 MacVLAN 网卡分配 IP 地址。
+        如果不指定，将会从默认池中分配。更多 Spiderpool 使用说明请参考 [Spiderpool](../spiderpool)。
 
         `k8s.v1.cni.cncf.io/networks`：通过指定 MacVLAN Multus CRD, 为 Pod 再分配一张 MacVLAN 网卡 (net1)。
 
@@ -172,7 +180,7 @@
         macvlan-overlay-589d6ddc68-kk798          1/1     Running   0          43s     10.253.255.73    172-17-8-120   <none>           <none>
         ```
 
-3. 测试连通性:
+3. 测试连通性。
 
     可以看到 Pod 的第一张网卡仍然由 Calico 分配，第二张网卡由 MacVLAN 分配：
 
@@ -318,9 +326,9 @@ MacVLAN 网卡的 IP 地址段从宿主机分配，所以在宿主机网络路�
     </html>
     ```
 
-## Uninstall
+## 卸载
 
-卸载 Multus-underlay 还需要删除 **每个节点** 上 Multus 的配置文件：
+卸载 Multus-underlay 还需要删除每个节点上的 Multus 配置文件：
 
 ```shell
 root@master:~# rm /etc/cni/net.d/00-multus.conf

@@ -10,7 +10,7 @@
 
 ## 准备工作
 
-- 准备一个 k8s 集群
+- 准备一个 K8s 集群
 
     !!! note
 
@@ -35,11 +35,11 @@
 
 ## 在线安装（推荐）
 
-1. 在 k8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件。
+1. 在 K8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件。
 
     ```shell
-    # 假定 VERSION 为 v0.3.24
-    export VERSION=v0.3.24
+    # 假定 VERSION 为 v0.3.28
+    export VERSION=v0.3.28
     curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     ```
 
@@ -58,13 +58,13 @@
         kind: ClusterConfig
         spec:
           loadBalancer: metallb
-          istioGatewayVip: 10.6.229.10/32     # 这是 Istio gateway 的 VIP，也会是DCE5.0的控制台的浏览器访问IP
+          istioGatewayVip: 10.6.229.10/32     # 这是 Istio gateway 的 VIP，也会是DCE 5.0的控制台的浏览器访问IP
           insightVip: 10.6.229.11/32          # 这是 Global 集群的 Insight-Server 采集所有子集群的监控指标的网络路径所用的 VIP
         ```
 
-    - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 k8s 负载均衡能力, 配置文件范例如下:
+    - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 K8s 负载均衡能力, 配置文件范例如下:
 
-        ``` yaml
+        ```yaml
         apiVersion: provision.daocloud.io/v1alpha1
         kind: ClusterConfig
         spec:
@@ -100,12 +100,15 @@
     如果是 kind 内的环境，仅可使用 NodePort 模式。
 
 1. 确保 kind 创建集群时，暴露集群内的 32000 端口(固定)到 kind 对外的 8888 端口（可自行修改），kind 配置文件如下：
-        
-    ``` yaml
-    apiVersion: provision.daocloud.io/v1alpha1
-    kind: ClusterConfig
-    spec:
-      loadBalancer: cloudLB
+
+    ```yaml
+    apiVersion: kind.x-k8s.io/v1alpha4
+    kind: Cluster
+    nodes:
+    - role: control-plane
+      extraPortMappings:
+      - containerPort: 32088
+        hostPort: 8888
     ```
 
 2. 获取 kind 所在主机的 IP，假定为 `10.6.3.1`，进行安装。
@@ -115,3 +118,9 @@
     ```
 
 3. 安装成功后，您可以前往 `https://10.6.3.1:8888` 访问 DCE 5.0！
+
+!!! note
+
+    如果安装过程中遇到什么问题，欢迎扫描二维码，与开发者畅快交流：
+
+    ![社区版交流群](../images/assist.png)

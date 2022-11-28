@@ -46,13 +46,14 @@
 
 ## 集群安装 storage 存储组件（可选）
 
-如果希望本组件安装在 4 层负载均衡模式下，要求安装 [f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller) ，而 [f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller) 要求集群具备 storage 组件提供 PVC 服务。可参考相关的存储组件安装手册。
+如果希望本组件安装在 4 层负载均衡模式下，要求安装 [f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller)，
+而 [f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller) 要求集群具备 storage 组件提供 PVC 服务。可参考相关的存储组件安装手册。
 
-如果希望本组件安装在 7 层负载均衡模式下，并不需要要求安装 [f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller) ，因此可忽略存储组件的安装。
+如果希望本组件安装在 7 层负载均衡模式下，并不需要要求安装 [f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller)，因此可忽略存储组件的安装。
 
 ## 集群安装组件步骤
 
-1. 拥有一个 DCE 集群，登录 global 集群的 WEBUI 管理界面，在导航的`容器管理` -> `集群列表`中，登录希望安装本组件的集群。
+1. 拥有一个 DCE 集群，登录 global 集群的 Web UI 管理界面，在导航的`容器管理` -> `集群列表`中，登录希望安装本组件的集群。
 
 2. 在 `Helm 应用` -> `Helm 模板`中，选择 `system` 仓库和`网络`组件，点击安装 `f5network`。
 
@@ -91,7 +92,7 @@
     - `Default Ingress IP`：当本组件安装在 7 层负载均衡模式下，本值设置了 F5 上的 ingress 入口 VIP，注意该 IP 应该是 F5 external interface 子网的 IP 地址。
       当本组件安装在 4 层负载均衡模式下，忽略本值。
 
-      注：若多个集群共用对接同一个 F5 设备，不同集群要使用独立的 IP。
+        注：若多个集群共用对接同一个 F5 设备，不同集群要使用独立的 IP。
 
     - `Only Watch F5 CRD`：当打开本选项，本组件只会监控自己的 CRD，适用于工作在 4 层负载均衡模式；否则，会监控全部的 K8S 资源，适用于工作在 7 层负载均衡模式。
 

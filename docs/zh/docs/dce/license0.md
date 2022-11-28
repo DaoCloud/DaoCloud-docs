@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 申请社区免费体验
 
 DCE 5.0 社区版包含的模块为[全局管理](../ghippo/01ProductBrief/WhatisGhippo.md)和[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)等模块。

@@ -154,7 +154,7 @@ kubectl port-forward -n tidb-cluster svc/basic-tidb 4000 > pf4000.out &
 
 2. 查询 TiDB 版本号
 
-    ```
+    ```sql
     select tidb_version()\G;
     ```
     ![连接 TiDB 集群](img/checkversion.png)

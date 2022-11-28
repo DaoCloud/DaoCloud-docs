@@ -6,7 +6,6 @@
 
 - 集群中已安装 insight-agent 且应用处于 `运行中` 状态。若未安装，请参考：[安装 insight-agent 采集数据](../../06UserGuide/01quickstart/installagent.md)
 
-
 ## 查看节点详情
 
 1. 在左侧导航栏选择 `场景监控` -> `服务监控`。

@@ -8,7 +8,7 @@
 
 !!! note
 
-  创建的地址池必须跟 `Metallb` 组件在同一个 namespace，否则 `Metallb` 无法识别。
+    创建的地址池必须跟 `Metallb` 组件在同一个 namespace，否则 `Metallb` 无法识别。
 
 ### 指定地址池
 
@@ -100,7 +100,7 @@ spec:
 
 共享 IP 另一个作用是 `LoadBalancer IP` 地址不足，需要多个 Service 共享同一个 IP，但注意不同 Service 的协议和端口应该是不同的，否则无法区分连接。
 
-## Metallb L2 Mode
+## Metallb L2 模式
 
 L2 模式下，`Metallb` 将会通过 ARP（for ipv4）、NDP（for ipv6）宣告 `LoadBalancerIP` 的地址。
 在 `Metallb` < `v0.13.2` 之前，只能通过 `configMap` 来配置 `Metallb`。
@@ -175,9 +175,9 @@ Service 的带宽限制也会取决于单个节点的带宽，这也是使用 AR
 
 - `ipAddressPools`：可选，通过 name 筛选地址池，如 `ipAddressPools` 和 `ipAddressPoolSelectors` 同时未指定，则作用于所有地址池。
 
-- `ipAddressPoolSelectors`: 可选，通过 labels 筛选地址池，如 `ipAddressPools` 和 `ipAddressPoolSelectors` 同时未指定，则作用于所有地址池。
+- `ipAddressPoolSelectors`：可选，通过 labels 筛选地址池，如 `ipAddressPools` 和 `ipAddressPoolSelectors` 同时未指定，则作用于所有地址池。
 
-- `nodeSelectors`: 可选，用于筛选哪些节点作为 `loadBalancerIP` 的下一跳，默认所有节点。
+- `nodeSelectors`：可选，用于筛选哪些节点作为 `loadBalancerIP` 的下一跳，默认所有节点。
 
 - 创建`LoadBalancer Service`
 
@@ -214,7 +214,7 @@ Service 的带宽限制也会取决于单个节点的带宽，这也是使用 AR
 
     这种模式下，具有良好的负载均衡性，但流量可能经历多跳，这会隐藏客户端源 IP。
 
-    ```
+    ```none
                                       ______________________________________________________________________________
                                     |                       -> kube-proxy(SNAT) -> pod A                          |
                                     |                      |                                                      |
@@ -228,7 +228,7 @@ Service 的带宽限制也会取决于单个节点的带宽，这也是使用 AR
 
     这种模式下，会保留客户端源IP，但负载均衡性较差，流量会一直到到某一个后段Pod.
 
-    ```
+    ```none
                                       __________________________________________________________________________________________
                                     |                       -> kube-proxy -> pod A (后段Pod在本节点)                            |
                                     |                      |                                                                  |
@@ -270,7 +270,7 @@ BGP 模式不局限于一个二层网络，集群中每个节点都会跟 BGP Ro
 
         BGP 模式需要硬件支持运行 BGP 协议。若无，可使用如 `frr`、`bird` 等软件代替。
 
-    推荐`frr`，安装:
+    推荐使用 `frr` 进行安装:
 
     ```shell
     # ubuntu
@@ -284,18 +284,18 @@ BGP 模式不局限于一个二层网络，集群中每个节点都会跟 BGP Ro
     ```shell
     router bgp 7675  # bgp as number
     bgp router-id 172.16.1.1  # route-id 常常是接口IP
-    no bgp ebgp-requires-policy # 关闭ebpf filter !!!
-    neighbor 172.16.1.11 remote-as 7776  # 配置ebgp -> neighbor 1, 172.16.1.11为集群一节点
+    no bgp ebgp-requires-policy # 关闭 ebpf filter !!!
+    neighbor 172.16.1.11 remote-as 7776  # 配置 ebgp -> neighbor 1, 172.16.1.11 为集群一节点
     neighbor 172.16.1.11 description master1 # description
-    neighbor 172.16.2.21 remote-as 7776  # 节点2
+    neighbor 172.16.2.21 remote-as 7776  # 节点 2
     neighbor 172.16.2.21 description woker1 
     ```
 
-    `Metallb` 配置:
+    `Metallb` 配置：
 
 - 配置 `BGPAdvertisement`
 
-    此 CRD 主要用于指定需要通过 BGP 宣告的地址池，同 L2 模式,可通过池名称或者 `labelSelector`筛选。同时可配置BGP一些属性：
+    此 CRD 主要用于指定需要通过 BGP 宣告的地址池，同 L2 模式，可通过池名称或者 `labelSelector`筛选。同时可配置BGP一些属性：
 
     ```yaml
     apiVersion: metallb.io/v1beta1

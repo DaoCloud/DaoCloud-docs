@@ -27,7 +27,9 @@ go get go.opentelemetry.io/otel@v1.8.0 \
 ```golang
 import (
 	"context"
-	"go.opentelemetry.io/contrib/propagators/ot"
+	"os"
+	"time"
+
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace"
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
@@ -37,28 +39,24 @@ import (
 	semconv "go.opentelemetry.io/otel/semconv/v1.7.0"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
-	"os"
-	"time"
 )
 
 var tracerExp *otlptrace.Exporter
 
-func retryInitTracer() {
+func retryInitTracer() func() {
+	var shutdown func()
 	go func() {
 		for {
-
 			// otel will reconnected and re-send spans when otel col recover. so, we don't need to re-init tracer exporter.
 			if tracerExp == nil {
-				shutdown := initTracer()
-				if shutdown != nil {
-					defer shutdown()
-				}
+				shutdown = initTracer()
 			} else {
 				break
 			}
 			time.Sleep(time.Minute * 5)
 		}
 	}()
+	return shutdown
 }
 
 func initTracer() func() {
@@ -68,39 +66,29 @@ func initTracer() func() {
 
 	serviceName, ok := os.LookupEnv("OTEL_SERVICE_NAME")
 	if !ok {
-		serviceName = "insight"
+		serviceName = "server_name"
+		os.Setenv("OTEL_SERVICE_NAME", serviceName)
 	}
-
 	otelAgentAddr, ok := os.LookupEnv("OTEL_EXPORTER_OTLP_ENDPOINT")
 	if !ok {
-		otelAgentAddr = "0.0.0.0:4317"
+		otelAgentAddr = "http://localhost:4317"
+		os.Setenv("OTEL_EXPORTER_OTLP_ENDPOINT", otelAgentAddr)
 	}
+	zap.S().Infof("OTLP Trace connect to: %s with service name: %s", otelAgentAddr, serviceName)
 
-	client := otlptracegrpc.NewClient(
-		otlptracegrpc.WithInsecure(),
-		otlptracegrpc.WithEndpoint(otelAgentAddr),
-		otlptracegrpc.WithDialOption(grpc.WithBlock()))
-
-	traceExporter, err := otlptrace.New(ctx, client)
+	traceExporter, err := otlptracegrpc.New(ctx, otlptracegrpc.WithInsecure(), otlptracegrpc.WithDialOption(grpc.WithBlock()))
 	if err != nil {
-		handleErr(err, "failed to creating OTLP trace exporter")
+		handleErr(err, "OTLP Trace gRPC Creation")
 		return nil
 	}
 
 	tracerProvider := sdktrace.NewTracerProvider(
+		sdktrace.WithBatcher(traceExporter),
 		sdktrace.WithSampler(sdktrace.AlwaysSample()),
-		sdktrace.WithResource(resource.NewWithAttributes(
-			semconv.SchemaURL,
-			semconv.ServiceNameKey.String(serviceName),
-		)),
-		sdktrace.WithSpanProcessor(sdktrace.NewBatchSpanProcessor(traceExporter)),
-	)
+    sdktrace.WithResource(resource.NewWithAttributes(semconv.SchemaURL)))
 
 	otel.SetTracerProvider(tracerProvider)
-	otel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(
-		propagation.TraceContext{},
-		propagation.Baggage{},
-	))
+	otel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(propagation.TraceContext{}, propagation.Baggage{}))
 
 	tracerExp = traceExporter
 	return func() {
@@ -114,6 +102,7 @@ func handleErr(err error, message string) {
 		zap.S().Errorf("%s: %v", message, err)
 	}
 }
+
 ```
 
 ### 在 main.go 中初始化跟踪器
@@ -122,7 +111,10 @@ func handleErr(err error, message string) {
 
 ```golang
 func main() {
-    retryInitTracer()
+  	// start otel tracing
+  	if shutdown := retryInitTracer(); shutdown != nil {
+			defer shutdown()
+		}
     ......
 }
 ```
@@ -242,6 +234,17 @@ func main() {
 }
 ```
 
+需要注意的是，如果你的程序里面使用到了 Grpc Client 调用第三方服务，你还需要对 Grpc Client 添加拦截器：
+
+```golang
+  	[...]
+
+	conn, err := grpc.Dial(addr, grpc.WithTransportCredentials(insecure.NewCredentials()),
+		grpc.WithUnaryInterceptor(otelgrpc.UnaryClientInterceptor()),
+		grpc.WithStreamInterceptor(otelgrpc.StreamClientInterceptor()),
+	)
+```
+
 ### 如果不使用请求路由
 
 ```golang
@@ -327,5 +330,7 @@ span.SetStatus(codes.Error, "internal error")
 ## 参考
 
 有关 Demo 演示请参考：
-- [opentelemetry-demo/productcatalogservice/](https://github.com/open-telemetry/opentelemetry-demo/tree/main/src/productcatalogservice)。
+
+- [otel-grpc-examples](https://github.com/openinsight-proj/otel-grpc-examples/tree/no-metadata-grpcgateway-v1.11.1)
+- [opentelemetry-demo/productcatalogservice](https://github.com/open-telemetry/opentelemetry-demo/tree/main/src/productcatalogservice)
 - [opentelemetry-collector-contrib/demo](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/examples/demo)

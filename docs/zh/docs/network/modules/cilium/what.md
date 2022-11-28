@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 什么是 Cilium
 
 Cilium 为基于 Kubernetes 的 Linux 容器管理平台上部署的服务，透明地提供服务间的网络和 API 连接及安全。

@@ -1,8 +1,3 @@
----
-sidebar_position: 4
-sidebar_label: "创建存储池"
----
-
 # 创建存储池
 
 下面的例子来自于一个 4 节点的 Kubernetes 集群：
@@ -16,9 +11,7 @@ k8s-worker-2   Ready    worker  59d   v1.24.3-2+63243a96d1c393
 k8s-worker-3   Ready    worker  36d   v1.24.3-2+63243a96d1c393
 ```
 
-## 步骤
-
-### 1. 创建 `LocalDiskClaim` 对象
+## 创建 `LocalDiskClaim` 对象
 
 HwameiStor 根据存储介质类型创建 `LocalDiskClaim` 对象来创建存储池。
 要在所有 Kubernetes Worker 节点上创建一个 HDD 存储池，用户需要通过 `storageNodes` 参数输入各个 Worker 节点名：
@@ -41,8 +34,7 @@ $ helm template ./hwameistor \
   | kubectl apply -f -
 ```
 
-
-### 2. 验证 `LocalDiskClaim` 对象
+## 验证 `LocalDiskClaim` 对象
 
 运行以下命令：
 
@@ -54,7 +46,7 @@ k8s-worker-2   k8s-worker-2   Bound
 k8s-worker-3   k8s-worker-3   Bound
 ```
 
-### 3. 验证 `StorageClass`
+## 验证 `StorageClass`
 
 运行以下命令：
 
@@ -64,7 +56,7 @@ NAME                         PROVISIONER         RECLAIMPOLICY   VOLUMEBINDINGMO
 hwameistor-storage-lvm-hdd   lvm.hwameistor.io   Delete          WaitForFirstConsumer   true                   114s
 ```
 
-### 4. 验证 `LocalDisk` 对象
+## 验证 `LocalDisk` 对象
 
 运行以下命令：
 
@@ -87,7 +79,7 @@ k8s-worker-3-sdb   k8s-worker-3   k8s-worker-3   Claimed
 k8s-worker-3-sdc   k8s-worker-3   k8s-worker-3   Claimed
 ```
 
-### 5. 观察 `VG` (可选)
+## 观察 `VG` (可选)
 
 在一个 Kubernetes Worker 节点上，观察为 `LocalDiskClaim` 对象创建 `VG`。
 
@@ -117,12 +109,12 @@ $ vgdisplay LocalStorage_PoolHDD
   VG UUID               jJ3s7g-iyoJ-c4zr-3Avc-3K4K-BrJb-A5A5Oe
 ```
 
-## 安装期间配置存储池
+!!! note
 
-在安装 HwameiStor 期间也可以通过设置 `storageNode` 参数配置存储池：
+    在安装 HwameiStor 期间也可以通过设置 `storageNode` 参数配置存储池：
 
-```console
-$ helm install hwameistor ./hwameistor \
-    -n hwameistor --create-namespace \
-    --set storageNodes='{k8s-worker-1,k8s-worker-2,k8s-worker-3}'
-```
+    ```console
+    $ helm install hwameistor ./hwameistor \
+        -n hwameistor --create-namespace \
+        --set storageNodes='{k8s-worker-1,k8s-worker-2,k8s-worker-3}'
+    ```

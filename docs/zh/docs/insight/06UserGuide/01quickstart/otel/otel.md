@@ -28,4 +28,5 @@ Insight 目前提供了使用 OpenTelemetry 增强 .Net NodeJS、Java、Python �
 指标接入的最佳实践：[使用 OpenTelemetry SDK 为应用程序暴露指标](./meter.md)。
 
 ## 日志增强
+
 TBD

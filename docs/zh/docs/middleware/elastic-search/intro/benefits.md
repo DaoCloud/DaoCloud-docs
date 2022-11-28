@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 产品优势
 
 **Elasticsearch 很快**

@@ -121,7 +121,7 @@ MinIO 专为大规模、多数据中心云存储服务而设计。
 
 1. 复制 minio operator 仓库到本地。
 
-    ```
+    ```sh
     git clone <https://github.com/minio/operator.git>
     ```
 
@@ -135,7 +135,7 @@ MinIO 专为大规模、多数据中心云存储服务而设计。
 
 3. 部署 minio-operator 实例。
 
-    ```
+    ```sh
     helm install minio-operator \
     --namespace minio-operator \
     --create-namespace \
@@ -173,7 +173,7 @@ MinIO 专为大规模、多数据中心云存储服务而设计。
 
 6. 创建租户：
 
-    ```
+    ```sh
     kubectl apply –k . 
     ```
 
@@ -193,43 +193,43 @@ MinIO 专为大规模、多数据中心云存储服务而设计。
 
 依次运行以下命令来配置本地卷。
 
-```
+```sh
 kubectl get statefulset.apps/minio-t1-pool-0 -nminio-tenant -oyaml
 ```
 
 ![local-storage-hdd-lvm](local-storage-hdd-lvm.png)
 
-```
+```sh
 kubectl get pvc –A
 ```
 
 ![kubectl-get-pvc](kubectl-get-pvc.png)
 
-```
+```sh
 kubectl get pvc export-minio6-0 -nminio-6 -oyaml
 ```
 
 ![kubectl-get-pvc-export-oyaml](kubectl-get-pvc-export-oyaml.png)
 
-```
+```sh
 kubectl get pv
 ```
 
 ![kubectl-get-pv](kubectl-get-pv.png)
 
-```
+```sh
 kubectl get pvc data0-minio-t1-pool-0-0 -nminio-tenant -oyaml
 ```
 
 ![kubectl-get-pvc-oyaml](kubectl-get-pvc-oyaml.png)
 
-```
+```sh
 kubectl get lv
 ```
 
 ![kubectl-get-lv](kubectl-get-lv.png)
 
-```
+```sh
 kubect get lvr
 ```
 
