@@ -12,7 +12,7 @@ DCE 5.0 分为社区版和商业版。社区版可免费使用，包括全局管
 
 ## 第二步：安装 DCE 5.0
 
-支持[在线安装](../install/install-dce-community.md)和[离线安装](../../../en/docs/install/offline-intall-community.md)两种方式。
+支持[在线安装](../install/install-dce-community.md)和[离线安装](../install/offline-install-community.md)两种方式。
 
 ### 在线安装社区版
 
