@@ -286,7 +286,7 @@
     云原生技术交流 Meetup 杭州站由 KubeSphere 社区与极狐 GitLab 社区联合组织。活动包括闪电演讲（10min）、单人/双人演讲（40min）两种形式，
     议题内容可包括云原生领域的项目与云原生技术实践，活动日期定于 8 月 27 日。
 
-- [8 月 23-24 日 Linux 基金会公布 Open Source Summit 拉美 2022 会议日程](https://events.2linuxfoundation.org/2022/06/30/the-linux-foundation-announces-conference-schedule-for-open-source-summit-latin-america-2022/)
+- [8 月 23-24 日 Linux 基金会公布 Open Source Summit 拉美 2022 会议日程](https://osslatam22.sched.com/)
 
     Open Source Summit 拉美 2022 将于 8 月 23-24 日在线上举行。峰会共包括 LinuxCon、 CloudOpen、ContainerCon 等 9 个分论坛，75+ 场演讲。
 
