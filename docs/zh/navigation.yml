@@ -297,6 +297,7 @@ nav:
               - 服务网格权限说明: ghippo/permissions/mspider.md
               - 网格架构: mspider/01Intro/Architecture.md
               - Release Notes: mspider/01Intro/release-notes.md
+          - 安装部署网格: mspider/install.md
           - 创建/删除网格:
               - 网格介绍: mspider/03UserGuide/servicemesh/README.md
               - 创建托管/专有网格: mspider/03UserGuide/servicemesh/create-mesh.md
