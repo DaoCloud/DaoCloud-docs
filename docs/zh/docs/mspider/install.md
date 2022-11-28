@@ -10,7 +10,7 @@ hide:
 
 1. 从左侧导航栏点击`容器管理`，进入`集群列表`，点击准备安装服务网格的集群名称。
 
-    ![安装采集器](./images/login01.png)
+    ![安装采集器](./images/login01.jpg)
 
 2. 在`集群概览`页面中点击`控制台`。
 
@@ -33,4 +33,4 @@ hide:
 
 4. 查看命名空间 `mspider-system` 下 Pod 信息，看到相关 Pod 已创建并运行，表示服务网格安装成功。
 
-   ![安装采集器](./images/install02.jpg)
+    ![安装采集器](./images/install02.jpg)
