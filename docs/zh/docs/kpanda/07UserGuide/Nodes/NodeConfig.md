@@ -28,12 +28,12 @@
 
 将上面命令中的 root@10.0.0.0 用户账户和 IP 替换为待创建集群的节点 用户名和 IP。规划的每台待创建集群的节点都需要执行相同的操作。
 
-4. 将私钥文件 id_rsa 进行 base 64 编码。
+4. 将私钥文件 `id_rsa` 进行 base 64 编码。
 
     ```yaml
     base64 id_rsa #将私钥文件进行 base64 格式编码
     ```
 
-5. 将编码后的私钥文件 id_rsa 下载到您当前节点上，并在界面完成私钥文件的上传。
+5. 将编码后的私钥文件 `id_rsa` 下载到您当前节点上，并在界面完成私钥文件的上传。
 
-    ![SSH 认证](../../../images/createcluster.png)
+    ![SSH 认证](../../../kpanda/images/createcluster-ssh01.png)
