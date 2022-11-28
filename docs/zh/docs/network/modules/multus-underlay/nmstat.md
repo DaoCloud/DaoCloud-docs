@@ -8,7 +8,7 @@ nmstate 这个项目旨在通过 k8s CRD 的方式配置节点上的网络, 它�
 
 ## 限制
 
-`nmstate` 依赖 NetworkManager , 所以不是所有的 Linux 发行版都支持, 比如 ubuntu 等。并且 NetworkManager 的版本必须 `>= 1.20` 
+`nmstate` 依赖 NetworkManager , 所以不是所有的 Linux 发行版都支持, 比如 ubuntu 等。并且 NetworkManager 的版本必须 `>= 1.20`
 
 可通过下面的方式检查 NetworkManager 的版本:
 
@@ -17,16 +17,16 @@ nmstate 这个项目旨在通过 k8s CRD 的方式配置节点上的网络, 它�
 1.22.8-4.el8
 ```
 
+更多内容请查阅 nmstate Helm chart 的 README 文件.
+
 ## 安装
 
 ```shell
-kubectl apply -f https://github.com/nmstate/kubernetes-nmstate/releases/download/v0.74.0/nmstate.io_nmstates.yaml
-kubectl apply -f https://github.com/nmstate/kubernetes-nmstate/releases/download/v0.74.0/namespace.yaml
-kubectl apply -f https://github.com/nmstate/kubernetes-nmstate/releases/download/v0.74.0/service_account.yaml
-kubectl apply -f https://github.com/nmstate/kubernetes-nmstate/releases/download/v0.74.0/role.yaml
-kubectl apply -f https://github.com/nmstate/kubernetes-nmstate/releases/download/v0.74.0/role_binding.yaml
-kubectl apply -f https://github.com/nmstate/kubernetes-nmstate/releases/download/v0.74.0/operator.yaml
+helm repo add daocloud https://daocloud.github.io/network-charts-repackage/ 
+helm install nmstate -n nmstate daocloud/nmstate --create-namespace
 ```
+
+更多安装细节请参考 Helm chart README文件.
 
 在安装完成后, 创建 CR 实例, 触发 nmstate controller 工作:
 
@@ -199,3 +199,5 @@ bond-vlan30   Available   SuccessfullyConfigured
     inet6 fe80::250:56ff:feb4:e941/64 scope link noprefixroute
        valid_lft forever preferred_lft forever
 ```
+
+更多 example 使用例子请参考: https://github.com/nmstate/kubernetes-nmstate/tree/main/docs/examples
