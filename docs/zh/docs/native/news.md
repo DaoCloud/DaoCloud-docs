@@ -1,10 +1,10 @@
 # 云原生社区要闻
 
-本页按月份列出 2022 年 4 月至今的云原生社区比较热门的新闻、事件、活动等。供大家一站式阅读，方便查阅和检索。
+本页按月份列出云原生社区比较热门的新闻、事件、活动等，供大家一站式查阅和检索。
 
 > 我们会定期维护，保证所有链接的有效性、新闻的时效性
 
-## 2022 年 12 月
+## 2022-12
 
 - [12 月 21 日全球分布式云大会·深圳站议题征集中](https://mp.weixin.qq.com/s/d5j4WawE_fzHuh4ZyRsixg)
 
@@ -56,7 +56,7 @@
     此次云原生 Meetup 长沙站由云原生社区主办，演讲者来自极狐 GitLab、中国移动、中国电信等公司，
     演讲内容涵盖 DevSecOps、ClusterAPI、云桌面等技术和话题。
 
-## 2022 年 11 月
+## 2022-11
 
 - [11 月 30 日全球分布式云大会年终盛典开启奖项申报](https://mp.weixin.qq.com/s/wtUyNpv9Q6gbtI1L3Odfng)
 
@@ -108,7 +108,7 @@
 
     赞助商方案：<https://oscimg.oschina.net/public_shard/GOTC2022%E6%B4%BB%E5%8A%A8%E6%96%B9%E6%A1%88-081922.pdf>
 
-## 2022 年 10 月
+## 2022-10
 
 - [10 月 31 日 KubeEdge 云原生边缘计算免费公开课发布](https://mp.weixin.qq.com/s/s4iuQMDhxjVTnhwVF7_ZJQ)
 
@@ -178,7 +178,7 @@
     报告显示，在 SLSA（软件工件供应链）和 SSDF（安全软件开发框架）的实践中，使用应用安全扫描作为 CI/CD 系统的一部分是最常见的做法。
     同时，报告还关注了软件交付和运营绩效。此外，云计算的使用量持续增长，公共云的使用率为 76%（2021 年为 56%）。
 
-## 2022 年 9 月
+## 2022-09
 
 - [9 月底 eBPF Summit 2022 召开](https://sessionize.com/ebpf-summit-2022/)
 
@@ -264,7 +264,7 @@
     在 Beta 测试版发布数月后，CNCF 宣布 [Prometheus 职业资格认证（PCA）考试](https://training.linuxfoundation.org/certification/prometheus-certified-associate/)已升级为 GA。
     PCA 是一门在线认证的多项选择测试，专为对可观测性和监控感兴趣的工程师或应用开发人员设计，旨在测试考生使用 Prometheus 监控云原生应用和基础设施及通过可观测数据提高应用性能等相关基础知识的掌握情况。
 
-## 2022 年 8 月
+## 2022-08
 
 - [8 月 31 日 Gartner 发布 2022 年云平台服务技术成熟度曲线](https://mp.weixin.qq.com/s/tLCN8fICgK7n00XuI33vEw)
 
@@ -345,7 +345,7 @@
     根据 Kubernetes Performance Score（KPS），分为 top/mid/low performer。开发人员的 self-service 程度是区分 top 和 low 的关键。
     其中，所有服务和应用都实现容器化的占比：68% vs 22%；启用开发者自助服务占比：73% vs 33%（top vs low）。
 
-## 2022 年 7 月
+## 2022-07
 
 - [7 月 29 至 31 日 ApacheCon Asia 2022 将于 7 月底在线举行（内附演讲申请方式）](https://mp.weixin.qq.com/s/COKolXXeiD1p9wmIRLT4Zw)
 
@@ -416,7 +416,7 @@
 
     完整版报告：<https://pdf.dfcfw.com/pdf/H3_AP202207041575792777_1.pdf?1656970762000.pdf>
 
-## 2022 年 6 月
+## 2022-06
 
 - [6 月 25 日首届云原生边缘计算峰会，演讲议题火热征集中（内附议题提交方式）](https://mp.weixin.qq.com/s/6IG8A-UamAtc63Mks0Av6w)
 
@@ -575,7 +575,7 @@
 
     鉴于目前国内新冠疫情防控形势严峻，原定于 2022 年 5 月 31 日至 6 月 2 日在上海举办的 2022 国际开源节将延期举办，预计延期至 12 月举办，如有新的进展主办方将会发布公告。
 
-## 2022 年 5 月
+## 2022-05
 
 - [Gartner 发布《监测和可观测性领域的优秀服务提供商》](https://www.gartner.com/en/doc/756867-cool-vendors-in-monitoring-and-observability)
 
@@ -660,7 +660,7 @@
 
     Linux 存储、文件系统、内存管理和 BPF 峰会聚焦 Linux 文件系统、存储和内存管理子系统的优化改进，这些改进将会在会议结束后 2-3 年内进入主线内核和 Linux 发行。
 
-## 2022 年 4 月
+## 2022-04
 
 - [2022 全球分布式云大会·北京站将于 4 月底在北京拉开帷幕（内附报名方式）](https://mp.weixin.qq.com/s/7yn9HZ69kr7pHLXxBPL1CA)
 
@@ -695,6 +695,12 @@
 
     4 月 25 日，在 Istio 委员会的支持下，谷歌已经提交了 Istio 加入 CNCF 的申请提案。Istio 的加入会让云原生堆栈变得更加完善。
 
+- [4 月 20 日云原生虚拟机运行项目 KubeVirt 升级为 CNCF 孵化项目](https://mp.weixin.qq.com/s/UyewZQKTn_9jSa7ElN0B_w)
+
+    CNCF 技术监督委员会已经投票接受 KubeVirt 作为 CNCF 的孵化项目。
+    KubeVirt 是 Redhat 开源的以容器方式运行虚拟机的项目，以 k8s add-on 方式，利用 k8s CRD 为增加资源类型 VirtualMachineInstance（VMI），
+    使用容器的 image registry 去创建虚拟机并提供 VM 生命周期管理。
+
 - [4 月 18 日 Carina 本地存储近日入选 CNCF 云原生全景图](https://mp.weixin.qq.com/s/PnktW21267g6dSP49ARgjQ)
 
     Carina 于 2021 年 10 月由博云正式开源，是一款专注于本地存储的解决方案。
@@ -702,11 +708,12 @@
 
     GitHub 地址：<https://github.com/carina-io/carina>
 
-- [4 月 20 日云原生虚拟机运行项目 KubeVirt 升级为 CNCF 孵化项目](https://mp.weixin.qq.com/s/UyewZQKTn_9jSa7ElN0B_w)
+- [4 月 13 日艾瑞咨询发布 3 月云服务行业动态及热点研究月报](https://mp.weixin.qq.com/s/yPB5x6eSrkpt2mAk8X4Jqw)
 
-    CNCF 技术监督委员会已经投票接受 KubeVirt 作为 CNCF 的孵化项目。
-    KubeVirt 是 Redhat 开源的以容器方式运行虚拟机的项目，以 k8s add-on 方式，利用 k8s CRD 为增加资源类型 VirtualMachineInstance（VMI），
-    使用容器的 image registry 去创建虚拟机并提供 VM 生命周期管理。
+    月报基于 2022 年 1 - 3 月对云服务行业各赛道动态的观察，得出观点：**SaaS 仍是最备受青睐的投资焦点** 。
+    IaaS 赛道中，互联网类云厂商仍占据该市场主导。
+
+    IaaS 与 SaaS 厂商均有参与 PaaS 平台开发与应用的行动。PaaS 细分赛道中，低代码成为热门。
 
 - [4 月 10 日：2021 年云原生下的智能营销研究报告](https://mp.weixin.qq.com/s/XHKCFq3Gm1tr22anbSnzNQ)
 
@@ -728,9 +735,4 @@
 
     Volcano 是一个云原生批处理系统，也是 CNCF 的第一个批处理计算项目。4 月 7 日，CNCF 技术监督委员会（TOC）投票接受 Volcano 作为 CNCF 孵化项目。
 
-- [4 月 13 日艾瑞咨询发布 3 月云服务行业动态及热点研究月报](https://mp.weixin.qq.com/s/yPB5x6eSrkpt2mAk8X4Jqw)
 
-    月报基于 2022 年 1 - 3 月对云服务行业各赛道动态的观察，得出观点：**SaaS 仍是最备受青睐的投资焦点** 。
-    IaaS 赛道中，互联网类云厂商仍占据该市场主导。
-
-    IaaS 与 SaaS 厂商均有参与 PaaS 平台开发与应用的行动。PaaS 细分赛道中，低代码成为热门。
