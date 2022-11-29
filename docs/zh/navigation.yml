@@ -91,7 +91,7 @@ nav:
               - Release Notes: ghippo/01ProductBrief/release-notes.md
           - 登录: ghippo/04UserGuide/00Login.md
           - 安装:
-              - 离线安装全局管理: ghippo/install/offlineInstall.md
+              - 离线升级全局管理: ghippo/install/offlineInstall.md
               - 自定义反向代理服务器地址: ghippo/install/reverseProxy.md
           - 用户与访问控制:
               - 什么是用户与访问控制: ghippo/04UserGuide/01UserandAccess/iam.md
@@ -132,6 +132,7 @@ nav:
               - 工作空间绑定命名空间: ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus.md
               - 一个集群分配给多个工作空间: ghippo/04UserGuide/02Workspace/a-cluster-to-multi-ws.md
               - 文件夹最佳实践: ghippo/04UserGuide/02Workspace/fdpractice.md
+              - 普通用户授权规划: ghippo/04UserGuide/02Workspace/authu-plan.md
               - GProduct 对接全局管理: 
                 - ghippo/gproduct/intro.md
                 - 接入导航栏: ghippo/gproduct/nav.md
