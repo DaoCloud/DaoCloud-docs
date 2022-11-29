@@ -4,6 +4,7 @@
 
 | 文件名称 | 版本 | Release Note | 文件大小 | 安装包 | checksum | 更新日期 |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| ghippo-0.12.0-tmp-1-amd64.bundle.tar | 0.12.0-tmp-1 | [查看](../../ghippo/01ProductBrief/release-notes.md) |  | [下载](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo-0.12.0-tmp-1-amd64.bundle.tar) | [下载](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo-0.12.0-tmp-1-amd64-checksum.txt) | 2022-11-29 |
 
 ## 校验
 
