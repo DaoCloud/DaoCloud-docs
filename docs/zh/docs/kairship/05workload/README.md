@@ -9,6 +9,6 @@ hide:
 
 ![workload](../images/workload01.png)
 
-## 注意事项
+!!! note
 
-当前通过多云编排仅支持创建无状态工作负载（Deployment）；如果您需要创建其他资源可临时采用 `YAML` 的方式创建
+    当前通过多云编排仅支持创建无状态工作负载（Deployment）；如果您需要创建其他资源可临时采用 `YAML` 的方式创建。
