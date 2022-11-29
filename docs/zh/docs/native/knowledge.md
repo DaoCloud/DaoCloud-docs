@@ -1,6 +1,6 @@
 # 知识分享
 
-本页分享一些云原生相关的知识，愿大家携手共进。
+本页分享一些云原生相关的技术文章，愿大家携手共进。
 
 ## 排障方案
 
@@ -41,6 +41,10 @@
     问题始于 eBay 工程师发现他们的 Kafka 服务在有些时候 follower 追不上 leader 的数据。
     为解决问题，利用了一些 eBPF 工具，例如，[biopattern](https://github.com/iovisor/bcc/blob/master/tools/biopattern.py) 用于展示 disk I/O pattern，[ebpf_exporter](https://github.com/cloudflare/ebpf_exporter) 用于数据收集和可视化。
 
+- [Kubernetes 网络排错骨灰级指南](https://mp.weixin.qq.com/s/mp5coRHPAdx5nIfcCnPFhw)
+
+    文章介绍 Kubernetes 集群中网络排查的思路，包括 Pod 常见网络异常分类、排查工具、排查思路及流程模型、CNI 网络异常排查步骤以及案例学习。
+
 ## 最佳实践
 
 - [K8s：利用 Mutating Admission Controller 简化应用的环境迁移](https://blog.getambassador.io/using-mutating-admission-controllers-to-ease-kubernetes-migrations-5699c1901015)
@@ -73,11 +77,14 @@
 
 - [如何保障云原生集群安全](https://mp.weixin.qq.com/s/sv40SzD7Ic1eMeElvccs7A)
 
-    文章为容器集群安全交流论坛的内容汇总。内容包括：云集群安全的分类以及预防及解决方案、容器云上集群划分原则、集群审计、节点安全保障、etcd 集群安全、设计网络策略保障集群资源的安全、网络隔离问题、按照安全等保级别针对 k8s 集群的标准化策略或配置等。
+    文章为容器集群安全交流论坛的内容汇总。
+    内容包括：云集群安全的分类以及预防及解决方案、容器云上集群划分原则、集群审计、节点安全保障、etcd 集群安全、设计网络策略保障集群资源的安全、网络隔离问题、按照安全等保级别针对 k8s 集群的标准化策略或配置等。
 
 - [Kubernetes 控制平面应该有多少个节点](https://thenewstack.io/how-many-nodes-for-your-kubernetes-control-plane/)
 
-    文章为确定 Kubernetes 控制平面的大小提供了参考。对于大多数用例，3 个节点足以。5 个节点将提供更好的可用性，但在所需节点数量和硬件资源消耗方面成本更高。此外，监控、备份 etcd 和控制平面节点配置是解决节点故障、预防意外的最佳实践方案。
+    文章为确定 Kubernetes 控制平面的大小提供了参考。对于大多数用例，3 个节点足以。
+    5 个节点将提供更好的可用性，但在所需节点数量和硬件资源消耗方面成本更高。
+    此外，监控、备份 etcd 和控制平面节点配置是解决节点故障、预防意外的最佳实践方案。
 
 - [利用 Istio 减少跨可用区流量开销](https://www.tetrate.io/blog/minimizing-cross-zone-traffic-charges-with-istio/)
 
@@ -95,6 +102,59 @@
 - [零信任策略下 K8s 安全监控最佳实践](https://mp.weixin.qq.com/s/wYUNsGaWEnQZ0BVxsQORbA)
 
     文章介绍如何在分布式容器化环境中借助 K8s 相关的安全数据源及采集技术，监控 K8s 集群，及时发现异常 API 访问事件、异常流量、异常配置、异常日志等行为，并且结合合理的告警策略建立更主动的安全防御体系。
+
+- [基于 DevOps 流程的容器安全最佳实践](https://mp.weixin.qq.com/s/y42BgaosyIQnA1uDEgqTPA)
+
+    文章分享了青藤云安全总结得出的适用于 DevOps 工作流程的 14 个容器安全实践，包括防御阶段的 6 个安全左移步骤、保护阶段的安全运行容器、检测阶段的异常行为告警以及响应阶段的事件响应与取证。
+
+- [如何设计内部开发平台的 “Golden Path”](https://cloud.redhat.com/blog/designing-golden-paths)
+
+    “Golden Path”是指构建和部署某个软件的预架构方法。
+    这种方法基于最佳实践的沉淀，能够加速典型应用的开发效率，是成功搭建内部开发平台（IDP）的先决条件。
+    文章介绍了“Golden Path”应该具备的特点以及一个简单相关成熟度模型，并展示了一个如何实施“Golden Path”的例子。
+
+- [通过云原生的方式管理 GPU 资源](https://mp.weixin.qq.com/s/W-Ntu2xdjypFgs5EPMVjkg)
+
+    文章介绍了如何使用云原生的方式管理GPU资源，包括统一 GPU 资源和框架，以及通过 qGPU 共享方式提高 GPU 使用率，降低了集群层面 GPU 资源的管理难度。
+
+- [微服务全链路灰度新能力](https://mp.weixin.qq.com/s/JL7Ru4nIiP2XuXwNiw2TtA)
+
+    文章主要介绍阿里云 MSE 服务治理基于全链路灰度能力的应用场景与痛点延伸出来的两个新能力：运行时白屏化和配置灰度。
+    运行时白屏化用于洞察全链路灰度的流量匹配以及运行的行为；配置灰度是指微服务应用中的配置项应该具备的灰度能力，以应对灰度应用对特殊配置值的诉求。
+
+- [Kubernetes 集群利用率提升实践](https://mp.weixin.qq.com/s/IAo41AZ0aAkIxY-JzonXMQ)
+
+    文章分享了 Kubernetes 集群利用率提升的思路和实现方式，包括两级扩容机制、两级动态超卖、动态调度、动态驱逐。
+
+- [NGINX 现代应用参考架构（MARA）的 OpenTelemetry 集成进展报告](https://mp.weixin.qq.com/s/j1dknNrFz0XqXSB2-Cwc3g)
+
+    [MARA](https://github.com/nginxinc/kic-reference-architectures) 是可用于在 Kubernetes 环境中构建和部署现代应用的生产就绪代码。
+    文章描述了 MARA 对多功能开源可观测性工具的需求，然后介绍了选择 OpenTelemetry 过程中的利弊权衡和设计决策，
+    以及采用了哪些技术将 OpenTelemetry 与使用 Python、Java 和 NGINX 构建的微服务应用相集成。
+
+- [Istio 外部控制面部署实践](https://mp.weixin.qq.com/s/TaQWryqD5AwWMJOXbejaqg)
+
+    通过对外部 Istiod 部署模型进行调研与部署，作者对其架构进行了剖析并对其使用的部署 yaml 文件部分进行了解析，总结了在部署过程中可能会遇到一些问题。
+
+- [**监控 Cilium 的关键指标**](https://www.datadoghq.com/blog/cilium-metrics-and-architecture/)
+
+    文章介绍了监控 Cilium 的关键指标：端点的健康状况、Kubernetes 网络状态、网络策略的有效性、Cilium 的 API 处理和速率限制的性能。
+
+- [**基于服务网格的云原生安全分层方法**](https://www.tetrate.io/blog/lateral-movement-and-the-service-mesh/)
+
+    文章主要探讨如何利用服务网格优化 OSI 模型各层的现有安全工具和实践。
+    服务网格很适合作为最接近应用的一层，位于（并隐藏）底层安全层之上，为服务提供传输加密、应用身份和应用层访问控制。
+
+- [**Observability 之采样 sampling 场景和落地案例（下篇）**](https://mp.weixin.qq.com/s/nxnz37VJydNHFMaEywu9KA)
+
+    作者围绕一些落地案例，分享了一些关于可观测系统采样设计的思考。
+    先分析全量采样的必要性、适合全量采样的链路，然后分享了阿里鹰眼和字节跳动等业内完整采样方案以及 OpenTelemetry 生产环境采样案例。
+
+- [**如何扩展 K8s Descheduler 策略**](https://mp.weixin.qq.com/s/pkDxexvrzmtuLMWwzi0p_g)
+
+    社区 Descheduler 的功能远不能满足公司内部生产环境的需要。
+    文章介绍了 LowNodeUtilization 和 HighNodeUtilization 策略的扩展。
+    在使用 Descheduler 迁移 Pod 时还需要对业务的稳定性做一些保障措施，完善组件功能后还需要对服务自身进行效果评估。
 
 ## 工具推荐
 
@@ -119,16 +179,6 @@
     [Quarkus](https://github.com/quarkusio/quarkus) 解决了传统框架内存消耗大和容器环境的扩展问题。
     通过 Quarkus，开发人员可以使用熟悉的技术构建云原生微服务和 serverless function。
     文章介绍如何开始使用 Quarkus 进行 serverless function 开发、如何优化 function 并实现持续测试，以及制作跨 serverless 平台的可移植 function 等。
-
-- [K8s CNI 插件选型和应用场景探讨](https://mp.weixin.qq.com/s/GG7GX_E1oyZf-cmjk80OYg)
-
-    文章介绍容器环境常见七个网络应用场景及对应场景的 Kubernetes CNI 插件功能实现。
-
-- [云原生时代的 DevOps 平台设计之道（Rancher vs KubeSphere vs Rainbond）](https://mp.weixin.qq.com/s/oxeNq4GHE85NUBIDcgixcg)
-
-    文章重点介绍了 Rancher 、KubeSphere、Rainbond 三款云原生平台级产品各自不同的 DevOps 实现。
-    作者认为，DevOps 团队可以选择 Rancher + KubeSphere 或 Rancher + Rainbond 的组合。
-    Rancher 最擅长向下对接基础设施，管理集群的安全性与合规性，而向上为开发人员提供易用的云原生平台则交给 KubeSphere 或 Rainbond。
 
 - [GitLab + Jenkins + Harbor 工具链快速落地指南](https://mp.weixin.qq.com/s/fA38H5up9VqZ3zEBy1eXnA)
 
@@ -179,19 +229,122 @@
     TAP 的云原生应用运行时抽象层（CNR）的核心是 Knative。
     TAP 提供了一个 Runtime 运行时层，既支持用户使用 K8S Deployment 和 Service,也可以使用 Knative Serving, Scale From/To Zero,Eventing 和 Streaming 等。
 
-- [到底谁强？Grafana Mimir 和 VictoriaMetrics 性能测试](https://mp.weixin.qq.com/s/TVJZ5k5U7bs8WEyE4rikSQ)
-
-    文章比较 VictoriaMetrics 和 Grafana Mimir 集群在相同硬件上运行的工作负载的性能和资源使用情况。在基准测试中，与 Mimir 相比，VictoriaMetrics 表现出更高的资源效率和性能。从操作上讲，VictoriaMetrics 扩展更为复杂，Mimir 可以很容易实现组件扩展。
-
 - [使用 Tekton 和 Kyverno 的基于策略的方法来保障 CI/CD 管道的安全](https://www.cncf.io/blog/2022/09/14/protect-the-pipe-secure-ci-cd-pipelines-with-a-policy-based-approach-using-tekton-and-kyverno/)
 
-    [Tekton](https://github.com/tektoncd/pipeline) 提供了一个强大的 CI/CD 框架，并且通过 Tekton Chains 等扩展确保构建工件的安全。[Kyverno](https://github.com/kyverno/kyverno) 可用于管理策略，实现基于命名空间的隔离，并为 Tekton 管道生成安全资源。
+    [Tekton](https://github.com/tektoncd/pipeline) 提供了一个强大的 CI/CD 框架，并且通过 Tekton Chains 等扩展确保构建工件的安全。
+    [Kyverno](https://github.com/kyverno/kyverno) 可用于管理策略，实现基于命名空间的隔离，并为 Tekton 管道生成安全资源。
     此外，还可以签署 OCI 工件，如 Tekton 捆绑物。Tekton 和 Kyverno 的强大组合使软件构建和交付系统的安全和自动化达到了新的水平。
 
 - [K8S 运维开发调试神器 Telepresence 实践指南](https://mp.weixin.qq.com/s/Yu5z9w26rqgVHkEYhg1t2g)
 
     [Telepresence](https://github.com/telepresenceio/telepresence) 可用于在本地运行单个服务，同时将该服务连接到远程 Kubernetes 集群。
     Telepresence 提供了 3 个非常重要的功能：cluster 域名解析、cluster 流量代理和 cluster 流量拦截。
+
+- [使用 Containerlab + Kind 快速部署 Cilium BGP 环境](https://mp.weixin.qq.com/s/FBkln02REVMByhdzaZhj7w)
+
+    Kind 提供快速部署 K8s 能力，[Containerlab](https://github.com/srl-labs/containerlab) 提供快速部署网络资源能力，二者结合可达到秒速部署跨网络 K8s 集群，可用于快速部署和销毁 Cilium BGP 环境。
+
+- [可观测下一站：基于 Trace 的测试](https://thenewstack.io/trace-based-testing-the-next-step-in-observability/)
+
+    可观测性工具收集的分布式追踪数据是集成测试的理想选择。
+    基于 trace 的测试能够准确地指定要测试的事务，观测系统行为的结果，验证组件之间的依赖关系，主动测试潜在的问题。
+    [Tracetest](https://github.com/kubeshop/tracetest) 是一个基于 trace 的测试工具，它利用 Opentelemetry 分布式追踪所捕获的数据，来生成强大的集成测试。
+
+- [RunD：高密高并发的轻量级 Serverless 安全容器运行时](https://mp.weixin.qq.com/s/fgBKqIeuGt2tLcQaYuuyfg)
+
+    RunD 通过全栈的 host-to-guest 解决方案，解决了跨容器的重复数据、每个虚拟机的高内存占用和 host 端 cgroup 的高开销问题，提供高密度部署和高并发能力的支持。
+    使用 RunD 运行时，可以做到在一秒内启动超过 200 个安全容器，并且可以在一个 384GB 内存的节点上部署超过 2500 个安全容器。
+
+- [在 Kubernetes 中实施零信任的难点及相关开源解决方案](https://thenewstack.io/introducing-open-source-zero-trust-to-kubernetes/)
+
+    Kubernetes 的复杂性使得标准化应用零信任原则成为挑战。默认情况下，kubectl 不启用 RBAC，执行的命令不会被用户账户记录。通过防火墙访问资源很困难，监督多个集群也变得繁杂易错。
+    [Paralus](https://github.com/paralus/paralus) 是为多集群环境设计的资源访问管理、威胁识别响应方案，支持自定义角色、身份提供商（IdP）等，允许管理员创建具有不同权限的自定义规则。
+
+- [Kubernetes Gateway API 及其用例介绍](https://www.armosec.io/blog/kubernetes-gateway-api/)
+
+    文章介绍了 Gateway API 与 Ingress 的区别及其用例。Gateway API 是 Ingress 的演变，它通过扩展 API 定义来提供一些高级的功能，如 HTTP 和 TCP 路由、流量拆分、跨命名空间路由以及集成渐进式交付工具等。
+
+- [如何进行 K8s 集群基准测试——Kube-burner 对 KubeVirt CRD 的扩展支持介绍](https://cloud.redhat.com/blog/introducing-kubevirts-crd-support-for-kube-burner-to-benchmark-kubernetes-and-openshift-creation-of-vms)
+
+    [Kube-burner](https://github.com/cloud-bulldozer/kube-burner)一个通过创建或删除大量对象进行 Kubernetes 集群压测的工具。
+    kube-burner 在默认情况下不支持第三方插件，如 KubeVirt CRD。
+    因此，Openshift 对 kube-burner 进行扩展以支持 KubeVirt CRD，通过创建/删除虚拟机实现集群基准测试。
+
+- [在 Argo CD 中使用 Sops 增强 GitOps 安全性](https://mp.weixin.qq.com/s/GboGFpdAfF1SL150VSRn8Q)
+
+    [Sops](https://github.com/mozilla/sops) 是一款加密文件的编辑器，支持 YAML、JSON、ENV 等格式，同时可以用 AWS KMS、GCP KMS、age 和 PGP 等进行加密。
+    Argo CD 可以与 Sops 集成，对私密信息进行加解密。
+
+- [如何使用 KubeClarity 检测和管理软件物料清单以及容器镜像和文件系统漏洞](https://mp.weixin.qq.com/s/mw948wYKmTWt-Mxv4nxHRA)
+
+    [KubeClarity](https://github.com/openclarity/kubeclarity) 是一款专门用于检测和管理软件物料清单以及容器镜像和文件系统漏洞的工具，可以扫描运行时 K8s 集群和 CI/CD 管道，以增强软件供应链的安全性。
+
+- [如何针对 Helm 做金丝雀发布？](https://mp.weixin.qq.com/s/frOOSffcCknS_YAjQChuNg)
+
+    Helm 本身在设计时并不考虑灰度发布、也不针对工作负载做管理。
+    通过 [KubeVela 的插件机制](https://github.com/kubevela/catalog/tree/master/addons)联合 fluxcd addon 和 kruise-rollout addon，无需对 Helm Chart 做任何改动，就可轻松完成 Helm 应用的金丝雀发布。
+
+- [**使用 Nocalhost 开发 Rainbond 上的微服务应用**](https://mp.weixin.qq.com/s/kC9P7fvMtJvKK7_TM2LbTw)
+
+    [Nocalhost](https://github.com/nocalhost/nocalhost) 是基于 IDE 的云原生应用开发工具，[Rainbond](https://github.com/goodrain/rainbond) 是一款云原生多云应用管理平台。
+    Nocalhost 可以直接在 Kubernetes 中开发应用，Rainbond 可以快速部署微服务项目，无需编写 Yaml，Nocalhost 结合 Rainbond 加速微服务开发效率。
+
+- [**两个 OCI 镜像构建工具介绍 builders—— melange 和 apko**](https://blog.chainguard.dev/secure-your-software-factory-with-melange-and-apko/)
+
+    [apk](https://github.com/alpinelinux/apk-tools) 直接使用 Alpine 的包管理工具 APK 来构建镜像，不需要使用 Dockerfile，只需要提供声明式 YAML 清单。
+    [melange](https://github.com/chainguard-dev/melange) 使用声明式 YAML 管道来构建 APK。
+
+- [**多集群场景下基于 Flux v2 的应用持续交付实践**](https://mp.weixin.qq.com/s/a9lRoa36tFl1_1-ESvXJpA)
+
+    [Flux v2](https://github.com/fluxcd/flux2) 提供了一组可支持实现 GitOps 的工具，面向云原生应用持续交付提供了通用的解决方案。
+    文章主要从多集群场景下部署差异化配置的云原生应用出发，介绍了基于 Flux v2 的应用持续交付实践。
+
+- [**使用 Chain-bench 审计你的软件供应链是否符合 CIS 的要求**](https://blog.aquasec.com/cis-software-supply-chain-compliance)
+
+    互联网安全中心（CIS）最近发布了[《软件供应链安全指南》](https://github.com/aquasecurity/chain-bench/blob/main/docs/CIS-Software-Supply-Chain-Security-Guide-v1.0.pdf)，提供保护软件交付管道的最佳实践。
+    作为指南的发起者和主要贡献者，Aqua 团队开发了首个软件供应链审计开源工具—— [Chain-bench](https://github.com/aquasecurity/chain-bench)，用以审计软件供应链是否符合 CIS 的基准，并实现审计过程自动化。
+
+- [**Chainguard 版本的 下一代 Distroless 镜像**](https://blog.chainguard.dev/minimal-container-images-towards-a-more-secure-future/)
+
+    Chainguard 正在构建下一代 [distroless](https://github.com/distroless) 镜像，使用一个工具链即可轻松地从现有的软件包中组成 distroless 镜像，并创建自定义软件包。
+    与谷歌的 Bazel 和基于 Debian 的系统不同的是，Chainguard 工具链以 [apk](https://github.com/alpinelinux/apk-tools)（Alpine 软件包管理器）、[apko](https://github.com/chainguard-dev/apko)（用来构建基于 Alpine 的 distroless 镜像） 和 [melange](https://github.com/chainguard-dev/melange)（使用声明式 pipeline 构建 apk 包）为核心，减少 distroless 镜像的复杂性。
+
+- [**通过 MetalLB 在 OpenYurt 边缘侧实现对 LoadBalancer类型 service 的支持**](https://openyurt.io/zh/blog/Enable-MetalLB-in-OpenYurt/)
+
+    在云边协同场景下，由于边缘侧并不具备云端 SLB 服务的能力，边缘 Ingress 或边缘应用无法暴露 LoadBalancer 类型的服务供集群外访问。
+    文章对此场景，探讨如何通过 MetalLB 在OpenYurt 边缘侧实现对 LoadBalancer 类型 service 的支持。
+
+- [**在 Kubernetes 中实施热重载应用**](https://loft.sh/blog/implementing-hot-reloading-in-kubernetes/?utm_medium=reader&utm_source=rss&utm_campaign=blog_implementing-hot-reloading-in-kubernetes?utm_source=thenewstack&utm_medium=website)
+
+    如果想在开发 Kubernetes 应用时直接在集群内测试应用，需要执行相当多的步骤。
+    文章介绍了在 Kubernetes 内部进行热重载的意义，以及如何使用[DevSpace](https://github.com/loft-sh/devspace) 高效完成热重载——DevSpace 负责自动重建和重新部署应用，用户只需要保存应用文件。
+
+- [**使用 Tracetest 检测和修复性能问题**](https://kubeshop.io/blog/detect-fix-performance-issues-using-tracetest?utm_source=thenewstack&utm_medium=website)
+
+    [Tracetest](https://github.com/kubeshop/tracetest) 是基于 OpenTelemetry Traces 的端到端测试工具。
+    Tracetest 可以在用户或开发人员遇到 bug 之前发现代码中的异常情况。
+
+## 产品选型
+
+- [K8s CNI 插件选型和应用场景探讨](https://mp.weixin.qq.com/s/GG7GX_E1oyZf-cmjk80OYg)
+
+    文章介绍容器环境常见七个网络应用场景及对应场景的 Kubernetes CNI 插件功能实现。
+
+- [云原生时代的 DevOps 平台设计之道（Rancher vs KubeSphere vs Rainbond）](https://mp.weixin.qq.com/s/oxeNq4GHE85NUBIDcgixcg)
+
+    文章重点介绍了 Rancher 、KubeSphere、Rainbond 三款云原生平台级产品各自不同的 DevOps 实现。
+    作者认为，DevOps 团队可以选择 Rancher + KubeSphere 或 Rancher + Rainbond 的组合。
+    Rancher 最擅长向下对接基础设施，管理集群的安全性与合规性，而向上为开发人员提供易用的云原生平台则交给 KubeSphere 或 Rainbond。
+
+- [到底谁强？Grafana Mimir 和 VictoriaMetrics 性能测试](https://mp.weixin.qq.com/s/TVJZ5k5U7bs8WEyE4rikSQ)
+
+    文章比较 VictoriaMetrics 和 Grafana Mimir 集群在相同硬件上运行的工作负载的性能和资源使用情况。
+    在基准测试中，与 Mimir 相比，VictoriaMetrics 表现出更高的资源效率和性能。从操作上讲，VictoriaMetrics 扩展更为复杂，Mimir 可以很容易实现组件扩展。
+
+- [一文读懂 Prometheus 长期存储主流方案](https://mp.weixin.qq.com/s/1BF83kIF_AGVD9J2qLnlSA)
+
+    由于 Prometheus 存在跨集群聚合、长时间存储等局限性，社区给出了多种扩展方案。
+    文章对包括 M3、VictoriaMetrics、Thanos、Cortex、Grafana Mimir 在内的 5 种主流 Prometheus 长期存储方案进行了多维度对比分析。
 
 ## 前沿热点
 
@@ -214,6 +367,43 @@
 
     持续性能分析（简称 CP）对于开发者的意义在于，在生产环节，永远知道代码的所有执行细节。
     文章在介绍 CP 发展历史的基础上，分析了性能分析 profiling 的 2 个关键点：获取堆栈数据和生成火焰图，以及常见的 profiling tool。
+
+- [下一代云原生边缘设备管理标准 DMI 的设计与实现](https://mp.weixin.qq.com/s/T3TnKXhBefqavP4rni59Sg)
+
+    DMI 整合设备管理接口，优化边缘计算场景下的设备管理能力；
+    同时定义了 EdgeCore 与 Mapper 之间统一的连接入口，并分别由 EdgeCore 和 Mapper 实现上行数据流和下行数据流的服务端和客户端，承载 DMI 具体功能。
+
+- [使用 eBPF LSM 热修复 Linux 内核漏洞](https://mp.weixin.qq.com/s/UJEC8nmfQbdsWdJMfju0ig)
+
+    Linux Security Modules（LSM）是一个基于 hook 的框架，用于在 Linux 内核中实现安全策略和强制访问控制。
+    文章介绍了 eBPF LSM 的实现思路（核心内容是确定 hook 点），如何使用 unshare 将 user 映射到 root，以及如何通过在 eBPF 中实现程序来解决真实场景问题。
+    最后，对比了这个 LSM 程序的性能影响。
+
+- [**关于 Cilium Service Mesh，你需要知道的一切**](https://isovalent.com/blog/post/cilium-service-mesh/)
+
+    Cilium 在最新发布 [v1.12](https://github.com/cilium/cilium/releases/tag/v1.12.0) 中正式推出 Cilium Service Mesh。
+    在 Cilium Service Mesh 中，除有多种不同的控制平面可供选择外，用户还能够灵活地选择运行有/无 sidecar 模型的服务网格。
+
+- [使用 eBPF 准确定位服务网格的关键性能问题](https://www.tetrate.io/blog/pinpoint-service-mesh-critical-performance-impact-by-using-ebpf/)
+
+    [SkyWalking Rover](https://github.com/apache/skywalking-rover) 是 SkyWalking 生态系统中引入的 eBPF profiling 功能，可实现 CPU profiling、off-CPU profiling 等。
+    文章讨论了如何使用 eBPF 技术来改进 SkyWalking 中的剖析功能，并用于分析服务网格中的性能影响。
+
+- [**coolbpf 技术实践，将 BPF 程序开发效率提升百倍**](https://www.infoq.cn/article/IielSpCwjf6Owd6jMBef)
+
+    [coolbpf](https://github.com/aliyun/coolbpf) 是由龙蜥社区开源的一站式 BPF 开发编译平台，旨在解决 BPF 在不同系统平台的运行和生产效率提升问题。
+    coolbpf 的六大功能：本地编译服务，基础库封装；远程编译服务；高版本特性通过 kernel module 方式补齐到低版本；自动生成 BTF；各内核版本功能测试自动化；Python、Rust、Go、C 等高级语言支持。
+
+- [**阿里云容器服务负责人对云原生与软件供应链安全的思考**](https://mp.weixin.qq.com/s/jz8sBMeHTSFm8sndHakddw)
+
+    文章作者介绍了目前容器化软件供应链安全的最新实践和工具链，包括容器镜像的 SBOM 支持，以及新一代镜像签名技术—— Sigstore 的无密钥签名 Keyless Signatures 模式。
+
+- [**eBPF、Sidecar 和服务网格的未来**](https://buoyant.io/2022/06/07/ebpf-sidecars-and-the-future-of-the-service-mesh/)
+
+    Linkerd 团队认为，至少在可预见的未来，eBPF 服务网格仍然需要 sidecar 代理。
+    一方面，eBPF 的局限性意味着 L7 流量代理仍然需要用户空间网络代理来完成工作；
+    另一方面，同 sidecar 相比，基于主机的代理在操作、维护和安全性方面都更差。
+    而 Linkerd 未来将继续利用 eBPF 技术让 sidecar 代理变得更小更轻快。
 
 ## 安全漏洞
 
@@ -238,6 +428,16 @@
     此问题没有缓解措施。集群管理员应注意保护聚合 API Server，不允许不受信任方访问 mutate API Services。
     受影响版本：kube-apiserver 1.25.0、1.24.0 - 1.24.4、1.23.0 - 1.23.10、1.22.0 - 1.22.14。已修复版本：1.25.1、1.24.5、1.23.11、1.22.14。
 
+- [Aqua 发现新型非法加密挖矿方式，能够利用容器消耗网络带宽](https://blog.aquasec.com/cryptojacking-cloud-network-bandwidth)
+
+    近日，Aqua Security 发布了一则关于新型挖矿攻击的警报。较传统的挖矿攻击会造成 CPU 消耗的急剧增加，新型攻击利用容器消耗网络带宽，而 CPU 消耗增加并不显著。
+    因此，依靠 CPU 利用率来识别攻击的安全工具可能无法发现该威胁。
+    Aqua 建议，运行能够静态和动态分析容器的安全工具是最有效的抵御攻击的方式。
+
+- [**Istio 漏洞：向 Envoy 发送格式不正确的头信息可能导致未知内存访问**](https://istio.io/latest/news/security/istio-security-2022-006/)
+
+    在受影响的版本（1.14.2 和 1.13.6）中，在某些配置中向 Envoy 发送的格式错误头信息可能导致未知行为或崩溃。该漏洞已在 1.12.8、1.13.5 和 1.14.1 版本中得到解决。此外，Istio 官方建议不要在生产环境中安装 1.14.2 或 1.13.6。
+
 ## 电子书
 
 - [白皮书《云原生成熟度矩阵评估》中文版](https://mp.weixin.qq.com/s/xLuAOXwCVif7KrrpZIcUow)
@@ -250,6 +450,11 @@
 
     这本书介绍了服务身份的 SPIFFE 标准，以及 SPIFFE 的参考实现 SPIRE。
     深入阐述了如何设计一个 SPIRE 部署、与其他系统集成的方法、如何使用 SPIFFE 身份通知授权、与其他安全技术对比等。
+
+- [**Kube-OVN v1.10 系列中文文档，99.9% 的问题都能在这里找到答案**](https://mp.weixin.qq.com/s/OI996gGQasWaFLy2Matghw)
+
+    文档分为五个部分：Kube-OVN 快速入门、使用指南、运维指南、高级功能和技术参考。  
+    点击查阅[文档](https://kubeovn.github.io/docs/)
 
 ## 其他
 
@@ -282,3 +487,23 @@
 - [Kubernetes Node 组件指标梳理](https://mp.weixin.qq.com/s/nrKk7tuARnvfnH0VOF7q9Q)
 
     文章对 kubelet 自身指标、kube-proxy 指标、kube-state-metrics 指标以及 cadvisor 指标进行了完整梳理。
+
+- [Kubernetes 1.25 中的删除和主要变化](https://kubernetes.io/blog/2022/08/04/upcoming-changes-in-kubernetes-1-25/)
+
+    v1.25 的删除和主要变化：删除 PodSecurityPolicy、核心 CSI 迁移功能升级为 GA、弃用 GlusterFS、Kubernetes 发布工件签名升级为 Beta、cgroup v2 支持升级为 GA、清理 IPTables 链所有权。
+
+- [解读 Curve 资源占用之内存管理](https://mp.weixin.qq.com/s/3gupHWlcRRY-lCsV9nZhDA)
+
+    文章结合分布式存储系统 [Curve](https://github.com/opencurve/curve) 说明内存布局，以及内存分配器的必要性和需要解决的问题，
+    并通过举例说明内存分配器的内存管理方法，最后介绍当前 Curve 内存分配器的选择及原因。
+
+- [**Kubernetes 单机侧的驱逐策略总结**](https://mp.weixin.qq.com/s/ehECtQiXSHLpCrH5vuBX_w)
+
+    文章总结用户空间和内核空间的驱逐流程和进程选择策略。
+    用户态中 Kubelet 通过驱逐来限制节点资源、pod 资源。
+    用户空间通过监控系统资源来触发驱逐流程，内核空间通过分配内存时触发驱逐流程。
+
+- [**GitOps 成熟度检查清单**](https://www.weave.works/blog/the-16-point-checklist-for-gitops-success)
+
+    文章介绍了一份 [GitOps 检查清单](https://go.weave.works/rs/249-YDT-025/images/The%2016-point%20Checklist%20for%20GitOps%20Success.pdf)，可用于评估团队 GitOps 的成熟度。
+    清单共 16 项，包括六个维度：团队文化、git 管理、GitOps pipeline、Kubernetes、安全&策略。
