@@ -17,7 +17,7 @@
 - **新增** 字段 WorkloadShadow.Status.SidecarVersions
 - **新增** 对所有请求参数添加校验
 - **新增** API 的 Pipeline，用于单独发布 mspider-api 的 sdk 版本
-- **新增** `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/environment-statuses` 所选升级版本支持的 kubernetes 版本范围，从小到大排序
+- **新增** `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/environment-statuses` 所选升级版本支持的 Kubernetes 版本范围，从小到大排序
 - **新增** 更新网格接口增加网格版本字段
 - **新增** 网格可升级版本接口
 - **新增** 网格环境检测接口
@@ -34,7 +34,7 @@
 
 - **新增** 网格升级详细实现
 - **新增** 边车升级相关接口实现：获取边车升级版本列表、检测边车升级集群
-- **新增** 网格升级环境检测接口提供所选升级版本支持的 kubernetes 版本范围，从小到大排序
+- **新增** 网格升级环境检测接口提供所选升级版本支持的 Kubernetes 版本范围，从小到大排序
 - **新增** 原生原地边车升级实现
 - **修复** 网格网关镜像 `hub` 字段没有应用
 - **修复** 边车升级整体状态，当存实例升级失败时，状态为 Failed。并且返回整体错误信息

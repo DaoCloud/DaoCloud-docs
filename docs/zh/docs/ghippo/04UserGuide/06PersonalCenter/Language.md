@@ -16,17 +16,16 @@ hide:
 
 1. 使用您的用户名/密码登录 Web 控制台。点击左侧导航栏底部的`全局管理`。
 
-    ![](../../images/ws01.png)
+    ![全局管理](../../images/ws01.png)
 
 2. 点击右上角的用户名位置，选择`个人中心`。
 
-    ![](../../images/lang01.png)
+    ![个人中心](../../images/lang01.png)
 
 3. 点击`语言设置`页签。
 
-    ![](../../images/lang02.png)
+    ![语言设置](../../images/lang02.png)
 
 4. 切换语言选项。
 
-    ![](../../images/lang03.png)
-
+    ![切换语言](../../images/lang03.png)
