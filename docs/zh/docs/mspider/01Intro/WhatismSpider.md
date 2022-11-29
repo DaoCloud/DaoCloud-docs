@@ -26,23 +26,64 @@ helm upgrade --install --create-namespace -n mspider-system mspider mspider-rele
 ## 服务网格学习路径
 
 ```mermaid
-graph TD
-    A(创建网格) -->B(接入集群)
-    B --> C{注入边车}
-    C -.->|按需| D[网格网关]
-    C -.->|按需| E[服务管理]
-    C -.->|按需| F[流量治理]
-    C -.->|按需| G[安全治理]
-    C -.->|按需| H[流量监控]
-    C -.->|按需| I[版本升级]
+flowchart TD
+
+    install([安装部署])
+    install --> mesh[创建网格]
+        subgraph mesh[创建网格]
+            managed[托管网格]
+            private[专有网格]
+            external[外接网格]
+            
+        end
+
+    mesh --> cluster[纳管集群]
+
+    cluster --> inject[注入边车]
+
+        subgraph inject[注入边车]
+            global[全局注入]
+            namespace[命名空间注入]
+            workload[工作负载注入]
+        end
+
     
-    click A "https://docs.daocloud.io/mspider/03UserGuide/servicemesh/create-mesh/"
-    click B "https://docs.daocloud.io/mspider/03UserGuide/08ClusterManagement/join-clus/"
-    click C "https://docs.daocloud.io/mspider/03UserGuide/07SidecarManagement/NamespaceSidecar/"
-    click D "https://docs.daocloud.io/mspider/03UserGuide/09GatewayInstance/create/"
-    click E "https://docs.daocloud.io/mspider/03UserGuide/01ServiceList/"
-    click F "https://docs.daocloud.io/mspider/03UserGuide/02TrafficGovernance/"
-    click G "https://docs.daocloud.io/mspider/03UserGuide/05Security/"
-    click H "https://docs.daocloud.io/mspider/03UserGuide/06TrafficMonitor/"
-    click I "https://docs.daocloud.io/mspider/03UserGuide/upgrade/IstioUpdate/"
+    inject -.-> service[服务管理]
+    inject -.-> gateway[网关]
+    inject -.-> traffic[流量治理]
+    inject -.-> watch[流量监控]
+    inject -.-> upgrade[版本升级]
+    inject -.-> security[安全治理]
+
+    service -.-> entry[服务条目]
+
+    traffic -.-> virtual[虚拟服务]
+    traffic -.-> target[目标规则]
+    traffic -.-> gaterule[网关规则]
+
+    security -.-> peer[对等身份认证]
+    security -.-> request[请求身份认证]
+    security -.-> authorize[授权策略]
+
+    click install "https://docs.daocloud.io/mspider/install/"
+    click managed "https://docs.daocloud.io/mspider/03UserGuide/servicemesh/create-mesh/"
+    click private "https://docs.daocloud.io/mspider/03UserGuide/servicemesh/create-mesh/"
+    click external "https://docs.daocloud.io/mspider/03UserGuide/servicemesh/integrate-mesh/"
+    click cluster "https://docs.daocloud.io/mspider/03UserGuide/08ClusterManagement/join-clus/"
+    click global "https://docs.daocloud.io/mspider/03UserGuide/07SidecarManagement/GlobalSidecar/"
+    click namespace "https://docs.daocloud.io/mspider/03UserGuide/07SidecarManagement/NamespaceSidecar/"
+    click workload "https://docs.daocloud.io/mspider/03UserGuide/07SidecarManagement/WorkloadSidecar/"
+    click gateway "https://docs.daocloud.io/mspider/03UserGuide/09GatewayInstance/create/"
+    click service "https://docs.daocloud.io/mspider/03UserGuide/01ServiceList/"
+    click traffic "https://docs.daocloud.io/mspider/03UserGuide/02TrafficGovernance/"
+    click security "https://docs.daocloud.io/mspider/03UserGuide/05Security/"
+    click watch "https://docs.daocloud.io/mspider/03UserGuide/06TrafficMonitor/"
+    click upgrade "https://docs.daocloud.io/mspider/03UserGuide/upgrade/IstioUpdate/"
+    click entry "https://docs.daocloud.io/mspider/03UserGuide/01ServiceList/service-entry/"
+    click virtual "https://docs.daocloud.io/mspider/03UserGuide/02TrafficGovernance/VirtualService/"
+    click target "https://docs.daocloud.io/mspider/03UserGuide/02TrafficGovernance/DestinationRules/"
+    click gaterule "https://docs.daocloud.io/mspider/03UserGuide/02TrafficGovernance/GatewayRules/"
+    click peer "https://docs.daocloud.io/mspider/03UserGuide/05Security/peer/"
+    click request "https://docs.daocloud.io/mspider/03UserGuide/05Security/request/"
+    click authorize "https://docs.daocloud.io/mspider/03UserGuide/05Security/authorize/"
 ```

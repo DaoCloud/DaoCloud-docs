@@ -35,5 +35,6 @@ hide:
 	
 !!! info
 
-	接下来需要[安装一些依赖项](./install-tools.md)，保证运行环境完备。
-	DaoCloud 设立了国内镜像站，便于国内用户下载。链接中带有 `https://*.daocloud.io/` 表示已提供国内镜像加速。
+	- 接下来需要[安装一些依赖项](./install-tools.md)，保证运行环境完备。
+	- DaoCloud 设立了国内镜像站，便于国内用户下载。链接中带有 `https://*.daocloud.io/` 表示已提供国内镜像加速。
+	- 若要通过 Kind 安装 Kubernetes 集群，请参阅[视频教程](../videos/install.md#_2)。

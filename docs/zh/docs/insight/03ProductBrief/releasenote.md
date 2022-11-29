@@ -1,8 +1,10 @@
-# 最新动态
+# Insight Release Notes
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
 ## v0.11
+
+发布日期：2022-11-21
 
 ### 功能
 
@@ -26,6 +28,8 @@
 - `kubernetes-event-exporter` helm chart 从 v1.4.21 升级至 v2.0.0
 
 ## v0.10
+
+发布日期：2022-10-20
 
 ### 功能特性
 
@@ -74,6 +78,8 @@
 
 ## v0.9
 
+发布日期：2022-9-25
+
 ### 功能特性
 
 - Support kpanda service name associated with the otel service name, identify whether the service tracing enabled.
@@ -96,12 +102,14 @@
 - Jaeger support elasticsearch output skip verfify TLS.
 - Disable jaeger components in Mode A.
 
-#### 其他
+### 其他
 
 - Add otel collector grafana dashboard.
 - Add Insight Overview Chinese version.
 
 ## v0.8
+
+发布日期：2022-8-21
 
 ### 功能特性
 
@@ -127,6 +135,8 @@
 - Move Fluentbit config to a ConfigMap.
 
 ## v0.7
+
+发布日期：2022-7-20
 
 ### 破坏变更
 
@@ -156,6 +166,8 @@
 - Add GrafanaDashboard, GrafanaDatasource CRDs.
 
 ## v0.6
+
+发布日期：2022-6-23
 
 ### 破坏变更
 
@@ -194,6 +206,8 @@
 
 ## v0.5
 
+发布日期：2022-5-18
+
 ### 功能特性
 
 - 添加通知模板 API
@@ -221,10 +235,12 @@
 
 - 新增文档站术语表
 - 新增文档站基本概念任务和实例、数据模型、查询语言等 4 个页面
-- 新增用户指南 - [场景监控](../06UserGuide/03scenarioinsight/README.md)，[数据查询](../06UserGuide/04dataquery/README.md)，[告警中心](../06UserGuide/05alertcenter/README.md)等文档
-- 文档站新增：[产品优势](../03ProductBrief/benefits.md)、[指标查询](../06UserGuide/04dataquery/metricquery.md)、[链路查询](../06UserGuide/04dataquery/tracequery.md)、[仪表盘](../06UserGuide/02dashboard.md)、[概述](../06UserGuide/overview.md)
+- 新增用户指南 - 场景监控、数据查询、告警中心等文档
+- 文档站新增：[产品优势](../03ProductBrief/benefits.md)、[指标查询](../06UserGuide/04dataquery/metricquery.md)、[链路查询](../06UserGuide/04dataquery/tracequery.md)、仪表盘、[概述](../06UserGuide/overview.md)
 
 ## v0.4
+
+发布日期：2022-4-22
 
 ### 功能特性
 
@@ -253,6 +269,8 @@
 - 更新文档结构
 
 ## v0.3
+
+发布日期：2022-3-18
 
 ### 功能特性
 
