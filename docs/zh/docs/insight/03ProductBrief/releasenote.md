@@ -2,16 +2,40 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## v0.12.0
+
+发布日期：2022.11.28
+
+### 优化
+- **新增** insight-agent Helm 模版安装时支持表单化
+- **优化** PromQL 查询支持原始的指标
+- **优化** 拓扑图的样式
+- **升级** 内置 MySQL 镜像版本，从 v5.7.34 升级到 v8.0.29.
+- **升级** Fluentbit ARM架构的 helm Chart 版本从
+- **升级** kube-prometheus-stack 的 helm Chart 版本从 v39.6.0 升级至 v41.9.1
+- **更新** 使用的 Bitnami 的镜像，包含：grafana-operator, grafana, kubernetes-event-exporter
+- **更新** prometheus 相关的的 API 代理地址，将 /prometheus 修改为 /apis/insight.io/prometheus
+
+### 缺陷修复
+
+- **修复** 服务列表缓存逻辑
+- **修复** 内置规则不生效的问题
+- **修复** 请求延时单位问题
+- **修复** Insight 内部链路的问题
+- **禁用** vm-stack 中的 PSP 资源
+- **修复** victoriaMetrics operator 在 Kubernetes 1.25 中不可用的问题。
+- **修复** 前端镜像的浏览器兼容性问题 
+
 ## v0.11
 
 发布日期：2022-11-21
 
-### 功能
+### 优化
 
-- 增加链路排障和对组件 `Jaeger` 监控的仪表盘
-- 告警列表、消息模板列表支持排序
-- 过滤掉未安装 `insight-agent` 的集群
-- 链路查询时默认按 span 开始时间排序
+- **增加** 链路排障和对组件 `Jaeger` 监控的仪表盘
+- **优化** 告警列表、消息模板列表支持排序
+- **优化** 过滤掉未安装 `insight-agent` 的集群
+- **优化** 链路查询时默认按 span 开始时间排序
 
 ### 缺陷修复
 
