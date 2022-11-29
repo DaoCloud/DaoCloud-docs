@@ -517,12 +517,12 @@ nav:
       - 镜像仓库:
           - 什么是镜像仓库: kangaroo/intro.md
           - 镜像列表: kangaroo/imagelist.md
-          - 关联仓库: 
-            - kangaroo/related-registry.md
-            - 镜像空间绑定工作空间: kangaroo/bind-to-ws.md
+          - 关联仓库: kangaroo/related-registry.md
           - 托管 Harbor: kangaroo/hosted.md
-          - 仓库集成: kangaroo/integrate.md
-          - 创建镜像空间: kangaroo/create-registry.md
+          - 仓库集成: 
+            - kangaroo/integrate.md
+            - 镜像空间绑定工作空间: kangaroo/bind-to-ws.md
+            - 创建镜像空间: kangaroo/create-registry.md
       - Release Notes:
           - release/rn5.0.md
       - 通用参考:

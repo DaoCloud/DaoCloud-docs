@@ -11,19 +11,19 @@ hide:
 
 1. 使用具有 `admin` 角色的用户登录 Web 控制台。点击左侧导航栏底部的`全局管理`。
 
-    ![](../../images/ws01.png)
+    ![全局管理](../../images/ws01.png)
 
 2. 点击`平台设置`，选择`外观定制`。
 
-    ![login](../../images/visual04.png)
+    ![外观定制](../../images/visual04.png)
 
 3. 在`登录页定制`页签中，修改登录页的图标和文字后，点击`保存`。
 
-    ![login](../../images/visual02.png)
+    ![登录页](../../images/visual02.png)
 
 4. 点击`顶部导航栏定制`页签，修改导航栏的图标和文字后，点击`保存`。
 
-    ![login](../../images/visual06.png)
+    ![顶部导航栏](../../images/visual06.png)
 
 !!! note
 

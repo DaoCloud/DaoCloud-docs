@@ -4,13 +4,13 @@
 
 ## 前提条件
 
-- 集群中已安装 insight-agent 且应用处于 `运行中` 状态。若未安装，请参考：[安装 insight-agent 采集数据](../../06UserGuide/01quickstart/installagent.md)
+集群中已安装 insight-agent 且应用处于 `运行中` 状态。若未安装，请参考：[安装 insight-agent 采集数据](../../06UserGuide/01quickstart/installagent.md)
 
 ## 查看节点详情
 
 1. 在左侧导航栏选择 `场景监控` -> `服务监控`。
 
-    ![](../../images/service01.png)
+    ![服务监控](../../images/service01.png)
 
 2. 在服务详情中，可以查看服务当前的吞吐量、请求数、请求延时和错误率，同时可查看变化趋势。
 
@@ -21,6 +21,6 @@
 
 3. 切换到`操作`页签，查看时间范围内服务调用信息。
 
-    ![](../../images/service02.png)
+    ![操作](../../images/service02.png)
 
 4. 在操作列，点击`查看链路`，可查看链路的详细信息。

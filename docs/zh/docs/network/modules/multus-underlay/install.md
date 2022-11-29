@@ -294,7 +294,7 @@ MacVLAN 网卡的 IP 地址段从宿主机分配，所以在宿主机网络路�
 
     ```shell
     root@master:~# kubectl get svc | grep kubernetes
-    kubernetes               ClusterIP   172.96.0.1             <none>        443/TCP                                       78d
+    Kubernetes               ClusterIP   172.96.0.1             <none>        443/TCP                                       78d
     root@172-17-8-110:~# kubectl get svc | grep nginx
     nginx-172-17-8-110-v4    NodePort    172.96.53.151          <none>        80:31696/TCP,5201:32137/TCP,12865:31253/TCP   78d
     nginx-172-17-8-110-v6    NodePort    2001:4860:fd00::85db   <none>        80:32452/TCP,5201:32658/TCP,12865:32231/TCP   78d

@@ -13,7 +13,7 @@
 1. 在`凭证`页面创建两个凭证：
 
     - docker-credential：用户名和密码，用于访问镜像仓库。
-    - demo-dev-kubeconfig：用于使用这个 kubeconfig 访问 kubernetes 集群。
+    - demo-dev-kubeconfig：用于使用这个 kubeconfig 访问 Kubernetes 集群。
 
 2. 创建完成后，可以在`凭证列表`页面看到凭证信息。
 

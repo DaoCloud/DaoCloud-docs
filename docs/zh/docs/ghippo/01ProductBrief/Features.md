@@ -5,23 +5,62 @@ hide:
 
 # 功能总览
 
-此处说明全局管理的功能。
+本页说明全局管理的各项功能特性。
 
 1. 用户管理
 
-    拥有用户帐号，是用户访问 DCE 平台的前提。[用户](../04UserGuide/01UserandAccess/User.md)由平台管理员 Super Admin 或者用户与访问控制管理员 IAM Admin 在`全局管理` -> `用户与访问控制` -> `用户`页面创建，或者通过 LDAP 对接而来。每位用户拥有独立的用户名和密码，通过给单个或者一组用户授予不同的权限，让不同的用户拥有不同资源的访问权限。
+    拥有用户帐号，是用户访问 DCE 平台的前提。
+    [用户](../04UserGuide/01UserandAccess/User.md)由平台管理员 Super Admin 或者用户与访问控制管理员 IAM Admin 在`全局管理` -> `用户与访问控制` -> `用户`页面创建，或者通过 LDAP 对接而来。
+    每位用户拥有独立的用户名和密码，通过给单个或者一组用户授予不同的权限，让不同的用户拥有不同资源的访问权限。
 
-    ![用户](../images/user.png)
+    ```mermaid
+    graph LR
+
+        admin([平台管理员或<br>用户与访问控制管理员]) --> |创建并管理用户|user[用户]
+        user --> user1[用户 A]
+        user --> user2[用户 B]
+        user --> user3[用户 C]
+        
+    click user "https://docs.daocloud.io/ghippo/04UserGuide/01UserandAccess/User/"
+
+    classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
+    classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
+    classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
+    class admin plain;
+    class user1,user2,user3 k8s;
+    class user cluster
+    ```
 
 2. 用户组管理
 
-    [用户组](../04UserGuide/01UserandAccess/Group.md)是多个用户的集合，用户可以通过加入用户组，实现继承用户组的角色权限。通过用户组批量地给用户进行授权，可以更好地管理用户及其权限。
+    [用户组](../04UserGuide/01UserandAccess/Group.md)是多个用户的集合。
+    用户可以通过加入用户组，实现继承用户组的角色权限。通过用户组批量地给用户进行授权，可以更好地管理用户及其权限。
 
-    ![用户组](../images/group.png)
+    ```mermaid
+    graph LR
+
+        admin([平台管理员或<br>用户与访问控制管理员])
+        admin --> user[创建用户]
+        admin --> group[创建用户组]
+        admin --> add[将用户加入用户组]
+        
+    click user "https://docs.daocloud.io/ghippo/04UserGuide/01UserandAccess/User/"
+    click group "https://docs.daocloud.io/ghippo/04UserGuide/01UserandAccess/Group/"
+    click add "https://docs.daocloud.io/ghippo/04UserGuide/01UserandAccess/Group/#_5"
+
+    classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
+    classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
+    classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
+    class admin plain;
+    class user,group,add cluster
+    ```
 
 3. 角色管理
 
-    一个[角色](../04UserGuide/01UserandAccess/Role.md)对应一组权限。权限决定了可以对资源执行的操作。向用户授予某个角色，即授予该角色所包含的所有权限。您可以将不同模块的管理权限划分给不同的用户，比如用户 A 管理容器管理模块，用户 B 管理应用工作台模块，共同管理可观测性板块。
+    一个[角色](../04UserGuide/01UserandAccess/Role.md)对应一组权限。
+    权限决定了可以对资源执行的操作。向用户授予某个角色，即授予该角色所包含的所有权限。
+    您可以将不同模块的管理权限划分给不同的用户，
+    比如用户 A 管理容器管理模块，用户 B 管理应用工作台模块，共同管理可观测性板块。
 
     ![角色](../images/role.png)
 
@@ -29,7 +68,8 @@ hide:
 
     [工作空间](../04UserGuide/02Workspace/Workspaces.md)用于管理资源，包含层级和工作空间两部分。
 
-    层级是资源层次结构中的节点，一个层级可以包含工作空间、其他层级或两者的组合。可以将层级理解为有层次结构的部门、环境、供应商等多种概念。
+    层级是资源层次结构中的节点，一个层级可以包含工作空间、其他层级或两者的组合。
+    可以将层级理解为有层次结构的部门、环境、供应商等多种概念。
 
     工作空间可以理解为部门下的项目，管理员通过层级和工作空间映射企业中的层级关系。
 
@@ -39,13 +79,37 @@ hide:
 
 5. 审计日志
 
-    [审计日志](../04UserGuide/03AuditLog.md)完整地记录用户的各项操作行为，包括用户通过页面或 API 接口发起的操作，以及各服务内部自触发的操作。支持通过事件来源、资源类型、操作状态等多个维度进行组合查询，支持审计日志导出。
+    [审计日志](../04UserGuide/03AuditLog.md)完整地记录用户的各项操作行为，
+    包括用户通过页面或 API 接口发起的操作以及各服务内部自触发的操作。
+    支持通过事件来源、资源类型、操作状态等多个维度进行组合查询，支持审计日志导出。
 
 6. 平台设置
 
-    [平台设置](../04UserGuide/04PlatformSetting/about.md)包括账号安全设置、外观定制、邮件服务器等。当需要对账号的安全信息、平台 logo、许可证授权、邮件服务器等平台级设置进行管理时，可以通过 `平台设置` 进行操作，平台设置仅平台管理员具有管理权限。
+    [平台设置](../04UserGuide/04PlatformSetting/about.md)包括账号安全设置、外观定制、邮件服务器等。
+    当需要对账号的安全信息、平台 logo、许可证授权、邮件服务器等平台级设置进行管理时，
+    可以通过 `平台设置` 进行操作，平台设置仅平台管理员具有管理权限。
 
-    ![平台设置](../images/platform.png)
+    ```mermaid
+    graph LR
+
+        admin([平台管理员]) --> |管理|about[平台设置]
+        about --> password[用户密码等安全策略]
+        about --> appear[平台外观定制]
+        about --> mail[邮件服务器]
+        about --> license[正版授权]
+        
+    click about "https://docs.daocloud.io/ghippo/04UserGuide/04PlatformSetting/about/"
+    click password "https://docs.daocloud.io/ghippo/04UserGuide/password/"
+    click appear "https://docs.daocloud.io/ghippo/04UserGuide/04PlatformSetting/Appearance/"
+    click mail "https://docs.daocloud.io/ghippo/04UserGuide/04PlatformSetting/MailServer/"
+    click license "https://docs.daocloud.io/dce/license0/"
+
+    classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
+    classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
+    classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
+    class admin plain;
+    class about,password,appear,mail,license cluster
+    ```
 
 ## 功能清单
 

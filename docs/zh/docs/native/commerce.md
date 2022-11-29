@@ -77,7 +77,7 @@
 - [F5 发布中国版容器 Ingress 服务 CIS-C](https://mp.weixin.qq.com/s/4BuiZC8AEnRt-lwT7dNyxg)
 
     CIS-C 是一款将 Kubernetes 集群内服务通过 F5 BIG-IP 进行自动化发布的控制器软件。
-    帮助用户打通 Kubernetes 集群与外部入口，将 BIG-IP 应用交付能力集成到 kubernetes 技术栈的云环境中。
+    帮助用户打通 Kubernetes 集群与外部入口，将 BIG-IP 应用交付能力集成到 Kubernetes 技术栈的云环境中。
     它实现了多团队合作，用户可以灵活地、自动化地创建、变更应用或者服务入口策略。
 
 - [GitLab 15.5 发布](https://mp.weixin.qq.com/s/AiRU9pQUxTex0F_XvuHiHg)
