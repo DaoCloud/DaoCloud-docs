@@ -1,10 +1,11 @@
 # 商业产品
 
-本页按公司名的首字母顺序列出各公司云原生相关产品的更新动态
+本页按字母顺序列出一些知名商业化产品的更新动态。
 
 - [**Aqua 云原生安全平台引入基于 eBPF 技术的零日漏洞检测工具 Lightning Enforcer**](https://blog.aquasec.com/combat-zero-day-threats-with-aquas-ebpf-lightning-enforcer)
 
-    Aqua Lightning Enforcer 利用漂移和基于行为的自动化检测方法，检测零日漏洞等未知威胁，并提供事件管理、可疑行为告警以及开箱即用的 CNDR（云本地检测和响应）。此外，eBPF 技术的应用避免了传统代理对工作负载的影响，降低了系统的资源开销。
+    Aqua Lightning Enforcer 利用漂移和基于行为的自动化检测方法，检测零日漏洞等未知威胁，并提供事件管理、可疑行为告警以及开箱即用的 CNDR（云本地检测和响应）。
+    此外，eBPF 技术的应用避免了传统代理对工作负载的影响，降低了系统的资源开销。
 
 - [**Aqua 推出首个端到端软件供应链安全解决方案，保护云原生应用供应链的安全**](https://mp.weixin.qq.com/s/8GHg5onYiuzrDvF5a64GxQ)
 
@@ -16,7 +17,8 @@
 
 - [**Azure Kubernetes 发行版 AKS 11 月更新**](https://azure.microsoft.com/en-us/updates/?query=AKS)
 
-    更新内容：支持基于 Azure Arc 在数据中心和边缘节点上运行轻量级 AKS、集成事件路由服务 Event Grid、最大节点限制增加到 5000 个、支持通过 Azure Active Directory 进行工作负载身份管理、推出 Kubernetes 应用市场、新增 CNI 插件 Azure CNI Overlay mode、启用基于 AMD 的机密虚拟机节点池。
+    更新内容：支持基于 Azure Arc 在数据中心和边缘节点上运行轻量级 AKS、集成事件路由服务 Event Grid、最大节点限制增加到 5000 个、
+    支持通过 Azure Active Directory 进行工作负载身份管理、推出 Kubernetes 应用市场、新增 CNI 插件 Azure CNI Overlay mode、启用基于 AMD 的机密虚拟机节点池。
 
 - [**Serverless 容器运行时 Azure Container Apps 更新**](https://azure.microsoft.com/en-us/updates/?query=azure%20container%20apps)
 
@@ -24,7 +26,8 @@
 
 - [**Azure Kubernetes 发行版 AKS 10 月更新**](https://azure.microsoft.com/en-us/updates/?query=AKS)
 
-    更新内容：支持垂直 Pod 自动扩缩容（VPA）、支持下一代 Azure 磁盘存储 Premium SSD v2、新增镜像清理功能、支持开启 IPVS 负载均衡、简化数据库创建和身份管理、允许根据工作负载要求启/禁用 CSI 驱动、新增 Linux 发行版 Mariner 作为容器主机、Azure CNI Powered by Cilium 可用、支持 K8s 1.25、支持 Dapr 1.9。
+    更新内容：支持垂直 Pod 自动扩缩容（VPA）、支持下一代 Azure 磁盘存储 Premium SSD v2、新增镜像清理功能、支持开启 IPVS 负载均衡、
+    简化数据库创建和身份管理、允许根据工作负载要求启/禁用 CSI 驱动、新增 Linux 发行版 Mariner 作为容器主机、Azure CNI Powered by Cilium 可用、支持 K8s 1.25、支持 Dapr 1.9。
 
 - [**Azure Kubernetes 发行版 AKS 9 月更新**](https://azure.microsoft.com/en-us/updates/?query=AKS)
 
@@ -46,13 +49,18 @@
 
     DaoCloud Enterprise 5.0 是自主开放、高性能、可扩展的新一代云原生操作系统。围绕云原生底座延伸能力场景，打通云边壁垒，跨越多云环境，解决信创基础设施兼容难题，提升应用交付效能，使能应用敏捷创新，丰富的数据服务赋能业务系统，融合微服务治理和全局可观测应对庞大业务系统运维管理挑战。
 
+- [**D2iQ Kubernetes 平台 DKP v2.4.0 发布**](https://docs.d2iq.com/dkp/2.4/dkp-2-4-0-features-and-enhancements)
+
+    该版本主要新特性：支持在本地和物理隔离环境中运行 GPU 节点、支持红帽企业 Linux 系统、Rook Ceph 替代 MinIO 成为平台的默认存储、集成 Trivy 等第三方扫描工具。
+
 - [**Datadog 推出云安全平台 Cloud Security Management**](https://www.datadoghq.com/about/latest-news/press-releases/datadog-launches-cloud-security-management-to-provide-cloud-native-application-protection/)
 
     Cloud Security Management 将云安全态势管理、云工作负载安全、警报、事件管理和报告等功能集中在一个平台上，开发和安全团队能够借此识别错误配置、检测威胁并确保云原生应用的安全。
 
 - [**Docker 发布技术预览版 WebAssembly 工具**](https://www.docker.com/blog/docker-wasm-technical-preview/)
 
-    现在，Docker 允许用户使用容器和 Wasm 工件构建云原生应用，将 Wasm 视为 Linux 容器的补充性技术。此外，Docker Engine 继续使用与整体生态系统相统一的 containerd 容器运行时，只不过把负责容器进程运行的 runC 替换成了 WasmEdge 运行时。
+    现在，Docker 允许用户使用容器和 Wasm 工件构建云原生应用，将 Wasm 视为 Linux 容器的补充性技术。
+    此外，Docker Engine 继续使用与整体生态系统相统一的 containerd 容器运行时，只不过把负责容器进程运行的 runC 替换成了 WasmEdge 运行时。
 
 - [**Docker Desktop v4.12.0 发布**](https://www.docker.com/blog/integrated-terminal-for-running-containers-extended-integration-with-containerd-and-more-in-docker-desktop-4-12/)
 
@@ -68,7 +76,9 @@
 
 - [**F5 发布中国版容器 Ingress 服务 CIS-C**](https://mp.weixin.qq.com/s/4BuiZC8AEnRt-lwT7dNyxg)
 
-    CIS-C 是一款将 Kubernetes 集群内服务通过 F5 BIG-IP 进行自动化发布的控制器软件。帮助用户打通 Kubernetes 集群与外部入口，将 BIG-IP 应用交付能力集成到 kubernetes 技术栈的云环境中。它实现了多团队合作，用户可以灵活地、自动化地创建、变更应用或者服务入口策略。
+    CIS-C 是一款将 Kubernetes 集群内服务通过 F5 BIG-IP 进行自动化发布的控制器软件。
+    帮助用户打通 Kubernetes 集群与外部入口，将 BIG-IP 应用交付能力集成到 kubernetes 技术栈的云环境中。
+    它实现了多团队合作，用户可以灵活地、自动化地创建、变更应用或者服务入口策略。
 
 - [**GitLab 15.5 发布**](https://mp.weixin.qq.com/s/AiRU9pQUxTex0F_XvuHiHg)
 
@@ -80,11 +90,14 @@
 
 - [**Google 发布云原生文件存储服务 Filestore Multishares for GKE**](https://cloud.google.com/filestore/docs/multishares)
 
-    Filestore 是一个文件存储托管服务，Filestore 实例是一个网络附属存储（NAS）托管系统。Filestore Multishares for GKE 为 GKE 实例提供了文件存储服务，其主要功能包括：支持区域性存储，防止区域故障；一个Filestore Enterprise 实例上可分配多达 10 个 share,每个 share 映射到 GKE 中唯一的持久卷；支持动态卷配置，可根据需要增加或减少 share 和实例的容量。
+    Filestore 是一个文件存储托管服务，Filestore 实例是一个网络附属存储（NAS）托管系统。
+    Filestore Multishares for GKE 为 GKE 实例提供了文件存储服务，其主要功能包括：支持区域性存储，防止区域故障；
+    一个 Filestore Enterprise 实例上可分配多达 10 个 share，每个 share 映射到 GKE 中唯一的持久卷；支持动态卷配置，可根据需要增加或减少 share 和实例的容量。
 
 - [**Google 发布 Kubernetes Gateway API 的企业级实现 GKE Gateway Controller**](https://cloud.google.com/blog/products/containers-kubernetes/google-kubernetes-engine-gateway-controller-is-now-ga)
 
-    GKE Gateway Controller GKE 提供了一个可扩展的 API 来管理内外部的 HTTP(S) 负载均衡。其主要功能包括：提供了一个多路由/租户共享的网关、默认提供两个 GatewayClass 即 Global external 和 Regional Internal 负载均衡、支持大规模的端到端加密、支持定制后端服务属性、提供高级流量管理等。
+    GKE Gateway Controller GKE 提供了一个可扩展的 API 来管理内外部的 HTTP(S) 负载均衡。
+    其主要功能包括：提供了一个多路由/租户共享的网关、默认提供两个 GatewayClass 即 Global external 和 Regional Internal 负载均衡、支持大规模的端到端加密、支持定制后端服务属性、提供高级流量管理等。
 
 - [**谷歌服务网格 Anthos Service Mesh 更新**](https://cloud.google.com/release-notes#September_07_2022)
   
@@ -96,11 +109,14 @@
 
 - [**Grafana Cloud 观测平台集成 Cilium Enterprise，加强 Kubernetes 网络监控**](https://grafana.com/blog/2022/11/17/introducing-the-cilium-enterprise-integration-in-grafana-cloud-for-kubernetes-network-monitoring/)
 
-    集成后，可以将 Cilium Enterprise 中部署的数据输送到 Grafana Cloud。Grafana Cloud 提供四个预制的仪表盘：Cilium 总览、Hubble 总览、Cilium operator 和 Cilium Agent。还提供了 17 条告警规则，用于监测与 Cilium Agent 和 Kubernetes 集群状态相关的 Cilium 核心组件。
+    集成后，可以将 Cilium Enterprise 中部署的数据输送到 Grafana Cloud。
+    Grafana Cloud 提供四个预制的仪表盘：Cilium 总览、Hubble 总览、Cilium operator 和 Cilium Agent。还提供了 17 条告警规则，用于监测与 Cilium Agent 和 Kubernetes 集群状态相关的 Cilium 核心组件。
 
 - [**Grafana Cloud 推出业内首个性能测试和分布式追踪的集成**](https://grafana.com/blog/2022/11/03/how-to-correlate-performance-testing-and-distributed-tracing-to-proactively-improve-reliability/)
 
-    Grafana Cloud 引入负载测试项目 [k6](https://github.com/grafana/k6) 和分布式追踪后端 [Tempo](https://github.com/grafana/tempo)（k6 x Tempo）的集成，缩小性能测试的黑盒数据和系统内部白盒数据之间的差距。该集成允许关联 k6 的测试运行数据和服务器端的追踪数据，从而进行根本原因分析；汇总收集的追踪数据以生成实时指标，帮助用户缩小搜索空间并快速发现异常行为。
+    Grafana Cloud 引入负载测试项目 [k6](https://github.com/grafana/k6) 和分布式追踪后端 [Tempo](https://github.com/grafana/tempo)（k6 x Tempo）的集成，
+    缩小性能测试的黑盒数据和系统内部白盒数据之间的差距。
+    该集成允许关联 k6 的测试运行数据和服务器端的追踪数据，从而进行根本原因分析；汇总收集的追踪数据以生成实时指标，帮助用户缩小搜索空间并快速发现异常行为。
 
 - [**Harness 推出全托管 GitOps-as-a-Service**](https://harness.io/blog/generally-available-harness-gitops-as-a-service)
 
@@ -118,6 +134,10 @@
   
     更新内容包括：支持无代理工作负载扫描、支持对 AWS 上的 Linux 主机进行主机漏洞评估、支持容器镜像漏洞评估。
 
+- [**Lacework Platform 云安全平台十一月更新**](https://docs.lacework.com/releases/2022-11-platform-releases)
+
+    更新内容：平台扫描器支持多架构的容器镜像、提供攻击路径分析功能、无代理工作负载扫描功能普遍可用、在不活动的主机内核上发现的漏洞会自动被标记为例外、CIS GCP 1.3.0 基准报告和策略普遍可用、新增主机策略用于检测反向 shell 连接和加密劫持工件。
+
 - [**Logz.io 发布 K8s 全栈观测平台 Kubernetes360**](https://logz.io/blog/unified-observability-kubernetes-360/)
 
     Kubernetes360 将日志、Prometheus 指标监控和 Jaeger 支持的分布式追踪统一在一个平台中，使 DevOps 团队能够以简单、高效和可操作的方式监控应用 SLO。
@@ -128,7 +148,13 @@
 
 - [**NetApp Kubernetes 应用数据管理方案 Astra Control 更新**](https://www.netapp.com/blog/astra-kubernetes-data-protection/)
 
-    更新内容：支持为多个命名空间设置一个应用数据保护策略；扩大集群范围内资源的检测和保护范围；基于标签和标签选择器允许每个命名空间有多个应用程序；K8s 应用现在可以在不同的项目、订阅或账户托管的集群间进行故障转移；集成轻量目录访问协议 LDAP；支持更多 Self-managed K8s 平台。
+    更新内容：
+    支持为多个命名空间设置一个应用数据保护策略；
+    扩大集群范围内资源的检测和保护范围；
+    基于标签和标签选择器允许每个命名空间有多个应用程序；
+    K8s 应用现在可以在不同的项目、订阅或账户托管的集群间进行故障转移；
+    集成轻量目录访问协议 LDAP；
+    支持更多 Self-managed K8s 平台。
 
 - [**Ocean 推出 Kubernetes 网络成本分析解决方案 Network Cost Analysis**](https://spot.io/blog/dont-sweat-the-network-costs-ocean-provides-application-cost-visibility-to-your-kubernetes-cluster/)
 
@@ -174,7 +200,7 @@
 
     Gloo Gateway 基于 Envoy 构建，利用 Gloo Platform 的多租户和联邦特性，允许用户轻松管理多个开发团队的网关访问和进行多集群流量管理。Gloo Network 基于 Cilium 构建，将 Kubernetes CNI 层整合为 Gloo Platform 的组件。
 
-- [**服务网格管理平台 Gloo Mesh v2.1 发布**](https://www.solo.io/blog/announcing-gloo-mesh-2-1/)
+- **Solo.io 发布 [Gloo Mesh v2.1 服务网格管理平台](https://www.solo.io/blog/announcing-gloo-mesh-2-1/)**
 
     该版本主要新特性：增加资源状态和调试页面、优化 Istio 生命周期管理、支持零信任访问策略、东西向流量的 TLS 终端问题修复、支持用同一个 Helm chart 安装代理和管理集群。
 
@@ -222,7 +248,7 @@
 
     该版本主要新特性：集成自动化扫描工具 Cloud Suitability Analyzer（CSA）、支持 Windows 容器化、支持虚拟机容器化、支持 Linux 和  Windows 平台的 200 多个组件签名、提供命令行界面。
 
-- [**K8s DevOps 平台 Tanzu Application Platform v1.3 发布**](https://tanzu.vmware.com/content/blog/tanzu-application-platform-1-3)
+- [**VMware Tanzu Application Platform v1.3 发布**](https://tanzu.vmware.com/content/blog/tanzu-application-platform-1-3)
 
     更新内容：支持在物理隔离环境下运行、集成供应链威胁扫描工具、新增一个统一的威胁监控大盘、支持 SBOM、支持 API 规范动态注册、集成 Jenkins CI/CD、支持自定义证书机构（CA）证书、新增运行时资源监测插件、增加对 Java 和 Python 函数工作负载的支持（beta）、在 OpenShift 上可用。
 

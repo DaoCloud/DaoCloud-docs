@@ -1,8 +1,9 @@
 ---
-title: 功能特点
 hide:
   - toc
 ---
+
+# 功能特性
 
 DaoCloud Enterprise 5.0 融海量特性于一体，目前支持的典型功能如下。
 

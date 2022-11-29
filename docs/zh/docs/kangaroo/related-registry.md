@@ -7,7 +7,7 @@
 ## 主要功能
 
 - 支持关联 Harbor 和 Docker Registry 两种仓库实例
-- 对于 Harbor 实例，除了接入管理员账号外，还可以接入机器人账号达到同样的接入效果。
+- 对于 Harbor 实例，除了接入管理员账号外，还可以接入机器人账号达到同样的接入效果
 
 ## 功能优势
 
@@ -18,19 +18,17 @@
 
 ## 操作步骤
 
-1. 使用具有 Workspace Admin 角色的用户登录 Web 控制台。
+1. 使用具有 Workspace Admin 角色的用户登录 Web 控制台，从左侧导航栏点击`镜像仓库`。
 
-2. 从左侧导航栏点击`镜像仓库`。
+    ![镜像仓库](images/hosted01.png)
 
-    [](images/relate0201.png)
+1. 在左侧导航栏点击`关联仓库`，点击右上角的`关联仓库`按钮。
 
-3. 导航至镜像仓库的关联仓库，单击关联仓库。
+    ![关联仓库](images/relate02.png)
 
-    [](images/relate02.png)
+1. 选择仓库类型 Harbor 或 Docker Registry，填写仓库名称、地址、用户名和密码信息，完成关联。
 
-4. 选择仓库类型 Harbor 或 Docker Registry，填写仓库名称、地址、用户名和密码信息，完成关联。
-
-    [](images/relate03.png)
+    ![填写表单](images/relate03.png)
 
     !!! note
 
