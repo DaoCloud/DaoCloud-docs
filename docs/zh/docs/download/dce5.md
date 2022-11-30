@@ -2,7 +2,7 @@
 
 DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
-目前下载中心仅提供离线安装包。有关在线安装方式，请参阅[在线安装](../install/install-dce-community.md)。
+目前下载中心仅提供离线安装包。有关在线安装方式，请参阅[在线安装](../install/community/k8s/online.md)。
 
 ## 社区版
 
