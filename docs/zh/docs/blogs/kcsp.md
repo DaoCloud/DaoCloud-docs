@@ -1,0 +1,108 @@
+---
+date: 2022-11-16
+categories: blog
+authors: windsonsea
+---
+
+# DaoCloud 是 K8s 资深认证服务商
+
+在云原生领域有这样一个词：KCSP，英文全称 Kubernetes Certified Service Provider，即 CNCF 官方认证的 Kubernetes 服务提供商。
+
+DaoCloud 早在 2017 年就首次顺利通过了 Kubernetes 认证，是国内最早涉足并得到 CNCF 官方认可的服务商，
+同时也是国内最早获得 Kubernetes Training Partner (KTP) 认证的厂商。DaoCloud 的开发者们常年积极参与 CNCF 相关社区贡献，
+以引领云原生技术潮流为己任，致力于推动云原生社区发展壮大。
+
+每次 Kubernetes 新版本发布，DaoCloud 都会率先适配增强新特性，并将其推向实际生产环境。
+作为一家经过官方严格审核的 Kubernetes 服务商及合作伙伴，DaoCloud 在帮助企业采用 Kubernetes 成功部署大规模集群方面具有深厚的生产经验。
+
+DaoCloud 作为一家久经认证的 KCSP 意味着：
+
+- DaoCloud 是 [Kubernetes 官方推荐的资深合作伙伴](https://kubernetes.io/partners/)
+- DaoCloud 是经 CNCF 社区公认、有专家资质、能充分胜任 Kubernetes 集群部署专业工作的优良企业
+- 最终用户选用 Kubernetes 部署集群时，DaoCloud 是 CNCF 云原生社区公认并推荐的品牌供应商
+- 常年位列 KCSP 的 DaoCloud 掌握云原生领域领先技术，时刻引领云原生社区发展方向
+
+目前 DaoCloud 经认证合规且完美支持的 Kubernetes 版本包括：
+
+当前版本：
+
+[![1.23](../images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
+[![1.24](../images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
+[![1.25](../images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
+
+历史版本：
+
+[![1.7](../images/1.7.png)](https://github.com/cncf/k8s-conformance/pull/68)
+[![1.9](../images/1.9.png)](https://github.com/cncf/k8s-conformance/pull/210)
+[![1.13](../images/1.13.png)](https://github.com/cncf/k8s-conformance/pull/418)
+[![1.15](../images/1.15.png)](https://github.com/cncf/k8s-conformance/pull/794)
+[![1.18](../images/1.18.png)](https://github.com/cncf/k8s-conformance/pull/1144)
+[![1.20](../images/1.20.png)](https://github.com/cncf/k8s-conformance/pull/1463)
+
+## 技术领先
+
+DaoCloud 的研发团队崇尚技术为先，广受 CNCF 社区肯定，担任了很多云原生项目的 Member、Reviewer、Approver/Maintainer
+助力社区繁荣发展，还有大咖加入 Steering Committee 负责推进各项底层特性的研发和拓展。
+
+| 头衔                                              | 数量 |
+| ------------------------------------------------- | ---- |
+| Member                                            | 52   |
+| Reviewer                                          | 15   |
+| Approver/Maintainer                               | 6    |
+| Technical Steering Committee                      | 1    |
+| CNCF Ambassador                                   | 1    |
+| Certified Kubernetes Administrator (CKA)          | 65   |
+| Certified Kubernetes Application Developer (CKAD) | 26   |
+| Certified Kubernetes Security Specialist (CKS)    | 8    |
+
+在 2022 年 8 月由 Kubernetes
+官方组织的社区[贡献者访谈活动](https://kubernetes.io/blog/2022/08/15/meet-our-contributors-china-ep-03/)中，
+接见了来自亚太地区的 4 位优秀贡献者，其中 2 位都来自 DaoCloud，他们为 Kubernetes 的发展做出了卓越贡献。
+
+DaoCloud 在推动社区技术演进的同时，对 Kubernetes 为首的云原生技术保持敏锐的嗅觉。
+以 Kubernetes 1.25 为例，第一个小版本 1.25.1 于 2022-09-14 发布，DaoCloud 经过一个多月的适配调试后于 2022-10-25
+提交了[合规认证申请 PR](https://github.com/cncf/k8s-conformance/pull/2240)，
+附带 5 万多行真实的 E2E 测试报告、完善的[中英文档站](https://docs.daocloud.io/)、详尽的资料素材，
+于 2022-11-04 成功通过了 v1.25 的 KCSP 审查。
+
+目前能对 Kubernetes 1.25 完美支持并经官方认证的 **国内厂商不超过 5 家** 。
+有鉴于此，华为云在[元宇宙云边协同超融合一体机](http://blog.daocloud.io/8542.html)方面与 DaoCloud 建立战略合作关系，双方在多云编排、智能存储等方面也有深度合作关系。
+
+DaoCloud 围绕 Kubernetes 生态自主开源的社区项目有：
+
+- [Clusterpedia](https://github.com/clusterpedia-io)：Kubernetes 多集群资源一站式检索百科全书，已入选 CNCF 全景图和 CNCF 沙箱
+- [CloudTTY](https://github.com/cloudtty/cloudtty)：社区首个开源的 Kubernetes 网页版控制台
+- [Ferry](https://github.com/ferryproxy/ferry)：Kubernetes 多集群通信组件，消除多集群复杂度，如同管理一个单集群
+- [HwameiStor](https://github.com/hwameistor/hwameistor)：高可用的本地存储方案，已入选 CNCF 全景图
+- [KLTS](https://github.com/klts-io)：对 Kubernetes 10 多个版本的长期维护
+- [Kubean](https://github.com/kubean-io/kubean)：基于 kubespray 构建的集群生命周期管理工具
+- [kwok](https://github.com/kubernetes-sigs/kwok)：用一台笔记本以最小资源模拟成千上万的 kubelet
+- [Merbridge](https://github.com/merbridge/merbridge)：使用 eBPF 加速服务网格，已入选 CNCF 全景图
+- [Spiderpool](https://github.com/spidernet-io)：云原生网络 IPAM 自动化管理软件，适用于 Underlay CNI
+
+## CNCF 贡献排名
+
+考量一家云原生企业的指标之一是社区贡献，DaoCloud 在 CNCF 社区各云原生项目的总体贡献全球排名领先，在国内首屈一指。
+
+过去 365 天内 DaoCloud 对 **Kubernetes** 社区的贡献 **全球排名第 3**
+
+![Kubernetes](./images/cncf01.png)
+
+过去 365 天内 DaoCloud 对 **containerd** 社区的贡献 **全球排名第 5**
+
+**![containerd](./images/cncf02.png)**
+
+过去 365 天内 DaoCloud 对 **Istio** 社区的贡献 **全球排名第 3**
+
+**![Istio](./images/cncf03.png)**
+
+过去 365 天内 DaoCloud 对 **CNCF 社区**所有项目的累计贡献 **全球排名第 7**
+
+![CNCF](./images/cncf04.png)
+
+## 参考链接
+
+- https://www.cncf.io/
+- https://github.com/cncf/k8s-conformance
+- https://kubernetes.io/partners/
+- https://www.stackalytics.io/

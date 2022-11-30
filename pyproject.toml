@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "DaoCloud-docs"
+version = "0.2.0"
+description = "DaoCloud Product Documents Repo."
+authors = ["samzong.lu <samzong.lu@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+mkdocs-material = {git = "https://github.com/daocloud/mkdocs-material-insiders.git"}
+mkdocs-embed-external-markdown = "^2.2.1"
+mkdocs-minify-plugin = "^0.5.0"
+mkdocs-multirepo-plugin = "^0.4.7"
+jieba = "^0.42.1"
+pymdown-extensions = "^9.5"
+ufile = "^3.2.6"
+mkdocs-awesome-pages-plugin = "^2.8.0"
+mkdocs-git-revision-date-localized-plugin = "^1.1.0"
+mkdocs-git-revision-date-plugin = "^0.3.2"
+mkdocs-mermaid2-plugin = "^0.6.0"
+mkdocs-git-committers-plugin-2 = "^1.1.0"
+mkdocs-git-authors-plugin = "^0.6.4"
+mkdocs-material-extensions = "^1.0.3"
+regex = "^2022.9.13"
+mkdocs-redirects = "^1.2.0"
+mkdocs-with-pdf = "^0.9.3"
+mkdocs-print-site-plugin = "^2.3.4"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.source]]
+name = "tsinghua"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
