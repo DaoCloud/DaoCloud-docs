@@ -406,8 +406,9 @@ nav:
               - 使用: network/modules/spiderpool/usage.md
               - 配置参考: network/modules/spiderpool/config.md
               - 常用命令: network/modules/spiderpool/command.md
-      - 中间件:
-          - 中间件介绍: middleware/midware.md
+      - 数据服务:
+          - 数据服务介绍: middleware/midware.md
+          - 数据服务版本适配: middleware/adaptation-k8s.md
           - Elasticsearch 搜索服务:
               - 什么是 Elasticsearch: middleware/elastic-search/intro/what.md
               - 功能说明: middleware/elastic-search/intro/features.md
