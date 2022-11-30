@@ -101,4 +101,4 @@ DaoCloud Enterprise 5.0 融海量特性于一体，目前支持的典型功能�
 - 可基于工作空间实现多租户需求的权限管理。
 
 [申请社区免费体验](license0.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/install-dce-community.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/community/k8s/online.md){ .md-button .md-button--primary }

@@ -1,39 +1,34 @@
-# 在线安装 DCE 5.0 社区版
+# 使用 Kubernetes 集群在线安装社区版
 
 本页简要说明 DCE 5.0 社区版的在线安装步骤。
 
 !!! note
 
-    点击[社区版部署 Demo](../videos/install.md)可观看视频演示。
-
-    如果需要离线安装，请查阅[离线安装步骤](offline-install-community.md)。
+    - 点击[在线安装社区版](../../../videos/install.md)可观看视频演示。
+    - 如果需要离线安装，请查阅[离线安装步骤](offline.md)。
 
 ## 准备工作
 
-- 准备一个 K8s 集群
+- 准备一个 K8s 集群，集群配置请参考文档 [集群资源规划](../resources.md)。
 
     !!! note
 
-        - 集群可用资源：CPU > 10 核、内存 > 12 GB、磁盘空间 > 100 GB（目前默认多副本运行，后续单副本预计资源消耗为 4 核 8 GB）
-        - 集群版本：推荐 Kubernetes 官方最高稳定版本，目前推荐版本是 v1.24，最低版本支持 v1.20
-        - 支持的 CRI：Docker、containerd
         - 存储：需要提前准备好 StorageClass，并设置为默认 SC
-        - 目前仅支持 X86_64 架构
         - 确保集群已安装 CoreDNS
         - 如果是单节点集群，请确保您已移除该节点的污点
 
-- [安装依赖项](install-tools.md)
+- [安装依赖项](../../install-tools.md)。
 
     !!! note
 
         如果集群中已安装所有依赖项，请确保依赖项版本符合要求：
-        
+      
         - helm ≥ 3.9.4
         - skopeo ≥ 1.9.2
         - kubectl ≥ 1.22.0
         - yq ≥ 4.27.5
 
-## 在线安装（推荐）
+## 下载和安装
 
 1. 在 K8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件。
 
@@ -50,6 +45,8 @@
     ```
 
 2. 设置配置文件 clusterConfig.yaml
+
+    - 如果使用 NodePort 暴露控制台（仅推荐 PoC 使用），直接执行下一步。
 
     - 如果是非公有云环境（虚拟机、物理机），请启用负载均衡 (metallb)，以规避 NodePort 因节点 IP 变动造成的不稳定。请仔细规划您的网络，设置 2 个必要的 VIP，配置文件范例如下：
 
@@ -71,8 +68,6 @@
           loadBalancer: cloudLB
         ```
 
-    - 如果使用 NodePort 暴露控制台（仅推荐 PoC 使用），直接执行第 3 步。
-
 3. 安装 DCE 5.0。
 
     ```shell
@@ -83,44 +78,12 @@
 
         如果使用 NodePort 暴露控制台，则命令不需要指定 `-c` 参数。
 
-4. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
+4. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用 **默认的账户和密码（admin/changeme）** 探索全新的 DCE 5.0 啦！
 
-    ![success](images/success.png)
+    ![安装成功](../../images/success.png)
 
     !!! success
 
-         请记录好提示的 URL，方便下次访问。
+      请记录好提示的 URL，方便下次访问。
 
-5. 另外，安装 DCE 5.0 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](../dce/license0.md)。
-
-## 在 Kind 集群中安装
-
-!!! note
-
-    如果是 kind 内的环境，仅可使用 NodePort 模式。
-
-1. 确保 kind 创建集群时，暴露集群内的 32000 端口(固定)到 kind 对外的 8888 端口（可自行修改），kind 配置文件如下：
-
-    ```yaml
-    apiVersion: kind.x-k8s.io/v1alpha4
-    kind: Cluster
-    nodes:
-    - role: control-plane
-      extraPortMappings:
-      - containerPort: 32088
-        hostPort: 8888
-    ```
-
-2. 获取 kind 所在主机的 IP，假定为 `10.6.3.1`，进行安装。
-
-    ```shell
-    ./dce5-installer install-app -z -k 10.6.3.1:8888
-    ```
-
-3. 安装成功后，您可以前往 `https://10.6.3.1:8888` 访问 DCE 5.0！
-
-!!! note
-
-    如果安装过程中遇到什么问题，欢迎扫描二维码，与开发者畅快交流：
-
-    ![社区版交流群](../images/assist.png)
+5. 另外，安装 DCE 5.0 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](../../../dce/license0.md)。

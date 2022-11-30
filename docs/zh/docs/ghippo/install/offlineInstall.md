@@ -18,7 +18,7 @@
       intermediateBundlesPath: ghippo-offline # the relative path where your do charts-syncer,but not relative path between this yaml and offline-package
     target:
       containerRegistry: 10.16.10.111 # need change to your image registry url
-      containerRepository: release.daocloud.io/ghippo # need change to your image Repository
+      containerRepository: release.daocloud.io/ghippo # need change to your image repository
       repo:
         kind: HARBOR # or as any other supported Helm Chart repository kinds
         url: http://10.16.10.111/chartrepo/release.daocloud.io # need change to your chart repo url
@@ -30,8 +30,25 @@
           username: "admin" # your image registry username
           password: "Harbor12345" # your image registry password
     ```
-
-
+    
+    若当前环境未安装chart repo，chart-syncer也支持将chart导出为tgz文件，并存放在指定路径
+    
+    ```yaml
+    source:
+      intermediateBundlesPath: ghippo-offline # the relative path where your do charts-syncer,but not relative path between this yaml and offline-package
+    target:
+      containerRegistry: 10.16.10.111 # need change to your registry url
+      containerRepository: release.daocloud.io/ghippo # need change to your image repository
+      repo:
+        kind: LOCAL
+        path: ./local-repo # chart local path
+      containers:
+        auth:
+          username: "admin" # your image registry username
+          password: "Harbor12345" # your image registry password
+    ```
+    
+    
 1. 执行同步镜像命令。
 
     ```shell
@@ -75,7 +92,7 @@ ctr image import images.tar
 
 ## 升级
 
-有两种升级方式：Harbor 或 Docker。您可以任选其一。  
+有两种升级方式：helm repo 或 chart直接升级。您可以根据前置操作选择对应的升级方案。  
     
 !!! note  
 
@@ -97,7 +114,7 @@ keycloakx:
     ...
 ```
 
-### 通过镜像仓库升级
+### 通过 helm repo 升级
 
 1. 检查全局管理 helm 仓库是否存在。
 
@@ -146,15 +163,23 @@ keycloakx:
 
 1. 执行 helm upgrade
 
+    !!! note
+        
+        升级前我们建议您覆盖bak.yaml中的global.imageRegistry为您当前使用的镜像仓库地址。
+    
+    ```
+    export imageRegistry={your image registry}
+    ```
+    
     ```
     helm upgrade ghippo ghippo/ghippo \
     -n ghippo-system \
     -f ./bak.yaml \
-    --set global.imageRegistry=temp-registry.daocloud.io
+    --set global.imageRegistry=$imageRegistry
     --version 0.9.0
     ```
 
-### 通过 Docker 升级
+### 通过 chart 包升级
 
 1. 备份 `--set` 参数
 
@@ -164,12 +189,19 @@ keycloakx:
     helm get values ghippo -n ghippo-system -o yaml > bak.yaml
     ```
 
-1. 执行 `helm upgrade`
+1. 执行 helm upgrade
 
-    ```shell
-    cd original-chart
-
+    !!! note
+        
+        升级前我们建议您覆盖bak.yaml中的global.imageRegistry为您当前使用的镜像仓库地址。
+    
+    ```
+    export imageRegistry={your image registry}
+    ```
+    
+    ```
     helm upgrade ghippo . \
     -n ghippo-system \
-    -f ./bak.yaml
+    -f ./bak.yaml \
+    --set global.imageRegistry=$imageRegistry
     ```

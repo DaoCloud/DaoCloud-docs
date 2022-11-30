@@ -36,7 +36,7 @@ offline-community-v0.3.27.tar: OK
 tar -zxvf offline-community-v0.3.28.tar
 ```
 
-然后参阅[社区版安装流程](../../install/offline-install-community.md#_2)进行安装。
+然后参阅[社区版安装流程](../../install/community/k8s/online.md#_2)进行安装。
 
 成功安装之后请[申请免费社区体验](../../dce/license0.md)。
 
