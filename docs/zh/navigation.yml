@@ -91,7 +91,7 @@ nav:
               - Release Notes: ghippo/01ProductBrief/release-notes.md
           - 登录: ghippo/04UserGuide/00Login.md
           - 安装:
-              - 离线安装全局管理: ghippo/install/offlineInstall.md
+              - 离线升级全局管理: ghippo/install/offlineInstall.md
               - 自定义反向代理服务器地址: ghippo/install/reverseProxy.md
           - 用户与访问控制:
               - 什么是用户与访问控制: ghippo/04UserGuide/01UserandAccess/iam.md
@@ -132,6 +132,7 @@ nav:
               - 工作空间绑定命名空间: ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus.md
               - 一个集群分配给多个工作空间: ghippo/04UserGuide/02Workspace/a-cluster-to-multi-ws.md
               - 文件夹最佳实践: ghippo/04UserGuide/02Workspace/fdpractice.md
+              - 普通用户授权规划: ghippo/04UserGuide/02Workspace/authu-plan.md
               - GProduct 对接全局管理: 
                 - ghippo/gproduct/intro.md
                 - 接入导航栏: ghippo/gproduct/nav.md
@@ -145,8 +146,10 @@ nav:
               - 功能列表: insight/03ProductBrief/feature.md
               - Release Notes: insight/03ProductBrief/releasenote.md
           - 快速入门:
-              - 获取数据上传地址: insight/06UserGuide/01quickstart/gethosturl.md
-              - 安装 insight-agent: insight/06UserGuide/01quickstart/installagent.md
+              - 安装 Insight: 
+                - insight/06UserGuide/01quickstart/install/installagent.md
+                - 获取数据上传地址: insight/06UserGuide/01quickstart/install/gethosturl.md
+                - 升级注意事项: insight/06UserGuide/01quickstart/install/upgradenote.md
               - OTel 赋能应用可观测性: 
                 - insight/06UserGuide/01quickstart/otel/otel.md
                 - Operator 无侵入增强应用: insight/06UserGuide/01quickstart/otel/operator.md
@@ -183,6 +186,7 @@ nav:
               - 导入自定义仪表盘: insight/09FAQs/importdashboard.md
               - 日志采集排障指南: insight/09FAQs/debuglog.md
               - 链路采集排障指南: insight/09FAQs/debugtrace.md
+              - 在 DCE4.0 中安装 insight-agent: insight/09FAQs/installagentindce.md
       - 应用工作台:
           - 介绍:
               - 什么是应用工作台？: amamba/01ProductBrief/WhatisAmamba.md
@@ -516,12 +520,12 @@ nav:
       - 镜像仓库:
           - 什么是镜像仓库: kangaroo/intro.md
           - 镜像列表: kangaroo/imagelist.md
-          - 关联仓库: 
-            - kangaroo/related-registry.md
-            - 镜像空间绑定工作空间: kangaroo/bind-to-ws.md
+          - 关联仓库: kangaroo/related-registry.md
           - 托管 Harbor: kangaroo/hosted.md
-          - 仓库集成: kangaroo/integrate.md
-          - 创建镜像空间: kangaroo/create-registry.md
+          - 仓库集成: 
+            - kangaroo/integrate.md
+            - 镜像空间绑定工作空间: kangaroo/bind-to-ws.md
+            - 创建镜像空间: kangaroo/create-registry.md
       - Release Notes:
           - release/rn5.0.md
       - 通用参考:

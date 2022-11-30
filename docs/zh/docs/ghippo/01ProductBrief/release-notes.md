@@ -2,9 +2,35 @@
 
 本页列出全局管理各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
-## v0.11
+## 2022-11-01
 
-发布日期：2022-11-23
+### v0.12.0
+
+#### 新增
+
+- 资源组里的'模块'改为'来源'
+- SDK 提供 Workspace 和 Resource 的绑定变化通知
+- 完整对接 Insight metrics 和 otel tracing(加入 keycloak 和 db 链路)
+- Keycloak 改成 Quarkus 架构
+- Keycloak 镜像升级成 20.0.1 版本
+
+#### 优化
+
+- 重构导出审计日志 http 接口为 gprc stream 接口 
+- SDK 内存使用量优化, 峰值减少 50%
+- 审计日志部分代码优化
+- e2e 的 kind 镜像切到 1.25 
+- 提高资源使用效率到 40% 以上 
+
+#### 修复
+
+- 修复强绑定集群问题
+- 修复配置身份提供商界面选择'Client secret sent as basic auth' 没有保存到 keycloak 里的问题
+
+## 2022-11-23
+### v0.11
+
+发布日期：
 
 - **新增** 给第三方应用提供接口在 keycloak 创建 sso 对接 client
 - **新增** 支持 MySQL 8.0

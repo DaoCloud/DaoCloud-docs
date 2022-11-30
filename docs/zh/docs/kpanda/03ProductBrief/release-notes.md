@@ -2,11 +2,11 @@
 
 本页列出容器管理的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
-## v0.12
+## 2022-11-23
 
-发布日期：2022-11-23
+### v0.12
 
-### API
+#### API
 
 - **新增** 新增为 metallb 提供 IP 池的接口
 - **新增** 新增 metricValues 和 customMetricSummary 接口，支持自定义指标
@@ -26,24 +26,24 @@
 - **优化** 优化 helm 安装，安装应用立刻显示应用安装中
 - **新增** 新增同步 master 分支的每次 api 变更
 
-### 基础设施
+#### 基础设施
 
 - **升级** 升级 Clusterpedia 至最新的 client-go 版本、app 版本 0.5.1、chart 版本 1.0.0
 - **优化** egress 从 watch cluster event 改为使用 controller 监听 cluster cr 变化；优化 nginx 配置渲染，每个 cluster 渲染为单独配置文件
 - **优化** ingress 从 watch cluster event 改为使用 controller 监听 cluster cr 变化；优化 nginx 配置渲染，每个 cluster 渲染为单独配置文件
 
-### 控制器
+#### 控制器
 
 - **新增** 新增自定义指标插件安装检测
 - **新增** 新增自定义指标插件安装检测
 - **修复** cluster secret ref 变化误删 gproductresources cr
 - **优化** 新增集群配置时保留集群配置
 
-## v0.11
+## 2022-10-21
 
-发布日期：2022-10-21
+### v0.11
 
-### API
+#### API
 
 - **新增** secret 列表新增根据类型筛选
 - **新增** 新增为 metallb 提供 IP 池的接口
@@ -64,13 +64,13 @@
 - **优化** 优化 helm 安装，安装应用立刻显示应用安装中
 - **新增** 新增同步 master 分支的每次 api 变更
 
-### 基础设施
+#### 基础设施
 
 - **升级** 升级 Clusterpedia 至最新的 client-go 版本、app 版本 0.5.1、chart 版本 1.0.0
 - **优化** egress 从 watch cluster event 改为使用 controller 监听 cluster cr 变化；优化 nginx 配置渲染，每个 cluster 渲染为单独配置文件
 - **优化** ingress 从 watch cluster event 改为使用 controller 监听 cluster cr 变化；优化 nginx 配置渲染，每个 cluster 渲染为单独配置文件
 
-### 控制器
+#### 控制器
 
 - **新增** 新增自定义指标插件安装检测
 - **新增** 新增自定义指标插件安装检测
@@ -78,11 +78,11 @@
 - **修复** cluster secret ref 变化误删 gproductresources cr
 - **优化** 新增集群配置时保留集群配置
 
-## v0.10
+## 2022-9-25
 
-发布日期：2022-9-25
+### v0.10
 
-### API
+#### API
 
 - **改进** 在创建 Helm 应用时进行名称校验
 - **新增** secret 列表新增根据类型筛选
@@ -104,7 +104,7 @@
 - **新增** 支持 clusterlcm 离线安装
 - **优化** 将 apiResourcesList 移动到 cluster 的 status.APIEnablements
 
-### 基础设施
+#### 基础设施
 
 - **改进** 修复 e2e 部署失败任然 job succeeded 的问题
 - **改进** 提升 pr 识别运行 e2e 精准度
@@ -112,7 +112,7 @@
 - **改进** pr 识别 e2e 过滤 md 文件
 - **新增** 新增 quota 相关 e2ecase
 
-### 控制器
+#### 控制器
 
 - **修复** 修复 clusterlcm 新增错误节点导致集群无法卸载 bug
 - **修复** 修复 kubean 版本升级管理集群标签检测失败
@@ -122,7 +122,7 @@
 - **修复** 修复获取 clusterCIDR 错误的 bug
 - **修复** insight 安装的 namespace 错误的 bug
 
-### 安装
+#### 安装
 
 - **新增** 安装时可指定 redis PVC 的 storageClassName
 - **新增** 支持 arm 架构

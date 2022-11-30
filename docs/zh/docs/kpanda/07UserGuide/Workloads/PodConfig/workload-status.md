@@ -1,6 +1,6 @@
 # 工作负载状态
 
-工作负载是运行在 kubernetes 上的一个应用程序，在 kubernetes 中，无论您的应用程序是由单个同一组件或是由多个不同的组件构成，都可以使用一组 Pod 来运行它。Kubernetes 提供了五种内置的工作负载资源来管理 Pod：
+工作负载是运行在 Kubernetes 上的一个应用程序，在 Kubernetes 中，无论您的应用程序是由单个同一组件或是由多个不同的组件构成，都可以使用一组 Pod 来运行它。Kubernetes 提供了五种内置的工作负载资源来管理 Pod：
 
 - [无状态工作负载](../CreateDeploymentByImage.md)
 - [有状态工作负载](../CreateStatefulSetByImage.md)
