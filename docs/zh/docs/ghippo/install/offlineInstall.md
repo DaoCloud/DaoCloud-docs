@@ -200,7 +200,7 @@ keycloakx:
     ```
     
     ```
-    helm upgrade ghippo ghippo/ghippo \
+    helm upgrade ghippo . \
     -n ghippo-system \
     -f ./bak.yaml \
     --set global.imageRegistry=$imageRegistry
