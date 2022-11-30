@@ -27,9 +27,9 @@
         - kubectl ≥ 1.22.0
         - yq ≥ 4.27.5
 
-## 离线安装
+## 下载和安装
 
-1. 在 k8s 集群控制平面节点（Master 节点）下载社区版的对应离线包并解压，或者从[下载中心](https://file+.vscode-resource.vscode-cdn.net/Users/jiazenghui/DaoCloud-docs/docs/zh/docs/download/free/dce5-installer-v0.3.28.md)下载离线包并解压。
+1. 在 k8s 集群控制平面节点（Master 节点）下载社区版的对应离线包并解压，或者从[下载中心](../../../download/free/dce5-installer-v0.3.28.md)下载离线包并解压。
 
     ```bash
     # 假定版本 VERSION=0.3.28
@@ -164,4 +164,4 @@
 
         请记录好提示的 URL，方便下次访问。
 
-7. 另外，安装 DCE 5.0 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](https://file+.vscode-resource.vscode-cdn.net/Users/jiazenghui/DaoCloud-docs/docs/zh/docs/dce/license0.md)。
+7. 另外，安装 DCE 5.0 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](../../../dce/license0.md)。

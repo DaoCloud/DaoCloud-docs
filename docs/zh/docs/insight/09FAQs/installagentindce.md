@@ -15,8 +15,7 @@
     kubectl edit deploy insight-agent-kube-prometh-operator -n insight-system
     ```
 
-    ![operatoryaml](../images/promerator.png.png)
-
+    ![operatoryaml](../images/promerator.png)
 
 !!! Note
 

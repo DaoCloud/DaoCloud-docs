@@ -28,7 +28,7 @@
         - kubectl ≥ 1.22.0
         - yq ≥ 4.27.5
 
-## 在线安装
+## 下载和安装
 
 1. 在 K8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件。
 
@@ -80,7 +80,7 @@
 
 4. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用 **默认的账户和密码（admin/changeme）** 探索全新的 DCE 5.0 啦！
 
-    ![安装成功](../../images/wechat.png)
+    ![安装成功](../../images/success.png)
 
     !!! success
 
