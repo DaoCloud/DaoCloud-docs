@@ -46,6 +46,6 @@ DCE 5.0 云原生网络基于开源技术，不仅提供单 CNI 网络支持，�
 - [Multus-underlay](../modules/multus-underlay/what.md)：基于 Multus、搭配 Macvlan + SRIOV-CNI 的多网卡实现
 - [Spiderpool](../modules/spiderpool/what.md)：自动化管理 IP 资源
 
-以上所有 CNI 和 Ingress 等组件可以按需安装。
+以上所有 CNI 和 Ingress 等组件可以按需安装。我们的愿景是：牵线搭桥赋能万物互联，融合多 CNI 君臣佐使一应俱全。
 
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

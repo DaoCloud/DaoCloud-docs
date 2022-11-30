@@ -1,31 +1,27 @@
-# 离线安装 DCE 5.0 社区版
+# 使用 Kubernetes 集群离线安装社区版
 
 本页简要说明 DCE 5.0 社区版的离线安装步骤。
 
 !!! note
 
-    点击[社区版部署 Demo](../videos/install.md)可观看视频演示。
+    点击[社区版部署 Demo](../../../videos/install.md)可观看视频演示。
 
 ## 准备工作
 
-- 准备一个 Kubernetes 集群
+- 准备一个 Kubernetes 集群，集群配置请参考文档 [资源规划](../resources.md)。
 
     !!! note
 
-        - 集群可用资源：CPU > 10 核、内存 > 12 GB、磁盘空间 > 100 GB（目前默认多副本运行，后续单副本预计资源消耗为 4 核 8 GB）
-        - 集群版本：推荐 Kubernetes 官方最高稳定版本，目前推荐版本是 v1.24，最低版本支持 v1.20
-        - 支持的 CRI：Docker、containerd
-        - 存储：需要提前准备好 StorageClass，并设置为默认 SC
-        - 目前仅支持 X86_64 架构
+      	- 存储：需要提前准备好 StorageClass，并设置为默认 SC
         - 确保集群已安装 CoreDNS
         - 如果是单节点集群，请确保您已移除该节点的污点
 
-- [安装依赖项](install-tools.md)
+- [安装依赖项](../../install-tools.md)。
 
     !!! note
 
         如果集群中已安装所有依赖项，请确保依赖项版本符合要求：
-        
+
         - helm ≥ 3.9.4
         - skopeo ≥ 1.9.2
         - kubectl ≥ 1.22.0
@@ -33,7 +29,7 @@
 
 ## 离线安装
 
-1. 在 k8s 集群控制平面节点（Master 节点）下载社区版的对应离线包并解压，或者从[下载中心](../download/free/dce5-installer-v0.3.28.md)下载离线包并解压。
+1. 在 k8s 集群控制平面节点（Master 节点）下载社区版的对应离线包并解压，或者从[下载中心](https://file+.vscode-resource.vscode-cdn.net/Users/jiazenghui/DaoCloud-docs/docs/zh/docs/download/free/dce5-installer-v0.3.28.md)下载离线包并解压。
 
     ```bash
     # 假定版本 VERSION=0.3.28
@@ -69,30 +65,28 @@
 
         !!! note
 
-            若导入镜像的过程出现失败, 则失败会被跳过且脚本将继续执行，
-            失败镜像信息将被记录在脚本同级目录 `import_image_failed.list` 文件中，便于定位。
+            - 若导入镜像的过程出现失败, 则失败会被跳过且脚本将继续执行。
+            - 失败镜像信息将被记录在脚本同级目录 `import_image_failed.list` 文件中，便于定位。
+            - 如果 docker pull 镜像时报错：http: server gave HTTP response to HTTPS client， 请启用 Insecure Registry。
 
-        如果 docker pull 镜像时报错：http: server gave HTTP response to HTTPS client，
-        请启用 Insecure Registry：
+    - 在集群的每个节点上运行 `vim /etc/docker/daemon.json` 命令以编辑 daemon.json 文件，输入以下内容并保存更改。
 
-        - 在集群的每个节点上运行 `vim /etc/docker/daemon.json` 命令以编辑 daemon.json 文件，输入以下内容并保存更改。
+        ```json
+        {
+        "insecure-registries" : ["172.30.120.180:80"]
+        }
+        ```
 
-            ```json
-            {
-            "insecure-registries" : ["172.30.120.180:80"]
-            }
-            ```
+        !!! note
 
-            !!! note
+            请确保将 `172.30.120.180:80` 替换为您自己的 Harbor 仓库地址。对于 Linux，daemon.json 文件的路径为 /etc/docker/daemon.json。
 
-                请确保将 `172.30.120.180:80` 替换为您自己的 Harbor 仓库地址。对于 Linux，daemon.json 文件的路径为 /etc/docker/daemon.json。
+    - 运行以下命令重启 Docker。
 
-        - 运行以下命令重启 Docker。
-
-            ```bash
-            sudo systemctl daemon-reload
-            sudo systemctl restart docker
-            ```
+        ```bash
+        sudo systemctl daemon-reload
+        sudo systemctl restart docker
+        ```
 
     - 如果没有镜像仓库，请将离线包拷贝到每一台节点之后，通过 `docker load/nerdctl load` 命令加载：
 
@@ -128,7 +122,7 @@
           loadBalancer: metallb
           istioGatewayVip: 10.6.229.10/32 # 这是 Istio gateway 的 VIP，也会是DCE 5.0的控制台的浏览器访问IP
           insightVip: 10.6.229.11/32      # 这是 Global 集群的 Insight-Server 采集所有子集群的监控指标的网络路径所用的 VIP
-          persistentRegistryDomainName: 172.30.120.180:80
+          persistentRegistryDomainName: 172.30.120.180:80 # 这是 Harbor 仓库地址
         ```
 
     - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 k8s 负载均衡能力, 配置文件范例如下:
@@ -159,16 +153,15 @@
 
     !!! note
 
-        参数 -p 指定解压离线包的 offline 目录。
-        
-        有关 clusterConfig.yaml 文件设置，请参考上文的 **在线安装第 2 步** 。
+        - 参数 -p 指定解压离线包的 offline 目录。
+        - 有关 clusterConfig.yaml 文件设置，请参考[在线安装第 2 步](online.md#_2)。
 
 6. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
 
-    ![success](images/success.png)
+    ![安装成功](../../images/success.png)
 
     !!! success
 
         请记录好提示的 URL，方便下次访问。
 
-7. 另外，安装 DCE 5.0 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](../dce/license0.md)。
+7. 另外，安装 DCE 5.0 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](https://file+.vscode-resource.vscode-cdn.net/Users/jiazenghui/DaoCloud-docs/docs/zh/docs/dce/license0.md)。

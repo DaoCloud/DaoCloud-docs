@@ -30,7 +30,7 @@ offline-v0.3.27.tar: OK
 
 ## 安装
 
-成功校验离线包之后，请参阅[商业版安装流程](../../install/Air-Gap-install-full/start-install.md)进行安装。
+成功校验离线包之后，请参阅[商业版安装流程](../../install/commercial/start-install.md)进行安装。
 
 成功安装之后请进行[正版授权](https://qingflow.com/f/e3291647)。
 

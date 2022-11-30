@@ -10,6 +10,7 @@
 - [微服务引擎](skoala.md)
 - [服务网格](mspider.md)
 - [中间件](mcamel.md)
+- [云原生网络](network.md)
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/install-dce-community.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](install.md#3){ .md-button .md-button--primary }

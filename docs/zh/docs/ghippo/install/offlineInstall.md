@@ -6,7 +6,56 @@
 
     下述命令或脚本内出现的 `ghippo` 字样是全局管理模块的内部开发代号。
 
-## 加载镜像文件
+## 通过 chart-syncer 同步镜像到指定镜像仓库
+
+1. 创建 load-image.yaml，完整 yaml 如下：  
+
+    !!! note  
+        
+        该 YAML 文件中的各项参数均为必填项。您需要一个私有的镜像仓库，并修改相关配置。
+    ```yaml
+    source:
+      intermediateBundlesPath: ghippo-offline # the relative path where your do charts-syncer,but not relative path between this yaml and offline-package
+    target:
+      containerRegistry: 10.16.10.111 # need change to your image registry url
+      containerRepository: release.daocloud.io/ghippo # need change to your image repository
+      repo:
+        kind: HARBOR # or as any other supported Helm Chart repository kinds
+        url: http://10.16.10.111/chartrepo/release.daocloud.io # need change to your chart repo url
+        auth:
+          username: "admin" # your image registry username
+          password: "Harbor12345" # your image registry password
+      containers:
+        auth:
+          username: "admin" # your image registry username
+          password: "Harbor12345" # your image registry password
+    ```
+    
+    若当前环境未安装chart repo，chart-syncer也支持将chart导出为tgz文件，并存放在指定路径
+    
+    ```yaml
+    source:
+      intermediateBundlesPath: ghippo-offline # the relative path where your do charts-syncer,but not relative path between this yaml and offline-package
+    target:
+      containerRegistry: 10.16.10.111 # need change to your registry url
+      containerRepository: release.daocloud.io/ghippo # need change to your image repository
+      repo:
+        kind: LOCAL
+        path: ./local-repo # chart local path
+      containers:
+        auth:
+          username: "admin" # your image registry username
+          password: "Harbor12345" # your image registry password
+    ```
+    
+    
+1. 执行同步镜像命令。
+
+    ```shell
+    charts-syncer sync --config load-image.yaml
+    ```
+    
+## 通过镜像包加载镜像文件
 
 参照以下步骤解压并加载镜像文件。
 
@@ -15,79 +64,79 @@
 解压 tar 压缩包。
 
 ```sh
-tar zxvf ghippo.bundle.tar
+tar xvf ghippo.bundle.tar
 ```
 
-解压成功后会得到 `ghippo.bundle` 文件，其中包含 3 个子文件：
+解压成功后会得到 3 个文件：
 
 - hints.yaml
 - images.tar
 - original-chart
 
-### 通过 chart-syncer 同步镜像到指定镜像仓库
-
-1. 首先请确认本地是否安装 chart-syncer。如果已安装，则跳过这一步。
-
-    ```shell
-    tmp_dir=$(mktemp -d)
-
-    git clone https://github.com/DaoCloud/charts-syncer.git ${tmp_dir}
-
-    cp ${tmp_dir}/charts-syncer /usr/local/bin/charts-syncer
-
-    chmod +x /usr/local/bin/charts-syncer
-
-    rm -rf ${tmp_dir}
-    ```
-
-1. 创建 load-image.yaml，完整 yaml 如下：
-
-    ```yaml
-    source:
-      intermediateBundlesPath: dist/offline # the relative path where your do charts-syncer,but not relative path between this yaml and offline-package
-    target:
-      containerRegistry: 10.64.0.156 # need change to your harbor url
-      repo:
-        kind: HARBOR # or as any other supported Helm Chart repository kinds
-        url: http://10.64.0.156/chartrepo/ghippo # need change to your harbor url
-        auth:
-          username: "admin" # the harbor username
-          password: "Harbor12345" # the harbor password
-      containers:
-        auth:
-          username: "admin" # the harbor username
-          password: "Harbor12345" # the harbor password
-    ```
-
-    !!! note
-
-        该 YAML 文件中的各项参数均为必填项。您需要一个私有的 harbor，并修改相关配置。
-
-1. 执行同步镜像命令。
-
-    ```shell
-    charts-syncer sync --config load-image.yaml
-    ```
-
 ### 本地加载镜像到 Docker
 
-从本地将镜像文件加载到 Docker。
+从本地将镜像文件加载到 Docker或Container中。
 
+docker:
 ```sh
-cd ghippo.bundle
 docker load -i images.tar
 ```
 
+Container:
+```sh
+ctr image import images.tar
+```
+!!! note
+
+    load完成后需要tag镜像，保持Registry、Repository与安装时一致
+
 ## 升级
 
-有两种升级方式：Harbor 或 Docker。您可以任选其一。
+有两种升级方式：helm repo 或 chart直接升级。您可以根据前置操作选择对应的升级方案。  
+    
+!!! note  
 
-### 通过 Harbor 升级
+    当从 v0.11.x (或更低版本) 升级到 v0.12.0 (或更高版本) 时，需要将步骤2 bak.yaml 中所有 key 为 keycloak 的修改为 keycloakx。  
+        
+示例：  
 
-1. 配置全局管理的 helm 仓库。
+```shell
+USER-SUPPLIED VALUES:
+keycloak:
+    ...
+```
+
+修改为
+
+```shell
+USER-SUPPLIED VALUES:
+keycloakx:
+    ...
+```
+
+### 通过 helm repo 升级
+
+1. 检查全局管理 helm 仓库是否存在。
+
+    ```
+    helm repo list | grep ghippo
+    ```
+    
+    若返回结果为空或如下提示，则进行第二步配置全局管理的 helm 仓库，反之则跳过第二步，直接进行第三步
+    
+    ```
+    Error: no repositories to show
+    ```
+
+1. 添加全局管理的 helm 仓库。
 
     ```shell
-    heml repo add ghippo https://{harbor url}/chartrepo/ghippo
+    heml repo add ghippo http://{harbor url}/chartrepo/{project}
+    ```
+    
+1. 更新全局管理的 helm 仓库。
+
+    ```shell
     helm repo update ghippo # helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
     ```
 
@@ -114,14 +163,23 @@ docker load -i images.tar
 
 1. 执行 helm upgrade
 
+    !!! note
+        
+        升级前我们建议您覆盖bak.yaml中的global.imageRegistry为您当前使用的镜像仓库地址。
+    
+    ```
+    export imageRegistry={your image registry}
+    ```
+    
     ```
     helm upgrade ghippo ghippo/ghippo \
     -n ghippo-system \
     -f ./bak.yaml \
+    --set global.imageRegistry=$imageRegistry
     --version 0.9.0
     ```
 
-### 通过 Docker 升级
+### 通过 chart 包升级
 
 1. 备份 `--set` 参数
 
@@ -131,12 +189,19 @@ docker load -i images.tar
     helm get values ghippo -n ghippo-system -o yaml > bak.yaml
     ```
 
-1. 执行 `helm upgrade`
+1. 执行 helm upgrade
 
-    ```shell
-    cd original-chart
-
-    helm upgrade ghippo . \
+    !!! note
+        
+        升级前我们建议您覆盖bak.yaml中的global.imageRegistry为您当前使用的镜像仓库地址。
+    
+    ```
+    export imageRegistry={your image registry}
+    ```
+    
+    ```
+    helm upgrade ghippo ghippo/ghippo \
     -n ghippo-system \
-    -f ./bak.yaml
+    -f ./bak.yaml \
+    --set global.imageRegistry=$imageRegistry
     ```
