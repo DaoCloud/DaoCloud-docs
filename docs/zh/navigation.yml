@@ -10,15 +10,18 @@ nav:
           - 产品优势: dce/whyus.md
           - 申请社区免费体验: dce/license0.md
       - 安装:
-          - 安装 Kubernetes: install/install-k8s.md
+          - 安装社区版: 
+            - 资源规划: install/community/resources.md
+            - kind 集群在线安装: install/community/kind/online.md
+            - 标准 K8s 集群在线安装: install/community/k8s/online.md
+            - 标准 K8s 集群离线安装: install/community/k8s/offline.md
+          - 安装商业版:
+              - 部署规划: install/commercial/deploy-plan.md
+              - 使用场景示例: install/commercial/scenarios.md
+              - 文件下载: install/commercial/download-file.md
+              - 集群配置文件说明: install/commercial/clusterconfig.md
+              - 离线安装步骤: install/commercial/start-install.md
           - 安装依赖项: install/install-tools.md
-          - 在线安装 DCE 5.0 社区版: install/install-dce-community.md
-          - 离线安装 DCE 5.0 社区版: install/offline-install-community.md
-          - 离线安装 DCE 5.0 商业版:
-              - 部署规划: install/Air-Gap-install-full/deploy-plan.md
-              - 文件下载: install/Air-Gap-install-full/download-file.md
-              - 集群配置文件说明: install/Air-Gap-install-full/clusterconfig.md
-              - 开始安装: install/Air-Gap-install-full/start-install.md
           - 卸载: install/uninstall.md
       - 容器管理:
           - 介绍:
@@ -147,9 +150,9 @@ nav:
               - Release Notes: insight/03ProductBrief/releasenote.md
           - 快速入门:
               - 安装 Insight: 
-                - insight/06UserGuide/01quickstart/install/installagent.md
-                - 获取数据上传地址: insight/06UserGuide/01quickstart/install/gethosturl.md
-                - 升级注意事项: insight/06UserGuide/01quickstart/install/upgradenote.md
+                - insight/06UserGuide/01quickstart/installagent.md
+                - 获取数据上传地址: insight/06UserGuide/01quickstart/gethosturl.md
+                - 升级注意事项: insight/06UserGuide/01quickstart/upgradenote.md
               - OTel 赋能应用可观测性: 
                 - insight/06UserGuide/01quickstart/otel/otel.md
                 - Operator 无侵入增强应用: insight/06UserGuide/01quickstart/otel/operator.md
@@ -401,8 +404,9 @@ nav:
               - 使用: network/modules/spiderpool/usage.md
               - 配置参考: network/modules/spiderpool/config.md
               - 常用命令: network/modules/spiderpool/command.md
-      - 中间件:
-          - 中间件介绍: middleware/midware.md
+      - 数据服务:
+          - 数据服务介绍: middleware/midware.md
+          - 数据服务版本适配: middleware/adaptation-k8s.md
           - Elasticsearch 搜索服务:
               - 什么是 Elasticsearch: middleware/elastic-search/intro/what.md
               - 功能说明: middleware/elastic-search/intro/features.md

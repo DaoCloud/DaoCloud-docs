@@ -36,7 +36,7 @@ offline-v0.3.28.tar: OK
 tar -zxvf offline-v0.3.28.tar
 ```
 
-然后参阅[安装 DCE 5.0 商业版](../../install/Air-Gap-install-full/start-install.md)进行安装。成功安装之后请进行[正版授权](https://qingflow.com/f/e3291647)。
+然后参阅[安装 DCE 5.0 商业版](../../install/commercial/start-install.md)进行安装。成功安装之后请进行[正版授权](https://qingflow.com/f/e3291647)。
 
 ## 模块
 

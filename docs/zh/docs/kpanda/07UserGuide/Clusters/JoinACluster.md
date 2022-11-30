@@ -12,6 +12,8 @@
 - VMware Tanzu
 - Amazon EKS
 - Aliyun ACK
+- Huawei CCE
+- Tencent TKE 
 - 标准 Kubernetes 集群
 
 ## 前提条件
@@ -57,4 +59,4 @@
 
 !!! note
 
-    如果集群状态一直处于`接入中`，请确认接入脚本是否在对应集群上执行成功。有关集群状态的更多详情，请参考[集群状态](ClusterRole.md)。
+    如果集群状态一直处于`接入中`，请确认接入脚本是否在对应集群上执行成功。有关集群状态的更多详情，请参考[集群状态](ClusterStatus.md)。
