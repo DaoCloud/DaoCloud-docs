@@ -488,11 +488,11 @@
 - [Prometheus 长期远程存储方案 VictoriaMetrics 入门实践](https://mp.weixin.qq.com/s/C3fzohygl5_tey70Qnz3og)
 
     VictoriaMetrics（简称 VM ）是一个支持高可用、经济高效且可扩展的开源监控解决方案和时间序列数据库，可用于 Prometheus 监控数据做长期远程存储。
-     除此之外，VM 的主要特点包括：对外支持 Prometheus 相关的 API、指标数据摄取和查询具备高性能和良好的可扩展性、高性能的数据压缩方式等。
+    除此之外，VM 的主要特点包括：对外支持 Prometheus 相关的 API、指标数据摄取和查询具备高性能和良好的可扩展性、高性能的数据压缩方式等。
 
 - [声明式管理 Helm 版本的工具](https://helm.sh/blog/tools-to-manage-helm-declaratively/)
 
-这篇文章介绍了 Kubernetes 生态中一些可用于声明式管理 Helm 版本的工具（如 CNCF 项目 Flux 和 Argo），并对这些工具进行了比较。
+    这篇文章介绍了 Kubernetes 生态中一些可用于声明式管理 Helm 版本的工具（如 CNCF 项目 Flux 和 Argo），并对这些工具进行了比较。
 
 - [使用 Kubecost 和 Kyverno 进行云原生工作负载成本治理](https://dzone.com/articles/cost-governance-of-cloud-native-workloads-using-kubecost-and-kyverno)
 
@@ -785,7 +785,7 @@
 
 - [Kubernetes 1.24: 避免为 Services 分配 IP 地址时发生冲突](https://kubernetes.io/blog/2022/05/23/service-ip-dynamic-and-static-allocation/)
 
-    Kubernetes 1.24 允许启用一个新的特性门控 ``ServiceIPStaticSubrange``。 
+    Kubernetes 1.24 允许启用一个新的特性门控 `ServiceIPStaticSubrange`。
     启用此特性后，可以为 Service 使用不同的 IP 分配策略，减少冲突的风险。
 
 - [Harbor v2.5 远程复制：制品的签名如影随形](https://mp.weixin.qq.com/s/erH1iCbNn9yM1Bl5UlgGMg)
