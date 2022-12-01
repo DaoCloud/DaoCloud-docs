@@ -1,11 +1,16 @@
+---
+hide:
+  - toc
+---
+
 # 集群配置（ClusterConfig）文件说明
 
 在[离线安装 DCE 5.0 商业版](start-install.md)的过程中，执行安装命令时需要指定集群配置文件，需要根据实际部署场景来配置该文件。
 该文件可以定义部署的负载均衡类型、部署模式、集群节点信息等关键参数。
 
-以下描述了该文件的详细构成以及各个关键字段。
+## ClusterConfig 示例
 
-## 文件内容
+以下是一个 ClusterConfig 文件示例。
 
 ```yaml
 apiVersion: provision.daocloud.io/v1alpha1
@@ -92,7 +97,9 @@ spec:
       version: v1.8.4
 ```
 
-## 关键字段说明
+## 关键字段
+
+该 YAML 文件中的关键字段说明，请参阅下表。
 
 | 字段                         | 说明                                                         | 默认值                                                 |
 | ---------------------------- | ------------------------------------------------------------ | ------------------------------------------------------ |
@@ -114,7 +121,7 @@ spec:
 | globalMasterNodes            | 全局集群：Master 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | NA                                                     |
 | globalWorkerNodes            | 全局集群：Worker 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | NA                                                     |
 | ntpServer                    | 可用的 NTP 服务器，供给新节点同步时间                        | NA                                                     |
-| network.cni                  | CNI 选择，比如 calico, cilium                                | calico                                                 |
+| network.cni                  | CNI 选择，比如 calico、cilium                                | calico                                                 |
 | network.clusterCIDR          | Cluster CIDR                                                 | NA                                                     |
 | network.serviceCIDR          | Service CIDR                                                 | NA                                                     |
 | auditConfig                  | k8s api-server 的审计日志配置                                | 默认关闭                                               |
