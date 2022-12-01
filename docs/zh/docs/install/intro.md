@@ -9,10 +9,10 @@ DCE 5.0 有两个版本：社区版和商业版。
 
 | 版本   | 包含的模块                                                   | 描述                                               |
 | ------ | ------------------------------------------------------------ | -------------------------------------------------- |
-| 社区版 | 全局管理<br />容器管理<br />可观测性                         | [免费体验](../dce/license0.md)，3 个模块会保持持续更新，可随时[下载热升级](../download/dce5.md) |
-| 商业版 | 全局管理<br />容器管理<br />可观测性<br />应用工作台<br />多云编排<br />微服务引擎<br />服务网格<br />精选中间件<br />云原生网络<br />云原生存储<br />镜像仓库 | [正版授权](https://qingflow.com/f/e3291647)，各个模块可按需自由组合，随时[下载热升级](../download/dce5.md)   |
+| 社区版 | 全局管理<br />容器管理<br />可观测性                         | [免费体验](../dce/license0.md)，3 个模块会保持持续更新，可随时[下载子模块的离线包](../download/dce5.md) |
+| 商业版 | 全局管理<br />容器管理<br />可观测性<br />应用工作台<br />多云编排<br />微服务引擎<br />服务网格<br />精选中间件<br />云原生网络<br />云原生存储<br />镜像仓库 | [正版授权](https://qingflow.com/f/e3291647)，各个模块可按需自由组合，随时[下载子模块的离线包](../download/dce5.md)   |
 
-DCE 5.0 的安装流程图如下：
+DCE 5.0 社区版的安装流程图如下：
 
 ```mermaid
 flowchart TB
@@ -22,7 +22,7 @@ subgraph second[使用说明]
     U[ ] -.-
     kpanda[容器管理] --- ghippo[全局管理]
     ghippo --- insight[可观测性]
-    insight --- ask[提问!!!]
+    insight -.- ask[提问!!!]
 end
 
 subgraph first[安装社区版]
@@ -35,7 +35,7 @@ subgraph first[安装社区版]
     tools -.-> s2[通过标准 k8s 集群<br>离线安装]
 end
 
-start([fa:fa-user DCE 5.0 安装和使用流程简介]) --> first
+start([fa:fa-user DCE 5.0 社区版<br>安装和使用流程简介]) --> first
 start --> second
 
 classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:px,color:#000000, font-size:15px;
