@@ -42,9 +42,9 @@ start --> second
 classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:px,color:#000000, font-size:15px;
 classDef white fill:#ffffff,stroke:#000,stroke-width:px,color:#000,font-weight:bold
 classDef spacewhite fill:#ffffff,stroke:#fff,stroke-width:0px,color:#000
-classDef plain fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
+classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
+classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
+classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class plan,k8s,tools,kind,s1,s2,kpanda,ghippo,insight,free,ask cluster;
 class start plain
@@ -72,7 +72,7 @@ flowchart TB
     start([fa:fa-user DCE 5.0 商业版<br>安装流程]) -.- deploy[部署规划]
     deploy --> tools[在火种节点上安装依赖项]
     tools --> download[下载离线包]
-    download --> config{编辑并配置<br>clusterConfig.yaml<br>重要!}
+    download --> config[编辑并配置<br>clusterConfig.yaml]
 
     config -.compactClusterMode: false.-> typical[经典安装模式]
     typical --> k8s2[自动创建 K8s 集群]
@@ -83,12 +83,12 @@ flowchart TB
     simple --> k8s1[自动创建 K8s 集群]
     simple --> gsc1[自动在一个集群<br>安装所有 DCE 组件]
 
-classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:px,color:#000000, font-size:15px;
-classDef white fill:#ffffff,stroke:#000,stroke-width:px,color:#000,font-weight:bold
+classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:1px,color:#000000, font-size:15px;
+classDef white fill:#ffffff,stroke:#000,stroke-width:1px,color:#000,font-weight:bold
 classDef spacewhite fill:#ffffff,stroke:#fff,stroke-width:0px,color:#000
-classDef plain fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
+classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
+classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
+classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class deploy,tools,download,config cluster
 class typical,k8s,mng2,gsc2,k8s2 k8s
