@@ -79,7 +79,8 @@
 
         !!! note
 
-            请确保将 `172.30.120.180:80` 替换为您自己的 Harbor 仓库地址。对于 Linux，daemon.json 文件的路径为 /etc/docker/daemon.json。
+            请确保将 `172.30.120.180:80` 替换为您自己的 Harbor 仓库地址。
+            对于 Linux，daemon.json 文件的路径为 `/etc/docker/daemon.json`。
 
     - 运行以下命令重启 Docker。
 
