@@ -2,7 +2,7 @@
 
 本页按字母顺序列出云原生开源项目的动态。
 
-## A, B
+### A, B
 
 - [Acorn：Acorn Labs 开源的 K8s 应用打包和部署框架](https://acorn.io/introducing-acorn/)  
 
@@ -41,7 +41,7 @@
     尚待解决的 4 个问题中，3 个与速率限制和内部 DoS 问题相关。
     [威胁模型](https://backstage.io/docs/overview/threat-model)总结了操作员、开发人员和安全研究人员的主要安全考虑事项，涵盖 Backstage 典型设置中涉及的信任模型和角色、集成者的职责以及常见配置问题等。
 
-## C
+### C
 
 - [Calico CNI 插件 v3.24.0 发布（CNCF 项目）](https://github.com/projectcalico/calico/blob/release-v3.24/calico/_includes/release-notes/v3.24.0-release-notes.md)
 
@@ -102,7 +102,7 @@
 
     该版本主要新特性：提供 QoS 服务以完善多租户隔离功能、优化混合云多级读缓存功能、支持两个副本的数据存储、卷支持配置 posixAcl 进行权限管理、为 datanode 添加数据分区总数限制。
 
-## D, E, F, G
+### D, E, F, G
 
 - [Dapr 分布式应用运行时 v1.9.0 发布（CNCF 项目）](https://github.com/dapr/dapr/releases/tag/v1.9.0)
 
@@ -138,7 +138,7 @@
 
     该版本主要新特性：移除 Pod 安全策略并迁移到 Pod 安全准入、Mutation 功能升级为稳定、引入工作负载资源的验证（alpha）、性能改进。
 
-## H
+### H
 
 - [Harbor 容器镜像仓库 v2.6.0 发布（CNCF 项目）](https://github.com/goharbor/harbor/releases/tag/v2.6.0)
 
@@ -156,7 +156,7 @@
 
     [Higress](https://github.com/alibaba/higress) 遵循 Ingress/Gateway API 标准，将流量网关、微服务网关、安全网关三合一，并在此基础上扩展了服务管理插件、安全类插件和自定义插件，高度集成 K8s 和微服务生态，包括 Nacos 注册和配置、Sentinel 限流降级等能力，并支持规则变更毫秒级生效等热更新能力。
 
-## I, J
+### I, J
 
 - [Istio v1.16 发布（CNCF 项目）](https://istio.io/latest/news/releases/1.16.x/announcing-1.16/)
 
@@ -176,9 +176,9 @@
     [Jakarta EE 10](https://github.com/jakartaee/jakarta.ee) 引入了用于构建现代化和轻量级云原生 Java 应用的功能。
     具体包括：新增配置文件规范，定义一个用于轻量级 Java 应用和微服务的多供应商平台；针对适合微服务开发的较小运行时，提供了规范子集，包括用于构建应用的新 CDI-Lite 规范；支持多态类型；将 UUID 标准化为基本类型并扩展查询语言和查询 API。
 
-## K
+### K
 
-- [k8gb Kubernetes 全局负载均衡器  v0.10.0 发布（CNCF 项目）](https://github.com/k8gb-io/k8gb/releases/tag/v0.10.0)
+- [k8gb Kubernetes 全局负载均衡器 v0.10.0 发布（CNCF 项目）](https://github.com/k8gb-io/k8gb/releases/tag/v0.10.0)
 
     该版本主要新特性：可以通过环境变量访问 LeaderElection、支持 OpenTelemetry 的 tracing 方案、支持创建 K8GB 指标的Grafana 仪表盘样本、实现一致的轮询负载均衡策略。
 
@@ -287,7 +287,7 @@
 
     该版本主要新特性：新增 podSecurity 验证子规则，集成 Pod Security Admission 库；支持 YAML 清单签名验证；允许生成规则在单个规则中生成多个资源；支持OpenTelemetry；支持测试生成策略；支持 Kubernetes 1.25。
 
-## L, M, N
+### L, M, N
 
 - [Linkerd 服务网格项目 v2.12.0 发布（CNCF 项目）](https://github.com/linkerd/linkerd2/releases/tag/stable-2.12.0)  
 
@@ -319,7 +319,7 @@
 
     该版本主要新特性：支持 recording rule 的管理、告警规则支持生效到多集群、仪表盘变量支持 TextBox、告警屏蔽支持更多操作符、更灵活的自定义告警内容。
 
-## O
+### O
 
 - [OCM 多集群管理平台 v0.9 发布（CNCF 项目）](https://www.cncf.io/blog/2022/10/31/open-cluster-management-november-2022-update/)
 
@@ -359,7 +359,7 @@
     支持 SMI 规范；支持 ingress、gateway API、跨集群服务发现的 [fsm](https://github.com/flomesh-io/fsm)，提供“k8s 集群内+多集群”的“东西+南北”流量管理和服务治理能力。
     其开发和测试环境采用 k3s、k8e 等，因此用户可以快速低成本地在 x86、arm、RISC-V、龙芯等硬件平台上部署低资源高性能的服务网格。
 
-## P
+### P
 
 - [Phlare：Grafana 开源的大规模持续性能分析数据库](https://grafana.com/blog/2022/11/02/announcing-grafana-phlare-oss-continuous-profiling-database/)
 
@@ -382,7 +382,7 @@
 
     该版本主要新特性：增加对摄取无序样本的实验性支持、优化内存资源用量。
 
-## R, S
+### R, S
 
 - [Rainbond 云原生多云应用管理平台 v5.9.0 发布](https://github.com/goodrain/rainbond/releases/tag/v5.9.0-release)
 
@@ -417,7 +417,7 @@
 
     [Sylva](https://gitlab.com/sylva-projects/sylva) 利用容器网络功能（CNF）和 Kubernetes 等云原生平台来创建电信云技术栈，以减少电信和边缘服务的云基础设施的分散性。Sylva 提供的技术栈由 5 个部分组成：网络性能（SRIOV、DPDK、指定 CNI 等）、分布式云（多集群 Kubernetes、裸机自动化）、能源效率、安全性（加固和合规性）以及开放性和标准化 API。
 
-## T
+### T
 
 - [TDengine 云原生时序数据库 v3.0 发布](https://github.com/taosdata/TDengine/releases/tag/ver-3.0.0.0)  
 
@@ -447,7 +447,7 @@
 
     该版本主要新特性：支持扫描 SBOM 证明、为dockerfile 的 misconf 处理程序添加测试、增加对 Cosign 漏洞证明的支持、允许用户为 token 定义一个已有的 secret、增加两个新漏洞。
 
-## V, W, X
+### V, W, X
 
 - [Vcluster 虚拟 Kubernetes 集群实现方案 v0.13.0 发布](https://github.com/loft-sh/vcluster/releases/tag/v0.13.0)
 
