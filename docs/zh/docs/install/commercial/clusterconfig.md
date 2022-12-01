@@ -19,55 +19,55 @@ metadata:
   creationTimestamp: null
 spec:
   loadBalancer: NodePort  # NodePort(default), metallb, cloudLB (Cloud Controller)
-  istioGatewayVip: 10.6.127.254/32 # if loadBalancer is metallb，is requireded.
-                                   #  Provides UI and OpenAPI access to DCE.
-  registryVip: 10.6.127.253/32     # if loadBalancer is metallb，is requireded.
-                                   # Access entry for the mirror repository of the Global cluster
-  insightVip: 10.6.127.252/32 # if loadBalancer is metallb，is requireded.
-                              # It is used for the insight data collection portal of the GLobal cluster,
-                              # and the insight-agent of the sub-cluster can report data to this VIP
+  istioGatewayVip: 10.6.127.254/32 # 当 loadBalancer 是 metallb 时必填
+                                   # 为 DCE 提供 UI 和 OpenAPI 访问权限
+  registryVip: 10.6.127.253/32     # 当 loadBalancer 是 metallb 时必填
+                                   # Global 集群的镜像仓库访问入口
+  insightVip: 10.6.127.252/32 # 当 loadBalancer 是 metallb 时必填
+                              # 用作 GLobal 集群的 Insight 数据采集入口
+                              # 子集群的 insight-agent 可以向这个 VIP 报告数据
   compactClusterMode: false
   globalClusterName: my-global-cluster
   mgmtClusterName: my-mgmt-cluster
   mgmtMasterNodes:
-    - nodeName: "rm-master1" # Node Name will override the hostName, should align with RFC1123 stsandard
+    - nodeName: "rm-master1" # nodeName 将覆盖 hostName，应符合 RFC1123 标准
       ip: 10.6.127.232
-      ansibleUser: "root"   # username
-      ansiblePass: "123456" # password
-  mgmtMasterNodes:
-    - nodeName: "rm-master1" # Node Name will override the hostName, should align with RFC1123 stsandard
+      ansibleUser: "root"   # 用户名
+      ansiblePass: "123456" # 密码
+  mgmtWorkerNodes:
+    - nodeName: "rm-worker1" # nodeName 将覆盖 hostName，应符合 RFC1123 标准
       ip: 10.6.127.230
-      ansibleUser: "root"   # username
-      ansiblePass: "123456" # password
-  globalMasterNodes:
+      ansibleUser: "root"   # 用户名
+      ansiblePass: "123456" # 密码
+  globalMasterNodes:        # 简约模式时此字段不起作用
     - nodeName: "rg-master1"
       ip: 10.6.127.231
       ansibleUser: "root"
       ansiblePass: "123456"
-  globalWorkerNodes:
+  globalWorkerNodes:        # 简约模式时此字段不起作用
     - nodeName: "rg-worker1"
       ip: 10.6.127.234
       ansibleUser: "root"
       ansiblePass: "123456"
-  ntpServer:
-    - "172.30.120.197 iburst" # time synchronization server
+  ntpServer:                # 时间同步服务器
+    - "172.30.120.197 iburst"
     - 0.pool.ntp.org
     - ntp1.aliyun.com
     - ntp.ntsc.ac.cn
-  persistentRegistryDomainName: temp-registry.daocloud.io # The local image registry which images come from.
-  imageConfig: # the kubean image config as below
+  persistentRegistryDomainName: temp-registry.daocloud.io # 本地镜像仓库
+  imageConfig: # kubean 镜像配置
     imageRepository: temp-registry.daocloud.io
     binaryRepository: http://temp-registry.daocloud.io:9000/kubean
-  repoConfig: # the kubean rpm/deb source configuration as below
-    # `centos` using CentOS, RedHat, AlmaLinux or Fedora
-    # `debian` using Debian
-    # `ubuntu` using Ubuntu
+  repoConfig: # kubean rpm/deb 源配置
+    # `centos` 表示 CentOS, RedHat, AlmaLinux 或 Fedora
+    # `debian` 表示 Debian
+    # `ubuntu` 表示 Ubuntu
     repoType: centos
     dockerRepo: "http://temp-registry.daocloud.io:9000/kubean/centos/$releasever/os/$basearch"
     extraRepos:
     - http://temp-registry.daocloud.io:9000/kubean/centos-iso/\$releasever/os/\$basearch
     - http://temp-registry.daocloud.io:9000/kubean/centos/\$releasever/os/\$basearch
-    # k8sVersion only take effect in online mode, dont set it in offline mode
+    # k8sVersion 字段仅适用于在线模式，离线模式时无需设置
     # k8sVersion: v1.24.6
   auditConfig:
     logPath: /var/log/audit/kube-apiserver-audit.log
@@ -87,7 +87,7 @@ spec:
     serviceCIDR: 100.64.0.0/13
   cri:
     criProvider: containerd
-    # criVersion only take effect in online mode, dont set it in offline mode
+    # criVersion 字段仅适用于在线模式，离线模式时无需设置
     # criVersion: 1.6.8
   addons:
     ingress:
