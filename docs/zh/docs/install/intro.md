@@ -20,10 +20,10 @@ flowchart TB
 subgraph second[使用说明]
     direction TB
     U[ ] -.-
-    kpanda[容器管理] --- ghippo[全局管理]
+    free[申请免费体验] --- kpanda[容器管理]
+    kpanda --- ghippo[全局管理]
     ghippo --- insight[可观测性]
-    insight --- free[申请免费体验]
-    free -.- ask[提问!!!]
+    insight -.- ask[提问!!!]
 end
 
 subgraph first[安装社区版]
