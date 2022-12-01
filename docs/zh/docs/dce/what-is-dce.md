@@ -9,6 +9,67 @@ DaoCloud Enterprise 5.0 是高性能可扩展的云原生操作系统，在任�
 
 ![模块图](../images/dce-modules03.png)
 
+各个子模块的操作文档传送门：
+
+<div class="grid cards" markdown>
+
+- :fontawesome-solid-jet-fighter-up: __[安装](../install/intro.md)__ 安装社区版和商业版
+- :octicons-container-16: __[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)__ 多集群容器管理模块
+- :fontawesome-solid-user-group: __[全局管理](../ghippo/01ProductBrief/WhatisGhippo.md)__ 登录、访问权限、外观
+- :material-monitor-dashboard: __[可观测性](../insight/03ProductBrief/WhatisInsight.md)__ 图形化仪表盘
+- :material-microsoft-azure-devops: __[应用工作台](../amamba/01ProductBrief/WhatisAmamba.md)__ CI/CD 流水线
+- :material-cloud-check: __[多云编排](../kairship/01product/whatiskairship.md)__ 多云实例、工作负载、策略管理
+- :material-engine: __[微服务引擎](../skoala/select-workspace.md)__ 微服务治理中心和微服务网关
+- :material-table-refresh: __[服务网格](../mspider/01Intro/WhatismSpider.md)__ 原生 Istio 增强版
+- :material-middleware: __[中间件](../middleware/midware.md)__ ES, Kafka, MinIO 等
+- :material-warehouse: __[镜像仓库](../kangaroo/intro.md)__ 镜像集成和托管服务
+- :material-dot-net: __[网络](../network/intro/what-is-net.md)__ 多 CNI 融合方案
+- :floppy_disk: __[存储](../hwameistor/intro/what.md)__ 容器化存储综合方案
+
+</div>
+
+<!--
+<div class="grid" markdown>
+
+:fontawesome-solid-jet-fighter-up: __[安装](../install/intro.md)__
+{ .card }
+
+:octicons-container-16: __[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)__
+{ .card }
+
+:fontawesome-solid-user-group: __[全局管理](../ghippo/01ProductBrief/WhatisGhippo.md)__
+{ .card }
+
+:material-monitor-dashboard: __[可观测性](../insight/03ProductBrief/WhatisInsight.md)__
+{ .card }
+
+:material-microsoft-azure-devops: __[应用工作台](../amamba/01ProductBrief/WhatisAmamba.md)__
+{ .card }
+
+:material-cloud-check: __[多云编排](../kairship/01product/whatiskairship.md)__
+{ .card }
+
+:material-engine: __[微服务引擎](../skoala/select-workspace.md)__
+{ .card }
+
+:material-table-refresh: __[服务网格](../mspider/01Intro/WhatismSpider.md)__
+{ .card }
+
+:material-middleware: __[中间件](../middleware/midware.md)__
+{ .card }
+
+:material-warehouse: __[镜像仓库](../kangaroo/intro.md)__
+{ .card }
+
+:material-dot-net: __[网络](../network/intro/what-is-net.md)__
+{ .card }
+
+:floppy_disk: __[存储](../hwameistor/intro/what.md)__
+{ .card }
+
+</div>
+-->
+
 DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，可以应对海量应用场景。
 
 === "多云编排"
