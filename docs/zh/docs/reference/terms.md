@@ -281,3 +281,7 @@ hide:
 
     主集群是具有控制平面的集群。
     一个网格可以有一个以上的主集群，以用于 HA 或需要低延迟的场景。主集群可以充当工作集群的控制平面。
+
+[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

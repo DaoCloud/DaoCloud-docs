@@ -11,11 +11,13 @@
 1. 创建 load-image.yaml，完整 yaml 如下：  
 
     !!! note  
-        
+
         该 YAML 文件中的各项参数均为必填项。您需要一个私有的镜像仓库，并修改相关配置。
+
     ```yaml
     source:
-      intermediateBundlesPath: ghippo-offline # the relative path where your do charts-syncer,but not relative path between this yaml and offline-package
+      intermediateBundlesPath: ghippo-offline # the relative path where your do charts-syncer,
+                                    # but not relative path between this yaml and offline-package
     target:
       containerRegistry: 10.16.10.111 # need change to your image registry url
       containerRepository: release.daocloud.io/ghippo # need change to your image repository
@@ -30,12 +32,13 @@
           username: "admin" # your image registry username
           password: "Harbor12345" # your image registry password
     ```
-    
-    若当前环境未安装chart repo，chart-syncer也支持将chart导出为tgz文件，并存放在指定路径
-    
+
+    若当前环境未安装 chart repo，chart-syncer 也支持将 chart 导出为 tgz 文件，并存放在指定路径。
+
     ```yaml
     source:
-      intermediateBundlesPath: ghippo-offline # the relative path where your do charts-syncer,but not relative path between this yaml and offline-package
+      intermediateBundlesPath: ghippo-offline # the relative path where your do charts-syncer,
+                                # but not relative path between this yaml and offline-package
     target:
       containerRegistry: 10.16.10.111 # need change to your registry url
       containerRepository: release.daocloud.io/ghippo # need change to your image repository
@@ -47,14 +50,13 @@
           username: "admin" # your image registry username
           password: "Harbor12345" # your image registry password
     ```
-    
-    
+
 1. 执行同步镜像命令。
 
     ```shell
     charts-syncer sync --config load-image.yaml
     ```
-    
+
 ## 通过镜像包加载镜像文件
 
 参照以下步骤解压并加载镜像文件。
@@ -73,32 +75,40 @@ tar xvf ghippo.bundle.tar
 - images.tar
 - original-chart
 
-### 本地加载镜像到 Docker
+### 从本地加载镜像到 Docker
 
-从本地将镜像文件加载到 Docker或Container中。
+从本地将镜像文件加载到 Docker 或 containerd 中。
 
-docker:
-```sh
-docker load -i images.tar
-```
+- Docker：
 
-Container:
-```sh
-ctr image import images.tar
-```
+    ```sh
+    docker load -i images.tar
+    ```
+
+- containerd：
+
+    ```sh
+    ctr image import images.tar
+    ```
+
 !!! note
 
-    load完成后需要tag镜像，保持Registry、Repository与安装时一致
+    加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
 
 ## 升级
 
-有两种升级方式：helm repo 或 chart直接升级。您可以根据前置操作选择对应的升级方案。  
-    
+有两种升级方式：
+
+- helm repo 升级
+- chart 升级
+
+您可以根据前置操作，选择对应的升级方案。  
+
 !!! note  
 
-    当从 v0.11.x (或更低版本) 升级到 v0.12.0 (或更高版本) 时，需要将步骤2 bak.yaml 中所有 key 为 keycloak 的修改为 keycloakx。  
-        
-示例：  
+    当从 v0.11.x (或更低版本) 升级到 v0.12.0 (或更高版本) 时，需要将 `bak.yaml` 中所有 keycloak key 修改为 keycloakx。  
+
+这个 key 的修改示例：  
 
 ```shell
 USER-SUPPLIED VALUES:
@@ -106,7 +116,7 @@ keycloak:
     ...
 ```
 
-修改为
+修改为：
 
 ```shell
 USER-SUPPLIED VALUES:
@@ -121,9 +131,9 @@ keycloakx:
     ```
     helm repo list | grep ghippo
     ```
-    
-    若返回结果为空或如下提示，则进行第二步配置全局管理的 helm 仓库，反之则跳过第二步，直接进行第三步
-    
+
+    若返回结果为空或如下提示，则进行下一步；反之则跳过下一步。
+
     ```
     Error: no repositories to show
     ```
@@ -133,14 +143,14 @@ keycloakx:
     ```shell
     heml repo add ghippo http://{harbor url}/chartrepo/{project}
     ```
-    
+
 1. 更新全局管理的 helm 仓库。
 
     ```shell
     helm repo update ghippo # helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
     ```
 
-1. 选择您想安装的全局管理版本（🔥 建议安装最新版本）
+1. 选择您想安装的全局管理版本（建议安装最新版本）。
 
     ```shell
     helm search repo ghippo/ghippo --versions
@@ -153,24 +163,24 @@ keycloakx:
     ...
     ```
 
-1. 备份 `--set` 参数
+1. 备份 `--set` 参数。
 
-    在升级全局管理版本之前，我们建议您执行如下命令，备份上一个版本的 --set 参数。
+    在升级全局管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
     ```shell
     helm get values ghippo -n ghippo-system -o yaml > bak.yaml
     ```
 
-1. 执行 helm upgrade
+1. 执行 helm upgrade。
 
     !!! note
-        
-        升级前我们建议您覆盖bak.yaml中的global.imageRegistry为您当前使用的镜像仓库地址。
-    
+
+        升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 字段为当前使用的镜像仓库地址。
+
     ```
     export imageRegistry={your image registry}
     ```
-    
+
     ```
     helm upgrade ghippo ghippo/ghippo \
     -n ghippo-system \
@@ -181,9 +191,9 @@ keycloakx:
 
 ### 通过 chart 包升级
 
-1. 备份 `--set` 参数
+1. 备份 `--set` 参数。
 
-    在升级全局管理版本之前，我们建议您执行如下命令，备份上一个版本的 --set 参数。
+    在升级全局管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
     ```shell
     helm get values ghippo -n ghippo-system -o yaml > bak.yaml
@@ -192,13 +202,13 @@ keycloakx:
 1. 执行 helm upgrade
 
     !!! note
-        
-        升级前我们建议您覆盖bak.yaml中的global.imageRegistry为您当前使用的镜像仓库地址。
-    
+
+        升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 为当前使用的镜像仓库地址。
+
     ```
     export imageRegistry={your image registry}
     ```
-    
+
     ```
     helm upgrade ghippo . \
     -n ghippo-system \
