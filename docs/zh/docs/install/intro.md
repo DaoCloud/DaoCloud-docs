@@ -12,7 +12,9 @@ DCE 5.0 有两个版本：社区版和商业版。
 | 社区版 | 全局管理<br />容器管理<br />可观测性                         | [免费体验](../dce/license0.md)，3 个模块会保持持续更新，可随时[下载子模块的离线包](../download/dce5.md) |
 | 商业版 | 全局管理<br />容器管理<br />可观测性<br />应用工作台<br />多云编排<br />微服务引擎<br />服务网格<br />精选中间件<br />云原生网络<br />云原生存储<br />镜像仓库 | [正版授权](https://qingflow.com/f/e3291647)，各个模块可按需自由组合，可随时[下载子模块的离线包](../download/dce5.md)   |
 
-DCE 5.0 社区版的安装流程图如下：
+### 社区版安装流程
+
+DCE 5.0 社区版的安装流程如下图：
 
 ```mermaid
 flowchart TB
@@ -64,7 +66,9 @@ click free "https://docs.daocloud.io/dce/license0/"
 click ask "https://docs.daocloud.io/download/dce5/#_3"
 ```
 
-DCE 5.0 商业版的安装流程图如下：
+### 商业版安装流程
+
+DCE 5.0 商业版的安装流程如下图：
 
 ```mermaid
 flowchart TB
@@ -74,14 +78,13 @@ flowchart TB
     tools --> download[下载离线包]
     download --> config[编辑并配置<br>clusterConfig.yaml]
 
-    config -.compactClusterMode: false.-> typical[经典安装模式]
-    typical --> k8s2[自动创建 K8s 集群]
-    typical --> mng2[自动创建管理集群<br>安装 Kubean Operator]
-    typical --> gsc2[自动创建全局服务集群<br>安装 DCE 常规组件]
+    config -.compactClusterMode: false.-> typical[经典模式<br>多数据中心]
+    typical --> mng2[自动创建 K8s 管理集群<br>安装 Kubean Operator]
+    typical --> gsc2[自动创建<br>K8s 全局服务集群<br>安装 DCE 常规组件]
 
-    config -.compactClusterMode: true.-> simple[简约安装模式]
-    simple --> k8s1[自动创建 K8s 集群]
-    simple --> gsc1[自动在一个集群<br>安装所有 DCE 组件]
+    config -.compactClusterMode: true.-> simple[简约模式<br>单数据中心]
+    simple --> k8s1[自动创建<br>一个 K8s 管理集群]
+    simple --> gsc1[自动在此集群<br>安装所有 DCE 组件]
 
 classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:1px,color:#000000, font-size:15px;
 classDef white fill:#ffffff,stroke:#000,stroke-width:1px,color:#000,font-weight:bold
