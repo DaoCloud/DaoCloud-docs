@@ -31,10 +31,12 @@ DCE 5.0 包含众多子模块：全局管理、容器管理、可观测性、多
 
 !!! note
 
+    - 升级子模块之后，可能需要重新灌入 license 并激活。
     - DaoCloud Enterprise 5.0 还处于发布初期，将陆续增加各个子模块的离线包。
-
     - 若有任何疑问，请[提出反馈](https://github.com/DaoCloud/DaoCloud-docs/issues)。
-
     - 欢迎扫描二维码，与开发者畅快交流：
 
     ![社区版交流群](../images/assist.png)
+
+[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

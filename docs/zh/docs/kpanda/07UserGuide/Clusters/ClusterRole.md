@@ -1,72 +1,68 @@
 # 集群角色
 
-DaoCloud Enterprise 5.0 支持对多云多集群进行统一管理，并基于集群的不能功能定位对集群进行了角色分类，帮助用户更好地管理 IT 基础设施。
+DaoCloud Enterprise 5.0 基于集群的不同功能定位对集群进行了角色分类，帮助用户更好地管理 IT 基础设施。
 
 ## 全局服务集群
 
-用于运行 DaoCloud Enterprise 5.0 相关组件的集群，包括容器管理组件、镜像仓库组件、监控组件等。
+此集群用于运行 DCE 5.0 组件，例如容器管理、全局管理、可观测性、镜像仓库等。
 一般不承载业务负载。
 
-| 支持的功能                                                         | 描述                                   |
+| 支持项                                                         | 描述                                   |
 | ------------------------------------------------------------------ | -------------------------------------- |
-| Kubernetes 版本                                                    | 支持 Kubernetes 1.18 及以上版本        |
-| 操作系统                                             | RedHat 8.6 X86、RedHat 7.9 X86、RedHat 8.4 X86/ARM、RedHat 7.6 X86/ARM、ubuntu 18.04 X86、ubuntu 20.04 X86、Centos 7.6 X86/AMD、Centos 7.9 X86/AMD        |
+| K8s 版本                                                    | 1.18+        |
+| 操作系统                                             | RedHat 7.6 x86/ARM, RedHat 7.9 x86, RedHat 8.4 x86/ARM, RedHat 8.6 x86;<br>Ubuntu 18.04 x86, Ubuntu 20.04 x86;<br>CentOS 7.6 x86/AMD, CentOS 7.9 x86/AMD        |
 | 集群全生命周期管理                                                 | 支持                                   |
-| Kubernetes 资源管理                                                | 支持                                   |
+| K8s 资源管理                                                | 支持                                   |
 | 云原生存储                                                         | 支持                                   |
-| 云原生网络                                                         | Calico/Cillium/Multus/其它标准网络 CNI |
-| 策略管理                                                           | 支持                                   |
-| 策略管理<br />（网络策略、配额策略、资源限制、灾备策略、安全策略） | 支持                                   |
+| 云原生网络                                                         | Calico、Cillium、Multus 和其它 CNI |
+| 策略管理<br>（网络策略、配额策略、资源限制、灾备策略、安全策略） | 支持                                   |
 
 ## 管理集群
 
-用于对工作集群进行创建/升级/删除/运维等全生命周期管理的集群，一般不承载业务负载。
-适用于企业多数据中心多架构的场景，用户通过在不用数据中心部署管理集群来管理不同区域内集群的生命周期。
-在简约部署模式下，管理集群和工作集群可以二合一部署。
-具体部署模式请参阅[部署规划](../../../install/commercial/deploy-plan.md)
+此集群用于管理工作集群，一般不承载业务负载。
+
+- [经典模式](../../../install/commercial/deploy-plan.md#_2)将全局服务集群和管理集群部署在不同的集群，适用于企业多数据中心、多架构的场景。
+- [简约模式](../../../install/commercial/deploy-plan.md#_3)将管理集群和全局服务集群部署在同一个集群内。
 
 | 支持的功能                                                         | 描述                                   |
 | ------------------------------------------------------------------ | -------------------------------------- |
-| Kubernetes 版本                                                    | 支持 Kubernetes 1.18 及以上版本        |
-| 操作系统                                             | RedHat 8.6 X86、RedHat 7.9 X86、RedHat 8.4 X86/ARM、RedHat 7.6 X86/ARM、ubuntu 18.04 X86、ubuntu 20.04 X86、Centos 7.6 X86/AMD、Centos 7.9 X86/AMD        |
+| K8s 版本                                                    | 1.18+        |
+| 操作系统                                             | RedHat 7.6 x86/ARM, RedHat 7.9 x86, RedHat 8.4 x86/ARM, RedHat 8.6 x86;<br>Ubuntu 18.04 x86, Ubuntu 20.04 x86;<br>CentOS 7.6 x86/AMD, CentOS 7.9 x86/AMD        |
 | 集群全生命周期管理                                                 | 支持                                   |
-| Kubernetes 资源管理                                                | 支持                                   |
+| K8s 资源管理                                                | 支持                                   |
 | 云原生存储                                                         | 支持                                   |
-| 云原生网络                                                         | Calico/Cillium/Multus/其它标准网络 CNI |
-| 策略管理                                                           | 支持                                   |
+| 云原生网络                                                         | Calico、Cillium、Multus 和其它 CNI |
 | 策略管理<br />（网络策略、配额策略、资源限制、灾备策略、安全策略） | 支持                                   |
 
 ## 工作集群
 
-基于管理集群提供的能力，使用容器管理界面创建的集群，主要可用于承载业务负载，其生命周期可被管理集群所管理。
+这是使用[容器管理](../../03ProductBrief/WhatisKPanda.md)创建的集群，主要用于承载业务负载。该集群由管理集群进行管理。
 
 | 支持的功能                                                         | 描述                                   |
 | ------------------------------------------------------------------ | -------------------------------------- |
-| Kubernetes 版本                                                    | 支持 Kubernetes 1.20 及以上版本        |
-| 操作系统                                             | RedHat 8.6 X86、RedHat 7.9 X86、RedHat 8.4 X86/ARM、RedHat 7.6 X86/ARM、ubuntu 18.04 X86、ubuntu 20.04 X86、Centos 7.6 X86/AMD、Centos 7.9 X86/AMD        |
+| K8s 版本                                                    | 支持 K8s 1.20 及以上版本        |
+| 操作系统                                             | RedHat 7.6 x86/ARM, RedHat 7.9 x86, RedHat 8.4 x86/ARM, RedHat 8.6 x86;<br>Ubuntu 18.04 x86, Ubuntu 20.04 x86;<br>CentOS 7.6 x86/AMD, CentOS 7.9 x86/AMD        |
 | 集群全生命周期管理                                                 | 支持                                   |
-| Kubernetes 资源管理                                                | 支持                                   |
+| K8s 资源管理                                                | 支持                                   |
 | 云原生存储                                                         | 支持                                   |
-| 云原生网络                                                         | Calico/Cillium/Multus/其它标准网络 CNI |
-| 策略管理                                                           | 支持                                   |
+| 云原生网络                                                         | Calico、Cillium、Multus 和其它 CNI |
 | 策略管理<br />（网络策略、配额策略、资源限制、灾备策略、安全策略） | 支持                                   |
 
 ## 接入集群
 
-用于接入已有的标准 Kubernetes 集群，包括但不限于本地数据中心自建集群、公有云厂商提供的集群、私有云厂商提供的集群、边缘集群、信创集群、异构集群、Daocloud 不同发行版集群。
+此集群用于接入已有的标准 K8s 集群，包括但不限于本地数据中心自建集群、公有云厂商提供的集群、私有云厂商提供的集群、边缘集群、信创集群、异构集群、Daocloud 不同发行版集群。
 主要用于承担业务负载。
 
 | 支持的功能                                                         | 描述                            |
 | ------------------------------------------------------------------ | ------------------------------- |
-| Kubernetes 版本                                                    | 支持 Kubernetes 1.18 及以上版本 |
-| 支持友商                          | Vmware Tanzu、Amazon EKS、Redhat Openshift、SUSE Rancher、阿里 ACK、华为 CCE、腾讯 TKE、标准 kubernetes 集群、Daocloud DCE   |
+| K8s 版本                                                    | 1.18+ |
+| 支持友商                          | Vmware Tanzu、Amazon EKS、Redhat Openshift、SUSE Rancher、阿里 ACK、华为 CCE、腾讯 TKE、标准 K8s 集群、Daocloud DCE   |
 | 集群全生命周期管理                                                 | 不支持                          |
-| Kubernetes 资源管理                                                | 支持                            |
+| K8s 资源管理                                                | 支持                            |
 | 云原生存储                                                         | 支持                            |
 | 云原生网络                                                         | 依赖于接入集群发行版网络模式    |
-| 策略管理                                                           | 支持                            |
 | 策略管理<br />（网络策略、配额策略、资源限制、灾备策略、安全策略） | 支持                            |
 
 !!! note
 
-    一个集群可以有多重集群角色，例如一个集群可以同时充当全局服务集群、管理集群、工作集群。
+    一个集群可以有多重集群角色，例如一个集群既可以是全局服务集群，也可以是管理集群或工作集群。

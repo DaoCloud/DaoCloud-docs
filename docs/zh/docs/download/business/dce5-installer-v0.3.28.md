@@ -36,7 +36,9 @@ offline-v0.3.28.tar: OK
 tar -zxvf offline-v0.3.28.tar
 ```
 
-然后参阅[安装 DCE 5.0 商业版](../../install/intro.md#_3)进行安装。成功安装之后请进行[正版授权](https://qingflow.com/f/e3291647)。
+然后参阅[安装 DCE 5.0 商业版](../../install/intro.md#_3)进行安装。
+如果是初次安装，请进行[正版授权](https://qingflow.com/f/e3291647)。
+如果有任何许可密钥相关的问题，请联系 DaoCloud 交付团队。
 
 ## 模块
 
