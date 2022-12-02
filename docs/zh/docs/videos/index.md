@@ -12,5 +12,6 @@
 - [中间件](mcamel.md)
 - [云原生网络](network.md)
 
+[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](install.md#3){ .md-button .md-button--primary }

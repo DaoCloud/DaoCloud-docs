@@ -22,7 +22,7 @@ DCE 5.0 的各个产品模块独立解耦，灵活升级，业务无感知，开
 - :material-cloud-check: **多云编排** [管理多云实例/负载/策略](../kairship/01product/whatiskairship.md)
 - :material-engine: **微服务引擎** [微服务治理中心和网关](../skoala/select-workspace.md)
 - :material-table-refresh: **服务网格** [Istio 定制增强版](../mspider/01Intro/WhatismSpider.md)
-- :material-middleware: **精选中间件** [ES, Kafka, MinIO, MySQL 等](../middleware/midware.md)
+- :material-middleware: **中间件** [ES, Kafka, MinIO, MySQL 等](../middleware/midware.md)
 - :material-warehouse: **镜像仓库** [镜像集成和托管服务](../kangaroo/intro.md)
 - :material-dot-net: **网络** [多 CNI 融合方案](../network/intro/what-is-net.md)
 - :floppy_disk: **存储** [容器化存储综合方案](../hwameistor/intro/what.md)
@@ -110,3 +110,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
     **涉及的模块**：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[集群生命周期管理](../community/kubean.md)、[云原生全场景网络](../network/)、[云原生本地存储](../hwameistor/)
 
     ![云原生底座](../images/07base.png)
+
+[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[申请社区免费体验](./license0.md){ .md-button .md-button--primary }

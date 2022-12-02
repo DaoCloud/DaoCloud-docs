@@ -8,7 +8,7 @@
 
 ## 准备工作
 
-- 准备一个 Kubernetes 集群，集群配置请参考文档 [资源规划](../resources.md)。
+- 准备一个 Kubernetes 集群，集群配置请参考文档[资源规划](../resources.md)。
 
     !!! note
 
@@ -29,7 +29,7 @@
 
 ## 下载和安装
 
-1. 在 k8s 集群控制平面节点（Master 节点）下载社区版的对应离线包并解压，或者从[下载中心](../../../download/free/dce5-installer-v0.3.28.md)下载离线包并解压。
+1. 在 k8s 集群控制平面节点（Master 节点）下载社区版的对应离线包并解压，或者从[下载中心](../../../download/dce5.md)下载离线包并解压。
 
     ```bash
     # 假定版本 VERSION=0.3.28
