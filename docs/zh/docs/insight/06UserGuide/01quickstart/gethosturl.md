@@ -8,11 +8,13 @@
 | 参数                      | 说明                                                                                   |
 | ------------------------- | -------------------------------------------------------------------------------------- |
 | ${vminsert_host}          | 指标数据上传地址，默认为全局服务集群 vminsert 服务的对外可访问地址                     |
-| ${es_host}                | 日志数据上传地址，与全局服务集群使用的 elasticsearch 服务配置保持一致。                |
-| ${otel_col_auditlog_port} | 审计日志数据上传地址，默认为全局服务集群 opentelemetry-collector 服务的对外可访问地址. |
-| ${otel_col_host}          | 链路数据上传地址，默认为全局服务集群 opentelemetry-collector 服务的对外可访问地址。    |
+| ${es_host}                | 日志数据上传地址，与全局服务集群使用的 elasticsearch 服务配置保持一致                |
+| ${otel_col_auditlog_port} | 审计日志数据上传地址，默认为全局服务集群 opentelemetry-collector 服务的对外可访问地址 |
+| ${otel_col_host}          | 链路数据上传地址，默认为全局服务集群 opentelemetry-collector 服务的对外可访问地址    |
 
-> 说明：若使用外置 ElasticSearch 集群，请填写对应集群的地址、用户名和密码。
+!!! note
+
+    若使用外置 ElasticSearch 集群，请填写对应集群的地址、用户名和密码。
 
 ## 在`全局服务集群`安装 insight-agent
 
@@ -34,7 +36,7 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 
 1. 登录到`全局服务集群`的控制台，执行以下命令：
 
-   	```go
+   	```sh
    	export INSIGHT_SERVER_IP=$(kubectl get service insight-server -n insight-system --output=jsonpath={.spec.clusterIP})
    	curl --location --request POST 'http://'"${INSIGHT_SERVER_IP}"'/apis/insight.io/v1alpha1/agentinstallparam'
    	```
@@ -81,11 +83,11 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 
 #### 通过 UI 页面获取 NodePort 地址
 
-1.  从左侧导航栏点击`容器管理`，进入`集群列表`。
+1. 从左侧导航栏点击`容器管理`，进入`集群列表`。
 
     ![安装采集器](../../images/login01.png)
 
-2.  选择集群 `kpanda-global-cluster`，选择左侧导航栏的`容器应用` -> `服务`，选择 `insight-system` 命名空间，查看对应服务暴露的端口。
+2. 选择集群 `kpanda-global-cluster`，选择左侧导航栏的`容器应用` -> `服务`，选择 `insight-system` 命名空间，查看对应服务暴露的端口。
 
     ![查看端口](../../images/kpandaservice.png)
 
@@ -109,9 +111,9 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 
     ```shell
     $ kubectl get service -n insight-system | grep -E "opentelemetry|vminsert"
-    insight-agent-opentelemetry-collector                            NodePort       10.233.9.24     <none>         6831:32621/UDP,14250:31181/TCP,14268:30523/TCP,8888:32415/TCP,4317:32106/TCP,4318:31221/TCP,8889:32558/TCP,9411:30911/TCP   42d
-    vminsert-insight-victoria-metrics-k8s-stack                      NodePort       10.233.33.39    <none>         8480:32638/TCP                                                                                                              8d
+    insight-agent-opentelemetry-collector       NodePort    10.233.9.24     <none>  6831:32621/UDP,14250:31181/TCP,14268:30523/TCP,8888:32415/TCP,4317:32106/TCP,4318:31221/TCP,8889:32558/TCP,9411:30911/TCP   42d
+    vminsert-insight-victoria-metrics-k8s-stack NodePort    10.233.33.39    <none>  8480:32638/TCP     8d
 
     $ kubectl get service -n mcamel-system | grep common-es-cluster
-    mcamel-common-es-cluster-es-http                  NodePort    10.233.50.159   <none>        9200:31450/TCP                  57d
+    mcamel-common-es-cluster-es-http      NodePort    10.233.50.159   <none>    9200:31450/TCP  57d
     ```

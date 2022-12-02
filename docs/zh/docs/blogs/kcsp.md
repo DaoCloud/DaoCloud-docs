@@ -96,7 +96,7 @@ DaoCloud 围绕 Kubernetes 生态自主开源的社区项目有：
 
 **![Istio](./images/cncf03.png)**
 
-过去 365 天内 DaoCloud 对 **CNCF 社区**所有项目的累计贡献 **全球排名第 7**
+过去 365 天内 DaoCloud 对 **CNCF 社区所有项目** 的累计贡献 **全球排名第 7**
 
 ![CNCF](./images/cncf04.png)
 
