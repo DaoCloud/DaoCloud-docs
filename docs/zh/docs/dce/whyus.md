@@ -58,5 +58,6 @@ hide:
 
 - 提供了丰富的插件体系扩充云容器集群功能，例如 Multus、Cillum、Contour 等[网络插件](../network/intro/what-is-net.md)。
 
-[申请社区免费体验](license0.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/community/k8s/online.md){ .md-button .md-button--primary }
+[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[申请社区免费体验](./license0.md){ .md-button .md-button--primary }

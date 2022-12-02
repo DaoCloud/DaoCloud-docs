@@ -2,7 +2,7 @@
 
 DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
-目前下载中心仅提供离线安装包。有关在线安装方式，请参阅[在线安装](../install/community/k8s/online.md)。
+目前下载中心仅提供离线安装包。有关在线安装方式，请参阅[在线安装](../install/intro.md)。
 
 ## 下载社区版
 
@@ -10,7 +10,7 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 文件名称                      | 版本    | 文件大小 | 下载                                           | 更新日期   |
 | ----------------------------- | ------- | -------- | ---------------------------------------------- | ---------- |
-| offline-community-v0.3.28.tar | v0.3.28 | 5.8 GB   | 进入[下载页](./free/dce5-installer-v0.3.28.md) | 2022-11-18 |
+| offline-community-v0.3.28.tar | v0.3.28 | 5.8 GB   | [:arrow_right: 进入下载页](./free/dce5-installer-v0.3.28.md) | 2022-11-18 |
 
 ## 下载商业版
 
@@ -18,7 +18,7 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 文件名称            | 版本    | 文件大小 | 下载                                               | 更新日期   |
 | ------------------- | ------- | -------- | -------------------------------------------------- | ---------- |
-| offline-v0.3.28.tar | v0.3.28 | 21 GB    | 进入[下载页](./business/dce5-installer-v0.3.28.md) | 2022-11-18 |
+| offline-v0.3.28.tar | v0.3.28 | 21 GB    | [:arrow_right: 进入下载页](./business/dce5-installer-v0.3.28.md) | 2022-11-18 |
 
 ## 下载子模块
 
@@ -27,14 +27,16 @@ DCE 5.0 包含众多子模块：全局管理、容器管理、可观测性、多
 
 | 模块     | 文件大小 | 下载                              | 更新日期   |
 | -------- | -------- | --------------------------------- | ---------- |
-| 全局管理 | 440 MB   | 进入[下载页](./modules/ghippo.md) | 2022-11-29 |
+| 全局管理 | 440 MB   | [:arrow_right: 进入下载页](./modules/ghippo.md) | 2022-11-29 |
 
 !!! note
 
-    - DaoCloud Enterprise 5.0 还处于发布初期，将陆续增加每个子模块的离线包。
-
-    - 若有任何安装或使用问题，请[提出反馈](https://github.com/DaoCloud/DaoCloud-docs/issues)。
-
+    - 升级子模块之后，可能需要重新灌入 license 并激活。
+    - DaoCloud Enterprise 5.0 还处于发布初期，将陆续增加各个子模块的离线包。
+    - 若有任何疑问，请[提出反馈](https://github.com/DaoCloud/DaoCloud-docs/issues)。
     - 欢迎扫描二维码，与开发者畅快交流：
 
     ![社区版交流群](../images/assist.png)
+
+[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

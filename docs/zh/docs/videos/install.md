@@ -8,13 +8,9 @@ DCE 5.0 分为社区版和商业版。社区版可免费使用，包括全局管
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kind-cluster.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
-## 第二步：在线安装 DCE 5.0 社区版
+## 在线安装社区版
 
-支持[在线安装](../install/community/k8s/online.md)和[离线安装](../install/community/k8s/online.md)两种方式。
-
-### 在线安装社区版
-
-相关文档可参考：[在线安装 DCE 5.0 社区版](../install/community/kind/online.md)。
+相关文档可参考：[在线安装 DCE 5.0 社区版](../install/intro.md#_2)。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/online-install-community.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -32,5 +28,4 @@ DCE 5.0 分为社区版和商业版。社区版可免费使用，包括全局管
 ## 第三步：正版授权与激活
 
 相关文档可参考：[在线安装 DCE 5.0 社区版](../install/community/k8s/online.md)。
-
 -->

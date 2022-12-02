@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # 全局管理
 
 本页可下载全局管理模块各版本的离线安装包。
@@ -6,7 +11,7 @@
 
 | 文件名                       | 版本                                                   | 文件大小 | 安装包                                                                                                     | 更新日期   |
 | ------------------------------ | ------------------------------------------------------ | -------- | ---------------------------------------------------------------------------------------------------------- | ---------- |
-| ghippo-0.12.1-amd64.bundle.tar | [v0.12.1](../../ghippo/01ProductBrief/release-notes.md) | 442 MB   | [点击下载](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo-0.12.1-amd64.bundle.tar) | 2022-11-29 |
+| ghippo-0.12.1-amd64.bundle.tar | [v0.12.1](../../ghippo/01ProductBrief/release-notes.md) | 442 MB   | [:arrow_down: 下载](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo-0.12.1-amd64.bundle.tar) | 2022-11-29 |
 
 ## 校验
 
@@ -26,4 +31,5 @@ ghippo.tar: ok
 
 参阅[全局管理](../../ghippo/install/offlineInstall.md)安装流程进行安装。
 
-成功安装之后请[申请免费体验](../../dce/license0.md)或[正版授权](https://qingflow.com/f/e3291647)。
+如果是初次安装，请[申请免费体验](../../dce/license0.md)或[正版授权](https://qingflow.com/f/e3291647)。
+如果有任何许可密钥相关的问题，请联系 DaoCloud 交付团队。
