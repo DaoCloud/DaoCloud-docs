@@ -10,7 +10,7 @@
 
     由全球分布式云联盟、众视 Tech 主办的 2022 全球分布式云大会 · 深圳站将于 12 月 21 日召开。
 
-    大会以 **云筑数字新基 远见数智未来** 为主题，将设立分布式主题报告会以及分布式算力、分布式数据库、云原生开源实践三大主题分论坛。
+    大会以 云筑数字新基 远见数智未来 为主题，将设立分布式主题报告会以及分布式算力、分布式数据库、云原生开源实践三大主题分论坛。
 
 - [12 月 17 日中国 DevOps 社区峰会·武汉定档](https://mp.weixin.qq.com/s/eZjuwOym4OwgJX3UEy75Cg)
 
@@ -33,6 +33,9 @@
     在信通院云原生产业联盟和 CNCF 的指导下，云原生技术实践联盟面向全行业，征集利用云原生技术实现降本增效、结构升级、管理优化、业务创新等价值的案例。
 
     申报案例所涉及技术领域包括但不限于容器、DevOps、微服务、Serverless、云原生存储、云原生安全、云原生网络、云原生数据库、云原生中间件等方向。
+- [12 月 7 日 SODACON 2022 将在日本横滨举行](https://mp.weixin.qq.com/s/iRAtg8NKKly2VqvPZi-O3g)
+  
+    SODACON 2022 以“从容器到多云”为主题，将讨论云原生、物联网、大数据、机器学习在存储管理领域的最新趋势、创新、挑战及解决方案。会议以线下及 ZOOM 线上的形式同步举行。
 
 - [12 月 7 日 CNCF 发起地区性云原生系列活动 KubeDay，首场在日本拉开帷幕](https://www.cncf.io/blog/2022/08/17/introducing-kubeday-event-series-kicking-off-with-kubeday-japan-this-december/)
 
@@ -43,9 +46,13 @@
 
     所有的主题演讲和会议的录制视频将于 12 月中旬在 CNCF 的 YouTube 频道上发布。
 
+- [12 月 6 日 CNCF 云原生 Meetup 香港站将于 举行](https://mp.weixin.qq.com/s/O7w_uTBuWUj-0qyQQvzeCA)
+  
+    本次 Meetup 邀请到 CNCF 基金会中国区总监，以及来自甲骨文、字节跳动、极狐 GitLab、Aqua、F5 等公司的技术专家，围绕多云管理、可观测性/追踪、GitOps、云原生安全、云原生人才发展等话题展开讨论。
+
 - [12 月 5 日 ICT 中国·云原生发展论坛将在北京拉开帷幕](https://mp.weixin.qq.com/s/vMRtNDE0dMgV0I0T2Wf92w)
 
-    论坛由工业和信息化部主办，聚焦主题 **软件架构的变革、新生产力的飞跃** 。
+    论坛由工业和信息化部主办，聚焦主题 软件架构的变革、新生产力的飞跃 。
     届时将发布和应用现代化、金融行业湖仓、Serverless 相关的报告，以及公布云原生存储、大数据、混部、安全、弹性算力、中间件领域的评估结果。
 
 - [12 月 3 日微服务 x 容器开源开发者 Meetup 在上海举行](https://mp.weixin.qq.com/s/OlGXER4RgfyCwKT0at_6ug)
@@ -73,6 +80,18 @@
     - 边缘云建设贡献奖
     - 分布式数据库奖等。
 
+- [11 月 29 日 KubeSphere 社区推出播客节目 KubeSphere Talk](https://mp.weixin.qq.com/s/Ud__u2YaUkdSx5yi7dKDHw)
+  
+    KubeSphere Talk 是由 KubeSphere 发起的一档访谈、聊天的音频节目。
+    节目前期，主要邀请 KubeSphere 社区的 Ambassador、Contributor 等角色，围绕云原生、开源等热门话题展开讨论。
+    目前节目已在小宇宙、喜马拉雅、苹果播客三个平台上线，并已发布第一期节目。
+
+- [11 月 23 日 KubeCon 北美 2022 展台热词揭晓，“安全”和“平台”成热门词汇](https://www.uptime.build/post/i-analyzed-290-booths-at-kubecon-here-are-the-devops-trends-for-2023)
+  
+    在对 290 个参展商展台进行分析后发现，“Kubernetes” 和 “Cloud” 分列最常见的词汇前两名，继而是“安全”、“平台”和“数据”。
+    此外，“规模”被提及 16 次，“成本”被提及 15 次，“Serverless”只被提到 3 次。
+    由此可以看出，安全扩展和 Kubernetes Day 2 运维管理将继续成为 2023 年的关注焦点。
+
 - [11 月 20 日 QCon 全球软件开发大会（北京站）2022 会议日程发布](https://qcon.infoq.cn/2022/beijing/schedule?utm_source=wechat&utm_medium=infoq&utm_campaign=10&utm_term=1026&utm_content=arti4)
 
     QCon 全球软件开发大会（北京站）2022 将于 11 月 20-21 日举行，会议设置了云原生微服务架构新趋势、云原生架构变革、
@@ -92,7 +111,7 @@
     CNCF KubeEdge 社区将于 11 月 16 日举办第一届云原生边缘计算学术研讨会。
     研讨会的议题征集已开启，议题可聚焦但不限于云原生边缘计算技术研究成果和基于 KubeEdge 平台的边缘计算动手实践演示。
 
-- [11 月15 日研究咨询机构爱分析发布《2022 信创厂商全景报告》，DaoCloud 入选厂商全景图信创云板块](https://mp.weixin.qq.com/s/GCeOGq4DcO-20CtFATDPcA)
+- [11 月 15 日研究咨询机构爱分析发布《2022 信创厂商全景报告》，DaoCloud 入选厂商全景图信创云板块](https://mp.weixin.qq.com/s/GCeOGq4DcO-20CtFATDPcA)
 
     报告选取数据库、操作系统、中间件、信创云、云桌面等 9 个特定市场的需求定义和代表厂商能力进行重点分析，
     为企业厂商选型提供参考。其中，云平台的全面国产化，逐渐成为企业构建全栈自主可控 IT 架构的关键一环。
@@ -115,7 +134,7 @@
 
 - [11 月 3 日杭州云栖大会定档](https://yunqi.aliyun.com/?spm=5176.27296252.J_9252124580.2.672d3b19iHUjCB)
 
-    今年云栖大会以 **计算·进化·未来** 为主题，将于 11.3-5 举行。大会设置两场主论坛，70 多场数字技术、产业和生态分论坛。
+    今年云栖大会以 计算·进化·未来 为主题，将于 11.3-5 举行。大会设置两场主论坛，70 多场数字技术、产业和生态分论坛。
     其中，云计算论坛将聚焦云原生前沿技术、云上安全和合规、专有云等内容。
     目前，大会已开放[参会门票免费申领](https://yunqi.aliyun.com/2022/ticket?activityId=MjU2NA==&ticketId=MTU=&channelId=Mzgw)。
 
@@ -145,7 +164,7 @@
 
 - [10 月 26-27 日全球分布式云大会·上海站报名开启](https://mp.weixin.qq.com/s/a3XLPWril5CngjJjtjmYPg)
 
-    2022 全球分布式云大会·上海站由全球分布式云联盟、众视 Tech 主办，以 **万象智算** 为主题，将关注分布式基础设施、分布式云服务、分布式云管理平台、容器应用平台、数据库云原生化、边缘云等内容。
+    2022 全球分布式云大会·上海站由全球分布式云联盟、众视 Tech 主办，以 万象智算 为主题，将关注分布式基础设施、分布式云服务、分布式云管理平台、容器应用平台、数据库云原生化、边缘云等内容。
 
 - [10 月 24 至 28 日 KubeCon + CloudNativeCon North America 会议议程发布](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/)
 
@@ -309,7 +328,7 @@
 
 - [8 月 19 日智能云边开源峰会于线上召开](https://mp.weixin.qq.com/s/2PMvlypUjmtM0fHp6Y5DSQ)
 
-    VMWare 携手 Intel、EMQ、Kyligence 等将于 8 月 19-20 日举办 **2022 智能云边开源峰会** 。会上多位来自开源领域的技术领导者将分享 **人工智能、云原生、边缘计算** 三大热门技术的趋势及洞察。
+    VMWare 携手 Intel、EMQ、Kyligence 等将于 8 月 19-20 日举办 2022 智能云边开源峰会 。会上多位来自开源领域的技术领导者将分享 人工智能、云原生、边缘计算 三大热门技术的趋势及洞察。
 
 - [8 月 19 日全球分布式云大会拟在上海召开（内附报名方式）](https://mp.weixin.qq.com/s/Z9yoAkquE4eVTkxPuZAhHQ)
 
@@ -397,7 +416,7 @@
 
 - [7 月 21 日中国信通院发布《云计算白皮书（2022 年）》](https://mp.weixin.qq.com/s/jl4Lz_1BMcC_-gpI3fukbw)
 
-    今年的白皮书聚焦 **新经济，上云用云新周期** 。
+    今年的白皮书聚焦 新经济，上云用云新周期 。
     新周期指的是用云原生改造应用架构，以算力服务为资源调度手段，实现高效、安全、精益上云用云的新阶段。
     新周期下，云计算发展的五个重点：规模化建设、算力服务、稳定性、云安全和云成本优化。
 
@@ -748,7 +767,7 @@
 
 - [4 月 13 日艾瑞咨询发布 3 月云服务行业动态及热点研究月报](https://mp.weixin.qq.com/s/yPB5x6eSrkpt2mAk8X4Jqw)
 
-    月报基于 2022 年 1 - 3 月对云服务行业各赛道动态的观察，得出观点：**SaaS 仍是最备受青睐的投资焦点** 。
+    月报基于 2022 年 1 - 3 月对云服务行业各赛道动态的观察，得出观点：SaaS 仍是最备受青睐的投资焦点 。
     IaaS 赛道中，互联网类云厂商仍占据该市场主导。
 
     IaaS 与 SaaS 厂商均有参与 PaaS 平台开发与应用的行动。PaaS 细分赛道中，低代码成为热门。

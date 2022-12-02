@@ -55,6 +55,11 @@
 
 ### 最佳实践
 
+- [如何管理云原生应用程序的依赖关系](https://mp.weixin.qq.com/s/SipnQhbaa7WlpwORTVLCRw)
+
+    文章介绍了一些云原生应用依赖关系管理的最佳实践，例如，使用 depcheck 来检查未使用的依赖关系，使用依赖关系检查脚本检测过期的依赖关系，
+    以及利用自动化依赖关系管理开源工具 [Mend Renovate](https://github.com/marketplace/renovate) 为所有类型的依赖关系更新自动创建拉取请求。
+
 - [K8s：利用 Mutating Admission Controller 简化应用的环境迁移](https://blog.getambassador.io/using-mutating-admission-controllers-to-ease-kubernetes-migrations-5699c1901015)
   
     Kubernetes 的 Mutating Admission Webhook 通常用于执行安全实践，确保资源遵循特定的策略或配置管理。
@@ -261,6 +266,15 @@
     Harbor v2.2及其更高版本支持对相关指标的采集和使用，这篇文章介绍了如何使用 Prometheus 轻松抓取 Harbor 实例的一些关键指标。
 
 ### 工具推荐
+
+- [用 Bindle 轻松存储和分发云原生应用](https://mp.weixin.qq.com/s/gGp_CneC8BzU3GKOKIfbWA)
+
+    [Bindle](https://github.com/deislabs/bindle) 是一个开源的包管理器，通常用于存储和分发 WebAssembly 应用和二进制文件。
+    Bindle 可以将多个不同的微服务打包在一个大应用程序中，并将其部署在任何需要的地方，也可以存储包含数十个不同二进制文件的应用程序。
+
+- [Kubernetes 跨集群流量调度实战](https://mp.weixin.qq.com/s/RF--gLZtJlT0ijaPp1ZP7A)
+
+    文章演示了 Kubernetes 南北向流量管理方案 [FSM](https://github.com/flomesh-io/fsm) 是如何实现服务的跨集群流量调度和负载均衡的，以及三种不同的全局流量策略的实现：仅本集群调度、故障转移、全局负载均衡。
 
 - [ChaosBlade：大规模 Kubernetes 集群故障注入的利器](https://mp.weixin.qq.com/s/gh4GVnOY_QVU2D2VeyWCeA)
 
@@ -485,14 +499,19 @@
     Karpenter 彻底抛弃了节点组的概念，利用 EC2 Fleet API 直接对节点进行管理。
     文章以 GPU 推理的场景为例，详细阐述 Karpenter 的工作原理、配置过程以及测试效果。
 
+- [Kruise Rollout: 让所有应用负载都能使用渐进式交付](https://mp.weixin.qq.com/s/m-r3AQMbv2IPoAAJMhReZg)
+
+    [Kruise Rollout](https://github.com/openkruise/rollouts) 是 OpenKruise（阿里云开源的云原生应用自动化管理套件）针对渐进式交付抽象的定义模型，旨在解决应用交付领域的流量调度以及分批部署问题。
+    其能够配合应用流量和实际部署实例的金丝雀发布、蓝绿发布等，以及发布过程能够基于 Prometheus Metrics 自动化分批与暂停，兼容多种工作负载等。
+
 - [Prometheus 长期远程存储方案 VictoriaMetrics 入门实践](https://mp.weixin.qq.com/s/C3fzohygl5_tey70Qnz3og)
 
     VictoriaMetrics（简称 VM ）是一个支持高可用、经济高效且可扩展的开源监控解决方案和时间序列数据库，可用于 Prometheus 监控数据做长期远程存储。
-    除此之外，VM 的主要特点包括：对外支持 Prometheus 相关的 API、指标数据摄取和查询具备高性能和良好的可扩展性、高性能的数据压缩方式等。
+     除此之外，VM 的主要特点包括：对外支持 Prometheus 相关的 API、指标数据摄取和查询具备高性能和良好的可扩展性、高性能的数据压缩方式等。
 
 - [声明式管理 Helm 版本的工具](https://helm.sh/blog/tools-to-manage-helm-declaratively/)
 
-    这篇文章介绍了 Kubernetes 生态中一些可用于声明式管理 Helm 版本的工具（如 CNCF 项目 Flux 和 Argo），并对这些工具进行了比较。
+这篇文章介绍了 Kubernetes 生态中一些可用于声明式管理 Helm 版本的工具（如 CNCF 项目 Flux 和 Argo），并对这些工具进行了比较。
 
 - [使用 Kubecost 和 Kyverno 进行云原生工作负载成本治理](https://dzone.com/articles/cost-governance-of-cloud-native-workloads-using-kubecost-and-kyverno)
 
@@ -508,12 +527,26 @@
     由此，OpenShift 允许用户通过应用市场 Operator Hub 的[二级调度器](https://github.com/openshift/secondary-scheduler-operator)引入各自定制的调度器，并使用该调度器运行他们选择的工作负载。
     而控制面组件仍使用 OpenShift 提供的默认调度器。
 
+- [利用eBPF技术带来的可观测性的上帝视角：Kindling开源项目介绍](https://mp.weixin.qq.com/s/nIqFnIbjrPsrjtxSLQp3gg)
+
+    分布式追踪技术在实际落地过程中常会面临探针自动化覆盖依赖人工、难以覆盖多语言服务、APM trace 缺少内核可观测数据等痛点，
+    而 Kindling 基于 eBPF 技术构建的上帝视角带来了解决方案——关联内核可观测数据的 trace。
+
 - [虚拟 Kubernetes 集群: 多租户新模式](https://opensource.com/article/22/3/virtual-kubernetes-clusters-new-model-multitenancy)
 
     一直以来，基于命名空间和集群的两种多租户模式都存在诸多弊端。
     这篇文章引出一个较新的概念——虚拟集群。它结合了上述两种多租户方法的优点：多租户只使用一个命名空间，租户在虚拟集群内拥有完全控制权。
 
 ### 产品选型
+
+- [过去二十年里开源的 12 个开源监控工具大对比](https://mp.weixin.qq.com/s/ByQ3skUrcf1c_DPD4dCbRg)
+
+    文章对 12 款典型的开源监控工具做了简要的介绍和分析，指出各自的优势和不足。
+    其中提到的工具包括分布式监控系统 Zabbix、时序数据库 VictoriaMetrics、Prometheus、云原生监控分析系统夜莺监控等。
+
+- [云原生存储工具的选型和应用探讨](https://mp.weixin.qq.com/s/QoVlOe01hGWSYEKS8wfsKw)
+
+    文章逐步梳理了云原生存储的概念，并对 Longhorn、OpenEBS、Rook+Ceph 进行简要介绍和横向对比，最后选择了具有代表性的 Longhorn 演示其安装和使用。
 
 - [K8s CNI 插件选型和应用场景探讨](https://mp.weixin.qq.com/s/GG7GX_E1oyZf-cmjk80OYg)
 
@@ -544,17 +577,11 @@
 
     文章从主流 APM 产品介绍出发（对比 Pinpoint、Jaeger、Skywalking、听云、腾讯云+阿里云 Arms 和 Datadog），通过生产环境中关注的几个重要维度，如产品体验、Agent 能力、报警+ DB 支持、云原生的支持能力、数据大屏等，给予 APM 选型方案建议。
 
-- [Kruise Rollout: 让所有应用负载都能使用渐进式交付](https://mp.weixin.qq.com/s/m-r3AQMbv2IPoAAJMhReZg)
-
-    [Kruise Rollout](https://github.com/openkruise/rollouts) 是 OpenKruise（阿里云开源的云原生应用自动化管理套件）针对渐进式交付抽象的定义模型，旨在解决应用交付领域的流量调度以及分批部署问题。
-    其能够配合应用流量和实际部署实例的金丝雀发布、蓝绿发布等，以及发布过程能够基于 Prometheus Metrics 自动化分批与暂停，兼容多种工作负载等。
-
-- [利用eBPF技术带来的可观测性的上帝视角：Kindling开源项目介绍](https://mp.weixin.qq.com/s/nIqFnIbjrPsrjtxSLQp3gg)
-
-    分布式追踪技术在实际落地过程中常会面临探针自动化覆盖依赖人工、难以覆盖多语言服务、APM trace 缺少内核可观测数据等痛点，
-    而 Kindling 基于 eBPF 技术构建的上帝视角带来了解决方案——关联内核可观测数据的 trace。
-
 ### 前沿热点
+
+- [Service Mesh 的下一站是 Sidecarless 吗？](https://mp.weixin.qq.com/s/SF5uN8VHwrqji4xdME4hCg)
+
+    尽管 Cilium、Linkerd、Istio 等几大开源社区都在 Sidecarless 领域进行了各自的探索和实践，但是各家在安全性，稳定性，管理成本，资源占用上是各有侧重点的，适应不同的业务场景。
 
 - [eBPF 程序摄像头——力争解决可观测性领域未来最有价值且最有挑战的难题](https://mp.weixin.qq.com/s/FYNe1H5dmBpbKFOrIpjuzQ)
   
@@ -785,7 +812,7 @@
 
 - [Kubernetes 1.24: 避免为 Services 分配 IP 地址时发生冲突](https://kubernetes.io/blog/2022/05/23/service-ip-dynamic-and-static-allocation/)
 
-    Kubernetes 1.24 允许启用一个新的特性门控 `ServiceIPStaticSubrange`。
+    Kubernetes 1.24 允许启用一个新的特性门控 ``ServiceIPStaticSubrange``。 
     启用此特性后，可以为 Service 使用不同的 IP 分配策略，减少冲突的风险。
 
 - [Harbor v2.5 远程复制：制品的签名如影随形](https://mp.weixin.qq.com/s/erH1iCbNn9yM1Bl5UlgGMg)
