@@ -12,7 +12,7 @@ hide:
 
 | 版本名称                      | 文件大小 | 安装包                                                                                                         | 更新日期   |
 | ----------------------------- | -------- | -------------------------------------------------------------------------------------------------------------- | ---------- |
-| offline-community-v0.3.28.tar | 5.8 GB   | [下载](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.28.tar) | 2022-11-18 |
+| offline-community-v0.3.28.tar | 5.8 GB   | [:arrow_down: 下载](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.28.tar) | 2022-11-18 |
 
 ## 校验
 
