@@ -33,6 +33,9 @@ DCE 5.0 社区版包含的模块为[全局管理](../ghippo/01ProductBrief/Whati
 
 !!! info "📢 温馨提示"
 
+    离线授权码与设备 ESN 绑定，请妥善保存好许可证密钥邮件。
+    您可以随时联系 DaoCloud 交付团队重新申请，我们已为您保存好所有许可密钥。
+
     上述激活过程中常用到的几个页面汇总如下：
 
     [申请许可证密钥](https://qingflow.com/f/58604bf8){ .md-button .md-button--primary }

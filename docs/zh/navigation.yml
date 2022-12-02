@@ -128,6 +128,7 @@ nav:
               - 访问密钥: ghippo/04UserGuide/06PersonalCenter/Password.md
               - 语言设置: ghippo/04UserGuide/06PersonalCenter/Language.md
           - 权限说明: 
+              - 容器管理权限说明: kpanda/07UserGuide/Permissions/PermissionBrief.md
               - 微服务引擎权限说明: ghippo/permissions/skoala.md
               - 应用工作台权限说明: ghippo/permissions/amamba.md
               - 服务网格权限说明: ghippo/permissions/mspider.md

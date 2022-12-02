@@ -13,7 +13,7 @@
 - Amazon EKS
 - Aliyun ACK
 - Huawei CCE
-- Tencent TKE 
+- Tencent TKE
 - 标准 Kubernetes 集群
 
 ## 前提条件

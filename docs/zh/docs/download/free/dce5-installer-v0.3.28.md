@@ -36,7 +36,8 @@ offline-community-v0.3.28.tar: OK
 tar -zxvf offline-community-v0.3.28.tar
 ```
 
-然后参阅[社区版安装流程](../../install/intro.md#_2)进行安装。成功安装之后请[申请免费社区体验](../../dce/license0.md)。
+然后参阅[社区版安装流程](../../install/intro.md#_2)进行安装。
+如果是初次安装或遗忘了许可密钥，请[申请免费社区体验](../../dce/license0.md)。
 
 ## 模块
 
