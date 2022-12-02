@@ -5,72 +5,35 @@ hide:
 
 # DaoCloud Enterprise 5.0
 
-DaoCloud Enterprise 5.0 是高性能可扩展的云原生操作系统，在任何基础设施上、任意环境上提供一致、稳定的体验，支持信创异构、边云协同、多云编排，融合前沿的服务网格和微服务技术，将可观测性贯穿于每一个流量生发的始终，助力洞察集群、节点、应用和服务的详细指标，通过动态仪表盘和拓扑大图可视化掌握应用健康状态。原生支持 DevOps 开发运维模式，实现应用交付的全流程标准化和自动化，原生集成各类精选数据库和中间件，使得运维治理更高效。DCE 5.0 的各个产品模块独立解耦，灵活升级，业务无感知，开放对接超百家云原生生态产品，形成完整的解决方案体系，经近千家行业客户生产场景锤炼，构建坚实可靠的数字底座，释放云原生生产力，助力企业定义数字边界。
+DaoCloud Enterprise 5.0 是高性能可扩展的云原生操作系统，在任何基础设施上、任意环境上提供一致、稳定的体验，支持信创异构、边云协同、多云编排，融合前沿的服务网格和微服务技术，
+将可观测性贯穿于每一个流量生发的始终，助力洞察集群、节点、应用和服务的详细指标，通过动态仪表盘和拓扑大图可视化掌握应用健康状态。
+原生支持 DevOps 开发运维模式，实现应用交付的全流程标准化和自动化，原生集成各类精选数据库和中间件，使得运维治理更高效。
 
-![模块图](../images/dce-modules03.png)
-
-各个子模块的操作文档传送门：
+DCE 5.0 的各个产品模块独立解耦，灵活升级，业务无感知，开放对接超百家云原生生态产品，形成完整的解决方案体系，
+经近千家行业客户生产场景锤炼，构建坚实可靠的数字底座，释放云原生生产力，助力企业定义数字边界。
 
 <div class="grid cards" markdown>
 
-- :fontawesome-solid-jet-fighter-up: __[安装](../install/intro.md)__ 安装社区版和商业版
-- :octicons-container-16: __[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)__ 多集群容器管理模块
-- :fontawesome-solid-user-group: __[全局管理](../ghippo/01ProductBrief/WhatisGhippo.md)__ 登录、访问权限、外观
-- :material-monitor-dashboard: __[可观测性](../insight/03ProductBrief/WhatisInsight.md)__ 图形化仪表盘
-- :material-microsoft-azure-devops: __[应用工作台](../amamba/01ProductBrief/WhatisAmamba.md)__ CI/CD 流水线
-- :material-cloud-check: __[多云编排](../kairship/01product/whatiskairship.md)__ 多云实例、工作负载、策略管理
-- :material-engine: __[微服务引擎](../skoala/select-workspace.md)__ 微服务治理中心和微服务网关
-- :material-table-refresh: __[服务网格](../mspider/01Intro/WhatismSpider.md)__ 原生 Istio 增强版
-- :material-middleware: __[中间件](../middleware/midware.md)__ ES, Kafka, MinIO 等
-- :material-warehouse: __[镜像仓库](../kangaroo/intro.md)__ 镜像集成和托管服务
-- :material-dot-net: __[网络](../network/intro/what-is-net.md)__ 多 CNI 融合方案
-- :floppy_disk: __[存储](../hwameistor/intro/what.md)__ 容器化存储综合方案
+- :fontawesome-solid-jet-fighter-up: **安装** [安装社区版和商业版](../install/intro.md)
+- :octicons-container-16: **容器管理** [管理多集群容器和 Pod](../kpanda/03ProductBrief/WhatisKPanda.md)
+- :fontawesome-solid-user-group: **全局管理** [设置登录、访问权限、外观](../ghippo/01ProductBrief/WhatisGhippo.md)
+- :material-monitor-dashboard: **可观测性** [一站式图形化仪表盘](../insight/03ProductBrief/WhatisInsight.md)
+- :material-microsoft-azure-devops: **应用工作台** [CI/CD 流水线](../amamba/01ProductBrief/WhatisAmamba.md)
+- :material-cloud-check: **多云编排** [管理多云实例/负载/策略](../kairship/01product/whatiskairship.md)
+- :material-engine: **微服务引擎** [微服务治理中心和网关](../skoala/select-workspace.md)
+- :material-table-refresh: **服务网格** [Istio 定制增强版](../mspider/01Intro/WhatismSpider.md)
+- :material-middleware: **精选中间件** [ES, Kafka, MinIO, MySQL 等](../middleware/midware.md)
+- :material-warehouse: **镜像仓库** [镜像集成和托管服务](../kangaroo/intro.md)
+- :material-dot-net: **网络** [多 CNI 融合方案](../network/intro/what-is-net.md)
+- :floppy_disk: **存储** [容器化存储综合方案](../hwameistor/intro/what.md)
 
 </div>
 
-<!--
-<div class="grid" markdown>
-
-:fontawesome-solid-jet-fighter-up: __[安装](../install/intro.md)__
-{ .card }
-
-:octicons-container-16: __[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)__
-{ .card }
-
-:fontawesome-solid-user-group: __[全局管理](../ghippo/01ProductBrief/WhatisGhippo.md)__
-{ .card }
-
-:material-monitor-dashboard: __[可观测性](../insight/03ProductBrief/WhatisInsight.md)__
-{ .card }
-
-:material-microsoft-azure-devops: __[应用工作台](../amamba/01ProductBrief/WhatisAmamba.md)__
-{ .card }
-
-:material-cloud-check: __[多云编排](../kairship/01product/whatiskairship.md)__
-{ .card }
-
-:material-engine: __[微服务引擎](../skoala/select-workspace.md)__
-{ .card }
-
-:material-table-refresh: __[服务网格](../mspider/01Intro/WhatismSpider.md)__
-{ .card }
-
-:material-middleware: __[中间件](../middleware/midware.md)__
-{ .card }
-
-:material-warehouse: __[镜像仓库](../kangaroo/intro.md)__
-{ .card }
-
-:material-dot-net: __[网络](../network/intro/what-is-net.md)__
-{ .card }
-
-:floppy_disk: __[存储](../hwameistor/intro/what.md)__
-{ .card }
-
-</div>
--->
+![模块图](../images/dce-modules03.png)
 
 DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，可以应对海量应用场景。
+
+这些模块就像乐高搭积木一样，糅合社区最优秀的几十种开源技术，经过众多辩证选型、攻坚克难、编码调试、海量测试，“十年磨一剑，一朝试锋芒”，全新搭建的新一代容器化平台能够满足企业上云的各类场景需求。
 
 === "多云编排"
 
@@ -139,13 +102,11 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     ![云边](../images/09cloud-edge.png)
 
-## 云原生底座
+=== "云原生底座"
 
-提供云原生计算、[网络](../network/intro/what-is-net.md)、存储等能力，兼容各种集群接入，支持集群从部署、版本升级、证书变更、配置变更、回收等全生命周期管理，突破 K8s API 性能瓶颈，实现企业超大规模用户并发使用多集群。
-针对企业环境，提供场景化的网络方案，实现当前企业网络基础设施复用的最大化，降低企业使用云原生应用门槛。
+    提供云原生计算、[网络](../network/intro/what-is-net.md)、存储等能力，兼容各种集群接入，支持集群从部署、版本升级、证书变更、配置变更、回收等全生命周期管理，突破 K8s API 性能瓶颈，实现企业超大规模用户并发使用多集群。
+    针对企业环境，提供场景化的网络方案，实现当前企业网络基础设施复用的最大化，降低企业使用云原生应用门槛。
 
-**涉及的模块**：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[集群生命周期管理](../community/kubean.md)、[云原生全场景网络](../network/)、[云原生本地存储](../hwameistor/)
+    **涉及的模块**：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[集群生命周期管理](../community/kubean.md)、[云原生全场景网络](../network/)、[云原生本地存储](../hwameistor/)
 
-![云原生底座](../images/07base.png)
-
-以上这些模块就像乐高搭积木一样，糅合社区最优秀的几十种开源技术，经过众多辩证选型、攻坚克难、编码调试、海量测试，“十年磨一剑，一朝试锋芒”，全新搭建的新一代容器化平台能够满足企业上云的各类场景需求。
+    ![云原生底座](../images/07base.png)
