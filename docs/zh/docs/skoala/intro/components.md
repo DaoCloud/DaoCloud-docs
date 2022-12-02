@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 环境要求
 
 微服务引擎中集成了多款组件。各个组件必须达到特定的版本才能确保微服务引擎的高效运行。具体的组件版本要求如下：
@@ -5,8 +10,6 @@
 !!! note
 
     稳定支持版本：微服务引擎团队经过验证后认为可稳定支持的组件版本，建议参照下表使用特定版本的组件。
-
-## DaoCloud 微服务引擎
 
 | 组件类型 | 开源组件                                                     | 稳定支持版本                                                 | 备注                                                         |
 | -------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -22,4 +25,3 @@
 | 可选     | [Istio](https://github.com/istio/istio)                      | [1.14.1](https://github.com/istio/istio/releases/tag/1.14.1) |                                                              |
 | 可选     | [Kubernetes](https://github.com/kubernetes/kubernetes)       | 1.23, 1.22, 1.21                                             |                                                              |
 | 可选     | [prometheus](https://github.com/prometheus/prometheus)       | [v2.36.0](https://github.com/prometheus/prometheus/releases/tag/v2.36.0) |                                                              |
-
