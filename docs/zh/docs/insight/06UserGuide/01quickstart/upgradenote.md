@@ -1,22 +1,26 @@
-# 升级注意事项
+升级注意事项
 
-## 从低版本升级到 v0.12.x
+#升级到 v0.12.x
 
 1. 从 v0.12.0 开始 ，insight-agent 中 `node exporter` Chart 开始使用 [Kubernetes 推荐的标签](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/)。
-   因此，在升级之前，请运行以下命令删除 `node exporter` 的 DaemonSet 。
+   因此，在升级之前，请运行以下命令。
 
     ```shell
-    kubectl delete daemonset -l app=prometheus-node-exporter -n insight-system
-    ```
-
-2. 从 v0.12.0 开始 ，insight-agent 中`kube-prometheus-stack` Chart [在 Prometheus CRD 中添加 `hostNetwork`字段](https://github.com/prometheus-community/helm-charts/pull/2693)。
-    因此，在升级之前，请运行以下命令删除 Prometheus CRD。
-
-    ```shell
-    kubectl delete crd prometheuses.monitoring.coreos.com
+    kubectl delete daemonset insight-agent-prometheus-node-exporter -n insight-system
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.60.example/prometheus-operator-crd/monitoring.coreos.com_alertmanagerconfigs.yaml --force-conflicts
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.60.1/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagers.yaml --force-conflicts
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.60.1/example/prometheus-operator-crd/monitoring.coreos.com_podmonitors.yaml --force-conflicts
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.60.1/example/prometheus-operator-crd/monitoring.coreos.com_probes.yaml --force-conflicts
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.60.1/example/prometheus-operator-crd/monitoring.coreos.com_prometheuses.yaml --force-conflicts
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.60.1/example/prometheus-operator-crd/monitoring.coreos.com_prometheusrules.yaml --force-conflicts
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.60.1/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml --force-conflicts
+    kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.60.1/example/prometheus-operator-crd/monitoring.coreos.com_thanosrulers.yaml --force-conflicts
     ```
 
 !!! Note
 
-    注意：该操作会导致 Prometheus 服务被删除直至 insight-agent 升级成功。
-
+    如您是离线安装，可以解压在 i。sig ht-agent 离线包后，执行以下命令更新 CRD。 
+    
+    ```shell
+    kubectl apply --server-side -f insight-agent/dependency-crds --force-conflicts。
+    ```
