@@ -78,4 +78,11 @@ DaoCloud 是经认证的 K8s 服务提供商。目前 DCE 经 CNCF 认证可以�
 
 扫描二维码与开发者畅快交流：
 
-![](./docs/zh/docs/images/assist.png)
+![wechat](./docs/zh/docs/images/assist.png)
+
+## 更多
+
+- [文档站发布说明 v1.0](docs/README.md)
+- [下载 DCE 5.0](./docs/zh/docs/download/dce5.md)
+- [安装 DCE 5.0](./docs/zh/docs/install/intro.md)
+- [申请永久免费体验](./docs/zh/docs/dce/license0.md)

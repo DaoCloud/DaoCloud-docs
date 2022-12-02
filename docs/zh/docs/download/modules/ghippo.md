@@ -6,7 +6,7 @@
 
 | 文件名                       | 版本                                                   | 文件大小 | 安装包                                                                                                     | 更新日期   |
 | ------------------------------ | ------------------------------------------------------ | -------- | ---------------------------------------------------------------------------------------------------------- | ---------- |
-| ghippo-0.12.1-amd64.bundle.tar | [v0.12.1](../../ghippo/01ProductBrief/release-notes.md) | 442 MB   | [点击下载](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo-0.12.1-amd64.bundle.tar) | 2022-11-29 |
+| ghippo-0.12.1-amd64.bundle.tar | [v0.12.1](../../ghippo/01ProductBrief/release-notes.md) | 442 MB   | [:arrow_down: 下载](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo-0.12.1-amd64.bundle.tar) | 2022-11-29 |
 
 ## 校验
 

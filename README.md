@@ -74,13 +74,16 @@ Once a PR you opened have been successfully merged, your ID will appear at the b
 
 If any problem, feel free to reach out to us: [support@daocloud.io](mailto:support@daocloud.io?subject=FROM_DOCS_README) or scan the QR code to chat with developers:
 
-![](./docs/zh/docs/images/assist.png)
+![wechat](./docs/zh/docs/images/assist.png)
 
 ## References
 
 - [DaoCloud Style Guide of Writing](./style.md)
 - [Contribution Guideline](./CONTRIBUTING.md)
 
-## Release notes of this website
+## More
 
-[Release v1.0](docs/README.md)
+- [Docsite Release v1.0](docs/README.md)
+- [Download DCE 5.0](./docs/zh/docs/download/dce5.md)
+- [Install DCE 5.0](./docs/zh/docs/install/intro.md)
+- [Free Trial](./docs/zh/docs/dce/license0.md)
