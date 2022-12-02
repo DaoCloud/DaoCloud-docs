@@ -30,7 +30,7 @@ hide:
 
     !!! note
 
-        命令需要指定 `-m` 参数，manifest.yaml 文件在离线包 `offline/sample` 下。
+        命令需要指定 `-m` 参数，`manifest.yaml` 文件在离线包 `offline/sample` 下。
 
 4. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
 

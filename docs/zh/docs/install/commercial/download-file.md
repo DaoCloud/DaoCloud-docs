@@ -19,7 +19,7 @@ curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoClo
 
 ## 离线镜像包下载
 
-1. 从[下载中心](../../download/business/dce5-installer-v0.3.28.md)下载离线包，或者在火种节点上下载离线镜像包。
+1. 从[下载中心](../../download/dce5.md)下载离线包，或者在火种节点上下载离线镜像包。
 
     ```shell
     # 假定 VERSION 为 v0.3.28

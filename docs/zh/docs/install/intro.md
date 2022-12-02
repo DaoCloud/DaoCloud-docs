@@ -9,7 +9,7 @@ DCE 5.0 有两个版本：社区版和商业版。
 
 | 版本   | 包含的模块                                                   | 描述                                               |
 | ------ | ------------------------------------------------------------ | -------------------------------------------------- |
-| 社区版 | 全局管理<br />容器管理<br />可观测性                         | [免费体验](../dce/license0.md)，3 个模块会保持持续更新，可随时[下载子模块的离线包](../download/dce5.md) |
+| 社区版 | 全局管理<br />容器管理<br />可观测性                         | [永久免费授权](../dce/license0.md)，3 个模块会保持持续更新，可随时[下载子模块的离线包](../download/dce5.md) |
 | 商业版 | 全局管理<br />容器管理<br />可观测性<br />应用工作台<br />多云编排<br />微服务引擎<br />服务网格<br />精选中间件<br />云原生网络<br />云原生存储<br />镜像仓库 | [正版授权](https://qingflow.com/f/e3291647)，各个模块可按需自由组合，可随时[下载子模块的离线包](../download/dce5.md)   |
 
 ### 社区版安装流程
@@ -38,7 +38,7 @@ subgraph first[安装社区版]
     tools -.-> s2[通过标准 k8s 集群<br>离线安装]
 end
 
-start([fa:fa-user DCE 5.0 社区版<br>安装和使用流程简介]) --> first
+start([fa:fa-user DCE 5.0 社区版<br>安装和使用流程]) --> first
 start --> second
 
 classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:px,color:#000000, font-size:15px;
@@ -104,3 +104,16 @@ click download "https://docs.daocloud.io/install/commercial/download-file/"
 click config "https://docs.daocloud.io/install/commercial/clusterconfig/"
 click typical,simple "https://docs.daocloud.io/install/commercial/start-install/"
 ```
+
+### 联系我们
+
+DaoCloud Enterprise 5.0 还处于发布初期，安装流程可能会有变更。请收藏此页，关注更新动态，更多操作文档也在制作之中。
+
+- 若有任何安装或使用问题，请[提出反馈](https://github.com/DaoCloud/DaoCloud-docs/issues)。
+
+- 欢迎扫描二维码，与开发者畅快交流：
+
+    ![社区版交流群](../images/assist.png)
+
+[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

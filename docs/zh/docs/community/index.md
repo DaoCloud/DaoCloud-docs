@@ -59,5 +59,6 @@ Kubernetes 多集群通信组件，消除多集群复杂度，让您就像管理
 Clusterpedia、Merbridge 和 HwameiStor 已入选 <a href="https://landscape.cncf.io">CNCF 云原生全景图</a>，而 Clusterpedia 已进入 <a href="https://www.cncf.io/projects/clusterpedia/">CNCF 沙箱孵化</a>。
 </p>
 
+[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/community/k8s/online.md){ .md-button .md-button--primary }

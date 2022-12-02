@@ -48,4 +48,6 @@ DCE 5.0 云原生网络基于开源技术，不仅提供单 CNI 网络支持，�
 
 以上所有 CNI 和 Ingress 等组件可以按需安装。我们的愿景是：牵线搭桥赋能万物互联，融合多 CNI 君臣佐使一应俱全。
 
+[下载 DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

@@ -18,10 +18,10 @@ nav:
             - 标准 K8s 集群离线安装: install/community/k8s/offline.md
           - 安装商业版:
               - 部署规划: install/commercial/deploy-plan.md
-              - 使用场景示例: install/commercial/scenarios.md
-              - 文件下载: install/commercial/download-file.md
-              - 集群配置文件说明: install/commercial/clusterconfig.md
+              - 下载文件包: install/commercial/download-file.md
+              - 编辑 clusterConfig.yaml: install/commercial/clusterconfig.md
               - 离线安装步骤: install/commercial/start-install.md
+              - 使用场景示例: install/commercial/scenarios.md
           - 安装依赖项: install/install-tools.md
           - 卸载: install/uninstall.md
       - 容器管理:
