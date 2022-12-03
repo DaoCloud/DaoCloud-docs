@@ -21,7 +21,6 @@ hide:
 
     ![dashboard](../../images/dashboard03.png)
 
-
 !!! note
     
     访问原生 Grafana 请参考：[以管理员身份登录 Grafana](../../06UserGuide/02dashboard/logingrafana.md)
