@@ -12,7 +12,7 @@ hide:
 
 | 版本名称                      | 安装包                                                                                                         |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| offline-community-v0.3.27.tar | [下载](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.27.tar) |
+| offline-community-v0.3.27.tar | [:arrow_down: 下载](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.27.tar) |
 
 ## 校验
 
