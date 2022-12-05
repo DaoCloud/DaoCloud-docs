@@ -103,6 +103,26 @@
 
 有两种升级方式。您可以根据前置操作，选择对应的升级方案：
 
+!!! note  
+
+    当从 v0.11.x (或更低版本) 升级到 v0.12.0 (或更高版本) 时，需要将 `bak.yaml` 中所有 keycloak key 修改为 keycloakx。  
+
+    这个 key 的修改示例：  
+
+    ```yaml
+    USER-SUPPLIED VALUES:
+    keycloak:
+        ...
+    ```
+
+    修改为：
+
+    ```yaml
+    USER-SUPPLIED VALUES:
+    keycloakx:
+        ...
+    ```
+
 === "通过 helm repo 升级"
 
     1. 检查全局管理 helm 仓库是否存在。
@@ -190,23 +210,3 @@
         -f ./bak.yaml \
         --set global.imageRegistry=$imageRegistry
         ```
-
-!!! note  
-
-    当从 v0.11.x (或更低版本) 升级到 v0.12.0 (或更高版本) 时，需要将 `bak.yaml` 中所有 keycloak key 修改为 keycloakx。  
-
-    这个 key 的修改示例：  
-
-    ```yaml
-    USER-SUPPLIED VALUES:
-    keycloak:
-        ...
-    ```
-
-    修改为：
-
-    ```yaml
-    USER-SUPPLIED VALUES:
-    keycloakx:
-        ...
-    ```
