@@ -188,6 +188,7 @@ Daocloud 第五代容器管理模块引入了自研开源组件 CloudTTY，支�
     答：取决于用户所采用的权限控制解决方案，一般来说除了拥有 Global Admin、Kpanda Owner、Cluster Admin、Cluster Admin角色的用户外，拥有 Cluster Edit 角色的用户及拥有强绑定的 Floder Admin、WorkerSpace Admin 角色的用户也能够实现对集群内资源的增删改查操作，以及对用户进行授权。
 
 [了解容器管理](../kpanda/03ProductBrief/WhatisKPanda.md){ .md-button }
+
 [下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

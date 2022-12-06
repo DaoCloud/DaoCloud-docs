@@ -124,3 +124,7 @@ GitOps 结合 Kubernetes 能够利用自动交付流水线将更改应用到指�
     让不同形态的云原生应用运维更轻松方便。
 
 [了解应用工作台](../amamba/01ProductBrief/WhatisAmamba.md){ .md-button }
+
+[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

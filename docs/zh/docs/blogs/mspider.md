@@ -120,4 +120,6 @@ DaoCloud 服务网格是一种具备高性能、高易用性的全托管服务�
 
 [了解服务网格](../mspider/01Intro/WhatismSpider.md){ .md-button }
 
-[申请社区免费体验](../dce/license0.md){ .md-button }
+[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
