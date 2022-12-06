@@ -7,19 +7,20 @@
 - Abstraction, 抽象
 
     在当今计算的背景/上下文中，抽象是一种对服务的消费（消费对象可以是计算机程序或人类），
-    在这个过程中会隐藏其细节，使系统更通用也更容易理解。
+    在这个消费过程中会隐藏消费的细节，使整个系统更通用也更容易理解。
+
     电脑的操作系统就是一个很好的例子，它把计算机工作的所有细节都抽象出来了。
     你不需要知道任何关于 CPU、内存以及程序如何被运行，你只需在操作系统上安装应用程序，操作系统就会处理所有细节。
-    所有这些细节都隐藏在操作系统的 “幕布” 或抽象概念后面。
+    所有这些细节都隐藏在操作系统的 “幕布” 或抽象概念之后。
 
     系统通常有多个抽象层，这大大简化了开发工作。
     在编程时，开发人员构建与特定抽象层兼容的组件，而不必担心可能非常异构的所有底层细节。
-    如果组件能与抽象层一起工作，无论底层是什么样的，它就能与系统一起工作。
+    如果组件能与抽象层一起工作，无论底层是什么样的，它都能与系统一起工作。
 
 - Addon, 扩展
 
     扩展 DCE 功能的资源对象。
-    您可以通过`容器管理` -> `Helm 模板`安装更多附加组件。
+    您可以通过`容器管理` -> [Helm 模板](../kpanda/07UserGuide/helm/README.md)安装更多附加组件。
 
 - Addmission Controller, 准入控制器
 
@@ -47,13 +48,13 @@
 
     当配置了 K8s API 服务器来支持额外的 API 时，你就可以在 K8s API 中增加 `APIService` 对象来申领（Claim）一个 URL 路径。
 
-- Alert Rule, 告警规则
+- Alert Rule, [告警规则](../insight/06UserGuide/05alertcenter/alertrule.md)
 
     在 Insight 中，这是基于资源状态创建的告警对象，可以自定义触发规则的条件以及通过何种方式发送通知的规则。
 
 - Annotation, 注解
 
-    注解是以键值对的形式给资源对象附加随机的无法标识的元数据。
+    [注解](../kpanda/07UserGuide/Nodes/labels%26annotations.md)是以键值对的形式给资源对象附加随机的无法标识的元数据。
 
     注解中的元数据可大可小，可以是结构化的也可以是非结构化的，并且能包含标签不允许使用的字符。
     像工具和软件库这样的客户端可以检索这些元数据。
@@ -113,7 +114,7 @@
 
 - Audit log, 审计日志
 
-    审计日志提供了对系统中对象所做更改的历史记录。
+    [审计日志](../ghippo/04UserGuide/03AuditLog.md)提供了对系统中对象所做更改的历史记录。
 
 - App, Application, 应用
 
@@ -121,7 +122,7 @@
 
 - Autoscaling, 自动扩缩
 
-    自动扩缩，通常是指在计算资源方面，系统能够进行自动扩缩的能力。
+    [自动扩缩](../kpanda/07UserGuide/Scale/Create-HPA.md)，通常是指在计算资源方面，系统能够进行自动扩缩的能力。
     自动扩缩系统可在需要时自动添置资源，通过扩缩来满足不断变化的用户需求。
     自动扩缩的过程各不相同，可基于不同指标进行配置，例如内存或处理时间。
     托管云服务相较于大多数本地部署环境，有更多的可选项和实施项，因此往往都搭配有自动扩缩功能。
@@ -302,7 +303,7 @@
 
 - Cluster, 集群
 
-    集群是运行容器化应用程序的一组计算节点。通常，组成集群的计算节点彼此可以直接连接。集群通过规则或策略限制外部访问。
+    [集群](../kpanda/07UserGuide/Clusters/CreateCluster.md)是运行容器化应用程序的一组计算节点。通常，组成集群的计算节点彼此可以直接连接。集群通过规则或策略限制外部访问。
     工作节点会托管 Pod，而 Pod 就是作为应用负载的组件。
     控制平面管理集群中的工作节点和 Pod。
     在生产环境中，控制平面通常跨多台计算机运行，
@@ -352,7 +353,7 @@
 
 - ConfigMap, 配置项
 
-    ConfigMap 是一种 API 对象，用来将非机密性的数据保存到键值对中。
+    [ConfigMap](../kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md) 是一种 API 对象，用来将非机密性的数据保存到键值对中。
     使用时可以用作环境变量、命令行参数或者存储卷中的配置文件。
 
     ConfigMap 将你的环境配置信息和容器镜像解耦，便于应用配置的修改。
@@ -409,7 +410,7 @@
 
     强调简单性、健壮性和可移植性的一种容器运行时。
 
-    containerd 是一种容器行时，能在 Linux 或者 Windows 后台运行。
+    [containerd](https://github.com/containerd/containerd) 是一种容器行时，能在 Linux 或者 Windows 后台运行。
     containerd 能取回、存储容器镜像，执行容器实例，提供网络访问等。
 
 - Containerization, 容器化
@@ -529,7 +530,7 @@
     控制平面是一组系统服务，这些服务配置网格或者网格的子网来管理工作负载实例之间的通信。
     单个网格中控制平面的所有实例共享相同的配置资源。
 
-- CRD, CustomResourceDefinition, 自定义资源定义
+- [CRD](../kpanda/07UserGuide/CustomResources/create.md), CustomResourceDefinition, 自定义资源定义
 
     通过定制化的代码给你的 Kubernetes API 服务器增加资源对象，而无需编译完整的定制 API 服务器。
 
@@ -561,7 +562,7 @@
     [Kubernetes CRI](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md)
     的其他任何实现。
 
-- CronJob, 周期调度任务
+- [CronJob](../kpanda/07UserGuide/Workloads/CreateCronJobByImage.md), 周期调度任务
 
     管理定期运行的任务。
 
@@ -579,7 +580,7 @@
 
 ### D
 
-- DaemonSet, 守护进程集
+- [DaemonSet](../kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md), 守护进程集
 
     确保 Pod 的副本在集群中的一组节点上运行。
 
@@ -641,7 +642,7 @@
     开发人员可以使用交互式调试在运行时单步执行代码，同时分析相关的执行上下文。
     一旦定位到故障的根源，他们通过发起修复错误的请求或者发布新的补丁来更正代码行为。
 
-- Deployement, 无状态负载
+- [Deployement](../kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md), 无状态负载
 
     管理多副本应用的一种 API 对象，通常通过运行没有本地状态的 Pod 来完成工作。
 
@@ -925,7 +926,7 @@
 
     Nacos 中的一组配置集。
 
-### H, I, K, L
+### H
 
 - Heartbeat, 心跳
 
@@ -980,6 +981,8 @@
     [HostAliases](https://kubernetes.io/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#hostalias-v1-core)
     是一个包含主机名和 IP 地址的可选列表，配置后将被注入到 Pod 内的 hosts 文件中。
     该选项仅适用于没有配置 hostNetwork 的 Pod。
+
+### I
 
 - Image, 镜像
 
@@ -1054,6 +1057,8 @@
     添加 Istio 时不需要修改应用代码。它是基础设施的一层，介于服务和网络之间。
     当它和服务的 Deployment 相结合时，就构成了通常所谓的服务网格（Service Mesh）。
     Istio 的控制面抽象掉了底层的集群管理平台，这一集群管理平台可以是 Kubernetes、Mesosphere 等。
+
+### J, K
 
 - Job
 
@@ -1150,6 +1155,8 @@
     API 允许以声明方式管理配置。
     用户可以直接和 Kubernetes API 交互，也可以通过 `kubectl` 这样的工具进行交互。
     核心的 Kubernetes API 是很灵活的，可以扩展以支持定制资源。
+
+### L
 
 - Label, 标签
 
@@ -1294,7 +1301,7 @@
     它还验证不遵循登录过程的客户端设备连接，例如物联网 (IoT) 设备。
     mTLS 可以防止诸如路径上的攻击、欺骗攻击、凭证填充、暴力攻击等攻击。
 
-### N, O
+### N
 
 - Nacos 集群节点角色
 
@@ -1313,7 +1320,7 @@
 
 - Namespace, 命名空间
 
-    命名空间是 Kubernetes 用来支持隔离单个集群中的资源组的一种抽象。
+    [命名空间](../kpanda/07UserGuide/Namespaces/createns.md)是 Kubernetes 用来支持隔离单个集群中的资源组的一种抽象。
 
     命名空间用来组织集群中对象，并为集群资源划分提供了一种方法。
     同一命名空间内的资源名称必须唯一，但跨命名空间时不作要求。
@@ -1334,7 +1341,7 @@
 
 - Node, 节点
 
-    节点是一台能与其他计算机（或节点）协同工作以完成一个共同任务的计算机。
+    [节点](../kpanda/07UserGuide/Nodes/AddNode.md)是一台能与其他计算机（或节点）协同工作以完成一个共同任务的计算机。
     以你的笔记本电脑、调制解调器或打印机为例。它们都通过你的 wifi 网络进行通信和协作，各自代表一个节点。
     在云计算中，节点可以是一台物理机，也可以是一台虚拟机（即 VM），甚至可以是容器。
 
@@ -1359,6 +1366,8 @@
 - Notification, 通知
 
     当资源存在异常而产生告警时，可将告警信息通过邮件、钉钉、企业微信、webhook等方式发送给指定的用户。
+
+### O
 
 - Object, 对象
 
@@ -1593,7 +1602,7 @@
 
 - Rolling update, 滚动更新
 
-    滚动更新指一次只更新一小部分副本，成功后再更新更多的副本，最终完成所有副本的更新。
+    [滚动更新](../mspider/03UserGuide/upgrade/IstioUpdate.md)指一次只更新一小部分副本，成功后再更新更多的副本，最终完成所有副本的更新。
     滚动更新的最大的好处是零停机，整个更新过程始终有副本在运行，从而保证业务的连续性。
 
 - Routing Rule, 路由规则
@@ -1617,7 +1626,7 @@
 
 - Secret
 
-    Secret 用于存储敏感信息，如密码、 OAuth 令牌和 SSH 密钥。
+    [Secret](../kpanda/07UserGuide/ConfigMapsandSecrets/create-secret.md) 用于存储敏感信息，如密码、 OAuth 令牌和 SSH 密钥。
 
     Secret 允许用户对如何使用敏感信息进行更多的控制，并减少信息意外暴露的风险。
     默认情况下，Secret 值被编码为 base64 字符串并以非加密的形式存储，
@@ -1821,7 +1830,7 @@
 
 - StatefulSet
 
-    StatefulSet 用来管理某 Pod 集合的部署和扩缩，并为这些 Pod 提供持久存储和持久标识符。
+    [StatefulSet](../kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md) 用来管理某 Pod 集合的部署和扩缩，并为这些 Pod 提供持久存储和持久标识符。
 
     与 Deployment 类似，StatefulSet 管理基于相同容器规约的一组 Pod。
     但和 Deployment 不同的是，StatefulSet 为它们的每个 Pod 维护了一个有粘性的 ID。
@@ -1884,7 +1893,7 @@
 
 - Taint, 污点
 
-    污点是一种一个核心对象，包含三个必需的属性：key、value 和 effect。污点会阻止在节点或节点组上调度 Pod。
+    [污点](../kpanda/07UserGuide/Nodes/Taints.md)是一种核心对象，包含三个必需的属性：key、value 和 effect。污点会阻止在节点或节点组上调度 Pod。
 
     污点配合容忍度一起工作，以确保不会将 Pod 调度到不适合的节点上。
     同一节点上可标记一个或多个污点。节点应该仅调度那些带着能与污点相匹配容忍度的 Pod。
@@ -1939,7 +1948,7 @@
     记录单次请求范围内的处理信息，其中包括服务调用和处理时长等数据。
     一个 Trace 有一个唯一的 Trace ID ，并由多个 Span 组成。
 
-### U, V, W, Z
+### U, V
 
 - UID
 
@@ -2044,6 +2053,8 @@
     **in tree** 插件是 Kubernetes 代码库的一部分，并遵循其发布周期。
     而 **Out of tree** 插件则是独立开发的。
 
+### W, Z
+
 - Weight, 权重
 
     权重为浮点数。权重越大，表示分配给该实例的流量越大。
@@ -2052,7 +2063,7 @@
 
     工作负载是在 Kubernetes 上运行的应用程序。
 
-    代表不同类型或部分工作负载的各种核心对象包括 DaemonSet、Deployment、Job、ReplicaSet 和 StatefulSet。
+    代表不同类型或部分工作负载的各种核心对象包括 Deployment、StatefulSet、DaemonSet、Job、ReplicaSet。
 
     例如，具有 Web 服务器和数据库的工作负载可能在一个 StatefulSet 中运行数据库，而 Web 服务器运行在 Deployment。
 
