@@ -5,10 +5,10 @@ nav:
       - DCE 产品介绍:
           - 什么是 DCE 5.0: dce/what-is-dce.md
           - K8s 认证服务商: dce/kcsp.md
-          - 适用场景: dce/scenario.md
-          - 平台功能: dce/features.md
-          - 产品优势: dce/whyus.md
           - 申请社区免费体验: dce/license0.md
+          - 功能和优势: dce/features.md
+          - 适用场景: dce/scenario.md
+          - 云原生词汇: dce/terms.md
       - 安装:
           - 安装简介: install/intro.md
           - 安装社区版: 
@@ -191,7 +191,7 @@ nav:
               - 导入自定义仪表盘: insight/09FAQs/importdashboard.md
               - 日志采集排障指南: insight/09FAQs/debuglog.md
               - 链路采集排障指南: insight/09FAQs/debugtrace.md
-              - 在 DCE4.0 中安装 insight-agent: insight/09FAQs/installagentindce.md
+              - DCE 4.0 安装 insight-agent: insight/09FAQs/installagentindce.md
       - 应用工作台:
           - 介绍:
               - 什么是应用工作台？: amamba/01ProductBrief/WhatisAmamba.md
@@ -406,7 +406,7 @@ nav:
               - 使用: network/modules/spiderpool/usage.md
               - 配置参考: network/modules/spiderpool/config.md
               - 常用命令: network/modules/spiderpool/command.md
-      - 数据服务:
+      - 中间件数据服务:
           - 数据服务介绍: middleware/midware.md
           - 数据服务版本适配: middleware/adaptation-k8s.md
           - Elasticsearch 搜索服务:
@@ -532,17 +532,14 @@ nav:
             - kangaroo/integrate.md
             - 镜像空间绑定工作空间: kangaroo/bind-to-ws.md
             - 创建镜像空间: kangaroo/create-registry.md
-      - Release Notes:
-          - release/rn5.0.md
       - 通用参考:
-          - 术语表: reference/terms.md
-          - 基础知识:
-              - 云原生网关: reference/basic-knowledge/gateway.md
-              - 微服务: reference/basic-knowledge/microservice.md
-              - 注册中心: reference/basic-knowledge/registry.md
-              - 虚拟服务: reference/basic-knowledge/virtual-service.md
-              - 可观测性: reference/basic-knowledge/insight.md
-              - 流量治理: reference/basic-knowledge/traffic-control.md
+        - Release Notes: release/rn5.0.md
+        - 云原生网关: reference/basic-knowledge/gateway.md
+        - 微服务: reference/basic-knowledge/microservice.md
+        - 注册中心: reference/basic-knowledge/registry.md
+        - 虚拟服务: reference/basic-knowledge/virtual-service.md
+        - 可观测性: reference/basic-knowledge/insight.md
+        - 流量治理: reference/basic-knowledge/traffic-control.md
       - 故障排查:
           - ingressgateway 无法启动: reference/troubleshooting/ghippo01.md
           - 登录报错 401 或 403: reference/troubleshooting/ghippo02.md
