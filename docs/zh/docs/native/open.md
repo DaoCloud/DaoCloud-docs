@@ -19,7 +19,8 @@
 
     该版本主要新特性：增加 ExternalNode 功能、K8s 网络策略增加审计日志支持、支持利用 Antrea ClusterNetworkPolicy 控制 NodePort 服务的外部访问、允许对不同的网络端点进行逻辑分组、每次 Antrea release 都生成新的 Helm Chart 版本、支持拓扑感知 TopologyAwareHints、在 IPPool CRD 中添加状态字段。
 
-- [Antrea CNI 插件 v1.7.0 发布（CNCF 项目）](https://github.com/antrea-io/antrea/releases/tag/v1.7.0)  
+- [Antrea CNI 插件 v1.7.0 发布（CNCF 项目）](https://github.com/antrea-io/antrea/releases/tag/v1.7.0)
+  
     该版本主要新特性：增加 TrafficControl 功能，控制 Pod 流量的传递；支持 IPsec 证书认证；丰富 Antrea-native 策略；丰富组播功能；增加多集群网关功能；丰富二级网络 IPAM 功能。
   
 - [APISIX 云原生 API 网关 v3.0 发布](https://github.com/apache/apisix/blob/release/3.0/CHANGELOG.md#300)
@@ -170,6 +171,7 @@
     该版本主要新特性：在一个 SDS 请求中发送多个集群或监听器的 SDS 资源、通过 HTTP 过滤器的配置名称来获取过滤器配置、监听器过滤器统计更新、dns_resolver 增加对多个地址的支持、为监听器过滤器添加动态监听器过滤器配置等。
 
 - [Emissary Ingress 云原生 ingress 控制器和 API 网关 v2.3.0 发布（CNCF 项目）](https://github.com/emissary-ingress/emissary/releases/tag/v2.3.0)  
+
     该版本主要新特性：当使用 lightstep 作为 driver 时，可以在 ``TracingService`` 的配置中设置``propagation_modes``；支持在 ``Host``和``TLSContext``资源中设置``crl_secret``，以比对证书撤销列表检查对等证书；优化与外部日志服务的通信等。
 
 - [eunomia-bpf：eBPF 轻量级开发框架正式开源](https://mp.weixin.qq.com/s/fewVoIKbLn5fYbXUaDyTpQ)
@@ -177,6 +179,7 @@
     [eunomia-bpf](https://gitee.com/anolis/eunomia) 由各高校和龙蜥社区共同开发，旨在简化 eBPF 程序的开发、分发、运行。在 eunomia-bpf 中，只需编写内核态代码即可正确运行，在部署时不需要重新编译，并提供 JSON/WASM 的标准化分发方式。
 
 - [Falco 运行时安全项目 v0.32.0 发布（CNCF 项目）](https://github.com/falcosecurity/falco/releases/tag/0.32.0)
+
     该版本主要新特性：新增配置项，当检测到规则或配置文件有变化时，触发 Falco 重启；支持检测权限过大的容器；支持检测共享主机 pid 和 IPC 命名空间的 pod 等。
 
 - [Flagger 渐进式交付攻击 v1.22.0 发布（CNCF 项目）](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1220)  
@@ -188,6 +191,7 @@
     该版本主要新特性：增加对 Traces 的支持（与 Prometheus 和 OpenTelemetry 完全集成）、允许 input 插件在一个单独的线程中运行、所有需启用安全的网络传输层将使用 OpenSSL、input 插件新增原生 TLS 功能、支持将更多的插件类型与 Golang 和 WebAssembly 集成、支持检查流经管道的数据、引入收集和处理内部指标的新 input 插件。
 
 - [Fluentd 日志收集工具 v1.15.0 发布（CNCF 项目）](https://github.com/fluent/fluentd/releases/tag/v1.15.0)
+
     该版本主要新特性：支持设置日志收集的速率限制规则、支持处理 YAML 配置格式、允许设置重启 worker 的时间间隔。
 
 - [Flux 持续交付工具成为 CNCF 毕业项目](https://mp.weixin.qq.com/s/3F3DHuKEZqqd7M6-im6B-A)
@@ -209,6 +213,7 @@
 ### H
 
 - [HAProxy Kubernetes Ingress Controller v1.8 发布](https://www.haproxy.com/blog/announcing-haproxy-kubernetes-ingress-controller-1-8/)  
+
     该版本主要新特性：降低容器中所有进程的权限，不再默认运行 privileged 容器；暴露了一个用于查看 pprof 诊断数据的端点；支持收集控制器内部的 Prometheus 指标，如分配的内存量和花费的 CPU 时间；若入口规则不匹配，支持自定义设置后端端口。
 
 - [Harbor 容器镜像仓库 v2.6.0 发布（CNCF 项目）](https://github.com/goharbor/harbor/releases/tag/v2.6.0)
@@ -216,6 +221,7 @@
     该版本主要新特性：引入缓存层，改善高并发情况下拉取工件的性能；增加 CVE 导出功能，允许项目所有者和成员导出由扫描仪生成的 CBR 数据；支持定期清理审计日志或按需运行，支持转发审计日志到远程系统日志终端；支持 WebAssembly 工件。
 
 - [HashiCorp Vault 私密信息管理工具 1.11 新增 Kubernetes Secret 引擎](https://github.com/hashicorp/vault/blob/main/website/content/docs/secrets/kubernetes.mdx)  
+
     Kubernetes Secret 引擎可以动态生成 Kubernetes 服务账户令牌、服务账户、角色绑定和角色。创建的服务账户令牌有一个可配置的 TTL 值（Time To Live），当 lease 到期时，Vault 会自动删除创建的对象。对于每一个 lease，Vault 会创建一个连接到定义服务账户的令牌，服务账户令牌会返回给调用者。
 
 - [Helm 包管理工具 v3.10.0 发布（CNCF 项目）](https://github.com/helm/helm/releases/tag/v3.10.0)  
@@ -251,6 +257,7 @@
     通过引入零信任隧道（ztunnel）和 Waypoint proxy（路径点代理）实现零信任且减少了网格的资源占用，同时还可以与 sidecar 模式无缝互通，降低了用户的运维开销。
 
 - [Istio v1.14 发布](https://istio.io/latest/news/releases/1.14.x/announcing-1.14/change-notes/)  
+
     该版本主要新特性：
     - 流量治理：支持向 Envoy 发送未就绪 endpoint；优化 egress 流量拦截功能；放宽设置 SNI 的限制条件；支持 filter 替换虚拟主机；在 Proxy Config 中增加 API ``runtimeValues``，用于 Envoy 运行时配置。
     - 安全：支持通过 Envoy SDS API 进行 CA 集成、支持在 SDS 中使用 ``PrivateKeyProvider``、支持工作负载的TLS 配置 API。
@@ -380,6 +387,7 @@
     该版本主要新特性：三个 API 升级为beta：``GatewayClass``、``Gateway``和``HTTPRoute``；引入了 experimental 和 standard 版本渠道；通过指定端口号，路由可以连接到网关；支持 URL 重写和路径重定向。
 
 - [KubeSphere v3.3.0 发布（CNCF 项目）](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.md)
+
     该版本主要新特性：
     - DevOps：后端支持独立部署，提供基于 GitOps 的持续部署方案，引入 Argo CD 作为 CD 的后端，可以实时统计持续部署的状态。
     - 网络：集成负载均衡器 OpenELB，即使是在非公有云环境的 K8s 集群下，也可以对外暴露 LoadBalancer 服务。
