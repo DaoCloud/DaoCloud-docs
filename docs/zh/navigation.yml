@@ -132,6 +132,7 @@ nav:
               - 微服务引擎权限说明: ghippo/permissions/skoala.md
               - 应用工作台权限说明: ghippo/permissions/amamba.md
               - 服务网格权限说明: ghippo/permissions/mspider.md
+              - 数据服务权限说明: ghippo/permissions/mcamel.md
           - 最佳实践:
               - 工作空间最佳实践: ghippo/04UserGuide/02Workspace/wsbp.md
               - 工作空间绑定命名空间: ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus.md
