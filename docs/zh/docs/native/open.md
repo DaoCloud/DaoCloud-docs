@@ -47,6 +47,7 @@
     审计报告全文: <https://github.com/argoproj/argoproj/blob/master/docs/argo_security_audit_2022.pdf>
 
 - [Argo CD 持续部署工具 v2.4.0 发布（CNCF 项目）](https://github.com/argoproj/argo-cd/releases/tag/v2.4.0)
+
     该版本主要新特性：UI 添加 Web 终端——无需离开 Web 界面就能在运行的应用容器中启动一个 shell；引入对 Pod 日志和 Web 终端的访问控制；集成 OpenTelemetry Tracing。
 
 - [Backstage 开发者门户构建平台的安全审计报告和威胁模型发布（CNCF 项目）](https://backstage.io/blog/2022/08/23/backstage-security-audit)  
@@ -172,7 +173,7 @@
 
 - [Emissary Ingress 云原生 ingress 控制器和 API 网关 v2.3.0 发布（CNCF 项目）](https://github.com/emissary-ingress/emissary/releases/tag/v2.3.0)  
 
-    该版本主要新特性：当使用 lightstep 作为 driver 时，可以在 ``TracingService`` 的配置中设置``propagation_modes``；支持在 ``Host``和``TLSContext``资源中设置``crl_secret``，以比对证书撤销列表检查对等证书；优化与外部日志服务的通信等。
+    该版本主要新特性：当使用 lightstep 作为 driver 时，可以在 `TracingService` 的配置中设置`propagation_modes`；支持在 `Host`和`TLSContext`资源中设置`crl_secret`，以比对证书撤销列表检查对等证书；优化与外部日志服务的通信等。
 
 - [eunomia-bpf：eBPF 轻量级开发框架正式开源](https://mp.weixin.qq.com/s/fewVoIKbLn5fYbXUaDyTpQ)
 
@@ -184,7 +185,7 @@
 
 - [Flagger 渐进式交付攻击 v1.22.0 发布（CNCF 项目）](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1220)  
 
-    该版本主要新特性：支持以 KEDA ScaledObjects 替代 HPA、在参数表中添加命名空间参数、为 Canary.Service 添加可选的 ``appProtocol`` 字段。
+    该版本主要新特性：支持以 KEDA ScaledObjects 替代 HPA、在参数表中添加命名空间参数、为 Canary.Service 添加可选的 `appProtocol` 字段。
 
 - [Fluent Bit 日志处理工具 v2.0.0 发布 （CNCF 项目）](https://github.com/fluent/fluent-bit/releases/tag/v2.0.0)
 
@@ -259,10 +260,11 @@
 - [Istio v1.14 发布](https://istio.io/latest/news/releases/1.14.x/announcing-1.14/change-notes/)  
 
     该版本主要新特性：
-    - 流量治理：支持向 Envoy 发送未就绪 endpoint；优化 egress 流量拦截功能；放宽设置 SNI 的限制条件；支持 filter 替换虚拟主机；在 Proxy Config 中增加 API ``runtimeValues``，用于 Envoy 运行时配置。
-    - 安全：支持通过 Envoy SDS API 进行 CA 集成、支持在 SDS 中使用 ``PrivateKeyProvider``、支持工作负载的TLS 配置 API。
-    - Telemetry：新增 OpenTelemetry 访问日志、在日志中添加 ``WorkloadMode`` 选项。
-    - 扩展：支持 WasmPlugin 通过 ``imagePullSecret`` 从私有仓库中拉取镜像。
+
+    - 流量治理：支持向 Envoy 发送未就绪 endpoint；优化 egress 流量拦截功能；放宽设置 SNI 的限制条件；支持 filter 替换虚拟主机；在 Proxy Config 中增加 API `runtimeValues`，用于 Envoy 运行时配置。
+    - 安全：支持通过 Envoy SDS API 进行 CA 集成、支持在 SDS 中使用 `PrivateKeyProvider`、支持工作负载的TLS 配置 API。
+    - Telemetry：新增 OpenTelemetry 访问日志、在日志中添加 `WorkloadMode` 选项。
+    - 扩展：支持 WasmPlugin 通过 `imagePullSecret` 从私有仓库中拉取镜像。
 
 - [Jaeger 分布式追踪系统 v1.36.0 发布（CNCF 项目）](https://github.com/jaegertracing/jaeger/releases/tag/v1.36.0)  
 
@@ -293,7 +295,7 @@
 
 - [Karmada 跨云多集群容器编排平台 v1.2.0 发布（CNCF 项目）](https://github.com/karmada-io/karmada/releases/tag/v1.2.0)  
 
-    该版本主要新特性：优化随时间变化的调度策略；支持跨区域部署工作负载；``karmadactl`` 和 ``kubectl-karmada``支持更加丰富的命令；新增针对 Kubernetes 资源的分布式搜索和分析引擎（alpha）；实现自定义的资源状态收集。
+    该版本主要新特性：优化随时间变化的调度策略；支持跨区域部署工作负载；`karmadactl` 和 `kubectl-karmada`支持更加丰富的命令；新增针对 Kubernetes 资源的分布式搜索和分析引擎（alpha）；实现自定义的资源状态收集。
 
 - [Karpenter 自动扩缩容工具 v0.19.0 发布](https://github.com/aws/karpenter/releases/tag/v0.19.0)
 
@@ -317,7 +319,7 @@
 
 - [Keptn 云原生应用程序生命周期编排项目 v0.18.0 发布（CNCF 项目）](https://github.com/keptn/keptn/releases/tag/0.18.0)
 
-    该版本主要新特性：安装/卸载/升级命令不可用，改用 Helm 来操作 Keptn；在资源 API 中，尾部``/``将返回 404；弃用配置服务，所有 Keptn 的核心服务都依赖于资源服务。
+    该版本主要新特性：安装/卸载/升级命令不可用，改用 Helm 来操作 Keptn；在资源 API 中，尾部`/`将返回 404；弃用配置服务，所有 Keptn 的核心服务都依赖于资源服务。
 
 - [Keptn 云原生应用生命周期编排引擎升级为 CNCF 孵化项目](https://mp.weixin.qq.com/s/gkv_fSnrRv0ao1AHUzBB5A)  
 
@@ -325,7 +327,7 @@
 
 - [Keptn 云原生应用持续交付和自动化操作工具 v0.16.0 发布（CNCF 项目）](https://github.com/keptn/keptn/releases/tag/0.16.0)  
 
-    该版本主要新特性：``resource-service`` 取代 ``configuration-service``，以加快响应时间、支持在不停机的情况下升级 Keptn；v0.17 中，CLI 将删除安装/卸载/升级命令；支持直接向 Nats 发送事件；只有当服务连接到控制平面时，才会被视为准备就绪；允许在没有 distributor sideCar 的情况下运行 approval service。
+    该版本主要新特性：`resource-service` 取代 `configuration-service`，以加快响应时间、支持在不停机的情况下升级 Keptn；v0.17 中，CLI 将删除安装/卸载/升级命令；支持直接向 Nats 发送事件；只有当服务连接到控制平面时，才会被视为准备就绪；允许在没有 distributor sideCar 的情况下运行 approval service。
 
 - [Knative 基于 Kubernetes 的 serverless 架构方案 v1.8.0 发布（CNCF 项目）](https://github.com/knative/serving/releases/tag/knative-v1.8.0)
 
@@ -384,11 +386,12 @@
 
 - [Kubernetes Gateway API v0.5.0 发布](https://github.com/kubernetes-sigs/gateway-api/releases/tag/v0.5.0)  
 
-    该版本主要新特性：三个 API 升级为beta：``GatewayClass``、``Gateway``和``HTTPRoute``；引入了 experimental 和 standard 版本渠道；通过指定端口号，路由可以连接到网关；支持 URL 重写和路径重定向。
+    该版本主要新特性：三个 API 升级为beta：`GatewayClass`、`Gateway`和`HTTPRoute`；引入了 experimental 和 standard 版本渠道；通过指定端口号，路由可以连接到网关；支持 URL 重写和路径重定向。
 
 - [KubeSphere v3.3.0 发布（CNCF 项目）](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.md)
 
     该版本主要新特性：
+
     - DevOps：后端支持独立部署，提供基于 GitOps 的持续部署方案，引入 Argo CD 作为 CD 的后端，可以实时统计持续部署的状态。
     - 网络：集成负载均衡器 OpenELB，即使是在非公有云环境的 K8s 集群下，也可以对外暴露 LoadBalancer 服务。
     - 多租户和多集群：集群应用可以通过一个 ConfigMap 获取到所在集群的名称、支持为集群设置集群成员和集群角色。
@@ -464,13 +467,13 @@
 
 - [Kyverno 云原生策略引擎 v1.7.0 发布（CNCF 项目）](https://github.com/kyverno/kyverno/releases/tag/v1.7.0)  
 
-    该版本主要新特性：支持通过动态客户端查询``mutate.target``、允许 Kyverno jp 在 Yaml 文件上工作、优化镜像验证签名、在策略更新时 mutate 现有资源、允许用户在上下文中定义内联变量、禁用更新请求控制器的 leader election、在测试中支持 apiCall 以及 CLI 更新等。
+    该版本主要新特性：支持通过动态客户端查询`mutate.target`、允许 Kyverno jp 在 Yaml 文件上工作、优化镜像验证签名、在策略更新时 mutate 现有资源、允许用户在上下文中定义内联变量、禁用更新请求控制器的 leader election、在测试中支持 apiCall 以及 CLI 更新等。
 
 ### L, M, N
 
 - [Linkerd 服务网格项目 v2.12.0 发布（CNCF 项目）](https://github.com/linkerd/linkerd2/releases/tag/stable-2.12.0)  
 
-    该版本主要新特性：允许用户以完全零信任的方式定义和执行基于 HTTP 路由的授权策略；支持使用 Kubernetes Gateway API 进行配置；初始化容器增加对 ``iptables-nft`` 的支持。
+    该版本主要新特性：允许用户以完全零信任的方式定义和执行基于 HTTP 路由的授权策略；支持使用 Kubernetes Gateway API 进行配置；初始化容器增加对 `iptables-nft` 的支持。
 
 - [Litmus 混沌工程框架 v2.14.0 发布（CNCF 项目）](https://github.com/litmuschaos/litmus/releases/tag/2.14.0)
 
@@ -538,7 +541,7 @@
 
 - [OpenKruise 云原生应用自动化管理套件 v1.2.0 发布（CNCF 项目）](https://github.com/openkruise/kruise/releases/tag/v1.2.0)  
 
-    该版本主要新特性：新增 CRD ``PersistentPodState``来持久化 Pod 的某些状态，如“固定 IP 调度”；CloneSet 针对百分比形式 partition 计算逻辑变化；在 lifecycle hook 阶段设置 Pod not-ready；支持保护 scale subresource 的任意自定义工作负载；新增大规模集群的性能优化方法等。
+    该版本主要新特性：新增 CRD `PersistentPodState`来持久化 Pod 的某些状态，如“固定 IP 调度”；CloneSet 针对百分比形式 partition 计算逻辑变化；在 lifecycle hook 阶段设置 Pod not-ready；支持保护 scale subresource 的任意自定义工作负载；新增大规模集群的性能优化方法等。
 
 - [Open Service Mesh 服务网格 v1.2.0 发布（CNCF 项目）](https://github.com/openservicemesh/osm/releases/tag/v1.2.0)  
 
@@ -562,7 +565,7 @@
 
 - [OpenKruise 云原生应用自动化管理套件 v1.2.0 发布（CNCF 项目）](https://github.com/openkruise/kruise/releases/tag/v1.2.0)  
 
-    该版本主要新特性：新增 CRD ``PersistentPodState``来持久化 Pod 的某些状态，如“固定 IP 调度”；CloneSet 针对百分比形式 partition 计算逻辑变化；在 lifecycle hook 阶段设置 Pod not-ready；支持保护 scale subresource 的任意自定义工作负载；新增大规模集群的性能优化方法等。
+    该版本主要新特性：新增 CRD `PersistentPodState`来持久化 Pod 的某些状态，如“固定 IP 调度”；CloneSet 针对百分比形式 partition 计算逻辑变化；在 lifecycle hook 阶段设置 Pod not-ready；支持保护 scale subresource 的任意自定义工作负载；新增大规模集群的性能优化方法等。
 
 - [osm-edge：易衡科技 Flomesh 开源的边缘服务网格](https://mp.weixin.qq.com/s/tbCxbKFQkvx84Ku5IWg38g)
 
@@ -615,7 +618,7 @@
 
 - [Prometheus v2.36.0 发布（CNCF 项目）](https://github.com/prometheus/prometheus/releases/tag/v2.36.0)  
 
-    该版本主要新特性：集成 Vultr、添加 Linode SD 故障计数指标和 ``prometheus_ready`` 指标、在模板 function 中添加 ``stripDomain``、promtool 支持在查询标签值时使用匹配器、增加代理模式标识符。
+    该版本主要新特性：集成 Vultr、添加 Linode SD 故障计数指标和 `prometheus_ready` 指标、在模板 function 中添加 `stripDomain`、promtool 支持在查询标签值时使用匹配器、增加代理模式标识符。
 
 ### R, S
 
