@@ -38,8 +38,7 @@ hide:
           annotations:
             ipam.spidernet.io/ippool: |-
               {
-                "interface": "eth0",
-                "ipv4pools": ["standard-ipv4-ippool"]
+                "ipv4": ["standard-ipv4-ippool"]
               }
           labels:
             app: standard-ippool-deploy
