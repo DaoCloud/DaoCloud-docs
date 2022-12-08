@@ -358,9 +358,9 @@
     [Telepresence](https://github.com/telepresenceio/telepresence) 可用于在本地运行单个服务，同时将该服务连接到远程 Kubernetes 集群。
     Telepresence 提供了 3 个非常重要的功能：cluster 域名解析、cluster 流量代理和 cluster 流量拦截。
 
-- [使用 Containerlab + Kind 快速部署 Cilium BGP 环境](https://mp.weixin.qq.com/s/FBkln02REVMByhdzaZhj7w)
+- [使用 Containerlab + kind 快速部署 Cilium BGP 环境](https://mp.weixin.qq.com/s/FBkln02REVMByhdzaZhj7w)
 
-    Kind 提供快速部署 K8s 能力，[Containerlab](https://github.com/srl-labs/containerlab) 提供快速部署网络资源能力，二者结合可达到秒速部署跨网络 K8s 集群，可用于快速部署和销毁 Cilium BGP 环境。
+    kind 提供快速部署 K8s 能力，[Containerlab](https://github.com/srl-labs/containerlab) 提供快速部署网络资源能力，二者结合可达到秒速部署跨网络 K8s 集群，可用于快速部署和销毁 Cilium BGP 环境。
 
 - [可观测下一站：基于 Trace 的测试](https://thenewstack.io/trace-based-testing-the-next-step-in-observability/)
 
