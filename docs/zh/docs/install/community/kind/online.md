@@ -16,7 +16,7 @@
 1. 下载 kind 的二进制文件包。
 
     ```shell
-    curl -Lo ./kind https://qiniu-download-public.daocloud.io/kind/v0.17.0/kind-linux-amd64
+    curl -Lo ./kind https://qiniu-download-public.daocloud.io/Kind/v0.17.0/kind-linux-amd64
     ```
 
     为 `kind` 添加可执行权限：
@@ -35,7 +35,11 @@
 
     ```shell
     kind version
-    # 预期输出如下：
+    ```
+
+    预期输出如下：
+
+    ```console
     kind v0.17.0 go1.19.2 linux/amd64
     ```
 
@@ -57,7 +61,11 @@
 
     ```shell
     kind create cluster --image release.daocloud.io/kpanda/kindest-node:v1.21.1 --name=fire-kind-cluster --config=kind_cluster.yaml 
-    # 预期输出如下
+    ```
+
+    预期输出如下：
+
+    ```console
     Creating cluster "fire-kind-cluster" ...
      ✓ Ensuring node image (release.daocloud.io/kpanda/kindest-node:v1.21.1) 🖼 
      ✓ Preparing nodes 📦  
@@ -70,9 +78,13 @@
 
 1. 查看新创建的集群。
 
-    ```sh
+    ```shell
     kind get clusters
-    # 预期输出如下：
+    ```
+
+    预期输出如下：
+
+    ```console
     fire-kind-cluster
     ```
 
