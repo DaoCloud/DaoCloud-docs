@@ -9,8 +9,8 @@ DCE 5.0 有两个版本：社区版和商业版。
 
 | 版本   | 包含的模块                                                   | 描述                                               |
 | ------ | ------------------------------------------------------------ | -------------------------------------------------- |
-| 社区版 | 全局管理<br />容器管理<br />可观测性                         | [永久免费授权](../dce/license0.md)，3 个模块会保持持续更新，可随时[下载子模块的离线包](../download/dce5.md) |
-| 商业版 | 全局管理<br />容器管理<br />可观测性<br />应用工作台<br />多云编排<br />微服务引擎<br />服务网格<br />精选中间件<br />云原生网络<br />云原生存储<br />镜像仓库 | [正版授权](https://qingflow.com/f/e3291647)，各个模块可按需自由组合，可随时[下载子模块的离线包](../download/dce5.md)   |
+| 社区版 | [全局管理](../ghippo/01ProductBrief/WhatisGhippo.md)<br />[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)<br />[可观测性](../insight/03ProductBrief/WhatisInsight.md)                         | [永久免费授权](../dce/license0.md)，3 个模块会保持持续更新，可随时[下载子模块的离线包](../download/dce5.md) |
+| 商业版 | [全局管理](../ghippo/01ProductBrief/WhatisGhippo.md)<br />[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)<br />[可观测性](../insight/03ProductBrief/WhatisInsight.md)<br />[应用工作台](../amamba/01ProductBrief/WhatisAmamba.md)<br />[多云编排](../kairship/01product/whatiskairship.md)<br />[微服务引擎](../skoala/intro/features.md)<br />[服务网格](../mspider/01Intro/WhatismSpider.md)<br />[精选中间件](../middleware/midware.md)<br />[云原生网络](../network/intro/what-is-net.md)<br />[云原生存储](../hwameistor/intro/what.md)<br />[镜像仓库](../kangaroo/intro.md) | [正版授权](https://qingflow.com/f/e3291647)，各个模块可按需自由组合，可随时[下载子模块的离线包](../download/dce5.md)   |
 
 ### 社区版安装流程
 
@@ -63,7 +63,7 @@ click kpanda "https://docs.daocloud.io/kpanda/03ProductBrief/WhatisKPanda/"
 click ghippo "https://docs.daocloud.io/ghippo/01ProductBrief/WhatisGhippo/"
 click insight "https://docs.daocloud.io/insight/03ProductBrief/WhatisInsight/"
 click free "https://docs.daocloud.io/dce/license0/"
-click ask "https://docs.daocloud.io/download/dce5/#_3"
+click ask "https://docs.daocloud.io/install/intro/#_4"
 ```
 
 ### 商业版安装流程
