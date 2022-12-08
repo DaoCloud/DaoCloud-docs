@@ -57,6 +57,13 @@ flowchart TD
     security -.-> request[请求身份认证]
     security -.-> authorize[授权策略]
 
+    classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
+    classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
+    classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+
+    class managed,private,external,global,namespace,workload plain
+    class install,service,gateway,traffic,watch,upgrade,security,entry,virtual,target,gaterule,peer,request,authorize,cluster cluster
+
     click install "https://docs.daocloud.io/mspider/install/"
     click managed "https://docs.daocloud.io/mspider/03UserGuide/servicemesh/create-mesh/"
     click private "https://docs.daocloud.io/mspider/03UserGuide/servicemesh/create-mesh/"

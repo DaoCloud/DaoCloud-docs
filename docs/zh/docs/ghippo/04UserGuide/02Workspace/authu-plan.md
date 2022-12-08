@@ -22,7 +22,8 @@ click authu "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/wspermissio
 
  classDef plain fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
  classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
- class user,ns,ws,ws-to-ns,authu k8s;
+ classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+ class user,ns,ws,ws-to-ns,authu cluster;
  class start,complete plain;
 ```
 

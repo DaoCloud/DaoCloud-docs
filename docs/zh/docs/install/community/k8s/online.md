@@ -55,8 +55,8 @@
         kind: ClusterConfig
         spec:
           loadBalancer: metallb
-          istioGatewayVip: 10.6.229.10/32     # 这是 Istio gateway 的 VIP，也会是 DCE 5.0 的控制台的浏览器访问 IP
-          insightVip: 10.6.229.11/32          # 这是 Global 集群的 Insight-Server 采集所有子集群的监控指标的网络路径所用的 VIP
+          istioGatewayVip: 10.6.229.10/32 # Istio gateway 的 VIP，也是 DCE 5.0 控制台的浏览器访问 IP
+          insightVip: 10.6.229.11/32      # 全局服务集群的 Insight-Server 采集所有子集群监控指标的网络路径所用的 VIP
         ```
 
     - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 K8s 负载均衡能力, 配置文件范例如下:
