@@ -2,6 +2,24 @@
 
 本页列出应用工作台的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## v0.10
+
+发布日期：2022-11-30
+
+- **新增** 新增了 gitops 中的仓库功能，支持导入、删除
+- **新增** 新增了 gitops 应用的同步功能
+- **修复** 修复了 admin 用户未对部署目标（cluster/namespace）鉴权的问题
+- **修复** 修复了 gitops 应用创建时间、同步开始时间和同步结束时间为 `Invalida date` 的错误
+- **修复** 修复了获取 nacos 注册中心列表数据的错误
+- **修复** 修复了列出工作负载接口通过名称排序报错
+- **修复** 修复了集群解绑并重新绑定后，在 ArgoCD 中 destionation 中的 cluster 和 namespace 丢失的问题
+- **修复** 修复了在更新 namespace 的 label 导致 namespace 和 workspace 绑定关系丢失的问题
+- **修复** 修复了在完成流水线后，同步 jenkins 的 config 到数据库时，trigger 转换的错误
+- **修复** 修复了因为集群的 kubeconfig 变更导致的 ArgoCD cluster 和 jenkins 中 kubeconfig 类型的 credential 不同步的问题
+- **修复** 修复了仓库列表出现的无序和分页问题
+- **修复** 修复了 from-jar 上传超过 32M 文件失败的问题
+- **优化** 优化了应用接入服务网格流程
+
 ## v0.9
 
 发布日期：2022-11-18
