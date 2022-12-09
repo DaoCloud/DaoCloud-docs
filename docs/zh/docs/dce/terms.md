@@ -113,13 +113,18 @@
     编写可以在 Kubernetes 集群上运行的应用的开发人员。
     应用开发者专注于应用的某一部分。他们工作范围的大小有明显差异。
 
+- App, Application, 应用
+
+    各种容器化服务运行所在的一层。
+
 - Audit log, 审计日志
 
     [审计日志](../ghippo/04UserGuide/03AuditLog.md)提供了对系统中对象所做更改的历史记录。
 
-- App, Application, 应用
+- Authorization, 授权
 
-    各种容器化服务运行所在的一层。
+    [授权](../ghippo/04UserGuide/01UserandAccess/iam.md)指将用户完成具体工作所需的权限授予用户，授权通过系统角色或自定义角色的权限生效。
+    用户获得具体的权限后，可以对资源或服务进行操作。
 
 - Autoscaling, 自动扩缩
 
@@ -897,6 +902,10 @@
     您可以使用 Finalizer 控制资源的垃圾回收。
     例如，您可以定义一个 Finalizer，在删除目标资源前清理相关资源或基础设施。
 
+- Folder, 文件夹, 层级
+
+    为了满足企业内各个部门的分支划分，DCE 引入了[层级](../ghippo/04UserGuide/02Workspace/folders.md)的概念，通常层级对应着不同的部门，每个层级可以包含一个或多个工作空间。
+
 ### G
 
 - Garbage Collection, 垃圾回收
@@ -997,6 +1006,11 @@
     该选项仅适用于没有配置 hostNetwork 的 Pod。
 
 ### I
+
+- IAM, Identity and access management, 用户与访问控制
+
+    在全局管理中，[IAM](../ghippo/04UserGuide/01UserandAccess/iam.md) 是用户与访问控制的简称，管理员被称为 IAM Admin，拥有该模块的最高权限。
+    被赋予 IAM Admin 的用户（用户组）将拥有用户与访问控制的全部且最高权限。
 
 - Image, 镜像
 
@@ -1467,6 +1481,13 @@
 
 ### P
 
+- Permission, 权限
+
+    [权限](../ghippo/04UserGuide/01UserandAccess/iam.md)指是否允许用户对某种资源执行某种操作。
+    为了降低使用门槛，DCE 采用 RBAC 模型将权限聚合成一个个角色，管理员只需要将角色授权给用户，该用户就一次性得到了该角色下聚合的一组权限。
+
+    默认情况下，管理员创建的 IAM 用户没有任何角色权限，需要对其单独授予角色或将其加入用户组并给用户组授予角色，才能使得用户获得对应的角色权限，这一过程称为授权。授权后，用户就可以基于被授予的角色权限对平台资源进行操作。
+
 - Persistent Volume Claim, PVC, 持久卷申领
 
     申领在持久卷中定义的存储资源，以便可以将其挂载为容器中的卷。
@@ -1651,6 +1672,16 @@
 
     ReplicationController 已被弃用。请参阅 Deployment 执行类似功能。
 
+- Resource, 资源
+
+    资源泛指 DCE 平台上通过各个子模块创建的资源，是完成授权的具体数据。
+    通常资源描述一个或多个操作对象，每个子模块拥有其各自的资源和对应的资源定义详情，如集群、Namesapce、网关等。
+
+    资源的拥有者是主账号 Super Admin。
+    Super Admin 具有在各子模块创建/管理/删除资源的权限。
+    普通用户在没有授权的情况下，不会自动拥有资源的访问权限，需要 Super Admin 进行授权。
+    工作空间支持跨子模块授权用户（用户组）对于资源的访问权限。
+
 - Resource limit, 资源限制值
 
     限制值是实例的可用资源上限。请求值小于限制值。
@@ -1673,6 +1704,19 @@
     通过这种资源模板可以统一管理[多云服务](../kairship/06resource/service.md)、
     [多云命名空间](../kairship/06resource/ns.md)、
     [多云配置项](../kairship/06resource/configmap.md)和[多云密钥](../kairship/06resource/secret.md)。
+
+- Role, 角色
+
+    [角色](../ghippo/04UserGuide/01UserandAccess/Role.md)是连接用户与权限的桥梁，
+    一个角色对应一组权限，不同角色具有不同的权限。向用户授予某角色，即授予该角色所包含的所有权限。
+    全局管理中有两种角色：
+
+    - 预定义角色：由系统创建，用户只能使用不能修改，每个子模块都有一个管理员 Admin 角色。
+    - 自定义角色：用户自主创建、更新和删除，自定义角色中的权限由用户自己维护。
+      同时因为全局管理汇聚了多个子模块，各子模块也拥有相应的管理员角色，例如：
+        - IAM Admin：管理用户与访问控制，即管理用户/用户组以及授权
+        - Workspace Admin：管理层级及工作空间的权限，仅此权限可以创建层级
+        - Audit Admin：管理审计日志
 
 - Rolling update, 滚动更新
 
@@ -2029,6 +2073,16 @@
     由 Kubernetes 系统生成、用来唯一标识对象的字符串。
 
     在 Kubernetes 集群的整个生命周期中创建的每个对象都有一个不同的 UID，它旨在区分类似实体的历史事件。
+
+- User, 用户
+
+    [用户](../ghippo/04UserGuide/01UserandAccess/User.md)是发起操作的主体，每个用户都有唯一的 ID，并被授予不同的角色。
+    默认创建的 IAM 用户没有任何权限，需要将其加入用户组，授予角色或策略，才能让用户获得对应的权限。
+
+    用户以用户名登录 DCE，按照被授予的权限操作平台资源和服务。
+    所以用户是资源归属的主体，对其拥有的资源具有相应权限。
+
+    用户可以在个人中心修改用户信息，设置密码、访问密钥和 UI 语言。
 
 - User namespace, 用户命名空间
 
