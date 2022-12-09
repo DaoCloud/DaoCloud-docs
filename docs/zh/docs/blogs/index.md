@@ -7,6 +7,10 @@ hide:
 
 本页汇总 DCE 5.0 相关的博客和公众号文章，默认按字母和拼音排序。
 
+- [保姆式安装 DCE 5.0 社区版](./dce5-install1209.md)
+
+    这是从 0 到 1 安装 DCE 5.0 社区版的真实示例，包含了 K8s 集群、依赖项、网络、存储等细节及更多注意事项。
+
 - [CloudTTY：下一代云原生开源 Cloud Shell](https://mp.weixin.qq.com/s/sFjZmvumQNbP6gnlnpglWQ)
 
     CloudTTY 是一个云原生开源项目， 基于 kubernetes 之上，解决了一系列集群之上的 “网页命令行” 权限控制下的功能需求。

@@ -561,6 +561,7 @@ nav:
       - 博客文章索引: blogs/index.md
       - DaoCloud 是 K8s 资深认证服务商: blogs/kcsp.md
       - DCE 开发背景: blogs/blog00.md
+      - 保姆式安装 DCE 5.0 社区版: blogs/dce5-install1209.md
       - 5.0 容器管理能力介绍: blogs/kpanda.md
       - 5.0 资源管理能力介绍: blogs/resource.md
       - 5.0 应用工作台能力介绍: blogs/amamba.md

@@ -66,6 +66,11 @@ click free "https://docs.daocloud.io/dce/license0/"
 click ask "https://docs.daocloud.io/install/intro/#_4"
 ```
 
+!!! tip
+
+    - 上图中的蓝色文字可点击跳转
+    - 可参考[保姆式安装 DCE 5.0](../blogs/dce5-install1209.md)
+
 ### 商业版安装流程
 
 DCE 5.0 商业版的安装流程如下图：
