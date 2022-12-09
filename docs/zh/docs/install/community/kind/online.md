@@ -16,7 +16,7 @@
 1. 下载 kind 的二进制文件包。
 
     ```shell
-    curl -Lo ./kind https://qiniu-download-public.daocloud.io/Kind/v0.17.0/kind-linux-amd64
+    curl -Lo ./kind https://qiniu-download-public.daocloud.io/kind/v0.17.0/kind-linux-amd64
     ```
 
     为 `kind` 添加可执行权限：

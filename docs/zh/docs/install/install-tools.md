@@ -16,6 +16,8 @@
     - kubectl
     - yq
     - minio client
+    
+    安装过程中如果您的环境存在一些工具且版本低于我们定义的版本，会将对应工具进行强制更新替换。
 
 ## 在线安装依赖项
 
@@ -36,13 +38,13 @@
     - 对于社区版
 
         ```bash
-        sudo bash install_prerequisite.sh online community
+        bash install_prerequisite.sh online community
         ```
 
     - 对于商业版
 
         ```bash
-        sudo bash install_prerequisite.sh online full
+        bash install_prerequisite.sh online full
         ```
 
 ## 离线安装依赖项
@@ -82,13 +84,13 @@
     - 对于社区版
 
         ```bash
-        sudo bash install_prerequisite.sh offline community
+        bash install_prerequisite.sh offline community
         ```
 
     - 对于商业版
 
         ```bash
-         sudo bash install_prerequisite.sh offline full
+        bash install_prerequisite.sh offline full
         ```
 
 接下来就可以安装 DCE 5.0 了。
