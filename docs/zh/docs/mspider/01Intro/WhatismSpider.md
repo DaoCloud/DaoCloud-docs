@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 什么是服务网格
 
 服务网格是基于 Istio 开源技术构建的面向云原生应用的下一代服务网格。
@@ -10,20 +15,7 @@ DCE 5.0 的服务网格兼容社区原生 Istio 开源服务网格，提供原�
 服务网格作为 DCE 5.0 产品的体系一员，无缝对接[容器管理](../../kpanda/03ProductBrief/WhatisKPanda.md)平台，可以为用户提供开箱即用的上手体验，
 并作为基础设施为[微服务引擎](../../skoala/intro/features.md)提供容器微服务治理支持，方便用户通过单一平台对各类微服务系统做统一管理。
 
-## 部署方法
-
-依次执行以下命令进行部署。
-
-```console
-export VERSION=v0.8.4 # 修改为实际部署的版本。
-helm repo add mspider-release https://release.daocloud.io/chartrepo/mspider
-helm repo update
-helm upgrade --install --create-namespace -n mspider-system mspider mspider-release/mspider --version=${VERSION}
-```
-
-[申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }
-
-## 服务网格学习路径
+服务网格的学习路径如下：
 
 ```mermaid
 flowchart TD
@@ -65,6 +57,13 @@ flowchart TD
     security -.-> request[请求身份认证]
     security -.-> authorize[授权策略]
 
+    classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
+    classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
+    classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+
+    class managed,private,external,global,namespace,workload plain
+    class install,service,gateway,traffic,watch,upgrade,security,entry,virtual,target,gaterule,peer,request,authorize,cluster cluster
+
     click install "https://docs.daocloud.io/mspider/install/"
     click managed "https://docs.daocloud.io/mspider/03UserGuide/servicemesh/create-mesh/"
     click private "https://docs.daocloud.io/mspider/03UserGuide/servicemesh/create-mesh/"
@@ -87,3 +86,7 @@ flowchart TD
     click request "https://docs.daocloud.io/mspider/03UserGuide/05Security/request/"
     click authorize "https://docs.daocloud.io/mspider/03UserGuide/05Security/authorize/"
 ```
+
+[下载 DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }
+[申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

@@ -28,9 +28,9 @@
         - kubectl ≥ 1.22.0
         - yq ≥ 4.27.5
 
-## 在线安装
+## 下载和安装
 
-1. 在 K8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件。
+1. 在 K8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../../download/dce5.md)）。
 
     ```shell
     # 假定 VERSION 为 v0.3.28
@@ -55,8 +55,8 @@
         kind: ClusterConfig
         spec:
           loadBalancer: metallb
-          istioGatewayVip: 10.6.229.10/32     # 这是 Istio gateway 的 VIP，也会是DCE 5.0的控制台的浏览器访问IP
-          insightVip: 10.6.229.11/32          # 这是 Global 集群的 Insight-Server 采集所有子集群的监控指标的网络路径所用的 VIP
+          istioGatewayVip: 10.6.229.10/32 # Istio gateway 的 VIP，也是 DCE 5.0 控制台的浏览器访问 IP
+          insightVip: 10.6.229.11/32      # 全局服务集群的 Insight-Server 采集所有子集群监控指标的网络路径所用的 VIP
         ```
 
     - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 K8s 负载均衡能力, 配置文件范例如下:
@@ -80,7 +80,7 @@
 
 4. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用 **默认的账户和密码（admin/changeme）** 探索全新的 DCE 5.0 啦！
 
-    ![安装成功](../../images/wechat.png)
+    ![安装成功](../../images/success.png)
 
     !!! success
 

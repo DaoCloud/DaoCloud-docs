@@ -12,7 +12,7 @@ hide:
 
 | 版本名称                      | 文件大小 | 安装包                                                                                                         | 更新日期   |
 | ----------------------------- | -------- | -------------------------------------------------------------------------------------------------------------- | ---------- |
-| offline-community-v0.3.28.tar | 5.8 GB   | [下载](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.28.tar) | 2022-11-18 |
+| offline-community-v0.3.28.tar | 5.8 GB   | [:arrow_down: 下载](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.28.tar) | 2022-11-18 |
 
 ## 校验
 
@@ -36,7 +36,8 @@ offline-community-v0.3.28.tar: OK
 tar -zxvf offline-community-v0.3.28.tar
 ```
 
-然后参阅[社区版安装流程](../../install/community/k8s/online.md#_2)进行安装。成功安装之后请[申请免费社区体验](../../dce/license0.md)。
+然后参阅[社区版安装流程](../../install/intro.md#_2)进行安装。
+如果是初次安装或遗忘了许可密钥，请[申请免费社区体验](../../dce/license0.md)。
 
 ## 模块
 
@@ -50,5 +51,5 @@ DCE 5.0 社区版默认包含以下模块：
 
 ## 更多
 
-- [在线文档](https://docs.daocloud.io/dce/what-is-dce/)
+- [在线文档](../../dce/what-is-dce.md)
 - [报告 bug](https://github.com/DaoCloud/DaoCloud-docs/issues)

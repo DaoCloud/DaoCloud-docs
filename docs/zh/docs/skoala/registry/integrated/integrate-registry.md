@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 接入注册中心
 
 注册中心支持接入 [Nacos 注册中心](../../../reference/basic-knowledge/registry.md#nacos-注册中心)、[Eureka 注册中心](../../../reference/basic-knowledge/registry.md#eureka-注册中心)、[Zookeeper 注册中心](../../../reference/basic-knowledge/registry.md#zookeeper-注册中心)、[Kubernetes 注册中心](../../../reference/basic-knowledge/registry.md#kubernetes-注册中心)、[Mesh 注册中心](../../../reference/basic-knowledge/registry.md#service-mesh-注册中心)。

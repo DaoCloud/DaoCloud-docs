@@ -10,22 +10,53 @@
 - Workspace Editor 对应 Namespace Editor
 - Workspace Viewer 对应 Namespace Viewer
 
-比如用户 A 是工作空间 Workspace01 的管理员拥有 Workspace Admin 角色，
-将命名空间 Namespace 01 和 命名空间 Namespace 02 绑定到 Workspace01 后，
-用户 A 将自动拥有 Namespace 01 和 命名空间 Namespace 02 的管理权限，
-成为 Namespace 01 和 命名空间 Namespace 02 的 Namespace Admin 角色。
+以下是一个例子：
+
+| 用户   | 工作空间    | 角色            |
+| ------ | ----------- | --------------- |
+| 用户 A | Workspace01 | Workspace Admin |
+
+将一个命名空间绑定到工作空间后：
+
+| 用户   | 所属范畴    | 角色            |
+| ------ | ----------- | --------------- |
+| 用户 A | Workspace01 | Workspace Admin |
+|        | Namespace01 | Namespace Admin |
 
 ## 实现方案
 
 将来自不同集群的不同命名空间绑定到同一工作空间（租户），给工作空间（租户）下的成员使用流程如图。
 
-![绑定流程](../../images/across01.png)
+```mermaid
+graph TB
 
-提示：一个命名空间只能被一个工作空间绑定。
+preparews[准备工作空间] --> preparens[准备命名空间]
+--> judge([命名空间是否与绑定到其他工作空间])
+judge -.未绑定.->nstows[将命名空间绑定到工作空间] --> wsperm[管理工作空间访问权限]
+judge -.已绑定.->createns[创建新的命名空间]
+
+classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
+classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
+classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+
+class preparews,preparens,createns,nstows,wsperm cluster;
+class judge plain
+
+click preparews "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus/#_3"
+click preparens "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus/#_4"
+click nstows "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus/#_5"
+click wsperm "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus/#_6"
+click createns "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus/#_4"
+```
+
+!!! tip
+
+    一个命名空间只能被一个工作空间绑定。
 
 ## 准备工作空间
 
-工作空间是为了满足多租户的使用场景，基于集群、集群命名空间、网格、网格命名空间、多云、多云命名空间等多种资源形成相互隔离的资源环境，工作空间可以映射为项目、租户、企业、供应商等多种概念。
+工作空间是为了满足多租户的使用场景，基于集群、集群命名空间、网格、网格命名空间、多云、多云命名空间等多种资源形成相互隔离的资源环境。
+工作空间可以映射为项目、租户、企业、供应商等多种概念。
 
 1. 使用 admin/folder admin 角色的用户登录 Web 控制台，点击左侧导航栏底部的`全局管理`。
 
@@ -43,9 +74,10 @@
 
 ![弹出菜单绑定](../../images/across02.png)
 
-## 准备一个命名空间
+## 准备命名空间
 
-集群命名空间是更小的资源隔离单元，将其绑定到工作空间后，工作空间的成员就可以进行管理和使用。
+命名空间是更小的资源隔离单元，将其绑定到工作空间后，工作空间的成员就可以进行管理和使用。
+
 参照以下步骤准备一个还未绑定到任何工作空间的命名空间。
 
 1. 点击左侧导航栏底部的`容器管理`。

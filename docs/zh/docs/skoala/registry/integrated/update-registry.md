@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 更新注册中心配置
 
 微服务引擎目前仅支持更新 Nacos/Zookeeper/Eureka 注册中心的配置。

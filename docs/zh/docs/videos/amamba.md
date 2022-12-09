@@ -26,5 +26,12 @@
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/createservice-gitrepo.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
+## 基于 Argo CD 实现持续部署
+
+参阅[创建 Argo CD 应用](../amamba/03UserGuide/gitops/create-argo-cd.md)文档页面。
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gitops.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

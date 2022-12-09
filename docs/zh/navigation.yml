@@ -5,25 +5,24 @@ nav:
       - DCE 产品介绍:
           - 什么是 DCE 5.0: dce/what-is-dce.md
           - K8s 认证服务商: dce/kcsp.md
-          - 适用场景: dce/scenario.md
-          - 平台功能: dce/features.md
-          - 产品优势: dce/whyus.md
           - 申请社区免费体验: dce/license0.md
+          - 功能和优势: dce/features.md
+          - 适用场景: dce/scenario.md
+          - 云原生词汇: dce/terms.md
       - 安装:
-          - 安装依赖项: install/install-tools.md
-          - 安装 DCE 5.0 社区版: 
+          - 安装简介: install/intro.md
+          - 安装社区版: 
             - 资源规划: install/community/resources.md
-            - 使用 kind 集群安装: 
-              - 在线安装: install/community/kind/online.md
-            - 使用标准 K8s 集群安装: 
-              - 在线安装: install/community/k8s/online.md
-              - 离线安装: install/community/k8s/offline.md
-          - 离线安装 DCE 5.0 商业版:
+            - kind 集群在线安装: install/community/kind/online.md
+            - 标准 K8s 集群在线安装: install/community/k8s/online.md
+            - 标准 K8s 集群离线安装: install/community/k8s/offline.md
+          - 安装商业版:
               - 部署规划: install/commercial/deploy-plan.md
-              - 使用场景: install/commercial/scenarios.md
-              - 文件下载: install/commercial/download-file.md
-              - 集群配置文件说明: install/commercial/clusterconfig.md
-              - 开始安装: install/commercial/start-install.md
+              - 下载文件包: install/commercial/download-file.md
+              - 编辑 clusterConfig.yaml: install/commercial/clusterconfig.md
+              - 离线安装步骤: install/commercial/start-install.md
+              - 使用场景示例: install/commercial/scenarios.md
+          - 安装依赖项: install/install-tools.md
           - 卸载: install/uninstall.md
       - 容器管理:
           - 介绍:
@@ -48,7 +47,7 @@ nav:
               - 污点管理: kpanda/07UserGuide/Nodes/Taints.md
               - 节点调度: kpanda/07UserGuide/Nodes/schedule.md
               - 节点详情: kpanda/07UserGuide/Nodes/node-details.md
-              - 标签与注解: kpanda/07UserGuide/Nodes/labels&annotations.md
+              - 标签与注解: kpanda/07UserGuide/Nodes/labels-annotations.md
           - 工作负载:
               - 创建 Deployment: kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md
               - 创建 StatefulSet: kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md
@@ -129,9 +128,11 @@ nav:
               - 访问密钥: ghippo/04UserGuide/06PersonalCenter/Password.md
               - 语言设置: ghippo/04UserGuide/06PersonalCenter/Language.md
           - 权限说明: 
+              - 容器管理权限说明: kpanda/07UserGuide/Permissions/PermissionBrief.md
               - 微服务引擎权限说明: ghippo/permissions/skoala.md
               - 应用工作台权限说明: ghippo/permissions/amamba.md
               - 服务网格权限说明: ghippo/permissions/mspider.md
+              - 数据服务权限说明: ghippo/permissions/mcamel.md
           - 最佳实践:
               - 工作空间最佳实践: ghippo/04UserGuide/02Workspace/wsbp.md
               - 工作空间绑定命名空间: ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus.md
@@ -152,9 +153,9 @@ nav:
               - Release Notes: insight/03ProductBrief/releasenote.md
           - 快速入门:
               - 安装 Insight: 
-                - insight/06UserGuide/01quickstart/install/installagent.md
-                - 获取数据上传地址: insight/06UserGuide/01quickstart/install/gethosturl.md
-                - 升级注意事项: insight/06UserGuide/01quickstart/install/upgradenote.md
+                - insight/06UserGuide/01quickstart/installagent.md
+                - 获取数据上传地址: insight/06UserGuide/01quickstart/gethosturl.md
+                - 升级注意事项: insight/06UserGuide/01quickstart/upgradenote.md
               - OTel 赋能应用可观测性: 
                 - insight/06UserGuide/01quickstart/otel/otel.md
                 - Operator 无侵入增强应用: insight/06UserGuide/01quickstart/otel/operator.md
@@ -191,7 +192,7 @@ nav:
               - 导入自定义仪表盘: insight/09FAQs/importdashboard.md
               - 日志采集排障指南: insight/09FAQs/debuglog.md
               - 链路采集排障指南: insight/09FAQs/debugtrace.md
-              - 在 DCE4.0 中安装 insight-agent: insight/09FAQs/installagentindce.md
+              - DCE 4.0 安装 insight-agent: insight/09FAQs/installagentindce.md
       - 应用工作台:
           - 介绍:
               - 什么是应用工作台？: amamba/01ProductBrief/WhatisAmamba.md
@@ -360,7 +361,7 @@ nav:
           - 常见问题: mspider/07faq.md
       - 云原生网络:
           - 介绍:
-              - 云原生网络方案: network/intro/what-is-net.md
+              - 什么是云原生网络: network/intro/what-is-net.md
               - 背景: network/intro/background.md
               - 挑战: network/intro/challenges.md
               - 网络组件: network/modules/modules.md
@@ -406,8 +407,9 @@ nav:
               - 使用: network/modules/spiderpool/usage.md
               - 配置参考: network/modules/spiderpool/config.md
               - 常用命令: network/modules/spiderpool/command.md
-      - 中间件:
-          - 中间件介绍: middleware/midware.md
+      - 中间件数据服务:
+          - 数据服务介绍: middleware/midware.md
+          - 数据服务版本适配: middleware/adaptation-k8s.md
           - Elasticsearch 搜索服务:
               - 什么是 Elasticsearch: middleware/elastic-search/intro/what.md
               - 功能说明: middleware/elastic-search/intro/features.md
@@ -531,17 +533,14 @@ nav:
             - kangaroo/integrate.md
             - 镜像空间绑定工作空间: kangaroo/bind-to-ws.md
             - 创建镜像空间: kangaroo/create-registry.md
-      - Release Notes:
-          - release/rn5.0.md
       - 通用参考:
-          - 术语表: reference/terms.md
-          - 基础知识:
-              - 云原生网关: reference/basic-knowledge/gateway.md
-              - 微服务: reference/basic-knowledge/microservice.md
-              - 注册中心: reference/basic-knowledge/registry.md
-              - 虚拟服务: reference/basic-knowledge/virtual-service.md
-              - 可观测性: reference/basic-knowledge/insight.md
-              - 流量治理: reference/basic-knowledge/traffic-control.md
+        - Release Notes: release/rn5.0.md
+        - 云原生网关: reference/basic-knowledge/gateway.md
+        - 微服务: reference/basic-knowledge/microservice.md
+        - 注册中心: reference/basic-knowledge/registry.md
+        - 虚拟服务: reference/basic-knowledge/virtual-service.md
+        - 可观测性: reference/basic-knowledge/insight.md
+        - 流量治理: reference/basic-knowledge/traffic-control.md
       - 故障排查:
           - ingressgateway 无法启动: reference/troubleshooting/ghippo01.md
           - 登录报错 401 或 403: reference/troubleshooting/ghippo02.md
@@ -559,13 +558,15 @@ nav:
       - 中间件: videos/mcamel.md
       - 云原生网络: videos/network.md
   - 博客:
-      - DaoCloud 是 K8s 资深认证服务商: blogs/kcsp.md
-      - DCE 开发背景: blogs/blog00.md
-      - 5.0 容器管理能力介绍: blogs/kpanda.md
-      - 5.0 资源管理能力介绍: blogs/resource.md
-      - 5.0 应用工作台能力介绍: blogs/amamba.md
-      - 5.0 多云编排能力介绍: blogs/kairship.md
-      - 5.0 服务网格能力介绍: blogs/mspider.md
+      - 博文索引: blogs/index.md
+      - 20221209 | 保姆式安装 DCE 社区版: blogs/dce5-install1209.md
+      - 20221105 | K8s 资深认证服务商: blogs/kcsp.md
+      - 20221026 | 容器管理能力介绍: blogs/kpanda.md
+      - 20221018 | 资源管理能力介绍: blogs/resource.md
+      - 20220925 | 应用工作台能力介绍: blogs/amamba.md
+      - 20220808 | 多云编排能力介绍: blogs/kairship.md
+      - 20220708 | 服务网格能力介绍: blogs/mspider.md
+      - 20220606 | DCE 开发背景: blogs/blog00.md
   - 开源社区:
       - DaoCloud 开源生态: community/index.md
       - CloudTTY: community/cloudtty.md
