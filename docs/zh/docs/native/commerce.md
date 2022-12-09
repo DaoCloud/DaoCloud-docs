@@ -13,7 +13,7 @@
 
     该解决方案是 Aqua 云原生应用保护平台的一部分，提供的功能包括：代码扫描、CI/CD 态势管理、流水线安全管理、优化 SBOM 功能、评估开源代码的健康状况和口碑情况。
 
-- [**AWS 应用配置工具 AWS AppConfig 推出一个用于容器运行时的代理，简化 feature flag 和运行时的配置**](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
+- [AWS 应用配置工具 AWS AppConfig 推出一个用于容器运行时的代理，简化 feature flag 和运行时的配置](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
 
     AKS 等平台的用户可以使用 AWS AppConfig Agent 管理容器应用配置数据的检索和缓存，以及处理轮询和缓存逻辑等。
     feature flag 和运行配置功能允许用户无需部署新代码即可发布新的功能。
@@ -79,7 +79,7 @@
 
     更新内容：集群再平衡后可以配置最小节点数、为 EKS 用户增加使用存储优化节点进行自动缩放的支持、节点模板支持备选（Fallback）功能、增加对 EKS 和 GKE 集群的 ARM 节点支持。
 
-- [**Chainguard 云原生供应链安全平台  Chainguard Enforce 更新**](https://www.chainguard.dev/unchained/chainguard-enforce-announces-new-software-signing-capability)
+- [Chainguard 云原生供应链安全平台  Chainguard Enforce 更新](https://www.chainguard.dev/unchained/chainguard-enforce-announces-new-software-signing-capability)
 
     更新内容：提供基于 Sigstore 的无密钥签名模式、增加一个开箱即用的安全策略库、支持用户通过其 Gitlab 账户登录、支持 CloudEvents、支持细粒度的 Kubernetes 工作负载对象的策略、增强大规模集群用户的稳定性。
 
@@ -259,7 +259,7 @@
 
     Service Mesh Manager 基于 Istio 构建，为微服务团队提供集中的安全控制和流量管理策略配置。Network Policy Manager 基于 Cilium 构建，提供集中管理以及 pod 和命名空间通信的可见性，以隔离边界并减少集群的横向攻击面。
 
-- [**Red Hat 容器镜像仓库 Red Hat Quay v3.8.0 发布**](https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html/red_hat_quay_release_notes/index)
+- [Red Hat 容器镜像仓库 Red Hat Quay v3.8.0 发布](https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html/red_hat_quay_release_notes/index)
 
     该版本新特性：支持 IPv6 单栈和 IPv4/IPv6 双栈、用户必须拥有自签名的证书才能使用 SAN（Subject Alternative Name）、Quay 管理员可以使用存储配额来限制缓存的大小、新用户类型“受限用户”、超级用户经配置可以对系统中的所有内容拥有完全控制权。
 
@@ -305,7 +305,7 @@
 
     该版本主要新特性：支持独立部署，实现与底层平台的解耦；解耦微服务框架和性能监控能力两个模块；新增链路组件拓扑图；增加对无损流量上下线功能的支持；新增主备拓扑能力，拓扑图可视化展示主备关系。
 
-- [**数澈软件发布 SEAL 0.3：国内首个全链路软件供应链安全管理平台**](https://mp.weixin.qq.com/s/H_bjMbH_7DJEVOpvzGEMoQ)
+- [数澈软件发布 SEAL 0.3：国内首个全链路软件供应链安全管理平台](https://mp.weixin.qq.com/s/H_bjMbH_7DJEVOpvzGEMoQ)
 
     该版本新特性：支持集成任意 OCI 镜像仓库，扫描其中的容器镜像；支持集成任意 Kubernetes 集群，扫描其中的工作负载配置及镜像；支持扫描第三方软件物料清单文件；支持在任意 CI/CD 流水线中集成 SEAL 的安全扫描功能；能够聚合管理全链路各个阶段的资源提供全链路安全洞察；支持自动生成多策略修复建议、漏洞优先级排序、因时制宜处理安全问题。
 
