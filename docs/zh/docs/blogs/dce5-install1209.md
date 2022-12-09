@@ -100,9 +100,9 @@ last_updated:
 
 开始安装容器运行时、K8s 系统组件，初始化 Master 节点，加入 Worker 节点，安装网络 CNI。
 
-### 安装容器运行时 (CR)
+### 安装容器运行时
 
-为了后续方便，同时安装了 Docker 和 containerd 两个容器运行时。
+本例为了后续方便拉镜像，同时安装了 Docker 和 containerd，DCE 5.0 实际用的是 containerd。
 
 1. 安装 Docker 的软件源
 
@@ -113,7 +113,7 @@ last_updated:
         https://download.docker.com/linux/centos/docker-ce.repo
     ```
 
-1. 安装 Docker 和 containerd.io
+1. 安装 Docker 和 containerd
 
     ```bash
     sudo yum -y install docker-ce docker-ce-cli containerd.io
