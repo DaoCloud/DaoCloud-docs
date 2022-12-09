@@ -35,6 +35,12 @@
 
     [Arbiter](https://github.com/kube-arbiter/arbiter) 聚合各种类型的数据，用户可以基于这些数据管理、调度或扩展集群中的应用程序。它可以帮助 Kubernetes 用户了解和管理集群中部署的资源，进而提高企业应用程序的资源利用率和运行效率。
 
+- [Argo 成为 CNCF 毕业项目](https://mp.weixin.qq.com/s/l8veOjEZV4xlrtqdCWPljg)
+
+    [Argo](https://github.com/argoproj) 让团队能够使用 GitOps，在 Kubernetes 上采用声明方式部署和运行云原生应用和工作流。
+    Argo 的采用率自其成为 CNCF 孵化项目以来增长了 250%，并于今年 7 月通过了第三方安全审计，
+    已经成为云原生技术堆栈和 GitOps 的重要组成部分。
+
 - [Argo CD GitOps 工具 v2.5.0 发布（CNCF 项目）](https://github.com/argoproj/argo-cd/releases/tag/v2.5.0)
 
     该版本主要新特性：支持基于集群过滤应用程序、添加 Prometheus 健康检查、添加通知 API、支持 CLI 的自定义应用程序操作、增加对默认容器注释的支持、限制 redis 的出口规则、添加 Gitlab PR 生成器 webhook、新增 ApplicationSet Go 模板、新增 ArgoCD CLI 本地模板。
@@ -108,6 +114,12 @@
 
     [Cloud Custodian](https://github.com/cloud-custodian/cloud-custodian)是一个云治理即代码工具，允许用户通过代码来管理和自动执行云安全、合规性、运营和成本优化的策略，包括编写管理 Kubernetes 资源的策略。与其他基于云的治理工具相比，提供了一个非常简单的 DSL 来编写策略及其跨云平台的一致性。
 
+- [Cloud Native App Initializer：阿里巴巴正式开源云原生应用脚手架](https://mp.weixin.qq.com/s/5hsrCfAdO7gBOJcT6fLpbg)
+
+    [云原生应用脚手架](https://github.com/alibaba/cloud-native-app-initializer)基于 Spring 开源的 Initializr 项目构建。
+    不仅能够帮助用户管理依赖，还能帮助用户生成测试或者可以直接使用的代码片段，用户创建完工程就可以进行测试，测试完就可以基于示例代码进行项目开发。
+    因此，基于云原生应用脚手架构建项目仅需完成：新建工程和运行测试即可。
+
 - [Cluster API 声明式集群生命周期管理工具 v1.3.0 发布（CNCF 项目）](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.3.0)
 
     该版本主要新特性：支持自动更新由Kubeadm 控制平面提供商提供的机器证书、可以从新的容器镜像注册中心 registry.k8s.io 发布和消费集群 API 镜像、允许在控制平面节点上创建没有污点的集群、clusterctl 现在可以管理 IPAM 和 RuntimeExtension 提供者。
@@ -129,6 +141,10 @@
 - [Contour Kubernetes ingress 控制器 v1.22.0 发布（CNCF 项目）](https://github.com/projectcontour/contour/releases/tag/v1.22.0)  
 
     该版本主要新特性：支持 Gateway API v0.5.0、允许在单一的路由中为一组条件配置一个直接响应、可以为用户证书验证启用撤销检查、合并访问记录和 TLS 密码套件验证。
+
+- [Cortex Prometheus 长期存储方案 v1.14 发布](https://github.com/cortexproject/cortex/releases/tag/v1.14.0)
+
+    该版本主要新特性：移除对块存储的支持、实验性地支持垂直查询分片、启用 PromQL @修改器、可以使用 OTel 收集器将追踪信息发送到多个目的地、多项性能改进和问题修复。
 
 - [Cortex 分布式 Prometheus 服务 v1.13.0 发布（CNCF 项目）](https://github.com/cortexproject/cortex/releases/tag/v1.13.0)  
 
@@ -369,6 +385,10 @@
 - [KubeKey 集群部署工具 v2.3.0 发布](https://github.com/kubesphere/kubekey/releases/tag/v2.3.0)
 
     该版本主要新特性：添加 kubelet pod pid 限制、使用 Jenkins Pipeline 替代 GitHub Actions、在创建集群或添加节点时增加安全增强命令、删除集群或节点时清理 vip、支持 kube-vip BGP 模式、支持清理 CRI、支持  kube-vip、支持 k8s 最近发布的补丁版本。
+
+- [Kubernetes v1.26 发布](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.26.md)
+
+    该版本主要新特性：允许用户跨命名空间从卷快照中配置卷、允许使用 CEL 进行 Admission Control、改进拓扑管理器中的多 numa 对齐、为 Pod 调度增加调度就绪的机制、移除 CRI v1alpha2、Auth API 允许获取 User 属性、减少 Kubelet 在 PLEG 中的 CPU 消耗。
 
 - [Kubernetes 1.26 抢先看](https://sysdig.com/blog/kubernetes-1-26-whats-new/)
 
@@ -637,6 +657,10 @@
 - [Serverless Devs 进入 CNCF 沙箱，成首个入选的 Serverless 工具项目](https://mp.weixin.qq.com/s/ICVDO3U5Ea1DzP3LFJq8mQ)
 
     [Serverless Devs](https://github.com/Serverless-Devs/Serverless-Devs) 由阿里云开源，致力于为开发者提供强大的工具链体系。借此，开发者不仅可以一键体验多云 Serverless 产品，极速部署 Serverless 项目，还可以在 Serverless 应用全生命周期进行项目管理，与其他工具/平台集成，提升研发运维效能。
+
+- [Skywalking 应用性能监控系统 v9.3.0 发布](https://github.com/apache/skywalking/releases/tag/v9.3.0)
+
+    该版本主要新特性：增加指标关联功能、可使用 Sharding MySQL 作为数据库、可视化虚拟缓存和消息队列的性能、使用 Skywalking OpenTelemetry 接收器代替 prometheus-fetcher 插件来抓取 Prometheus 指标。
 
 - [Skywalking 应用性能监控系统 v9.2.0 发布](https://github.com/apache/skywalking/releases/tag/v9.2.0)  
 

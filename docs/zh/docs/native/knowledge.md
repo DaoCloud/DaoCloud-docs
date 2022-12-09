@@ -55,6 +55,16 @@
 
 ### 最佳实践
 
+- [GitOps 软件交付 pipeline 的组件介绍](https://www.weave.works/blog/infographic-gitops-pipeline)
+
+    文章总结了开始使用 GitOps 所需的组件，包括容器平台、Git 仓库、容器镜像仓库、GitOps 代理和构建服务器。
+    以及在扩大规模时可以增加的一些组件，如容器配置自动化、策略引擎、服务网格、渐进式交付工具、事件监控等。
+
+- [万字解读，如何从 0 到 1 构建 K8s 容器平台的 Nginx 负载均衡体系](https://mp.weixin.qq.com/s/Q1DXAEL4ceUcUCQjHAIU5Q)
+
+    文章介绍了从 0 到 1 来构建大规模 Kubernetes 容器平台的 Nginx 负载均衡体系的实战经验，
+    包括体系的业务需求和运维需求、对 Nginx-Controller 组件的要求、架构设计、体验优化、核心考量点。
+
 - [如何管理云原生应用程序的依赖关系](https://mp.weixin.qq.com/s/SipnQhbaa7WlpwORTVLCRw)
 
     文章介绍了一些云原生应用依赖关系管理的最佳实践，例如，使用 depcheck 来检查未使用的依赖关系，使用依赖关系检查脚本检测过期的依赖关系，
@@ -579,6 +589,10 @@
 
 ### 前沿热点
 
+- [OCI 容器与 Wasm 初体验](https://mp.weixin.qq.com/s/4oFErzG65b-0FfpHQB941A)
+
+    文章介绍如何通过配置，让 OCI 运行时运行 Linux 容器和与 WASI 兼容的工作负载。
+
 - [Service Mesh 的下一站是 Sidecarless 吗？](https://mp.weixin.qq.com/s/SF5uN8VHwrqji4xdME4hCg)
 
     尽管 Cilium、Linkerd、Istio 等几大开源社区都在 Sidecarless 领域进行了各自的探索和实践，但是各家在安全性，稳定性，管理成本，资源占用上是各有侧重点的，适应不同的业务场景。
@@ -739,6 +753,17 @@
     该白皮书聚焦微服务治理业务领域，囊括了技术原理、业务场景、解决方案、最佳实践等微服务落地的全流程。
 
 ### 其他
+
+- [Containerd 深度剖析-NRI 篇](https://mp.weixin.qq.com/s/2LrWqOtqIfbIzWG9fv5ANA)
+
+    NRI 是 containerd 中的 CRI 插件，提供一个容器运行时级别的插件框架来管理节点资源。
+    NRI 可用来解决批量计算、延迟敏感性服务的性能问题，以及满足服务 SLA/SLO、优先级等用户需求，
+    比如通过将容器的 CPU 分配同一个 numa node，来保证 numa 内的内存调用。
+    当然除了 numa，还有 CPU、L3 cache 等资源拓扑亲和性。
+
+- [Kubernetes 证书管理系列](https://mp.weixin.qq.com/s/6VC_15V0MlvN-vCN-GwRLQ)
+
+    文章介绍了 Kubernetes 中的证书以及 Kubernetes 证书管理器在实际生产中的作用。然后以证书管理项目 cert-manager 为例，阐释其架构、组件、生态兼容等。
 
 - [2022 年容器生态系统的 9 大趋势洞察](https://mp.weixin.qq.com/s/WNanrbCsdWEuyWP8WvO8UQ)
   
