@@ -4,7 +4,21 @@
 
 > 我们会定期维护，保证所有链接的有效性、新闻的时效性
 
+### 2023-01
+
+- [1 月 2 日 CNCF 即将开启 2023 年技术监督委员会（TOC）选举](https://www.cncf.io/blog/2022/12/01/cncf-toc-elections-for-2023/)
+  
+    TOC 在 2023 年有一个终端用户任命的席位和三个管理委员会任命的席位空缺。
+    选举提名将于明年 1 月开始，候选人应该为 CNCF 社区内的高级工程师，
+    有必要的条件和时间可参与到 TOC 的工作中，并且能够在讨论中保持厂商或项目的中立性。
+
 ### 2022-12
+
+- [Kasten 上线免费的云原生学习网站 KubeCampus.io](https://www.kasten.io/kubernetes/resources/blog/kubecon-detroit-recap-and-introducing-kubecampus)
+  
+    [KubeCampus.io](https://kubecampus.io/)提供了和 Kubernetes 存储、安全、可观测性和应用一致性等相关的学习资源，如课程、白皮书、视频和网络研讨会。
+    注册用户还可以通过撰写博客或发表演讲进行贡献，或是与Kubernetes 社区成员进行交流互动。
+    该网站还提供了实践实验室，用户可以在专家的指导下，体验从安装 Kubernetes 集群到构建应用的全过程。
 
 - [12 月 21 日全球分布式云大会·深圳站议题征集中](https://mp.weixin.qq.com/s/d5j4WawE_fzHuh4ZyRsixg)
 
@@ -80,6 +94,11 @@
     - 分布式操作系统 TOP3
     - 边缘云建设贡献奖
     - 分布式数据库奖等。
+
+- [11 月 29 日国际咨询公司沙利文发布 2022 年云原生应用保护平台雷达报告](https://1665891.fs1.hubspotusercontent-na1.net/hubfs/1665891/Frost%20Radar%20-%20CNAPP%202022%20-%20Aqua%20Security.pdf?_hsmi=235753068&_hsenc=p2ANqtz-_imKv0Cl7-_MGhYeSCsaey9txVoiKZQ7AiKuvvWdshrrAcw1zflc5_x9gLM_kJDXKVTZ8akc0IkBEXC_R-TNBxARFAbA)
+  
+    沙利文根据业务增长和创新指标评价评选出 15 家头部厂商，包括 Aqua Security、Check Point、Lacework、 Sysdig 等。其中，Aqua 被评选为投资或合作首选的标杆企业。
+![protection](./images/protection.png)
 
 - [11 月 29 日 KubeSphere 社区推出播客节目 KubeSphere Talk](https://mp.weixin.qq.com/s/Ud__u2YaUkdSx5yi7dKDHw)
   
