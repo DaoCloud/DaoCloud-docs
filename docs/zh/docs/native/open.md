@@ -37,7 +37,7 @@
 
 - [Apollo 分布式配置管理系统 v2.0.0 发布 （CNCF 项目）](https://github.com/apolloconfig/apollo/releases/tag/v2.0.0)  
 
-    该版本主要新特性：主页上增加公共命名空间列表视图、灰度规则支持在 IP 不固定的情况下的标签匹配、启用命名空间的导出/导入功能、大多数列表都新增 ``DeletedAt``列支持唯一约束索引。
+    该版本主要新特性：主页上增加公共命名空间列表视图、灰度规则支持在 IP 不固定的情况下的标签匹配、启用命名空间的导出/导入功能、大多数列表都新增 `DeletedAt`列支持唯一约束索引。
 
 - [Arbiter：时速云开源基于 K8s 构建的可扩展调度和弹性工具](https://mp.weixin.qq.com/s/xF6Zij2FB2dq3QsZO6ch1g)
 
@@ -116,7 +116,7 @@
 
 - [Chaos Mesh 混沌工程测试平台 v2.2.0 发布（CNCF 项目）](https://github.com/chaos-mesh/chaos-mesh/releases/tag/v2.2.0)
 
-    该版本主要新特性：新增 StatusCheck 功能，用于检查应用程序的健康状况，当应用程序不健康时中止混沌实验；支持使用 ``Chaosctl`` 进行 outbound 强制恢复、在 dashboard 中新增基于流程图创建工作流的界面等。
+    该版本主要新特性：新增 StatusCheck 功能，用于检查应用程序的健康状况，当应用程序不健康时中止混沌实验；支持使用 `Chaosctl` 进行 outbound 强制恢复、在 dashboard 中新增基于流程图创建工作流的界面等。
 
 - [Cilium CNI 插件 v1.12.0 发布（CNCF 项目）](https://github.com/cilium/cilium/releases/tag/v1.12.0)  
 
@@ -160,7 +160,7 @@
 
 - [Contour Kubernetes ingress 控制器 v1.21.0 发布 （CNCF 项目）](https://github.com/projectcontour/contour/releases/tag/v1.21.0)  
     
-    该版本主要新特性：Contour 访问 leader election 资源的 RBAC 转移至命名空间角色；容器镜像现在只在 GitHub 容器注册中心（GHCR）上发布；新增 ``contour gateway-provisioner`` 命令和部署清单，用于动态配置 Gateways。
+    该版本主要新特性：Contour 访问 leader election 资源的 RBAC 转移至命名空间角色；容器镜像现在只在 GitHub 容器注册中心（GHCR）上发布；新增 `contour gateway-provisioner` 命令和部署清单，用于动态配置 Gateways。
 
 - [Cortex Prometheus 长期存储方案 v1.14 发布](https://github.com/cortexproject/cortex/releases/tag/v1.14.0)
 
@@ -176,7 +176,7 @@
 
 - [CRI-O 容器运行时 v1.24.0 发布（CNCF 项目）](https://github.com/cri-o/cri-o/releases/tag/v1.24.0)
 
-    该版本主要新特性：默认阻止没有 CAP_SYS_ADMIN 的容器的 ``unshare`` 系统调用、使用任务集来生成新的 cri-o 运行命令、在 CRI-O HTTP API 中添加暂停和取消暂停功能。
+    该版本主要新特性：默认阻止没有 CAP_SYS_ADMIN 的容器的 `unshare` 系统调用、使用任务集来生成新的 cri-o 运行命令、在 CRI-O HTTP API 中添加暂停和取消暂停功能。
 
 - [CubeFS 分布式存储系统 v3.1.0 发布（CNCF 项目）](https://github.com/cubefs/cubefs/releases/tag/v3.1.0)  
 
@@ -369,7 +369,7 @@
 
 - [KEDA 基于 Kubernetes 事件驱动的扩缩容工具 v2.7.0 发布（CNCF 项目）](https://github.com/kedacore/keda/releases/tag/v2.7.0)
 
-    该版本主要新特性：支持通过 ScaledObject 注释暂停自动缩放、新增基于 ARM 的容器镜像、支持以非 root 身份运行 KEDA 的默认安全模式、CPU、内存、Datadog 扩展器使用全局 ``metricType`` 代替 ``metadata.type``等。
+    该版本主要新特性：支持通过 ScaledObject 注释暂停自动缩放、新增基于 ARM 的容器镜像、支持以非 root 身份运行 KEDA 的默认安全模式、CPU、内存、Datadog 扩展器使用全局 `metricType` 代替 `metadata.type`等。
 
 - [Keptn 云原生应用程序生命周期编排项目 v0.19.0 发布（CNCF 项目）](https://github.com/keptn/keptn/releases/tag/0.19.0)
 
