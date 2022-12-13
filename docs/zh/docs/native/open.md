@@ -10,6 +10,10 @@
     因此，开发人员无需切换工具或技术栈就能够将在本地开发应用转移到生产中。
     Acorn 镜像通过在 Acornfile 中描述应用程序的配置来创建，无需 Kubernetes YAML 的样板文件。
 
+- [Aeraki Mesh 服务网格项目 v1.1.0 发布（CNCF 项目）](https://www.aeraki.net/zh/blog/2022/announcing-1.1.0/)
+
+    该版本主要新特性：支持 Istio 1.12.x 版本；支持 bRPC（better RPC） 协议，bRPC 是百度开源的工业级 RPC 框架；MetaProtocol 支持流式调用、支持采用 MetaData 设置负载均衡 Hash 策略以及在 Response 中回传服务器真实 IP 等。  
+
 - [Antrea CNI 插件 v1.9.0 发布（CNCF 项目）](https://github.com/antrea-io/antrea/releases/tag/v1.9.0)
 
     新增多个多集群功能，包括跨集群 Pod 间连接、节点控制器支持 Gateway 高可用、允许 Pod IP 作为多集群 service 的端点；
@@ -30,6 +34,10 @@
 - [APISIX 云原生 API 网关 v2.15.0 发布](https://github.com/apache/apisix/blob/release/2.15/CHANGELOG.md#2150)  
 
     该版本主要新特性：支持用户自定义插件的优先级、支持通过表达式决定插件是否需要执行、自定义错误响应、允许采集 Stream Route 上的指标。
+
+- [Apollo 分布式配置管理系统 v2.0.0 发布 （CNCF 项目）](https://github.com/apolloconfig/apollo/releases/tag/v2.0.0)  
+
+    该版本主要新特性：主页上增加公共命名空间列表视图、灰度规则支持在 IP 不固定的情况下的标签匹配、启用命名空间的导出/导入功能、大多数列表都新增 `DeletedAt`列支持唯一约束索引。
 
 - [Arbiter：时速云开源基于 K8s 构建的可扩展调度和弹性工具](https://mp.weixin.qq.com/s/xF6Zij2FB2dq3QsZO6ch1g)
 
@@ -77,6 +85,10 @@
 
     该版本主要新特性：支持 Cgroup v2、移除 HTTP Server、升级 CSI 官方镜像版本、移除 ConfigMap 同步控制器、carina 镜像移动到单独命名空间、增加 carina e2e 测试用以替代原有的 e2e 测试代码（开发测试中）、优化 Storageclass 参数的 pvc 调度逻辑。
 
+- [Carina 本地存储项目 v0.10.0 发布（CNCF 项目）](https://github.com/carina-io/carina/releases/tag/v0.10.0)
+
+    该版本主要新特性：支持将裸盘挂载到容器内直接使用、velero 备份存储卷支持、新增 CRD 资源 NodeStorageResource 替代原将磁盘设备注册到 Node 节点的方式、使用 job 生成 webhook 证书，替代原有脚本生成证书方式等。
+
 - [cdk8s+：AWS 开源的 Kubernetes 开发框架正式可用](https://aws.amazon.com/blogs/containers/announcing-general-availability-of-cdk8s-plus-and-support-for-manifest-validation/)
 
     [cdk8s+](https://github.com/cdk8s-team/cdk8s) 允许用户使用熟悉的编程语言和面向对象的 API 来定义 Kubernetes 应用和可复用的抽象。
@@ -101,6 +113,10 @@
 - [Chaos Mesh 混沌工程平台 v2.5.0 发布（CNCF 项目）](https://github.com/chaos-mesh/chaos-mesh/releases/tag/v2.5.0)
 
     该版本主要新特性：支持多集群混沌实验、HTTPChaos 增加 TLS 支持、允许在 Helm 模板中为 controller manager 和仪表盘配置 Pod 安全上下文、StressChaos 支持 cgroups v2。
+
+- [Chaos Mesh 混沌工程测试平台 v2.2.0 发布（CNCF 项目）](https://github.com/chaos-mesh/chaos-mesh/releases/tag/v2.2.0)
+
+    该版本主要新特性：新增 StatusCheck 功能，用于检查应用程序的健康状况，当应用程序不健康时中止混沌实验；支持使用 `Chaosctl` 进行 outbound 强制恢复、在 dashboard 中新增基于流程图创建工作流的界面等。
 
 - [Cilium CNI 插件 v1.12.0 发布（CNCF 项目）](https://github.com/cilium/cilium/releases/tag/v1.12.0)  
 
@@ -142,6 +158,10 @@
 
     该版本主要新特性：支持 Gateway API v0.5.0、允许在单一的路由中为一组条件配置一个直接响应、可以为用户证书验证启用撤销检查、合并访问记录和 TLS 密码套件验证。
 
+- [Contour Kubernetes ingress 控制器 v1.21.0 发布 （CNCF 项目）](https://github.com/projectcontour/contour/releases/tag/v1.21.0)  
+    
+    该版本主要新特性：Contour 访问 leader election 资源的 RBAC 转移至命名空间角色；容器镜像现在只在 GitHub 容器注册中心（GHCR）上发布；新增 `contour gateway-provisioner` 命令和部署清单，用于动态配置 Gateways。
+
 - [Cortex Prometheus 长期存储方案 v1.14 发布](https://github.com/cortexproject/cortex/releases/tag/v1.14.0)
 
     该版本主要新特性：移除对块存储的支持、实验性地支持垂直查询分片、启用 PromQL @修改器、可以使用 OTel 收集器将追踪信息发送到多个目的地、多项性能改进和问题修复。
@@ -153,6 +173,10 @@
 - [CRI-O 容器运行时 v1.25.0 发布（CNCF 项目）](https://github.com/cri-o/cri-o/releases/tag/v1.25.0)  
 
     该版本主要新特性：支持设置运行时 pod 的最大日志文件大小、能够执行 Kubelet 的用户命名空间配置、新增注释用于配置容器的电源管理、 增加最小 checkpoint/restore 支持、通过 sigstore 签名来签署静态二进制包。
+
+- [CRI-O 容器运行时 v1.24.0 发布（CNCF 项目）](https://github.com/cri-o/cri-o/releases/tag/v1.24.0)
+
+    该版本主要新特性：默认阻止没有 CAP_SYS_ADMIN 的容器的 `unshare` 系统调用、使用任务集来生成新的 cri-o 运行命令、在 CRI-O HTTP API 中添加暂停和取消暂停功能。
 
 - [CubeFS 分布式存储系统 v3.1.0 发布（CNCF 项目）](https://github.com/cubefs/cubefs/releases/tag/v3.1.0)  
 
@@ -186,6 +210,12 @@
 - [Envoy v1.23.0 发布（CNCF 项目）](https://www.envoyproxy.io/docs/envoy/v1.23.0/version_history/v1.23/v1.23.0)  
 
     该版本主要新特性：在一个 SDS 请求中发送多个集群或监听器的 SDS 资源、通过 HTTP 过滤器的配置名称来获取过滤器配置、监听器过滤器统计更新、dns_resolver 增加对多个地址的支持、为监听器过滤器添加动态监听器过滤器配置等。
+
+- [Envoy Gateway 开源](https://blog.envoyproxy.io/introducing-envoy-gateway-ad385cc59532)
+
+    [Envoy Gateway](https://github.com/envoyproxy/gateway) 正式成为 Envoy 代理家族的新成员，该项目旨在降低将 Envoy 作为 API 网关的使用门槛。
+    Envoy Gateway 可以被认为是 Envoy Proxy 核心的一个封装器。
+    它提供的功能包括：为网关用例提供简化的 API、开箱即用的控制器资源、控制平面资源、代理实例等的生命周期管理能力以及可扩展的 API 平面。
 
 - [Emissary Ingress 云原生 ingress 控制器和 API 网关 v2.3.0 发布（CNCF 项目）](https://github.com/emissary-ingress/emissary/releases/tag/v2.3.0)  
 
@@ -249,6 +279,10 @@
 
     Helm Dashboard 可在本地运行并在浏览器中打开，可用于查看已安装的 Helm Chart，查看其修订历史和相应的 k8s 资源。此外，还可以执行简单的操作，如回滚到某个版本或升级到较新的版本。
 
+- [Helm v3.9.0 发布 （CNCF 项目）](https://github.com/helm/helm/releases/tag/v3.9.0)  
+
+    该版本主要新特性：新增字段以支持向 post renderer 传递参数、签名过程增加了更多检查、更新对 Kubernetes 1.24 的支持。
+
 - [Higress：阿里云开源的云原生网关](https://mp.weixin.qq.com/s/dgvd9TslzhX1ZuUNIH2ZXg)
 
     [Higress](https://github.com/alibaba/higress) 遵循 Ingress/Gateway API 标准，将流量网关、微服务网关、安全网关三合一，并在此基础上扩展了服务管理插件、安全类插件和自定义插件，高度集成 K8s 和微服务生态，包括 Nacos 注册和配置、Sentinel 限流降级等能力，并支持规则变更毫秒级生效等热更新能力。
@@ -290,6 +324,10 @@
 
     该版本主要新特性：引入了通过 OpenTelemetry 协议（OTLP）接收 OpenTelemetry 追踪数据的能力、为 GRPC 服务器定义健康服务器、添加 flag 用于在 rollover 时启用/禁用依赖关系、为 Admin Server 添加 TLS 配置。
 
+- [Jaeger 分布式追踪系统 v1.34.0 发布（CNCF 项目）](https://github.com/jaegertracing/jaeger/releases/tag/v1.34.0)  
+
+    该版本主要新特性：为 hotrod 应用添加 kubernetes 实例、新增 streamingSpanWriterPlugin 以提高 grpc 插件的写入性能、MetricsReader 添加 metrics 仪表等。
+
 - [Jakarta EE 10 基于 Java 的框架发布，开启云原生 Java 时代](https://mp.weixin.qq.com/s/BQBy5AWFOc7kS55JBtBjiQ)
 
     [Jakarta EE 10](https://github.com/jakartaee/jakarta.ee) 引入了用于构建现代化和轻量级云原生 Java 应用的功能。
@@ -328,6 +366,10 @@
 - [KEDA 基于 Kubernetes 的事件驱动自动伸缩工具 v2.8.0 发布（CNCF 项目）](https://github.com/kedacore/keda/releases/tag/v2.8.0)
 
     该版本主要新特性：支持 NATS streaming、支持自定义 HPA 名称、支持在 ScaledJob 中指定最小 pod 副本数、允许 cpu/memory scaler 只对 pod 中的一个容器进行扩展。
+
+- [KEDA 基于 Kubernetes 事件驱动的扩缩容工具 v2.7.0 发布（CNCF 项目）](https://github.com/kedacore/keda/releases/tag/v2.7.0)
+
+    该版本主要新特性：支持通过 ScaledObject 注释暂停自动缩放、新增基于 ARM 的容器镜像、支持以非 root 身份运行 KEDA 的默认安全模式、CPU、内存、Datadog 扩展器使用全局 `metricType` 代替 `metadata.type`等。
 
 - [Keptn 云原生应用程序生命周期编排项目 v0.19.0 发布（CNCF 项目）](https://github.com/keptn/keptn/releases/tag/0.19.0)
 
@@ -386,6 +428,14 @@
 
     该版本主要新特性：添加 kubelet pod pid 限制、使用 Jenkins Pipeline 替代 GitHub Actions、在创建集群或添加节点时增加安全增强命令、删除集群或节点时清理 vip、支持 kube-vip BGP 模式、支持清理 CRI、支持  kube-vip、支持 k8s 最近发布的补丁版本。
 
+- [KubeKey 集群部署工具 v2.1.0 发布（KubeSphere 社区开源）](https://github.com/kubesphere/kubekey/releases/tag/v2.1.0)
+
+    该版本主要新特性：根据 OCI 标准实现了镜像的拉取、上传和归档保存等功能，使其在制作和使用 KubeKey 制品时不依赖额外的容器运行时；支持初始化操作系统命令（kk init os）使用制品进行离线本地源安装操作系统依赖；支持同一个 K8s 集群中同时包含 ARM64 节点和 AMD64 节点等。
+
+- [Kube-OVN v1.10.0 发布（CNCF 项目）](https://mp.weixin.qq.com/s/e1TW_s3r9__qSgZz6aWmAA)
+
+    该版本主要新特性：在子网新增 ACL 字段，用户可以按照自己的需求编写符合 OVN 流表规范的 ACL 规则； KubeVirt 场景下， VM instance 的地址分配策略采用和 StatefulSet 类似的策略，支持 DPDK、DHCP；集成 Submariner 用于多集群的互联；针对大规模环境，对控制平面性能进行了优化等。
+
 - [Kubernetes v1.26 发布](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.26.md)
 
     该版本主要新特性：允许用户跨命名空间从卷快照中配置卷、允许使用 CEL 进行 Admission Control、改进拓扑管理器中的多 numa 对齐、为 Pod 调度增加调度就绪的机制、移除 CRI v1alpha2、Auth API 允许获取 User 属性、减少 Kubelet 在 PLEG 中的 CPU 消耗。
@@ -403,6 +453,10 @@
 - [Kubernetes v1.25 发布（CNCF 项目）](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.25.md)  
 
     该版本主要新特性：升级到 Stable：Pod Security Admission 、临时容器、cgroups v2 支持、网络策略中的 endPort、本地临时存储容量隔离、核心 CSI Migration、CSI 临时卷升级；升级到 Beta：SeccompDefault、CRD 验证表达式语言；引入 KMS v2 API 等。
+
+- [Kubernetes v1.24.0 发布（CNCF 项目）](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.24.md)
+
+    该版本主要新特性：dockershim 组件从 kubelet 中删除；默认情况下关闭新的测试版 API；发布工件使用 cosign进行签名，并且提供验证镜像签名的实验性支持；支持存储容量跟踪以显示当前可用的存储容量和卷扩展；gRPC 探针和 kubelet 凭证提供程序升级到 Beta；允许为服务的静态 IP 地址分配软保留一个范围等。
 
 - [Kubernetes Gateway API v0.5.0 发布](https://github.com/kubernetes-sigs/gateway-api/releases/tag/v0.5.0)  
 
@@ -529,9 +583,26 @@
     Mimir 现在开源了[三个代理](https://github.com/grafana/mimir-proxies)，用于从 Graphite、Datadog 和 InfluxDB 摄取指标，并将这些指标存储在 Mimir 中，这为 Mimir 从任何系统摄取指标奠定了基础。
     未来将支持本地摄取 OpenTelemetry 的 OTLP。
 
+- [MinIO 对象存储工具发布新功能：扩展版本库和正式支持 OPA（CNCF 项目）](https://github.com/minio/minio/releases/tag/RELEASE.2022-05-08T23-50-31Z)
+
+    MinIO 对版本库进行了扩展，排除版本库中的某些前缀和文件夹，以提高 Spark S3A 连接器等应用的性能。此外，应外界广泛要求，MinIO 正式支持 OPA。
+
+- [Nacos 动态服务发现平台 v2.1.0 发布（CNCF 项目）](https://github.com/alibaba/nacos/releases/tag/2.1.0)
+
+    该版本主要新特性：新增两个 SPI 插件：分别用于配置加解密和认证、支持集群 gRPC 客户端设置线程池大小、支持重置 raft 集群等。
+
+- [NeuVector 容器安全平台 v5.0 发布](https://mp.weixin.qq.com/s/nZ_a7JiryZJskJEPPIEmcw)
+
+    该版本主要新特性：与 SUSE Rancher 集成，也能够与 Amazon EKS、Google GKE 和 Microsoft AKS 等其他企业级容器管理平台对接；支持 Web 应用程序防火墙检测；支持自动化容器保护；支持零漂移进程和文件保护以及对网络、进程/文件进行分割策略模式保护等。
+
 - [Nightgale 夜莺监控 v5.10 发布](https://github.com/ccfos/nightingale/releases/tag/v5.10.0)  
 
     该版本主要新特性：支持 recording rule 的管理、告警规则支持生效到多集群、仪表盘变量支持 TextBox、告警屏蔽支持更多操作符、更灵活的自定义告警内容。
+
+- [Notification Manager 多租户通知管理系统 2.0.0 发布](https://mp.weixin.qq.com/s/op79OMTp0nxzfxM8fH-nnA)
+
+    [Notification Manager](https://github.com/kubesphere/notification-manager) 能够从 Kubernetes 接收告警、事件、审计，根据用户设置的模板生成通知消息并推送给用户。
+    新版本主要功能：新增路由功能，用户通过设置路由规则，将指定的通知发送给指定的用户；新增静默功能，通过配置静默规则，在特定的时间段屏蔽特定的通知；支持动态更新模板等。
 
 ### O
 
@@ -550,6 +621,10 @@
 - [OPA 通用策略引擎 v0.41.0 发布（CNCF 项目）](https://github.com/open-policy-agent/opa/releases/tag/v0.41.0)
 
     该版本主要新特性：新增一组内置函数用于验证、解析和查证 GraphQL query 和模式；内置函数声明支持通过元数据指定函数参数和返回值的名称和描述；支持根据 OCI 工件的摘要跳过捆绑重载；捆绑签名中删除空清单；单位解析和 token 更新等。
+
+- [OpenClusterManagement（OCM）多集群管理平台 v0.7 发布（CNCF 项目）](https://mp.weixin.qq.com/s/EQgdnZVOqzfvuxOzg-Q0cQ)
+
+    该版本主要新特性：新增“DefaultClusterSet”功能，所有注册进 OCM 环境中的托管集群都会被默认注册进名叫“default” 的 ClusterSet 中；支持基于 Taint / Toleration 的语义的多集群调度；部署架构调整为“Hosted 部署”模式，即托管集群内将不需要再部署其他的组件，所有的代理控制器均在远端执行。
 
 - [OpenEBS 云原生存储 v3.3.0 发布（CNCF 项目）](https://github.com/openebs/openebs/releases/tag/v3.3.0)  
 
@@ -574,6 +649,14 @@
 - [OpenTelemetry v1.13.0 发布（CNCF 项目）](https://github.com/open-telemetry/opentelemetry-specification/releases/tag/v1.13.0)  
 
     该版本主要新特性：在设置 span 时Context 是不可变的、支持实验性的配置 OTLP 指标输出器的默认直方图聚合、允许日志处理器修改日志记录、添加实验性的事件和日志 API 规范、在流程语义约定中添加网络指标、为 GraphQL 添加语义约定。
+
+- [OpenTelemetry Metrics 发布 RC 版本](https://opentelemetry.io/blog/2022/metrics-announcement/) 
+
+    Java、.NET、Python 已经发布了 OpenTelemetry 指标的 RC 版本（JS 下周发布）。这意味着， specification、API、SDK 以及以创作、捕获、处理等方式与 metrics 交互的组件，现在拥有完整的 OTel metrics 功能集，并且随时可供使用。
+
+- [OpenTelemetry v1.11.0 发布 （CNCF 项目）](https://github.com/open-telemetry/opentelemetry-specification/releases/tag/v1.11.0)
+
+    该版本主要新特性：用更加了然的 bucket 直方图取代直方图、支持在 OpenMetrics 计数器上显示示例、增加数据库连接池指标的语义规范、允许所有 metrics 规范为同步或异步、添加HTTP/3 等。
 
 - [Openyurt 云原生边缘计算项目 v1.1.0 发布（CNCF 项目）](https://github.com/openyurtio/openyurt/releases/tag/v1.1.0)
 
@@ -706,6 +789,13 @@
 
     该版本主要新特性：添加任务运行模板、支持在 pipelinerun 中传播 workspace 以简化规范编写、优化 git 远程解析支持、添加集群远程解析器、合并 podtempalte 和 affinity-assistant 的亲和力参数。
 
+- [Tetragon：Isovalent 开源基于 eBPF 的安全可观测性和运行时增强平台](https://isovalent.com/blog/post/2022-05-16-tetragon)  
+
+    [Tetragon](https://github.com/cilium/tetragon) 提供了基于 eBPF 的完全透明的安全可观测性能力以及实时的运行时增强能力。
+    Tetragon 基于 eBPF 的内核级收集器中直接内置了智能内核过滤能力和聚合逻辑，因此无需更改应用程序即可以非常低的开销实现深度的可观测性。
+    内嵌的运行时执行层不仅能够在系统调用层面进行访问控制，
+    而且能够检测到特权、Capabilities 和命名空间的提权逃逸，并实时自动阻止受影响进程的进一步执行。
+
 - [ThreatMapper 云原生安全观测平台 v1.4.0 发布](https://github.com/deepfence/ThreatMapper/releases/tag/v1.4.0)  
 
     该版本主要新特性：新功能 ThreatGraph 能够结合网络等运行时环境来确定威胁扫描结果的优先级、支持对云资产进行无代理的云安全态势管理、集成云原生环境恶意程序扫描工具 [YaraHunter](https://github.com/deepfence/YaraHunter)。
@@ -733,6 +823,11 @@
 - [Trivy 容器漏洞扫描工具 v0.29.0 发布（CNCF 项目）](https://github.com/aquasecurity/trivy/releases/tag/v0.29.0)  
 
     该版本主要新特性：支持 RBAC 扫描、支持 K8s secret 扫描、增加对 WASM 模块的支持、增加对 containerd 的支持、支持显示慢速扫描建议、为 pom 文件中的变量评估增加了循环检查、新增 go mod tidy 检查。
+
+- [Trivy 容器漏洞扫描工具现在可以扫描几乎所有与云原生相关的东西（CNCF 项目）](https://thenewstack.io/aqua-securitys-trivy-security-scanner-can-scan-anything-now/)  
+
+    Aqua 称，[Trivy]((https://github.com/aquasecurity/trivy)) 是当前最全面的漏洞和错误配置扫描工具，
+    可用于扫描云原生应用程序和基础设施，如源代码、存储库、镜像、工件注册表、基础设施即代码（IaC）模板和 Kubernetes 环境等。
 
 ### V
 
