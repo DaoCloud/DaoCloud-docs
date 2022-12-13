@@ -33,7 +33,7 @@ OIDC（OpenID Connect）是建立在 OAuth 2.0 基础上的一个身份层，是
 
     1. 当用户通过企业用户管理系统完成第一次登录 DCE 5.0 后，用户信息才会被同步至 DCE 5.0 的`用户与访问控制` -> `用户列表`。
     1. 初次登录的用户不会被赋予任何默认权限，需要有管理员给其赋权（管理员可以是平台管理员、子模块管理员或资源管理员）。
-    1. 有关实际操作教程，请参阅 [OIDC 操作演示视频](../../../videos/ghippo.md#oidc，也可参考 [Azure OpenID Connect (OIDC) 接入流程](https://learn.microsoft.com/zh-cn/azure/active-directory/develop/v2-protocols-oidc)。
+    1. 有关实际操作教程，请参阅 [OIDC 操作演示视频](../../../videos/ghippo.md#oidc)，也可参考 [Azure OpenID Connect (OIDC) 接入流程](https://learn.microsoft.com/zh-cn/azure/active-directory/develop/v2-protocols-oidc)。
 
 ## 用户身份认证交互流程
 
