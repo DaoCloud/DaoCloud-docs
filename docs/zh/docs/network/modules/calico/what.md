@@ -17,20 +17,22 @@ Calico 基于 iptables 提供了丰富而灵活的网络 Policy，保证通过�
 
 Calico 由以下组件组成，在部署 Calico 的时候部分组件是可选的。
 
-- [Calico API Server](#calico-api-server)
-- [Felix](#felix)
-- [BIRD](#bird)
-- [confd](#confd)
-- [Dikastes](#dikastes)
-- [CNI 插件](#cni)
-- [数据存储插件](#数据存储插件)
-    - [Kubernetes API datastore](#kubernetes-api-datastore)
-    - [etcd](#etcd)
-- [IPAM 插件](#ipam)
-- [kube-controller](#kube-controller)
-- [Typha](#typha)
-- [calicoctl](#calicoctl)
-- [云编排器插件](#云编排器插件)
+- [什么是 Calico](#什么是-calico)
+  - [Calico 组件](#calico-组件)
+    - [Calico API Server](#calico-api-server)
+    - [Felix](#felix)
+    - [BIRD](#bird)
+    - [confd](#confd)
+    - [Dikastes](#dikastes)
+    - [CNI](#cni)
+    - [数据存储插件](#数据存储插件)
+      - [Kubernetes API datastore](#kubernetes-api-datastore)
+      - [etcd](#etcd)
+    - [IPAM](#ipam)
+    - [kube-controller](#kube-controller)
+    - [Typha](#typha)
+    - [calicoctl](#calicoctl)
+    - [云编排器插件](#云编排器插件)
 
 ### Calico API Server
 
@@ -76,7 +78,7 @@ BGP 客户端负责：
     BGP 路由反射器通常是为大型部署而配置的，而不是一个标准的 BGP 客户端。BGP 路由反射器作为连接 BGP 客户端的一个中心点。
     (标准 BGP 要求每个 BGP 客户端在网格拓扑结构中与其他每个 BGP 客户端连接，这很难维护。)
 
-    为了实现冗余，您可以无缝部署多个 BGP 路由反射器。BGP 路由反射器只参与网络的控制：没有终端数据通过它们。
+    为了实现冗余，可以无缝部署多个 BGP 路由反射器。BGP 路由反射器只参与网络的控制，没有终端数据通过它们。
     当 Calico BGP 客户端将其 FIB 中的路由通告给路由反射器时，路由反射器将这些路由通告给部署中的其他节点。
 
 ### confd
@@ -90,40 +92,41 @@ confd 根据存储中的数据更新，动态生成 BIRD 配置文件。当配�
 执行 Istio 服务网格的网络策略。作为 Istio Envoy 的一个 Sidecar 代理，在集群上运行。
 
 Dikastes 是可选的。Calico 在 Linux 内核（使用 iptables，在三、四层）和三到七层使用 Envoy 的 Sidecar 代理 Dikastes 为工作负载执行网络策略，对请求进行加密认证。
-使用多个执行点可以根据多个标准确定远程端点的身份。即使工作负载 Pod 破坏，Envoy 代理被绕过，主机 Linux 内核的执行也能保护您的工作负载。
+使用多个执行点建立基于不同标准的远程端点的身份。即使安全威胁绕过 Envoy 代理，影响工作负载 Pod，主机 Linux 内核的执行也能保护工作负载。
 
 ### CNI
 
 为 Kubernetes 集群提供 Calico 网络。
 
-向 Kubernetes 展示该 API 的 Calico 二进制文件被称为 CNI 插件，必须安装在 Kubernetes 集群的每个节点上。
-Calico CNI 插件允许您为任何使用 CNI 网络规范的编排调度器使用 Calico 网络。
+将 API 暴露给 Kubernetes 的 Calico 二进制文件为 CNI 插件，该插件必须安装在 Kubernetes 集群的每个节点上。
+Calico CNI 插件允许使用符合 CNI 网络规范的编排调度器使用 Calico 网络。
 
 ### 数据存储插件
 
-通过减少每个节点对数据存储的影响来增加规模。它是 Calico CNI 的插件之一。
+通过减少每个节点对数据存储的影响来扩大规模。
 
 #### Kubernetes API datastore
 
 在 Calico 中使用 Kubernetes API 数据存储（kdd）的优点是：
 
-- 管理更简单，因为不需要额外的数据存储
+- 管理简单，不需要额外的数据存储
 - 使用 Kubernetes RBAC 来控制对 Calico 资源的访问
-- 使用 Kubernetes 审计日志来生成对 Calico 资源变化的审计日志
+- 使用 Kubernetes 审计日志来生成 Calico 资源变化的审计日志
 
 #### etcd
 
 etcd 是一个一致的、高可用的分布式键值存储，为 Calico 网络提供数据存储，并用于组件之间的通信。
-etcd 仅支持保护非集群主机（从 Calico v3.1 开始）。etcd 的优点是：
+etcd 仅支持保护非集群主机（Calico v3.1 及更新版本）。etcd 的优点是：
 
-- 让您在非 Kubernetes 平台上运行 Calico
-- 分离 Kubernetes 和 Calico 资源之间的关注点，例如允许您独立地扩展数据存储。
-- 让您运行的 Calico 集群不仅仅包含一个 Kubernetes 集群，例如让带有 Calico 主机保护的裸机服务器与 Kubernetes 集群互通；或者多个 Kubernetes 集群。
+- 支持在非 Kubernetes 平台上运行 Calico。
+- 解耦 Kubernetes 和 Calico 资源，例如允许独立地扩展数据存储。
+- 支持 Calico 集群中包含多个 Kubernetes 集群，例如让 Calico 主机保护的裸机服务器与 Kubernetes 集群互通。
 
 ### IPAM
 
-使用 Calico 的 IP 池资源来控制如何将 IP 地址分配给集群中的 Pod。
-它是大多数 Calico 安装所使用的默认插件。它是 Calico CNI 插件之一。
+使用 Calico 的 IP 池资源将 IP 地址分配给集群中的 Pod。
+
+> 一般情况下，IPAM 为 Calico 的默认安装插件。
 
 ### kube-controller
 
@@ -139,23 +142,23 @@ etcd 仅支持保护非集群主机（从 Calico v3.1 开始）。etcd 的优点
 
 ### Typha
 
-通过减少每个节点对数据存储的影响来增加规模。作为数据存储和 Felix 实例之间的一个守护程序运行。默认安装，但没有配置。
+通过减少每个节点对数据存储的影响来扩大规模。作为数据存储和 Felix 实例之间的一个守护程序运行。Typha 为默认安装的插件，但默认不进行配置。
 
 Typha 代表 Felix 和 confd 等所有客户端维护一个单一的数据存储连接。
-它缓存数据存储的状态，并复制事件，以便它们可以被推广到更多监听器。
-因为一个 Typha 实例可以支持数百个 Felix 实例，可以将数据存储的负载降低很多。
-由于 Typha 可以过滤掉与 Felix 无关的更新，它也减少了 Felix 的 CPU 使用。
+可用于缓存数据存储的状态，并复制事件，以便将事件推广到更多的监听器。
+一个 Typha 实例支持数百个 Felix 实例，可以大幅降低数据存储的负载。
+由于 Typha 可以过滤掉与 Felix 无关的更新，因而减少了 Felix 的 CPU 使用。
 在一个大规模（100 多个节点）的 Kubernetes 集群中，这是至关重要的，因为 API 服务器产生的更新数量随着节点数量的增加而增加。
 
 ### calicoctl
 
-Calicoctl 命令行作为二进制或容器需要单独安装，可以在任何可以通过网络访问 Calico 数据存储的主机上使用。
+Calicoctl 命令行作为二进制或容器需要单独安装，支持在任何可以通过网络访问 Calico 数据存储的主机上使用。
 
 ### 云编排器插件
 
-将管理网络的编排器 API 翻译成 Calico 的数据模型和数据存储。
+将管理网络的编排器 API 转换成 Calico 的数据模型和数据存储。
 
-对于云供应商，Calico 为每个主要的云编排平台提供了一个单独的插件。
-这使得 Calico 能够与编排器紧密结合，因此用户可以使用他们的编排器工具来管理 Calico 网络。
+对于云供应商，Calico 为每个云编排平台提供了一个单独的插件。
+这使得用户可以使用各自的编排器来管理 Calico 网络。
 当需要时，编排器插件会将 Calico 网络的反馈信息提供给编排器。
 例如，提供关于 Felix liveness 的信息，并在网络设置失败时将特定端点标记为失败。
