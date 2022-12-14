@@ -17,7 +17,21 @@ DCE 5.0 在`用户与访问控制`中通过管理员创建新用户的方式为�
 
 用户登录的简单流程如下图。
 
-![登录界面](../images/login01.png)
+```mermaid
+graph TB
+
+user[输入用户名] --> pass[输入密码] --> judge([点击登录并校验用户名和密码])
+judge -.正确.->success[登录成功]
+judge -.错误.->fail[提示错误]
+
+classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
+classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
+classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+
+class user,pass cluster;
+class judge plain
+class success,fail k8s
+```
 
 用户登录界面如下图。具体登录画面，请与实际产品为准。
 
