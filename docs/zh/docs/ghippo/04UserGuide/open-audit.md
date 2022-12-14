@@ -3,7 +3,7 @@
 默认 Kubernetes 集群不会输出审计日志信息。通过以下配置，可以开启 Kubernetes 的审计日志功能。
 
 1. 准备审计日志的 Policy 文件
-2. 修改 API 服务器配置文件，开启审计日志
+2. 配置 API 服务器，开启审计日志
 3. 重启并验证
 
 ## 准备审计日志 Policy 文件
@@ -167,10 +167,9 @@ rules:
   - level: Metadata
     omitStages:
       - "RequestReceived"
-
 ```
 
-将以上审计日志文件放到 `/etc/kubernetes/audit-policy/` 文件夹下，并取名为 apiserver-audit-policy.yaml
+将以上审计日志文件放到 `/etc/kubernetes/audit-policy/` 文件夹下，并取名为 `apiserver-audit-policy.yaml`。
 
 ## 配置 API 服务器
 
@@ -220,13 +219,7 @@ rules:
 
 通过 FluentBit 来采集审计日志。默认 FluentBit 不会会采集 `/var/log/kubernetes/audit` 下的日志文件（Kubernetes 审计日志）。
 
-如需开启，按以下步骤操作：
-
-1. 查看当前 chart 版本并保存当前 value
-2. 修改 chart value
-3. 重启所有 Pod
-
-具体步骤如下：
+如需开启审计日志，按以下步骤操作：
 
 1. 保存当前 value
 
@@ -234,23 +227,22 @@ rules:
     helm get values insight-agent -n insight-system -o yaml > insight-agent-values-bak.yaml
     ```
 
-
 2. 获取当前版本号 ${insight_version_code}，然后更新配置
 
     ```shell
     insight_version_code=`helm list -n insight-system |grep insight-agent | awk {'print $10'}` 
     ```
-    
+
     ```shell
     helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent insight-release/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=true 
     ```
-    
+
     如果因为版本未找到而 upgrade 失败，请检查命令中使用的 helm repo 是否有这版本，若没有，请尝试更新helm repo后重试
-    
+
     ```shell
     helm repo update insight-release
     ```
-    
+
 3. 重启所有 Pod
 
     重启所有 master 节点的 FluentBit Pod，重启后的 FluentBit 将会采集 `/var/log/kubernetes/audit` 下的日志。
