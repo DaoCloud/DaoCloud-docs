@@ -1,4 +1,5 @@
 ---
+| offline-centos7-community-v0.3.29-amd64.tar | v0.3.29 | 9.15GB | [:arrow_right: 进入下载页](./dce5-installer-v0.3.29.md) | 2022-12-14 |
 date: 2022-11-23
 hide:
   - navigation
