@@ -22,3 +22,19 @@
     - 比如 dx-insight 组件都部署在 dx-insight租户下， insight-agent 都部署在 insight-system 租户下，如上图：在 dx-insight 中的 prometheus operator 中添加 --deny-namespaces=insight-system，在 insight-agent 中的 prometheus operato r添加 --deny-namespaces=dx-insight。
     - 只添加deny namespace，两个prometheus operator都可以继续扫描除此之外的命名空间，kube-system 或客户业务命名空间下的相关采集资源不受影响。
     -  请注意 node exporter 端口冲突的问题。
+
+
+## 补充说明
+
+### 描述
+
+由于开源 `node-exporter` 默认开启 hostnetwork 且默认端口为 9100，若集群已有的监控系统已安装 `node-exporter` ，则在安装 `insight-agent` 时会因为 node-exporter 端口冲突而无法正常运行。
+
+!!! Note
+
+    insight 的 `node exporter` 有做一些特性的开启来采集特殊指标，所以推荐安装。
+    
+### 解决方法
+
+目前不支持在安装命令中修改端口，需要在 helm install insight-agent 之后手动修改 insight node-exporter daemonset和svc的相关端口，如下图
+
