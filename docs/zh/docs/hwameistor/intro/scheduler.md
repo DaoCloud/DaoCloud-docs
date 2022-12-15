@@ -13,5 +13,5 @@
 ## 通过 YAML 部署（针对开发）
 
 ```bash
-$ kubectl apply -f deploy/scheduler.yaml
+kubectl apply -f deploy/scheduler.yaml
 ```

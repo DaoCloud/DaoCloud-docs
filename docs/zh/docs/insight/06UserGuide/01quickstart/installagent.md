@@ -10,25 +10,25 @@ hide:
 
 1. 从左侧导航栏进入`容器管理`，进入`集群列表`。
 
-    ![安装采集器](../../images/login01.png)
+    ![进入集群列表](../../images/login01.png)
 
 1. 点击要安装 insight-agent 的集群名称。
 
-    ![安装采集器](../../images/login02.png)
+    ![点击集群名称](../../images/login02.png)
 
 1. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到 `insight-agent`，点击该磁贴卡片。
 
-    ![安装采集器](../../images/installagent01.png)
+    ![找到 insight-agent](../../images/installagent01.png)
 
 1. 选择合适的版本，点击`安装`。
 
-    ![安装采集器](../../images/installagent02.png)
+    ![安装](../../images/installagent02.png)
 
 1. 填入名称，选择命名空间和版本后，在 yaml 文件中分别填写 logging 、metric 、audit、trace 上报数据的地址。
 
-	如何获取数据上报地址，请参考[获取数据上报地址](gethosturl.md)。
+	默认已经填好了所有字段信息，可以直接使用并点击`确定`。如需修改数据上报地址，请参考[获取数据上报地址](gethosturl.md)。
 
-    ![安装采集器](../../images/installagent03.png)
+    ![填表](../../images/installagent03.png)
 
     其中几个选项开关的含义为：
 
@@ -38,7 +38,7 @@ hide:
 
 1. 系统将自动返回 `Helm 应用`，刚开始状态为`未就绪`，一段时间后状态变为`已部署`，表示 insight-agent 安装成功。
 
-    ![安装采集器](../../images/login03.png)
+    ![成功](../../images/login03.png)
 
     !!! note
 

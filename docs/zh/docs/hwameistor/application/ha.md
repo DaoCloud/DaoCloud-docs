@@ -74,7 +74,7 @@ NAME                     STATUS   VOLUME                                     CAP
 data-sts-mysql-ha-0   Bound    pvc-5236ee6f-8212-4628-9876-1b620a4c4c36   1Gi        RWO            hwameistor-storage-lvm-hdd    3m   Filesystem
 ```
 
-# 查看 `LocalVolume` and `LocalVolumeReplica` 对象
+## 查看 `LocalVolume` and `LocalVolumeReplica` 对象
 
 通过查看和 `PV` 同名的 `LocalVolume(LV)`, 可以看到本地卷创建在了节点 `k8s-worker-1` 和节点 `k8s-worker-2`.
 
