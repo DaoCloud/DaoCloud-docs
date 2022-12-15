@@ -1,15 +1,12 @@
 # 指标抓取方式
 
-## 概述
 Prometheus 主要通过 Pull 的方式来抓取目标服务暴露出来的监控接口，因此需要配置对应的抓取任务来请求监控数据并写入到 Prometheus 提供的存储中，目前 Prometheus 服务提供了如下几个任务的配置：
 
 - 原生 Job 配置：提供 Prometheus 原生抓取 Job 的配置。
-
 - Pod Monitor：在 K8S 生态下，基于 Prometheus Operator 来抓取 Pod 上对应的监控数据。
-
 - Service Monitor：在 K8S 生态下，基于 Prometheus Operator 来抓取 Service 对应 Endpoints 上的监控数据。
 
-！！！Note
+!!! note
 
     [] 中的配置项为可选。
 
@@ -47,16 +44,16 @@ job_name: <job_name>
 params:
   [ <string>: [<string>, ...] ]
 
-# 通过 basic auth 设置抓取请求头中 `Authorization` 的值，password/password_file 互斥，优先取 password_file 里面的值。 
+# 通过 basic auth 设置抓取请求头中 `Authorization` 的值，password/password_file 互斥，优先取 password_file 里面的值。
 basic_auth:
   [ username: <string> ]
   [ password: <secret> ]
   [ password_file: <string> ]
 
-# 通过 bearer token 设置抓取请求头中 `Authorization` bearer_token/bearer_token_file 互斥，优先取 bearer_token 里面的值。 
+# 通过 bearer token 设置抓取请求头中 `Authorization` bearer_token/bearer_token_file 互斥，优先取 bearer_token 里面的值。
 [ bearer_token: <secret> ]
 
-# 通过 bearer token 设置抓取请求头中 `Authorization` bearer_token/bearer_token_file 互斥，优先取 bearer_token 里面的值。 
+# 通过 bearer token 设置抓取请求头中 `Authorization` bearer_token/bearer_token_file 互斥，优先取 bearer_token 里面的值。
 [ bearer_token_file: <filename> ]
 
 # 抓取连接是否通过 TLS 安全通道，配置对应的 TLS 参数
@@ -75,12 +72,12 @@ cvm_sd_configs:
   [ - <cvm_sd_config> ... ]
 
 # 在抓取数据之后，把 target 上对应的 label 通过 relabel 的机制进行改写，按顺序执行多个 relabel 规则。
-# relabel_config 详见下面说明。
+# relabel_config 详见下文说明。
 relabel_configs:
   [ - <relabel_config> ... ]
 
 # 数据抓取完成写入之前，通过 relabel 机制进行改写 label 对应的值，按顺序执行多个 relabel 规则。
-# relabel_config 详见下面说明。
+# relabel_config 详见下文说明。
 metric_relabel_configs:
   [ - <relabel_config> ... ]
 
@@ -120,13 +117,13 @@ spec:
   podMetricsEndpoints:
   [ - <endpoint_config> ... ] # 详见下面 endpoint 说明
   # 选择要监控 Pod 所在的 namespace，不填为选取所有 namespace
-  [ namespaceSelector: ]  
+  [ namespaceSelector: ]
     # 是否选取所有 namespace
     [ any: bool ]
     # 需要选取 namespace 列表
     [ matchNames: []string ]
   # 填写要监控 Pod 的 Label 值，以定位目标 Pod  [K8S metav1.LabelSelector](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/#labelselector-v1-meta)
-  selector:  
+  selector:
     [ matchExpressions: array ]
       [ example: - {key: tier, operator: In, values: [cache]} ]
     [ matchLabels: object ]
@@ -140,29 +137,29 @@ apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
   name: redis-exporter # 填写一个唯一名称
-  namespace: cm-prometheus  # namespace固定，不要修改
+  namespace: cm-prometheus # namespace固定，不要修改
 spec:
   podMetricsEndpoints:
-  - interval: 30s
-    port: metric-port  # 填写pod yaml中Prometheus Exporter对应的Port的Name
-    path: /metrics  # 填写Prometheus Exporter对应的Path的值，不填默认/metrics
-    relabelings:
-    - action: replace
-      sourceLabels: 
-      - instance
-      regex: (.*)
-      targetLabel: instance
-      replacement: 'crs-xxxxxx' # 调整成对应的 Redis 实例 ID
-    - action: replace
-      sourceLabels: 
-      - instance
-      regex: (.*)
-      targetLabel: ip
-      replacement: '1.x.x.x' # 调整成对应的 Redis 实例 IP
-  namespaceSelector:   # 选择要监控pod所在的namespace
+    - interval: 30s
+      port: metric-port # 填写pod yaml中Prometheus Exporter对应的Port的Name
+      path: /metrics # 填写Prometheus Exporter对应的Path的值，不填默认/metrics
+      relabelings:
+        - action: replace
+          sourceLabels:
+            - instance
+          regex: (.*)
+          targetLabel: instance
+          replacement: "crs-xxxxxx" # 调整成对应的 Redis 实例 ID
+        - action: replace
+          sourceLabels:
+            - instance
+          regex: (.*)
+          targetLabel: ip
+          replacement: "1.x.x.x" # 调整成对应的 Redis 实例 IP
+  namespaceSelector: # 选择要监控pod所在的namespace
     matchNames:
-    - redis-test 
-  selector:    # 填写要监控pod的Label值，以定位目标pod
+      - redis-test
+  selector: # 填写要监控pod的Label值，以定位目标pod
     matchLabels:
       k8s-app: redis-exporter
 ```
@@ -196,13 +193,13 @@ spec:
   endpoints:
   [ - <endpoint_config> ... ] # 详见下面 endpoint 说明
   # 选择要监控 Pod 所在的 namespace，不填为选取所有 namespace
-  [ namespaceSelector: ]  
+  [ namespaceSelector: ]
     # 是否选取所有 namespace
     [ any: bool ]
     # 需要选取 namespace 列表
     [ matchNames: []string ]
   # 填写要监控 Pod 的 Label 值，以定位目标 Pod  [K8S metav1.LabelSelector](https://v1-17.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#labelselector-v1-meta)
-  selector:  
+  selector:
     [ matchExpressions: array ]
       [ example: - {key: tier, operator: In, values: [cache]} ]
     [ matchLabels: object ]
@@ -215,32 +212,32 @@ spec:
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: go-demo    # 填写一个唯一名称
-  namespace: cm-prometheus  # namespace固定，不要修改
+  name: go-demo # 填写一个唯一名称
+  namespace: cm-prometheus # namespace固定，不要修改
 spec:
   endpoints:
-  - interval: 30s
-    # 填写service yaml中Prometheus Exporter对应的Port的Name
-    port: 8080-8080-tcp
-    # 填写Prometheus Exporter对应的Path的值，不填默认/metrics
-    path: /metrics
-    relabelings:
-    # ** 必须要有一个 label 为 application，这里假设 k8s 有一个 label 为 app，
-    # 我们通过 relabel 的 replace 动作把它替换成了 application
-    - action: replace
-      sourceLabels:  [__meta_kubernetes_pod_label_app]
-      targetLabel: application
+    - interval: 30s
+      # 填写service yaml中Prometheus Exporter对应的Port的Name
+      port: 8080-8080-tcp
+      # 填写Prometheus Exporter对应的Path的值，不填默认/metrics
+      path: /metrics
+      relabelings:
+        # ** 必须要有一个 label 为 application，这里假设 k8s 有一个 label 为 app，
+        # 我们通过 relabel 的 replace 动作把它替换成了 application
+        - action: replace
+          sourceLabels: [__meta_kubernetes_pod_label_app]
+          targetLabel: application
   # 选择要监控service所在的namespace
   namespaceSelector:
     matchNames:
-    - golang-demo
+      - golang-demo
   # 填写要监控service的Label值，以定位目标service
   selector:
     matchLabels:
       app: golang-app-demo
 ```
 
-### endpoint_config 配置
+### endpoint_config
 
 相应配置项说明如下：
 
@@ -249,7 +246,7 @@ spec:
 # ServiceMonitor: 对应 Service>spec/ports/name;
 # PodMonitor: 说明如下：
 #   如果查看的是 Pod Yaml，取 pod.spec.containers.ports.name 中的值。
-#   如果查看的是 Deployment/Daemonset/Statefulset，取 spec.template.spec.containers.ports.name。
+#   如果查看的是 Deployment/Daemonset/Statefulset，取值 spec.template.spec.containers.ports.name
 [ port: string | default = 80]
 # 抓取任务请求 URI 路径
 [ path: string | default = /metrics ]
@@ -277,47 +274,48 @@ spec:
 [ honorTimestamps: bool | default = true ]
 # basic auth 的认证信息，username/password 填写对应 K8S secret key 的值，注意 secret namespace 需要和 PodMonitor/ServiceMonitor 相同。
 [ basicAuth: BasicAuth ]
-# 通过代理服务来抓取 target 上的指标，填写对应的代理服务地址。
+# 通过代理服务来抓取 target 上的指标，填写对应的代理服务地址
 [ proxyUrl: string ]
 # 在抓取数据之后，把 target 上对应的 label 通过 relabel 的机制进行改写，按顺序执行多个 relabel 规则。
-# relabel_config 详见下面说明。
+# relabel_config 详见下文说明
 relabelings:
 [ - <relabel_config> ...]
 # 数据抓取完成写入之前，通过 relabel 机制进行改写 label 对应的值，按顺序执行多个 relabel 规则。
-# relabel_config 详见下面说明。
-metricRelabelings: 
+# relabel_config 详见下文说明
+metricRelabelings:
 [ - <relabel_config> ...]
 ```
 
-### relabel_config 配置
+### relabel_config
 
 相应配置项说明如下：
 
-```
+```yaml
 # 从原始 labels 中取哪些 label 的值进行 relabel，取出来的值通过 separator 中的定义进行字符拼接。
-# 如果是 PodMonitor/ServiceMonitor 对应的配置项为 sourceLabels 。
+# 如果是 PodMonitor/ServiceMonitor 对应的配置项为 sourceLabels
 [ source_labels: '[' <labelname> [, ...] ']' ]
-# 定义需要 relabel 的 label 值拼接的字符，默认为 ';'。 
+# 定义需要 relabel 的 label 值拼接的字符，默认为 ';'。
 [ separator: <string> | default = ; ]
 
 # action 为 replace/hashmod 时，通过 target_label 来指定对应 label name。
-# 如果是 PodMonitor/ServiceMonitor 对应的配置项为 targetLabel 。
+# 如果是 PodMonitor/ServiceMonitor 对应的配置项为 targetLabel
 [ target_label: <labelname> ]
 
-# 需要对 source labels 对应值进行正则匹配的表达式。
+# 需要对 source labels 对应值进行正则匹配的表达式
 [ regex: <regex> | default = (.*) ]
 
-# action 为 hashmod 时用到，根据 source label 对应值 md5 取模值。
+# action 为 hashmod 时用到，根据 source label 对应值 md5 取模值
 [ modulus: <int> ]
 
-# action 为 replace 的时候，通过 replacement 来定义当 regex 匹配之后需要替换的表达式，可以结合 regex 正规则表达式替换。
+# action 为 replace 的时候，通过 replacement 来定义当 regex 匹配之后需要替换的表达式，可以结合 regex 正规则表达式替换
 [ replacement: <string> | default = $1 ]
 
 # 基于 regex 匹配到的值进行相关的操作，对应的 action 如下，默认为 replace：
-# replace: 如果 regex 匹配到，通过 replacement 中定义的值替换相应的值，并通过 target_label 设值并添加相应的 label 
+# replace: 如果 regex 匹配到，通过 replacement 中定义的值替换相应的值，并通过 target_label 设值并添加相应的 label
 # keep: 如果 regex 没有匹配到，丢弃
 # drop: 如果 regex 匹配到，丢弃
-# hashmod: 通过 moduels 指定的值把 source label 对应的 md5 值取模，添加一个新的 label，label name 通过 target_label 指定
+# hashmod: 通过 moduels 指定的值把 source label 对应的 md5 值取模
+# 并添加一个新的 label，label name 通过 target_label 指定
 # labelmap: 如果 regex 匹配到，使用 replacement 替换对就的 label name
 # labeldrop: 如果 regex 匹配到，删除对应的 label
 # labelkeep: 如果 regex 没有匹配到，删除对应的 label
