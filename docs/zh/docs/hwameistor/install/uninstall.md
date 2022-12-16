@@ -19,12 +19,13 @@ helm delete -n hwameistor hwameistor
     ```
 
 2. 删除 `LocalVolumeGroup` 实例
-   
+
     ```console
     kubectl delete localvolumegroups.hwameistor.io --all
     ```
 
     !!! note
+
         `LocalVolumeGroup` 对象有特殊的终结器（finalizer），所以必须先删除它的实例再删除它的定义。
 
 3. 移除 CRD、Hook 和 RBAC
@@ -39,6 +40,6 @@ helm delete -n hwameistor hwameistor
 
     ```console
     kubectl get sc -o name \
-    | grep hwameistor-storage-lvm- \
-    | xargs -t kubectl delete
+        | grep hwameistor-storage-lvm- \
+        | xargs -t kubectl delete
     ```

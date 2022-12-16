@@ -17,7 +17,7 @@ HwameiStor 根据存储介质类型创建 `LocalDiskClaim` 对象来创建存储
 要在所有 Kubernetes Worker 节点上创建一个 HDD 存储池，用户需要通过 `storageNodes` 参数输入各个 Worker 节点名：
 
 ```console
-$ helm template ./hwameistor \
+helm template ./hwameistor \
    -s templates/post-install-claim-disks.yaml \
    --set storageNodes='{k8s-worker-1,k8s-worker-2,k8s-worker-3}' \
    | kubectl apply -f -
@@ -26,9 +26,9 @@ $ helm template ./hwameistor \
 或者通过以下方法指定所有 Worker 节点：
 
 ```console
-$ sn="$( kubectl get no -l node-role.kubernetes.io/worker -o jsonpath="{.items[*].metadata.name}" | tr ' ' ',' )"
+sn="$( kubectl get no -l node-role.kubernetes.io/worker -o jsonpath="{.items[*].metadata.name}" | tr ' ' ',' )"
 
-$ helm template ./hwameistor \
+helm template ./hwameistor \
     -s templates/post-install-claim-disks.yaml \
     --set storageNodes="{$sn}" \
   | kubectl apply -f -
@@ -61,7 +61,7 @@ hwameistor-storage-lvm-hdd   lvm.hwameistor.io   Delete          WaitForFirstCon
 运行以下命令：
 
 ```console
-$ kubectl get ld
+kubectl get ld
 ```
 
 输出类似于：
@@ -114,7 +114,7 @@ $ vgdisplay LocalStorage_PoolHDD
     在安装 HwameiStor 期间也可以通过设置 `storageNode` 参数配置存储池：
 
     ```console
-    $ helm install hwameistor ./hwameistor \
+    helm install hwameistor ./hwameistor \
         -n hwameistor --create-namespace \
         --set storageNodes='{k8s-worker-1,k8s-worker-2,k8s-worker-3}'
     ```

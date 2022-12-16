@@ -62,5 +62,5 @@
 
     ```shell
     kubectl rollout restart deploy/ghippo-apiserver -n ghippo-system
-    kubectl rollout restart statefulset/ghippo-keycloak -n ghippo-system
+    kubectl rollout restart statefulset/ghippo-keycloakx -n ghippo-system
     ```

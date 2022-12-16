@@ -12,32 +12,32 @@ LocalVolumeMigrate 需要部署在 Kubernetes 系统中，需要部署应用满�
 
 * 支持 lvm 类型的卷
 * convertible 类型卷（需要在 sc 中增加配置项 convertible: true）
-  * 应用 Pod 申请多个数据卷 PVC 时，对应数据卷需要使用相同配置 sc
-  * 基于 LocalVolume 粒度迁移时，默认所属相同 LocalVolumeGroup 的数据卷不会一并迁移（若一并迁移，需要配置开关 MigrateAllVols：true）
+    * 应用 Pod 申请多个数据卷 PVC 时，对应数据卷需要使用相同配置 sc
+    * 基于 LocalVolume 粒度迁移时，默认所属相同 LocalVolumeGroup 的数据卷不会一并迁移（若一并迁移，需要配置开关 MigrateAllVols：true）
 
 ## 步骤 1: 创建 convertible `StorageClass`
 
 ```console
-$ cd ../../deploy/
-$ kubectl apply -f storageclass-convertible-lvm.yaml
+cd ../../deploy/
+kubectl apply -f storageclass-convertible-lvm.yaml
 ```
 
 ## 步骤 2: 创建 multiple `PVC`
 
 ```console
-$ kubectl apply -f pvc-multiple-lvm.yaml
+kubectl apply -f pvc-multiple-lvm.yaml
 ```
 
 ## 步骤 3: 部署多数据卷 Pod
 
 ```console
-$ kubectl apply -f nginx-multiple-lvm.yaml
+kubectl apply -f nginx-multiple-lvm.yaml
 ```
 
 ## 步骤 4: 解挂载多数据卷 Pod
 
 ```console
-$ kubectl patch deployment nginx-local-storage-lvm --patch '{"spec": {"replicas": 0}}' -n hwameistor
+kubectl patch deployment nginx-local-storage-lvm --patch '{"spec": {"replicas": 0}}' -n hwameistor
 ```
 
 ## 步骤 5: 创建迁移任务
@@ -62,7 +62,7 @@ EOF
 ```
 
 ```console
-$ kubectl apply -f ./migrate_lv.yaml
+kubectl apply -f ./migrate_lv.yaml
 ```
 
 ## 步骤 6: 查看迁移状态
@@ -112,5 +112,5 @@ pvc-d9d3ae9f-64af-44de-baad-4c69b9e0744a-7ppmrx   1073741824   172-30-45-223   R
 ## 步骤 8: 迁移成功后，重新挂载数据卷 Pod
 
 ```console
-$ kubectl patch deployment nginx-local-storage-lvm --patch '{"spec": {"replicas": 1}}' -n hwameistor
+kubectl patch deployment nginx-local-storage-lvm --patch '{"spec": {"replicas": 1}}' -n hwameistor
 ```

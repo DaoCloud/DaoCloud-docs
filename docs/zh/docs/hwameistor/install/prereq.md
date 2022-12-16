@@ -39,7 +39,7 @@
     yum install -y lvm2
     yum install -y kernel-devel-$(uname -r)
     ```
-    
+
 === "Ubuntu"
 
     ```console
