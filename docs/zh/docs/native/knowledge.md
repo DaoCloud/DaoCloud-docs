@@ -55,6 +55,16 @@
 
 ### 最佳实践
 
+- [Kubernetes 零信任安全的 mTLS 最佳实践](https://mp.weixin.qq.com/s/QYeP6WZKG0gjJ2u6k1fXxQ)
+
+    文章介绍在 Kubernetes 中实现双向 TLS（mTLS）的三大最佳实践，
+    包括不要使用自签名证书、将 Istio 的信任根植于现有的公钥基础设施 (PKI) 中、使用中间证书。
+
+- [微服务应用视角解读如何选择 K8s 的弹性策略](https://mp.weixin.qq.com/s/jfpF3WUs4YvtlJ8Q4zsuxg)
+
+    对于集群资源弹性，K8s 社区给出了 Cluster Autoscaler（CA）和Virtual Kubelet（VK）两种解决方案。
+    文章围绕微服务应用的形态与特点，剖析了 CA 与 VK 各自适用的场景，并总结了微服务架构下应用该如何选择集群资源弹性。
+
 - [GitOps 软件交付 pipeline 的组件介绍](https://www.weave.works/blog/infographic-gitops-pipeline)
 
     文章总结了开始使用 GitOps 所需的组件，包括容器平台、Git 仓库、容器镜像仓库、GitOps 代理和构建服务器。
@@ -276,6 +286,12 @@
     Harbor v2.2及其更高版本支持对相关指标的采集和使用，这篇文章介绍了如何使用 Prometheus 轻松抓取 Harbor 实例的一些关键指标。
 
 ### 工具推荐
+
+- [为什么我们提倡以工作负载为中心而非基础设施为中心的开发模式？](https://score.dev/blog/workload-centric-over-infrastructure-centric-development)
+
+    云原生开发人员经常被环境间的配置不一致所困扰。
+    [Score](https://github.com/score-spec/spec) 是一个开源项目，提供了一个以开发者为中心、与平台无关的工作负载规范，
+    能够声明式地描述其运行时的要求，消除了本地和远程环境之间的配置不一致性，提高开发者的生产力。
 
 - [用 Bindle 轻松存储和分发云原生应用](https://mp.weixin.qq.com/s/gGp_CneC8BzU3GKOKIfbWA)
 
@@ -588,6 +604,12 @@
     文章从主流 APM 产品介绍出发（对比 Pinpoint、Jaeger、Skywalking、听云、腾讯云+阿里云 Arms 和 Datadog），通过生产环境中关注的几个重要维度，如产品体验、Agent 能力、报警+ DB 支持、云原生的支持能力、数据大屏等，给予 APM 选型方案建议。
 
 ### 前沿热点
+
+- [探索 K8s 新功能 Container Checkpointing](https://sysdig.com/blog/forensic-container-checkpointing-dfir-kubernetes/)
+
+    容器检查点功能（K8s 1.25 alpha）为某个正在运行的容器创建一个状态点的快照，并将其保存到磁盘中。
+    之后可以使用此检查点启动容器，恢复状态，或者将容器迁移到其他的机器上。
+    文章介绍了这个功能的工作原理、Podman 的检查点功能、CRIU 以及取证分析等应用场景。
 
 - [OCI 容器与 Wasm 初体验](https://mp.weixin.qq.com/s/4oFErzG65b-0FfpHQB941A)
 

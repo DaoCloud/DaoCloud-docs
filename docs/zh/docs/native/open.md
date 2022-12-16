@@ -159,7 +159,7 @@
     该版本主要新特性：支持 Gateway API v0.5.0、允许在单一的路由中为一组条件配置一个直接响应、可以为用户证书验证启用撤销检查、合并访问记录和 TLS 密码套件验证。
 
 - [Contour Kubernetes ingress 控制器 v1.21.0 发布 （CNCF 项目）](https://github.com/projectcontour/contour/releases/tag/v1.21.0)  
-    
+
     该版本主要新特性：Contour 访问 leader election 资源的 RBAC 转移至命名空间角色；容器镜像现在只在 GitHub 容器注册中心（GHCR）上发布；新增 `contour gateway-provisioner` 命令和部署清单，用于动态配置 Gateways。
 
 - [Cortex Prometheus 长期存储方案 v1.14 发布](https://github.com/cortexproject/cortex/releases/tag/v1.14.0)
@@ -169,6 +169,11 @@
 - [Cortex 分布式 Prometheus 服务 v1.13.0 发布（CNCF 项目）](https://github.com/cortexproject/cortex/releases/tag/v1.13.0)  
 
     该版本主要新特性：新增元数据 API 查询器的 streaming 功能、为 compactor 提供实验性的shuffle sharding 支持、修复 Distributor 和 Ruler的内存泄漏、在分发请求时加入一个抖动来重置每个 pod 的初始时间。
+
+- [Crane 成本优化工具推出开源云原生应用碳排放计算优化器](https://mp.weixin.qq.com/s/D46-7S20kaMF4CH_H5oTuA)
+
+    碳排放计算优化器基于运行在 Kubernetes 平台上的应用的实际资源消耗，计算对应服务器功耗，进而计算出应用运行所产生的碳排放量。
+    此外，还支持提供 Pod 资源配置、workload 副本数、HPA 参数配置等的优化建议，以及优化后的功耗和碳排放推算结果。
 
 - [CRI-O 容器运行时 v1.25.0 发布（CNCF 项目）](https://github.com/cri-o/cri-o/releases/tag/v1.25.0)  
 
@@ -187,7 +192,7 @@
     [CubeFS](https://github.com/cubefs) 是国内首个具备完整的对象及文件存储能力的云原生存储产品。
     CubeFS 支持多副本和纠删码引擎，提供多租户、多 AZ 部署、跨区域复制等特性；适用于大数据、AI、容器平台、数据库及中间件存算分离等广泛场景。
 
-### D, E, F, G
+### D
 
 - [Dapr 分布式应用运行时 v1.9.0 发布（CNCF 项目）](https://github.com/dapr/dapr/releases/tag/v1.9.0)
 
@@ -202,6 +207,8 @@
 - [DevSpace K8s 开发工具 v6.0 发布](https://github.com/loft-sh/devspace/releases/tag/v6.0.0)  
 
     该版本主要新特性：引入 pipeline 用于 管理 devspace.yaml 中的任务、新增导入功能将不同 devspace.yaml 文件合并在一起、新增 proxy command 在本地计算机上运行在容器中执行的命令。
+
+### E
 
 - [Envoy Gateway API 网关 v0.2 发布](https://github.com/envoyproxy/gateway/releases/tag/v0.2.0)
 
@@ -224,6 +231,8 @@
 - [eunomia-bpf：eBPF 轻量级开发框架正式开源](https://mp.weixin.qq.com/s/fewVoIKbLn5fYbXUaDyTpQ)
 
     [eunomia-bpf](https://gitee.com/anolis/eunomia) 由各高校和龙蜥社区共同开发，旨在简化 eBPF 程序的开发、分发、运行。在 eunomia-bpf 中，只需编写内核态代码即可正确运行，在部署时不需要重新编译，并提供 JSON/WASM 的标准化分发方式。
+
+### F, G
 
 - [Falco 运行时安全项目 v0.32.0 发布（CNCF 项目）](https://github.com/falcosecurity/falco/releases/tag/0.32.0)
 
@@ -362,6 +371,10 @@
 - [Kata Container 容器安全项目 v2.5.0 发布](https://github.com/kata-containers/kata-containers/releases/tag/2.5.0)  
 
     该版本主要新特性：支持 containerd shimv2 日志插件、支持 virtio-block 多队列、支持 QEMU 沙箱功能、支持 containerd 的核心调度、kata-runtime iptables 子命令可在 guest 中操作 iptables、支持直接分配的卷。
+
+- [KEDA 事件驱动自动伸缩器 v2.9.0 发布（CNCF 项目）](https://github.com/kedacore/keda/releases/tag/v2.9.0)
+
+    该版本主要新特性：增加 CouchDB、Etcd 和 Loki 扩展器、引入 Grafana 仪表盘用于监控应用的自动缩放、在 KEDA Operator 中整合所有暴露的 Prometheus 指标、实验性的支持在轮询间隔期间为扩展器缓存指标值。
 
 - [KEDA 基于 Kubernetes 的事件驱动自动伸缩工具 v2.8.0 发布（CNCF 项目）](https://github.com/kedacore/keda/releases/tag/v2.8.0)
 
@@ -543,7 +556,11 @@
 
     该版本主要新特性：支持通过动态客户端查询`mutate.target`、允许 Kyverno jp 在 Yaml 文件上工作、优化镜像验证签名、在策略更新时 mutate 现有资源、允许用户在上下文中定义内联变量、禁用更新请求控制器的 leader election、在测试中支持 apiCall 以及 CLI 更新等。
 
-### L, M, N
+### L
+
+- [Lima Linux 虚拟机 v0.14.0 发布（CNCF 项目）](https://github.com/lima-vm/lima/releases/tag/v0.14.0)
+
+    该版本主要新特性：支持虚拟机共享文件系统 virtiofs、支持 Apple 的虚拟化框架 Virtualization.framework、支持 Containerd 命令行工具 nerdctl 1.1.0。
 
 - [Linkerd 服务网格项目 v2.12.0 发布（CNCF 项目）](https://github.com/linkerd/linkerd2/releases/tag/stable-2.12.0)  
 
@@ -560,6 +577,13 @@
 - [Longhorn 云原生分布式块存储 v1.3.0 发布（CNCF 项目）](https://github.com/longhorn/longhorn/releases/tag/v1.3.0)  
 
     该版本主要新特性：支持多网络 K8s 集群、兼容全托管 K8s 集群（EKS、GKE、AKS）、新增 Snapshot CRD、新增 Mutating & Validating admission webhooks、支持自动识别并清理无主/未使用的卷、引入 CSI 快照、支持通过 Kubernetes Cluster Autoscaler 进行集群扩展。
+
+### M
+
+- [Merbridge：由 DaoCloud 道客开源的服务网格加速器正式进入 CNCF 沙箱](https://mp.weixin.qq.com/s/Ht1HuLxQ2RngrVD92TBl4Q)
+
+    12 月 14 日，CNCF 基金会宣布 Merbridge 正式被纳入 CNCF 沙箱项目。[Merbridge](https://github.com/merbridge/merbridge) 是目前 CNCF 中唯一专注于使用 eBPF 加速服务网格的开源项目。
+    通过 Merbridge 只需要在 Istio 集群执行一条命令，即可直接使用 eBPF 代替 iptables，实现网络加速，提高服务性能。
 
 - [MetalLB Kubernetes 负载均衡器 v1.3.2 发布（CNCF 项目）](https://metallb.universe.tf/release-notes/#version-0-13-2)  
 
@@ -586,6 +610,12 @@
 - [MinIO 对象存储工具发布新功能：扩展版本库和正式支持 OPA（CNCF 项目）](https://github.com/minio/minio/releases/tag/RELEASE.2022-05-08T23-50-31Z)
 
     MinIO 对版本库进行了扩展，排除版本库中的某些前缀和文件夹，以提高 Spark S3A 连接器等应用的性能。此外，应外界广泛要求，MinIO 正式支持 OPA。
+
+### N
+
+- [Nacos 动态服务发现平台 v2.2.0 发布](https://github.com/alibaba/nacos/releases/tag/2.2.0)
+
+    该版本主要新特性：支持批量注册和批量注销服务、支持 openAPI 2.0、增加多数据源插件、增加轨迹追踪插件、支持 Prometheus http 服务发现、支持 Ldaps 认证。
 
 - [Nacos 动态服务发现平台 v2.1.0 发布（CNCF 项目）](https://github.com/alibaba/nacos/releases/tag/2.1.0)
 
@@ -650,7 +680,7 @@
 
     该版本主要新特性：在设置 span 时Context 是不可变的、支持实验性的配置 OTLP 指标输出器的默认直方图聚合、允许日志处理器修改日志记录、添加实验性的事件和日志 API 规范、在流程语义约定中添加网络指标、为 GraphQL 添加语义约定。
 
-- [OpenTelemetry Metrics 发布 RC 版本](https://opentelemetry.io/blog/2022/metrics-announcement/) 
+- [OpenTelemetry Metrics 发布 RC 版本](https://opentelemetry.io/blog/2022/metrics-announcement/)
 
     Java、.NET、Python 已经发布了 OpenTelemetry 指标的 RC 版本（JS 下周发布）。这意味着， specification、API、SDK 以及以创作、捕获、处理等方式与 metrics 交互的组件，现在拥有完整的 OTel metrics 功能集，并且随时可供使用。
 
