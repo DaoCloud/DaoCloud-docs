@@ -1,44 +1,68 @@
----
-date: 2022-12-14
-hide:
-  - navigation
----
-
 # DCE 5.0 商业版 v0.3.29
 
 本页可下载 DCE 5.0 商业版的离线安装包和校验文件。
 
 ## 下载
 
-| 版本名称         | 安装包                       |
-| ---------------- | ---------------------------- |
-| offline-centos7-v0.3.29-amd64.tar | [:arrow_down: 下载](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-v0.3.29-amd64.tar) |
+| 文件名            | 版本    | 架构 | 文件大小 | 下载                                               | 更新日期   |
+| ------------------- | ------- | -------- | -------------------------------------------------- | ---------- | ------------------- |
+| offline-centos7-v0.3.29-amd64.tar | v0.3.29 | AMD64 和 Linux | 22.9 GB | [:arrow_down: 下载](ARM64 或信创) | 2022-12-16 |
+| offline-kylin-v10sp2-v0.3.29-arm64.tar | v0.3.29 | ARM64 和信创 | 19.9 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-v0.3.29-arm64.tar) | 2022-12-16 |
 
 ## 校验
 
-进入离线安装包下载目录。执行以下命令校验安装包：
+进入离线安装包下载目录。
 
-```sh
-echo "ef7fd779d3b5bc50bccf80e29934002c60f53143319c80dd9aad85fc1404ac7d309997e0d9c829612c1b400cd4d4861fb1b6f91efee8c236ada930cbb44ca1c1" | sha512sum -c
-```
+=== "AMD64 和 Linux"
 
-校验成功会打印：
+    执行以下命令校验安装包：
 
-```none
-offline-centos7-v0.3.29-amd64.tar: OK
-```
+    ```sh
+    echo "ef7fd779d3b5bc50bccf80e29934002c60f53143319c80dd9aad85fc1404ac7d309997e0d9c829612c1b400cd4d4861fb1b6f91efee8c236ada930cbb44ca1c1  offline-centos7-v0.3.29-amd64.tar" | sha512sum -c
+    ```
+
+    校验成功会打印：
+
+    ```none
+    offline-centos7-v0.3.29-amd64.tar: OK
+    ```
+
+=== "ARM64 和信创"
+
+    执行以下命令校验安装包：
+
+    ```sh
+    echo "1cc8b41bfaad23cb1b14170b68ee581d2eb384fe6d803ce34a1a09f1d41e7640768cca8a7f8a3f6a881ecfddaaa73756247676b6e0bc72b7ca651cc855ce2ff4  offline-kylin-v10sp2-v0.3.29-arm64.tar" | sha512sum -c
+    ```
+
+    校验成功会打印：
+
+    ```none
+    offline-kylin-v10sp2-v0.3.29-arm64.tar: OK
+    ```
 
 ## 安装
 
-成功校验离线包之后，解压缩 tar 包：
+成功校验离线包之后，
 
-```sh
-tar -zxvf offline-centos7-v0.3.29-amd64.tar
-```
+=== "AMD64 和 Linux"
 
-成功校验离线包之后，请参阅[商业版安装流程](../../install/commercial/start-install.md)进行安装。
+    执行以下命令解压缩 tar 包：
 
-成功安装之后请进行[正版授权](https://qingflow.com/f/e3291647)。
+    ```sh
+    tar -zxvf offline-centos7-v0.3.29-amd64.tar
+    ```
+
+=== "ARM64 和信创"
+
+    执行以下命令解压缩 tar 包：
+
+    ```sh
+    tar -zxvf offline-kylin-v10sp2-v0.3.29-arm64.tar
+    ```
+
+- 安装请参阅[商业版安装流程](../../install/commercial/start-install.md)
+- 成功安装之后请进行[正版授权](https://qingflow.com/f/e3291647)
 
 ## 模块
 
