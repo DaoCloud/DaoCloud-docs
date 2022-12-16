@@ -32,10 +32,10 @@
 1. 在 k8s 集群控制平面节点（Master 节点）下载社区版的对应离线包并解压，或者从[下载中心](../../../download/dce5.md)下载离线包并解压。
 
     ```bash
-    # 假定版本 VERSION=0.3.28
-    export VERSION=v0.3.28
-    wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION.tar
-    tar -zxvf offline-community-$VERSION.tar
+    # 假定版本 VERSION=0.3.29
+    export VERSION=v0.3.29
+    wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-community-$VERSION-amd64.tar
+    tar -zxvf offline-centos7-community-$VERSION-amd64.tar
     ```
 
 2. 导入镜像。
