@@ -33,8 +33,8 @@
 1. 在 K8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../../download/dce5.md)）。
 
     ```shell
-    # 假定 VERSION 为 v0.3.28
-    export VERSION=v0.3.28
+    # 假定 VERSION 为 v0.3.29
+    export VERSION=v0.3.29
     curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     ```
 
