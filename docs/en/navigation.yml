@@ -1,6 +1,6 @@
 # Page tree
 nav:
-  - DaocDloud Home: https://www.daocloud.io/
+  - DaoCloud Home: https://www.daocloud.io/
   - Documentation:
       - DCE Profile:
           - What is DCE 5.0: dce/what-is-dce.md
