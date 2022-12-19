@@ -34,5 +34,13 @@
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kafka.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
+## Redis 缓存实例管理
+
+参阅[Redis 缓存服务](../middleware/redis/intro/what.md)文档页面。
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/redis.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

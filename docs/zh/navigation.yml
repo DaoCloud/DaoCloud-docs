@@ -188,11 +188,12 @@ nav:
               - 修改配置: insight/06UserGuide/08systemconfig/modifyconfig.md
           - 权限说明: insight/06UserGuide/permission.md
           - 常见问题:
-              - insight/09FAQs/README.md
               - 导入自定义仪表盘: insight/09FAQs/importdashboard.md
+              - 开启采集审计日志: insight/09FAQs/collectauditlog.md
               - 日志采集排障指南: insight/09FAQs/debuglog.md
               - 链路采集排障指南: insight/09FAQs/debugtrace.md
               - DCE 4.0 安装 insight-agent: insight/09FAQs/installagentindce.md
+              - 指标抓取说明: insight/09FAQs/servicemonitor.md
       - 应用工作台:
           - 介绍:
               - 什么是应用工作台？: amamba/01ProductBrief/WhatisAmamba.md
@@ -560,7 +561,7 @@ nav:
       - 镜像仓库: videos/kangaroo.md
   - 博客:
       - 博文索引: blogs/index.md
-      - 20221209 | 保姆式安装 DCE 社区版: blogs/dce5-install1209.md
+      - 20221209 | 保姆式安装DCE社区版: blogs/dce5-install1209.md
       - 20221105 | K8s 资深认证服务商: blogs/kcsp.md
       - 20221026 | 容器管理能力介绍: blogs/kpanda.md
       - 20221018 | 资源管理能力介绍: blogs/resource.md
@@ -580,7 +581,10 @@ nav:
       - Merbridge: community/merbridge.md
       - Spiderpool: community/spiderpool.md
   - 下载中心:
-      - DaoCloud Enterprise 5.0: download/dce5.md
+      - DaoCloud Enterprise 5.0: 
+          - DCE 5.0 下载说明: download/dce5.md
+          - 下载社区版: download/free/dce5-installer-v0.3.29.md
+          - 下载商业版: download/business/dce5-installer-v0.3.29.md
   - 云原生研究院:
       - 社区要闻: native/news.md
       - 商业产品: native/commerce.md

@@ -2,7 +2,20 @@
 
 在尝试排查链路数据采集的问题前，需先理解链路数据的传输路径，下面是链路数据传输示意图：
 
-![traceDatatransmission](../images/debugtrace00.png)
+```mermaid
+graph TB
+
+sdk[Language proble / SDK] --> workload[Workload cluster otel collector]
+--> otel[Global cluster otel collector]
+--> jaeger[Global cluster jaeger collector]
+--> es[Elasticsearch cluster]
+
+classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
+classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
+classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+
+class sdk,workload,otel,jaeger,es cluster
+```
 
 如上图所示，在任一步骤传输失败都会导致无法查询出链路数据。如果您在完成应用链路增强后发现没有链路数据，请执行以下步骤：
 

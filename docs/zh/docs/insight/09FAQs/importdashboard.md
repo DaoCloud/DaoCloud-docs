@@ -13,7 +13,6 @@
 3. 点击 `Yaml 创建`，使用以下模板，在 `Json` 字段中替换仪表盘 JSON。
 
     - `namespace`：填写目标命名空间；
-
     - `name`：填写仪表盘的名称。
 
     ```yaml
@@ -71,9 +70,7 @@
 2. 可选择以下方式导入：
 
     - 上传仪表盘 JSON 文件
-
     - 粘贴 [Grafana.com](https://grafana.com)仪表盘 URL
-
     - 粘贴仪表盘 JSON 到文本区域
 
     ![导入仪表盘](../images/importboard02.png)
@@ -81,9 +78,7 @@
 3. 点击 `Load` 后，填写以下参数：
 
     - name：设置仪表盘的名称
-
     - Floder：选择仪表盘存储的目标路径
-
     - Prometheus：选择数据源
 
     ![导入仪表盘](../images/importboard03.png)

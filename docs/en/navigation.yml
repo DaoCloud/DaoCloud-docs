@@ -5,7 +5,7 @@ nav:
       - DCE Profile:
           - What is DCE 5.0: dce/what-is-dce.md
           - Scenarios: /dce/scenario/
-          - Features: /dce/features/
+          - Features: dce/features.md
           - Why DCE: /dce/whyus/
           - Free Trial: dce/license0.md
       - Install:
@@ -374,6 +374,7 @@ nav:
       - Microservices: videos/skoala.md
       - Middelware: videos/mcamel.md
   - Blogs:
+      - Blog index: /blogs/index.md
       - DCE Development Background: /blogs/blog00/
       - Introduce Container Manager: /blogs/kpanda/
       - Introduce Resource Management: /blogs/resource/

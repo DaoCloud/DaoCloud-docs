@@ -1,10 +1,10 @@
 # 监控指标
 
-本页说明如何在 Calico 中开启 `calico_prometheus_metrics` 接入 Prometheus 监控指标。
+本页说明如何在 Calico 中开启 `calico_prometheus_metrics`，接入 Prometheus 监控指标。
 
 ## 开启组件 metrics
 
-通过 `kubespray` 部署时可根据 `calico_felix_prometheusmetricsenabled` 参数决定是否打开，默认为 false. 或者通过下面的方式手动开启：
+通过 `kubespray` 部署时可根据 `calico_felix_prometheusmetricsenabled` 参数决定是否打开，默认为 false，或者通过以下方式手动开启：
 
 1. 开启 `calico_felix_prometheusmetricsenabled`：
 
@@ -122,7 +122,7 @@ spec:
 |---------|-------------|-----------------------------------------|----------|--------|------|
 | 1 | `felix_ipset_errors`| 执行 `ipset-restore` 失败次数 | ** | 可考虑采集 | 次数 +1 不一定造成问题
 | 2 | `felix_iptables_restore_calls` | 执行 iptables-restore 次数 | ***** | 采集 | NA
-| 3 | `felix_iptables_restore_errors` | 执行 iptables-restore 失败次数 | *****| 采集 | restore 失败可能造成 Pod 访问失败，出现 restore 失败的原因可能`xtables_lock` 竞争失败，检查主机上 iptables 数量是否过多
+| 3 | `felix_iptables_restore_errors` | 执行 iptables-restore 失败次数 | *****| 采集 | restore 失败可能造成 Pod 访问失败。出现 restore 失败的原因可能是`xtables_lock` 竞争失败，请检查主机上 iptables 数量是否过多
 | 4 | `felix_iptables_save_calls` | 执行 iptables-save 的次数 | **** | 可考虑采集 | NA
 | 5 | `felix_iptables_save_errors`| 执行 iptables-save 失败的次数 | ***** | 采集 |
 | 6 | `felix_log_errors` | 日志报告 error 的次数 | ***** | 建议采集

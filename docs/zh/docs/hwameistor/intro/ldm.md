@@ -29,13 +29,13 @@
 1. 克隆  repo 到本机
 
     ```bash
-    $ git clone https://github.com/hwameistor/local-disk-manager.git
+    git clone https://github.com/hwameistor/local-disk-manager.git
     ```
 
 2. 进入 repo 对应的目录
 
     ```bash
-    $ cd deploy
+    cd deploy
     ```
 
 3. 安装 CRDs 和 运行 LocalDiskManager
@@ -43,21 +43,21 @@
     安装 LocalDisk 和 LocalDiskClaim 的 CRD
 
     ```bash
-    $ kubectl apply -f deploy/crds/
+    kubectl apply -f deploy/crds/
     ```
 
     安装权限认证的 CR 以及 LDM 的 Operators
 
     ```bash
-    $ kubectl apply -f deploy/
+    kubectl apply -f deploy/
     ```
 
 4. 查看 LocalDisk 信息
 
     ```bash
     $ kubectl get localdisk
-    10-6-118-11-sda    10-6-118-11                             Unclaimed
-    10-6-118-11-sdb    10-6-118-11                             Unclaimed
+    10-6-118-11-sda    10-6-118-11       Unclaimed
+    10-6-118-11-sdb    10-6-118-11       Unclaimed
     ```
 
     该命令用于获取集群中磁盘资源信息，获取的信息总共有四列，含义分别如下：
@@ -74,15 +74,17 @@
     **创建 LocalDiskClaim**
 
     ```bash
-    $ kubectl apply -f deploy/samples/hwameistor.io_v1alpha1_localdiskclaim_cr.yaml
+    kubectl apply -f deploy/samples/hwameistor.io_v1alpha1_localdiskclaim_cr.yaml
     ```
 
-    该命令用于创建一个磁盘使用的申请请求。在这个 yaml 文件里面，您可以在 description 字段添加对申请磁盘的描述，比如磁盘类型、磁盘的容量等等。
+    该命令用于创建一个磁盘使用的申请请求。
+    在这个 yaml 文件里面，您可以在 description 字段添加对申请磁盘的描述，比如磁盘类型、磁盘的容量等等。
 
     **查看 LocalDiskClaim 信息**
 
     ```bash
-    $ kubectl get localdiskclaim <name>
+    kubectl get localdiskclaim <name>
     ```
 
-查看 `Claim` 的 Status 字段信息。如果存在可用的磁盘，您将会看到该字段的值为 `Bound`。
+    查看 `Claim` 的 Status 字段信息。
+    如果存在可用的磁盘，您将会看到该字段的值为 `Bound`。
