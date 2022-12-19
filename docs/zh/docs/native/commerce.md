@@ -45,6 +45,10 @@
 
     更新内容包括：Azure 容器注册中心新增软删除功能，可恢复误删除的工件；允许中止 AKS 集群或代理池上的任何操作；支持多实例 GPU（MIG）；将 Azure 网络策略管理器（NPM）扩展到 Windows server 2022 的 AKS 集群；集成用于 AKS 私有集群的 API Server VNET。
 
+- [阿里云分布式云容器平台 ACK One 更新](https://mp.weixin.qq.com/s/TC1KA_xWpVAwZMFAgVmNfg)
+
+    更新内容：集成 ArgoCD 实现多集群的 GitOps 持续交付，优化多集群应用分发；统一配置报警规则，支持配置特定集群的差异化报警规则，支持自动同步报警规则到新关联集群。
+
 - [阿里云容器服务 ACK 云栖大会更新](https://mp.weixin.qq.com/s/cOObDVvnTGkX_hiAWv8mVA)
 
     更新内容：提供对 eRDMA 高性能容器网络的支持、基于新一代容器网络文件系统 CNFS 2.0 更好支持有状态应用的容器化、内建云原生混部系统 Koordinator 的产品化支持、发布 AIOps 套件和 FinOps 套件。
@@ -123,6 +127,10 @@
     CIS-C 是一款将 Kubernetes 集群内服务通过 F5 BIG-IP 进行自动化发布的控制器软件。
     帮助用户打通 Kubernetes 集群与外部入口，将 BIG-IP 应用交付能力集成到 Kubernetes 技术栈的云环境中。
     它实现了多团队合作，用户可以灵活地、自动化地创建、变更应用或者服务入口策略。
+
+- [Fairwinds 的 Kubernetes 治理和安全平台 Fairwinds Insights 十一月更新](https://www.fairwinds.com/blog/fairwinds-insights-release-notes-10.2-10.6-spotlight-on-workload-cost-allocation)
+
+    更新内容：增加工作负载成本分配功能，允许查看一组工作负载的历史成本；优化成本页面，细化 Kubernetes 集群成本的分类；支持查看成本随时间变化的动态。
 
 - [Fortinet 发布云原生防火墙服务 FortiGate CNF](https://www.fortinet.com/blog/business-and-technology/simplify-cloud-security-with-the-fortigate-cloud-native-firewall-on-aws)
 
@@ -236,6 +244,12 @@
 
     该版本主要新特性：支持把同一 pod 内不同容器的结构化日志转发给不同的索引、使用 Kubernetes 通用标签过滤带有 Elasticsearch 输出的日志、日志聚合 Loki Operator 和 观测数据收集Vector collector 正式可用。
 
+- [OutSystems 发布云原生低代码开发解决方案 OutSystems Developer Cloud (ODC)](https://mp.weixin.qq.com/s/yx63Um3ju1mC-qNF9_GJkw)
+
+    ODC 是用于构建云原生应用程序的高性能低代码解决方案。
+    ODC 将 Kubernetes、Linux 容器、微服务和 AWS 原生云服务与 DORA 高性能级 CI/CD、企业级安全性以及基于模型的可视化开发相结合。
+    支持大规模交易量和数据需求，通过高级可视化编程和人工智能提高开发人员生产力，实现高性能 CI/CD 实践。
+
 ### P, Q, R
 
 - [Portworx Enterprise 2.12 云原生数据管理平台发布](https://docs.portworx.com/release-notes/portworx/#2-12-0)
@@ -245,6 +259,10 @@
 - [Portworx Backup v2.3 数据备份产品发布](https://portworx.com/blog/announcing-portworx-backup-2-3-for-simpler-backup-management-and-flexible-licensing/)
 
     该版本主要新特性：支持与其他用户和组共享备份、支持根据特定的基础设施定制备份许可证、支持使用用户提供的或默认的密钥为不同类型的备份提供加密支持。
+
+- [青云发布分布式多租户云原生操作系统 KubeSphere 企业版 3.3](https://mp.weixin.qq.com/s/ZuiY-la34DvHW5bQdc9q7Q)
+
+    版本特性：新增可观测中心，汇总同步分散在各个集群的数据；重构集群监控页面，聚焦资源分配；优化租户监控，支持展示租户配额设置情况等；新增对微服务框架 Spring Cloud 的支持；集成 Argo CD 支持 GitOps。
 
 - [Quali 基础设施自动化方案 Torque 更新，简化 Kubernetes 基础设施管理](https://www.quali.com/blog/quali-simplifies-cloud-infrastructure-management/)
 
@@ -314,6 +332,12 @@
 - [Traefik Labs 发布云原生网络平台 Traefik Hub 1.0](https://traefik.io/blog/announcing-the-general-availability-of-traefik-hub-1-0/)
 
     Traefik Hub 1.0 允许用户可以使用 Traefik 或 Nginx 快速、安全地发布 Kubernetes 或 Docker 容器。Traefik Hub 提供了为 Kubernetes 集群联网所需的集中控制平面，而无需部署容器 sidecar 来运行网络软件。其支持通过安全加密隧道和直接私有连接进行容器联网，通过 JWT 或 OIDC 为服务添加访问控制，通过 GitOps 实现规模化的自动化等，并配有工作空间促进跨团队协作等。
+
+- [腾讯云容器服务 TKE 三项能力升级](https://mp.weixin.qq.com/s/DfxCQM8KzMioSt6rVq5oHw)
+
+    升级内容：节点管理方面，新增 HouseKeeper 运维范式，对原生节点、超级节点、注册节点等云上/云下资源进行纳管；
+    集群管理方面，支持一种集群管理任意节点，同时支持原生节点、超级节点、注册节点和边缘节点等多种节点；
+    应用管理方面，打造面向多云和边缘场景的应用管理平台，实现多集群统一分发、部署和管理。
 
 - [腾讯云容器服务 TKE 9 月更新](https://mp.weixin.qq.com/s/6_TSSHhU0L8mSbqEMWyu4g)
 

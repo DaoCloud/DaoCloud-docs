@@ -4,6 +4,13 @@
 
 > 我们会定期维护，保证所有链接的有效性、新闻的时效性
 
+### 2023-02
+
+- [2 月 1 日至 2 日 CNCF CloudNativeSecurityCon 会议即将举行，目前会议议程已发布](https://events.linuxfoundation.org/cloudnativesecuritycon-north-america/program/schedule/)
+  
+    CloudNativeSecurityCon 首个围绕云原生安全项目和企业安全挑战实践的独立会议。
+    会议共有 72 场演讲，演讲主题包括体系结构和策略、安全软件开发、供应链安全、身份和访问、取证等。
+
 ### 2023-01
 
 - [1 月 2 日 CNCF 即将开启 2023 年技术监督委员会（TOC）选举](https://www.cncf.io/blog/2022/12/01/cncf-toc-elections-for-2023/)
@@ -36,6 +43,14 @@
     峰会定于 12 月 16 日在北京举行，将重点讨论 Upstream First 的成功实践和开源办公室（OSPO）的工作实践。
 
     此外，还将就降本增效、DevSecOps、开源文化、企业单位与开源共同体、许可、供应链、SBOM、项目共同体构建、成为开源世界的领导者等话题展开讨论。
+
+- [12 月 14 日赛迪顾问发布《2022中国私有云市场研究报告》](https://img02.ma.scrmtech.com/11018/1471/resource/1671000132/%E8%B5%9B%E8%BF%AA%E9%A1%BE%E9%97%AE-2022%E4%B8%AD%E5%9B%BD%E7%A7%81%E6%9C%89%E4%BA%91%E5%B8%82%E5%9C%BA%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A.pdf)
+  
+    报告对中国私有云和私有云系统平台的发展现状、市场规模、行业应用和产品结构、市场竞争及未来趋势等进行了全面解析。
+    2021 年，中国私有云系统平台市场规模达到 51.4 亿元，同比增长45.2%。
+    其中，容器平台的市场规模为 12.6 亿元，占私有云系统平台规模的 24.5 %。
+    2021 私有云系统平台厂商竞争力象限分析图如下：
+![private](./images/private.png)
 
 - [12 月 14 日第二届「云原生十大技术创新/先锋实践」评选正式启动](https://mp.weixin.qq.com/s/UZ_05I06VCJYN5MKLwO7IA)
 
