@@ -5,18 +5,22 @@ google 翻译，默认限制 5000 字符一下，超过 5000 字符不会翻译�
 ## 使用注意事项
 
 - 需要本地环境可以访问 google 翻译，简而言之：需要科学上网。
-- 翻译单个文档 `make trans file=xxx.md`，翻译结果保存为 `xxx_translate.md`
-- 批量翻译整个文件夹 `make trans folder=xxx`， 翻译结果保存到文件夹下 `/_translated` 文件夹
+- 翻译单个文档 `translate_md --file=xxx.md`，翻译结果保存为 `xxx_translate.md`
+- 批量翻译整个文件夹 `translate_md --folder=xxx`， 翻译结果保存到文件夹下 `/_translated` 文件夹
 
 ## 翻译流程
 
 - 将 `scripts/config-sample.py` 重命名为 `scripts/config.py`，并根据本地的代理情况配置文件
 - 安装依赖
-    1. 切换路径到 scripts/ 目录下
+    1. 切换路径到 `cd scripts` 目录下
     2. 依赖翻译库 `googletrans`， 安装方式 `pip3 install googletrans==3.1.0a0`
-    3. 依赖 pyinstaller 制作个人指令，安装方式 `pip3 install -g pyinstaller`
-    4. 将编译后的指令保存到系统环境变量中使用，`cp dist/translate_md ../.venv/bin/`
-    5. 可以在任意路径下执行命令
+    3. 依赖 pyinstaller 制作个人指令，安装方式 `pip3 install pyinstaller`
+    4. 将编译后的指令保存到系统环境变量中使用，`cp dist/translate_md /usr/local/bin`
+    5. 可以在任意路径下执行命令：
+
+        - 如果是 intel 芯片的 Mac，运行 `cp translate_md_amd64 /usr/local/bin/translate_md`
+        - 如果是 m1 芯片的 Mac，运行 `cp translate_md_arm64 /usr/local/bin/translate_md`
+        - 如果是 Windows，需要自己编译 `pyinstaller -F translate_md.py --clean`，然后执行第 4 步
 
 ## 翻译指令使用案例
 
@@ -25,7 +29,7 @@ google 翻译，默认限制 5000 字符一下，超过 5000 字符不会翻译�
 ### 翻译单个文件
 
 ```bash
-~ translate_md-arm64 --file=Features.md     
+~ translate_md --file=Features.md     
 Features.md
 Namespace(file=['Features.md'], folder=None, full_translate=None)
 
@@ -36,7 +40,7 @@ Features.md Features_translated.md
 ### 翻译整个文件夹
 
 ```bash
-~ translate_md-arm64 --folder=01ProductBrief    
+~ translate_md --folder=01ProductBrief    
 01ProductBrief
 01ProductBrief/Benefits.md
 01ProductBrief/WhatisAmamba.md
@@ -58,5 +62,5 @@ Benefits.md  Concepts.md  Features.md  release-notes.md  Scenarios.md  WhatisAma
 这里特殊指令会翻译全部文件，翻译全部文件的同时，会自动copy相关的图片资料
 
 ```bash
-~ translate_md-arm64 --full_translate=True
+~ translate_md --full_translate=True
 ```
