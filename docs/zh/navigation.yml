@@ -581,7 +581,10 @@ nav:
       - Merbridge: community/merbridge.md
       - Spiderpool: community/spiderpool.md
   - 下载中心:
-      - DaoCloud Enterprise 5.0: download/dce5.md
+      - DaoCloud Enterprise 5.0: 
+          - DCE 5.0 下载说明: download/dce5.md
+          - 下载社区版: download/free/dce5-installer-v0.3.29.md
+          - 下载商业版: download/business/dce5-installer-v0.3.29.md
   - 云原生研究院:
       - 社区要闻: native/news.md
       - 商业产品: native/commerce.md
