@@ -24,6 +24,7 @@ nav:
               - 离线安装步骤: install/commercial/start-install.md
               - 使用场景示例: install/commercial/scenarios.md
           - 卸载: install/uninstall.md
+          - Release Notes: install/release-notes.md
       - 容器管理:
           - 介绍:
               - 什么是容器管理: kpanda/03ProductBrief/WhatisKPanda.md
