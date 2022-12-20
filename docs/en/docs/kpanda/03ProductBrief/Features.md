@@ -4,7 +4,7 @@ This page lists the main functional features of container management.
 
 ## Cluster life cycle management
 
-- Unified management of clusters: Support any Kubernetes cluster within a specific version range to be included in the scope of container management, and realize unified management of on-cloud, off-cloud, multi-cloud, and hybrid cloud container cloud platforms.
+- Unified management of clusters: Support any Kubernetes cluster within a specific version range to be included in the scope of container management, and realize unified management of on-cloud, off-cloud, multicloud, and hybrid cloud container cloud platforms.
 
 - Quick creation of clusters:
 
@@ -62,7 +62,7 @@ Service (Service) is a Kuberetes-native resource that provides cloud-native load
 
 - Namespace management: supports namespace creation, quota setting, resource limit setting, etc.
 
-- Cross-cluster namespace management: supports unified management of cross-cluster namespaces and efficient retrieval capabilities, and realizes namespace management capabilities in multi-cloud scenarios and disaster recovery scenarios.
+- Cross-cluster namespace management: supports unified management of cross-cluster namespaces and efficient retrieval capabilities, and realizes namespace management capabilities in multicloud scenarios and disaster recovery scenarios.
 
 ## Container storage
 

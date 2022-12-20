@@ -26,9 +26,9 @@ You need to add the corresponding service source in the source management <!--to
 
         ![Get service access address](imgs/service-access.png)
 
-    - Grid Services:
+    - mesh Services:
 
-        The function of accessing grid services is under development, so stay tuned.
+        The function of accessing mesh services is under development, so stay tuned.
 
     - Registration Center Service: Select the registration center where the target service is located, and fill in the access protocol, address and port.
 

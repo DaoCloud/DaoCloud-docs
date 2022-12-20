@@ -3,13 +3,13 @@ hide:
   - toc
 ---
 
-# Access from external applications to services in the grid
+# Access from external applications to services in the mesh
 
 This page explains how external applications can be configured to access services within the mesh.
 
 precondition:
 
-- The service `bookinfo.com` runs under the `default` namespace of the grid `global-service`
+- The service `bookinfo.com` runs under the `default` namespace of the mesh `global-service`
 
 - Mesh provides `ingressgateway` gateway instance
 

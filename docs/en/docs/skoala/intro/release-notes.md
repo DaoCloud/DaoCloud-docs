@@ -16,7 +16,7 @@ This page lists the Release Notes of the microservice engine, so that you can un
 #### fix
 
 - **Fix** Microservice integration observable component status issue
-- **FIXED** Governance status issue of registry center enabling grid plug-in capability
+- **FIXED** Governance status issue of registry center enabling mesh plug-in capability
 - **FIX** gateway log index issue
 - **Fix** the problem of pre-dependency checking interface
 - **Fix** Sentinel logic problem matching with Nacos default namespace

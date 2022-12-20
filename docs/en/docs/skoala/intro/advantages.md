@@ -23,7 +23,7 @@ Compared with other similar products, the microservice engine provided by "DaoCl
 
 === "Open Compatibility"
 
-    The microservice engine supports traditional and cloud music registration centers, as well as mainstream open source microservice frameworks such as Spring Cloud and Dubbo, and open source gateway components such as Envoy, Sentinel, and Contour. In addition, it can be freely combined with [DCE 5.0](../../dce/what-is-dce.md) modules such as multi-cloud orchestration, data service middleware, service grid, and application workbench to achieve more Customized and refined functions.
+    The microservice engine supports traditional and cloud music registration centers, as well as mainstream open source microservice frameworks such as Spring Cloud and Dubbo, and open source gateway components such as Envoy, Sentinel, and Contour. In addition, it can be freely combined with [DCE 5.0](../../dce/what-is-dce.md) modules such as multicloud orchestration, data service middleware, service mesh, and application workbench to achieve more Customized and refined functions.
 
 === "Visual interface and data"
 

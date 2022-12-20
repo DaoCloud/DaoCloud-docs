@@ -15,7 +15,7 @@ This version is for the community, welcome to try it for free.
 
 ## Download the commercial version
 
-This version is suitable for building private cloud, hybrid cloud, multi-cloud, micro-service and other scenarios, and can customize a variety of cloud-native modules.
+This version is suitable for building private cloud, hybrid cloud, multicloud, micro-service and other scenarios, and can customize a variety of cloud-native modules.
 
 | File Name | Version | Architecture | File Size | Downloads | Date Updated |
 | ------------------- | ------- | -------- | ------------ ----------------------------------------- | ---------- | ------------------- |
@@ -24,7 +24,7 @@ This version is suitable for building private cloud, hybrid cloud, multi-cloud, 
 
 ## Download submodule
 
-DCE 5.0 includes many sub-modules: global management, container management, observability, multi-cloud orchestration, service mesh, microservice engine, etc.
+DCE 5.0 includes many sub-modules: global management, container management, observability, multicloud orchestration, service mesh, microservice engine, etc.
 You can download the tar package of each submodule separately here, and hot-upgrade each submodule on demand.
 
 | Modules | File Size | Downloads | Date Updated |

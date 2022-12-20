@@ -9,7 +9,7 @@ The container management platform has the following advantages:
 
 **Unified management of clusters**
 
-- Supports unified management of different clusters, supports any Kubernetes cluster within a specific version range to be included in the scope of container management, realizes unified management of on-cloud, off-cloud, multi-cloud, and hybrid cloud container cloud platforms, and avoids vendor lock-in.
+- Supports unified management of different clusters, supports any Kubernetes cluster within a specific version range to be included in the scope of container management, realizes unified management of on-cloud, off-cloud, multicloud, and hybrid cloud container cloud platforms, and avoids vendor lock-in.
 
 - The smooth upgrade of the Kubernetes cluster can be completed with one click through the web interface.
 
@@ -42,7 +42,7 @@ The container management platform has the following advantages:
 
 **Heterogeneous compatibility**
 
-- Provides highly automated and elastic heterogeneous multi-cloud support capabilities, adapting to x86 and Xinchuang cloud architecture.
+- Provides highly automated and elastic heterogeneous multicloud support capabilities, adapting to x86 and Xinchuang cloud architecture.
 
 - Supports unified deployment of x86 and ARM architecture mixed clusters, unified management and support for application operation, and guarantees network interoperability between applications.
 

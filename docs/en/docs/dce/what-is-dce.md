@@ -1,6 +1,6 @@
 # DaoCloud Enterprise 5.0
 
-DaoCloud Enterprise 5.0 is a high-performance, scalable cloud-native operating system that provides a consistent and stable experience on any infrastructure and in any environment. It supports hybrid, edge, and multi-cloud orchestration. DCE 5.0 integrates the latest service mesh and microservice technologies to track every flow and help you gain insight into the detailed metrics of clusters, nodes, applications, and services, and visualize the health status of applications through dynamic dashboards and topology maps.
+DaoCloud Enterprise 5.0 is a high-performance, scalable cloud-native operating system that provides a consistent and stable experience on any infrastructure and in any environment. It supports hybrid, edge, and multicloud orchestration. DCE 5.0 integrates the latest service mesh and microservice technologies to track every flow and help you gain insight into the detailed metrics of clusters, nodes, applications, and services, and visualize the health status of applications through dynamic dashboards and topology maps.
 
 DCE 5.0 natively supports the DevOps development and operation and maintenance mode, which can realize the full process standardization and automation of application delivery, and integrate various selected databases and middleware to make operation and maintenance governance more efficient. The various product modules of DCE 5.0 are independently decoupled and support flexible upgrades without affecting the business, and can be docked with many cloud-native ecological products to provide a complete solution system. It has been tested by nearly a thousand industry customers' production scenarios, and has built a solid and reliable digital foundation to help enterprises define digital boundaries and release cloud-native productivity.
 
@@ -8,13 +8,13 @@ DCE 5.0 natively supports the DevOps development and operation and maintenance m
 
 In the past eight years, DaoCloud has invested huge to explore and develop a cloud-native operating system with custom and scalable modules to facilitate your business digitalization. You can use each module like a LEGO brick, with zero downtime while upgrading any module. DCE 5.0 is also easy to integrate with hundreds of cloud-native ecological plugins, so you can simply customize solutions for different scenarios. Things go better with such a kind of modular style to grow day by day.
 
-=== "Multicloud Management"
+=== "Multicloud Orchestration"
 
-    **Applicable scenarios**: The deployment of multi-cloud and multi-cluster in an enterprise has become the norm, and it is hoped to have the capabilities of multi-cloud app release and cross-cloud disaster recovery.
+    **Applicable scenarios**: The deployment of multicloud and multi-cluster in an enterprise has become the norm, and it is hoped to have the capabilities of multicloud app release and cross-cloud disaster recovery.
 
     **Benefits**: Using innovative technologies to orchestrate disaster recovery (DR) across clouds, this solution has high concurrent performance of cross-cloud resource retrieval, and can help your IT departments quickly plan and implement DR capabilities in combination with the capabilities of the Container Management to adapt to various scenarios such as edge and Xinchuang.
 
-    **Modules**: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Multicloud Management](../kairship/01product/whatiskairship.md), cloud to edge continuum, Xinchuang Heterogeneous
+    **Modules**: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Multicloud Orchestration](../kairship/01product/whatiskairship.md), cloud to edge continuum, Xinchuang Heterogeneous
 
     ![multi-cloud](../images/01multi-cloud.png)
 

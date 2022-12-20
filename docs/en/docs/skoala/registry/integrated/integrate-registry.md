@@ -19,7 +19,7 @@ The steps to access the registration center are as follows:
 
     Accessing different types of registries requires filling in different configuration information.
 
-    - Kubernetes/Mesh registration center: directly select the cluster or grid service you want to access.
+    - Kubernetes/Mesh registration center: directly select the cluster or mesh service you want to access.
 
         - If you can't find the Kubernetes cluster you want to add, you can go to the container management module [Access Cluster](../../../kpanda/07UserGuide/Clusters/JoinACluster.md) or [Create Cluster](.. /../../kpanda/07UserGuide/Clusters/CreateCluster.md).
 

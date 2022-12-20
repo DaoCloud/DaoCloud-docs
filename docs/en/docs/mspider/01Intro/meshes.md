@@ -5,33 +5,33 @@ hide:
 
 # Functions supported by the UI interface
 
-The DCE service grid supports three types of grids: hosted grid, dedicated grid, and external grid.
-On the UI interface, the functions supported by these three grids are as follows.
+The DCE service mesh supports three types of meshs: hosted mesh, dedicated mesh, and external mesh.
+On the UI interface, the functions supported by these three meshs are as follows.
 
-**Grid Management**
+**mesh Management**
 
-| Subclasses | Managed Grids | Proprietary Grids | External Grids |
+| Subclasses | Managed meshs | Proprietary meshs | External meshs |
 | :--: | :------: | :------: | :------: |
 | Create | √ | √ | √ |
 | Configuration | √ | √ | √ |
 | Delete | √ | √ | √ |
 
-**Grid Overview**
+**mesh Overview**
 
-| Subclasses | Managed Grids | Proprietary Grids | External Grids |
+| Subclasses | Managed meshs | Proprietary meshs | External meshs |
 | :------: | :------: | :------: | :------: |
-| Grid Overview | √ | √ | √ |
+| mesh Overview | √ | √ | √ |
 
 **Cluster Management**
 
-| Subclasses | Managed Grids | Proprietary Grids | External Grids |
+| Subclasses | Managed meshs | Proprietary meshs | External meshs |
 | :--: | :------: | :------: | :------: |
 | Access | √ | × | × |
 | Remove | √ | × | × |
 
 **Service Management**
 
-| Subclasses | Managed Grids | Proprietary Grids | External Grids |
+| Subclasses | Managed meshs | Proprietary meshs | External meshs |
 | :------------------: | :------: | :------: | :------: |
 | Service List | √ | √ | √ |
 | Service Details | √ | √ | √ |
@@ -40,7 +40,7 @@ On the UI interface, the functions supported by these three grids are as follows
 
 **Traffic management**
 
-| Subclasses | Managed Grids | Proprietary Grids | External Grids |
+| Subclasses | Managed meshs | Proprietary meshs | External meshs |
 | :------------------: | :------: | :------: | :------: |
 | Virtual service (add, delete, modify, check) | √ | √ | √ |
 | Target rules (add, delete, modify, check) | √ | √ | √ |
@@ -48,7 +48,7 @@ On the UI interface, the functions supported by these three grids are as follows
 
 **Security Governance**
 
-| Subclasses | Managed Grids | Proprietary Grids | External Grids |
+| Subclasses | Managed meshs | Proprietary meshs | External meshs |
 | ------------------------ | -------- | -------- | ------ -- |
 | Peer-to-peer identity authentication (addition, deletion, modification and query) | √ | √ | √ |
 | Request identity authentication (addition, deletion, modification and query) | √ | √ | √ |
@@ -56,22 +56,22 @@ On the UI interface, the functions supported by these three grids are as follows
 
 **data monitoring**
 
-| Subclasses | Managed Grids | Proprietary Grids | External Grids |
+| Subclasses | Managed meshs | Proprietary meshs | External meshs |
 | :--: | :------: | :------: | :------: |
 | Topology | √ | √ | √ |
 | Chart | √ | √ | √ |
 
 **Sidecar Management**
 
-| Subclasses | Managed Grids | Proprietary Grids | External Grids |
+| Subclasses | Managed meshs | Proprietary meshs | External meshs |
 | :------: | :------: | :------: | :------: |
 | Injection | √ | √ | √ |
 | Uninstall | √ | √ | √ |
 | Resource Limit | √ | √ | × |
 
-**Grid Gateway**
+**mesh Gateway**
 
-| Subclasses | Managed Grids | Proprietary Grids | External Grids |
+| Subclasses | Managed meshs | Proprietary meshs | External meshs |
 | :--: | :------: | :------: | :------: |
 | Create | √ | √ | × |
 | Delete | √ | √ | × |
@@ -79,7 +79,7 @@ On the UI interface, the functions supported by these three grids are as follows
 
 **Istio Resource Management**
 
-| Subclasses | Managed Grids | Proprietary Grids | External Grids |
+| Subclasses | Managed meshs | Proprietary meshs | External meshs |
 | :--: | :------: | :------: | :------: |
 | Create | √ | √ | √ |
 | Edit | √ | √ | √ |

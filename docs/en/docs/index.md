@@ -10,21 +10,21 @@ On the occasion of the golden Autumn of 2022, DaoCloud gladly launches the next-
 
 DaoCloud Enterprise 5.0 or DCE 5.0 for short, is a high-performance and scalable cloud-native operating system. It is developed with many independent modules. You can use each of them like LEGO bricks, with zero downtime while upgrading one of modules. DCE 5.0 is easy to integrate with hundreds of cloud-native plugins, so you can simply custom solutions for different scenarios. Things go better with such as modular construction.
 
-DCE 5.0 has built a highly adaptable container manager, which can uniformly manage almost all kinds of containerized clusters on the market, with the feature of multi-cloud orchestration to use OpenShift, VMware, and public clouds at the same time. It can centrally control the apps from app stores and registry, natively integrates the CI/CD pipeline and application workbench, and endows the most cutting-edge service mesh and microservice technology. You can easily get insight from detailed and customized metrics of clusters, nodes, workloads, and services. With the support of various types of selected databases and middleware such as RabbitMQ, Elasticsearch, MySQL, Redis, etc., you can easily learn the current service status in time from the dynamically updated dashboard and topology map, through which you can deep dive into your business data to help you make valuable decisions in advance to boost your business.
+DCE 5.0 has built a highly adaptable container manager, which can uniformly manage almost all kinds of containerized clusters on the market, with the feature of multicloud orchestration to use OpenShift, VMware, and public clouds at the same time. It can centrally control the apps from app stores and registry, natively integrates the CI/CD pipeline and application workbench, and endows the most cutting-edge service mesh and microservice technology. You can easily get insight from detailed and customized metrics of clusters, nodes, workloads, and services. With the support of various types of selected databases and middleware such as RabbitMQ, Elasticsearch, MySQL, Redis, etc., you can easily learn the current service status in time from the dynamically updated dashboard and topology map, through which you can deep dive into your business data to help you make valuable decisions in advance to boost your business.
 
 ![modules](images/dce-modules02.png)
 
 DCE 5.0 features with cutting-edge capabilities as a cloud-native operating system to cope with different scenarios with custom solutions as below.
 
-=== "Multi-Cloud Orchestration"
+=== "Multicloud Orchestration"
 
-    **Applicable scenarios**: The deployment of multi-cloud and multi-cluster in an enterprise has become the norm, and it is hoped to have the capabilities of multi-cloud app release and cross-cloud disaster recovery.
+    **Applicable scenarios**: The deployment of multicloud and multi-cluster in an enterprise has become the norm, and it is hoped to have the capabilities of multicloud app release and cross-cloud disaster recovery.
 
     **Benefits**: Using innovative technologies to orchestrate disaster recovery (DR) across clouds, this solution has high concurrent performance of cross-cloud resource retrieval, and can help your IT departments quickly plan and implement DR capabilities in combination with the capabilities of the container manager to adapt to various scenarios such as edge and Xinchuang.
 
-    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Multi-Cloud Orchestration](kairship/01product/whatiskairship.md), cloud to edge continuum, Xinchuang Heterogeneous
+    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Multicloud Orchestration](kairship/01product/whatiskairship.md), cloud to edge continuum, Xinchuang Heterogeneous
 
-    ![multi-cloud](images/01multi-cloud.png)
+    ![multicloud](images/01multi-cloud.png)
 
 === "Data Service"
 

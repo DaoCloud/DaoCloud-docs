@@ -50,7 +50,7 @@ The features supported by the service mesh are described here.
 
 - traffic topology
 
-    Support viewing the grid application traffic topology to understand the dependencies between services.
+    Support viewing the mesh application traffic topology to understand the dependencies between services.
 
 - Service operation monitoring
 
@@ -68,21 +68,21 @@ The features supported by the service mesh are described here.
 
 - Unified management of multi-cluster configuration
 
-    Supports grid configuration and cluster configuration management of multiple clusters under the grid; supports sidecar injection policies of different clusters with different granularities, and supports unified management of data plane configurations such as cross-cluster traffic policies.
+    Supports mesh configuration and cluster configuration management of multiple clusters under the mesh; supports sidecar injection policies of different clusters with different granularities, and supports unified management of data plane configurations such as cross-cluster traffic policies.
 
 - Scalability
     
     Supports one-click access and removal of clusters
 
-### Grid Data Plane Microservice Framework
+### mesh Data Plane Microservice Framework
 
 -Spring Cloud
 
-    Services developed with the Spring Cloud SDK are supported to access the grid without intrusion and are managed in a unified manner.
+    Services developed with the Spring Cloud SDK are supported to access the mesh without intrusion and are managed in a unified manner.
 
 - Dubbo
 
-    Services developed by the Dubbo SDK are supported for non-intrusive access to the grid and unified management.
+    Services developed by the Dubbo SDK are supported for non-intrusive access to the mesh and unified management.
 
 ### Compatibility and extensions
 

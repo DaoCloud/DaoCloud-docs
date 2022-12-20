@@ -1,6 +1,6 @@
 # traffic topology
 
-Click `Traffic Topology` in the left navigation bar to open the page. This function displays the topological relationship of all services under the grid. Users can select `View Mode` and `Namespace` to filter and display service nodes.
+Click `Traffic Topology` in the left navigation bar to open the page. This function displays the topological relationship of all services under the mesh. Users can select `View Mode` and `Namespace` to filter and display service nodes.
 
 ![Traffic Topology](../../images/monitor-topo.png)
 

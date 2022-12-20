@@ -5,7 +5,7 @@ hide:
 
 # request authentication
 
-This authentication mode can be used when an external user initiates a request for grid internal services. In this mode, request encryption is implemented using JSON Web Token (JWT).
+This authentication mode can be used when an external user initiates a request for mesh internal services. In this mode, request encryption is implemented using JSON Web Token (JWT).
 Each request authentication needs to configure an [Authorization Policy](./authorize.md).
 
 All workloads labeled `app: httpbin` require JWT authentication. Examples are as follows:

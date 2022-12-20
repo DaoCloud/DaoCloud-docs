@@ -6,9 +6,9 @@ hide:
 
 # Install the service mesh
 
-Please confirm that your cluster has successfully connected to the container management platform, and then perform the following steps to install the service grid.
+Please confirm that your cluster has successfully connected to the container management platform, and then perform the following steps to install the service mesh.
 
-1. Click `Container Management` from the left navigation bar, enter the `Cluster List`, and click the name of the cluster where the service grid is to be installed.
+1. Click `Container Management` from the left navigation bar, enter the `Cluster List`, and click the name of the cluster where the service mesh is to be installed.
 
     ![Install Collector](./images/login01.jpg)
 
@@ -31,6 +31,6 @@ Please confirm that your cluster has successfully connected to the container man
 
         Please replace `0.0.0-xxx` with the version number of the service mesh you plan to install.
 
-4. Check the Pod information under the namespace `mspider-system`, and see that the relevant Pods have been created and running, indicating that the service grid is installed successfully.
+4. Check the Pod information under the namespace `mspider-system`, and see that the relevant Pods have been created and running, indicating that the service mesh is installed successfully.
 
     ![Install Collector](./images/install02.jpg)

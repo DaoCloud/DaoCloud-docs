@@ -5,7 +5,7 @@ hide:
 
 # Network background
 
-**Multi-cloud hybrid cloud**
+**Multicloud hybrid cloud**
 
 Cloud-native application scenarios are gradually scaled up, cloud-based applications continue to surge, and the scenarios are becoming more and more complex.
 In order to cope with scenarios such as high availability, disaster recovery, and business traffic surge, users gradually adopt multi-cluster and cross-cloud deployments. During the implementation of the solution, problems such as application distribution, application connectivity, and platform management have gradually become prominent.
