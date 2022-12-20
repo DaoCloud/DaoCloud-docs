@@ -1,3 +1,7 @@
+---
+date: 2022-12-20
+---
+
 # DCE 5.0 社区版 v0.3.29
 
 本页可下载 DCE 5.0 社区版的离线安装包和校验文件。
@@ -6,8 +10,8 @@
 
 | 文件名                      | 版本    | 架构 | 文件大小 | 下载                                           | 更新日期   |
 | ----------------------------- | ------- | -------- | ---------------------------------------------- | ---------- | ----------------------------- |
-| offline-centos7-community-v0.3.29-amd64.tar | v0.3.29 | AMD 64 | 9.2 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-community-v0.3.29-amd64.tar) | 2022-12-16 |
-| offline-kylin-v10sp2-community-v0.3.29-arm64.tar | v0.3.29 | ARM 64 | 6.9 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-community-v0.3.29-arm64.tar) | 2022-12-16 |
+| offline-centos7-community-v0.3.29-amd64.tar | v0.3.29 | AMD 64 | 9.15GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-community-v0.3.29-amd64.tar) | 2022-12-20 |
+| offline-kylin-v10sp2-community-v0.3.29-arm64.tar | v0.3.29 | ARM 64 | 6.85GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-community-v0.3.29-arm64.tar) | 2022-12-20 |
 
 ## 校验
 
@@ -18,7 +22,7 @@
     执行以下命令校验安装包：
 
     ```sh
-    echo "988bf4397f555804fb004a83e01169fd4cfb995d0659170197cab4d07c26aefb6c916ce42c0655d207a2ae7bddd5c28c6c66fc7645c67a174a8919e7e040cbd8  offline-centos7-community-v0.3.29-amd64.tar" | sha512sum -c
+    echo "988bf4397f555804fb004a83e01169fd4cfb995d0659170197cab4d07c26aefb6c916ce42c0655d207a2ae7bddd5c28c6c66fc7645c67a174a8919e7e040cbd8" | sha512sum -c
     ```
 
     校验成功会打印：
@@ -32,7 +36,7 @@
     执行以下命令校验安装包：
 
     ```sh
-    echo "86dcb1f8b155d37a19a1b6c81a74a3758f443a79a8ffd95b9f5a634d992932714d8bce9805ab52d9fffbfdcbc82873e7c7132a7d3e9a45d5fe00f46de16ab717  offline-kylin-v10sp2-community-v0.3.29-arm64.tar" | sha512sum -c
+    echo "86dcb1f8b155d37a19a1b6c81a74a3758f443a79a8ffd95b9f5a634d992932714d8bce9805ab52d9fffbfdcbc82873e7c7132a7d3e9a45d5fe00f46de16ab717" | sha512sum -c
     ```
 
     校验成功会打印：
@@ -40,7 +44,7 @@
     ```none
     offline-kylin-v10sp2-community-v0.3.29-arm64.tar: OK
     ```
-  
+
 ## 安装
 
 成功校验离线包之后，
