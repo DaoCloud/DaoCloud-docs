@@ -1,12 +1,27 @@
-# Install
+# Installation Arguments Configuration
 
-This page describes the configuration of various parameters when installing Calico with Kubespray.
+This page describes the configuration of various arguments when installing Calico with Kubespray.
+
+## Prerequisites
+
+To install Calico in DCE 5.0, you need to select `calico` for `Network Plugins` on the `Create Cluster`->`Network Configuration` page. For creating a cluster, see [create worker cluster](../../../kpanda/07UserGuide/Clusters/CreateCluster.md).
+
+![calico-install](../../images/calico-install.png)
+
+## Argument configuration
+
+If you need to configure more features for Calico, you can install Calico via Kubespray. Add and fill in arguments as needed under `Advanced Configuration`->`Custom arguments` when installing Calico using Kubespray.
+
+![calico-arg](../../images/calico-arg.png)
+
+The following describes the configuration of each argument when installing Calico with Kubespray：
 
 - `enable_dual_stack_networks`: If set to `true`, both IPv4 and IPv6 networks will be provided for pods and services.
 
     > It is recommended to enable it according to the actual situation, and it can be used as an installation configuration item.
 
 - `ipv4_pools`: Default IPv4 address pools. Specified by `calico_pool_cidr` (not set by default, specified by the global variable `kube_pods_subnet`).
+
     > It is recommended to be consistent with `kube_pods_subnet`, which can expose configuration items at installation time.
 
 - `ipv6_pools`: Default IPv6 address pools. Specified by `calico_pool_cidr_ipv6` (not set by default, specified by the global variable `kube_pods_subnet_ipv6`).
