@@ -1,323 +1,323 @@
-# 指标抓取方式
+# index capture method
 
-Prometheus 主要通过 Pull 的方式来抓取目标服务暴露出来的监控接口，因此需要配置对应的抓取任务来请求监控数据并写入到 Prometheus 提供的存储中，目前 Prometheus 服务提供了如下几个任务的配置：
+Prometheus mainly captures the monitoring interface exposed by the target service through Pull, so it is necessary to configure the corresponding capture task to request monitoring data and write it into the storage provided by Prometheus. Currently, the Prometheus service provides the configuration of the following tasks :
 
-- 原生 Job 配置：提供 Prometheus 原生抓取 Job 的配置。
-- Pod Monitor：在 K8S 生态下，基于 Prometheus Operator 来抓取 Pod 上对应的监控数据。
-- Service Monitor：在 K8S 生态下，基于 Prometheus Operator 来抓取 Service 对应 Endpoints 上的监控数据。
+- Native Job configuration: Provides the configuration of Prometheus's native grab job.
+- Pod Monitor: In the K8S ecosystem, capture the corresponding monitoring data on the Pod based on the Prometheus Operator.
+- Service Monitor: In the K8S ecosystem, based on the Prometheus Operator, the monitoring data on the corresponding Endpoints of the Service is captured.
 
 !!! note
 
-    [] 中的配置项为可选。
+     Configuration items in [] are optional.
 
-## 原生 Job 配置
+## Native Job configuration
 
-相应配置项说明如下：
+The corresponding configuration items are described as follows:
 
 ```yaml
-# 抓取任务名称，同时会在对应抓取的指标中加了一个 label(job=job_name)
+# Grab the task name, and add a label(job=job_name) to the index corresponding to the grab
 job_name: <job_name>
 
-# 抓取任务时间间隔
-[ scrape_interval: <duration> | default = <global_config.scrape_interval> ]
+# Fetching task time interval
+[ scrape_interval: <duration> | default = <global_config. scrape_interval> ]
 
-# 抓取请求超时时间
-[ scrape_timeout: <duration> | default = <global_config.scrape_timeout> ]
+# Fetch request timeout
+[ scrape_timeout: <duration> | default = <global_config. scrape_timeout> ]
 
-# 抓取任务请求 URI 路径
+# fetch task request URI path
 [ metrics_path: <path> | default = /metrics ]
 
-# 解决当抓取的 label 与后端 Prometheus 添加 label 冲突时的处理。
-# true: 保留抓取到的 label，忽略与后端 Prometheus 冲突的 label；
-# false: 对冲突的 label，把抓取的 label 前加上 exported_<original-label>，添加后端 Prometheus 增加的 label；
+# Solve the processing when the captured label conflicts with the label added by the backend Prometheus.
+# true: Keep the captured label, ignore the label that conflicts with the backend Prometheus;
+# false: For conflicting labels, add exported_<original-label> before the captured label, and add the label added by the backend Prometheus;
 [ honor_labels: <boolean> | default = false ]
 
-# 是否使用抓取到 target 上产生的时间。
-# true: 如果 target 中有时间，使用 target 上的时间；
-# false: 直接忽略 target 上的时间；
+# Whether to use the time generated on the target.
+# true: If there is a time in the target, use the time on the target;
+# false: directly ignore the time on the target;
 [ honor_timestamps: <boolean> | default = true ]
 
-# 抓取协议: http 或者 https
+# Capture protocol: http or https
 [ scheme: <scheme> | default = http ]
 
-# 抓取请求对应 URL 参数
+# Crawl request corresponding URL parameters
 params:
-  [ <string>: [<string>, ...] ]
+   [ <string>: [<string>, ...] ]
 
-# 通过 basic auth 设置抓取请求头中 `Authorization` 的值，password/password_file 互斥，优先取 password_file 里面的值。
+# Set the value of `Authorization` in the crawl request header through basic auth, password/password_file are mutually exclusive, and the value in password_file is preferred.
 basic_auth:
-  [ username: <string> ]
-  [ password: <secret> ]
-  [ password_file: <string> ]
+   [ username: <string> ]
+   [ password: <secret> ]
+   [ password_file: <string> ]
 
-# 通过 bearer token 设置抓取请求头中 `Authorization` bearer_token/bearer_token_file 互斥，优先取 bearer_token 里面的值。
+# Set the `Authorization` bearer_token/bearer_token_file mutual exclusion in the crawl request header through the bearer token, and the value in the bearer_token is preferred.
 [ bearer_token: <secret> ]
 
-# 通过 bearer token 设置抓取请求头中 `Authorization` bearer_token/bearer_token_file 互斥，优先取 bearer_token 里面的值。
+# Set the `Authorization` bearer_token/bearer_token_file mutual exclusion in the crawl request header through the bearer token, and the value in the bearer_token is preferred.
 [ bearer_token_file: <filename> ]
 
-# 抓取连接是否通过 TLS 安全通道，配置对应的 TLS 参数
+# Grab whether the connection passes through the TLS secure channel, and configure the corresponding TLS parameters
 tls_config:
-  [ <tls_config> ]
+   [<tls_config>]
 
-# 通过代理服务来抓取 target 上的指标，填写对应的代理服务地址。
+# Use the proxy service to capture the indicators on the target, and fill in the corresponding proxy service address.
 [ proxy_url: <string> ]
 
-# 通过静态配置来指定 target，详见下面的说明。
+# Specify the target through static configuration, see the description below for details.
 static_configs:
-  [ - <static_config> ... ]
+   [ - <static_config> ... ]
 
-# CVM 服务发现配置，详见下面的说明。
+# CVM service discovery configuration, see the description below for details.
 cvm_sd_configs:
-  [ - <cvm_sd_config> ... ]
+   [ - <cvm_sd_config> ... ]
 
-# 在抓取数据之后，把 target 上对应的 label 通过 relabel 的机制进行改写，按顺序执行多个 relabel 规则。
-# relabel_config 详见下文说明。
+# After capturing the data, rewrite the corresponding label on the target through the relabel mechanism, and execute multiple relabel rules in sequence.
+# relabel_config See below for details.
 relabel_configs:
-  [ - <relabel_config> ... ]
+   [ - <relabel_config> ... ]
 
-# 数据抓取完成写入之前，通过 relabel 机制进行改写 label 对应的值，按顺序执行多个 relabel 规则。
-# relabel_config 详见下文说明。
+# Before the data is captured and written, rewrite the value corresponding to the label through the relabel mechanism, and execute multiple relabel rules in sequence.
+# relabel_config See below for details.
 metric_relabel_configs:
-  [ - <relabel_config> ... ]
+   [ - <relabel_config> ... ]
 
-# 一次抓取数据点限制，0：不作限制，默认为 0
+# One-time capture data point limit, 0: no limit, the default is 0
 [ sample_limit: <int> | default = 0 ]
 
-# 一次抓取 Target 限制，0：不作限制，默认为 0
+# One-time capture Target limit, 0: no limit, default is 0
 [ target_limit: <int> | default = 0 ]
 ```
 
 ## Pod Monitor
 
-相应配置项说明如下：
+The corresponding configuration items are described as follows:
 
 ```yaml
-# Prometheus Operator CRD 版本
+# Prometheus Operator CRD version
 apiVersion: monitoring.coreos.com/v1
-# 对应 K8S 的资源类型，这里面 Pod Monitor
+# Corresponding to the resource type of K8S, here Pod Monitor
 kind: PodMonitor
-# 对应 K8S 的 Metadata，这里只用关心 name，如果没有指定 jobLabel，对应抓取指标 label 中 job 的值为 <namespace>/<name>
+# Corresponding to the Metadata of K8S, here only care about the name, if no jobLabel is specified, the value of the job in the label corresponding to the capture index is <namespace>/<name>
 metadata:
-  name: redis-exporter # 填写一个唯一名称
-  namespace: cm-prometheus  # namespace固定，不需要修改
-# 描述抓取目标 Pod 的选取及抓取任务的配置
+   name: redis-exporter # fill in a unique name
+   namespace: cm-prometheus # The namespace is fixed and does not need to be modified
+# Describe the selection of the capture target Pod and the configuration of the capture task
 spec:
-  # 填写对应 Pod 的 label，pod monitor 会取对应的值作为 job label 的值。
-  # 如果查看的是 Pod Yaml，取 pod.metadata.labels 中的值。
-  # 如果查看的是 Deployment/Daemonset/Statefulset，取 spec.template.metadata.labels。
-  [ jobLabel: string ]
-  # 把对应 Pod 上的 Label 添加到 Target 的 Label 中
-  [ podTargetLabels: []string ]
-  # 一次抓取数据点限制，0：不作限制，默认为 0
-  [ sampleLimit: uint64 ]
-  # 一次抓取 Target 限制，0：不作限制，默认为 0
-  [ targetLimit: uint64 ]
-  # 配置需要抓取暴露的 Prometheus HTTP 接口，可以配置多个 Endpoint
-  podMetricsEndpoints:
-  [ - <endpoint_config> ... ] # 详见下面 endpoint 说明
-  # 选择要监控 Pod 所在的 namespace，不填为选取所有 namespace
-  [ namespaceSelector: ]
-    # 是否选取所有 namespace
-    [ any: bool ]
-    # 需要选取 namespace 列表
-    [ matchNames: []string ]
-  # 填写要监控 Pod 的 Label 值，以定位目标 Pod  [K8S metav1.LabelSelector](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/#labelselector-v1-meta)
-  selector:
-    [ matchExpressions: array ]
-      [ example: - {key: tier, operator: In, values: [cache]} ]
-    [ matchLabels: object ]
-      [ example: k8s-app: redis-exporter ]
+   # Fill in the label of the corresponding Pod, and the pod monitor will take the corresponding value as the value of the job label.
+   # If viewing Pod Yaml, take the value in pod.metadata.labels.
+   # If viewing Deployment/Daemonset/Statefulset, take spec.template.metadata.labels.
+   [ jobLabel: string ]
+   # Add the Label on the corresponding Pod to the Label of Target
+   [ podTargetLabels: []string ]
+   # One-time capture data point limit, 0: no limit, the default is 0
+   [ sampleLimit: uint64 ]
+   # One-time capture Target limit, 0: no limit, default is 0
+   [ targetLimit: uint64 ]
+   # Configure the exposed Prometheus HTTP interface that needs to be crawled, and multiple Endpoints can be configured
+   podMetricsEndpoints:
+   [ - <endpoint_config> ... ] # See the endpoint description below for details
+   # Select the namespace where the Pod is to be monitored, if not filled, select all namespaces
+   [ namespaceSelector: ]
+     # Whether to select all namespaces
+     [ any: bool ]
+     # Need to select the namespace list
+     [ matchNames: []string ]
+   # Fill in the Label value of the Pod to be monitored to locate the target Pod [K8S metav1.LabelSelector](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/#labelselector-v1-meta)
+   selector:
+     [ matchExpressions: array ]
+       [ example: - {key: tier, operator: In, values: [cache]} ]
+     [ matchLabels: object ]
+       [ example: k8s-app: redis-exporter ]
 ```
 
-### 举例
+### Examples
 
 ```yaml
 apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
-  name: redis-exporter # 填写一个唯一名称
-  namespace: cm-prometheus # namespace固定，不要修改
+   name: redis-exporter # fill in a unique name
+   namespace: cm-prometheus # namespace fixed, do not modify
 spec:
-  podMetricsEndpoints:
-    - interval: 30s
-      port: metric-port # 填写pod yaml中Prometheus Exporter对应的Port的Name
-      path: /metrics # 填写Prometheus Exporter对应的Path的值，不填默认/metrics
-      relabelings:
-        - action: replace
-          sourceLabels:
-            - instance
-          regex: (.*)
-          targetLabel: instance
-          replacement: "crs-xxxxxx" # 调整成对应的 Redis 实例 ID
-        - action: replace
-          sourceLabels:
-            - instance
-          regex: (.*)
-          targetLabel: ip
-          replacement: "1.x.x.x" # 调整成对应的 Redis 实例 IP
-  namespaceSelector: # 选择要监控pod所在的namespace
-    matchNames:
-      - redis-test
-  selector: # 填写要监控pod的Label值，以定位目标pod
-    matchLabels:
-      k8s-app: redis-exporter
+   podMetricsEndpoints:
+     - interval: 30s
+       port: metric-port # Fill in the name of the Port corresponding to Prometheus Exporter in pod yaml
+       path: /metrics # Fill in the value of the Path corresponding to the Prometheus Exporter, if not fill in the default /metrics
+       relabelings:
+         - action: replace
+           sourceLabels:
+             - instance
+           regex: (.*)
+           targetLabel: instance
+           replacement: "crs-xxxxxx" # Adjust to the corresponding Redis instance ID
+         - action: replace
+           sourceLabels:
+             - instance
+           regex: (.*)
+           targetLabel: ip
+           replacement: "1.x.x.x" # Adjust to the corresponding Redis instance IP
+   namespaceSelector: # Select the namespace where the pod is to be monitored
+     matchNames:
+       -redis-test
+   selector: # Fill in the Label value of the pod to be monitored to locate the target pod
+     matchLabels:
+       k8s-app: redis-exporter
 ```
 
 ## Service Monitor
 
-相应配置项说明如下：
+The corresponding configuration items are described as follows:
 
 ```yaml
-# Prometheus Operator CRD 版本
+# Prometheus Operator CRD version
 apiVersion: monitoring.coreos.com/v1
-# 对应 K8S 的资源类型，这里面 Service Monitor
+# Corresponding to the resource type of K8S, here Service Monitor
 kind: ServiceMonitor
-# 对应 K8S 的 Metadata，这里只用关心 name，如果没有指定 jobLabel，对应抓取指标 label 中 job 的值为 Service 的名称。
+# Corresponding to the K8S Metadata, only the name is concerned here. If no jobLabel is specified, the value of the job in the label of the corresponding capture index is the name of the Service.
 metadata:
-  name: redis-exporter # 填写一个唯一名称
-  namespace: cm-prometheus  # namespace固定，不需要修改
-# 描述抓取目标 Pod 的选取及抓取任务的配置
+   name: redis-exporter # fill in a unique name
+   namespace: cm-prometheus # The namespace is fixed and does not need to be modified
+# Describe the selection of the capture target Pod and the configuration of the capture task
 spec:
-  # 填写对应 Pod 的 label(metadata/labels)，service monitor 会取对应的值作为 job label 的值
-  [ jobLabel: string ]
-  # 把对应 service 上的 Label 添加到 Target 的 Label 中
-  [ targetLabels: []string ]
-  # 把对应 Pod 上的 Label 添加到 Target 的 Label 中
-  [ podTargetLabels: []string ]
-  # 一次抓取数据点限制，0：不作限制，默认为 0
-  [ sampleLimit: uint64 ]
-  # 一次抓取 Target 限制，0：不作限制，默认为 0
-  [ targetLimit: uint64 ]
-  # 配置需要抓取暴露的 Prometheus HTTP 接口，可以配置多个 Endpoint
-  endpoints:
-  [ - <endpoint_config> ... ] # 详见下面 endpoint 说明
-  # 选择要监控 Pod 所在的 namespace，不填为选取所有 namespace
-  [ namespaceSelector: ]
-    # 是否选取所有 namespace
-    [ any: bool ]
-    # 需要选取 namespace 列表
-    [ matchNames: []string ]
-  # 填写要监控 Pod 的 Label 值，以定位目标 Pod  [K8S metav1.LabelSelector](https://v1-17.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#labelselector-v1-meta)
-  selector:
-    [ matchExpressions: array ]
-      [ example: - {key: tier, operator: In, values: [cache]} ]
-    [ matchLabels: object ]
-      [ example: k8s-app: redis-exporter ]
+   # Fill in the label (metadata/labels) of the corresponding Pod, and the service monitor willTake the corresponding value as the value of the job label
+   [ jobLabel: string ]
+   # Add the Label on the corresponding service to the Label of Target
+   [ targetLabels: []string ]
+   # Add the Label on the corresponding Pod to the Label of Target
+   [ podTargetLabels: []string ]
+   # One-time capture data point limit, 0: no limit, the default is 0
+   [ sampleLimit: uint64 ]
+   # One-time capture Target limit, 0: no limit, default is 0
+   [ targetLimit: uint64 ]
+   # Configure the exposed Prometheus HTTP interface that needs to be crawled, and multiple Endpoints can be configured
+   endpoints:
+   [ - <endpoint_config> ... ] # See the endpoint description below for details
+   # Select the namespace where the Pod is to be monitored, if not filled, select all namespaces
+   [ namespaceSelector: ]
+     # Whether to select all namespaces
+     [ any: bool ]
+     # Need to select the namespace list
+     [ matchNames: []string ]
+   # Fill in the Label value of the Pod to be monitored to locate the target Pod [K8S metav1.LabelSelector](https://v1-17.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#labelselector -v1-meta)
+   selector:
+     [ matchExpressions: array ]
+       [ example: - {key: tier, operator: In, values: [cache]} ]
+     [ matchLabels: object ]
+       [ example: k8s-app: redis-exporter ]
 ```
 
-### 举例
+### Examples
 
 ```yaml
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: go-demo # 填写一个唯一名称
-  namespace: cm-prometheus # namespace固定，不要修改
+   name: go-demo # fill in a unique name
+   namespace: cm-prometheus # namespace fixed, do not modify
 spec:
-  endpoints:
-    - interval: 30s
-      # 填写service yaml中Prometheus Exporter对应的Port的Name
-      port: 8080-8080-tcp
-      # 填写Prometheus Exporter对应的Path的值，不填默认/metrics
-      path: /metrics
-      relabelings:
-        # ** 必须要有一个 label 为 application，这里假设 k8s 有一个 label 为 app，
-        # 我们通过 relabel 的 replace 动作把它替换成了 application
-        - action: replace
-          sourceLabels: [__meta_kubernetes_pod_label_app]
-          targetLabel: application
-  # 选择要监控service所在的namespace
-  namespaceSelector:
-    matchNames:
-      - golang-demo
-  # 填写要监控service的Label值，以定位目标service
-  selector:
-    matchLabels:
-      app: golang-app-demo
+   endpoints:
+     - interval: 30s
+       # Fill in the Name of the Port corresponding to the Prometheus Exporter in the service yaml
+       port: 8080-8080-tcp
+       # Fill in the value of Path corresponding to Prometheus Exporter, do not fill in the default /metrics
+       path: /metrics
+       relabelings:
+         # ** There must be a label for application, here it is assumed that k8s has a label for app,
+         # We replaced it with application through the replace action of relabel
+         - action: replace
+           sourceLabels: [__meta_kubernetes_pod_label_app]
+           targetLabel: application
+   # Select the namespace where the service is to be monitored
+   namespaceSelector:
+     matchNames:
+       -golang-demo
+   # Fill in the Label value of the service to be monitored to locate the target service
+   selector:
+     matchLabels:
+       app: golang-app-demo
 ```
 
 ### endpoint_config
 
-相应配置项说明如下：
+The corresponding configuration items are described as follows:
 
 ```yaml
-# 对应 port 的名称，这里需要注意不是对应的端口，默认：80，对应的取值如下：
-# ServiceMonitor: 对应 Service>spec/ports/name;
-# PodMonitor: 说明如下：
-#   如果查看的是 Pod Yaml，取 pod.spec.containers.ports.name 中的值。
-#   如果查看的是 Deployment/Daemonset/Statefulset，取值 spec.template.spec.containers.ports.name
-[ port: string | default = 80]
-# 抓取任务请求 URI 路径
+# Corresponding to the name of the port, here you need to pay attention that it is not the corresponding port, default: 80, the corresponding value is as follows:
+# ServiceMonitor: corresponding to Service>spec/ports/name;
+# PodMonitor: The description is as follows:
+# If viewing Pod Yaml, take the value in pod.spec.containers.ports.name.
+# If you are looking at Deployment/Daemonset/Statefulset, take the value spec.template.spec.containers.ports.name
+[port: string | default = 80]
+# fetch task request URI path
 [ path: string | default = /metrics ]
-# 抓取协议: http 或者 https
+# Capture protocol: http or https
 [ scheme: string | default = http]
-# 抓取请求对应 URL 参数
-[ params: map[string][]string]
-# 抓取任务间隔的时间
+# Crawl request corresponding URL parameters
+[params: map[string][]string]
+# fetch task interval time
 [ interval: string | default = 30s ]
-# 抓取任务超时
+# Fetch task timed out
 [ scrapeTimeout: string | default = 30s]
-# 抓取连接是否通过 TLS 安全通道，配置对应的 TLS 参数
+# Grab whether the connection passes through the TLS secure channel, and configure the corresponding TLS parameters
 [ tlsConfig: TLSConfig ]
-# 通过对应的文件读取 bearer token 对应的值，放到抓取任务的 header 中
+# Read the value corresponding to the bearer token through the corresponding file, and put it in the header of the capture task
 [ bearerTokenFile: string ]
-# 通过对应的 K8S secret key 读取对应的 bearer token，注意 secret namespace 需要和 PodMonitor/ServiceMonitor 相同
+# Read the corresponding bearer token through the corresponding K8S secret key, note that the secret namespace needs to be the same as PodMonitor/ServiceMonitor
 [ bearerTokenSecret: string ]
-# 解决当抓取的 label 与后端 Prometheus 添加 label 冲突时的处理。
-# true: 保留抓取到的 label，忽略与后端 Prometheus 冲突的 label；
-# false: 对冲突的 label，把抓取的 label 前加上 exported_<original-label>，添加后端 Prometheus 增加的 label；
+# Solve the processing when the captured label conflicts with the label added by the backend Prometheus.
+# true: Keep the captured label, ignore the label that conflicts with the backend Prometheus;
+# false: For conflicting labels, add exported_<original-label> before the captured label, and add the label added by the backend Prometheus;
 [ honorLabels: bool | default = false ]
-# 是否使用抓取到 target 上产生的时间。
-# true: 如果 target 中有时间，使用 target 上的时间；
-# false: 直接忽略 target 上的时间；
+# Whether to use the time generated on the target.
+# true: If there is a time in the target, use the time on the target;
+# false: directly ignore the time on the target;
 [ honorTimestamps: bool | default = true ]
-# basic auth 的认证信息，username/password 填写对应 K8S secret key 的值，注意 secret namespace 需要和 PodMonitor/ServiceMonitor 相同。
+# Basic auth authentication information, username/password fill in the corresponding K8S secret key value, note that the secret namespace needs to be the same as PodMonitor/ServiceMonitor.
 [ basicAuth: BasicAuth ]
-# 通过代理服务来抓取 target 上的指标，填写对应的代理服务地址
+# Use the proxy service to capture the indicators on the target, and fill in the corresponding proxy service address
 [ proxyUrl: string ]
-# 在抓取数据之后，把 target 上对应的 label 通过 relabel 的机制进行改写，按顺序执行多个 relabel 规则。
-# relabel_config 详见下文说明
+# After capturing the data, rewrite the corresponding label on the target through the relabel mechanism, and execute multiple relabel rules in order.
+# relabel_config See below for details
 relabelings:
-[ - <relabel_config> ...]
-# 数据抓取完成写入之前，通过 relabel 机制进行改写 label 对应的值，按顺序执行多个 relabel 规则。
-# relabel_config 详见下文说明
+[-<relabel_config>...]
+# Before the data is captured and written, rewrite the value corresponding to the label through the relabel mechanism, and execute multiple relabel rules in order.
+# relabel_config See below for details
 metricRelabelings:
-[ - <relabel_config> ...]
+[-<relabel_config>...]
 ```
 
 ### relabel_config
 
-相应配置项说明如下：
+The corresponding configuration items are described as follows:
 
 ```yaml
-# 从原始 labels 中取哪些 label 的值进行 relabel，取出来的值通过 separator 中的定义进行字符拼接。
-# 如果是 PodMonitor/ServiceMonitor 对应的配置项为 sourceLabels
+# Which label values are taken from the original labels for relabeling, and the extracted values are concatenated according to the definition in the separator.
+# If it is PodMonitor/ServiceMonitor, the corresponding configuration item is sourceLabels
 [ source_labels: '[' <labelname> [, ...] ']' ]
-# 定义需要 relabel 的 label 值拼接的字符，默认为 ';'。
+# Define the character that needs to be concatenated in the label value of relabel, the default is ';'.
 [ separator: <string> | default = ; ]
 
-# action 为 replace/hashmod 时，通过 target_label 来指定对应 label name。
-# 如果是 PodMonitor/ServiceMonitor 对应的配置项为 targetLabel
+# When the action is replace/hashmod, use target_label to specify the corresponding label name.
+# If it is PodMonitor/ServiceMonitor, the corresponding configuration item is targetLabel
 [ target_label: <labelname> ]
 
-# 需要对 source labels 对应值进行正则匹配的表达式
+# An expression that needs to perform regular matching on the corresponding value of source labels
 [ regex: <regex> | default = (.*) ]
 
-# action 为 hashmod 时用到，根据 source label 对应值 md5 取模值
+# Action is used when hashmod is used, and the modulus value is taken according to the corresponding value md5 of the source label
 [ modulus: <int> ]
 
-# action 为 replace 的时候，通过 replacement 来定义当 regex 匹配之后需要替换的表达式，可以结合 regex 正规则表达式替换
+# When the action is replace, use replacement to define the expression that needs to be replaced after the regex matches, which can be replaced with regex regular expressions
 [ replacement: <string> | default = $1 ]
 
-# 基于 regex 匹配到的值进行相关的操作，对应的 action 如下，默认为 replace：
-# replace: 如果 regex 匹配到，通过 replacement 中定义的值替换相应的值，并通过 target_label 设值并添加相应的 label
-# keep: 如果 regex 没有匹配到，丢弃
-# drop: 如果 regex 匹配到，丢弃
-# hashmod: 通过 moduels 指定的值把 source label 对应的 md5 值取模
-# 并添加一个新的 label，label name 通过 target_label 指定
-# labelmap: 如果 regex 匹配到，使用 replacement 替换对就的 label name
-# labeldrop: 如果 regex 匹配到，删除对应的 label
-# labelkeep: 如果 regex 没有匹配到，删除对应的 label
+# Perform related operations based on the value matched by regex, the corresponding action is as follows, the default is replace:
+# replace: If the regex matches, replace the corresponding value with the value defined in replacement, set the value through target_label and add the corresponding label
+# keep: If the regex does not match, discard
+# drop: if the regex matches, drop it
+# hashmod: Take the modulus of the md5 value corresponding to the source label through the value specified by moduels
+# And add a new label, the label name is specified by target_label
+# labelmap: If the regex matches, use replacement to replace the corresponding label name
+# labeldrop: If the regex matches, delete the corresponding label
+# labelkeep: If the regex does not match, delete the corresponding label
 [ action: <relabel_action> | default = replace ]
 ```

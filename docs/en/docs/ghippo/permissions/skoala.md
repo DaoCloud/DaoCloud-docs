@@ -2,7 +2,7 @@
 
 [Microservice engine](../../skoala/intro/features.md) includes two parts: microservice management center and microservice gateway. The microservice engine supports three user roles:
 
--Workspace Admin
+- Workspace Admin
 - Workspace Editor
 - Workspace Viewer
 

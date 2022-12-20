@@ -1,88 +1,88 @@
 ---
 hide:
-  - toc
+   - toc
 ---
 
-# 适用场景
+# Applicable scene
 
-DCE 5.0 集成社区最优秀的众多技术，内置依赖项数以万计，经海量调测后熔于一炉，铸就新一代 PaaS 服务平台，在各类使用场景中都游刃有余。
+DCE 5.0 integrates many of the best technologies in the community, and has tens of thousands of built-in dependencies. After massive commissioning, it has been melted into one furnace, creating a new generation of PaaS service platform, which is easy to use in various usage scenarios.
 
-=== "生产级容器管理"
+=== "Production-Grade Container Management"
 
-用户在运维团队需要承接数十个至上百个集群运行维护任务，且集群网络规划需满足用户传统网络监管要求。
+Users in the operation and maintenance team need to undertake dozens to hundreds of cluster operation and maintenance tasks, and the cluster network planning needs to meet the user's traditional network supervision requirements.
 
-涉及模块：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[容器网络](../network/intro/what-is-net.md)、容器集群生命周期管理
+Involved modules: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Container Network](../network/intro/what-is-net.md), container cluster lifecycle management
 
-方案优势：提供集群从部署、升级、证书变更、配置变更、回收等全集群生命周期管理管理能力。
-尽可能复用当前企业环境中网络基础设施，针对其环境针实施最佳方案：MacVLAN 网络方案、SR-IOV 智能网卡加速方案、[SpiderPool](../network/modules/spiderpool/what.md) 云原生 IPAM 方案、[Clilum](../network/modules/cilium/what.md) eBPF 网络加速方案、Underlay 和 Overlay 协同网络方案。
+Solution advantages: Provide cluster life cycle management capabilities from deployment, upgrade, certificate change, configuration change, recycling, etc.
+Reuse the network infrastructure in the current enterprise environment as much as possible, and implement the best solution for the environment: MacVLAN network solution, SR-IOV smart network card acceleration solution, [SpiderPool](../network/modules/spiderpool/what.md) Cloud-native IPAM solution, [Clilum](../network/modules/cilium/what.md) eBPF network acceleration solution, Underlay and Overlay collaborative network solution.
 
-通过自主开源的 [Clusterpedia](../community/clusterpedia.md) 统一控制平面管理所有集群及负载信息，兼容标准 Kubernetes 集群接入，突破 Kubernetes API 性能瓶颈，支持上千人同时使用。
+Manage all clusters and load information through the independent open source [Clusterpedia](../community/clusterpedia.md) unified control plane, compatible with standard Kubernetes cluster access, break through the performance bottleneck of Kubernetes API, and support thousands of people to use it at the same time.
 
-=== "云边协同"
+=== "Cloud Edge Collaboration"
 
-用户按照云、边、端方案设计边缘协同方案，边缘端为通用算力平台，且边缘端有较强的算力需求。边缘端支持三种部署模式边缘节点、边缘集群模式，边缘集群叠加边缘节点四层架构模式。
+Users design edge collaboration solutions according to the cloud, edge, and end solutions. The edge end is a general-purpose computing power platform, and the edge end has strong computing power requirements. The edge terminal supports three deployment modes: edge node and edge cluster mode, and the edge cluster superimposes the four-layer architecture mode of edge nodes.
 
-涉及模块：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[容器网络](../network/intro/what-is-net.md)、容器集群生命周期管理、边缘节点
+Involved modules: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Container Network](../network/intro/what-is-net.md), container cluster lifecycle management, edge nodes
 
-方案优势：云端统一管控所有边缘节点、集群信息，在传统的云边端三层模式基础上，针对强边缘算力需求，增加边缘集群迭代边缘节点的方案，形成四层云边协同方案。
+Advantages of the solution: The cloud centrally manages and controls all edge nodes and cluster information. Based on the traditional cloud-edge-end three-tier model, in response to strong edge computing power requirements, an edge cluster iterative edge node solution is added to form a four-tier cloud-edge collaboration solution.
 
-=== "信创云原生"
+=== "Xinchuang Cloud Native"
 
-用户有信创需求，对底层基础设施及操作系统有特定要求，例如处理器：Loongson 龙芯、海光、飞腾、鲲鹏、intel；操作系统：麒麟、统信 UOS、OpenEuler 等。
+Users have Xinchuang needs and have specific requirements for the underlying infrastructure and operating systems, such as processors: Loongson, Haiguang, Phytium, Kunpeng, Intel; operating systems: Kirin, Tongxin UOS, OpenEuler, etc.
 
-涉及模块：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[容器网络](../network/intro/what-is-net.md)、容器集群生命周期管理
+Involved modules: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Container Network](../network/intro/what-is-net.md), container cluster lifecycle management
 
-方案优势：北向支持国产芯片及服务器，南向支持容器内信创操作系统及信创应用生态体系。
+Solution advantages: Northbound supports domestic chips and servers, and southbound supports Xinchuang operating system and Xinchuang application ecosystem in containers.
 
-=== "应用交付"
+=== "Application Delivery"
 
-用户大规模采用云原生技术，并且期望规范化、流程化结合 DevOps 理念将云原生技术推广至更广泛的应用项目组。
+Users adopt cloud-native technology on a large scale, and expect standardization and process-based integration with the DevOps concept to promote cloud-native technology to a wider range of application project groups.
 
-涉及模块：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[应用工作台](../amamba/01ProductBrief/WhatisAmamba.md)、[容器网络](../network/intro/what-is-net.md)、镜像仓库、边云协同、信创云
+Modules involved: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Application Workbench](../amamba/01ProductBrief/WhatisAmamba.md), [Container Network](../network/intro/ what-is-net.md), Mirror Warehouse, Edge Cloud Collaboration, Xinchuang Cloud
 
-方案优势：支持层级多租户体系，无缝适配用户组织架构规划资源分配。
-CI/CD 流水线能力自动化完成应用构建、部署工作。创新性引入 GitOps、渐进式交付的能力体系，帮助应用进行更细致的交付管理能力。
+Solution advantages: support hierarchical multi-tenant system, seamlessly adapt to user organization structure planning resource allocation.
+CI/CD pipeline capability automates application construction and deployment. Innovatively introduce GitOps and progressive delivery capability systems to help applications perform more detailed delivery management capabilities.
 
-=== "云原生可观测"
+=== "Cloud Native Observables"
 
-用户对运行应用观测能力较弱，希望能轻量级或无改造接入就能完成观测接入，完成全方位的应用运行观测（日志、指标、链路）。
+Users have weak ability to observe running applications, and hope to complete observation access with light-weight or no-modification access, and complete all-round application operation observation (logs, indicators, links).
 
-涉及模块：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[可观测性](../insight/03ProductBrief/WhatisInsight.md)、[容器网络](../network/intro/what-is-net.md)、边云协同、信创云
+Modules involved: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Observability](../insight/03ProductBrief/WhatisInsight.md), [Container Network](../network/intro/ what-is-net.md), Edge Cloud Synergy, Xinchuang Cloud
 
-方案优势：观测数据统一汇总，一个控制面板就能查询到所有集群及负载观测数据，并且深入支持微服务架构、[服务网格](../mspider/01Intro/WhatismSpider.md)、网络 EBPF 观测能力。
+Advantages of the solution: unified collection of observation data, one control panel can query all cluster and load observation data, and in-depth support for microservice architecture, [service grid](../mspider/01Intro/WhatismSpider.md), network EBPF observation ability.
 
-=== "融合微服务"
+=== "Converged Microservices"
 
-用户应用架构决定采用微服务架构或已经采用微服务，希望得到全方位的微服务框架等技术支持及运维兜底能力，或希望引入服务网格技术，并且在技术更迭的过程中实现平滑过度。
+The user's application architecture decides to adopt the microservice architecture or has already adopted microservices, and hopes to obtain technical support such as a full range of microservice frameworks and comprehensive operation and maintenance capabilities, or hopes to introduce service grid technology and achieve smooth transition in the process of technology change.
 
-涉及模块：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[容器网络](../network/intro/what-is-net.md)、[微服务引擎](../skoala/intro/features.md)、[服务网格](../mspider/01Intro/WhatismSpider.md)、[可观测性](../insight/03ProductBrief/WhatisInsight.md)、[应用工作台](../amamba/01ProductBrief/WhatisAmamba.md)
+Modules involved: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Container Network](../network/intro/what-is-net.md), [Microservice Engine](../ skoala/intro/features.md), [Service Mesh](../mspider/01Intro/WhatismSpider.md), [Observability](../insight/03ProductBrief/WhatisInsight.md), [Application Workbench] (../amamba/01ProductBrief/WhatisAmamba.md)
 
-方案优势：无缝融合以 SpringCloud、Dubbo 为代表的初代微服务与 Istio 服务网格代表的新一代微服务技术，完成从开发、部署、接入、对外、观测、运维全生命周期微服务管理能力。
+Solution advantages: seamlessly integrate the first-generation microservices represented by SpringCloud and Dubbo with the new-generation microservice technology represented by Istio service grid, and complete the microservice management of the whole life cycle from development, deployment, access, external, observation, operation and maintenance ability.
 
-=== "数据服务"
+=== "Data Service"
 
-用户应用架构依赖主流中间件能力，希望能统一运行维护中间件，并且得到较为专业的关于中间件规划、运维的支持能力。
+The user application architecture relies on mainstream middleware capabilities, and it is hoped that middleware can be operated and maintained in a unified manner, and more professional support capabilities for middleware planning, operation and maintenance can be obtained.
 
-涉及模块：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[容器网络](../network/intro/what-is-net.md)、[容器本地存储](../hwameistor/intro/what.md)、[云原生中间件](../middleware/midware.md)、边云协同、信创云
+Modules involved: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Container Network](../network/intro/what-is-net.md), [Container Local Storage](../ hwameistor/intro/what.md), [cloud-native middleware](../middleware/midware.md), Edge Cloud Synergy, Xinchuang Cloud
 
-方案优势：专为有状态应用设计的云原生本地存储能力，统一平台管理云原生中间件，提供多租户、部署、观测、备份、运维的全生命周期的中间件管理能力，结合容器平台的能力适配边缘、信创场景。
+Solution advantages: cloud-native local storage capabilities designed for stateful applications, unified platform management cloud-native middleware, providing middleware management capabilities for the full life cycle of multi-tenancy, deployment, observation, backup, operation and maintenance, combined with the container platform Ability to adapt to edge and innovation scenarios.
 
-=== "应用商店"
+=== "App Store"
 
-用户希望获得专属场景开箱即用的云原生应用软件能力。
+Users hope to obtain out-of-the-box cloud-native application software capabilities for exclusive scenarios.
 
-涉及模块：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、应用商店
+Modules involved: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), App Store
 
-方案优势：收录来自生态伙伴十大领域的软件产品，面向企业实际业务需求提供完整软件堆栈，可轻松查找、测试、和部署在 DaoCloud Enterprise 上运行的消息中间件、数据中间件、低代码/无代码应用等。
+Solution advantages: Include software products from ten major fields of ecological partners, provide a complete software stack for the actual business needs of enterprises, and easily find, test, and deploy message middleware, data middleware, low-code/no code application etc.
 
-=== "多云编排"
+=== "Multi-Cloud Orchestration"
 
-用户中多集群、多云部署成为常态，希望能完成多云统一发布，并且拥有跨云容灾备份的能力
+Multi-cluster and multi-cloud deployments have become the norm among users, and they hope to complete multi-cloud unified release and have the ability of cross-cloud disaster recovery and backup
 
-涉及模块：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[多云编排](../kairship/01product/whatiskairship.md)、[容器网络](../network/intro/what-is-net.md)、边云协同、信创云
+Involved modules: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Multi-Cloud Orchestration](../kairship/01product/whatiskairship.md), [Container Network](../network/intro/what -is-net.md), Edge Cloud Synergy, Xinchuang Cloud
 
-方案优势：创新性技术完成跨云容灾，跨云资源检索并发性能高，结合容器平台的能力适配边缘、信创场景。
+Advantages of the solution: Innovative technology completes cross-cloud disaster recovery, high concurrency performance of cross-cloud resource retrieval, combined with container platform capabilities to adapt to edge and credit creation scenarios.
 
-[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
-[申请社区免费体验](license0.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Apply for community free experience](license0.md){ .md-button .md-button--primary }

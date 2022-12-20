@@ -187,465 +187,467 @@
 
 参考下面的 Yaml 模板，创建一个名为 `test-mysql-123-mysql` 的有状态负载。
 
-```yaml
-kind: StatefulSet
-apiVersion: apps/v1
-metadata:
-  name: test-mysql-123-mysql
-  namespace: default
-  uid: d3f45527-a0ab-4b22-9013-5842a06f4e0e
-  resourceVersion: '20504385'
-  generation: 1
-  creationTimestamp: '2022-09-22T09:34:10Z'
-  ownerReferences:
-    - apiVersion: mysql.presslabs.org/v1alpha1
-      kind: MysqlCluster
-      name: test-mysql-123
-      uid: 5e877cc3-5167-49da-904e-820940cf1a6d
-      controller: true
-      blockOwnerDeletion: true
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app.kubernetes.io/managed-by: mysql.presslabs.org
-      app.kubernetes.io/name: mysql
-      mysql.presslabs.org/cluster: test-mysql-123
-  template:
+??? note "点击查看 YAML 内容"
+
+    ```yaml
+    kind: StatefulSet
+    apiVersion: apps/v1
     metadata:
-      creationTimestamp: null
-      labels:
-        app.kubernetes.io/component: database
-        app.kubernetes.io/instance: test-mysql-123
-        app.kubernetes.io/managed-by: mysql.presslabs.org
-        app.kubernetes.io/name: mysql
-        app.kubernetes.io/version: 5.7.31
-        mysql.presslabs.org/cluster: test-mysql-123
-      annotations:
-        config_rev: '13941099'
-        prometheus.io/port: '9125'
-        prometheus.io/scrape: 'true'
-        secret_rev: '13941101'
+      name: test-mysql-123-mysql
+      namespace: default
+      uid: d3f45527-a0ab-4b22-9013-5842a06f4e0e
+      resourceVersion: '20504385'
+      generation: 1
+      creationTimestamp: '2022-09-22T09:34:10Z'
+      ownerReferences:
+        - apiVersion: mysql.presslabs.org/v1alpha1
+          kind: MysqlCluster
+          name: test-mysql-123
+          uid: 5e877cc3-5167-49da-904e-820940cf1a6d
+          controller: true
+          blockOwnerDeletion: true
     spec:
-      volumes:
-        - name: conf
-          emptyDir: {}
-        - name: init-scripts
-          emptyDir: {}
-        - name: config-map
-          configMap:
-            name: test-mysql-123-mysql
-            defaultMode: 420
-        - name: data
-          persistentVolumeClaim:
-            claimName: data
-      initContainers:
-        - name: init
-          image: docker.m.daocloud.io/bitpoke/mysql-operator-sidecar-5.7:v0.6.1
-          args:
-            - clone-and-init
-          envFrom:
-            - secretRef:
-                name: test-mysql-123-mysql-operated
-          env:
-            - name: MY_NAMESPACE
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: metadata.namespace
-            - name: MY_POD_NAME
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: metadata.name
-            - name: MY_POD_IP
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: status.podIP
-            - name: MY_SERVICE_NAME
-              value: mysql
-            - name: MY_CLUSTER_NAME
-              value: test-mysql-123
-            - name: MY_FQDN
-              value: $(MY_POD_NAME).$(MY_SERVICE_NAME).$(MY_NAMESPACE)
-            - name: MY_MYSQL_VERSION
-              value: 5.7.31
-            - name: BACKUP_USER
-              valueFrom:
-                secretKeyRef:
-                  name: test-mysql-123-mysql-operated
-                  key: BACKUP_USER
-                  optional: true
-            - name: BACKUP_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: test-mysql-123-mysql-operated
-                  key: BACKUP_PASSWORD
-                  optional: true
-          resources: {}
-          volumeMounts:
+      replicas: 1
+      selector:
+        matchLabels:
+          app.kubernetes.io/managed-by: mysql.presslabs.org
+          app.kubernetes.io/name: mysql
+          mysql.presslabs.org/cluster: test-mysql-123
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            app.kubernetes.io/component: database
+            app.kubernetes.io/instance: test-mysql-123
+            app.kubernetes.io/managed-by: mysql.presslabs.org
+            app.kubernetes.io/name: mysql
+            app.kubernetes.io/version: 5.7.31
+            mysql.presslabs.org/cluster: test-mysql-123
+          annotations:
+            config_rev: '13941099'
+            prometheus.io/port: '9125'
+            prometheus.io/scrape: 'true'
+            secret_rev: '13941101'
+        spec:
+          volumes:
             - name: conf
-              mountPath: /etc/mysql
+              emptyDir: {}
+            - name: init-scripts
+              emptyDir: {}
             - name: config-map
-              mountPath: /mnt/conf
+              configMap:
+                name: test-mysql-123-mysql
+                defaultMode: 420
             - name: data
-              mountPath: /var/lib/mysql
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
-          imagePullPolicy: IfNotPresent
-      containers:
-        - name: mysql
-          image: docker.m.daocloud.io/mysql:5.7.31
-          ports:
+              persistentVolumeClaim:
+                claimName: data
+          initContainers:
+            - name: init
+              image: docker.m.daocloud.io/bitpoke/mysql-operator-sidecar-5.7:v0.6.1
+              args:
+                - clone-and-init
+              envFrom:
+                - secretRef:
+                    name: test-mysql-123-mysql-operated
+              env:
+                - name: MY_NAMESPACE
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: metadata.namespace
+                - name: MY_POD_NAME
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: metadata.name
+                - name: MY_POD_IP
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: status.podIP
+                - name: MY_SERVICE_NAME
+                  value: mysql
+                - name: MY_CLUSTER_NAME
+                  value: test-mysql-123
+                - name: MY_FQDN
+                  value: $(MY_POD_NAME).$(MY_SERVICE_NAME).$(MY_NAMESPACE)
+                - name: MY_MYSQL_VERSION
+                  value: 5.7.31
+                - name: BACKUP_USER
+                  valueFrom:
+                    secretKeyRef:
+                      name: test-mysql-123-mysql-operated
+                      key: BACKUP_USER
+                      optional: true
+                - name: BACKUP_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: test-mysql-123-mysql-operated
+                      key: BACKUP_PASSWORD
+                      optional: true
+              resources: {}
+              volumeMounts:
+                - name: conf
+                  mountPath: /etc/mysql
+                - name: config-map
+                  mountPath: /mnt/conf
+                - name: data
+                  mountPath: /var/lib/mysql
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              imagePullPolicy: IfNotPresent
+          containers:
             - name: mysql
-              containerPort: 3306
-              protocol: TCP
-          env:
-            - name: MY_NAMESPACE
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: metadata.namespace
-            - name: MY_POD_NAME
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: metadata.name
-            - name: MY_POD_IP
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: status.podIP
-            - name: MY_SERVICE_NAME
-              value: mysql
-            - name: MY_CLUSTER_NAME
-              value: test-mysql-123
-            - name: MY_FQDN
-              value: $(MY_POD_NAME).$(MY_SERVICE_NAME).$(MY_NAMESPACE)
-            - name: MY_MYSQL_VERSION
-              value: 5.7.31
-            - name: ORCH_CLUSTER_ALIAS
-              value: test-mysql-123.default
-            - name: ORCH_HTTP_API
-              value: http://mysql-operator.mcamel-system/api
-            - name: MYSQL_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: test-mysql-123-secret
-                  key: ROOT_PASSWORD
-                  optional: false
-            - name: MYSQL_USER
-              valueFrom:
-                secretKeyRef:
-                  name: test-mysql-123-secret
-                  key: USER
-                  optional: true
-            - name: MYSQL_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: test-mysql-123-secret
-                  key: PASSWORD
-                  optional: true
-            - name: MYSQL_DATABASE
-              valueFrom:
-                secretKeyRef:
-                  name: test-mysql-123-secret
-                  key: DATABASE
-                  optional: true
-          resources:
-            limits:
-              cpu: '1'
-              memory: 1Gi
-            requests:
-              cpu: 100m
-              memory: 512Mi
-          volumeMounts:
-            - name: conf
-              mountPath: /etc/mysql
-            - name: data
-              mountPath: /var/lib/mysql
-          livenessProbe:
-            exec:
-              command:
-                - mysqladmin
-                - '--defaults-file=/etc/mysql/client.conf'
-                - ping
-            initialDelaySeconds: 60
-            timeoutSeconds: 5
-            periodSeconds: 5
-            successThreshold: 1
-            failureThreshold: 3
-          readinessProbe:
-            exec:
-              command:
-                - /bin/sh
-                - '-c'
-                - >-
-                  test $(mysql --defaults-file=/etc/mysql/client.conf -NB -e
-                  'SELECT COUNT(*) FROM sys_operator.status WHERE
-                  name="configured" AND value="1"') -eq 1
-            initialDelaySeconds: 5
-            timeoutSeconds: 5
-            periodSeconds: 2
-            successThreshold: 1
-            failureThreshold: 3
-          lifecycle:
-            preStop:
-              exec:
-                command:
-                  - bash
-                  - /etc/mysql/pre-shutdown-ha.sh
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
-          imagePullPolicy: IfNotPresent
-        - name: sidecar
-          image: docker.m.daocloud.io/bitpoke/mysql-operator-sidecar-5.7:v0.6.1
-          args:
-            - config-and-serve
-          ports:
-            - name: sidecar-http
-              containerPort: 8080
-              protocol: TCP
-          envFrom:
-            - secretRef:
-                name: test-mysql-123-mysql-operated
-          env:
-            - name: MY_NAMESPACE
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: metadata.namespace
-            - name: MY_POD_NAME
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: metadata.name
-            - name: MY_POD_IP
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: status.podIP
-            - name: MY_SERVICE_NAME
-              value: mysql
-            - name: MY_CLUSTER_NAME
-              value: test-mysql-123
-            - name: MY_FQDN
-              value: $(MY_POD_NAME).$(MY_SERVICE_NAME).$(MY_NAMESPACE)
-            - name: MY_MYSQL_VERSION
-              value: 5.7.31
-            - name: XTRABACKUP_TARGET_DIR
-              value: /tmp/xtrabackup_backupfiles/
-          resources:
-            limits:
-              cpu: '1'
-              memory: 1Gi
-            requests:
-              cpu: 10m
-              memory: 64Mi
-          volumeMounts:
-            - name: conf
-              mountPath: /etc/mysql
-            - name: data
-              mountPath: /var/lib/mysql
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: 8080
-              scheme: HTTP
-            initialDelaySeconds: 30
-            timeoutSeconds: 5
-            periodSeconds: 5
-            successThreshold: 1
-            failureThreshold: 3
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
-          imagePullPolicy: IfNotPresent
-        - name: metrics-exporter
-          image: prom/mysqld-exporter:v0.13.0
-          args:
-            - '--web.listen-address=0.0.0.0:9125'
-            - '--web.telemetry-path=/metrics'
-            - '--collect.heartbeat'
-            - '--collect.heartbeat.database=sys_operator'
-          ports:
-            - name: prometheus
-              containerPort: 9125
-              protocol: TCP
-          env:
-            - name: MY_NAMESPACE
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: metadata.namespace
-            - name: MY_POD_NAME
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: metadata.name
-            - name: MY_POD_IP
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: status.podIP
-            - name: MY_SERVICE_NAME
-              value: mysql
-            - name: MY_CLUSTER_NAME
-              value: test-mysql-123
-            - name: MY_FQDN
-              value: $(MY_POD_NAME).$(MY_SERVICE_NAME).$(MY_NAMESPACE)
-            - name: MY_MYSQL_VERSION
-              value: 5.7.31
-            - name: USER
-              valueFrom:
-                secretKeyRef:
-                  name: test-mysql-123-mysql-operated
-                  key: METRICS_EXPORTER_USER
-                  optional: false
-            - name: PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: test-mysql-123-mysql-operated
-                  key: METRICS_EXPORTER_PASSWORD
-                  optional: false
-            - name: DATA_SOURCE_NAME
-              value: $(USER):$(PASSWORD)@(127.0.0.1:3306)/
-          resources:
-            limits:
-              cpu: 100m
-              memory: 128Mi
-            requests:
-              cpu: 10m
-              memory: 32Mi
-          livenessProbe:
-            httpGet:
-              path: /metrics
-              port: 9125
-              scheme: HTTP
-            initialDelaySeconds: 30
-            timeoutSeconds: 30
-            periodSeconds: 30
-            successThreshold: 1
-            failureThreshold: 3
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
-          imagePullPolicy: IfNotPresent
-        - name: pt-heartbeat
-          image: docker.m.daocloud.io/bitpoke/mysql-operator-sidecar-5.7:v0.6.1
-          args:
-            - pt-heartbeat
-            - '--update'
-            - '--replace'
-            - '--check-read-only'
-            - '--create-table'
-            - '--database'
-            - sys_operator
-            - '--table'
-            - heartbeat
-            - '--utc'
-            - '--defaults-file'
-            - /etc/mysql/heartbeat.conf
-            - '--fail-successive-errors=20'
-          env:
-            - name: MY_NAMESPACE
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: metadata.namespace
-            - name: MY_POD_NAME
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: metadata.name
-            - name: MY_POD_IP
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: status.podIP
-            - name: MY_SERVICE_NAME
-              value: mysql
-            - name: MY_CLUSTER_NAME
-              value: test-mysql-123
-            - name: MY_FQDN
-              value: $(MY_POD_NAME).$(MY_SERVICE_NAME).$(MY_NAMESPACE)
-            - name: MY_MYSQL_VERSION
-              value: 5.7.31
-          resources:
-            limits:
-              cpu: 100m
-              memory: 64Mi
-            requests:
-              cpu: 10m
-              memory: 32Mi
-          volumeMounts:
-            - name: conf
-              mountPath: /etc/mysql
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
-          imagePullPolicy: IfNotPresent
-      restartPolicy: Always
-      terminationGracePeriodSeconds: 30
-      dnsPolicy: ClusterFirst
-      securityContext:
-        runAsUser: 999
-        fsGroup: 999
-      affinity:
-        podAntiAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-            - weight: 100
-              podAffinityTerm:
-                labelSelector:
-                  matchLabels:
-                    app.kubernetes.io/component: database
-                    app.kubernetes.io/instance: test-mysql-123
-                    app.kubernetes.io/managed-by: mysql.presslabs.org
-                    app.kubernetes.io/name: mysql
-                    app.kubernetes.io/version: 5.7.31
-                    mysql.presslabs.org/cluster: test-mysql-123
-                topologyKey: kubernetes.io/hostname
-      schedulerName: default-scheduler
-  volumeClaimTemplates:
-    - kind: PersistentVolumeClaim
-      apiVersion: v1
-      metadata:
-        name: data
-        creationTimestamp: null
-        ownerReferences:
-          - apiVersion: mysql.presslabs.org/v1alpha1
-            kind: MysqlCluster
-            name: test-mysql-123
-            uid: 5e877cc3-5167-49da-904e-820940cf1a6d
-            controller: true
-      spec:
-        accessModes:
-          - ReadWriteOnce
-        resources:
-          limits:
-            storage: 1Gi
-          requests:
-            storage: 1Gi
-        storageClassName: local-path
-        volumeMode: Filesystem
-      status:
-        phase: Pending
-  serviceName: mysql
-  podManagementPolicy: OrderedReady
-  updateStrategy:
-    type: RollingUpdate
-    rollingUpdate:
-      partition: 0
-  revisionHistoryLimit: 10
-status:
-  observedGeneration: 1
-  replicas: 1
-  readyReplicas: 1
-  currentReplicas: 1
-  updatedReplicas: 1
-  currentRevision: test-mysql-123-mysql-6b8f5577c7
-  updateRevision: test-mysql-123-mysql-6b8f5577c7
-  collisionCount: 0
-  availableReplicas: 1
-```
+              image: docker.m.daocloud.io/mysql:5.7.31
+              ports:
+                - name: mysql
+                  containerPort: 3306
+                  protocol: TCP
+              env:
+                - name: MY_NAMESPACE
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: metadata.namespace
+                - name: MY_POD_NAME
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: metadata.name
+                - name: MY_POD_IP
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: status.podIP
+                - name: MY_SERVICE_NAME
+                  value: mysql
+                - name: MY_CLUSTER_NAME
+                  value: test-mysql-123
+                - name: MY_FQDN
+                  value: $(MY_POD_NAME).$(MY_SERVICE_NAME).$(MY_NAMESPACE)
+                - name: MY_MYSQL_VERSION
+                  value: 5.7.31
+                - name: ORCH_CLUSTER_ALIAS
+                  value: test-mysql-123.default
+                - name: ORCH_HTTP_API
+                  value: http://mysql-operator.mcamel-system/api
+                - name: MYSQL_ROOT_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: test-mysql-123-secret
+                      key: ROOT_PASSWORD
+                      optional: false
+                - name: MYSQL_USER
+                  valueFrom:
+                    secretKeyRef:
+                      name: test-mysql-123-secret
+                      key: USER
+                      optional: true
+                - name: MYSQL_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: test-mysql-123-secret
+                      key: PASSWORD
+                      optional: true
+                - name: MYSQL_DATABASE
+                  valueFrom:
+                    secretKeyRef:
+                      name: test-mysql-123-secret
+                      key: DATABASE
+                      optional: true
+              resources:
+                limits:
+                  cpu: '1'
+                  memory: 1Gi
+                requests:
+                  cpu: 100m
+                  memory: 512Mi
+              volumeMounts:
+                - name: conf
+                  mountPath: /etc/mysql
+                - name: data
+                  mountPath: /var/lib/mysql
+              livenessProbe:
+                exec:
+                  command:
+                    - mysqladmin
+                    - '--defaults-file=/etc/mysql/client.conf'
+                    - ping
+                initialDelaySeconds: 60
+                timeoutSeconds: 5
+                periodSeconds: 5
+                successThreshold: 1
+                failureThreshold: 3
+              readinessProbe:
+                exec:
+                  command:
+                    - /bin/sh
+                    - '-c'
+                    - >-
+                      test $(mysql --defaults-file=/etc/mysql/client.conf -NB -e
+                      'SELECT COUNT(*) FROM sys_operator.status WHERE
+                      name="configured" AND value="1"') -eq 1
+                initialDelaySeconds: 5
+                timeoutSeconds: 5
+                periodSeconds: 2
+                successThreshold: 1
+                failureThreshold: 3
+              lifecycle:
+                preStop:
+                  exec:
+                    command:
+                      - bash
+                      - /etc/mysql/pre-shutdown-ha.sh
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              imagePullPolicy: IfNotPresent
+            - name: sidecar
+              image: docker.m.daocloud.io/bitpoke/mysql-operator-sidecar-5.7:v0.6.1
+              args:
+                - config-and-serve
+              ports:
+                - name: sidecar-http
+                  containerPort: 8080
+                  protocol: TCP
+              envFrom:
+                - secretRef:
+                    name: test-mysql-123-mysql-operated
+              env:
+                - name: MY_NAMESPACE
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: metadata.namespace
+                - name: MY_POD_NAME
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: metadata.name
+                - name: MY_POD_IP
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: status.podIP
+                - name: MY_SERVICE_NAME
+                  value: mysql
+                - name: MY_CLUSTER_NAME
+                  value: test-mysql-123
+                - name: MY_FQDN
+                  value: $(MY_POD_NAME).$(MY_SERVICE_NAME).$(MY_NAMESPACE)
+                - name: MY_MYSQL_VERSION
+                  value: 5.7.31
+                - name: XTRABACKUP_TARGET_DIR
+                  value: /tmp/xtrabackup_backupfiles/
+              resources:
+                limits:
+                  cpu: '1'
+                  memory: 1Gi
+                requests:
+                  cpu: 10m
+                  memory: 64Mi
+              volumeMounts:
+                - name: conf
+                  mountPath: /etc/mysql
+                - name: data
+                  mountPath: /var/lib/mysql
+              readinessProbe:
+                httpGet:
+                  path: /health
+                  port: 8080
+                  scheme: HTTP
+                initialDelaySeconds: 30
+                timeoutSeconds: 5
+                periodSeconds: 5
+                successThreshold: 1
+                failureThreshold: 3
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              imagePullPolicy: IfNotPresent
+            - name: metrics-exporter
+              image: prom/mysqld-exporter:v0.13.0
+              args:
+                - '--web.listen-address=0.0.0.0:9125'
+                - '--web.telemetry-path=/metrics'
+                - '--collect.heartbeat'
+                - '--collect.heartbeat.database=sys_operator'
+              ports:
+                - name: prometheus
+                  containerPort: 9125
+                  protocol: TCP
+              env:
+                - name: MY_NAMESPACE
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: metadata.namespace
+                - name: MY_POD_NAME
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: metadata.name
+                - name: MY_POD_IP
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: status.podIP
+                - name: MY_SERVICE_NAME
+                  value: mysql
+                - name: MY_CLUSTER_NAME
+                  value: test-mysql-123
+                - name: MY_FQDN
+                  value: $(MY_POD_NAME).$(MY_SERVICE_NAME).$(MY_NAMESPACE)
+                - name: MY_MYSQL_VERSION
+                  value: 5.7.31
+                - name: USER
+                  valueFrom:
+                    secretKeyRef:
+                      name: test-mysql-123-mysql-operated
+                      key: METRICS_EXPORTER_USER
+                      optional: false
+                - name: PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: test-mysql-123-mysql-operated
+                      key: METRICS_EXPORTER_PASSWORD
+                      optional: false
+                - name: DATA_SOURCE_NAME
+                  value: $(USER):$(PASSWORD)@(127.0.0.1:3306)/
+              resources:
+                limits:
+                  cpu: 100m
+                  memory: 128Mi
+                requests:
+                  cpu: 10m
+                  memory: 32Mi
+              livenessProbe:
+                httpGet:
+                  path: /metrics
+                  port: 9125
+                  scheme: HTTP
+                initialDelaySeconds: 30
+                timeoutSeconds: 30
+                periodSeconds: 30
+                successThreshold: 1
+                failureThreshold: 3
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              imagePullPolicy: IfNotPresent
+            - name: pt-heartbeat
+              image: docker.m.daocloud.io/bitpoke/mysql-operator-sidecar-5.7:v0.6.1
+              args:
+                - pt-heartbeat
+                - '--update'
+                - '--replace'
+                - '--check-read-only'
+                - '--create-table'
+                - '--database'
+                - sys_operator
+                - '--table'
+                - heartbeat
+                - '--utc'
+                - '--defaults-file'
+                - /etc/mysql/heartbeat.conf
+                - '--fail-successive-errors=20'
+              env:
+                - name: MY_NAMESPACE
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: metadata.namespace
+                - name: MY_POD_NAME
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: metadata.name
+                - name: MY_POD_IP
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: status.podIP
+                - name: MY_SERVICE_NAME
+                  value: mysql
+                - name: MY_CLUSTER_NAME
+                  value: test-mysql-123
+                - name: MY_FQDN
+                  value: $(MY_POD_NAME).$(MY_SERVICE_NAME).$(MY_NAMESPACE)
+                - name: MY_MYSQL_VERSION
+                  value: 5.7.31
+              resources:
+                limits:
+                  cpu: 100m
+                  memory: 64Mi
+                requests:
+                  cpu: 10m
+                  memory: 32Mi
+              volumeMounts:
+                - name: conf
+                  mountPath: /etc/mysql
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              imagePullPolicy: IfNotPresent
+          restartPolicy: Always
+          terminationGracePeriodSeconds: 30
+          dnsPolicy: ClusterFirst
+          securityContext:
+            runAsUser: 999
+            fsGroup: 999
+          affinity:
+            podAntiAffinity:
+              preferredDuringSchedulingIgnoredDuringExecution:
+                - weight: 100
+                  podAffinityTerm:
+                    labelSelector:
+                      matchLabels:
+                        app.kubernetes.io/component: database
+                        app.kubernetes.io/instance: test-mysql-123
+                        app.kubernetes.io/managed-by: mysql.presslabs.org
+                        app.kubernetes.io/name: mysql
+                        app.kubernetes.io/version: 5.7.31
+                        mysql.presslabs.org/cluster: test-mysql-123
+                    topologyKey: kubernetes.io/hostname
+          schedulerName: default-scheduler
+      volumeClaimTemplates:
+        - kind: PersistentVolumeClaim
+          apiVersion: v1
+          metadata:
+            name: data
+            creationTimestamp: null
+            ownerReferences:
+              - apiVersion: mysql.presslabs.org/v1alpha1
+                kind: MysqlCluster
+                name: test-mysql-123
+                uid: 5e877cc3-5167-49da-904e-820940cf1a6d
+                controller: true
+          spec:
+            accessModes:
+              - ReadWriteOnce
+            resources:
+              limits:
+                storage: 1Gi
+              requests:
+                storage: 1Gi
+            storageClassName: local-path
+            volumeMode: Filesystem
+          status:
+            phase: Pending
+      serviceName: mysql
+      podManagementPolicy: OrderedReady
+      updateStrategy:
+        type: RollingUpdate
+        rollingUpdate:
+          partition: 0
+      revisionHistoryLimit: 10
+    status:
+      observedGeneration: 1
+      replicas: 1
+      readyReplicas: 1
+      currentReplicas: 1
+      updatedReplicas: 1
+      currentRevision: test-mysql-123-mysql-6b8f5577c7
+      updateRevision: test-mysql-123-mysql-6b8f5577c7
+      collisionCount: 0
+      availableReplicas: 1
+    ```
 
 ### 完成创建
 
