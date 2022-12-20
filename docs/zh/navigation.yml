@@ -368,7 +368,7 @@ nav:
               - 网络组件: network/modules/modules.md
           - Calico:
               - 介绍: network/modules/calico/what.md
-              - 安装: network/modules/calico/install.md
+              - 安装参数配置: network/modules/calico/install.md
               - ippool: network/modules/calico/ippool.md
               - 监控指标: network/modules/calico/metrics.md
               - Calico 网络策略: network/modules/calico/policy.md
