@@ -1,86 +1,86 @@
-# 安全治理参数配置
+# Security governance parameter configuration
 
-本页介绍有关对等身份认证、请求身份认证、授权策略相关的参数配置。
+This page introduces parameter configuration related to peer identity authentication, request identity authentication, and authorization policy.
 
-## 对等身份认证
+## Peer Authentication
 
-采用向导向导模式时，对等身份认证分为基本配置和认证设置两步，各参数说明如下。
+When the wizard mode is used, the peer-to-peer identity authentication is divided into two steps: basic configuration and authentication setting, and the description of each parameter is as follows.
 
-### 基本配置
+### basic configuration
 
-| **UI 项**               | **YAML 字段**                        | **描述**                                                     |
-| ---------------------- | -------------------------------------- | ------------------------------------------------------------ |
-| 名称                   | metadata.name | 必填。对等身份认证名称，同一个命名空间下不可重名。 |
-| 命名空间               | metadata.namespace                     | 必选。对等身份认证所属的命名空间。当选择网格的根命名空间时，将创建全局策略。全局策略仅能创建一个，需在界面中做检查，避免用户重复创建。 |
-| 工作负载标签   | spec.selector                          | 可选。应用对等身份认证策略的工作负载选择标签，可添加多个标签，无需排序。 |
-| 标签名称      | spec.selector.matchLabels            | 必填。由小写字母、数字、连字符（-）、下划线（_）及小数点（.）组成 |
-| 标签值        | spec.selector.matchLabels.{标签名称} | 必填。由小写字母、数字、连字符（-）、下划线（_）及小数点（.）组成 |
+| **UI Item** | **YAML Field** | **Description** |
+| ---------------------- | -------------------------- ------------ | ------------------------------------- ----------------------- |
+| Name | metadata.name | Required. Peer identity authentication name, which cannot be duplicated in the same namespace. |
+| Namespace | metadata.namespace | Required. The namespace the peer authentication belongs to. Global policies are created when the grid's root namespace is selected. Only one global policy can be created, and it needs to be checked in the interface to avoid repeated creation by users. |
+| workload tags | spec.selector | optional. Workload selection tags that apply peer authentication policies, multiple tags can be added without sorting. |
+| Label name | spec.selector.matchLabels | Required. Consists of lowercase letters, numbers, hyphens (-), underscores (_), and decimal points (.) |
+| Label value | spec.selector.matchLabels.{label name} | Required. Consists of lowercase letters, numbers, hyphens (-), underscores (_), and decimal points (.) |
 
-## 认证设置
+## Authentication Settings
 
-| **UI 项**               | **YAML 字段**                        | **描述**                                                     |
-| ---------------------- | -------------------------------------- | ------------------------------------------------------------ |
-| mTLS 模式               | spec.mTLS.mode                         | 必填。用于设定命名空间的 mTLS 模式：<br />- PERMISSIVE：明文和 mTLS 连接<br />- STRICT：仅 mTLS 连接<br />- DISABLE：仅明文连接 |
-| 为指定端口添加 mTLS 模式 | spec.portLevelMtls                     | 可选。针对指定端口设置 mTLS 规则，可添加多条规则，无需排序。<br />- PERMISSIVE：明文和 mTLS 连接<br />- STRICT：仅 mTLS 连接<br />- DISABLE：仅明文连接 |
+| **UI Item** | **YAML Field** | **Description** |
+| ---------------------- | -------------------------- ------------ | ------------------------------------- ----------------------- |
+| mTLS Mode | spec.mTLS.mode | Required. mTLS mode for setting the namespace:<br /> - PERMISSIVE: cleartext and mTLS connections<br /> - STRICT: mTLS connections only<br /> - DISABLE: cleartext connections only |
+| Add mTLS mode for specified port | spec.portLevelMtls | Optional. Set mTLS rules for specified ports, multiple rules can be added without sorting. <br />- PERMISSIVE: cleartext and mTLS connections<br />- STRICT: mTLS connections only<br />- DISABLE: cleartext connections only |
 
-## 请求身份认证
+## request authentication
 
-采用向导向导模式时，请求身份认证分为基本配置和认证设置两步，各参数说明如下。
+When using the wizard wizard mode, requesting identity authentication is divided into two steps: basic configuration and authentication setting, and the description of each parameter is as follows.
 
-## 基本配置
+## basic configuration
 
-| **UI 项**    | **YAML 字段**                        | **描述**                                                     |
-| ------------ | ------------------------------------ | ------------------------------------------------------------ |
-| 名称         | metadata.name                        | 必填。请求身份认证名称，同一个命名空间下不可重名。           |
-| 命名空间     | metadata.namespace                   | 必选。请求身份认证所属的命名空间。当选择网格的根命名空间时，将创建全局策略。全局策略仅能创建一个，需在界面中做检查，避免用户重复创建。<br />同一个命名空间内，请求身份认证的名称不能重复。 |
-| 工作负载标签 | spec.selector                        | 可选。应用请求身份认证策略的工作负载选择标签，可添加多条选择标签，无需排序。 |
-| 标签名称     | spec.selector.matchLabels            | 必填。由小写字母、数字、连字符（-）、下划线（_）及小数点（.）组成 |
-| 标签值       | spec.selector.matchLabels.{标签名称} | 必填。由小写字母、数字、连字符（-）、下划线（_）及小数点（.）组成 |
+| **UI Item** | **YAML Field** | **Description** |
+| ------------ | ------------------------------------ | -------------------------------------------------- ----------- |
+| Name | metadata.name | Required. Request identity authentication name, the same name space cannot be duplicated. |
+| Namespace | metadata.namespace | Required. Namespace to which the request authentication belongs. Global policies are created when the grid's root namespace is selected. Only one global policy can be created, and it needs to be checked in the interface to avoid repeated creation by users. <br />In the same namespace, the name requesting authentication cannot be repeated. |
+| workload tags | spec.selector | Optional. The application requests the workload selection tag of the identity authentication policy. Multiple selection tags can be added without sorting. |
+| Label name | spec.selector.matchLabels | Required. Consists of lowercase letters, numbers, hyphens (-), underscores (_), and decimal points (.) |
+| Label value | spec.selector.matchLabels.{label name} | Required. Consists of lowercase letters, numbers, hyphens (-), underscores (_), and decimal points (.) |
 
-### 认证设置
+### Authentication settings
 
-| **UI 项**     | **YAML 字段**                        | **描述**                                                     |
-| ------------- | ------------------------------------ | ------------------------------------------------------------ |
-| 添加 JWT 规则 | spec.jwtRules                        | 可选。用于用户请求认证的 JWT 规则，可添加多条规则。          |
-| Issuer        | spec.jwtRules.issuers                | 必填。JSON Web Token (JWT) 签发人信息。                      |
-| Audiences     | spec.jwtRules.issuers.Audiences      | 可选。配置可访问的 audiences 列表，如果为空，将访问 service name。 |
-| jwkURI        | spec.jwtRules.issuers.jwkUri         | 可选。JSON Web Key (JWK) 的 JSON 文件路径，格式为：URI。     |
-| jwks          | spec.jwtRules.issuers.jwks           | 可选。JSON Web Key Set (JWKS) 文件内容，可以与 jwkURI 二选一提供。 |
+| **UI Item** | **YAML Field** | **Description** |
+| ------------- | ----------------------------------- - | ------------------------------------------------ ------------ |
+| Add JWT rules | spec.jwtRules | Optional. JWT rules for user request authentication, multiple rules can be added. |
+| Issuer | spec.jwtRules.issuers | Required. JSON Web Token (JWT) issuer information. |
+| Audiences | spec.jwtRules.issuers.Audiences | Optional. Configure the list of accessible audiences, if empty, the service name will be accessed. |
+| jwkURI | spec.jwtRules.issuers.jwkUri | Optional. The path to the JSON file of the JSON Web Key (JWK), in the format: URI. |
+| jwks | spec.jwtRules.issuers.jwks | Optional. JSON Web Key Set (JWKS) file content, which can be provided with jwkURI alternatively. |
 
-## 授权策略
+## Authorization Policy
 
-采用向导向导模式时，授权策略的创建分为`基本配置`和`策略设置`两步，各参数说明如下。
+When the wizard mode is used, the creation of the authorization policy is divided into two steps: `basic configuration` and `policy setting`, and the description of each parameter is as follows.
 
-### 基本配置
+### basic configuration
 
-| **元素**             | **YAML 字段**                       | **描述**                                                     |
-| -------------------- | -------------------------------------- | ------------------------------------------------------------ |
-| 名称                 | metadata.name | 必填。授权的策略名称。 |
-| 命名空间             | metadata.namespace                     | 必选。授权策略所属命名空间，当选择网格根命名空间时，将创建全局策略，全局策略仅能创建一个，需在界面做检查，避免用户重复创建。同一个命名空间内，请求身份认证不可重名。 |
-| 工作负载标签 | spec.selector                          | 可选。应用授权策略的工作负载选择标签，可添加多条选择标签，无需排序。 |
-| 标签名称             | spec.selector.matchLabels              | 可选。由小写字母、数字、连字符（-）、下划线（_）及小数点（.）组成。 |
-| 标签值               | spec.selector.matchLabels.{标签名称}   | 可选。由小写字母、数字、连字符（-）、下划线（_）及小数点（.）组成。 |
+| **Element** | **YAML Field** | **Description** |
+| -------------------- | ---------------------------- ---------- | --------------------------------------- --------------------- |
+| Name | metadata.name | Required. Authorized policy name. |
+| Namespace | metadata.namespace | Required. The namespace to which the authorization policy belongs. When the grid root namespace is selected, a global policy will be created. Only one global policy can be created, and it needs to be checked on the interface to avoid repeated creation by users. In the same namespace, request identity authentication cannot have the same name. |
+| workload tags | spec.selector | Optional. The workload selection tag of the application authorization policy, multiple selection tags can be added without sorting. |
+| Label name | spec.selector.matchLabels | Optional. Consists of lowercase letters, numbers, hyphens (-), underscores (_), and decimal points (.). |
+| Label value | spec.selector.matchLabels.{label name} | Optional. Consists of lowercase letters, numbers, hyphens (-), underscores (_), and decimal points (.). |
 
-### 策略设置
+### Policy Settings
 
-| **元素**             | **YAML 字段**                       | **描述**                                                     |
-| -------------------- | -------------------------------------- | ------------------------------------------------------------ |
-| 策略动作             | spec.action                            | 可选。包含：<br />- 允许（allow）<br />- 拒绝（deny）<br />- 审计（audit）<br />- 自定义（custom）<br />选择自定义时，增加`provider`输入项。 |
-| Provider        | spec.provider.name                     | 必填。仅在`策略动作`选择为`自定义`时，才显示该输入框。              |
-| 请求策略         | spec.rules                             | 可选。包含请求来源、请求操作、策略条件三部分，可添加多条，按顺序执行。 |
-| 添加请求来源         | spec.rules.-from                       | 可选。请求来源可基于命名空间、IP 段等进行定义，可添加多条。各项参数参见下文 [请求来源 Source](#请求来源-source)。 |
-| 添加请求操作         | spec.rules.-to                         | 可选。请求操作是对筛选出的请求执行的操作，例如发送至指定端口或主机，可添加多个操作。各项参数参见下文[请求操作 Operation](#请求操作-operation)。 |
-| 添加策略条件         | spec.rules.-when                       | 必填。策略条件是一个可选设置，可以增加类似黑名单（values）、白名单的限制条件（notValues），可添加多个策略条件。各项参数参见下文[策略条件 Condition](#策略条件-condition)。 |
+| **Element** | **YAML Field** | **Description** |
+| -------------------- | ---------------------------- ---------- | --------------------------------------- --------------------- |
+| policy action | spec.action | Optional. Contains:<br />- Allow (allow)<br />- Deny (deny)<br />- Audit (audit)<br />- Custom (custom)<br />When you choose custom, add` provider` entry. |
+| Provider | spec.provider.name | Required. This input box is displayed only when the option of `Strategy Action` is `Custom`. |
+| Request Policy | spec.rules | Optional. It includes three parts: request source, request operation, and policy conditions. Multiple items can be added and executed in order. |
+| Add request source | spec.rules.-from | Optional. Request sources can be defined based on namespaces, IP segments, etc., and multiple entries can be added. For each parameter, see [Request Source Source](#Request Source-source) below. |
+| Add request action | spec.rules.-to | Optional. The request operation is the operation performed on the filtered requests, such as sending to a specified port or host, and multiple operations can be added. For parameters, see [Request Operation Operation](#Request Operation-operation) below. |
+| Add Policy Conditions | spec.rules.-when | Required. The policy condition is an optional setting, which can add restrictions like blacklist (values) and whitelist (notValues), and multiple policy conditions can be added. For parameters, see [Strategy Condition Condition](#Strategy Condition-condition) below. |
 
-#### 请求来源 Source
+#### Request source Source
 
-Source 指定一个请求的来源身份。对请求来源中的字段执行逻辑与运算。
+Source specifies the source identity of a request. Performs a logical AND operation on the fields in the request source.
 
-例如，以下 Source 将匹配：
+For example, the following Source will match:
 
-- 主体为 “admin” 或 “dev”
-- 命名空间为 “prod” 或 “test”
-- 且 ip 不是 “1.2.3.4”.
+- principal is "admin" or "dev"
+- The namespace is "prod" or "test"
+- and ip is not "1.2.3.4".
 
 ```yaml
 principals: ["admin", "dev"]
@@ -88,28 +88,28 @@ namespaces: ["prod", "test"]
 notIpBlocks: ["1.2.3.4"]
 ```
 
-| 字段                  | 类型       | 描述                                                  |
-| ---------------------- | ---------- | ------------------------------------------------------------ |
-| `principals`           | `string[]` | 可选。从对等证书衍生的对等身份列表。对等身份的格式为 `"<TRUST_DOMAIN>/ns/<NAMESPACE>/sa/<SERVICE_ACCOUNT>"`，例如 `"cluster.local/ns/default/sa/productpage"`。此字段要求启用 mTLS，且等同于 `source.principal` 属性。如果不设置，则允许所有主体。 |
-| `notPrincipals`        | `string[]` | 可选。对等身份的反向匹配列表。       |
-| `requestPrincipals`    | `string[]` | 可选。从 JWT 派生的请求身份列表。请求身份的格式为 `"<ISS>/<SUB>"`，例如 `"example.com/sub-1"`。此字段要求启用请求身份验证，且等同于 `request.auth.principal` 属性。如果不设置，则允许所有请求主体。 |
-| `notRequestPrincipals` | `string[]` | 可选。请求身份的反向匹配列表。    |
-| `namespaces`           | `string[]` | 可选。从对等证书衍生的命名空间。此字段要求启用 mTLS，且等同于 `source.namespace` 属性。如果不设置，则允许所有命名空间。 |
-| `notNamespaces`        | `string[]` | 可选。命名空间的反向匹配列表。           |
-| `ipBlocks`             | `string[]` | 可选。根据 IP 数据包的来源地址进行填充的 IP 段列表。支持单个 IP（例如 “1.2.3.4”）和 CIDR（例如 “1.2.3.0/24”）。这等同于 `source.ip` 属性。如果不设置，则允许所有 IP。 |
-| `notIpBlocks`          | `string[]` | 可选。IP 段的反向匹配列表。            |
-| `remoteIpBlocks`       | `string[]` | 可选。根据 X-Forwarded-For 标头或代理协议进行填充的 IP 段列表。要使用此字段，您必须在安装 Istio 或在 ingress 网关使用注解时在 meshConfig 下配置 gatewayTopology 的 numTrustedProxies 字段。 支持单个 IP（例如 “1.2.3.4”）和 CIDR（例如 “1.2.3.0/24”）。这等同于 `remote.ip` 属性。如果不设置，则允许所有 IP。 |
-| `notRemoteIpBlocks`    | `string[]` | 可选。远程 IP 段的反向匹配列表。   |
+| Field | Type | Description |
+| ---------------------- | ---------- | --------------- ------------------------------------------------ |
+| `principals` | `string[]` | Optional. A list of peer identities derived from peer certificates. The format of the peer identity is `"<TRUST_DOMAIN>/ns/<NAMESPACE>/sa/<SERVICE_ACCOUNT>"`, for example `"cluster.local/ns/default/sa/productpage"`. This field requires mTLS to be enabled and is equivalent to the `source.principal` property. If not set, all principals are allowed. |
+| `notPrincipals` | `string[]` | Optional. A reverse match list of peer identities. |
+| `requestPrincipals` | `string[]` | Optional. A list of requesting identities derived from the JWT. The format of the request identity is `"<ISS>/<SUB>"`, for example `"example.com/sub-1"`. This field requires request authentication to be enabled and is equivalent to the `request.auth.principal` property. If not set, all request bodies are allowed. |
+| `notRequestPrincipals` | `string[]` | Optional. A reverse match list of request identities. |
+| `namespaces` | `string[]` | Optional. A namespace derived from the peer certificate. This field requires mTLS to be enabled and is equivalent to the `source.namespace` property. If not set, all namespaces are allowed. |
+| `notNamespaces` | `string[]` | Optional. A list of reverse matches for namespaces. |
+| `ipBlocks` | `string[]` | Optional. A list of IP segments to populate based on the source address of the IP packet. Both single IP (eg "1.2.3.4") and CIDR (eg "1.2.3.0/24") are supported. This is equivalent to the `source.ip` property. If not set, all IPs are allowed. |
+| `notIpBlocks` | `string[]` | Optional. A list of reverse matches for IP segments. |
+| `remoteIpBlocks` | `string[]` | Optional. List of IP segments to populate based on X-Forwarded-For header or proxy protocol. To use this field, you must configure the gatewayTopology numTrustedProxies field under meshConfig when installing Istio or using annotations on the ingress gateway. Both single IP (eg "1.2.3.4") and CIDR (eg "1.2.3.0/24") are supported. This is equivalent to the `remote.ip` property. If not set, all IPs are allowed. |
+| `notRemoteIpBlocks` | `string[]` | Optional. A list of reverse matches for remote IP ranges. |
 
-#### 请求操作 Operation
+#### Request Operation Operation
 
-Operation 指定请求的操作。对操作中的字段执行逻辑与操作。
+Operation specifies the requested operation. Performs a logical AND operation on the fields in the operation.
 
-例如，以下操作将匹配：
+For example, the following operations will match:
 
-- 主机后缀为 “.example.com”
-- 方法为 “GET” 或 “HEAD”
-- 补丁没有前缀 “/admin”
+- The host suffix is ".example.com"
+- Method is "GET" or "HEAD"
+- Patches are not prefixed with "/admin"
 
 ```yaml
 hosts: ["*.example.com"]
@@ -117,37 +117,37 @@ methods: ["GET", "HEAD"]
 notPaths: ["/admin*"]
 ```
 
-| 字段        | 类型       | 描述                                                  |
-| ------------ | ---------- | ------------------------------------------------------------ |
-| `hosts`      | `string[]` | 可选。在 HTTP 请求中指定的主机列表。不区分大小写。如果不设置，则允许所有主机。仅适用于 HTTP。 |
-| `notHosts`   | `string[]` | 可选。在 HTTP 请求中指定的主机反向匹配列表。不区分大小写。 |
-| `ports`      | `string[]` | 可选。连接中指定的端口列表。如果不设置，则允许所有端口。 |
-| `notPorts`   | `string[]` | 可选。连接中所指定端口的反向匹配列表。 |
-| `methods`    | `string[]` | 可选。HTTP 请求中指定的方法列表。对于 gRPC 服务，这将始终是 “POST”。如果不设置，则允许所有方法。仅适用于 HTTP。 |
-| `notMethods` | `string[]` | 可选。HTTP 请求中所指定方法的反向匹配列表。 |
-| `paths`      | `string[]` | 可选。HTTP 请求中指定的路径列表。对于 gRPC 服务，这将是 “/package.service/method” 格式的完全限定名称。如果不设置，则允许所有路径。仅适用于 HTTP。 |
-| `notPaths`   | `string[]` | 可选。路径的反向匹配列表。                |
+| Field | Type | Description |
+| ------------ | ---------- | ------------------------- -------------------------------------- |
+| `hosts` | `string[]` | Optional. List of hosts specified in the HTTP request. not case sensitive. If not set, all hosts are allowed. Applies to HTTP only. |
+| `notHosts` | `string[]` | Optional. A reverse match list of hosts specified in the HTTP request. not case sensitive. |
+| `ports` | `string[]` | Optional. The list of ports specified in the connection. If not set, all ports are allowed. |
+| `notPorts` | `string[]` | Optional. A list of reverse matches for the ports specified in the connection. |
+| `methods` | `string[]` | Optional. List of methods specified in the HTTP request. For gRPC services, this will always be "POST". If not set, all methods are allowed. Applies to HTTP only. |
+| `notMethods` | `string[]` | Optional. A list of reverse matches for the method specified in the HTTP request. |
+| `paths` | `string[]` | Optional. A list of paths specified in the HTTP request. For gRPC services, this will be the fully qualified name in the format "/package.service/method". If not set, all paths are allowed. Applies to HTTP only. |
+| `notPaths` | `string[]` | Optional. A list of reverse matches for paths. |
 
-#### 策略条件 Condition
+#### Policy Condition Condition
 
-Condition 指定其他必需的属性。
+Condition specifies other required properties.
 
-| 名称 | 描述 | 支持的协议 | 示例 |
-|------|-------------|--------------------|---------|
-| `request.headers` | `HTTP` 请求头，需要用 `[]` 括起来 | HTTP only | `key: request.headers[User-Agent]`<br/>`values: ["Mozilla/*"]` |
-| `source.ip`  | 源 `IP` 地址，支持单个 `IP` 或 `CIDR` | HTTP and TCP | `key: source.ip`<br/>`values: ["10.1.2.3"]` |
-| `remote.ip`  | 由 `X-Forwarded-For` 请求头或代理协议确定的原始客户端 IP 地址，支持单个 IP 或 CIDR | HTTP and TCP | `key: remote.ip`<br />`values: ["10.1.2.3", "10.2.0.0/16"]` |
-| `source.namespace`  | 源负载实例命名空间，需启用双向 TLS | HTTP and TCP | `key: source.namespace`<br/>`values: ["default"]` |
-| `source.principal` | 源负载的标识，需启用双向 TLS | HTTP and TCP | `key: source.principal`<br/>`values: ["cluster.local/ns/default/sa/productpage"]` |
-| `request.auth.principal` | 已认证过 `principal` 的请求 | HTTP only | `key: request.auth.principal`<br/>`values: ["accounts.my-svc.com/104958560606"]` |
-| `request.auth.audiences` | 此身份验证信息的目标主体 | HTTP only | `key: request.auth.audiences`<br/>`values: ["my-svc.com"]` |
-| `request.auth.presenter` | 证书的颁发者 | HTTP only | `key: request.auth.presenter`<br/>`values: ["123456789012.my-svc.com"]` |
-| `request.auth.claims` | `Claims` 来源于 `JWT`。需要用 `[]` 括起来 | HTTP only | `key: request.auth.claims[iss]`<br/>`values: ["*@foo.com"]` |
-| `destination.ip` | 目标 `IP` 地址，支持单个 `IP` 或 `CIDR` | HTTP and TCP | `key: destination.ip`<br/>`values: ["10.1.2.3", "10.2.0.0/16"]` |
-| `destination.port` | 目标 `IP` 地址上的端口，必须在 `[0，65535]` 范围内 | HTTP and TCP | `key: destination.port`<br/>`values: ["80", "443"]` |
-| `connection.sni` | 服务器名称指示，需启用双向 TLS | HTTP and TCP | `key: connection.sni`<br/>`values: ["www.example.com"]` |
-| `experimental.envoy.filters.*` | 用于过滤器的实验性元数据匹配，包装的值 `[]` 作为列表匹配 | HTTP and TCP | `key: experimental.envoy.filters.network.mysql_proxy[db.table]`<br/>`values: ["[update]"]` |
+| Name | Description | Supported Protocols | Examples |
+|------|-------------|--------------------|------- --|
+| `request.headers` | `HTTP` request headers, need to be enclosed by `[]` | HTTP only | `key: request.headers[User-Agent]`<br/>`values: ["Mozilla/*" ]` |
+| `source.ip` | source `IP` address, support single `IP` or `CIDR` | HTTP and TCP | `key: source.ip`<br/>`values: ["10.1.2.3"]` |
+| `remote.ip` | Original client IP address determined by `X-Forwarded-For` request header or proxy protocol, single IP or CIDR supported | HTTP and TCP | `key: remote.ip`<br />` values: ["10.1.2.3", "10.2.0.0/16"]` |
+| `source.namespace` | source payload instance namespace, mutual TLS needs to be enabled | HTTP and TCP | `key: source.namespace`<br/>`values: ["default"]` |
+| `source.principal` | source payload identifier, mutual TLS needs to be enabled | HTTP and TCP | `key: source.principal`<br/>`values: ["cluster.local/ns/default/sa/productpage"] ` |
+| `request.auth.principal` | Authenticated requests for `principal` | HTTP only | `key: request.auth.principal`<br/>`values: ["accounts.my-svc.com/104958560606"] ` |
+| `request.auth.audiences` | The target principal for this authentication | HTTP only | `key: request.auth.audiences`<br/>`values: ["my-svc.com"]` |
+| `request.auth.presenter` | Issuer of the certificate | HTTP only | `key: request.auth.presenter`<br/>`values: ["123456789012.my-svc.com"]` |
+| `request.auth.claims` | `Claims` are derived from `JWT`. Need to be surrounded by `[]` | HTTP only | `key: request.auth.claims[iss]`<br/>`values: ["*@foo.com"]` |
+| `destination.ip` | destination `IP` address, support single `IP` or `CIDR` | HTTP and TCP | `key: destination.ip`<br/>`values: ["10.1.2.3", "10.2 .0.0/16"]` |
+| `destination.port` | The port on the destination `IP` address, must be in the range `[0, 65535]` | HTTP and TCP | `key: destination.port`<br/>`values: ["80" , "443"]` |
+| `connection.sni` | server name indication, mutual TLS needs to be enabled | HTTP and TCP | `key: connection.sni`<br/>`values: ["www.example.com"]` |
+| `experimental.envoy.filters.*` | Experimental metadata matching for filters, wrapped values `[]` as list matches | HTTP and TCP | `key: experimental.envoy.filters.network.mysql_proxy[ db.table]`<br/>`values: ["[update]"]` |
 
 !!! note
 
-    无法保证 `experimental.*` 密钥向后的兼容性，可以随时将它们删除，但须谨慎操作。
+     Backwards compatibility of `experimental.*` keys is not guaranteed, they can be removed at any time, but do so with caution.

@@ -8,7 +8,7 @@ hide:
 [Service Mesh](../../mspider/01Intro/WhatismSpider.md) supports several user roles:
 
 -Admin
--Workspace Admin
+- Workspace Admin
 - Workspace Editor
 - Workspace Viewer
 

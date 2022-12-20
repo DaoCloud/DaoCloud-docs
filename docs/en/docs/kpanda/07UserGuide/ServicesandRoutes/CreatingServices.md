@@ -1,78 +1,78 @@
-# 创建服务（Service）
+# Create a service (Service)
 
-在 Kubernetes 集群中，每个 Pod 都有一个内部独立的 IP 地址，但是工作负载中的 Pod 可能会被随时创建和删除，直接使用 Pod IP 地址并不能对外提供服务。
+In a Kubernetes cluster, each Pod has an internal independent IP address, but Pods in the workload may be created and deleted at any time, and directly using the Pod IP address cannot provide external services.
 
-这就需要创建服务，通过服务您会获得一个固定的 IP 地址，从而实现工作负载前端和后端的解耦，让外部用户能够访问服务。同时，服务还提供了负载均衡（LoadBalancer）功能，使用户能从公网访问到工作负载。
+This requires creating a service through which you get a fixed IP address, decoupling the front-end and back-end of the workload, and allowing external users to access the service. At the same time, the service also provides the Load Balancer function, enabling users to access workloads from the public network.
 
-## 前提条件
+## prerequisites
 
-- 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
+- Container management platform [connected to Kubernetes cluster](../Clusters/JoinACluster.md) or [created Kubernetes](../Clusters/CreateCluster.md), and can access the cluster UI interface.
 
-- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为 [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) 角色 ，详情可参考[命名空间授权](../Permissions/Cluster-NSAuth.md)。
+- A [Namespace Creation](../Namespaces/createtens.md), [User Creation](../../../ghippo/04UserGuide/01UserandAccess/User.md) has been completed, and the user Authorization is the [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) role, for details, please refer to [Namespace Authorization](../Permissions/Cluster-NSAuth.md).
 
-- 单个实例中有多个容器时，请确保容器使用的端口不冲突，否则部署会失效。
+- When there are multiple containers in a single instance, please make sure that the ports used by the containers do not conflict, otherwise the deployment will fail.
 
-### 创建服务
+### Create service
 
-1. 以 `NS Edit` 用户成功登录后，点击左上角的`集群列表`进入`集群列表`页面。在集群列表中，点击一个集群名称。
+1. After successfully logging in as the `NS Edit` user, click `Cluster List` in the upper left corner to enter the `Cluster List` page. In the list of clusters, click a cluster name.
 
-    ![集群列表](../../images/service01.png)
+     ![Cluster List](../../images/service01.png)
 
-2. 在左侧导航栏中，点击`服务与路由`进入服务列表，点击右上角`创建服务`按钮。
+2. In the left navigation bar, click `Service and Routing` to enter the service list, and click the `Create Service` button in the upper right corner.
 
-    ![服务与路由](../../images/service02.png)
+     ![Service and Routing](../../images/service02.png)
 
-    !!! tip
+     !!! tip
     
-        也可以通过 `YAML 创建`一个服务。
+         It is also possible to create a service via `YAML`.
 
-3. 打开`创建服务`页面，选择一种访问类型，参考以下三个参数表进行配置。
+3. Open the `Create Service` page, select an access type, and refer to the following three parameter tables for configuration.
 
-    ![创建服务](../../images/service03.png)
+     ![Create Service](../../images/service03.png)
 
-#### 创建集群内访问（ClusterIP） 类型的服务
+#### Create a cluster access (ClusterIP) type service
 
-点选`集群内访问（ClusterIP）`，这是指通过集群的内部 IP 暴露服务，选择此项的服务只能在集群内部访问。这是默认的服务类型。参考下表配置参数。
+Click `Intra-Cluster Access (ClusterIP)`, which refers to exposing services through the internal IP of the cluster. The services selected for this option can only be accessed within the cluster. This is the default service type. Refer to the configuration parameters in the table below.
 
-| 参数       | 说明                                                         | 举例值    |
-| ---------- | :----------------------------------------------------------- | :-------- |
-| 访问类型   | 【类型】必填<br />【含义】指定 Pod 服务发现的方式，这里选择集群内访问（ClusterIP）。 | ClusterIP |
-| 服务名称   | 【类型】必填<br />【含义】输入新建服务的名称。<br />【注意】请输入4 到 63 个字符的字符串，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。 | Svc-01    |
-| 命名空间   | 【类型】必填<br />【含义】选择新建服务所在的命名空间。关于命名空间更多信息请参考[命名空间概述](../Namespaces/createns.md)。<br />【注意】请输入4 到 63 个字符的字符串，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。 | default   |
-| 标签选择器 | 【类型】必填<br />【含义】添加标签，Service 根据标签选择 Pod，填写后点击“添加”。也可以引用已有工作负载的标签，点击`引用负载标签`，在弹出的窗口中选择负载，系统会默认将所选的负载标签作为选择器。 | app:job01 |
-| 端口配置   | 【类型】必填<br />【含义】为服务添加协议端口，需要先选择端口协议类型，目前支持 TCP、UDP 两种传输协议额关于协议更多信息请参考[协议概述](../../../dce/what-is-dce.md)。<br />**端口名称**：输入自定义的端口的名称。<br />**服务端口（port）**：Pod 对外提供服务的访问端口。<br />**容器端口（targetport）**：工作负载实际监听的容器端口，用来对集群内暴露服务。 |           |
-| 注解       | 【类型】选填<br />【含义】为服务添加注解<br />               |           |
+| parameter | description | example value |
+| ---------- | :------------------------------------- ---------------------- | :------- |
+| Access type | `Type` Required<br />`Meaning` Specify the method of Pod service discovery, here select intra-cluster access (ClusterIP). | ClusterIP |
+| Service Name | `Type` Required<br />`Meaning` Enter the name of the new service. <br />`Note` Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. | Svc-01 |
+| Namespace | `Type` Required<br />`Meaning` Select the namespace where the new service is located. For more information about namespaces, please refer to [Namespace Overview](../Namespaces/createns.md). <br />`Note` Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. | default |
+| Label selector | `Type` Required<br />`Meaning` Add a label, the Service selects a Pod according to the label, and click "Add" after filling. You can also refer to the label of an existing workload. Click `Reference workload label`, select the workload in the pop-up window, and the system will use the selected workload label as the selector by default. | app:job01 |
+| Port configuration| `Type` Required<br />`Meaning` To add a protocol port for a service, you need to select the port protocol type first. Currently, it supports TCP and UDP. For more information about the protocol, please refer to [Protocol Overview] (../../../dce/what-is-dce.md). <br />**Port Name**: Enter the name of the custom port. <br />**Service port (port)**: The access port for Pod to provide external services. <br />**Container port (targetport)**: The container port that the workload actually monitors, used to expose services to the cluster. | |
+| Annotation | `Type` Optional<br />`Meaning` Add annotation for service<br /> | |
    
-#### 创建节点访问（NodePort） 类型的服务
+#### Create a node access (NodePort) type service
 
-点选`节点访问（NodePort）`，这是指通过每个节点上的 IP 和静态端口（`NodePort`）暴露服务。`NodePort` 服务会路由到自动创建的 `ClusterIP` 服务。通过请求 `<节点 IP>:<节点端口>`，您可以从集群的外部访问一个 `NodePort` 服务。参考下表配置参数。
+Click `NodePort`, which means exposing the service via IP and static port (`NodePort`) on each node. The `NodePort` service is routed to the automatically created `ClusterIP` service. You can access a `NodePort` service from outside the cluster by requesting `<Node IP>:<Node Port>`. Refer to the configuration parameters in the table below.
 
-| 参数       | 说明                                                         | 举例值   |
-| ---------- | :----------------------------------------------------------- | :------- |
-| 访问类型   | 【类型】必填<br />【含义】指定 Pod 服务发现的方式，这里选择节点访问（NodePort）。 | NodePort |
-| 服务名称   | 【类型】必填<br />【含义】输入新建服务的名称。<br />【注意】请输入4 到 63 个字符的字符串，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。 | Svc-01   |
-| 命名空间   | 【类型】必填<br />【含义】选择新建服务所在的命名空间。关于命名空间更多信息请参考[命名空间概述](../Namespaces/createns.md)。<br />【注意】请输入4 到 63 个字符的字符串，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。 | default  |
-| 标签选择器 | 【类型】必填<br />【含义】添加标签，Service 根据标签选择 Pod，填写后点击“添加”。也可以引用已有工作负载的标签，点击`引用负载标签`，在弹出的窗口中选择负载，系统会默认将所选的负载标签作为选择器。 |          |
-| 端口配置   | 【类型】必填<br />【含义】为服务添加协议端口，需要先选择端口协议类型，目前支持 TCP、UDP 两种传输协议额关于协议更多信息请参考[协议概述](../../../dce/what-is-dce.md)。<br />**端口名称**：输入自定义的端口的名称。<br />**服务端口（port）**：Pod 对外提供服务的访问端口。*默认情况下，为了方便起见，服务端口被设置为与容器端口字段相同的值。*<br />**容器端口（targetport）**：工作负载实际监听的容器端口。<br />**节点端口（nodeport）**：节点的端口，接收来自于 ClusterIP 传输的流量。用来做外部流量访问的入口。 |          |
-| 注解       | 【类型】选填<br />【含义】为服务添加注解<br />               |          |
+| parameter | description | example value |
+| ---------- | :------------------------------------- ---------------------- | :------- |
+| Access type | `Type` Required<br />`Meaning` Specify the method of Pod service discovery, here select node access (NodePort). | NodePort |
+| Service Name | `Type` Required<br />`Meaning` Enter the name of the new service. <br />`Note` Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. | Svc-01 |
+| Namespace | `Type` Required<br />`Meaning` Select the namespace where the new service is located. For more information about namespaces, please refer to [Namespace Overview](../Namespaces/createns.md). <br />`Note` Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. | default |
+| Label selector | `Type` Required<br />`Meaning` Add a label, the Service selects a Pod according to the label, and click "Add" after filling. You can also refer to the label of an existing workload. Click `Reference workload label`, select the workload in the pop-up window, and the system will use the selected workload label as the selector by default. | |
+| Port configuration| `Type` Required<br />`Meaning` To add a protocol port for a service, you need to select the port protocol type first. Currently, it supports TCP and UDP. For more information about the protocol, please refer to [Protocol Overview] (../../../dce/what-is-dce.md). <br />**Port Name**: Enter the name of the custom port. <br />**Service port (port)**: The access port for Pod to provide external services. *By default, the service port is set to the same value as the container port field for convenience. *<br />**Container port (targetport)**: The container port actually monitored by the workload. <br />**Node port (nodeport)**: The port of the node, which receives traffic from ClusterIP transmission. It is used as the entrance for external traffic access. | |
+| Annotation | `Type` Optional<br />`Meaning` Add annotation for service<br /> | |
 
-#### 创建负载均衡（LoadBalancer） 类型的服务
+#### Create a service of type LoadBalancer
 
-点选`负载均衡（LoadBalancer）`，这是指使用云提供商的负载均衡器向外部暴露服务。 外部负载均衡器可以将流量路由到自动创建的 `NodePort` 服务和 `ClusterIP` 服务上。参考下表配置参数。
+Click `Load Balancer`, which refers to using the cloud provider's load balancer to expose services to the outside. External load balancers can route traffic to automatically created `NodePort` services and `ClusterIP` services. Refer to the configuration parameters in the table below.
 
-| 参数         | 说明                                                         | 举例值   |      |
-| ------------ | :----------------------------------------------------------- | :------- | ---- |
-| 访问类型     | 【类型】必填<br />【含义】指定 Pod 服务发现的方式，这里选择节点访问（NodePort）。 | NodePort |      |
-| 服务名称     | 【类型】必填<br />【含义】输入新建服务的名称。<br />【注意】请输入4 到 63 个字符的字符串，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。 | Svc-01   |      |
-| 命名空间     | 【类型】必填<br />【含义】选择新建服务所在的命名空间。关于命名空间更多信息请参考[命名空间概述](../Namespaces/createns.md)。<br />【注意】请输入4 到 63 个字符的字符串，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。 | default  |      |
-| 外部流量策略 | 【类型】必填<br />【含义】设置外部流量策略。<br />**Cluster**：流量可以转发到集群中其他节点上的 Pod。<br />**Local**：流量只发给本机的 Pod。<br />【注意】请输入4 到 63 个字符的字符串，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。 |          |      |
-| 标签选择器   | 【类型】必填<br />【含义】添加标签，Service 根据标签选择 Pod，填写后点击“添加”。也可以引用已有工作负载的标签，点击`引用负载标签`，在弹出的窗口中选择负载，系统会默认将所选的负载标签作为选择器。 |          |      |
-| 负载均衡地址 | 【类型】必填<br />【含义】云厂商提供的负载均衡地址           |          |      |
-| 端口配置     | 【类型】必填<br />【含义】为服务添加协议端口，需要先选择端口协议类型，目前支持 TCP、UDP 两种传输协议额关于协议更多信息请参考[协议概述](../../../dce/what-is-dce.md)。<br />**端口名称**：输入自定义的端口的名称。<br />**服务端口（port）**：Pod 对外提供服务的访问端口。默认情况下，为了方便起见，服务端口被设置为与容器端口字段相同的值。<br />**容器端口（targetport）**：工作负载实际监听的容器端口。<br />**节点端口（nodeport）**：节点的端口，接收来自于 ClusterIP 传输的流量。用来做外部流量访问的入口。 |          |      |
-| 注解         | 【类型】选填<br />【含义】为服务添加注解<br />               |          |      |
+| parameter | description | example value | |
+| ------------ | :---------------------------------- ------------------------ | :------- | ---- |
+| Access type | `Type` Required<br />`Meaning` Specify the method of Pod service discovery, here select node access (NodePort). | NodePort | |
+| Service Name | `Type` Required<br />`Meaning` Enter the name of the new service. <br />`Note` Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. | Svc-01 | |
+| Namespace | `Type` Required<br />`Meaning` Select the namespace where the new service is located. For more information about namespaces, please refer to [Namespace Overview](../Namespaces/createns.md). <br />`Note` Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. | default | |
+| External Traffic Policy | `Type` Required<br />`Meaning` Set external traffic policy. <br />**Cluster**: Traffic can be forwarded to Pods on other nodes in the cluster. <br />**Local**: The traffic is only sent to the local Pod. <br />`Note` Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. | | |
+| Label selector | `Type` Required<br />`Meaning` Add a label, the Service selects a Pod according to the label, and click "Add" after filling. You can also refer to the label of an existing workload. Click `Reference workload label`, select the workload in the pop-up window, and the system will use the selected workload label as the selector by default. | | |
+| Load balancing address | [Type] Required<br /> [Meaning] Load balancing address provided by the cloud provider | | |
+| Port configuration| `Type` Required<br />`Meaning` To add a protocol port for a service, you need to select the port protocol type first. Currently, it supports TCP and UDP. For more information about the protocol, please refer to [Protocol Overview] (../../../dce/what-is-dce.md). <br />**Port Name**: Enter the name of the custom port. <br />**Service port (port)**: The access port for Pod to provide external services. By default, the service port is set to the same value as the container port field for convenience. <br />**Container port (targetport)**: The container port actually monitored by the workload. <br />**Node port (nodeport)**: The port of the node, which receives traffic from ClusterIP transmission. It is used as the entrance for external traffic access. | | |
+| Annotation | `Type` Optional<br />`Meaning` Add annotation for service<br /> | | |
 
-### 完成服务创建
+### Complete service creation
 
-配置完所有参数后，点击`确定`按钮，自动返回服务列表。在列表右侧，点击 `︙`，可以修改或删除所选服务。
+After configuring all parameters, click the `OK` button to return to the service list automatically. On the right side of the list, click `︙` to modify or delete the selected service.
 
-![服务列表](../../images/service04.png)
+![Service List](../../images/service04.png)
