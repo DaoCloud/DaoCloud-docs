@@ -6,9 +6,9 @@ The following is a description of the parameters of the graphical pipeline task 
 
 | parameter | description |
 | -------- | ----------------------------------------- ---------------- |
-| Code Warehouse | Fill in the address of the remote code warehouse. |
+| codebase | Fill in the address of the remote codebase. |
 | Branch | Fill in the code branch you want to be built, the default is master. |
-| Credentials | If your remote warehouse is private, please create credentials in advance and select them when using them. |
+| Credentials | If your remote registry is private, please create credentials in advance and select them when using them. |
 
 ## Shell
 

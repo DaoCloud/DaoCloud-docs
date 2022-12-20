@@ -49,7 +49,7 @@ The workspace can manage resources through `authorization`, `resource group` and
     Workspace Admin can create multiple Namespaces within the resource quota, but the sum of the resource quotas of the Namespaces cannot exceed the resource quota of the Cluster in the workspace.
     For Kubernetes resources, the only resource type that can be shared currently is Cluster.
 
-## folder
+## Folder
 
 Folders can be used to build enterprise business hierarchy relationships.
 

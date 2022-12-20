@@ -1,4 +1,4 @@
-# Create a daemon set from the mirror
+# Create a daemon set from the image
 
 A DaemonSet ensures that all or some nodes have a replica of a Pod running. When a node joins the cluster, a Pod is also added for it. These Pods are also recycled when a node is removed from the cluster. Deleting a DaemonSet will delete all Pods it created.
 
@@ -14,7 +14,7 @@ A simple usage is to start a DaemonSet on all nodes for each type of daemon. A s
 
 ## prerequisites
 
-Before creating a DaemonSet from a mirror, the following prerequisites need to be met:
+Before creating a DaemonSet from an image, the following prerequisites need to be met:
 
 - The container management platform [has joined the Kubernetes cluster](../Clusters/JoinACluster.md) or [has created the Kubernetes cluster](../Clusters/CreateCluster.md), and can access the UI interface of the cluster.
 
@@ -24,7 +24,7 @@ Before creating a DaemonSet from a mirror, the following prerequisites need to b
 
 Refer to the following steps to create a DaemonSet.
 
-## Mirror creation
+## Image creation
 
 1. After successfully logging in as the `NS Edit` user, click `Cluster List` in the upper left corner to enter the cluster list page. Click on a cluster name to enter `Cluster Details`.
 
@@ -60,8 +60,8 @@ After completing all the container configuration information below, click Next.
      After entering the information as follows, click `Confirm`.
 
      - Container Name: Enter a name for the newly created container. Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. For example nginx-01.
-     - Container image: The name of the image selected from the image warehouse, and manual input of the image name is also supported (the name must be an existing image name in the image warehouse, otherwise it will not be available). For example nginx.
-     - Update policy: When the container is updated, the image pull policy. After it is enabled, the workload will pull the image again every time it is restarted/upgraded, otherwise it will only pull the image when there is no image with the same name and version on the node. Default: Always pull mirrors.
+     - Container image: The name of the image selected from the image registry, and manual input of the image name is also supported (the name must be an existing image name in the image registry, otherwise it will not be available). For example nginx.
+     - Update policy: When the container is updated, the image pull policy. After it is enabled, the workload will pull the image again every time it is restarted/upgraded, otherwise it will only pull the image when there is no image with the same name and version on the node. Default: Always pull images.
      - Privileged container: By default, the container cannot access any device on the host. After enabling the privileged container, the container can access all devices on the host and enjoy all the permissions of the running process on the host. Enabled by default.
      - CPU Quotas: Minimum and maximum usage of container CPU resources. Requests: The minimum CPU value that the container needs to use. Limit: The maximum CPU allowed to be used by the container. It is recommended to set the upper limit of the container quota to avoid system failure caused by excessive container resources. Default is 0.25, 0.25.
      - Memory quota: The minimum and maximum usage of container memory resources. Application: The minimum memory value that the container needs to use. Limit: The maximum amount of memory the container is allowed to use. It is recommended to set the upper limit of the container quota to avoid system failure caused by excessive container resources. The default is 512 MB, 512 MB.
@@ -163,7 +163,7 @@ In addition to basic information configuration, DCE also provides a wealth of ad
      - Options: Configuration options for DNS, where each object can have a name attribute (required) and a value attribute (optional). in this fieldThe content will be merged into the options field of the domain name resolution file generated based on dnsPolicy. If some options of dnsConfig options conflict with the options of the domain name resolution file generated based on dnsPolicy, they will be overwritten by dnsConfig.
      - Host alias: the alias set for the host.
 
-## complete creation
+## Complete creation
 
 After confirming that all parameters have been entered, click the `Create` button to complete the workload creation. Wait for the workload status to change to `Running`.
 If the workload status is abnormal, please refer to [Workload Status](../Workloads/PodConfig/workload-status.md) for specific exception information.

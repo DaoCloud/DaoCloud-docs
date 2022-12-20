@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# basic concept
+# Basic concept
 
 The application workbench provides a unified entrance for DCE 5.0 application deployment and supports the entire lifecycle management of cloud-native applications.
 It lowers the threshold for enterprises to use cloud-native applications, and improves the efficiency from enterprise software development to application delivery.

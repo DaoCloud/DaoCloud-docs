@@ -19,7 +19,7 @@ For detailed configuration instructions on local rate limiting, please refer to 
 
     If there is a conflict between the rate limiting policy at the API level and the domain name level, the rate limiting policy at the API level shall prevail.
 
-## cross-domain
+## Cross-domain
 
 <!--to be added: explain what is cross-domain, cross-domain function, effect, etc. -->
 

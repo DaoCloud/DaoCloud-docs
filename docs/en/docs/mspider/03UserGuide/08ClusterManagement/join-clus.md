@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# add cluster
+# Add cluster
 
 After the user creates a managed mesh, but has not yet connected to any managed cluster, the mesh is in the `not ready` state, and the user needs to add one or more clusters.
 

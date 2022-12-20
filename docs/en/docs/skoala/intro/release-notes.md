@@ -13,7 +13,7 @@ This page lists the Release Notes of the microservice engine, so that you can un
 - **NEW** Add support for Grafana templates monitored by Sentinel itself
 - **NEW** Add configuration information for custom configuration gateway index
 
-#### fix
+#### Fix
 
 - **Fix** Microservice integration observable component status issue
 - **FIXED** Governance status issue of registry center enabling mesh plug-in capability

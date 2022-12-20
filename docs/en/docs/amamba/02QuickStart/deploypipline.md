@@ -5,14 +5,14 @@ This section will create a pipeline by compiling, building, and deploying, and w
 ## prerequisites
 
 - Need to create a workspace and a user, the user needs to join the workspace and give `workspace edit` role. Refer to [Creating Workspaces](../../ghippo/04UserGuide/02Workspace/Workspaces.md), [Users and Roles](../../ghippo/04UserGuide/01UserandAccess/User.md).
-- Create two credentials that can access the mirror warehouse and the cluster, named respectively: `registry`, `kubeconfig`. For more information on creating credentials, please refer to [Credential Management](../03UserGuide/Pipeline/Credential.md).
+- Create two credentials that can access the container registry and the cluster, named respectively: `registry`, `kubeconfig`. For more information on creating credentials, please refer to [Credential Management](../03UserGuide/Pipeline/Credential.md).
 - Prepare a GitHub repository, DockerHub repository.
 
 ## Create Credentials
 
 1. Create two credentials on the Credentials page:
 
-    - docker-credential: username and password for accessing the mirror warehouse.
+    - docker-credential: username and password for accessing the container registry.
     - demo-dev-kubeconfig: used to access the Kubernetes cluster using this kubeconfig.
 
 2. After the creation is complete, you can see the credential information on the `Certificate List` page.
@@ -33,8 +33,8 @@ This section will create a pipeline by compiling, building, and deploying, and w
 
 4. Add three string parameters in `Build Parameters`, these parameters will be used in the image build command.
 
-    - registry: mirror warehouse address. Example value: `release.daocloud.io`.
-    - project: The name of the project in the mirror repository. Example value: `demo`.
+    - registry: container registry address. Example value: `release.daocloud.io`.
+    - project: The name of the project in the container registry. Example value: `demo`.
     - name: The name of the image. Example value: `http-hello`.
 
     ![pipeline](../images/pipelin04.png)
@@ -65,7 +65,7 @@ This section will create a pipeline by compiling, building, and deploying, and w
     - Click `Add Step`, select git clone under the step type in the pop-up dialog box, and configure related parameters:
         - Repository URL: Enter the GitLab repository address.
         - Branch: if not filled in, the default is the master branch.
-        - Credentials: If it belongs to a private warehouse, you need to provide a credential.
+        - Credentials: If it belongs to a private registry, you need to provide a credential.
 
     ![quickstart01](../images/quickstart01.png)
 
@@ -79,7 +79,7 @@ This section will create a pipeline by compiling, building, and deploying, and w
 
     - Select to enable `Use Credentials` in the step module, fill in the relevant parameters in the pop-up dialog box, and then click `OK`.
 
-        - Credentials: Select the created Docker hub credentials to allow users to access the mirror warehouse.
+        - Credentials: Select the created Docker hub credentials to allow users to access the container registry.
         - Password variable: PASS
         - Username variable: USER
 
@@ -97,13 +97,13 @@ This section will create a pipeline by compiling, building, and deploying, and w
         docker build -f Dockerfile . -t $registry/$project/$name:latest
         ```
 
-    - Click `Add Step` to log in to the mirror warehouse, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and then click `OK`.
+    - Click `Add Step` to log in to the container registry, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and then click `OK`.
 
         ```docker
         docker login $registry -u $USER -p $PASS
         ```
 
-    - Click `Add Step` to push the image to the mirror warehouse, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and click `OK`.
+    - Click `Add Step` to push the image to the container registry, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and click `OK`.
 
         ```docker
         docker push $registry/$project/$name:latest

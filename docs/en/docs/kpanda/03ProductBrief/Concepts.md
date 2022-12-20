@@ -1,4 +1,4 @@
-# basic concept
+# Basic concept
 
 The basic concepts related to container management are as follows.
 
@@ -32,7 +32,7 @@ Several built-in workload resources are provided in Kubernetes:
 
 - **Daemon Service** (DaemonSet): The container groups are completely independent, ensuring that background tasks are continuously executed in the assigned nodes without user intervention. The DaemonSet service creates a Pod per node, and you can choose a specific node for deployment. Examples of daemons include log collectors and monitoring services like [Fluentd](https://www.fluentd.org/). Please refer to [Create a daemon service](../07UserGuide/Workloads/CreateDaemonSetByImage.md).
 
-- **Normal task** (Job): A common task is a one-time short task that can be executed after the deployment is completed. The usage scenario is to perform common tasks and upload the image to the mirror warehouse before creating the workload. Please refer to [Create common tasks](../07UserGuide/Workloads/CreateJobByImage.md).
+- **Normal task** (Job): A common task is a one-time short task that can be executed after the deployment is completed. The usage scenario is to perform common tasks and upload the image to the container registry before creating the workload. Please refer to [Create common tasks](../07UserGuide/Workloads/CreateJobByImage.md).
 
 - **CronJob** (CronJob): A cron job is a short task that runs according to a specified time period. The usage scenario is to synchronize time for all running nodes at a fixed point in time. Please refer to [Create CronJobByImage](../07UserGuide/Workloads/CreateCronJobByImage.md).
 
@@ -44,13 +44,13 @@ A service consists of one or more container groups (Pods). A container group con
 
 Unified resource management and scheduling of standard templates, and related function extensions. You can manage and deploy community-standard application templates based on application templates, as well as custom business application templates.
 
-#### Mirror Image
+#### Image
 
 A container image is a template in a standard format for container application packaging, used to create containers.
 A Docker image is a special file system. In addition to providing the programs, libraries, resources, configuration and other files required for the container to run, it also contains some configuration parameters prepared for the run (such as anonymous volumes, environment variables, users, etc.) .
 Images do not contain any dynamic data, and their contents are not changed after they are built.
 
-For example: a mirror can contain a complete Ubuntu operating system environment, which only installs Apache or other applications required by the user.
+For example: a image can contain a complete Ubuntu operating system environment, which only installs Apache or other applications required by the user.
 
 #### Namespace Namespace
 

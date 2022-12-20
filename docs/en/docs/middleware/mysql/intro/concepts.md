@@ -1,4 +1,4 @@
-# basic concept
+# Basic concept
 
 The glossary on this page defines the core concepts behind MySQL to help you build a mental model of how MySQL works and understand what the documentation refers to when it uses certain terms.
 

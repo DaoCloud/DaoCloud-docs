@@ -40,7 +40,7 @@ This page briefly describes the offline installation steps for DCE 5.0 Community
 
 2. Import the image.
 
-    - Download mirror import script.
+    - Download image import script.
 
         ```bash
         wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline_image_handler.sh
@@ -52,10 +52,10 @@ This page briefly describes the offline installation steps for DCE 5.0 Community
         chmod +x offline_image_handler.sh
         ```
 
-    - If using a mirror warehouse, please push the mirror of the offline package to the mirror warehouse.
+    - If using a container registry, please push the image of the offline package to the container registry.
 
         ```bash
-        # Specify the address of the mirror warehouse, for example:
+        # Specify the address of the container registry, for example:
         export REGISTRY_ADDR=registry.daocloud.io:30080
         # Specify the offline package decompression directory, for example:
         export OFFLINE_DIR=$(pwd)/offline
@@ -89,7 +89,7 @@ This page briefly describes the offline installation steps for DCE 5.0 Community
         sudo systemctl restart docker
         ```
 
-    - If there is no mirror warehouse, please copy the offline package to each node and load it through `docker load/nerdctl load` command:
+    - If there is no container registry, please copy the offline package to each node and load it through `docker load/nerdctl load` command:
 
         ```shell
         # Specify the offline package decompression directory
@@ -123,7 +123,7 @@ This page briefly describes the offline installation steps for DCE 5.0 Community
           loadBalancer: metallb
           istioGatewayVip: 10.6.229.10/32 # This is the VIP of Istio gateway, and it will also be the browser access IP of DCE 5.0 console
           insightVip: 10.6.229.11/32 # This is the VIP used by the Insight-Server of the Global cluster to collect the monitoring indicators of all sub-clusters on the network path
-          persistentRegistryDomainName: 172.30.120.180:80 # This is the Harbor warehouse address
+          persistentRegistryDomainName: 172.30.120.180:80 # This is the Harbor registry address
         ```
 
     - If it is a public cloud environment and provides the k8s load balancing capability of the public cloud through the pre-prepared Cloud Controller Manager mechanism, the configuration file example is as follows:
@@ -133,7 +133,7 @@ This page briefly describes the offline installation steps for DCE 5.0 Community
         kind: ClusterConfig
         spec:
           loadBalancer: cloudLB
-          persistentRegistryDomainName: 172.30.120.180:80 # This is the Harbor warehouse address
+          persistentRegistryDomainName: 172.30.120.180:80 # This is the Harbor registry address
         ```
 
     - If NodePort is used to expose the console (only recommended for PoC), the configuration file example is as follows:
@@ -143,7 +143,7 @@ This page briefly describes the offline installation steps for DCE 5.0 Community
         kind: ClusterConfig
         spec:
           loadBalancer: NodePort
-          persistentRegistryDomainName: 172.30.120.180:80 # This is the Harbor warehouse address
+          persistentRegistryDomainName: 172.30.120.180:80 # This is the Harbor registry address
         ```
 
 5. Unzip and install.

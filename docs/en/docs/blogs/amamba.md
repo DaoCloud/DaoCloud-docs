@@ -19,7 +19,7 @@ There are three main stages in the user's use process: **development stage, deli
 
 1. **In the development stage**: The application workbench provides the pipeline function. Enterprises can define the process of compiling code, code inspection, and building cloud native products in the pipeline to help developers test code in time, thereby improving code quality. In addition, the entire pipeline is set up once and reused multiple times, which greatly reduces the workload of developers and reduces unnecessary duplication of labor.
 
-2. **In the delivery stage**: The application workbench gives the current GitOps concept, and deploys enterprise applications to the production environment frequently and continuously in an automated manner. As an extension of the previous stage, automated continuous deployment serves as a link between the past and the future, and is a closed-loop control of the entire process of software development. The application workbench can automatically and continuously monitor the code warehouse and compare it with the application in the production environment to ensure that the production environment is consistent with the expected state in the warehouse to achieve fully automated deployment. In addition, the application workbench also supports the docking of external capabilities on the basis of continuous deployment, so as to realize advanced release strategies such as grayscale release under progressive delivery.
+2. **In the delivery stage**: The application workbench gives the current GitOps concept, and deploys enterprise applications to the production environment frequently and continuously in an automated manner. As an extension of the previous stage, automated continuous deployment serves as a link between the past and the future, and is a closed-loop control of the entire process of software development. The application workbench can automatically and continuously monitor the codebase and compare it with the application in the production environment to ensure that the production environment is consistent with the expected state in the registry to achieve fully automated deployment. In addition, the application workbench also supports the docking of external capabilities on the basis of continuous deployment, so as to realize advanced release strategies such as grayscale release under progressive delivery.
 
 3. **In the operation and maintenance phase**: The application workbench provides a unified observation plane for various forms of cloud-native applications, including monitoring, alarms, logs and other information. It also provides functions such as application upgrade, rollback, stop and delete application.
 
@@ -44,7 +44,7 @@ Features:
 - The workspace supports the mode of strongly binding clusters, so that users can obtain the ability to exclusively enjoy cluster resources.
 - The administrator of a workspace can create namespace resources in the cluster associated with the workspace and manage quotas for the namespace.
 
-Supports the deployment of various forms of cloud-native applications, including source code, Jar packages, and mirrors to complete application deployment with one click, and can use the registration discovery and service governance capabilities of microservices during the creation process, and also supports one-click deployment of Helm through the application store application, OLM application. It lowers the threshold for enterprises to go to the cloud, and is easy to use, agile and efficient.
+Supports the deployment of various forms of cloud-native applications, including source code, Jar packages, and images to complete application deployment with one click, and can use the registration discovery and service governance capabilities of microservices during the creation process, and also supports one-click deployment of Helm through the application store application, OLM application. It lowers the threshold for enterprises to go to the cloud, and is easy to use, agile and efficient.
 
 ### Cloud Native Applications
 
@@ -71,7 +71,7 @@ Pipeline is a custom CI/CD pipeline pattern that defines a complete build proces
 
 ### GitOps
 
-GitOps is a philosophy of continuous deployment for cloud-native applications. The application workbench fully embraces GitOps. The core idea of GitOps is to have a Git warehouse, and store the declarative infrastructure and applications of the application system in the Git warehouse for version control.
+GitOps is a philosophy of continuous deployment for cloud-native applications. The application workbench fully embraces GitOps. The core idea of GitOps is to have a Git registry, and store the declarative infrastructure and applications of the application system in the Git registry for version control.
 GitOps combined with Kubernetes can use automatic delivery pipelines to apply changes to any number of specified clusters, thereby solving the problem of consistency across cloud deployments.
 
 ![img](images/amamba06.png)

@@ -5,8 +5,8 @@ hide:
 
 # Credential management
 
-Credentials can save sensitive information, such as username and password, access token (Secret text), Kubeconfig, etc., making the saved data more secure and flexible and avoiding being exposed to the mirror.
-When the pipeline is running, it will interact with third-party websites or applications in most cases, such as Git warehouses, mirror warehouses, etc.
+Credentials can save sensitive information, such as username and password, access token (Secret text), Kubeconfig, etc., making the saved data more secure and flexible and avoiding being exposed to the image.
+When the pipeline is running, it will interact with third-party websites or applications in most cases, such as Git registrys, container registrys, etc.
 Corresponding credentials need to be provided during this process, so users are required to configure credentials for the pipeline. After users configure credentials, they can use these credentials to interact with third-party websites or applications.
 
 Currently, you can create the following 3 types of credentials in Application Workbench:

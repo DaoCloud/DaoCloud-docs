@@ -11,7 +11,7 @@ If no macvlan binaries are found under `/opt/cni/bin` on the node,
 Then you need to manually download [cni-plugins](https://github.com/containernetworking/plugins/releases/download/v1.1.1/cni-plugins-linux-amd64-v1.1.1.tgz),
 And extract it to each node. When multus-underlay is installed, only the Multus network-attachment-definition CRD object belonging to Macvlan is created.
 
-## illustrate
+## Illustrate
 
 Multus + Macvlan generally has two usage scenarios:
 

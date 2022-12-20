@@ -8,7 +8,7 @@ Configure a trigger for the pipeline to automatically trigger the execution of t
 
 | Trigger Type | Description |
 | ------------ | ------------------------------------ ------------------------ |
-| Code Source Trigger | Check the code repository for changes at the specified time. For example, filling in `H/15 * * * *` means that every 15 minutes the system will automatically check whether there are newly submitted changes in the code warehouse, and if there are newly submitted changes, the pipeline will be executed. |
+| Code Source Trigger | Check the code repository for changes at the specified time. For example, filling in `H/15 * * * *` means that every 15 minutes the system will automatically check whether there are newly submitted changes in the codebase, and if there are newly submitted changes, the pipeline will be executed. |
 | Timing trigger | Trigger the pipeline at a specified time. After the timing trigger is turned on, you can directly select the preset rules, or you can choose a custom CRON expression and enter a custom trigger rule. |
 
 ## trigger rule

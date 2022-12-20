@@ -68,7 +68,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [ICT China Cloud Native Development Forum will kick off in Beijing on December 5](https://mp.weixin.qq.com/s/vMRtNDE0dMgV0I0T2Wf92w)
 
      The forum is sponsored by the Ministry of Industry and Information Technology, focusing on the theme of software architecture change and new productivity leap.
-     At that time, reports related to application modernization, lake warehouses in the financial industry, and Serverless will be released, as well as evaluation results in the fields of cloud native storage, big data, hybrid deployment, security, elastic computing power, and middleware.
+     At that time, reports related to application modernization, lake registrys in the financial industry, and Serverless will be released, as well as evaluation results in the fields of cloud native storage, big data, hybrid deployment, security, elastic computing power, and middleware.
 
 - [Microservice x Container Open Source Developer Meetup held in Shanghai on December 3](https://mp.weixin.qq.com/s/OlGXER4RgfyCwKT0at_6ug)
 
@@ -725,7 +725,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      This year's second meetup will be held in Chengdu on May 14th.
      This Meetup was initiated by KubeSphere Community Chengdu User Committee, KubeSphere Community and SOFAStack Community, with the theme of "Cloud Native Technology Exchange".
-     The topics of this event revolve around topics such as DevOps, container mirroring, K8s hierarchical management, and cloud-native application configuration.
+     The topics of this event revolve around topics such as DevOps, container image, K8s hierarchical management, and cloud-native application configuration.
 
 - [On May 13, OpenFunction, an open source function-as-a-service project of Qingyun, joined the CNCF sandbox project](https://mp.weixin.qq.com/s/6StksDHsjbFbOYDRIMk0qg)
 

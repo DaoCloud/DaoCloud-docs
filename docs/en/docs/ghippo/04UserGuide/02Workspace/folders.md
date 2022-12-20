@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# create/delete folder
+# Create/delete folder
 
 Folders have permission mapping capabilities, which can map the permissions of users/user groups in this folder to subfolders, workspaces and resources under it.
 

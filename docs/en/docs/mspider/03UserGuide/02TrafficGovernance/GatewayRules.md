@@ -5,7 +5,7 @@ Gateway rules (Gateway) are used to expose services outside the mesh. Compared w
 - L4-L6 load balancing
 - Outgoing mTLS
 - SNI support
-- Other internal network functions already implemented in Istio: Fault Injection, Traffic Shifting, Circuit Breaking, Mirroring
+- Other internal network functions already implemented in Istio: Fault Injection, Traffic Shifting, Circuit Breaking, image
 
 ## Concept introduction
 

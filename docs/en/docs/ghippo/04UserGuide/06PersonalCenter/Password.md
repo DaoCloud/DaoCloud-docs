@@ -1,4 +1,4 @@
-# access key
+# Access key
 
 An access key is required for every user login or access to a resource. Follow the steps below to obtain the key, token and access the API.
 

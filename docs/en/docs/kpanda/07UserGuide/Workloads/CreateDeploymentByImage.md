@@ -3,11 +3,11 @@
 A stateless load (Deployment) is an application running on Kubernetes that does not save any data and state.
 Like other workloads, stateless workloads are composed of Pods. Through the Daocloud container management platform, you can easily manage workloads on multi-cloud and multi-cluster based on the permissions you have, including the creation, update, deletion, elastic scaling, restart, and version rollback of stateless workloads. Full lifecycle management.
 
-This article describes how to create stateless workloads through mirroring.
+This article describes how to create stateless workloads through image.
 
 ## prerequisites
 
-Before using mirroring to create stateless workloads, the following prerequisites need to be met:
+Before using image to create stateless workloads, the following prerequisites need to be met:
 
 - The container management platform [has joined the Kubernetes cluster](../Clusters/JoinACluster.md) or [has created the Kubernetes cluster](../Clusters/CreateCluster.md), and can access the UI interface of the cluster.
 
@@ -15,9 +15,9 @@ Before using mirroring to create stateless workloads, the following prerequisite
 
 - When there are multiple containers in a single instance, please make sure that the ports used by the containers do not conflict, otherwise the deployment will fail.
 
-## Mirror creation
+## Image creation
 
-Follow the steps below to create a stateless payload using mirroring.
+Follow the steps below to create a stateless payload using image.
 
 ### Basic information configuration
 
@@ -52,8 +52,8 @@ After completing all the container configuration information below, click Next.
      After entering the information as follows, click `Confirm`.
 
      - Container name: Please note that the maximum length of the name is 63 characters. It can only contain lowercase letters, numbers and separators ("_"), and must start and end with lowercase letters or numbers. For example nginx-01.
-     - Container image: Select the image warehouse and enter the image name or image address to select the image. Please note that the image name must be an existing image name in the mirror warehouse, otherwise it will not be available). For example, you can select `Public Image Warehouse` and enter "nginx" to deploy the nginx image.
-     - Update policy: [image pull policy](https://kubernetes.io/zh-cn/docs/concepts/containers/images/#image-pull-policy) when performing updates on containers. By default, the "always pull image policy" is not enabled, that is, the local image is pulled every time the workload restarts/upgrades, and when the image does not exist locally, it will be re-pulled from the mirror repository. If you enable the `always pull image policy`, the image will be re-pulled from the warehouse by default.
+     - Container image: Select the image registry and enter the image name or image address to select the image. Please note that the image name must be an existing image name in the container registry, otherwise it will not be available). For example, you can select `Public Image registry` and enter "nginx" to deploy the nginx image.
+     - Update policy: [image pull policy](https://kubernetes.io/zh-cn/docs/concepts/containers/images/#image-pull-policy) when performing updates on containers. By default, the "always pull image policy" is not enabled, that is, the local image is pulled every time the workload restarts/upgrades, and when the image does not exist locally, it will be re-pulled from the container registry. If you enable the `always pull image policy`, the image will be re-pulled from the registry by default.
      - Privileged container: By default, the container cannot access any device on the host. After enabling the privileged container, the container can access all devices on the host and enjoy all the permissions of the running process on the host. Enabled by default.
      - CPU Quota: Minimum and maximum usage of container CPU resources. Requests: The minimum amount of CPU the container needs to use. Limit: The maximum amount of CPU allowed to be used by the container. Please configure CPU quotas for containers as needed to avoid resource waste and system failures caused by excessive container resources. Default is 0.25, 0.25.
      - Memory quota: the minimum and maximum usage of container memory resources. Application: The minimum amount of content that needs to be used in the container. Limit: The maximum amount of memory allowed to be used by the container. Please configure CPU quotas for containers as needed to avoid resource waste and system failures caused by excessive container resources. The default is 512 MB, 512 MB.
@@ -166,7 +166,7 @@ If the workload status is abnormal, please refer to [Workload Status](../Workloa
 
 ## YAML creation
 
-In addition to creating a Deployment by mirroring as described above, it can also be created by YAML.
+In addition to creating a Deployment by image as described above, it can also be created by YAML.
 
 ### Basic information configuration
 

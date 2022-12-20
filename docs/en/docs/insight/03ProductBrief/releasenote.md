@@ -13,7 +13,7 @@ Release date: 2022.11.28
 - **Upgrade** Built-in MySQL image version, upgraded from v5.7.34 to v8.0.29.
 - **Upgrade** Fluentbit ARM architecture helm Chart version from
 - **Upgrade** kube-prometheus-stack helm Chart version upgraded from v39.6.0 to v41.9.1
-- **Update** Bitnami mirrors used, including: grafana-operator, grafana, kubernetes-event-exporter
+- **Update** Bitnami images used, including: grafana-operator, grafana, kubernetes-event-exporter
 - **Update** the API proxy address related to prometheus, change /prometheus to /apis/insight.io/prometheus
 
 ### Bugfixes
@@ -24,7 +24,7 @@ Release date: 2022.11.28
 - **Fix** Insight internal link issue
 - **Disable** PSP resource in vm-stack
 - **Fix** victoriaMetrics operator not available in Kubernetes 1.25.
-- **Fix** browser compatibility issues with front-end mirroring
+- **Fix** browser compatibility issues with front-end image
 
 ## v0.11
 

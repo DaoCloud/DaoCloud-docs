@@ -1,4 +1,4 @@
-# access cluster
+# Access cluster
 
 Through access to the cluster operation, it is possible to manage many cloud service platform clusters and local private physical clusters in a unified manner, forming a unified governance platform, effectively avoiding the risk of being locked in by manufacturers, and helping enterprises to safely migrate their business to the cloud.
 

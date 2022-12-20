@@ -362,7 +362,7 @@ Test purpose: verify the transaction support of the distributed database
 
 Test results: support for explicit and implicit transactions
 
-#### character set
+#### Character set
 
 Test purpose: verify the data type support of the distributed database
 

@@ -29,7 +29,7 @@ This page lists the Release Notes of container management, so that you can under
 - **Optimization** node details, the value of annotation vaule is not displayed correctly.
 - **Optimization** Operation prompt feedback, giving users correct feedback on operations.
 
-#### fix
+#### Fix
 
 - **FIXED** The problem that creating a namespace fails due to the strong coupling between creating a namespace and binding a workspace.
 - **Fix** The problem that updating the routing rules cannot modify the path prefix of the forwarding policy.
@@ -61,6 +61,6 @@ This page lists the Release Notes of container management, so that you can under
     - Adjust the cluster upgrade operation on the cluster list and cluster overview pages to the cluster operation and maintenance function in the cluster details
     - When a management cluster is removed from the cluster list, the cluster created based on this management cluster will be hidden on the interface. Cluster upgrade, manage node, delete node operations
 
-#### fix
+#### Fix
 
 - **Fix** When switching resources, the selected namespace is automatically converted to all namespaces

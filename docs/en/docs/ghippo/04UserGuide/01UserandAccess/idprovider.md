@@ -2,7 +2,7 @@
 
 Global management supports single sign-on based on LDPA and OIDC protocols. If your enterprise or organization has its own account system and you want to manage members in the organization to use DCE 5.0 resources, you can use the identity provider function provided by global management. Instead of having to create username/passwords for every organization member in your DCE 5.0. You can grant permissions to use DCE 5.0 resources to these external user identities.
 
-## basic concept
+## Basic concept
 
 - Identity Provider (IdP for short)
 

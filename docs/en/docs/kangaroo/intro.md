@@ -3,26 +3,26 @@ hide:
   - toc
 ---
 
-# What is a mirror warehouse
+# What is a container registry
 
-Mirror Warehouse is a cloud-native mirror hosting service that supports multi-instance lifecycle management. It supports the deployment of mirror warehouse instances to any cloud-native basic environment, and supports the integration of external mirror warehouses (Harbor Registry and Docker Registry).
-Through the mirror warehouse service, you can assign the private mirror space to one or more workspaces (tenants) to ensure the security of the private mirror, and you can also expose the mirror space to all Kubernetes namespaces. The mirror warehouse cooperates with [Container Management ](../kpanda/03ProductBrief/WhatisKPanda.md) service helps users quickly deploy applications.
+container registry is a cloud-native image hosting service that supports multi-instance lifecycle management. It supports the deployment of container registry instances to any cloud-native basic environment, and supports the integration of external container registrys (Harbor Registry and Docker Registry).
+Through the container registry service, you can assign the private registry space to one or more workspaces (tenants) to ensure the security of the private image, and you can also expose the registry space to all Kubernetes namespaces. The container registry cooperates with [Container Management ](../kpanda/03ProductBrief/WhatisKPanda.md) service helps users quickly deploy applications.
 
 **Features**
 
-- Mirror warehouse full life cycle management
+- container registry full life cycle management
 
-    Provide full lifecycle management of mirror warehouses by hosting Harbor, including creation, editing, deletion, etc. of mirror warehouses.
+    Provide full lifecycle management of container registrys by hosting Harbor, including creation, editing, deletion, etc. of container registrys.
 
 - Tenant-based application deployment
 
-    Supports the allocation of mirror space to one or more workspaces (tenants); supports independent association of workspaces (tenants) with external mirror warehouses.
+    Supports the allocation of registry space to one or more workspaces (tenants); supports independent association of workspaces (tenants) with external container registrys.
 
-- mirror scan
+- image scan
 
     Support image scanning function to identify image security risks
 
-- mirror selection
+- image selection
 
     Linked with the container management module, the image can be quickly selected through the "select image" function to complete application deployment.
 

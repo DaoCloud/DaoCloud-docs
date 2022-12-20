@@ -38,7 +38,7 @@ Both shared resources and cluster resources in resource groups come from [Contai
 
 This section presents 3 scenarios related to resource quotas.
 
-## create namespace
+## Create namespace
 
 Resource quotas are involved when creating a namespace.
 

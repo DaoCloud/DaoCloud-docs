@@ -6,7 +6,7 @@ This page introduces parameter configuration related to peer identity authentica
 
 When the wizard mode is used, the peer-to-peer identity authentication is divided into two steps: basic configuration and authentication setting, and the description of each parameter is as follows.
 
-### basic configuration
+### Basic configuration
 
 | **UI Item** | **YAML Field** | **Description** |
 | ---------------------- | -------------------------- ------------ | ------------------------------------- ----------------------- |
@@ -27,7 +27,7 @@ When the wizard mode is used, the peer-to-peer identity authentication is divide
 
 When using the wizard wizard mode, requesting identity authentication is divided into two steps: basic configuration and authentication setting, and the description of each parameter is as follows.
 
-## basic configuration
+## Basic configuration
 
 | **UI Item** | **YAML Field** | **Description** |
 | ------------ | ------------------------------------ | -------------------------------------------------- ----------- |
@@ -51,7 +51,7 @@ When using the wizard wizard mode, requesting identity authentication is divided
 
 When the wizard mode is used, the creation of the authorization policy is divided into two steps: `basic configuration` and `policy setting`, and the description of each parameter is as follows.
 
-### basic configuration
+### Basic configuration
 
 | **Element** | **YAML Field** | **Description** |
 | -------------------- | ---------------------------- ---------- | --------------------------------------- --------------------- |

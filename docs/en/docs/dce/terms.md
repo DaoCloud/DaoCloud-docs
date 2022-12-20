@@ -59,29 +59,35 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     In Insight, this is an alert object created based on the resource status. You can customize the conditions for triggering rules and sending notifications.
 
-- Annotation, 注解
+- Annotation
 
-    [注解](../kpanda/07UserGuide/Nodes/labels-annotations.md)是以键值对的形式给资源对象附加随机的无法标识的元数据。
+    [Annotation](../kpanda/07UserGuide/Nodes/labels-annotations.md) is a key-value pair that is used to attach arbitrary non-identifying metadata to objects.
 
-    注解中的元数据可大可小，可以是结构化的也可以是非结构化的，并且能包含标签不允许使用的字符。
-    像工具和软件库这样的客户端可以检索这些元数据。
+    The metadata in an annotation can be small or large, structured or unstructured, and can include characters not permitted by labels. Clients such as tools and libraries can retrieve this metadata.
 
 - API, Application Programming Interface
 
-    API (即应用程序接口) 是计算机程序间交互的一种方式。
-    就像人类可以通过网页与网站进行交互一样，API 允许计算机程序之间进行交互。
-    与人类的交互不同，API 可以限制对方可以问什么和不能问什么。对交互的限制有助于在程序之间创建稳定、实用的信息传输。
+    An API is a way for computer programs to interact with each other. 
+    Just as humans interact with a website via a web page, an API allows computer programs to interact with each other. 
+    Unlike human interactions, APIs have limitations on what can and cannot be asked of them. 
+    The limitation on interaction helps to create stable and functional communication between programs.
+
+    As applications become more complex, small code changes can have drastic effects on other functionality. 
+    Applications need to take a modular approach to their functionality if they can grow and maintain stability simultaneously. 
+    Without APIs, there is a lack of a framework for the interaction between applications. 
+    Without a shared framework, it is challenging for applications to scale and integrate.
+
+    APIs allow computer programs or applications to interact and share information in a defined and understandable manner. 
+    They are the building blocks for modern applications and they provide developers with a way to integrate applications together. 
+    Whenever you hear about microservices working together, you can infer that they interact via an API. 
 
 - API-initiated eviction, API 发起的驱逐
 
-    API 发起的驱逐是一个先调用 Eviction API 创建驱逐对象，再由该对象优雅地中止 Pod 的过程。
+    API-initiated eviction is the process by which you use the Eviction API to create an Eviction object that triggers graceful pod termination.
 
-    您可以通过 kube-apiserver 的客户端，比如 `kubectl drain` 这样的命令，直接调用 Eviction API 发起驱逐。
-    当 `Eviction` 对象创建出来之后，该对象将驱动 API 服务器终止选定的 Pod。
+    You can request eviction by calling the Eviction API directly, or programmatically using a client of the API server, like the `kubectl drain` command. This creates an `Eviction` object, which causes the API server to terminate the Pod.
 
-    API 发起的驱逐取决于您配置的 `PodDisruptionBudgets` 和 `terminationGracePeriodSeconds`。
-
-    API 发起的驱逐不同于节点压力引发的驱逐。
+    API-initiated evictions respect your configured `PodDisruptionBudgets` and `terminationGracePeriodSeconds`.
 
 - API Group
 

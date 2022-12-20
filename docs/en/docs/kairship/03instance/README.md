@@ -11,7 +11,7 @@ In the multicloud instance list, click the name of an instance to enter the over
 
 ![instance](../images/instance01.png)
 
-## instance search
+## Instance search
 
 You can currently use the search function at the top of the instance list to quickly retrieve the instance you need;
 The currently supported search fields are: fuzzy matching of cluster names

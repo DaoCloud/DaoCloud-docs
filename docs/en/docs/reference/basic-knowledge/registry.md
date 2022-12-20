@@ -42,7 +42,7 @@ Traditional service registration and discovery are mainly supported by tradition
     
     1. Submit a new Service definition to the API Server by POST.
     2. The request will not be released until it has passed through authentication, authorization and other access policy checks.
-    3. The Service gets a ClusterIP (virtual IP address) and saves it to the cluster data warehouse.
+    3. The Service gets a ClusterIP (virtual IP address) and saves it to the cluster data registry.
     4. Propagate the Service configuration across the cluster.
     5. The cluster DNS service learns about the creation of the Service and creates the necessary DNS records accordingly.
        After the Service object is registered in the cluster DNS, the Pods in the Service can be accessed through a single stable IP address.
