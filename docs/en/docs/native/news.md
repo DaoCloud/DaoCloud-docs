@@ -419,7 +419,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      The conference will once again showcase dozens of project-related content from the foundation, focusing on API/microservices, open source communities, application integration, message queues, middleware, observability, remote procedure call RPC, WEB SERVER/TOMCAT, etc. Discussion on a topic.
      The call for presentations is open and closes May 31.
 
-- [On July 28, the international analysis organization GigaOm released the 2022 Cloud Native Data Storage Radar Report] (https://research.gigaom.com/reprint/gigaom-radar-for-cloud-native-kubernetes-data-storage-portworx/ )
+- [On July 28, the international analysis organization GigaOm released the 2022 Cloud Native Data Storage Radar Report] (https://research.gigaom.com/reprint/gigaom-radar-for-cloud-native-kubernetes-data-storage-portworx/)
 
      As shown in the radar chart, vendors in the lower right quadrant see persistent storage as their competitive differentiator.
      What this group has in common is to combine storage platforms with Kubernetes distributions and cluster management products to provide Kubernetes users with a highly integrated overall solution.
@@ -550,9 +550,9 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      The Cloud Native Glossary is a project led by the CNCF Business Value Subcommittee to explain cloud native concepts in clear and common language.
 
-     Chinese version of cloud native glossary: <https://glossary.cncf.io/zh-cn/>
+     Chinese version of cloud native glossary: <https://glossary.cncf.io/>
 
-     Contribution method: <https://glossary.cncf.io/zh-cn/contribute/>
+     Contribution method: <https://glossary.cncf.io/contribute/>
 
 - [On June 14, China Academy of Information and Communications Technology released "Edge Computing Market and User Insight Report (2022)" and "Cloud-Edge-End Integration Development Report (2022)"](https://mp.weixin.qq.com/s /0ds2iEc3cdZ-RfjdDqrGnA)
 
@@ -677,7 +677,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      Click to read [full report] (https://www.iresearch.com.cn/Detail/report?id=3997&isfree=0)
 
-- [On May 18, CNCF launched the cloud native network function certification program] (https://www.cncf.io/announcements/2022/05/18/cncf-launches-cloud-native-network-function-certification-program/ )
+- [On May 18, CNCF launched the cloud native network function certification program] (https://www.cncf.io/announcements/2022/05/18/cncf-launches-cloud-native-network-function-certification-program/)
 
      The Cloud Native Network Function (CNF) certification program is designed to help communications service providers and other telecommunications organizations identify which network equipment providers follow cloud-native best practices.
      The CNF certification program runs using CNCF's CNF test suite and supports any product running in a certified Kubernetes environment.
@@ -696,7 +696,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      Click to view [Cloud Native Maturity Model Form] (https://docs.google.com/spreadsheets/d/1wn3qxV11wAoOMBFzigeCHEHrZqWHA8wG05zRWhW7RXQ/edit#gid=2147231259)
 
-- [NCF Security TAG released the latest version of cloud native security white paper on May 18] (https://www.cncf.io/blog/2022/05/18/announcing-the-refreshed-cloud-native-security-whitepaper/ )
+- [NCF Security TAG released the latest version of cloud native security white paper on May 18] (https://www.cncf.io/blog/2022/05/18/announcing-the-refreshed-cloud-native-security-whitepaper/)
 
      The CNCF Security TAG (Security Technical Advisory Group) released v2 of the Cloud Native Security White Paper to help the community understand best practices for securing cloud native deployments.
      The purpose of this white paper is to provide organizations and their technical leadership with a clear understanding of cloud-native security, security across lifecycles, and considerations for determining the applicability of standards such as NIST SSDF.

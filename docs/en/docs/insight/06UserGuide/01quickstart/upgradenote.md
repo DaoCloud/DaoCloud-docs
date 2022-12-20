@@ -5,7 +5,7 @@ hide:
 
 # Upgrade to v0.12.x
 
-Starting from v0.12.0, the `node exporter` Chart in insight-agent starts to use [Kubernetes recommended tags](https://kubernetes.io/zh-cn/docs/concepts/overview/working-with-objects/common- labels/).
+Starting from v0.12.0, the `node exporter` Chart in insight-agent starts to use [Kubernetes recommended tags](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/).
 
 Therefore, before upgrading, execute the following commands in sequence.
 

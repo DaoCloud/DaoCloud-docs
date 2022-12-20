@@ -33,7 +33,7 @@ hide:
     - Enable sidecar injection if one of the two is set to enabled
     - If neither is set, the mesh global sidecar injection strategy will be executed (values.sidecarInjectorWebhook.enableNamespacesByDefault)
     
-    For details, please refer to [Install Sidecar](https://istio.io/latest/zh/docs/setup/additional-setup/sidecar-injection/)
+    For details, please refer to [Install Sidecar](https://istio.io/latest/docs/setup/additional-setup/sidecar-injection/)
 
 1. What is the difference between traditional microservices and service mesh?
 

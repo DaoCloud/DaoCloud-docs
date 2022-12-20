@@ -24,6 +24,6 @@ When using volumes, set the volumes provided to Pods in the `.spec.volumes` fiel
 
 Refer to the official Kubernetes documentation:
 
-- [Volumes](https://kubernetes.io/zh/docs/concepts/storage/volumes/)
-- [Persistent Volumes](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/)
-- [Ephemeral Volumes](https://kubernetes.io/zh/docs/concepts/storage/ephemeral-volumes/)
+- [Volumes](https://kubernetes.io/docs/concepts/storage/volumes/)
+- [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+- [Ephemeral Volumes](https://kubernetes.io/docs/concepts/storage/ephemeral-volumes/)

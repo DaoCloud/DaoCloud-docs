@@ -38,7 +38,7 @@ The container management platform has the following advantages:
 - High availability of cross-regional applications, supports the deployment of different container clusters across regions, and can deploy services on multiple cloud container clusters in different regions at the same time, helping applications to achieve multi-regional traffic distribution.
   When a cloud container cluster fails, the computer room goes down, or a natural disaster occurs, the business traffic is automatically switched to other cloud container platforms through a unified traffic distribution mechanism to ensure high availability of applications.
 
-- A complete user permission system, integrating [Kubernetes RBAC permission system](https://kubernetes.io/zh-cn/docs/reference/access-authn-authz/rbac/), supports setting different granular permissions for different users.
+- A complete user permission system, integrating [Kubernetes RBAC permission system](https://kubernetes.io/docs/reference/access-authn-authz/rbac/), supports setting different granular permissions for different users.
 
 **Heterogeneous compatibility**
 
