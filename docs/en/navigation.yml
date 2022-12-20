@@ -1,6 +1,6 @@
 # Page tree
 nav:
-  - DaoCloud Webiste: https://www.daocloud.io/
+  - DaoCloud Webiste: https://www.daocloud.io/en/
   - Documentation:
       - DCE Profile:
           - What is DCE 5.0: dce/what-is-dce.md
