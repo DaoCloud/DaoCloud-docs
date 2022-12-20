@@ -28,7 +28,7 @@ If you need to access and manage the cloud cluster through a local node, you nee
 Before starting, the following conditions need to be met:
 
 - Ensure the network interconnection between local nodes and cloud clusters.
-- Make sure the kubectl tool is installed on the local node. For detailed installation methods, please refer to Installing [kubectl](https://kubernetes.io/zh-cn/docs/tasks/tools/).
+- Make sure the kubectl tool is installed on the local node. For detailed installation methods, please refer to Installing [kubectl](https://kubernetes.io/docs/tasks/tools/).
 
 ### Download cluster certificate
 

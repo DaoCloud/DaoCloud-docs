@@ -7,7 +7,7 @@ Regardless of the graphical or text type, the editor is essentially used to faci
 - Pipeline
 
     `Pipeline` is a working model defined by the user. The code of the pipeline defines the complete process of software delivery, generally including the stages of building, testing and delivering applications.
-    See the [Jenkins official documentation](https://www.jenkins.io/zh/doc/book/pipeline/jenkinsfile/) for pipeline syntax.
+    See the [Jenkins official documentation](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/) for pipeline syntax.
 
 - Agent
 
@@ -18,7 +18,7 @@ Regardless of the graphical or text type, the editor is essentially used to faci
 
     A `phase` defines a sequence of closely related `steps`. Each `stage` assumes independent and well-defined responsibilities in the entire pipeline.
     Such as "Build", "Test" or "Deploy" phases. Generally speaking, all the actual build process is placed inside `Stages`.
-    See [Choosing a Jenkins Stage](https://www.jenkins.io/zh/doc/book/pipeline/#stage) for more information.
+    See [Choosing a Jenkins Stage](https://www.jenkins.io/doc/book/pipeline/#stage) for more information.
 
 - Parallel stage
 
@@ -28,4 +28,4 @@ Regardless of the graphical or text type, the editor is essentially used to faci
 - steps
 
     The `step list` describes what to do in a `stage` and what commands to execute. For example, there is a `step (step)` that requires the system to print a message of `Building...`, that is, execute the command `echo 'Building...'`.
-    See [Choosing a Jenkins Step](https://www.jenkins.io/zh/doc/book/pipeline/#stage) for more information.
+    See [Choosing a Jenkins Step](https://www.jenkins.io/doc/book/pipeline/#stage) for more information.

@@ -57,7 +57,7 @@ In addition to the CPU request, CPU limit, memory request, memory limit, total s
 
     ![namespace-quota](../../images/namespace-quota.png)
 
-2. In the pop-up `Resource Quota` dialog box, you can see the resource quota information of the current namespace. Click `Add` under `Application Resources`, select a resource and set a quota, for details, please refer to [Kubernetes Resource Quotas](https://kubernetes.io/zh-cn/docs/concepts/policy/resource-quotas/) .
+2. In the pop-up `Resource Quota` dialog box, you can see the resource quota information of the current namespace. Click `Add` under `Application Resources`, select a resource and set a quota, for details, please refer to [Kubernetes Resource Quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) .
 
     ![namespace-quota01](../../images/namespace-quota01.png)
 

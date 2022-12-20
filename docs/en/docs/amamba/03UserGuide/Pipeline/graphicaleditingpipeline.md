@@ -1,7 +1,7 @@
 # use the graphical editor pipeline
 
 The application workbench has designed a graphical pipeline editing view, which is compatible with editing most of the custom operations in the Jenkinsfile.
-You can intuitively see each [stage (Stage)](https://www.jenkins.io/zh/doc/book/pipeline/#stage) and each [step (Step)] on the pipeline (https://www.jenkins.io/zh/doc/book/pipeline/#steps), so as to realize the pipeline editing experience of what you see is what you get.
+You can intuitively see each [stage (Stage)](https://www.jenkins.io/doc/book/pipeline/#stage) and each [step (Step)] on the pipeline (https://www.jenkins.io/doc/book/pipeline/#steps), so as to realize the pipeline editing experience of what you see is what you get.
 
 ## prerequisites
 

@@ -18,5 +18,5 @@ In `Kubernetes`, it can be said that `CRDs + Controllers = Everything`.
 
 Please also refer to the official Kubernetes documentation:
 
-- [CustomResource](https://kubernetes.io/zh/docs/concepts/extend-kubernetes/api-extension/custom-resources/)
-- [CustomResourceDefinition](https://kubernetes.io/zh/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/)
+- [CustomResource](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/)
+- [CustomResourceDefinition](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/)
