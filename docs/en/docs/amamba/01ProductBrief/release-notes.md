@@ -6,7 +6,7 @@ This page lists the Release Notes of the application workbench, so that you can 
 
 Release date: 2022-11-30
 
-- **NEW** Added the warehouse function in gitops, which supports import and deletion
+- **NEW** Added the registry function in gitops, which supports import and deletion
 - **NEW** Added sync function for gitops app
 - **Fix** Fixed the problem that the admin user was not authenticated to the deployment target (cluster/namespace)
 - **FIXED** Fixed gitops app creation time, sync start time and sync end time with `Invalida date` bug
@@ -16,7 +16,7 @@ Release date: 2022-11-30
 - **Fix** Fixed the problem that the binding relationship between namespace and workspace was lost when updating the label of namespace
 - **Fix** Fixed the error of trigger conversion when synchronizing the jenkins config to the database after completing the pipeline
 - **Fix** Fixed the problem that the credential of the kubeconfig type in the ArgoCD cluster and jenkins was out of sync due to the change of the cluster's kubeconfig
-- **FIXED** Fixed unordered and paginated problems in warehouse list
+- **FIXED** Fixed unordered and paginated problems in registry list
 - **Fix** Fixed the problem that from-jar failed to upload more than 32M files
 - **Optimization** Optimized the application access service grid process
 
@@ -34,7 +34,7 @@ Release date: 2022-11-18
 - **Fix** fix for disorder and pagination problems in list argocd repository
 - **Fix** Fix the problem that from-jar failed to upload more than 32M files
 - **Fix** The problem that the full log cannot be obtained if the log volume is too large when obtaining the pipeline log
-- **Optimization** Obtain rollout mirror list, application group list, native application list and other performance optimization
+- **Optimization** Obtain rollout image list, application group list, native application list and other performance optimization
 - **Optimize** The image used by from-jar is no longer hard-coded in the source code, passed through env, and ensured that the installer can get it correctly
 - **Upgrade** jenkins is upgraded from 2.319.1 to 2.346.2, kubernetes plugin is upgraded to 3734.v562b_b_a_627ea_c, related plugins are also upgraded
 
@@ -65,7 +65,7 @@ Release date: 2022-11-04
 - **Fix** When the image contains a port number, the verification is mistakenly regarded as an image-tag fix
 - **Optimize** argocd initial authentication and connection
 
-### infrastructure
+### Infrastructure
 
 - **NEW** The basic image of the arm architecture is continuously released
 - **Fix** Change the number of pods that jenkins agent can pull up to 100, change connectTimeout and readTimeout 2 timeout parameters
@@ -90,7 +90,7 @@ Release date: 2022-9-28
 - **FIXED** When creating a namespace, the Namespace does not exist, and the error of ResourceQuota does not exist, resulting in the failure to create the Namespace
 - **Fix** select workspace associated cluster and namespace error
 
-### infrastructure
+### Infrastructure
 
 - **NEW** Add workspace authentication and cluster and namespace authentication where resources are deployed
 - **Fix** The image field only checks the length, not as required
@@ -116,7 +116,7 @@ Release date: 2022-9-21
 - **NEW** CR such as GProductNavigator and GProductPorxy will be installed when installing via chart
 - **Optimize** Optimize XML serialization and deserialization, gorm query syntax, pageutil model unification
 
-### infrastructure
+### Infrastructure
 
 - **NEW** E2E for credential CRUD and pipeline running CRUD interface
 - **Optimize** Optimize the implementation of the workload list, and the performance has been greatly improved
@@ -127,7 +127,7 @@ Release date: 2022-9-21
 Release date: 2022-8-21
 
 - **NEW** Add interface for deleting native applications
-- **NEW** Get the secretReference list, verify the secret, whether the mirror warehouse is correct, and get the mirror tag list
+- **NEW** Get the secretReference list, verify the secret, whether the container registry is correct, and get the image tag list
 - **NEW** List the names of deployments with grayscale release enabled
 - **NEW** Add namespace-related interfaces, including listing namespaces, creating, updating, and deleting namespaces
 - **Add** bind namespace to workspace
@@ -162,6 +162,6 @@ Release date: 2022-7-08
 - **NEW** API interface for creating applications based on images and listing all native workloads
 - **Add** support for kubeconfig, access token key creation
 - **NEW** Provide API for creating visible workspace list, creating ns and ns list
-- **NEW** Pipeline creation supports build settings, trigger settings (timing trigger and code source trigger), single-branch pipeline based on git warehouse jenkinsfile, Jenkinsfile verification
+- **NEW** Pipeline creation supports build settings, trigger settings (timing trigger and code source trigger), single-branch pipeline based on git registry jenkinsfile, Jenkinsfile verification
 - **Add** Pipeline running record details, full and step-by-step logs, support for delete, replay and cancel operations
 - **New** E2E test coverage automatic calculation, continuous performance test report, automatic update dependency

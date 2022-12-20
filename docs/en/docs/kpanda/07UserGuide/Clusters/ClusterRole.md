@@ -48,7 +48,7 @@ This is a cluster created using [Container Management](../../03ProductBrief/What
 | Cloud Native Networking | Calico, Cillium, Multus and other CNIs |
 | Policy management<br /> (network policy, quota policy, resource limit, disaster recovery policy, security policy) | Support |
 
-## access cluster
+## Access cluster
 
 This cluster is used to access existing standard K8s clusters, including but not limited to self-built clusters in local data centers, clusters provided by public cloud vendors, clusters provided by private cloud vendors, edge clusters, Xinchuang clusters, heterogeneous clusters, Daocloud Different distribution clusters.
 It is mainly used to bear business load.

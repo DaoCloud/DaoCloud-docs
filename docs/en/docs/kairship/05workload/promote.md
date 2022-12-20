@@ -28,7 +28,7 @@ After multicloudization is completed, actions such as editing and updating can b
     - When multicloud, the ConfigMap and Secret associated with the workload will be automatically upgraded to multicloud resources.
     - When upgrading multicloud, a corresponding deployment strategy will be automatically created to manage atomic clusters.
 
-## common problem
+## Common problem
 
 - Will atomic cluster workloads restart after upgrading multicloud workloads?
 

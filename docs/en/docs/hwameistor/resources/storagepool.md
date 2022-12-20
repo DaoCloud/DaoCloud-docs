@@ -1,4 +1,4 @@
-# create storage pool
+# Create storage pool
 
 The following example is from a 4-node Kubernetes cluster:
 

@@ -21,7 +21,7 @@ The container management platform has the following advantages:
 
 **Application production ready**
 
-- One-stop application distribution, which can distribute applications through mirroring, YAML, and Helm, and realize unified management across clouds/clusters.
+- One-stop application distribution, which can distribute applications through image, YAML, and Helm, and realize unified management across clouds/clusters.
 
 - High availability of applications, support for distributed deployment of applications, and automatic switching of single-point-of-failure traffic.
 

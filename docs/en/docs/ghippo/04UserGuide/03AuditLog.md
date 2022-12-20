@@ -1,4 +1,4 @@
-# audit log
+# Audit log
 
 Audit logs help you monitor and record the activities of each user, and provide functions for collecting, storing and querying security-related records arranged in chronological order.
 With the audit log service, you can continuously monitor and retain user behaviors in the global management module, including but not limited to user creation, user login/logout, user authorization, and user operations related to Kubernetes.

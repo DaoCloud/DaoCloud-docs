@@ -15,7 +15,7 @@ hide:
     - Control plane cluster: the cluster used to run the mesh management plane, the list includes the clusters that the current mesh platform can access and are in normal state.
       The item comes with a refresh icon and a `Create Cluster` button. Click `Create Cluster` to jump to `Container Management Platform` to create a new cluster. After the creation is complete, return to this page and click the refresh icon to update the list.
     - Istio root namespace: The Istio root namespace where the mesh resides.
-    - Mirror warehouse: Enter the URL address of the mirror warehouse.
+    - container registry: Enter the URL address of the container registry.
   
         ![Basic Configuration](../../images/integrate-mesh.png)
 

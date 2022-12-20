@@ -2,18 +2,18 @@
 
 This page can download the offline installation package and verification file of DCE 5.0 Community Edition.
 
-## download
+## Download
 
 | File Name | Version | Architecture | File Size | Downloads | Date Updated |
 | ----------------------------- | ------- | -------- | -- ----------------------------------------------- | ----- ----- | -------------------------------- |
-| offline-centos7-community-v0.3.29-amd64.tar | v0.3.29 | AMD64 and Linux | 9.2 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5 /offline-centos7-community-v0.3.29-amd64.tar) | 2022-12-16 |
-| offline-kylin-v10sp2-community-v0.3.29-arm64.tar | v0.3.29 | ARM64 and Xinchuang | 6.9 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise /dce5/offline-kylin-v10sp2-community-v0.3.29-arm64.tar) | 2022-12-16 |
+| offline-centos7-community-v0.3.29-amd64.tar | v0.3.29 | AMD 64 | 9.2 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5 /offline-centos7-community-v0.3.29-amd64.tar) | 2022-12-16 |
+| offline-kylin-v10sp2-community-v0.3.29-arm64.tar | v0.3.29 | ARM 64 | 6.9 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise /dce5/offline-kylin-v10sp2-community-v0.3.29-arm64.tar) | 2022-12-16 |
 
-## validation
+## Validation
 
 Enter the download directory of the offline installation package.
 
-=== "AMD64 and Linux"
+=== "AMD 64"
 
     Execute the following command to verify the installation package:
 
@@ -45,7 +45,7 @@ Enter the download directory of the offline installation package.
 
 After successfully verifying the offline package,
 
-=== "AMD64 and Linux"
+=== "AMD 64"
 
     Execute the following command to extract the tarball:
 
@@ -64,7 +64,7 @@ After successfully verifying the offline package,
 - For installation, please refer to [Community Edition Installation Process](../../install/community/k8s/online.md#_2)
 - After successful installation, please [apply for free community experience](../../dce/license0.md)
 
-## modules
+## Modules
 
 DCE 5.0 Community Edition includes the following modules by default:
 

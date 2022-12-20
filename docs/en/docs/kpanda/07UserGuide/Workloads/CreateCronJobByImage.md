@@ -14,7 +14,7 @@ Before creating a CronJob from a image, the following prerequisites need to be m
 
 Follow the steps below to create a CronJob.
 
-## image creation
+## Image creation
 
 1. After successfully logging in as the `NS Edit` user, click `Cluster List` in the upper left corner to enter the cluster list page. Click on a cluster name to enter `Cluster Details`.
 
@@ -51,7 +51,7 @@ After completing all the container configuration information below, click Next.
      After entering the information as follows, click `Confirm`.
 
      - Container Name: Enter a name for the newly created container. Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. For example backup_log.
-     - Container image: The image name selected from the image warehouse, and also supports manual input of the image name (the name must be an existing image name in the image warehouse, otherwise it will not be available). If you want to connect to an external private image, you need to first [Create image Warehouse key](../ConfigMapsandSecrets/create-secret.md), and then pull the image. For example backupjob.
+     - Container image: The image name selected from the image registry, and also supports manual input of the image name (the name must be an existing image name in the image registry, otherwise it will not be available). If you want to connect to an external private image, you need to first [Create image registry key](../ConfigMapsandSecrets/create-secret.md), and then pull the image. For example backupjob.
      - Update policy: When the container is updated, the image pull policy. After it is enabled, the workload will pull the image again every time it is restarted/upgraded, otherwise it will only pull the image when there is no image with the same name and version on the node. Default: Always pull images.
      - Privileged container: By default, the container cannot access any device on the host. After enabling the privileged container, the container can access all devices on the host and enjoy all the permissions of the running process on the host. Enabled by default.
      - CPU Quotas: Minimum and maximum usage of container CPU resources. Requests: The minimum CPU value that the container needs to use. Limit: The maximum CPU allowed to be used by the container. It is recommended to set the upper limit of the container quota to avoid system failure caused by excessive container resources.
@@ -119,7 +119,7 @@ You can click the `Add` button to add labels and annotations to the workload ins
 
 ![Cronjob configuration](../../images/cronjob05.png)
 
-## complete creation
+## Complete creation
 
 After confirming that all parameters have been entered, click the `Create` button to complete the workload creation. Wait for the workload status to change to `Running`.
 If the workload status is abnormal, please refer to [Workload Status](../Workloads/PodConfig/workload-status.md) for specific exception information.

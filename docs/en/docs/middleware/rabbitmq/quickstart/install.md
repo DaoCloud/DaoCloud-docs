@@ -4,7 +4,7 @@ Because RabbitMQ belongs to the application layer of DCE 5.0, a DCE environment 
 
 Follow the steps below to install RabbitMQ.
 
-## install rabbitmq-operator
+## Install rabbitmq-operator
 
 1. On the left navigation bar, click `Container Management` -> `Cluster List`.
 
@@ -67,7 +67,7 @@ Follow the steps below to install RabbitMQ.
 
     # global parameters
     --set global.mcamel.imageTag: mcamel-rabbitmq image version
-    --set global.imageRegistry: mirror warehouse address
+    --set global.imageRegistry: container registry address
     ```
 
 ## uninstall

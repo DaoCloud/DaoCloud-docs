@@ -2,7 +2,7 @@
 
 This page describes the parameter configuration when creating and editing a **Virtual Service**.
 
-## basic configuration
+## Basic configuration
 
 | UI element | YAML field | description |
 | -------- | ------------------ | ------------------ ------------------------------------------ |
@@ -122,13 +122,13 @@ The YAML field is `spec.http.-name.delegate`, which is off by default.
 | Delegate Virtual Service | spec.http.-name.delegate.name | Required. Secondary virtual service for proxy<br />Note:<br />A virtual service configured with a proxy item cannot be used as a proxy, that is, a proxy cannot be nested;<br />A virtual service configured with the spec.hosts field Not available as an agent. |
 | Owning namespace | spec.http.-name.delegate.namespace | Optional. The namespace to which the secondary virtual service belongs is the same as the main virtual service by default. |
 
-**Traffic mirroring**
+**Traffic image**
 
 | UI element | | YAML field | Description. |
 | ------------ | ---- | ------------------------------- -------------- | ----------------------------------- --------------------- |
-| traffic mirroring | n | spec.http.-name.mirror | Optional. Disabled by default. Used to replicate request traffic to other target services. |
-| Mirror to service | y | spec.http.-name.mirror.host | Required. The transfer target service of traffic mirroring. |
-| Traffic mirroring percentage | n | spec.http.-name.mirror.mirrorPercentage:value | Optional. The ratio of the copied request traffic to the original request traffic, the default is 100%. |
+| traffic image | n | spec.http.-name.image | Optional. Disabled by default. Used to replicate request traffic to other target services. |
+| image to service | y | spec.http.-name.mirror.host | Required. The transfer target service of traffic image. |
+| Traffic image percentage | n | spec.http.-name.mirror.mirrorPercentage:value | Optional. The ratio of the copied request traffic to the original request traffic, the default is 100%. |
 | service version | n | spec.http.-name.mirror.subset | optional. The service version list content comes from the available "target rules" for the current target service. |
 
 ### TLS Routing

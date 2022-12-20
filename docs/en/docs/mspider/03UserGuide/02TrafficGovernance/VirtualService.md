@@ -79,7 +79,7 @@ The virtual service provides routing support for HTTP, TCP, and TLS protocols.
 
     - Mirror/MirrorPercent
 
-        Mirror HTTP traffic to another target, and can set the mirror ratio.
+        Mirror the HTTP traffic to another target, and can set the ratio.
 
     - Tcp
 

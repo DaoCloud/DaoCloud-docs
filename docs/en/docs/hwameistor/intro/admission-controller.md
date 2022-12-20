@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# admission controller
+# Admission controller
 
 The admission controller is a webhook that can automatically authenticate HwameiStor data volumes and assist in modifying `schedulerName` to hwameistor-scheduler.
 For details, see [Kubernetes Dynamic Admission Control](https://kubernetes.io/zh-cn/docs/reference/access-authn-authz/extensible-admission-controllers/).

@@ -91,7 +91,7 @@ In a differentiated cluster operating environment, it can adapt to the diversifi
 
 ## DCE and Kubernetes
 
-DCE includes container, network, storage, monitoring, mirror warehouse, load balancing, DNS service discovery, authentication and authorization solutions that enterprises need. These components are thoroughly tested,
+DCE includes container, network, storage, monitoring, container registry, load balancing, DNS service discovery, authentication and authorization solutions that enterprises need. These components are thoroughly tested,
 Run reliably on new dynamic environments such as bare metal environments, public clouds, private clouds, and hybrid clouds.
 
 - Container computing, adapting to x86 architecture and ARM architecture, carrying the operation, scheduling and management of hybrid applications.

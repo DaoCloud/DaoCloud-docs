@@ -4,7 +4,7 @@ Click `Traffic Topology` in the left navigation bar to open the page. This funct
 
 ![Traffic Topology](../../images/monitor-topo.png)
 
-## display setting
+## Display setting
 
 `Namespace Boundary` is used to set whether to display the namespace boundary wireframe. If selected, services under the same namespace will be framed and the namespace name will be marked.
 

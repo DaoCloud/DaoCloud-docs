@@ -88,7 +88,7 @@ Service (Service) is a Kuberetes-native resource that provides cloud-native load
 
 Provides a wealth of system plug-ins to expand the functions of cloud container clusters. Extension plug-ins include: DNS, HPA, etc.
 
-## authority management
+## Authority management
 
 Support [Namespace Authorization](../07UserGuide/Permissions/Cluster-NSAuth.md), through permission settings, different users or user groups can have permission to operate different Kubernetes resources under the specified namespace.
 

@@ -24,13 +24,13 @@ This page lists the Release Notes of the installer, so that you can understand t
 - **Optimize** Create permanent harbor with operator, enable HTTPS, and use Postgressql operator.
 - **Optimized** Commercial version uses contour as default ingress-controller.
 - **Optimized** MinIO supports using VIP.
-- **Optimized** coredns is automatically injected into warehouse VIP resolution.
+- **Optimized** coredns is automatically injected into registry VIP resolution.
 - **Optimization** Optimize the offline package production process and speed up the packaging of docker images.
 
 #### Bug fixes
 
 - **FIX** Fixed issues with fair cloud service.
-- **FIX** Fixed issues with mirroring and helm for various submodules.
+- **FIX** Fixed issues with image and helm for various submodules.
 - **FIXED** Bug fixes for offline package loading.
 
 #### Known issues

@@ -9,7 +9,7 @@ If a user needs to be granted permission for a specific resource, such as the pe
 
 This page introduces operations such as creating, authorizing, disabling, enabling, and deleting users.
 
-## create user
+## Create user
 
 Prerequisite: You have the platform administrator Admin permission or the user and access control administrator IAM Admin permission.
 
@@ -89,7 +89,7 @@ Premise: User mailboxes need to be set. There are two ways to set user mailboxes
 
 If the user forgets the password when logging in, please refer to [Reset Password](../password.md).
 
-## delete users
+## Delete users
 
 !!! warning
 

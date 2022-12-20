@@ -9,7 +9,7 @@ The main factors affecting the storage capacity of the `Elasticsearch` service:
 - Index overhead: typically 10% larger than source data, exact overhead can be calculated using `_cat/indices?v` API and `pri.store.size` value.
 - OS reservation: By default, Linux will reserve 5% of the disk space for the `root` user to handle critical processes, system recovery, and prevent disk fragmentation issues.
 
-### formula
+### Formula
 
 Full formula | Simplified version
 ---|---

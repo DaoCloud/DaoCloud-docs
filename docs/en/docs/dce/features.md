@@ -1,4 +1,9 @@
-# features
+---
+hide:
+  - toc
+---
+
+# Features and Benefits
 
 DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typical featuers currently supported are as follows. 
 

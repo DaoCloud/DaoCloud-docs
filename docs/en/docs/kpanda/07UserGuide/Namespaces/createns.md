@@ -1,4 +1,4 @@
-# create namespace
+# Create namespace
 
 A namespace is an abstraction used for resource isolation in Kubernetes. This article will introduce how to create a namespace.
 

@@ -1,4 +1,4 @@
-# create managed/private mesh
+# Create managed/private mesh
 
 The DCE 5.0 service mesh supports the creation of managed meshs, dedicated meshs, and external meshs. The steps to create a managed mesh/proprietary mesh are as follows:
 
@@ -12,12 +12,12 @@ The DCE 5.0 service mesh supports the creation of managed meshs, dedicated meshs
     ![Create Mesh](../../images/servicemesh01.png)
 
 2. Select `Hosted mesh` or `Proprietary mesh` and fill in the mesh configuration information.
-   
+
     - mesh name: start with a lowercase letter, consist of lowercase letters, numbers, dashes (-), and cannot end with a dash (-)
     - Alias: used to improve ease of use and mesh recognition, you can enter letters, numbers, Chinese and other symbols, within 60 characters
     - Istio version: The Istio version number that the current system can support. Select one as the Istio version of the currently created mesh. If it is a managed mesh, then all managed clusters will use this version of Istio.
     - Control plane cluster: the cluster used to run the mesh management plane, the list includes the clusters that the current mesh platform can access and are in normal state. The item comes with a refresh icon and a `Create Cluster` button. Click `Create Cluster` to jump to `Container Management Platform` to create a new cluster. After the creation is complete, return to this page and click the refresh icon to update the list.
-    - Mirror warehouse: Enter the address of the mirror warehouse that contains the data plane component mirror. If the cluster can access the public network, you can fill in the official mirror address: `release.daocloud.io/mspider`. For private environments, please upload the mirror yourself and fill in the actual address.
+    - container registry: Enter the address of the container registry that contains the data plane component image. If the cluster can access the public network, you can fill in the official image address: `release.daocloud.io/mspider`. For private environments, please upload the image yourself and fill in the actual address.
   
     ![Basic configuration](../../images/create-mesh-config.png)
 

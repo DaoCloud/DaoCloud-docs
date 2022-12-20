@@ -7,13 +7,13 @@ You can intuitively see each [stage (Stage)](https://www.jenkins.io/zh/doc/book/
 
 - You need to create a workspace and a user, who must be invited to the workspace and given the `workspace edit` role. Refer to [Create Workspace](../../../ghippo/04UserGuide/02Workspace/Workspaces.md), [Users and Roles](../../../ghippo/04UserGuide/01UserandAccess/User .md).
 
-- Create three credentials that can access the code warehouse, mirror warehouse, and cluster. For more information on creating credentials, please refer to [Credential Management] (Credential.md)).
+- Create three credentials that can access the codebase, container registry, and cluster. For more information on creating credentials, please refer to [Credential Management] (Credential.md)).
 
 - To create a custom pipeline, please refer to [Create a custom pipeline](createpipelinebyself.md). When creating a custom pipeline, you need to add two string parameters to the build parameters, and these parameters will be used in the image build command. The parameters are described as follows:
 
 | Parameter Type | Parameter Name | Description |
 | -------- | -------- | ------------------------------- ------------------ |
-| String | registry | Mirror registry address. In this example use `release-ci.daocloud.io` |
+| String | registry | container registry address. In this example use `release-ci.daocloud.io` |
 | string | project | The project name in the registry. In this example use `demo` |
 | string | name | The name of the image. This example uses `http-hello` |
 
@@ -47,9 +47,9 @@ Click on `Global Settings`, select node from the `Type` drop-down list, and sele
 
 2. Click `Add Step`, select `git clone` under the step type in the pop-up dialog box, and refer to the table below to configure the relevant parameters.
 
-     - Warehouse URL: Enter the warehouse address.
+     - registry URL: Enter the registry address.
      - Branch: do not fill in, the default is the master branch.
-     - Credentials: If your warehouse is a private warehouse, you need to provide a credential.
+     - Credentials: If your registry is a private registry, you need to provide a credential.
 
      ![git_clone](../../images/git_clone.png)
 
@@ -79,7 +79,7 @@ Click on `Global Settings`, select node from the `Type` drop-down list, and sele
 
 3. Select to enable `Use Credentials` in the step module, fill in the relevant parameters in the pop-up dialog box, and then click `OK`.
 
-     - Credentials: Select the created docker hub credentials to allow users to access the mirror warehouse. Select the created "docker-credential" credential.
+     - Credentials: Select the created docker hub credentials to allow users to access the container registry. Select the created "docker-credential" credential.
      - Password variable: PASS
      - Username variable: USER
 
@@ -97,7 +97,7 @@ Click on `Global Settings`, select node from the `Type` drop-down list, and sele
      docker build -f Dockerfile . -t $REGISTRY/$PROJECT/$NAME:latest
      ```
 
-6. Click `Add Step` to log in to the mirror warehouse and push the image to the mirror warehouse. In the pop-up dialog box, select shell under the step type, enter the following command in the command line, and click `OK`.
+6. Click `Add Step` to log in to the container registry and push the image to the container registry. In the pop-up dialog box, select shell under the step type, enter the following command in the command line, and click `OK`.
 
      ```docker
      docker login $REGISTRY -u $USER -p $PASS
@@ -105,7 +105,7 @@ Click on `Global Settings`, select node from the `Type` drop-down list, and sele
 
      ![build3](../../images/build3.png)
 
-6. Click `Add Step` to push the image to the mirror warehouse, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and click `OK`.
+6. Click `Add Step` to push the image to the container registry, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and click `OK`.
 
      ```docker
      docker push $REGISTRY/$PROJECT/$NAME:latest

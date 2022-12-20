@@ -38,7 +38,7 @@ Solution advantages: Northbound supports domestic chips and servers, and southbo
 
 Users adopt cloud-native technology on a large scale, and expect standardization and process-based integration with the DevOps concept to promote cloud-native technology to a wider range of application project groups.
 
-Modules involved: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Application Workbench](../amamba/01ProductBrief/WhatisAmamba.md), [Container Network](../network/intro/ what-is-net.md), Mirror Warehouse, Edge Cloud Collaboration, Xinchuang Cloud
+Modules involved: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Application Workbench](../amamba/01ProductBrief/WhatisAmamba.md), [Container Network](../network/intro/ what-is-net.md), container registry, Edge Cloud Collaboration, Xinchuang Cloud
 
 Solution advantages: support hierarchical multi-tenant system, seamlessly adapt to user organization structure planning resource allocation.
 CI/CD pipeline capability automates application construction and deployment. Innovatively introduce GitOps and progressive delivery capability systems to help applications perform more detailed delivery management capabilities.

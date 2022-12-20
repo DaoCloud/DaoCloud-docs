@@ -1,4 +1,4 @@
-# create task by mirroring
+# Create task by image
 
 Task (Job) is suitable for one-time task execution, which will create one or more Pods, and will continue to retry the execution of Pods until the specified number of Pods are successfully terminated.
 As Pods complete successfully, the Job will keep track of how many Pods completed successfully. When the number reaches the specified success threshold, the Job ends.
@@ -27,7 +27,7 @@ Job completions are marked according to `.spec.completions` settings.
 
 ## prerequisites
 
-Before creating tasks through mirroring, the following prerequisites must be met:
+Before creating tasks through image, the following prerequisites must be met:
 
 - The container management platform [has joined the Kubernetes cluster](../Clusters/JoinACluster.md) or [has created the Kubernetes cluster](../Clusters/CreateCluster.md), and can access the UI interface of the cluster.
 
@@ -37,7 +37,7 @@ Before creating tasks through mirroring, the following prerequisites must be met
 
 Follow the steps below to create a task.
 
-## Mirror creation
+## Image creation
 
 1. After successfully logging in as the `NS Edit` user, click `Cluster List` in the upper left corner to enter the cluster list page. Click on a cluster name to enter `Cluster Details`.
 
@@ -74,8 +74,8 @@ After completing all the container configuration information below, click Next.
      After entering the information as follows, click `Confirm`.
 
      - Container Name: Enter a name for the newly created container. Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. For example backup_log.
-     - Container image: The image name selected from the image warehouse, and also supports manual input of the image name (the name must be an existing image name in the image warehouse, otherwise it will not be available). If you want to connect to an external private image, you need to first [Create image Warehouse key](../ConfigMapsandSecrets/create-secret.md), and then pull the image. For example backupjob.
-     - Update policy: When the container is updated, the image pull policy. After it is enabled, the workload will pull the image again every time it is restarted/upgraded, otherwise it will only pull the image when there is no image with the same name and version on the node. Default: Always pull mirrors.
+     - Container image: The image name selected from the image registry, and also supports manual input of the image name (the name must be an existing image name in the image registry, otherwise it will not be available). If you want to connect to an external private image, you need to first [Create image registry key](../ConfigMapsandSecrets/create-secret.md), and then pull the image. For example backupjob.
+     - Update policy: When the container is updated, the image pull policy. After it is enabled, the workload will pull the image again every time it is restarted/upgraded, otherwise it will only pull the image when there is no image with the same name and version on the node. Default: Always pull images.
      - Privileged container: By default, the container cannot access any device on the host. After enabling the privileged container, the container can access all devices on the host and enjoy all the permissions of the running process on the host. Enabled by default.
      - CPU Quotas: Minimum and maximum usage of container CPU resources. Requests: The minimum CPU value that the container needs to use. Limit: The maximum CPU allowed to be used by the container. It is recommended to set the upper limit of the container quota to avoid system failure caused by excessive container resources.
      - Memory quota: The minimum and maximum usage of container memory resources. Application: The minimum memory value that the container needs to use. Limit: The maximum amount of memory the container is allowed to use. It is recommended to set the upper limit of the container quota to avoid system failure caused by excessive container resources.
@@ -147,7 +147,7 @@ In addition to basic information configuration, DCE also provides a wealth of ad
 
      ![Labels and Notes](../../images/job04.png)
 
-## complete creation
+## Complete creation
 
 After confirming that all parameters have been entered, click the `Create` button to complete the workload creation. Wait for the workload status to change to `Running`.
 If the workload status is abnormal, please refer to [Workload Status](../Workloads/PodConfig/workload-status.md) for specific exception information.

@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# access registry
+# Access registry
 
 The registry supports access to [Nacos registry](../../../reference/basic-knowledge/registry.md#nacos-registry), [Eureka registry](../../.. /reference/basic-knowledge/registry.md#eureka-registry), [Zookeeper registry](../../../reference/basic-knowledge/registry.md#zookeeper-registry), [Kubernetes Registry](../../../reference/basic-knowledge/registry.md#kubernetes-registry), [Mesh Registry](../../../reference/basic-knowledge/ registry.md#service-mesh-registry).
 
