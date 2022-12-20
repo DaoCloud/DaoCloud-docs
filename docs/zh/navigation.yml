@@ -24,6 +24,7 @@ nav:
               - 离线安装步骤: install/commercial/start-install.md
               - 使用场景示例: install/commercial/scenarios.md
           - 卸载: install/uninstall.md
+          - Release Notes: install/release-notes.md
       - 容器管理:
           - 介绍:
               - 什么是容器管理: kpanda/03ProductBrief/WhatisKPanda.md
@@ -97,6 +98,7 @@ nav:
           - 安装:
               - 离线升级全局管理: ghippo/install/offlineInstall.md
               - 自定义反向代理服务器地址: ghippo/install/reverseProxy.md
+              - 国密网关: ghippo/install/gmGateway.md
           - 用户与访问控制:
               - 什么是用户与访问控制: ghippo/04UserGuide/01UserandAccess/iam.md
               - 用户: ghippo/04UserGuide/01UserandAccess/User.md

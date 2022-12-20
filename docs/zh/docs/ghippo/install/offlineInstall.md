@@ -22,21 +22,21 @@
 
         ```yaml
         source:
-        intermediateBundlesPath: ghippo-offline # 到 charts-syncer 的相对路径
+          intermediateBundlesPath: ghippo-offline # 到 charts-syncer 的相对路径
                                         # 但不是此 YAML 文件和离线包之间的相对路径
         target:
-        containerRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
-        containerRepository: release.daocloud.io/ghippo # 需更改为你的镜像仓库
-        repo:
-          kind: HARBOR # 也可以是任何其他支持的 Helm Chart 仓库类别
-          url: http://10.16.10.111/chartrepo/release.daocloud.io # 需更改为 chart repo url
-          auth:
-          username: "admin" # 你的镜像仓库用户名
-          password: "Harbor12345" # 你的镜像仓库密码
-        containers:
-          auth:
-          username: "admin" # 你的镜像仓库用户名
-          password: "Harbor12345" # 你的镜像仓库密码
+          containerRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
+          containerRepository: release.daocloud.io/ghippo # 需更改为你的镜像仓库
+          repo:
+            kind: HARBOR # 也可以是任何其他支持的 Helm Chart 仓库类别
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # 需更改为 chart repo url
+            auth:
+            username: "admin" # 你的镜像仓库用户名
+            password: "Harbor12345" # 你的镜像仓库密码
+          containers:
+            auth:
+              username: "admin" # 你的镜像仓库用户名
+              password: "Harbor12345" # 你的镜像仓库密码
         ```
 
     === "未安装 chart repo"
@@ -45,18 +45,18 @@
 
         ```yaml
         source:
-        intermediateBundlesPath: ghippo-offline # 到 charts-syncer 的相对路径
+          intermediateBundlesPath: ghippo-offline # 到 charts-syncer 的相对路径
                                     # 但不是此 YAML 文件和离线包之间的相对路径
         target:
-        containerRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
-        containerRepository: release.daocloud.io/ghippo # 需更改为你的镜像仓库
-        repo:
-          kind: LOCAL
-          path: ./local-repo # chart 本地路径
-        containers:
-          auth:
-          username: "admin" # 你的镜像仓库用户名
-          password: "Harbor12345" # 你的镜像仓库密码
+          containerRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
+          containerRepository: release.daocloud.io/ghippo # 需更改为你的镜像仓库
+          repo:
+            kind: LOCAL
+            path: ./local-repo # chart 本地路径
+          containers:
+            auth:
+              username: "admin" # 你的镜像仓库用户名
+              password: "Harbor12345" # 你的镜像仓库密码
         ```
 
 1. 执行同步镜像命令。

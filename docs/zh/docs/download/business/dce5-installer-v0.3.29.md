@@ -6,14 +6,14 @@
 
 | 文件名            | 版本    | 架构 | 文件大小 | 下载                                               | 更新日期   |
 | ------------------- | ------- | -------- | -------------------------------------------------- | ---------- | ------------------- |
-| offline-centos7-v0.3.29-amd64.tar | v0.3.29 | AMD64 和 Linux | 22.9 GB | [:arrow_down: 下载](ARM64 或信创) | 2022-12-16 |
-| offline-kylin-v10sp2-v0.3.29-arm64.tar | v0.3.29 | ARM64 和信创 | 19.9 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-v0.3.29-arm64.tar) | 2022-12-16 |
+| offline-centos7-v0.3.29-amd64.tar | v0.3.29 | AMD 64 | 22.9 GB | [:arrow_down: 下载](ARM64 或信创) | 2022-12-16 |
+| offline-kylin-v10sp2-v0.3.29-arm64.tar | v0.3.29 | ARM 64 | 19.9 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-v0.3.29-arm64.tar) | 2022-12-16 |
 
 ## 校验
 
 进入离线安装包下载目录。
 
-=== "AMD64 和 Linux"
+=== "AMD 64"
 
     执行以下命令校验安装包：
 
@@ -27,7 +27,7 @@
     offline-centos7-v0.3.29-amd64.tar: OK
     ```
 
-=== "ARM64 和信创"
+=== "ARM 64"
 
     执行以下命令校验安装包：
 
@@ -45,7 +45,7 @@
 
 成功校验离线包之后，
 
-=== "AMD64 和 Linux"
+=== "AMD 64"
 
     执行以下命令解压缩 tar 包：
 
@@ -53,7 +53,7 @@
     tar -zxvf offline-centos7-v0.3.29-amd64.tar
     ```
 
-=== "ARM64 和信创"
+=== "ARM 64"
 
     执行以下命令解压缩 tar 包：
 
