@@ -44,7 +44,7 @@ The DCE 5.0 commercial edition includes the following modules, which are plug-an
 | Container Management | Manage K8s core functions such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [v0.12.0](../../kpanda/03ProductBrief/release-notes.md#v0120) |
 | Observability | Provide rich graphic information such as dashboards, scene monitoring, data query, and alarms | [v0.11.1](../../insight/03ProductBrief/releasenote.md#v0111) |
 | Application Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [Release Notes](../../amamba/01ProductBrief/releasenote.md) |
-| Multi-cloud Orchestration| Centralized management of application orchestration of multi-cloud, hybrid cloud, and cross-cloud resources, with multi-cloud disaster recovery and fault recovery capabilities | [v0.3.0](../../kairship/01product/release-notes.md) |
+| Multicloud Orchestration| Centralized management of application orchestration of multicloud, hybrid cloud, and cross-cloud resources, with multicloud disaster recovery and fault recovery capabilities | [v0.3.0](../../kairship/01product/release-notes.md) |
 | Microservice Engine | Provides governance capabilities such as registration discovery, service governance, configuration management, and microservice gateway | [Release Notes](../../release/rn5.0.md) |
 | Service Mesh | A next-generation service mesh for cloud-native applications based on Istio open source technology | [v0.10.0](../../mspider/01Intro/release-notes.md) |
 | Middleware | Contains selected middleware such as RabbitMQ, Kafka, Elasticsearch, MySQL, Redis, MinIO, etc. | [Release Notes](../../release/rn5.0.md) |

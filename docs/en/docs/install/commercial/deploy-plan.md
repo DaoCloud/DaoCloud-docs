@@ -6,7 +6,7 @@ DCE 5.0 Commercial Edition provides two modes: classic mode and minimalist mode.
 
 The classic mode is suitable for multi-data centers across networks and regions, and its deployment mode is:
 
-- [Global Service Cluster](../../kpanda/07UserGuide/Clusters/ClusterRole.md#_1) Deploy all components of DCE 5.0: global management, container management, observability, application workbench, multi-cloud orchestration, mirroring Warehouses, microservice engines, service meshes, middleware, networks, and more.
+- [Global Service Cluster](../../kpanda/07UserGuide/Clusters/ClusterRole.md#_1) Deploy all components of DCE 5.0: global management, container management, observability, application workbench, multicloud orchestration, mirroring Warehouses, microservice engines, service meshes, middleware, networks, and more.
 - [Manage Cluster](../../kpanda/07UserGuide/Clusters/ClusterRole.md#_2) Deploy the Operator of [Kubean](https://github.com/kubean-io/kubean)
 - [Working cluster](../../kpanda/07UserGuide/Clusters/ClusterRole.md#_3) supports business applications and services (deploy the working cluster after successfully installing DCE)
 

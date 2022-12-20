@@ -1,57 +1,63 @@
-# 术语表
+# Glossary
 
-本页按字母顺序列出 DEC 5.0 常见的一些术语。
+This page lists some terms common to DEC 5.0 in alphabetical order.
 
 ### A
 
-- Abstraction, 抽象
+- Abstraction
 
-    在当今计算的背景/上下文中，抽象是一种对服务的消费（消费对象可以是计算机程序或人类），
-    在这个消费过程中会隐藏消费的细节，使整个系统更通用也更容易理解。
+    In the context of computing, an abstraction is a representation that
+    hides specifics from a consumer of [services](/service/)
+    (a consumer being a computer program or human),
+    making a system more generic and thus easily understood.
+    A good example is your laptop's operating system (OS).
+    It abstracts away all the details of how your computer works.
+    You don't need to know anything about CPU, memory, and how programs are handled,
+    you just operate the OS and the OS deals with the details.
+    All these details are hidden behind the OS "curtain" or abstraction.
 
-    电脑的操作系统就是一个很好的例子，它把计算机工作的所有细节都抽象出来了。
-    您不需要知道任何关于 CPU、内存以及程序如何被运行，只需在操作系统上安装好应用程序，系统就会处理所有运行相关的细节。
-    所有这些细节都隐藏在操作系统的 “幕布” 或抽象概念之后。
+    Systems typically have multiple abstraction layers.
+    This significantly simplifies development.
+    When programming, developers build components compatible with a particular abstraction layer and
+    don't have to worry about all underlying specifics that can be very heterogeneous.
+    If it works with the abstraction layer, it works with the system — no matter what's under the hood.
 
-    系统通常有多个抽象层，这可以大大简化开发工作。
-    编程时开发人员只需构建与特定抽象层兼容的组件，而不必担心可能各种异构的底层细节。
-    如果某些组件能与抽象层一起工作，无论底层是什么样的，它都能在操作系统中良好运行。
+- Addon
 
-- Addon, 扩展
-
-    扩展 DCE 功能的资源对象。
-    您可以通过[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md) -> [Helm 模板](../kpanda/07UserGuide/helm/README.md)安装更多附加扩展组件。
+    A resource object that extends the functionality of DCE.
+    You can install more additional extensions via
+    [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md) -> [Helm Template](../kpanda/07UserGuide/helm/README.md).
 
 - Admission Controller, 准入控制器
 
-    [准入控制器](https://kubernetes.io/zh-cn/docs/reference/access-authn-authz/admission-controllers/)是一段代码，
-    它会在请求通过认证和鉴权之后、对象被持久化之前拦截到达 API 服务器的请求。
+    An [Admission Controller](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/)
+    is a piece of code that intercepts requests to the Kubernetes API server prior to persistence of the object, but after the request is authenticated and authorized.
 
-    准入控制器可以执行验证（Validating）和/或变更（Mutating）操作。
-    变更（mutating）控制器可以根据被其接受的请求更改相关对象；验证（validating）控制器则不行。
+    Admission controllers may be validating, mutating, or both. Mutating controllers may modify related objects
+    to the requests they admit; validating controllers may not.
 
-    准入控制器限制创建、删除、修改对象的请求。
-    准入控制器也可以阻止自定义动作，例如通过 API 服务器代理连接到 Pod 的请求。
-    准入控制器不会（也不能）阻止读取（get、watch 或 list）对象的请求。
+    Admission controllers limit requests to create, delete, modify objects.
+    Admission controllers can also block custom verbs, such as a request connect to a Pod via an API server proxy.
+    Admission controllers do not (and cannot) block requests to read (get, watch or list) objects.
 
-- Affinity, 亲和性
+- Affinity
 
-    在 DCE 中亲和性是一组规则，它们为调度程序提供在何处放置 Pod 的提示信息。
+    Affinity in DCE is a set of rules that provide the scheduler with hints on where to place pods.
 
-    这些规则是使用 DCE Label 和 Pod 指定的选择算符定义的，
-    这些规则可以是必需的或首选的，这取决于您希望调度程序执行它们的严格程度。
+    These rules are defined using DCE Label and Pod specified selectors,
+    These rules can be required or preferred, depending on how strictly you want the scheduler to enforce them.
 
-    实际分为节点亲和性、Pod 间亲和性。
+    It is actually divided into node affinity and inter-Pod affinity.
 
-- Aggregation Layer, 聚合层
+- Aggregation Layer
 
-    聚合层允许您在自己的集群上安装额外的 K8s 风格的 API。
+    The aggregation layer allows Kubernetes to be extended with additional APIs, beyond what is offered by the core Kubernetes APIs. The additional APIs can either be ready-made solutions such as a metrics server, or APIs that you develop yourself.
 
-    当配置了 K8s API 服务器来支持额外的 API 时，您就可以在 K8s API 中增加 `APIService` 对象来申领（Claim）一个 URL 路径。
+    The aggregation layer is different from Custom Resources, which are a way to make the kube-apiserver recognise new kinds of object.
 
-- Alert Rule, [告警规则](../insight/06UserGuide/05alertcenter/alertrule.md)
+- [Alert Rule](../insight/06UserGuide/05alertcenter/alertrule.md)
 
-    在 Insight 中，这是基于资源状态创建的告警对象，可以自定义触发规则的条件以及通过何种方式发送通知的规则。
+    In Insight, this is an alert object created based on the resource status. You can customize the conditions for triggering rules and sending notifications.
 
 - Annotation, 注解
 
@@ -88,9 +94,25 @@
 
 - API 网关
 
-    API 网关是一种通过聚合多个应用程序的 API，并实现一站式管理的工具。
-    它允许组织将关键性功能移交到一个可集中管理的地方，例如身份验证和授权、限制应用程序之间的请求数量。
-    一个 API 网关则作为一个公共的接口，向 API 消费者（通常来自外部）提供服务。
+    An API gateway is a tool that
+    aggregates unique application APIs, making them all available in one place.
+    It allows organizations to move key functions,
+    such as authentication and authorization or limiting the number of requests between applications,
+    to a centrally managed location.
+    An API gateway functions as a common interface to (often external) API consumers.
+
+    If you’re making APIs available to external consumers,
+    you'll want one entry point to manage and control all access.
+    Additionally, if you need to apply functionality on those interactions,
+    an API gateway allows you to uniformly apply it to all traffic without requiring any app code changes.
+
+    Providing one single access point for various APIs in an application,
+    API gateways make it easier for organizations to apply cross-cutting business or security logic in a central location.
+    They also allow application consumers to go to a single address for all their needs.
+    An API gateway can simplify operational concerns like security and observability
+    by providing a single access point for requests to all web services in a system.
+    As all requests flow through the API gateway, it presents a single place to
+    add functionality like metrics-gathering, rate-limiting, and authorization.
 
 - App Container, 应用程序容器
 
@@ -355,7 +377,7 @@
 
 - CNI, Container network interface, 容器网络接口
 
-    [容器网络接口插件](https://kubernetes.io/zh-cn/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/)是遵循 appc/CNI 协议的一类网络插件。
+    [容器网络接口插件](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/)是遵循 appc/CNI 协议的一类网络插件。
 
     DCE 5.0 支持的 CNI 包括但不限于：
 
@@ -368,7 +390,7 @@
     - Multus-underlay
     - Spiderpool
 
-- [ConfigMap](https://kubernetes.io/zh-cn/docs/concepts/configuration/configmap/), 配置项
+- [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/), 配置项
 
     [ConfigMap](../kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md) 是一种 API 对象，用来将非机密性的数据保存到键值对中。
     使用时可以用作环境变量、命令行参数或者存储卷中的配置文件。
@@ -914,10 +936,10 @@
 
     Kubernetes 使用垃圾回收机制来清理资源，例如：
 
-    - [未使用的容器和镜像](https://kubernetes.io/zh-cn/docs/concepts/architecture/garbage-collection/#containers-images)
-    - [失败的 Pod](https://kubernetes.io//zh-cn/docs/concepts/workloads/pods/pod-lifecycle/#pod-garbage-collection)
-    - [目标资源拥有的对象](https://kubernetes.io//zh-cn/docs/concepts/overview/working-with-objects/owners-dependents/)
-    - [已完成的 Job](https://kubernetes.io//zh-cn/docs/concepts/workloads/controllers/ttlafterfinished/)
+    - [未使用的容器和镜像](https://kubernetes.io/docs/concepts/architecture/garbage-collection/#containers-images)
+    - [失败的 Pod](https://kubernetes.io//docs/concepts/workloads/pods/pod-lifecycle/#pod-garbage-collection)
+    - [目标资源拥有的对象](https://kubernetes.io//docs/concepts/overview/working-with-objects/owners-dependents/)
+    - [已完成的 Job](https://kubernetes.io//docs/concepts/workloads/controllers/ttlafterfinished/)
     - 过期或出错的资源
 
 - Gateway node, 网关工作节点
@@ -1014,7 +1036,7 @@
 
 - Image, 镜像
 
-    [镜像](https://kubernetes.io/zh-cn/docs/concepts/containers/images/)是保存的容器实例，它打包了应用运行所需的一组软件。
+    [镜像](https://kubernetes.io/docs/concepts/containers/images/)是保存的容器实例，它打包了应用运行所需的一组软件。
 
     镜像是软件打包的一种方式，可以将镜像存储在容器镜像仓库、拉取到本地系统并作为应用来运行。
     镜像中包含的元数据指明了运行什么可执行程序、是由谁构建的以及其他信息。
@@ -1067,12 +1089,12 @@
 
 - Ingress, 路由
 
-    [Ingress](https://kubernetes.io/zh-cn/docs/concepts/services-networking/ingress/)
+    [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
     是对集群中服务的外部访问进行管理的 API 对象，典型的访问方式是 HTTP。
 
     Ingress 可以提供负载均衡、SSL 终结和基于名称的虚拟托管。
 
-- Init Container, [Init 容器](https://kubernetes.io/zh-cn/docs/concepts/workloads/pods/init-containers/)
+- Init Container, [Init 容器](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/)
 
     应用容器运行前必须先运行完成的一个或多个 Init 容器。
 
@@ -1089,7 +1111,7 @@
 
 ### J, K
 
-- [Job](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/job/)
+- [Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
 
     [Job](../kpanda/07UserGuide/Workloads/CreateJobByImage.md) 是需要运行完成的确定性的或批量的任务。
 
@@ -1098,7 +1120,7 @@
 
 - Kops
 
-    [Kops](https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kops/)
+    [Kops](https://kubernetes.io/docs/setup/production-environment/tools/kops/)
     是一个命令行工具，可以帮助您创建、销毁、升级和维护生产级，高可用性的 Kubernetes 集群。
     Kops 目前仅支持 AWS。对 GCE、VMware vSphere 及其他第三方 PaaS 平台的支持还处于 Alpha 阶段。
 
@@ -1107,7 +1129,7 @@
 
 - kube-apiserver, k8s API 服务器
 
-    [kube-apiserver](https://kubernetes.io/zh-cn/docs/reference/command-line-tools-reference/kube-apiserver/)
+    [kube-apiserver](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/)
     是提供 Kubernetes API 服务的控制面组件。
     Kubernetes API 服务器验证并配置 API 对象的数据，这些对象包括 Pod、Service、replicationcontroller 等。
     API 服务器为 REST 操作提供服务，并为集群的共享状态提供前端， 所有其他组件都通过该前端进行交互。
@@ -1115,13 +1137,13 @@
     API 服务器是 Kubernetes 控制平面的组件，该组件负责公开了 Kubernetes API，负责处理接受请求的工作。
     API 服务器是 Kubernetes 控制平面的前端。
 
-    Kubernetes API 服务器的主要实现是 [kube-apiserver](https://kubernetes.io//zh-cn/docs/reference/command-line-tools-reference/kube-apiserver/)。
+    Kubernetes API 服务器的主要实现是 [kube-apiserver](https://kubernetes.io//docs/reference/command-line-tools-reference/kube-apiserver/)。
     `kube-apiserver` 设计上考虑了水平扩缩，也就是说，它可通过部署多个实例来进行扩缩。
     您可以运行 `kube-apiserver` 的多个实例，并在这些实例之间平衡流量。
 
 - kube-controller-manager
 
-    [kube-controller-manager](https://kubernetes.io/zh-cn/docs/reference/command-line-tools-reference/kube-controller-manager/)
+    [kube-controller-manager](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/)
     是一个守护进程，是 Master 节点上运行控制器的组件，负责运行控制器进程。
 
     从逻辑上讲，每个控制器都是一个单独的进程，
@@ -1129,33 +1151,33 @@
 
 - kube-proxy
 
-    [kube-proxy](https://kubernetes.io/zh-cn/docs/reference/command-line-tools-reference/kube-proxy/)
+    [kube-proxy](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/)
     是集群中每个节点上运行的网络代理，是实现 Kubernetes Service 概念的组成部分。
 
     kube-proxy 维护节点上的一些网络规则，这些网络规则会允许从集群内部或外部的网络会话与 Pod 进行网络通信。
 
     如果操作系统提供了可用的数据包过滤层，则 kube-proxy 会通过它来实现网络规则。否则，kube-proxy 仅做流量转发。
 
-- [kube-scheduler](https://kubernetes.io/zh-cn/docs/reference/command-line-tools-reference/kube-scheduler/)
+- [kube-scheduler](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/)
 
     这是一个控制平面组件，负责监视新创建的、未指定运行节点的 Pod，选择节点让 Pod 在上面运行。
 
     调度决策考虑的因素包括单个 Pod 及 Pods 集合的资源需求、软硬件及策略约束、亲和性及反亲和性规范、数据位置、工作负载间的干扰及最后时限。
 
-- [Kubeadm](https://kubernetes.io/zh-cn/docs/reference/setup-tools/kubeadm/)
+- [Kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/)
 
     用来快速安装 Kubernetes 并搭建安全稳定的集群的工具。您可以使用 Kubeadm 安装控制面和工作节点组件。
 
 - kubectl
 
-    [kubectl](https://kubernetes.io/zh-cn/docs/reference/kubectl/) 是用来和 Kubernetes 集群进行通信的命令行工具。
+    [kubectl](https://kubernetes.io/docs/reference/kubectl/) 是用来和 Kubernetes 集群进行通信的命令行工具。
     您可以使用 `kubectl` 创建、检视、更新和删除 Kubernetes 对象。
 
 - kubelet
 
     一个在集群中每个节点上运行的代理。它保证容器都运行在 Pod 中。
 
-    [kubelet](https://kubernetes.io/zh-cn/docs/reference/command-line-tools-reference/kubelet/)
+    [kubelet](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/)
     接收一组通过各类机制提供给它的 PodSpecs，确保这些 PodSpecs 中描述的容器处于运行状态且健康。
     kubelet 不会管理不是由 Kubernetes 创建的容器。
 
@@ -1185,7 +1207,7 @@
 
 - Kubernetes API
 
-    [Kubernetes API](https://kubernetes.io/zh-cn/docs/concepts/overview/kubernetes-api/)
+    [Kubernetes API](https://kubernetes.io/docs/concepts/overview/kubernetes-api/)
     是通过 RESTful 接口提供 Kubernetes 功能服务并负责集群状态存储的应用程序。
 
     Kubernetes 资源和"意向记录"都是作为 API 对象储存的，并可以通过调用 RESTful 风格的 API 进行修改。
@@ -1463,7 +1485,7 @@
 - Operator Pattern, Operator 模式
 
     一种用于管理自定义资源的专用控制器。
-    [Operator 模式](https://kubernetes.io//zh-cn/docs/concepts/extend-kubernetes/operator/)是一种系统设计，将控制器关联到一个或多个自定义资源。
+    [Operator 模式](https://kubernetes.io//docs/concepts/extend-kubernetes/operator/)是一种系统设计，将控制器关联到一个或多个自定义资源。
 
     除了使用作为 Kubernetes 自身一部分的内置控制器之外，您还可以通过将控制器添加到集群中来扩展 Kubernetes。
 
@@ -1546,7 +1568,7 @@
 
     关于 Pod 在其生命周期中处于哪个阶段的更高层次概述。
 
-    [Pod 生命周期](https://kubernetes.io/zh-cn/docs/concepts/workloads/pods/pod-lifecycle/)是关于 Pod
+    [Pod 生命周期](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)是关于 Pod
     处于哪个阶段的概述。包含了下面 5 种可能的阶段：
 
     - Running
@@ -1562,7 +1584,7 @@
 
     Pod 优先级表示一个 Pod 相对于其他 Pod 的重要性。
 
-    [Pod 优先级](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/pod-priority-preemption/#pod-priority)允许用户为
+    [Pod 优先级](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/#pod-priority)允许用户为
     Pod 设置高于或低于其他 Pod 的优先级，这对于生产集群工作负载而言是一个重要的特性。
 
 - Pod Security Policy, Pod 安全策略
@@ -1574,7 +1596,7 @@
     运行时必须满足这些条件。Pod 安全策略控制实现上体现为一个可选的准入控制器。
 
     PodSecurityPolicy 已于 Kubernetes v1.21 起弃用，并在 v1.25 中删除。
-    作为替代方案，请使用 [Pod 安全准入](https://kubernetes.io/zh-cn/docs/concepts/security/pod-security-admission/)或第三方准入插件。
+    作为替代方案，请使用 [Pod 安全准入](https://kubernetes.io/docs/concepts/security/pod-security-admission/)或第三方准入插件。
 
 - Policy as code, PaC, 策略即代码
 
@@ -1603,7 +1625,7 @@
 
     Kubernetes 中的抢占逻辑通过驱逐节点上的低优先级 Pod 来帮助悬决的 Pod 找到合适的节点。
 
-    如果一个 Pod 无法调度，调度器会尝试[抢占](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/pod-priority-preemption/#preemption)较低优先级的 Pod，以使得悬决的 Pod 有可能被调度。
+    如果一个 Pod 无法调度，调度器会尝试[抢占](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/#preemption)较低优先级的 Pod，以使得悬决的 Pod 有可能被调度。
 
 - Prometheus
 
@@ -1628,7 +1650,7 @@
 
     客户端与代理进行交互；代理将客户端的数据复制到实际服务器；实际服务器回复代理；代理将实际服务器的回复发送给客户端。
 
-    [kube-proxy](https://kubernetes.io/zh-cn/docs/reference/command-line-tools-reference/kube-proxy/)
+    [kube-proxy](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/)
     是集群中每个节点上运行的网络代理，实现了部分 Kubernetes Service 概念。
 
     您可以将 kube-proxy 作为普通的用户态代理服务运行。
@@ -1748,10 +1770,10 @@
 
     Secret 允许用户对如何使用敏感信息进行更多的控制，并减少信息意外暴露的风险。
     默认情况下，Secret 值被编码为 base64 字符串并以非加密的形式存储，
-    但可以配置为[静态加密（Encrypt at rest）](https://kubernetes.io/zh-cn/docs/tasks/administer-cluster/encrypt-data/#ensure-all-secrets-are-encrypted)。
+    但可以配置为[静态加密（Encrypt at rest）](https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/#ensure-all-secrets-are-encrypted)。
 
     Pod 可以通过多种方式引用 Secret，例如在卷挂载中引用或作为环境变量引用。Secret 设计用于机密数据，而
-    [ConfigMap](https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/configure-pod-configmap/)
+    [ConfigMap](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/)
     设计用于非机密数据。
 
 - Security Context, 安全上下文

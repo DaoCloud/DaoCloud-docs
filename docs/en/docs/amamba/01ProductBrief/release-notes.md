@@ -1,167 +1,167 @@
-# 应用工作台 Release Notes
+# Application Workbench Release Notes
 
-本页列出应用工作台的 Release Notes，便于您了解各版本的演进路径和特性变化。
+This page lists the Release Notes of the application workbench, so that you can understand the evolution path and feature changes of each version.
 
 ## v0.10
 
-发布日期：2022-11-30
+Release date: 2022-11-30
 
-- **新增** 新增了 gitops 中的仓库功能，支持导入、删除
-- **新增** 新增了 gitops 应用的同步功能
-- **修复** 修复了 admin 用户未对部署目标（cluster/namespace）鉴权的问题
-- **修复** 修复了 gitops 应用创建时间、同步开始时间和同步结束时间为 `Invalida date` 的错误
-- **修复** 修复了获取 nacos 注册中心列表数据的错误
-- **修复** 修复了列出工作负载接口通过名称排序报错
-- **修复** 修复了集群解绑并重新绑定后，在 ArgoCD 中 destionation 中的 cluster 和 namespace 丢失的问题
-- **修复** 修复了在更新 namespace 的 label 导致 namespace 和 workspace 绑定关系丢失的问题
-- **修复** 修复了在完成流水线后，同步 jenkins 的 config 到数据库时，trigger 转换的错误
-- **修复** 修复了因为集群的 kubeconfig 变更导致的 ArgoCD cluster 和 jenkins 中 kubeconfig 类型的 credential 不同步的问题
-- **修复** 修复了仓库列表出现的无序和分页问题
-- **修复** 修复了 from-jar 上传超过 32M 文件失败的问题
-- **优化** 优化了应用接入服务网格流程
+- **NEW** Added the warehouse function in gitops, which supports import and deletion
+- **NEW** Added sync function for gitops app
+- **Fix** Fixed the problem that the admin user was not authenticated to the deployment target (cluster/namespace)
+- **FIXED** Fixed gitops app creation time, sync start time and sync end time with `Invalida date` bug
+- **Fix** Fixed the error of getting nacos registry list data
+- **FIXED** Fixed listing workload interfaces sorted by name error
+- **Fix** Fixed cluster and namespace lost in destionation in ArgoCD after cluster unbind and rebind
+- **Fix** Fixed the problem that the binding relationship between namespace and workspace was lost when updating the label of namespace
+- **Fix** Fixed the error of trigger conversion when synchronizing the jenkins config to the database after completing the pipeline
+- **Fix** Fixed the problem that the credential of the kubeconfig type in the ArgoCD cluster and jenkins was out of sync due to the change of the cluster's kubeconfig
+- **FIXED** Fixed unordered and paginated problems in warehouse list
+- **Fix** Fixed the problem that from-jar failed to upload more than 32M files
+- **Optimization** Optimized the application access service grid process
 
 ## v0.9
 
-发布日期：2022-11-18
+Release date: 2022-11-18
 
-- **新增** jenkins-agent 镜像持续发布
-- **新增** 添加了使用中间件的数据库的选项
-- **修复** rollout 在不同 workspace 下无法区分的问题
-- **修复** gitops 模块未鉴权的问题
-- **修复** 偶现的 pipeline step 状态不正确的问题
-- **修复** 获取 helmchart 的 description 为空的问题
-- **修复** 创建 namespace 没有校验 storage 的问题
-- **修复** list argocd repository 出现的无序和分页问题的修复
-- **修复** from-jar 上传超过 32M 文件失败的问题的修复
-- **修复** 获取 pipeline 日志的时候如果日志量过大则无法获取全量日志的问题
-- **优化** 获取 rollout 镜像列表，应用组列表，原生应用列表等性能优化
-- **优化** from-jar 用到的 image 不再写死在源代码中，通过 env 的方式传递，并保证安装器能正确获取
-- **升级** jenkins 从 2.319.1 升级到 2.346.2,kubernetes plugin 升级到 3734.v562b_b_a_627ea_c，相关的 plugins 也作了升级
+- **NEW** The jenkins-agent image is continuously released
+- **NEW** Added option to use database from middleware
+- **Fix** the problem that rollout cannot be distinguished under different workspaces
+- **Fix** the problem that the gitops module is not authenticated
+- **Fix** the occasional pipeline step status is incorrect
+- **Fix** the problem that the description obtained from helmchart is empty
+- **FIXED** The problem of creating a namespace without verifying storage
+- **Fix** fix for disorder and pagination problems in list argocd repository
+- **Fix** Fix the problem that from-jar failed to upload more than 32M files
+- **Fix** The problem that the full log cannot be obtained if the log volume is too large when obtaining the pipeline log
+- **Optimization** Obtain rollout mirror list, application group list, native application list and other performance optimization
+- **Optimize** The image used by from-jar is no longer hard-coded in the source code, passed through env, and ensured that the installer can get it correctly
+- **Upgrade** jenkins is upgraded from 2.319.1 to 2.346.2, kubernetes plugin is upgraded to 3734.v562b_b_a_627ea_c, related plugins are also upgraded
 
 ## v0.8
 
-发布日期：2022-11-04
+Release date: 2022-11-04
 
-### API
+### APIs
 
-- **新增** 获取和更新 application json 的接口
-- **新增** argocd application 的创建、列表、查询、修改和删除接口
-- **新增** 获取持续部署健康状态和同步状态的接口
-- **新增** 同步 argocd application 的接口
-- **新增** helm release 接口
-- **新增** 同步 workspace 下的资源到 argocd 中，包括 workspace,cluster 和 namespace
-- **新增** 查询 Workload 支持 appgroup 的匹配 && workload name 的模糊匹配
-- **新增** 创建和更新应用时支持对接微服务相关功能，包括服务注册，服务治理，指标监控和链路追踪
-- **新增** 列出 workspace 绑定的 namespace 接口支持搜索和排序
-- **修复** 创建 Application 失败之后，新增了回滚功能
-- **修复** from-git、from-jar 可以在前端不传递 imageTag 字段
-- **修复** 在全新的 workspace 创建 credential 失败
-- **修复** from-jar 和 from-git 的 dag 图在没有 registry credential 的情况下部分无法显示的问题
-- **修复** 流水线里含有空的 cron 字符串的时候，空指针错误
-- **修复** 创建 Application 之后,去 pipeline 模块进行更新，如果名字超出限制会报错的 bug
-- **修复** 创建 namespace 失败但是没有回滚删除的问题
-- **修复** 获取运行后某个 step 的日志，在某些特殊情况下，step_id 非整形的处理
-- **修复** 修改流水线名字的时候，旧名字和新名字一样的时候，页面显示修改失败的处理
-- **修复** image 里含有端口号的时候，校验误认为是 image-tag 的修复
-- **优化** argocd 的初始化认证和连接
+- **NEW** API for getting and updating application json
+- **Add** argocd application creation, list, query, modification and deletion interface
+- **NEW** The interface to obtain the health status and synchronization status of continuous deployment
+- **NEW** interface for synchronous argocd application
+- **New** helm release interface
+- **NEW** Synchronize resources under workspace to argocd, including workspace, cluster and namespace
+- **NEW** Query Workload supports appgroup matching && workload name fuzzy matching
+- **NEW** Supports docking microservice-related functions when creating and updating applications, including service registration, service governance, indicator monitoring and link tracking
+- **NEW** List the namespace interfaces bound to the workspace to support searching and sorting
+- **FIXED** Added a rollback function after failing to create an Application
+- **Fix** from-git, from-jar can not pass the imageTag field in the front end
+- **FIXED** Credential creation failed in new workspace
+- **Fix** the problem that the dag graphs of from-jar and from-git cannot be displayed partially without registry credential
+- **FIX** Null pointer error when pipeline contains empty cron string
+- **Fix** After creating the Application, go to the pipeline module to update, if the name exceeds the limit, an error will be reported
+- **FIXED** Create namespace failed but no rollback delete
+- **Fix** Obtain the log of a step after running, in some special cases, the step_id is not shaped
+- **Fix** When modifying the name of the pipeline, when the old name is the same as the new name, the page displays the processing of modification failure
+- **Fix** When the image contains a port number, the verification is mistakenly regarded as an image-tag fix
+- **Optimize** argocd initial authentication and connection
 
-### 基础设施
+### infrastructure
 
-- **新增** arm 架构的基础镜像持续发布
-- **修复** 更改 jenkins agent 可以拉起的 pod 数量为 100，更改 connectTimeout 和 readTimeout 2 个超时参数
-- **新增** 添加 jenkins 部署在非 Global 集群的文档
-- **新增** 添加非 docker 运行时的方案文档
+- **NEW** The basic image of the arm architecture is continuously released
+- **Fix** Change the number of pods that jenkins agent can pull up to 100, change connectTimeout and readTimeout 2 timeout parameters
+- **NEW** Added documentation for jenkins deployment in non-Global clusters
+- **NEW** Add solution documentation for non-docker runtimes
 
 ## v0.7
 
-发布日期：2022-9-28
+Release date: 2022-9-28
 
-### API
+### APIs
 
-- **新增** 支持在 containerd 运行时的集群上运行流水线
-- **新增**  worksapce 角色操作鉴权
-- **新增** 添加列出应用组的接口
-- **新增** 添加创建 ResourceQuota 的接口
-- **新增** 添加获取集群插件安装信息的接口
-- **新增** 添加获取 rollout 的 container 镜像的接口
-- **新增** 增加 metircs 接口，提供 go gc 和 prometheus 默认的指标，以及 jenkins event 的 counter
-- **新增** 支持对包含多个端口的 workload 进行灰度发布
-- **新增** 创建 application 的时候 svc 支持 NodePort 和 Loadbalance
-- **修复** 创建命名空间时报 Namespace 不存在，ResourceQuota 不存在的错误导致创建 Namespace 失败
-- **修复** 选择 workspace 关联集群和命名空间错误
+- **NEW** Support for running pipelines on clusters with containerd runtime
+- **Add** worksapce role operation authentication
+- **NEW** Added interface for listing application groups
+- **NEW** Add interface for creating ResourceQuota
+- **NEW** Add an interface to obtain cluster plug-in installation information
+- **NEW** Added an interface to get the container image of rollout
+- **NEW** Added the metircs interface, providing go gc and prometheus default indicators, as well as the counter of jenkins event
+- **NEW** Support grayscale publishing for workloads containing multiple ports
+- **NEW** When creating an application, svc supports NodePort and Loadbalance
+- **FIXED** When creating a namespace, the Namespace does not exist, and the error of ResourceQuota does not exist, resulting in the failure to create the Namespace
+- **Fix** select workspace associated cluster and namespace error
 
-### 基础设施
+### infrastructure
 
-- **新增** 添加工作空间鉴权以及部署资源所在 cluster、namespace 鉴权
-- **修复** image 字段只校验了长度，没有按照需求校验
-- **新增** 部署的时候安装 argo cd
-- **优化** amamba charts 安装完成提示语优化
-- **优化** amamba charts 离线安装优化
+- **NEW** Add workspace authentication and cluster and namespace authentication where resources are deployed
+- **Fix** The image field only checks the length, not as required
+- **NEW** Install argo cd when deploying
+- **Optimization** amamba charts installation completion prompt optimization
+- **Optimization** amamba charts offline installation optimization
 
 ## v0.6
 
-发布日期：2022-9-21
+Release date: 2022-9-21
 
-### API
+### APIs
 
-- **新增** 金丝雀发布列表、更新和删除接口
-- **新增** 金丝雀详情信息页
-- **新增** 新增 core apigroup，将 workspace 和 namespace 相关的接口移至该 group 下
-- **新增** helm 创建及相关接口（获取集群的 registry，指定 chart 的详情和版本信息）
-- **新增** 流水线，流水线运行记录搜索
-- **修复** 修改命名空间 label 时报错配额检查错误
+- **New** Canary release list, update and delete interface
+- **NEW** Canary Details Page
+- **NEW** Added core apigroup, and moved workspace and namespace-related interfaces to this group
+- **Add** helm creation and related interfaces (get the registry of the cluster, specify the details and version information of the chart)
+- **NEW** Pipeline, pipeline running record search
+- **FIXED** Quota check error reported when modifying namespace label
 
-### API 服务
+### API Services
 
-- **新增** 通过 chart 安装时会一并安装 GProductNavigator 和 GProductPorxy 等 CR
-- **优化** 优化 XML 的序列化与反序列化，gorm 的查询语法，pageutil 模型统一化
+- **NEW** CR such as GProductNavigator and GProductPorxy will be installed when installing via chart
+- **Optimize** Optimize XML serialization and deserialization, gorm query syntax, pageutil model unification
 
-### 基础设施
+### infrastructure
 
-- **新增** 凭证 CRUD 和流水线运行 CRUD 接口的 E2E
-- **优化** 优化 workload 列表的实现，性能大幅提升
-- **新增** 更新应用工作台简介、快速创建流水线、使用图形化编辑流水和功能总览产品文档
+- **NEW** E2E for credential CRUD and pipeline running CRUD interface
+- **Optimize** Optimize the implementation of the workload list, and the performance has been greatly improved
+- **NEW** Update the introduction of the application workbench, quickly create pipelines, use graphical editing pipelines and function overview product documentation
 
 ## v0.5
 
-发布日期：2022-8-21
+Release date: 2022-8-21
 
-- **新增** 添加删除原生应用的接口
-- **新增** 获取 secretReference 列表、验证 secret、镜像仓库是否正确、获取镜像 tag 列表
-- **新增** 列出开启了灰度发布的 deployment 名称
-- **新增** 添加命名空间相关接口，包括列出命名空间列表，创建，更新，删除命名空间
-- **新增** 绑定命名空间至 workspace
-- **新增** 列出所有的非 grpc-gateway 的 URL
-- **新增** 运行流水线的 http 接口，支持所有 build parameter，包括文件参数
-- **移除** 因为新增运行流水线的 http 接口,运行流水线的 gprc-gateway 接口被移除
-- **新增** 当创建的 rollout 没有指定的内置分析模板时自动安装
-- **新增** 流水线添加 webhook 的触发方式
-- **新增** workload 跳转 kpanda
-- **修复** 重命名流水线时流水线运行记录未修改
-- **修复** 修改 mysql 的默认时区为东八区
+- **NEW** Add interface for deleting native applications
+- **NEW** Get the secretReference list, verify the secret, whether the mirror warehouse is correct, and get the mirror tag list
+- **NEW** List the names of deployments with grayscale release enabled
+- **NEW** Add namespace-related interfaces, including listing namespaces, creating, updating, and deleting namespaces
+- **Add** bind namespace to workspace
+- **NEW** List all non-grpc-gateway URLs
+- **NEW** The http interface for running the pipeline supports all build parameters, including file parameters
+- **REMOVED** The gprc-gateway interface for running the pipeline is removed because of the new http interface for running the pipeline
+- **NEW** Automatically install when a rollout is created without a specified built-in analysis template
+- **NEW** The trigger method of adding webhook to the pipeline
+- **Added** workload jump kpanda
+- **Fix** Pipeline running records are not modified when renaming pipeline
+- **Fix** Modify the default time zone of mysql to East Eighth District
 
 ## v0.4
 
-发布日期：2022-7-25
+Release date: 2022-7-25
 
-- **新增** 基于 git 创建应用、生成流水线
-- **新增** 基于 jar 包创建应用、生成流水线
-- **新增** 在运行到需要审核的步骤时，指定的用户可以进行审核：批准/取消
-- **新增** 流水线创建字段的校验
-- **新增** 前端页面获取 jenkinsjson，修改 jenkinsjson 后保存到 db，以及 jenkinsfile 和 jenkinsjson 修改的同步
-- **新增** 添加列出工作负载的 API 接口
-- **新增** 进入流水线运行记录详情页，点击`运行报告` tab 页，查看任务状态
-- **优化** 当流水线设置不允许并发构建且存在运行中的流水线时返回错误
-- **优化** 获取流水线参数接口性能优化至 ms 级
-- **优化** 使用 `Generic Event Plugin` 插件实现流水线配置及流水线运行状态实时同步
+- **NEW** Create applications and generate pipelines based on git
+- **NEW** Create applications and generate pipelines based on jar packages
+- **NEW** When running to a step that needs to be reviewed, the specified user can review: Approve/Cancel
+- **NEW** Added verification of pipeline creation fields
+- **New** Get jenkinsjson on the front-end page, save it to db after modifying jenkinsjson, and synchronize the modification of jenkinsfile and jenkinsjson
+- **NEW** Added an API interface for listing workloads
+- **Add** Enter the pipeline running record details page, click the `Run Report` tab page to view the task status
+- **Optimization** Return error when pipeline settings do not allow concurrent builds and there are pipelines running
+- **Optimization** The performance of the interface for obtaining pipeline parameters is optimized to the ms level
+- **Optimization** Use the `Generic Event Plugin` plug-in to realize real-time synchronization of pipeline configuration and pipeline running status
 
 ## v0.3
 
-发布日期：2022-7-08
+Release date: 2022-7-08
 
-- **新增** 基于镜像创建应用、列出所有原生的工作负载的 API 接口
-- **新增** 支持 kubeconfig、访问令牌的密钥创建
-- **新增** 提供可见 workspace 列表，创建 ns 和 ns 列表的 API
-- **新增** 流水线创建支持构建设置、触发器设置（定时触发和代码源触发）、基于 git 仓库 jenkinsfile 的单分支流水线、Jenkinsfile 校验
-- **新增** 流水线运行记录详情、全量和分步骤日志、支持删除、重放和取消操作
-- **新增** E2E 测试覆盖率自动计算、持续性能测试报告、自动更新依赖
+- **NEW** API interface for creating applications based on images and listing all native workloads
+- **Add** support for kubeconfig, access token key creation
+- **NEW** Provide API for creating visible workspace list, creating ns and ns list
+- **NEW** Pipeline creation supports build settings, trigger settings (timing trigger and code source trigger), single-branch pipeline based on git warehouse jenkinsfile, Jenkinsfile verification
+- **Add** Pipeline running record details, full and step-by-step logs, support for delete, replay and cancel operations
+- **New** E2E test coverage automatic calculation, continuous performance test report, automatic update dependency

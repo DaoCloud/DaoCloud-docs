@@ -1,12 +1,12 @@
 # deployment strategy
 
-Multi-cloud orchestration supports viewing the deployment policy list of the current instance and its associated multi-cloud resources on the interface, supports creating and editing deployment policy information in YAML, and only provides a delete button for idle deployment policies.
+Multicloud orchestration supports viewing the deployment policy list of the current instance and its associated multicloud resources on the interface, supports creating and editing deployment policy information in YAML, and only provides a delete button for idle deployment policies.
 
-Deployment policies define how resources are distributed across multi-cloud and multi-cluster.
+Deployment policies define how resources are distributed across multicloud and multi-cluster.
 
 Follow the steps below to create a deployment strategy.
 
-1. After entering a multi-cloud instance, in the left navigation bar, click `Policy Management` -> `Deployment Policy`, and click the `YAML Create` button in the upper right corner.
+1. After entering a multicloud instance, in the left navigation bar, click `Policy Management` -> `Deployment Policy`, and click the `YAML Create` button in the upper right corner.
 
     ![image](../images/deploy01.png)
 

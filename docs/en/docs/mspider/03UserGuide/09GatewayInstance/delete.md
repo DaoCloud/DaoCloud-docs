@@ -6,7 +6,7 @@ If you want to delete a cluster from the gateway list, you can follow the steps 
 
 This is a recommended operation to prevent accidental deletion.
 
-1. Click `Grid Gateway` in the left navigation bar, click the `...` button on the right side of the grid list, and select `Delete` in the pop-up menu.
+1. Click `mesh Gateway` in the left navigation bar, click the `...` button on the right side of the mesh list, and select `Delete` in the pop-up menu.
 
     ![delete-gateway](../../images/delete-gate01.png)
 

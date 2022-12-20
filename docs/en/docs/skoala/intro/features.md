@@ -15,7 +15,7 @@ Unified management of traditional microservices and cloud-native microservices, 
 In terms of traffic management, the online traffic management solution can be quickly integrated with mainstream open source microservice frameworks, and Sentinel and Mesh can be used to solve pain points in different production situations.
 
 -Support the east-west traffic of traditional microservices governed by Sentinel using rules such as flow control, circuit breaker downgrade, hotspot, system, authorization, and cluster flow control.
-- Supports managing microservice traffic in the grid through Service Mesh through virtual services, target rules, and gateway rules.
+- Supports managing microservice traffic in the mesh through Service Mesh through virtual services, target rules, and gateway rules.
 
 ## Microservice Configuration Center
 

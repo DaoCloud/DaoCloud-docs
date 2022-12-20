@@ -1,10 +1,10 @@
 # Applicable scene
 
-## Application multi-cloud deployment and cross-cloud disaster recovery
+## Application multicloud deployment and cross-cloud disaster recovery
 
-**Multi-cloud combined deployment**
+**Multicloud combined deployment**
 
-According to the combination of cloud platforms with different cost performance, combined with different application scenarios, multi-cloud combination is carried out to reduce the overall cost. For industry users with high security requirements such as finance, based on the security and sensitivity requirements of business data, some business applications are deployed in the private cloud environment, while non-sensitive applications are deployed in cloud clusters for unified management .
+According to the combination of cloud platforms with different cost performance, combined with different application scenarios, multicloud combination is carried out to reduce the overall cost. For industry users with high security requirements such as finance, based on the security and sensitivity requirements of business data, some business applications are deployed in the private cloud environment, while non-sensitive applications are deployed in cloud clusters for unified management .
 
 ![Scenario 1](../images/sce1.jpg)
 

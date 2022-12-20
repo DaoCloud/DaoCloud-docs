@@ -18,7 +18,7 @@ The virtual service provides routing support for HTTP, TCP, and TLS protocols.
 
     To avoid possible misconfigurations, it is recommended to use FQDNs for service references.
     The hosts field is valid for both HTTP and TCP services.
-    Services in the grid, that is, services registered in the service registry, must be referenced using their registered names; only Gateway-defined services can use IP addresses.
+    Services in the mesh, that is, services registered in the service registry, must be referenced using their registered names; only Gateway-defined services can use IP addresses.
 
     Example:
 
@@ -33,7 +33,7 @@ The virtual service provides routing support for HTTP, TCP, and TLS protocols.
     These Hosts can be exposed outside the mesh by binding the VirtualService to the same Host's Gateway Rules.
 
     Mesh uses the default reserved word mesh to refer to all sidecars in the mesh.
-    When this field is omitted, the default value (mesh) will be used, that is, it will take effect for all Sidecars in the grid.
+    When this field is omitted, the default value (mesh) will be used, that is, it will take effect for all Sidecars in the mesh.
     If gateway rules are set for the gateways field (there can be more than one), it will only be applied to the declared gateway rules.
     If you want to take effect on gateway rules and all services at the same time, you need to explicitly add mesh to the gateways list.
 

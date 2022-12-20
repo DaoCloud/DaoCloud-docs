@@ -4,7 +4,7 @@
 
 **Pain points**
 
-- On-cloud, off-cloud, and multi-cloud environment systems cannot be managed in a unified manner, and faults must be checked one by one, resulting in low operation and maintenance efficiency and high costs.
+- On-cloud, off-cloud, and multicloud environment systems cannot be managed in a unified manner, and faults must be checked one by one, resulting in low operation and maintenance efficiency and high costs.
 - Different data are collected separately, which leads to the inability to correlate and analyze the data, and it is difficult to troubleshoot.
 
 **solution** 

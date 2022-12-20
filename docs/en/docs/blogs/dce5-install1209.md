@@ -4,167 +4,167 @@ tagline: ""
 description: ""
 category: Kubernetes
 tags: []
-last_updated: 
+last_updated:
 ---
 
-# 保姆式安装 DCE 5.0 社区版
+# Nanny install DCE 5.0 Community Edition
 
-作者：[SAMZONG](https://github.com/SAMZONG)
+Author: [SAMZONG](https://github.com/SAMZONG)
 
-本文完成了从 0 到 1 的 DCE 5.0 社区版安装，包含了 K8s 集群、依赖项、网络、存储等细节及更多注意事项。
+This article completes the installation of DCE 5.0 Community Edition from 0 to 1, including K8s cluster, dependencies, network, storage and other details and more considerations.
 
-## 集群规划
+## Cluster planning
 
-计划使用 3 台 UCloud 的 VM，配置均为 8 核 16G。
+It is planned to use 3 UCloud VMs, all configured with 8-core 16G.
 
-| 角色 | 主机名 | 操作系统 | IP | 配置 |
+| Role | Hostname | Operating System | IP | Configuration |
 | --- | --- | --- | --- | --- |
-| master | master-k8s-com | CentOS 7.9 | 10.23.245.63 | 8 核 16G 300GB |
-| node01 | node01-k8s-com | CentOS 7.9 | 10.23.104.173 | 8 核 16G 300GB |
-| node02 | node02-k8s-com | CentOS 7.9 | 10.23.112.244 | 8 核 16G 300GB |
+| master | master-k8s-com | CentOS 7.9 | 10.23.245.63 | 8 cores 16G 300GB |
+| node01 | node01-k8s-com | CentOS 7.9 | 10.23.104.173 | 8 cores 16G 300GB |
+| node02 | node02-k8s-com | CentOS 7.9 | 10.23.112.244 | 8 cores 16G 300GB |
 
-计划采用的集群组件为：
+The planned cluster components are:
 
-- Kubernetes  1.24.8
-- CRI containerd
-- CNI Calico
-- StorageClass HwameiStior
+- Kubernetes 1.24.8
+-CRI containerd
+-CNI Calico
+-StorageClass HwameiStior
 
-## 节点系统优化
+## Node system optimization
 
-安装前先对 3 个节点做了一些优化。
+Do some optimizations on 3 nodes before installation.
 
-1. 配置主机名
+1. Configure the hostname
 
-    ```bash
-    hostnamctl set-hostname master-k8s-com
-    ```
+     ```bash
+     hostnamctl set-hostname master-k8s-com
+     ```
 
-1. 添加 /etc/hosts 配置
+1. Add /etc/hosts configuration
 
-    ```bash
-    cat <<EOF | tee /etc/hosts
-    10.23.245.63    master-k8s-com
-    10.23.104.173   node01-k8s-com
-    10.23.112.244   node02-k8s-com
-    EOF
-    ```
+     ```bash
+     cat <<EOF | tee /etc/hosts
+     10.23.245.63 master-k8s-com
+     10.23.104.173 node01-k8s-com
+     10.23.112.244 node02-k8s-com
+     EOF
+     ```
 
-1. 禁用 Swap
+1. Disable Swap
 
-    ```bash
-    swapoff -a
-    sed -i '/ swap / s/^/#/' /etc/fstab
-    ```
+     ```bash
+     swapoff -a
+     sed -i '/swap/s/^/#/' /etc/fstab
+     ```
 
-1. 禁用 SElinux
+1. Disable SElinux
 
-    ```bash
-    setenforce 0
-    sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
-    ```
+     ```bash
+     setenforce 0
+     sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+     ```
 
-1. 关闭防火墙
+1. Turn off the firewall
 
-    ```bash
-    systemctl stop firewalld
-    systemctl disable firewalld
-    ```
+     ```bash
+     systemctl stop firewalld
+     systemctl disable firewalld
+     ```
 
-1. 允许 iptables 检查桥接流量
+1. Allow iptables to inspect bridged traffic
 
-    加载 `br_netfilter` 模块：
+     Load the `br_netfilter` module:
 
-    ```bash linenums="1"
-    cat <<EOF | tee /etc/modules-load.d/kubernetes.conf
-    br_netfilter
-    EOF
+     ```bash linenums="1"
+     cat <<EOF | tee /etc/modules-load.d/kubernetes.conf
+     br_netfilter
+     EOF
 
-    # 加载模块
-    modprobe br_netfilter
-    ```
+     # load the module
+     modprobe br_netfilter
+     ```
 
-    修改 `net.bridge.bridge-nf-call-iptables` 设置为 1：
+     Modify the `net.bridge.bridge-nf-call-iptables` setting to 1:
 
-    ```bash linenums="1"
-    cat <<EOF | tee /etc/sysctl.d/kubernetes.conf
-    net.bridge.bridge-nf-call-ip6tables = 1
-    net.bridge.bridge-nf-call-iptables = 1
-    EOF
+     ```bash linenums="1"
+     cat <<EOF | tee /etc/sysctl.d/kubernetes.conf
+     net.bridge.bridge-nf-call-ip6tables=1
+     net.bridge.bridge-nf-call-iptables=1
+     EOF
 
-    # 刷新配置
-    sysctl --system
-    ```
+     # Refresh configuration
+     sysctl --system
+     ```
 
-## 安装 K8s
+## Install K8s
 
-开始安装容器运行时、K8s 系统组件，初始化 Master 节点，加入 Worker 节点，安装网络 CNI。
+Start installing the container runtime and K8s system components, initialize the Master node, join the Worker node, and install the network CNI.
 
-### 安装容器运行时
+### Install the container runtime
 
-本例为了后续方便拉镜像，同时安装了 Docker 和 containerd，DCE 5.0 实际用的是 containerd。
+In this example, Docker and containerd are installed at the same time for the convenience of pulling the image later. DCE 5.0 actually uses containerd.
 
-1. 安装 Docker 的软件源
+1. Install Docker's software source
 
-    ```bash
-    sudo yum install -y yum-utils
-    sudo yum-config-manager \
-        --add-repo \
-        https://download.docker.com/linux/centos/docker-ce.repo
-    ```
+     ```bash
+     sudo yum install -y yum-utils
+     sudo yum-config-manager \
+         --add-repo \
+         https://download.docker.com/linux/centos/docker-ce.repo
+     ```
 
-1. 安装 Docker 和 containerd
+1. Install Docker and containerd
 
-    ```bash
-    sudo yum -y install docker-ce docker-ce-cli containerd.io
-    ```
+     ```bash
+     sudo yum -y install docker-ce docker-ce-cli containerd.io
+     ```
 
-1. 修改 Docker 的配置
+1. Modify the configuration of Docker
 
-    ```bash linenums="1"
-    sudo touch /etc/docker/daemon.json
+     ```bash linenums="1"
+     sudo touch /etc/docker/daemon.json
 
-    cat <<EOF | tee /etc/docker/daemon.json
-    {
-      "exec-opts": ["native.cgroupdriver=systemd"]
-    }
-    EOF
-    ```
+     cat <<EOF | tee /etc/docker/daemon.json
+     {
+       "exec-opts": ["native.cgroupdriver=systemd"]
+     }
+     EOF
+     ```
 
-1. 修改 containerd 的配置
+1. Modify the configuration of containerd
 
-    ```bash linenums="1"
-    # 清理配置文件
-    sudo rm -f /etc/containerd/config.toml
+     ```bash linenums="1"
+     # Clean up configuration files
+     sudo rm -f /etc/containerd/config.toml
 
-    # 初始化配置
-    sudo containerd config default | sudo tee /etc/containerd/config.toml
+     # Initialize configuration
+     sudo containerd config default | sudo tee /etc/containerd/config.toml
 
-    # 更新配置文件内容
-    sed -i 's/SystemdCgroup\ =\ false/SystemdCgroup\ =\ true/' /etc/containerd/config.toml
-    sed 's/k8s.gcr.io\/pause/registry.cn-hangzhou.aliyuncs.com\/google_containers\/pause/g' /etc/containerd/config.toml
-    ```
+     # Update configuration file content
+     sed -i 's/SystemdCgroup\ =\ false /SystemdCgroup\ =\ true/' /etc/containerd/config.toml
+     sed 's/k8s.gcr.io\/pause/registry.cn-hangzhou.aliyuncs.com\/google_containers\/pause/g' /etc/containerd/config.toml
+     ```
 
-1. 启动服务配置
+1. Start service configuration
 
-    ```bash linenums="1"
-    sudo systemctl daemon-reload
-    sudo systemctl enable --now docker
-    sudo systemctl enable --now containerd
-    ```
+     ```bash linenums="1"
+     sudo systemctl daemon-reload
+     sudo systemctl enable --now docker
+     sudo systemctl enable --now containerd
+     ```
 
-1. 检查配置成功
+1. Check that the configuration is successful
 
     ```bash
     sudo systemctl status docker containerd
     sudo docker info
     ```
 
-### 安装 K8s 系统组件
+### Install K8s system components
 
-1. 安装 Kubernetes 软件源
+1. Install the Kubernetes repository
 
-    这里采用国内阿里云的源，具有加速效果。
+     The source of domestic Alibaba Cloud is used here, which has an acceleration effect.
 
     ```bash linenums="1"
     cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
@@ -178,7 +178,7 @@ last_updated:
     EOF
     ```
 
-1. 安装 Kubernetes 组件
+1. Install Kubernetes components
 
     ```bash linenums="1"
     echo K8sVersion=1.24.8
@@ -186,19 +186,19 @@ last_updated:
     sudo yum install -y kubectl-1.24.8-$K8sVersion  # 可以仅在 Master 节点安装
     ```
 
-1. 启动 `kubelet`系统服务
+1. Start the `kubelet` system service
 
     ```bash
     sudo systemctl enable --now kubelet
     ```
 
-此时启动后发现服务状态异常，会检查集群配置，因为没有配置会不断地重启，不影响后续操作。
+At this time, after starting, the service status is found to be abnormal, and the cluster configuration will be checked. Because there is no configuration, it will continue to restart without affecting subsequent operations.
 
-### 初始化 Master 节点
+### Initialize the Master node
 
-注意规划集群主节点配置，初始化主节点时，规划网络配置。
+Pay attention to planning the configuration of the master node of the cluster, and plan the network configuration when initializing the master node.
 
-指定对应的 K8s 的版本，注意与安装时的配置保持一致：
+Specify the corresponding K8s version, and pay attention to keep it consistent with the configuration during installation:
 
 ```bash
 sudo kubeadm init --kubernetes-version=v1.24.8 \
@@ -206,9 +206,9 @@ sudo kubeadm init --kubernetes-version=v1.24.8 \
  --pod-network-cidr 10.11.0.0/16 \
 ```
 
-输出类似于：
+The output is similar to:
 
-??? note "点击查看控制台输出的内容"
+??? note "Click to view the content of the console output"
 
     ```console
     [init] Using Kubernetes version: v1.24.8
@@ -282,24 +282,24 @@ sudo kubeadm init --kubernetes-version=v1.24.8 \
             --discovery-token-ca-cert-hash sha256:ewuosdjk2390rjertw32p32j43p25a70298db818ajsdjk1293jk23k23201934h
     ```
 
-### 加入 Worker 节点
+### Join the Worker node
 
-需确保完成了上述步骤：节点系统优化、安装容器运行时、安装 K8s 系统组件，并且成功初始化 Master 节点。
+Make sure that the above steps are completed: node system optimization, container runtime installation, K8s system components installation, and master node initialization successfully.
 
-运行以下命令加入 Worker 节点：
+Run the following command to join the Worker node:
 
 ```bash
 kubeadm join 10.23.245.63:6443 --token djdsj2.sj23js90213j323 \
   --discovery-token-ca-cert-hash sha256:ewuosdjk2390rjertw32p32j43p25a70298db818ajsdjk1293jk23k23201934h
 ```
 
-查看新加的 Worker 节点：
+View the newly added Worker node:
 
 ```bash
 kubectl get nodes
 ```
 
-输出类似于：
+The output is similar to:
 
 ```none
 NAME               STATUS   ROLES           AGE   VERSION
@@ -308,11 +308,11 @@ node01-k8s-com     Ready    <none>          9h    v1.24.8
 node02-k8s-com     Ready    <none>          9h    v1.24.8
 ```
 
-### 安装 CNI Calico
+### Install CNI Calico
 
-将以下 YAML 保存为 `calico.yaml`。
+Save the following YAML as `calico.yaml`.
 
-??? note "点击查看 calico.yaml 的内容"
+??? note "Click to view the contents of calico.yaml"
 
     ```yaml
     ---
@@ -1525,15 +1525,15 @@ node02-k8s-com     Ready    <none>          9h    v1.24.8
                                 a value of 8```
     ```
 
-执行初始化 `Calico` 命令：
+Run the command to initialize `Calico`:
 
 ```bash
 kubectl apply -f calico.yaml
 ```
 
-## 安装 Helm
+## Install Helm
 
-本例使用了 Helm 3，注意安装脚本会下载最新版本：
+This example uses Helm 3, note that the installation script will download the latest version:
 
 ```bash
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
@@ -1541,12 +1541,12 @@ chmod 700 get_helm.sh
 ./get_helm.sh
 ```
 
-## 安装 StorageClass
+## Install StorageClass
 
-默认安装时将 K8s localdisk 作为默认存储，本例采用开源项目
-[HwameiStor](https://hwameistor.io/cn/docs/quick_start/install/deploy) 用作本地磁盘管理。
+K8s localdisk is used as the default storage when installed by default. This example uses an open source project
+[HwameiStor](https://hwameistor.io/cn/docs/quick_start/install/deploy) is used for local disk management.
 
-1. 下载并解压 HwameiStor Repo
+1. Download and unzip HwameiStor Repo
 
     ```bash linenums="1"
     helm repo add hwameistor http://hwameistor.io/hwameistor
@@ -1554,12 +1554,12 @@ chmod 700 get_helm.sh
     helm pull hwameistor/hwameistor --untar
     ```
 
-1. 安装 HwameiStor
+1. Install HwameiStor
 
-    使用镜像仓库安装，要切换镜像仓库的镜像，请使用 --set 更改这两个参数值：
-    `global.k8sImageRegistry` 和 `global.hwameistorImageRegistry`
+    Install using a mirror repository. To switch the mirror of the mirror repository, use --set to change the values of these two parameters:
+    `global.k8sImageRegistry` and `global.hwameistorImageRegistry`
 
-    > 注意默认的镜像仓库 quay.io 和 ghcr.io。如果无法访问，可尝试使用 DaoCloud 提供的镜像源 quay.m.daocloud.io 和 ghcr.m.daocloud.io
+    > Note the default registries quay.io and ghcr.io. If you can't access it, you can try to use the mirror sources quay.m.daocloud.io and ghcr.m.daocloud.io provided by DaoCloud
 
     ```bash linenums="1"
     helm install hwameistor ./hwameistor \
@@ -1568,13 +1568,13 @@ chmod 700 get_helm.sh
       --set global.hwameistorImageRegistry=ghcr.m.daocloud.io
     ```
 
-1. 检查 HwameiStor 的全部 Pod 状态
+1. Check the status of all Pods of HwameiStor
 
     ```bash
     kubectl -n hwameistor get pod
     ```
 
-    输出类似于：
+    The output is similar to:
 
     ```none
     NAME                                                       READY   STATUS
@@ -1592,28 +1592,28 @@ chmod 700 get_helm.sh
     hwameistor-webhook-986479678-278cr                         1/1     Running
     ```
 
-    local-disk-manager 和 local-storage 都是 DaemonSet。在每个 K8s 节点上都应该有一个 DaemonSet Pod。
+    Both local-disk-manager and local-storage are DaemonSets. There should be a DaemonSet Pod on each K8s node.
 
-    等到全部状态正常后，可进行后续操作，检查 `StorageClass`：
+    After all the statuses are normal, follow-up operations can be performed to check `StorageClass`:
 
     ```bash
     kubectl get storageclass hwameistor-storage-lvm-hdd
     ```
 
-    输出类似于：
+    The output is similar to:
 
     ```none
     NAME                                   PROVISIONER         RECLAIMPOLICY
     hwameistor-storage-lvm-hdd (default)   lvm.hwameistor.io   Delete
     ```
 
-1. 检查 `localdisknodes`，默认在使用的磁盘 `PHASE` 为 `Bound`。
+1. Check `localdisknodes`, the default disk `PHASE` in use is `Bound`.
 
     ```bash
     kubectl get localdisknodes
     ```
 
-    输出类似于：
+    The output is similar to:
 
     ```none
     NAME               NODEMATCH          PHASE
@@ -1622,13 +1622,13 @@ chmod 700 get_helm.sh
     node02-k8s-com     node02-k8s-com     Bound
     ```
 
-1. 检查 `localdisks`，默认在使用的磁盘 `PHASE` 为 `Bound`。
+1. Check `localdisks`, the default disk `PHASE` in use is `Bound`.
 
     ```bash
     kubectl get localdisks
     ```
 
-    输出类似于：
+    The output is similar to:
 
     ```none
     NAME                   NODEMATCH          CLAIM              PHASE
@@ -1640,15 +1640,15 @@ chmod 700 get_helm.sh
     node02-k8s-com-vdb     node02-k8s-com     node02-k8s-com     Bound
     ```
 
-1. 设置默认的 `StorageClass`
+1. Set the default `StorageClass`
 
-    为 `storageclasses` 增加标识为默认的 `annotations`。
+    Added default `annotations` for `storageclasses`.
 
     ```bash
     kubectl patch storageclasses.storage.k8s.io hwameistor-storage-lvm-hdd -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
     ```
 
-1. 创建存储池，注意替换对应的 `nodeName`
+1. Create a storage pool, pay attention to replace the corresponding `nodeName`
 
     ```bash linenums="1"
     helm template ./hwameistor \
@@ -1657,18 +1657,18 @@ chmod 700 get_helm.sh
       | kubectl apply -f -
     ```
 
-    创建成功后，查看本地磁盘的 `ldc`，应该全部是 `Bound`。
+    After the creation is successful, check the `ldc` of the local disk, it should all be `Bound`.
 
     ```bash
     kubectl get ldc
     ```
 
-## 安装 `Metrics server`
+## Install `Metrics server`
 
-接下来需要安装 `metrics-server`，方便后续使用 Insight 可观测性模块。
-将以下 YAML 保存为 `metrics-server.yaml`。
+Next, you need to install `metrics-server` for subsequent use of the Insight observability module.
+Save the following YAML as `metrics-server.yaml`.
 
-??? note "点击查看 metrics-server.yaml 内容"
+??? note "Click to view the content of metrics-server.yaml"
 
     ```yaml
     apiVersion: v1
@@ -1870,19 +1870,19 @@ chmod 700 get_helm.sh
       versionPriority: 100
     ```
 
-1. 执行安装命令：
+1. Execute the installation command:
 
     ```bash
-    kubectl apply -f  metrics-server.yaml
+    kubectl apply -f metrics-server.yaml
     ```
 
-1. 安装成功后，运行以下命令查看 node 的资源使用情况
+1. After the installation is successful, run the following command to check the resource usage of node
 
     ```bash
     kubectl top node
     ```
 
-    输出类似于；
+    The output is similar to:
 
     ```none
     NAME               CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
@@ -1891,14 +1891,14 @@ chmod 700 get_helm.sh
     node02-k8s-com     464m         11%    9484Mi          60%
     ```
 
-## 安装 DCE 5.0 社区版
+## Install DCE 5.0 Community Edition
 
-现在一切准备就绪，开始安装 DCE 5.0 社区版。
+Now everything is ready to install DCE 5.0 Community Edition.
 
-### 安装基础依赖
+### Install basic dependencies
 
-DCE 已经提供了一键安装的离线工具依赖包，经过测试能够比较稳定地运行在 `CentOS 7` 和 `CentOS 8` 上。
-如果您也是这两个操作系统，可以直接运行下面的命令。
+DCE has provided a one-click installation offline tool dependency package, which has been tested to run relatively stably on `CentOS 7` and `CentOS 8`.
+If you are also the two operating systems, you can directly run the following command.
 
 ```bash linenums="1"
 curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
@@ -1906,7 +1906,7 @@ chmod +x install_prerequisite.sh
 sudo bash install_prerequisite.sh online community
 ```
 
-当然也可以选择手动安装这些依赖项：
+Of course, you can also choose to install these dependencies manually:
 
 - podman
 - helm ≥ 3.9.4
@@ -1916,11 +1916,11 @@ sudo bash install_prerequisite.sh online community
 - yq ≥ 4.27.5
 - minio client
 
-### 下载 dce5-installer
+### Download dce5-installer
 
-注意，需要在 Master 节点执行 dce5-installer 的安装，建议[直接下载此 installer](https://docs.daocloud.io/download/dce5/#_1)。
+Note that the installation of dce5-installer needs to be performed on the Master node. It is recommended to [download this installer directly](https://docs.daocloud.io/download/dce5/#_1).
 
-下载并解压 tar 包之后，假定 `VERSION` 为 v0.3.28：
+After downloading and unpacking the tarball, assuming `VERSION` is v0.3.28:
 
 ```bash linenums="1"
 export VERSION=v0.3.28
@@ -1928,11 +1928,11 @@ curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCl
 chmod +x dce5-installer
 ```
 
-> 如果 `proxy-qiniu-download-public.daocloud.io` 链接失效，可使用 `qiniu-download-public.daocloud.io`
+> If `proxy-qiniu-download-public.daocloud.io` link fails, use `qiniu-download-public.daocloud.io`
 
-### 设置配置文件 [可选]
+### Set configuration file [optional]
 
-将以下配置文件内容保存为 `clusterConfig.yaml`，如果使用 `NodePort` 的方式安装则不需要指定该配置文件。
+Save the content of the following configuration file as `clusterConfig.yaml`, if you use `NodePort` to install, you don’t need to specify the configuration file.
 
 ```yaml linenums="1"
 apiVersion: provision.daocloud.io/v1alpha1
@@ -1943,77 +1943,77 @@ spec:
  insightVip: 10.6.229.11/32  # 这是全局服务集群的 Insight-Server 采集子集群监控指标的网络路径用的 VIP
 ```
 
-> 如果使用配置文件，注意需要事先安装 `MetaLB`，这一部分需要自行完成。
+> If you use configuration files, please note that `MetaLB` needs to be installed in advance, this part needs to be done by yourself.
 
-### 执行安装
+### Execute the installation
 
-根据实际情况，运行以下命令之一：
+Depending on the actual situation, run one of the following commands:
 
-- 无配置文件时
+- when there is no configuration file
 
     ```bash
     ./dce5-installer install-app
     ```
 
-- 指定配置文件和 loadBalancer 时
+- when specifying configuration file and loadBalancer
 
     ```
     ./dce5-installer install-app -c clusterConfig.yaml
     ```
 
-### 安装完成
+### The installation is complete
 
-如果看到下方的页面，说明安装成功了；默认账号密码为：`admin/changeme`
+If you see the page below, the installation is successful; the default account password is: `admin/changeme`
 
-![安装成功](../install/images/success.png)
+![Installation succeeded](../install/images/success.png)
 
-## 重定向 Portal 反向代理
+## Redirect Portal reverse proxy
 
-通常安装后的集群访问地址是一个内网地址。
-当需要集群页面开放到公网访问时，会发现登录页会自动重定向内网地址，这是因为 DCE 5.0 反向代理服务器地址默认是安装时的配置，需要进行以下修改。
+Usually the cluster access address after installation is an intranet address.
+When the cluster page needs to be opened to public network access, you will find that the login page will automatically redirect to the internal network address. This is because the DCE 5.0 reverse proxy server address is configured by default during installation, and the following modifications are required.
 
-1. 设置环境变量
+1. Set environment variables
 
     ```bash
-    # 反向代理地址
+    # Reverse proxy address
     export DCE_PROXY="https://domain:port"
 
-    # helm --set 参数备份文件
+    # helm --set parameter backup file
     export GHIPPO_VALUES_BAK="ghippo-values-bak.yaml"
 
-    # 获取当前 ghippo 全局管理的版本号
+    # Get the version number of the current ghippo global management
     export GHIPPO_HELM_VERSION=$(helm get notes ghippo -n ghippo-system | grep "Chart Version" | awk -F ': ' '{ print $2 }')
     ```
 
-1. 更新 Helm repo
+1. Update the Helm repo
 
     ```bash
     helm repo update ghippo
     ```
 
-1. 备份 --set 参数
+1. Back up `--set` parameter
 
     ```bash
     helm get values ghippo -n ghippo-system -o yaml > ${GHIPPO_VALUES_BAK}
     ```
 
-1. 使用 vim 命令编辑并保存
+1. Use vim command to edit and save
 
     ```bash
-    $ vim ${GHIPPO_VALUES_BAK}
+    vim ${GHIPPO_VALUES_BAK}
     ```
 
-    只需修改一行：
+    You only need to modify a row:
 
     ```yaml
     USER-SUPPLIED VALUES:
     ...
     global:
       ...
-      reverseProxy: ${DCE_PROXY} # 只需要修改这一行
+      reverseProxy: ${DCE_PROXY} # You only need to modify this row
     ```
 
-1. 使用 heml upgrade 更新配置
+1. Use heml upgrade to update the configuration
 
     ```bash
     helm upgrade ghippo ghippo/ghippo \
@@ -2022,13 +2022,13 @@ spec:
       --version ${GHIPPO_HELM_VERSION}
     ```
 
-1. 使用 kubectl 重启全局管理 Pod，使配置生效
+1. Use kubectl to restart the global management Pod to make the configuration take effect
 
     ```bash
     kubectl rollout restart deploy/ghippo-apiserver -n ghippo-system
     kubectl rollout restart statefulset/ghippo-keycloak -n ghippo-system
     ```
 
-[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
-[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
