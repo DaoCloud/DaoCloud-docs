@@ -27,7 +27,7 @@ Enter the download directory of the offline installation package.
     offline-centos7-v0.3.29-amd64.tar: OK
     ```
 
-=== "ARM64 and Xintron"
+=== "ARM 64"
 
     Execute the following command to verify the installation package:
 
@@ -53,7 +53,7 @@ After successfully verifying the offline package,
     tar -zxvf offline-centos7-v0.3.29-amd64.tar
     ```
 
-=== "ARM64 and Xintron"
+=== "ARM 64"
 
     Execute the following command to extract the tarball:
 

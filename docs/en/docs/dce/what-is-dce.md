@@ -26,7 +26,7 @@ DCE 5.0 natively supports the DevOps development and operation and maintenance m
 
 </div>
 
-![modules](../images/dce-modules02.png)
+![modules](../images/dce-modules04.png)
 
 In the past eight years, DaoCloud has invested huge to explore and develop a cloud-native operating system with custom and scalable modules to facilitate your business digitalization. You can use each module like a LEGO brick, with zero downtime while upgrading any module. DCE 5.0 is also easy to integrate with hundreds of cloud-native ecological plugins, so you can simply customize solutions for different scenarios. Things go better with such a kind of modular style to grow day by day.
 
