@@ -5,7 +5,9 @@ hide:
 
 # 仪表盘
 
-可观测性 Insight 通过原生 Grafana 提供开源精选仪表盘，对集群、节点、命名空间等多维度提供监控。Grafana 使用的数据源支持查看多集群的数据。
+Grafana 是一跨平台的开源的可视化分析工具。可观测性 Insight 使用开源 Grafana 提供监控服务，支持从集群、节点、命名空间等多维度查看资源消耗情况，
+
+关于开源 Grafana 的详细信息，请参见 [Grafana 官方文档](https://grafana.com/docs/grafana/latest/getting-started/?spm=a2c4g.11186623.0.0.1f34de53ksAH9a)。
 
 1. 在左侧导航栏选择`仪表盘`。
 
