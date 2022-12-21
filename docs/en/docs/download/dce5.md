@@ -20,7 +20,7 @@ This version is suitable for building private cloud, hybrid cloud, multicloud, m
 | File Name | Version | Architecture | File Size | Downloads | Date Updated |
 | ------------------- | ------- | -------- | ------------ ----------------------------------------- | ---------- | ------------------- |
 | offline-centos7-v0.3.29-amd64.tar | v0.3.29 | AMD 64 | 22.9 GB | [:arrow_right: Download Page](./business/dce5-installer-v0.3.29.md) | 2022-12 -16 |
-| offline-kylin-v10sp2-v0.3.29-arm64.tar | v0.3.29 | ARM64 and Xintron | 19.9 GB | [:arrow_right: download page](./business/dce5-installer-v0.3.29.md) | 2022 -12-16 |
+| offline-kylin-v10sp2-v0.3.29-arm64.tar | v0.3.29 | ARM 64 | 19.9 GB | [:arrow_right: download page](./business/dce5-installer-v0.3.29.md) | 2022 -12-16 |
 
 ## Download modules
 

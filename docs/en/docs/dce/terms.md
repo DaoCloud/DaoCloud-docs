@@ -28,7 +28,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     You can install more additional extensions via
     [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md) -> [Helm Template](../kpanda/07UserGuide/helm/README.md).
 
-- Admission Controller, 准入控制器
+- Admission Controller
 
     An [Admission Controller](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/)
     is a piece of code that intercepts requests to the Kubernetes API server prior to persistence of the object, but after the request is authenticated and authorized.
