@@ -1,169 +1,169 @@
-# 通过镜像创建守护进程集
+# Create a daemon set from the image
 
-守护进程集（DaemonSet）确保全部或某些节点上运行一个 Pod 的副本。 当有节点加入集群时，也会为其新增一个 Pod。当有节点从集群移除时，这些 Pod 也会被回收。删除 DaemonSet 将会删除它创建的所有 Pod。
+A DaemonSet ensures that all or some nodes have a replica of a Pod running. When a node joins the cluster, a Pod is also added for it. These Pods are also recycled when a node is removed from the cluster. Deleting a DaemonSet will delete all Pods it created.
 
-守护进程集的一些典型用法包括：
+Some typical uses of daemonsets include:
 
-- 在每个节点上运行集群守护进程。
+- Run cluster daemons on each node.
 
-- 在每个节点上运行日志收集守护进程。
+- Run a log collection daemon on each node.
 
-- 在每个节点上运行监控守护进程。
+- Run a monitoring daemon on each node.
 
-一种简单的用法是为每种类型的守护进程在所有的节点上都启动一个 DaemonSet。一个稍微复杂的用法是为同一种守护进程部署多个 DaemonSet。每个 DaemonSet 具有不同的标志，并且对不同硬件类型具有不同的内存、CPU 要求。
+A simple usage is to start a DaemonSet on all nodes for each type of daemon. A slightly more complex usage is to deploy multiple DaemonSets for the same daemon process. Each DaemonSet has different flags and has different memory, CPU requirements for different hardware types.
 
-## 前提条件
+## prerequisites
 
-通过镜像创建 DaemonSet 之前，需要满足以下前提条件：
+Before creating a DaemonSet from an image, the following prerequisites need to be met:
 
-- 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
+- The container management platform [has joined the Kubernetes cluster](../Clusters/JoinACluster.md) or [has created the Kubernetes cluster](../Clusters/CreateCluster.md), and can access the UI interface of the cluster.
 
-- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，用户应具有 [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit)或更高权限 ，详情可参考[命名空间授权](../Namespaces/createns.md)。
+- A [Namespace Creation](../Namespaces/createtens.md), [User Creation](../../../ghippo/04UserGuide/01UserandAccess/User.md) has been done, the user should have [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) or higher permission, please refer to [Namespace Authorization](../Namespaces/createns.md) for details.
 
-- 单个实例中有多个容器时，请确保容器使用的端口不冲突，否则部署会失效。
+- When there are multiple containers in a single instance, please make sure that the ports used by the containers do not conflict, otherwise the deployment will fail.
 
-参考以下步骤，创建一个 DaemonSet。
+Refer to the following steps to create a DaemonSet.
 
-## 镜像创建
+## Image creation
 
-1. 以 `NS Edit` 用户成功登录后，点击左上角的`集群列表`进入集群列表页面。点击一个集群名称，进入`集群详情`。
+1. After successfully logging in as the `NS Edit` user, click `Cluster List` in the upper left corner to enter the cluster list page. Click on a cluster name to enter `Cluster Details`.
 
-    ![集群详情](../../images/deploy01.png)
+     ![Cluster Details](../../images/deploy01.png)
 
-2. 点击左侧导航栏的`工作负载`进入工作负载列表，点击`守护进程`页签，点击右上角`镜像创建`按钮。
+2. Click `Workload` in the left navigation bar to enter the workload list, click the `Daemon Process` tab, and click the `Image creation` button in the upper right corner.
 
-    ![工作负载](../../images/daemon01.png)
+     ![Workload](../../images/daemon01.png)
 
-3. 屏幕将显示`创建守护进程`页面。
+3. The `Create Daemon` page will be displayed.
 
-### 基本信息配置
+### Basic information configuration
 
-在`创建守护进程`页面中，根据下表输入信息后，点击`下一步`。
+On the `Create Daemon Process` page, after entering the information according to the table below, click `Next`.
 
-![基本信息](../../images/daemon02.png)
+![Basic Information](../../images/daemon02.png)
 
-- 负载名称：输入新建工作负载的名称，命名必须唯一。请输入4 到 63 个字符的字符串，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。例如 daemonset-01。
-- 集群：选择新建工作负载所在的集群。在集群内创建工作负载时，将在当前集群中创建工作负载。集群不可更改。当在集群外部创建工作负载时，将在所选集群创建工作负载。例如 Cluster-01。
-- 命名空间：选择新建工作负载所在的命名空间。关于命名空间更多信息请参考[命名空间概述](../Namespaces/createns.md)。若您不设置命名空间，系统会默认使用 default 命名空间。例如 Namespace-01。
-- 描述：输入工作负载的描述信息，内容自定义。字符数量应不超过 512 个。这是一个有状态负载，主要用来运行 Nginx 服务。
+- Workload name: Enter the name of the new workload, which must be unique. Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. For example daemonset-01.
+- Cluster: Select the cluster where the newly created workload resides. When a workload is created within a cluster, the workload is created in the current cluster. Clusters cannot be changed. When a workload is created outside a cluster, the workload is created on the selected cluster. For example Cluster-01.
+- Namespace: Select the namespace where the newly created workload resides. For more information about namespaces, please refer to [Namespace Overview](../Namespaces/createns.md). If you do not set a namespace, the system will use the default namespace by default. For example Namespace-01.
+- Description: Enter the description information of the workload and customize the content. The number of characters should not exceed 512. This is a stateful load, mainly used to run Nginx service.
 
-### 容器配置
+### Container configuration
 
-容器配置仅针对单个容器进行配置，如需在一个容器组中添加多个容器，可点击右侧的 `+` 添加多个容器。
+Container configuration is only configured for a single container. To add multiple containers to a container group, click `+` on the right to add multiple containers.
 
-完成以下所有容器配置信息后，点击`下一步`。
+After completing all the container configuration information below, click Next.
 
-=== "基本信息（必填）"
+=== "Basic information (required)"
 
-    ![基本信息](../../images/deploy05.png)
+     ![Basic Information](../../images/deploy05.png)
 
-    按照以下输入信息后，点击`确认`。
+     After entering the information as follows, click `Confirm`.
 
-    - 容器名称：输入新建容器的名称。请输入 4 到 63 个字符的字符串，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。例如 nginx-01。
-    - 容器镜像：从镜像仓库选择的镜像名称，也支持手动输入镜像名称（名称需为镜像仓库中已有的镜像名，否则将无法获取）。例如 nginx。
-    - 更新策略：容器执行更新时，镜像拉取策略。开启后工作负载每次重启/升级均会重新拉取镜像，否则只会在节点上不存在同名同版本镜像时拉取镜像。默认为：总是拉取镜像。
-    - 特权容器：默认情况下，容器不可以访问宿主机上的任何设备，开启特权容器后，容器即可访问宿主机上的所有设备，享有宿主机上的运行进程的所有权限。默认启用。
-    - CPU 配额：容器 CPU 资源的最低使用量和最高限度。申请：容器需要使用的最小 CPU 值。限制：允许容器使用的 CPU 最大值。建议设容器配额的最高限额，避免容器资源超额导致系统故障。默认为 0.25，0.25。
-    - 内存配额：容器内存资源的最低使用量和最高限度。申请：容器需要使用的最小内存值。限制：允许容器使用的内存最大值。建议设容器配额的最高限额，避免容器资源超额导致系统故障。默认为 512 MB，512 MB。
+     - Container Name: Enter a name for the newly created container. Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. For example nginx-01.
+     - Container image: The name of the image selected from the image registry, and manual input of the image name is also supported (the name must be an existing image name in the image registry, otherwise it will not be available). For example nginx.
+     - Update policy: When the container is updated, the image pull policy. After it is enabled, the workload will pull the image again every time it is restarted/upgraded, otherwise it will only pull the image when there is no image with the same name and version on the node. Default: Always pull images.
+     - Privileged container: By default, the container cannot access any device on the host. After enabling the privileged container, the container can access all devices on the host and enjoy all the permissions of the running process on the host. Enabled by default.
+     - CPU Quotas: Minimum and maximum usage of container CPU resources. Requests: The minimum CPU value that the container needs to use. Limit: The maximum CPU allowed to be used by the container. It is recommended to set the upper limit of the container quota to avoid system failure caused by excessive container resources. Default is 0.25, 0.25.
+     - Memory quota: The minimum and maximum usage of container memory resources. Application: The minimum memory value that the container needs to use. Limit: The maximum amount of memory the container is allowed to use. It is recommended to set the upper limit of the container quota to avoid system failure caused by excessive container resources. The default is 512 MB, 512 MB.
 
-=== "生命周期（选填）"
+=== "Lifecycle (optional)"
 
-    容器生命周期配置用于设置容器启动时、启动后、停止前需要执行的命令。具体详情请参照[容器生命周期配置](PodConfig/lifescycle.md)。
+     The container life cycle configuration is used to set the commands that need to be executed when the container starts, after starting, and before stopping. For details, please refer to [Container Lifecycle Configuration](PodConfig/lifescycle.md).
 
-    ![生命周期](../../images/deploy06.png)
+     ![Lifecycle](../../images/deploy06.png)
 
-=== "健康检查（选填）"
+=== "Health Check (optional)"
 
-    容器健康检查用于判断容器和应用的健康状态。有助于提高应用的可用性。具体详情请参考[容器健康检查配置](PodConfig/healthcheck.md)。
+     Container health checks are used to determine the health status of containers and applications. Helps improve app usability. For details, please refer to [Container Health Check Configuration](PodConfig/healthcheck.md).
 
-    ![健康检查](../../images/deploy07.png)
+     ![Health Check](../../images/deploy07.png)
 
-=== "环境变量（选填）"
+=== "Environment variables (optional)"
 
-    容器环境变量配置用于配置 Pod 内的容器参数，为 Pod 添加环境标志或传递配置等。具体详情请参考[容器环境变量配置](PodConfig/EnvironmentVariables.md)。
+     Container environment variable configuration is used to configure container parameters in Pods, add environment flags or pass configurations to Pods, etc. For details, please refer to [Container Environment Variable Configuration](PodConfig/EnvironmentVariables.md).
 
-    ![环境变量](../../images/deploy08.png)
+     ![environment variable](../../images/deploy08.png)
 
-=== "数据存储（选填）"
+=== "Data storage (optional)"
 
-    容器数据存储配置用于配置容器挂载数据卷和数据持久化设置。具体详情请参考[容器数据存储配置](PodConfig/EnvironmentVariables.md)。
+     Container data storage configuration is used to configure container mounted data volumes and data persistence settings. For details, please refer to [Container Data Storage Configuration](PodConfig/EnvironmentVariables.md).
 
-    ![数据存储](../../images/deploy09.png)
+     ![datastore](../../images/deploy09.png)
 
-=== "安全设置（选填）"
+=== "Security settings (optional)"
 
-    按照下表对容器权限进行设置，保护系统和其他容器不受其影响。
+     Set container permissions according to the table below to protect the system and other containers from them.
 
-    ![安全设置](../../images/deploy10.png)
+     ![Security Settings](../../images/deploy10.png)
 
-=== "容器日志（选填）"
+=== "Container logs (optional)"
 
-    设置容器日志采集策略、配置日志目录。用于收集容器日志便于统一管理和分析。具体详情请参考[容器日志配置](PodConfig/EnvironmentVariables.md)。
+     Set the container log collection policy and configure the log directory. Used to collect container logs for unified management and analysis. For details, please refer to [Container Log Configuration](PodConfig/EnvironmentVariables.md).
     
-    ![容器日志](../../images/deploy11.png)
+     ![container log](../../images/deploy11.png)
 
-### 服务配置
+### Service configuration
 
-对工作负载访问方式进行设置，可以设置服务访问方式。
+Set the workload access method, and you can set the service access method.
 
-1. 点击`创建服务`按钮。
+1. Click the `Create Service` button.
 
-    ![服务配置](../../images/daemon03.png)
+     ![Service Configuration](../../images/daemon03.png)
 
-2. 选择访问服务的各项信息，具体详情请参考[创建服务](../ServicesandRoutes/CreatingServices.md)。
+2. Choose to access various information of the service. For details, please refer to [Creating Services](../ServicesandRoutes/CreatingServices.md).
 
-    ![创建服务](../../images/deploy13.png)
+     ![create service](../../images/deploy13.png)
 
-3. 点击`确定`，点击`下一步`。
+3. Click `OK` and click `Next`.
 
-### 高级配置
+### Advanced configuration
 
-除了基本信息配置，DCE 还提供了丰富的高级配置，可对工作负载的升级策略、调度策略、标签与注解等功能进行配置。
+In addition to basic information configuration, DCE also provides a wealth of advanced configurations, which can configure functions such as workload upgrade policies, scheduling policies, tags and annotations.
 
-=== "升级策略配置"
+=== "Upgrade policy configuration"
 
-    ![升级策略](../../images/daemon04.png)
+     ![Upgrade Strategy](../../images/daemon04.png)
 
-    - 升级方式：**滚动升级** 将逐步用新版本的实例替换旧版本的实例，升级的过程中，业务流量会同时负载均衡分布到新老的实例上，因此业务不会中断。**替换升级** 将先把您工作负载的老版本实例删除，再安装指定的新版本，升级过程中业务会中断。
-    - 最大无效 Pod 数：用于指定 Deployment 在更新过程中不可用状态的 Pod 数量的上限，如果等于实例数有服务的风险。默认为 25%。
-    - 最大保留版本数：为回滚时保留的旧版本的数量。默认为 10。
-    - Pod 可用最短时间(s)：Pod 就绪的最短时间，只有超出这个时间 Pod 才被认为可用。默认为 0。
-    - 缩容时间窗(s) ：工作负载停止前命令的执行时间窗（0-9,999秒），默认 30 秒。
+     - Upgrade method: **Rolling upgrade** will gradually replace instances of the old version with instances of the new version. During the upgrade process, business traffic will be load-balanced to the old and new instances at the same time, so the business will not be interrupted. **Replace and upgrade** will first delete the old version instance of your workload, and then install the specified new version. Business will be interrupted during the upgrade process.
+     - Maximum number of invalid Pods: used to specify the upper limit of the number of Pods in the unavailable state of the Deployment during the update process. If it is equal to the number of instances, there is a risk of service. The default is 25%.
+     - Maximum number of retained versions: the number of old versions retained when rolling back. The default is 10.
+     - Minimum Pod availability time (s): The minimum time for a Pod to be ready. Only after this time is the Pod considered available. Default is 0.
+     - Scale-in time window (s): The execution time window (0-9,999 seconds) of the command before the workload stops, the default is 30 seconds.
 
-=== "调度策略配置"
+=== "Scheduling policy configuration"
 
-    用户可以设置容忍时间来定义当工作负载所在的节点损坏时，将工作负载调度到其它节点的容忍时间。也支持基于节点标签和 Pod 标签对工作负载所部署的节点进行调度。具体详情请参考[调度策略](../Workloads/PodConfig/SchedulingPolicy.md)。
+     Users can set the tolerance time to define the tolerance time for scheduling the workload to other nodes when the node where the workload resides is damaged. It also supports scheduling nodes where workloads are deployed based on node labels and Pod labels. For details, please refer to [Scheduling Policy](../Workloads/PodConfig/SchedulingPolicy.md).
 
-    ![调度策略](../../images/deploy15.png)
+     ![Scheduling Policy](../../images/deploy15.png)
 
-    - 容忍时间：工作负载实例所在的节点不可用的情况下，将工作负载实例重新调度到其它可用节点的时间，单位为秒。
-    - 节点亲和性：根据节点上的标签来约束 Pod 可以调度到哪些节点上。
-    - 工作负载亲和性：更新 Pod 的过程中 Pod 总数量超过 Pod 期望副本数量部分的最大值。
-    - 工作负载反亲和性：基于已经在节点上运行的 Pod 的标签来约束 Pod 不可以调度到的节点。
+     - Tolerance time: When the node where the workload instance resides is unavailable, the time for rescheduling the workload instance to other available nodes, in seconds.
+     - Node affinity: According to the label on the node, constrain which nodes the Pod can be scheduled on.
+     - Workload Affinity: The maximum value of the part where the total number of Pods exceeds the expected number of Pod replicas during the process of updating Pods.
+     - Workload anti-affinity: Constrains nodes that Pods cannot be scheduled to based on the labels of Pods already running on the node.
 
-=== "标签与注解"
+=== "Labels and Notes"
 
-    可以点击`添加`按钮为工作负载和容器组添加标签和注解。
+     You can click the `Add` button to add tags and annotations to workloads and container groups.
 
-    ![标签与注解](../../images/deploy16.png)
+     ![Labels and annotations](../../images/deploy16.png)
 
-=== "DNS 配置"
+=== "DNS Configuration"
 
-    应用在某些场景下会出现冗余的 DNS 查询。Kubernetes 为应用提供了与 DNS 相关的配置选项，通过对应用进行 DNS 配置，能够在某些场景下有效地减少冗余的 DNS 查询，提升业务并发量。具体详情请参考 [DNS 配置](PodConfig/EnvironmentVariables.md)。
+     In some scenarios, the application will have redundant DNS queries. Kubernetes provides DNS-related configuration options for applications. By configuring DNS for applications, redundant DNS queries can be effectively reduced in some scenarios and business concurrency can be increased. For details, please refer to [DNS Configuration](PodConfig/EnvironmentVariables.md).
 
-    ![DNS 配置](../../images/deploy17.png)
+     ![DNS Configuration](../../images/deploy17.png)
 
-    - DNS 策略：对应用进行 DNS 配置，减少冗余的 DNS 查询，提升业务并发量。
-        - Default：容器的域名解析文件使用 kubelet 的 `--resolv-conf` 参数指向的域名解析文件。该配置只能解析注册到互联网上的外部域名，无法解析集群内部域名，且不存在无效的 DNS 查询。
-        - ClusterFirstWithHostNet：应用对接主机的域名文件。
-        - ClusterFirst：应用对接 Kube-DNS/CoreDNS。
-        - None：Kubernetes v1.9（Beta in v1.10）中引入的新选项值。设置为 None 之后，必须设置 dnsConfig，此时容器的域名解析文件将完全通过 dnsConfig 的配置来生成。
-    - 域名服务器：根据节点上的标签来约束 Pod 可以调度到哪些节点上。
-    - 搜索域：域名查询时的 DNS 搜索域列表。指定后，提供的搜索域列表将合并到基于 dnsPolicy 生成的域名解析文件的 search 字段中，并删除重复的域名。Kubernetes 最多允许 6 个搜索域。
-    - Options：DNS 的配置选项，其中每个对象可以具有 name 属性（必需）和 value 属性（可选）。该字段中的内容将合并到基于 dnsPolicy 生成的域名解析文件的 options 字段中，dnsConfig 的 options 的某些选项如果与基于 dnsPolicy 生成的域名解析文件的选项冲突，则会被 dnsConfig 所覆盖。
-    - 主机别名：为主机设置的别名。
+     - DNS strategy: Configure DNS for applications to reduce redundant DNS queries and increase business concurrency.
+         - Default: The domain name resolution file of the container uses the domain name resolution file pointed to by the `--resolv-conf` parameter of kubelet. This configuration can only resolve external domain names registered on the Internet, but cannot resolve cluster internal domain names, and there is no invalid DNS query.
+         - ClusterFirstWithHostNet: The domain name file of the host to which the application is connected.
+         - ClusterFirst: application docking with Kube-DNS/CoreDNS.
+         - None: New option value introduced in Kubernetes v1.9 (Beta in v1.10). After setting to None, dnsConfig must be set. At this time, the domain name resolution file of the container will be completely generated through the configuration of dnsConfig.
+     - Domain name server: According to the label on the node, constrain which nodes the Pod can be scheduled to.
+     - Search domains: DNS search domain list for domain name query. When specified, the provided search domain list will be merged into the search field of the domain name resolution file generated based on dnsPolicy, and duplicate domain names will be deleted. Kubernetes allows up to 6 search domains.
+     - Options: Configuration options for DNS, where each object can have a name attribute (required) and a value attribute (optional). in this fieldThe content will be merged into the options field of the domain name resolution file generated based on dnsPolicy. If some options of dnsConfig options conflict with the options of the domain name resolution file generated based on dnsPolicy, they will be overwritten by dnsConfig.
+     - Host alias: the alias set for the host.
 
-## 完成创建
+## Complete creation
 
-确认所有参数输入完成后，点击`创建`按钮，完成工作负载创建。等待工作负载状态变为`运行中`。
-如果工作负载状态出现异常，请查看具体异常信息，可参考[工作负载状态](../Workloads/PodConfig/workload-status.md)。
+After confirming that all parameters have been entered, click the `Create` button to complete the workload creation. Wait for the workload status to change to `Running`.
+If the workload status is abnormal, please refer to [Workload Status](../Workloads/PodConfig/workload-status.md) for specific exception information.

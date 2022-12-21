@@ -3,22 +3,22 @@ hide:
   - toc
 ---
 
-# create mirror space
+# Create registry space
 
-Harbor provides the image isolation function based on the image space (project). There are two types of mirror spaces: public and private:
+Harbor provides the image isolation function based on the image space (project). There are two types of registry spaces: public and private:
 
-- Public mirror warehouse: all users can access, usually store public mirrors, there is a library public mirror space by default.
-- Private mirror warehouse: Only authorized users can access it, usually storing the mirror image of the mirror space itself.
+- Public container registry: all users can access, usually store public images, there is a library public registry space by default.
+- Private container registry: Only authorized users can access it, usually storing the image of the registry space itself.
 
 Prerequisite: An external Harbor repository has been created or integrated.
 
-1. Log in to the web console as a user with the Admin role, and click `Mirror Warehouse` from the left navigation bar.
+1. Log in to the web console as a user with the Admin role, and click `container registry` from the left navigation bar.
 
-    ![Mirror Warehouse](images/hosted01.png)
+    ![container registry](images/hosted01.png)
 
-1. Click `Managed Harbor` on the left navigation bar, click a warehouse name, and navigate to the `Mirror space` menu.
+1. Click `Managed Harbor` on the left navigation bar, click a registry name, and navigate to the `registry space` menu.
 
-1. Click the `Create Mirror Space` button in the upper right corner, fill in the name of the mirror space, select the type and click `OK`.
+1. Click the `Create registry space` button in the upper right corner, fill in the name of the registry space, select the type and click `OK`.
 
     ![Create instance](images/create01.png)
 

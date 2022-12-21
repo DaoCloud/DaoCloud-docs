@@ -1,6 +1,33 @@
 # 翻译使用指南
 
-google 翻译，默认限制 5000 字符一下，超过 5000 字符不会翻译。
+主要采用 google translate openapi 进行翻译，优势是不会影响 markdown 文件中的超链及图片
+
+> 调研的竞品有
+
+- [付费] 阿里云机器翻译
+- [付费] 百度翻译 API
+- [免费] google translate openapi
+- [免费] 有道翻译 API
+- [免费] md_docs-trans-app (with webdriver)
+
+
+## 采用技术方案
+
+- 主要使用翻译能力 [py-googletrans](https://github.com/ssut/py-googletrans)，注意安装 `googletrans==3.1.0a0`
+  - 没有 api call limit
+  - 可以在终端执行，配合 github action.
+- 脚本逻辑主要是将翻译能力封装为方便文档同学使用，主要提供能力如下：
+  - 翻译单个文件
+  - 翻译单个文件夹
+  - 全量翻译 （在 `docs/zh/`下遍历`.md`文件，并将翻译结果存放特定目录，并且 copy 图片等主要静态资源）
+- 使用内置函数 `argparse` 处理命令行参数
+- 使用 `pyinstaller` 将脚本编译为可执行文件，方便使用
+
+### 未处理小问题
+
+- google 翻译，默认限制 5000 字符一下，超过 5000 字符不会翻译。
+  - 处理方案，按照 `##` or `###` 进行分段分割，然后翻译完成后拼接
+
 
 ## 使用注意事项
 

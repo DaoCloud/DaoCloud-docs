@@ -1,98 +1,98 @@
-# 调度策略
+# Scheduling strategy
 
-在 Kubernetes 集群中，与很多其他 Kubernetes 对象类似，节点也有[标签](https://kubernetes.io/zh-cn/docs/concepts/overview/working-with-objects/labels/)。您可以[手动地添加标签](https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/assign-pods-nodes/#add-a-label-to-a-node)。 Kubernetes 也会为集群中所有节点添加一些标准的标签。参见[常用的标签、注解和污点](https://kubernetes.io/zh-cn/docs/reference/labels-annotations-taints/)以了解常见的节点标签。通过为节点添加标签，您可以让 Pod 调度到特定节点或节点组上。您可以使用这个功能来确保特定的 Pod 只能运行在具有一定隔离性，安全性或监管属性的节点上。
+In a Kubernetes cluster, like many other Kubernetes objects, nodes also have [labels](https://kubernetes.io/en-us/docs/concepts/overview/working-with-objects/labels/). You can [manually add labels](https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes/#add-a-label-to-a-node) . Kubernetes also adds some standard labels to all nodes in the cluster. See [Common Labels, Annotations, and Taints](https://kubernetes.io/docs/reference/labels-annotations-taints/) for common node labels. By adding labels to nodes, you can have pods scheduled on specific nodes or groups of nodes. You can use this feature to ensure that specific Pods can only run on nodes with certain isolation, security or governance properties.
 
-`nodeSelector` 是节点选择约束的最简单推荐形式。您可以将 `nodeSelector` 字段添加到 Pod 的规约中设置您希望目标节点所具有的[节点标签](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/assign-pod-node/#built-in-node-labels)。Kubernetes 只会将 Pod 调度到拥有指定每个标签的节点上。`nodeSelector` 提供了一种最简单的方法来将 Pod 约束到具有特定标签的节点上。亲和性和反亲和性扩展了您可以定义的约束类型。使用亲和性与反亲和性的一些好处有：
+`nodeSelector` is the simplest recommended form of a node selection constraint. You can add the `nodeSelector` field to the Pod's spec to set the [node label](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#built-in-node-labels). Kubernetes will only schedule pods on nodes with each label specified. `nodeSelector` provides one of the easiest ways to constrain Pods to nodes with specific labels. Affinity and anti-affinity expand the types of constraints you can define. Some benefits of using affinity and anti-affinity are:
 
-- 亲和性、反亲和性语言的表达能力更强。`nodeSelector` 只能选择拥有所有指定标签的节点。 亲和性、反亲和性为您提供对选择逻辑的更强控制能力。
+- Affinity and anti-affinity languages are more expressive. `nodeSelector` can only select nodes that have all the specified labels. Affinity, anti-affinity give you greater control over selection logic.
 
-- 您可以标明某规则是“软需求”或者“偏好”，这样调度器在无法找到匹配节点时仍然调度该 Pod。
+- You can mark a rule as "soft demand" or "preference", so that the scheduler will still schedule the Pod if no matching node can be found.
 
-- 您可以使用节点上（或其他拓扑域中）运行的其他 Pod 的标签来实施调度约束， 而不是只能使用节点本身的标签。这个能力让您能够定义规则允许哪些 Pod 可以被放置在一起。
+- You can use the labels of other Pods running on the node (or in other topological domains) to enforce scheduling constraints, instead of only using the labels of the node itself. This capability allows you to define rules which allow Pods to be placed together.
 
-您可以通过设置亲和（affinity）与反亲和（anti-affinity）来选择 Pod 要部署的节点。
+You can choose which node the Pod will deploy to by setting affinity and anti-affinity.
 
-## 容忍时间
+## tolerance time
 
-当工作负载实例所在的节点不可用时，系统将实例重新调度到其它可用节点的时间窗。默认为 300 秒。
+When the node where the workload instance is located is unavailable, the time window for the system to reschedule the instance to other available nodes. The default is 300 seconds.
 
-## 节点亲和性（nodeAffinity）
+## Node affinity (nodeAffinity)
 
-节点亲和性概念上类似于 `nodeSelector`， 它使您可以根据节点上的标签来约束 Pod 可以调度到哪些节点上。 节点亲和性有两种：
+Node affinity is conceptually similar to `nodeSelector`, which allows you to constrain which nodes Pods can be scheduled on based on the labels on the nodes. There are two types of node affinity:
 
-- **必须满足：（`requiredDuringSchedulingIgnoredDuringExecution`）** 调度器只有在规则被满足的时候才能执行调度。此功能类似于 `nodeSelector`， 但其语法表达能力更强。您可以定义多条硬约束规则，但只需满足其中一条。
+- **Must be satisfied: (`requiredDuringSchedulingIgnoredDuringExecution`)** The scheduler can only execute scheduling when the rules are satisfied. This functionality is similar to `nodeSelector`, but with a more expressive syntax. You can define multiple hard constraint rules, but only one of them must be satisfied.
 
-- **尽量满足：（`preferredDuringSchedulingIgnoredDuringExecution`）** 调度器会尝试寻找满足对应规则的节点。如果找不到匹配的节点，调度器仍然会调度该 Pod。您还可为软约束规则设定权重，具体调度时，若存在多个符合条件的节点，权重最大的节点会被优先调度。同时您还可以定义多条硬约束规则，但只需满足其中一条。
+- **Satisfy as much as possible: (`preferredDuringSchedulingIgnoredDuringExecution`)** The scheduler will try to find nodes that meet the corresponding rules. If no matching node is found, the scheduler will still schedule the Pod. You can also set weights for soft constraint rules. During specific scheduling, if there are multiple nodes that meet the conditions, the node with the highest weight will be scheduled first. At the same time, you can also define multiple hard constraint rules, but only one of them needs to be satisfied.
 
-#### 标签名
+#### Tag name
 
-对应节点的标签，可以使用默认的标签也可以用户自定义标签。
+The label corresponding to the node can use the default label or user-defined label.
 
-#### 操作符
+#### Operators
 
-- In：标签值需要在values的列表中
-- NotIn：标签的值不在某个列表中
-- Exists：判断某个标签是存在，无需设置标签值
-- DoesNotExist：判断某个标签是不存在，无需设置标签值
-- Gt：标签的值大于某个值（字符串比较）
-- Lt：标签的值小于某个值（字符串比较）
+- In: the label value needs to be in the list of values
+- NotIn: the tag's value is not in a list
+- Exists: To judge whether a certain label exists, no need to set the label value
+- DoesNotExist: Determine if a tag does not exist, no need to set the tag value
+- Gt: the value of the label is greater than a certain value (string comparison)
+- Lt: the value of the label is less than a certain value (string comparison)
 
-#### 权重
+#### Weights
 
-仅支持在“尽量满足”策略中添加，可以理解为调度的优先级，权重大的会被优先调度。取值范围是 1 到 100。 
+It can only be added in the "as far as possible" policy, which can be understood as the priority of scheduling, and those with the highest weight will be scheduled first. The value range is 1 to 100.
 
-## 工作负载亲和性
+## Workload Affinity
 
-与节点亲和性类似，工作负载的亲和性也有两种类型：
+Similar to node affinity, there are two types of workload affinity:
 
-- **必须满足：（`requiredDuringSchedulingIgnoredDuringExecution`）** 调度器只有在规则被满足的时候才能执行调度。此功能类似于 `nodeSelector`， 但其语法表达能力更强。您可以定义多条硬约束规则，但只需满足其中一条。
-- **尽量满足：（`preferredDuringSchedulingIgnoredDuringExecution`）** 调度器会尝试寻找满足对应规则的节点。如果找不到匹配的节点，调度器仍然会调度该 Pod。您还可为软约束规则设定权重，具体调度时，若存在多个符合条件的节点，权重最大的节点会被优先调度。同时您还可以定义多条硬约束规则，但只需满足其中一条。
+- **Must be satisfied: (`requiredDuringSchedulingIgnoredDuringExecution`)** The scheduler can only execute scheduling when the rules are satisfied. This functionality is similar to `nodeSelector`, but with a more expressive syntax. You can define multiple hard constraint rules, but only one of them must be satisfied.
+- **Satisfy as much as possible: (`preferredDuringSchedulingIgnoredDuringExecution`)** The scheduler will try to find nodes that meet the corresponding rules. If no matching node is found, the scheduler will still schedule the Pod. You can also set weights for soft constraint rules. During specific scheduling, if there are multiple nodes that meet the conditions, the node with the highest weight will be scheduled first. At the same time, you can also define multiple hard constraint rules, but only one of them needs to be satisfied.
 
-工作负载的亲和性主要用来决定工作负载的 Pod 可以和哪些 Pod部 署在同一拓扑域。例如，对于相互通信的服务，可通过应用亲和性调度，将其部署到同一拓扑域（如同一可用区）中，减少它们之间的网络延迟。
+The affinity of the workload is mainly used to determine which Pods of the workload can be deployed in the same topology domain. For example, services that communicate with each other can be deployed in the same topology domain (such as the same availability zone) by applying affinity scheduling to reduce the network delay between them.
 
-#### 标签名
+#### Tag name
 
-对应节点的标签，可以使用默认的标签也可以用户自定义标签。
+The label corresponding to the node can use the default label or user-defined label.
 
-#### 命名空间
+#### Namespaces
 
-指定调度策略生效的命名空间。
+Specifies the namespace in which the scheduling policy takes effect.
 
-#### 操作符
+#### Operators
 
-- In：标签值需要在values的列表中
-- NotIn：标签的值不在某个列表中
-- Exists：判断某个标签是存在，无需设置标签值
-- DoesNotExist：判断某个标签是不存在，无需设置标签值
+- In: the label value needs to be in the list of values
+- NotIn: the tag's value is not in a list
+- Exists: To judge whether a certain label exists, no need to set the label value
+- DoesNotExist: Determine if a tag does not exist, no need to set the tag value
 
-#### 拓扑域
+#### Topology domain
 
-指定调度时的影响范围，如 指定为 kubernetes.io/Clustername 那就是以 Node 节点为区分范围。
+Specify the scope of influence when scheduling, such as specifying kubernetes.io/Clustername, then the Node node is used as the distinguishing scope.
 
-## 工作负载反和性
+## Workload inversion
 
-与节点亲和性类似，工作负载的反亲和性也有两种类型：
+Similar to node affinity, there are two types of anti-affinity for workloads:
 
-- **必须满足：（`requiredDuringSchedulingIgnoredDuringExecution`）** 调度器只有在规则被满足的时候才能执行调度。此功能类似于 `nodeSelector`， 但其语法表达能力更强。您可以定义多条硬约束规则，但只需满足其中一条。
-- **尽量满足：（`preferredDuringSchedulingIgnoredDuringExecution`）** 调度器会尝试寻找满足对应规则的节点。如果找不到匹配的节点，调度器仍然会调度该 Pod。您还可为软约束规则设定权重，具体调度时，若存在多个符合条件的节点，权重最大的节点会被优先调度。同时您还可以定义多条硬约束规则，但只需满足其中一条。
+- **Must be satisfied: (`requiredDuringSchedulingIgnoredDuringExecution`)** The scheduler can only execute scheduling when the rules are satisfied. This functionality is similar to `nodeSelector`, but with a more expressive syntax. You can define multiple hard constraint rules, but only one of them must be satisfied.
+- **Satisfy as much as possible: (`preferredDuringSchedulingIgnoredDuringExecution`)** The scheduler will try to find nodes that meet the corresponding rules. If no matching node is found, the scheduler will still schedule the Pod. You can also set weights for soft constraint rules. During specific scheduling, if there are multiple nodes that meet the conditions, the node with the highest weight will be scheduled first. At the same time, you can also define multiple hard constraint rules, but only one of them needs to be satisfied.
 
-工作负载的反亲和性主要用来决定工作负载的 Pod 不可以和哪些 Pod部 署在同一拓扑域。例如，将一个负载的相同 Pod 分散部署到不同的拓扑域（例如不同主机）中，提高负载本身的稳定性。
+The anti-affinity of the workload is mainly used to determine which Pods of the workload cannot be deployed in the same topology domain. For example, the same Pod of a load is distributed to different topological domains (such as different hosts) to improve the stability of the load itself.
 
-#### 标签名
+#### Tag name
 
-对应节点的标签，可以使用默认的标签也可以用户自定义标签。
+The label corresponding to the node can use the default label or user-defined label.
 
-#### 命名空间
+#### Namespaces
 
-指定调度策略生效的命名空间。
+Specifies the namespace in which the scheduling policy takes effect.
 
-#### 操作符
+#### Operators
 
-- In：标签值需要在values的列表中
-- NotIn：标签的值不在某个列表中
-- Exists：判断某个标签是存在，无需设置标签值
-- DoesNotExist：判断某个标签是不存在，无需设置标签值
+- In: the label value needs to be in the list of values
+- NotIn: the tag's value is not in a list
+- Exists: To judge whether a certain label exists, no need to set the label value
+- DoesNotExist: Determine if a tag does not exist, no need to set the tag value
 
-#### 拓扑域
+#### Topology domain
 
-指定调度时的影响范围，如指定为 kubernetes.io/Clustername 那就是以 Node 节点为区分范围。
+Specify the scope of influence when scheduling, such as specifying kubernetes.io/Clustername, it will use the Node node as the distinguishing scope.

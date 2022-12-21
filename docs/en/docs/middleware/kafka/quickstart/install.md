@@ -4,7 +4,7 @@ Because Kafka belongs to the application layer of DCE 5.0, a DCE environment nee
 
 Follow the steps below to install Kafka.
 
-## install kafka-operator
+## Install kafka-operator
 
 1. On the left navigation bar, click `Container Management` -> `Cluster List`.
 
@@ -69,7 +69,7 @@ Follow the steps below to install Kafka.
 
     # global parameters
     --set global.mcamel.imageTag # mcamel-kafka image version
-    --set global.imageRegistry # Mirror warehouse address
+    --set global.imageRegistry # container registry address
     ```
 
 ## uninstall

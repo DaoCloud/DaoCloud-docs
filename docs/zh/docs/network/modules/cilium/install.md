@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-在 DCE 5.0 中安装 Cilium，需要在`创建集群`—>`网络配置`页面下，`网络插件`选择 `cilium`。关于创建集群，请参阅[创建工作集群](https://docs.daocloud.io/kpanda/07UserGuide/Clusters/CreateCluster/)。
+在 DCE 5.0 中安装 Cilium，需要在`创建集群`—>`网络配置`页面下，`网络插件`选择 `cilium`。关于创建集群，请参阅[创建工作集群](../../../kpanda/07UserGuide/Clusters/CreateCluster.md)。
 
 ![cilium-install](../../images/cilium-install1.png)
 

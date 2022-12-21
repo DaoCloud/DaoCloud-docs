@@ -4,7 +4,7 @@ Because Elasticsearch belongs to the application layer of DCE 5.0, a DCE environ
 
 Follow the steps below to install Elasticsearch.
 
-## install elasticsearch-operator
+## Install elasticsearch-operator
 
 1. On the left navigation bar, click `Container Management` -> `Cluster List`.
 
@@ -69,7 +69,7 @@ Follow the steps below to install Elasticsearch.
 
     # global parameters
     --set global.mcamel.imageTag: image version
-    --set global.imageRegistry: mirror warehouse address
+    --set global.imageRegistry: container registry address
     ```
 
 ## uninstall

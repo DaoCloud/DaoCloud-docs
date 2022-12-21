@@ -1,4 +1,4 @@
-# add API
+# Add API
 
 The microservice gateway supports the full lifecycle management of the API of the gateway instance, including the addition, update, and deletion of APIs. This page describes how to add APIs.
 

@@ -6,7 +6,7 @@ The successfully added service will appear on the service list page, and you can
 
 You need to add the corresponding service source in the source management <!--to-be-supplemented link--> in advance, so that you can select the corresponding service source type when manually accessing the service.
 
-## access service
+## Access service
 
 1. Click the name of the target gateway on the `Microservice Gateway List` page, enter the gateway overview page, and click `Service Access`-->`Service List` in the left navigation bar.
 
@@ -76,7 +76,7 @@ You need to add the corresponding service source in the source management <!--to
 
     ![Update Service](imgs/update4.png)
 
-## delete service
+## Delete service
 
 Find the service to be deleted on the `Service List` page, click **`ⵗ`** on the right side of the service, and select `Delete`.
 

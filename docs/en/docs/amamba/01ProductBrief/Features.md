@@ -17,13 +17,13 @@ Application Workbench provides the following functions.
 
     Pipeline is a custom CI/CD pattern.
 
-    - Supports two modes of custom creation and pipeline creation based on the jenkinsfile of the code warehouse.
+    - Supports two modes of custom creation and pipeline creation based on the jenkinsfile of the codebase.
     - Support pipeline graphical editing.
     - The application can be built through source code and Jar package.
 
 - Credential management
 
-    Provide different types of credential management functions for code bases and mirror warehouses in the pipeline.
+    Provide different types of credential management functions for codebases and container registrys in the pipeline.
 
 - Continuous deployment
 
@@ -32,7 +32,7 @@ Application Workbench provides the following functions.
     - Based on Argo CD, deploy enterprise applications to the production environment frequently and continuously in an automated manner.
     - Provides Argo CD Application creation, synchronization, and deletion management.
 
-- warehouse management
+- registry management
 
     Support importing Git code repository, after importing, you can use this repository for continuous deployment of applications in continuous deployment.
 

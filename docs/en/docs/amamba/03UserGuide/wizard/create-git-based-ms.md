@@ -1,20 +1,20 @@
 # Build microservice applications based on Git repository
 
-Build traditional microservice applications based on the source code of the Git warehouse through the application workbench, so as to manage the traffic of the application, view logs, monitor, link tracking and other functions.
+Build traditional microservice applications based on the source code of the Git registry through the application workbench, so as to manage the traffic of the application, view logs, monitor, link tracking and other functions.
 
 ## prerequisites
 
 - Need to create a workspace and a user, the user needs to join the workspace and give `workspace edit` role.
   Refer to [Creating Workspaces](../../../ghippo/04UserGuide/02Workspace/Workspaces.md), [Users and Roles](../../../ghippo/04UserGuide/01UserandAccess/User. md).
-- Create two credentials that can access the code warehouse warehouse and the mirror warehouse, and name them respectively: `git-credential` and `registry`. For more information on creating credentials, please refer to [Credential Management](../Pipeline/Credential.md).
-- Prepare a Gitlab warehouse, Harbor warehouse
+- Create two credentials that can access the codebase registry and the container registry, and name them respectively: `git-credential` and `registry`. For more information on creating credentials, please refer to [Credential Management](../Pipeline/Credential.md).
+- Prepare a Gitlab registry, Harbor registry
 
 ## Create Credentials
 
 1. Create two credentials on the Credentials page:
 
     - git-credential: username and password for accessing the code repository
-    - registry-credential: username and password for accessing the mirror warehouse
+    - registry-credential: username and password for accessing the container registry
 
 1. After the creation is complete, you can see the credential information on the `Certificate List` page.
 
@@ -39,14 +39,14 @@ Build traditional microservice applications based on the source code of the Git 
 1. After setting the pipeline construction information, click `Next`.
 
     - code repository
-        - Code warehouse: Enter the Git warehouse address `https://gitlab.daocloud.cn/ndx/skoala.git`. Here is an example address, please use your own warehouse address in actual operation.
+        - codebase: Enter the Git registry address `https://gitlab.daocloud.cn/ndx/skoala.git`. Here is an example address, please use your own registry address in actual operation.
         - Branch: default is `main`, here is `main`, no need to change
-        - Credentials: Select the credential `git-credential` to access the code warehouse, if it is a public warehouse, you do not need to fill in
+        - Credentials: Select the credential `git-credential` to access the codebase, if it is a public registry, you do not need to fill in
     - Construct
-        - Dockerfile path: Enter the absolute path of the Dockerfile in the code warehouse, the example address here is `demo/integration/springcloud-nacos-sentinel/code/Dockerfile`
-        - Target mirror name: Enter the mirror warehouse name [`release-ci.daocloud.io/test-lfj/fromgit`](http://release-ci.daocloud.io/test-lfj/fromgit).
-        - Tag: Enter the mirror warehouse version `v2.0.0`
-        - Credentials: Select the credential `registry-credential` to access the mirror warehouse
+        - Dockerfile path: Enter the absolute path of the Dockerfile in the codebase, the example address here is `demo/integration/springcloud-nacos-sentinel/code/Dockerfile`
+        - Target image name: Enter the container registry name [`release-ci.daocloud.io/test-lfj/fromgit`](http://release-ci.daocloud.io/test-lfj/fromgit).
+        - Tag: Enter the container registry version `v2.0.0`
+        - Credentials: Select the credential `registry-credential` to access the container registry
     - advanced settings
         - ContextPath: ContextPath is the execution context path of the docker build command. Fill in the path relative to the root directory of the code, such as target, or the directory where the Dockerfile is located if not filled.
         - Build parameters: Build parameters will be passed to the parameters of the build command in the form of --build-arg, which supports setting the upstream product download address and upstream image download address as parameters, and supports custom arbitrary parameters.

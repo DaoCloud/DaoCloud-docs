@@ -1,10 +1,32 @@
+---
+hide:
+  - toc
+---
+
 # DaoCloud Enterprise 5.0
 
 DaoCloud Enterprise 5.0 is a high-performance, scalable cloud-native operating system that provides a consistent and stable experience on any infrastructure and in any environment. It supports hybrid, edge, and multicloud orchestration. DCE 5.0 integrates the latest service mesh and microservice technologies to track every flow and help you gain insight into the detailed metrics of clusters, nodes, applications, and services, and visualize the health status of applications through dynamic dashboards and topology maps.
 
 DCE 5.0 natively supports the DevOps development and operation and maintenance mode, which can realize the full process standardization and automation of application delivery, and integrate various selected databases and middleware to make operation and maintenance governance more efficient. The various product modules of DCE 5.0 are independently decoupled and support flexible upgrades without affecting the business, and can be docked with many cloud-native ecological products to provide a complete solution system. It has been tested by nearly a thousand industry customers' production scenarios, and has built a solid and reliable digital foundation to help enterprises define digital boundaries and release cloud-native productivity.
 
-![modules](../images/dce-modules02.png)
+<div class="grid cards" markdown>
+
+- :fontawesome-solid-jet-fighter-up: **Installation** [Install Community and Commercial releases](../install/intro.md)
+- :octicons-container-16: **Container Management** [Manage multi-cluster containers and pods](../kpanda/03ProductBrief/WhatisKPanda.md)
+- :fontawesome-solid-user-group: **Global Management** [Login, user and access, appearance](../ghippo/01ProductBrief/WhatisGhippo.md)
+- :material-monitor-dashboard: **Observability** [One-stop graphical dashboard](../insight/03ProductBrief/WhatisInsight.md)
+- :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](../amamba/01ProductBrief/WhatisAmamba.md)
+- :material-cloud-check: **Multicloud Orchestration** [Manage multi-cloud instances, workloads, policies](kairship/01product/whatiskairship.md)
+- :material-engine: **Microservice Engine** [Microservice registry and gateway](../skoala/select-workspace.md)
+- :material-table-refresh: **Service Mesh** [Non-intrusive service governance](../mspider/01Intro/WhatismSpider.md)
+- :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](../middleware/midware.md)
+- :material-warehouse: **Container Registry** [Integrate and manage registries](../kangaroo/intro.md)
+- :material-dot-net: **Network** [Multi-CNI fusion solution](../network/intro/what-is-net.md)
+- :floppy_disk: **Storage** [Comprehensive solution for containerized storage](../hwameistor/intro/what.md)
+
+</div>
+
+![modules](../images/dce-modules04.png)
 
 In the past eight years, DaoCloud has invested huge to explore and develop a cloud-native operating system with custom and scalable modules to facilitate your business digitalization. You can use each module like a LEGO brick, with zero downtime while upgrading any module. DCE 5.0 is also easy to integrate with hundreds of cloud-native ecological plugins, so you can simply customize solutions for different scenarios. Things go better with such a kind of modular style to grow day by day.
 

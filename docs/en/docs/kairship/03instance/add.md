@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# add instance
+# Add instance
 
 DaoCloud provides powerful multi-instance management capabilities of multicloud modules based on Karmada, and you only need to follow the steps below to perform simple operations.
 

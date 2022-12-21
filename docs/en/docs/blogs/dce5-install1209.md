@@ -1556,10 +1556,10 @@ K8s localdisk is used as the default storage when installed by default. This exa
 
 1. Install HwameiStor
 
-    Install using a mirror repository. To switch the mirror of the mirror repository, use --set to change the values of these two parameters:
+    Install using a container registry. To switch the image of the container registry, use --set to change the values of these two parameters:
     `global.k8sImageRegistry` and `global.hwameistorImageRegistry`
 
-    > Note the default registries quay.io and ghcr.io. If you can't access it, you can try to use the mirror sources quay.m.daocloud.io and ghcr.m.daocloud.io provided by DaoCloud
+    > Note the default registries quay.io and ghcr.io. If you can't access it, you can try to use the image sources quay.m.daocloud.io and ghcr.m.daocloud.io provided by DaoCloud
 
     ```bash linenums="1"
     helm install hwameistor ./hwameistor \

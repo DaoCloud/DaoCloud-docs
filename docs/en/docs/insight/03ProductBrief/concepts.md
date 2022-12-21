@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# basic concept
+# Basic concept
 
 This section introduces the basic concepts related to observability (Insight).
 

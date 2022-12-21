@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# create/delete workspace
+# Create/delete workspace
 
 A workspace is a resource category that represents a resource hierarchy.
 A workspace can contain resources such as clusters, namespaces, and registries.

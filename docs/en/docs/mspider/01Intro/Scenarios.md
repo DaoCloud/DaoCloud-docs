@@ -1,96 +1,95 @@
-# 适用场景
+# Applicable scene
 
-此处介绍服务网格适用的具体场景。
+The specific scenarios where the service mesh is applicable are introduced here.
 
-## 服务流量治理
+## Service Traffic Governance
 
-流量治理是一个非常宽泛的话题，例如：
+Traffic governance is a very broad topic such as:
 
-- 动态修改服务间访问的负载均衡策略，如根据某个请求特征做会话保持。
+- Dynamically modify the load balancing strategy for inter-service access, such as maintaining sessions based on certain request characteristics.
 
-- 同一个服务有两个版本在线，将一部分流量切到某个版本上。
+- There are two versions of the same service online, and part of the traffic is cut to a certain version.
 
-- 对服务进行保护，例如限制并发连接数、限制请求数、隔离故障服务实例等。
+- Protect services, such as limiting the number of concurrent connections, limiting the number of requests, isolating faulty service instances, etc.
 
-- 动态修改服务中的内容，或者模拟服务运行故障等。
+- Dynamically modify the content in the service, or simulate service failures, etc.
 
-服务网格可以提供非侵入的流量治理能力，无需修改任何业务代码就能实现这些服务治理功能。根据服务的协议，提供策略化、场景化的网络连接管理。可以根据需要对特定服务的特定端口配置不同的治理规则。
+The service grid can provide non-intrusive traffic management capabilities, and these service governance functions can be realized without modifying any business code. Provide strategic and scenario-based network connection management according to the service agreement. Different governance rules can be configured for specific ports of specific services as needed.
 
-### 场景优势
+### Scenario Advantages
 
-- 重试
+- Retry
 
-    服务访问失败自动重试，从而提高总体访问成功率和质量。支持配置 HTTP 请求重试次数、重试超时时间和重试条件。
+     Service access failure is automatically retried, thereby improving the overall access success rate and quality. Supports configuring the number of HTTP request retries, retry timeout and retry conditions.
 
-- 超时
+- time out
 
-    服务访问超时自动处理，快速失败，从而避免资源锁定和请求卡顿。支持配置 HTTP 请求超时时间。
+     Service access timeout is automatically handled and fails quickly, thereby avoiding resource locking and request jamming. Supports configuring HTTP request timeout.
 
-- 连接池
+- connection pool
 
-    通过连接池管理，可以对四层协议配置 TCP 的最大连接数、连接超时时间、最大无响应次数、最短空闲时间和健康检查间隔；
-    可以对七层协议配置 HTTP 最大请求数、最大重试次数、最大等待请求数、每连接最大请求数、连接最大空闲时间，从而防止一个服务的失败级联影响到整个应用。
+     Through connection pool management, the maximum number of TCP connections, connection timeout, maximum number of no responses, minimum idle time and health check interval can be configured for the four-layer protocol;
+     The maximum number of HTTP requests, the maximum number of retries, the maximum number of waiting requests, the maximum number of requests per connection, and the maximum idle time of a connection can be configured for the seven-layer protocol, so as to prevent the cascading failure of a service from affecting the entire application.
 
-- 熔断
+- fuse
 
-    通过熔断配置实例被驱逐前的连续错误次数、驱逐间隔时长、最小驱逐时间、最大驱逐比例等参数，从而定期考察被访问的服务实例的工作情况。
-    如果连续出现访问异常，则将服务实例标记为异常并进行隔离，在一段时间内不为其分配流量。
-    过一段时间后，被隔离的服务实例会再次被解除隔离，尝试处理请求。如果还不正常，则被隔离更长的时间。从而实现异常服务实例的故障隔离和自动故障恢复。
+     By fusing parameters such as the number of consecutive errors before the instance is evicted, the eviction interval, the minimum eviction time, and the maximum eviction ratio, etc., the working conditions of the accessed service instances are regularly inspected.
+     If access exceptions occur continuously, the service instance will be marked as abnormal and isolated, and no traffic will be assigned to it for a period of time.
+     After a period of time, the isolated service instance will be unisolated again and try to process the request. If it is not normal, it will be quarantined for a longer period of time. In this way, fault isolation and automatic fault recovery of abnormal service instances are realized.
 
-- 负载均衡
+- load balancing
 
-    配置各种负载均衡策略，如随机、轮询、最少连接，还可以配置一致性哈希将流量转发到特定的服务实例上。
+     Configure various load balancing strategies, such as random, round robin, least connections, and you can also configure consistent hashing to forward traffic to specific service instances.
 
-- HTTP Header
+-HTTP Header
 
-    灵活增加、修改和删除指定 HTTP Header，包括将 HTTP 请求转发到目标服务之前对 Header 进行操作。
-    还可以在将 HTTP 响应回复给客户端前，对 Header 进行操作，以非侵入方式管理请求内容。
+     Flexibly add, modify, and delete specified HTTP Headers, including manipulating headers before forwarding HTTP requests to target services.
+     It is also possible to manipulate the Header before replying the HTTP response to the client to manage the request content in a non-intrusive manner.
 
-- 故障注入
+- fault injection
 
-    通过对选定的服务注入中断故障、延时故障来构造故障场景，无需修改代码即可进行故障测试。
+     Construct fault scenarios by injecting interruption faults and delay faults into selected services, and perform fault testing without modifying codes.
 
-## 端到端的透明安全
+## End-to-end transparent security
 
-众所周知，将传统的单体应用拆分为一个个微服务固然带来了各种好处，例如：更好的灵活性、可扩缩性、重用性，但微服务也同样面临着特殊的安全需求：
+As we all know, splitting traditional monolithic applications into microservices brings various benefits, such as better flexibility, scalability, and reusability, but microservices also face special security requirements. :
 
-- 为了抵御中间人攻击，需要用到流量加密。
+- To defend against man-in-the-middle attacks, traffic encryption is required.
 
-- 为了提供灵活的服务访问控制，需要用到 TLS 和细粒度访问策略。
+- In order to provide flexible service access control, TLS and fine-grained access policies are required.
 
-- 为了决定哪些人在哪些时间可以做哪些事，需要用到审计工具。
+- Auditing tools are needed to determine who can do what and when.
 
-面对这些需求服务网格提供全面的安全解决方案，包括身份验证策略、透明的 TLS 加密以及授权和审计工具。
+Facing these demands, Service Mesh provides comprehensive security solutions, including authentication policies, transparent TLS encryption, and authorization and auditing tools.
 
-### 场景优势
+### Scenario Advantages
 
-- 非侵入安全
+- Non-intrusive security
 
-    服务网格是以一种安全基础设施的方式向用户提供透明的安全能力，让不涉及安全问题的代码安全运行，让不太懂安全的人可以开发和运维安全的服务，不用修改业务代码就能提供服务访问安全。应用服务网格提供了一个透明的分布式安全层，并提供了底层安全的通信通道，管理服务通信的认证、授权和加密，提供 Pod 到 Pod、服务到服务的通信安全。开发人员在这个安全基础设施层上只需专注于应用程序级别的安全性。
+     The service grid provides users with transparent security capabilities in the form of a security infrastructure, allowing codes that do not involve security issues to run safely, so that people who do not understand security can develop and operate secure services without modifying business code It can provide service access security. The application service grid provides a transparent distributed security layer, provides an underlying secure communication channel, manages the authentication, authorization, and encryption of service communication, and provides Pod-to-Pod, service-to-service communication security. Developers only need to focus on application-level security on top of this security infrastructure layer.
 
-- 多集群安全
+- Multi-cluster security
 
-    在多集群场景下服务网格提供了全局的服务访问安全。多个集群的网格共享一套根证书，给数据面的服务实例分发密钥和证书对，并定期替换密钥证书，根据需要撤销密钥证书。在服务间访问时，网格的数据面代理就会代理本地服务和对端进行双向认证、通道加密。这里的双向认证的服务双方可以来自两个不同的集群，从而做到跨集群的透明的端到端双向认证。
+     In a multi-cluster scenario, the service grid provides global service access security. Grids of multiple clusters share a set of root certificates, distribute key and certificate pairs to service instances on the data plane, replace key certificates regularly, and revoke key certificates as needed. When accessing between services, the data plane agent of the grid will act as a proxy for the local service and the peer to perform two-way authentication and channel encryption. The two-way authentication service parties here can come from two different clusters, so as to achieve transparent end-to-end two-way authentication across clusters.
 
-- 细粒度授权
+- Fine-grained authorization
 
-    在认证的基础上，就可以进行服务间的访问授权管理，可以控制某个服务，或者服务的一个特定接口进行授权管理。如只开放给特定的一个 Namespace 下的服务，或者开放给某个特定的服务。源服务和目标服务可以在不同的集群，甚至源服务的不同实例在不同的集群，目标服务的不同实例在不同的集群。
+     On the basis of authentication, access authorization management between services can be performed, and a certain service or a specific interface of a service can be controlled for authorization management. For example, it is only open to services under a specific Namespace, or it is open to a specific service. The source service and the target service can be in different clusters, even different instances of the source service are in different clusters, and different instances of the target service are in different clusters.
 
-## 服务运行监控
+## Service running monitoring
 
-运营容器化的基础设施带来了一系列新的挑战。我们需要增强容器、评估 API 端点的性能以及识别出基础设施中的有害部分。服务网格可在不修改代码的情况下实现 API 增强，并且不会带来服务延迟。
+Operating a containerized infrastructure presents a new set of challenges. We need to harden containers, measure the performance of API endpoints, and identify harmful parts of our infrastructure. A service mesh enables API enhancements without code changes and without service latency.
 
-服务网格可以为网格内的所有服务通信进行遥测，这种遥测技术提供了服务行为的可观察性，有助于运营商对其应用程序进行故障排除、维护和优化，而不会给服务开发人员带来任何额外负担。通过服务网格，运营商可以全面了解被监控的服务如何与其他服务以及组件本身进行交互。
+A service mesh can perform telemetry for all service communications within the mesh. This telemetry technology provides observability of service behavior and helps operators troubleshoot, maintain, and optimize their applications without giving service Any additional burden imposed by the developer. With a service mesh, operators gain a comprehensive view of how monitored services interact with other services, as well as the components themselves.
 
-### 场景优势
+### Scenario Advantages
 
-- 非侵入监控数据采集
+- Non-intrusive surveillance data collection
 
-    在复杂应用的场景下，服务间的访问拓扑、调用链、监控等都是服务访问异常时进行定位定界的必要手段。
-    服务网格技术的一项重要能力就是以应用非侵入的方式提供这些监控数据的采集，用户只需关注自己的业务开发，无需额外关注监控数据的生成。
+     In complex application scenarios, the access topology, call chain, and monitoring between services are all necessary means for positioning and demarcating when service access is abnormal.
+     An important capability of the service grid technology is to provide the collection of these monitoring data in a non-intrusive manner. Users only need to pay attention to their own business development and do not need to pay extra attention to the generation of monitoring data.
 
-- 丰富性能监控能力
+- Rich performance monitoring capabilities
 
-    基于网格生成服务访问数据，集成各种不同的性能监控服务，提供跨集群智能的服务运行管理。
-    包括跨集群的服务调用链、服务访问拓扑和服务运行健康状态、通过跨集群的全局视图来关联服务间的访问状况等。
-  
+     Generate service access data based on the grid, integrate various performance monitoring services, and provide cross-cluster intelligent service operation management.
+     Including cross-cluster service call chains, service access topology and service running health status, associating access status between services through a cross-cluster global view, etc.

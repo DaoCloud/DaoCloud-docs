@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# basic concept
+# Basic concept
 
 The glossary in this section defines the core concepts behind multicloud orchestration to help you build a mental model of how multicloud orchestration works.
 

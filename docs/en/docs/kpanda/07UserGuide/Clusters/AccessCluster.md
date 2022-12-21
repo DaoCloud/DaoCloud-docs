@@ -1,4 +1,4 @@
-# access cluster
+# Access cluster
 
 Clusters accessed or created using the DCE 5.0 [Container Management](../../03ProductBrief/WhatisKPanda.md) platform can not only be accessed directly through the UI interface, but also can be accessed through two other methods:
 
@@ -28,7 +28,7 @@ If you need to access and manage the cloud cluster through a local node, you nee
 Before starting, the following conditions need to be met:
 
 - Ensure the network interconnection between local nodes and cloud clusters.
-- Make sure the kubectl tool is installed on the local node. For detailed installation methods, please refer to Installing [kubectl](https://kubernetes.io/zh-cn/docs/tasks/tools/).
+- Make sure the kubectl tool is installed on the local node. For detailed installation methods, please refer to Installing [kubectl](https://kubernetes.io/docs/tasks/tools/).
 
 ### Download cluster certificate
 

@@ -6,7 +6,7 @@ The virtual service provides routing support for HTTP, TCP, and TLS protocols.
 
 ## Concept introduction
 
--Hosts
+- Hosts
 
     The destination host for the traffic. It can come from service registration information, service entry, or user-defined service domain name. Can be a DNS name with a wildcard prefix, or an IP address.
     Depending on the platform, a short name may also be used instead of the FQDN. In this scenario, the specific conversion process from the short name to the FQDN must be completed by the underlying platform.
@@ -28,7 +28,7 @@ The virtual service provides routing support for HTTP, TCP, and TLS protocols.
       - ratings.prod.svc.cluster.local
     ```
 
--Gateways
+- Gateways
 
     These Hosts can be exposed outside the mesh by binding the VirtualService to the same Host's Gateway Rules.
 
@@ -45,7 +45,7 @@ The virtual service provides routing support for HTTP, TCP, and TLS protocols.
     - mesh
     ```
 
--Http
+- Http
 
     An ordered list of rules. This field contains all routing configuration functions for the http protocol. For service ports whose names are prefixed with `http-`, `http2-`, `grpc-`, or whose protocols are HTTP, HTTP2, GRPC and terminated TLS,
     In addition, ServiceEntry using HTTP, HTTP2, and GRPC protocols are all valid.
@@ -58,28 +58,28 @@ The virtual service provides routing support for HTTP, TCP, and TLS protocols.
         Matches the conditions to be met for the rule to activate. All conditions within a single match block have AND semantics, while lists of match blocks have OR semantics.
         If any one of the matching blocks succeeds, the rule is matched.
 
-    -Route
+    - Route
 
         http rules can redirect or forward (default) traffic.
 
-    -Redirect
+    - Redirect
 
         http rules can redirect or forward (default) traffic.
         Routing/redirection will be ignored if the traffic pass option is specified in the rule.
         The redirect primitive can be used to send HTTP 301 redirects to other URIs or authorities.
 
-    -Rewrite
+    - Rewrite
 
         Rewrite HTTP URI and Authority header, rewrite cannot be used with redirection primitive.
 
-    -Fault
+    - Fault
 
         Fault injection strategy, applicable to client-side HTTP communication.
         If the fault injection policy is enabled on the client side, no timeouts or retries will be enabled.
 
-    -Mirror/MirrorPercent
+    - Mirror/MirrorPercent
 
-        Mirror HTTP traffic to another target, and can set the mirror ratio.
+        Mirror the HTTP traffic to another target, and can set the ratio.
 
     - Tcp
 

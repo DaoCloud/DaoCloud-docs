@@ -1,8 +1,13 @@
-# features
+---
+hide:
+  - toc
+---
+
+# Features and Benefits
 
 DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typical featuers currently supported are as follows. 
 
-=== "[multi-cluster management](../kpanda/03ProductBrief/WhatisKPanda.md)"
+=== "[Multi-cluster management](../kpanda/03ProductBrief/WhatisKPanda.md)"
 
 - Unified management of multi-cluster, supporting Kubernetes clusters in all version ranges to be included in the container management scope. 
 
@@ -63,7 +68,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - Flexible resource division. Resource division and binding based on resource granularity (namespace, cluster, registry, etc.), and unified allocation of container platform resources.
 
-=== "One-stop[Microservice governance](../skoala/intro/features.md)"
+=== "One-stop [Microservice governance](../skoala/intro/features.md)"
 
 - The Microservice registry centrally manages all dynamic Microservices in the cluster.
 
@@ -73,7 +78,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - The Microservice gateway plays an important role in managing the north-south traffic control of Microservices.
 
-=== "[Observable](../insight/03ProductBrief/WhatisInsight.md)"
+=== "[Insight](../insight/03ProductBrief/WhatisInsight.md)"
 
 - The application-centric, out-of-the-box, new generation cloud-native observability operation and maintenance platform realizes fast fault location and quick troubleshooting.
 

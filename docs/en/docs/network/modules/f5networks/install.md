@@ -135,7 +135,7 @@
     - `storageSize`：设置存储池大小，f5-ipam-controller 组件将用于常见 PVC 对象。
       当关闭了 `install f5-ipam-controller`，可忽略本选项。
 
-## cluster 转发模式下的配置（可选）
+## Cluster 转发模式下的配置（可选）
 
 当组件安装为 cluster 转发模式时，需要在 F5 和 K8S 集群之间配置 VXLAN 隧道，或者配置 BGP 邻居。
 

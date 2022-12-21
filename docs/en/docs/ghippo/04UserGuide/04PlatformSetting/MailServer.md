@@ -37,7 +37,7 @@ The specific operation steps are as follows:
 
     ![Success](../../images/mail03.png)
 
-## common problem
+## Common problem
 
 Q: What is the reason why the user still cannot retrieve the password after the mail server is set up?
 

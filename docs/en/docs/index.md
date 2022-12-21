@@ -8,9 +8,26 @@ hide:
 
 On the occasion of the golden Autumn of 2022, DaoCloud gladly launches the next-generation, cloud-native, containerized, comprehensive platform by fusing the most popular cloud-native technologies in the open source community. After two years of continuous development, testing, and verification by hundreds of diligent developers, the flower of idealism finally blooms in the land of romantic open-source community. The new platform leads the paces and waves of cloud-native development globally.
 
-DaoCloud Enterprise 5.0 or DCE 5.0 for short, is a high-performance and scalable cloud-native operating system. It is developed with many independent modules. You can use each of them like LEGO bricks, with zero downtime while upgrading one of modules. DCE 5.0 is easy to integrate with hundreds of cloud-native plugins, so you can simply custom solutions for different scenarios. Things go better with such as modular construction.
+DaoCloud Enterprise 5.0 is a high-performance, scalable cloud-native operating system that provides a consistent and stable experience on any infrastructure and in any environment. It supports hybrid, edge, and multicloud orchestration. DCE 5.0 integrates the latest service mesh and microservice technologies to track every flow and help you gain insight into the detailed metrics of clusters, nodes, applications, and services, and visualize the health status of applications through dynamic dashboards and topology maps.
 
-DCE 5.0 has built a highly adaptable container manager, which can uniformly manage almost all kinds of containerized clusters on the market, with the feature of multicloud orchestration to use OpenShift, VMware, and public clouds at the same time. It can centrally control the apps from app stores and registry, natively integrates the CI/CD pipeline and application workbench, and endows the most cutting-edge service mesh and microservice technology. You can easily get insight from detailed and customized metrics of clusters, nodes, workloads, and services. With the support of various types of selected databases and middleware such as RabbitMQ, Elasticsearch, MySQL, Redis, etc., you can easily learn the current service status in time from the dynamically updated dashboard and topology map, through which you can deep dive into your business data to help you make valuable decisions in advance to boost your business.
+DCE 5.0 natively supports the DevOps development and operation and maintenance mode, which can realize the full process standardization and automation of application delivery, and integrate various selected databases and middleware to make operation and maintenance governance more efficient. The various product modules of DCE 5.0 are independently decoupled and support flexible upgrades without affecting the business, and can be docked with many cloud-native ecological products to provide a complete solution system. It has been tested by nearly a thousand industry customers' production scenarios, and has built a solid and reliable digital foundation to help enterprises define digital boundaries and release cloud-native productivity.
+
+<div class="grid cards" markdown>
+
+- :fontawesome-solid-jet-fighter-up: **Installation** [Install Community and Commercial releases](install/intro.md)
+- :octicons-container-16: **Container Management** [Manage multi-cluster containers and pods](kpanda/03ProductBrief/WhatisKPanda.md)
+- :fontawesome-solid-user-group: **Global Management** [Login, user and access, appearance](ghippo/01ProductBrief/WhatisGhippo.md)
+- :material-monitor-dashboard: **Observability** [One-stop graphical dashboard](insight/03ProductBrief/WhatisInsight.md)
+- :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](amamba/01ProductBrief/WhatisAmamba.md)
+- :material-cloud-check: **Multicloud Orchestration** [Manage multi-cloud instances, workloads, policies](kairship/01product/whatiskairship.md)
+- :material-engine: **Microservice Engine** [Microservice registry and gateway](skoala/select-workspace.md)
+- :material-table-refresh: **Service Mesh** [Non-intrusive service governance](mspider/01Intro/WhatismSpider.md)
+- :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](middleware/midware.md)
+- :material-warehouse: **Container Registry** [Integrate and manage registries](kangaroo/intro.md)
+- :material-dot-net: **Network** [Multi-CNI fusion solution](network/intro/what-is-net.md)
+- :floppy_disk: **Storage** [Comprehensive solution for containerized storage](hwameistor/intro/what.md)
+
+</div>
 
 ![modules](images/dce-modules02.png)
 

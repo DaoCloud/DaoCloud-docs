@@ -14,7 +14,7 @@ HwameiStor is composed of five components:
 - Local Storage: a cloud-native local storage system provisions high performance and persistent LVM volume with local access to applications.
 - Scheduler: automatically schedule the Pod to a correct node which is associated with HwameiStor volume. With the scheduler, the Pod does not need the NodeAffinity or NodeSelector field to select the node. A scheduler will work for both LVM and Disk volumes.
 - admission-controller: a webhook that can automatically verify which pod uses the HwameiStor volume and help to modify the schedulerName to hwameistor-scheduler.
-- DRBD (Distributed Replicated Block Device): It is composed of Linux kernel modules and related scripts to build high available clusters. It is implemented by mirroring the entire device over the network, which can be thought of as a kind of network RAID.
+- DRBD (Distributed Replicated Block Device): It is composed of Linux kernel modules and related scripts to build high available clusters. It is implemented by image the entire device over the network, which can be thought of as a kind of network RAID.
 
 [Go to HwameiStor repo](https://github.com/hwameistor/hwameistor){ .md-button }
 

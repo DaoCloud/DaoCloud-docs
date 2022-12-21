@@ -2,7 +2,7 @@
 
 If you want to delete a cluster from the gateway list, you can follow the steps below to delete the cluster.
 
-## delete a gateway
+## Delete a gateway
 
 This is a recommended operation to prevent accidental deletion.
 
@@ -18,7 +18,7 @@ This is a recommended operation to prevent accidental deletion.
 
     After the gateway is deleted, the information related to the gateway will be lost, please operate with caution.
 
-## batch deletion
+## Batch deletion
 
 If you really need to delete multiple gateways at once, you can use this operation.
 

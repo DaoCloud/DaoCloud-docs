@@ -1,12 +1,12 @@
 # keycloak failed to start
 
-## failure performance
+## Failure performance
 
 MySQL is ready without errors. keycloak fails to start after installing global management (>10 times).
 
 ![img](../images/restart01.png)
 
-## check items
+## Check items
 
 - If the database is MySQL, check if the keycloak database encoding is UTF8.
 

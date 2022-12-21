@@ -10,7 +10,7 @@ There are two editions of DCE 5.0: Community Edition and Commercial Edition.
 | Version | Included Modules | Description |
 | ------ | ------------------------------------------ ------------------ | ------------------------------- ------------------- |
 | Community Edition| [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md)<br />[Container Management](../kpanda/03ProductBrief/WhatisKPanda.md)<br />[Observability]( ../insight/03ProductBrief/WhatisInsight.md) | [Permanent free license](../dce/license0.md), the 3 modules will be updated continuously, and you can [download offline packages of submodules](../ download/dce5.md) |
-| Commercial | [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md)<br />[Container Management](../kpanda/03ProductBrief/WhatisKPanda.md)<br />[Observability]( ../insight/03ProductBrief/WhatisInsight.md)<br />[Application Workbench](../amamba/01ProductBrief/WhatisAmamba.md)<br />[Multicloud Orchestration](../kairship/01product/whatiskairship. md)<br />[Microservice Engine](../skoala/intro/features.md)<br />[Service Mesh](../mspider/01Intro/WhatismSpider.md)<br />[Fine Choose Middleware](../middleware/midware.md)<br />[Cloud Native Network](../network/intro/what-is-net.md)<br />[Cloud Native Storage](. ./hwameistor/intro/what.md)<br />[Mirror Warehouse](../kangaroo/intro.md) | [Genuine Authorization](https://qingflow.com/f/e3291647), each module can Free combination on demand, you can [download the offline package of the submodule](../download/dce5.md) at any time |
+| Commercial | [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md)<br />[Container Management](../kpanda/03ProductBrief/WhatisKPanda.md)<br />[Observability]( ../insight/03ProductBrief/WhatisInsight.md)<br />[Application Workbench](../amamba/01ProductBrief/WhatisAmamba.md)<br />[Multicloud Orchestration](../kairship/01product/whatiskairship. md)<br />[Microservice Engine](../skoala/intro/features.md)<br />[Service Mesh](../mspider/01Intro/WhatismSpider.md)<br />[Fine Choose Middleware](../middleware/midware.md)<br />[Cloud Native Network](../network/intro/what-is-net.md)<br />[Cloud Native Storage](. ./hwameistor/intro/what.md)<br />[container registry](../kangaroo/intro.md) | [Genuine Authorization](https://qingflow.com/f/e3291647), each module can Free combination on demand, you can [download the offline package of the submodule](../download/dce5.md) at any time |
 
 ## Community Edition Installation Process
 
@@ -110,7 +110,7 @@ click config "https://docs.daocloud.io/en/install/commercial/clusterconfig/"
 click typical,simple "https://docs.daocloud.io/en/install/commercial/start-install/"
 ```
 
-### contact us
+### Contact us
 
 DaoCloud Enterprise 5.0 is still in the early stages of release, and the installation process may change. Please bookmark this page and pay attention to the update dynamics, and more operation documents are also being produced.
 

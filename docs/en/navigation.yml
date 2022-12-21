@@ -1,6 +1,6 @@
 # Page tree
 nav:
-  - DaoCloud Webiste: https://www.daocloud.io/
+  - DaoCloud Webiste: https://www.daocloud.io/en/
   - Documentation:
       - DCE Profile:
           - What is DCE 5.0: dce/what-is-dce.md
@@ -8,17 +8,17 @@ nav:
           - Free Trial: dce/license0.md
           - Features and Benefits: dce/features.md
           - Scenarios: dce/scenario.md
-          - Cloud-Native Glossary: dce/terms.md
+          - Glossary: dce/terms.md
       - Installation:
           - Briefs: install/intro.md
           - Install Dependencies: install/install-tools.md
           - Install DCE 5.0 for Community: 
-            - Plan to Deploy: install/community/resources.md
+            - Deployment Plan: install/community/resources.md
             - Online Install with kind: install/community/kind/online.md
             - Online Install with K8s: install/community/k8s/online.md
             - Offline Install with K8s: install/community/k8s/offline.md
           - Install DCE 5.0 for Business:
-              - Plan to Deploy: install/commercial/deploy-plan.md
+              - Deployment Plan: install/commercial/deploy-plan.md
               - Downlaod Packages: install/commercial/download-file.md
               - Edit clusterConfig.yaml: install/commercial/clusterconfig.md
               - Offline Installation: install/commercial/start-install.md
@@ -228,15 +228,15 @@ nav:
               - Quickly Create Pipeline: amamba/02QuickStart/deploypipline.md
               - Scan Code with Pipeline: amamba/02QuickStart/scan-with-pipeline.md
               - Scan Images with Managed Harbor: amamba/02QuickStart/scan-with-harbor.md
-      - Multi-Cloud Orchestration:
+      - Multicloud Orchestration:
           - Intro:
-              - What is Multi-Cloud Orchestration: kairship/01product/whatiskairship.md
+              - What is Multicloud Orchestration: kairship/01product/whatiskairship.md
               - Features: kairship/01product/features.md
               - Architecture: kairship/01product/architecture.md
               - Benefits: kairship/01product/benefits.md
               - Concepts: kairship/01product/concepts.md
               - Release Notes: kairship/01product/release-notes.md
-          - Multi-Cloud Instances:
+          - Multicloud Instances:
               - Instance Intro: kairship/03instance/README.md
               - Add Instance: kairship/03instance/add.md
               - Delete Instance: kairship/03instance/delete.md
@@ -244,16 +244,16 @@ nav:
           - Clusters:
               - Joint Cluster: kairship/04cluster/join.md
               - Remove Cluster: kairship/04cluster/remove.md
-          - Multi-Cloud Workload:
+          - Multicloud Workload:
               - Workload Intro: kairship/05workload/README.md
               - Create with Image: kairship/05workload/image.md
               - Create with YAML: kairship/05workload/yaml.md
-              - Upgrade to Multi-Cloud Workload with One-click: kairship/05workload/promote.md
+              - Upgrade to Multicloud Workload with One-click: kairship/05workload/promote.md
           - Resources:
-              - Multi-Cloud Service: kairship/06resource/service.md
-              - Multi-Cloud Namespace: kairship/06resource/ns.md
-              - Multi-Cloud ConfigMap: kairship/06resource/configmap.md
-              - Multi-Cloud Secret: kairship/06resource/secret.md
+              - Multicloud Service: kairship/06resource/service.md
+              - Multicloud Namespace: kairship/06resource/ns.md
+              - Multicloud ConfigMap: kairship/06resource/configmap.md
+              - Multicloud Secret: kairship/06resource/secret.md
           - Policies:
               - PropagationPolicy: kairship/07policy/propagationpolicy.md
               - OverridePolicy: kairship/07policy/overridepolicy.md
@@ -411,7 +411,7 @@ nav:
       - Middleware:
           - Intro: middleware/midware.md
           - Version Compatibility: middleware/adaptation-k8s.md
-          - Elasticsearch 搜索服务:
+          - Elasticsearch:
               - What is Elasticsearch: middleware/elastic-search/intro/what.md
               - Features: middleware/elastic-search/intro/features.md
               - Benefits: middleware/elastic-search/intro/benefits.md
@@ -555,7 +555,7 @@ nav:
       - Workbench: videos/amamba.md
       - Service Mesh: videos/mspider.md
       - Microservice Engine: videos/skoala.md
-      - Multi-Cloud Orchestration: videos/kairship.md
+      - Multicloud Orchestration: videos/kairship.md
       - Middleware: videos/mcamel.md
       - Network: videos/network.md
       - Container Registry: videos/kangaroo.md
@@ -566,7 +566,7 @@ nav:
       - 20221026 | Container Management Capabilities: blogs/kpanda.md
       - 20221018 | Resource Management Capabilities: blogs/resource.md
       - 20220925 | Workbench Capabilities: blogs/amamba.md
-      - 20220808 | Multi-Cloud Orchestration Capabilities: blogs/kairship.md
+      - 20220808 | Multicloud Orchestration Capabilities: blogs/kairship.md
       - 20220708 | Service Mesh Capabilities: blogs/mspider.md
       - 20220606 | DCE Dev Background: blogs/blog00.md
   - DaoCloud Ecosystem:
