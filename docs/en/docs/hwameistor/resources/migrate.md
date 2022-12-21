@@ -6,7 +6,7 @@
 
 `LocalVolumeGroup(LVG)` (data volume group) management is an important function in HwameiStor. When the application Pod applies for multiple data volumes `PVC`, in order to ensure the correct operation of the Pod, these data volumes must have certain attributes, such as: the number of copies of the data volume, and the node where the copies are located. It is a very important capability in HwameiStor to correctly manage these associated data volumes through the data volume group management function.
 
-## prerequisites
+## Prerequisites
 
 LocalVolumeMigrate needs to be deployed in the Kubernetes system, and the deployment application needs to meet the following conditions:
 

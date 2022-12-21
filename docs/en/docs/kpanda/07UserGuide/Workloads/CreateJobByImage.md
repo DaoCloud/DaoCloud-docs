@@ -25,7 +25,7 @@ Job completions are marked according to `.spec.completions` settings.
      - Once at least 1 Pod has successfully completed and all Pods have terminated, the Job can be declared successfully completed.
      - Once any Pod exits successfully, no other Pods should perform any actions or generate any output from this task. All pods should initiate the exit process.
 
-## prerequisites
+## Prerequisites
 
 Before creating tasks through image, the following prerequisites must be met:
 

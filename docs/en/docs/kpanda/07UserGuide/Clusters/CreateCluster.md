@@ -4,7 +4,7 @@ In the DCE 5.0 container management module, [cluster role] (./ClusterRole.md#clu
 
 This page describes how to create a worker cluster.
 
-## prerequisites
+## Prerequisites
 
 Certain prerequisites must be met before creating a cluster:
 

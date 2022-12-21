@@ -1,6 +1,6 @@
 # Enable the Mesh Governance plugin
 
-<!--## prerequisites-->
+<!--## Prerequisites-->
 ## Steps
 
 1. On the Managed Registry List page, click the name of the target registry, and then click .

@@ -1,9 +1,11 @@
-# Enhance Go applications with OTel autoprobes (experimental feature)
+# Enhance Go apps with OTel auto-instrumentation
+
+This is an experimental feature.
 
 If you don't want to manually change the application code, you can try this article's eBPF-based automatic enhancement method.
 This feature is currently in the review stage of donating to the OpenTelemetry community, and does not support Operator injection through annotations (it will be supported in the future), so you need to manually change the Deployment YAML or use a patch.
 
-## prerequisites
+## Prerequisites
 
 Make sure Insight Agent is ready. If not, see [Install insight-agent to collect data](../installagent.md) and make sure the following three items are in place:
 

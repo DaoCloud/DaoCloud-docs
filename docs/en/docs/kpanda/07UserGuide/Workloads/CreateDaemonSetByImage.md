@@ -12,7 +12,7 @@ Some typical uses of daemonsets include:
 
 A simple usage is to start a DaemonSet on all nodes for each type of daemon. A slightly more complex usage is to deploy multiple DaemonSets for the same daemon process. Each DaemonSet has different flags and has different memory, CPU requirements for different hardware types.
 
-## prerequisites
+## Prerequisites
 
 Before creating a DaemonSet from an image, the following prerequisites need to be met:
 

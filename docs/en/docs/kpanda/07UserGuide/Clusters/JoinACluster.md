@@ -16,7 +16,7 @@ The container management platform supports access to a variety of mainstream con
 - Tencent TKE
 - Standard Kubernetes cluster
 
-## prerequisites
+## Prerequisites
 
 - Prepare a cluster to be connected, and ensure that the network between the container management cluster and the cluster to be connected is smooth.
 - The current operating user should have [`NS Edit`](../Permissions/PermissionBrief.md) or higher.

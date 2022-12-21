@@ -13,7 +13,7 @@ Two creation methods are supported:
 - Graphical creation
 - Created via YAML
 
-## prerequisites
+## Prerequisites
 
 - Container management platform [connected to Kubernetes cluster](../Clusters/JoinACluster.md) or [created Kubernetes cluster](../Clusters/CreateCluster.md), and can access the UI interface of the cluster
 

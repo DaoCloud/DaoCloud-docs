@@ -4,7 +4,7 @@ hide:
   - toc
 ---
 
-# 安装组件 insight-agent 
+# 安装组件 insight-agent
 
 请确认您的集群已成功接入`容器管理`平台，然后执行以下步骤安装 insight-agent 来采集数据。
 
@@ -12,21 +12,22 @@ hide:
 
     ![进入集群列表](../../images/login01.png)
 
-2. 点击要安装 insight-agent 的集群名称。
+1. 点击要安装 insight-agent 的集群名称。
 
     ![点击集群名称](../../images/login02.png)
 
-3. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到 `insight-agent`，点击该磁贴卡片。
+1. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到 `insight-agent`，点击该磁贴卡片。
 
     ![找到 insight-agent](../../images/installagent01.png)
 
-4. 选择合适的版本，点击`安装`。
+1. 选择合适的版本，点击`安装`。
 
     ![安装](../../images/installagent02.png)
 
-5. 填入名称，选择命名空间和版本后，在 yaml 文件中分别填写 logging 、metric 、audit、trace 上报数据的地址。
+1. 填入名称，选择命名空间和版本后，在 yaml 文件中分别填写 logging、metric、audit、trace 上报数据的地址。
 
-	系统默认已填写数据上报的组件的地址，仍请您检查无误后再点击`确定` 进行安装。如需修改数据上报地址，请参考[获取数据上报地址](gethosturl.md)。
+    系统默认已填写数据上报的组件的地址，仍请您检查无误后再点击`确定` 进行安装。
+    如需修改数据上报地址，请参考[获取数据上报地址](gethosturl.md)。
 
     ![填表](../../images/installagent03.png)
 

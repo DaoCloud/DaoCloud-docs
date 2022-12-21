@@ -2,7 +2,7 @@
 
 Cluster monitoring can view the basic information of the cluster, the resource consumption in the cluster and the change trend of resource consumption over a period of time.
 
-## prerequisites
+## Prerequisites
 
 The cluster has [insight-agent installed](../../06UserGuide/01quickstart/installagent.md) and the application is in `running` state.
 

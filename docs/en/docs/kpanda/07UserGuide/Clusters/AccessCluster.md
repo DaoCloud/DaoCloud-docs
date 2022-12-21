@@ -5,7 +5,7 @@ Clusters accessed or created using the DCE 5.0 [Container Management](../../03Pr
 - Online access via CloudShell
 - Access through kubectl after downloading the cluster certificate
 
-## prerequisites
+## Prerequisites
 
 - Ability to access the UI interface of container management, and create or join a cluster in container management.
 - The current operating user should have [`Cluster Admin`](../Permissions/PermissionBrief.md) permission or higher.

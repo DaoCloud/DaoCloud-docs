@@ -2,7 +2,7 @@
 
 Application Workbench is based on open source software [Argo CD](https://argo-cd.readthedocs.io/en/stable/) for continuous deployment. This page demonstrates how to implement continuous deployment of applications.
 
-## prerequisites
+## Prerequisites
 
 - Need to create a workspace and a user, the user needs to join the workspace and give `workspace edit` role.
   Refer to [Creating Workspaces](../../../ghippo/04UserGuide/02Workspace/Workspaces.md), [Users and Roles](../../../ghippo/04UserGuide/01UserandAccess/User. md).

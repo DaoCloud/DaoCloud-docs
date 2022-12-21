@@ -2,7 +2,7 @@
 
 Observability Insight provides monitoring of service indicators, and can view key indicators such as real-time throughput, number of requests, request delay, and error rate of services.
 
-## prerequisites
+## Prerequisites
 
 The insight-agent is installed in the cluster and the application is in `running` state. If not installed, please refer to: [Installing insight-agent to collect data](../../06UserGuide/01quickstart/installagent.md)
 
