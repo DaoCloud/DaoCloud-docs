@@ -18,5 +18,14 @@ See the [Creating Multicloud Workloads](../kairship/05workload/image.md) documen
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/workloads.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
 </div>
 
+## Manage multicloud resources
 
-[Apply for community free experience](../dce/license0.md){ .md-button .md-button--primary }
+See [Multicloud Service](../kairship/06resource/service.md), [Multicloud Namespace](../kairship/06resource/ns.md), [Multicloud Configuration](../kairship/06resource/configmap.md), [Multicloud Secret](../kairship/06resource/secret.md) documentation page.
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-resoruces.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
+</div>
+
+[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
