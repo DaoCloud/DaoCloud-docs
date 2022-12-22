@@ -24,7 +24,7 @@ App Workbench Pipelines supports creating pipelines using a Jenkinsfile in a rep
 
     ![selecttype](../../images/selecttype.png)
 
-3. Enter `Jenkinsfile Creation Pipeline Based on Code Warehouse` and configure related parameters.
+3. Enter `Jenkinsfile Creation Pipeline Based on codebase` and configure related parameters.
 
     ![gitpipeline](../../images/gitpipeline.png)
 
@@ -32,11 +32,11 @@ App Workbench Pipelines supports creating pipelines using a Jenkinsfile in a rep
 
     ![pipeline01](../../images/pipeline01.png)
 
-5. Fill in the code warehouse information.
+5. Fill in the codebase information.
 
     ![giturl](../../images/giturl.png)
 
-    - Code warehouse address: fill in the address of the remote code warehouse.
+    - codebase address: fill in the address of the remote codebase.
 
     - Credentials: If your remote repository is private, please create a credential in advance and select it when using it.
 

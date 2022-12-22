@@ -5,7 +5,7 @@ You can automatically scale Pod copies horizontally for workload resources by co
 
 This section describes how to install `metrics-server`.
 
-## prerequisites
+## Prerequisites
 
 Before installing the `metrics-server` plugin, the following prerequisites need to be met:
 
@@ -54,7 +54,7 @@ Please perform the following steps to install the `metrics-server` plugin for th
 
         ```yaml
         image:
-          repository: k8s.m.daocloud.io/metrics-server/metrics-server # Change the warehouse source address to k8s.m.daocloud.io
+          repository: k8s.m.daocloud.io/metrics-server/metrics-server # Change the registry source address to k8s.m.daocloud.io
           tag: ''
           pullPolicy: IfNotPresent
         imagePullSecrets: []

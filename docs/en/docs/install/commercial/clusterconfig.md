@@ -22,7 +22,7 @@ spec:
   istioGatewayVip: 10.6.127.254/32 # Required when loadBalancer is metallb
                                    # Provide UI and OpenAPI access to DCE
   registryVip: 10.6.127.253/32 # Required when loadBalancer is metallb
-                                   # The mirror warehouse access entry of the Global cluster
+                                   # The container registry access entry of the Global cluster
   insightVip: 10.6.127.252/32 # Required when loadBalancer is metallb
                               # Used as the Insight data collection entry for the GLobal cluster
                               # The insight-agent of the subcluster can report data to this VIP
@@ -54,7 +54,7 @@ spec:
     - 0.pool.ntp.org
     - ntp1.aliyun.com
     - ntp.ntsc.ac.cn
-  persistentRegistryDomainName: temp-registry.daocloud.io # Local mirror warehouse
+  persistentRegistryDomainName: temp-registry.daocloud.io # Local container registry
   imageConfig: # kubean image configuration
     imageRepository: temp-registry.daocloud.io
     binaryRepository: http://temp-registry.daocloud.io:9000/kubean
@@ -88,7 +88,7 @@ spec:
   cri:
     criProvider: containerd
     # The criVersion field is only available in online mode, no need to set it in offline mode
-    # criVersion: 1.6.8
+    # CriVersion: 1.6.8
   addons:
     ingress:
       version: 1.2.3
@@ -109,10 +109,10 @@ For key field descriptions in this YAML file, see the table below.
 | mgmtClusterName | Name of the management cluster in KuBean | - |
 | globalClusterName | The name of the global service cluster in KuBean | - |
 | istioGatewayVip | If the load balancing mode is metallb, you need to specify a VIP to be used as the DCE UI interface and OpenAPI access entry | - |
-| registryVip | If the load balancing mode is metallb, you need to specify a VIP to be used as the access entry of the mirror warehouse of the Global cluster | - |
+| registryVip | If the load balancing mode is metallb, you need to specify a VIP to be used as the access entry of the container registry of the Global cluster | - |
 | insightVip | If the load balancing mode is metallb, you need to specify a VIP for the insight data collection entry of the GLobal cluster, and the insight-agent of the sub-cluster can report data to this VIP | - |
-| persistentRegistryDomainName | If it is an offline installation, you need to specify this field to specify the temporary and future warehouse domain name | - |
-| imageConfig.imageRepository | If it is installed offline, the source of the local mirror repository when kuBean installs the cluster | - |
+| persistentRegistryDomainName | If it is an offline installation, you need to specify this field to specify the temporary and future registry domain name | - |
+| imageConfig.imageRepository | If it is installed offline, the source of the local container registry when kuBean installs the cluster | - |
 | imageConfig.binaryRepository | If it is installed offline, the source of the local binary repository when kuBean installs the cluster | https://xxx.yy.zz |
 | repoConfig | Source for RPM or DEB installations. In offline mode, the installer starts MinIO | - |
 | k8sVersion | K8s version of kuBean installation cluster, must match KuBean and offline package | - |

@@ -90,3 +90,8 @@
 !!! info
 
     如果需要自定义仪表盘，请参考[添加仪表盘面板](https://grafana.com/docs/grafana/latest/dashboards/add-organize-panels/)。
+
+
+!!! warning
+
+    目前无法为自定义的仪表盘提供持久化服务，请在升级或重启 insight 前备份您自定义的仪表盘。

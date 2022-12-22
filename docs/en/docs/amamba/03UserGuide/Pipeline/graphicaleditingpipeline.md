@@ -1,168 +1,168 @@
-# 使用图形化编辑流水线
+# use the graphical editor pipeline
 
-应用工作台设计了图形化流水线编辑视图，能够兼容编辑 Jenkinsfile 中的大部分自定义操作。
-可以直观的让您可以看到流水线上的每个[阶段 (Stage)](https://www.jenkins.io/zh/doc/book/pipeline/#阶段)、每个[步骤 (Step)](https://www.jenkins.io/zh/doc/book/pipeline/#步骤)，从而实现所见即所得的流水线编辑体验。
+The application workbench has designed a graphical pipeline editing view, which is compatible with editing most of the custom operations in the Jenkinsfile.
+You can intuitively see each [stage (Stage)](https://www.jenkins.io/doc/book/pipeline/#stage) and each [step (Step)] on the pipeline (https://www.jenkins.io/doc/book/pipeline/#steps), so as to realize the pipeline editing experience of what you see is what you get.
 
-## 前提条件
+## Prerequisites
 
-- 您需要创建一个工作空间和一个用户，必须邀请该用户至工作空间中且赋予 `workspace edit` 角色。可参考[创建工作空间](../../../ghippo/04UserGuide/02Workspace/Workspaces.md)、[用户和角色](../../../ghippo/04UserGuide/01UserandAccess/User.md)。
+- You need to create a workspace and a user, who must be invited to the workspace and given the `workspace edit` role. Refer to [Create Workspace](../../../ghippo/04UserGuide/02Workspace/Workspaces.md), [Users and Roles](../../../ghippo/04UserGuide/01UserandAccess/User.md).
 
-- 创建可以访问代码仓库、镜像仓库、集群的三个凭证，创建凭证的更多信息，请参考[凭证管理](Credential.md))。
+- Create three credentials that can access the codebase, container registry, and cluster. For more information on creating credentials, please refer to [Credential Management] (Credential.md)).
 
-- 创建一条自定义流水线，请参考[创建自定义流水线](createpipelinebyself.md)，其中创建自定义流水线时需要在构建参数中添加两个字符串参数，这些参数将用于镜像构建的命令中。参数说明如下：
+- To create a custom pipeline, please refer to [Create a custom pipeline](createpipelinebyself.md). When creating a custom pipeline, you need to add two string parameters to the build parameters, and these parameters will be used in the image build command. The parameters are described as follows:
 
-| 参数类型 | 参数名称 | 描述信息                                          |
-| -------- | -------- | ------------------------------------------------- |
-| 字符串   | registry | 镜像仓库地址。本例中使用 `release-ci.daocloud.io` |
-| 字符串   | project  | 镜像仓库中的项目名称。本例中使用 `demo`            |
-| 字符串   | name     | 镜像的名称。本例中使用 `http-hello`                |
+| Parameter Type | Parameter Name | Description |
+| -------- | -------- | ------------------------------- ------------------ |
+| String | registry | container registry address. In this example use `release-ci.daocloud.io` |
+| string | project | The project name in the registry. In this example use `demo` |
+| string | name | The name of the image. This example uses `http-hello` |
 
-## 画布说明
+## Canvas description
 
 ![canvasdescribe](../../images/canvasdescribe.png)
 
-图形化编辑页面包括两个区域：**画布** 和 **阶段设置**。
+The graphical editing page includes two areas: **Canvas** and **Stage Settings**.
 
-1. 点击 `+添加阶段`后，会生成一个串行阶段，点击后，会生成一个新的阶段，可以在该阶段中添加流水线步骤，通过选择步骤类型，可以快速创建当前阶段中的流水线步骤。
+1. After clicking `+Add Stage`, a serial stage will be generated. After clicking, a new stage will be generated, and pipeline steps can be added to this stage. By selecting the step type, you can quickly create the pipeline steps in the current stage .
 
-2. 点击`+添加并行阶段`后，会生成一个并行阶段，点击后，会生成一个新的阶段，可以在该阶段中添加流水线步骤，通过选择步骤类型，可以快速创建当前阶段中的流水线步骤。
+2. After clicking `+ Add Parallel Stage`, a parallel stage will be generated. After clicking, a new stage will be generated, and pipeline steps can be added to this stage. By selecting the step type, you can quickly create the pipeline steps in the current stage .
 
-3. 阶段创建后，点击`阶段`，可以用过阶段进行阶段配置。支持设置阶段的名称、Agent、触发条件、步骤。
+3. After the stage is created, click `Stage`, and you can use the stage to configure the stage. Support setting the name, agent, trigger condition and steps of the stage.
 
-## 操作步骤
+## Steps
 
-点击一个创建好的自定义流水线。在右上角点击`编辑流水线`，进入图形化编辑页面。
+Click on a created custom pipeline. Click `Edit Pipeline` in the upper right corner to enter the graphical editing page.
 
 ![pipelisetting](../../images/editpipe02.png)
 
-### 配置全局设置
+### Configure global settings
 
-点击`全局设置`，从`类型`下拉列表中选择 node，从 label 下拉列表选择 go 16。
+Click on `Global Settings`, select node from the `Type` drop-down list, and select go 16 from the label drop-down list.
 
 ![pipelisetting](../../images/pipelisetting.png)
 
-### 添加阶段 - 拉取源代码
+### Add stage - pull source code
 
-1. 点击画布中的`添加阶段`。在右侧的阶段设置中设置名称：git clone。
+1. Click `Add Stage` in the canvas. In the stage settings on the right set the name: git clone.
 
-2. 点击`添加步骤`，在弹出的对话框中步骤类型下选择 `git clone`，参照下表，对相关参数进行配置。
+2. Click `Add Step`, select `git clone` under the step type in the pop-up dialog box, and refer to the table below to configure the relevant parameters.
 
-    - 仓库 URL：输入仓库地址。
-    - 分支：不填写，默认为m aster 分支。
-    - 凭证：如果您的仓库属于私有仓库则需要提供一个凭证。
+     - registry URL: Enter the registry address.
+     - Branch: do not fill in, the default is the master branch.
+     - Credentials: If your registry is a private registry, you need to provide a credential.
 
-    ![git_clone](../../images/git_clone.png)
+     ![git_clone](../../images/git_clone.png)
 
-### 添加阶段 - 单元测试
+### Add Phase - Unit Test
 
-1. 点击画布中的`添加阶段`。在右侧的阶段设置中设置名称：unit test。
+1. Click `Add Stage` in the canvas. In the stage settings on the right set the name: unit test.
 
-2. 在步骤模块中选择开启`指定容器`，在弹出的对话框中填写容器名称：go，然后点击`确定`。
+2. In the step module, select to open `specify container`, fill in the container name: go in the pop-up dialog box, and then click `OK`.
 
-    ![container1](../../images/container1.png)
+     ![container1](../../images/container1.png)
 
-3. 点击`添加步骤以对代码进行单元测试，并生成测试报告`，在弹出的对话框中步骤类型下选择 shell，并在命令行中输入以下命令，然后点击`确定`。
+3. Click `Add step to unit test the code and generate a test report`, select shell under the step type in the pop-up dialog box, and enter the following command in the command line, and then click `OK`.
 
-    ```go
-    go test -coverprofile=coverage.out
-    ```
+     ```go
+     go test -coverprofile=coverage.out
+     ```
 
-    ![go-test](../../images/go-test.png)
+     ![go-test](../../images/go-test.png)
 
-### 添加阶段 - 构建并推送镜像
+### Add stage - build and push image
 
-1. 点击画布中的`添加阶段`。在右侧的阶段设置中设置名称：build & push。
+1. Click `Add Stage` in the canvas. Set the name in the stage settings on the right: build & push.
 
-2. 在步骤模块中选择开启`指定容器`，在弹出的对话框中填写容器名称：go，然后点击`确定`。
+2. In the step module, select to open `specify container`, fill in the container name: go in the pop-up dialog box, and then click `OK`.
 
-    ![container2](../../images/container2.png)
+     ![container2](../../images/container2.png)
 
-3. 在步骤模块中选择开启`使用凭证`，在弹出的对话框中填写相关参数，然后点击`确定`。
+3. Select to enable `Use Credentials` in the step module, fill in the relevant parameters in the pop-up dialog box, and then click `OK`.
 
-    - 凭证：选择创建的 docker hub 凭证，用户访问镜像仓库。选择已创建好的 “docker-credential” 凭证。
-    - 密码变量：PASS
-    - 用户名变量：USER
+     - Credentials: Select the created docker hub credentials to allow users to access the container registry. Select the created "docker-credential" credential.
+     - Password variable: PASS
+     - Username variable: USER
 
-    ![creditional1](../../images/creditional1.png)
+     ![creditional1](../../images/creditional1.png)
 
-4. 点击`添加步骤`进行代码构建，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
+4. Click `Add Step` to build the code, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and click `OK`.
 
-    ```go
-    go build -o simple-http-server main.go
-    ```
+     ```go
+     go build -o simple-http-server main.go
+     ```
 
-5. 点击`添加步骤`以根据源码中的 Dockerfile 构建 Docker 镜像，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
+5. Click `Add Step` to build a Docker image according to the Dockerfile in the source code, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and click `OK`.
 
-    ```docker
-    docker build -f Dockerfile . -t $REGISTRY/$PROJECT/$NAME:latest
-    ```
+     ```docker
+     docker build -f Dockerfile . -t $REGISTRY/$PROJECT/$NAME:latest
+     ```
 
-6. 点击`添加步骤`以登录镜像仓库并将镜像推送至镜像仓库中，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
+6. Click `Add Step` to log in to the container registry and push the image to the container registry. In the pop-up dialog box, select shell under the step type, enter the following command in the command line, and click `OK`.
 
-    ```docker
-    docker login $REGISTRY -u $USER -p $PASS
-    ```
+     ```docker
+     docker login $REGISTRY -u $USER -p $PASS
+     ```
 
-    ![build3](../../images/build3.png)
+     ![build3](../../images/build3.png)
 
-6. 点击`添加步骤`以将镜像推送至镜像仓库中，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
+6. Click `Add Step` to push the image to the container registry, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and click `OK`.
 
-    ```docker
-    docker push $REGISTRY/$PROJECT/$NAME:latest
-    ```
+     ```docker
+     docker push $REGISTRY/$PROJECT/$NAME:latest
+     ```
 
-    ![build4](../../images/build4.png)
+     ![build4](../../images/build4.png)
 
 !!! note
     
-    镜像更新后还可以实现触发流水线，具体操作请参考[触发流水线](./PipelineTrigger.md)。
+     After the image is updated, the trigger pipeline can also be implemented. For details, please refer to [Trigger Pipeline](./PipelineTrigger.md).
 
-### 添加阶段 - 审核
+### Add stage - review
 
-1. 点击画布中的`添加阶段`。在右侧的阶段设置中设置名称：review。
+1. Click `Add Stage` in the canvas. In the stage settings on the right set the name: review.
 
-2. 点击`添加步骤`，在弹出的对话框中步骤类型下选择`审核`，在消息字段中填入 `@admin`，即 `admin` 帐户在流水线运行到该阶段时会进行审核，然后点击`确定`。
+2. Click `Add Step`, select `Audit` under the step type in the pop-up dialog box, fill in `@admin` in the message field, that is, the `admin` account will be audited when the pipeline runs to this stage, and then Click `OK`.
 
-    ![review](../../images/review.png)
+     ![review](../../images/review.png)
 
-### 添加阶段 - 部署至集群
+### Add stage - deploy to cluster
 
-1. 点击画布中的`添加阶段`。在右侧的阶段设置中设置名称：deploy。
+1. Click `Add Stage` in the canvas. In the stage settings on the right set the name: deploy.
 
-2. 在步骤模块中选择开启`指定容器`，在弹出的对话框中填写容器名称：go，然后点击`确定`。
+2. In the step module, select to open `specify container`, fill in the container name: go in the pop-up dialog box, and then click `OK`.
 
-    ![container3](../../images/container3.png)
+     ![container3](../../images/container3.png)
 
-3. 在步骤模块中选择开启`使用凭证`，在弹出的对话框中填写相关参数，然后点击`确定`。
+3. Select to enable `Use Credentials` in the step module, fill in the relevant parameters in the pop-up dialog box, and then click `OK`.
 
-    - 凭证：选择 kubeconfig 类型的凭证。
+     - Credentials: Choose a credential of type kubeconfig.
 
-    - kubeconfig 变量：如果使用的是 kubectl apply 的部署方式，变量值必须为 KUBECONFIG。
+     - kubeconfig variable: If you are using the kubectl apply deployment method, the variable value must be KUBECONFIG.
 
-    ![credentials2](../../images/credentials2.png)
+     ![credentials2](../../images/credentials2.png)
 
-4. 点击`添加步骤`以进行集群部署操作，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
+4. Click `Add Step` to perform the cluster deployment operation, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and then click `OK`.
 
-    ```shell
-    kubectl apply -f deploy.yaml
-    ```
+     ```shell
+     kubectl apply -f deploy.yaml
+     ```
 
-### 运行流水线
+### Run the pipeline
 
-1. 在流水详情页面点击`立即执行`。在弹出的对话框中设置前提条件中定义的三个字符串参数，点击`确定`来运行流水线。
+1. Click `Execute Now` on the transaction details page. In the pop-up dialog box, set the three string parameters defined in the prerequisites, and click `OK` to run the pipeline.
 
-    ![run](../../images/run.png)
+     ![run](../../images/run.png)
 
-2. 成功开始运行后，页面会自动切换到流水线详情页面，点击当前运行的流水线记录。
+2. After the operation is successfully started, the page will automatically switch to the pipeline details page, click the record of the currently running pipeline.
 
-3. 进入流水线记录详情页面后，您可以查看到当前流水线运行的过程，需要 admin 或者平台管理员来为流水线进行审核，审核成功后，资源会部署至集群。
+3. After entering the pipeline record details page, you can view the running process of the current pipeline. The admin or platform administrator is required to review the pipeline. After the audit is successful, the resources will be deployed to the cluster.
 
     ![report](../../images/report.png)
 
-### 验证集群资源
+### Verify cluster resources
 
-1. 如果流水线的每个阶段都成功运行，则会自动构建一个 Docker 镜像并推送至您的 Docker Hub 仓库。最终，流水线将在您事先设置的项目中自动创建一个无状态负载。
+1. If each stage of the pipeline runs successfully, a Docker image is automatically built and pushed to your Docker Hub repository. Eventually, the pipeline will automatically create a stateless load in the project you set up beforehand.
 
-2. 前往容器管理平台，点击集群下的`工作负载`，您可以看到列表中显示的无状态工作负载。
+2. Go to the container management platform, click `Workload` under the cluster, and you can see the stateless workload displayed in the list.
 
-    ![deployment](../../images/deployment.png)
+     ![deployment](../../images/deployment.png)

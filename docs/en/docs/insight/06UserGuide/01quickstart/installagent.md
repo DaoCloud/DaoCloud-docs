@@ -1,10 +1,10 @@
 ---
 date: 2022-11-17
 hide:
-  - toc
+   - toc
 ---
 
-# Install insight-agent to collect data
+# Install insight-agent
 
 Please confirm that your cluster has successfully connected to the container management platform, and then perform the following steps to install insight-agent to collect data.
 
@@ -26,17 +26,12 @@ Please confirm that your cluster has successfully connected to the container man
 
 1. Fill in the name, select the namespace and version, and fill in the addresses of logging, metric, audit, and trace reporting data in the yaml file.
 
-All field information has been filled in by default, you can use it directly and click `OK`. If you need to modify the data reporting address, please refer to [Get Data Reporting Address](gethosturl.md).
+    The system has filled in the address of the component for data reporting by default, please check it before clicking `OK` to install.
+    If you need to modify the data reporting address, please refer to [Get Data Reporting Address](gethosturl.md).
 
     ![Fill out the form](../../images/installagent03.png)
 
-    The meanings of several option switches are:
-
-    - Failed to delete: After enabling `Failed to delete`, the installation wait will be enabled synchronously by default. If the installation fails, delete related resources.
-    - Ready Wait: When `Ready Wait` is enabled, the application will be marked as installed successfully after all associated resources created are in the ready state by default.
-    - Detailed log: When enabled, the installation process log will be output in detail.
-
-1. The system will automatically return to `Helm application`, the status is `not ready` at the beginning, and the status changes to `deployed` after a period of time, indicating that the insight-agent is installed successfully.
+1. The system will automatically return to `Helm application`. When the application status changes from `not ready` to `deployed`, it means that insight-agent is installed successfully.
 
     ![Success](../../images/login03.png)
 

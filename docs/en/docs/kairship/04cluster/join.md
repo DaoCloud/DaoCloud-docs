@@ -3,11 +3,11 @@ hide:
   - toc
 ---
 
-# access cluster
+# Access cluster
 
-After creating a multi-cloud instance, you need to connect to the working cluster first.
+After creating a multicloud instance, you need to connect to the working cluster first.
 
-1. Click `Working Cluster Management` in the left navigation bar to enter the multi-cloud cluster management page, and click the `Access Cluster` button in the upper right corner.
+1. Click `Working Cluster Management` in the left navigation bar to enter the multicloud cluster management page, and click the `Access Cluster` button in the upper right corner.
 
     ![join](../images/join01.png)
 

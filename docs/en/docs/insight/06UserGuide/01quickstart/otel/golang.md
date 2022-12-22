@@ -1,15 +1,15 @@
-# 使用 OTel SDK 增强 Go 应用程序
+# Enhance Go applications with OTel SDK
 
-本文包含如何在 Go 应用程序中设置 OpenTelemetry 增强的说明。
+This article contains instructions on how to set up OpenTelemetry enhancements in a Go application.
 
-OpenTelemetry 也简称为 OTel，是一个开源的可观测性框架，可以帮助在 Go 应用程序中生成和收集遥测数据：链路、指标和日志。
+OpenTelemetry, also known simply as OTel, is an open-source observability framework that helps generate and collect telemetry data: links, metrics, and logs in Go apps.
 
-## 使用 OpenTelemetry SDK 增强 Go 应用程序
+## Enhance Go apps with the OpenTelemetry SDK
 
-### 安装相关依赖
+### Install related dependencies
 
-必须先安装与 OpenTelemetry exporter 和 SDK 相关的依赖项。如果您正在使用其他请求路由器，请参考[请求路由](#请求路由)。
-切换/进入到应用程序源文件夹后运行以下命令：
+Dependencies related to the OpenTelemetry exporter and SDK must be installed first. If you are using another request router, please refer to [request routing](#request routing).
+After switching/going into the application source folder run the following command:
 
 ```golang
 go get go.opentelemetry.io/otel@v1.8.0 \
@@ -20,9 +20,9 @@ go get go.opentelemetry.io/otel@v1.8.0 \
   go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc@v1.4.1
 ```
 
-### 使用 OpenTelemetry SDK 创建初始化函数
+### Create an initialization function using the OpenTelemetry SDK
 
-为了让应用程序能够发送数据，需要一个函数来初始化 OpenTelemetry。在 `main.go` 文件中添加以下代码片段:
+In order for an application to be able to send data, a function is required to initialize OpenTelemetry. Add the following code snippet to the `main.go` file:
 
 ```golang
 import (
@@ -102,12 +102,11 @@ func handleErr(err error, message string) {
 		zap.S().Errorf("%s: %v", message, err)
 	}
 }
-
 ```
 
-### 在 main.go 中初始化跟踪器
+### Initialize tracker in main.go
 
-修改 main 函数以在 main.go 中初始化跟踪器。另外当您的服务关闭时，应该调用 `TracerProvider.Shutdown()` 确保导出所有 Span。该服务将该调用作为主函数中的延迟函数：
+Modify the main function to initialize the tracker in main.go. Also when your service shuts down, you should call `TracerProvider.Shutdown()` to ensure all spans are exported. The service makes the call as a deferred function in the main function:
 
 ```golang
 func main() {
@@ -119,9 +118,9 @@ func main() {
 }
 ```
 
-### 为应用程序添加 OpenTelemetry Gin 中间件
+### Add OpenTelemetry Gin middleware to the application
 
-通过在 `main.go` 中添加以下行来配置 Gin 以使用中间件:
+Configure Gin to use the middleware by adding the following line to `main.go`:
 
 ```golang
 import (
@@ -137,29 +136,29 @@ func main() {
 }
 ```
 
-### 运行应用程序
+### Run the application
 
-- 本地调试运行
+- Local debugging and running
 
-    > 注意: 此步骤仅用于本地开发调试，生产环境中 Operator 会自动完成以下环境变量的注入。
+    > Note: This step is only used for local development and debugging. In the production environment, the Operator will automatically complete the injection of the following environment variables.
 
-    以上步骤已经完成了初始化 SDK 的工作，现在如果需要在本地开发进行调试，需要提前获取到 insight-system 命名空间下 insight-agent-opentelemerty-collector 的地址，假设为：`insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317`。
+    The above steps have completed the work of initializing the SDK. Now if you need to develop and debug locally, you need to obtain the address of insight-agent-opentelemerty-collector in the insight-system namespace in advance, assuming: `insight-agent-opentelemetry-collector .insight-system.svc.cluster.local:4317`.
 
-    因此，可以在你本地启动应用程序的时候添加如下环境变量：
+    Therefore, you can add the following environment variables when you start the application locally:
 
     ```bash
     OTEL_SERVICE_NAME=my-golang-app OTEL_EXPORTER_OTLP_ENDPOINT=http://insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317 go run main.go...
     ```
 
-- 生产环境运行
+- Production environment running
 
-请参考[通过 Operator 实现应用程序无侵入增强](./operator.md) 中 `只注入环境变量注解` 相关介绍，为 deployment yaml 添加注解：
+Please refer to the introduction of `Only injecting environment variable annotations` in [Achieving non-intrusive enhancement of applications through Operators](./operator.md) to add annotations to deployment yaml:
 
 ```bash
-    instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
+instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
 ```
 
-如果无法使用注解的方式，您可以手动在 deployment yaml 添加如下环境变量：
+If you cannot use annotations, you can manually add the following environment variables to the deployment yaml:
 
 ```yaml
 ······
@@ -188,37 +187,37 @@ env:
 ······
 ```
 
-## 请求路由
+## Request Routing
 
-### OpenTelemetry gin/gonic 增强
+### OpenTelemetry gin/gonic enhancements
 
 ```golang
 # Add one line to your import() stanza depending upon your request router:
 middleware "go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin"
 ```
 
-然后注入 OpenTelemetry 中间件：
+Then inject the OpenTelemetry middleware:
 
 ```golang
-router.Use(middleware.Middleware("my-app"))
+router. Use(middleware. Middleware("my-app"))
 ```
 
-### OpenTelemetry gorillamux 增强
+### OpenTelemetry gorillamux enhancements
 
 ```golang
 # Add one line to your import() stanza depending upon your request router:
 middleware "go.opentelemetry.io/contrib/instrumentation/github.com/gorilla/mux/otelmux"
 ```
 
-然后注入 OpenTelemetry 中间件：
+Then inject the OpenTelemetry middleware:
 
 ```golang
-router.Use(middleware.Middleware("my-app"))
+router. Use(middleware. Middleware("my-app"))
 ```
 
-### gRPC 增强
+### gRPC enhancements
 
-同样，OpenTelemetry 也可以帮助您自动检测 gRPC 请求。要检测您拥有的任何 gRPC 服务器，请将拦截器添加到服务器的实例化中。
+Likewise, OpenTelemetry can help you auto-detect gRPC requests. To detect any gRPC server you have, add the interceptor to the server's instantiation.
 
 ```golang
 import (
@@ -234,7 +233,7 @@ func main() {
 }
 ```
 
-需要注意的是，如果你的程序里面使用到了 Grpc Client 调用第三方服务，你还需要对 Grpc Client 添加拦截器：
+It should be noted that if your program uses Grpc Client to call third-party services, you also need to add an interceptor to Grpc Client:
 
 ```golang
   	[...]
@@ -245,7 +244,7 @@ func main() {
 	)
 ```
 
-### 如果不使用请求路由
+### If not using request routing
 
 ```golang
 import (
@@ -253,7 +252,7 @@ import (
 )
 ```
 
-在将 http.Handler 传递给 ServeMux 的每个地方，您都将包装处理程序函数。例如，将进行以下替换：
+Everywhere you pass http.Handler to ServeMux you will wrap the handler function. For example, the following replacements would be made:
 
 ```golang
 - mux.Handle("/path", h)
@@ -263,11 +262,11 @@ import (
 + mux.Handle("/path", otelhttp.NewHandler(http.HandlerFunc(f), "description of path"))
 ```
 
-通过这种方式，您可以确保使用 othttp 包装的每个函数都会自动收集其元数据并启动相应的跟踪。
+In this way, you can ensure that each function wrapped with othttp will automatically collect its metadata and start the corresponding trace.
 
-## 自定义 Span
+## Custom Span
 
-很多时候，OpenTelemetry 提供的中间件不能帮助我们记录更多内部调用的函数，需要我们自定义 Span 来记录
+In many cases, the middleware provided by OpenTelemetry cannot help us record more internally called functions, and we need to customize Span to record
 
 ```golang
  ······
@@ -278,11 +277,11 @@ import (
   ······
 ```
 
-## 向 span 添加自定义属性和自定义事件
+## Add custom properties and custom events to span
 
-也可以将自定义属性或标签设置为 Span。要添加自定义属性和事件，请按照以下步骤操作：
+It is also possible to set a custom attribute or tag as a span. To add custom properties and events, follow these steps:
 
-### 导入跟踪和属性库
+### Import Tracking and Property Libraries
 
 ```golang
 import (
@@ -292,44 +291,44 @@ import (
 )
 ```
 
-### 从上下文中获取当前 Span
+### Get the current Span from the context
 
 ```golang
 span := trace.SpanFromContext(c.Request.Context())
 ```
 
-### 在当前 Span 中设置属性
+### Set properties in the current Span
 
 ```golang
-span.SetAttributes(attribute.String("controller", "books"))
+span.SetAttributes(attribute. String("controller", "books"))
 ```
 
-### 为当前 Span 添加 Event
+### Add an Event to the current Span
 
-添加 span 事件是使用 span 对象上的 `AddEvent` 完成的。
+Adding span events is done using `AddEvent` on the span object.
 
 ```golang
 span.AddEvent(msg)
 ```
 
-## 记录错误和异常
+## Log errors and exceptions
 
 ```golang
 import "go.opentelemetry.io/otel/codes"
 
-// 获取当前 span
+// Get the current span
 span := trace.SpanFromContext(ctx)
 
-// RecordError 会自动将一个错误转换成 span even
+// RecordError will automatically convert an error into a span even
 span.RecordError(err)
 
-// 标记这个 span 错误
+// Flag this span as an error
 span.SetStatus(codes.Error, "internal error")
 ```
 
-## 参考
+## References
 
-有关 Demo 演示请参考：
+For the Demo presentation, please refer to:
 
 - [otel-grpc-examples](https://github.com/openinsight-proj/otel-grpc-examples/tree/no-metadata-grpcgateway-v1.11.1)
 - [opentelemetry-demo/productcatalogservice](https://github.com/open-telemetry/opentelemetry-demo/tree/main/src/productcatalogservice)

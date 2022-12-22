@@ -77,7 +77,7 @@ DaoCloud's open source community projects around the Kubernetes ecosystem includ
 - [KLTS](https://github.com/klts-io): Long-term maintenance for Kubernetes 10+ versions
 - [Kubean](https://github.com/kubean-io/kubean): A cluster lifecycle management tool based on kubespray
 - [kwok](https://github.com/kubernetes-sigs/kwok): Use a notebook to simulate thousands of kubelets with minimal resources
-- [Merbridge](https://github.com/merbridge/merbridge): Using eBPF to accelerate the service grid, has been selected into the CNCF panorama
+- [Merbridge](https://github.com/merbridge/merbridge): Using eBPF to accelerate the service mesh, has been selected into the CNCF panorama
 - [Spiderpool](https://github.com/spidernet-io): cloud native network IPAM automation management software, suitable for Underlay CNI
 
 ## CNCF Contribution Ranking

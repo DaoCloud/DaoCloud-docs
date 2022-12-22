@@ -2,12 +2,12 @@
 
 A namespace is an abstraction used in Kubernetes to isolate resources.
 
-## prerequisites
+## Prerequisites
 
 - The current workspace already has cluster resources, refer to [Binding Resources](../../../ghippo/04UserGuide/02Workspace/quota.md).
 - The current user is authorized to the `Workspace Admin` role. For details, refer to [Workspace Best Practices](../../../ghippo/04UserGuide/02Workspace/wsbp.md).
 
-## create namespace
+## Create namespace
 
 !!! note
 
@@ -57,7 +57,7 @@ In addition to the CPU request, CPU limit, memory request, memory limit, total s
 
     ![namespace-quota](../../images/namespace-quota.png)
 
-2. In the pop-up `Resource Quota` dialog box, you can see the resource quota information of the current namespace. Click `Add` under `Application Resources`, select a resource and set a quota, for details, please refer to [Kubernetes Resource Quotas](https://kubernetes.io/zh-cn/docs/concepts/policy/resource-quotas/) .
+2. In the pop-up `Resource Quota` dialog box, you can see the resource quota information of the current namespace. Click `Add` under `Application Resources`, select a resource and set a quota, for details, please refer to [Kubernetes Resource Quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) .
 
     ![namespace-quota01](../../images/namespace-quota01.png)
 

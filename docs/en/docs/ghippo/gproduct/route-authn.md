@@ -15,7 +15,7 @@ The routing map after access is as follows:
 
 [Access Effect](../images/gproduct03.png)
 
-## access method
+## Access method
 
 Take `kpanda` as an example to register GProductProxy CR.
 

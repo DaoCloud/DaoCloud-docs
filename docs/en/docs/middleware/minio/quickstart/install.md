@@ -69,7 +69,7 @@ Follow the steps below to install MinIO.
 
     # global parameters
     --set global.mcamel.imageTag # mcamel-MinIO image version
-    --set global.imageRegistry # Mirror warehouse address
+    --set global.imageRegistry # container registry address
     ```
 
 ## uninstall

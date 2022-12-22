@@ -8,7 +8,7 @@ You can use keys in Pods in a variety of usage scenarios, mainly including:
 
 - Used as an environment variable of the container to provide some necessary information required during the running of the container.
 - Use secrets as pod data volumes.
-- Used as the identity authentication credential for the mirror warehouse when the kubelet pulls the container image.
+- Used as the identity authentication credential for the container registry when the kubelet pulls the container image.
 
 ## Use the key to set the environment variable of the container
 
@@ -110,9 +110,9 @@ spec:
 
 If the Pod contains multiple containers, each container needs its own `volumeMounts` block, but only one `.spec.volumes` setting is required for each Secret.
 
-## Used as the identity authentication credential for the mirror warehouse when the kubelet pulls the container image
+## Used as the identity authentication credential for the container registry when the kubelet pulls the container image
 
-You can use the key as the identity authentication credential for the mirror repository through the GUI or the terminal command line.
+You can use the key as the identity authentication credential for the container registry through the GUI or the terminal command line.
 
 ### Graphical operation
 
@@ -126,12 +126,12 @@ When creating a workload through an image, you can use the key as the data volum
 
     ![Select Image](../../images/secret09.png)
 
-3. Select the name of the private mirror warehouse in the drop-down list of `Mirror warehouse' in the pop-up box. Please see [Create Secret](create-secret.md) for details on private image secret creation.
+3. Select the name of the private container registry in the drop-down list of `container registry' in the pop-up box. Please see [Create Secret](create-secret.md) for details on private image secret creation.
 
     ![Select Image](../../images/secret10.png)
 
-4. Enter the image name in the private warehouse, click `OK` to complete the image selection.
+4. Enter the image name in the private registry, click `OK` to complete the image selection.
 
 !!! note
 
-    When creating a key, you need to ensure that you enter the correct mirror warehouse address, user name, password, and select the correct mirror name, otherwise you will not be able to obtain the mirror image in the mirror warehouse.
+    When creating a key, you need to ensure that you enter the correct container registry address, user name, password, and select the correct image name, otherwise you will not be able to obtain the image in the container registry.

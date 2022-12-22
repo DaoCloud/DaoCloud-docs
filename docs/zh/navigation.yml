@@ -191,7 +191,6 @@ nav:
           - 权限说明: insight/06UserGuide/permission.md
           - 常见问题:
               - 导入自定义仪表盘: insight/09FAQs/importdashboard.md
-              - 开启采集审计日志: insight/09FAQs/collectauditlog.md
               - 日志采集排障指南: insight/09FAQs/debuglog.md
               - 链路采集排障指南: insight/09FAQs/debugtrace.md
               - DCE 4.0 安装 insight-agent: insight/09FAQs/installagentindce.md

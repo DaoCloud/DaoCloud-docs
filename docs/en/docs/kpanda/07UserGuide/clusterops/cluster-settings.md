@@ -5,7 +5,7 @@ hide:
 
 # cluster settings
 
-Cluster settings are used to customize advanced feature settings for your cluster, including whether to enable GPU, Helm warehouse refresh cycle, Helm operation record retention, etc.
+Cluster settings are used to customize advanced feature settings for your cluster, including whether to enable GPU, Helm registry refresh cycle, Helm operation record retention, etc.
 
 - Enable GPU: GPU cards and corresponding driver plug-ins need to be installed on the cluster in advance.
 
@@ -13,6 +13,6 @@ Cluster settings are used to customize advanced feature settings for your cluste
 
     ![gpu](../../images/settings01.png)
 
-- Helm warehouse refresh cycle, number of operation records retained
+- Helm registry refresh cycle, number of operation records retained
 
     ![gpu](../../images/settings02.png)

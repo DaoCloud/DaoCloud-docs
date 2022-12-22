@@ -2,7 +2,7 @@
 
 Application Workbench is based on open source software [Argo CD](https://argo-cd.readthedocs.io/en/stable/) for continuous deployment. This page demonstrates how to implement continuous deployment of applications.
 
-## prerequisites
+## Prerequisites
 
 - Need to create a workspace and a user, the user needs to join the workspace and give `workspace edit` role.
   Refer to [Creating Workspaces](../../../ghippo/04UserGuide/02Workspace/Workspaces.md), [Users and Roles](../../../ghippo/04UserGuide/01UserandAccess/User. md).
@@ -14,7 +14,7 @@ Application Workbench is based on open source software [Argo CD](https://argo-cd
 
     ![Create Application](../../images/argo01.png)
 
-1. On the `Create Application` page, after configuring `Basic Information`, `Deployment Location`, `Code Warehouse Source` and `Sync Policy`, click `OK`.
+1. On the `Create Application` page, after configuring `Basic Information`, `Deployment Location`, `codebase Source` and `Sync Policy`, click `OK`.
 
     - Source of code repository:
         - Code repository: Select an imported code repository or enter a public code repository address. For example: https://github.com/argoproj/argocd-example-apps.git
@@ -23,7 +23,7 @@ Application Workbench is based on open source software [Argo CD](https://argo-cd
     - Synchronization strategy:
         - Manual synchronization: Manually click whether to synchronize
         - Automatic synchronization: Automatically detect changes in the manifest file in the code repository, and immediately synchronize the application resources to the latest state once the change occurs. And supports cleaning resources and self-recovery options:
-            - Clean up resources: Delete resources that are no longer defined in the code warehouse during synchronization
+            - Clean up resources: Delete resources that are no longer defined in the codebase during synchronization
             - Self-recovery: ensure synchronization with the desired state in the code repository
         - sync setting:
             - Skip Validation Specification: Skip application manifest file specification validation

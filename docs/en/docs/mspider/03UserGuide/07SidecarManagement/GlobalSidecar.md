@@ -1,12 +1,12 @@
 # Global sidecar management
 
-Users can make uniform injection settings and sidecar resource limit settings for all clusters under the grid.
+Users can make uniform injection settings and sidecar resource limit settings for all clusters under the mesh.
 
 ![Global Sidecar Management](../../images/globalSidecar.png)
 
 ## Global sidecar automatic injection
 
-On the `Sidecar Management` -> `Global Sidecar Management` page, turn on the `Global Sidecar Automatic Injection` switch, this operation will enable the automatic sidecar injection function of all clusters under the grid, and the Pods under the newly connected cluster will also be Injection is performed automatically.
+On the `Sidecar Management` -> `Global Sidecar Management` page, turn on the `Global Sidecar Automatic Injection` switch, this operation will enable the automatic sidecar injection function of all clusters under the mesh, and the Pods under the newly connected cluster will also be Injection is performed automatically.
 
 !!! note
 

@@ -1,6 +1,6 @@
 # Use pipeline to implement code scanning
 
-The source code in the code warehouse is the original form of software, and its security flaws are the direct root cause of software vulnerabilities.
+The source code in the codebase is the original form of software, and its security flaws are the direct root cause of software vulnerabilities.
 Therefore, finding security flaws in source code through code scanning analysis is an important method to reduce potential software vulnerabilities.
 
 For example, SonarQube is an automatic code review tool for detecting bugs in project code, improving test coverage, and more.

@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# create hosting registry
+# Create hosting registry
 
 The microservice engine supports hosting the Nacos registry, that is, a new registry of Nacos type is created from scratch in the microservice governance center, and the registry can be fully managed through the microservice governance center. Compared with the [access registry](../../integrated/integrate-registry.md), the managed registry supports more operations, including viewing the basic information of the registry instance, microservice namespace management , microservice list, microservice configuration list, monitoring alarm, log view, plug-in center, etc.
 

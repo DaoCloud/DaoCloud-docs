@@ -1,10 +1,10 @@
 # traffic topology
 
-Click `Traffic Topology` in the left navigation bar to open the page. This function displays the topological relationship of all services under the grid. Users can select `View Mode` and `Namespace` to filter and display service nodes.
+Click `Traffic Topology` in the left navigation bar to open the page. This function displays the topological relationship of all services under the mesh. Users can select `View Mode` and `Namespace` to filter and display service nodes.
 
 ![Traffic Topology](../../images/monitor-topo.png)
 
-## display setting
+## Display setting
 
 `Namespace Boundary` is used to set whether to display the namespace boundary wireframe. If selected, services under the same namespace will be framed and the namespace name will be marked.
 

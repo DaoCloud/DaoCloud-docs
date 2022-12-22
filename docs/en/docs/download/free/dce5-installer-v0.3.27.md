@@ -8,13 +8,13 @@ hide:
 
 This page can download the offline installation package and verification file of DCE 5.0 Community Edition.
 
-## download
+## Download
 
 | version name | installation package |
 | ----------------------------- | ------------------- -------------------------------------------------- -------------------------------------------- |
 | offline-community-v0.3.27.tar | [:arrow_down: Download](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.27.tar) |
 
-## validation
+## Validation
 
 Enter the download directory of the offline installation package. Execute the following command to verify the installation package:
 
@@ -40,7 +40,7 @@ Then refer to [Community Edition Installation Process](../../install/community/k
 
 After successful installation, please [apply for free community experience](../../dce/license0.md).
 
-## modules
+## Modules
 
 DCE 5.0 Community Edition includes the following modules by default:
 

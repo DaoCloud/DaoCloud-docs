@@ -1,181 +1,181 @@
-# 虚拟服务参数配置
+# Virtual service parameter configuration
 
-本页介绍创建和编辑 **虚拟服务** 时的参数配置。
+This page describes the parameter configuration when creating and editing a **Virtual Service**.
 
-## 基本配置
+## Basic configuration
 
-|UI 元素| YAML 字段          | 描述                                                         |
-| -------- | ------------------ | ------------------------------------------------------------ |
-| 名称     | metadata.name      | 必填。虚拟服务名称。<br />格式要求：小写字母、数字和中划线（-）组成，必须以小写字母开头，以小写字母或数字结尾，最长 63 个字符。 |
-| 命名空间 | metadata.namespace | 必填。虚拟服务所属命名空间。  同一个命名空间内，请求身份认证不可重名。 |
-| 应用范围 |spec.gateways      | 必填。虚拟服务应用的范围，包含两类：<br />- 指定网关规则（可添加多个），可用于对外暴露网格内部服务；<br />- 对所有边车（-mesh）生效。 |
-| 所属服务 |spec.hosts         | 必填。应用虚拟服务的服务对象，可包含三类：<br />- 来自 Kubernetes 注册中心的注册服务；<br />- 来自服务条目的注册服务；<br />- 服务域名。 |
+| UI element | YAML field | description |
+| -------- | ------------------ | ------------------ ------------------------------------------ |
+| Name | metadata.name | Required. Virtual service name. <br />Format requirements: lowercase letters, numbers and dashes (-), must start with a lowercase letter and end with a lowercase letter or number, up to 63 characters. |
+| Namespace | metadata.namespace | Required. The namespace to which the virtual service belongs. In the same namespace, request identity authentication cannot have the same name. |
+| Application Scope |spec.gateways | Required. The scope of virtual service application includes two types:<br />- specified gateway rules (multiple can be added), which can be used to expose internal services of the grid;<br />- valid for all sidecars (-mesh). |
+| Owning service |spec.hosts | Required. The service object of the application virtual service can include three types:<br />-registration service from the Kubernetes registry;<br />-registration service from the service entry;<br />-service domain name. |
 
-## 路由配置
+## Routing configuration
 
-可添加多条路由规则，执行顺序由上至下，排名在前的路由规则优先生效。
+Multiple routing rules can be added, and the execution order is from top to bottom, and the routing rules ranked first take effect first.
 
-### HTTP 路由
+### HTTP Routing
 
-多条 HTTP 路由规则之间可以拖动排序，可收起任一条路由，仅显示路由名称。
+Multiple HTTP routing rules can be dragged and sorted, any route can be collapsed, and only the route name is displayed.
 
-#### 基本信息
+#### Basic Information
 
-| UI 元素  | YAML 字段       | 描述                                                         |
-| -------- | --------------- | ------------------------------------------------------------ |
-| 路由名称 | spec.http.-name | 必填。http 路由名称。<br />格式要求：小写字母、数字和中划线（-）组成，必须以小写字母开头，以小写字母或数字结尾，最长 63 个字符。 |
+| UI Elements | YAML Fields | Description |
+| -------- | --------------- | --------------------- --------------------------------------- |
+| Route Name | spec.http.-name | Required. http route name. <br />Format requirements: lowercase letters, numbers and dashes (-), must start with a lowercase letter and end with a lowercase letter or number, up to 63 characters. |
 
-#### 路由匹配规则
+#### Routing matching rules
 
-必填。YAML 字段为 `spec.http.-name.match`。
+required. The YAML field is `spec.http.-name.match`.
 
-通过 URI 路径、端口等方式对请求做匹配，可添加多条规则，执行顺序由上至下，优先使用排名在前的匹配规则。
+To match the request through URI path, port, etc., multiple rules can be added, and the order of execution is from top to bottom, and the top matching rule is used first.
 
-| UI 元素    | YAML 字段                    | 描述                                                         |
-| ---------- | ---------------------------- | ------------------------------------------------------------ |
-| 匹配URI    | spec.http.-name.match.uri    | 可选。对请求的URI路径做匹配，有三种匹配方式：<br />- 精确（exact）：字段完全匹配<br />- 前缀（prefix）：对字段前缀的匹配<br />- 正则（regex）：基于RE2样式正则表达式的匹配 |
-| 匹配端口   | spec.http.-name.match.port   | 可选。对请求的端口做匹配。                                   |
-| 匹配header | spec.http.-name.match.header | 必填。对请求的 http header 做匹配，同样支持三种匹配方式：<br />- 精确（exact）：字段完全匹配<br />- 前缀（prefix）：对字段前缀的匹配<br />- 正则（regex）：基于RE2样式正则表达式的匹配 |
+| UI Elements | YAML Fields | Description |
+| ---------- | ---------------------------- | --------- -------------------------------------------------- -|
+| Match URI | spec.http.-name.match.uri | Optional. There are three matching methods for matching the URI path of the request: <br /> - exact (exact): the field completely matches <br /> - prefix (prefix): matches the field prefix <br /> - regular (regex) : match based on RE2-style regular expressions |
+| match port | spec.http.-name.match.port | optional. Match the requested port. |
+| Match header | spec.http.-name.match.header | Required. Matching the HTTP header of the request also supports three matching methods:<br />-exact (exact): the field completely matches<br />-prefix (prefix): matches the field prefix<br />-regular ( regex): matching based on RE2-style regular expressions |
 
-#### 路由目标/重定向规则
+#### Routing target/redirect rule
 
-`路由目标`功能和`重定向`功能为互斥功能，一条 `HTTP 路由规则`内仅可以二选一。
+The functions of `routing target` and `redirection` are mutually exclusive functions, and only one of them can be selected in a `HTTP routing rule`.
 
 !!! note
 
-    当用户开启`代理`开关后，该项及相关内容置灰。
+     When the user turns on the `Proxy` switch, this item and related content will be grayed out.
 
-**路由规则**
+**routing rules**
 
-| UI 元素  | YAML 字段                                      | 描述                                                         |
-| -------- | ---------------------------------------------- | ------------------------------------------------------------ |
-| 路由目标 | spec.http.-name.route.-destination             | 可选。已匹配请求的路由目标，可添加多条，优先执行排名在前的路由目标。 |
-| 服务名称 | spec.http.-name.route.-destination.host        | 必填。路由目标服务的名称或 IP。                              |
-| 版本服务 | spec.http.-name.route.-destination.subset      | 可选。列表内容来自所选服务的可用`目标规则`。                 |
-| 权重     | spec.http.-name.route.weight                   | 可选。本条`路由目标`内各条所占流量的分配权重。所有`路由目标`的权重总和应为 100。 |
-| 端口     | spec.http.-name.route.-destination.port.number | 可选。路由目标服务的端口。                                   |
+| UI Elements | YAML Fields | Description |
+| -------- | ----------------------------------------- ------ | ------------------------------------------- ----------------- |
+| route destination | spec.http.-name.route.-destination | Optional. Routing targets that have matched the request, multiple routes can be added, and the routing targets with the highest ranking will be executed first. |
+| Service Name | spec.http.-name.route.-destination.host | Required. The name or IP of the route target service. |
+| Version Service | spec.http.-name.route.-destination.subset | Optional. The list comes from the available `Target Rules` for the selected service. |
+| Weight | spec.http.-name.route.weight | Optional. The distribution weight of the traffic occupied by each route in this `route target`. The sum of weights of all `route targets` should be 100. |
+| port | spec.http.-name.route.-destination.port.number | Optional. The port of the routing target service. |
 
-**重定向**
+**redirect**
 
-| UI 元素    | YAML 字段                             | 描述                                                         |
-| ---------- | ------------------------------------- | ------------------------------------------------------------ |
-| 重定向     | spec.http.-name.redirect              | 可选。重定向用于将请求转发至其他路径。                       |
-| 重定向路径 | spec.http.-name.redirect.uri          | 必填。新的访问地址路径（URI）。                              |
-| authority  | spec.http.-name.redirect.authority    | 可选。URI 路径中认证信息部分，通常 `//` 表示开始，`/` 表示结束。          |
-| 端口       | spec.http.-name.redirect.port.number  | 可选。重定向服务的端口号。                                   |
-| 响应码     | spec.http.-name.redirect.redirectCode | 可选。指定响应码，当返回指定错误码时，执行重定向操作，默认不填为 301。 |
+| UI Elements | YAML Fields | Description |
+| ---------- | ---------------------------------------- | -------------------------------------------------- ---------- |
+| redirect | spec.http.-name.redirect | Optional. Redirects are used to forward requests to other paths. |
+| Redirect path | spec.http.-name.redirect.uri | Required. The new access address path (URI). |
+| authority | spec.http.-name.redirect.authority | Optional. The authentication information part in the URI path, usually `//` means the beginning, and `/` means the end. |
+| port | spec.http.-name.redirect.port.number | Optional. The port number of the redirection service. |
+| Response Code | spec.http.-name.redirect.redirectCode | Optional. Specify the response code. When the specified error code is returned, the redirection operation will be performed. The default value is 301. |
 
-#### 可选设置
+#### Optional settings
 
-另外还提供了 6 个可选设置，您可以根据实际需求启用或禁用。
+In addition, 6 optional settings are provided, which you can enable or disable according to your actual needs.
 
-**重写**
+**Rewrite**
 
-| UI 元素   | YAML 字段                          | 描述                                                         |
-| --------- | ---------------------------------- | ------------------------------------------------------------ |
-| 重写      | spec.http.-name.rewrite            | 可选。默认关闭  l 可以重现完整路径，也可以仅重写 http 前缀。 |
-| 重写路径  | spec.http.-name.rewrite.uri        | 必填。新的访问地址路径（URI）。                              |
-| authority | spec.http.-name.redirect.authority | 可选。URI 路径中认证信息部分，通常 `//` 表示开始，`/` 表示结束。          |
+| UI Elements | YAML Fields | Description |
+| --------- | ----------------------------------- | ---- -------------------------------------------------- ------ |
+| rewrite | spec.http.-name.rewrite | Optional. Off by default l can reproduce the full path, or just rewrite the http prefix. |
+| Rewrite path | spec.http.-name.rewrite.uri | Required. The new access address path (URI). |
+| authority | spec.http.-name.redirect.authority | Optional. The authentication information part in the URI path, usually `//` means the beginning, and `/` means the end. |
 
-**超时**
+**time out**
 
-| UI 元素  | YAML 字段               | 描述                                                         |
-| -------- | ----------------------- | ------------------------------------------------------------ |
-| 超时     | spec.http.-name.timeout | 可选。默认关闭。超时功能用于定义向目标服务发起请求的等待时长。 |
-| 超时时长 | spec.http.-name.timeout | 必填。可容忍的超时时长。输入格式：数字 + 单位（s，m，h，ms）。 |
+| UI Elements | YAML Fields | Description |
+| -------- | ----------------------- | ---------------- ----------------------------------------------- |
+| timeout | spec.http.-name.timeout | Optional. Disabled by default. The timeout function is used to define the waiting time for initiating a request to the target service. |
+| Timeout | spec.http.-name.timeout | Required. The tolerable timeout period. Input format: number + unit (s, m, h, ms). |
 
-**重试**
+**Retry**
 
-| UI 元素  | YAML 字段                             | 描述                                                         |
-| -------- | ------------------------------------- | ------------------------------------------------------------ |
-| 重试     | spec.http.-name.retries               | 可选。默认关闭。重试功能用于定义当请求反馈为异常时再次发起请求的尝试次数。 |
-| 重试次数 | spec.http.-name.retries.attempts      | 可选。一个反馈异常的请求的可重试次数，重试间隔默认为 25ms。<br />当重试和超时功能均开启时，重试次数和重试超时的乘积与超时时长取最短者生效，因此实际的重试次数可能会小于设置值。 |
-| 重试超时 | spec.http.-name.retries.perTryTimeout | 可选。每次重试的超时时长，默认与超时功能的设置（http.route.timeout）相同。输入格式：数字 + 单位（s，m，h，ms）。 |
-| 重试条件 | spec.http.-name.retries.retryOn       | 可选。允许重试的前提条件，该项下包含多个复选内容：<br />- 5xx：当上游服务器返回 5xx 响应码或无响应（断开/重置/读取超时），envoy 将重试。<br />- refused-stream：当上游服务器用错误码 REFUSED_STREAM 重置数据流，envoy 将重试。<br />- gateway-error：仅针对 502、503、504 错误进行重试。<br />- retriable-status-codes：当上游服务器的返回码与响应码或请求头中 x-envoy-retriable-status-codes 定义相同，则重试。<br />- reset：当上游服务器无响应时（断开/重置/读取超时），将重试。<br />- connect-failure：当与上游服务器的连接失败（连接超时等）导致请求失败，将重试。<br />- retriable-headers：当上游服务器响应码与重试策略中定义匹配或与 x-ENVIGET-retriable-header-NAME 头匹配，将尝试重试。<br />- envoy-ratelimited：当存在报头 x-ENVISENT-ratelimited 时，将重试。<br />- retriable-4xx：当上游服务器返回 4xx 响应码时（目前仅有 409），envoy 将重试。 |
+| UI Elements | YAML Fields | Description |
+| -------- | ---------------------------------------- | -- -------------------------------------------------- -------- |
+| retries | spec.http.-name.retries | Optional. Disabled by default. The retry function is used to define the number of attempts to re-initiate the request when the request feedback is abnormal. |
+| Number of retries | spec.http.-name.retries.attempts | Optional. The number of retries for a request that returns an exception. The default retry interval is 25ms. <br />When both the retry and timeout functions are enabled, the product of the number of retries, the timeout of retries, and the timeout period takes effect, whichever is the shortest, so the actual number of retries may be less than the set value. |
+| retry timeout | spec.http.-name.retries.perTryTimeout | Optional. The timeout length of each retry is the same as the timeout function setting (http.route.timeout) by default. Input format: number + unit (s, m, h, ms). |
+| Retry Conditions | spec.http.-name.retries.retryOn | Optional. Preconditions for allowing retries, this item contains multiple checks:<br />- 5xx: When the upstream server returns a 5xx response code or no response (disconnect/reset/read timeout), envoy will retrytry. <br />- refused-stream: Envoy will retry when the upstream server resets the stream with error code REFUSED_STREAM. <br />- gateway-error: Only retry for 502, 503, 504 errors. <br />- retriable-status-codes: When the return code of the upstream server is the same as the response code or the x-envoy-retriable-status-codes definition in the request header, retry. <br />- reset: When the upstream server is unresponsive (disconnect/reset/read timeout), will retry. <br />- connect-failure: When the connection with the upstream server fails (connection timeout, etc.) and the request fails, it will be retried. <br />- retriable-headers: When the upstream server response code matches the definition in the retry policy or matches the x-ENVIGET-retriable-header-NAME header, a retry will be attempted. <br />- envoy-ratelimited: Retry when header x-ENVISENT-ratelimited is present. <br />- retriable-4xx: envoy will retry when the upstream server returns a 4xx response code (currently only 409). |
 
-**故障注入**
+**Fault Injection**
 
-| UI 元素      | YAML 字段                              | 描述                                                         |
-| ------------ | -------------------------------------- | ------------------------------------------------------------ |
-| 故障注入     | spec.http.-name.fault                  | 可选。默认关闭。<br />故障注入功能用于在应用层向目标服务注入故障，并可提供“延迟”和“终止”两种故障类型；使用故障注入时，不能启用超时和重试功能。 |
-| 延迟时长     | spec.http.-name.fault.delay.fixedDelay | 必填。请求响应可延迟的时长   输入格式：数字 + 单位（s，m，h，ms）。 |
-| 故障注入占比 | spec.http.-name.fault.delay.percentage | 可选。所有请求中故障注入比率，默认 100%。                    |
-| 终止响应码   | spec.http.-name.fault.abort.httpStatus | 必填。用于终止当前请求的 http 返回码。                       |
-| 故障注入占比 | spec.http.-name.fault.abort.percentage | 可选。所有请求中故障注入比率，默认 100%。                    |
+| UI Elements | YAML Fields | Description |
+| ------------ | ------------------------------------ -- | ----------------------------------------------- ------------- |
+| Fault Injection | spec.http.-name.fault | Optional. Disabled by default. <br />The fault injection function is used to inject faults into the target service at the application layer, and can provide two types of faults: "delay" and "termination". When using fault injection, timeout and retry functions cannot be enabled. |
+| Delay duration | spec.http.-name.delay.delay.fixedDelay | Required. The length of time that the request response can be delayed Input format: number + unit (s, m, h, ms). |
+| Fault injection percentage | spec.http.-name.fault.delay.percentage | Optional. Fault injection ratio in all requests, default 100%. |
+| Abort Response Code | spec.http.-name.fault.abort.httpStatus | Required. The http return code used to terminate the current request. |
+| Fault injection percentage | spec.http.-name.fault.abort.percentage | Optional. Fault injection ratio in all requests, default 100%. |
 
-**代理虚拟服务**
+**Proxy Virtual Service**
 
-YAML 字段为 `spec.http.-name.delegate`，默认关闭。
+The YAML field is `spec.http.-name.delegate`, which is off by default.
 
-- 虚拟服务代理功能可以将路由配置拆分至主从两个虚拟服务中，由主虚拟服务完成基本设置和匹配规则，由代理虚拟服务完成具体路由规则。
+- The virtual service proxy function can split the routing configuration into two virtual services, master and slave. The master virtual service completes the basic settings and matching rules, and the proxy virtual service completes the specific routing rules.
 
-- 开启代理功能后，仅主虚拟服务的路由匹配生效，代理虚拟服务的路由匹配规则不需设置。
+- After the proxy function is enabled, only the route matching of the main virtual service takes effect, and the routing matching rules of the proxy virtual service do not need to be set.
 
-- 代理虚拟服务的路由规则会和主虚拟服务路由规则合并执行。
+- The routing rules of the proxy virtual service will be combined with the routing rules of the main virtual service.
 
-- 代理功能不支持嵌套，仅主虚拟服务可以开启代理功能。
+- The proxy function does not support nesting, and only the main virtual service can enable the proxy function.
 
-- 当虚拟服务有“路由目标/重定向”配置时，不可配置代理。
+- Proxies are not configurable when the virtual service has "route target/redirect" configured.
 
-| UI 元素      | YAML 字段                          | 描述                                                         |
-| ------------ | ---------------------------------- | ------------------------------------------------------------ |
-| 代理虚拟服务 | spec.http.-name.delegate.name      | 必填。用于代理的从虚拟服务  <br />注意：<br />一个已配置代理项的虚拟服务不可做为代理，即不可嵌套代理；<br />一个配置了 spec.hosts 字段的虚拟服务不可作为代理。 |
-| 所属命名空间 | spec.http.-name.delegate.namespace | 可选。从虚拟服务所属命名空间，默认与主虚拟服务相同。         |
+| UI Elements | YAML Fields | Description |
+| ------------ | ----------------------------------- | - -------------------------------------------------- --------- |
+| Delegate Virtual Service | spec.http.-name.delegate.name | Required. Secondary virtual service for proxy<br />Note:<br />A virtual service configured with a proxy item cannot be used as a proxy, that is, a proxy cannot be nested;<br />A virtual service configured with the spec.hosts field Not available as an agent. |
+| Owning namespace | spec.http.-name.delegate.namespace | Optional. The namespace to which the secondary virtual service belongs is the same as the main virtual service by default. |
 
-**流量镜像**
+**Traffic image**
 
-| UI 元素      |      | YAML 字段                                     | 描述。                                                   |
-| ------------ | ---- | --------------------------------------------- | -------------------------------------------------------- |
-| 流量镜像     | n    | spec.http.-name.mirror                        | 可选。默认关闭。用于将请求流量复制至其他目标服务。       |
-| 镜像至服务   | y    | spec.http.-name.mirror.host                   | 必填。流量镜像的传输目标服务。                           |
-| 流量镜像占比 | n    | spec.http.-name.mirror.mirrorPercentage:value | 可选。复制的请求流量与原请求流量的比率，默认 100%。       |
-| 服务版本     | n    | spec.http.-name.mirror.subset                 | 可选。服务版本列表内容来自当前目标服务的可用“目标规则”。 |
+| UI element | | YAML field | Description. |
+| ------------ | ---- | ------------------------------- -------------- | ----------------------------------- --------------------- |
+| traffic image | n | spec.http.-name.image | Optional. Disabled by default. Used to replicate request traffic to other target services. |
+| image to service | y | spec.http.-name.mirror.host | Required. The transfer target service of traffic image. |
+| Traffic image percentage | n | spec.http.-name.mirror.mirrorPercentage:value | Optional. The ratio of the copied request traffic to the original request traffic, the default is 100%. |
+| service version | n | spec.http.-name.mirror.subset | optional. The service version list content comes from the available "target rules" for the current target service. |
 
-### TLS 路由
+### TLS Routing
 
-- 可添加多条，执行顺序由上至下，排名在前的路由规则优先生效
+- Multiple entries can be added, and the order of execution is from top to bottom, and the top routing rules take effect first
 
-- 多条 TLS 路由规则之间可以拖动排序
+- Multiple TLS routing rules can be dragged and sorted
 
-- 每条路由可收起，仅显示路由名称
+- Each route can be collapsed, only the route name is displayed
 
-#### 路由匹配规则
+#### Routing matching rules
 
-YAML 字段为 `spec.tls.-name.match`。
+The YAML field is `spec.tls.-name.match`.
 
-通过端口（-port）和 SNI（-port.sniHosts）名称方式对请求做匹配，可添加多条规则，执行顺序由上至下，优先使用排名在前的匹配规则。
+Match requests by port (-port) and SNI (-port.sniHosts) names, and multiple rules can be added. The order of execution is from top to bottom, and the top matching rules are used first.
 
-#### 路由目标
+#### Routing target
 
-| UI 元素      | YAML 字段                                     | 描述                                                         |
-| ------------ | --------------------------------------------- | ------------------------------------------------------------ |
-| 添加路由目标 | spec.tls.-name.route                          | 必填。添加路由目标信息，可添加多条，执行顺序由上至下         |
-| 服务名称     | spec.tls.-name.route.-destination.host        | 必填。目标服务名称，下拉列表包含当前命名空间下启用 tls 协议的所有服务 |
-| 端口         | spec.tls.-name.route.-destination.port.number | 可选。目标服务端口                                           |
-| 服务版本     | spec.tls.-name.route.-destination.subset      | 可选。服务版本列表内容来自当前目标服务的可用“目标规则”。     |
-| 权重         | spec.tls.-name.route.-destination.weight      | 可选。本条“tls 路由”规则内各个“路由目标”所占流量的分配权重，各条规则的权重总和应为 100。 |
+| UI Elements | YAML Fields | Description |
+| ------------ | ------------------------------------ --------- | ---------------------------------------- -------------------- |
+| Add Route Target | spec.tls.-name.route | Required. Add routing target information, multiple items can be added, and the order of execution is from top to bottom |
+| Service Name | spec.tls.-name.route.-destination.host | Required. The target service name, the drop-down list contains all services that enable the tls protocol under the current namespace |
+| port | spec.tls.-name.route.-destination.port.number | Optional. target service port |
+| Service Version | spec.tls.-name.route.-destination.subset | Optional. The service version list content comes from the available "target rules" for the current target service. |
+| Weight | spec.tls.-name.route.-destination.weight | Optional. The distribution weight of each "routing destination" in this "tls routing" rule. The sum of the weights of each rule should be 100. |
 
-### TCP 路由
+### TCP Routing
 
-- 可添加多条，执行顺序由上至下，排名在前的路由规则优先生效
+- Multiple entries can be added, and the order of execution is from top to bottom, and the top routing rules take effect first
 
-- 多条 TCP 路由规则之间可以拖动排序
+- Drag and sort between multiple TCP routing rules
 
-- 每条路由可收起，仅显示路由名称
+- Each route can be collapsed, only the route name is displayed
 
-#### 路由匹配规则
+#### Routing matching rules
 
-| UI 元素          | YAML 字段                  | 描述                                                         |
-| ---------------- | -------------------------- | ------------------------------------------------------------ |
-| 添加路由匹配规则 | spec.tcp.-name.match       | 可选。通过端口（-port）方式对请求做匹配，可添加多条规则，执行顺序由上至下，优先使用排名在前的匹配规则。 |
-| 端口             | spec.tcp.-name.match.-port | 必填。tcp 端口号。                                           |
+| UI Elements | YAML Fields | Description |
+| ---------------- | -------------------------- | ----- -------------------------------------------------- ----- |
+| Add route matching rules | spec.tcp.-name.match | Optional. To match the request by port (-port), multiple rules can be added, and the order of execution is from top to bottom, and the matching rule with the highest ranking is used first. |
+| port | spec.tcp.-name.match.-port | Required. tcp port number. |
 
-#### 路由目标
+#### Routing target
 
-| UI 元素      |YAML 字段                                     | 描述                                                         |
-| ------------ |--------------------------------------------- | ------------------------------------------------------------ |
-| 添加路由目标 |spec.tcp.-name.route                          | 必填。添加路由目标信息，可添加多条，执行顺序由上至下。       |
-| 服务名称     | spec.tcp.-name.route.-destination.host        | 必填。目标服务名称，下拉列表包含当前命名空间下可用 tcp 协议的所有服务。 |
-| 端口         |spec.tcp.-name.route.-destination.port.number | 可选。目标服务端口。                                         |
-| 服务版本     |spec.tcp.-name.route.-destination.subset      | 可选。服务版本列表内容来自当前目标服务的可用“目标规则”。     |
-| 权重         |spec.tcp.-name.route.-destination.weight      | 可选。本条“TCP路由”规则内各个“路由目标”所占流量的分配权重，各条规则的权重总和应为 100。 |
+| UI Elements | YAML Fields | Description |
+| ------------ |------------------------------------ --------- | ---------------------------------------- -------------------- |
+| Add Route Target |spec.tcp.-name.route | Required. Add routing target information, multiple items can be added, and the execution order is from top to bottom. |
+| Service Name | spec.tcp.-name.route.-destination.host | Required. The target service name, the drop-down list contains all services of the tcp protocol available in the current namespace. |
+| port |spec.tcp.-name.route.-destination.port.number | Optional. Target service port. |
+| Service version |spec.tcp.-name.route.-destination.subset | Optional. The service version list content comes from the available "target rules" for the current target service. |
+| Weight |spec.tcp.-name.route.-destination.weight | Optional. The distribution weight of each "routing destination" in this "TCP routing" rule. The sum of the weights of each rule should be 100. |

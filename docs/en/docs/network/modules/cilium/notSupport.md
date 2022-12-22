@@ -252,7 +252,7 @@ Cilium 1.11 版本后，已经将邻居发现的库删除，完全依赖于 Linu
 对于低版本的内核，通过 cilium-agent 定期将新节点的 IP 地址写入 Linux 内核中以进行动态解析。
 默认是 30s，可通过上述参数进行设置。
 
-### clusterIP 对外可访问
+### ClusterIP 对外可访问
 
 ```sh
     --set bpf.lbExternalClusterIP=true  \

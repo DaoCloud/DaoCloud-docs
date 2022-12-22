@@ -6,7 +6,7 @@ Local Disk Manager (LDM) is an important functional module of HwameiStor system.
 
 Currently LDM is still in `alpha` stage.
 
-## basic concept
+## Basic concept
 
 **LocalDisk(LD)**: This is the disk resource abstracted by LDM. An `LD` represents a physical disk on the node.
 

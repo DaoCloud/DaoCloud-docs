@@ -5,14 +5,14 @@ hide:
 
 # Challenges facing the network
 
-**Network connectivity under multi-cloud and multi-cluster**
+**Network connectivity under multicloud and multi-cluster**
 
 In a multi-cluster environment, it is not only necessary to consider the use of different network CNIs by each cluster, but also to realize the interconnection of each cluster.
 Therefore, issues such as Cluster IP intercommunication and DNS intercommunication need to be resolved.
 
-**Unified IP resource management under multi-cloud and multi-cluster**
+**Unified IP resource management under multicloud and multi-cluster**
 
-To achieve network interoperability in a multi-cloud and multi-cluster environment, the IPs within the cluster and within the cluster cannot be duplicated or conflicted. Therefore, IP management and planning should be based on the multi-cluster perspective to avoid IP conflicts and network segment conflicts (Underlay IP, Service IP, etc.).
+To achieve network interoperability in a multicloud and multi-cluster environment, the IPs within the cluster and within the cluster cannot be duplicated or conflicted. Therefore, IP management and planning should be based on the multi-cluster perspective to avoid IP conflicts and network segment conflicts (Underlay IP, Service IP, etc.).
 
 **Single CNI is difficult to meet the needs of diverse scenarios**
 
