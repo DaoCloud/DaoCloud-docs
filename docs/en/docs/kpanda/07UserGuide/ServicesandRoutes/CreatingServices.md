@@ -4,7 +4,7 @@ In a Kubernetes cluster, each Pod has an internal independent IP address, but Po
 
 This requires creating a service through which you get a fixed IP address, decoupling the front-end and back-end of the workload, and allowing external users to access the service. At the same time, the service also provides the Load Balancer function, enabling users to access workloads from the public network.
 
-## prerequisites
+## Prerequisites
 
 - Container management platform [connected to Kubernetes cluster](../Clusters/JoinACluster.md) or [created Kubernetes](../Clusters/CreateCluster.md), and can access the cluster UI interface.
 

@@ -2,7 +2,7 @@
 
 This section will create a pipeline by compiling, building, and deploying, and will help you quickly create a pipeline through detailed step-by-step descriptions.
 
-## prerequisites
+## Prerequisites
 
 - Need to create a workspace and a user, the user needs to join the workspace and give `workspace edit` role. Refer to [Creating Workspaces](../../ghippo/04UserGuide/02Workspace/Workspaces.md), [Users and Roles](../../ghippo/04UserGuide/01UserandAccess/User.md).
 - Create two credentials that can access the container registry and the cluster, named respectively: `registry`, `kubeconfig`. For more information on creating credentials, please refer to [Credential Management](../03UserGuide/Pipeline/Credential.md).

@@ -1,4 +1,4 @@
-# Expose metrics for the application using the OTel SDK
+# Expose metrics for applications using OTel SDK
 
 > This article is intended as a reference only for users wishing to evaluate or explore OTLP indicators under development.
 

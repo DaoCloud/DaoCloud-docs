@@ -2,7 +2,7 @@
 
 CronJobs (CronJob) are suitable for performing periodic operations, such as backup and report generation. These tasks can be configured to recur periodically (eg: daily/weekly/monthly); you can define the time interval at which the task will start executing.
 
-## prerequisites
+## Prerequisites
 
 Before creating a CronJob from a image, the following prerequisites need to be met:
 

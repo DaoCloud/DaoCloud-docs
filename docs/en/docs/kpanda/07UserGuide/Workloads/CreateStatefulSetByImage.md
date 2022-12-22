@@ -4,7 +4,7 @@ A stateful load (StatefulSet) is an application running on Kubernetes that needs
 
 This article describes how to create stateful workloads through image.
 
-## prerequisites
+## Prerequisites
 
 Before using image to create stateful workloads, the following prerequisites need to be met:
 

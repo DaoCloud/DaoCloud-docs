@@ -2,7 +2,7 @@
 
 This page shows how to import repositories.
 
-## prerequisites
+## Prerequisites
 
 - Need to create a workspace and a user, the user needs to join the workspace and give `workspace edit` role.
   Refer to [Creating Workspaces](../../../ghippo/04UserGuide/02Workspace/Workspaces.md), [Users and Roles](../../../ghippo/04UserGuide/01UserandAccess/User. md).

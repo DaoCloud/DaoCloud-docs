@@ -19,12 +19,12 @@ Grafana 是一跨平台的开源的可视化分析工具。可观测性 Insight 
 
     ![dashboard](../../images/dashboard02.png)
 
-3. 点击标题 `Insight概览` 区域，可切换仪表盘。
+3. 点击标题 `Insight 概览` 区域，可切换仪表盘。
 
     ![dashboard](../../images/dashboard03.png)
 
 !!! note
-    
+
     访问原生 Grafana 请参考：[以管理员身份登录 Grafana](../../06UserGuide/02dashboard/logingrafana.md)
     
     导入自定义仪表盘请参考：[导入自定义仪表盘](../../09FAQs/importdashboard.md)

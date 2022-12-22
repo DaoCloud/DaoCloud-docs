@@ -5,7 +5,7 @@ You can automatically scale Pod copies horizontally for workload resources by co
 
 This section describes how to install `metrics-server`.
 
-## prerequisites
+## Prerequisites
 
 Before installing the `metrics-server` plugin, the following prerequisites need to be met:
 

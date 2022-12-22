@@ -5,7 +5,7 @@ Like other workloads, stateless workloads are composed of Pods. Through the Daoc
 
 This article describes how to create stateless workloads through image.
 
-## prerequisites
+## Prerequisites
 
 Before using image to create stateless workloads, the following prerequisites need to be met:
 

@@ -11,7 +11,7 @@ The Helm repository is a repository for storing and publishing Charts. The Helm 
 
 In addition to the above preset repositories, you can also add third-party Helm repositories yourself. This article will introduce how to add and update third-party Helm repositories.
 
-## prerequisites
+## Prerequisites
 
 - Container management platform [connected to Kubernetes cluster](../Clusters/JoinACluster.md) or [created Kubernetes cluster](../Clusters/CreateCluster.md), and can access the UI interface of the cluster
 

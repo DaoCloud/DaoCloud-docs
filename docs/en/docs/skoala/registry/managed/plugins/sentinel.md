@@ -2,7 +2,7 @@
 
 Sentinel is a traffic management component for distributed, multilingual and heterogeneous service architectures. It mainly takes traffic as the entry point, and provides various services from traffic routing, traffic control, traffic shaping, circuit breaker downgrading, system adaptive overload protection, hotspot traffic protection, etc. dimensions to help developers ensure the stability of microservices.
 
-<!--## prerequisites-->
+<!--## Prerequisites-->
 
 ## Steps
 
