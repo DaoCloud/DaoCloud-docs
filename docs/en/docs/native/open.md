@@ -77,7 +77,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### C
 
-- [Calico CNI plugin v3.24.0 release (CNCF project)](https://github.com/projectcalico/calico/blob/release-v3.24/calico/_includes/release-notes/v3.24.0-release-notes .md)
+- [Calico CNI plugin v3.24.0 release (CNCF project)](https://github.com/projectcalico/calico/blob/release-v3.24/calico/_includes/release-notes/v3.24.0-release-notes.md)
 
      The main new features of this version: support IPv6 network wireguard encryption, expose IPAM configuration and IPAM block affinity through API, add new fields to operator API, support split IP pool, and transition from pod security policy to pod security standard.
 
