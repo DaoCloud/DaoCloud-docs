@@ -85,4 +85,4 @@ Advantages of the solution: Innovative technology completes cross-cloud disaster
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
-[Apply for community free experience](license0.md){ .md-button .md-button--primary }
+[Free Trial](license0.md){ .md-button .md-button--primary }

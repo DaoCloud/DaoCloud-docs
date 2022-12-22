@@ -121,4 +121,4 @@ DaoCloud Enterprise 5.0 is still in the early stages of release, and the install
     ![Community Edition Exchange Group](../images/assist.png)
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[Apply for community free experience](../dce/license0.md){ .md-button .md-button--primary }
+[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
