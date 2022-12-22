@@ -4,7 +4,7 @@ Because MySQL belongs to the application layer of DCE 5.0, a DCE environment nee
 
 Follow the steps below to install MySQL.
 
-## install mysql-operator
+## Install mysql-operator
 
 1. On the left navigation bar, click `Container Management` -> `Cluster List`.
 
@@ -67,7 +67,7 @@ Follow the steps below to install MySQL.
 
     # global parameters
     --set global.mcamel.imageTag: mcamel-mysql image version
-    --set global.imageRegistry: mirror warehouse address
+    --set global.imageRegistry: container registry address
     ```
 
 ## uninstall

@@ -1,7 +1,7 @@
 # service entry
 
 Service entries can add external services, web APIs, or virtual machines to the service mesh's internal service registry.
-Taking an external service as an example, after adding a service entry, the Envoy proxy can send traffic to the external service, and the service grid can also perform traffic governance on the external service through virtual services and target rules, as if the service entry is a grid Same as normal service in .
+Taking an external service as an example, after adding a service entry, the Envoy proxy can send traffic to the external service, and the service mesh can also perform traffic governance on the external service through virtual services and target rules, as if the service entry is a mesh Same as normal service in .
 
 Service mesh provides two creation methods: YAML creation and wizard creation.
 
@@ -9,7 +9,7 @@ Service mesh provides two creation methods: YAML creation and wizard creation.
 
 This method of creation is relatively simple and intuitive.
 
-1. After entering the selected grid, click `Traffic Governance` -> `Service Entry` in the left navigation bar, and click the `Create` button in the upper right corner.
+1. After entering the selected mesh, click `Traffic Governance` -> `Service Entry` in the left navigation bar, and click the `Create` button in the upper right corner.
 
     ![create](../../images/entry01.png)
 
@@ -27,7 +27,7 @@ This method of creation is relatively simple and intuitive.
 
 ## YAML creation
 
-1. After entering the selected grid, click `Traffic Governance` -> `Service Entry` in the left navigation bar, and click the `YAML Create` button in the upper right corner.
+1. After entering the selected mesh, click `Traffic Governance` -> `Service Entry` in the left navigation bar, and click the `YAML Create` button in the upper right corner.
 
     ![YAML create](../../images/entry05.png)
 
@@ -91,7 +91,7 @@ The meaning of each parameter in the above YAML file and creation wizard is brie
 
 -Location
     
-    service address. A valid IP address needs to be entered. Used to indicate whether the service is inside the grid.
+    service address. A valid IP address needs to be entered. Used to indicate whether the service is inside the mesh.
 
 - Resolution
 
@@ -110,6 +110,6 @@ The meaning of each parameter in the above YAML file and creation wizard is brie
 
 - WorkloadSelector
 
-    Workload selection tab. A key-value pair used to select the workload of the internal service of the grid. This item and the service endpoint are optional.
+    Workload selection tab. A key-value pair used to select the workload of the internal service of the mesh. This item and the service endpoint are optional.
 
 <!-- How to use these service entries after creation? -->

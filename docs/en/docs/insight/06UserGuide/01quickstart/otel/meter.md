@@ -1,4 +1,4 @@
-# Expose metrics for the application using the OTel SDK
+# Expose metrics for applications using OTel SDK
 
 > This article is intended as a reference only for users wishing to evaluate or explore OTLP indicators under development.
 
@@ -234,7 +234,7 @@ Last but not least, you have exposed metrics in your application and now you nee
 
 The recommended way to expose metrics is via [servicemonitor](https://github.com/prometheus-operator/prometheus-operator/blob/501d079e3d3769b94dca6684cf155034e468829a/Documentation/design.md#servicemonitor) or podmonitor.
 
-### create servicemonitor/podmonitor
+### Create servicemonitor/podmonitor
 
 The added servicemonitor/podmonitor needs to be marked with `label: "operator.insight.io/managed-by": "insight"` to be recognized by the Operator:
 

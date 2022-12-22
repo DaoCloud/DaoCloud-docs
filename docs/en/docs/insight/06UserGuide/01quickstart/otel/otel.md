@@ -1,4 +1,4 @@
-# Use OTel to give the application observability
+# Use OTel to provide the application observability
 
 > Enhancement is the process of enabling application code to generate telemetry data. i.e. something that helps you monitor or measure the performance and status of your application.
 
@@ -17,13 +17,13 @@ To enhance your code, you can use the enhanced operations provided by OpenTeleme
 
 Insight currently provides an easy way to enhance .Net NodeJS, Java, Python and Golang applications with OpenTelemetry. Please follow the guidelines below.
 
-## Link Enhancement
+## Trace Enhancement
 
-- Best Practices for Link Access: [Application Non-Intrusive Enhancement via Operator](./operator.md)
+- Best Practices for Trace Access: [Application Non-Intrusive Enhancement via Operator](./operator.md)
 - Manual buried point access using Go language as an example: [Enhance Go application with OpenTelemetry SDK](./golang.md)
-- [Using ebpf to implement non-intrusive probes in Go language](./golang-ebpf.md) (experimental feature)
+- [Using ebpf to implement non-intrusive auto-instrumetation in Go language](./golang-ebpf.md) (experimental feature)
 
-## Indicator enhancements
+## Metric enhancements
 
 Best Practices for Metrics Access: [Exposing Metrics for Applications Using the OpenTelemetry SDK](./meter.md).
 

@@ -2,11 +2,11 @@
 
 `Migrate` migration function is an important operation and maintenance management function in HwameiStor. When the copy of the node where the data volume bound to the application is located is damaged, the copy of the volume can be migrated to other nodes, and the application will be rescheduled after successfully migrating to the new node to the new node, and bind mount the data volume.
 
-## basic concept
+## Basic concept
 
 `LocalVolumeGroup(LVG)` (data volume group) management is an important function in HwameiStor. When the application Pod applies for multiple data volumes `PVC`, in order to ensure the correct operation of the Pod, these data volumes must have certain attributes, such as: the number of copies of the data volume, and the node where the copies are located. It is a very important capability in HwameiStor to correctly manage these associated data volumes through the data volume group management function.
 
-## prerequisites
+## Prerequisites
 
 LocalVolumeMigrate needs to be deployed in the Kubernetes system, and the deployment application needs to meet the following conditions:
 

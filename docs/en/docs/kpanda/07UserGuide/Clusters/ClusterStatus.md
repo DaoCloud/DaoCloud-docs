@@ -5,7 +5,7 @@ For more information about cluster management types, see [ClusterRole](ClusterRo
 
 The status of these two clusters is described below.
 
-## access cluster
+## Access cluster
 
 | Status | Description |
 | ---------------------- | -------------------------- ------------------------------------- |

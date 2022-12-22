@@ -22,7 +22,7 @@
     扩展 DCE 功能的资源对象。
     您可以通过[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md) -> [Helm 模板](../kpanda/07UserGuide/helm/README.md)安装更多附加扩展组件。
 
-- Addmission Controller, 准入控制器
+- Admission Controller, 准入控制器
 
     [准入控制器](https://kubernetes.io/zh-cn/docs/reference/access-authn-authz/admission-controllers/)是一段代码，
     它会在请求通过认证和鉴权之后、对象被持久化之前拦截到达 API 服务器的请求。

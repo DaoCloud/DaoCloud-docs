@@ -23,7 +23,7 @@ This page describes how to production install Spiderpool components.
 
     The meanings of the parameters in the above figure are:
 
-    - `global image Registry`: Set the warehouse address of all images, the available online warehouse has been filled in by default, if it is a privatized environment, it can be modified to a private warehouse address
+    - `global image Registry`: Set the registry address of all images, the available online registry has been filled in by default, if it is a privatized environment, it can be modified to a private registry address
 
     - `Spiderpool Agent Image repository`: Set the image name and keep the default
 

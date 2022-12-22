@@ -2,7 +2,7 @@
 
 [Middleware Data Service](../../middleware/midware.md) includes six middleware: MySQL, RabbitMQ, Elasticsearch, Kafka, Redis, MinIO. Middleware Data Services supports three user roles:
 
--Workspace Admin
+- Workspace Admin
 - Workspace Editor
 - Workspace Viewer
 

@@ -4,7 +4,7 @@ The container management module supports interface-based management of Helm, inc
 
 This section will take [cert-manager](https://cert-manager.io/docs/) as an example to introduce how to create and manage Helm applications through the container management interface.
 
-## prerequisites
+## Prerequisites
 
 - The container management platform [has joined the Kubernetes cluster](../Clusters/JoinACluster.md) or [has created the Kubernetes cluster](../Clusters/CreateCluster.md), and can access the UI interface of the cluster.
 

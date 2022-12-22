@@ -2,18 +2,18 @@
 
 This page can download the offline installation package and verification file of DCE 5.0 commercial version.
 
-## download
+## Download
 
 | File Name | Version | Architecture | File Size | Downloads | Date Updated |
 | ------------------- | ------- | -------- | ------------ ----------------------------------------- | ---------- | ------------------- |
-| offline-centos7-v0.3.29-amd64.tar | v0.3.29 | AMD64 and Linux | 22.9 GB | [:arrow_down: Download](ARM64 or Centron) | 2022-12-16 |
-| offline-kylin-v10sp2-v0.3.29-arm64.tar | v0.3.29 | ARM64 and Xinchuang | 19.9 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5 /offline-kylin-v10sp2-v0.3.29-arm64.tar) | 2022-12-16 |
+| offline-centos7-v0.3.29-amd64.tar | v0.3.29 | AMD 64 | 22.9 GB | [:arrow_down: Download](ARM64 or Centron) | 2022-12-16 |
+| offline-kylin-v10sp2-v0.3.29-arm64.tar | v0.3.29 | ARM 64 | 19.9 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5 /offline-kylin-v10sp2-v0.3.29-arm64.tar) | 2022-12-16 |
 
-## validation
+## Validation
 
 Enter the download directory of the offline installation package.
 
-=== "AMD64 and Linux"
+=== "AMD 64"
 
     Execute the following command to verify the installation package:
 
@@ -27,7 +27,7 @@ Enter the download directory of the offline installation package.
     offline-centos7-v0.3.29-amd64.tar: OK
     ```
 
-=== "ARM64 and Xintron"
+=== "ARM 64"
 
     Execute the following command to verify the installation package:
 
@@ -45,7 +45,7 @@ Enter the download directory of the offline installation package.
 
 After successfully verifying the offline package,
 
-=== "AMD64 and Linux"
+=== "AMD 64"
 
     Execute the following command to extract the tarball:
 
@@ -53,7 +53,7 @@ After successfully verifying the offline package,
     tar -zxvf offline-centos7-v0.3.29-amd64.tar
     ```
 
-=== "ARM64 and Xintron"
+=== "ARM 64"
 
     Execute the following command to extract the tarball:
 
@@ -64,7 +64,7 @@ After successfully verifying the offline package,
 - For installation, please refer to [Commercial version installation process](../../install/commercial/start-install.md)
 - After successful installation, please proceed to [genuine authorization](https://qingflow.com/f/e3291647)
 
-## modules
+## Modules
 
 The DCE 5.0 commercial edition includes the following modules, which are plug-and-play on-demand to meet various application scenarios:
 
@@ -74,7 +74,7 @@ The DCE 5.0 commercial edition includes the following modules, which are plug-an
 | Container Management | Manage K8s core functions such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [v0.12](../../kpanda/03ProductBrief/release-notes.md#v012) |
 | Observability | Provide rich graphic information such as dashboards, scene monitoring, data query, and alarms | [v0.11](../../insight/03ProductBrief/releasenote.md#v011) |
 | Application Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [v0.9](../../amamba/01ProductBrief/release-notes.md#v09) |
-| Multi-cloud orchestration| Centralized management of application orchestration of multi-cloud, hybrid cloud, and cross-cloud resources, with multi-cloud disaster recovery and fault recovery capabilities| [v0.3](../../kairship/01product/release-notes.md# v03) |
+| Multicloud orchestration| Centralized management of application orchestration of multicloud, hybrid cloud, and cross-cloud resources, with multicloud disaster recovery and fault recovery capabilities| [v0.3](../../kairship/01product/release-notes.md# v03) |
 | Microservice Engine | Provides governance capabilities such as registration discovery, service governance, configuration management, and microservice gateway | [v0.11](../../skoala/intro/release-notes.md#v011) |
 | Service Mesh | A next-generation service mesh for cloud-native applications based on Istio open source technology | [v0.10](../../mspider/01Intro/release-notes.md#v010) |
 | Middleware Elasticsearch | Currently preferred full-text search engine | [v0.3](../../middleware/elastic-search/release-notes.md#v034) |
@@ -83,7 +83,7 @@ The DCE 5.0 commercial edition includes the following modules, which are plug-an
 | Middleware MySQL | The most widely used open source relational database | [v0.4](../../middleware/mysql/release-notes.md#v04) |
 | Middleware RabbitMQ | Open source message broker software implementing the Advanced Message Queuing Protocol (AMQP) | [v0.6](../../middleware/rabbitmq/release-notes.md#v06) |
 | Middleware Redis | An in-memory database caching service | [v0.2](../../middleware/redis/release-notes.md#v02) |
-| Mirror Registry | Images for storing K8s, DevOps, and container application development | [Release Notes](../../release/rn5.0.md) |
+| container registry | Images for storing K8s, DevOps, and container application development | [Release Notes](../../release/rn5.0.md) |
 | Network | Support multiple CNI combinations for different Linux kernels | [Release Notes](../../release/rn5.0.md) |
 | Storage | Provide unified data storage services, support files, objects, blocks, and local storage, and easily access storage vendor solutions | [Release Notes](../../release/rn5.0.md) |
 

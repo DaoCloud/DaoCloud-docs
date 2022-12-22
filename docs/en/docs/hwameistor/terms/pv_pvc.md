@@ -19,6 +19,6 @@ After the improvement of StorageClass and the dynamic supply mechanism of storag
 
 Please also refer to the official Kubernetes documentation:
 
-- [Persistent Volumes](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/)
-- [Storage Classes](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/)
-- [Dynamic Volume Provisioning](https://kubernetes.io/zh/docs/concepts/storage/dynamic-provisioning/)
+- [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+- [Storage Classes](https://kubernetes.io/docs/concepts/storage/storage-classes/)
+- [Dynamic Volume Provisioning](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/)

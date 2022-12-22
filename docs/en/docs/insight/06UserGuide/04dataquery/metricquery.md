@@ -1,8 +1,8 @@
-# index query
+# Metric query
 
-Index query supports querying the index data of each container resource, and you can view the trend changes of the monitoring index. At the same time, advanced query supports native PromQL statements for index query.
+Metric query supports querying the index data of each container resource, and you can view the trend changes of the monitoring index. At the same time, advanced query supports native PromQL statements for Metric query.
 
-## prerequisites
+## Prerequisites
 
 - The cluster has [insight-agent installed](../../06UserGuide/01quickstart/installagent.md) and the application is in `running` state.
 

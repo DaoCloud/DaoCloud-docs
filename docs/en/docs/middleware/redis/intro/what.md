@@ -12,7 +12,7 @@ Redis cache service is an in-memory database cache service provided by DaoCloud.
 
     With the help of security management services such as DaoCloud global management and audit logs, the storage and access of instance data are fully protected.
 
-    Flexible disaster recovery strategy, master/standby/cluster instances are deployed in a single cluster to support multi-cluster and multi-cloud deployment.
+    Flexible disaster recovery strategy, master/standby/cluster instances are deployed in a single cluster to support multi-cluster and multicloud deployment.
 
 - Elastic expansion
 

@@ -1,6 +1,6 @@
 # Node taint management
 
-Taint can make a node exclude a certain type of Pod and prevent Pod from being scheduled on the node. One or more taints can be applied to each node, and Pods that cannot tolerate these taints will not be scheduled on that node. For more details about taints, refer to the official Kubernetes documentation [Taints and Tolerance](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/taint-and-toleration/).
+Taint can make a node exclude a certain type of Pod and prevent Pod from being scheduled on the node. One or more taints can be applied to each node, and Pods that cannot tolerate these taints will not be scheduled on that node. For more details about taints, refer to the official Kubernetes documentation [Taints and Tolerance](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/).
 
 ## Precautions
 

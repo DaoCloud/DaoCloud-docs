@@ -18,7 +18,7 @@ This article will introduce how to integrate Harbor in the pipeline and implemen
 
     ![harbor](../images/harbor03.png)
 
-1. In the pop-up dialog box, enter the address of the mirror warehouse in the above Harbor configuration project.
+1. In the pop-up dialog box, enter the address of the container registry in the above Harbor configuration project.
 
     ![harbor](../images/harbor04.png)
 
@@ -26,6 +26,6 @@ This article will introduce how to integrate Harbor in the pipeline and implemen
 
 ## View image security scan information in Harbor
 
-Visit `Project` → `Mirror Warehouse` in turn in Harbor to view the vulnerability information of the mirror.
+Visit `Project` → `container registry` in turn in Harbor to view the vulnerability information of the image.
 
 ![harbor](../images/harbor05.png)

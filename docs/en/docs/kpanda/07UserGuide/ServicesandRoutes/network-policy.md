@@ -2,7 +2,7 @@
 
 Network Policy (NetworkPolicy) can control network traffic at the IP address or port level (OSI layer 3 or 4). The container management module currently supports the creation of network policies based on Pods or namespaces, and supports label selectors to set which traffic can enter or leave Pods with specific labels.
 
-For more details about network policies, please refer to the official Kubernetes document [Network Policies](https://kubernetes.io/zh-cn/docs/concepts/services-networking/network-policies/).
+For more details about network policies, please refer to the official Kubernetes document [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
 
 ## Create network policy
 

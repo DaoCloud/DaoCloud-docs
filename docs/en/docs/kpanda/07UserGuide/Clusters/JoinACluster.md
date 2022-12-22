@@ -1,4 +1,4 @@
-# access cluster
+# Access cluster
 
 Through access to the cluster operation, it is possible to manage many cloud service platform clusters and local private physical clusters in a unified manner, forming a unified governance platform, effectively avoiding the risk of being locked in by manufacturers, and helping enterprises to safely migrate their business to the cloud.
 
@@ -16,7 +16,7 @@ The container management platform supports access to a variety of mainstream con
 - Tencent TKE
 - Standard Kubernetes cluster
 
-## prerequisites
+## Prerequisites
 
 - Prepare a cluster to be connected, and ensure that the network between the container management cluster and the cluster to be connected is smooth.
 - The current operating user should have [`NS Edit`](../Permissions/PermissionBrief.md) or higher.

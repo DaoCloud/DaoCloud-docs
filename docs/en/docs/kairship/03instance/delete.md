@@ -9,7 +9,7 @@ hide:
 
 If an instance is no longer used, you can delete it by referring to the following steps.
 
-1. In the multi-cloud instance list, click the `...` button on the right, and select `Delete` from the pop-up menu.
+1. In the multicloud instance list, click the `...` button on the right, and select `Delete` from the pop-up menu.
 
     ![delete](../images/delete01.png)
 

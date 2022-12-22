@@ -5,9 +5,9 @@ hide:
 
 # remove cluster
 
-If you want to remove a cluster from the hosting grid, you can follow the steps below to remove the cluster.
+If you want to remove a cluster from the hosting mesh, you can follow the steps below to remove the cluster.
 
-1. Click `Cluster Management` in the left navigation bar, and click the `Remove` button on the right side of the cluster list. Or in the grid list, click the `...` button on the far right, and select `Remove` in the pop-up menu.
+1. Click `Cluster Management` in the left navigation bar, and click the `Remove` button on the right side of the cluster list. Or in the mesh list, click the `...` button on the far right, and select `Remove` in the pop-up menu.
 
     ![remove cluster](../../images/remo-cluster01.png)
 
@@ -23,4 +23,4 @@ If you want to remove a cluster from the hosting grid, you can follow the steps 
 
 !!! warning
 
-    If you remove the cluster, you will not be able to centrally manage the cluster through the grid. In addition, related information such as cluster logs may be lost. Please operate with caution.
+    If you remove the cluster, you will not be able to centrally manage the cluster through the mesh. In addition, related information such as cluster logs may be lost. Please operate with caution.

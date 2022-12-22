@@ -31,14 +31,14 @@ This installation method is recommended, and any component of HwameiStor can be 
 
     The installation is complete! To verify the installation effect, please refer to the next chapter [Post-check](./post-check.md).
 
-## Use the mirror warehouse mirror
+## Use the container registry image
 
 !!! tip
 
     The default registries are `quay.io` and `ghcr.io`.
-    If you can’t access it, you can try to use the mirror sources provided by DaoCloud: `quay.m.daocloud.io` and `ghcr.m.daocloud.io`.
+    If you can’t access it, you can try to use the image sources provided by DaoCloud: `quay.m.daocloud.io` and `ghcr.m.daocloud.io`.
 
-To switch the mirroring of the registry, use `--set` to change the values ​​of these two parameters: `k8sImageRegistry` and `hwameistorImageRegistry`.
+To switch the image of the registry, use `--set` to change the values ​​of these two parameters: `k8sImageRegistry` and `hwameistorImageRegistry`.
 
 ```console
 helm install hwameistor ./hwameistor \
@@ -94,7 +94,7 @@ helm install drbd9 ./drbd9-adapter \
     -n hwameistor --create-namespace
 ```
 
-Domestic users can use the mirror warehouse `daocloud.io/daocloud` to speed up
+Domestic users can use the container registry `daocloud.io/daocloud` to speed up
 
 ```console
 helm install drbd-adapter ./drbd-adapter \

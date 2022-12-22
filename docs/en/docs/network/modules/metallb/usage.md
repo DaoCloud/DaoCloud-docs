@@ -282,7 +282,7 @@ BGP 模式不局限于一个二层网络，集群中每个节点都会跟 BGP Ro
     `frr` 配置 `BGP`：
 
     ```shell
-    router bgp 7675  # bgp as number
+    router bgp 7675  # Bgp as number
     bgp router-id 172.16.1.1  # route-id 常常是接口IP
     no bgp ebgp-requires-policy # 关闭 ebpf filter !!!
     neighbor 172.16.1.11 remote-as 7776  # 配置 ebgp -> neighbor 1, 172.16.1.11 为集群一节点

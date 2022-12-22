@@ -4,133 +4,133 @@ categories: blog
 authors: windsonsea
 ---
 
-# DCE 研发背景
+# DCE R&D Background
 
-时下元宇宙概念方兴未艾，预期万物皆有虚拟化身，行业巨头正在模仿现实世界构建沉浸式数字体验，建立另一个完整的数字平行时空。
-现实中的一切都将在云上虚拟碎片化并被赋予真实的价值，分布式微服务微场景随处可见。以往游戏世界最大在线人数为数百万量级，
-但宏大逼真的数字世界将是亿级人口在活动，这将产生海量的并发数据，促使云算力、云存储和云带宽再一次升级换代，
-各种新兴云原生技术必将在此基础上喷涌而出，一切都在云上，一切为云而生。
+Nowadays, the concept of the metaverse is in the ascendant, and it is expected that everything has a virtual avatar. Industry giants are imitating the real world to build an immersive digital experience and establish another complete digital parallel time and space.
+Everything in reality will be virtual fragmented on the cloud and endowed with real value, and distributed micro-service micro-scenes can be seen everywhere. In the past, the largest number of people online in the game world was on the order of millions.
+But the grand and realistic digital world will be the activities of billions of people, which will generate massive amounts of concurrent data, prompting cloud computing power, cloud storage, and cloud bandwidth to be upgraded again.
+Various emerging cloud-native technologies will emerge on this basis, everything is on the cloud, and everything is born for the cloud.
 
 ![meta](images/meta.png)
 
-云原生容器化平台正迅速成为现代应用架构的基础。据 IDC 预测，到 2022 年，将有 70% 的企业跨多个平台部署统一的虚拟机、容器、多云管理流程和工具。
-同样到 2022 年，全球组织／公司在生产环境运行容器化应用，将从今天不足 30% 的比例大幅提升到超过 75%。
-而据 Gartner 预测，到 2025 年，云原生平台将成为 95% 以上新数字倡议的基础，而在 2021 年这一比例只有不到 40%。
+Cloud-native containerization platforms are rapidly becoming the foundation of modern application architectures. According to IDC, by 2022, 70% of enterprises will deploy unified virtual machines, containers, multi-cloud management processes and tools across multiple platforms.
+Also by 2022, the proportion of global organizations/companies running containerized applications in production environments will increase significantly from less than 30% today to more than 75%.
+And according to Gartner, cloud-native platforms will be the foundation of more than 95 percent of new digital initiatives by 2025, up from less than 40 percent in 2021.
 
-[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[Apply for community free experience](../dce/license0.md){ .md-button .md-button--primary }
 
-## 云原生浪潮
+## Cloud Native Wave
 
-何谓云原生？英文名为 Cloud Native，这是 IT 行业资深老兵 Matt Stine 提出的一个概念，包括 DevOps、CI/CD、微服务、容器化等。
-从字面理解，云原生指一切都在云上。所有应用程序从设计之初就要考虑云环境，即原生为云设计，在云上以最佳姿势运行，充分利用和发挥云平台的弹性 + 分布式优势。
+What is Cloud Native? The English name is Cloud Native, which is a concept proposed by Matt Stine, a veteran in the IT industry, including DevOps, CI/CD, microservices, containerization, etc.
+Literally understood, cloud native means that everything is on the cloud. All applications must consider the cloud environment from the beginning of design, that is, they are originally designed for the cloud, run in the best posture on the cloud, and make full use of the elasticity and distributed advantages of the cloud platform.
 
-据艾瑞市场咨询调研报告称，2019 年开始云原生容器技术开始进入规模应用期，容器技术与国内欣欣向荣的云计算产业发展紧密结合，为企业提供更高效、敏捷和可靠的容器云服务。
-容器云架构的敏捷、轻简和高度兼容性使得容器成为云原生生态中最基础的一环，无论是混合云/多云，还是 DevOps、微服务应用的推进，容器都将扮演至关重要的角色，助力企业数字化转型和降本增效。
+According to iResearch's market research report, cloud-native container technology has entered the period of large-scale application since 2019. Container technology is closely integrated with the development of the domestic cloud computing industry, providing enterprises with more efficient, agile and reliable container cloud services.
+The agility, simplicity, and high compatibility of the container cloud architecture make containers the most basic part of the cloud-native ecosystem. Whether it is hybrid cloud/multi-cloud, or the promotion of DevOps and microservice applications, containers will play a vital role , to help enterprises digitally transform and reduce costs and increase efficiency.
 
-DaoCloud 多年深耕容器云技术，是国内容器领域的佼佼者。
-早在 2013 年中旬 Docker 在 GitHub 上开源以来，DaoCloud 几位创始人就敏锐洞察到容器作为一种充满活力和可塑性的技术，其未来的应用前景必将非常可观。
-几十位开发人员经过两年多日夜奋战，2016 年初推出 DaoCloud Enterprise (DCE) 容器应用云平台 1.0，
-以容器化平台产品赋能 DevOps、微服务、无服务器等云原生应用的快速进步，助力企业敏捷应对高频在线服务、工业互联网、金融数字化转型和边缘计算等场景。
+DaoCloud has been cultivating container cloud technology for many years and is a leader in the domestic container field.
+Since Docker was open-sourced on GitHub in mid-2013, several founders of DaoCloud have keen insight into the container as a dynamic and malleable technology, and its future application prospects are bound to be very impressive.
+After more than two years of hard work day and night by dozens of developers, DaoCloud Enterprise (DCE) container application cloud platform 1.0 was launched in early 2016.
+Containerized platform products enable the rapid progress of DevOps, micro-services, serverless and other cloud-native applications, and help enterprises quickly respond to scenarios such as high-frequency online services, industrial Internet, financial digital transformation, and edge computing.
 
-如今，日益成熟完善的 DCE 版本 Roadmap 已演进至 5.0，
-成为业界领先的企业级 Kubernetes 商用平台、云原生操作系统，内含 Parcel 智能网络、UDS 统一数据存储、一体化图形监控和多集群管理等模块，
-经过国内外数百家金融政企生产验证，能够提供可靠、一致的 PaaS 支撑环境，让企业应用开发者专注于业务能力建设，保持竞争力并超预期达成与日俱增的客户期望。
-而 DaoCloud 公司也发展至近 500 名员工，研发人员比例超过 70%，汇集了国内外大厂的顶尖人才专注于容器技术，
-建立了从售前、产品、开发、测试、交付、售后一系列完整的容器技术流水线体系，竭诚为国内外客户服务。
+Today, the increasingly mature DCE version Roadmap has evolved to 5.0,
+Become an industry-leading enterprise-level Kubernetes commercial platform and a cloud-native operating system, including modules such as Parcel intelligent network, UDS unified data storage, integrated graphic monitoring, and multi-cluster management.
+After hundreds of domestic and foreign financial government and enterprise production verification, it can provide a reliable and consistent PaaS support environment, allowing enterprise application developers to focus on business capacity building, maintain competitiveness and exceed expectations to meet the ever-increasing customer expectations.
+DaoCloud has also grown to nearly 500 employees, and the proportion of R&D personnel exceeds 70%. It brings together top talents from major domestic and foreign companies to focus on container technology.
+Established a series of complete container technology assembly line systems from pre-sales, products, development, testing, delivery, and after-sales to serve domestic and foreign customers wholeheartedly.
 
 ![img](images/ops-rank.png)
 
-2020 年 7 月，Gartner 2020 中国 ICT 技术成熟度曲线报告作为专业容器厂商提及 DaoCloud。
-容器技术的主体力量在开源社区，而开源社区的贡献度排名可以证明容器厂商对容器技术的深度理解。
-DaoCloud 近几年在全球开源社区的影响力斐然，stackalytics.io 统计数据表明，过去一年来 DaoCloud 对 Kubernetes 的全球排名第 3，国内第 1。
-这充分证明了 DaoCloud 开发团队对云原生技术的深刻理解，从网络、存储、算力等资源编排，到大屏可视化监控，再到多集群管理和客户场景化解决方案定制，
-DaoCloud 全面引领国内千行百业实现云原生数字化转型，与华为云和近百家国内厂家建立战略合作关系，响应国家号召构建信创产业生态。
+In July 2020, Gartner's 2020 China ICT Technology Maturity Curve Report mentioned DaoCloud as a professional container vendor.
+The main force of container technology lies in the open source community, and the ranking of the contribution of the open source community can prove the deep understanding of container technology by container manufacturers.
+DaoCloud has had a great influence in the global open source community in recent years. Stackalytics.io statistics show that in the past year, DaoCloud ranked No. 3 for Kubernetes globally and No. 1 domestically.
+This fully proves that the DaoCloud development team has a deep understanding of cloud native technology, from network, storage, computing power and other resources arrangement, to large-screen visual monitoring, to multi-cluster management and customer scenario solution customization,
+DaoCloud has comprehensively led thousands of industries in China to realize cloud-native digital transformation, established strategic partnerships with Huawei Cloud and nearly 100 domestic manufacturers, and responded to the call of the country to build an industrial ecology of Xinchuang.
 
-## 容器 vs 虚拟化
+## Containers vs virtualization
 
-这两者不是并行，而是此消彼长的替代关系，容器是未来。
+The two are not in parallel, but in a trade-off relationship. Containers are the future.
 
 ![img](images/trend.png)
 
-在过去的 15 年内，服务器虚拟化是企业数据中心应用部署的首选方法。
-Hypervisor 虚拟机管理程序几乎无处不在。公有云 IaaS 服务商最常见的售卖单位是虚拟机 (VM)。
-然而在云原生时代，企业为了改善应用访问量和用户体验，需要寻求更快、更灵活的方法来部署和管理新的应用和服务。
-很多应用需要同时部署在企业内部和云环境中。另外企业为了加快新应用的上线速度，除了在虚拟机中运行单体应用外，还要部署容器化应用。
+For the past 15 years, server virtualization has been the method of choice for application deployment in enterprise data centers.
+Hypervisors are nearly ubiquitous. The most common unit of sale for public cloud IaaS service providers is the virtual machine (VM).
+However, in the cloud-native era, in order to improve application traffic and user experience, enterprises need to find faster and more flexible ways to deploy and manage new applications and services.
+Many applications need to be deployed both on-premises and in the cloud. In addition, in order to speed up the launch of new applications, enterprises must deploy containerized applications in addition to running single applications in virtual machines.
 
-问题是如果一个企业准备采用容器，就需要努力了解什么基础设施方案最能适合业务需求。
-大多数企业考虑到曾投入在虚拟机方面的资金以及 IT 团队在虚拟机管理方面的多年经验，自然就想在虚拟机环境中运行容器。
-很多企业的 IT 团队就是这么做的。诚然这是一个熟悉容器的好方法。
-但是，随着容器化进程从概念验证发展到开发和测试，再到生产部署，IT 团队逐渐发现基于虚拟机部署的容器并不理想。
+The problem is that if an enterprise is going to adopt containers, it needs to work hard to understand what infrastructure solution best suits the business needs.
+Most enterprises naturally want to run containers in a virtual machine environment, given the money they have invested in virtual machines and the years of experience their IT teams have in managing virtual machines.
+That's what many enterprise IT teams do. Admittedly, this is a great way to get familiar with containers.
+However, as the containerization process progressed from proof of concept, through development and testing, to production deployment, IT teams gradually discovered that containers based on virtual machine deployments were not ideal.
 
-随着云原生技术的成熟和流行，企业们开始尝试将容器直接部署在物理机上，也称为裸金属容器，这种部署方式具有以下优点：
+With the maturity and popularity of cloud-native technologies, enterprises have begun to try to deploy containers directly on physical machines, also known as bare metal containers. This deployment method has the following advantages:
 
-- 管理层次更少，故障排查更简便
-- 效率更高
-- 运行的容器密度更高
-- 性能更好
-- 可预测性更佳
-- 总拥有成本更低
+- Fewer layers of management for easier troubleshooting
+- higher efficiency
+- run with a higher density of containers
+- better performance
+- better predictability
+- Lower total cost of ownership
 
-若在现有的虚拟机环境之上部署容器，容器在其中只是另一种形式的虚拟层。
-这样就需要两种 IT 运维人员，一种使用和管理容器环境，另一种管理虚拟机环境，运维很可能需要两套班子。
-而在实际工作中，无论容器和虚拟机两个团队合作得多好，都会不可避免地出现沟通问题、重复劳动，经常出现一个团队等待另一个团队的情况，不可避免会产生延迟，降低总体工作效率。
+When deploying containers on top of an existing virtual machine environment, containers are just another form of virtualization layer.
+In this way, two types of IT operation and maintenance personnel are needed, one uses and manages the container environment, and the other manages the virtual machine environment. Operation and maintenance may require two sets of teams.
+In actual work, no matter how well the container and virtual machine teams work together, there will inevitably be communication problems, duplication of work, and often one team waiting for the other, which will inevitably cause delays and reduce the overall work efficiency.
 
-此时一旦出现故障，故障排查过程就比较复杂。衍生的问题有：故障能否在容器层面解决？
-是虚拟机引起的问题吗？还是物理硬件的问题？如果要打电话寻求售后支持，怎么才能说清楚哪儿出了问题？
-另外虚拟机是否能有效支持容器栈？
+Once a fault occurs at this time, the troubleshooting process is more complicated. Derived questions include: Can failures be resolved at the container level?
+Is the problem caused by the virtual machine? Or is it a problem with the physical hardware? If you have to call for after-sales support, how can you tell what is wrong?
+In addition, can the virtual machine effectively support the container stack?
 
-裸金属容器与基于虚拟机的容器相比，减少了需要管理的层数，而且由于裸金属的效率更高，所以运行相同数量的容器需要的硬件资源更少，减少了管理的设备总量。
+Compared with virtual machine-based containers, bare metal containers reduce the number of layers to be managed, and because bare metal is more efficient, fewer hardware resources are required to run the same number of containers, reducing the total number of managed devices.
 
 ![img](images/compare.png)
 
-从上图可看出，裸金属容器部署、管理和故障排查需要的团队人员更少，但支撑的应用密度更高。
+As can be seen from the figure above, bare metal container deployment, management, and troubleshooting require fewer team members, but support higher application density.
 
-DaoCloud 把握时代脉搏，以 DCE 容器应用云平台为核心，匠心打造的云原生一体机采用智能裸金属 + 领先容器技术的基础架构，基于原生的开源容器技术，
-与全球标准与规范完全同步，持续向企业输出业界最佳实践。
-能够在差异化的集群运行环境内，适配裸金属、虚拟机和云主机等企业多样化 IT 基础设施，支持多种虚拟平台，实现企业多元化基础设施之上的统一资源调配。
+DaoCloud grasps the pulse of the times, with the DCE container application cloud platform as the core, the ingeniously built cloud-native all-in-one machine adopts the infrastructure of smart bare metal + leading container technology, based on native open source container technology,
+Fully synchronized with global standards and norms, and continuously exporting industry best practices to enterprises.
+In a differentiated cluster operating environment, it can adapt to the diversified IT infrastructure of enterprises such as bare metal, virtual machines, and cloud hosts, support multiple virtual platforms, and realize unified resource allocation on the diversified infrastructure of enterprises.
 
-## DCE 与 Kubernetes
+## DCE and Kubernetes
 
-DCE 包含企业需要的容器、网络、存储、监控、镜像仓库、负载均衡、DNS 服务发现、身份验证和授权解决方案。这些组件经过全面的测试，
-可在裸金属环境、公有云、私有云和混合云等新型动态环境上可靠运行。
+DCE includes container, network, storage, monitoring, container registry, load balancing, DNS service discovery, authentication and authorization solutions that enterprises need. These components are thoroughly tested,
+Run reliably on new dynamic environments such as bare metal environments, public clouds, private clouds, and hybrid clouds.
 
-- 容器计算，适配 x86 架构以及 ARM 架构，承载混合应用的运行、调度及管理。
-- 容器存储，提供面向应用的数据持久化能力，助力有状态应用负载。
-- 容器网络，为应用提供高性能双态网络，兼顾传统企业基础架构和软件定义基础架构。
+- Container computing, adapting to x86 architecture and ARM architecture, carrying the operation, scheduling and management of hybrid applications.
+- Container storage, which provides application-oriented data persistence capabilities and facilitates stateful application loads.
+- Container network, providing a high-performance dual-state network for applications, taking into account both traditional enterprise infrastructure and software-defined infrastructure.
 
-DCE 内置 260 项容器平台风险检查点，多维度的集群监控告警前沿实践，
-保障主机、集群服务、业务应用的持续运行，整体的平台高可用设计以及全面的资源保障模式(QoS)，
-实现端到端的应用安全保障，提供高 SLA 保障，可用性达 99.99%。
+DCE has built-in 260 container platform risk checkpoints, multi-dimensional cluster monitoring and alarm cutting-edge practice,
+Guarantee the continuous operation of hosts, cluster services, and business applications, the overall platform high-availability design and comprehensive resource guarantee mode (QoS),
+Realize end-to-end application security assurance, provide high SLA guarantee, and availability reach 99.99%.
 
-DCE 以技术引领为己任，帮助企业客户落地云原生技术，并且在实践中不断加固、优化和扩展 Kubernetes，
-使其满足企业级、大规模、高度稳定的生产环境要求。同时，团队作为国内 Kubernetes 开源社区领导者之一，
-对核心开源技术有着深度理解，通过不断总结生产实践回馈开源社区，推动 Kubernetes 社区的不断发展。
+DCE takes technology leadership as its own responsibility, helps enterprise customers implement cloud native technology, and continuously strengthens, optimizes and expands Kubernetes in practice,
+It meets the requirements of an enterprise-level, large-scale, and highly stable production environment. At the same time, as one of the leaders of the domestic Kubernetes open source community,
+He has a deep understanding of core open source technologies, and contributes to the open source community by constantly summarizing production practices to promote the continuous development of the Kubernetes community.
 
-## DCE 产品简介
+## DCE Product Introduction
 
-DCE 采用业界领先的容器编排技术，产品能力涵盖云原生应用的开发、交付、运维和运营全生命周期管理，
-能够帮助金融政企实现分布式业务应用的敏捷交付、弹性支撑和治理，提升企业对分布式应用的支撑和治理能力。
-同时，产品已经与国内主流信创合作伙伴构建「信创架构+云原生平台」的端到端云原生整体解决方案。
-目前已经为金融、证券、工业互联、车联网、智能制造、电商在内的数百个重点行业头部客户提供了围绕云原生技术的容器云解决方案，
-并且相应的信创容器云解决方案已经在政务、金融等多个行业落地。
+DCE adopts industry-leading container orchestration technology, and its product capabilities cover the development, delivery, operation and maintenance of cloud-native applications, as well as the full lifecycle management of operations.
+It can help financial governments and enterprises realize agile delivery, elastic support and governance of distributed business applications, and improve enterprises' ability to support and manage distributed applications.
+At the same time, the product has built an end-to-end cloud-native overall solution of "Innovation architecture + cloud-native platform" with domestic mainstream Xinchuang partners.
+At present, it has provided container cloud solutions based on cloud-native technology for hundreds of leading customers in key industries including finance, securities, industrial interconnection, Internet of Vehicles, intelligent manufacturing, and e-commerce.
+And the corresponding Xinchuang container cloud solution has been implemented in many industries such as government affairs and finance.
 
 ![img](images/position.png)
 
-对应用开发人员而言，可以把 DCE 看成是一个集群操作系统。DCE 提供服务发现、扩缩、负载均衡、自愈甚至选举等功能，
-让开发人员从基础设施相关配置等解脱出来。DCE 可以把大量的服务器看做一台巨大的服务器，在一台大服务器上面运行应用程序。
-无论云原生集群有多少台服务器，在 DCE 上部署应用程序的方法永远一样。
+For application developers, DCE can be regarded as a cluster operating system. DCE provides functions such as service discovery, scaling, load balancing, self-healing and even election.
+Free developers from infrastructure-related configuration, etc. DCE can treat a large number of servers as a huge server and run applications on a large server.
+Regardless of the number of servers in a cloud-native cluster, the method of deploying an application on DCE will always be the same.
 
-## 经 CNCF 认证的 KCSP
+## CNCF certified KCSP
 
-目前 DaoCloud 经授权合规的 Kubernetes 版本包括但不限于：
+The currently authorized and compliant Kubernetes versions of DaoCloud include but are not limited to:
 
-当前版本：
+current version:
 
 [![1.23](../images/1.23.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/2072)
 [![1.24](../images/1.24.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/2239)
 [![1.25](../images/1.25.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/2240)
 
-历史版本：
+historic version:
 
 [![1.7](../images/1.7.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/68)
 [![1.9](../images/1.9.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/210)
@@ -139,8 +139,8 @@ DCE 采用业界领先的容器编排技术，产品能力涵盖云原生应用�
 [![1.18](../images/1.18.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/1144)
 [![1.20](../images/1.20.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/1463)
 
-进一步了解[什么是 DCE 5.0](../dce/what-is-dce.md)
+Learn more about [What is DCE 5.0](../dce/what-is-dce.md)
 
-[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
-[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Apply for community free experience](../dce/license0.md){ .md-button .md-button--primary }

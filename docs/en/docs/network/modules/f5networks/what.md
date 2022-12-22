@@ -6,7 +6,7 @@ Complete the control of the F5 device, synchronize the service and ingress confi
 Among them, the [k8s bigip ctlr](https://github.com/F5Networks/k8s-bigip-ctlr) component is responsible for monitoring service or ingress objects, and realizing the control plane rule delivery to F5 hardware devices;
 When working in Layer 4 load balancing mode, the [f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller) component is mainly responsible for the ingress VIP allocation of F5 hardware.
 
-## forward mode
+## Forward mode
 
 F5 devices have two modes to forward traffic to the cluster (for more information about forwarding modes, please refer to [official instructions](https://clouddocs.f5.com/containers/latest/userguide/config-options.html) ).
 
