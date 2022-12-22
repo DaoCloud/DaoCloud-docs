@@ -22,4 +22,4 @@ Redis cache service is an in-memory database cache service provided by DaoCloud.
 
     Visualize the web management interface to complete operations such as instance restart and parameter modification online. A RESTful API is also provided to facilitate further automated instance management.
 
-[Apply for community free experience](../../../dce/license0.md){ .md-button .md-button--primary }
+[Free Trial](../../../dce/license0.md){ .md-button .md-button--primary }
