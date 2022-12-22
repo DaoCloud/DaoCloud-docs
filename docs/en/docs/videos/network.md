@@ -4,20 +4,26 @@
 
 ## Create a Pod multi-NIC scenario
 
+See the [multus-underlay](../network/modules/multus-underlay/what.md) documentation page.
+
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/pod-cnis.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
 </div>
 
 ## Installation and use of F5network
 
+See the [F5 installation](../network/modules/f5networks/install.md) documentation page.
+
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/f5network.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
 </div>
 
 ## Installation and use of SR-IOV
-Free Trial
+
+See the [SR-IOV](../network/modules/multus-underlay/sriov.md) documentation page.
+
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/SR-IOV.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
 </div>
 
-[Apply for community free experience](../dce/license0.md){ .md-button .md-button--primary }
+[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
