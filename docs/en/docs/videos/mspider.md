@@ -32,6 +32,14 @@ See the [Istio Version Upgrade](../mspider/03UserGuide/upgrade/IstioUpdate.md) d
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/istio-upgrade.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
 </div>
 
+## Sidecar upgrade
+
+See the [Sidecar Upgrade](../mspider/03UserGuide/upgrade/SidecarUpdate.md) documentation page.
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sidecarup.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
+</div>
+
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }
