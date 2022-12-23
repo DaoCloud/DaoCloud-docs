@@ -1,78 +1,78 @@
-# 工作空间最佳实践
+# Workspace Best Practices
 
-工作空间是一种资源分组单元，大多数资源都可以绑定到某一个工作空间中。
-而工作空间通过授权和资源绑定，能够实现用户与角色的绑定关系，并一次性应用到工作空间的所有资源上。
+A workspace is a resource grouping unit, and most resources can be bound to a certain workspace.
+The workspace can realize the binding relationship between users and roles through authorization and resource binding, and apply it to all resources in the workspace at one time.
 
-通过工作空间，可以轻松管理团队与资源，解决跨模块、跨集群的资源授权问题。
+Through the workspace, you can easily manage teams and resources, and solve cross-module and cross-cluster resource authorization issues.
 
-## 工作空间的功能
+## Functions of the workspace
 
-工作空间包含三个功能：授权、资源组和共享资源。主要解决资源统一授权、资源分组及资源配额问题。
+A workspace consists of three functions: authorization, resource groups, and shared resources. It mainly solves the problems of unified authorization of resources, resource grouping and resource quota.
 
-![工作空间](../../images/quota01.png)
+![Workspace](../../images/quota01.png)
 
-1. 授权：为用户/用户组授予该工作空间的不同角色，并将角色应用到工作空间的资源上。
+1. Authorization: Grant users/user groups different roles in the workspace, and apply the roles to the resources in the workspace.
 
-    最佳实践：普通用户想要使用应用工作台、微服务引擎、服务网格、中间件模块功能，或者需要拥有容器管理、服务网格中部分资源的使用权限时，需要管理员授予该工作空间的使用权限（Workspace Admin、Workspace Edit、Workspace View）。
-    这里的管理员可以是 Admin 角色、该工作空间的 Workspace Admin 角色或该工作空间上层的 Folder Admin 角色。
-    查看 [Folder 与 Workspace 的关系](ws-folder.md)。
+    Best practice: When ordinary users want to use the application workbench, microservice engine, service grid, and middleware module functions, or need to have permission to use container management and some resources in the service grid, the administrator needs to grant the workspace permissions (Workspace Admin, Workspace Edit, Workspace View).
+    The administrator here can be the Admin role, the Workspace Admin role of the workspace, or the Folder Admin role above the workspace.
+    See [Relationship between Folder and Workspace](ws-folder.md).
 
-2. 资源组：资源组和共享资源是工作空间的两种资源管理模式。
+2. Resource group: Resource group and shared resource are two resource management modes of the workspace.
 
-    资源组支持 Cluster、Cluster-Namespace (跨集群)、Mesh、Mesh-Namespace 四种资源类型。
-    一个资源只能绑定一个资源组，资源被绑定到资源组后，工作空间的所有者将拥有该资源的所有管理权限，相当于该资源的所有者，因此不受资源配额的限制。
+    Resource groups support four resource types: Cluster, Cluster-Namespace (cross-cluster), Mesh, and Mesh-Namespace.
+    A resource can only be bound to one resource group. After a resource is bound to a resource group, the owner of the workspace will have all the management rights of the resource, which is equivalent to the owner of the resource, so it is not limited by the resource quota.
 
-    最佳实践：工作空间通过“授权”功能可以给部门成员授予不同角色权限，而工作空间能够把人与角色的授权关系一次性应用到工作空间的所有资源上。因此运维人员只需将资源绑定到资源组，将部门中的不同角色加入不同的资源组，就能确保资源的权限被正确分配。
+    Best practice: The workspace can grant different role permissions to department members through the "authorization" function, and the workspace can apply the authorization relationship between people and roles to all resources in the workspace at one time. Therefore, the operation and maintenance personnel only need to bind resources to resource groups, and add different roles in the department to different resource groups to ensure that resource permissions are assigned correctly.
 
-    | 部门         | 角色            | 集群 Cluster | 跨集群 Cluster-Namespace | Mesh    | Mesh-Namespace |
-    | ------------ | --------------- | ------------ | ------------------------ | ------- | -------------- |
-    | 部门管理员   | Workspace Admin | &check;      | &check;                  | &check; | &check;        |
-    | 部门核心成员 | Workspace Edit  | &check;      | &cross;                  | &check; | &cross;        |
-    | 其他成员     | Workspace View  | &check;      | &cross;                  | &cross; | &cross;        |
+    | Department | Role | Cluster | Cross-cluster Cluster-Namespace | Mesh | Mesh-Namespace |
+    | ------------ | --------------- | ------------ | ------- ----------------- | ------- | -------------- |
+    | Department Admin | Workspace Admin | &check; | &check; | &check; | &check; |
+    | Department Core Members | Workspace Edit | &check; | &cross; | &check; | &cross; |
+    | Other Members | Workspace View | &check; | &cross; | &cross; | &cross; |
 
-3. 共享资源：共享资源功能主要针对集群资源。
+3. Shared resources: The shared resource function is mainly for cluster resources.
 
-    一个集群可以共享给多个工作空间（指工作空间中的共享资源功能）；一个工作空间也可以同时使用多个集群的资源。
-    但是资源共享不意味着被共享者（工作空间）可以无限制地使用共享的资源（集群），因此通常会限制共享者（工作空间）能够使用的资源限额。
+    A cluster can be shared by multiple workspaces (referring to the shared resource function in the workspace); a workspace can also use the resources of multiple clusters at the same time.
+    However, resource sharing does not mean that the sharer (workspace) can use the shared resource (cluster) without restriction, so the resource quota that the sharer (workspace) can use is usually limited.
 
-    同时，与资源组不同，工作空间成员只是共享资源的使用者，能够在资源限额下使用集群中的资源。比如前往应用工作台创建命名空间、部署应用等，但并不具备集群的管理权限，限制后在该工作空间下创建/绑定的命名空间的资源配额总和不能超过集群在该工作空间设置的资源使用上限。
+    At the same time, unlike resource groups, workspace members are only users of shared resources and can use resources in the cluster under resource quotas. For example, go to the application workbench to create a namespace, deploy applications, etc., but do not have the management authority of the cluster. After the restriction, the total resource quota of the namespace created/bound under this workspace cannot exceed the resources set by the cluster in this workspace Use cap.
 
-    最佳实践：运维部门手中有一个高可用集群 01，想要分配给部门 A（工作空间 A）和部门 B（工作空间 B）使用，其中部门 A 分配 CPU 50 核，部门 B 分配 CPU 100 核。
-    那么可以借用共享资源的概念，将集群 01 分别共享给部门 A 和部门 B，并限制部门 A 的 CPU 使用额度为 50，部门 B 的 CPU 使用额度为 100。
-    那么部门 A 的管理员（工作空间 A Admin）能够在应用工作台创建并使用命名空间，其中命名空间额度总和不能超过 50 核，部门 B 的管理员（工作空间 B Admin）能够在应用工作台创建并使用命名空间，其中命名空间额度总和不能超过 100 核。
-    部门 A 的管理员和部门 B 管理员创建的命名空间会被自动绑定在该部门，部门中的其他成员将对应的拥有命名空间的 Namesapce Admin、Namesapce Edit、Namesapce View 角色（这里部门指的是工作空间，工作空间还可以映射为组织、供应商等其他概念）。整个过程如下表：
+    Best practice: The operation and maintenance department has a high-availability cluster 01, and wants to allocate it to department A (workspace A) and department B (workspace B), where department A allocates 50 CPU cores, and department B allocates CPU 100 cores .
+    Then you can borrow the concept of shared resources, share cluster 01 with department A and department B respectively, and limit the CPU usage quota of department A to 50, and the CPU usage quota of department B to 100.
+    Then the administrator of department A (workspace A Admin) can create and use a namespace in the application workbench, and the sum of the namespace quotas cannot exceed 50 cores, and the administrator of department B (workspace B Admin) can create a namespace in the application workbench And use namespaces, where the sum of namespace credits cannot exceed 100 cores.
+    The namespaces created by the administrators of department A and department B will be automatically bound to the department, and other members of the department will have the roles of Namesapce Admin, Namesapce Edit, and Namesapce View corresponding to the namespace (the department here refers to Workspace, workspace can also be mapped to other concepts such as organization, supplier, etc.). The whole process is as follows:
 
-    | 部门         | 角色                                                    | 集群 Cluster | 资源配额   |
-    | ------------ | ------------------------------------------------------- | ------------ | ---------- |
-    | 部门管理员 A | Workspace Admin                                         | CPU 50 核    | CPU 50 核  |
-    | 部门管理员 B | Workspace Admin                                         | CPU 100 核   | CPU 100 核 |
-    | 部门其他成员 | Namesapce Admin<br />Namesapce Edit<br />Namesapce View | 按需分配     | 按需分配   |
+    | Department | Role | Cluster | Resource Quota |
+    | ------------ | ------------------------------------ ------------------- | ------------ | ---------- |
+    | Department Administrator A | Workspace Admin | CPU 50 cores | CPU 50 cores |
+    | Department Administrator B | Workspace Admin | CPU 100 cores | CPU 100 cores |
+    | Other Members of the Department | Namesapce Admin<br />Namesapce Edit<br />Namesapce View | Assign as Needed | Assign as Needed |
 
-## 工作空间对 DCE 模块的作用
+## The effect of the workspace on the DCE module
 
-1. 模块名称：[应用工作台](../../../amamba/01ProductBrief/WhatisAmamba.md)、[微服务引擎](../../../skoala/intro/features.md)、[服务网格](../../../mspider/01Intro/WhatismSpider.md)、[中间件](../../../middleware/midware.md)
+1. Module name: [Application Workbench](../../../amamba/01ProductBrief/WhatisAmamba.md), [Microservice Engine](../../../skoala/intro/features. md), [Service Mesh](../../../mspider/01Intro/WhatismSpider.md), [Middleware](../../../middleware/midware.md)
 
-    进入上述几个模块的前提是拥有某个工作空间的权限，因此在使用模块功能前必须具有 Admin 角色或者拥有某个工作空间的一定角色权限。
+    The premise of entering the above modules is to have the permission of a certain workspace, so you must have the Admin role or have certain role permissions of a certain workspace before using the module functions.
 
-    - 工作空间的角色会自动应用到工作空间包含的资源上。比如当您拥有工作空间 A 的 Workspace Admin 角色，那么对于该工作空间中的所有资源您都是 Admin 角色；
-    - 如果您是 Workspace Edit，那么对于工作空间中的所有资源您都是 Edit 角色；
-    - 如果您是 Workspace View，那么对于工作空间中的所有资源您都是 View 角色。
+    - The roles of the workspace are automatically applied to the resources contained in the workspace. For example, if you have the Workspace Admin role of workspace A, then you are the Admin role for all resources in this workspace;
+    - If you are a Workspace Edit, you are the Edit role for all resources in the workspace;
+    - If you are Workspace View, you are View role for all resources in the workspace.
 
-    另外，您在这些模块创建的资源也将自动被绑定到对应的工作空间中，而不需要其他额外的操作。
+    In addition, the resources you create in these modules will also be automatically bound to the corresponding workspace without any additional operations.
 
-2. 模块名称：[容器管理](../../../kpanda/03ProductBrief/WhatisKPanda.md)、[服务网格](../../../mspider/01Intro/WhatismSpider.md)
+2. Module name: [Container Management](../../../kpanda/03ProductBrief/WhatisKPanda.md), [Service Mesh](../../../mspider/01Intro/WhatismSpider.md )
 
-    由于功能模块的特殊性，在容器管理模块创建的资源不会自动被绑定到某个工作空间。
+    Due to the particularity of functional modules, resources created in the container management module will not be automatically bound to a certain workspace.
 
-    如果您需要通过工作空间对人和资源进行统一授权管理，可以手动将需要的资源绑定到某个工作空间中，从而将用户在该工作空间的角色应用到资源上（这里的资源是可以跨集群的）。
+    If you need to perform unified authorization management on people and resources through workspaces, you can manually bind the required resources to a certain workspace, so as to apply the roles of users in this workspace to resources (resources here can be cross- clustered).
 
-    另外，在资源的绑定入口上容器管理与服务网格稍有差异，工作空间提供了容器管理中的 Cluster 和 Cluster-Namesapce 资源的绑定入口，但尚未开放对服务网格的 Mesh 和 Mesh-Namespace 资源的绑定。
+    In addition, there is a slight difference between container management and service grid in terms of resource binding entry. The workspace provides the binding entry of Cluster and Cluster-Namespace resources in container management, but has not opened the Mesh and Mesh-Namespace for service grid. Bindings for Namespace resources.
 
-    对于 Mesh 和 Mesh-Namespace 资源，可以在服务网格的资源列表进行手动绑定。
+    For Mesh and Mesh-Namespace resources, you can manually bind them in the resource list of the service grid.
 
-## 工作空间的使用场景
+## Usage Scenarios of Workspace
 
-- 映射为不同的部门、项目、组织等概念，同时可以将工作空间中 Workspace Admin、Workspace Edit 和 Workspace View 角色对应到部门、项目、组织中的不同角色
-- 将不同用途的资源加入不同的工作空间中分开管理和使用
-- 为不同工作空间设置完全独立的管理员，实现工作空间范围内的用户与权限管理
-- 将资源共享给不同的工作空间使用，并限制工作空间能够使用的资源额度上限
+- Mapping to concepts such as different departments, projects, organizations, etc. At the same time, the roles of Workspace Admin, Workspace Edit, and Workspace View in the workspace can be mapped to different roles in departments, projects, and organizations
+- Add resources for different purposes to different workspaces for separate management and use
+- Set up completely independent administrators for different workspaces to realize user and authority management within the scope of the workspace
+- Share resources to different workspaces, and limit the upper limit of resources that can be used by workspaces
