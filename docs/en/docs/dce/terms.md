@@ -2288,6 +2288,6 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     采用零信任架构带来的主要好处是增加安全，减少攻击面。
     从您的企业系统中移除信任，现在增加了攻击者必须通过的安全门的数量和强度，以获得对系统的其他区域的访问。
 
-[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
-[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Free Trial](license0.md){ .md-button .md-button--primary }
