@@ -4,6 +4,20 @@
 
 ### 排障方案
 
+- [K8s CNI Cilium 网络故障排查指南](https://mp.weixin.qq.com/s/jBuNPOKbL-keXmzq1gq-mQ)
+
+    文章介绍了作者从 kubenet 升级到  cilium 时遇到的一个问题及排障过程。
+    问题是，在 kubenet 网络的节点上的 pod 无法访问 cilium 网络的节点上的 pod。
+    通过抓包测试，以及分析 cilium 的相关信息，
+    发现问题所在：cilium 如果没有管理所有 k8s 节点，剩余的节点就按照外部服务器的方式来处理。
+
+- [如何高效地对 Kubernetes Service 进行排障](https://blog.getambassador.io/how-to-debug-a-kubernetes-service-effectively-3d4eff0b221a)
+
+    文章简要介绍了 service 的工作方式，在运行 service 时可能出现的各种 bug 以及如何解决这些 bug。
+    最后，还介绍了一个高效排障工具 [Telepresence](https://github.com/telepresenceio/telepresence)。
+    Telepresence 能够为 Kubernetes 建立一个远程开发环境，用户仍然可以使用自己的本地工具，如 IDE 和调试器，
+    并针对远程 K8 集群的微服务测试本地服务。
+
 - [K8s：彻底解决节点本地存储被撑爆的问题](https://mp.weixin.qq.com/s/pKTA6O3bdko_eHaw5mU3gQ)
 
     K8s 节点本地存储保存了镜像、可写层、日志、emptyDir 等内容。
@@ -54,6 +68,10 @@
     这篇文章的创作灵感因 Grafana 不展示使用存储驱动创建的存储卷的容量指标而起，展示了该问题的排查思路及手段，进而勾勒出 Kubelet 对于存储卷指标收集的实现流程。
 
 ### 最佳实践
+
+- [在生产中大规模自动化 Istio CA 轮换](https://mp.weixin.qq.com/s/75paqvd507_ExHHGszB_-Q)
+
+    文章展示如何配置 Istio 以自动重新加载其 CA，以及如何配置 cert-manager 在 Istio 的中间 CA 到期前定期自动轮换，以提高在多个集群上管理 CA 的操作效率。
 
 - [Kubernetes 零信任安全的 mTLS 最佳实践](https://mp.weixin.qq.com/s/QYeP6WZKG0gjJ2u6k1fXxQ)
 
@@ -604,6 +622,16 @@
     文章从主流 APM 产品介绍出发（对比 Pinpoint、Jaeger、Skywalking、听云、腾讯云+阿里云 Arms 和 Datadog），通过生产环境中关注的几个重要维度，如产品体验、Agent 能力、报警+ DB 支持、云原生的支持能力、数据大屏等，给予 APM 选型方案建议。
 
 ### 前沿热点
+
+- [从 PingCAP 的 TiDB 数据库产品看国产技术出海模式](https://mp.weixin.qq.com/s/3y9pafdEy8rD5H2OtgPwEw)
+
+    文章介绍了 PingCAP 为实现技术出海，对 TiDB 在技术上、合规性、商业化方面所做的优化。
+    技术上，要实现降本增效、运维自动化、多租户管理、满足特定地区的场景需求；
+    合规性上，考虑数据安全、监管规则；
+    商业上，考虑计价模式、商业化策略等。
+    此外，TiDB 能够吸引海外客户还有几个因素：TiDB 是开源的，有着活跃的开源社区；
+    客户数据存放在 AWS、GCP 等公有云上；
+    远程支持，不依赖当地技术团队，可以有效解决部分地区人力资源贵的问题。
 
 - [探索 K8s 新功能 Container Checkpointing](https://sysdig.com/blog/forensic-container-checkpointing-dfir-kubernetes/)
 
