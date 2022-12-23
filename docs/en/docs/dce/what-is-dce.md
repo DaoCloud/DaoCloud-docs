@@ -26,7 +26,7 @@ DCE 5.0 natively supports the DevOps development and operation and maintenance m
 
 </div>
 
-![modules](../images/dce-modules04.png)
+![modules](../images/dce-modules04.jpg)
 
 In the past eight years, DaoCloud has invested huge to explore and develop a cloud-native operating system with custom and scalable modules to facilitate your business digitalization. You can use each module like a LEGO brick, with zero downtime while upgrading any module. DCE 5.0 is also easy to integrate with hundreds of cloud-native ecological plugins, so you can simply customize solutions for different scenarios. Things go better with such a kind of modular style to grow day by day.
 
@@ -38,7 +38,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Multicloud Orchestration](../kairship/01product/whatiskairship.md), cloud to edge continuum, Xinchuang Heterogeneous
 
-    ![multi-cloud](../images/01multi-cloud.png)
+    ![multi-cloud](../images/01multi-cloud.jpg)
 
 === "Data Service"
 
@@ -48,7 +48,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [HwameiStor](../hwameistor/intro/what.md), [Middleware](../middleware/midware.md)
 
-    ![data](../images/02data.png)
+    ![data](../images/02data.jpg)
 
 === "Microservice Governance"
 
@@ -67,7 +67,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Microservice Engine](../skoala/intro/features.md), [Service Mesh](../mspider/01Intro/WhatismSpider.md), [Insight](../insight/03ProductBrief/WhatisInsight.md), [App Workbench](../amamba/01ProductBrief/WhatisAmamba.md)
 
-    ![Microservie](../images/03msgov.png)
+    ![Microservie](../images/03msgov.jpg)
 
 === "Insight"
 
@@ -77,7 +77,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Insight](../insight/03ProductBrief/WhatisInsight.md)
 
-    ![Insight](../images/04insight.png)
+    ![Insight](../images/04insight.jpg)
 
 === "App Store"
 
@@ -95,7 +95,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [App Workbench](../amamba/01ProductBrief/WhatisAmamba.md), Registry
 
-    ![App Delivery](../images/06appdeliv.png)
+    ![App Delivery](../images/06appdeliv.jpg)
 
 === "Cloud Native Base"
 
@@ -113,7 +113,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     All clusters and workloads are managed through Clusterpedia. This solution is compatible with joining standard Kubernetes clusters, breaking through the performance bottleneck of Kubernetes API and supporting thousands of users using it at the same time.
 
-    **Modules**: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](../community/kubean.md), [Network](../network/), [HwameiStor](../hwameistor/)
+    **Modules**: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](../community/kubean.md), [Network](../network/intro/what-is-net.md), [HwameiStor](../hwameistor/intro/what.md)
 
 === "Xinchuang Heterogeneous"
 
@@ -121,11 +121,11 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Benefits**: This solution can consolidate Xinchuang cloud-native capabilities for government sectors and state-owned factories, supports domestic chips and servers in the north, and supports Xinchuang operating system and app ecosystem in containers in the south.
 
-    **Modules**: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](../community/kubean.md), [信创中间件](../middleware/midware.md)
+    **Modules**: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](../community/kubean.md), [middware](../middleware/midware.md)
 
-    ![Xinchuang](../images/08xinchuan.png)
+    ![Xinchuang](../images/08xinchuan.jpg)
 
-=== "cloud to edge continuum"
+=== "Cloud to edge continuum"
 
     **Applicable scenarios**: An enterprise designs an edge collaboration solution on the basis of cloud, edge, and terminal. The edge is a general computing platform and has strict computing requirements. The edge supports several deployment modes: edge node, edge cluster, data center computing downwards, edge device computing upwards.
 
@@ -133,6 +133,6 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](../community/kubean.md), Edge nodes, clusters in the weak network
 
-    ![cloud-edge](../images/09cloud-edge.png)
+    ![cloud-edge](../images/09cloud-edge.jpg)
 
 Just like Lego bricks, it combines dozens of the best open source technologies into a platform. After many dialectical selection, adaptation and running-in, coding debugging, and massive testing, a sword is sharpened in ten years. The new generation of containerized platforms can meet the needs of various scenarios for enterprises migrating to the cloud.
