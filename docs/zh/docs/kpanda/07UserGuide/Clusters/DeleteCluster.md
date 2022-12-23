@@ -12,7 +12,7 @@ hide:
 
 !!! note
 
-    当前操作用户应具备 [`kpanda owner`](../../../ghippo/04UserGuide/01UserandAccess/global.md) 权限才能执行卸载或解除接入的操作。
+    当前操作用户应具备 [`Kpanda Owner`](../../../ghippo/04UserGuide/01UserandAccess/global.md) 权限才能执行卸载或解除接入的操作。
 
 1. 在`集群列表`页找到需要卸载/解除接入的集群，点击右侧的 `...` 并在下拉列表中点击`卸载集群`/`解除接入`。
 

@@ -1,8 +1,13 @@
-# features
+---
+hide:
+  - toc
+---
+
+# Features and Benefits
 
 DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typical featuers currently supported are as follows. 
 
-=== "[multi-cluster management](../kpanda/03ProductBrief/WhatisKPanda.md)"
+=== "[Multi-cluster management](../kpanda/03ProductBrief/WhatisKPanda.md)"
 
 - Unified management of multi-cluster, supporting Kubernetes clusters in all version ranges to be included in the container management scope. 
 
@@ -18,7 +23,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 === "Cloud native application management"
 
-- Multi-form cloud native application management, realizing the deployment and lifecycle management of different types of cloud native application, supporting cloud native application, Helm, OEM, etc., and open multi-cloud application compatibility. 
+- Multi-form cloud native application management, realizing the deployment and lifecycle management of different types of cloud native application, supporting cloud native application, Helm, OEM, etc., and open multicloud application compatibility. 
 
 - One-stop deployment to decouple the underlying Kubernetes platform. One-stop deployment, operation and maintenance of service application to realize the lifecycle-management of application. 
 
@@ -41,15 +46,15 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 - DevOps tools popular in the community are integrated. Stepes in a single pipelines can run on multiple operating systems and multiple architecture nodes. Independent deployment on public cloud, private cloud or host is supported, and enterprise owned systems and platform can be well integrated. 
   The integration of mainstream software in the industry, such as Kubernetes, Gitlab, SonarQube, Harbor, are supported. 
 
-=== "[Multi-cloud application dispatch](../kairship/01product/whatiskairship.md)"
+=== "[Multicloud application dispatch](../kairship/01product/whatiskairship.md)"
 
-- Unified multi-cloud orchestration management, unified management of multiple cloud instances, and unified request entry. 
+- Unified multicloud orchestration management, unified management of multiple cloud instances, and unified request entry. 
 
-- One-click import of multi-cloud clusters. 
+- One-click import of multicloud clusters. 
 
-- Rich multi-cloud application dispatch strategies, coverage strategies, etc. 
+- Rich multicloud application dispatch strategies, coverage strategies, etc. 
 
-- Multi-cloud application failover function. 
+- Multicloud application failover function. 
 
 === "[Unified user authority system](../ghippo/01ProductBrief/WhatisGhippo.md)"
 
@@ -63,7 +68,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - Flexible resource division. Resource division and binding based on resource granularity (namespace, cluster, registry, etc.), and unified allocation of container platform resources.
 
-=== "One-stop[Microservice governance](../skoala/intro/features.md)"
+=== "One-stop [Microservice governance](../skoala/intro/features.md)"
 
 - The Microservice registry centrally manages all dynamic Microservices in the cluster.
 
@@ -73,7 +78,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - The Microservice gateway plays an important role in managing the north-south traffic control of Microservices.
 
-=== "[Observable](../insight/03ProductBrief/WhatisInsight.md)"
+=== "[Insight](../insight/03ProductBrief/WhatisInsight.md)"
 
 - The application-centric, out-of-the-box, new generation cloud-native observability operation and maintenance platform realizes fast fault location and quick troubleshooting.
 

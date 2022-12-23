@@ -31,6 +31,7 @@ hide:
     !!! note
 
         命令需要指定 `-m` 参数，`manifest.yaml` 文件在离线包 `offline/sample` 下。
+        如果是安装 DCE 5.0 ARM 架构，不能执行第16步（harbor），因为 harbor 暂时不支持 ARM，需要修改 mainfest.yaml 文件，postgressql operator 为 `fasle`，执行安装命令时要添加 -j 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15。
 
 4. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
 
