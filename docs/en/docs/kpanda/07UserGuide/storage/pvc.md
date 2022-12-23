@@ -10,9 +10,9 @@ There are fewer steps and more efficient creation through YAML, but the threshol
 
 It is more intuitive and easier to create through the form, just fill in the corresponding values ​​according to the prompts, but the steps are more cumbersome.
 
-### YAML creation
+### Create with YAML
 
-1. Click the name of the target cluster in the cluster list, and then click `Container Storage`->`Data Volume`->`YAML Creation` in the left navigation bar.
+1. Click the name of the target cluster in the cluster list, and then click `Container Storage`->`Data Volume`->`Create with YAML` in the left navigation bar.
 
     ![path](../../images/pvc01.png)
 

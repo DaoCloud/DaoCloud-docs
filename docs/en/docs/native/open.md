@@ -236,7 +236,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Falco Runtime Security Project v0.32.0 Release (CNCF Project)](https://github.com/falcosecurity/falco/releases/tag/0.32.0)
 
-     The main new features of this version: new configuration items, when a rule or configuration file change is detected, Falco will be restarted; support for detecting containers with excessive permissions; support for detecting shared host pids and pods in the IPC namespace, etc.
+     The main new features of this version: new ConfigMaps, when a rule or configuration file change is detected, Falco will be restarted; support for detecting containers with excessive permissions; support for detecting shared host pids and pods in the IPC namespace, etc.
 
 - [Flagger Progressive Delivery Attack v1.22.0 released (CNCF project)](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1220)
 
@@ -496,7 +496,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [KubeVela hybrid multi-cloud environment application delivery platform v1.5.0 release (CNCF project)](https://github.com/kubevela/kubevela/releases/tag/v1.5.0)
 
-     Main new features of this version: Plug-in framework optimization, providing management of the entire plug-in life cycle such as creating scaffolding, packaging, and pushing to the plug-in registry; supporting defining plug-ins in CUE format, and using CUE parameters to render some plug-ins; adding a large number of vela cli command; VelaUX supports managing applications created by the CLI.
+     Main new features of this version: Plug-in framework optimization, providing management of the entire plug-in lifecycle such as creating scaffolding, packaging, and pushing to the plug-in registry; supporting defining plug-ins in CUE format, and using CUE parameters to render some plug-ins; adding a large number of vela cli command; VelaUX supports managing applications created by the CLI.
 
 - [KubeVela v1.4.0 release (CNCF project)](https://github.com/kubevela/kubevela/releases/tag/v1.4.0)
 
@@ -767,7 +767,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Serverless Devs entered the CNCF sandbox and became the first serverless tool project selected](https://mp.weixin.qq.com/s/ICVDO3U5Ea1DzP3LFJq8mQ)
 
-     [Serverless Devs](https://github.com/Serverless-Devs/Serverless-Devs) is open sourced by Alibaba Cloud and is committed to providing developers with a powerful tool chain system. In this way, developers can not only experience multi-cloud serverless products with one click, quickly deploy serverless projects, but also carry out project management in the whole life cycle of serverless applications, integrate with other tools/platforms, and improve the efficiency of R & D and operation and maintenance.
+     [Serverless Devs](https://github.com/Serverless-Devs/Serverless-Devs) is open sourced by Alibaba Cloud and is committed to providing developers with a powerful tool chain system. In this way, developers can not only experience multi-cloud serverless products with one click, quickly deploy serverless projects, but also carry out project management in the whole lifecycle of serverless applications, integrate with other tools/platforms, and improve the efficiency of R & D and operation and maintenance.
 
 - [Skywalking application performance monitoring system v9.3.0 released](https://github.com/apache/skywalking/releases/tag/v9.3.0)
 

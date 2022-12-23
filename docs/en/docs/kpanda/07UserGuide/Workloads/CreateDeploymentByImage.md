@@ -17,7 +17,7 @@ Before using image to create stateless workloads, the following prerequisites ne
 
 ## Image creation
 
-Follow the steps below to create a stateless payload using image.
+Follow the steps below to create a stateless workload using image.
 
 ### Basic information configuration
 
@@ -61,7 +61,7 @@ After completing all the container configuration information below, click Next.
 
 === "Lifecycle (optional)"
 
-     The container life cycle configuration is used to set the commands that need to be executed when the container starts, after starting, and before stopping. For details, please refer to [Container Lifecycle Configuration](PodConfig/lifescycle.md).
+     The container lifecycle configuration is used to set the commands that need to be executed when the container starts, after starting, and before stopping. For details, please refer to [Container Lifecycle Configuration](PodConfig/lifescycle.md).
 
      ![Lifecycle](../../images/deploy06.png)
 
@@ -164,7 +164,7 @@ Click `︙` on the right side of the list to perform operations such as update, 
 Wait for the workload status to change to `Running`.
 If the workload status is abnormal, please refer to [Workload Status](../Workloads/PodConfig/workload-status.md) for specific exception information.
 
-## YAML creation
+## Create with YAML
 
 In addition to creating a Deployment by image as described above, it can also be created by YAML.
 
@@ -174,15 +174,15 @@ In addition to creating a Deployment by image as described above, it can also be
 
      ![Cluster Details](../../images/deploy01.png)
 
-2. On the cluster details page, click `Workload` in the left navigation bar to enter the workload list, and click the `YAML Create` button in the upper right corner of the page.
+2. On the cluster details page, click `Workload` in the left navigation bar to enter the workload list, and click the `Create with YAML` button in the upper right corner of the page.
 
      ![Workload](../../images/deploy02Yaml.png)
 
-3. After completing the above steps, you will jump to the detailed configuration page of `Create a stateless payload`, please refer to the following steps to complete the creation of a stateless payload.
+3. After completing the above steps, you will jump to the detailed configuration page of `Create a stateless workload`, please refer to the following steps to complete the creation of a stateless workload.
 
 ### Input YAML
 
-Referring to the YAML template below, create a stateless payload called `nginx-deployment`.
+Referring to the YAML template below, create a stateless workload called `nginx-deployment`.
 
 ```yaml
 apiVersion: apps/v1

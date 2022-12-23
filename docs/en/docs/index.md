@@ -29,7 +29,7 @@ DCE 5.0 natively supports the DevOps development and operation and maintenance m
 
 </div>
 
-![modules](images/dce-modules04.png)
+![modules](./images/dce-modules04.png)
 
 DCE 5.0 features with cutting-edge capabilities as a cloud-native operating system to cope with different scenarios with custom solutions as below.
 
@@ -117,8 +117,6 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
     All clusters and workloads are managed through Clusterpedia. This solution is compatible with joining standard Kubernetes clusters, breaking through the performance bottleneck of Kubernetes API and supporting thousands of users using it at the same time.
 
     **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](community/kubean.md), [Network](network/), [HwameiStor](hwameistor/)
-
-    ![Cloud Native Base](images/07base.png)
 
 === "Xinchuang Heterogeneous"
 

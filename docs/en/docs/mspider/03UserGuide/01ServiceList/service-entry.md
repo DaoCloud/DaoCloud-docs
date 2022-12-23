@@ -3,7 +3,7 @@
 Service entries can add external services, web APIs, or virtual machines to the service mesh's internal service registry.
 Taking an external service as an example, after adding a service entry, the Envoy proxy can send traffic to the external service, and the service mesh can also perform traffic governance on the external service through virtual services and target rules, as if the service entry is a mesh Same as normal service in .
 
-Service mesh provides two creation methods: YAML creation and wizard creation.
+Service mesh provides two creation methods: Create with YAML and wizard creation.
 
 ## Graphic wizard creation
 
@@ -25,11 +25,11 @@ This method of creation is relatively simple and intuitive.
 
     ![More Actions](../../images/entry04.png)
 
-## YAML creation
+## Create with YAML
 
-1. After entering the selected mesh, click `Traffic Governance` -> `Service Entry` in the left navigation bar, and click the `YAML Create` button in the upper right corner.
+1. After entering the selected mesh, click `Traffic Governance` -> `Service Entry` in the left navigation bar, and click the `Create with YAML` button in the upper right corner.
 
-    ![YAML create](../../images/entry05.png)
+    ![Create with YAML](../../images/entry05.png)
 
 2. Select the namespace, select the template, modify the parameters of each field, or directly import the existing YAML file, and click `OK` after confirming that the parameters are correct.
 

@@ -1,6 +1,6 @@
 # Create a stateful load (StatefulSet)
 
-A stateful load (StatefulSet) is an application running on Kubernetes that needs to save data and state during operation. Similar to other workloads, stateful workloads are composed of Pods. Through the Daocloud container management platform, you can easily manage workloads on multi-cloud and multi-cluster based on the permissions you have, including full life cycle management of stateful load creation, update, deletion, elastic scaling, restart, and version rollback.
+A stateful load (StatefulSet) is an application running on Kubernetes that needs to save data and state during operation. Similar to other workloads, stateful workloads are composed of Pods. Through the Daocloud container management platform, you can easily manage workloads on multi-cloud and multi-cluster based on the permissions you have, including full lifecycle management of stateful load creation, update, deletion, elastic scaling, restart, and version rollback.
 
 This article describes how to create stateful workloads through image.
 
@@ -62,7 +62,7 @@ After completing all the container configuration information below, click Next.
 
 === "Lifecycle (optional)"
 
-     The container life cycle configuration is used to set the commands that need to be executed when the container starts, after starting, and before stopping. For details, please refer to [Container Lifecycle Configuration](PodConfig/lifescycle.md).
+     The container lifecycle configuration is used to set the commands that need to be executed when the container starts, after starting, and before stopping. For details, please refer to [Container Lifecycle Configuration](PodConfig/lifescycle.md).
 
      ![Lifecycle](../../images/deploy06.png)
 
@@ -92,7 +92,7 @@ After completing all the container configuration information below, click Next.
 
 ### Service configuration
 
-Configure [Services](../ServicesandRoutes/CreatingServices.md) for stateful payloads, so that stateful payloads can be accessed externally.
+Configure [Services](../ServicesandRoutes/CreatingServices.md) for stateful workloads, so that stateful workloads can be accessed externally.
 
 1. Click the `Create Service` button.
 
@@ -169,7 +169,7 @@ After confirming that all parameters have been entered, click the `OK` button to
 
 Wait for the workload status to change to `Running`. If the workload status is abnormal, please refer to [Workload Status](../Workloads/PodConfig/workload-status.md) for specific exception information.
 
-## Yaml creation
+## Create with YAML
 
 ### Basic information configuration
 
@@ -177,7 +177,7 @@ Wait for the workload status to change to `Running`. If the workload status is a
 
      ![Cluster Details](../../images/deploy01.png)
 
-2. On the cluster details page, click `Workload` in the left navigation bar to enter the workload list, and click the `YAML Create` button in the upper right corner of the page.
+2. On the cluster details page, click `Workload` in the left navigation bar to enter the workload list, and click the `Create with YAML` button in the upper right corner of the page.
 
      ![Workload](../../images/state09.png)
 
@@ -185,7 +185,7 @@ Wait for the workload status to change to `Running`. If the workload status is a
 
 ### Input Yaml
 
-Referring to the yaml template below, create a stateful payload named `test-mysql-123-mysql`.
+Referring to the yaml template below, create a stateful workload named `test-mysql-123-mysql`.
 
 ??? note "Click to view the YAML content"
 

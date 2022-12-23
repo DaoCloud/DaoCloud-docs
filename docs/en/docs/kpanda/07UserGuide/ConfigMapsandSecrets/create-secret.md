@@ -54,13 +54,13 @@ Two creation methods are supported:
 
     ![Cluster Details](../../images/deploy01.png)
 
-2. In the left navigation bar, click `Configuration and Key`->`Key`, and click the `YAML Create` button in the upper right corner.
+2. In the left navigation bar, click `Configuration and Key`->`Key`, and click the `Create with YAML` button in the upper right corner.
 
-    ![YAML Create](../../images/secret03.png)
+    ![Create with YAML](../../images/secret03.png)
 
-3. Fill in the YAML configuration on the `YAML Creation` page, and click `OK`.
+3. Fill in the YAML configuration on the `Create with YAML` page, and click `OK`.
 
-    ![YAML Create](../../images/secret04.png)
+    ![Create with YAML](../../images/secret04.png)
 
     **Example key:**
 

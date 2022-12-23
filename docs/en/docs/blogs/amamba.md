@@ -9,11 +9,11 @@ Nowadays, with the rapid popularization of cloud-native concepts, cloud-native t
 - Fully automatic application deployment, how to make the release of new functions controllable, predictable, and reversible?
 
 In the face of such challenges, DCE 5.0 is based on cloud-native technologies such as Kubernetes. The application workbench came into being, integrating DaoCloud DevOps practice and the cutting-edge research and development concepts of the cloud-native community.
-Establish a set of automated development, operation and maintenance integrated environment for enterprises from source code construction to continuous deployment of applications, and can cover the full life cycle management of all forms of cloud-native applications. Help enterprises shorten the R&D cycle and improve application delivery efficiency.
+Establish a set of automated development, operation and maintenance integrated environment for enterprises from source code construction to continuous deployment of applications, and can cover the full lifecycle management of all forms of cloud-native applications. Help enterprises shorten the R&D cycle and improve application delivery efficiency.
 
 ## Graphical user interaction
 
-In the digital economy era, cloud-native applications have become a must for digital transformation of enterprises. Therefore, the application workbench is application-centric and based on the DevOps concept to solve the entire life cycle of cloud-native application development, automated delivery, and operation and maintenance. Lower the threshold of cloud-native enterprise applications and increase the frequency of application delivery. The application workbench involves: hierarchical multi-tenant resources, cloud-native applications, pipeline CI/CD pipeline, GitOps, progressive delivery and other modules.
+In the digital economy era, cloud-native applications have become a must for digital transformation of enterprises. Therefore, the application workbench is application-centric and based on the DevOps concept to solve the entire lifecycle of cloud-native application development, automated delivery, and operation and maintenance. Lower the threshold of cloud-native enterprise applications and increase the frequency of application delivery. The application workbench involves: hierarchical multi-tenant resources, cloud-native applications, pipeline CI/CD pipeline, GitOps, progressive delivery and other modules.
 
 There are three main stages in the user's use process: **development stage, delivery stage, operation and maintenance stage. **
 
@@ -78,7 +78,7 @@ GitOps combined with Kubernetes can use automatic delivery pipelines to apply ch
 
 ### Progressive release
 
-In order to ensure the security of application deployment, enterprises have adopted the grayscale release solution. This deployment strategy makes application deployment more secure, but it still lacks automation. The process of publishing services to production and analyzing metrics remains a manual process. This will drive us to the next phase, progressive delivery.
+In order to ensure the security of application deployment, enterprises have adopted the grayscale release solution. This PropagationPolicy makes application deployment more secure, but it still lacks automation. The process of publishing services to production and analyzing metrics remains a manual process. This will drive us to the next phase, progressive delivery.
 
 The application workbench implements progressive grayscale release based on Argo Rollouts, allowing developers to choose their own analysis indicators, customize their progressive release steps, and even choose their own portal or service mesh provider to Perform flow control.
 

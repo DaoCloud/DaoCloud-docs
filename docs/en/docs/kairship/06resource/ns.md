@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# multicloud namespace
+# Multicloud namespace
 
 A multicloud namespace can manage workloads across clouds and across clusters. Currently, a wizard-based creation method is provided.
 

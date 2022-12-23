@@ -97,4 +97,4 @@ Use index lifecycle management (ILM) to automatically manage indexes, and the ma
 - Automatic rollover based on index creation time
 - Automatic rollover according to the number of documents
 
-The index life cycle execution policy is executed every 10 minutes by default, and the inspection frequency can be controlled by modifying the `indices.lifecycle.poll_interval` parameter.
+The index lifecycle execution policy is executed every 10 minutes by default, and the inspection frequency can be controlled by modifying the `indices.lifecycle.poll_interval` parameter.

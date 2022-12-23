@@ -24,9 +24,9 @@ The microservice engine supports group management of microservices based on the 
 
         The full format is: `${prefix}-${spring.profiles.active}.${file-extension}`.
 
-        - `prefix` defaults to the value of `spring.application.name`, and can also be configured through the configuration item `spring.cloud.nacos.config.prefix`.
+        - `prefix` defaults to the value of `spring.application.name`, and can also be configured through the ConfigMap `spring.cloud.nacos.config.prefix`.
         - `spring.profiles.active` is the profile corresponding to the current environment. For details, please refer to the Spring Boot documentation. Note: When `spring.profiles.active` is empty, the corresponding connector `-` will not exist, and the splicing format of the Data ID becomes `${prefix}.${file-extension}`.
-        - `file-exetension` is the data format of the configuration content, which can be configured through the configuration item `spring.cloud.nacos.config.file-extension`.
+        - `file-exetension` is the data format of the configuration content, which can be configured through the ConfigMap `spring.cloud.nacos.config.file-extension`.
 
     - Group: Select the group to which the current configuration belongs, the default is `DEFAULT_GROUP`.
 
@@ -34,10 +34,10 @@ The microservice engine supports group management of microservices based on the 
 
     - Configuration format: set the format of the current configuration file,
 
-    - Configuration content: Enter the configuration items annotated with `@Value` in the service source code.
+    - Configuration content: Enter the ConfigMaps annotated with `@Value` in the service source code.
 
         - Supports format verification. If there is a format error in the configuration content, the system will automatically prompt the error.
-        - Configuration items annotated with `@RefreshScope` in the service source code support dynamic updates.
+        - ConfigMaps annotated with `@RefreshScope` in the service source code support dynamic updates.
 
     - More Configurations -> Belonging Application (optional): Select the application to which the current configuration belongs.
 

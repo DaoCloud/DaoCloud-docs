@@ -8,11 +8,11 @@ Prometheus mainly captures the monitoring interface exposed by the target servic
 
 !!! note
 
-     Configuration items in [] are optional.
+     ConfigMaps in [] are optional.
 
 ## Native Job configuration
 
-The corresponding configuration items are described as follows:
+The corresponding ConfigMaps are described as follows:
 
 ```yaml
 # Grab the task name, and add a label(job=job_name) to the index corresponding to the grab
@@ -90,7 +90,7 @@ metric_relabel_configs:
 
 ## Pod Monitor
 
-The corresponding configuration items are described as follows:
+The corresponding ConfigMaps are described as follows:
 
 ```yaml
 # Prometheus Operator CRD version
@@ -166,7 +166,7 @@ spec:
 
 ## Service Monitor
 
-The corresponding configuration items are described as follows:
+The corresponding ConfigMaps are described as follows:
 
 ```yaml
 # Prometheus Operator CRD version
@@ -239,7 +239,7 @@ spec:
 
 ### endpoint_config
 
-The corresponding configuration items are described as follows:
+The corresponding ConfigMaps are described as follows:
 
 ```yaml
 # Corresponding to the name of the port, here you need to pay attention that it is not the corresponding port, default: 80, the corresponding value is as follows:
@@ -288,17 +288,17 @@ metricRelabelings:
 
 ### relabel_config
 
-The corresponding configuration items are described as follows:
+The corresponding ConfigMaps are described as follows:
 
 ```yaml
 # Which label values are taken from the original labels for relabeling, and the extracted values are concatenated according to the definition in the separator.
-# If it is PodMonitor/ServiceMonitor, the corresponding configuration item is sourceLabels
+# If it is PodMonitor/ServiceMonitor, the corresponding ConfigMap is sourceLabels
 [ source_labels: '[' <labelname> [, ...] ']' ]
 # Define the character that needs to be concatenated in the label value of relabel, the default is ';'.
 [ separator: <string> | default = ; ]
 
 # When the action is replace/hashmod, use target_label to specify the corresponding label name.
-# If it is PodMonitor/ServiceMonitor, the corresponding configuration item is targetLabel
+# If it is PodMonitor/ServiceMonitor, the corresponding ConfigMap is targetLabel
 [ target_label: <labelname> ]
 
 # An expression that needs to perform regular matching on the corresponding value of source labels

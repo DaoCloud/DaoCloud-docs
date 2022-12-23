@@ -115,8 +115,6 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](../community/kubean.md), [Network](../network/), [HwameiStor](../hwameistor/)
 
-    ![Cloud Native Base](../images/07base.png)
-
 === "Xinchuang Heterogeneous"
 
     **Applicable scenarios**: An enterprise needs to set up Xinchuang infrastructure. For example, the CPU processor must be from one of Loongson, Hygon, Phytium, Kunpeng, Intel; and the operating system must be KirinOS, UOS, OpenEuler, etc.

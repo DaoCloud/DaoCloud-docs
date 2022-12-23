@@ -59,7 +59,7 @@ After completing all the container configuration information below, click Next.
 
 === "Lifecycle (optional)"
 
-     The container life cycle configuration is used to set the commands that need to be executed when the container starts, after starting, and before stopping. For details, please refer to [Container Lifecycle Configuration](PodConfig/lifescycle.md).
+     The container lifecycle configuration is used to set the commands that need to be executed when the container starts, after starting, and before stopping. For details, please refer to [Container Lifecycle Configuration](PodConfig/lifescycle.md).
 
      ![Lifecycle](../../images/deploy06.png)
 

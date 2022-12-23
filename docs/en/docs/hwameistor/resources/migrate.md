@@ -11,7 +11,7 @@
 LocalVolumeMigrate needs to be deployed in the Kubernetes system, and the deployment application needs to meet the following conditions:
 
 * Support for lvm type volumes
-* convertible type volume (need to add configuration item convertible: true in sc)
+* convertible type volume (need to add ConfigMap convertible: true in sc)
     * When the application Pod applies for multiple data volume PVCs, the corresponding data volumes need to use the same configuration sc
     * When migrating based on LocalVolume granularity, data volumes belonging to the same LocalVolumeGroup will not be migrated together by default (if they are migrated together, you need to configure the switch MigrateAllVols: true)
 

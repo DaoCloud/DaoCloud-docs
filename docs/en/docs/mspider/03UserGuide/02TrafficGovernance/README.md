@@ -21,4 +21,4 @@ In practice, three types of strategies need to be used together:
 In the service mesh, users are provided with wizard and YAML two forms of creation/editing, and users can choose freely according to their personal habits.
 
 - The wizard creation method provides users with a simple and intuitive interactive method, which reduces the learning cost of users to a certain extent
-- The YAML creation form is more suitable for experienced users. Users can directly write YAML files to create governance policies, and the creation window also provides users with more commonly used governance policy templates to speed up user writing
+- The Create with YAML form is more suitable for experienced users. Users can directly write YAML files to create governance policies, and the creation window also provides users with more commonly used governance policy templates to speed up user writing

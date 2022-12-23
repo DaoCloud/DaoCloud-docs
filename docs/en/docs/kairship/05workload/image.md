@@ -3,9 +3,7 @@ hide:
   - toc
 ---
 
-# Create a multicloud workload through the form
-
-## Steps
+# Create a multicloud workload via form
 
 Follow the steps below to create a stateless load (Deployment).
 
@@ -13,7 +11,7 @@ Follow the steps below to create a stateless load (Deployment).
 
     ![image](../images/deployment01.png)
 
-2. On the `Create Stateless Payload` page, after configuring the basic information of the payload, click `Next`.
+2. On the `Create Stateless workload` page, after configuring the basic information of the workload, click `Next`.
 
     ![image](../images/deployment02.png)
 
@@ -24,7 +22,7 @@ Follow the steps below to create a stateless load (Deployment).
     - When the deployment type is Duplicate, it means that in each working cluster covered by all, an instance corresponding to the number of replicas is started
     - When the deployment type is aggregation or dynamic weight, it refers to the total number of replicas that are set to be started in all covered working clusters
 
-3. On the `Container Configuration` page, configure the basic information of the container where the load resides. You can choose to configure information such as life cycle and health check, and then click `Next`.
+3. On the `Container Configuration` page, configure the basic information of the container where the load resides. You can choose to configure information such as lifecycle and health check, and then click `Next`.
 
     ![image](../images/deployment03.png)
 
@@ -38,7 +36,7 @@ Follow the steps below to create a stateless load (Deployment).
 
     ![image](../images/deployment07.png)
 
-    You can add the corresponding differentiated configuration item in the list area on the left. After you add a differentiated configuration item, you need to specify the corresponding cluster.
+    You can add the corresponding differentiated ConfigMap in the list area on the left. After you add a differentiated ConfigMap, you need to specify the corresponding cluster.
     The selectable range of the cluster is only the cluster selected at the beginning, and the selected cluster will use the specified differential configuration; the unspecified cluster will still use the default configuration
 
 6. A successful creation prompt appears on the screen, you can now [create multicloud service](../06resource/service.md)!

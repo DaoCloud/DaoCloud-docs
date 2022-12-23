@@ -82,7 +82,7 @@ Ingress is a collection of routing rules for requests entering the cluster. It c
 
 NetworkPolicy provides policy-based network controls for isolating applications and reducing the attack surface. It emulates a traditional segmented network using label selectors and controls the traffic between them and from the outside through policies.
 
-#### Configuration item ConfigMap
+#### ConfigMap ConfigMap
 
 ConfigMap is used to save configuration non-confidential data into key-value pairs. When used, the container group can use it as an environment variable, a command-line argument, or a configuration file in a storage volume.
 
@@ -128,7 +128,7 @@ Affinity and anti-affinity expand the types of constraints you can define. Some 
 
 - You can use the labels of other Pods running on the node (or in other topological domains) to enforce scheduling constraints, instead of only using the labels of the node itself. This capability allows you to define rules which allow Pods to be placed together.
 
-Before the application was containerized, multiple components would be installed on a virtual machine, and there would be communication between processes. However, when doing container splitting, the container is often split directly by process, such as a container for business processes, monitoring log processing or local data in another container, and has an independent life cycle.
+Before the application was containerized, multiple components would be installed on a virtual machine, and there would be communication between processes. However, when doing container splitting, the container is often split directly by process, such as a container for business processes, monitoring log processing or local data in another container, and has an independent lifecycle.
 At this time, if they are distributed in two distant nodes in the network, the request will be forwarded many times, and its performance will be poor.
 
 - Affinity: Nearby deployment can be realized, network capabilities can be enhanced to realize nearby routing in communication, and network loss can be reduced. For example, application A and application B frequently interact with each other, so it is necessary to use affinity to make the two applications as close as possible, even on one node, to reduce the performance loss caused by network communication.
