@@ -175,6 +175,10 @@
     碳排放计算优化器基于运行在 Kubernetes 平台上的应用的实际资源消耗，计算对应服务器功耗，进而计算出应用运行所产生的碳排放量。
     此外，还支持提供 Pod 资源配置、workload 副本数、HPA 参数配置等的优化建议，以及优化后的功耗和碳排放推算结果。
 
+- [CRI-O 容器运行时 v1.26.0 发布（CNCF 项目）](https://github.com/cri-o/cri-o/releases/tag/v1.26.0)
+
+    该版本主要新特性：移除对 CRI v1alpha2 的支持（支持 v1）、增加对 OTLP 追踪支持、为 OTel 追踪添加日志和 GRPC 错误代码支持、支持 Evented PLEG、增加 seccomp 通知器功能、对没有基础设施的容器增加检查点和恢复容器的支持、允许完全更新运行时配置、允许在重载配置时添加其他运行时以及改变默认运行时。
+
 - [CRI-O 容器运行时 v1.25.0 发布（CNCF 项目）](https://github.com/cri-o/cri-o/releases/tag/v1.25.0)  
 
     该版本主要新特性：支持设置运行时 pod 的最大日志文件大小、能够执行 Kubelet 的用户命名空间配置、新增注释用于配置容器的电源管理、 增加最小 checkpoint/restore 支持、通过 sigstore 签名来签署静态二进制包。
@@ -203,6 +207,12 @@
     [DeepFlow](https://github.com/deepflowys/deepflow) 是云杉网络研发的可观测性平台，基于 eBPF 等技术，实现自动同步资源、服务、K8s 自定义 Label 并作为标签统一注入到观测数据中。
     它能够自动采集应用性能指标和追踪数据而无需插码，SmartEncoding 创新机制将标签存储的资源消耗降低 10 倍。
     此外，还能集成广泛的数据源，并基于 SQL 提供北向接口。
+
+- [Devspace K8s 开发工具成为 CNCF 沙箱项目](https://mp.weixin.qq.com/s/7ySQLtyYBX1ZDLvpeVObvQ)
+
+    12 月 15 日，CNCF 宣布 [DevSpace](https://github.com/loft-sh/devspace) 正式成为 CNCF 沙箱项目。
+    通过 Devspace，可以直接在 Kubernetes 中构建、测试和调试应用；可以使用热重载进行开发；
+    统一团队内部以及跨开发、暂存和生产的部署工作流；自动执行镜像构建和部署的重复性任务。
 
 - [DevSpace K8s 开发工具 v6.0 发布](https://github.com/loft-sh/devspace/releases/tag/v6.0.0)  
 
@@ -238,6 +248,12 @@
 
     该版本主要新特性：新增配置项，当检测到规则或配置文件有变化时，触发 Falco 重启；支持检测权限过大的容器；支持检测共享主机 pid 和 IPC 命名空间的 pod 等。
 
+- [Finch：AWS 开源的容器开发客户端命令行工具](https://aws.amazon.com/cn/blogs/opensource/introducing-finch-an-open-source-client-for-container-development/)
+
+    [Finch](https://github.com/runfinch/finch) 可用于构建、运行和发布 Linux 容器。
+    它为 Lima、nerdctl、containerd 和 BuildKit 等开源工具提供了原生的、可扩展的 macOS 客户端安装程序，简化在 macOS 上使用 Containerd。
+    用户可以使用 Finch 在本地端创建和执行容器，并发布 OCI 容器镜像文件。
+
 - [Flagger 渐进式交付攻击 v1.22.0 发布（CNCF 项目）](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1220)  
 
     该版本主要新特性：支持以 KEDA ScaledObjects 替代 HPA、在参数表中添加命名空间参数、为 Canary.Service 添加可选的 `appProtocol` 字段。
@@ -271,6 +287,10 @@
 - [HAProxy Kubernetes Ingress Controller v1.8 发布](https://www.haproxy.com/blog/announcing-haproxy-kubernetes-ingress-controller-1-8/)  
 
     该版本主要新特性：降低容器中所有进程的权限，不再默认运行 privileged 容器；暴露了一个用于查看 pprof 诊断数据的端点；支持收集控制器内部的 Prometheus 指标，如分配的内存量和花费的 CPU 时间；若入口规则不匹配，支持自定义设置后端端口。
+
+- [Harbor 容器镜像仓库 v2.7.0 发布（CNCF 项目）](https://github.com/goharbor/harbor/releases/tag/v2.7.0)
+
+    该版本主要新特性：添加 Jobservice 仪表盘，以监测和控制 job 队列、调度器和 worker；支持按块复制镜像 blob；为工件列表添加 WASM 过滤器。
 
 - [Harbor 容器镜像仓库 v2.6.0 发布（CNCF 项目）](https://github.com/goharbor/harbor/releases/tag/v2.6.0)
 
@@ -399,6 +419,10 @@
 - [Keptn 云原生应用持续交付和自动化操作工具 v0.16.0 发布（CNCF 项目）](https://github.com/keptn/keptn/releases/tag/0.16.0)  
 
     该版本主要新特性：`resource-service` 取代 `configuration-service`，以加快响应时间、支持在不停机的情况下升级 Keptn；v0.17 中，CLI 将删除安装/卸载/升级命令；支持直接向 Nats 发送事件；只有当服务连接到控制平面时，才会被视为准备就绪；允许在没有 distributor sideCar 的情况下运行 approval service。
+
+- [Kindling 云原生可观测工具 v0.6.0 发布](https://github.com/KindlingProject/kindling/releases/tag/v0.6.0)
+
+    该版本主要新特性：在 cpu 事件中增加 tracing span 数据、增加 Trace Profiling 的调试工具、支持 RocketMQ 协议。
 
 - [Knative 基于 Kubernetes 的 serverless 架构方案 v1.8.0 发布（CNCF 项目）](https://github.com/knative/serving/releases/tag/knative-v1.8.0)
 
@@ -810,6 +834,10 @@
 - [TDengine 云原生时序数据库 v3.0 发布](https://github.com/taosdata/TDengine/releases/tag/ver-3.0.0.0)  
 
     该版本主要新特性：支持 10 亿个设备采集的数据、100 个节点；支持存储与计算分离，引入计算节点，并重构了整个计算引擎；优化了对消息队列、流式计算和缓存的支持，引入事件驱动的流式计算；支持容器和 Kubernetes 部署。
+
+- [Tekton：云原生 CI/CD 框架 v0.43.0 发布](https://github.com/tektoncd/pipeline/releases/tag/v0.43.0)
+
+    该版本主要新特性：支持解析 sidecar 日志以提取结果到任务运行的 CRD 中、默认启用 pipeline 中的自定义任务、增加对 PipelineRun 调节器的支持、允许用户为可信资源配置公钥、PodTemplate 可以用来更新全局的环境变量。
 
 - [Tekton 云原生 CI/CD 框架 v0.42.0 发布](https://github.com/tektoncd/pipeline/releases/tag/v0.42.0)
 
