@@ -81,7 +81,7 @@ kairship apiserver 主要担负着多云编排所有流量的入口（openapi、
 
 所有的请求数据流都直接传递到位于[全局服务集群](../../kpanda/07UserGuide/Clusters/ClusterRole.md)的多云编排实例中。这样在大规模请求的时候，性能可能会受影响，如图所示：
 
-![数据流图](../images/arch_kairship_instance.png)
+![数据流图](../images/arch_kairship_instance.jpg)
 
 如上图所示，所有访问多云模块的请求经过多云编排之后将会被分流，所有 get/list 之类的读请求将会访问[容器管理模块](../../kpanda/03ProductBrief/WhatisKPanda.md)，写请求会访问 Karmada 实例。这样会产生一个问题：通过多云编排创建一个多云应用之后，通过[容器管理模块](../../kpanda/03ProductBrief/WhatisKPanda.md)怎么能获取的相关资源信息？
 
@@ -93,14 +93,14 @@ kairship apiserver 主要担负着多云编排所有流量的入口（openapi、
 
 ### 部署拓扑
 
-![部署拓扑](../images/deploy_topology.png)
+![部署拓扑](../images/deploy_topology.jpg)
 
 如图所示，整个多云编排有三个组件组成，kairship apiserver、kairship controller manager，karmada operator 都部署在[全局服务集群](../../kpanda/07UserGuide/Clusters/ClusterRole.md)。
 其中 karmada operator 完全遵守开源社区的部署架构；kairship apiserver 无状态服务支持水平扩展；kairship controller manager 高可用架构，内部有选举机制，同时可单一 Pod 工作。
 
 ### 集群导入
 
-![集群导入](../images/cluster_sync.png)
+![集群导入](../images/cluster_sync.jpg)
 
 如图所示，Karmada 实例中纳管的所有 Kubernetes 集群都来自于 `Kpanda` 集群，Karmada 实例加入某个集群之后，会自动进行 CR 的同步工作（Kpanda Cluster --> Karmada Cluster）。
 同时多云编排管理面有控制循环逻辑会实时监听 Kpanda Cluster 变更，第一时间同步到控制面，进一步反馈到对应 `Karmada` 实例的 Karmada Cluster 中，目前主要监听 Kpanda cluster 访问凭证的变更。
