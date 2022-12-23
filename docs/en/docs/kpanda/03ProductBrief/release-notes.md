@@ -12,7 +12,7 @@ This page lists the Release Notes of container management, so that you can under
     - Support using WEB terminal (CloudTTY) to manage Replicatsets.
     - Support viewing Replicatsets monitoring, logs, Yaml, events, containers.
     - Support viewing Replicatsets details.
-    - Linked with **Application Workbench**, the whole life cycle of Replicatsets is managed by Grayscale Release.
+    - Linked with **Application Workbench**, the whole lifecycle of Replicatsets is managed by Grayscale Release.
 - **New** Pod details page.
 - **NEW** Namespace details page.
 - **NEW** Use the WEB terminal to upload files to the container and download files from the Pod to the local.

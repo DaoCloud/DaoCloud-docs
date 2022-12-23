@@ -29,7 +29,7 @@ DCE 5.0 natively supports the DevOps development and operation and maintenance m
 
 </div>
 
-![modules](images/dce-modules04.png)
+![modules](./images/dce-modules04.jpg)
 
 DCE 5.0 features with cutting-edge capabilities as a cloud-native operating system to cope with different scenarios with custom solutions as below.
 
@@ -41,7 +41,7 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
 
     **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Multicloud Orchestration](kairship/01product/whatiskairship.md), cloud to edge continuum, Xinchuang Heterogeneous
 
-    ![multicloud](images/01multi-cloud.png)
+    ![multicloud](images/01multi-cloud.jpg)
 
 === "Data Service"
 
@@ -51,7 +51,7 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
 
     **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [HwameiStor](hwameistor/intro/what.md), [Middleware](middleware/midware.md)
 
-    ![data](images/02data.png)
+    ![data](images/02data.jpg)
 
 === "Microservice Governance"
 
@@ -70,7 +70,7 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
 
     **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Microservice Engine](skoala/intro/features.md), [Service Mesh](mspider/01Intro/WhatismSpider.md), [Observability](insight/03ProductBrief/WhatisInsight.md), [App Workbench](amamba/01ProductBrief/WhatisAmamba.md)
 
-    ![Microservie](images/03msgov.png)
+    ![Microservie](images/03msgov.jpg)
 
 === "Observability"
 
@@ -80,7 +80,7 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
 
     **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Observability](insight/03ProductBrief/WhatisInsight.md)
 
-    ![observability](images/04insight.png)
+    ![observability](images/04insight.jpg)
 
 === "App Store"
 
@@ -98,7 +98,7 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
 
     **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [App Workbench](amamba/01ProductBrief/WhatisAmamba.md), Registry
 
-    ![App Delivery](images/06appdeliv.png)
+    ![App Delivery](images/06appdeliv.jpg)
 
 === "Cloud Native Base"
 
@@ -116,9 +116,7 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
 
     All clusters and workloads are managed through Clusterpedia. This solution is compatible with joining standard Kubernetes clusters, breaking through the performance bottleneck of Kubernetes API and supporting thousands of users using it at the same time.
 
-    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](community/kubean.md), [Network](network/), [HwameiStor](hwameistor/)
-
-    ![Cloud Native Base](images/07base.png)
+    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](community/kubean.md), [Network](network/intro/what-is-net.md), [HwameiStor](hwameistor/intro/what.md)
 
 === "Xinchuang Heterogeneous"
 
@@ -126,9 +124,9 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
 
     **Benefits**: This solution can consolidate Xinchuang cloud-native capabilities for government sectors and state-owned factories, supports domestic chips and servers in the north, and supports Xinchuang operating system and app ecosystem in containers in the south.
 
-    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](community/kubean.md), [信创中间件](middleware/midware.md)
+    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](community/kubean.md), [Middleware](middleware/midware.md)
 
-    ![Xinchuang](images/08xinchuan.png)
+    ![Xinchuang](images/08xinchuan.jpg)
 
 === "cloud to edge continuum"
 
@@ -138,6 +136,6 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
 
     **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](community/kubean.md), Edge nodes, clusters in the weak network
 
-    ![cloud-edge](images/09cloud-edge.png)
+    ![cloud-edge](images/09cloud-edge.jpg)
 
 Just like Lego bricks, it combines dozens of the best open source technologies into a platform. After many dialectical selection, adaptation and running-in, coding debugging, and massive testing, a sword is sharpened in ten years. The new generation of containerized platforms can meet the needs of various scenarios for enterprises migrating to the cloud.

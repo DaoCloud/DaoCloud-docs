@@ -137,8 +137,8 @@ Condition specifies other required properties.
 | `request.headers` | `HTTP` request headers, need to be enclosed by `[]` | HTTP only | `key: request.headers[User-Agent]`<br/>`values: ["Mozilla/*" ]` |
 | `source.ip` | source `IP` address, support single `IP` or `CIDR` | HTTP and TCP | `key: source.ip`<br/>`values: ["10.1.2.3"]` |
 | `remote.ip` | Original client IP address determined by `X-Forwarded-For` request header or proxy protocol, single IP or CIDR supported | HTTP and TCP | `key: remote.ip`<br />` values: ["10.1.2.3", "10.2.0.0/16"]` |
-| `source.namespace` | source payload instance namespace, mutual TLS needs to be enabled | HTTP and TCP | `key: source.namespace`<br/>`values: ["default"]` |
-| `source.principal` | source payload identifier, mutual TLS needs to be enabled | HTTP and TCP | `key: source.principal`<br/>`values: ["cluster.local/ns/default/sa/productpage"] ` |
+| `source.namespace` | source workload instance namespace, mutual TLS needs to be enabled | HTTP and TCP | `key: source.namespace`<br/>`values: ["default"]` |
+| `source.principal` | source workload identifier, mutual TLS needs to be enabled | HTTP and TCP | `key: source.principal`<br/>`values: ["cluster.local/ns/default/sa/productpage"] ` |
 | `request.auth.principal` | Authenticated requests for `principal` | HTTP only | `key: request.auth.principal`<br/>`values: ["accounts.my-svc.com/104958560606"] ` |
 | `request.auth.audiences` | The target principal for this authentication | HTTP only | `key: request.auth.audiences`<br/>`values: ["my-svc.com"]` |
 | `request.auth.presenter` | Issuer of the certificate | HTTP only | `key: request.auth.presenter`<br/>`values: ["123456789012.my-svc.com"]` |

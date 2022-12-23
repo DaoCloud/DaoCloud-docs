@@ -1,155 +1,159 @@
-# 功能总览
+---
+MTPE: todo
+date: 2022-12-23
+---
+# Features
 
-多云编排的功能列表如下：
+The list of capabilities for Multicloud orchestration is as follows:
 
-- 统一管理面：多云编排拥有统一的管理面，由该管理面进行多个多云实例的管理，统一请求入口（多云编排实例的 LCM），而所有其他关于多云编排的请求可以部署在 global 集群。
-- 多实例：支持创建多个多云实例，实例之间隔离工作，互不感知、互不影响。
-- 集群一键导入：支持从现有纳管集群中一键导入集群到多云实例中，并实时同步接入的集群最新信息（删除的同时一并删除）。
-- 原生 API 支持：支持所有 Kubernetes 原生 API。
-- 多云应用分发：丰富的多云应用分发策略、差异化策略等。
-- 应用故障切换：内置提供应用多云故障切换（failover）能力。
-- 可观测性：丰富的审计、指标度量，提高可观测性的能力。
-- 对接全局管理权限：以工作空间管理用户访问范围，对用户和实例执行鉴权操作。
+- Unified management plane: Multicloud orchestration has a unified management plane, which manages multiple Multicloud instances, and unified request entry (LCM of Multicloud orchestration instances), while all other requests for Multicloud orchestration can be deployed in the global cluster.
+- Multi-instance: Supports the creation of multiple Multicloud instances, and the instances work in isolation without mutual awareness or influence.
+- One-click import of clusters: Supports one-click import of clusters from existing managed clusters to Multicloud instances, and real-time synchronization of the latest information of the accessed clusters (deleted at the same time).
+- Native API support: Supports all Kubernetes native APIs.
+- Multicloud application distribution: Rich Multicloud application distribution strategies, differentiated strategies, etc.
+- Application failover: Built-in Multicloud application failover (failover) capability.
+- Observability: Rich auditing, indicator measurement, and the ability to improve observability.
+- Docking with global management authority: manage user access scope with workspace, and perform authentication operations on users and instances.
 
-## 多云实例管理
+## Multicloud instance management
 
-- [多云实例列表](../03instance/README.md)：查看实例列表并支持根据实例名称进行检索
+- [Multicloud instance list](../03instance/README.md): View the instance list and support retrieval by instance name
 
-    支持查看当前租户环境内全部的多云实例列表和实例的基础信息、实例内已接入集群的 CPU、内存的使用率情况、实例内已接入集群的状态情况等，支持查看版本信息、实例创建时间和实例状态。
+    Supports viewing the list of all Multicloud instances in the current tenant environment and the basic information of the instances, the CPU and memory usage of the instances connected to the cluster, the status of the connected clusters in the instance, etc., and supports viewing version information and instance creation time and instance status.
 
-- 添加多云实例：支持添加实例时不加入任何集群，以创建空实例，即不包含任何集群的实例。
-- 一键导入：在集群创建完成后，可将已经完成接入容器管理的集群一键导入到多云实例中，支持在接入时查看集群的资源信息，并支持根据集群名称进行检索。
-- 移除多云实例：移除多云实例时自动进行校验；为保证数据安全，仅允许当前实例中不包含任何集群时，才能够进行移除多云实例。
+- Adding a Multicloud instance: Support adding an instance without joining any cluster to create an empty instance, that is, an instance that does not contain any cluster.
+- One-click import: After the cluster is created, the cluster that has been connected to the container management can be imported into the Multicloud instance with one click. It supports viewing the resource information of the cluster during access, and supports searching according to the cluster name.
+- Removing a Multicloud instance: Automatic verification is performed when removing a Multicloud instance; to ensure data security, the Multicloud instance can only be removed when the current instance does not contain any clusters.
 
-## 实例概览
+## Example overview
 
-- 基本信息：展示实例名称、状态、创建时间和版本信息
-- 工作集群信息：展示当前实例内接入的工作集群数量和 Node 节点数信息
-- 工作负载状态：展示目前已部署的全部负载的状态信息，展示全部已创建、运行中、异常的数量信息
-- 策略信息：展示全部的策略信息、当前在用的部署策略数/总数、当前在用的差异化策略数/总数
-- 资源信息：展示当前实例创建的资源信息，包括多云命名空间数、多云存储声明数、多云服务与路由数、多云配置与密钥数
-- 最近动态：展示最近实例的变化信息，例如工作负载的生命周期的变更信息、负载的重启时间信息等
+- Basic information: display instance name, status, creation time and version information
+- Working cluster information: Display information about the number of working clusters and Node nodes connected to the current instance
+- Workload status: display the status information of all currently deployed workloads, and display all created, running, and abnormal quantity information
+- Policy information: display all policy information, the number/total number of PropagationPolicy currently in use, and the number/total number of differentiated strategies currently in use
+- Resource information: display the resource information created by the current instance, including the number of Multicloud namespaces, the number of Multicloud storage declarations, the number of Multicloud services and routes, the number of Multicloud configurations and keys
+- Recent dynamics: display the change information of the latest instance, such as the change information of the lifecycle of the workload, the restart time information of the load, etc.
 
-## 实例内集群管理
+## Intra-instance cluster management
 
-- 实例内集群列表
+- list of clusters in the instance
 
-    集群列表：能够查看当前多云实例内导入的多个集群信息、集群发行版本和版本号、Kubernetes 集群所属地域信息、集群所属平台信息、IaaS Provider 信息、拥有 CPU/Mem 使用量、集群的网络类型和容器网段记录、集群的加入时间以及当前集群的状态。
+    Cluster list: You can view the information of multiple clusters imported in the current Multicloud instance, the cluster release version and version number, the region information of the Kubernetes cluster, the platform information of the cluster, the IaaS Provider information, the CPU/Mem usage, the network type of the cluster and The record of the container network segment, the joining time of the cluster, and the current status of the cluster.
 
-    集群列表支持检索：通过集群的名称模糊检索已经接入的集群信息。
+    The cluster list supports retrieval: fuzzy retrieval of cluster information that has been connected through the name of the cluster.
 
-    集群列表的操作：支持快捷进入容器管理的集群控制台界面。
+    Operation of the cluster list: supports quick access to the cluster console interface of container management.
 
-- 添加集群
+- add cluster
 
-    支持动态（热插拔）将新集群加入到当前多云实例中，添加了选取容器管理的集群界面，默认展示当前有权限接入的全部待接入集群，支持展示集群的基本信息，包含集群名称、状态、平台、地域、可用区、Kubernetes 版本等。
+    Supports dynamic (hot-swapping) adding new clusters to the current Multicloud instance, adds a cluster interface for selecting container management, and displays all the clusters to be connected that are currently authorized to access by default, and supports the display of basic information of the cluster, including the cluster name , status, platform, region, availability zone, Kubernetes version, etc.
 
-- 移除集群
+- remove cluster
 
-    支持动态（热插拔）将集群从当前多云实例中移除。
+    Supports dynamic (hot swap) removal of clusters from the current Multicloud instance.
 
-    移除校验：支持对集群的资源进行校验，告知用户需要事先移除集群内的存在的多个工作负载、命名空间、存储声明、配置与密钥等，提示移除的风险。
+    Removal verification: Supports verification of cluster resources, informs users that multiple workloads, namespaces, storage declarations, configurations, and keys in the cluster need to be removed in advance, and prompts the risk of removal.
 
-- 使用 Kubectl 管理实例资源
+- Use Kubectl to manage instance resources
 
-    支持获取 kubeconfig 链接信息，用户可在本地终端管理多云实例。
+    Supports obtaining kubeconfig link information, and users can manage Multicloud instances on local terminals.
 
-    支持通过网页终端 cloudshell 进行多云实例的管理。
+    Supports the management of Multicloud instances through the web terminal cloudshell.
 
-## 多云工作负载
+## Multicloud workloads
 
-- 无状态工作负载 (Deployment)
+- Stateless workload (Deployment)
 
-    支持展示多云工作负载列表，支持对多云工作负载的查询能力支持，同时可以查看到对应的多云工作负载所部署的集群信息。
+    Supports displaying the list of Multicloud workloads, supports the query capability of Multicloud workloads, and can view the cluster information deployed by the corresponding Multicloud workloads.
 
-- 创建多云无状态负载
+- Create Multicloud stateless workloads
 
-    镜像创建：界面化创建无状态工作负载，添加差异化配置、分发策略等差异化配置。
+    Image creation: interface-based creation of stateless workloads, adding differentiated configurations, distribution strategies, and other differentiated configurations.
 
-    差异化设置：支持在创建负载时，进行差异化配置，支持按集群进行差异化配置集群部署 Pod 数/CPU/内存/升级策略，差异化配置集群镜像、部署策略、容器脚本、容器存储、容器日志、调度策略、标签和注解等。
+    Differential settings: Support differential configuration when creating loads, support cluster-based differential configuration cluster deployment Pod number/CPU/memory/upgrade strategy, differential configuration cluster mirroring, PropagationPolicy, container script, container storage, container Logs, scheduling policies, tags and annotations, etc.
 
-    YAML 创建：用户通过 YAML 进行创建工作负载。
+    Create with YAML: Users create workloads through YAML.
 
-    YAML 语法校验：支持对用户输入的 YAML 进行语法校验，对错误语法给予提示。
+    YAML syntax verification: Supports syntax verification of YAML entered by users, and prompts for incorrect syntax.
 
-    YAML 创建支持：通过 YAML 可以完成多云工作负载的创建，包含其中的差异化配置。
+    Create with YAML support: The creation of Multicloud workloads, including differentiated configurations, can be done through YAML.
 
-- 多云工作负载详情
+- Multicloud workload details
 
-    基本信息：支持查看无状态负载的部署详情信息 Pod 数量情况，活跃集群信息。资源负载提供单 Pod 监控查看能力，可跳转到 Insight Pod 日志信息，提供单 Pod 日志查看能力。
+    Basic information: Supports viewing the deployment details of stateless workloads, the number of Pods, and active cluster information. Resource load provides single Pod monitoring and viewing capabilities, and can jump to Insight Pod log information to provide single Pod log viewing capabilities.
 
-    部署信息：查看无状态负载的部署详情信息，并支持多云工作负载的重启/暂停/恢复/释放等操作。
+    Deployment information: View the deployment details of stateless workloads, and support operations such as restart/pause/resume/release of Multicloud workloads.
 
-    实例列表：支持按照集群的方式展示工作负载在多个 Kubernetes 集群的 Pod 信息，支持一键快速跳转到对应集群的工作负载详情界面，查看对应 Pod 的监控、日志信息。
+    Instance list: Supports displaying the Pod information of workloads in multiple Kubernetes clusters in a cluster manner, supports one-click quick jump to the workload details interface of the corresponding cluster, and checks the monitoring and log information of the corresponding Pod.
 
-    服务列表：支持按照集群的方式切分集群内的工作负载服务信息，支持一键快速跳转到对应集群的工作负载详情界面，查看对应服务的监控、日志信息。
+    Service list: Supports splitting the workload service information in the cluster according to the cluster method, supports one-click quick jump to the workload details interface of the corresponding cluster, and checks the monitoring and log information of the corresponding service.
 
-- 编辑多云工作负载
+- Edit Multicloud workloads
 
-    页面编辑：支持通过页面的方式编辑集群
+    Page editing: support editing clusters through pages
 
-    YAML 编辑：支持通过 YAML 的的方式变更多云工作负载的配置信息
+    YAML editing: support changing the configuration information of Multicloud workloads through YAML
 
-- 删除多云工作负载
+- Delete Multicloud workloads
 
-    页面删除：支持通过页面的方式进行多云工作负载的删除，同时删除在多集群内的部署
+    Page deletion: supports deletion of Multicloud workloads through pages, and deletes deployments in multi-clusters at the same time
 
-    支持 cloudshell 及终端进行删除：支持通过终端进行删除
+    Support cloudshell and terminal for deletion: support for terminal deletion
 
-    删除提示：提醒在删除时，需要进行二次确认
+    Deletion prompt: Reminder that a second confirmation is required when deleting
 
-## 资源管理
+## Resource management
 
-- 多云命名空间
+- Multicloud namespace
 
-    多云命名空间管理：支持查看多云命名空间资源列表
+    Multicloud namespace management: support viewing the list of Multicloud namespace resources
 
-    查看多云命名空间列表：提供列表可以查看多集群的命名空间信息
+    View the list of Multicloud namespaces: Provide a list to view the namespace information of multi-clusters
 
-    创建多云命名空间：提供通过界面化创建多云命名空间的能力
+    Create Multicloud namespaces: provide the ability to create Multicloud namespaces through interfaces
 
-    删除多云命名空间：支持对空闲的多云命名空间进行删除
+    Delete Multicloud namespace: support for deleting idle Multicloud namespaces
 
-- 多云存储声明
+- Multicloud storage statement
 
-    查看多云存储声明列表：支持查看创建的多云 PVC 资源列表
+    View the list of Multicloud storage declarations: support viewing the list of created Multicloud PVC resources
 
-    创建多云存储声明：提供通过界面化和 YAML 多种方式进行存储声明的创建
+    Create Multicloud storage declarations: provide multiple ways to create storage declarations through interface and YAML
 
-    删除多云存储声明：支持对空闲存储声明进行删除操作
+    Delete Multicloud storage claim: support for deleting free storage claims
 
-- 多云配置管理
+- Multicloud configuration management
 
-    多云配置项管理：支持查看多云 ConfigMap 资源列表
+    Multicloud ConfigMap management: support viewing Multicloud ConfigMap resource list
 
-    多云秘钥管理：支持查看多云 Secret 资源列表
+    Multicloud secret key management: support viewing the list of Multicloud Secret resources
 
-    创建多云配置或多云密钥：支持通过界面化或 YAML 完成对多云配置或多云密钥的创建，并统一显示在用户界面
+    Create Multicloud configuration or Multicloud key: support the creation of Multicloud configuration or Multicloud key through interface or YAML, and display them uniformly on the user interface
 
-    删除多云配置或多云密钥：支持对空闲的多云配置或多云秘钥进行删除操作，对于在使用中的配置或秘钥不允许删除
+    Deleting Multicloud configurations or Multicloud keys: Supports deletion of idle Multicloud configurations or Multicloud keys. Deletion of in-use configurations or keys is not allowed
 
-- 网络管理
+- Network management
 
-    服务列表：支持查看多云 Service 列表
+    Service list: support viewing Multicloud Service list
 
-    创建服务和路由：支持通过界面化或 YAML 完成对 Service 创建，并统一显示在用户界面
+    Create services and routes: support the creation of services through interface or YAML, and display them uniformly on the user interface
 
-    删除服务和路由：支持对 Service 进行删除操作，对于在使用中的给出对应的删除提示
+    Delete service and route: support delete operation on Service, and give corresponding delete prompts for those in use
 
-## 策略中心
+## Strategy Center
 
-- 部署策略
+- PropagationPolicy
 
-    部署策略列表：支持在界面上查看当前实例的部署策略列表及其关联的多云资源
+    PropagationPolicy list: support viewing the PropagationPolicy list of the current instance and its associated Multicloud resources on the interface
 
-    创建部署策略：支持以 YAML 的方式维护创建和编辑部署策略信息
+    Create PropagationPolicy: support creating and editing PropagationPolicy information in YAML
 
-    删除部署策略：仅对空闲的部署策略提供删除按钮
+    Delete PropagationPolicy: only provide a delete button for idle PropagationPolicy
 
-- 差异化策略
+- OverridePolicy
 
-    差异化策略列表：支持在界面上查看当前实例的部署策略列表及其关联的多云资源
+    List of OverridePolicy: support viewing the PropagationPolicy list of the current instance and its associated Multicloud resources on the interface
 
-    创建差异化策略：支持以 YAML 的方式维护创建和编辑差异化策略信息
+    Create OverridePolicy: support creating and editing OverridePolicy information in YAML
 
-    删除差异化策略：支持在界面上查看当前实例的差异化策略列表以及当前差异化策略关联的多云资源
+    Delete OverridePolicy: support viewing the OverridePolicy list of the current instance and the Multicloud resources associated with the current OverridePolicy on the interface

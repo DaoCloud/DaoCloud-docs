@@ -4,7 +4,7 @@ In addition to creating workloads through images, they can also be created by en
 
 The steps for this creation method are relatively simple, as described below.
 
-1. In the left navigation bar, click `Multicloud Workload`, and click the `YAML Create` button in the upper right corner.
+1. In the left navigation bar, click `Multicloud Workload`, and click the `Create with YAML` button in the upper right corner.
 
     ![image](../images/depyaml01.png)
 
@@ -12,11 +12,11 @@ The steps for this creation method are relatively simple, as described below.
 
     ![image](../images/depyaml02.png)
 
-3. After entering the YAML statement of the deployment strategy, click `Next`.
+3. After entering the YAML statement of the PropagationPolicy, click `Next`.
 
     ![image](../images/depyaml03.png)
 
-4. After entering the YAML statement of the differentiation strategy, click `OK`.
+4. After entering the YAML statement of the OverridePolicy, click `OK`.
 
     ![image](../images/depyaml04.png)
 

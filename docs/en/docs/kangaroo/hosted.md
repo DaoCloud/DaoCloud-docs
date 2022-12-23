@@ -15,7 +15,7 @@ Harbor is an open source container registry service for secure hosting and effic
 
 - Multiple container registry instances to meet the needs of multiple container registrys in various environments such as development, testing, and production.
 - Break the calling barriers between modules, and support rapid image pull when deploying applications in the application workbench and container management module
-- Provides a unified management control plane, allowing administrators to manage the full life cycle of multiple Harbor instances on the same interface.
+- Provides a unified management control plane, allowing administrators to manage the full lifecycle of multiple Harbor instances on the same interface.
 
 ## Steps
 

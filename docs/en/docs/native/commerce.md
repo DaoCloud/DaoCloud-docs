@@ -55,7 +55,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Alibaba Cloud releases CNStack 2.0 of cloud-native technology platform](https://mp.weixin.qq.com/s/5q8i_BSL8DbdwOUHmBkQ8Q)
 
-     CNStack 2.0 supports mixed management of different vendors, different architectures, different regions and CPU/GPU computing power. Provide one-stop management of the entire life cycle of application development, testing, and operation and maintenance, and the scenarios cover container services, distributed applications, cloud edge, and DevOps. In addition, the platform also provides a complete technology stack support, including built-in, out-of-the-box product components and middleware, as well as products and components provided by the original factory and partners.
+     CNStack 2.0 supports mixed management of different vendors, different architectures, different regions and CPU/GPU computing power. Provide one-stop management of the entire lifecycle of application development, testing, and operation and maintenance, and the scenarios cover container services, distributed applications, cloud edge, and DevOps. In addition, the platform also provides a complete technology stack support, including built-in, out-of-the-box product components and middleware, as well as products and components provided by the original factory and partners.
 
 - [Alibaba Cloud Microservice Engine MSE October Update](https://mp.weixin.qq.com/s/Puud_MYgCMezqKESaAiG-w)
 

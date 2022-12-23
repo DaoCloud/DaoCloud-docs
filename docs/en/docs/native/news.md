@@ -521,7 +521,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [June 15 DevOps toolchain manager DevStream enters CNCF sandbox project](https://mp.weixin.qq.com/s/oqww9Wvxy_5WgDRNv6mmOg)
 
-     DevStream can use a simple configuration file to manage DevOps tools in all links of the software R&D life cycle in a unified manner, and complete the rapid installation and deployment of each tool, integration between tools, and best practice configuration.
+     DevStream can use a simple configuration file to manage DevOps tools in all links of the software R&D lifecycle in a unified manner, and complete the rapid installation and deployment of each tool, integration between tools, and best practice configuration.
 
      Project address: <https://github.com/devstream-io/devstream>
 

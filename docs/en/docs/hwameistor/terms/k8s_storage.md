@@ -47,4 +47,4 @@ The HwameiStor control plane dynamically sets up HwameiStor local volumes and re
 
 Kubernetes provides several built-in stateful and stateless workload resources to let application developers define workloads to run on Kubernetes. It is possible to run stateful workloads by creating a Kubernetes stateless/stateful workload and connecting it to a PV using a PVC.
 
-For example, a MySQL stateless payload that references a PVC can be created in YAML. MySQL PVCs referenced by stateless loads should be created with the requested size and StorageClass. Once the HwameiStor control plane provides the PV for the required StorageClass and capacity, the claim is set as satisfied. Kubernetes will then mount the PV and start the MySQL stateless load.
+For example, a MySQL stateless workload that references a PVC can be created in YAML. MySQL PVCs referenced by stateless loads should be created with the requested size and StorageClass. Once the HwameiStor control plane provides the PV for the required StorageClass and capacity, the claim is set as satisfied. Kubernetes will then mount the PV and start the MySQL stateless load.

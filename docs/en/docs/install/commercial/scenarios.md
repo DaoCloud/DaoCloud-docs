@@ -22,7 +22,7 @@ Premise: Prepare a node. The operating system and architecture of the node must 
 
 ## Single data center multi-management cluster
 
-When the user needs to add a management cluster in the current single data center to manage the life cycle of the new business cluster, there is no need to use the Tinder node to install it again, and only need to install the kubean operator on a working cluster that has already been created The component can endow the cluster with the ability and role to manage the cluster. As shown below:
+When the user needs to add a management cluster in the current single data center to manage the lifecycle of the new business cluster, there is no need to use the Tinder node to install it again, and only need to install the kubean operator on a working cluster that has already been created The component can endow the cluster with the ability and role to manage the cluster. As shown below:
 
 ![Scenario Schematic](../images/scenario02.png)
 
@@ -34,7 +34,7 @@ Prerequisite: The previous step of deploying a single-data center single-managem
 
 ## Multi-data center scenario
 
-When a user has multiple data centers, or the networks of different data centers are isolated, such as in disaster recovery scenarios such as two locations and three centers, the user has cluster lifecycle management requirements in different regions and different data centers. Classic mode is recommended. At this time, a management cluster can be deployed in different data centers or regions, and all management clusters can be connected to the global service cluster for management, so as to achieve unified management of the life cycle of clusters in different regions.
+When a user has multiple data centers, or the networks of different data centers are isolated, such as in disaster recovery scenarios such as two locations and three centers, the user has cluster lifecycle management requirements in different regions and different data centers. Classic mode is recommended. At this time, a management cluster can be deployed in different data centers or regions, and all management clusters can be connected to the global service cluster for management, so as to achieve unified management of the lifecycle of clusters in different regions.
 
 ### Multi-data center multi-management cluster
 
@@ -50,7 +50,7 @@ Premise: Prepare a node. The operating system and architecture of the node must 
 
 1. Create one or more working clusters based on the management cluster on the container management module under the platform as needed.
 
-In cross-region and network isolation scenarios, the cluster life cycle of other data centers needs to be managed in a unified manner. Please refer to the following configuration process.
+In cross-region and network isolation scenarios, the cluster lifecycle of other data centers needs to be managed in a unified manner. Please refer to the following configuration process.
 
 #### Beijing Data Center
 

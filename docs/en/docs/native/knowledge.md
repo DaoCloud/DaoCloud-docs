@@ -85,9 +85,9 @@ This page shares some technical articles related to cloud native, and we hope th
      Kubernetes' Mutating Admission Webhooks are often used to enforce security practices and ensure resources follow specific policy or configuration management.
      The article introduces a new use case: simplifying the migration of applications, enabling rapid updates to the new environment's inventory while keeping the old environment up and running.
 
-- [Alibaba cloud container attack and defense matrix & API security life cycle, how to build a financial security cloud native platform](https://mp.weixin.qq.com/s/ZKsIn0UzrrSGWWMv8Sk4Nw)
+- [Alibaba cloud container attack and defense matrix & API security lifecycle, how to build a financial security cloud native platform](https://mp.weixin.qq.com/s/ZKsIn0UzrrSGWWMv8Sk4Nw)
 
-     This article introduces the threat surface brought by the application of container platforms (container attack and defense matrix) and APIs in the financial technology field from the perspective of attackers, analyzes the threats, and gives practical suggestions for the security protection practices of container platforms and APIs throughout their life cycle.
+     This article introduces the threat surface brought by the application of container platforms (container attack and defense matrix) and APIs in the financial technology field from the perspective of attackers, analyzes the threats, and gives practical suggestions for the security protection practices of container platforms and APIs throughout their lifecycle.
 
 - [How did the world's top open source company find the top 1000 community users? ](https://mp.weixin.qq.com/s/edy6FsD1d_9fp-U60H_dug)
 
@@ -153,7 +153,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Microservice Full Link Grayscale New Capabilities](https://mp.weixin.qq.com/s/JL7Ru4nIiP2XuXwNiw2TtA)
 
      This article mainly introduces the application scenarios and pain points of Alibaba Cloud MSE service governance based on the full-link grayscale capability and two new capabilities: white screen at runtime and configuration grayscale.
-     The white screen at runtime is used to gain insight into the traffic matching and running behavior of the whole link grayscale; the configuration grayscale refers to the grayscale capability that the configuration items in the microservice application should have, so as to deal with the grayscale application’s special configuration value appeal.
+     The white screen at runtime is used to gain insight into the traffic matching and running behavior of the whole link grayscale; the configuration grayscale refers to the grayscale capability that the ConfigMaps in the microservice application should have, so as to deal with the grayscale application’s special configuration value appeal.
 
 - [Kubernetes Cluster Utilization Improvement Practice](https://mp.weixin.qq.com/s/IAo41AZ0aAkIxY-JzonXMQ)
 
@@ -262,7 +262,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Alibaba Cloud Releases Enterprise Cloud Native IT Cost Governance Solution: Five Capabilities Accelerate Enterprise FinOps Process](https://mp.weixin.qq.com/s/hAHNlAi8c0OAO7zSq31J1w)
 
-     Enterprise cloud-native IT cost governance has problems such as the life cycle mismatch between business units and billing units, the contradiction between dynamic resource delivery and static capacity planning, and the adaptation of enterprise IT cost governance models to cloud-native architectures.
+     Enterprise cloud-native IT cost governance has problems such as the lifecycle mismatch between business units and billing units, the contradiction between dynamic resource delivery and static capacity planning, and the adaptation of enterprise IT cost governance models to cloud-native architectures.
      As a result, Alibaba Cloud Container Service has launched an enterprise cloud-native IT cost governance solution, which provides functions such as enterprise IT cost management, cost visualization, and cost optimization.
 
 - [DevOps Trends and Best Practices to Watch in 2022](https://technostacks.com/blog/devops-trends)
@@ -694,9 +694,9 @@ This post introduces some tools in the Kubernetes ecosystem that can be used to 
      The Envoy Gateway initiative makes the Envoy reverse proxy a network gateway that not only directs internal microservice traffic, but also manages external traffic entering the network.
      Its fundamental purpose is to establish a standardized and simplified API for Kubernetes.
 
-- [Validating a request payload with WebAssembly](https://www.tetrate.io/blog/validating-a-request-payload-with-wasm/)
+- [Validating a request workload with WebAssembly](https://www.tetrate.io/blog/validating-a-request-payload-with-wasm/)
 
-     This post describes how to use Wasm plugins to extend Istio - verifying the payload of a request.
+     This post describes how to use Wasm plugins to extend Istio - verifying the workload of a request.
      When you need to add custom functionality not supported by Envoy or Istio, you can use Wasm plugins, such as using Wasm plugins to add custom verification, authentication, logging, or manage quotas.
 
 - [OPLG: New Generation Cloud Native Observable Best Practices](https://mp.weixin.qq.com/s/Bf6nmOymcG9bk91VxLL_Kw)
@@ -723,7 +723,7 @@ This post introduces some tools in the Kubernetes ecosystem that can be used to 
 
 - [CrowdStrike discovers new cryptojacking attack targeting Docker and Kubernetes infrastructure](https://www.crowdstrike.com/blog/new-kiss-a-dog-cryptojacking-campaign-targets-docker-and-kubernetes/)
 
-     The attack uses container evasion techniques and anonymous mining pools to deliver its payload using an obfuscated domain name to conduct cryptocurrency mining activities against Docker and Kubernetes infrastructure.
+     The attack uses container evasion techniques and anonymous mining pools to deliver its workload using an obfuscated domain name to conduct cryptocurrency mining activities against Docker and Kubernetes infrastructure.
      Adopting a cloud security protection platform can effectively protect the cloud environment from similar mining activities, prevent misconfiguration and control plane attacks.
 
 - [Kube-apiserver CVE Vulnerability: Aggregated API server may cause Server Request Forgery (SSRF)](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.24.md#cve-2022- 3172-aggregated-api-server-can-cause-clients-to-be-redirected-ssrf)

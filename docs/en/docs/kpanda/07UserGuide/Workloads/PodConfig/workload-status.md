@@ -18,8 +18,8 @@ Pods follow a predefined lifecycle, starting at `Pending` [phase](https://kubern
 
 ## Workload Status
 
-The fifth-generation container management module designs a built-in workload life cycle state set based on factors such as Pod status and number of replicas, so that users can more realistically perceive the running status of workloads.
-Because different workload types (such as stateless workloads and tasks) have inconsistent management mechanisms for Pods, different workloads will have different life cycle states during operation, as shown in the following table:
+The fifth-generation container management module designs a built-in workload lifecycle state set based on factors such as Pod status and number of replicas, so that users can more realistically perceive the running status of workloads.
+Because different workload types (such as stateless workloads and tasks) have inconsistent management mechanisms for Pods, different workloads will have different lifecycle states during operation, as shown in the following table:
 
 ### Stateless load, stateful load, daemon state
 
@@ -27,7 +27,7 @@ Because different workload types (such as stateless workloads and tasks) have in
 | :---------------------- | :------------------------ -------------------------------------- |
 | Waiting | 1. A workload is in this state while its creation is in progress. <br>2. After an upgrade or rollback action is triggered, the workload is in this state. <br>3. Trigger operations such as pausing/scaling, and the workload is in this state. |
 | Running | This state occurs when all instances under the load are running and the number of replicas matches the user-defined number. |
-| Deleting | When a delete operation is performed, the payload is in this state until the delete is complete. |
+| Deleting | When a delete operation is performed, the workload is in this state until the delete is complete. |
 | Exception | Unable to get the status of the workload for some reason. This usually occurs because communication with the pod's host has failed. |
 | Not Ready | When the container is in an abnormal, pending state, this state is displayed when the load cannot be started due to an unknown error |
 

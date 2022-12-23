@@ -1,16 +1,16 @@
-# Differentiation strategy
+# OverridePolicy
 
 Multicloud orchestration supports differentiated strategies, supports viewing the differentiated strategy list of the current instance and its associated multicloud resources on the interface, maintains, creates and edits differentiated strategy information in the form of YAML, and supports viewing the differentiated strategies of the current instance on the interface A list of policies and the multicloud resources associated with the current differentiated policy.
 
 Differentiation policies define different configurations in multicloud and multi-cluster, which facilitates the management of deployment policies (Propagation Policy) and differentiation policies (Override Policy).
 
-Follow the steps below to create a differentiation strategy.
+Follow the steps below to create a OverridePolicy.
 
-1. After entering a multicloud instance, in the left navigation bar, click `Policy Management` -> `Differential Policy`, and click the `YAML Create` button in the upper right corner.
+1. After entering a multicloud instance, in the left navigation bar, click `Policy Management` -> `Differential Policy`, and click the `Create with YAML` button in the upper right corner.
 
     ![image](../images/deploy01.png)
 
-2. On the `YAML Creation` page, after entering the correct YAML statement, click `OK`.
+2. On the `Create with YAML` page, after entering the correct YAML statement, click `OK`.
 
     ![image](../images/deploy02.png)
 

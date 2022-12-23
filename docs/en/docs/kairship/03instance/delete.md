@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# delete instance
+# Delete instance
 
 ## Steps
 
