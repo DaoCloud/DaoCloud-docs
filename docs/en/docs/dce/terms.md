@@ -73,15 +73,15 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     The limitation on interaction helps to create stable and functional communication between programs.
 
     As applications become more complex, small code changes can have drastic effects on other functionality. 
-    Applications need to take a modular approach to their functionality if they can grow and maintain stability simultaneously. 
+    Applications need to take a modular approach to their functionality if they can grow and maintain stability simultaneously.
     Without APIs, there is a lack of a framework for the interaction between applications. 
     Without a shared framework, it is challenging for applications to scale and integrate.
 
-    APIs allow computer programs or applications to interact and share information in a defined and understandable manner. 
-    They are the building blocks for modern applications and they provide developers with a way to integrate applications together. 
+    APIs allow computer programs or applications to interact and share information in a defined and understandable manner.
+    They are the building blocks for modern applications and they provide developers with a way to integrate applications together.
     Whenever you hear about microservices working together, you can infer that they interact via an API. 
 
-- API-initiated eviction, API 发起的驱逐
+- API-initiated eviction
 
     API-initiated eviction is the process by which you use the Eviction API to create an Eviction object that triggers graceful pod termination.
 
@@ -91,14 +91,15 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - API Group
 
-    这是 K8s API 中的一组相关路径。
+    API groups make it easier to extend the Kubernetes API.
+    The API group is specified in a REST path and in the apiVersion field of a serialized object.
 
-    通过更改 API 服务器的配置，可以启用或禁用 API Group。
-    您还可以禁用或启用指向特定资源的路径。
-    API 组使扩展 K8s API 更加的容易。
-    API 组在 REST 路径和序列化对象的 `apiVersion` 字段中指定。
+    API Groups can be enabled or disabled by changing the configuration of the API server.
+    You can also disable or enable paths to specific resources.
+    API groups make it easier to extend the K8s API.
+    The API group is specified at the REST path and in the `apiVersion` field of the serialized object.
 
-- API 网关
+- API Gateway
 
     An API gateway is a tool that
     aggregates unique application APIs, making them all available in one place.
@@ -120,63 +121,84 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     As all requests flow through the API gateway, it presents a single place to
     add functionality like metrics-gathering, rate-limiting, and authorization.
 
-- App Container, 应用程序容器
+- App Container
 
-    与 Init 容器比较而言，这是运行部分工作负载的容器。
+    In contrast to the Init container, this is the container that runs part of the workload.
 
-    应用程序容器是在 Pod 中的容器（或 app 容器），在 Init 容器启动完毕后才开始启动。
+    Application containers are containers (or app containers) in a Pod that start after the Init container has started.
 
-    Init 容器使您可以分离对于工作负载整体而言很重要的初始化细节，一旦应用程序容器启动，Init 容器不需要继续运行。
-    如果 Pod 没有配置 Init 容器，则该 Pod 中的所有容器都是应用程序容器。
+    Init containers allow you to isolate initialization details that are important to the workload as a whole, and the init container does not need to continue running once the application container starts.
+    If a Pod does not have an Init container configured, all containers in that Pod are application containers.
 
-- App Architect, 应用架构师
+- App Architect
 
-    应用架构师是负责应用高级设计的开发 Leader。
+    The application architect is the development leader responsible for the high-level design of the application.
 
-    应用架构师确保应用的实现允许它和周边组件进行可扩展的、可持续的交互。
-    周边组件包括数据库、日志基础设施和其他微服务。
+    The application architect ensures that the implementation of the application allows it to interact with surrounding components in a scalable and sustainable manner.
+    Surrounding components include databases, logging infrastructure, and other microservices.
 
-- App Developer, 应用开发者
+- App Developer
 
-    编写可以在 Kubernetes 集群上运行的应用的开发人员。
-    应用开发者专注于应用的某一部分。他们工作范围的大小有明显差异。
+    Developers who write applications that run on Kubernetes clusters.
+    Application developers focus on a certain part of the application. There is a marked difference in the size of their working areas.
 
-- App, Application, 应用
+- App, Application
 
-    各种容器化服务运行所在的一层。
+    The layer where various containerized services run.
 
-- Audit log, 审计日志
+- Audit log, audit log
 
-    [审计日志](../ghippo/04UserGuide/03AuditLog.md)提供了对系统中对象所做更改的历史记录。
+    [Audit Log](../ghippo/04UserGuide/03AuditLog.md) provides a historical record of changes made to objects in the system.
 
-- Authorization, 授权
+- Authorization
 
-    [授权](../ghippo/04UserGuide/01UserandAccess/iam.md)指将用户完成具体工作所需的权限授予用户，授权通过系统角色或自定义角色的权限生效。
-    用户获得具体的权限后，可以对资源或服务进行操作。
+    [Authorization](../ghippo/04UserGuide/01UserandAccess/iam.md) refers to granting users the permissions required to complete specific tasks, and the authorization takes effect through the permissions of system roles or custom roles.
+    After obtaining specific permissions, users can operate on resources or services.
 
-- Autoscaling, 自动扩缩
+- Autoscaling
 
-    [自动扩缩](../kpanda/07UserGuide/Scale/Create-HPA.md)，通常是指在计算资源方面，系统能够进行自动扩缩的能力。
-    自动扩缩系统可在需要时自动添置资源，通过扩缩来满足不断变化的用户需求。
-    自动扩缩的过程各不相同，可基于不同指标进行配置，例如内存或处理时间。
-    托管云服务相较于大多数本地部署环境，有更多的可选项和实施项，因此往往都搭配有自动扩缩功能。
+    Autoscaling is the ability of a system to scale automatically, typically, in terms of computing resources.
+    With an autoscaling system, resources are automatically added when needed and can scale to meet fluctuating user demands.
+    The autoscaling process varies and is configurable to scale based on different metrics, such as memory or process time.
+    Managed cloud services are typically associated with autoscaling functionality
+    as there are more options and implementations available than most on-premise deployments.
 
-    在此之前，基础设施和应用程序的架构设计会考虑到系统峰值的使用情况。
-    这种架构意味着大部分资源没有得到充分利用，并且在面对不断变化的用户需求时缺乏弹性。
-    缺乏弹性则意味着低谷时的业务成本增加，而在高峰时又会由于需求过盛引起的服务中断而导致业务流失。
+    Previously, infrastructure and applications were architected to consider peak system usage.
+    This architecture meant that more resources were underutilized and inelastic to changing consumer demand.
+    The inelasticity meant higher costs to the business and lost business from outages due to overdemand.
 
-    通过利用云，虚拟化和容器化应用程序及其依赖项等手段，组织可以构建随用户需求而扩缩的应用程序。
-    他们可以监控应用程序的流量并自动扩缩，从而提供最佳的用户体验。
-    以 Netflix 每周五晚上的收视率增长为例，自动扩缩意味着动态添置更多资源：即增加服务器数量以支持更多视频播放需求，并在需求回落后同步缩减。
+    By leveraging the cloud, virtualizing, and containerizing applications and their dependencies,
+    organizations can build applications that scale according to user demands.
+    They can monitor application demand and automatically scale them, providing an optimal user experience.
+    Take the increase in viewership Netflix experiences every Friday evening.
+    Autoscaling out means dynamically adding more resources: for example,
+    increasing the number of servers allowing for more video streaming and scaling back once consumption has normalized.
 
 ### B, C
 
-- Bare Metal Machine，裸机
+- Bare Metal Machine
 
-    裸机是指一台物理计算机，更具体地说是一台服务器，它只有一个操作系统。
-    这样区分在现代计算环境中很重要，因为许多（甚至可以说大部分）服务器都是虚拟机。
-    物理服务器通常是一台相当大的计算机，内置强大的硬件。
-    直接在该物理硬件上安装操作系统并运行应用程序，无需虚拟化，称为在“裸机”上运行。
+    Bare metal refers to a physical computer, more specifically a server, that has one, and only one, operating system.
+    The distinction is important in modern computing because many, if not most, servers are virtual machines.
+    A physical server is typically a fairly large computer with powerful hardware built-in.
+    Installing an operating system and running applications directly on that physical hardware,
+    without virtualization, is referred to as running on “bare metal.”
+
+    Pairing one operating system with one physical computer is the original pattern of computing.
+    All the resources of the physical computer are available directly to the operating system and with no virtualization layer present,
+    there is no artificial delay in translating operating system instructions to hardware.
+
+    By dedicating all compute resources of a computer to a single operating system,
+    you potentially provide the best possible performance to the operating system.
+    If you need to run a workload that must have extremely fast access to hardware resources,
+    bare metal may be the right solution.
+
+    In the context of cloud native apps,
+    we generally think of performance in terms of scaling to a large number of concurrent events,
+    which can be handled by horizontal scaling (adding more machines to your resource pool).
+    But some workloads may require vertical scaling (adding more power to an existing physical machine)
+    and/or an extremely fast physical hardware response in which case bare metal is better suited.
+    Bare metal also allows you to tune the physical hardware and possibly even hardware drivers to help accomplish your task.
 
 - Blue Green Deployment，蓝绿部署
 
@@ -1741,10 +1763,10 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     - 预定义角色：由系统创建，用户只能使用不能修改，每个子模块都有一个管理员 Admin 角色。
     - 自定义角色：用户自主创建、更新和删除，自定义角色中的权限由用户自己维护。
-      同时因为全局管理汇聚了多个子模块，各子模块也拥有相应的管理员角色，例如：
-        - IAM Admin：管理用户与访问控制，即管理用户/用户组以及授权
-        - Workspace Admin：管理层级及工作空间的权限，仅此权限可以创建层级
-        - Audit Admin：管理审计日志
+     同时因为全局管理汇聚了多个子模块，各子模块也拥有相应的管理员角色，例如：
+       - IAM Admin：管理用户与访问控制，即管理用户/用户组以及授权
+       - Workspace Admin：管理层级及工作空间的权限，仅此权限可以创建层级
+       - Audit Admin：管理审计日志
 
 - Rolling update, 滚动更新
 
