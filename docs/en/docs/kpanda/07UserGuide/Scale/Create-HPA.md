@@ -53,7 +53,7 @@ Refer to the following steps to configure the built-in index auto scaling policy
      ![Workload](../../images/createScale08.png)
 
      - Policy name: Enter the name of the auto scaling policy. Please note that the name can contain up to 63 characters, and can only contain lowercase letters, numbers, and separators ("-"), and must start and end with lowercase letters or numbers, such as hpa- my-dep.
-     - Namespace: The namespace where the payload resides.
+     - Namespace: The namespace where the workload resides.
      - Workload: The workload object that performs auto scaling.
      - Target CPU Utilization: The CPU usage of the Pod under the workload resource. The calculation method is: the request (request) value of all Pod resources/workloads under the workload. When the actual CPU usage is greater/lower than the target value, the system automatically reduces/increases the number of Pod replicas.
      - Target Memory Usage: The memory usage of the Pod under the workload resource. When the actual memory usage is greater/lower than the target value, the system automatically reduces/increases the number of Pod replicas.
@@ -108,7 +108,7 @@ Refer to the following steps to configure an index auto-scaling policy for a wor
      ![Create Scale](../../images/createScale10.png)
 
      - Policy name: Enter the name of the auto scaling policy. Please note that the name can contain up to 63 characters, and can only contain lowercase letters, numbers, and separators ("-"), and must start and end with lowercase letters or numbers, such as hpa- my-dep.
-     - Namespace: The namespace where the payload resides.
+     - Namespace: The namespace where the workload resides.
      - Workload: The workload object that performs auto scaling.
      - Resource type: A custom indicator type for monitoring, including Pod and Service.
      - Metrics: custom metric names created using ServiceMonitoring or custom metric names built into the system.

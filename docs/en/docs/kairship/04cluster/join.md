@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Access cluster
+# Join cluster
 
 After creating a multicloud instance, you need to connect to the working cluster first.
 

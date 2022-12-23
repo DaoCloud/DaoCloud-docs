@@ -17,7 +17,7 @@ Cloud-native containerization platforms are rapidly becoming the foundation of m
 Also by 2022, the proportion of global organizations/companies running containerized applications in production environments will increase significantly from less than 30% today to more than 75%.
 And according to Gartner, cloud-native platforms will be the foundation of more than 95 percent of new digital initiatives by 2025, up from less than 40 percent in 2021.
 
-[Apply for community free experience](../dce/license0.md){ .md-button .md-button--primary }
+[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
 
 ## Cloud Native Wave
 
@@ -143,4 +143,4 @@ Learn more about [What is DCE 5.0](../dce/what-is-dce.md)
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
-[Apply for community free experience](../dce/license0.md){ .md-button .md-button--primary }
+[Free Trial](../dce/license0.md){ .md-button .md-button--primary }

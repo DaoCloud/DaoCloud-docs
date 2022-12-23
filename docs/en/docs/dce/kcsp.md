@@ -19,13 +19,13 @@ DaoCloud being a certified KCSP means:
 
 The currently authorized and compliant Kubernetes versions of DaoCloud include but are not limited to:
 
-current version:
+Current versions:
 
 [![1.23](../images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
 [![1.24](../images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
 [![1.25](../images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
 
-historic version:
+Historic versions:
 
 [![1.7](../images/1.7.png)](https://github.com/cncf/k8s-conformance/pull/68)
 [![1.9](../images/1.9.png)](https://github.com/cncf/k8s-conformance/pull/210)
@@ -42,4 +42,4 @@ For more information about DaoCloud's open source contributions, please refer to
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
-[Apply for community free experience](license0.md){ .md-button .md-button--primary }
+[Free Trial](license0.md){ .md-button .md-button--primary }

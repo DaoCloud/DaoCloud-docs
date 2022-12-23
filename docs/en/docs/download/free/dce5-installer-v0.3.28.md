@@ -37,7 +37,7 @@ tar -zxvf offline-community-v0.3.28.tar
 ```
 
 Then refer to [Community Edition Installation Process](../../install/intro.md#_2) to install.
-If you are installing for the first time or have forgotten your license key, please [apply for a free community experience](../../dce/license0.md).
+If you are installing for the first time or have forgotten your license key, please [Free Trial](../../dce/license0.md).
 
 ## Modules
 

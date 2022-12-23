@@ -13,7 +13,7 @@ Users in the operation and maintenance team need to undertake dozens to hundreds
 
 Involved modules: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Container Network](../network/intro/what-is-net.md), container cluster lifecycle management
 
-Solution advantages: Provide cluster life cycle management capabilities from deployment, upgrade, certificate change, configuration change, recycling, etc.
+Solution advantages: Provide cluster lifecycle management capabilities from deployment, upgrade, certificate change, configuration change, recycling, etc.
 Reuse the network infrastructure in the current enterprise environment as much as possible, and implement the best solution for the environment: MacVLAN network solution, SR-IOV smart network card acceleration solution, [SpiderPool](../network/modules/spiderpool/what.md) Cloud-native IPAM solution, [Clilum](../network/modules/cilium/what.md) eBPF network acceleration solution, Underlay and Overlay collaborative network solution.
 
 Manage all clusters and load information through the independent open source [Clusterpedia](../community/clusterpedia.md) unified control plane, compatible with standard Kubernetes cluster access, break through the performance bottleneck of Kubernetes API, and support thousands of people to use it at the same time.
@@ -57,7 +57,7 @@ The user's application architecture decides to adopt the microservice architectu
 
 Modules involved: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Container Network](../network/intro/what-is-net.md), [Microservice Engine](../ skoala/intro/features.md), [Service Mesh](../mspider/01Intro/WhatismSpider.md), [Observability](../insight/03ProductBrief/WhatisInsight.md), [Application Workbench] (../amamba/01ProductBrief/WhatisAmamba.md)
 
-Solution advantages: seamlessly integrate the first-generation microservices represented by SpringCloud and Dubbo with the new-generation microservice technology represented by Istio service grid, and complete the microservice management of the whole life cycle from development, deployment, access, external, observation, operation and maintenance ability.
+Solution advantages: seamlessly integrate the first-generation microservices represented by SpringCloud and Dubbo with the new-generation microservice technology represented by Istio service grid, and complete the microservice management of the whole lifecycle from development, deployment, access, external, observation, operation and maintenance ability.
 
 === "Data Service"
 
@@ -65,7 +65,7 @@ The user application architecture relies on mainstream middleware capabilities, 
 
 Modules involved: [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Container Network](../network/intro/what-is-net.md), [Container Local Storage](../ hwameistor/intro/what.md), [cloud-native middleware](../middleware/midware.md), Edge Cloud Synergy, Xinchuang Cloud
 
-Solution advantages: cloud-native local storage capabilities designed for stateful applications, unified platform management cloud-native middleware, providing middleware management capabilities for the full life cycle of multi-tenancy, deployment, observation, backup, operation and maintenance, combined with the container platform Ability to adapt to edge and innovation scenarios.
+Solution advantages: cloud-native local storage capabilities designed for stateful applications, unified platform management cloud-native middleware, providing middleware management capabilities for the full lifecycle of multi-tenancy, deployment, observation, backup, operation and maintenance, combined with the container platform Ability to adapt to edge and innovation scenarios.
 
 === "App Store"
 
@@ -85,4 +85,4 @@ Advantages of the solution: Innovative technology completes cross-cloud disaster
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
-[Apply for community free experience](license0.md){ .md-button .md-button--primary }
+[Free Trial](license0.md){ .md-button .md-button--primary }

@@ -19,20 +19,20 @@ The installation process of DCE 5.0 Community Edition is as follows:
 ```mermaid
 flowchart TB
 
-subgraph second[instructions for use]
+subgraph second[Instructions for use]
     direction TB
     U[ ] -.-
     free[Free Trial] --- kpanda[Container Management]
-    kpanda --- ghippo[global management]
-    ghippo --- insight[observability]
+    kpanda --- ghippo[Global Management]
+    ghippo --- insight[Observability]
     insight -.- ask[ASK!!!]
 end
 
-subgraph first[install community edition]
+subgraph first[Install community edition]
     direction TB
     S[ ] -.-
-    plan[resource planning] --> k8s[prepare K8s cluster]
-    k8s --> tools[install dependencies]
+    plan[resource planning] --> k8s[Prepare K8s cluster]
+    k8s --> tools[Install dependencies]
     tools -.-> kind[Online install with kind]
     tools -.-> s1[Online install with k8s]
     tools -.-> s2[Offline install with k8s]
@@ -80,16 +80,16 @@ flowchart TB
 
     start([fa:fa-user DCE 5.0 Commercial Edition Installation Process]) -.- deploy[Deployment plan]
     deploy --> tools[Install dependencies on bootstrapping node]
-    tools --> download[download offline package]
-    download --> config[edit clusterConfig.yaml]
+    tools --> download[Download offline package]
+    download --> config[Edit clusterConfig.yaml]
 
-    config -.compactClusterMode: false.-> typical[classic mode with multiple data centers]
-    typical --> mng2[create K8s management cluster<br>and install Kubean Operator]
-    typical --> gsc2[create K8s global service cluster<br>and install DCE components]
+    config -.compactClusterMode: false.-> typical[Classic mode with multiple data centers]
+    typical --> mng2[Create K8s management cluster<br>and install Kubean Operator]
+    typical --> gsc2[Create K8s global service cluster<br>and install DCE components]
 
-    config -.compactClusterMode: true.-> simple[simple mode with<br>single data center]
-    simple --> k8s1[create a K8s<br>management cluster]
-    simple --> gsc1[install all DCE<br>components on this cluster]
+    config -.compactClusterMode: true.-> simple[Simple mode with<br>single data center]
+    simple --> k8s1[Create a K8s<br>management cluster]
+    simple --> gsc1[Install all DCE<br>components on this cluster]
 
 classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:1px,color:#000000, font-size:15px;
 classDef white fill:#ffffff,stroke:#000,stroke-width:1px,color:#000,font-weight:bold
@@ -121,4 +121,4 @@ DaoCloud Enterprise 5.0 is still in the early stages of release, and the install
     ![Community Edition Exchange Group](../images/assist.png)
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[Apply for community free experience](../dce/license0.md){ .md-button .md-button--primary }
+[Free Trial](../dce/license0.md){ .md-button .md-button--primary }

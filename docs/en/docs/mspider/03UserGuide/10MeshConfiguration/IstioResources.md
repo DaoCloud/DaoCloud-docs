@@ -44,11 +44,11 @@ This page provides the following resource types:
 
 Users can add, delete, modify and query resources in the form of YAML. Here is an example creation/deletion of a telemetry resource.
 
-1. Click `Grid Configuration` -> `Istio Resource Management` in the left navigation bar, and click the `YAML Create` button in the upper right corner.
+1. Click `Grid Configuration` -> `Istio Resource Management` in the left navigation bar, and click the `Create with YAML` button in the upper right corner.
 
      ![img](../../images/istio01.png)
 
-2. On the YAML creation page, enter the correct YAML statement and click `OK`.
+2. On the Create with YAML page, enter the correct YAML statement and click `OK`.
 
      ![img](../../images/istio02.png)
 

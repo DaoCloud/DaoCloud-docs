@@ -40,7 +40,7 @@ Release date: 2022-9-25
 
 - **NEW** Added pagination function to the list page
 - **NEW** Added the function of modifying the configuration
-- **NEW** Added the ability to return modifiable configuration items
+- **NEW** Added the ability to return modifiable ConfigMaps
 - **NEW** Change the limitation of creating instances to the cluster level instead of the namespace level
 - **NEW** Added splicing function of monitoring address
 - **NEW** Added the ability to modify the version number

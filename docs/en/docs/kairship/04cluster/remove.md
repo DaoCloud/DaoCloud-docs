@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# remove cluster
+# Remove cluster
 
 If you want to remove a cluster, you can click the `…` button on the right in the list of working clusters, and select `Remove` from the pop-up menu.
 

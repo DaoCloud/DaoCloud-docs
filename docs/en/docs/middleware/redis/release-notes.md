@@ -22,7 +22,7 @@ Release date: 2022-10-26
 
 - **NEW** Add interface to get user list
 - **New** support arm architecture
-- **Add** Redis instance full life cycle management
+- **Add** Redis instance full lifecycle management
 - **Add** monitoring deployment of redis instance
 - **New** supports redis sentinel, singleton and cluster one-click deployment
 - **NEW** Support ws permission isolation

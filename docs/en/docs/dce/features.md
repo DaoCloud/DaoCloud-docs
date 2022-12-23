@@ -100,5 +100,6 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - Permission management for multi-tenant requirements can be implemented based on workspaces.
 
-[Apply for a free community experience](license0.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/install-dce-community.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Free Trial](license0.md){ .md-button .md-button--primary }
