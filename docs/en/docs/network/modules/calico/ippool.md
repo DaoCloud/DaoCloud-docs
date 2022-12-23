@@ -1,15 +1,21 @@
+---
+MTPE: Jeanine-tw
+Revised: Jeanine-tw
+Pics: NA
+Date: 2022-12-23
+---
+
 # `IPPool`
 
-`IPPool` 表示 Calico 期望从中给 Pod 分配 IP 的地址集合。通过 Kubespray 拉起 Calico 之后，会分别为 IPv4、IPv6 创建一个默认的地址池：
-`default-ipv4-ippool` 和 `default-ipv6-ippool`。
+`IPPool` indicates the set of addresses from which Calico expects to assign IPs to Pods. After pulling up Calico via Kubespray, a default IP pool is created for IPv4 and IPv6 respectively: `default-ipv4-ippool` and `default-ipv6-ippool`.
 
-运行命令：
+Run the command：
 
 ```shell
 calicoctl get ippools  default-ipv4-ippool -o yaml
 ```
 
-输出为：
+Output：
 
 ```yaml
 apiVersion: crd.projectcalico.org/v1
@@ -36,38 +42,38 @@ spec:
 
 ## `BlockSize`
 
-在 Calico IPAM 中，`IPPool` 被细分为 Block，这些 Block 与集群中的特定节点相关联。
-集群中的每个节点可以有一个或多个与之相关的 Block。当集群中的节点或 Pod 的数量增加或减少时，Calico 会根据需要自动创建和销毁 Block。
+In Calico IPAM, `IPPool` is subdivided into Blocks, which are associated with specific nodes in the cluster.
+Each node in a cluster can have one or more Blocks associated with it. Calico automatically creates and destroys Blocks as needed when the number of nodes or Pods in a cluster increases or decreases.
 
-Block 的存在使 Calico 可以有效地聚合分配给同一节点上的 Pod 地址，这将会减少路由表的大小。
-默认情况下，Calico 将会从节点相关的 Block 中分配 IP，并在必要时创建新的 Block。
-Calico 也支持从与该节点不相关的 Block 中分配IP 地址。默认情况下，Calico 创建的 Block 可容纳 64 个地址（掩码为 /26），该地址数量支持自定义设置。
+The presence of a Block allows Calico to efficiently aggregate Pod addresses assigned to the same node, which will reduce the size of the routing table.
+By default, Calico will assign IPs from the Block associated with a node and create new Blocks as necessary.
+Calico also supports assigning IP addresses from Blocks that are not associated with the node. By default, a Block created by Calico can hold 64 addresses (mask of /26), and this number of addresses supports custom settings.
 
 !!! note
 
-    在集群节点数量较多且 `IPPool Cidr` 不足的情况，我们往往需要根据集群规模提前规划好 `IPPool` 和 `BlockSize` 的大小。
-    否则可能会出现某些节点无法分配到 `Block` 的情况。
+    In the case of a large number of cluster nodes and insufficient `IPPool Cidr`, we often need to plan the size of `IPPool` and `BlockSize` in advance according to the cluster size.
+    Otherwise, some nodes may not be allocated to `Block`.
 
-    - `BlockSize` 默认为 26，即每个 block 拥有 2^(32-26) = 64 个地址。可由 `calico node env`: `CALICO_IPV4POOL_BLOCK_SIZE` 控制 (IPv4: 20-32;IPv6:116-128)。
+    - IPv6:116-128)。`BlockSize` defaults to 26, i.e. each block has 2^(32-26) = 64 addresses. This can be controlled by `calico node env`: `CALICO_IPV4POOL_BLOCK_SIZE` (IPv4: 20-32; IPv6:116-128).
 
-    - Calico 要求 `BlockSize` 必须大于或者等于 `IPPool` 的 CIDR 的掩码，但在实际环境中应确保每个节点至少有一个 Block。
-      所以 Block 的个数应该大于等于节点的个数. 即 2^(`BLOCK_SIZE-IPPool_MASK`) >= NUM(nodes)。
+    - Calico requires that `BlockSize` must be greater than or equal to the mask of the CIDR of `IPPool`, but in a real-world environment you should ensure that each node has at least one Block.
+        So the number of Blocks should be greater than or equal to the number of nodes. That is, 2^(`BLOCK_SIZE-IPPool_MASK`) >= NUM(nodes).
 
-## 指定多个默认池
+## Specify multiple default ippools
 
-随着集群的扩张或 Pod 数量的增加，默认地址池的地址数量可能不足。
-这会导致 Pod 可能无 IP 可用或者某些节点没有可分配的 Block。
-我们可以通过修改 Calico 的配置文件，使其在 IP 地址不够的时候，选择其他的 `IPPool`。
+As the cluster expands or the number of Pods increases, the default address pool may not have enough addresses.
+This can result in Pods that may not have IPs available or some nodes may not have an assignable Block.
+We can do this by modifying Calico's configuration file to select an alternative `IPPool` if there are not enough IP addresses.
 
-### 创建新的 `IPPool` 池
+### Create new `IPPool`
 
-运行命令：
+Run the command：
 
 ```shell
 cat << EOF | calicoctl apply -f -
 ```
 
-输出为：
+Output：
 
 ```yaml
 apiVersion: projectcalico.org/v3
@@ -82,35 +88,33 @@ spec:
 EOF
 ```
 
-其中，
+- `cidr`: IP address range can be determined by the actual environment.
 
-- `cidr`：可由实际环境决定 IP 地址范围
+- `blockSize`: The default is 26, determined by the actual cluster size. Reducing `blockSize` means more addresses in each Block, but the total number of Blocks will be reduced.
+    This is suitable for scenarios where the number of nodes is small but there are more Pods on each node. Increasing `blockSize` means that there are fewer addresses in each Block, but the total number of Blocks will increase.
+    This is suitable for scenarios with a large number of nodes. But in general, as long as the CIDR of `IPPool` is large enough, you can leave `blockSize` untuned (just leave the default).
 
-- `blockSize`：默认为 26，根据实际集群规模决定。缩小 `blockSize` 意味着每个 Block 中的地址变多，但 Block 总的数量会减少。
-  这适用于节点数不多但每节点上 Pod 比较多的场景。增大 `blockSize` 意味着每个 Block 中的地址变少，但 Block 总的数量会增加。
-  这适用于节点数较多的场景。但总的来说，只要 `IPPool` 的 CIDR 足够大，可不调整 `blockSize`（保持默认即可）。
+- `vxlanMode`: `vxlan` mode is used for cross-subnet communication
 
-- `vxlanMode`：采用 `vxlan` 模式用于跨子网通信
+- `natOutgoing`: whether `snat` is required for cross-`IPPool` communication
 
-- `natOutgoing`：跨 `IPPool` 通信是否需要 `snat`
+## `IPPool` fine-grained control
 
-## `IPPool` 细粒度控制
+By default, `IPPool` is shared globally by the cluster. However. It is also possible to assign `IPPool` to specific nodes, tenants, and Pods.
 
-默认情况下，`IPPool` 是集群全局共享的。但是。也可以将 `IPPool` 指定分配给特定的节点、租户、Pod。
+### Node filtering
 
-### 节点过滤
+Match specific nodes in `IPPool` based on the `nodeSelector` field, and only specific nodes can be assigned IPs from this `IPPool`.
 
-在 `IPPool` 中根据 `nodeSelector` 字段去匹配特定的节点，只有特定节点才可以从此 `IPPool` 中去分配 IP。
-
-- 给节点打上 label
+- Label nodes
 
     ```shell
     kubectl label nodes node1 type=test
     ```
 
-- 在 `IPPool` 中配置 `nodeSelector`
+- Configure `nodeSelector` in `IPPool`
 
-    运行命令：
+    Run the command：
 
     ```shell
     cat << EOF | calicoctl apply -f -
@@ -130,42 +134,42 @@ EOF
     EOF
     ```
 
-但此 `IPPool` 不会影响到该节点已经创建的 Pod，如果要更新其 Pod 从该 `IPPool` 分配地址，则需要 `recreate pod`。
-进一步了解[高级的 selector 语法](https://projectcalico.docs.tigera.io/reference/resources/ippool)。
+However, this `IPPool` does not affect Pods already created by this node, and to update its Pod to assign addresses from this `IPPool`, you need to `recreate pod`.
+Learn more about [advanced selector syntax](https://projectcalico.docs.tigera.io/reference/resources/ippool).
 
-### 租户过滤
+### Tenant filtering
 
-可通过在 namespace 中打上特定的 annotation，使该 namespace 下的 Pod 会从此 label 对应的 `ippool` 分配 IP。
+Pods under the namespace can be assigned IPs from the `ippool` corresponding to this label by typing a specific annotation in the namespace.
 
-如果要为 namespace 添加 annotation，则编辑 namespace，在 annotation 中添加如下的 key-value 对：
+To add an annotation to the namespace, edit the namespace and add the following key-value pair to the annotation:
 
 ```shell
 kubectl annotate namespace test-ns "cni.projectcalico.org/ipv4pools"='["extra-ippool"]'
 ```
 
-value 为 `ippool` 的 name 列表。如果是 ipv6，那么 key 为：`cni.projectcalico.org/ipv6pools`。
+Value is a list of names for `ippool`. If it is ipv6, then the key is: `cni.projectcalico.org/ipv6pools`.
 
 !!! note
     
-    此操作只能保证此 namespace 下的 Pod 会从 `extra-ippools` 中分配 IP。
-    但其他 namespace 的 Pod 仍然可以从 `extra-ippools` 分配 IP。
+    This action only ensures that Pods under this namespace will be assigned IPs from `extra-ippools`.
+    However, Pods in other namespaces can still assign IPs from `extra-ippools`.
 
-### Pod 过滤
+### Pod filtering
 
-可通过在 Pod 的 Annotation 中指定 `ippool`，使 Pod 从该 `ippool` 中分配地址：
+Pods can be assigned addresses from an `ippool` by specifying the `ippool` in the Annotation of the Pod.
 
 ```shell
-kubectl annotate pod  test-pod "cni.projectcalico.org/ipv4pools"='["extra-ippool"]'
+kubectl annotate pod test-pod "cni.projectcalico.org/ipv4pools"='["extra-ippool"]'
 ```
 
-## 改变 `BlockSize`
+## Change `BlockSize`
 
-> 在安装 Calico 之前，应事先定义好 `blockSize`。因为安装之后，`BlockSize` 的值不能编辑。
-因此，建议在安装前更改 IPPool block 的大小，以尽量减少对 Pod 连接的中断。
+> Before installing Calico, you should define `blockSize` beforehand. Because the value of `BlockSize` cannot be edited after installation.
+Therefore, it is recommended to change the size of the IPPool block before installation to minimize disruptions to Pod connections.
 
-改变 `BlockSize` 步骤：
+How to change `BlockSize`:
 
-1. 创建临时的 `ippool`
+1. Create a temporary `ippool`
 
     ```yaml
     apiVersion: projectcalico.org/v3
@@ -180,19 +184,19 @@ kubectl annotate pod  test-pod "cni.projectcalico.org/ipv4pools"='["extra-ippool
 
     !!! note
     
-        注意不要跟现有的 `ippool` 子网冲突。
+        Be careful not to conflict with the existing `ippool` subnet.
 
-2. 将 `default-ipv4-ippool` 设置为 `disable`
+2. Set `default-ipv4-ippool` to `disable`
 
     ```shell
     calicoctl patch ippool default-ipv4-ippool -p '{"spec": {"disabled": true}}'
     ```
 
-    其中，`default-ipv4-ippool` 为将要修改的 ippool 的名称。
+    `default-ipv4-ippool` is the name of the ippool to be modified.
 
-3. 检查 `ippool` 的状态
+3. Check the status of `ippool`
 
-    运行命令：
+    Run the command：
 
     ```shell
     $ calicoctl get ippool -o wide
@@ -201,31 +205,31 @@ kubectl annotate pod  test-pod "cni.projectcalico.org/ipv4pools"='["extra-ippool
     temporary-pool        10.0.0.0/16      true   Always     false
     ```
 
-    `default-ipv4-ippool` 已 `DISABLED`，新创建的 Pod 不会从此 `ippool` 中分配地址。
+    `default-ipv4-ippool` is `DISABLED`. Newly created Pods will not be assigned addresses from this `ippool`.
 
-4. 删除先前的所有 Pod
+4. Delete all previous Pods
 
-    !!! note
+    !!! Note
     
-        此步骤需要删除全部存在于 `default-ipv4-ippool` 下的 Pod，所以会造成 Pod 的连通性暂时中断，请在合适的时机进行此操作。
+        This step needs to delete all Pods under `default-ipv4-ippool`, so the connectivity of Pods will be temporarily interrupted, please do this operation at the right time.
 
-    删除 default namespace 下的所有 Pod：
+    To delete all Pods under default namespace.
 
     ```shell
     kubectl delete po --all
     ```
 
-    等待 Pod 重建完成，Pod 会使用 `temporary-pool` 的地址。
+    Wait for the Pod rebuild to complete and the Pod will use the ``temporary-pool`` address.
 
-5. 删除 `default-ipv4-ippool`
+5. Delete `default-ipv4-ippool`
 
     ```shell
     calicoctl delete ippool default-ipv4-ippool
     ```
 
-6. 重新创建 `default-ipv4-ippool` 并修改 `cidr` 或者 `blockSize`
+6. Recreate `default-ipv4-ippool` and change `cidr` or `blockSize`
 
-    运行命令：
+    Run the command：
 
     ```shell
     calicoctl create -f -<<EOF
@@ -246,64 +250,64 @@ kubectl annotate pod  test-pod "cni.projectcalico.org/ipv4pools"='["extra-ippool
 
     !!! note
     
-        可根据实际情况修改 `cidr` 和 `blockSize`。
+        `cidr` and `blockSize` can be modified as appropriate.
 
-7. DISABLE `temporary-pool`
+7. Disable `temporary-pool`
 
     ```shell
     calicoctl patch ippool temporary-pool -p '{"spec": {"disabled": true}}'
     ```
 
-8. 重新创建所有 Pod
+8. Recreate all pods
 
-    删除 default namespace 下的所有 Pod：
+    Delete all Pods under default namespace.
 
     ```shell
     kubectl delete po --all
     ```
 
-    等待 Pod 重建完成，Pod 会使用 `default-ipv4-ippool` 的地址。
+    Wait for the Pod rebuild to complete and the Pod will use the ``default-ipv4-ippool`` address.
 
-9. 删除 temporary-pool
+9. Delete temporary-pool
 
-## 迁移 `IPPool`
+## Migrate `IPPool`
 
-原有地址池的 IP 地址不足，需要迁移到新的 `IPPOOL` 中。
-
-!!! note
-
-    如果在创建和验证新的 IP 池之前删除旧的 IP 池，现有 Pod 的连接将会受到影响。当 Pod 被删除时，业务会可能中断。
-
-迁移 `IPPool` 步骤：
-
-1. 创建新的 `ippool`
+The original address pool is running low on IP addresses and needs to be migrated to a new `IPPOOL`.
 
 !!! note
 
-    建议新 `IPPool` 处于 Kubernetes 集群的 CIDR 中。如果从 Kubernetes 集群 CIDR 外部分配 Pod IP，某些流量可能会不必要地应用 NAT，导致意外行为。
+    If the old IP pool is deleted before the new one is created and verified, the connectivity of the existing Pod will be affected. When the Pod is deleted, the service may be disrupted.
 
-2. Disable 旧 `ippool`
+How to migrate `IPPool`：
+
+1. Create a new `ippool`
+
+!!! note
+
+    It is recommended that the new `ippool` be in the CIDR of the Kubernetes cluster. If Pod IPs are assigned from outside the Kubernetes cluster CIDR, NAT may be applied unnecessarily to some traffic, resulting in unexpected behavior. 2.
+
+2. Disable the old ``ippool`
 
     ```shell
-    calicoctl patch ippool default-ipv4-ippool -p '{"spec": {"disabled": true}}'  # 假设 default-ipv4-ippool 是旧 IPPool
-    ```
+    calicoctl patch ippool default-ipv4-ippool -p '{"spec": {"disabled": true}}' # Assume default-ipv4-ippool is the old IPPool
+    ```''
 
-3. 重新创建旧 IP 池下的所有 Pod
+3. Recreate all Pods under the old IP pool
 
-    目的是让所有 Pod 从新的 `IPPool` 中分配地址
+    The goal is to have all Pods assigned addresses from the new `IPPool`.
 
-4. 验证
+4. Verify
 
-    新启动 Pod，观察是否从新池中分配 IP 并测试连通性
+    Start a new Pod, and see if the IPs are assigned from the new pool and test the connectivity.
 
-5. 删除旧 `ippool`
+5. Delete the old `ippool`.
 
 ## Q&A
 
-- 不同的 `IPPool` 是否支持子网重叠？
+- Do different `ippool`s support overlapping subnets?
 
-    不支持，在创建 `ippool` 时，Calico 会校验 `ippool` 的 `cidr` 是否与已存在的 `ippool` 存在子网重叠的情况。
+    No. When creating an `ippool`, Calico checks if the `cidr` of the `ippool` is subnetted with an existing `ippool`.
 
-- `IPPool` 创建后 `BlockSize` 是否还能修改？
+- Can `BlockSize` be modified after `ippool` is created?
 
-    不能修改。`ippool` 创建之后，已经根据 CIDR 和 `BlockSize` 创建好集群所有的 `block`，手动修改 `BlockSize` 是没有效果的。
+    No, it cannot be modified. After `ippool` is created, all `blocks` of the cluster have been created based on CIDR and `BlockSize`. So it is not effective to modify `BlockSize` manually.
