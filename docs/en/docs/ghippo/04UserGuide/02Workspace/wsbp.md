@@ -13,7 +13,7 @@ A workspace consists of three functions: authorization, resource groups, and sha
 
 1. Authorization: Grant users/user groups different roles in the workspace, and apply the roles to the resources in the workspace.
 
-    Best practice: When ordinary users want to use the application workbench, microservice engine, service grid, and middleware module functions, or need to have permission to use container management and some resources in the service grid, the administrator needs to grant the workspace permissions (Workspace Admin, Workspace Edit, Workspace View).
+    Best practice: When ordinary users want to use the application workbench, microservice engine, service mesh, and middleware module functions, or need to have permission to use container management and some resources in the service mesh, the administrator needs to grant the workspace permissions (Workspace Admin, Workspace Edit, Workspace View).
     The administrator here can be the Admin role, the Workspace Admin role of the workspace, or the Folder Admin role above the workspace.
     See [Relationship between Folder and Workspace](ws-folder.md).
 
@@ -66,9 +66,9 @@ A workspace consists of three functions: authorization, resource groups, and sha
 
     If you need to perform unified authorization management on people and resources through workspaces, you can manually bind the required resources to a certain workspace, so as to apply the roles of users in this workspace to resources (resources here can be cross- clustered).
 
-    In addition, there is a slight difference between container management and service grid in terms of resource binding entry. The workspace provides the binding entry of Cluster and Cluster-Namespace resources in container management, but has not opened the Mesh and Mesh-Namespace for service grid. Bindings for Namespace resources.
+    In addition, there is a slight difference between container management and service mesh in terms of resource binding entry. The workspace provides the binding entry of Cluster and Cluster-Namespace resources in container management, but has not opened the Mesh and Mesh-Namespace for service mesh. Bindings for Namespace resources.
 
-    For Mesh and Mesh-Namespace resources, you can manually bind them in the resource list of the service grid.
+    For Mesh and Mesh-Namespace resources, you can manually bind them in the resource list of the service mesh.
 
 ## Usage Scenarios of Workspace
 
