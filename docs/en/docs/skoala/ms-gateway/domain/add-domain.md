@@ -1,4 +1,4 @@
-# add domain name
+# Add domain name
 
 The microservice gateway supports full lifecycle management of domain names hosted in a unified manner, including adding, updating, and deleting domain names. Through domain name management, a domain name can be applied to multiple APIs in the gateway, and gateway policies at the domain name level can be configured. This page describes how to add a domain name.
 

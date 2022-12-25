@@ -2,7 +2,7 @@
 
 Network Policy (NetworkPolicy) can control network traffic at the IP address or port level (OSI layer 3 or 4). The container management module currently supports the creation of network policies based on Pods or namespaces, and supports label selectors to set which traffic can enter or leave Pods with specific labels.
 
-For more details about network policies, please refer to the official Kubernetes document [Network Policies](https://kubernetes.io/zh-cn/docs/concepts/services-networking/network-policies/).
+For more details about network policies, please refer to the official Kubernetes document [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
 
 ## Create network policy
 
@@ -12,9 +12,9 @@ There are fewer steps and more efficient creation through YAML, but the threshol
 
 It is more intuitive and easier to create through the form, just fill in the corresponding values ​​according to the prompts, but the steps are more cumbersome.
 
-### YAML creation
+### Create with YAML
 
-1. Click the name of the target cluster in the cluster list, and then click `Container Network`->`Network Policy`->`YAML Creation` in the left navigation bar.
+1. Click the name of the target cluster in the cluster list, and then click `Container Network`->`Network Policy`->`Create with YAML` in the left navigation bar.
 
     ![path](../../images/networkpolicy01.png)
 

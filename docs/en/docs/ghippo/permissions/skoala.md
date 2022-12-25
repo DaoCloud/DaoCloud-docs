@@ -2,7 +2,7 @@
 
 [Microservice engine](../../skoala/intro/features.md) includes two parts: microservice management center and microservice gateway. The microservice engine supports three user roles:
 
--Workspace Admin
+- Workspace Admin
 - Workspace Editor
 - Workspace Viewer
 
@@ -46,7 +46,7 @@ You have permission to use `&check;`, but you don't have permission to use `&cro
 | | delete | &check; | &check; | &cross; |
 | Service Governance Policy-Mesh | View | &check; | &check; | &check; |
 | | Create | &check; | &check; | &cross; |
-| | YAML Creation | &check; | &check; | &cross; |
+| | Create with YAML | &check; | &check; | &cross; |
 | | edit | &check; | &check; | &cross; |
 | | YAML Editing | &check; | &check; | &cross; |
 | | delete | &check; | &check; | &cross; |
@@ -78,7 +78,7 @@ You have permission to use `&check;`, but you don't have permission to use `&cro
 | | Governance | &check; | &check; | &cross; |
 | Service Governance Policy-Mesh | View | &check; | &check; | &check; |
 | | Create | &check; | &check; | &cross; |
-| | YAML Creation | &check; | &check; | &cross; |
+| | Create with YAML | &check; | &check; | &cross; |
 | | edit | &check; | &check; | &cross; |
 | | YAML Editing | &check; | &check; | &cross; |
 | | delete | &check; | &check; | &cross; |

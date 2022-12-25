@@ -1,10 +1,10 @@
-# create worker cluster
+# Create worker cluster
 
 In the DCE 5.0 container management module, [cluster role] (./ClusterRole.md#cluster role) is divided into four categories: global service cluster, management cluster, working cluster, and access cluster. Among them, the access cluster can only be accessed from third-party vendors, see [Join ACluster](JoinACluster.md).
 
 This page describes how to create a worker cluster.
 
-## prerequisites
+## Prerequisites
 
 Certain prerequisites must be met before creating a cluster:
 
@@ -47,11 +47,11 @@ Certain prerequisites must be met before creating a cluster:
     - `kubernetes_audit`: Kubernetes audit log, enabled by default.
     - `auto_renew_certificate`: Automatically renew the Kubernetes control plane certificate on the first Monday of each month, enabled by default.
     - `disable_firewalld&ufw`: Disable the firewall to prevent the node from being inaccessible during the installation.
-    - `Insecure_registries`: Private mirror registry configuration. When using a private image warehouse to create a cluster, in order to avoid certificate issues causing the container engine to deny access, you need to fill in the address of the private image warehouse here to bypass the certificate authentication of the container engine and obtain the image.
+    - `Insecure_registries`: Private container registry configuration. When using a private image registry to create a cluster, in order to avoid certificate issues causing the container engine to deny access, you need to fill in the address of the private image registry here to bypass the certificate authentication of the container engine and obtain the image.
 
         ![Fill in advanced configuration information](../../images/createcluster05.png)
 
-## complete creation
+## Complete creation
 
 After filling in the correct information and completing the above steps, the page will prompt that the cluster is being created.
 

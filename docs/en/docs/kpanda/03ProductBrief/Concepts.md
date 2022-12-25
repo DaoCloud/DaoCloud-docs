@@ -1,164 +1,164 @@
-# 基本概念
+# Basic concept
 
-容器管理相关的基本概念如下。
+The basic concepts related to container management are as follows.
 
-#### 集群 Cluster
+#### Cluster Cluster
 
-集群指容器运行所需要的云资源组合，关联了若干云服务器节点。您可以在集群中运行您的应用程序。基于容器管理平台，可以创建若干集群或者接入若干 Kubernetes 标准集群。
+A cluster refers to the combination of cloud resources required for container operation, and is associated with several cloud server nodes. You can run your application in a cluster. Based on the container management platform, several clusters can be created or connected to several Kubernetes standard clusters.
 
-#### 节点 Node
+#### Node Node
 
-每一个节点对应一台虚拟机/物理服务器，所有的容器应用运行在集群的节点上。容器平台上的系统组件默认运行在控制器节点上，用于管理节点上运行的容器实例。集群中的节点数量可以进行扩缩容，节点类型分为：控制器节点（Controller）及工作节点（Worker）。
+Each node corresponds to a virtual machine/physical server, and all container applications run on the nodes of the cluster. The system components on the container platform run on the controller node by default, and are used to manage the container instances running on the node. The number of nodes in the cluster can be expanded and reduced, and the node types are divided into: controller node (Controller) and worker node (Worker).
 
-#### 容器组 Pod
+#### Container Group Pods
 
-容器组是 Kubernetes 部署应用或服务的最小的基本单位。一个容器组可以封装一个或多个应用容器、存储资源、一个独立的网络 IP，这些容器是相对紧密的耦合在一起的。
+A container group is the smallest basic unit for Kubernetes to deploy applications or services. A container group can encapsulate one or more application containers, storage resources, and an independent network IP. These containers are relatively tightly coupled together.
 
-#### 容器 Container
+#### Container Container
 
-容器是通过容器镜像部署运行的实例，容器将应用程序从底层的主机设施中解耦，因此在不同的云或 OS 环境中应用程序的部署部署更容易。
+A container is an instance that is deployed and run through a container image. The container decouples the application from the underlying host facility, so it is easier to deploy the application in different cloud or OS environments.
 
-#### 工作负载 Workload
+#### Workload Workload
 
-工作负载是在 Kubernetes 上运行的应用程序。
+Workloads are applications running on Kubernetes.
 
-无论工作负载是单一组件还是由多个组件构成，在 Kubernetes 中都可以在一组 [Pod](https://kubernetes.io/zh/docs/concepts/workloads/pods) 中运行这些工作负载。
+Whether a workload is a single component or composed of multiple components, in Kubernetes it is possible to run these workloads in a set of [Pods](https://kubernetes.io/en/docs/concepts/workloads/pods).
 
-在 Kubernetes 提供若干种内置的工作负载资源：
+Several built-in workload resources are provided in Kubernetes:
 
-- **无状态服务** (Deployment)：容器组之间完全独立、功能相同，具有弹性扩缩、滚动升级等特性。常用来部署无状态应用实现快速的扩缩，相较于有状态服务，实例数量可以灵活扩缩。例如 Nginx、WordPress。请参考[创建无状态服务](../07UserGuide/Workloads/CreateDeploymentByImage.md)。
+- **Stateless service** (Deployment): The container groups are completely independent, have the same functions, and have features such as elastic scaling and rolling upgrades. It is often used to deploy stateless applications to achieve rapid scaling. Compared with stateful services, the number of instances can be flexibly scaled. For example Nginx, WordPress. Please refer to [Create Stateless Service](../07UserGuide/Workloads/CreateDeploymentByImage.md).
 
-- **有状态服务** (StatefulSet)：容器组之间不完全独立，具有稳定的持久化存储和网络标示，以及有序的部署、扩缩和删除等特性。因为容器可以在不同主机间迁移，所以在主机上并不会保存数据，通过将存储卷挂载在容器上，从而实现有状态（Statefulset）服务的数据持久化，例如 mysql-HA、etcd。请参考[创建有状态服务](../07UserGuide/Workloads/CreateStatefulSetByImage.md)。
+- **Stateful Service** (StatefulSet): Container groups are not completely independent, with stable persistent storage and network marking, and orderly deployment, scaling, and deletion. Because the container can be migrated between different hosts, the data will not be saved on the host. By mounting the storage volume on the container, the data persistence of the stateful set service (such as mysql-HA, etcd) can be realized. Please refer to [Creating a Stateful Service](../07UserGuide/Workloads/CreateStatefulSetByImage.md).
 
-- **守护进程服务** (DaemonSet)：容器组之间完全独立，保证在分配的节点中持续执行后台任务，而无需用户干预。守护进程 (DaemonSet) 服务在每个节点创建一个 Pod，您可以选择部署的一个特定节点。守护进程示例包括像 [Fluentd](https://www.fluentd.org/) 之类的日志收集器和监控服务。请参考[创建守护进程服务](../07UserGuide/Workloads/CreateDaemonSetByImage.md)。
+- **Daemon Service** (DaemonSet): The container groups are completely independent, ensuring that background tasks are continuously executed in the assigned nodes without user intervention. The DaemonSet service creates a Pod per node, and you can choose a specific node for deployment. Examples of daemons include log collectors and monitoring services like [Fluentd](https://www.fluentd.org/). Please refer to [Create a daemon service](../07UserGuide/Workloads/CreateDaemonSetByImage.md).
 
-- **普通任务**（Job）：普通任务是一次性运行的短任务，部署完成后即可执行。使用场景为在创建工作负载前，执行普通任务，将镜像上传至镜像仓库。请参考[创建普通任务](../07UserGuide/Workloads/CreateJobByImage.md)。
+- **Normal task** (Job): A common task is a one-time short task that can be executed after the deployment is completed. The usage scenario is to perform common tasks and upload the image to the container registry before creating the workload. Please refer to [Create common tasks](../07UserGuide/Workloads/CreateJobByImage.md).
 
-- **定时任务**（CronJob）：定时任务是按照指定时间周期运行的短任务。使用场景为在某个固定时间点，为所有运行中的节点做时间同步。请参考[创建定时任务](../07UserGuide/Workloads/CreateCronJobByImage.md)。
+- **CronJob** (CronJob): A cron job is a short task that runs according to a specified time period. The usage scenario is to synchronize time for all running nodes at a fixed point in time. Please refer to [Create CronJobByImage](../07UserGuide/Workloads/CreateCronJobByImage.md).
 
-**服务与容器间的关系**
+**Relationship between service and container**
 
-一个服务由一个或多个容器组（Pod）组成。一个容器组由一个或多个容器组成，每个容器都对应一个容器镜像。对于无状态工作负载，容器组都是完全相同的。
+A service consists of one or more container groups (Pods). A container group consists of one or more containers, and each container corresponds to a container image. For stateless workloads, container groups are all identical.
 
-#### 应用模板
+#### Apply Templates
 
-标准模板的统一资源管理和调度，并进行相关功能扩展。您可以基于应用模板管理和部署社区标准应用模板，以及自定义业务应用模板。
+Unified resource management and scheduling of standard templates, and related function extensions. You can manage and deploy community-standard application templates based on application templates, as well as custom business application templates.
 
-#### 镜像 Image
+#### Image
 
-容器镜像是一个容器应用打包的标准格式的模板，用于创建容器。
-Docker 镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的配置参数（如匿名卷、环境变量、用户等）。
-镜像不包含任何动态数据，其内容在构建之后也不会被改变。
+A container image is a template in a standard format for container application packaging, used to create containers.
+A Docker image is a special file system. In addition to providing the programs, libraries, resources, configuration and other files required for the container to run, it also contains some configuration parameters prepared for the run (such as anonymous volumes, environment variables, users, etc.) .
+Images do not contain any dynamic data, and their contents are not changed after they are built.
 
-例如：一个镜像可以包含一个完整的 Ubuntu 操作系统环境，里面仅安装了 Apache 或用户需要的其它应用程序。
+For example: a image can contain a complete Ubuntu operating system environment, which only installs Apache or other applications required by the user.
 
-#### 命名空间 Namespace
+#### Namespace Namespace
 
-命名空间是对一组资源和对象的抽象整合。在同一个集群内可创建不同的命名空间，不同命名空间中的数据彼此隔离。使得它们既可以共享同一个集群的服务，也能够互不干扰。例如：
+A namespace is an abstract collection of a set of resources and objects. Different namespaces can be created in the same cluster, and the data in different namespaces are isolated from each other. So that they can share the services of the same cluster without interfering with each other. E.g:
 
-- 可以将开发环境、测试环境的业务分别放在不同的命名空间。
+- The business of the development environment and the test environment can be placed in different namespaces.
 
-- 常见的 Pod、Service、Replication Controller 和 Deployment 等都属于某一个命名空间（默认是 Default），而 Node、PersistentVolume 等则不属于任何命名空间。
+- Common Pods, Services, Replication Controllers, and Deployments all belong to a certain namespace (the default is Default), while Node, PersistentVolume, etc. do not belong to any namespace.
 
-#### 服务 Service
+#### Service Service
 
-Service 是将运行在一组 Pod 上的应用程序公开为网络服务的抽象方法。
+A Service is an abstraction for exposing an application running on a set of Pods as a network service.
 
-使用 Kubernetes，您无需修改应用程序即可使用不熟悉的服务发现机制。Kubernetes 为 Pod 提供自己的 IP 地址和一组 Pod 的单个 DNS 名称，并且可以在它们之间进行负载平衡。
+With Kubernetes, you can use unfamiliar service discovery mechanisms without modifying your application. Kubernetes gives Pods their own IP addresses and a single DNS name for a set of Pods, and can load balance among them.
 
-Kubernetes 允许指定一个所需类型的 Service，该类型的取值以及行为如下：
+Kubernetes allows specifying a required type of Service, the value and behavior of this type are as follows:
 
-- ClusterIP：集群内访问。通过集群的内部 IP 暴露服务，选择该值，服务只能够在集群内部访问，这也是默认的 ServiceType。
+- ClusterIP: Intra-cluster access. The service is exposed through the internal IP of the cluster. If this value is selected, the service can only be accessed within the cluster. This is also the default ServiceType.
 
-- NodePort：节点访问。通过每个 Node 上的 IP 和静态端口（NodePort）暴露服务。NodePort 服务会路由到 ClusterIP 服务，这个 ClusterIP 服务会自动创建。通过请求 `<NodeIP>:<NodePort>`，可以从集群的外部访问一个 NodePort 服务。
+- NodePort: Node access. Expose services via IP and static port (NodePort) on each Node. The NodePort service will be routed to the ClusterIP service, which will be created automatically. A NodePort service can be accessed from outside the cluster by requesting `<NodeIP>:<NodePort>`.
 
-- LoadBalancer：负载均衡。使用云提供商的负载均衡器，可以向外部暴露服务。外部的负载均衡器可以路由到 NodePort 服务和 ClusterIP 服务。
+- LoadBalancer: load balancing. Using a cloud provider's load balancer, services can be exposed externally. External load balancers can route to NodePort services and ClusterIP services.
 
-#### 七层负载均衡 Ingress
+#### Layer 7 load balancing Ingress
 
-Ingress 是为进入集群的请求提供路由规则的集合，可以给 Service 提供集群外部访问的 URL、负载均衡、SSL 终止、HTTP 路由等。
+Ingress is a collection of routing rules for requests entering the cluster. It can provide services with URLs accessed outside the cluster, load balancing, SSL termination, HTTP routing, etc.
 
-#### 网络策略 NetworkPolicy
+#### Network Policy NetworkPolicy
 
-NetworkPolicy 提供了基于策略的网络控制，用于隔离应用并减少攻击面。它使用标签选择器模拟传统的分段网络，并通过策略控制它们之间的流量以及来自外部的流量。
+NetworkPolicy provides policy-based network controls for isolating applications and reducing the attack surface. It emulates a traditional segmented network using label selectors and controls the traffic between them and from the outside through policies.
 
-#### 配置项 ConfigMap
+#### ConfigMap ConfigMap
 
-ConfigMap 用于保存配置非机密性的数据保存到键值对中。使用时， 容器组可以将其用作环境变量、命令行参数或者存储卷中的配置文件。
+ConfigMap is used to save configuration non-confidential data into key-value pairs. When used, the container group can use it as an environment variable, a command-line argument, or a configuration file in a storage volume.
 
-ConfigMap 将您的环境配置信息和容器镜像解耦，便于应用配置的修改。
+ConfigMap decouples your environment configuration information from container images, making it easy to modify application configurations.
 
-#### 密钥 Secret
+#### Key Secret
 
-Secret 类似于 Configmap，但用于保存机密数据（如密码、Token、密钥等）的配置信息，Secret 将敏感信息和容器镜像解耦，不需要在应用程序代码中包含机密数据。
+Secret is similar to Configmap, but it is used to save configuration information of confidential data (such as passwords, tokens, keys, etc.). Secret decouples sensitive information from container images, and does not need to include confidential data in application code.
 
-#### 标签 Label
+#### Label Label
 
-标签其实是一对 key/value，被关联到对象上，比如 Pod。标签的使用倾向于能够标示对象的特点，并且对用户而言是有意义的，但是标签对内核系统是没有直接意义的。标签可以在创建对象时指定，也可以在对象创建后指定。
+A label is actually a pair of key/value, which is associated with an object, such as a Pod. The use of tags tends to be able to mark the characteristics of the object and is meaningful to the user, but the tag has no direct meaning to the kernel system. Labels can be specified when the object is created, or after the object is created.
 
-#### 选择器 LabelSelector
+#### selector LabelSelector
 
-Label Selector 是 Kubernetes 核心的分组机制，通过 Label Selector 客户端/用户能够识别一组有共同特征或属性的资源对象。
+Label Selector is the core grouping mechanism of Kubernetes, through which clients/users can identify a group of resource objects with common characteristics or attributes.
 
-#### 注解 Annotation
+#### Annotation
 
-Annotation 可以将 Kubernetes 资源对象关联到任意的非标识性元数据，可以通过注解检索到这些元数据。
+Annotation can associate Kubernetes resource objects with arbitrary non-identifying metadata, which can be retrieved through annotations.
 
-Annotation 与 Label 类似，也使用 Key/Value 键值对的形式进行定义。
+Annotation is similar to Label, and is also defined in the form of Key/Value key-value pairs.
 
-#### 存储卷 PersistentVolume
+#### Storage Volume PersistentVolume
 
-PersistentVolume (PV) 和 PersistentVolumeClaim (PVC) 提供了方便的持久化卷：PV 提供网络存储资源，而 PVC 申领存储资源。
+PersistentVolume (PV) and PersistentVolumeClaim (PVC) provide convenient persistent volumes: PV provides network storage resources, while PVC claims storage resources.
 
-#### 存储声明 PersistentVolumeClaim
+#### Storage Claim PersistentVolumeClaim
 
-PV 是存储资源，而 PersistentVolumeClaim (PVC) 是对 PV 的申领请求。PVC 跟 Pod 类似：Pod 消费 Node 资源，而 PVC 消费 PV 资源；Pod 能够请求 CPU 和内存资源，而 PVC 请求特定大小和访问模式的数据卷。
+A PV is a storage resource, and a PersistentVolumeClaim (PVC) is a claim request for a PV. PVCs are similar to Pods: Pods consume Node resources, while PVCs consume PV resources; Pods can request CPU and memory resources, while PVCs request data volumes of a specific size and access mode.
 
-#### 弹性扩缩 HPA
+#### Elastic Scaling HPA
 
-Horizontal Pod Autoscaling，简称 HPA，是 Kubernetes 中实现 Pod 水平自动扩缩的功能。Kubernetes 集群可以通过 Replication Controller 的扩缩机制完成服务的扩容或缩容，实现具有扩缩性的服务。
+Horizontal Pod Autoscaling, or HPA for short, is a function in Kubernetes that realizes horizontal automatic scaling of pods. The Kubernetes cluster can expand or shrink services through the scaling mechanism of the Replication Controller to achieve scalable services.
 
-#### 亲和性与反亲和性
+#### Affinity and anti-affinity
 
-亲和性和反亲和性扩展了您可以定义的约束类型。使用亲和性与反亲和性的一些好处有：
+Affinity and anti-affinity expand the types of constraints you can define. Some benefits of using affinity and anti-affinity are:
 
-- 亲和性、反亲和性的表现能力更强。`nodeSelector` 只能选择拥有所有指定标签的节点。亲和性、反亲和性为您提供对选择逻辑的更强控制能力。
+- The performance of affinity and anti-affinity is stronger. `nodeSelector` can only select nodes that have all the specified labels. Affinity, anti-affinity give you greater control over selection logic.
 
-- 您可以标明某规则是“软需求”或者“偏好”，这样调度器在无法找到匹配节点时仍然调度该 Pod。
+- You can mark a rule as "soft demand" or "preference", so that the scheduler will still schedule the Pod if no matching node can be found.
 
-- 您可以使用节点上（或其他拓扑域中）运行的其他 Pod 的标签来实施调度约束，而不是只能使用节点本身的标签。这个能力让您能够定义规则允许哪些 Pod 可以被放置在一起。
+- You can use the labels of other Pods running on the node (or in other topological domains) to enforce scheduling constraints, instead of only using the labels of the node itself. This capability allows you to define rules which allow Pods to be placed together.
 
-在应用没有容器化之前，原先一个虚机上会装多个组件，进程间会有通信。但在做容器化拆分的时候，往往直接按进程拆分容器，比如业务进程一个容器，监控日志处理或者本地数据放在另一个容器，并且有独立的生命周期。
-这时如果它们分布在网络中两个较远的节点，请求经过多次转发，其性能会很差。
+Before the application was containerized, multiple components would be installed on a virtual machine, and there would be communication between processes. However, when doing container splitting, the container is often split directly by process, such as a container for business processes, monitoring log processing or local data in another container, and has an independent lifecycle.
+At this time, if they are distributed in two distant nodes in the network, the request will be forwarded many times, and its performance will be poor.
 
-- 亲和性：可以实现就近部署，增强网络能力实现通信上的就近路由，减少网络的损耗。例如应用 A 与应用 B 两个应用频繁交互，所以有必要利用亲和性让两个应用的尽可能的靠近，甚至在一个节点上，以减少因网络通信而带来的性能损耗。
+- Affinity: Nearby deployment can be realized, network capabilities can be enhanced to realize nearby routing in communication, and network loss can be reduced. For example, application A and application B frequently interact with each other, so it is necessary to use affinity to make the two applications as close as possible, even on one node, to reduce the performance loss caused by network communication.
 
-- 反亲和性：主要是出于高可靠性考虑，尽量分散实例，某个节点故障的时候，对应用的影响只是 N 分之一或者只是一个实例。例如当应用采用多副本部署时，有必要采用反亲和性让各个应用实例打散分布在各个节点上，以提高 HA 能力。
+- Anti-affinity: Mainly for the sake of high reliability, try to disperse instances as much as possible. When a node fails, the impact on the application is only N/N or only one instance. For example, when an application is deployed with multiple copies, it is necessary to use anti-affinity to distribute each application instance on each node to improve the HA capability.
 
-#### 节点亲和性 NodeAffinity
+#### Node affinity NodeAffinity
 
-通过选择标签的方式，可以限制容器组被调度到特定的节点上。
+By selecting labels, you can restrict container groups to be scheduled on specific nodes.
 
-#### 节点反亲和性 NodeAntiAffinity
+#### Node Anti-Affinity NodeAntiAffinity
 
-通过选择标签的方式，可以限制容器组不被调度到特定的节点上。
+By selecting labels, you can restrict container groups from being scheduled on specific nodes.
 
-#### 容器组负载亲和性 PodAffinity
+#### Container Group Load Affinity PodAffinity
 
-指定工作负载部署在相同节点。用户可根据业务需求进行工作负载的就近部署，容器间通信就近路由，减少网络消耗。
+Specifies that workloads are deployed on the same node. Users can deploy workloads nearby according to business needs, and the communication between containers can be routed nearby to reduce network consumption.
 
-#### 容器组反亲和性 PodAntiAffinity
+#### Container Group Anti-Affinity PodAntiAffinity
 
-指定工作负载部署在不同节点。同个工作负载的多个实例反亲和部署，减少宕机影响；互相干扰的应用反亲和部署，避免干扰。
+Specifies that workloads are deployed on different nodes. Anti-affinity deployment of multiple instances of the same workload reduces the impact of downtime; anti-affinity deployment of mutually interfering applications avoids interference.
 
-#### 资源配额 Resource Quota
+#### Resource Quota Resource Quota
 
-资源配额（Resource Quota）是用来限制用户资源用量的一种机制。
+Resource Quota (Resource Quota) is a mechanism used to limit user resource usage.
 
-#### 资源限制 Limit Range
+#### Resource Limit Limit Range
 
-默认情况下，Kubernetes 中所有容器都没有任何 CPU 和内存限制。LimitRange 用来给命名空间增加一个资源限制，包括最小、最大和默认资源。在容器组创建时，强制执行使用 limits 的参数分配资源。
+By default, all containers in Kubernetes do not have any CPU and memory constraints. Limit Rangee is used to add a resource limit to the namespace, including minimum, maximum and default resources. When the container group is created, resource allocation using the limits parameter is enforced.
 
-#### 环境变量
+#### Environment variables
 
-环境变量是指容器运行环境中设定的一个变量，您可以在创建容器模板时设定不超过 30 个的环境变量。环境变量可以在工作负载部署后修改，为工作负载提供了极大的灵活性。
+An environment variable refers to a variable set in the container running environment. You can set no more than 30 environment variables when creating a container template. Environment variables can be modified after the workload is deployed, providing great flexibility for the workload.

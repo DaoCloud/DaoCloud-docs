@@ -16,13 +16,13 @@ However, as the business continues to expand, the business logic becomes more an
 
 - Cloud Native Microservices
 
-    Cloud-native microservices refer to the cross-technology stack microservice governance model developed based on Kubernetes, which has gradually developed into a service grid since there was no framework.
+    Cloud-native microservices refer to the cross-technology stack microservice governance model developed based on Kubernetes, which has gradually developed into a service mesh since there was no framework.
     This model uses cloud-native frameworks (such as Kubernetes, Istio, and Linkered), cloud-native registries (such as Kubernetes registries and Mesh registries), and cloud-native gateways (such as Nginx, Envoy, and Contour).
 
 - Microservice framework
 
     Microservice frameworks can be divided into two types: intrusive and non-intrusive. Intrusive frameworks are represented by Spring Cloud and Dubbo, and old code needs to be transformed.
-    The non-intrusive framework is represented by Istio and Linkerd, adding sidecars and service grids on the original basis, without changing the old code.
+    The non-intrusive framework is represented by Istio and Linkerd, adding sidecars and service meshs on the original basis, without changing the old code.
 
 - Spring Cloud framework
 

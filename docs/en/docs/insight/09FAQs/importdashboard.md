@@ -10,7 +10,7 @@ This page introduces how to import customized dashboards through CRD and UI inte
 
     ![Import Dashboard](../images/importboard00.png)
 
-3. Click `Yaml Create` and use the following template, replacing the dashboard JSON in the `Json` field.
+3. Click `Create with YAML` and use the following template, replacing the dashboard JSON in the `Json` field.
 
     - `namespace`: Fill in the target namespace;
     - `name`: fill in the name of the dashboard.

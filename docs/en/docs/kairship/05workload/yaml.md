@@ -1,10 +1,10 @@
-# Create multi-cloud workloads via YAML
+# Create multicloud workloads via YAML
 
 In addition to creating workloads through images, they can also be created by entering YAML statements.
 
 The steps for this creation method are relatively simple, as described below.
 
-1. In the left navigation bar, click `Multi-Cloud Workload`, and click the `YAML Create` button in the upper right corner.
+1. In the left navigation bar, click `Multicloud Workload`, and click the `Create with YAML` button in the upper right corner.
 
     ![image](../images/depyaml01.png)
 
@@ -12,21 +12,21 @@ The steps for this creation method are relatively simple, as described below.
 
     ![image](../images/depyaml02.png)
 
-3. After entering the YAML statement of the deployment strategy, click `Next`.
+3. After entering the YAML statement of the PropagationPolicy, click `Next`.
 
     ![image](../images/depyaml03.png)
 
-4. After entering the YAML statement of the differentiation strategy, click `OK`.
+4. After entering the YAML statement of the OverridePolicy, click `OK`.
 
     ![image](../images/depyaml04.png)
 
-5. Automatically return to the list of multi-cloud workloads, click `⋮` on the right side of the list, you can edit and modify the YAML, and you can also pause, restart, and delete the workload.
+5. Automatically return to the list of multicloud workloads, click `⋮` on the right side of the list, you can edit and modify the YAML, and you can also pause, restart, and delete the workload.
 
     ![image](../images/depyaml05.png)
 
 ## YAML example
 
-The YAML editor that comes with the multi-cloud orchestration module will automatically detect the YAML syntax, and if there is an error, a relevant prompt will appear.
+The YAML editor that comes with the multicloud orchestration module will automatically detect the YAML syntax, and if there is an error, a relevant prompt will appear.
 Here are some common examples that you can use with a little modification.
 
 **Deployment example**

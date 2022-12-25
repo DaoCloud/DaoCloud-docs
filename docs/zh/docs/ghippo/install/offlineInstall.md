@@ -6,9 +6,11 @@
 
     下述命令或脚本内出现的 `ghippo` 字样是全局管理模块的内部开发代号。
 
-## 同步镜像到镜像仓库
+## 从安装包中加载镜像
 
-先通过 chart-syncer 同步镜像到指定的镜像仓库。
+您可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择chart-syncer同步镜像到镜像仓库，该方法更加高效便捷。
+
+### chart-syncer同步镜像到镜像仓库
 
 1. 创建 load-image.yaml
 
@@ -22,8 +24,7 @@
 
         ```yaml
         source:
-          intermediateBundlesPath: ghippo-offline # 到 charts-syncer 的相对路径
-                                        # 但不是此 YAML 文件和离线包之间的相对路径
+          intermediateBundlesPath: ghippo-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
         target:
           containerRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
           containerRepository: release.daocloud.io/ghippo # 需更改为你的镜像仓库
@@ -45,8 +46,7 @@
 
         ```yaml
         source:
-          intermediateBundlesPath: ghippo-offline # 到 charts-syncer 的相对路径
-                                    # 但不是此 YAML 文件和离线包之间的相对路径
+          intermediateBundlesPath: ghippo-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
         target:
           containerRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
           containerRepository: release.daocloud.io/ghippo # 需更改为你的镜像仓库
@@ -65,7 +65,7 @@
     charts-syncer sync --config load-image.yaml
     ```
 
-## 加载镜像文件
+### docker或containerd直接加载
 
 解压并加载镜像文件。
 
@@ -96,7 +96,7 @@
         ```
 
 !!! note
-
+    每个node都需要做进行docker或containerd加载镜像操作
     加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
 
 ## 升级

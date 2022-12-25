@@ -1,76 +1,76 @@
-# Istio 资源管理
+# Istio resource management
 
-`Istio 资源管理`页面按资源类型列出了 Istio 的所有资源，为用户提供了各类资源的展示、创建、编辑、删除等能力。
+The `Istio Resource Management` page lists all Istio resources by resource type, providing users with the ability to display, create, edit, and delete various resources.
 
 ![img](../../images/istio01.png)
 
-本页面提供了以下几种资源类型：
+This page provides the following resource types:
 
-### 流量治理类
+### Traffic management class
 
-| **资源类型**                | **描述**                                                     |
-| --------------------------- | ------------------------------------------------------------ |
-| DestinationRule（目标规则） | 目标规则是服务治理中重要的组成部分，目标规则通过端口、服务版本等方式对请求流量进行划分，并对各请求分流量订制 Envoy 流量策略，应用到流量的策略不仅有负载均衡，还有最小连接数、熔断等。 |
-| EnvoyFilter                 | 该资源提供了对 Envoy 配置的能力，可以定义新的过滤器、监听器\集群等。使用该资源时需谨慎，错误配置可能会对整个网格环境的稳定性造成较大影响。  注意：  <br> - EnvoyFilter  可以配置在Istio根目录（对所有工作负载生效）或某个工作负载（使用工作负载选择标签）；  <br> - 当多个 EnvoyFilter 作用于同一个工作负载时，会按创建顺序优先执行； |
-| Gateway（网关规则）         | 网关规则用于定义网格边缘的负载均衡器，用于将服务暴露于网格之外，或提供内部服务的对外访问。相较于k8s的ingress对象，istio的网关规则增加了更多的功能：  l L4-L6负载均衡  l 对外mTLS  l SNI的支持  l 其他istio中已经实现的内部网络功能： Fault  Injection，Traffic Shifting， Circuit Breaking， Mirroring  对于L7的支持，网关规则通过与虚拟服务配合实现。 |
-| ProxyConfig                 | 用于暴露代理的配置选项，例如：代理的线程数。该资源为可选资源，如不创建，系统将使用内建默认值；  注意：<br> - ProxyConfig 中任何配置变更需要重启相关工作负载才会生效；<br > - 作用于网格或命名空间的 ProxyConfig 不可以包含任何工作负载选择标签，否则将仅作用于选定的工作负载； |
-| WorkloadEntry               | 该资源提供了对非k8s标准工作负载的描述，例如：运行于虚拟机的工作负载。WorkloadEntry需要与服务条目配合使用，由服务条目通过筛选器建立服务与工作负载之间的对应关系； |
-| ServiceEntry（服务条目）    | 服务条目允许向Istio的内部服务注册表中添加其他条目，以便网格中自动发现的服务可以访问/路由到这些手动指定的服务。服务条目描述服务的属性包括：DNS名称、VIP、端口、协议、端点等。这些服务可以是网格外部的（例如：web API）或网格内部无法自动注册的服务（例如：一个数据库，几个VM）。 |
-| SideCar                     | Sidecar用于描述边车对工作负载实例之间的流量转发配置。默认情况下，Istio将支持转发网格中所有工作负载实例之间的通信，并接受与工作负载相关的所有端口流量。  注意：<br> - 根命名空间下的 SideCar 对所有没有配置 SideCar 的命名空间及工作负载生效；<br> - 任意命名空间或工作负载如果存在多个 SideCar，将被定义为行为未定义（无生效资源）； |
-| VirtualService（虚拟服务）  | 在虚拟服务中，提供了 HTTP、TCP、TLS 三种协议的路由支持，可以通过多种匹配方式（端口、host、header 等）实现对不同的地域、用户请求做路由转发，分发至特定的服务版本中，按权重比划分负载，并提供了故障注入、流量镜像等多种治理工具。 |
-| WorkloadGroup               | WorkloadGroup  描述了工作负载实例的集合，定义了工作负载实例引导代理的规范细节，包括元数据和标识。WorkloadGroup 仅用于非 Kubernetes 工作负载，模拟 Kubernetes 中边车注入和部署方式，引导 Istio 代理， |
+| **Resource Type** | **Description** |
+| --------------------------- | --------------------- ------------------------------------------ |
+| DestinationRule (target rule) | Destination rule is an important part of service governance. Destination rule divides request traffic by port, service version, etc., and customizes Envoy traffic policy for each request traffic, and applies it to the traffic policy Not only load balancing, but also the minimum number of connections, fuses, etc. |
+| EnvoyFilter | This resource provides the ability to configure Envoy, which can define new filters, listeners\clusters, etc. Be cautious when using this resource. Misconfiguration may have a great impact on the stability of the entire grid environment. Note: <br> - EnvoyFilter can be configured in the Istio root directory (effective for all workloads) or a certain workload (use the workload selection tag); <br> - When multiple EnvoyFilters act on the same workload, they will Priority execution in order of creation; |
+| Gateway (gateway rules) | Gateway rules are used to define the load balancer at the edge of the grid, to expose services outside the grid, or to provide external access to internal services. Compared with the ingress object of k8s, the gateway rule of istio adds more functions: l L4-L6 load balancing l external mTLS l SNI support l other internal network functions already implemented in istio: Fault Injection, Traffic Shifting, Circuit Breaking, image For the support of L7, gateway rules are realized by cooperating with virtual services. |
+| ProxyConfig | Used to expose configuration options for the proxy, such as the number of threads for the proxy. This resource is optional, if not created, the system will use the built-in default value; Note:<br> - Any configuration changes in ProxyConfig need to restart the related workload to take effect;<br > - Act on the grid or namespace The ProxyConfig cannot contain any workload selection tags, otherwise it will only be applied to the selected workload; |
+| WorkloadEntry | This resource provides a description of non-k8s standard workloads, such as workloads running on virtual machines. WorkloadEntry needs to be used in conjunction with service entries, and service entries establish the correspondence between services and workloads through filters; |
+| ServiceEntry (Service Entry) | ServiceEntry allows adding additional entries to Istio's internal service registry so that auto-discovered services in the mesh can access/route to these manually specified services. The service entry describes the attributes of the service, including: DNS name, VIP, port, protocol, endpoint, etc. These services can be external to the grid (eg: web API) or services inside the grid that cannot be registered automatically (eg: a database, several VMs). |
+| SideCar | Sidecar is used to describe the traffic forwarding configuration between a sidecar pair of workload instances. By default, Istio will support forwarding communication between all workload instances in the mesh and accept all port traffic related to the workload. Note: <br> - The SideCar under the root namespace takes effect for all namespaces and workloads that are not configured with SideCar; <br> - if there are multiple SideCars in any namespace or workload, it will be defined as undefined behavior (no effective resource); |
+| VirtualService (virtual service) | In the virtual service, it provides routing support for HTTP, TCP, and TLS protocols, and can implement routing for different regions and user requests through multiple matching methods (port, host, header, etc.) Forwarding, distribution to specific service versions, dividing the load according to the weight ratio, and providing various governance tools such as fault injection and traffic image. |
+| WorkloadGroup | A WorkloadGroup describes a collection of workload instances and defines the specification details of a workload instance bootstrap agent, including metadata and identity. WorkloadGroup is only for non-Kubernetes workloads, simulate sidecar injection and deployment in Kubernetes, bootstrap Istio proxy, |
 
-### 安全治理类
+### Security Governance Class
 
-| **资源类型**                          | **描述**                                                     |
-| ------------------------------------- | ------------------------------------------------------------ |
-| AuthorizationPolicy（授权策略）       | 授权策略类似于一种四层到七层的“防火墙”，它会像传统防火墙一样，对数据流进行分析和匹配，然后执行相应的动作。无论是来自外部的请求，或是网格内服务间的请求，都适用授权策略。 |
-| PeerAuthentication（对等身份认证）    | 对等身份认证提供服务间的双向安全认证，同时密钥以及证书的创建、分发、轮转也都由系统自动完成，对用户透明，从而大大降低了安全配置管理的复杂度。 |
-| RequestAuthentication（请求身份认证） | 请求身份认证用于外部用户对网格内部服务发起请求的认证，用户使用jwt实现请求加密；每个请求身份认证需要配置一个授权策略 |
+| **Resource Type** | **Description** |
+| ----------------------------------------- | ----------- -------------------------------------------------- |
+| AuthorizationPolicy (authorization policy) | Authorization policy is similar to a four-layer to seven-layer "firewall". It will analyze and match the data flow like a traditional firewall, and then perform corresponding actions. Whether it is a request from the outside or a request between services in the grid, the authorization policy is applicable. |
+| PeerAuthentication (peer-to-peer identity authentication) | Peer-to-peer identity authentication provides two-way security authentication between services. At the same time, the creation, distribution, and rotation of keys and certificates are also automatically completed by the system, which is transparent to users, thus greatly reducing security configuration management. of complexity. |
+| RequestAuthentication (request identity authentication) | Request identity authentication is used for authentication of requests initiated by external users to internal services of the grid. Users use jwt to implement request encryption; each request identity authentication needs to configure an authorization policy |
 
-### 代理扩展类
+### Proxy extension class
 
-| **资源类型** | **描述**                                                     |
-| ------------ | ------------------------------------------------------------ |
-| WasmPlugin   | WasmPlugin  通过WebAssembly过滤器为Istio代理提供扩展功能，其提供的过滤器能力可以和Istio内部过滤器形成复杂交互关系。 |
+| **Resource Type** | **Description** |
+| ------------ | ------------------------------------ ------------------------ |
+| WasmPlugin | WasmPlugin provides extended functions for the Istio proxy through the WebAssembly filter, and the filter capability it provides can form a complex interactive relationship with the internal filter of Istio. |
 
-### 系统设置类
+### System settings class
 
-| **资源类型** | **描述**                                                     |
-| ------------ | ------------------------------------------------------------ |
-| Telementry   | 该资源定义了如何为网格内的工作负载生成遥测，为Istio提供了指标、日志、全链路追踪三项可观测性工具的配置。  注意：创建在Istio根目录并且不包含工作负载选择器的遥测资源将对网格全局生效。 |
+| **Resource Type** | **Description** |
+| ------------ | ------------------------------------ ------------------------ |
+| Telementry | This resource defines how to generate telemetry for workloads in the grid, and provides Istio with the configuration of three observability tools: metrics, logs, and full link tracing. Note: Telemetry resources created in the Istio root directory and without workload selectors will be globally available to the grid. |
 
-## UI 操作示例
+## UI operation example
 
-用户可以用 YAML 形式对资源进行增删改查操作。此处是一个 telementry 遥测资源的创建/删除示例。
+Users can add, delete, modify and query resources in the form of YAML. Here is an example creation/deletion of a telemetry resource.
 
-1. 在左侧导航栏中点击`网格配置` -> `Istio 资源管理`，点击右上角的 `YAML 创建`按钮。
+1. Click `Grid Configuration` -> `Istio Resource Management` in the left navigation bar, and click the `Create with YAML` button in the upper right corner.
 
-    ![img](../../images/istio01.png)
+     ![img](../../images/istio01.png)
 
-2. 在 YAML 创建页面中，输入正确的 YAML 语句后点击`确定`。
+2. On the Create with YAML page, enter the correct YAML statement and click `OK`.
 
-    ![img](../../images/istio02.png)
+     ![img](../../images/istio02.png)
 
-    ```yaml
-    apiVersion: telemetry.istio.io/v1alpha1
-    kind: Telemetry
-    metadata:
-      name: namespace-metrics
-      namespace: default
-    spec:
-      # 未指定选择算符，应用到命名空间中的所有工作负载
-      metrics:
-      - providers:
-        - name: prometheus
-        overrides:
-        - tagOverrides:
-    ​        request_method:
-    ​          value: "request.method"
-    ​        request_host:
-    ​          value: "request.host"
-    ```
+     ```yaml
+     apiVersion: telemetry.istio.io/v1alpha1
+     kind: Telemetry
+     metadata:
+       name: namespace-metrics
+       namespace: default
+     spec:
+       # Unspecified selector, applies to all workloads in the namespace
+       metrics:
+       -providers:
+         -name: prometheus
+         overrides:
+         - tagOverrides:
+     ​ request_method:
+     ​ value: "request.method"
+     ​ request_host:
+     ​ value: "request.host"
+     ```
 
-3. 返回资源列表，点击操作一列的 `⋮` 按钮，可以从弹出菜单中选择编辑和删除等更多操作。
+3. Return to the resource list, click the `⋮` button in the operation column, and you can select more operations such as edit and delete from the pop-up menu.
 
-    ![img](../../images/istio03.png)
+     ![img](../../images/istio03.png)

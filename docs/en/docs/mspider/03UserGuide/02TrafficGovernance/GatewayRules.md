@@ -1,11 +1,11 @@
 # Gateway rules
 
-Gateway rules (Gateway) are used to expose services outside the grid. Compared with Kubernetes ingress objects, istio-gateway adds more functions:
+Gateway rules (Gateway) are used to expose services outside the mesh. Compared with Kubernetes ingress objects, istio-gateway adds more functions:
 
 - L4-L6 load balancing
 - Outgoing mTLS
 - SNI support
-- Other internal network functions already implemented in Istio: Fault Injection, Traffic Shifting, Circuit Breaking, Mirroring
+- Other internal network functions already implemented in Istio: Fault Injection, Traffic Shifting, Circuit Breaking, image
 
 ## Concept introduction
 

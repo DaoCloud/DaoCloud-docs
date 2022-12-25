@@ -9,7 +9,7 @@ The container management platform has the following advantages:
 
 **Unified management of clusters**
 
-- Supports unified management of different clusters, supports any Kubernetes cluster within a specific version range to be included in the scope of container management, realizes unified management of on-cloud, off-cloud, multi-cloud, and hybrid cloud container cloud platforms, and avoids vendor lock-in.
+- Supports unified management of different clusters, supports any Kubernetes cluster within a specific version range to be included in the scope of container management, realizes unified management of on-cloud, off-cloud, multicloud, and hybrid cloud container cloud platforms, and avoids vendor lock-in.
 
 - The smooth upgrade of the Kubernetes cluster can be completed with one click through the web interface.
 
@@ -21,7 +21,7 @@ The container management platform has the following advantages:
 
 **Application production ready**
 
-- One-stop application distribution, which can distribute applications through mirroring, YAML, and Helm, and realize unified management across clouds/clusters.
+- One-stop application distribution, which can distribute applications through image, YAML, and Helm, and realize unified management across clouds/clusters.
 
 - High availability of applications, support for distributed deployment of applications, and automatic switching of single-point-of-failure traffic.
 
@@ -38,11 +38,11 @@ The container management platform has the following advantages:
 - High availability of cross-regional applications, supports the deployment of different container clusters across regions, and can deploy services on multiple cloud container clusters in different regions at the same time, helping applications to achieve multi-regional traffic distribution.
   When a cloud container cluster fails, the computer room goes down, or a natural disaster occurs, the business traffic is automatically switched to other cloud container platforms through a unified traffic distribution mechanism to ensure high availability of applications.
 
-- A complete user permission system, integrating [Kubernetes RBAC permission system](https://kubernetes.io/zh-cn/docs/reference/access-authn-authz/rbac/), supports setting different granular permissions for different users.
+- A complete user permission system, integrating [Kubernetes RBAC permission system](https://kubernetes.io/docs/reference/access-authn-authz/rbac/), supports setting different granular permissions for different users.
 
 **Heterogeneous compatibility**
 
-- Provides highly automated and elastic heterogeneous multi-cloud support capabilities, adapting to x86 and Xinchuang cloud architecture.
+- Provides highly automated and elastic heterogeneous multicloud support capabilities, adapting to x86 and Xinchuang cloud architecture.
 
 - Supports unified deployment of x86 and ARM architecture mixed clusters, unified management and support for application operation, and guarantees network interoperability between applications.
 

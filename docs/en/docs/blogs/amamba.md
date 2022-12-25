@@ -1,130 +1,130 @@
-# 5.0 应用工作台能力介绍
+# 5.0 Application workbench capability introduction
 
-如今随着云原生理念迅速普及，云原生技术给企业数字化转型的过程中带来了巨大的便利。但是企业云原生过程化中面临着一些列挑战：
+Nowadays, with the rapid popularization of cloud-native concepts, cloud-native technology brings great convenience to enterprises in the process of digital transformation. However, enterprises face a series of challenges in the cloud-native process:
 
-- 多租户设计下如何满足逻辑层面的资源隔离？如何满足物理资源的隔离？
-- 频繁的持续构建，如何及时在更早的阶段找到问题、修复 bug，持续保证代码和环境符合预期？
-- 云原生下的技术种类复杂，如何利用好云原生建设云原生下的 CI/CD 系统？
-- 云原生技术带来了应用部署复杂性，如何降低开发者的认知负担？
-- 全自动的应用部署，如何让新功能发布可控、可预测、可逆？
+- How to satisfy resource isolation at the logical level under the multi-tenant design? How to satisfy the isolation of physical resources?
+- Frequent continuous builds, how to find problems and fix bugs at an earlier stage in time, and continue to ensure that the code and environment meet expectations?
+- The types of technologies under Cloud Native are complex. How to make good use of Cloud Native to build a CI/CD system under Cloud Native?
+- Cloud-native technology brings complexity to application deployment. How to reduce the cognitive burden on developers?
+- Fully automatic application deployment, how to make the release of new functions controllable, predictable, and reversible?
 
-面对这样的挑战，DCE 5.0 基于 Kubernetes 等云原生技术打造的应用工作台应运而生，集 DaoCloud DevOps 实践、云原生社区前沿研发理念于一体。
-为企业建立一套自动化的从源代码构建到持续部署应用，且可以覆盖云原生下所有形态应用全生命周期管理的开发运维一体化的环境。帮助企业缩短研发周期，提供应用交付效率。
+In the face of such challenges, DCE 5.0 is based on cloud-native technologies such as Kubernetes. The application workbench came into being, integrating DaoCloud DevOps practice and the cutting-edge research and development concepts of the cloud-native community.
+Establish a set of automated development, operation and maintenance integrated environment for enterprises from source code construction to continuous deployment of applications, and can cover the full lifecycle management of all forms of cloud-native applications. Help enterprises shorten the R&D cycle and improve application delivery efficiency.
 
-## 图形化用户交互
+## Graphical user interaction
 
-数字经济时代，云原生的应用已成为企业数字化转型的必选项，所以应用工作台以应用为中心，基于 DevOps 理念，解决云原生应用开发、自动化交付、运维全生命周期。降低企业应用云原生门槛，提高应用交付频率。应用工作台涉及：层级多租户资源、云原生应用、流水线CI/CD 流水线、GitOps、渐进式交付等模块。
+In the digital economy era, cloud-native applications have become a must for digital transformation of enterprises. Therefore, the application workbench is application-centric and based on the DevOps concept to solve the entire lifecycle of cloud-native application development, automated delivery, and operation and maintenance. Lower the threshold of cloud-native enterprise applications and increase the frequency of application delivery. The application workbench involves: hierarchical multi-tenant resources, cloud-native applications, pipeline CI/CD pipeline, GitOps, progressive delivery and other modules.
 
-用户在使用过程中主要存在三个阶段：**开发阶段、交付阶段、运维阶段。**
+There are three main stages in the user's use process: **development stage, delivery stage, operation and maintenance stage. **
 
-1. **在开发阶段**：应用工作台提供了流水线功能，企业可以在流水线中定义编译代码、代码检查、构建云原生制品流程，帮助开发者及时测试代码，从而提高代码质量。另外整个流水线一次设置，多次复用，大大降低了开发人员的工作负担，减少了不必要的重复劳动。
+1. **In the development stage**: The application workbench provides the pipeline function. Enterprises can define the process of compiling code, code inspection, and building cloud native products in the pipeline to help developers test code in time, thereby improving code quality. In addition, the entire pipeline is set up once and reused multiple times, which greatly reduces the workload of developers and reduces unnecessary duplication of labor.
 
-2. **在交付阶段**：应用工作台给予目前GitOps 理念，以自动化方式，频繁且持续性的将企业的应用部署到生产环境。作为上一阶段的延伸，自动化的持续部署起到了承上启下的作用，是对软件的研发的全流程管控的闭环。应用工作台可自动且持续监测代码仓库与生产环境中的应用进行比对，来确保生产环境与仓库中的期望状态保持一致，以实现全自动化部署。另外应用工作台还支持在持续部署的基础上对接外部能力，从而实现渐进式交付下的灰度发布等高级发布策略。
+2. **In the delivery stage**: The application workbench gives the current GitOps concept, and deploys enterprise applications to the production environment frequently and continuously in an automated manner. As an extension of the previous stage, automated continuous deployment serves as a link between the past and the future, and is a closed-loop control of the entire process of software development. The application workbench can automatically and continuously monitor the codebase and compare it with the application in the production environment to ensure that the production environment is consistent with the expected state in the registry to achieve fully automated deployment. In addition, the application workbench also supports the docking of external capabilities on the basis of continuous deployment, so as to realize advanced release strategies such as grayscale release under progressive delivery.
 
-3. **在运维阶段**：应用工作台针对多种形态的云原生应用，提供了统一的观测平面，包含监控、告警、日志等信息。还提供了对应用升级、回滚、停止和删除应用等功能。
+3. **In the operation and maintenance phase**: The application workbench provides a unified observation plane for various forms of cloud-native applications, including monitoring, alarms, logs and other information. It also provides functions such as application upgrade, rollback, stop and delete application.
 
 ![img](images/amamba01.png)
 
-## 功能特性
+## Features
 
-应用工作台提供了层级资源管理、云原生应用、CI/CD流水线、GitOps、渐进式交付核心服务，来满足企业不同场景的需求。
+The application workbench provides hierarchical resource management, cloud-native applications, CI/CD pipelines, GitOps, and progressive delivery core services to meet the needs of different scenarios of the enterprise.
 
-### 层级资源管理
+### Hierarchical resource management
 
-在企业环境中，企业下的每一个部门由不同的项目构成，一个一个的项目就映射到了我们的工作空间（workspace）。下图是应用工作台提供了基于Kubernetes的多租户管理方案。
+In the enterprise environment, each department under the enterprise is composed of different projects, and each project is mapped to our workspace (workspace). The figure below shows the Kubernetes-based multi-tenant management solution provided by the application workbench.
 
 ![img](images/amamba02.png)
 
-前提条件：用户可以在5.0全局管理模块被设置为工作空间的管理员来参与工作空间的管理，从而参与项目的协同。
+Precondition: Users can be set as the administrator of the workspace in the 5.0 global management module to participate in the management of the workspace, thereby participating in the collaboration of the project.
 
-特点：
+Features:
 
-- 工作空间是最小的租户单元。
-- 工作空间支持弱绑定集群的模式，从而使用户获得跨集群、跨命名空间共享资源的能力。
-- 工作空间支持强绑定集群的模式，从而使用户获得独享集群资源的能力。
-- 工作空间的管理员可以在该工作空间关联的集群中创建命名空间资源，并为命名空间进行配额管理。
+- A workspace is the smallest tenant unit.
+- The workspace supports the mode of weakly bound clusters, so that users can obtain the ability to share resources across clusters and namespaces.
+- The workspace supports the mode of strongly binding clusters, so that users can obtain the ability to exclusively enjoy cluster resources.
+- The administrator of a workspace can create namespace resources in the cluster associated with the workspace and manage quotas for the namespace.
 
-支持多种形态云原生应用的部署，包括源代码、Jar 包、镜像一键完成应用部署，并且在创建过程中可使用微服务的注册发现、服务治理能力，还支持通过应用商城一键部署Helm 应用、OLM应用。降低了企业上云的门槛，简单易用、敏捷高效。
+Supports the deployment of various forms of cloud-native applications, including source code, Jar packages, and images to complete application deployment with one click, and can use the registration discovery and service governance capabilities of microservices during the creation process, and also supports one-click deployment of Helm through the application store application, OLM application. It lowers the threshold for enterprises to go to the cloud, and is easy to use, agile and efficient.
 
-### 云原生应用
+### Cloud Native Applications
 
-应用工作台以应用为中心，涵盖了云原生技术下多种形态的应用，应用工作台对云原生社区内的不用形态应用采取了更包容的态度，而不是按照自己对应用的理解，在平台中定义一套自己的应用规范。旨在帮助用户无需学习云原生知识，即可“用好云”。
+The application workbench is application-centric and covers various forms of applications under the cloud-native technology. The application workbench adopts a more inclusive attitude towards the different forms of applications in the cloud-native community, rather than following its own understanding of the application on the platform. Define a set of own application specifications in . It aims to help users "use the cloud well" without learning cloud-native knowledge.
 
-目前应用工作台支持的云原生应用有：
+The cloud-native applications currently supported by the application workbench include:
 
 ![img](images/amamba03.png)
 
-应用工作台面向应用开发和运维，覆盖应用全生命周期，包括应用的创建、删除、 配置修改、自动扩缩及自动运维。
-并且支持 SpringCloud、Dubbo、ServiceMesh 服务治理架构，与 [5.0 微服务引擎](../skoala/intro/features.md)、[5.0 服务网格](../mspider/01Intro/WhatismSpider.md)无缝集成：
+The application workbench is oriented towards application development and operation and maintenance, covering the entire application lifecycle, including application creation, deletion, configuration modification, automatic scaling, and automatic operation and maintenance.
+And support SpringCloud, Dubbo, ServiceMesh service governance architecture, and [5.0 Microservice Engine](../skoala/intro/features.md), [5.0 Service Grid](../mspider/01Intro/WhatismSpider.md) Seam integration:
 
 ![img](images/amamba04.png)
 
-### CI/CD 流水线
+### CI/CD pipeline
 
-流水线是一个自定义的 CI/CD 流水线模式，定义了包含构建、测试和发布的完整构建过程。应用工作台基于流水线能力具有以下优势：
+Pipeline is a custom CI/CD pipeline pattern that defines a complete build process including build, test, and release. The application workbench has the following advantages based on the pipeline capability:
 
-- 不同来源构建应用：支持使用源码、软件包（Jar）实现应用的一键部署。
-- 双引擎：支持 Jenkins 和 Tekton 作为应用工作台的流水线系统引擎。
-- 丰富的流水线模板：内置了多条流水线官方模板，大大降低了用户的使用门槛，可以适应不同业务场景，满足用户的日常需求。
+- Build applications from different sources: support one-click deployment of applications using source code and software packages (Jar).
+- Dual Engines: Supports Jenkins and Tekton as Pipeline Engines for Application Workbench.
+- Abundant pipeline templates: multiple official pipeline templates are built in, which greatly reduces the threshold for users to use, and can adapt to different business scenarios and meet the daily needs of users.
 
 ![img](images/amamba05.png)
 
 ### GitOps
 
-GitOps 是一种为云原生应用实现持续部署的理念。应用工作台全面拥抱 GitOps，GitOps 的核心思想是拥有一个 Git 仓库，并将应用系统的申明式基础架构和应用程序存放在 Git 仓库中进行版本控制。
-GitOps 结合 Kubernetes 能够利用自动交付流水线将更改应用到指定的任意多个集群中，从而解决跨云部署的一致性问题。
+GitOps is a philosophy of continuous deployment for cloud-native applications. The application workbench fully embraces GitOps. The core idea of GitOps is to have a Git registry, and store the declarative infrastructure and applications of the application system in the Git registry for version control.
+GitOps combined with Kubernetes can use automatic delivery pipelines to apply changes to any number of specified clusters, thereby solving the problem of consistency across cloud deployments.
 
 ![img](images/amamba06.png)
 
-### 渐进式发布
+### Progressive release
 
-为了应用部署的安全性，企业都采取了灰度发布的解决方案，这种部署策略使应用部署更加安全，但是仍然缺乏自动化。将服务发布到生产和分析指标的过程仍然是一个手动过程。这将促使我们进入下一阶段，即渐进式交付。
+In order to ensure the security of application deployment, enterprises have adopted the grayscale release solution. This PropagationPolicy makes application deployment more secure, but it still lacks automation. The process of publishing services to production and analyzing metrics remains a manual process. This will drive us to the next phase, progressive delivery.
 
-应用工作台基于 Argo Rollouts 实现了渐进式的灰度发布，可以让开发人员可以选择他们自己的分析指标，自定义他们的渐进式发布的步骤，甚至选择他们自己的入口或服务网格提供商来进行流量控制。
+The application workbench implements progressive grayscale release based on Argo Rollouts, allowing developers to choose their own analysis indicators, customize their progressive release steps, and even choose their own portal or service mesh provider to Perform flow control.
 
 ![img](images/amamba07.png)
 
-## 常见问答
+## Frequently Asked Questions
 
-1. **什么是 DevOps**
+1. **What is DevOps**
 
-    DevOps 是开发 (Dev) 和运营 (Ops) 的综合体，是指将开发、质量保证和 IT 运营集成到统一的环境以及软件交付过程中。
-    通过采用 DevOps 文化、做法和工具，企业能够更好地响应业务需求、更快的构建应用程序，并更快地实现业务目标。
+     DevOps is the integration of development (Dev) and operations (Ops), referring to the integration of development, quality assurance and IT operations into a unified environment and software delivery process.
+     By adopting a DevOps culture, practices, and tools, organizations can respond better to business needs, build applications faster, and achieve business goals faster.
 
-    DevOps 包括以下活动和操作：
+     DevOps includes the following activities and operations:
 
-    - **持续集成 (CI)** 是指如下的做法：将所有开发人员代码频繁合并到一个中央代码库中，然后执行自动化生成和测试过程。
-      目标是快速发现和纠正代码问题、简化部署并确保代码质量。
-    - **持续交付 (CD)** 是指如下的做法：自动生成、测试代码并将其部署到类似生产的环境。目标是确保代码始终可供部署。
-      添加持续交付来创建完整 CI/CD 流水线的做法有助于尽早检测到代码缺陷。并确保能够在极短的时间内发布已经过适当测试的更新。
-    - **持续部署** 是一个附加的过程，可自动引入通过 CI/CD 流水线传递的所有更新，并将其部署到生产环境。
-      持续部署需要可靠的自动测试和高级过程规划， 不一定适合所有团队。
-    - **持续监视** 是指在 DevOps 和 IT 运营生命周期的每个阶段中整合监视功能所要采用的流程和技术。
-      监视有助于确保应用程序在从开发环境转移到生产环境时，应用程序和基础结构保持正常的运行状况、性能和可靠性。持续监视是基于 CI 和 CD 的概念。
+     - **Continuous Integration (CI)** refers to the practice of frequently merging all developer code into a central code repository, followed by an automated build and test process.
+       The goal is to quickly find and correct code issues, simplify deployment, and ensure code quality.
+     - **Continuous Delivery (CD)** refers to the practice of automatically generating, testing, and deploying code to a production-like environment. The goal is to ensure that the code is always ready for deployment.
+       Adding continuous delivery to create a full CI/CD pipeline helps detect code defects early. And make sure that properly tested updates can be released in a very short time.
+     - **Continuous Deployment** is an additional process that automatically pulls in and deploys all updates passed through a CI/CD pipeline to production.
+       Continuous deployment requires solid automated testing and advanced process planning, and may not be suitable for all teams.
+     - **Continuous Monitoring** refers to the processes and techniques to incorporate monitoring capabilities at every stage of the DevOps and IT operations lifecycle.
+       Monitoring helps ensure that applications and infrastructure maintain proper health, performance, and reliability as applications move from development to production. Continuous monitoring is based on the concepts of CI and CD.
 
-1. **什么是流水线？**
+1. **What is a pipeline? **
 
-    流水线可以自动生成和测试代码项目，使其可供他人使用。
-    适用于任何语言或项目类型。将持续集成 (CI) 和持续交付 (CD) 组合在一起，可以测试并生成代码，并将代码发送给任何目标。
-    应用工作台还支持可视化的方式来编排流水线，企业可以将现有研发流程通过流水线以可视化的方式呈现出来。
+     Pipelines can automatically generate and test code projects, making them available to others.
+     Works with any language or project type. Combine continuous integration (CI) and continuous delivery (CD) to test and generate code and send it to any target.
+     The application workbench also supports a visual way to organize the pipeline, and the enterprise can visualize the existing R&D process through the pipeline.
 
-1. **流水线如何构建一个应用程序？**
+1. How does **pipeline build an application? **
 
-    应用工作台提供了从 Git 导入代码、上传 Jar 包来创建应用程序。
-    在创建的过程中，只要填写流水线所需的部分信息，应用工作台就会帮您创建一条流水线资源，自动化完成从源码构建、测试、发布应用至 Kubernetes 集群环境中。
-    旨在帮助企业以更快的速度将软件持续交付，同时降低风险。
+     The application workbench provides importing code from Git, uploading Jar packages to create applications.
+     During the creation process, you only need to fill in part of the information required by the pipeline, and the application workbench will help you create a pipeline resource to automatically build, test, and release the application from source code to the Kubernetes cluster environment.
+     Designed to help companies deliver software continuously at a faster rate while reducing risk.
 
-1. **支持哪些云原生应用？**
+1. Which cloud-native applications does **support? **
 
-    Kubernetes 原生应用、Helm 应用、OAM 应用、OLM 应用。
+     Kubernetes native applications, Helm applications, OAM applications, OLM applications.
 
-1. **如何运维多种形态的云原生应用？**
+1. **How to operate and maintain various forms of cloud-native applications? **
 
-    应用工作台推出以应用为中心，统一观测平面，包含监控、告警、日志等信息。
-    让不同形态的云原生应用运维更轻松方便。
+     The application workbench is centered on the application and has a unified observation plane, including monitoring, alarm, log and other information.
+     Make the operation and maintenance of cloud-native applications in different forms easier and more convenient.
 
-[了解应用工作台](../amamba/01ProductBrief/WhatisAmamba.md){ .md-button }
+[Learn About App Workbench](../amamba/01ProductBrief/WhatisAmamba.md){ .md-button }
 
-[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
-[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Free Trial](../dce/license0.md){ .md-button .md-button--primary }

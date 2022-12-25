@@ -7,12 +7,12 @@ hide:
 
 Service mesh is a next-generation service mesh for cloud-native applications built on Istio open source technology.
 
-Service grid is a fully managed service grid product with high performance and high usability. By providing a complete non-intrusive microservice governance solution, it can uniformly manage the complex environment of multi-cloud and multi-cluster.
+Service mesh is a fully managed service mesh product with high performance and high usability. By providing a complete non-intrusive microservice governance solution, it can uniformly manage the complex environment of multicloud and multi-cluster.
 Provide users with service traffic governance, security governance, service traffic monitoring, and access to traditional microservices (SpringCloud, Dubbo) in the form of infrastructure.
 
 DCE 5.0's service mesh is compatible with the community's native Istio open source service mesh, providing native Istio access management capabilities. At a high level, a service mesh can help reduce the complexity of service governance and reduce the pressure on DevOps teams.
 
-As a member of the DCE 5.0 product system, the service grid is seamlessly connected to the [Container Management](../../kpanda/03ProductBrief/WhatisKPanda.md) platform, which can provide users with an out-of-the-box experience.
+As a member of the DCE 5.0 product system, the service mesh is seamlessly connected to the [Container Management](../../kpanda/03ProductBrief/WhatisKPanda.md) platform, which can provide users with an out-of-the-box experience.
 And as an infrastructure, it provides container microservice governance support for [microservice engine](../../skoala/intro/features.md), which is convenient for users to manage all kinds of microservice systems through a single platform.
 
 The service mesh learning path is as follows:
@@ -22,10 +22,10 @@ flowchart TD
 
     install([install deployment])
     install --> mesh[create mesh]
-        subgraph mesh[create grid]
-            managed[managed grid]
-            private[proprietary grid]
-            external [external grid]
+        subgraph mesh[create mesh]
+            managed[managed mesh]
+            private[proprietary mesh]
+            external [external mesh]
             
         end
 
@@ -89,4 +89,4 @@ flowchart TD
 
 [Download DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }
-[Apply for community free experience](../../dce/license0.md){ .md-button .md-button--primary }
+[Free Trial](../../dce/license0.md){ .md-button .md-button--primary }

@@ -21,4 +21,4 @@ Currently supported features are as follows:
 
 ![kafka main interface](../images/what01.png)
 
-[Apply for community free experience](../../../dce/license0.md){ .md-button .md-button--primary }
+[Free Trial](../../../dce/license0.md){ .md-button .md-button--primary }

@@ -1,368 +1,372 @@
-# 商业产品
+---
+MTPE: todo
+Date: 2022-12-21
+---
+# commercial product
 
-本页按字母顺序列出一些知名商业化产品的更新动态。
+This page lists, in alphabetical order, updates on some well-known commercial products.
 
 ### A
 
-- [Aqua 云原生安全平台引入基于 eBPF 技术的零日漏洞检测工具 Lightning Enforcer](https://blog.aquasec.com/combat-zero-day-threats-with-aquas-ebpf-lightning-enforcer)
+- [Aqua cloud-native security platform introduces Lightning Enforcer, a zero-day vulnerability detection tool based on eBPF technology](https://blog.aquasec.com/combat-zero-day-threats-with-aquas-ebpf-lightning-enforcer)
 
-    Aqua Lightning Enforcer 利用漂移和基于行为的自动化检测方法，检测零日漏洞等未知威胁，并提供事件管理、可疑行为告警以及开箱即用的 CNDR（云本地检测和响应）。
-    此外，eBPF 技术的应用避免了传统代理对工作负载的影响，降低了系统的资源开销。
+     Aqua Lightning Enforcer utilizes drift and behavior-based automated detection methods to detect unknown threats such as zero-day vulnerabilities, and provides incident management, suspicious behavior alerts, and out-of-the-box CNDR (cloud-native detection and response).
+     In addition, the application of eBPF technology avoids the impact of traditional agents on the workload and reduces the resource overhead of the system.
 
-- [Aqua 推出首个端到端软件供应链安全解决方案，保护云原生应用供应链的安全](https://mp.weixin.qq.com/s/8GHg5onYiuzrDvF5a64GxQ)
+- [Aqua launched the first end-to-end software supply chain security solution to protect the security of the cloud-native application supply chain](https://mp.weixin.qq.com/s/8GHg5onYiuzrDvF5a64GxQ)
 
-    该解决方案是 Aqua 云原生应用保护平台的一部分，提供的功能包括：代码扫描、CI/CD 态势管理、流水线安全管理、优化 SBOM 功能、评估开源代码的健康状况和口碑情况。
+     The solution is part of the Aqua cloud-native application protection platform and provides capabilities including: code scanning, CI/CD posture management, pipeline security management, optimization of SBOM functions, assessment of open source code health and reputation.
 
-- [AWS 应用配置工具 AWS AppConfig 推出一个用于容器运行时的代理，简化 feature flag 和运行时的配置](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
+- [AWS AppConfig, an application configuration tool for AWS, launches a proxy for container runtimes to simplify configuration of feature flags and runtimes](https://rafay.co/press-release/rafay-launches-cost-management-service- to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
 
-    AKS 等平台的用户可以使用 AWS AppConfig Agent 管理容器应用配置数据的检索和缓存，以及处理轮询和缓存逻辑等。
-    feature flag 和运行配置功能允许用户无需部署新代码即可发布新的功能。
-    此外，还具备配置安全功能，包括验证器、警报提醒，自动回滚配置等。
+     Users of platforms such as AKS can use the AWS AppConfig Agent to manage the retrieval and caching of container application configuration data, handle polling and caching logic, and more.
+     The feature flag and run configuration feature allows users to release new features without deploying new code.
+     In addition, it also has configuration security features, including validators, alarm reminders, automatic rollback configurations, etc.
 
-- [AWS 推出本地集群，用于在混合云服务 Outposts 上本地运行 EKS 集群](https://aws.amazon.com/about-aws/whats-new/2022/09/amazon-eks-outposts-local-clusters/)
+- [AWS Launches Local Clusters for Running EKS Clusters Locally on Hybrid Cloud Service Outposts](https://aws.amazon.com/about-aws/whats-new/2022/09/amazon-eks-outposts-local -clusters/)
 
-    本地集群减少了因云端网络中断而导致的应用停机风险。在此期间，应用程序仍然可用，并且可以执行集群操作。当连接到云时，EKS 管理 Outposts 上 K8s 控制平面的可用性。本地集群运行的 Kubernetes 与云上 EKS 功能相同，支持自动部署最新的安全补丁。
+     Local clustering reduces the risk of application downtime due to network outages in the cloud. During this time, the application remains available and cluster operations can be performed. EKS manages the availability of the K8s control plane on Outposts when connected to the cloud. The Kubernetes running on the local cluster has the same functions as the EKS on the cloud, and supports automatic deployment of the latest security patches.
 
-- [Azure Serverless 容器平台 Azure Container Apps 十一月更新](https://azure.microsoft.com/en-us/updates/?query=azure%20container%20apps)
+- [Azure Serverless container platform Azure Container Apps November update](https://azure.microsoft.com/en-us/updates/?query=azure%20container%20apps)
 
-    更新内容：无需 Dockerfile 即从源代码构建容器镜像、可以使用 Azure pipeline 任务从 Azure DevOps 构建和部署容器应用、支持从GitHub Actions 工作流中构建和部署容器应用、支持按 IP 限制 Azure 容器应用的入站流量。
+     What's new: Build container images from source code without Dockerfile, use Azure pipeline tasks to build and deploy container applications from Azure DevOps, support building and deploying container applications from GitHub Actions workflows, and support inbound restrictions on Azure container applications by IP flow.
 
-- [Azure Kubernetes 发行版 AKS 11 月更新](https://azure.microsoft.com/en-us/updates/?query=AKS)
+- [Azure Kubernetes distribution AKS November update](https://azure.microsoft.com/en-us/updates/?query=AKS)
 
-    更新内容：支持基于 Azure Arc 在数据中心和边缘节点上运行轻量级 AKS、集成事件路由服务 Event Grid、最大节点限制增加到 5000 个、
-    支持通过 Azure Active Directory 进行工作负载身份管理、推出 Kubernetes 应用市场、新增 CNI 插件 Azure CNI Overlay mode、启用基于 AMD 的机密虚拟机节点池。
+     Updates: support for running lightweight AKS on data centers and edge nodes based on Azure Arc, integrated event routing service Event Grid, increased the maximum node limit to 5000,
+     Support for workload identity management through Azure Active Directory, launch of Kubernetes App Marketplace, new CNI plugin Azure CNI Overlay mode, enabling AMD-based confidential virtual machine node pools.
 
-- [Azure Container Apps (一款Serverless 容器运行时) 更新](https://azure.microsoft.com/en-us/updates/?query=azure%20container%20apps)
+- [Azure Container Apps (a Serverless container runtime) update](https://azure.microsoft.com/en-us/updates/?query=azure%20container%20apps)
 
-    更新内容：Dapr 组件支持通过托管身份验证后端服务提供者、支持 Dapr secrets API、集成监控服务 Azure Monitor。
+     What's new: Dapr components support managed authentication backend service providers, support for Dapr secrets API, and integrated monitoring service Azure Monitor.
 
-- [Azure Kubernetes 发行版 AKS 10 月更新](https://azure.microsoft.com/en-us/updates/?query=AKS)
+- [Azure Kubernetes distribution AKS October update](https://azure.microsoft.com/en-us/updates/?query=AKS)
 
-    更新内容：支持垂直 Pod 自动扩缩容（VPA）、支持下一代 Azure 磁盘存储 Premium SSD v2、新增镜像清理功能、支持开启 IPVS 负载均衡、
-    简化数据库创建和身份管理、允许根据工作负载要求启/禁用 CSI 驱动、新增 Linux 发行版 Mariner 作为容器主机、Azure CNI Powered by Cilium 可用、支持 K8s 1.25、支持 Dapr 1.9。
+     Updates: support for vertical pod auto-scaling (VPA), support for next-generation Azure disk storage Premium SSD v2, new image cleaning function, support for enabling IPVS load balancing,
+     Simplified database creation and identity management, allows enabling/disabling CSI drivers based on workload requirements, added Linux distribution Mariner as a container host, Azure CNI Powered by Cilium is available, supports K8s 1.25, supports Dapr 1.9.
 
-- [Azure Kubernetes 发行版 AKS 9 月更新](https://azure.microsoft.com/en-us/updates/?query=AKS)
+- [Azure Kubernetes distribution AKS September update](https://azure.microsoft.com/en-us/updates/?query=AKS)
 
-    更新内容包括：Azure 容器注册中心新增软删除功能，可恢复误删除的工件；允许中止 AKS 集群或代理池上的任何操作；支持多实例 GPU（MIG）；将 Azure 网络策略管理器（NPM）扩展到 Windows server 2022 的 AKS 集群；集成用于 AKS 私有集群的 API Server VNET。
+     Updates include: Added soft-delete functionality to Azure Container Registry to restore accidentally deleted artifacts; allows aborting any operation on an AKS cluster or proxy pool; supports multi-instance GPU (MIG); extends Azure Network Policy Manager (NPM) AKS cluster to Windows server 2022; integrated API Server VNET for AKS private cluster.
 
-- [阿里云容器服务 ACK 云栖大会更新](https://mp.weixin.qq.com/s/cOObDVvnTGkX_hiAWv8mVA)
+- [Alibaba Cloud Container Service ACK Yunqi Conference Update](https://mp.weixin.qq.com/s/cOObDVvnTGkX_hiAWv8mVA)
 
-    更新内容：提供对 eRDMA 高性能容器网络的支持、基于新一代容器网络文件系统 CNFS 2.0 更好支持有状态应用的容器化、内建云原生混部系统 Koordinator 的产品化支持、发布 AIOps 套件和 FinOps 套件。
+     Update content: Provide support for eRDMA high-performance container network, better support containerization of stateful applications based on the new generation container network file system CNFS 2.0, productization support for built-in cloud-native hybrid system Koordinator, release AIOps suite and FinOps suite.
 
-- [阿里云发布云原生技术中台 CNStack 2.0](https://mp.weixin.qq.com/s/5q8i_BSL8DbdwOUHmBkQ8Q)
+- [Alibaba Cloud releases CNStack 2.0 of cloud-native technology platform](https://mp.weixin.qq.com/s/5q8i_BSL8DbdwOUHmBkQ8Q)
 
-    CNStack 2.0 支持不同厂商、不同架构、不同地域和 CPU/GPU 算力混合管理。提供应用开发、测试、运维全生命周期的一站式管理，场景覆盖容器服务、分布式应用、云边、DevOps。此外，平台还提供了完整的技术栈支持，包括内置的、开箱即用的产品组件和中间件以及原厂和合作伙伴提供的产品及组件。
+     CNStack 2.0 supports mixed management of different vendors, different architectures, different regions and CPU/GPU computing power. Provide one-stop management of the entire lifecycle of application development, testing, and operation and maintenance, and the scenarios cover container services, distributed applications, cloud edge, and DevOps. In addition, the platform also provides a complete technology stack support, including built-in, out-of-the-box product components and middleware, as well as products and components provided by the original factory and partners.
 
-- [阿里云微服务引擎 MSE 10 月更新](https://mp.weixin.qq.com/s/Puud_MYgCMezqKESaAiG-w)
+- [Alibaba Cloud Microservice Engine MSE October Update](https://mp.weixin.qq.com/s/Puud_MYgCMezqKESaAiG-w)
 
-    更新内容：注册配置中心提供迁移工具及方案、云原生网关服务来源支持 Serverless 应用引擎、认证鉴权支持多个规则并存、路由及服务详情页面新增QPS、错误、延迟等指标监控、全链路灰度及标签路由等能力支持 Consul 注册中心。
+     Updates: The registration configuration center provides migration tools and solutions, the cloud-native gateway service source supports the Serverless application engine, authentication and authentication supports the coexistence of multiple rules, the routing and service details page adds QPS, error, delay and other indicator monitoring, and the whole link Capabilities such as grayscale and label routing support the Consul registry.
 
-- [阿里云服务网格 ASM 9 月更新](https://mp.weixin.qq.com/s/tx7iHBzoelS-3xB0UWKK2A)
+- [Alibaba Cloud Service Grid ASM September Update](https://mp.weixin.qq.com/s/tx7iHBzoelS-3xB0UWKK2A)
 
-    更新内容：应用服务治理支持预热功能；支持以试运行模式应用安全策路；优化 sidecar 代理配置；“请求认证〞中新增多种 JWT 算法；支持通过外部授权接入 O1DC 协议服务；支持 K8s 1.24；AHPA 弹性预测支持基于 GPU 指标的预测；日志中心支持网络组件的日志和大盘展示；当 Pod 挂载 OSS 存储卷时，支持 I/O 可观测性。
+     Update content: application service governance supports warm-up function; supports application security policy in trial operation mode; optimizes sidecar proxy configuration; adds a variety of JWT algorithms in "request authentication"; supports access to O1DC protocol services through external authorization; supports K8s 1.24; AHPA Elastic Prediction supports prediction based on GPU indicators; Log Center supports log and large disk display of network components; when Pod mounts OSS storage volumes, it supports I/O observability.
 
-- [阿里云容器服务 ACK 9 月更新](https://mp.weixin.qq.com/s/uI5sw-HwCJf56W9wDcmysw)
+- [Alibaba Cloud Container Service ACK September update](https://mp.weixin.qq.com/s/uI5sw-HwCJf56W9wDcmysw)
 
-    更新内容：新增托管节点池、支持通过 Annotation 为 Service 配置网络配置型负载均衡 NLB 实例、为工作负载提供资源画像功能、支持使用容器网络文件系统对对象存储 OSS Bucket 进行生命周期管理。
+     Updates: Add managed node pools, support configuring network-configured load balancing NLB instances for Services through Annotation, provide resource portrait functions for workloads, and support lifecycle management of object storage OSS Buckets using container network file systems.
 
-- [阿里云服务网格 ASM 八月更新](https://mp.weixin.qq.com/s/BDgNctG90oHpbrRWC0Hxkg)
+- [Alibaba Cloud Service Grid ASM August Update](https://mp.weixin.qq.com/s/BDgNctG90oHpbrRWC0Hxkg)
 
-    更新内容包括：兼容 Istio 1.14 系列版本、支持 Kubernetes 1.21 - 1.24 版本、增强网格诊断功能、支持第三方令牌在 ACK 集群的兼容、支持用户自定义 EnvoyFilter、无需修改代码即可实现同可用区优先路由。
+     Updates include: compatibility with Istio 1.14 series versions, support for Kubernetes 1.21 - 1.24 versions, enhanced grid diagnostics, support for compatibility of third-party tokens in ACK clusters, support for user-defined EnvoyFilter, and priority for the same availability zone without modifying the code routing.
 
-- [BellSoft 推出 Alpaquita Cloud Native Platform，用于高效运行云原生 Java 应用](https://containerjournal.com/features/bellsoft-optimizes-java-for-cloud-native-platform/)
+- [BellSoft launches Alpaquita Cloud Native Platform for efficiently running cloud-native Java applications](https://containerjournal.com/features/bellsoft-optimizes-java-for-cloud-native-platform/)
 
-    [Alpaquita Cloud Native Platform](https://bell-sw.com/cloud-native-platform/) 利用适用于 Java 的 Linux 发行版、JVM 优化、多用途框架和原生镜像技术，提供了一个专为在容器中运行的 Java 应用而优化的运行时环境。该平台特性：云成本降低 20%，使用更小的 Pod，所需节点的数量减少；零迁移成本，不需要重构；效率提升 50%，实现低延迟、低成本、快启动。
+     [Alpaquita Cloud Native Platform](https://bell-sw.com/cloud-native-platform/) leverages a Linux distribution for Java, JVM optimizations, a multipurpose framework, and native mirroring technology to provide a A runtime environment optimized for Java applications running in containers. Features of the platform: Cloud costs are reduced by 20%, smaller Pods are used, and the number of required nodes is reduced; zero migration costs, no refactoring is required; efficiency is increased by 50%, achieving low latency, low cost, and fast startup.
 
 ### C, D
 
-- [CAST AI Kubernetes 成本优化&自动化平台十一月更新](https://cast.ai/release-notes/#november-2022)
+- [CAST AI Kubernetes Cost Optimization & Automation Platform November Update](https://cast.ai/release-notes/#november-2022)
 
-    更新内容：集群再平衡后可以配置最小节点数、为 EKS 用户增加使用存储优化节点进行自动缩放的支持、节点模板支持备选（Fallback）功能、增加对 EKS 和 GKE 集群的 ARM 节点支持。
+     What's new: The minimum number of nodes can be configured after cluster rebalancing, support for autoscaling with storage-optimized nodes for EKS users, support for fallback in node templates, and support for ARM nodes for EKS and GKE clusters.
 
-- [Chainguard 云原生供应链安全平台  Chainguard Enforce 更新](https://www.chainguard.dev/unchained/chainguard-enforce-announces-new-software-signing-capability)
+- [Chainguard Enforce Cloud Native Supply Chain Security Platform Update](https://www.chainguard.dev/unchained/chainguard-enforce-announces-new-software-signing-capability)
 
-    更新内容：提供基于 Sigstore 的无密钥签名模式、增加一个开箱即用的安全策略库、支持用户通过其 Gitlab 账户登录、支持 CloudEvents、支持细粒度的 Kubernetes 工作负载对象的策略、增强大规模集群用户的稳定性。
+     Updates: Provide Sigstore-based keyless signature mode, add an out-of-the-box security policy library, support users to log in through their Gitlab accounts, support CloudEvents, support policies for fine-grained Kubernetes workload objects, and enhance large-scale clusters User stability.
 
-- [D2iQ Kubernetes Platform v2.4.0 发布](https://docs.d2iq.com/dkp/2.4/dkp-2-4-0-features-and-enhancements)
+- [D2iQ Kubernetes Platform v2.4.0 released](https://docs.d2iq.com/dkp/2.4/dkp-2-4-0-features-and-enhancements)
 
-    该版本主要新特性：支持在本地和物理隔离环境中运行 GPU 节点、支持红帽企业 Linux 系统、Rook Ceph 替代 MinIO 成为平台的默认存储、集成 Trivy 等第三方扫描工具。
+     The main new features of this version: support for running GPU nodes in a local and physically isolated environment, support for Red Hat Enterprise Linux systems, Rook Ceph replaces MinIO as the platform's default storage, and integrates third-party scanning tools such as Trivy.
 
-- [D2iQ Kubernetes Platform v2.3 发布](https://docs.d2iq.com/dkp/2.3/2-3-release-notes)
+- [D2iQ Kubernetes Platform v2.3 release](https://docs.d2iq.com/dkp/2.3/2-3-release-notes)
 
-    该版本主要新特性：支持 Kubernetes 1.23、支持多集群环境下的应用配置和部署、支持 Amazon EKS 和 GCP、支持多可用区、支持为每个集群配置自定义域名和证书、增加自助式故障排除能力。
+     The main new features of this version: support for Kubernetes 1.23, support for application configuration and deployment in a multi-cluster environment, support for Amazon EKS and GCP, support for multiple availability zones, support for configuring custom domain names and certificates for each cluster, and adding automaticAssisted troubleshooting capabilities.
 
-- [DaoCloud Enterprise 5.0 发布](https://mp.weixin.qq.com/s/7UkIwCp78trO126XQxEL6A)
+- [DaoCloud Enterprise 5.0 released](https://mp.weixin.qq.com/s/7UkIwCp78trO126XQxEL6A)
 
-    DaoCloud Enterprise 5.0 是自主开放、高性能、可扩展的新一代云原生操作系统。围绕云原生底座延伸能力场景，打通云边壁垒，跨越多云环境，解决信创基础设施兼容难题，提升应用交付效能，使能应用敏捷创新，丰富的数据服务赋能业务系统，融合微服务治理和全局可观测应对庞大业务系统运维管理挑战。
+     DaoCloud Enterprise 5.0 is an independent, open, high-performance, scalable next-generation cloud-native operating system. Focusing on the cloud-native base extension capability scenario, break through cloud-side barriers, cross multi-cloud environments, solve the compatibility problem of Xinchuang infrastructure, improve application delivery efficiency, enable agile innovation of applications, enable business systems with rich data services, and integrate microservice governance and Global observability can meet the challenges of operation and maintenance management of huge business systems.
 
-- [Datadog 推出云安全平台 Cloud Security Management](https://www.datadoghq.com/about/latest-news/press-releases/datadog-launches-cloud-security-management-to-provide-cloud-native-application-protection/)
+- [Datadog Launches Cloud Security Management to Provide Cloud Security Management](https://www.datadoghq.com/about/latest-news/press-releases/datadog-launches-cloud-security-management-to-provide-cloud-native- application-protection/)
 
-    Cloud Security Management 将云安全态势管理、云工作负载安全、警报、事件管理和报告等功能集中在一个平台上，开发和安全团队能够借此识别错误配置、检测威胁并确保云原生应用的安全。
+     Cloud Security Management brings cloud security posture management, cloud workload security, alerting, event management, and reporting together in one platform, enabling development and security teams to identify misconfigurations, detect threats, and secure cloud-native applications.
 
-- [Docker 发布技术预览版 WebAssembly 工具](https://www.docker.com/blog/docker-wasm-technical-preview/)
+- [Docker releases technical preview of WebAssembly tools](https://www.docker.com/blog/docker-wasm-technical-preview/)
 
-    现在，Docker 允许用户使用容器和 Wasm 工件构建云原生应用，将 Wasm 视为 Linux 容器的补充性技术。
-    此外，Docker Engine 继续使用与整体生态系统相统一的 containerd 容器运行时，只不过把负责容器进程运行的 runC 替换成了 WasmEdge 运行时。
+     Docker now allows users to build cloud-native applications using containers and Wasm artifacts, viewing Wasm as a complementary technology to Linux containers.
+     In addition, Docker Engine continues to use the containerd container runtime that is unified with the overall ecosystem, but replaces runC, which is responsible for running the container process, with the WasmEdge runtime.
 
-- [Docker Desktop v4.12.0 发布](https://www.docker.com/blog/integrated-terminal-for-running-containers-extended-integration-with-containerd-and-more-in-docker-desktop-4-12/)
+- [Docker Desktop v4.12.0 released](https://www.docker.com/blog/integrated-terminal-for-running-containers-extended-integration-with-containerd-and-more-in-docker-desktop- 4-12/)
 
-    该版本主要新特性：集成 containerd，使用 containerd 来管理和存储镜像；允许直接通过 Docker 仪表盘在运行的容器中执行命令。
+     The main new features of this version: integrate containerd, use containerd to manage and store images; allow to execute commands in running containers directly through the Docker dashboard.
 
-- [Dynatrace SaaS v1.250 云监控平台发布](https://www.dynatrace.com/support/help/whats-new/release-notes/saas/sprint-250)
+- [Dynatrace SaaS v1.250 Cloud Monitoring Platform Release](https://www.dynatrace.com/support/help/whats-new/release-notes/saas/sprint-250)
 
-    该版本主要新特性：支持检测 Go 应用中的第三方漏洞、在Kubernetes 命名空间页中新增一个 “Kubernetes services” 列、支持通过 service、service name 或 service type 筛选 pod。
+     The main new features of this version: support for detecting third-party vulnerabilities in Go applications, add a "Kubernetes services" column in the Kubernetes namespace page, and support filtering pods by service, service name or service type.
 
-- [Dynatrace 利用人工智能引擎 Davis AI 提供 Kubernetes 根因分析](https://www.dynatrace.com/news/blog/root-cause-analysis-in-kubernetes-with-davis-ai/)
+- [Dynatrace Provides Root Cause Analysis in Kubernetes with Davis AI](https://www.dynatrace.com/news/blog/root-cause-analysis-in-kubernetes-with-davis-ai/)
 
-    Davis AI 因果分析引擎为 Kubernetes 性能问题及其对业务连续性的影响提供根因分析。具体功能：自动化根因分析、支持实时跟踪 Kubernetes 的编排流程、将性能问题与 Pod 驱逐联系起来、支持根据工作负载部署清单的变化来识别与错误配置有关的性能下降问题的原因。
+     The Davis AI causal analysis engine provides root cause analysis of Kubernetes performance issues and their impact on business continuity. Specific features: Automated root cause analysis, support for real-time tracking of Kubernetes orchestration processes, linking performance issues to pod evictions, support for identifying the cause of performance degradation issues related to misconfigurations based on changes in workload deployment inventory.
 
 ### F, G
 
-- [F5 发布中国版容器 Ingress 服务 CIS-C](https://mp.weixin.qq.com/s/4BuiZC8AEnRt-lwT7dNyxg)
+- [F5 released the Chinese version of the container Ingress service CIS-C](https://mp.weixin.qq.com/s/4BuiZC8AEnRt-lwT7dNyxg)
 
-    CIS-C 是一款将 Kubernetes 集群内服务通过 F5 BIG-IP 进行自动化发布的控制器软件。
-    帮助用户打通 Kubernetes 集群与外部入口，将 BIG-IP 应用交付能力集成到 Kubernetes 技术栈的云环境中。
-    它实现了多团队合作，用户可以灵活地、自动化地创建、变更应用或者服务入口策略。
+     CIS-C is a controller software that automatically releases services in a Kubernetes cluster through F5 BIG-IP.
+     Help users connect Kubernetes clusters and external portals, and integrate BIG-IP application delivery capabilities into the cloud environment of the Kubernetes technology stack.
+     It enables multi-team collaboration, and users can flexibly and automatically create and change application or service entry policies.
 
-- [Fortinet 发布云原生防火墙服务 FortiGate CNF](https://www.fortinet.com/blog/business-and-technology/simplify-cloud-security-with-the-fortigate-cloud-native-firewall-on-aws)
+- [Fortinet releases cloud-native firewall service FortiGate CNF](https://www.fortinet.com/blog/business-and-technology/simplify-cloud-security-with-the-fortigate-cloud-native-firewall-on- aws)
 
-    FortiGate CNF 是一个 SaaS 产品，通过与 AWS Gateway Load Balancer、AWS Firewall Manager 等服务的深度云原生集成，支持不同 AWS 环境下的一致安全策略，消除了网络安全的复杂性。此外，还支持下一代防火墙的安全检查功能，提供对应用层的深度可视性，可以保护多个账户、子网、虚拟私有云和可用性区域。
+     FortiGate CNF is a SaaS product that supports consistent security policies in different AWS environments through deep cloud-native integration with services such as AWS Gateway Load Balancer and AWS Firewall Manager, eliminating the complexity of network security. In addition, it supports the security inspection function of the next-generation firewall, provides deep visibility into the application layer, and can protect multiple accounts, subnets, virtual private clouds, and availability zones.
 
-- [GitLab 15.5 发布](https://mp.weixin.qq.com/s/AiRU9pQUxTex0F_XvuHiHg)
+- [GitLab 15.5 released](https://mp.weixin.qq.com/s/AiRU9pQUxTex0F_XvuHiHg)
 
-    该版本主要新特性：在合并请求流水线中运行安全扫描工具、支持 Kubernetes 容器扫描、支持从 GitHub 导入项目时导入更多的关系、新增预定义 DORA（评估 DevOps 效能水平的指标）可视化比较报告。
+     The main new features of this version: run security scanning tools in the merge request pipeline, support Kubernetes container scanning, support importing more relationships when importing projects from GitHub, and add a predefined DORA (indicator for evaluating DevOps effectiveness level) visual comparison report.
 
-- [GitLab 15.4 发布](https://about.gitlab.com/releases/2022/09/22/gitlab-15-4-released/)
+- [GitLab 15.4 Released](https://about.gitlab.com/releases/2022/09/22/gitlab-15-4-released/)
 
-    该版本主要新特性：改进 VSCode CI/CD 集成功能、支持 Gitee 项目导入、专业版支持测试管理、支持 DORA 指标用于评估企业 DevOps 效能、集成 Harbor 镜像仓库。
+     The main new features of this version: improve VSCode CI/CD integration function, support Gitee project import, professional version support test management, support DORA indicators for evaluating enterprise DevOps performance, and integrate Harbor mirror warehouse.
 
-- [Gloo Mesh v2.1 服务网格管理平台发布](https://www.solo.io/blog/announcing-gloo-mesh-2-1/)
+- [Gloo Mesh v2.1 service mesh management platform released](https://www.solo.io/blog/announcing-gloo-mesh-2-1/)
 
-    该版本主要新特性：增加资源状态和调试页面、优化 Istio 生命周期管理、支持零信任访问策略、东西向流量的 TLS 终端问题修复、支持用同一个 Helm chart 安装代理和管理集群。
+     The main new features of this version are: adding resource status and debugging pages, optimizing Istio lifecycle management, supporting zero-trust access policies, fixing TLS termination problems for east-west traffic, and supporting agent installation and cluster management with the same Helm chart.
 
-- [Gloo Gateway 云原生 API 网关支持 GraphQL](https://www.solo.io/blog/announcing-graphql-for-gloo-gateway/)
+- [Gloo Gateway Cloud Native API Gateway supports GraphQL](https://www.solo.io/blog/announcing-graphql-for-gloo-gateway/)
 
-    GraphQL for Gloo Gateway 无缝地将 GraphQL API 添加到 Gloo Gateway 中。用户可以借此对 API 进行联合 GraphQL 查询，而不需要为 GraphQL 建立额外的服务器以及解析器和解析器模式库；所有策略和请求都可以在 Envoy Proxy 过滤器中进行管理；同时支持声明式配置，与 CI/CD 和 GitOps 工作流完全兼容。
+     GraphQL for Gloo Gateway seamlessly adds GraphQL APIs to Gloo Gateway. Users can use this to perform joint GraphQL queries on the API without the need to create additional servers, resolvers and resolver mode libraries for GraphQL; all policies and requests can be managed in the Envoy Proxy filter; while supporting declarative configuration, Fully compatible with CI/CD and GitOps workflows.
 
-- [Google Cloud Kubernetes 发行版 GKE 十一月更新](https://cloud.google.com/kubernetes-engine/docs/release-notes)
+- [GKE November Update for Google Cloud Kubernetes Release](https://cloud.google.com/kubernetes-engine/docs/release-notes)
 
-    更新内容：K8s 控制平面日志正式可用；支持使用弃用 insight 来识别 1.23 及更老版本的集群；Autopilot 集群支持紧凑型放置策略，以及当某个节点有问题时，支持向 GKE 发出信号；单集群 GKE Gateway 正式可用；创建 LoadBalancer 服务时，谷歌云控制器会自动创建防火墙规则并应用到 GKE 节点上。
+     What's new: K8s control plane logs are officially available; support for using deprecated insight to identify 1.23 and older clusters; Autopilot clusters support compact placement policies, and support for signaling to GKE when a node has a problem; single cluster GKE Gateway is officially available; when creating a LoadBalancer service, Google Cloud Controller will automatically create firewall rules and apply them to GKE nodes.
 
-- [Google 发布云原生文件存储服务 Filestore Multishares for GKE](https://cloud.google.com/filestore/docs/multishares)
+- [Google releases Filestore Multishares for GKE, a cloud-native file storage service](https://cloud.google.com/filestore/docs/multishares)
 
-    Filestore 是一个文件存储托管服务，Filestore 实例是一个网络附属存储（NAS）托管系统。
-    Filestore Multishares for GKE 为 GKE 实例提供了文件存储服务，其主要功能包括：支持区域性存储，防止区域故障；
-    一个 Filestore Enterprise 实例上可分配多达 10 个 share，每个 share 映射到 GKE 中唯一的持久卷；支持动态卷配置，可根据需要增加或减少 share 和实例的容量。
+     Filestore is a file storage hosting service, and a Filestore instance is a Network Attached Storage (NAS) hosting system.
+     Filestore Multishares for GKE provides file storage services for GKE instances. Its main functions include: supporting regional storage to prevent regional failures;
+     Up to 10 shares can be allocated on a Filestore Enterprise instance, and each share is mapped to a unique persistent volume in GKE; dynamic volume configuration is supported, and the capacity of shares and instances can be increased or decreased as needed.
 
-- [Google 发布 Kubernetes Gateway API 的企业级实现 GKE Gateway Controller](https://cloud.google.com/blog/products/containers-kubernetes/google-kubernetes-engine-gateway-controller-is-now-ga)
+- [Google releases GKE Gateway Controller, enterprise-grade implementation of Kubernetes Gateway API](https://cloud.google.com/blog/products/containers-kubernetes/google-kubernetes-engine-gateway-controller-is-now-ga)
 
-    GKE Gateway Controller GKE 提供了一个可扩展的 API 来管理内外部的 HTTP(S) 负载均衡。
-    其主要功能包括：提供了一个多路由/租户共享的网关、默认提供两个 GatewayClass 即 Global external 和 Regional Internal 负载均衡、支持大规模的端到端加密、支持定制后端服务属性、提供高级流量管理等。
+     GKE Gateway Controller GKE provides an extensible API to manage internal and external HTTP(S) load balancing.
+     Its main functions include: providing a multi-routing/tenant-sharing gateway, providing two GatewayClasses by default, namely Global external and Regional Internal load balancing, supporting large-scale end-to-end encryption, supporting custom back-end service attributes, and providing advanced traffic management Wait.
 
-- [Google 服务网格 Anthos Service Mesh 更新](https://cloud.google.com/release-notes#September_07_2022)
+- [Google Service Mesh Anthos Service Mesh Update](https://cloud.google.com/release-notes#September_07_2022)
   
-    更新内容包括：支持使用 Fleet Feature API 自动配置 Anthos Service Mesh、支持通过托管数据平面自动升级数据平面代理。
+     Updates include support for auto-configuration of Anthos Service Mesh using the Fleet Feature API, and support for auto-upgrade of data plane proxies via managed data plane.
 
-- [Google 混合云自动化配置工具 Anthos Config Management 更新](https://cloud.google.com/release-notes#September_15_2022)
+- [Google hybrid cloud automated configuration tool Anthos Config Management update](https://cloud.google.com/release-notes#September_15_2022)
 
-    更新内容包括：配置同步功能可作为 OCI 镜像同步存储在 Google Artifact Registry 或 Container Registry 中、Config Sync 支持从私有 Helm 仓库同步、支持用户提供的 CA 证书用于验证 Git 服务器的 HTTPS 连接、新增约束模版 K8sStorageClass。
+     Updates include: Config Sync can be stored in Google Artifact Registry or Container Registry as an OCI mirror sync, Config Sync supports syncing from private Helm repositories, supports user-supplied CA certificates for authenticating HTTPS connections to Git servers, and adds constraint templates K8sStorageClass.
 
-- [Grafana Cloud 观测平台集成 Cilium Enterprise，加强 Kubernetes 网络监控](https://grafana.com/blog/2022/11/17/introducing-the-cilium-enterprise-integration-in-grafana-cloud-for-kubernetes-network-monitoring/)
+- [Grafana Cloud observation platform integrates Cilium Enterprise to strengthen Kubernetes network monitoring](https://grafana.com/blog/2022/11/17/introducing-the-cilium-enterprise-integration-in-grafana-cloud-for- kubernetes-network-monitoring/)
 
-    集成后，可以将 Cilium Enterprise 中部署的数据输送到 Grafana Cloud。
-    Grafana Cloud 提供四个预制的仪表盘：Cilium 总览、Hubble 总览、Cilium operator 和 Cilium Agent。还提供了 17 条告警规则，用于监测与 Cilium Agent 和 Kubernetes 集群状态相关的 Cilium 核心组件。
+     Once integrated, data deployed in Cilium Enterprise can be fed to Grafana Cloud.
+     Grafana Cloud provides four pre-made dashboards: Cilium overview, Hubble overview, Cilium operator and Cilium Agent. 17 alert rules are also provided for monitoring Cilium core components related to Cilium Agent and Kubernetes cluster status.
 
-- [Grafana Cloud 推出业内首个性能测试和分布式追踪的集成](https://grafana.com/blog/2022/11/03/how-to-correlate-performance-testing-and-distributed-tracing-to-proactively-improve-reliability/)
+- [Grafana Cloud launches the industry's first integration of performance testing and distributed tracing](https://grafana.com/blog/2022/11/03/how-to-correlate-performance-testing-and-distributed-tracing-to-proactively-improve-reliability/)
 
-    Grafana Cloud 引入负载测试项目 [k6](https://github.com/grafana/k6) 和分布式追踪后端 [Tempo](https://github.com/grafana/tempo)（k6 x Tempo）的集成，
-    缩小性能测试的黑盒数据和系统内部白盒数据之间的差距。
-    该集成允许关联 k6 的测试运行数据和服务器端的追踪数据，从而进行根本原因分析；汇总收集的追踪数据以生成实时指标，帮助用户缩小搜索空间并快速发现异常行为。
+     Grafana Cloud introduces load testing project [k6](https://github.com/grafana/k6) and distributed tracking backend [Tempo](https://github.com/grafana/tempo) (k6 x Tempo) integrated,
+     Bridging the gap between black-box data for performance testing and white-box data inside the system.
+     The integration allows correlating k6's test run data with server-side trace data for root cause analysis; aggregates the collected trace data to generate real-time metrics, helping users narrow the search space and quickly spot anomalous behavior.
 
 ### H, L
 
-- [Harness 推出全托管 GitOps-as-a-Service](https://harness.io/blog/generally-available-harness-gitops-as-a-service)
+- [Harness Launches Fully Managed Gitops-as-a-Service](https://harness.io/blog/generally-available-harness-gitops-as-a-service)
 
-    Harness GitOps-as-a-Service 基于 Argo CD 构建，集成 OPA，支持审计跟踪，提供细粒度的 RBAC，支持不同部署的统一单点登录，支持声明式设置，提供集中的 GitOps 控制中心用于管理和查看多个环境中的部署情况，支持与已有的 Argo CD 实例集成。
+     Harness GitOps-as-a-Service builds on Argo CD, integrates OPA, supports audit trails, provides fine-grained RBAC, supports unified single sign-on for different deployments, supports declarative settings, and provides a centralized GitOps control center for management and View deployments in multiple environments and support integration with existing Argo CD instances.
 
-- [华为云发布分布式云原生产品——容器 CCE Turbo 和分布式云原生 UCS (Ubiquitous Cloud Native Service)](https://mp.weixin.qq.com/s/Bm_kFuyK3uLaSb4AvcYdmA)
+- [Huawei Cloud Releases Distributed Cloud Native Products - Container CCE Turbo and Distributed Cloud Native UCS (Ubiquitous Cloud Native Service)](https://mp.weixin.qq.com/s/Bm_kFuyK3uLaSb4AvcYdmA)
 
-    CCE Turbo 可通过计算、网络、调度全方位加速，实现极致弹性，如帮助客户以 3000 pod/min 的弹性轻松应对业务流量洪峰；UCS 提供跨云、跨地域的云原生应用管理，实现一致体验。
+     CCE Turbo can accelerate all aspects of computing, network, and scheduling to achieve extreme elasticity, such as helping customers easily cope with business traffic peaks with an elasticity of 3000 pod/min; UCS provides cross-cloud and cross-region cloud-native application management to achieve a consistent experience.
 
-- [Kong Gateway v3.0 云原生 API 网关发布](https://docs.konghq.com/gateway/changelog/#3000)
+- [Kong Gateway v3.0 Cloud Native API Gateway released](https://docs.konghq.com/gateway/changelog/#3000)
 
-    该版本主要新特性：提供联邦信息处理标准 FIPS 包以满足安全和合规性要求、支持选择插件的执行顺序、增加对 WebSocket 流量的本地支持、新增 OpenTelemetry 插件、引入新路由引擎用于处理复杂路由要求、吞吐量、延迟及内存消耗等性能显著优化。
+     The main new features of this version: provide federal information processing standard FIPS packages to meet security and compliance requirements, support the execution order of plug-ins, increase native support for WebSocket traffic, add OpenTelemetry plug-ins, introduce new routing engines to handle complex Routing requirements, throughput, latency, and memory consumption are significantly optimized.
 
-- [Lacework Platform 云安全平台十一月更新](https://docs.lacework.com/releases/2022-11-platform-releases)
+- [Lacework Platform Cloud Security Platform November Update](https://docs.lacework.com/releases/2022-11-platform-releases)
 
-    更新内容：平台扫描器支持多架构的容器镜像、提供攻击路径分析功能、无代理工作负载扫描功能普遍可用、在不活动的主机内核上发现的漏洞会自动被标记为例外、CIS GCP 1.3.0 基准报告和策略普遍可用、新增主机策略用于检测反向 shell 连接和加密劫持工件。
+     What's new: platform scanner supports multi-architecture container images, provides attack path analysis capabilities, agentless workload scanning is generally available, vulnerabilities found on inactive host kernels are automatically marked as exceptions, CIS GCP 1.3.0 Benchmark reports and policies are generally available, and new host policies are added to detect reverse shell connections and cryptojacking artifacts.
 
-- [Lacework Platform 云安全平台 9 月更新](https://docs.lacework.com/releases/2022-09_september-platform-releases)
+- [Lacework Platform Cloud Security Platform September Update](https://docs.lacework.com/releases/2022-09_september-platform-releases)
   
-    更新内容包括：支持无代理工作负载扫描、支持对 AWS 上的 Linux 主机进行主机漏洞评估、支持容器镜像漏洞评估。
+     Updates include: support for agentless workload scanning, support for host vulnerability assessment of Linux hosts on AWS, and support for container image vulnerability assessment.
 
-- [Logz.io 发布 K8s 全栈观测平台 Kubernetes360](https://logz.io/blog/unified-observability-kubernetes-360/)
+- [Logz.io releases K8s full-stack observation platform Kubernetes360](https://logz.io/blog/unified-observability-kubernetes-360/)
 
-    Kubernetes360 将日志、Prometheus 指标监控和 Jaeger 支持的分布式追踪统一在一个平台中，使 DevOps 团队能够以简单、高效和可操作的方式监控应用 SLO。
+     Kubernetes360 unifies logging, Prometheus metrics monitoring, and Jaeger-powered distributed tracing in one platform, enabling DevOps teams to monitor application SLOs in a simple, efficient, and actionable manner.
 
 ### M, N, O
 
-- [Mirantis 企业级容器平台 Mirantis Kubernetes Engine v3.6 发布](https://www.mirantis.com/blog/mke-3-6-release)
+- [Mirantis Enterprise Container Platform Mirantis Kubernetes Engine v3.6 released](https://www.mirantis.com/blog/mke-3-6-release)
 
-    该版本主要新特性：支持 Kubernetes 1.24、支持谷歌云平台 GCP、支持 cri-dockerd 取代 Dockershim、安全准入控制更新（提供 OPA gatekeeper 作为 PSP 的可选替代方案）。
+     The main new features of this version: support for Kubernetes 1.24, support for Google Cloud Platform GCP, support for cri-dockerd instead of Dockershim, security access control updates (OPA gatekeeper is provided as an optional alternative to PSP).
 
-- [NetApp Kubernetes 应用数据管理方案 Astra Control 更新](https://www.netapp.com/blog/astra-kubernetes-data-protection/)
+- [NetApp Kubernetes Application Data Management Solution Astra Control Update](https://www.netapp.com/blog/astra-kubernetes-data-protection/)
 
-    更新内容：
-    支持为多个命名空间设置一个应用数据保护策略；
-    扩大集群范围内资源的检测和保护范围；
-    基于标签和标签选择器允许每个命名空间有多个应用程序；
-    K8s 应用现在可以在不同的项目、订阅或账户托管的集群间进行故障转移；
-    集成轻量目录访问协议 LDAP；
-    支持更多 Self-managed K8s 平台。
+     update content:
+     Support setting an application data protection policy for multiple namespaces;
+     Extended detection and protection of cluster-wide resources;
+     Tag-based and tag selectors allow multiple applications per namespace;
+     K8s applications can now failover between clusters hosted by different projects, subscriptions, or accounts;
+     Integrated Lightweight Directory Access Protocol LDAP;
+     Support for more Self-managed K8s platforms.
 
-- [Ocean 推出 Kubernetes 网络成本分析解决方案 Network Cost Analysis](https://spot.io/blog/dont-sweat-the-network-costs-ocean-provides-application-cost-visibility-to-your-kubernetes-cluster/)
+- [Ocean launches Network Cost Analysis, a Kubernetes network cost analysis solution](https://spot.io/blog/dont-sweat-the-network-costs-ocean-provides-application-cost-visibility-to-your-kubernetes -cluster/)
 
-    Network Cost Analysis（AWS EKS 集群上已提供 beta 支持）不仅支持显示 Kubernetes 应用使用的网络费用和带宽消耗，还支持预测未来支出和使用趋势。
+     Network Cost Analysis (already in beta support on AWS EKS clusters) not only supports displaying network costs and bandwidth consumption used by Kubernetes applications, but also supports forecasting future spending and usage trends.
 
-- [Ondat v2.9 云原生块存储平台发布](https://www.ondat.io/blog/ondat-launches-version-2.9)
+- [Ondat v2.9 Cloud Native Block Storage Platform Launch](https://www.ondat.io/blog/ondat-launches-version-2.9)
 
-    该版本主要新特性：支持在零停机的情况下调整卷的大小、通过存储池可以控制工作负载所使用的存储类型、允许定义卷的拓扑结构。
+     The main new features of this version: support for resizing volumes with zero downtime, control the type of storage used by workloads through storage pools, and allow the topology of volumes to be defined.
 
-- [OpenShift Service Mesh 2.3 发布](https://cloud.redhat.com/blog/introducing-openshift-service-mesh-2.3)
+- [OpenShift Service Mesh 2.3 released](https://cloud.redhat.com/blog/introducing-openshift-service-mesh-2.3)
 
-    该版本主要新特性：支持 Istio v1.14、支持通过注入 deployment 实例来创建和管理网关、新增集群范围的拓扑结构、增加 OpenShift 服务网格控制台 operator、支持 Istio 可视化工具 Kiali 1.57。
+     The main new features of this version: support for Istio v1.14, support for creating and managing gateways by injecting deployment instances, adding cluster-wide topology, adding an OpenShift service grid console operator, and supporting Istio visualization tool Kiali 1.57.
 
-- [Openshift 日志管理服务 Logging 5.5 发布](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.11/html/logging/release-notes#cluster-logging-release-notes-5-5-0)
+- [Openshift Logging 5.5 release](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.11/html/logging/release-notes#cluster-logging-release-notes-5-5 -0)
 
-    该版本主要新特性：支持把同一 pod 内不同容器的结构化日志转发给不同的索引、使用 Kubernetes 通用标签过滤带有 Elasticsearch 输出的日志、日志聚合 Loki Operator 和 观测数据收集Vector collector 正式可用。
+     The main new features of this version: support for forwarding structured logs of different containers in the same pod to different indexes, use Kubernetes common tags to filter logs with Elasticsearch output, log aggregation Loki Operator and observation data collection Vector collector are officially available.
 
 ### P, Q, R
 
-- [Portworx Enterprise 2.12 云原生数据管理平台发布](https://docs.portworx.com/release-notes/portworx/#2-12-0)
+- [Portworx Enterprise 2.12 Cloud Native Data Management Platform Release](https://docs.portworx.com/release-notes/portworx/#2-12-0)
 
-    该版本主要新特性：本地用户可以启用 PX-Fast 功能，使用高性能存储作为 Kubernetes 的持久化存储；允许存储管理员使用自定义的 Kubernetes 对象为对象存储桶提供各种支持服务；自动生成 Vault 令牌，在 Vault 中存储加密 secret 和云证书；允许 Kubernetes 资源迁移到目标集群之前对其进行修改。
+     The main new features of this version: Local users can enable the PX-Fast function and use high-performance storage as persistent storage for Kubernetes; allow storage administrators to use custom Kubernetes objects to provide various support services for object storage buckets; automatically generate Vault commands Tokens, which store encrypted secrets and cloud credentials in Vault; allow Kubernetes resources to be modified before they are migrated to the target cluster.
 
-- [Portworx Backup v2.3 数据备份产品发布](https://portworx.com/blog/announcing-portworx-backup-2-3-for-simpler-backup-management-and-flexible-licensing/)
+- [Portworx Backup v2.3 data backup product announcement](https://portworx.com/blog/announcing-portworx-backup-2-3-for-simpler-backup-management-and-flexible-licensing/)
 
-    该版本主要新特性：支持与其他用户和组共享备份、支持根据特定的基础设施定制备份许可证、支持使用用户提供的或默认的密钥为不同类型的备份提供加密支持。
+     The main new features of this version: support for sharing backups with other users and groups, support for customizing backup licenses based on specific infrastructure, and support for encryption support for different types of backups using user-supplied or default keys.
 
-- [Quali 基础设施自动化方案 Torque 更新，简化 Kubernetes 基础设施管理](https://www.quali.com/blog/quali-simplifies-cloud-infrastructure-management/)
+- [Quali infrastructure automation solution Torque updated to simplify Kubernetes infrastructure management](https://www.quali.com/blog/quali-simplifies-cloud-infrastructure-management/)
 
-    更新内容包括：支持检测 Helm Chart 漂移、支持自动收集 Kubernetes 主机成本、收集的数据可以导入第三方审计工具、提供对环境定义的所有子组件的可见性。
+     Updates include: support for detecting Helm Chart drift, support for automatic collection of Kubernetes host costs, collected data can be imported into third-party audit tools, and visibility into all subcomponents of an environment definition.
 
-- [Rafay Systems 发布 Kubernetes 成本管理服务](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
+- [Rafay Systems Launches Cost Management Service for Kubernetes](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes -cloud-costs/)
 
-    成本管理服务是 Rafay Kubernetes 运维平台的一部分，可为位于公有云和内部数据中心的集群提供 Kubernetes 云成本优化。
-    其支持实时查看云计算支出；与 RBAC 预集成，提供基于角色的成本指标的可见性和访问权；可集中查看多个公有云账户和内部数据中心的集群；可根据资源消耗优化云预算。
+     The cost management service is part of the Rafay Kubernetes operation and maintenance platform, which provides Kubernetes cloud cost optimization for clusters located in public clouds and internal data centers.
+     It supports real-time viewing of cloud computing spending; is pre-integrated with RBAC to provide visibility and access to role-based cost metrics; can centrally view clusters of multiple public cloud accounts and internal data centers; and can optimize cloud budgets based on resource consumption.
 
-- [Rafay Systems 推出 Service Mesh Manager and Network Policy Manager，提供企业级的 K8s 流量管理和通信安全保障](https://rafay.co/press-release/rafay-launches-service-mesh-manager-and-network-policy-manager-for-enterprise-grade-traffic-management-and-transport-security-for-kubernetes/)
+- [Rafay Systems launches Service Mesh Manager and Network Policy Manager, providing enterprise-level K8s traffic management and communication security](https://rafay.co/press-release/rafay-launches-service-mesh-manager-and- network-policy-manager-for-enterprise-grade-traffic-management-and-transport-security-for-kubernetes/)
 
-    Service Mesh Manager 基于 Istio 构建，为微服务团队提供集中的安全控制和流量管理策略配置。Network Policy Manager 基于 Cilium 构建，提供集中管理以及 pod 和命名空间通信的可见性，以隔离边界并减少集群的横向攻击面。
+     Built on Istio, Service Mesh Manager provides microservice teams with centralized security control and traffic management policy configuration. Built on Cilium, Network Policy Manager provides centralized management and visibility into pod and namespace communication to isolate perimeters and reduce a cluster's lateral attack surface.
 
-- [Red Hat 容器镜像仓库 Red Hat Quay v3.8.0 发布](https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html/red_hat_quay_release_notes/index)
+- [Red Hat Quay v3.8.0 released for Red Hat Container Registry](https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html/red_hat_quay_release_notes/index)
 
-    该版本新特性：支持 IPv6 单栈和 IPv4/IPv6 双栈、用户必须拥有自签名的证书才能使用 SAN（Subject Alternative Name）、Quay 管理员可以使用存储配额来限制缓存的大小、新用户类型“受限用户”、超级用户经配置可以对系统中的所有内容拥有完全控制权。
+     New features of this version: support IPv6 single-stack and IPv4/IPv6 dual-stack, users must have a self-signed certificate to use SAN (Subject Alternative Name), Quay administrators can use storage quotas to limit the size of the cache, the new user type "subject to Restricted user", the super user can be configured to have full control over everything in the system.
 
 ### S
 
-- [ServiceNow 发布统一查询语言 Lightstep UQL，扩展 Kubernetes 应用的可见性](https://lightstep.com/blog/announcing-the-lightstep-unified-query-language)
+- [ServiceNow Releases Unified Query Language Lightstep UQL, Extending the Visibility of Kubernetes Applications](https://lightstep.com/blog/announcing-the-lightstep-unified-query-language)
 
-    Lightstep UQL 支持统一的“可观测性即代码”，通过单一查询语言简化从多个不同工具迁移到统一 Lightstep 平台的过程，还支持跨多个 Kubernetes 节点、服务器或 serverless 函数查询和关联指标、日志和跟踪。
+     Lightstep UQL supports unified "observability as code", simplifies the process of migrating from multiple disparate tools to the unified Lightstep platform through a single query language, and also supports querying and correlating metrics, logs and track.
 
-- [Solo.io 发布服务网格和 API 平台 Gloo Platform](https://www.solo.io/blog/announcing-gloo-platform/)
+- [Solo.io Releases Service Mesh and API Platform Gloo Platform](https://www.solo.io/blog/announcing-gloo-platform/)
 
-    Gloo Platform 是 Solo.io 的集大成之作，集成了三个产品： Gloo Gateway、Gloo Mesh 和 Gloo Network。利用 Kubernetes CR 和 GitOps 提供一个统一的操作模型，并将零信任安全、多租户、高级路由和可观测性等功能扩展到整个第三层到第七层堆栈。
+     Gloo Platform is the culmination of Solo.io, integrating three products: Gloo Gateway, Gloo Mesh and Gloo Network. Leverage Kubernetes CR and GitOps to provide a unified operating model and extend capabilities such as zero-trust security, multi-tenancy, advanced routing, and observability to the entire layer 3-7 stack.
 
-- Solo.io 发布云原生网关 [Gloo Gateway](https://www.solo.io/blog/announcing-gloo-gateway/) 和 CNI 插件 [Gloo Network](https://www.solo.io/blog/announcing-gloo-network/)
+- Solo.io releases cloud native gateway [Gloo Gateway](https://www.solo.io/blog/announcing-gloo-gateway/) and CNI plugin [Gloo Network](https://www.solo.io/ blog/announcing-gloo-network/)
 
-    Gloo Gateway 基于 Envoy 构建，利用 Gloo Platform 的多租户和联邦特性，允许用户轻松管理多个开发团队的网关访问和进行多集群流量管理。Gloo Network 基于 Cilium 构建，将 Kubernetes CNI 层整合为 Gloo Platform 的组件。
+     Gloo Gateway is built on Envoy and utilizes the multi-tenancy and federation features of Gloo Platform, allowing users to easily manage gateway access for multiple development teams and multi-cluster traffic management. Gloo Network builds on Cilium and integrates the Kubernetes CNI layer as a component of the Gloo Platform.
 
-- [Spectro Cloud 发布 Kubernetes SaaS 管理平台 Palette v2.8](https://docs.spectrocloud.com/release-notes#september10,2022-release2.8.0)
+- [Spectro Cloud released Kubernetes SaaS management platform Palette v2.8](https://docs.spectrocloud.com/release-notes#september10,2022-release2.8.0)
 
-    该版本主要新特性：支持利用嵌套集群为应用快速创建安全隔离的环境；利用基于 Web 的 Kubectl 允许用户通过终端部署应用；支持重复使用和共享具有许多附加组件和集成的大型配置文件。
+     The main new features of this version: support the use of nested clusters to quickly create a safe and isolated environment for applications; use the web-based Kubectl to allow users to deploy applications through the terminal; support reuse and sharing of large configuration files with many add-ons and integrations.
 
-- [Spectro Cloud 云原生边缘计算平台 Palette Edge Platform 更新](https://www.businesswire.com/news/home/20220929005289/en/New-Spectro-Cloud-Palette-Edge-Platform-Brings-World-Class-Security-and-Operational-Efficiencies-to-Kubernetes-at-the-Edge)
+- [Spectro Cloud Palette Edge Platform Update](https://www.businesswire.com/news/home/20220929005289/en/New-Spectro-Cloud-Palette-Edge-Platform-Brings-World-Class -Security-and-Operational-Efficiencies-to-Kubernetes-at-the-Edge)
 
-    更新内容包括：新增边缘 K8s 集群的防篡改功能、支持边缘优化的 K8s 发行版 Palette eXtended Kubernetes Edge、简化边缘设备部署。
+     Updates include: new tamper-resistant features for edge K8s clusters, support for the edge-optimized K8s distribution Palette eXtended Kubernetes Edge, and simplified edge device deployment.
 
-- [StormForge K8s 优化平台与 Datadog 的云应用监控服务集成，简化 Kubernetes 的可观测性](https://www.stormforge.io/press-releases/new-integration-couples-datadog-observability-stormforge-machine-learning-deliver-automatic-actionable-insights-for-kubernetes-application-optimization/?utm_source=thenewstack&utm_medium=website)
+- [StormForge K8s optimization platform integrates with Datadog's cloud application monitoring service to simplify Kubernetes observability](https://www.stormforge.io/press-releases/new-integration-couples-datadog-observability-stormforge-machine -learning-deliver-automatic-actionable-insights-for-kubernetes-application-optimization/?utm_source=thenewstack&utm_medium=website)
 
-    StormForge K8s 优化平台基于机器学习技术分析可观测数据并推荐资源设置（CPU、内存、副本），提高效率、规模和应用性能。平台现在可利用 Datadog 作为一个统一的观测平台，查看和应用优化建议，并确定应重新校准的应用参数，以减少集群规模，回收和重新分配资源。
+     The StormForge K8s optimization platform analyzes observable data based on machine learning technology and recommends resource settings (CPU, memory, replicas) to improve efficiency, scale, and application performance. The platform can now leverage Datadog as a unified observation platform to view and apply optimization recommendations and identify application parameters that should be recalibrated to reduce cluster size and reclaim and reallocate resources.
 
-- [StormForge Kubernetes 集群性能优化方案 Optimize Live 利用机器学习优化 K8 自动扩缩容能力](https://www.stormforge.io/blog/introducing-intelligent-bi-dimensional-autoscaling/)
+- [StormForge Kubernetes cluster performance optimization solution Optimize Live uses machine learning to optimize K8 automatic scaling capabilities](https://www.stormforge.io/blog/introducing-intelligent-bi-dimensional-autoscaling/)
 
-    最新版本的 Optimize Live 提供了二维自动缩放能力，HPA 和 VPA 能够协同工作，既能调整 pod 的大小，又能水平设置利用率，最大程度优化自动缩放的效率。此外，还利用机器学习分析历史资源使用情况，以找到最佳的 HPA 目标利用率。
+     The latest version of Optimize Live provides two-dimensional auto-scaling capabilities. HPA and VPA can work together to adjust the size of pods and set utilization horizontally to maximize the efficiency of auto-scaling. Additionally, machine learning is used to analyze historical resource usage to find the optimal HPA target utilization.
 
-- [SUSE 发布云原生边缘管理平台 SUSE Edge 2.0](https://mp.weixin.qq.com/s/LszXlp9iKT6FudzWY3EmaQ)
+- [SUSE releases SUSE Edge 2.0, a cloud-native edge management platform](https://mp.weixin.qq.com/s/LszXlp9iKT6FudzWY3EmaQ)
 
-    该版本主要新特性：简化边缘设备的添加和更新操作、支持通过统一的操作面板管理 Kubernetes 和底层操作系统、集成专为容器化和虚拟化工作负载打造的轻量级操作系统 SUSE Linux Enterprise Micro 5.3、为所有分布式环境提供安全防护。
+     The main new features of this version: Simplify the operation of adding and updating edge devices, support the management of Kubernetes and the underlying operating system through a unified operation panel, and integrate SUSE Linux Enterprise Micro 5.3, a lightweight operating system specially designed for containerized and virtualized workloads , Provide security protection for all distributed environments.
 
-- [实时监测平台观测云更新](https://mp.weixin.qq.com/s/RZCpDuNbq0C0SJfWI2E63w)
+- [Real-time monitoring platform observation cloud update](https://mp.weixin.qq.com/s/RZCpDuNbq0C0SJfWI2E63w)
 
-    更新内容包括：支持查看基础设施容器对应的 YAML 文件、新增日志查看器 DQL 搜索模式、优化应用性能监测、DataKit 支持将 k8s label 作为 tag 同步到 pod 的指标和日志中、支持将 k8s 中各类 yaml 信息采集到对应的对象数据上、Trace 采集支持自动提取一些关键 meta 信息。
+     Updates include: support for viewing YAML files corresponding to infrastructure containers, new log viewer DQL search mode, optimized application performance monitoring, DataKit supports synchronizing k8s label as a tag to pod indicators and logs, and supports various The yaml information is collected on the corresponding object data, and the Trace collection supports automatic extraction of some key meta information.
 
-- [时速云微服务治理平台 TMF v5.6.0 发布](https://mp.weixin.qq.com/s/8J0uJIKBwR9RIRwn299Acw)
+- [Time Speed Cloud Microservice Governance Platform TMF v5.6.0 released](https://mp.weixin.qq.com/s/8J0uJIKBwR9RIRwn299Acw)
 
-    该版本主要新特性：支持独立部署，实现与底层平台的解耦；解耦微服务框架和性能监控能力两个模块；新增链路组件拓扑图；增加对无损流量上下线功能的支持；新增主备拓扑能力，拓扑图可视化展示主备关系。
+     The main new features of this version: support independent deployment, decoupling from the underlying platform; decoupling the two modules of the microservice framework and performance monitoring capabilities; adding a link component topology; adding support for lossless traffic on and off the line; new Added master-standby topology capabilities, and the topology map visualizes the master-standby relationship.
 
-- [数澈软件发布 SEAL 0.3：国内首个全链路软件供应链安全管理平台](https://mp.weixin.qq.com/s/H_bjMbH_7DJEVOpvzGEMoQ)
+- [Shuche Software released SEAL 0.3: the first full-link software supply chain security management platform in China](https://mp.weixin.qq.com/s/H_bjMbH_7DJEVOpvzGEMoQ)
 
-    该版本新特性：支持集成任意 OCI 镜像仓库，扫描其中的容器镜像；支持集成任意 Kubernetes 集群，扫描其中的工作负载配置及镜像；支持扫描第三方软件物料清单文件；支持在任意 CI/CD 流水线中集成 SEAL 的安全扫描功能；能够聚合管理全链路各个阶段的资源提供全链路安全洞察；支持自动生成多策略修复建议、漏洞优先级排序、因时制宜处理安全问题。
+     New features of this version: support for integrating any OCI mirror warehouse, and scan the container image in it; support for integrating any Kubernetes cluster, and scan the workload configuration and image in it; support for scanning third-party software bill of material files; support for any CI/CD pipeline Integrates the security scanning function of SEAL; can aggregate and manage resources at all stages of the whole link to provide full link security insights; supports automatic generation of multi-policy repair suggestions, priority ranking of vulnerabilities, and timely handling of security issues.
 
 ### T
 
-- [Traefik Labs 发布云原生网络平台 Traefik Hub 1.0](https://traefik.io/blog/announcing-the-general-availability-of-traefik-hub-1-0/)
+- [Traefik Labs releases Traefik Hub 1.0, a cloud-native network platform](https://traefik.io/blog/announcing-the-general-availability-of-traefik-hub-1-0/)
 
-    Traefik Hub 1.0 允许用户可以使用 Traefik 或 Nginx 快速、安全地发布 Kubernetes 或 Docker 容器。Traefik Hub 提供了为 Kubernetes 集群联网所需的集中控制平面，而无需部署容器 sidecar 来运行网络软件。其支持通过安全加密隧道和直接私有连接进行容器联网，通过 JWT 或 OIDC 为服务添加访问控制，通过 GitOps 实现规模化的自动化等，并配有工作空间促进跨团队协作等。
+     Traefik Hub 1.0 allows users to quickly and securely publish Kubernetes or Docker containers using Traefik or Nginx. Traefik Hub provides the centralized control plane needed to network Kubernetes clusters without deploying container sidecars to run networking software. It supports container networking through secure encrypted tunnels and direct private connections, adds access control to services through JWT or OIDC, realizes scale automation through GitOps, and is equipped with workspaces to promote cross-team collaboration.
 
-- [腾讯云容器服务 TKE 9 月更新](https://mp.weixin.qq.com/s/6_TSSHhU0L8mSbqEMWyu4g)
+- [Tencent Cloud Container Service TKE September update](https://mp.weixin.qq.com/s/6_TSSHhU0L8mSbqEMWyu4g)
 
-    更新内容：支持镜像仓库签名镜像的可信验证、kubelet 自定义参数功能全量开放、提供异常 Service/Ingress 事件信息错误码的说明、灰度上线超级节点上运行 Daemonset 能力、新增按照Label 配置和管理 Pod 安全组的功能。
+     Updates: support for trustworthy verification of signature images in mirror warehouses, fully open kubelet custom parameter functions, provide descriptions of error codes for abnormal Service/Ingress event information, the ability to run Daemonset on grayscale online super nodes, and add configuration and management according to Label Capabilities of Pod Security Groups.
 
-- [腾讯云 K8s 发行版 TKE 8 月更新](https://mp.weixin.qq.com/s/t6yGrxcn4JZdd9877raXhA)
+- [Tencent Cloud K8s release version TKE August update](https://mp.weixin.qq.com/s/t6yGrxcn4JZdd9877raXhA)
   
-    更新内容包括：新增 SecurityGroupPolicy 增强组件，支持为策略匹配的 Pod 绑定安全组；支持业务 Pod 使用 Service Account Token 访问 CVM、VPC 等云资源；支持在不重启 Pod 的情况下修改 CPU、内存的 Request/limit 值；支持节点/工作负载资源洞察能力；新增 Request 智能推荐功能；新增原生节点专用调度器；优化原生节点初始化流程。
+     The updates include: Added SecurityGroupPolicy enhancement component, which supports binding security groups for pods matching policies; supports business pods to use Service Account Token to access cloud resources such as CVM and VPC; supports modifying CPU and memory requests without restarting pods /limit value; support node/workload resource insight capabilities; add Request intelligent recommendation function; add native node-specific scheduler; optimize native node initialization process.
 
-- [天翼云发布云原生安全产品——红盾 1.0](https://mp.weixin.qq.com/s/9crAAOde9_spFmk5TZcY2A)
+- [Tianyi Cloud Releases Cloud Native Security Product - Red Shield 1.0](https://mp.weixin.qq.com/s/9crAAOde9_spFmk5TZcY2A)
 
-    红盾基于云原生底座将安全能力整合至统一的安全平台，面向云原生业务应用安全、网络安全、数据安全、云原生安全 4 大领域，打造一体化云安全可信运营体系和零信任架构。其核心产品包括 Web 应用防火墙、DDoS 高防、网站安全监测、企业安全访问、天翼云数据安全管理平台等。
+     Red Shield integrates security capabilities into a unified security platform based on the cloud-native base, and builds an integrated cloud security trusted operation system and zero-trust architecture for the four major areas of cloud-native business application security, network security, data security, and cloud-native security. Its core products include Web Application Firewall, Anti-DDoS High, Website Security Monitoring, Enterprise Security Access, Tianyi Cloud Data Security Management Platform, etc.
 
 ### V
 
-- [Veeam 发布 Kubernetes 数据管理平台 Kasten K10 v5.5](https://www.kasten.io/kubernetes/resources/blog/scaling-simplicity-with-kasten-k10-v5.5)
+- [Veeam Releases Kasten K10 v5.5, Kubernetes Data Management Platform](https://www.kasten.io/kubernetes/resources/blog/scaling-simplicity-with-kasten-k10-v5.5)
 
-    该版本主要新特性：新增备份窗口允许用户选择策略运行的时间间隔、支持自动安排底层备份工作的顺序、支持定义多个保护策略以设置备份频率和位置等参数、提供可视化 Helm 向导程序、支持 IPv6、集成 GitOps 流水线、新增存储类型、通过 OpenSSF 和 Azure Managed Identity 增强备份安全性。
+     The main new features of this version: the new backup window allows users to choose the time interval for policy operation, supports automatic arrangement of the order of underlying backup work, supports the definition of multiple protection policies to set parameters such as backup frequency and location, provides a visual Helm wizard program, supports IPv6, integrated GitOps pipeline, new storage types, enhanced backup security with OpenSSF and Azure Managed Identity.
 
-- [VMware Tanzu Kubernetes Grid 2.1 发布](https://tanzu.vmware.com/content/blog/tanzu-kubernetes-grid-2-1)
+- [VMware Tanzu Kubernetes Grid 2.1 released](https://tanzu.vmware.com/content/blog/tanzu-kubernetes-grid-2-1)
 
-    该版本主要新特性：引入新的 Cluster API 功能 ClusterClass 以及 Carvel 工具，使用统一的、声明式的 API 创建和管理集群；支持公有云 Oracle Cloud 基础设施。
+     The main new features of this version: introduce new Cluster API functions ClusterClass and Carvel tools, use a unified, declarative API to create and manage clusters; support public cloud Oracle Cloud infrastructure.
 
-- [VMware Tanzu 发布 Application Service Adapter for Tanzu Application Platform v1.0，旨在弥补 Cloud Foundry 和 Kubernetes 间的开发体验差距](https://tanzu.vmware.com/content/blog/application-service-adapter-for-vmware-tanzu-application-platform-1-0)
+- [VMware Tanzu releases Application Service Adapter for Tanzu Application Platform v1.0, aiming to bridge the development experience gap between Cloud Foundry and Kubernetes](https://tanzu.vmware.com/content/blog/application-service-adapter- for-vmware-tanzu-application-platform-1-0)
 
-    该版本主要新特性：支持在 Kubernetes 和 TAP 上提供一个无缝的 Cloud Foundry 推送工作流、使用 Contour 复制 Cloud Foundry 部署中的 goRouter 入口模式、使用本地 Kubernetes RBAC、重建了由本地 Kubernetes 命名空间支持的 Cloud Foundry 组织和空间结构、集成 Tanzu Build Service、集成 TAP 的端到端流水线供应链 Supply chain choreographer（实验性）。
+     Major new features in this release: support for a seamless Cloud Foundry push workflow on Kubernetes and TAP, use Contour to replicate the goRouter ingress pattern in Cloud Foundry deployments, use native Kubernetes RBAC, rebuild Cloud backed by native Kubernetes namespaces Foundry groupWeave and spatial structure, integrate Tanzu Build Service, integrate TAP's end-to-end assembly line supply chain supply chain choreographer (experimental).
 
-- [VMware Tanzu v2.0 应用容器化工具发布](https://docs.vmware.com/en/Application-Transformer-for-VMware-Tanzu/2.0/rn/application-transformer-for-vmware-tanzu-20-release-notes/index.html)
+- [VMware Tanzu v2.0 Application Containerization Tool released](https://docs.vmware.com/en/Application-Transformer-for-VMware-Tanzu/2.0/rn/application-transformer-for-vmware-tanzu- 20-release-notes/index.html)
 
-    该版本主要新特性：集成自动化扫描工具 Cloud Suitability Analyzer（CSA）、支持 Windows 容器化、支持虚拟机容器化、支持 Linux 和  Windows 平台的 200 多个组件签名、提供命令行界面。
+     The main new features of this version: integrated automated scanning tool Cloud Suitability Analyzer (CSA), support for Windows containerization, support for virtual machine containerization, support for more than 200 component signatures for Linux and Windows platforms, and provide a command line interface.
 
-- [VMware Tanzu Application Platform v1.3 (K8s DevOps 平台) 发布](https://tanzu.vmware.com/content/blog/tanzu-application-platform-1-3)
+- [VMware Tanzu Application Platform v1.3 (K8s DevOps platform) released](https://tanzu.vmware.com/content/blog/tanzu-application-platform-1-3)
 
-    更新内容：支持在物理隔离环境下运行、集成供应链威胁扫描工具、新增一个统一的威胁监控大盘、支持 SBOM、支持 API 规范动态注册、集成 Jenkins CI/CD、支持自定义证书机构（CA）证书、新增运行时资源监测插件、增加对 Java 和 Python 函数工作负载的支持（beta）、在 OpenShift 上可用。
+     Updates: support for running in a physically isolated environment, integrated supply chain threat scanning tools, a new unified threat monitoring dashboard, support for SBOM, support for dynamic registration of API specifications, integration of Jenkins CI/CD, and support for custom certificate authorities (CA) Certificates, new runtime resource monitoring plugin, added support for Java and Python function workloads (beta), available on OpenShift.
 
-- [VMware Tanzu Kubernetes Grid v1.6 发布](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.6/vmware-tanzu-kubernetes-grid-16/GUID-release-notes.html)
+- [VMware Tanzu Kubernetes Grid v1.6 Release](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.6/vmware-tanzu-kubernetes-grid-16/GUID-release-notes. html)
 
-    该版本主要新特性：支持在 vSphere 7.0+ 上将工作负载集群部署到支持 GPU 的主机和边缘设备、使用 Multus 和 Whereabouts 实现多个 Pod 网络接口、支持使用 Amazon EBS CSI driver 和 Azure Disk CSI driver for Kubernetes 的 CSI 存储。
+     The main new features of this version: support for deploying workload clusters to hosts and edge devices that support GPUs on vSphere 7.0+, use Multus and Whereabouts to implement multiple Pod network interfaces, support the use of Amazon EBS CSI driver and Azure Disk CSI driver for Kubernetes CSI storage.
 
-- [VMware Spring Cloud Gateway for Kubernetes v1.2.0 发布](https://docs.vmware.com/en/VMware-Spring-Cloud-Gateway-for-Kubernetes/1.2/scg-k8s/GUID-release-notes.html)  
+- [VMware Spring Cloud Gateway for Kubernetes v1.2.0 release](https://docs.vmware.com/en/VMware-Spring-Cloud-Gateway-for-Kubernetes/1.2/scg-k8s/GUID-release-notes. html)
 
-    该版本主要新特性：分离客户端入口和上游应用服务通信的 TLS 配置、扩大自定义扩展云秘密管理的权限、增加熔断器状态指标、新增全局和每个 API 路由的响应缓存配置、增加 JSON 请求转换到 gRPC 上游服务的过滤器、增加 podOverrides 以配置 API 网关实例上的 K8s pod override、API 网关现在可以通过独立的 JAR 部署。
+     The main new features of this version: separate the TLS configuration of client entrance and upstream application service communication, expand the authority of customizing and extending cloud secret management, increase the circuit breaker status indicator, add global and each API route response cache configuration, and add JSON Filters for request translation to gRPC upstream services, podOverrides added to configure K8s pod override on API Gateway instances, API Gateway can now be deployed via a standalone JAR.
 
 ### W, Z
 
-- [Weave GitOps 更新](https://www.weave.works/blog/weave-gitops-2022-09)
+- [Weave Gitops Update](https://www.weave.works/blog/weave-gitops-2022-09)
 
-    更新内容包括：优化可信交付（Trusted Delivery），增加策略即代码和渐进式交付功能；新增 Team Workspaces，优化多租户的工作方式；用户界面新增 ClickOps 功能，简化微服务部署；新增 GitOps Run 的技术预览功能，提供接近实时的迭代开发，一旦本地清单文件被保存，它就会立即与 Kubernetes 核对。
+     Updates include: optimize Trusted Delivery, add policy as code and progressive delivery functions; add Team Workspaces, optimize multi-tenant working methods; add ClickOps function in the user interface to simplify microservice deployment; add GitOps Run's technology preview feature, which provides near real-time iterative development, checks against Kubernetes as soon as the local manifest file is saved.
 
-- [中国联通云原生架构全面升级](https://mp.weixin.qq.com/s/QJIU0UQ48hfl3RPsMVpyCw)
+- [Comprehensive upgrade of China Unicom's cloud native architecture](https://mp.weixin.qq.com/s/QJIU0UQ48hfl3RPsMVpyCw)
 
-    升级亮点：支持多种国产芯片和国产操作系统；兼容 CNM、CNI 双标准规范；新增 DVR 分布式网关、VPC 互连、VPC 弹性网卡直通网络(基于 IPVLAN)、VPC 路由直通网络(兼容 Flannel/ Calico 插件)、策略路由、VPC 网络多出/入口、IPv4/6、四/七层负载分离等功能；单集群容量支持承载超 10W+ 容器；集成一整套可视化自动运维能力。
+     Upgrade highlights: support a variety of domestic chips and domestic operating systems; compatible with CNM and CNI dual standards; newly added DVR distributed gateway, VPC interconnection, VPC elastic network card direct network (based on IPVLAN), VPC routed direct network (compatible with Flannel/ Calico plug-in), policy routing, VPC network multi-exit/entry, IPv4/6, layer 4/7 load separation and other functions; single cluster capacity supports carrying over 10W+ containers; integrates a complete set of visual automatic operation and maintenance capabilities.

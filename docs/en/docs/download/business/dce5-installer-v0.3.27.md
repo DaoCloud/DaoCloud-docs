@@ -8,13 +8,13 @@ hide:
 
 This page can download the offline installation package and verification file of DCE 5.0 commercial version.
 
-## download
+## Download
 
 | version name | installation package |
 | ------------------- | ----------------------------- -------------------------------------------------- --------------------- |
 | offline-v0.3.27.tar | [:arrow_down: Download](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.3.27.tar) |
 
-## validation
+## Validation
 
 Enter the download directory of the offline installation package. Execute the following command to verify the installation package:
 
@@ -34,7 +34,7 @@ After successfully verifying the offline package, please refer to [Commercial ve
 
 After successful installation, please proceed to [Genuine Authorization](https://qingflow.com/f/e3291647).
 
-## modules
+## Modules
 
 The DCE 5.0 commercial edition includes the following modules, which are plug-and-play on-demand to meet various application scenarios:
 
@@ -44,11 +44,11 @@ The DCE 5.0 commercial edition includes the following modules, which are plug-an
 | Container Management | Manage K8s core functions such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [v0.12.0](../../kpanda/03ProductBrief/release-notes.md#v0120) |
 | Observability | Provide rich graphic information such as dashboards, scene monitoring, data query, and alarms | [v0.11.1](../../insight/03ProductBrief/releasenote.md#v0111) |
 | Application Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [Release Notes](../../amamba/01ProductBrief/releasenote.md) |
-| Multi-cloud Orchestration| Centralized management of application orchestration of multi-cloud, hybrid cloud, and cross-cloud resources, with multi-cloud disaster recovery and fault recovery capabilities | [v0.3.0](../../kairship/01product/release-notes.md) |
+| Multicloud Orchestration| Centralized management of application orchestration of multicloud, hybrid cloud, and cross-cloud resources, with multicloud disaster recovery and fault recovery capabilities | [v0.3.0](../../kairship/01product/release-notes.md) |
 | Microservice Engine | Provides governance capabilities such as registration discovery, service governance, configuration management, and microservice gateway | [Release Notes](../../release/rn5.0.md) |
 | Service Mesh | A next-generation service mesh for cloud-native applications based on Istio open source technology | [v0.10.0](../../mspider/01Intro/release-notes.md) |
 | Middleware | Contains selected middleware such as RabbitMQ, Kafka, Elasticsearch, MySQL, Redis, MinIO, etc. | [Release Notes](../../release/rn5.0.md) |
-| Mirror Registry | Images for storing K8s, DevOps, and container application development | [Release Notes](../../release/rn5.0.md) |
+| container registry | Images for storing K8s, DevOps, and container application development | [Release Notes](../../release/rn5.0.md) |
 | Network | Support multiple CNI combinations for different Linux kernels | [Release Notes](../../release/rn5.0.md) |
 | Storage | Provide unified data storage services, support files, objects, blocks, and local storage, and easily access storage vendor solutions | [Release Notes](../../release/rn5.0.md) |
 

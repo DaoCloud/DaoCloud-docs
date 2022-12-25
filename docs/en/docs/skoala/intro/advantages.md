@@ -11,7 +11,7 @@ Compared with other similar products, the microservice engine provided by "DaoCl
 
 === "One-stop governance"
 
-    Provides functions such as service registration discovery, configuration management, traffic management, link tracking, indicator monitoring, gateway management, API management, domain name management, monitoring alarms, gateway policies, etc., to meet the management needs of each stage in the microservice life cycle and realize one-stop governance.
+    Provides functions such as service registration discovery, configuration management, traffic management, link tracking, indicator monitoring, gateway management, API management, domain name management, monitoring alarms, gateway policies, etc., to meet the management needs of each stage in the microservice lifecycle and realize one-stop governance.
 
 === "Senseless Migration"
 
@@ -23,8 +23,8 @@ Compared with other similar products, the microservice engine provided by "DaoCl
 
 === "Open Compatibility"
 
-    The microservice engine supports traditional and cloud music registration centers, as well as mainstream open source microservice frameworks such as Spring Cloud and Dubbo, and open source gateway components such as Envoy, Sentinel, and Contour. In addition, it can be freely combined with [DCE 5.0](../../dce/what-is-dce.md) modules such as multi-cloud orchestration, data service middleware, service grid, and application workbench to achieve more Customized and refined functions.
+    The microservice engine supports traditional and cloud music registration centers, as well as mainstream open source microservice frameworks such as Spring Cloud and Dubbo, and open source gateway components such as Envoy, Sentinel, and Contour. In addition, it can be freely combined with [DCE 5.0](../../dce/what-is-dce.md) modules such as multicloud orchestration, data service middleware, service mesh, and application workbench to achieve more Customized and refined functions.
 
 === "Visual interface and data"
 
-    Expose simple and easy-to-use interactive pages through functional encapsulation, support all operations through a simple and intuitive UI interface, reduce operational difficulty, and truly realize various management operations in the entire life cycle of microservices with a click of a mouse.
+    Expose simple and easy-to-use interactive pages through functional encapsulation, support all operations through a simple and intuitive UI interface, reduce operational difficulty, and truly realize various management operations in the entire lifecycle of microservices with a click of a mouse.

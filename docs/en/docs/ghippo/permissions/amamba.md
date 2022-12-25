@@ -7,7 +7,7 @@ hide:
 
 [Application Workbench](../../amamba/01ProductBrief/WhatisAmamba.md) supports three user roles:
 
--Workspace Admin
+- Workspace Admin
 - Workspace Editor
 - Workspace Viewer
 

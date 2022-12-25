@@ -237,7 +237,7 @@
 
 **优化** `kpanda` 将 apiResourcesList 移动到 cluster 的 status.APIEnablements
 
-### api-service
+### Api-service
 
 **新增** `kpanda` 增加权限管理 CRUD
 
@@ -297,7 +297,7 @@
 
 **优化** 修复了 node 的指标数据需要重复传入 node 的问题
 
-### controller
+### Controller
 
 **改进** 优化 egress，在 cluster 未就绪时不需要尝试分配 port
 

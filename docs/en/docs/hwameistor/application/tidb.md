@@ -1,131 +1,131 @@
-# TiDB
+#TiDB
 
-TiDB 是一款同时支持在线事务处理 (OLTP) 与在线分析处理 (OATP) 的融合型分布式数据库产品，具备水平扩缩容、金融级高可用、实时 HTAP（即同时支持 OLTP 和 OATP）、云原生的分布式数据库，兼容 MySQL 5.7 协议和 MySQL 生态等重要特性。TiDB 的目标是为用户提供一站式的 OLTP、OLAP、HTAP 解决方案，适合高可用、强一致要求较高、数据规模较大等各种应用场景。
+TiDB is a converged distributed database product that supports both online transaction processing (OLTP) and online analytical processing (OATP). A native distributed database, compatible with important features such as the MySQL 5.7 protocol and the MySQL ecosystem. The goal of TiDB is to provide users with one-stop OLTP, OLAP, and HTAP solutions, which are suitable for various application scenarios such as high availability, high requirements for strong consistency, and large data scale.
 
-## TiDB 整体架构
+## Overall structure of TiDB
 
-TiDB 分布式数据库将整体架构拆分成了多个模块，各模块之间互相通信，组成完整的 TiDB 系统。对应的架构图如下：
+The TiDB distributed database splits the overall architecture into multiple modules, and each module communicates with each other to form a complete TiDB system. The corresponding architecture diagram is as follows:
 
-![TiDB 架构图](img/architecture.png)
+![TiDB Architecture Diagram](img/architecture.png)
 
 - **TiDB Server**
   
-    SQL 层对外暴露 MySQL 协议的连接端点，负责接受客户端的连接，执行 SQL 解析和优化，最终生成分布式执行计划。TiDB 层本身是无状态的，实践中可以启动多个 TiDB 实例，通过负载均衡组件（如 LVS、HAProxy 或 F5）对外提供统一的接入地址，客户端的连接可以均匀地分摊在多个 TiDB 实例上以达到负载均衡的效果。TiDB Server 本身并不存储数据，只是解析 SQL，将实际的数据读取请求转发给底层的存储节点 TiKV（或 TiFlash）。
+     The SQL layer exposes the connection endpoints of the MySQL protocol, is responsible for accepting client connections, performing SQL parsing and optimization, and finally generating a distributed execution plan. The TiDB layer itself is stateless. In practice, multiple TiDB instances can be started, and a unified access address is provided externally through load balancing components (such as LVS, HAProxy, or F5). Client connections can be evenly distributed among multiple TiDB instances. In order to achieve the effect of load balancing. TiDB Server itself does not store data, but only parses SQL and forwards actual data read requests to the underlying storage node TiKV (or TiFlash).
 
 - **PD (Placement Driver) Server**
   
-    整个 TiDB 集群的元信息管理模块，负责存储每个 TiKV 节点实时的数据分布情况和集群的整体拓扑结构，提供 TiDB Dashboard 管控界面，并为分布式事务分配事务 ID。PD 不仅存储元信息，同时还会根据 TiKV 节点实时上报的数据分布状态，下发数据调度命令给具体的 TiKV 节点，可以说是整个集群的“大脑”。此外，PD 本身也是由至少 3 个节点构成，拥有高可用的能力。建议部署奇数个 PD 节点。
+     The meta information management module of the entire TiDB cluster is responsible for storing the real-time data distribution of each TiKV node and the overall topology of the cluster, providing the TiDB Dashboard management and control interface, and assigning transaction IDs to distributed transactions. PD not only stores meta information, but also sends data scheduling commands to specific TiKV nodes according to the real-time data distribution status reported by TiKV nodes, which can be said to be the "brain" of the entire cluster. In addition, the PD itself is also composed of at least 3 nodes and has high availability capabilities. It is recommended to deploy an odd number of PD nodes.
 
-- **存储节点**
-	
-	  - TiKV Server：负责存储数据，从外部看 TiKV 是一个分布式的提供事务的 Key-Value 存储引擎。存储数据的基本单位是 Region，每个 Region 负责存储一个 Key Range（从 StartKey 到 EndKey 的左闭右开区间）的数据，每个 TiKV 节点会负责多个 Region。TiKV 的 API 在 KV 键值对层面提供对分布式事务的原生支持，默认提供了 SI (Snapshot Isolation) 的隔离级别，这也是 TiDB 在 SQL 层面支持分布式事务的核心。TiDB 的 SQL 层做完 SQL 解析后，会将 SQL 的执行计划转换为对 TiKV API 的实际调用。所以，数据都存储在 TiKV 中。另外，TiKV 中的数据都会自动维护多副本（默认为三副本），天然支持高可用和自动故障转移。
+- **Storage Node**
 
-	  - TiFlash：TiFlash 是一类特殊的存储节点。和普通 TiKV 节点不一样的是，在 TiFlash 内部，数据是以列式的形式进行存储，主要的功能是为分析型的场景加速。
+- TiKV Server: Responsible for storing data. From the outside, TiKV is a distributed Key-Value storage engine that provides transactions. The basic unit for storing data is Region, and each Region is responsible for storing data of a Key Range (the left-closed right-open interval from StartKey to EndKey), and each TiKV node is responsible for multiple Regions. TiKV's API provides native support for distributed transactions at the KV key-value pair level, and provides the isolation level of SI (Snapshot Isolation) by default, which is also the core of TiDB's support for distributed transactions at the SQL level. After the SQL layer of TiDB completes the SQL parsing, it will convert the SQL execution plan into an actual call to the TiKV API. Therefore, the data is stored in TiKV. In addition, the data in TiKV will automatically maintain multiple copies (the default is three copies), which naturally supports high availability and automatic failover.
 
-## TiDB 数据库的存储
+- TiFlash: TiFlash is a special type of storage node. Different from ordinary TiKV nodes, inside TiFlash, data is stored in the form of columns, and its main function is to accelerate analytical scenarios.
 
-![TiDB数据库的存储](img/storage.png)
+## Storage of TiDB database
 
-- **键值对 (Key-Value Pair)**
+![TiDB database storage](img/storage.png)
 
-    TiKV 的选择是 Key-Value 模型，并且提供有序遍历方法。TiKV 数据存储的两个关键点：
+- **Key-Value Pair**
 
-    - 这是一个巨大的 Map（可以类比一下 C++ 的 std::map），也就是存储的是 Key-Value Pairs。
+     The choice of TiKV is the Key-Value model, and it provides an ordered traversal method. Two key points of TiKV data storage:
 
-    - 这个 Map 中的 Key-Value pair 按照 Key 的二进制顺序有序，也就是可以 Seek 到某一个 Key 的位置，然后不断地调用 Next 方法以递增的顺序获取比这个 Key 大的 Key-Value。
+     - This is a huge Map (can be compared to C++'s std::map), which stores Key-Value Pairs.
 
-- **本地存储（Rocks DB）**
+     - The Key-Value pairs in this Map are ordered according to the binary order of the Key, that is, you can Seek to a certain Key position, and then continuously call the Next method to obtain the Key-Value greater than this Key in increasing order.
+
+- **Local Storage (Rocks DB)**
   
-    任何持久化的存储引擎，数据终归要保存在磁盘上，TiKV 也不例外。但是 TiKV 没有选择直接向磁盘上写数据，而是把数据保存在 RocksDB 中，具体的数据落地由 RocksDB 负责。这样做的原因是开发一个单机存储引擎工作量很大，特别是要做一个高性能的单机引擎，需要做各种细致的优化，而 RocksDB 是由 Facebook 开源的一个非常优秀的单机 KV 存储引擎，可以满足 TiKV 对单机引擎的各种要求。这里可以简单地认为 RocksDB 是一个单机的持久化 Key-Value Map。
+     For any persistent storage engine, data must be stored on disk after all, and TiKV is no exception. However, TiKV did not choose to write data directly to the disk, but saved the data in RocksDB, and RocksDB is responsible for the specific data landing. The reason for this is that developing a stand-alone storage engine requires a lot of work, especially for a high-performance stand-alone engine, which requires various meticulous optimizations. RocksDB is an excellent stand-alone KV storage engine open sourced by Facebook. It can meet various requirements of TiKV for a stand-alone engine. Here you can simply think of RocksDB as a stand-alone persistent Key-Value Map.
 
-- **Raft 协议**
+- **Raft protocol**
   
-    TiKV 选择了 Raft 算法来保证单机失效的情况下数据不丢失不出错。简单来说，就是把数据复制到多台机器上，这样某一台机器无法提供服务时，其他机器上的副本还能提供服务。这个数据复制方案可靠并且高效，能处理副本失效的情况。
+     TiKV chooses the Raft algorithm to ensure that data will not be lost and errors will not occur in the case of a single machine failure. Simply put, it is to copy data to multiple machines, so that when a certain machine cannot provide services, the copies on other machines can still provide services. This data replication scheme is reliable and efficient, and can handle the failure of replicas.
 
 - **Region**
   
-    TiKV 选择了按照 Key 划分 Range。某一段连续的 Key 都保存在一个存储节点上。将整个 Key-Value 空间分成很多段，每一段是一系列连续的 Key，称为一个 Region。尽量让每个 Region 中保存的数据不超过一定的大小，目前在 TiKV 中默认是不超过 96MB。每一个 Region 都可以用 [StartKey，EndKey] 这样的左闭右开区间来描述。
+     TiKV chooses to divide Range by Key. A certain continuous Key is stored on one storage node. Divide the entire Key-Value space into many segments, and each segment is a series of consecutive Keys, called a Region. Try to keep the data stored in each Region within a certain size. Currently, the default size in TiKV is no more than 96MB. Each Region can be described by a left-closed right-open interval like [StartKey, EndKey].
 
 - **MVCC**
   
-    TiKV实现了多版本并发控制 (MVCC)。
+     TiKV implements Multi-Version Concurrency Control (MVCC).
 
-- **分布式 ACID 事务**
+- **Distributed ACID transactions**
   
-    TiKV 的事务采用的是 Google 在 BigTable 中使用的事务模型：Percolator。
+     The transaction of TiKV adopts the transaction model used by Google in BigTable: Percolator.
 
-## 搭建测试环境
+## Set up a test environment
 
-### Kubernetes 集群
+### Kubernetes cluster
 
-本次测试使用三台虚拟机节点部署 Kubernetes 集群，包括 1 个 master 节点和 2 个 worker节点。Kubelete 版本为 1.22.0。
+This test uses three virtual machine nodes to deploy a Kubernetes cluster, including 1 master node and 2 worker nodes. Kubelete version is 1.22.0.
 
 ![Kubernetes cluster](img/k8scluster.png)
 
-### HwameiStor 本地存储
+### HwameiStor local storage
 
-1. 在 Kubernetes 集群上部署 HwameiStor 本地存储
+1. Deploy HwameiStor local storage on the Kubernetes cluster
 
-    ![HwameiStor 本地存储](img/hwameistor.png)
+     ![HwameiStor local storage](img/hwameistor.png)
 
-2. 在两台 worker 节点上分别为 HwameiStor 配置一块 100G 的本地磁盘 sdb
+2. Configure a 100G local disk sdb for HwameiStor on the two worker nodes respectively
 
-    ![sdb1](img/sdb1.png)
+     ![sdb1](img/sdb1.png)
 
-    ![sdb2](img/sdb2.png)
+     ![sdb2](img/sdb2.png)
 
-3. 创建 storagClass
+3. Create storageClass
 
-    ![创建 StorageClass](img/storageclass.png)
+     ![Create StorageClass](img/storageclass.png)
 
-### 在 Kubernetes 上部署 TiDB
+### Deploy TiDB on Kubernetes
 
-可以使用 TiDB Operator 在 Kubernetes 上部署 TiDB。TiDB Operator 是 Kubernetes 上的 TiDB 集群自动运维系统，提供包括部署、升级、扩缩容、备份恢复、配置变更的 TiDB 全生命周期管理。借助 TiDB Operator，TiDB 可以无缝运行在公有云或私有部署的 Kubernetes 集群上。
+You can use TiDB Operator to deploy TiDB on Kubernetes. TiDB Operator is an automatic operation and maintenance system for TiDB clusters on Kubernetes, providing full lifecycle management of TiDB including deployment, upgrade, scaling, backup and recovery, and configuration changes. With TiDB Operator, TiDB can seamlessly run on public cloud or privately deployed Kubernetes clusters.
 
-TiDB 与 TiDB Operator 版本的对应关系如下：
+The correspondence between TiDB and TiDB Operator versions is as follows:
 
-| TiDB  版本         | 适用的 TiDB Operator 版本 |
+| TiDB version | Applicable TiDB Operator version |
 | ------------------ | ------------------------- |
-| dev                | dev                       |
-| TiDB  >= 5.4       | 1.3                       |
-| 5.1  <= TiDB < 5.4 | 1.3（推荐），1.2          |
-| 3.0  <= TiDB < 5.1 | 1.3（推荐），1.2，1.1     |
-| 2.1  <= TiDB < 3.0 | 1.0（停止维护）           |
+| dev | dev |
+| TiDB >= 5.4 | 1.3 |
+| 5.1 <= TiDB < 5.4 | 1.3 (recommended), 1.2 |
+| 3.0 <= TiDB < 5.1 | 1.3 (recommended), 1.2, 1.1 |
+| 2.1 <= TiDB < 3.0 | 1.0 (end of maintenance) |
 
-#### 部署 TiDB Operator
+#### Deploy TiDB Operator
 
-1. 安装 TiDB CRDs
+1. Install TiDB CRDs
 
-    ```bash
-    kubectl apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/master/manifests/crd.yaml
-    ```
+     ```bash
+     kubectl apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/master/manifests/crd.yaml
+     ```
 
-2. 安装 TiDB Operator
+2. Install TiDB Operator
 
-    ```bash
-    helm repo add pingcap https://charts.pingcap.org/ 
-    kubectl create namespace tidb-admin 
-    helm install --namespace tidb-admin tidb-operator pingcap/tidb-operator --version v1.3.2 \
-    --set operatorImage=registry.cn-beijing.aliyuncs.com/tidb/tidb-operator:v1.3.2 \
-    --set tidbBackupManagerImage=registry.cn-beijing.aliyuncs.com/tidb/tidb-backup-manager:v1.3.2 \
-    --set scheduler.kubeSchedulerImageName=registry.cn-hangzhou.aliyuncs.com/google_containers/kube-scheduler
-    ```
+     ```bash
+     helm repo add pingcap https://charts.pingcap.org/
+     kubectl create namespace tidb-admin
+     helm install --namespace tidb-admin tidb-operator pingcap/tidb-operator --version v1.3.2 \
+     --set operatorImage=registry.cn-beijing.aliyuncs.com/tidb/tidb-operator:v1.3.2 \
+     --set tidbBackupManagerImage=registry.cn-beijing.aliyuncs.com/tidb/tidb-backup-manager:v1.3.2 \
+     --set scheduler.kubeSchedulerImageName=registry.cn-hangzhou.aliyuncs.com/google_containers/kube-scheduler
+     ```
 
-3. 检查 TiDB Operator 组件
+3. Check TiDB Operator components
 
-    ![检查 TiDB Operator 组件](img/check.png)
+     ![Check TiDB Operator component](img/check.png)
 
-#### 部署 TiDB 集群
+#### Deploy TiDB cluster
 
 ```bash
 kubectl create namespace tidb-cluster && \
-kubectl -n tidb-cluster apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/master/examples/basic/tidb-cluster.yaml 
-kubectl -n tidb-cluster apply -f https://raw.githubusercontent.com /pingcap/tidb-operator/master/examples/basic/tidb-monitor.yaml
+kubectl -n tidb-cluster apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/master/examples/basic/tidb-cluster.yaml
+kubectl -n tidb-cluster apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/master/examples/basic/tidb-monitor.yaml
 ```
 
-![部署 TiDB 集群](img/deploytidb.png)
+![Deploy TiDB cluster](img/deploytidb.png)
 
-#### 连接 TiDB 集群
+#### Connect TiDB cluster
 
 ```bash
 yum -y install mysql-client
@@ -134,94 +134,94 @@ yum -y install mysql-client
 ![connecttidb](img/connecttidb.png)
 
 ```bash
-kubectl port-forward -n tidb-cluster svc/basic-tidb 4000 > pf4000.out & 
+kubectl port-forward -n tidb-cluster svc/basic-tidb 4000 > pf4000.out &
 ```
 
-![连接 TiDB 集群](img/connect1.png)
+![Connect TiDB cluster](img/connect1.png)
 
-![连接 TiDB 集群](img/connect2.png)
+![Connect TiDB cluster](img/connect2.png)
 
-![连接 TiDB 集群](img/connect3.png)
+![Connect TiDB cluster](img/connect3.png)
 
-#### 检查并验证 TiDB 集群状态
+#### Check and verify TiDB cluster status
 
-1. 创建 Hello_world 表
+1. Create the Hello_world table
 
-    ```sql
-    create table hello_world (id int unsigned not null auto_increment primary key, v varchar(32)); 
-    ```
-    ![创建 Hello_world 表](img/helloworld.png)
+     ```sql
+     create table hello_world (id int unsigned not null auto_increment primary key, v varchar(32));
+     ```
+     ![Create Hello_world table](img/hellold.png)
 
-2. 查询 TiDB 版本号
+2. Query the TiDB version number
 
-    ```sql
-    select tidb_version()\G;
-    ```
-    ![连接 TiDB 集群](img/checkversion.png)
+     ```sql
+     select tidb_version()\G;
+     ```
+     ![Connect TiDB cluster](img/checkversion.png)
 
-3. 查询 Tikv 存储状态
+3. Query Tikv storage status
 
-    ```sql
-    select * from information_schema.tikv_store_status\G;
-    ```
-    ![查询 Tikv 存储状态](img/checkstorage.png)
+     ```sql
+     select * from information_schema.tikv_store_status\G;
+     ```
+     ![Check Tikv storage status](img/checkstorage.png)
 
-#### HwameiStor 存储配置
+#### HwameiStor storage configuration
 
-从 `storageClass local-storage-hdd-lvm` 分别为 tidb-tikv 及 tidb-pd 创建一个 PVC:
+Create a PVC for tidb-tikv and tidb-pd from `storageClass local-storage-hdd-lvm`:
 
-![HwameiStor 存储配置](img/pvc.png)
+![HwameiStor storage configuration](img/pvc.png)
 
-![HwameiStor 存储配置](img/pvc1.png)
+![HwameiStor storage configuration](img/pvc1.png)
 
-![HwameiStor 存储配置](img/pvc2.png)
+![HwameiStor storage configuration](img/pvc2.png)
 
 ```bash
-kubectl get po basic-tikv-0 -oyaml
+kubectl get po basic-tikv-0-oyaml
 ```
 
-![HwameiStor 存储配置](img/mountpvc.png)
+![HwameiStor storage configuration](img/mountpvc.png)
 
 ```bash
-kubectl get po basic-pd-0 -oyaml
+kubectl get po basic-pd-0-oyaml
 ```
 
-![HwameiStor 存储配置](img/mountpvc1.png)
+![HwameiStor storage configuration](img/mountpvc1.png)
 
-## 测试内容
+## Test content
 
-### 数据库 SQL 基本能力测试
+### Database SQL Basic Ability Test
 
-完成部署数据库集群后，执行了以下基本能力测试，全部通过。
+After completing the deployment of the database cluster, the following basic capability tests were performed and all passed.
 
-#### 分布式事务
+#### Distributed transaction
 
-测试目的：支持在多种隔离级别下，实现分布式数据操作的完整性约束即 ACID属性
+Test purpose: to support the realization of the integrity constraints of distributed data operations, that is, ACID properties, under multiple isolation levels
 
-测试步骤：
+Test steps:
 
-1. 创建测试数据库 CREATE DATABASE testdb
+1. Create a test database CREATE DATABASE testdb
 
-2. 创建测试用表 CREATE TABLE `t_test ( id int AUTO_INCREMENT, name varchar(32), PRIMARY KEY (id) )`
+2. Create a test table CREATE TABLE `t_test ( id int AUTO_INCREMENT, name varchar(32), PRIMARY KEY (id) )`
 
-3. 运行测试脚本
+3. Run the test script
 
-测试结果：支持在多种隔离级别下，实现分布式数据操作的完整性约束即 ACID 属性
+Test results: Support the integrity constraints of distributed data operations, namely ACID properties, under multiple isolation levels
 
-#### 对象隔离
+#### Object Isolation
 
-测试目的：测试不同 schema 实现对象隔离
+Test purpose: to test different schemas to achieve object isolation
 
-测试脚本：
+Test script:
 
 ```sql
 create database if not exists testdb;
 use testdb
 create table if not exists t_test
-( id                   bigint,
-  name                 varchar(200),
-  sale_time            datetime default current_timestamp,
-  constraint pk_t_test primary key (id)
+( id bigint,
+   name varchar(200),
+   sale_time datetime default current_timestamp,
+   constraint pk_t_test primary key (id)
 );
 insert into t_test(id,name) values (1,'a'),(2,'b'),(3,'c');
 create user 'readonly'@'%' identified by "readonly";
@@ -231,61 +231,61 @@ update testdb.t_test set name='aaa';
 create user 'otheruser'@'%' identified by "otheruser";
 ```
 
-测试结果：支持创建不同 schema 实现对象隔离
+Test results: Support creating different schemas to achieve object isolation
 
-#### 表操作支持
+#### Table operation support
 
-测试目的：测试是否支持创建、删除和修改表数据、DML、列、分区表
+Test purpose: Test whether it supports creating, deleting and modifying table data, DML, columns, and partition tables
 
-测试步骤：连接数据库后按步骤执行测试脚本
+Test steps: execute the test script step by step after connecting to the database
 
-测试脚本：
+Test script:
 
 ```sql
-# 创建和删除表
+# Create and drop tables
 drop table if exists t_test;
 create table if not exists t_test
-( id                   bigint default '0',
-  name                 varchar(200) default '' ,
-  sale_time            datetime default current_timestamp,
-  constraint pk_t_test primary key (id)
+( id bigint default '0',
+   name varchar(200) default '' ,
+   sale_time datetime default current_timestamp,
+   constraint pk_t_test primary key (id)
 );
-# 删除和修改
+# delete and modify
 insert into t_test(id,name) values (1,'a'),(2,'b'),(3,'c'),(4,'d'),(5,'e');
 update t_test set name='aaa' where id=1;
 update t_test set name='bbb' where id=2;
 delete from t_dml where id=5;
-# 修改、增加、删除列
+# Modify, add, delete columns
 alter table t_test modify column name varchar(250);
 alter table t_test add column col varchar(255);
-insert into t_test(id,name,col) values(10,'test','new_col');     
+insert into t_test(id,name,col) values(10,'test','new_col');
 alter table t_test add column colwithdefault varchar(255) default 'aaaa';
 insert into t_test(id,name) values(20,'testdefault');
-insert into t_test(id,name,colwithdefault ) values(10,'test','non-default ');     
+insert into t_test(id,name,colwithdefault ) values(10,'test','non-default');
 alter table t_test drop column colwithdefault;
-# 分区表类型（仅摘录部分脚本）
+# Partition table type (only some scripts are excerpted)
 CREATE TABLE employees (
-    id INT NOT NULL,
+     id INT NOT NULL,
 fname VARCHAR(30),
 lname VARCHAR(30),
-    hired DATE NOT NULL DEFAULT '1970-01-01',
-    separated DATE NOT NULL DEFAULT '9999-12-31',
+     hired DATE NOT NULL DEFAULT '1970-01-01',
+     separated DATE NOT NULL DEFAULT '9999-12-31',
 job_code INT NOT NULL,
 store_id INT NOT NULL
 )
 ```
 
-测试结果：支持创建、删除和修改表数据、DML、列、分区表
+Test results: support for creating, deleting and modifying table data, DML, columns, and partition tables
 
-#### 索引支持
+#### Index Support
 
-测试目的：验证多种类型的索引（唯一、聚簇、分区、Bidirectional indexes、Expression-based indexes、哈希索引等等）以及索引重建操作。
+Test purpose: Verify multiple types of indexes (unique, clustered, partitioned, Bidirectional indexes, Expression-based indexes, hash indexes, etc.) and index rebuild operations.
 
-测试脚本：
+Test script:
 
 ```sql
 alter table t_test add unique index udx_t_test (name);
-# 默认就是主键聚簇索引
+# The default is the primary key clustered index
 ADMIN CHECK TABLE t_test;
 create index time_idx on t_test(sale_time);
 alter table t_test drop index time_idx;
@@ -294,30 +294,30 @@ admin show ddl job queries 156;
 create index time_idx on t_test(sale_time);
 ```
 
-测试结果：支持创建、删除、组合、单列、唯一索引
+Test results: support creation, deletion, combination, single column, unique index
 
-#### 表达式
+#### expressions
 
-测试目的：验证分布式数据库的表达式支持 if、casewhen、forloop、whileloop、loop exit when 等语句（上限 5 类）
+Test purpose: To verify that the expression of the distributed database supports statements such as if, casewhen, forloop, whileloop, loop exit when (up to 5 types)
 
-前提条件：数据库集群已经部署完成。
+Prerequisite: The database cluster has been deployed.
 
-测试脚本：
+Test script:
 
 ```sql
-SELECT CASE id WHEN 1 THEN 'first' WHEN 2 THEN 'second' ELSE 'OTHERS' END AS id_new  FROM t_test;
+SELECT CASE id WHEN 1 THEN 'first' WHEN 2 THEN 'second' ELSE 'OTHERS' END AS id_new FROM t_test;
 SELECT IF(id>2,'int2+','int2-') from t_test;
 ```
 
-测试结果：支持 if、case when、for loop、while loop、loop exit when 等语句（上限 5 类）
+Test results: Support statements such as if, case when, for loop, while loop, loop exit when (up to 5 types)
 
-#### 执行计划解析
+#### Execution plan analysis
 
-测试目的：验证分布式数据库的执行计划解析支持
+Test purpose: Verify the execution plan parsing support of the distributed database
 
-前提条件：数据库集群已经部署完成。
+Prerequisite: The database cluster has been deployed.
 
-测试脚本：
+Test script:
 
 ```sql
 explain analyze select * from t_test where id NOT IN (1,2,4);
@@ -325,114 +325,114 @@ explain analyze select * from t_test a where EXISTS (select * from t_test b wher
 explain analyze SELECT IF(id>2,'int2+','int2-') from t_test;
 ```
 
-测试结果：支持执行计划的解析
+Test results: support for execution plan parsing
 
-#### 执行计划绑定
+#### Execution plan binding
 
-测试目的：验证分布式数据库的执行计划绑定功能
+Test purpose: Verify the execution plan binding function of the distributed database
 
-测试步骤：
+Test steps:
 
-1. 查看 sql 语句的当前执行计划
+1. View the current execution plan of the sql statement
 
-2. 使用绑定特性
+2. Using the binding feature
 
-3. 查看该 sql 语句绑定后的执行计划
+3. View the execution plan after the sql statement is bound
 
-4. 删除绑定
+4. Delete the binding
 
-测试脚本：
+Test script:
 
 ```sql
 explain select * from employees3 a join employees4 b on a.id = b.id where a.lname='Johnson';
 explain select /*+ hash_join(a,b) */ * from employees3 a join employees4 b on a.id = b.id where a.lname='Johnson';
 ```
 
-测试结果：没有使用 hint 时可能不是 hash_join，使用 hint 后一定是 hash_join。
+Test result: It may not be hash_join when no hint is used, but it must be hash_join after using hint.
 
-#### 常用函数
+#### Common Functions
 
-测试目的：验证分布式数据库的标准的数据库函数(支持的函数类型）
+Test purpose: to verify the standard database functions of distributed databases (supported function types)
 
-测试结果：支持标准的数据库函数
+Test results: support standard database functions
 
-#### 显式/隐式事务
+#### Explicit/Implicit Transactions
 
-测试目的：验证分布式数据库的事务支持
+Test purpose: verify the transaction support of the distributed database
 
-测试结果：支持显示与隐式事务
+Test results: support for explicit and implicit transactions
 
-#### 字符集
+#### Character set
 
-测试目的：验证分布式数据库的数据类型支持
+Test purpose: verify the data type support of the distributed database
 
-测试结果：目前只支持 UTF-8 mb4 字符集
+Test results: Currently only UTF-8 mb4 character set is supported
 
-#### 锁支持
+#### Lock support
 
-测试目的：验证分布式数据库的锁实现
+Test purpose: verify the lock implementation of the distributed database
 
-测试结果：描述了锁的实现方式，R-R/R-W/W-W 情况下阻塞情况，死锁处理方式
+Test results: Describe the implementation of locks, the blocking situation in the case of R-R/R-W/W-W, and the deadlock handling method
 
-#### 隔离级别
+#### Isolation level
 
-测试目的：验证分布式数据库的事务隔离级别
+Test purpose: verify the transaction isolation level of the distributed database
 
-测试结果：支持 si 隔离级别，支持 rc 隔离级别（4.0 GA 版本）
+Test results: support si isolation level, support rc isolation level (4.0 GA version)
 
-#### 分布式复杂查询
+#### Distributed Complex Query
 
-测试目的：验证分布式数据库的分布式复杂查询能力
+Test purpose: to verify the distributed complex query capabilities of distributed databases
 
-测试结果：支持跨节点 join 等分布式复杂查询、操作等，支持窗口函数、层次查询
+Test results: support distributed complex queries and operations such as cross-node join, support window functions, and hierarchical queries
 
-### 系统安全测试
+### System Security Test
 
-这部分测试系统安全，完成数据库集群部署后，以下安全测试全部通过。
+This part tests system security. After the database cluster deployment is completed, the following security tests all pass.
 
-#### 账号管理与权限测试
+#### Account Management and Permission Test
 
-测试目的：验证分布式数据库的账号权限管理
+Test purpose: verify the account authority management of the distributed database
 
-测试脚本：
+Test script:
 
 ```sql
 select host,user,authentication_string from mysql.user;
-create user tidb IDENTIFIED by 'tidb'; 
+create user tidb IDENTIFIED by 'tidb';
 select host,user,authentication_string from mysql.user;
-set password for tidb =password('tidbnew');
-select host,user,authentication_string,Select_priv from mysql.user;
+set password for tidb = password('tidbnew');
+select host, user, authentication_string, Select_priv from mysql.user;
 grant select on *.* to tidb;
-flush privileges ;
-select host,user,authentication_string,Select_priv from mysql.user;
+flush privileges;
+select host, user, authentication_string, Select_priv from mysql.user;
 grant all privileges on *.* to tidb;
-flush privileges ;
-select * from  mysql.user where user='tidb';
-revoke select on *.* from tidb; 
-flush privileges ;
+flush privileges;
+select * from mysql.user where user='tidb';
+revoke select on *.* from tidb;
+flush privileges;
 revoke all privileges on *.* from tidb;
-flush privileges ;
+flush privileges;
 grant select(id) on test.TEST_HOTSPOT to tidb;
 drop user tidb;
 ```
 
-测试结果：
+Test Results:
 
-- 支持创建、修改删除账号，并配置和密码，支持安全、审计和数据管理三权分立
+- Support creation, modification and deletion of accounts, configuration and passwords, support separation of powers among security, audit and data management
 
-- 根据不同账号，对数库各个级别权限控制包括：实例/库/表/列级别
+- According to different accounts, the authority control of each level of the database includes: instance/library/table/column level
 
-#### 访问控制
+#### Access control
 
-测试目的：验证分布式数据库的权限访问控制，数据库数据通过赋予基本增删改查访问权限控制
+Test purpose: To verify the access control of the distributed database, and the database data is controlled by granting basic additions, deletions, changes, and queries
 
-测试脚本：
+Test script:
 
 ```sql
 mysql -u root -h 172.17.49.222 -P 4000
 drop user tidb;
 drop user tidb1;
-create user tidb IDENTIFIED by 'tidb'; 
+create user tidb IDENTIFIED by 'tidb';
 grant select on tidb.* to tidb;
 grant insert on tidb.* to tidb;
 grant update on tidb.* to tidb;
@@ -446,66 +446,66 @@ mysql -u tidb -h 172.17.49.222 -ptidb -P 4000 -D tidb -e 'update aa set id=3;'
 mysql -u tidb -h 172.17.49.222 -ptidb -P 4000 -D tidb -e 'delete from aa where id=3;'
 ```
 
-测试结果：数据库数据通过赋予基本增删改查访问权限控制。
+Test results: Database data is controlled by granting access rights for basic addition, deletion, modification, and query.
 
-#### 白名单
+#### whitelist
 
-测试目的：验证分布式数据库的白名单功能
+Test purpose: verify the whitelist function of the distributed database
 
-测试脚本：
+Test script:
 
 ```sql
 mysql -u root -h 172.17.49.102 -P 4000
 drop user tidb;
-create user tidb@'127.0.0.1' IDENTIFIED by 'tidb'; 
+create user tidb@'127.0.0.1' IDENTIFIED by 'tidb';
 flush privileges;
 select * from mysql.user where user='tidb';
 mysql -u tidb -h 127.0.0.1 -P 4000 -ptidb
 mysql -u tidb -h 172.17.49.102 -P 4000 -ptidb
 ```
 
-测试结果：支持 IP 白名单功能，支持 IP 段通配操作
+Test results: support IP whitelist function, support IP segment wildcard operation
 
-#### 操作日志记录
+#### Operation Logging
 
-测试目的：验证分布式数据库的操作监控能力
+Purpose of the test: to verify the operation monitoring capability of the distributed database
 
-测试脚本：`kubectl -ntidb-cluster logs tidb-test-pd-2 --tail 22`
+Test script: `kubectl -ntidb-cluster logs tidb-test-pd-2 --tail 22`
 
-测试结果：记录用户通过运维管理控制台或者 API 执行的关键操作或者错误操作
+Test results: record key operations or wrong operations performed by users through the operation and maintenance management console or API
 
-### 运维管理测试
+### Operation and maintenance management test
 
-这部分测试系统运维，完成数据库集群部署后，以下运维管理测试全部通过。
+This part tests system operation and maintenance. After the database cluster deployment is completed, the following operation and maintenance management tests all pass.
 
-#### 数据导入导出
+#### Data import and export
 
-测试目的：验证分布式数据库的数据导入导出的工具支持
+Test purpose: To verify the tool support for data import and export of distributed databases
 
-测试脚本：
+Test script:
 
 ```sql
 select * from sbtest1 into outfile '/sbtest1.csv';
 load data local infile '/sbtest1.csv' into table test100;
 ```
 
-测试结果：支持按表、schema、database 级别的逻辑导出导入
+Test results: support logical export and import at the table, schema, and database levels
 
-#### 慢日志查询
+#### Slow log query
 
-测试目的：获取慢查询的 SQL 信息
+Test purpose: to obtain SQL information of slow queries
 
-前提条件：SQL 执行时间需大于配置的慢查询记录阈值,且 SQL 执行完毕
+Precondition: The SQL execution time must be greater than the configured slow query record threshold, and the SQL execution is complete
 
-测试步骤：
+Test steps:
 
-1. 调整慢查询阈值到 100ms
+1. Adjust the slow query threshold to 100ms
 
-2. 执行 sql
+2. execute sql
 
-3. 查看 log/系统表/dashboard 中的慢查询信息
+3. Check the slow query information in log/system table/dashboard
 
-测试脚本：
+Test script:
 
 ```sql
 show variables like 'tidb_slow_log_threshold';
@@ -513,6 +513,6 @@ set tidb_slow_log_threshold=100;
 select query_time, query from information_schema.slow_query where is_internal = false order by query_time desc limit 3;
 ```
 
-测试结果：可以获取慢查询信息
+Test result: slow query information can be obtained
 
-> 有关测试详情，请查阅 [TiDB on hwameiStor 部署及测试记录](file/TiDBonHwameiStor.docx)。
+> For testing details, please refer to [TiDB on hwameiStor Deployment and Test Records](file/TiDBonHwameiStor.docx).

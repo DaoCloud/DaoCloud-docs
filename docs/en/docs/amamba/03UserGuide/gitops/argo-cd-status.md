@@ -18,6 +18,6 @@ This page introduces the health status and synchronization status description of
 
 | Sync Status | Description |
 | -------- | ----------------------------------------- |
-| Synchronized | The resources deployed in the cluster are consistent with the expected state in the warehouse |
-| not synchronized | resources deployed in the cluster are inconsistent with the expected state in the warehouse |
+| Synchronized | The resources deployed in the cluster are consistent with the expected state in the registry |
+| not synchronized | resources deployed in the cluster are inconsistent with the expected state in the registry |
 | Unknown | Unable to determine the current synchronization status |

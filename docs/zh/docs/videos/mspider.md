@@ -34,5 +34,12 @@
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/istio-upgrade.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
+## 边车升级
+
+参阅[边车升级](../mspider/03UserGuide/upgrade/SidecarUpdate.md)文档页面。
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sidecarup.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

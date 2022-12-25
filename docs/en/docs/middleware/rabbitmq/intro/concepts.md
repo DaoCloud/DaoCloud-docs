@@ -1,4 +1,4 @@
-# basic concept
+# Basic concept
 
 This section lists the proper nouns and terms involved in RabbitMQ, so that you can better understand related concepts and use RabbitMQ message queues.
 

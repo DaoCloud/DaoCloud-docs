@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# basic concept
+# Basic concept
 
 This section lists proper nouns and terms related to Elasticsearch.
 

@@ -1,12 +1,12 @@
-# Implement non-intrusive enhancement of the application through the Operator
+# Implement non-intrusive enhancement of applications via Operator
 
-> At present, only Java, NodeJs, Python, and .Net support the non-intrusive access of Operator, and Golang will be improved in the future.
+At present, only Java, NodeJs, Python, and .Net support the non-intrusive access of Operator, and Golang will be improved in the future.
 
-## prerequisites
+## Prerequisites
 
-Make sure Insight Agent is ready. If not, please refer to [Install insight-agent to collect data](../installagent.md) and make sure the following three items are in place:
+Make sure insight-agent is ready. If not, please refer to [Install insight-agent to collect data](../installagent.md) and make sure the following three items are in place:
 
-- Enable trace function for Insight-agent
+- Enable trace function for insight-agent
 - Whether the address and port of the trace data are filled in correctly
 - Pods corresponding to deployment/opentelemetry-operator-controller-manager and deployment/insight-agent-opentelemetry-collector are ready
 
@@ -69,7 +69,7 @@ Each service can add one of two types of annotations:
     1. Java application
 
         ```bash
-          instrumentation.opentelemetry.io/inject-java: "insight-system/insight-opentelemetry-autoinstrumentation"
+        instrumentation.opentelemetry.io/inject-java: "insight-system/insight-opentelemetry-autoinstrumentation"
         ```
 
     2. NodeJs application
@@ -92,7 +92,7 @@ Each service can add one of two types of annotations:
 
 ## Automatic injection example Demo
 
-> Note that annotations are added under spec.annotations.
+Note that annotations are added under spec.annotations.
 
 ```yaml
 apiVersion: apps/v1
@@ -263,6 +263,6 @@ spec:
   preemptionPolicy: PreemptLowerPriority
 ```
 
-## link query
+## Trace query
 
-How to query the connected services, refer to [Link Query](../../04dataquery/tracequery.md).
+How to query the connected services, refer to [Trace Query](../../04dataquery/tracequery.md).

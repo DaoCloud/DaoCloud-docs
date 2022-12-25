@@ -1,6 +1,6 @@
 # Manage Harbor
 
-Harbor is an open source mirror warehouse service for secure hosting and efficient distribution of OCI-compliant Artifacts such as container images and Helm Charts. It can help you manage Artifacts consistently and securely across cloud-native computing platforms (such as Kubernetes and Docker). The DaoCloud Enterprise platform provides Harbor-based fast deployment capabilities, and realizes one-stop high availability, high performance, and high Efficient deployment, management, use and other full-cycle mirror warehouse services.
+Harbor is an open source container registry service for secure hosting and efficient distribution of OCI-compliant Artifacts such as container images and Helm Charts. It can help you manage Artifacts consistently and securely across cloud-native computing platforms (such as Kubernetes and Docker). The DaoCloud Enterprise platform provides Harbor-based fast deployment capabilities, and realizes one-stop high availability, high performance, and high Efficient deployment, management, use and other full-cycle container registry services.
 
 ## Product Features
 
@@ -13,15 +13,15 @@ Harbor is an open source mirror warehouse service for secure hosting and efficie
 
 ## Functional advantages
 
-- Multiple mirror warehouse instances to meet the needs of multiple mirror warehouses in various environments such as development, testing, and production.
+- Multiple container registry instances to meet the needs of multiple container registrys in various environments such as development, testing, and production.
 - Break the calling barriers between modules, and support rapid image pull when deploying applications in the application workbench and container management module
-- Provides a unified management control plane, allowing administrators to manage the full life cycle of multiple Harbor instances on the same interface.
+- Provides a unified management control plane, allowing administrators to manage the full lifecycle of multiple Harbor instances on the same interface.
 
 ## Steps
 
-1. Log in to the web console as a user with the Admin role, and click `Mirror Warehouse` from the left navigation bar.
+1. Log in to the web console as a user with the Admin role, and click `container registry` from the left navigation bar.
 
-    ![Mirror Warehouse](images/hosted01.png)
+    ![container registry](images/hosted01.png)
 
 1. Click `Managed Harbor` on the left navigation bar, and click the `Create Instance` button in the upper right corner.
 

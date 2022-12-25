@@ -7,13 +7,13 @@ hide:
 
 On this page, you can download the offline installation packages of various versions of the global management module.
 
-## download
+## Download
 
 | file name | version | file size | package | update date |
 | ------------------------------ | ------------------ --------------------------------------- | -------- | ---- -------------------------------------------------- -------------------------------------------------- -- | ---------- |
 | ghippo-0.12.1-amd64.bundle.tar | [v0.12.1](../../ghippo/01ProductBrief/release-notes.md) | 442 MB | [:arrow_down: Download](https:// proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo-0.12.1-amd64.bundle.tar) | 2022-11-29 |
 
-## validation
+## Validation
 
 In the directory where the offline installation package was downloaded, execute the following command to verify the integrity:
 

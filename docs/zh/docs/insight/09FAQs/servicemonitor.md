@@ -8,7 +8,7 @@ Prometheus 主要通过 Pull 的方式来抓取目标服务暴露出来的监控
 
 !!! note
 
-    [] 中的配置项为可选。
+  [] 中的配置项为可选。
 
 ## 原生 Job 配置
 
@@ -88,6 +88,7 @@ metric_relabel_configs:
 [ target_limit: <int> | default = 0 ]
 ```
 
+
 ## Pod Monitor
 
 相应配置项说明如下：
@@ -162,6 +163,16 @@ spec:
   selector: # 填写要监控pod的Label值，以定位目标pod
     matchLabels:
       k8s-app: redis-exporter
+```
+
+### 举例
+
+```yaml
+job_name: prometheus
+scrape_interval: 30s
+static_configs:
+- targets:
+  - 127.0.0.1:9090
 ```
 
 ## Service Monitor

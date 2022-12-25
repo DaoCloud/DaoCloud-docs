@@ -8,7 +8,7 @@ hide:
 [Service Mesh](../../mspider/01Intro/WhatismSpider.md) supports several user roles:
 
 -Admin
--Workspace Admin
+- Workspace Admin
 - Workspace Editor
 - Workspace Viewer
 
@@ -21,10 +21,10 @@ The specific permissions of these roles are shown in the table below.
 | Menu Objects | Actions | Admin | Workspace Admin | Workspace Editor | Workspace Viewer |
 | ---------------- | -------------- | ------- | --------- ------ | ---------------- | ---------------- |
 | Service Mesh List | [Create Mesh](../../mspider/03UserGuide/servicemesh/create-mesh.md) | &check; | &cross; | &cross; | &cross; |
-| | Edit Grid | &check; | &check; | &check; | &cross; |
+| | Edit mesh | &check; | &check; | &check; | &cross; |
 | | [Delete Mesh](../../mspider/03UserGuide/servicemesh/delete.md) | &check; | &check; | &cross; | &cross; |
 | | [View Mesh](../../mspider/03UserGuide/servicemesh/README.md) | &check; | &check; | &check; | &check; |
-| Grid Overview | View | &check; | &check; | &check; | &check; |
+| mesh Overview | View | &check; | &check; | &check; | &check; |
 | Service List | [Jump to Governance Page](../../mspider/03UserGuide/01ServiceList/README.md) | &check; | &check; | &check; | &cross; |
 | | View | &check; | &check; | &check; | &check; |
 | Service Entry | Create | &check; | &check; | &cross; | &cross; |

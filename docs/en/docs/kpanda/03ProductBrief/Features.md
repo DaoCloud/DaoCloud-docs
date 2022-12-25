@@ -2,9 +2,9 @@
 
 This page lists the main functional features of container management.
 
-## Cluster life cycle management
+## Cluster lifecycle management
 
-- Unified management of clusters: Support any Kubernetes cluster within a specific version range to be included in the scope of container management, and realize unified management of on-cloud, off-cloud, multi-cloud, and hybrid cloud container cloud platforms.
+- Unified management of clusters: Support any Kubernetes cluster within a specific version range to be included in the scope of container management, and realize unified management of on-cloud, off-cloud, multicloud, and hybrid cloud container cloud platforms.
 
 - Quick creation of clusters:
 
@@ -24,7 +24,7 @@ This page lists the main functional features of container management.
 
 ## Cloud Native Application Load
 
-- Full application life cycle management: Support Kubernetes-native workload type deployment and management capabilities, including: creation, configuration, monitoring, expansion, upgrade, rollback, deletion, etc. full life cycle management.
+- Full application lifecycle management: Support Kubernetes-native workload type deployment and management capabilities, including: creation, configuration, monitoring, expansion, upgrade, rollback, deletion, etc. full lifecycle management.
 
 - One-stop application load creation: decouple the underlying Kubernetes platform, and create, operate and maintain business workloads in one stop.
 
@@ -32,7 +32,7 @@ This page lists the main functional features of container management.
 
 - Scaling and shrinking of application load: Through the interface, the manual/automatic scaling of application load can be realized, and the expansion and shrinking strategy can be customized to cope with traffic peaks.
 
-- Container life cycle settings: support setting callback functions, parameters after startup, and parameters before stopping when creating workloads to meet the needs of specific scenarios.
+- Container lifecycle settings: support setting callback functions, parameters after startup, and parameters before stopping when creating workloads to meet the needs of specific scenarios.
 
 - Container readiness check and survival check settings: support setting workload readiness check and survival check when deploying applications:
 
@@ -48,7 +48,7 @@ This page lists the main functional features of container management.
 
 - Container security user setting: support setting the container running user, if running with Root privileges, fill in the Root user ID 0.
 
-- Custom resource (CRD) support: Supports full life cycle management such as creation, configuration, and deletion of custom resources.
+- Custom resource (CRD) support: Supports full lifecycle management such as creation, configuration, and deletion of custom resources.
 
 ## Service and Routing
 
@@ -62,7 +62,7 @@ Service (Service) is a Kuberetes-native resource that provides cloud-native load
 
 - Namespace management: supports namespace creation, quota setting, resource limit setting, etc.
 
-- Cross-cluster namespace management: supports unified management of cross-cluster namespaces and efficient retrieval capabilities, and realizes namespace management capabilities in multi-cloud scenarios and disaster recovery scenarios.
+- Cross-cluster namespace management: supports unified management of cross-cluster namespaces and efficient retrieval capabilities, and realizes namespace management capabilities in multicloud scenarios and disaster recovery scenarios.
 
 ## Container storage
 
@@ -88,7 +88,7 @@ Service (Service) is a Kuberetes-native resource that provides cloud-native load
 
 Provides a wealth of system plug-ins to expand the functions of cloud container clusters. Extension plug-ins include: DNS, HPA, etc.
 
-## authority management
+## Authority management
 
 Support [Namespace Authorization](../07UserGuide/Permissions/Cluster-NSAuth.md), through permission settings, different users or user groups can have permission to operate different Kubernetes resources under the specified namespace.
 

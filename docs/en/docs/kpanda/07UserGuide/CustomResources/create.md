@@ -11,11 +11,11 @@ The container management platform supports interface-based management of custom 
 - Create a custom resource example CR (Custom Resource) based on YAML
 - Delete custom resources
 
-## prerequisites
+## Prerequisites
 
 - Container management platform [connected to Kubernetes cluster](../Clusters/JoinACluster.md) or [created Kubernetes](../Clusters/CreateCluster.md), and can access the UI interface of the cluster
 
-- A [namespace creation](../Namespaces/createtens.md), [user creation](../.../../../../ghippo/04UserGuide/01UserandAccess/User .md), and authorize the user as [`Cluster Admin`](../Permissions/PermissionBrief.md#cluster-admin) role, for details, please refer to [Namespace Authorization](../Permissions/Cluster-NSAuth.md )
+- A [namespace creation](../Namespaces/createtens.md), [user creation](../.../../../../ghippo/04UserGuide/01UserandAccess/User.md), and authorize the user as [`Cluster Admin`](../Permissions/PermissionBrief.md#cluster-admin) role, for details, please refer to [Namespace Authorization](../Permissions/Cluster-NSAuth.md )
 
 ## Create custom resources via YAML
 
@@ -23,11 +23,11 @@ The container management platform supports interface-based management of custom 
 
     ![crd](../../images/crd01.png)
 
-2. In the left navigation bar, click `Custom Resource`, and click the `YAML Create` button in the upper right corner.
+2. In the left navigation bar, click `Custom Resource`, and click the `Create with YAML` button in the upper right corner.
 
     ![crd](../../images/crd02.png)
 
-3. On the `YAML Creation` page, fill in the YAML statement and click `OK`.
+3. On the `Create with YAML` page, fill in the YAML statement and click `OK`.
 
     ![crd](../../images/crd03.png)
 
@@ -76,15 +76,15 @@ spec:
 
     ![crd](../../images/crd01.png)
 
-2. In the left navigation bar, click `Custom Resource`, and click the `YAML Create` button in the upper right corner.
+2. In the left navigation bar, click `Custom Resource`, and click the `Create with YAML` button in the upper right corner.
 
     ![crd](../../images/crd02.png)
 
-3. Click the custom resource named `crontabs.stable.example.com`, enter the details, and click the `YAML Create` button in the upper right corner.
+3. Click the custom resource named `crontabs.stable.example.com`, enter the details, and click the `Create with YAML` button in the upper right corner.
 
     ![crd](../../images/crd05.png)
 
-4. On the `YAML Creation` page, fill in the YAML statement and click `OK`.
+4. On the `Create with YAML` page, fill in the YAML statement and click `OK`.
 
     ![crd](../../images/crd06.png)
 

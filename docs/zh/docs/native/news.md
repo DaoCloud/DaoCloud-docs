@@ -13,6 +13,12 @@
 
 ### 2023-01
 
+- [1 月 9 日云原生产业联盟年会将在线上举行](https://mp.weixin.qq.com/s/cyVz5LC4JJ7ImRuqtOYqGA)
+  
+    云原生产业联盟（CNIA）是云计算开源产业联的子联盟，由国内顶尖云原生厂商、行业云原生典型用户联合组成。
+    会上将发布 3 大报告：《应用现代化建设指南》、《2022 中国云原生安全用户调查报告》、《2022  Serverless 用户调查报告》，
+    以及 5 大云原生领域的评测：存储、安全、大数据、混部、中间件。
+
 - [1 月 2 日 CNCF 即将开启 2023 年技术监督委员会（TOC）选举](https://www.cncf.io/blog/2022/12/01/cncf-toc-elections-for-2023/)
   
     TOC 在 2023 年有一个终端用户任命的席位和三个管理委员会任命的席位空缺。
@@ -20,6 +26,19 @@
     有必要的条件和时间可参与到 TOC 的工作中，并且能够在讨论中保持厂商或项目的中立性。
 
 ### 2022-12
+
+- [12 月 29 日第一届混合云技术发展论坛将线上举行](https://mp.weixin.qq.com/s/0ZRnEimZQrO3tHVPpiSLEg)
+  
+    大会由中国信通院、中国通信标准化协会主办，
+    届时将发布《混合云产业全景图（2022年）》框架、《混合云用户调查报告（2022年）》、新增混合云标准等重要成果，
+    并邀请混合云领域的代表厂商就混合云未来的发展、技术结构及行业问题带来干货分享。
+
+- [12 月 22 日商业软件评测机构 G2 发布《容器管理平台评测报告》](https://www.g2.com/categories/container-management?utf8=%E2%9C%93&selected_view=grid&segment=all#grid)
+  
+    G2 根据 G2 上的评论以及从在线资料和社交平台上收集的数据，对厂商及其产品进行评估，形成如下的 G2 Grid。
+    其中，X 轴代表客户满意度，Y 轴代表市场份额。
+    取得领导者地位的容器管理平台产品为：AWS Fargate、Amazon ECS、Amazon EKS 和 Mirantis Kubernetes Engine。
+    ![G2](./images/G2.png)
 
 - [Kasten 上线免费的云原生学习网站 KubeCampus.io](https://www.kasten.io/kubernetes/resources/blog/kubecon-detroit-recap-and-introducing-kubecampus)
   

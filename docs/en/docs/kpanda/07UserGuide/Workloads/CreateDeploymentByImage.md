@@ -1,216 +1,216 @@
-# 创建无状态负载（Deployment）
+# Create a stateless load (Deployment)
 
-无状态负载（Deployment）是运行在 Kubernetes 上的一种不保存任何数据和状态的应用。
-和其它工作负载类似，无状态负载也是由 Pod 构成。通过 Daocloud 容器管理平台，您可以基于所拥有的权限轻松管理多云多集群上的工作负载，包括对无状态负载的创建、更新、删除、弹性扩缩、重启、版本回退等全生命周期管理。
+A stateless load (Deployment) is an application running on Kubernetes that does not save any data and state.
+Like other workloads, stateless workloads are composed of Pods. Through the Daocloud container management platform, you can easily manage workloads on multi-cloud and multi-cluster based on the permissions you have, including the creation, update, deletion, elastic scaling, restart, and version rollback of stateless workloads. Full lifecycle management.
 
-本文介绍如何通过镜像创建无状态负载。
+This article describes how to create stateless workloads through image.
 
-## 前提条件
+## Prerequisites
 
-在使用镜像创建无状态负载之前，需要满足以下前提条件：
+Before using image to create stateless workloads, the following prerequisites need to be met:
 
-- 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
+- The container management platform [has joined the Kubernetes cluster](../Clusters/JoinACluster.md) or [has created the Kubernetes cluster](../Clusters/CreateCluster.md), and can access the UI interface of the cluster.
 
-- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并为用户授予 [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) 或更高权限，详情可参考[命名空间授权](../Namespaces/createns.md)。
+- Completed a [Namespace Creation](../Namespaces/createtens.md), [User Creation](../../../ghippo/04UserGuide/01UserandAccess/User.md), and created a Grant [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) or higher permissions, please refer to [Namespace Authorization](../Namespaces/createns.md) for details.
 
-- 单个实例中有多个容器时，请确保容器使用的端口不冲突，否则部署会失效。
+- When there are multiple containers in a single instance, please make sure that the ports used by the containers do not conflict, otherwise the deployment will fail.
 
-## 镜像创建
+## Image creation
 
-参考以下步骤，使用镜像创建一个无状态负载。
+Follow the steps below to create a stateless workload using image.
 
-### 基本信息配置
+### Basic information configuration
 
-1. 以 `NS Edit` 用户成功登录后，点击左侧导航栏上的`集群列表`进入集群列表页面。点击一个集群名称，进入`集群详情`页面。
+1. After successfully logging in as the `NS Edit` user, click `Cluster List` on the left navigation bar to enter the cluster list page. Click on a cluster name to enter the `Cluster Details` page.
 
-    ![集群详情](../../images/deploy01.png)
+     ![Cluster Details](../../images/deploy01.png)
 
-2. 在集群详情页面，点击左侧导航栏的`工作负载`进入工作负载列表后，点击页面右上角的`镜像创建`按钮。
+2. On the cluster details page, click `Workload` in the left navigation bar to enter the workload list, and click the `Image creation` button in the upper right corner of the page.
 
-    ![工作负载](../../images/deploy02.png)
+     ![Workload](../../images/deploy02.png)
 
-3. 在`创建无状态负载`页面中，根据下表输入基本信息后，点击`下一步`。
+3. On the `Create Stateless Load` page, enter the basic information according to the table below, and click `Next`.
 
-    ![基本信息](../../images/deploy04.png)
+     ![Basic Information](../../images/deploy04.png)
 
-    - 负载名称：输入新建工作负载的名称，命名必须唯一。请注意名称最长 63 个字符，只能包含小写字母、数字及分隔符（“_”）,且必须以小写字母或数字开头及结尾，例如 deployment-01。
-    - 集群：选择新建工作负载所在的集群。在集群内创建工作负载时，将在当前集群中创建工作负载。集群不可更改。当在集群外部创建工作负载时，将在所选集群创建工作负载，例如 Cluster-01。
-    - 命名空间：选择新建工作负载所在的命名空间。关于命名空间更多信息请参考[命名空间概述](../Namespaces/createns.md)。若您不设置命名空间，系统会默认使用 default 命名空间。
-    - 实例数：输入工作负载的 Pod 实例数量。若您不设置实例数量，系统会默认创建 2 个 Pod 实例。
-    - 描述：输入工作负载的描述信息，内容自定义。字符数量应不超过 512 个。例如：这是一个无状态负载，主要用来运行 Nginx 服务。
+     - Workload name: Enter the name of the new workload, which must be unique. Please note that the name can be up to 63 characters, can only contain lowercase letters, numbers, and separators ("_"), and must start and end with lowercase letters or numbers, such as deployment-01.
+     - Cluster: Select the cluster where the newly created workload resides. When a workload is created within a cluster, the workload is created in the current cluster. Clusters cannot be changed. When a workload is created outside the cluster, the workload is created on the selected cluster, for example Cluster-01.
+     - Namespace: Select the namespace where the newly created workload resides. For more information about namespaces, please refer to [Namespace Overview](../Namespaces/createns.md). If you do not set a namespace, the system will use the default namespace by default.
+     - Number of Instances: Enter the number of Pod instances for the workload. If you do not set the number of instances, the system will create 2 Pod instances by default.
+     - Description: Enter the description information of the workload and customize the content. The number of characters should not exceed 512. For example: This is a stateless load, mainly used to run the Nginx service.
 
-### 容器配置
+### Container configuration
 
-在配置容器相关参数时，您必须正确配置容器的名称、镜像参数，否则将无法进入下一步。如果您需在一个容器组中添加多个容器，可点击右侧的 `+` 添加多个容器。
+When configuring container-related parameters, you must correctly configure the container name and image parameters, otherwise you will not be able to proceed to the next step. If you need to add multiple containers to a container group, click `+` on the right to add multiple containers.
 
-完成以下所有容器配置信息后，点击`下一步`。
+After completing all the container configuration information below, click Next.
 
-=== "基本信息（必填）"
+=== "Basic information (required)"
 
-    ![基本信息](../../images/deploy05.png)
+     ![Basic Information](../../images/deploy05.png)
 
-    按照以下输入信息后，点击`确认`。
+     After entering the information as follows, click `Confirm`.
 
-    - 容器名称：请注意名称最长63个字符，只能包含小写字母、数字及分隔符（“_”）,且必须以小写字母或数字开头及结尾。例如 nginx-01。
-    - 容器镜像：选择镜像仓库后输入镜像名称或镜像地址来选择镜像。请注意，镜像名称必须为镜像仓库中已有的镜像名，否则将无法获取）。例如 您可以选择`公共镜像仓库` 后 输入 “nginx” 来部署 nginx 镜像。
-    - 更新策略：当对容器执行更新时，[镜像拉取策略](https://kubernetes.io/zh-cn/docs/concepts/containers/images/#image-pull-policy)。默认不启用`总是拉取镜像策略`，即在工作负载每次重启/升级时拉取本地镜像,当镜像在本地不存在时将会从镜像仓库重新拉取。如果启用`总是拉取镜像策略`将默认从仓库重新拉取镜像。
-    - 特权容器：默认情况下，容器不可以访问宿主机上的任何设备，开启特权容器后，容器即可访问宿主机上的所有设备，享有宿主机上的运行进程的所有权限。默认启用。
-    - CPU 配额：容器 CPU 资源的最低使用量和最高使用量。申请：容器需要使用的最小 CPU 用量。限制：允许容器使用的最大 CPU 用量。请根据需要为容器配置 CPU 配额，避免资源浪费和因容器资源超额导致系统故障。默认为 0.25，0.25。
-    - 内存配额：容器内存资源的最低使用量和最高使用量。申请：容器需要使用的最小内用量。限制：允许容器使用的内存最大用量。请根据需要为容器配置 CPU 配额，避免资源浪费和因容器资源超额导致系统故障。默认为 512 MB，512 MB。
-    - GPU 配额：为集群配置 GPU 使用配额，需要管理员预先在集群节点上安装 GPU 卡及驱动插件，并在 **集群设置** 上开启了 GPU 特性后，您才能为集群配置 GPU 配额。GPU 配额设置支持为容器设置独享整张 GPU 卡或部分 vGPUs。例如，您有一张 8 核心的 GPU 卡，您可以输入数字 `8` 让容器独享整长卡，也可以输入数字 `1` 为容器配置 1 核心的 vGPU。
+     - Container name: Please note that the maximum length of the name is 63 characters. It can only contain lowercase letters, numbers and separators ("_"), and must start and end with lowercase letters or numbers. For example nginx-01.
+     - Container image: Select the image registry and enter the image name or image address to select the image. Please note that the image name must be an existing image name in the container registry, otherwise it will not be available). For example, you can select `Public Image registry` and enter "nginx" to deploy the nginx image.
+     - Update policy: [image pull policy](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy) when performing updates on containers. By default, the "always pull image policy" is not enabled, that is, the local image is pulled every time the workload restarts/upgrades, and when the image does not exist locally, it will be re-pulled from the container registry. If you enable the `always pull image policy`, the image will be re-pulled from the registry by default.
+     - Privileged container: By default, the container cannot access any device on the host. After enabling the privileged container, the container can access all devices on the host and enjoy all the permissions of the running process on the host. Enabled by default.
+     - CPU Quota: Minimum and maximum usage of container CPU resources. Requests: The minimum amount of CPU the container needs to use. Limit: The maximum amount of CPU allowed to be used by the container. Please configure CPU quotas for containers as needed to avoid resource waste and system failures caused by excessive container resources. Default is 0.25, 0.25.
+     - Memory quota: the minimum and maximum usage of container memory resources. Application: The minimum amount of content that needs to be used in the container. Limit: The maximum amount of memory allowed to be used by the container. Please configure CPU quotas for containers as needed to avoid resource waste and system failures caused by excessive container resources. The default is 512 MB, 512 MB.
+     - GPU quota: To configure GPU usage quotas for the cluster, the administrator needs to install GPU cards and driver plug-ins on the cluster nodes in advance, and enable the GPU feature on **Cluster Settings** before you can configure GPU quotas for the cluster. The GPU quota setting supports setting exclusive use of the entire GPU card or some vGPUs for the container. For example, if you have an 8-core GPU card, you can enter the number `8` to let the container own the entire length of the card, or you can enter the number `1` to configure a 1-core vGPU for the container.
 
-=== "生命周期（选填）"
+=== "Lifecycle (optional)"
 
-    容器生命周期配置用于设置容器启动时、启动后、停止前需要执行的命令。具体详情请参照[容器生命周期配置](PodConfig/lifescycle.md)。
+     The container lifecycle configuration is used to set the commands that need to be executed when the container starts, after starting, and before stopping. For details, please refer to [Container Lifecycle Configuration](PodConfig/lifescycle.md).
 
-    ![生命周期](../../images/deploy06.png)
+     ![Lifecycle](../../images/deploy06.png)
 
-=== "健康检查（选填）"
+=== "Health Check (optional)"
 
-    容器健康检查用于判断容器和应用的健康状态。有助于提高应用的可用性。具体详情请参考[容器健康检查配置](PodConfig/healthcheck.md)。
+     Container health checks are used to determine the health status of containers and applications. Helps improve app usability. For details, please refer to [Container Health Check Configuration](PodConfig/healthcheck.md).
 
-    ![健康检查](../../images/deploy07.png)
+     ![Health Check](../../images/deploy07.png)
 
-=== "环境变量（选填）"
+=== "Environment variables (optional)"
 
-    容器环境变量配置用于配置 Pod 内的容器参数，为 Pod 添加环境变量或传递配置等。具体详情请参考[容器环境变量配置](PodConfig/EnvironmentVariables.md)。
+     Container environment variable configuration is used to configure container parameters in Pods, add environment variables to Pods or pass configurations, etc. For details, please refer to [Container Environment Variable Configuration](PodConfig/EnvironmentVariables.md).
 
-    ![环境变量](../../images/deploy08.png)
+     ![environment variable](../../images/deploy08.png)
 
-=== "数据存储（选填）"
+=== "Data storage (optional)"
 
-    容器数据存储配置用于配置容器挂载数据卷和数据持久化设置。具体详情请参考[容器数据存储配置](PodConfig/EnvironmentVariables.md)。
+     Container data storage configuration is used to configure container mounted data volumes and data persistence settings. For details, please refer to [Container Data Storage Configuration](PodConfig/EnvironmentVariables.md).
 
-    ![数据存储](../../images/deploy09.png)
+     ![datastore](../../images/deploy09.png)
 
-=== "安全设置（选填）"
+=== "Security settings (optional)"
 
-    通过 Linux 内置的账号权限隔离机制来对容器进行安全隔离。您可以通过使用不同权限的账号 UID（数字身份标记）来限制容器的权限。如使用 root 账号的权限，请输入 `0`。
+     Containers are securely isolated through Linux's built-in account authority isolation mechanism. You can limit container permissions by using account UIDs (digital identity tokens) with different permissions. To use root account privileges, please enter `0`.
 
-    ![安全设置](../../images/deploy10.png)
+     ![Security Settings](../../images/deploy10.png)
 
-### 服务配置
+### Service configuration
 
-为无状态负载配置[服务](../ServicesandRoutes/CreatingServices.md)，使无状态负载能够被外部访问。
+Configure [Services](../ServicesandRoutes/CreatingServices.md) for the stateless load, so that the stateless load can be accessed externally.
 
-1. 点击`创建服务`按钮。
+1. Click the `Create Service` button.
 
-    ![服务配置](../../images/deploy12.png)
+     ![Service Configuration](../../images/deploy12.png)
 
-2. 参考[创建服务](../ServicesandRoutes/CreatingServices.md)，配置服务参数。
+2. Refer to [Creating Services](../ServicesandRoutes/CreatingServices.md) to configure service parameters.
 
-    ![创建服务](../../images/deploy13.png)
+     ![create service](../../images/deploy13.png)
 
-3. 点击`确定`，点击`下一步`。
+3. Click `OK` and click `Next`.
 
-### 高级配置
+### Advanced configuration
 
-除了基本信息配置，Daocloud 容器管理平台还提供了丰富的高级配置，可对工作负载的升级策略、调度策略、标签与注解等高级功能进行配置。
+In addition to basic information configuration, the Daocloud container management platform also provides a wealth of advanced configurations, which can configure advanced functions such as workload upgrade policies, scheduling policies, labels and annotations.
 
-=== "升级策略"
+=== "Upgrade Strategy"
 
-    ![升级策略](../../images/deploy14.png)
+     ![Upgrade Policy](../../images/deploy14.png)
 
-    - 升级方式：**滚动升级** 将逐步用新版本的实例替换旧版本的实例，升级的过程中，业务流量会同时负载均衡分布到新老的实例上，因此业务不会中断。**重建升级** 将先把您工作负载的老版本实例删除，再安装指定的新版本，升级过程中业务会中断。
-    - 最大无效 Pod 数：用于指定 Deployment 在更新过程中不可用状态的 Pod 数量的上限，如果等于实例数有服务的风险。默认 25%。
-    - 最大浪涌：更新 Pod 的过程中 Pod 总数量超过 Pod 期望副本数量部分的最大值或比率。默认 25%。
-    - 最大保留版本数：为回滚时保留的旧版本的数量。默认 10。
-    - Pod 可用最短时间(s)：Pod 就绪的最短时间，只有超出这个时间 Pod 才被认为可用，默认 0 秒。
-    - 升级最大持续时间(s)：在标记 deployment 失败之前，等待部署进行的最大持续时间，默认 600 秒。
-    - 缩容时间窗(s)：工作负载停止前命令的执行时间窗（0-9,999秒），默认 30 秒。
+     - Upgrade method: **Rolling upgrade** will gradually replace instances of the old version with instances of the new version. During the upgrade process, business traffic will be load-balanced to the old and new instances at the same time, so the business will not be interrupted. **Rebuild and upgrade** will first delete the old version instance of your workload, and then install the specified new version. Business will be interrupted during the upgrade process.
+     - Maximum number of invalid Pods: used to specify the upper limit of the number of Pods in the unavailable state of the Deployment during the update process. If it is equal to the number of instances, there is a risk of service. Default is 25%.
+     - Max Surge: The maximum or ratio of the portion of the total number of Pods that exceeds the expected number of replicas of a Pod during a Pod update. Default is 25%.
+     - Maximum number of retained versions: the number of old versions retained when rolling back. The default is 10.
+     - Minimum Pod availability time (s): The minimum time for a Pod to be ready. Only after this time is the Pod considered available. The default is 0 seconds.
+     - Upgrade max duration (s): The maximum duration to wait for the deployment to proceed before marking the deployment as failed, default 600 seconds.
+     - Scale-in time window (s): The execution time window (0-9,999 seconds) of the command before the workload stops, the default is 30 seconds.
 
-=== "调度策略"
+=== "Scheduling Policy"
 
-    用户可以设置容忍时间来定义当工作负载所在的节点损坏时，将工作负载调度到其它节点的容忍时间。也支持基于节点标签和 Pod 标签对工作负载所部署的节点进行调度。具体详情请参考[调度策略](PodConfig/SchedulingPolicy.md)。
+     Users can set the tolerance time to define the tolerance time for scheduling the workload to other nodes when the node where the workload resides is damaged. It also supports scheduling nodes where workloads are deployed based on node labels and Pod labels. For details, please refer to [Scheduling Policy](PodConfig/SchedulingPolicy.md).
 
-    ![调度策略](../../images/deploy15.png)
+     ![Scheduling Policy](../../images/deploy15.png)
 
-    - 容忍时间：工作负载实例所在的节点不可用的情况下，将工作负载实例重新调度到其它可用节点的时间，单位为秒。
-    - 节点亲和性：根据节点上的标签来约束 Pod 可以调度到哪些节点上。
-    - 工作负载亲和性：更新 Pod 的过程中 Pod 总数量超过 Pod 期望副本数量部分的最大值。
-    - 工作负载反亲和性：基于已经在节点上运行的 **Pod** 的标签来约束 Pod 不可以调度到的节点。
+     - Tolerance time: When the node where the workload instance resides is unavailable, the time for rescheduling the workload instance to other available nodes, in seconds.
+     - Node affinity: According to the label on the node, constrain which nodes the Pod can be scheduled on.
+     - Workload Affinity: The maximum value of the part where the total number of Pods exceeds the expected number of Pod replicas during the process of updating Pods.
+     - Workload anti-affinity: Based on the labels of the **Pod** that is already running on the node, constrain the nodes that the Pod cannot be scheduled to.
 
-=== "标签与注解"
+=== "Labels and Notes"
 
-    可以点击`添加`按钮为工作负载和容器组添加标签和注解。
+     You can click the `Add` button to add tags and annotations to workloads and container groups.
 
-    ![标签与注解](../../images/deploy16.png)
+     ![Labels and annotations](../../images/deploy16.png)
 
-=== "DNS 配置"
+=== "DNS Configuration"
 
-    应用在某些场景下会出现冗余的 DNS 查询。Kubernetes 为应用提供了与 DNS 相关的配置选项，通过对应用进行 DNS 配置，能够在某些场景下有效地减少冗余的 DNS 查询，提升业务并发量。具体详情请参考 [DNS 配置](PodConfig/EnvironmentVariables.md)。
+     In some scenarios, the application will have redundant DNS queries. Kubernetes provides DNS-related configuration options for applications. By configuring DNS for applications, redundant DNS queries can be effectively reduced in some scenarios and business concurrency can be increased. For details, please refer to [DNS Configuration](PodConfig/EnvironmentVariables.md).
 
-    ![DNS 配置](../../images/deploy17.png)
+     ![DNS Configuration](../../images/deploy17.png)
 
-    - DNS 策略：对应用进行 DNS 配置，减少冗余的 DNS 查询，提升业务并发量。
+     - DNS strategy: Configure DNS for applications to reduce redundant DNS queries and increase business concurrency.
 
-        - Default：容器的域名解析文件使用 kubelet 的 `--resolv-conf` 参数指向的域名解析文件。该配置只能解析注册到互联网上的外部域名，无法解析集群内部域名，且不存在无效的 DNS 查询。
-        - ClusterFirstWithHostNet：应用对接主机的域名文件。
-        - ClusterFirst：应用对接 Kube-DNS/CoreDNS。
-        - None：Kubernetes v1.9（Beta in v1.10）中引入的新选项值。设置为 None 之后，必须设置 dnsConfig，此时容器的域名解析文件将完全通过 dnsConfig 的配置来生成。
+         - Default: The domain name resolution file of the container uses the domain name resolution file pointed to by the `--resolv-conf` parameter of kubelet. This configuration can only resolve external domain names registered on the Internet, but cannot resolve cluster internal domain names, and there is no invalid DNS query.
+         - ClusterFirstWithHostNet: The domain name file of the host to which the application is connected.
+         -ClusterFirst: application docking Kube-DNS/CoreDNS.
+         - None: New option value introduced in Kubernetes v1.9 (Beta in v1.10). After setting to None, dnsConfig must be set. At this time, the domain name resolution file of the container will be completely generated through the configuration of dnsConfig.
 
-    - 域名服务器：根据节点上的标签来约束 Pod 可以调度到哪些节点上。
-    - 搜索域：域名查询时的 DNS 搜索域列表。指定后，提供的搜索域列表将合并到基于 dnsPolicy 生成的域名解析文件的 search 字段中，并删除重复的域名。Kubernetes 最多允许 6 个搜索域。
-    - Options：DNS 的配置选项，其中每个对象可以具有 name 属性（必需）和 value 属性（可选）。该字段中的内容将合并到基于 dnsPolicy 生成的域名解析文件的 options 字段中，dnsConfig 的 options 的某些选项如果与基于 dnsPolicy 生成的域名解析文件的选项冲突，则会被 dnsConfig 所覆盖。
-    - 主机别名：为主机设置的别名。
+     - Domain name server: According to the label on the node, constrain which nodes the Pod can be scheduled to.
+     - Search domains: DNS search domain list for domain name query. When specified, the provided search domain list will be merged into the search field of the domain name resolution file generated based on dnsPolicy, and duplicate domain names will be deleted. Kubernetes allows up to 6 search domains.
+     - Options: Configuration options for DNS, where each object can have a name attribute (required) and a value attribute (optional). The content in this field will be merged into the options field of the domain name resolution file generated based on dnsPolicy. If some options of dnsConfig options conflict with the options of the domain name resolution file generated based on dnsPolicy, they will be overwritten by dnsConfig.
+     - Host alias: the alias set for the host.
 
-### 完成创建
+### Complete creation
 
-确认所有参数输入完成后，点击`确定`按钮，完成工作负载创建，系统将自动返回`无状态负载`列表。
-点击列表右侧的 `︙`，可以对工作负载执行执行更新、删除、弹性扩缩、重启、版本回退等操作。
+After confirming that all parameters are entered, click the `OK` button to complete the creation of the workload, and the system will automatically return to the list of `stateless workloads`.
+Click `︙` on the right side of the list to perform operations such as update, delete, elastic scaling, restart, and version rollback on the workload.
 
-![操作菜单](../../images/deploy18.png)
+![Action Menu](../../images/deploy18.png)
 
-等待工作负载状态变为`运行中`。
-如果工作负载状态出现异常，请查看具体异常信息，可参考[工作负载状态](../Workloads/PodConfig/workload-status.md)。
+Wait for the workload status to change to `Running`.
+If the workload status is abnormal, please refer to [Workload Status](../Workloads/PodConfig/workload-status.md) for specific exception information.
 
-## YAML 创建
+## Create with YAML
 
-除了上述按镜像方式创建 Deployment 之外，还可以通过 YAML 来创建。
+In addition to creating a Deployment by image as described above, it can also be created by YAML.
 
-### 基本信息配置
+### Basic information configuration
 
-1. 以 `NS Edit` 用户成功登录后，点击左侧导航栏上的`集群列表`进入集群列表页面。点击一个集群名称，进入`集群详情`页面。
+1. After successfully logging in as the `NS Edit` user, click `Cluster List` on the left navigation bar to enter the cluster list page. Click on a cluster name to enter the `Cluster Details` page.
 
-    ![集群详情](../../images/deploy01.png)
+     ![Cluster Details](../../images/deploy01.png)
 
-2. 在集群详情页面，点击左侧导航栏的`工作负载`进入工作负载列表后，点击页面右上角的`YAML 创建`按钮。
+2. On the cluster details page, click `Workload` in the left navigation bar to enter the workload list, and click the `Create with YAML` button in the upper right corner of the page.
 
-    ![工作负载](../../images/deploy02Yaml.png)
+     ![Workload](../../images/deploy02Yaml.png)
 
-3. 完成上述步骤后，您将跳转至`创建无状态负载`的详细配置页面，请参照下面的步骤完成无状态负载的创建。
+3. After completing the above steps, you will jump to the detailed configuration page of `Create a stateless workload`, please refer to the following steps to complete the creation of a stateless workload.
 
-### 输入 YAML
+### Input YAML
 
-参考下面的 YAML 模板，创建一个名为 `nginx-deployment` 的无状态负载。
+Referring to the YAML template below, create a stateless workload called `nginx-deployment`.
 
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+   name: nginx-deployment
 spec:
-  selector:
-    matchLabels:
-      app: nginx
-  replicas: 2 # 告知 Deployment 运行 2 个与该模板匹配的 Pod
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:1.14.2
-        ports:
-        - containerPort: 80
+   selector:
+     matchLabels:
+       app: nginx
+   replicas: 2 # Tell the Deployment to run 2 Pods that match this template
+   template:
+     metadata:
+       labels:
+         app: nginx
+     spec:
+       containers:
+       -name: nginx
+         image: nginx:1.14.2
+         ports:
+         - containerPort: 80
 ```
 
-### 完成创建
+### Complete creation
 
-确认所有参数输入完成后，点击`确定`按钮，完成工作负载创建，自动返回`无状态负载`列表。
-点击列表右侧的 `︙`，可以对工作负载执行执行更新、删除、弹性扩缩、重启、版本回退等操作。
+After confirming that all parameters have been entered, click the `OK` button to complete the workload creation and automatically return to the `Stateless Load` list.
+Click `︙` on the right side of the list to perform operations such as update, delete, elastic scaling, restart, and version rollback on the workload.
 
-![操作菜单](../../images/deploy18.png)
+![Action Menu](../../images/deploy18.png)
 
-等待工作负载状态变为`运行中`。如果工作负载状态出现异常，请查看具体异常信息，可参考[工作负载状态](../Workloads/PodConfig/workload-status.md)。
+Wait for the workload status to change to `Running`. If the workload status is abnormal, please refer to [Workload Status](../Workloads/PodConfig/workload-status.md) for specific exception information.

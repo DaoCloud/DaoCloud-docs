@@ -1,4 +1,4 @@
-# Configure the container life cycle
+# Configure the container lifecycle
 
 Pods follow a predefined lifecycle, starting in the `Pending` phase and entering the `Running` state if at least one container in the Pod starts normally. If any container in the Pod ends in a failed state, the state becomes `Failed`. The following `phase` field values ​​indicate which phase of the lifecycle a Pod is in.
 
@@ -10,9 +10,9 @@ value | description
 `Failed`<br /> | All containers in the Pod have terminated, and at least one container terminated due to failure. That is, the container exited with a non-zero status or was terminated by the system.
 `Unknown`<br /> (Unknown) | The status of the Pod cannot be obtained for some reason, usually due to a communication failure with the host where the Pod resides.
 
-When creating a workload in DCE container management, images are usually used to specify the running environment in the container. By default, when building an image, the `Entrypoint` and `CMD` fields can be used to define the commands and parameters to be executed when the container is running. If you need to change the commands and parameters of the container image before starting, after starting, and before stopping, you can override the default commands and parameters in the image by setting the life cycle event commands and parameters of the container.
+When creating a workload in DCE container management, images are usually used to specify the running environment in the container. By default, when building an image, the `Entrypoint` and `CMD` fields can be used to define the commands and parameters to be executed when the container is running. If you need to change the commands and parameters of the container image before starting, after starting, and before stopping, you can override the default commands and parameters in the image by setting the lifecycle event commands and parameters of the container.
 
-## Life cycle configuration
+## lifecycle configuration
 
 Configure the startup command, post-start command, and pre-stop command of the container according to business needs.
 

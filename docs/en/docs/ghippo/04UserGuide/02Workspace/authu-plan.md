@@ -7,24 +7,24 @@ The authorization and resource planning process for such users is shown in the f
 ```mermaid
 graph TB
 
-    start([start]) --> user[1. create user]
-    user --> ns[2. Prepare Kubernetes namespace]
-    ns --> ws[3. Prepare workspace]
-    ws --> ws-to-ns[4. Workspace Binding Namespace]
-    ws-to-ns --> authu[5. Authorize Workspace Editor to users]
-    authu --> complete([end])
+    start([Start]) --> user[1. Create User]
+    user --> ns[2. Prepare Kubernetes Namespace]
+    ns --> ws[3. Prepare Workspace]
+    ws --> ws-to-ns[4. Bind a workspace to namespace]
+    ws-to-ns --> authu[5. Authorize a user with Workspace Editor]
+    authu --> complete([End])
     
-click user "https://docs.daocloud.io/ghippo/04UserGuide/01UserandAccess/User/"
-click ns "https://docs.daocloud.io/kpanda/07UserGuide/Namespaces/createns/"
-click ws "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/Workspaces/"
-click ws-to-ns "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus/"
-click authu "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/wspermission/"
+click user "https://docs.daocloud.io/en/ghippo/04UserGuide/01UserandAccess/User/"
+click ns "https://docs.daocloud.io/en/kpanda/07UserGuide/Namespaces/createns/"
+click ws "https://docs.daocloud.io/en/ghippo/04UserGuide/02Workspace/Workspaces/"
+click ws-to-ns "https://docs.daocloud.io/en/ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus/"
+click authu "https://docs.daocloud.io/en/ghippo/04UserGuide/02Workspace/wspermission/"
 
  classDef plain fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
- classDef k8s fill: #326ce5, stroke: #fff, stroke-width: 4px, color: #fff;
+ classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
  classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
  class user,ns,ws,ws-to-ns,authu cluster;
- class start, complete plain;
+ class start,complete plain;
 ```
 
 After authorization, the permissions of ordinary users in each module are:

@@ -5,13 +5,13 @@ hide:
 
 # Product advantages
 
-Let developers use multi-cloud like using a Kubernetes cluster, multi-cloud orchestration Kairship has the following advantages:
+Let developers use multicloud like using a Kubernetes cluster, multicloud orchestration Kairship has the following advantages:
 
 - Compatible with Kubernetes native API
     - Upgrade from single-cluster to multi-cluster with zero modification
 
 - Seamlessly integrate Kubernetes single-cluster tool chain ecology
-    - Say goodbye to binding: multi-cloud platform support, automatic allocation, free migration
+    - Say goodbye to binding: multicloud platform support, automatic allocation, free migration
     - Commercial products that are not bound to the manufacturer
 
 - Rich multi-cluster scheduling
