@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 适用场景
 
 DCE 5.0 集成社区最优秀的众多技术，内置依赖项数以万计，经海量调测后熔于一炉，铸就新一代 PaaS 服务平台，在各类使用场景中都游刃有余。
@@ -78,5 +83,6 @@ CI/CD 流水线能力自动化完成应用构建、部署工作。创新性引�
 
 方案优势：创新性技术完成跨云容灾，跨云资源检索并发性能高，结合容器平台的能力适配边缘、信创场景。
 
+[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
 [申请社区免费体验](license0.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/install-dce-community.md){ .md-button .md-button--primary }

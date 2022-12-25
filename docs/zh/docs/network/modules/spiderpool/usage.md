@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 使用
 
 本页说明如何使用 IP 池（IPPool）。
@@ -33,8 +38,7 @@
           annotations:
             ipam.spidernet.io/ippool: |-
               {
-                "interface": "eth0",
-                "ipv4pools": ["standard-ipv4-ippool"]
+                "ipv4": ["standard-ipv4-ippool"]
               }
           labels:
             app: standard-ippool-deploy

@@ -1,6 +1,6 @@
 ---
-sidebar_position: 3
-sidebar_label: "DRBD 安装器"
+hide:
+  - toc
 ---
 
 # DRBD 安装器

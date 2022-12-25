@@ -1,7 +1,6 @@
 ---
-id: "intro"
-sidebar_position: 1
-sidebar_label: "什么是 HwameiStor"
+hide:
+  - toc
 ---
 
 # 什么是 HwameiStor
@@ -10,7 +9,7 @@ HwameiStor 是一款 Kubernetes 原生的容器附加存储 (CAS) 解决方案�
 
 ![System architecture](../img/architecture.png)
 
-## 功能特性
+具体的功能特性如下：
 
 1. 自动化运维管理
 
@@ -28,4 +27,6 @@ HwameiStor 是一款 Kubernetes 原生的容器附加存储 (CAS) 解决方案�
 
     可以根据集群规模大小进行动态的扩容，灵活满足应用的数据持久化需求。
 
+[下载 DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

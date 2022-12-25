@@ -39,7 +39,6 @@
 
     示例：
 
-
     ```yaml
     gateways:
     - bookinfo-gateway
@@ -48,7 +47,8 @@
 
 - Http
 
-    有序规则列表。该字段包含了针对 http 协议的所有路由配置功能，对名称前缀为 http-、http2-、grpc- 的服务端口，或者协议为 HTTP、HTTP2、GRPC 以及终结的 TLS，另外还有使用 HTTP、HTTP2 以及 GRPC 协议的 ServiceEntry 都是有效的。
+    有序规则列表。该字段包含了针对 http 协议的所有路由配置功能，对名称前缀为 `http-`、`http2-`、`grpc-` 的服务端口，或者协议为 HTTP、HTTP2、GRPC 以及终结的 TLS，
+    另外还有使用 HTTP、HTTP2 以及 GRPC 协议的 ServiceEntry 都是有效的。
     流量会使用匹配到的第一条规则。
 
     http 下主要字段说明：

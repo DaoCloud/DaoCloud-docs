@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 什么是容器管理？
 
 容器管理是基于 Kubernetes 开源技术构建的面向云原生应用的容器管理平台，基于原生多集群架构，解耦底层基础设施平台，实现多云与多集群统一化管理，简化企业的应用上云流程，降低运维管理和人力成本。
@@ -45,5 +50,6 @@
 
 ![逻辑架构图](../images/kpanda_architect.png)
 
+[下载 DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }
-

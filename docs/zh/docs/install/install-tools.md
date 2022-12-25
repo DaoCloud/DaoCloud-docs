@@ -1,12 +1,13 @@
 # 安装依赖项
 
-需要在你的环境中安装一些依赖项，才能安装 DCE 5.0 体验新一代云原生操作系统的魅力。
+安装 DCE 5.0 之前，需要先安装一些依赖项。
 
-您可以根据自己的实际情况选择在线或离线安装。
+- 对于社区版，请在 K8s Master 节点上安装依赖项。
+- 对于商业版，请在[火种节点](./commercial/deploy-plan.md#_4)上安装依赖项。
 
 !!! note
 
-    安装的这些工具包括：
+    安装的依赖项大致包括：
 
     - podman
     - helm
@@ -15,10 +16,12 @@
     - kubectl
     - yq
     - minio client
+    
+    安装过程中如果您的环境存在一些工具且版本低于我们定义的版本，会将对应工具进行强制更新替换。
 
-## 在线安装
+## 在线安装依赖项
 
-1. 在机器上，下载脚本。
+1. 下载脚本。
 
     ```shell
     curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
@@ -32,21 +35,21 @@
 
 2. 开始在线安装前置依赖。
 
-    - 社区版本安装
+    - 对于社区版
 
         ```bash
         bash install_prerequisite.sh online community
         ```
 
-    - 商业版安装
+    - 对于商业版
 
         ```bash
         bash install_prerequisite.sh online full
         ```
 
-## 离线安装
+## 离线安装依赖项
 
-离线安装意味着目标主机的网络处于离线状态，无法下载所需依赖项，所以需要先在一个在线环境中制作好离线包。
+离线安装意味着目标主机的网络处于离线状态，无法下载所需依赖项，所以需先在一个在线环境中制作好离线包。
 
 1. 制作离线包。
 
@@ -64,11 +67,11 @@
 
     !!! note
 
-        当上述命令执行完成后，会在当前目录生成名为 pre_pkgs.tar.gz 的压缩包，该压缩包中会包含我们安装所需的所有文件。
+        当上述命令执行完成后，会在当前目录生成名为 pre_pkgs.tar.gz 的压缩包，该压缩包中会包含安装所需的所有文件。
 
 2. 上传目录中的所有文件到离线环境。
 
-    ``` bash
+    ```bash
     # 脚本与离线包都位于同一目录层级
     $ tree .
     .
@@ -78,16 +81,16 @@
 
 3. 执行离线安装。
 
-    - 社区版安装命令
+    - 对于社区版
 
         ```bash
         bash install_prerequisite.sh offline community
         ```
 
-    - 商业版安装
+    - 对于商业版
 
         ```bash
-         bash install_prerequisite.sh offline full
+        bash install_prerequisite.sh offline full
         ```
 
 接下来就可以安装 DCE 5.0 了。

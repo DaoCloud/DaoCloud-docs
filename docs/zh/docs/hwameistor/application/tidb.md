@@ -2,7 +2,7 @@
 
 TiDB 是一款同时支持在线事务处理 (OLTP) 与在线分析处理 (OATP) 的融合型分布式数据库产品，具备水平扩缩容、金融级高可用、实时 HTAP（即同时支持 OLTP 和 OATP）、云原生的分布式数据库，兼容 MySQL 5.7 协议和 MySQL 生态等重要特性。TiDB 的目标是为用户提供一站式的 OLTP、OLAP、HTAP 解决方案，适合高可用、强一致要求较高、数据规模较大等各种应用场景。
 
-### TiDB 整体架构
+## TiDB 整体架构
 
 TiDB 分布式数据库将整体架构拆分成了多个模块，各模块之间互相通信，组成完整的 TiDB 系统。对应的架构图如下：
 
@@ -22,7 +22,7 @@ TiDB 分布式数据库将整体架构拆分成了多个模块，各模块之间
 
 	  - TiFlash：TiFlash 是一类特殊的存储节点。和普通 TiKV 节点不一样的是，在 TiFlash 内部，数据是以列式的形式进行存储，主要的功能是为分析型的场景加速。
 
-### TiDB 数据库的存储
+## TiDB 数据库的存储
 
 ![TiDB数据库的存储](img/storage.png)
 
@@ -154,7 +154,7 @@ kubectl port-forward -n tidb-cluster svc/basic-tidb 4000 > pf4000.out &
 
 2. 查询 TiDB 版本号
 
-    ```
+    ```sql
     select tidb_version()\G;
     ```
     ![连接 TiDB 集群](img/checkversion.png)

@@ -49,7 +49,7 @@ theme:
     - search.suggest
     - search.share
     - toc.follow
-    - toc.integrate
+    # - toc.integrate
 
   palette:
     # Palette toggle for automatic mode
@@ -106,7 +106,7 @@ plugins:
       redirect_maps:
         "api.md": "dce/what-is-dce.md"
         "zh/dce/what-is-dce.md": "dce/what-is-dce.md"
-        "zh/install/install-dce.md": "install/install-dce-community.md"
+        "zh/install/install-dce.md": "install/community/k8s/online.md"
 
 
   - git-revision-date: #每页底部显示文档最后更新日期，安装 pip install mkdocs-git-revision-date-plugin

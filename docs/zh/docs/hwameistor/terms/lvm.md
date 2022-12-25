@@ -1,8 +1,3 @@
----
-sidebar_position: 6
-sidebar_label: "LVM"
----
-
 # LVM
 
 LVM 全称为 Logical Volume Manager，即逻辑卷管理器，在磁盘分区和文件系统之间添加一个逻辑层，为文件系统屏蔽下层磁盘分区布局提供一个抽象的盘卷，在盘卷上建立文件系统。

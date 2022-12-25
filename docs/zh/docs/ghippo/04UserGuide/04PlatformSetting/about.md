@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 关于平台
 
 `关于平台`主要呈现平台各个子模块当前更新的版本，声明了平台使用的各个开源软件，并以动画视频的方式致谢了平台的技术团队。
@@ -6,20 +11,20 @@
 
 1. 使用具有 `Admin` 角色的用户登录 Web 控制台。点击左侧导航栏底部的`全局管理`。
 
-    ![](../../images/ws01.png)
+    ![全局管理](../../images/ws01.png)
 
 2. 点击`平台设置`，选择`关于平台`，查看产品版本、开源软件声明和技术团队。
 
-    ![img](../../images/about05.png)
+    ![关于平台](../../images/about05.png)
 
     **产品版本**
 
-    ![img](../../images/about01.png)
+    ![产品版本](../../images/about01.png)
 
     **License 声明**
 
-    ![img](../../images/about02.png)
+    ![license 声明](../../images/about02.png)
 
     **技术团队**
 
-    ![img](../../images/about03.png)
+    ![技术团队](../../images/about03.png)

@@ -55,4 +55,4 @@
 | ------------------------ | ---------------------------------- |
 | es.kube.kubeevent.syslog | 把 Kubernetes 审计日志、事件日志，syslog 日志写入 [ElasticSearch 集群](../../middleware/elastic-search/intro/what.md) |
 | forward.audit_log | 把 Kubernetes 审计日志和[全局管理的审计日志](../../ghippo/04UserGuide/03AuditLog.md)发送到`全局管理`   |
-| es.skoala | 把[微服务网关日志](../../skoala/ms-gateway/log.md)写入到 ElasticSearch 集群            |
+| es.skoala | 把微服务网关的[请求日志](../../skoala/ms-gateway/logs/reqlog.md)和[实例日志](../../skoala/ms-gateway/logs/inslog.md)写入到 ElasticSearch 集群            |

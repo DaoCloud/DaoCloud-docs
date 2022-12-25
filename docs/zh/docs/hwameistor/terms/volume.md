@@ -1,6 +1,6 @@
 ---
-sidebar_position: 5
-sidebar_label: "Volume"
+hide:
+  - toc
 ---
 
 # Volume
@@ -12,9 +12,13 @@ sidebar_label: "Volume"
 
 Kubernetes 卷 (Volume) 这一抽象概念能够解决这两个问题。
 
-Kubernetes 支持很多类型的卷。Pod 可以同时使用任意数目的卷类型。临时卷类型的生命周期与 Pod 相同，但持久卷可以比 Pod 的存活期长。当 Pod 不再存在时，Kubernetes 也会销毁临时卷；不过 Kubernetes 不会销毁持久卷。对于给定 Pod 中任何类型的卷，在容器重启期间数据都不会丢失。
+Kubernetes 支持很多类型的卷。Pod 可以同时使用任意数目的卷类型。
+临时卷类型的生命周期与 Pod 相同，但持久卷可以比 Pod 的存活期长。
+当 Pod 不再存在时，Kubernetes 也会销毁临时卷；不过 Kubernetes 不会销毁持久卷。
+对于给定 Pod 中任何类型的卷，在容器重启期间数据都不会丢失。
 
-卷的核心是一个目录，其中可能保存了数据，Pod 中的容器可以访问该目录中的数据。所采用的特定卷类型将决定该目录如何形成、使用何种介质保存数据以及目录中存放的内容。
+卷的核心是一个目录，其中可能保存了数据，Pod 中的容器可以访问该目录中的数据。
+所采用的特定卷类型将决定该目录如何形成、使用何种介质保存数据以及目录中存放的内容。
 
 使用卷时，在 `.spec.volumes` 字段中设置为 Pod 提供的卷，并在 `.spec.containers[*].volumeMounts` 字段中声明卷在容器中的挂载位置。
 

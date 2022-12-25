@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 创建 Kafka
 
 在 Kafka 消息队列中，执行以下操作创建 Kafka 实例。

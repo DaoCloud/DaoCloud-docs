@@ -9,6 +9,7 @@ OpenTelemetry 项目要求以必须在 OpenTelemetry 协议 (OTLP) 中发出数�
 Golang 可以通过 sdk 暴露 runtime 指标，具体来说，在应用中添加以下方法开启 metrics 暴露器：
 
 ### 安装相关依赖
+
 切换/进入到应用程序源文件夹后运行以下命令：
 
 ```golang

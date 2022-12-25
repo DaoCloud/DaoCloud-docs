@@ -13,7 +13,7 @@
 1. 在`凭证`页面创建两个凭证：
 
     - docker-credential：用户名和密码，用于访问镜像仓库。
-    - demo-dev-kubeconfig：用于使用这个 kubeconfig 访问 kubernetes 集群。
+    - demo-dev-kubeconfig：用于使用这个 kubeconfig 访问 Kubernetes 集群。
 
 2. 创建完成后，可以在`凭证列表`页面看到凭证信息。
 
@@ -78,7 +78,7 @@
         ![container](../images/container.png)
 
     - 在步骤模块中选择开启`使用凭证`，在弹出的对话框中填写相关参数，然后点击`确定`。
-        
+
         - 凭证：选择创建的 Docker hub 凭证，用户访问镜像仓库。
         - 密码变量：PASS
         - 用户名变量：USER
@@ -127,7 +127,7 @@
 
     - 点击`添加步骤`以进行集群部署操作，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
 
-        ```yaml
+        ```shell
         kubectl apply -f deploy.yaml
         ```
 
@@ -140,4 +140,3 @@
 2. 在弹出的对话框中输入步骤二中的示例参数。点击`确定`即可成功运行该流水线。
 
     ![build-para](../images/build-para.png)
-

@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Kubean
 
 Kubean 是一个基于 kubespray 构建的集群生命周期管理工具。

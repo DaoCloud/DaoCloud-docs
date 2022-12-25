@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 功能说明
 
 Elasticsearch 以 JSON 文档的形式存储数据。

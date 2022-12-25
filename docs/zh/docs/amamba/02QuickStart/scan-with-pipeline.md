@@ -49,9 +49,9 @@
 5. 在 SonarQube 创建 Webhook 服务器，操作路径：
 
     1. 操作路径为 `Administration` -> `Configuration` -> `Webhooks` -> `Create`。
-   
+
     2. 在弹出的对话框中输入 `Name` 和 `Jenkins Console URL`（即 SonarQube Webhook 地址，这个地址是前面获取的 SonarQube 地址 + sonarqube-webhook）。
-   
+
     3. 点击 `Create` 完成操作。
 
 6. 提供一个暴露 Jenkins 地址，这是为了让用户将 SonarQube 服务器添加至 Jenkins。
@@ -164,6 +164,7 @@
     }
     }
     ```
+
     !!! note
 
         在上述代码中，

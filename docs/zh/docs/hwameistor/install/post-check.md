@@ -32,9 +32,9 @@ hwameistor-scheduler-58dfcf79f5-lswkt                      1/1     Running      
 hwameistor-webhook-986479678-278cr                         1/1     Running                 0          30s
 ```
 
-:::info
-`local-disk-manager` 和 `local-storage` 是 `DaemonSet`。在每个 Kubernetes 节点上都应该有一个 DaemonSet Pod。
-:::
+!!! info
+
+    `local-disk-manager` 和 `local-storage` 是 `DaemonSet`。在每个 Kubernetes 节点上都应该有一个 DaemonSet Pod。
 
 ## 检查 `StorageClass`
 
@@ -51,8 +51,9 @@ hwameistor-storage-disk-hdd   disk.hwameistor.io   Delete          WaitForFirstC
 
 运行以下命令通过 HwameiStor CRD 创建 API。
 
-```console
-$ kubectl api-resources --api-group hwameistor.io
+```sh
+kubectl api-resources --api-group hwameistor.io
+```
 
 ```console
 NAME                       SHORTNAMES   APIVERSION               NAMESPACED   KIND

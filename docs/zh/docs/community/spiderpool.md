@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Spiderpool
 
 Spiderpool 是一个免费开源的 IPAM 管理软件。

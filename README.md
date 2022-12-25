@@ -5,14 +5,29 @@
 
 [中文版](README_zh.md) ｜ English
 
-DCE 5.0 docsite is created with MkDocs. All pages are written in markdown. We use GitOps to control workflow and versions.
+DaoCloud is a Certified Kubernetes Service Provider (KCSP). DCE has been certified with the following releases:
 
-## Release Notes
+Current releases:
 
-- [Release v1.0](docs/README.md)
+[![1.23](./docs/zh/docs/images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
+[![1.24](./docs/zh/docs/images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
+[![1.25](./docs/zh/docs/images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
+
+Legacy releases:
+
+[![1.7](./docs/zh/docs/images/1.7.png)](https://github.com/cncf/k8s-conformance/pull/68)
+[![1.9](./docs/zh/docs/images/1.9.png)](https://github.com/cncf/k8s-conformance/pull/210)
+[![1.13](./docs/zh/docs/images/1.13.png)](https://github.com/cncf/k8s-conformance/pull/418)
+[![1.15](./docs/zh/docs/images/1.15.png)](https://github.com/cncf/k8s-conformance/pull/794)
+[![1.18](./docs/zh/docs/images/1.18.png)](https://github.com/cncf/k8s-conformance/pull/1144)
+[![1.20](./docs/zh/docs/images/1.20.png)](https://github.com/cncf/k8s-conformance/pull/1463)
+
+DCE 5.0 website is created with MkDocs. All pages are written in markdown.
+We use GitOps to control workflow and versions.
+
 ## Open a PR
 
-This docsite uses Pull Request (PR) to modify, translate, and manage all pages.
+This website uses Pull Request (PR) to modify, translate, and manage all pages.
 
 1. Click `Fork` to create a fork
 2. Run `git clone` to clone this fork to your computer
@@ -21,14 +36,14 @@ This docsite uses Pull Request (PR) to modify, translate, and manage all pages.
 5. Open a PR in this repo
 6. Successfully merge after reviewing, thanks.
 
-Please read through [writing style](http://docs-static.daocloud.io/write-docs) before any change.
+## Preview locally
 
-## Create a local preview environment
+This section describes how you can preview your changes before commit.
 
 ### With Docker
 
-1. Install and run Docker
-2. Run `make serve` and preview your changes
+1. Install and run [Docker](https://www.docker.com/).
+2. Run `make serve` and preview your changes.
 
 ### With Git repo
 
@@ -50,8 +65,25 @@ See [MkDocs documents to install](https://squidfunk.github.io/mkdocs-material/ge
 - Care about links to avoid any null or dead link
 - Give a consistent experience to explore all pages herein
 
+For more details refer to [DaoCloud Style Guide of Writing](./style.md).
+
 ## Acknowledgements
 
-We sincerely thank all the contributors who contribute to DaoCloud docsite. Once a PR you opened have been successfully merged, your ID will appear at the bottom of the page as an author.
+We sincerely thank all the contributors who contribute to DaoCloud website.
+Once a PR you opened have been successfully merged, your ID will appear at the bottom of the page as an author.
 
-If any problem, feel free to reach out to us: [support@daocloud.io](mailto:support@daocloud.io?subject=FROM_DOCS_README)
+If any problem, feel free to reach out to us: [support@daocloud.io](mailto:support@daocloud.io?subject=FROM_DOCS_README) or scan the QR code to chat with developers:
+
+![wechat](./docs/zh/docs/images/assist.png)
+
+## References
+
+- [DaoCloud Style Guide of Writing](./style.md)
+- [Contribution Guideline](./CONTRIBUTING.md)
+
+## More
+
+- [Docsite Release v1.0](docs/README.md)
+- [Download DCE 5.0](./docs/zh/docs/download/dce5.md)
+- [Install DCE 5.0](./docs/zh/docs/install/intro.md)
+- [Free Trial](./docs/zh/docs/dce/license0.md)

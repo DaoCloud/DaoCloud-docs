@@ -3,7 +3,7 @@
 默认 Kubernetes 集群不会输出审计日志信息。通过以下配置，可以开启 Kubernetes 的审计日志功能。
 
 1. 准备审计日志的 Policy 文件
-2. 修改 API 服务器配置文件，开启审计日志
+2. 配置 API 服务器，开启审计日志
 3. 重启并验证
 
 ## 准备审计日志 Policy 文件
@@ -13,19 +13,19 @@
 ```yaml
 apiVersion: audit.k8s.io/v1
 kind: Policy
-# 不为 RequestReceived 阶段的所有请求生成审计事件
+# Don't generate audit events for all requests in RequestReceived stage.
 omitStages:
   - "ResponseStarted"
   - "RequestReceived"
   - "Panic"
 rules:
-  # 以下请求被手动标识为大容量和低风险，
-  # 因此丢弃这些请求。
+  # The following requests were manually identified as high-volume and low-risk,
+  # so drop them.
   - level: None
     users: ["system:kube-proxy"]
     verbs: ["watch"]
     resources:
-      - group: "" # 核心
+      - group: "" # core
         resources: ["endpoints", "services", "services/status"]
   - level: None
     # Ingress controller reads `configmaps/ingress-uid` through the unsecured port.
@@ -34,40 +34,40 @@ rules:
     namespaces: ["kube-system"]
     verbs: ["get"]
     resources:
-      - group: "" # 核心
+      - group: "" # core
         resources: ["configmaps"]
   - level: None
     users: ["kubelet"] # legacy kubelet identity
     verbs: ["get"]
     resources:
-      - group: "" # 核心
+      - group: "" # core
         resources: ["nodes", "nodes/status"]
   - level: None
     userGroups: ["system:nodes"]
     verbs: ["get"]
     resources:
-      - group: "" # 核心
+      - group: "" # core
         resources: ["nodes", "nodes/status"]
   - level: None
     users:
       - system:kube-controller-manager
       - system:kube-scheduler
       - system:serviceaccount:kube-system:endpoint-controller
-   verbs: ["get", "update"]
-   namespaces: ["kube-system"]
-   resources:
-     - group: "" # 核心
-       resources: ["endpoints"]
+    verbs: ["get", "update"]
+    namespaces: ["kube-system"]
+    resources:
+      - group: "" # core
+        resources: ["endpoints"]
   - level: None
     users: ["system:apiserver"]
     verbs: ["get"]
     resources:
-      - group: "" # 核心
+      - group: "" # core
         resources: ["namespaces", "namespaces/status", "namespaces/finalize"]
   # Don't log HPA fetching metrics.
   - level: None
     users:
-      - system: kube-controller-manager
+      - system:kube-controller-manager
     verbs: ["get", "list"]
     resources:
       - group: "metrics.k8s.io"
@@ -80,28 +80,29 @@ rules:
   # Don't log events requests.
   - level: None
     resources:
-      - group: "" # 核心
+      - group: "" # core
         resources: ["events"]
-   
-  # 新的开始
+        
+  # new start
   # 忽略所有访问非认证端口的 API，通常是系统组件如 Kube-Controller 等。
   - level: None
-   users: ["system:unsecured"]
+    users: ["system:unsecured"]
+
   # 忽略 kube-admin 的审计日志
   - level: None
     users: ["kube-admin"]
-  # 忽略所有资源状态更新的 API
+  # 忽略所有资源状态更新的 API need add
   - level: None
     resources:
-      - group: "" # 核心
-        resources: ["events", "nodes/status", "pods/status", "services/status"]
-      - group: "authorization.k8s.io"
-        resources: ["selfsubjectrulesreviews"]
+    - group: "" # core
+      resources: ["events", "nodes/status", "pods/status", "services/status"]
+    - group: "authorization.k8s.io"
+      resources: ["selfsubjectrulesreviews"]
   # 忽略leases need add
   - level: None
     resources:
-      - group: "coordination.k8s.io"
-        resources: ["leases"]
+    - group: "coordination.k8s.io"
+      resources: ["leases"]
   - level: Request
     verbs: ["create", "update", "patch", "delete"]
     users: ["kube-admin"]
@@ -111,7 +112,7 @@ rules:
   # so only log at the Metadata level.
   - level: Metadata
     resources:
-      - group: "" # 核心
+      - group: "" # core
         resources: ["secrets", "configmaps"]
       - group: authentication.k8s.io
         resources: ["tokenreviews"]
@@ -121,7 +122,7 @@ rules:
   - level: Request
     verbs: ["get", "list", "watch"]
     resources:
-      - group: "" # 核心
+      - group: "" # core
       - group: "admissionregistration.k8s.io"
       - group: "apiextensions.k8s.io"
       - group: "apiregistration.k8s.io"
@@ -143,7 +144,7 @@ rules:
   # Default level for known APIs
   - level: RequestResponse
     resources:
-      - group: "" # 核心
+      - group: "" # core
       - group: "admissionregistration.k8s.io"
       - group: "apiextensions.k8s.io"
       - group: "apiregistration.k8s.io"
@@ -168,7 +169,7 @@ rules:
       - "RequestReceived"
 ```
 
-将以上审计日志文件放到 `/etc/kubernetes/audit-policy/` 文件夹下，并取名为 apiserver-audit-policy.yaml
+将以上审计日志文件放到 `/etc/kubernetes/audit-policy/` 文件夹下，并取名为 `apiserver-audit-policy.yaml`。
 
 ## 配置 API 服务器
 
@@ -218,13 +219,7 @@ rules:
 
 通过 FluentBit 来采集审计日志。默认 FluentBit 不会会采集 `/var/log/kubernetes/audit` 下的日志文件（Kubernetes 审计日志）。
 
-如需开启，按以下步骤操作：
-
-1. 查看当前 chart 版本并保存当前 value
-2. 修改 chart value
-3. 重启所有 Pod
-
-具体步骤如下：
+如需开启审计日志，按以下步骤操作：
 
 1. 保存当前 value
 
@@ -232,23 +227,22 @@ rules:
     helm get values insight-agent -n insight-system -o yaml > insight-agent-values-bak.yaml
     ```
 
-
 2. 获取当前版本号 ${insight_version_code}，然后更新配置
 
     ```shell
     insight_version_code=`helm list -n insight-system |grep insight-agent | awk {'print $10'}` 
     ```
-    
+
     ```shell
     helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent insight-release/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=true 
     ```
-    
+
     如果因为版本未找到而 upgrade 失败，请检查命令中使用的 helm repo 是否有这版本，若没有，请尝试更新helm repo后重试
-    
+
     ```shell
     helm repo update insight-release
     ```
-    
+
 3. 重启所有 Pod
 
     重启所有 master 节点的 FluentBit Pod，重启后的 FluentBit 将会采集 `/var/log/kubernetes/audit` 下的日志。

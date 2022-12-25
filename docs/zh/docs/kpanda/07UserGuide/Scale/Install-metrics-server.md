@@ -12,7 +12,7 @@
 - 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
 
 - 已完成一个[命名空间的创建](../Namespaces/createns.md)。
- 
+
 - 当前操作用户应具有 [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) 或更高权限，详情可参考[命名空间授权](../Namespaces/createns.md)。
 
 ## 操作步骤

@@ -1,8 +1,11 @@
+---
+hide:
+  - toc
+---
+
 # 安装
 
-在需要安装 ARP Pool 的情况下, 需要启用 Helm 并就绪等待。
-
-## 安装
+若需安装 ARP Pool，需启用 Helm 并使其处于就绪等待状态。具体安装步骤如下：
 
 - Metallb Helm Chart 存放于 addon repo 下:
 
@@ -11,10 +14,8 @@
 
 - 初始化 Metallb ARP 模式:
 
-> 注意: 如果安装时开启 ARP 模式, 请开启 就绪等待!
-
+> 注意: 如果安装时开启 ARP 模式, 请开启 就绪等待
 > 安装 Metallb 时, 可选择初始化 Metallb ARP 模式。LoadBalancer Service默认会从这个池中分配 IP 地址, 并且通过 APR 宣告这个池中的所有 IP 地址。
-
 > 地址池列表可以配置 IPv4 和 IPv6 的地址
 > 
 > 每个地址段输入格式可以为合法的 CIDR（如 192.168.1.0/24），也可以为 IP 范围（如 1.1.1.1-1.1.1.20）
@@ -24,6 +25,7 @@
 ![metallb_ippool](../../images/metallb_ippool.png)
 
 - 配置 Metallb L2Advertisement
+
 
     - 默认情况下, 所有节点都会作为 LoadBalancer IP的下一跳, 但可以通过 NodeSelector 限制只有某些节点作为 LoadBalancer IP 的下一跳:
 

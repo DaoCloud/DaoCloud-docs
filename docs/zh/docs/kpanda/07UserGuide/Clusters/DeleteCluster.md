@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 卸载/解除集群接入
 
 通过 DCE 5.0 [容器管理](../../03ProductBrief/WhatisKPanda.md)平台创建的集群支持`卸载集群`操作，从其他环境直接接入的集群支持`解除接入`操作。二者的区别在于：
@@ -7,7 +12,7 @@
 
 !!! note
 
-    当前操作用户应具备 [`kpanda owner`](../../../ghippo/04UserGuide/01UserandAccess/global.md) 权限才能执行卸载或解除接入的操作。
+    当前操作用户应具备 [`Kpanda Owner`](../../../ghippo/04UserGuide/01UserandAccess/global.md) 权限才能执行卸载或解除接入的操作。
 
 1. 在`集群列表`页找到需要卸载/解除接入的集群，点击右侧的 `...` 并在下拉列表中点击`卸载集群`/`解除接入`。
 
