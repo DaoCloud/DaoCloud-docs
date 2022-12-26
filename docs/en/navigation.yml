@@ -534,6 +534,7 @@ nav:
             - kangaroo/integrate.md
             - Bind Registry Space to Workspace: kangaroo/bind-to-ws.md
             - Create Registry Space: kangaroo/create-registry.md
+          - Scan image: kangaroo/scan.md
       - References:
         - Release Notes: release/rn5.0.md
         - Gateway: reference/basic-knowledge/gateway.md
