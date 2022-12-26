@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# image list
+# Image list
 
 The image list takes the workspace as the dimension and displays all available public images and private images under the tenant.
 There are two main sources of images. The first part is all public images in the container registry integrated or hosted by the platform, as well as private images that are individually assigned to the workspace through the binding of registry space and workspace.
