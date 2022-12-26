@@ -1,10 +1,10 @@
 # 创建无状态负载（Deployment）
 
+本文介绍如何通过镜像和 YAML 文件两种方式创建无状态负载。
+
 [无状态负载（Deployment）](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/deployment/)是 Kubernetes 中的一种常见资源，主要为 [Pod](https://kubernetes.io/zh-cn/docs/concepts/workloads/pods/) 和 [ReplicaSet](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/replicaset/) 提供声明式更新，支持弹性伸缩、滚动升级、版本回退等功能。在 Deployment 中声明期望的 Pod 状态，Deployment Controller 会通过 ReplicaSet 修改当前状态，使其达到预先声明的期望状态。Deployment 是无状态的，不支持数据持久化，适用于部署无状态的、不需要保存数据、随时可以重启回滚的应用。
 
 通过 [DCE 5.0](../../../dce/what-is-dce.md) 的容器管理模块，可以基于相应的角色权限轻松管理多云多集群上的工作负载，包括对无状态负载的创建、更新、删除、弹性扩缩、重启、版本回退等全生命周期管理。
-
-本文介绍如何通过镜像和 YAML 文件两种方式创建无状态负载。
 
 ## 前提条件
 
@@ -49,7 +49,7 @@
 
 容器配置分为基本信息、生命周期、健康检查、环境变量、数据存储、安全设置六部分，点击下方的相应页签可查看各部分的配置要求。
 
-> 点击右侧的 `+` 可以在一个容器组中添加多个容器。
+> 容器配置仅针对单个容器进行配置，如需在一个容器组中添加多个容器，可点击右侧的 `+` 添加多个容器。
 
 === "基本信息（必填）"
 
@@ -170,7 +170,7 @@
 
     ![集群详情](../../images/deploy01.png)
 
-2. 在集群详情页面，点击左侧导航栏的`工作负载`，然后点击页面右上角的 `YAML 创建`按钮。
+2. 在集群详情页面，点击左侧导航栏的`工作负载` -> `无状态负载`，然后点击页面右上角的 `YAML 创建`按钮。
 
     ![工作负载](../../images/deploy02Yaml.png)
 

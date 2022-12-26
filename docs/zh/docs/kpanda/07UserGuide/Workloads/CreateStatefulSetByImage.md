@@ -1,14 +1,14 @@
 # 创建有状态负载（StatefulSet）
 
+本文介绍如何通过镜像和 YAML 文件两种方式创建有状态负载（StatefulSet）。
+
 [有状态负载（StatefulSet）](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/statefulset/)是 Kubernetes 中的一种常见资源，和[无状态负载（Deployment）](CreateDeploymentByImage.md)类似，主要用于管理 Pod 集合的部署和伸缩。二者的主要区别在于，Deployment 是无状态的，不保存数据，而 StatefulSet 是有状态的，主要用于管理有状态应用。此外，StatefulSet 中的 Pod 具有永久不变的 ID，便于在匹配存储卷时识别对应的 Pod。
 
 通过 [DCE 5.0](../../../dce/what-is-dce.md) 的容器管理模块，可以基于相应的角色权限轻松管理多云多集群上的工作负载，包括对有状态工作负载的创建、更新、删除、弹性扩缩、重启、版本回退等全生命周期管理。
 
-本文介绍如何通过镜像和 YAML 文件两种方式创建有状态负载。
-
 ## 前提条件
 
-在使用镜像创建无状态负载之前，需要满足以下前提条件：
+在使用镜像创建有状态负载之前，需要满足以下前提条件：
 
 - 在[容器管理](../../03ProductBrief/WhatisKPanda.md)模块中[接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
 
@@ -32,7 +32,7 @@
 
 3. 依次填写[基本信息](CreateStatefulSetByImage.md#_3)、[容器配置](CreateStatefulSetByImage.md#_4)、[服务配置](CreateStatefulSetByImage.md#_5)、[高级配置](CreateStatefulSetByImage.md#_6)后，在页面右下角点击`确定`完成创建。
 
-    系统将自动返回`无状态工作负载`列表，等待工作负载状态变为`运行中`。如果工作负载状态出现异常，请查看具体异常信息，可参考[工作负载状态](../Workloads/PodConfig/workload-status.md)。
+    系统将自动返回`有状态工作负载`列表，等待工作负载状态变为`运行中`。如果工作负载状态出现异常，请查看具体异常信息，可参考[工作负载状态](../Workloads/PodConfig/workload-status.md)。
 
     点击新建工作负载列右侧的 `︙`，可以对工作负载执行执行更新、删除、弹性扩缩、重启、版本回退等操作。
 
@@ -51,7 +51,7 @@
 
 容器配置分为基本信息、生命周期、健康检查、环境变量、数据存储、安全设置六部分，点击下方的相应页签可查看各部分的配置要求。
 
-> 点击右侧的 `+` 可以在一个容器组中添加多个容器。
+> 容器配置仅针对单个容器进行配置，如需在一个容器组中添加多个容器，可点击右侧的 `+` 添加多个容器。
 
 === "基本信息（必填）"
 
@@ -176,13 +176,13 @@
 
 ## YAML 创建
 
-除了通过镜像方式外，还可以通过 YAML 文件更快速地创建创建无状态负载。
+除了通过镜像方式外，还可以通过 YAML 文件更快速地创建创建有状态负载。
 
 1. 点击左侧导航栏上的`集群列表`，然后点击目标集群的名称，进入`集群详情`页面。
 
     ![集群详情](../../images/deploy01.png)
 
-2. 在集群详情页面，点击左侧导航栏的`工作负载`，然后点击页面右上角的 `YAML 创建`按钮。
+2. 在集群详情页面，点击左侧导航栏的`工作负载` -> `有状态负载`，然后点击页面右上角的 `YAML 创建`按钮。
 
     ![工作负载](../../images/deploy02Yaml.png)
 
