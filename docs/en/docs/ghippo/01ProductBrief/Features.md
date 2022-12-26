@@ -1,27 +1,27 @@
 ---
 hide:
-  - toc
+   - toc
 ---
 
-# 功能总览
+# Features
 
-本页说明全局管理的各项功能特性。
+This page describes the features of Global Management.
 
-1. 用户管理
+1. User Management
 
-    拥有用户帐号，是用户访问 DCE 平台的前提。
-    [用户](../04UserGuide/01UserandAccess/User.md)由平台管理员 Super Admin 或者用户与访问控制管理员 IAM Admin 在`全局管理` -> `用户与访问控制` -> `用户`页面创建，或者通过 LDAP 对接而来。
-    每位用户拥有独立的用户名和密码，通过给单个或者一组用户授予不同的权限，让不同的用户拥有不同资源的访问权限。
+     Having a user account is a prerequisite for users to access the DCE platform.
+     [User](../04UserGuide/01UserandAccess/User.md) is created by Admin Super Admin or user and access control administrator IAM Admin in `Global Management` -> `Users and Access Control` -> `Users` page , or connected via LDAP.
+     Each user has an independent user name and password. By granting different permissions to a single or a group of users, different users have access to different resources.
 
-    ```mermaid
-    graph LR
+     ```mermaid
+     graph LR
 
-        admin([平台管理员或<br>用户与访问控制管理员]) --> |创建并管理用户|user[用户]
-        user --> user1[用户 A]
-        user --> user2[用户 B]
-        user --> user3[用户 C]
+         admin([Admin or<br>user and access administrator]) --> |create and manage users|user[User]
+         user --> user1[User A]
+         user --> user2[User B]
+         user --> user3[User C]
         
-    click user "https://docs.daocloud.io/ghippo/04UserGuide/01UserandAccess/User/"
+    click user "https://docs.daocloud.io/en/ghippo/04UserGuide/01UserandAccess/User/"
 
     classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
     classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
@@ -29,175 +29,175 @@ hide:
     class admin plain;
     class user1,user2,user3 k8s;
     class user cluster
-    ```
+     ```
 
-2. 用户组管理
+2. Group management
 
-    [用户组](../04UserGuide/01UserandAccess/Group.md)是多个用户的集合。
-    用户可以通过加入用户组，实现继承用户组的角色权限。通过用户组批量地给用户进行授权，可以更好地管理用户及其权限。
+     [group](../04UserGuide/01UserandAccess/Group.md) is a collection of multiple users.
+     Users can inherit the role permissions of the group by joining the group. Authorize users in batches through groups to better manage users and their permissions.
 
-    ```mermaid
-    graph LR
+     ```mermaid
+     graph LR
 
-        admin([平台管理员或<br>用户与访问控制管理员])
-        admin --> user[创建用户]
-        admin --> group[创建用户组]
-        admin --> add[将用户加入用户组]
+         admin([Admin or<br>User and Access Administrator])
+         admin --> user[Create user]
+         admin --> group[Create group]
+         admin --> add[Add user to group]
         
-    click user "https://docs.daocloud.io/ghippo/04UserGuide/01UserandAccess/User/"
-    click group "https://docs.daocloud.io/ghippo/04UserGuide/01UserandAccess/Group/"
-    click add "https://docs.daocloud.io/ghippo/04UserGuide/01UserandAccess/Group/#_5"
+    click user "https://docs.daocloud.io/en/ghippo/04UserGuide/01UserandAccess/User/"
+    click group "https://docs.daocloud.io/en/ghippo/04UserGuide/01UserandAccess/Group/"
+    click add "https://docs.daocloud.io/en/ghippo/04UserGuide/01UserandAccess/Group/#_5"
 
     classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
     classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
     classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
     class admin plain;
     class user,group,add cluster
-    ```
+     ```
 
-3. 角色管理
+3. Role Management
 
-    一个[角色](../04UserGuide/01UserandAccess/Role.md)对应一组权限。
-    权限决定了可以对资源执行的操作。向用户授予某个角色，即授予该角色所包含的所有权限。
-    您可以将不同模块的管理权限划分给不同的用户，
-    比如用户 A 管理容器管理模块，用户 B 管理应用工作台模块，共同管理可观测性板块。
+     A [role](../04UserGuide/01UserandAccess/Role.md) corresponds to a set of permissions.
+     Permissions determine the actions that can be performed on a resource. Granting a role to a user grants all the permissions included in that role.
+     You can divide the management rights of different modules to different users,
+     For example, user A manages the container management module, user B manages the application workbench module, and jointly manages the observability module.
 
-    ![角色](../images/role.png)
+     ![role](../images/role.png)
 
-4. 工作空间
+4. Workspace
 
-    [工作空间](../04UserGuide/02Workspace/Workspaces.md)用于管理资源，包含层级和工作空间两部分。
+     [Workspace](../04UserGuide/02Workspace/Workspaces.md) is used to manage resources, including two parts: hierarchy and workspace.
 
-    层级是资源层次结构中的节点，一个层级可以包含工作空间、其他层级或两者的组合。
-    可以将层级理解为有层次结构的部门、环境、供应商等多种概念。
+     Levels are nodes in the resource hierarchy, and a level can contain workspaces, other levels, or a combination of both.
+     Hierarchy can be understood as a variety of concepts such as hierarchical departments, environments, and suppliers.
 
-    工作空间可以理解为部门下的项目，管理员通过层级和工作空间映射企业中的层级关系。
+     The workspace can be understood as the project under the department, and the administrator maps the hierarchical relationship in the enterprise through the hierarchy and the workspace.
 
-    虽然一个层级可以包含多个层级或工作空间，但是给定的层级或者工作空间只能有一个父级。
+     Although a hierarchy can contain multiple hierarchies or workspaces, a given hierarchy or workspace can only have one parent.
 
-    ![工作空间](../images/workspace.png)
+     ![workspace](../images/workspace.png)
 
-5. 审计日志
+5. Audit logs
 
-    [审计日志](../04UserGuide/03AuditLog.md)完整地记录用户的各项操作行为，
-    包括用户通过页面或 API 接口发起的操作以及各服务内部自触发的操作。
-    支持通过事件来源、资源类型、操作状态等多个维度进行组合查询，支持审计日志导出。
+     [Audit Log](../04UserGuide/03AuditLog.md) completely records the user's various operations,
+     Including operations initiated by users through pages or API interfaces and self-triggered operations within each service.
+     It supports combined query through multiple dimensions such as event source, resource type, and operation status, and supports audit log export.
 
-6. 平台设置
+6. Platform Settings
 
-    [平台设置](../04UserGuide/04PlatformSetting/about.md)包括账号安全设置、外观定制、邮件服务器等。
-    当需要对账号的安全信息、平台 logo、许可证授权、邮件服务器等平台级设置进行管理时，
-    可以通过 `平台设置` 进行操作，平台设置仅平台管理员具有管理权限。
+     [Platform Settings](../04UserGuide/04PlatformSetting/about.md) includes account security settings, appearance customization, mail server, etc.
+     When it is necessary to manage platform-level settings such as account security information, platform logo, license authorization, and mail server,
+     It can be operated through `Platform Settings`, and only Admin have management rights for platform settings.
 
-    ```mermaid
-    graph LR
+     ```mermaid
+     graph LR
 
-        admin([平台管理员]) --> |管理|about[平台设置]
-        about --> password[用户密码等安全策略]
-        about --> appear[平台外观定制]
-        about --> mail[邮件服务器]
-        about --> license[正版授权]
+         admin([Admin]) --> |management|about[Platform settings]
+         about --> password[User password and other security policies]
+         about --> appear[Platform appearance customization]
+         about --> mail[Mail server]
+         about --> license[Genuine authorization]
         
-    click about "https://docs.daocloud.io/ghippo/04UserGuide/04PlatformSetting/about/"
-    click password "https://docs.daocloud.io/ghippo/04UserGuide/password/"
-    click appear "https://docs.daocloud.io/ghippo/04UserGuide/04PlatformSetting/Appearance/"
-    click mail "https://docs.daocloud.io/ghippo/04UserGuide/04PlatformSetting/MailServer/"
-    click license "https://docs.daocloud.io/dce/license0/"
+    click about "https://docs.daocloud.io/en/ghippo/04UserGuide/04PlatformSetting/about/"
+    click password "https://docs.daocloud.io/en/ghippo/04UserGuide/password/"
+    click appear "https://docs.daocloud.io/en/ghippo/04UserGuide/04PlatformSetting/Appearance/"
+    click mail "https://docs.daocloud.io/en/ghippo/04UserGuide/04PlatformSetting/MailServer/"
+    click license "https://docs.daocloud.io/en/dce/license0/"
 
     classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
     classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
     classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
     class admin plain;
     class about,password,appear,mail,license cluster
-    ```
+     ```
 
-## 功能清单
+## List of functions
 
-具体的功能清单如下所述。
+The specific function list is described below.
 
-1. 用户与访问控制
-    1. [用户](../04UserGuide/01UserandAccess/User.md)
-        - 列表展示用户名、描述、创建时间、最近一次登录时间
-        - 列表支持通过用户名搜索用户
-        - 列表支持给用户快捷授权
-        - 列表支持将用户快捷加入用户组
-        - 列表支持批量删除用户
-        - 列表支持创建用户
-        - 详情支持编辑用户基本信息，包括邮箱、描述、启用 / 禁用等
-        - 详情支持记录用户授权信息，支持添加 / 移除权限
-        - 详情支持记录用户加入用户组信息，支持用户加入新的用户组，支持将用户从老的用户组移除
-        - 支持管理员帮助用户修改密码
-        - 支持管理员帮助用户创建访问密钥
-    2. [用户组](../04UserGuide/01UserandAccess/Group.md)
-        - 列表展示用户组名、组内用户数、描述、创建时间
-        - 列表支持通过用户组名搜索
-        - 列表支持给用户组快捷授权
-        - 列表支持给用户组快捷添加用户
-        - 列表支持批量删除用户组
-        - 列表支持创建用户组
-        - 详情支持编辑用户组基本信息，例如描述
-        - 详情支持记录用户组授权信息，支持添加 / 移除权限
-        - 详情支持记录用户组成员信息，支持给用户组添加新成员，支持将成员从用户组移除
-    3. [角色](../04UserGuide/01UserandAccess/Role.md)
-        - 列表展示系统角色名称、描述
-        - 详情记录角色授权信息，支持将角色授予用户 / 用户组，支持将用户 / 用户组从该角色移除
-        - 支持 Folder Admin、Folder Editor、Folder Viewer 三种预定义文件夹角色
-        - 支持 Workspace Admin、Workspace Editor、Workspace Viewer 三种预定义工作空间角色
-    4. [身份提供商](../04UserGuide/01UserandAccess/idprovider.md)
-        - 支持 LDAP、OIDC 两种协议对接外部用户
-        - LDAP 协议支持手动 / 自动同步外部用户
-        - LDAP 协议支持手动同步外部用户组
-        - OIDC 协议支持手动同步外部用户
-2. 工作空间与层级
-    1. [文件夹](../04UserGuide/02Workspace/folders.md)
-        - 支持树状结构展示文件夹和工作空间
-        - 支持通过文件夹名称和工作空间名称搜索
-        - 支持 5 级文件夹映射企业层级
-        - 支持为文件夹添加用户 / 用户组并授权
-        - 支持权限继承，子文件夹、工作空间能够继承用户 / 用户组在上级文件夹权限
-        - 支持移动文件夹。映射企业中的部门变动，移动后其下的子文件夹、工作空间及其资源 / 成员均会跟随该文件夹移动，权限的继承关系重新发生变化
-    2. [工作空间](../04UserGuide/02Workspace/Workspaces.md)
-        - 支持为工作空间添加用户 / 用户组并授权
-        - 支持添加资源到工作空间 - 资源组，支持 6 种资源类型
-        - 支持权限继承，资源组中的资源能够继承用户 / 用户组在工作空间和上级文件夹的角色
-        - 支持移动工作空间。映射企业中的项目变动，移动后其下的资源 / 成员均会跟随该工作空间移动，权限的继承关系重新发生变化（开发中）
-        - 支持添加资源到工作空间 - 共享资源，将一个集群资源共享给多个工作空间使用
-        - 支持针对每个共享的集群资源进行资源限额
-        - 支持通过 CPU Limit、CPU Request 、内存 Limit、内存 Request、存储请求总量 Request Storage、存储卷声明 PersistentVolumeClaim 六个维度进行资源限额
-3. [审计日志](../04UserGuide/03AuditLog.md)
-    - 列表展示事件名称、资源类型、资源名称、状态、操作人、操作时间
-    - 列表支持查看审计日志详情
-    - 列表支持展示最近一天或自定义时间内的审计日志
-    - 列表支持通过状态、操作人、资源类型、资源名称搜索审计日志
-    - 列表支持 .csv 格式导出审计日志
-    - 默认采集全局管理的全部审计日志
-    - 默认保存 365 天内的审计日志
-    - 支持手动 / 自动两种方式清理全局管理的审计日志
-    - 支持开启 / 关闭收集 K8s 的审计日志
-    - 支持手动 / 自动两种方式清理 K8s 的审计日志
-4. 平台设置
-    1. 安全策略
-        - 支持自定义密码规则
-        - 支持自定义密码策略
-        - 支持自定义会话超时策略，超出时长自动退出当前账号
-        - 支持自定义账号锁定策略，限制时间内多次登录失败，账号将被锁定
-        - 支持登录登出策略，开启后关闭浏览器的同时退出登录
-    2. [邮件服务器设置](../04UserGuide/04PlatformSetting/MailServer.md)：支持管理员配置邮件服务器，支持通过邮件方式找回用户密码，接收告警通知等
-    3. [外观定制](../04UserGuide/04PlatformSetting/Appearance.md)
-        - 支持自定义登录页，包括更换平台 LOGO、登录页图标、标签页图标等
-        - 支持一键还原登录页外观配置
-        - 支持自定义顶部导航栏，包括导航栏图标、标签页图标等
-        - 支持一键还原顶部导航栏外观配置
-    4. [正版授权](../../dce/license0.md)
-        - 列表展示许可证名称、所属模块、许可证级别、许可证状态过期时间
-        - 支持管理许可证，确保子模块在有效期内
-    5. [关于平台](../04UserGuide/04PlatformSetting/about.md)
-        - 支持展示模块版本
-        - 支持展示平台使用的开源软件
-        - 支持展示技术团队风采
-5. 个人中心
-    1. [安全设置](../04UserGuide/06PersonalCenter/SecuritySetting.md)
-        - 支持用户更新登录密码
-        - 支持通过邮箱找回登录密码
-    2. [访问密钥](../04UserGuide/06PersonalCenter/Password.md)：支持每个用户创建独立的 API 密钥，支持进行 API 密钥过期设置，以确保系统安全
-    3. [语言设置](../04UserGuide/06PersonalCenter/Language.md)：支持多语言，支持简体中文、英文、自动检测您的浏览器首选语言三种方式确定语言
+1. Users and Access Control
+    1. [User](../04UserGuide/01UserandAccess/User.md)
+         - List display username, description, creation time, last login time
+         - List supports searching users by username
+         - The list supports quick authorization to users
+         - The list supports quickly adding users to groups
+         - The list supports batch deletion of users
+         - List support for creating users
+         - Details support editing basic user information, including email, description, enable/disable, etc.
+         - Detailed support for recording user authorization information, support for adding/removing permissions
+         - Details support recording user joining group information, support users joining new groups, support removing users from old groups
+         - Support administrators to help users change passwords
+         - Support administrators to help users create access keys
+    2. [group](../04UserGuide/01UserandAccess/Group.md)
+         - List display group name, number of users in the group, description, creation time
+         - The list supports searching by group name
+         - The list supports quick authorization to groups
+         - The list supports quickly adding users to groups
+         - The list supports batch deletion of groups
+         - List supports creating groups
+         - Details support editing group basic information, such as description
+         - Detailed support for recording group authorization information, support for adding/removing permissions
+         - Detailed support for recording group member information, support for adding new members to groups, and support for removing members from groups
+    3. [Role](../04UserGuide/01UserandAccess/Role.md)
+         - List display system role name, description
+         - Record role authorization information in detail, support granting roles to users/groups, and support removing users/groups from this role
+         - Supports three predefined folder roles: Folder Admin, Folder Editor, and Folder Viewer
+         - Supports three predefined workspace roles: Workspace Admin, Workspace Editor, and Workspace Viewer
+    4. [Identity Provider](../04UserGuide/01UserandAccess/idprovider.md)
+         - Support LDAP and OIDC to connect to external users
+         - LDAP protocol supports manual/automatic synchronization of external users
+         - LDAP protocol supports manual synchronization of external groups
+         - OIDC protocol supports manual synchronization of external users
+2. Workspace and Hierarchy
+    1. [Folders](../04UserGuide/02Workspace/folders.md)
+         - Support tree structure to display folders and workspaces
+         - Supports searching by folder name and workspace name
+         - Support 5-level folder mapping enterprise hierarchy
+         - Support for adding users/groups to folders and authorizing them
+         - Support permission inheritance, subfolders and workspaces can inherit the permissions of users/groups in the parent folder
+         - Support moving folders. Mapping changes of departments in the enterprise, after the move, the subfolders, workspaces and their resources/members under it will follow the move of the folder, and the inheritance relationship of permissions will change again
+    2. [Workspaces](../04UserGuide/02Workspace/Workspaces.md)
+         - Support for adding users to the workspace/usergroup and authorize
+         - Support adding resources to workspace - Resource group, supports 6 resource types
+         - Support permission inheritance, the resources in the resource group can inherit the roles of the user/group in the workspace and parent folder
+         - Support for mobile workspaces. Mapping project changes in the enterprise, after the move, the resources/members under it will follow the movement of the workspace, and the inheritance relationship of permissions will change again (under development)
+         - Support adding resources to the workspace - Share resources, share a cluster resource to multiple workspaces
+         - Support for resource quotas for each shared cluster resource
+         - Supports resource quotas through six dimensions: CPU Limit, CPU Request, Memory Limit, Memory Request, total storage request Request Storage, and storage volume statement PersistentVolumeClaim
+3. [Audit Log](../04UserGuide/03AuditLog.md)
+     - List display event name, resource type, resource name, status, operator, operation time
+     - List support to view audit log details
+     - The list supports displaying the audit logs of the latest day or a custom time
+     - The list supports searching audit logs by status, operator, resource type, and resource name
+     - List supports exporting audit logs in .csv format
+     - Collect all audit logs of global management by default
+     - Audit logs are kept for 365 days by default
+     - Supports manual/automatic cleaning of audit logs for global management
+     - Support to enable/disable the collection of K8s audit logs
+     - Support manual/automatic cleaning of K8s audit logs
+4. Platform Settings
+    1. Security Policy
+         - Support custom password rules
+         - Support custom password policy
+         - Support custom session timeout policy, automatically log out of the current account when the time is exceeded
+         - Support custom account lock strategy, if you fail to log in multiple times within the time limit, the account will be locked
+         - Support login and logout strategy, log out while closing the browser after opening
+    2. [Mail Server Settings](../04UserGuide/04PlatformSetting/MailServer.md): Support administrators to configure the mail server, support retrieving user passwords by mail, receive alarm notifications, etc.
+    3. [Appearance Customization](../04UserGuide/04PlatformSetting/Appearance.md)
+         - Support custom login page, including changing platform LOGO, login page icon, tab page icon, etc.
+         - Support one-click restore login page appearance configuration
+         - Support for customizing the top navigation bar, including navigation bar icons, tab page icons, etc.
+         - Support for one-click restoration of the appearance configuration of the top navigation bar
+    4. [Genuine License](../../dce/license0.md)
+         - The list shows the license name, the module it belongs to, the license level, and the expiration time of the license status
+         - Support for managing licenses to ensure submodules are within the validity period
+    5. [About Platform](../04UserGuide/04PlatformSetting/about.md)
+         - Support display module version
+         - Open source software supported by the demonstration platform
+         - Support the display of technical team style
+5. Personal center
+    1. [Security Settings](../04UserGuide/06PersonalCenter/SecuritySetting.md)
+         - Support users to update login password
+         - Support retrieving login password through email
+    2. [Access Key](../04UserGuide/06PersonalCenter/Password.md): Support each user to create an independent API key, and support API key expiration settings to ensure system security
+    3. [Language Settings](../04UserGuide/06PersonalCenter/Language.md): Supports multiple languages, supports Simplified Chinese, English, and automatically detects your browser's preferred language to determine the language in three ways
