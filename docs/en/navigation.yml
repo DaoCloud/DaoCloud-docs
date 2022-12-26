@@ -49,7 +49,7 @@ nav:
               - Node Scheduling: kpanda/07UserGuide/Nodes/schedule.md
               - Node Details: kpanda/07UserGuide/Nodes/node-details.md
               - Labels and Annotations: kpanda/07UserGuide/Nodes/labels-annotations.md
-          - Worklaods:
+          - Workloads:
               - Create Deployment: kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md
               - Create StatefulSet: kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md
               - Create DaemonSet: kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md
@@ -408,6 +408,9 @@ nav:
               - Use: network/modules/spiderpool/usage.md
               - Config: network/modules/spiderpool/config.md
               - Commands: network/modules/spiderpool/command.md
+          - Falco:
+              - Intro: network/modules/falco/what.md
+              - Install: network/modules/falco/install.md
       - Middleware:
           - Intro: middleware/midware.md
           - Version Compatibility: middleware/adaptation-k8s.md
@@ -529,11 +532,14 @@ nav:
           - What is Container Registry: kangaroo/intro.md
           - Image List: kangaroo/imagelist.md
           - Connected Registry: kangaroo/related-registry.md
-          - Managed Harbor: kangaroo/hosted.md
           - Registry Integration: 
             - kangaroo/integrate.md
             - Bind Registry Space to Workspace: kangaroo/bind-to-ws.md
             - Create Registry Space: kangaroo/create-registry.md
+          - Managed Harbor: kangaroo/hosted.md
+          - Quick Start:
+            - Manage Registries: kangaroo/quickstart/registry-in-one.md
+          - Scan image: kangaroo/scan.md
       - References:
         - Release Notes: release/rn5.0.md
         - Gateway: reference/basic-knowledge/gateway.md

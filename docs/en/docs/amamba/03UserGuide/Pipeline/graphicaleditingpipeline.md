@@ -7,7 +7,7 @@ You can intuitively see each [stage (Stage)](https://www.jenkins.io/doc/book/pip
 
 - You need to create a workspace and a user, who must be invited to the workspace and given the `workspace edit` role. Refer to [Create Workspace](../../../ghippo/04UserGuide/02Workspace/Workspaces.md), [Users and Roles](../../../ghippo/04UserGuide/01UserandAccess/User.md).
 
-- Create three credentials that can access the codebase, container registry, and cluster. For more information on creating credentials, please refer to [Credential Management] (Credential.md)).
+- Create three credentials that can access the codebase, container registry, and cluster. For more information on creating credentials, please refer to [Credential Management](Credential.md)).
 
 - To create a custom pipeline, please refer to [Create a custom pipeline](createpipelinebyself.md). When creating a custom pipeline, you need to add two string parameters to the build parameters, and these parameters will be used in the image build command. The parameters are described as follows:
 

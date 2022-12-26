@@ -1,4 +1,4 @@
-# Function overview
+# Features
 
 The features supported by the service mesh are described here.
 

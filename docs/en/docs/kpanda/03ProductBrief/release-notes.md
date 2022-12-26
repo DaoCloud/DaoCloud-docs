@@ -6,7 +6,7 @@ This page lists the Release Notes of container management, so that you can under
 
 ### v0.13
 
-#### new function
+#### New features
 
 - **New** Productization of Replicatsets:
     - Support using WEB terminal (CloudTTY) to manage Replicatsets.

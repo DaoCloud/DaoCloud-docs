@@ -17,13 +17,13 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The solution is part of the Aqua cloud-native application protection platform and provides capabilities including: code scanning, CI/CD posture management, pipeline security management, optimization of SBOM functions, assessment of open source code health and reputation.
 
-- [AWS AppConfig, an application configuration tool for AWS, launches a proxy for container runtimes to simplify configuration of feature flags and runtimes](https://rafay.co/press-release/rafay-launches-cost-management-service- to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
+- [AWS AppConfig, an application configuration tool for AWS, launches a proxy for container runtimes to simplify configuration of feature flags and runtimes](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
 
      Users of platforms such as AKS can use the AWS AppConfig Agent to manage the retrieval and caching of container application configuration data, handle polling and caching logic, and more.
      The feature flag and run configuration feature allows users to release new features without deploying new code.
      In addition, it also has configuration security features, including validators, alarm reminders, automatic rollback configurations, etc.
 
-- [AWS Launches Local Clusters for Running EKS Clusters Locally on Hybrid Cloud Service Outposts](https://aws.amazon.com/about-aws/whats-new/2022/09/amazon-eks-outposts-local -clusters/)
+- [AWS Launches Local Clusters for Running EKS Clusters Locally on Hybrid Cloud Service Outposts](https://aws.amazon.com/about-aws/whats-new/2022/09/amazon-eks-outposts-local-clusters/)
 
      Local clustering reduces the risk of application downtime due to network outages in the cloud. During this time, the application remains available and cluster operations can be performed. EKS manages the availability of the K8s control plane on Outposts when connected to the cloud. The Kubernetes running on the local cluster has the same functions as the EKS on the cloud, and supports automatic deployment of the latest security patches.
 
@@ -99,7 +99,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      DaoCloud Enterprise 5.0 is an independent, open, high-performance, scalable next-generation cloud-native operating system. Focusing on the cloud-native base extension capability scenario, break through cloud-side barriers, cross multi-cloud environments, solve the compatibility problem of Xinchuang infrastructure, improve application delivery efficiency, enable agile innovation of applications, enable business systems with rich data services, and integrate microservice governance and Global observability can meet the challenges of operation and maintenance management of huge business systems.
 
-- [Datadog Launches Cloud Security Management to Provide Cloud Security Management](https://www.datadoghq.com/about/latest-news/press-releases/datadog-launches-cloud-security-management-to-provide-cloud-native- application-protection/)
+- [Datadog Launches Cloud Security Management to Provide Cloud Security Management](https://www.datadoghq.com/about/latest-news/press-releases/datadog-launches-cloud-security-management-to-provide-cloud-native-application-protection/)
 
      Cloud Security Management brings cloud security posture management, cloud workload security, alerting, event management, and reporting together in one platform, enabling development and security teams to identify misconfigurations, detect threats, and secure cloud-native applications.
 
@@ -108,7 +108,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      Docker now allows users to build cloud-native applications using containers and Wasm artifacts, viewing Wasm as a complementary technology to Linux containers.
      In addition, Docker Engine continues to use the containerd container runtime that is unified with the overall ecosystem, but replaces runC, which is responsible for running the container process, with the WasmEdge runtime.
 
-- [Docker Desktop v4.12.0 released](https://www.docker.com/blog/integrated-terminal-for-running-containers-extended-integration-with-containerd-and-more-in-docker-desktop- 4-12/)
+- [Docker Desktop v4.12.0 released](https://www.docker.com/blog/integrated-terminal-for-running-containers-extended-integration-with-containerd-and-more-in-docker-desktop-4-12/)
 
      The main new features of this version: integrate containerd, use containerd to manage and store images; allow to execute commands in running containers directly through the Docker dashboard.
 
@@ -128,7 +128,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      Help users connect Kubernetes clusters and external portals, and integrate BIG-IP application delivery capabilities into the cloud environment of the Kubernetes technology stack.
      It enables multi-team collaboration, and users can flexibly and automatically create and change application or service entry policies.
 
-- [Fortinet releases cloud-native firewall service FortiGate CNF](https://www.fortinet.com/blog/business-and-technology/simplify-cloud-security-with-the-fortigate-cloud-native-firewall-on- aws)
+- [Fortinet releases cloud-native firewall service FortiGate CNF](https://www.fortinet.com/blog/business-and-technology/simplify-cloud-security-with-the-fortigate-cloud-native-firewall-on-aws)
 
      FortiGate CNF is a SaaS product that supports consistent security policies in different AWS environments through deep cloud-native integration with services such as AWS Gateway Load Balancer and AWS Firewall Manager, eliminating the complexity of network security. In addition, it supports the security inspection function of the next-generation firewall, provides deep visibility into the application layer, and can protect multiple accounts, subnets, virtual private clouds, and availability zones.
 
@@ -138,7 +138,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [GitLab 15.4 Released](https://about.gitlab.com/releases/2022/09/22/gitlab-15-4-released/)
 
-     The main new features of this version: improve VSCode CI/CD integration function, support Gitee project import, professional version support test management, support DORA indicators for evaluating enterprise DevOps performance, and integrate Harbor mirror warehouse.
+     The main new features of this version: improve VSCode CI/CD integration function, support Gitee project import, professional version support test management, support DORA indicators for evaluating enterprise DevOps performance, and integrate Harbor container registry.
 
 - [Gloo Mesh v2.1 service mesh management platform released](https://www.solo.io/blog/announcing-gloo-mesh-2-1/)
 
@@ -171,7 +171,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates include: Config Sync can be stored in Google Artifact Registry or Container Registry as an OCI mirror sync, Config Sync supports syncing from private Helm repositories, supports user-supplied CA certificates for authenticating HTTPS connections to Git servers, and adds constraint templates K8sStorageClass.
 
-- [Grafana Cloud observation platform integrates Cilium Enterprise to strengthen Kubernetes network monitoring](https://grafana.com/blog/2022/11/17/introducing-the-cilium-enterprise-integration-in-grafana-cloud-for- kubernetes-network-monitoring/)
+- [Grafana Cloud observation platform integrates Cilium Enterprise to strengthen Kubernetes network monitoring](https://grafana.com/blog/2022/11/17/introducing-the-cilium-enterprise-integration-in-grafana-cloud-for-kubernetes-network-monitoring/)
 
      Once integrated, data deployed in Cilium Enterprise can be fed to Grafana Cloud.
      Grafana Cloud provides four pre-made dashboards: Cilium overview, Hubble overview, Cilium operator and Cilium Agent. 17 alert rules are also provided for monitoring Cilium core components related to Cilium Agent and Kubernetes cluster status.
@@ -224,7 +224,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      Integrated Lightweight Directory Access Protocol LDAP;
      Support for more Self-managed K8s platforms.
 
-- [Ocean launches Network Cost Analysis, a Kubernetes network cost analysis solution](https://spot.io/blog/dont-sweat-the-network-costs-ocean-provides-application-cost-visibility-to-your-kubernetes -cluster/)
+- [Ocean launches Network Cost Analysis, a Kubernetes network cost analysis solution](https://spot.io/blog/dont-sweat-the-network-costs-ocean-provides-application-cost-visibility-to-your-kubernetes-cluster/)
 
      Network Cost Analysis (already in beta support on AWS EKS clusters) not only supports displaying network costs and bandwidth consumption used by Kubernetes applications, but also supports forecasting future spending and usage trends.
 
@@ -236,7 +236,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The main new features of this version: support for Istio v1.14, support for creating and managing gateways by injecting deployment instances, adding cluster-wide topology, adding an OpenShift service grid console operator, and supporting Istio visualization tool Kiali 1.57.
 
-- [Openshift Logging 5.5 release](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.11/html/logging/release-notes#cluster-logging-release-notes-5-5 -0)
+- [Openshift Logging 5.5 release](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.11/html/logging/release-notes#cluster-logging-release-notes-5-5-0)
 
      The main new features of this version: support for forwarding structured logs of different containers in the same pod to different indexes, use Kubernetes common tags to filter logs with Elasticsearch output, log aggregation Loki Operator and observation data collection Vector collector are officially available.
 
@@ -254,12 +254,12 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates include: support for detecting Helm Chart drift, support for automatic collection of Kubernetes host costs, collected data can be imported into third-party audit tools, and visibility into all subcomponents of an environment definition.
 
-- [Rafay Systems Launches Cost Management Service for Kubernetes](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes -cloud-costs/)
+- [Rafay Systems Launches Cost Management Service for Kubernetes](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
 
      The cost management service is part of the Rafay Kubernetes operation and maintenance platform, which provides Kubernetes cloud cost optimization for clusters located in public clouds and internal data centers.
      It supports real-time viewing of cloud computing spending; is pre-integrated with RBAC to provide visibility and access to role-based cost metrics; can centrally view clusters of multiple public cloud accounts and internal data centers; and can optimize cloud budgets based on resource consumption.
 
-- [Rafay Systems launches Service Mesh Manager and Network Policy Manager, providing enterprise-level K8s traffic management and communication security](https://rafay.co/press-release/rafay-launches-service-mesh-manager-and- network-policy-manager-for-enterprise-grade-traffic-management-and-transport-security-for-kubernetes/)
+- [Rafay Systems launches Service Mesh Manager and Network Policy Manager, providing enterprise-level K8s traffic management and communication security](https://rafay.co/press-release/rafay-launches-service-mesh-manager-and-network-policy-manager-for-enterprise-grade-traffic-management-and-transport-security-for-kubernetes/)
 
      Built on Istio, Service Mesh Manager provides microservice teams with centralized security control and traffic management policy configuration. Built on Cilium, Network Policy Manager provides centralized management and visibility into pod and namespace communication to isolate perimeters and reduce a cluster's lateral attack surface.
 
@@ -277,7 +277,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Gloo Platform is the culmination of Solo.io, integrating three products: Gloo Gateway, Gloo Mesh and Gloo Network. Leverage Kubernetes CR and GitOps to provide a unified operating model and extend capabilities such as zero-trust security, multi-tenancy, advanced routing, and observability to the entire layer 3-7 stack.
 
-- Solo.io releases cloud native gateway [Gloo Gateway](https://www.solo.io/blog/announcing-gloo-gateway/) and CNI plugin [Gloo Network](https://www.solo.io/ blog/announcing-gloo-network/)
+- Solo.io releases cloud native gateway [Gloo Gateway](https://www.solo.io/blog/announcing-gloo-gateway/) and CNI plugin [Gloo Network](https://www.solo.io/blog/announcing-gloo-network/)
 
      Gloo Gateway is built on Envoy and utilizes the multi-tenancy and federation features of Gloo Platform, allowing users to easily manage gateway access for multiple development teams and multi-cluster traffic management. Gloo Network builds on Cilium and integrates the Kubernetes CNI layer as a component of the Gloo Platform.
 
@@ -285,11 +285,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The main new features of this version: support the use of nested clusters to quickly create a safe and isolated environment for applications; use the web-based Kubectl to allow users to deploy applications through the terminal; support reuse and sharing of large configuration files with many add-ons and integrations.
 
-- [Spectro Cloud Palette Edge Platform Update](https://www.businesswire.com/news/home/20220929005289/en/New-Spectro-Cloud-Palette-Edge-Platform-Brings-World-Class -Security-and-Operational-Efficiencies-to-Kubernetes-at-the-Edge)
+- [Spectro Cloud Palette Edge Platform Update](https://www.businesswire.com/news/home/20220929005289/en/New-Spectro-Cloud-Palette-Edge-Platform-Brings-World-Class-Security-and-Operational-Efficiencies-to-Kubernetes-at-the-Edge)
 
      Updates include: new tamper-resistant features for edge K8s clusters, support for the edge-optimized K8s distribution Palette eXtended Kubernetes Edge, and simplified edge device deployment.
 
-- [StormForge K8s optimization platform integrates with Datadog's cloud application monitoring service to simplify Kubernetes observability](https://www.stormforge.io/press-releases/new-integration-couples-datadog-observability-stormforge-machine -learning-deliver-automatic-actionable-insights-for-kubernetes-application-optimization/?utm_source=thenewstack&utm_medium=website)
+- [StormForge K8s optimization platform integrates with Datadog's cloud application monitoring service to simplify Kubernetes observability](https://www.stormforge.io/press-releases/new-integration-couples-datadog-observability-stormforge-machine-learning-deliver-automatic-actionable-insights-for-kubernetes-application-optimization/?utm_source=thenewstack&utm_medium=website)
 
      The StormForge K8s optimization platform analyzes observable data based on machine learning technology and recommends resource settings (CPU, memory, replicas) to improve efficiency, scale, and application performance. The platform can now leverage Datadog as a unified observation platform to view and apply optimization recommendations and identify application parameters that should be recalibrated to reduce cluster size and reclaim and reallocate resources.
 
@@ -311,7 +311,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Shuche Software released SEAL 0.3: the first full-link software supply chain security management platform in China](https://mp.weixin.qq.com/s/H_bjMbH_7DJEVOpvzGEMoQ)
 
-     New features of this version: support for integrating any OCI mirror warehouse, and scan the container image in it; support for integrating any Kubernetes cluster, and scan the workload configuration and image in it; support for scanning third-party software bill of material files; support for any CI/CD pipeline Integrates the security scanning function of SEAL; can aggregate and manage resources at all stages of the whole link to provide full link security insights; supports automatic generation of multi-policy repair suggestions, priority ranking of vulnerabilities, and timely handling of security issues.
+     New features of this version: support for integrating any OCI container registry, and scan the container image in it; support for integrating any Kubernetes cluster, and scan the workload configuration and image in it; support for scanning third-party software bill of material files; support for any CI/CD pipeline Integrates the security scanning function of SEAL; can aggregate and manage resources at all stages of the whole link to provide full link security insights; supports automatic generation of multi-policy repair suggestions, priority ranking of vulnerabilities, and timely handling of security issues.
 
 ### T
 
@@ -321,7 +321,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Tencent Cloud Container Service TKE September update](https://mp.weixin.qq.com/s/6_TSSHhU0L8mSbqEMWyu4g)
 
-     Updates: support for trustworthy verification of signature images in mirror warehouses, fully open kubelet custom parameter functions, provide descriptions of error codes for abnormal Service/Ingress event information, the ability to run Daemonset on grayscale online super nodes, and add configuration and management according to Label Capabilities of Pod Security Groups.
+     Updates: support for trustworthy verification of signature images in registries, fully open kubelet custom parameter functions, provide descriptions of error codes for abnormal Service/Ingress event information, the ability to run Daemonset on grayscale online super nodes, and add configuration and management according to Label Capabilities of Pod Security Groups.
 
 - [Tencent Cloud K8s release version TKE August update](https://mp.weixin.qq.com/s/t6yGrxcn4JZdd9877raXhA)
   
@@ -341,11 +341,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The main new features of this version: introduce new Cluster API functions ClusterClass and Carvel tools, use a unified, declarative API to create and manage clusters; support public cloud Oracle Cloud infrastructure.
 
-- [VMware Tanzu releases Application Service Adapter for Tanzu Application Platform v1.0, aiming to bridge the development experience gap between Cloud Foundry and Kubernetes](https://tanzu.vmware.com/content/blog/application-service-adapter- for-vmware-tanzu-application-platform-1-0)
+- [VMware Tanzu releases Application Service Adapter for Tanzu Application Platform v1.0, aiming to bridge the development experience gap between Cloud Foundry and Kubernetes](https://tanzu.vmware.com/content/blog/application-service-adapter-for-vmware-tanzu-application-platform-1-0)
 
      Major new features in this release: support for a seamless Cloud Foundry push workflow on Kubernetes and TAP, use Contour to replicate the goRouter ingress pattern in Cloud Foundry deployments, use native Kubernetes RBAC, rebuild Cloud backed by native Kubernetes namespaces Foundry groupWeave and spatial structure, integrate Tanzu Build Service, integrate TAP's end-to-end assembly line supply chain supply chain choreographer (experimental).
 
-- [VMware Tanzu v2.0 Application Containerization Tool released](https://docs.vmware.com/en/Application-Transformer-for-VMware-Tanzu/2.0/rn/application-transformer-for-vmware-tanzu- 20-release-notes/index.html)
+- [VMware Tanzu v2.0 Application Containerization Tool released](https://docs.vmware.com/en/Application-Transformer-for-VMware-Tanzu/2.0/rn/application-transformer-for-vmware-tanzu-20-release-notes/index.html)
 
      The main new features of this version: integrated automated scanning tool Cloud Suitability Analyzer (CSA), support for Windows containerization, support for virtual machine containerization, support for more than 200 component signatures for Linux and Windows platforms, and provide a command line interface.
 
@@ -353,11 +353,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates: support for running in a physically isolated environment, integrated supply chain threat scanning tools, a new unified threat monitoring dashboard, support for SBOM, support for dynamic registration of API specifications, integration of Jenkins CI/CD, and support for custom certificate authorities (CA) Certificates, new runtime resource monitoring plugin, added support for Java and Python function workloads (beta), available on OpenShift.
 
-- [VMware Tanzu Kubernetes Grid v1.6 Release](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.6/vmware-tanzu-kubernetes-grid-16/GUID-release-notes. html)
+- [VMware Tanzu Kubernetes Grid v1.6 Release](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.6/vmware-tanzu-kubernetes-grid-16/GUID-release-notes.html)
 
      The main new features of this version: support for deploying workload clusters to hosts and edge devices that support GPUs on vSphere 7.0+, use Multus and Whereabouts to implement multiple Pod network interfaces, support the use of Amazon EBS CSI driver and Azure Disk CSI driver for Kubernetes CSI storage.
 
-- [VMware Spring Cloud Gateway for Kubernetes v1.2.0 release](https://docs.vmware.com/en/VMware-Spring-Cloud-Gateway-for-Kubernetes/1.2/scg-k8s/GUID-release-notes. html)
+- [VMware Spring Cloud Gateway for Kubernetes v1.2.0 release](https://docs.vmware.com/en/VMware-Spring-Cloud-Gateway-for-Kubernetes/1.2/scg-k8s/GUID-release-notes.html)
 
      The main new features of this version: separate the TLS configuration of client entrance and upstream application service communication, expand the authority of customizing and extending cloud secret management, increase the circuit breaker status indicator, add global and each API route response cache configuration, and add JSON Filters for request translation to gRPC upstream services, podOverrides added to configure K8s pod override on API Gateway instances, API Gateway can now be deployed via a standalone JAR.
 

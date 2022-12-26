@@ -45,8 +45,8 @@ Cilium 支持 Cluster Mesh 功能，可以将多个 Cilium 集群连接在一起
 
 如果使用路由模式，额外的要求如下：
 
--  每个集群的 native-routing-cidr 都应该包括所有集群的全部 Pod CIDR 的范围
--  所有节点和集群间的 Pod 必须能直接通信，其中包括三层和四层是连通的。
+- 每个集群的 native-routing-cidr 都应该包括所有集群的全部 Pod CIDR 的范围
+- 所有节点和集群间的 Pod 必须能直接通信，其中包括三层和四层是连通的。
 
 #### 开启时需选择的服务类型
 
@@ -94,7 +94,7 @@ cilium  clustermesh connect --context x1 --destination-context x2
 
 - io.cilium/global-service: "true/false"：将 SVC 定义为全局的 SVC，可被其他集群发现
 - io.cilium/shared-service: "true/false"：有一个同名的全局 SVC，但本集群的 SVC 值设置为 false 时，不可被其他集群发现或访问
-- io.cilium/service-affinity: "none/local/remote/"：SVC 负载均衡的方式。默认为 `none`，表示在所有集群中负载均衡。`local `表示优先负载均衡到本地集群。`remote` 表示优先负载均衡到其他集群。
+- io.cilium/service-affinity: "none/local/remote/"：SVC 负载均衡的方式。默认为 `none`，表示在所有集群中负载均衡。`local`表示优先负载均衡到本地集群。`remote` 表示优先负载均衡到其他集群。
 
 ### 数据存储
 

@@ -1,175 +1,175 @@
-# 全局管理 Release Notes
+# Global Management Release Notes
 
-本页列出全局管理各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
+This page lists the Release Notes for global management of each version, so that you can understand the evolution path and feature changes of each version.
 
 ## 2022-11-30
 
 ### v0.12.1
 
-#### 优化
+#### Optimization
 
-- 通过 CI 自动构建纯离线包
-- 优化 GHippo 升级文档
+- Automatically build pure offline packages via CI
+- Optimize GHippo upgrade document
 
 ## 2022-11-28
 
 ### v0.12.0
 
-#### 新功能
+#### New features
 
-- 资源组里的 `模块` 改为 `来源`
-- SDK 提供 Workspace 和 Resource 的绑定变化通知
-- 完整对接 Insight metrics 和 otel tracing(加入 keycloak 和 db 链路)
-- Keycloak 改成 Quarkus 架构
-- Keycloak 镜像升级成 20.0.1 版本
+- Change `module` to `source` in resource group
+- SDK provides Workspace and Resource binding change notification
+- Complete docking Insight metrics and otel tracing (join keycloak and db links)
+- Keycloak changed to Quarkus architecture
+- Keycloak image upgraded to version 20.0.1
 
-#### 优化
+#### Optimization
 
-- 重构导出审计日志 http 接口为 gprc stream 接口
-- SDK 内存使用量优化, 峰值减少 50%
-- 审计日志部分代码优化
-- e2e 的 kind 镜像切到 1.25
-- 提高资源使用效率到 40% 以上
+- Refactored export audit log http interface to gprc stream interface
+- SDK memory usage optimization, the peak value is reduced by 50%
+- Audit log part code optimization
+- e2e's kind mirror cut to 1.25
+- Improve resource usage efficiency to over 40%
 
-#### 修复
+#### Bug fixes
 
-- 修复强绑定集群问题
-- 修复配置身份提供商界面选择 `Client secret sent as basic auth` 没有保存到 keycloak 里的问题
+- Fix the problem of strong binding cluster
+- Fixed the problem that the option `Client secret sent as basic auth` in the configuration identity provider interface was not saved to keycloak
 
 ## 2022-11-01
 
 ### v0.11.2
 
-#### 修复
+#### Bug fixes
 
-- 关闭资源组绑定集群功能
-- 修复无工作空间时无法创建工作空间问题
+- Turn off the resource group binding cluster function
+- Fixed the problem that the workspace cannot be created when there is no workspace
 
 ## 2022-10-28
 
 ### v0.11.0
 
-#### 新功能
+#### New features
 
-- 给第三方应用提供接口在 Keycloak 创建 SSO 对接 Client
-- 支持 Mysql8
-- 对接 Insight(metrics, log, otel tracing)
-- License 模块名支持 i18n
-- 支持一个 License 中可以包含多个 GProduct
-- 资源组新增绑定集群类型资源
-- 资源组列表增加“模块”字段
-- 资源组列表增加已绑定标识
-- 资源绑定接口支持 Registry 资源种类。
+- Provide an interface for third-party applications to create an SSO docking Client in Keycloak
+- Support Mysql8
+- Docking Insight(metrics, log, otel tracing)
+- License module name supports i18n
+- Support multiple GProducts in one license
+- The resource group is newly added to bind cluster type resources
+- Added "Module" field to the resource group list
+- The resource group list adds the bound identifier
+- The resource binding interface supports the Registry resource type.
 
-#### 优化
+#### Optimization
 
-- 资源种类改枚举
-- GProduct license 是否需要灌入变量改为可配
-- 优化 CICD 流程
+- Change resource type to enumeration
+- Whether the GProduct license needs to be filled with variables and changed to configurable
+- Optimize CICD process
 
-#### 修复
+#### Bug fixes
 
-- 修复已经删除的集群依然存在问题
-- 修复 keycloak jwks 变化后没有重置 istio 缓存问题
-- 修复用户组创建时间零值问题
-- 修复访问密钥'最后使用时间`字段在未使用时返回空字符`
+- Repair deleted clusters still have problems
+- Fixed istio cache not being reset after keycloak jwks change
+- Fix the zero value problem of user group creation time
+- Fixed access key 'last used time' field returning null character when not used`
 
 ## v0.10
 
-发布日期：2022-10-21
+Release date: 2022-10-21
 
-- **新增** 许可证 -> 未灌入或错误情况处理
-- **新增** 审计日志 -> 数据库自动创建和合并分区
-- **新增** 支持 ARM64 架构
-- **新增** 支持 https
-- **新增** 登录 -> 背景 theme 支持动画
-- **新增** 授权鉴权 -> 给前端提供当前登录用户的权限列表
-- **新增** 关于 -> 软件版本 -> 模块支持中文名
-- **优化** 授权鉴权 -> 提供一个 job 来确保 db 和 cr 的同步
-- **优化** LDAP -> 配置错误检查
-- **优化** 各功能操作反馈和提示语报错支持中英文
-- **优化** 工作空间及层级 -> 删除前对是否存在子资源进行检查
-- **优化** 优化 keycloak jvm 参数
+- **NEW** License -> Not Filled or Error Handling
+- **NEW** audit log -> database automatically creates and merges partitions
+- **NEW** Added support for ARM64 architecture
+- **NEW** support https
+- **NEW** Login -> background theme supports animation
+- **New** Authorization Authentication -> Provide the front-end with the permission list of the currently logged-in user
+- **NEW** Added About -> Software Version -> Module Support Chinese Name
+- **Optimize** authorization authentication -> provide a job to ensure the synchronization of db and cr
+- **Optimized** LDAP -> configuration error checking
+- **Optimization** The operation feedback and prompts for each function support Chinese and English
+- **Optimize** Workspace and Hierarchy -> Check whether there are sub-resources before deleting
+- **Optimize** Optimize keycloak jvm parameters
 
 ## v0.9
 
-发布日期：2022-9-25
+Release date: 2022-9-25
 
-- **新增** 平台设置 -> 安全策略 -> 会话超时策略
-- **新增** 审计日志 -> 自动清理功能
-- **新增** 平台设置 -> 安全策略-账号锁定策略
-- **新增** 平台设置 -> 顶部导航外观定制-还原功能
-- **新增** 平台设置 -> 登录页外观定制-还原功能
-- **新增** 产品导航 -> 首页仅对 admin 用户展示
-- **新增** 工作空间 -> 用户仅能查看有权限的 workspace & folder 树状结构
-- **新增** Keycloak 高可用
-- **新增** 邮件服务器配置 -> 支持 Insight 和应用工作台发送邮件
-- **新增** 满足 Helm 规范，支持安装器和离线化
-- **新增** [关于平台](../04UserGuide/04PlatformSetting/about.md)、[审计日志](../04UserGuide/03AuditLog.md)、[访问密钥](../04UserGuide/06PersonalCenter/Password.md)、[语言设置](../04UserGuide/06PersonalCenter/Language.md)、[安全设置](../04UserGuide/06PersonalCenter/SecuritySetting.md) 等文档
+- **NEW** Platform Settings -> Security Policy -> Session Timeout Policy
+- **NEW** Audit Log -> Auto Cleanup
+- **NEW** Platform Settings -> Security Policy-Account Lockout Policy
+- **NEW** Platform Settings -> Top Navigation Appearance Customization-Restore Function
+- **NEW** Platform Settings -> Login Page Appearance Customization-Restore Function
+- **NEW** Product Navigation -> Homepage is only displayed for admin users
+- **New** Workspace -> Users can only view the workspace & folder tree structure with permission
+- **NEW** Keycloak High Availability
+- **Add** mail server configuration -> support Insight and application workbench to send mail
+- **NEW** Meet the Helm specification, support installer and offline
+- **Added** [About Platform](../04UserGuide/04PlatformSetting/about.md), [Audit Log](../04UserGuide/03AuditLog.md), [Access Key](../04UserGuide/ 06PersonalCenter/Password.md), [Language Settings](../04UserGuide/06PersonalCenter/Language.md), [Security Settings](../04UserGuide/06PersonalCenter/SecuritySetting.md) and other documents
 
 ## v0.8
 
-发布日期：2022-8-21
+Release date: 2022-8-21
 
-- **新增** 个人中心 -> 访问密钥(创建/编辑/删除/查看/列表)
-- **新增** 审计日志 -> 全局管理操作插入审计日志
-- **新增** 审计日志 -> 对接 Insight 来收集审计日志
-- **新增** 平台设置 -> 安全策略 -> 账号锁定策略
-- **新增** 平台设置 -> 安全策略 -> 浏览器关闭策略
-- **新增** 身份提供商 -> 对接 IDP (OIDC 协议)
-- **新增** 工作空间 -> 共享集群权限管理。
-- **新增** 工作空间 -> 共享集群配额管理 -> 存储
-- **新增** 平台设置 -> 顶部导航外观定制 -> 重置功能
-- **新增** 文档站新增页面：[身份提供商](../04UserGuide/01UserandAccess/idprovider.md)、[邮件服务器设置](../04UserGuide/04PlatformSetting/MailServer.md)、[外观定制](../04UserGuide/04PlatformSetting/Appearance.md)、[LDAP](../04UserGuide/01UserandAccess/ldap.md)、[OIDC](../04UserGuide/01UserandAccess/oidc.md)
+- **New** Personal Center -> Access Key (Create/Edit/Delete/View/List)
+- **Add** audit log -> global management operation insert audit log
+- **New** Audit Log -> connect to Insight to collect audit log
+- **NEW** Platform Settings -> Security Policy -> Account Lockout Policy
+- **NEW** Platform Settings -> Security Policy -> Browser Closing Policy
+- **Add** Identity Provider -> Interconnect with IDP (OIDC protocol)
+- **NEW** Workspace -> Shared Cluster Authority Management.
+- **NEW** Workspace -> Shared Cluster Quota Management -> Storage
+- **NEW** Platform Settings -> Top Navigation Appearance Customization -> Reset Function
+- **NEW** Added new pages on the documentation site: [Identity Provider](../04UserGuide/01UserandAccess/idprovider.md), [Mail Server Settings](../04UserGuide/04PlatformSetting/MailServer.md), [ Appearance Customization](../04UserGuide/04PlatformSetting/Appearance.md), [LDAP](../04UserGuide/01UserandAccess/ldap.md), [OIDC](../04UserGuide/01UserandAccess/oidc.md)
 
 ## v0.7
 
-发布日期：2022-7-23
+Release date: 2022-7-23
 
-- **新增** 工作空间 -> 资源配额管理（创建/编辑/删除/查看/列表/计算已分配）
-- **新增** 工作空间 -> GProduct 资源配额注册
-- **新增** 用户与访问控制 -> 鉴权（APIServer/SDK）
-- **新增** 审计日志 -> 展示（查看/列表/清理设置/导出）
-- **新增** 审计日志 -> 批量插入
-- **新增** 身份提供商 -> 对接 LDAP -> 用户/用户组同步设置（创建/编辑/删除/查看/同步）
-- **新增** 平台设置 -> 安全策略 -> 密码策略设置
-- **优化** 工作空间 -> 代码架构调整
-- **新增** 文档站新增页面：[创建用户组并授权](../04UserGuide/01UserandAccess/Group.md)、[用户组](../04UserGuide/01UserandAccess/Group.md)、[登录](../04UserGuide/00Login.md)、[密码重置](../04UserGuide/password.md)、[全局管理角色](../04UserGuide/01UserandAccess/global.md)、[资源管理（按工作空间）](../04UserGuide/02Workspace/wsbp.md)、[资源管理（按角色）](../04UserGuide/02Workspace/quota.md)
+- **NEW** Workspace -> Resource Quota Management (Create/Edit/Delete/View/List/Calculate Allocated)
+- **NEW** Workspace -> GProduct resource quota registration
+- **New** User and Access Control -> Authentication (APIServer/SDK)
+- **NEW** Audit Log -> Display (View/List/Clean Settings/Export)
+- **Add** audit log -> batch insert
+- **New** Identity Provider -> LDAP Connection -> User/User Group Synchronization Settings (Create/Edit/Delete/View/Sync)
+- **NEW** Platform Settings -> Security Policy -> Password Policy Settings
+- **Optimize** workspace -> code structure adjustment
+- **NEW** Added new pages on the document site: [Create User Group and Authorize](../04UserGuide/01UserandAccess/Group.md), [User Group](../04UserGuide/01UserandAccess/Group.md), [Login](../04UserGuide/00Login.md), [Password Reset](../04UserGuide/password.md), [Global Admin Roles](../04UserGuide/01UserandAccess/global.md), [Resources Management (by Workspace)](../04UserGuide/02Workspace/wsbp.md), [Resource Management (by Role)](../04UserGuide/02Workspace/quota.md)
 
 ## v0.6
 
-发布日期：2022-6-21
+Release date: 2022-6-21
 
-- **新增** 工作空间 -> 生命周期管理（创建/编辑/删除/查看/列表）
-- **新增** 工作空间 -> 层级关系管理（绑定/列表）
-- **新增** 工作空间 -> 工作空间与资源关系管理（绑定/解绑/列表）
-- **新增** 工作空间 -> 工作空间和角色和用户（组）关系管理（绑定/解绑/列表）（API/SDK）
-- **新增** 工作空间 -> 鉴权（API/SDK）
-- **新增** 工作空间 -> GProduct 资源名字注册
-- **新增** 关于 -> 产品版本（创建/编辑/删除/查看/列表）
-- **新增** 关于 -> 开源软件（列表/初始化）
-- **新增** 关于 -> 技术团队（列表/初始化）
-- **新增** 许可证 -> 生命周期管理（创建/编辑/删除/查看/列表）
-- **新增** 许可证 -> 获取 ESN 序列号
-- **新增** 文档站新增页面：[常见术语](../01ProductBrief/glossary.md)、[功能总览](../01ProductBrief/Features.md)、[快速入门/创建用户和授权](../04UserGuide/01UserandAccess/User.md)、[什么是用户访问和控制](../04UserGuide/01UserandAccess/iam.md)、[用户](../04UserGuide/01UserandAccess/User.md)
+- **NEW** Workspace -> Lifecycle Management (Create/Edit/Delete/View/List)
+- **NEW** Workspace -> Hierarchical relationship management (binding/list)
+- **NEW** Workspace -> Workspace and resource relationship management (bind/unbind/list)
+- **NEW** Workspace -> Workspace and role and user (group) relationship management (binding/unbinding/list) (API/SDK)
+- **New** Workspace -> Authentication (API/SDK)
+- **NEW** Workspace -> GProduct resource name registration
+- **NEW** About -> Product Versions (Create/Edit/Delete/View/List)
+- **NEW** About -> Open Source Software (List/Initialize)
+- **NEW** Added About -> Technical Team (List/Initialize)
+- **NEW** License -> Lifecycle Management (Create/Edit/Delete/View/List)
+- **Added** License -> Get ESN serial number
+- **NEW** Added new pages in the documentation site: [Common Terminology](../01ProductBrief/glossary.md), [Function Overview](../01ProductBrief/Features.md), [Quick Start/Create User and Authorization](../04UserGuide/01UserandAccess/User.md), [What is User Access and Control](../04UserGuide/01UserandAccess/iam.md), [User](../04UserGuide/01UserandAccess/User.md )
 
 ## v0.5
 
-发布日期：2022-5-23
+Release date: 2022-5-23
 
-- **改进** 通过 mockery 框架简化 mock
-- **新增** 用户、用户组和登录等 e2e 测试
-- **新增** 登录页面更新配置接口
-- **新增** 支持登录
-- **新增** 支持忘记密码
-- **新增** 支持站内信增删改查功能
-- **新增** 支持 OPA 权限管理
-- **新增** 支持 SMTP 设置邮件服务器
-- **新增** 支持顶部导航栏获取查询
-- **新增** 支持顶部导航栏更新
-- **新增** 支持用户角色权限管理 CRUD
-- 添加基于 Honkit 的文档站模板
-- 添加整体双语文档站结构及主要内容
-- 完成 ROADMAP 内容
-- 将文档 ROADMAP 内容合并入总 ROADMAP 文件
-- 文档站更新了[什么是全局管理](WhatisGhippo.md)
+- **Improved** Simplify mocking with mockery framework
+- **NEW** e2e tests for users, groups and logins
+- **Add** login page update configuration interface
+- **NEW** Added support for login
+- **NEW** Add support for forgotten password
+- **NEW** Added support for adding, deleting, modifying and checking of messages in the station
+- **NEW** Added support for OPA authority management
+- **NEW** Added support for SMTP setting mail server
+- **NEW** Added support for getting queries from the top navigation bar
+- **NEW** Added support for updating the top navigation bar
+- **Add** support for user role rights management CRUD
+- Added Honkit based documentation station template
+- Add overall bilingual document station structure and main content
+- Completion of ROADMAP content
+- merge document ROADMAP content into overall ROADMAP file
+- Documentation site updated [What is Ghippo](WhatisGhippo.md)

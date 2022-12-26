@@ -29,7 +29,7 @@ This page shares some technical articles related to cloud native, and we hope th
      Terminating Pod is a typical problem encountered after business containerization, with different causes.
      The article records how the NetEase Shufan-Qingzhou Kubernetes enhancement technical team conducted a step-by-step investigation, found that too many Docker Volume directories caused the Terminating Pod problem, and gave a solution.
 
-- [Having network issues after installing Kubernetes or upgrading the host OS? This may be a problem with your iptables version](https://www.mirantis.com/blog/networking-problems-after-installing-kubernetes-1-25-or-after-upgrading-your-host-os-this -might-be-your-problem)
+- [Having network issues after installing Kubernetes or upgrading the host OS? This may be a problem with your iptables version](https://www.mirantis.com/blog/networking-problems-after-installing-kubernetes-1-25-or-after-upgrading-your-host-os-this-might-be-your-problem)
 
      After installing a new version of Kubernetes, your worker nodes can't connect to the network, and suddenly you can't ssh access or even ping them?
      This may be due to a conflict between the iptables version of kube-router 1.25 and the version you have installed.
@@ -39,7 +39,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Using eBPF to troubleshoot Kubernetes cluster disk I/O performance](https://mp.weixin.qq.com/s/RrTjhSJOviiINsy-DURV2A)
 
      The problem started when eBay engineers found that their Kafka service sometimes failed to catch up with the leader's data.
-     To solve the problem, some eBPF tools are used, for example, [biopattern](https://github.com/iovisor/bcc/blob/master/tools/biopattern.py) is used to show the disk I/O pattern, [ebpf_exporter] (https://github.com/cloudflare/ebpf_exporter) for data collection and visualization.
+     To solve the problem, some eBPF tools are used, for example, [biopattern](https://github.com/iovisor/bcc/blob/master/tools/biopattern.py) is used to show the disk I/O pattern, [ebpf_exporter](https://github.com/cloudflare/ebpf_exporter) for data collection and visualization.
 
 - [Kubernetes Network Troubleshooting Hardcore Guide](https://mp.weixin.qq.com/s/mp5coRHPAdx5nIfcCnPFhw)
 
@@ -221,14 +221,14 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [How to Harden Kubernetes in 2022?](https://elastisys.com/nsa-cisa-kubernetes-security-hardening-guide-and-beyond-for-2022/)
 
-     The author of the article believes that the ["Kubernetes Hardening Guide"] (https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/0/CTR_KUBERNETES_HARDENING_GUIDANCE_1.2_20220829.PDF issued by the US National Security Agency last year ) There is a big gap between the abstract and the main content later.
+     The author of the article believes that the ["Kubernetes Hardening Guide"](https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/0/CTR_KUBERNETES_HARDENING_GUIDANCE_1.2_20220829.PDF issued by the US National Security Agency last year ) There is a big gap between the abstract and the main content later.
      To this end, the authors conclude the report with some additional insights related to configuration, applying arbitrary permissions, image scanning, security testing, etc.
 
 - [Application of Chaos Engineering in Microservice Scenario](https://mp.weixin.qq.com/s/dEA3g3JnAKloW6K7cUskYQ)
 
      Hangzhou Mike Technology introduced Chaos Mesh, a cloud-native chaos engineering testing platform, to solve the pain points encountered in the robustness testing of microservices in cloud financial scenarios.
 
-- [Baidu Cloud Native Mixed Department Large-scale Implementation Road] (https://mp.weixin.qq.com/s/OgU2uRGhIy7r6WucvdrPzg)
+- [Baidu Cloud Native Mixed Department Large-scale Implementation Road](https://mp.weixin.qq.com/s/OgU2uRGhIy7r6WucvdrPzg)
 
      Hybrid technology, that is, online business and offline tasks are mixed and deployed on the same physical resources, and resource isolation, scheduling and other control methods are used to make full use of resources while ensuring service stability.
      The Baidu cloud-native hybrid system is mainly divided into three parts: stand-alone management layer, scheduling layer, and operation layer.
@@ -287,7 +287,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 ### Tool recommendation
 
-- [Why do we advocate a workload-centric development model instead of an infrastructure-centric development model? ](https://score.dev/blog/workload-centric-over-infrastructure-centric-development)
+- [Why do we advocate a workload-centric development model instead of an infrastructure-centric development model?](https://score.dev/blog/workload-centric-over-infrastructure-centric-development)
 
      Cloud native developers are often plagued by configuration inconsistencies between environments.
      [Score](https://github.com/score-spec/spec) is an open source project that provides a developer-centric, platform-independent workload specification,
@@ -316,7 +316,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
      Traffic Director is a Google-hosted service mesh control plane for addressing the governance of microservice traffic.
      The article shares a sample architecture. On the GKE cluster, use Traffic Director to configure the Envoy gateway proxy, and use TLS routing rules to route client traffic outside the cluster to workloads deployed on the cluster.
-     In addition, it demonstrates how to use the Envoy proxy as an ingress gateway to enable north-south traffic into the service mesh, and use the [Service Routing API](https://cloud.google.com/traffic-director/docs/service-routing-overview# :~:text=The%20service%20routing%20APIs%20let,two%20HTTPRoute%20resources%20configure%20routing.) to route these traffic, and finally shared some troubleshooting tips.
+     In addition, it demonstrates how to use the Envoy proxy as an ingress gateway to enable north-south traffic into the service mesh, and use the [Service Routing API](https://cloud.google.com/traffic-director/docs/service-routing-overview#:~:text=The%20service%20routing%20APIs%20let,two%20HTTPRoute%20resources%20configure%20routing.) to route these traffic, and finally shared some troubleshooting tips.
 
 - [How is the Java framework of Quarkus used for serverless function development? ](https://mp.weixin.qq.com/s/oeJjQtqK8h2JSGy4wOlQ6w)
 
@@ -328,7 +328,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
      This article describes how to quickly deploy a DevOps toolchain (GitLab + Jenkins + Harbor) using the DevOps toolchain manager [DevStream](https://github.com/devstream-io/devstream).
 
-- [Helm deploys highly available Harbor mirror warehouse](https://mp.weixin.qq.com/s/ev_QE9NhwiCcLHpapbAU7A)
+- [Helm deploys highly available Harbor container registry](https://mp.weixin.qq.com/s/ev_QE9NhwiCcLHpapbAU7A)
 
      This article introduces how to use the Helm package management tool to deploy harbor in a kubernetes cluster and achieve high availability.
 
@@ -373,7 +373,7 @@ This page shares some technical articles related to cloud native, and we hope th
      The core of TAP's cloud-native application runtime abstraction layer (CNR) is Knative.
      TAP provides a Runtime runtime layer, which not only supports users to use K8S Deployment and Service, but also Knative Serving, Scale From/To Zero, Eventing and Streaming, etc.
 
-- [Using Tekton and Kyverno's Policy-Based Approach to Secure CI/CD Pipelines](https://www.cncf.io/blog/2022/09/14/protect-the-pipe-secure-ci-cd -pipelines-with-a-policy-based-approach-using-tekton-and-kyverno/)
+- [Using Tekton and Kyverno's Policy-Based Approach to Secure CI/CD Pipelines](https://www.cncf.io/blog/2022/09/14/protect-the-pipe-secure-ci-cd-pipelines-with-a-policy-based-approach-using-tekton-and-kyverno/)
 
      [Tekton](https://github.com/tektoncd/pipeline) provides a robust CI/CD framework with extensions such as Tekton Chains to secure build artifacts.
      [Kyverno](https://github.com/kyverno/kyverno) can be used to manage policies, implement namespace-based isolation, and generate secure resources for Tekton pipelines.
@@ -408,7 +408,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
      The article describes the difference between Gateway API and Ingress and its use cases. Gateway API is an evolution of Ingress, which extends the API definition to provide some advanced features, such as HTTP and TCP routing, traffic splitting, routing across namespaces, and integrating progressive delivery tools.
 
-- [How to conduct K8s cluster benchmarking - Kube-burner's extended support for KubeVirt CRD introduction](https://cloud.redhat.com/blog/introducing-kubevirts-crd-support-for-kube-burner-to- benchmark-kubernetes-and-openshift-creation-of-vms)
+- [How to conduct K8s cluster benchmarking - Kube-burner's extended support for KubeVirt CRD introduction](https://cloud.redhat.com/blog/introducing-kubevirts-crd-support-for-kube-burner-to-benchmark-kubernetes-and-openshift-creation-of-vms)
 
      [Kube-burner](https://github.com/cloud-bulldozer/kube-burner) is a tool for Kubernetes cluster pressure measurement by creating or deleting a large number of objects.
      kube-burner does not support third-party plugins such as KubeVirt CRD by default.
@@ -445,20 +445,20 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Use Chain-bench to Audit Your Software Supply Chain for CIS Compliance](https://blog.aquasec.com/cis-software-supply-chain-compliance)
 
-     The Center for Internet Security (CIS) recently published [Software Supply Chain Security Guide](https://github.com/aquasecurity/chain-bench/blob/main/docs/CIS-Software-Supply-Chain-Security-Guide -v1.0.pdf), provides best practices for securing software delivery pipelines.
+     The Center for Internet Security (CIS) recently published [Software Supply Chain Security Guide](https://github.com/aquasecurity/chain-bench/blob/main/docs/CIS-Software-Supply-Chain-Security-Guide-v1.0.pdf), provides best practices for securing software delivery pipelines.
      As the initiator and main contributor of the guide, the Aqua team has developed the first open source tool for software supply chain auditing - [Chain-bench](https://github.com/aquasecurity/chain-bench) to audit software supply Whether the chain meets the benchmark of CIS and realizes the automation of the audit process.
 
 - [Chainguard version of next generation Distroless images](https://blog.chainguard.dev/minimal-container-images-towards-a-more-secure-future/)
 
      Chainguard is building the next generation of [distroless](https://github.com/distroless) images, using a single toolchain to easily compose distroless images from existing packages and create custom packages.
-     Unlike Google's Bazel and Debian-based systems, the Chainguard toolchain starts with [apk](https://github.com/alpinelinux/apk-tools) (Alpine package manager), [apko](https:/ /github.com/chainguard-dev/apko) (used to build distroless images based on Alpine) and [melange] (https://github.com/chainguard-dev/melange) (use declarative pipeline to build apk packages) as core, reducing the complexity of distroless images.
+     Unlike Google's Bazel and Debian-based systems, the Chainguard toolchain starts with [apk](https://github.com/alpinelinux/apk-tools) (Alpine package manager), [apko](https://github.com/chainguard-dev/apko) (used to build distroless images based on Alpine) and [melange](https://github.com/chainguard-dev/melange) (use declarative pipeline to build apk packages) as core, reducing the complexity of distroless images.
 
-- [Enable support for LoadBalancer type service on OpenYurt edge side through MetalLB](https://openyurt.io/zh/blog/Enable-MetalLB-in-OpenYurt/)
+- [Enable support for LoadBalancer type service on OpenYurt edge side through MetalLB](https://openyurt.io/blog/Enable-MetalLB-in-OpenYurt/)
 
      In the cloud-edge collaboration scenario, since the edge side does not have the cloud SLB service capability, edge Ingress or edge applications cannot expose LoadBalancer-type services for access outside the cluster.
      In this scenario, this article discusses how to implement support for LoadBalancer type service on the edge side of OpenYurt through MetalLB.
 
-- [Implementing Hot Reloading in Kubernetes](https://loft.sh/blog/implementing-hot-reloading-in-kubernetes/?utm_medium=reader&utm_source=rss&utm_campaign=blog_implementing-hot-reloading-in-kubernetes?utm_source =thenewstack&utm_medium=website)
+- [Implementing Hot Reloading in Kubernetes](https://loft.sh/blog/implementing-hot-reloading-in-kubernetes/?utm_medium=reader&utm_source=rss&utm_campaign=blog_implementing-hot-reloading-in-kubernetes?utm_source=thenewstack&utm_medium=website)
 
      If you want to test applications directly in the cluster while developing Kubernetes applications, there are quite a few steps involved.
      The article introduces the significance of hot reloading inside Kubernetes, and how to use [DevSpace](https://github.com/loft-sh/devspace) to efficiently complete hot reloading - DevSpace is responsible for automatically rebuilding and redeploying applications, Users only need to save the application files.
@@ -533,11 +533,11 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Prometheus long-term remote storage solution VictoriaMetrics entry practice](https://mp.weixin.qq.com/s/C3fzohygl5_tey70Qnz3og)
 
      VictoriaMetrics (referred to as VM) is a highly available, cost-effective and scalable open source monitoring solution and time series database, which can be used for long-term remote storage of Prometheus monitoring data.
-      In addition, the main features of the VM include: external support for Prometheus-related APIs, high performance and good scalability for index data ingestion and query, and high-performance data compression methods.
+     In addition, the main features of the VM include: external support for Prometheus-related APIs, high performance and good scalability for index data ingestion and query, and high-performance data compression methods.
 
 - [Tools to manage Helm versions declaratively](https://helm.sh/blog/tools-to-manage-helm-declaratively/)
 
-This post introduces some tools in the Kubernetes ecosystem that can be used to declaratively manage Helm versions (such as the CNCF projects Flux and Argo), and compares these tools.
+     This post introduces some tools in the Kubernetes ecosystem that can be used to declaratively manage Helm versions (such as the CNCF projects Flux and Argo), and compares these tools.
 
 - [Cost Governance of Cloud Native Workloads Using Kubecost and Kyverno](https://dzone.com/articles/cost-governance-of-cloud-native-workloads-using-kubecost-and-kyverno)
 
@@ -547,7 +547,7 @@ This post introduces some tools in the Kubernetes ecosystem that can be used to 
 
      Dubbo-go-Mesh is a cross-ecological service framework implementation scheme of the distributed RPC framework Dubbo-go in the agentless service grid scenario. Currently, Istio-compatible service governance capabilities are supported. It supports interface-level service discovery capabilities, is compatible with the flow control and management capabilities of the Istio ecosystem, and provides scaffolding and application templates to improve the efficiency of Go application development.
 
-- [How to bring your own scheduler into OpenShift with the secondary scheduler](https://cloud.redhat.com/blog/how-to-bring-your-own-scheduler-into-openshift-with-the -secondary-scheduler-operator)
+- [How to bring your own scheduler into OpenShift with the secondary scheduler](https://cloud.redhat.com/blog/how-to-bring-your-own-scheduler-into-openshift-with-the-secondary-scheduler-operator)
 
      Kubernetes Scheduler cannot meet the special needs of some applications for schedulers: such as common scheduling, topology-aware scheduling, load-aware scheduling, etc.
      As a result, OpenShift allows users to introduce their own customized scheduler through the [Secondary Scheduler](https://github.com/openshift/secondary-scheduler-operator) of the application market Operator Hub, and use this scheduler to run the scheduler they choose workload.
@@ -570,7 +570,7 @@ This post introduces some tools in the Kubernetes ecosystem that can be used to 
      The article briefly introduces and analyzes 12 typical open source monitoring tools, and points out their respective advantages and disadvantages.
      The tools mentioned include the distributed monitoring system Zabbix, the time series database VictoriaMetrics, Prometheus, the cloud-native monitoring and analysis system Nightingale Monitoring, etc.
 
-- [Discussion on the selection and application of cloud native storage tools] (https://mp.weixin.qq.com/s/QoVlOe01hGWSYEKS8wfsKw)
+- [Discussion on the selection and application of cloud native storage tools](https://mp.weixin.qq.com/s/QoVlOe01hGWSYEKS8wfsKw)
 
      The article sorts out the concept of cloud native storage step by step, and briefly introduces and compares Longhorn, OpenEBS, Rook+Ceph, and finally chooses a representative Longhorn to demonstrate its installation and use.
 
@@ -629,7 +629,7 @@ This post introduces some tools in the Kubernetes ecosystem that can be used to 
      Before adopting GitOps, we need to ask ourselves "What is GitOps?" and ask ourselves "Who are we serving with these tools? What problem are we trying to solve?"
      The article questions some of the main "selling points" of GitOps (including security, version control and environment history, rollback, elegant processing, single source of truth, etc.), and introduces some of the challenges that GitOps poses.
 
-- [Ant large-scale platform engineering practice for more than two years, what we have learned] (https://mp.weixin.qq.com/s/X8AWh43qp4fb4eJSkx50hw)
+- [Ant large-scale platform engineering practice for more than two years, what we have learned](https://mp.weixin.qq.com/s/X8AWh43qp4fb4eJSkx50hw)
 
      Platform engineering is the discipline of designing and building toolchains and workflows that provide self-service capabilities for software engineering organizations in the cloud-native era.
      The article is based on the practice of programmable cloud native protocol stack [KusionStack](https://github.com/KusionStack) in Ant Platform engineering and automation, from platform engineering, special language, divide and conquer, modeling, automation and collaborative culture, etc. From several perspectives, the benefits and challenges in the practice of large-scale platform engineering are explained.
@@ -726,7 +726,7 @@ This post introduces some tools in the Kubernetes ecosystem that can be used to 
      The attack uses container evasion techniques and anonymous mining pools to deliver its workload using an obfuscated domain name to conduct cryptocurrency mining activities against Docker and Kubernetes infrastructure.
      Adopting a cloud security protection platform can effectively protect the cloud environment from similar mining activities, prevent misconfiguration and control plane attacks.
 
-- [Kube-apiserver CVE Vulnerability: Aggregated API server may cause Server Request Forgery (SSRF)](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.24.md#cve-2022- 3172-aggregated-api-server-can-cause-clients-to-be-redirected-ssrf)
+- [Kube-apiserver CVE Vulnerability: Aggregated API server may cause Server Request Forgery (SSRF)](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.24.md#cve-2022-3172-aggregated-api-server-can-cause-clients-to-be-redirected-ssrf)
 
      An attacker could take control of the aggregated API server, redirecting client traffic to any URL. This could cause the client to perform unexpected actions, or expose the client certificate to a third party.
      There is no mitigation for this issue. Cluster administrators should take care to secure the aggregated API Server and not allow access to mutate API Services by untrusted parties.
@@ -757,7 +757,7 @@ This post introduces some tools in the Kubernetes ecosystem that can be used to 
 
      The white paper summarizes a cloud-native maturity matrix assessment process for enterprises undergoing cloud-native transformation. Evaluate the current state of the organization from nine areas: culture, product, team, process, architecture, maintenance, delivery, configuration, and infrastructure.
      At the same time, it clarifies four classic cloud-native transformation misunderstandings, and summarizes typical cloud-native transformation solutions.
-     Click to read [White Paper] (https://pan.baidu.com/s/1qfEqtL-LCbBo9GhnZBcyyg), extraction code: kvrv
+     Click to read [White Paper](https://pan.baidu.com/s/1qfEqtL-LCbBo9GhnZBcyyg), extraction code: kvrv
 
 - [E-book "The Foundation of Zero Trust: Using SPIFFE to Create Universal Identity for Infrastructure"](https://mp.weixin.qq.com/s/3qwVW8AeyRvUVxYAq22XKg)
 
@@ -767,11 +767,11 @@ This post introduces some tools in the Kubernetes ecosystem that can be used to 
 - [Kube-OVN v1.10 series of Chinese documents, 99.9% of the questions can be answered here](https://mp.weixin.qq.com/s/OI996gGQasWaFLy2Matghw)
 
      The documentation is divided into five parts: Kube-OVN Quick Start, Usage Guide, Operation and Maintenance Guide, Advanced Features, and Technical Reference.
-     Click to view [documentation] (https://kubeovn.github.io/docs/)
+     Click to view [documentation](https://kubeovn.github.io/docs/)
 
-- [From construction to governance, the industry's first white paper on microservice governance technology is officially released] (https://mp.weixin.qq.com/s/mG0jX66BLOHY0TWTqYO50A)
+- [From construction to governance, the industry's first white paper on microservice governance technology is officially released](https://mp.weixin.qq.com/s/mG0jX66BLOHY0TWTqYO50A)
 
-     Alibaba Cloud's cloud-native microservice team recently released ["White Paper on Microservice Governance Technology"] (https://developer.aliyun.com/ebook/read/7565?spm=a2c6h.26392459.ebook-detail.4.12d9775enBrpOH).
+     Alibaba Cloud's cloud-native microservice team recently released ["White Paper on Microservice Governance Technology"](https://developer.aliyun.com/ebook/read/7565?spm=a2c6h.26392459.ebook-detail.4.12d9775enBrpOH).
      This white paper focuses on the business domain of microservice governance, covering the whole process of microservice implementation including technical principles, business scenarios, solutions, and best practices.
 
 ### other
@@ -790,7 +790,7 @@ This post introduces some tools in the Kubernetes ecosystem that can be used to 
      Datadog’s analysis of over 1.5 billion containers run by customers identified key trends in the container ecosystem:
      The use of serverless container technology in the public cloud continues to rise, multi-cloud usage is positively correlated with the number of containers in an organization, Kubernetes Ingress usage is on the rise, most hosts are using a Kubernetes version older than 18 months, more than 30% are running containerd of hosts use unsupported versions, NGINX, Redis, and Postgres are the most popular container images.
 
-- [Karmada large-scale test report released, breaking through 100 clusters and 500,000 nodes](https://karmada.io/zh/blog/2022/10/26/test-report/)
+- [Karmada large-scale test report released, breaking through 100 clusters and 500,000 nodes](https://karmada.io/blog/2022/10/26/test-report/)
 
      Recently, the Karmada community has carried out large-scale testing of Karmada. According to the analysis of test results, the cluster federation with Karmada as the core can stably support 100 clusters and 500,000 nodes online at the same time, and manage more than 2 million Pods.
      In terms of usage scenarios, the Push mode is suitable for managing Kubernetes clusters on public clouds, while the Pull mode covers private cloud and edge-related scenarios relative to the Push mode.

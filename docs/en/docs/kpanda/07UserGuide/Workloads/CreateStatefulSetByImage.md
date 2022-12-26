@@ -147,7 +147,7 @@ In addition to basic information configuration, the Daocloud container managemen
 
 === "DNS Configuration"
 
-     In some scenarios, the application will have redundant DNS queries. Kubernetes provides DNS-related configuration options for applications. By configuring DNS for applications, redundant DNS queries can be effectively reduced in some scenarios and business concurrency can be increased. For details, please refer to [DNS configuration] (PodConfig/EnvironmentVariables.md).
+     In some scenarios, the application will have redundant DNS queries. Kubernetes provides DNS-related configuration options for applications. By configuring DNS for applications, redundant DNS queries can be effectively reduced in some scenarios and business concurrency can be increased. For details, please refer to [DNS configuration](PodConfig/EnvironmentVariables.md).
 
      ![DNS Configuration](../../images/deploy17.png)
 

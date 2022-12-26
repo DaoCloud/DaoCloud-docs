@@ -4,7 +4,7 @@ IAM (Identity and Access Management, user and access control) is an important mo
 
 ![IAM definition](../../images/iam.png)
 
-## Advantage
+## Benefits
 
 - Simple and smooth
 
@@ -12,7 +12,7 @@ IAM (Identity and Access Management, user and access control) is an important mo
 
 - Appropriate role
 
-    User and access control pre-defines an administrator role for each sub-module, without user maintenance, you can directly authorize the predefined system roles of the platform to users to realize the modular management of the platform (for fine-grained permissions, please refer to [Privilege Management] (../01UserandAccess/Role.md).
+    User and access control pre-defines an administrator role for each sub-module, without user maintenance, you can directly authorize the predefined system roles of the platform to users to realize the modular management of the platform (for fine-grained permissions, please refer to [Privilege Management](../01UserandAccess/Role.md).
 
 - Enterprise-grade access control
 
