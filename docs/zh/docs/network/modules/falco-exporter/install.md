@@ -25,22 +25,22 @@
 
    在如上界面中:
 
-    - `Falco Prometheus Exporter -> Image Settings -> Registry`：设置 falco-exporter 镜像的仓库地址，默认已经填写了可用的在线仓库，如果是私有化环境，可修改为私有仓库地址。
+   - `Falco Prometheus Exporter -> Image Settings -> Registry`：设置 falco-exporter 镜像的仓库地址，默认已经填写了可用的在线仓库，如果是私有化环境，可修改为私有仓库地址。
 
-    - `Falco Prometheus Exporter -> Prometheus ServiceMonitor Settings -> Repository`：设置 falco-exporter 镜像名。
+   - `Falco Prometheus Exporter -> Prometheus ServiceMonitor Settings -> Repository`：设置 falco-exporter 镜像名。
 
-    - `Falco Prometheus Exporter -> Prometheus ServiceMonitor Settings -> Install ServiceMonitor`：安装 Prometheus Operator 服务监视器，默认开启。
+   - `Falco Prometheus Exporter -> Prometheus ServiceMonitor Settings -> Install ServiceMonitor`：安装 Prometheus Operator 服务监视器，默认开启。
     
-    - `Falco Prometheus Exporter -> Prometheus ServiceMonitor Settings -> Scrape Interval`：用户自定义的间隔；如果未指定，则使用 Prometheus 默认间隔。
+   - `Falco Prometheus Exporter -> Prometheus ServiceMonitor Settings -> Scrape Interval`：用户自定义的间隔；如果未指定，则使用 Prometheus 默认间隔。
 
-    - `Falco Prometheus Exporter -> Prometheus ServiceMonitor Settings -> Scrape Timeout`：用户自定义的抓取超时时间；如果未指定，则使用 Prometheus 默认的抓取超时时间
-
+   - `Falco Prometheus Exporter -> Prometheus ServiceMonitor Settings -> Scrape Timeout`：用户自定义的抓取超时时间；如果未指定，则使用 Prometheus 默认的抓取超时时间
+   
    ![falco-exporter_helm-3](../../images/falco-exporter-install-4.png)
    ![falco-exporter_helm-3](../../images/falco-exporter-install-5.png)
    在如上界面中:
 
-    - `Falco Prometheus Exporter -> Prometheus prometheusRules -> Install prometheusRules`：创建 PrometheusRules，对优先事件发出警报，默认开启。
+   - `Falco Prometheus Exporter -> Prometheus prometheusRules -> Install prometheusRules`：创建 PrometheusRules，对优先事件发出警报，默认开启。
 
-    - `Falco Prometheus Exporter -> Prometheus prometheusRules -> Alerts settings`：告警设置，为不同级别的日志事件设置是否启用、告警的间隔时间、告警的阈值。
+   - `Falco Prometheus Exporter -> Prometheus prometheusRules -> Alerts settings`：警报设置，为不同级别的日志事件设置警报是否启用、警报的间隔时间、警报的阈值。
 
    点击右下角`确定`按钮即可完成创建。

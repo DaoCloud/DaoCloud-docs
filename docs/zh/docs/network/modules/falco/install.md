@@ -32,6 +32,7 @@
    - `Falco -> Falco Driver -> Image Settings -> Driver Kind `：设置 Driver Kind，提供以下两种选择：
 
      (1) ebpf：使用ebpf来检测事件，这需要Linux内核支持ebpf，并启用CONFIG_BPF_JIT和sysctl net.core.bpf_jit_enable=1。
+   
      (2) module：使用内核模块检测，支持有限的操作系统版本，参考 module 支持[系统版本](https://download.falco.org/?prefix=driver)。
 
    - `Falco -> Falco Driver -> Image Settings -> Log Level `：要包含在日志中的最小日志级别。
