@@ -408,7 +408,7 @@ nav:
               - Use: network/modules/spiderpool/usage.md
               - Config: network/modules/spiderpool/config.md
               - Commands: network/modules/spiderpool/command.md
-          - Falco
+          - Falco:
               - Intro: network/modules/falco/what.md
               - Install: network/modules/falco/install.md
       - Middleware:
