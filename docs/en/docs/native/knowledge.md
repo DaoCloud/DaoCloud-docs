@@ -328,7 +328,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
      This article describes how to quickly deploy a DevOps toolchain (GitLab + Jenkins + Harbor) using the DevOps toolchain manager [DevStream](https://github.com/devstream-io/devstream).
 
-- [Helm deploys highly available Harbor mirror warehouse](https://mp.weixin.qq.com/s/ev_QE9NhwiCcLHpapbAU7A)
+- [Helm deploys highly available Harbor container registry](https://mp.weixin.qq.com/s/ev_QE9NhwiCcLHpapbAU7A)
 
      This article introduces how to use the Helm package management tool to deploy harbor in a kubernetes cluster and achieve high availability.
 
