@@ -5,7 +5,7 @@ hide:
 
 # Microservice Management
 
-After [connecting to the registry] (integrate-registry.md), the microservices in it can be managed through the registry. Microservice management mainly refers to viewing the microservices under the registration center,
+After [connecting to the registry](integrate-registry.md), the microservices in it can be managed through the registry. Microservice management mainly refers to viewing the microservices under the registration center,
 
 !!! note
 

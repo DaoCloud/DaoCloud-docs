@@ -30,7 +30,7 @@ Both shared resources and cluster resources in resource groups come from [Contai
 
 2. Add shared resources
 
-    Make the user/user group in the workspace have the permission to use the cluster resources, and can use the resource quota to go to [Create a namespace (Namespace) in the application workbench] (#_2).
+    Make the user/user group in the workspace have the permission to use the cluster resources, and can use the resource quota to go to [Create a namespace (Namespace) in the application workbench](#_2).
 
     ![Shares](../../images/quota02.png)
 

@@ -1,6 +1,6 @@
 # Create worker cluster
 
-In the DCE 5.0 container management module, [cluster role] (./ClusterRole.md#cluster role) is divided into four categories: global service cluster, management cluster, working cluster, and access cluster. Among them, the access cluster can only be accessed from third-party vendors, see [Join ACluster](JoinACluster.md).
+In the DCE 5.0 container management module, [cluster role](./ClusterRole.md#cluster role) is divided into four categories: global service cluster, management cluster, working cluster, and access cluster. Among them, the access cluster can only be accessed from third-party vendors, see [Join ACluster](JoinACluster.md).
 
 This page describes how to create a worker cluster.
 

@@ -5,7 +5,7 @@ The user name represents the account, and the user logs in to the DaoCloud Enter
 
 Having a user account is a prerequisite for users to access the platform. The newly created user does not have any permissions by default. For example, you need to assign corresponding role permissions to users, such as granting administrator permissions to submodules in `User List` or `User Details`.
 The sub-module administrator has the highest authority of the sub-module, and can create, manage, and delete all resources of the module.
-If a user needs to be granted permission for a specific resource, such as the permission to use a certain resource, please see [Resource Authorization Description] (#Authorize for User).
+If a user needs to be granted permission for a specific resource, such as the permission to use a certain resource, please see [Resource Authorization Description](#Authorize for User).
 
 This page introduces operations such as creating, authorizing, disabling, enabling, and deleting users.
 

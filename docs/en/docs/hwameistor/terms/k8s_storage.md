@@ -4,12 +4,12 @@ Kubernetes provides several enhancements for container platforms (or cluster adm
 
 When using HwameiStor to run stateful workloads, you need to understand several abstract concepts of Kubernetes storage:
 
-- [Kubernetes-storage] (#kubernetes-storage)
+- [Kubernetes-storage](#kubernetes-storage)
   - [Container Storage Interface](#Container Storage Interface)
-  - [Storage classes and dynamic provisioning] (#Storage classes and dynamic provisioning)
+  - [Storage classes and dynamic provisioning](#Storage classes and dynamic provisioning)
   - [PersistentVolume Claim](#PersistentVolumeStatement)
   - [PersistentVolume](#PersistentVolume)
-  - [stateful and stateless] (#stateful and stateless)
+  - [stateful and stateless](#stateful and stateless)
 
 ## Container storage interface
 
