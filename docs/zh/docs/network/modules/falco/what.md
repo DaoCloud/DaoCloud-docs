@@ -1,6 +1,6 @@
 # Falco
 
-[Falco](https://falco.org) 是一个*云原生运行时安全*工具，旨在检测应用程序中的异常活动。 您可以使用 Falco 监控 Kubernetes 应用程序和内部组件的运行时安全性。您仅需为 Falco 撰写一套规则，即可持续监测并监控容器、应用、主机及网络的异常活动。
+[Falco](https://falco.org) 是一个`云原生运行时安全`工具，旨在检测应用程序中的异常活动。 您可以使用 Falco 监控 Kubernetes 应用程序和内部组件的运行时安全性。您仅需为 Falco 撰写一套规则，即可持续监测并监控容器、应用、主机及网络的异常活动。
 
 ## Falco 能检测到什么？
 
@@ -46,7 +46,7 @@ Falco 由以下几个主要组件组成：
     -（默认）基于C++ 库构建libscap的内核模块libsinsp
     - 由相同模块构建的 BPF 探针
     - 用户空间检测
-   
-   有关详细信息，请参阅 Falco [驱动程序](https://falco.org/docs/event-sources/drivers/)。
+    
+    有关详细信息，请参阅 Falco [驱动程序](https://falco.org/docs/event-sources/drivers/)。
 
  - 插件 - 允许用户通过添加新的事件源和可以从事件中提取信息的新字段来扩展 falco libraries/falco 可执行文件的功能。有关详细信息，请参阅[插件](https://falco.org/docs/plugins/)。
