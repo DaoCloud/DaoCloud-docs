@@ -28,7 +28,7 @@
 
     - `Falco` -> `Image Settings` -> `Repository`：设置 Falco 镜像名。
 
-    - `Falco -> Falco Driver -> Image Settings -> Registry`：设置 Falco Driver 镜像的仓库地址，已经默认填写可用的在线仓库。如果是私有化环境，可修改为私有仓库地址。
+    - `Falco` -> `Falco Driver` -> `Image Settings` -> `Registry`：设置 Falco Driver 镜像的仓库地址，已经默认填写可用的在线仓库。如果是私有化环境，可修改为私有仓库地址。
 
     - `Falco` -> `Falco Driver` -> `Image Settings` -> `Repository`：设置 Falco Driver 镜像名。
 
