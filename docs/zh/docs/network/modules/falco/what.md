@@ -35,16 +35,16 @@ Falco 规则定义 Falco 应监视的行为及事件；可以在 Falco 规则文
 
 Falco 由以下几个主要组件组成：
 
- - 用户空间程序：CLI 工具，可用于与 Falco 交互。用户空间程序处理信号，解析来自 Falco 驱动的信息，并发送警报。
+- 用户空间程序：CLI 工具，可用于与 Falco 交互。用户空间程序处理信号，解析来自 Falco 驱动的信息，并发送警报。
 
- - 配置：定义 Falco 的运行方式、要断言的规则以及如何执行警报。有关详细信息，请参阅[配置](https://falco.org/docs/configuration)。
+- 配置：定义 Falco 的运行方式、要断言的规则以及如何执行警报。有关详细信息，请参阅[配置](https://falco.org/docs/configuration)。
 
- - Driver：一款遵循 Falco 驱动规范并发送系统调用信息流的软件。如果不安装驱动程序，将无法运行 Falco。目前，Falco 支持以下驱动程序：
+- Driver：一款遵循 Falco 驱动规范并发送系统调用信息流的软件。如果不安装驱动程序，将无法运行 Falco。目前，Falco 支持以下驱动程序：
 
     - 基于 C++ 库构建 libscap 的内核模块 libsinsp（默认）
     - 由相同模块构建的 BPF 探针
     - 用户空间检测
-    
+
       有关详细信息，请参阅 Falco [驱动程序](https://falco.org/docs/event-sources/drivers/)。
 
- - 插件：可用于扩展 falco libraries/falco 可执行文件的功能，扩展方式是通过添加新的事件源和从事件中提取信息的新字段。有关详细信息，请参阅[插件](https://falco.org/docs/plugins/)。
+- 插件：可用于扩展 falco libraries/falco 可执行文件的功能，扩展方式是通过添加新的事件源和从事件中提取信息的新字段。有关详细信息，请参阅[插件](https://falco.org/docs/plugins/)。
