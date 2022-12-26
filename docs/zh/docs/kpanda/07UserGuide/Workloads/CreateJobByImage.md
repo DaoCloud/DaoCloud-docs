@@ -1,130 +1,108 @@
-# 通过镜像创建任务
+# 创建任务（Job）
 
-任务（Job）适用于一次性的任务执行，会创建一个或者多个 Pod，并将继续重试 Pod 的执行，直到指定数量的 Pod 成功终止。
-随着 Pod 成功结束，Job 将跟踪记录成功完成的 Pod 个数。当数量达到指定的成功个数阈值时，Job 结束。
-删除 Job 的操作会清除所创建的全部 Pod。挂起 Job 的操作会删除 Job 的所有活跃 Pod，直到 Job 被再次恢复执行。
-Job 根据 `.spec.completions` 设定完成标注。
+本文介绍如何通过镜像和 YAML 文件两种方式创建任务（Job）。
 
-- 非并行 Job：
-
-    - 通常只启动一个 Pod，除非该 Pod 失败。
-    - 当 Pod 成功终止时，立即视 Job 为完成状态。
-   
-- 具有确定完成计数的并行 Job：
-
-    - `.spec.completions` 字段设置为非 0 的正数值。
-    - Job 用来代表整个任务，当成功的 Pod 个数达到 `.spec.completions` 时，Job 被视为完成。
-    - 当使用 `.spec.completionMode="Indexed"` 时，每个 Pod 都会获得一个不同的 索引值，介于 0 和 `.spec.completions-1` 之间。
-
-- 带工作队列的并行 Job：
-
-    - 不设置 `spec.completions`，默认值为 `.spec.parallelism`。
-    - 多个 Pod 之间必须相互协调，或者借助外部服务确定每个 Pod 要处理哪个工作条目。 例如，任一 Pod 都可以从工作队列中取走最多 N 个工作条目。
-    - 每个 Pod 都可以独立确定是否其它 Pod 都已完成，进而确定 Job 是否完成。
-    - 当 Job 中 **任何** Pod 成功终止，不再创建新 Pod。
-    - 一旦至少 1 个 Pod 成功完成，并且所有 Pod 都已终止，即可宣告 Job 成功完成。
-    - 一旦任何 Pod 成功退出，任何其它 Pod 都不应再对此任务执行任何操作或生成任何输出。 所有 Pod 都应启动退出过程。
+任务（Job）适用于执行一次性任务。Job 会创建一个或多个 Pod，Job 会一直重新尝试执行 Pod，直到成功终止的 Pod 达到一定数量。成功终止的 Pod 达到指定的数量后，Job 也随之结束。删除 Job 时会一同清除该 Job 创建的所有 Pod。暂停 Job 时删除该 Job 中的所有活跃 Pod，直到 Job 被继续执行。有关任务（Job）的更多介绍，可参考[Job](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/job/)。
 
 ## 前提条件
 
-通过镜像创建任务之前，需要满足以下前提条件：
+- 在[容器管理](../../03ProductBrief/WhatisKPanda.md)模块中[接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
 
-- 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
+- 创建一个[命名空间](../Namespaces/createns.md)和[用户](../../../ghippo/04UserGuide/01UserandAccess/User.md)。
 
-- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，用户应具有 [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) 或更高权限，详情可参考[命名空间授权](../Namespaces/createns.md)。
+- 当前操作用户应具有 [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) 或更高权限，详情可参考[命名空间授权](../Namespaces/createns.md)。
 
 - 单个实例中有多个容器时，请确保容器使用的端口不冲突，否则部署会失效。
 
-参考以下步骤，创建一个任务。
-
 ## 镜像创建
 
-1. 以 `NS Edit` 用户成功登录后，点击左上角的`集群列表`进入集群列表页面。点击一个集群名称，进入`集群详情`。
+参考以下步骤，使用镜像创建一个任务。
+
+1. 点击左侧导航栏上的`集群列表`，然后点击目标集群的名称，进入`集群详情`页面。
 
     ![集群详情](../../images/deploy01.png)
 
-2. 点击左侧导航栏的`工作负载`进入工作负载列表，点击`任务`页签，点击右上角`镜像创建`按钮。
+2. 在集群详情页面，点击左侧导航栏的`工作负载` -> `任务`，然后点击页面右上角的`镜像创建`按钮。
 
     ![工作负载](../../images/job01.png)
 
-3. 屏幕将显示`创建任务`页面。
+3. 依次填写[基本信息](CreateJobByImage.md#_3)、[容器配置](CreateJobByImage.md#_4)、[服务配置](CreateJobByImage.md#_5)、[高级配置](CreateJobByImage.md#_6)后，在页面右下角点击`确定`完成创建。
 
-### 基本信息配置
+    系统将自动返回`任务`列表。点击列表右侧的 `︙`，可以对任务执行执行更新、删除、重启等操作。
+
+    ![操作菜单](../../images/job08.png)
+
+### 基本信息
 
 在`创建任务`页面中，根据下表输入基本信息后，点击`下一步`。
 
 ![创建任务](../../images/job02.png)
 
-- 负载名称：输入新建工作负载的名称，命名必须唯一。请输入4 到 63 个字符的字符串，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。例如 job-01。
-- 集群：选择新建工作负载所在的集群。在集群内创建工作负载时，将在当前集群中创建工作负载。集群不可更改。当在集群外部创建工作负载时，将在所选集群创建工作负载。例如 Cluster-01。
-- 命名空间：选择新建工作负载所在的命名空间。关于命名空间更多信息请参考[命名空间概述](../Namespaces/createns.md)。若您不设置命名空间，系统会默认使用 default 命名空间。例如 Namespace-01。
-- 实例数：输入工作负载的 Pod 实例数量。若您不设置实例数量，系统会默认创建 2 个 Pod 实例。
+- 负载名称：最多包含 63 个字符，只能包含小写字母、数字及分隔符（“-”），且必须以小写字母或数字开头及结尾。同一命名空间内同一类型工作负载的名称不得重复，而且负载名称在工作负载创建好之后不可更改。
+- 命名空间：选择将新建的任务部署在哪个命名空间，默认使用 default 命名空间。找不到所需的命名空间时可以根据页面提示去[创建新的命名空间](../Namespaces/createns.md)。
+- 实例数：输入工作负载的 Pod 实例数量。默认创建 1 个 Pod 实例。
 - 描述：输入工作负载的描述信息，内容自定义。字符数量应不超过 512 个。
 
 ### 容器配置
 
-容器配置仅针对单个容器进行配置，如需在一个容器组中添加多个容器，可点击左侧的 `+` 添加多个容器。
+容器配置分为基本信息、生命周期、健康检查、环境变量、数据存储、安全设置六部分，点击下方的相应页签可查看各部分的配置要求。
 
-完成以下所有容器配置信息后，点击`下一步`。
+> 容器配置仅针对单个容器进行配置，如需在一个容器组中添加多个容器，可点击右侧的 `+` 添加多个容器。
 
 === "基本信息（必填）"
 
-    ![创建任务](../../images/job02-1.png)
+    ![基本信息](../../images/job02-1.png)
 
-    按照以下输入信息后，点击`确认`。
+    在配置容器相关参数时，必须正确填写容器的名称、镜像参数，否则将无法进入下一步。参考以下要求填写配置后，点击`确认`。
 
-    - 容器名称：输入新建容器的名称。请输入 4 到 63 个字符的字符串，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。例如 backup_log。
-    - 容器镜像：从镜像仓库选择的镜像名称，同时也支持手动输入镜像名称（名称需为镜像仓库中已有的镜像名，否则将无法获取），如需对接外部私有镜像，需要先[创建镜像仓库密钥](../ConfigMapsandSecrets/create-secret.md)，然后拉取镜像。例如 backupjob。
-    - 更新策略：容器执行更新时，镜像拉取策略。开启后工作负载每次重启/升级均会重新拉取镜像，否则只会在节点上不存在同名同版本镜像时拉取镜像。默认为：总是拉取镜像。
-    - 特权容器：默认情况下，容器不可以访问宿主机上的任何设备，开启特权容器后，容器即可访问宿主机上的所有设备，享有宿主机上的运行进程的所有权限。默认启用。
-    - CPU 配额：容器 CPU 资源的最低使用量和最高限度。申请：容器需要使用的最小 CPU 值。限制：允许容器使用的 CPU 最大值。建议设容器配额的最高限额，避免容器资源超额导致系统故障。
-    - 内存配额：容器内存资源的最低使用量和最高限度。申请：容器需要使用的最小内存值。限制：允许容器使用的内存最大值。建议设容器配额的最高限额，避免容器资源超额导致系统故障。
+    - 容器名称：最多包含 63 个字符，支持小写字母、数字及分隔符（“-”）。必须以小写字母或数字开头及结尾，例如 nginx-01。
+    - 容器镜像：输入镜像地址或名称。输入镜像名称时，默认从官方的 [DockerHub](https://hub.docker.com/) 拉取镜像。接入 DCE 5.0 的[镜像仓库](../../../kangaroo/intro.md)模块后，可以点击右侧的`选择镜像`来选择镜像。
+    - 更新策略：勾选`总是拉取镜像`后，负载每次重启/升级时都会从仓库重新拉取镜像。如果不勾选，则只拉取本地镜像，只有当镜像在本地不存在时才从镜像仓库重新拉取。更多详情可参考[镜像拉取策略](https://kubernetes.io/zh-cn/docs/concepts/containers/images/#image-pull-policy)。
+    - 特权容器：默认情况下，容器不可以访问宿主机上的任何设备，开启特权容器后，容器即可访问宿主机上的所有设备，享有宿主机上的运行进程的所有权限。
+    - CPU/内存配额：CPU/内存资源的请求值（需要使用的最小资源）和限制值（允许使用的最大资源）。请根据需要为容器配置资源，避免资源浪费和因容器资源超额导致系统故障。默认值如图所示。
+    - GPU 独享：为容器配置 GPU 用量，仅支持输入正整数。GPU 配额设置支持为容器设置独享整张 GPU 卡或部分 vGPU。例如，对于一张 8 核心的 GPU 卡，输入数字 `8` 表示让容器独享整长卡，输入数字 `1` 表示为容器配置 1 核心的 vGPU。
+
+        > 设置 GPU 独享之前，需要管理员预先在集群节点上安装 GPU 卡及驱动插件，并在[集群设置](../clusterops/cluster-settings.md)中开启 GPU 特性。
 
 === "生命周期（选填）"
 
-    容器生命周期配置用于设置容器启动时、启动后、停止前需要执行的命令。具体详情请参照[容器生命周期配置](PodConfig/lifescycle.md)。
+    设置容器启动时、启动后、停止前需要执行的命令。详情可参考[容器生命周期配置](PodConfig/lifescycle.md)。
 
     ![生命周期](../../images/deploy06.png)
 
 === "健康检查（选填）"
 
-    容器健康检查用于判断容器和应用的健康状态。有助于提高应用的可用性。具体详情请参考[容器健康检查配置](PodConfig/healthcheck.md)。
+    用于判断容器和应用的健康状态，有助于提高应用的可用性。详情可参考[容器健康检查配置](PodConfig/healthcheck.md)。
 
     ![健康检查](../../images/deploy07.png)
 
 === "环境变量（选填）"
 
-    容器环境变量配置用于配置 Pod 内的容器参数，为 Pod 添加环境标志或传递配置等。具体详情请参考[容器环境变量配置](PodConfig/EnvironmentVariables.md)。
+    配置 Pod 内的容器参数，为 Pod 添加环境变量或传递配置等。详情可参考[容器环境变量配置](PodConfig/EnvironmentVariables.md)。
 
     ![环境变量](../../images/deploy08.png)
 
 === "数据存储（选填）"
 
-    容器数据存储配置用于配置容器挂载数据卷和数据持久化设置。具体详情请参考[容器数据存储配置](PodConfig/EnvironmentVariables.md)。
+    配置容器挂载数据卷和数据持久化的设置。详情可参考[容器数据存储配置](PodConfig/EnvironmentVariables.md)。
 
     ![数据存储](../../images/deploy09.png)
 
 === "安全设置（选填）"
 
-    按照下表对容器权限进行设置，保护系统和其他容器不受其影响。
+    通过 Linux 内置的账号权限隔离机制来对容器进行安全隔离。您可以通过使用不同权限的账号 UID（数字身份标记）来限制容器的权限。例如，输入 `0` 表示使用 root 账号的权限。
 
     ![安全设置](../../images/deploy10.png)
 
-=== "容器日志（选填）"
-
-    设置容器日志采集策略、配置日志目录。用于收集容器日志便于统一管理和分析。具体详情请参考[容器日志配置](PodConfig/EnvironmentVariables.md)。
-
-    ![容器日志](../../images/deploy11.png)
-
 ### 服务配置
 
-对工作负载访问方式进行设置，可以设置服务访问方式。
+为 Job 配置[服务（Service）](../ServicesandRoutes/CreatingServices.md)，使其能够被外部访问。
 
 1. 点击`创建服务`按钮。
 
-    ![服务配置](../../images/deploy12.png)
+    ![服务配置](../../images/job07.png)
 
-2. 选择访问服务的各项信息，具体详情请参考[创建服务](../ServicesandRoutes/CreatingServices.md)。
+2. 参考[创建服务](../ServicesandRoutes/CreatingServices.md)，配置服务参数。
 
     ![创建服务](../../images/deploy13.png)
 
@@ -132,14 +110,15 @@ Job 根据 `.spec.completions` 设定完成标注。
 
 ### 高级配置
 
-除了基本信息配置，DCE 还提供了丰富的高级配置，可对的升级策略、调度策略、标签与注解等功能进行配置。
+高级配置包括任务设置、标签与注解两部分。
 
 === "任务设置"
 
     ![任务设置](../../images/job03.png)
 
-    - 并行数：任务负载执行过程中允许同时创建的最大 Pod 数，并行数应不大于 Pod 总数。默认为 2。
-    - 超时时间：当任务执行超出该时间时，任务将会被标识为执行失败，任务下的所有 Pod 都会被删除。为空时表示不设置超时时间。默认为 3。
+    - 并行数：任务执行过程中允许同时创建的最大 Pod 数，并行数应不大于 Pod 总数。默认为 1。
+    - 超时时间：超出该时间时，任务会被标识为执行失败，任务下的所有 Pod 都会被删除。为空时表示不设置超时时间。
+    - 重启策略：设置失败时是否重启 Pod。
 
 === "标签与注解"
 
@@ -147,7 +126,79 @@ Job 根据 `.spec.completions` 设定完成标注。
 
     ![标签与注解](../../images/job04.png)
 
-## 完成创建
+## YAML 创建
 
-确认所有参数输入完成后，点击`创建`按钮，完成工作负载创建。等待工作负载状态变为`运行中`。
-如果工作负载状态出现异常，请查看具体异常信息，可参考[工作负载状态](../Workloads/PodConfig/workload-status.md)。
+除了通过镜像方式外，还可以通过 YAML 文件更快速地创建创建任务。
+
+1. 点击左侧导航栏上的`集群列表`，然后点击目标集群的名称，进入`集群详情`页面。
+
+    ![集群详情](../../images/deploy01.png)
+
+2. 在集群详情页面，点击左侧导航栏的`工作负载` -> `任务`，然后点击页面右上角的 `YAML 创建`按钮。
+
+    ![工作负载](../../images/job09.png)
+
+3. 输入或粘贴事先准备好的 YAML 文件，点击`确定`即可完成创建。
+
+    ![工作负载](../../images/cronjob08.png)
+
+??? note "点击查看创建任务的 YAML 示例"
+
+    ```yaml
+    kind: Job
+    apiVersion: batch/v1
+    metadata:
+      name: demo
+      namespace: default
+      uid: a9708239-0358-4aa1-87d3-a092c080836e
+      resourceVersion: '92751876'
+      generation: 1
+      creationTimestamp: '2022-12-26T10:52:22Z'
+      labels:
+        app: demo
+        controller-uid: a9708239-0358-4aa1-87d3-a092c080836e
+        job-name: demo
+      annotations:
+        revisions: >-
+          {"1":{"status":"running","uid":"a9708239-0358-4aa1-87d3-a092c080836e","start-time":"2022-12-26T10:52:22Z","completion-time":"0001-01-01T00:00:00Z"}}
+    spec:
+      parallelism: 1
+      backoffLimit: 6
+      selector:
+        matchLabels:
+          controller-uid: a9708239-0358-4aa1-87d3-a092c080836e
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            app: demo
+            controller-uid: a9708239-0358-4aa1-87d3-a092c080836e
+            job-name: demo
+        spec:
+          containers:
+            - name: container-4
+              image: nginx
+              resources:
+                limits:
+                  cpu: 250m
+                  memory: 512Mi
+                requests:
+                  cpu: 250m
+                  memory: 512Mi
+              lifecycle: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              imagePullPolicy: IfNotPresent
+              securityContext:
+                privileged: false
+          restartPolicy: Never
+          terminationGracePeriodSeconds: 30
+          dnsPolicy: ClusterFirst
+          securityContext: {}
+          schedulerName: default-scheduler
+      completionMode: NonIndexed
+      suspend: false
+    status:
+      startTime: '2022-12-26T10:52:22Z'
+      active: 1
+    ```
