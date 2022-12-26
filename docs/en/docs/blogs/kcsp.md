@@ -56,17 +56,17 @@ To help the community prosper and develop, there are also big names joining the 
 | Certified Kubernetes Security Specialist (CKS) | 8 |
 
 by Kubernetes in August 2022
-In the officially organized community [contributor interview] (https://kubernetes.io/blog/2022/08/15/meet-our-contributors-china-ep-03/),
+In the officially organized community [contributor interview](https://kubernetes.io/blog/2022/08/15/meet-our-contributors-china-ep-03/),
 We met with 4 outstanding contributors from the Asia-Pacific region, 2 of whom are from DaoCloud, who have made outstanding contributions to the development of Kubernetes.
 
 While promoting the technological evolution of the community, DaoCloud maintains a keen sense of cloud-native technologies led by Kubernetes.
 Taking Kubernetes 1.25 as an example, the first minor version 1.25.1 was released on 2022-09-14, and DaoCloud released it on 2022-10-25 after more than a month of adaptation and debugging.
 Submitted [Conformance Certification Application PR](https://github.com/cncf/k8s-conformance/pull/2240),
-With more than 50,000 lines of real E2E test reports, a complete [Chinese-English document site] (https://docs.daocloud.io/), and detailed materials,
+With more than 50,000 lines of real E2E test reports, a complete [Chinese-English document site](https://docs.daocloud.io/), and detailed materials,
 Successfully passed the KCSP review for v1.25 on 2022-11-04.
 
 At present, there are no more than 5 **domestic manufacturers** that can perfectly support Kubernetes 1.25 and have been officially certified.
-In view of this, HUAWEI CLOUD has established a strategic partnership with DaoCloud in [Metaverse Cloud Edge Collaborative Hyper-Converged All-in-One Machine] (http://blog.daocloud.io/8542.html). There are also deep partnerships.
+In view of this, HUAWEI CLOUD has established a strategic partnership with DaoCloud in [Metaverse Cloud Edge Collaborative Hyper-Converged All-in-One Machine](http://blog.daocloud.io/8542.html). There are also deep partnerships.
 
 DaoCloud's open source community projects around the Kubernetes ecosystem include:
 

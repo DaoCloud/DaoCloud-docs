@@ -15,11 +15,11 @@ Follow the steps below to create a workspace.
 
     ![Global Management](../../images/ws01.png)
 
-3. Click `Workspace and Hierarchy` in the left navigation bar, and click the `Create Workspace` button in the upper right corner.
+1. Click `Workspace and Hierarchy` in the left navigation bar, and click the `Create Workspace` button in the upper right corner.
 
     ![Create workspace](../../images/ws02.png)
 
-4. After filling in the workspace name, folder and other information, click `OK` to complete the creation of the workspace.
+1. After filling in the workspace name, folder and other information, click `OK` to complete the creation of the workspace.
 
     ![OK](../../images/ws03.png)
 

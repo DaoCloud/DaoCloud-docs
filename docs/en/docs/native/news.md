@@ -52,7 +52,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
      With the theme of "From Containers to Multi-Cloud", SODACON 2022 will discuss the latest trends, innovations, challenges and solutions in cloud native, IoT, big data, and machine learning in the field of storage management. The meeting will be held simultaneously offline and online via ZOOM.
 
-- [On December 7, CNCF launched a regional cloud-native series event KubeDay, the first event kicked off in Japan] (https://www.cncf.io/blog/2022/08/17/introducing-kubeday-event-series -kicking-off-with-kubeday-japan-this-december/)
+- [On December 7, CNCF launched a regional cloud-native series event KubeDay, the first event kicked off in Japan](https://www.cncf.io/blog/2022/08/17/introducing-kubeday-event-series-kicking-off-with-kubeday-japan-this-december/)
 
      The first KubeDay event will be held in Yokohama, Japan on December 7th. [Speaking Proposal Application](https://events.linuxfoundation.org/kubeday-japan/program/cfp/) is now open (until 23:59 on September 6th) and speakers need to be present.
 
@@ -95,7 +95,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      - Edge Cloud Construction Contribution Award
      - Distributed database awards, etc.
 
-- [International consulting firm Sullivan released the 2022 Cloud Native Application Protection Platform Radar Report on November 29] (https://1665891.fs1.hubspotusercontent-na1.net/hubfs/1665891/Frost%20Radar%20-%20CNAPP% 202022%20-%20Aqua%20Security.pdf?_hsmi=235753068&_hsenc=p2ANqtz-_imKv0Cl7-_MGhYeSCsaey9txVoiKZQ7AiKuvvWdshrrAcw1zflc5_x9gLM_kJDXKVTZ8akc0IkBEXC_FA-TNBAR)x
+- [International consulting firm Sullivan released the 2022 Cloud Native Application Protection Platform Radar Report on November 29](https://1665891.fs1.hubspotusercontent-na1.net/hubfs/1665891/Frost%20Radar%20-%20CNAPP%202022%20-%20Aqua%20Security.pdf?_hsmi=235753068&_hsenc=p2ANqtz-_imKv0Cl7-_MGhYeSCsaey9txVoiKZQ7AiKuvvWdshrrAcw1zflc5_x9gLM_kJDXKVTZ8akc0IkBEXC_FA-TNBAR)x
   
      Sullivan selected 15 leading manufacturers based on business growth and innovation indicators, including Aqua Security, Check Point, Lacework, Sysdig, etc. Among them, Aqua was selected as the preferred benchmarking enterprise for investment or cooperation.
 ![protection](./images/protection.png)
@@ -106,7 +106,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      In the early stage of the program, the Ambassador and Contributor of the KubeSphere community are mainly invited to discuss hot topics such as cloud native and open source.
      At present, the program has been launched on the three platforms of Small Universe, Himalaya, and Apple Podcast, and the first episode of the program has been released.
 
-- [On November 23, KubeCon North America 2022 booth hot words announced, "security" and "platform" became hot words](https://www.uptime.build/post/i-analyzed-290-booths-at-kubecon- here-are-the-devops-trends-for-2023)
+- [On November 23, KubeCon North America 2022 booth hot words announced, "security" and "platform" became hot words](https://www.uptime.build/post/i-analyzed-290-booths-at-kubecon-here-are-the-devops-trends-for-2023)
   
      In an analysis of 290 exhibitor booths, "Kubernetes" and "Cloud" were the two most common words, followed by "Security," "Platform," and "Data."
      Additionally, “scale” was mentioned 16 times, “cost” was mentioned 15 times, and “serverless” was mentioned only 3 times.
@@ -131,7 +131,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      The CNCF KubeEdge community will hold the first academic seminar on cloud-native edge computing on November 16.
      The call for topics for the seminar has been opened, and the topics can focus on but not limited to the research results of cloud-native edge computing technology and the hands-on demonstration of edge computing based on the KubeEdge platform.
 
-- [On November 15, the research and consulting organization Love Analysis released the "2022 Xinchuang Manufacturer Panorama Report", and DaoCloud was selected into the Xinchuang Cloud segment of the manufacturer panorama] (https://mp.weixin.qq.com/s/GCeOGq4DcO-20CtFATDPcA)
+- [On November 15, the research and consulting organization Love Analysis released the "2022 Xinchuang Manufacturer Panorama Report", and DaoCloud was selected into the Xinchuang Cloud segment of the manufacturer panorama](https://mp.weixin.qq.com/s/GCeOGq4DcO-20CtFATDPcA)
 
      The report selects nine specific markets, including database, operating system, middleware, Xinchuang cloud, and cloud desktop, to focus on the definition of demand and the capabilities of representative manufacturers.
      Provide reference for enterprise manufacturer selection. Among them, the comprehensive localization of the cloud platform has gradually become a key link for enterprises to build a full-stack independent and controllable IT architecture.
@@ -152,18 +152,18 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      - Virtualization, native application cases
      - Integration of cloud native and other technologies (cloud native+)
 
-- [Hangzhou Yunqi Conference on November 3rd] (https://yunqi.aliyun.com/?spm=5176.27296252.J_9252124580.2.672d3b19iHUjCB)
+- [Hangzhou Yunqi Conference on November 3rd](https://yunqi.aliyun.com/?spm=5176.27296252.J_9252124580.2.672d3b19iHUjCB)
 
      This year's Yunqi Conference will be held from 11.3 to 5 with the theme of Computing Evolution Future. The conference set up two main forums and more than 70 sub-forums on digital technology, industry and ecology.
      Among them, the Cloud Computing Forum will focus on cloud-native cutting-edge technologies, cloud security and compliance, proprietary cloud and other content.
-     Currently, the conference is open for [free application for conference tickets] (https://yunqi.aliyun.com/2022/ticket?activityId=MjU2NA==&ticketId=MTU=&channelId=Mzgw).
+     Currently, the conference is open for [free application for conference tickets](https://yunqi.aliyun.com/2022/ticket?activityId=MjU2NA==&ticketId=MTU=&channelId=Mzgw).
 
 - [November Global Open Source Technology Summit GOTC opens in Shenzhen](https://mp.weixin.qq.com/s/qlHG3yjr1YRlZ-2Np8LzaQ)
 
      GOTC is jointly sponsored by the Linux Foundation, Open Source China, and the open source community, focusing on hot topics such as eBPF, Web 3.0, blockchain, open source community, open source commercialization, open source education and training, cloud native, AI, industrial software, and IoT.
      In addition, the summit will invite executive directors of the Linux Foundation, directors of the Apache Software Foundation, general managers of CNCF, and dozens of key open source guests from all over the world to attend and share speeches.
 
-     Click to view [Sponsor Program PDF] (https://oscimg.oschina.net/public_shard/GOTC2022%E6%B4%BB%E5%8A%A8%E6%96%B9%E6%A1%88-081922.pdf )
+     Click to view [Sponsor Program PDF](https://oscimg.oschina.net/public_shard/GOTC2022%E6%B4%BB%E5%8A%A8%E6%96%B9%E6%A1%88-081922.pdf)
 
 ### 2022-10
 
@@ -190,15 +190,15 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      KubeCon + CloudNativeCon North America will be held in Detroit, USA from October 24-28, featuring 189 sessions, keynotes and lightning talks.
 
-     Click to view [Online Participation Method] (https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/register/)
+     Click to view [Online Participation Method](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/register/)
 
-- [On October 24, CNCF announced the first batch of products that passed the cloud native network function certification program] (https://mp.weixin.qq.com/s/2AJi1d-Edwjq-Bm7knRbPw)
+- [On October 24, CNCF announced the first batch of products that passed the cloud native network function certification program](https://mp.weixin.qq.com/s/2AJi1d-Edwjq-Bm7knRbPw)
 
      The CNCF announced the first cloud-native network function (CNF) certified products, including F5, Juniper Networks, MATRIXX Software, and PANTHEON.tech.
 
      Launched in May of this year, the CNF certification program leverages the [CNF Test Suite](https://github.com/cncf/cnf-testsuite/) to help communications service providers and other telecom organizations identify which network equipment providers follow cloud-native Best Practices.
 
-- [On October 21, the China Academy of Information and Communications Technology launched the first batch of evaluations of cloud-native platform middleware management capabilities] (https://mp.weixin.qq.com/s/n5r9btwVm8lgF4o_dNvCYQ)
+- [On October 21, the China Academy of Information and Communications Technology launched the first batch of evaluations of cloud-native platform middleware management capabilities](https://mp.weixin.qq.com/s/n5r9btwVm8lgF4o_dNvCYQ)
 
      The evaluation mainly examines middleware management capabilities from eight parts: access management, lifecycle governance, operation and maintenance support, operation services, high availability, compatibility, openness, and security.
 
@@ -226,7 +226,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      According to the evaluation system, the Institute of Information and Communications Technology will start the evaluation and testing of cloud-native categories in the second half of the year, covering multiple aspects such as containers, micro-services, serverless, cloud-native security, cloud-native data, and cloud-native maturity, aiming to standardize cloud service providers and security service provider product quality,
      Help cloud-native transformation, and provide reference for product selection, evaluation, and acceptance.
 
-- [KubeCon North America 2022 warm-up event on October 5-6 - "KubeCrash Fall 2022" open for free registration] (https://www.kubecrash.io/)
+- [KubeCon North America 2022 warm-up event on October 5-6 - "KubeCrash Fall 2022" open for free registration](https://www.kubecrash.io/)
 
      KubeCrash is a free online cloud-native technology sharing event provided by maintainers of CNCF projects and other open source projects. This year's Fall KubeCrash will be held on October 5-6.
      The first batch of speakers and topics have been announced, sharing content including Cloud Native Maturity Model, cert-manager, Telepresence, Linkerd, Polaris, Pulumiand other open source technologies.
@@ -260,7 +260,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      The Cloud Native Community Meetup Guangzhou station will be held on September 25th, and the "Cloud Native Community" video account and station B will broadcast live simultaneously. The event invites engineers from Jihu and Intel to share content about cloud-native application security and load balancing.
 
-- [On September 24, the 6th National Internet Architecture Summit (IAS2022) will officially open for registration, DaoCloud CEO Chen Qiyan will give an opening speech] (https://mp.weixin.qq.com/s/61dFoFPiJOGKZcISYQJ79Q)
+- [On September 24, the 6th National Internet Architecture Summit (IAS2022) will officially open for registration, DaoCloud CEO Chen Qiyan will give an opening speech](https://mp.weixin.qq.com/s/61dFoFPiJOGKZcISYQJ79Q)
 
      IAS2022 is co-hosted by the NJSD technical community and will be held in Nanjing on September 24. The content of the meeting covers topics such as traffic programming, microservice governance, Data Mesh, polymorphic application management, DDD architecture design, and eBPF performance acceleration. Registration is currently open, subject to the number of people in the venue until the quota is full.
 
@@ -278,7 +278,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      Starting from the definition, origin and application status of cloud native, the white paper sorts out the development logic and industry panorama of cloud native industry, analyzes the opportunities cloud native brings to China's innovation industry, and combines domestic leading cloud native practices to look forward to future trends , defining the operating system in the cloud era.
 
-- [Gartner released the 2022 Hype Cycle for Emerging Technologies on September 22] (https://www.infoq.cn/article/5Bp8BIJd5DSgFzaRjzAT)
+- [Gartner released the 2022 Hype Cycle for Emerging Technologies on September 22](https://www.infoq.cn/article/5Bp8BIJd5DSgFzaRjzAT)
 
      Emerging technology trends for 2022 focus on three themes: Evolving/Scaling Immersive Experiences, Accelerating AI Automation, and Optimizing Technician Delivery.
      Among them, optimizing the delivery of technical personnel, OpenTelemetry, etc. will have a significant impact on business and society in the next 2-5 years, while data observability, observability-driven development, and industry cloud platforms will take 5-10 years to be widely adopted. use.
@@ -296,14 +296,14 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      RFO, Rancher for openEuler, aims to deeply integrate the Rancher product ecology with openEuler, build container engineering infrastructure for the Euler open source community, and create Rancher derivatives for openEuler.
 
-- [On September 15, the international analysis organization GigaOm released the "Service Mesh Radar Report v2.0"](https://research.gigaom.com/reprint/gigaom-radar-for-service-mesh-solo-io/?
+- [On September 15, the international analysis organization GigaOm released the "Service Mesh Radar Report v2.0"](https://research.gigaom.com/reprint/gigaom-radar-for-service-mesh-solo-io/)
 
      GigaOm evaluates mainstream service meshes from four dimensions: specialized infrastructure layer, sidecar practice, control plane configuration, and control plane telemetry.
      Among them, Gloo Mesh, greymatter.io, Kong Mesh, and Linkerd were rated as outstanding performers. Of note is Cilium Service Mesh, one of the first service meshes that can leverage either a sidecar or no sidecar model.
 
      ![radar](./images/mesh.png)
 
-- [September 13-16, the Linux Foundation announced the Open Source Summit Europe 2022 conference schedule](https://linuxfoundation.org/featured/the-linux-foundation-announces-conference-schedule-for-open-source-summit -europe-2022/)
+- [September 13-16, the Linux Foundation announced the Open Source Summit Europe 2022 conference schedule](https://linuxfoundation.org/featured/the-linux-foundation-announces-conference-schedule-for-open-source-summit-europe-2022/)
 
      Open Source Summit Europe 2022 will be held offline (Dublin) + online on September 13-16. The summit includes 13 sub-forums, 325+ speeches,
      Topics cover the most important and cutting-edge topics in the open source field: Linux systems, supply chain security, OSPO, embedded IoT, cloud, containers, etc.
@@ -312,7 +312,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      The report pointed out that the number of Kubernetes clusters has grown rapidly, and 29% of companies have more than 50 clusters; multi-cloud dominates, and local deployment and single cloud lose their advantages; multi-cluster and multi-cloud security are new frontier issues.
 
-     Click to view [full version report] (http://vmwzadmin.incloudexpo.com/uploads/docs/2022/0804/VMware_StateOfKubernetes2022_eBook_042522_WEB.pdf)
+     Click to view [full version report](http://vmwzadmin.incloudexpo.com/uploads/docs/2022/0804/VMware_StateOfKubernetes2022_eBook_042522_WEB.pdf)
 
 - [On September 9, Cisco released the "Global Hybrid Cloud Development Trend Report 2022"](https://mp.weixin.qq.com/s/115gcNpsYk7uIkB35B7bgA)
 
@@ -320,9 +320,9 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      The development of hybrid cloud faces three major challenges: security, operation, and cost. Edge computing, infrastructure automation, and composable infrastructure will become three technology hotspots in the hybrid cloud field in the future.
      The accelerated development of cloud native technology, the widespread application of infrastructure as code, and the active role of open culture are the three major trends in the future development of hybrid cloud.
 
-     Click to view [full report] (https://d110erj175o600.cloudfront.net/wp-content/uploads/2022/07/07143944/nb-06-2022-trends-report-cte.pdf)
+     Click to view [full report](https://d110erj175o600.cloudfront.net/wp-content/uploads/2022/07/07143944/nb-06-2022-trends-report-cte.pdf)
 
-- [On September 8, the CNCF Prometheus professional qualification certification exam was upgraded to GA] (https://www.cncf.io/announcements/2022/09/08/prometheus-certified-associate-exam-is-now-generally-available /?utm_source=thenewstack&utm_medium=website)
+- [On September 8, the CNCF Prometheus professional qualification certification exam was upgraded to GA](https://www.cncf.io/announcements/2022/09/08/prometheus-certified-associate-exam-is-now-generally-available/?utm_source=thenewstack&utm_medium=website)
 
      Months after the Beta release, the CNCF announced that the [Prometheus Professional Certification (PCA) exam](https://training.linuxfoundation.org/certification/prometheus-certified-associate/) has been upgraded to GA.
     
@@ -360,7 +360,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      At the same time, it also brought two open source projects [Coolbpf](https://github.com/aliyun/coolbpf) and [LMP](https://github.com/linuxkerneltravel/lmp), among which Coolbpf focuses on improving development efficiency,
      Later, we will explore in depth from the perspective of security; LMP uses machine learning models and other solutions to deeply debug the kernel based on eBPF technology from the perspective of a visualization platform.
 
-- [In mid-August, the 2022 "Science and Technology China" open source innovation list selection will be fully launched] (https://cccst.org.cn/osis)
+- [In mid-August, the 2022 "Science and Technology China" open source innovation list selection will be fully launched](https://cccst.org.cn/osis)
 
      The 2022 "Science and Technology China" Open Source Innovation List is sponsored by the China Association for Science and Technology and organized by the Open Source Innovation Consortium. , to select products, communities, activities, and people with innovation, contribution, and influence.
 
@@ -369,7 +369,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      LunDaoNative Meetup Nanjing Station is hosted by DaoKe and Pengyun Network, focusing on topics such as service grid, cloud-native storage, cloud-native security and related open source projects.
      The event will be held on August 13, in the form of offline + online live broadcast.
 
-- [CloudNativeDay 2022 held online on August 10th](https://www.techstrongevents.com/cloud-native-days-2022?ref=in-article-ad&utm_source=Container+Journal&utm_medium=Referral&utm_campaign=in-article- ad)
+- [CloudNativeDay 2022 held online on August 10th](https://www.techstrongevents.com/cloud-native-days-2022?ref=in-article-ad&utm_source=Container+Journal&utm_medium=Referral&utm_campaign=in-article-ad)
 
      CloudNativeDay 2022 is a cloud native speaking event sponsored by tech media company Techstrong.
      Speakers come from Google, IBM, Splunk, Oracle and other companies, focusing on topics such as Kubernetes, supply chain security, observability, service mesh, WebAssembly, and DevSecOps.
@@ -387,7 +387,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      This Meetup was initiated by the KubeSphere community and the SOFAStack community, and the theme is still "Cloud Native Technology Exchange".
      The event includes lightning speeches (10 minutes) and single/double speeches (40 minutes). Topics can include projects in the cloud native field and cloud native technology practices.
 
-- [August 2 CNCF Telecom Industry Micro-Survey: Three-quarters of Respondents Say They Will Adopt Cloud Native Network Functions (CNF)](https://www.cncf.io/blog/2022/08/02/ cncf-telco-microsurvey-cloud-native-network-functions-with-kubernetes-are-coming-but-interoperability-and-portability-are-priorities/)
+- [August 2 CNCF Telecom Industry Micro-Survey: Three-quarters of Respondents Say They Will Adopt Cloud Native Network Functions (CNF)](https://www.cncf.io/blog/2022/08/02/cncf-telco-microsurvey-cloud-native-network-functions-with-kubernetes-are-coming-but-interoperability-and-portability-are-priorities/)
 
      Three-quarters of respondents to the micro-survey are converting services running as physical network functions (PNFs) or virtual network functions (VNFs) to cloud-native network functions (CNFs) based on containers and Kubernetes.
      As for the biggest challenges when using Kubernetes, the top three are: network (57.14%), interoperability between products (42.86%), cluster management and complexity (both 33.33%).
@@ -398,14 +398,14 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      The final report shows that the maturity of DevOps implementation in Chinese enterprises continues to increase, and nearly 60% of enterprises are moving towards the comprehensive level; nearly 90% of enterprises are practicing the agile development model to varying degrees;
      The proportion of automated code scanning and unit testing in automated testing exceeded 70% for the first time; enterprises practicing DevSecOps exceeded 60% for the first time.
 
-     Click [View Report] (http://d.dachang.tobdev.com/2022/china-devops-2022-08.pdf)
+     Click [View Report](http://d.dachang.tobdev.com/2022/china-devops-2022-08.pdf)
 
-- [On August 1, CNCF launched a survey on cloud native popularization trends in 2022] (https://www.research.net/r/T6D29LS?lang=zh-tw&utm)
+- [On August 1, CNCF launched a survey on cloud native popularization trends in 2022](https://www.research.net/r/T6D29LS?lang=zh-tw&utm)
 
      This year, CNCF collaborated with the Linux Foundation to launch a cloud-native survey to summarize the popularization trends of containers, Kubernetes, and other cloud-native technologies, as well as the tools, projects, and challenges faced by users.
      The survey is anonymous and closes August 1.
 
-- [August developer platform service provider Humanitec released "2022 Kubernetes Benchmarking Study"](https://f.hubspotusercontent40.net/hubfs/5890440/Reports/Kubernetes%20Benchmarking%20Study%202022%20-%202022-02- 16.pdf)
+- [August developer platform service provider Humanitec released "2022 Kubernetes Benchmarking Study"](https://f.hubspotusercontent40.net/hubfs/5890440/Reports/Kubernetes%20Benchmarking%20Study%202022%20-%202022-02-16.pdf)
 
      Humanitec conducted a study of 1,164 development teams to assess the current state of team Kubernetes practices, technical approaches, and team setup and culture.
      According to Kubernetes Performance Score (KPS), it is divided into top/mid/low performer. A developer's degree of self-service is what separates top from low.
@@ -419,7 +419,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      The conference will once again showcase dozens of project-related content from the foundation, focusing on API/microservices, open source communities, application integration, message queues, middleware, observability, remote procedure call RPC, WEB SERVER/TOMCAT, etc. Discussion on a topic.
      The call for presentations is open and closes May 31.
 
-- [On July 28, the international analysis organization GigaOm released the 2022 Cloud Native Data Storage Radar Report] (https://research.gigaom.com/reprint/gigaom-radar-for-cloud-native-kubernetes-data-storage-portworx/)
+- [On July 28, the international analysis organization GigaOm released the 2022 Cloud Native Data Storage Radar Report](https://research.gigaom.com/reprint/gigaom-radar-for-cloud-native-kubernetes-data-storage-portworx/)
 
      As shown in the radar chart, vendors in the lower right quadrant see persistent storage as their competitive differentiator.
      What this group has in common is to combine storage platforms with Kubernetes distributions and cluster management products to provide Kubernetes users with a highly integrated overall solution.
@@ -432,7 +432,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      While explaining the definition of cloud-native architecture, the white paper also summarizes the evolution path and design rules required for cloud-native architecture applications based on Alibaba Cloud's cloud-native practical experience.
      Compared with the old version, the 2022 version adds dozens of enterprise cloud-native practical experience collections. At the same time, in the cloud-native product matrix, several core product families are added, such as container products, micro-service products, and cloud-native technology middle-end products. family etc.
 
-     Click [View White Paper] (https://developer.aliyun.com/ebook/read/7679?spm=a2c6h.26392459.ebook-detail.4.455f697agCIYh7)
+     Click [View White Paper](https://developer.aliyun.com/ebook/read/7679?spm=a2c6h.26392459.ebook-detail.4.455f697agCIYh7)
 
 - [On July 21, China Academy of Information and Communications Technology released the "White Paper on Cloud Computing (2022)"](https://mp.weixin.qq.com/s/jl4Lz_1BMcC_-gpI3fukbw)
 
@@ -440,14 +440,14 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      The new cycle refers to a new stage in which cloud-native transformation of the application architecture is used, and computing power services are used as a means of resource scheduling to achieve efficient, safe, and lean access to the cloud.
      Under the new cycle, there are five key points in the development of cloud computing: large-scale construction, computing power services, stability, cloud security, and cloud cost optimization.
 
-     Click to view [White Paper Reading] (http://www.caict.ac.cn/kxyj/qwfb/bps/202207/P020220721643085625934.pdf)
+     Click to view [White Paper Reading](http://www.caict.ac.cn/kxyj/qwfb/bps/202207/P020220721643085625934.pdf)
 
-- [On July 21, the KubeEdge community released the first cloud-native edge computing threat model and security protection analysis report] (https://mp.weixin.qq.com/s/0CKpkIjHpEXUftZ2czDgSQ)
+- [On July 21, the KubeEdge community released the first cloud-native edge computing threat model and security protection analysis report](https://mp.weixin.qq.com/s/0CKpkIjHpEXUftZ2czDgSQ)
 
      The KubeEdge community uses the ASTRIDE Low Level threat modeling method combined with the KubeEdge security audit report to conduct a systematic security analysis of KubeEdge. It believes that KubeEdge potential attackers include three parts:
      External attackers, internal attackers and supply chain attackers. At the same time, it also lists the mitigation mechanisms and security hardening suggestions currently available in the community.
 
-     Click to view [GitHub more details] (https://github.com/kubeedge/community/tree/master/sig-security/sig-security-audit/KubeEdge-threat-model-and-security-protection-analysis.md )
+     Click to view [GitHub more details](https://github.com/kubeedge/community/tree/master/sig-security/sig-security-audit/KubeEdge-threat-model-and-security-protection-analysis.md)
 
 - [DaoCloud debuted at the first KubeEdge Summit on July 14-15, and went to a cloud-native edge computing event](https://mp.weixin.qq.com/s/HWhy1oJZ_aAZ7oB4Wy6weQ)
 
@@ -458,23 +458,23 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      The first Cloud Native Edge Computing Summit (KubeEdge Summit 2022), hosted by CNCF and the KubeEdge community, will be held online on July 14-15. The summit is divided into the main forum and three sub-forums of cutting-edge technology, ecological innovation, and application practice.
 
-- [On July 13, the Cloud Native Technology Practice Alliance and the Cloud Native Technology Community released "(2021-2022) Research on the Implementation of Cloud Native Technology in Traditional Industries - Central State-owned Enterprises"](https://mp.weixin.qq.com/ s/0lWnhrlaakpoum3lbgTiQA)
+- [On July 13, the Cloud Native Technology Practice Alliance and the Cloud Native Technology Community released "(2021-2022) Research on the Implementation of Cloud Native Technology in Traditional Industries - Central State-owned Enterprises"](https://mp.weixin.qq.com/s/0lWnhrlaakpoum3lbgTiQA)
 
      The survey interprets the cloud-native digital transformation of central state-owned enterprises in terms of IT budget, application architecture, technology selection, and transformation results.
      Among them, more than 60% of the interviewed central state-owned enterprises have or are considering using multi-cloud/hybrid cloud; they are more inclined to adopt one-cloud multi-core, dual-CPU architecture; more than 95% consider or are using cloud-native technologies such as containers, DevOps, and microservices.
 
-     Click to view [full report] (https://marketing.alauda.cn/service/extfile/page/d2f59127cba241049f5b48e40aafbdd3?cl_sr=%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC %97%E5%8F%B7&cl_cp=2022YGQTY)
+     Click to view [full report](https://marketing.alauda.cn/service/extfile/page/d2f59127cba241049f5b48e40aafbdd3?cl_sr=%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7&cl_cp=2022YGQTY)
 
 - [On July 13, the SMI community and Kubernetes SIG Network launched the GAMMA initiative to promote the integration of Gateway API and service mesh](https://smi-spec.io/blog/announcing-smi-gateway-api-gamma/)
 
      SMI allows direct unified management of traffic between services, while the Gateway API already achieves a similar goal for ingress and egress use cases.
      Therefore, SMI (Service Mesh Interface) and SIG Network jointly launched the GAMMA initiative (Gateway API Mesh Management and Administration), planning to cooperate on service mesh use cases in the Gateway API project.
 
-- [On July 6, Lingqueyun and the cloud native technology community released a series of cloud native practice reports in the financial industry] (https://mp.weixin.qq.com/s/GimI6UpIj0VtEo5bXY2Y8g)
+- [On July 6, Lingqueyun and the cloud native technology community released a series of cloud native practice reports in the financial industry](https://mp.weixin.qq.com/s/GimI6UpIj0VtEo5bXY2Y8g)
 
-     - ["Compilation of Financial Cloud Native Technology Practice Cases"](https://marketing.alauda.cn/service/extfile/page/dc8646c647ea4c69bd16f10e01aed9a7?cl_sr=%E5%BE%AE%E4%BF%A1%E5%85% AC%E4%BC%97%E5%8F%B7#/preview?url=https://ma.alauda.cn/fileview/dc8646c647ea4c69bd16f10e01aed9a7&fileType=application/pdf&cid=1qQEWiP4Up2): Cloud-native technology of leading financial companies at home and abroad Practice case.
-     - ["Research Report on the Implementation of Cloud Native Technology in the Financial Industry"](https://marketing.alauda.cn/service/extfile/page/a1fbb4df45db44b9831e96082c7a93f7?cl_sr=%E5%BE%AE%E4%BF%A1%E5%85 %AC%E4%BC%97%E5%8F%B7): From a full-stack perspective, explore the technical issues and industries in the fields of cloud-native infrastructure, hybrid cloud, micro-service architecture, data, security, etc. that financial companies are currently paying close attention to trend.
-     - ["2022 Financial Cloud Native Landing Practical Guide"](https://marketing.alauda.cn/service/extfile/page/9dcf02b596fd43c898db2f2f51b7b7d0?cl_sr=%E5%BE%AE%E4%BF%A1%E5%85% AC%E4%BC%97%E5%8F%B7): Focus on the actual pain points and solutions in each stage of cloud-native transformation of financial enterprises. From the perspectives of cloud-native architecture, infrastructure, security, operation and maintenance, etc., discuss the successful route of financial enterprises' cloud-native implementation.
+     - ["Compilation of Financial Cloud Native Technology Practice Cases"](https://marketing.alauda.cn/service/extfile/page/dc8646c647ea4c69bd16f10e01aed9a7?cl_sr=%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7#/preview?url=https://ma.alauda.cn/fileview/dc8646c647ea4c69bd16f10e01aed9a7&fileType=application/pdf&cid=1qQEWiP4Up2): Cloud-native technology of leading financial companies at home and abroad Practice case.
+     - ["Research Report on the Implementation of Cloud Native Technology in the Financial Industry"](https://marketing.alauda.cn/service/extfile/page/a1fbb4df45db44b9831e96082c7a93f7?cl_sr=%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7): From a full-stack perspective, explore the technical issues and industries in the fields of cloud-native infrastructure, hybrid cloud, micro-service architecture, data, security, etc. that financial companies are currently paying close attention to trend.
+     - ["2022 Financial Cloud Native Landing Practical Guide"](https://marketing.alauda.cn/service/extfile/page/9dcf02b596fd43c898db2f2f51b7b7d0?cl_sr=%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7): Focus on the actual pain points and solutions in each stage of cloud-native transformation of financial enterprises. From the perspectives of cloud-native architecture, infrastructure, security, operation and maintenance, etc., discuss the successful route of financial enterprises' cloud-native implementation.
 
 - [On July 4th, the international analysis agency Sullivan and Toubao Research Institute released the "Cloud Native Market Research Report - Containers" (2022)](https://zhuanlan.zhihu.com/p/537223598)
 
@@ -504,7 +504,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      Read the white paper: <https://share.weiyun.com/brailKaS>
 
-- [The Linux Foundation announced the Open Source Summit North America 2022 conference schedule from June 21 to 24](https://linuxfoundation.org/featured/the-linux-foundation-announces-conference-schedule-for-open-source -summit-north-america-2022/)
+- [The Linux Foundation announced the Open Source Summit North America 2022 conference schedule from June 21 to 24](https://linuxfoundation.org/featured/the-linux-foundation-announces-conference-schedule-for-open-source-summit-north-america-2022/)
 
      Recently, the Linux Foundation announced the full schedule of the 2022 North American Open Source Summit, which will be held simultaneously in Texas and online from June 21 to 24.
      The conference is made up of 14 events, including LinuxCon, SupplyChainSecurityCon, CloudOpen, ContainerCon, and more.
@@ -546,7 +546,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      A total of 75 security capability testing tools are integrated, and the assessment capabilities cover container security and R&D operation and maintenance security, and can automatically generate detailed assessment reports and improvement suggestions to support SaaS access and privatization deployment.
 
-- [The Chinese version of the CNCF Glossary cloud native glossary was launched on June 14] (https://www.cncf.io/blog/2022/06/14/cloud-native-glossary-the-chinese-version-is-live /)
+- [The Chinese version of the CNCF Glossary cloud native glossary was launched on June 14](https://www.cncf.io/blog/2022/06/14/cloud-native-glossary-the-chinese-version-is-live/)
 
      The Cloud Native Glossary is a project led by the CNCF Business Value Subcommittee to explain cloud native concepts in clear and common language.
 
@@ -554,7 +554,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      Contribution method: <https://glossary.cncf.io/contribute/>
 
-- [On June 14, China Academy of Information and Communications Technology released "Edge Computing Market and User Insight Report (2022)" and "Cloud-Edge-End Integration Development Report (2022)"](https://mp.weixin.qq.com/s /0ds2iEc3cdZ-RfjdDqrGnA)
+- [On June 14, China Academy of Information and Communications Technology released "Edge Computing Market and User Insight Report (2022)" and "Cloud-Edge-End Integration Development Report (2022)"](https://mp.weixin.qq.com/s/0ds2iEc3cdZ-RfjdDqrGnA)
 
      The "Edge Computing Market and User Survey Report (2022)" pointed out that in 2021, my country's edge computing market will reach 43.64 billion yuan, of which the edge software and service market will reach 14.62 billion yuan.
      In terms of edge applications, users are currently showing a variety of deployment types on the edge side, and technical applications are mainly data-based. Edge native, industry integration, and open source collaboration have become development trends.
@@ -571,7 +571,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      China Academy of Information and Communications Technology and China Communications Standards Association will hold the "2022 Cloud-edge Collaboration Conference" online on June 14.
      At the meeting, distributed cloud evaluation results, edge computing industry application evaluation results, cloud-edge collaboration practice cases, etc. will be released, and speeches will focus on cloud-edge collaboration, Internet of Things, industry applications and other topics.
 
-- [On June 11, CNCF, Microsoft, and Intel jointly launched the Open Source Cloud Native Developer Day, focusing on microservices, continuous integration delivery, and chaos engineering (registration method is attached)](https://mp.weixin.qq.com/ s/khNo4BuPXeydiGeXMTNAjg)
+- [On June 11, CNCF, Microsoft, and Intel jointly launched the Open Source Cloud Native Developer Day, focusing on microservices, continuous integration delivery, and chaos engineering (registration method is attached)](https://mp.weixin.qq.com/s/khNo4BuPXeydiGeXMTNAjg)
 
      Jointly initiated by CNCF, Microsoft, and Intel, and co-organized by JFrog, Dapr Chinese Community, KubeSphere, etc., the Open Source Cloud Native Developer Day is scheduled for June 11, 2022.
      The event focuses on topics such as microservices, continuous integration, delivery, and chaos engineering, and explores the future of cloud native. Currently, the topic of the event is being solicited.
@@ -585,21 +585,21 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      ![APM Quadrant](./images/Magic.png)
 
-- [On June 6, Kubecost, a Kubernetes cost management company, joined forces with AWS and Google to submit a cost management open source project to CNCF—OpenCost](https://thenewstack.io/opencost-open-source-collaboration-on-kubernetes-cost- standards/)
+- [On June 6, Kubecost, a Kubernetes cost management company, joined forces with AWS and Google to submit a cost management open source project to CNCF—OpenCost](https://thenewstack.io/opencost-open-source-collaboration-on-kubernetes-cost-standards/)
 
      OpenCost aims to standardize cost tracking, allocation, and quantification, helping Kubernetes teams understand their infrastructure costs.
      The main functions of OpenCost: Real-time allocation of costs according to various objects of Kubernetes, support for internal enterprise k8s clusters with custom pricing tables, support for resource allocation within the cluster, support for exporting pricing data to Prometheus, etc.
 
      Project address: <https://github.com/kubecost/opencost>
 
-- [June 3 survey: Service mesh gets mainstream, but interest in reading about the topic is declining](https://thenewstack.io/service-mesh-gets-boring-and-thats-a-good -thing/)
+- [June 3 survey: Service mesh gets mainstream, but interest in reading about the topic is declining](https://thenewstack.io/service-mesh-gets-boring-and-thats-a-good-thing/)
 
      According to a recent CNCF survey, service meshes have become a critical component of cloud-native infrastructure, with 70% of respondents adopting service meshes in production or development.
      At the same time, a survey by the technology media the New Stack shows that as the technology matures, readers' interest in reading it is decreasing.
 
      Click to read ["CNCF MicroSurvey of Service Meshes" full version PDF](https://www.cncf.io/wp-content/uploads/2022/05/CNCF_Service_Mesh_MicroSurvey_Final.pdf)
 
-- [Serverless report June 2: Over 50% of AWS, Azure, and Google Cloud Platform users are using Serverless](https://www.datadoghq.com/about/latest-news/press-releases/datadog- s-2022-state-of-serverless-report-finds-serverless-reaching-mainstream-adoption/)
+- [Serverless report June 2: Over 50% of AWS, Azure, and Google Cloud Platform users are using Serverless](https://www.datadoghq.com/about/latest-news/press-releases/datadog-s-2022-state-of-serverless-report-finds-serverless-reaching-mainstream-adoption/)
 
      Datadog's recently released "Serverless Report 2022" found that serverless is in the mainstream adoption stage.
      As the product matures and more functions and serverless container products are released, more and more organizations will adopt serverless.
@@ -607,7 +607,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      Full report: <https://www.datadoghq.com/state-of-serverless/>
 
-- [On June 2, the NextArch Foundation's microservice standardization solution has been open source: support for different development languages and technical frameworks] (https://mp.weixin.qq.com/s/PE0UexUAK-cg4CgMzQm3Jw)
+- [On June 2, the NextArch Foundation's microservice standardization solution has been open source: support for different development languages and technical frameworks](https://mp.weixin.qq.com/s/PE0UexUAK-cg4CgMzQm3Jw)
 
      The solution to the standardization of microservice governance consists of two parts: one part is the standardized function definition and best practices of service governance, and the other part is the standardized protocol and interface of the service governance plane and data plane.
      The standardized implementation consists of three parts: service governance control plane, data plane and development framework. The standardized solution is divided into eight parts:
@@ -656,7 +656,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      - Observe: Supports exploration of event data through relational and temporal analysis
      - Rookout: Provides observability in production systems, allowing developers and SREs to access real-time information about application performance
 
-     Click to read [full report] (https://emtemp.gcom.cloud/ngw/globalassets/en/doc/documents/756867-cool-vendors-in-monitoring-and-observability.pdf)
+     Click to read [full report](https://emtemp.gcom.cloud/ngw/globalassets/en/doc/documents/756867-cool-vendors-in-monitoring-and-observability.pdf)
 
 - [OpenLogic and the Open Source Initiative publish the 2021 Global Open Source Trends Report](https://www.openlogic.com/resources/2022-open-source-report#top)
 
@@ -667,7 +667,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      - The highest overall increase in usage is open source DevOps tools, with cloud-native CI/CD tools seeing a significant increase in usage;
      - The most exciting new technologies are containers and Kubernetes, but only 18% of respondents are currently using Kubernetes, 39% are using cloud, and 29% are using containerization.
 
-     Click to download [full report] (https://pan.baidu.com/s/1nGUluXwARnRK55-EG9WRfQ) Extraction code: ny5a
+     Click to download [full report](https://pan.baidu.com/s/1nGUluXwARnRK55-EG9WRfQ) Extraction code: ny5a
 
 - [On May 23, iResearch released the "2022 China Cloud Service Industry Application White Paper"](https://mp.weixin.qq.com/s/p_jlxYkr5JL8A34OxoLcSA)
 
@@ -675,9 +675,9 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      The report focuses on the differentiated application of cloud services in various vertical industries from the perspectives of the supply side and the demand side.
      On the supply side, it studies the targeted solutions provided by manufacturers to meet the needs of customers in different industries. The demand side emphasizes the application form of cloud services in vertical industries.
 
-     Click to read [full report] (https://www.iresearch.com.cn/Detail/report?id=3997&isfree=0)
+     Click to read [full report](https://www.iresearch.com.cn/Detail/report?id=3997&isfree=0)
 
-- [On May 18, CNCF launched the cloud native network function certification program] (https://www.cncf.io/announcements/2022/05/18/cncf-launches-cloud-native-network-function-certification-program/)
+- [On May 18, CNCF launched the cloud native network function certification program](https://www.cncf.io/announcements/2022/05/18/cncf-launches-cloud-native-network-function-certification-program/)
 
      The Cloud Native Network Function (CNF) certification program is designed to help communications service providers and other telecommunications organizations identify which network equipment providers follow cloud-native best practices.
      The CNF certification program runs using CNCF's CNF test suite and supports any product running in a certified Kubernetes environment.
@@ -687,16 +687,16 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      The Cloud Native Maturity Model was launched by the CNCF Community Cartografos Working Group to help adopters and end users navigate the CNCF landscape and the broader cloud native ecosystem.
      The maturity model consists of 5 levels, each covering people, process, policy and technology.
-    
+
      The v2.0 update consists of three areas:
 
      - Added business results section: This section includes cloud-native-related business goals, quantitative and qualitative KPIs, etc.
      - Process update: update GitOps and CI/CD related content
      - Technology update: working on improving security and integrating infrastructure as code
 
-     Click to view [Cloud Native Maturity Model Form] (https://docs.google.com/spreadsheets/d/1wn3qxV11wAoOMBFzigeCHEHrZqWHA8wG05zRWhW7RXQ/edit#gid=2147231259)
+     Click to view [Cloud Native Maturity Model Form](https://docs.google.com/spreadsheets/d/1wn3qxV11wAoOMBFzigeCHEHrZqWHA8wG05zRWhW7RXQ/edit#gid=2147231259)
 
-- [NCF Security TAG released the latest version of cloud native security white paper on May 18] (https://www.cncf.io/blog/2022/05/18/announcing-the-refreshed-cloud-native-security-whitepaper/)
+- [NCF Security TAG released the latest version of cloud native security white paper on May 18](https://www.cncf.io/blog/2022/05/18/announcing-the-refreshed-cloud-native-security-whitepaper/)
 
      The CNCF Security TAG (Security Technical Advisory Group) released v2 of the Cloud Native Security White Paper to help the community understand best practices for securing cloud native deployments.
      The purpose of this white paper is to provide organizations and their technical leadership with a clear understanding of cloud-native security, security across lifecycles, and considerations for determining the applicability of standards such as NIST SSDF.
@@ -707,7 +707,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      - SSDF Version 1.1 Mapping: Mapping the practices and tasks of NIST SSDF to the Cloud Native Security Application Lifecycle;
      - ATT&CK Container Threat Matrix: Summarizes how the threat matrix provides the structure for the white paper guide.
 
-     Click to view [Cloud Native Security White Paper v2] (https://github.com/cncf/tag-security/blob/main/security-whitepaper/v2/CNCF_cloud-native-security-whitepaper-May2022-v2.pdf)
+     Click to view [Cloud Native Security White Paper v2](https://github.com/cncf/tag-security/blob/main/security-whitepaper/v2/CNCF_cloud-native-security-whitepaper-May2022-v2.pdf)
 
 - [IDC released the "China Public Cloud Service Market (Second Half of 2021) Tracking" report on May 17](https://mp.weixin.qq.com/s/661WOBEqawFreauUIzILNg)
 
@@ -785,7 +785,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      GitHub address: <https://github.com/carina-io/carina>
 
-- [On April 13, iResearch released the monthly report on cloud service industry trends and hot spots in March] (https://mp.weixin.qq.com/s/yPB5x6eSrkpt2mAk8X4Jqw)
+- [On April 13, iResearch released the monthly report on cloud service industry trends and hot spots in March](https://mp.weixin.qq.com/s/yPB5x6eSrkpt2mAk8X4Jqw)
 
      The monthly report is based on the observation of the dynamics of various tracks in the cloud service industry from January to March 2022, and it is concluded that SaaS is still the most popular investment focus.
      In the IaaS track, Internet cloud vendors still dominate the market.
@@ -797,7 +797,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      As one of the core scenarios of digital industrialization, intelligent marketing has been widely implemented in the digital transformation of enterprises.
      Facing the current situation of fragmentation of market solutions and improvement of customer demands, the integration of cloud native and intelligent marketing provides enterprises with better solutions.
 
-     Click to download [full report] (https://www.iresearch.com.cn/Detail/report?id=3892&isfree=0)
+     Click to download [full report](https://www.iresearch.com.cn/Detail/report?id=3892&isfree=0)
 
 - [Postponement of Cloud Native Meetup Chengdu Station on April 9](https://mp.weixin.qq.com/s/9QuaMuWmce3Z-UX3056tRg)
 
@@ -809,7 +809,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      Collect excellent cases from the whole industry in the fields of edge computing, cloud native, database, distributed storage, etc.
      Selected companies will receive exclusive interviews and special reports organized by the Global Distributed Cloud Alliance.
 
-- [April 7, cloud-native batch system Volcano was upgraded to CNCF incubation stage](https://www.cncf.io/blog/2022/04/07/cloud-native-batch-system-volcano-moves-to -the-cncf-incubator/)
+- [April 7, cloud-native batch system Volcano was upgraded to CNCF incubation stage](https://www.cncf.io/blog/2022/04/07/cloud-native-batch-system-volcano-moves-to-the-cncf-incubator/)
 
      Volcano is a cloud-native batch processing system and the first batch computing project of CNCF.
      On April 7th, the CNCF Technical Oversight Committee (TOC) voted to accept Volcano as a CNCF incubation project.
