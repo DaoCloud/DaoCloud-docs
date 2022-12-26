@@ -539,6 +539,7 @@ nav:
             - kangaroo/integrate.md
             - 镜像空间绑定工作空间: kangaroo/bind-to-ws.md
             - 创建镜像空间: kangaroo/create-registry.md
+          - 镜像扫描: kangaroo/scan.md
       - 通用参考:
         - Release Notes: release/rn5.0.md
         - 云原生网关: reference/basic-knowledge/gateway.md
