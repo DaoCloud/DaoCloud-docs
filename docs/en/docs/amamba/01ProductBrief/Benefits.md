@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Advantage
+# Benefits
 
 "DaoCloud" relies on years of leading experience in the cloud-native field, and the newly developed application workbench has the following product advantages:
 

@@ -49,7 +49,7 @@ nav:
               - Node Scheduling: kpanda/07UserGuide/Nodes/schedule.md
               - Node Details: kpanda/07UserGuide/Nodes/node-details.md
               - Labels and Annotations: kpanda/07UserGuide/Nodes/labels-annotations.md
-          - Worklaods:
+          - Workloads:
               - Create Deployment: kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md
               - Create StatefulSet: kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md
               - Create DaemonSet: kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md

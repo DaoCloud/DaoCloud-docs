@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Advantage
+# Benefits
 
 The container management platform has the following advantages:
 

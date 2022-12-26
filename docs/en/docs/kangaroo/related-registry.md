@@ -7,7 +7,7 @@ After accessing, when members deploy applications in the namespace under the wor
 - Support for associating Harbor and Docker registry instances
 - For Harbor instances, in addition to accessing the administrator account, you can also access the robot account to achieve the same access effect
 
-## Advantage
+## Benefits
 
 - Flexible and convenient: Workspace administrators can independently access one or more Harbor/Docker type container registrys for use by workspace members.
 - Global linkage: After accessing, when deploying applications on the application workbench, you can press the `Select Image` button to select the image in the registry with one click to achieve rapid application deployment.

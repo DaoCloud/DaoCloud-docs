@@ -10,7 +10,7 @@ Global Management (Ghippo) is a comprehensive user-centered service, including u
 
 - [Platform configuration](../04UserGuide/04PlatformSetting/MailServer.md)：Through platform security policy, mail server, appearance customization, etc., you can ensure secure user information and a personalized platform.
 
-## Advantages
+## Benefitss
 
 - All services under one menu
 

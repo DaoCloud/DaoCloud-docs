@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Function overview
+# Features
 
 Application Workbench provides the following functions.
 

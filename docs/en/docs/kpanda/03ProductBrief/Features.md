@@ -1,4 +1,4 @@
-# Function overview
+# Features
 
 This page lists the main functional features of container management.
 

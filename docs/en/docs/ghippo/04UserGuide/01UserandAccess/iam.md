@@ -4,7 +4,7 @@ IAM (Identity and Access Management, user and access control) is an important mo
 
 ![IAM definition](../../images/iam.png)
 
-## Advantage
+## Benefits
 
 - Simple and smooth
 

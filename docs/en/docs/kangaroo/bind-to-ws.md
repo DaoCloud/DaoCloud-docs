@@ -1,4 +1,4 @@
-# registry space binding workspace
+# Bind a registry space to workspace
 
 There are two types of registry spaces: public and private.
 Images in the public image space are public images, and images in the private image space are private images.
@@ -13,15 +13,15 @@ Prerequisite: An external Harbor registry has been created or integrated, and on
 
 1. Log in to the web console as a user with the Admin role, and click `container registry` from the left navigation bar.
 
-    ![container registry](images/hosted01.png)
+    ![container registry](./images/hosted01.png)
 
-1. Click `registry Integration` on the left navigation bar, click a registry name to enter the registry, and navigate to the imageed `registry Space` menu.
+1. Click `registry Integration` on the left navigation bar, click a registry name to enter the registry, and navigate to the displayed `registry Space` menu.
 
 1. Click the `Bind Workspace` button on the right side of a registry space entry, and select the workspace to be bound.
 
 1. Click `OK` to finish binding the workspace.
 
-    ![container registry](images/bind-space-to-ws.png)
+    ![container registry](./images/bind-space-to-ws.png)
 
 ## FAQ
 
@@ -31,7 +31,7 @@ Prerequisite: An external Harbor registry has been created or integrated, and on
     - Check whether the image space is bound to the workspace where the Kubernetes namespace is located (binding is required).
     - To check whether the status of the registry space is private or public, switch to the following tab to find out.
 
-    ![container registry](images/bind-space-to-ws02.png)
+    ![container registry](./images/bind-space-to-ws02.png)
 
 2. What is the difference between assigning a registry space to a workspace and associating a registry under a workspace?
 
