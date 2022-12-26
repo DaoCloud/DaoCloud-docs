@@ -1,4 +1,4 @@
-# reset Password
+# Reset Password
 
 If you forget your password, you can reset it by following the instructions on this page.
 
@@ -31,7 +31,7 @@ If the user has not set an email address, he can only contact the administrator 
 
     ![Password reset process](../images/password05.png)
 
-## reset password process
+## Reset password process
 
 The schematic diagram of the entire password reset process is as follows.
 

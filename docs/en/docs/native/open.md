@@ -1,4 +1,4 @@
-# open source project
+# Open source projects
 
 This page lists activity in cloud native open source projects in alphabetical order.
 
@@ -10,7 +10,7 @@ This page lists activity in cloud native open source projects in alphabetical or
      As a result, developers can move locally developed applications to production without switching tools or technology stacks.
      Acorn images are created by describing the application's configuration in an Acornfile, eliminating the boilerplate of Kubernetes YAML.
 
-- [Aeraki Mesh service mesh project v1.1.0 released (CNCF project)](https://www.aeraki.net/zh/blog/2022/announcing-1.1.0/)
+- [Aeraki Mesh service mesh project v1.1.0 released (CNCF project)](https://www.aeraki.net/blog/2022/announcing-1.1.0/)
 
      The main new features of this version: support Istio 1.12.x version; support bRPC (better RPC) protocol, bRPC is Baidu's open source industrial-grade RPC framework; Pass the real IP of the server, etc.
 
@@ -192,7 +192,7 @@ This page lists activity in cloud native open source projects in alphabetical or
      [CubeFS](https://github.com/cubefs) is the first cloud-native storage product in China with complete object and file storage capabilities.
      CubeFS supports multiple copies and erasure code engines, and provides features such as multi-tenant, multi-AZ deployment, and cross-region replication; it is suitable for a wide range of scenarios such as big data, AI, container platforms, databases, and middleware separation of storage and computing.
 
-###D
+### D
 
 - [Dapr Distributed Application Runtime v1.9.0 Release (CNCF project)](https://github.com/dapr/dapr/releases/tag/v1.9.0)
 
@@ -208,7 +208,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: the introduction of pipeline to manage tasks in devspace.yaml, the new import function to merge different devspace.yaml files together, and the new proxy command to run commands executed in the container on the local computer.
 
-###E
+### E
 
 - [Envoy Gateway API Gateway v0.2 release](https://github.com/envoyproxy/gateway/releases/tag/v0.2.0)
 
@@ -266,7 +266,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: add constraint mode verification tests, add TLS support for external data providers, add pod security context variables, support verification sub-resources, allow skipping tests in gator verification, add dockerfile for gator, add opencensus and stackdriver exporter.
 
-###H
+### H
 
 - [HAProxy Kubernetes Ingress Controller v1.8 released](https://www.haproxy.com/blog/announcing-haproxy-kubernetes-ingress-controller-1-8/)
 
@@ -599,7 +599,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support for ingesting indicators in OpenTelemetry format, new tenant alliance for metadata query, simplified object storage configuration, support for importing historical data, optimized instant query function, and enabled query sharding by default.
 
-- [Mimir new feature: Integrating Graphite, Datadog, Influx and Prometheus metrics into a unified storage backend](https://grafana.com/blog/2022/07/25/new-in-grafana-mimir-ingest- graphite-datadog-influx-and-prometheus-metrics-into-a-single-storage-backend/)
+- [Mimir new feature: Integrating Graphite, Datadog, Influx and Prometheus metrics into a unified storage backend](https://grafana.com/blog/2022/07/25/new-in-grafana-mimir-ingest-graphite-datadog-influx-and-prometheus-metrics-into-a-single-storage-backend/)
 
      [Mimir](https://github.com/grafana/mimir) is an open source timing database based on Cortex by Grafana Labs.
      Mimir now open-sources [three proxies](https://github.com/grafana/mimir-proxies) for ingesting metrics from Graphite, Datadog, and InfluxDB and storing them in System uptake metrics lay the groundwork.
@@ -609,7 +609,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      MinIO has extended the repository to exclude certain prefixes and folders in the repository to improve the performance of applications such as the Spark S3A connector. Additionally, following widespread requests, MinIO officially supports OPA.
 
-###N
+### N
 
 - [Nacos Dynamic Service Discovery Platform v2.2.0 released](https://github.com/alibaba/nacos/releases/tag/2.2.0)
 
@@ -706,11 +706,11 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### P
 
-- [Paralus: The industry's first open-source zero-trust access service for Kubernetes by Rafay Systems](https://rafay.co/the-kubernetes-current/paralus-industrys-first-open-source-zero-trust-access-service- for-kubernetes/)
+- [Paralus: The industry's first open-source zero-trust access service for Kubernetes by Rafay Systems](https://rafay.co/the-kubernetes-current/paralus-industrys-first-open-source-zero-trust-access-service-for-kubernetes/)
 
      The main functions of [Paralus](https://github.com/paralus/paralus) are: it can handle the access management of multiple clusters in a unified way, allows integration with existing RBAC policies and SSO providers, and supports recording of user actions performed by users in the organization. Each kubectl command supports OIDC, supports creating custom roles with specific permissions, and allows dynamic revoking of permissions, etc.
 
-- [Phlare: Grafana open source large-scale continuous profiling database] (https://grafana.com/blog/2022/11/02/announcing-grafana-phlare-oss-continuous-profiling-database/)
+- [Phlare: Grafana open source large-scale continuous profiling database](https://grafana.com/blog/2022/11/02/announcing-grafana-phlare-oss-continuous-profiling-database/)
 
      [Phlare](https://github.com/grafana/phlare) is a horizontally scalable, highly available, multi-tenant continuous analysis data aggregation system, fully integrated with Grafana, and can be related to observation indicators such as indicators, logs and traces couplet. Installation requires only one binary and no other dependencies.
      Phlare uses object storage for long-term data storage and is compatible with multiple object storage implementations. Its native multi-tenancy and isolation feature set allows multiple independent teams or business units to run a single database.
@@ -798,7 +798,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: separate edgeadm from the SuperEdge project, tunnel supports http_proxy capability, Lite-apiserver supports caching some key resources (nodes, services, etc.) and ExternalName Service forwarding on edge nodes.
 
-- [Sylva cloud-native infrastructure stack launched by Linux Foundation Europe to lay a cloud-native foundation for telecom services](https://www.prnewswire.com/news-releases/linux-foundation-europe-announces-project -sylva-to-create-open-source-telco-cloud-software-framework-to-complement-open-networking-momentum-301678955.html)
+- [Sylva cloud-native infrastructure stack launched by Linux Foundation Europe to lay a cloud-native foundation for telecom services](https://www.prnewswire.com/news-releases/linux-foundation-europe-announces-project-sylva-to-create-open-source-telco-cloud-software-framework-to-complement-open-networking-momentum-301678955.html)
 
      [Sylva](https://gitlab.com/sylva-projects/sylva) Leverages container network functions (CNF) and cloud-native platforms such as Kubernetes to create a telecom cloud technology stack to reduce the fragmentation of cloud infrastructure for telecom and edge services sex.
      The technology stack provided by Sylva consists of 5 components: network performance (SRIOV, DPDK, designated CNI, etc.), distributed cloud (multi-cluster Kubernetes, bare metal automation), energy efficiency, security (hardening and compliance), and openness and standardized API.
@@ -826,7 +826,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [ThreatMapper Cloud Native Security Observation Platform v1.4.0 released](https://github.com/deepfence/ThreatMapper/releases/tag/v1.4.0)
 
-     The main new features of this version: the new function ThreatGraph can combine the network and other runtime environments to determine the priority of threat scanning results, support agentless cloud security situation management for cloud assets, and integrate cloud-native environment malicious program scanning tools [YaraHunter] ( https://github.com/deepfence/YaraHunter).
+     The main new features of this version: the new function ThreatGraph can combine the network and other runtime environments to determine the priority of threat scanning results, support agentless cloud security situation management for cloud assets, and integrate cloud-native environment malicious program scanning tools [YaraHunter]( https://github.com/deepfence/YaraHunter).
 
 - [Trivy container vulnerability scanner v0.35.0 release (CNCF project)](https://github.com/aquasecurity/trivy/releases/tag/v0.35.0)
 
@@ -854,7 +854,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Trivy Container Vulnerability Scanner Can Now Scan Almost Everything Cloud Native Related (CNCF Project)](https://thenewstack.io/aqua-securitys-trivy-security-scanner-can-scan-anything-now/ )
 
-     According to Aqua, [Trivy]((https://github.com/aquasecurity/trivy)) is the most comprehensive vulnerability and misconfiguration scanning tool available,
+     According to Aqua, [Trivy](https://github.com/aquasecurity/trivy) is the most comprehensive vulnerability and misconfiguration scanning tool available,
      Can be used to scan cloud-native applications and infrastructure such as source code, repositories, images, artifact registries, Infrastructure-as-Code (IaC) templates, Kubernetes environments, and more.
 
 ### V
@@ -885,7 +885,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### W, X, Z
 
-- [Wolfi: Chainguard Releases First Linux Distribution to Secure Software Supply Chain, Designed for Containers and Cloud-Native Environments](https://www.chainguard.dev/unchained/introducing-wolfi-the-first-linux- un-distro)
+- [Wolfi: Chainguard Releases First Linux Distribution to Secure Software Supply Chain, Designed for Containers and Cloud-Native Environments](https://www.chainguard.dev/unchained/introducing-wolfi-the-first-linux-un-distro)
 
      [Wolfi](https://github.com/wolfi-dev) is a stripped-down Linux distribution designed for cloud-native, but it does not have a Linux kernel, instead relying on the environment (such as a container runtime) to provide the kernel. Main features: Provide high-quality build-time SBOM as a standard for all packages; packages are fine-grained and independent of each other to support lightweight mirroring; use mature and reliable apk package format, fully declarative, repeatable Build system, supports glibc and musl.
 

@@ -7,6 +7,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 Release date: 2022.11.28
 
 ### Optimization
+
 - **Add** insight-agent Helm template installation supports form
 - **Optimized** PromQL queries support raw metrics
 - **Optimize** the style of the topology map
@@ -16,7 +17,7 @@ Release date: 2022.11.28
 - **Update** Bitnami images used, including: grafana-operator, grafana, kubernetes-event-exporter
 - **Update** the API proxy address related to prometheus, change /prometheus to /apis/insight.io/prometheus
 
-### Bugfixes
+### Bug fixes
 
 - **FIX** service list caching logic
 - **Fix** the problem that the built-in rules do not take effect
@@ -37,7 +38,7 @@ Release date: 2022-11-21
 - **optimized** to filter out clusters without `insight-agent` installed
 - **Optimize** sort by span start time by default when link query
 
-### Bugfixes
+### Bug fixes
 
 - Fix `dashboard` with no data, including OpenTelemetry related dashboards
 - Fix the problem that there is no content under some log paths

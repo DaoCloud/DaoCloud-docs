@@ -6,7 +6,7 @@ If you need to set up administrators for sub-modules to further manage user/user
 
 !!! note
 
-    There are three modes of rights management, currently the global management mode. The role in the user and access control represents the highest authority of each sub-module. See [Access Management] (Role.md) for details.
+    There are three modes of rights management, currently the global management mode. The role in the user and access control represents the highest authority of each sub-module. See [Access Management](Role.md) for details.
 
 ![Global Management](../../images/global01png.png)
 
