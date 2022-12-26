@@ -407,6 +407,12 @@ nav:
               - 使用: network/modules/spiderpool/usage.md
               - 配置参考: network/modules/spiderpool/config.md
               - 常用命令: network/modules/spiderpool/command.md
+          - Falco:
+              - 介绍: network/modules/falco/what.md
+              - 安装: network/modules/falco/install.md
+          - Falco-exporter:
+              - 介绍: network/modules/falco-exporter/what.md
+              - 安装: network/modules/falco-exporter/install.md
       - 中间件数据服务:
           - 数据服务介绍: middleware/midware.md
           - 数据服务版本适配: middleware/adaptation-k8s.md
