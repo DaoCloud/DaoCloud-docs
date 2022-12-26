@@ -45,6 +45,10 @@
 
     更新内容包括：Azure 容器注册中心新增软删除功能，可恢复误删除的工件；允许中止 AKS 集群或代理池上的任何操作；支持多实例 GPU（MIG）；将 Azure 网络策略管理器（NPM）扩展到 Windows server 2022 的 AKS 集群；集成用于 AKS 私有集群的 API Server VNET。
 
+- [阿里云分布式云容器平台 ACK One 更新](https://mp.weixin.qq.com/s/TC1KA_xWpVAwZMFAgVmNfg)
+
+    更新内容：集成 ArgoCD 实现多集群的 GitOps 持续交付，优化多集群应用分发；统一配置报警规则，支持配置特定集群的差异化报警规则，支持自动同步报警规则到新关联集群。
+
 - [阿里云容器服务 ACK 云栖大会更新](https://mp.weixin.qq.com/s/cOObDVvnTGkX_hiAWv8mVA)
 
     更新内容：提供对 eRDMA 高性能容器网络的支持、基于新一代容器网络文件系统 CNFS 2.0 更好支持有状态应用的容器化、内建云原生混部系统 Koordinator 的产品化支持、发布 AIOps 套件和 FinOps 套件。
@@ -74,6 +78,14 @@
     [Alpaquita Cloud Native Platform](https://bell-sw.com/cloud-native-platform/) 利用适用于 Java 的 Linux 发行版、JVM 优化、多用途框架和原生镜像技术，提供了一个专为在容器中运行的 Java 应用而优化的运行时环境。该平台特性：云成本降低 20%，使用更小的 Pod，所需节点的数量减少；零迁移成本，不需要重构；效率提升 50%，实现低延迟、低成本、快启动。
 
 ### C, D
+
+- [Calico 云原生应用安全平台 Calico Enterprise 3.15 发布](https://www.tigera.io/blog/whats-new-in-calico-enterprise-3-15-fips-140-2-compliance-new-dashboards-egress-gateway-pod-failover-and-more/)
+
+    版本特性：支持将 Calico Enterprise 配置为符合 FIPS 140-2 的模式，FIPS 140-2 规定了应用程序和环境的加密模块需满足的安全标准；提供了一个基于工作负载的 IDS/IPS（入侵检测/入侵防御）系统，根据全球威胁情报源数据库检测并阻止不良工作负载的访问；自动化命名空间的安全策略建议；提供基于命名空间的仪表盘；支持出口网关 pod 的故障检测和故障转移。
+
+- [Canonical K8s 发行版 Charmed Kubernetes 1.26 发布](https://canonical.com/blog/canonical-kubernetes-1-26-is-now-generally-available)
+
+    版本特性：增加 Kube-OVN BGP 支持，实现从外部网络访问 pod IP；支持为 Kube-OVN 配置流量镜像；metallb-controller 和 metallb-speaker 可以部署到更多的架构上（AMD64、ARM、ARM64 等）；集成策略引擎 OPA gatekeeper。
 
 - [CAST AI Kubernetes 成本优化&自动化平台十一月更新](https://cast.ai/release-notes/#november-2022)
 
@@ -123,6 +135,10 @@
     CIS-C 是一款将 Kubernetes 集群内服务通过 F5 BIG-IP 进行自动化发布的控制器软件。
     帮助用户打通 Kubernetes 集群与外部入口，将 BIG-IP 应用交付能力集成到 Kubernetes 技术栈的云环境中。
     它实现了多团队合作，用户可以灵活地、自动化地创建、变更应用或者服务入口策略。
+
+- [Fairwinds 的 Kubernetes 治理和安全平台 Fairwinds Insights 十一月更新](https://www.fairwinds.com/blog/fairwinds-insights-release-notes-10.2-10.6-spotlight-on-workload-cost-allocation)
+
+    更新内容：增加工作负载成本分配功能，允许查看一组工作负载的历史成本；优化成本页面，细化 Kubernetes 集群成本的分类；支持查看成本随时间变化的动态。
 
 - [Fortinet 发布云原生防火墙服务 FortiGate CNF](https://www.fortinet.com/blog/business-and-technology/simplify-cloud-security-with-the-fortigate-cloud-native-firewall-on-aws)
 
@@ -178,7 +194,7 @@
     缩小性能测试的黑盒数据和系统内部白盒数据之间的差距。
     该集成允许关联 k6 的测试运行数据和服务器端的追踪数据，从而进行根本原因分析；汇总收集的追踪数据以生成实时指标，帮助用户缩小搜索空间并快速发现异常行为。
 
-### H, L
+### H, K, L
 
 - [Harness 推出全托管 GitOps-as-a-Service](https://harness.io/blog/generally-available-harness-gitops-as-a-service)
 
@@ -191,6 +207,13 @@
 - [Kong Gateway v3.0 云原生 API 网关发布](https://docs.konghq.com/gateway/changelog/#3000)
 
     该版本主要新特性：提供联邦信息处理标准 FIPS 包以满足安全和合规性要求、支持选择插件的执行顺序、增加对 WebSocket 流量的本地支持、新增 OpenTelemetry 插件、引入新路由引擎用于处理复杂路由要求、吞吐量、延迟及内存消耗等性能显著优化。
+
+- [Kyndryl 推出多云云原生应用迁移和优化方案 Cloud Native Services](https://www.kyndryl.com/gb/en/about-us/news/2022/12/kyndryl-cloud-native-services-digital-modernization)
+
+    Kyndryl Cloud Native Services 提供了一个端到端的生命周期框架，
+    这个框架包括云原生应用迁移和优化所需的代码资产、工作流、专业基础知识、咨询管理服务，
+    以及与自动备份、补丁、KPI 监测、安全、告警和事件管理相关的综合服务。
+    该方案允许企业将其内部应用转移到云服务提供商的环境上，如 AWS、GCP 和 Azure。
 
 - [Lacework Platform 云安全平台十一月更新](https://docs.lacework.com/releases/2022-11-platform-releases)
 
@@ -236,6 +259,12 @@
 
     该版本主要新特性：支持把同一 pod 内不同容器的结构化日志转发给不同的索引、使用 Kubernetes 通用标签过滤带有 Elasticsearch 输出的日志、日志聚合 Loki Operator 和 观测数据收集Vector collector 正式可用。
 
+- [OutSystems 发布云原生低代码开发解决方案 OutSystems Developer Cloud (ODC)](https://mp.weixin.qq.com/s/yx63Um3ju1mC-qNF9_GJkw)
+
+    ODC 是用于构建云原生应用程序的高性能低代码解决方案。
+    ODC 将 Kubernetes、Linux 容器、微服务和 AWS 原生云服务与 DORA 高性能级 CI/CD、企业级安全性以及基于模型的可视化开发相结合。
+    支持大规模交易量和数据需求，通过高级可视化编程和人工智能提高开发人员生产力，实现高性能 CI/CD 实践。
+
 ### P, Q, R
 
 - [Portworx Enterprise 2.12 云原生数据管理平台发布](https://docs.portworx.com/release-notes/portworx/#2-12-0)
@@ -245,6 +274,14 @@
 - [Portworx Backup v2.3 数据备份产品发布](https://portworx.com/blog/announcing-portworx-backup-2-3-for-simpler-backup-management-and-flexible-licensing/)
 
     该版本主要新特性：支持与其他用户和组共享备份、支持根据特定的基础设施定制备份许可证、支持使用用户提供的或默认的密钥为不同类型的备份提供加密支持。
+
+- [青云发布云原生虚拟化平台 KSV 1.6](https://mp.weixin.qq.com/s/XxOWJdLRHS2s_Ev_N9qEgw)
+
+    版本特性：统一管理与展示所有计算、存储和网络资源；支持 KSV 和 KubeSphere 融合部署，实现虚拟机和容器共存共管；基于 KubeVirt，支持以虚拟资源池的方式交付 CPU、存储等物理资源，并实现统一的管理、分配及调度，支持同时创建相互隔离的虚拟机环境；集成 Kube-OVN，实现了 Underlay & Overlay 的网络。
+
+- [青云发布分布式多租户云原生操作系统 KubeSphere 企业版 3.3](https://mp.weixin.qq.com/s/ZuiY-la34DvHW5bQdc9q7Q)
+
+    版本特性：新增可观测中心，汇总同步分散在各个集群的数据；重构集群监控页面，聚焦资源分配；优化租户监控，支持展示租户配额设置情况等；新增对微服务框架 Spring Cloud 的支持；集成 Argo CD 支持 GitOps。
 
 - [Quali 基础设施自动化方案 Torque 更新，简化 Kubernetes 基础设施管理](https://www.quali.com/blog/quali-simplifies-cloud-infrastructure-management/)
 
@@ -268,6 +305,10 @@
 - [ServiceNow 发布统一查询语言 Lightstep UQL，扩展 Kubernetes 应用的可见性](https://lightstep.com/blog/announcing-the-lightstep-unified-query-language)
 
     Lightstep UQL 支持统一的“可观测性即代码”，通过单一查询语言简化从多个不同工具迁移到统一 Lightstep 平台的过程，还支持跨多个 Kubernetes 节点、服务器或 serverless 函数查询和关联指标、日志和跟踪。
+
+- [Solo.io 发布云原生网关 Gloo Gateway 1.13](https://www.solo.io/blog/gloo-edge-1-13/)
+
+    版本特性：改进对 OpenCensus 和 OpenTelemetry 追踪扩展的支持；提供了一种内置的方法，可以在错误发生前捕获无效的速率限制配置；增加对 RBAC 的支持；增强控制平面的高可用性，支持多个副本的连续运行和零停机升级；集成集群调度工具 HashiCorp Nomad。
 
 - [Solo.io 发布服务网格和 API 平台 Gloo Platform](https://www.solo.io/blog/announcing-gloo-platform/)
 
@@ -314,6 +355,12 @@
 - [Traefik Labs 发布云原生网络平台 Traefik Hub 1.0](https://traefik.io/blog/announcing-the-general-availability-of-traefik-hub-1-0/)
 
     Traefik Hub 1.0 允许用户可以使用 Traefik 或 Nginx 快速、安全地发布 Kubernetes 或 Docker 容器。Traefik Hub 提供了为 Kubernetes 集群联网所需的集中控制平面，而无需部署容器 sidecar 来运行网络软件。其支持通过安全加密隧道和直接私有连接进行容器联网，通过 JWT 或 OIDC 为服务添加访问控制，通过 GitOps 实现规模化的自动化等，并配有工作空间促进跨团队协作等。
+
+- [腾讯云容器服务 TKE 三项能力升级](https://mp.weixin.qq.com/s/DfxCQM8KzMioSt6rVq5oHw)
+
+    升级内容：节点管理方面，新增 HouseKeeper 运维范式，对原生节点、超级节点、注册节点等云上/云下资源进行纳管；
+    集群管理方面，支持一种集群管理任意节点，同时支持原生节点、超级节点、注册节点和边缘节点等多种节点；
+    应用管理方面，打造面向多云和边缘场景的应用管理平台，实现多集群统一分发、部署和管理。
 
 - [腾讯云容器服务 TKE 9 月更新](https://mp.weixin.qq.com/s/6_TSSHhU0L8mSbqEMWyu4g)
 

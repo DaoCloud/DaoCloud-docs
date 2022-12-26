@@ -159,7 +159,7 @@
     该版本主要新特性：支持 Gateway API v0.5.0、允许在单一的路由中为一组条件配置一个直接响应、可以为用户证书验证启用撤销检查、合并访问记录和 TLS 密码套件验证。
 
 - [Contour Kubernetes ingress 控制器 v1.21.0 发布 （CNCF 项目）](https://github.com/projectcontour/contour/releases/tag/v1.21.0)  
-    
+
     该版本主要新特性：Contour 访问 leader election 资源的 RBAC 转移至命名空间角色；容器镜像现在只在 GitHub 容器注册中心（GHCR）上发布；新增 `contour gateway-provisioner` 命令和部署清单，用于动态配置 Gateways。
 
 - [Cortex Prometheus 长期存储方案 v1.14 发布](https://github.com/cortexproject/cortex/releases/tag/v1.14.0)
@@ -169,6 +169,15 @@
 - [Cortex 分布式 Prometheus 服务 v1.13.0 发布（CNCF 项目）](https://github.com/cortexproject/cortex/releases/tag/v1.13.0)  
 
     该版本主要新特性：新增元数据 API 查询器的 streaming 功能、为 compactor 提供实验性的shuffle sharding 支持、修复 Distributor 和 Ruler的内存泄漏、在分发请求时加入一个抖动来重置每个 pod 的初始时间。
+
+- [Crane 成本优化工具推出开源云原生应用碳排放计算优化器](https://mp.weixin.qq.com/s/D46-7S20kaMF4CH_H5oTuA)
+
+    碳排放计算优化器基于运行在 Kubernetes 平台上的应用的实际资源消耗，计算对应服务器功耗，进而计算出应用运行所产生的碳排放量。
+    此外，还支持提供 Pod 资源配置、workload 副本数、HPA 参数配置等的优化建议，以及优化后的功耗和碳排放推算结果。
+
+- [CRI-O 容器运行时 v1.26.0 发布（CNCF 项目）](https://github.com/cri-o/cri-o/releases/tag/v1.26.0)
+
+    该版本主要新特性：移除对 CRI v1alpha2 的支持（支持 v1）、增加对 OTLP 追踪支持、为 OTel 追踪添加日志和 GRPC 错误代码支持、支持 Evented PLEG、增加 seccomp 通知器功能、对没有基础设施的容器增加检查点和恢复容器的支持、允许完全更新运行时配置、允许在重载配置时添加其他运行时以及改变默认运行时。
 
 - [CRI-O 容器运行时 v1.25.0 发布（CNCF 项目）](https://github.com/cri-o/cri-o/releases/tag/v1.25.0)  
 
@@ -187,7 +196,7 @@
     [CubeFS](https://github.com/cubefs) 是国内首个具备完整的对象及文件存储能力的云原生存储产品。
     CubeFS 支持多副本和纠删码引擎，提供多租户、多 AZ 部署、跨区域复制等特性；适用于大数据、AI、容器平台、数据库及中间件存算分离等广泛场景。
 
-### D, E, F, G
+### D
 
 - [Dapr 分布式应用运行时 v1.9.0 发布（CNCF 项目）](https://github.com/dapr/dapr/releases/tag/v1.9.0)
 
@@ -199,9 +208,17 @@
     它能够自动采集应用性能指标和追踪数据而无需插码，SmartEncoding 创新机制将标签存储的资源消耗降低 10 倍。
     此外，还能集成广泛的数据源，并基于 SQL 提供北向接口。
 
+- [Devspace K8s 开发工具成为 CNCF 沙箱项目](https://mp.weixin.qq.com/s/7ySQLtyYBX1ZDLvpeVObvQ)
+
+    12 月 15 日，CNCF 宣布 [DevSpace](https://github.com/loft-sh/devspace) 正式成为 CNCF 沙箱项目。
+    通过 Devspace，可以直接在 Kubernetes 中构建、测试和调试应用；可以使用热重载进行开发；
+    统一团队内部以及跨开发、暂存和生产的部署工作流；自动执行镜像构建和部署的重复性任务。
+
 - [DevSpace K8s 开发工具 v6.0 发布](https://github.com/loft-sh/devspace/releases/tag/v6.0.0)  
 
     该版本主要新特性：引入 pipeline 用于 管理 devspace.yaml 中的任务、新增导入功能将不同 devspace.yaml 文件合并在一起、新增 proxy command 在本地计算机上运行在容器中执行的命令。
+
+### E
 
 - [Envoy Gateway API 网关 v0.2 发布](https://github.com/envoyproxy/gateway/releases/tag/v0.2.0)
 
@@ -225,9 +242,17 @@
 
     [eunomia-bpf](https://gitee.com/anolis/eunomia) 由各高校和龙蜥社区共同开发，旨在简化 eBPF 程序的开发、分发、运行。在 eunomia-bpf 中，只需编写内核态代码即可正确运行，在部署时不需要重新编译，并提供 JSON/WASM 的标准化分发方式。
 
+### F, G
+
 - [Falco 运行时安全项目 v0.32.0 发布（CNCF 项目）](https://github.com/falcosecurity/falco/releases/tag/0.32.0)
 
     该版本主要新特性：新增配置项，当检测到规则或配置文件有变化时，触发 Falco 重启；支持检测权限过大的容器；支持检测共享主机 pid 和 IPC 命名空间的 pod 等。
+
+- [Finch：AWS 开源的容器开发客户端命令行工具](https://aws.amazon.com/cn/blogs/opensource/introducing-finch-an-open-source-client-for-container-development/)
+
+    [Finch](https://github.com/runfinch/finch) 可用于构建、运行和发布 Linux 容器。
+    它为 Lima、nerdctl、containerd 和 BuildKit 等开源工具提供了原生的、可扩展的 macOS 客户端安装程序，简化在 macOS 上使用 Containerd。
+    用户可以使用 Finch 在本地端创建和执行容器，并发布 OCI 容器镜像文件。
 
 - [Flagger 渐进式交付攻击 v1.22.0 发布（CNCF 项目）](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1220)  
 
@@ -262,6 +287,10 @@
 - [HAProxy Kubernetes Ingress Controller v1.8 发布](https://www.haproxy.com/blog/announcing-haproxy-kubernetes-ingress-controller-1-8/)  
 
     该版本主要新特性：降低容器中所有进程的权限，不再默认运行 privileged 容器；暴露了一个用于查看 pprof 诊断数据的端点；支持收集控制器内部的 Prometheus 指标，如分配的内存量和花费的 CPU 时间；若入口规则不匹配，支持自定义设置后端端口。
+
+- [Harbor 容器镜像仓库 v2.7.0 发布（CNCF 项目）](https://github.com/goharbor/harbor/releases/tag/v2.7.0)
+
+    该版本主要新特性：添加 Jobservice 仪表盘，以监测和控制 job 队列、调度器和 worker；支持按块复制镜像 blob；为工件列表添加 WASM 过滤器。
 
 - [Harbor 容器镜像仓库 v2.6.0 发布（CNCF 项目）](https://github.com/goharbor/harbor/releases/tag/v2.6.0)
 
@@ -363,6 +392,10 @@
 
     该版本主要新特性：支持 containerd shimv2 日志插件、支持 virtio-block 多队列、支持 QEMU 沙箱功能、支持 containerd 的核心调度、kata-runtime iptables 子命令可在 guest 中操作 iptables、支持直接分配的卷。
 
+- [KEDA 事件驱动自动伸缩器 v2.9.0 发布（CNCF 项目）](https://github.com/kedacore/keda/releases/tag/v2.9.0)
+
+    该版本主要新特性：增加 CouchDB、Etcd 和 Loki 扩展器、引入 Grafana 仪表盘用于监控应用的自动缩放、在 KEDA Operator 中整合所有暴露的 Prometheus 指标、实验性的支持在轮询间隔期间为扩展器缓存指标值。
+
 - [KEDA 基于 Kubernetes 的事件驱动自动伸缩工具 v2.8.0 发布（CNCF 项目）](https://github.com/kedacore/keda/releases/tag/v2.8.0)
 
     该版本主要新特性：支持 NATS streaming、支持自定义 HPA 名称、支持在 ScaledJob 中指定最小 pod 副本数、允许 cpu/memory scaler 只对 pod 中的一个容器进行扩展。
@@ -386,6 +419,10 @@
 - [Keptn 云原生应用持续交付和自动化操作工具 v0.16.0 发布（CNCF 项目）](https://github.com/keptn/keptn/releases/tag/0.16.0)  
 
     该版本主要新特性：`resource-service` 取代 `configuration-service`，以加快响应时间、支持在不停机的情况下升级 Keptn；v0.17 中，CLI 将删除安装/卸载/升级命令；支持直接向 Nats 发送事件；只有当服务连接到控制平面时，才会被视为准备就绪；允许在没有 distributor sideCar 的情况下运行 approval service。
+
+- [Kindling 云原生可观测工具 v0.6.0 发布](https://github.com/KindlingProject/kindling/releases/tag/v0.6.0)
+
+    该版本主要新特性：在 cpu 事件中增加 tracing span 数据、增加 Trace Profiling 的调试工具、支持 RocketMQ 协议。
 
 - [Knative 基于 Kubernetes 的 serverless 架构方案 v1.8.0 发布（CNCF 项目）](https://github.com/knative/serving/releases/tag/knative-v1.8.0)
 
@@ -543,7 +580,11 @@
 
     该版本主要新特性：支持通过动态客户端查询`mutate.target`、允许 Kyverno jp 在 Yaml 文件上工作、优化镜像验证签名、在策略更新时 mutate 现有资源、允许用户在上下文中定义内联变量、禁用更新请求控制器的 leader election、在测试中支持 apiCall 以及 CLI 更新等。
 
-### L, M, N
+### L
+
+- [Lima Linux 虚拟机 v0.14.0 发布（CNCF 项目）](https://github.com/lima-vm/lima/releases/tag/v0.14.0)
+
+    该版本主要新特性：支持虚拟机共享文件系统 virtiofs、支持 Apple 的虚拟化框架 Virtualization.framework、支持 Containerd 命令行工具 nerdctl 1.1.0。
 
 - [Linkerd 服务网格项目 v2.12.0 发布（CNCF 项目）](https://github.com/linkerd/linkerd2/releases/tag/stable-2.12.0)  
 
@@ -560,6 +601,13 @@
 - [Longhorn 云原生分布式块存储 v1.3.0 发布（CNCF 项目）](https://github.com/longhorn/longhorn/releases/tag/v1.3.0)  
 
     该版本主要新特性：支持多网络 K8s 集群、兼容全托管 K8s 集群（EKS、GKE、AKS）、新增 Snapshot CRD、新增 Mutating & Validating admission webhooks、支持自动识别并清理无主/未使用的卷、引入 CSI 快照、支持通过 Kubernetes Cluster Autoscaler 进行集群扩展。
+
+### M
+
+- [Merbridge：由 DaoCloud 道客开源的服务网格加速器正式进入 CNCF 沙箱](https://mp.weixin.qq.com/s/Ht1HuLxQ2RngrVD92TBl4Q)
+
+    12 月 14 日，CNCF 基金会宣布 Merbridge 正式被纳入 CNCF 沙箱项目。[Merbridge](https://github.com/merbridge/merbridge) 是目前 CNCF 中唯一专注于使用 eBPF 加速服务网格的开源项目。
+    通过 Merbridge 只需要在 Istio 集群执行一条命令，即可直接使用 eBPF 代替 iptables，实现网络加速，提高服务性能。
 
 - [MetalLB Kubernetes 负载均衡器 v1.3.2 发布（CNCF 项目）](https://metallb.universe.tf/release-notes/#version-0-13-2)  
 
@@ -586,6 +634,12 @@
 - [MinIO 对象存储工具发布新功能：扩展版本库和正式支持 OPA（CNCF 项目）](https://github.com/minio/minio/releases/tag/RELEASE.2022-05-08T23-50-31Z)
 
     MinIO 对版本库进行了扩展，排除版本库中的某些前缀和文件夹，以提高 Spark S3A 连接器等应用的性能。此外，应外界广泛要求，MinIO 正式支持 OPA。
+
+### N
+
+- [Nacos 动态服务发现平台 v2.2.0 发布](https://github.com/alibaba/nacos/releases/tag/2.2.0)
+
+    该版本主要新特性：支持批量注册和批量注销服务、支持 openAPI 2.0、增加多数据源插件、增加轨迹追踪插件、支持 Prometheus http 服务发现、支持 Ldaps 认证。
 
 - [Nacos 动态服务发现平台 v2.1.0 发布（CNCF 项目）](https://github.com/alibaba/nacos/releases/tag/2.1.0)
 
@@ -650,7 +704,7 @@
 
     该版本主要新特性：在设置 span 时Context 是不可变的、支持实验性的配置 OTLP 指标输出器的默认直方图聚合、允许日志处理器修改日志记录、添加实验性的事件和日志 API 规范、在流程语义约定中添加网络指标、为 GraphQL 添加语义约定。
 
-- [OpenTelemetry Metrics 发布 RC 版本](https://opentelemetry.io/blog/2022/metrics-announcement/) 
+- [OpenTelemetry Metrics 发布 RC 版本](https://opentelemetry.io/blog/2022/metrics-announcement/)
 
     Java、.NET、Python 已经发布了 OpenTelemetry 指标的 RC 版本（JS 下周发布）。这意味着， specification、API、SDK 以及以创作、捕获、处理等方式与 metrics 交互的组件，现在拥有完整的 OTel metrics 功能集，并且随时可供使用。
 
@@ -780,6 +834,10 @@
 - [TDengine 云原生时序数据库 v3.0 发布](https://github.com/taosdata/TDengine/releases/tag/ver-3.0.0.0)  
 
     该版本主要新特性：支持 10 亿个设备采集的数据、100 个节点；支持存储与计算分离，引入计算节点，并重构了整个计算引擎；优化了对消息队列、流式计算和缓存的支持，引入事件驱动的流式计算；支持容器和 Kubernetes 部署。
+
+- [Tekton：云原生 CI/CD 框架 v0.43.0 发布](https://github.com/tektoncd/pipeline/releases/tag/v0.43.0)
+
+    该版本主要新特性：支持解析 sidecar 日志以提取结果到任务运行的 CRD 中、默认启用 pipeline 中的自定义任务、增加对 PipelineRun 调节器的支持、允许用户为可信资源配置公钥、PodTemplate 可以用来更新全局的环境变量。
 
 - [Tekton 云原生 CI/CD 框架 v0.42.0 发布](https://github.com/tektoncd/pipeline/releases/tag/v0.42.0)
 
