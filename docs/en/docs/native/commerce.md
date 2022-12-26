@@ -138,7 +138,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [GitLab 15.4 Released](https://about.gitlab.com/releases/2022/09/22/gitlab-15-4-released/)
 
-     The main new features of this version: improve VSCode CI/CD integration function, support Gitee project import, professional version support test management, support DORA indicators for evaluating enterprise DevOps performance, and integrate Harbor mirror warehouse.
+     The main new features of this version: improve VSCode CI/CD integration function, support Gitee project import, professional version support test management, support DORA indicators for evaluating enterprise DevOps performance, and integrate Harbor container registry.
 
 - [Gloo Mesh v2.1 service mesh management platform released](https://www.solo.io/blog/announcing-gloo-mesh-2-1/)
 
@@ -311,7 +311,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Shuche Software released SEAL 0.3: the first full-link software supply chain security management platform in China](https://mp.weixin.qq.com/s/H_bjMbH_7DJEVOpvzGEMoQ)
 
-     New features of this version: support for integrating any OCI mirror warehouse, and scan the container image in it; support for integrating any Kubernetes cluster, and scan the workload configuration and image in it; support for scanning third-party software bill of material files; support for any CI/CD pipeline Integrates the security scanning function of SEAL; can aggregate and manage resources at all stages of the whole link to provide full link security insights; supports automatic generation of multi-policy repair suggestions, priority ranking of vulnerabilities, and timely handling of security issues.
+     New features of this version: support for integrating any OCI container registry, and scan the container image in it; support for integrating any Kubernetes cluster, and scan the workload configuration and image in it; support for scanning third-party software bill of material files; support for any CI/CD pipeline Integrates the security scanning function of SEAL; can aggregate and manage resources at all stages of the whole link to provide full link security insights; supports automatic generation of multi-policy repair suggestions, priority ranking of vulnerabilities, and timely handling of security issues.
 
 ### T
 
@@ -321,7 +321,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Tencent Cloud Container Service TKE September update](https://mp.weixin.qq.com/s/6_TSSHhU0L8mSbqEMWyu4g)
 
-     Updates: support for trustworthy verification of signature images in mirror warehouses, fully open kubelet custom parameter functions, provide descriptions of error codes for abnormal Service/Ingress event information, the ability to run Daemonset on grayscale online super nodes, and add configuration and management according to Label Capabilities of Pod Security Groups.
+     Updates: support for trustworthy verification of signature images in registries, fully open kubelet custom parameter functions, provide descriptions of error codes for abnormal Service/Ingress event information, the ability to run Daemonset on grayscale online super nodes, and add configuration and management according to Label Capabilities of Pod Security Groups.
 
 - [Tencent Cloud K8s release version TKE August update](https://mp.weixin.qq.com/s/t6yGrxcn4JZdd9877raXhA)
   

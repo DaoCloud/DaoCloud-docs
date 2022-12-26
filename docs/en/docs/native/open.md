@@ -394,7 +394,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Keptn Cloud Native Application Lifecycle Orchestration Engine Upgraded to CNCF Incubation Project](https://mp.weixin.qq.com/s/gkv_fSnrRv0ao1AHUzBB5A)
 
-     [Keptn](https://github.com/keptn/keptn) is an event-based control plane that uses declarative programming methods to achieve continuous delivery and automatic repair of applications. Keptn will support GitOps and control warehouse management methods, RBAC, remote management of execution planes, etc. in the future.
+     [Keptn](https://github.com/keptn/keptn) is an event-based control plane that uses declarative programming methods to achieve continuous delivery and automatic repair of applications. Keptn will support GitOps and control registry management methods, RBAC, remote management of execution planes, etc. in the future.
 
 - [Keptn Cloud Native Application Continuous Delivery and Automated Operation Tool v0.16.0 released (CNCF project)](https://github.com/keptn/keptn/releases/tag/0.16.0)
 
@@ -672,7 +672,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [OpenShift Toolkit 1.0, simplifying the development of cloud-native applications](https://cloud.redhat.com/blog/announcing-openshift-toolkit-enhance-cloud-native-application-development-in-ides)
 
-     [OpenShift Toolkit](https://github.com/redhat-developer/vscode-openshift-tools) is a set of extensions for VS Code and IntelliJ. Its features include: support for connecting and configuring OpenShift; providing hybrid cloud support, developers can connect to any running OpenShift instance; develop applications through local workspaces, git repositories, or default devfile templates; allow one-click Strategy, directly deploy warehouse code to OpenShift; provide Kubernetes resource management, seamless Kube configuration context switching; multi-platform s platform support.
+     [OpenShift Toolkit](https://github.com/redhat-developer/vscode-openshift-tools) is a set of extensions for VS Code and IntelliJ. Its features include: support for connecting and configuring OpenShift; providing hybrid cloud support, developers can connect to any running OpenShift instance; develop applications through local workspaces, git repositories, or default devfile templates; allow one-click Strategy, directly deploy registry code to OpenShift; provide Kubernetes resource management, seamless Kube configuration context switching; multi-platform s platform support.
 
 - [OpenTelemetry v1.13.0 release (CNCF project)](https://github.com/open-telemetry/opentelemetry-specification/releases/tag/v1.13.0)
 

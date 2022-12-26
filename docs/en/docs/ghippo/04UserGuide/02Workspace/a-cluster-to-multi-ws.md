@@ -17,25 +17,25 @@ You can share the cluster with multiple departments/workspaces/tenants by follow
 ```mermaid
 graph TB
 
-preparews[prepare workspace] --> preparecs[prepare cluster]
---> share[share the cluster to the workspace]
---> judge([judging the remaining quota of the workspace])
-judge -. greater than the remaining quota.->modifyns[modify namespace quota]
-judge -. is less than the remaining amount.->createns[create namespace]
+preparews[Prepare workspace] --> preparecs[Prepare cluster]
+--> share[Share cluster with workspace]
+--> judge([Judge remained quota of workspace])
+judge -.More than remained quota.->modifyns[Modify namespace quota]
+judge -.Less than remained quota.->createns[Create namespace]
 
 classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill: #326ce5, stroke: #fff, stroke-width: 1px, color: #fff;
+classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
-class preparews, preparecs, share, cluster;
+class preparews,preparecs,share, cluster;
 class judge plain
-class modifyns, createns k8s
+class modifyns,createns k8s
 
-click preparews "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/a-cluster-to-multi-ws/#_2"
-click preparecs "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/a-cluster-to-multi-ws/#_3"
-click share "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/a-cluster-to-multi-ws/#_4"
-click createns "https://docs.daocloud.io/amamba/03UserGuide/Namespace/namespace/#_3"
-click modifyns "https://docs.daocloud.io/amamba/03UserGuide/Namespace/namespace/#_4"
+click preparews "https://docs.daocloud.io/en/ghippo/04UserGuide/02Workspace/a-cluster-to-multi-ws/#_2"
+click preparecs "https://docs.daocloud.io/en/ghippo/04UserGuide/02Workspace/a-cluster-to-multi-ws/#_3"
+click share "https://docs.daocloud.io/en/ghippo/04UserGuide/02Workspace/a-cluster-to-multi-ws/#_4"
+click createns "https://docs.daocloud.io/en/amamba/03UserGuide/Namespace/namespace/#_3"
+click modifyns "https://docs.daocloud.io/en/amamba/03UserGuide/Namespace/namespace/#_4"
 ```
 
 ## Prepare a workspace
