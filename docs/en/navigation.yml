@@ -529,11 +529,13 @@ nav:
           - What is Container Registry: kangaroo/intro.md
           - Image List: kangaroo/imagelist.md
           - Connected Registry: kangaroo/related-registry.md
-          - Managed Harbor: kangaroo/hosted.md
           - Registry Integration: 
             - kangaroo/integrate.md
             - Bind Registry Space to Workspace: kangaroo/bind-to-ws.md
             - Create Registry Space: kangaroo/create-registry.md
+          - Managed Harbor: kangaroo/hosted.md
+          - Quick Start:
+            - Manage Registries: kangaroo/quickstart/registry-in-one.md
           - Scan image: kangaroo/scan.md
       - References:
         - Release Notes: release/rn5.0.md
