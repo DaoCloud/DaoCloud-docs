@@ -2013,6 +2013,8 @@ spec:
       reverseProxy: ${DCE_PROXY} # 只需要修改这一行
     ```
 
+    注意这里需要把 `${DCE_PROXY}` 替换为实际访问地址；需要配置完整的路径，包含 https 或 http、IP 或域名以及端口；如果是默认 80/443，则可以省略。
+
 1. 使用 heml upgrade 更新配置
 
     ```bash
@@ -2028,6 +2030,14 @@ spec:
     kubectl rollout restart deploy/ghippo-apiserver -n ghippo-system
     kubectl rollout restart statefulset/ghippo-keycloak -n ghippo-system
     ```
+
+1. 登录 DCE
+
+    ![登录](./images/login.png)
+
+1. DCE 登录成功
+
+    ![成功登录](./images/firstscreen.png)
 
 [下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

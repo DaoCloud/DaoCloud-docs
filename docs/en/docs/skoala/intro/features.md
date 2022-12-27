@@ -1,4 +1,4 @@
-# Function overview
+# Features
 
 The "DaoCloud" microservice engine is a one-stop microservice management platform for the mainstream microservice ecosystem in the industry. It mainly provides two-dimensional functions of microservice governance center and microservice gateway, including service registration discovery, configuration management, and traffic management. , service-level link tracking, API management, domain name management, monitoring alarms, etc., covering various management scenarios in the microservice lifecycle. The microservice engine has strong compatibility. It can not only seamlessly connect to other components of DCE 5.0, but also perfectly compatible with open source ecosystems such as Spring Cloud and Dubbo, helping you to use open source microservice technology to build your own microservice system more conveniently.
 

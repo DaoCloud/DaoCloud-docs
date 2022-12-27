@@ -2,6 +2,22 @@
 
 本页列出 MySQL 数据库的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## v0.5.0
+
+发布日期：2022-12-25
+
+### API
+
+- **新增** `mcamel-mysql` NodePort 端口冲突提前检测。
+- **新增** `mcamel-mysql` 节点亲和性配置。
+- **新增** `mcamel-mysql` 创建备份配置时，可校验 Bucket。
+- **修复** `mcamel-mysql` arm 环境中无法展示默认配置。
+- **修复** `mcamel-mysql` 创建实例时 name 校验与前端不一致。
+- **修复** `mcamel-mysql` 重新接入变更名字的集群后，配置管理地址展示错误。
+- **修复** `mcamel-mysql` 保存自动备份配置失败。
+- **修复** `mcamel-mysql` 自动备份集无法展示的问题。
+- **优化** `mcamel-mysql` 创建托管 MinIO 类型的备份配置时，可填写 AccessKey/SecretKey/Bucket。
+
 ## v0.4
 
 发布日期：2022-11-08

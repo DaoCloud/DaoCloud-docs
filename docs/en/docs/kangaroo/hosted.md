@@ -1,4 +1,4 @@
-# Manage Harbor
+# Managed Harbor
 
 Harbor is an open source container registry service for secure hosting and efficient distribution of OCI-compliant Artifacts such as container images and Helm Charts. It can help you manage Artifacts consistently and securely across cloud-native computing platforms (such as Kubernetes and Docker). The DaoCloud Enterprise platform provides Harbor-based fast deployment capabilities, and realizes one-stop high availability, high performance, and high Efficient deployment, management, use and other full-cycle container registry services.
 

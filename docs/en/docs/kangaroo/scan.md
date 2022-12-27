@@ -15,7 +15,7 @@ Security scanning is an active preventive measure, which can effectively avoid h
 
 The final scan results should provide more guidance on corrective actions. When users receive the bad news that a container image is plagued by a vulnerability, they need to figure out how to fix it for themselves. Where did the vulnerability come from? What can be done to fix the problem?
 
-## image scan features
+## Image scan features
 
 Currently, the image registry module of DCE 5.0 supports the following scanning  images:
 

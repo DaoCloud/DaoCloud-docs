@@ -7,7 +7,7 @@ tags: []
 last_updated:
 ---
 
-# Nanny install DCE 5.0 Community Edition
+# Step-by-step install DCE 5.0 Community Edition
 
 Author: [SAMZONG](https://github.com/SAMZONG)
 
@@ -26,9 +26,9 @@ It is planned to use 3 UCloud VMs, all configured with 8-core 16G.
 The planned cluster components are:
 
 - Kubernetes 1.24.8
--CRI containerd
--CNI Calico
--StorageClass HwameiStior
+- CRI containerd
+- CNI Calico
+- StorageClass HwameiStior
 
 ## Node system optimization
 
@@ -2013,6 +2013,8 @@ When the cluster page needs to be opened to public network access, you will find
       reverseProxy: ${DCE_PROXY} # You only need to modify this row
     ```
 
+    Note that you need to replace `${DCE_PROXY}` with the actual access address; configure a complete path, including https or http, IP or domain name, and port; if it is the default 80/443, you can omit it.
+
 1. Use heml upgrade to update the configuration
 
     ```bash
@@ -2028,6 +2030,14 @@ When the cluster page needs to be opened to public network access, you will find
     kubectl rollout restart deploy/ghippo-apiserver -n ghippo-system
     kubectl rollout restart statefulset/ghippo-keycloak -n ghippo-system
     ```
+
+1. Log in to DCE
+
+    ![login](./images/login.png)
+
+1. DCE login is successful
+
+    ![Successful login](./images/firstscreen.png)
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

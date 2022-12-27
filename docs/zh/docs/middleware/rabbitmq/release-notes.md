@@ -2,6 +2,19 @@
 
 本页列出 RabbitMQ 消息队列的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## v0.7.0
+
+发布日期：2022-12-25
+
+### API
+
+- **新增** `mcamel-rabbitmq` NodePort 端口冲突提前检测。
+- **新增** `mcamel-rabbitmq` 节点亲和性配置。
+
+### UI
+
+- **优化** `mcamel-rabbitmq-ui` 中间件样式走查优化。  
+
 ## v0.6.4
 
 发布日期：2022-11-28
@@ -31,7 +44,7 @@
 - **新增** 增加监控地址的拼接功能
 - **新增** 增加可以修改版本号的功能
 - **新增** 修改底层 update 逻辑为 patch 逻辑
-- **新增** RabbitMQ e2e 测试覆盖率 17.24%左右
+- **新增** RabbitMQ e2e 测试覆盖率 17.24% 左右
 - **新增** 增加 RabbitMQ 性能压测报告
 - **新增** 增加 RabbitMQ bug 抽查
 - **新增** 对接 ghippo 增加 workspace 接口

@@ -18,4 +18,3 @@ DCE 5.0 内置的搜索服务基于 Elasticsearch，能够提供分布式搜索�
 ## Kibana 是什么？
 
 Kibana 是一款适用于 Elasticsearch 的数据可视化和管理工具，可以提供实时的直方图、线形图、饼状图和地图。Kibana 同时还包括诸如 Canvas 和 Elastic Maps 等高级应用程序；其中 Canvas 允许用户基于自身数据创建定制的动态信息图表，而 Elastic Maps 则可用来对地理空间数据进行可视化。
-
