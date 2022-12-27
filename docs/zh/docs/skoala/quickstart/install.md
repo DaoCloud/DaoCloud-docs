@@ -14,7 +14,9 @@
 ./dce5-installer install-app -m /sample/manifest.yaml
 ```
 
-### 安装器 v0.3.29
+### 安装器 v0.3.29 及之后
+
+> 安装时，注意查看当前最新版本号： [去下载页查看最新版本](../../download/dce5.md)
 
 支持默认安装 Skoala；但仍旧建议检查  mainfest.yaml，确保 Skoala 会被安装器安装。
 
