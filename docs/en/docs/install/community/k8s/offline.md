@@ -32,8 +32,8 @@ This page briefly describes the offline installation steps for DCE 5.0 Community
 1. Download and decompress the corresponding offline package of the community version on the k8s cluster control plane node (Master node), or download and decompress the offline package from [Download Center](../../../download/dce5.md).
 
     ```bash
-    # Assume version VERSION=0.3.29
-    export VERSION=v0.3.29
+    # Assume version VERSION=0.3.30
+    export VERSION=v0.3.30
     wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-community-$VERSION-amd64.tar
     tar -zxvf offline-centos7-community-$VERSION-amd64.tar
     ```
@@ -117,33 +117,42 @@ This page briefly describes the offline installation steps for DCE 5.0 Community
     - If it is a non-public cloud environment (virtual machine, physical machine), please enable load balancing (metallb) to avoid NodePort instability caused by node IP changes. Please plan your network carefully and set up 2 necessary VIPs. The configuration file example is as follows:
 
         ```yaml
-        apiVersion: provision.daocloud.io/v1alpha1
+        apiVersion: provision.daocloud.io/v1alpha2
         kind: ClusterConfig
         spec:
-          loadBalancer: metallb
-          istioGatewayVip: 10.6.229.10/32 # This is the VIP of Istio gateway, and it will also be the browser access IP of DCE 5.0 console
-          insightVip: 10.6.229.11/32 # This is the VIP used by the Insight-Server of the Global cluster to collect the monitoring indicators of all sub-clusters on the network path
-          persistentRegistryDomainName: 172.30.120.180:80 # This is the Harbor registry address
+          loadBalancer:
+            type: metallb
+            istioGatewayVip: 10.6.229.10/32 # This is the VIP of Istio gateway, and it will also be the browser access IP of DCE 5.0 console
+            insightVip: 10.6.229.11/32 # This is the VIP used by the Insight-Server of the Global cluster to collect the monitoring indicators of all sub-clusters on the network path
+          registry:
+            type: external
+            externalRegistry: registry.daocloud.io:30080 # Your Harbor or registry domain name or IP
         ```
 
     - If it is a public cloud environment and provides the k8s load balancing capability of the public cloud through the pre-prepared Cloud Controller Manager mechanism, the configuration file example is as follows:
 
         ```yaml
-        apiVersion: provision.daocloud.io/v1alpha1
+        apiVersion: provision.daocloud.io/v1alpha2
         kind: ClusterConfig
         spec:
-          loadBalancer: cloudLB
-          persistentRegistryDomainName: 172.30.120.180:80 # This is the Harbor registry address
+          loadBalancer:
+            type: cloudLB
+          registry:
+            type: external
+            externalRegistry: registry.daocloud.io:30080 # Your Harbor or registry domain name or IP
         ```
 
     - If NodePort is used to expose the console (only recommended for PoC), the configuration file example is as follows:
 
         ```yaml
-        apiVersion: provision.daocloud.io/v1alpha1
+        apiVersion: provision.daocloud.io/v1alpha2
         kind: ClusterConfig
         spec:
-          loadBalancer: NodePort
-          persistentRegistryDomainName: 172.30.120.180:80 # This is the Harbor registry address
+          loadBalancer:
+            type: NodePort
+          registry:
+            type: external
+            externalRegistry: registry.daocloud.io:30080 # Your Harbor or registry domain name or IP
         ```
 
 5. Unzip and install.

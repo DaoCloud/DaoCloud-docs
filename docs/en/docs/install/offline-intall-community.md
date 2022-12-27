@@ -56,7 +56,9 @@ This page describes the air-gap (offline) installation procedure of DCE 5.0.
         chmod +x offline_image_handler.sh
         ```
 
-    - If you use a registry, push the air-gap package image to the registry.
+    - If you already have a registry, push the air-gap package image to the registry.
+
+        Assuming the existing registry access is `registry.daocloud.io:30080`
 
         ```bash
         # Specify the registry URL
@@ -121,33 +123,42 @@ This page describes the air-gap (offline) installation procedure of DCE 5.0.
     - For a private cloud (virtual and physical machines), enable your load balancer (metallb) to avoid the NodePort instability caused by IP variations. Carefully plan your network and IP addresses. Here is an example for your reference:
 
         ```yaml
-        apiVersion: provision.daocloud.io/v1alpha1
+        apiVersion: provision.daocloud.io/v1alpha2
         kind: ClusterConfig
         spec:
-          loadBalancer: metallb
-          istioGatewayVip: 10.6.229.10/32     # This is VIP for Istio gateway and is also the URL via which you can use DCE 5.0 on your web browser.
-          insightVip: 10.6.229.11/32          # This is the VIP used by the Insight-Server of the Global cluster to collect logs, metrics, and traces of all sub-clusters.
-          persistentRegistryDomainName: 172.30.120.180:80
+          loadBalancer:
+            type: metallb
+            istioGatewayVip: 10.6.229.10/32     # This is VIP for Istio gateway and is also the URL via which you can use DCE 5.0 on your web browser.
+            insightVip: 10.6.229.11/32          # This is the VIP used by the Insight-Server of the Global cluster to collect logs, metrics, and traces of all sub-clusters.
+          registry:
+            type: external
+            externalRegistry: registry.daocloud.io:30080
         ```
 
     - For a public cloud, DCE integrates a Cloud Controller Manager to provide the load balancing capability for kubernetes. Here is an example for your reference:
 
         ``` yaml
-        apiVersion: provision.daocloud.io/v1alpha1
+        apiVersion: provision.daocloud.io/v1alpha2
         kind: ClusterConfig
         spec:
-          loadBalancer: cloudLB
-          persistentRegistryDomainName: 172.30.120.180:80 # This is the Harbor registry address
+          loadBalancer:
+            type: cloudLB
+          registry:
+            type: external
+            externalRegistry: registry.daocloud.io:30080 # Replace with your Harbor registry address
         ```
 
     - If you use NodePort to expose your console (for proof of concept (PoC)), refer to the following example:
 
         ``` yaml
-        apiVersion: provision.daocloud.io/v1alpha1
+        apiVersion: provision.daocloud.io/v1alpha2
         kind: ClusterConfig
         spec:
-          loadBalancer: NodePort
-          persistentRegistryDomainName: 172.30.120.180:80 # This is the Harbor registry address
+          loadBalancer:
+            type: NodePort
+          registry:
+            type: external
+            externalRegistry: registry.daocloud.io:30080 # Replace with your Harbor registry address
         ```
 
 5. Unzip and install.
