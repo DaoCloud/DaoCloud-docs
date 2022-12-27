@@ -40,14 +40,14 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 
     参数说明：
 
-    - username：使用`rabbitmq-cluster-a`集群的RabbitMQ Management WebUI的帐号
-    - password：使用`rabbitmq-cluster-a`集群的RabbitMQ Management WebUI的密码
-    - ip：使用`rabbitmq-cluster-a`集群的RabbitMQ Management WebUI的IP地址
-    - port：使用`rabbitmq-cluster-a`集群的RabbitMQ Management WebUI的端口号
+    - username：使用`rabbitmq-cluster-a`集群的 RabbitMQ Management WebUI 的帐号
+    - password：使用`rabbitmq-cluster-a`集群的 RabbitMQ Management WebUI 的密码
+    - ip：使用`rabbitmq-cluster-a`集群的 RabbitMQ Management WebUI 的 IP 地址
+    - port：使用`rabbitmq-cluster-a`集群的 RabbitMQ Management WebUI 的端口号
 
 - 在 Overview 视图中，消费消息数（Ready）以及未确定的消息数（Unacked）都为 0，说明消费完成。
 
-    ![消息数为0](../images/migrate02.png)
+    ![消息数为 0](../images/migrate02.png)
 
 ### 方案二
 
@@ -59,7 +59,7 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 
 ![开启插件](../images/migrate03.png)
 
-参数说明:
+参数说明：
 
 - Name: 配置 shovel 的名称。
 - Source: 指定协议类型、连接的源集群地址，源端的类型。
@@ -86,7 +86,7 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 
 ![运行状态](../images/migrate06.png)
 
-当 shovel 状态为 “running” 时，表示迁移开始。等数据迁移完成后，将生产端、消费端切换至 `rabbitmq-cluster-b` 集群中，完成迁移过程。
+当 shovel 状态为“running”时，表示迁移开始。等数据迁移完成后，将生产端、消费端切换至 `rabbitmq-cluster-b` 集群中，完成迁移过程。
 
 #### 迁移后消息数量
 

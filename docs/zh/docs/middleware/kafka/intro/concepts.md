@@ -40,10 +40,10 @@ hide:
 
     一个独立的 Kafka 服务器被称为 Broker。Broker 接收来自生产者的消息，为消息设置偏移量，并提交消息到磁盘保存。
     Broker 为消费者提供服务，对读取分区的请求做出响应，返回已经提交到磁盘的消息。
-    
+
     Broker 是集群 (Cluster) 的组成部分。
     每个集群都会选举出一个 Broker 作为集群控制器 (Controller)，集群控制器负责管理工作，包括将分区分配给 Broker 和监控 Broker。
-    
+
     在集群中，一个分区 (Partition) 从属一个 Broker，该 Broker 被称为分区的首领 (Leader)。
     一个分区可以分配给多个 Broker，这个时候会发生分区复制。
     这种复制机制为分区提供了消息冗余，如果有一个 Broker 失效，其他 Broker 可以接管领导权。

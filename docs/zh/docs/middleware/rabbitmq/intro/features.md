@@ -3,7 +3,7 @@
 RabbitMQ 的通用功能特性包括：
 
 - 可靠性（Reliability）
-     
+
     RabbitMQ 使用一些机制来保证可靠性，如持久化、传输确认、发布确认。
 
 - 消息集群（Clustering）

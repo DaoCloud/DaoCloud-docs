@@ -63,9 +63,9 @@
 
     ```shell
     --set ui.image.tag  # 指定前端镜像版本
-    --set ghippo.createCrd  # 注册ghippo路由,默认开启
-    --set insight.serviceMonitor.enabled  # 开启监控,默认开启
-    --set insight.grafanaDashboard.enabled  # 开启监控面板,默认开启
+    --set ghippo.createCrd  # 注册 ghippo 路由，默认开启
+    --set insight.serviceMonitor.enabled  # 开启监控，默认开启
+    --set insight.grafanaDashboard.enabled  # 开启监控面板，默认开启
 
     # 全局参数
     --set global.mcamel.imageTag  # mcamel-kafka 镜像版本
