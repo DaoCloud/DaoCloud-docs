@@ -15,4 +15,4 @@ Kafka 内置了 Prometheus 和 Grafana 监控模块。
 
     ![](../images/insight.png)
 
-<!-- 各项监控指标的具体含义稍后补充(@justedennnnn)。 -->
+<!-- 各项监控指标的具体含义稍后补充 (@justedennnnn)。 -->
