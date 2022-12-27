@@ -1,6 +1,5 @@
-# Falco-exporter
+# 什么是 Falco-exporter
 
-[falco-exporter](https://github.com/falcosecurity/falco-exporter) 是一个用于 Falco 输出事件的Prometheus Metrics导出器。
+[Falco-exporter](https://github.com/falcosecurity/falco-exporter) 是一个 Falco 输出事件的 Prometheus Metrics 导出器。
 
-falco-exporter 会部署为 Kubernetes 集群上的守护进程集。如果 Prometheus 安装并运行在您的集群，将自动发现falco-exporter提供的指标。
-
+Falco-exporter 会部署为 Kubernetes 集群上的守护进程集。如果集群中已安装并运行 Prometheus，Prometheus 将自动发现 Falco-exporter 提供的指标。
