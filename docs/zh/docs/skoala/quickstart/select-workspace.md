@@ -4,13 +4,13 @@
 
 首次进入微服务治理模块时，首先必须选择一个[工作空间](../ghippo/04UserGuide/02Workspace/Workspaces.md)。
 
-![选择工作空间](./workspace.png)
+![选择工作空间](./images/workspace.png)
 
 ## 更改工作空间
 
 如需更改当前所在的工作空间，可以在左侧边栏点击更换图标重新选择工作空间。
 
-![更改工作空间](./change-ws.png)
+![更改工作空间](./images/change-ws.png)
 
 !!! note
 
