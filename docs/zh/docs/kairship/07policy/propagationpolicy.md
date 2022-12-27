@@ -59,14 +59,14 @@ spec:
         tolerationSeconds: 300
 ```
 
-## 2.表单创建
+## 2. 表单创建
 
 参照以下步骤创建一个差异化策略。
 
-1.进入多云编排模块，点击某一实例——>策略管理——>差异化策略，本页面展示了当前实例内的所有差异化策略，点击列表上方的 创建差异化策略按钮。
+1. 进入多云编排模块，点击某一实例——>策略管理——>差异化策略，本页面展示了当前实例内的所有差异化策略，点击列表上方的 创建差异化策略按钮。
 
 ![企业微信截图_3808797e-784f-4c5b-86b9-8235a8f8ed40](../images/op01.png)
-2.进入表单创建页面，创建一个完整的差异化策略需要配置基础配置、资源配置、差异化策略三部分。
+2. 进入表单创建页面，创建一个完整的差异化策略需要配置基础配置、资源配置、差异化策略三部分。
 
 基本配置：包括名称、多云命名空间、标签和注解。其中名称和多云命名空间为必填项。
 
@@ -76,7 +76,7 @@ spec:
 
 ![企业微信截图_f962f7b9-08fa-452d-b037-fd2ea84c3dad](../images/op03.png)
 
-3.填写完成后点击确定则创建成功，支持对一条差异化策略进行 YAML 更新、表单更新、删除操作。
+3. 填写完成后点击确定则创建成功，支持对一条差异化策略进行 YAML 更新、表单更新、删除操作。
 
 ## 差异化策略
 
@@ -87,7 +87,7 @@ spec:
 - CommandOverrider：运行命令的差异化配置。
 - PlainText：自定义的差异化配置。
 
-1.点击添加差异化配置，选择 ImageOverrider 时：
+1. 点击添加差异化配置，选择 ImageOverrider 时：
 
 第一步：选择部署集群
 
@@ -113,7 +113,7 @@ LabelSelector：通过标签来选择集群，支持自定义标签，同时也�
 | Operator  | 是   | 对镜像进行的操作                                             | add、remove、replace      |
 | Value     | 否   | 当 Operator 为'add'或'replace'时不能为空，默认为空，当 operator 为 remove 时不填。 |                           |
 
-2.当选择 ArgsOverrider 时：
+2. 当选择 ArgsOverrider 时：
 
 第一步仍然需要选择部署集群
 
@@ -125,7 +125,7 @@ LabelSelector：通过标签来选择集群，支持自定义标签，同时也�
 | Operator      | 是   | 应用在 args 上的操作                                         | add、remove |
 | Value         | 否   | 应用在 args 上的值，当 operator 为 add 时该值 append 到 args，当 operator 为 remove 时，该值从 args 移除，如果该值为空，args 维持原状。 |             |
 
-3.当选择 CommandOverrider 时：
+3. 当选择 CommandOverrider 时：
 
 第一步仍然需要选择部署集群
 
@@ -137,7 +137,7 @@ LabelSelector：通过标签来选择集群，支持自定义标签，同时也�
 | Operator      | 是   | 应用在 command 上的操作                                      | add、remove                           |
 | Value         | 否   | 应用在 command 上的值，当 operator 为 add 时该值 append 到 command，当 operator 为 remove 时，该值从 command 移除，如果该值为空，command 维持原状。 | 可以添加单个或多个值，多值使用 ; 划分 |
 
-4.当选择 PlainText 时：
+4. 当选择 PlainText 时：
 
 第一步仍然需要选择部署集群
 
