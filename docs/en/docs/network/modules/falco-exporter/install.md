@@ -47,7 +47,9 @@ Please confirm that your cluster has successfully connected to the `Container Ma
     - `Falco Prometheus Exporter` -> `Prometheus ServiceMonitor Settings` -> `Scrape Timeout`: user-defined scrape timeout; if not specified, the Prometheus default scrape timeout is used.
 
     ![falco-exporter_helm-4](../../images/falco-exporter-install-5.png)
+
     ![falco-exporter_helm-4](../../images/falco-exporter-install-6.png)
+
    In the screen as above, fill in the following parameters:
 
     - `Falco Prometheus Exporter` -> `Prometheus prometheusRules` -> `Install prometheusRules`: create PrometheusRules to alert on priority events. It is enabled by default.

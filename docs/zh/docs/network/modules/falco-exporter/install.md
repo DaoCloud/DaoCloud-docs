@@ -40,7 +40,9 @@
     - `Falco Prometheus Exporter` -> `Prometheus ServiceMonitor Settings` -> `Scrape Timeout`：用户自定义的抓取超时时间；如果未指定，则使用 Prometheus 默认的抓取超时时间。
 
     ![falco-exporter_helm-4](../../images/falco-exporter-install-5.png)
+
     ![falco-exporter_helm-4](../../images/falco-exporter-install-6.png)
+
    在如上界面中，填写以下参数:
 
     - `Falco Prometheus Exporter` -> `Prometheus prometheusRules` -> `Install prometheusRules`：创建 PrometheusRules，对优先事件发出警报，默认开启。
