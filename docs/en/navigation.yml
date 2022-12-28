@@ -417,6 +417,9 @@ nav:
           - Falco:
               - Intro: network/modules/falco/what.md
               - Install: network/modules/falco/install.md
+          - Falco-exporter:
+              - Intro: network/modules/falco-exporter/what.md
+              - Install: network/modules/falco-exporter/install.md
       - Middleware:
           - Intro: middleware/midware.md
           - Version Compatibility: middleware/adaptation-k8s.md
