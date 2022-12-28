@@ -256,6 +256,7 @@ nav:
           - 策略管理:
               - 部署策略: kairship/07policy/propagationpolicy.md
               - 差异化策略: kairship/07policy/overridepolicy.md
+          - 绑定工作空间: kairship/09workspace.md
           - 常见问题: kairship/08faq.md
       - 微服务引擎:
           - 介绍:
