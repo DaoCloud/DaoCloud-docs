@@ -30,9 +30,9 @@
 
 添加 Label 可以通过容器管理平台找到对应的集群，给相应节点配置 Label
 
-![image-20221214101221559](images/add-node-label.png)
+![image-20221214101221559](./images/add-node-label.png)
 
-![image-20221214101633044](images/add-node-labels2.png)
+![image-20221214101633044](./images/add-node-labels2.png)
 
 ### 网格规划
 
@@ -103,9 +103,9 @@
 
 如果不是通过 Kpanda 容器管理平台创建的集群，例如已经存在的集群，或者通过自定义方式（类似 kubeadm 或 Kind 集群）创建的集群都需要将集群接入 Kpanda。
 
-![image-20221206114406877](images/kpanda-import-cluster0.png)
+![image-20221206114406877](./images/kpanda-import-cluster0.png)
 
-![image-20221206114131556](images/kpanda-import-cluster.png)
+![image-20221206114131556](./images/kpanda-import-cluster.png)
 
 ### 确认可观测组件（可选）
 
@@ -115,11 +115,11 @@ Kpanda 创建集群方式创建的集群将默认安装 Insight Agent 组件。
 
 其他方式需要在 Kpanda 界面中，找到本集群中的 Helm 应用，选择 insight-agent 安装。
 
-![image-20221206115135126](images/kpanda-insgiht-agent-check.png)
+![image-20221206115135126](./images/kpanda-insgiht-agent-check.png)
 
-![image-20221206115318916](images/kpanda-install-insight-agent.png)
+![image-20221206115318916](./images/kpanda-install-insight-agent.png)
 
-![image-20221206115831608](images/kpanda-install-insight-agent1.png)
+![image-20221206115831608](./images/kpanda-install-insight-agent1.png)
 
 ## 网格部署
 
@@ -129,7 +129,7 @@ Kpanda 创建集群方式创建的集群将默认安装 Insight Agent 组件。
 
 首先在网格管理页面 -> `创建网格`：
 
-![image-20221206133505678](images/create-mesh1.png)
+![image-20221206133505678](./images/create-mesh1.png)
 
 创建网格的具体参数如图显示：
 
@@ -140,7 +140,7 @@ Kpanda 创建集群方式创建的集群将默认安装 Insight Agent 组件。
 5. 负载均衡 IP：该参数为暴露控制面的 Istiod 所需要的参数，需要预先准备
 6. 镜像仓库：在私有云中，需要将网格所需的镜像上传仓库，公有云建议填入`release.daocloud.io/mspider`
 
-![image-20221206134039584](images/create-mesh2.png)
+![image-20221206134039584](./images/create-mesh2.png)
 
 网格处于创建中，需要等待网格创建完成后，状态由 `创建中`转变成`运行中`；
 
@@ -150,7 +150,7 @@ Kpanda 创建集群方式创建的集群将默认安装 Insight Agent 组件。
 
 确保网格状态正常后，观察控制面集群`mdemo-cluster1`的 `istio-system` 下面的 Service 是否都成功绑定了 LoadBalancer IP。
 
-![image-20221206145353709](images/hosted-istiod-lb-check.png)
+![image-20221206145353709](./images/hosted-istiod-lb-check.png)
 
 发现托管网格控制面的服务`istiod-mdemo-cluster-hosted-lb` 的没有分配 LoadBalancer IP 需要额外处理。
 
@@ -178,7 +178,7 @@ curl -I "${hosted_istiod_ip}:443"
 
 在网格`mdemo-mesh` 控制面集群`mdemo-cluster1`中去确认托管网格控制面服务`istiod-mdemo-mesh-hosted-lb `已经分配 LoadBalancer IP 以后，并且记录其 IP，示例如下：
 
-![image-20221206174331110](images/hosted-istiod-lb-ip.png)
+![image-20221206174331110](./images/hosted-istiod-lb-ip.png)
 
 确认托管网格控制面服务 `istiod-mdemo-mesh-hosted-lb ` `EXTERNAL-IP` 为 `10.64.30.72`。
 
@@ -192,11 +192,11 @@ curl -I "${hosted_istiod_ip}:443"
 > 在 YAML 中 `.spec.ownerConfig.controlPlaneParams` 字段增加 `istio.custom_params.values.global.remotePilotAddress` 参数；
 > 其值为上文中记录的 `istiod-mdemo-mesh-hosted-lb ` `EXTERNAL-IP` 地址：`10.64.30.72`；
 
-![image-20221206175611073](images/get-gm-crd.png)
+![image-20221206175611073](./images/get-gm-crd.png)
 
-![image-20221206175856990](images/edit-gm-yaml.png)
+![image-20221206175856990](./images/edit-gm-yaml.png)
 
-![image-20221206180535266](images/edit-gm-yaml1.png)
+![image-20221206180535266](./images/edit-gm-yaml1.png)
 
 ### 添加工作集群
 
@@ -204,23 +204,23 @@ curl -I "${hosted_istiod_ip}:443"
 
 等待网格控制面创建成功后，选中对应网格，进入网格管理页面 -> `集群纳管` -> `添加集群`：
 
-![image-20221206134955615](images/add-cluster1.png)
+![image-20221206134955615](./images/add-cluster1.png)
 
 选中所需的工作集群后，等待集群安装网格组件完成；
 
-![image-20221206135141793](images/add-cluster2.png)
+![image-20221206135141793](./images/add-cluster2.png)
 
 在接入过程中，集群状态会由`接入中`转变成`接入成功`：
 
-![image-20221206135255874](images/add-cluster3.png)
+![image-20221206135255874](./images/add-cluster3.png)
 
 #### 检测多云控制面是否正常
 
-由于当前工作集群与网格控制面集群 Pod 网络不同，需要通过上文[暴露网格托管控制面 Hosted Istiod](#暴露网格托管控制面-hosted-istiod)部分将控制面的 Istiod 暴露给公网。
+由于当前工作集群与网格控制面集群 Pod 网络不同，需要通过上文[暴露网格托管控制面 Hosted Istiod](#hosted-istiod)部分将控制面的 Istiod 暴露给公网。
 
 验证工作集群 Istio 相关组件是否能运行正常，需要在工作集群中检查 `istio-system` 命名空间下的 `istio-ingressgateway` 是否能够正常运行：
 
-![image-20221207164503464](images/check-work-istiod.png)
+![image-20221207164503464](./images/check-work-istiod.png)
 
 ## 不同网络模式的网格组件安装与配置
 
@@ -242,7 +242,7 @@ Istio 要求用户每个工作集群安装 Istio 时，显示的定义`网络 ID
 
 让我们开始配置`网络 ID` ，其具体流程如下：
 
-1. 首先进入全局控制面集群 `kpanda-global-cluster`（如果无法确认相关集群的位置，可以询问相应负责人或者通过[查询全局服务集群](#查询全局服务集群)）
+1. 首先进入全局控制面集群 `kpanda-global-cluster`（如果无法确认相关集群的位置，可以询问相应负责人或者通过[查询全局服务集群](#_30)）
 2. 然后在`自定义资源模块` -> 搜索资源 `MeshCluster`
 3. `mspider-system`命名空间下找到加入网格的工作集群，本次案例的工作集群有：`mdemo-cluster2`、`mdemo-cluster3`
 4. 以 `mdemo-cluster2` 为例，编辑 YAML
@@ -251,13 +251,13 @@ Istio 要求用户每个工作集群安装 Istio 时，显示的定义`网络 ID
     - 参数列的注意事项：
         > 需要确认 `global.meshID: mdemo-mesh` 是否为同一个网格 ID
         > 需要确认集群角色 `global.clusterRole: HOSTED_WORKLOAD_CLUSTER` 是否为工作集群
-    - 添加参数 `istio.custom_params.values.global.network`，其值按照最初的[规划表单](#规划表单)中的网络 ID：`network-c2`
+    - 添加参数 `istio.custom_params.values.global.network`，其值按照最初的[规划表单](#_8)中的网络 ID：`network-c2`
 
-    ![image-20221207172722008](images/add-network-id1.png)
+    ![image-20221207172722008](./images/add-network-id1.png)
 
-    ![image-20221207173005911](images/add-network-id2.png)
+    ![image-20221207173005911](./images/add-network-id2.png)
 
-    ![image-20221207174042704](images/add-network-id3.png)
+    ![image-20221207174042704](./images/add-network-id3.png)
 
 重复上述步骤，给所有工作集群 (`mdemo-cluster1、mdemo-cluster2、mdemo-cluster3`) 加上 `网络 ID`。
 
@@ -270,9 +270,9 @@ Istio 要求用户每个工作集群安装 Istio 时，显示的定义`网络 ID
 
 下面以 mdemo-cluster3 为例，找到`命名空间`模块 ，选中 `istio-system` -> `修改标签`。
 
-![image-20221208141354307](images/edit-istio-system-label.png)
+![image-20221208141354307](./images/edit-istio-system-label.png)
 
-![image-20221208141711125](images/add-istio-system-networkid.png)
+![image-20221208141711125](./images/add-istio-system-networkid.png)
 
 ### 手动安装东西网关
 
@@ -353,9 +353,9 @@ EOF
 3. 选中 `istio-system` 命名空间
 4. 点击`创建YAML`
 
-![image-20221207180911788](images/create-ew.png)
+![image-20221207180911788](./images/create-ew.png)
 
-![image-20221207181033559](images/create-ew2.png)
+![image-20221207181033559](./images/create-ew2.png)
 
 ### 创建东西网关 Gateway 资源
 
@@ -405,7 +405,7 @@ istio.custom_params.values.global.meshNetworks.network-c3.gateways[0].address: 1
 istio.custom_params.values.global.meshNetworks.network-c3.gateways[0].port: '15443'  # cluster3 东西网关端口
 ```
 
-![image-20221208110840156](images/add-gm-meshnetowork0.png)
+![image-20221208110840156](./images/add-gm-meshnetowork0.png)
 
 ## 网络连通性 demo 应用与验证
 
@@ -440,13 +440,13 @@ mdemo-cluster1 | :heart: VERSION=vc3 | :heart:
 - **helloworld** 工作负载增加对应的版本**环境变量**
     - SERVICE_VERSION: ${VERSION}
 
-![image-20221226095647090](images/create-demo11.png)
+![image-20221226095647090](./images/create-demo11.png)
 
-![image-20221226100533974](images/create-demo22.png)
+![image-20221226100533974](./images/create-demo22.png)
 
-![image-20221226101100684](images/create-demo33.png)
+![image-20221226101100684](./images/create-demo33.png)
 
-![image-20221226102025014](images/create-demo55.png)
+![image-20221226102025014](./images/create-demo55.png)
 
 #### 命令行部署 demo
 
@@ -517,11 +517,11 @@ while true; do kubectl exec -n sample -c sleep  \
 
 #### 通过 Kpanda 创建集群
 
-集群创建可以存在多种方式，推荐使用 Kpanda 容器管理中的创建集群功能，但是用户可以选择其他创建方式，本文提供的其他方案可以参考拓展章节的[其他创建集群方式](#其他创建集群方式)
+集群创建可以存在多种方式，推荐使用 Kpanda 容器管理中的创建集群功能，但是用户可以选择其他创建方式，本文提供的其他方案可以参考拓展章节的[其他创建集群方式](#_26)
 
 ![kpanda-create-cluster1](./images/kpanda-create-cluster1.png)
 
-![image-20221205181104844](images/kpanda-create-cluster2.png)
+![image-20221205181104844](./images/kpanda-create-cluster2.png)
 
 ![image-20221205155811391](./images/kpanda-create-cluster3.png)
 
@@ -529,15 +529,15 @@ while true; do kubectl exec -n sample -c sleep  \
 
 可以灵活的选择集群需要拓展的组件，网格的可观测能力必须依赖 Insight-agent
 
-![image-20221205160502267](images/kpanda-create-cluster5.png)
+![image-20221205160502267](./images/kpanda-create-cluster5.png)
 
 如果集群需要定义更多的集群高级配置，可以在本步骤添加。
 
-![image-20221205160710475](images/kpanda-create-cluster6.png)
+![image-20221205160710475](./images/kpanda-create-cluster6.png)
 
 创建集群需要，等待 30 分钟左右。
 
-![image-20221205160832838](images/kpanda-create-cluster7.png)
+![image-20221205160832838](./images/kpanda-create-cluster7.png)
 
 #### 通过 kubeadm 创建集群
 
@@ -603,9 +603,9 @@ kind create cluster --config kind-cluster2.yaml --name mdemo-kcluster2
 
 推荐使用 Kpanda 容器管理平台中 【Helm 应用】 -> 【Helm 模版】 -> 找到 metallb -> 【安装】
 
-![image-20221214104906078](images/install-metallb-from-helm.png)
+![image-20221214104906078](./images/install-metallb-from-helm.png)
 
-![image-20221214104945277](images/install-metallb-from-helm1.png)
+![image-20221214104945277](./images/install-metallb-from-helm1.png)
 
 ##### 手动安装
 
@@ -691,4 +691,4 @@ curl -I 10.6.230.71:8080
 
 通过 Kpanda 容器管理的集群列表界面，通过搜索`集群角色：全局服务集群`。
 
-![image-20221206175326079](images/get-kpanda-global-cluster.png)
+![image-20221206175326079](./images/get-kpanda-global-cluster.png)
