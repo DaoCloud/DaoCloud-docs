@@ -15,24 +15,24 @@
 
 ## 支持的架构及操作系统
 
-| 架构        | 支持的操作系统                                    ｜ 备注        |
-| ---------- | ----------------------------------------------- |------------ |
-| ARM        | Kylin Linux Advanced Server release V10 (Sword)  SP2    | 推荐     |
-| ARM        | UOS Linux                                    |                  |
-| ARM	     | openEuler                                    |                  |
-| X86        | CentOS 7.x                                   |   推荐       |
-| X86        | Redhat 7.x                                   |   推荐        |
-| X86        | Redhat 8.x                                   |   推荐          |
-| X86        | Flatcar Container Linux by Kinvolk          |                  |
-| X86        | Debian Bullseye, Buster, Jessie, Stretch                      |                  |
-| X86        | Ubuntu 16.04, 18.04, 20.04, 22.04                      |                  |
-| X86        | Fedora 35, 36                   |                  |
-| X86        | Fedora CoreOS                   |                  |
-| X86        | openSUSE Leap 15.x/Tumbleweed                   |                  |
-| X86        | Oracle Linux 7, 8, 9                   |                  |
-| X86        | Alma Linux 8, 9                   |                  |
-| X86        | Rocky Linux 8, 9                   |                  |
-| X86        | Amazon Linux 2                    |                  |
-| X86        | Kylin Linux Advanced Server release V10 (Sword) - SP2 海光                   |                  |
-| X86        | UOS Linux                   |                  |
-| X86        | openEuler                  |                  |
+| 架构 | 操作系统                                                   | 备注 |
+| ---- | ---------------------------------------------------------- | ---- |
+| ARM  | Kylin Linux Advanced Server release V10 (Sword)  SP2       | 推荐 |
+| ARM  | UOS Linux                                                  |      |
+| ARM  | openEuler                                                  |      |
+| X86  | CentOS 7.x                                                 | 推荐 |
+| X86  | Redhat 7.x                                                 | 推荐 |
+| X86  | Redhat 8.x                                                 | 推荐 |
+| X86  | Flatcar Container Linux by Kinvolk                         |      |
+| X86  | Debian Bullseye, Buster, Jessie, Stretch                   |      |
+| X86  | Ubuntu 16.04, 18.04, 20.04, 22.04                          |      |
+| X86  | Fedora 35, 36                                              |      |
+| X86  | Fedora CoreOS                                              |      |
+| X86  | openSUSE Leap 15.x/Tumbleweed                              |      |
+| X86  | Oracle Linux 7, 8, 9                                       |      |
+| X86  | Alma Linux 8, 9                                            |      |
+| X86  | Rocky Linux 8, 9                                           |      |
+| X86  | Amazon Linux 2                                             |      |
+| X86  | Kylin Linux Advanced Server release V10 (Sword) - SP2 海光 |      |
+| X86  | UOS Linux                                                  |      |
+| X86  | openEuler                                                  |      |
