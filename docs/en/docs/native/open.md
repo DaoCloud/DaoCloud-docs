@@ -589,7 +589,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [MicroK8s lightweight Kubernetes distribution v1.25 released](https://github.com/canonical/microk8s/releases/tag/v1.25)
 
-     Main new features of this version: Added "strict confinement" isolation level to limit host system access and enforce a stricter security posture, 25% reduction in snap size, support for mirror sideloading (sideloading), new plugins kube-ovn and osm-edge.
+     Main new features of this version: Added "strict confinement" isolation level to limit host system access and enforce a stricter security posture, 25% reduction in snap size, support for image sideloading (sideloading), new plugins kube-ovn and osm-edge.
 
 - [Mimir Prometheus long-term storage project v2.4.0 released](https://github.com/grafana/mimir/releases/tag/mimir-2.4.0)
 

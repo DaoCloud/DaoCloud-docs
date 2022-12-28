@@ -5,12 +5,12 @@ hide:
 
 # Admin quickly use the registry to serve the platform
 
-In DCE 5.0, there are two registry management methods: hosting Harbor (self-built Harbor on DCE) and warehouse integration (integrating external Harbor or Docker Registry):
+In DCE 5.0, there are two registry management methods: hosting Harbor (self-built Harbor on DCE) and registry integration (integrating external Harbor or Docker Registry):
 
 - [Hosted Harbor](../hosted.md) (recommended)
 - [Repository Integration](../integrate.md)
 
-DCE 5.0 mainly promotes Harbor as a registry to provide mirror services.
+DCE 5.0 mainly promotes Harbor as a registry to provide image services.
 
 1. Assuming that you have created a managed harbor or connected to an external harbor, follow the steps below to share the public image with all namespaces (you can select the public image through the image selector when deploying the application):
 
@@ -33,7 +33,7 @@ DCE 5.0 mainly promotes Harbor as a registry to provide mirror services.
     click deploy "https://docs.daocloud.io/kpanda/07UserGuide/Workloads/CreateDeploymentByImage/"
     ```
 
-    Expected result: When all users on the platform deploy applications in the namespace, they can select images in the public image space for deployment through the image selector.
+    Expected result: When all users on the platform deploy applications in the namespace, they can select images in the public registry space for deployment through the image selector.
 
     ![Select Image](../images/admin01.png)
 
@@ -81,7 +81,7 @@ DCE 5.0 mainly promotes Harbor as a registry to provide mirror services.
     click deploy "https://docs.daocloud.io/kpanda/07UserGuide/Workloads/CreateDeploymentByImage/"
     ```
 
-    Expected result: Only when deploying applications in namespaces under this workspace, you can use the image selector to select private images under this image space to deploy applications.
+    Expected result: Only when deploying applications in namespaces under this workspace, you can use the image selector to select private images under this registry space to deploy applications.
 
     ![Select Image](../images/admin03.png)
 

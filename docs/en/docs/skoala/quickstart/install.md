@@ -153,7 +153,7 @@ create unique index idx_name on registry (name, workspace_id);
 
 ### Configure skoala helm repo
 
-After configuring the skoala warehouse, you can view and obtain the application chart of skoala
+After configuring the skoala registry, you can view and obtain the application chart of skoala
 
 ```bash
 ~ helm repo add skoala-release https://release.daocloud.io/chartrepo/skoala
@@ -193,7 +193,7 @@ skoala-release/skoala 0.12.0 0.12.0 The helm chart for Skoala
 ```
 
 > When deploying skoala, it will carry the latest front-end version at that time. If you want to specify the version of the front-end ui,
-> You can go to the front-end code warehouse to get the corresponding version number:
+> You can go to the front-end code repo to get the corresponding version number:
 
 In the working cluster, check the latest version of Skoala-init, and update directly through the helm repo to get the latest
 

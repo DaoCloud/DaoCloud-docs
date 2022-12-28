@@ -169,7 +169,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Google hybrid cloud automated configuration tool Anthos Config Management update](https://cloud.google.com/release-notes#September_15_2022)
 
-     Updates include: Config Sync can be stored in Google Artifact Registry or Container Registry as an OCI mirror sync, Config Sync supports syncing from private Helm repositories, supports user-supplied CA certificates for authenticating HTTPS connections to Git servers, and adds constraint templates K8sStorageClass.
+     Updates include: Config Sync can be stored in Google Artifact Registry or Container Registry as an OCI image sync, Config Sync supports syncing from private Helm repositories, supports user-supplied CA certificates for authenticating HTTPS connections to Git servers, and adds constraint templates K8sStorageClass.
 
 - [Grafana Cloud observation platform integrates Cilium Enterprise to strengthen Kubernetes network monitoring](https://grafana.com/blog/2022/11/17/introducing-the-cilium-enterprise-integration-in-grafana-cloud-for-kubernetes-network-monitoring/)
 

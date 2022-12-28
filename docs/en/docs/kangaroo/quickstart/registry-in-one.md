@@ -30,7 +30,7 @@ If it is Workspace Admin, you can associate the existing container registry with
 ## Integrated registry
 
 If you are an Admin (platform administrator), you can also integrate the existing container registry into the DCE platform through the registry integration function.
-Registry integration is the entrance to the container registry of the centralized management platform. The platform administrator can assign a private image space to one or more workspaces (namespaces under the workspace) by binding the image space to the workspace. Or set the image space as public for use by all namespaces of the platform.
+Registry integration is the entrance to the container registry of the centralized management platform. The platform administrator can assign a private registry space to one or more workspaces (namespaces under the workspace) by binding the registry space to the workspace. Or set the registry space as public for use by all namespaces of the platform.
 
 1. Log in with the Admin role, and click `Registry Integration` on the left navigation bar.
 
@@ -48,6 +48,6 @@ Registry integration is the entrance to the container registry of the centralize
 
     ![View overview](../images/interg04.jpg)
 
-1. The overview page displays the basic information and statistical information of the current registry, and also provides a quick start at the top, which is convenient for managing image space, workspace, and creating applications.
+1. The overview page displays the basic information and statistical information of the current registry, and also provides a quick start at the top, which is convenient for managing registry space, workspace, and creating applications.
 
     ![View overview](../images/interg05.jpg)

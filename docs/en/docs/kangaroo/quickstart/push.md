@@ -28,7 +28,7 @@ You can build a new container image locally or grab a public image from DockerHu
 
     Example: `docker tag nginx:latest http://test.lrf02.kangaroo.com/library/nginx:latest`
 
-    Execute the following command to push the image to the image space library
+    Execute the following command to push the image to the registry space library
 
     ```bash
     docker push <container registry address>/<registry space name>/<container registry name>:<artifact version>

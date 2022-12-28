@@ -38,7 +38,7 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
     - `Falco Prometheus Exporter` -> `Image Settings` -> `Registry`: set the repository address of the falco-exporter image, which is already filled with the available online repositories by default. If it is a private environment, you can change it to a private repository address.
 
-    - `Falco Prometheus Exporter` -> `Prometheus ServiceMonitor Settings` -> `Repository`: set the falco-exporter mirror name.
+    - `Falco Prometheus Exporter` -> `Prometheus ServiceMonitor Settings` -> `Repository`: set the falco-exporter image name.
 
     - `Falco Prometheus Exporter` -> `Prometheus ServiceMonitor Settings` -> `Install ServiceMonitor`: install Prometheus Operator service monitor. It is enabled by default.
 

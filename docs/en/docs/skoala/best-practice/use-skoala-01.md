@@ -38,7 +38,7 @@ The application workbench currently supports deployment methods based on Git rep
 
 #### Import Helm Chart
 
-This step needs to be operated in `container management`, jump to the Helm Chart warehouse, and add the warehouse:
+This step needs to be operated in `container management`, jump to the Helm Chart registry, and add the registry:
 
 ![image](../images/addhelmrepo.png)
 

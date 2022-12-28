@@ -28,7 +28,7 @@ This page lists the Release Notes for global management of each version, so that
 - Refactored export audit log http interface to gprc stream interface
 - SDK memory usage optimization, the peak value is reduced by 50%
 - Audit log part code optimization
-- e2e's kind mirror cut to 1.25
+- e2e's kind image cut to 1.25
 - Improve resource usage efficiency to over 40%
 
 #### Bug fixes
