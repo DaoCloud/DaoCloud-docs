@@ -4,7 +4,20 @@
 
 > 我们会定期维护，保证所有链接的有效性、新闻的时效性
 
+### 2023-02
+
+- [2 月 1 日至 2 日 CNCF CloudNativeSecurityCon 会议即将举行，目前会议议程已发布](https://events.linuxfoundation.org/cloudnativesecuritycon-north-america/program/schedule/)
+  
+    CloudNativeSecurityCon 首个围绕云原生安全项目和企业安全挑战实践的独立会议。
+    会议共有 72 场演讲，演讲主题包括体系结构和策略、安全软件开发、供应链安全、身份和访问、取证等。
+
 ### 2023-01
+
+- [1 月 9 日云原生产业联盟年会将在线上举行](https://mp.weixin.qq.com/s/cyVz5LC4JJ7ImRuqtOYqGA)
+  
+    云原生产业联盟（CNIA）是云计算开源产业联的子联盟，由国内顶尖云原生厂商、行业云原生典型用户联合组成。
+    会上将发布 3 大报告：《应用现代化建设指南》、《2022 中国云原生安全用户调查报告》、《2022  Serverless 用户调查报告》，
+    以及 5 大云原生领域的评测：存储、安全、大数据、混部、中间件。
 
 - [1 月 2 日 CNCF 即将开启 2023 年技术监督委员会（TOC）选举](https://www.cncf.io/blog/2022/12/01/cncf-toc-elections-for-2023/)
   
@@ -13,6 +26,19 @@
     有必要的条件和时间可参与到 TOC 的工作中，并且能够在讨论中保持厂商或项目的中立性。
 
 ### 2022-12
+
+- [12 月 29 日第一届混合云技术发展论坛将线上举行](https://mp.weixin.qq.com/s/0ZRnEimZQrO3tHVPpiSLEg)
+  
+    大会由中国信通院、中国通信标准化协会主办，
+    届时将发布《混合云产业全景图（2022年）》框架、《混合云用户调查报告（2022年）》、新增混合云标准等重要成果，
+    并邀请混合云领域的代表厂商就混合云未来的发展、技术结构及行业问题带来干货分享。
+
+- [12 月 22 日商业软件评测机构 G2 发布《容器管理平台评测报告》](https://www.g2.com/categories/container-management?utf8=%E2%9C%93&selected_view=grid&segment=all#grid)
+  
+    G2 根据 G2 上的评论以及从在线资料和社交平台上收集的数据，对厂商及其产品进行评估，形成如下的 G2 Grid。
+    其中，X 轴代表客户满意度，Y 轴代表市场份额。
+    取得领导者地位的容器管理平台产品为：AWS Fargate、Amazon ECS、Amazon EKS 和 Mirantis Kubernetes Engine。
+    ![G2](./images/G2.png)
 
 - [Kasten 上线免费的云原生学习网站 KubeCampus.io](https://www.kasten.io/kubernetes/resources/blog/kubecon-detroit-recap-and-introducing-kubecampus)
   
@@ -36,6 +62,14 @@
     峰会定于 12 月 16 日在北京举行，将重点讨论 Upstream First 的成功实践和开源办公室（OSPO）的工作实践。
 
     此外，还将就降本增效、DevSecOps、开源文化、企业单位与开源共同体、许可、供应链、SBOM、项目共同体构建、成为开源世界的领导者等话题展开讨论。
+
+- [12 月 14 日赛迪顾问发布《2022中国私有云市场研究报告》](https://img02.ma.scrmtech.com/11018/1471/resource/1671000132/%E8%B5%9B%E8%BF%AA%E9%A1%BE%E9%97%AE-2022%E4%B8%AD%E5%9B%BD%E7%A7%81%E6%9C%89%E4%BA%91%E5%B8%82%E5%9C%BA%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A.pdf)
+  
+    报告对中国私有云和私有云系统平台的发展现状、市场规模、行业应用和产品结构、市场竞争及未来趋势等进行了全面解析。
+    2021 年，中国私有云系统平台市场规模达到 51.4 亿元，同比增长45.2%。
+    其中，容器平台的市场规模为 12.6 亿元，占私有云系统平台规模的 24.5 %。
+    2021 私有云系统平台厂商竞争力象限分析图如下：
+![private](./images/private.png)
 
 - [12 月 14 日第二届「云原生十大技术创新/先锋实践」评选正式启动](https://mp.weixin.qq.com/s/UZ_05I06VCJYN5MKLwO7IA)
 

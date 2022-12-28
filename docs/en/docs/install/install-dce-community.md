@@ -38,8 +38,8 @@ This page describes the installation procedure of DCE 5.0.
 1. On the k8s control plane (master node), download the dce5-installer binary package.
 
     ```shell
-    # Assume VERSION is v0.3.20
-    export VERSION=v0.3.20
+    # Assume VERSION is v0.3.30
+    export VERSION=v0.3.30
     curl -Lo ./dce5-installer http://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-${VERSION}
     ```
 
@@ -54,21 +54,23 @@ This page describes the installation procedure of DCE 5.0.
     - For a private cloud (virtual and physical machines), enable your load balancer (metallb) to avoid the NodePort instability caused by IP variations. Carefully plan your network and IP addresses. Here is an example for your reference:
 
         ```yaml
-        apiVersion: provision.daocloud.io/v1alpha1
+        apiVersion: provision.daocloud.io/v1alpha2
         kind: ClusterConfig
         spec:
-          LoadBalancer: metallb
-          istioGatewayVip: 10.6.229.10/32     # This is VIP for Istio gateway and is also the URL via which you can use DCE 5.0 on your web browser.
-          insightVip: 10.6.229.11/32          # This is the VIP used by the Insight-Server of the Global cluster to collect logs, metrics, and traces of all sub-clusters.
+          loadBalancer:
+            type: metallb
+            istioGatewayVip: 10.6.229.10/32     # This is VIP for Istio gateway and is also the URL via which you can use DCE 5.0 on your web browser.
+            insightVip: 10.6.229.11/32          # This is the VIP used by the Insight-Server of the Global cluster to collect logs, metrics, and traces of all sub-clusters.
         ```
 
     - For a public cloud, DCE integrates a Cloud Controller Manager to provide the load balancing capability for kubernetes. Here is an example for your reference:
 
         ``` yaml
-        apiVersion: provision.daocloud.io/v1alpha1
+        apiVersion: provision.daocloud.io/v1alpha2
         kind: ClusterConfig
         spec:
-          LoadBalancer: cloudLB
+          loadBalancer:
+            type: cloudLB
         ```
 
     - If you use NodePort to expose your console (for proof of concept (PoC)), you can skip the clusterConfig file and go to the next step.
@@ -100,10 +102,11 @@ This page describes the installation procedure of DCE 5.0.
 1. Ensure the port 32000 has been exposed to port 8888 from your cluster to external when you create the cluster with kind. The kind profile looks like:
         
     ``` yaml
-    apiVersion: provision.daocloud.io/v1alpha1
+    apiVersion: provision.daocloud.io/v1alpha2
     kind: ClusterConfig
     spec:
-      loadBalancer: cloudLB
+      loadBalancer:
+       type: cloudLB
     ```
 
 2. Get IP of the host with kind, such as `10.6.3.1` to perform the installation:

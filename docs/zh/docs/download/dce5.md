@@ -10,8 +10,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 文件名                      | 版本    | 架构 | 文件大小 | 下载                                           | 更新日期   |
 | ----------------------------- | ------- | -------- | ---------------------------------------------- | ---------- | ----------------------------- |
-| offline-centos7-community-v0.3.29-amd64.tar | v0.3.29 | AMD64 和 Linux | 9.2 GB | [:arrow_right: 下载页](./free/dce5-installer-v0.3.29.md) | 2022-12-16 |
-| offline-kylin-v10sp2-community-v0.3.29-arm64.tar | v0.3.29 | ARM64 和信创 | 6.9 GB | [:arrow_right: 下载页](./free/dce5-installer-v0.3.29.md) | 2022-12-16 |
+| offline-centos7-community-v0.3.29-amd64.tar | v0.3.29 | AMD 64 | 9.2 GB | [:arrow_right: 下载页](./free/dce5-installer-v0.3.29.md) | 2022-12-16 |
+| offline-kylin-v10sp2-community-v0.3.29-arm64.tar | v0.3.29 | ARM 64 | 6.9 GB | [:arrow_right: 下载页](./free/dce5-installer-v0.3.29.md) | 2022-12-16 |
 
 ## 下载商业版
 
@@ -19,8 +19,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 文件名            | 版本    | 架构 | 文件大小 | 下载                                               | 更新日期   |
 | ------------------- | ------- | -------- | -------------------------------------------------- | ---------- | ------------------- |
-| offline-centos7-v0.3.29-amd64.tar | v0.3.29 | AMD64 和 Linux | 22.9 GB | [:arrow_right: 下载页](./business/dce5-installer-v0.3.29.md) | 2022-12-16 |
-| offline-kylin-v10sp2-v0.3.29-arm64.tar | v0.3.29 | ARM64 和信创 | 19.9 GB | [:arrow_right: 下载页](./business/dce5-installer-v0.3.29.md) | 2022-12-16 |
+| offline-centos7-v0.3.29-amd64.tar | v0.3.29 | AMD 64 | 22.9 GB | [:arrow_right: 下载页](./business/dce5-installer-v0.3.29.md) | 2022-12-16 |
+| offline-kylin-v10sp2-v0.3.29-arm64.tar | v0.3.29 | ARM 64 | 19.9 GB | [:arrow_right: 下载页](./business/dce5-installer-v0.3.29.md) | 2022-12-16 |
 
 ## 下载子模块
 
@@ -29,7 +29,7 @@ DCE 5.0 包含众多子模块：全局管理、容器管理、可观测性、多
 
 | 模块     | 文件大小 | 下载                              | 更新日期   |
 | -------- | -------- | --------------------------------- | ---------- |
-| 全局管理 | 440 MB   | [:arrow_right: 下载页](./modules/ghippo.md) | 2022-11-29 |
+| 全局管理 | 440 MB   | [:arrow_right: 下载页](./modules/ghippo.md) | 2022-12-28 |
 
 !!! note
 

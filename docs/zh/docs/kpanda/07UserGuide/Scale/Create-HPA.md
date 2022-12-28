@@ -12,10 +12,12 @@ DaoCloud Enterprise 5.0 支持 Pod 资源基于指标进行弹性伸缩（Horizo
     2. 如果基于 CPU 利用率创建 HPA 策略，必须预先为工作负载设置配置限制（Limit），否则无法计算 CPU 利用率。
     3. 如果同时使用内置指标和多种自定义指，HPA 会根据多项指标分别计算所需伸缩副本数，取较大值（但不会超过设置 HPA 策略时配置的最大副本数）进行弹性伸缩。
 
-# 内置指标弹性伸缩策略
+## 内置指标弹性伸缩策略
+
 系统内置了 CPU 和内存两种弹性伸缩指标以满足用户的基础业务使用场景。
 
-## 前提条件
+### 前提条件
+
 在为工作负载配置内置指标弹性伸缩策略之前，需要满足以下前提条件：
 
 - 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
@@ -26,7 +28,7 @@ DaoCloud Enterprise 5.0 支持 Pod 资源基于指标进行弹性伸缩（Horizo
 
 - 已完成[`metrics-server 插件安装`](Install-metrics-server.md)。
 
-## 操作步骤
+### 操作步骤
 
 参考以下步骤，为工作负载配置内置指标弹性伸缩策略。
 
@@ -61,10 +63,12 @@ DaoCloud Enterprise 5.0 支持 Pod 资源基于指标进行弹性伸缩（Horizo
 
     ![工作负载](../../images/createScale09.png)
 
-# 自定义指标弹性伸缩策略
+## 自定义指标弹性伸缩策略
+
 当系统内置的 CPU 和内存两种指标不能够满足您业务的实际需求时，您可以通过配置 ServiceMonitoring 来添加自定义指标，并基于自定义指标实现弹性伸缩。
 
-## 前提条件
+### 前提条件
+
 在为工作负载配置自定义指标弹性伸缩策略之前，需要满足以下前提条件：
 
 - 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
@@ -77,7 +81,7 @@ DaoCloud Enterprise 5.0 支持 Pod 资源基于指标进行弹性伸缩（Horizo
 - 已完成 Insight 插件的安装。
 - 已完成 Prometheus-adapter 插件的安装。
 
-## 操作步骤
+### 操作步骤
 
 参考以下步骤，为工作负载配置指标弹性伸缩策略。
 

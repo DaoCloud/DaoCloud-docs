@@ -16,7 +16,7 @@ It is recommended to use the following options to deploy your k8s clusters.
 	
 !!! info
 
-	DaoCloud has set up a dedicated mirror for domestic users to download. Links with `https://files.m.daocloud.io/` indicate that mirror acceleration has been provided.
+	DaoCloud has set up a dedicated image for domestic users to download. Links with `https://files.m.daocloud.io/` indicate that image acceleration has been provided.
 
 ## Option 2: Deploy k8s clusters via Kubeadm
 

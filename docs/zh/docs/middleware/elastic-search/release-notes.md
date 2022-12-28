@@ -2,6 +2,22 @@
 
 本页列出 Elasticsearch 索引服务的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## v0.4.0
+
+发布日期：2022-12-25
+
+### API
+
+- **新增** `mcamel-elasticsearch` 获取集群已经分配的 NodePort 列表接口。
+- **新增** `mcamel-elasticsearch` 增加状态详情。
+- **新增** `mcamel-elasticsearch` 节点亲和性配置。
+- **修复** `mcamel-elasticsearch` 修复 kb 不存在时候，删除会失败的 BUG。  
+- **修复** `mcamel-elasticsearch` 修复 es exporter 离线失效的问题。  
+- **修复** `mcamel-elasticsearch` 修复 es 创建成功后没有返回 ports 信息的 bug。
+- **修复** `mcamel-elasticsearch` 查询实例列表和详情时，Kibana 的服务类型不符合预期。
+- **优化** `mcamel-elasticsearch` 可以展示公共的 es，纳管之前是不可以删除的。  
+- **优化** `mcamel-elasticsearch` 增加健康状态返回。  
+
 ## v0.3.6
 
 发布日期：2022-11-28
@@ -21,6 +37,8 @@
 ## v0.3.4
 
 发布日期：2022-10-28
+
+### API
 
 - **新增** 同步 pod 状态到实例详情页
 - **优化** workspace 界面逻辑调整

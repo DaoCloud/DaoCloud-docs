@@ -33,8 +33,8 @@
 1. 在 K8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../../download/dce5.md)）。
 
     ```shell
-    # 假定 VERSION 为 v0.3.29
-    export VERSION=v0.3.29
+    # 假定 VERSION 为 v0.3.30
+    export VERSION=v0.3.30
     curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     ```
 
@@ -51,21 +51,23 @@
     - 如果是非公有云环境（虚拟机、物理机），请启用负载均衡 (metallb)，以规避 NodePort 因节点 IP 变动造成的不稳定。请仔细规划您的网络，设置 2 个必要的 VIP，配置文件范例如下：
 
         ```yaml
-        apiVersion: provision.daocloud.io/v1alpha1
+        apiVersion: provision.daocloud.io/v1alpha2
         kind: ClusterConfig
         spec:
-          loadBalancer: metallb
-          istioGatewayVip: 10.6.229.10/32 # Istio gateway 的 VIP，也是 DCE 5.0 控制台的浏览器访问 IP
-          insightVip: 10.6.229.11/32      # 全局服务集群的 Insight-Server 采集所有子集群监控指标的网络路径所用的 VIP
+          loadBalancer:
+            type: metallb
+            istioGatewayVip: 10.6.229.10/32 # Istio gateway 的 VIP，也是 DCE 5.0 控制台的浏览器访问 IP
+            insightVip: 10.6.229.11/32      # 全局服务集群的 Insight-Server 采集所有子集群监控指标的网络路径所用的 VIP
         ```
 
     - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 K8s 负载均衡能力, 配置文件范例如下:
 
         ```yaml
-        apiVersion: provision.daocloud.io/v1alpha1
+        apiVersion: provision.daocloud.io/v1alpha2
         kind: ClusterConfig
         spec:
-          loadBalancer: cloudLB
+          loadBalancer:
+            type: cloudLB
         ```
 
 3. 安装 DCE 5.0。

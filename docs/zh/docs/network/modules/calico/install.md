@@ -1,6 +1,20 @@
-# 安装
+# 安装参数配置
 
 本页说明用 Kubespray 安装 Calico 时各项参数的配置。
+
+## 前提条件
+
+在 DCE 5.0 中安装 Calico，需要在`创建集群`—>`网络配置`页面下，`网络插件`选择 `calico`。关于创建集群，请参阅[创建工作集群](../../../kpanda/07UserGuide/Clusters/CreateCluster.md)。
+
+![calico-install](../../images/calico-install.png)
+
+## 参数配置
+
+如果用户需要为 Calico 配置更多功能，可通过 Kubespray 安装 Calico。关于使用 Kubespray 安装 Calico 时的各项参数配置，请在`高级配置`—>`自定义参数`下根据需要添加并填写。
+
+![calico-install](../../images/calico-arg.png)
+
+以下介绍使用 Kubespray 安装 Calico 时的各项参数配置：
 
 - `enable_dual_stack_networks`： 若设置为`true`，将为 pod 和 service 提供 IPv4 和 IPv6 网络。
 

@@ -34,14 +34,14 @@
 
 1. 配置仓库。
 
-    ```shell
+    ```bash
     helm repo add mcamel-release https://release.daocloud.io/chartrepo/mcamel
     helm repo update
     ```
 
 2. 查看版本。
 
-    ```shell
+    ```bash
     helm search repo mcamel-release/mcamel-redis --versions
     NAME                            CHART VERSION   APP VERSION     DESCRIPTION
     mcamel-release/mcamel-redis     0.1.3           0.1.3           A Helm chart for Kubernetes
@@ -49,7 +49,7 @@
 
 3. 安装和升级。
 
-    ```shell
+    ```bash
     helm upgrade --install mcamel-redis --create-namespace -n mcamel-system --cleanup-on-fail \
     --set global.mcamel.imageTag=v0.1.3 \
     --set global.imageRegistry=release.daocloud.io \
@@ -59,11 +59,11 @@
 
     参数说明：
 
-    ```shell
+    ```bash
     --set ui.image.tag: 指定前端镜像版本
-    --set ghippo.createCrd: 注册ghippo路由,默认开启
-    --set insight.serviceMonitor.enabled: 开启监控,默认开启
-    --set insight.grafanaDashboard.enabled: 开启监控面板,默认开启
+    --set ghippo.createCrd: 注册 ghippo 路由，默认开启
+    --set insight.serviceMonitor.enabled: 开启监控，默认开启
+    --set insight.grafanaDashboard.enabled: 开启监控面板，默认开启
 
     # 全局参数
     --set global.mcamel.imageTag: mcamel-redis 镜像版本
@@ -76,7 +76,7 @@
 
 ### 卸载 mcamel-Redis
 
-```shell
+```bash
 helm uninstall mcamel-redis -n mcamel-system
 ```
 

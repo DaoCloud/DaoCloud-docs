@@ -4,15 +4,26 @@
 
 ## 创建 Pod 多网卡场景
 
+参阅 [multus-underlay](../network/modules/multus-underlay/what.md) 文档页面。
+
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/pod-cnis.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
 ## F5network 的安装与使用
 
+参阅 [F5 安装](../network/modules/f5networks/install.md) 文档页面。
+
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/f5network.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
+## SR-IOV 的安装与使用
+
+参阅 [SR-IOV](../network/modules/multus-underlay/sriov.md) 文档页面。
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/SR-IOV.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
