@@ -1,12 +1,14 @@
 # 网格多云部署
 
+本页说明如何在多云环境下部署服务网格。
+
 ## 前置条件
 
 ### 集群要求
 
-1. **集群类型与版本**：明确当前集群的类型与版本，确保后续安装的服务网格能够在该集群中正常运行。
-2. **提供可靠的 IP**：控制面集群必须提供一个可靠的 IP 给其他数据面集群来访问控制面。
-3. **授权**：加入网格的集群需要提供一个拥有足够权限的远程秘钥，允许 Mspider 对集群进行安装组件以及 Istio 控制面访问其他集群的 API Server。
+1. **集群类型与版本** ：明确当前集群的类型与版本，确保后续安装的服务网格能够在该集群中正常运行。
+2. **提供可靠的 IP** ：控制面集群必须提供一个可靠的 IP 给其他数据面集群来访问控制面。
+3. **授权** ：加入网格的集群需要提供一个拥有足够权限的远程秘钥，允许 Mspider 对集群进行安装组件以及 Istio 控制面访问其他集群的 API Server。
 
 ### 多集群区域规划
 
@@ -18,7 +20,7 @@
 
 这些概念的作用主要在于帮助 Istio 管理不同区域间的服务可用性。例如，在多集群部署中，如果一个服务在 Zone A 中出现故障，Istio 可以通过配置自动将服务流量转移到 Zone B，从而保证服务可用性。
 
-配置方式是通过在集群的**每个节点**添加相应的 Label：
+配置方式是通过在集群的 **每个节点** 添加相应的 Label：
 区域 | Label|
 --|------|
 Region | topology.kubernetes.io/region|
@@ -52,9 +54,9 @@ SubZone | topology.istio.io/subzone|
 
 - 单网络模式
   > 明确集群之间 Pod 网络是否能够直接通。
-  > 如果 Pod 网络能够直接通讯，证明是同网络模式，但是要注意如果其中 **Pod 网络出现冲突**，就需要选择不同网络模式
+  > 如果 Pod 网络能够直接通讯，证明是同网络模式，但是要注意如果其中 **Pod 网络出现冲突** ，就需要选择不同网络模式
 - 多网络模式
-  > 如果集群之间网络不通，需要给集群划分**网络 ID**，并且需要不同网络区域的集群安装东西网关，并且配置相关配置，具体操作步骤在下面章节[不同网络模式的网格组件安装与配置](#不同网络模式的网格组件安装与配置)中。
+  > 如果集群之间网络不通，需要给集群划分 **网络 ID** ，并且需要不同网络区域的集群安装东西网关，并且配置相关配置，具体操作步骤在下面章节[不同网络模式的网格组件安装与配置](#不同网络模式的网格组件安装与配置)中。
 
 ### 规划表单
 
@@ -98,6 +100,7 @@ SubZone | topology.istio.io/subzone|
 ### 接入集群
 
 如果不是通过 Kpanda 容器管理平台创建的集群，例如已经存在的集群，或者通过自定义方式（类似 kubeadm 创建 or Kind 集群）创建的集群都需要将集群接入 Kpanda。
+
 ![image-20221206114406877](images/kpanda-import-cluster0.png)
 
 ![image-20221206114131556](images/kpanda-import-cluster.png)
@@ -122,7 +125,7 @@ Kpanda 创建集群方式创建的集群将默认安装 Insight Agent 组件。
 
 ### 创建网格
 
-首先在网格管理页面 --> 创建网格：
+首先在网格管理页面 --> `创建网格`：
 
 ![image-20221206133505678](images/create-mesh1.png)
 
@@ -132,7 +135,7 @@ Kpanda 创建集群方式创建的集群将默认安装 Insight Agent 组件。
 2. 输入唯一的网格名称
 3. 按照前置条件环境，选择预选的符合要求的网格版本
 4. 选择托管控制面所在的集群
-5. 负载均衡 IP：该参数为暴露控制面的 Istiod 所需要的参数，需要预先准备。
+5. 负载均衡 IP：该参数为暴露控制面的 Istiod 所需要的参数，需要预先准备
 6. 镜像仓库：在私有云中，需要将网格所需的镜像上传仓库，公有云建议填入`release.daocloud.io/mspider`
 
 ![image-20221206134039584](images/create-mesh2.png)
@@ -155,7 +158,7 @@ Kpanda 创建集群方式创建的集群将默认安装 Insight Agent 组件。
 
 本文演示 demo 采用了 metallb 的方式，给所属 LoadBalancer Service 分配 IP，相关部署与配置参考[Metallb 安装配置](#metallb-安装配置)部分。
 
-部署完 metallb 以后，再次[确认托管网格控制面服务](#确认托管网格控制面服务)
+部署完 metallb 以后，再次[确认托管网格控制面服务](#确认托管网格控制面服务)。
 
 #### 验证托管控制面 Istiod `EXTERNAL IP` 是否通畅
 
@@ -175,7 +178,7 @@ curl -I "${hosted_istiod_ip}:443"
 
 ![image-20221206174331110](images/hosted-istiod-lb-ip.png)
 
-确认托管网格控制面服务`istiod-mdemo-mesh-hosted-lb ` `EXTERNAL-IP` 为`10.64.30.72`
+确认托管网格控制面服务 `istiod-mdemo-mesh-hosted-lb ` `EXTERNAL-IP` 为 `10.64.30.72`。
 
 ##### 手动配置网格托管控制面 Istiod 参数
 
@@ -232,7 +235,7 @@ Istio 要求用户每个工作集群安装 Istio 时，显示的定义`网络 ID
 
 ### 手动为工作集群配置`网络 ID`
 
-由于工作集群网络的不同，需要手动给每个工作集群配置 `网络 ID` ，如果在实际环境中，集群之间 Pod 网络能够相互直达，就可以配置成同一个 `网络 ID`。
+由于工作集群网络的不同，需要手动给每个工作集群配置 `网络 ID`，如果在实际环境中，集群之间 Pod 网络能够相互直达，就可以配置成同一个 `网络 ID`。
 
 让我们开始配置`网络 ID` ，其具体流程如下：
 
@@ -240,17 +243,17 @@ Istio 要求用户每个工作集群安装 Istio 时，显示的定义`网络 ID
 2. 然后在`自定义资源模块` --> 搜索资源 `MeshCluster`
 3. `mspider-system`命名空间下找到加入网格的工作集群，本次案例的工作集群有：`mdemo-cluster2`、`mdemo-cluster3`
 4. 以 `mdemo-cluster2` 为例，编辑 YAML
-   - 找到字段 `.spec.meshedParams[].params`， 给其中参数列增加 `网络 ID` 字段
-   - 参数列的注意事项：
-     > 需要确认 `global.meshID: mdemo-mesh` 是否为同一个网格 ID
-     > 需要确认集群角色 `global.clusterRole: HOSTED_WORKLOAD_CLUSTER` 是否为工作集群
-   - 添加参数 `istio.custom_params.values.global.network`，其值按照最初的[规划表单](#规划表单)中的网络 ID：`network-c2`
+    - 找到字段 `.spec.meshedParams[].params`， 给其中参数列增加 `网络 ID` 字段
+    - 参数列的注意事项：
+        > 需要确认 `global.meshID: mdemo-mesh` 是否为同一个网格 ID
+        > 需要确认集群角色 `global.clusterRole: HOSTED_WORKLOAD_CLUSTER` 是否为工作集群
+    - 添加参数 `istio.custom_params.values.global.network`，其值按照最初的[规划表单](#规划表单)中的网络 ID：`network-c2`
 
-![image-20221207172722008](images/add-network-id1.png)
+    ![image-20221207172722008](images/add-network-id1.png)
 
-![image-20221207173005911](images/add-network-id2.png)
+    ![image-20221207173005911](images/add-network-id2.png)
 
-![image-20221207174042704](images/add-network-id3.png)
+    ![image-20221207174042704](images/add-network-id3.png)
 
 重复上述步骤，给所有工作集群 (`mdemo-cluster1、mdemo-cluster2、mdemo-cluster3`) 加上 `网络 ID`
 
@@ -275,16 +278,15 @@ Istio 要求用户每个工作集群安装 Istio 时，显示的定义`网络 ID
 
 在工作集群中通过 IstioOperator 资源安装东西网关，东西网关的 YAML 如下：
 
-> ！！！注意：
->
-> 一定要根据当前集群的 `网络 ID` 修改参数
+!!! note
 
-```bash
+    一定要根据当前集群的 `网络 ID` 修改参数。
+
+```bash linenums="1"
 # cluster1
 CLUSTER_NET_ID=network-c1
 CLUSTER=mdemo-cluster1
 LB_IP=10.64.30.73
-
 
 # cluster2
 CLUSTER_NET_ID=network-c2
@@ -424,22 +426,22 @@ mdemo-cluster1 | :heart: VERSION=vc3 | :heart:
 
 - 镜像地址：
 
-  - helloworld: docker.m.daocloud.io/istio/examples-helloworld-v1
-  - Sleep: curlimages/curl
+    - helloworld: docker.m.daocloud.io/istio/examples-helloworld-v1
+    - Sleep: curlimages/curl
 
 - **helloworld** 工作负载增加对应 **label**
-  - app：helloworld
-  - version：${VERSION}
+    - app：helloworld
+    - version：${VERSION}
 - **helloworld** 工作负载增加对应的版本**环境变量**
-  - SERVICE_VERSION: ${VERSION}
+    - SERVICE_VERSION: ${VERSION}
 
-![image-20221226095647090](images/create-demo1.png)
+![image-20221226095647090](images/create-demo11.png)
 
-![image-20221226100533974](images/create-demo2.png)
+![image-20221226100533974](images/create-demo22.png)
 
-![image-20221226101100684](images/create-demo3.png)
+![image-20221226101100684](images/create-demo33.png)
 
-![image-20221226102025014](images/create-demo5.png)
+![image-20221226102025014](images/create-demo55.png)
 
 #### 命令行部署 demo
 
@@ -447,7 +449,7 @@ mdemo-cluster1 | :heart: VERSION=vc3 | :heart:
 [gen-helloworld.sh](https://github.com/istio/istio/blob/1.16.0/samples/helloworld/gen-helloworld.sh)
 [sleep.yaml](https://github.com/istio/istio/blob/1.16.0/samples/sleep/sleep.yaml)
 
-```bash
+```bash linenums="1"
 # -------------------- cluster1 --------------------
 kubectl create  namespace sample
 kubectl label namespace sample istio-injection=enabled
@@ -455,10 +457,8 @@ kubectl label namespace sample istio-injection=enabled
 # deploy helloworld vc1
 bash gen-helloworld.sh --version vc1 | sed -e "s/docker.io/docker.m.daocloud.io/" | kubectl apply  -f - -n sample
 
-
 # deploy sleep
 kubectl apply  -f sleep.yaml -n sample
-
 
 # -------------------- cluster2 --------------------
 kubectl create  namespace sample
@@ -470,8 +470,6 @@ bash gen-helloworld.sh --version vc2 | sed -e "s/docker.io/docker.m.daocloud.io/
 # deploy sleep
 kubectl apply  -f sleep.yaml -n sample
 
-
-
 # -------------------- cluster3 --------------------
 kubectl create  namespace sample
 kubectl label namespace sample istio-injection=enabled
@@ -481,12 +479,11 @@ bash gen-helloworld.sh --version vc3 | sed -e "s/docker.io/docker.m.daocloud.io/
 
 # deploy sleep
 kubectl apply  -f sleep.yaml -n sample
-
 ```
 
 ### 验证 demo 集群网络
 
-```bash
+```bash linenums="1"
 # 任意选择一个集群执行
 while true; do kubectl exec -n sample -c sleep  \
                "$(kubectl get pod -n sample -l app=sleep -o jsonpath='{.items[0].metadata.name}')"    \
@@ -548,7 +545,7 @@ kubeadm init --image-repository registry.aliyuncs.com/google_containers \
 
 #### 创建 kind 集群
 
-```bash
+```bash linenums="1"
 cat <<EOF > kind-cluster1.yaml
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
@@ -582,7 +579,6 @@ EOF
 
 kind create cluster --config kind-cluster1.yaml --name mdemo-kcluster1
 kind create cluster --config kind-cluster2.yaml --name mdemo-kcluster2
-
 ```
 
 ### Metallb 安装配置
@@ -610,7 +606,7 @@ kind create cluster --config kind-cluster2.yaml --name mdemo-kcluster2
 [MetalLB 官方文档](https://metallb.org/installation/)
 注意：如果集群的 CNI 使用的是 calico,你需要禁用 calico 的 BGP 模式，否则会影响 MetalLB 的正常工作。
 
-```bash
+```bash linenums="1"
 # 如果 kube-proxy 使用的是 IPVS 模式，你需要启用 staticARP
 # see what changes would be made, returns nonzero returncode if different
 kubectl get configmap kube-proxy -n kube-system -o yaml | \
@@ -662,7 +658,7 @@ kubectl annotate service -n istio-system istiod-mdemo-mesh-hosted-lb metallb.uni
 
 #### 验证
 
-```bash
+```bash linenums="1"
 kubectl create deploy nginx --image docker.m.daocloud.io/nginx:latest --port 80 -n default
 kubectl expose deployment nginx --name nginx-lb --port 8080 --target-port 80 --type LoadBalancer -n default
 
@@ -686,6 +682,6 @@ curl -I 10.6.230.71:8080
 
 ### 查询全局服务集群
 
-通过 Kpanda 容器管理的集群列表界面，通过搜索 `集群角色：全局服务集群`
+通过 Kpanda 容器管理的集群列表界面，通过搜索 `集群角色：全局服务集群`。
 
 ![image-20221206175326079](images/get-kpanda-global-cluster.png)
