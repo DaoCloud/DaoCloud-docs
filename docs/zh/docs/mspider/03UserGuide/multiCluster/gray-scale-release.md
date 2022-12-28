@@ -1,6 +1,5 @@
 # 多集群灰度发布
 
-
 多集群灰度发布的实现逻辑是，通过在不同集群部署不同的业务应用，然后通过服务网格配置相应的策略实现业务版本之间流量调整，然后根据运行情况下线版本。
 
 前置准备，参考网格多云部署文档，搭建网格基础设施。
@@ -15,7 +14,7 @@
 
 ![image-20221214194740800](images/create-demo.png)
 
-选择对应集群（mdemo-cluster2）与命名空间，并且配置工作负载基本信息
+选择对应集群（mdemo-cluster2）与命名空间，并且配置工作负载基本信息。
 
 ![image-20221214194845493](images/create-demo1.png)
 
@@ -48,7 +47,7 @@
 
 首先选择上面一致命名空间（gray-demo），并且在网格页面开启该命名空间边车注入。
 
-部署流程与上面一样，其主要区别是
+部署流程与上面一样，其主要区别是：
 
 - 镜像发生了变化：docker.m.daocloud.io/istio/examples-helloworld-v2
 - 在容器平台给相应 **容器组标签** 加上 label "version"："v2"
@@ -57,17 +56,17 @@
 
 ### 多集群目标规则
 
-首先创建 DestinationRule，通过定义 SubSet 定义不同集群的业务版本
+首先创建 DestinationRule，通过定义 SubSet 定义不同集群的业务版本。
 
 其标签键值对为上文中添加的容器组标签：`version: <VERSION>`
 
-策略：必须开启 ISTIO 双向 TLS
+策略：必须开启 Istio 双向 TLS
 
 ![image-20221214215011703](images/demo-dr.png)
 
 ![image-20221216160812297](images/demo-dr1.png)
 
-必须开启 **ISTIO 双向** TLS 模式
+必须开启 **Istio 双向** TLS 模式
 
 ![image-20221214215349736](images/demo-dr2.png)
 
@@ -125,7 +124,7 @@ spec:
         - "*"
 ```
 
-然后配置访问服务所需的虚拟服务规则
+然后配置访问服务所需的虚拟服务规则。
 
 ![image-20221216162915930](images/gw-vs.png)
 
@@ -166,9 +165,11 @@ spec:
 **INGRESS_LB_IP** 是指 Ingress 网格负载均衡地址，可以在容器管理平台中查看，如果没有有效的负载均衡 IP 可以通过 NodePort 方式访问。
 
 ![image-20221216164826180](images/check-ingress-lb.png)
+
 （由于容器管理平台界面无法直接查看外部 IP，因此使用控制台的能力查看）
 
 在浏览器中访问： http://${INGRESS_LB_IP}/hello
-确认其 v1 与 v2 版本的访问比例是否与 上面策略的比例 8:2 。
+
+确认其 v1 与 v2 版本的访问比例是否与上面策略的比例为 8:2
 
 ![image-20221216164340409](images/get-hello.png)
