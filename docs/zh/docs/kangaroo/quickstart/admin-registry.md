@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Admin 快速使用镜像仓库为平台服务
 
 在 DCE 5.0 中有托管 Harbor（在 DCE 上自建的 Harbor）和仓库集成（集成外部的 Habor 或 Docker Registry）两种镜像仓库管理方式：
