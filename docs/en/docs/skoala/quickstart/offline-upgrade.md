@@ -8,15 +8,15 @@ This page explains how to install or upgrade the microservice engine module afte
 
 ## Load the image from the installation package
 
-You can load the image in one of the following two ways. When there is a mirror warehouse in the environment, it is recommended to select chart-syncer to synchronize the mirror to the mirror warehouse. This method is more efficient and convenient.
+You can load the image in one of the following two ways. When there is a container registry in the environment, it is recommended to select chart-syncer to synchronize the image to the container registry. This method is more efficient and convenient.
 
-### chart-syncer synchronously mirrors to the mirror warehouse
+### chart-syncer synchronously mirrors to the container registry
 
 1. Create load-image.yaml
 
     !!! note
 
-        All parameters in this YAML file are required. You need a private mirror warehouse and modify related configurations.
+        All parameters in this YAML file are required. You need a private container registry and modify related configurations.
 
     === "chart repo installed"
 
@@ -26,18 +26,18 @@ You can load the image in one of the following two ways. When there is a mirror 
         source:
           intermediateBundlesPath: skoala-offline # The relative path to execute the charts-syncer command, not the relative path between this YAML file and the offline bundle
         target:
-          containerRegistry: 10.16.23.145 # need to be changed to your mirror warehouse url
-          containerRepository: release.daocloud.io/skoala # need to be changed to your mirror warehouse
+          containerRegistry: 10.16.23.145 # need to be changed to your container registry url
+          containerRepository: release.daocloud.io/skoala # need to be changed to your container registry
           repo:
             kind: HARBOR # Can also be any other supported Helm Chart repository class
             url: http://10.16.23.145/chartrepo/release.daocloud.io # need to change to chart repo url
             auth:
-            username: "admin" # Your mirror warehouse username
-            password: "Harbor12345" # Your mirror warehouse password
+            username: "admin" # Your container registry username
+            password: "Harbor12345" # Your container registry password
           containers:
             auth:
-              username: "admin" # Your mirror warehouse username
-              password: "Harbor12345" # Your mirror warehouse password
+              username: "admin" # Your container registry username
+              password: "Harbor12345" # Your container registry password
         ```
 
     === "chart repo not installed"
@@ -48,15 +48,15 @@ You can load the image in one of the following two ways. When there is a mirror 
         source:
           intermediateBundlesPath: skoala-offline # The relative path to execute the charts-syncer command, not the relative path between this YAML file and the offline bundle
         target:
-          containerRegistry: 10.16.23.145 # need to be changed to your mirror warehouse url
-          containerRepository: release.daocloud.io/skoala # need to be changed to your mirror warehouse
+          containerRegistry: 10.16.23.145 # need to be changed to your container registry url
+          containerRepository: release.daocloud.io/skoala # need to be changed to your container registry
           repo:
             kind: LOCAL
             path: ./local-repo # chart local path
           containers:
             auth:
-              username: "admin" # Your mirror warehouse username
-              password: "Harbor12345" # Your mirror warehouse password
+              username: "admin" # Your container registry username
+              password: "Harbor12345" # Your container registry password
         ```
 
 1. Execute the synchronous mirroring command.
@@ -152,10 +152,10 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
     6. Execute `helm upgrade`.
 
-        Before upgrading, it is recommended that you override the `global.imageRegistry` field in bak.yaml to the address of the currently used mirror repository.
+        Before upgrading, it is recommended that you override the `global.imageRegistry` field in bak.yaml to the address of the currently used container registry.
 
         ```shell
-        export imageRegistry={your mirror repository}
+        export imageRegistry={your container registry}
         ```
 
         ```shell
@@ -181,7 +181,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
         Before upgrading, it is recommended that you overwrite `global.imageRegistry` in bak.yaml to the address of the current image registry.
 
         ```shell
-        export imageRegistry={your mirror repository}
+        export imageRegistry={your container registry}
         ```
 
         ```shell
