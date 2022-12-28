@@ -20,4 +20,10 @@
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/helm-app.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
+## Upgrade Cluster Version
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/cluster-upgrade.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }
