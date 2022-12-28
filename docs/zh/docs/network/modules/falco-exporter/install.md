@@ -2,11 +2,9 @@
 
 本页介绍如何安装 Falco-exporter 组件。
 
-## 安装须知
+!!! note
 
-在安装使用 Falco-exporter 之前，需要[安装](../falco/install.md)并运行 Falco，并启用 gRPC 输出（默认通过 Unix 套接字启用）。可以在[此处](https://github.com/falcosecurity/charts/tree/master/falco#enabling-grpc) 找到在 Falco Helm Chart 中启用 gRPC 输出的说明。
-
-## 安装步骤
+    在安装使用 Falco-exporter 之前，需要[安装](../falco/install.md)并运行 Falco，并启用 gRPC 输出（默认通过 Unix 套接字启用）。关于启用 gRPC 输出的更多信息，可参阅[在 Falco Helm Chart 中启用 gRPC 输出](https://github.com/falcosecurity/charts/tree/master/falco#enabling-grpc)。
 
 请确认您的集群已成功接入`容器管理`平台，然后执行以下步骤安装 Falco-exporter。
 
@@ -42,7 +40,9 @@
     - `Falco Prometheus Exporter` -> `Prometheus ServiceMonitor Settings` -> `Scrape Timeout`：用户自定义的抓取超时时间；如果未指定，则使用 Prometheus 默认的抓取超时时间。
 
     ![falco-exporter_helm-4](../../images/falco-exporter-install-5.png)
+
     ![falco-exporter_helm-4](../../images/falco-exporter-install-6.png)
+
    在如上界面中，填写以下参数:
 
     - `Falco Prometheus Exporter` -> `Prometheus prometheusRules` -> `Install prometheusRules`：创建 PrometheusRules，对优先事件发出警报，默认开启。
