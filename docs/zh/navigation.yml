@@ -41,7 +41,9 @@ nav:
               - 删除集群: kpanda/07UserGuide/Clusters/DeleteCluster.md
               - 集群角色: kpanda/07UserGuide/Clusters/ClusterRole.md
               - 集群状态: kpanda/07UserGuide/Clusters/ClusterStatus.md
+
           - 节点管理:
+              - 节点可用性检查: kpanda/07UserGuide/Nodes/NodeCheck.md
               - 节点配置: kpanda/07UserGuide/Nodes/NodeConfig.md
               - 节点扩容: kpanda/07UserGuide/Nodes/AddNode.md
               - 节点缩容: kpanda/07UserGuide/Nodes/DeleteNode.md
