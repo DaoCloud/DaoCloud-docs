@@ -1,11 +1,11 @@
 # Bind a registry space to workspace
 
 There are two types of registry spaces: public and private.
-Images in the public image space are public images, and images in the private image space are private images.
+Images in the public registry space are public images, and images in the private registry space are private images.
 
-For public images, when deploying applications in the container management module, users can click the `Select Image` button to select `container registry` - `registry Integration` in all the images in the public image space to deploy applications without any configuration.
+For public images, when deploying applications in the container management module, users can click the `Select Image` button to select `container registry` - `registry Integration` in all the images in the public registry space to deploy applications without any configuration.
 
-For a private image, the administrator must allocate the private image space to the workspace (tenant) before it can be used by members under the workspace to ensure the security of the private image.
+For a private image, the administrator must allocate the private registry space to the workspace (tenant) before it can be used by members under the workspace to ensure the security of the private image.
 
 Prerequisite: An external Harbor registry has been created or integrated, and one or more registry spaces have been created.
 
@@ -25,10 +25,10 @@ Prerequisite: An external Harbor registry has been created or integrated, and on
 
 ## FAQ
 
-1. When deploying an application in the Kubernetes namespace, the image in the image space cannot be selected through the "Select Image" button.
+1. When deploying an application in the Kubernetes namespace, the image in the registry space cannot be selected through the "Select Image" button.
 
     - Check whether the Kubernetes namespace is bound to a workspace (binding is required).
-    - Check whether the image space is bound to the workspace where the Kubernetes namespace is located (binding is required).
+    - Check whether the registry space is bound to the workspace where the Kubernetes namespace is located (binding is required).
     - To check whether the status of the registry space is private or public, switch to the following tab to find out.
 
     ![container registry](./images/bind-space-to-ws02.png)

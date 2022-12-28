@@ -433,7 +433,7 @@ This page shares some technical articles related to cloud native, and we hope th
      [Nocalhost](https://github.com/nocalhost/nocalhost) is an IDE-based cloud-native application development tool, and [Rainbond](https://github.com/goodrain/rainbond) is a cloud-native multi-cloud application management tool platform.
      Nocalhost can directly develop applications in Kubernetes. Rainbond can quickly deploy microservice projects without writing Yaml. Nocalhost combines Rainbond to accelerate the efficiency of microservice development.
 
-- [Two OCI mirror build tool introduction builders - melange and apko](https://blog.chainguard.dev/secure-your-software-factory-with-melange-and-apko/)
+- [Two OCI image build tool introduction builders - melange and apko](https://blog.chainguard.dev/secure-your-software-factory-with-melange-and-apko/)
 
      [apk](https://github.com/alpinelinux/apk-tools) directly uses Alpine's package management tool APK to build images, no need to use Dockerfile, only need to provide a declarative YAML manifest.
      [melange](https://github.com/chainguard-dev/melange) uses a declarative YAML pipeline to build APKs.

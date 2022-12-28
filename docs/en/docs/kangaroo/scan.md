@@ -28,7 +28,7 @@ When the user scans the image index, all indexed images will be scanned synchron
 
 For associated and integrated repositories, will appear in the list of images. You can manually scan some  images on demand.
 
-1. Enter the image list in the image registry, select an instance and image space, and click an image.
+1. Enter the image list in the image registry, select an instance and registry space, and click an image.
 
     ![image List](./images/scan01.jpg)
 
