@@ -1,20 +1,25 @@
-# Workspace Admin 快速使用镜像仓库为工作空间服务
+---
+hide:
+  - toc
+---
 
-在 DCE 5.0 中，Workspace Admin 能够通过关联仓库方式关联 Harbor 和 Docker Registry 两种外部镜像仓库。关联后工作空间成员能够在镜像列表中看到关联仓库的所有镜像，以及在工作空间下的命名空间中部署应用时能够通过镜像选择器选择该仓库中的镜像进行部署。
+# Workspace Admin Quickly use the container registry to serve the workspace
 
-假设您已经创建了一个外部 Harbor 或者 Docker Registry 镜像仓库，按照以下步骤可以将外部 Harbor 或者 Docker Registry 共享给工作空间成员使用。
+In DCE 5.0, Workspace Admin can associate two external container registrys, Harbor and Docker Registry, by associating warehouses. After association, members of the workspace can see all images of the associated repository in the image list, and can select the image in the repository for deployment through the image selector when deploying the application in the namespace under the workspace.
 
-前提条件为：
+Assuming that you have created an external Harbor or Docker Registry, follow the steps below to share the external Harbor or Docker Registry with workspace members.
 
-1. 您是 Workspace Admin，并且该工作空间下绑定了一些命名空间
-2. 您拥有一个或者多个外部镜像仓库（Harbor 或 Docker Registry）
+The prerequisites are:
 
-操作步骤为：
+1. You are a Workspace Admin, and some namespaces are bound under this workspace
+2. You have one or more external container registrys (Harbor or Docker Registry)
+
+The operation steps are:
 
 ```mermaid
 graph TB
 
-associate[关联仓库] --> push[推送镜像] --> deploy[部署应用]
+associate[Associated warehouse] --> push[Push image] --> deploy[Deploy app]
 
 classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
 classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
@@ -22,13 +27,13 @@ classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class associate,push,deploy cluster;
 
-click associate "https://docs.daocloud.io/kangaroo/related-registry/"
-click push "https://docs.daocloud.io/kangaroo/quickstart/push/"
-click deploy "https://docs.daocloud.io/kpanda/07UserGuide/Workloads/CreateDeploymentByImage/"
+click associate "https://docs.daocloud.io/en/kangaroo/related-registry/"
+click push "https://docs.daocloud.io/en/kangaroo/quickstart/push/"
+click deploy "https://docs.daocloud.io/en/kpanda/07UserGuide/Workloads/CreateDeploymentByImage/"
 ```
 
-预期结果：在该工作空间下的命名空间部署应用时能够通过镜像选择器，选择该镜像空间下的镜像进行部署应用。
+Expected result: When deploying an application in the namespace under this workspace, you can use the image selector to select the image under this image space to deploy the application.
 
-![选择镜像](../images/wsadmin01.png)
+![Select Image](../images/wsadmin01.png)
 
-![镜像选择](../images/wsadmin02.png)
+![Image Selection](../images/wsadmin02.png)

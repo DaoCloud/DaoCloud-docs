@@ -563,6 +563,9 @@ nav:
           - 托管 Harbor: kangaroo/hosted.md
           - 快速入门:
             - 纳管镜像仓库: kangaroo/quickstart/registry-in-one.md
+            - 推送镜像: kangaroo/quickstart/push.md
+            - Admin 快速使用镜像仓库: kangaroo/quickstart/admin-registry.md
+            - Workspace Admin 快速使用镜像仓库: kangaroo/quickstart/ws-admin-registry.md
           - 镜像扫描: kangaroo/scan.md
       - 通用参考:
         - Release Notes: release/rn5.0.md

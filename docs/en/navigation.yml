@@ -544,7 +544,10 @@ nav:
             - Create Registry Space: kangaroo/create-registry.md
           - Managed Harbor: kangaroo/hosted.md
           - Quick Start:
-            - Manage Registries: kangaroo/quickstart/registry-in-one.md
+            - Manage registry: kangaroo/quickstart/registry-in-one.md
+            - Push image: kangaroo/quickstart/push.md
+            - Admin quickly use registry: kangaroo/quickstart/admin-registry.md
+            - Workspace Admin quickly use registry: kangaroo/quickstart/ws-admin-registry.md
           - Scan image: kangaroo/scan.md
       - References:
         - Release Notes: release/rn5.0.md

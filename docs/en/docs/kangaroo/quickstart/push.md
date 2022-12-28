@@ -1,71 +1,71 @@
-# 推送镜像
+# Push image
 
-创建托管 Harbor 和镜像空间后，您可以按照如下说明登录并将镜像推送的镜像仓库中；或者登录原生 Harbor，查看原生 Harbor 在每个镜像空间（项目）下提供的引导。
+After creating managed Harbor and registry space, you can follow the instructions below to log in and push the image to the container registry; or log in to native Harbor to view the guidance provided by native Harbor under each registry space (project).
 
-## 推送方式一
+## Push method one
 
-前提：已创建托管 Harbor 和镜像空间
+Prerequisite: Managed Harbor and registry space have been created
 
-您可在本地构建新的容器镜像或从 DockerHub 上获取一个公开镜像用于测试。 本文以 DockerHub 官方的 Nginx 最新镜像为例，在命令行工具中依次执行以下指令，即可推送该镜像。请将 library 及 `nginx` 依次替换为您实际创建的镜像空间名称及镜像仓库名。
+You can build a new container image locally or grab a public image from DockerHub for testing. This article takes the latest official Nginx image of DockerHub as an example. Execute the following commands in sequence in the command line tool to push the image. Please replace library and `nginx` with the name of the registry space and container registry you actually created.
 
-1. 登录镜像仓库
-
-    ```bash
-    docker login --username=<镜像仓库登录名> <镜像仓库地址>
-    ```
-
-    示例：`docker login --username=admin http://test.lrf02.kangaroo.com`
-
-    在返回结果中输入镜像仓库密码（创建托管 Harbor 时设置的密码）
-
-1. 推送镜像
-
-    执行以下命令，给镜像打标签
+1. Log in to the container registry
 
     ```bash
-    docker tag <镜像仓库名称>:<镜像版本号> <镜像仓库地址>/<镜像空间名称>/<镜像仓库名称>:<镜像版本号>
+    docker login --username=<container registry login name> <container registry address>
     ```
 
-    示例：`docker tag nginx:latest http://test.lrf02.kangaroo.com/library/nginx:latest`
+    Example: `docker login --username=admin http://test.lrf02.kangaroo.com`
 
-    执行以下命令，推送镜像至镜像空间 library 中
+    Enter the container registry password in the returned result (the password set when creating managed Harbor)
+
+1. Push image
+
+    Execute the following command to label the image
 
     ```bash
-    docker push <镜像仓库地址>/<镜像空间名称>/<镜像仓库名称>:<镜像版本号>
+    docker tag <container registry name>:<artifact version> <container registry address>/<registry space name>/<container registry name>:<artifact version>
     ```
 
-    示例：`docker push http://test.lrf02.kangaroo.com/library/nginx:latest`
+    Example: `docker tag nginx:latest http://test.lrf02.kangaroo.com/library/nginx:latest`
 
-1. 拉取镜像
-
-    执行以下命令，拉取镜像。
+    Execute the following command to push the image to the image space library
 
     ```bash
-    docker pull <镜像仓库地址>/<镜像空间名称>/<镜像仓库名称>:<镜像版本号>
+    docker push <container registry address>/<registry space name>/<container registry name>:<artifact version>
     ```
 
-    示例：`docker pull http://test.lrf02.kangaroo.com/library/nginx:latest`
+    Example: `docker push http://test.lrf02.kangaroo.com/library/nginx:latest`
 
-## 推送方式二
+1. Pull the image
 
-前提：已创建托管 Harbor 和镜像空间
+    Execute the following command to pull the image.
 
-1. 在托管 Harbor 列表页面中，点击目标镜像仓库右侧的 `...`，点击`原生 Harbor`，进入原生 Harbor 的登录页。
+    ```bash
+    docker pull <container registry address>/<registry space name>/<container registry name>:<artifact version>
+    ```
 
-    ![原生 Harbor](../images/push01.png)
+    Example: `docker pull http://test.lrf02.kangaroo.com/library/nginx:latest`
 
-1. 输入创建托管 Harbor 时设置的用户名和密码进入原生 Harbor
+## Push method 2
 
-    ![输入用户名和密码](../images/push02.png)
+Prerequisite: Managed Harbor and registry space have been created
 
-1. 点击目标镜像空间（项目）的名称，进入镜像空间
+1. On the Managed Harbor list page, click `...` on the right side of the target registry, click `Native Harbor` to enter the login page of the native Harbor.
 
-    ![镜像空间](../images/push03.png)
+    ![Native Harbor](../images/push01.png)
 
-1. 点击右侧的推送命令，查看原生 Harbor 提供的推送命令。
+1. Enter the user name and password set when creating managed Harbor to enter native Harbor
 
-    ![查看推送命令](../images/push04.png)
+    ![Enter username and password](../images/push02.png)
+
+1. Click the name of the target registry space (project) to enter the registry space
+
+    ![registry Space](../images/push03.png)
+
+1. Click the push command on the right to view the push commands provided by native Harbor.
+
+    ![View push command](../images/push04.png)
 
 !!! tip
 
-    相对于方式一，原生 Harbor 的推送命令自动填入了镜像仓库地址和镜像空间名称。
+    Compared with method 1, the push command of the native Harbor automatically fills in the address of the container registry and the name of the registry space.
