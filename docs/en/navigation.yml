@@ -264,6 +264,10 @@ nav:
               - Benefits: skoala/intro/advantages.md
               - Env Requirements: skoala/intro/components.md
               - Release Notes: skoala/intro/release-notes.md
+          - Quickstart:
+              - Install microservice engine: skoala/quickstart/install.md
+              - Offline upgrade microservice engine: skoala/quickstart/offline-upgrade.md
+              - Select Workspace: skoala/quickstart/select-workspace.md
           - Select Workspace: skoala/select-workspace.md
           - Microservice:
               - Hosted Registry:
@@ -311,6 +315,8 @@ nav:
                   - Update DN: skoala/ms-gateway/domain/update-domain.md
                   - Configure DN Policy: skoala/ms-gateway/domain/domain-policy.md
                   - Delete DN: skoala/ms-gateway/domain/delete-domain.md
+          - Best Practices:
+              - Experience microservice: skoala/best-practice/use-skoala-01.md
       - Service Mesh:
           - Intro:
               - What is Service Mesh: mspider/01Intro/WhatismSpider.md
