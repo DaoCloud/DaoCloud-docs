@@ -5,9 +5,9 @@ hide:
 
 # 升级到 v0.12.x
 
-从 v0.12.0 开始，insight-agent 中 `node exporter` Chart 开始使用 [Kubernetes 推荐的标签](https://kubernetes.io/zh-cn/docs/concepts/overview/working-with-objects/common-labels/)。
-
-因此，在升级之前，请依次执行以下命令。
+0.12.x 将 kube-prometheus-stack chart 从 39.6.0 升级到 41.9.1，其中包括 prometheus-operator 升级到 v0.60.1, prometheus-node-exporter chart 升级到 4.3.0 等。
+ prometheus-node-exporter 升级后使用了 [Kubernetes 推荐 label](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/)，因此需要在升级前删除 `node-exporter` 的 daemonset。
+ prometheus-operator 更新了 CRD，因此需要在升级 insight agent 前执行如下命令: 
 
 ```shell linenums="1"
 kubectl delete daemonset insight-agent-prometheus-node-exporter -n insight-system
