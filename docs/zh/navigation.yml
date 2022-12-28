@@ -276,8 +276,12 @@ nav:
                   - 微服务命名空间: skoala/registry/managed/namespace.md
                   - 微服务列表: 
                       - skoala/registry/managed/servicelist/intro.md
+                      - 查看微服务详情: skoala/registry/managed/servicelist/check-details.md
                       - 服务治理策略: skoala/registry/managed/servicelist/governance-policy.md
                   - 微服务配置列表: skoala/registry/managed/configcenter.md
+                  - 监控:
+                      - 组件监控: skoala/registry/managed/monitor/components.md
+                      - 链路追踪: skoala/registry/managed/monitor/traces.md
                   - 插件中心: 
                       - skoala/registry/managed/plugins/plugin-center.md
                       - 启用 Sentinel 治理: skoala/registry/managed/plugins/sentinel.md
@@ -304,6 +308,7 @@ nav:
               - 服务接入: 
                   - 手动接入: skoala/ms-gateway/service/manual-integrate.md
                   - 自动纳管: skoala/ms-gateway/service/auto-manage.md
+              - 监控告警: skoala/ms-gateway/alert.md
               - 日志查看: 
                   - 请求日志: skoala/ms-gateway/logs/reqlog.md
                   - 实例日志: skoala/ms-gateway/logs/inslog.md
