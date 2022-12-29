@@ -9,6 +9,29 @@ Date: 2022-12-20
 
 This page lists all Release Notes of each version of Service Mesh, to provide your convenience to learn the evolution path and feature changes.
 
+## 2022-12-29
+
+### v0.12.0
+
+#### New features
+
+- Interface implementation of traffic transparent transmission function
+- Support for istio 1.15.4, 1.16.1
+
+#### Optimized
+
+- Added "unset" sidecar policy to the namespace sidecar management page to avoid sidecar policies at the namespace level from having a collateral impact on the workload level;
+- Publish pipeline parameter optimization
+- Optimize the logic of sidecar injection and sidecar resource limitation to avoid out-of-sync phenomenon
+
+#### Fixed
+
+- The problem that some components are not updated after grid upgrade
+- The problem that some resources are not cleared after the grid is removed - The sidecar resources are not synchronized correctly, instead the actual sidecar resources through the istio-proxy container in the Pod
+- Managed clusters cannot be used as working clusters
+- Injection is displayed incorrectly when sidecar injection instance is 0/0
+- After canceling sidecar injection, sidecar related information is still displayed
+
 ## 2022-11-30
 
 ### v0.11.1
@@ -30,7 +53,7 @@ This page lists all Release Notes of each version of Service Mesh, to provide yo
 - Optimize the mesh control plane processing process to avoid conflicts caused by updating objects that have been updated
 - Optimize mesh cluster access and removal logic
 
-#### Bug fixes
+#### Fixed
 
 - When the control plane is upgraded, components such as MCPC are not updated
 - Get cluster resource error
