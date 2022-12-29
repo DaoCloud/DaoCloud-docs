@@ -17,7 +17,17 @@ Harbor is an open source container registry service for secure hosting and effic
 - Break the calling barriers between modules, and support rapid image pull when deploying applications in the application workbench and container management module
 - Provides a unified management control plane, allowing administrators to manage the full lifecycle of multiple Harbor instances on the same interface.
 
-## Steps
+## Install Harbor Operator
+
+Managed Harbor uses Harbor Operator technology to manage the entire life cycle of Harbor creation, upgrade, and deletion.
+Before creating a managed Harbor, you need to install Harbor Operator in the container management, the minimum version requirement is 1.4.0.
+The installation steps are as follows:
+
+1. Enter the cluster management of `Container Management`, and select the cluster where Harbor needs to be installed.
+2. After entering the cluster, enter `Helm App` -> `Helm Charts`, search for Helm of Harbor Operator.
+3. Click `Install`.
+
+## Create managed Harbor
 
 1. Log in to the web console as a user with the Admin role, and click `container registry` from the left navigation bar.
 
@@ -33,9 +43,23 @@ Harbor is an open source container registry service for secure hosting and effic
 
 1. Fill in the database, Redis instance and image/Charts storage information and click `Next` (currently only supports access to external databases and Redis instances).
 
-    ![Specification configuration](images/hosted04.png)
+    Tips for filling out the database:
+
+    - Address: postgres://{host}:{port}, for example postgres://acid-minimal-cluster.default.svc:5432
+    - Username: Fill in the username to connect to the database
+    - Password: fill in the password to connect to the database
+
+    Redis filling is divided into stand-alone and sentinel modes:
+
+    - Fill in the address in stand-alone mode: redis://{host}:{port}, you need to replace the two parameters host and port.
+    - Fill in the address in sentinel mode: redis+sentinel://{host}:{port}?sentinelMasterId={master_id}, you need to replace the three parameters host, port, and master_id.
+    - Password: Fill in as required
+
+    ![Spec config](images/hosted04.png)
 
 1. Fill in the domain name, select the ingress instance, enter the administrator password and click `OK` (username/password is used to log in to the native Harbor instance, please keep the password safe).
+
+    Tips for filling in the domain name: http://{host}, `http://` in front of the host must be included.
 
     ![Access and Policy Binding](images/hosted05.png)
 
