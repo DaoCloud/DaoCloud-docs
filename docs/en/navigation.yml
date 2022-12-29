@@ -367,6 +367,10 @@ nav:
           - Upgrade:
               - Upgrade Istio: mspider/03UserGuide/upgrade/IstioUpdate.md
               - Upgrade Sidecar: mspider/03UserGuide/upgrade/SidecarUpdate.md
+          - Multi-cluster mesh:
+            - Deploy mesh with multicloud: mspider/03UserGuide/multiCluster/multiClusterInstall.md
+            - Multi-cluster network principle: mspider/03UserGuide/multiCluster/multi-cluster-net.md
+            - Multi-cluster grayscale releasea: mspider/03UserGuide/multiCluster/gray-scale-release.md
           - FAQs: mspider/07faq.md
       - Network:
           - Intro:

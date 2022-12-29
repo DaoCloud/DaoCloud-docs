@@ -381,7 +381,7 @@ nav:
               - 边车版本升级: mspider/03UserGuide/upgrade/SidecarUpdate.md
           - 多集群网格:
             - 网格多云部署: mspider/03UserGuide/multiCluster/multiClusterInstall.md
-            - 多集群网络通讯原理: mspider/03UserGuide/multiCluster/multi-cluster-network-and-arch.md
+            - 多集群网络通讯原理: mspider/03UserGuide/multiCluster/multi-cluster-net.md
             - 多集群灰度发布: mspider/03UserGuide/multiCluster/gray-scale-release.md
           - 常见问题: mspider/07faq.md
       - 云原生网络:
