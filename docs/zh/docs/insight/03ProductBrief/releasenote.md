@@ -35,7 +35,7 @@
 
 #### 新功能
 
-- **新增** insight-agent Helm 模版安装时支持表单化
+- **新增** insight-agent Helm 模板安装时支持表单化
 
 #### 优化
 

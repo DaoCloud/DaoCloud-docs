@@ -28,7 +28,7 @@ DCE 5.0 提供了[四种集群角色](../../kpanda/07UserGuide/Clusters/ClusterR
 
 前提：已经完成上一步单数据中心单管理集群的部署。
 
-1. 在某个工作集群详情界面使用 [helm 模版](../../kpanda/07UserGuide/helm/README.md) 安装 kubean，等待 kubean 状态变为运行中。
+1. 在某个工作集群详情界面使用 [helm 模板](../../kpanda/07UserGuide/helm/README.md) 安装 kubean，等待 kubean 状态变为运行中。
 
 1. 当前工作集群安装完成 kubean 后，集群角色将自动变为管理集群、按需在平台下的容器管理模块上基于管理集群创建一个或多个工作集群。
 
