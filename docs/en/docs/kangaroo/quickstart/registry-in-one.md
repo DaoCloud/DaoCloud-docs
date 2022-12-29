@@ -3,9 +3,9 @@ MTPE: todo
 date: 2022-12026
 ---
 
-# Manage all container registrys
+# Manage external container registries
 
-If you have one or more Harbor or Docker container registrys, you can use DCE 5.0 container registrys for unified management. Depending on the role permissions of the operator, two methods can be used:
+If you have one or more Harbor or Docker container registries, you can use DCE 5.0 container registries for unified management. Depending on the role permissions of the operator, two methods can be used:
 
 - Associated registry
 - Integrated registry

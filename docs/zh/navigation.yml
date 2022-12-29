@@ -41,7 +41,6 @@ nav:
               - 删除集群: kpanda/07UserGuide/Clusters/DeleteCluster.md
               - 集群角色: kpanda/07UserGuide/Clusters/ClusterRole.md
               - 集群状态: kpanda/07UserGuide/Clusters/ClusterStatus.md
-
           - 节点管理:
               - 节点可用性检查: kpanda/07UserGuide/Nodes/NodeCheck.md
               - 节点配置: kpanda/07UserGuide/Nodes/NodeConfig.md
@@ -382,8 +381,8 @@ nav:
               - 边车版本升级: mspider/03UserGuide/upgrade/SidecarUpdate.md
           - 多集群网格:
             - 网格多云部署: mspider/03UserGuide/multiCluster/multiClusterInstall.md
-            - 多集群网络通讯原理: mspider/03UserGuide/multiCluster/gray-scale-release.md
-            - 多集群灰度发布: mspider/03UserGuide/multiCluster/multi-cluster-network-and-arch.md
+            - 多集群网络通讯原理: mspider/03UserGuide/multiCluster/multi-cluster-net.md
+            - 多集群灰度发布: mspider/03UserGuide/multiCluster/gray-scale-release.md
           - 常见问题: mspider/07faq.md
       - 云原生网络:
           - 介绍:
@@ -566,7 +565,7 @@ nav:
             - 创建镜像空间: kangaroo/create-registry.md
           - 托管 Harbor: kangaroo/hosted.md
           - 快速入门:
-            - 集中管理所有镜像仓库: kangaroo/quickstart/registry-in-one.md
+            - 管理外部镜像仓库: kangaroo/quickstart/registry-in-one.md
             - 推送镜像: kangaroo/quickstart/push.md
             - Admin 快速使用镜像仓库: kangaroo/quickstart/admin-registry.md
             - Workspace Admin 快速使用镜像仓库: kangaroo/quickstart/ws-admin-registry.md
