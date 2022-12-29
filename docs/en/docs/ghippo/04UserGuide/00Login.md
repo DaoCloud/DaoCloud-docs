@@ -20,17 +20,17 @@ The simple process of user login is shown in the figure below.
 ```mermaid
 graph TB
 
-user[enter username] --> pass[enter password] --> judge([click to log in and verify username and password])
-judge -.Correct.->success[login successful]
-judge -.error.->fail[prompt error]
+user[Enter username] --> pass[Enter password] --> judge([Click to log in and verify username and password])
+judge -.Correct.->success[Login successful]
+judge -.error.->fail[Prompt error]
 
 classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill: #326ce5, stroke: #fff, stroke-width: 1px, color: #fff;
+classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
-class user, pass cluster;
+class user,pass cluster;
 class judge plain
-class success, fail k8s
+class success,fail k8s
 ```
 
 The user login interface is as shown in the figure below. For the specific login screen, please refer to the actual product.
