@@ -12,11 +12,11 @@ hide:
 3.  工作负载使用 固定 IP 池
 4. 工作负载使用自动创建固定 IP 池
 
-### 前提
+### 前提条件
 
-1. [SpiderPool 已成功部署。](../../modules/spiderpool/install.md)
-2. [Multus 搭配 Macvlan /SRI-OV 已成功部署。](../../modules/multus-underlay/install.md)
-3. 如使用手动选择 IP 池，请提前完成[IP 子网和 IP 池已创建](../../modules/spiderpool/createpool.md)。如使用自动创建固定 IP 池，只需要提前完成[ IP 池已创建](../../modules/spiderpool/createpool.md)
+1. [SpiderPool 已成功部署。](../install.md)
+2. [Multus 搭配 Macvlan /SRI-OV 已成功部署。](../multus-underlay/install.md)
+3. 如使用手动选择 IP 池，请提前完成[IP 子网和 IP 池已创建](../createpool.md)。如使用自动创建固定 IP 池，只需要提前完成[ IP 池已创建](../createpool.md)
 
 ### 界面操作
 
