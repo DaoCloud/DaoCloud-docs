@@ -15,7 +15,7 @@ hide:
 
 本页介绍如何进行产品化安装 Spiderpool 组件。
 
-1. 拥有一个 DCE 集群，输入 UI 地址登录 Web  管理界面，在导航的`容器管理` -> `集群列表`中，选择希望安装 Spiderpool 的集群。
+1. 拥有一个 DCE 集群，输入UI 地址登录 Web  管理界面，在导航的`容器管理` -> `集群列表`中，选择希望安装 Spiderpool 的集群。
 
 2. 在 `Helm 应用` -> `Helm 模板`中，选择 `system` 仓库和`网络`组件，点击安装 `spiderpool`。
 
