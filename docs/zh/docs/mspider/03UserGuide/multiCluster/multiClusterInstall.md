@@ -603,7 +603,7 @@ kind create cluster --config kind-cluster2.yaml --name mdemo-kcluster2
 
 #### 容器管理平台 Helm 安装
 
-推荐使用容器管理平台中 `Helm 应用` -> `Helm 模版` -> 找到 metallb -> `安装`。
+推荐使用容器管理平台中 `Helm 应用` -> `Helm 模板` -> 找到 metallb -> `安装`。
 
 ![安装 metallb](./images/install-metallb-from-helm.png)
 

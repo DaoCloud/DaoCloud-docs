@@ -181,7 +181,7 @@
 
 - [Google 混合云自动化配置工具 Anthos Config Management 更新](https://cloud.google.com/release-notes#September_15_2022)
 
-    更新内容包括：配置同步功能可作为 OCI 镜像同步存储在 Google Artifact Registry 或 Container Registry 中、Config Sync 支持从私有 Helm 仓库同步、支持用户提供的 CA 证书用于验证 Git 服务器的 HTTPS 连接、新增约束模版 K8sStorageClass。
+    更新内容包括：配置同步功能可作为 OCI 镜像同步存储在 Google Artifact Registry 或 Container Registry 中、Config Sync 支持从私有 Helm 仓库同步、支持用户提供的 CA 证书用于验证 Git 服务器的 HTTPS 连接、新增约束模板 K8sStorageClass。
 
 - [Grafana Cloud 观测平台集成 Cilium Enterprise，加强 Kubernetes 网络监控](https://grafana.com/blog/2022/11/17/introducing-the-cilium-enterprise-integration-in-grafana-cloud-for-kubernetes-network-monitoring/)
 

@@ -42,7 +42,7 @@
 - 位置感知负载均衡
 - HTTP 连接池
 - TCP 连接池
-- 客户端TLS
+- 客户端 TLS
 - 熔断
 
 ![目标规则列表](../../images/destirule06.png)
@@ -71,6 +71,6 @@
 
     ![更多操作](../../images/destirule05.png)
 
-YAML 创建方式与虚拟服务相似，用户可以直接借助内置模版直接创建 YAML 文件，如下图所示。
+YAML 创建方式与虚拟服务相似，您可以直接借助内置模板创建 YAML 文件，如下图所示。
 
 ![YAML 创建](../../images/destirule07.png)
