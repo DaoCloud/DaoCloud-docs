@@ -1,20 +1,27 @@
-# 通过 Metallb + istio-ingressgateway 获取客户端源 IP
+---
+MTPE: Jeanine-tw
+Revised: Jeanine-tw
+Pics: Jeanine-tw
+Date: 2022-12-29
+---
 
-## 背景
+# Get client source IPs via Metallb + istio-ingressgateway
 
-通过 Metallb ARP 模式，用户可以在`全局管理`—>`审计日志`中查看操作者的真实 IP,而不是被 SNAT 后的 IP 地址。通过 Metallb + istio-ingressgateway 获取客户端源 IP 的主要思路为: 将 istio-gateway pod 部署的
-节点与 Metallb 宣告的节点保持一致。
+## Background
 
-## 操作步骤
+With Metallb ARP mode, users can view the real IP of the operator in `Global Management`->`Audit Log`, instead of the IP address after SNAT. The main idea of getting the client source IP through Metallb + istio-ingressgateway is to connect the istio-gateway pod-deployed
+node with the one declared by Metallb.
 
-1. 给指定节点打上标签。
+## How to get client source IPs
+
+1. Label the specified node.
 
     ```shell
     kubectl label nodes demo-dev-worker-03 loadbalancerIPs.metallb.io=arp
     kubectl label nodes demo-dev-worker-04 loadbalancerIPs.metallb.io=arp
     ```
 
-2. 使 istio-ingressgateway Pod 调度到上述节点。
+2. Makes the istio-ingressgateway Pod scheduled to the above node.
 
     ```shell
           nodeSelector:
@@ -27,7 +34,7 @@
     istio-ingressgateway-9b8c76bfc-rr5lg           1/1     Running            0                  2d9h    192.168.138.159   demo-dev-worker-03   <none>           <none>
     ```
 
-3. 配置 Metallb 宣告上述节点作为 LB IPs 的下一跳。
+3. Configure Metallb to declare the above node as the next hop for LB IPs.
 
     ```shell
     [root@demo-dev-master-01 ~]# kubectl get l2advertisements.metallb.io -n metallb-system default-l2advertisement -o yaml
@@ -60,9 +67,9 @@
           loadbalancerIPs.metallb.io: arp
     ```
 
-    通过配置 `spec.nodeSelectors` 来实现绑定。
+    Binding is achieved by configuring `spec.nodeSelectors`.
 
-4. 修改 service: istio-ingressgateway 的 `spec.externalTrafficPolicy` = `Local` , 此模式可以保留真实源 IP:
+4. Modify `spec.externalTrafficPolicy` = `Local` for service: istio-ingressgateway. This mode can keep the real source IP:
 
     ```shell
     [root@demo-dev-master-01 ~]# kubectl get svc -n istio-system istio-ingressgateway -o yaml
@@ -126,7 +133,7 @@
         - ip: 10.6.229.180
     ```
 
-5. 在`全局管理`—>`审计日志`页面，在任意事件后点击`查看详情`，查看获取到的客户端源 IP：
+5. On the `Global Management`->`Audit Log` page, click `View Details` in any event to view the obtained client source IP.
 
     ![source-ip-1](../../images/source-ip-1.png)
 

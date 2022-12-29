@@ -401,6 +401,7 @@ nav:
               - Intro: network/modules/metallb/what.md
               - Install: network/modules/metallb/install.md
               - Use: network/modules/metallb/usage.md
+              - Get client source IPs: network/modules/metallb/source_ip.md
           - Multus-underlay:
               - Intro: network/modules/multus-underlay/what.md
               - Install: network/modules/multus-underlay/install.md
