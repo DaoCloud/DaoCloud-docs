@@ -5,9 +5,17 @@ hide:
 
 # 安装
 
+**前提条件**
+
+1.  在 DCE 5.0 集群内需要配合 [Macvlan](../modules/multus-underlay/macvlan.md)
+  + [Multus](../modules/multus-underlay/what.md) + [Calico](../modules/calico/what.md)/[Cillium](../modules/cilium/what.md) 使用 SpiderPool 。
+2. 使用前请先安装 [Multus](../docs/network/modules/multus-underlay/install.md) 以及 Underlay CNI（[Macvlan](../modules/multus-underlay/macvlan.md) 或 [SRIOV](../modules/multus-underlay/sriov.md)）安装，并确认待使用网卡接口和待使用子网。
+
+**步骤**
+
 本页介绍如何进行产品化安装 Spiderpool 组件。
 
-1. 拥有一个 DCE 集群，登录 global 集群的 Web UI 管理界面，在导航的`容器管理` -> `集群列表`中，登录希望安装 Spiderpool 的集群
+1. 拥有一个 DCE 集群，输入 UI 地址登录 Web  管理界面，在导航的`容器管理` -> `集群列表`中，选择希望安装 Spiderpool 的集群。
 
 2. 在 `Helm 应用` -> `Helm 模板`中，选择 `system` 仓库和`网络`组件，点击安装 `spiderpool`。
 
@@ -23,6 +31,8 @@ hide:
 
     上图中的各项参数含义为：
 
+    - `namespace`：部署 SpiderPool 组件的命名空间，默认为 `kube-system`。如改为其他 Namespace，界面可能会不可用
+
     - `global image Registry`：设置所有镜像的仓库地址，默认已经填写了可用的在线仓库，如果是私有化环境，可修改为私有仓库地址
 
     - `Spiderpool Agent Image repository`：设置镜像名，保持默认即可
@@ -36,9 +46,10 @@ hide:
     ![spiderpool instal3](../../images/spiderpool-install3.png)
 
     上图中的各项参数含义为：
-  
+
     - `Spiderpool Controller Setting` -> `replicas number`：设置 Spiderpool Controller 的副本数，该主要负责 Spiderpool 的控制器逻辑。
-      注意，该 Pod 是 hostnetwork 模式，并且在 Pod 之间设置了反亲和性，所以一个 Node 上最多部署一个 Pod。如果要部署大于 1 的副本数量，请确保集群的节点数充足，否则将导致部分 Pod 调度失败。
+      注意，该 Pod 是 hostnetwork 模式，并且在 Pod 之间设置了反亲和性，所以一个 Node 上最多部署一个 Pod。
+      如果要部署大于 1 的副本数量，请确保集群的节点数充足，否则将导致部分 Pod 调度失败。
 
     - `Spiderpool Controller Image` -> `repository`：设置镜像名，保持默认即可
 
@@ -51,7 +62,7 @@ hide:
     - `IP Family Setting -> enable IPv4`：是否开启 IPv4 支持。注意，若开启，给 pod 分配 IP 时，务必会尝试分配 IPv4 地址，否分会导致 Pod 启动失败。
       所以，务必打开后续的 `Cluster Default Ippool Installation` -> `install IPv4 ippool`，以创建集群的默认 IPv4 池
 
-    - `IP Family Setting -> enable IPv6`：是否开启 IPv6 支持。注意，若开启，给 pod 分配 IP 时，务必会尝试分配 IPv6 地址，否分会导致 Pod 启动失败
+    - `IP Family Setting -> enable IPv6`：是否开启 IPv6 支持。注意，若开启，给 pod 分配 IP 时，务必会尝试分配 IPv6 地址，否分会导致 Pod 启动失败。
       所以，务必打开后续的 `Cluster Default Ippool Installation` -> `install IPv6 ippool`，以创建集群的默认 IPv6 池
 
     ![spiderpool instal4](../../images/spiderpool-install4.png)
@@ -62,31 +73,41 @@ hide:
 
     - `install IPv6 ippool`：是否安装 IPv6 IP 池
 
-    - `IPv4 subnet name`：IPv4 subnet 的名字。如果未开启 `install IPv4 ippool`，请忽略本项。
-    
-    - `IPv4 ippool name`：IPv4 ippool 的名字。如果未开启 `install IPv4 ippool`，请忽略本项。
-    
-    - `IPv6 subnet name`：IPv6 subnet 的名字。如果未开启 `install IPv6 ippool`，请忽略本项。
-    
-    - `IPv6 ippool name`：IPv6 ippool 的名字。如果未开启 `install IPv6 ippool`，请忽略本项。
-    
-    - `IPv4 ippool subnet`：设置默认池中的 IPv4 子网号，例如 `192.168.0.0/16`。如果未开启 `install IPv4 ippool`，请忽略本项。
+    - `IPv4 subnet name`：IPv4 subnet 的名字。如果未开启 `install IPv4 ippool`，请忽略本项
 
-    - `IPv6 ippool subnet`：设置默认池中的 IPv6 子网号，例如 `fd00::/112`。如果未开启 `install IPv6 ippool`，请忽略本项。
+    - `IPv4 ippool name`：IPv4 ippool 的名字。如果未开启 `install IPv4 ippool`，请忽略本项
 
-    - `IPv4 ippool gateway`：设置 IPv4 网关，例如 `192.168.0.1`，该 IP 地址务必属于 `IPv4 ippool subnet`。如果未开启 `install IPv4 ippool`，请忽略本项。
+    - `IPv6 subnet name`：IPv6 subnet 的名字。如果未开启 `install IPv6 ippool`，请忽略本项
 
-    - `IPv6 ippool gateway`：设置 IPv6 网关，例如 `fd00::1`，该 IP 地址务必属于 `IPv6 ippool subnet`。如果未开启 `install IPv6 ippool`，请忽略本项。
+    - `IPv6 ippool name`：IPv6 ippool 的名字。如果未开启 `install IPv6 ippool`，请忽略本项
+
+    - `IPv4 ippool subnet`：设置默认池中的 IPv4 子网号，请提前规划好可使用的子网及网关，例如 `192.168.0.0/16`。
+      如果未开启 `install IPv4 ippool`，请忽略本项。
+
+    - `IPv6 ippool subnet`：设置默认池中的 IPv6 子网号，请提前规划好可使用的子网及网关，例如 `fd00::/112`。
+      如果未开启 `install IPv6 ippool`，请忽略本项。
+
+    - `IPv4 ippool gateway`：设置 IPv4 网关，例如 `192.168.0.1`，该 IP 地址务必属于 `IPv4 ippool subnet`。
+      如果未开启 `install IPv4 ippool`，请忽略本项。
+
+    - `IPv6 ippool gateway`：设置 IPv6 网关，例如 `fd00::1`，该 IP 地址务必属于 `IPv6 ippool subnet`。
+      如果未开启 `install IPv6 ippool`，请忽略本项。
 
     - `IP Ranges for default IPv4 ippool`：设置哪些 IP 地址可分配给 Pod，可设置多个成员，每个成员只支持 2 种输入格式的字符串。
-      一种是诸如 `192.168.0.10-192.168.0.100` 设置一段连续的 IP，一种是诸如 `192.168.0.200` 设置单个 IP 地址。注意，并不支持输入 CIDR 格式。
-      这些 IP 地址务必属于 `IPv4 ippool subnet`。如果未开启 `install IPv4 ippool`，请忽略本项。
+
+        1. 一种是诸如 `192.168.0.10-192.168.0.100` 设置一段连续的 IP
+        2. 一种是诸如 `192.168.0.200` 设置单个 IP 地址。注意，并不支持输入 CIDR 格式
+
+        这些 IP 地址务必属于 `IPv4 ippool subnet`。如果未开启 `install IPv4 ippool`，请忽略本项。
 
     - `IP Ranges for default IPv6 ippool`：设置哪些 IP 地址可分配给 Pod，可设置多个成员，每个成员只支持 2 种输入格式的字符串。
-      一种是诸如 `fd00::10-fd00::100` 设置一段连续的 IP，一种是诸如 `fd00::200` 设置单个 IP 地址。注意，并不支持输入 CIDR 格式。
-      这些 IP 地址务必属于 `IPv6 ippool subnet`。如果未开启 `install IPv6 ippool`，请忽略本项。
 
-5. 最后点击`安装`。
+        1. 一种是诸如 `fd00::10-fd00::100` 设置一段连续的 IP
+        2. 一种是诸如 `fd00::200` 设置单个 IP 地址。注意，并不支持输入 CIDR 格式。
+
+        这些 IP 地址务必属于 `IPv6 ippool subnet`。如果未开启 `install IPv6 ippool`，请忽略本项。
+
+5. 最后点击`安装`。完成后，可参考 [SpiderPool 的使用](../../modules/spiderpool/usage.md)进行 IP Pool 的使用。
 
 !!! note
 
