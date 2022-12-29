@@ -24,7 +24,7 @@ DCE 5.0 的各个产品模块独立解耦，灵活升级，业务无感知，开
 - :material-monitor-dashboard: **可观测性** [一站式图形化仪表盘](insight/03ProductBrief/WhatisInsight.md)
 - :material-microsoft-azure-devops: **应用工作台** [CI/CD 流水线](amamba/01ProductBrief/WhatisAmamba.md)
 - :material-cloud-check: **多云编排** [管理多云实例/负载/策略](kairship/01product/whatiskairship.md)
-- :material-engine: **微服务引擎** [微服务治理中心和网关](skoala/select-workspace.md)
+- :material-engine: **微服务引擎** [微服务治理中心和网关](skoala/intro/features.md)
 - :material-table-refresh: **服务网格** [Istio 定制增强版](mspider/01Intro/WhatismSpider.md)
 - :material-middleware: **中间件** [ES, Kafka, MinIO, MySQL 等](middleware/midware.md)
 - :material-warehouse: **镜像仓库** [镜像集成和托管服务](kangaroo/intro.md)
