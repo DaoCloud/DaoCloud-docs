@@ -63,7 +63,7 @@ hide:
 
     ![添加 IP](../../images/createippool02.jpg)
 
-7. 创建完成后[工作负载即可使用 IP Pool](../../modules/spiderpool/usage.md)
+7. 创建完成后[工作负载即可使用 IP 池](../../modules/spiderpool/usage.md)。
 
 ### YAML 创建
 
