@@ -158,6 +158,7 @@ nav:
                 - insight/06UserGuide/01quickstart/installagent.md
                 - Get URL to Upload Data: insight/06UserGuide/01quickstart/gethosturl.md
                 - Upgrade Precautions: insight/06UserGuide/01quickstart/upgradenote.md
+                - Offline upgrade Insight: insight/06UserGuide/01quickstart/offlineInstall.md
               - OTel Enables Observability: 
                 - insight/06UserGuide/01quickstart/otel/otel.md
                 - Non-intrusive Enhancement with Operator: insight/06UserGuide/01quickstart/otel/operator.md
@@ -558,6 +559,7 @@ nav:
             - Admin quickly use registry: kangaroo/quickstart/admin-registry.md
             - Workspace Admin quickly use registry: kangaroo/quickstart/ws-admin-registry.md
           - Scan image: kangaroo/scan.md
+          - Release Notes: kangaroo/release-notes.md
       - References:
         - Release Notes: release/rn5.0.md
         - Gateway: reference/basic-knowledge/gateway.md

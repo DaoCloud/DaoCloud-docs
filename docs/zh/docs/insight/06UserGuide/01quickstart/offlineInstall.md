@@ -1,4 +1,4 @@
-# 离线升级全局管理模块
+# 离线升级可观测性模块
 
 本页说明从[下载中心](../../download/dce5.md)下载可观测性模块后，应该如何安装或升级。
 
@@ -65,7 +65,7 @@
     charts-syncer sync --config load-image.yaml
     ```
 
-### docker或containerd直接加载
+### Docker 或 containerd 直接加载
 
 解压并加载镜像文件。
 
@@ -96,7 +96,7 @@
         ```
 
 !!! note
-    每个node都需要做进行docker或containerd加载镜像操作
+    每个 node 都需要做进行 Docker 或 containerd 加载镜像操作。
     加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
 
 ## 升级
@@ -178,7 +178,6 @@
           --set global.imageRegistry=$imageRegistry \
           --version 0.13.1
         ```
-
 
 === "通过 chart 包升级"
 

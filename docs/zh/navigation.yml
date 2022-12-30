@@ -159,6 +159,7 @@ nav:
                 - insight/06UserGuide/01quickstart/installagent.md
                 - 获取数据上传地址: insight/06UserGuide/01quickstart/gethosturl.md
                 - 升级注意事项: insight/06UserGuide/01quickstart/upgradenote.md
+                - 离线升级 Insight: insight/06UserGuide/01quickstart/offlineInstall.md
               - OTel 赋能应用可观测性: 
                 - insight/06UserGuide/01quickstart/otel/otel.md
                 - Operator 无侵入增强应用: insight/06UserGuide/01quickstart/otel/operator.md
@@ -572,6 +573,7 @@ nav:
             - Admin 快速使用镜像仓库: kangaroo/quickstart/admin-registry.md
             - Workspace Admin 快速使用镜像仓库: kangaroo/quickstart/ws-admin-registry.md
           - 镜像扫描: kangaroo/scan.md
+          - Release Notes: kangaroo/release-notes.md
       - 通用参考:
         - Release Notes: release/rn5.0.md
         - 云原生网关: reference/basic-knowledge/gateway.md
