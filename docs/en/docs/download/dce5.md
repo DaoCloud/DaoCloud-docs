@@ -30,6 +30,7 @@ You can download the tar package of each submodule separately here, and hot-upgr
 | Modules | File Size | Downloads | Date Updated |
 | -------- | -------- | ------------------------------- -- | ---------- |
 | Global Management | 440 MB | [:arrow_right: Download Page](./modules/ghippo.md) | 2022-11-29 |
+| Insight | 2.41 GB | [:arrow_right: Download Page](./modules/insight.md) | 2022-12-30 |
 
 !!! note
 
