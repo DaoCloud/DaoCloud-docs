@@ -200,24 +200,49 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     and/or an extremely fast physical hardware response in which case bare metal is better suited.
     Bare metal also allows you to tune the physical hardware and possibly even hardware drivers to help accomplish your task.
 
-- Blue Green Deployment，蓝绿部署
+- Blue Green Deployment
 
-    蓝绿部署是一种以最小的停机时间更新运行中的计算机系统的策略。
-    运营商维护两个环境，被称为 "蓝" 和 "绿"。一个为生产流量服务（所有用户目前正在使用的版本），而另一个则被更新。
-    一旦在非活动（绿色）环境中的测试结束，生产流量就会被切换过来（通常通过使用负载平衡器）。
-    请注意，蓝绿色的部署通常意味着一次性切换整个环境，包括许多服务。
-    令人困惑的是，有时这个术语被用于系统内的单个服务。为了避免这种歧义，在提到单个组件时，最好使用 "零停机部署" 一词。
+    Blue-green deployment is a strategy for updating running computer systems with minimal downtime.
+    The operator maintains two environments, dubbed “blue” and “green”.
+    One serves production traffic (the version all users are currently using), whilst the other is updated.
+    Once testing has concluded on the non-active (green) environment,
+    production traffic is switched over (often via the use of a load balancer.
+    Note that blue-green deployment usually means switching the entire environments, comprising many services, all at once.
+    Confusingly, sometimes the term is used with regard to individual services within a system.
+    To avoid this ambiguity, the term “zero-downtime deployment” is preferred when referring to individual components.
 
-- Canary Deployment, 金丝雀部署
+    Blue-green deployments allow minimal downtime when updating software that must be changed in "lockstep" owing to a lack of backwards compatibility. 
+    For example, blue-green deployment would be appropriate for an online store
+    consisting of a website and a database that needs to be updated,
+    but the new version of the database doesn’t work with the old version of the website, and vice versa.
+    In this instance, both need to be changed at the same time.
+    If this was done on the production system, customers would notice downtime.
 
-    金丝雀部署是一种部署策略，开始时有两个环境：一个有实时流量，另一个包含没有实时流量的更新代码。
-    流量逐渐从应用程序的原始版本转移到更新版本。
-    它可以从移动 1% 的实时流量开始，然后是 10%，25%，以此类推，直到所有流量都通过更新的版本运行。
-    企业可以在生产中测试新版本的软件，获得反馈，诊断错误，并在必要时快速回滚到稳定版本。
+    Blue-green deployment is an appropriate strategy for non-cloud native software that needs to be updated with minimal downtime.
+    However, its use is normally a "smell" that legacy software needs to be re-engineered so that components can be updated individually.
 
-    “金丝雀” 一词是指 “煤矿中的金丝雀” 的做法，即把金丝雀带入煤矿以保证矿工的安全。
-    如果出现无味的有害气体，鸟就会死亡，而矿工们知道他们必须迅速撤离。
-    同样，如果更新后的代码出了问题，现场交通就会被 "疏散" 回原来的版本。
+- Canary Deployment
+
+    Canary deployments is a deployment strategy that starts with two environments:
+    one with live traffic and the other containing the updated code without live traffic.
+    The traffic is gradually moved from the original version of the application to the updated version.
+    It can start by moving 1% of live traffic, then 10%, 25%, and so on,
+    until all traffic is running through the updated version.
+    Organizations can test the new version of the software in production, get feedback,
+    diagnose errors, and quickly rollback to the stable version if necessary.  
+
+    The term “canary” refers to the "canary in a coal mine" practice
+    where canary birds were taken into coal mines to keep miners safe.
+    If odorless harmful gases were present, the bird would die, and the miners knew they had to evacuate quickly.
+    Similarly, if something goes wrong with the updated code, live traffic is "evacuated" back to the original version.
+
+    No matter how thorough the testing strategy, there are always some bugs discovered in production.
+    Shifting 100% of traffic from one version of an app to another can lead to more impactful failures.
+
+    Canary deployments allow organizations to see how new software behaves in real-world scenarios
+    before moving significant traffic to the new version.
+    This strategy enables organizations to minimize downtime and quickly rollback in case of issues with the new deployment.
+    It also allows more in-depth production application testing without a significant impact on the overall user experience.
 
 - cAdvisor
 
@@ -227,12 +252,20 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     具体而言，针对每个容器，该进程记录容器的资源隔离参数、历史资源用量、完整历史资源用量和网络统计的直方图。
     这些数据可以按容器或按机器层面输出。
 
-- Certificate, 证书
+- Certificate
 
-    证书是个安全加密文件，用来确认对 Kubernetes 集群访问的合法性。
+    A (digital) certificate — also often referred to as a public key certificate, or SSL certificate — 
+    is a digital document used to help secure communications over the network.
+    Certificates allow us to know that the particular entity we're communicating with is who they say they are.
+    They also allow us to ensure that our communications are private by encrypting the data we send and receive.
 
-    证书（Certificate）可以让 Kubernetes 集群中运行的应用程序安全的访问 Kubernetes API。
-    证书可以确认客户端是否被允许访问 API。
+    When devices communicate over a network there is no inherent guarantee that a particular device is who it says it is.
+    Additionally, we can't guarantee that the traffic between any two devices won't be intercepted by a third party.
+    Consequently, any communication can potentially be intercepted, compromising sensitive information like usernames and passwords.
+
+    Modern email clients that utilize certificates can notify you if a sender's identity is correct, as will web browsers (notice the little lock in front of the address bar of your web browser).
+    On the other side, certificates can be used to encrypt communication between entities on the internet.
+    They provide an encryption technique that makes it nearly impossible, for someone who intercepts the communication, to actually read the data.
 
 - cgroup, control group, 控制组
 
@@ -240,19 +273,26 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     cgroup 是一个 Linux 内核特性，对一组进程的资源使用（CPU、内存、磁盘 I/O 和网络等）进行限制、审计和隔离。
 
-- Chaos Engineering, 混沌工程
+- Chaos Engineering
 
-    混沌工程或 CE 是在生产中对分布式系统进行实验的学科，以建立对系统承受动荡和意外情况时能力的信心。
+    Chaos Engineering or CE is the discipline of experimenting on a distributed system in production
+    to build confidence in the system's capability to withstand turbulent and unexpected conditions.
 
-    SRE 和 DevOps 实践侧重于提高产品弹性和可靠性的技术。
-    系统在故障容灾时确保服务质量的能力通常是对软件开发提出的要求。这里涉及到几个方面可能导致应用程序中断，
-    例如基础设施、平台或（基于微服务）的应用程序的其他部分。
-    高频地持续部署新功能到生产环境会增加服务中断和恶性事件发生的可能性，乃至于对业务产生重大影响。
+    SRE and DevOps practices focus on techniques to increase product resiliency and reliability.
+    A system's ability to tolerate failures while ensuring adequate service quality is
+    typically a software development requirement.
+    There are several aspects involved that could lead to outages of an application,
+    like infrastructure, platform or other moving parts of a microservice-based application.
+    High-frequency deployment of new features to the production environment can
+    result in a high probability of downtime and a critical incident — with considerable consequences to the business.
 
-    混沌工程是一种满足弹性要求的技术。它用于实现对基础架构、平台和应用程序等意外发生时的故障容灾。
-    混沌工程师使用混沌实验主动注入随机故障，以验证应用程序、基础架构或平台是否可以自我修复，并且故障不会对客户产生明显影响。
-    混沌实验旨在发现盲点（例如监控或自动扩缩技术）并在恶性事件发生期间增强团队之间的沟通。
-    这种方法有助于提高复杂系统的弹性和团队对其的信心，尤其是在生产环境。
+    Chaos engineering is a technique to meet resilience requirements.
+    It is used to achieve resilience against infrastructure, platform, and application failures.
+    Chaos engineers use chaos experiments to proactively inject random failures
+    to verify that an application, infrastructure, or platform can self-heal and the failure cannot noticeably impact customers.
+    Chaos experiments aim to discover blind spots
+    (e.g. monitoring or autoscaling techniques) and to improve the communications between teams during critical incidents.
+    This approach helps increase resiliency and the team's confidence in complex systems, particularly production.
 
 - CIDR, Classless Inter-Domain Routing
 
@@ -262,29 +302,48 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     从而能够为每个 Pod 分配一个独一无二的 IP 地址。
     虽然其概念最初源自 IPv4，CIDR 已经被扩展为涵盖 IPv6。
 
-- Client Server Architecture, 主从式架构
+- Client-Server Architecture
 
-    在主从式架构（客户端-服务器架构）中，构成应用程序的逻辑（或代码）会被分成两个或多个组件：
-    一个期望工作被完成的客户端（例如，运行在您的 web 浏览器中的 Gmail web 应用程序），
-    以及一个或多个满足该请求的服务器（例如，运行在云中心的谷歌计算机上的“发送电子邮件”服务）。
-    在这个例子中，您所写的外发邮件是由客户端（运行在您的 web 浏览器中的 web 应用程序）发送到服务器（Gmail 的计算机，它将您的外发邮件转发给对应的收件人）。
+    In a client-server architecture, the logic (or code) that makes up an application is split between two or more components:
+    a client that asks for work to be done
+    (e.g. the Gmail web application running in your web browser),
+    and one or more servers that satisfy that request
+    (e.g. the "send email" service running on Google’s computers in the cloud).
+    In this example, outgoing emails that you write are sent by the client (web application running in your web browser)
+    to a server (Gmail's computers, which forward your outgoing emails to their recipients).
 
-    这与在一个地方完成所有工作的独立应用程序（如桌面应用程序）形成了对比。
-    例如，像 Microsoft Word 这样的文字处理程序可能会完全安装并运行在您的计算机上。
+    This contrasts with self-contained applications (such as desktop applications) that do all the work in one place.
+    For example, a word processing program like Microsoft Word may be installed and run entirely on your computer.
 
-- Cloud Computing, 云计算
+    A client-server architecture solves a big challenge self-contained applications pose: regular updates.
+    In a self-contained app, for each update, users would have to download and install the latest version.
+    Imagine having to download all of Amazon’s product catalog to your own computer before being able to browse it!
 
-    云计算是一种通过互联网按需提供计算资源（如 CPU、网络和磁盘功能）的模型。
-    云计算使用户能够在远程物理位置访问和使用计算能力。
-    AWS、GCP、Azure、DigitalOcean 等云提供商都为第三方提供了在多个地理位置租用计算资源的能力。
+    By implementing application logic in a remote server or service,
+    operators can update that without needing to change the logic on the client-side.
+    This means updates can be made much more frequently.
+    Storing data on the server allows many clients to all see and share the same data.
+    Consider the difference between using an online word processor, compared to a traditional offline word processor.
+    In the former, your files exist on the server-side and
+    can be shared with other users who simply download them from the server.
+    In the legacy world, files needed to be copied to removable media (floppy disks!) and shared with individuals.
 
-    传统上，组织在尝试扩展计算能力的使用时面临两个主要问题。
-    他们要么获取、支持、设计和支付托管物理服务器和网络的设施，要么扩展和维护这些设施。
-    云计算允许组织将部分计算需求外包给另一个组织。
+- Cloud Computing
 
-    云提供商为组织提供按需租用计算资源并按使用付费的能力。这允许进行两项主要创新：
-    组织可以在不浪费时间计划和花费金钱或资源在新的物理基础设施上的情况下进行尝试，并且他们可以根据需要和按需扩缩。
-    云计算允许组织根据需要采用尽可能多或尽可能少的基础设施。
+    Cloud computing is a model that offers compute resources like CPU, network, and disk capabilities on-demand over the internet.
+    Cloud computing gives users the ability to access and use computing power in a remote physical location.
+    Cloud providers like AWS, GCP, Azure, DigitalOcean, and others all offer third parties
+    the ability to rent access to compute resources in multiple geographic locations.
+
+    Organizations traditionally faced two main problems when attempting to expand their use of computing power.
+    They either acquire, support, design, and pay for facilities
+    to host their physical servers and network or expand and maintain those facilities.
+    Cloud computing allows organizations to outsource some portion of their computing needs to another organization.
+
+    Cloud providers offer organizations the ability to rent compute resources on-demand and pay for usage.
+    This allows for two major innovations:
+    Organizations can focus on their product or service without waiting, planning, and spending resources on new physical infrastructure. They can simply scale as needed and on-demand.
+    Cloud computing allows organizations to adopt as much or as little infrastructure as they need.
 
 - Cloud Controller Manager, 云控制器管理器
 
@@ -295,54 +354,73 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     通过分离 Kubernetes 和底层云基础设置之间的互操作性逻辑，
     `cloud-controller-manager` 组件使云提供商能够以不同于 Kubernetes 主项目的步调发布新特征。
 
-- Cloud-Native Apps, 云原生应用程序
+- Cloud-Native Apps
 
-    云原生应用程序专门设计用于利用云计算中的创新。
-    这些应用程序可以轻松地与其各自的云架构集成，充分利用云的资源和可扩缩性功能。
-    它还指利用云计算驱动的基础设施创新的应用程序。
-    今天的云原生应用程序包括在云提供商的数据中心和本地云原生平台上运行的应用程序。
+    Cloud native applications are specifically designed to take advantage of innovations in cloud computing.
+    These applications integrate easily with their respective cloud architectures,
+    taking advantage of the cloud’s resources and scaling capabilities.
+    It also refers to applications that take advantage of innovations in infrastructure driven by cloud computing.
+    Cloud native applications today include apps that run in a cloud provider’s datacenter and on cloud native platforms on-premise.
 
-    传统上，本地环境以相当定制的方式提供计算资源。
-    每个数据中心都有与特定环境紧密耦合应用程序的服务，通常严重依赖于基础设施的手动配置，例如虚拟机和服务。
-    这反过来又将开发人员及其应用程序限制在该特定数据中心。
-    不是为云设计的应用程序无法利用云环境的弹性和扩缩能力。
-    例如，需要手动干预才能正确启动的应用程序无法自动扩缩，也无法在发生故障时自动重启。
+    Traditionally, on-premise environments provided compute resources in a fairly bespoke way.
+    Each datacenter had services that tightly coupled applications to specific environments,
+    often relying heavily on manual provisioning for infrastructure, like virtual machines and services.
+    This, in turn, constrained developers and their applications to that specific datacenter.
+    Applications that weren't designed for the cloud couldn't take advantage of a cloud environment’s resiliency and scaling capabilities.
+    For example, apps that require manual intervention to start correctly cannot scale automatically,
+    nor can they be automatically restarted in the event of a failure.  
 
-    虽然云原生应用程序没有“一刀切”的路径，但它们确实有一些共性。
-    云原生应用程序具有弹性、可管理性，并由配套的云服务套件提供帮助。
-    各种云服务实现了高度的可观测性，使用户能够在问题升级之前检测和解决问题。
-    结合强大的自动化，它们使工程师能够以最少的工作频繁且可预测地进行高影响力的更改。
+    While there is no “one size fits all” path to cloud native applications, they do have some commonalities.
+    Cloud native apps are resilient, manageable, and aided by the suite of cloud services that accompany them.
+    The various cloud services enable a high degree of observability,
+    enabling users to detect and address issues before they escalate.
+    Combined with robust automation, they allow engineers to make high-impact changes frequently and predictably with minimal toil.
 
-- Cloud-Native Security, 云原生安全
+- Cloud-Native Security
 
-    云原生安全是一种将安全性构建到云原生应用程序中的方法。
-    它确保安全是从开发到生产的整个应用程序生命周期的一部分。
-    云原生安全旨在确保与传统安全模型相同的标准，同时适应云原生环境的特殊性，即快速的代码更改和高度短暂的基础设施。
-    云原生安全与称为测试左移的实践高度相关。
+    Cloud native security is an approach that builds security into cloud native applications.
+    It ensures that security is part of the entire application lifecycle from development to production.
+    Cloud native security seeks to ensure the same standards as traditional security models
+    while adapting to the particulars of cloud native environments,
+    namely rapid code changes and highly ephemeral infrastructure.
+    Cloud native security is highly related to the practice called DevSecOps.
 
-    传统的安全模型是根据许多不再有效的假设构建的。
-    云原生应用程序变化频繁，使用大量开源工具和库，通常运行在供应商控制的基础设施中，并且会受到快速的基础设施变化的影响。
-    代码审查、长质量保证周期、基于主机的漏洞扫描和最后一分钟的安全审查无法与云原生应用程序一起扩缩。
+    Traditional security models were built with a number of assumptions that are no longer valid.
+    Cloud native apps change frequently, use a large number of open source tools and libraries,
+    often run in vendor-controlled infrastructure, and are subject to rapid infrastructure changes.
+    Code reviews, long quality assurance cycles, host-based vulnerability scanning,
+    and last minute security reviews cannot scale with cloud native applications.
 
-    云原生安全引入了一种新的工作方式，通过从传统的安全模型迁移到发布周期的每个步骤都涉及安全的模型来保护应用程序。
-    人工审核和检查在很大程度上被自动扫描所取代。
-    快速代码发布管道与在编译之前扫描代码以查找漏洞的工具集成在一起。
-    开源库从受信任的来源中提取并监控漏洞。
-    云原生安全模型不是减缓变化，而是通过频繁更新易受攻击的组件或确保定期更换基础设施来拥抱它。
+    Cloud native security introduces a new way of working that protects applications
+    by migrating from traditional security models to one where security is involved in every step of the release cycle.
+    Manual audits and checks are largely replaced with automated scans.
+    Rapid code release pipelines are integrated with tools that scan code for vulnerabilities before they’re compiled.
+    Open source libraries are pulled from trusted sources and monitored for vulnerabilities.
+    Instead of slowing change a cloud native security model embraces it
+    by frequently updated vulnerable components or ensuring infrastructure is regularly replaced.
 
-- Cloud-Native Tech, 云原生技术
+- Cloud-Native Tech
 
-    云原生技术，也称为云原生技术栈，是用于构建云原生应用程序的技术。
-    使组织能够在公共云、私有云和混合云等现代动态环境中构建和运行可扩缩的应用程序，他们坚持“云的承诺”并充分利用云计算的优势。
-    它们从头开始设计，以利用云计算和容器的功能，服务网格、微服务和不可变的基础设施就是这种方法的例证。
+    Cloud native technologies, also referred to as the cloud native stack,
+    are the technologies used to build cloud native applications.
+    These technologies enable organizations to build and run scalable applications in modern and dynamic environments
+    such as public, private, and hybrid clouds,
+    while leveraging cloud computing benefits to their fullest.
+    They are designed from the ground up to exploit the capabilities of cloud computing and containers, service meshes, microservices,
+    and immutable infrastructure exemplify this approach.
 
-    云原生技术栈有许多不同的技术类别，可应对各种挑战。
-    如果您看看 CNCF 云原生全景图，您会看到它涉及到多少不同的领域。
-    但在高层次上，它们解决了一组主要挑战：传统 IT 运营模式的缺点。挑战包括难以创建可扩缩、容错、自我修复的应用程序，以及资源利用效率低下等。
+    The cloud native stack has many different technology categories, addressing a variety of challenges.
+    If you have a look at the CNCF Cloud Native Landscape,
+    you'll see how many different areas it touches upon.
+    But on a high level, they address one main set of challenges:
+    the downsides of traditional IT operating models.
+    Challenges include difficulties creating scalable, fault-tolerant, self-healing applications,
+    as well as inefficient resource utilization, among others.
 
-    虽然每种技术都解决了一个非常具体的问题，但作为一个整体，云原生技术支持松散耦合的系统，这些系统具有弹性、可管理性和可观测性。
-    结合强大的自动化，它们使工程师能够以最少的工作频繁且可预测地进行高影响力的更改。
-    云原生系统的理想特性更容易通过云原生堆栈实现。
+    While each technology addresses a very specific problem,
+    as a group, cloud native technologies enable loosely coupled systems that are resilient, manageable, and observable.
+    Combined with robust automation, they allow engineers to make high-impact changes frequently and predictably with minimal toil.
+    Desirable traits of cloud native systems are easier to achieve with the cloud native stack.
 
 - Cloud Provider, 云提供商
 
@@ -357,24 +435,24 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     针对托管的 Kubernetes，您的云提供商负责 Kubernetes 的控制平面以及节点及其所依赖的基础设施：
     网络、存储以及其他一些诸如负载均衡器之类的元素。
 
-- Cluster, 集群
+- Cluster
 
-    [集群](../kpanda/07UserGuide/Clusters/CreateCluster.md)是运行容器化应用程序的一组计算节点。通常，组成集群的计算节点彼此可以直接连接。集群通过规则或策略限制外部访问。
-    工作节点会托管 Pod，而 Pod 就是作为应用负载的组件。
-    控制平面管理集群中的工作节点和 Pod。
-    在生产环境中，控制平面通常跨多台计算机运行，
-    一个集群通常运行多个节点，提供容错性和高可用性。
+    A cluster is a group of computers or applications that work together towards a common goal.
+    In the context of cloud native computing, the term is most often applied to Kubernetes.
+    A Kubernetes cluster is a set of services (or workloads) that run in their own containers, usually on different machines.
+    The collection of all these containerized services, connected over a network, represent a cluster.
 
-    集群是一组计算机或应用程序，它们为一个共同的目标一起工作。
-    在云原生计算的背景下，这个术语最常被应用于 Kubernetes。
-    Kubernetes 集群是一组服务（或工作负载），它们在各自的容器中运行，通常在不同的机器上。
-    所有这些容器化服务的集合，通过网络连接，代表一个集群。
+    Software that runs on a single computer presents a single point of failure
+    — if that computer crashes, or someone accidentally unplugs the power cable,
+    then some business-critical system may be taken offline.
+    That's why modern software is generally built as distributed applications, grouped together as clusters.
 
-    在单台计算机上运行的软件会出现单点故障——如果这台计算机崩溃了，或者有人不小心拔掉了电源线，那么一些关键的业务系统就可能被下线。
-    这就是为什么现代软件通常被构建为分布式应用，以集群的形式组合在一起。
-
-    集群式的分布式应用在多台机器上运行，消除了单点故障。但构建分布式系统真的很难，事实上，它本身就是一门计算机科学的学科。
-    对全球系统的需求和多年的试验和错误导致了一种新的技术栈的发展：云原生技术，这些新技术是使分布式系统的操作和创建更容易的构件。
+    Clustered, distributed applications run across multiple machines, eliminating a single point of failure.
+    But building distributed systems is really hard.
+    In fact, it's a computer science discipline in its own right.
+    The need for global systems and years of trial and error led to the development of a new kind of tech stack:
+    cloud native technologies.
+    These new technologies are the building blocks that make the operation and creation of distributed systems easier.
 
 - Cluster Architect, 集群架构师
 
@@ -441,37 +519,47 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     - PostStart 在容器创建之后立即执行，
     - PreStop 在容器停止之前立即阻塞并被调用。
 
-- Container Image, 容器镜像
+- Container Image
 
-    容器镜像是一个不可改变的静态文件，包含创建容器的依赖性。
-    这些依赖可能包括一个可执行的二进制文件、系统库、系统工具、环境变量和其他必要的平台设置。
-    容器镜像是应用程序容器化的结果，通常存储在容器注册表中，在那里可以下载并使用容器运行时接口（CRI）作为一个孤立的进程运行。
-    容器镜像框架必须遵循开放容器倡议（OCI）定义的标准模式。
+    A container image is an immutable, static file containing the dependencies for the creation of a container.
+    These dependencies may include a single executable binary file, system libraries,
+    system tools, environment variables, and other required platform settings.
+    Container images result from an application's containerization and are typically stored in container registries,
+    where they can be downloaded and run as an isolated process using a Container Runtime Interface (CRI).
+    A container image framework must follow the standard schema defined by the Open Container Initiative (OCI).
 
-    传统上，应用服务器是按环境配置的，而应用则被部署到这些环境中。
-    环境之间的任何错误配置都是有问题的，常常导致停机或部署失败。
-    一个应用程序的环境需要是可重复的和定义明确的；否则，与环境有关的错误的机会就会增加。
-    当应用程序的环境定义不足或不准确时，应用程序的横向和纵向扩缩就会成为挑战。
+    Traditionally, application servers are configured per environment, and applications are deployed to them.
+    Any misconfiguration between environments is problematic and often leads to downtime or failed deployments.
+    An application's environment needs to be repeatable and well-defined;
+    otherwise, the chance of environment-related bugs increases.
+    When application environments are configured inadequately or inaccurate,
+    horizontal and vertical scaling of applications becomes challenging.
 
-    容器镜像将一个应用程序与它的任何运行时的依赖性捆绑在一起，例如一个应用程序服务器。
-    这提供了所有环境的一致性，包括开发人员的机器。
-    容器镜像可用于实例化所需的多个容器，允许更大的可扩缩性。
+    Container images bundle an application with any of its runtime dependencies, such as an application server.
+    This provides consistency across all environments, including a developer's machine.
+    Container images can be used to instantiate as many containers as needed, allowing for greater scalability.
 
-- Container, 容器
+- Container
 
-    容器是由计算机操作系统管理的具有资源和能力限制的运行进程。
-    容器进程可用的文件被打包为容器镜像。
-    容器在同一台机器上彼此相邻运行，但通常操作系统会阻止单独的容器进程相互交互。
+    A container is a running process with resource and capability constraints managed by a computer’s operating system.
+    The files available to the container process are packaged as a container image.
+    Containers run adjacent to each other on the same machine,
+    but typically the operating system prevents the separate container processes from interacting with each other.
 
-    在容器可用之前，需要单独的机器来运行应用程序。每台机器都需要自己的操作系统，它占用 CPU、内存和磁盘空间，
-    所有这些都是为了让单个应用程序运行。此外，操作系统的维护、升级和启动是另一个重要的工作来源。
+    Before containers were available, separate machines were necessary to run applications.
+    Each machine would require its own operating system, which takes CPU, memory, and disk space,
+    all for an individual application to function.
+    Additionally, the maintenance, upgrade, and startup of an operating system is another significant source of toil.
 
-    容器共享相同的操作系统及其机器资源，分散了操作系统的资源开销并创建了物理机器的有效使用。
-    这种能力之所以成为可能，是因为容器之间的交互通常受到限制。
-    这允许更多的应用程序在同一台物理机器上运行。
+    Containers share the same operating system and its machine resources,
+    spreading the operating system’s resource overhead and creating efficient use of the physical machine.
+    This capability is only possible because containers are typically limited from being able to interact with each other.
+    This allows many more applications to be run on the same physical machine.
 
-    但是，有一些限制。由于容器共享相同的操作系统，因此可以认为进程不如替代方法安全。 容器还需要对共享资源进行限制。 为了保证资源，
-    管理员必须约束和限制内存和 CPU 的使用，以使其他应用程序不会表现不佳。
+    There are limitations, however.
+    Since containers share the same operating system, processes can be considered less secure than alternatives.
+    Containers also require limits on the shared resources.
+    To guarantee resources, administrators must constrain and limit memory and CPU usage so that other applications do not perform poorly.
 
 - containerd
 
@@ -480,81 +568,113 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     [containerd](https://github.com/containerd/containerd) 是一种容器行时，能在 Linux 或者 Windows 后台运行。
     containerd 能取回、存储容器镜像，执行容器实例，提供网络访问等。
 
-- Containerization, 容器化
+- Containerization
 
-    容器化是将一个应用程序及其依赖关系捆绑到容器镜像中的过程。
-    容器构建过程需要遵守开放容器倡议 (OCI) 标准。
-    只要输出的是一个符合这个标准的容器镜像，使用哪种容器化工具并不重要。
+    Containerization is the process of bundling an application and its dependencies into a container image.
+    The container build process requires adherence to the [Open Container Initiative](https://opencontainers.org) (OCI) standard.
+    As long as the output is a container image that adheres to this standard, which containerization tool is used doesn't matter.
 
-    在容器盛行之前，企业依靠虚拟机 (VMs) 在一台裸机上协调多个应用程序。
-    虚拟机比容器大得多，需要一个管理程序来运行。由于这些较大的虚拟机模板的存储、备份和传输，创建虚拟机模板也很慢。
-    此外，虚拟机可能会出现配置漂移，这违反了不变性的原则。
+    Before containers became prevalent, organizations relied on virtual machines (VMs) to
+    orchestrate multiple applications on a single bare-metal machine.
+    VMs are significantly larger than containers and require a hypervisor to run.
+    Due to the storage, backup, and transfer of these larger VM templates, creating the VM templates is also slow.
+    Additionally, VMs can suffer from configuration drift which violates the principle of immutability.
 
-    容器镜像是轻量级的（与传统的虚拟机不同），容器化过程需要一个带有依赖性列表的文件。
-    这个文件可以被版本控制，构建过程也可以自动化，允许一个组织在自动化过程中关注其他优先事项。
-    容器镜像由一个唯一的标识符来存储，该标识符与它的确切内容和配置相联系。
-    当容器被安排和重新安排时，它们总是被重置为其初始状态，从而消除了配置漂移。
+    Container images are lightweight (unlike traditional VMs) and
+    the containerization process requires a file with a list of dependencies.
+    This file can be version controlled and the build process automated,
+    allowing an organization to focus on other priorities
+    while the automated processes take care of the build.
+    A container image is stored by a unique identifier
+    that is tied to its exact content and configuration.
+    As containers are scheduled and rescheduled,
+    they are always reset to their initial state which eliminates configuration drift.
 
-- Container as a service (CaaS), 容器即服务
+- Container as a service (CaaS)
 
-    容器即服务（CaaS）是一种云服务，有助于使用基于容器的抽象管理和部署应用程序。
-    这项服务可以部署在企业内部或云中。
+    Containers-as-a-Service (CaaS) is a cloud service that helps manage and deploy apps
+    using container-based abstraction.
+    This service can be deployed on-premises or in the cloud.
 
-    CaaS 供应商提供了一个框架或协调平台，使容器部署和管理的关键 IT 功能自动化。
-    它帮助开发者建立安全和可扩缩的容器化应用。
-    因为用户只购买他们需要的资源（调度能力、负载平衡等），他们可以节省资金并提高效率。
-    容器创造了一致的环境，以快速开发和交付可以在任何地方运行的云原生应用。
+    CaaS providers offer a framework or orchestration platform that
+    automates key IT functions on which containers are deployed and managed.
+    It helps developers build secure and scalable containerized apps.
+    Because users only buy the resources they need (scheduling capabilities, load balancing, etc.),
+    they save money and increase efficiency.
+    Containers create consistent environments to rapidly develop and
+    deliver cloud-native applications that can run anywhere.
 
-    如果没有 CaaS，软件开发团队需要部署、管理和监控容器运行的底层基础设施。
+    Without CaaS, software development teams need to deploy, manage, and monitor
+    the underlying infrastructure that containers run on.
 
-    当把容器化应用部署到 CaaS 平台时，用户可以通过日志聚合和监控工具获得对系统性能的可见性。
-    CaaS 还包括自动扩缩和协调管理的内置功能。
-    它使团队能够建立高可见性和高可用性的分布式系统。
-    此外，通过允许快速部署，CaaS 提高了团队的开发速度。在容器确保一致的部署目标的同时，CaaS 通过减少管理部署所需的 DevOps 资源，降低了工程运营成本。
+    When deploying containerized applications to a CaaS platform,
+    users gain visibility into system performance through log aggregation and monitoring tools.
+    CaaS also includes built-in functionality for auto scaling and orchestration management.
+    It enables teams to build high visibility and high availability distributed systems.
+    In addition, by allowing rapid deployments, CaaS increases team development velocity.
+    While containers ensure a consistent deployment target,
+    CaaS lowers engineering operating costs
+    by reducing needed DevOps resources needed to manage a deployment.
 
-- Continuous Delivery, 持续交付
+- Continuous Delivery
 
-    持续交付，通常缩写为 CD，是一套实践，其中代码的变化被自动部署到验收环境中（或者，在持续部署的情况下，部署到生产中）。
-    CD 关键是包括确保软件在部署前得到充分测试的程序，并提供一种在认为必要时回滚修改的方法。
-    持续集成（CI）是实现持续交付的第一步（也就是说，在测试和部署之前，变化必须干净地合并）。
+    Continuous delivery, often abbreviated as  CD, is a set of practices
+    in which code changes are automatically deployed into an acceptance environment
+    (or, in the case of continuous deployment, into production).
+    CD crucially includes procedures to ensure that software is adequately tested
+    before deployment and provides a way to rollback changes if deemed necessary.
+    Continuous integration (CI) is the first step towards continuous delivery
+    (i.e., changes have to merge cleanly before being tested and deployed).
 
-    部署可靠的更新在规模上成为一个问题。
-    理想情况下，我们会更频繁地部署，为终端用户提供更好的价值。
-    然而，手动操作会使每一个变化都转化为高额的交易成本。
-    历史上，为了避免这些成本，企业发布的频率较低，一次部署更多的变化，增加了出错的风险。
+    Deploying reliable updates becomes a problem at scale.
+    Ideally, we'd deploy more frequently to deliver better value to end-users.
+    However, doing it manually translates into high transaction costs for every change.
+    Historically, to avoid these costs, organizations have released less frequently,
+    deploying more changes at once and increasing the risk that something goes wrong.
 
-    CD 策略创建了一个完全自动化的生产路径，使用各种部署策略测试和部署软件，如金丝雀部署或蓝绿部署发布。
-    这使得开发人员可以频繁地部署代码，让他们放心地认为新的修订版已经过测试。
-    通常情况下，CD 策略中使用基于主干的开发，而不是功能分支或拉动请求。
+    CD strategies create a fully automated path to production
+    that tests and deploys the software using various deployment strategies
+    such as canary or blue-green releases.
+    This allows developers to deploy code frequently,  giving them peace of mind that the new revision has been tested.
+    Typically, trunk-based development is used in CD strategies as opposed to feature branching or pull requests.
 
-- Continuous Deployment, 持续部署
+- Continuous Deployment
 
-    持续部署，通常缩写为 CD，通过将已经完成的软件直接部署到生产环境，比持续交付更进了一步。
-    持续部署 (CD) 与持续集成 (CI) 一起，通常被称为 CI/CD。
-    CI 流程测试给定应用程序的修改是否正确，CD 流程自动部署企业测试环境的代码更改到生产环境。
+    Continuous deployment, often abbreviated as CD, goes a step further than continuous delivery
+    by deploying finished software directly to production.
+    Continuous deployment (CD) goes hand in hand with continuous integration (CI),
+    and is often referred to as CI/CD.
+    The CI process tests if the changes to a given application are valid,
+    and the CD process automatically deploys the code changes through an organization's environments from test to production.
 
-    发布新的软件版本是一个劳动密集且容易出错的过程。
-    这也是企业不想频繁发布新版本的原因，避免生产事故并减少工程师在正常工作时间之外需要随时响应的时间。
-    传统的软件部署模型使组织陷入了一个恶性循环，即发布软件的过程无法同时满足企业在稳定性和软件迭代速度方面的需求。
+    Releasing new software versions can be a labor-intensive and error-prone process.
+    It is also often something that organizations will only want to do infrequently to avoid production incidents
+    and reduce the number of time engineers need to be available outside of regular business hours.
+    Traditional software deployment models leave organizations in a vicious cycle
+    where the process of releasing software fails to meet organizational needs around both stability and feature velocity.
 
-    通过自动化发布周期迫使企业更频繁地发布版本到生产环境，CD 为运维团队完成了 CI 为开发团队所做的事情。
-    具体来说，它迫使运维团队将生产部署中痛苦且容易出错的部分自动化，从而降低整体风险。
-    它还使企业能够更好地接受和适应生产环境变化，从而提高稳定性。
+    By automating the release cycle and forcing organizations to release to production more frequently,
+    CD does what CI did for development teams for operations teams.
+    Specifically, it forces operations teams to automate the painful and error-prone portions of production deployments, reducing overall risk.
+    It also makes organizations better at accepting and adapting to production changes, which leads to higher stability.
 
-- Continuous Integration, 持续集成
+- Continuous Integration
 
-    持续集成，通常缩写为 CI，是尽可能定期集成代码变化的做法。
-    CI 是持续交付（CD）的前提。
-    传统上，CI 过程从代码修改提交到源码控制系统（Git、Mercurial 或 Subversion）时开始，以准备被 CD 系统使用的测试工件结束。
+    Continuous integration, often abbreviated as CI, is the practice of integrating code changes as regularly as possible.
+    CI is a prerequisite for continuous delivery (CD).
+    Traditionally, the CI process begins when code changes are committed to a source control system (Git, Mercurial, or Subversion)
+    and ends with a tested artifact ready to be consumed by a CD system.
 
-    软件系统通常是庞大而复杂的，有许多开发人员在维护和更新它们。
-    在系统的不同部分平行工作，这些开发人员可能会做出相互冲突的修改，并在无意中破坏对方的工作。
-    此外，由于多个开发人员在同一个项目上工作，任何日常工作，如测试和计算代码质量，都需要由每个开发人员重复进行，浪费了时间。
+    Software systems are often large and complex, with numerous developers maintaining and updating them.
+    Working in parallel on different parts of the system,
+    these developers may make conflicting changes and inadvertently break each other’s work.
+    Additionally, with multiple developers working on the same project,
+    any everyday tasks such as testing and calculating code quality would need to be repeated by each developer, wasting time.
 
-    每当开发人员提交修改时，CI 软件都会自动检查代码修改是否合并得很干净。
-    使用 CI 服务器来运行代码质量检查、测试甚至部署，这几乎是一种普遍的做法。
-    因此，它成为团队内部质量控制的一个具体实施。
-    CI 允许软件团队把每一个代码提交变成具体的失败或可行的候选发布。
+    CI software automatically checks that code changes merge cleanly whenever a developer commits a change.
+    It's a near-ubiquitous practice to use the CI server to run code quality checks, tests, and even deployments.
+    As such, it becomes a concrete implementation of quality control within teams.
+    CI allows software teams to turn every code commit into either a concrete failure or a viable release candidate.
 
 - Control Plane, 控制平面
 
@@ -653,31 +773,48 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     用来部署系统守护进程，例如日志搜集和监控代理，这些进程通常必须运行在每个节点。
 
-- Data Center, 数据中心
+- Data Center
 
-    数据中心是专门设计用于容纳计算机（通常是服务器）的专用建筑物或设施。
-    数据中心往往连接到高速互联网线路，尤其是专注于云计算的数据中心。
-    数据中心所在的建筑物还配备了即使在发生负面事件时也能维持服务的设备，例如在停电期间提供电力的发电机，以及处理计算机产生的废热的强大空调。
+    A data center is a specialised building or facility designed specifically to house computers, most often servers.
+    Data centers tend to be connected to high-speed internet lines,
+    especially in the case of data centers focused on cloud computing.
+    The buildings data centers are housed in also have equipment to maintain service even in the case of negative events,
+    such as generators to provide power during outages,
+    as well as powerful air conditioning to deal with waste heat produced by the computers.
 
-    与每个企业都必须在其所在的位置主管自己的服务器设备不同，数据中心允许公司和个人利用数据中心提供商的专业知识和规模效率。
-    这意味着不必担心管理电源、灭火技术、空调或高速互联网连接等问题。
+    Instead of every business having to host their own server equipment where they are located,
+    data centers allow companies and individuals to take advantage of the
+    specialised knowledge and efficiencies of scale of data center providers.
+    This means not having to worry about managing power supply, fire suppression technology,
+    air conditioning or high speed internet connectivity, for example.
 
-    对于云计算，数据中心至关重要。由于可以根据可扩缩性配置资源和基础设施，
-    因此企业可以在数据中心租用云计算资源，而无需多虑预测的资源过多过少带来的问题。
-    由于数据中心遍布世界各地，这允许在地理上接近需求的地方提供资源，而无需实际运送和设置设备。
+    For cloud computing, data centers are crucial.
+    As resources and infrastructure can be provisioned according to the scale of demand,
+    businesses can rent cloud computing resources in a data center without having to worry about forecasting
+    – and potentially under-resourcing or overpaying – for computing resources.
+    As data centers exist all over the world,
+    this allows for provisioning resources geographically near to demand
+    without having to physically ship and set up equipment.
 
-- Database as a service, 数据库即服务
+- Database as a service
 
-    数据库即服务 (DBaaS) 是由云运营商（公共或私有）管理的服务，它支持应用程序，而无需应用程序团队执行传统的数据库管理功能。
-    DBaaS 允许应用程序开发人员利用数据库，而无需成为专家或聘请数据库管理员 (DBA) 来保持数据库最新状态。
+    Database-as-a-Service (DBaaS) is a service managed by a cloud operator (public or private)
+    that supports applications without requiring the application team to
+    perform traditional database administration functions.
+    DBaaS allows app developers to leverage databases without being experts or
+    hiring a database administrator (DBA) to keep the database up to date.
 
-    传统上，在本地设置中，组织必须定期投资额外的存储和处理能力，以适应可能昂贵的数据库扩展。
-    此外，开发人员在 IT 基础架构团队的帮助下配置和配置数据库，从而降低了数据库驱动应用程序的部署速度。
-    加载和执行它们也需要更长的时间。
+    Traditionally, in on-premise setups, organizations regularly have to invest in
+    additional storage and processing capacity to accommodate database expansion which can be expensive.
+    Additionally, developers provision and configure databases with the help of IT infrastructure teams,
+    slowing deployment speed of database-driven applications down.
+    Loading and executing them also takes longer.
 
-    DBaaS 允许开发人员将所有管理/行政操作外包给基于云的服务提供商。
-    服务提供商确保数据库顺利运行，包括配置管理、备份、补丁、升级、服务监控等，并通过用户友好的界面进行管理。
-    DBaaS 可帮助组织更快地开发企业级应用程序，同时最大限度地降低数据库成本。
+    DBaaS allows developers to outsource all administration/administrative operations to the cloud-based service provider.
+    The service provider ensures the database is running smoothly,
+    including configuration management, backups, patches, upgrades, service monitoring, and more,
+    with a user-friendly interface to manage it all.
+    DBaaS helps organizations develop enterprise-grade applications faster while minimizing database costs.
 
 - Data ID
 
@@ -690,24 +827,24 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     提供诸如 CPU、内存、网络和存储的能力，以便容器可以运行并连接到网络。
 
-- Debugging, 调试
+- Debugging
 
-    调试是从计算机程序、软件或系统中查找并解决故障（或错误） 以获得预期结果的过程或活动。
-    故障是导致不正确或不符合预期结果的缺陷或问题。
+    Debugging is the process or activity of finding and resolving bugs (or errors) from computer programs, software, or systems to get the desired result.
+    A bug is a defect or a problem leading to incorrect or unexpected results.
 
-    软件开发是一项复杂的活动，在不引入故障的情况下编写代码几乎是不可能的。
-    这些故障导致代码在执行时可能无法按预期运行，或产生未定义的行为。
-    根据应用程序的重要性，故障可能会产生重大的负面影响 —— 经济上甚至是人类生活。
-    通常，应用程序代码必须在不同阶段或环境被测试。
-    应用程序越关键，测试就必须越准确。
+    Software development is a complex activity that makes it nearly impossible to write code without introducing bugs.
+    Those bugs lead to code that will likely not function as desired (undefined behavior) when executed.
+    Depending on how critical an application is, bugs can have a significant negative impact — financially or even on human lives.
+    Usually, application code has to go through different stages or environments where it gets tested.
+    The more critical an application is, the more accurate the testing has to be.
 
-    当出现故障时，工程师通过调试（例如，查找和修复）应用程序以减少生产系统中的不良行为。
-    调试并不是一件容易的事，因为工程师必须追踪不良行为的根源。
-    它需要有关代码本身和运行时执行上下文的知识。
-    这是不同的调试技术和工具派上用场的地方。
-    例如，分析日志、链路信息和指标信息，用于直接在生产中进行调试。
-    开发人员可以使用交互式调试在运行时单步执行代码，同时分析相关的执行上下文。
-    一旦定位到故障的根源，他们通过发起修复错误的请求或者发布新的补丁来更正代码行为。
+    When bugs appear, engineers have to debug (e.g., finding and fixing) the app to decrease undesired behavior for production systems.
+    Debugging is no easy task as engineers have to track down the source of the undesired behavior.
+    It requires knowledge about the code itself and the execution context at runtime.
+    This is where different debugging techniques and tools come in handy.
+    Analysis of logs, traces, and metrics, for instance, are used for debugging directly in production.
+    Developers can use interactive debugging to step through the code at runtime while analyzing the related execution context.
+    Once they have identified the source of the failure, they correct the code and create a bug fix or patch.
 
 - [Deployement](../kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md), 无状态负载
 
@@ -726,19 +863,28 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     设备插件向 kubelet 公布资源，以便工作负载 Pod 访问 Pod 运行所在节点上的硬件功能特性。
     您可以将设备插件部署为 DaemonSet，或者直接在每个目标节点上安装设备插件软件。
 
-- DevOps, 开发运维
+- DevOps
 
-    开发运维是一种方法论，其中团队拥有从应用程序开发到生产操作的整个过程，因此 DevOps，它不仅仅是实施一套技术，还需要文化和流程的彻底转变。
-    DevOps 需要一组工程师来处理小组件（相对于整个功能），从而减少交接——一个常见的错误来源。
+    DevOps is a methodology in which teams own the entire process from application development to production operations, hence DevOps.
+    It goes beyond implementing a set of technologies and requires a complete shift in culture and processes.
+    DevOps calls for groups of engineers that work on small components (versus an entire feature), decreasing handoffs – a common source of errors.
 
-    传统上，在具有紧密耦合单体应用程序的复杂组织中，工作通常分散在多个组之间。
-    这导致了多次交接和较长的交货时间。 每次组件或更新准备就绪时，都会将其放入队列中以供下一个团队使用。
-    因为个人只参与了项目的一小部分，这种方法导致缺乏所有权。 他们的目标是将工作交给下一个小组，而不是为客户提供正确的功能——明显的优先级错位。
+    Traditionally, in complex organizations with tightly-coupled monolithic apps,
+    work was generally fragmented between multiple groups.
+    This led to numerous handoffs and long lead times.
+    Each time a component or update was ready, it was placed in a queue for the next team.
+    Because individuals only worked on one small piece of the project, this approach led to a lack of ownership.
+    Their goal was to get the work to the next group, not deliver the right functionality to the customer — a
+    clear misalignment of priorities.
 
-    到代码最终投入生产时，它经过了这么多开发人员，排了这么多队列，如果代码不起作用，很难追查问题的根源。DevOps 颠覆了这种方法。
+    By the time code finally got into production, it went through so many developers,
+    waiting in so many queues that it was difficult to trace the origin of the problem if the code didn’t work.
+    DevOps turns this approach upside down.
 
-    让一个团队拥有应用程序的整个生命周期可以最大限度地减少交接，降低部署到生产中的风险，提高代码质量，
-    因为团队还负责代码在生产中的执行方式，并且由于更多的自主权和所有权而提高了员工满意度。
+    Having one team own the entire lifecycle of an application results in
+    minimized handoffs, reduce risk when deploying into production, better code quality
+    as teams are also responsible for how code performs in production
+    and increased employee satisfaction due to more autonomy and ownership.
 
 - Dependency topology, 依赖拓扑
 
@@ -768,38 +914,47 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     如果您作为一个集群操作人员，销毁了一个从属于某个应用的 Pod，Kubernetes 视之为主动干扰（Voluntary Disruption）。
     如果由于节点故障或者影响更大区域故障的断电导致 Pod 离线，Kubernetes 视之为非主动干扰（Involuntary Disruption）。
 
-- Distributed Apps, 分布式应用
+- Distributed Apps
 
-    分布式应用是一种应用，其功能被分解成多个较小的独立部分。
-    分布式应用通常由单独的微服务组成，处理更广泛应用中的不同问题。
-    在云原生环境中，各个组件通常作为容器在集群上运行。
+    A distributed application is an application where the functionality is broken down into multiple smaller independent parts.
+    Distributed applications are usually composed of individual microservices
+    that handle different concerns within the broader application.
+    In a cloud native environment, the individual components typically run as containers on a cluster.
 
-    运行在单一计算机上的应用程序代表了一个单点故障。如果该计算机发生故障，应用程序就不可用。
-    分布式应用通常与单体式应用形成对比。一个单体应用可能更难扩展，因为各种组件不能独立扩展。
-    随着应用程序的增长，它们也会拖累开发人员的速度，因为更多的开发人员需要在一个不一定有明确边界的共享代码库上工作。
+    An application running on one single computer represents a single point of failure — if that computer fails, the application becomes unavailable.
+    Distributed applications are often contrasted to monolithic applications.
+    A monolithic app can be harder to scale as the various components can't be scaled independently.
+    They can also become a drag on developer velocity as they grow
+    because more developers need to work on a shared codebase that doesn't necessarily have well defined boundaries.
 
-    当把一个应用程序拆分成不同的部分并在许多地方运行时，整个系统可以容忍更多的故障。
-    它还允许应用程序利用单个应用程序实例所不具备的扩缩功能，即水平扩缩的能力。
-    然而，这也是有代价的：增加了复杂性和操作开销。您现在正在运行很多应用组件，而不是一个应用。
+    When splitting an application into different pieces and running them in many places, the overall system can tolerate more failures.
+    It also allows an application to take advantage of scaling features not available to a single application instance,
+    namely the ability to scale horizontally.
+    This does, however, come at a cost: increased complexity and operational overhead
+    — you’re now running lots of application components instead of one app.
 
-- Distributed System, 分布式系统
+- Distributed System
 
-    分布式系统是通过网络连接的自主计算元素的集合，在用户看来是一个单一的连贯系统。
-    一般被称为节点，这些组件可以是硬件设备（如电脑、手机）或软件进程。
-    节点被编程以实现一个共同的目标，为了协作，它们通过网络交换信息。
+    A distributed system is a collection of autonomous computing elements
+    connected over a network that appears to users as a single coherent system.
+    Generally referred to as nodes, these components can be hardware devices (e.g. computers, mobile phones) or software processes.
+    Nodes are programmed to achieve a common goal and, to collaborate, they exchange messages over the network.
 
-    今天的许多现代应用程序都非常大，需要超级计算机来操作。想想 Gmail 或 Netflix。
-    没有一台计算机强大到足以承载整个应用程序。通过连接多台计算机，计算能力几乎变得无限大。
-    如果没有分布式计算，我们今天依赖的许多应用就不可能实现。
+    Numerous modern applications today are so big they'd need supercomputers to operate.
+    Think Gmail or Netflix. No single computer is powerful enough to host the entire application.
+    By connecting multiple computers, compute power becomes nearly limitless.
+    Without distributed computing, many applications we rely on today wouldn't be possible.
 
-    传统上，系统会纵向扩缩。这就是当您在一台单独的机器上添加更多的 CPU 或内存。
-    垂直扩缩很耗时，需要停机，而且很快就会达到极限。
+    Traditionally, systems would scale vertically.
+    That's when you add more CPU or memory to an individual machine.
+    Vertical scaling is time-consuming, requires downtime, and reaches its limit quickly.
 
-    分布式系统允许水平扩缩（例如，在需要时向系统添加更多节点）。
-    这可以是自动化的，允许系统处理工作负载或资源消耗的突然增加。
+    Distributed systems allow for horizontal scaling (e.g. adding more nodes to the system whenever needed).
+    This can be automated allowing a system to handle a sudden increase in workload or resource consumption.
 
-    非分布式系统面临着故障的风险，因为如果一台机器发生故障，整个系统都会故障。
-    分布式系统可以设计成这样，即使一些机器发生故障，整个系统仍然可以继续工作，产生相同的结果。
+    A non-distributed system exposes itself to risks of failure because if one machine fails, the entire system fails.
+    A distributed system can be designed in such a way that,
+    even if some machines go down, the overall system can still keep working to produce the same result.
 
 - Docker
 
@@ -839,6 +994,26 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     StorageClass 可以引用卷插件（Volume Plugin）提供的卷，也可以引用传递给卷插件的参数集。
 
 ### E, F
+
+- Edge computing
+
+    Edge computing is a distributed system approach that shifts some storage and computing capacity from the primary data center to the data source.
+    The gathered data is computed locally (e.g., on a factory floor, in a store, or throughout a city) rather than sent to a centralized data center for processing and analysis.
+    These local processing units or devices represent the system's edge, whereas the data center is its center.
+    The output computed at the edge is then sent back to the primary data center for further processing.
+    Examples of edge computing include wrists gadgets or computers that analyze traffic flow.
+
+    Over the past decade, we've seen an increasing amount of edge devices (e.g., mobile phones, smart watches, or sensors).
+    In some cases, real-time data processing is not only a nice-to-have but vital.
+    Think of self-driving cars.
+    Now imagine the data from the car's sensors would have to be transferred to a data center for processing before being sent back to the vehicle so it can react appropriately.
+    The inherent network latency could be fatal.
+    While this is an extreme example, most users wouldn't want to use a smart device unable to provide instant feedback. 
+
+    As described above, for edge devices to be useful, they must do at least part of the processing and analyzing locally to provide near real-time feedback to users.
+    This is achieved by shifting some storage and processing resources from the data center to where the data is generated: the edge device.
+    Processed and unprocessed data is subsequently sent to the data center for further processing and storage.
+    In short, efficiency and speed are the primary drivers of edge computing.
 
 - EndpointSlice
 
@@ -885,21 +1060,21 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     在 Kubernetes 中，审计机制会生成一种不同类别的 Event 记录（API 组为 `audit.k8s.io`）。
 
-- Event-Driven Architecture, 事件驱动架构
+- Event-Driven Architecture
 
-    事件驱动架构是一种提倡事件的创建、处理和消费的软件架构。
-    事件是对应用程序状态的任何更改。
-    例如，在拼车应用上叫车代表一个事件。
-    这种架构创建了一个结构，在该结构中，事件可以从它们的源（请求乘车的应用程序）正确地路由到所需的接收器（附近可用司机的应用程序）。
+    Event-driven architecture is a software architecture that promotes the creation, processing, and consumption of events.
+    An event is any change to an application's state.
+    For example, hailing a ride on a ride-sharing app represents an event.
+    This architecture creates the structure in which events can be properly routed from their source (the app requesting a ride) to the desired receivers (the apps of available drivers nearby).
 
-    随着越来越多的数据变得实时，寻找可靠的方法来确保捕获事件并将其路由到必须处理事件请求的适当服务变得越来越具有挑战性。
-    处理事件的传统方法通常无法保证消息被恰当地路由或发送或接收。
-    随着应用程序的扩展，编排事件变得更具挑战性。
+    As more data becomes real-time, finding reliable ways to ensure that events are captured and routed to the appropriate service that must process event requests gets increasingly challenging.
+    Traditional methods of handling events often have no way to guarantee that messages are appropriately routed or were actually sent or received.
+    As applications begin to scale, it becomes more challenging to orchestrate events.
 
-    事件驱动架构为所有事件建立了一个中心枢纽（例如，Kafka）。
-    然后定义事件生产者（源）和消费者（接收者），中心事件枢纽保证事件的流动。
-    这种架构确保服务保持解耦，并且事件从生产者正确路由到消费者。
-    生产者通常通过 HTTP 协议接收传入事件，然后路由事件信息。
+    Event-driven architectures establish a central hub for all events (e.g., Kafka).
+    You then define the event producers (source) and consumers (receiver), and the central event hub guarantees the flow of events.
+    This architecture ensures that services remain decoupled and events are properly routed from the producer to the consumer.
+    The producer will take the incoming event, usually by HTTP protocol, then route the event information.
 
 - Eviction, 驱逐
 
@@ -923,16 +1098,21 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     控制屏幕可以部署在一个集群中，但是不能部署在它所控制的网格的一部分集群中。
     它的目的是将控制平面与网格的数据屏幕完全分离。
 
-- Firewall, 防火墙
+- Firewall
 
-    防火墙是一个基于特定规则过滤网络流量的系统。防火墙可以是硬件、软件，或者是两者的组合。
+    A firewall is a system that filters network traffic on the basis of specified rules.
+    Firewalls can be hardware, software, or a combination of the two.
 
-    默认情况下，在遵循网络的路由规则下，网络将会允许任何人进出。由于这种默认行为，保护网络安全是有挑战性的。
-    例如，在基于微服务的银行应用程序中，服务之间的沟通是通过其网络来相互传递高敏感性财务数据。
-    假如没有防火墙，恶意行为者可能会渗透网络、拦截通信并且造成破坏。
+    By default, a network will allow anyone to enter and depart as long as they follow the network's routing rules.
+    Because of this default behavior, securing a network is challenging.
+    For example, in a microservices-based banking app, the services communicate with one another
+    by transmitting highly sensitive financial data through their network.
+    A malicious actor may infiltrate the network, intercept communication, and do damage if there was no firewall in place.
 
-    防火墙使用预设规则来检查网络流量。所有流量都会被过滤，任何来自不可信或可疑来源的流量都会被阻止。
-    只有设置为被接受的流量才能进入。防火墙在安全和受控的内部可信网络间建立了一道屏障。
+    A firewall examines network traffic using pre-defined rules.
+    All traffic is filtered, and any traffic coming from untrustworthy or suspect sources is blocked
+    — only traffic configured to be accepted gets in.
+    Firewalls establish a barrier between secured and controlled internal trusted networks.
 
 - Finalizer
 
@@ -984,6 +1164,27 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     计量器是一个 **既可增又可减** 的度量指标值。计量器主要用于测量类似于温度、内存使用量这样的瞬时数据。
 
+- GitOps
+
+    GitOps is a set of best practices based on shared principles,
+    applied to a workflow that depends on software agents that
+    enable automation to reconcile a declared system state or configuration in a git repository.
+    These software agents and practices are used to execute a cohesive workflow that
+    leverages a source control system like Git as the “single source of truth” and
+    extends this practice to applications, infrastructure, and operational procedures.
+
+    Existing processes for infrastructure configuration management can face challenges
+    such as configuration drift, failed deployments, relying on a system's previous state for success,
+    missing documentation, or unknown development history.
+    Adopting a GitOps workflow can help alleviate these issues, among several others.
+
+    GitOps is a paradigm that can be applied to a workflow
+    to help manage an application and cloud system infrastructure.
+    It enables organizations several advantages
+    such as better coordination, transparency, stability, and reliability of a system.
+    Operating in a close loop ensures the current live state of a system matches
+    against the desired target state, specified in the git repository.
+
 - Global rate limit, 全局限流
 
     可选择增加网关限流组件，通过限流组件可以支持更多的流量管控能力。
@@ -1032,20 +1233,29 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     HPA 通常用于 ReplicationController、Deployment 或者 ReplicaSet 上。
     HPA 不能用于不支持扩缩的对象，例如 DaemonSet。
 
-- Horizontal Scaling, 水平扩缩
+- Horizontal Scaling
 
-    水平扩缩是一种通过添加更多节点来增加系统容量的技术，而不是向单个节点添加更多计算资源（后者称为垂直扩缩）。
-    假设我们有一个 4GB RAM 的系统，并且想要将其容量增加到 16GB RAM，水平扩缩意味着通过添加 4 x 4GB RAM 而不是切换到 16GB RAM 系统来实现。
+    Horizontal scaling is a technique where a system's capacity is increased by adding more nodes
+    versus adding more compute resources to individual nodes (the latter being known as vertical scaling).
+    Let's say, we have a system of 4GB RAM and want to increase its capacity to 16GB RAM,
+    scaling it horizontally means doing so by adding 4 x 4GB RAM rather than switching to a 16GB RAM system.
 
-    这种方法通过添加新实例或节点来提高应用程序的性能，以更好地均衡工作负载。
-    简而言之，它旨在减少服务器的负载，而不是扩大单个服务器的容量。
+    This approach enhances the performance of an application by adding new instances, or nodes,
+    to better distribute the workload.
+    In simple words, it aims to decrease the server's load
+    rather than expanding capacity of the individual server.
 
-    随着对应用程序的需求增长超出该应用程序实例的当前容量，我们需要找到一种方法来扩缩（增加容量）系统。
-    我们可以向系统添加更多节点（水平扩缩）或向现有节点添加更多计算资源（垂直扩缩）。
+    As demand for an application grows beyond the current capacity of that application instance,
+    we need to find a way to scale (add capacity to) the system.
+    We can either add more nodes to the system (horizontal scaling)
+    or more compute resources to existing nodes (vertical scaling).
 
-    水平扩缩允许应用程序在底层集群设置的范围内进行扩缩。通过向系统添加更多实例，应用程序可以处理更多请求。
-    如果单个节点每秒可以处理 1,000 个请求，则每增加一个节点，每秒的请求总数应该会增加大约 1,000 个。
-    这使得应用程序可同时执行更多工作，而无需特别增加任何单个节点的容量。
+    Horizontal scaling allows applications to scale to whatever limits the underlying cluster provides.
+    By adding more instances to the system, the app can process a greater number of requests.
+    If a single node can handle 1,000 requests per second,
+    each additional node should increase the total number of requests by around 1,000 requests per second.
+    This allows the application to do more work concurrently
+    without needing to increase the capacity of any node in particular.
 
 - HostAliases, 主机别名
 
@@ -1054,6 +1264,29 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     [HostAliases](https://kubernetes.io/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#hostalias-v1-core)
     是一个包含主机名和 IP 地址的可选列表，配置后将被注入到 Pod 内的 hosts 文件中。
     该选项仅适用于没有配置 hostNetwork 的 Pod。
+
+- Hypervisor
+
+    A hypervisor enables virtualization by taking the advantage of bare metal machine resources
+    (CPU, Memory, Network, and Storage), dividing them into sub-parts,
+    and allocating resources accordingly to create virtual machines (VM)
+    until the underlying host reaches its performance limits.
+
+    Traditionally, a server could only run applications of a single operating system.
+    The process of acquiring software takes time. It requires infrastructure with a specific environment
+    and a team of engineers to manage and monitor them.
+    Servers were underutilized, considering the computing power of a server it can run multiple operating systems and more applications.
+    Running applications on bare metal wasn't enough to match the needs of fluctuating traffic.
+
+    In the context of cloud computing, the hypervisor becomes an effective tool.
+    In contrast to the traditional method of creating a virtual machine, a hypervisor makes the process much simpler and faster.
+    Hardware resources are logically partitioned and assigned to the VMs keeping them isolated as distinct units,
+    ensuring they function independently so that issues on one don't affect the others,
+    and allowing VMs to install any necessary operating system.
+    A hypervisor is an abstraction over the physical hardware, it takes care of those low-level complexities of managing the VMs and monitoring them,
+    making VMs loosely bound to hardware, enabling organizations to migrate their applications to the remote servers/cloud
+    and autoscale their services.
+    Over time, the use of this multi-tenant software has reduced computing costs.
 
 ### I
 
@@ -1069,51 +1302,65 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     镜像是软件打包的一种方式，可以将镜像存储在容器镜像仓库、拉取到本地系统并作为应用来运行。
     镜像中包含的元数据指明了运行什么可执行程序、是由谁构建的以及其他信息。
 
-- Immutable Infrastructure, 不可变基础设施
+- Immutable Infrastructure
 
-    不可变基础设施指的是一旦部署就无法变更的计算机基础设施（例如虚拟机、容器、网络设备）。
-    具体实现方式可以是通过自动化进程覆写所有未经授权的变更，也可以通过某个系统从一开始就不允许变更。
-    容器是不可变基础设施的一个很好的例子，因为如果想要持久变更容器，只能通过创建新版本的容器或从其镜像重新创建同样的容器。
+    Immutable Infrastructure refers to computer infrastructure (virtual machines, containers, network appliances)
+    that cannot be changed once deployed.
+    This can be enforced by an automated process that overwrites unauthorized changes or
+    through a system that won't allow changes in the first place.
+    Containers are a good example of immutable infrastructure
+    because persistent changes to containers can only be made by
+    creating a new version of the container or recreating the existing container from its image.
 
-    通过预防或识别未经授权的变更，不可变的基础设施可以更轻松地识别和减轻安全风险。
-    操作这种系统变得更加直接，因为管理员可以在某个假设的前提下放心地操作。
-    毕竟管理员知道没有人做过误操作，也无需担心发生过自己忘记沟通的某些变更。
-    不可变基础设施与基础设施即代码密切相关，
-    其创建基础设施所需的一切自动化都存放在版本控制（例如 Git）中。
-    这种不可变更和版本控制的结合意味着对系统的每次授权变更都会有一个持久的审计日志。
+    By preventing or identifying unauthorized changes,
+    immutable infrastructures make it easier to identify and mitigate security risks.
+    Operating such a system becomes a lot more straightforward
+    because administrators can make assumptions about it.
+    After all, they know no one made mistakes or changes they forgot to communicate.
+    Immutable infrastructure goes hand-in-hand with infrastructure as code
+    where all automation needed to create infrastructure is stored in version control (e.g. Git).
+    This combination of immutability and version control means that
+    there is a durable audit log of every authorized change to a system.
 
-- Infrastructure as a service, 基础设施即服务
+- Infrastructure as a service
 
-    基础设施即服务，或者 IaaS ，是一种云计算服务模型，
-    它提供物理或虚拟的计算、存储和网络资源，使用按需按量的计费模式。
-    云提供商拥有和管理软件和硬件设施，可供消费者在公共、私有或混合云部署和使用。
+    Infrastructure as a service, or IaaS, is a cloud computing service model that offers physical or virtualized
+    compute, storage, and network resources on-demand on a pay-as-you-go model.
+    Cloud providers own and operate the hardware and software,
+    available to consumers in public, private, or hybrid cloud deployments.
 
-    在搭建传统的本地设施时，组织常常受困于如何保证资源的有效利用。
-    数据中心建立时必须考虑潜在的高峰需求，即使这样的需求只占 1%的使用时间。
-    而在低需求期间，这些计算资源是空闲的。
-    而且，如果工作负载超过预期需求，处理工作负载的计算资源则会出现短缺。
-    这种缺乏可扩缩性的使用方式，将导致成本增加和资源使用率降低。
+    In traditional on-premise setups, organizations often struggle with effective computing resource usage.
+    Data centers have to be built for potential peak demand, even if it's only needed 1% of the time.
+    During lower demand, these compute resources are idle.
+    And, if the workload spikes beyond the expected demand,
+    there is a shortage of computing resources to process the workload.
+    This lack of scalability leads to increased costs and ineffective resource usage.
 
-    通过 IaaS ，组织可以避免为其应用程序购买和维护计算和数据中心资源。
-    按需使用的基础设施允许他们根据需要租用计算资源，并推迟大型资本支出，
-    或 CAPEX，同时给予他们扩大或缩小规模的灵活性。
+    With IaaS organizations can avoid purchasing and maintaining compute and data center space for their applications.
+    An on-demand infrastructure allows them to rent compute resources as needed and
+    defer large capital expenditures, or [CAPEX](https://en.wikipedia.org/wiki/Capital_expenditure),
+    while giving them the flexibility to scale up or down.
 
-    IaaS 降低了试验或尝试新应用程序的初期成本，并提供了快速部署基础设施的工具。
-    云提供商是开发或测试环境的绝佳选择，它可以帮助开发人员低成本的进行试验和创新。
+    IaaS reduces the upfront costs of experimenting or trying a new application and
+    provides facilities to rapidly deploy infrastructure.
+    A cloud provider is an excellent option for development or test environments,
+    which helps developers experiment and innovate.
 
-- Infrastructure as code, 基础设施即代码
+- Infrastructure as code
 
-    基础设施即代码是将基础设施的定义存储为一个或多个文件的做法。
-    这取代了通常通过 shell 脚本或其他配置工具手动配置基础架构即服务的传统模型。
+    Infrastructure as code is the practice of storing the definition of infrastructure as one or more files.
+    This replaces the traditional model where infrastructure as a service is provisioned manually,
+    usually through shell scripts or other configuration tools.
 
-    云原生方式构建应用程序要求基础设施是一次性的和可复现的。
-    它还需要以自动化和可重复的方式按需扩缩，甚至可能无需人工干预。
-    手动配置则无法满足云原生应用对响应能力和灵活扩缩的诉求。
-    而且手动基础架构变更不可复现，很容易碰到扩缩瓶颈，并引入错误配置。
+    Building applications in a cloud native way requires infrastructure to be disposable and reproducible.
+    It also needs to scale on-demand in an automated and repeatable way, potentially without human intervention.
+    Manual provisioning cannot meet the responsiveness and scale requirements of cloud native applications.
+    Manual infrastructure changes are not reproducible, quickly run into scale limits, and introduces misconfiguration errors.
 
-    通过将服务器、负载均衡器和子网等数据中心资源表示为代码，
-    它允许基础架构团队对所有配置拥有单一的数据源，并允许他们在
-    CI/CD 通道中管理数据中心，实现版本控制和部署策略。
+    By representing the data center resources such as servers, load balancers, and subnets as code,
+    it allows infrastructure teams to have a single source of truth for all configurations and
+    also allows them to manage their data center in a CI/CD pipeline,
+    implementing version control and deployment strategies.
 
 - Ingress, 路由
 
@@ -1211,27 +1458,28 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Kubernetes, K8s
 
-    [Kubernetes](https://kubernetes.io/)，通常缩写为 K8s，是一种流行的现代基础设施自动化的开源工具。
-    它就像一个数据中心的操作系统，管理在分布式系统上运行的应用程序（就像您笔记本上的操作系统，管理您的应用程序）。
+    Kubernetes, often abbreviated as K8s, is an open source container orchestrator.
+    It automates the lifecycle of containerized applications on modern infrastructures, functioning as a "datacenter operating system" that manages applications across a distributed system.
 
-    Kubernetes 在集群的节点上调度容器。
-    它捆绑了几个基础设施结构，有时被称为 "基元"，如应用程序的实例、负载平衡器、持久性存储等，以一种可以被组成应用程序的方式。
+    Kubernetes schedules containers across nodes in a cluster, bundling several infrastructure resources such as load balancer, persistent storage, etc. to run containerized applications.
 
-    Kubernetes 实现了自动化和可扩展性，使用户能够以可重复的方式声明性地部署应用程序。
-    Kubernetes 生态系统中的软件产品和项目利用这种自动化和可扩展性来扩展 Kubernetes API。
-    这使他们能够利用 Kubernetes 的自动化，并使他们的工具更容易被有经验的 Kubernetes 从业者所接受。
+    Kubernetes enables automation and extensibility, allowing users to deploy applications declaratively (see below) in a reproducible way. 
+    Kubernetes is extensible via its API, allowing experienced Kubernetes practitioners to leverage its automation capabilities according to their needs.
 
-    长期以来，基础设施自动化和声明性配置管理一直是重要的概念，而且随着云计算的普及而变得更加紧迫。
-    随着对计算资源的需求增加，组织感到压力，要用更少的工程师提供更多的操作能力，需要新的技术和工作方法来满足这一需求。
-    此外，云计算的兴起与容器化相搭配，那些忙于自动化更多传统基础设施的组织需要一种机制来自动配置和部署其容器。
+    Infrastructure automation and declarative configuration management have been important concepts for a long time, but they have become more pressing as cloud computing has gained popularity.
+    As demand for compute resources increases and organizations need to provide more operational capabilities with fewer engineers, new technologies and working methods are required to meet that demand.
 
-    Kubernetes 以类似于传统的基础设施即代码工具的方式帮助实现自动化，但它的优势在于，与虚拟机或物理机相比，容器更能抵抗配置漂移。
-    Kubernetes 的工作方式是声明式的，这意味着操作者不是提供关于如何做某事的指示，而是描述（通常是 YAML 文档）他们想要做什么；
-    Kubernetes 将自行处理 "如何 "的问题。这导致 Kubernetes 与基础设施即代码极为兼容。
+    Similar to traditional infrastructure as code tools, Kubernetes helps with automation but has the advantage of working with containers. 
+    Containers are more resistant to configuration drift than virtual or physical machines.
 
-    Kubernetes 还能自我修复。这意味着它确保集群的实际状态总是与操作者的期望状态相匹配。
-    如果 Kubernetes 检测到一个偏差，Kubernetes 控制器就会启动并修复它。
-    因此，虽然它使用的基础设施可能不断变化，但 Kubernetes 本身也在不断自动适应变化，并确保它与预期状态相匹配。
+    Additionally, Kubernetes works declaratively, which means that instead of operators instructing the machine how to do something, they describe — usually as manifest files (e.g., YAML) — what the infrastructure should look like.
+    Kubernetes then takes care of the "how".
+    This results in Kubernetes being extremely compatible with infrastructure as code.
+
+    Kubernetes also self-heals.
+    The cluster's actual state will always match the operator's desired state.
+    If Kubernetes detects a deviation from what is described in the manifest files, a Kubernetes controller kicks in and fixes it. 
+    While the infrastructure Kubernetes uses may be continually changing, Kubernetes constantly and automatically adapts to changes and ensures that it matches with the desired state.
 
 - Kubernetes API
 
