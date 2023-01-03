@@ -17,7 +17,7 @@
     ![falco-exporter_helm-1](../../images/falco-exporter-install-1.png)
 
 3. 在`版本选择`中选择希望安装的版本，点击`安装`。
-    
+
     ![falco-exporter_helm-2](../../images/falco-exporter-install-2.png)
 
 4. 在安装界面，填写所需的安装参数。
