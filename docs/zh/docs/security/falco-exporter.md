@@ -45,7 +45,7 @@ Falco-exporter 会部署为 Kubernetes 集群上的守护进程集。如果集�
 
     ![falco-exporter_helm-4](./images/falco-exporter-install-6.png)
 
-   在如上界面中，填写以下参数:
+    在如上界面中，填写以下参数:
 
     - `Falco Prometheus Exporter` -> `Prometheus prometheusRules` -> `Install prometheusRules`：创建 PrometheusRules，对优先事件发出警报，默认开启。
     - `Falco Prometheus Exporter` -> `Prometheus prometheusRules` -> `Alerts settings`：警报设置，为不同级别的日志事件设置警报是否启用、警报的间隔时间、警报的阈值。

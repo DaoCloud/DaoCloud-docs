@@ -24,6 +24,7 @@ Please confirm that your cluster has successfully connected to the `Container Ma
     ![falco-exporter_helm-1](../../images/falco-exporter-install-1.png)
 
 3. Select the version you want to install in `version selection` and click `install`.
+    
     ![falco-exporter_helm-2](../../images/falco-exporter-install-2.png)
 
 4. On the installation screen, fill in the required installation parameters.
@@ -50,7 +51,7 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
     ![falco-exporter_helm-4](../../images/falco-exporter-install-6.png)
 
-   In the screen as above, fill in the following parameters:
+    In the screen as above, fill in the following parameters:
 
     - `Falco Prometheus Exporter` -> `Prometheus prometheusRules` -> `Install prometheusRules`: create PrometheusRules to alert on priority events. It is enabled by default.
 

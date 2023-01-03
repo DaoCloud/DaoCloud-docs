@@ -29,7 +29,7 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
     ![falco_helm-4](../../images/falco-helm-4.png)
 
-   In the screen as above, fill in the following parameters:
+    In the screen as above, fill in the following parameters:
 
     - `Falco` -> `Image Settings` -> `Registry`: set the repository address of the Falco image, which is already filled with the available online repositories by default. If it is a private environment, you can change it to a private repository address.
 
