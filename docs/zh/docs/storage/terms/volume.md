@@ -24,6 +24,6 @@ Kubernetes 支持很多类型的卷。Pod 可以同时使用任意数目的卷�
 
 参考 Kubernetes 官方文档：
 
-- [卷](https://kubernetes.io/zh/docs/concepts/storage/volumes/)
-- [持久卷](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/)
-- [临时卷](https://kubernetes.io/zh/docs/concepts/storage/ephemeral-volumes/)
+- [卷](https://kubernetes.io/zh-cn/docs/concepts/storage/volumes/)
+- [持久卷](https://kubernetes.io/zh-cn/docs/concepts/storage/persistent-volumes/)
+- [临时卷](https://kubernetes.io/zh-cn/docs/concepts/storage/ephemeral-volumes/)
