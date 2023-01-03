@@ -28,7 +28,7 @@ root 用户拥有对所有资源的所有操作权限。
 
 #### 通过 Console 创建普通用户
 
-![image](../../images/miniouser01.png)
+![image](../images/miniouser01.png)
 
 #### 通过 mc 创建普通用户
 
@@ -86,7 +86,7 @@ type TenantSpec struct {
 
 #### 通过 console 创建 service account
 
-![image](../../images/miniouser02.png)
+![image](../images/miniouser02.png)
 
 #### 通过 mc 命令创建 service account
 
