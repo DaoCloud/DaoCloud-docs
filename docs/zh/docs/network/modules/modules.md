@@ -21,8 +21,8 @@ DCE 5.0 提供的网络方案对当前主流的开源网络组件进行优化组
 - [MetalLB](../modules/metallb/what.md)：裸金属版的 Kubernetes 负载均衡器方案。
 - [Multus-underlay](../modules/multus-underlay/what.md)：基于 Multus、搭配 Macvlan + SRIOV-CNI 的多网卡方案。
 - [Spiderpool](../modules/spiderpool/what.md)：自动化管理 IP 资源
-- [falco](../modules/falco/what.md)：是云原生运行时安全工具，旨在检测应用程序中的异常活动。
-- [falco](../modules/falco-exporter/what.md)：是一个用于 Falco 输出事件的Prometheus Metrics导出器。
+- [falco](../../security/falco.md)：云原生运行时安全工具，旨在检测应用程序中的异常活动。
+- [falco-exporter](../../security/falco-exporter.md)：用于 Falco 输出事件的 Prometheus Metrics 导出器。
 
 !!! note
 
