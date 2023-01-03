@@ -29,7 +29,7 @@ DCE 5.0 的各个产品模块独立解耦，灵活升级，业务无感知，开
 - :material-middleware: **中间件** [ES, Kafka, MinIO, MySQL 等](middleware/midware.md)
 - :material-warehouse: **镜像仓库** [镜像集成和托管服务](kangaroo/intro.md)
 - :material-dot-net: **网络** [多 CNI 融合方案](network/intro/what-is-net.md)
-- :floppy_disk: **存储** [容器化存储综合方案](hwameistor/intro/what.md)
+- :floppy_disk: **存储** [容器化存储综合方案](storage/hwameistor/intro/what.md)
 
 </div>
 
@@ -52,7 +52,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
     专为有状态应用设计的云原生本地存储能力，满足中间件高 I/O 的存储需求，提升运维管理效率。精选各类数据库、分布式消息和日志检索等中间件，
     提供多租户、部署、观测、备份、运维操作等全生命周期的中 间件管理能力，实现数据服务的自助化申请、弹性扩展、 高并发处理和稳定高可用。
 
-    **涉及的模块**：[容器管理](kpanda/03ProductBrief/WhatisKPanda.md)、[云原生本地存储](hwameistor/intro/what.md)、[云原生中间件](middleware/midware.md)
+    **涉及的模块**：[容器管理](kpanda/03ProductBrief/WhatisKPanda.md)、[云原生本地存储](storage/hwameistor/intro/what.md)、[云原生中间件](middleware/midware.md)
 
     ![数据](images/02data.png)
 

@@ -186,7 +186,6 @@ nav:
           - 数据采集:
               - 采集管理: insight/06UserGuide/07collectionmanag/collectionmanag.md
               - 服务监控: insight/06UserGuide/07collectionmanag/servicemonitor.md
-              - 开启采集日志: insight/09FAQs/collectauditlog.md
           - 系统配置:
               - 系统配置: insight/06UserGuide/08systemconfig/systemconfig.md
               - 修改配置: insight/06UserGuide/08systemconfig/modifyconfig.md
@@ -515,43 +514,50 @@ nav:
               - 更新 Redis 实例: middleware/redis/userguide/update.md
               - 删除 Redis 实例: middleware/redis/userguide/delete.md
               - Release Notes: middleware/redis/release-notes.md
-      - 云原生本地存储:
-          - 介绍: hwameistor/intro/what.md
-          - 模块:
-              - 本地磁盘管理器: hwameistor/intro/ldm.md
-              - 本地存储: hwameistor/intro/ls.md
-              - DRBD 安装器: hwameistor/intro/drbd.md
-              - 调度器: hwameistor/intro/scheduler.md
-              - 准入控制器: hwameistor/intro/admission-controller.md
-          - 资源: hwameistor/intro/resources.md
-          - 安装管理:
-              - 准备工作: hwameistor/install/prereq.md
-              - 通过 Helm Chart 安装: hwameistor/install/deploy.md
-              - 安装后检查: hwameistor/install/post-check.md
-              - 升级: hwameistor/install/upgrade.md
-              - 卸载: hwameistor/install/uninstall.md
-          - 资源管理:
-              - 创建存储池: hwameistor/resources/storagepool.md
-              - 数据卷扩容: hwameistor/resources/expand.md
-              - 数据卷迁移: hwameistor/resources/migrate.md
-              - 节点扩展: hwameistor/resources/node-expansion.md
-              - 数据盘扩展: hwameistor/resources/disk-expansion.md
-          - 应用场景:
-              - 应用场景概述: hwameistor/application/overview.md
-              - 部署有状态应用:
-                  - 使用本地卷部署: hwameistor/application/local.md
-                  - 使用高可用卷部署: hwameistor/application/ha.md
-              - TiDB: hwameistor/application/tidb.md
-              - MinIO: hwameistor/application/minio/minio.md
+      - 云原生存储:
+          - 介绍: storage/intro.md
+          - 背景和挑战: storage/background.md
+          - HwameiStor 本地存储:
+            - 介绍: storage/hwameistor/intro/what.md
+            - 组件介绍:
+                - 本地磁盘管理器: storage/hwameistor/intro/ldm.md
+                - 本地存储: storage/hwameistor/intro/ls.md
+                - DRBD 安装器: storage/hwameistor/intro/drbd.md
+                - 调度器: storage/hwameistor/intro/scheduler.md
+                - 准入控制器: storage/hwameistor/intro/admission-controller.md
+            - 资源介绍: storage/hwameistor/intro/resources.md
+            - 安装管理:
+                - 准备工作: storage/hwameistor/install/prereq.md
+                - 通过 Helm Chart 安装: storage/hwameistor/install/deploy.md
+                - 安装后检查: storage/hwameistor/install/post-check.md
+                - 升级: storage/hwameistor/install/upgrade.md
+                - 卸载: storage/hwameistor/install/uninstall.md
+            - 运维管理:
+                - 存储池管理: storage/hwameistor/resources/storagepool.md
+                - 存储节点扩展: storage/hwameistor/resources/node-expansion.md
+                - 数据卷迁移: storage/hwameistor/resources/migrate.md
+                - 数据卷扩容: storage/hwameistor/resources/expand.md
+                - 磁盘扩展: storage/hwameistor/resources/disk-expansion.md
+            - 应用场景:
+                - 应用场景概述: storage/hwameistor/application/overview.md
+                - 部署有状态应用:
+                    - 使用本地卷部署: storage/hwameistor/application/local.md
+                    - 使用高可用卷部署: storage/hwameistor/application/ha.md
+                - TiDB: storage/hwameistor/application/tidb.md
+                - MinIO: storage/hwameistor/application/minio/minio.md
+            - 常见问题: storage/hwameistor/faqs.md
+          - 开源存储方案集成:
+            - Ceph-Rook: storage/ceph.md
+            - NFS Subdir External Provisioner: storage/nfs.md
+            - Longhorn: storage/longhorn.md
           - 存储基本概念:
-              - Kubernetes 存储: hwameistor/terms/k8s_storage.md
-              - CAS 存储: hwameistor/terms/cas.md
-              - CSI 接口: hwameistor/terms/csi.md
-              - CRD 和 CR: hwameistor/terms/crd_and_cr.md
-              - 存储卷: hwameistor/terms/volume.md
-              - LVM: hwameistor/terms/lvm.md
-              - PV 和 PVC: hwameistor/terms/pv_pvc.md
-          - 常见问题: hwameistor/faqs.md
+              - Kubernetes 存储: storage/hwameistor/terms/k8s_storage.md
+              - CAS 存储: storage/hwameistor/terms/cas.md
+              - CSI 接口: storage/hwameistor/terms/csi.md
+              - CRD 和 CR: storage/hwameistor/terms/crd_and_cr.md
+              - 存储卷: storage/hwameistor/terms/volume.md
+              - LVM: storage/hwameistor/terms/lvm.md
+              - PV 和 PVC: storage/hwameistor/terms/pv_pvc.md
       - 镜像仓库:
           - 什么是镜像仓库: kangaroo/intro.md
           - 镜像列表: kangaroo/imagelist.md
