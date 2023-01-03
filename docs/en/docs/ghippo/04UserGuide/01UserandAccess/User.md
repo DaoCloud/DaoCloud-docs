@@ -1,4 +1,4 @@
-# user
+# User
 
 A user refers to a user created by the platform administrator Admin or the access control administrator IAM Admin on the `Global Management` -> `Users and Access Control` -> `Users` page, or a user connected through LDAP / OIDC .
 The user name represents the account, and the user logs in to the DaoCloud Enterprise platform through the user name and password.
