@@ -2,9 +2,11 @@
 
 ## CRD
 
-`CRD` 是 `Custom Resource Definition` 的缩写，是 `Kubernetes` 内置原生的一个资源类型。它是自定义资源 (CR) 的定义，用来描述什么是自定义资源。
+`CRD` 是 `Custom Resource Definition` 的缩写，是 `Kubernetes` 内置原生的一个资源类型。
+它是自定义资源 (CR) 的定义，用来描述什么是自定义资源。
 
-CRD 可以向 `Kubernetes` 集群注册一种新资源，用于拓展 `Kubernetes` 集群的能力。有了 `CRD`，就可以自定义底层基础设施的抽象，根据业务需求来定制资源类型，利用 `Kubernetes` 已有的资源和能力，通过乐高积木的模式定义出更高层次的抽象。
+CRD 可以向 `Kubernetes` 集群注册一种新资源，用于拓展 `Kubernetes` 集群的能力。
+有了 `CRD`，就可以自定义底层基础设施的抽象，根据业务需求来定制资源类型，利用 `Kubernetes` 已有的资源和能力，通过乐高积木的模式定义出更高层次的抽象。
 
 ## CR
 
@@ -18,5 +20,5 @@ CRD 可以向 `Kubernetes` 集群注册一种新资源，用于拓展 `Kubernete
 
 另请参考 Kubernetes 官方文档：
 
-- [CustomResource](https://kubernetes.io/zh/docs/concepts/extend-kubernetes/api-extension/custom-resources/)
-- [CustomResourceDefinition](https://kubernetes.io/zh/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/)
+- [CustomResource](https://kubernetes.io/zh-cn/docs/concepts/extend-kubernetes/api-extension/custom-resources/)
+- [CustomResourceDefinition](https://kubernetes.io/zh-cn/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/)

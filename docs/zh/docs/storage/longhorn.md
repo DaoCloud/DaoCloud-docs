@@ -5,8 +5,8 @@ Longhorn 与 DCE 可以结合使用部署高可用性持久化块存储。
 
 1. 设计与架构
 
-    控制平面：Longhorn Manager 以DaemonSet 部署
-    数据平面：Longhorn Engine 是 storage controller 可以有多个 replicas
+    - 控制平面：Longhorn Manager 以DaemonSet 部署
+    - 数据平面：Longhorn Engine 是 storage controller 可以有多个 replicas
 
     ![架构图](./images/long-archi.png)
 
