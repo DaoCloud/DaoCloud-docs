@@ -186,7 +186,6 @@ nav:
           - 数据采集:
               - 采集管理: insight/06UserGuide/07collectionmanag/collectionmanag.md
               - 服务监控: insight/06UserGuide/07collectionmanag/servicemonitor.md
-              - 开启采集日志: insight/09FAQs/collectauditlog.md
           - 系统配置:
               - 系统配置: insight/06UserGuide/08systemconfig/systemconfig.md
               - 修改配置: insight/06UserGuide/08systemconfig/modifyconfig.md
@@ -516,8 +515,8 @@ nav:
               - 删除 Redis 实例: middleware/redis/userguide/delete.md
               - Release Notes: middleware/redis/release-notes.md
       - 云原生存储:
-          - 介绍: intro.md
-          - 背景和挑战: background.md
+          - 介绍: storage/intro.md
+          - 背景和挑战: storage/background.md
           - HwameiStor 本地存储:
             - 介绍: storage/hwameistor/intro/what.md
             - 组件介绍:
