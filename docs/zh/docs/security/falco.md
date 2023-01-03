@@ -45,6 +45,7 @@ Falco 由以下几个主要组件组成：
     - 由相同模块构建的 BPF 探针
     - 用户空间检测
 
-      有关详细信息，请参阅 Falco [驱动程序](https://falco.org/docs/event-sources/drivers/)。
+        有关详细信息，请参阅 Falco [驱动程序](https://falco.org/docs/event-sources/drivers/)。
 
-- 插件：可用于扩展 falco libraries/falco 可执行文件的功能，扩展方式是通过添加新的事件源和从事件中提取信息的新字段。有关详细信息，请参阅[插件](https://falco.org/docs/plugins/)。
+- 插件：可用于扩展 falco libraries/falco 可执行文件的功能，扩展方式是通过添加新的事件源和从事件中提取信息的新字段。
+  有关详细信息，请参阅[插件](https://falco.org/docs/plugins/)。
