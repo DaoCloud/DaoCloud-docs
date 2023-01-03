@@ -1,9 +1,9 @@
 # Description of folder permissions
 
-Folders have permission mapping capabilities, which can map the permissions of users/user groups in this folder to subfolders, workspaces and resources under it.
+Folders have permission mapping capabilities, which can map the permissions of users/groups in this folder to subfolders, workspaces and resources under it.
 
-If the user/user group is Folder Admin role in this folder, it is still Folder Admin role when mapped to a subfolder, and Workspace Admin is mapped to the workspace under it;
-If a Namespace is bound in `Workspace and Hierarchy` -> `Resource Group`, the user/user group is also a Namespace Admin after mapping.
+If the user/group is Folder Admin role in this folder, it is still Folder Admin role when mapped to a subfolder, and Workspace Admin is mapped to the workspace under it;
+If a Namespace is bound in `Workspace and Hierarchy` -> `Resource Group`, the user/group is also a Namespace Admin after mapping.
 
 !!! note
 
@@ -13,9 +13,9 @@ If a Namespace is bound in `Workspace and Hierarchy` -> `Resource Group`, the us
 
 Folders have hierarchical capabilities, so when folders are mapped to departments/suppliers/projects in the enterprise,
 
-- If a user/user group has administrative authority (Admin) in the first-level department, the second-level, third-level, and fourth-level departments or projects under it also have administrative authority;
-- If a user/user group has access rights (Editor) in the first-level department, the second-, third-, and fourth-level departments or projects under it also have access rights;
-- If a user/user group has read-only permission (Viewer) in the first-level department, the second-level, third-level, and fourth-level departments or projects under it also have read-only permission.
+- If a user/group has administrative authority (Admin) in the first-level department, the second-level, third-level, and fourth-level departments or projects under it also have administrative authority;
+- If a user/group has access rights (Editor) in the first-level department, the second-, third-, and fourth-level departments or projects under it also have access rights;
+- If a user/group has read-only permission (Viewer) in the first-level department, the second-level, third-level, and fourth-level departments or projects under it also have read-only permission.
 
 | Objects | Actions | Folder Admin | Folder Editor | Folder Viewer |
 | --------------------------- | -------- | ------------ | ------------- | ------------- |

@@ -1,6 +1,6 @@
 # user
 
-A user refers to a user created by the platform administrator Admin or the user and access control administrator IAM Admin on the `Global Management` -> `Users and Access Control` -> `Users` page, or a user connected through LDAP / OIDC .
+A user refers to a user created by the platform administrator Admin or the access control administrator IAM Admin on the `Global Management` -> `Users and Access Control` -> `Users` page, or a user connected through LDAP / OIDC .
 The user name represents the account, and the user logs in to the DaoCloud Enterprise platform through the user name and password.
 
 Having a user account is a prerequisite for users to access the platform. The newly created user does not have any permissions by default. For example, you need to assign corresponding role permissions to users, such as granting administrator permissions to submodules in `User List` or `User Details`.
@@ -11,7 +11,7 @@ This page introduces operations such as creating, authorizing, disabling, enabli
 
 ## Create user
 
-Prerequisite: You have the platform administrator Admin permission or the user and access control administrator IAM Admin permission.
+Prerequisite: You have the platform administrator Admin permission or the access control administrator IAM Admin permission.
 
 1. The administrator enters `Users and Access Control`, selects `Users`, enters the user list, and clicks `Create User` on the upper right.
 
@@ -45,21 +45,21 @@ Prerequisite: The user already exists.
 
     In the user list, click a user to enter the user details page.
 
-## Add user to user group
+## Add user to group
 
-1. The administrator enters `Users and Access Control`, selects `Users`, enters the user list, and clicks `...` -> `Add User Group`.
+1. The administrator enters `Users and Access Control`, selects `Users`, enters the user list, and clicks `...` -> `Add group`.
 
     ![Join Group Menu](../../images/joingroup01.png)
 
-2. On the `Join User Group` page, check the user groups to be joined (multiple choices are allowed). If there is no optional user group, click `Create User Group` to create a user group, and then return to this page and click the `Refresh` button to display the newly created user group.
+2. On the `Join group` page, check the groups to be joined (multiple choices are allowed). If there is no optional group, click `Create group` to create a group, and then return to this page and click the `Refresh` button to display the newly created group.
 
     ![Join group interface](../../images/joingroup02.png)
 
-3. Click `OK` to add the user to the user group.
+3. Click `OK` to add the user to the group.
 
 !!! note
 
-    The user will inherit the permissions of the user group, and you can view the user groups that the user has joined in `User Details`.
+    The user will inherit the permissions of the group, and you can view the groups that the user has joined in `User Details`.
 
 ## enable/disable user
 

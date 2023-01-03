@@ -1,4 +1,4 @@
-# Applicable scene
+# Applicable scenarios
 
 ## Application multicloud deployment and cross-cloud disaster recovery
 

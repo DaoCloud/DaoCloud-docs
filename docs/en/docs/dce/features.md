@@ -58,7 +58,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 === "[Unified user authority system](../ghippo/01ProductBrief/WhatisGhippo.md)"
 
-- Centralized management of user/user group, unified user/user group management by multi-functional modules, opening up the user system and reducing management, operation and maintenance costs. 
+- Centralized management of user/group, unified user/group management by multi-functional modules, opening up the user system and reducing management, operation and maintenance costs. 
 
 - The multi-model authorization model meets the needs of different enterprise scales, organizational strcture users and authorization models, realizing the shortest link authorization. 
 

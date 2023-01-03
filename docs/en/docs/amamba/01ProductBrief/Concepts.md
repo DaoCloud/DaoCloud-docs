@@ -11,7 +11,7 @@ It lowers the threshold for enterprises to use cloud-native applications, and im
 - Workspace Workspace
 
     Through [Workspace](../../ghippo/04UserGuide/02Workspace/ws-folder.md) to coordinate global management and sub-module permission relationship, solve resource aggregation and mapping hierarchical relationship.
-    And a workspace corresponds to a project, different resources can be assigned to each workspace, and different users and user groups can be assigned.
+    And a workspace corresponds to a project, different resources can be assigned to each workspace, and different users and groups can be assigned.
 
 - Namespace Namespace
 

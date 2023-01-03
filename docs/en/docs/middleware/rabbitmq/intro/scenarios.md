@@ -1,4 +1,4 @@
-# Applicable scene
+# Applicable scenarios
 
 RabbitMQ is applicable to a wide range of scenarios, and this section lists several typical scenarios.
 

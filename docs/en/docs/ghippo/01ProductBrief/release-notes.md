@@ -71,7 +71,7 @@ This page lists the Release Notes for global management of each version, so that
 
 - Repair deleted clusters still have problems
 - Fixed istio cache not being reset after keycloak jwks change
-- Fix the zero value problem of user group creation time
+- Fix the zero value problem of group creation time
 - Fixed access key 'last used time' field returning null character when not used`
 
 ## v0.10
@@ -128,13 +128,13 @@ Release date: 2022-7-23
 
 - **NEW** Workspace -> Resource Quota Management (Create/Edit/Delete/View/List/Calculate Allocated)
 - **NEW** Workspace -> GProduct resource quota registration
-- **New** User and Access Control -> Authentication (APIServer/SDK)
+- **New** Access Control -> Authentication (APIServer/SDK)
 - **NEW** Audit Log -> Display (View/List/Clean Settings/Export)
 - **Add** audit log -> batch insert
-- **New** Identity Provider -> LDAP Connection -> User/User Group Synchronization Settings (Create/Edit/Delete/View/Sync)
+- **New** Identity Provider -> LDAP Connection -> User/group Synchronization Settings (Create/Edit/Delete/View/Sync)
 - **NEW** Platform Settings -> Security Policy -> Password Policy Settings
 - **Optimize** workspace -> code structure adjustment
-- **NEW** Added new pages on the document site: [Create User Group and Authorize](../04UserGuide/01UserandAccess/Group.md), [User Group](../04UserGuide/01UserandAccess/Group.md), [Login](../04UserGuide/00Login.md), [Password Reset](../04UserGuide/password.md), [Global Admin Roles](../04UserGuide/01UserandAccess/global.md), [Resources Management (by Workspace)](../04UserGuide/02Workspace/wsbp.md), [Resource Management (by Role)](../04UserGuide/02Workspace/quota.md)
+- **NEW** Added new pages on the document site: [Create group and Authorize](../04UserGuide/01UserandAccess/Group.md), [group](../04UserGuide/01UserandAccess/Group.md), [Login](../04UserGuide/00Login.md), [Password Reset](../04UserGuide/password.md), [Global Admin Roles](../04UserGuide/01UserandAccess/global.md), [Resources Management (by Workspace)](../04UserGuide/02Workspace/wsbp.md), [Resource Management (by Role)](../04UserGuide/02Workspace/quota.md)
 
 ## v0.6
 

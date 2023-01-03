@@ -8,7 +8,22 @@
 
     权限管理有三种模式，当前为全局管理模式。用户与访问控制中的角色代表各个子模块的最高权限。具体查看[权限管理](Role.md)。
 
-![全局管理](../../images/global01png.png)
+```mermaid
+graph TB
+
+gadmin[平台管理员] --> control[用户与访问控制] --> create[创建用户/用户组以及授权角色]
+create --> admin[Admin]
+create --> iam[IAM Owner]
+create --> audit[Audit Owner]
+create --> rm[RM Owner]
+create --> kpanda[Kpanda Owner]
+
+classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
+classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
+classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+
+class gadmin,control,create,admin,iam,audit,rm,kpanda k8s
+```
 
 一个角色对应一组权限。权限决定了可以对资源执行的操作。向用户授予某角色，即授予该角色所包含的所有权限。
 

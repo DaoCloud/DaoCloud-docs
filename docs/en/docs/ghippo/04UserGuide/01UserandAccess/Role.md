@@ -12,14 +12,14 @@ There are the following three modes of rights management, which can flexibly and
 
 The global management mode refers to the way you configure permissions for users (groups) through system roles in the global management module.
 The platform predefines an administrator role for each sub-module, which is used to realize the block management of sub-modules.
-For example, the IAM Owner of user and access control, the Kpanda Owner of container management, etc., each sub-module administrator has the highest authority of the module.
+For example, the IAM Owner of access control, the Kpanda Owner of container management, etc., each sub-module administrator has the highest authority of the module.
 The submodule administrator role needs to be configured in the global management module, which can be obtained in the following ways:
 
-- Find the user in the user list of `Global Management` -> `User and Access Control` -> `User`; click `...`, select `Authorization`, and assign the user a predefined submodule of the system Administrator privileges.
+- Find the user in the user list of `Global Management` -> `Access Control` -> `User`; click `...`, select `Authorization`, and assign the user a predefined submodule of the system Administrator privileges.
 
     ![User authorization](../../images/role01.png)
 
-- Create a group in the group list of `Global Management` -> `User and Access Control` -> `group`, add the user to the group, and authorize the group (the specific operation is: in the group list Find the group, click `...`, select `Authorization`, and give the group the pre-defined sub-module administrator rights of the system).
+- Create a group in the group list of `Global Management` -> `Access Control` -> `group`, add the user to the group, and authorize the group (the specific operation is: in the group list Find the group, click `...`, select `Authorization`, and give the group the pre-defined sub-module administrator rights of the system).
 
     ![group Authorization](../../images/role02.png)
 
@@ -27,7 +27,7 @@ The submodule administrator role needs to be configured in the global management
 
     ![Role authorization](../../images/role03.png)
 
-Submodules that support this mode: User and Access Control (IAM), Audit Log (Audit), Container Management (Kpanda)
+Submodules that support this mode: Access Control (IAM), Audit Log (Audit), Container Management (Kpanda)
 At the same time, the administrator role (Admin) of the platform can also be authorized through the above methods
 
 ![Global Admin Mode](../../images/permission1.png)
@@ -35,7 +35,7 @@ At the same time, the administrator role (Admin) of the platform can also be aut
 !!! note
 
     - Admin platform administrator
-    - IAM Owner user and access control module administrator
+    - IAM Owner access control module administrator
     - Kpanda Owner container management module administrator
     - Audit Owner Audit log module administrator
 
@@ -80,7 +80,7 @@ You can go to `Container Management` -> `Privilege Management`, select `Add Auth
     - [Container Management](../../../kpanda/03ProductBrief/WhatisKPanda.md)
 
         Container management supports three authorization modes: global management mode, sub-module management mode and resource-based management.
-        Therefore, in the container management module, you can choose to grant the user/group the Kpanda Owner role through the user and access control module, or grant the user/group the corresponding permission for a resource through the permission management function of the container management module itself, or by assigning the resource ( Cluster or Namespace) is bound to the workspace to inherit the role permissions of the user/group in the workspace.
+        Therefore, in the container management module, you can choose to grant the user/group the Kpanda Owner role through the access control module, or grant the user/group the corresponding permission for a resource through the permission management function of the container management module itself, or by assigning the resource ( Cluster or Namespace) is bound to the workspace to inherit the role permissions of the user/group in the workspace.
         Since there are two states of bound and unbound workspace for resources in container management, in order to distinguish the two different states, the resources bound to the workspace will be presented in the workspace-resource group, and the workspace - Both the resource group and the resource list managed by the container provide the resource binding/unbinding entry.
         (Admin role or Workspace admin + Kpanda Owner role can perform resource binding)
 

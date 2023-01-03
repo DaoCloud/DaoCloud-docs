@@ -122,6 +122,6 @@ In addition to binding in the namespace list, you can also return to `global man
 
     ![Add Authorization](../../images/wsauth01.png)
 
-1. After selecting the `User/User Group` and `Role` to be authorized, click `OK` to complete the authorization.
+1. After selecting the `User/group` and `Role` to be authorized, click `OK` to complete the authorization.
 
     ![OK](../../images/bind02.png)

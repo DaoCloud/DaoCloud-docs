@@ -5,7 +5,7 @@ hide:
 
 # Create/delete folder
 
-Folders have permission mapping capabilities, which can map the permissions of users/user groups in this folder to subfolders, workspaces and resources under it.
+Folders have permission mapping capabilities, which can map the permissions of users/groups in this folder to subfolders, workspaces and resources under it.
 
 Follow the steps below to create a folder.
 
