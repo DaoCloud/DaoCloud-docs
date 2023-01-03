@@ -17,6 +17,7 @@
     ![falco-exporter_helm-1](../../images/falco-exporter-install-1.png)
 
 3. 在`版本选择`中选择希望安装的版本，点击`安装`。
+    
     ![falco-exporter_helm-2](../../images/falco-exporter-install-2.png)
 
 4. 在安装界面，填写所需的安装参数。
@@ -43,7 +44,7 @@
 
     ![falco-exporter_helm-4](../../images/falco-exporter-install-6.png)
 
-   在如上界面中，填写以下参数:
+    在如上界面中，填写以下参数:
 
     - `Falco Prometheus Exporter` -> `Prometheus prometheusRules` -> `Install prometheusRules`：创建 PrometheusRules，对优先事件发出警报，默认开启。
 
