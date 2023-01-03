@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Applicable scene
+# Applicable scenarios
 
 - Continuous delivery pipeline
 

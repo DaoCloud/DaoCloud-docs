@@ -35,7 +35,7 @@ Configuration | Maximum number of nodes | Maximum single-node disk capacity (que
 
 ## Planning the number of slices
 
-Applicable scene:
+Applicable scenarios:
 
 - Log type, frequent writing, less query, about 30G for a single shard
 - Search class, less writing, frequent query, no more than 20G for a single shard

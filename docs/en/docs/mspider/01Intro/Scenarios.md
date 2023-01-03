@@ -1,4 +1,4 @@
-# Applicable scene
+# Applicable scenarios
 
 The specific scenarios where the service mesh is applicable are introduced here.
 

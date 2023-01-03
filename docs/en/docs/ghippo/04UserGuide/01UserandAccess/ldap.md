@@ -16,7 +16,7 @@ In global management, the operation steps are as follows:
 
     ![global](../../images/ws01.png)
 
-1. Navigate to `Users and Access Control` under `Global Administration`, select `Create Identity Provider`.
+1. Navigate to `Users and Access Control` under `Global Administration`, select `Create an Identity Provider`.
 
     ![Identity Provider](../../images/ldap00.png)
 
@@ -36,18 +36,18 @@ In global management, the operation steps are as follows:
     | Full name mapping | Surname-sn; First name-cn | Unchangeable |
     | Mailbox Mapping | mail | Unchangeable |
 
-1. On the `Synchronize User Groups` tab, fill in the following fields to configure the mapping relationship of user groups, and click `Save` again.
+1. On the `Synchronize groups` tab, fill in the following fields to configure the mapping relationship of groups, and click `Save` again.
 
     ![Identity Provider](../../images/ldap02.png)
 
     | field | description | example value |
     | ---------------- | -------------------------------- ---------------------------- | --------------------- ------ |
-    | base DN | location of the user group in the LDAP tree | ou=groups,dc=example,dc=org |
+    | base DN | location of the group in the LDAP tree | ou=groups,dc=example,dc=org |
     | Usergroup Object Filter | Object classes for usergroups, separated by commas if more classes are required. In a typical LDAP deployment, usually "groupOfNames", the system has been filled in automatically, if you need to change it, just edit it. * means all. | * |
-    | User group name | cn | Unchangeable |
+    | group name | cn | Unchangeable |
 
 !!! note
 
-    1. After you have established a trust relationship between the enterprise user management system and DCE 5.0 through the LDAP protocol, you can synchronize the users or user groups in the enterprise user management system to DCE at one time through manual synchronization or automatic synchronization every ten minutes 5.0.
-    1. After synchronization, the administrator can authorize user groups/user groups in batches, and users can log in to DCE 5.0 through the account/password in the enterprise user management system.
+    1. After you have established a trust relationship between the enterprise user management system and DCE 5.0 through the LDAP protocol, you can synchronize the users or groups in the enterprise user management system to DCE at one time through manual synchronization or automatic synchronization every ten minutes 5.0.
+    1. After synchronization, the administrator can authorize groups/groups in batches, and users can log in to DCE 5.0 through the account/password in the enterprise user management system.
     1. See the [LDAP Operations Demo Video](../../../videos/ghippo.md#ldap) for a hands-on tutorial.

@@ -3,7 +3,7 @@ hide:
    - toc
 ---
 
-# Applicable scene
+# Applicable scenarios
 
 DCE 5.0 integrates many of the best technologies in the community, and has tens of thousands of built-in dependencies. After massive commissioning, it has been melted into one furnace, creating a new generation of PaaS service platform, which is easy to use in various usage scenarios.
 

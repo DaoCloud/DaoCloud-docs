@@ -13,7 +13,7 @@ hide:
 
 ## Workspace
 
-The workspace can manage resources through `authorization`, `resource group` and `shared resources`, so that users (user groups) can share the resources in the workspace.
+The workspace can manage resources through `authorization`, `resource group` and `shared resources`, so that users (groups) can share the resources in the workspace.
 
 ![Workspace](../../images/wsfd01.png)
 
@@ -62,5 +62,5 @@ Folders can be used to build enterprise business hierarchy relationships.
 - A folder has one and only one parent folder, and the root folder is the highest level of the hierarchy.
   The root folder has no parent, and folders and workspaces are attached to the root folder.
 
-In addition, users (user groups) in folders can inherit permissions from their parents through a hierarchical structure.
+In addition, users (groups) in folders can inherit permissions from their parents through a hierarchical structure.
 The permissions of the user in the hierarchical structure come from the combination of the permissions of the current level and the permissions inherited from its parents. The permissions are additive and there is no mutual exclusion.

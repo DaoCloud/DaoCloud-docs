@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Applicable scene
+# Applicable scenarios
 
 Elasticsearch excels in speed and scalability, and its ability to index many types of content means it can be used in a variety of usage scenarios:
 

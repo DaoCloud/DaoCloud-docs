@@ -1,7 +1,7 @@
 # Description of workspace permissions
 
-The workspace has permission mapping and resource isolation capabilities, and can map the permissions of users/user groups in the workspace to the resources under it.
-If the user/user group has the Workspace Admin role in the workspace and the resource Namespace is bound to the workspace-resource group, the user/user group will become Namespace Admin after mapping.
+The workspace has permission mapping and resource isolation capabilities, and can map the permissions of users/groups in the workspace to the resources under it.
+If the user/group has the Workspace Admin role in the workspace and the resource Namespace is bound to the workspace-resource group, the user/group will become Namespace Admin after mapping.
 
 !!! note
 

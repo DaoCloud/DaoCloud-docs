@@ -19,7 +19,7 @@ Both shared resources and cluster resources in resource groups come from [Contai
 
 1. Binding resources
 
-    Make the users/user groups in the workspace have full management and usage rights of the cluster, and Workspace Admin will be mapped to Cluster Admin.
+    Make the users/groups in the workspace have full management and usage rights of the cluster, and Workspace Admin will be mapped to Cluster Admin.
     Workspace Admin can enter [Container Management Module](../../../kpanda/07UserGuide/Permissions/PermissionBrief.md) to manage the cluster.
 
     ![Resource Group](../../images/quota01.png)
@@ -30,7 +30,7 @@ Both shared resources and cluster resources in resource groups come from [Contai
 
 2. Add shared resources
 
-    Make the user/user group in the workspace have the permission to use the cluster resources, and can use the resource quota to go to [Create a namespace (Namespace) in the application workbench](#_2).
+    Make the user/group in the workspace have the permission to use the cluster resources, and can use the resource quota to go to [Create a namespace (Namespace) in the application workbench](#_2).
 
     ![Shares](../../images/quota02.png)
 

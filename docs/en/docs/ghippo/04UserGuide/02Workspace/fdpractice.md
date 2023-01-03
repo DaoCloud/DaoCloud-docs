@@ -8,7 +8,7 @@ hide:
 A folder represents an organizational unit (such as a department) and is a node in the resource hierarchy.
 
 A folder can contain workspaces, subfolders, or a combination of both.
-It provides identity management, multi-level and permission mapping capabilities, and can map the role of a user/user group in a folder to its subfolders, workspaces and resources.
+It provides identity management, multi-level and permission mapping capabilities, and can map the role of a user/group in a folder to its subfolders, workspaces and resources.
 Therefore, with the help of folders, enterprise managers can centrally manage and control all resources.
 
 1. Build corporate hierarchy
@@ -23,7 +23,7 @@ Therefore, with the help of folders, enterprise managers can centrally manage an
 2. User identity management
 
     Folder provides three roles: Folder Admin, Folder Editor, and Folder Viewer.
-    [View role permissions](../01UserandAccess/Role.md), you can grant different roles to users/user groups in the same folder through [Authorization](../01UserandAccess/Role.md).
+    [View role permissions](../01UserandAccess/Role.md), you can grant different roles to users/groups in the same folder through [Authorization](../01UserandAccess/Role.md).
 
 3. Role and permission mapping
 

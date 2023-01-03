@@ -4,8 +4,8 @@ This section lists common terms for global management.
 
 ###IAM
 
-IAM (Identity and access management) is the abbreviation of the user and access control module. The administrator of this module is called IAM Admin, who has the highest authority of this module.
-Users (user groups) assigned to IAM Admin will have all and the highest permissions for users and access control.
+IAM (Identity and access management) is the abbreviation of the access control module. The administrator of this module is called IAM Admin, who has the highest authority of this module.
+Users (groups) assigned to IAM Admin will have all and the highest permissions for users and access control.
 
 For more details, see [What is IAM](../04UserGuide/01UserandAccess/iam.md).
 
@@ -17,17 +17,17 @@ The three elements of the RBAC model are: users, roles, and permissions. Use RBA
 ### users
 
 [User](../04UserGuide/01UserandAccess/User.md) is the subject of initiating operations. Each user has a unique ID and is granted different roles.
-The IAM user created by default does not have any permissions. You need to add it to a user group and grant a role or policy to allow the user to obtain the corresponding permissions.
+The IAM user created by default does not have any permissions. You need to add it to a group and grant a role or policy to allow the user to obtain the corresponding permissions.
 
 Users log in to DCE with usernames and operate platform resources and services according to the granted permissions.
 Therefore, users are the subject of resource ownership and have corresponding permissions for the resources they own.
 
 Users can modify user information, set password, access key and UI language in [Personal Center](../04UserGuide/06PersonalCenter/SecuritySetting.md).
 
-### user group
+### group
 
-[User group](../04UserGuide/01UserandAccess/Group.md) is a collection of one or more users. IAM can implement user authorization through user groups.
-Usually create an IAM user first, join a certain user group, the user will inherit the permissions of this user group. When a user joins multiple user groups, the user will have the permissions of multiple user groups at the same time.
+[group](../04UserGuide/01UserandAccess/Group.md) is a collection of one or more users. IAM can implement user authorization through groups.
+Usually create an IAM user first, join a certain group, the user will inherit the permissions of this group. When a user joins multiple groups, the user will have the permissions of multiple groups at the same time.
 
 ### Role
 
@@ -37,7 +37,7 @@ Usually create an IAM user first, join a certain user group, the user will inher
 
 - Custom roles: users create, update and delete independently, and the permissions in custom roles are maintained by users themselves. At the same time, because the global management brings together multiple sub-modules, each sub-module also has a corresponding administrator role, for example:
 
-    - IAM Admin: Manage users and access control, that is, manage users/user groups and authorization
+    - IAM Admin: Manage users and access control, that is, manage users/groups and authorization
 
     - Workspace Admin: Permission to manage levels and workspaces, only this permission can create levels
 
@@ -48,7 +48,7 @@ Usually create an IAM user first, join a certain user group, the user will inher
 [Privilege](../04UserGuide/01UserandAccess/iam.md) refers to whether a user is allowed to perform a certain operation on a certain resource.
 In order to lower the threshold of use, DCE adopts the RBAC model to aggregate permissions into roles. The administrator only needs to authorize the role to the user, and the user can obtain a set of permissions aggregated under the role at one time.
 
-By default, the IAM users created by the administrator do not have any role permissions. You need to grant roles to them individually or add them to user groups and grant roles to user groups to enable users to obtain corresponding role permissions. This process is called authorization.
+By default, the IAM users created by the administrator do not have any role permissions. You need to grant roles to them individually or add them to groups and grant roles to groups to enable users to obtain corresponding role permissions. This process is called authorization.
 After authorization, users can operate platform resources based on the granted role permissions.
 
 ### Authorization
@@ -59,7 +59,7 @@ After obtaining specific permissions, users can operate on resources or services
 ### Workspace
 
 Use [Workspace](../04UserGuide/02Workspace/Workspaces.md) to coordinate global management and sub-module permission relationships, and resolve resource aggregation and mapping hierarchical relationships.
-Usually a workspace corresponds to a project, and different resources can be assigned to each workspace, and different users and user groups can be assigned.
+Usually a workspace corresponds to a project, and different resources can be assigned to each workspace, and different users and groups can be assigned.
 
 ![workspace](../images/workspace.png)
 
@@ -73,7 +73,7 @@ See the figure above, in order to meet the branch division of various department
 Usually resources describe one or more operation objects, and each sub-module has its own resources and corresponding resource definition details, such as clusters, namesapce, gateways, etc.
 
 The owner of the resource is the main account Super Admin. Super Admin has the authority to create/manage/delete resources in each sub-module. Ordinary users will not automatically have access to resources without authorization, and Super Admin is required to authorize.
-Workspace supports authorizing users (user groups) to access resources across submodules.
+Workspace supports authorizing users (groups) to access resources across submodules.
 
 ### Credentials
 

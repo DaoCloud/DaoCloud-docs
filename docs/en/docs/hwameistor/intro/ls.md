@@ -8,7 +8,7 @@ Currently supported local persistent data volume type: `LVM`.
 
 Currently supported local disk types: `HDD`, `SSD`, `NVMe`.
 
-## Applicable scene
+## Applicable scenarios
 
 HwameiStor provides two kinds of local data volumes: LVM and Disk.
 As a part of HwameiStor, local storage is responsible for providing LVM local data volumes, including highly available LVM data volumes and non-highly available LVM data volumes.
