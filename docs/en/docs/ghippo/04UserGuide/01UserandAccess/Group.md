@@ -68,8 +68,8 @@ Note: Deleting a group will not delete the users in the group, but the users in 
 
 3. Return to the group list, and the screen will prompt that the deletion is successful.
 
-    ![Delete Prompt](../../images/deletegroup03.png)
+    ![Prompt](../../images/deletegroup03.png)
 
 !!! note
 
-    Deleting a group will not delete the users in the group, but the users in the group will no longer be able to inherit the permissions of the group.
+    Deleting a group will not delete the users in the group, but the users in the group will no longer be able to inherit the permissions from the group.

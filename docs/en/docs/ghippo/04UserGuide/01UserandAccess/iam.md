@@ -1,6 +1,6 @@
-# What is access control
+# What is IAM
 
-IAM (Identity and Access Management, access control) is an important module of global management. You can create, manage and destroy users (groups) through the access control module, and use system roles and custom roles to control other users Access to the DCE Platform.
+IAM (Identity and Access Management) is an important module of global management. You can create, manage and destroy users (groups) through the access control module, and use system roles and custom roles to control other users Access to the DCE Platform.
 
 ![IAM definition](../../images/iam.png)
 

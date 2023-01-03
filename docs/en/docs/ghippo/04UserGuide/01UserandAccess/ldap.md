@@ -16,7 +16,7 @@ In global management, the operation steps are as follows:
 
     ![global](../../images/ws01.png)
 
-1. Navigate to `Users and Access Control` under `Global Administration`, select `Create Identity Provider`.
+1. Navigate to `Users and Access Control` under `Global Administration`, select `Create an Identity Provider`.
 
     ![Identity Provider](../../images/ldap00.png)
 
