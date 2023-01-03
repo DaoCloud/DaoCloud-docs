@@ -63,7 +63,7 @@ CI/CD 流水线能力自动化完成应用构建、部署工作。创新性引�
 
 用户应用架构依赖主流中间件能力，希望能统一运行维护中间件，并且得到较为专业的关于中间件规划、运维的支持能力。
 
-涉及模块：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[容器网络](../network/intro/what-is-net.md)、[容器本地存储](../hwameistor/intro/what.md)、[云原生中间件](../middleware/midware.md)、边云协同、信创云
+涉及模块：[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)、[容器网络](../network/intro/what-is-net.md)、[容器本地存储](../storage/hwameistor/intro/what.md)、[云原生中间件](../middleware/midware.md)、边云协同、信创云
 
 方案优势：专为有状态应用设计的云原生本地存储能力，统一平台管理云原生中间件，提供多租户、部署、观测、备份、运维的全生命周期的中间件管理能力，结合容器平台的能力适配边缘、信创场景。
 
