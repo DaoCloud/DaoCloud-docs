@@ -12,7 +12,7 @@ Falco 可对任何涉及 Linux 系统调用的行为进行检测和报警。Falc
 - 意外读取一个敏感文件，如 /etc/shadow。
 - 一个非设备文件被写到 /dev。
 - 一个标准的系统二进制文件，如 ls，正在进行一个外向的网络连接。
-- 在 Kubernetes 集群中启动一个有特权的 pod。
+- 在 Kubernetes 集群中启动一个有特权的 Pod。
   
 关于 Falco 附带的更多默认规则，请参考 [Rules 文档](https://github.com/falcosecurity/falco/blob/master/rules_inventory/rules_overview.md)。
 
