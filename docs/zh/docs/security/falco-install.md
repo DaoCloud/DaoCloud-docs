@@ -22,7 +22,7 @@
 
     ![falco_helm-4](./images/falco-install-4.png)
 
-   在如上界面中，填写以下参数:
+    在如上界面中，填写以下参数:
 
     - `Falco` -> `Image Settings` -> `Registry`：设置 Falco 镜像的仓库地址，已经默认填写可用的在线仓库。如果是私有化环境，可修改为私有仓库地址。
     - `Falco` -> `Image Settings` -> `Repository`：设置 Falco 镜像名。
