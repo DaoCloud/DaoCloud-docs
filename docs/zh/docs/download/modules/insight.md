@@ -9,22 +9,25 @@ hide:
 
 ## 下载
 
-| 文件名                       | 版本                                                   | 架构 | 文件大小 | 安装包                                                                                                     | 更新日期   |
-| ------------------------------ | ------------------------------------------------------ | ----- |-------- | ---------------------------------------------------------------------------------------------------------- | ---------- |
-| insight_v0.13.1_amd64.tar | [v0.13.2](../../insight/03ProductBrief/releasenote.md) | AMD 64 | 2.41GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/insight_v0.13.1_amd64.tar) | 2022-12-30 |
+| 版本                                                   | 架构 | 文件大小 | 安装包                                                                                                     |  校验文件 | 更新日期   |
+| ------------------------------------------------------ | ----- |-------- | ---------------------------------------------------------------------------------------------------------- | ---------- | ---------- |
+| [v0.13.1](../../insight/03ProductBrief/releasenote.md) | AMD 64 | 2.41GB | [:arrow_down: insight_v0.13.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/insight_v0.13.1_amd64.tar) | [:arrow_down: insight_v0.13.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/insight_v0.13.1_amd64_checksum.sha512sum) | 2022-12-30 |
 
 ## 校验
 
-在下载离线安装包的目录，执行以下命令校验完整性：
+在下载离线安装包和校验文件的目录，执行以下命令校验完整性：
+
+!!! note
+    `insight_v0.13.1_amd64_checksum.sha512sum` 是 v0.13.1 版本离线包的校验文件
 
 ```sh
-echo "cb246c2fb275780a87bb37f915cf58fb3097aa99606afd112aff2c0bb7716816ed96ca10260a0dffed0228bb33fa466310b10e8dad6c49c12351fbe48036bbbf  dist/offline/insight_v0.13.1_amd64.tar" | sha512sum -c
+echo "$(cat insight_v0.13.1_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
-校验成功会打印：
+校验成功后打印结果类似于：
 
 ```none
-insight.tar: ok
+insight_v0.13.1_amd64.tar: ok
 ```
 
 ## 安装
