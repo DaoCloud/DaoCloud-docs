@@ -20,4 +20,4 @@ Currently, the network components supported by DCE 5.0 include:
 - [Multus-underlay](../modules/multus-underlay/what.md): Multi-NIC solution based on Multus with Macvlan + SRIOV-CNI.
 - [Spiderpool](../modules/spiderpool/what.md): Automatically manage IP resources
 
-    > All the above components such as CNI and Ingress can be installed on demand.
+  > All the above components such as CNI and Ingress can be installed on demand.
