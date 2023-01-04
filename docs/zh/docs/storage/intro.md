@@ -1,81 +1,13 @@
----
-hide:
-  - toc
----
 # 云原生存储
 
-云原生代表了容器化、碎片化的趋势，存储是持久化数据的媒介。
+## 云原生化存储的几种类型
 
-DCE 5.0 全面支持云原生存储，兼容并蓄各类容器化存储解决方案。
-目前除了 DaoCloud 完全自研并开源的 [HwameiStor 本地存储](./hwameistor/intro/what.md)之外，还可以从应用商店，按需安装众多开源存储解决方案：
+1. **传统存储云原生化**，通过 CSI 标准 同 Kubernetes 平台对接，此类型相对来说比较普遍，用户可利用现有存储，并且基于传统存储的提供云原生存储能力稳定性好，SLA 强保障。
+2. **软件定义存储云原生化**，软件定义存储，兼容传统应用和云原生应用。同样基于 CSI 标准同 Kubernetes 对接。软件定义存储通过网络使用企业中的每台机器上的磁盘空间，并将这些分散的存储资源构成一个虚拟的存储设备，数据分散在不同的存储设备中。
+3. **纯云原生存储**，此种类型的存储类型天然为云原生而生，构筑于云原生平台之上，能比较好的契合云原生特性，并可随着应用 Pod 的迁移而迁移，具备如下特性：高可扩展性，高可用性，但相对于 通过 CSI 标准接入的传统存储可靠性低一些。
 
-- Ceph Rook
-- NFS Subdir External Provisioner
-- Longhorn
+## DCE 云原生存储
 
-存储文档施工一览：
+DCE 5.0 云原生存储基于 Kubernetes CSI 标准，可根据不同 SLA 要求及用户场景对接符合 CSI 标准的存储。并且  DaoCloud 推出了 云原生本地存储，天然具备云原生特性，满足容器场景中高扩展性，高可用性等特点。
 
-```mermaid
-graph LR
-
-stor[云原生存储] --> intro[介绍]
-    intro --> what1[什么是云原生存储]
-    intro -.-> back[背景和挑战]
-stor --> hwa[HwameiStor 本地存储]
-    hwa --> what2[什么是 HwameiStor]
-    hwa -.-> feature[功能总览]
-    hwa -.-> benefit[竞争优势]
-    hwa --> install[安装管理]
-        install --> prepare[准备工作]
-        install --> step[安装步骤]
-        install --> check[安装后检查]
-        install --> upgrade[升级]
-        install --> uninstall[卸载]
-    hwa --> parts[组件介绍]
-    hwa --> resources[资源介绍]
-    hwa --> sce[应用场景]
-    hwa --> faq[常见问题]
-    hwa --> om[运维管理]
-        om --> pool[存储池管理]
-        om --> node[存储节点扩展]
-        om --> migrate[数据卷迁移]
-        om --> scale[数据卷扩容]
-        om --> disk[磁盘扩展]
-stor --> open[开源存储方案集成]
-    open -.-> ceph[Ceph-Rook 相关]
-    open -.-> nfs[NFS Subdir<br>External Provisioner]
-    open --> long[Longhorn]
-        long --> intro1[Longhorn 简介]
-        long -.-> ins[安装部署]
-        long -.-> use[使用说明]
-
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class back,ceph,nfs,ins,use,feature,benefit plain;
-class what1,what2,prepare,step,check,upgrade,uninstall,parts,resources,sce,faq,pool,node,migrate,scale,disk,intro1 cluster
-class stor,intro,hwa,install,om,long,open k8s
-
-click what1 "https://docs.daocloud.io/storage/intro/"
-click what2 "https://docs.daocloud.io/storage/hwameistor/intro/what/"
-click prepare "https://docs.daocloud.io/storage/hwameistor/install/prereq/"
-click step "https://docs.daocloud.io/storage/hwameistor/install/deploy/"
-click check "https://docs.daocloud.io/storage/hwameistor/install/post-check/"
-click upgrade "https://docs.daocloud.io/storage/hwameistor/install/upgrade/"
-click uninstall "https://docs.daocloud.io/storage/hwameistor/install/uninstall/"
-click parts "https://docs.daocloud.io/storage/hwameistor/intro/ldm/"
-click resources "https://docs.daocloud.io/storage/hwameistor/intro/resources/"
-click sce "https://docs.daocloud.io/storage/hwameistor/application/overview/"
-click faq "https://docs.daocloud.io/storage/hwameistor/faqs/"
-click pool "https://docs.daocloud.io/storage/hwameistor/resources/storagepool/"
-click node "https://docs.daocloud.io/storage/hwameistor/resources/node-expansion/"
-click migrate "https://docs.daocloud.io/storage/hwameistor/resources/migrate/"
-click scale "https://docs.daocloud.io/storage/hwameistor/resources/expand/"
-click disk "https://docs.daocloud.io/storage/hwameistor/resources/disk-expansion/"
-click intro1 "https://docs.daocloud.io/storage/longhorn/"
-```
-
-!!! tip
-
-    上图中的蓝色文字可点击跳转，灰底表示正在制作中。
+![云原生存储](./images/nativestorage.jpg)
