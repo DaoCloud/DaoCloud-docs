@@ -551,13 +551,13 @@ nav:
             - NFS Subdir External Provisioner: storage/nfs.md
             - Longhorn: storage/longhorn.md
           - 存储基本概念:
-              - Kubernetes 存储: storage/hwameistor/terms/k8s_storage.md
-              - CAS 存储: storage/hwameistor/terms/cas.md
-              - CSI 接口: storage/hwameistor/terms/csi.md
-              - CRD 和 CR: storage/hwameistor/terms/crd_and_cr.md
-              - 存储卷: storage/hwameistor/terms/volume.md
-              - LVM: storage/hwameistor/terms/lvm.md
-              - PV 和 PVC: storage/hwameistor/terms/pv_pvc.md
+              - Kubernetes 存储: storage/terms/k8s_storage.md
+              - CAS 存储: storage/terms/cas.md
+              - CSI 接口: storage/terms/csi.md
+              - CRD 和 CR: storage/terms/crd_and_cr.md
+              - 存储卷: storage/terms/volume.md
+              - LVM: storage/terms/lvm.md
+              - PV 和 PVC: storage/terms/pv_pvc.md
       - 镜像仓库:
           - 什么是镜像仓库: kangaroo/intro.md
           - 镜像列表: kangaroo/imagelist.md

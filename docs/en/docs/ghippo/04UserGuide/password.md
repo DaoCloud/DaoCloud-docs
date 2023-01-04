@@ -19,7 +19,7 @@ If the user has not set an email address, he can only contact the administrator 
 
     ![Password reset process](../images/password02.png)
 
-1. Find the password reset email in the mailbox, and click the `Password Reset` button.
+1. Find the password reset email in the mailbox, and click the link in your email.
 
     ![Password reset process](../images/password03.png)
 
@@ -39,15 +39,15 @@ The flow of the password reset process is as follows.
 graph TB
 
 pass[Forgot password] --> usern[Enter username]
---> button[Click button to send a mail] --> judge1[Judge your username is correct or not]
+--> button[Click button to send a mail] --> judge1[Check your username is correct or not]
 
-    judge1 -.Correct.-> judge2[Judge if you have bounded a mail]
-    judge1 -.Wrong.-> tip1[Error with incorrect username]
+    judge1 -.Correct.-> judge2[Check if you have bounded a mail]
+    judge1 -.Wrong.-> tip1[Error of incorrect username]
     
-        judge2 -.A mail has been bounded.-> send[发送重置邮件]
+        judge2 -.A mail has been bounded.-> send[Send a reset mail]
         judge2 -.No any mail bounded.-> tip2[No any mail bounded<br>Contact admin to reset password]
         
-send --> click[Clik the mail link] --> reset[Reset password]
+send --> click[Click the mail link] --> reset[Reset password]
 --> success[Successfully reset]
 
 classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;

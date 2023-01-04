@@ -19,6 +19,6 @@ StorageClass 和存储资源动态供应的机制经完善后，实现了存储�
 
 另请参考 Kubernetes 官方文档：
 
-- [持久卷](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/)
-- [存储类](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/)
-- [动态卷供应](https://kubernetes.io/zh/docs/concepts/storage/dynamic-provisioning/)
+- [持久卷](https://kubernetes.io/zh-cn/docs/concepts/storage/persistent-volumes/)
+- [存储类](https://kubernetes.io/zh-cn/docs/concepts/storage/storage-classes/)
+- [动态卷供应](https://kubernetes.io/zh-cn/docs/concepts/storage/dynamic-provisioning/)

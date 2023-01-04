@@ -11,26 +11,36 @@
 
 1. 进入多云编排模块，在页面右上角点击工作空间，
 
-    ![工作空间](images/workspace01.png)
+    ![进入工作空间](images/wp01.png)
 
-2. 选择多云实例页签,在目标实例右侧点击 `ⵗ`，选择`绑定到工作空间`。
+2. 进入工作空间页面，在多云实例列表页面选择目标实例点击 `ⵗ`，选择`绑定到工作空间`。
 
-    ![选择多云实例](images/workspace02.png)
+    ![绑定工作空间](images/wp02.png)
 
 3. 选择想要绑定的工作空间，然后点击`确定`。
 
-    ![绑定](images/workspace03.png)
+    ![选择指定工作空间](images/wp03.png)
+
+4. 此时多云实例已经与`kairship-ws`绑定。点击全局管理，进入工作空间与层级页面，选择`kairship-ws`资源组，可以看到`k-kairship-test01`已经被绑定。
+
+    ![绑定资源组](images/wp04.png)
+
+    
 
 ## 绑定多云命名空间与工作空间
 
 1. 进入多云编排模块，在页面右上角点击工作空间，选择多云实例页签。
 
-    ![工作空间](images/workspace01.png)
+    ![点击工作空间](images/wp05.png)
 
-2. 在目标实例右侧点击 `ⵗ`，选择`绑定到工作空间`。
+2. 在多云命名空间tab页内，选择某多云实例`k-kairship-test01`的某多云命名空间`k-kairship-test01-95fzz`，右侧点击 `ⵗ`，选择`绑定到工作空间`。
 
-    ![选择多云实例](images/workspace04.png)
+    ![绑定工作空间](images/wp06.png)
 
 3. 选择想要绑定的工作空间，然后点击`确定`。
 
-    ![选择多云实例](images/workspace05.png)
+    ![选择指定工作空间](images/wp07.png)
+
+4. 此时多云命名空间已经与`kairship-ws`绑定。点击全局管理，进入工作空间与层级页面，选择`kairship-ws`资源组，可以看到`k-kairship-test01-95fzz`已经被绑定。
+   
+    ![绑定资源组](images/wp08.png)

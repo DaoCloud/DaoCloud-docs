@@ -9,7 +9,7 @@ hide:
 
 ## 前提条件
 
-1. 在 DCE 5.0 集群内使用 SpiderPool，需要结合 [Macvlan](../modules/multus-underlay/macvlan.md) + [Multus](../modules/multus-underlay/what.md) + [Calico](../modules/calico/what.md)/[Cillium](../modules/cilium/what.md)。
+1. 在 DCE 5.0 集群内使用 SpiderPool，需要结合 [Macvlan](../multus-underlay/macvlan.md) + [Multus](../multus-underlay/what.md) + [Calico](../calico/what.md)/[Cillium](../cilium/what.md)。
 
 2. 使用前请先安装 [Multus](../docs/network/modules/multus-underlay/install.md) 以及 Underlay CNI（[Macvlan](../modules/multus-underlay/macvlan.md) 或 [SRIOV](../modules/multus-underlay/sriov.md)），并确认待使用的网卡接口和子网。
 
@@ -104,7 +104,7 @@ hide:
 
         这些 IP 地址应属于 `IPv6 ippool subnet`。如果未开启 `install IPv6 ippool`，请忽略本项。
 
-5. 点击右下角`确定`按钮即可完成安装。完成后，可参考 [SpiderPool 的使用](../../modules/spiderpool/usage.md)进行 IP Pool 的使用。
+5. 点击右下角`确定`按钮即可完成安装。完成后，可参考 [SpiderPool 的使用](./usage.md)进行 IP Pool 的使用。
 
 !!! note
 
