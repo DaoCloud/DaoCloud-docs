@@ -11,23 +11,23 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
 1. Click `Container Management`->`Cluster List` in the left navigation bar, then find the cluster name where you want to install Falco.
 
-    ![falco_cluster](../../images/falco-cluster.png)
+    ![falco_cluster](../images/falco-cluster.png)
 
 2. In the left navigation bar, select `Helm Applications` -> `Helm Templates`, and then find and click `Falco`.
 
-    ![falco_helm-1](../../images/falco-helm-1.png)
+    ![falco_helm-1](../images/falco-helm-1.png)
 
 3. Select the version you want to install in `Version selection`, and click `Install`.
 
-    ![falco-helm-2](../../images/falco-helm-2.png)
+    ![falco-helm-2](../images/falco-helm-2.png)
 
 4. On the installation page, fill in the required installation parameters.
 
-    ![falco_helm-3](../../images/falco-helm-3.png)
+    ![falco_helm-3](../images/falco-helm-3.png)
 
     In the screen as above, fill in the `application name`, `namespace`, `version`, etc.
 
-    ![falco_helm-4](../../images/falco-helm-4.png)
+    ![falco_helm-4](../images/falco-helm-4.png)
 
    In the screen as above, fill in the following parameters:
 
