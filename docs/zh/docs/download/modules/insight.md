@@ -17,9 +17,6 @@ hide:
 
 在下载离线安装包和校验文件的目录，执行以下命令校验完整性：
 
-!!! note
-    `insight_v0.13.1_amd64_checksum.sha512sum` 是 v0.13.1 版本离线包的校验文件
-
 ```sh
 echo "$(cat insight_v0.13.1_amd64_checksum.sha512sum)" | sha512sum -c
 ```

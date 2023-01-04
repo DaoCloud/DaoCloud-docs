@@ -19,9 +19,6 @@ hide:
 
 在下载离线安装包和校验文件的目录，执行以下命令校验完整性：
 
-!!! note
-    `ghippo_v0.13.2_amd64_checksum.sha512sum` 是 v0.13.2 版本离线包的校验文件
-
 ```sh
 echo "$(cat ghippo_v0.13.2_amd64_checksum.sha512sum)" | sha512sum -c
 ```
