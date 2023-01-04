@@ -517,6 +517,8 @@ nav:
       - 云原生存储:
           - 介绍: storage/intro.md
           - 背景和挑战: storage/background.md
+          - 功能优势: storage/benifits.md
+          - 功能列表: storage/functions.md
           - HwameiStor 本地存储:
             - 介绍: storage/hwameistor/intro/what.md
             - 组件介绍:
