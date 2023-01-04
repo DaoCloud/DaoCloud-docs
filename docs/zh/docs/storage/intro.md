@@ -59,8 +59,6 @@ class stor,intro,hwa,install,om,long k8s
 
 click what1 "https://docs.daocloud.io/storage/intro/"
 click what2 "https://docs.daocloud.io/storage/hwameistor/intro/what/"
-click feature "https://docs.daocloud.io/storage/intro/"
-click benefit "https://docs.daocloud.io/storage/intro/"
 click prepare "https://docs.daocloud.io/storage/hwameistor/install/prereq/"
 click step "https://docs.daocloud.io/storage/hwameistor/install/deploy/"
 click check "https://docs.daocloud.io/storage/hwameistor/install/post-check/"
