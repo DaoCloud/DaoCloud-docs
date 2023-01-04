@@ -7,7 +7,7 @@ hide:
 
 本页介绍在创建工作负载使用 IP 池之前，如何创建子网及 IP 池。
 
-- 如部署 SpiderPool 组件时已创建 子网及 IP 池，可直接[使用](./usage.md)。
+- 如部署 SpiderPool 组件时已创建子网及 IP 池，可直接[使用](./usage.md)。
 - 如需要创建新的子网及 IP 池可参考此文档。
 
 ## 前提条件
@@ -29,7 +29,7 @@ hide:
 
     ![创建子网](../../images/subnetcreate.jpg)
 
-   ​ 上图中各项参数说明：
+    参数说明：
 
     - `IPv4/IPv6 类型`：待创建子网的子网类型
 
@@ -43,12 +43,14 @@ hide:
 
     ![创建子网](../../images/subnetcreate02.jpg)
 
-    **创建 IP 池**（可选）
-
-    - 如需要对 IP 进行严管控，可提前完成 IP 池创建
-    - 如粗粒度管控 IP 资源，可不用提前创建 IP 池
-
 1. 点击待使用的`子网名称`，进入子网详情页面。
+
+    !!! note
+
+        创建 IP 池为可选步骤，可根据需要进行创建。
+
+        - 如需要对 IP 进行严管控，可提前完成 IP 池创建
+        - 如粗粒度管控 IP 资源，可不用提前创建 IP 池
 
     ![子网详情](../../images/subnetlist.jpg)
 
@@ -64,7 +66,9 @@ hide:
 
     - `命名空间亲和性`：开启后可选择对应命名空间。选择后，只有对应命名空间中的工作负载可使用创建的 IP 池。
 
-    > 创建时，不添加任何亲和性，创建后的 IP 池为`共享 IP 池`。
+    !!! note
+
+        如果创建时不添加任何亲和性，创建后的 IP 池为`共享 IP 池`。
 
     ![创建 IP 池](../../images/createippool01.jpg)
 
@@ -78,7 +82,9 @@ hide:
 
 ## YAML 创建
 
-### YAML 创建 Subnet
+也可以直接通过 YAML 来创建子网和 IPPool。
+
+### YAML 创建子网
 
 ```yaml
 apiVersion: spiderpool.spidernet.io/v1
