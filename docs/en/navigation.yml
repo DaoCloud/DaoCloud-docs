@@ -560,6 +560,12 @@ nav:
             - Workspace Admin quickly use registry: kangaroo/quickstart/ws-admin-registry.md
           - Scan image: kangaroo/scan.md
           - Release Notes: kangaroo/release-notes.md
+      - Cloud Native Security:
+        - Intro: security/intro.md
+        - Falco:
+            - Intro: security/falco/what.md
+            - Install: security/falco/install.md
+            - Falco-exporter: security/falco/falco-exporter.md
       - References:
         - Release Notes: release/rn5.0.md
         - Gateway: reference/basic-knowledge/gateway.md

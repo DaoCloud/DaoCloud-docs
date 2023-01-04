@@ -11,7 +11,7 @@ hide:
 
 1. 在 DCE 5.0 集群内使用 SpiderPool，需要结合 [Macvlan](../modules/multus-underlay/macvlan.md) + [Multus](../modules/multus-underlay/what.md) + [Calico](../modules/calico/what.md)/[Cillium](../modules/cilium/what.md)。
 
-2. 使用前请先安装 [Multus](../docs/network/modules/multus-underlay/install.md) 以及 Underlay CNI（[Macvlan](../modules/multus-underlay/macvlan.md) 或 [SRIOV](../modules/multus-underlay/sriov.md)，并确认待使用的网卡接口和子网。
+2. 使用前请先安装 [Multus](../docs/network/modules/multus-underlay/install.md) 以及 Underlay CNI（[Macvlan](../modules/multus-underlay/macvlan.md) 或 [SRIOV](../modules/multus-underlay/sriov.md)），并确认待使用的网卡接口和子网。
 
 ## 安装步骤
 

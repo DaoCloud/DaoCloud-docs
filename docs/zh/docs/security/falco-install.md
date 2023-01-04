@@ -24,15 +24,22 @@
 
     在如上界面中，填写以下参数:
 
-        - `Falco` -> `Image Settings` -> `Registry`：设置 Falco 镜像的仓库地址，已经默认填写可用的在线仓库。如果是私有化环境，可修改为私有仓库地址。
-        - `Falco` -> `Image Settings` -> `Repository`：设置 Falco 镜像名。
-        - `Falco` -> `Falco Driver` -> `Image Settings` -> `Registry`：设置 Falco Driver 镜像的仓库地址，已经默认填写可用的在线仓库。如果是私有化环境，可修改为私有仓库地址。
-        - `Falco` -> `Falco Driver` -> `Image Settings` -> `Repository`：设置 Falco Driver 镜像名。
-        - `Falco` -> `Falco Driver` -> `Image Settings` -> `Driver Kind`：设置 Driver Kind，提供以下两种选择：
-            1. ebpf：使用 ebpf 来检测事件，这需要 Linux 内核支持 ebpf，并启用 CONFIG_BPF_JIT 和 sysctl net.core.bpf_jit_enable=1。
-            2. module：使用内核模块检测，支持有限的操作系统版本，参考 module 支持[系统版本](https://download.falco.org/?prefix=driver)。
-        - `Falco` -> `Falco Driver` -> `Image Settings` -> `Log Level`：要包含在日志中的最小日志级别。
+    - `Falco` -> `Image Settings` -> `Registry`：设置 Falco 镜像的仓库地址，已经默认填写可用的在线仓库。如果是私有化环境，可修改为私有仓库地址。
 
-            可选择值为：`emergency`, `alert`, `critical`, `error`, `warning`, `notice`, `info`, `debug`。
+    - `Falco` -> `Image Settings` -> `Repository`：设置 Falco 镜像名。
+
+    - `Falco` -> `Falco Driver` -> `Image Settings` -> `Registry`：设置 Falco Driver 镜像的仓库地址，已经默认填写可用的在线仓库。如果是私有化环境，可修改为私有仓库地址。
+
+    - `Falco` -> `Falco Driver` -> `Image Settings` -> `Repository`：设置 Falco Driver 镜像名。
+
+    - `Falco` -> `Falco Driver` -> `Image Settings` -> `Driver Kind`：设置 Driver Kind，提供以下两种选择：
+
+        1. ebpf：使用 ebpf 来检测事件，这需要 Linux 内核支持 ebpf，并启用 CONFIG_BPF_JIT 和 sysctl net.core.bpf_jit_enable=1。
+
+        2. module：使用内核模块检测，支持有限的操作系统版本，参考 module 支持[系统版本](https://download.falco.org/?prefix=driver)。
+
+    - `Falco` -> `Falco Driver` -> `Image Settings` -> `Log Level`：要包含在日志中的最小日志级别。
+
+        可选择值为：`emergency`, `alert`, `critical`, `error`, `warning`, `notice`, `info`, `debug`。
 
 5. 点击右下角`确定`按钮即可完成安装。
