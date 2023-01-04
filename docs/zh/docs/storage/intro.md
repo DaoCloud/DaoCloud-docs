@@ -21,7 +21,7 @@ graph LR
 stor[云原生存储] --> intro[介绍]
     intro --> what1[什么是云原生存储]
     intro -.-> back[背景和挑战]
-stor --> hwa[本地存储]
+stor --> hwa[HwameiStor 本地存储]
     hwa --> what2[什么是 HwameiStor]
     hwa -.-> feature[功能总览]
     hwa -.-> benefit[竞争优势]
@@ -53,9 +53,9 @@ classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
 classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
-class back,open,ceph,nfs,ins,use,feature,benefit plain;
+class back,ceph,nfs,ins,use,feature,benefit plain;
 class what1,what2,prepare,step,check,upgrade,uninstall,parts,resources,sce,faq,pool,node,migrate,scale,disk,intro1 cluster
-class stor,intro,hwa,install,om,long k8s
+class stor,intro,hwa,install,om,long,open k8s
 
 click what1 "https://docs.daocloud.io/storage/intro/"
 click what2 "https://docs.daocloud.io/storage/hwameistor/intro/what/"

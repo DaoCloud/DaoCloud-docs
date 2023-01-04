@@ -25,7 +25,7 @@ Clusterpedia 的能力不仅是搜索和查看，而且还可以简单地控制�
 
     云原生全景图由 CNCF 从 2016 年 12 月开始维护，汇总了社区成熟和使用范围较广、具有最佳实践的产品和方案，并加以分类，为企业构建云原生体系提供参考，在云生态研发、运维领域具有广泛影响力。
 
-[了解 Clusterpedia 社区](https://github.com/clusterpedia-io){ .md-button }
+[Clusterpedia 发行版本](https://github.com/clusterpedia-io/clusterpedia/releases){ .md-button }
 
 [查阅 Clusterpedia 官网](https://clusterpedia.io/){ .md-button }
 
