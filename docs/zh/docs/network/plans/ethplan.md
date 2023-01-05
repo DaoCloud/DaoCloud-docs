@@ -34,7 +34,7 @@ hide:
 
 **规划说明**：
 
-- 在此规划中默认 CNI 为 Calico/Cilium，需要配合安装 Multus-underlay 、Spiderpool 等组件安装
+- 在此规划中默认 CNI 为 Calico/Cilium，需要配合安装 Multus-underlay、Spiderpool 等组件
 - 建议所有节点都具备多张物理网卡且网卡名称都一致。
 - eth0 为主机默认路由所在网卡，网关指向 Gateway 主机，由该主机转发到外部网络。
   主要用途为：`节点间的通讯`、`Kubernetes 管理网卡`、`Calico Pod 通信`。
