@@ -390,8 +390,9 @@ nav:
               - 背景: network/intro/background.md
               - 挑战: network/intro/challenges.md
               - 网络组件: network/modules/modules.md
-          - 规划:
-              - 网卡规划 : network/plans/ethplan.md
+          - 规划:  
+              - 网卡规划: network/plans/ethplan.md
+              - 网络规划: network/plans/netplan.md
           - Calico:
               - 介绍: network/modules/calico/what.md
               - 安装参数配置: network/modules/calico/install.md
