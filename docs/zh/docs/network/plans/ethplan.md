@@ -36,5 +36,6 @@ hide:
 
 - 在此规划中默认 CNI 为 Calico/Cilium，需要配合安装 Multus-underlay 、Spiderpool 等组件安装
 - 建议所有节点都具备多张物理网卡且网卡名称都一致。
-- eth0 为主机默认路由所在网卡，网关指向 Gateway 主机，由该主机转发到外部网络。主要用途为：`节点间的通讯`，`Kubernetes 管理网卡` ，`Calico Pod 通信`。
+- eth0 为主机默认路由所在网卡，网关指向 Gateway 主机，由该主机转发到外部网络。
+  主要用途为：`节点间的通讯`、`Kubernetes 管理网卡`、`Calico Pod 通信`。
 - eth1 为 Underlay 业务网卡，无需设置 IP地址， 基于 eth1 创建 VLAN 子接口(Eth1.1、Eth1.2) ，对应网段如：172.16.15.0/24 和 172.16.16.0/24，创建的业务应用 Pod 使用对应网段地址，可满足多 VLAN 多子网场景。
