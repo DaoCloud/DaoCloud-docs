@@ -1,4 +1,4 @@
-# 介绍
+# 什么是 Contour
 
 Contour 是一个开源的 Kubernetes Ingress 控制器，使用 Envoy 作为数据面。
 Contour 支持动态配置更新和开箱即用的多团队入口代理，同时保持轻量级配置文件。
