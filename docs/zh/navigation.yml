@@ -521,7 +521,7 @@ nav:
           - 介绍: storage/intro.md
           - 背景和挑战: storage/background.md
           - 功能优势: storage/benifits.md
-          - 功能列表: storage/functions.md
+          - 功能列表: storage/functions.md          
           - HwameiStor 本地存储:
             - 介绍: storage/hwameistor/intro/what.md
             - 组件介绍:
@@ -552,9 +552,8 @@ nav:
                 - MinIO: storage/hwameistor/application/minio/minio.md
             - 常见问题: storage/hwameistor/faqs.md
           - 开源存储方案集成:
-            - Ceph-Rook: storage/ceph.md
-            - NFS Subdir External Provisioner: storage/nfs.md
-            - Longhorn: storage/longhorn.md
+            - Rook-Ceph 云原生存储: storage/rook-ceph-intro.md
+            - Longhorn 云原生存储: storage/longhorn.md
           - 存储基本概念:
               - Kubernetes 存储: storage/terms/k8s_storage.md
               - CAS 存储: storage/terms/cas.md
