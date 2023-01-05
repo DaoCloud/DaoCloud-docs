@@ -1,4 +1,7 @@
-# Longhorn
+# Longhorn 存储方案
+
+DCE 5.0 支持众多第三方存储方案，我们针对 Longhorn 进行了详细的测试，并最终将其作为 Addon 集成了应用商店中。
+以下是对 Longhorn 的简单调研和测评报告。
 
 Longhorn 是一个轻量级的云原生 Kubernetes 分布式存储平台，可以在任意基础设施上运行。
 Longhorn 与 DCE 可以结合使用部署高可用性持久化块存储。
