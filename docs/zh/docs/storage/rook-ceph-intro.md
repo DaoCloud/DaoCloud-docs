@@ -36,18 +36,20 @@ Ceph RBD 如何工作？
 
 本次测试使用四个虚拟机节点来部署一个 Kubernetes 集群：1 个主节点 + 3 个工作节点，kubelet 版本为 1.23.6。
 
+```
 [root@k8s-10-6-162-21 ~]# kubectl get no
 NAME                            STATUS           ROLES                              AGE         VERSION
 k8s-10-6-162-21                 Ready            control-plane,master               19d         v1.23.6
 k8s-10-6-162-22                 Ready            <none>                             19d         v1.23.6
 k8s-10-6-162-23                 Ready            <none>                             19d         v1.23.6
 k8s-10-6-162-24                 Ready            <none>                             13d         v1.23.6
-
+```
 
 ### Rook / Ceph 部署
 
 #### Github源码克隆：
 
+```
 [root@k8s-10-6-162-21 ~]# git clone https://github.com/rook/rook.git
 
 [root@k8s-10-6-162-21 ~]# ls
@@ -73,10 +75,11 @@ common-external.yaml filesystem-ec.yaml object-ec.yaml pool-test.yaml
 common-second-cluster.yaml filesystem-mirror.yaml object-external.yaml pool.yaml
 common.yaml filesystem-test.yaml object-multisite-pull-realm.yaml pre-k8s-1.16
 crds.yaml filesystem.yaml object-multisite.yaml rbdmirror.yaml
-
+```
 
 #### 部署 operator, crds, and parameters:
 
+```
 [root@k8s-10-6-162-21 ceph]# kubectl create -f crds.yaml -f common.yaml -f operator.yaml
 
 [root@k8s-10-6-162-21 ceph]# kubectl get crd | grep ceph
@@ -95,9 +98,11 @@ cephrbdmirrors.ceph.rook.io                           2022-10-14T02:22:35Z
 objectbucketclaims.objectbucket.io                    2022-10-14T02:22:35Z
 objectbuckets.objectbucket.io                         2022-10-14T02:22:35Z
 volumes.rook.io                                       2022-10-14T02:22:35Z
+```
 
 #### 部署 cluster and toolbax:
 
+```
 [root@k8s-10-6-162-21 ceph]# kubectl create -f cluster.yaml
 
 [root@k8s-10-6-162-21 ceph]# kubectl create -f toolbox.yaml
@@ -134,10 +139,12 @@ rook-ceph-osd-prepare-k8s-10-6-162-22-kjwzt                 0/1              Com
 rook-ceph-osd-prepare-k8s-10-6-162-23-fngbr                 0/1              Completed          0                                          5h34m                   10.244.56.67       k8s-10-6-162-23            <none>              <none>
 rook-ceph-osd-prepare-k8s-10-6-162-24-p7c28                 0/1              Completed          0                                          5h34m                   10.244.49.27       k8s-10-6-162-24            <none>              <none>
 rook-ceph-tools-55f548895f-8pdhm                            1/1              Running               0       4d1h                        10.244.56.107      k8s-10-6-162-23           <none>              <none>
+```
 
 
 #### 部署 dashboard:
 
+```
 [root@k8s-10-6-162-21 ~]# kubectl apply -f dashboard-external-https.yaml
 
 [root@k8s-10-6-162-21 ~]# kubectl get svc -n rook-ceph
@@ -150,6 +157,7 @@ rook-ceph-mgr-dashboard-external-https         NodePort 10.111.121.36 <none> 844
 rook-ceph-mon-a                                ClusterIP 10.107.216.105 <none> 6789/TCP,3300/TCP 8d
 rook-ceph-mon-b                                ClusterIP 10.100.168.72 <none> 6789/TCP,3300/TCP 8d
 rook-ceph-mon-d                                ClusterIP 10.101.56.41 <none> 6789/TCP,3300/TCP 5d16h
+```
 
 ![dashboard-1](./images/dashboard-1.png)
 
@@ -159,6 +167,7 @@ rook-ceph-mon-d                                ClusterIP 10.101.56.41 <none> 678
 
 #### 用于 Ceph 存储管理的 Rook 工具操作
 
+```
 [root@k8s-10-6-162-21 ceph]# kubectl exec -it rook-ceph-tools-55f548895f-fzbq2 -n rook-ceph -- bash
 
 [root@rook-ceph-tools-55f548895f-8pdhm /]# ceph -s
@@ -215,12 +224,14 @@ ID HOST USED AVAIL WR OPS WR DATA RD OPS RD DATA STATE
 3 k8s-10-6-162-24 694M 99.3G 0 0 1 15 exists,up
 4 k8s-10-6-162-24 744M 99.2G 0 0 0 0 exists,up
 5 k8s-10-6-162-23 747M 99.2G 0 0 0 0 exists,up
+```
 
 
 #### Ceph 存储配置
 
 创建 RBD 池 & pg：
 
+```
 [root@rook-ceph-tools-55f548895f-8pdhm /]# ceph osd pool create replicapool 128
 
 [root@k8s-10-6-162-21 kubernetes]# ceph osd pool application enable replicapool rbd
@@ -235,20 +246,24 @@ Creating storage class:
 NAME                       PROVISIONER RECLAIMPOLICY VOLUMEBINDINGMODE ALLOWVOLUMEEXPANSION AGE
 rook-ceph-block            rook-ceph.rbd.csi.ceph.com Delete Immediate true 5d20h
 rook-cephfs                rook-ceph.cephfs.csi.ceph.com Delete Immediate true 2d17h
+```
 
 ### 应用程序部署验证
 
 #### 在RBD上部署Mysql / WordPress：
 
+```
 [root@k8s-10-6-162-21 examples]# cd kubernetes/
 ceph mysql2-cephfs.yaml mysql.yaml README.md wordpress.yaml
 [root@k8s-10-6-162-21 kubernetes]# pwd
 /root/rook/cluster/examples/kubernetes
 [root@k8s-10-6-162-21 kubernetes]# kubectl apply -f mysql.yaml 
 [root@k8s-10-6-162-21 kubernetes]# kubectl apply -f wordpress.yaml 
+```
 
 #### 在 Cephfs 上部署 Mysql：
 
+```
 [root@k8s-10-6-162-21 kubernetes]# kubectl apply -f mysql2-cephfs.yaml 
 
 [root@k8s-10-6-162-21 kubernetes]# kubectl get po
@@ -275,6 +290,7 @@ device_health_metrics
 replicapool
 myfs-metadata
 myfs-data0
+```
 
 ![dashboard-4](./images/dashboard-4.png)
 
@@ -282,6 +298,7 @@ myfs-data0
 
 ![dashboard-6](./images/dashboard-6.png)
 
+```
 [root@k8s-10-6-162-21 kubernetes]# kubectl get pv,pvc
 NAME                                                                                                                                  CAPACITY        ACCESS MODES RECLAIM POLICY STATUS CLAIM STORAGECLASS REASON AGE
 persistentvolume/pvc-19515505-cd8f-41d1-ae91-bb42c3eb64f3              20Gi                    RWO Delete Bound default/mysql-pv-claim2 rook-cephfs 3d20h
@@ -292,6 +309,7 @@ NAME                                                                           S
 persistentvolumeclaim/mysql-pv-claim             Bound pvc-b07feec8-adc8-4e22-abd6-177b5db4fdb1 20Gi RWO rook-ceph-block 7d
 persistentvolumeclaim/mysql-pv-claim2          Bound pvc-19515505-cd8f-41d1-ae91-bb42c3eb64f3 20Gi RWO rook-cephfs 3d20h
 persistentvolumeclaim/wp-pv-claim                   Bound pvc-7647bc80-febc-4299-a62a-8446d2c364c6 20Gi RWO rook-ceph-block 6d23h
+```
 
 My blog on wordpress/mysql:
 
@@ -306,7 +324,9 @@ Data Persistence Validation
 
 Delete and restart mysql / wordpress pods:
 
+```
 [root@k8s-10-6-162-21 kubernetes]# kubectl delete po wordpress-mysql-79966d6c5b-wc6fs
+```
 
 ![blog-3](./images/blog-3.png)
 
