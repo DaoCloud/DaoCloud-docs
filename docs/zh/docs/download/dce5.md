@@ -10,8 +10,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 文件名                      | 版本    | 架构 | 文件大小 | 下载                                           | 更新日期   |
 | ----------------------------- | ------- | -------- | ---------------------------------------------- | ---------- | ----------------------------- |
-| offline-centos7-community-v0.3.29-amd64.tar | v0.3.29 | AMD 64 | 9.2 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-community-v0.3.29-amd64.tar) | 2022-12-16 |
-| offline-kylin-v10sp2-community-v0.3.29-arm64.tar | v0.3.29 | ARM 64 | 6.9 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-community-v0.3.29-arm64.tar) | 2022-12-16 |
+| offline-centos7-community-v0.3.29-amd64.tar | v0.3.29 | AMD 64 | 9.2 GB | [:arrow_down: 下载](./free/dce5-installer-v0.3.29.md) | 2022-12-16 |
+| offline-kylin-v10sp2-community-v0.3.29-arm64.tar | v0.3.29 | ARM 64 | 6.9 GB | [:arrow_down: 下载](./free/dce5-installer-v0.3.29.md) | 2022-12-16 |
 
 ## 下载商业版
 
@@ -19,8 +19,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 文件名            | 版本    | 架构 | 文件大小 | 下载                                               | 更新日期   |
 | ------------------- | ------- | -------- | -------------------------------------------------- | ---------- | ------------------- |
-| offline-centos7-v0.3.29-amd64.tar | v0.3.29 | AMD 64 | 22.9 GB | [:arrow_down: 下载](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-v0.3.29-amd64.tar) | 2022-12-16 |
-| offline-kylin-v10sp2-v0.3.29-arm64.tar | v0.3.29 | ARM 64 | 19.9 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-v0.3.29-arm64.tar) | 2022-12-16 |
+| offline-centos7-v0.3.29-amd64.tar | v0.3.29 | AMD 64 | 22.9 GB | [:arrow_down: 下载](./business/dce5-installer-v0.3.29.md) | 2022-12-16 |
+| offline-kylin-v10sp2-v0.3.29-arm64.tar | v0.3.29 | ARM 64 | 19.9 GB | [:arrow_down: 下载](./business/dce5-installer-v0.3.29.md) | 2022-12-16 |
 
 ## 下载子模块
 
