@@ -154,7 +154,7 @@ longhorn-manager-xsn8k 1/1 Running 1 (3h14m ago) 3h20m
 longhorn-ui-68bc57db67-46brf 1/1 Running 0 3h20m
 ```
 
-修改 longhorn 前段 service 端口
+修改 longhorn 前端 service 端口
 
 ![longhorn-svc-1](./images/longhorn-svc-1.png)
 
