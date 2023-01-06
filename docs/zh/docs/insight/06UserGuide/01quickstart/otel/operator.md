@@ -12,7 +12,7 @@
 
 ## 安装 Instrumentation CR
 
-在 Insight-System 命名空间下安装，如已安装可跳过该步骤（Insight 0.13.0+ 亦可跳过该步骤）：
+在 Insight-System 命名空间下安装，如已安装可跳过该步骤：
 
 ```bash
 kubectl apply -f - <<EOF
