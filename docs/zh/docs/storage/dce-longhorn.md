@@ -166,4 +166,6 @@ longhorn-ui-68bc57db67-46brf 1/1 Running 0 3h20m
 
 ![longhorn界面](./images/longhorn-2.png)
 
+至此，在 DCE5.0 应用商店安装 longhorn 存储系统完成！
+
 
