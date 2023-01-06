@@ -54,7 +54,7 @@ See [MkDocs documents to install](https://squidfunk.github.io/mkdocs-material/ge
    2. Enable venv: `poetry env use 3.9`
 2. Install dependencies: `poetry install`
 3. Run `poetry run mkdocs serve -f mkdocs.yml` in the repo folder locally
-4. Preview with http://127.0.0.1:8000/
+4. Preview with http://0.0.0.0:8000/
 
 ## Tips about writing
 
