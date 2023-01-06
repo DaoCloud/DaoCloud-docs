@@ -1,8 +1,16 @@
-# knowledge sharing
+# Knowledge sharing
 
 This page shares some technical articles related to cloud native, and we hope that everyone can make progress hand in hand.
 
 ### Troubleshooting
+
+- [K8s CNI Cilium Network Troubleshooting Guide](https://mp.weixin.qq.com/s/jBuNPOKbL-keXmzq1gq-mQ)
+
+     The article describes a problem the author encountered when upgrading from kubenet to cilium and the troubleshooting process. The problem was that pods on nodes in the kubenet network could not access pods on nodes in the cilium network. by grabbing packets and testing, and analyzing information about cilium, we found the problem: cilium does not manage all k8s nodes, and the remaining nodes are handled as external servers.
+
+- [How to troubleshoot Kubernetes Service efficiently](https://blog.getambassador.io/how-to-debug-a-kubernetes-service-effectively-3d4eff0b221a)
+
+     The article briefly describes how the service works, the various bugs that can occur when running the service, and how to resolve them. Finally, it introduces an efficient troubleshooting tool [Telepresence](https://github.com/telepresenceio/telepresence). Telepresence enables to build a remote development environment for Kubernetes, and users can still use their own local tools, such as IDEs and debuggers, and test local services against microservices in remote K8 clusters.
 
 - [K8s: Completely solve the problem of the node's local storage being exploded](https://mp.weixin.qq.com/s/pKTA6O3bdko_eHaw5mU3gQ)
 
@@ -287,6 +295,10 @@ This page shares some technical articles related to cloud native, and we hope th
 
 ### Tool recommendation
 
+- [Automating Istio CA Rotation at Scale in Production](https://mp.weixin.qq.com/s/75paqvd507_ExHHGszB_-Q)
+
+     The article shows how to configure Istio to automatically reload its CAs, and how to configure cert-manager to automatically rotate Istio's intermediate CAs periodically before they expire to improve operational efficiency in managing CAs across multiple clusters.
+
 - [Why do we advocate a workload-centric development model instead of an infrastructure-centric development model?](https://score.dev/blog/workload-centric-over-infrastructure-centric-development)
 
      Cloud native developers are often plagued by configuration inconsistencies between environments.
@@ -563,7 +575,7 @@ This page shares some technical articles related to cloud native, and we hope th
      For a long time, the two multi-tenancy models based on namespace and cluster have many disadvantages.
      This article introduces a newer concept - virtual clusters. It combines the advantages of the two multi-tenancy approaches described above: multi-tenancy uses only one namespace, and tenants have full control within the virtual cluster.
 
-### product model
+### Product comparison
 
 - [Comparison of 12 open source monitoring tools that have been open sourced in the past two decades](https://mp.weixin.qq.com/s/ByQ3skUrcf1c_DPD4dCbRg)
 
@@ -603,7 +615,19 @@ This page shares some technical articles related to cloud native, and we hope th
 
      The article starts from the introduction of mainstream APM products (compared with Pinpoint, Jaeger, Skywalking, Tingyun, Tencent Cloud + Alibaba Cloud Arms and Datadog), and passes through several important dimensions in the production environment, such as product experience, Agent capability, alarm + DB support , cloud-native support capabilities, large data screens, etc., and give suggestions for APM selection solutions.
 
-### Frontier Hotspots
+### Frontier hotspot
+
+- [Kubernetes pain, platform engineering can solve](https://thenewstack.io/kubernetes-pains-platform-engineering-can-help/)
+
+     The product approach needed to build platform engineering helps organizations understand areas of Kubernetes for which support is not yet available. Developer self-service allows engineers to provision and use the technologies needed to test, protect, and deploy applications on their own, without waiting for operations to provide resources or launch environments. The in-house development platform allows development and operations to focus on their respective core responsibilities and strengths, with developers focusing on writing code and operations moving upstream to more critical tasks, such as managing the network or physical hardware.
+
+- [How does the Information technology application innovation industry bring value to the business?](https://mp.weixin.qq.com/s/uDe1wb0cVsqrz7oXjYOXXg)
+
+     When it comes to Information technology application innovation industry, the first thought is autonomous and controllable. But to do a good job of Sentry, you need to take some energy out of burying your head in autonomous controllability and think about how to get value from Sentry. The article introduces successful cases of technology replacement at home and abroad, under what circumstances technology replacement can bring value to the business, and what can be done to make Information technology application innovation industry better for the business.
+
+- [From PingCAP's TiDB database product to see the model of domestic technology going abroad](https://mp.weixin.qq.com/s/3y9pafdEy8rD5H2OtgPwEw)
+
+     The article introduces the technical, compliance, and commercialization optimizations of TiDB made by PingCAP to realize technology going abroad. Technically, to achieve cost reduction and efficiency, operation and maintenance automation, multi-tenant management, and meet the needs of specific regional scenarios; compliance, to consider data security and regulatory rules; commercially, to consider billing models, commercialization strategies, etc. In addition, TiDB can attract overseas customers with several factors: TiDB is open source and has an active open source community; customer data is stored on public clouds such as AWS and GCP; remote support, not relying on local technical teams, can effectively solve the problem of expensive human resources in some regions.
 
 - [Explore K8s new feature Container Checkpointing](https://sysdig.com/blog/forensic-container-checkpointing-dfir-kubernetes/)
 
@@ -711,6 +735,10 @@ This page shares some technical articles related to cloud native, and we hope th
 
 ### Security Vulnerabilities
 
+- [Review of 2022 Kubernetes Security Vulnerabilities and What We Can Learn From Them](https://www.armosec.io/blog/kubernetes-vulnerabilities-2022/)
+
+     The article provides a summary of the major security vulnerabilities and solutions for Kubernetes in 2022, such as the CRI-O runtime container escape vulnerability, ArgoCD authentication bypass, and more. Some measures to prevent vulnerabilities are presented: implementing security profiles, following the least privilege principle when assigning roles and permissions, continuous scanning of K8s manifest files, codebases, and clusters, regular updates of packages on clusters, using container sandboxing projects, etc.
+
 - [Istio High Risk Vulnerability: A user with localhost access can impersonate the identity of any workload](https://github.com/istio/istio/security/advisories/GHSA-6c6p-h79f-g6p4)
 
      If a user has localhost access to the Istiod control plane, they can impersonate any workload identity within the service mesh.
@@ -776,6 +804,14 @@ This page shares some technical articles related to cloud native, and we hope th
 
 ### other
 
+- [K8s natively supported access policy management](https://mp.weixin.qq.com/s/wDlCQkHTBUQDucT9K7G2mg)
+
+     Kubernetes 1.26 provides an alpha version of the validating admission policy update, where a common expression language (CEL) can be used to provide a declarative, in-process alternative to validating admission webhook when validating admission policies. embedding CEL expressions embedding CEL expressions into Kubernetes resources greatly reduces the complexity of the admission webhook.
+
+- [2022 Cloud Native Technology Inventory and Outlook](https://mp.weixin.qq.com/s/yRMTS5z15-PERwlameMOIw)
+
+     The article takes stock of the development of cloud-native in 2022 from both the underlying basic technology and scenario-based application technology: the mixed part brings efficiency improvement; Serverless completes standardization based on containers; Service Mesh makes new attempts, the landing method is still being explored; the FinOps concept is rapidly developing under the major theme of cost reduction and efficiency increase Development, etc.
+
 - [In-depth analysis of Containerd - NRI articles](https://mp.weixin.qq.com/s/2LrWqOtqIfbIzWG9fv5ANA)
 
      NRI is a CRI plugin in containerd that provides a container runtime-level plugin framework to manage node resources.
@@ -835,7 +871,7 @@ This page shares some technical articles related to cloud native, and we hope th
      The article introduces a [GitOps checklist](https://go.weave.works/rs/249-YDT-025/images/The%2016-point%20Checklist%20for%20GitOps%20Success.pdf), which can be used for Assess your team's GitOps maturity.
      There are 16 items in the list, including six dimensions: team culture, git management, GitOps pipeline, Kubernetes, security & policy.
 
-- [Why does Istio use SPIRE for authentication? ](https://mp.weixin.qq.com/s/043yz1etTkJ1l4Eo6DG7WA)
+- [Why does Istio use SPIRE for authentication?](https://mp.weixin.qq.com/s/043yz1etTkJ1l4Eo6DG7WA)
 
      The most noteworthy feature in Istio 1.14 is the new support for [SPIRE](https://github.com/spiffe/spire).
      SPIFFE unifies identity standards in heterogeneous environments. Istio uses SPIRE to provide a unique identifier for each workload. The workload in the service grid will use the service identifier when performing peer authentication, request authentication and authorization policies to verify whether access is allowed.

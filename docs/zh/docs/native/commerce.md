@@ -45,6 +45,10 @@
 
     更新内容包括：Azure 容器注册中心新增软删除功能，可恢复误删除的工件；允许中止 AKS 集群或代理池上的任何操作；支持多实例 GPU（MIG）；将 Azure 网络策略管理器（NPM）扩展到 Windows server 2022 的 AKS 集群；集成用于 AKS 私有集群的 API Server VNET。
 
+- [阿里云服务网格 ASM 2022 年 12 月更新](https://mp.weixin.qq.com/s/4lODob6kB7xjYDaKACzmhw)
+
+    更新内容：支持托管式的按需推送 xDS 配置、支持自建 Istio 社区版本迁移到 ASM、ASM 网关支持配置自定义授权服务、启用服务等级目标 SLO。
+
 - [阿里云分布式云容器平台 ACK One 更新](https://mp.weixin.qq.com/s/TC1KA_xWpVAwZMFAgVmNfg)
 
     更新内容：集成 ArgoCD 实现多集群的 GitOps 持续交付，优化多集群应用分发；统一配置报警规则，支持配置特定集群的差异化报警规则，支持自动同步报警规则到新关联集群。
@@ -144,6 +148,10 @@
 
     FortiGate CNF 是一个 SaaS 产品，通过与 AWS Gateway Load Balancer、AWS Firewall Manager 等服务的深度云原生集成，支持不同 AWS 环境下的一致安全策略，消除了网络安全的复杂性。此外，还支持下一代防火墙的安全检查功能，提供对应用层的深度可视性，可以保护多个账户、子网、虚拟私有云和可用性区域。
 
+- [GitLab 15.7 发布](https://about.gitlab.com/releases/2022/12/22/gitlab-15-7-released/)
+
+    版本特性：支持将私有化部署的 GitLab 实例部署到 Jira 云、支持 SSH 密钥签署提交文件、支持显示每条流水线的多个代码质量扫描报告、允许在个人命名空间内共享 Kubernetes GitLab 代理的 CI/CD 访问权、支持在默认分支以外的地方进行 GitOps 部署。
+
 - [GitLab 15.5 发布](https://mp.weixin.qq.com/s/AiRU9pQUxTex0F_XvuHiHg)
 
     该版本主要新特性：在合并请求流水线中运行安全扫描工具、支持 Kubernetes 容器扫描、支持从 GitHub 导入项目时导入更多的关系、新增预定义 DORA（评估 DevOps 效能水平的指标）可视化比较报告。
@@ -159,6 +167,10 @@
 - [Gloo Gateway 云原生 API 网关支持 GraphQL](https://www.solo.io/blog/announcing-graphql-for-gloo-gateway/)
 
     GraphQL for Gloo Gateway 无缝地将 GraphQL API 添加到 Gloo Gateway 中。用户可以借此对 API 进行联合 GraphQL 查询，而不需要为 GraphQL 建立额外的服务器以及解析器和解析器模式库；所有策略和请求都可以在 Envoy Proxy 过滤器中进行管理；同时支持声明式配置，与 CI/CD 和 GitOps 工作流完全兼容。
+
+- [*Google Cloud Kubernetes 发行版 GKE 12 月更新](https://cloud.google.com/kubernetes-engine/docs/release-notes)
+
+    更新内容：允许在 Autopilot 集群中运行基于 GPU 的工作负载；支持双栈集群；支持在多 GPU 工作负载上启用传输层插件 NCCL Fast Socket，提高英伟达集体通信库（NCCL）的性能；GKE 网关控制器支持全局外部 HTTP(S) 负载均衡器。
 
 - [Google Cloud Kubernetes 发行版 GKE 十一月更新](https://cloud.google.com/kubernetes-engine/docs/release-notes)
 
@@ -228,6 +240,10 @@
     Kubernetes360 将日志、Prometheus 指标监控和 Jaeger 支持的分布式追踪统一在一个平台中，使 DevOps 团队能够以简单、高效和可操作的方式监控应用 SLO。
 
 ### M, N, O
+
+- [Mirantis 私有云基础设施平台 Mirantis OpenStack for Kubernetes 22.5 发布](https://www.mirantis.com/blog/mirantis-openstack-for-kubernetes-22-5-released)
+
+    版本特性：全面支持 OpenStack Yoga、引入了基于 OpenStack Manila 的共享文件系统、通过 MetalLB 启用 BGP 模式使 OpenStack 云更容易集成到 L3 网络。
 
 - [Mirantis 企业级容器平台 Mirantis Kubernetes Engine v3.6 发布](https://www.mirantis.com/blog/mke-3-6-release)
 

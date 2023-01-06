@@ -623,6 +623,17 @@
 
 ### 前沿热点
 
+- [Kubernetes 之痛，平台工程可以解决](https://thenewstack.io/kubernetes-pains-platform-engineering-can-help/)
+
+    构建平台工程所需的产品方法有助于组织了解尚未提供支持的 Kubernetes 领域。
+    开发者自助服务允许工程师自行调配和使用测试、保护和部署应用所需的技术，而无需等待运维提供资源或启动环境。
+    内部开发平台使开发和运维专注于各自的核心职责和优势，开发人员专注于编写代码，运维向上游转移到更关键的任务，如管理网络或物理硬件。
+
+- [信创如何为业务带来价值？](https://mp.weixin.qq.com/s/uDe1wb0cVsqrz7oXjYOXXg)
+
+    提到信创，大家第一反应就是自主可控。但要做好信创，需要从埋头于自主可控中抽出一部分精力，思考如何从信创中获取价值。
+    文章介绍了国内外技术替代的成功案例，技术替换在什么情况下能为业务带来价值，以及如何做能够让信创更好地为业务服务。
+
 - [从 PingCAP 的 TiDB 数据库产品看国产技术出海模式](https://mp.weixin.qq.com/s/3y9pafdEy8rD5H2OtgPwEw)
 
     文章介绍了 PingCAP 为实现技术出海，对 TiDB 在技术上、合规性、商业化方面所做的优化。
@@ -739,6 +750,11 @@
 
 ### 安全漏洞
 
+- [回顾 2022 Kubernetes 安全漏洞，我们可以从中学到什么](https://www.armosec.io/blog/kubernetes-vulnerabilities-2022/)
+
+    文章对 2022 年 Kubernetes 的主要安全漏洞和解决方法进行了总结，例如 CRI-O 运行时容器逃逸漏洞、ArgoCD 绕过认证等。
+    介绍了一些防止漏洞的措施：实施安全配置文件，分配角色和权限时遵循最小权限原则，对 K8s 清单文件、代码库和集群进行持续扫描，定期更新集群上的软件包，使用容器沙盒项目等。
+
 - [Istio 高风险漏洞：拥有 localhost 访问权限的用户可以冒充任何工作负载的身份](https://github.com/istio/istio/security/advisories/GHSA-6c6p-h79f-g6p4)
 
     如果用户拥有 Istiod 控制平面的 localhost 访问权，他们可以冒充服务网格内的任何工作负载身份。
@@ -803,6 +819,15 @@
     该白皮书聚焦微服务治理业务领域，囊括了技术原理、业务场景、解决方案、最佳实践等微服务落地的全流程。
 
 ### 其他
+
+- [2022 云原生技术盘点与展望](https://mp.weixin.qq.com/s/yRMTS5z15-PERwlameMOIw)
+
+    文章从底层基础技术和场景化的应用技术两方面，对 2022 年云原生的发展情况进行盘点：混部带来了效率的提升；
+    Serverless 基于容器完成标准化；Service Mesh 进行新尝试，落地方式还在探索；降本增效大主题下，FinOps 理念快速发展等。
+
+- [K8s 原生支持的准入策略管理](https://mp.weixin.qq.com/s/wDlCQkHTBUQDucT9K7G2mg)
+
+    Kubernetes 1.26 提供了一个 alpha 版本的验证准入策略更新，即在验证准入策略时可以使用一种通用的表达式语言（CEL）来提供声明的、进程内的替代方法来验证 validating admission webhook。将 CEL 表达式嵌入到 Kubernetes 资源中，大大降低了 admission webhook 的复杂性。
 
 - [Containerd 深度剖析-NRI 篇](https://mp.weixin.qq.com/s/2LrWqOtqIfbIzWG9fv5ANA)
 

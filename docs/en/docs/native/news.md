@@ -2,9 +2,34 @@
 
 This page lists the more popular news, events, activities, etc. in the cloud native community by month for your one-stop reference and retrieval.
 
-> We will maintain regularly to ensure the validity of all links and the timeliness of news
+> We will maintain regularly to ensure the validity of all links and the timeliness of news.
+
+### 2023-04
+
+- [April 15 2023 Cloud Native Community Observability Summit to be Held, Instructor and Sponsor Recruitment Underway (3.10 Deadline)](https://mp.weixin.qq.com/s/erf33B2--kUgLg1D730tOg)
+  
+    The Cloud Native Community will hold an Observability Summit in Beijing on Saturday, April 15, 2023. Topics will focus on open source projects and applications in observability-related areas, including but not limited to: metrics monitoring, distributed tracking, log collection, technology innovation, application practices, etc.
+
+### 2023-02
+
+- [February 1-2 CNCF CloudNativeSecurityCon conference is coming up, agenda is now available](https://events.linuxfoundation.org/cloudnativesecuritycon-north-america/program/schedule/)
+  
+    CloudNativeSecurityCon is the first independent conference focused on cloud-native security projects and enterprise security challenges in practice.
+    The conference features 72 presentations on topics including architecture and strategy, secure software development, supply chain security, identity and access, forensics, and more.
 
 ### 2023-01
+
+- [January 9 Cloud Native Industry Alliance Annual Conference to be Held Online](https://mp.weixin.qq.com/s/cyVz5LC4JJ7ImRuqtOYqGA)
+  
+    The Cloud Native Industry Alliance (CNIA) is a sub-consortium of the Cloud Computing Open Source Industry Alliance, which is jointly formed by top cloud native vendors and typical users of cloud native in the industry.
+    At the conference, 3 major reports will be released: "Application Modernization Construction Guide", "2022 China Cloud Native Security User Survey Report", "2022 Serverless User Survey Report", and 5 major cloud native field reports.
+    The conference will also feature reviews of 5 major cloud-native areas: storage, security, big data, hybrid, and middleware.
+
+- [January 2 CNCF to open 2023 Technical Oversight Committee (TOC) elections](https://www.cncf.io/blog/2022/12/01/cncf-toc-elections-for-2023/)
+  
+    The TOC has one end-user appointed seat and three Management Board appointed seats open for 2023.
+    Nominations for the election will open next January, and candidates should be senior engineers within the CNCF community.
+    have the necessary qualifications and time to be involved in the TOC and be able to maintain vendor or project neutrality in discussions.
 
 - [On January 2, CNCF will start the 2023 Technical Oversight Committee (TOC) election](https://www.cncf.io/blog/2022/12/01/cncf-toc-elections-for-2023/)
   
@@ -13,6 +38,30 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      Have the necessary conditions and time to participate in TOC work, and be able to maintain vendor or project neutrality in discussions.
 
 ### 2022-12
+
+- [December 30 CNCF 2022 Annual Report Release](https://www.cncf.io/reports/cncf-annual-report-2022/)
+  
+    The CNCF 2022 Annual Report summarizes foundation trends, events, open source projects, community ecology, and other aspects.
+    Among them, in 2022, CNCF TOC accepted 35 new projects; OpenTelemetry became the second fastest growing project in CNCF ecosystem.
+    Backstage is one of the fastest growing projects, addressing pain points in the cloud-native developer experience; GitOps projects like Argo and Flux are also growing.
+
+- [The 1st Hybrid Cloud Technology Development Forum will be held online on December 29th](https://mp.weixin.qq.com/s/0ZRnEimZQrO3tHVPpiSLEg)
+  
+    The conference is organized by the China Academy of Information and Communications Technology and the China Communications Standards Association.
+    It will release the framework of "Hybrid Cloud Industry Panorama (2022)", "Hybrid Cloud User Survey Report (2022)", new hybrid cloud standards and other important results.
+    The conference will also invite representative vendors in the hybrid cloud field to share their insights on the future development of hybrid cloud, technical structure and industry issues.
+
+- [Dec 28th InfoQ 2022 China Technology Power Year-End List Released](https://mp.weixin.qq.com/s/4Mg4cJs8WSmZ-xdgkN592w)
+  
+    The list is divided into three lists: [Top 10 Open Source Emerging Projects of 2022], [Top 10 High-Value Technology Teams of 2022], and [Top 10 Cloud-Native Innovative Technologies of 2022]. KubeVela, RocketMQ, TDengine, etc. were selected as the top 10 open source emerging projects.
+
+- [December 22nd commercial software reviewer G2 released "Container Management Platform Review Report"](https://www.g2.com/categories/container-management?utf8=%E2%9C%93&selected_view=grid&segment=all#grid)
+  
+    G2 evaluated vendors and their products based on reviews on G2 and data collected from online profiles and social media platforms, resulting in the following G2 Grid.
+    The X-axis represents customer satisfaction and the Y-axis represents market share.
+    The leading container management platform products are AWS Fargate, Amazon ECS, Amazon EKS and Mirantis Kubernetes Engine.
+
+    ![G2](./images/G2.png)
 
 - [Kasten launches free cloud native learning website KubeCampus.io](https://www.kasten.io/kubernetes/resources/blog/kubecon-detroit-recap-and-introducing-kubecampus)
   
@@ -36,6 +85,14 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      The summit, scheduled for December 16th in Beijing, will focus on the successful practices of Upstream First and the working practices of the Open Source Office (OSPO).
 
      In addition, there will be discussions on topics such as cost reduction and efficiency increase, DevSecOps, open source culture, enterprise units and open source community, licensing, supply chain, SBOM, project community building, and becoming a leader in the open source world.
+
+- [Dec 14 Sadie Consulting released "2022 China Private Cloud Market Research Report"](https://img02.ma.scrmtech.com/11018/1471/resource/1671000132/%E8%B5%9B%E8%BF%AA%E9%A1%BE%E9%97%AE-2022%E4%B8%AD%E5%9B%BD%E7%A7%81%E6%9C%89%E4%BA%91%E5%B8%82%E5%9C%BA%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A.pdf)
+  
+    The report provides a comprehensive analysis of the current development status, market size, industry applications and product structure, market competition and future trends of private clouds and private cloud system platforms in China.
+    In 2021, the market size of China's private cloud system platform reaches 5.14 billion yuan, up 45.2% year-on-year.
+    Among them, the market size of container platform is 1.26 billion yuan, accounting for 24.5 % of the private cloud system platform size.
+    The 2021 private cloud system platform vendor competitiveness quadrant analysis chart is as follows.
+    ![private](./images/private.png)
 
 - [On December 14, the selection of the second "Ten Cloud Native Technology Innovations/Pioneering Practices" was officially launched](https://mp.weixin.qq.com/s/UZ_05I06VCJYN5MKLwO7IA)
 
