@@ -379,6 +379,9 @@ nav:
               - Background: network/intro/background.md
               - Challenges: network/intro/challenges.md
               - Components: network/modules/modules.md
+          - Plan:
+              - Eth card plan: network/plans/ethplan.md
+              - Network plan: network/plans/netplan.md
           - Calico:
               - Intro: network/modules/calico/what.md
               - Install: network/modules/calico/install.md
