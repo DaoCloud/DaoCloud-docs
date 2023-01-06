@@ -14,6 +14,10 @@
 
     该版本主要新特性：支持 Istio 1.12.x 版本；支持 bRPC（better RPC） 协议，bRPC 是百度开源的工业级 RPC 框架；MetaProtocol 支持流式调用、支持采用 MetaData 设置负载均衡 Hash 策略以及在 Response 中回传服务器真实 IP 等。  
 
+- [Antrea CNI 插件 v1.10.0 发布（CNCF 项目）](https://github.com/antrea-io/antrea/releases/tag/v1.10.0)
+
+    该版本主要新特性：增加 L7 网络策略功能、Antrea 的 CRD API 能够在任何 K8s 节点或 ExternalNode 上收集 support bundle 文件、增加对跨集群流量的网络策略的支持、在 Windows 上使用 containerd 作为运行时时，antrea-agent 可作为 DaemonSet 运行。
+
 - [Antrea CNI 插件 v1.9.0 发布（CNCF 项目）](https://github.com/antrea-io/antrea/releases/tag/v1.9.0)
 
     新增多个多集群功能，包括跨集群 Pod 间连接、节点控制器支持 Gateway 高可用、允许 Pod IP 作为多集群 service 的端点；
@@ -26,6 +30,10 @@
 - [Antrea CNI 插件 v1.7.0 发布（CNCF 项目）](https://github.com/antrea-io/antrea/releases/tag/v1.7.0)
   
     该版本主要新特性：增加 TrafficControl 功能，控制 Pod 流量的传递；支持 IPsec 证书认证；丰富 Antrea-native 策略；丰富组播功能；增加多集群网关功能；丰富二级网络 IPAM 功能。
+
+- [APISIX 云原生网关 v3.1.0 发布](https://github.com/apache/apisix/blob/release/3.1/CHANGELOG.md#310)
+
+    该版本主要新特性：支持将插件的特定字段加密保存到 etcd 中、允许将敏感信息存储在外部安全服务中、实验性地支持基于 gRPC 的 etcd 配置同步、新增基于 Consul 的服务发现功能、增加了一个内置的调试器插件。
   
 - [APISIX 云原生 API 网关 v3.0 发布](https://github.com/apache/apisix/blob/release/3.0/CHANGELOG.md#300)
 
@@ -598,6 +606,10 @@
 
     该版本主要新特性：为 Kubernetes 应用增加 HTTP 混沌实验；引入 m-agent（机器代理），现在能够在非 k8s 对象上实施混沌；对混沌期间 应用状态检查失败时 节点警戒线实验的恢复 进行优化；在使用前端 nginx 时增加了对 Envoy 代理的支持；优化日志记录等 Litmusctl 更新。
 
+- [Longhorn 云原生分布式块存储 v1.4.0 发布（CNCF 项目）](https://github.com/longhorn/longhorn/releases/tag/v1.4.0)
+
+    该版本主要新特性：支持 Kubernetes 1.25、ARM64 的支持升级为 GA、网络文件系统 NFS 的支持升级为 GA、支持卷快照校验、支持卷 Bit-rot 保护、提高卷复制的重建速度、支持通过删除旧快照来回收空间、支持在线卷扩展、允许用户创建一个停留在一致位置的副本卷、增加卷的 I/O 指标、支持备份和恢复 Longhorn 系统。
+
 - [Longhorn 云原生分布式块存储 v1.3.0 发布（CNCF 项目）](https://github.com/longhorn/longhorn/releases/tag/v1.3.0)  
 
     该版本主要新特性：支持多网络 K8s 集群、兼容全托管 K8s 集群（EKS、GKE、AKS）、新增 Snapshot CRD、新增 Mutating & Validating admission webhooks、支持自动识别并清理无主/未使用的卷、引入 CSI 快照、支持通过 Kubernetes Cluster Autoscaler 进行集群扩展。
@@ -786,6 +798,10 @@
 - [Rainbond 云原生多云应用管理平台 v5.8.0 发布](https://github.com/goodrain/rainbond/releases/tag/v5.8.0-release)  
 
     该版本主要新特性：支持一键导入 Kubernetes 集群中已存在的应用、支持直接通过 Jar、War 包或 Yaml 文件部署组件、支持创建 Job/CronJob 类型任务、支持扩展应用和组件支持的属性、支持 Dockerfile 使用私有镜像构建。
+
+- [Sealer 分布式应用交付工具 v0.9.0 发布（CNCF 项目）](https://github.com/sealerio/sealer/releases/tag/v0.9.0)
+
+    该版本主要新特性：支持通过 Clusterfile 配置标签、权限、角色、注册表、集群主机别名；支持 ipv4/ipv6 双栈；支持本地注册表的高可用模式；支持基于 buildah 的 OCI 标准；Kubefile 支持 Helm 包、k8s yaml 文件、shell 脚本等应用类型。
 
 - [Serverless-cd：Serverless Devs 发布基于 Serverless 架构的轻量级 CI/CD 框架——](https://mp.weixin.qq.com/s/ps_ZFsv7KGwV2V61SvvWIA)
 

@@ -1,8 +1,4 @@
----
-MTPE: todo
-Date: 2022-12-21
----
-# commercial product
+# Commercial product
 
 This page lists, in alphabetical order, updates on some well-known commercial products.
 
@@ -49,6 +45,14 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates include: Added soft-delete functionality to Azure Container Registry to restore accidentally deleted artifacts; allows aborting any operation on an AKS cluster or proxy pool; supports multi-instance GPU (MIG); extends Azure Network Policy Manager (NPM) AKS cluster to Windows server 2022; integrated API Server VNET for AKS private cluster.
 
+- [AliCloud Service Grid ASM December 2022 Update](https://mp.weixin.qq.com/s/4lODob6kB7xjYDaKACzmhw)
+
+     Updates: support for managed on-demand push xDS configuration, support for self-built Istio community version migration to ASM, ASM gateway support for configuring custom authorization services, enable Service Level Objective SLOs.
+
+- [Alibaba Cloud distributed cloud container platform ACK One update](https://mp.weixin.qq.com/s/TC1KA_xWpVAwZMFAgVmNfg)
+
+     Update: Integrate ArgoCD to achieve multi-cluster GitOps continuous delivery, optimize multi-cluster application distribution; unified configuration alarm rules, support configuration of cluster-specific differential alarm rules, support automatic synchronization of alarm rules to new associated clusters.
+
 - [Alibaba Cloud Container Service ACK Yunqi Conference Update](https://mp.weixin.qq.com/s/cOObDVvnTGkX_hiAWv8mVA)
 
      Update content: Provide support for eRDMA high-performance container network, better support containerization of stateful applications based on the new generation container network file system CNFS 2.0, productization support for built-in cloud-native hybrid system Koordinator, release AIOps suite and FinOps suite.
@@ -77,7 +81,15 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      [Alpaquita Cloud Native Platform](https://bell-sw.com/cloud-native-platform/) leverages a Linux distribution for Java, JVM optimizations, a multipurpose framework, and native mirroring technology to provide a A runtime environment optimized for Java applications running in containers. Features of the platform: Cloud costs are reduced by 20%, smaller Pods are used, and the number of required nodes is reduced; zero migration costs, no refactoring is required; efficiency is increased by 50%, achieving low latency, low cost, and fast startup.
 
-### C, D
+### C
+
+- [Calico Enterprise 3.15, a cloud-native application security platform, was released](https://www.tigera.io/blog/whats-new-in-calico-enterprise-3-15-fips-140-2-compliance-new-dashboards-egress-gateway-pod-failover-and-more/)
+
+     Release features: supports configuring Calico Enterprise to comply with FIPS 140-2, which specifies the security standards to be met by cryptographic modules for applications and environments; provides a workload-based IDS/IPS (Intrusion Detection/Intrusion Prevention) system that detects and blocks bad workloads based on a global threat intelligence source database to detect and block access to undesirable workloads; automates namespace-based security policy recommendations; provides namespace-based dashboards; and supports failure detection and failover of egress gateway pods.
+
+- [Canonical K8s release Charmed Kubernetes 1.26](https://canonical.com/blog/canonical-kubernetes-1-26-is-now-generally-available)
+
+     Release features: Add Kube-OVN BGP support to enable pod IP access from external networks; Support for configuring traffic mirroring for Kube-OVN; metallb-controller and metallb-speaker can be deployed to more architectures (AMD64, ARM, ARM64, etc.). Integrated policy engine OPA gatekeeper.
 
 - [CAST AI Kubernetes Cost Optimization & Automation Platform November Update](https://cast.ai/release-notes/#november-2022)
 
@@ -86,6 +98,8 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Chainguard Enforce Cloud Native Supply Chain Security Platform Update](https://www.chainguard.dev/unchained/chainguard-enforce-announces-new-software-signing-capability)
 
      Updates: Provide Sigstore-based keyless signature mode, add an out-of-the-box security policy library, support users to log in through their Gitlab accounts, support CloudEvents, support policies for fine-grained Kubernetes workload objects, and enhance large-scale clusters User stability.
+
+### D
 
 - [D2iQ Kubernetes Platform v2.4.0 released](https://docs.d2iq.com/dkp/2.4/dkp-2-4-0-features-and-enhancements)
 
@@ -128,9 +142,17 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      Help users connect Kubernetes clusters and external portals, and integrate BIG-IP application delivery capabilities into the cloud environment of the Kubernetes technology stack.
      It enables multi-team collaboration, and users can flexibly and automatically create and change application or service entry policies.
 
+- [Fairwinds Kubernetes Governance and Security Platform Insights November Update](https://www.fairwinds.com/blog/fairwinds-insights-release-notes-10.2-10.6-spotlight-on-workload-cost-allocation)
+
+     Update: Added workload cost allocation functionality to allow viewing historical costs for a group of workloads; optimized cost page to refine the categorization of Kubernetes cluster costs; support for viewing the dynamics of costs over time.
+
 - [Fortinet releases cloud-native firewall service FortiGate CNF](https://www.fortinet.com/blog/business-and-technology/simplify-cloud-security-with-the-fortigate-cloud-native-firewall-on-aws)
 
      FortiGate CNF is a SaaS product that supports consistent security policies in different AWS environments through deep cloud-native integration with services such as AWS Gateway Load Balancer and AWS Firewall Manager, eliminating the complexity of network security. In addition, it supports the security inspection function of the next-generation firewall, provides deep visibility into the application layer, and can protect multiple accounts, subnets, virtual private clouds, and availability zones.
+
+- [GitLab 15.7 release](https://about.gitlab.com/releases/2022/12/22/gitlab-15-7-released/)
+
+     Release features: support for deploying privately deployed GitLab instances to the Jira cloud, support for SSH key signing of commits, support for displaying multiple code quality scan reports per pipeline, allowing shared CI/CD access to Kubernetes GitLab agents within individual namespaces, and support for GitOps deployments outside of the default branch. GitOps deployments outside of the default branch.
 
 - [GitLab 15.5 released](https://mp.weixin.qq.com/s/AiRU9pQUxTex0F_XvuHiHg)
 
@@ -147,6 +169,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Gloo Gateway Cloud Native API Gateway supports GraphQL](https://www.solo.io/blog/announcing-graphql-for-gloo-gateway/)
 
      GraphQL for Gloo Gateway seamlessly adds GraphQL APIs to Gloo Gateway. Users can use this to perform joint GraphQL queries on the API without the need to create additional servers, resolvers and resolver mode libraries for GraphQL; all policies and requests can be managed in the Envoy Proxy filter; while supporting declarative configuration, Fully compatible with CI/CD and GitOps workflows.
+
+- [Google Cloud Kubernetes Release GKE December Update](https://cloud.google.com/kubernetes-engine/docs/release-notes)
+
+     Updates: Allow GPU-based workloads to run in Autopilot clusters; support for dual-stack clusters; support for enabling the transport layer plugin NCCL Fast Socket on multi-GPU workloads to improve performance of NVIDIA Collective Communication Library (NCCL); GKE gateway controllers support global external HTTP(S) load equalizer.
 
 - [GKE November Update for Google Cloud Kubernetes Release](https://cloud.google.com/kubernetes-engine/docs/release-notes)
 
@@ -182,7 +208,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      Bridging the gap between black-box data for performance testing and white-box data inside the system.
      The integration allows correlating k6's test run data with server-side trace data for root cause analysis; aggregates the collected trace data to generate real-time metrics, helping users narrow the search space and quickly spot anomalous behavior.
 
-### H, L
+### H, K, L
 
 - [Harness Launches Fully Managed Gitops-as-a-Service](https://harness.io/blog/generally-available-harness-gitops-as-a-service)
 
@@ -191,6 +217,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Huawei Cloud Releases Distributed Cloud Native Products - Container CCE Turbo and Distributed Cloud Native UCS (Ubiquitous Cloud Native Service)](https://mp.weixin.qq.com/s/Bm_kFuyK3uLaSb4AvcYdmA)
 
      CCE Turbo can accelerate all aspects of computing, network, and scheduling to achieve extreme elasticity, such as helping customers easily cope with business traffic peaks with an elasticity of 3000 pod/min; UCS provides cross-cloud and cross-region cloud-native application management to achieve a consistent experience.
+
+- [Kyndryl introduces Cloud Native Services, a multi-cloud cloud native application migration and optimization solution](https://www.kyndryl.com/gb/en/about-us/news/2022/12/kyndryl-cloud-native-services-digital-modernization)
+
+     Kyndryl Cloud Native Services provides an end-to-end lifecycle framework that includes code assets, workflows, specialized fundamentals, consulting management services, and comprehensive services related to automated backups, patching, KPI monitoring, security, alerting, and event management for cloud native application migration and optimization . The solution allows enterprises to move their on-premise applications to cloud service provider environments such as AWS, GCP and Azure.
 
 - [Kong Gateway v3.0 Cloud Native API Gateway released](https://docs.konghq.com/gateway/changelog/#3000)
 
@@ -209,6 +239,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      Kubernetes360 unifies logging, Prometheus metrics monitoring, and Jaeger-powered distributed tracing in one platform, enabling DevOps teams to monitor application SLOs in a simple, efficient, and actionable manner.
 
 ### M, N, O
+
+- [Mirantis OpenStack for Kubernetes 22.5, the Mirantis private cloud infrastructure platform, was released](https://www.mirantis.com/blog/mirantis-openstack-for-kubernetes-22-5-released)
+
+     Release features: full support for OpenStack Yoga, introduction of a shared file system based on OpenStack Manila, and easier integration of OpenStack clouds into L3 networks with MetalLB-enabled BGP mode.
 
 - [Mirantis Enterprise Container Platform Mirantis Kubernetes Engine v3.6 released](https://www.mirantis.com/blog/mke-3-6-release)
 
@@ -240,6 +274,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The main new features of this version: support for forwarding structured logs of different containers in the same pod to different indexes, use Kubernetes common tags to filter logs with Elasticsearch output, log aggregation Loki Operator and observation data collection Vector collector are officially available.
 
+- [OutSystems Releases Cloud-Native Low-Code Development Solution OutSystems Developer Cloud (ODC)](https://mp.weixin.qq.com/s/yx63Um3ju1mC-qNF9_GJkw)
+
+     ODC is a high-performance low-code solution for building cloud-native applications. ODC combines Kubernetes, Linux containers, microservices, and AWS native cloud services with DORA's high-performance level CI/CD, enterprise-grade security, and model-based visual development. Support large-scale transaction volumes and data requirements, improve developer productivity with advanced visual programming and artificial intelligence, and enable high-performance CI/CD practices.
+
 ### P, Q, R
 
 - [Portworx Enterprise 2.12 Cloud Native Data Management Platform Release](https://docs.portworx.com/release-notes/portworx/#2-12-0)
@@ -249,6 +287,14 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Portworx Backup v2.3 data backup product announcement](https://portworx.com/blog/announcing-portworx-backup-2-3-for-simpler-backup-management-and-flexible-licensing/)
 
      The main new features of this version: support for sharing backups with other users and groups, support for customizing backup licenses based on specific infrastructure, and support for encryption support for different types of backups using user-supplied or default keys.
+
+- [QingCloud releases KubeSphere Enterprise Edition 3.3, a distributed multi-tenant cloud-native operating system](https://mp.weixin.qq.com/s/ZuiY-la34DvHW5bQdc9q7Q)
+
+     Version features: New observable center to aggregate and synchronize data scattered across clusters; Refactored cluster monitoring page to focus on resource allocation; Optimized tenant monitoring to support displaying tenant quota settings, etc.; New support for Spring Cloud, a microservices framework; Integrated Argo CD to support GitOps.
+
+- [QingCloud Releases Cloud Native Virtualization Platform KSV 1.6](https://mp.weixin.qq.com/s/XxOWJdLRHS2s_Ev_N9qEgw)
+
+     Version features: unified management and display of all computing, storage and network resources; support for KSV and KubeSphere converged deployment to achieve coexistence and co-management of virtual machines and containers; based on KubeVirt, support for delivery of physical resources such as CPU and storage in the form of virtual resource pools, and unified management, allocation and scheduling, and support for simultaneous creation of mutually Kube-OVN integration enables Underlay & Overlay networking.
 
 - [Quali infrastructure automation solution Torque updated to simplify Kubernetes infrastructure management](https://www.quali.com/blog/quali-simplifies-cloud-infrastructure-management/)
 
@@ -272,6 +318,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [ServiceNow Releases Unified Query Language Lightstep UQL, Extending the Visibility of Kubernetes Applications](https://lightstep.com/blog/announcing-the-lightstep-unified-query-language)
 
      Lightstep UQL supports unified "observability as code", simplifies the process of migrating from multiple disparate tools to the unified Lightstep platform through a single query language, and also supports querying and correlating metrics, logs and track.
+
+
+- [Solo.io Releases Cloud-Native Gateway Gloo Gateway 1.13](https://www.solo.io/blog/gloo-edge-1-13/)
+
+     Release features: Improved support for OpenCensus and OpenTelemetry trace extensions; Provides a built-in method to catch invalid rate-limiting configurations before errors occur; Adds support for RBAC; Enhances control plane high availability with support for continuous operation of multiple replicas and zero-downtime upgrades; Integrates cluster scheduling tool, HashiCorp Nomad.
 
 - [Solo.io Releases Service Mesh and API Platform Gloo Platform](https://www.solo.io/blog/announcing-gloo-platform/)
 
@@ -318,6 +369,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Traefik Labs releases Traefik Hub 1.0, a cloud-native network platform](https://traefik.io/blog/announcing-the-general-availability-of-traefik-hub-1-0/)
 
      Traefik Hub 1.0 allows users to quickly and securely publish Kubernetes or Docker containers using Traefik or Nginx. Traefik Hub provides the centralized control plane needed to network Kubernetes clusters without deploying container sidecars to run networking software. It supports container networking through secure encrypted tunnels and direct private connections, adds access control to services through JWT or OIDC, realizes scale automation through GitOps, and is equipped with workspaces to promote cross-team collaboration.
+
+- [Tencent Cloud Container Service TKE Three Capabilities Upgrade](https://mp.weixin.qq.com/s/DfxCQM8KzMioSt6rVq5oHw)
+
+     Update content: node management, the new HouseKeeper operation and maintenance paradigm, the native nodes, super nodes, registered nodes and other on/off cloud resources nano-management; cluster management, support a cluster management any node, while supporting a variety of nodes such as native nodes, super nodes, registered nodes and edge nodes; application management, to create for In terms of application management, it creates an application management platform for multi-cloud and edge scenarios, and realizes unified distribution, deployment and management of multiple clusters.
 
 - [Tencent Cloud Container Service TKE September update](https://mp.weixin.qq.com/s/6_TSSHhU0L8mSbqEMWyu4g)
 

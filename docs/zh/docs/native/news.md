@@ -4,6 +4,12 @@
 
 > 我们会定期维护，保证所有链接的有效性、新闻的时效性
 
+### 2023-04
+
+- [4 月 15 日 2023 年云原生社区可观测性峰会将召开，讲师及赞助商招募进行中（3.10 截止）](https://mp.weixin.qq.com/s/erf33B2--kUgLg1D730tOg)
+  
+    云原生社区将于 2023 年 4 月 15 号（星期六）在北京举办可观性峰会。议题围绕可观测性相关领域的开源项目及应用，包括但不限于：指标监控、分布式追踪、日志收集、技术创新、应用实践等。
+
 ### 2023-02
 
 - [2 月 1 日至 2 日 CNCF CloudNativeSecurityCon 会议即将举行，目前会议议程已发布](https://events.linuxfoundation.org/cloudnativesecuritycon-north-america/program/schedule/)
@@ -27,11 +33,21 @@
 
 ### 2022-12
 
+- [12 月 30 日 CNCF 2022 年度报告发布](https://www.cncf.io/reports/cncf-annual-report-2022/)
+  
+    CNCF 2022 年度报告从基金会发展趋势、活动举办、开源项目、社区生态等方面进行了总结。
+    其中，在 2022 年，CNCF TOC 接受了 35 个新项目；OpenTelemetry 成为 CNCF 生态中发展第二快的项目；
+    Backstage 是增长最快的项目之一，解决了云原生开发者体验方面的痛点；Argo 和 Flux 等 GitOps 项目也在发展壮大。
+
 - [12 月 29 日第一届混合云技术发展论坛将线上举行](https://mp.weixin.qq.com/s/0ZRnEimZQrO3tHVPpiSLEg)
   
     大会由中国信通院、中国通信标准化协会主办，
     届时将发布《混合云产业全景图（2022年）》框架、《混合云用户调查报告（2022年）》、新增混合云标准等重要成果，
     并邀请混合云领域的代表厂商就混合云未来的发展、技术结构及行业问题带来干货分享。
+
+- [12 月 28 日 InfoQ 2022 中国技术力量年终榜单发布](https://mp.weixin.qq.com/s/4Mg4cJs8WSmZ-xdgkN592w)
+  
+    本次榜单分为【2022 年度十大开源新锐项目】、【2022 年度十大高价值技术团队】、【2022 年度十大云原生创新技术】三大榜单。KubeVela、RocketMQ、TDengine 等入选十大开源新锐项目。
 
 - [12 月 22 日商业软件评测机构 G2 发布《容器管理平台评测报告》](https://www.g2.com/categories/container-management?utf8=%E2%9C%93&selected_view=grid&segment=all#grid)
   
