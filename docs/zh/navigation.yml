@@ -265,6 +265,7 @@ nav:
               - 差异化策略: kairship/07policy/overridepolicy.md
           - 绑定工作空间: kairship/09workspace.md
           - 常见问题: kairship/08faq.md
+          - 故障转移: kairship/10failover.md
       - 微服务引擎:
           - 介绍:
               - 功能总览: skoala/intro/features.md
