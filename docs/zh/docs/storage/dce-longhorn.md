@@ -1,9 +1,10 @@
-# 简介
-本文档将提供在 DCE5.0 应用商店 Addon 的图形化界面安装、部署 Longhorn 云原生存储系统的操作步骤及说明。
+# Longhorn 部署到 DCE 5.0
 
-## longhorn helm chart 格式转换
+本文将提供在 DCE 5.0 应用商店以 Addon 的图形化界面安部署 Longhorn 云原生存储系统的操作步骤及说明。
 
-### 添加repo
+## Longhorn helm chart 格式转换
+
+### 添加 repo
 
 ```
 [root@k8s-10-6-162-31 ~]# helm search repo longhorn
@@ -11,7 +12,7 @@ NAME CHART VERSION APP VERSION DESCRIPTION
 longhorn/longhorn 1.3.2 v1.3.2 Longhorn is a distributed block storage system ...
 ```
 
-### 拉取longhorn helm charts并解压
+### 拉取 Longhorn helm chart 并解压
 
 ```
 [root@k8s-10-6-162-31 ~]# helm pull longhorn/longhorn
@@ -50,7 +51,7 @@ longhorn/questions.yaml
 app-readme.md Chart.yaml questions.yaml README.md templates values.yaml
 ```
 
-### 将 longhorn的values.yaml转成json格式
+### 将 Longhorn 的 values.yaml 转成 json 格式
 
 ```
 [root@k8s-10-6-162-31 ~]# helm plugin install https://github.com/karuppiah7890/helm-schema-gen.git
@@ -62,7 +63,8 @@ Installed plugin: schema-gen
 [root@k8s-10-6-162-31 longhorn]# ls
 app-readme.md Chart.yaml questions.yaml README.md templates values.schema.json values.yaml
 ```
-### 将含有json文件的chart打包压缩
+
+### 将含有 json 文件的 chart 打包压缩
 
 ```
 [root@k8s-10-6-162-31 longhorn]# cd ..
@@ -103,17 +105,17 @@ anaconda-ks.cfg helm-v3.10.1-linux-amd64.tar.gz longhorn longhorn-v1.3.2.tgz roo
 calico.yaml linux-amd64 longhorn-1.3.2.tgz rook rook-ceph-image.zip
 ```
 
-## 上传 chart 包至 DCE5.0 镜像仓库
+## 上传 chart 包至 DCE 5.0 镜像仓库
 
-![dce镜像仓库-1](./images/registry-1.png)
+![dce 镜像仓库-1](./images/registry-1.png)
 
-![dce镜像仓库-2](./images/registry-2.png)
+![dce 镜像仓库-2](./images/registry-2.png)
 
-![dce应用商店-1](./images/cluster-1.png)
+![dce 应用商店-1](./images/cluster-1.png)
 
-## DCE5.0 应用商店安装 longhorn
+## DCE 5.0 应用商店安装 Longhorn
 
-![dce应用商店-2](./images/cluster-2.png)
+![dce 应用商店-2](./images/cluster-2.png)
 
 ```
 [root@k8s-10-6-162-31 ~]# kubectl get po -n longhorn-system
@@ -154,18 +156,16 @@ longhorn-manager-xsn8k 1/1 Running 1 (3h14m ago) 3h20m
 longhorn-ui-68bc57db67-46brf 1/1 Running 0 3h20m
 ```
 
-修改 longhorn 前端 service 端口
+修改 Longhorn 前端 service 端口：
 
 ![longhorn-svc-1](./images/longhorn-svc-1.png)
 
 ![longhorn-svc-2](./images/longhorn-svc-2.png)
 
-进入 longhorn UI
+进入 Longhorn UI：
 
-![longhorn界面](./images/longhorn-1.png)
+![longhorn 界面](./images/longhorn-1.png)
 
-![longhorn界面](./images/longhorn-2.png)
+![longhorn 界面](./images/longhorn-2.png)
 
-至此，在 DCE5.0 应用商店安装 longhorn 存储系统完成！
-
-
+至此，在 DCE 5.0 应用商店成功部署了 Longhorn 存储系统！

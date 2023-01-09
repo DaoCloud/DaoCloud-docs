@@ -552,8 +552,9 @@ nav:
                 - MinIO: storage/hwameistor/application/minio/minio.md
             - 常见问题: storage/hwameistor/faqs.md
           - 开源存储方案集成:
-            - Rook-Ceph 存储方案: storage/rook-ceph.md
-            - Longhorn 存储方案: storage/longhorn.md
+            - Rook-Ceph 存储方案介绍: storage/rook-ceph.md
+            - Longhorn 存储方案介绍: storage/longhorn.md
+            - Longhorn 部署到 DCE 5.0: storage/dce-longhorn.md
           - 存储基本概念:
               - Kubernetes 存储: storage/terms/k8s_storage.md
               - CAS 存储: storage/terms/cas.md
