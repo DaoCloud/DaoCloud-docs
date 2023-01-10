@@ -421,7 +421,8 @@ nav:
               - Intro: network/modules/spiderpool/what.md
               - Install: network/modules/spiderpool/install.md
               - Create IPPool: network/modules/spiderpool/createpool.md
-              - Usage: network/modules/spiderpool/usage.md
+              - IPPool scenarios: network/modules/spiderpool/ippoolusage.md
+              - Workload uses IPPool: network/modules/spiderpool/usage.md
               - Config: network/modules/spiderpool/config.md
               - Commands: network/modules/spiderpool/command.md
           - Falco:
