@@ -5,7 +5,7 @@ Pics: Jeanine-tw
 Date: 2023-01-05
 ---
 
-# Workloads use IP pools
+# Workload uses IP pools
 
 This page describes how to configure multiple NICs for workload Pods in combination with Multus and Underlay CNI, and how to allocate and fix IPs of the Underlay network through Spiderpool. Mainly include:
 
