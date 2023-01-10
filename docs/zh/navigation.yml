@@ -433,7 +433,8 @@ nav:
               - 介绍: network/modules/spiderpool/what.md
               - 安装: network/modules/spiderpool/install.md
               - 创建 IP 池: network/modules/spiderpool/createpool.md
-              - 使用: network/modules/spiderpool/usage.md
+              - IP 池场景说明: network/modules/spiderpool/ippoolusage.md
+              - 工作负载使用 IP 池: network/modules/spiderpool/usage.md
               - 配置参考: network/modules/spiderpool/config.md
               - 常用命令: network/modules/spiderpool/command.md
       - 中间件数据服务:

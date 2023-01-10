@@ -14,6 +14,7 @@ hide:
 
 - [SpiderPool 已成功部署](./install.md)。
 - [Multus 搭配 Macvlan / SRI-OV 已成功部署](../multus-underlay/install.md)。
+- 创建子网及 IP 池前建议做好子网和 IP 规划，并充分了解 [IP 池的使用方式](ippoolusage.md)。
 
 ## 界面操作
 
@@ -48,7 +49,7 @@ hide:
     !!! note
 
         创建 IP 池为可选步骤，可根据需要进行创建。
-
+    
         - 如需要对 IP 进行严管控，可提前完成 IP 池创建
         - 如粗粒度管控 IP 资源，可不用提前创建 IP 池
 
