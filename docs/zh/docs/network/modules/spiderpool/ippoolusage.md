@@ -1,8 +1,3 @@
----
-hide:
-  - toc
----
-
 # IP 池的使用说明
 
 本页介绍基于 Spiderpool 进行 IP 分配以及管理，IP 池的不同使用场景说明，使用前请确保 [SpiderPool 已正确安装](install.md)。
@@ -54,7 +49,7 @@ hide:
 
 2. 问：添加了命名空间亲和性的 IP 池，是否可基于 命名空间 IP 池细分后，再分配给应用进行固定 IP 池？
 
-   如：`ippool01` 属于子网 10.6.124.0/24，`ippool01` 中有 100 （10.6.124.10~109）个 IP，并添加了命名空间亲和性：`kubernetes.io/metadata.name: default`，是否可以将：
+    如：`ippool01` 属于子网 10.6.124.0/24，`ippool01` 中有 100 （10.6.124.10~109）个 IP，并添加了命名空间亲和性：`kubernetes.io/metadata.name: default`，是否可以将：
 
     1. 10.6.124.10~19 分配给 `default` 命名空间下的应用负载 workload01 使用并**固定**
     2. 10.6.124.20~29 分配给 `default` 命名空间下的应用负载 workload02 使用并**固定**

@@ -1,8 +1,3 @@
----
-hide:
-   - toc
----
-
 # Instructions for using the IPPool
 
 This page introduces IP allocation and management based on Spiderpool, and describes different usage scenarios of IPPools. Please make sure that [SpiderPool has been installed correctly](install.md) before use.
