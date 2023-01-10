@@ -21,15 +21,15 @@ This section describes how to install Falco-exporter.
 
 Please confirm that your cluster has successfully connected to the `Container Management` platform, and then perform the following steps to install Falco-exporter.
 
-1. Click `Container Management`->`Cluster List` in the left navigation bar, then find the cluster name where you want to install Falco-exporter.
+1. Click `Container Management`->`Clusters` in the left navigation bar, then find the cluster name where you want to install Falco-exporter.
 
     ![falco_cluster](../images/falco-cluster.png)
 
-2. In the left navigation bar, select `Helm Applications` -> `Helm Templates`, and then find and click `falco-exporter`.
+2. In the left navigation bar, select `Helm Releases` -> `Helm Charts`, and then find and click `falco-exporter`.
 
     ![falco-exporter_helm-1](../images/falco-exporter-install-1.png)
 
-3. Select the version you want to install in `version selection` and click `install`.
+3. Select the version you want to install in `Version` and click `Install`.
     ![falco-exporter_helm-2](../images/falco-exporter-install-2.png)
 
 4. On the installation screen, fill in the required installation parameters.
