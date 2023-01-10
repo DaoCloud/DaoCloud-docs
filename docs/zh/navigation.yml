@@ -554,6 +554,7 @@ nav:
             - 常见问题: storage/hwameistor/faqs.md
           - 开源存储方案集成:
             - Rook-Ceph 存储方案介绍: storage/rook-ceph.md
+            - Rook-Ceph 部署到 DCE 5.0: storage/dce-rook-ceph.md
             - Longhorn 存储方案介绍: storage/longhorn.md
             - Longhorn 部署到 DCE 5.0: storage/dce-longhorn.md
           - 存储基本概念:
