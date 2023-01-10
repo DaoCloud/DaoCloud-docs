@@ -13,15 +13,15 @@ This page describes how to install Metallb.
 
 Please confirm that your cluster has successfully connected to the `Container Management` platform, and then perform the following steps to install Metallb.
 
-1. Click `Container Management`->`Cluster List` in the left navigation bar, and then find the cluster name where you want to install Metallb.
+1. Click `Container Management`->`Clusters` in the left navigation bar, and then find the cluster name where you want to install Metallb.
 
     ![metallb_cluster](../../images/metallb-cluster.png)
 
-2. In the left navigation bar, select `Helm Applications` -> `Helm Templates`, and then find and click `metallb`.
+2. In the left navigation bar, select `Helm Releases` -> `Helm Charts`, and then find and click `metallb`.
 
     ![metallb_repo](../../images/metallb-helm-repo.png)
 
-3. Select the version you want to install in `version selection` and click `install`.
+3. Select the version you want to install in `Version` and click `Install`.
 
     ! [metallb_version](./../images/metallb-helm-version.png)
 

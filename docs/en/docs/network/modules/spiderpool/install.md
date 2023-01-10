@@ -1,92 +1,105 @@
----
-hide:
-  - toc
----
 
-# Install
+# Install Spiderpool
 
-This page describes how to production install Spiderpool components.
+This page describes how to install Spiderpool.
 
-1. Have a DCE cluster, log in to the Web UI management interface of the global cluster, and log in to the cluster where you want to install Spiderpool in `Container Management` -> `Cluster List` in the navigation
+## Prerequisites
 
-2. In `Helm Application` -> `Helm Template`, select `system` repository and `network` component, click to install `spiderpool`.
+1. To use SpiderPool in a DCE 5.0 cluster, you need a combination of [Macvlan](../multus-underlay/macvlan.md) + [Multus](../multus-underlay/what.md) + [Calico](../calico/what.md)/[Cillium](../cilium/what.md).
 
-    ![spiderpool helm](../../images/spiderpool-helm.png)
+2. Install [Multus](../multus-underlay/install.md) and Underlay CNI ([Macvlan](../multus-underlay/macvlan.md) or [SRIOV](../multus-underlay/sriov.md)) in advance, and confirm the NIC interface and subnet to be used.
 
-3. In `Version Selection`, select the version you want to install, and click `Install`.
+## How to install Spiderpool
 
-4. In the installation parameter interface, fill in the following parameter information:
+Please confirm that your cluster has successfully connected to the `Container Management` platform, and then perform the following steps to install Spiderpool.
 
-    ![spiderpool install1](../../images/spiderpool-install1.png)
+1. Click `Container Management` -> `Clusters` in the left navigation bar and find the cluster name where you want to install Spiderpool.
 
-    ![spiderpool install2](../../images/spiderpool-install2.png)
+2. Select `Helm Releases` -> `Helm Charts` in the left navigation bar, and then find and click `spiderpool`.
 
-    The meanings of the parameters in the above figure are:
+    ![spiderpool helm](../../images/spiderpool-install-1.png)
 
-    - `global image Registry`: Set the registry address of all images, the available online registry has been filled in by default, if it is a privatized environment, it can be modified to a private registry address
+3. Select the version you want to install in `Version`, and click `Install`.
 
-    - `Spiderpool Agent Image repository`: Set the image name and keep the default
+    ![spiderpool version](../../images/spiderpool-install-2.png)
 
-    - `Spiderpool Agent Prometheus` -> `Enable Metrics`: If turned on, the Spiderpool Agent component will collect metrics information for external collection
+4. In the installation page, fill in the required parameters.
 
-    - `Spiderpool Agent ServiceMonitor` -> `Install`: Whether to install the ServiceMonitor object of Spiderpool Agent, which requires Promethues to be installed in the cluster, otherwise the creation will fail
+    ![spiderpool install1](../../images/spiderpool-install-3.png)
 
-    - `Spiderpool Agent PrometheusRule` -> `Install`: Whether to install the promethuesRule object of Spiderpool Agent, which requires Promethues to be installed in the cluster, otherwise the creation will fail
+    ![spiderpool install2](../../images/spiderpool-install-4.png)
 
-    ![spiderpool install3](../../images/spiderpool-install3.png)
+    The parameters in the above screens are described as follows:
 
-    The meanings of the parameters in the above figure are:
+    - `namespace`: namespace where SpiderPool is deployed, and the default is `kube-system`. If you change to another Namespace, the interface might not be available.
+
+    - `Global Setting` —> `global image Registry`: set the registry address of all images. The available online registry has been filled in by defaul. If it is a private environment, it can be modified to a private registry address.
+
+    - `Spiderpool Agent Setting` —> `Spiderpool Agent Image` —>  `repository`: set the image name and just keep the default.
+
+    - `Spiderpool Agent Setting` —> `Spiderpool Agent Prometheus Setting` -> `Enable Metrics`: if turned on, the Spiderpool Agent will collect metrics for external collection.
+
+    - `Spiderpool Agent Setting` —> `Spiderpool Agent ServiceMonitor` -> `Install`: install the ServiceMonitor object of Spiderpool Agent, which requires Prometheus to be installed in the cluster, otherwise the creation will fail.
+
+    - `Spiderpool Agent Setting` —> `Spiderpool Agent PrometheusRule` -> `Install`: install the prometheusRule object of Spiderpool Agent, which requires Prometheus to be installed in the cluster, otherwise the creation will fail.
+
+    ![spiderpool install3](../../images/spiderpool-install-5.png)
+
+    The parameters in the above screen are described as follows:
   
-    - `Spiderpool Controller Setting` -> `replicas number`: Set the number of copies of the Spiderpool Controller, which is mainly responsible for the controller logic of the Spiderpool.
-      Note that this Pod is in hostnetwork mode, and anti-affinity is set between Pods, so at most one Pod can be deployed on a Node. If you want to deploy a replica number greater than 1, please ensure that the number of nodes in the cluster is sufficient, otherwise some Pod scheduling will fail.
+    - `Spiderpool Controller Setting` -> `replicas number`: set the number of replicas of the Spiderpool Controller, which is mainly responsible for the controller logic of the Spiderpool.
 
-    - `Spiderpool Controller Image` -> `repository`: set the image name, keep the default
+        > The Pod is in hostnetwork mode, and anti-affinity is set between Pods, so at most one Pod can be deployed on a Node. If you want to deploy more than 1 replicas, please ensure that the number of nodes in the cluster is sufficient, otherwise some Pod scheduling will fail.
 
-    - `Spiderpool Controller Prometheus` -> `Enable Metrics`: If turned on, the Spiderpool Controller component will collect metrics information for external collection
+    - `Spiderpool Controller Setting` -> `Spiderpool Controller Image` -> `repository`: set the image name and just keep the default.
 
-    - `Spiderpool Controller ServiceMonitor` -> `Install`: Whether to install the ServiceMonitor object of Spiderpool Controller, which requires Promethues to be installed in the cluster, otherwise the creation will fail
+    - `Spiderpool Controller Setting` -> `Spiderpool Controller Prometheus Setting` -> `Enable Metrics`: if turned on, the Spiderpool Controller will collect metrics information for external collection.
 
-    - `Spiderpool Controller PrometheusRule` -> `Install`: Whether to install the promethuesRule object of the Spiderpool Controller, which requires Promethues to be installed in the cluster, otherwise the creation will fail
+    - `Spiderpool Controller Setting` -> `Spiderpool Controller ServiceMonitor` -> `Install`: install the ServiceMonitor object of Spiderpool Controller, which requires Prometheus to be installed in the cluster, otherwise the creation will fail.
 
-    - `IP Family Setting -> enable IPv4`: Whether to enable IPv4 support. Note that if it is enabled, when assigning an IP to a pod, it must try to assign an IPv4 address, otherwise it will cause the Pod to fail to start.
-      Therefore, be sure to open the subsequent `Cluster Default Ippool Installation` -> `install IPv4 ippool` to create the default IPv4 pool for the cluster
+    - `Spiderpool Controller Setting` -> `Spiderpool Controller PrometheusRule` -> `Install`: install the prometheusRule object of the Spiderpool Controller, which requires Prometheus to be installed in the cluster, otherwise the creation will fail.
 
-    - `IP Family Setting -> enable IPv6`: Whether to enable IPv6 support. Note that if it is enabled, when assigning an IP to the pod, it must try to assign an IPv6 address, otherwise it will cause the Pod to fail to start
-      Therefore, be sure to open the subsequent `Cluster Default Ippool Installation` -> `install IPv6 ippool` to create the default IPv6 pool for the cluster
+    - `IP Family Setting -> enable IPv4`: enable IPv4 support. If enabled, when assigning an IP to a pod, it must try to assign an IPv4 address, otherwise it will cause the Pod to fail to start.
+    Therefore, be sure to open the subsequent `Cluster Default Ippool Installation` -> `install IPv4 ippool` to create the default IPv4 pool for the cluster.
 
-    ![spiderpool install4](../../images/spiderpool-install4.png)
+    - `IP Family Setting -> enable IPv6`: enable IPv6 support. If enabled, when assigning an IP to the pod, it must try to assign an IPv6 address, otherwise it will cause the Pod to fail to start.
+    Therefore, be sure to open the subsequent `Cluster Default Ippool Installation` -> `install IPv6 ippool` to create the default IPv6 pool for the cluster.
 
-    The meanings of the parameters in the above figure are:
+    ![spiderpool install4](../../images/spiderpool-install-6.png)
 
-    - `install IPv4 ippool`: whether to install IPv4 IP pool
+    The parameters in the above figure are described as follows:
 
-    - `install IPv6 ippool`: whether to install IPv6 IP pool
+    - `Cluster Default Ippool Installation` -> `install IPv4 ippool`: install IPv4 IP pool.
 
-    - `IPv4 subnet name`: The name of the IPv4 subnet. Ignore this option if `install IPv4 ippool` is not enabled.
-    
-    - `IPv4 ippool name`: The name of the IPv4 ippool. Ignore this option if `install IPv4 ippool` is not enabled.
-    
-    - `IPv6 subnet name`: The name of the IPv6 subnet. Ignore this option if `install IPv6 ippool` is not enabled.
-    
-    - `IPv6 ippool name`: The name of the IPv6 ippool. Ignore this option if `install IPv6 ippool` is not enabled.
-    
-    - `IPv4 ippool subnet`: Set the IPv4 subnet number in the default pool, e.g. `192.168.0.0/16`. Ignore this option if `install IPv4 ippool` is not enabled.
+    - `Cluster Default Ippool Installation` -> `install IPv6 ippool`: install IPv6 IP pool.
 
-    - `IPv6 ippool subnet`: Set the IPv6 subnet number in the default pool, e.g. `fd00::/112`. Ignore this option if `install IPv6 ippool` is not enabled.
+    - `Cluster Default Ippool Installation` -> `IPv4 ippool name`: the name of the IPv4 ippool. Ignore this option if `install IPv4 ippool` is not enabled.
 
-    - `IPv4 ippool gateway`: Set the IPv4 gateway, such as `192.168.0.1`, this IP address must belong to `IPv4 ippool subnet`. Ignore this option if `install IPv4 ippool` is not enabled.
+    - `Cluster Default Ippool Installation` -> `IPv6 ippool name`: the name of the IPv6 ippool. Ignore this option if `install IPv6 ippool` is not enabled.
 
-    - `IPv6 ippool gateway`: Set the IPv6 gateway, such as `fd00::1`, the IP address must belong to `IPv6 ippool subnet`. Ignore this option if `install IPv6 ippool` is not enabled.
+    - `Cluster Default Ippool Installation` -> `IPv4 ippool subnet`: set the IPv4 subnet number in the default pool, e.g. `192.168.0.0/16`. Please plan the available subnets and gateways in advance. Ignore this option if `install IPv4 ippool` is not enabled.
 
-    - `IP Ranges for default IPv4 ippool`: Set which IP addresses can be assigned to Pods, and multiple members can be set, and each member only supports strings in 2 input formats.
-      One is to set a continuous IP such as `192.168.0.10-192.168.0.100`, and the other is to set a single IP address such as `192.168.0.200`. Note that CIDR format is not supported for input.
-      These IP addresses MUST belong to the `IPv4 ippool subnet`. Ignore this option if `install IPv4 ippool` is not enabled.
+    - `Cluster Default Ippool Installation` -> `IPv6 ippool subnet`:set the IPv6 subnet number in the default pool, e.g. `fd00::/112`. Please plan the available subnets and gateways in advance. Ignore this option if `install IPv6 ippool` is not enabled.
 
-    - `IP Ranges for default IPv6 ippool`: Set which IP addresses can be assigned to Pods, and multiple members can be set, and each member only supports strings in 2 input formats.
-      One is to set a continuous IP such as `fd00::10-fd00::100`, and the other is to set a single IP address such as `fd00::200`. Note that CIDR format is not supported for input.
-      These IP addresses MUST belong to the `IPv6 ippool subnet`. Ignore this option if `install IPv6 ippool` is not enabled.
+    - `Cluster Default Ippool Installation` -> `IPv4 ippool gateway`: set the IPv4 gateway, such as `192.168.0.1`. This IP address must belong to `IPv4 ippool subnet`. Ignore this option if `install IPv4 ippool` is not enabled.
 
-5. Finally click `Install`.
+    - `Cluster Default Ippool Installation` -> `IPv6 ippool gateway`:set the IPv6 gateway, such as `fd00::1`. The IP address must belong to `IPv6 ippool subnet`. Ignore this option if `install IPv6 ippool` is not enabled.
+
+    - `Cluster Default Ippool Installation` -> `IP Ranges for default IPv4 ippool`:set which IP addresses can be assigned to Pods. Multiple members can be set, and each member only supports strings in 2 input formats.
+
+        1. A continuous IP segment, such as `192.168.0.10-192.168.0.100`.
+        2. A single IP address, such as `192.168.0.200`. The CIDR format is not supported.
+
+        These IP addresses MUST belong to the `IPv4 ippool subnet`. Ignore this option if `install IPv4 ippool` is not enabled.
+
+    - `Cluster Default Ippool Installation` -> `IP Ranges for default IPv6 ippool`: Set which IP addresses can be assigned to Pods. Multiple members can be set, and each member only supports strings in 2 input formats.
+
+        1. a continuous IP segment, such as `fd00::10-fd00::100`.
+        2. a single IP address, such as `fd00::10-fd00::100`. The CIDR format is not supported.
+
+        These IP addresses MUST belong to the `IPv6 ippool subnet`. Ignore this option if `install IPv6 ippool` is not enabled.
+
+5. Click the `OK` button in the lower right corner to complete the installation. When finished, you can refer to the [Usage of SpiderPool](./usage.md) to use the IP Pool.
 
 !!! note
 
