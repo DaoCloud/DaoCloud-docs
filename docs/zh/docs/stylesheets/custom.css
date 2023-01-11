@@ -26,7 +26,7 @@
     max-width: 100%;
 }
 
-iframe,
+iframe:not(.giscus-frame),
 object,
 embed {
     position: absolute;
