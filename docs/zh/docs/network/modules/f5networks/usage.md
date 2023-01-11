@@ -35,7 +35,7 @@
     3. 更多的 annotation 支持，请参考 [F5 官方文档](https://clouddocs.f5.com/containers/latest/userguide/loadbalancer/#parameters)。
 
 2. 创建 service 后，即可观测到分配到的 EXTERNAL-IP：
-    
+
     ```shell
     $ kubectl get service -o wide
     NAME             TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)        AGE     SELECTOR
