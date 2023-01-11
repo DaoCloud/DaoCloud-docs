@@ -1,6 +1,6 @@
-# 简介
+# 通过 helm 部署 Rook-Ceph
 
-本文将提供用 helm 部署 Rook-ceph 云原生存储系统的操作步骤及说明。
+本文将提供用 helm 部署 Rook-Ceph 云原生存储系统的操作步骤及说明。
 
 ## Helm 安装
 
@@ -50,13 +50,15 @@ aliyun                    https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts
 [root@k8s-10-6-162-31 ~]# helm search repo rook-ceph
 NAME                                    CHART VERSION              APP VERSION         DESCRIPTION
 rook-release/rook-ceph                    v1.10.5                   v1.10.5            File, Block, and Object Storage Services for yo...
-rook-release/rook-ceph-cluster            v1.10.5                   v1.10.5            Manages a single Ceph cluster namespace for Rook       
+rook-release/rook-ceph-cluster            v1.10.5                   v1.10.5            Manages a single Ceph cluster namespace for Rook 
+```      
 
 
 
-## helm安装rook operator：
+## Helm 安装 rook operator：
 
-[root@k8s-10-6-162-31 ~]# helm install --namespace rook-ceph rook-ceph rook-release/rook-ceph --create-namespace --set image.repository=rook/ceph --set csi.cephcsi.image=quay.io/cephcsi/cephcsi:v3.7.2 --set csi.registrar.image=registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.5.1 --set csi.provisioner.image=registry.k8s.io/sig-storage/csi-provisioner:v3.3.0 --set csi.snapshotter.image=registry.k8s.io/sig-storage/csi-snapshotter:v6.1.0 --set csi.attacher.image=registry.k8s.io/sig-storage/csi-attacher:v4.0.0 --set csi.resizer.image=registry.k8s.io/sig-storage/csi-resizer:v1.6.0
+```
+pwd[root@k8s-10-6-162-31 ~]# helm install --namespace rook-ceph rook-ceph rook-release/rook-ceph --create-namespace --set image.repository=rook/ceph --set csi.cephcsi.image=quay.io/cephcsi/cephcsi:v3.7.2 --set csi.registrar.image=registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.5.1 --set csi.provisioner.image=registry.k8s.io/sig-storage/csi-provisioner:v3.3.0 --set csi.snapshotter.image=registry.k8s.io/sig-storage/csi-snapshotter:v6.1.0 --set csi.attacher.image=registry.k8s.io/sig-storage/csi-attacher:v4.0.0 --set csi.resizer.image=registry.k8s.io/sig-storage/csi-resizer:v1.6.0
  
 [root@k8s-10-6-162-31 ~]# helm ls -A
 NAME             NAMESPACE     REVISION     UPDATED                                        STATUS           CHART                     APP VERSION
@@ -67,7 +69,7 @@ NAMESPACE         NAME                                        READY             
 rook-ceph         rook-ceph-operator-964d7fbbd-j2krp          1/1                      Running                       0                     39m
 ```
 
-## helm 安装 rook-ceph cluster 及 ceph tool：
+## Helm 安装 rook-ceph cluster 及 ceph tool：
 
 ```
 [root@k8s-10-6-162-31 ~]# helm install --namespace rook-ceph rook-ceph-cluster rook-release/rook-ceph-cluster --set operatorNamespace=rook-ceph --set cephClusterSpec.storage.deviceFilter="^sd." --set cephClusterSpec.cephVersion.image=quay.io/ceph/ceph:v17.2.3
