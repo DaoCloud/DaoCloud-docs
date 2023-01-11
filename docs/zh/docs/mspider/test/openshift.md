@@ -1,4 +1,4 @@
-# 兼容性测试报告 - Openshift
+# 兼容性测试报告 - OpenShift
 
 基于 OpenShift，测试服务网格在创建专有网格时的兼容性。
 
@@ -81,7 +81,7 @@ users:
 
     ![创建网格](./images/os03.png)
 
-1. Openshift 集群成功接入网格
+1. OpenShift 集群成功接入网格
 
     ![成功接入网格](./images/os04.png)
 
@@ -97,7 +97,7 @@ users:
 
     ![RS CreateFailed](./images/os07.png)
 
-    原因分析：Openshift（安全上下文约束）SCC 对创建 Pod 有权限限制
+    原因分析：OpenShift（安全上下文约束）SCC 对创建 Pod 有权限限制
 
     解决办法：增加 SCC 用户命名空间权限 "privileged"
 
