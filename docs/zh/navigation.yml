@@ -366,6 +366,7 @@ nav:
               - 命名空间边车管理: mspider/03UserGuide/07SidecarManagement/NamespaceSidecar.md
               - 工作负载边车管理: mspider/03UserGuide/07SidecarManagement/WorkloadSidecar.md
               - 全局边车管理: mspider/03UserGuide/07SidecarManagement/GlobalSidecar.md
+              - 边车流量透传: mspider/03UserGuide/07SidecarManagement/penetrate.md
           - 流量监控:
               - mspider/03UserGuide/06TrafficMonitor/README.md
               - 流量拓扑: mspider/03UserGuide/06TrafficMonitor/connTopo.md
@@ -384,6 +385,9 @@ nav:
             - 网格多云部署: mspider/03UserGuide/multiCluster/multiClusterInstall.md
             - 多集群网络通讯原理: mspider/03UserGuide/multiCluster/multi-cluster-net.md
             - 多集群灰度发布: mspider/03UserGuide/multiCluster/gray-scale-release.md
+          - 测试:  
+            - OCP 接入网格: mspider/test/ocp.md
+            - Openshift 与网格兼容性测试: mspider/test/openshift.md
           - 常见问题: mspider/07faq.md
       - 云原生网络:
           - 介绍:
