@@ -10,8 +10,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 离线包           | 版本    | 下载                                          | 更新日期   |
 | ---------------- | ------- | ------------------------------------------- | -------- |
-| offline-community-v0.4.0-arm64.tar | v0.4.0 | ARM 64 | 5.16GB | [:arrow_right: 下载页](./free/dce5-installer-v0.4.0.md) | 2023-01-12 |
-| offline-community-v0.4.0-amd64.tar | v0.4.0 | AMD 64 | 5.73GB | [:arrow_right: 下载页](./free/dce5-installer-v0.4.0.md) | 2023-01-12 |
+| offline-community-v0.4.0-arm64.tar | v0.4.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.4.0.md) | 2023-01-12 |
+| offline-community-v0.4.0-amd64.tar | v0.4.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.4.0.md) | 2023-01-12 |
 
 ## 下载商业版
 
@@ -19,8 +19,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 离线包            | 版本    | 下载                                        | 更新日期   |
 | ---------------- | ------- | ----------------------------------------- | -------- |
-| offline-kylin-v10sp2-v0.4.0-arm64.tar | v0.4.0 | ARM 64 | 14.96GB | [:arrow_right: 下载页](./business/dce5-installer-v0.4.0.md) | 2023-01-12 |
-| offline-centos7-v0.4.0-amd64.tar | v0.4.0 | AMD 64 | 16.33GB | [:arrow_right: 下载页](./business/dce5-installer-v0.4.0.md) | 2023-01-12 |
+| offline-kylin-v10sp2-v0.4.0-arm64.tar | v0.4.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.4.0.md) | 2023-01-12 |
+| offline-centos7-v0.4.0-amd64.tar | v0.4.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.4.0.md) | 2023-01-12 |
 
 ## 下载子模块
 
