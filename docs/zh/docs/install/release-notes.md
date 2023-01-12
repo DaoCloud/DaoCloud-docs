@@ -2,6 +2,45 @@
 
 本页列出安装器的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2022-12-30
+
+### v0.4.0
+
+#### 新功能
+
+- **新增** clusterConfig 的语法从 v1alpha1 升级为 v1alpha2， 语法有不兼容变更，可以查看文档
+- **新增** 
+- **新增** 不再在全局服务集群上安装永久 Harbor 和永久 MinIO
+- **新增** 火种节点需要永久存在，用户安装 minio，chart museum，registry
+- **新增** 商业版新增安装 contour 作为 默认的 ingress-controller
+- **新增** 商业版新增安装 cert-manager
+- **新增** 支持私钥模式的集群部署
+- **新增** 支持外置镜像仓库进行部署
+
+#### 优化
+
+- **优化** 离线包不再包括操作系统的 ISO，需要单独下载，在纯离线的情况下，需要在 clusterConfig 文件中定义 ISO 的绝对路径
+- **优化** 商业版使用 Contour 作为默认的 ingress-controller
+- **优化** MinIO 支持使用 VIP
+- **优化** coredns 自动注入仓库 VIP 解析
+- **优化** 优化离线包制作流程，加速打包 Docker 镜像
+- **优化** 优化了离线包的大小
+- **优化** 基础设施支持 1.25： 升级 redis-operator，eck-operator，hwameiStor
+- **优化** 升级到 keycloakX
+- **优化** istio 版本升级 v1.16.1
+
+#### 已知问题
+
+- 默认安装模式下暂不支持未分区的 SSD 盘，如果要支持，需要手工干涉。
+- 纯离线环境，默认没有应用商店。请手动将火种节点的chart-museum 接入到 global 集群，仓库地址：http://{火种 IP}:8081, 用户名 rootuser 密码 rootpass123
+- metallb 社区有已知问题，在主网卡有 dadfailed 的 IPV6 回环地址，metallb 无法工作，安装之前需要确保主网卡没有 dadfailed
+- insight-api-server 启动中如果机器太卡，在 Liveness 健康检查周期内，无法完成数据库的初始化（migrate）动作，导致需要手动介入
+- clusterConfig 配置文件中里的 iso 路径必须是绝对路径，不支持相对路径
+- kubean 默认 k8s 版本呢和离线包仍然限制在 k8s 1.24 版本，还未能更新到 1.25 （PG 暂不支持）
+- external-Registry如果是Harbor，暂时不会自动创建Project ，需要提前手动创建
+- Docker运行时，无法拉取built-in仓库，将在下个版本修复
+- 禁用 IPV6 之后，podman 无法启动火种节点的 kind 集群
+
 ## 2022-11-30
 
 ### v0.3.29
