@@ -113,25 +113,25 @@ spec:
 | ---------------------------- | ------------------------------------------------------------ | ------------------------------------------------------ |
 | clusterName | 在 KuBean Cluster 里的 Global 集群命名 | NA |
 | loadBalancer.type | 所使用的 LoadBalancer 的模式，物理环境用 metallb，POC 用 NodePort，公有云和 SDN CNI 环境用 cloudLB | NodePort (default), metallb, cloudLB (Cloud Controller) |
-| loadBalancer.istioGatewayVip |  如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 DCE 的 UI 界面和 OpenAPI 访问入口 | NA |
-| loadBalancer.insightVip |  如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 GLobal 集群的 insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP | NA |
+| loadBalancer.istioGatewayVip |  如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 DCE 的 UI 界面和 OpenAPI 访问入口 | - |
+| loadBalancer.insightVip |  如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 GLobal 集群的 insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP | - |
+| privateKeyPath | kuBean 部署集群的SSH私钥文件路径, 参考全模式主机清单 SSH 连接设置 | - |
+| masterNodes | Global 集群：Master节点列表，包括nodeName/ip/ansibleUser/ansiblePass几个关键子段 | - |
+| workerNodes | Global 集群：Worker节点列表，包括nodeName/ip/ansibleUser/ansiblePass几个关键子段 | - |
 | registry.type | k8s 组件和 DCE 组件的镜像拉取仓库的类型，有 online (在线环境), built-in (使用火种节点内置的仓库), external (使用已有的外置仓库)| online |
-| registry.builtinRegistryDomainName| 如果使用 built-in (使用火种节点内置的仓库), 如果需要自动化植入仓库域名到各个节点的 /etc/hosts 和 CoreDNS 的 hosts，可指定域名 | NA |
-| registry.externalRegistry | 指定 external 仓库的 IP 或者域名(使用已有的外置仓库), 如果使用 Harbor，需要提前创建相应 Project | NA |
-| registry.externalRegistryUsername | 外置仓库的用户名，用于推送镜像| NA |
-| registry.externalRegistryPassword | 外置仓库的密码，用于推送镜像| NA |
-| imageConfig.imageRepository | 如果是离线安装，kuBean 安装集群时的本地镜像仓库来源 | NA |
+| registry.builtinRegistryDomainName| 如果使用 built-in (使用火种节点内置的仓库), 如果需要自动化植入仓库域名到各个节点的 /etc/hosts 和 CoreDNS 的 hosts，可指定域名 | - |
+| registry.externalRegistry | 指定 external 仓库的 IP 或者域名(使用已有的外置仓库), 如果使用 Harbor，需要提前创建相应 Project | - |
+| registry.externalRegistryUsername | 外置仓库的用户名，用于推送镜像| - |
+| registry.externalRegistryPassword | 外置仓库的密码，用于推送镜像| - |
+| imageConfig.imageRepository | 如果是离线安装，kuBean 安装集群时的本地镜像仓库来源 | - |
 | imageConfig.binaryRepository | 如果是离线安装，kuBean 安装集群时的本地二进制仓库来源 | https://files.m.daocloud.io |
-| repoConfig | RPM或者DEB安装的源头，如果离线模式下,是安装器启动的MinIO| NA|
-| repoConfig.isoPath | 操作系统 ISO 文件的路径 ，离线模式下不能为空 | NA|
-| k8sVersion | kuBean 安装集群的k8s版本-必须跟KuBean和离线包相匹配 | NA |
-| privateKeyPath | kuBean 部署集群的SSH私钥文件路径, 参考全模式主机清单 SSH 连接设置 | NA |
-| masterNodes | Global 集群：Master节点列表，包括nodeName/ip/ansibleUser/ansiblePass几个关键子段 | NA |
-| workerNodes | Global 集群：Worker节点列表，包括nodeName/ip/ansibleUser/ansiblePass几个关键子段 | NA |
-| ntpServer | 可用的NTP服务器，供给新节点同步时间| NA|
+| repoConfig | RPM或者DEB安装的源头，如果离线模式下,是安装器启动的MinIO| - |
+| repoConfig.isoPath | 操作系统 ISO 文件的路径 ，离线模式下不能为空 | - |
+| k8sVersion | kuBean 安装集群的k8s版本-必须跟KuBean和离线包相匹配 | - |
+| ntpServer | 可用的NTP服务器，供给新节点同步时间| - |
 | network.cni | CNI 选择，比如 calico, cilium |calico |
-| network.clusterCIDR| Cluster CIDR| NA|
-| network.serviceCIDR| Service CIDR| NA|
+| network.clusterCIDR| Cluster CIDR| - |
+| network.serviceCIDR| Service CIDR| - |
 | auditConfig| k8s api-server的审计日志配置| 默认关闭|
 
 

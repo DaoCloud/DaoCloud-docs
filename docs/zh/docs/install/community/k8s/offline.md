@@ -13,15 +13,15 @@
     !!! note
 
       	- 存储：需要提前准备好 StorageClass，并设置为默认 SC
-        - 确保集群已安装 CoreDNS
-        - 如果是单节点集群，请确保您已移除该节点的污点
+            - 确保集群已安装 CoreDNS
+            - 如果是单节点集群，请确保您已移除该节点的污点
 
 - [安装依赖项](../../install-tools.md)。
 
     !!! note
 
         如果集群中已安装所有依赖项，请确保依赖项版本符合要求：
-
+        
         - helm ≥ 3.9.4
         - skopeo ≥ 1.9.2
         - kubectl ≥ 1.22.0
@@ -32,62 +32,64 @@
 1. 在 k8s 集群控制平面节点（Master 节点）下载社区版的对应离线包并解压，或者从[下载中心](../../../download/dce5.md)下载离线包并解压。
 
     ```bash
-    # 假定版本 VERSION=0.3.30
-    export VERSION=v0.3.30
-    wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-community-$VERSION-amd64.tar
+    # 假定版本 VERSION=0.4.0
+    export VERSION=v0.4.0
+    wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION-amd64.tar
     tar -zxvf offline-centos7-community-$VERSION-amd64.tar
     ```
 
-2. 导入镜像。
+2. 准备镜像。
 
-    - 下载镜像导入脚本。
+    - 如果使用镜像仓库，需要将离线包的镜像推送到镜像仓库。
 
-        ```bash
-        wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline_image_handler.sh
-        ```
+      - 下载镜像导入脚本。
 
-        为 `offline_image_handler.sh` 添加可执行权限：
+          ```bash
+          wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline_image_handler.sh
+          ```
 
-        ```bash
-        chmod +x offline_image_handler.sh
-        ```
+          为 `offline_image_handler.sh` 添加可执行权限：
 
-    - 如果使用镜像仓库，请将离线包的镜像推送到镜像仓库。
+          ```bash
+          chmod +x offline_image_handler.sh
+          ```
 
-        ```bash
-        # 指定镜像仓库地址, 比如:
-        export REGISTRY_ADDR=registry.daocloud.io:30080
-        # 指定离线包解压目录, 比如:
-        export OFFLINE_DIR=$(pwd)/offline
-        # 执行脚本导入镜像
-        ./offline_image_handler.sh import
-        ```
+      - 执行脚本推送镜像到镜像仓库中。
 
-        !!! note
+          ```bash
+          # 指定镜像仓库地址, 比如:
+          export REGISTRY_ADDR=registry.daocloud.io:30080
+          # 指定离线包解压目录, 比如:
+          export OFFLINE_DIR=$(pwd)/offline
+          # 执行脚本导入镜像
+          ./offline_image_handler.sh import
+          ```
 
-            - 若导入镜像的过程出现失败, 则失败会被跳过且脚本将继续执行。
-            - 失败镜像信息将被记录在脚本同级目录 `import_image_failed.list` 文件中，便于定位。
-            - 如果 docker pull 镜像时报错：http: server gave HTTP response to HTTPS client， 请启用 Insecure Registry。
+          !!! note
 
-    - 在集群的每个节点上运行 `vim /etc/docker/daemon.json` 命令以编辑 daemon.json 文件，输入以下内容并保存更改。
+              - 若导入镜像的过程出现失败, 则失败会被跳过且脚本将继续执行。
+              - 失败镜像信息将被记录在脚本同级目录 `import_image_failed.list` 文件中，便于定位。
+              - 如果 docker pull 镜像时报错：http: server gave HTTP response to HTTPS client， 请启用 Insecure Registry。
 
-        ```json
-        {
-        "insecure-registries" : ["172.30.120.180:80"]
-        }
-        ```
+      - 在集群的每个节点上运行 `vim /etc/docker/daemon.json` 命令以编辑 daemon.json 文件，输入以下内容并保存更改。
 
-        !!! note
+          ```json
+          {
+          "insecure-registries" : ["172.30.120.180:80"]
+          }
+          ```
 
-            请确保将 `172.30.120.180:80` 替换为您自己的 Harbor 仓库地址。
-            对于 Linux，daemon.json 文件的路径为 `/etc/docker/daemon.json`。
+          !!! note
 
-    - 运行以下命令重启 Docker。
+              请确保将 `172.30.120.180:80` 替换为您自己的 Harbor 仓库地址。
+              对于 Linux，daemon.json 文件的路径为 `/etc/docker/daemon.json`。
 
-        ```bash
-        sudo systemctl daemon-reload
-        sudo systemctl restart docker
-        ```
+      - 运行以下命令重启 Docker。
+
+          ```bash
+          sudo systemctl daemon-reload
+          sudo systemctl restart docker
+          ```
 
     - 如果没有镜像仓库，请将离线包拷贝到每一台节点之后，通过 `docker load/nerdctl load` 命令加载：
 
@@ -101,15 +103,9 @@
 3. 在 k8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件。
 
     ```shell
-    # 假定 VERSION 为 v0.3.30
-    export VERSION=v0.3.30
+    # 假定 VERSION 为 v0.4.0
+    export VERSION=v0.4.0
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
-    ```
-
-    为 `dce5-installer` 添加可执行权限：
-
-    ```bash
-    chmod +x dce5-installer
     ```
 
 4. 设置集群配置文件 clusterConfig.yaml
@@ -124,7 +120,7 @@
             type: metallb
             istioGatewayVip: 10.6.229.10/32 # 这是 Istio gateway 的 VIP，也会是DCE 5.0的控制台的浏览器访问IP
             insightVip: 10.6.229.11/32      # 这是 Global 集群的 Insight-Server 采集所有子集群的监控指标的网络路径所用的 VIP
-          registry:
+          registry: # 如果不指定外部仓库则不需要定义
             type: external
             externalRegistry: registry.daocloud.io:30080 # 提前准备的、已有的镜像仓库的地址
         ```
@@ -137,7 +133,7 @@
         spec:
           loadBalancer:
             type: cloudLB
-          registry:
+          registry: # 如果不指定外部仓库则不需要定义
             type: external
             externalRegistry: registry.daocloud.io:30080 # 提前准备的、已有的镜像仓库的地址
         ```
@@ -150,12 +146,12 @@
         spec:
           loadBalancer:
             type: NodePort
-          registry:
+          registry: # 如果不指定外部仓库则不需要定义
             type: external
             externalRegistry: registry.daocloud.io:30080 # 提前准备的、已有的镜像仓库的地址
         ```
 
-5. 解压安装。
+5. 安装 DCE 5.0。
 
     ```shell
     ./dce5-installer install-app -c clusterConfig.yaml -p offline
