@@ -104,30 +104,31 @@ spec:
       version: v1.8.4
 ```
 
-## key fields
+## Key fields
 
-For key field descriptions in this YAML file, see the table below.
-
-
+For key fields in this YAML file, see the table below.
 
 | Field | Description | Default |
-| ---------------------------- | -------------------- ------------------------------------------- | --------- ------------------------------------------------ |
-| loadBalancer.type | The mode of LoadBalancer used, metallb for physical environment, NodePort for POC, cloudLB for public cloud and SDN CNI environment | NodePort(default), metallb, cloudLB (Cloud Controller) |
-| loadBalancer.istioGatewayVip | If the load balancing mode is metallb, you need to specify a VIP to be used as the DCE UI interface and OpenAPI access entry | - |
-| loadBalancer.insightVip | If the load balancing mode is metallb, you need to specify a VIP for the insight data collection entry of the GLobal cluster, and the insight-agent of the sub-cluster can report data to this VIP | - |
-| clusterName | Name of the global cluster in KuBean | - |
-| registry.type | How the registry is provided. Options are online, built-in, external | - |
-| registry.externalRegistry | The external registry IP:port or domain name  | - |
-| imageConfig.imageRepository | If it is installed offline, the source of the local container registry when kuBean installs the cluster | - |
-| imageConfig.binaryRepository | If it is installed offline, the source of the local binary repository when kuBean installs the cluster | https://xxx.yy.zz |
-| repoConfig | Source for RPM or DEB installations. In offline mode, the installer starts MinIO | - |
-| k8sVersion | K8s version of kuBean installation cluster, must match KuBean and offline package | - |
-| mgmtMasterNodes | Management cluster: Master node list, including several key fields of nodeName/ip/ansibleUser/ansiblePass | - |
-| mgmtWorkerNodes | Management cluster: Worker node list, including several key fields of nodeName/ip/ansibleUser/ansiblePass | - |
-| globalMasterNodes | Global service cluster: Master node list, including several key fields of nodeName/ip/ansibleUser/ansiblePass | - |
-| globalWorkerNodes | Global service cluster: Worker node list, including several key fields of nodeName/ip/ansibleUser/ansiblePass | - |
-| ntpServer | NTP server available to use for new nodes to synchronize time | - |
-| network.cni | Choose a CNI, eg calico, cilium | calico |
+| ----------------------- | -------------------------- ----------- | ------------------- |
+| clusterName | Global cluster name in KuBean Cluster | - |
+| loadBalancer.type | LoadBalancer mode used, metallb for physical environment, NodePort for POC, cloudLB for public cloud and SDN CNI environment | NodePort (default), metallb, cloudLB (Cloud Controller) |
+| loadBalancer.istioGatewayVip | If the load balancing mode is metallb, you need to specify a VIP to provide DCE UI interface and OpenAPI access entrance | - |
+| loadBalancer.insightVip | If the load balancing mode is metallb, you need to specify a VIP for the insight data collection portal of the GLobal cluster, and the insight-agent of the sub-cluster can report data to this VIP | - |
+| privateKeyPath | The SSH private key file path of the kuBean deployment cluster, refer to the full-mode host list SSH connection settings | - |
+| masterNodes | Global cluster: Master node list, including several key fields of nodeName/ip/ansibleUser/ansiblePass | - |
+| workerNodes | Global cluster: Worker node list, including nodeName/ip/ansibleUser/ansiblePass several key fields | - |
+| registry.type | The type of image pull registry for k8s components and DCE components, including online (online environment), built-in (use the built-in registry of Tinder node), external (use the existing external registry) | online |
+| registry.builtinRegistryDomainName | If you use built-in (use the built-in registry of Tinder node), if you need to automatically implant the domain name of the registry into /etc/hosts of each node and the hosts of CoreDNS, you can specify the domain name | - |
+| registry.externalRegistry | Specify the IP or domain name of the external registry (use the existing external registry), if you use Harbor, you need to create the corresponding Project in advance | - |
+| registry.externalRegistryUsername | The username of the external repository, used to push images | - |
+| registry.externalRegistryPassword | The password of the external repository, used to push images | - |
+| imageConfig.imageRepository | If it is installed offline, the source of the local image repository when kuBean installs the cluster | - |
+| imageConfig.binaryRepository | If it is installed offline, the source of the local binary repository when kuBean installs the cluster | https://files.m.daocloud.io |
+| repoConfig | The source of RPM or DEB installation, if in offline mode, it is MinIO started by the installer | - |
+| repoConfig.isoPath | The path of the operating system ISO file, cannot be empty in offline mode | - |
+| k8sVersion | The K8s version of the kuBean installation cluster must match the KuBean and offline packages | - |
+| ntpServer | Available NTP server for new nodes to synchronize time | - |
+| network.cni | CNI selection, such as Calico, Cilium | calico |
 | network.clusterCIDR | Cluster CIDR | - |
 | network.serviceCIDR | Service CIDR | - |
-| auditConfig | K8s api-server audit log configuration | default disabled |
+| auditConfig | k8s api-server audit log configuration | default disabled |
