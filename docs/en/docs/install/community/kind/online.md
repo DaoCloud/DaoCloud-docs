@@ -121,4 +121,4 @@ This page explains how to install DCE 5.0 Community Edition online using a kind 
     - After successfully installing DCE 5.0 Community Edition, please [apply for a community free trial](../../../dce/license0.md).
     - If you encounter any problems during the installation process, please scan the QR code and communicate with the developer freely:
 
-        ![Community Edition Exchange Group](../../images/wechat.png)
+        ![Community Edition Exchange Group](../../../images/assist.png)
