@@ -1,10 +1,10 @@
-# 通过 helm 部署 Rook-Ceph
+# 通过 Helm 部署 Rook-Ceph
 
-本文将提供用 helm 部署 Rook-Ceph 云原生存储系统的操作步骤及说明。
+本文将提供用 Helm 部署 Rook-Ceph 云原生存储系统的操作步骤及说明。
 
 ## Helm 安装
 
-```
+```console
 [root@k8s-10-6-162-31 ~]# wget https://get.helm.sh/helm-v3.10.1-linux-amd64.tar.gz
 
 [root@k8s-10-6-162-31 ~]# tar xvfz helm-v3.10.1-linux-amd64.tar.gz
@@ -33,11 +33,9 @@ Common actions for Helm:
 - helm list: list releases of charts
 ```
 
+## 添加 rook repo
 
-
-## 添加rook repo：
-
-```
+```console
 helm repo add rook-release https://charts.rook.io/release
 
 [root@k8s-10-6-162-31 ~]# helm repo list
@@ -50,16 +48,14 @@ aliyun                    https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts
 [root@k8s-10-6-162-31 ~]# helm search repo rook-ceph
 NAME                                    CHART VERSION              APP VERSION         DESCRIPTION
 rook-release/rook-ceph                    v1.10.5                   v1.10.5            File, Block, and Object Storage Services for yo...
-rook-release/rook-ceph-cluster            v1.10.5                   v1.10.5            Manages a single Ceph cluster namespace for Rook 
-```      
-
-
-
-## Helm 安装 rook operator：
-
+rook-release/rook-ceph-cluster            v1.10.5                   v1.10.5            Manages a single Ceph cluster namespace for Rook
 ```
+
+## Helm 安装 rook operator
+
+```console
 pwd[root@k8s-10-6-162-31 ~]# helm install --namespace rook-ceph rook-ceph rook-release/rook-ceph --create-namespace --set image.repository=rook/ceph --set csi.cephcsi.image=quay.io/cephcsi/cephcsi:v3.7.2 --set csi.registrar.image=registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.5.1 --set csi.provisioner.image=registry.k8s.io/sig-storage/csi-provisioner:v3.3.0 --set csi.snapshotter.image=registry.k8s.io/sig-storage/csi-snapshotter:v6.1.0 --set csi.attacher.image=registry.k8s.io/sig-storage/csi-attacher:v4.0.0 --set csi.resizer.image=registry.k8s.io/sig-storage/csi-resizer:v1.6.0
- 
+
 [root@k8s-10-6-162-31 ~]# helm ls -A
 NAME             NAMESPACE     REVISION     UPDATED                                        STATUS           CHART                     APP VERSION
 rook-ceph        rook-ceph        1         2022-11-07  13:58:04.376723834 +0800 CST       deployed         rook-ceph-v1.10.5         v1.10.5
@@ -69,9 +65,9 @@ NAMESPACE         NAME                                        READY             
 rook-ceph         rook-ceph-operator-964d7fbbd-j2krp          1/1                      Running                       0                     39m
 ```
 
-## Helm 安装 rook-ceph cluster 及 ceph tool：
+## Helm 安装 rook-ceph cluster 及 ceph tool
 
-```
+```console
 [root@k8s-10-6-162-31 ~]# helm install --namespace rook-ceph rook-ceph-cluster rook-release/rook-ceph-cluster --set operatorNamespace=rook-ceph --set cephClusterSpec.storage.deviceFilter="^sd." --set cephClusterSpec.cephVersion.image=quay.io/ceph/ceph:v17.2.3
 NAME: rook-ceph-cluster
 LAST DEPLOYED: Mon Nov 7 14:49:28 2022
@@ -125,7 +121,7 @@ rook-ceph-osd-1-64c5945d78-72z4q                                   2/2          
 rook-ceph-osd-2-f68b5bcb7-59nwb                                    2/2                Running              0                    30m
 rook-ceph-osd-3-99c576b7-j7prn                                     2/2                Running              0                    30m
 rook-ceph-osd-4-579d5f966f-cqw5f                                   2/2                Running              0                    30m
-rook-ceph-osd-5-655d7bfbd7-kztj2                                   2/2                Running              0                    30m                                                              
+rook-ceph-osd-5-655d7bfbd7-kztj2                                   2/2                Running              0                    30m
 rook-ceph-osd-prepare-k8s-10-6-162-31-tzz2f                        0/1                Completed            0                    23m
 rook-ceph-osd-prepare-k8s-10-6-162-32-7blmc                        0/1                Completed            0                    22m
 rook-ceph-osd-prepare-k8s-10-6-162-33-pjjmd                        0/1                Completed            0                    22m
@@ -133,9 +129,9 @@ rook-ceph-rgw-ceph-objectstore-a-6d8b954f7d-jx9zx                  2/2          
 rook-ceph-tools-7c8ddb978b-2mf52                                   1/1                Running              0                    40m
 ```
 
-## ceph tool验证：
+## Ceph 工具验证
 
-```
+```console
 [root@k8s-10-6-162-31 ~]# kubectl exec -it rook-ceph-tools-7c8ddb978b-2mf52 -n rook-ceph -- bash
 bash-4.4$
 
@@ -161,4 +157,4 @@ pgs: 100.000% pgs unknown
 6 unknown
 ```
 
-至此，用 helm 部署安装 rook-ceph 完成。
+至此，用 Helm 部署安装 rook-ceph 完成。

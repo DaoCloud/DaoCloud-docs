@@ -1,4 +1,4 @@
-# Longhorn 部署到 DCE 5.0
+# 通过应用商店部署 Longhorn
 
 本文将提供在 DCE 5.0 应用商店以 Addon 的图形化界面安部署 Longhorn 云原生存储系统的操作步骤及说明。
 
@@ -107,15 +107,15 @@ calico.yaml linux-amd64 longhorn-1.3.2.tgz rook rook-ceph-image.zip
 
 ## 上传 chart 包至 DCE 5.0 镜像仓库
 
-![dce 镜像仓库-1](./images/registry-1.png)
+![dce 镜像仓库-1](../images/registry-1.png)
 
-![dce 镜像仓库-2](./images/registry-2.png)
+![dce 镜像仓库-2](../images/registry-2.png)
 
-![dce 应用商店-1](./images/cluster-1.png)
+![dce 应用商店-1](../images/cluster-1.png)
 
 ## DCE 5.0 应用商店安装 Longhorn
 
-![dce 应用商店-2](./images/cluster-2.png)
+![dce 应用商店-2](../images/cluster-2.png)
 
 ```
 [root@k8s-10-6-162-31 ~]# kubectl get po -n longhorn-system
@@ -158,14 +158,14 @@ longhorn-ui-68bc57db67-46brf 1/1 Running 0 3h20m
 
 修改 Longhorn 前端 service 端口：
 
-![longhorn-svc-1](./images/longhorn-svc-1.png)
+![longhorn-svc-1](../images/longhorn-svc-1.png)
 
-![longhorn-svc-2](./images/longhorn-svc-2.png)
+![longhorn-svc-2](../images/longhorn-svc-2.png)
 
 进入 Longhorn UI：
 
-![longhorn 界面](./images/longhorn-1.png)
+![longhorn 界面](../images/longhorn-1.png)
 
-![longhorn 界面](./images/longhorn-2.png)
+![longhorn 界面](../images/longhorn-2.png)
 
 至此，在 DCE 5.0 应用商店成功部署了 Longhorn 存储系统！
