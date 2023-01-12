@@ -15,34 +15,34 @@ Rook 支持多个存储提供商。它将分布式存储软件转变为自我管
 
 - Rook-ceph 架构
 
-    ![rook-ceph 架构](./images/rook-1.png)
+    ![rook-ceph 架构](../images/rook-1.png)
 
 - Rook 管理
 
-    ![rook 管理](./images/rook-2.png)
+    ![rook 管理](../images/rook-2.png)
 
 - CSI 存储资源调配
 
-    ![rook 资源调配](./images/rook-3.png)
+    ![rook 资源调配](../images/rook-3.png)
 
 - Ceph 数据路径
 
-    ![rook 数据路径](./images/rook-4.png)
+    ![rook 数据路径](../images/rook-4.png)
 
 - 分布式架构
 
     Ceph 是一种分布式、可扩展的开源存储解决方案，适用于块、对象和共享文件系统存储。
     Ceph 在过去几年中已经发展成为开源分布式存储解决方案的标准，在大中型企业中进行了多年的生产部署。
 
-    ![rook 分布式架构](./images/rook-5.png)
+    ![rook 分布式架构](../images/rook-5.png)
 
 - 组件：Ceph 存储池、归置组（PG）、对象、OSD
 
-    ![rook 组件](./images/rook-6.png)
+    ![rook 组件](../images/rook-6.png)
 
 - Ceph RBD 工作原理
 
-    ![rook 原理](./images/rook-7.png)
+    ![rook 原理](../images/rook-7.png)
 
 ## 测试验证
 
@@ -177,11 +177,11 @@ rook-ceph-mon-b                                ClusterIP 10.100.168.72 <none> 67
 rook-ceph-mon-d                                ClusterIP 10.101.56.41 <none> 6789/TCP,3300/TCP 5d16h
 ```
 
-![dashboard-1](./images/dashboard-1.png)
+![dashboard-1](../images/dashboard-1.png)
 
-![dashboard-2](./images/dashboard-2.png)
+![dashboard-2](../images/dashboard-2.png)
 
-![dashboard-3](./images/dashboard-3.png)
+![dashboard-3](../images/dashboard-3.png)
 
 #### 操作 Ceph 存储管理所用的 Rook 工具
 
@@ -301,11 +301,11 @@ myfs-metadata
 myfs-data0
 ```
 
-![dashboard-4](./images/dashboard-4.png)
+![dashboard-4](../images/dashboard-4.png)
 
-![dashboard-5](./images/dashboard-5.png)
+![dashboard-5](../images/dashboard-5.png)
 
-![dashboard-6](./images/dashboard-6.png)
+![dashboard-6](../images/dashboard-6.png)
 
 ```
 [root@k8s-10-6-162-21 kubernetes]# kubectl get pv,pvc
@@ -322,11 +322,11 @@ persistentvolumeclaim/wp-pv-claim        Bound pvc-7647bc80-febc-4299-a62a-8446d
 
 成功部署后，查看 wordpress/mysql 上的博客：
 
-![blog-1](./images/blog-1.png)
+![blog-1](../images/blog-1.png)
 
 还在博客上做了评论：
 
-![blog-2](./images/blog-2.png)
+![blog-2](../images/blog-2.png)
 
 ### 数据持久性验证
 
@@ -336,4 +336,4 @@ persistentvolumeclaim/wp-pv-claim        Bound pvc-7647bc80-febc-4299-a62a-8446d
 [root@k8s-10-6-162-21 kubernetes]# kubectl delete po wordpress-mysql-79966d6c5b-wc6fs
 ```
 
-![blog-3](./images/blog-3.png)
+![blog-3](../images/blog-3.png)
