@@ -35,7 +35,7 @@
     # 假定版本 VERSION=0.4.0
     export VERSION=v0.4.0
     wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION-amd64.tar
-    tar -zxvf offline-centos7-community-$VERSION-amd64.tar
+    tar -xvf offline-centos7-community-$VERSION-amd64.tar
     ```
 
 2. 准备镜像。

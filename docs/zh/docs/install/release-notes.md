@@ -28,6 +28,15 @@
 - **优化** 升级到 keycloakX
 - **优化** istio 版本升级 v1.16.1
 
+#### 修复
+
+- **修复** [HwameiStor 的 operator 会 随机错误清理集群中的 jobs ](https://github.com/hwameistor/hwameistor/issues/588)
+- **优化** mysql 增强半同步，解决频繁主从切换的数据不一致
+- **优化** 解决 mysql 磁盘被 clusterPedia 写爆
+- **优化** coredns 自动注入仓库 VIP 解析
+- **优化** 公有云上 svc 的修复
+- **优化** 修复各种子模块的镜像和 helm 问题
+
 #### 已知问题
 
 - 默认安装模式下暂不支持未分区的 SSD 盘，如果要支持，需要手工干涉。
@@ -35,7 +44,7 @@
 - metallb 社区有已知问题，在主网卡有 dadfailed 的 IPV6 回环地址，metallb 无法工作，安装之前需要确保主网卡没有 dadfailed
 - insight-api-server 启动中如果机器太卡，在 Liveness 健康检查周期内，无法完成数据库的初始化（migrate）动作，导致需要手动介入
 - clusterConfig 配置文件中里的 iso 路径必须是绝对路径，不支持相对路径
-- kubean 默认 k8s 版本呢和离线包仍然限制在 k8s 1.24 版本，还未能更新到 1.25（PG 暂不支持）
+- kubean 默认 k8s 版本和离线包仍然限制在 k8s 1.24 版本，还未能更新到 1.25（PG 暂不支持）
 - external-Registry 如果是 Harbor，暂时不会自动创建 Project，需要提前手动创建
 - Docker 运行时，无法拉取 built-in 仓库，将在下个版本修复
 - 禁用 IPV6 之后，podman 无法启动火种节点的 kind 集群
