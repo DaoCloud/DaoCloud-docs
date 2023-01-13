@@ -252,14 +252,20 @@ nav:
               - 移除集群: kairship/04cluster/remove.md
           - 多云工作负载:
               - 工作负载简介: kairship/05workload/README.md
-              - 镜像创建: kairship/05workload/image.md
+              - 镜像创建: kairship/05workload/deployment.md
               - YAML创建: kairship/05workload/yaml.md
+              - 更新多云工作负载: kairship/05workload/update-deployment.md
               - 一键升级为多云工作负载: kairship/05workload/promote.md
+              - 镜像创建任务: kairship/05workload/job.md
+              - 镜像创建定时任务: kairship/05workload/cronjob.md
           - 资源管理:
               - 多云服务: kairship/06resource/service.md
               - 多云命名空间: kairship/06resource/ns.md
               - 多云配置项: kairship/06resource/configmap.md
               - 多云密钥: kairship/06resource/secret.md
+              - 更新多云服务: kairship/06resource/update-service.md
+              - 更新多云密钥: kairship/06resource/update-secret.md
+              - 更新多云配置项: kairship/06resource/update-configmap.md
           - 策略管理:
               - 部署策略: kairship/07policy/propagationpolicy.md
               - 差异化策略: kairship/07policy/overridepolicy.md
