@@ -1,8 +1,15 @@
+---
+MTPE: Jeanine-tw
+Revised: Jeanine-tw
+Pics: NA
+Date: 2023-01-13
+---
+
 # Common commands
 
 This page explains how to use the spiderpoolctl program to debug from the CLI command line.
 
-## spiderpoolctl gc
+- spiderpoolctl gc
 
 Trigger a garbage collection request to the spiderpool-controller.
 
@@ -10,26 +17,26 @@ Trigger a garbage collection request to the spiderpool-controller.
     --address string [optional] address for spider-controller (default to service address)
 ```
 
-## spiderpoolctl ip show
+- spiderpoolctl ip show
 
-Shows the Pods that are using this IP. The options are:
+Show the Pods that are using this IP. 
 
 ```shell
     --ip string [required] ip
 ```
 
-## spiderpoolctl ip release
+- spiderpoolctl ip release
 
-Try to release an IP. The options are:
+Try to release an IP.
 
 ```shell
     --ip string [optional] ip
     --force [optional] force release ip
 ```
 
-## spiderpoolctl ip set
+- spiderpoolctl ip set
 
-Sets the IP to use for a Pod. This will update the ippool and workload endpoint resources. The options are:
+Set the IP to be used by a Pod. This will update the ippool and workload endpoint resources.
 
 ```shell
     --ip string [required] ip
