@@ -2,15 +2,6 @@
 
 This page lists activity in cloud native open source projects in alphabetical order.
 
-
-
-
-
-
-
-
-
-
 ### A, B
 
 - [Acorn: Acorn Labs open source K8s application packaging and deployment framework](https://acorn.io/introducing-acorn/)
