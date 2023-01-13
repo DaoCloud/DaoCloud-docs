@@ -47,7 +47,7 @@ After successfully verifying the offline package,
 
 === "AMD 64"
 
-    Execute the following command to extract the tarball:
+    Execute the following command to extract the tar package:
 
     ```sh
     tar -zxvf offline-centos7-v0.3.29-amd64.tar
@@ -55,7 +55,7 @@ After successfully verifying the offline package,
 
 === "ARM 64"
 
-    Execute the following command to extract the tarball:
+    Execute the following command to extract the tar package:
 
     ```sh
     tar -zxvf offline-kylin-v10sp2-v0.3.29-arm64.tar

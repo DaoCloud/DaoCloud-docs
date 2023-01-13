@@ -95,11 +95,20 @@
     !!! note
 
         如果集群中已安装所有依赖项，请确保依赖项版本符合要求：
-
+    
         - helm ≥ 3.9.4
         - skopeo ≥ 1.9.2
         - kubectl ≥ 1.22.0
         - yq ≥ 4.27.5
+
+
+1. 在 kind 主机下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../../download/dce5.md)）。
+
+    ```shell
+    # 假定 VERSION 为 v0.4.0
+    export VERSION=v0.4.0
+    curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
+    ```
 
 1. 获取 kind 所在主机的 IP，例如 `10.6.3.1`，执行以下命令开始安装。
 
@@ -120,5 +129,5 @@
     - 请记录好提示的 URL，方便下次访问。
     - 成功安装 DCE 5.0 社区版后，请[申请社区免费体验](../../../dce/license0.md)。
     - 如果安装过程中遇到什么问题，欢迎扫描二维码，与开发者畅快交流：
-
-        ![社区版交流群](../../images/wechat.png)
+    
+        ![社区版交流群](../../../images/assist.png)

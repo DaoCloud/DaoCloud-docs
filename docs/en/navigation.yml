@@ -354,6 +354,7 @@ nav:
               - Namespace Sidecars: mspider/03UserGuide/07SidecarManagement/NamespaceSidecar.md
               - Workload Sidecars: mspider/03UserGuide/07SidecarManagement/WorkloadSidecar.md
               - Global Sidecars: mspider/03UserGuide/07SidecarManagement/GlobalSidecar.md
+              - Traffic passthrough: mspider/03UserGuide/07SidecarManagement/penetrate.md
           - Traffic Monitor:
               - mspider/03UserGuide/06TrafficMonitor/README.md
               - Traffic Topology: mspider/03UserGuide/06TrafficMonitor/connTopo.md
@@ -372,6 +373,9 @@ nav:
             - Deploy mesh with multicloud: mspider/03UserGuide/multiCluster/multiClusterInstall.md
             - Multi-cluster network principle: mspider/03UserGuide/multiCluster/multi-cluster-net.md
             - Multi-cluster grayscale releasea: mspider/03UserGuide/multiCluster/gray-scale-release.md
+          - Test:
+            - Join an OCP cluster: mspider/test/ocp.md
+            - Compatibility test with OpenShift: mspider/test/openshift.md
           - FAQs: mspider/07faq.md
       - Network:
           - Intro:
@@ -619,8 +623,8 @@ nav:
   - Download:
       - DaoCloud Enterprise 5.0: 
           - Index: download/dce5.md
-          - Download Releases for Community: download/free/dce5-installer-v0.3.29.md
-          - Download Releases for Commerce: download/business/dce5-installer-v0.3.29.md
+          - Download Releases for Community: download/free/dce5-installer-v0.4.0.md
+          - Download Releases for Commerce: download/business/dce5-installer-v0.4.0.md
           - Download Global Management: download/modules/ghippo.md
           - Download Insight: download/modules/insight.md
   - Cloud Native Institute:
