@@ -30,7 +30,7 @@ offline-v0.3.28.tar: OK
 
 ## Install
 
-After successfully verifying the offline package, unpack the tarball:
+After successfully verifying the offline package, unpack the tar package:
 
 ```sh
 tar -zxvf offline-v0.3.28.tar
