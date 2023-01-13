@@ -25,7 +25,7 @@
     此外，GitOps 项目 Argo、服务网格技术 Envoy、Cilium和 Istio 等也排名前列。
     [2022 年 CNCF 项目排名](https://docs.google.com/spreadsheets/d/1NifFdE45BlscO6j7vlDspccQ-i9Ksgip6yx2bmhmCCs/edit#gid=976519966)如下图（气泡面积与作者的数量成正比，y 轴为 pr 和 issue 的数量、x 轴是 commit 的数量）：
 
-    ![CNCF](./images/CNCF%20Projects.png)
+    ![CNCF](./images/CNCF-Projects.png)
 
 - [1 月 9 日 中国信通院发布 2022 中国 Serverless 用户调查报告](https://mp.weixin.qq.com/s/qpWr5o3GTynHXhexHidx3Q)
   

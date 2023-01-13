@@ -25,7 +25,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     In addition, GitOps project Argo, Service Grid technology Envoy, Cilium and Istio also ranked high.
     The [2022 CNCF Project Rankings](https://docs.google.com/spreadsheets/d/1NifFdE45BlscO6j7vlDspccQ-i9Ksgip6yx2bmhmCCs/edit#gid=976519966) are shown below (bubble area is proportional to the number of authors) and the number of pr and issue on the y-axis, and the number of commits on the x-axis).
 
-    ![CNCF](./images/CNCF%20Projects.png)
+    ![CNCF](./images/CNCF-Projects.png)
 
 - [January 9 China ICT Academy released 2022 China Serverless User Survey Report](https://mp.weixin.qq.com/s/qpWr5o3GTynHXhexHidx3Q)
   
