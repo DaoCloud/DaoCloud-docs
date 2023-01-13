@@ -4,6 +4,16 @@
 
 ### 排障方案
 
+- [云原生场景下，nettrace 怎么快速进行网络故障诊断？](https://mp.weixin.qq.com/s/0n7kbOhHr6m5JClTrSIysA)
+
+    [nettrace](https://github.com/OpenCloudOS/nettrace) 是一款基于 eBPF 的集网络报文跟踪（故障定位）、网络故障诊断、网络异常监控于一体的网络工具集，
+    提供一种更加高效、易用的方法来解决复杂场景下的网络问题。
+
+- [Istio 运维实战：如何规避 503 UC 错误](https://mp.weixin.qq.com/s/4YIYPIszyKyWVMKXnXtHbg)
+
+    503 UC 是在 Istio/Envoy 使用过程中经常遇到的一个问题。
+    文章分析了由于 TCP 服务器 keepalive Timeout 导致的 503 UC 的原理及规避方法。
+
 - [K8s CNI Cilium 网络故障排查指南](https://mp.weixin.qq.com/s/jBuNPOKbL-keXmzq1gq-mQ)
 
     文章介绍了作者从 kubenet 升级到  cilium 时遇到的一个问题及排障过程。
@@ -68,6 +78,21 @@
     这篇文章的创作灵感因 Grafana 不展示使用存储驱动创建的存储卷的容量指标而起，展示了该问题的排查思路及手段，进而勾勒出 Kubelet 对于存储卷指标收集的实现流程。
 
 ### 最佳实践
+
+- [大中型科技企业开源战略制定与落地](https://mp.weixin.qq.com/s/9Z4zFPU0uHk6RhrpUDD-tw)
+
+    目前，很多企业对于开源是什么，怎么用开源，如何参与开源，企业在开源方面如何做决策，如何进行开源治理，如何利用开源强化竞争力等方面的问题，仍存在着一些难点。
+    对此，文章介绍了什么是企业开源战略；企业为什么需要开源战略；企业开源战略包含的内容，以及企业开源战略制定和落地的实践经验。
+
+- [ServiceAccount Token 在不同 K8s 版本中的使用](https://mp.weixin.qq.com/s/F0V8nyo3LtATFmS7pHuxXw)
+
+    文章介绍了在不同 K8s 版本下，ServiceAccount Token 令牌的不同使用方式，
+    主要包括自动创建 Secret 和 Kubelet 通过 TokenRequest API 去申请 API 两种方式。
+
+- [腾讯百万级别容器云平台实践揭秘](https://mp.weixin.qq.com/s/Gusp1ah_qIoMMOg7FhX6Vg)
+
+    文章介绍了腾讯容器云平台在线业务资源容器化部署遇到的问题、容器化对动态路由同步的挑战及各自的解决方案，
+    以及为解决 K8s 已有自愈机制存在容器销毁阶段卡住的问题，探索出的一种全新的容器销毁失败自愈机制。
 
 - [在生产中大规模自动化 Istio CA 轮换](https://mp.weixin.qq.com/s/75paqvd507_ExHHGszB_-Q)
 

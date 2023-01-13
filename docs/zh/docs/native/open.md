@@ -85,6 +85,10 @@
 
 ### C
 
+- [Calico CNI 插件 v3.25.0 发布（CNCF 项目）](https://github.com/projectcalico/calico/blob/v3.25.0/calico/_includes/release-notes/v3.25.0-release-notes.md)
+
+    该版本主要新特性：优化 eBPF 数据平面，确保连接时间负载均衡（Connect Time Load Balancing）在规模更大的、快速变化的环境中工作；Felix 组件支持重写内部 readiness/liveness watchdog 的超时；Typha 组件支持优雅关闭。
+
 - [Calico CNI 插件 v3.24.0 发布（CNCF 项目）](https://github.com/projectcalico/calico/blob/release-v3.24/calico/_includes/release-notes/v3.24.0-release-notes.md)
 
     该版本主要新特性：支持 IPv6 网络 wireguard 加密、通过 API 暴露 IPAM 配置和 IPAM block 亲和性、operator API 新增字段、支持分割 IP 池、从 pod 安全策略过渡到 pod 安全标准。
@@ -101,6 +105,10 @@
 
     [cdk8s+](https://github.com/cdk8s-team/cdk8s) 允许用户使用熟悉的编程语言和面向对象的 API 来定义 Kubernetes 应用和可复用的抽象。
     相较于去年发布的 beta 版本，正式版本新增功能包括：隔离 pod 网络，只允许指定的通信；改进在同一节点上运行多个 pod的配置机制；集成 [Datree](https://github.com/datreeio/datree-cdk8s) 插件，使用第三方策略执行工具检查 Kubernetes 中的错误配置。
+
+- [Cert-manager 云原生证书管理项目 v1.11.0发布（CNCF 项目）](https://github.com/cert-manager/cert-manager/releases/tag/v1.11.0)
+
+    该版本主要新特性：支持使用 Azure Workload Identity Federation 进行认证、支持指定 cert-manager 在与 ACME 服务器通信时使用的信任存储、支持 gateway API v1beta1、启用针对 Kubernetes 1.26 的测试。
 
 - [Cert-manager 云原生证书管理项目 v1.10.0 发布（CNCF 项目）](https://github.com/cert-manager/cert-manager/releases/tag/v1.10.0)
 
@@ -476,6 +484,10 @@
 - [KubeKey 集群部署工具 v2.1.0 发布（KubeSphere 社区开源）](https://github.com/kubesphere/kubekey/releases/tag/v2.1.0)
 
     该版本主要新特性：根据 OCI 标准实现了镜像的拉取、上传和归档保存等功能，使其在制作和使用 KubeKey 制品时不依赖额外的容器运行时；支持初始化操作系统命令（kk init os）使用制品进行离线本地源安装操作系统依赖；支持同一个 K8s 集群中同时包含 ARM64 节点和 AMD64 节点等。
+
+- [Kube-OVN CNI 插件 v1.11.0 发布（CNCF 项目）](https://github.com/kubeovn/kube-ovn/releases/tag/v1.11.0)
+
+    该版本主要新特性：Underlay 和 Overlay 子网互通、新增 SR-IOV Network Operator 进行自动化网卡配置、支持自定义 VPC 内部负载均衡、新增 vpc-dns CRD、支持默认 VPC 下的 Load Balancer 类型 Service。
 
 - [Kube-OVN v1.10.0 发布（CNCF 项目）](https://mp.weixin.qq.com/s/e1TW_s3r9__qSgZz6aWmAA)
 
@@ -863,6 +875,10 @@
 
     该版本主要新特性：添加任务运行模板、支持在 pipelinerun 中传播 workspace 以简化规范编写、优化 git 远程解析支持、添加集群远程解析器、合并 podtempalte 和 affinity-assistant 的亲和力参数。
 
+- [Telepresence K8s 本地开发工具 v2.10.0 发布（CNCF 项目）](https://www.getambassador.io/docs/telepresence/latest/release-notes#2.10.0)
+
+    该版本主要新特性：流量管理器支持被团队模式和单用户模式、在 Helm Chart 中添加拉取镜像的 secret、OSS Helm chart 将被推送到 telepresence 专有仓库（原先为 datawire Helm 仓库）。
+
 - [Tetragon：Isovalent 开源基于 eBPF 的安全可观测性和运行时增强平台](https://isovalent.com/blog/post/2022-05-16-tetragon)  
 
     [Tetragon](https://github.com/cilium/tetragon) 提供了基于 eBPF 的完全透明的安全可观测性能力以及实时的运行时增强能力。
@@ -924,6 +940,10 @@
 - [Vitess 云原生数据库系统 v14.0.0 发布（CNCF 项目）](https://github.com/vitessio/vitess/releases/tag/v14.0.0)  
 
     该版本主要新特性：正式支持 online DDL、Gen4 成为默认的 planner、新增集群管理 API 和 UI——VTAdmin（Beta）、新增一个作为 Vitess 组件运行的 Orchestrator 分支——VTOrc（Beta）、支持跨多个 shard 和 keyspace 的聚合查询。
+
+- [Volcano 云原生批量计算项目 v1.7.0 发布（CNCF 项目）](https://github.com/volcano-sh/volcano/releases/tag/v1.7.0)
+
+    该版本主要新特性：增加 Pytorch job 插件、支持为分布式高性能 AI 计算框架 Ray 提供批量调度、丰富调度策略以支持更多长期运行服务的应用场景、支持 Kubernetes v1.25、支持多架构镜像、支持实时查看队列的资源分配信息。
 
 - [Volcano 云原生批量计算项目 v1.6.0 发布（CNCF 项目）](https://github.com/volcano-sh/volcano/releases/tag/v1.6.0)  
 

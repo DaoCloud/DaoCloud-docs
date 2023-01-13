@@ -85,6 +85,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### C
 
+- [Calico CNI Plugin v3.25.0 release (CNCF project)](https://github.com/projectcalico/calico/blob/v3.25.0/calico/_includes/release-notes/v3.25.0- release-notes.md)
+
+    Key new features in this release: Optimization of the eBPF data plane to ensure that Connect Time Load Balancing works in larger, rapidly changing environments; Felix component support for overriding the internal readiness/liveness watchdog timeout; Typha component support for graceful shutdown.
+
 - [Calico CNI plugin v3.24.0 release (CNCF project)](https://github.com/projectcalico/calico/blob/release-v3.24/calico/_includes/release-notes/v3.24.0-release-notes.md)
 
      The main new features of this version: support IPv6 network wireguard encryption, expose IPAM configuration and IPAM block affinity through API, add new fields to operator API, support split IP pool, and transition from pod security policy to pod security standard.
@@ -101,6 +105,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      [cdk8s+](https://github.com/cdk8s-team/cdk8s) allows users to define Kubernetes applications and reusable abstractions using familiar programming languages and object-oriented APIs.
      Compared with the beta version released last year, the new features of the official version include: isolate the pod network and only allow specified communication; improve the configuration mechanism for running multiple pods on the same node; integrate [Datree](https://github. com/datreeio/datree-cdk8s) plugin to check for misconfigurations in Kubernetes using third-party policy enforcement tools.
+
+- [Cert-manager Cloud Native Certificate Management Project v1.11.0 Released (CNCF Project)](https://github.com/cert-manager/cert-manager/releases/tag/v1.11.0)
+
+    Major new features in this release: support for authentication using Azure Workload Identity Federation, support for specifying the trust store used by cert-manager when communicating with ACME servers, support for the gateway API v1beta1, and enabling testing against Kubernetes 1.26.
 
 - [Cert-manager cloud native certificate management project v1.10.0 release (CNCF project)](https://github.com/cert-manager/cert-manager/releases/tag/v1.10.0)
 
@@ -472,6 +480,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [KubeKey cluster deployment tool v2.1.0 released (KubeSphere community open source)](https://github.com/kubesphere/kubekey/releases/tag/v2.1.0)
 
      The main new features of this version: According to the OCI standard, the image pulling, uploading, archiving and saving functions are realized, so that it does not rely on additional container runtimes when making and using KubeKey products; it supports the initialization of the operating system command (kk init os) Use products to install operating system dependencies from offline local sources; support both ARM64 nodes and AMD64 nodes in the same K8s cluster.
+
+- [Kube-OVN CNI Plugin v1.11.0 Released (CNCF Project)](https://github.com/kubeovn/kube-ovn/releases/tag/v1.11.0)
+
+    The main new features of this version: Underlay and Overlay subnet interoperability, new SR-IOV Network Operator for automated NIC configuration, support for custom VPC internal load balancing, new vpc-dns CRD, support for Load Balancer type service under default VPC.
 
 - [Kube-OVN v1.10.0 release (CNCF project)](https://mp.weixin.qq.com/s/e1TW_s3r9__qSgZz6aWmAA)
 
@@ -857,6 +869,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: add task running templates, support for propagating workspace in pipelinerun to simplify specification writing, optimize git remote resolution support, add cluster remote resolvers, merge affinity parameters of podtempalte and affinity-assistant.
 
+- [Telepresence K8s Native Development Tool v2.10.0 Release (CNCF Project)](https://www.getambassador.io/docs/telepresence/latest/release-notes#2.10.0)
+
+    The main new features of this release: Traffic Manager supports team mode and single-user mode, adding the secret of pulling mirrors in Helm Chart, OSS Helm chart will be pushed to telepresence proprietary repository (formerly datawire Helm repository).
+
 - [Tetragon: Isovalent open source eBPF-based security observability and runtime enhancement platform](https://isovalent.com/blog/post/2022-05-16-tetragon)
 
      [Tetragon](https://github.com/cilium/tetragon) provides fully transparent security observability capabilities based on eBPF and real-time runtime enhancement capabilities.
@@ -864,7 +880,7 @@ This page lists activity in cloud native open source projects in alphabetical or
      The embedded runtime execution layer can not only perform access control at the system call level,
      It also detects escalation of privileges, Capabilities, and namespaces, and automatically blocks further execution of affected processes in real time.
 
-- [ThreatMapper Cloud Native Security Observation Platform v1.4.0 released](https://github.com/deepfence/ThreatMapper/releases/tag/v1.4.0)
+- [ThreatMapper Cloud Native Security Observation Platform v1.4.0 release](https://github.com/deepfence/ThreatMapper/releases/tag/v1.4.0)
 
      The main new features of this version: the new function ThreatGraph can combine the network and other runtime environments to determine the priority of threat scanning results, support agentless cloud security situation management for cloud assets, and integrate cloud-native environment malicious program scanning tools [YaraHunter]( https://github.com/deepfence/YaraHunter).
 
@@ -918,6 +934,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Vitess Cloud Native Database System v14.0.0 release (CNCF project)](https://github.com/vitessio/vitess/releases/tag/v14.0.0)
 
      The main new features of this version: officially support online DDL, Gen4 becomes the default planner, add cluster management API and UI - VTAdmin (Beta), add a branch of Orchestrator running as a Vitess component - VTOrc (Beta), support cross Aggregation query of multiple shards and keyspaces.
+
+- [Volcano Cloud Native Batch Computing Project v1.7.0 Released (CNCF Project)](https://github.com/volcano-sh/volcano/releases/tag/v1.7.0)
+
+    The main new features of this version: add Pytorch job plugin, support batch scheduling for Ray, a distributed high-performance AI computing framework, enrich scheduling policies to support more long-running service application scenarios, support Kubernetes v1.25, support multi-architecture mirroring, and support real-time view of resource allocation information of queues.
 
 - [Volcano Cloud Native Batch Computing Project v1.6.0 release (CNCF project)](https://github.com/volcano-sh/volcano/releases/tag/v1.6.0)
 

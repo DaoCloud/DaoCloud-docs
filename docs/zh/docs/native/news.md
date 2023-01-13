@@ -2,7 +2,7 @@
 
 本页按月份列出云原生社区比较热门的新闻、事件、活动等，供大家一站式查阅和检索。
 
-> 我们会定期维护，保证所有链接的有效性、新闻的时效性
+> 我们会定期维护，保证所有链接的有效性、新闻的时效性。
 
 ### 2023-04
 
@@ -19,11 +19,36 @@
 
 ### 2023-01
 
+- [1 月 11 日 2022 年 CNCF 和 Linux 基金会开源项目排名公布](https://www.cncf.io/blog/2023/01/11/a-look-at-the-2022-velocity-of-cncf-linux-foundation-and-top-30-open-source-projects/)
+  
+    在 CNCF 开源项目中，Kubernetes 拥有最多的贡献者，OpenTelemetry 排名第二，而一年前没有入围的 Backstage 今年排名第四。
+    此外，GitOps 项目 Argo、服务网格技术 Envoy、Cilium和 Istio 等也排名前列。
+    [2022 年 CNCF 项目排名](https://docs.google.com/spreadsheets/d/1NifFdE45BlscO6j7vlDspccQ-i9Ksgip6yx2bmhmCCs/edit#gid=976519966)如下图（气泡面积与作者的数量成正比，y 轴为 pr 和 issue 的数量、x 轴是 commit 的数量）：
+
+    ![CNCF](./images/CNCF-Projects.png)
+
+- [1 月 9 日 中国信通院发布 2022 中国 Serverless 用户调查报告](https://mp.weixin.qq.com/s/qpWr5o3GTynHXhexHidx3Q)
+  
+    调查报告分为基本情况、函数即服务应用现状、Serverless 容器服务应用现状、Serverless 应用托管服务应用现状、总结与展望五个部分。
+    其中，八成用户已开始采纳 Serverless，但生产环境采纳率有待进一步提升；
+    Serverless 距离大规模推广仍有一段距离，需要持续优化改造成本、用户习惯、启动性能等方面的问题。
+
+- [1 月 9 日 由信通院牵头、「DaoCloud 道客」深度参与编制的《应用现代化建设指南》正式发布](https://mp.weixin.qq.com/s/rfUZjEx452640_BTRG_nJg)
+  
+    《应用现代化建设指南》系统性梳理了应用现代化的发展历程，给出了应用现代化的清晰定义，拆分了 “五化两指引” 建设方法论，呈现出完整的应用现代化建设路径。
+    「DaoCloud 道客」应用现代化部门参编专家主要贡献了应用现代化建设思路、应用架构现代化、应用现代化建设路径等内容。
+
 - [1 月 9 日云原生产业联盟年会将在线上举行](https://mp.weixin.qq.com/s/cyVz5LC4JJ7ImRuqtOYqGA)
   
     云原生产业联盟（CNIA）是云计算开源产业联的子联盟，由国内顶尖云原生厂商、行业云原生典型用户联合组成。
     会上将发布 3 大报告：《应用现代化建设指南》、《2022 中国云原生安全用户调查报告》、《2022  Serverless 用户调查报告》，
     以及 5 大云原生领域的评测：存储、安全、大数据、混部、中间件。
+
+- [1 月 6 日《混合云产业全景图（2022）》征集正式启动（1月 31 日申报截止）](https://mp.weixin.qq.com/s/VtARdGKHTSn0hkIdIQ_Iag)
+  
+    中国信通院联合混合云产业联盟启动《混合云产业全景图（2022）》的编制工作。
+    《混合云产业全景图（2022）》基于《混合云产业全景图（2021）》进行更新，将根据混合云产业发展情况及技术融合情况，对全景图技术架构进行更新和完善。
+    通过审核的厂商将被纳入全景图并在 2023 年混合云大会上发布。
 
 - [1 月 2 日 CNCF 即将开启 2023 年技术监督委员会（TOC）选举](https://www.cncf.io/blog/2022/12/01/cncf-toc-elections-for-2023/)
   

@@ -19,11 +19,36 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 ### 2023-01
 
+- [January 11 2022 CNCF and Linux Foundation Open Source Project Rankings Announced](https://www.cncf.io/blog/2023/01/11/a-look-at-the-2022-velocity-of-cncf-linux-foundation-and- top-30-open-source-projects/)
+  
+    Among CNCF open source projects, Kubernetes has the most contributors, OpenTelemetry is in second place, and Backstage, which did not make the cut a year ago, is in fourth place this year.
+    In addition, GitOps project Argo, Service Grid technology Envoy, Cilium and Istio also ranked high.
+    The [2022 CNCF Project Rankings](https://docs.google.com/spreadsheets/d/1NifFdE45BlscO6j7vlDspccQ-i9Ksgip6yx2bmhmCCs/edit#gid=976519966) are shown below (bubble area is proportional to the number of authors) and the number of pr and issue on the y-axis, and the number of commits on the x-axis).
+
+    ![CNCF](./images/CNCF-Projects.png)
+
+- [January 9 China ICT Academy released 2022 China Serverless User Survey Report](https://mp.weixin.qq.com/s/qpWr5o3GTynHXhexHidx3Q)
+  
+    The survey report is divided into five parts: basic information, current situation of function-as-a-service application, current situation of Serverless container service application, current situation of Serverless application hosting service application, summary and outlook.
+    Among them, 80% of users have started to adopt Serverless, but the adoption rate of production environment needs to be further improved.
+    Serverless still has a long way to go from large-scale promotion, and needs to be continuously optimized in terms of transformation cost, user habits, and startup performance.
+
+- [On January 9,the "Application Modernization Construction Guide" led by ICT Academy and compiled by "DaoCloud" was officially released](https://mp.weixin.qq.com/s/rfUZjEx452640_BTRG_nJg).
+  
+    The "Application Modernization Construction Guide" systematically composes the development history of application modernization, gives a clear definition of application modernization, breaks down the "Five Modernization and Two Guidelines" construction methodology, and presents a complete application modernization construction path.
+    "DaoCloud's application modernization experts mainly contributed to the application modernization construction ideas, application architecture modernization, and application modernization construction path.
+
 - [January 9 Cloud Native Industry Alliance Annual Conference to be Held Online](https://mp.weixin.qq.com/s/cyVz5LC4JJ7ImRuqtOYqGA)
   
     The Cloud Native Industry Alliance (CNIA) is a sub-consortium of the Cloud Computing Open Source Industry Alliance, which is jointly formed by top cloud native vendors and typical users of cloud native in the industry.
     At the conference, 3 major reports will be released: "Application Modernization Construction Guide", "2022 China Cloud Native Security User Survey Report", "2022 Serverless User Survey Report", and 5 major cloud native field reports.
     The conference will also feature reviews of 5 major cloud-native areas: storage, security, big data, hybrid, and middleware.
+
+- [January 6 "Hybrid Cloud Industry Panorama (2022)" collection officially launched (deadline on January 31)](https://mp.weixin.qq.com/s/VtARdGKHTSn0hkIdIQ_Iag)
+  
+    China Academy of Information and Communications Technology (CAICT) and the Hybrid Cloud Industry Alliance (HCI) launched the preparation of the "Hybrid Cloud Industry Panorama (2022)".
+    The Hybrid Cloud Industry Panorama (2022) is based on the Hybrid Cloud Industry Panorama (2021) and will update and improve the technical architecture of the panorama based on the development of the hybrid cloud industry and technology integration.
+    Vendors that pass the review will be included in the panorama and released at Hybrid Cloud 2023.
 
 - [January 2 CNCF to open 2023 Technical Oversight Committee (TOC) elections](https://www.cncf.io/blog/2022/12/01/cncf-toc-elections-for-2023/)
   

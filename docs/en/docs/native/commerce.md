@@ -45,6 +45,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates include: Added soft-delete functionality to Azure Container Registry to restore accidentally deleted artifacts; allows aborting any operation on an AKS cluster or proxy pool; supports multi-instance GPU (MIG); extends Azure Network Policy Manager (NPM) AKS cluster to Windows server 2022; integrated API Server VNET for AKS private cluster.
 
+- AliCloud Microservice Engine MSE December 2022 Update](https://mp.weixin.qq.com/s/j2si2vqTTcEugAWazpKL2A)
+
+     Updates: zookeeper support for exporting snapshots and transaction logs, cloud native gateway support for HTTP/3, microservice insight support for lossless log collection during up/down and key node information display.
+
 - [AliCloud Service Grid ASM December 2022 Update](https://mp.weixin.qq.com/s/4lODob6kB7xjYDaKACzmhw)
 
      Updates: support for managed on-demand push xDS configuration, support for self-built Istio community version migration to ASM, ASM gateway support for configuring custom authorization services, enable Service Level Objective SLOs.
@@ -300,6 +304,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates include: support for detecting Helm Chart drift, support for automatic collection of Kubernetes host costs, collected data can be imported into third-party audit tools, and visibility into all subcomponents of an environment definition.
 
+- Qualys Container Security v1.21 released](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release- notes.pdf)
+
+     Updates: Support for sensor profiles for regular and CI/CD sensors, support for defining sensor configurations in sensor profiles, allow scanning of all images during automatic registry scans.
+
 - [Rafay Systems Launches Cost Management Service for Kubernetes](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
 
      The cost management service is part of the Rafay Kubernetes operation and maintenance platform, which provides Kubernetes cloud cost optimization for clusters located in public clouds and internal data centers.
@@ -366,6 +374,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### T
 
+- [Tetrate Application Connectivity Platform Tetrate Service Bridge v1.6.0 Released](https://docs.tetrate.io/service-bridge/1.6.x/en-us/release_notes_announcements)
+
+     Updates: Add security rules such as security domain and service security settings; Add east-west gateway to improve service failover between clusters; User interface optimization to support visualization and monitoring of platform and service activities; New troubleshooting tool to troubleshoot without cluster access privileges; Support multiple Istio environments within clusters; Support WASM extensions across gateways and service agents; Skywalking The backend service OAP replaces Zipkin for collecting and querying traces.
+
 - [Traefik Labs releases Traefik Hub 1.0, a cloud-native network platform](https://traefik.io/blog/announcing-the-general-availability-of-traefik-hub-1-0/)
 
      Traefik Hub 1.0 allows users to quickly and securely publish Kubernetes or Docker containers using Traefik or Nginx. Traefik Hub provides the centralized control plane needed to network Kubernetes clusters without deploying container sidecars to run networking software. It supports container networking through secure encrypted tunnels and direct private connections, adds access control to services through JWT or OIDC, realizes scale automation through GitOps, and is equipped with workspaces to promote cross-team collaboration.
@@ -391,6 +403,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Veeam Releases Kasten K10 v5.5, Kubernetes Data Management Platform](https://www.kasten.io/kubernetes/resources/blog/scaling-simplicity-with-kasten-k10-v5.5)
 
      The main new features of this version: the new backup window allows users to choose the time interval for policy operation, supports automatic arrangement of the order of underlying backup work, supports the definition of multiple protection policies to set parameters such as backup frequency and location, provides a visual Helm wizard program, supports IPv6, integrated GitOps pipeline, new storage types, enhanced backup security with OpenSSF and Azure Managed Identity.
+
+- [VWware Tanzu K8s DevOps Platform Tanzu Application Platform v1.4 Released](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.4/tap/ release-notes.html)
+
+     Updates: Support for shared ingress issuer, new namespace configurator for secure and automated namespace configuration, new TAP telemetry report for viewing TAP usage, new IDE extension for Visual Studio - Tanzu Developer Tools for Visual Studio, and support for External Secrets Operator.
 
 - [VMware Tanzu Kubernetes Grid 2.1 released](https://tanzu.vmware.com/content/blog/tanzu-kubernetes-grid-2-1)
 
