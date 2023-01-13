@@ -83,7 +83,7 @@ This page shares some technical articles related to cloud native, and we hope th
     This article describes the different ways of using ServiceAccount Token in different K8s versions.
     The article introduces the different ways to use ServiceAccount Token under different K8s versions, mainly including automatic Secret creation and Kubelet to request API via TokenRequest API.
 
-- Tencent's Million-Level Container Cloud Platform Practice Revealed](https://mp.weixin.qq.com/s/Gusp1ah_qIoMMOg7FhX6Vg)
+- [Tencent's Million-Level Container Cloud Platform Practice Revealed](https://mp.weixin.qq.com/s/Gusp1ah_qIoMMOg7FhX6Vg)
 
     The article introduces the problems encountered in the containerized deployment of online business resources on Tencent's container cloud platform, the challenges of containerization on dynamic route synchronization and the respective solutions.
     And a new self-healing mechanism for container destruction failure is explored to solve the problem of container destruction stage stuck in the existing self-healing mechanism of K8s.
