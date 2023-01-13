@@ -45,6 +45,10 @@
 
     更新内容包括：Azure 容器注册中心新增软删除功能，可恢复误删除的工件；允许中止 AKS 集群或代理池上的任何操作；支持多实例 GPU（MIG）；将 Azure 网络策略管理器（NPM）扩展到 Windows server 2022 的 AKS 集群；集成用于 AKS 私有集群的 API Server VNET。
 
+- [阿里云微服务引擎 MSE 2022 年 12 月更新](https://mp.weixin.qq.com/s/j2si2vqTTcEugAWazpKL2A)
+
+    更新内容：注册配置中心 zookeeper 支持导出快照和事务日志、云原生网关支持 HTTP/3、微服务洞察支持无损上下线过程中的日志采集以及关键节点信息展示。
+
 - [阿里云服务网格 ASM 2022 年 12 月更新](https://mp.weixin.qq.com/s/4lODob6kB7xjYDaKACzmhw)
 
     更新内容：支持托管式的按需推送 xDS 配置、支持自建 Istio 社区版本迁移到 ASM、ASM 网关支持配置自定义授权服务、启用服务等级目标 SLO。
@@ -303,6 +307,10 @@
 
     更新内容包括：支持检测 Helm Chart 漂移、支持自动收集 Kubernetes 主机成本、收集的数据可以导入第三方审计工具、提供对环境定义的所有子组件的可见性。
 
+- [Qualys 容器安全工具 Qualys Container Security v1.21 发布](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release-notes.pdf)
+
+    更新内容：支持为普通和 CI/CD 传感器提供传感器配置文件、支持在传感器配置文件中定义传感器配置、在自动注册表扫描时允许扫描所有镜像。
+
 - [Rafay Systems 发布 Kubernetes 成本管理服务](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
 
     成本管理服务是 Rafay Kubernetes 运维平台的一部分，可为位于公有云和内部数据中心的集群提供 Kubernetes 云成本优化。
@@ -368,6 +376,10 @@
 
 ### T
 
+- [Tetrate 应用连接平台 Tetrate Service Bridge v1.6.0 发布](https://docs.tetrate.io/service-bridge/1.6.x/en-us/release_notes_announcements)
+
+    更新内容：增加安全域、服务安全设置等安全规则；增加东西向网关改善集群间的服务故障转移；用户界面优化，支持可视化和监控平台和服务活动；新增排障工具，无需集群的访问特权即可排障；支持集群内的多 Istio 环境；支持跨网关和服务代理的 WASM 扩展；Skywalking 的后端服务 OAP 代替 Zipkin，用于收集和查询 trace。
+
 - [Traefik Labs 发布云原生网络平台 Traefik Hub 1.0](https://traefik.io/blog/announcing-the-general-availability-of-traefik-hub-1-0/)
 
     Traefik Hub 1.0 允许用户可以使用 Traefik 或 Nginx 快速、安全地发布 Kubernetes 或 Docker 容器。Traefik Hub 提供了为 Kubernetes 集群联网所需的集中控制平面，而无需部署容器 sidecar 来运行网络软件。其支持通过安全加密隧道和直接私有连接进行容器联网，通过 JWT 或 OIDC 为服务添加访问控制，通过 GitOps 实现规模化的自动化等，并配有工作空间促进跨团队协作等。
@@ -395,6 +407,10 @@
 - [Veeam 发布 Kubernetes 数据管理平台 Kasten K10 v5.5](https://www.kasten.io/kubernetes/resources/blog/scaling-simplicity-with-kasten-k10-v5.5)
 
     该版本主要新特性：新增备份窗口允许用户选择策略运行的时间间隔、支持自动安排底层备份工作的顺序、支持定义多个保护策略以设置备份频率和位置等参数、提供可视化 Helm 向导程序、支持 IPv6、集成 GitOps 流水线、新增存储类型、通过 OpenSSF 和 Azure Managed Identity 增强备份安全性。
+
+- [VMware Tanzu K8s DevOps 平台 Tanzu Application Platform v1.4 发布](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.4/tap/release-notes.html)
+
+    更新内容：支持 shared ingress issuer、新增命名空间配置器实现安全自动化的命名空间配置、新增 TAP 遥测报告以供查看 TAP 的使用情况、新增 Visual Studio 的 IDE 扩展 —— Tanzu Developer Tools for Visual Studio、支持 External Secrets Operator。
 
 - [VMware Tanzu Kubernetes Grid 2.1 发布](https://tanzu.vmware.com/content/blog/tanzu-kubernetes-grid-2-1)
 

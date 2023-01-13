@@ -4,6 +4,16 @@ This page shares some technical articles related to cloud native, and we hope th
 
 ### Troubleshooting
 
+- [How can nettrace quickly perform network troubleshooting in cloud-native scenarios?](https://mp.weixin.qq.com/s/0n7kbOhHr6m5JClTrSIysA)
+
+    [nettrace](https://github.com/OpenCloudOS/nettrace) is an eBPF-based network toolset that integrates network message tracing (fault location), network troubleshooting, and network anomaly monitoring.
+    It provides a more efficient and easy-to-use method to solve network problems in complex scenarios.
+
+- Istio Operations Practice: How to Avoid 503 UC Errors](https://mp.weixin.qq.com/s/4YIYPIszyKyWVMKXnXtHbg)
+
+    503 UC is a common problem encountered during Istio/Envoy usage.
+    The article analyzes the principle of 503 UC caused by TCP server keepalive timeout and how to circumvent it.
+
 - [K8s CNI Cilium Network Troubleshooting Guide](https://mp.weixin.qq.com/s/jBuNPOKbL-keXmzq1gq-mQ)
 
      The article describes a problem the author encountered when upgrading from kubenet to cilium and the troubleshooting process. The problem was that pods on nodes in the kubenet network could not access pods on nodes in the cilium network. by grabbing packets and testing, and analyzing information about cilium, we found the problem: cilium does not manage all k8s nodes, and the remaining nodes are handled as external servers.
@@ -62,6 +72,21 @@ This page shares some technical articles related to cloud native, and we hope th
      This article was inspired by the fact that Grafana does not display the capacity indicators of storage volumes created with storage drivers. It shows the troubleshooting ideas and methods for this problem, and then outlines the implementation process of Kubelet for collecting storage volume indicators.
 
 ### Best Practices
+
+- [Open Source Strategy Development and Implementation for Medium and Large Technology Enterprises](https://mp.weixin.qq.com/s/9Z4zFPU0uHk6RhrpUDD-tw)
+
+    At present, many enterprises still have some difficulties about what open source is, how to use open source, how to participate in open source, how enterprises make decisions in open source, how to conduct open source governance, and how to use open source to strengthen competitiveness.
+    In this regard, the article introduces what is an enterprise open source strategy; why enterprises need an open source strategy; what an enterprise open source strategy contains, and the practical experience of developing and implementing an enterprise open source strategy.
+
+- Use of ServiceAccount Token in Different K8s Versions](https://mp.weixin.qq.com/s/F0V8nyo3LtATFmS7pHuxXw)
+
+    This article describes the different ways of using ServiceAccount Token in different K8s versions.
+    The article introduces the different ways to use ServiceAccount Token under different K8s versions, mainly including automatic Secret creation and Kubelet to request API via TokenRequest API.
+
+- Tencent's Million-Level Container Cloud Platform Practice Revealed](https://mp.weixin.qq.com/s/Gusp1ah_qIoMMOg7FhX6Vg)
+
+    The article introduces the problems encountered in the containerized deployment of online business resources on Tencent's container cloud platform, the challenges of containerization on dynamic route synchronization and the respective solutions.
+    And a new self-healing mechanism for container destruction failure is explored to solve the problem of container destruction stage stuck in the existing self-healing mechanism of K8s.
 
 - [mTLS Best Practices for Kubernetes Zero Trust Security](https://mp.weixin.qq.com/s/QYeP6WZKG0gjJ2u6k1fXxQ)
 
