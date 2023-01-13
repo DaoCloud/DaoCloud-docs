@@ -30,7 +30,7 @@ offline-community-v0.3.27.tar: OK
 
 ## Install
 
-After successfully verifying the offline package, unpack the tarball:
+After successfully verifying the offline package, unpack the tar package:
 
 ```sh
 tar -zxvf offline-community-v0.3.28.tar

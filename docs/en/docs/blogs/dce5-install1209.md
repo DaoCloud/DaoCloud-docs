@@ -1920,7 +1920,7 @@ Of course, you can also choose to install these dependencies manually:
 
 Note that the installation of dce5-installer needs to be performed on the Master node. It is recommended to [download this installer directly](https://docs.daocloud.io/download/dce5/#_1).
 
-After downloading and unpacking the tarball, assuming `VERSION` is v0.3.28:
+After downloading and unpacking the tar package, assuming `VERSION` is v0.3.28:
 
 ```bash linenums="1"
 export VERSION=v0.3.28
