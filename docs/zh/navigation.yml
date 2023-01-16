@@ -437,7 +437,7 @@ nav:
               - 工作负载使用 IP 池: network/modules/spiderpool/usage.md
               - 配置参考: network/modules/spiderpool/config.md
               - 常用命令: network/modules/spiderpool/command.md
-              - Release Notes: network/modules/spiderpool/release-notes.md
+              - Release Notes: network/modules/spiderpool/releasenotes.md
       - 中间件数据服务:
           - 数据服务介绍: middleware/midware.md
           - 数据服务版本适配: middleware/adaptation-k8s.md
