@@ -1670,7 +1670,7 @@ chmod 700 get_helm.sh
 
 ??? note "点击查看 metrics-server.yaml 内容"
 
-    ```yaml
+    ```yaml title="metrics-server.yaml"
     apiVersion: v1
     kind: ServiceAccount
     metadata:
@@ -1934,14 +1934,17 @@ chmod +x dce5-installer
 
 将以下配置文件内容保存为 `clusterConfig.yaml`，如果使用 `NodePort` 的方式安装则不需要指定该配置文件。
 
-```yaml linenums="1"
+```yaml title="clusterConfig.yaml"
 apiVersion: provision.daocloud.io/v1alpha1
 kind: ClusterConfig
 spec:
  loadBalancer: metallb
- istioGatewayVip: 10.6.229.10/32  # 这是 Istio gateway 的 VIP，也是 DCE 5.0 控制台的浏览器访问 IP
- insightVip: 10.6.229.11/32  # 这是全局服务集群的 Insight-Server 采集子集群监控指标的网络路径用的 VIP
+ istioGatewayVip: 10.6.229.10/32  # (1)
+ insightVip: 10.6.229.11/32  # (2)
 ```
+
+1. 这是 Istio gateway 的 VIP，也是 DCE 5.0 控制台的浏览器访问 IP
+2. 这是全局服务集群的 Insight-Server 采集子集群监控指标的网络路径用的 VIP
 
 > 如果使用配置文件，注意需要事先安装 `MetaLB`，这一部分需要自行完成。
 
@@ -2000,7 +2003,7 @@ spec:
 1. 使用 vim 命令编辑并保存
 
     ```bash
-    $ vim ${GHIPPO_VALUES_BAK}
+    vim ${GHIPPO_VALUES_BAK}
     ```
 
     只需修改一行：
@@ -2010,8 +2013,10 @@ spec:
     ...
     global:
       ...
-      reverseProxy: ${DCE_PROXY} # 只需要修改这一行
+      reverseProxy: ${DCE_PROXY} # (1)
     ```
+
+    1. 只需要修改这一行
 
     注意这里需要把 `${DCE_PROXY}` 替换为实际访问地址；需要配置完整的路径，包含 https 或 http、IP 或域名以及端口；如果是默认 80/443，则可以省略。
 
