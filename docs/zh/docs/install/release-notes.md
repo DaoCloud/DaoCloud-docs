@@ -40,7 +40,7 @@
 #### 已知问题
 
 - 默认安装模式下暂不支持未分区的 SSD 盘，如果要支持，需要手工干涉。
-- 纯离线环境，默认没有应用商店。请手动将火种节点的 chart-museum 接入到 global 集群，仓库地址：http://{火种 IP}:8081, 用户名 rootuser，密码 rootpass123
+- 纯离线环境，默认没有应用商店。请手动将火种节点的 chart-museum 接入到 global 集群，仓库地址：`http://{火种 IP}:8081`, 用户名 rootuser，密码 rootpass123
 - metallb 社区有已知问题，在主网卡有 dadfailed 的 IPV6 回环地址，metallb 无法工作，安装之前需要确保主网卡没有 dadfailed
 - insight-api-server 启动中如果机器太卡，在 Liveness 健康检查周期内，无法完成数据库的初始化（migrate）动作，导致需要手动介入
 - clusterConfig 配置文件中里的 iso 路径必须是绝对路径，不支持相对路径
