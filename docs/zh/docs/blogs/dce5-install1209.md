@@ -183,8 +183,10 @@ last_updated:
     ```bash linenums="1"
     echo K8sVersion=1.24.8
     sudo yum install -y kubelet-1.24.8-$K8sVersion kubeadm-1.24.8-$K8sVersion
-    sudo yum install -y kubectl-1.24.8-$K8sVersion  # 可以仅在 Master 节点安装
+    sudo yum install -y kubectl-1.24.8-$K8sVersion  # (1)
     ```
+
+    1. 可以仅在 Master 节点安装
 
 1. 启动 `kubelet`系统服务
 
