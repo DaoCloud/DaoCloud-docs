@@ -24,7 +24,7 @@
 
 1. 进入[镜像创建工作负载](../Workloads/CreateDeploymentByImage.md)页面。
 
-    ![创建deployment](../../images/secret05.png)
+    ![创建 deployment](../../images/secret05.png)
 
 2. 在`容器配置`选择`环境变量`配置，点击`添加环境变量`按钮。
 
@@ -34,9 +34,9 @@
 
     ![密钥导入](../../images/secret07.png)
 
-    - 当环境变量类型选择为`密钥导入`时，依次输入`变量名`、`前缀`名称、`密钥`的名称。
+    - 当环境变量类型选择为`密钥导入`时，依次输入`变量名`、`前缀`、`密钥`的名称。
 
-    - 当环境变量类型选择为`密钥键值导入`时，依次输入`变量名`、`密钥`名称、`键`的名称。
+    - 当环境变量类型选择为`密钥键值导入`时，依次输入`变量名`、`密钥`、`键`的名称。
 
 ### 命令行操作
 
@@ -57,16 +57,18 @@ spec:
           secretKeyRef:
             name: mysecret
             key: username
-            optional: false # 此值为默认值；意味着 "mysecret"
-                            # 必须存在且包含名为 "username" 的主键
+            optional: false # (1)
       - name: SECRET_PASSWORD
         valueFrom:
           secretKeyRef:
             name: mysecret
             key: password
-            optional: false # 此值为默认值；意味着 "mysecret"
-                            # 必须存在且包含名为 "password" 的主键
+            optional: false # (2)
+
 ```
+
+1. 此值为默认值；意味着 "mysecret"，必须存在且包含名为 "username" 的主键
+2. 此值为默认值；意味着 "mysecret"，必须存在且包含名为 "password" 的主键
 
 ## 使用密钥作为 Pod 的数据卷
 
@@ -105,8 +107,10 @@ spec:
   - name: foo
     secret:
       secretName: mysecret
-      optional: false # 默认设置，意味着 "mysecret" 必须已经存在
+      optional: false # (1)
 ```
+
+1. 默认设置，意味着 "mysecret" 必须已经存在
 
 如果 Pod 中包含多个容器，则每个容器需要自己的 `volumeMounts` 块，不过针对每个 Secret 而言，只需要一份 `.spec.volumes` 设置。
 
