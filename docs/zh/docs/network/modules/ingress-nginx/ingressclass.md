@@ -1,21 +1,24 @@
 # IngressClass
 
-IngressClass 代表 Ingress 的类，被 Ingress 的 spec 引用。
-`ingressclass.kubernetes.io/is-default-class` 注解可以用来标明一个 IngressClass 作为默认类。
-当某个 IngressClass 资源将此注解设置为 true 时，没有指定 class 的新 Ingress 资源将被分配到此默认类。
+IngressClass 代表 Ingress 实例 的类，当创建 Ingress 规则时，可在 Ingress 的 spec 中引用。主要的适用场景如下：
 
-## 场景
+**适用场景**
 
 * 同一个集群中，有内部 Ingress 和外部 Ingress 需求
-* 同一个集群同一个租户中，不同团队使用不同 Ingress 实例
-* 同一个集群，不同应用对 Ingress 实例资源配比要求
+* 同一个集群同一个租户中，不同团队部署不同的应用，使用不同 Ingress 实例
+* 同一个集群，同一团队不同应用对 Ingress 实例资源配比要求
     * 例如某些业务需要独享 4C 4G 的数据面网关资源
 
-## 使用
+## 前提条件
 
-### Ingress 指定 ingressClassName 示例
+- 已经完成 [Ingress nginx 实例部署，并设置了 IngressClassName ](install.md)
+- 已获取对应的 IngressClassName 
 
-当 Ingress 需要指定 ingressClassName 示例时，需要通过 `ingressClassName` 指定。
+## 使用操作
+
+### 通过 YAML 创建 Ingress 并指定 IngressClass
+
+通过 YAML 创建 Ingress 时，如需要指定 ingressClass 时，需要通过 `ingressClassName` 指定。
 注解 `kubernetes.io/ingress.class` 已经废弃。
 
 ```yaml
@@ -37,9 +40,16 @@ spec:
               number: 80
 ```
 
+### 通过界面创建 Ingress 并指定 IngressClass
+
+如通过[图形化创建路由（Ingress ）时](/../../../kpanda/07UserGuide/ServicesandRoutes/CreatingIngress.md)，可直接在界面输入对应的 `IngressClassName`。
+
 ### 默认 IngressClass
 
-每个集群都可以有一个默认的 IngressClass。存在默认 IngressClass 时，创建 Ingress 时可以不指定 `ingressClassName` 字段。
+每个集群都可以有一个默认的 IngressClass。存在默认 IngressClass 时（ [创建 Ingress 实例时，开启 DefaultIngressClass](install.md) ），创建 Ingress 时可以不指定 `ingressClassName` 字段。
+
+`ingressclass.kubernetes.io/is-default-class` 注解可以用来标明一个 IngressClass 作为默认类。一个集群最多只能设置一个。
+当某个 `IngressClass` 资源将此注解设置为 `true` 时，没有指定 class 的新 Ingress 资源将被分配到此默认类。
 
 ## QA
 
