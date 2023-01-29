@@ -60,7 +60,7 @@ spec:
 
 安装时开启并指定 Namespace ，则创建的 Ingress 实例将指定给 命名空间使用，关闭时为全集群共享。
 
-![scope01](/Users/daiqiuping/gitlab&github/DaoCloud-docs/docs/zh/docs/network/images/scope01.jpg)
+![scope01](../../images/scope01.jpg)
 
 对应的 `valule.yaml` 中的配置信息
 
