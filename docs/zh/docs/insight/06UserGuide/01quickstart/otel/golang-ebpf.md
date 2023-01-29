@@ -98,7 +98,7 @@ EOF
                   value: "8080"
                 - name: PROM_PORT
                   value: "8801"
-              image: docker.l5d.io/buoyantio/emojivoto-voting-svc:v11 # 假设这是您的 Golang 应用程序
+              image: docker.l5d.io/buoyantio/emojivoto-voting-svc:v11 # (1)
               name: voting-svc
               command:
                 - /usr/local/bin/emojivoto-voting-svc
@@ -114,7 +114,7 @@ EOF
               image: docker.m.daocloud.io/keyval/otel-go-agent:v0.6.0
               env:
                 - name: OTEL_TARGET_EXE
-                  value: /usr/local/bin/emojivoto-voting-svc # 注意与上面 /usr/local/bin/emojivoto-voting-svc 保持一致
+                  value: /usr/local/bin/emojivoto-voting-svc # (2)
               securityContext:
                 runAsUser: 0
                 capabilities:
@@ -129,6 +129,9 @@ EOF
               hostPath:
                 path: /sys/kernel/debug
     ```
+
+    1. 假设这是您的 Golang 应用程序
+    2. 注意与上面 `/usr/local/bin/emojivoto-voting-svc` 保持一致
 
 最终生成的 Yaml 内容如下：
 

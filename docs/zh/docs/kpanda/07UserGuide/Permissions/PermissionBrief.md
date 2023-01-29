@@ -94,122 +94,122 @@ rules:
 
 2. 管理、编辑、查看 命名空间下的所有工作负载
 
-该集群角色的 YAML 示例如下：
+??? note "点击查看集群角色的 YAML 示例"
 
-```yaml
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  annotations:
-    kpanda.io/creator: system
-  creationTimestamp: "2022-06-16T09:42:50Z"
-  labels:
-    iam.kpanda.io/role-template: "true"
-  name: role-template-ns-edit
-  resourceVersion: "15175"
-  uid: ca9e690e-96c0-4978-8915-6e4c00c748fe
-rules:
-- apiGroups:
-  - ""
-  resources:
-  - configmaps
-  - endpoints
-  - persistentvolumeclaims
-  - persistentvolumeclaims/status
-  - pods
-  - replicationcontrollers
-  - replicationcontrollers/scale
-  - serviceaccounts
-  - services
-  - services/status
-  verbs:
-  - '*'
-- apiGroups:
-  - ""
-  resources:
-  - bindings
-  - events
-  - limitranges
-  - namespaces/status
-  - pods/log
-  - pods/status
-  - replicationcontrollers/status
-  - resourcequotas
-  - resourcequotas/status
-  verbs:
-  - '*'
-- apiGroups:
-  - ""
-  resources:
-  - namespaces
-  verbs:
-  - '*'
-- apiGroups:
-  - apps
-  resources:
-  - controllerrevisions
-  - daemonsets
-  - daemonsets/status
-  - deployments
-  - deployments/scale
-  - deployments/status
-  - replicasets
-  - replicasets/scale
-  - replicasets/status
-  - statefulsets
-  - statefulsets/scale
-  - statefulsets/status
-  verbs:
-  - '*'
-- apiGroups:
-  - autoscaling
-  resources:
-  - horizontalpodautoscalers
-  - horizontalpodautoscalers/status
-  verbs:
-  - '*'
-- apiGroups:
-  - batch
-  resources:
-  - cronjobs
-  - cronjobs/status
-  - jobs
-  - jobs/status
-  verbs:
-  - '*'
-- apiGroups:
-  - extensions
-  resources:
-  - daemonsets
-  - daemonsets/status
-  - deployments
-  - deployments/scale
-  - deployments/status
-  - ingresses
-  - ingresses/status
-  - networkpolicies
-  - replicasets
-  - replicasets/scale
-  - replicasets/status
-  - replicationcontrollers/scale
-  verbs:
-  - '*'
-- apiGroups:
-  - policy
-  resources:
-  - poddisruptionbudgets
-  - poddisruptionbudgets/status
-  verbs:
-  - '*'
-- apiGroups:
-  - networking.k8s.io
-  resources:
-  - ingresses
-  - ingresses/status
-  - networkpolicies
-  verbs:
-  - '*'      
-```
+    ```yaml
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRole
+    metadata:
+      annotations:
+        kpanda.io/creator: system
+      creationTimestamp: "2022-06-16T09:42:50Z"
+      labels:
+        iam.kpanda.io/role-template: "true"
+      name: role-template-ns-edit
+      resourceVersion: "15175"
+      uid: ca9e690e-96c0-4978-8915-6e4c00c748fe
+    rules:
+    - apiGroups:
+      - ""
+      resources:
+      - configmaps
+      - endpoints
+      - persistentvolumeclaims
+      - persistentvolumeclaims/status
+      - pods
+      - replicationcontrollers
+      - replicationcontrollers/scale
+      - serviceaccounts
+      - services
+      - services/status
+      verbs:
+      - '*'
+    - apiGroups:
+      - ""
+      resources:
+      - bindings
+      - events
+      - limitranges
+      - namespaces/status
+      - pods/log
+      - pods/status
+      - replicationcontrollers/status
+      - resourcequotas
+      - resourcequotas/status
+      verbs:
+      - '*'
+    - apiGroups:
+      - ""
+      resources:
+      - namespaces
+      verbs:
+      - '*'
+    - apiGroups:
+      - apps
+      resources:
+      - controllerrevisions
+      - daemonsets
+      - daemonsets/status
+      - deployments
+      - deployments/scale
+      - deployments/status
+      - replicasets
+      - replicasets/scale
+      - replicasets/status
+      - statefulsets
+      - statefulsets/scale
+      - statefulsets/status
+      verbs:
+      - '*'
+    - apiGroups:
+      - autoscaling
+      resources:
+      - horizontalpodautoscalers
+      - horizontalpodautoscalers/status
+      verbs:
+      - '*'
+    - apiGroups:
+      - batch
+      resources:
+      - cronjobs
+      - cronjobs/status
+      - jobs
+      - jobs/status
+      verbs:
+      - '*'
+    - apiGroups:
+      - extensions
+      resources:
+      - daemonsets
+      - daemonsets/status
+      - deployments
+      - deployments/scale
+      - deployments/status
+      - ingresses
+      - ingresses/status
+      - networkpolicies
+      - replicasets
+      - replicasets/scale
+      - replicasets/status
+      - replicationcontrollers/scale
+      verbs:
+      - '*'
+    - apiGroups:
+      - policy
+      resources:
+      - poddisruptionbudgets
+      - poddisruptionbudgets/status
+      verbs:
+      - '*'
+    - apiGroups:
+      - networking.k8s.io
+      resources:
+      - ingresses
+      - ingresses/status
+      - networkpolicies
+      verbs:
+      - '*'      
+    ```
 
 ### `NS View`
 
@@ -219,140 +219,140 @@ rules:
 
 2. 可查看对应命名空间下的所有工作负载，及自定义资源
 
-该集群角色的 YAML 示例如下：
+??? note "点击查看集群角色的 YAML 示例"
 
-```yaml
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  annotations:
-    kpanda.io/creator: system
-  creationTimestamp: "2022-06-16T09:42:50Z"
-  labels:
-    iam.kpanda.io/role-template: "true"
-  name: role-template-ns-view
-  resourceVersion: "15183"
-  uid: 853888fd-6ee8-42ac-b91e-63923918baf8
-rules:
-- apiGroups:
-  - ""
-  resources:
-  - configmaps
-  - endpoints
-  - persistentvolumeclaims
-  - persistentvolumeclaims/status
-  - pods
-  - replicationcontrollers
-  - replicationcontrollers/scale
-  - serviceaccounts
-  - services
-  - services/status
-  verbs:
-  - get
-  - list
-  - watch
-- apiGroups:
-  - ""
-  resources:
-  - bindings
-  - events
-  - limitranges
-  - namespaces/status
-  - pods/log
-  - pods/status
-  - replicationcontrollers/status
-  - resourcequotas
-  - resourcequotas/status
-  verbs:
-  - get
-  - list
-  - watch
-- apiGroups:
-  - ""
-  resources:
-  - namespaces
-  verbs:
-  - get
-  - list
-  - watch
-- apiGroups:
-  - apps
-  resources:
-  - controllerrevisions
-  - daemonsets
-  - daemonsets/status
-  - deployments
-  - deployments/scale
-  - deployments/status
-  - replicasets
-  - replicasets/scale
-  - replicasets/status
-  - statefulsets
-  - statefulsets/scale
-  - statefulsets/status
-  verbs:
-  - get
-  - list
-  - watch
-- apiGroups:
-  - autoscaling
-  resources:
-  - horizontalpodautoscalers
-  - horizontalpodautoscalers/status
-  verbs:
-  - get
-  - list
-  - watch
-- apiGroups:
-  - batch
-  resources:
-  - cronjobs
-  - cronjobs/status
-  - jobs
-  - jobs/status
-  verbs:
-  - get
-  - list
-  - watch
-- apiGroups:
-  - extensions
-  resources:
-  - daemonsets
-  - daemonsets/status
-  - deployments
-  - deployments/scale
-  - deployments/status
-  - ingresses
-  - ingresses/status
-  - networkpolicies
-  - replicasets
-  - replicasets/scale
-  - replicasets/status
-  - replicationcontrollers/scale
-  verbs:
-  - get
-  - list
-  - watch
-- apiGroups:
-  - policy
-  resources:
-  - poddisruptionbudgets
-  - poddisruptionbudgets/status
-  verbs:
-  - get
-  - list
-  - watch
-- apiGroups:
-  - networking.k8s.io
-  resources:
-  - ingresses
-  - ingresses/status
-  - networkpolicies
-  verbs:
-  - get
-  - list
-  - watch 
-```
+    ```yaml
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRole
+    metadata:
+      annotations:
+        kpanda.io/creator: system
+      creationTimestamp: "2022-06-16T09:42:50Z"
+      labels:
+        iam.kpanda.io/role-template: "true"
+      name: role-template-ns-view
+      resourceVersion: "15183"
+      uid: 853888fd-6ee8-42ac-b91e-63923918baf8
+    rules:
+    - apiGroups:
+      - ""
+      resources:
+      - configmaps
+      - endpoints
+      - persistentvolumeclaims
+      - persistentvolumeclaims/status
+      - pods
+      - replicationcontrollers
+      - replicationcontrollers/scale
+      - serviceaccounts
+      - services
+      - services/status
+      verbs:
+      - get
+      - list
+      - watch
+    - apiGroups:
+      - ""
+      resources:
+      - bindings
+      - events
+      - limitranges
+      - namespaces/status
+      - pods/log
+      - pods/status
+      - replicationcontrollers/status
+      - resourcequotas
+      - resourcequotas/status
+      verbs:
+      - get
+      - list
+      - watch
+    - apiGroups:
+      - ""
+      resources:
+      - namespaces
+      verbs:
+      - get
+      - list
+      - watch
+    - apiGroups:
+      - apps
+      resources:
+      - controllerrevisions
+      - daemonsets
+      - daemonsets/status
+      - deployments
+      - deployments/scale
+      - deployments/status
+      - replicasets
+      - replicasets/scale
+      - replicasets/status
+      - statefulsets
+      - statefulsets/scale
+      - statefulsets/status
+      verbs:
+      - get
+      - list
+      - watch
+    - apiGroups:
+      - autoscaling
+      resources:
+      - horizontalpodautoscalers
+      - horizontalpodautoscalers/status
+      verbs:
+      - get
+      - list
+      - watch
+    - apiGroups:
+      - batch
+      resources:
+      - cronjobs
+      - cronjobs/status
+      - jobs
+      - jobs/status
+      verbs:
+      - get
+      - list
+      - watch
+    - apiGroups:
+      - extensions
+      resources:
+      - daemonsets
+      - daemonsets/status
+      - deployments
+      - deployments/scale
+      - deployments/status
+      - ingresses
+      - ingresses/status
+      - networkpolicies
+      - replicasets
+      - replicasets/scale
+      - replicasets/status
+      - replicationcontrollers/scale
+      verbs:
+      - get
+      - list
+      - watch
+    - apiGroups:
+      - policy
+      resources:
+      - poddisruptionbudgets
+      - poddisruptionbudgets/status
+      verbs:
+      - get
+      - list
+      - watch
+    - apiGroups:
+      - networking.k8s.io
+      resources:
+      - ingresses
+      - ingresses/status
+      - networkpolicies
+      verbs:
+      - get
+      - list
+      - watch 
+    ```
 
 ## 权限 FAQ
 

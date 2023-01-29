@@ -7,7 +7,7 @@
 - 当前操作用户具有 [`Cluster Admin`](../Permissions/PermissionBrief.md) 角色授权 。
 - 只有通过容器管理平台[创建的集群](../Clusters/CreateCluster.md)才支持节点扩缩容，从外部接入的集群不支持此操作。
 - 卸载节点之前，需要[暂停调度该节点](schedule.md)，并且将该节点上的应用都驱逐至其他节点。
-- 驱逐方式：登录控制器节点，通过 kubectl drain 命令驱逐节点上所有 Pod 。安全驱逐的方式可以允许容器组里面的容器优雅地中止。
+- 驱逐方式：登录控制器节点，通过 kubectl drain 命令驱逐节点上所有 Pod。安全驱逐的方式可以允许容器组里面的容器优雅地中止。
 
 ## 注意事项
 
