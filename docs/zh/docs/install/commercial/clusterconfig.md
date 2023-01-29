@@ -12,7 +12,7 @@ hide:
 
 以下是一个 ClusterConfig 文件示例（假设火种节点 IP 是 10.6.127.220）。
 
-```yaml
+```yaml title="clusterConfig.yaml"
 apiVersion: provision.daocloud.io/v1alpha2
 kind: ClusterConfig
 metadata:
@@ -20,19 +20,15 @@ metadata:
 spec:
   clusterName: my-cluster
   loadBalancer:
-    type: metallb # NodePort(default), metallb, cloudLB (Cloud Controller)
-    istioGatewayVip: 10.6.127.253/32 ## 当 loadBalancer.type 是 metallb 时必填.
-                                     ## 为 DCE 提供 UI 和 OpenAPI 访问权限
-    insightVip: 10.6.127.254/32      ## 别丢弃/32
-                                     ## 当 loadBalancer 是 metallb 时必填
-                                     ## 用作 GLobal 集群的 Insight 数据采集入口
-                                     ## 子集群的 insight-agent 可以向这个 VIP 报告数据
-  # privateKeyPath: /root/.ssh/id_rsa_sample  # 如果用免密方式 SSH 接入节点，需指定密钥文件地址
+    type: metallb # (1)
+    istioGatewayVip: 10.6.127.253/32 # (2)
+    insightVip: 10.6.127.254/32      # (3) 
+  # privateKeyPath: /root/.ssh/id_rsa_sample  # (4)
   masterNodes:
-    - nodeName: "g-master1" ## nodeName 将覆盖 hostName，应符合 RFC1123 标准
+    - nodeName: "g-master1" # (5)
       ip: 10.6.127.230
-      ansibleUser: "root"       # SSH 用户名
-      ansiblePass: "dangerous"  # SSH 密码
+      ansibleUser: "root"       # (6)
+      ansiblePass: "dangerous"  # (7)
     - nodeName: "g-master2"
       ip: 10.6.127.231
       ansibleUser: "root"
@@ -50,33 +46,28 @@ spec:
       ip: 10.6.127.234
       ansibleUser: "root"
       ansiblePass: "dangerous"
-      #nodeTaints: # 在 7 节点及以上模式，为了保证集群稳定，ES 将使用专享主机。则至少 3 个 worker 节点需要有污点
+      # nodeTaints: # (8)
       #  - "node.daocloud.io/es-only=true:NoSchedule"
-  ntpServer: # 时间同步服务器
+  ntpServer: # (9)
     - "172.30.120.197 iburst"
     - 0.pool.ntp.org
     - ntp1.aliyun.com
     - ntp.ntsc.ac.cn
   registry:
-    type: built-in # options: built-in, external, online
-    builtinRegistryDomainName: built-in-registry.daocloud.io # just to replace all /etc/hosts. if blank, all images use bootstrap node IP as registry
-  imageConfig: # kubean 镜像仓库和 MinIO 仓库的 配置
-    imageRepository: built-in-registry.daocloud.io # kubean 镜像仓库
-    binaryRepository: http://10.6.127.220:9000/kubean # kubean 二进制来源的 minio 仓库
-  repoConfig: # kubean rpm/deb 源配置
-    # `centos` 表示 CentOS, RedHat, AlmaLinux 或 Fedora
-    # `debian` 表示 Debian
-    # `ubuntu` 表示 Ubuntu
+    type: built-in # (10)
+    builtinRegistryDomainName: built-in-registry.daocloud.io # (11)
+  imageConfig: # (12)
+    imageRepository: built-in-registry.daocloud.io # (13)
+    binaryRepository: http://10.6.127.220:9000/kubean # (14)
+  repoConfig: # (15)
     repoType: centos
-    # 在离线模式下，isoPath 不能为空
-    isoPath: "/root/CentOS-7-x86_64-DVD-2207-02.iso"
+    isoPath: "/root/CentOS-7-x86_64-DVD-2207-02.iso" # (16)
     dockerRepo: "http://10.6.127.220:9000/kubean/centos/$releasever/os/$basearch"
     extraRepos:
       - http://10.6.127.220:9000/kubean/centos-iso/\$releasever/os/\$basearch
       - http://10.6.127.220:9000/kubean/centos/\$releasever/os/\$basearch
-  # k8sVersion 字段仅适用于在线模式，离线模式时无需设置
-  k8sVersion: v1.24.7
-  auditConfig: # 是否开启 k8s apisever 的审计日志及相关配置
+  k8sVersion: v1.24.7 # (17)
+  auditConfig: # (18)
     logPath: /var/log/audit/kube-apiserver-audit.log
     logHostPath: /var/log/kubernetes/audit
     # policyFile: /etc/kubernetes/audit-policy/apiserver-audit-policy.yaml
@@ -94,8 +85,7 @@ spec:
     serviceCIDR: 100.64.0.0/13
   cri:
     criProvider: containerd
-    # criVersion 字段仅适用于在线模式，离线模式时无需设置
-    # criVersion: 1.6.8
+    # criVersion: 1.6.8 # (19)
   addons:
     ingress:
       version: 1.2.3
@@ -103,6 +93,26 @@ spec:
       type: CoreDNS
       version: v1.8.4
 ```
+
+1. NodePort(default), metallb, cloudLB (Cloud Controller)
+2. 当 loadBalancer.type 是 metallb 时必填, 为 DCE 提供 UI 和 OpenAPI 访问权限
+3. 别丢弃/32, 当 loadBalancer 是 metallb 时必填, 用作 GLobal 集群的 Insight 数据采集入口, 子集群的 insight-agent 可以向这个 VIP 报告数据
+4. 如果用免密方式 SSH 接入节点，需指定密钥文件地址
+5. nodeName 将覆盖 hostName，应符合 RFC1123 标准
+6. SSH 用户名
+7. SSH 密码
+8. 在 7 节点及以上模式，为了保证集群稳定，ES 将使用专享主机。则至少 3 个 worker 节点需要有污点
+9. 时间同步服务器
+10. 几个选项：built-in, external, online
+11. 只需替换所有 /etc/hosts。如果空白，所有镜像将使用火种节点 IP 作为镜像仓库
+12. kubean 镜像仓库和 MinIO 仓库的 配置
+13. kubean 镜像仓库
+14. kubean 二进制来源的 minio 仓库
+15. kubean rpm/deb 源配置, `centos` 表示 CentOS、RedHat、AlmaLinux 或 Fedora；`debian` 表示 Debian；`ubuntu` 表示 Ubuntu
+16. 在离线模式下，isoPath 不能为空
+17. k8sVersion 字段仅适用于在线模式，离线模式时无需设置
+18. 是否开启 k8s apisever 的审计日志及相关配置
+19. criVersion 字段仅适用于在线模式，离线模式时无需设置
 
 ## 关键字段
 

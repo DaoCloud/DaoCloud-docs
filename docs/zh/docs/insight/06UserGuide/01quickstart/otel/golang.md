@@ -167,7 +167,7 @@ env:
   - name: OTEL_EXPORTER_OTLP_ENDPOINT
     value: 'http://insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317'
   - name: OTEL_SERVICE_NAME
-    value: "your depolyment name" # modify it.
+    value: "your depolyment name" # (1)
   - name: OTEL_K8S_NAMESPACE
     valueFrom:
       fieldRef:
@@ -187,6 +187,8 @@ env:
     value: 'k8s.namespace.name=$(OTEL_K8S_NAMESPACE),k8s.node.name=$(OTEL_RESOURCE_ATTRIBUTES_NODE_NAME),k8s.pod.name=$(OTEL_RESOURCE_ATTRIBUTES_POD_NAME)'
 ······
 ```
+
+1. 修改此值
 
 ## 请求路由
 

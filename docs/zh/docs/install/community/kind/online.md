@@ -47,7 +47,7 @@
 
     注意，暴露集群内的 32000 端口到 kind 对外的 8888 端口（可自行修改），配置文件示例如下：
 
-    ```yaml
+    ```yaml title="kind_cluster.yaml"
     apiVersion: kind.x-k8s.io/v1alpha4
     kind: Cluster
     nodes:
@@ -101,7 +101,6 @@
         - kubectl ≥ 1.22.0
         - yq ≥ 4.27.5
 
-
 1. 在 kind 主机下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../../download/dce5.md)）。
 
     ```shell
@@ -120,7 +119,8 @@
 
         kind 集群仅支持 NodePort 模式。
 
-1. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用 **默认的账户和密码（admin/changeme）** 探索全新的 DCE 5.0 啦！
+1. 安装完成后，命令行会提示安装成功。恭喜您！
+   现在可以通过屏幕提示的 URL 使用 **默认的账户和密码（admin/changeme）** 探索全新的 DCE 5.0 啦！
 
     ![安装成功](../../images/success.png)
 

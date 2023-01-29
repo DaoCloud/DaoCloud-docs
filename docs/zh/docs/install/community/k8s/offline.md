@@ -2,9 +2,7 @@
 
 本页简要说明 DCE 5.0 社区版的离线安装步骤。
 
-!!! note
-
-    点击[社区版部署 Demo](../../../videos/install.md)可观看视频演示。
+点击[社区版部署 Demo](../../../videos/install.md)可观看视频演示。
 
 ## 准备工作
 
@@ -56,33 +54,33 @@
 
       - 执行脚本推送镜像到镜像仓库中。
 
-          ```bash
-          # 指定镜像仓库地址, 比如:
-          export REGISTRY_ADDR=registry.daocloud.io:30080
-          # 指定离线包解压目录, 比如:
-          export OFFLINE_DIR=$(pwd)/offline
-          # 执行脚本导入镜像
-          ./offline_image_handler.sh import
-          ```
+        ```bash
+        # 指定镜像仓库地址
+        export REGISTRY_ADDR=registry.daocloud.io:30080
+        # 指定离线包解压目录
+        export OFFLINE_DIR=$(pwd)/offline
+        # 执行脚本导入镜像
+        ./offline_image_handler.sh import
+        ```
 
-          !!! note
+        !!! note
 
-              - 若导入镜像的过程出现失败, 则失败会被跳过且脚本将继续执行。
-              - 失败镜像信息将被记录在脚本同级目录 `import_image_failed.list` 文件中，便于定位。
-              - 如果 docker pull 镜像时报错：http: server gave HTTP response to HTTPS client， 请启用 Insecure Registry。
+            - 若导入镜像的过程出现失败, 则失败会被跳过且脚本将继续执行。
+            - 失败镜像信息将被记录在脚本同级目录 `import_image_failed.list` 文件中，便于定位。
+            - 如果 docker pull 镜像时报错：`http: server gave HTTP response to HTTPS client`，请启用 Insecure Registry。
 
       - 在集群的每个节点上运行 `vim /etc/docker/daemon.json` 命令以编辑 daemon.json 文件，输入以下内容并保存更改。
 
-          ```json
-          {
-          "insecure-registries" : ["172.30.120.180:80"]
-          }
-          ```
+        ```json title="daemon.json"
+        {
+        "insecure-registries" : ["172.30.120.180:80"]
+        }
+        ```
 
-          !!! note
+        !!! note
 
-              请确保将 `172.30.120.180:80` 替换为您自己的 Harbor 仓库地址。
-              对于 Linux，daemon.json 文件的路径为 `/etc/docker/daemon.json`。
+            请确保将 `172.30.120.180:80` 替换为您自己的 Harbor 仓库地址。
+            对于 Linux，daemon.json 文件的路径为 `/etc/docker/daemon.json`。
 
       - 运行以下命令重启 Docker。
 
@@ -112,44 +110,55 @@
 
     - 如果是非公有云环境（虚拟机、物理机），请启用负载均衡 (metallb)，以规避 NodePort 因节点 IP 变动造成的不稳定。请仔细规划您的网络，设置 2 个必要的 VIP，配置文件范例如下：
 
-        ```yaml
+        ```yaml title="clusterConfig.yaml"
         apiVersion: provision.daocloud.io/v1alpha2
         kind: ClusterConfig
         spec:
           loadBalancer:
             type: metallb
-            istioGatewayVip: 10.6.229.10/32 # 这是 Istio gateway 的 VIP，也会是DCE 5.0的控制台的浏览器访问IP
-            insightVip: 10.6.229.11/32      # 这是 Global 集群的 Insight-Server 采集所有子集群的监控指标的网络路径所用的 VIP
-          registry: # 如果不指定外部仓库则不需要定义
+            istioGatewayVip: 10.6.229.10/32 # (1)
+            insightVip: 10.6.229.11/32      # (2)
+          registry: # (3)
             type: external
-            externalRegistry: registry.daocloud.io:30080 # 提前准备的、已有的镜像仓库的地址
+            externalRegistry: registry.daocloud.io:30080 # (4)
         ```
+
+        1. 这是 Istio gateway 的 VIP，也会是 DCE 5.0 的控制台的浏览器访问 IP
+        2. 这是 Global 集群的 Insight-Server 采集所有子集群的监控指标的网络路径所用的 VIP
+        3. 如果不指定外部仓库则不需要定义
+        4. 这是提前准备的、已有的镜像仓库的地址
 
     - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 k8s 负载均衡能力, 配置文件范例如下:
 
-        ```yaml
+        ```yaml title="clusterConfig.yaml"
         apiVersion: provision.daocloud.io/v1alpha2
         kind: ClusterConfig
         spec:
           loadBalancer:
             type: cloudLB
-          registry: # 如果不指定外部仓库则不需要定义
+          registry: # (1)
             type: external
-            externalRegistry: registry.daocloud.io:30080 # 提前准备的、已有的镜像仓库的地址
+            externalRegistry: registry.daocloud.io:30080 # (2)
         ```
+
+        1. 如果不指定外部仓库则不需要定义
+        2. 这是提前准备的、已有的镜像仓库的地址
 
     - 如果使用 NodePort 暴露控制台（仅推荐 PoC 使用），配置文件范例如下:
 
-        ```yaml
+        ```yaml title="clusterConfig.yaml"
         apiVersion: provision.daocloud.io/v1alpha2
         kind: ClusterConfig
         spec:
           loadBalancer:
             type: NodePort
-          registry: # 如果不指定外部仓库则不需要定义
+          registry: # (1)
             type: external
-            externalRegistry: registry.daocloud.io:30080 # 提前准备的、已有的镜像仓库的地址
+            externalRegistry: registry.daocloud.io:30080 # (2)
         ```
+
+        1. 如果不指定外部仓库则不需要定义
+        2. 这是提前准备的、已有的镜像仓库的地址
 
 5. 安装 DCE 5.0。
 
@@ -162,7 +171,8 @@
         - 参数 -p 指定解压离线包的 offline 目录。
         - 有关 clusterConfig.yaml 文件设置，请参考[在线安装第 2 步](online.md#_2)。
 
-6. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
+6. 安装完成后，命令行会提示安装成功。恭喜您！
+   现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
 
     ![安装成功](../../images/success.png)
 

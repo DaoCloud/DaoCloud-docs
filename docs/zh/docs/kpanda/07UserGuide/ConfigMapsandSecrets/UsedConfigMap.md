@@ -56,12 +56,16 @@ spec:
       command: [ "/bin/sh", "-c", "env" ]
       env:
         - name: SPECIAL_LEVEL_KEY
-          valueFrom:                             ##使用valueFrom来指定env引用配置项的value值
+          valueFrom:                  # (1)
             configMapKeyRef:
-              name: kpanda-configmap                ##引用的配置文件名称
-              key: SPECIAL_LEVEL                 ##引用的配置项key
+              name: kpanda-configmap  # (2)
+              key: SPECIAL_LEVEL      # (3)
   restartPolicy: Never
 ```
+
+1. 使用 `valueFrom` 来指定 env 引用配置项的 value 值
+2. 引用的配置文件名称
+3. 引用的配置项 key
 
 ## 使用配置项设置容器的命令行参数
 

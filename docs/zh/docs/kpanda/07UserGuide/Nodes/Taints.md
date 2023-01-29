@@ -1,6 +1,8 @@
 # 节点污点管理
 
-污点 (Taint) 能够使节点排斥某一类 Pod，避免 Pod 被调度到该节点上。每个节点上可以应用一个或多个污点，不能容忍这些污点的 Pod 则不会被调度该节点上。有关污点的更多详情，可参考 Kubernetes 官方文档[污点和容忍度](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/taint-and-toleration/)。
+污点 (Taint) 能够使节点排斥某一类 Pod，避免 Pod 被调度到该节点上。
+每个节点上可以应用一个或多个污点，不能容忍这些污点的 Pod 则不会被调度该节点上。
+有关污点的更多详情，可参考 Kubernetes 官方文档[污点和容忍度](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/taint-and-toleration/)。
 
 ## 注意事项
 
@@ -19,7 +21,7 @@
 
 3. 在弹框内输入污点的键值信息，选择污点效果，点击`确定`。
 
-    点击`➕ 添加`可以为节点添加多个污点，点击污点效果右侧的 `X` 可以删除污点。
+    点击 `➕ 添加`可以为节点添加多个污点，点击污点效果右侧的 `X` 可以删除污点。
 
     目前支持三种污点效果：
 

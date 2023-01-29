@@ -10,7 +10,7 @@
 
 ??? note "点击查看审计日志 Policy YAML 文件"
 
-    ```yaml
+    ```yaml  title="policy.yaml"
     apiVersion: audit.k8s.io/v1
     kind: Policy
     # Don't generate audit events for all requests in RequestReceived stage.
