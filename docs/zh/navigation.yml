@@ -426,7 +426,8 @@ nav:
           - Ingress-nginx:
               - 介绍: network/modules/ingress-nginx/what.md
               - 安装: network/modules/ingress-nginx/install.md
-              - IngressClass: network/modules/ingress-nginx/ingressclass.md
+              - Ingress Class: network/modules/ingress-nginx/ingressclass.md
+              - Ingress Scope: network/modules/ingress-nginx/scope.md
           - Metallb:
               - 介绍: network/modules/metallb/what.md
               - 安装: network/modules/metallb/install.md
