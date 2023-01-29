@@ -64,6 +64,6 @@ spec:
 
 对应的 `valule.yaml` 中的配置信息
 
-![scope02](/Users/daiqiuping/gitlab&github/DaoCloud-docs/docs/zh/docs/network/images/scope02.jpg)
+![scope02](../../images/scope02.jpg)
 
 更多信息可以参考 [scope](https://kubernetes.github.io/ingress-nginx/deploy/#scope)。
