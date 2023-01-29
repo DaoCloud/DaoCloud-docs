@@ -42,7 +42,7 @@ spec:
 
 ### 通过界面创建 Ingress 并指定 IngressClass
 
-如通过[图形化创建路由（Ingress ）时](/../../../kpanda/07UserGuide/ServicesandRoutes/CreatingIngress.md)，可直接在界面输入对应的 `IngressClassName`。
+如通过[图形化创建路由（Ingress ）](../../../kpanda/07UserGuide/ServicesandRoutes/CreatingIngress.md)时，可直接在界面输入对应的 `IngressClassName`。
 
 ### 默认 IngressClass
 
