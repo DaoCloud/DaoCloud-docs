@@ -638,8 +638,15 @@ nav:
       - 20220808 | 多云编排能力介绍: blogs/kairship.md
       - 20220708 | 服务网格能力介绍: blogs/mspider.md
       - 20220606 | DCE 开发背景: blogs/blog00.md
-  - 开源社区:
-      - DaoCloud 开源生态: community/index.md
+  - 下载中心:
+      - DaoCloud Enterprise 5.0: 
+          - 索引列表: download/dce5.md
+          - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.4.0.md
+          - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.4.0.md
+          - 下载全局管理: download/modules/ghippo.md
+          - 下载 Insight: download/modules/insight.md
+  - DaoCloud 开源生态:
+      - 社区索引: community/index.md
       - CloudTTY: community/cloudtty.md
       - Clusterpedia: community/clusterpedia.md
       - Ferry: community/ferry.md
@@ -649,13 +656,6 @@ nav:
       - kwok: community/kwok.md
       - Merbridge: community/merbridge.md
       - Spiderpool: community/spiderpool.md
-  - 下载中心:
-      - DaoCloud Enterprise 5.0: 
-          - 索引列表: download/dce5.md
-          - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.4.0.md
-          - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.4.0.md
-          - 下载全局管理: download/modules/ghippo.md
-          - 下载 Insight: download/modules/insight.md
   - 云原生研究院:
       - 社区要闻: native/news.md
       - 商业产品: native/commerce.md
