@@ -12,11 +12,11 @@ nav:
       - Installation:
           - Briefs: install/intro.md
           - Install Dependencies: install/install-tools.md
-          - Install DCE 5.0 for Community: 
-            - Deployment Plan: install/community/resources.md
-            - Online Install with kind: install/community/kind/online.md
-            - Online Install with K8s: install/community/k8s/online.md
-            - Offline Install with K8s: install/community/k8s/offline.md
+          - Install DCE 5.0 for Community:
+              - Deployment Plan: install/community/resources.md
+              - Online Install with kind: install/community/kind/online.md
+              - Online Install with K8s: install/community/k8s/online.md
+              - Offline Install with K8s: install/community/k8s/offline.md
           - Install DCE 5.0 for Commerce:
               - Deployment Plan: install/commercial/deploy-plan.md
               - Downlaod Packages: install/commercial/download-file.md
@@ -129,7 +129,7 @@ nav:
               - Security: ghippo/04UserGuide/06PersonalCenter/SecuritySetting.md
               - Access Key: ghippo/04UserGuide/06PersonalCenter/Password.md
               - UI Language: ghippo/04UserGuide/06PersonalCenter/Language.md
-          - Permissions: 
+          - Permissions:
               - Container Management Permission: kpanda/07UserGuide/Permissions/PermissionBrief.md
               - Microservice Engine Permission: ghippo/permissions/skoala.md
               - Workbench Permission: ghippo/permissions/amamba.md
@@ -141,10 +141,10 @@ nav:
               - Allocate a Cluster to Multiple Workspaces: ghippo/04UserGuide/02Workspace/a-cluster-to-multi-ws.md
               - Folder Practices: ghippo/04UserGuide/02Workspace/fdpractice.md
               - Normal Authorization Plan: ghippo/04UserGuide/02Workspace/authu-plan.md
-              - Join with GProduct: 
-                - ghippo/gproduct/intro.md
-                - Join Nav Bar: ghippo/gproduct/nav.md
-                - Join Ingress and Login Authentication: ghippo/gproduct/route-authn.md
+              - Join with GProduct:
+                  - ghippo/gproduct/intro.md
+                  - Join Nav Bar: ghippo/gproduct/nav.md
+                  - Join Ingress and Login Authentication: ghippo/gproduct/route-authn.md
       - Insight:
           - Intro:
               - What is Insight: insight/03ProductBrief/WhatisInsight.md
@@ -154,17 +154,17 @@ nav:
               - Features: insight/03ProductBrief/feature.md
               - Release Notes: insight/03ProductBrief/releasenote.md
           - Quick Start:
-              - Install Insight: 
-                - insight/06UserGuide/01quickstart/installagent.md
-                - Get URL to Upload Data: insight/06UserGuide/01quickstart/gethosturl.md
-                - Upgrade Precautions: insight/06UserGuide/01quickstart/upgradenote.md
-                - Offline upgrade Insight: insight/06UserGuide/01quickstart/offlineInstall.md
-              - OTel Enables Observability: 
-                - insight/06UserGuide/01quickstart/otel/otel.md
-                - Non-intrusive Enhancement with Operator: insight/06UserGuide/01quickstart/otel/operator.md
-                - Enhance Go Apps with OTel SDK: insight/06UserGuide/01quickstart/otel/golang.md
-                - Expose Metrics with OTel SDK: insight/06UserGuide/01quickstart/otel/meter.md
-                - Enhance Go Apps with OTel Auto-Instrumentation: insight/06UserGuide/01quickstart/otel/golang-ebpf.md
+              - Install Insight:
+                  - insight/06UserGuide/01quickstart/installagent.md
+                  - Get URL to Upload Data: insight/06UserGuide/01quickstart/gethosturl.md
+                  - Upgrade Precautions: insight/06UserGuide/01quickstart/upgradenote.md
+                  - Offline upgrade Insight: insight/06UserGuide/01quickstart/offlineInstall.md
+              - OTel Enables Observability:
+                  - insight/06UserGuide/01quickstart/otel/otel.md
+                  - Non-intrusive Enhancement with Operator: insight/06UserGuide/01quickstart/otel/operator.md
+                  - Enhance Go Apps with OTel SDK: insight/06UserGuide/01quickstart/otel/golang.md
+                  - Expose Metrics with OTel SDK: insight/06UserGuide/01quickstart/otel/meter.md
+                  - Enhance Go Apps with OTel Auto-Instrumentation: insight/06UserGuide/01quickstart/otel/golang-ebpf.md
           - Overview: insight/06UserGuide/overview.md
           - Dashboard:
               - Dashboard: insight/06UserGuide/02dashboard/dashboard.md
@@ -272,17 +272,17 @@ nav:
           - Select Workspace: skoala/select-workspace.md
           - Microservice:
               - Hosted Registry:
-                  - Registry Management: 
+                  - Registry Management:
                       - Create: skoala/registry/managed/registry-lcm/create-registry.md
                       - Update: skoala/registry/managed/registry-lcm/update-registry.md
                       - View: skoala/registry/managed/registry-lcm/check-registry.md
                       - Delete: skoala/registry/managed/registry-lcm/delete-registry.md
                   - Microservice Namespace: skoala/registry/managed/namespace.md
-                  - Microservice List: 
+                  - Microservice List:
                       - skoala/registry/managed/servicelist/intro.md
                       - Governance Policy: skoala/registry/managed/servicelist/governance-policy.md
                   - Microservice Config: skoala/registry/managed/configcenter.md
-                  - Plugins: 
+                  - Plugins:
                       - skoala/registry/managed/plugins/plugin-center.md
                       - Enable Sentinel: skoala/registry/managed/plugins/sentinel.md
                       - Enable Mesh: skoala/registry/managed/plugins/mesh.md
@@ -305,10 +305,10 @@ nav:
                   - Update API: skoala/ms-gateway/api/update-api.md
                   - Configure API Policy: skoala/ms-gateway/api/api-policy.md
                   - Remove API: skoala/ms-gateway/api/delete-api.md
-              - Service Integration: 
+              - Service Integration:
                   - Manually Integrate: skoala/ms-gateway/service/manual-integrate.md
                   - Auto Manage: skoala/ms-gateway/service/auto-manage.md
-              - Logs: 
+              - Logs:
                   - Request Logs: skoala/ms-gateway/logs/reqlog.md
                   - Instance Logs: skoala/ms-gateway/logs/inslog.md
               - Domain Names:
@@ -370,12 +370,12 @@ nav:
               - Upgrade Istio: mspider/03UserGuide/upgrade/IstioUpdate.md
               - Upgrade Sidecar: mspider/03UserGuide/upgrade/SidecarUpdate.md
           - Multi-cluster mesh:
-            - Deploy mesh with multicloud: mspider/03UserGuide/multiCluster/multiClusterInstall.md
-            - Multi-cluster network principle: mspider/03UserGuide/multiCluster/multi-cluster-net.md
-            - Multi-cluster grayscale releasea: mspider/03UserGuide/multiCluster/gray-scale-release.md
+              - Deploy mesh with multicloud: mspider/03UserGuide/multiCluster/multiClusterInstall.md
+              - Multi-cluster network principle: mspider/03UserGuide/multiCluster/multi-cluster-net.md
+              - Multi-cluster grayscale releasea: mspider/03UserGuide/multiCluster/gray-scale-release.md
           - Test:
-            - Join an OCP cluster: mspider/test/ocp.md
-            - Compatibility test with OpenShift: mspider/test/openshift.md
+              - Join an OCP cluster: mspider/test/ocp.md
+              - Compatibility test with OpenShift: mspider/test/openshift.md
           - FAQs: mspider/07faq.md
       - Network:
           - Intro:
@@ -429,12 +429,7 @@ nav:
               - Workload uses IPPool: network/modules/spiderpool/usage.md
               - Config: network/modules/spiderpool/config.md
               - Commands: network/modules/spiderpool/command.md
-          - Falco:
-              - Intro: network/modules/falco/what.md
-              - Install: network/modules/falco/install.md
-          - Falco-exporter:
-              - Intro: network/modules/falco-exporter/what.md
-              - Install: network/modules/falco-exporter/install.md
+              - Release notes: network/modules/spiderpool/releasenotes.md
       - Middleware:
           - Intro: middleware/midware.md
           - Version Compatibility: middleware/adaptation-k8s.md
@@ -556,32 +551,32 @@ nav:
           - What is Container Registry: kangaroo/intro.md
           - Image List: kangaroo/imagelist.md
           - Connected Registry: kangaroo/related-registry.md
-          - Registry Integration: 
-            - kangaroo/integrate.md
-            - Bind Registry Space to Workspace: kangaroo/bind-to-ws.md
-            - Create Registry Space: kangaroo/create-registry.md
+          - Registry Integration:
+              - kangaroo/integrate.md
+              - Bind Registry Space to Workspace: kangaroo/bind-to-ws.md
+              - Create Registry Space: kangaroo/create-registry.md
           - Managed Harbor: kangaroo/hosted.md
           - Quick Start:
-            - Manage external registries: kangaroo/quickstart/registry-in-one.md
-            - Push image: kangaroo/quickstart/push.md
-            - Admin quickly use registry: kangaroo/quickstart/admin-registry.md
-            - Workspace Admin quickly use registry: kangaroo/quickstart/ws-admin-registry.md
+              - Manage external registries: kangaroo/quickstart/registry-in-one.md
+              - Push image: kangaroo/quickstart/push.md
+              - Admin quickly use registry: kangaroo/quickstart/admin-registry.md
+              - Workspace Admin quickly use registry: kangaroo/quickstart/ws-admin-registry.md
           - Scan image: kangaroo/scan.md
           - Release Notes: kangaroo/release-notes.md
       - Cloud Native Security:
-        - Intro: security/intro.md
-        - Falco:
-            - Intro: security/falco/what.md
-            - Install: security/falco/install.md
-            - Falco-exporter: security/falco/falco-exporter.md
+          - Intro: security/intro.md
+          - Falco:
+              - Intro: security/falco/what.md
+              - Install: security/falco/install.md
+              - Falco-exporter: security/falco/falco-exporter.md
       - References:
-        - Release Notes: release/rn5.0.md
-        - Gateway: reference/basic-knowledge/gateway.md
-        - Microservice: reference/basic-knowledge/microservice.md
-        - Service Registry: reference/basic-knowledge/registry.md
-        - Virtual Service: reference/basic-knowledge/virtual-service.md
-        - Observability: reference/basic-knowledge/insight.md
-        - Traffic Control: reference/basic-knowledge/traffic-control.md
+          - Release Notes: release/rn5.0.md
+          - Gateway: reference/basic-knowledge/gateway.md
+          - Microservice: reference/basic-knowledge/microservice.md
+          - Service Registry: reference/basic-knowledge/registry.md
+          - Virtual Service: reference/basic-knowledge/virtual-service.md
+          - Observability: reference/basic-knowledge/insight.md
+          - Traffic Control: reference/basic-knowledge/traffic-control.md
       - Troubleshooting:
           - ingressgateway cannot start: reference/troubleshooting/ghippo01.md
           - Login Error 401 or 403: reference/troubleshooting/ghippo02.md
@@ -621,7 +616,7 @@ nav:
       - Merbridge: community/merbridge.md
       - Spiderpool: community/spiderpool.md
   - Download:
-      - DaoCloud Enterprise 5.0: 
+      - DaoCloud Enterprise 5.0:
           - Index: download/dce5.md
           - Download Releases for Community: download/free/dce5-installer-v0.4.0.md
           - Download Releases for Commerce: download/business/dce5-installer-v0.4.0.md
