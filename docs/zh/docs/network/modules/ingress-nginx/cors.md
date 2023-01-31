@@ -14,7 +14,7 @@ kind: Ingress
 metadata:
   name: example-ingress
   annotations:
-    nginx.ingress.kubernetes.io/add-headers: "Access-Control-Allow-Origin: *"
+    nginx.ingress.kubernetes.io/enable-cors: "true"
 spec:
   rules:
   - host: example.com
