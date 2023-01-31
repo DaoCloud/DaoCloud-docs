@@ -29,7 +29,7 @@
 多云编排模块自带的 YAML 编辑器中会自动检测 YAML 语法，如有错误，会出现相关提示。
 以下列出一些常用的示例，您稍加修改就可以使用。
 
-**Deployment 示例**
+### Deployment 示例
 
 ```yaml
 # Kubernetes Deployment
@@ -54,7 +54,7 @@ spec:
         name: nginx
 ```
 
-**部署策略示例**
+### 部署策略示例
 
 ```yaml
 # Karmada PropagationPolicy
@@ -75,7 +75,7 @@ spec:
         - demo-dev
 ```
 
-**差异化策略示例**
+### 差异化策略示例
 
 ```yaml
 # Karmada OverridePolicy
