@@ -1,6 +1,6 @@
-# `KWOK` (`K`ubernetes `W`ith`O`ut `K`ubelet)
+# KWOK (`K`ubernetes `W`ith`O`ut `K`ubelet)
 
-<img align="right" width="180px" src="./images/kwok.svg"/>
+![kwok](./images/kwok.png){ align=right }
 
 [kwok](https://sigs.k8s.io/kwok) is a toolkit that enables setting up a cluster of thousands of Nodes in seconds.
 Under the scene, all Nodes are simulated to behave like real ones, so the overall approach employs
@@ -13,7 +13,7 @@ So far we provide two tools:
 
 Please see [https://kwok.sigs.k8s.io](https://kwok.sigs.k8s.io) for more in-depth information.
 
-<img width="700px" src="./demo/manage-clusters.svg">
+![manage clusters](./images/manage-clusters.svg)
 
 ## Community, discussion, contribution, and support
 
