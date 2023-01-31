@@ -6,13 +6,13 @@ IngressClass 代表 Ingress 实例 的类，当创建 Ingress 规则时，可在
 
 * 同一个集群中，有内部 Ingress 和外部 Ingress 需求
 * 同一个集群同一个租户中，不同团队部署不同的应用，使用不同 Ingress 实例
-* 同一个集群，同一团队不同应用对 Ingress 实例资源配比要求
+* 同一个集群中，同一团队部署不同应用对 Ingress 实例资源配比有要求
     * 例如某些业务需要独享 4C 4G 的数据面网关资源
 
 ## 前提条件
 
-- 已经完成 [Ingress nginx 实例部署，并设置了 IngressClassName ](install.md)
-- 已获取对应的 IngressClassName 
+- 已经完成 [Ingress nginx 实例部署，并设置了 IngressClassName](install.md)。
+- 已获取对应的 IngressClassName。
 
 ## 使用操作
 
@@ -53,8 +53,8 @@ spec:
 
 ## QA
 
-### 不同租户如何使用不同 Ingress 负载流量而且还不用指定 ingressClassName？
+问：不同租户如何使用不同 Ingress 负载流量而且还不用指定 ingressClassName？
 
-可以通过指定 `--watch-namespace` 的方式，不同的实例 watch 不同的 namespace。
+答：可以通过指定 `--watch-namespace` 的方式，不同的实例 watch 不同的 namespace。
 ingress-nginx 可以通过 helm 安装时指定 `controller.scope.enabled=true` 和 `--set controller.scope.namespace=$NAMESPACE`，
 更多信息可以参考 [scope](https://kubernetes.github.io/ingress-nginx/deploy/#scope)。

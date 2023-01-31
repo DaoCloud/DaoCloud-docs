@@ -1,22 +1,32 @@
-#IngressClass
+---
+MTPE: Jeanine-tw
+Revised: Jeanine-tw
+Pics: NA
+Date: 2023-01-31
+---
 
-IngressClass represents the class of Ingress and is referenced by Ingress spec.
-The `ingressclass.kubernetes.io/is-default-class` annotation can be used to mark an IngressClass as the default class.
-When an IngressClass resource has this annotation set to true , new Ingress resources without a specified class will be assigned this default class.
+# IngressClass
 
-## Scenes
+IngressClass represents the class of the Ingress instance that can be referenced in the Ingress spec when an Ingress rule is created. The main applicable scenarios are as follows.
 
-* In the same cluster, there are internal Ingress and external Ingress requirements
-* In the same cluster and the same tenant, different teams use different Ingress instances
-* In the same cluster, different applications have requirements for the ratio of Ingress instance resources
-    * For example, some services require exclusive use of 4C 4G data plane gateway resources
+**Applicable scenarios**
 
-## use
+* Need both internal Ingress and external Ingress in the same cluster
+* Different teams deploy different applications in the same cluster with different Ingress instances in the same tenant
+* In the same cluster, the same team deploys different applications with different Ingress instance resource ratios
+    * For example, some services need exclusive access to 4C 4G data plane gateway resources
 
-### Ingress specifies the ingressClassName example
+## Prerequisites
 
-When an Ingress needs to specify an ingressClassName instance, it needs to be specified through `ingressClassName`.
-The annotation `kubernetes.io/ingress.class` is deprecated.
+- [The Ingress nginx instance has been deployed and the IngressClassName has been set](install.md).
+- The corresponding IngressClassName has been obtained.
+
+## Operations
+
+### Create Ingress via YAML and specifying the IngressClass
+
+If you need to specify an IngressClass when creating an Ingress via YAML, specify it via `ingressClassName`.
+The annotation ``kubernetes.io/ingress.class`` is deprecated.
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -24,7 +34,7 @@ kind: Ingress
 metadata:
   name: dao-2048
 spec:
-  ingressClassName: contour # specify the ingress class name
+  ingressClassName: contour # Specify the ingress class name
   rules:
   - http:
       paths:
@@ -37,14 +47,21 @@ spec:
               number: 80
 ```
 
+### Create Ingress through the interface and specify IngressClass
+
+If [the route（Ingress) is created through the interface](.../.../.../kpanda/07UserGuide/ServicesandRoutes/CreatingIngress.md), you can directly enter the corresponding `IngressClassName` in the interface.
+
 ### Default IngressClass
 
-Each cluster can have a default IngressClass. When there is a default IngressClass, the `ingressClassName` field can not be specified when creating an Ingress.
+Each cluster can have a default IngressClass. When a default IngressClass exists ([enable DefaultIngressClass when creating Ingress instances](install.md)), Ingress can be created without specifying the `ingressClassName`.
+
+The `ingressclass.kubernetes.io/is-default-class` annotation can be used to mark an IngressClass as the default class. Only one IngressClass can be set for a cluster at most.
+When this annotation is set to `true` for an `IngressClass` resource, new Ingress resources without a specified class will be assigned to this default class.
 
 ## QA
 
-### How can different tenants use different Ingress load traffic without specifying ingressClassName?
+Q: How can different tenants use different Ingress traffic without specifying ingressClassName?
 
-By specifying `--watch-namespace`, different instances watch different namespaces.
-ingress-nginx can be installed through helm by specifying `controller.scope.enabled=true` and `--set controller.scope.namespace=$NAMESPACE`,
-For more information, please refer to [scope](https://kubernetes.github.io/ingress-nginx/deploy/#scope).
+A: Different instances can watch different namespaces by specifying `--watch-namespace`.
+ingress-nginx can be installed via helm by specifying `-controller.scope.enabled=true` and `-set controller.scope.namespace=$NAMESPACE`.
+More information can be found in [scope](https://kubernetes.github.io/ingress-nginx/deploy/#scope).
