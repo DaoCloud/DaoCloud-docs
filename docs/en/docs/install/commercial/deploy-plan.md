@@ -27,13 +27,13 @@ There is no need to manage the lifecycle of different clusters and communicate a
 
 ## Node Requirements
 
-No matter which mode you choose, installing the commercial version of DCE 5.0 first requires a temporary tinder node.
+No matter which mode you choose, installing the commercial version of DCE 5.0 first requires a temporary bootstrapping node.
 
-### Tinder Node
+### Bootstrapping node
 
-Tinder nodes, also known as boostrap nodes, deploy global service clusters and manage clusters by starting the kind cluster and performing a series of automated installation processes.
+On bootstrapping nodes, you can deploy global service clusters and manage clusters by starting the kind cluster and performing a series of automated installation processes.
 
-**System and Hardware Requirements for a Tinder Node**
+**System and Hardware Requirements for a bootstrapping node**
 
 | Resource Entry | Requirements | Recommended Values ​​|
 | :------------ | :------------ | :----------- |
@@ -44,7 +44,7 @@ Tinder nodes, also known as boostrap nodes, deploy global service clusters and m
 
 ### Classic Mode Resource Planning
 
-**test environment**
+**Test environment**
 
 | Cluster type | Method 1 | Method 2 |
 | :----------- | :----------------------------------- -------------------------------------------------- -------------------------------- | :---------------- -------------------------------------------------- --- |
@@ -62,7 +62,7 @@ Tinder nodes, also known as boostrap nodes, deploy global service clusters and m
 
 ### Simple Mode Resource Planning
 
-**test environment**
+**Test environment**
 
 | Cluster type | Method 1 | Method 2 |
 | :-------------------- | :------------------------- -------------------------------------------------- -------------------------------------------- | :------- -------------------------------------------------- ------------ |
@@ -71,7 +71,7 @@ Tinder nodes, also known as boostrap nodes, deploy global service clusters and m
 
 **Production Environment**
 
-| Cluster Type | Size |
+| Cluster type | Size |
 | :-------------------- | :------------------------- -------------------------------------------------- -------------------------------------------------- ------------ |
 | Global service cluster + management cluster | **3 Master + 2 Worker** <br />Master node: 6C10G; system disk 100G + unpartitioned disk 200G <br />Worker node: 8C16G; system disk 100G + unpartitioned Disk 200G |
 | Operating System | CentOS 7.9 |

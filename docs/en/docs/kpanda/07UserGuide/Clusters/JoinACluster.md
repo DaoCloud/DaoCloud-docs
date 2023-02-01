@@ -6,13 +6,13 @@ The container management platform supports access to a variety of mainstream con
 
 - DaoCloud KubeSpray
 - DaoCloud ClusterAPI
--DaoCloud DCE4
--Redhat Openshift
--SUSE Rancher
+- DaoCloud Enterprise 4.0
+- Redhat Openshift
+- SUSE Rancher
 - VMware Tanzu
--Amazon EKS
--Aliyun ACK
--Huawei CCE
+- Amazon EKS
+- Aliyun ACK
+- Huawei CCE
 - Tencent TKE
 - Standard Kubernetes cluster
 

@@ -3,13 +3,13 @@ hide:
   - toc
 ---
 
-# Download Document
+# Download Packages
 
 This page lists the download addresses of installers and image packages.
 
 ## Download binary installer
 
-Download the `dce5-installer` binary on a prepared tinder node.
+Download the `dce5-installer` binary on a prepared bootstrapping node.
 
 ```bash
 # Assume VERSION is v0.3.29
@@ -19,7 +19,7 @@ curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoClo
 
 ## Download offline image package
 
-1. Download the offline package from [Download Center](../../download/dce5.md), or download the offline image package on the Tinder node.
+1. Download the offline package from [Download Center](../../download/dce5.md), or download the offline image package on the bootstrapping node.
 
     ```shell
     # Assume VERSION is v0.3.29

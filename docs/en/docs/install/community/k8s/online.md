@@ -1,4 +1,4 @@
-# Use the Kubernetes cluster to install the community version online
+# Use a k8s cluster to install the community edition online
 
 This page briefly explains the online installation steps for DCE 5.0 Community Edition.
 
@@ -56,9 +56,12 @@ This page briefly explains the online installation steps for DCE 5.0 Community E
         spec:
           loadBalancer:
             type: metallb 
-            istioGatewayVip: 10.6.229.10/32 # VIP of Istio gateway, also browser access IP of DCE 5.0 console
-            insightVip: 10.6.229.11/32 # The VIP used by the Insight-Server of the global service cluster to collect the network paths of all sub-cluster monitoring indicators
+            istioGatewayVip: 10.6.229.10/32 # (1)
+            insightVip: 10.6.229.11/32 # (2)
         ```
+
+        1. VIP of Istio gateway, also browser access IP of DCE 5.0 console
+        2. The VIP used by the Insight-Server of the global service cluster to collect the network paths of all sub-cluster monitoring indicators
 
     - If it is a public cloud environment and provides the K8s load balancing capability of the public cloud through the pre-prepared Cloud Controller Manager mechanism, the configuration file example is as follows:
 
@@ -86,6 +89,6 @@ This page briefly explains the online installation steps for DCE 5.0 Community E
 
     !!! success
 
-      Please record the prompted URL for your next visit.
+        Please record the prompted URL for your next visit.
 
 5. In addition, after successfully installing DCE 5.0, you need genuine authorization to use it. Please refer to [Apply for free community experience](../../../dce/license0.md).

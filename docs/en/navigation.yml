@@ -19,7 +19,7 @@ nav:
               - Offline Install with K8s: install/community/k8s/offline.md
           - Install DCE 5.0 for Commerce:
               - Deployment Plan: install/commercial/deploy-plan.md
-              - Downlaod Packages: install/commercial/download-file.md
+              - Download Packages: install/commercial/download-file.md
               - Edit clusterConfig.yaml: install/commercial/clusterconfig.md
               - Offline Installation: install/commercial/start-install.md
               - Scenarios: install/commercial/scenarios.md
