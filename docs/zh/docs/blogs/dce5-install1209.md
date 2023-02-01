@@ -17,9 +17,9 @@ last_updated:
 
 计划使用 3 台 UCloud 的 VM，配置均为 8 核 16G。
 
-| 角色 | 主机名 | 操作系统 | IP | 配置 |
-| --- | --- | --- | --- | --- |
-| master | master-k8s-com | CentOS 7.9 | 10.23.245.63 | 8 核 16G 300GB |
+| 角色   | 主机名         | 操作系统   | IP            | 配置           |
+| ------ | -------------- | ---------- | ------------- | -------------- |
+| master | master-k8s-com | CentOS 7.9 | 10.23.245.63  | 8 核 16G 300GB |
 | node01 | node01-k8s-com | CentOS 7.9 | 10.23.104.173 | 8 核 16G 300GB |
 | node02 | node02-k8s-com | CentOS 7.9 | 10.23.112.244 | 8 核 16G 300GB |
 
@@ -142,7 +142,7 @@ last_updated:
 
     # 更新配置文件内容
     sed -i 's/SystemdCgroup\ =\ false/SystemdCgroup\ =\ true/' /etc/containerd/config.toml
-    sed 's/k8s.gcr.io\/pause/registry.cn-hangzhou.aliyuncs.com\/google_containers\/pause/g' /etc/containerd/config.toml
+    sed -i 's/k8s.gcr.io\/pause/registry.cn-hangzhou.aliyuncs.com\/google_containers\/pause/g' /etc/containerd/config.toml
     ```
 
 1. 启动服务配置
@@ -181,9 +181,9 @@ last_updated:
 1. 安装 Kubernetes 组件
 
     ```bash linenums="1"
-    echo K8sVersion=1.24.8
-    sudo yum install -y kubelet-1.24.8-$K8sVersion kubeadm-1.24.8-$K8sVersion
-    sudo yum install -y kubectl-1.24.8-$K8sVersion  # (1)
+    export K8sVersion=1.24.8
+    sudo yum install -y kubelet-$K8sVersion kubeadm-$K8sVersion
+    sudo yum install -y kubectl-$K8sVersion  # (1)
     ```
 
     1. 可以仅在 Master 节点安装

@@ -428,6 +428,7 @@ nav:
               - 安装: network/modules/ingress-nginx/install.md
               - Ingress Class: network/modules/ingress-nginx/ingressclass.md
               - Ingress Scope: network/modules/ingress-nginx/scope.md
+              - CORS 跨域配置: network/modules/ingress-nginx/cors.md
           - Metallb:
               - 介绍: network/modules/metallb/what.md
               - 安装: network/modules/metallb/install.md
@@ -629,16 +630,24 @@ nav:
       - 镜像仓库: videos/kangaroo.md
   - 博客:
       - 博文索引: blogs/index.md
-      - 20221209 | 保姆式安装DCE社区版: blogs/dce5-install1209.md
-      - 20221105 | K8s 资深认证服务商: blogs/kcsp.md
-      - 20221026 | 容器管理能力介绍: blogs/kpanda.md
-      - 20221018 | 资源管理能力介绍: blogs/resource.md
-      - 20220925 | 应用工作台能力介绍: blogs/amamba.md
-      - 20220808 | 多云编排能力介绍: blogs/kairship.md
-      - 20220708 | 服务网格能力介绍: blogs/mspider.md
-      - 20220606 | DCE 开发背景: blogs/blog00.md
-  - 开源社区:
-      - DaoCloud 开源生态: community/index.md
+      - 202302 | DCE 5.0 攻坚语录集: blogs/peter.md
+      - 202212 | 保姆式安装DCE社区版: blogs/dce5-install1209.md
+      - 202211 | K8s 资深认证服务商: blogs/kcsp.md
+      - 202210 | 容器管理能力介绍: blogs/kpanda.md
+      - 202210 | 资源管理能力介绍: blogs/resource.md
+      - 202209 | 应用工作台能力介绍: blogs/amamba.md
+      - 202208 | 多云编排能力介绍: blogs/kairship.md
+      - 202207 | 服务网格能力介绍: blogs/mspider.md
+      - 202206 | DCE 开发背景: blogs/blog00.md
+  - 下载中心:
+      - DaoCloud Enterprise 5.0: 
+          - 索引列表: download/dce5.md
+          - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.4.0.md
+          - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.4.0.md
+          - 下载全局管理: download/modules/ghippo.md
+          - 下载 Insight: download/modules/insight.md
+  - DaoCloud 开源生态:
+      - 社区索引: community/index.md
       - CloudTTY: community/cloudtty.md
       - Clusterpedia: community/clusterpedia.md
       - Ferry: community/ferry.md
@@ -648,13 +657,6 @@ nav:
       - kwok: community/kwok.md
       - Merbridge: community/merbridge.md
       - Spiderpool: community/spiderpool.md
-  - 下载中心:
-      - DaoCloud Enterprise 5.0: 
-          - 索引列表: download/dce5.md
-          - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.4.0.md
-          - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.4.0.md
-          - 下载全局管理: download/modules/ghippo.md
-          - 下载 Insight: download/modules/insight.md
   - 云原生研究院:
       - 社区要闻: native/news.md
       - 商业产品: native/commerce.md

@@ -1,4 +1,4 @@
-# Install DCE 5.0 Community Edition online using the kind cluster
+# Install DCE 5.0 Community Edition online using a kind cluster
 
 This page explains how to install DCE 5.0 Community Edition online using a kind cluster.
 
@@ -47,7 +47,7 @@ This page explains how to install DCE 5.0 Community Edition online using a kind 
 
     Note that port 32000 in the cluster is exposed to port 8888 external to kind (you can modify it yourself). The configuration file example is as follows:
 
-    ```yaml
+    ```yaml title="kind_cluster.yaml"
     apiVersion: kind.x-k8s.io/v1alpha4
     kind: Cluster
     nodes:

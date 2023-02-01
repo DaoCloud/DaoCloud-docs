@@ -6,7 +6,7 @@
 
 - DaoCloud KubeSpray
 - DaoCloud ClusterAPI
-- DaoCloud DCE4
+- DaoCloud Enterprise 4.0
 - Redhat Openshift
 - SUSE Rancher
 - VMware Tanzu
