@@ -17,11 +17,11 @@ This article completes the installation of DCE 5.0 Community Edition from 0 to 1
 
 It is planned to use 3 UCloud VMs, all configured with 8-core 16G.
 
-| Role | Hostname | Operating System | IP | Configuration |
-| --- | --- | --- | --- | --- |
-| master | master-k8s-com | CentOS 7.9 | 10.23.245.63 | 8 cores 16G 300GB |
-| node01 | node01-k8s-com | CentOS 7.9 | 10.23.104.173 | 8 cores 16G 300GB |
-| node02 | node02-k8s-com | CentOS 7.9 | 10.23.112.244 | 8 cores 16G 300GB |
+| Role   | Hostname       | Operating System | IP            | Configuration     |
+| ------ | -------------- | ---------------- | ------------- | ----------------- |
+| master | master-k8s-com | CentOS 7.9       | 10.23.245.63  | 8 cores 16G 300GB |
+| node01 | node01-k8s-com | CentOS 7.9       | 10.23.104.173 | 8 cores 16G 300GB |
+| node02 | node02-k8s-com | CentOS 7.9       | 10.23.112.244 | 8 cores 16G 300GB |
 
 The planned cluster components are:
 
@@ -142,7 +142,7 @@ In this example, Docker and containerd are installed at the same time for the co
 
      # Update configuration file content
      sed -i 's/SystemdCgroup\ =\ false /SystemdCgroup\ =\ true/' /etc/containerd/config.toml
-     sed 's/k8s.gcr.io\/pause/registry.cn-hangzhou.aliyuncs.com\/google_containers\/pause/g' /etc/containerd/config.toml
+     sed -i 's/k8s.gcr.io\/pause/registry.cn-hangzhou.aliyuncs.com\/google_containers\/pause/g' /etc/containerd/config.toml
      ```
 
 1. Start service configuration
@@ -181,9 +181,9 @@ In this example, Docker and containerd are installed at the same time for the co
 1. Install Kubernetes components
 
     ```bash linenums="1"
-    echo K8sVersion=1.24.8
-    sudo yum install -y kubelet-1.24.8-$K8sVersion kubeadm-1.24.8-$K8sVersion
-    sudo yum install -y kubectl-1.24.8-$K8sVersion  # 可以仅在 Master 节点安装
+    export K8sVersion=1.24.8
+    sudo yum install -y kubelet-$K8sVersion kubeadm-$K8sVersion
+    sudo yum install -y kubectl-$K8sVersion  # 可以仅在 Master 节点安装
     ```
 
 1. Start the `kubelet` system service
@@ -1932,7 +1932,7 @@ chmod +x dce5-installer
 
 ### Set configuration file [optional]
 
-Save the content of the following configuration file as `clusterConfig.yaml`, if you use `NodePort` to install, you don’t need to specify the configuration file.
+Save the content of the following configuration file as `clusterConfig.yaml`, if you use `NodePort` to install, you don't need to specify the configuration file.
 
 ```yaml linenums="1"
 apiVersion: provision.daocloud.io/v1alpha1
