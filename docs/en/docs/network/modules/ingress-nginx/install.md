@@ -13,7 +13,7 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
 1. Click `Container Management`->`Cluster List` in the left navigation bar, and then find the cluster name where you want to install ingress-nginx.
 
-    ![cluster](../../images)
+    ![cluster](../../images/ingress-install-1.png)
 
 2. In the left navigation bar, select `Helm Applications` -> `Helm Templates`, and find and click `ingress-nginx`.
 
