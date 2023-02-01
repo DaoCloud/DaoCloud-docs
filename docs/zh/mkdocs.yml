@@ -207,7 +207,7 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-  # - pymdownx.critic
+  - pymdownx.critic
   - pymdownx.snippets
   #     auto_append:
   #       - includes/glossary.md
