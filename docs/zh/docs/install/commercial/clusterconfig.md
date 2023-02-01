@@ -94,16 +94,16 @@ spec:
       version: v1.8.4
 ```
 
-1. NodePort(default), metallb, cloudLB (Cloud Controller)
-2. 当 loadBalancer.type 是 metallb 时必填, 为 DCE 提供 UI 和 OpenAPI 访问权限
-3. 别丢弃/32, 当 loadBalancer 是 metallb 时必填, 用作 GLobal 集群的 Insight 数据采集入口, 子集群的 insight-agent 可以向这个 VIP 报告数据
+1. 有 3 个可选项：`NodePort` (default)、`metallb`、`cloudLB` (Cloud Controller)
+2. 当 loadBalancer.type 是 `metallb` 时必填，为 DCE 提供 UI 和 OpenAPI 访问权限
+3. 别丢弃/32, 当 loadBalancer.type 是 metallb 时必填，用作 GLobal 集群的 Insight 数据采集入口，子集群的 insight-agent 可以向这个 VIP 报告数据
 4. 如果用免密方式 SSH 接入节点，需指定密钥文件地址
 5. nodeName 将覆盖 hostName，应符合 RFC1123 标准
 6. SSH 用户名
 7. SSH 密码
 8. 在 7 节点及以上模式，为了保证集群稳定，ES 将使用专享主机。则至少 3 个 worker 节点需要有污点
 9. 时间同步服务器
-10. 几个选项：built-in, external, online
+10. 有几个可选项：built-in、external、online
 11. 只需替换所有 /etc/hosts。如果空白，所有镜像将使用火种节点 IP 作为镜像仓库
 12. kubean 镜像仓库和 MinIO 仓库的 配置
 13. kubean 镜像仓库

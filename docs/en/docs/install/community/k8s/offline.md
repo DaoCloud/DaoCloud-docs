@@ -1,4 +1,4 @@
-# Use the Kubernetes cluster to install the community edition offline
+# Use a k8s cluster to install the community edition offline
 
 This page briefly describes the offline installation steps for DCE 5.0 Community Edition.
 
@@ -12,9 +12,10 @@ This page briefly describes the offline installation steps for DCE 5.0 Community
 
     !!! note
 
-      - Storage: StorageClass needs to be prepared in advance and set as the default SC
-        - Make sure the cluster has CoreDNS installed
-        - If it is a single node cluster, make sure you have removed the taint for that node
+        Storage: StorageClass needs to be prepared in advance and set as the default SC
+
+            - Make sure the cluster has CoreDNS installed
+            - If it is a single node cluster, make sure you have removed the taint for that node
 
 - [Install Dependencies](../../install-tools.md).
 
@@ -71,7 +72,7 @@ This page briefly describes the offline installation steps for DCE 5.0 Community
 
     - Run the `vim /etc/docker/daemon.json` command on each node of the cluster to edit the daemon.json file, enter the following and save the changes.
 
-        ```json
+        ```json title="daemon.json"
         {
         "insecure-registries" : ["172.30.120.180:80"]
         }
@@ -122,12 +123,16 @@ This page briefly describes the offline installation steps for DCE 5.0 Community
         spec:
           loadBalancer:
             type: metallb
-            istioGatewayVip: 10.6.229.10/32 # This is the VIP of Istio gateway, and it will also be the browser access IP of DCE 5.0 console
-            insightVip: 10.6.229.11/32 # This is the VIP used by the Insight-Server of the Global cluster to collect the monitoring indicators of all sub-clusters on the network path
+            istioGatewayVip: 10.6.229.10/32 # (1)
+            insightVip: 10.6.229.11/32 # (2)
           registry:
             type: external
-            externalRegistry: registry.daocloud.io:30080 # Your Harbor or registry domain name or IP
+            externalRegistry: registry.daocloud.io:30080 # (3)
         ```
+
+        1. This is the VIP of Istio gateway, and it will also be the browser access IP of DCE 5.0 console
+        2. This is the VIP used by the Insight-Server of the Global cluster to collect the monitoring indicators of all sub-clusters on the network path
+        3. Your Harbor or registry domain name or IP
 
     - If it is a public cloud environment and provides the k8s load balancing capability of the public cloud through the pre-prepared Cloud Controller Manager mechanism, the configuration file example is as follows:
 
@@ -139,8 +144,10 @@ This page briefly describes the offline installation steps for DCE 5.0 Community
             type: cloudLB
           registry:
             type: external
-            externalRegistry: registry.daocloud.io:30080 # Your Harbor or registry domain name or IP
+            externalRegistry: registry.daocloud.io:30080 # (1)
         ```
+
+        1. Your Harbor or registry domain name or IP
 
     - If NodePort is used to expose the console (only recommended for PoC), the configuration file example is as follows:
 
@@ -152,8 +159,10 @@ This page briefly describes the offline installation steps for DCE 5.0 Community
             type: NodePort
           registry:
             type: external
-            externalRegistry: registry.daocloud.io:30080 # Your Harbor or registry domain name or IP
+            externalRegistry: registry.daocloud.io:30080 # (1)
         ```
+
+        1. Your Harbor or registry domain name or IP
 
 5. Unzip and install.
 
