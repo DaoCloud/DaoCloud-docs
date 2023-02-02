@@ -622,12 +622,13 @@ nav:
       - 全局管理: videos/ghippo.md
       - 可观测性: videos/insight.md
       - 应用工作台: videos/amamba.md
-      - 服务网格: videos/mspider.md
-      - 微服务引擎: videos/skoala.md
       - 多云编排: videos/kairship.md
+      - 微服务引擎: videos/skoala.md
+      - 服务网格: videos/mspider.md
       - 中间件: videos/mcamel.md
-      - 云原生网络: videos/network.md
       - 镜像仓库: videos/kangaroo.md
+      - 云原生网络: videos/network.md
+      
   - 博客:
       - 博文索引: blogs/index.md
       - 202302 | DCE 5.0 攻坚语录集: blogs/peter.md

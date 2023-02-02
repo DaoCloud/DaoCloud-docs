@@ -24,7 +24,7 @@
 
 ## 通过网格治理微服务流量
 
-<!--参阅 [API 策略配置](../skoala/ms-gateway/api/api-policy.md)文档页面。-->
+参阅 [微服务流量治理](../mspider/03UserGuide/02TrafficGovernance/README.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/traffic-governance.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
