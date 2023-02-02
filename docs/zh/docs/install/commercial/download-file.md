@@ -45,5 +45,5 @@ hide:
 
 | CPU  架构 | 操作系统版本                                        | 下载地址                                                     |
 | --------- | --------------------------------------------------- | ------------------------------------------------------------ |
-| amd 64    | Centos 7                                            | https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso |
-| arm 64    | Kylin Linux Advanced Server release V10 (Sword) SP2 | 申请地址：https://www.kylinos.cn/scheme/server/1.html<br />注意：麒麟操作系统需要提供个人信息才能下载使用，下载时请选择 V10 (Sword) SP2 |
+| AMD64    | Centos 7                                            | https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso |
+| ARM64    | Kylin Linux Advanced Server release V10 (Sword) SP2 | 申请地址：https://www.kylinos.cn/scheme/server/1.html<br />注意：麒麟操作系统需要提供个人信息才能下载使用，下载时请选择 V10 (Sword) SP2 |

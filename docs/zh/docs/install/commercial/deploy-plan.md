@@ -50,8 +50,8 @@ DCE 5.0 商业版提供了两种模式：经典模式和简约模式。
 | :----------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | 全局服务集群 | **3 Master + 2 Worker** <br />Master 节点：4C8G；系统盘 100G <br />Worker 节点：8C16G；系统盘 100G + 未分区的磁盘 200G | **3 Master**<br />Master 节点：10C20G；系统盘 100G + 未分区的磁盘 200G |
 | 管理集群     | **3 Master** <br />Master 节点：4C4G；系统盘 100G            | **3 Master** <br />Master 节点：4C4G；系统盘 100G            |
-| CPU 架构     | amd64 架构<br/>arm64 架构                                    | amd64 架构<br/>arm64 架构                                    |
-| 操作系统     | amd64 操作系统：<br />CentOS 7.9<br />arm64 操作系统：<br />Kylin Linux Advanced Server release V10 (Sword) SP2 | amd64 操作系统：<br />CentOS 7.9<br />arm64 操作系统：<br />Kylin Linux Advanced Server release V10 (Sword) SP2 |
+| CPU 架构     | AMD64<br/>ARM64                                    | AMD64<br/>ARM64                               |
+| 操作系统     | AMD64 操作系统：CentOS 7.9<br />ARM64 操作系统：<br />Kylin Linux Advanced Server release V10 (Sword) SP2 | AMD64 操作系统：CentOS 7.9<br />ARM64 操作系统：<br />Kylin Linux Advanced Server release V10 (Sword) SP2 |
 
 **生产环境**
 
@@ -59,8 +59,8 @@ DCE 5.0 商业版提供了两种模式：经典模式和简约模式。
 | :----------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | 全局服务集群 | **3 Master + 2 Worker** <br />Master 节点：6C10G；系统盘 100G <br /> Worker 节点：8C16G；系统盘 100G + 未分区的磁盘 200G | **3 Master**<br />Master 节点：10C20G；系统盘 100G + 未分区的磁盘 200G |
 | 管理集群     | **3 Master** <br />Master 节点：4C4G；系统盘 100G            | **3 Master** <br />Master 节点：4C4G；系统盘 100G            |
-| CPU 架构     | amd64 架构<br/>arm64 架构                                    | amd64 架构<br/>arm64 架构                                    |
-| 操作系统     | amd64 操作系统：<br />CentOS 7.9<br />arm64 操作系统：<br />Kylin Linux Advanced Server release V10 (Sword) SP2 | amd64 操作系统：<br />CentOS 7.9<br />arm64 操作系统：<br />Kylin Linux Advanced Server release V10 (Sword) SP2 |
+| CPU 架构     | AMD64<br/>ARM64                                    | AMD64<br/>ARM64                                    |
+| 操作系统     | AMD64 操作系统：CentOS 7.9<br />ARM64 操作系统：<br />Kylin Linux Advanced Server release V10 (Sword) SP2 | AMD64 操作系统：CentOS 7.9<br />ARM64 操作系统：<br />Kylin Linux Advanced Server release V10 (Sword) SP2 |
 
 ### 简约模式资源规划
 
@@ -69,14 +69,14 @@ DCE 5.0 商业版提供了两种模式：经典模式和简约模式。
 | 集群类型              | 方式 一                                                      | 方式二                                                       |
 | :-------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | 全局服务集群+管理集群 | **3 Master + 2 Worker** <br />Master 节点：4C8G；系统盘 100G <br />Worker 节点：8C16G；系统盘 100G + 未分区的磁盘 200G | **3 Master**<br />Master 节点：10C20G；系统盘 100G + 未分区的磁盘 200G |
-| CPU 架构              | amd64 架构<br/>arm64 架构                                    | amd64 架构<br/>arm64 架构                                    |
-| 操作系统              | amd64 操作系统：<br />CentOS 7.9<br />arm64 操作系统：<br />Kylin Linux Advanced Server release V10 (Sword) SP2 | amd64 操作系统：<br />CentOS 7.9<br />arm64 操作系统：<br />Kylin Linux Advanced Server release V10 (Sword) SP2 |
+| CPU 架构              | AMD64<br/>ARM64                                   | AMD64<br/>ARM64                                   |
+| 操作系统              | AMD64 操作系统：<br />CentOS 7.9<br />ARM64 操作系统：<br />Kylin Linux Advanced Server release V10 (Sword) SP2 | AMD64 操作系统：<br />CentOS 7.9<br />ARM64 操作系统：<br />Kylin Linux Advanced Server release V10 (Sword) SP2 |
 
 **生产环境**
 
 | 集群类型              | 规模                                                         |
 | :-------------------- | :----------------------------------------------------------- |
 | 全局服务集群+管理集群 | **3 Master + 2 Worker** <br />Master 节点：6C10G；系统盘 100G + 未分区的磁盘 200G <br />Worker 节点：8C16G；系统盘 100G + 未分区的磁盘 200G |
-| CPU 架构              | amd64 架构<br/>arm64 架构                                    |
+| CPU 架构              | AMD64<br/>ARM64                                    |
 | 操作系统              | X86 操作系统：<br />CentOS 7.9<br />ARM 操作系统：<br />Kylin Linux Advanced Server release V10 (Sword) SP2 |
 

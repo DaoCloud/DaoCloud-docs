@@ -36,6 +36,7 @@ theme:
   language: "zh"
   features:
     - content.code.annotate
+    - content.code.copy
     - content.tooltips
     # - navigation.indexes
     - navigation.tabs

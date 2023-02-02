@@ -22,12 +22,12 @@ spec:
   loadBalancer:
     type: metallb # (1)
     istioGatewayVip: 10.6.127.253/32 # (2)
-    insightVip: 10.6.127.254/32      # (3) 
+    insightVip: 10.6.127.254/32      # (3)
   # privateKeyPath: /root/.ssh/id_rsa_sample  # (4)
   masterNodes:
     - nodeName: "g-master1" # (5)
       ip: 10.6.127.230
-      ansibleUser: "root"       # (6)
+      ansibleUser: "root" # (6)
       ansiblePass: "dangerous"  # (7)
     - nodeName: "g-master2"
       ip: 10.6.127.231
