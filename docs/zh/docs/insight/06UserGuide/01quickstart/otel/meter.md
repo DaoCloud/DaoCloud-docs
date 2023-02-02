@@ -21,7 +21,7 @@ go get go.opentelemetry.io/otel \
   go.opentelemetry.io/otel/sdk/metric
 ```
 
-### 使用 OpenTelemetry SDK 创建初始化函数
+### 使用 OTel SDK 创建初始化函数
 
 ```golang
 import (
@@ -80,7 +80,6 @@ func (s *insightServer) initMeter() *otelPrometheus.Exporter {
 随后，在 main.go 中对其进行初始化：
 
 ```golang
-
 func main() {
 ······
     tp := initMeter()

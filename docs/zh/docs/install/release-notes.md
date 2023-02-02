@@ -25,12 +25,12 @@
 - **优化** 优化离线包制作流程，加速打包 Docker 镜像
 - **优化** 优化了离线包的大小
 - **优化** 基础设施支持 1.25：升级 redis-operator、eck-operator、hwameiStor
-- **优化** 升级到 keycloakX
-- **优化** istio 版本升级 v1.16.1
+- **优化** 升级到 keycloakx
+- **优化** Istio 版本升级至 v1.16.1
 
 #### 修复
 
-- **修复** [HwameiStor 的 operator 会 随机错误清理集群中的 jobs ](https://github.com/hwameistor/hwameistor/issues/588)
+- **修复** [HwameiStor 的 operator 会随机错误清理集群中的 Job](https://github.com/hwameistor/hwameistor/issues/588)
 - **优化** mysql 增强半同步，解决频繁主从切换的数据不一致
 - **优化** 解决 mysql 磁盘被 clusterPedia 写爆
 - **优化** coredns 自动注入仓库 VIP 解析
@@ -55,7 +55,7 @@
 
 #### 新功能
 
-- **新增** ARM64 支持：构建 arm64 离线包
+- **新增** ARM64 支持：构建 ARM64 离线包
 - **新增** 支持麒麟 kylin v10 sp2 离线包
 - **新增** 基础设施支持 1.25：升级 redis-operator、eck-operator、hwameiStor 等组件
 - **新增** 支持私钥模式的集群部署
@@ -82,6 +82,6 @@
 - Image Load 情况下，istio-ingressgateway imagePullPolicy 为 always
 - ARM 版本，不能执行安装脚本的第 16 步（harbor），因为 harbor 暂时不支持 ARM。
   需要修改 mainfest.yaml 文件，postgressql operator 为 fasle，执行安装命令时要添加
-  -j 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
-- kpanda 界面上创建新集群，无法对接 HTTPS 的仓库，需要手动修改 kubean job 的 ConfigMap 和 CR
+  `-j 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15`
+- 在容器管理界面上创建新集群，无法对接 HTTPS 的仓库，需要手动修改 kubean job 的 ConfigMap 和 CR
 - 永久 MinIO 的 PVC 的大小默认是 30G，会不够用（承载 kubean 二进制、ISO 以及 Harbor 镜像仓库），需要进行扩容操作

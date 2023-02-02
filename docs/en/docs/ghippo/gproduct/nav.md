@@ -22,18 +22,18 @@ metadata:
   name: kpanda
 spec:
   gproduct: kpanda
-  name: container management
+  name: 容器管理
   localizedName:
-    en-US: Container Management
+    zh-CN: 容器管理
     en-US: Container Management
   url: /kpanda
-  category: container # (1)
+  category: 容器   # (1)
   iconUrl: /kpanda/nav-icon.png
   order: 10 # (2)
   menus:
-  - name: Backup Manager
+  - name: 备份管理
     localizedName:
-      en-US: Backup Management
+      zh-CN: 备份管理
       en-US: Backup Management
     iconUrl: /kpanda/bkup-icon.png
     url: /kpanda/backup

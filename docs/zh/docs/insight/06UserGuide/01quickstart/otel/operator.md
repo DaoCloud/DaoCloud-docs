@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-请确保 Insight Agent 已经就绪。如若没有，请参考[安装 insight-agent 采集数据](../installagent.md) 并确保以下三项就绪：
+请确保 Insight Agent 已经就绪。如若没有，请参考[安装 insight-agent 采集数据](../installagent.md)并确保以下三项就绪：
 
 - 为 Insight-agent 开启 trace 功能
 - trace 数据的地址以及端口是否填写正确
@@ -92,7 +92,7 @@ EOF
 
 ## 自动注入示例 Demo
 
-> 注意这个 annotations 是加在 spec.annotations 下的。
+注意这个 annotations 是加在 spec.annotations 下的。
 
 ```yaml
 apiVersion: apps/v1

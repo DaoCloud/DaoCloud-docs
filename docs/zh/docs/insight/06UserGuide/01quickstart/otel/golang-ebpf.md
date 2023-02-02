@@ -5,7 +5,7 @@
 
 ## 前提条件
 
-请确保 Insight Agent 已经就绪。如若没有，请参阅[安装 insight-agent 采集数据](../installagent.md) 并确保以下三项就绪：
+请确保 Insight Agent 已经就绪。如若没有，请参阅[安装 insight-agent 采集数据](../installagent.md)，并确保以下三项就绪：
 
 - 为 Insight-agent 开启 trace 功能
 - trace 数据的地址以及端口是否填写正确
@@ -271,7 +271,7 @@ spec:
 ······
 ```
 
-## 更多请参考
+## 更多参考
 
 - [Go OpenTelemetry Automatic Instrumentation 入门](https://github.com/keyval-dev/opentelemetry-go-instrumentation/blob/master/docs/getting-started/README.md)
 - [Donating ebpf based instrumentation](https://github.com/open-telemetry/opentelemetry-go-instrumentation/pull/4)

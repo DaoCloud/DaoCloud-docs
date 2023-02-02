@@ -8,7 +8,7 @@ Prometheus 主要通过 Pull 的方式来抓取目标服务暴露出来的监控
 
 !!! note
 
-  [] 中的配置项为可选。
+    [] 中的配置项为可选。
 
 ## 原生 Job 配置
 
@@ -88,7 +88,6 @@ metric_relabel_configs:
 [ target_limit: <int> | default = 0 ]
 ```
 
-
 ## Pod Monitor
 
 相应配置项说明如下：
@@ -101,7 +100,7 @@ kind: PodMonitor
 # 对应 K8S 的 Metadata，这里只用关心 name，如果没有指定 jobLabel，对应抓取指标 label 中 job 的值为 <namespace>/<name>
 metadata:
   name: redis-exporter # 填写一个唯一名称
-  namespace: cm-prometheus  # namespace固定，不需要修改
+  namespace: cm-prometheus  # namespace 固定，不需要修改
 # 描述抓取目标 Pod 的选取及抓取任务的配置
 spec:
   # 填写对应 Pod 的 label，pod monitor 会取对应的值作为 job label 的值。
@@ -123,7 +122,7 @@ spec:
     [ any: bool ]
     # 需要选取 namespace 列表
     [ matchNames: []string ]
-  # 填写要监控 Pod 的 Label 值，以定位目标 Pod  [K8S metav1.LabelSelector](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/#labelselector-v1-meta)
+  # 填写要监控 Pod 的 Label 值，以定位目标 Pod [K8S metav1.LabelSelector](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/#labelselector-v1-meta)
   selector:
     [ matchExpressions: array ]
       [ example: - {key: tier, operator: In, values: [cache]} ]
@@ -138,12 +137,12 @@ apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
   name: redis-exporter # 填写一个唯一名称
-  namespace: cm-prometheus # namespace固定，不要修改
+  namespace: cm-prometheus # namespace 固定，不要修改
 spec:
   podMetricsEndpoints:
     - interval: 30s
-      port: metric-port # 填写pod yaml中Prometheus Exporter对应的Port的Name
-      path: /metrics # 填写Prometheus Exporter对应的Path的值，不填默认/metrics
+      port: metric-port # 填写 pod yaml 中 Prometheus Exporter 对应的 Port 的 Name
+      path: /metrics # 填写 Prometheus Exporter 对应的 Path 的值，不填默认 /metrics
       relabelings:
         - action: replace
           sourceLabels:
@@ -157,10 +156,10 @@ spec:
           regex: (.*)
           targetLabel: ip
           replacement: "1.x.x.x" # 调整成对应的 Redis 实例 IP
-  namespaceSelector: # 选择要监控pod所在的namespace
+  namespaceSelector: # 选择要监控 Pod 所在的 namespace
     matchNames:
       - redis-test
-  selector: # 填写要监控pod的Label值，以定位目标pod
+  selector: # 填写要监控 Pod 的 Label 值，以定位目标 pod
     matchLabels:
       k8s-app: redis-exporter
 ```
@@ -187,7 +186,7 @@ kind: ServiceMonitor
 # 对应 K8S 的 Metadata，这里只用关心 name，如果没有指定 jobLabel，对应抓取指标 label 中 job 的值为 Service 的名称。
 metadata:
   name: redis-exporter # 填写一个唯一名称
-  namespace: cm-prometheus  # namespace固定，不需要修改
+  namespace: cm-prometheus  # namespace 固定，不需要修改
 # 描述抓取目标 Pod 的选取及抓取任务的配置
 spec:
   # 填写对应 Pod 的 label(metadata/labels)，service monitor 会取对应的值作为 job label 的值
@@ -209,7 +208,7 @@ spec:
     [ any: bool ]
     # 需要选取 namespace 列表
     [ matchNames: []string ]
-  # 填写要监控 Pod 的 Label 值，以定位目标 Pod  [K8S metav1.LabelSelector](https://v1-17.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#labelselector-v1-meta)
+  # 填写要监控 Pod 的 Label 值，以定位目标 Pod [K8S metav1.LabelSelector](https://v1-17.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#labelselector-v1-meta)
   selector:
     [ matchExpressions: array ]
       [ example: - {key: tier, operator: In, values: [cache]} ]
@@ -224,13 +223,13 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: go-demo # 填写一个唯一名称
-  namespace: cm-prometheus # namespace固定，不要修改
+  namespace: cm-prometheus # namespace 固定，不要修改
 spec:
   endpoints:
     - interval: 30s
-      # 填写service yaml中Prometheus Exporter对应的Port的Name
+      # 填写 service yaml 中 Prometheus Exporter 对应的 Port 的 Name
       port: 8080-8080-tcp
-      # 填写Prometheus Exporter对应的Path的值，不填默认/metrics
+      # 填写 Prometheus Exporter 对应的 Path 的值，不填默认 /metrics
       path: /metrics
       relabelings:
         # ** 必须要有一个 label 为 application，这里假设 k8s 有一个 label 为 app，
@@ -238,11 +237,11 @@ spec:
         - action: replace
           sourceLabels: [__meta_kubernetes_pod_label_app]
           targetLabel: application
-  # 选择要监控service所在的namespace
+  # 选择要监控 service 所在的 namespace
   namespaceSelector:
     matchNames:
       - golang-demo
-  # 填写要监控service的Label值，以定位目标service
+  # 填写要监控 service 的 Label 值，以定位目标 service
   selector:
     matchLabels:
       app: golang-app-demo
@@ -305,7 +304,7 @@ metricRelabelings:
 # 从原始 labels 中取哪些 label 的值进行 relabel，取出来的值通过 separator 中的定义进行字符拼接。
 # 如果是 PodMonitor/ServiceMonitor 对应的配置项为 sourceLabels
 [ source_labels: '[' <labelname> [, ...] ']' ]
-# 定义需要 relabel 的 label 值拼接的字符，默认为 ';'。
+# 定义需要 relabel 的 label 值拼接的字符，默认为 ';'
 [ separator: <string> | default = ; ]
 
 # action 为 replace/hashmod 时，通过 target_label 来指定对应 label name。

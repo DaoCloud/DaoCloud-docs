@@ -113,7 +113,8 @@
         ```
 
 !!! note
-    每个 node 都需要做进行 Docker 或 containerd 加载镜像操作。
+
+    每个 node 都需要做 Docker 或 containerd 加载镜像操作。
     加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
 
 ## 升级

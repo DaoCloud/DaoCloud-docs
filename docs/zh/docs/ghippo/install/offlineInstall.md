@@ -82,7 +82,7 @@
     charts-syncer sync --config load-image.yaml
     ```
 
-### docker或containerd直接加载
+### Docker 或 containerd 直接加载
 
 解压并加载镜像文件。
 
@@ -113,7 +113,8 @@
         ```
 
 !!! note
-    每个node都需要做进行docker或containerd加载镜像操作
+
+    每个 node 都需要做 Docker 或 containerd 加载镜像操作，
     加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
 
 ## 升级
@@ -122,7 +123,7 @@
 
 !!! note  
 
-    当从 v0.11.x (或更低版本) 升级到 v0.12.0 (或更高版本) 时，需要将 `bak.yaml` 中所有 keycloak key 修改为 keycloakx。  
+    当从 v0.11.x (或更低版本) 升级到 v0.12.0 (或更高版本) 时，需要将 `bak.yaml` 中所有 keycloak key 修改为 `keycloakx`。  
 
     这个 key 的修改示例：  
 
@@ -199,10 +200,10 @@
 
         ```shell
         helm upgrade ghippo ghippo/ghippo \
-        -n ghippo-system \
-        -f ./bak.yaml \
-        --set global.imageRegistry=$imageRegistry
-        --version 0.9.0
+          -n ghippo-system \
+          -f ./bak.yaml \
+          --set global.imageRegistry=$imageRegistry
+          --version 0.9.0
         ```
 
 === "通过 chart 包升级"
@@ -225,7 +226,7 @@
 
         ```shell
         helm upgrade ghippo . \
-        -n ghippo-system \
-        -f ./bak.yaml \
-        --set global.imageRegistry=$imageRegistry
+          -n ghippo-system \
+          -f ./bak.yaml \
+          --set global.imageRegistry=$imageRegistry
         ```
