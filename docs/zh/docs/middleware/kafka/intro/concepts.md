@@ -17,7 +17,7 @@ hide:
 
     由于一个 Topic 包含多个分区，因此无法在整个 Topic 范围内保证消息的顺序性，但可以保证消息在单个分区内的顺序性。
 
-    ![](../images/concept01.png)
+    ![主题和分区](../images/concept01.png)
 
 - 生产者和消费者
 
@@ -29,12 +29,12 @@ hide:
     偏移量是一个不断递增的数值，在创建消息时，Kafka 会把它添加到其中，在给定的分区里，每个消息的偏移量都是唯一的。
     消费者把每个分区最后读取的偏移量保存在 Zookeeper 或 Kafka 上，如果消费者关闭或者重启，它还可以重新获取该偏移量，以保证读取状态不会丢失。
 
-    ![](../images/concept02.png)
+    ![消费者](../images/concept02.png)
 
     一个分区只能被同一个群组中的一个消费者读取，但可以被不同群组中的多个消费者共同读取。
     多个群组中的消费者共同读取同一个主题时，彼此之间互不影响。
 
-    ![](../images/concept03.png)
+    ![消费者](../images/concept03.png)
 
 - Broker 和 Cluster
 
@@ -48,4 +48,4 @@ hide:
     一个分区可以分配给多个 Broker，这个时候会发生分区复制。
     这种复制机制为分区提供了消息冗余，如果有一个 Broker 失效，其他 Broker 可以接管领导权。
 
-    ![](../images/concept04.png)
+    ![broker 和 cluster](../images/concept04.png)
