@@ -51,10 +51,10 @@
 
     ```bash
     helm upgrade --install mcamel-redis --create-namespace -n mcamel-system --cleanup-on-fail \
-    --set global.mcamel.imageTag=v0.1.3 \
-    --set global.imageRegistry=release.daocloud.io \
+      --set global.mcamel.imageTag=v0.1.3 \
+      --set global.imageRegistry=release.daocloud.io \
     mcamel-release/mcamel-redis \
-    --version 0.1.3
+      --version 0.1.3
     ```
 
     参数说明：

@@ -53,9 +53,9 @@
 
     ```shell
     helm upgrade ghippo ghippo/ghippo \
-    -n ghippo-system \
-    -f ${GHIPPO_VALUES_BAK} \
-    --version ${GHIPPO_HELM_VERSION}
+      -n ghippo-system \
+      -f ${GHIPPO_VALUES_BAK} \
+      --version ${GHIPPO_HELM_VERSION}
     ```
 
 6. 使用 `kubectl` 重启全局管理 Pod，使配置生效。

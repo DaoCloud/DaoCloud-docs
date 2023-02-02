@@ -9,7 +9,7 @@ hide:
 
 依次执行以下命令从集群卸载 DCE 5.0，卸载过程中不会进行任何备份，请谨慎操作。
 
-```shell
+```shell linenums="1"
 kubectl -n mcamel-system delete mysql mcamel-common-mysql-cluster
 kubectl -n mcamel-system delete elasticsearches mcamel-common-es-cluster-masters
 kubectl -n mcamel-system delete redisfailover mcamel-common-redis-cluster
