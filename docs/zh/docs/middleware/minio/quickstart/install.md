@@ -8,29 +8,29 @@
 
 1. 在左侧导航栏点击`容器管理` -> `集群列表`。
 
-    ![](../images/install01.png)
+    ![集群列表](../images/install01.png)
 
 2. 选择要安装 MinIO 的集群，点击集群名称。
 
-    ![](../images/install02.png)
+    ![点击集群名称](../images/install02.png)
 
 3. 在左侧导航栏点击 `Helm 应用` -> `Helm 模板`，在搜索框中输入 `minio`，敲击回车键，点击 MinIO-operator 磁贴卡片。
 
-    ![](../images/install03.png)
+    ![找到 operator](../images/install03.png)
 
 4. 选择合适版本后，点击`安装`按钮。也可以遵循黑色区域的文字提示，从命令行安装。
 
-    ![](../images/install04.png)
+    ![点击安装](../images/install04.png)
 
 5. 输入合适的名称，选择命名空间和版本后，点击`确定`。也可以在底部配置 YAML 来安装。
 
-    ![](../images/install05.png)
+    ![填写信息](../images/install05.png)
 
-    ![](../images/install06.png)
+    ![点击确定](../images/install06.png)
 
 6. 系统返回 `Helm 应用`列表，屏幕提示创建成功。等待片刻后，状态将从`安装中`变为`已部署`。
 
-    ![](../images/install07.png)
+    ![状态](../images/install07.png)
 
 ## 安装 mcamel-MinIO
 
@@ -86,8 +86,8 @@ helm uninstall mcamel-minio -n mcamel-system
 
 1. 在 Helm 应用列表中，点击最右侧的 `⋮` 或某个 Helm 应用名称，选择`删除`。
 
-    ![](../images/uninstall01.png)
+    ![选择删除](../images/uninstall01.png)
 
 2. 在弹窗中输入要删除的名称，确认无误后，点击`删除`。
 
-    ![](../images/uninstall02.png)
+    ![点击删除](../images/uninstall02.png)

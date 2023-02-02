@@ -442,13 +442,13 @@ mdemo-cluster1 | :heart: VERSION=vc3 | :heart:
 - **helloworld** 工作负载增加对应的版本**环境变量**
     - SERVICE_VERSION: ${VERSION}
 
-![image-20221226095647090](./images/create-demo11.png)
+![部署demo](./images/create-demo11.png)
 
-![image-20221226100533974](./images/create-demo22.png)
+![部署demo](./images/create-demo22.png)
 
-![image-20221226101100684](./images/create-demo33.png)
+![部署demo](./images/create-demo33.png)
 
-![image-20221226102025014](./images/create-demo55.png)
+![部署demo](./images/create-demo55.png)
 
 #### 命令行部署 demo
 
