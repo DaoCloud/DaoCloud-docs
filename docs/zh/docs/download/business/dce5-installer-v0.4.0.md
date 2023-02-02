@@ -10,14 +10,14 @@ date: 2023-01-12
 
 | 文件名                      | 版本    | 架构 | 文件大小 | 下载                                           | 更新日期   |
 | ----------------------------- | ------- | -------- | ---------------------------------------------- | ---------- | ----------------------------- |
-| offline-centos7-v0.4.0-amd64.tar | v0.4.0 | AMD 64 | 16.33GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-v0.4.0-amd64.tar) | 2023-01-12 |
-| offline-kylin-v10sp2-v0.4.0-arm64.tar | v0.4.0 | ARM 64 | 14.96GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-v0.4.0-arm64.tar) | 2023-01-12 |
+| offline-centos7-v0.4.0-amd64.tar | v0.4.0 | AMD64 | 16.33GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-v0.4.0-amd64.tar) | 2023-01-12 |
+| offline-kylin-v10sp2-v0.4.0-arm64.tar | v0.4.0 | ARM64 | 14.96GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-v0.4.0-arm64.tar) | 2023-01-12 |
 
 ## 校验
 
 进入离线安装包下载目录。
 
-=== "AMD 64"
+=== "AMD64"
 
     执行以下命令校验安装包：
 
@@ -31,7 +31,7 @@ date: 2023-01-12
     offline-centos7-v0.4.0-amd64.tar: OK
     ```
 
-=== "ARM 64"
+=== "ARM64"
 
     执行以下命令校验安装包：
 
@@ -49,7 +49,7 @@ date: 2023-01-12
 
 成功校验离线包之后，
 
-=== "AMD 64"
+=== "AMD64"
 
     执行以下命令解压缩 tar 包：
 
@@ -57,7 +57,7 @@ date: 2023-01-12
     tar -zxvf offline-centos7-v0.4.0-amd64.tar
     ```
 
-=== "ARM 64"
+=== "ARM64"
 
     执行以下命令解压缩 tar 包：
 
