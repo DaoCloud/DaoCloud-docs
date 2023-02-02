@@ -13,15 +13,15 @@ DCE 为运行服务的 Pod 提供了 IP 地址，并为一组 Pod 提供相同�
 
 1. 进入某一个多云实例后，在左侧导航栏中，点击`资源管理` -> `多云服务`，点击右上角的`创建`按钮。
 
-    ![image](../images/service01.png)
+    ![点击按钮](../images/service01.png)
 
 2. 在`创建多云服务`页面中，配置访问类型等信息后，点击`确定`。
 
-    ![image](../images/service02.png)
+    ![填写表单](../images/service02.png)
 
 3. 返回多云服务列表，新创建的默认位于第一个。点击列表右侧的 `⋮`，可以更新和删除该服务。
 
-    ![image](../images/service03.png)
+    ![其他操作](../images/service03.png)
 
     !!! note
 

@@ -9,15 +9,15 @@ hide:
 
 1. 从左侧导航栏选择 `Minio 存储`。
 
-    ![](../images/create01.png)
+    ![选择 minio 存储](../images/create01.png)
 
 2. 首次使用时点击`立即部署`创建 MinIO 实例。此后可以点击列表右上角的`新建实例`按钮。
 
-    ![](../images/create02.png)
+    ![点击新建实例](../images/create02.png)
 
 3. 在`创建 MinIO 实例`页面中，设置基本信息后，点击`下一步`。
 
-    ![](../images/create03.png)
+    ![基本信息](../images/create03.png)
 
 4. 配置规格后，点击`下一步`。
 
@@ -26,19 +26,19 @@ hide:
     - 资源配额：根据实际情况选择规则
     - 存储：选择 MinIO 实例的存储卷和储存空间总量
 
-    ![](../images/create03.png)
+    ![配置规格](../images/create03.png)
 
 5. 服务设置后，点击`下一步`。
 
     - 访问方式：可以选择集群内访问还是 Nodeport 访问。
     - 服务设置：设置连接 MinIO 实例的用户名、密码。
 
-    ![](../images/create04.png)
+    ![服务设置](../images/create04.png)
 
 6. 确认实例配置信息无误，点击`确认`完成创建。
 
-    ![](../images/create05.png)
+    ![点击确认](../images/create05.png)
 
 7. 在实例列表页查看实例是否创建成功。刚创建的实例状态为`未就绪`，等几分钟后该状态变为`运行中`。
 
-    ![](../images/create06.png)
+    ![状态](../images/create06.png)

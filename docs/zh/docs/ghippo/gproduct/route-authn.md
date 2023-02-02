@@ -7,13 +7,13 @@ hide:
 
 接入后统一登录和密码验证，效果如下图：
 
-[接入效果](../images/gproduct02.png)
+![接入效果](../images/gproduct02.png)
 
 各个 GProduct 模块的 API bear token 验证都走 Istio Gateway。
 
 接入后的路由映射图如下：
 
-[接入效果](../images/gproduct03.png)
+![接入效果](../images/gproduct03.png)
 
 ## 接入方法
 
