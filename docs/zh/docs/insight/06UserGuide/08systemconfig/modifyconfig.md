@@ -105,19 +105,19 @@
 
 1. 登录 `kibana`，选择左侧导航栏 `Stack Management`。
 
-    ![kibana](../../images/logsys01.png)
+    ![Stack Management](../../images/logsys01.png)
 
 2. 选择左侧导航 `Index Lifecycle Polices`，并找到索引 `insight-es-k8s-logs-policy`，点击进入详情。
 
-    ![kibana](../../images/logsys02.png)
+    ![索引](../../images/logsys02.png)
 
 3. 展开 `Hot phase` 配置面板，修改 `Maximum age` 参数，并设置保留期限，默认存储时长为 `7d`。
 
-    ![kibana](../../images/logsys03.png)
+    ![保留期限](../../images/logsys03.png)
 
 4. 修改完后，点击页面底部的 `Save policy` 即修改成功。
 
-    ![kibana](../../images/logsys04.png)
+    ![保存](../../images/logsys04.png)
 
 ## 如何修改链路数据存储时长
 
@@ -175,16 +175,16 @@
 
 1. 登录 `kibana`，选择左侧导航栏 `Stack Management`。
 
-    ![kibana](../../images/logsys01.png)
+    ![Stack Management](../../images/logsys01.png)
 
 2. 选择左侧导航 `Index Lifecycle Polices`，并找到索引 `jaeger-ilm-policy`，点击进入详情。
 
-    ![kibana](../../images/trace02.png)
+    ![索引](../../images/trace02.png)
 
 3. 展开 `Hot phase` 配置面板，修改 `Maximum age` 参数，并设置保留期限，默认存储时长为 `7d`。
 
-    ![kibana](../../images/trace03.png)
+    ![保留期限](../../images/trace03.png)
 
 4. 修改完后，点击页面底部的 `Save policy` 即修改成功。
 
-    ![kibana](../../images/trace04.png)
+    ![保存](../../images/trace04.png)

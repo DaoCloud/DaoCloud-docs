@@ -10,7 +10,7 @@
 
 您可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择chart-syncer同步镜像到镜像仓库，该方法更加高效便捷。
 
-### chart-syncer同步镜像到镜像仓库
+### chart-syncer 同步镜像到镜像仓库
 
 1. 创建 load-image.yaml
 

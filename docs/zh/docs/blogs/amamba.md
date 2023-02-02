@@ -23,7 +23,7 @@
 
 3. **在运维阶段**：应用工作台针对多种形态的云原生应用，提供了统一的观测平面，包含监控、告警、日志等信息。还提供了对应用升级、回滚、停止和删除应用等功能。
 
-![img](images/amamba01.png)
+![三个阶段](images/amamba01.png)
 
 ## 功能特性
 
@@ -33,7 +33,7 @@
 
 在企业环境中，企业下的每一个部门由不同的项目构成，一个一个的项目就映射到了我们的工作空间（workspace）。下图是应用工作台提供了基于Kubernetes的多租户管理方案。
 
-![img](images/amamba02.png)
+![层级资源](images/amamba02.png)
 
 前提条件：用户可以在5.0全局管理模块被设置为工作空间的管理员来参与工作空间的管理，从而参与项目的协同。
 
@@ -52,12 +52,12 @@
 
 目前应用工作台支持的云原生应用有：
 
-![img](images/amamba03.png)
+![云原生应用](images/amamba03.png)
 
 应用工作台面向应用开发和运维，覆盖应用全生命周期，包括应用的创建、删除、 配置修改、自动扩缩及自动运维。
 并且支持 SpringCloud、Dubbo、ServiceMesh 服务治理架构，与 [5.0 微服务引擎](../skoala/intro/features.md)、[5.0 服务网格](../mspider/01Intro/WhatismSpider.md)无缝集成：
 
-![img](images/amamba04.png)
+![集成](images/amamba04.png)
 
 ### CI/CD 流水线
 
@@ -67,14 +67,14 @@
 - 双引擎：支持 Jenkins 和 Tekton 作为应用工作台的流水线系统引擎。
 - 丰富的流水线模板：内置了多条流水线官方模板，大大降低了用户的使用门槛，可以适应不同业务场景，满足用户的日常需求。
 
-![img](images/amamba05.png)
+![流水线](images/amamba05.png)
 
 ### GitOps
 
 GitOps 是一种为云原生应用实现持续部署的理念。应用工作台全面拥抱 GitOps，GitOps 的核心思想是拥有一个 Git 仓库，并将应用系统的申明式基础架构和应用程序存放在 Git 仓库中进行版本控制。
 GitOps 结合 Kubernetes 能够利用自动交付流水线将更改应用到指定的任意多个集群中，从而解决跨云部署的一致性问题。
 
-![img](images/amamba06.png)
+![GitOps](images/amamba06.png)
 
 ### 渐进式发布
 
@@ -82,7 +82,7 @@ GitOps 结合 Kubernetes 能够利用自动交付流水线将更改应用到指�
 
 应用工作台基于 Argo Rollouts 实现了渐进式的灰度发布，可以让开发人员可以选择他们自己的分析指标，自定义他们的渐进式发布的步骤，甚至选择他们自己的入口或服务网格提供商来进行流量控制。
 
-![img](images/amamba07.png)
+![渐进式发布](images/amamba07.png)
 
 ## 常见问答
 

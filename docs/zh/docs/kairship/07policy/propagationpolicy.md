@@ -8,15 +8,15 @@
 
 1. 进入某一个多云实例后，在左侧导航栏中，点击`策略管理` -> `部署策略`，点击右上角的 `YAML 创建`按钮。
 
-    ![image](../images/deploy01.png)
+    ![点击按钮](../images/deploy01.png)
 
 2. 在 `YAML 创建`页面中，输入正确的 YAML 语句后，点击`确定`。
 
-    ![image](../images/deploy02.png)
+    ![输入 yaml 后确定](../images/deploy02.png)
 
 3. 返回部署策略列表，新创建的默认位于第一个。点击列表右侧的 `⋮`，可以编辑 YAML 和执行删除操作。
 
-    ![image](../images/deploy03.png)
+    ![其他操作](../images/deploy03.png)
 
     !!! note
 
@@ -26,7 +26,7 @@
 
 此处列出一个部署策略的 YAML 示例，您稍加修改就可以使用。
 
-```yaml
+```yaml title="YAML example"
 kind: PropagationPolicy
 apiVersion: policy.karmada.io/v1alpha1
 metadata:
