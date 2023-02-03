@@ -61,7 +61,7 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
     ssh root@10.64.30.142
     ```
 
-1. 查看正在运行的网格服务。
+1. 查看正在运行的 istio-ingressgateway。例如获取端口 `31904`，稍后在浏览器中访问 http://10.64.30.142:31904/hello ，查验透传前后的输出变化。
 
     ```bash
     $ kubectl get svc -n istio-system
@@ -71,7 +71,7 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
     mspider-mcpc-ckube-remote   ClusterIP      10.97.149.192   <none>        80/TCP                                       35d
     ```
 
-1. 查看 default 命名空间中运行的 deployment。
+1. 查看 default 命名空间中运行了 2 个 deployment。
 
     ```bash
     $ kubectl  get deploy -n default
@@ -171,18 +171,21 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
     kubernetes   ClusterIP   10.96.0.1       <none>        443/TCP    49d
     ```
 
-    用 curl 查看 helloworld 的流量路由，目前流量经过了 istio-envoy，即经过了边车。
+    用 curl 查看 helloworld 的流量路由：
 
     ```bash
     $ curl -sSI 10.108.55.123:5000/hello
     HTTP/1.1 200 OK
     content-type: text/html; charset=utf-8
     content-length: 59
-    server: istio-envoy
+    server: istio-envoy # (1)
     date: Fri, 03 Feb 2023 06:23:27 GMT
-    x-envoy-upstream-service-time: 59
+    x-envoy-upstream-service-time: 59 # (2)
     x-envoy-decorator-operation: helloworld.default.svc.cluster.local:5000/*
     ```
+
+    1. 流量经过了 istio-envoy
+    2. 有 upstream 上游服务
 
 === "启用流量透传后"
 
@@ -283,6 +286,8 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
     HTTP/1.0 200 OK
     Content-Type: text/html; charset=utf-8
     Content-Length: 60
-    Server: Werkzeug/0.12.2 Python/2.7.13
+    Server: Werkzeug/0.12.2 Python/2.7.13 # (1)
     Date: Fri, 03 Feb 2023 06:33:13 GMT
     ```
+
+    1. 这是 K8s 默认的流量路由，没有经过边车
