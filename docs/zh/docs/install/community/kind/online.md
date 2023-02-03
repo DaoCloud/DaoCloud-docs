@@ -112,7 +112,7 @@
 1. 获取 kind 所在主机的 IP，例如 `10.6.3.1`，执行以下命令开始安装。
 
     ```shell
-    ./dce5-installer install-app -z -k 10.6.3.1:8888
+    chmod +x ./dce5-installer install-app -z -k 10.6.3.1:8888
     ```
 
     !!! note
