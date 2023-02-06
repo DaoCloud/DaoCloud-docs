@@ -1,20 +1,20 @@
 # Ingress 使用范围（Scope）
 
-IngressClass Scope 用于指定 Ingress 实例的使用范围为集群级 或是 命名空间级。
+IngressClass Scope 用于指定 Ingress 实例的使用范围为集群级或是命名空间级。
 
 **适用场景**
 
-* 同一个集群中，共享同一个 Ingress 实例，可设置 集群级 Ingress 实例
-* 同一个集群不同 Namespace 使用不同的 Ingress 实例实现负载隔离，可设置 命名空间级 Ingress 实例
+* 同一个集群中，共享同一个 Ingress 实例，可设置集群级 Ingress 实例
+* 同一个集群不同命名空间使用不同的 Ingress 实例实现负载隔离，可设置命名空间级 Ingress 实例
 
-如果在同一个集群内，同一 Namespace 内有不同应用需要使用不同 Ingress 实例需求，请参考 [IngressClass](ingressclass.md)
+> 如果在同一个集群内，同一命名空间内有不同应用需要使用不同 Ingress 实例的需求，请参考 [IngressClass](ingressclass.md)。
 
 ## 集群级 Ingress 实例
 
-创建 Ingress 实例时，如果启用`Ingress Scope`，创建后的 IngressClass 资源在以下两种情况下， Ingress 实例使用范围都为`集群级`：
+创建 Ingress 实例时，如果启用 `Ingress Scope`，创建后的 IngressClass 资源在以下两种情况下， Ingress 实例的使用范围都为`集群级`：
 
-1. 仅设置了`parameters`但是未设置 ` .spec.parameters.scope` 
-2. 设置了` .spec.parameters.scope` 为 `cluster`
+1. 仅设置了 `parameters` 但是未设置 ` .spec.parameters.scope` 
+2. 设置了 ` .spec.parameters.scope` 为 `cluster`
 
 ```yaml
 #示例
@@ -33,9 +33,9 @@ spec:
 
 ## 命名空间级 Ingress 实例
 
-当创建 Ingress 实例时，如果启用`Ingress Scope`，IngressClass 设置了`.spec.parameters` 并且同时设置了 `.spec.parameters.scope` 为 `Namespace`，那么 Ingress 实例的 Ingress Class 指向为`命名空间级`，需要指定待使用的命名空间。
+当创建 Ingress 实例时，如果启用 `Ingress Scope`，IngressClass 设置了 `.spec.parameters`，并且设置 `.spec.parameters.scope` 为 `Namespace`，那么 Ingress 实例的 Ingress Class 指向为`命名空间级`，需要指定待使用的命名空间。
 
-命名空间级的 Ingress 实例，相当于管理员将 Ingress 的使用权限下方给到某个命名空间，可以实现资源隔离。
+命名空间级的 Ingress 实例，相当于管理员将 Ingress 的使用权限下发给到某个命名空间，可以实现资源隔离。
 
 ```yaml
 #示例
@@ -53,16 +53,16 @@ spec:
     name: external-config
 ```
 
-## 如何开启 并设置集群/命名空间级 Ingress?
+## 如何开启并设置集群/命名空间级 Ingress?
 
-可以通过指定 `--watch-namespace` 的方式，不同的实例 watch 不同的 namespace。
-[ingress-nginx 实例通过 Helm 安装](install.md) 时指定 `controller.scope.enabled=true` 和 `--set controller.scope.namespace=$NAMESPACE`
+可以通过指定 `--watch-namespace` 的方式，不同的实例 watch 不同的命名空间。
+若[ingress-nginx 实例通过 Helm 安装](install.md)，需通过指定 `controller.scope.enabled=true` 和 `--set controller.scope.namespace=$NAMESPACE` 开启并设置集群/命名空间级 Ingress。
 
-安装时开启并指定 Namespace ，则创建的 Ingress 实例将指定给 命名空间使用，关闭时为全集群共享。
+安装时开启并指定命名空间，则创建的 Ingress 实例将指定给命名空间使用，关闭时为全集群共享。
 
 ![scope01](../../images/scope01.jpg)
 
-对应的 `valule.yaml` 中的配置信息
+对应的 `value.yaml` 中的配置信息：
 
 ![scope02](../../images/scope02.jpg)
 
