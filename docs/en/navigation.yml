@@ -408,7 +408,8 @@ nav:
           - Ingress-nginx:
               - Intro: network/modules/ingress-nginx/what.md
               - Install: network/modules/ingress-nginx/install.md
-              - IngressClass: network/modules/ingress-nginx/ingressclass.md
+              - Ingress Class: network/modules/ingress-nginx/ingressclass.md
+              - Ingress Scope: network/modules/ingress-nginx/scope.md
           - Metallb:
               - Intro: network/modules/metallb/what.md
               - Install: network/modules/metallb/install.md
