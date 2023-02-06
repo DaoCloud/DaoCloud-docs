@@ -9,7 +9,7 @@ hide:
 
 对接后的预期效果如图：
 
-[对接效果](../images/gproduct01.png)
+![对接效果](../images/gproduct01.png)
 
 ## 对接方法
 

@@ -33,19 +33,19 @@ spec:
 
 2. 在`创建请求身份认证`界面中，先进行基本配置后点击`下一步`。
 
-    ![创建](../../images/request02.png)
+    ![基本配置](../../images/request02.png)
 
 3. 按屏幕提示进行认证设置后，点击`确定`，系统将验证所配置信息。
 
-    ![创建](../../images/request03.png)
+    ![认证设置](../../images/request03.png)
 
 4. 验证通过后，屏幕提示创建成功。
 
-    ![创建](../../images/request04.png)
+    ![成功](../../images/request04.png)
 
 5. 在列表右侧，点击操作一列的 `⋮`，可通过弹出菜单进行更多操作。
 
-    ![创建](../../images/request05.png)
+    ![更多操作](../../images/request05.png)
 
 !!! note
 

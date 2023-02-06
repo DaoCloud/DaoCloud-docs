@@ -6,11 +6,11 @@
 
 **[Tengine](https://github.com/alibaba/tengine):** Tengine 是由淘宝网发起的 Web 服务器项目。它在 Nginx 的基础上，针对大访问量网站的需求，添加了很多高级功能和特性。
 
-**[Tongsuo](https://github.com/Tongsuo-Project/Tongsuo):** 铜锁/Tongsuo（原BabaSSL）是一个提供现代密码学算法和安全通信协议的开源基础密码库，为存储、网络、密钥管理、隐私计算等诸多业务场景提供底层的密码学基础能力，实现数据在传输、使用、存储等过程中的私密性、完整性和可认证性，为数据生命周期中的隐私和安全提供保护能力。
+**[Tongsuo](https://github.com/Tongsuo-Project/Tongsuo):** 铜锁/Tongsuo（原 BabaSSL）是一个提供现代密码学算法和安全通信协议的开源基础密码库，为存储、网络、密钥管理、隐私计算等诸多业务场景提供底层的密码学基础能力，实现数据在传输、使用、存储等过程中的私密性、完整性和可认证性，为数据生命周期中的隐私和安全提供保护能力。
 
 ## 准备工作
 
-- 一台安装了 Docker 的 Linux 主机，并且确保它能访问互联网
+一台安装了 Docker 的 Linux 主机，并且确保它能访问互联网
 
 ## 编译和安装 Tengine & Tongsuo
 
@@ -84,11 +84,11 @@ docker build -t tengine:0.0.1 .
 -rw-r--r-- 1 root root 4096 Dec  8 02:59 sm2.*.io
 ```
 
-## 给 nginx 配置 SSL 证书（SM2 和 RSA 证书）
+## 给 nginx 配置 SSL 证书
 
-> 双证书的优点：当浏览器不支持国密证书时，自动切换到 RSA 证书。
+支持 SM2 和 RSA 两种证书。双证书的优点是：当浏览器不支持国密证书时，自动切换到 RSA 证书。
 
-更多详细配置，请参考[官方文档](https://www.yuque.com/tsdoc/ts/eziua1)
+更多详细配置，请参考[官方文档](https://www.yuque.com/tsdoc/ts/eziua1)。
 
 ```shell
 # 进入 nginx 配置文件存放目录
@@ -138,6 +138,6 @@ server {
 nginx -s reload
 ```
 
-## 国密网关部署成功之后，请阅读下面的文章
+## 下一步
 
-- [自定义 DCE 5.0 反向代理服务器地址](./reverseProxy.md)
+国密网关部署成功之后，[自定义 DCE 5.0 反向代理服务器地址](./reverseProxy.md)。

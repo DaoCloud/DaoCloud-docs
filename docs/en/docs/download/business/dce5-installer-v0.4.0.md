@@ -10,14 +10,14 @@ This page can download the offline installation package and verification file of
 
 | File name                      | Version    | Architecture | File size | Downloads                                           | Updated date   |
 | ----------------------------- | ------- | -------- | ---------------------------------------------- | ---------- | ----------------------------- |
-| offline-centos7-v0.4.0-amd64.tar | v0.4.0 | AMD 64 | 16.33GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-v0.4.0-amd64.tar) | 2023-01-12 |
-| offline-kylin-v10sp2-v0.4.0-arm64.tar | v0.4.0 | ARM 64 | 14.96GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-v0.4.0-arm64.tar) | 2023-01-12 |
+| offline-centos7-v0.4.0-amd64.tar | v0.4.0 | AMD64 | 16.33GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-v0.4.0-amd64.tar) | 2023-01-12 |
+| offline-kylin-v10sp2-v0.4.0-arm64.tar | v0.4.0 | ARM64 | 14.96GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-v0.4.0-arm64.tar) | 2023-01-12 |
 
 ## Verify
 
 Enter the download directory of the offline installation package.
 
-=== "AMD 64"
+=== "AMD64"
 
     Execute the following command to verify the installation package:
 
@@ -31,7 +31,7 @@ Enter the download directory of the offline installation package.
     offline-centos7-v0.4.0-amd64.tar: OK
     ```
 
-=== "ARM 64"
+=== "ARM64"
 
     Execute the following command to verify the installation package:
 
@@ -49,7 +49,7 @@ Enter the download directory of the offline installation package.
 
 After successfully verifying the offline package,
 
-=== "AMD 64"
+=== "AMD64"
 
     Execute the following command to extract the tar package:
 
@@ -57,7 +57,7 @@ After successfully verifying the offline package,
     tar -zxvf offline-centos7-v0.4.0-amd64.tar
     ```
 
-=== "ARM 64"
+=== "ARM64"
 
     Execute the following command to extract the tar package:
 

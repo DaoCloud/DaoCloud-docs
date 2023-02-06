@@ -1561,7 +1561,7 @@ chmod 700 get_helm.sh
     使用镜像仓库安装，要切换镜像仓库的镜像，请使用 --set 更改这两个参数值：
     `global.k8sImageRegistry` 和 `global.hwameistorImageRegistry`
 
-    > 注意默认的镜像仓库 quay.io 和 ghcr.io。如果无法访问，可尝试使用 DaoCloud 提供的镜像源 quay.m.daocloud.io 和 ghcr.m.daocloud.io
+    > 如果无法访问默认的镜像仓库 `quay.io` 和 `ghcr.io`，请尝试使用 DaoCloud 提供的镜像源 `quay.m.daocloud.io` 和 `ghcr.m.daocloud.io`。
 
     ```bash linenums="1"
     helm install hwameistor ./hwameistor \
@@ -1884,7 +1884,7 @@ chmod 700 get_helm.sh
     kubectl top node
     ```
 
-    输出类似于；
+    输出类似于：
 
     ```none
     NAME               CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
@@ -1930,7 +1930,7 @@ curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCl
 chmod +x dce5-installer
 ```
 
-> 如果 `proxy-qiniu-download-public.daocloud.io` 链接失效，可使用 `qiniu-download-public.daocloud.io`
+> 如果 `proxy-qiniu-download-public.daocloud.io` 链接失效，可使用 `qiniu-download-public.daocloud.io`。
 
 ### 设置配置文件 [可选]
 

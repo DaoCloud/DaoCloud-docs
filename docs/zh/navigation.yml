@@ -372,7 +372,7 @@ nav:
               - 命名空间边车管理: mspider/03UserGuide/07SidecarManagement/NamespaceSidecar.md
               - 工作负载边车管理: mspider/03UserGuide/07SidecarManagement/WorkloadSidecar.md
               - 全局边车管理: mspider/03UserGuide/07SidecarManagement/GlobalSidecar.md
-              - 边车流量透传: mspider/03UserGuide/07SidecarManagement/penetrate.md
+              - 边车流量透传: mspider/03UserGuide/07SidecarManagement/passthrough.md
           - 流量监控:
               - mspider/03UserGuide/06TrafficMonitor/README.md
               - 流量拓扑: mspider/03UserGuide/06TrafficMonitor/connTopo.md
@@ -429,6 +429,7 @@ nav:
               - Ingress Class: network/modules/ingress-nginx/ingressclass.md
               - Ingress Scope: network/modules/ingress-nginx/scope.md
               - CORS 跨域配置: network/modules/ingress-nginx/cors.md
+              - 流量代理配置指南: network/modules/ingress-nginx/proxy.md
           - Metallb:
               - 介绍: network/modules/metallb/what.md
               - 安装: network/modules/metallb/install.md
@@ -622,12 +623,12 @@ nav:
       - 全局管理: videos/ghippo.md
       - 可观测性: videos/insight.md
       - 应用工作台: videos/amamba.md
-      - 服务网格: videos/mspider.md
-      - 微服务引擎: videos/skoala.md
       - 多云编排: videos/kairship.md
+      - 微服务引擎: videos/skoala.md
+      - 服务网格: videos/mspider.md
       - 中间件: videos/mcamel.md
-      - 云原生网络: videos/network.md
       - 镜像仓库: videos/kangaroo.md
+      - 云原生网络: videos/network.md  
   - 博客:
       - 博文索引: blogs/index.md
       - 202302 | DCE 5.0 攻坚语录集: blogs/peter.md

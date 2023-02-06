@@ -9,11 +9,11 @@ hide:
 
 1. 在左侧导航栏中选择`中间件` -> `Kafka 消息队列`。
 
-    ![](../images/login01.png)
+    ![kafka](../images/login01.png)
 
 2. 在弹窗中选择一个工作空间后，点击`确认`。
 
-    ![](../images/login02.png)
+    ![点击确认](../images/login02.png)
 
     !!! note
 
@@ -21,4 +21,4 @@ hide:
 
 3. 初次使用时，可以点击`立即部署`来创建 Kafka 实例。
 
-    ![](../images/what03.png)
+    ![立即部署](../images/what03.png)
