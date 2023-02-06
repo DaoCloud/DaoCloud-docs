@@ -40,6 +40,14 @@ See the [Sidecar Upgrade](../mspider/03UserGuide/upgrade/SidecarUpdate.md) docum
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sidecarup.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
 </div>
 
+## Traffic passthrough
+
+See the [traffic passthrough](../mspider/03UserGuide/07SidecarManagement/passthrough.md) documentation page.
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/passthrough.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
+</div>
+
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }
