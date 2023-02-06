@@ -4,6 +4,11 @@ This page shares some technical articles related to cloud native, and we hope th
 
 ### Troubleshooting
 
+- [How do you solve the storage capacity problem with Prometheus?](https://mp.weixin.qq.com/s/TMApz8FxT91qBvS1fzuTVw)
+
+     The poor scaling of standalone storage is a widely criticized problem with Prometheus. The article gives 3 clustering solutions to this problem.
+     Prometheus federal cluster, remote storage solution, Prometheus own build cluster, these three solutions can solve the storage problem of Prometheus well.
+
 - [How can nettrace quickly perform network troubleshooting in cloud-native scenarios?](https://mp.weixin.qq.com/s/0n7kbOhHr6m5JClTrSIysA)
 
     [nettrace](https://github.com/OpenCloudOS/nettrace) is an eBPF-based network toolset that integrates network message tracing (fault location), network troubleshooting, and network anomaly monitoring.
@@ -72,6 +77,19 @@ This page shares some technical articles related to cloud native, and we hope th
      This article was inspired by the fact that Grafana does not display the capacity indicators of storage volumes created with storage drivers. It shows the troubleshooting ideas and methods for this problem, and then outlines the implementation process of Kubelet for collecting storage volume indicators.
 
 ### Best Practices
+
+- [Three things to do before migrating cgroup v2 for K8s](https://mp.weixin.qq.com/s/BV-y82MalhG-A--hvUFMcg)
+
+     With the official release of Kubernetes 1.25 on cgroup v2 features (GA), kubelet container resource management capabilities have been enhanced.
+     Based on the cgroup v2 concept, the article introduces the three things to do before adopting cgroup v2 in terms of Linux OS, K8s ecosystem, and application changes.
+
+- [Alibaba Cloud Cloud Native Hands-on Guide](https://developer.aliyun.com/ebook/7879?spm=a2c6h.26392470.ebook-read.13.3e855bc8YpIdco)
+
+     The guide covers global cloud-native application insights and trends, AliCloud's latest product and technology layout in the cloud-native space, AliCloud's new thinking and input on All in Serverless, and hands-on experience on cloud from companies like Transn, New Oriental, and Little Red Book.
+
+- [Service Grid Security and High Availability Deployment Best Practices](https://mp.weixin.qq.com/s/hFCshQpmF7Vr0jrpugArjA)
+
+     Article on security and high availability best practices when deploying service grids in a multi-cluster infrastructure, including: how control planes should be deployed near applications; how ingress should be deployed to promote security and agility; how to use Envoy to promote cross-cluster load balancing, and how to use certificates inside the grid.
 
 - [Open Source Strategy Development and Implementation for Medium and Large Technology Enterprises](https://mp.weixin.qq.com/s/9Z4zFPU0uHk6RhrpUDD-tw)
 

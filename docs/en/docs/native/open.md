@@ -134,6 +134,11 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: Add the StatusCheck function to check the health of the application, and stop the chaos experiment when the application is unhealthy; support the use of `Chaosctl` for outbound forced recovery, and add workflows based on flow charts in the dashboard interface etc.
 
+- [Cilium 2022 Annual Report Released](https://github.com/cilium/cilium.io/raw/main/Annual-Reports/Cilium%20Annual%20Report%202022.pdf)
+
+     The report documents the Cilium project's contributor growth, release highlights, user survey results, production landings, community activities, and where we are headed in 2023.
+     In 2023, the Cilium service mesh will mature; kernel data captured through eBPF will help the surrounding ecosystem build a better platform for end users; and supply chain security features will be enhanced.
+
 - [Cilium CNI Plugin v1.12.0 release (CNCF project)](https://github.com/cilium/cilium/releases/tag/v1.12.0)
 
      The main new features of this version: launch Cilium Service Mesh (multiple control planes, sidecar/borderless car, Envoy CRD), integrate Ingress Controller, add K8s service topology awareness prompt, initial NAT46/64 implementation, support Pod to enable BBR congestion control and Bandwidth Manager moved out of beta, supports dynamic allocation of pod CIDR in cluster pool v2 IPAM mode, supports setting service backend status, and upgrades egress gateway to stable status.
@@ -334,6 +339,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      Recently, Alibaba Cloud officially released the community version of [iLogtail](https://github.com/alibaba/ilogtail) with full functions.
      This update open-sources all C++ core codes, and this version aligns with the enterprise version for the first time in terms of core capabilities. Added many important features such as log file collection, container file collection, lock-free event processing, multi-tenant isolation, and new configuration methods based on Pipeline.
+
+- [Istio Announces 2022 Security Audit Results](https://istio.io/latest/blog/2023/ada-logics-security-assessment/)
+
+     The audit found no critical issues, and a total of 11 security issues were identified, all of which have now been fixed. Of these, the only CVE vulnerability found was [Request Smuggling Vulnerability in Go](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41721), the most common issue related to Istio getting files over the network.
 
 - [Istio v1.16 Announcement (CNCF project)](https://istio.io/latest/news/releases/1.16.x/announcing-1.16/)
 
@@ -663,6 +672,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: Two new SPI plug-ins are added: respectively used to configure encryption, decryption and authentication, support cluster gRPC client to set thread pool size, support reset raft cluster, etc.
 
+- [nerdctl Containerd Command Line Tool v1.2.0](https://github.com/containerd/nerdctl/releases/tag/v1.2.0)
+
+     This version features: experimental support for reading Kubernetes container logs, improved compilation error messages, allows running Host Process containers on Windows, adds Windows HyperV container mode.
+
 - [NeuVector Container Security Platform v5.0Release](https://mp.weixin.qq.com/s/nZ_a7JiryZJskJEPPIEmcw)
 
      The main new features of this version: integration with SUSE Rancher, and can also be docked with other enterprise-level container management platforms such as Amazon EKS, Google GKE, and Microsoft AKS; support for web application firewall detection; support for automated container protection; support for zero-drift process and file protection And the network, process/file segmentation strategy mode protection, etc.
@@ -730,6 +743,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: replace the histogram with a more clear bucket histogram, support displaying examples on OpenMetrics counters, increase the semantic specification of database connection pool indicators, allow all metrics specifications to be synchronous or asynchronous, add HTTP/3, etc.
 
+- [Openyurt Cloud Native Edge Computing Project v1.2.0 Released (CNCF Project)](https://github.com/openyurtio/openyurt/releases/tag/v1.2.0)
+
+     New node pool governance component Pool-Coordinator for reducing cloud edge network bandwidth and improving edge autonomy in case of cloud edge network failure; use raven component to replace yurt-tunnel component to solve cross-region network communication problems; improve certificate manager.
+
 - [Openyurt Cloud Native Edge Computing Project v1.1.0 release (CNCF project)](https://github.com/openyurtio/openyurt/releases/tag/v1.1.0)
 
      The main new features of this version: support OTA/automatic upgrade mode of DaemonSet workload, support autonomous function verification of e2e test, enable data filtering function, add suggestions for unified cloud computing edge communication solution, and improve health checker.
@@ -749,6 +766,11 @@ This page lists activity in cloud native open source projects in alphabetical or
      Its development and testing environment uses k3s, k8e, etc., so users can quickly and cost-effectively deploy low-resource, high-performance service grids on x86, arm, RISC-V, Loongson and other hardware platforms.
 
 ### P
+
+- [Paralus Kubernetes Zero Trust Access Service Becomes CNCF Sandbox Project](https://mp.weixin.qq.com/s/hYmMT0mvMdO6-LW6oHxteg)
+
+     [Paralus](https://github.com/paralus/paralus) is designed for multi-cluster environments, securing access to resources with instant service account creation and fine-grained user credential management.
+     In addition, Paralus incorporates the zero-trust principle, supporting multiple identity providers, custom roles, and more.
 
 - [Paralus: The industry's first open-source zero-trust access service for Kubernetes by Rafay Systems](https://rafay.co/the-kubernetes-current/paralus-industrys-first-open-source-zero-trust-access-service-for-kubernetes/)
 
@@ -774,6 +796,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Podman container runtime project v4.2.0 released](https://github.com/containers/podman/releases/tag/v4.2.0)
 
      The main new features of this version: support for GitLab Runner, new commands for creating copies of existing pods, new commands for synchronizing state changes between the database and any volume plugins, new exit policies for pods, and automatic cleanup of unused pods Caches Podman virtual machine images, allowing multiple overlay volumes of different containers to reuse the same workdir or upperdir.
+
+- [Prometheus v2.42.0 released (CNCF project)](https://github.com/prometheus/prometheus/releases/tag/v2.42.0)
+
+     This release features: support for native histograms, change WAL record format for native histograms, support for selecting TSDB dump time order, support for Float histograms, add container IDs as meta tags for Kubernetes pod objects.
 
 - [Prometheus v2.40.0 release (CNCF project)](https://github.com/prometheus/prometheus/releases/tag/v2.40.0)
 
