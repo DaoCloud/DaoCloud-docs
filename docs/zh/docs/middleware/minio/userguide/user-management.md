@@ -28,19 +28,19 @@ root 用户拥有对所有资源的所有操作权限。
 
 #### 通过 Console 创建普通用户
 
-![image](../images/miniouser01.png)
+![通过 Console 创建普通用户](../images/miniouser01.png)
 
 #### 通过 mc 创建普通用户
 
 > 注意，需要自行事先安装 `mc` 命令，并配置连接到 MinIO 实例
 
-创建用户
+创建用户：
 
 ```bash
 mc admin user add ALIAS ACCESSKEY SECRETKEY
 ```
 
-授予权限
+授予权限：
 
 ```bash
 mc admin policy set ALIAS readwrite user=USERNAME
@@ -86,7 +86,7 @@ type TenantSpec struct {
 
 #### 通过 console 创建 service account
 
-![image](../images/miniouser02.png)
+![通过 console 创建 service account](../images/miniouser02.png)
 
 #### 通过 mc 命令创建 service account
 

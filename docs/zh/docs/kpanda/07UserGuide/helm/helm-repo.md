@@ -25,11 +25,11 @@ Helm 仓库是用来存储和发布 Chart 的存储库。Helm 应用模块支持
 
 1. 找到需要引入第三方 Helm 仓库的集群，点击集群名称，进入`集群详情`。
 
-    ![ns](../../images/crd01.png)
+    ![集群详情](../../images/crd01.png)
 
 2. 在左侧导航栏，依次点击 `Helm 应用` -> `Helm 仓库`，进入 Helm 仓库页面。
 
-    ![helm-repo](../../images/helmrepo01.png)
+    ![helm仓库](../../images/helmrepo01.png)
 
 3. 在 Helm 仓库页面点击`创建仓库`按钮，进入创建仓库页面，按照下表配置相关参数。
 
@@ -40,11 +40,11 @@ Helm 仓库是用来存储和发布 Chart 的存储库。Helm 应用模块支持
     - 注解：为该 Helm 仓库添加注解。例如 key: repo4；value: Kubevela
     - 描述：为该 Helm 仓库添加描述。例如：这是一个 Kubevela 公开 Helm 仓库
 
-    ![helm-repo](../../images/helmrepo02.png)
+    ![填写参数](../../images/helmrepo02.png)
 
 4. 点击`确定`，完成 Helm 仓库的创建。页面会自动跳转至 Helm 仓库列表。
 
-    ![helm-repo](../../images/helmrepo03.png)
+    ![确定](../../images/helmrepo03.png)
 
 ## 更新 Helm 仓库
 
@@ -52,19 +52,19 @@ Helm 仓库是用来存储和发布 Chart 的存储库。Helm 应用模块支持
 
 1. 找到待更新仓库所在的集群，点击集群名称，进入`集群详情`。
 
-    ![ns](../../images/crd01.png)
+    ![集群详情](../../images/crd01.png)
 
 2. 在左侧导航栏，依次点击`Helm 应用` -> `Helm 仓库`，进入 Helm 仓库列表页面。
 
-    ![helm-repo](../../images/helmrepo01.png)
+    ![helm仓库](../../images/helmrepo01.png)
 
 3. 在仓库列表页面找到需要更新的 Helm 仓库，在列表右侧点击 `⋮` 按钮，在弹出菜单中点击`更新`。
 
-    ![helm-repo](../../images/helmrepo04.png)
+    ![点击更新](../../images/helmrepo04.png)
 
 4. 在`编辑 Helm 仓库`页面进行更新，完成后点击`确定`。
 
-    ![helm-repo](../../images/helmrepo05.png)
+    ![确定](../../images/helmrepo05.png)
 
 5. 返回 Helm 仓库列表，屏幕提示更新成功。
 
@@ -74,18 +74,18 @@ Helm 仓库是用来存储和发布 Chart 的存储库。Helm 应用模块支持
 
 1. 找到待删除仓库所在的集群，点击集群名称，进入`集群详情`。
 
-    ![ns](../../images/crd01.png)
+    ![集群详情](../../images/crd01.png)
 
 2. 在左侧导航栏，依次点击`Helm 应用` -> `Helm 仓库`，进入 Helm 仓库列表页面。
 
-    ![helm-repo](../../images/helmrepo01.png)
+    ![helm仓库](../../images/helmrepo01.png)
 
 3. 在仓库列表页面找到需要更新的 Helm 仓库，在列表右侧点击 `⋮` 按钮，在弹出菜单中点击`删除`。
 
-    ![helm-repo](../../images/helmrepo07.png)
+    ![点击删除](../../images/helmrepo07.png)
 
 4. 输入仓库名称进行确认，点击`删除`。
 
-    ![helm-repo](../../images/helmrepo08.png)
+    ![确认删除](../../images/helmrepo08.png)
 
 5. 返回 Helm 仓库列表，屏幕提示删除成功。

@@ -2,9 +2,28 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+
+## 2023.01.10
+
+### v0.13.2
+
+#### 修复
+
+- **修复** insight-agent 中 `kubernetes-event-exporter` 镜像地址错误的问题
+- **修复** 通过资源名称过滤告警 API
+
+## 2023.12.30
+
+### v0.13.1
+
+#### 修复
+
+- **修复** 构建离线包增加 `.relok8s-images` 文件
+- **修复** 调整 insight-agent 中组件 `otel-collector` 端口对应的端口名
+
 ## 2022.12.29
 
-### v0.13
+### v0.13.0
 
 #### 新功能
 
@@ -26,7 +45,7 @@
 - **修复** 钉钉机器人以 '-' 结尾的问题
 - **修复** 告警规则中不区分大小写的模糊搜索
 - **修复** 服务指标错误延迟计算不准确
-- **修复** Jaeger 查询出现 too many open files 的问题
+- **修复** Jaeger 查询出现 `too many open files` 的问题
 - **修复** es 索引翻转别名和清理策略未起作用的问题
 
 ## 2022.11.28
@@ -44,8 +63,8 @@
 - **升级** 内置 MySQL 镜像版本，从 v5.7.34 升级到 v8.0.29.
 - **升级** Fluentbit ARM架构的 helm Chart 版本从
 - **升级** kube-prometheus-stack 的 helm Chart 版本从 v39.6.0 升级至 v41.9.1
-- **更新** 使用的 Bitnami 的镜像，包含：grafana-operator, grafana, kubernetes-event-exporter
-- **更新** prometheus 相关的的 API 代理地址，将 /prometheus 修改为 /apis/insight.io/prometheus
+- **更新** 使用的 Bitnami 的镜像，包含 grafana-operator, grafana, kubernetes-event-exporter
+- **更新** prometheus 相关的的 API 代理地址，将 `/prometheus` 修改为 `/apis/insight.io/prometheus`
 
 #### 修复
 
@@ -89,47 +108,29 @@
 #### 功能特性
 
 - 支持与 OTel 服务名称关联的容器管理 Service 名称，以辨别是否启用了服务链路
-- Support kpanda service name associated with the otel service name, identify whether the service tracing enabled.
 - 在全局 OTel 一栏更新了默认的跟踪样本策略
-- Update default tracing sample policies in global otel col.
 - 将相扑（适用于审计日志）exporter port 8080 更改为 80
-- Change sumologic (work for audit log) exporter port 8080 to 80.
 - 使用 go-migrate 管理数据库迁移版本
-- Use go-migrate to manage db migration version.
 - 修复图形 API 中多集群和多命名空间过滤器不正常的问题
-- Fix multi cluster and multi namespaces filter not work well in graph API.
 - 支持构建 ARM 镜像
-- Support build arm image.
 
 #### 安装
 
 - Fluentbit 支持 Dockder 和 containerd 日志的解析器
-- Fluentbit support parser both docker and containerd log.
 - 修复 var/log/ UTC 问题
-- Fix var/log/ UTC issue.
 - Fluentbit 支持 elasticsearch 输出跳过 TLS 验证
-- Fluentbit support elasticsearch output skip verify TLS.
 - K8s 审计日志过滤器支持从 Helm 值获取规则
-- kube audit log filter support getting rule from helm values.
 - 修复 centos7/ubuntu20 主机日志时间的解析问题
-- Fix parse centos7/ubuntu20 host log time.
 - 提升 OTel Operator 版本，移除 Operator 中随自签名证书一起部署的 cert-manager 依赖项
-- Bump up otel operator version, remove cert-manager dependencies in operator deploy within self-signed cert.
 - 设计了 jaeger collector 指标
-- Scrape jaeger collector metrics.
 - 提升 tailing-sidecar 版本
-- Bump up tailing-sidecar version.
 - Jaeger 支持 elasticsearch 输出跳过 TLS 验证
-- Jaeger support elasticsearch output skip verify TLS.
 - 在 A 模式中禁用 jaeger 组件
-- Disable jaeger components in Mode A.
 
 #### 其他
 
 - 新增 OTel collector grafana 仪表盘
-- Add otel collector grafana dashboard.
 - 新增 Insight 概览中文页面
-- Add Insight Overview Chinese version.
 
 ## 2022-9-25
 

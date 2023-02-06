@@ -24,21 +24,29 @@
 
         ```yaml
         source:
-          intermediateBundlesPath: skoala-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+          intermediateBundlesPath: skoala-offline # (1)
         target:
-          containerRegistry: 10.16.23.145 # 需更改为你的镜像仓库 url
-          containerRepository: release.daocloud.io/skoala # 需更改为你的镜像仓库
+          containerRegistry: 10.16.23.145 # (2)
+          containerRepository: release.daocloud.io/skoala # (3)
           repo:
-            kind: HARBOR # 也可以是任何其他支持的 Helm Chart 仓库类别
-            url: http://10.16.23.145/chartrepo/release.daocloud.io # 需更改为 chart repo url
+            kind: HARBOR # (4)
+            url: http://10.16.23.145/chartrepo/release.daocloud.io # (5)
             auth:
-            username: "admin" # 你的镜像仓库用户名
-            password: "Harbor12345" # 你的镜像仓库密码
+            username: "admin" # (6)
+            password: "Harbor12345" # (7)
           containers:
             auth:
-              username: "admin" # 你的镜像仓库用户名
-              password: "Harbor12345" # 你的镜像仓库密码
+              username: "admin" # (6)
+              password: "Harbor12345" # (7)
         ```
+
+        1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+        2. 需更改为你的镜像仓库 url
+        3. 需更改为你的镜像仓库
+        4. 也可以是任何其他支持的 Helm Chart 仓库类别
+        5. 需更改为 chart repo url
+        6. 你的镜像仓库用户名
+        7. 你的镜像仓库密码
 
     === "未安装 chart repo"
 
@@ -46,18 +54,25 @@
 
         ```yaml
         source:
-          intermediateBundlesPath: skoala-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+          intermediateBundlesPath: skoala-offline # (1)
         target:
-          containerRegistry: 10.16.23.145 # 需更改为你的镜像仓库 url
-          containerRepository: release.daocloud.io/skoala # 需更改为你的镜像仓库
+          containerRegistry: 10.16.23.145 # (2)
+          containerRepository: release.daocloud.io/skoala # (3)
           repo:
             kind: LOCAL
-            path: ./local-repo # chart 本地路径
+            path: ./local-repo # (4)
           containers:
             auth:
-              username: "admin" # 你的镜像仓库用户名
-              password: "Harbor12345" # 你的镜像仓库密码
+              username: "admin" # (5)
+              password: "Harbor12345" # (6)
         ```
+
+        1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+        2. 需更改为你的镜像仓库 url
+        3. 需更改为你的镜像仓库
+        4. chart 本地路径
+        5. 你的镜像仓库用户名
+        6. 你的镜像仓库密码
 
 1. 执行同步镜像命令。
 
@@ -65,7 +80,7 @@
     charts-syncer sync --config load-image.yaml
     ```
 
-### docker 或 containerd 直接加载
+### Docker 或 containerd 直接加载
 
 解压并加载镜像文件。
 
@@ -96,7 +111,7 @@
         ```
 
 !!! note
-    每个node都需要做进行docker或containerd加载镜像操作
+    每个 node 都需要做 Docker 或 containerd 加载镜像操作，
     加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
 
 ## 升级
@@ -126,8 +141,10 @@
     3. 更新微服务引擎的 helm 仓库。
 
         ```shell
-        helm repo update skoala-release # helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
+        helm repo update skoala-release # (1)
         ```
+
+        1. helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
 
     4. 选择您想安装的微服务引擎版本（建议安装最新版本）。
 

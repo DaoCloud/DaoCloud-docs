@@ -9,11 +9,11 @@ hide:
 
 1. 在左侧导航栏中选择`中间件` -> `Elasticsearch 搜索服务`。
 
-    ![](../images/login01.png)
+    ![es](../images/login01.png)
 
 2. 在弹窗中选择一个工作空间后，点击`确认`。
 
-    ![](../images/login02.png)
+    ![选择工作空间](../images/login02.png)
 
     !!! note
 
@@ -21,4 +21,4 @@ hide:
 
 3. 点击`立即部署`即可开始部署 Elasticsearch 实例。
 
-    ![](../images/login03.png)
+    ![立即部署](../images/login03.png)

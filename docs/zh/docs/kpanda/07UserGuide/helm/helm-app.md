@@ -16,26 +16,26 @@
 
 1. 点击一个集群名称，进入`集群详情`。
 
-    ![helm](../../images/crd01.png)
+    ![集群详情](../../images/crd01.png)
 
 2. 在左侧导航栏，依次点击 `Helm 应用` -> `Helm 模板`，进入 Helm 模板页面。
 
     在 Helm 模板页面选择名为 `addon` 的 [Helm 仓库](helm-repo.md)，此时界面上将呈现 `addon` 仓库下所有的 Helm chart 模板。
     点击名称为 `cert-manager` 的 Chart。
 
-    ![helm](../../images/helm01.png)
+    ![找到 chart](../../images/helm01.png)
 
 3. 在安装页面，能够看到 Chart 的相关详细信息，在界面右上角选择需要安装的版本，点击`安装`按钮。此处选择 v1.9.1 版本进行安装。
 
-    ![helm](../../images/helm02.png)
+    ![点击安装](../../images/helm02.png)
 
 4. 配置`名称`、`命名空间`及`版本信息`，也可以在下方的 **参数配置** 区域通过修改 YAML 来自定义参数。点击`确定`。
 
-    ![helm](../../images/helm03.png)
+    ![填写参数](../../images/helm03.png)
 
 5. 系统将自动返回 Helm 应用列表，新创建的 Helm 应用状态为`安装中`，等待一段时间后状态变为`运行中`。
 
-    ![helm](../../images/helm04.png)
+    ![查看状态](../../images/helm04.png)
 
 ## 更新 Helm 应用
 
@@ -45,25 +45,25 @@
 
 1. 点击一个集群名称，进入`集群详情`。
 
-    ![helm](../../images/crd01.png)
+    ![集群详情](../../images/crd01.png)
 
-2. 在左侧导航栏，点击`Helm 应用`，进入 Helm 应用列表页面。
+2. 在左侧导航栏，点击 `Helm 应用`，进入 Helm 应用列表页面。
 
     在 Helm 应用列表页选择需要更新的 Helm 应用，点击列表右侧的 `...` 操作按钮，在下拉选择中选择`更新`操作。
 
-    ![helm](../../images/helm08.png)
+    ![点击更新](../../images/helm08.png)
 
 3. 点击`更新`按钮后，系统将跳转至更新界面，您可以根据需要对 Helm 应用进行更新，此处我们以更新 `dao-2048` 这个应用的 http 端口为例。
 
-    ![helm](../../images/helm09.png)
+    ![更新页面](../../images/helm09.png)
 
 4. 修改完相应参数后。您可以在参数配置下点击`变化`按钮，对比修改前后的文件，确定无误后，点击底部`确定`按钮，完成 Helm 应用的更新。
 
-    ![helm](../../images/helm10.png)
+    ![对比变化](../../images/helm10.png)
 
 5. 系统将自动返回 Helm 应用列表，右上角弹窗提示`更新成功`。
 
-    ![helm](../../images/helm11.png)
+    ![更新成功](../../images/helm11.png)
 
 ## 查看 Helm 操作记录
 
@@ -71,15 +71,15 @@ Helm 应用的每次安装、更新、删除都有详细的操作记录和日志
 
 1. 在左侧导航栏，依次点击`集群运维` -> `最近操作`，然后在页面上方选择 `Helm 操作`标签页。每一条记录对应一次安装/更新/删除操作。
 
-    ![helm](../../images/helm05.png)
+    ![helm 操作](../../images/helm05.png)
 
 2. 如需查看每一次操作的详细日志：在列表右侧点击 `⋮`，在弹出菜单中选择`日志`。
 
-    ![helm](../../images/helm06.png)
+    ![选择日志](../../images/helm06.png)
 
 3. 此时页面下方将以控制台的形式展示详细的运行日志。
 
-    ![helm](../../images/helm07.png)
+    ![查看运行日志](../../images/helm07.png)
 
 ## 删除 Helm 应用
 
@@ -87,14 +87,14 @@ Helm 应用的每次安装、更新、删除都有详细的操作记录和日志
 
 1. 找到待删除的 Helm 应用所在的集群，点击集群名称，进入`集群详情`。
 
-    ![helm](../../images/crd01.png)
+    ![集群详情](../../images/crd01.png)
 
 2. 在左侧导航栏，点击 `Helm 应用`，进入 Helm 应用列表页面。
 
     在 Helm 应用列表页选择您需要删除的 Helm 应用，点击列表右侧的 `...` 操作按钮，在下拉选择中选择`删除`。
 
-    ![helm](../../images/helm12.png)
+    ![点击删除](../../images/helm12.png)
 
 3. 在弹窗内输入 Helm 应用的名称进行确认，然后点击`删除`按钮。
 
-    ![helm](../../images/helm13.png)
+    ![确认删除](../../images/helm13.png)

@@ -9,15 +9,15 @@
 
 1. 进入某一个多云实例后，在左侧导航栏中，点击`资源管理` -> `多云配置项`，点击右上角的`创建配置项`按钮。
 
-    ![image](../images/config01.png)
+    ![点击按钮](../images/config01.png)
 
 2. 在`创建配置项`页面中，输入名称，选择命名空间等信息后，点击`确定`。
 
-    ![image](../images/config02.png)
+    ![填写表单](../images/config02.png)
 
 3. 返回多云配置项列表，新创建的默认位于第一个。点击列表右侧的 `⋮`，可以编辑 YAML、更新、导出和删除配置项。
 
-    ![image](../images/config03.png)
+    ![其他操作](../images/config03.png)
 
     !!! note
 
