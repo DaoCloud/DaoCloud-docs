@@ -220,6 +220,10 @@
 
     CCE Turbo 可通过计算、网络、调度全方位加速，实现极致弹性，如帮助客户以 3000 pod/min 的弹性轻松应对业务流量洪峰；UCS 提供跨云、跨地域的云原生应用管理，实现一致体验。
 
+- [Kong 服务网格产品 Kong Mesh v2.1 发布](https://konghq.com/blog/kong-mesh-kuma-2-1)
+
+    更新内容：完成所有下一代策略的实现，包括增加 MeshHTTPRoute、MeshCircuitBreaker、MeshFaultInjection、MeshOPA 等策略；在用户界面中增加了网关视图；支持在 eBPF 模式下配置端口。
+
 - [Kong Gateway v3.0 云原生 API 网关发布](https://docs.konghq.com/gateway/changelog/#3000)
 
     该版本主要新特性：提供联邦信息处理标准 FIPS 包以满足安全和合规性要求、支持选择插件的执行顺序、增加对 WebSocket 流量的本地支持、新增 OpenTelemetry 插件、引入新路由引擎用于处理复杂路由要求、吞吐量、延迟及内存消耗等性能显著优化。
@@ -253,6 +257,10 @@
 
     该版本主要新特性：支持 Kubernetes 1.24、支持谷歌云平台 GCP、支持 cri-dockerd 取代 Dockershim、安全准入控制更新（提供 OPA gatekeeper 作为 PSP 的可选替代方案）。
 
+- [Spot by NetApp 推出 Kubernetes 应用持续交付产品 Ocean CD](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release-notes.pdf)
+
+Ocean CD 是一个支持多集群的 SaaS 方案，以 Argo rollouts 为引擎，并在上面叠加许多管理功能。Ocean CD 允许快速启用智能部署，如金丝雀、蓝绿部署或使用验证和失败策略的简单滚动更新；支持持续验证，根据金丝雀策略定义正确执行回滚和自动行动；提供一个开发者友好型的 UI 界面。
+
 - [NetApp Kubernetes 应用数据管理方案 Astra Control 更新](https://www.netapp.com/blog/astra-kubernetes-data-protection/)
 
     更新内容：
@@ -270,6 +278,10 @@
 - [Ondat v2.9 云原生块存储平台发布](https://www.ondat.io/blog/ondat-launches-version-2.9)
 
     该版本主要新特性：支持在零停机的情况下调整卷的大小、通过存储池可以控制工作负载所使用的存储类型、允许定义卷的拓扑结构。
+
+- [OpenShift Container Platform 4.12 发布](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.12/html/release_notes/ocp-4-12-release-notes)
+
+    更新内容：使用 OVN-Kubernetes 网络插件作为默认网络插件；新增拓扑感知的生命周期管理器用于管理多个单节点 OpenShift 集群的部署和升级；支持通过 cgroup v2 优化资源分配管理；支持快速、低内存占用的 crun 容器运行时；针对断网环境优化基于代理的安装器；支持管理节点层面的防火墙配置；支持根据集群中的指标动态扩展默认的 Ingress 控制器；支持为 SR-IOV 设备配置多网络策略；支持 Serverless function 功能；新增 OpenShift Network Observability Operator 进行网络排障；新增 Security Profiles Operator 改善安全态势；支持将生产级 Kubernetes 部署到边缘设备上。
 
 - [OpenShift Service Mesh 2.3 发布](https://cloud.redhat.com/blog/introducing-openshift-service-mesh-2.3)
 
@@ -407,6 +419,15 @@
 - [Veeam 发布 Kubernetes 数据管理平台 Kasten K10 v5.5](https://www.kasten.io/kubernetes/resources/blog/scaling-simplicity-with-kasten-k10-v5.5)
 
     该版本主要新特性：新增备份窗口允许用户选择策略运行的时间间隔、支持自动安排底层备份工作的顺序、支持定义多个保护策略以设置备份频率和位置等参数、提供可视化 Helm 向导程序、支持 IPv6、集成 GitOps 流水线、新增存储类型、通过 OpenSSF 和 Azure Managed Identity 增强备份安全性。
+
+- [Venafi 推出云原生机器身份管理服务 TLS Protect for Kubernetes](https://venafi.com/blog/simplify-cloud-native-machine-identity-management-with-tls-protect-for-kubernetes/)
+
+    TLS Protect for Kubernetes 是 Venafi 机器身份管理平台 Control Plane for Machine Identities 的一部分，
+    帮助安全和平台团队在多云和多集群 Kubernetes 环境中管理云原生机器身份，如 TLS、mTLS 和 SPIFFE，增强机器身份管理的可观测性、控制和自动化。
+
+- [VMware Tanzu 多云多集群 Kubernetes 管理方案 Tanzu Mission Control 更新](https://docs.vmware.com/en/VMware-Tanzu-Mission-Control/services/rn/vmware-tanzu-mission-control-release-notes/index.html)
+
+    更新内容：支持 Pod 安全的 mutation 策略、支持 Tanzu Kubernetes Grid 2.1（包括 ClusterClass）、支持集群组的持续交付、支持从 Git 仓库中安装 Helm chart 到集群中。
 
 - [VMware Tanzu K8s DevOps 平台 Tanzu Application Platform v1.4 发布](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.4/tap/release-notes.html)
 

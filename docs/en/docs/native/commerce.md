@@ -226,6 +226,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Kyndryl Cloud Native Services provides an end-to-end lifecycle framework that includes code assets, workflows, specialized fundamentals, consulting management services, and comprehensive services related to automated backups, patching, KPI monitoring, security, alerting, and event management for cloud native application migration and optimization . The solution allows enterprises to move their on-premise applications to cloud service provider environments such as AWS, GCP and Azure.
 
+- [Kong Releases Service Grid Product Kong Mesh v2.1](https://konghq.com/blog/kong-mesh-kuma-2-1)
+
+     Update: Completed implementation of all next-generation policies, including adding MeshHTTPRoute, MeshCircuitBreaker, MeshFaultInjection, MeshOPA and other policies; added gateway view in the UI; support for configuring ports in eBPF mode.
+
 - [Kong Gateway v3.0 Cloud Native API Gateway released](https://docs.konghq.com/gateway/changelog/#3000)
 
      The main new features of this version: provide federal information processing standard FIPS packages to meet security and compliance requirements, support the execution order of plug-ins, increase native support for WebSocket traffic, add OpenTelemetry plug-ins, introduce new routing engines to handle complex Routing requirements, throughput, latency, and memory consumption are significantly optimized.
@@ -252,6 +256,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The main new features of this version: support for Kubernetes 1.24, support for Google Cloud Platform GCP, support for cri-dockerd instead of Dockershim, security access control updates (OPA gatekeeper is provided as an optional alternative to PSP).
 
+- Spot by NetApp Introduces Ocean CD, a Kubernetes Application Continuous Delivery Product](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release-notes. pdf) pdf)
+
+     Ocean CD is a SaaS solution that supports multiple clusters, using Argo rollouts as the engine and overlaying many management features on top. ocean CD allows for rapid enablement of intelligent deployments such as canary, blue-green deployments or simple rolling updates using validation and failure policies; supports continuous validation, correctly executing rollbacks and automated actions based on canary policy definitions; and provides a developer-friendly UI interface.
+
 - [NetApp Kubernetes Application Data Management Solution Astra Control Update](https://www.netapp.com/blog/astra-kubernetes-data-protection/)
 
      update content:
@@ -269,6 +277,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Ondat v2.9 Cloud Native Block Storage Platform Launch](https://www.ondat.io/blog/ondat-launches-version-2.9)
 
      The main new features of this version: support for resizing volumes with zero downtime, control the type of storage used by workloads through storage pools, and allow the topology of volumes to be defined.
+
+- [OpenShift Container Platform 4.12 Released](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.12/html/release_notes/ocp-4-12-release-notes)
+
+     Updates: Use OVN-Kubernetes network plugin as default network plugin; add topology-aware lifecycle manager for managing multiple single-node OpenShift cluster deployments and upgrades; support optimized resource allocation management via cgroup v2; support fast, low memory consumption crun container runtime; optimize agent-based support for firewall configuration at the management node level; support for dynamically scaling the default Ingress controller based on the metrics in the cluster; support for configuring multiple network policies for SR-IOV devices; support for Serverless function; new OpenShift Network Observability Operator for Support for the deployment of production-grade Kubernetes to edge devices.
 
 - [OpenShift Service Mesh 2.3 released](https://cloud.redhat.com/blog/introducing-openshift-service-mesh-2.3)
 
@@ -404,7 +416,16 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The main new features of this version: the new backup window allows users to choose the time interval for policy operation, supports automatic arrangement of the order of underlying backup work, supports the definition of multiple protection policies to set parameters such as backup frequency and location, provides a visual Helm wizard program, supports IPv6, integrated GitOps pipeline, new storage types, enhanced backup security with OpenSSF and Azure Managed Identity.
 
-- [VWware Tanzu K8s DevOps Platform Tanzu Application Platform v1.4 Released](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.4/tap/ release-notes.html)
+- [Venafi Launches TLS Protect for Kubernetes, a Cloud-Native Machine Identity Management Service](https://venafi.com/blog/simplify-cloud-native-machine-identity-management-with-tls-protect-for-kubernetes/)
+
+     TLS Protect for Kubernetes is part of Control Plane for Machine Identities, Venafi's platform for machine identity management.
+     Helps security and platform teams manage cloud-native machine identities such as TLS, mTLS, and SPIFFE in multi-cloud and multi-cluster Kubernetes environments, enhancing the observability, control, and automation of machine identity management.
+
+- [VWware Tanzu Multi-Cloud Multi-Cluster Kubernetes Management Solution Tanzu Mission Control Update](https://docs.vmware.com/en/VMware-Tanzu-Mission-Control/services/rn/vmware-tanzu-mission-control-release-notes/index.html)
+
+     Update: Support for Pod-safe mutation policy, support for Tanzu Kubernetes Grid 2.1 (including ClusterClass), support for continuous delivery of cluster groups, and support for installing Helm charts from Git repositories into clusters.
+
+- [VWware Tanzu K8s DevOps Platform Tanzu Application Platform v1.4 Released](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.4/tap/release-notes.html)
 
      Updates: Support for shared ingress issuer, new namespace configurator for secure and automated namespace configuration, new TAP telemetry report for viewing TAP usage, new IDE extension for Visual Studio - Tanzu Developer Tools for Visual Studio, and support for External Secrets Operator.
 

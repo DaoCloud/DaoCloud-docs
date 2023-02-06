@@ -4,6 +4,13 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 > We will maintain regularly to ensure the validity of all links and the timeliness of news.
 
+### 2023-05
+
+- [May 8-9 cdCon + GitOpsCon 2023 Call for Topics (2.10 deadline)](https://events.linuxfoundation.org/cdcon-gitopscon/program/cfp/)
+  
+    cdCon + GitOpsCon 2023 is hosted by the CD Foundation and the CNCF Foundation and will be held in Vancouver from 5.8-5.9.
+    Topics may include: Getting Started with GitOps, Scaling and Managing GitOps, Lessons Learned from Production Deployments, Advanced Delivery Technologies, Open Source GitOps and CD Technology Practices in Cloud-Native Environments, Supply Chain Security, and more.
+
 ### 2023-04
 
 - [April 15 2023 Cloud Native Community Observability Summit to be Held, Instructor and Sponsor Recruitment Underway (3.10 Deadline)](https://mp.weixin.qq.com/s/erf33B2--kUgLg1D730tOg)
@@ -12,12 +19,30 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 ### 2023-02
 
+- [February 2 China Academy of Information and Communications Technology (CAIC) Trusted Cloud-Container Class Assessment Launched in the First Half of 2023 (Registration for Assessment Closed on 3.10)](https://mp.weixin.qq.com/s/V2-v9rPWnXQ5WlN4kEnVVw)
+  
+    The Trusted Cloud Container Class Assessment System consists of five aspects: full-stack container cloud solution assessment (including three types of general-purpose containers, edge containers and hybrid multi-cloud containers), component-level container platform performance assessment, component-oriented container platform performance assessment, and container platform performance assessment.
+    component-level container platform performance assessment, large-scale container platform performance assessment for financial scenarios, container platform security capability assessment, and container security solution assessment.
+    The evaluation results will be released in June at ICT China - High-End Forum.
+
+- [February 1 CNCF Foundation to launch Kubernetes and Cloud Security (KCSA) certification in Q3](https://www.cncf.io/blog/2023/02/01/kubernetes-and-cloud-security-associate-kcsa- certification-coming-in-q3-2023/)
+  
+    The KCSA certification exam is designed to provide an entry point for individuals who wish to work in cloud-native security.
+    The exam tests candidates on their ability to develop security policies and procedures, identify assess and mitigate security risks and vulnerabilities, assist in incident response and forensic investigations, and test and monitor security systems, among other cloud-native security competencies.
+    The exam system is currently in the development phase and is expected to be generally available in advance of KubeCon North America in November.
+
 - [February 1-2 CNCF CloudNativeSecurityCon conference is coming up, agenda is now available](https://events.linuxfoundation.org/cloudnativesecuritycon-north-america/program/schedule/)
   
     CloudNativeSecurityCon is the first independent conference focused on cloud-native security projects and enterprise security challenges in practice.
     The conference features 72 presentations on topics including architecture and strategy, secure software development, supply chain security, identity and access, forensics, and more.
 
 ### 2023-01
+
+- [January 22 Open Source Press Releases 2022 China Open Source Annual Report](https://mp.weixin.qq.com/s/zlxVme_0hj7RHdDyb3gULQ)
+  
+    The [2022 China Open Source Annual Report](https://kaiyuanshe.feishu.cn/wiki/wikcnnJ8b90pOoDRFzXngfRslkd) consists of four parts: a chronology of events, a data chapter, a commercialization chapter, and a questionnaire chapter.
+    In the GitHub Data Top 30 list, China's top open source projects stand out in front-end, database, cloud-native, and artificial intelligence.
+    In addition, in terms of globalizing open source software business, building a highly active global open source community, fully participating in international open source organizations such as the Open Source Foundation, globalizing services, and globalizing sales are all possible paths to implement.
 
 - [January 11 2022 CNCF and Linux Foundation Open Source Project Rankings Announced](https://www.cncf.io/blog/2023/01/11/a-look-at-the-2022-velocity-of-cncf-linux-foundation-and- top-30-open-source-projects/)
   
