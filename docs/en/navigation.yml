@@ -354,7 +354,7 @@ nav:
               - Namespace Sidecars: mspider/03UserGuide/07SidecarManagement/NamespaceSidecar.md
               - Workload Sidecars: mspider/03UserGuide/07SidecarManagement/WorkloadSidecar.md
               - Global Sidecars: mspider/03UserGuide/07SidecarManagement/GlobalSidecar.md
-              - Traffic passthrough: mspider/03UserGuide/07SidecarManagement/penetrate.md
+              - Traffic passthrough: mspider/03UserGuide/07SidecarManagement/passthrough.md
           - Traffic Monitor:
               - mspider/03UserGuide/06TrafficMonitor/README.md
               - Traffic Topology: mspider/03UserGuide/06TrafficMonitor/connTopo.md
@@ -408,7 +408,8 @@ nav:
           - Ingress-nginx:
               - Intro: network/modules/ingress-nginx/what.md
               - Install: network/modules/ingress-nginx/install.md
-              - IngressClass: network/modules/ingress-nginx/ingressclass.md
+              - Ingress Class: network/modules/ingress-nginx/ingressclass.md
+              - Ingress Scope: network/modules/ingress-nginx/scope.md
           - Metallb:
               - Intro: network/modules/metallb/what.md
               - Install: network/modules/metallb/install.md

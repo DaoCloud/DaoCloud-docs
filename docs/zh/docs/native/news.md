@@ -4,6 +4,13 @@
 
 > 我们会定期维护，保证所有链接的有效性、新闻的时效性。
 
+### 2023-05
+
+- [5.8-5.9 cdCon + GitOpsCon 2023 议题征集中（2.10 截止）](https://events.linuxfoundation.org/cdcon-gitopscon/program/cfp/)
+  
+    cdCon + GitOpsCon 2023 由 CD 基金会和 CNCF 基金会主办，将于 5.8-5.9 在温哥华举行。
+    议题内容可包括：GitOps 入门、扩展和管理 GitOps、从生产部署中吸取的教训、先进的交付技术、云原生环境中的开源 GitOps 和 CD 技术实践、供应链安全等。
+
 ### 2023-04
 
 - [4 月 15 日 2023 年云原生社区可观测性峰会将召开，讲师及赞助商招募进行中（3.10 截止）](https://mp.weixin.qq.com/s/erf33B2--kUgLg1D730tOg)
@@ -12,12 +19,30 @@
 
 ### 2023-02
 
+- [2.2 中国信通院 2023 年上半年可信云·容器类评估正式启动（3.10 评估报名截止）](https://mp.weixin.qq.com/s/V2-v9rPWnXQ5WlN4kEnVVw)
+  
+    可信云容器类评估体系由 5 个方面组成：全栈容器云解决方案评估（包含通用容器、边缘容器和混合多云容器三类）、
+    组件级容器平台性能评估、面向金融场景的大规模容器平台性能评估、容器平台安全能力评估、容器安全解决方案评估。
+    本次评估结果将于 6 月在 ICT 中国·高端论坛发布。
+
+- [2.1 CNCF 基金会将在第三季度推出 Kubernetes 和云安全（KCSA）认证](https://www.cncf.io/blog/2023/02/01/kubernetes-and-cloud-security-associate-kcsa-certification-coming-in-q3-2023/)
+  
+    KCSA 认证考试旨在为希望从事云原生安全的个人提供一个切入点。
+    考试考查应试者制定安全策略和程序、识别评估并减少安全风险和漏洞、协助事件响应和取证调查、测试和监控安全系统等云原生安全能力。
+    考试系统目前处于开发阶段，预计将在 11 月北美 KubeCon 召开前普遍推出。
+
 - [2 月 1 日至 2 日 CNCF CloudNativeSecurityCon 会议即将举行，目前会议议程已发布](https://events.linuxfoundation.org/cloudnativesecuritycon-north-america/program/schedule/)
   
     CloudNativeSecurityCon 首个围绕云原生安全项目和企业安全挑战实践的独立会议。
     会议共有 72 场演讲，演讲主题包括体系结构和策略、安全软件开发、供应链安全、身份和访问、取证等。
 
 ### 2023-01
+
+- [1.22 开源社发布《2022 中国开源年度报告》](https://mp.weixin.qq.com/s/zlxVme_0hj7RHdDyb3gULQ)
+  
+    [2022 中国开源年度报告](https://kaiyuanshe.feishu.cn/wiki/wikcnnJ8b90pOoDRFzXngfRslkd)由四部分组成，分别是大事记篇、数据篇、商业化篇和问卷篇。
+    在 GitHub 数据排名 Top30 榜单中，中国顶尖开源项目在前端、数据库、云原生、人工智能领域表现突出。
+    此外，在开源软件商业全球化方面，搭建高活跃度的全球化开源社区、充分参与开源基金会等国际开源组织、全球化服务、全球化销售等都是可实施的路径。
 
 - [1 月 11 日 2022 年 CNCF 和 Linux 基金会开源项目排名公布](https://www.cncf.io/blog/2023/01/11/a-look-at-the-2022-velocity-of-cncf-linux-foundation-and-top-30-open-source-projects/)
   

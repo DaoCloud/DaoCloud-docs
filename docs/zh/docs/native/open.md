@@ -134,6 +134,11 @@
 
     该版本主要新特性：新增 StatusCheck 功能，用于检查应用程序的健康状况，当应用程序不健康时中止混沌实验；支持使用 `Chaosctl` 进行 outbound 强制恢复、在 dashboard 中新增基于流程图创建工作流的界面等。
 
+- [Cilium 2022 年度报告发布](https://github.com/cilium/cilium.io/raw/main/Annual-Reports/Cilium%20Annual%20Report%202022.pdf)
+
+    报告记录了 2022 年 Cilium 项目的贡献者增长、版本亮点、用户调查结果、生产落地情况、社区活动，以及 2023 年的发展方向。
+    在 2023 年，Cilium service mesh 将发展成熟；通过 eBPF 捕获的内核数据将帮助周边生态为终端用户建立更好的平台；供应链安全功能将得到加强.
+
 - [Cilium CNI 插件 v1.12.0 发布（CNCF 项目）](https://github.com/cilium/cilium/releases/tag/v1.12.0)  
 
     该版本主要新特性：推出 Cilium Service Mesh（多控制平面、边车/无边车、Envoy CRD)、集成 Ingress Controller、增加 K8s 服务拓扑感知提示、初始 NAT46/64 实现、支持 Pod 启用 BBR 拥堵控制并将带宽管理器移出 beta、支持在集群池 v2 IPAM 模式下动态分配 pod CIDR、支持设置服务后端状态、出口网关升级到稳定状态。
@@ -338,6 +343,10 @@
 
     近日，阿里云正式发布完整功能的 [iLogtail](https://github.com/alibaba/ilogtail) 社区版。
     本次更新开源全部 C++ 核心代码，该版本在内核能力上首次对齐企业版。新增日志文件采集、容器文件采集、无锁化事件处理、多租户隔离、基于 Pipeline 的新版配置方式等诸多重要特性。
+
+- [Istio 公布 2022 年安全审计结果](https://istio.io/latest/blog/2023/ada-logics-security-assessment/)
+
+    本次审计未发现关键问题，共发现 11 个安全问题，所有问题目前都已修复。其中，发现的唯一一个 CVE 漏洞是 [Go 的请求走私漏洞](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41721)，最常见问题与 Istio 通过网络获取文件有关。
 
 - [Istio v1.16 发布（CNCF 项目）](https://istio.io/latest/news/releases/1.16.x/announcing-1.16/)
 
@@ -669,6 +678,10 @@
 
     该版本主要新特性：新增两个 SPI 插件：分别用于配置加解密和认证、支持集群 gRPC 客户端设置线程池大小、支持重置 raft 集群等。
 
+- [nerdctl Containerd 命令行工具 v1.2.0](https://github.com/containerd/nerdctl/releases/tag/v1.2.0)
+
+    该版本特性：实验性支持读取 Kubernetes 容器日志、改进编译错误信息、允许在 Windows 上运行 Host Process 容器、添加 Windows HyperV 容器模式。
+
 - [NeuVector 容器安全平台 v5.0 发布](https://mp.weixin.qq.com/s/nZ_a7JiryZJskJEPPIEmcw)
 
     该版本主要新特性：与 SUSE Rancher 集成，也能够与 Amazon EKS、Google GKE 和 Microsoft AKS 等其他企业级容器管理平台对接；支持 Web 应用程序防火墙检测；支持自动化容器保护；支持零漂移进程和文件保护以及对网络、进程/文件进行分割策略模式保护等。
@@ -736,6 +749,10 @@
 
     该版本主要新特性：用更加了然的 bucket 直方图取代直方图、支持在 OpenMetrics 计数器上显示示例、增加数据库连接池指标的语义规范、允许所有 metrics 规范为同步或异步、添加HTTP/3 等。
 
+- [Openyurt 云原生边缘计算项目 v1.2.0 发布（CNCF 项目）](https://github.com/openyurtio/openyurt/releases/tag/v1.2.0)
+
+    新增节点池治理组件 Pool-Coordinator，用于降低云边网络带宽，提高云边网络故障时的边缘自治能力；使用 raven 组件来替代 yurt-tunnel 组件解决跨区域网络通信问题；改进证书管理器。
+
 - [Openyurt 云原生边缘计算项目 v1.1.0 发布（CNCF 项目）](https://github.com/openyurtio/openyurt/releases/tag/v1.1.0)
 
     该版本主要新特性：支持 DaemonSet 工作负载的 OTA/自动升级模式、支持 e2e 测试的自治功能验证、启用数据过滤功能、增加统一云计算边缘通信方案的建议、改进 health checker。
@@ -755,6 +772,11 @@
     其开发和测试环境采用 k3s、k8e 等，因此用户可以快速低成本地在 x86、arm、RISC-V、龙芯等硬件平台上部署低资源高性能的服务网格。
 
 ### P
+
+- [Paralus Kubernetes 零信任访问服务成为 CNCF 沙箱项目](https://mp.weixin.qq.com/s/hYmMT0mvMdO6-LW6oHxteg)
+
+    [Paralus](https://github.com/paralus/paralus) 专为多集群环境设计，凭借即时服务帐户创建和细粒度的用户凭证管理，保证资源访问的安全性。
+    此外，Paralus 还融入了零信任原则，支持多个身份提供商、自定义角色等。
 
 - [Paralus：Rafay Systems 开源的业内首个 Kubernetes 零信任访问服务](https://rafay.co/the-kubernetes-current/paralus-industrys-first-open-source-zero-trust-access-service-for-kubernetes/)
 
@@ -780,6 +802,10 @@
 - [Podman 容器运行时项目 v4.2.0 发布](https://github.com/containers/podman/releases/tag/v4.2.0)  
 
     该版本主要新特性：支持 GitLab Runner、新增命令用于创建现有 pod 的副本、新增命令用于同步数据库和任何卷插件之间的状态变化、pod 新增退出策略、自动清理未使用的缓存 Podman 虚拟机镜像、允许不同容器的多个 overlay 卷重复使用同一个 workdir 或 upperdir。
+
+- [Prometheus v2.42.0 发布（CNCF 项目）](https://github.com/prometheus/prometheus/releases/tag/v2.42.0)
+
+    该版本特性：支持原生直方图、更改原生直方图的 WAL 记录格式、支持选择 TSDB dump 时间序、支持 Float 直方图、为 Kubernetes 的 pod 对象添加容器 ID 作为元标签。
 
 - [Prometheus v2.40.0 发布（CNCF 项目）](https://github.com/prometheus/prometheus/releases/tag/v2.40.0)
 

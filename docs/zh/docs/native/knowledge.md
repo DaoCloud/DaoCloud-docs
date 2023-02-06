@@ -4,6 +4,10 @@
 
 ### 排障方案
 
+- [如何解决 Prometheus 的存储容量问题？](https://mp.weixin.qq.com/s/TMApz8FxT91qBvS1fzuTVw)
+
+    单机存储不好扩展是 Prometheus 一个广受诟病的问题。对此问题，文章给出了 3 种集群解决方案：Prometheus 联邦集群、远程存储方案、Prometheus 自身搭建集群，这这三种方案能够很好地解决 Prometheus 的存储问题。
+
 - [云原生场景下，nettrace 怎么快速进行网络故障诊断？](https://mp.weixin.qq.com/s/0n7kbOhHr6m5JClTrSIysA)
 
     [nettrace](https://github.com/OpenCloudOS/nettrace) 是一款基于 eBPF 的集网络报文跟踪（故障定位）、网络故障诊断、网络异常监控于一体的网络工具集，
@@ -78,6 +82,20 @@
     这篇文章的创作灵感因 Grafana 不展示使用存储驱动创建的存储卷的容量指标而起，展示了该问题的排查思路及手段，进而勾勒出 Kubelet 对于存储卷指标收集的实现流程。
 
 ### 最佳实践
+
+- [K8s 迁移 cgroup v2 之前要做的三件事](https://mp.weixin.qq.com/s/BV-y82MalhG-A--hvUFMcg)
+
+    随着 Kubernetes 1.25 关于cgroup v2 特性的正式发布（GA），kubelet 容器资源管理能力得到加强。
+    文章在 cgroup v2 概念的基础上，介绍了采用 cgroup v2 之前在 Linux OS、K8s 生态、应用变更三方面要做的事。
+
+- [阿里云云原生实战指南](https://developer.aliyun.com/ebook/7879?spm=a2c6h.26392470.ebook-read.13.3e855bc8YpIdco)
+
+    该指南涵盖了全球云原生应用洞察与趋势、阿里云在云原生领域的最新产品与技术布局、阿里云 All in Serverless 的全新思考与投入、传音、新东方、小红书等企业的上云实战经验。
+
+- [服务网格安全性和高可用性部署最佳实践](https://mp.weixin.qq.com/s/hFCshQpmF7Vr0jrpugArjA)
+
+    文章介绍在多集群的基础设施中部署服务网格时的安全性和高可用性最佳实践，包括：控制平面应该如何部署在应用程序附近；
+    入口应该如何部署以促进安全性和敏捷性；如何使用 Envoy 促进跨集群负载均衡，以及网格内部如何使用证书。
 
 - [大中型科技企业开源战略制定与落地](https://mp.weixin.qq.com/s/9Z4zFPU0uHk6RhrpUDD-tw)
 
