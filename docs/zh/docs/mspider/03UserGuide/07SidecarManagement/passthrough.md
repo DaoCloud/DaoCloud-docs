@@ -17,7 +17,6 @@ DCE 5.0 服务网格实现了对工作负载出站/入站流量的边车透传�
 
 ```none
 traffic.sidecar.istio.io/excludeInboundPorts
-traffic.sidecar.istio.io/excludeInboundIPRanges
 traffic.sidecar.istio.io/excludeOutboundPorts
 traffic.sidecar.istio.io/excludeOutboundIPRanges
 ```
@@ -41,7 +40,7 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
     - 入站：仅支持端口，即从外部访问网格内负载的端口
     - 出站：可设置目标的端口或 IP 段
 
-1. 屏幕提示流量透传设置成功。请参阅[如何查验流量透传效果](#_3)。
+1. 如果设置无误，右上角将出现`流量透传设置成功`的提示消息。您还可以[查验流量透传效果](#_3)。
 
     ![成功设置](../../images/pn04.png)
 
