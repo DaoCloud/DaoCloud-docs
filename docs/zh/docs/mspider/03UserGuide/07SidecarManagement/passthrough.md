@@ -38,6 +38,9 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
 
     ![流量透传设置](../../images/pn03.png)
 
+    - 入站：仅支持端口，即从外部访问网格内负载的端口
+    - 出站：可设置目标的端口或 IP 段
+
 1. 屏幕提示流量透传设置成功。请参阅[如何查验流量透传效果](#_3)。
 
     ![成功设置](../../images/pn04.png)
