@@ -226,11 +226,11 @@ Service 的带宽限制也会取决于单个节点的带宽，这也是使用 AR
 
 - 当 `Service.spec.externalTrafficPolicy=local`
 
-    这种模式下，会保留客户端源IP，但负载均衡性较差，流量会一直到到某一个后段Pod.
+    这种模式下，会保留客户端源IP，但负载均衡性较差，流量会一直到某一个后端Pod。
 
     ```none
                                       __________________________________________________________________________________________
-                                    |                       -> kube-proxy -> pod A (后段Pod在本节点)                            |
+                                    |                       -> kube-proxy -> pod A (后端Pod在本节点)                            |
                                     |                      |                                                                  |
     client -> loadBalancerIP:port -> | -> node A（Leader） ->                                                                   |
                                     |                      |                                                                  ｜
