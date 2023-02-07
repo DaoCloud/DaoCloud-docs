@@ -41,28 +41,26 @@ flowchart TD
 
     
     inject -.-> service[服务管理]
-    inject -.-> gateway[网关]
     inject -.-> traffic[流量治理]
-    inject -.-> watch[流量监控]
-    inject -.-> upgrade[版本升级]
     inject -.-> security[安全治理]
+    inject -.-> sidecar[边车管理]
+    inject -.-> watch[流量监控]
+    inject -.-> gateway[网格网关]
+    inject -.-> upgrade[版本升级]
+    
 
     service -.-> entry[服务条目]
-
-    traffic -.-> virtual[虚拟服务]
-    traffic -.-> target[目标规则]
-    traffic -.-> gaterule[网关规则]
-
-    security -.-> peer[对等身份认证]
-    security -.-> request[请求身份认证]
-    security -.-> authorize[授权策略]
+    traffic -.-> virtual[虚拟服务<br>目标规则<br>网关规则]
+    security -.-> peer[对等身份认证<br>请求身份认证<br>授权策略]
+    sidecar -.-> sidecarm[命名空间边车管理<br>工作负载边车管理<br>全局边车管理<br>边车流量透传]
+    watch -.-> watch2[流量监控<br>流量拓扑]
 
     classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
     classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
     classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
     class managed,private,external,global,namespace,workload plain
-    class install,service,gateway,traffic,watch,upgrade,security,entry,virtual,target,gaterule,peer,request,authorize,cluster cluster
+    class install,service,gateway,traffic,watch,upgrade,security,entry,virtual,peer,cluster,sidecar,sidecarm,watch2 cluster
 
     click install "https://docs.daocloud.io/mspider/install/"
     click managed "https://docs.daocloud.io/mspider/03UserGuide/servicemesh/create-mesh/"
@@ -80,11 +78,10 @@ flowchart TD
     click upgrade "https://docs.daocloud.io/mspider/03UserGuide/upgrade/IstioUpdate/"
     click entry "https://docs.daocloud.io/mspider/03UserGuide/01ServiceList/service-entry/"
     click virtual "https://docs.daocloud.io/mspider/03UserGuide/02TrafficGovernance/VirtualService/"
-    click target "https://docs.daocloud.io/mspider/03UserGuide/02TrafficGovernance/DestinationRules/"
-    click gaterule "https://docs.daocloud.io/mspider/03UserGuide/02TrafficGovernance/GatewayRules/"
     click peer "https://docs.daocloud.io/mspider/03UserGuide/05Security/peer/"
-    click request "https://docs.daocloud.io/mspider/03UserGuide/05Security/request/"
-    click authorize "https://docs.daocloud.io/mspider/03UserGuide/05Security/authorize/"
+    click sidecar "https://docs.daocloud.io/mspider/03UserGuide/07SidecarManagement/NamespaceSidecar/"
+    click sidecarm "https://docs.daocloud.io/mspider/03UserGuide/07SidecarManagement/passthrough/"
+    click watch2 "https://docs.daocloud.io/mspider/03UserGuide/06TrafficMonitor/connTopo/"
 ```
 
 [下载 DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
