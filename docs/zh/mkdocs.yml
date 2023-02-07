@@ -145,10 +145,10 @@ extra:
   # switch language
   alternate:
     - link: /
-      name: zh - 简体中文
+      name: 简体中文
       lang: zh
     - link: /en/
-      name: en - English
+      name: English
       lang: en
   generator: false
 
