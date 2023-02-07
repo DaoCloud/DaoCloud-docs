@@ -1,6 +1,6 @@
 # 流量代理配置指南
 
-本文介绍 Ingress Nginx 如何配置基于域名，请求路径，请求头和 Cookie 的流量代理。
+本文介绍 Ingress Nginx 如何配置基于域名、请求路径、请求头和 Cookie 的流量代理。
 
 ## 基于域名的流量负载
 
@@ -8,7 +8,7 @@
 而 IP 地址（如 10.6.0.1）是机器可读的。域名通过 DNS 服务器映射到对应的 IP 地址，使人
 们可以通过浏览器访问特定网站。
 
-Ingress Nginx 支持转发不同域名的流量。通过将域名系统映射到 Ingress Nginx的 VIP，
+Ingress Nginx 支持转发不同域名的流量。通过将域名系统映射到 Ingress Nginx 的 VIP，
 实现域名到 IP 的映射。
 
 通过使用以下配置定义，可以将不同域名的流量转发到相应的后端 Service。例如，将域名 A 的
@@ -82,8 +82,8 @@ spec:
 
 ## 基于 Header 请求头的负载
 
-以下使用 `nginx.ingress.kubernetes.io/canary-by-header` 注解的示例。
-可以在请求中添加版本头以将流量路由到您的应用程序的稳定版本或金丝雀版本。
+以下是使用 `nginx.ingress.kubernetes.io/canary-by-header` 注解的示例。
+可以在请求中添加版本头以将流量路由到应用程序的稳定版本或金丝雀版本。
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -109,18 +109,17 @@ spec:
 ```
 
 在这个示例中，对 `example.com` 的流量将根据 Header 请求头 `version` 的值进行分割。
-对于 Header 请求头值为 `v2` 的流量，请求将会路由到 `example-service-v2`
+对于 Header 请求头值为 `v2` 的流量，请求将会路由到 `example-service-v2`。
 
 ## 基于 Cookie 会话的负载
 
-基于 Cookie 的负载均衡策略，通过使用 Cookie 将客户端与后端服务绑定在一起，这种方法可以确保每个客户端的请求始终由
-相同的后端服务处理，从而使得服务变得更加稳定。
+基于 Cookie 的负载均衡策略，通过使用 Cookie 将客户端与后端服务绑定在一起，这种方法可以确保每个客户端的请求始终由相同的后端服务处理，从而使得服务变得更加稳定。
 
 Cookie 负载均衡的工作原理如下：
 
-* 当客户端发送第一次请求时，Ingress Nginx 将使用负载均衡算法选择一个后端服务来处理请求。
-* Ingress Nginx 将一个名为 `example-cookie-name` 的 Cookie 发送回客户端。这个 Cookie 包含了后端服务的标识信息。
-* 客户端再次发送请求时，会带上这个 Cookie。Ingress Nginx 根据 Cookie 中的标识信息，将请求转发到对应的后端服务。
+1. 当客户端发送第一次请求时，Ingress Nginx 将使用负载均衡算法选择一个后端服务来处理请求。
+2. Ingress Nginx 将一个名为 `example-cookie-name` 的 Cookie 发送回客户端。这个 Cookie 包含了后端服务的标识信息。
+3. 客户端再次发送请求时，会带上这个 Cookie。Ingress Nginx 根据 Cookie 中的标识信息，将请求转发到对应的后端服务。
 
 以下是配置示例：
 
