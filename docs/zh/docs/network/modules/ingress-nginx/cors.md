@@ -39,38 +39,38 @@ kubectl apply -f example-ingress.yaml
 
 ## 高级配置
 
-### nginx.ingress.kubernetes.io/cors-allow-methods
+- 配置跨域接受哪些方法
 
-`nginx.ingress.kubernetes.io/cors-allow-methods` 控制跨域接受哪些方法，默认为：`GET, PUT, POST, DELETE, PATCH, OPTIONS`。
+    通过 `nginx.ingress.kubernetes.io/cors-allow-methods` 控制跨域接受哪些方法，默认为：`GET, PUT, POST, DELETE, PATCH, OPTIONS`。
 
-### nginx.ingress.kubernetes.io/cors-max-age
+- 配置预检请求的缓存时长
 
-`nginx.ingress.kubernetes.io/cors-max-age` 用于配置浏览器在多长时间内，不再向服务器发送预检请求（Preflight Request）。
+    `nginx.ingress.kubernetes.io/cors-max-age` 用于配置浏览器在多长时间内，不再向服务器发送预检请求（Preflight Request）。
 
-预检请求是浏览器在发送跨域请求前，先向服务器发送的一个询问请求，询问服务器是否允许该跨域请求。
+    预检请求是浏览器在发送跨域请求前，先向服务器发送的一个询问请求，询问服务器是否允许该跨域请求。
 
-通过配置配置该选项，可以减少对服务器的询问次数，从而提高网页性能。
+    通过配置配置该选项，可以减少对服务器的询问次数，从而提高网页性能。
 
-### nginx.ingress.kubernetes.io/cors-allow-credentials
+- 配置是否允许在跨域期间发送凭证
 
-`nginx.ingress.kubernetes.io/cors-allow-credentials` 用于配置是否允许浏览器发送凭证（Credentials）。
+    `nginx.ingress.kubernetes.io/cors-allow-credentials` 用于配置是否允许浏览器发送凭证（Credentials）。
 
-Credentials 包括诸如 Cookie、HTTP Authentication 或 Client-side SSL certificates 等数据。如果允许浏览器发送 Credentials，那么必须在服务器响应头中添加 `Access-Control-Allow-Credentials: true`。
+    Credentials 包括诸如 Cookie、HTTP Authentication 或 Client-side SSL certificates 等数据。如果允许浏览器发送 Credentials，那么必须在服务器响应头中添加 `Access-Control-Allow-Credentials: true`。
 
-### nginx.ingress.kubernetes.io/cors-allow-origin
+- 配置服务器允许请求的来源
 
-`nginx.ingress.kubernetes.io/cors-allow-origin` 用于配置服务器允许请求的来源（origin）。
+    `nginx.ingress.kubernetes.io/cors-allow-origin` 用于配置服务器允许请求的来源（origin）。
 
-当浏览器发送一个请求时，会发送一个 origin 头，告知服务器请求来源。服务器可以通过检查请求头中的 origin 字段，判断是否允许跨域请求。
+    当浏览器发送一个请求时，会发送一个 origin 头，告知服务器请求来源。服务器可以通过检查请求头中的 origin 字段，判断是否允许跨域请求。
 
-```yaml
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: example-ingress
-  annotations:
-    nginx.ingress.kubernetes.io/cors-allow-origin: "https://example.com,https://www.example.com"
-...
-```
+    ```yaml
+    apiVersion: networking.k8s.io/v1
+    kind: Ingress
+    metadata:
+      name: example-ingress
+      annotations:
+        nginx.ingress.kubernetes.io/cors-allow-origin: "https://example.com,https://www.example.com"
+    ...
+    ```
 
-以上配置表示，只有来自 `https://example.com` 和 `https://www.example.com` 的请求会被允许。
+    以上配置表示，只有来自 `https://example.com` 和 `https://www.example.com` 的请求会被允许。
