@@ -85,6 +85,7 @@ nav:
           - 命名空间: kpanda/07UserGuide/Namespaces/createns.md
           - 集群运维:
               - 最近操作: kpanda/07UserGuide/clusterops/latest-operations.md
+              - 集群升级: kpanda/07UserGuide/Clusters/UpgradeCluster.md
               - 集群设置: kpanda/07UserGuide/clusterops/cluster-settings.md
           - 权限说明:
               - 权限说明: kpanda/07UserGuide/Permissions/PermissionBrief.md

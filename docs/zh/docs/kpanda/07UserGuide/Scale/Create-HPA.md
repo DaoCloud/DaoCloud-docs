@@ -20,7 +20,7 @@ DaoCloud Enterprise 5.0 支持 Pod 资源基于指标进行弹性伸缩（Horizo
 
 在为工作负载配置内置指标弹性伸缩策略之前，需要满足以下前提条件：
 
-- 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
+- 容器管理模块[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
 
 - 已完成一个[命名空间的创建](../Namespaces/createns.md)、[无状态工作负载的创建](../Workloads/CreateDeploymentByImage.md)或[有状态工作负载的创建](../Workloads/CreateStatefulSetByImage.md)。
 
@@ -71,7 +71,7 @@ DaoCloud Enterprise 5.0 支持 Pod 资源基于指标进行弹性伸缩（Horizo
 
 在为工作负载配置自定义指标弹性伸缩策略之前，需要满足以下前提条件：
 
-- 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
+- 容器管理模块[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
 
 - 已完成一个[命名空间的创建](../Namespaces/createns.md)、[无状态工作负载的创建](../Workloads/CreateDeploymentByImage.md)或[有状态工作负载的创建](../Workloads/CreateStatefulSetByImage.md)。
 
