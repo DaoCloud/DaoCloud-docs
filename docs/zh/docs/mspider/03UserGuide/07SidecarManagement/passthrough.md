@@ -34,7 +34,7 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
 
     ![点击菜单项](../../images/pn02.png)
 
-1. 设置流量透传的参数后，勾选`立即重启`，点击`确定`。
+1. 设置流量透传的参数后，勾选`立即重启工作负载`，点击`确认变更`。
 
     ![流量透传设置](../../images/pn03.png)
 
@@ -42,86 +42,65 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
 
     ![成功设置](../../images/pn04.png)
 
-1. 如果流量透传已启用，上述第 3 步的`流量透传设置`弹窗将显示设置的参数，可点击右侧的 x，勾选`立即重启`，点击`确定`来禁用流量透传。
+1. 如果流量透传已启用，上述第 3 步的`流量透传设置`弹窗将显示设置的参数，可点击右侧的 x，勾选`立即重启工作负载`，点击`确认变更`来禁用流量透传。
 
     ![禁用流量透传](../../images/pn05.png)
 
 ## 查验流量透传效果
 
-本节在真实的网格集群中，查验流量透传前后的效果。
+在真实的网格集群中，查验流量透传前后的效果。
 
 1. 准备工作
 
-    - 准备一个集群 10.64.30.142
-    - 在 `default` 命名空间中，配置 2 个工作负载 `helloworld-v1` 和 `helloworld-v2`，并注入边车
-    - 计划仅为 `helloworld-v1` 启用流量透传，然后比对 2 个负载的流量路由变化
+    - 准备一个网格集群，例如 10.64.30.130
+    - 在命名空间中，配置工作负载 `helloworld`，并注入边车
+    - 启用流量透传，然后比对该负载的流量路由变化
 
-    ![2 个工作负载](../../images/pn06.png)
+    ![工作负载](../../images/pn06.png)
 
 1. 通过 ssh 登录到集群。
 
     ```bash
-    ssh root@10.64.30.142
+    ssh root@10.64.30.130
     ```
 
-1. 查看 default 命名空间中运行了 2 个 Deployment。
+1. 查看命名空间中的 svc，获取 clusterIP 和 Port：
 
-    ```console
-    $ kubectl get deploy -n default
-    NAME            READY   UP-TO-DATE   AVAILABLE   AGE
-    helloworld-v1   1/1     1            1           42d
-    helloworld-v2   1/1     1            1           42d
+    ```bash
+    $ kubectl get svc -n default
+    NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+    helloworld   ClusterIP   10.211.201.221   <none>        5000/TCP         39d
+    kubernetes   ClusterIP   10.211.0.1       <none>        443/TCP          62d
+    test-cv      NodePort    10.211.72.8      <none>        2222:30186/TCP   62d
     ```
 
-1. 执行以下步骤查验流量透传的效果。
+1. 执行 curl 命令查看 helloworld 的流量路由
 
-=== "启用流量透传前"
-    
-    1. 查看 default 命名空间的 svc，获取 clusterIP 和 Port：
-
-        ```console
-        $ kubectl get svc -n default
-        NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
-        helloworld   ClusterIP   10.108.55.123   <none>        5000/TCP   42d
-        kubernetes   ClusterIP   10.96.0.1       <none>        443/TCP    49d
-        ```
-
-    1. 执行 curl 命令查看 helloworld 的流量路由：
+    === "启用流量透传前"
 
         ```bash
-        $ curl -sSI 10.108.55.123:5000/hello
+        $ curl -sSI 10.211.201.221:5000/hello
         HTTP/1.1 200 OK
         content-type: text/html; charset=utf-8
-        content-length: 59
+        content-length: 65
         server: istio-envoy # (1)
-        date: Fri, 03 Feb 2023 06:23:27 GMT
-        x-envoy-upstream-service-time: 59 # (2)
+        date: Tue, 07 Feb 2023 03:08:33 GMT
+        x-envoy-upstream-service-time: 100 # (2)
         x-envoy-decorator-operation: helloworld.default.svc.cluster.local:5000/*
         ```
 
-        1. 流量经过了 istio-envoy
-        2. 有 upstream 上游服务
+        1. 流量经过 istio-envoy，即边车的代理
+        2. 而且有 envoy-upstream 服务
 
-=== "启用流量透传后"
-    
-    1. 查看 default 命名空间的 svc，获取 clusterIP 和 Port：
-
-        ```console
-        $ kubectl get svc -n default
-        NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
-        helloworld   ClusterIP   10.108.55.123   <none>        5000/TCP   42d
-        kubernetes   ClusterIP   10.96.0.1       <none>        443/TCP    49d
-        ```
-
-    1. 执行 curl 命令查看 helloworld 的流量路由，发现 `Server:` 字段在 `istio-envoy` 和 `Werkzeug/0.12.2 Python/2.7.13` 之间交替变化，说明其中某个负载的流量未经过边车，其流量已被透传。
+    === "启用流量透传后"
 
         ```bash
-        $ curl -sSI 10.108.55.123:5000/hello
+        $ curl -sSI 10.211.201.221:5000/hello
         HTTP/1.0 200 OK
         Content-Type: text/html; charset=utf-8
-        Content-Length: 60
+        Content-Length: 65
         Server: Werkzeug/0.12.2 Python/2.7.13 # (1)
-        Date: Fri, 03 Feb 2023 06:33:13 GMT
+        Date: Tue, 07 Feb 2023 03:08:10 GMT
         ```
 
-        1. 这是 K8s 默认的流量路由，没有经过边车
+        1. 流量直接进入工作负载本身
