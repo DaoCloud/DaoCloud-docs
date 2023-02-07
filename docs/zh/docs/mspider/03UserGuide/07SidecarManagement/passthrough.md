@@ -1,8 +1,3 @@
----
-hide:
-  - toc
----
-
 # 边车流量透传
 
 流量透传 (traffic passthrough) 指的是工作负载的全部或部分上游、下游流量不经边车转发，直接发送至工作负载本身。
@@ -60,7 +55,7 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
 
     ![工作负载](../../images/pn06.png)
 
-1. 通过 ssh 登录到集群。
+1. 通过控制台或 ssh 登录到网格。
 
     ```bash
     ssh root@10.64.30.130
@@ -76,7 +71,7 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
     test-cv      NodePort    10.211.72.8      <none>        2222:30186/TCP   62d
     ```
 
-1. 执行 curl 命令查看 helloworld 的流量路由
+1. 执行 curl 命令查看 helloworld 的流量路由：
 
     === "启用流量透传前"
 
@@ -87,12 +82,11 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
         content-length: 65
         server: istio-envoy # (1)
         date: Tue, 07 Feb 2023 03:08:33 GMT
-        x-envoy-upstream-service-time: 100 # (2)
+        x-envoy-upstream-service-time: 100
         x-envoy-decorator-operation: helloworld.default.svc.cluster.local:5000/*
         ```
 
         1. 流量经过 istio-envoy，即边车的代理
-        2. 而且有 envoy-upstream 服务
 
     === "启用流量透传后"
 
