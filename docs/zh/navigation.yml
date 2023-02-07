@@ -79,9 +79,10 @@ nav:
               - 数据卷: kpanda/07UserGuide/storage/pvc.md
               - 存储池: kpanda/07UserGuide/storage/storage-pool.md
           - 配置与密钥:
+              - 创建配置项: kpanda/07UserGuide/ConfigMapsandSecrets/create-configmap.md
+              - 使用配置项: kpanda/07UserGuide/ConfigMapsandSecrets/use-configmap.md              
               - 创建密钥: kpanda/07UserGuide/ConfigMapsandSecrets/create-secret.md
               - 使用密钥: kpanda/07UserGuide/ConfigMapsandSecrets/use-secret.md
-              - 使用配置项: kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md
           - 命名空间: kpanda/07UserGuide/Namespaces/createns.md
           - 集群运维:
               - 最近操作: kpanda/07UserGuide/clusterops/latest-operations.md
