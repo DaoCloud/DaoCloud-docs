@@ -410,6 +410,8 @@ nav:
               - Install: network/modules/ingress-nginx/install.md
               - Ingress Class: network/modules/ingress-nginx/ingressclass.md
               - Ingress Scope: network/modules/ingress-nginx/scope.md
+              - Configure CORS: network/modules/ingress-nginx/cors.md
+              - Configure traffic proxy: network/modules/ingress-nginx/proxy.md
           - Metallb:
               - Intro: network/modules/metallb/what.md
               - Install: network/modules/metallb/install.md
