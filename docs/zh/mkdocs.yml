@@ -41,7 +41,7 @@ theme:
     # - navigation.indexes
     - navigation.tabs
     # - navigation.instant
-    # - navigation.prune
+    - navigation.prune
     - navigation.sections
     - navigation.tabs.sticky
     - navigation.tracking
@@ -50,6 +50,7 @@ theme:
     - search.suggest
     - search.share
     - toc.follow
+    - navigation.path
     # - toc.integrate
 
   palette:
