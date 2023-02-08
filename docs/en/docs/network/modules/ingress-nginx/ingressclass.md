@@ -2,7 +2,7 @@
 MTPE: Jeanine-tw
 Revised: Jeanine-tw
 Pics: NA
-Date: 2023-01-31
+Date: 2023-02-08
 ---
 
 # IngressClass
@@ -12,7 +12,7 @@ IngressClass represents the class of the Ingress instance that can be referenced
 **Applicable scenarios**
 
 * Need both internal Ingress and external Ingress in the same cluster
-* Different teams deploy different applications in the same cluster with different Ingress instances in the same tenant
+* Different teams deploy different applications in the same cluster with different Ingress instances in the same namespace
 * In the same cluster, the same team deploys different applications with different Ingress instance resource ratios
     * For example, some services need exclusive access to 4C 4G data plane gateway resources
 

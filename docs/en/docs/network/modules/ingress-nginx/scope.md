@@ -2,17 +2,18 @@
 MTPE: Jeanine-tw
 Revised: Jeanine-tw
 Pics: Jeanine-tw
-Date: 2023-02-06
+Date: 2023-02-08
 ---
 
 # Ingress scope
 
-The IngressClass Scope can be used to specify whether the Ingress instance is limited to the cluster level or to the namespace level.
+The IngressClass Scope can be used to specify whether the Ingress instance is limited to the cluster level、the namespace level and the workspace level.
 
 **Applicable scenarios**
 
-* Cluster-level Ingress instances can be set up in the same cluster that shares the same Ingress instance
-* When different namespaces in the same cluster use different Ingress instances for load isolation, you can set namespace-level Ingress instances
+* Cluster-level Ingress instances can be set up in the same cluster that shares the same Ingress instance.
+* Namespace-level Ingress instances can be set when a namespace use an exclusive Ingress instance for load isolation.
+* The workspace has an exclusive Ingress instance for load isolation, and the workspace corresponds to the namespace under the current cluster where all Pods can receive requests distributed by this load balancer.
 
 > If there are different applications in the same namespace in the same cluster that need to use different Ingress instances, please refer to [IngressClass](ingressclass.md).
 
@@ -60,17 +61,31 @@ spec:
     name: external-config
 ```
 
-## How to enable and set up cluster/namespace level Ingress?
+## How to deploy cluster/namespace level Ingress instances?
 
 Different instances can watch different namespaces by specifying `--watch-namespace`.
 If [ingress-nginx instances are installed via Helm](install.md), you need to enable and set cluster/namespace level Ingress by specifying `-controller.scope.enabled=true` and `-set controller.scope.namespace=$NAMESPACE`.
 
-If the namespace is enabled and specified during installation, the Ingress instance created will be assigned to the namespace. Otherwise, it will be shared across the cluster.
+If the namespace is enabled and specified during deployment, the Ingress instance created will be assigned to the namespace. Otherwise, it will be shared across the cluster.The example creates Ingress-nginx as a Default exclusive as shown below：
 
 ![scope01](../../images/scope01.png)
 
 Configuration information in the corresponding `value.yaml`:
 
 ![scope02](../../images/scope02.png)
+
+## How to deploy workspace-level Ingress instances?
+
+When you assigning a load balancer to a workspace during load balancer deployment, the workspace corresponds to the namespace under the current cluster where all Pods can receive requests distributed by this load balancer.
+
+When deploying Ingress-Ngnix, specify `kubernetes.io/metadata.name :workspace01` in the `Namespace Selector`, and the Ingress instance will be created exclusively for the workspace `workspace01`.
+
+![workspaceIngress](../../images/workspaceingress.png)
+
+The configuration information in the corresponding `value.yaml`:
+
+![workspaceingress02](../../images/workspaceingress02.png)
+
+After the Ingress instance is deployed, you can [create Ingress rules](../../../kpanda/07UserGuide/ServicesandRoutes/CreatingIngress.md)) in the corresponding namespace and select the Ingress Class for the corresponding instance to use.
 
 For more information you can refer to [scope](https://kubernetes.github.io/ingress-nginx/deploy/#scope).
