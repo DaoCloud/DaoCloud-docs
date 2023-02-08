@@ -10,16 +10,16 @@
 
 支持两种创建方式：
 
-- 图形化创建
-- 通过 YAML 创建
+- 图形化表单创建
+- YAML 创建
 
 ## 前提条件
 
-- 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面
+- 容器管理模块[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面
 
 - 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为 [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) 角色 ，详情可参考[命名空间授权](../Permissions/Cluster-NSAuth.md)
 
-### 图形化创建
+## 图形化表单创建
 
 1. 在`集群列表`页面点击某个集群的名称，进入`集群详情`。
 
@@ -48,7 +48,7 @@
         - 当密钥类型为镜像仓库信息 (kubernetes.io/dockerconfigjson)：需要填入私有镜像仓库的帐号和密码。
         - 当密钥类型为用户名和密码（kubernetes.io/basic-auth）：需要指定用户名和密码。
 
-### 通过 YAML 创建
+## YAML 创建
 
 1. 在`集群列表`页面点击某个集群的名称，进入`集群详情`。
 
@@ -75,4 +75,4 @@
       password: ******
     ```
 
-下一步：[使用密钥](use-secret.md)。
+[下一步：使用密钥](use-secret.md){ .md-button .md-button--primary }

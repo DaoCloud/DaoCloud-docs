@@ -370,7 +370,7 @@
 
 - [ConfigMap](https://kubernetes.io/zh-cn/docs/concepts/configuration/configmap/), 配置项
 
-    [ConfigMap](../kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md) 是一种 API 对象，用来将非机密性的数据保存到键值对中。
+    [ConfigMap](../kpanda/07UserGuide/ConfigMapsandSecrets/use-configmap.md) 是一种 API 对象，用来将非机密性的数据保存到键值对中。
     使用时可以用作环境变量、命令行参数或者存储卷中的配置文件。
 
     ConfigMap 将您的环境配置信息和容器镜像解耦，便于应用配置的修改。

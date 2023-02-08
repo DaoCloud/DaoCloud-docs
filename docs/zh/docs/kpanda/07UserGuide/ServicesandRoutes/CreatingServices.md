@@ -6,31 +6,31 @@
 
 ## 前提条件
 
-- 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
+- 容器管理模块[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
 
 - 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为 [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) 角色 ，详情可参考[命名空间授权](../Permissions/Cluster-NSAuth.md)。
 
 - 单个实例中有多个容器时，请确保容器使用的端口不冲突，否则部署会失效。
 
-### 创建服务
+## 创建服务
 
 1. 以 `NS Edit` 用户成功登录后，点击左上角的`集群列表`进入`集群列表`页面。在集群列表中，点击一个集群名称。
 
     ![集群列表](../../images/service01.png)
 
-2. 在左侧导航栏中，点击`服务与路由`进入服务列表，点击右上角`创建服务`按钮。
+2. 在左侧导航栏中，点击`容器网络`->`服务`进入服务列表，点击右上角`创建服务`按钮。
 
     ![服务与路由](../../images/service02.png)
 
     !!! tip
-    
+
         也可以通过 `YAML 创建`一个服务。
 
 3. 打开`创建服务`页面，选择一种访问类型，参考以下三个参数表进行配置。
 
     ![创建服务](../../images/service03.jpg)
 
-#### 创建集群内访问（ClusterIP） 类型的服务
+### 创建 ClusterIP 服务
 
 点选`集群内访问（ClusterIP）`，这是指通过集群的内部 IP 暴露服务，选择此项的服务只能在集群内部访问。这是默认的服务类型。参考下表配置参数。
 
@@ -45,7 +45,7 @@
 | 会话保持最大时长 | 【类型】选填<br />【含义】开启会话保持后，保持的最大时长，默认为 30 秒 | 30 秒     |
 | 注解             | 【类型】选填<br />【含义】为服务添加注解<br />               |           |
 
-#### 创建节点访问（NodePort） 类型的服务
+#### 创建 NodePort 服务
 
 点选`节点访问（NodePort）`，这是指通过每个节点上的 IP 和静态端口（`NodePort`）暴露服务。`NodePort` 服务会路由到自动创建的 `ClusterIP` 服务。通过请求 `<节点 IP>:<节点端口>`，您可以从集群的外部访问一个 `NodePort` 服务。参考下表配置参数。
 
@@ -60,7 +60,7 @@
 | 会话保持最大时长 | 【类型】选填<br />【含义】开启会话保持后，保持的最大时长，默认超时时长为 30 秒<br />.spec.sessionAffinityConfig.clientIP.timeoutSeconds 默认设置为 30 秒 | 30 秒    |
 | 注解             | 【类型】选填<br />【含义】为服务添加注解<br />               |          |
 
-#### 创建负载均衡（LoadBalancer） 类型的服务
+### 创建 LoadBalancer 服务
 
 点选`负载均衡（LoadBalancer）`，这是指使用云提供商的负载均衡器向外部暴露服务。 外部负载均衡器可以将流量路由到自动创建的 `NodePort` 服务和 `ClusterIP` 服务上。参考下表配置参数。
 

@@ -9,30 +9,30 @@ Ingress 是对集群中服务的外部访问进行管理的 API 对象，典型�
 
 ## 前提条件
 
-- 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
+- 容器管理模块[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
 - 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为 [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) 角色 ，详情可参考[命名空间授权](../Permissions/Cluster-NSAuth.md)。
 - 已经完成 [Ingress 实例的创建](../../../network/modules/ingress-nginx/install.md)
 - 单个实例中有多个容器时，请确保容器使用的端口不冲突，否则部署会失效。
 
-### 创建路由
+## 创建路由
 
 1. 以 `NS Edit` 用户成功登录后，点击左上角的`集群列表`进入`集群列表`页面。在集群列表中，点击一个集群名称。
 
     ![集群列表](../../images/service01.png)
 
-2. 点击左侧的`服务与路由`，点击`路由`页签，点击右上角`创建路由`按钮。
+2. 在左侧导航栏中，点击`容器网络`->`路由`进入服务列表，点击右上角`创建路由`按钮。
 
     ![服务与路由](../../images/ingress01.png)
 
     !!! tip
-    
+
         也可以通过 `YAML 创建`一个路由。
 
 3. 打开`创建路由`页面，进行配置。可选择两种协议类型，参考以下两个参数表进行配置。
 
     ![创建路由](../../images/ingress02.jpg)
 
-#### 创建协议为 HTTP 的路由
+### 创建 HTTP 协议路由
 
 | 参数          | 说明                                                         | 举例值  |
 | ------------- | :----------------------------------------------------------- | :------ |
@@ -45,7 +45,7 @@ Ingress 是对集群中服务的外部访问进行管理的 API 对象，典型�
 | 标签          | 【类型】选填<br />【含义】为路由添加标签<br />               | -       |
 | 注解          | 【类型】选填<br />【含义】为路由添加注解<br />-              | -       |
 
-#### 创建协议为 HTTPS 的路由
+### 创建 HTTPS 协议路由
 
 | 参数          | 说明                                                         | 举例值  |
 | :------------ | :----------------------------------------------------------- | :------ |

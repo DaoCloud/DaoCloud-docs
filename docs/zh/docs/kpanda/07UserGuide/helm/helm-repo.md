@@ -13,7 +13,7 @@ Helm 仓库是用来存储和发布 Chart 的存储库。Helm 应用模块支持
 
 ## 前提条件
 
-- 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面
+- 容器管理模块[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面
 
 - 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/User.md)，并为用户授予 [`NS Admin`](../Permissions/PermissionBrief.md#ns-admin) 或更高权限 ，详情可参考[命名空间授权](../Permissions/Cluster-NSAuth.md)。
 

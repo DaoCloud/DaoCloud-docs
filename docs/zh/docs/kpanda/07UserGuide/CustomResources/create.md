@@ -4,7 +4,7 @@
 这为我们的日常运维和管理工作提供了重要支撑，但是在一些特殊的场景中，现有的预置资源并不能满足业务的需要，
 因此我们希望去扩展 Kubernetes API 的能力，自定义资源（CustomResourceDefinition, CRD）正是基于这样的需求应运而生。
 
-容器管理平台支持对自定义资源的界面化管理，主要功能如下：
+容器管理模块支持对自定义资源的界面化管理，主要功能如下：
 
 - 获取集群下自定义资源列表和详细信息
 - 基于 YAML 创建自定资源
@@ -13,7 +13,7 @@
 
 ## 前提条件
 
-- 容器管理平台[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面
+- 容器管理模块[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面
 
 - 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../.../../../../ghippo/04UserGuide/01UserandAccess/User.md)，并将用户授权为 [`Cluster Admin`](../Permissions/PermissionBrief.md#cluster-admin) 角色 ，详情可参考[命名空间授权](../Permissions/Cluster-NSAuth.md)
 
