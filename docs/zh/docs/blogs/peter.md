@@ -37,6 +37,10 @@ Inspire People, Enable People! 致程序猿⾥超有⽂采的 [panpan0000](https
     即使疫情阴霾，即使周边喧嚣，你还能保持阳光 🌟<br>
     坚持，热爱 105℃ 的你。
 
+</div>
+
+<div class="grid cards" markdown>
+
 -   :desktop:{ .lg .middle } __5 ⽉居家办公__
 
     ---
@@ -64,6 +68,10 @@ Inspire People, Enable People! 致程序猿⾥超有⽂采的 [panpan0000](https
     当不经意种下自主开源种子，某天突然发现花香满园的时候。
 
     我的伙伴：你所热爱的东西 / 真得有一天 / 会反过来拥抱你！
+
+</div>
+
+<div class="grid cards" markdown>
 
 -   :love_letter:{ .lg .middle } __7 ⽉阳光下星辰里__
 
@@ -99,8 +107,12 @@ Inspire People, Enable People! 致程序猿⾥超有⽂采的 [panpan0000](https
     一切热情和荣耀
       在 9 月即将而来的实践面前
         将赢得检验和回报
-          走吧: 去发光 / 而不是被照亮!
+          走吧! 去发光 / 而不是被照亮!
     ```
+
+</div>
+
+<div class="grid cards" markdown>
 
 -   :stars:{ .lg .middle } __9 ⽉核酸之光__
 
@@ -133,6 +145,10 @@ Inspire People, Enable People! 致程序猿⾥超有⽂采的 [panpan0000](https
     但是我知道：你们心里 / 有一个 / 不可战胜的夏天。
 
     ![那朵花](./images/flower.png)
+
+</div>
+
+<div class="grid cards" markdown>
 
 -   :sunny:{ .lg .middle } __11 ⽉我还行__
 
@@ -168,8 +184,7 @@ Inspire People, Enable People! 致程序猿⾥超有⽂采的 [panpan0000](https
 
     面对不完美的世界，总有人选择挺身而出。<br>
     去奔赴，去热爱，去见证。<br>
-    是你，<br>
-    带着跨越瘟疫与巨变的勇气，<br>
+    是你，带着跨越瘟疫与巨变的勇气，<br>
     像贺炜说的“请相信，世界上总有一些美好，值得我们全力以赴。”<br>
     艰难困苦，玉汝于成！
 
