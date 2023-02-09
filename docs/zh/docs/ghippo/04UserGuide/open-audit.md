@@ -215,7 +215,7 @@
 
 如果想关闭，去掉 `spec.containers.command` 中的相关命令即可。
 
-## 采集审计日志
+## 开启审计日志的采集
 
 通过 FluentBit 来采集审计日志。默认 FluentBit 不会会采集 `/var/log/kubernetes/audit` 下的日志文件（Kubernetes 审计日志）。
 
@@ -247,6 +247,41 @@
 3. 重启所有 Pod
 
     重启所有 master 节点的 FluentBit Pod，重启后的 FluentBit 将会采集 `/var/log/kubernetes/audit` 下的日志。
+
+## 禁用审计日志的采集
+
+如需禁用 K8s 审计日志，按以下步骤操作：
+
+1. 保存当前 value
+
+    ```shell
+    helm get values insight-agent -n insight-system -o yaml > insight-agent-values-bak.yaml
+    ```
+
+2. 获取当前版本号 ${insight_version_code}，然后更新配置
+
+    ```shell
+    insight_version_code=`helm list -n insight-system |grep insight-agent | awk {'print $10'}` 
+    ```
+
+    与开启相比，以下这条命令只是将 true 改为了 false。
+
+    ```shell
+    helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent insight-release/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=false 
+    ```
+
+    如果因为版本未找到而升级失败，请检查命令中使用的 helm repo 是否有这个版本。
+    若没有，请尝试更新 helm repo 后重试。
+
+    ```shell
+    helm repo update insight-release
+    ```
+
+3. 重启所有 Pod
+
+    重启所有 master 节点的 FluentBit Pod，重启后的 FluentBit 将不再采集 `/var/log/kubernetes/audit` 下的日志。
+
+!!! note
 
     此外，如果想停止全局管理的审计日志采集，可以执行 `kubectl edit cm insight-agent-fluent-bit-config -n insight-system`，删除以下 INPUT 即可：
 
