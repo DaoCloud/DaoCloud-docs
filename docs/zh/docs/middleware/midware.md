@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 数据服务介绍
 
 DCE 5.0 针对实际应用场景，精选了一些经典的数据服务中间件，通过前后端开发，能够满足各类应用场景的开发和维护。
@@ -14,6 +19,10 @@ DCE 5.0 针对实际应用场景，精选了一些经典的数据服务中间件
 ## 数据服务学习路径
 
 上述几个数据服务中间件的学习路径大致相同，此处以 RabbitMQ 为例，简单说明学习路径。
+
+!!! info
+
+    在下方流程流程图中点击相应文字可以直接跳转到对应的操作指南页面。
 
 ```mermaid
 graph TD
@@ -35,6 +44,10 @@ graph TD
     click H "https://docs.daocloud.io/middleware/rabbitmq/quickstart/install/#_1"
 ```
 
-[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
-[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[Elasticsearch](elastic-search/intro/what.md){ .md-button .md-button--primary }
+[Kafka](./kafka/intro/what.md){ .md-button .md-button--primary }
+[MinIO](./minio/intro/what.md){ .md-button .md-button--primary }
+[MySQL](mysql/intro/what.md){ .md-button .md-button--primary }
+[RabbitMQ 消息队列](rabbitmq/intro/what.md){ .md-button .md-button--primary }
+[Redis](./redis/intro/what.md){ .md-button .md-button--primary }
+
