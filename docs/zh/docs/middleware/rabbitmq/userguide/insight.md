@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 实例监控
 
 RabbitMQ 内置了 Prometheus 和 Grafana 监控模块。
