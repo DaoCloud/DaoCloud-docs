@@ -83,6 +83,12 @@
 
 ### 最佳实践
 
+- [vivo 自研 Jenkins 资源调度系统设计与实践](https://mp.weixin.qq.com/s/wEmheHwTA8m8LHr_5LVSyg)
+
+    文章从目前业界实现 Jenkins 的高可用的实现方案入手，分析各方案的优缺点，引入 vivo 目前使用的 Jenkins 高可用方案——jenkins scheduler 系统。
+    该系统不采用原生的 Jenkins 部署方案，而是采用全 master 的方式，master 之间的关系、任务分配、离线、插件安装等由调度系统进行管理。
+    目前该系统已经投入生产环境运行。
+
 - [K8s 迁移 cgroup v2 之前要做的三件事](https://mp.weixin.qq.com/s/BV-y82MalhG-A--hvUFMcg)
 
     随着 Kubernetes 1.25 关于cgroup v2 特性的正式发布（GA），kubelet 容器资源管理能力得到加强。
@@ -347,6 +353,12 @@
     Harbor v2.2及其更高版本支持对相关指标的采集和使用，这篇文章介绍了如何使用 Prometheus 轻松抓取 Harbor 实例的一些关键指标。
 
 ### 工具推荐
+
+- [在 K8s 上构建端到端的无侵入开源可观测解决方案](https://mp.weixin.qq.com/s/HUFawiyv55Hi0aEoEPl6rA)
+
+    [Odigos](https://github.com/keyval-dev/odigos) 是一个开源的可观测性控制平面，允许企业在几分钟内创建可观测性管道，集成众多第三方项目、开放标准，降低多个可观测性软件平台和开源软件解决方案的复杂性。
+    此外，还允许应用程序在几分钟内提供追踪、指标和日志，重要的是无需修改任何代码，完全无任何侵入性。
+    Odigos 能够自动检测集群中每个应用的编程语言，并进行自动检测。
 
 - [为什么我们提倡以工作负载为中心而非基础设施为中心的开发模式？](https://score.dev/blog/workload-centric-over-infrastructure-centric-development)
 
@@ -665,6 +677,18 @@
     文章从主流 APM 产品介绍出发（对比 Pinpoint、Jaeger、Skywalking、听云、腾讯云+阿里云 Arms 和 Datadog），通过生产环境中关注的几个重要维度，如产品体验、Agent 能力、报警+ DB 支持、云原生的支持能力、数据大屏等，给予 APM 选型方案建议。
 
 ### 前沿热点
+
+- [探索基于隧道的 Kubernetes 跨集群通讯](https://mp.weixin.qq.com/s/uuWCr1d7V_aFdCAJCJS_XQ)
+
+    文章介绍了基于 ssh 隧道的跨集群访问访问。
+    集群 A 中服务要访问集群 B 中的不同服务，即单隧道多服务的实现是通过在隧道两头增加一个隧道的代理，隧道左端监听多个端口，用来区分集群 A 中服务要访问的集群 B 中的不同服务。
+    并且将此信息告知隧道右端的代理，右端代理根据此信息来转发给对应的集群 B 中的服务。
+    目前该方案只是在 demo 的程度。
+
+- [2023 年 eBPF 的六个发展趋势](https://www.solo.io/blog/ebpf-trends-2023/)
+
+    2023 年 eBPF 的六个发展趋势包括：
+    利用 eBPF 网络追踪建立高性能的 HTTP 监控、更深入的网络功能和 sidecar 优化、安全和恶意软件检测、云平台的大规模应用、电信领域的应用、更多基于 eBPF 的项目涌现。
 
 - [Kubernetes 之痛，平台工程可以解决](https://thenewstack.io/kubernetes-pains-platform-engineering-can-help/)
 

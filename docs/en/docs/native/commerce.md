@@ -95,6 +95,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Release features: Add Kube-OVN BGP support to enable pod IP access from external networks; Support for configuring traffic mirroring for Kube-OVN; metallb-controller and metallb-speaker can be deployed to more architectures (AMD64, ARM, ARM64, etc.). Integrated policy engine OPA gatekeeper.
 
+- [CAST AI Kubernetes Cost Optimization & Automation Platform January Update](https://cast.ai/release-notes/#january-2023)
+
+    Updates: Added CAST AI kVisor security agent for assessing security vulnerabilities and analyzing cluster configuration security; improved way to use AKS images when creating new nodes; provided daily CPU usage data and number of CPUs billed; improved auto-scaling feature.
+
 - [CAST AI Kubernetes Cost Optimization & Automation Platform November Update](https://cast.ai/release-notes/#november-2022)
 
      What's new: The minimum number of nodes can be configured after cluster rebalancing, support for autoscaling with storage-optimized nodes for EKS users, support for fallback in node templates, and support for ARM nodes for EKS and GKE clusters.
@@ -278,23 +282,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The main new features of this version: support for resizing volumes with zero downtime, control the type of storage used by workloads through storage pools, and allow the topology of volumes to be defined.
 
-- [OpenShift Container Platform 4.12 Released](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.12/html/release_notes/ocp-4-12-release-notes)
-
-     Updates: Use OVN-Kubernetes network plugin as default network plugin; add topology-aware lifecycle manager for managing multiple single-node OpenShift cluster deployments and upgrades; support optimized resource allocation management via cgroup v2; support fast, low memory consumption crun container runtime; optimize agent-based support for firewall configuration at the management node level; support for dynamically scaling the default Ingress controller based on the metrics in the cluster; support for configuring multiple network policies for SR-IOV devices; support for Serverless function; new OpenShift Network Observability Operator for Support for the deployment of production-grade Kubernetes to edge devices.
-
-- [OpenShift Service Mesh 2.3 released](https://cloud.redhat.com/blog/introducing-openshift-service-mesh-2.3)
-
-     The main new features of this version: support for Istio v1.14, support for creating and managing gateways by injecting deployment instances, adding cluster-wide topology, adding an OpenShift service grid console operator, and supporting Istio visualization tool Kiali 1.57.
-
-- [Openshift Logging 5.5 release](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.11/html/logging/release-notes#cluster-logging-release-notes-5-5-0)
-
-     The main new features of this version: support for forwarding structured logs of different containers in the same pod to different indexes, use Kubernetes common tags to filter logs with Elasticsearch output, log aggregation Loki Operator and observation data collection Vector collector are officially available.
-
 - [OutSystems Releases Cloud-Native Low-Code Development Solution OutSystems Developer Cloud (ODC)](https://mp.weixin.qq.com/s/yx63Um3ju1mC-qNF9_GJkw)
 
      ODC is a high-performance low-code solution for building cloud-native applications. ODC combines Kubernetes, Linux containers, microservices, and AWS native cloud services with DORA's high-performance level CI/CD, enterprise-grade security, and model-based visual development. Support large-scale transaction volumes and data requirements, improve developer productivity with advanced visual programming and artificial intelligence, and enable high-performance CI/CD practices.
 
-### P, Q, R
+### P, Q
 
 - [Portworx Enterprise 2.12 Cloud Native Data Management Platform Release](https://docs.portworx.com/release-notes/portworx/#2-12-0)
 
@@ -316,9 +308,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates include: support for detecting Helm Chart drift, support for automatic collection of Kubernetes host costs, collected data can be imported into third-party audit tools, and visibility into all subcomponents of an environment definition.
 
-- Qualys Container Security v1.21 released](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release- notes.pdf)
+- [Qualys Container Security v1.21 released](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release-notes.pdf)
 
      Updates: Support for sensor profiles for regular and CI/CD sensors, support for defining sensor configurations in sensor profiles, allow scanning of all images during automatic registry scans.
+
+### R
 
 - [Rafay Systems Launches Cost Management Service for Kubernetes](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
 
@@ -329,16 +323,35 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Built on Istio, Service Mesh Manager provides microservice teams with centralized security control and traffic management policy configuration. Built on Cilium, Network Policy Manager provides centralized management and visibility into pod and namespace communication to isolate perimeters and reduce a cluster's lateral attack surface.
 
-- [Red Hat Quay v3.8.0 released for Red Hat Container Registry](https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html/red_hat_quay_release_notes/index)
+- [Red Hat Advanced Cluster Management for Kubernetes 2.7 released](https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster) _management_for_kubernetes/2.7/html/release_notes/red-hat-advanced-cluster-management-for-kubernetes-release-notes)
+
+    Updates: support for policy enforcement ordering based on dependencies, policy generator support for referencing local and remote custom configurations, expansion of the number of clusters manageable at the edge to 3500, support for creating clusters on the Arm architecture, search component for large-scale environments officially available, support for simplifying cluster deployment with the new Submariner LoadBalancer mode, and support for the Submariner LoadBalancer mode. Submariner supports clusters without a network environment.
+
+- [Red Hat's cloud-native CI/CD solution OpenShift Pipelines 1.9 released](https://docs.openshift.com/container-platform/4.11/cicd/pipelines/op-release-notes.html#op-release-notes-1-9_op-release-notes)
+
+    Updates: Pipelines as Code is now available, supports defining Tekton templates in the source code repository; supports concurrency limits for repository CRDs; supports authentication of URLs in pipelines; new Resolvers feature to "resolve" requests from remote tasks and pipelines; new CLI tool `opc`.
+
+- [Red Hat OpenShift Container Platform 4.12 Released](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.12/html/release_notes/ocp-4-12-release-notes)
+
+     Updates: Use OVN-Kubernetes network plugin as default network plugin; add topology-aware lifecycle manager for managing multiple single-node OpenShift cluster deployments and upgrades; support optimized resource allocation management via cgroup v2; support fast, low memory consumption crun container runtime; optimize agent-based support for firewall configuration at the management node level; support for dynamically scaling the default Ingress controller based on the metrics in the cluster; support for configuring multiple network policies for SR-IOV devices; support for Serverless function; new OpenShift Network Observability Operator for Support for the deployment of production-grade Kubernetes to edge devices.
+
+- [Red Hat Container Registry Quay v3.8.0 released](https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html/red_hat_quay_release_notes/index)
 
      New features of this version: support IPv6 single-stack and IPv4/IPv6 dual-stack, users must have a self-signed certificate to use SAN (Subject Alternative Name), Quay administrators can use storage quotas to limit the size of the cache, the new user type "subject to Restricted user", the super user can be configured to have full control over everything in the system.
+
+- [Red Hat OpenShift Service Mesh 2.3 released](https://cloud.redhat.com/blog/introducing-openshift-service-mesh-2.3)
+
+     The main new features of this version: support for Istio v1.14, support for creating and managing gateways by injecting deployment instances, adding cluster-wide topology, adding an OpenShift service grid console operator, and supporting Istio visualization tool Kiali 1.57.
+
+- [Red Hat Openshift Logging 5.5 release](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.11/html/logging/release-notes#cluster-logging-release-notes-5-5-0)
+
+     The main new features of this version: support for forwarding structured logs of different containers in the same pod to different indexes, use Kubernetes common tags to filter logs with Elasticsearch output, log aggregation Loki Operator and observation data collection Vector collector are officially available.
 
 ### S
 
 - [ServiceNow Releases Unified Query Language Lightstep UQL, Extending the Visibility of Kubernetes Applications](https://lightstep.com/blog/announcing-the-lightstep-unified-query-language)
 
      Lightstep UQL supports unified "observability as code", simplifies the process of migrating from multiple disparate tools to the unified Lightstep platform through a single query language, and also supports querying and correlating metrics, logs and track.
-
 
 - [Solo.io Releases Cloud-Native Gateway Gloo Gateway 1.13](https://www.solo.io/blog/gloo-edge-1-13/)
 
@@ -367,6 +380,13 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [StormForge Kubernetes cluster performance optimization solution Optimize Live uses machine learning to optimize K8 automatic scaling capabilities](https://www.stormforge.io/blog/introducing-intelligent-bi-dimensional-autoscaling/)
 
      The latest version of Optimize Live provides two-dimensional auto-scaling capabilities. HPA and VPA can work together to adjust the size of pods and set utilization horizontally to maximize the efficiency of auto-scaling. Additionally, machine learning is used to analyze historical resource usage to find the optimal HPA target utilization.
+
+- [SUSE Launches Rancher Prime, an Enterprise Container Management Platform](https://mp.weixin.qq.com/s/iVFsSGlRd4TdJGcRKLQBuQ)
+
+    Rancher Prime is a distribution of Rancher with core code from Rancher Community Edition, but with more emphasis on security and enhanced features and services for enterprise users.
+    The features of Rancher Prime are: improved comprehensive security governance and a trusted mirror repository.
+    introduce UI extensions; full lifecycle support for hosting clusters on Ali Cloud, Tencent Cloud and Huawei Cloud;
+    support openEuler Linux and support for ARM systems.
 
 - [SUSE releases SUSE Edge 2.0, a cloud-native edge management platform](https://mp.weixin.qq.com/s/LszXlp9iKT6FudzWY3EmaQ)
 

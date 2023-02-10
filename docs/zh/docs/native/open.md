@@ -51,6 +51,10 @@
 
     [Arbiter](https://github.com/kube-arbiter/arbiter) 聚合各种类型的数据，用户可以基于这些数据管理、调度或扩展集群中的应用程序。它可以帮助 Kubernetes 用户了解和管理集群中部署的资源，进而提高企业应用程序的资源利用率和运行效率。
 
+- [Argo CD GitOps 工具 v2.6.0 发布（CNCF 项目）](https://github.com/argoproj/argo-cd/releases/tag/v2.6.0)
+
+    版本特性：ApplicationSet 资源增加渐进式发布策略、允许用户为应用程序提供多个资源、允许多个 CRD 共享健康检查、支持反向代理扩展、argocd CLI 添加跨平台的文件加密工具 bcrypt 的支持。
+
 - [Argo 成为 CNCF 毕业项目](https://mp.weixin.qq.com/s/l8veOjEZV4xlrtqdCWPljg)
 
     [Argo](https://github.com/argoproj) 让团队能够使用 GitOps，在 Kubernetes 上采用声明方式部署和运行云原生应用和工作流。
@@ -241,6 +245,10 @@
 
 ### E
 
+- [Envoy Gateway v0.3 发布](https://gateway.envoyproxy.io/v0.3.0/releases/v0.3.html)
+
+    版本特性：支持扩展的 Gateway API 字段；支持 TCP 路由 API、UDP 路由 API 和 GRPC 路由 API；支持全局速率限制；支持请求认证。
+
 - [Envoy Gateway API 网关 v0.2 发布](https://github.com/envoyproxy/gateway/releases/tag/v0.2.0)
 
     该版本主要新特性：支持 Kubernetes、支持 Gateway API 资源。
@@ -264,6 +272,10 @@
     [eunomia-bpf](https://gitee.com/anolis/eunomia) 由各高校和龙蜥社区共同开发，旨在简化 eBPF 程序的开发、分发、运行。在 eunomia-bpf 中，只需编写内核态代码即可正确运行，在部署时不需要重新编译，并提供 JSON/WASM 的标准化分发方式。
 
 ### F, G
+
+- [Falco 运行时安全项目 v0.34.0 发布（CNCF 项目）](https://github.com/falcosecurity/falco/releases/tag/0.34.0)
+
+    版本特性：支持手动下载和应用相关的规则 [`application_rules.yaml`](https://github.com/falcosecurity/rules/tree/main/rules)、新检测规则使用 PTRACE 向进程注入代码、规则结果添加编译条件上下文、允许现代 bpf 探针为一个环形缓冲区分配一个以上的 CPU、添加 webserver 端点以检索内部版本号、在 systemd unit 中支持多个驱动。
 
 - [Falco 运行时安全项目 v0.32.0 发布（CNCF 项目）](https://github.com/falcosecurity/falco/releases/tag/0.32.0)
 
@@ -417,6 +429,12 @@
 
     该版本主要新特性：支持 containerd shimv2 日志插件、支持 virtio-block 多队列、支持 QEMU 沙箱功能、支持 containerd 的核心调度、kata-runtime iptables 子命令可在 guest 中操作 iptables、支持直接分配的卷。
 
+- [KEDA 基于 Kubernetes 事件驱动自动缩放项目公布安全审计结果](https://mp.weixin.qq.com/s/ZwCg-qCeC2CMm7EbxJbi9w)
+
+    审计发现了 Redis Scalers 中的一个重大缺陷，该缺陷可能会影响系统的机密性、完整性或可用性。
+    这个问题与加密和绕过 TLS 有关，从而允许潜在的 MitM（中间人）攻击。
+    目前，该问题已修复。此外，基于审计结果，KEDA 还更新了现有的安全工具链，引入了 semgrep 工具和 TLS 证书管理。
+
 - [KEDA 事件驱动自动伸缩器 v2.9.0 发布（CNCF 项目）](https://github.com/kedacore/keda/releases/tag/v2.9.0)
 
     该版本主要新特性：增加 CouchDB、Etcd 和 Loki 扩展器、引入 Grafana 仪表盘用于监控应用的自动缩放、在 KEDA Operator 中整合所有暴露的 Prometheus 指标、实验性的支持在轮询间隔期间为扩展器缓存指标值。
@@ -469,6 +487,11 @@
 
     [KubeClipper](https://github.com/KubeClipper-labs) 基于 kubeadm 工具进行二次封装，提供在企业自有基础设施中快速部署 K8S 集群和持续化全生命周期管理（安装、卸载、升级、扩缩容、远程访问等）能力，
     支持在线、代理、离线等多种部署方式，还提供了丰富可扩展的 CRI、CNI、CSI、以及各类 CRD 组件的管理服务。
+
+- [KubeEdge 达到软件供应链 SLSA L3 等级](https://mp.weixin.qq.com/s/5kpbnE-F__HqlF0JAwCOSg)
+
+    在近期发布的 v1.13.0 版本中，KubeEdge 项目已达到 [SLSA](https://slsa.dev/) L3 等级（包括二进制和容器镜像构件），成为 CNCF 社区首个达到 SLSA L3 等级的项目。
+    这意味着，KubeEdge 可以端到端的从源码构建到发布流程进行安全加固，保障用户获取到的二进制或容器镜像产物不被恶意篡改。
 
 - [KubeEdge 云原生边缘计算平台 v1.12 发布（CNCF 项目）](https://github.com/kubeedge/kubeedge/blob/master/CHANGELOG/CHANGELOG-1.12.md)
 
@@ -677,6 +700,10 @@
 - [Nacos 动态服务发现平台 v2.1.0 发布（CNCF 项目）](https://github.com/alibaba/nacos/releases/tag/2.1.0)
 
     该版本主要新特性：新增两个 SPI 插件：分别用于配置加解密和认证、支持集群 gRPC 客户端设置线程池大小、支持重置 raft 集群等。
+
+- [Narrows：由 VMware 开源的云原生安全检测器，能够在 Harbor 上增加容器安全的动态扫描](https://mp.weixin.qq.com/s/xJ1Sx5pc0rKkJaYopD-vjw)
+
+    [Narrows](https://github.com/vmware-tanzu/cloud-native-security-inspector) 能够对 Kubernetes 集群和其中的工作负载进行运行时的安全态势评估，发现 Kubernetes 集群的错误配置，终止工作负载运行时中的攻击；对扫描报告进行汇总、聚合和分析并提供开放的API接口；与 Harbor 无缝集成，对于外部公共镜像仓库的镜像，可以自动同步到 Harbor 中，以生成安全数据。
 
 - [nerdctl Containerd 命令行工具 v1.2.0](https://github.com/containerd/nerdctl/releases/tag/v1.2.0)
 
