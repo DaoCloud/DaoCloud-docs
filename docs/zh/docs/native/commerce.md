@@ -4,6 +4,13 @@
 
 ### A
 
+
+
+
+- [CAST AI Kubernetes 成本优化&自动化平台 1 月更新](https://cast.ai/release-notes/#january-2023)
+
+    更新内容：新增 CAST AI kVisor 安全代理，用于评估安全漏洞和和分析集群配置的安全性；改进创建新节点时使用 AKS 镜像的方式；提供每天的 CPU 使用数据以及计费 CPU 数量；改进自动缩放功能。
+
 - [Aqua 云原生安全平台引入基于 eBPF 技术的零日漏洞检测工具 Lightning Enforcer](https://blog.aquasec.com/combat-zero-day-threats-with-aquas-ebpf-lightning-enforcer)
 
     Aqua Lightning Enforcer 利用漂移和基于行为的自动化检测方法，检测零日漏洞等未知威胁，并提供事件管理、可疑行为告警以及开箱即用的 CNDR（云本地检测和响应）。
@@ -279,25 +286,13 @@ Ocean CD 是一个支持多集群的 SaaS 方案，以 Argo rollouts 为引擎�
 
     该版本主要新特性：支持在零停机的情况下调整卷的大小、通过存储池可以控制工作负载所使用的存储类型、允许定义卷的拓扑结构。
 
-- [OpenShift Container Platform 4.12 发布](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.12/html/release_notes/ocp-4-12-release-notes)
-
-    更新内容：使用 OVN-Kubernetes 网络插件作为默认网络插件；新增拓扑感知的生命周期管理器用于管理多个单节点 OpenShift 集群的部署和升级；支持通过 cgroup v2 优化资源分配管理；支持快速、低内存占用的 crun 容器运行时；针对断网环境优化基于代理的安装器；支持管理节点层面的防火墙配置；支持根据集群中的指标动态扩展默认的 Ingress 控制器；支持为 SR-IOV 设备配置多网络策略；支持 Serverless function 功能；新增 OpenShift Network Observability Operator 进行网络排障；新增 Security Profiles Operator 改善安全态势；支持将生产级 Kubernetes 部署到边缘设备上。
-
-- [OpenShift Service Mesh 2.3 发布](https://cloud.redhat.com/blog/introducing-openshift-service-mesh-2.3)
-
-    该版本主要新特性：支持 Istio v1.14、支持通过注入 deployment 实例来创建和管理网关、新增集群范围的拓扑结构、增加 OpenShift 服务网格控制台 operator、支持 Istio 可视化工具 Kiali 1.57。
-
-- [Openshift 日志管理服务 Logging 5.5 发布](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.11/html/logging/release-notes#cluster-logging-release-notes-5-5-0)
-
-    该版本主要新特性：支持把同一 pod 内不同容器的结构化日志转发给不同的索引、使用 Kubernetes 通用标签过滤带有 Elasticsearch 输出的日志、日志聚合 Loki Operator 和 观测数据收集Vector collector 正式可用。
-
 - [OutSystems 发布云原生低代码开发解决方案 OutSystems Developer Cloud (ODC)](https://mp.weixin.qq.com/s/yx63Um3ju1mC-qNF9_GJkw)
 
     ODC 是用于构建云原生应用程序的高性能低代码解决方案。
     ODC 将 Kubernetes、Linux 容器、微服务和 AWS 原生云服务与 DORA 高性能级 CI/CD、企业级安全性以及基于模型的可视化开发相结合。
     支持大规模交易量和数据需求，通过高级可视化编程和人工智能提高开发人员生产力，实现高性能 CI/CD 实践。
 
-### P, Q, R
+### P, Q
 
 - [Portworx Enterprise 2.12 云原生数据管理平台发布](https://docs.portworx.com/release-notes/portworx/#2-12-0)
 
@@ -323,6 +318,8 @@ Ocean CD 是一个支持多集群的 SaaS 方案，以 Argo rollouts 为引擎�
 
     更新内容：支持为普通和 CI/CD 传感器提供传感器配置文件、支持在传感器配置文件中定义传感器配置、在自动注册表扫描时允许扫描所有镜像。
 
+### R
+
 - [Rafay Systems 发布 Kubernetes 成本管理服务](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
 
     成本管理服务是 Rafay Kubernetes 运维平台的一部分，可为位于公有云和内部数据中心的集群提供 Kubernetes 云成本优化。
@@ -332,9 +329,29 @@ Ocean CD 是一个支持多集群的 SaaS 方案，以 Argo rollouts 为引擎�
 
     Service Mesh Manager 基于 Istio 构建，为微服务团队提供集中的安全控制和流量管理策略配置。Network Policy Manager 基于 Cilium 构建，提供集中管理以及 pod 和命名空间通信的可见性，以隔离边界并减少集群的横向攻击面。
 
+- [Red Hat 多集群管理平台 Advanced Cluster Management for Kubernetes 2.7 发布](https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.7/html/release_notes/red-hat-advanced-cluster-management-for-kubernetes-release-notes)
+
+    更新内容：支持根据依赖关系进行策略执行排序、策略生成器支持引用本地和远程定制配置、扩大边缘可管理的集群数至 3500 个、支持在 Arm 架构上创建集群、针对大规模环境的搜索组件正式可用、支持使用新的 Submariner LoadBalancer 模式简化集群部署、Submariner 支持无网络环境的集群。
+
+- [Red Hat 云原生 CI/CD 解决方案 OpenShift Pipelines 1.9 发布](https://docs.openshift.com/container-platform/4.11/cicd/pipelines/op-release-notes.html#op-release-notes-1-9_op-release-notes)
+
+    更新内容：Pipelines as Code 正式可用，支持在源代码库中定义 Tekton 模板；支持存储库 CRD 的并发限制；支持对管道中的 URL 进行认证；新增 Resolvers 功能用以“解决”远程任务和管道的请求；新增 CLI 工具 `opc`。
+
+- [Red Hat OpenShift Container Platform 4.12 发布](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.12/html/release_notes/ocp-4-12-release-notes)
+
+    更新内容：使用 OVN-Kubernetes 网络插件作为默认网络插件；新增拓扑感知的生命周期管理器用于管理多个单节点 OpenShift 集群的部署和升级；支持通过 cgroup v2 优化资源分配管理；支持快速、低内存占用的 crun 容器运行时；针对断网环境优化基于代理的安装器；支持管理节点层面的防火墙配置；支持根据集群中的指标动态扩展默认的 Ingress 控制器；支持为 SR-IOV 设备配置多网络策略；支持 Serverless function 功能；新增 OpenShift Network Observability Operator 进行网络排障；新增 Security Profiles Operator 改善安全态势；支持将生产级 Kubernetes 部署到边缘设备上。
+
 - [Red Hat 容器镜像仓库 Red Hat Quay v3.8.0 发布](https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html/red_hat_quay_release_notes/index)
 
     该版本新特性：支持 IPv6 单栈和 IPv4/IPv6 双栈、用户必须拥有自签名的证书才能使用 SAN（Subject Alternative Name）、Quay 管理员可以使用存储配额来限制缓存的大小、新用户类型“受限用户”、超级用户经配置可以对系统中的所有内容拥有完全控制权。
+
+- [Red Hat OpenShift Service Mesh 2.3 发布](https://cloud.redhat.com/blog/introducing-openshift-service-mesh-2.3)
+
+    该版本主要新特性：支持 Istio v1.14、支持通过注入 deployment 实例来创建和管理网关、新增集群范围的拓扑结构、增加 OpenShift 服务网格控制台 operator、支持 Istio 可视化工具 Kiali 1.57。
+
+- [Red Hat Openshift 日志管理服务 Logging 5.5 发布](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.11/html/logging/release-notes#cluster-logging-release-notes-5-5-0)
+
+    该版本主要新特性：支持把同一 pod 内不同容器的结构化日志转发给不同的索引、使用 Kubernetes 通用标签过滤带有 Elasticsearch 输出的日志、日志聚合 Loki Operator 和 观测数据收集Vector collector 正式可用。
 
 ### S
 
@@ -369,6 +386,13 @@ Ocean CD 是一个支持多集群的 SaaS 方案，以 Argo rollouts 为引擎�
 - [StormForge Kubernetes 集群性能优化方案 Optimize Live 利用机器学习优化 K8 自动扩缩容能力](https://www.stormforge.io/blog/introducing-intelligent-bi-dimensional-autoscaling/)
 
     最新版本的 Optimize Live 提供了二维自动缩放能力，HPA 和 VPA 能够协同工作，既能调整 pod 的大小，又能水平设置利用率，最大程度优化自动缩放的效率。此外，还利用机器学习分析历史资源使用情况，以找到最佳的 HPA 目标利用率。
+
+- [SUSE 推出企业级容器管理平台 Rancher Prime](https://mp.weixin.qq.com/s/iVFsSGlRd4TdJGcRKLQBuQ)
+
+    Rancher Prime 是 Rancher 的一种分发版，核心功能代码均来自 Rancher 社区版，但更加重视安全方面的建设，并面向企业用户强化了相关功能和服务。
+    Rancher Prime 的特色功能在于：综合安全治理能力提升，提供可信的镜像仓库；
+    引入 UI 扩展功能；提供对阿里云、腾讯云以及华为云的托管集群的全生命周期支持；
+    引入对 openEuler Linux 的支持；对 ARM 体系的支持。
 
 - [SUSE 发布云原生边缘管理平台 SUSE Edge 2.0](https://mp.weixin.qq.com/s/LszXlp9iKT6FudzWY3EmaQ)
 

@@ -14,7 +14,7 @@ This page shares some technical articles related to cloud native, and we hope th
     [nettrace](https://github.com/OpenCloudOS/nettrace) is an eBPF-based network toolset that integrates network message tracing (fault location), network troubleshooting, and network anomaly monitoring.
     It provides a more efficient and easy-to-use method to solve network problems in complex scenarios.
 
-- Istio Operations Practice: How to Avoid 503 UC Errors](https://mp.weixin.qq.com/s/4YIYPIszyKyWVMKXnXtHbg)
+- [Istio Operations Practice: How to Avoid 503 UC Errors](https://mp.weixin.qq.com/s/4YIYPIszyKyWVMKXnXtHbg)
 
     503 UC is a common problem encountered during Istio/Envoy usage.
     The article analyzes the principle of 503 UC caused by TCP server keepalive timeout and how to circumvent it.
@@ -77,6 +77,12 @@ This page shares some technical articles related to cloud native, and we hope th
      This article was inspired by the fact that Grafana does not display the capacity indicators of storage volumes created with storage drivers. It shows the troubleshooting ideas and methods for this problem, and then outlines the implementation process of Kubelet for collecting storage volume indicators.
 
 ### Best Practices
+
+- [Vivo Self-Developed Jenkins Resource Scheduling System Design and Practice](https://mp.weixin.qq.com/s/wEmheHwTA8m8LHr_5LVSyg)
+
+    The article starts from the current industry implementation solutions for Jenkins high availability, analyzes the advantages and disadvantages of each solution, and introduces the Jenkins scheduler system, the Jenkins high availability solution currently used by vivo.
+    The system does not use the native Jenkins deployment scheme, but adopts the full master approach, and the relationship between masters, task assignment, offline, and plugin installation are managed by the scheduling system.
+    The system is currently running in a production environment.
 
 - [Three things to do before migrating cgroup v2 for K8s](https://mp.weixin.qq.com/s/BV-y82MalhG-A--hvUFMcg)
 
@@ -337,6 +343,12 @@ This page shares some technical articles related to cloud native, and we hope th
      Harbor v2.2 and later versions support the collection and use of related indicators. This article introduces how to use Prometheus to easily capture some key indicators of Harbor instances.
 
 ### Tool recommendation
+
+- [Building an End-to-End Non-Intrusive Open Source Observable Solution on K8s](https://mp.weixin.qq.com/s/HUFawiyv55Hi0aEoEPl6rA)
+
+    [Odigos](https://github.com/keyval-dev/odigos) is an open source observability control plane that allows organizations to create observability pipelines in minutes, integrating numerous third-party projects, open standards, and reducing the complexity of multiple observability software platforms and open source software solutions.
+    It also allows applications to provide tracking, metrics and logs in minutes, importantly without any code changes and completely non-intrusive.
+    Odigos is able to automatically detect the programming language of each application in the cluster and perform automatic detection.
 
 - [Automating Istio CA Rotation at Scale in Production](https://mp.weixin.qq.com/s/75paqvd507_ExHHGszB_-Q)
 
@@ -659,6 +671,18 @@ This page shares some technical articles related to cloud native, and we hope th
      The article starts from the introduction of mainstream APM products (compared with Pinpoint, Jaeger, Skywalking, Tingyun, Tencent Cloud + Alibaba Cloud Arms and Datadog), and passes through several important dimensions in the production environment, such as product experience, Agent capability, alarm + DB support , cloud-native support capabilities, large data screens, etc., and give suggestions for APM selection solutions.
 
 ### Frontier hotspot
+
+- [Exploring Tunnel-based Kubernetes Cross-Cluster Communication](https://mp.weixin.qq.com/s/uuWCr1d7V_aFdCAJCJS_XQ)
+
+    The article describes cross-cluster access access based on ssh tunnels.
+    A service in cluster A wants to access different services in cluster B, i.e., a single tunnel with multiple services is implemented by adding a proxy for the tunnel at both ends of the tunnel, and the left end of the tunnel listens to multiple ports to distinguish different services in cluster B that the service in cluster A wants to access.
+    This information is communicated to the proxy on the right end of the tunnel, which forwards the information to the corresponding services in cluster B.
+    This solution is currently only at the demo level.
+
+- [Six Trends for eBPF in 2023](https://www.solo.io/blog/ebpf-trends-2023/)
+
+    The six trends for eBPF in 2023 include
+    Building high-performance HTTP monitoring with eBPF network tracing, deeper network functionality and sidecar optimization, security and malware detection, large-scale adoption of cloud platforms, adoption in the telecom space, and the emergence of more eBPF-based projects.
 
 - [Kubernetes pain, platform engineering can solve](https://thenewstack.io/kubernetes-pains-platform-engineering-can-help/)
 

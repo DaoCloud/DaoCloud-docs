@@ -51,6 +51,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      [Arbiter](https://github.com/kube-arbiter/arbiter) aggregates various types of data based on which users can manage, schedule, or scale applications in a cluster. It can help Kubernetes users understand and manage the resources deployed in the cluster, thereby improving the resource utilization and operational efficiency of enterprise applications.
 
+- [Argo CD GitOps Tool v2.6.0 Released (CNCF Project)](https://github.com/argoproj/argo-cd/releases/tag/v2.6.0)
+
+    Release features: ApplicationSet resources add progressive release policies, allow users to provide multiple resources to an application, allow multiple CRDs to share health checks, support reverse proxy extensions, argocd CLI adds cross-platform support for the file encryption tool bcrypt.
+
 - [Argo becomes a CNCF graduation project](https://mp.weixin.qq.com/s/l8veOjEZV4xlrtqdCWPljg)
 
      [Argo](https://github.com/argoproj) enables teams to declaratively deploy and run cloud-native applications and workflows on Kubernetes using GitOps.
@@ -239,6 +243,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### E
 
+- [Envoy Gateway v0.3 released](https://gateway.envoyproxy.io/v0.3.0/releases/v0.3.html)
+
+    Release features: Support extended Gateway API fields; Support TCP routing API, UDP routing API and GRPC routing API; Support global rate limit; Support request authentication.
+
 - [Envoy Gateway API Gateway v0.2 release](https://github.com/envoyproxy/gateway/releases/tag/v0.2.0)
 
      The main new features of this version: support for Kubernetes, support for Gateway API resources.
@@ -262,6 +270,10 @@ This page lists activity in cloud native open source projects in alphabetical or
      [eunomia-bpf](https://gitee.com/anolis/eunomia) is jointly developed by universities and the Eunomia community, aiming to simplify the development, distribution and operation of eBPF programs. In eunomia-bpf, you only need to write the kernel mode code to run correctly, and do not need to recompile when deploying, and provide a standardized distribution method of JSON/WASM.
 
 ### F, G
+
+- [Falco Runtime Security Project v0.34.0 Released (CNCF Project)](https://github.com/falcosecurity/falco/releases/tag/0.34.0)
+
+    Release features: support for manual download and application-related rules [`application_rules.yaml`](https://github.com/falcosecurity/rules/tree/main/rules), new detection rules using PTRACE to inject code into processes, rule results adding compile condition context, allow modern bpf probes to allocate more than one CPU to a ring buffer, add webserver endpoint to retrieve internal version number, support multiple drivers in systemd unit.
 
 - [Falco Runtime Security Project v0.32.0 Release (CNCF Project)](https://github.com/falcosecurity/falco/releases/tag/0.32.0)
 
@@ -413,6 +425,12 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support containerd shimv2 log plugin, support virtio-block multi-queue, support QEMU sandbox function, support containerd core scheduling, kata-runtime iptables subcommand can operate iptables in guest, and support directly allocated volumes.
 
+- [KEDA Announces Security Audit Results Based on Kubernetes Event-Driven Autoscaling Project](https://mp.weixin.qq.com/s/ZwCg-qCeC2CMm7EbxJbi9w)
+
+    The audit identified a significant flaw in Redis Scalers that could affect the confidentiality, integrity, or availability of the system.
+    The issue was related to encryption and bypassing TLS, thus allowing for potential MitM (man-in-the-middle) attacks.
+    The issue has now been fixed. In addition, based on the audit results, KEDA has updated the existing security toolchain to introduce the semgrep tool and TLS certificate management.
+
 - [KEDA Event-Driven Autoscaler v2.9.0 Release (CNCF Project)](https://github.com/kedacore/keda/releases/tag/v2.9.0)
 
      The main new features of this version: add CouchDB, Etcd and Loki extensions, introduce Grafana dashboard for monitoring application auto-scaling, integrate all exposed Prometheus indicators in KEDA Operator, experimental support for extensions during polling intervals Cache metric values.
@@ -465,6 +483,11 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      [KubeClipper](https://github.com/KubeClipper-labs) is based on the kubeadm tool for secondary packaging, providing rapid deployment of K8S clusters and continuous full lifecycle management (installation, uninstallation, upgrade, scaling, remote access, etc.) capabilities,
      It supports multiple deployment methods such as online, proxy, and offline, and also provides rich and scalable management services for CRI, CNI, CSI, and various CRD components.
+
+- [KubeEdge Reaches Software Supply Chain SLSA L3 Level](https://mp.weixin.qq.com/s/5kpbnE-F__HqlF0JAwCOSg)
+
+    In the recent v1.13.0 release, the KubeEdge project has reached [SLSA](https://slsa.dev/) L3 level (including binary and container image artifacts), making it the first project in the CNCF community to reach SLSA L3 level.
+    This means that KubeEdge can be securely hardened from end-to-end from the source build to the release process to protect the binary or container image products obtained by users from malicious tampering.
 
 - [KubeEdge cloud-native edge computing platform v1.12 release (CNCF project)](https://github.com/kubeedge/kubeedge/blob/master/CHANGELOG/CHANGELOG-1.12.md)
 
@@ -671,6 +694,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Nacos Dynamic Service Discovery Platform v2.1.0 release (CNCF project)](https://github.com/alibaba/nacos/releases/tag/2.1.0)
 
      The main new features of this version: Two new SPI plug-ins are added: respectively used to configure encryption, decryption and authentication, support cluster gRPC client to set thread pool size, support reset raft cluster, etc.
+
+- [Narrows: Cloud-native security detector open-sourced by VMware that adds dynamic scanning for container security on Harbor](https://mp.weixin.qq.com/s/xJ1Sx5pc0rKkJaYopD-vjw)
+
+    [Narrows](https://github.com/vmware-tanzu/cloud-native-security-inspector) enables runtime security posture assessment of Kubernetes clusters and the workloads within them, finds misconfigurations in Kubernetes clusters, and Ability to aggregate, aggregate, and analyze scan reports and provide an open API; seamlessly integrate with Harbor and automatically sync images from external public image repositories to Harbor to generate security data.
 
 - [nerdctl Containerd Command Line Tool v1.2.0](https://github.com/containerd/nerdctl/releases/tag/v1.2.0)
 

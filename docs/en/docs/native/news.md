@@ -13,11 +13,32 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 ### 2023-04
 
+- [April 15-16 Global Open Source Technology Summit GOTC 2023 will be held in April in Shanghai, and the call for proposal is now open](https://gotc2023.oschina.net/)
+  
+    The Global Open Source Technology Summit is co-sponsored by Shanghai Pudong Software Park, Linux Foundation Asia Pacific, and Open Source China. The conference focuses on hot topics such as cloud native, metaverse, eBPF, Web3.0, open source governance, open source education and training, front-end, infrastructure software, AI, IoT, etc.
+
 - [April 15 2023 Cloud Native Community Observability Summit to be Held, Instructor and Sponsor Recruitment Underway (3.10 Deadline)](https://mp.weixin.qq.com/s/erf33B2--kUgLg1D730tOg)
   
     The Cloud Native Community will hold an Observability Summit in Beijing on Saturday, April 15, 2023. Topics will focus on open source projects and applications in observability-related areas, including but not limited to: metrics monitoring, distributed tracking, log collection, technology innovation, application practices, etc.
 
 ### 2023-02
+
+- [February 8 KubeCon + CloudNativeCon Europe 2023 Conference Agenda Released](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/program/schedule/)
+  
+    KubeCon + CloudNativeCon Europe 2023 will be held simultaneously offline and online from 4.18-21.
+    There will be 303 events, keynotes, lightning talks and breakout sessions, 91 of which will be led by CNCF project maintainers.
+    Session topics included compliance, Pod security, environmental sustainability, hybrid/multi-cloud, CNCF projects, and more.
+
+- [February 6 IDC Officially Launches "China Government Cloud Solution Vendor Assessment, 2023"](https://mp.weixin.qq.com/s/N2DbhxL81M2AUYcPiSy0GQ)
+  
+    The China Government Cloud Solution Vendor Assessment, 2023 aims to help the industry gain a comprehensive understanding of the latest developments in the government cloud market and related technologies through a comprehensive assessment of core government cloud solution providers in the domestic market and interviews with a large number of government customers.
+    The assessment results will be released on 6.31 and presented in the form of a report, including assessment quadrant charts, IDC market observations, recommendations for technology buyers, introduction of selected vendors, and assessment criteria.
+
+- [February 6 China Academy of Information and Communications Technology (CAIC) Assessment of Trusted Cloud - Cloud Native Security Category in the First Half of 2023 Officially Launched (3.10 Assessment Registration Deadline)](https://mp.weixin.qq.com/s/RQfZt4XnN9f1Ckluh-NO_w)
+  
+    The Trusted Cloud Container Class - Cloud Native Security Class assessment system consists of 6 aspects.
+    Cloud Native Security Maturity Assessment, Cloud Native Application Protection Platform (CNAPP) Capability Assessment, Container Platform Security Capability Assessment, Container Security Solution Assessment, Cloud Native API Security Governance Capability Assessment, and Web Application and API Protection (WAAP) Capability Assessment.
+    The assessment results will be released in June at ICT China - High-End Forum.
 
 - [February 2 China Academy of Information and Communications Technology (CAIC) Trusted Cloud-Container Class Assessment Launched in the First Half of 2023 (Registration for Assessment Closed on 3.10)](https://mp.weixin.qq.com/s/V2-v9rPWnXQ5WlN4kEnVVw)
   
