@@ -1,7 +1,3 @@
----
-hide:
-  - toc
----
 
 # 安装简介
 
@@ -110,7 +106,7 @@ click config "https://docs.daocloud.io/install/commercial/clusterconfig/"
 click typical,simple "https://docs.daocloud.io/install/commercial/start-install/"
 ```
 
-### 联系我们
+## 联系我们
 
 DaoCloud Enterprise 5.0 还处于发布初期，安装流程可能会有变更。请收藏此页，关注更新动态，更多操作文档也在制作之中。
 

@@ -1,6 +1,11 @@
+---
+hide:
+  - toc
+---
+
 # 数据服务与 Kubernetes 版本适配
 
-目前数据服务已正式发布了 MySQL、RabbitMQ、Elasticsearch 三个数据服务中间件。
+目前数据服务已正式发布了 RabbitMQ、Elasticsearch、MySQL、Redis、Kafka、MinIO 六个数据服务中间件。
 
 ## Kubernetes 版本适配情况
 
