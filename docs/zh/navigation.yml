@@ -660,6 +660,7 @@ nav:
       - kwok: community/kwok.md
       - Merbridge: community/merbridge.md
       - Spiderpool: community/spiderpool.md
+      - 公开镜像加速: community/mirror.md
   - 云原生研究院:
       - 社区要闻: native/news.md
       - 商业产品: native/commerce.md

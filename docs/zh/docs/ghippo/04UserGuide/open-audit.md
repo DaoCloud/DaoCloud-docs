@@ -217,7 +217,7 @@
 
 ## 开启审计日志的采集
 
-通过 FluentBit 来采集审计日志。默认 FluentBit 不会会采集 `/var/log/kubernetes/audit` 下的日志文件（Kubernetes 审计日志）。
+通过 FluentBit 来采集审计日志。默认 FluentBit 不会采集 `/var/log/kubernetes/audit` 下的日志文件（Kubernetes 审计日志）。
 
 如需开启审计日志，按以下步骤操作：
 

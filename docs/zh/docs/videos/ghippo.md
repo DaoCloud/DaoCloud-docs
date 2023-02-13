@@ -50,5 +50,20 @@
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oidc.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
+## 开启审计日志
+
+参阅[开启审计日志](../ghippo/04UserGuide/open-audit.md)文档页面。
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-on.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+
+## 关闭审计日志
+
+参阅[关闭审计日志](../ghippo/04UserGuide/open-audit.md#_4)文档页面。
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-off.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

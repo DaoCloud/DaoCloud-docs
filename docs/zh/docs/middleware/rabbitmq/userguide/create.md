@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 创建 RabbitMQ
 
 在 RabbitMQ 消息队列中，执行以下操作：

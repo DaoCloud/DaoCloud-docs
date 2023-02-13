@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 数据服务（中间件）权限设计说明
 
 数据服务模块建立在 [工作空间](../ghippo/04UserGuide/02Workspace/wspermission.md) 之上，数据服务的各个中间件模块，对应工作空空间各个模块权限映射如下：

@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 创建 MySQL 实例
 
 接入 MySQL 数据库后，参照以下步骤创建 MySQL 实例。

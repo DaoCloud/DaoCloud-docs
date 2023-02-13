@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 创建 Redis 实例
 
 接入 Redis 缓存服务后，参照以下步骤创建 Redis 实例。
