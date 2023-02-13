@@ -22,7 +22,7 @@ DCE 5.0 natively supports the DevOps development and operation and maintenance m
 - :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](../middleware/midware.md)
 - :material-warehouse: **Container Registry** [Integrate and manage registries](../kangaroo/intro.md)
 - :material-dot-net: **Network** [Multi-CNI fusion solution](../network/intro/what-is-net.md)
-- :floppy_disk: **Storage** [Comprehensive solution for containerized storage](../hwameistor/intro/what.md)
+- :floppy_disk: **Storage** [Comprehensive solution for containerized storage](../storage/intro/what.md)
 
 </div>
 

@@ -513,43 +513,55 @@ nav:
               - Update Redis Instance: middleware/redis/userguide/update.md
               - Delete Redis Instance: middleware/redis/userguide/delete.md
               - Release Notes: middleware/redis/release-notes.md
-      - Local Storage:
-          - Intro: hwameistor/intro/what.md
-          - Modules:
-              - LDM: hwameistor/intro/ldm.md
-              - LS: hwameistor/intro/ls.md
-              - DRBD Installer: hwameistor/intro/drbd.md
-              - Scheduler: hwameistor/intro/scheduler.md
-              - Admission Controller: hwameistor/intro/admission-controller.md
-          - Resources: hwameistor/intro/resources.md
-          - Installation:
-              - Preparation: hwameistor/install/prereq.md
-              - Install with Helm Chart: hwameistor/install/deploy.md
-              - Post-check: hwameistor/install/post-check.md
-              - Upgrade: hwameistor/install/upgrade.md
-              - Uninstall: hwameistor/install/uninstall.md
-          - Resources:
-              - Create Storage Pool: hwameistor/resources/storagepool.md
-              - Volume Expansion: hwameistor/resources/expand.md
-              - Valume Migration: hwameistor/resources/migrate.md
-              - Node Expansion: hwameistor/resources/node-expansion.md
-              - Data Disk Expansion: hwameistor/resources/disk-expansion.md
-          - Scenarios:
-              - Intro: hwameistor/application/overview.md
-              - Deploy StatefulSet:
-                  - With Local Volume: hwameistor/application/local.md
-                  - With HA Volume: hwameistor/application/ha.md
-              - TiDB: hwameistor/application/tidb.md
-              - MinIO: hwameistor/application/minio/minio.md
+      - Cloud native storage:
+          - Intro: storage/intro.md
+          - Background: storage/background.md
+          - Benefits: storage/benifits.md
+          - Features: storage/functions.md 
+          - Release Notes: storage/hwameistor/releasenotes.md         
+          - HwameiStor local storage:
+            - Intro: storage/hwameistor/intro/what.md
+            - Modules:
+                - Local disk manager: storage/hwameistor/intro/ldm.md
+                - Local storage: storage/hwameistor/intro/ls.md
+                - DRBD installer: storage/hwameistor/intro/drbd.md
+                - Scheduler: storage/hwameistor/intro/scheduler.md
+                - Admission controller: storage/hwameistor/intro/admission-controller.md
+            - Resources: storage/hwameistor/intro/resources.md
+            - Installation:
+                - Preparation: storage/hwameistor/install/prereq.md
+                - Install by Helm Chart: storage/hwameistor/install/deploy.md
+                - Post-check: storage/hwameistor/install/post-check.md
+                - Upgrade: storage/hwameistor/install/upgrade.md
+                - Uninstall: storage/hwameistor/install/uninstall.md
+            - O&M:
+                - Storage pools: storage/hwameistor/resources/storagepool.md
+                - Node expansion: storage/hwameistor/resources/node-expansion.md
+                - Volume migration: storage/hwameistor/resources/migrate.md
+                - Volume expansion: storage/hwameistor/resources/expand.md
+                - Disk expansion: storage/hwameistor/resources/disk-expansion.md
+            - Scenarios:
+                - Overview: storage/hwameistor/application/overview.md
+                - Deploy StatefulSets:
+                    - Deploy via local volume: storage/hwameistor/application/local.md
+                    - Deploy via ha volume: storage/hwameistor/application/ha.md
+                - TiDB: storage/hwameistor/application/tidb.md
+                - MinIO: storage/hwameistor/application/minio/minio.md
+            - FAQs: storage/hwameistor/faqs.md
+          - Solutions to integrate:
+            - Rook-Ceph intro: storage/solutions/rook-ceph.md
+            - Deploy Rook-Ceph via app store: storage/solutions/dce-rook-ceph.md
+            - Deploy Rook-Ceph via Helm: storage/solutions/helm-rook-ceph.md
+            - Longhorn intro: storage/solutions/longhorn.md
+            - Deploy Longhorn via app store: storage/solutions/dce-longhorn.md
           - Concepts:
-              - K8s Storage: hwameistor/terms/k8s_storage.md
-              - CAS: hwameistor/terms/cas.md
-              - CSI: hwameistor/terms/csi.md
-              - CRD and CR: hwameistor/terms/crd_and_cr.md
-              - Volume: hwameistor/terms/volume.md
-              - LVM: hwameistor/terms/lvm.md
-              - PV and PVC: hwameistor/terms/pv_pvc.md
-          - FAQs: hwameistor/faqs.md
+              - Kubernetes storage: storage/terms/k8s_storage.md
+              - CAS: storage/terms/cas.md
+              - CSI: storage/terms/csi.md
+              - CRD and CR: storage/terms/crd_and_cr.md
+              - Volume: storage/terms/volume.md
+              - LVM: storage/terms/lvm.md
+              - PV and PVC: storage/terms/pv_pvc.md
       - Container Registry:
           - What is Container Registry: kangaroo/intro.md
           - Image List: kangaroo/imagelist.md
