@@ -3,9 +3,31 @@
 本页按月份列出云原生社区比较热门的新闻、事件、活动等，供大家一站式查阅和检索。
 
 > 我们会定期维护，保证所有链接的有效性、新闻的时效性。
+
+### 2023-05
+
+- [5.8-5.9 cdCon + GitOpsCon 2023 议题征集中（2.10 截止）](https://events.linuxfoundation.org/cdcon-gitopscon/program/cfp/)
+  
+    cdCon + GitOpsCon 2023 由 CD 基金会和 CNCF 基金会主办，将于 5.8-5.9 在温哥华举行。
+    议题内容可包括：GitOps 入门、扩展和管理 GitOps、从生产部署中吸取的教训、先进的交付技术、云原生环境中的开源 GitOps 和 CD 技术实践、供应链安全等。
+
+### 2023-04
+
 - [4.15-16 全球开源技术峰会 GOTC 2023 将于 4 月 在上海举行，目前演讲议题投递通道已开放](https://gotc2023.oschina.net/)
   
     全球开源技术峰会由上海浦东软件园、 Linux 基金会亚太区、开源中国联合发起，会议聚焦云原生、元宇宙、eBPF、Web3.0、开源治理、开源教育培训、前端、基础软件、AI、IoT 等热门话题。
+
+- [4 月 15 日 2023 年云原生社区可观测性峰会将召开，讲师及赞助商招募进行中（3.10 截止）](https://mp.weixin.qq.com/s/erf33B2--kUgLg1D730tOg)
+  
+    云原生社区将于 2023 年 4 月 15 号（星期六）在北京举办可观性峰会。议题围绕可观测性相关领域的开源项目及应用，包括但不限于：指标监控、分布式追踪、日志收集、技术创新、应用实践等。
+
+### 2023-02
+
+- [2.8 KubeCon + CloudNativeCon 欧洲 2023 会议议程发布](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/program/schedule/)
+  
+    KubeCon + CloudNativeCon 欧洲 2023 将于 4.18-21 线下线上同步举行。
+    本次峰会共计 303 场活动、主题演讲、闪电演讲和分组会议，其中的 91 场由 CNCF 项目的维护者主持。
+    会议主题囊括合规性、Pod 安全、环境可持续、混合云/多云、CNCF 项目等。
 
 - [2.6 IDC 正式启动《中国政务云解决方案厂商评估，2023》](https://mp.weixin.qq.com/s/N2DbhxL81M2AUYcPiSy0GQ)
   
@@ -17,26 +39,6 @@
     可信云容器类·云原生安全类评估体系由 6 个方面组成：
     云原生安全成熟度评估、云原生应用保护平台（CNAPP）能力评估、容器平台安全能力评估、容器安全解决方案评估、云原生 API 安全治理能力评估、Web 应用和 API 保护（WAAP）能力评估。
     评估结果将于 6 月在 ICT 中国·高端论坛发布。
-
-- [2.8 KubeCon + CloudNativeCon 欧洲 2023 会议议程发布](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/program/schedule/)
-  
-    KubeCon + CloudNativeCon 欧洲 2023 将于 4.18-21 线下线上同步举行。
-    本次峰会共计 303 场活动、主题演讲、闪电演讲和分组会议，其中的 91 场由 CNCF 项目的维护者主持。
-    会议主题囊括合规性、Pod 安全、环境可持续、混合云/多云、CNCF 项目等。
-### 2023-05
-
-- [5.8-5.9 cdCon + GitOpsCon 2023 议题征集中（2.10 截止）](https://events.linuxfoundation.org/cdcon-gitopscon/program/cfp/)
-  
-    cdCon + GitOpsCon 2023 由 CD 基金会和 CNCF 基金会主办，将于 5.8-5.9 在温哥华举行。
-    议题内容可包括：GitOps 入门、扩展和管理 GitOps、从生产部署中吸取的教训、先进的交付技术、云原生环境中的开源 GitOps 和 CD 技术实践、供应链安全等。
-
-### 2023-04
-
-- [4 月 15 日 2023 年云原生社区可观测性峰会将召开，讲师及赞助商招募进行中（3.10 截止）](https://mp.weixin.qq.com/s/erf33B2--kUgLg1D730tOg)
-  
-    云原生社区将于 2023 年 4 月 15 号（星期六）在北京举办可观性峰会。议题围绕可观测性相关领域的开源项目及应用，包括但不限于：指标监控、分布式追踪、日志收集、技术创新、应用实践等。
-
-### 2023-02
 
 - [2.2 中国信通院 2023 年上半年可信云·容器类评估正式启动（3.10 评估报名截止）](https://mp.weixin.qq.com/s/V2-v9rPWnXQ5WlN4kEnVVw)
   
