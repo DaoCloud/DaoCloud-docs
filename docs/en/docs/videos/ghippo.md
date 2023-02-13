@@ -54,6 +54,14 @@ See [how to enable audit log](../ghippo/04UserGuide/open-audit.md) documentation
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-on.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
+## Disable audit log
+
+See [how to disable audit log](../ghippo/04UserGuide/open-audit.md#_4) documentation page.
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-off.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }
