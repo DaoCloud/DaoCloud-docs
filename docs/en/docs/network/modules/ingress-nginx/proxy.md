@@ -1,13 +1,30 @@
 ---
 MTPE: Jeanine-tw
 Revised: Jeanine-tw
-Pics: NA
-Date: 2023-02-08
+Pics: Jeanine-tw
+Date: 2023-02-14
 ---
 
-# Configure traffic proxy
+# Configure load balancing and traffic proxy
 
-This page describes how to configure traffic proxy based on domain names, request paths, request headers, and cookies in Ingress Nginx.
+This page introduces how to configure load balancing and traffic proxy, including global load balancing as well as other different load balancing policies based on domain name, request paths, request headers, cookie, and consistent hashing.
+
+## Load Balancing Global Configuration
+
+The Ingress Nginx global configuration allows to specify the default load balancing algorithm, which supports both `round_robin` and `ewma`, with the default being `round_robin`.
+Their main difference is how the back-end workloads are selected: the `round_robin` algorithm selects back-end workloads in a predefined order, distributing requests evenly to each workload.
+If the performance of the back-end workloads varies widely, this may lead to load imbalance. This is where the `ewma` algorithm comes in to achieve load balancing. The `ewma` sends requests to the workload with the lowest weighted average load, and the weighted load index changes gradually as the requests come in.
+
+You can refer to the [installation](install.md) section and specify the following in the Helm installation configuration `.values.yaml`:
+
+```yaml
+ingress-nginx:
+  controller:
+    config:
+      load-balance: ewma
+```
+
+![set-load-balancer](../../images/ingress-nginx-helm-set-load-balancer.png)
 
 ## Domain-based traffic load
 
@@ -151,4 +168,91 @@ spec:
                 name: example-service
                 port:
                   name: http
+```
+
+## Consistent hashing based load balancing
+
+Using the `nginx.ingress.kubernetes.io/upstream-hash-by` annotation, you can specify the hash value for client-server mapping.
+For example, client IP-based mapping can be done using `$binary_remote_addr` or `$http_x_forwarded_for`.
+
+Sometimes Ingress Nginx in a cluster proxies traffic behind multiple load balancers, and instead of getting the real client address, it gets the IP address of its front load balancer based on `$binary_remote_addr`. In this case you can use `$http_x_forwarded_for` to get the real IP.
+
+You can also enable load balancing based on the request URI via `$request_uri`.
+
+The above ways are mapped to a single upstream server, you can add the annotation `nginx.ingress.kubernetes.io/upstream-hash-by-subset: "true"` to enable subsets which will group the upstream workloads, and traffic will be randomly assigned to the workloads in the subset when it arrives. You can determine the number of workloads in each subset via `nginx.ingress.kubernetes.io/upstream-hash-by-subset-size`
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginxhello
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: nginxhello
+  template:
+    metadata:
+      labels:
+        app: nginxhello
+    spec:
+      containers:
+        - name: nginxhello
+          image: registry.k8s.io/e2e-test-images/echoserver:2.3
+          ports:
+            - containerPort: 8080
+          env:
+            - name: NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginxhello
+  labels:
+    app: nginxhello
+spec:
+  selector:
+    app: nginxhello
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/upstream-hash-by: "$binary_remote_addr"
+  name: nginxhello-ingress
+  namespace: default
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: foo.bar.com
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: nginxhello
+              port:
+                number: 80
 ```

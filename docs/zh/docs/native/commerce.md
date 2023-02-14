@@ -4,13 +4,6 @@
 
 ### A
 
-
-
-
-- [CAST AI Kubernetes 成本优化&自动化平台 1 月更新](https://cast.ai/release-notes/#january-2023)
-
-    更新内容：新增 CAST AI kVisor 安全代理，用于评估安全漏洞和和分析集群配置的安全性；改进创建新节点时使用 AKS 镜像的方式；提供每天的 CPU 使用数据以及计费 CPU 数量；改进自动缩放功能。
-
 - [Aqua 云原生安全平台引入基于 eBPF 技术的零日漏洞检测工具 Lightning Enforcer](https://blog.aquasec.com/combat-zero-day-threats-with-aquas-ebpf-lightning-enforcer)
 
     Aqua Lightning Enforcer 利用漂移和基于行为的自动化检测方法，检测零日漏洞等未知威胁，并提供事件管理、可疑行为告警以及开箱即用的 CNDR（云本地检测和响应）。
@@ -101,6 +94,10 @@
 - [Canonical K8s 发行版 Charmed Kubernetes 1.26 发布](https://canonical.com/blog/canonical-kubernetes-1-26-is-now-generally-available)
 
     版本特性：增加 Kube-OVN BGP 支持，实现从外部网络访问 pod IP；支持为 Kube-OVN 配置流量镜像；metallb-controller 和 metallb-speaker 可以部署到更多的架构上（AMD64、ARM、ARM64 等）；集成策略引擎 OPA gatekeeper。
+
+- [CAST AI Kubernetes 成本优化&自动化平台 1 月更新](https://cast.ai/release-notes/#january-2023)
+
+    更新内容：新增 CAST AI kVisor 安全代理，用于评估安全漏洞和和分析集群配置的安全性；改进创建新节点时使用 AKS 镜像的方式；提供每天的 CPU 使用数据以及计费 CPU 数量；改进自动缩放功能。
 
 - [CAST AI Kubernetes 成本优化&自动化平台十一月更新](https://cast.ai/release-notes/#november-2022)
 

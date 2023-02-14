@@ -1,6 +1,6 @@
 # 负载均衡与流量代理配置指南
 
-本文介绍负载均衡和流量代理的配置方法，包括全局配置、基于域名、路径、Header、Cookie、请求哈希等不同负载均衡策略。
+本页介绍负载均衡和流量代理的配置方法，包括全局配置、基于域名、路径、Header、Cookie、请求哈希等不同负载均衡策略。
 
 ## 负载均衡全局配置
 
@@ -22,14 +22,11 @@ ingress-nginx:
 ## 基于域名的流量负载
 
 域名是一个字符串，用于标识互联网上的网站或资源，如 `www.example.com`。它是人类可读的，
-而 IP 地址（如 10.6.0.1）是机器可读的。域名通过 DNS 服务器映射到对应的 IP 地址，使人
-们可以通过浏览器访问特定网站。
+而 IP 地址（如 10.6.0.1）是机器可读的。域名通过 DNS 服务器映射到对应的 IP 地址，使人们可以通过浏览器访问特定网站。
 
-Ingress Nginx 支持转发不同域名的流量。通过将域名系统映射到 Ingress Nginx 的 VIP，
-实现域名到 IP 的映射。
+Ingress Nginx 支持转发不同域名的流量。通过将域名系统映射到 Ingress Nginx 的 VIP，实现域名到 IP 的映射。
 
-通过使用以下配置定义，可以将不同域名的流量转发到相应的后端 Service。例如，将域名 A 的
-流量转发到 Service A，域名 B 的流量转发到 Service B。
+通过使用以下配置定义，可以将不同域名的流量转发到相应的后端 Service。例如，将域名 A 的流量转发到 Service A，域名 B 的流量转发到 Service B。
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -169,8 +166,7 @@ spec:
 使用 `nginx.ingress.kubernetes.io/upstream-hash-by` 注解，可以指定客户端于服务器映射的哈希值。
 例如可以使用 `$binary_remote_addr` 或 `$http_x_forwarded_for` 完成基于客户端 IP 的映射。
 
-有时候集群中 Ingress Nginx 在多个负载均衡后面代理流量，这时候根据 `$binary_remote_addr` 获取的不是真实
-的客户端地址，而是其前置负载均衡器的 IP 地址。这时候可以是使用 `$http_x_forwarded_for` 获取真实 IP。
+有时候集群中 Ingress Nginx 在多个负载均衡后面代理流量，这时候根据 `$binary_remote_addr` 获取的不是真实的客户端地址，而是其前置负载均衡器的 IP 地址。这时候可以使用 `$http_x_forwarded_for` 获取真实 IP。
 
 当然你也可以设置为 `$request_uri`，让其基于请求路径负载均衡。
 
