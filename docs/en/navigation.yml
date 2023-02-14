@@ -611,6 +611,7 @@ nav:
       - Container Registry: videos/kangaroo.md
   - Blogs:
       - Index: blogs/index.md
+      - 202302 | DaoCloud and K8s: blogs/daocloud_k8s.md
       - 202302 | Development Quotations for DCE 5.0: blogs/peter.md
       - 202212 | Step-by-step Install DCE 5.0: blogs/dce5-install1209.md
       - 202211 | K8s-Certified Service Provider: blogs/kcsp.md
@@ -620,7 +621,6 @@ nav:
       - 202208 | Multicloud Orchestration Capabilities: blogs/kairship.md
       - 202207 | Service Mesh Capabilities: blogs/mspider.md
       - 202206 | DCE Dev Background: blogs/blog00.md
-      - 202302 | DaoCloud and Kubernetes: blogs/daocloud_k8s.md
   - DaoCloud Ecosystem:
       - Index: community/index.md
       - CloudTTY: community/cloudtty.md

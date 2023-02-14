@@ -15,17 +15,16 @@ Kubernetes 作为容器编排的事实标准，无疑是首选的容器解决方
 面对层出不穷的技术方案，「DaoCloud 道客」研发副总裁潘远航（Peter）认为，“在众多技术面前，坚持以 Kubernetes 为核心，整合周边最佳实践和先进技术，打造一个适合的平台和方案，才是寻找全局最优解的正确路径。”
 
 ## 影响
-在拥抱云原生的过程中，「DaoCloud 道客」不断向 Kubernetes 等优秀的 CNCF 开源项目学习，逐渐形成了以「[DaoCloud Enterprise](https://docs.daocloud.io/) 云原生应用云平台为核心的产品架构。「DaoCloud 道客」坚持以 Kubernetes 等世界领先的云原生技术为支点，为军工、金融、制造、能源、政务、零售等垂直行业提供了前沿的云原生解决方案，为浦发银行、华泰证券、富国基金、上汽集团、海尔、复旦大学、屈臣氏、吉致汽车金融、国家电网等各行各业的优秀企业都量身定制了满意的数字化转型方案。
 
-<table><tr><td bgcolor=green>
+在拥抱云原生的过程中，「DaoCloud 道客」不断向 Kubernetes 等优秀的 CNCF 开源项目学习，逐渐形成了以 [DaoCloud Enterprise](https://docs.daocloud.io/) 云原生应用云平台为核心的产品架构。「DaoCloud 道客」坚持以 Kubernetes 等世界领先的云原生技术为支点，为军工、金融、制造、能源、政务、零售等垂直行业提供了前沿的云原生解决方案，为浦发银行、华泰证券、富国基金、上汽集团、海尔、复旦大学、屈臣氏、吉致汽车金融、国家电网等各行各业的优秀企业都量身定制了满意的数字化转型方案。
 
-“随着DaoCloud Enterprise 越来越强大，客户覆盖面越来越广，有些客户需要使用 Kubernetes 而不是 Swarm 进行应用编排。Kubernetes作为一套功能强大的应用编排系统，有着强大的社区支持，也受到很多大公司的青睐。我们作为提供商需要满足用户的需求。”
+!!! note ""
 
-刘齐均（Kebe）,
+    “随着DaoCloud Enterprise 越来越强大，客户覆盖面越来越广，有些客户需要使用 Kubernetes 而不是 Swarm 进行应用编排。Kubernetes作为一套功能强大的应用编排系统，有着强大的社区支持，也受到很多大公司的青睐。我们作为提供商需要满足用户的需求。”
 
-「DaoCloud 道客」服务网格专家
+    [刘齐均（Kebe）](https://github.com/kebe7jun),
 
-</td></tr></table>
+    「DaoCloud 道客」服务网格专家
 
 「DaoCloud 道客」成立的初衷就是帮助传统企业进行数字化转型，实现应用上云。公司成立之后发布的首秀产品「DaoCloud 道客」Enterprise 1.0 便是一款基于 Docker 的容器引擎平台，可以轻松打包构建镜像并运行容器。
 
@@ -37,15 +36,13 @@ Kubernetes 作为容器编排的事实标准，无疑是首选的容器解决方
 
 六年时间里发布的四个主要版本一直都在坚定不移地使用 Kubernetes，这足以说明当时的选择是正确的。「DaoCloud 道客」用实际经验证明了 Kubernetes 是容器编排的最佳选择，也用自身行动证明了自己一直都是 Kubernetes 的忠实拥趸。
 
-<table><tr><td bgcolor=green>
+!!! note ""
 
-“借力 K8S 的价值体系『自动化大于人工』，产研团队从0到1完成了从研发构建自动化，测试自动化，安全自动化，发布自动化保证了软件交付质量，其次实现了智能化协作沟通，包括产品需求及定义体系、产品多语言协作体系、产品缺陷修复协作体系、疑难杂症攻坚体系，极大的提升了产研同部门、跨部门的协作效率，这是我们走向世界一流基础设施软件产品的基石。”
+    “借力 K8S 的价值体系『自动化大于人工』，产研团队从0到1完成了从研发构建自动化，测试自动化，安全自动化，发布自动化保证了软件交付质量，其次实现了智能化协作沟通，包括产品需求及定义体系、产品多语言协作体系、产品缺陷修复协作体系、疑难杂症攻坚体系，极大的提升了产研同部门、跨部门的协作效率，这是我们走向世界一流基础设施软件产品的基石。”
 
-叶挺,
+    叶挺,
 
-「DaoCloud 道客」产品创新副总裁
-
-</td></tr></table>
+    「DaoCloud 道客」产品创新副总裁
 
 在 Kubernetes 的助力下，「DaoCloud 道客」 的产品性能更优，更具竞争力。「DaoCloud 道客」坚持以 Kubernetes 为核心，整合周边最佳实践和先进技术，打造出DaoCloud Enterprise 云原生应用云平台，提供应用商店、应用交付、微服务治理、可观测性、数据服务、多云编排、信创异构、云边协同等能力。DaoCloud Enterprise 5.0 是集云原生技术大成的完全形态。
 
@@ -57,19 +54,17 @@ Kubernetes 作为容器编排的事实标准，无疑是首选的容器解决方
 
 另一方面，「DaoCloud 道客」自身的产品研发工作也是基于 Kubernetes 进行的。公司基于 Kubernetes 部署了 Gitlab，形成了 “Gitlab—>PR—>自动化测试—>构建发布“的产品开发流程，显著提升了开发效率，减少了重复测试的工作量，实现了应用的自动发布。这样一来，大大节省了运维成本，技术人员可以为开发产品投入更多的时间与精力，打磨出更优秀的云原生产品。
 
-<table><tr><td bgcolor=green>
+!!! note ""
 
-“我们的开发者很踊跃地贡献开源，沉淀技术实力，在 Kubernetes 和 Istio 社区都有越来越多的贡献。公司第五代产品走的也是开源路线，为云原生技术添砖加瓦，完善技术生态。”
+    “我们的开发者很踊跃地贡献开源，沉淀技术实力，在 Kubernetes 和 Istio 社区都有越来越多的贡献。公司第五代产品走的也是开源路线，为云原生技术添砖加瓦，完善技术生态。”
 
-徐俊杰 Paco,
+    徐俊杰 Paco,
 
-「DaoCloud 道客」架构师/ 开源 & AD 团队负责人
-
-</td></tr></table>
+    「DaoCloud 道客」架构师/ 开源 & AD 团队负责人
 
 「DaoCloud 道客」深度参与贡献 Kubernetes 等多项云原生开源项目，在云原生开源社区中的参与度、贡献度持续增长。在过去一年里，「DaoCloud 道客」在 Kubernetes 的开源榜单累计贡献度位居全球第三（基于 stsckalytics 网站 2023/01/05 的数据）。
 
-在 2022 年 8 月由 Kubernetes 官方组织的社区贡献者访谈活动中，接见了来自亚太地区的 4 位优秀贡献者，其中 Shiming Zhang（张世明） 和 Paco Xu（徐俊杰）都来自「DaoCloud 道客」，二人均是  SIG Node 的 Reviewer。此外在 2022 Kubecon 北美站上，「DaoCloud 道客」的 Kante Yin（殷纳）荣获 Kubernetes 2022 年度贡献者奖。
+在 2022 年 8 月由 Kubernetes 官方组织的社区贡献者访谈活动中，接见了来自亚太地区的 4 位优秀贡献者，其中 [Shiming Zhang](https://github.com/wzshiming) 和 [Paco Xu](https://github.com/pacoxu)都来自「DaoCloud 道客」，二人均是  SIG Node 的 Reviewer。此外在 2022 Kubecon 北美站上，「DaoCloud 道客」的 [Kante Yin](https://github.com/kerthcet) 荣获 Kubernetes 2022 年度贡献者奖。
 
 此外，「DaoCloud 道客」也在坚持践行云原生信仰，持续回馈云原生社区，开源了 Clusterpedia、Kubean、CloudTTY、KLTS.io、Merbridge、HwameiStor、Spiderpool、Piraeus 等优秀项目，不断完善 Kubernetes 生态体系。其中：
 
@@ -81,15 +76,13 @@ Kubernetes 作为容器编排的事实标准，无疑是首选的容器解决方
 
 「DaoCloud 道客」融合自身在各行各业的实战经验，持续贡献 Kubernetes 开源项目，致力于让以 Kubernetes 为代表的云原生技术更平稳、高效地落地到产品和生产实践中。
 
-<table><tr><td bgcolor=green>
+!!! note ""
 
-“「DaoCloud 道客」作为首批 CNCF 官方认证的云原生技术培训伙伴，将持续开展赋能培训、项目指导等活动，携手伙伴，为客户导入云原生，共同打造云原生能力的最佳实践路径。”
+    “「DaoCloud 道客」作为首批 CNCF 官方认证的云原生技术培训伙伴，将持续开展赋能培训、项目指导等活动，携手伙伴，为客户导入云原生，共同打造云原生能力的最佳实践路径。”
 
-郑松,
+    郑松,
 
-「DaoCloud 道客」中国区技术总经理
-
-</td></tr></table>
+    「DaoCloud 道客」中国区技术总经理
 
 「DaoCloud 道客」研发副总裁潘远航（Peter）认为“企业用户需要的是一个全局最优解，这个最优解可以理解为是涵盖多云编排、信创异构、应用交付、可观测性、云边协同、微服务治理、应用商店、数据服务等能力的最大公约数。”在如今的云原生生态体系里，这些功能都离不开 Kubernetes 作为底层的容器编排技术。这就意味着「DaoCloud 道客」在寻找数字世界最优解的过程中也离不开 Kubernetes，未来的产品研发也将继续以 Kubernetes 为基础。
 
