@@ -633,6 +633,7 @@ nav:
       - 云原生网络: videos/network.md  
   - 博客:
       - 博文索引: blogs/index.md
+      - 202302 | DaoCloud 与 Kubernetes: blogs/daocloud_k8s.md 
       - 202302 | DCE 5.0 攻坚语录集: blogs/peter.md
       - 202212 | 保姆式安装DCE社区版: blogs/dce5-install1209.md
       - 202211 | K8s 资深认证服务商: blogs/kcsp.md
@@ -642,7 +643,6 @@ nav:
       - 202208 | 多云编排能力介绍: blogs/kairship.md
       - 202207 | 服务网格能力介绍: blogs/mspider.md
       - 202206 | DCE 开发背景: blogs/blog00.md
-      - 202302 | DaoCloud 与 Kubernetes: blogs/daocloud_k8s.md    
   - 下载中心:
       - DaoCloud Enterprise 5.0: 
           - 索引列表: download/dce5.md

@@ -20,15 +20,13 @@ Regarding finding the global optimal solutions for cloud native, Peter Pan, R&D 
 
 In the process of embracing cloud native, DaoCloud continues to learn from Kubernetes and other excellent CNCF open source projects. It has formed a product architecture centered on [DaoCloud Enterprise](https://docs.daocloud.io/), a platform for cloud-native applications. Using Kubernetes and other cutting-edge cloud native technologies as a foundation, DaoCloud provides satisfying cloud native solutions for military, finance, manufacturing, energy, government, and retail clients,It helps companies with their digital transformation, such as SPD Bank, Huatai Securities, Fullgoal Fund, SAIC Motor, Haier, Fudan University, Watsons, Genius Auto Finance, State Grid Corporation of China, etc.
 
-<table><tr><td bgcolor=green>
+!!! note ""
 
-"As DaoCloud Enterprise becomes more powerful and attracts more users, some customers need to use Kubernetes instead of Swarm for application orchestration. As a robust application orchestration system, Kubernetes has solid community support and recommendations from tech giants in the field. We, as providers, need to meet the needs of our users."
+    "As DaoCloud Enterprise becomes more powerful and attracts more users, some customers need to use Kubernetes instead of Swarm for application orchestration. As a robust application orchestration system, Kubernetes has solid community support and recommendations from tech giants in the field. We, as providers, need to meet the needs of our users."
 
-[Kebe](https://github.com/kebe7jun),
+    [Kebe Liu](https://github.com/kebe7jun),
 
-Service Mesh Expert of DaoCloud
-
-</td></tr></table>
+    Service Mesh Expert of DaoCloud
 
 DaoCloud was founded to help traditional enterprises to move their applications to the cloud and realize digital transformation. The first product released after the company's establishment, DaoCloud Enterprise 1.0, is a Docker-based container engine platform that can easily build images and run them in containers.
 
@@ -40,15 +38,13 @@ After thorough comparisons and evaluations, DaoCloud Enterprise 2.8, debuted in 
 
 Kubernetes served as an inseparable part of these four releases over six years, which speaks volumes about the fact that using Kubernetes in DaoCloud Enterprise was the right choice. DaoCloud has proven, through its own experience and actions, that Kubernetes is the best choice for container orchestration and that it has always been a loyal fan of Kubernetes.
 
-<table><tr><td bgcolor=green>
+!!! note ""
 
-"Kubernetes helped our product and research teams realized automation of test, build, check, and release process, ensuring the quality of deliverables. It also helped build our smart systems of collaboration about product requirements & definition, multilingual product materials, debugging, and miscellaneous challenges, improving the efficiency of intra- and inter-department collaboration. Kubernetes is the cornerstone for refining our products towards world-class software."
+    "Kubernetes helped our product and research teams realized automation of test, build, check, and release process, ensuring the quality of deliverables. It also helped build our smart systems of collaboration about product requirements & definition, multilingual product materials, debugging, and miscellaneous challenges, improving the efficiency of intra- and inter-department collaboration. Kubernetes is the cornerstone for refining our products towards world-class software."
 
-Ting Ye,
+    Ting Ye,
 
-Vice President of Product Innovation of DaoCloud
-
-</td></tr></table>
+    Vice President of Product Innovation of DaoCloud
 
 On the one hand, Kubernetes makes our products more performant and competitive. DaoCloud integrates relevant practices and technologies around Kubernetes to polish its flagship offering – DaoCloud Enterprise. The latest 5th version, released in 2022, covers application stores, application delivery, microservice governance, observability, data services, multi-cloud management, cloud-edge collaboration, and other functions. DaoCloud Enterprise 5.0 is an inclusive integration of cloud-native technologies.
 
@@ -64,15 +60,13 @@ With this product, Fullgoal Fund shortened its middleware deployment time from h
 
 On the other hand, our product development is also based on Kubernetes. DaoCloud deployed Gitlab based on Kubernetes and established a product development process of "Gitlab -> PR -> Auto Tests -> Builds & Releases", which significantly improved our development efficiency, reduced repetitive tests, and realized automatic release of applications. This approach greatly saves operation and maintenance costs, enabling technicians to invest more time and energy in product development to offer better cloud-native products.
 
-<table><tr><td bgcolor=green>
+!!! note ""
 
-"Our developers actively contribute to open source projects and build technical expertise. DaoCloud has established a remarkable presence in the Kubernetes and Istio communities."
+    "Our developers actively contribute to open source projects and build technical expertise. DaoCloud has established a remarkable presence in the Kubernetes and Istio communities."
 
-Paco Xu,
+    Paco Xu,
 
-Header of Open Source & Advanced Development Team of DaoCloud
-
-</td></tr></table>
+    Header of Open Source & Advanced Development Team of DaoCloud
 
 DaoCloud is deeply involved in contributing to Kubernetes and other cloud-native open source projects. Our participation and contributions in these communities continue to grow. In the year of 2022, DaoCloud was ranked third globally in terms of cumulative contribution to Kubernetes (data from Stackalytics as of January 5, 2023).
 
@@ -90,15 +84,13 @@ In particular:
 
 DaoCloud utilizes its practical experience across industries to contribute to Kubernetes-related open source projects, with an aim of making cloud native technologies, represented by Kubernetes, better function in production environment.
 
-<table><tr><td bgcolor=green>
+!!! note ""
 
-"DaoCloud, as one of the first cloud-native technology training partners certified by CNCF, will continue to carry out trainings to help more companies find their best ways for going to the cloud."
+    "DaoCloud, as one of the first cloud-native technology training partners certified by CNCF, will continue to carry out trainings to help more companies find their best ways for going to the cloud."
 
-Song Zheng,
+    Song Zheng,
 
-Technology GM of DaoCloud
-
-</td></tr></table>
+    Technology GM of DaoCloud
 
 Enterprise users need a global optimal solution, which can be understood as an inclusive platform that can maximize the advantages of multi-cloud management, application delivery, observability, cloud-edge collaboration, microservice governance, application store, and data services. In today's cloud native ecosystem, these functions cannot be achieved without Kubernetes as the underlying container orchestration tool. Therefore, Kubernetes is crucial to DaoCloud's mission of finding the optimal solution in the digital world, and all future product development will continue to be based on Kubernetes.
 

@@ -7,6 +7,10 @@ hide:
 
 This page is a collection of blog posts and public articles related to DCE 5.0, sorted by alphabet and Pinyin.
 
+- [20230214 | DaoCloud and Kubernetes](./daocloud_k8s.md)
+
+    This blog shares the story of how DaoCloud Enterprise was continually refined with Kubernetes and how does DaoCloud contribute to the cloud native undertakings.
+
 - [20230201 | DCE 5.0 Quotations Collection](./peter.md)
 
     In 2022, in Shanghai, the epidemic is raging, the city is locked and under control. Everyone were working at home, and programmers were running around in the cracks of the virus 🦠. That year is when DCE 5.0 is developing in tough, and it is also a difficult year for every Chinese.
