@@ -620,6 +620,7 @@ nav:
       - 202208 | Multicloud Orchestration Capabilities: blogs/kairship.md
       - 202207 | Service Mesh Capabilities: blogs/mspider.md
       - 202206 | DCE Dev Background: blogs/blog00.md
+      - 202302 | DaoCloud and Kubernetes: blogs/daocloud_k8s.md
   - DaoCloud Ecosystem:
       - Index: community/index.md
       - CloudTTY: community/cloudtty.md
