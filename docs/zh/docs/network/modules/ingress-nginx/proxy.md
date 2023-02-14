@@ -1,15 +1,14 @@
 # 流量代理配置指南
 
-本文介绍 Ingress Nginx 如何配置基于域名、请求路径、请求头和 Cookie 的流量代理。
+本文介绍 Ingress Nginx 如何配置基于域名、请求路径、请求头、Cookie 的流量代理。
 
 ## 负载均衡全局配置
 
 Ingress Nginx 全局配置可以指定默认负载均衡算法，支持 `round_robin` 和 `ewma` 两种，默认为 `round_robin`。
 主要区别在于如何选择后端工作负载：`round_robin` 算法会按照事先定义的顺序循环选择，将请求平均地分配到每个后端工作负载。
-如果后端工作负载的性能差异较大，可能会导致负载不均衡。`ewma` 算法可以将请求发送到加权平均负载最低的工作负载上，
-加权负载指数会随着请求的到来而逐渐变化，使得负载均衡更加均衡。
+如果后端工作负载的性能差异较大，可能会导致负载不均衡。`ewma` 算法可以将请求发送到加权平均负载最低的工作负载上，加权负载指数会随着请求的到来而逐渐变化，使得负载均衡更加均衡。
 
-可以参考安装章节，在 Helm 安装配置 `.Values.yaml` 指定如下内容：
+可以参考[安装](install.md)章节，在 Helm 安装配置 `.Values.yaml` 指定如下内容：
 
 ```yaml
 ingress-nginx:
@@ -175,9 +174,7 @@ spec:
 
 当然你也可以设置为 `$request_uri`，让其基于请求路径负载均衡。
 
-上面的几种方式是映射到单个上游服务器，你可以添加注解 `nginx.ingress.kubernetes.io/upstream-hash-by-subset: "true"`
-开启分组功能，这时候会对上游工作负载进行分组，流量到达分组后再随机分配给组中的工作负载，你可以使用 
-`nginx.ingress.kubernetes.io/upstream-hash-by-subset-size` 指定每个分组工作负载的数量。
+上面的几种方式是映射到单个上游服务器，你可以添加注解 `nginx.ingress.kubernetes.io/upstream-hash-by-subset: "true"` 开启分组功能，这时候会对上游工作负载进行分组，流量到达分组后再随机分配给组中的工作负载，你可以使用 `nginx.ingress.kubernetes.io/upstream-hash-by-subset-size` 指定每个分组工作负载的数量。
 
 ```yaml
 apiVersion: apps/v1
