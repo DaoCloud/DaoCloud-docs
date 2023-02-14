@@ -13,6 +13,8 @@ Author: [SAMZONG](https://github.com/SAMZONG)
 
 This article completes the installation of DCE 5.0 Community Edition from 0 to 1, including K8s cluster, dependencies, network, storage and other details and more considerations.
 
+> At this stage, the version iteration is relatively fast. The installation procedure mentioned in this blog may be different from the latest version. Refer to [Installation Instructions](../install/intro.md) in the product documentation.
+
 ## Cluster planning
 
 It is planned to use 3 UCloud VMs, all configured with 8-core 16G.
