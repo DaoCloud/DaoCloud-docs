@@ -4,6 +4,20 @@
 
 ### 排障方案
 
+- [如何解决 Prometheus 的存储容量问题？](https://mp.weixin.qq.com/s/TMApz8FxT91qBvS1fzuTVw)
+
+    单机存储不好扩展是 Prometheus 一个广受诟病的问题。对此问题，文章给出了 3 种集群解决方案：Prometheus 联邦集群、远程存储方案、Prometheus 自身搭建集群，这这三种方案能够很好地解决 Prometheus 的存储问题。
+
+- [云原生场景下，nettrace 怎么快速进行网络故障诊断？](https://mp.weixin.qq.com/s/0n7kbOhHr6m5JClTrSIysA)
+
+    [nettrace](https://github.com/OpenCloudOS/nettrace) 是一款基于 eBPF 的集网络报文跟踪（故障定位）、网络故障诊断、网络异常监控于一体的网络工具集，
+    提供一种更加高效、易用的方法来解决复杂场景下的网络问题。
+
+- [Istio 运维实战：如何规避 503 UC 错误](https://mp.weixin.qq.com/s/4YIYPIszyKyWVMKXnXtHbg)
+
+    503 UC 是在 Istio/Envoy 使用过程中经常遇到的一个问题。
+    文章分析了由于 TCP 服务器 keepalive Timeout 导致的 503 UC 的原理及规避方法。
+
 - [K8s CNI Cilium 网络故障排查指南](https://mp.weixin.qq.com/s/jBuNPOKbL-keXmzq1gq-mQ)
 
     文章介绍了作者从 kubenet 升级到  cilium 时遇到的一个问题及排障过程。
@@ -68,6 +82,41 @@
     这篇文章的创作灵感因 Grafana 不展示使用存储驱动创建的存储卷的容量指标而起，展示了该问题的排查思路及手段，进而勾勒出 Kubelet 对于存储卷指标收集的实现流程。
 
 ### 最佳实践
+
+- [vivo 自研 Jenkins 资源调度系统设计与实践](https://mp.weixin.qq.com/s/wEmheHwTA8m8LHr_5LVSyg)
+
+    文章从目前业界实现 Jenkins 的高可用的实现方案入手，分析各方案的优缺点，引入 vivo 目前使用的 Jenkins 高可用方案——jenkins scheduler 系统。
+    该系统不采用原生的 Jenkins 部署方案，而是采用全 master 的方式，master 之间的关系、任务分配、离线、插件安装等由调度系统进行管理。
+    目前该系统已经投入生产环境运行。
+
+- [K8s 迁移 cgroup v2 之前要做的三件事](https://mp.weixin.qq.com/s/BV-y82MalhG-A--hvUFMcg)
+
+    随着 Kubernetes 1.25 关于cgroup v2 特性的正式发布（GA），kubelet 容器资源管理能力得到加强。
+    文章在 cgroup v2 概念的基础上，介绍了采用 cgroup v2 之前在 Linux OS、K8s 生态、应用变更三方面要做的事。
+
+- [阿里云云原生实战指南](https://developer.aliyun.com/ebook/7879?spm=a2c6h.26392470.ebook-read.13.3e855bc8YpIdco)
+
+    该指南涵盖了全球云原生应用洞察与趋势、阿里云在云原生领域的最新产品与技术布局、阿里云 All in Serverless 的全新思考与投入、传音、新东方、小红书等企业的上云实战经验。
+
+- [服务网格安全性和高可用性部署最佳实践](https://mp.weixin.qq.com/s/hFCshQpmF7Vr0jrpugArjA)
+
+    文章介绍在多集群的基础设施中部署服务网格时的安全性和高可用性最佳实践，包括：控制平面应该如何部署在应用程序附近；
+    入口应该如何部署以促进安全性和敏捷性；如何使用 Envoy 促进跨集群负载均衡，以及网格内部如何使用证书。
+
+- [大中型科技企业开源战略制定与落地](https://mp.weixin.qq.com/s/9Z4zFPU0uHk6RhrpUDD-tw)
+
+    目前，很多企业对于开源是什么，怎么用开源，如何参与开源，企业在开源方面如何做决策，如何进行开源治理，如何利用开源强化竞争力等方面的问题，仍存在着一些难点。
+    对此，文章介绍了什么是企业开源战略；企业为什么需要开源战略；企业开源战略包含的内容，以及企业开源战略制定和落地的实践经验。
+
+- [ServiceAccount Token 在不同 K8s 版本中的使用](https://mp.weixin.qq.com/s/F0V8nyo3LtATFmS7pHuxXw)
+
+    文章介绍了在不同 K8s 版本下，ServiceAccount Token 令牌的不同使用方式，
+    主要包括自动创建 Secret 和 Kubelet 通过 TokenRequest API 去申请 API 两种方式。
+
+- [腾讯百万级别容器云平台实践揭秘](https://mp.weixin.qq.com/s/Gusp1ah_qIoMMOg7FhX6Vg)
+
+    文章介绍了腾讯容器云平台在线业务资源容器化部署遇到的问题、容器化对动态路由同步的挑战及各自的解决方案，
+    以及为解决 K8s 已有自愈机制存在容器销毁阶段卡住的问题，探索出的一种全新的容器销毁失败自愈机制。
 
 - [在生产中大规模自动化 Istio CA 轮换](https://mp.weixin.qq.com/s/75paqvd507_ExHHGszB_-Q)
 
@@ -304,6 +353,12 @@
     Harbor v2.2及其更高版本支持对相关指标的采集和使用，这篇文章介绍了如何使用 Prometheus 轻松抓取 Harbor 实例的一些关键指标。
 
 ### 工具推荐
+
+- [在 K8s 上构建端到端的无侵入开源可观测解决方案](https://mp.weixin.qq.com/s/HUFawiyv55Hi0aEoEPl6rA)
+
+    [Odigos](https://github.com/keyval-dev/odigos) 是一个开源的可观测性控制平面，允许企业在几分钟内创建可观测性管道，集成众多第三方项目、开放标准，降低多个可观测性软件平台和开源软件解决方案的复杂性。
+    此外，还允许应用程序在几分钟内提供追踪、指标和日志，重要的是无需修改任何代码，完全无任何侵入性。
+    Odigos 能够自动检测集群中每个应用的编程语言，并进行自动检测。
 
 - [为什么我们提倡以工作负载为中心而非基础设施为中心的开发模式？](https://score.dev/blog/workload-centric-over-infrastructure-centric-development)
 
@@ -623,6 +678,29 @@
 
 ### 前沿热点
 
+- [探索基于隧道的 Kubernetes 跨集群通讯](https://mp.weixin.qq.com/s/uuWCr1d7V_aFdCAJCJS_XQ)
+
+    文章介绍了基于 ssh 隧道的跨集群访问访问。
+    集群 A 中服务要访问集群 B 中的不同服务，即单隧道多服务的实现是通过在隧道两头增加一个隧道的代理，隧道左端监听多个端口，用来区分集群 A 中服务要访问的集群 B 中的不同服务。
+    并且将此信息告知隧道右端的代理，右端代理根据此信息来转发给对应的集群 B 中的服务。
+    目前该方案只是在 demo 的程度。
+
+- [2023 年 eBPF 的六个发展趋势](https://www.solo.io/blog/ebpf-trends-2023/)
+
+    2023 年 eBPF 的六个发展趋势包括：
+    利用 eBPF 网络追踪建立高性能的 HTTP 监控、更深入的网络功能和 sidecar 优化、安全和恶意软件检测、云平台的大规模应用、电信领域的应用、更多基于 eBPF 的项目涌现。
+
+- [Kubernetes 之痛，平台工程可以解决](https://thenewstack.io/kubernetes-pains-platform-engineering-can-help/)
+
+    构建平台工程所需的产品方法有助于组织了解尚未提供支持的 Kubernetes 领域。
+    开发者自助服务允许工程师自行调配和使用测试、保护和部署应用所需的技术，而无需等待运维提供资源或启动环境。
+    内部开发平台使开发和运维专注于各自的核心职责和优势，开发人员专注于编写代码，运维向上游转移到更关键的任务，如管理网络或物理硬件。
+
+- [信创如何为业务带来价值？](https://mp.weixin.qq.com/s/uDe1wb0cVsqrz7oXjYOXXg)
+
+    提到信创，大家第一反应就是自主可控。但要做好信创，需要从埋头于自主可控中抽出一部分精力，思考如何从信创中获取价值。
+    文章介绍了国内外技术替代的成功案例，技术替换在什么情况下能为业务带来价值，以及如何做能够让信创更好地为业务服务。
+
 - [从 PingCAP 的 TiDB 数据库产品看国产技术出海模式](https://mp.weixin.qq.com/s/3y9pafdEy8rD5H2OtgPwEw)
 
     文章介绍了 PingCAP 为实现技术出海，对 TiDB 在技术上、合规性、商业化方面所做的优化。
@@ -739,6 +817,11 @@
 
 ### 安全漏洞
 
+- [回顾 2022 Kubernetes 安全漏洞，我们可以从中学到什么](https://www.armosec.io/blog/kubernetes-vulnerabilities-2022/)
+
+    文章对 2022 年 Kubernetes 的主要安全漏洞和解决方法进行了总结，例如 CRI-O 运行时容器逃逸漏洞、ArgoCD 绕过认证等。
+    介绍了一些防止漏洞的措施：实施安全配置文件，分配角色和权限时遵循最小权限原则，对 K8s 清单文件、代码库和集群进行持续扫描，定期更新集群上的软件包，使用容器沙盒项目等。
+
 - [Istio 高风险漏洞：拥有 localhost 访问权限的用户可以冒充任何工作负载的身份](https://github.com/istio/istio/security/advisories/GHSA-6c6p-h79f-g6p4)
 
     如果用户拥有 Istiod 控制平面的 localhost 访问权，他们可以冒充服务网格内的任何工作负载身份。
@@ -803,6 +886,15 @@
     该白皮书聚焦微服务治理业务领域，囊括了技术原理、业务场景、解决方案、最佳实践等微服务落地的全流程。
 
 ### 其他
+
+- [2022 云原生技术盘点与展望](https://mp.weixin.qq.com/s/yRMTS5z15-PERwlameMOIw)
+
+    文章从底层基础技术和场景化的应用技术两方面，对 2022 年云原生的发展情况进行盘点：混部带来了效率的提升；
+    Serverless 基于容器完成标准化；Service Mesh 进行新尝试，落地方式还在探索；降本增效大主题下，FinOps 理念快速发展等。
+
+- [K8s 原生支持的准入策略管理](https://mp.weixin.qq.com/s/wDlCQkHTBUQDucT9K7G2mg)
+
+    Kubernetes 1.26 提供了一个 alpha 版本的验证准入策略更新，即在验证准入策略时可以使用一种通用的表达式语言（CEL）来提供声明的、进程内的替代方法来验证 validating admission webhook。将 CEL 表达式嵌入到 Kubernetes 资源中，大大降低了 admission webhook 的复杂性。
 
 - [Containerd 深度剖析-NRI 篇](https://mp.weixin.qq.com/s/2LrWqOtqIfbIzWG9fv5ANA)
 

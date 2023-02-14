@@ -9,7 +9,7 @@ hide:
 
 对接后的预期效果如图：
 
-[对接效果](../images/gproduct01.png)
+![对接效果](../images/gproduct01.png)
 
 ## 对接方法
 
@@ -27,9 +27,9 @@ spec:
     zh-CN: 容器管理
     en-US: Container Management
   url: /kpanda
-  category: 容器   # 当前只支持概览、工作台、容器、微服务、数据服务、管理，六选一
+  category: 容器   # (1)
   iconUrl: /kpanda/nav-icon.png
-  order: 10 # 数字越大排在越上面
+  order: 10 # (2)
   menus:
   - name: 备份管理
     localizedName:
@@ -38,5 +38,8 @@ spec:
     iconUrl: /kpanda/bkup-icon.png
     url: /kpanda/backup
 ```
+
+1. 当前只支持概览、工作台、容器、微服务、数据服务、管理，六选一
+2. 数字越大排在越上面
 
 全局管理的导航栏 `category` 配置在 ConfigMap，暂时不能以注册方式增加，需要联系全局管理团队来添加。

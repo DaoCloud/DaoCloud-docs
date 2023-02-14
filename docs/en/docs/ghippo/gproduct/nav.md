@@ -9,7 +9,7 @@ Take container management (codename `kpanda`) as an example, docking to the navi
 
 The expected effect after docking is as follows:
 
-[Docking effect](../images/gproduct01.png)
+![Docking effect](../images/gproduct01.png)
 
 ## Docking method
 
@@ -22,21 +22,24 @@ metadata:
   name: kpanda
 spec:
   gproduct: kpanda
-  name: container management
+  name: 容器管理
   localizedName:
-    en-US: Container Management
+    zh-CN: 容器管理
     en-US: Container Management
   url: /kpanda
-  category: container # currently only supports overview, workbench, container, microservice, data service, management, choose one of six
+  category: 容器   # (1)
   iconUrl: /kpanda/nav-icon.png
-  order: 10 # The bigger the number, the higher the number
+  order: 10 # (2)
   menus:
-  - name: Backup Manager
+  - name: 备份管理
     localizedName:
-      en-US: Backup Management
+      zh-CN: 备份管理
       en-US: Backup Management
     iconUrl: /kpanda/bkup-icon.png
     url: /kpanda/backup
 ```
+
+1. Currently only supports overview, workbench, container, microservice, data service, management, choose one of six
+2. The bigger the number, the higher the number
 
 The navigation bar `category` of the global management is configured in the ConfigMap. It cannot be added by registration for the time being. You need to contact the global management team to add it.

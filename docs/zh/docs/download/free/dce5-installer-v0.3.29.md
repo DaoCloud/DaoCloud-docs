@@ -6,14 +6,14 @@
 
 | 文件名                      | 版本    | 架构 | 文件大小 | 下载                                           | 更新日期   |
 | ----------------------------- | ------- | -------- | ---------------------------------------------- | ---------- | ----------------------------- |
-| offline-centos7-community-v0.3.29-amd64.tar | v0.3.29 | AMD 64 | 9.2 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-community-v0.3.29-amd64.tar) | 2022-12-16 |
-| offline-kylin-v10sp2-community-v0.3.29-arm64.tar | v0.3.29 | ARM 64 | 6.9 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-community-v0.3.29-arm64.tar) | 2022-12-16 |
+| offline-centos7-community-v0.3.29-amd64.tar | v0.3.29 | AMD64 | 9.2 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-community-v0.3.29-amd64.tar) | 2022-12-16 |
+| offline-kylin-v10sp2-community-v0.3.29-arm64.tar | v0.3.29 | ARM64 | 6.9 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-community-v0.3.29-arm64.tar) | 2022-12-16 |
 
 ## 校验
 
 进入离线安装包下载目录。
 
-=== "AMD 64"
+=== "AMD64"
 
     执行以下命令校验安装包：
 
@@ -27,7 +27,7 @@
     offline-centos7-community-v0.3.29-amd64.tar: OK
     ```
 
-=== "ARM 64"
+=== "ARM64"
 
     执行以下命令校验安装包：
 
@@ -45,7 +45,7 @@
 
 成功校验离线包之后，
 
-=== "AMD 64"
+=== "AMD64"
 
     执行以下命令解压缩 tar 包：
 
@@ -53,7 +53,7 @@
     tar -zxvf offline-centos7-community-v0.3.29-amd64.tar
     ```
 
-=== "ARM 64"
+=== "ARM64"
 
     执行以下命令解压缩 tar 包：
 
@@ -70,9 +70,9 @@ DCE 5.0 社区版默认包含以下模块：
 
 | 模块     | 介绍                                                              | 最新动态                                                   |
 | -------- | ----------------------------------------------------------------- | ---------------------------------------------------------- |
-| 全局管理 | 负责用户访问控制、权限、企业空间、审计日志、个性化外观设置等      | [v0.11](../../ghippo/01ProductBrief/release-notes.md#v011) |
-| 容器管理 | 管理集群、节点、工作负载、Helm 应用、CRD、命名空间等 K8s 核心功能 | [v0.12](../../kpanda/03ProductBrief/release-notes.md#v012) |
-| 可观测性 | 提供丰富的仪表盘、场景监控、数据查询、告警等图文信息              | [v0.11](../../insight/03ProductBrief/releasenote.md#v011)  |
+| 全局管理 | 负责用户访问控制、权限、企业空间、审计日志、个性化外观设置等      | [v0.12](../../ghippo/01ProductBrief/release-notes.md#v012) |
+| 容器管理 | 管理集群、节点、工作负载、Helm 应用、CRD、命名空间等 K8s 核心功能 | [v0.13](../../kpanda/03ProductBrief/release-notes.md#v013) |
+| 可观测性 | 提供丰富的仪表盘、场景监控、数据查询、告警等图文信息              | [v0.12](../../insight/03ProductBrief/releasenote.md#v012)  |
 
 ## 更多
 

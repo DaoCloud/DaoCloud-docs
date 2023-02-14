@@ -4,11 +4,11 @@
 
 OpenTelemetry 也简称为 OTel，是一个开源的可观测性框架，可以帮助在 Go 应用程序中生成和收集遥测数据：链路、指标和日志。
 
-## 使用 OpenTelemetry SDK 增强 Go 应用程序
+## 使用 OTel SDK 增强 Go 应用
 
 ### 安装相关依赖
 
-必须先安装与 OpenTelemetry exporter 和 SDK 相关的依赖项。如果您正在使用其他请求路由器，请参考[请求路由](#请求路由)。
+必须先安装与 OpenTelemetry exporter 和 SDK 相关的依赖项。如果您正在使用其他请求路由器，请参考[请求路由](#_3)。
 切换/进入到应用程序源文件夹后运行以下命令：
 
 ```golang
@@ -20,7 +20,7 @@ go get go.opentelemetry.io/otel@v1.8.0 \
   go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc@v1.4.1
 ```
 
-### 使用 OpenTelemetry SDK 创建初始化函数
+### 使用 OTel SDK 创建初始化函数
 
 为了让应用程序能够发送数据，需要一个函数来初始化 OpenTelemetry。在 `main.go` 文件中添加以下代码片段:
 
@@ -102,7 +102,6 @@ func handleErr(err error, message string) {
 		zap.S().Errorf("%s: %v", message, err)
 	}
 }
-
 ```
 
 ### 在 main.go 中初始化跟踪器
@@ -119,7 +118,7 @@ func main() {
 }
 ```
 
-### 为应用程序添加 OpenTelemetry Gin 中间件
+### 为应用添加 OTel Gin 中间件
 
 通过在 `main.go` 中添加以下行来配置 Gin 以使用中间件:
 
@@ -153,10 +152,10 @@ func main() {
 
 - 生产环境运行
 
-请参考[通过 Operator 实现应用程序无侵入增强](./operator.md) 中 `只注入环境变量注解` 相关介绍，为 deployment yaml 添加注解：
+请参考[通过 Operator 实现应用程序无侵入增强](./operator.md) 中`只注入环境变量注解`相关介绍，为 deployment yaml 添加注解：
 
 ```bash
-    instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
+instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
 ```
 
 如果无法使用注解的方式，您可以手动在 deployment yaml 添加如下环境变量：
@@ -167,7 +166,7 @@ env:
   - name: OTEL_EXPORTER_OTLP_ENDPOINT
     value: 'http://insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317'
   - name: OTEL_SERVICE_NAME
-    value: "your depolyment name" # modify it.
+    value: "your depolyment name" # (1)
   - name: OTEL_K8S_NAMESPACE
     valueFrom:
       fieldRef:
@@ -187,6 +186,8 @@ env:
     value: 'k8s.namespace.name=$(OTEL_K8S_NAMESPACE),k8s.node.name=$(OTEL_RESOURCE_ATTRIBUTES_NODE_NAME),k8s.pod.name=$(OTEL_RESOURCE_ATTRIBUTES_POD_NAME)'
 ······
 ```
+
+1. 修改此值
 
 ## 请求路由
 
@@ -278,7 +279,7 @@ import (
   ······
 ```
 
-## 向 span 添加自定义属性和自定义事件
+## 向 span 添加自定义属性和事件
 
 也可以将自定义属性或标签设置为 Span。要添加自定义属性和事件，请按照以下步骤操作：
 

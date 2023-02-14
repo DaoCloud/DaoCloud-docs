@@ -117,7 +117,7 @@
 
 ### API
 
-**新增** `kpanda` 增加 [configmap](../kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md) CRUD
+**新增** `kpanda` 增加 [configmap](../kpanda/07UserGuide/ConfigMapsandSecrets/use-configmap.md) CRUD
 
 **新增** `kpanda` 支持[工作负载全生命周期管理](../kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md)
 

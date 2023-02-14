@@ -1,4 +1,4 @@
-# Application Workbench Video Tutorial
+# Container Registry Video Tutorial
 
 > If there is a problem with the video display, please refresh the page, or try to clear the browser cache.
 

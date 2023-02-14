@@ -11,7 +11,7 @@ A workspace consists of three functions: authorization, resource groups, and sha
 
 ![Workspace](../../images/quota01.png)
 
-1. Authorization: Grant users/user groups different roles in the workspace, and apply the roles to the resources in the workspace.
+1. Authorization: Grant users/groups different roles in the workspace, and apply the roles to the resources in the workspace.
 
     Best practice: When ordinary users want to use the application workbench, microservice engine, service mesh, and middleware module functions, or need to have permission to use container management and some resources in the service mesh, the administrator needs to grant the workspace permissions (Workspace Admin, Workspace Edit, Workspace View).
     The administrator here can be the Admin role, the Workspace Admin role of the workspace, or the Folder Admin role above the workspace.

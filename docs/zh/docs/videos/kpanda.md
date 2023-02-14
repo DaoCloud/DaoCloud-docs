@@ -10,6 +10,14 @@
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-cluster.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
+## 创建集群
+
+参阅[创建集群](../kpanda/07UserGuide/Clusters/CreateCluster.md)文档页面。
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-cluster.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+
 ## 创建无状态负载
 
 参阅[创建无状态负载](../kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md)文档页面。

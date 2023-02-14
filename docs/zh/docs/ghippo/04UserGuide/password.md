@@ -35,4 +35,25 @@
 
 整个密码重置的流程示意图如下。
 
-![密码重置流程](../images/password01.png)
+```mermaid
+graph TB
+
+pass[忘记密码] --> usern[输入用户名]
+--> button[点击发送验证邮件的按钮] --> judge1[判断用户名是否正确]
+
+    judge1 -.正确.-> judge2[判断是否绑定邮箱]
+    judge1 -.错误.-> tip1[提示用户名不正确]
+    
+        judge2 -.已绑定邮箱.-> send[发送重置邮件]
+        judge2 -.未绑定邮箱.-> tip2[提示未绑定邮箱<br>联系管理员重置密码]
+        
+send --> click[点击邮件中的链接] --> reset[重置密码]
+--> success[成功重置密码]
+
+classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
+classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
+classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+
+class pass,usern,button,tip1,send,tip2,send,click,reset,success plain;
+class judge1,judge2 k8s
+```

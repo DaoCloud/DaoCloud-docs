@@ -10,7 +10,7 @@
 
 您可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择chart-syncer同步镜像到镜像仓库，该方法更加高效便捷。
 
-### chart-syncer同步镜像到镜像仓库
+### chart-syncer 同步镜像到镜像仓库
 
 1. 创建 load-image.yaml
 
@@ -22,42 +22,59 @@
 
         若当前环境已安装 chart repo，chart-syncer 也支持将 chart 导出为 tgz 文件。
 
-        ```yaml
+        ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: ghippo-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+          intermediateBundlesPath: ghippo-offline # (1)
         target:
-          containerRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
-          containerRepository: release.daocloud.io/ghippo # 需更改为你的镜像仓库
+          containerRegistry: 10.16.10.111 # (2)
+          containerRepository: release.daocloud.io/ghippo # (3)
           repo:
-            kind: HARBOR # 也可以是任何其他支持的 Helm Chart 仓库类别
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # 需更改为 chart repo url
+            kind: HARBOR # (4)
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)
             auth:
-            username: "admin" # 你的镜像仓库用户名
-            password: "Harbor12345" # 你的镜像仓库密码
+            username: "admin" # (6)
+            password: "Harbor12345" # (7)
           containers:
             auth:
-              username: "admin" # 你的镜像仓库用户名
-              password: "Harbor12345" # 你的镜像仓库密码
+              username: "admin" # (8)
+              password: "Harbor12345" # (9)
         ```
+
+        1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+        2. 需更改为你的镜像仓库 url
+        3. 需更改为你的镜像仓库
+        4. 也可以是任何其他支持的 Helm Chart 仓库类别
+        5. 需更改为 chart repo url
+        6. 你的镜像仓库用户名
+        7. 你的镜像仓库密码
+        8. 你的镜像仓库用户名
+        9. 你的镜像仓库密码
 
     === "未安装 chart repo"
 
         若当前环境未安装 chart repo，chart-syncer 也支持将 chart 导出为 tgz 文件，并存放在指定路径。
 
-        ```yaml
+        ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: ghippo-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+          intermediateBundlesPath: ghippo-offline # (1)
         target:
-          containerRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
-          containerRepository: release.daocloud.io/ghippo # 需更改为你的镜像仓库
+          containerRegistry: 10.16.10.111 # (2)
+          containerRepository: release.daocloud.io/ghippo # (3)
           repo:
             kind: LOCAL
-            path: ./local-repo # chart 本地路径
+            path: ./local-repo # (4)
           containers:
             auth:
-              username: "admin" # 你的镜像仓库用户名
-              password: "Harbor12345" # 你的镜像仓库密码
+              username: "admin" # (5)
+              password: "Harbor12345" # (6)
         ```
+
+        1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+        2. 需更改为你的镜像仓库 url
+        3. 需更改为你的镜像仓库
+        4. chart 本地路径
+        5. 你的镜像仓库用户名
+        6. 你的镜像仓库密码
 
 1. 执行同步镜像命令。
 
@@ -65,7 +82,7 @@
     charts-syncer sync --config load-image.yaml
     ```
 
-### docker或containerd直接加载
+### Docker 或 containerd 直接加载
 
 解压并加载镜像文件。
 
@@ -96,7 +113,8 @@
         ```
 
 !!! note
-    每个node都需要做进行docker或containerd加载镜像操作
+
+    每个 node 都需要做 Docker 或 containerd 加载镜像操作，
     加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
 
 ## 升级
@@ -105,11 +123,11 @@
 
 !!! note  
 
-    当从 v0.11.x (或更低版本) 升级到 v0.12.0 (或更高版本) 时，需要将 `bak.yaml` 中所有 keycloak key 修改为 keycloakx。  
+    当从 v0.11.x (或更低版本) 升级到 v0.12.0 (或更高版本) 时，需要将 `bak.yaml` 中所有 keycloak key 修改为 `keycloakx`。  
 
     这个 key 的修改示例：  
 
-    ```yaml
+    ```yaml title="bak.yaml"
     USER-SUPPLIED VALUES:
     keycloak:
         ...
@@ -117,7 +135,7 @@
 
     修改为：
 
-    ```yaml
+    ```yaml title="bak.yaml"
     USER-SUPPLIED VALUES:
     keycloakx:
         ...
@@ -146,8 +164,10 @@
     1. 更新全局管理的 helm 仓库。
 
         ```shell
-        helm repo update ghippo # helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
+        helm repo update ghippo # (1)
         ```
+
+        1. helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
 
     1. 选择您想安装的全局管理版本（建议安装最新版本）。
 
@@ -180,10 +200,10 @@
 
         ```shell
         helm upgrade ghippo ghippo/ghippo \
-        -n ghippo-system \
-        -f ./bak.yaml \
-        --set global.imageRegistry=$imageRegistry
-        --version 0.9.0
+          -n ghippo-system \
+          -f ./bak.yaml \
+          --set global.imageRegistry=$imageRegistry
+          --version 0.9.0
         ```
 
 === "通过 chart 包升级"
@@ -206,7 +226,7 @@
 
         ```shell
         helm upgrade ghippo . \
-        -n ghippo-system \
-        -f ./bak.yaml \
-        --set global.imageRegistry=$imageRegistry
+          -n ghippo-system \
+          -f ./bak.yaml \
+          --set global.imageRegistry=$imageRegistry
         ```

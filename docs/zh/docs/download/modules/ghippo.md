@@ -9,23 +9,24 @@ hide:
 
 ## 下载
 
-| 文件名                       | 版本                                                   | 架构 | 文件大小 | 安装包                                                                                                     | 更新日期   |
-| ------------------------------ | ------------------------------------------------------ | ----- |-------- | ---------------------------------------------------------------------------------------------------------- | ---------- |
-| ghippo_v0.13.1_amd64.tar | [v0.13.1](../../ghippo/01ProductBrief/release-notes.md) | AMD 64 | 439.90MB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.13.1_amd64.tar) | 2022-12-28 |
-| ghippo-0.12.1-amd64.bundle.tar | [v0.12.1](../../ghippo/01ProductBrief/release-notes.md) | AMD 64 | 442 MB   | [:arrow_down: 下载](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo-0.12.1-amd64.bundle.tar) | 2022-11-29 |
+| 版本                                                   | 架构 | 文件大小 | 安装包                                                                                                     | 校验文件 | 更新日期   |
+| ------------------------------------------------------ | ----- |-------- | ---------------------------------------------------------------------------------------------------------- | ---------- | ---------- |
+| [v0.13.2](../../ghippo/01ProductBrief/release-notes.md) | AMD64 | 439.90MB | [:arrow_down: ghippo_v0.13.2_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.13.2_amd64.tar) | [:arrow_down: ghippo_v0.13.2_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.13.2_amd64_checksum.sha512sum) | 2022-12-29 |
+| [v0.13.0](../../ghippo/01ProductBrief/release-notes.md) | AMD64 | 439.89MB | [:arrow_down: ghippo_v0.13.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.13.0_amd64.tar) | [:arrow_down: ghippo_v0.13.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.13.0_amd64_checksum.sha512sum) | 2022-12-29 |
+| [v0.12.1](../../ghippo/01ProductBrief/release-notes.md) | AMD64 | 442 MB   | [:arrow_down: ghippo-0.12.1-amd64.bundle.tar](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo-0.12.1-amd64.bundle.tar) | [:arrow_down: ghippo_v0.12.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.12.1_amd64_checksum.sha512sum) | 2022-11-29 |
 
 ## 校验
 
-在下载离线安装包的目录，执行以下命令校验完整性：
+在下载离线安装包和校验文件的目录，执行以下命令校验完整性：
 
 ```sh
-echo "16f3f5549e3f776d46642e94bb4675ab847f5fa3489ee3b7c65ce9c8d36e451989aada4f7042d4c078ea7dcf321b1920b97c6568d3262e234d8c7ed775f9ac70  dist/offline/ghippo-0.12.1.bundle.tar" | sha512sum -c
+echo "$(cat ghippo_v0.13.2_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
-校验成功会打印：
+校验成功后打印结果类似于：
 
 ```none
-ghippo.tar: ok
+ghippo_v0.13.2_amd64.tar: ok
 ```
 
 ## 安装

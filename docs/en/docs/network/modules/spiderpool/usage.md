@@ -1,61 +1,105 @@
 ---
-hide:
-  - toc
+MTPE: Jeanine-tw
+Revised: Jeanine-tw
+Pics: Jeanine-tw
+Date: 2023-01-05
 ---
 
-# use
+# Workload uses IP pools
 
-This page explains how to use IP Pool (IPPool).
+This page describes how to configure multiple NICs for workload Pods in combination with Multus and Underlay CNI, and how to allocate and fix IPs of the Underlay network through Spiderpool. Mainly include:
 
-1. Create an IPv4 IP pool.
+- Multi-container NIC for Pods
+- Workloads use IP pools
+- Workloads use fixed IP pools
+- Workloads use auto-created fixed IP pools
 
-    ```yaml
-    apiVersion: spiderpool.spidernet.io/v1
-    kind: SpiderIPPool
-    metadata:
-      name: standard-ipv4-ippool
-    spec:
-      ipVersion: 4
-      subnet: 172.18.41.0/24
-      ips:
-      - 172.18.41.40-172.18.41.50
-    ```
+## Prerequisites
 
-2. Use the Pod annotation `ipam.spidernet.io/ippool` to choose to allocate IP from the IP pool `standard-ipv4-ippool`, and create this Deployment.
+1. [Install SpiderPool](../../modules/spiderpool/install.md).
+2. [Install Multus with Macvlan/SRI-OV](../../modules/multus-underlay/install.md).
+3. If you use manual selection of IP pool, [create IP subnet and IP pool](../../modules/spiderpool/createpool.md) in advance. If you use automatic creation of a fixed IP pool, [create  IP pool](../../modules/spiderpool/createpool.md) in advance.
+
+## Steps
+
+1. Log in to the platform UI, click `Container Management`->`Cluster List` in the left navigation bar, and find the corresponding cluster. Then, select `Deployments` in the left navigation bar and click `Create from an Image`.
+
+    ![Image creation](../../images/spiderpool-image.png)
+
+2. On the `Deployments` page, complete the infor,ation input of `Basic Information`, `Container Settings`, and `Service Settings`. Then, go to `Advanced Settings` and click `Container Network Card` —> `Configuration`.
+
+    ![Container NIC](../../images/spiderpool-nic.png)
+
+3. On `Container Network Card Configuration` page, enter following arguments:
+
+    - `NIC info`: If the created application container needs to use multiple NICs, such as one for east-west traffic and another for north-south traffic.
+
+        - eth0 (default NIC): Overlay CNI, Calico/Cilium is the default.
+
+        - net1: Underlay CNI configuration is optiional, such as Macvlan/SRI-OV. The example here is Macvlan.
+
+    - `IPPool config`: Rules for Underlay CNI IP allocation.
+
+        - `Create fixed IPPool`: When enabled, you only need to select the corresponding subnet for the new container NICs (net1, net2, net3), and the workload will automatically create a fixed IP pool when it is deployed. The container NICs can only use the addresses in this IP pool after deployment.
+        - `Flexible IP`: When enabled, the number of IPs in the IP pool will change according to the number of elastic IPs set. The maximum number of available IPs is equal to the number of Pod copies + the number of resilient IPs. The IP pool will be expanded when the Pod is expanded.
+        - `Custom route`: Custom routes can be added when applications are created with special routing needs.
+        - `NIC IPPool`:  Select the subnet to be used by the corresponding NIC or the corresponding IP pool.
+
+    **Manually select an existing IP pool**
+
+    To manually select an IP pool, you need to create an IP pool in advance. You can select the range of the IP pool as `shared IP pool`, add the current `application affinity IP pool`, and add the current `namespace affinity IP pool`.
+
+    ![Manually select IP pool](../../images/spiderpool-manual.png)
+
+    **Automatically create fixed IP pool**
+
+    You only need to select the corresponding subnet to automatically create a fixed IP pool
+
+    ![Automatically create fixed IP pool](../../images/spiderpool-automatic.png)
+
+4. After creating the workload, you can click the corresponding workload `workload01` to view the IP used by the workload Pod.
+
+    ![View IP](../../images/spiderpool-workload-1.png)
+
+    ![useippool07](../../images/spiderpool-workload-2.png)
+
+## YAML usage
+
+1. Use the Pod annotation `ipam.spidernet.io/ippool` to allocate IP from the IP pool `testingippool` to create the following Deployment:
 
     ```yaml
     apiVersion: apps/v1
     kind: Deployment
     metadata:
-      name: standard-ippool-deploy
+      name: workload01
     spec:
       replicas: 3
       selector:
         matchLabels:
-          app: standard-ippool-deploy
+          app: workload01
       template:
         metadata:
           annotations:
             ipam.spidernet.io/ippool: |-
               {
-                "ipv4": ["standard-ipv4-ippool"]
+                "ipv4": ["testingippool"]
               }
           labels:
-            app: standard-ippool-deploy
+            app: workload01
         spec:
           containers:
-          - name: standard-ippool-deploy
+          -name: workload01
             image: busybox
             imagePullPolicy: IfNotPresent
             command: ["/bin/sh", "-c", "trap : TERM INT; sleep infinity & wait"]
     ```
 
-3. Pods controlled by the Deployment `standard-ippool-deploy` are assigned IP addresses from the IP pool `standard-ipv4-ippool` and run successfully.
+2. The Pods controlled by the Deployment `workload01` are assigned IP addresses from the IP pool `testingippool` and run successfully.
 
     ```bash
     kubectl get se
-    NAME INTERFACE IPV4POOL IPV4 IPV6POOL IPV6 NODE CREATETION TIME
-    standard-ippool-deploy-6967dcd8df-8b6zp eth0 standard-ipv4-ippool 172.18.41.47/24 spider-worker 7s
-    standard-ippool-deploy-6967dcd8df-cvq79 eth0 standard-ipv4-ippool 172.18.41.50/24 spider-worker 7s
-    standard-ippool-deploy-6967dcd8df-s58x9 eth0 standard-ipv4-ippool 172.18.41.41/24 spider-worker 7s
+    NAME                                      INTERFACE   IPV4POOL               IPV4              IPV6POOL   IPV6   NODE            CREATETION TIME
+    workload01-6967dcd8df-8b6zp   eth0        standard-ipv4-ippool   172.18.41.47/24                     spider-worker   7s
+    standard-ippool-deploy-6967dcd8df-cvq79   eth0        standard-ipv4-ippool   172.18.41.50/24                     spider-worker   7s
+    standard-ippool-deploy-6967dcd8df-s58x9   eth0        standard-ipv4-ippool   172.18.41.41/24                     spider-worker   7s
     ```

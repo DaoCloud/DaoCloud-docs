@@ -14,7 +14,7 @@ If you need to change the current workspace, you can click the change icon on th
 
 !!! note
 
-    If there is currently no available workspace, you need to contact the super administrator to create a workspace.
+    If no available workspace, contact your Super Admin to create a workspace.
 
 [Download DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }

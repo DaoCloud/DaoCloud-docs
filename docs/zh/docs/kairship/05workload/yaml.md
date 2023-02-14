@@ -4,32 +4,32 @@
 
 这种创建方式的步骤比较简单，如下所述。
 
-1. 在左侧导航栏中，点击`多云工作负载`，点击右上角的`YAML 创建`按钮。
+1. 在左侧导航栏中，点击`多云工作负载`，点击右上角的 `YAML 创建`按钮。
 
-    ![image](../images/depyaml01.png)
+    ![yaml创建](../images/depyaml01.png)
 
 2. 例如输入创建 Deployment 的 YAML 语句后，点击`下一步`。
 
-    ![image](../images/depyaml02.png)
+    ![输入代码](../images/depyaml02.png)
 
 3. 输入部署策略的 YAML 语句后，点击`下一步`。
 
-    ![image](../images/depyaml03.png)
+    ![输入PropagationPolicy](../images/depyaml03.png)
 
 4. 输入差异化策略的 YAML 语句后，点击`确定`。
 
-    ![image](../images/depyaml04.png)
+    ![OverridePolicy](../images/depyaml04.png)
 
 5. 自动返回多云工作负载列表，点击列表右侧的 `⋮`，可以编辑修改 YAML，还可以暂停、重启和删除该负载。
 
-    ![image](../images/depyaml05.png)
+    ![其他操作](../images/depyaml05.png)
 
 ## YAML 示例
 
 多云编排模块自带的 YAML 编辑器中会自动检测 YAML 语法，如有错误，会出现相关提示。
 以下列出一些常用的示例，您稍加修改就可以使用。
 
-**Deployment 示例**
+### Deployment 示例
 
 ```yaml
 # Kubernetes Deployment
@@ -54,7 +54,7 @@ spec:
         name: nginx
 ```
 
-**部署策略示例**
+### 部署策略示例
 
 ```yaml
 # Karmada PropagationPolicy
@@ -62,12 +62,12 @@ apiVersion: policy.karmada.io/v1alpha1
 kind: PropagationPolicy
 metadata:
   name: demo-nginx-pp
-  namespace: default    # The default namespace is `default`.
+  namespace: default    # (1)
 spec:
   resourceSelectors:
     - apiVersion: apps/v1
       kind: Deployment
-      name: demo-nginx # If no namespace is specified, the namespace is inherited from the parent object scope.
+      name: demo-nginx # (2)
   placement:
     clusterAffinity:
       clusterNames:
@@ -75,7 +75,10 @@ spec:
         - demo-dev
 ```
 
-**差异化策略示例**
+1. The default namespace is `default`.
+2. If no namespace is specified, the namespace is inherited from the parent object scope.
+
+### 差异化策略示例
 
 ```yaml
 # Karmada OverridePolicy

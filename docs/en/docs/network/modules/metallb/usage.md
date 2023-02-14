@@ -1,355 +1,355 @@
-# 使用说明
+# Instructions for use
 
 ## IPPool
 
-### 集群默认地址池
+### Cluster default IP pool
 
-如果创建 `LoadBalancer Service` 的时候没有通过 Annotations: `metallb.universe.tf/address-pool` 指定地址池或通过 Annotation: `metallb.universe.tf/loadBalancerIPs` 指定 IP，那么会从现存的地址池中设置 `autoAssign=true` 的池中分配地址。
+If the IP pool is not specified through Annotations: `metallb.universe.tf/address-pool` or the IP is specified through Annotation: `metallb.universe.tf/loadBalancerIPs` when creating `LoadBalancer Service`, then it will be from the existing IP pool Assign addresses in pools with `autoAssign=true`.
 
 !!! note
 
-    创建的地址池必须跟 `Metallb` 组件在同一个 namespace，否则 `Metallb` 无法识别。
+     The created IP pool must be in the same namespace as `Metallb` component, otherwise `Metallb` cannot recognize it.
 
-### 指定地址池
+### Specify IP pool
 
-创建 `LoadBalancer Service` 的时候可以通过 Annotations: `metallb.universe.tf/address-pool` 指定地址池：
+When creating `LoadBalancer Service`, you can specify the IP pool through Annotations: `metallb.universe.tf/address-pool`:
 
 ```yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: metallb-ippool3
-  labels:
-    name: metallb-ippool3
-  annotations:
-    metallb.universe.tf/address-pool: test-pool  # test-pool 必须和 metallb 组件在同一个 namespace 下
+   name: metallb-ippool3
+   labels:
+     name: metallb-ippool3
+   annotations:
+     metallb.universe.tf/address-pool: test-pool # test-pool must be in the same namespace as metallb components
 spec:
-  type: LoadBalancer
-  ...
+   type: LoadBalancer
+   ...
 ```
 
-### 指定IP地址
+### Specify the IP address
 
-创建 `LoadBalancer Service` 的时候可以通过 Annotations: `metallb.universe.tf/loadBalancerIPs` 指定 IP：
+When creating `LoadBalancer Service`, you can specify the IP through Annotations: `metallb.universe.tf/loadBalancerIPs`:
 
 ```yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: metallb-ippool3
-  labels:
-    name: metallb-ippool3
-  annotations:
-   metallb.universe.tf/loadBalancerIPs: 172.16.13.210  # 该 IP 地址必须存在于现存的地址池中
+   name: metallb-ippool3
+   labels:
+     name: metallb-ippool3
+   annotations:
+    metallb.universe.tf/loadBalancerIPs: 172.16.13.210 # This IP address must exist in an existing IP pool
 spec:
-  type: LoadBalancer
-  ...
+   type: LoadBalancer
+   ...
 ```
 
-### 共享 IP 地址
+### Shared IP address
 
-在 `k8s v1.20` 之前，`LoadBalancer Service` 不支持配置多种协议（`v1.24` 支持，已成为 Beta 功能），参考 [#issue 23880](https://github.com/kubernetes/kubernetes/issues/23880)。
+Before `k8s v1.20`, `LoadBalancer Service` does not support configuring multiple protocols (`v1.24` supports it, it has become a Beta function), refer to [#issue 23880](https://github.com/kubernetes/ kubernetes/issues/23880).
 
-`Metallb` 通过创建不同的 Service 并共享 Service IP，间接的支持这个功能。
+`Metalb` indirectly supports this function by creating different services and sharing the service IP.
 
-创建两个 Service：
+Create two Services:
 
 ```yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: dns-service-tcp
-  namespace: default
-  annotations:
-    metallb.universe.tf/allow-shared-ip: "key-to-share-1.2.3.4"
+   name: dns-service-tcp
+   namespace: default
+   annotations:
+     metallb.universe.tf/allow-shared-ip: "key-to-share-1.2.3.4"
 spec:
-  type: LoadBalancer
-  loadBalancerIP: 1.2.3.4
-  ports:
-    - name: dnstcp
-      protocol: TCP
-      port: 53
-      targetPort: 53
-  selector:
-    app: dns
+   type: LoadBalancer
+   loadBalancerIP: 1.2.3.4
+   ports:
+     - name: dnstcp
+       protocol: TCP
+       port: 53
+       targetPort: 53
+   selector:
+     app: dns
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: dns-service-udp
-  namespace: default
-  annotations:
-    metallb.universe.tf/allow-shared-ip: "key-to-share-1.2.3.4"
+   name: dns-service-udp
+   namespace: default
+   annotations:
+     metallb.universe.tf/allow-shared-ip: "key-to-share-1.2.3.4"
 spec:
-  type: LoadBalancer
-  loadBalancerIP: 1.2.3.4
-  ports:
-    - name: dnsudp
-      protocol: UDP
-      port: 53
-      targetPort: 53
-  selector:
-    app: dns
+   type: LoadBalancer
+   loadBalancerIP: 1.2.3.4
+   ports:
+     - name: dnsudp
+       protocol: UDP
+       port: 53
+       targetPort: 53
+   selector:
+     app: dns
 ```
 
 !!! note
 
-    只要 Annotations (`metallb.universe.tf/allow-shared-ip`) key 和 value 相同，那么不同的 `LoadBalancer Service`就会具有相同的 IP 地址（ipv4/ipv6）。
-    当然也可以通过 Annotations (`metallb.universe.tf/loadBalancerIPs`) 指定 ipv4/ipv6 地址，或者通过 `.spec.loadBalancerIP` 指定（只支持 ipv4）。
-    创建后编辑 Annotation 没有效果。
+     As long as the Annotations (`metallb.universe.tf/allow-shared-ip`) key and value are the same, different `LoadBalancer Service` will have the same IP address (ipv4/ipv6).
+     Of course, you can also specify ipv4/ipv6 addresses through Annotations (`metallb.universe.tf/loadBalancerIPs`), or specify through `.spec.loadBalancerIP` (only supports ipv4).
+     Editing an Annotation after creation has no effect.
 
-共享 IP 另一个作用是 `LoadBalancer IP` 地址不足，需要多个 Service 共享同一个 IP，但注意不同 Service 的协议和端口应该是不同的，否则无法区分连接。
+Another function of shared IP is that the `LoadBalancer IP` address is insufficient, and multiple Services need to share the same IP, but note that the protocols and ports of different Services should be different, otherwise the connection cannot be distinguished.
 
-## Metallb L2 模式
+## Metallb L2 mode
 
-L2 模式下，`Metallb` 将会通过 ARP（for ipv4）、NDP（for ipv6）宣告 `LoadBalancerIP` 的地址。
-在 `Metallb` < `v0.13.2` 之前，只能通过 `configMap` 来配置 `Metallb`。
-在 `v0.13.2` 之后，通过 CRD 资源的方式配置 `Metallb`，另外 `configMap` 的方式已被弃用。
+In L2 mode, `Metalb` will announce the address of `LoadBalancerIP` through ARP (for ipv4), NDP (for ipv6).
+Before `Metallb` < `v0.13.2`, `Metallb` can only be configured via `configMap`.
+After `v0.13.2`, `Metallb` is configured through CRD resources, and the method of `configMap` has been deprecated.
 
-在 `Layer2` 模式下，当创建服务时，`Metallb`（`speaker` 组件）会为这个服务选举出集群中某个节点，作为这个服务对外暴露的主机。
-当对 Service 的 `externalIP` 发出请求时，此节点会代替这个 `externalIP` 回复 `arp` 请求。
-所以对 Service 发出的请求，会首先到达集群中这个节点，然后再经过这个节点上的 `kube-proxy` 组件，最后将流量导向这个 service 某个具体的端点 (endpoint)。
+In `Layer2` mode, when creating a service, `Metalb` (`speaker` component) will elect a node in the cluster for this service as the host exposed to the outside world.
+When a request is made to the `externalIP` of the Service, this node will reply to the `arp` request instead of this `externalIP`.
+Therefore, the request sent to the Service will first reach this node in the cluster, then pass through the `kube-proxy` component on this node, and finally direct the traffic to a specific endpoint (endpoint) of this service.
 
-服务选举节点的逻辑主要有三点：
+There are three main points in the logic of service election nodes:
 
-1. 首先过滤掉未 ready 的节点以及 endpoint 未 ready 所在的节点
-2. 如果该服务的 endpoint 分布在同一个节点，那么筛选此节点作为该服务 IP 的 `arp` 响应者
-3. 如果该服务的 endpoint 分布在不同的节点，那么通过 `sha256` 计算 `节点 + # + externalIP` 后，按照字典顺序取第一个
+1. First filter out the nodes that are not ready and the nodes where the endpoint is not ready
+2. If the endpoint of the service is distributed on the same node, then filter this node as the `arp` responder of the service IP
+3. If the endpoints of the service are distributed on different nodes, after calculating `node + # + externalIP` through `sha256`, take the first one according to the dictionary order
 
-这样，Metallb 就会为每个 Service 选择一个节点作为暴露的主机。
-`metallb` 会将这单个 Service 的流量，全部导向某个节点，所以这个节点可能会成为限制性能的瓶颈。
-Service 的带宽限制也会取决于单个节点的带宽，这也是使用 ARP 或 NDP 最主要的限制。
+In this way, Metallb will select a node for each Service as the exposed host.
+`metallb` will direct the traffic of this single Service to a certain node, so this node may become a bottleneck that limits performance.
+The bandwidth limit of Service will also depend on the bandwidth of a single node, which is also the most important limitation of using ARP or NDP.
 
-此外，当此节点发生故障时，Metallb 需要为服务重新选择一个新的节点。
-然后 `Metallb` 会给客户端发送一个"免费"的 `arp`，告知客户端需要更新他们的 Mac 地址缓存。
-在客户端更新缓存前，流量仍会转发到故障节点。因此从某种程度来看：故障转移的时间，依赖于客户端更新 Mac 地址缓存的速度。
+Also, when this node fails, Metallb needs to re-elect a new node for the service.
+`Metalb` will then send a "gratis" `arp` to the client, telling the client that their Mac address cache needs to be updated.
+Traffic is still forwarded to the failed node until the client updates the cache. So from a certain point of view: the time of failover depends on the speed at which the client updates the Mac address cache.
 
-### 使用
+### use
 
-- 创建 IP 池
+- Create IP pool
 
-    ```yaml
-    apiVersion: metallb.io/v1beta1
-    kind: IPAddressPool
-    metadata:
-      name: demo-pool
-      namespace: metallb-system
-      labels:
-        ipaddresspool: demo
-    spec:
-      addresses:
-      - 192.168.10.0/24
-      - 192.168.9.1-192.168.9.5
-      - fc00:f853:0ccd:e799::/124
-      autoAssign: true
-      avoidBuggyIPs: false
-    ```
+     ```yaml
+     apiVersion: metallb.io/v1beta1
+     kind: IPAddressPool
+     metadata:
+       name: demo-pool
+       namespace: metallb-system
+       labels:
+         ipaddresspool: demo
+     spec:
+       addresses:
+       - 192.168.10.0/24
+       - 192.168.9.1-192.168.9.5
+       -fc00:f853:0ccd:e799::/124
+       autoAssign: true
+       avoidBuggyIPs: false
+     ```
 
-- `addresses`：IP 地址列表，每一个列表成员可以是一个 CIDR，可以是一个地址范围（如 192.168.9.1 - 192.168.9.5），也可以是不同 `ipFamily`、`Metallb` 会从其中分配 IP 给 `LoadBalancer` 服务
+- `addresses`: IP address list, each list member can be a CIDR, it can be an address range (such as 192.168.9.1 - 192.168.9.5), or it can be different `ipFamily`, `Metallb` will allocate IP from it Service `LoadBalancer`
 
-- `autoAssign`：是否自动分配 IP 地址，默认为 true。在某些情况下（IP 地址不足或公有 IP），不希望池中的 IP 被轻易地分配，可设置为 false。
-  可以通过在 service 中设置 annotations: `metallb.universe.tf/address-pool: pool-name`。或者在 `spec.LoadBalancerIP` 字段设置 IP（注意这种方式已被k8s标记为遗弃）。
+- `autoAssign`: Whether to automatically assign the IP address, the default is true. In some cases (insufficient IP addresses or public IPs), you don't want the IPs in the pool to be assigned easily, can be set to false.
+   You can set annotations: `metallb.universe.tf/address-pool: pool-name` in service. Or set the IP in the `spec.LoadBalancerIP` field (note that this method has been marked as abandoned by k8s).
 
-- `avoidBuggyIPs`：是否避免使用池中以 `.0` 或 `.255` 地址，默认为 false。
+- `avoidBuggyIPs`: Whether to avoid using `.0` or `.255` addresses in the pool, the default is false.
 
-- 配置 `LoadBalancerIP` 通告规则 (L2)
+- Configure `LoadBalancerIP` advertisement rule (L2)
 
-    通过 `L2Advertisement` 绑定地址池，这样告诉 `Metallb` 这些地址应该由 `ARP` 或 `NDP` 通告出去。
+     Bind IP pools via `L2Advertisement`, which tells `Metallb` that these addresses should be advertised by `ARP` or `NDP`.
 
-    ```yaml
-    apiVersion: metallb.io/v1beta1
-    kind: L2Advertisement
-    metadata:
-      name: demo
-      namespace: metallb-system  
-    spec:
-      ipAddressPools:
-      - demo-pool
-      ipAddressPoolSelectors:
-      - matchLabels:
-          ipaddresspool: demo
-      nodeSelectors:
-      - matchLabels:
-          kubernetes.io/hostname: kind-control-plane
-    ```
+     ```yaml
+     apiVersion: metallb.io/v1beta1
+     kind: L2Advertisement
+     metadata:
+       name: demo
+       namespace: metallb-system
+     spec:
+       ipAddressPools:
+       - demo-pool
+       ipAddressPoolSelectors:
+       - matchLabels:
+           ipaddresspool: demo
+       nodeSelectors:
+       - matchLabels:
+           kubernetes.io/hostname: kind-control-plane
+     ```
 
-- `ipAddressPools`：可选，通过 name 筛选地址池，如 `ipAddressPools` 和 `ipAddressPoolSelectors` 同时未指定，则作用于所有地址池。
+- `ipAddressPools`: optional, filter IP pools by name, if `ipAddressPools` and `ipAddressPoolSelectors` are not specified at the same time, it will be applied to all IP pools.
 
-- `ipAddressPoolSelectors`：可选，通过 labels 筛选地址池，如 `ipAddressPools` 和 `ipAddressPoolSelectors` 同时未指定，则作用于所有地址池。
+- `ipAddressPoolSelectors`: optional, filter IP pools through labels, if `ipAddressPools` and `ipAddressPoolSelectors` are not specified at the same time, it will act on all IP pools.
 
-- `nodeSelectors`：可选，用于筛选哪些节点作为 `loadBalancerIP` 的下一跳，默认所有节点。
+- `nodeSelectors`: Optional, used to filter which nodes are used as the next hop of `loadBalancerIP`, default to all nodes.
 
-- 创建`LoadBalancer Service`
+- Create `LoadBalancerService`
 
-    ```yaml
-    apiVersion: v1
-    kind: Service
-    metadata:
-      name: metallb1-cluster
-      labels:
-        name: metallb
-          #annotations:
-          #metallb.universe.tf/address-pool: lan
-    spec:
-      type: LoadBalancer
-      allocateLoadBalancerNodePorts: false
-      ports:
-      - port: 18081
-        targetPort: 8080
-        protocol: TCP
-      selector:
-        app: metallb-cluster
-    ```
+     ```yaml
+     apiVersion: v1
+     kind: Service
+     metadata:
+       name: metallb1-cluster
+       labels:
+         name: metallb
+           #annotations:
+           #metallb.universe.tf/address-pool: lan
+     spec:
+       type: LoadBalancer
+       allocateLoadBalancerNodePorts: false
+       ports:
+       - port: 18081
+         targetPort: 8080
+         protocol: TCP
+       selector:
+         app: metallb-cluster
+     ```
 
-    只需要指定 `spec.type=LoadBalancer`，这样 `Metallb` 就会自然接管此 `Service` 的生命周期。
+     Just specify `spec.type=LoadBalancer`, so that `Metallb` will naturally take over the lifecycle of this `Service`.
 
-    !!! note
+     !!! note
 
-        如果想让 Service 从指定的地址池中分配地址，通过 `annotations: metallb.universe.tf/address-pool: <pool-name>` 指定。或者通过 `service.spec.loadBalancerIP` 字段指定 IP（需要保证存在于一个池中，不推荐这种方式）。
-        如果存在多种负载均衡器，可通过 `service.spec.loadBalancerClass` 字段指定。在部署 `Metallb` 时，可通过 `--lb-class` flag 进行配置。
+         If you want the Service to allocate addresses from the specified IP pool, specify through `annotations: metallb.universe.tf/address-pool: <pool-name>`. Or specify the IP through the `service.spec.loadBalancerIP` field (need to ensure that it exists in a pool, this method is not recommended).
+         If there are multiple load balancers, they can be specified through the `service.spec.loadBalancerClass` field. When deploying `Metalb`, it can be configured by `--lb-class` flag.
 
-### 负载均衡性
+### Load Balancing
 
-- 当 `Service.spec.externalTrafficPolicy=cluster`
+- When `Service.spec.externalTrafficPolicy=cluster`
 
-    这种模式下，具有良好的负载均衡性，但流量可能经历多跳，这会隐藏客户端源 IP。
+     In this mode, it has good load balancing, but the traffic may go through multiple hops, which will hide the source IP of the client.
 
-    ```none
-                                      ______________________________________________________________________________
-                                    |                       -> kube-proxy(SNAT) -> pod A                          |
-                                    |                      |                                                      |
-    client -> loadBalancerIP:port -> | -> node A（Leader） ->                                                       |
-                                    |                      |                                                      ｜
-                                    |                       -> kube-proxy(SNAT) -> node B -> kube-proxy -> pod B  ｜
-                                      ------------------------------------------------------------------------------
-    ```
+     ```none
+                                       ______________________________________________________________________________
+                                     | -> kube-proxy(SNAT) -> pod A |
+                                     | | |
+     client -> loadBalancerIP:port -> | -> node A (Leader) -> |
+                                     | | ｜
+                                     | -> kube-proxy(SNAT) -> node B -> kube-proxy -> pod B ｜
+                                       -------------------------------------------------- ----------------------------
+     ```
 
-- 当 `Service.spec.externalTrafficPolicy=local`
+- When `Service.spec.externalTrafficPolicy=local`
 
-    这种模式下，会保留客户端源IP，但负载均衡性较差，流量会一直到到某一个后段Pod.
+     In this mode, the source IP of the client will be reserved, but the load balancing is poor, and the traffic will go to a certain backend Pod.
 
-    ```none
-                                      __________________________________________________________________________________________
-                                    |                       -> kube-proxy -> pod A (后段Pod在本节点)                            |
-                                    |                      |                                                                  |
-    client -> loadBalancerIP:port -> | -> node A（Leader） ->                                                                   |
-                                    |                      |                                                                  ｜
-                                    |                       -> kube-proxy -> node B -> kube-proxy -> pod B (后端Pod在不同节点)  ｜
-                                      ------------------------------------------------------------------------——————————————————
-    ```
+     ```none
+                                       __________________________________________________________________________________________
+                                     | -> kube-proxy -> pod A (the backend Pod is on this node) |
+                                     | | |
+     client -> loadBalancerIP:port -> | -> node A (Leader) -> |
+                                     | | ｜
+                                     | -> kube-proxy -> node B -> kube-proxy -> pod B (the backend Pod is on a different node) ｜
+                                       -------------------------------------------------- -------------------------------------------------------
+     ```
 
 ## Metallb BGP Mode(L3)
 
-`Layer2` 模式局限在一个二层网络中，流向 Service 的流量都会先转发到某一个特定的节点，这并不算真正意义上的负载均衡。
-BGP 模式不局限于一个二层网络，集群中每个节点都会跟 BGP Router 建立 BGP 会话，宣告 Service 的 `ExternalIP` 的下一跳为集群节点本身。
-这样外部流量就可以通过 BGP Router 接入到集群内部，BGP Router 每次接收到目的是 `LoadBalancer` IP 地址的新流量时，它都会创建一个到节点的新连接。
-但选择哪一个节点，每个路由器厂商都有一个特定的算法来实现。所以从这个角度来看，这具有良好的负载均衡性。
+The `Layer2` mode is limited to a two-layer network, and the traffic flowing to the Service will be forwarded to a specific node first, which is not a real load balancing.
+The BGP mode is not limited to a Layer 2 network. Each node in the cluster will establish a BGP session with the BGP Router, and declare that the next hop of the `ExternalIP` of the Service is the cluster node itself.
+In this way, external traffic can be connected to the cluster through the BGP Router, and every time the BGP Router receives new traffic destined for the `LoadBalancer` IP address, it will create a new connection to the node.
+But which node to choose, each router manufacturer has a specific algorithm to achieve. So from that point of view, this has good load balancing.
 
-### 使用
+### use
 
-- 创建 `ippool`
+- create `ippool`
 
-    ```yaml
-    apiVersion: metallb.io/v1beta1
-    kind: IPAddressPool
-    metadata:
-      name: bgp-pool
-      namespace: metallb-system
-      labels:
-        ipaddresspool: demo
-    spec:
-      addresses:
-      - 192.168.10.0/24
-      autoAssign: true
-      avoidBuggyIPs: false
-    ```
+     ```yaml
+     apiVersion: metallb.io/v1beta1
+     kind: IPAddressPool
+     metadata:
+       name: bgp-pool
+       namespace: metallb-system
+       labels:
+         ipaddresspool: demo
+     spec:
+       addresses:
+       - 192.168.10.0/24
+       autoAssign: true
+       avoidBuggyIPs: false
+     ```
 
-- 配置 `LoadBalancerIP` 通告规则 (L3)
+- Configure `LoadBalancerIP` advertisement rule (L3)
 
-    !!! note
+     !!! note
 
-        BGP 模式需要硬件支持运行 BGP 协议。若无，可使用如 `frr`、`bird` 等软件代替。
+         BGP mode requires hardware support to run the BGP protocol. If not, software such as `frr`, `bird` can be used instead.
 
-    推荐使用 `frr` 进行安装:
+     It is recommended to use `frr` for installation:
 
-    ```shell
-    # ubuntu
-    apt install frr
-    # centos
-    yum install frr
-    ```
+     ```shell
+     #ubuntu
+     apt install frr
+     #centos
+     yum install frr
+     ```
 
-    `frr` 配置 `BGP`：
+     `frr` configures `BGP`:
 
-    ```shell
-    router bgp 7675  # Bgp as number
-    bgp router-id 172.16.1.1  # route-id 常常是接口IP
-    no bgp ebgp-requires-policy # 关闭 ebpf filter !!!
-    neighbor 172.16.1.11 remote-as 7776  # 配置 ebgp -> neighbor 1, 172.16.1.11 为集群一节点
-    neighbor 172.16.1.11 description master1 # description
-    neighbor 172.16.2.21 remote-as 7776  # 节点 2
-    neighbor 172.16.2.21 description woker1 
-    ```
+     ```shell
+     router bgp 7675 # Bgp as number
+     bgp router-id 172.16.1.1 # route-id is usually the interface IP
+     no bgp ebgp-requires-policy # close ebpf filter !!!
+     neighbor 172.16.1.11 remote-as 7776 # Configure ebgp -> neighbor 1, 172.16.1.11 as a cluster node
+     neighbor 172.16.1.11 description master1 # description
+     neighbor 172.16.2.21 remote-as 7776 # node 2
+     neighbor 172.16.2.21 description woker1
+     ```
 
-    `Metallb` 配置：
+     `Metalb` configuration:
 
-- 配置 `BGPAdvertisement`
+- Configure `BGPAdvertisement`
 
-    此 CRD 主要用于指定需要通过 BGP 宣告的地址池，同 L2 模式，可通过池名称或者 `labelSelector`筛选。同时可配置BGP一些属性：
+     This CRD is mainly used to specify the IP pool that needs to be announced through BGP. Like the L2 mode, it can be filtered by the pool name or `labelSelector`. At the same time, some attributes of BGP can be configured:
 
-    ```yaml
-    apiVersion: metallb.io/v1beta1
-    kind: BGPAdvertisement
-    metadata:
-      name: local
-      namespace: metallb-system
-    spec:
-      ipAddressPools:
-      - bgp-pool
-      aggregationLength: 32
-    ```
+     ```yaml
+     apiVersion: metallb.io/v1beta1
+     kind: BGPAdvertisement
+     metadata:
+       name: local
+       namespace: metallb-system
+     spec:
+       ipAddressPools:
+       -bgp-pool
+       aggregationLength: 32
+     ```
 
-    - `aggregationLength`：路由后缀聚合长度，默认为 32，意味这 BGP 通告的路由的掩码为 32，值调小可聚合路由条数
-    - `aggregationLengthV6`：同上，用于 ipv6，默认为 128
-    - `ipAddressPools`：[]string，选择需要 BGP 通告的地址池
-    - `ipAddressPoolSelectors`：通过 label 筛选地址池
-    - `nodeSelectors`：通过 node label 筛选 `loadBalancerIP` 的下一跳节点，默认为全部节点
-    - `peers`：[]string，`BGPPeer` 对象的名称，用于声明此 `BGPAdvertisement` 作用于哪些 BGP 会话
-    - `communities`：参考 BGP communities，可以直接配置，也可以指定 communities CRD 的名称
+     - `aggregationLength`: route suffix aggregation length, the default is 32, which means that the mask of the route advertised by BGP is 32, the value can be reduced to aggregate the number of routes
+     - `aggregationLengthV6`: Same as above, for ipv6, default is 128
+     - `ipAddressPools`: []string, select the IP pools that need to be advertised by BGP
+     - `ipAddressPoolSelectors`: filter IP pools by label
+     - `nodeSelectors`: Filter the next hop nodes of `loadBalancerIP` by node label, default is all nodes
+     - `peers`: []string, the name of a `BGPPeer` object declaring which BGP sessions this `BGPAdvertisement` applies to
+     - `communities`: Refer to BGP communities, you can configure it directly, or specify the name of the communities CRD
 
-- 配置 BGP Peer
+- Configure BGP Peers
 
-    BGP Peer 用于配置 BGP 会话的配置，包括对端 BGP AS 及 IP 等。
+     BGP Peer is used to configure BGP session configuration, including peer BGP AS and IP, etc.
 
-    ```yaml
-    apiVersion: metallb.io/v1beta2
-    kind: BGPPeer
-    metadata:
-      name: test
-      namespace: metallb-system
-    spec:
-      myASN: 7776
-      peerASN: 7675
-      peerAddress: 172.16.1.1
-      routerID: 172.16.1.11
-    ```
+     ```yaml
+     apiVersion: metallb.io/v1beta2
+     kind: BGPPeer
+     metadata:
+       name: test
+       namespace: metallb-system
+     spec:
+       myASN: 7776
+       peerASN: 7675
+       peerAddress: 172.16.1.1
+       routerID: 172.16.1.11
+     ```
 
-    - `myASN`：本端 ASN，范围为 `1-64511(public AS)`、`64512-65535(private AS)`
-    - `peerASN`：对端 ASN，范围同上。如果二者相等，则为 `iBGP`；否则为 `eBGP`
-    - `peerAddress`：对端路由器 IP 地址
-    - `sourceAddress`：指定本段建立 BGP 会话的地址，默认从本节点网卡自动选择
-    - `nodeSelectors`：根据 node label 指定哪些节点需要跟 BGP Router 建立会话
+     - `myASN`: local ASN, the range is `1-64511(public AS)`, `64512-65535(private AS)`
+     - `peerASN`: Peer ASN, the scope is the same as above. if both are equal, then `iBGP`; otherwise, `eBGP`
+     - `peerAddress`: peer router IP address
+     - `sourceAddress`: Specify the address for establishing a BGP session in this segment, which is automatically selected from the network card of this node by default
+     - `nodeSelectors`: Specify which nodes need to establish a session with the BGP Router according to the node label
 
-- 创建 `LoadBalancer` 类型的 Service
+- Create a Service of type `LoadBalancer`
 
-    ```shell
-    $ kubectl get svc | grep LoadBalancer
-    metallb-demo   LoadBalancer   172.31.63.207   10.254.254.1   18081:30531/TCP   3h38m
-    ```
+     ```shell
+     $ kubectl get svc | grep LoadBalancer
+     metallb-demo LoadBalancer 172.31.63.207 10.254.254.1 18081:30531/TCP 3h38m
+     ```
 
-### 验证
+### Verify
 
-在 BGP Router 上可以看到通过 BGP 学习到的路由：
+You can see the routes learned through BGP on the BGP Router:
 
 ```shell
 $ vtysh
@@ -359,21 +359,21 @@ Copyright 1996-2005 Kunihiro Ishiguro, et al.
 
 router# show ip route
 Codes: K - kernel route, C - connected, S - static, R - RIP,
-       O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,
-       T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,
-       f - OpenFabric,
-       > - selected route, * - FIB route, q - queued, r - rejected, b - backup
-       t - trapped, o - offload failure
+        O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,
+        T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,
+        f - OpenFabric,
+        > - selected route, * - FIB route, q - queued, r - rejected, b - backup
+        t-trapped, o-offload failure
 
 K>* 0.0.0.0/0 [0/100] via 10.0.2.2, eth0, src 10.0.2.15, 03:52:17
 C>* 10.0.2.0/24 [0/100] is directly connected, eth0, 03:52:17
 K>* 10.0.2.2/32 [0/100] is directly connected, eth0, 03:52:17
 B>* 10.254.254.1/32 [20/0] via 172.16.1.11, eth1, weight 1, 03:32:16
-  *                        via 172.16.2.21, eth2, weight 1, 03:32:16
+   * via 172.16.2.21, eth2, weight 1, 03:32:16
 C>* 172.16.1.0/24 is directly connected, eth1, 03:52:17
 ```
 
-可以看到通往 `LoadBalancerIP` 的下一跳分别是集群节点 1 和节点 2，在 BGP Router 执行连通性测试：
+You can see that the next hops to `LoadBalancerIP` are cluster node 1 and node 2 respectively, and perform a connectivity test on the BGP Router:
 
 ```shell
 root@router:~# curl 10.254.254.1:18081
@@ -382,10 +382,10 @@ root@router:~# curl 10.254.254.1:18081
 
 ### `FRR Mode`
 
-目前 `Metallb` BGP模式有两种 Backend 实现：`Native BGP` 和 `FRR BGP`。
+Currently there are two Backend implementations of `Metallb` BGP mode: `Native BGP` and `FRR BGP`.
 
-`FRR BGP` 目前是实验阶段，对比 `Native BGP`，`FRR BGP` 主要有以下几个优点：
+`FRR BGP` is currently in the experimental stage. Compared with `Native BGP`, `FRR BGP` has the following advantages:
 
-- `BFD` 协议支持（提高故障反应能力，缩短故障时间）
-- 支持 `IPV6 BGP`
-- 支持 `ECMP`
+- `BFD` protocol support (improves fault response capability, shortens fault time)
+- Support `IPV6 BGP`
+- Support `ECMP`

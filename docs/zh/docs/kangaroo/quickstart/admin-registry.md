@@ -8,7 +8,7 @@ hide:
 在 DCE 5.0 中有托管 Harbor（在 DCE 上自建的 Harbor）和仓库集成（集成外部的 Habor 或 Docker Registry）两种镜像仓库管理方式：
 
 - [托管 Harbor](../hosted.md)（建议）
-- [仓库集成](../integrate.md)
+- [仓库集成](../integrate/integrate.md)
 
 DCE 5.0 主推 Harbor 作为镜像仓库提供镜像服务。
 
@@ -87,7 +87,7 @@ DCE 5.0 主推 Harbor 作为镜像仓库提供镜像服务。
 
     ![镜像选择](../images/admin04.png)
 
-!!! tip
+    !!! tip
 
-    1. 接入的 Harbor 可按照上述方式达到同样的使用效果。
-​    2. Docker Registry 本身只有公开镜像，因此接入后镜像将公开给所有命名空间使用。
+        1. 接入的 Harbor 可按照上述方式达到同样的使用效果。
+        1. Docker Registry 本身只有公开镜像，因此接入后镜像将公开给所有命名空间使用。

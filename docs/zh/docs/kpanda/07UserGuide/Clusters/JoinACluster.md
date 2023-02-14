@@ -2,11 +2,11 @@
 
 通过接入集群操作，能够对众多云服务平台集群和本地私有物理集群进行统一纳管，形成统一治理平台，有效避免了被厂商锁定风险，助力企业业务安全上云。
 
-容器管理平台支持接入多种主流的容器集群：
+容器管理模块支持接入多种主流的容器集群：
 
 - DaoCloud KubeSpray
 - DaoCloud ClusterAPI
-- DaoCloud DCE4
+- DaoCloud Enterprise 4.0
 - Redhat Openshift
 - SUSE Rancher
 - VMware Tanzu
@@ -18,7 +18,7 @@
 
 ## 前提条件
 
-- 准备一个待接入的集群，确保容器管理集群和待接入集群之间网络通畅。
+- 准备一个待接入的集群，确保容器管理集群和待接入集群之间网络通畅，并且集群的 Kubernetes 版本 1.22+。
 - 当前操作用户应具有 [`NS Edit`](../Permissions/PermissionBrief.md) 或更高权限。
 
 ## 填写基本配置

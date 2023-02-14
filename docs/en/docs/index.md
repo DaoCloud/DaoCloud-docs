@@ -20,12 +20,12 @@ DCE 5.0 natively supports the DevOps development and operation and maintenance m
 - :material-monitor-dashboard: **Observability** [One-stop graphical dashboard](insight/03ProductBrief/WhatisInsight.md)
 - :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](amamba/01ProductBrief/WhatisAmamba.md)
 - :material-cloud-check: **Multicloud Orchestration** [Manage multi-cloud instances, workloads, policies](kairship/01product/whatiskairship.md)
-- :material-engine: **Microservice Engine** [Microservice registry and gateway](skoala/select-workspace.md)
+- :material-engine: **Microservice Engine** [Microservice registry and gateway](skoala/intro/features.md)
 - :material-table-refresh: **Service Mesh** [Non-intrusive service governance](mspider/01Intro/WhatismSpider.md)
 - :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](middleware/midware.md)
 - :material-warehouse: **Container Registry** [Integrate and manage registries](kangaroo/intro.md)
 - :material-dot-net: **Network** [Multi-CNI fusion solution](network/intro/what-is-net.md)
-- :floppy_disk: **Storage** [Comprehensive solution for containerized storage](hwameistor/intro/what.md)
+- :floppy_disk: **Storage** [Comprehensive solution for containerized storage](storage/intro/what.md)
 
 </div>
 
@@ -49,7 +49,7 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
 
     **Benefits**: This solution has selected middlewares with a consistent UI to manage, with the help of HwameiStor capabilities designed for stateful applications, providing features of multi-tenant, deployment, observation, backup, operation and maintenance of the whole lifecycle of middleware management capabilities.
 
-    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [HwameiStor](hwameistor/intro/what.md), [Middleware](middleware/midware.md)
+    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [HwameiStor](storage/intro/what.md), [Middleware](middleware/midware.md)
 
     ![data](images/02data.jpg)
 
@@ -116,7 +116,7 @@ DCE 5.0 features with cutting-edge capabilities as a cloud-native operating syst
 
     All clusters and workloads are managed through Clusterpedia. This solution is compatible with joining standard Kubernetes clusters, breaking through the performance bottleneck of Kubernetes API and supporting thousands of users using it at the same time.
 
-    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](community/kubean.md), [Network](network/intro/what-is-net.md), [HwameiStor](hwameistor/intro/what.md)
+    **Modules**: [Container Manager](kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](community/kubean.md), [Network](network/intro/what-is-net.md), [HwameiStor](storage/intro/what.md)
 
 === "Xinchuang Heterogeneous"
 

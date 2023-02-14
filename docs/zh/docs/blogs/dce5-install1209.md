@@ -13,13 +13,15 @@ last_updated:
 
 本文完成了从 0 到 1 的 DCE 5.0 社区版安装，包含了 K8s 集群、依赖项、网络、存储等细节及更多注意事项。
 
+> 现阶段版本迭代较快，本文的安装方式可能与最新版有所差异，请以产品文档的[安装说明](../install/intro.md)为准。
+
 ## 集群规划
 
 计划使用 3 台 UCloud 的 VM，配置均为 8 核 16G。
 
-| 角色 | 主机名 | 操作系统 | IP | 配置 |
-| --- | --- | --- | --- | --- |
-| master | master-k8s-com | CentOS 7.9 | 10.23.245.63 | 8 核 16G 300GB |
+| 角色   | 主机名         | 操作系统   | IP            | 配置           |
+| ------ | -------------- | ---------- | ------------- | -------------- |
+| master | master-k8s-com | CentOS 7.9 | 10.23.245.63  | 8 核 16G 300GB |
 | node01 | node01-k8s-com | CentOS 7.9 | 10.23.104.173 | 8 核 16G 300GB |
 | node02 | node02-k8s-com | CentOS 7.9 | 10.23.112.244 | 8 核 16G 300GB |
 
@@ -142,7 +144,7 @@ last_updated:
 
     # 更新配置文件内容
     sed -i 's/SystemdCgroup\ =\ false/SystemdCgroup\ =\ true/' /etc/containerd/config.toml
-    sed 's/k8s.gcr.io\/pause/registry.cn-hangzhou.aliyuncs.com\/google_containers\/pause/g' /etc/containerd/config.toml
+    sed -i 's/k8s.gcr.io\/pause/registry.cn-hangzhou.aliyuncs.com\/google_containers\/pause/g' /etc/containerd/config.toml
     ```
 
 1. 启动服务配置
@@ -181,10 +183,12 @@ last_updated:
 1. 安装 Kubernetes 组件
 
     ```bash linenums="1"
-    echo K8sVersion=1.24.8
-    sudo yum install -y kubelet-1.24.8-$K8sVersion kubeadm-1.24.8-$K8sVersion
-    sudo yum install -y kubectl-1.24.8-$K8sVersion  # 可以仅在 Master 节点安装
+    export K8sVersion=1.24.8
+    sudo yum install -y kubelet-$K8sVersion kubeadm-$K8sVersion
+    sudo yum install -y kubectl-$K8sVersion  # (1)
     ```
+
+    1. 可以仅在 Master 节点安装
 
 1. 启动 `kubelet`系统服务
 
@@ -1559,7 +1563,7 @@ chmod 700 get_helm.sh
     使用镜像仓库安装，要切换镜像仓库的镜像，请使用 --set 更改这两个参数值：
     `global.k8sImageRegistry` 和 `global.hwameistorImageRegistry`
 
-    > 注意默认的镜像仓库 quay.io 和 ghcr.io。如果无法访问，可尝试使用 DaoCloud 提供的镜像源 quay.m.daocloud.io 和 ghcr.m.daocloud.io
+    > 如果无法访问默认的镜像仓库 `quay.io` 和 `ghcr.io`，请尝试使用 DaoCloud 提供的镜像源 `quay.m.daocloud.io` 和 `ghcr.m.daocloud.io`。
 
     ```bash linenums="1"
     helm install hwameistor ./hwameistor \
@@ -1670,7 +1674,7 @@ chmod 700 get_helm.sh
 
 ??? note "点击查看 metrics-server.yaml 内容"
 
-    ```yaml
+    ```yaml title="metrics-server.yaml"
     apiVersion: v1
     kind: ServiceAccount
     metadata:
@@ -1882,7 +1886,7 @@ chmod 700 get_helm.sh
     kubectl top node
     ```
 
-    输出类似于；
+    输出类似于：
 
     ```none
     NAME               CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
@@ -1928,20 +1932,23 @@ curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCl
 chmod +x dce5-installer
 ```
 
-> 如果 `proxy-qiniu-download-public.daocloud.io` 链接失效，可使用 `qiniu-download-public.daocloud.io`
+> 如果 `proxy-qiniu-download-public.daocloud.io` 链接失效，可使用 `qiniu-download-public.daocloud.io`。
 
 ### 设置配置文件 [可选]
 
 将以下配置文件内容保存为 `clusterConfig.yaml`，如果使用 `NodePort` 的方式安装则不需要指定该配置文件。
 
-```yaml linenums="1"
+```yaml title="clusterConfig.yaml"
 apiVersion: provision.daocloud.io/v1alpha1
 kind: ClusterConfig
 spec:
  loadBalancer: metallb
- istioGatewayVip: 10.6.229.10/32  # 这是 Istio gateway 的 VIP，也是 DCE 5.0 控制台的浏览器访问 IP
- insightVip: 10.6.229.11/32  # 这是全局服务集群的 Insight-Server 采集子集群监控指标的网络路径用的 VIP
+ istioGatewayVip: 10.6.229.10/32  # (1)
+ insightVip: 10.6.229.11/32  # (2)
 ```
+
+1. 这是 Istio gateway 的 VIP，也是 DCE 5.0 控制台的浏览器访问 IP
+2. 这是全局服务集群的 Insight-Server 采集子集群监控指标的网络路径用的 VIP
 
 > 如果使用配置文件，注意需要事先安装 `MetaLB`，这一部分需要自行完成。
 
@@ -2000,7 +2007,7 @@ spec:
 1. 使用 vim 命令编辑并保存
 
     ```bash
-    $ vim ${GHIPPO_VALUES_BAK}
+    vim ${GHIPPO_VALUES_BAK}
     ```
 
     只需修改一行：
@@ -2010,8 +2017,10 @@ spec:
     ...
     global:
       ...
-      reverseProxy: ${DCE_PROXY} # 只需要修改这一行
+      reverseProxy: ${DCE_PROXY} # (1)
     ```
+
+    1. 只需要修改这一行
 
     注意这里需要把 `${DCE_PROXY}` 替换为实际访问地址；需要配置完整的路径，包含 https 或 http、IP 或域名以及端口；如果是默认 80/443，则可以省略。
 

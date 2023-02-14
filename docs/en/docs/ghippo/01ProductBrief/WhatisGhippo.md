@@ -1,8 +1,8 @@
 # What is Global Management (Ghippo)？
 
-Global Management (Ghippo) is a comprehensive user-centered service, including user and access control, enterprise space, audit log, platform configuration and other basic modules.
+Global Management (Ghippo) is a comprehensive user-centered service, including access control, enterprise space, audit log, platform configuration and other basic modules.
 
-- [User and access control](../04UserGuide/01UserandAccess/global.md)：Help users manage access to resources. Users are allowed to create, manage, and delete users/user groups, and flexibly configure user/user group permissions to divide users' functional rights.
+- [Access control](../04UserGuide/01UserandAccess/global.md)：Help users manage access to resources. Users are allowed to create, manage, and delete users/groups, and flexibly configure user/group permissions to divide users' functional rights.
 
 - [Enterprise space](../04UserGuide/02Workspace/ws-folder.md)：A resource isolation unit with hierarchical structure and capability of access control. Users are allowed to set hierarchical structure depending on the enterprise development environment, department structure, etc., and control who has access to which resources.
 
@@ -18,7 +18,7 @@ Global Management (Ghippo) is a comprehensive user-centered service, including u
 
 - Combination of users and tenants
 
-    Flat management of users and user groups as well as hierarchical tenant (workspace) collaboration enable multi-dimensional and multi-scenario access control based on the platform and resource-based function division.
+    Flat management of users and groups as well as hierarchical tenant (workspace) collaboration enable multi-dimensional and multi-scenario access control based on the platform and resource-based function division.
 
 - Personalization
 
@@ -32,7 +32,7 @@ Global Management (Ghippo) is a comprehensive user-centered service, including u
 
 1. Log in to the DCE platform using the DCE platform administrator (Admin) or a user with Admin privileges
 
-2. Go to`User and access control`.  [Create users and authorize](../04UserGuide/01UserandAccess/User.md), and then [create user groups and authorize](../04UserGuide/01UserandAccess/Group.md), and eventually [create identity provider](../04UserGuide/01UserandAccess/idprovider.md).
+2. Go to`Access control`.  [Create users and authorize](../04UserGuide/01UserandAccess/User.md), and then [create groups and authorize](../04UserGuide/01UserandAccess/Group.md), and eventually [create identity provider](../04UserGuide/01UserandAccess/idprovider.md).
 
 3. Go to`Workspace`. [Create hierarchy (enterprise hierarchy relationship)](../04UserGuide/02Workspace/ws-folder.md), and then [create workspace (tenant)](../04UserGuide/02Workspace/Workspaces.md).
 

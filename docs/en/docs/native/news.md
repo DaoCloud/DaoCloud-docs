@@ -2,9 +2,105 @@
 
 This page lists the more popular news, events, activities, etc. in the cloud native community by month for your one-stop reference and retrieval.
 
-> We will maintain regularly to ensure the validity of all links and the timeliness of news
+> We will maintain regularly to ensure the validity of all links and the timeliness of news.
+
+### 2023-05
+
+- [May 8-9 cdCon + GitOpsCon 2023 Call for Topics (2.10 deadline)](https://events.linuxfoundation.org/cdcon-gitopscon/program/cfp/)
+  
+    cdCon + GitOpsCon 2023 is hosted by the CD Foundation and the CNCF Foundation and will be held in Vancouver from 5.8-5.9.
+    Topics may include: Getting Started with GitOps, Scaling and Managing GitOps, Lessons Learned from Production Deployments, Advanced Delivery Technologies, Open Source GitOps and CD Technology Practices in Cloud-Native Environments, Supply Chain Security, and more.
+
+### 2023-04
+
+- [April 15-16 Global Open Source Technology Summit GOTC 2023 will be held in April in Shanghai, and the call for proposal is now open](https://gotc2023.oschina.net/)
+  
+    The Global Open Source Technology Summit is co-sponsored by Shanghai Pudong Software Park, Linux Foundation Asia Pacific, and Open Source China. The conference focuses on hot topics such as cloud native, metaverse, eBPF, Web3.0, open source governance, open source education and training, front-end, infrastructure software, AI, IoT, etc.
+
+- [April 15 2023 Cloud Native Community Observability Summit to be Held, Instructor and Sponsor Recruitment Underway (3.10 Deadline)](https://mp.weixin.qq.com/s/erf33B2--kUgLg1D730tOg)
+  
+    The Cloud Native Community will hold an Observability Summit in Beijing on Saturday, April 15, 2023. Topics will focus on open source projects and applications in observability-related areas, including but not limited to: metrics monitoring, distributed tracking, log collection, technology innovation, application practices, etc.
+
+### 2023-02
+
+- [February 8 KubeCon + CloudNativeCon Europe 2023 Conference Agenda Released](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/program/schedule/)
+  
+    KubeCon + CloudNativeCon Europe 2023 will be held simultaneously offline and online from 4.18-21.
+    There will be 303 events, keynotes, lightning talks and breakout sessions, 91 of which will be led by CNCF project maintainers.
+    Session topics included compliance, Pod security, environmental sustainability, hybrid/multi-cloud, CNCF projects, and more.
+
+- [February 6 IDC Officially Launches "China Government Cloud Solution Vendor Assessment, 2023"](https://mp.weixin.qq.com/s/N2DbhxL81M2AUYcPiSy0GQ)
+  
+    The China Government Cloud Solution Vendor Assessment, 2023 aims to help the industry gain a comprehensive understanding of the latest developments in the government cloud market and related technologies through a comprehensive assessment of core government cloud solution providers in the domestic market and interviews with a large number of government customers.
+    The assessment results will be released on 6.31 and presented in the form of a report, including assessment quadrant charts, IDC market observations, recommendations for technology buyers, introduction of selected vendors, and assessment criteria.
+
+- [February 6 China Academy of Information and Communications Technology (CAIC) Assessment of Trusted Cloud - Cloud Native Security Category in the First Half of 2023 Officially Launched (3.10 Assessment Registration Deadline)](https://mp.weixin.qq.com/s/RQfZt4XnN9f1Ckluh-NO_w)
+  
+    The Trusted Cloud Container Class - Cloud Native Security Class assessment system consists of 6 aspects.
+    Cloud Native Security Maturity Assessment, Cloud Native Application Protection Platform (CNAPP) Capability Assessment, Container Platform Security Capability Assessment, Container Security Solution Assessment, Cloud Native API Security Governance Capability Assessment, and Web Application and API Protection (WAAP) Capability Assessment.
+    The assessment results will be released in June at ICT China - High-End Forum.
+
+- [February 2 China Academy of Information and Communications Technology (CAIC) Trusted Cloud-Container Class Assessment Launched in the First Half of 2023 (Registration for Assessment Closed on 3.10)](https://mp.weixin.qq.com/s/V2-v9rPWnXQ5WlN4kEnVVw)
+  
+    The Trusted Cloud Container Class Assessment System consists of five aspects: full-stack container cloud solution assessment (including three types of general-purpose containers, edge containers and hybrid multi-cloud containers), component-level container platform performance assessment, component-oriented container platform performance assessment, and container platform performance assessment.
+    component-level container platform performance assessment, large-scale container platform performance assessment for financial scenarios, container platform security capability assessment, and container security solution assessment.
+    The evaluation results will be released in June at ICT China - High-End Forum.
+
+- [February 1 CNCF Foundation to launch Kubernetes and Cloud Security (KCSA) certification in Q3](https://www.cncf.io/blog/2023/02/01/kubernetes-and-cloud-security-associate-kcsa- certification-coming-in-q3-2023/)
+  
+    The KCSA certification exam is designed to provide an entry point for individuals who wish to work in cloud-native security.
+    The exam tests candidates on their ability to develop security policies and procedures, identify assess and mitigate security risks and vulnerabilities, assist in incident response and forensic investigations, and test and monitor security systems, among other cloud-native security competencies.
+    The exam system is currently in the development phase and is expected to be generally available in advance of KubeCon North America in November.
+
+- [February 1-2 CNCF CloudNativeSecurityCon conference is coming up, agenda is now available](https://events.linuxfoundation.org/cloudnativesecuritycon-north-america/program/schedule/)
+  
+    CloudNativeSecurityCon is the first independent conference focused on cloud-native security projects and enterprise security challenges in practice.
+    The conference features 72 presentations on topics including architecture and strategy, secure software development, supply chain security, identity and access, forensics, and more.
 
 ### 2023-01
+
+- [January 22 Open Source Press Releases 2022 China Open Source Annual Report](https://mp.weixin.qq.com/s/zlxVme_0hj7RHdDyb3gULQ)
+  
+    The [2022 China Open Source Annual Report](https://kaiyuanshe.feishu.cn/wiki/wikcnnJ8b90pOoDRFzXngfRslkd) consists of four parts: a chronology of events, a data chapter, a commercialization chapter, and a questionnaire chapter.
+    In the GitHub Data Top 30 list, China's top open source projects stand out in front-end, database, cloud-native, and artificial intelligence.
+    In addition, in terms of globalizing open source software business, building a highly active global open source community, fully participating in international open source organizations such as the Open Source Foundation, globalizing services, and globalizing sales are all possible paths to implement.
+
+- [January 11 2022 CNCF and Linux Foundation Open Source Project Rankings Announced](https://www.cncf.io/blog/2023/01/11/a-look-at-the-2022-velocity-of-cncf-linux-foundation-and- top-30-open-source-projects/)
+  
+    Among CNCF open source projects, Kubernetes has the most contributors, OpenTelemetry is in second place, and Backstage, which did not make the cut a year ago, is in fourth place this year.
+    In addition, GitOps project Argo, Service Grid technology Envoy, Cilium and Istio also ranked high.
+    The [2022 CNCF Project Rankings](https://docs.google.com/spreadsheets/d/1NifFdE45BlscO6j7vlDspccQ-i9Ksgip6yx2bmhmCCs/edit#gid=976519966) are shown below (bubble area is proportional to the number of authors) and the number of pr and issue on the y-axis, and the number of commits on the x-axis).
+
+    ![CNCF](./images/CNCF-Projects.png)
+
+- [January 9 China ICT Academy released 2022 China Serverless User Survey Report](https://mp.weixin.qq.com/s/qpWr5o3GTynHXhexHidx3Q)
+  
+    The survey report is divided into five parts: basic information, current situation of function-as-a-service application, current situation of Serverless container service application, current situation of Serverless application hosting service application, summary and outlook.
+    Among them, 80% of users have started to adopt Serverless, but the adoption rate of production environment needs to be further improved.
+    Serverless still has a long way to go from large-scale promotion, and needs to be continuously optimized in terms of transformation cost, user habits, and startup performance.
+
+- [On January 9,the "Application Modernization Construction Guide" led by ICT Academy and compiled by "DaoCloud" was officially released](https://mp.weixin.qq.com/s/rfUZjEx452640_BTRG_nJg).
+  
+    The "Application Modernization Construction Guide" systematically composes the development history of application modernization, gives a clear definition of application modernization, breaks down the "Five Modernization and Two Guidelines" construction methodology, and presents a complete application modernization construction path.
+    "DaoCloud's application modernization experts mainly contributed to the application modernization construction ideas, application architecture modernization, and application modernization construction path.
+
+- [January 9 Cloud Native Industry Alliance Annual Conference to be Held Online](https://mp.weixin.qq.com/s/cyVz5LC4JJ7ImRuqtOYqGA)
+  
+    The Cloud Native Industry Alliance (CNIA) is a sub-consortium of the Cloud Computing Open Source Industry Alliance, which is jointly formed by top cloud native vendors and typical users of cloud native in the industry.
+    At the conference, 3 major reports will be released: "Application Modernization Construction Guide", "2022 China Cloud Native Security User Survey Report", "2022 Serverless User Survey Report", and 5 major cloud native field reports.
+    The conference will also feature reviews of 5 major cloud-native areas: storage, security, big data, hybrid, and middleware.
+
+- [January 6 "Hybrid Cloud Industry Panorama (2022)" collection officially launched (deadline on January 31)](https://mp.weixin.qq.com/s/VtARdGKHTSn0hkIdIQ_Iag)
+  
+    China Academy of Information and Communications Technology (CAICT) and the Hybrid Cloud Industry Alliance (HCI) launched the preparation of the "Hybrid Cloud Industry Panorama (2022)".
+    The Hybrid Cloud Industry Panorama (2022) is based on the Hybrid Cloud Industry Panorama (2021) and will update and improve the technical architecture of the panorama based on the development of the hybrid cloud industry and technology integration.
+    Vendors that pass the review will be included in the panorama and released at Hybrid Cloud 2023.
+
+- [January 2 CNCF to open 2023 Technical Oversight Committee (TOC) elections](https://www.cncf.io/blog/2022/12/01/cncf-toc-elections-for-2023/)
+  
+    The TOC has one end-user appointed seat and three Management Board appointed seats open for 2023.
+    Nominations for the election will open next January, and candidates should be senior engineers within the CNCF community.
+    have the necessary qualifications and time to be involved in the TOC and be able to maintain vendor or project neutrality in discussions.
 
 - [On January 2, CNCF will start the 2023 Technical Oversight Committee (TOC) election](https://www.cncf.io/blog/2022/12/01/cncf-toc-elections-for-2023/)
   
@@ -13,6 +109,30 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      Have the necessary conditions and time to participate in TOC work, and be able to maintain vendor or project neutrality in discussions.
 
 ### 2022-12
+
+- [December 30 CNCF 2022 Annual Report Release](https://www.cncf.io/reports/cncf-annual-report-2022/)
+  
+    The CNCF 2022 Annual Report summarizes foundation trends, events, open source projects, community ecology, and other aspects.
+    Among them, in 2022, CNCF TOC accepted 35 new projects; OpenTelemetry became the second fastest growing project in CNCF ecosystem.
+    Backstage is one of the fastest growing projects, addressing pain points in the cloud-native developer experience; GitOps projects like Argo and Flux are also growing.
+
+- [The 1st Hybrid Cloud Technology Development Forum will be held online on December 29th](https://mp.weixin.qq.com/s/0ZRnEimZQrO3tHVPpiSLEg)
+  
+    The conference is organized by the China Academy of Information and Communications Technology and the China Communications Standards Association.
+    It will release the framework of "Hybrid Cloud Industry Panorama (2022)", "Hybrid Cloud User Survey Report (2022)", new hybrid cloud standards and other important results.
+    The conference will also invite representative vendors in the hybrid cloud field to share their insights on the future development of hybrid cloud, technical structure and industry issues.
+
+- [Dec 28th InfoQ 2022 China Technology Power Year-End List Released](https://mp.weixin.qq.com/s/4Mg4cJs8WSmZ-xdgkN592w)
+  
+    The list is divided into three lists: [Top 10 Open Source Emerging Projects of 2022], [Top 10 High-Value Technology Teams of 2022], and [Top 10 Cloud-Native Innovative Technologies of 2022]. KubeVela, RocketMQ, TDengine, etc. were selected as the top 10 open source emerging projects.
+
+- [December 22nd commercial software reviewer G2 released "Container Management Platform Review Report"](https://www.g2.com/categories/container-management?utf8=%E2%9C%93&selected_view=grid&segment=all#grid)
+  
+    G2 evaluated vendors and their products based on reviews on G2 and data collected from online profiles and social media platforms, resulting in the following G2 Grid.
+    The X-axis represents customer satisfaction and the Y-axis represents market share.
+    The leading container management platform products are AWS Fargate, Amazon ECS, Amazon EKS and Mirantis Kubernetes Engine.
+
+    ![G2](./images/G2.png)
 
 - [Kasten launches free cloud native learning website KubeCampus.io](https://www.kasten.io/kubernetes/resources/blog/kubecon-detroit-recap-and-introducing-kubecampus)
   
@@ -36,6 +156,14 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      The summit, scheduled for December 16th in Beijing, will focus on the successful practices of Upstream First and the working practices of the Open Source Office (OSPO).
 
      In addition, there will be discussions on topics such as cost reduction and efficiency increase, DevSecOps, open source culture, enterprise units and open source community, licensing, supply chain, SBOM, project community building, and becoming a leader in the open source world.
+
+- [Dec 14 Sadie Consulting released "2022 China Private Cloud Market Research Report"](https://img02.ma.scrmtech.com/11018/1471/resource/1671000132/%E8%B5%9B%E8%BF%AA%E9%A1%BE%E9%97%AE-2022%E4%B8%AD%E5%9B%BD%E7%A7%81%E6%9C%89%E4%BA%91%E5%B8%82%E5%9C%BA%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A.pdf)
+  
+    The report provides a comprehensive analysis of the current development status, market size, industry applications and product structure, market competition and future trends of private clouds and private cloud system platforms in China.
+    In 2021, the market size of China's private cloud system platform reaches 5.14 billion yuan, up 45.2% year-on-year.
+    Among them, the market size of container platform is 1.26 billion yuan, accounting for 24.5 % of the private cloud system platform size.
+    The 2021 private cloud system platform vendor competitiveness quadrant analysis chart is as follows.
+    ![private](./images/private.png)
 
 - [On December 14, the selection of the second "Ten Cloud Native Technology Innovations/Pioneering Practices" was officially launched](https://mp.weixin.qq.com/s/UZ_05I06VCJYN5MKLwO7IA)
 

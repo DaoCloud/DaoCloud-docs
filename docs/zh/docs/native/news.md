@@ -2,9 +2,55 @@
 
 本页按月份列出云原生社区比较热门的新闻、事件、活动等，供大家一站式查阅和检索。
 
-> 我们会定期维护，保证所有链接的有效性、新闻的时效性
+> 我们会定期维护，保证所有链接的有效性、新闻的时效性。
+
+### 2023-05
+
+- [5.8-5.9 cdCon + GitOpsCon 2023 议题征集中（2.10 截止）](https://events.linuxfoundation.org/cdcon-gitopscon/program/cfp/)
+  
+    cdCon + GitOpsCon 2023 由 CD 基金会和 CNCF 基金会主办，将于 5.8-5.9 在温哥华举行。
+    议题内容可包括：GitOps 入门、扩展和管理 GitOps、从生产部署中吸取的教训、先进的交付技术、云原生环境中的开源 GitOps 和 CD 技术实践、供应链安全等。
+
+### 2023-04
+
+- [4.15-16 全球开源技术峰会 GOTC 2023 将于 4 月 在上海举行，目前演讲议题投递通道已开放](https://gotc2023.oschina.net/)
+  
+    全球开源技术峰会由上海浦东软件园、 Linux 基金会亚太区、开源中国联合发起，会议聚焦云原生、元宇宙、eBPF、Web3.0、开源治理、开源教育培训、前端、基础软件、AI、IoT 等热门话题。
+
+- [4 月 15 日 2023 年云原生社区可观测性峰会将召开，讲师及赞助商招募进行中（3.10 截止）](https://mp.weixin.qq.com/s/erf33B2--kUgLg1D730tOg)
+  
+    云原生社区将于 2023 年 4 月 15 号（星期六）在北京举办可观性峰会。议题围绕可观测性相关领域的开源项目及应用，包括但不限于：指标监控、分布式追踪、日志收集、技术创新、应用实践等。
 
 ### 2023-02
+
+- [2.8 KubeCon + CloudNativeCon 欧洲 2023 会议议程发布](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/program/schedule/)
+  
+    KubeCon + CloudNativeCon 欧洲 2023 将于 4.18-21 线下线上同步举行。
+    本次峰会共计 303 场活动、主题演讲、闪电演讲和分组会议，其中的 91 场由 CNCF 项目的维护者主持。
+    会议主题囊括合规性、Pod 安全、环境可持续、混合云/多云、CNCF 项目等。
+
+- [2.6 IDC 正式启动《中国政务云解决方案厂商评估，2023》](https://mp.weixin.qq.com/s/N2DbhxL81M2AUYcPiSy0GQ)
+  
+    《中国政务云解决方案厂商评估，2023》旨在通过对国内市场上核心政务云解决方案提供商的综合评估以及大量政府客户的访谈，帮助行业全面了解政务云市场与相关技术的最新发展情况。
+    评估结果将在 6.31 发布，以报告形式呈现，包括评估象限图、IDC 市场观察、对技术买家的建议、入选厂商介绍、评估标准等内容。
+
+- [2.6 中国信通院 2023 年上半年可信云·云原生安全类评估正式启动（3.10 评估报名截止）](https://mp.weixin.qq.com/s/RQfZt4XnN9f1Ckluh-NO_w)
+  
+    可信云容器类·云原生安全类评估体系由 6 个方面组成：
+    云原生安全成熟度评估、云原生应用保护平台（CNAPP）能力评估、容器平台安全能力评估、容器安全解决方案评估、云原生 API 安全治理能力评估、Web 应用和 API 保护（WAAP）能力评估。
+    评估结果将于 6 月在 ICT 中国·高端论坛发布。
+
+- [2.2 中国信通院 2023 年上半年可信云·容器类评估正式启动（3.10 评估报名截止）](https://mp.weixin.qq.com/s/V2-v9rPWnXQ5WlN4kEnVVw)
+  
+    可信云容器类评估体系由 5 个方面组成：全栈容器云解决方案评估（包含通用容器、边缘容器和混合多云容器三类）、
+    组件级容器平台性能评估、面向金融场景的大规模容器平台性能评估、容器平台安全能力评估、容器安全解决方案评估。
+    本次评估结果将于 6 月在 ICT 中国·高端论坛发布。
+
+- [2.1 CNCF 基金会将在第三季度推出 Kubernetes 和云安全（KCSA）认证](https://www.cncf.io/blog/2023/02/01/kubernetes-and-cloud-security-associate-kcsa-certification-coming-in-q3-2023/)
+  
+    KCSA 认证考试旨在为希望从事云原生安全的个人提供一个切入点。
+    考试考查应试者制定安全策略和程序、识别评估并减少安全风险和漏洞、协助事件响应和取证调查、测试和监控安全系统等云原生安全能力。
+    考试系统目前处于开发阶段，预计将在 11 月北美 KubeCon 召开前普遍推出。
 
 - [2 月 1 日至 2 日 CNCF CloudNativeSecurityCon 会议即将举行，目前会议议程已发布](https://events.linuxfoundation.org/cloudnativesecuritycon-north-america/program/schedule/)
   
@@ -13,11 +59,42 @@
 
 ### 2023-01
 
+- [1.22 开源社发布《2022 中国开源年度报告》](https://mp.weixin.qq.com/s/zlxVme_0hj7RHdDyb3gULQ)
+  
+    [2022 中国开源年度报告](https://kaiyuanshe.feishu.cn/wiki/wikcnnJ8b90pOoDRFzXngfRslkd)由四部分组成，分别是大事记篇、数据篇、商业化篇和问卷篇。
+    在 GitHub 数据排名 Top30 榜单中，中国顶尖开源项目在前端、数据库、云原生、人工智能领域表现突出。
+    此外，在开源软件商业全球化方面，搭建高活跃度的全球化开源社区、充分参与开源基金会等国际开源组织、全球化服务、全球化销售等都是可实施的路径。
+
+- [1 月 11 日 2022 年 CNCF 和 Linux 基金会开源项目排名公布](https://www.cncf.io/blog/2023/01/11/a-look-at-the-2022-velocity-of-cncf-linux-foundation-and-top-30-open-source-projects/)
+  
+    在 CNCF 开源项目中，Kubernetes 拥有最多的贡献者，OpenTelemetry 排名第二，而一年前没有入围的 Backstage 今年排名第四。
+    此外，GitOps 项目 Argo、服务网格技术 Envoy、Cilium和 Istio 等也排名前列。
+    [2022 年 CNCF 项目排名](https://docs.google.com/spreadsheets/d/1NifFdE45BlscO6j7vlDspccQ-i9Ksgip6yx2bmhmCCs/edit#gid=976519966)如下图（气泡面积与作者的数量成正比，y 轴为 pr 和 issue 的数量、x 轴是 commit 的数量）：
+
+    ![CNCF](./images/CNCF-Projects.png)
+
+- [1 月 9 日 中国信通院发布 2022 中国 Serverless 用户调查报告](https://mp.weixin.qq.com/s/qpWr5o3GTynHXhexHidx3Q)
+  
+    调查报告分为基本情况、函数即服务应用现状、Serverless 容器服务应用现状、Serverless 应用托管服务应用现状、总结与展望五个部分。
+    其中，八成用户已开始采纳 Serverless，但生产环境采纳率有待进一步提升；
+    Serverless 距离大规模推广仍有一段距离，需要持续优化改造成本、用户习惯、启动性能等方面的问题。
+
+- [1 月 9 日 由信通院牵头、「DaoCloud 道客」深度参与编制的《应用现代化建设指南》正式发布](https://mp.weixin.qq.com/s/rfUZjEx452640_BTRG_nJg)
+  
+    《应用现代化建设指南》系统性梳理了应用现代化的发展历程，给出了应用现代化的清晰定义，拆分了 “五化两指引” 建设方法论，呈现出完整的应用现代化建设路径。
+    「DaoCloud 道客」应用现代化部门参编专家主要贡献了应用现代化建设思路、应用架构现代化、应用现代化建设路径等内容。
+
 - [1 月 9 日云原生产业联盟年会将在线上举行](https://mp.weixin.qq.com/s/cyVz5LC4JJ7ImRuqtOYqGA)
   
     云原生产业联盟（CNIA）是云计算开源产业联的子联盟，由国内顶尖云原生厂商、行业云原生典型用户联合组成。
     会上将发布 3 大报告：《应用现代化建设指南》、《2022 中国云原生安全用户调查报告》、《2022  Serverless 用户调查报告》，
     以及 5 大云原生领域的评测：存储、安全、大数据、混部、中间件。
+
+- [1 月 6 日《混合云产业全景图（2022）》征集正式启动（1月 31 日申报截止）](https://mp.weixin.qq.com/s/VtARdGKHTSn0hkIdIQ_Iag)
+  
+    中国信通院联合混合云产业联盟启动《混合云产业全景图（2022）》的编制工作。
+    《混合云产业全景图（2022）》基于《混合云产业全景图（2021）》进行更新，将根据混合云产业发展情况及技术融合情况，对全景图技术架构进行更新和完善。
+    通过审核的厂商将被纳入全景图并在 2023 年混合云大会上发布。
 
 - [1 月 2 日 CNCF 即将开启 2023 年技术监督委员会（TOC）选举](https://www.cncf.io/blog/2022/12/01/cncf-toc-elections-for-2023/)
   
@@ -27,11 +104,21 @@
 
 ### 2022-12
 
+- [12 月 30 日 CNCF 2022 年度报告发布](https://www.cncf.io/reports/cncf-annual-report-2022/)
+  
+    CNCF 2022 年度报告从基金会发展趋势、活动举办、开源项目、社区生态等方面进行了总结。
+    其中，在 2022 年，CNCF TOC 接受了 35 个新项目；OpenTelemetry 成为 CNCF 生态中发展第二快的项目；
+    Backstage 是增长最快的项目之一，解决了云原生开发者体验方面的痛点；Argo 和 Flux 等 GitOps 项目也在发展壮大。
+
 - [12 月 29 日第一届混合云技术发展论坛将线上举行](https://mp.weixin.qq.com/s/0ZRnEimZQrO3tHVPpiSLEg)
   
     大会由中国信通院、中国通信标准化协会主办，
     届时将发布《混合云产业全景图（2022年）》框架、《混合云用户调查报告（2022年）》、新增混合云标准等重要成果，
     并邀请混合云领域的代表厂商就混合云未来的发展、技术结构及行业问题带来干货分享。
+
+- [12 月 28 日 InfoQ 2022 中国技术力量年终榜单发布](https://mp.weixin.qq.com/s/4Mg4cJs8WSmZ-xdgkN592w)
+  
+    本次榜单分为【2022 年度十大开源新锐项目】、【2022 年度十大高价值技术团队】、【2022 年度十大云原生创新技术】三大榜单。KubeVela、RocketMQ、TDengine 等入选十大开源新锐项目。
 
 - [12 月 22 日商业软件评测机构 G2 发布《容器管理平台评测报告》](https://www.g2.com/categories/container-management?utf8=%E2%9C%93&selected_view=grid&segment=all#grid)
   

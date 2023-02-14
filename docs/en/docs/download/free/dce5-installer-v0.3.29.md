@@ -6,14 +6,14 @@ This page can download the offline installation package and verification file of
 
 | File Name | Version | Architecture | File Size | Downloads | Date Updated |
 | ----------------------------- | ------- | -------- | -- ----------------------------------------------- | ----- ----- | -------------------------------- |
-| offline-centos7-community-v0.3.29-amd64.tar | v0.3.29 | AMD 64 | 9.2 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5 /offline-centos7-community-v0.3.29-amd64.tar) | 2022-12-16 |
-| offline-kylin-v10sp2-community-v0.3.29-arm64.tar | v0.3.29 | ARM 64 | 6.9 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise /dce5/offline-kylin-v10sp2-community-v0.3.29-arm64.tar) | 2022-12-16 |
+| offline-centos7-community-v0.3.29-amd64.tar | v0.3.29 | AMD64 | 9.2 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5 /offline-centos7-community-v0.3.29-amd64.tar) | 2022-12-16 |
+| offline-kylin-v10sp2-community-v0.3.29-arm64.tar | v0.3.29 | ARM64 | 6.9 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise /dce5/offline-kylin-v10sp2-community-v0.3.29-arm64.tar) | 2022-12-16 |
 
 ## Validation
 
 Enter the download directory of the offline installation package.
 
-=== "AMD 64"
+=== "AMD64"
 
     Execute the following command to verify the installation package:
 
@@ -27,7 +27,7 @@ Enter the download directory of the offline installation package.
     offline-centos7-community-v0.3.29-amd64.tar: OK
     ```
 
-=== "ARM 64"
+=== "ARM64"
 
     Execute the following command to verify the installation package:
 
@@ -45,17 +45,17 @@ Enter the download directory of the offline installation package.
 
 After successfully verifying the offline package,
 
-=== "AMD 64"
+=== "AMD64"
 
-    Execute the following command to extract the tarball:
+    Execute the following command to extract the tar package:
 
     ```sh
     tar -zxvf offline-centos7-community-v0.3.29-amd64.tar
     ```
 
-=== "ARM 64"
+=== "ARM64"
 
-    Execute the following command to extract the tarball:
+    Execute the following command to extract the tar package:
 
     ```sh
     tar -zxvf offline-kylin-v10sp2-community-v0.3.29-arm64.tar

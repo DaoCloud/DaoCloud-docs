@@ -26,7 +26,7 @@
     max-width: 100%;
 }
 
-iframe,
+iframe:not(.giscus-frame),
 object,
 embed {
     position: absolute;
@@ -38,4 +38,9 @@ embed {
 
 .md-footer__inner {
     display: none
+}
+
+/* Maximum space for text block */
+.md-grid {
+  max-width: 94%; /* or 100%, if you want to stretch to full-width */
 }

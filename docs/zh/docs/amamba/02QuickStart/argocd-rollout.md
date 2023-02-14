@@ -36,12 +36,12 @@
 
 1. 创建 Gateway
 
-    ```yaml
+    ```yaml title="gateway.yaml"
     apiVersion: networking.istio.io/v1beta1
     kind: Gateway
     metadata:
       name: rollout-demo
-      namespace: rollout-demo # 部署应用的ns
+      namespace: rollout-demo # (1)
     spec:
       selector:
         istio: ingressgateway
@@ -53,6 +53,8 @@
           number: 8082
           protocol: HTTP
     ```
+
+    1. 部署应用的命名空间
 
 2. 部署 Gateway
 
@@ -67,8 +69,9 @@
     kubectl edit vs {#创建应用的名字} -n {#创建应用的命名空间}
     ```
 
+    仅需修改提示的字段，其余字段无需修改。
+
     ```yaml
-    ## 仅修改提示的信息，其余的信息无需修改
     apiVersion: networking.istio.io/v1beta1
     kind: VirtualService
     metadata:
@@ -80,9 +83,9 @@
       uid: 8109f754-aa9d-49f1-b8a9-d4daf5108032
     spec:
       gateways:
-      - rollout-demo # 修改此处，需要新增gateway，指向上一步创建的gateway名称
+      - rollout-demo # (1)
       hosts:
-      - '*' #修改此处，原来host 为vs 的名称，需要删除后更改为‘*’
+      - '*' # (2)
       http:
       - name: primary
         route:
@@ -96,14 +99,18 @@
           weight: 0
     ```
 
+    1. 修改此处，需要新增 gateway，指向上一步创建的 gateway 名称
+    2. 修改此处，原来 host 为 vs 的名称，需要删除后更改为 `‘*’`
+
 4. 配置 istio-ingressgateway 网关
 
     ```shell
     kubectl edit svc istio-ingressgateway -n istio-system
     ```
 
+    仅需修改提示的字段，其余字段无需修改。
+
     ```yaml
-    ## 仅修改提示的信息，其余的信息无需修改
     apiVersion: v1
     kind: Service
     metadata:
@@ -134,12 +141,12 @@
         port: 15021
         protocol: TCP
         targetPort: 15021
-    ## 新增以下内容
+      # 新增以下内容
       - name: rollout-demo
         port: 8082
         protocol: TCP
         targetPort: 8082
-    ## --------------
+      # --------------
       selector:
         app: istio-ingressgateway
         istio: ingressgateway
@@ -194,9 +201,10 @@
 
 ### 验证效果
 
-访问地址：http://{istio-ingressgateway LB IP}:8082，得到如下所示的访问效果。
+访问地址：`http://{istio-ingressgateway LB IP}:8082`，得到如下所示的访问效果。
 
-此界面会并发调用 http://{istio-ingressgateway LB IP}:8082/color，将获取到颜色信息填充到方格中。在灰度发布对象中，指定的颜色为 **blue、yellow**，会按照定义规则 1:9 的流量比进行展示。
+此界面会并发调用 `http://{istio-ingressgateway LB IP}:8082/color`，将获取到颜色信息填充到方格中。
+在灰度发布对象中，指定的颜色为 **blue、yellow**，会按照定义规则 1:9 的流量比进行展示。
 
 ![效果示意](../images/argorollout06.png)
 

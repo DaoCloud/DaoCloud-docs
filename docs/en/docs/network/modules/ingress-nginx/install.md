@@ -1,39 +1,61 @@
-# Install
+---
+MTPE: Jeanine-tw
+Revised: Jeanine-tw
+Pics: Jeanine-tw
+Date: 2023-02-01
+---
 
-Open the cluster management interface in the browser, click "Helm Apps" in the sidebar navigation, and then click "Helm Charts", as shown below. 
+# Install ingress-nginx
 
-![](../../images/ingress-1.png)
+This page describes how to install ingress-nginx.
 
-Enter the keyword "ingress-nginx" in the search bar and click the "ingress-nginx" application card to enter the application preview screen, as shown below.
+Please confirm that your cluster has successfully connected to the `Container Management` platform, and then perform the following steps to install ingress-nginx.
 
-![](../../images/ingress-2.png)
+1. Click `Container Management`->`Cluster List` in the left navigation bar, and then find the cluster name where you want to install ingress-nginx.
 
-In the upper right corner, you can select the version by using the drop-down box, and then click the "Install" button. Then you will enter the installation configuration screen, as shown below.
-Enter the name of the deployed application, the namespace, and the deployment options in order.
+    ![cluster](../../images/ingress-install-1.png)
 
-![](../../images/ingress-3.png)
+2. In the left navigation bar, select `Helm Applications` -> `Helm Templates`, and find and click `ingress-nginx`.
 
-Configuration Description
+    ![helm](../../images/ingress-install-2.png)
 
-* “Replica Count” Set [replica count](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/), the recommended configuration is 2 to improve availability. For the preview, it can be configured to 1 to reduce resource usage.
-* “Metrics” When enabled, the Controller Pod exposes the metrics interface, and the monitoring agent can collect metrics data to improve service reliability.
-* “ServiceMonitor” Create Service Monitor CR, required [Prometheus Operator](https://github.com/prometheus-operator/prometheus-operator).
-* "Ingress Class" Set [Ingress Class](https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-class) name。The Ingress CR can specify the current Class name via the ingressClass field to select the current Ingress instance to be used to effect access routing. When there are multiple Ingress instances in a cluster, or even when a tenant has multiple Ingress instances, it is convenient to distinguish them by Ingress Class.
-* “Default IngressClass” Set Default Ingress Class。Kubernetes automatically updates the Ingress fields to the default Class. A cluster can only have one default Ingress Class.
-* “Election ID” When deploying multiple Ingress instance for the same namespace, you need to ensure that this name is not duplicated.
+3. Select the version you want to install in `version selection` and click `install`.
 
-![](../../images/ingress-4.png)
+    ![version](../../images/ingress-install-3.png)
 
-* “IP Family Policy” Set [IPv4/IPv6 dual-stack](https://kubernetes.io/docs/concepts/services-networking/dual-stack/#services) of Service。
-* “Type” Set Service Type，If set to [LoadBalancer](https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer), requires LB components installed in the cluster, e.g. [MetalLB](https://metallb.universe.tf/)
-* “Ingress Controller Image” Set Image registry of webhook.
-* “Admission Webhook Image” Set Image Name of Webhook。
+4. In the installation page, fill in the required parameters.
 
-![](../../images/ingress-5.png)
+    ![parameter1](../../images/ingress-install-4.png)
 
-* “Preferred During Scheduling Ignored During Execution” Node affinity is conceptually similar to nodeSelector, allowing you to constrain which nodes your Pod can be scheduled on based on node labels.
-* “PrometheusRule” Create Prometheus CR, required Prometheus Operator.
+    In the above screen, enter the name of the deployed application, the namespace, and the options for deployment.
 
-![](../../images/ingress-6.png)
+    ![parameter2](../../images/ingress-install-5.png)
 
-Click the tab YAML to perform advanced configuration through YAML. Click the "OK" button in the lower right corner to deploy it. 
+    The parameters in the above screens are described as follows:
+
+    - `Ingress Controller` -> `Replica Count`: configure [the number of replicas](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/). It is recommended to be 2 to improve availability. For POC experience it can be configured to 1 to reduce resource usage.
+    - `Ingress Controller` -> `Metrics`: when enabled, the Controller Pod will expose the metrics interface, and the monitoring Agent can collect metrics data to improve business and service reliability through monitoring alerts.
+    - `Ingress Controller` -> `ServiceMonitor`: require that the Insight component has already been deployed in the cluster, or the [Prometheus Operator](https://github.com/prometheus-operator/prometheus- operator). The corresponding ServiceMonitor CR will be created on the backend when it is enabled.
+    - `Ingress Controller` -> `Ingress Class` -> `Ingress Class Name`: configure [Ingress Class](https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-class) name. Ingress CR can then specify the same Class name via the ingressClass field to use the set of Ingress instances to activate access route. When there are multiple Ingresses in a cluster, or even multiple Ingresses in the same tenant, it is convenient to distinguish between Ingresses by Ingress Class. For more details on how to use Ingress Class, please refer to: [How to use Ingress Class](ingressclass.md)
+    - `Ingress Controller` -> `Ingress Class` -> `Default IngressClass`: set Ingress Class as the default class; you do not need to specify the ingressClass field when creating an Ingress CR with this option. Kubernetes automatically updates the Ingress fields to the default Class. There can only be one default Ingress Class for the same cluster.
+    - `Ingress Controller` -> `Ingress Class` -> `Election ID`:when deploying multiple Ingress for the same tenant, you need to ensure that this name is not duplicated.
+
+    ![parameter3](../../images/ingress-install-6.png)
+
+    The parameters in the above screen are described as follows:
+
+    - `Ingress Controller` -> `Service` -> `IP Family Policy`: set IP [single and dual stack](https://kubernetes.io/docs/concepts/services-networking/dual-stack/#services) of the Service, which can be enabled according to the business requirements.
+    - `Ingress Controller` -> `Service` -> `Type`: configure the Service type. If it is set to be [LoadBalancer](https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer), the corresponding LB component needs to be installed in the cluster, e.g. [MetalLB](https://metallb.universe.tf/).
+    - `Ingress Controller` -> `Ingress Controller Image`: configure the image repository and name.
+    - `Ingress Controller` -> `Admission Webhook Image`: customize the image repository and name for the Webhook Pod.
+
+    ![parameter4](../../images/ingress-install-7.png)
+
+    The parameters in the above screen are described as follows:
+
+    - `Ingress Controller` -> `Node Affinity` -> `Preferred During Scheduling Ignored During Execution`: specify scheduling rules by soft affinity.
+    - `Ingress Controller` -> `scope`: when this option is enabled and Namespace is specified, the scope of the Ingress instance created is limited to the specified namespace. It is disabled by default and is a cluster-level Ingress. For more details, refer to: [Ingress Scope](scope.md).
+    - `Alert Settings` -> `PrometheusRule`: configure the creation of the alert rule Prometheus CR. This option relies on the cluster deployed Prometheus Operator.
+
+5. For more advanced configurations, you can configure your Ingress via YAML by clicking on the tab `YAML`.
+Click the `OK` button in the bottom right corner to complete the creation.

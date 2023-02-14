@@ -1,4 +1,4 @@
-# Applicable scene
+# Applicable scenarios
 
 Many large-scale e-commerce websites, live video and game platforms, etc., have **large-scale data access**, and require high **data query efficiency**, and **data structure is simple**, and **does not involve too many associations Inquire**.
 Using Redis in this scenario has great advantages over traditional disk databases in terms of speed. It can effectively reduce database disk IO, improve data query efficiency, reduce management and maintenance workload, and reduce database storage costs.
