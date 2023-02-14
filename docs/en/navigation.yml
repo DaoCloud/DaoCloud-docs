@@ -411,7 +411,7 @@ nav:
               - Ingress Class: network/modules/ingress-nginx/ingressclass.md
               - Ingress Scope: network/modules/ingress-nginx/scope.md
               - Configure CORS: network/modules/ingress-nginx/cors.md
-              - Configure traffic proxy: network/modules/ingress-nginx/proxy.md
+              - Configure load balancing and traffic proxy: network/modules/ingress-nginx/proxy.md
           - Metallb:
               - Intro: network/modules/metallb/what.md
               - Install: network/modules/metallb/install.md
@@ -517,43 +517,43 @@ nav:
           - Intro: storage/intro.md
           - Background: storage/background.md
           - Benefits: storage/benifits.md
-          - Features: storage/functions.md 
-          - Release Notes: storage/hwameistor/releasenotes.md         
+          - Features: storage/functions.md
+          - Release Notes: storage/hwameistor/releasenotes.md
           - HwameiStor local storage:
-            - Intro: storage/hwameistor/intro/what.md
-            - Modules:
-                - Local disk manager: storage/hwameistor/intro/ldm.md
-                - Local storage: storage/hwameistor/intro/ls.md
-                - DRBD installer: storage/hwameistor/intro/drbd.md
-                - Scheduler: storage/hwameistor/intro/scheduler.md
-                - Admission controller: storage/hwameistor/intro/admission-controller.md
-            - Resources: storage/hwameistor/intro/resources.md
-            - Installation:
-                - Preparation: storage/hwameistor/install/prereq.md
-                - Install by Helm Chart: storage/hwameistor/install/deploy.md
-                - Post-check: storage/hwameistor/install/post-check.md
-                - Upgrade: storage/hwameistor/install/upgrade.md
-                - Uninstall: storage/hwameistor/install/uninstall.md
-            - O&M:
-                - Storage pools: storage/hwameistor/resources/storagepool.md
-                - Node expansion: storage/hwameistor/resources/node-expansion.md
-                - Volume migration: storage/hwameistor/resources/migrate.md
-                - Volume expansion: storage/hwameistor/resources/expand.md
-                - Disk expansion: storage/hwameistor/resources/disk-expansion.md
-            - Scenarios:
-                - Overview: storage/hwameistor/application/overview.md
-                - Deploy StatefulSets:
-                    - Deploy via local volume: storage/hwameistor/application/local.md
-                    - Deploy via ha volume: storage/hwameistor/application/ha.md
-                - TiDB: storage/hwameistor/application/tidb.md
-                - MinIO: storage/hwameistor/application/minio/minio.md
-            - FAQs: storage/hwameistor/faqs.md
+              - Intro: storage/hwameistor/intro/what.md
+              - Modules:
+                  - Local disk manager: storage/hwameistor/intro/ldm.md
+                  - Local storage: storage/hwameistor/intro/ls.md
+                  - DRBD installer: storage/hwameistor/intro/drbd.md
+                  - Scheduler: storage/hwameistor/intro/scheduler.md
+                  - Admission controller: storage/hwameistor/intro/admission-controller.md
+              - Resources: storage/hwameistor/intro/resources.md
+              - Installation:
+                  - Preparation: storage/hwameistor/install/prereq.md
+                  - Install by Helm Chart: storage/hwameistor/install/deploy.md
+                  - Post-check: storage/hwameistor/install/post-check.md
+                  - Upgrade: storage/hwameistor/install/upgrade.md
+                  - Uninstall: storage/hwameistor/install/uninstall.md
+              - O&M:
+                  - Storage pools: storage/hwameistor/resources/storagepool.md
+                  - Node expansion: storage/hwameistor/resources/node-expansion.md
+                  - Volume migration: storage/hwameistor/resources/migrate.md
+                  - Volume expansion: storage/hwameistor/resources/expand.md
+                  - Disk expansion: storage/hwameistor/resources/disk-expansion.md
+              - Scenarios:
+                  - Overview: storage/hwameistor/application/overview.md
+                  - Deploy StatefulSets:
+                      - Deploy via local volume: storage/hwameistor/application/local.md
+                      - Deploy via ha volume: storage/hwameistor/application/ha.md
+                  - TiDB: storage/hwameistor/application/tidb.md
+                  - MinIO: storage/hwameistor/application/minio/minio.md
+              - FAQs: storage/hwameistor/faqs.md
           - Solutions to integrate:
-            - Rook-Ceph intro: storage/solutions/rook-ceph.md
-            - Deploy Rook-Ceph via app store: storage/solutions/dce-rook-ceph.md
-            - Deploy Rook-Ceph via Helm: storage/solutions/helm-rook-ceph.md
-            - Longhorn intro: storage/solutions/longhorn.md
-            - Deploy Longhorn via app store: storage/solutions/dce-longhorn.md
+              - Rook-Ceph intro: storage/solutions/rook-ceph.md
+              - Deploy Rook-Ceph via app store: storage/solutions/dce-rook-ceph.md
+              - Deploy Rook-Ceph via Helm: storage/solutions/helm-rook-ceph.md
+              - Longhorn intro: storage/solutions/longhorn.md
+              - Deploy Longhorn via app store: storage/solutions/dce-longhorn.md
           - Concepts:
               - Kubernetes storage: storage/terms/k8s_storage.md
               - CAS: storage/terms/cas.md
