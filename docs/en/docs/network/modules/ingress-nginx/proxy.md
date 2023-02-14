@@ -15,7 +15,7 @@ The Ingress Nginx global configuration allows to specify the default load balanc
 Their main difference is how the back-end workloads are selected: the `round_robin` algorithm selects back-end workloads in a predefined order, distributing requests evenly to each workload.
 If the performance of the back-end workloads varies widely, this may lead to load imbalance. This is where the `ewma` algorithm comes in to achieve load balancing. The `ewma` sends requests to the workload with the lowest weighted average load, and the weighted load index changes gradually as the requests come in.
 
-You can refer to the [installation](install.md) section and specify the following in the Helm installation configuration `.values.yaml`:
+You can refer to [Install ingress-nginx](install.md) and specify the following in the Helm installation configuration `.values.yaml`:
 
 ```yaml
 ingress-nginx:
