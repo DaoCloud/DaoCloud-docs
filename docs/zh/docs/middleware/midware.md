@@ -48,6 +48,6 @@ graph TD
 [Kafka](./kafka/intro/what.md){ .md-button .md-button--primary }
 [MinIO](./minio/intro/what.md){ .md-button .md-button--primary }
 [MySQL](mysql/intro/what.md){ .md-button .md-button--primary }
-[RabbitMQ 消息队列](rabbitmq/intro/what.md){ .md-button .md-button--primary }
+[RabbitMQ](rabbitmq/intro/what.md){ .md-button .md-button--primary }
 [Redis](./redis/intro/what.md){ .md-button .md-button--primary }
 
