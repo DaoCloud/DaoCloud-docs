@@ -7,9 +7,14 @@ hide:
 
 本页汇总 DCE 5.0 相关的博客和公众号文章，默认按字母和拼音排序。
 
+- [202302014 | DCE 5.0 社区版包含多少开源项目](./projects.md)
+
+    时常听闻客户、社区成员、贡献者、公司内部的售前、交付、项目组乃至 IPO 工作组在询问 “DCE 到底涉及了哪些开源项目？” 
+    这篇博文详细列出了社区版所包含的开源项目。
+
 - [20230214 | 「DaoCloud 道客」与 Kubernetes](./daocloud_k8s.md)
 
-    讲述「DaoCloud 道客」如何借力 Kubernetes 打造新一代企业级云原生应用云平台——DaoCloud Enterprise 5.0，以及如何回馈开源社区，践行云原生信仰。
+    讲述「DaoCloud 道客」如何借力 Kubernetes 打造新一代企业级云原生应用云平台 —— DaoCloud Enterprise 5.0，以及如何回馈开源社区，践行云原生信仰。
 
 - [20230201 | DCE 5.0 攻坚语录集](./peter.md)
 
