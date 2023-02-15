@@ -12,6 +12,7 @@ DaoCloud 是经认证的 K8s 服务提供商。目前 DCE 经 CNCF 认证可以�
 [![1.23](./docs/zh/docs/images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
 [![1.24](./docs/zh/docs/images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
 [![1.25](./docs/zh/docs/images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
+[![1.26](./docs/zh/docs/images/1.26.png)](https://github.com/cncf/k8s-conformance/pull/2451)
 
 历史版本：
 
