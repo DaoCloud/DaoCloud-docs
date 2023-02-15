@@ -129,6 +129,7 @@ DCE 采用业界领先的容器编排技术，产品能力涵盖云原生应用�
 [![1.23](../images/1.23.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/2072)
 [![1.24](../images/1.24.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/2239)
 [![1.25](../images/1.25.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/2240)
+[![1.26](../images/1.26.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/2451)
 
 历史版本：
 

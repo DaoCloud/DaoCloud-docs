@@ -10,6 +10,10 @@
 
 ## 容器管理
 
+涉及的开源项目有直接集成和间接调用两种。
+
+### 直接集成
+
 容器管理模块直接集成的项目包括但不限于：
 
 1. [DATA-DOG/go-sqlmock](https://github.com/DATA-DOG/go-sqlmock) v1.5.0
@@ -74,6 +78,8 @@
 1. [sigs.k8s.io/cluster-api](https://github.com/kubernetes-sigs/cluster-api) v1.1.3
 1. [sigs.k8s.io/controller-runtime](https://github.com/kubernetes-sigs/controller-runtime) v0.12.1
 1. [sigs.k8s.io/yaml](https://github.com/kubernetes-sigs/yaml) v1.3.0
+
+### 间接调用
 
 容器管理模块间接调用的项目包括但不限于：
 
@@ -224,6 +230,10 @@
 
 ## 全局管理
 
+涉及的开源项目有直接集成和间接调用两种。
+
+### 直接集成
+
 全局管理模块直接集成的项目包括但不限于：
 
 1. ghippo.io/api v0.0.0
@@ -285,6 +295,8 @@
 1. k8s.io/klog/v2 v2.90.0
 1. kpanda.io/api v0.0.0
 1. sigs.k8s.io/controller-runtime v0.12.3
+
+### 间接调用
 
 全局管理模块间接调用的项目包括但不限于：
 
@@ -406,6 +418,10 @@
 
 ## 可观测性
 
+涉及的开源项目有直接集成和间接调用两种。
+
+### 直接集成
+
 可观测性模块直接集成的项目包括但不限于：
 
 1. ghippo.io/api v0.0.0
@@ -468,6 +484,8 @@
 1. github.com/agiledragon/gomonkey/v2 v2.7.0
 1. github.com/gogo/protobuf v1.3.2
 1. gopkg.in/yaml.v2 v2.4.0
+
+### 间接调用
 
 可观测性模块间接调用的项目包括但不限于：
 
