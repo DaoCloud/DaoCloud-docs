@@ -318,6 +318,10 @@ nav:
                   - Delete DN: skoala/ms-gateway/domain/delete-domain.md
           - Best Practices:
               - Experience microservice: skoala/best-practice/use-skoala-01.md
+          - References:
+              - Microservice: reference/basic-knowledge/microservice.md
+              - Service Registry: reference/basic-knowledge/registry.md
+              - Gateway: reference/basic-knowledge/gateway.md
       - Service Mesh:
           - Intro:
               - What is Service Mesh: mspider/01Intro/WhatismSpider.md
@@ -377,6 +381,10 @@ nav:
               - Join an OCP cluster: mspider/test/ocp.md
               - Compatibility test with OpenShift: mspider/test/openshift.md
           - FAQs: mspider/07faq.md
+          - References:
+              - Virtual Service: reference/basic-knowledge/virtual-service.md
+              - Observability: reference/basic-knowledge/insight.md
+              - Traffic Control: reference/basic-knowledge/traffic-control.md
       - Network:
           - Intro:
               - What is Network: network/intro/what-is-net.md
@@ -433,9 +441,10 @@ nav:
               - Config: network/modules/spiderpool/config.md
               - Commands: network/modules/spiderpool/command.md
               - Release notes: network/modules/spiderpool/releasenotes.md
-      - Middleware:
-          - Intro: middleware/midware.md
-          - Version Compatibility: middleware/adaptation-k8s.md
+      - Data Service:
+          - Intro: 
+              - What is data service: middleware/midware.md
+              - Version Compatibility: middleware/adaptation-k8s.md
           - Elasticsearch:
               - What is Elasticsearch: middleware/elastic-search/intro/what.md
               - Features: middleware/elastic-search/intro/features.md
@@ -513,12 +522,13 @@ nav:
               - Update Redis Instance: middleware/redis/userguide/update.md
               - Delete Redis Instance: middleware/redis/userguide/delete.md
               - Release Notes: middleware/redis/release-notes.md
-      - Cloud native storage:
-          - Intro: storage/intro.md
-          - Background: storage/background.md
-          - Benefits: storage/benifits.md
-          - Features: storage/functions.md
-          - Release Notes: storage/hwameistor/releasenotes.md
+      - Cloud-native Storage:
+          - Intro: 
+              - What is storage: storage/intro.md
+              - Background: storage/background.md
+              - Benefits: storage/benifits.md
+              - Features: storage/functions.md
+              - Release Notes: storage/hwameistor/releasenotes.md
           - HwameiStor local storage:
               - Intro: storage/hwameistor/intro/what.md
               - Modules:
@@ -584,14 +594,6 @@ nav:
               - Intro: security/falco/what.md
               - Install: security/falco/install.md
               - Falco-exporter: security/falco/falco-exporter.md
-      - References:
-          - Release Notes: release/rn5.0.md
-          - Gateway: reference/basic-knowledge/gateway.md
-          - Microservice: reference/basic-knowledge/microservice.md
-          - Service Registry: reference/basic-knowledge/registry.md
-          - Virtual Service: reference/basic-knowledge/virtual-service.md
-          - Observability: reference/basic-knowledge/insight.md
-          - Traffic Control: reference/basic-knowledge/traffic-control.md
       - Troubleshooting:
           - ingressgateway cannot start: reference/troubleshooting/ghippo01.md
           - Login Error 401 or 403: reference/troubleshooting/ghippo02.md

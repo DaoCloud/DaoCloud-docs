@@ -339,6 +339,10 @@ nav:
                   - 删除域名: skoala/ms-gateway/domain/delete-domain.md
           - 最佳实践:
               - 示例应用体验微服务治理: skoala/best-practice/use-skoala-01.md
+          - 通用参考:
+              - 微服务: reference/basic-knowledge/microservice.md
+              - 注册中心: reference/basic-knowledge/registry.md
+              - 云原生网关: reference/basic-knowledge/gateway.md
       - 服务网格:
           - 介绍:
               - 什么是服务网格: mspider/01Intro/WhatismSpider.md
@@ -398,6 +402,10 @@ nav:
             - OCP 接入网格: mspider/test/ocp.md
             - Openshift 与网格兼容性测试: mspider/test/openshift.md
           - 常见问题: mspider/07faq.md
+          - 通用参考:
+            - 虚拟服务: reference/basic-knowledge/virtual-service.md
+            - 可观测性: reference/basic-knowledge/insight.md
+            - 流量治理: reference/basic-knowledge/traffic-control.md
       - 云原生网络:
           - 介绍:
               - 什么是云原生网络: network/intro/what-is-net.md
@@ -455,9 +463,10 @@ nav:
               - 常用命令: network/modules/spiderpool/command.md
               - Release Notes: network/modules/spiderpool/releasenotes.md
       - 中间件数据服务:
-          - 数据服务介绍: middleware/midware.md
-          - 数据服务版本适配: middleware/adaptation-k8s.md
-          - 数据服务权限设计说明: middleware/permission.md
+          - 介绍: 
+              - 什么是数据服务: middleware/midware.md
+              - 数据服务版本适配: middleware/adaptation-k8s.md
+              - 数据服务权限设计说明: middleware/permission.md
           - Elasticsearch 搜索服务:
               - 什么是 Elasticsearch: middleware/elastic-search/intro/what.md
               - 功能说明: middleware/elastic-search/intro/features.md
@@ -537,11 +546,12 @@ nav:
               - 删除 Redis 实例: middleware/redis/userguide/delete.md
               - Release Notes: middleware/redis/release-notes.md
       - 云原生存储:
-          - 介绍: storage/intro.md
-          - 背景和挑战: storage/background.md
-          - 功能优势: storage/benifits.md
-          - 功能列表: storage/functions.md 
-          - Release Notes: storage/hwameistor/releasenotes.md         
+          - 介绍: 
+            - 什么是云原生存储: storage/intro.md
+            - 背景和挑战: storage/background.md
+            - 功能优势: storage/benifits.md
+            - 功能列表: storage/functions.md 
+            - Release Notes: storage/hwameistor/releasenotes.md         
           - HwameiStor 本地存储:
             - 介绍: storage/hwameistor/intro/what.md
             - 组件介绍:
@@ -607,14 +617,6 @@ nav:
             - 介绍: security/falco.md
             - 安装: security/falco-install.md
             - Falco-exporter: security/falco-exporter.md
-      - 通用参考:
-        - Release Notes: release/rn5.0.md
-        - 云原生网关: reference/basic-knowledge/gateway.md
-        - 微服务: reference/basic-knowledge/microservice.md
-        - 注册中心: reference/basic-knowledge/registry.md
-        - 虚拟服务: reference/basic-knowledge/virtual-service.md
-        - 可观测性: reference/basic-knowledge/insight.md
-        - 流量治理: reference/basic-knowledge/traffic-control.md
       - 故障排查:
           - ingressgateway 无法启动: reference/troubleshooting/ghippo01.md
           - 登录报错 401 或 403: reference/troubleshooting/ghippo02.md
