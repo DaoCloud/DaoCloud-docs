@@ -441,6 +441,7 @@ nav:
               - Ingress Scope: network/modules/ingress-nginx/scope.md
               - CORS 跨域配置: network/modules/ingress-nginx/cors.md
               - 负载均衡与流量代理配置指南: network/modules/ingress-nginx/proxy.md
+              - 超时配置: network/modules/ingress-nginx/timeout.md
           - Metallb:
               - 介绍: network/modules/metallb/what.md
               - 安装: network/modules/metallb/install.md
