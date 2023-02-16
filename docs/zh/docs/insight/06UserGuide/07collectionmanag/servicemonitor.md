@@ -25,19 +25,20 @@
 	metadata:
 	  name: micrometer-demo # (1)
 	  namespace: insight-system # (2)
-	  operator.insight.io/managed-by: insight
+	    labels: 
+	      operator.insight.io/managed-by: insight
 	spec:
 	  endpoints: # (3)
 	    - honorLabels: true
-		  interval: 15s
-		  path: /actuator/prometheus
-		  port: http
+	        interval: 15s
+	        path: /actuator/prometheus
+	        port: http
 	  namespaceSelector: # (4)
-		matchNames:
-		  - insight-system
+	    matchNames:
+	      - insight-system  # 此处匹配的命名空间为需要暴露指标的应用所在的。
 	  selector: # (5)
-		matchLabels:
-		  micrometer-prometheus-discovery: "true"
+	    matchLabels:
+              micrometer-prometheus-discovery: "true"
 	```
 
 	1. 指定 ServiceMonitor 的名称
@@ -47,6 +48,7 @@
 	  	- `interval`：指定 Prometheus 对当前 `endpoints` 采集的周期。单位为秒，在本次示例中设定为 `15s`。
 	  	- `path`：指定 Prometheus 的采集路径。在本次示例中，指定为 `/actuator/prometheus`。
 	  	- `port`：指定采集数据需要通过的端口，设置的端口为采集的 Service 端口所设置的 `name`。
+
 	4. 这是需要发现的 Service 的范围。`namespaceSelector` 包含两个互斥字段，字段的含义如下：
 
 	  	- `any`：有且仅有一个值 `true`，当该字段被设置时，将监听所有符合 Selector 过滤条件的 Service 的变动。

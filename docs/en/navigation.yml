@@ -421,6 +421,7 @@ nav:
               - Configure CORS: network/modules/ingress-nginx/cors.md
               - Configure load balancing and traffic proxy: network/modules/ingress-nginx/proxy.md
               - Configure timeout: network/modules/ingress-nginx/timeout.md
+              - Logging Configuration: network/modules/ingress-nginx/log.md
           - Metallb:
               - Intro: network/modules/metallb/what.md
               - Install: network/modules/metallb/install.md
