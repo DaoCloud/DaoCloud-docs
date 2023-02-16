@@ -1,13 +1,13 @@
-# 通过 Helm 部署并验证 OpenEBS
+# Deploy and verify OpenEBS via Helm
 
-本文将提供用 Helm 部署并验证 OpenEBS 云原生存储系统的操作步骤及说明。
-DCE 5.0 支持众多第三方存储方案，我们针对 OpenEBS 进行了相关测试，并最终将其作为 Addon 集成了应用商店中。 以下是对 OpenEBS 的调研和测评。
+This page will provide the steps and instructions for deploying and verifying the OpenEBS cloud-native storage system with Helm.
+DCE 5.0 supports many third-party storage solutions. We tested OpenEBS and finally integrated it in the app store as an Addon. The following is the research and evaluation of OpenEBS.
 
-有关应用商店 Addon 的图形化界面安装、部署、卸载等操作说明，将于稍后提供。
+Instructions for installing, deploying, and uninstalling the graphical interface of the App Store Addon will be provided later.
 
-## 测试环境
+## Test environment
 
-本次测试使用三个虚拟机节点部署一个 Kubernetes 集群：1 个 Master + 2 个 Worker 节点，kubelet 版本为 1.23.6。
+This test uses three virtual machine nodes to deploy a Kubernetes cluster: 1 Master + 2 Worker nodes, and the kubelet version is 1.23.6.
 
 ```
 [root@k8s-10-6-162-31 ~]# kubectl get no
@@ -17,7 +17,7 @@ k8s-10-6-162-32   Ready    <none>                 114d   v1.23.6
 k8s-10-6-162-33   Ready    <none>                 114d   v1.23.6
 ```
 
-## 添加并更新 OpenEBS repo
+## Add and update OpenEBS repo
 
 ```
 [root@k8s-10-6-162-31 ~]# helm repo add openebs https://openebs.github.io/charts
@@ -33,7 +33,7 @@ longhorn https://charts.longhorn.io
 openebs https://openebs.github.io/charts
 ```
 
-## Helm 安装 OpenEBS
+## Install OpenEBS via helm
 
 ```
 [root@k8s-10-6-162-31 ~]# helm install openebs --namespace openebs openebs/openebs --create-namespace
