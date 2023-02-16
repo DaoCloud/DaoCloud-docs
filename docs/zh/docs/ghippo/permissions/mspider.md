@@ -5,7 +5,7 @@ hide:
 
 # 服务网格权限说明
 
-[服务网格](../../mspider/01Intro/WhatismSpider.md)支持几种用户角色：
+[服务网格](../../mspider/01Intro/what.md)支持几种用户角色：
 
 - Admin
 - Workspace Admin

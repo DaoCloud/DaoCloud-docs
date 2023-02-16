@@ -6,7 +6,7 @@
 
 给用户/用户组授权之前，请完成如下准备：
 
-- 已在全局管理中创建了待授权的用户/用户组，请参考[用户](../../../ghippo/04UserGuide/01UserandAccess/User.md)。
+- 已在全局管理中创建了待授权的用户/用户组，请参考[用户](../../../ghippo/04UserGuide/01UserandAccess/user.md)。
 
 - 仅 [`Kpanda Owner`](../../../ghippo/04UserGuide/01UserandAccess/global.md) 及当前集群的 [`Cluster Admin`](PermissionBrief.md#cluster-admin) 具备集群授权能力。详情可参考[权限说明](PermissionBrief.md)。
 

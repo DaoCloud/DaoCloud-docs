@@ -52,7 +52,7 @@
 Namespace01 的 NS Editor 角色能够编辑、查看 Namespace01，能够部署应用。
 Namespace01 的 Viewer 角色仅能够查看 Namespace01。
 
-支持此模式的子模块：[容器管理](../../../kpanda/03ProductBrief/WhatisKPanda.md)
+支持此模式的子模块：[容器管理](../../../kpanda/03ProductBrief/what.md)
 
 您可以在`容器管理` -> `权限管理`，选择`添加授权`，为用户/用户组授予 Cluster 或 Namespace 的权限。
 
@@ -70,21 +70,21 @@ Namespace01 的 Viewer 角色仅能够查看 Namespace01。
    您可以通过工作空间中的“授权”，授予用户（用户组）同一组资源的不同访问权限。
    同时，工作空间中包含不同模块中的多种类型资源，不同类型的资源在工作空间中有不同的呈现方式。
 
-    - 模块名称：[应用工作台](../../../amamba/01ProductBrief/WhatisAmamba.md)、[微服务引擎](../../../skoala/intro/features.md)、[中间件](../../../middleware/midware.md)
+    - 模块名称：[应用工作台](../../../amamba/01ProductBrief/what.md)、[微服务引擎](../../../skoala/intro/what.md)
 
         由于这些模块不支持全局管理模式和子模块管理模式的授权方式，仅依靠工作空间来获取授权。
         因此所有的资源均在工作空间下创建，创建后资源自动绑定到工作空间上，以确保这些资源在创建后能够被授权使用。
         这些资源被创建后，不会自动显示在工作空间的资源组或者共享资源中，仅能够在各个模块的资源列表中呈现。
         (拥有Workspace的任意角色即可进入上述模块)
 
-    - [容器管理](../../../kpanda/03ProductBrief/WhatisKPanda.md)
+    - [容器管理](../../../kpanda/03ProductBrief/what.md)
 
         容器管理支持全局管理模式、子模块管理模式和基于资源的管理三种授权方式。
         因此在容器管理模块您可以选择通过用户与访问控制模块授予用户/用户组 Kpanda Owner 角色，或者通过容器管理模块本身的权限管理功能授予用户/用户组某个资源的相应权限，或者通过将资源（cluster 或 Namespace）绑定到工作空间的方式继承用户/用户组在工作空间的角色权限。
         由于容器管理中的资源存在绑定和未绑定工作空间两种状态，因此为了区分两种不同的状态，绑定到工作空间中的资源将会在工作空间-资源组中呈现，且工作空间-资源组和容器管理的资源列表均提供了资源的绑定/解绑入口。
         （Admin 角色或者 Workspace admin + Kpanda Owner 角色能够进行资源绑定）
 
-    - [服务网格](../../../mspider/01Intro/WhatismSpider.md)
+    - [服务网格](../../../mspider/01Intro/what.md)
 
         服务网格由于自身资源的特殊性，也存在绑定和未绑定两种状态。
         因此，您可以通过 Admin 角色管理服务网格中的资源，或者将资源（Mesh 或 Mesh-Namespace）绑定到工作空间，使用户/用户组通过工作空间获得服务网格中资源的权限，被绑定的资源将在工作空间的资源组中进行显示。

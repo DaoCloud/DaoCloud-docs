@@ -5,7 +5,7 @@
 ## 前提条件
 
 - 需创建一个工作空间和一个用户，该用户需加入该工作空间并赋予 `workspace edit` 角色。
-  参考[创建工作空间](../../../ghippo/04UserGuide/02Workspace/Workspaces.md)、[用户和角色](../../../ghippo/04UserGuide/01UserandAccess/User.md)。
+  参考[创建工作空间](../../../ghippo/04UserGuide/02Workspace/workspaces.md)、[用户和角色](../../../ghippo/04UserGuide/01UserandAccess/user.md)。
 - 创建可以访问代码仓库仓库、镜像仓库的两个凭证，分别命名为：`git-credential`、`registry`。创建凭证的更多信息，请参考[凭证管理](../Pipeline/Credential.md)。
 - 准备一个 Gitlab 仓库、Harbor 仓库
 

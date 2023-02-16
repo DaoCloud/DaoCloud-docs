@@ -3,7 +3,7 @@ nav:
   - DaoCloud 官网: https://www.daocloud.io/
   - 产品文档:
       - DCE 产品介绍:
-          - 什么是 DCE 5.0: dce/what-is-dce.md
+          - 什么是 DCE 5.0: dce/what.md
           - K8s 认证服务商: dce/kcsp.md
           - 申请社区免费体验: dce/license0.md
           - 功能和优势: dce/features.md
@@ -27,11 +27,11 @@ nav:
           - Release Notes: install/release-notes.md
       - 容器管理:
           - 介绍:
-              - 什么是容器管理: kpanda/03ProductBrief/WhatisKPanda.md
-              - 功能总览: kpanda/03ProductBrief/Features.md
-              - 竞争优势: kpanda/03ProductBrief/Benefits.md
-              - 适用场景: kpanda/03ProductBrief/Scenarios.md
-              - 基本概念: kpanda/03ProductBrief/Concepts.md
+              - 什么是容器管理: kpanda/03ProductBrief/what.md
+              - 功能总览: kpanda/03ProductBrief/features.md
+              - 竞争优势: kpanda/03ProductBrief/benefits.md
+              - 适用场景: kpanda/03ProductBrief/scenarios.md
+              - 基本概念: kpanda/03ProductBrief/concepts.md
               - Release Notes: kpanda/03ProductBrief/release-notes.md
           - 集群管理:
               - 创建集群: kpanda/07UserGuide/Clusters/CreateCluster.md
@@ -93,8 +93,8 @@ nav:
               - 集群和命名空间授权: kpanda/07UserGuide/Permissions/Cluster-NSAuth.md
       - 全局管理:
           - 介绍:
-              - 什么是全局管理: ghippo/01ProductBrief/WhatisGhippo.md
-              - 功能总览: ghippo/01ProductBrief/Features.md
+              - 什么是全局管理: ghippo/01ProductBrief/what.md
+              - 功能总览: ghippo/01ProductBrief/features.md
               - 常见术语: ghippo/01ProductBrief/glossary.md
               - Release Notes: ghippo/01ProductBrief/release-notes.md
           - 登录: ghippo/04UserGuide/00Login.md
@@ -104,10 +104,10 @@ nav:
               - 国密网关: ghippo/install/gmGateway.md
           - 用户与访问控制:
               - 什么是用户与访问控制: ghippo/04UserGuide/01UserandAccess/iam.md
-              - 用户: ghippo/04UserGuide/01UserandAccess/User.md
-              - 用户组: ghippo/04UserGuide/01UserandAccess/Group.md
+              - 用户: ghippo/04UserGuide/01UserandAccess/user.md
+              - 用户组: ghippo/04UserGuide/01UserandAccess/group.md
           - 角色和权限管理:
-              - ghippo/04UserGuide/01UserandAccess/Role.md
+              - ghippo/04UserGuide/01UserandAccess/role.md
               - 全局管理角色: ghippo/04UserGuide/01UserandAccess/global.md
           - 身份提供商:
               - ghippo/04UserGuide/01UserandAccess/idprovider.md
@@ -115,7 +115,7 @@ nav:
               - OIDC: ghippo/04UserGuide/01UserandAccess/oidc.md
           - 工作空间与层级:
               - ghippo/04UserGuide/02Workspace/ws-folder.md
-              - 创建和删除工作空间: ghippo/04UserGuide/02Workspace/Workspaces.md
+              - 创建和删除工作空间: ghippo/04UserGuide/02Workspace/workspaces.md
               - 工作空间权限: ghippo/04UserGuide/02Workspace/wspermission.md
               - 创建和删除文件夹: ghippo/04UserGuide/02Workspace/folders.md
               - 文件夹权限: ghippo/04UserGuide/02Workspace/fdpermission.md
@@ -126,7 +126,7 @@ nav:
           - 平台设置:
               - 密码重置: ghippo/04UserGuide/password.md
               - 邮箱服务器设置: ghippo/04UserGuide/04PlatformSetting/MailServer.md
-              - 外观定制: ghippo/04UserGuide/04PlatformSetting/Appearance.md
+              - 外观定制: ghippo/04UserGuide/04PlatformSetting/appearance.md
               - 关于平台: ghippo/04UserGuide/04PlatformSetting/about.md
           - 个人中心:
               - 安全设置: ghippo/04UserGuide/06PersonalCenter/SecuritySetting.md
@@ -140,7 +140,7 @@ nav:
               - 数据服务权限说明: ghippo/permissions/mcamel.md
           - 最佳实践:
               - 工作空间最佳实践: ghippo/04UserGuide/02Workspace/wsbp.md
-              - 工作空间绑定命名空间: ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus.md
+              - 工作空间绑定命名空间: ghippo/04UserGuide/02Workspace/ws-to-ns.md
               - 单集群分配给多个工作空间: ghippo/04UserGuide/02Workspace/a-cluster-to-multi-ws.md
               - 文件夹最佳实践: ghippo/04UserGuide/02Workspace/fdpractice.md
               - 普通用户授权规划: ghippo/04UserGuide/02Workspace/authu-plan.md
@@ -150,7 +150,7 @@ nav:
                 - 接入路由和登录认证: ghippo/gproduct/route-authn.md
       - 可观测性:
           - 介绍:
-              - 什么是可观测性: insight/03ProductBrief/WhatisInsight.md
+              - 什么是可观测性: insight/03ProductBrief/what.md
               - 产品优势: insight/03ProductBrief/benefits.md
               - 基本概念: insight/03ProductBrief/concepts.md
               - 应用场景: insight/03ProductBrief/scenarios.md
@@ -202,11 +202,11 @@ nav:
               - Prometheus 资源规划: insight/10bestpractice/prometheusresource.md
       - 应用工作台:
           - 介绍:
-              - 什么是应用工作台？: amamba/01ProductBrief/WhatisAmamba.md
-              - 功能总览: amamba/01ProductBrief/Features.md
-              - 产品优势: amamba/01ProductBrief/Benefits.md
-              - 适用场景: amamba/01ProductBrief/Scenarios.md
-              - 基本概念: amamba/01ProductBrief/Concepts.md
+              - 什么是应用工作台？: amamba/01ProductBrief/what.md
+              - 功能总览: amamba/01ProductBrief/features.md
+              - 产品优势: amamba/01ProductBrief/benefits.md
+              - 适用场景: amamba/01ProductBrief/scenarios.md
+              - 基本概念: amamba/01ProductBrief/concepts.md
               - Release Notes: amamba/01ProductBrief/release-notes.md
           - 命名空间管理: amamba/03UserGuide/Namespace/namespace.md
           - 向导:
@@ -240,7 +240,7 @@ nav:
               - 在指定的节点上运行流水线: amamba/02QuickStart/pipeline-on-node.md
       - 多云编排:
           - 介绍:
-              - 什么是多云编排: kairship/01product/whatiskairship.md
+              - 什么是多云编排: kairship/01product/what.md
               - 功能总览: kairship/01product/features.md
               - 产品架构: kairship/01product/architecture.md
               - 产品优势: kairship/01product/benefits.md
@@ -278,7 +278,7 @@ nav:
           - 故障转移: kairship/10failover.md
       - 微服务引擎:
           - 介绍:
-              - 功能总览: skoala/intro/features.md
+              - 功能总览: skoala/intro/what.md
               - 使用场景: skoala/intro/scenarios.md
               - 产品优势: skoala/intro/advantages.md
               - 环境要求: skoala/intro/components.md
@@ -347,13 +347,13 @@ nav:
               - 云原生网关: reference/basic-knowledge/gateway.md
       - 服务网格:
           - 介绍:
-              - 什么是服务网格: mspider/01Intro/WhatismSpider.md
-              - 功能总览: mspider/01Intro/Features.md
-              - 产品优势: mspider/01Intro/Benefits.md
-              - 适用场景: mspider/01Intro/Scenarios.md
+              - 什么是服务网格: mspider/01Intro/what.md
+              - 功能总览: mspider/01Intro/features.md
+              - 产品优势: mspider/01Intro/benefits.md
+              - 适用场景: mspider/01Intro/scenarios.md
               - UI 支持的特性: mspider/01Intro/meshes.md
               - 服务网格权限说明: ghippo/permissions/mspider.md
-              - 网格架构: mspider/01Intro/Architecture.md
+              - 网格架构: mspider/01Intro/architecture.md
               - Release Notes: mspider/01Intro/release-notes.md
           - 安装部署网格: mspider/install.md
           - 创建/删除网格:
@@ -410,7 +410,7 @@ nav:
             - 流量治理: reference/basic-knowledge/traffic-control.md
       - 云原生网络:
           - 介绍:
-              - 什么是云原生网络: network/intro/what-is-net.md
+              - 什么是云原生网络: network/intro/what.md
               - 背景: network/intro/background.md
               - 挑战: network/intro/challenges.md
               - 网络组件: network/modules/modules.md
@@ -468,8 +468,8 @@ nav:
               - Release Notes: network/modules/spiderpool/releasenotes.md
       - 中间件数据服务:
           - 介绍: 
-              - 什么是数据服务: middleware/midware.md
-              - 数据服务版本适配: middleware/adaptation-k8s.md
+              - 什么是数据服务: middleware/what.md
+              - 数据服务版本适配: middleware/compatibility.md
               - 数据服务权限设计说明: middleware/permission.md
           - Elasticsearch 搜索服务:
               - 什么是 Elasticsearch: middleware/elastic-search/intro/what.md
@@ -551,7 +551,7 @@ nav:
               - Release Notes: middleware/redis/release-notes.md
       - 云原生存储:
           - 介绍: 
-            - 什么是云原生存储: storage/intro.md
+            - 什么是云原生存储: storage/what.md
             - 背景和挑战: storage/background.md
             - 功能优势: storage/benifits.md
             - 功能列表: storage/functions.md 
@@ -601,7 +601,7 @@ nav:
               - LVM: storage/terms/lvm.md
               - PV 和 PVC: storage/terms/pv_pvc.md
       - 镜像仓库:
-          - 什么是镜像仓库: kangaroo/intro.md
+          - 什么是镜像仓库: kangaroo/what.md
           - 镜像列表: kangaroo/imagelist.md
           - 关联仓库: kangaroo/related-registry.md
           - 仓库集成: 
@@ -617,7 +617,7 @@ nav:
           - 镜像扫描: kangaroo/scan.md
           - Release Notes: kangaroo/release-notes.md
       - 云原生安全:
-        - 介绍: security/intro.md
+        - 介绍: security/what.md
         - Falco:
             - 介绍: security/falco.md
             - 安装: security/falco-install.md
@@ -644,7 +644,7 @@ nav:
       - 202302 | 社区版涉及的开源项目: blogs/projects.md
       - 202302 | DaoCloud 与 K8s: blogs/daocloud_k8s.md  
       - 202302 | DCE 5.0 攻坚语录集: blogs/peter.md
-      - 202212 | 保姆式安装DCE社区版: blogs/dce5-install1209.md
+      - 202212 | 保姆式安装DCE社区版: blogs/dce5-0328.md
       - 202211 | K8s 资深认证服务商: blogs/kcsp.md
       - 202210 | 容器管理能力介绍: blogs/kpanda.md
       - 202210 | 资源管理能力介绍: blogs/resource.md

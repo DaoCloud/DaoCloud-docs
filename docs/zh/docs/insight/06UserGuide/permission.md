@@ -61,4 +61,4 @@ hide:
 
 有关权限的更多信息，请参阅[容器管理权限说明](../../kpanda/07UserGuide/Permissions/PermissionBrief.md)。
 
-有关角色的创建、管理和删除，请参阅[角色和权限管理](../../ghippo/04UserGuide/01UserandAccess/Role.md)。
+有关角色的创建、管理和删除，请参阅[角色和权限管理](../../ghippo/04UserGuide/01UserandAccess/role.md)。

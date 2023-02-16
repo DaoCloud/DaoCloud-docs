@@ -65,5 +65,5 @@ DCE 5.0 商业版包含以下模块，按需即插即用满足各类应用场景
 
 ## 更多
 
-- [在线文档](../../dce/what-is-dce.md)
+- [在线文档](../../dce/what.md)
 - [报告 bug](https://github.com/DaoCloud/DaoCloud-docs/issues)
