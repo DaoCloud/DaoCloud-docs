@@ -420,6 +420,7 @@ nav:
               - Ingress Scope: network/modules/ingress-nginx/scope.md
               - Configure CORS: network/modules/ingress-nginx/cors.md
               - Configure load balancing and traffic proxy: network/modules/ingress-nginx/proxy.md
+              - Configure timeout: network/modules/ingress-nginx/timeout.md
               - Logging Configuration: network/modules/ingress-nginx/log.md
           - Metallb:
               - Intro: network/modules/metallb/what.md
@@ -443,7 +444,7 @@ nav:
               - Commands: network/modules/spiderpool/command.md
               - Release notes: network/modules/spiderpool/releasenotes.md
       - Data Service:
-          - Intro: 
+          - Intro:
               - What is data service: middleware/midware.md
               - Version Compatibility: middleware/adaptation-k8s.md
           - Elasticsearch:
@@ -524,7 +525,7 @@ nav:
               - Delete Redis Instance: middleware/redis/userguide/delete.md
               - Release Notes: middleware/redis/release-notes.md
       - Cloud-native Storage:
-          - Intro: 
+          - Intro:
               - What is storage: storage/intro.md
               - Background: storage/background.md
               - Benefits: storage/benifits.md

@@ -1,6 +1,6 @@
 # 超时配置
 
-本文介绍 Ingress Nginx 的全局超时配置和特定的 Ingress 资源可用的超时配置。
+本页介绍 Ingress Nginx 的全局超时配置和特定的 Ingress 资源可用的超时配置。
 
 ## 全局超时配置
 
