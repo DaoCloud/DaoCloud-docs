@@ -30,9 +30,9 @@
 	spec:
 	  endpoints: # (3)
 	    - honorLabels: true
-	      interval: 15s
-	      path: /actuator/prometheus
-	      port: http
+	        interval: 15s
+	        path: /actuator/prometheus
+	        port: http
 	  namespaceSelector: # (4)
 	    matchNames:
 	      - insight-system  # 此处匹配的命名空间为需要暴露指标的应用所在的。
