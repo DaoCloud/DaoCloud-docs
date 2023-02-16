@@ -198,6 +198,8 @@ nav:
               - 链路采集排障指南: insight/09FAQs/debugtrace.md
               - DCE 4.0 安装 insight-agent: insight/09FAQs/installagentindce.md
               - 指标抓取说明: insight/09FAQs/servicemonitor.md
+          - 最佳实践: 
+              - Prometheus 资源规划: insight/10bestpractice/prometheusresource.md
       - 应用工作台:
           - 介绍:
               - 什么是应用工作台？: amamba/01ProductBrief/WhatisAmamba.md
