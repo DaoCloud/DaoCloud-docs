@@ -25,7 +25,8 @@
 	metadata:
 	  name: micrometer-demo # (1)
 	  namespace: insight-system # (2)
-	  operator.insight.io/managed-by: insight
+		labels: 
+	  	operator.insight.io/managed-by: insight
 	spec:
 	  endpoints: # (3)
 	    - honorLabels: true
@@ -34,7 +35,7 @@
 		  port: http
 	  namespaceSelector: # (4)
 		matchNames:
-		  - insight-system
+		  - insight-system  # 此处匹配的命名空间为需要暴露指标的应用所在的。
 	  selector: # (5)
 		matchLabels:
 		  micrometer-prometheus-discovery: "true"

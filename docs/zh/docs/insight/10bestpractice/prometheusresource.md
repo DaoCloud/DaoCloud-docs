@@ -1,8 +1,8 @@
 # Prometheus 资源规划
 
-Prometheus 的运行在实际使用过程中由于集群容器数量和开启 Istio 等影响条件下，会导致 Prometheus 的CPU、内存等资源使用量超出设定的资源。
+Prometheus 在实际使用过程中，受到集群容器数量以及开启 Istio 的影响，会导致 Prometheus 的 CPU、内存等资源使用量超出设定的资源。
 
-为了保证不同规模集群下 Prometheus 的正常运行，需要根据实际集群规模对 Prometheus 进行资源调整。
+为了保证不同规模集群下 Prometheus 的正常运行，需要根据集群的实际规模对 Prometheus 进行资源调整。
 
 ## 参考资源规划
 
@@ -10,23 +10,43 @@ Prometheus 的运行在实际使用过程中由于集群容器数量和开启 Is
 
 在开启服务网格时，开启功能后 Pod 产生的 Istio 相关指标数量级为：**Series 数量 = 768*Pod 数量**
 
-以下表格为未开启&开启服务网格时根据集群规模提供的资源规划。
+### 当未开启服务网格时
 
-| 集群规模 (Pod 数) |     | 指标量(未开启服务网格) | CPU (core)                | 内存 (GB)                   |     | 指标量(已开启服务网格) | CPU (core)               | 内存 (GB)                      |
-| --------------- | --- | ---------------------- | ------------------------ | -------------------------- | --- | ---------------------- | ----------------------- | ----------------------------- |
-| 100             |     | 8w                     | request: 0.5<br>limit：1 | request：2GB<br>limit：4GB |     | 15w                    | request: 1<br>limit：2  | request：3GB<br>limit：6GB    |
-| 200             |     | 16w                    | request：1<br>limit：1.5 |request：3GB<br>limit：6GB|     | 31w                    | request：2<br>limit：3  | request：5GB<br>limit：10GB   |
-| 300             |     | 24w                    | request：1<br>limit：2|request：3GB<br>limit：6GB |     | 46w                    | request：2<br>limit：4  | request：6GB<br>limit：12GB   |
-| 400             |     | 32w                    | request：1<br>limit：2|request：4GB<br>limit：8GB|     | 62w                    | request：2<br>limit：4  | request：8GB<br>limit：16GB   |
-| 500             |     | 40w                    | request：1.5<br>limit：3|request：5GB<br>limit：10GB |     | 78w                    | request：3<br>limit：6  | request：10GB<br>limit：20GB  |
-| 800             |     | 64w                    | request：2<br>limit：4 | request：8GB<br>limit：16GB|     | 125w                   | request：4<br>limit：8  | request：15GB<br>limit：30GB  |
-| 1000            |     | 80w                    |request：2.5<br>limit：5|request：9GB<br>limit：18GB|     | 156w                   | request：5<br>limit：10 | request：18GB<br>limit：36GB  |
-| 2000            |     | 160w                   |request：3.5<br>limit：7|request：20GB<br>limit：40GB |     | 312w                   | request：7<br>limit：14 | request：40GB<br>limit：80GB  |
-| 3000            |     | 240w                   | request：4<br>limit：8 | request：33GB<br>limit：66GB |     | 468w                   | request：8<br>limit：16 | request：65GB<br>limit：130GB |
+以下资源规划为**未开启服务网格**场景下，Prometheus 的资源规划推荐：
+
+| 集群规模(Pod数) | 指标量(未开启服务网格) | CPU(core)                | 内存(GB)                     |
+| --------------- | ---------------------- | ------------------------ | ---------------------------- |
+| 100             | 8w                     | Request: 0.5<br>Limit：1 | Request：2GB<br>Limit：4GB |
+| 200             | 16w                    | Request：1<br>Limit：1.5 | Request：3GB<br>Limit：6GB   |
+| 300             | 24w                    | Request：1<br>Limit：2   | Request：3GB<br>Limit：6GB   |
+| 400             | 32w                    | Request：1<br>Limit：2   | Request：4GB<br>Limit：8GB   |
+| 500             | 40w                    | Request：1.5<br>Limit：3 | Request：5GB<br>Limit：10GB  |
+| 800             | 64w                    | Request：2<br>Limit：4   | Request：8GB<br>Limit：16GB  |
+| 1000            | 80w                    | Request：2.5<br>Limit：5 | Request：9GB<br>Limit：18GB  |
+| 2000            | 160w                   | Request：3.5<br>Limit：7 | Request：20GB<br>Limit：40GB |
+| 3000            | 240w                   | Request：4<br>Limit：8   | Request：33GB<br>Limit：66GB |
+
+
+### 当开启服务网格功能时
+
+以下资源规划为**开启服务网格**场景下，Prometheus 的资源规划推荐：
+
+| 集群规模(Pod数) | 指标量(已开启服务网格) | CPU(core)               | 内存(GB)                      |
+| --------------- | ---------------------- | ----------------------- | ----------------------------- |
+| 100             | 15w                    | Request: 1<br>Limit：2  | Request：3GB<br>Limit：6GB    |
+| 200             | 31w                    | Request：2<br>Limit：3  | Request：5GB<br>Limit：10GB   |
+| 300             | 46w                    | Request：2<br>Limit：4  | Request：6GB<br>Limit：12GB   |
+| 400             | 62w                    | Request：2<br>Limit：4  | Request：8GB<br>Limit：16GB   |
+| 500             | 78w                    | Request：3<br>Limit：6  | Request：10GB<br>Limit：20GB  |
+| 800             | 125w                   | Request：4<br>Limit：8  | Request：15GB<br>Limit：30GB  |
+| 1000            | 156w                   | Request：5<br>Limit：10 | Request：18GB<br>Limit：36GB  |
+| 2000            | 312w                   | Request：7<br>Limit：14 | Request：40GB<br>Limit：80GB  |
+| 3000            | 468w                   | Request：8<br>Limit：16 | Request：65GB<br>Limit：130GB |
+
 
 
 !!! note
 
-    1. 上表中 `Pod 数`指集群中基本稳定运行的 Pod 数量，如出现大量的 Pod 重启，则会在短时间内造成指标量的陡增，此时资源需要进行相应上调；
-    2. Prometheus 内存中默认保存两小时数据，且集群中开启了 [remote write 功能](https://prometheus.io/docs/practices/remote_write/#memory-usage) 时，会占用一定内存，资源超配比建议配置为 2；
+    1. 表格中的 `Pod 数量`指集群中基本稳定运行的 Pod 数量，如出现大量的 Pod 重启，则会造成短时间内指标量的陡增，此时资源需要进行相应上调；
+    2. Prometheus 内存中默认保存两小时数据，且集群中开启了 [Remote Write 功能](https://prometheus.io/docs/practices/remote_write/#memory-usage)时，会占用一定内存，资源超配比建议配置为 2；
     3. 表格中数据为推荐值，适用于通用情况。如环境有精确的资源要求，建议在集群运行一段时间后，查看对应 Prometheus 的资源占用量进行精确配置。
