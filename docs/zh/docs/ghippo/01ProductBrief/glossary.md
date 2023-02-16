@@ -11,12 +11,12 @@ IAM（Identity and access management）是用户与访问控制模块的简称�
 
 ### RBAC
 
-RBAC（Role-based access control，基于角色的访问控制），基本理念是将[角色](../04UserGuide/01UserandAccess/Role.md)这个概念赋予用户，在用户与权限之间通过角色进行关联，实现灵活配置。
+RBAC（Role-based access control，基于角色的访问控制），基本理念是将[角色](../04UserGuide/01UserandAccess/role.md)这个概念赋予用户，在用户与权限之间通过角色进行关联，实现灵活配置。
 RBAC 模型的三要素为：用户、角色、权限。使用 RBAC 机制授权 IAM 用户访问平台资源。
 
 ### 用户
 
-[用户](../04UserGuide/01UserandAccess/User.md)是发起操作的主体，每个用户都有唯一的 ID，并被授予不同的角色。
+[用户](../04UserGuide/01UserandAccess/user.md)是发起操作的主体，每个用户都有唯一的 ID，并被授予不同的角色。
 默认创建的 IAM 用户没有任何权限，需要将其加入用户组，授予角色或策略，才能让用户获得对应的权限。
 
 用户以用户名登录 DCE，按照被授予的权限操作平台资源和服务。
@@ -26,12 +26,12 @@ RBAC 模型的三要素为：用户、角色、权限。使用 RBAC 机制授权
 
 ### 用户组
 
-[用户组](../04UserGuide/01UserandAccess/Group.md)是一个或多个用户的集合，IAM 可以通过用户组实现用户的授权。
+[用户组](../04UserGuide/01UserandAccess/group.md)是一个或多个用户的集合，IAM 可以通过用户组实现用户的授权。
 通常先创建一个 IAM 用户，加入某个用户组，该用户将继承这个用户组的权限。当一个用户加入多个用户组时，该用户将同时拥有多个用户组的权限。
 
 ### 角色
 
-[角色](../04UserGuide/01UserandAccess/Role.md)是连接用户与权限的桥梁，一个角色对应一组权限，不同角色具有不同的权限。向用户授予某角色，即授予该角色所包含的所有权限。全局管理中有两种角色：
+[角色](../04UserGuide/01UserandAccess/role.md)是连接用户与权限的桥梁，一个角色对应一组权限，不同角色具有不同的权限。向用户授予某角色，即授予该角色所包含的所有权限。全局管理中有两种角色：
 
 - 预定义角色：由系统创建，用户只能使用不能修改，每个子模块都有一个管理员 Admin 角色。
 
@@ -58,7 +58,7 @@ RBAC 模型的三要素为：用户、角色、权限。使用 RBAC 机制授权
 
 ### 工作空间
 
-通过[工作空间](../04UserGuide/02Workspace/Workspaces.md)协调全局管理和子模块的权限关系，解决资源聚合和映射层级关系。
+通过[工作空间](../04UserGuide/02Workspace/workspaces.md)协调全局管理和子模块的权限关系，解决资源聚合和映射层级关系。
 通常一个工作空间对应一个项目，可以为每个工作空间分配不同的资源，指派不同的用户和用户组。
 
 ![工作空间](../images/workspace.png)

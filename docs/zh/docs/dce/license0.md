@@ -5,7 +5,7 @@ hide:
 
 # 申请社区免费体验
 
-DCE 5.0 社区版包含的模块为[全局管理](../ghippo/01ProductBrief/WhatisGhippo.md)、[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md)和[可观测性](../insight/03ProductBrief/WhatisInsight.md)等模块。
+DCE 5.0 社区版包含的模块为[全局管理](../ghippo/01ProductBrief/what.md)、[容器管理](../kpanda/03ProductBrief/what.md)、[可观测性](../insight/03ProductBrief/what.md)等模块。
 建议[下载](../download/dce5.md)并[安装 DCE 5.0](../install/community/k8s/online.md) 之后，参照以下步骤进行激活。
 
 ![license](../images/license01.png)

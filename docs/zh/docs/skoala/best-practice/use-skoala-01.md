@@ -19,7 +19,7 @@
 
 ## 应用部署
 
-[应用工作台](../../amamba/01ProductBrief/WhatisAmamba.md)是 DCE 5.0 的应用管理模块，支持创建/维护多种类型的应用、GitOps 和灰度发布等功能，可以快速将应用部署到任何集群。应用工作台支持基于 Git 仓、Jar 包、容器镜像、Helm 模板部署应用。本次实践基于 `Helm 模板` 部署示例应用。
+[应用工作台](../../amamba/01ProductBrief/what.md)是 DCE 5.0 的应用管理模块，支持创建/维护多种类型的应用、GitOps 和灰度发布等功能，可以快速将应用部署到任何集群。应用工作台支持基于 Git 仓、Jar 包、容器镜像、Helm 模板部署应用。本次实践基于 `Helm 模板` 部署示例应用。
 
 ![image](../images/chooseInstalltype.png)
 

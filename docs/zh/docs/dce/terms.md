@@ -20,7 +20,7 @@
 - Addon, 扩展
 
     扩展 DCE 功能的资源对象。
-    您可以通过[容器管理](../kpanda/03ProductBrief/WhatisKPanda.md) -> [Helm 模板](../kpanda/07UserGuide/helm/README.md)安装更多附加扩展组件。
+    您可以通过[容器管理](../kpanda/03ProductBrief/what.md) -> [Helm 模板](../kpanda/07UserGuide/helm/README.md)安装更多附加扩展组件。
 
 - Admission Controller, 准入控制器
 
@@ -964,7 +964,7 @@
 
 - Group
 
-    在全局管理中，这指的是由多个用户形成的组合，即[用户组](../ghippo/04UserGuide/01UserandAccess/Group.md)。
+    在全局管理中，这指的是由多个用户形成的组合，即[用户组](../ghippo/04UserGuide/01UserandAccess/group.md)。
 
     在微服务引擎中，这是 Nacos 中的一组配置集。
 
@@ -1383,7 +1383,7 @@
 
 - Nacos 集群节点角色
 
-    这是[微服务引擎](../skoala/intro/features.md)中节点在 Raft 协议中的角色。Raft 是一种实现分布式共识的协议，即如何让多个节点达成一致。
+    这是[微服务引擎](../skoala/intro/what.md)中节点在 Raft 协议中的角色。Raft 是一种实现分布式共识的协议，即如何让多个节点达成一致。
 
     **Leader** 是所有请求的处理者，负责接收客户端发起的操作请求，将请求写入本地日志并向其他节点同步请求日志。
     任何时候最多只能有一个 Leader。
@@ -1461,7 +1461,7 @@
 
 - Observability, 可观测性
 
-    [可观测性](../insight/03ProductBrief/WhatisInsight.md)指的是从所观测的系统采集信号，持续生成并发现可执行的洞察力。
+    [可观测性](../insight/03ProductBrief/what.md)指的是从所观测的系统采集信号，持续生成并发现可执行的洞察力。
     换言之，可观测性允许用户从某个系统的外部输出中洞察该系统的状态并采取（修正）措施。
 
     计算机系统的衡量机制为观测 CPU 时间、内存、磁盘空间等底层信号以及每秒
@@ -1659,7 +1659,7 @@
 
     管理授权决策，允许管理员通过 Kubernetes API 动态配置访问策略。
 
-    RBAC 使用[角色](../ghippo/04UserGuide/01UserandAccess/Role.md) (包含权限规则）和角色绑定（将角色中定义的权限授予一个用户组）。
+    RBAC 使用[角色](../ghippo/04UserGuide/01UserandAccess/role.md) (包含权限规则）和角色绑定（将角色中定义的权限授予一个用户组）。
 
 - Registration center, 注册中心
 
@@ -1717,7 +1717,7 @@
 
 - Resource Template, 资源模板
 
-    在[多云编排](../kairship/01product/whatiskairship.md)中采用了一种叫做联邦资源的模板，
+    在[多云编排](../kairship/01product/what.md)中采用了一种叫做联邦资源的模板，
     这是基于 K8s 原生 API 定义的一种多云资源模板，便于集成使用 K8s 生态范围内的所有云原生工具。
 
     通过这种资源模板可以统一管理[多云服务](../kairship/06resource/service.md)、
@@ -1726,7 +1726,7 @@
 
 - Role, 角色
 
-    [角色](../ghippo/04UserGuide/01UserandAccess/Role.md)是连接用户与权限的桥梁，
+    [角色](../ghippo/04UserGuide/01UserandAccess/role.md)是连接用户与权限的桥梁，
     一个角色对应一组权限，不同角色具有不同的权限。向用户授予某角色，即授予该角色所包含的所有权限。
     全局管理中有两种角色：
 
@@ -2101,7 +2101,7 @@
 
 - User, 用户
 
-    [用户](../ghippo/04UserGuide/01UserandAccess/User.md)是发起操作的主体，每个用户都有唯一的 ID，并被授予不同的角色。
+    [用户](../ghippo/04UserGuide/01UserandAccess/user.md)是发起操作的主体，每个用户都有唯一的 ID，并被授予不同的角色。
     默认创建的 IAM 用户没有任何权限，需要将其加入用户组，授予角色或策略，才能让用户获得对应的权限。
 
     用户以用户名登录 DCE，按照被授予的权限操作平台资源和服务。
@@ -2233,7 +2233,7 @@
 
 - Workspace, 工作空间
 
-    [工作空间](../ghippo/04UserGuide/02Workspace/Workspaces.md)是一种资源范畴，代表一种资源层级关系。
+    [工作空间](../ghippo/04UserGuide/02Workspace/workspaces.md)是一种资源范畴，代表一种资源层级关系。
     工作空间可以包含集群、[命名空间](../kpanda/07UserGuide/Namespaces/createns.md)、注册中心等资源。
     通常一个工作空间对应一个项目，可以为每个工作空间分配不同的资源，指派不同的用户和用户组。
 

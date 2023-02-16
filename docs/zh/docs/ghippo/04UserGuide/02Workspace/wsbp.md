@@ -50,7 +50,7 @@
 
 ## 工作空间对 DCE 模块的作用
 
-1. 模块名称：[应用工作台](../../../amamba/01ProductBrief/WhatisAmamba.md)、[微服务引擎](../../../skoala/intro/features.md)、[服务网格](../../../mspider/01Intro/WhatismSpider.md)、[中间件](../../../middleware/midware.md)
+1. 模块名称：[应用工作台](../../../amamba/01ProductBrief/what.md)、[微服务引擎](../../../skoala/intro/what.md)
 
     进入上述几个模块的前提是拥有某个工作空间的权限，因此在使用模块功能前必须具有 Admin 角色或者拥有某个工作空间的一定角色权限。
 
@@ -60,7 +60,7 @@
 
     另外，您在这些模块创建的资源也将自动被绑定到对应的工作空间中，而不需要其他额外的操作。
 
-2. 模块名称：[容器管理](../../../kpanda/03ProductBrief/WhatisKPanda.md)、[服务网格](../../../mspider/01Intro/WhatismSpider.md)
+2. 模块名称：[容器管理](../../../kpanda/03ProductBrief/what.md)、[服务网格](../../../mspider/01Intro/what.md)
 
     由于功能模块的特殊性，在容器管理模块创建的资源不会自动被绑定到某个工作空间。
 

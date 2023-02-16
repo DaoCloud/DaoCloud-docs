@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-1. 创建一个[工作空间](../../../ghippo/04UserGuide/02Workspace/Workspaces.md)和一个[用户](../../../ghippo/04UserGuide/01UserandAccess/User.md)，该用户需加入该工作空间并具备 `Workspace Editor` 角色。
+1. 创建一个[工作空间](../../../ghippo/04UserGuide/02Workspace/workspaces.md)和一个[用户](../../../ghippo/04UserGuide/01UserandAccess/user.md)，该用户需加入该工作空间并具备 `Workspace Editor` 角色。
 
 2. [创建访问镜像仓库的凭证](../Pipeline/Credential.md)，例如 `registry`。
 
@@ -48,8 +48,8 @@
 
 5. 参考下列说明选择是否开启高级功能，然后点击`创建并上传 Jar 包`。
 
-    - 服务网格：选择是否启用 [DCE 5.0 的服务网格](../../../mspider/01Intro/WhatismSpider.md)模块来治理微服务流量。
-    - 微服务引擎：是否将新创建的应用接入 [DCE 5.0 的微服务引擎](../../../skoala/intro/features.md)模块。
+    - 服务网格：选择是否启用 [DCE 5.0 的服务网格](../../../mspider/01Intro/what.md)模块来治理微服务流量。
+    - 微服务引擎：是否将新创建的应用接入 [DCE 5.0 的微服务引擎](../../../skoala/intro/what.md)模块。
     - 灰度发布：选择是否开启灰度发布。有关灰度发布的更多内容，可参考[金丝雀发布](../release/canary.md)。
 
         ![高级配置](../../images/jar05.png)

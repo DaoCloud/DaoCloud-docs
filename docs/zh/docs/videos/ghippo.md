@@ -4,7 +4,7 @@
 
 ## 创建用户并授权
 
-参阅[创建用户并授权](../ghippo/04UserGuide/01UserandAccess/User.md)文档页面。
+参阅[创建用户并授权](../ghippo/04UserGuide/01UserandAccess/user.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-user.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -20,7 +20,7 @@
 
 ## 管理工作空间 (Workspace)
 
-参阅[管理工作空间](../ghippo/04UserGuide/02Workspace/Workspaces.md)文档页面。
+参阅[管理工作空间](../ghippo/04UserGuide/02Workspace/workspaces.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/workspace.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>

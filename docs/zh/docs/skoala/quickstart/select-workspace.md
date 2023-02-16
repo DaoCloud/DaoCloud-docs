@@ -5,7 +5,7 @@ hide:
 
 # 选择工作空间
 
-首次进入微服务治理模块时，首先必须选择一个[工作空间](../../ghippo/04UserGuide/02Workspace/Workspaces.md)。
+首次进入微服务治理模块时，首先必须选择一个[工作空间](../../ghippo/04UserGuide/02Workspace/workspaces.md)。
 
 ![选择工作空间](../images/workspace.png)
 

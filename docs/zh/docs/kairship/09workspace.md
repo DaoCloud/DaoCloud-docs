@@ -1,10 +1,10 @@
 # 绑定工作空间
 
-多云实例和多云命名空间可以绑定到某个[工作空间](../ghippo/04UserGuide/02Workspace/Workspaces.md)。绑定到工作空间后，具有相关权限的用户即可在对应的工作空间中管理这些资源。
+多云实例和多云命名空间可以绑定到某个[工作空间](../ghippo/04UserGuide/02Workspace/workspaces.md)。绑定到工作空间后，具有相关权限的用户即可在对应的工作空间中管理这些资源。
 
 **注意事项**
 
-- 当前操作用户应具有 Admin 或 Workspace Admin 权限。有关权限的更多说明，可参考[角色和权限管理](../ghippo/04UserGuide/01UserandAccess/Role.md)和[工作空间权限](../ghippo/04UserGuide/02Workspace/wspermission.md)。
+- 当前操作用户应具有 Admin 或 Workspace Admin 权限。有关权限的更多说明，可参考[角色和权限管理](../ghippo/04UserGuide/01UserandAccess/role.md)和[工作空间权限](../ghippo/04UserGuide/02Workspace/wspermission.md)。
 - 一个多云实例/命名空间只能绑定到一个工作空间。
 
 ## 绑定多云实例与工作空间

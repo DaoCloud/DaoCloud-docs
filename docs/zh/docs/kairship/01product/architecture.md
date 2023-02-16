@@ -27,7 +27,7 @@
 
 ### Kairship apiserver
 
-kairship apiserver 主要担负着多云编排所有流量的入口（openapi、grpc 等），启动的时候会从[全局管理模块](../../ghippo/01ProductBrief/WhatisGhippo.md)获取操作人的身份信息，用于后续 AuthZ 的安全性校验。
+kairship apiserver 主要担负着多云编排所有流量的入口（openapi、grpc 等），启动的时候会从[全局管理模块](../../ghippo/01ProductBrief/what.md)获取操作人的身份信息，用于后续 AuthZ 的安全性校验。
 
 <!--无状态服务，具体接口待补充（目前比较简单）-->
 
@@ -43,7 +43,7 @@ kairship apiserver 主要担负着多云编排所有流量的入口（openapi、
 
     多云编排实例 CRD 的 CRUD 事件监听，一旦创建 kariship 实例，则同步创建对应的 Kpanda cluster（virtual 类型，容器管理界面无须展示）。
 
-    多云编排实例所有资源的检索（多云工作负载、pp、op）都将通过[容器管理模块](../../kpanda/03ProductBrief/WhatisKPanda.md)内部的加速机制完成（借助 [Clusterpedia](../../community/clusterpedia.md)），实现读写分离，进而提高性能。
+    多云编排实例所有资源的检索（多云工作负载、pp、op）都将通过[容器管理模块](../../kpanda/03ProductBrief/what.md)内部的加速机制完成（借助 [Clusterpedia](../../community/clusterpedia.md)），实现读写分离，进而提高性能。
 
     实例删除，则同步删除注册在容器管理模块中的 virtual cluster。
 
@@ -57,12 +57,12 @@ kairship apiserver 主要担负着多云编排所有流量的入口（openapi、
 
 - instance registry controller
 
-    多云编排需要通过自定义资源将平台内所有 `Karmada` 实例注册到[全局管理模块](../../ghippo/01ProductBrief/WhatisGhippo.md)，这样才能在全局管理中完成角色与 Karmada 实例的绑定关系。
+    多云编排需要通过自定义资源将平台内所有 `Karmada` 实例注册到[全局管理模块](../../ghippo/01ProductBrief/what.md)，这样才能在全局管理中完成角色与 Karmada 实例的绑定关系。
     最终这些绑定关系会同步到多云编排模块中。
 
 - Ghippo webhook controller
 
-    在[全局管理模块](../../ghippo/01ProductBrief/WhatisGhippo.md)完成角色与 Karmada 实例的绑定关系之后，通过 sdk 告知多云编排，多云编排据此完成鉴权动作。
+    在[全局管理模块](../../ghippo/01ProductBrief/what.md)完成角色与 Karmada 实例的绑定关系之后，通过 sdk 告知多云编排，多云编排据此完成鉴权动作。
 
 上图 `Kairship management` 中有一个 instance proxy 的组件（内部组件），主要负责多云编排管理面同各个 `Karmada` 实例间的通信。
 可以理解成是一个 Kubernetes client 的集合，根据 Cluster Name 获取对应的 client，然后访问真正的 Karmada 实例。
@@ -83,10 +83,10 @@ kairship apiserver 主要担负着多云编排所有流量的入口（openapi、
 
 ![数据流图](../images/arch_kairship_instance.jpg)
 
-如上图所示，所有访问多云模块的请求经过多云编排之后将会被分流，所有 get/list 之类的读请求将会访问[容器管理模块](../../kpanda/03ProductBrief/WhatisKPanda.md)，写请求会访问 Karmada 实例。这样会产生一个问题：通过多云编排创建一个多云应用之后，通过[容器管理模块](../../kpanda/03ProductBrief/WhatisKPanda.md)怎么能获取的相关资源信息？
+如上图所示，所有访问多云模块的请求经过多云编排之后将会被分流，所有 get/list 之类的读请求将会访问[容器管理模块](../../kpanda/03ProductBrief/what.md)，写请求会访问 Karmada 实例。这样会产生一个问题：通过多云编排创建一个多云应用之后，通过[容器管理模块](../../kpanda/03ProductBrief/what.md)怎么能获取的相关资源信息？
 
 了解 Karmada 的小伙伴都知道，Karmada control-plane 其本质也就是一个完整 Kubernetes 控制面，只是没有任何承载工作负载的节点。
-因此多云编排在创建实例的时候，采用了一个取巧的动作，把实例本身作为一个隐藏的集群加入到[容器管理模块](../../kpanda/03ProductBrief/WhatisKPanda.md)中（不在容器管理中显示）。
+因此多云编排在创建实例的时候，采用了一个取巧的动作，把实例本身作为一个隐藏的集群加入到[容器管理模块](../../kpanda/03ProductBrief/what.md)中（不在容器管理中显示）。
 这样就可以完全借助容器管理模块的能力（搜集加速检索各个 Kubernetes 集群的资源、CRD 等），当在界面中查询某个多云编排实例的资源（deployment、pp、op 等）就可以直接通过容器管理模块进行检索，做到读写分离，加快响应时间。
 
 ## 多云编排实例 LCM

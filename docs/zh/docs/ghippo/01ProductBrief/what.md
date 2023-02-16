@@ -32,9 +32,9 @@
 
 1. 使用 DCE 平台管理员（Admin）或具有管理员权限的用户登录 DCE 平台
 
-2. 进入`用户与访问控制`，[创建用户并授权](../04UserGuide/01UserandAccess/User.md)，[创建用户组并授权](../04UserGuide/01UserandAccess/Group.md)，[创建身份提供商](../04UserGuide/01UserandAccess/idprovider.md)
+2. 进入`用户与访问控制`，[创建用户并授权](../04UserGuide/01UserandAccess/user.md)，[创建用户组并授权](../04UserGuide/01UserandAccess/group.md)，[创建身份提供商](../04UserGuide/01UserandAccess/idprovider.md)
 
-3. 进入`工作空间`，[创建层级（企业层级关系）](../04UserGuide/02Workspace/ws-folder.md)，[创建工作空间（租户）](../04UserGuide/02Workspace/Workspaces.md)
+3. 进入`工作空间`，[创建层级（企业层级关系）](../04UserGuide/02Workspace/ws-folder.md)，[创建工作空间（租户）](../04UserGuide/02Workspace/workspaces.md)
 
 4. 进入`审计日志`，查看并[导出审计日志](../04UserGuide/03AuditLog.md)
 

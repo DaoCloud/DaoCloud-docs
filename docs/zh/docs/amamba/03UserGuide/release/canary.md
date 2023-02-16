@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-1. 创建一个[工作空间](../../../ghippo/04UserGuide/02Workspace/Workspaces.md)和一个[用户](../../../ghippo/04UserGuide/01UserandAccess/User.md)，该用户需加入该工作空间并具备 `Workspace Editor` 角色。
+1. 创建一个[工作空间](../../../ghippo/04UserGuide/02Workspace/workspaces.md)和一个[用户](../../../ghippo/04UserGuide/01UserandAccess/user.md)，该用户需加入该工作空间并具备 `Workspace Editor` 角色。
 
 - 创建一个应用并开启`灰度发布`，可参考[基于 Git 仓构建微服务应用](../wizard/create-git-based-ms.md)、[基于 Jar 包部署 Java 应用](../wizard/jar-java-app.md)。
 
