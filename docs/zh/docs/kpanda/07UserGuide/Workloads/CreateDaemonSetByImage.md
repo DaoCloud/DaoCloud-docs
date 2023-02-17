@@ -20,7 +20,7 @@
 
 - 在[容器管理](../../03ProductBrief/what.md)模块中[接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
 
-- 创建一个[命名空间](../Namespaces/createns.md)和[用户](../../../ghippo/04UserGuide/01UserandAccess/user.md)。
+- 创建一个[命名空间](../Namespaces/createns.md)和[用户](../../../ghippo/04UserGuide/01access-control/user.md)。
 
 - 当前操作用户应具有 [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) 或更高权限，详情可参考[命名空间授权](../Namespaces/createns.md)。
 

@@ -106,9 +106,9 @@ plugins:
 
   - redirects:
       redirect_maps:
-        "api.md": "dce/what"
-        "dce/what-is-dce.md": "dce/what"
-        "zh/dce/what.md": "dce/what"
+        "api.md": "dce/what.md"
+        "dce/what-is-dce.md": "dce/what.md"
+        "zh/dce/what.md": "dce/what.md"
         "zh/install/install-dce.md": "install/community/k8s/online.md"
 
 

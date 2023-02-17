@@ -4,7 +4,7 @@
 
 **注意事项**
 
-- 当前操作用户应具有 Admin 或 Workspace Admin 权限。有关权限的更多说明，可参考[角色和权限管理](../ghippo/04UserGuide/01UserandAccess/role.md)和[工作空间权限](../ghippo/04UserGuide/02Workspace/wspermission.md)。
+- 当前操作用户应具有 Admin 或 Workspace Admin 权限。有关权限的更多说明，可参考[角色和权限管理](../ghippo/04UserGuide/01access-control/role.md)和[工作空间权限](../ghippo/04UserGuide/02Workspace/wspermission.md)。
 - 一个多云实例/命名空间只能绑定到一个工作空间。
 
 ## 绑定多云实例与工作空间

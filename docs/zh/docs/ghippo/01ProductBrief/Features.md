@@ -10,7 +10,7 @@ hide:
 1. 用户管理
 
     拥有用户帐号，是用户访问 DCE 平台的前提。
-    [用户](../04UserGuide/01UserandAccess/user.md)由平台管理员 Super Admin 或者用户与访问控制管理员 IAM Admin 在`全局管理` -> `用户与访问控制` -> `用户`页面创建，或者通过 LDAP 对接而来。
+    [用户](../04UserGuide/01access-control/user.md)由平台管理员 Super Admin 或者用户与访问控制管理员 IAM Admin 在`全局管理` -> `用户与访问控制` -> `用户`页面创建，或者通过 LDAP 对接而来。
     每位用户拥有独立的用户名和密码，通过给单个或者一组用户授予不同的权限，让不同的用户拥有不同资源的访问权限。
 
     ```mermaid
@@ -33,7 +33,7 @@ hide:
 
 2. 用户组管理
 
-    [用户组](../04UserGuide/01UserandAccess/group.md)是多个用户的集合。
+    [用户组](../04UserGuide/01access-control/group.md)是多个用户的集合。
     用户可以通过加入用户组，实现继承用户组的角色权限。通过用户组批量地给用户进行授权，可以更好地管理用户及其权限。
 
     ```mermaid
@@ -57,10 +57,10 @@ hide:
 
 3. 角色管理
 
-    一个[角色](../04UserGuide/01UserandAccess/role.md)对应一组权限。
+    一个[角色](../04UserGuide/01access-control/role.md)对应一组权限。
     权限决定了可以对资源执行的操作。向用户授予某个角色，即授予该角色所包含的所有权限。
     您可以将不同模块的管理权限划分给不同的用户，
-    比如用户 A 管理容器管理模块，用户 B 管理应用工作台模块，共同管理可观测性板块。
+    比如用户 A 管理[容器管理模块](../../kpanda/03ProductBrief/what.md)，用户 B 管理[应用工作台模块](../../amamba/01ProductBrief/what.md)，共同管理[可观测性模块](../../insight/03ProductBrief/what.md)。
 
     ![角色](../images/role.png)
 
@@ -85,7 +85,7 @@ hide:
 
 6. 平台设置
 
-    [平台设置](../04UserGuide/04PlatformSetting/about.md)包括账号安全设置、外观定制、邮件服务器等。
+    [平台设置](../04UserGuide/04PlatformSetting/about.md)包括账号安全设置、[外观定制](../04UserGuide/04PlatformSetting/appearance.md)、[邮件服务器](../04UserGuide/04PlatformSetting/MailServer.md)等。
     当需要对账号的安全信息、平台 logo、许可证授权、邮件服务器等平台级设置进行管理时，
     可以通过 `平台设置` 进行操作，平台设置仅平台管理员具有管理权限。
 
@@ -116,7 +116,7 @@ hide:
 具体的功能清单如下所述。
 
 1. 用户与访问控制
-    1. [用户](../04UserGuide/01UserandAccess/user.md)
+    1. [用户](../04UserGuide/01access-control/user.md)
         - 列表展示用户名、描述、创建时间、最近一次登录时间
         - 列表支持通过用户名搜索用户
         - 列表支持给用户快捷授权
@@ -128,7 +128,7 @@ hide:
         - 详情支持记录用户加入用户组信息，支持用户加入新的用户组，支持将用户从老的用户组移除
         - 支持管理员帮助用户修改密码
         - 支持管理员帮助用户创建访问密钥
-    2. [用户组](../04UserGuide/01UserandAccess/group.md)
+    2. [用户组](../04UserGuide/01access-control/group.md)
         - 列表展示用户组名、组内用户数、描述、创建时间
         - 列表支持通过用户组名搜索
         - 列表支持给用户组快捷授权
@@ -138,12 +138,12 @@ hide:
         - 详情支持编辑用户组基本信息，例如描述
         - 详情支持记录用户组授权信息，支持添加 / 移除权限
         - 详情支持记录用户组成员信息，支持给用户组添加新成员，支持将成员从用户组移除
-    3. [角色](../04UserGuide/01UserandAccess/role.md)
+    3. [角色](../04UserGuide/01access-control/role.md)
         - 列表展示系统角色名称、描述
         - 详情记录角色授权信息，支持将角色授予用户 / 用户组，支持将用户 / 用户组从该角色移除
         - 支持 Folder Admin、Folder Editor、Folder Viewer 三种预定义文件夹角色
         - 支持 Workspace Admin、Workspace Editor、Workspace Viewer 三种预定义工作空间角色
-    4. [身份提供商](../04UserGuide/01UserandAccess/idprovider.md)
+    4. [身份提供商](../04UserGuide/01access-control/idprovider.md)
         - 支持 LDAP、OIDC 两种协议对接外部用户
         - LDAP 协议支持手动 / 自动同步外部用户
         - LDAP 协议支持手动同步外部用户组
