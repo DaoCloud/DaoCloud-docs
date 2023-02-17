@@ -1,16 +1,23 @@
 # MySQL 排障手册
 
-本文将会持续统计和梳理常见的 MySQL 异常故障以及修复方式，若遇到使用问题，请优先查看次排障手册。
+本文将会持续统计和梳理常见的 MySQL 异常故障以及修复方式，若遇到使用问题，请优先查看此排障手册。
 
 > 如果您发现遇到的问题，未包含在本手册，可以快速跳转到页面底部，提交您的问题。
 
 ## 故障问题汇总
 
-* mysql pod 出现 2/4 running 的情况
-* mysql pod 一直有一个 pod 出现了 (0/4) Init:Error 的状态
-* mysql 不健康
-* mysql pod 节点是 (3/4) running 状态，descirbe 出 unhealthy 状态
-* mysql 运行正常，使用 CR 创建数据库出现了报错
+- [MySQL 排障手册](#mysql-排障手册)
+  - [故障问题汇总](#故障问题汇总)
+  - [mysql pod 出现 (2/4) running 的情况](#mysql-pod-出现-24-running-的情况)
+  - [mysql pod 一直有一个 pod 出现了 (0/4) Init:Error 的状态](#mysql-pod-一直有一个-pod-出现了-04-initerror-的状态)
+  - [mysql 不健康](#mysql-不健康)
+    - [从库没有错误日志](#从库没有错误日志)
+    - [从库出现复制错误](#从库出现复制错误)
+      - [出现了 purged binlog 错误](#出现了-purged-binlog-错误)
+      - [主键冲突错误](#主键冲突错误)
+    - [两个都是 replica (从库)](#两个都是-replica-从库)
+  - [Mysql pod 节点是 (3/4) running 状态，describe 出 unhealthy 状态](#mysql-pod-节点是-34-running-状态describe-出-unhealthy-状态)
+  - [数据库运行正常，使用 CR 创建数据库出现了报错](#数据库运行正常使用-cr-创建数据库出现了报错)
 
 ## mysql pod 出现 (2/4) running 的情况
 
@@ -417,11 +424,11 @@ mysql > start slave;
 mysql > change master to master_host='mcamel-common-mysql-cluster-mysql-{master-host-pod-index}.mysql.mcamel-system',master_port=3306,master_user='root',master_password='{password}',master_auto_position=1,MASTER_HEARTBEAT_PERIOD=2,MASTER_CONNECT_RETRY=1, MASTER_RETRY_COUNT=86400;
 ```
 
-## Mysql pod 节点是 (3/4) running 状态，descirbe 出 unhealthy 状态
+## Mysql pod 节点是 (3/4) running 状态，describe 出 unhealthy 状态
 
 ![image](../images/faq-mysql-1.png)
 
-使用 `kubectl descirbe` 上图中框起来的 pod，发现异常提示： `Warning  Unhealthy  4m50s (x7194 over 3h58m)  kubelet  Readiness probe failed:
+使用 `kubectl describe` 上图中框起来的 pod，发现异常提示： `Warning  Unhealthy  4m50s (x7194 over 3h58m)  kubelet  Readiness probe failed:
 `
 
 此时需要手工进行修复，这是目前开源 `mysql-operator` 版本的 BUG，详情查看： [[bugfix]update node_controller.go](https://github.com/bitpoke/mysql-operator/pull/857)
