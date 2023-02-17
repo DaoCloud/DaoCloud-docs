@@ -78,6 +78,24 @@ This page shares some technical articles related to cloud native, and we hope th
 
 ### Best Practices
 
+- [How to mitigate container isolation vulnerabilities and monitor kernel critical paths in cloud-native scenarios?](https://mp.weixin.qq.com/s/qlmm2h8RpQnKOnEjlK0pMA)
+
+    This article introduces two solutions developed by the OpenCloudOS community: CgroupFS and SLI, for mitigating container isolation vulnerabilities and monitoring kernel critical paths.
+    The CgroupFS scheme provides a kernel-state container view of the VM file system (/proc, /sys), which enhances container resource view isolation.
+    SLI is a container-level performance tracking mechanism that tracks and observes the competition for CPU and memory resources from the container's perspective, thus providing reliable indicators for locating and analyzing container performance problems.
+
+- [Easy gRPC to REST transcoding based on Kubernetes and Istio](https://cloud.redhat.com/blog/grpc-to-rest-transcoding-with-openshift-and-service-mesh)
+
+    The article describes how to make gRPC services REST compatible without extensive code changes.
+    The solution uses Envoy filters to build a transcoder that allows RESTful JSON API clients to send requests over HTTP and be proxied to a gRPC service.
+    The transcoder encodes the message output of the gRPC service method as JSON and sets the Content-Type header of the HTTP response to application/json.
+
+- [Optimization of kube-state-metrics under large scale clusters](https://mp.weixin.qq.com/s/8R55Holzrf0wNVD8DLJnAg)
+
+    In small-scale clusters, you only need to ensure kube-state-metrics is highly available for use in production environments.
+    However, for large scale clusters, providing metrics metrics through only one KSM instance is very overwhelming and requires many optimizations.
+    For example, filtering unneeded metrics and tags, reducing the pressure on KSM instances by slicing, and using DaemonSet to deploy pod metrics separately.
+
 - [Vivo Self-Developed Jenkins Resource Scheduling System Design and Practice](https://mp.weixin.qq.com/s/wEmheHwTA8m8LHr_5LVSyg)
 
     The article starts from the current industry implementation solutions for Jenkins high availability, analyzes the advantages and disadvantages of each solution, and introduces the Jenkins scheduler system, the Jenkins high availability solution currently used by vivo.
@@ -343,6 +361,11 @@ This page shares some technical articles related to cloud native, and we hope th
      Harbor v2.2 and later versions support the collection and use of related indicators. This article introduces how to use Prometheus to easily capture some key indicators of Harbor instances.
 
 ### Tool recommendation
+
+- [Why is the experience of debugging applications in Kubernetes so bad?](https://mp.weixin.qq.com/s/maI6Nu6r431LtGzrgq_6rg)
+
+    For developers, what they want is: a fast internal development loop where they can use familiar IDE tools to do local debugging; find bugs in advance to avoid entering Outer Loop prematurely; and collaboration between teams in an internal environment where they can not interfere with each other.
+    To solve the above pain points, the article introduces three tools: Kubernetes local development tool [Telepresence](https://github.com/telepresenceio/telepresence), cloud-native collaborative development and testing solution [KT-Connect](https://github.com/alibaba/kt-connect) and the IDE-based cloud-native application development tool [Nocalhost](https://github.com/nocalhost/nocalhost).
 
 - [Building an End-to-End Non-Intrusive Open Source Observable Solution on K8s](https://mp.weixin.qq.com/s/HUFawiyv55Hi0aEoEPl6rA)
 

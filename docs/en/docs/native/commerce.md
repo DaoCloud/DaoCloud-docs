@@ -13,6 +13,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The solution is part of the Aqua cloud-native application protection platform and provides capabilities including: code scanning, CI/CD posture management, pipeline security management, optimization of SBOM functions, assessment of open source code health and reputation.
 
+- [AtomicJar releases integration testing tool Testcontainers Cloud](https://containerjournal.com/topics/container-management/atomicjar-unveils-testcontainers-cloud-service/)
+
+     Testcontainers Cloud is built on the lightweight open source testing framework [Testcontainers](https://github.com/testcontainers), which creates a more realistic testing environment through Docker containers.
+     Developers can test applications themselves before moving code to production via a continuous integration (CI) platform, allowing cloud-native application developers to test dependencies without the help of a dedicated application testing team.
+
 - [AWS AppConfig, an application configuration tool for AWS, launches a proxy for container runtimes to simplify configuration of feature flags and runtimes](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
 
      Users of platforms such as AKS can use the AWS AppConfig Agent to manage the retrieval and caching of container application configuration data, handle polling and caching logic, and more.
@@ -323,6 +328,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Built on Istio, Service Mesh Manager provides microservice teams with centralized security control and traffic management policy configuration. Built on Cilium, Network Policy Manager provides centralized management and visibility into pod and namespace communication to isolate perimeters and reduce a cluster's lateral attack surface.
 
+- [Red Hat's logging management solution Logging 5.6 was released](https://docs.openshift.com/container-platform/4.12/logging/cluster-logging-release-notes.html#cluster-logging-release-notes-5-6_cluster-logging-release-notes-v5x)
+
+     Updates: Compatible with OpenShift container platform cluster-wide encryption policies; Support for custom resource declaration tenant, flow and global policy retention policies via LokiStack, sorted by priority; New log forwarding output option Splunk; Vector replaces Fluentd as default collector.
+
 - [Red Hat Advanced Cluster Management for Kubernetes 2.7 released](https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster) _management_for_kubernetes/2.7/html/release_notes/red-hat-advanced-cluster-management-for-kubernetes-release-notes)
 
     Updates: support for policy enforcement ordering based on dependencies, policy generator support for referencing local and remote custom configurations, expansion of the number of clusters manageable at the edge to 3500, support for creating clusters on the Arm architecture, search component for large-scale environments officially available, support for simplifying cluster deployment with the new Submariner LoadBalancer mode, and support for the Submariner LoadBalancer mode. Submariner supports clusters without a network environment.
@@ -409,6 +418,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Tetrate Application Connectivity Platform Tetrate Service Bridge v1.6.0 Released](https://docs.tetrate.io/service-bridge/1.6.x/en-us/release_notes_announcements)
 
      Updates: Add security rules such as security domain and service security settings; Add east-west gateway to improve service failover between clusters; User interface optimization to support visualization and monitoring of platform and service activities; New troubleshooting tool to troubleshoot without cluster access privileges; Support multiple Istio environments within clusters; Support WASM extensions across gateways and service agents; Skywalking The backend service OAP replaces Zipkin for collecting and querying traces.
+
+- [Tigera Releases Calico Runtime Threat Defense, a Kubernetes Network and Container Threat Defense Solution](https://www.tigera.io/news/tigera-introduces-calico-runtime-threat-defense-the-most-comprehensive-plug-and-play-defense-against-container-and-network-based-threats/)
+
+    Calico Runtime Threat Defense combines a combination of signature- and behavior-based techniques to detect known and zero-day threats, enabling detection of MITRE's most common container and network-based attacks.
+    Unlike traditional runtime threat detection platforms, Calico Runtime Threat Defense continuously monitors and analyzes network and container behavior for indicators of attack (IOA) without writing complex rules.
 
 - [Traefik Labs releases Traefik Hub 1.0, a cloud-native network platform](https://traefik.io/blog/announcing-the-general-availability-of-traefik-hub-1-0/)
 

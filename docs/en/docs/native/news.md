@@ -6,6 +6,11 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 ### 2023-05
 
+- [End of May China Academy of Information and Communications Technology officially launches hybrid and proprietary cloud assessment in the first half of 2023 (registration closes at the end of May)](https://mp.weixin.qq.com/s/qWtNRf5pQ5jpcam4uTSu1w)
+  
+    The Trusted Cloud Proprietary Cloud Assessment aims to assess the comprehensive level of proprietary cloud capabilities (including self-built and dedicated models), maturity (general), industry capabilities (financial), and special capabilities (compatibility) of the participating units.
+    The hybrid cloud assessment evaluates the basic platform capabilities (including public cloud part, private cloud part, hyper-converged platform, and Cintron compatibility), special capabilities (security), application scenarios (data analysis, R&D operation), and comprehensive capabilities of the participating units.
+
 - [May 8-9 cdCon + GitOpsCon 2023 Call for Topics (2.10 deadline)](https://events.linuxfoundation.org/cdcon-gitopscon/program/cfp/)
   
     cdCon + GitOpsCon 2023 is hosted by the CD Foundation and the CNCF Foundation and will be held in Vancouver from 5.8-5.9.
@@ -21,7 +26,19 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     The Cloud Native Community will hold an Observability Summit in Beijing on Saturday, April 15, 2023. Topics will focus on open source projects and applications in observability-related areas, including but not limited to: metrics monitoring, distributed tracking, log collection, technology innovation, application practices, etc.
 
+### 2023-03
+
+- [March 31 China Academy of Information and Communications Technology officially launches the assessment of "System Stability Assurance System" in the first half of 2023 (3.31 registration deadline)](https://mp.weixin.qq.com/s/N2DbhxL81M2AUYcPiSy0GQ)
+  
+    The "System Stability Assurance" assessment system includes three modules: platform capability assessment (chaos engineering, observability, full-link pressure test, application multi-live evaluation), construction effectiveness assessment (distributed system stability, stability of important systems in securities, funds and futures industry, etc.)
+    and cloud service stability and security operation capability assessment (message queue, cloud database, cloud host, content distribution service, container cluster, cloud storage, network service stability).
+
 ### 2023-02
+
+- [February 25 Cloud Native Open Source Project Application Practice Session in Beijing will be held on 2.25](https://mp.weixin.qq.com/s/NrVnvAg5w8EzWBAhQA6cfA)
+  
+    The event is co-hosted by DaoCloud, Edgeless, Tianmou Technology and DCE 5.0 community, with live dialogues with technical experts, end users and open source project contributors in the field of cloud-native.
+    From the perspective of cloud-native technology, the event will focus on container management, cloud-native storage, low-code development, AIoT and other hot areas, and share the latest breakthroughs and application examples of cloud-native open source projects.
 
 - [February 8 KubeCon + CloudNativeCon Europe 2023 Conference Agenda Released](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/program/schedule/)
   
