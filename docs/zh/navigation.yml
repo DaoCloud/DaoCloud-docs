@@ -12,11 +12,11 @@ nav:
       - 安装:
           - 安装简介: install/intro.md
           - 安装依赖项: install/install-tools.md
-          - 安装社区版: 
-            - 资源规划: install/community/resources.md
-            - kind 集群在线安装: install/community/kind/online.md
-            - 标准 K8s 集群在线安装: install/community/k8s/online.md
-            - 标准 K8s 集群离线安装: install/community/k8s/offline.md
+          - 安装社区版:
+              - 资源规划: install/community/resources.md
+              - kind 集群在线安装: install/community/kind/online.md
+              - 标准 K8s 集群在线安装: install/community/k8s/online.md
+              - 标准 K8s 集群离线安装: install/community/k8s/offline.md
           - 安装商业版:
               - 部署规划: install/commercial/deploy-plan.md
               - 下载文件包: install/commercial/download-file.md
@@ -80,7 +80,7 @@ nav:
               - 存储池: kpanda/07UserGuide/storage/storage-pool.md
           - 配置与密钥:
               - 创建配置项: kpanda/07UserGuide/ConfigMapsandSecrets/create-configmap.md
-              - 使用配置项: kpanda/07UserGuide/ConfigMapsandSecrets/use-configmap.md              
+              - 使用配置项: kpanda/07UserGuide/ConfigMapsandSecrets/use-configmap.md
               - 创建密钥: kpanda/07UserGuide/ConfigMapsandSecrets/create-secret.md
               - 使用密钥: kpanda/07UserGuide/ConfigMapsandSecrets/use-secret.md
           - 命名空间: kpanda/07UserGuide/Namespaces/createns.md
@@ -132,7 +132,7 @@ nav:
               - 安全设置: ghippo/04UserGuide/06PersonalCenter/SecuritySetting.md
               - 访问密钥: ghippo/04UserGuide/06PersonalCenter/Password.md
               - 语言设置: ghippo/04UserGuide/06PersonalCenter/Language.md
-          - 权限说明: 
+          - 权限说明:
               - 容器管理权限说明: kpanda/07UserGuide/Permissions/PermissionBrief.md
               - 微服务引擎权限说明: ghippo/permissions/skoala.md
               - 应用工作台权限说明: ghippo/permissions/amamba.md
@@ -144,10 +144,10 @@ nav:
               - 单集群分配给多个工作空间: ghippo/04UserGuide/02Workspace/a-cluster-to-multi-ws.md
               - 文件夹最佳实践: ghippo/04UserGuide/02Workspace/fdpractice.md
               - 普通用户授权规划: ghippo/04UserGuide/02Workspace/authu-plan.md
-              - GProduct 对接全局管理: 
-                - ghippo/gproduct/intro.md
-                - 接入导航栏: ghippo/gproduct/nav.md
-                - 接入路由和登录认证: ghippo/gproduct/route-authn.md
+              - GProduct 对接全局管理:
+                  - ghippo/gproduct/intro.md
+                  - 接入导航栏: ghippo/gproduct/nav.md
+                  - 接入路由和登录认证: ghippo/gproduct/route-authn.md
       - 可观测性:
           - 介绍:
               - 什么是可观测性: insight/03ProductBrief/what.md
@@ -157,17 +157,17 @@ nav:
               - 功能列表: insight/03ProductBrief/feature.md
               - Release Notes: insight/03ProductBrief/releasenote.md
           - 快速入门:
-              - 安装 Insight: 
-                - insight/06UserGuide/01quickstart/installagent.md
-                - 获取数据上传地址: insight/06UserGuide/01quickstart/gethosturl.md
-                - 升级注意事项: insight/06UserGuide/01quickstart/upgradenote.md
-                - 离线升级 Insight: insight/06UserGuide/01quickstart/offlineInstall.md
-              - OTel 赋能应用可观测性: 
-                - insight/06UserGuide/01quickstart/otel/otel.md
-                - Operator 无侵入增强应用: insight/06UserGuide/01quickstart/otel/operator.md
-                - OTel SDK 增强 Go 应用: insight/06UserGuide/01quickstart/otel/golang.md
-                - OTel SDK 为应用暴露指标: insight/06UserGuide/01quickstart/otel/meter.md
-                - OTel 自动探针增强 Go 应用: insight/06UserGuide/01quickstart/otel/golang-ebpf.md
+              - 安装 Insight:
+                  - insight/06UserGuide/01quickstart/installagent.md
+                  - 获取数据上传地址: insight/06UserGuide/01quickstart/gethosturl.md
+                  - 升级注意事项: insight/06UserGuide/01quickstart/upgradenote.md
+                  - 离线升级 Insight: insight/06UserGuide/01quickstart/offlineInstall.md
+              - OTel 赋能应用可观测性:
+                  - insight/06UserGuide/01quickstart/otel/otel.md
+                  - Operator 无侵入增强应用: insight/06UserGuide/01quickstart/otel/operator.md
+                  - OTel SDK 增强 Go 应用: insight/06UserGuide/01quickstart/otel/golang.md
+                  - OTel SDK 为应用暴露指标: insight/06UserGuide/01quickstart/otel/meter.md
+                  - OTel 自动探针增强 Go 应用: insight/06UserGuide/01quickstart/otel/golang-ebpf.md
           - 概览: insight/06UserGuide/overview.md
           - 仪表盘:
               - 仪表盘: insight/06UserGuide/02dashboard/dashboard.md
@@ -198,7 +198,7 @@ nav:
               - 链路采集排障指南: insight/09FAQs/debugtrace.md
               - DCE 4.0 安装 insight-agent: insight/09FAQs/installagentindce.md
               - 指标抓取说明: insight/09FAQs/servicemonitor.md
-          - 最佳实践: 
+          - 最佳实践:
               - Prometheus 资源规划: insight/10bestpractice/prometheusresource.md
       - 应用工作台:
           - 介绍:
@@ -289,13 +289,13 @@ nav:
               - 选择工作空间: skoala/quickstart/select-workspace.md
           - 微服务治理中心:
               - 托管型注册中心:
-                  - 注册中心管理: 
+                  - 注册中心管理:
                       - 创建注册中心: skoala/registry/managed/registry-lcm/create-registry.md
                       - 更新注册中心: skoala/registry/managed/registry-lcm/update-registry.md
                       - 查看注册中心: skoala/registry/managed/registry-lcm/check-registry.md
                       - 删除注册中心: skoala/registry/managed/registry-lcm/delete-registry.md
                   - 微服务命名空间: skoala/registry/managed/namespace.md
-                  - 微服务列表: 
+                  - 微服务列表:
                       - 介绍: skoala/registry/managed/servicelist/intro.md
                       - 查看微服务详情: skoala/registry/managed/servicelist/check-details.md
                   - 微服务治理:
@@ -306,7 +306,7 @@ nav:
                       - 微服务监控: skoala/registry/managed/monitor/microservices.md
                       - 组件监控: skoala/registry/managed/monitor/components.md
                       - 链路追踪: skoala/registry/managed/monitor/traces.md
-                  - 插件中心: 
+                  - 插件中心:
                       - skoala/registry/managed/plugins/plugin-center.md
                       - 启用 Sentinel 治理: skoala/registry/managed/plugins/sentinel.md
                       - 启用 Mesh 治理: skoala/registry/managed/plugins/mesh.md
@@ -329,11 +329,11 @@ nav:
                   - 更新 API: skoala/ms-gateway/api/update-api.md
                   - 配置 API 策略: skoala/ms-gateway/api/api-policy.md
                   - 移除 API: skoala/ms-gateway/api/delete-api.md
-              - 服务接入: 
+              - 服务接入:
                   - 手动接入: skoala/ms-gateway/service/manual-integrate.md
                   - 自动纳管: skoala/ms-gateway/service/auto-manage.md
               - 监控告警: skoala/ms-gateway/alert.md
-              - 日志查看: 
+              - 日志查看:
                   - 请求日志: skoala/ms-gateway/logs/reqlog.md
                   - 实例日志: skoala/ms-gateway/logs/inslog.md
               - 域名管理:
@@ -399,24 +399,24 @@ nav:
               - Istio 版本升级: mspider/03UserGuide/upgrade/IstioUpdate.md
               - 边车版本升级: mspider/03UserGuide/upgrade/SidecarUpdate.md
           - 多集群网格:
-            - 网格多云部署: mspider/03UserGuide/multiCluster/multiClusterInstall.md
-            - 多集群网络通讯原理: mspider/03UserGuide/multiCluster/multi-cluster-net.md
-            - 多集群灰度发布: mspider/03UserGuide/multiCluster/gray-scale-release.md
-          - 测试:  
-            - OCP 接入网格: mspider/test/ocp.md
-            - Openshift 与网格兼容性测试: mspider/test/openshift.md
+              - 网格多云部署: mspider/03UserGuide/multiCluster/multiClusterInstall.md
+              - 多集群网络通讯原理: mspider/03UserGuide/multiCluster/multi-cluster-net.md
+              - 多集群灰度发布: mspider/03UserGuide/multiCluster/gray-scale-release.md
+          - 测试:
+              - OCP 接入网格: mspider/test/ocp.md
+              - Openshift 与网格兼容性测试: mspider/test/openshift.md
           - 常见问题: mspider/07faq.md
           - 通用参考:
-            - 虚拟服务: reference/basic-knowledge/virtual-service.md
-            - 可观测性: reference/basic-knowledge/insight.md
-            - 流量治理: reference/basic-knowledge/traffic-control.md
+              - 虚拟服务: reference/basic-knowledge/virtual-service.md
+              - 可观测性: reference/basic-knowledge/insight.md
+              - 流量治理: reference/basic-knowledge/traffic-control.md
       - 云原生网络:
           - 介绍:
               - 什么是云原生网络: network/intro/what.md
               - 背景: network/intro/background.md
               - 挑战: network/intro/challenges.md
               - 网络组件: network/modules/modules.md
-          - 规划:  
+          - 规划:
               - 网卡规划: network/plans/ethplan.md
               - 网络规划: network/plans/netplan.md
           - Calico:
@@ -469,7 +469,7 @@ nav:
               - 常用命令: network/modules/spiderpool/command.md
               - Release Notes: network/modules/spiderpool/releasenotes.md
       - 中间件数据服务:
-          - 介绍: 
+          - 介绍:
               - 什么是数据服务: middleware/what.md
               - 数据服务版本适配: middleware/compatibility.md
               - 数据服务权限设计说明: middleware/permission.md
@@ -526,6 +526,7 @@ nav:
               - 创建 MySQL: middleware/mysql/userguide/create.md
               - 更新 MySQL: middleware/mysql/userguide/update.md
               - 删除 MySQL: middleware/mysql/userguide/delete.md
+              - MySQL 排障手册: middleware/mysql/faq/common-question.md
               - Release Notes: middleware/mysql/release-notes.md
           - RabbitMQ 消息队列:
               - 什么是 RabbitMQ: middleware/rabbitmq/intro/what.md
@@ -552,49 +553,49 @@ nav:
               - 删除 Redis 实例: middleware/redis/userguide/delete.md
               - Release Notes: middleware/redis/release-notes.md
       - 云原生存储:
-          - 介绍: 
-            - 什么是云原生存储: storage/what.md
-            - 背景和挑战: storage/background.md
-            - 功能优势: storage/benifits.md
-            - 功能列表: storage/functions.md 
-            - Release Notes: storage/hwameistor/releasenotes.md         
+          - 介绍:
+              - 什么是云原生存储: storage/what.md
+              - 背景和挑战: storage/background.md
+              - 功能优势: storage/benifits.md
+              - 功能列表: storage/functions.md
+              - Release Notes: storage/hwameistor/releasenotes.md
           - HwameiStor 本地存储:
-            - 介绍: storage/hwameistor/intro/what.md
-            - 组件介绍:
-                - 本地磁盘管理器: storage/hwameistor/intro/ldm.md
-                - 本地存储: storage/hwameistor/intro/ls.md
-                - DRBD 安装器: storage/hwameistor/intro/drbd.md
-                - 调度器: storage/hwameistor/intro/scheduler.md
-                - 准入控制器: storage/hwameistor/intro/admission-controller.md
-            - 资源介绍: storage/hwameistor/intro/resources.md
-            - 安装管理:
-                - 准备工作: storage/hwameistor/install/prereq.md
-                - 通过 Helm Chart 安装: storage/hwameistor/install/deploy.md
-                - 安装后检查: storage/hwameistor/install/post-check.md
-                - 升级: storage/hwameistor/install/upgrade.md
-                - 卸载: storage/hwameistor/install/uninstall.md
-            - 运维管理:
-                - 存储池管理: storage/hwameistor/resources/storagepool.md
-                - 存储节点扩展: storage/hwameistor/resources/node-expansion.md
-                - 数据卷迁移: storage/hwameistor/resources/migrate.md
-                - 数据卷扩容: storage/hwameistor/resources/expand.md
-                - 磁盘扩展: storage/hwameistor/resources/disk-expansion.md
-            - 应用场景:
-                - 应用场景概述: storage/hwameistor/application/overview.md
-                - 部署有状态应用:
-                    - 使用本地卷部署: storage/hwameistor/application/local.md
-                    - 使用高可用卷部署: storage/hwameistor/application/ha.md
-                - TiDB: storage/hwameistor/application/tidb.md
-                - MinIO: storage/hwameistor/application/minio/minio.md
-            - 常见问题: storage/hwameistor/faqs.md
+              - 介绍: storage/hwameistor/intro/what.md
+              - 组件介绍:
+                  - 本地磁盘管理器: storage/hwameistor/intro/ldm.md
+                  - 本地存储: storage/hwameistor/intro/ls.md
+                  - DRBD 安装器: storage/hwameistor/intro/drbd.md
+                  - 调度器: storage/hwameistor/intro/scheduler.md
+                  - 准入控制器: storage/hwameistor/intro/admission-controller.md
+              - 资源介绍: storage/hwameistor/intro/resources.md
+              - 安装管理:
+                  - 准备工作: storage/hwameistor/install/prereq.md
+                  - 通过 Helm Chart 安装: storage/hwameistor/install/deploy.md
+                  - 安装后检查: storage/hwameistor/install/post-check.md
+                  - 升级: storage/hwameistor/install/upgrade.md
+                  - 卸载: storage/hwameistor/install/uninstall.md
+              - 运维管理:
+                  - 存储池管理: storage/hwameistor/resources/storagepool.md
+                  - 存储节点扩展: storage/hwameistor/resources/node-expansion.md
+                  - 数据卷迁移: storage/hwameistor/resources/migrate.md
+                  - 数据卷扩容: storage/hwameistor/resources/expand.md
+                  - 磁盘扩展: storage/hwameistor/resources/disk-expansion.md
+              - 应用场景:
+                  - 应用场景概述: storage/hwameistor/application/overview.md
+                  - 部署有状态应用:
+                      - 使用本地卷部署: storage/hwameistor/application/local.md
+                      - 使用高可用卷部署: storage/hwameistor/application/ha.md
+                  - TiDB: storage/hwameistor/application/tidb.md
+                  - MinIO: storage/hwameistor/application/minio/minio.md
+              - 常见问题: storage/hwameistor/faqs.md
           - 开源存储方案集成:
-            - Rook-Ceph 介绍: storage/solutions/rook-ceph.md
-            - Rook-Ceph 部署 - 应用商店: storage/solutions/dce-rook-ceph.md
-            - Rook-Ceph 部署 - Helm: storage/solutions/helm-rook-ceph.md
-            - Longhorn 介绍: storage/solutions/longhorn.md
-            - Longhorn 部署 - 应用商店: storage/solutions/dce-longhorn.md
-            - OpenEBS 介绍: storage/solutions/openebs.md
-            - 通过 Helm 部署 OpenEBS: storage/solutions/openebs-helm.md
+              - Rook-Ceph 介绍: storage/solutions/rook-ceph.md
+              - Rook-Ceph 部署 - 应用商店: storage/solutions/dce-rook-ceph.md
+              - Rook-Ceph 部署 - Helm: storage/solutions/helm-rook-ceph.md
+              - Longhorn 介绍: storage/solutions/longhorn.md
+              - Longhorn 部署 - 应用商店: storage/solutions/dce-longhorn.md
+              - OpenEBS 介绍: storage/solutions/openebs.md
+              - 通过 Helm 部署 OpenEBS: storage/solutions/openebs-helm.md
           - 存储基本概念:
               - Kubernetes 存储: storage/terms/k8s_storage.md
               - CAS 存储: storage/terms/cas.md
@@ -607,24 +608,24 @@ nav:
           - 什么是镜像仓库: kangaroo/what.md
           - 镜像列表: kangaroo/imagelist.md
           - 关联仓库: kangaroo/related-registry.md
-          - 仓库集成: 
-            - kangaroo/integrate/integrate.md
-            - 创建镜像空间: kangaroo/integrate/create-space.md
-            - 绑定/解绑工作空间: kangaroo/integrate/bind-to-ws.md
+          - 仓库集成:
+              - kangaroo/integrate/integrate.md
+              - 创建镜像空间: kangaroo/integrate/create-space.md
+              - 绑定/解绑工作空间: kangaroo/integrate/bind-to-ws.md
           - 托管 Harbor: kangaroo/hosted.md
           - 快速入门:
-            - 管理外部镜像仓库: kangaroo/quickstart/registry-in-one.md
-            - 推送镜像: kangaroo/quickstart/push.md
-            - Admin 快速使用镜像仓库: kangaroo/quickstart/admin-registry.md
-            - Workspace Admin 快速使用镜像仓库: kangaroo/quickstart/ws-admin-registry.md
+              - 管理外部镜像仓库: kangaroo/quickstart/registry-in-one.md
+              - 推送镜像: kangaroo/quickstart/push.md
+              - Admin 快速使用镜像仓库: kangaroo/quickstart/admin-registry.md
+              - Workspace Admin 快速使用镜像仓库: kangaroo/quickstart/ws-admin-registry.md
           - 镜像扫描: kangaroo/scan.md
           - Release Notes: kangaroo/release-notes.md
       - 云原生安全:
-        - 介绍: security/what.md
-        - Falco:
-            - 介绍: security/falco.md
-            - 安装: security/falco-install.md
-            - Falco-exporter: security/falco-exporter.md
+          - 介绍: security/what.md
+          - Falco:
+              - 介绍: security/falco.md
+              - 安装: security/falco-install.md
+              - Falco-exporter: security/falco-exporter.md
       - 故障排查:
           - ingressgateway 无法启动: reference/troubleshooting/ghippo01.md
           - 登录报错 401 或 403: reference/troubleshooting/ghippo02.md
@@ -641,11 +642,11 @@ nav:
       - 服务网格: videos/mspider.md
       - 中间件: videos/mcamel.md
       - 镜像仓库: videos/kangaroo.md
-      - 云原生网络: videos/network.md  
+      - 云原生网络: videos/network.md
   - 博客:
       - 博文索引: blogs/index.md
       - 202302 | 社区版涉及的开源项目: blogs/projects.md
-      - 202302 | DaoCloud 与 K8s: blogs/daocloud_k8s.md  
+      - 202302 | DaoCloud 与 K8s: blogs/daocloud_k8s.md
       - 202302 | DCE 5.0 攻坚语录集: blogs/peter.md
       - 202212 | 保姆式安装DCE社区版: blogs/dce5-0328.md
       - 202211 | K8s 资深认证服务商: blogs/kcsp.md
@@ -656,7 +657,7 @@ nav:
       - 202207 | 服务网格能力介绍: blogs/mspider.md
       - 202206 | DCE 开发背景: blogs/blog00.md
   - 下载中心:
-      - DaoCloud Enterprise 5.0: 
+      - DaoCloud Enterprise 5.0:
           - 索引列表: download/dce5.md
           - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.4.0.md
           - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.4.0.md
