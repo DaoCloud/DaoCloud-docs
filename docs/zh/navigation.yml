@@ -214,6 +214,7 @@ nav:
               - 基于 Jar 包构建 Java 应用: amamba/03UserGuide/wizard/jar-java-app.md
           - 流水线:
               - 自定义创建流水线: amamba/03UserGuide/Pipeline/createpipelinebyself.md
+              - 安装 Jenkins: amamba/03UserGuide/Pipeline/install-jenkins.md
               - Jenkinsfile 创建单代码分支流水线: amamba/03UserGuide/Pipeline/createpipelinebyjenkins.md
               - 使用图形化编辑流水线: amamba/03UserGuide/Pipeline/graphicaleditingpipeline.md
               - 触发器触发流水线: amamba/03UserGuide/Pipeline/PipelineTrigger.md
