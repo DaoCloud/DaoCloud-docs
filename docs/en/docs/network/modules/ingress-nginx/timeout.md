@@ -14,7 +14,7 @@ This page describes the global timeout configuration for Ingress Nginx and the t
 The global timeout for Ingress Nginx can be configured using the following configuration options .
 
 |option's name|description|default|
-|---- |---- | --- |--|
+|---- |---- | --- |
 |`proxy-connect-timeout`| Set the timeout for establishing a connection with a proxied server. |The default is `5s`, but it cannot usually exceed  `75s` |
 |`proxy-read-timeout`| Set the timeout for reading a response from the proxied server. This timeout is only set between two consecutive read operations, not for the entire transmission of the response. |`60s`|
 |`proxy-send-timeout`| Set the timeout for transmitting a request to the proxied server.  This timeout is only set between two consecutive write operations, not for the entire transmission of the request. |`60s`|
