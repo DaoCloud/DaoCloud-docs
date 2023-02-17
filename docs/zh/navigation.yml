@@ -296,9 +296,11 @@ nav:
                       - 删除注册中心: skoala/registry/managed/registry-lcm/delete-registry.md
                   - 微服务命名空间: skoala/registry/managed/namespace.md
                   - 微服务列表: 
-                      - skoala/registry/managed/servicelist/intro.md
+                      - 介绍: skoala/registry/managed/servicelist/intro.md
                       - 查看微服务详情: skoala/registry/managed/servicelist/check-details.md
-                      - 服务治理策略: skoala/registry/managed/servicelist/governance-policy.md
+                  - 微服务治理:
+                      - 规则介绍: skoala/registry/managed/governance/governance-policy.md
+                      - 流控规则: skoala/registry/managed/governance/flow-ontrol.md
                   - 微服务配置列表: skoala/registry/managed/configcenter.md
                   - 监控:
                       - 微服务监控: skoala/registry/managed/monitor/microservices.md
