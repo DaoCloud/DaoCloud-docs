@@ -69,4 +69,4 @@ hide:
 
 !!! note
 
-    有关角色和权限管理的完整介绍，请参考[角色和权限管理](../04UserGuide/01UserandAccess/role.md)。
+    有关角色和权限管理的完整介绍，请参考[角色和权限管理](../04UserGuide/01access-control/role.md)。

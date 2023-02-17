@@ -4,7 +4,7 @@
 
 ## 创建用户并授权
 
-参阅[创建用户并授权](../ghippo/04UserGuide/01UserandAccess/user.md)文档页面。
+参阅[创建用户并授权](../ghippo/04UserGuide/01access-control/user.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-user.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -36,7 +36,7 @@
 
 ## 对接 LDAP 用户和用户组
 
-参阅 [LDAP](../ghippo/04UserGuide/01UserandAccess/ldap.md) 文档页面。
+参阅 [LDAP](../ghippo/04UserGuide/01access-control/ldap.md) 文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ldap.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -44,7 +44,7 @@
 
 ## 对接 OIDC 用户
 
-参阅 [OIDC](../ghippo/04UserGuide/01UserandAccess/oidc.md) 文档页面。
+参阅 [OIDC](../ghippo/04UserGuide/01access-control/oidc.md) 文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oidc.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>

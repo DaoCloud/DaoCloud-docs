@@ -10,7 +10,7 @@ Ingress 是对集群中服务的外部访问进行管理的 API 对象，典型�
 ## 前提条件
 
 - 容器管理模块[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
-- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01UserandAccess/user.md)，并将用户授权为 [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) 角色 ，详情可参考[命名空间授权](../Permissions/Cluster-NSAuth.md)。
+- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[用户的创建](../../../ghippo/04UserGuide/01access-control/user.md)，并将用户授权为 [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) 角色 ，详情可参考[命名空间授权](../Permissions/Cluster-NSAuth.md)。
 - 已经完成 [Ingress 实例的创建](../../../network/modules/ingress-nginx/install.md)
 - 单个实例中有多个容器时，请确保容器使用的端口不冲突，否则部署会失效。
 

@@ -123,7 +123,7 @@
 
 - Authorization, 授权
 
-    [授权](../ghippo/04UserGuide/01UserandAccess/iam.md)指将用户完成具体工作所需的权限授予用户，授权通过系统角色或自定义角色的权限生效。
+    [授权](../ghippo/04UserGuide/01access-control/iam.md)指将用户完成具体工作所需的权限授予用户，授权通过系统角色或自定义角色的权限生效。
     用户获得具体的权限后，可以对资源或服务进行操作。
 
 - Autoscaling, 自动扩缩
@@ -964,7 +964,7 @@
 
 - Group
 
-    在全局管理中，这指的是由多个用户形成的组合，即[用户组](../ghippo/04UserGuide/01UserandAccess/group.md)。
+    在全局管理中，这指的是由多个用户形成的组合，即[用户组](../ghippo/04UserGuide/01access-control/group.md)。
 
     在微服务引擎中，这是 Nacos 中的一组配置集。
 
@@ -1028,7 +1028,7 @@
 
 - IAM, Identity and access management, 用户与访问控制
 
-    在全局管理中，[IAM](../ghippo/04UserGuide/01UserandAccess/iam.md) 是用户与访问控制的简称，管理员被称为 IAM Admin，拥有该模块的最高权限。
+    在全局管理中，[IAM](../ghippo/04UserGuide/01access-control/iam.md) 是用户与访问控制的简称，管理员被称为 IAM Admin，拥有该模块的最高权限。
     被赋予 IAM Admin 的用户（用户组）将拥有用户与访问控制的全部且最高权限。
 
 - Image, 镜像
@@ -1502,7 +1502,7 @@
 
 - Permission, 权限
 
-    [权限](../ghippo/04UserGuide/01UserandAccess/iam.md)指是否允许用户对某种资源执行某种操作。
+    [权限](../ghippo/04UserGuide/01access-control/iam.md)指是否允许用户对某种资源执行某种操作。
     为了降低使用门槛，DCE 采用 RBAC 模型将权限聚合成一个个角色，管理员只需要将角色授权给用户，该用户就一次性得到了该角色下聚合的一组权限。
 
     默认情况下，管理员创建的 IAM 用户没有任何角色权限，需要对其单独授予角色或将其加入用户组并给用户组授予角色，才能使得用户获得对应的角色权限，这一过程称为授权。授权后，用户就可以基于被授予的角色权限对平台资源进行操作。
@@ -1659,7 +1659,7 @@
 
     管理授权决策，允许管理员通过 Kubernetes API 动态配置访问策略。
 
-    RBAC 使用[角色](../ghippo/04UserGuide/01UserandAccess/role.md) (包含权限规则）和角色绑定（将角色中定义的权限授予一个用户组）。
+    RBAC 使用[角色](../ghippo/04UserGuide/01access-control/role.md) (包含权限规则）和角色绑定（将角色中定义的权限授予一个用户组）。
 
 - Registration center, 注册中心
 
@@ -1726,7 +1726,7 @@
 
 - Role, 角色
 
-    [角色](../ghippo/04UserGuide/01UserandAccess/role.md)是连接用户与权限的桥梁，
+    [角色](../ghippo/04UserGuide/01access-control/role.md)是连接用户与权限的桥梁，
     一个角色对应一组权限，不同角色具有不同的权限。向用户授予某角色，即授予该角色所包含的所有权限。
     全局管理中有两种角色：
 
@@ -2101,7 +2101,7 @@
 
 - User, 用户
 
-    [用户](../ghippo/04UserGuide/01UserandAccess/user.md)是发起操作的主体，每个用户都有唯一的 ID，并被授予不同的角色。
+    [用户](../ghippo/04UserGuide/01access-control/user.md)是发起操作的主体，每个用户都有唯一的 ID，并被授予不同的角色。
     默认创建的 IAM 用户没有任何权限，需要将其加入用户组，授予角色或策略，才能让用户获得对应的权限。
 
     用户以用户名登录 DCE，按照被授予的权限操作平台资源和服务。
