@@ -36,7 +36,7 @@
 
 有关这三项治理规则的详细说明，可参考文档[流量治理](../../../../mspider/03UserGuide/02TrafficGovernance/README.md)。
 
-[虚拟服务](../../../../../en/docs/mspider/03UserGuide/02TrafficGovernance/VirtualService.md){ .md-button .md-button--primary }
+[虚拟服务](../../../../../mspider/03UserGuide/02TrafficGovernance/VirtualService.md){ .md-button .md-button--primary }
 [目标规则](../../../../../mspider/03UserGuide/02TrafficGovernance/DestinationRules.md){ .md-button .md-button--primary }
 [网关规则](../../../../../mspider/03UserGuide/02TrafficGovernance/GatewayRules.md){ .md-button .md-button--primary }
 
