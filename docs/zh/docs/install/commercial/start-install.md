@@ -15,7 +15,7 @@ hide:
 
 具体离线安装步骤如下：
 
-1. 设置集群配置文件 [clusterConfig.yaml](clusterconfig.md)，可以在离线包 `offline/sample` 下获取该文件，根据实际的部署模式需要来修改该文件。
+1. 设置集群配置文件 [clusterConfig.yaml](cluster-config.md)，可以在离线包 `offline/sample` 下获取该文件，根据实际的部署模式需要来修改该文件。
 
 1. 执行以下命令开始安装 DCE 5.0：
 

@@ -4,7 +4,7 @@
 
 !!! note
 
-    集群中需要[安装 insight-agent 组件](../../../../insight/06UserGuide/01quickstart/installagent.md)后才能使用监控功能。
+    集群中需要[安装 insight-agent 组件](../../../../insight/user-guide/quickstart/install-agent.md)后才能使用监控功能。
 
 查看微服务监控的步骤如下：
 

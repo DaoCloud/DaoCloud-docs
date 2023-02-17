@@ -68,6 +68,6 @@
 
 ## 微服务治理
 
-开启微服务治理插件后，可以通过 YAML 文件或页面表单为服务创建虚拟服务、目标规则、网关规则等三种治理规则。有关微服务治理的更多说明，可参考[流量治理](../../../../mspider/03UserGuide/02TrafficGovernance/README.md)。
+开启微服务治理插件后，可以通过 YAML 文件或页面表单为服务创建虚拟服务、目标规则、网关规则等三种治理规则。有关微服务治理的更多说明，可参考[流量治理](../../../../mspider/user-guide/traffic-governance/README.md)。
 
 ![接口列表](imgs/detail11.png)

@@ -13,7 +13,7 @@
 
 3. 选择想要绑定的服务网格，然后在弹框底部点击`确定`。
 
-    如果找不到想要的服务网格，可以去服务网格模块[创建一个网格](../../../../mspider/03UserGuide/servicemesh/create-mesh.md)。
+    如果找不到想要的服务网格，可以去服务网格模块[创建一个网格](../../../../mspider/user-guide/service-mesh/create-mesh.md)。
 
     ![配置](imgs/mesh02.png)
 

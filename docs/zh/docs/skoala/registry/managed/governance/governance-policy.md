@@ -34,11 +34,11 @@
 - 目标规则则更关注流量本身的治理，为请求流量提供更强大的负载均衡、连接存活探寻、熔断等功能。
 - 网关规则为 Istio 网关提供服务在网关的暴露方式。
 
-有关这三项治理规则的详细说明，可参考文档[流量治理](../../../../mspider/03UserGuide/02TrafficGovernance/README.md)。
+有关这三项治理规则的详细说明，可参考文档[流量治理](../../../../mspider/user-guide/traffic-governance/README.md)。
 
-[虚拟服务](../../../../mspider/03UserGuide/02TrafficGovernance/VirtualService.md){ .md-button .md-button--primary }
-[目标规则](../../../../mspider/03UserGuide/02TrafficGovernance/DestinationRules.md){ .md-button .md-button--primary }
-[网关规则](../../../../mspider/03UserGuide/02TrafficGovernance/GatewayRules.md){ .md-button .md-button--primary }
+[虚拟服务](../../../../mspider/user-guide/traffic-governance/virtual-service.md){ .md-button .md-button--primary }
+[目标规则](../../../../mspider/user-guide/traffic-governance/destination-rules.md){ .md-button .md-button--primary }
+[网关规则](../../../../mspider/user-guide/traffic-governance/gateway-rules.md){ .md-button .md-button--primary }
 
 <!--
 - 资源名：资源的名称，资源是指规则的作用领域。

@@ -5,7 +5,7 @@ hide:
 
 # 服务网格权限说明
 
-[服务网格](../../mspider/01Intro/what.md)支持几种用户角色：
+[服务网格](../../mspider/intro/what.md)支持几种用户角色：
 
 - Admin
 - Workspace Admin
@@ -20,12 +20,12 @@ hide:
 
 | 菜单对象         | 操作           | Admin   | Workspace Admin | Workspace Editor | Workspace Viewer |
 | ---------------- | -------------- | ------- | --------------- | ---------------- | ---------------- |
-| 服务网格列表     | [创建网格](../../mspider/03UserGuide/servicemesh/create-mesh.md)       | &check; | &cross;         | &cross;          | &cross;          |
+| 服务网格列表     | [创建网格](../../mspider/user-guide/service-mesh/create-mesh.md)       | &check; | &cross;         | &cross;          | &cross;          |
 |                  | 编辑网格       | &check; | &check;         | &check;          | &cross;          |
-|                  | [删除网格](../../mspider/03UserGuide/servicemesh/delete.md)       | &check; | &check;         | &cross;          | &cross;          |
-|                  | [查看网格](../../mspider/03UserGuide/servicemesh/README.md)           | &check; | &check;         | &check;          | &check;          |
+|                  | [删除网格](../../mspider/user-guide/service-mesh/delete.md)       | &check; | &check;         | &cross;          | &cross;          |
+|                  | [查看网格](../../mspider/user-guide/service-mesh/README.md)           | &check; | &check;         | &check;          | &check;          |
 | 网格概览         | 查看           | &check; | &check;         | &check;          | &check;          |
-| 服务列表         | [跳转至治理页面](../../mspider/03UserGuide/01ServiceList/README.md) | &check; | &check;         | &check;          | &cross;          |
+| 服务列表         | [跳转至治理页面](../../mspider/user-guide/service-list/README.md) | &check; | &check;         | &check;          | &cross;          |
 |                  | 查看           | &check; | &check;         | &check;          | &check;          |
 | 服务条目         | 创建           | &check; | &check;         | &cross;          | &cross;          |
 |                  | 编辑           | &check; | &check;         | &check;          | &cross;          |

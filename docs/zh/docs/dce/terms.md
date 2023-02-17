@@ -20,7 +20,7 @@
 - Addon, 扩展
 
     扩展 DCE 功能的资源对象。
-    您可以通过[容器管理](../kpanda/03ProductBrief/what.md) -> [Helm 模板](../kpanda/07UserGuide/helm/README.md)安装更多附加扩展组件。
+    您可以通过[容器管理](../kpanda/intro/what.md) -> [Helm 模板](../kpanda/user-guide/helm/README.md)安装更多附加扩展组件。
 
 - Admission Controller, 准入控制器
 
@@ -49,13 +49,13 @@
 
     当配置了 K8s API 服务器来支持额外的 API 时，您就可以在 K8s API 中增加 `APIService` 对象来申领（Claim）一个 URL 路径。
 
-- Alert Rule, [告警规则](../insight/06UserGuide/05alertcenter/alertrule.md)
+- Alert Rule, [告警规则](../insight/user-guide/alert-center/alert-rule.md)
 
     在 Insight 中，这是基于资源状态创建的告警对象，可以自定义触发规则的条件以及通过何种方式发送通知的规则。
 
 - Annotation, 注解
 
-    [注解](../kpanda/07UserGuide/Nodes/labels-annotations.md)是以键值对的形式给资源对象附加随机的无法标识的元数据。
+    [注解](../kpanda/user-guide/nodes/labels-annotations.md)是以键值对的形式给资源对象附加随机的无法标识的元数据。
 
     注解中的元数据可大可小，可以是结构化的也可以是非结构化的，并且能包含标签不允许使用的字符。
     像工具和软件库这样的客户端可以检索这些元数据。
@@ -119,16 +119,16 @@
 
 - Audit log, 审计日志
 
-    [审计日志](../ghippo/04UserGuide/03AuditLog.md)提供了对系统中对象所做更改的历史记录。
+    [审计日志](../ghippo/user-guide/audit-log.md)提供了对系统中对象所做更改的历史记录。
 
 - Authorization, 授权
 
-    [授权](../ghippo/04UserGuide/01access-control/iam.md)指将用户完成具体工作所需的权限授予用户，授权通过系统角色或自定义角色的权限生效。
+    [授权](../ghippo/user-guide/access-control/iam.md)指将用户完成具体工作所需的权限授予用户，授权通过系统角色或自定义角色的权限生效。
     用户获得具体的权限后，可以对资源或服务进行操作。
 
 - Autoscaling, 自动扩缩
 
-    [自动扩缩](../kpanda/07UserGuide/Scale/Create-HPA.md)，通常是指在计算资源方面，系统能够进行自动扩缩的能力。
+    [自动扩缩](../kpanda/user-guide/scale/create-hpa.md)，通常是指在计算资源方面，系统能够进行自动扩缩的能力。
     自动扩缩系统可在需要时自动添置资源，通过扩缩来满足不断变化的用户需求。
     自动扩缩的过程各不相同，可基于不同指标进行配置，例如内存或处理时间。
     托管云服务相较于大多数本地部署环境，有更多的可选项和实施项，因此往往都搭配有自动扩缩功能。
@@ -309,7 +309,7 @@
 
 - Cluster, 集群
 
-    [集群](../kpanda/07UserGuide/Clusters/CreateCluster.md)是运行容器化应用程序的一组计算节点。通常，组成集群的计算节点彼此可以直接连接。集群通过规则或策略限制外部访问。
+    [集群](../kpanda/user-guide/clusters/create-cluster.md)是运行容器化应用程序的一组计算节点。通常，组成集群的计算节点彼此可以直接连接。集群通过规则或策略限制外部访问。
     工作节点会托管 Pod，而 Pod 就是作为应用负载的组件。
     控制平面管理集群中的工作节点和 Pod。
     在生产环境中，控制平面通常跨多台计算机运行，
@@ -370,7 +370,7 @@
 
 - [ConfigMap](https://kubernetes.io/zh-cn/docs/concepts/configuration/configmap/), 配置项
 
-    [ConfigMap](../kpanda/07UserGuide/ConfigMapsandSecrets/use-configmap.md) 是一种 API 对象，用来将非机密性的数据保存到键值对中。
+    [ConfigMap](../kpanda/user-guide/configmaps-secrets/use-configmap.md) 是一种 API 对象，用来将非机密性的数据保存到键值对中。
     使用时可以用作环境变量、命令行参数或者存储卷中的配置文件。
 
     ConfigMap 将您的环境配置信息和容器镜像解耦，便于应用配置的修改。
@@ -547,7 +547,7 @@
     控制平面是一组系统服务，这些服务配置网格或者网格的子网来管理工作负载实例之间的通信。
     单个网格中控制平面的所有实例共享相同的配置资源。
 
-- [CRD](../kpanda/07UserGuide/CustomResources/create.md), CustomResourceDefinition, 自定义资源定义
+- [CRD](../kpanda/user-guide/custom-resources/create.md), CustomResourceDefinition, 自定义资源定义
 
     通过定制化的代码给您的 Kubernetes API 服务器增加资源对象，而无需编译完整的定制 API 服务器。
 
@@ -579,7 +579,7 @@
     [Kubernetes CRI](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md)
     的其他任何实现。
 
-- [CronJob](../kpanda/07UserGuide/Workloads/CreateCronJobByImage.md), 周期调度任务
+- [CronJob](../kpanda/user-guide/workloads/create-cronjob.md), 周期调度任务
 
     管理定期运行的任务。
 
@@ -597,7 +597,7 @@
 
 ### D
 
-- [DaemonSet](../kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md), 守护进程集
+- [DaemonSet](../kpanda/user-guide/workloads/create-daemonset.md), 守护进程集
 
     确保 Pod 的副本在集群中的一组节点上运行。
 
@@ -659,7 +659,7 @@
     开发人员可以使用交互式调试在运行时单步执行代码，同时分析相关的执行上下文。
     一旦定位到故障的根源，他们通过发起修复错误的请求或者发布新的补丁来更正代码行为。
 
-- [Deployement](../kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md), 无状态负载
+- [Deployement](../kpanda/user-guide/workloads/create-deployment.md), 无状态负载
 
     管理多副本应用的一种 API 对象，通常通过运行没有本地状态的 Pod 来完成工作。
 
@@ -923,7 +923,7 @@
 
 - Folder, 文件夹, 层级
 
-    为了满足企业内各个部门的分支划分，DCE 引入了[层级](../ghippo/04UserGuide/02Workspace/folders.md)的概念，通常层级对应着不同的部门，每个层级可以包含一个或多个工作空间。
+    为了满足企业内各个部门的分支划分，DCE 引入了[层级](../ghippo/user-guide/workspace/folders.md)的概念，通常层级对应着不同的部门，每个层级可以包含一个或多个工作空间。
 
 ### G
 
@@ -946,7 +946,7 @@
 
 - Gateway, 网关规则
 
-    在服务网格中，[网关规则（Gateway）](../mspider/03UserGuide/02TrafficGovernance/GatewayRules.md)定义了在网格南北向连接操作的负载均衡器，
+    在服务网格中，[网关规则（Gateway）](../mspider/user-guide/traffic-governance/gateway-rules.md)定义了在网格南北向连接操作的负载均衡器，
     用于建立入站和出站的 HTTP/TCP 访问连接。它描述了需要公开的一组端口、服务域名、协议类型、负载均衡器的 SNI 配置等信息。
 
 - Gauge, 计量器
@@ -964,7 +964,7 @@
 
 - Group
 
-    在全局管理中，这指的是由多个用户形成的组合，即[用户组](../ghippo/04UserGuide/01access-control/group.md)。
+    在全局管理中，这指的是由多个用户形成的组合，即[用户组](../ghippo/user-guide/access-control/group.md)。
 
     在微服务引擎中，这是 Nacos 中的一组配置集。
 
@@ -1028,7 +1028,7 @@
 
 - IAM, Identity and access management, 用户与访问控制
 
-    在全局管理中，[IAM](../ghippo/04UserGuide/01access-control/iam.md) 是用户与访问控制的简称，管理员被称为 IAM Admin，拥有该模块的最高权限。
+    在全局管理中，[IAM](../ghippo/user-guide/access-control/iam.md) 是用户与访问控制的简称，管理员被称为 IAM Admin，拥有该模块的最高权限。
     被赋予 IAM Admin 的用户（用户组）将拥有用户与访问控制的全部且最高权限。
 
 - Image, 镜像
@@ -1110,7 +1110,7 @@
 
 - [Job](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/job/)
 
-    [Job](../kpanda/07UserGuide/Workloads/CreateJobByImage.md) 是需要运行完成的确定性的或批量的任务。
+    [Job](../kpanda/user-guide/workloads/create-job.md) 是需要运行完成的确定性的或批量的任务。
 
     创建一个或多个 Pod 对象，并确保指定数量的 Pod 成功终止。
     随着各 Pod 成功结束，Job 会跟踪记录成功完成的个数。
@@ -1240,7 +1240,7 @@
 
 - [Log](https://opentelemetry.io/docs/concepts/signals/logs/), 日志
 
-    在 Insight 中，[日志](../insight/06UserGuide/04dataquery/logquery.md)是集群或应用程序记录的事件列表。
+    在 Insight 中，[日志](../insight/user-guide/data-query/log.md)是集群或应用程序记录的事件列表。
     系统运行过程中变化的一种抽象数据，其内容为指定对象的操作和其操作结果按时间的有序集合。
 
     应用程序和系统日志可以帮助您了解集群内部发生的情况。日志对于调试问题和监视集群活动非常有用。
@@ -1289,7 +1289,7 @@
     一个网格可以有一个以上的主集群，以用于 HA 或需要低延迟的场景。
     主集群可以充当工作集群的控制平面。
 
-- [Metric](https://opentelemetry.io/docs/concepts/signals/metrics/), [指标](../insight/06UserGuide/04dataquery/metricquery.md)
+- [Metric](https://opentelemetry.io/docs/concepts/signals/metrics/), [指标](../insight/user-guide/data-query/metric.md)
 
     对资源性能的数据描述或状态描述，指标由命名空间、维度、指标名称和单位组成。
     采集目标暴露的、可以完整反映监控对象运行或者业务状态的一系列标签化数据。
@@ -1398,7 +1398,7 @@
 
 - Namespace, 命名空间
 
-    [命名空间](../kpanda/07UserGuide/Namespaces/createns.md)是 Kubernetes 用来支持隔离单个集群中的资源组的一种抽象。
+    [命名空间](../kpanda/user-guide/namespaces/createns.md)是 Kubernetes 用来支持隔离单个集群中的资源组的一种抽象。
 
     命名空间用来组织集群中对象，并为集群资源划分提供了一种方法。
     同一命名空间内的资源名称必须唯一，但跨命名空间时不作要求。
@@ -1419,7 +1419,7 @@
 
 - Node, 节点
 
-    [节点](../kpanda/07UserGuide/Nodes/AddNode.md)是一台能与其他计算机（或节点）协同工作以完成一个共同任务的计算机。
+    [节点](../kpanda/user-guide/nodes/add-node.md)是一台能与其他计算机（或节点）协同工作以完成一个共同任务的计算机。
     以您的笔记本电脑、调制解调器或打印机为例。它们都通过您的 wifi 网络进行通信和协作，各自代表一个节点。
     在云计算中，节点可以是一台物理机，也可以是一台虚拟机（即 VM），甚至可以是容器。
 
@@ -1461,7 +1461,7 @@
 
 - Observability, 可观测性
 
-    [可观测性](../insight/03ProductBrief/what.md)指的是从所观测的系统采集信号，持续生成并发现可执行的洞察力。
+    [可观测性](../insight/intro/what.md)指的是从所观测的系统采集信号，持续生成并发现可执行的洞察力。
     换言之，可观测性允许用户从某个系统的外部输出中洞察该系统的状态并采取（修正）措施。
 
     计算机系统的衡量机制为观测 CPU 时间、内存、磁盘空间等底层信号以及每秒
@@ -1490,7 +1490,7 @@
 
 - OverridePolicy, 差异化策略
 
-    [差异化策略](../kairship/07policy/overridepolicy.md)是定义多云资源对象分发到不同工作集群时的差异化配置策略，
+    [差异化策略](../kairship/policy/override-policy.md)是定义多云资源对象分发到不同工作集群时的差异化配置策略，
     例如在不同的工作集群中，可以使用不同的镜像，增加不同的标签等。
 
     OverridePolicy 作为一个独立的策略 API 能够自动处理集群相关的配置，例如：
@@ -1502,7 +1502,7 @@
 
 - Permission, 权限
 
-    [权限](../ghippo/04UserGuide/01access-control/iam.md)指是否允许用户对某种资源执行某种操作。
+    [权限](../ghippo/user-guide/access-control/iam.md)指是否允许用户对某种资源执行某种操作。
     为了降低使用门槛，DCE 采用 RBAC 模型将权限聚合成一个个角色，管理员只需要将角色授权给用户，该用户就一次性得到了该角色下聚合的一组权限。
 
     默认情况下，管理员创建的 IAM 用户没有任何角色权限，需要对其单独授予角色或将其加入用户组并给用户组授予角色，才能使得用户获得对应的角色权限，这一过程称为授权。授权后，用户就可以基于被授予的角色权限对平台资源进行操作。
@@ -1634,7 +1634,7 @@
 
 - PropagationPolicy, 部署策略
 
-    在多云编排中，[PropagationPolicy](../kairship/07policy/propagationpolicy.md) 是定义多云资源对象的分发策略，支持使用指定集群、指定标签等方式来规划将资源部署到哪些工作集群。
+    在多云编排中，[PropagationPolicy](../kairship/policy/propagation-policy.md) 是定义多云资源对象的分发策略，支持使用指定集群、指定标签等方式来规划将资源部署到哪些工作集群。
 
     PropagationPolicy 是一种独立的策略 API，可以根据分发要求来定义多集群调度方式。
 
@@ -1659,7 +1659,7 @@
 
     管理授权决策，允许管理员通过 Kubernetes API 动态配置访问策略。
 
-    RBAC 使用[角色](../ghippo/04UserGuide/01access-control/role.md) (包含权限规则）和角色绑定（将角色中定义的权限授予一个用户组）。
+    RBAC 使用[角色](../ghippo/user-guide/access-control/role.md) (包含权限规则）和角色绑定（将角色中定义的权限授予一个用户组）。
 
 - Registration center, 注册中心
 
@@ -1707,7 +1707,7 @@
 
 - Resource Quota, 资源配额
 
-    [资源配额](../ghippo/04UserGuide/02Workspace/quota.md)提供了限制每个命名空间的资源消耗总和的约束。
+    [资源配额](../ghippo/user-guide/workspace/quota.md)提供了限制每个命名空间的资源消耗总和的约束。
 
     限制了命名空间中每种对象可以创建的数量，也限制了项目中可被资源对象利用的计算资源总数。
 
@@ -1717,16 +1717,16 @@
 
 - Resource Template, 资源模板
 
-    在[多云编排](../kairship/01product/what.md)中采用了一种叫做联邦资源的模板，
+    在[多云编排](../kairship/intro/what.md)中采用了一种叫做联邦资源的模板，
     这是基于 K8s 原生 API 定义的一种多云资源模板，便于集成使用 K8s 生态范围内的所有云原生工具。
 
-    通过这种资源模板可以统一管理[多云服务](../kairship/06resource/service.md)、
-    [多云命名空间](../kairship/06resource/ns.md)、
-    [多云配置项](../kairship/06resource/configmap.md)和[多云密钥](../kairship/06resource/secret.md)。
+    通过这种资源模板可以统一管理[多云服务](../kairship/resource/service.md)、
+    [多云命名空间](../kairship/resource/ns.md)、
+    [多云配置项](../kairship/resource/configmap.md)和[多云密钥](../kairship/resource/secret.md)。
 
 - Role, 角色
 
-    [角色](../ghippo/04UserGuide/01access-control/role.md)是连接用户与权限的桥梁，
+    [角色](../ghippo/user-guide/access-control/role.md)是连接用户与权限的桥梁，
     一个角色对应一组权限，不同角色具有不同的权限。向用户授予某角色，即授予该角色所包含的所有权限。
     全局管理中有两种角色：
 
@@ -1739,12 +1739,12 @@
 
 - Rolling update, 滚动更新
 
-    [滚动更新](../mspider/03UserGuide/upgrade/IstioUpdate.md)指一次只更新一小部分副本、成功后再更新更多的副本、最终完成所有副本的更新。
+    [滚动更新](../mspider/user-guide/upgrade/istio-update.md)指一次只更新一小部分副本、成功后再更新更多的副本、最终完成所有副本的更新。
     滚动更新的最大的好处是零停机，整个更新过程始终有副本在运行，从而保证了业务的连续性。
 
 - Routing Rule, 路由规则
 
-    在服务网格的[虚拟服务](../mspider/03UserGuide/02TrafficGovernance/VirtualService.md)中配置的路由规则，遵循服务网格定义了请求的路径。
+    在服务网格的[虚拟服务](../mspider/user-guide/traffic-governance/virtual-service.md)中配置的路由规则，遵循服务网格定义了请求的路径。
     使用路由规则，可以定义将寻址到虚拟服务主机的流量路由到指定目标的工作负载。
     路由规则使您可以控制流量，以实现按百分比分配流量的分阶段等任务。
 
@@ -1763,7 +1763,7 @@
 
 - Secret
 
-    [Secret](../kpanda/07UserGuide/ConfigMapsandSecrets/create-secret.md) 用于存储敏感信息，如密码、 OAuth 令牌和 SSH 密钥。
+    [Secret](../kpanda/user-guide/configmaps-secrets/create-secret.md) 用于存储敏感信息，如密码、 OAuth 令牌和 SSH 密钥。
 
     Secret 允许用户对如何使用敏感信息进行更多的控制，并减少信息意外暴露的风险。
     默认情况下，Secret 值被编码为 base64 字符串并以非加密的形式存储，
@@ -1973,7 +1973,7 @@
 
 - StatefulSet
 
-    [StatefulSet](../kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md) 用来管理某 Pod 集合的部署和扩缩，并为这些 Pod 提供持久存储和持久标识符。
+    [StatefulSet](../kpanda/user-guide/workloads/create-statefulset.md) 用来管理某 Pod 集合的部署和扩缩，并为这些 Pod 提供持久存储和持久标识符。
 
     与 Deployment 类似，StatefulSet 管理基于相同容器规约的一组 Pod。
     但和 Deployment 不同的是，StatefulSet 为它们的每个 Pod 维护了一个有粘性的 ID。
@@ -2036,7 +2036,7 @@
 
 - Taint, 污点
 
-    [污点](../kpanda/07UserGuide/Nodes/Taints.md)是一种核心对象，包含三个必需的属性：key、value 和 effect。污点会阻止在节点或节点组上调度 Pod。
+    [污点](../kpanda/user-guide/nodes/taints.md)是一种核心对象，包含三个必需的属性：key、value 和 effect。污点会阻止在节点或节点组上调度 Pod。
 
     污点配合容忍度一起工作，以确保不会将 Pod 调度到不适合的节点上。
     同一节点上可标记一个或多个污点。节点应该仅调度那些带着能与污点相匹配容忍度的 Pod。
@@ -2086,7 +2086,7 @@
     它还允许客户端应用程序积极地识别他们正在调用的服务器，从而降低客户端与欺诈站点通信的风险。
     这可以确保第三方无法查看和监控使用 TLS 在应用程序之间传输的数据，从而保护敏感隐私的信息，例如信用卡号、密码、位置等。
 
-- [Trace](https://opentelemetry.io/docs/concepts/signals/traces/), [链路](../insight/06UserGuide/04dataquery/tracequery.md)
+- [Trace](https://opentelemetry.io/docs/concepts/signals/traces/), [链路](../insight/user-guide/data-query/trace.md)
 
     记录单次请求范围内的处理信息，其中包括服务调用和处理时长等数据。
     一个 Trace 有一个唯一的 Trace ID ，并由多个 Span 组成。
@@ -2101,7 +2101,7 @@
 
 - User, 用户
 
-    [用户](../ghippo/04UserGuide/01access-control/user.md)是发起操作的主体，每个用户都有唯一的 ID，并被授予不同的角色。
+    [用户](../ghippo/user-guide/access-control/user.md)是发起操作的主体，每个用户都有唯一的 ID，并被授予不同的角色。
     默认创建的 IAM 用户没有任何权限，需要将其加入用户组，授予角色或策略，才能让用户获得对应的权限。
 
     用户以用户名登录 DCE，按照被授予的权限操作平台资源和服务。
@@ -2216,7 +2216,7 @@
 
     工作负载是在 Kubernetes 上运行的应用程序。
 
-    代表不同类型或部分工作负载的各种核心对象包括 [Deployment](../kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md)、[StatefulSet](../kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md)、[DaemonSet](../kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md)、[Job](../kpanda/07UserGuide/Workloads/CreateJobByImage.md)、ReplicaSet。
+    代表不同类型或部分工作负载的各种核心对象包括 [Deployment](../kpanda/user-guide/workloads/create-deployment.md)、[StatefulSet](../kpanda/user-guide/workloads/create-statefulset.md)、[DaemonSet](../kpanda/user-guide/workloads/create-daemonset.md)、[Job](../kpanda/user-guide/workloads/create-job.md)、ReplicaSet。
 
     例如，具有 Web 服务器和数据库的工作负载可能在一个 StatefulSet 中运行数据库，而 Web 服务器运行在 Deployment。
 
@@ -2233,8 +2233,8 @@
 
 - Workspace, 工作空间
 
-    [工作空间](../ghippo/04UserGuide/02Workspace/workspaces.md)是一种资源范畴，代表一种资源层级关系。
-    工作空间可以包含集群、[命名空间](../kpanda/07UserGuide/Namespaces/createns.md)、注册中心等资源。
+    [工作空间](../ghippo/user-guide/workspace/workspaces.md)是一种资源范畴，代表一种资源层级关系。
+    工作空间可以包含集群、[命名空间](../kpanda/user-guide/namespaces/createns.md)、注册中心等资源。
     通常一个工作空间对应一个项目，可以为每个工作空间分配不同的资源，指派不同的用户和用户组。
 
 - Worker Cluster, 工作集群
