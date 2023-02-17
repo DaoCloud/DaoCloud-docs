@@ -13,6 +13,11 @@
 
     该解决方案是 Aqua 云原生应用保护平台的一部分，提供的功能包括：代码扫描、CI/CD 态势管理、流水线安全管理、优化 SBOM 功能、评估开源代码的健康状况和口碑情况。
 
+- [AtomicJar 发布集成测试工具 Testcontainers Cloud](https://containerjournal.com/topics/container-management/atomicjar-unveils-testcontainers-cloud-service/)
+
+    Testcontainers Cloud 基于轻量级开源测试框架 [Testcontainers](https://github.com/testcontainers) 构建，通过 Docker 容器创建更真实的测试环境，
+    开发人员可以在将代码通过持续集成（CI）平台转移到生产环境之前自己测试应用程序，这使得云原生应用开发者无需专门应用测试团队的帮助即可测试依赖关系。
+
 - [AWS 应用配置工具 AWS AppConfig 推出一个用于容器运行时的代理，简化 feature flag 和运行时的配置](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
 
     AKS 等平台的用户可以使用 AWS AppConfig Agent 管理容器应用配置数据的检索和缓存，以及处理轮询和缓存逻辑等。
@@ -326,6 +331,10 @@ Ocean CD 是一个支持多集群的 SaaS 方案，以 Argo rollouts 为引擎�
 
     Service Mesh Manager 基于 Istio 构建，为微服务团队提供集中的安全控制和流量管理策略配置。Network Policy Manager 基于 Cilium 构建，提供集中管理以及 pod 和命名空间通信的可见性，以隔离边界并减少集群的横向攻击面。
 
+- [Red Hat OpenShift 日志管理方案 Logging 5.6 发布](https://docs.openshift.com/container-platform/4.12/logging/cluster-logging-release-notes.html#cluster-logging-release-notes-5-6_cluster-logging-release-notes-v5x)
+
+    更新内容：兼容 OpenShift 容器平台集群范围内的加密策略；支持通过 LokiStack 自定义资源声明租户、流和全局策略保留策略，并按优先级排序；新增日志转发输出选项 Splunk；Vector 取代 Fluentd 作为默认收集器。
+
 - [Red Hat 多集群管理平台 Advanced Cluster Management for Kubernetes 2.7 发布](https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.7/html/release_notes/red-hat-advanced-cluster-management-for-kubernetes-release-notes)
 
     更新内容：支持根据依赖关系进行策略执行排序、策略生成器支持引用本地和远程定制配置、扩大边缘可管理的集群数至 3500 个、支持在 Arm 架构上创建集群、针对大规模环境的搜索组件正式可用、支持使用新的 Submariner LoadBalancer 模式简化集群部署、Submariner 支持无网络环境的集群。
@@ -412,6 +421,11 @@ Ocean CD 是一个支持多集群的 SaaS 方案，以 Argo rollouts 为引擎�
 - [Tetrate 应用连接平台 Tetrate Service Bridge v1.6.0 发布](https://docs.tetrate.io/service-bridge/1.6.x/en-us/release_notes_announcements)
 
     更新内容：增加安全域、服务安全设置等安全规则；增加东西向网关改善集群间的服务故障转移；用户界面优化，支持可视化和监控平台和服务活动；新增排障工具，无需集群的访问特权即可排障；支持集群内的多 Istio 环境；支持跨网关和服务代理的 WASM 扩展；Skywalking 的后端服务 OAP 代替 Zipkin，用于收集和查询 trace。
+
+- [Tigera 发布 Kubernetes 网络和容器威胁防御方案 Calico Runtime Threat Defense](https://www.tigera.io/news/tigera-introduces-calico-runtime-threat-defense-the-most-comprehensive-plug-and-play-defense-against-container-and-network-based-threats/)
+
+    Calico Runtime Threat Defense 结合结合基于签名和行为的技术来检测已知威胁和零日威胁，能够检测 MITRE 最常见的容器和网络的攻击。
+    与传统的运行时威胁检测平台不同，Calico Runtime Threat Defense 无需编写复杂的规则即可持续监控和分析网络和容器行为，获取攻击指标（IOA）。
 
 - [Traefik Labs 发布云原生网络平台 Traefik Hub 1.0](https://traefik.io/blog/announcing-the-general-availability-of-traefik-hub-1-0/)
 

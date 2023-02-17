@@ -138,6 +138,16 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: Add the StatusCheck function to check the health of the application, and stop the chaos experiment when the application is unhealthy; support the use of `Chaosctl` for outbound forced recovery, and add workflows based on flow charts in the dashboard interface etc.
 
+- [Cilium CNI Plugin v1.13.0 Released (CNCF Project)](https://github.com/cilium/cilium/releases/tag/v1.13.0)
+
+    Release features: support Gateway API v0.5.1, add IPv6 BIG TCP support, support LoadBalancer IP address management, initial support for SCTP, support for fine-grained configuration of nodes based on tag selector, support for k8s 1.26, support for declaring LoadBalancer services via BGP control plane The following features are included: support for L7 load balancing of existing Kubernetes services through the built-in Envoy agent, Ingress resources can share Kubernetes LoadBalancer resources, datapath support for mTLS, support for internal service traffic policies, cosign signing of all images, and creation of SBOMs for each image. Create SBOMs for each image.
+
+- [Cilium Releases Security Audit Report and Fuzz Test Audit Report](https://www.cncf.io/blog/2023/02/13/a-well-secured-project-cilium-security-audits-2022-published/)
+
+    [Security Audit](https://github.com/cilium/cilium.io/blob/main/Security-Reports/CiliumSecurityAudit2022.pdf) and [Fuzz Testing](https://github.com/) cilium/cilium.io/blob/main/Security-Reports/CiliumFuzzingAudit2022.pdf) found a total of 30 issues, and no critical risk vulnerabilities were found.
+    Of these, two were medium-risk issues, the first being the lack of easily accessible documentation on running Cilium securely, which [PR](https://github.com/cilium/cilium/pull/23599) is being addressed.
+    The second is a possible failure to unlock a mutex in case of misconfiguration; this [issue](https://github.com/cilium/cilium/pull/23077) has been fixed. The rest are low-risk or informational issues.
+
 - [Cilium 2022 Annual Report Released](https://github.com/cilium/cilium.io/raw/main/Annual-Reports/Cilium%20Annual%20Report%202022.pdf)
 
      The report documents the Cilium project's contributor growth, release highlights, user survey results, production landings, community activities, and where we are headed in 2023.
@@ -351,6 +361,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      Recently, Alibaba Cloud officially released the community version of [iLogtail](https://github.com/alibaba/ilogtail) with full functions.
      This update open-sources all C++ core codes, and this version aligns with the enterprise version for the first time in terms of core capabilities. Added many important features such as log file collection, container file collection, lock-free event processing, multi-tenant isolation, and new configuration methods based on Pipeline.
+
+- [Istio Service Mesh v1.17 Released (CNCF Project)](https://istio.io/latest/news/releases/1.17.x/announcing-1.17/)
+
+    Release features: Revision tag for Canary upgrade upgraded to Beta, Helm-based installation of Istio upgraded to Beta, full compatibility with the latest version of Kubernetes Gateway API (0.6.1), optimized IPv4/IPv6 dual-stack support, added support for listener filter patches, support for using the encryption and decryption technology QuickAssist Technology (QAT) PrivateKeyProvider.
 
 - [Istio Announces 2022 Security Audit Results](https://istio.io/latest/blog/2023/ada-logics-security-assessment/)
 
@@ -603,7 +617,13 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: add support for eBPF in CNI and init container configuration, add 3 new "next generation" policies, optimize the user interface, support the configuration of TLS versions and ciphers supported by the control plane/API server, allow configuration Multiple UIDs make it ignored by traffic redirection, allowing logging to be turned on when using iptables for traffic redirection.
 
-- [Kuma Service Mesh Project v1.8.0 release (CNCF project)](https://github.com/kumahq/kuma/releases/tag/1.8.0)The main new features of this version: cross-grid gateway supports multi-region operation, grid gateway/built-in gateway adds observability function, rewrites CNI, grid gateway supports path rewriting and header addition/deletion, supports filtering proxy indicators, Simplify the implementation of TCP traffic logs and support Projected Service Account Tokens.
+- [Kuma Service Mesh Project v1.8.0 release (CNCF project)](https://github.com/kumahq/kuma/releases/tag/1.8.0)
+
+    The main new features of this version: cross-grid gateway supports multi-region operation, grid gateway/built-in gateway adds observability function, rewrites CNI, grid gateway supports path rewriting and header addition/deletion, supports filtering proxy indicators, Simplify the implementation of TCP traffic logs and support Projected Service Account Tokens.
+
+- [Kurator Distributed Cloud Native Platform v0.2.0 Released](https://github.com/kurator-dev/kurator/releases/tag/v0.2.0)
+
+    Release features: support for Thanos-based multi-cluster monitoring and metrics persistence storage; support for Pixie-based real-time K8s application monitoring; new component Cluster Operator to manage the kubernetes cluster lifecycle for various infrastructures, including public clouds, hybrid clouds and local data centers, in a cloud-native way.
 
 - [KusionStack: Ant Group's open source programmable cloud-native protocol stack](https://mp.weixin.qq.com/s/EZrVKdZ_hG5-p_HltaTCMg)
 
@@ -737,6 +757,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [OpenClusterManagement (OCM) multi-cluster management platform v0.7 release (CNCF project)](https://mp.weixin.qq.com/s/EQgdnZVOqzfvuxOzg-Q0cQ)
 
      The main new features of this version: Add the "DefaultClusterSet" function, all managed clusters registered in the OCM environment will be registered in the ClusterSet named "default" by default; support multi-cluster scheduling based on Taint / Toleration semantics; deployment architecture Adjust to the "Hosted deployment" mode, that is, no other components need to be deployed in the managed cluster, and all proxy controllers are executed remotely.
+
+- [OpenEBS Cloud Native Storage v3.4.0 Released (CNCF Project)](https://github.com/openebs/openebs/releases/tag/v3.4.0)
+
+    Release features: support for installing Mayastor via OpenEBS helm chart, support for switching Mayastor nodes on demand during failure detection, support for NVMe virtual path detection using NDM, fix for pull image key error in LVM LocalPV helm chart, add backend volume PVC contexts to NFS server deployments as a label in NFS server deployments.
 
 - [OpenEBS Cloud Native Storage v3.3.0 release (CNCF project)](https://github.com/openebs/openebs/releases/tag/v3.3.0)
 
