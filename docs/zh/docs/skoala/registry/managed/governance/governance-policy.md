@@ -4,7 +4,7 @@
 
 ## Sentinel 治理规则
 
-- [流控规则](flow-ontrol.md)
+- [流控规则](flow-control.md)
 
     流控规则的原理是监控应用或服务流量的 QPS 指标，当指标达到阈值时根据预先设定的规则对请求流量进行控制，防止应用因短时间内无法处理过多流量而崩溃。使用流控规则后，系统可以在接下来的空闲期间逐渐处理堆积的请求，当指标重新恢复到阈值以下后，恢复正常的流量请求控制。
 
@@ -24,7 +24,7 @@
 
     授权规则允许基于请求来源进行流量治理，例如仅放行白名单中的调用方发起的请求，不放行黑名单中的调用方发起的请求。
 
-[流控规则](flow-ontrol.md){ .md-button .md-button--primary }
+[流控规则](flow-control.md){ .md-button .md-button--primary }
 
 ## Mesh 治理规则
 
@@ -36,9 +36,9 @@
 
 有关这三项治理规则的详细说明，可参考文档[流量治理](../../../../mspider/03UserGuide/02TrafficGovernance/README.md)。
 
-[虚拟服务](../../../../../mspider/03UserGuide/02TrafficGovernance/VirtualService.md){ .md-button .md-button--primary }
-[目标规则](../../../../../mspider/03UserGuide/02TrafficGovernance/DestinationRules.md){ .md-button .md-button--primary }
-[网关规则](../../../../../mspider/03UserGuide/02TrafficGovernance/GatewayRules.md){ .md-button .md-button--primary }
+[虚拟服务](../../../../mspider/03UserGuide/02TrafficGovernance/VirtualService.md){ .md-button .md-button--primary }
+[目标规则](../../../../mspider/03UserGuide/02TrafficGovernance/DestinationRules.md){ .md-button .md-button--primary }
+[网关规则](../../../../mspider/03UserGuide/02TrafficGovernance/GatewayRules.md){ .md-button .md-button--primary }
 
 <!--
 - 资源名：资源的名称，资源是指规则的作用领域。
