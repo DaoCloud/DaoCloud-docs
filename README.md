@@ -36,10 +36,11 @@ We use GitOps to control workflow and versions.
 
 |No|Yes|Why|
 |--|--|--|
-|ConfigName|config-name|use small letters and hyphens|
+|ConfigName|config-name|Use small letters and hyphens|
 |创建 秘钥|create-secret|No Chinese words and other macro symbols|
 |quick-start-install-online-install|online-install|Keep short|
 |c-ws|create-workspace|Be descriptive|
+|update_image|update-image|Connect words with hyphens|
 
 
 ## Open a PR
