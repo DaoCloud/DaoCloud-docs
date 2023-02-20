@@ -26,35 +26,6 @@ Legacy releases:
 DCE 5.0 website is created with MkDocs. All pages are written in markdown.
 We use GitOps to control workflow and versions.
 
-## File Naming Conventions
-
-- **Only contain** English lower cases and hyphens (`-`)
-- **Do not** contain any of these characters like:
-  - Chinese chars
-  - Spaces
-  - `*`
-  - `?`
-  - `\`
-  - `/`
-  - `:`
-  - `#`
-  - `%`
-  - `~`
-  - `{`
-  - `}`
-  - `(` or `)`
-- Connect words with hyphens (`-`)
-- Keep short：up to 5 English words, avoid repetition, use abbreviations
-- Be descriptive: easy to understand and reflect the doc's subject
-
-|No|Yes|Why|
-|--|--|--|
-|ConfigName|config-name|Use small letters and hyphens|
-|创建 秘钥|create-secret|No Chinese words and other macro symbols|
-|quick-start-install-online-install|online-install|Keep short|
-|c-ws|create-workspace|Be descriptive|
-|update_image|update-image|Connect words with hyphens|
-
 ## Open a PR
 
 This website uses Pull Request (PR) to modify, translate, and manage all pages.
@@ -85,6 +56,36 @@ See [MkDocs documents to install](https://squidfunk.github.io/mkdocs-material/ge
 2. Install dependencies: `poetry install`
 3. Run `poetry run mkdocs serve -f mkdocs.yml` in the repo folder locally
 4. Preview with http://0.0.0.0:8000/
+
+## Naming conventions
+
+This section lists some conventions about a file or folder name for your reference:
+
+- **Only contain** English lower cases and hyphens (`-`)
+- **Do not** contain any of these characters like:
+  - Chinese chars
+  - Spaces
+  - `*`
+  - `?`
+  - `\`
+  - `/`
+  - `:`
+  - `#`
+  - `%`
+  - `~`
+  - `{`
+  - `}`
+- Connect words with hyphens (`-`)
+- Keep short：up to 5 English words, avoid repetition, use abbreviations
+- Be descriptive: easy to understand and reflect the doc's subject
+
+| No                                 | Yes              | Why                                      |
+| ---------------------------------- | ---------------- | ---------------------------------------- |
+| ConfigName                         | config-name      | Use small letters and hyphens            |
+| 创建 秘钥                          | create-secret    | No Chinese words and other macro symbols |
+| quick-start-install-online-install | online-install   | Keep short                               |
+| c-ws                               | create-workspace | Be descriptive                           |
+| update_image                       | update-image     | Connect words with hyphens               |
 
 ## Tips about writing
 
