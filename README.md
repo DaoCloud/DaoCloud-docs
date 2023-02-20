@@ -29,7 +29,20 @@ We use GitOps to control workflow and versions.
 ## File Naming Conventions
 
 - **Only contain** English lower cases and hyphens (`-`)
-- **Do Not** contain other characters (e.g., Chinese chars, spaces,`*``?` `\` `/ ``:` `#` `%` `~` `{` `}`) except those listed above
+- **Do not** contain any of these characters like:
+  - Chinese chars
+  - Spaces
+  - `*`
+  - `?`
+  - `\`
+  - `/`
+  - `:`
+  - `#`
+  - `%`
+  - `~`
+  - `{`
+  - `}`
+  - `(` or `)`
 - Connect words with hyphens (`-`)
 - Keep short：up to 5 English words, avoid repetition, use abbreviations
 - Be descriptive: easy to understand and reflect the doc's subject
@@ -41,7 +54,6 @@ We use GitOps to control workflow and versions.
 |quick-start-install-online-install|online-install|Keep short|
 |c-ws|create-workspace|Be descriptive|
 |update_image|update-image|Connect words with hyphens|
-
 
 ## Open a PR
 
