@@ -65,7 +65,7 @@ nav:
                   - 集群调度: kpanda/07UserGuide/Workloads/PodConfig/SchedulingPolicy.md
           - 弹性伸缩:
               - 指标弹性伸缩 HPA: kpanda/07UserGuide/Scale/Create-HPA.md
-              - 垂直伸缩 HPA: kpanda/07UserGuide/Scale/Create-VPA.md
+              - 垂直伸缩 VPA: kpanda/07UserGuide/Scale/create-vpa.md
               - 安装 metrics-server: kpanda/07UserGuide/Scale/Install-metrics-server.md
           - Helm 应用:
               - Helm 模板: kpanda/07UserGuide/helm/README.md
