@@ -79,6 +79,6 @@ spec:
 
 ![workspaceingress02](../../images/workspaceingress02.jpg)
 
-Ingress 实例部署后，可在对应的命名空间中[创建 Ingress 规则](../../../kpanda/07UserGuide/ServicesandRoutes/CreatingIngress.md)，并选择对应实例的 Ingress Class 进行使用。
+Ingress 实例部署后，可在对应的命名空间中[创建 Ingress 规则](../../../kpanda/user-guide/services-routes/create-ingress.md)，并选择对应实例的 Ingress Class 进行使用。
 
 更多信息可以参考 [scope](https://kubernetes.github.io/ingress-nginx/deploy/#scope)。

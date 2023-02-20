@@ -6,9 +6,9 @@ DCE 5.0 商业版提供了两种模式：经典模式和简约模式。
 
 经典模式适合跨网络、跨区域的多数据中心，其部署模式为：
 
-- [全局服务集群](../../kpanda/07UserGuide/Clusters/ClusterRole.md#_1)部署 DCE 5.0 的所有组件：全局管理、容器管理、可观测性、应用工作台、多云编排、镜像仓库、微服务引擎、服务网格、中间件、网络等。
-- [管理集群](../../kpanda/07UserGuide/Clusters/ClusterRole.md#_2)部署 [Kubean](https://github.com/kubean-io/kubean) 的 Operator
-- [工作集群](../../kpanda/07UserGuide/Clusters/ClusterRole.md#_3)支撑业务应用和服务（成功安装 DCE 之后再部署工作集群）
+- [全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_1)部署 DCE 5.0 的所有组件：全局管理、容器管理、可观测性、应用工作台、多云编排、镜像仓库、微服务引擎、服务网格、中间件、网络等。
+- [管理集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)部署 [Kubean](https://github.com/kubean-io/kubean) 的 Operator
+- [工作集群](../../kpanda/user-guide/clusters/cluster-role.md#_3)支撑业务应用和服务（成功安装 DCE 之后再部署工作集群）
 
 经典模式的部署架构图如下所示：
 

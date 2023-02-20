@@ -4,7 +4,7 @@
 
 ## RabbitMQ 消息队列实例管理
 
-参阅[RabbitMQ 消息服务实例管理](../middleware/rabbitmq/userguide/create.md)文档页面。
+参阅[RabbitMQ 消息服务实例管理](../middleware/rabbitmq/user-guide/create.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/RabbitMQ-instance-management.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -12,7 +12,7 @@
 
 ## MySQL 数据库实例管理
 
-参阅[MySQL 数据库实例管理](../middleware/mysql/userguide/create.md)文档页面。
+参阅[MySQL 数据库实例管理](../middleware/mysql/user-guide/create.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/mysql.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -20,7 +20,7 @@
 
 ## Elasticsearch 搜索服务实例管理
 
-参阅[Elasticsearch 搜索服务实例管理](../middleware/elastic-search/userguide/create.md)文档页面。
+参阅[Elasticsearch 搜索服务实例管理](../middleware/elastic-search/user-guide/create.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/es.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -28,7 +28,7 @@
 
 ## Kafka 消息实例管理
 
-参阅[Kafka 消息实例管理](../middleware/kafka/userguide/create.md)文档页面。
+参阅[Kafka 消息实例管理](../middleware/kafka/user-guide/create.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kafka.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>

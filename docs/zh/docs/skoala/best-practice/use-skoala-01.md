@@ -19,13 +19,13 @@
 
 ## 应用部署
 
-[应用工作台](../../amamba/01ProductBrief/what.md)是 DCE 5.0 的应用管理模块，支持创建/维护多种类型的应用、GitOps 和灰度发布等功能，可以快速将应用部署到任何集群。应用工作台支持基于 Git 仓、Jar 包、容器镜像、Helm 模板部署应用。本次实践基于 `Helm 模板` 部署示例应用。
+[应用工作台](../../amamba/intro/what.md)是 DCE 5.0 的应用管理模块，支持创建/维护多种类型的应用、GitOps 和灰度发布等功能，可以快速将应用部署到任何集群。应用工作台支持基于 Git 仓、Jar 包、容器镜像、Helm 模板部署应用。本次实践基于 `Helm 模板` 部署示例应用。
 
 ![image](../images/chooseInstalltype.png)
 
 部署应用之前需要满足如下的前提条件：
 
-- 在容器管理中[添加 Helm 仓库](../../kpanda/07UserGuide/helm/helm-repo.md):
+- 在容器管理中[添加 Helm 仓库](../../kpanda/user-guide/helm/helm-repo.md):
 
     ![image](../images/addhelmrepo.png)
 
@@ -76,7 +76,7 @@
 
 ### Java 项目自行开发调试
 
-如果采用其他部署方式，配置注册中心地址的方法可能有所不同。Java 项目在开发时需要集成 Nacos 的 SDK，而 DCE 5.0 提供的注册中心完全兼容开源 Nacos，所以可以直接使用开源 Nacos 的 SDK。具体操作步骤可参考[基于 Jar 包部署 Java 应用](../../amamba/03UserGuide/wizard/jar-java-app.md)。
+如果采用其他部署方式，配置注册中心地址的方法可能有所不同。Java 项目在开发时需要集成 Nacos 的 SDK，而 DCE 5.0 提供的注册中心完全兼容开源 Nacos，所以可以直接使用开源 Nacos 的 SDK。具体操作步骤可参考[基于 Jar 包部署 Java 应用](../../amamba/user-guide/wizard/jar-java-app.md)。
 
 使用 `java -jar` 启动项目时，添加对应的环境变量配置即可
 
@@ -102,7 +102,7 @@
 
 ### 使用容器镜像部署
 
-如果选择基于容器镜像部署应用，可以直接在用户界面配置中开启微服务治理并选取对应的注册中心模块，操作更简便。具体步骤可参考[基于 Git 仓构建微服务应用](../../amamba/03UserGuide/wizard/create-git-based-ms.md)。
+如果选择基于容器镜像部署应用，可以直接在用户界面配置中开启微服务治理并选取对应的注册中心模块，操作更简便。具体步骤可参考[基于 Git 仓构建微服务应用](../../amamba/user-guide/wizard/create-git-based-ms.md)。
 
 ![image](../images/createbyimage.png)
 
