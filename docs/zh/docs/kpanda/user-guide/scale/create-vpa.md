@@ -16,13 +16,13 @@ VPA 是通过监控一段时间内 Pod 的资源申请和用量，来计算 Pod 
 
 在为工作负载配置垂直伸缩策略之前，需要满足以下前提条件：
 
-- 容器管理模块[已接入 Kubernetes 集群](../Clusters/JoinACluster.md)或者[已创建 Kubernetes 集群](../Clusters/CreateCluster.md)，且能够访问集群的 UI 界面。
+- 容器管理模块[已接入 Kubernetes 集群](../clusters/integrate-cluster.md)或者[已创建 Kubernetes 集群](../clusters/create-cluster.md)，且能够访问集群的 UI 界面。
 
-- 已完成一个[命名空间的创建](../Namespaces/createns.md)、[无状态工作负载的创建](../Workloads/CreateDeploymentByImage.md)或[有状态工作负载的创建](../Workloads/CreateStatefulSetByImage.md)。
+- 已完成一个[命名空间的创建](../namespaces/createns.md)、[无状态工作负载的创建](../workloads/create-deployment.md)或[有状态工作负载的创建](../workloads/create-statefulset.md)。
 
-- 当前操作用户应具有 [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) 或更高权限，详情可参考[命名空间授权](../Namespaces/createns.md)。
+- 当前操作用户应具有 [`NS Edit`](../permissions/permission-brief.md#ns-edit) 或更高权限，详情可参考[命名空间授权](../namespaces/createns.md)。
 
-- 已完成[`metrics-server 插件`](Install-metrics-server.md)、[`VPA 插件`](Install-vpa.md)的安装。
+- 已完成[`metrics-server 插件`](install-metrics-server.md)、[`VPA 插件`](install-vpa.md)的安装。
 
 ### 操作步骤
 
@@ -40,7 +40,7 @@ VPA 是通过监控一段时间内 Pod 的资源申请和用量，来计算 Pod 
 
     ![垂直伸缩](../../images/createVpaScale.png)
 
-4. 确认集群已[安装了 `metrics-server`](Install-metrics-server.md) 和 [`VPA`](Install-vpa.md)，且插件运行状态为正常后，即可点击`新建伸缩`按钮。
+4. 确认集群已[安装了 `metrics-server`](install-metrics-server.md) 和 [`VPA`](install-vpa.md)，且插件运行状态为正常后，即可点击`新建伸缩`按钮。
 
     ![新建伸缩](../../images/createVpaScale01.png)
 
