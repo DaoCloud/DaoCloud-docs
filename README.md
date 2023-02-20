@@ -26,6 +26,23 @@ Legacy releases:
 DCE 5.0 website is created with MkDocs. All pages are written in markdown.
 We use GitOps to control workflow and versions.
 
+## File Naming Conventions
+
+- **Only contain** English lower cases and hyphens (`-`)
+- **Do Not** contain other characters (e.g., Chinese chars, spaces,`*``?` `\` `/ ``:` `#` `%` `~` `{` `}`) except those listed above
+- Connect words with hyphens (`-`)
+- Keep short：up to 5 English words, avoid repetition, use abbreviations
+- Be descriptive: easy to understand and reflect the doc's subject
+
+|No|Yes|Why|
+|--|--|--|
+|ConfigName|config-name|Use small letters and hyphens|
+|创建 秘钥|create-secret|No Chinese words and other macro symbols|
+|quick-start-install-online-install|online-install|Keep short|
+|c-ws|create-workspace|Be descriptive|
+|update_image|update-image|Connect words with hyphens|
+
+
 ## Open a PR
 
 This website uses Pull Request (PR) to modify, translate, and manage all pages.
