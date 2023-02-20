@@ -46,6 +46,23 @@
 
         ![容器配置](../../images/jar04.png)
 
+    - 高级设置
+      - 生命周期：设置容器启动时、启动后、停止前需要执行的命令。详情可参考[容器生命周期配置](../../../kpanda/user-guide/workloads/pod-config/lifecycle.md)。
+
+        ![lifecycle01](../../images/lifecycle01.png)
+
+      - 健康检查：用于判断容器和应用的健康状态，有助于提高应用的可用性。详情可参考[容器健康检查配置](../../../kpanda/user-guide/workloads/pod-config/health-check.md)。
+
+        ![health-check01](../../images/health-check01.png)
+
+      - 环境变量：配置 Pod 内的容器参数，为 Pod 添加环境变量或传递配置等。详情可参考[容器环境变量配置](../../../kpanda/user-guide/workloads/pod-config/env-variables.md)。
+
+        ![env-variables01](../../images/env-variables01.png)
+
+      - 数据存储：配置容器挂载数据卷和数据持久化的设置。
+
+        ![volum01](../../images/volum01.png)
+
 5. 参考下列说明选择是否开启高级功能，然后点击`创建并上传 Jar 包`。
 
     - 服务网格：选择是否启用 [DCE 5.0 的服务网格](../../../mspider/intro/what.md)模块来治理微服务流量。
