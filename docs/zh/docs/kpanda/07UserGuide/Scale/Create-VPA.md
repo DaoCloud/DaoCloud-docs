@@ -10,7 +10,7 @@ VPA 是通过监控一段时间内 Pod 的资源申请和用量，来计算 Pod 
 !!! note
 
     1. 使用 VPA 前，请确保当前集群已完成 `metrics-server` 和 `VPA` 插件的安装。
-    2. 使用 VPA 修改 Pod 的资源请求将会触发 Pod 重启，由于 Kubernetes 本身的限制， Pod 重启后，将可能会调度到其它节点上。
+    2. 使用 VPA 修改 Pod 的资源请求将会触发 Pod 重启，由于 Kubernetes 本身的限制，Pod 重启后，将可能会调度到其它节点上。
 
 ### 前提条件
 
