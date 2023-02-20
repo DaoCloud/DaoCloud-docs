@@ -4,7 +4,7 @@
 
 ## 流水线管理
 
-参阅[流水线管理](../amamba/03UserGuide/Pipeline/createpipelinebyself.md)文档页面。
+参阅[流水线管理](../amamba/user-guide/pipeline/create-pipeline-byself.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-pipeline.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -12,7 +12,7 @@
 
 ## 创建命名空间
 
-参阅[命名空间管理](../amamba/03UserGuide/Namespace/namespace.md)文档页面。
+参阅[命名空间管理](../amamba/user-guide/namespace/namespace.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-ns.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -28,7 +28,7 @@
 
 ## 基于 Argo CD 实现持续部署
 
-参阅[创建 Argo CD 应用](../amamba/03UserGuide/gitops/create-argo-cd.md)文档页面。
+参阅[创建 Argo CD 应用](../amamba/user-guide/gitops/create-argo-cd.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gitops.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>

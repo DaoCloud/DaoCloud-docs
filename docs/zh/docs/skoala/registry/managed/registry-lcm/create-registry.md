@@ -9,8 +9,8 @@ hide:
 
 !!! note
 
-    - 需要事先在目标集群的 **skoala-system** 命名空间中安装 skoala-init 组件，具体步骤可参考[管理 Helm 应用](../../../../kpanda/07UserGuide/helm/helm-app.md)。
-    - 如果所选集群中没有 **skoala-system** 命名空间，可参考[创建命名空间](../../../../kpanda/07UserGuide/Namespaces/createns.md)创建一个名为 **skoala-system** 的命名空间。
+    - 需要事先在目标集群的 **skoala-system** 命名空间中安装 skoala-init 组件，具体步骤可参考[管理 Helm 应用](../../../../kpanda/user-guide/helm/helm-app.md)。
+    - 如果所选集群中没有 **skoala-system** 命名空间，可参考[创建命名空间](../../../../kpanda/user-guide/namespaces/createns.md)创建一个名为 **skoala-system** 的命名空间。
 
 创建托管注册中心的步骤如下。
 

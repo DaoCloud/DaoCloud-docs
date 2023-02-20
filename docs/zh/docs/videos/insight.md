@@ -4,7 +4,7 @@
 
 ## 容器监控
 
-参阅[容器监控](../ghippo/04UserGuide/02Workspace/folders.md)文档页面。
+参阅[容器监控](../ghippo/user-guide/workspace/folders.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/container-monitor.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -12,7 +12,7 @@
 
 ## 日志查询
 
-参阅[日志查询](../insight/06UserGuide/04dataquery/logquery.md)文档页面。
+参阅[日志查询](../insight/user-guide/data-query/log.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/logs.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -20,7 +20,7 @@
 
 ## 告警中心
 
-参阅[告警中心](../insight/06UserGuide/05alertcenter/alertrule.md)文档页面。
+参阅[告警中心](../insight/user-guide/alert-center/alert-rule.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/alerts.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -28,7 +28,7 @@
 
 ## 仪表盘
 
-参阅[仪表盘](../insight/06UserGuide/02dashboard/dashboard.md)文档页面。
+参阅[仪表盘](../insight/user-guide/dashboard/dashboard.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/dashboard.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -36,7 +36,7 @@
 
 ## 安装 insight-agent
 
-参阅[安装 insight-agent](../insight/06UserGuide/01quickstart/installagent.md)文档页面。
+参阅[安装 insight-agent](../insight/user-guide/quickstart/install-agent.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/insight-agent.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>

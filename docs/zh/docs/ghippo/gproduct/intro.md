@@ -13,7 +13,7 @@ GProduct 是 DCE 5.0 中除全局管理外的所有其他模块的统称，这�
 
     入口统一放在左侧导航栏。
 
-- [接入路由和 AuthN](./route-authn.md)
+- [接入路由和 AuthN](route-auth.md)
 
     统一 IP 或域名，将路由入口统一走全局管理的 Istio Gateway。
 

@@ -117,9 +117,9 @@
 
 ### API
 
-**新增** `kpanda` 增加 [configmap](../kpanda/07UserGuide/ConfigMapsandSecrets/use-configmap.md) CRUD
+**新增** `kpanda` 增加 [configmap](../kpanda/user-guide/configmaps-secrets/use-configmap.md) CRUD
 
-**新增** `kpanda` 支持[工作负载全生命周期管理](../kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md)
+**新增** `kpanda` 支持[工作负载全生命周期管理](../kpanda/user-guide/workloads/create-deployment.md)
 
 **新增** CRD、CR 的 crud 支持
 
@@ -131,7 +131,7 @@
 
 **优化** `kpanda` proto 文件注释补全
 
-**新增** `kpanda` 增加[节点](../kpanda/07UserGuide/Nodes/AddNode.md)查看、编辑 yaml 功能
+**新增** `kpanda` 增加[节点](../kpanda/user-guide/nodes/add-node.md)查看、编辑 yaml 功能
 
 **新增** `kpanda` 支持节点列表根据状态筛选功能
 

@@ -5,7 +5,7 @@ hide:
 
 # 应用工作台权限说明
 
-[应用工作台](../../amamba/01ProductBrief/WhatisAmamba.md)支持三种用户角色：
+[应用工作台](../../amamba/intro/what.md)支持三种用户角色：
 
 - Workspace Admin
 - Workspace Editor
@@ -69,4 +69,4 @@ hide:
 
 !!! note
 
-    有关角色和权限管理的完整介绍，请参考[角色和权限管理](../04UserGuide/01UserandAccess/Role.md)。
+    有关角色和权限管理的完整介绍，请参考[角色和权限管理](../user-guide/access-control/role.md)。

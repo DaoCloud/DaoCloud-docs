@@ -140,7 +140,7 @@ DCE 采用业界领先的容器编排技术，产品能力涵盖云原生应用�
 [![1.18](../images/1.18.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/1144)
 [![1.20](../images/1.20.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/1463)
 
-进一步了解[什么是 DCE 5.0](../dce/what-is-dce.md)
+进一步了解[什么是 DCE 5.0](../dce/what.md)
 
 [下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

@@ -2,6 +2,13 @@
 
 微服务引擎属于 DCE 5.0 高级版功能，其中包含注册中心、配置中心、微服务治理（传统微服务、云原生微服务）、云原生网关等功能。本文将通过示例应用带您体验其中的微服务治理功能。
 
+此次最佳实践包含的全部流程如下：
+
+1. 在应用工作台部署示例应用，并启用微服务治理功能
+2. 在微服务引擎中启用传统微服务治理插件
+3. 在微服务引擎中配置对应的治理规则
+4. 在微服务引擎暴露 API 并访问应用
+
 ## 示例应用介绍
 
 本次实践使用的示例应用基于 OpenTelemetry 的标准演示应用，由 DaoCloud 大微服务团队根据 DCE 5.0 的功能加以优化，以便更好地体现云原生以及可观测能力，呈现微服务治理效果。示例应用已经在 Github 开源，访问该应用的 [Github 仓库地址](https://github.com/openinsight-proj/openinsight-helm-charts)可以获取详细信息。
@@ -10,22 +17,15 @@
 
 ![image](../images/demo-arch.png)
 
-## 整体流程
-
-1. 在应用工作台部署示例应用，并启用微服务治理功能
-2. 在微服务引擎中启用传统微服务治理插件
-3. 在微服务引擎中配置对应的治理规则
-4. 在微服务引擎暴露 API 并访问应用
-
 ## 应用部署
 
-[应用工作台](../../amamba/01ProductBrief/WhatisAmamba.md)是 DCE 5.0 的应用管理模块，支持创建/维护多种类型的应用、GitOps 和灰度发布等功能，可以快速将应用部署到任何集群。应用工作台支持基于 Git 仓、Jar 包、容器镜像、Helm 模板部署应用。本次实践基于 `Helm 模板` 部署示例应用。
+[应用工作台](../../amamba/intro/what.md)是 DCE 5.0 的应用管理模块，支持创建/维护多种类型的应用、GitOps 和灰度发布等功能，可以快速将应用部署到任何集群。应用工作台支持基于 Git 仓、Jar 包、容器镜像、Helm 模板部署应用。本次实践基于 `Helm 模板` 部署示例应用。
 
 ![image](../images/chooseInstalltype.png)
 
-### 前提条件
+部署应用之前需要满足如下的前提条件：
 
-- 在容器管理中[添加 Helm 仓库](../../kpanda/07UserGuide/helm/helm-repo.md):
+- 在容器管理中[添加 Helm 仓库](../../kpanda/user-guide/helm/helm-repo.md):
 
     ![image](../images/addhelmrepo.png)
 
@@ -33,7 +33,7 @@
 
     > 注意记录注册中心的地址信息，后续安装应用时需要用到。
 
-    ![image](../images/nacosservicelist.png)
+    ![image](../images/registry.png)
 
 ### 基于 Helm 模板部署
 
@@ -74,13 +74,9 @@
 
     ![image](../images/helmapplist.png)
 
-### 其他部署方式
+### Java 项目自行开发调试
 
-如果采用其他部署方式，配置注册中心地址的方法可能有所不同。
-
-#### Java 项目自行开发调试
-
-Java 项目在开发时需要集成 Nacos 的 SDK，而 DCE 5.0 提供的注册中心完全兼容开源 Nacos，所以可以直接使用开源 Nacos 的 SDK。
+如果采用其他部署方式，配置注册中心地址的方法可能有所不同。Java 项目在开发时需要集成 Nacos 的 SDK，而 DCE 5.0 提供的注册中心完全兼容开源 Nacos，所以可以直接使用开源 Nacos 的 SDK。具体操作步骤可参考[基于 Jar 包部署 Java 应用](../../amamba/user-guide/wizard/jar-java-app.md)。
 
 使用 `java -jar` 启动项目时，添加对应的环境变量配置即可
 
@@ -104,9 +100,9 @@ Java 项目在开发时需要集成 Nacos 的 SDK，而 DCE 5.0 提供的注册�
 
     上面的 `metadata` 信息不能缺失，否则注册中心中呈现的服务会缺失这部分信息。
 
-#### 使用容器镜像部署
+### 使用容器镜像部署
 
-如果选择基于容器镜像部署应用，可以直接在用户界面配置中开启微服务治理并选取对应的注册中心模块，操作更简便。
+如果选择基于容器镜像部署应用，可以直接在用户界面配置中开启微服务治理并选取对应的注册中心模块，操作更简便。具体步骤可参考[基于 Git 仓构建微服务应用](../../amamba/user-guide/wizard/create-git-based-ms.md)。
 
 ![image](../images/createbyimage.png)
 

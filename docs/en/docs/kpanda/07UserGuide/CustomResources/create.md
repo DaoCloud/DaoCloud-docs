@@ -15,7 +15,7 @@ The container management platform supports interface-based management of custom 
 
 - Container management platform [connected to Kubernetes cluster](../Clusters/JoinACluster.md) or [created Kubernetes](../Clusters/CreateCluster.md), and can access the UI interface of the cluster
 
-- A [namespace creation](../Namespaces/createtens.md), [user creation](../.../../../../ghippo/04UserGuide/01UserandAccess/User.md), and authorize the user as [`Cluster Admin`](../Permissions/PermissionBrief.md#cluster-admin) role, for details, please refer to [Namespace Authorization](../Permissions/Cluster-NSAuth.md )
+- A [namespace creation](../Namespaces/createtens.md), [user creation](../../../../../ghippo/04UserGuide/01UserandAccess/User.md), and authorize the user as [`Cluster Admin`](../Permissions/PermissionBrief.md#cluster-admin) role, for details, please refer to [Namespace Authorization](../Permissions/Cluster-NSAuth.md )
 
 ## Create custom resources via YAML
 

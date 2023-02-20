@@ -21,9 +21,9 @@ hide:
 
     - Kubernetes/Mesh 注册中心：直接选择想要接入的集群或网格服务。
 
-        - 如果找不到想要添加的 Kubernetes 集群，可以去容器管理模块[接入集群](../../../kpanda/07UserGuide/Clusters/JoinACluster.md)或[创建集群](../../../kpanda/07UserGuide/Clusters/CreateCluster.md)。
+        - 如果找不到想要添加的 Kubernetes 集群，可以去容器管理模块[接入集群](../../../kpanda/user-guide/clusters/integrate-cluster)或[创建集群](../../../kpanda/user-guide/clusters/create-cluster.md)。
 
-        - 如果找不到想要添加的网格服务，可以去网格服务模块[创建网格](../../../mspider/03UserGuide/servicemesh/README.md)。
+        - 如果找不到想要添加的网格服务，可以去网格服务模块[创建网格](../../../mspider/user-guide/service-mesh/README.md)。
 
             ![接入 Mesh/Kubernetes](imgs/integrate03.png)
 

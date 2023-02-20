@@ -567,6 +567,7 @@ nav:
               - Longhorn intro: storage/solutions/longhorn.md
               - Deploy Longhorn via app store: storage/solutions/dce-longhorn.md
               - OpenEBS intro: storage/solutions/openebs.md
+              - Deploy OpenEBS via helm: storage/solutions/openebs-helm.md
           - Concepts:
               - Kubernetes storage: storage/terms/k8s_storage.md
               - CAS: storage/terms/cas.md
