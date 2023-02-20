@@ -444,10 +444,12 @@ nav:
               - 安装: network/modules/ingress-nginx/install.md
               - Ingress Class: network/modules/ingress-nginx/ingressclass.md
               - Ingress Scope: network/modules/ingress-nginx/scope.md
-              - CORS 跨域配置: network/modules/ingress-nginx/cors.md
-              - 负载均衡与流量代理配置指南: network/modules/ingress-nginx/proxy.md
+              - 跨域配置: network/modules/ingress-nginx/cors.md
+              - 负载均衡: network/modules/ingress-nginx/proxy.md
               - 超时配置: network/modules/ingress-nginx/timeout.md
               - 日志配置: network/modules/ingress-nginx/log.md
+              - 上传限制: network/modules/ingress-nginx/upload.md
+              - 镜像流量: network/modules/ingress-nginx/mirror.md
           - Metallb:
               - 介绍: network/modules/metallb/what.md
               - 安装: network/modules/metallb/install.md
