@@ -138,6 +138,16 @@
 
     该版本主要新特性：新增 StatusCheck 功能，用于检查应用程序的健康状况，当应用程序不健康时中止混沌实验；支持使用 `Chaosctl` 进行 outbound 强制恢复、在 dashboard 中新增基于流程图创建工作流的界面等。
 
+- [Cilium CNI 插件 v1.13.0 发布（CNCF 项目）](https://github.com/cilium/cilium/releases/tag/v1.13.0)
+
+    版本特性：支持 Gateway API v0.5.1、增加 IPv6 BIG TCP 支持、支持 LoadBalancer IP 地址管理、初步支持 SCTP、支持根据标签选择器对节点进行细粒度的配置、支持 k8s 1.26、支持通过 BGP 控制平面宣告 LoadBalancer 服务的功能、支持通过内置 Envoy代理实现现有 Kubernetes service 的 L7 负载均衡、Ingress 资源可以共享 Kubernetes LoadBalancer 资源、datapath 支持 mTLS、支持 Service 内部流量策略、对所有镜像进行 cosign 签名并为每个镜像创建 SBOM。
+
+- [Cilium 发布安全审计报告和模糊测试审计报告](https://www.cncf.io/blog/2023/02/13/a-well-secured-project-cilium-security-audits-2022-published/)
+
+    [安全审计](https://github.com/cilium/cilium.io/blob/main/Security-Reports/CiliumSecurityAudit2022.pdf)和[模糊测试](https://github.com/cilium/cilium.io/blob/main/Security-Reports/CiliumFuzzingAudit2022.pdf)共发现了 30 个问题，并未发现关键风险漏洞。
+    其中，两个是中风险问题，第一个问题是缺少易于访问的关于安全运行 Cilium 的文档，该问题 [PR](https://github.com/cilium/cilium/pull/23599) 正在处理中；
+    第二个是在配置错误的情况下可能无法解锁互斥锁 mutex，该[问题](https://github.com/cilium/cilium/pull/23077)已修复。其余都是低风险或信息性的问题。
+
 - [Cilium 2022 年度报告发布](https://github.com/cilium/cilium.io/raw/main/Annual-Reports/Cilium%20Annual%20Report%202022.pdf)
 
     报告记录了 2022 年 Cilium 项目的贡献者增长、版本亮点、用户调查结果、生产落地情况、社区活动，以及 2023 年的发展方向。
@@ -355,6 +365,10 @@
 
     近日，阿里云正式发布完整功能的 [iLogtail](https://github.com/alibaba/ilogtail) 社区版。
     本次更新开源全部 C++ 核心代码，该版本在内核能力上首次对齐企业版。新增日志文件采集、容器文件采集、无锁化事件处理、多租户隔离、基于 Pipeline 的新版配置方式等诸多重要特性。
+
+- [Istio 服务网格 v1.17 发布（CNCF 项目）](https://istio.io/latest/news/releases/1.17.x/announcing-1.17/)
+
+    版本特性：金丝雀升级的修订标签升级为 Beta、基于 Helm 安装 Istio 升级为 Beta、完全兼容最新版 Kubernetes Gateway API（0.6.1）、优化 IPv4/IPv6 双栈支持、增加对监听器过滤器补丁的支持、支持使用加解密技术 QuickAssist Technology (QAT) PrivateKeyProvider。
 
 - [Istio 公布 2022 年安全审计结果](https://istio.io/latest/blog/2023/ada-logics-security-assessment/)
 
@@ -611,6 +625,10 @@
 
     该版本主要新特性：跨网格网关支持多区域运行、网格网关/内置网关增加可观测性功能、重写 CNI、网格网关支持路径重写和报头添加/删除、支持过滤代理的指标、简化 TCP 流量日志实现、支持 Projected Service Account Tokens。
 
+- [Kurator 分布式云原生平台 v0.2.0 发布](https://github.com/kurator-dev/kurator/releases/tag/v0.2.0)
+
+    版本特性：支持基于 Thanos 的多集群监控及指标持久化存储；支持基于 Pixie 的实时 K8s 应用监控；新增组件 Cluster Operator，以云原生的方式来管理各种基础设施的 kubernetes 集群生命周期，包括公有云、混合云和本地数据中心。
+
 - [KusionStack：蚂蚁集团开源的可编程云原生协议栈](https://mp.weixin.qq.com/s/EZrVKdZ_hG5-p_HltaTCMg)
 
     [KusionStack](https://github.com/KusionStack) 通过自研的 DSL（KCL）沉淀运维模型（[Kusion Model](http://github.com/KusionStack/konfig)），将基础设施部分能力的使用方式从白屏转为代码化，同时结合 DevOps 工具链（Kusion CLI）实现配置快速验证和生效，以此提升基础设施的开放性和运维效率。
@@ -743,6 +761,10 @@
 - [OpenClusterManagement（OCM）多集群管理平台 v0.7 发布（CNCF 项目）](https://mp.weixin.qq.com/s/EQgdnZVOqzfvuxOzg-Q0cQ)
 
     该版本主要新特性：新增“DefaultClusterSet”功能，所有注册进 OCM 环境中的托管集群都会被默认注册进名叫“default” 的 ClusterSet 中；支持基于 Taint / Toleration 的语义的多集群调度；部署架构调整为“Hosted 部署”模式，即托管集群内将不需要再部署其他的组件，所有的代理控制器均在远端执行。
+
+- [OpenEBS 云原生存储 v3.4.0 发布（CNCF 项目）](https://github.com/openebs/openebs/releases/tag/v3.4.0)
+
+    版本特性：支持通过 OpenEBS helm chart 安装 Mayastor、支持在故障检测时按需切换 Mayastor 节点、支持使用 NDM 的 NVMe 虚拟路径检测、修复 LVM LocalPV helm chart 的拉取镜像密钥错误、在 NFS 服务器部署中添加后端卷 PVC 上下文作为标签。
 
 - [OpenEBS 云原生存储 v3.3.0 发布（CNCF 项目）](https://github.com/openebs/openebs/releases/tag/v3.3.0)  
 
