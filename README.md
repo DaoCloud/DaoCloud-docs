@@ -34,7 +34,7 @@ We use GitOps to control workflow and versions.
 - Keep short：up to 5 English words, avoid repetition, use abbreviations
 - Be descriptive: easy to understand and reflect the doc's subject
 
-|Yes|No|Why|
+|No|Yes|Why|
 |--|--|--|
 |ConfigName|config-name|use small letters and hyphens|
 |创建 秘钥|create-secret|No Chinese words and other macro symbols|
