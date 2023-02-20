@@ -83,6 +83,24 @@
 
 ### 最佳实践
 
+- [云原生场景下，如何缓减容器隔离漏洞，监控内核关键路径？](https://mp.weixin.qq.com/s/qlmm2h8RpQnKOnEjlK0pMA)
+
+    文章介绍了 OpenCloudOS 社区自研的两个方案：CgroupFS 和 SLI，用于缓减容器隔离漏洞，监控内核关键路径。
+    CgroupFS 方案提供一个内核态容器视角的虚拟机文件系统(/proc、/sys)，增强了容器资源视图隔离。
+    SLI 是容器级别的性能跟踪机制，从容器的角度对 CPU、内存资源的竞争情况进行跟踪、观测，从而为容器性能问题的定位、分析提供可靠的指标。
+
+- [基于 Kubernetes 和 Istio 轻松完成 gRPC 到 REST 的转码](https://cloud.redhat.com/blog/grpc-to-rest-transcoding-with-openshift-and-service-mesh)
+
+    文章介绍如何在无需修改大量代码的情况下使得 gRPC 服务与 REST 兼容。
+    该方案利用 Envoy 过滤器，建立一个转码器，让 RESTful JSON API 客户端通过 HTTP 发送请求，并被代理到一个 gRPC 服务。
+    转码器将 gRPC 服务方法的消息输出编码为 JSON，并将 HTTP 响应的 Content-Type 头设置为 application/json。
+
+- [kube-state-metrics 在大规模集群下的优化](https://mp.weixin.qq.com/s/8R55Holzrf0wNVD8DLJnAg)
+
+    在小规模集群中，只需要保证 kube-state-metrics 高可用就可以在生产环境使用。
+    但是对于大规模的集群，只通过一个 KSM 实例来提供 metrics 指标是非常吃力的，还需要做很多优化：
+    例如，过滤不需要的指标和标签，通过分片降低 KSM 实例压力，使用 DaemonSet 方式单独针对 pod 指标进行部署。
+
 - [vivo 自研 Jenkins 资源调度系统设计与实践](https://mp.weixin.qq.com/s/wEmheHwTA8m8LHr_5LVSyg)
 
     文章从目前业界实现 Jenkins 的高可用的实现方案入手，分析各方案的优缺点，引入 vivo 目前使用的 Jenkins 高可用方案——jenkins scheduler 系统。
@@ -353,6 +371,11 @@
     Harbor v2.2及其更高版本支持对相关指标的采集和使用，这篇文章介绍了如何使用 Prometheus 轻松抓取 Harbor 实例的一些关键指标。
 
 ### 工具推荐
+
+- [为什么在 Kubernetes 中调试应用的体验如此糟糕？](https://mp.weixin.qq.com/s/maI6Nu6r431LtGzrgq_6rg)
+
+    对于开发者而言，想要的是：快速的内部开发循环，可以利用熟悉 IDE 工具来做本地调试；提前发现 bug，避免过早进入 Outer Loop；在内部环境，团队之间的协作可以互不干扰。
+    为解决上述痛点，文章介绍了三款工具：Kubernetes 本地开发工具 [Telepresence](https://github.com/telepresenceio/telepresence)、云原生协同开发测试解决方案 [KT-Connect](https://github.com/alibaba/kt-connect) 以及基于 IDE 的云原生应用开发工具 [Nocalhost](https://github.com/nocalhost/nocalhost)。
 
 - [在 K8s 上构建端到端的无侵入开源可观测解决方案](https://mp.weixin.qq.com/s/HUFawiyv55Hi0aEoEPl6rA)
 
