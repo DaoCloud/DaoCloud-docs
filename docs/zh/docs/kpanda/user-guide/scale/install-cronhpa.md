@@ -7,8 +7,8 @@
 
 !!! note
 
-    使用容器的垂直伸缩策略（CornHPA），除了需要安装 `本节介绍如何安装 `kubernetes-cronhpa-controller` 插件。
-` 插件，还需要安装 `metrics-server`插件。
+    使用容器的垂直伸缩策略（CornHPA），除了需要安装本节介绍如何安装 `kubernetes-cronhpa-controller` 插件。
+    插件，还需要安装 `metrics-server` 插件。
 
 ## 前提条件
 
@@ -48,8 +48,7 @@
 
         开启`就绪等待`和/或`失败删除`后，应用需要经过较长时间才会被标记为“运行中”状态。
 
-5. 点击`确定`按钮，完成 `请执行如下步骤为集群安装 `kubernetes-cronhpa-controller` 插件。
-` 插件的安装，之后系统将自动跳转至 `Helm 应用`列表页面，稍等几分钟后，为页面执行刷新操作，即可看到刚刚安装的应用。
+5. 点击`确定`按钮，完成 `kubernetes-cronhpa-controller` 插件的安装，之后系统将自动跳转至 `Helm 应用`列表页面，稍等几分钟后，为页面执行刷新操作，即可看到刚刚安装的应用。
 
     !!! note
 
@@ -57,4 +56,4 @@
 
 6. 回到工作负载详情页面下的弹性伸缩模块，我们可以看到界面显示 `插件已安装`。
 
-    ![工作负载](../../images/installvpa3.png)
+    ![工作负载](../../images/installcronhpa3.png)
