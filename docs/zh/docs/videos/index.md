@@ -5,7 +5,7 @@
 <div class="grid cards" markdown>
 
 - :fontawesome-solid-jet-fighter-up: **安装** [安装社区版和商业版](./install.md)
-- :octicons-container-16: **容器管理** [管理集群容器和 Pod](./kpanda.md)
+- :octicons-container-16: **容器管理** [管理集群、节点、负载等基础设施](./kpanda.md)
 - :fontawesome-solid-user-group: **全局管理** [设置登录、访问权限、外观](./ghippo.md)
 - :material-monitor-dashboard: **可观测性** [一站式图形化仪表盘](./insight.md)
 - :material-microsoft-azure-devops: **应用工作台** [CI/CD 流水线](./amamba.md)
