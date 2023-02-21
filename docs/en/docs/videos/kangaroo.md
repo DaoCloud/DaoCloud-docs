@@ -15,7 +15,7 @@ See the [Related Registry](../kangaroo/related-registry.md) documentation page.
 See the [registry integration](../kangaroo/integrate/integrate.md) documentation page.
 
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-cluster.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-harbor.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
