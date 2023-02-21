@@ -7,7 +7,7 @@
 
 !!! note
 
-    使用容器的垂直伸缩策略（VPA），除了需要安装 `vpa` 插件，还需要安装 `metrics-server`插件。
+    使用容器的垂直伸缩策略（VPA），除了需要安装 `vpa` 插件，还需要安装 `metrics-server` 插件。
 
 ## 前提条件
 
