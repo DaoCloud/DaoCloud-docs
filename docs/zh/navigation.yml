@@ -67,6 +67,7 @@ nav:
               - 指标弹性伸缩 HPA: kpanda/user-guide/scale/create-hpa.md
               - 垂直伸缩 VPA: kpanda/user-guide/scale/create-vpa.md
               - 安装 metrics-server 插件: kpanda/user-guide/scale/install-metrics-server.md
+              - 安装 kubernetes-cronhpa-controller 插件: kpanda/user-guide/scale/install-cronhpa.md            
               - 安装 vpa 插件: kpanda/user-guide/scale/install-vpa.md
           - Helm 应用:
               - Helm 模板: kpanda/user-guide/helm/README.md
