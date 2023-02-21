@@ -2233,7 +2233,7 @@
 
 - Workspace, 工作空间
 
-    [工作空间](../ghippo/user-guide/workspace/workspaces.md)是一种资源范畴，代表一种资源层级关系。
+    [工作空间](../ghippo/user-guide/workspace/workspace.md)是一种资源范畴，代表一种资源层级关系。
     工作空间可以包含集群、[命名空间](../kpanda/user-guide/namespaces/createns.md)、注册中心等资源。
     通常一个工作空间对应一个项目，可以为每个工作空间分配不同的资源，指派不同的用户和用户组。
 

@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-1. 创建一个[工作空间](../../../ghippo/user-guide/workspace/workspaces.md)和一个[用户](../../../ghippo/user-guide/access-control/user.md)，该用户需加入该工作空间并具备 `Workspace Editor` 角色。
+1. 创建一个[工作空间](../../../ghippo/user-guide/workspace/workspace.md)和一个[用户](../../../ghippo/user-guide/access-control/user.md)，该用户需加入该工作空间并具备 `Workspace Editor` 角色。
 
 2. [创建访问镜像仓库的凭证](../pipeline/credential.md)，例如 `registry`。
 

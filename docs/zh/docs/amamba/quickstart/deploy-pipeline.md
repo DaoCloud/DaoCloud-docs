@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-- 需创建一个工作空间和一个用户，该用户需加入该工作空间并赋予 `workspace edit` 角色。参考[创建工作空间](../../ghippo/user-guide/workspace/workspaces.md)、[用户和角色](../../ghippo/user-guide/access-control/user.md)。
+- 需创建一个工作空间和一个用户，该用户需加入该工作空间并赋予 `workspace edit` 角色。参考[创建工作空间](../../ghippo/user-guide/workspace/workspace.md)、[用户和角色](../../ghippo/user-guide/access-control/user.md)。
 - 创建可以访问镜像仓库、集群的两个凭证，分别命名为：`registry`、`kubeconfig`。创建凭证的更多信息，请参考[凭证管理](../user-guide/pipeline/credential.md)。
 - 准备一个 GitHub 仓库、DockerHub 仓库。
 

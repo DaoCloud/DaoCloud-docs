@@ -10,7 +10,7 @@ hide:
 **前提条件**
 
 - 需要创建一个工作空间和一个用户，必须邀请该用户至工作空间中且赋予 `workspace edit` 角色。
-  参考[创建工作空间](../../../ghippo/user-guide/workspace/workspaces.md)、[用户和角色](../../../ghippo/user-guide/access-control/user.md)。
+  参考[创建工作空间](../../../ghippo/user-guide/workspace/workspace.md)、[用户和角色](../../../ghippo/user-guide/access-control/user.md)。
 
 - 需要有一个代码仓库，并且代码仓库中的源码有一个 Jenkinsfile 文本文件。
 
