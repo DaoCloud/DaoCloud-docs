@@ -117,7 +117,7 @@ nav:
               - OIDC: ghippo/user-guide/access-control/oidc.md
           - 工作空间与层级:
               - ghippo/user-guide/workspace/ws-folder.md
-              - 创建和删除工作空间: ghippo/user-guide/workspace/workspaces.md
+              - 创建和删除工作空间: ghippo/user-guide/workspace/workspace.md
               - 工作空间权限: ghippo/user-guide/workspace/ws-permission.md
               - 创建和删除文件夹: ghippo/user-guide/workspace/folders.md
               - 文件夹权限: ghippo/user-guide/workspace/folder-permission.md
