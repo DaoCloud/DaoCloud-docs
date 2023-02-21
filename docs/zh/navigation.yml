@@ -212,7 +212,7 @@ nav:
               - 基本概念: amamba/intro/concepts.md
               - Release Notes: amamba/intro/release-notes.md
           - 命名空间管理: amamba/user-guide/namespace/namespace.md
-          - 向导:
+          - 应用创建:
               - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-git-based-ms.md
               - 基于 Jar 包构建 Java 应用: amamba/user-guide/wizard/jar-java-app.md
           - 流水线:
@@ -242,6 +242,7 @@ nav:
               - 集成 Harbor 实现镜像安全扫描: amamba/quickstart/scan-with-harbor.md
               - 基于 Argo Rollout 实现渐进式灰度发布: amamba/quickstart/argocd-rollout.md
               - 在指定的节点上运行流水线: amamba/quickstart/pipeline-on-node.md
+          - 常见问题: amamba/faq.md
       - 多云编排:
           - 介绍:
               - 什么是多云编排: kairship/intro/what.md
