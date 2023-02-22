@@ -55,41 +55,41 @@
 
 ### 方法一：修改 Json 文件
 
-1. 修改以下文件中 `rollover` 字段中的 `max_age` 参数，并设置保留期限，默认存储时长为 `7d`。将 `http://localhost:9200` 修改为 `elastic` 的地址。
+1. 修改以下文件中 `rollover` 字段中的 `max_age` 参数，并设置保留期限，默认存储时长为 `7d`。注意需要修改第一行中的 Elastic 用户名和密码、IP 地址和索引。
 
     ```json
-    curl -X PUT "http://localhost:9200/_ilm/policy/insight-es-k8s-logs-policy?pretty" -H 'Content-Type: application/json' -d'
+    curl  --insecure --location -u"elastic:amyVt4o826e322TUVi13Ezw6" -X PUT "https://172.30.47.112:30468/_ilm/policy/insight-es-k8s-logs-policy?pretty" -H 'Content-Type: application/json' -d'
     {
-    "policy": {
-        "phases": {
-            "hot": {
-                "min_age": "0ms",
-                "actions": {
-                "set_priority": {
-                    "priority": 100
+        "policy": {
+            "phases": {
+                "hot": {
+                    "min_age": "0ms",
+                    "actions": {
+                        "set_priority": {
+                            "priority": 100
+                        },
+                        "rollover": {
+                            "max_age": "8d",
+                            "max_size": "10gb"
+                        }
+                    }
                 },
-                "rollover": {
-                    "max_age": "7d",
-                    "max_size": "10gb"
+                "warm": {
+                    "min_age": "10d",
+                    "actions": {
+                        "forcemerge": {
+                            "max_num_segments": 1
+                        }
+                    }
+                },
+                "delete": {
+                    "min_age": "30d",
+                    "actions": {
+                        "delete": {}
+                    }
                 }
-                }
-            }, 
-        "warm": {
-            "min_age": "10d",
-            "actions": {
-            "forcemerge": {
-                "max_num_segments": 1
-            }
-            }
-        },
-        "delete": {
-            "min_age": "30d",
-            "actions": {
-            "delete": {}
             }
         }
-        }
-    }
     }'
     ```
 
@@ -125,41 +125,41 @@
 
 ### 方法一：修改 Json 文件
 
-1. 修改以下文件中 `rollover` 字段中的 `max_age` 参数，并设置保留期限，默认存储时长为 `7d`。同时将 `http://localhost:9200` 修改为 `elastic` 的访问地址。
+1. 修改以下文件中 `rollover` 字段中的 `max_age` 参数，并设置保留期限，默认存储时长为 `7d`。注意需要修改第一行中的 Elastic 用户名和密码、IP 地址和索引。
 
     ```json
-    curl -X PUT "http://localhost:9200/_ilm/policy/jaeger-ilm-policy?pretty" -H 'Content-Type: application/json' -d'
+    curl --insecure --location -u"elastic:amyVt4o826e322TUVi13Ezw6" -X PUT "https://172.30.47.112:30468/_ilm/policy/jaeger-ilm-policy?pretty" -H 'Content-Type: application/json' -d'
     {
-    "policy": {
-        "phases": {
-            "hot": {
-                "min_age": "0ms",
-                "actions": {
-                "set_priority": {
-                    "priority": 100
+        "policy": {
+            "phases": {
+                "hot": {
+                    "min_age": "0ms",
+                    "actions": {
+                        "set_priority": {
+                            "priority": 100
+                        },
+                        "rollover": {
+                            "max_age": "6d",
+                            "max_size": "10gb"
+                        }
+                    }
                 },
-                "rollover": {
-                    "max_age": "7d",
-                    "max_size": "10gb"
+                "warm": {
+                    "min_age": "10d",
+                    "actions": {
+                        "forcemerge": {
+                            "max_num_segments": 1
+                        }
+                    }
+                },
+                "delete": {
+                    "min_age": "30d",
+                    "actions": {
+                        "delete": {}
+                    }
                 }
-                }
-            }, 
-        "warm": {
-            "min_age": "10d",
-            "actions": {
-            "forcemerge": {
-                "max_num_segments": 1
-            }
-            }
-        },
-        "delete": {
-            "min_age": "30d",
-            "actions": {
-            "delete": {}
             }
         }
-        }
-    }
     }'
     ```
 
