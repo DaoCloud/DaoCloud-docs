@@ -42,4 +42,12 @@
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/insight-agent.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
+## 修改系统配置
+
+参阅[修改系统配置](../insight/user-guide/system-config/modify-config.md)文档页面。
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sys-config.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
