@@ -30,8 +30,8 @@
 
     - 目标镜像名称：为目标镜像命名，需包含目标镜像的存储路径，例如 `release-ci.daocloud.io/test-lfj/fromjar`。
     - Tag：为目标镜像打标签，例如版本号 `v1.0`。
-    - 凭证：选择访问镜像仓库的凭证，`registry-credential`。
-    - ContextPath：填写相对于代码根目录的路径，为 `docker build` 指定上下文路径。该路径下的所有文件都会被打包用于构建镜像。如果不填，则使用 Dockerfile 文件所在的目录。
+    - 凭证：选择访问镜像仓库的凭证，例如 `registry-credential`。
+    - JAVA_OPTS：用来设置 JVM 相关运行参数的变量，例如 `-server -Xms2048m -Xmx2048m -Xss512k`。
     - 构建参数：构建参数会以 `--build-arg` 的形式传递到 build 命令中，支持将上游制品下载地址、上游镜像下载地址设置为参数，也支持自定义任意参数。
 
         ![流水线构建](../../images/jar03.png)
@@ -40,33 +40,26 @@
 
     - 访问类型：支持通过 clusterIP 仅允许在集群内访问该应用，或者通过 NodePort 允许在集群外部访问，或者通过负载均衡器进行访问。
     - 端口配置：根据实际业务场景填写需要暴露的端口号。
-    - 资源限制：CPU 和内存配额不得超出应用所在的命名空间在当前工作空间中的剩余资源。
 
         > 有关服务配置的更多详细说明，可参考[创建服务](../../../kpanda/user-guide/services-routes/create-services.md)。
 
+    - 资源限制：CPU 和内存配额不得超出应用所在的命名空间在当前工作空间中的剩余资源。
+
+    - 生命周期：设置容器启动时、启动后、停止前需要执行的命令。详情可参考[容器生命周期配置](../../../kpanda/user-guide/workloads/pod-config/lifecycle.md)。
+
+    - 健康检查：用于判断容器和应用的健康状态，有助于提高应用的可用性。详情可参考[容器健康检查配置](../../../kpanda/user-guide/workloads/pod-config/health-check.md)。
+
+    - 环境变量：配置 Pod 内的容器参数，为 Pod 添加环境变量或传递配置等。详情可参考[容器环境变量配置](../../../kpanda/user-guide/workloads/pod-config/env-variables.md)。
+
+    - 数据存储：配置容器挂载数据卷和数据持久化的设置。
+
         ![容器配置](../../images/jar04.png)
-
-    - 高级设置
-      - 生命周期：设置容器启动时、启动后、停止前需要执行的命令。详情可参考[容器生命周期配置](../../../kpanda/user-guide/workloads/pod-config/lifecycle.md)。
-
-        ![lifecycle01](../../images/lifecycle01.png)
-
-      - 健康检查：用于判断容器和应用的健康状态，有助于提高应用的可用性。详情可参考[容器健康检查配置](../../../kpanda/user-guide/workloads/pod-config/health-check.md)。
-
-        ![health-check01](../../images/health-check01.png)
-
-      - 环境变量：配置 Pod 内的容器参数，为 Pod 添加环境变量或传递配置等。详情可参考[容器环境变量配置](../../../kpanda/user-guide/workloads/pod-config/env-variables.md)。
-
-        ![env-variables01](../../images/env-variables01.png)
-
-      - 数据存储：配置容器挂载数据卷和数据持久化的设置。
-
-        ![volum01](../../images/volum01.png)
 
 5. 参考下列说明选择是否开启高级功能，然后点击`创建并上传 Jar 包`。
 
     - 服务网格：选择是否启用 [DCE 5.0 的服务网格](../../../mspider/intro/what.md)模块来治理微服务流量。
     - 微服务引擎：是否将新创建的应用接入 [DCE 5.0 的微服务引擎](../../../skoala/intro/what.md)模块。
+        > 有关微服务引擎的配置，可参考[基于 Git 仓构建微服务应用](create-git-based-ms.md)。
     - 灰度发布：选择是否开启灰度发布。有关灰度发布的更多内容，可参考[金丝雀发布](../release/canary.md)。
 
         ![高级配置](../../images/jar05.png)
