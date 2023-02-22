@@ -434,7 +434,7 @@ nav:
           - Cilium:
               - 介绍: network/modules/cilium/what.md
               - 安装参数配置: network/modules/cilium/install.md
-              - 未支持功能说明: network/modules/cilium/notsupport.md
+              - 未支持功能说明: network/modules/cilium/not-support.md
           - Contour:
               - 介绍: network/modules/contour/what.md
               - 安装: network/modules/contour/install.md
