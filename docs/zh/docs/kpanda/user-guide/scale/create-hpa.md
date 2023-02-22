@@ -1,4 +1,4 @@
-# 指标弹性伸缩（HPA）
+# 创建 HPA
 
 DaoCloud Enterprise 5.0 支持 Pod 资源基于指标进行弹性伸缩（Horizontal Pod Autoscaling, HPA）。
 用户可以通过设置 CPU 利用率、内存用量及自定义指标指标来动态调整 Pod 资源的副本数量。
