@@ -307,6 +307,7 @@ nav:
                       - 介绍: skoala/registry/managed/servicelist/intro.md
                       - 查看微服务详情: skoala/registry/managed/servicelist/check-details.md
                   - 微服务治理:
+                      - 应用接入 Sentinel 规范: skoala/registry/managed/governance/connect-sentinel.md
                       - 规则介绍: skoala/registry/managed/governance/governance-policy.md
                       - 流控规则: skoala/registry/managed/governance/flow-control.md
                   - 微服务配置列表: skoala/registry/managed/configcenter.md
