@@ -20,7 +20,7 @@ project.name 参数的格式应为：`{{nacos_namespace_id}}@@{{nacos_group}}@@{
 
 !!! note
 
-为了正常显示 Sentinel 监控数据，应使用 Sentinel 官方 SDK v1.8.6 或更高版本。
+为了正常显示 Sentinel 监控数据，应使用 Sentinel 官方 SDK v1.8.6 **以上** 的版本。
 
 ??? note "如何获取 Sentinel 控制台"
 
