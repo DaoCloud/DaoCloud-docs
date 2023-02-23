@@ -62,7 +62,7 @@
     ```
 
 - 安装请参阅[商业版安装流程](../../install/commercial/start-install.md)
-- 成功安装之后请进行[正版授权](https://qingflow.com/f/e3291647)
+- 成功安装之后请联系我们授权：电邮 info@daocloud.io 或致电 400 002 6898
 
 ## 模块
 
