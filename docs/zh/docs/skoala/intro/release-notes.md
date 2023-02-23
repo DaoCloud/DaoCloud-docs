@@ -18,8 +18,8 @@
 
 - **新增** 网关 NodePort 支持
 - **新增** 网关 LoadBalancer 支持
-- **新增**  Sentinel 规则统计 API
-- **新增**  Sentinel 治理的服务列表 API
+- **新增** Sentinel 规则统计 API
+- **新增** Sentinel 治理的服务列表 API
 - **新增** 网关 API 的 Cookie 重写策略
 - **新增** 概览数据定时任务
 - **新增** 定时收集异常 Sentinel 任务
