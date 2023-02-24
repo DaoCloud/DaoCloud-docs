@@ -5,7 +5,7 @@
 ## 前提条件
 
 - 需创建一个工作空间和一个用户，该用户需加入该工作空间并赋予 `workspace edit` 角色。
-  参考[创建工作空间](../../../ghippo/user-guide/workspace/workspaces.md)、[用户和角色](../../../ghippo/user-guide/access-control/user.md)。
+  参考[创建工作空间](../../../ghippo/user-guide/workspace/workspace.md)、[用户和角色](../../../ghippo/user-guide/access-control/user.md)。
 - 准备一个 Git 仓库。
 
 ## 创建 Argo CD 应用

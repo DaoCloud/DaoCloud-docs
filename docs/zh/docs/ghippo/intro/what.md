@@ -34,7 +34,7 @@
 
 2. 进入`用户与访问控制`，[创建用户并授权](../user-guide/access-control/user.md)，[创建用户组并授权](../user-guide/access-control/group.md)，[创建身份提供商](../user-guide/access-control/idprovider.md)
 
-3. 进入`工作空间`，[创建层级（企业层级关系）](../user-guide/workspace/ws-folder.md)，[创建工作空间（租户）](../user-guide/workspace/workspaces.md)
+3. 进入`工作空间`，[创建层级（企业层级关系）](../user-guide/workspace/ws-folder.md)，[创建工作空间（租户）](../user-guide/workspace/workspace.md)
 
 4. 进入`审计日志`，查看并[导出审计日志](../user-guide/audit-log.md)
 

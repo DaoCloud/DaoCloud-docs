@@ -34,4 +34,13 @@
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gitops.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
+## 基于 Argo Rollout 实现渐进式灰度发布
+
+参阅[创建金丝雀发布任务](../amamba/user-guide/release/canary.md)文档页面。
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/canary.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+
+
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

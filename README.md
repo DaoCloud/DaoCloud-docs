@@ -57,6 +57,36 @@ See [MkDocs documents to install](https://squidfunk.github.io/mkdocs-material/ge
 3. Run `poetry run mkdocs serve -f mkdocs.yml` in the repo folder locally
 4. Preview with http://0.0.0.0:8000/
 
+## Naming conventions
+
+This section lists some conventions about a file or folder name for your reference:
+
+- **Only contain** English lower cases and hyphens (`-`)
+- **Do not** contain any of these characters like:
+  - Chinese chars
+  - Spaces
+  - `*`
+  - `?`
+  - `\`
+  - `/`
+  - `:`
+  - `#`
+  - `%`
+  - `~`
+  - `{`
+  - `}`
+- Connect words with hyphens (`-`)
+- Keep short：up to 5 English words, avoid repetition, use abbreviations
+- Be descriptive: easy to understand and reflect the doc's subject
+
+| No                                 | Yes              | Why                                      |
+| ---------------------------------- | ---------------- | ---------------------------------------- |
+| ConfigName                         | config-name      | Use small letters and hyphens            |
+| 创建 秘钥                          | create-secret    | No Chinese words and other macro symbols |
+| quick-start-install-online-install | online-install   | Keep short                               |
+| c-ws                               | create-workspace | Be descriptive                           |
+| update_image                       | update-image     | Connect words with hyphens               |
+
 ## Tips about writing
 
 - Indent 4 spaces for bullets

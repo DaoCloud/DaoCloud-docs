@@ -418,10 +418,11 @@ nav:
               - Install: network/modules/ingress-nginx/install.md
               - Ingress Class: network/modules/ingress-nginx/ingressclass.md
               - Ingress Scope: network/modules/ingress-nginx/scope.md
-              - Configure CORS: network/modules/ingress-nginx/cors.md
-              - Configure load balancing and traffic proxy: network/modules/ingress-nginx/proxy.md
+              - Load Balance: network/modules/ingress-nginx/proxy.md
               - Configure timeout: network/modules/ingress-nginx/timeout.md
-              - Configure log: network/modules/ingress-nginx/log.md
+              - Configure log : network/modules/ingress-nginx/log.md
+              - Upload limit: network/modules/ingress-nginx/upload.md
+              - Traffic mirror: network/modules/ingress-nginx/mirror.md
           - Metallb:
               - Intro: network/modules/metallb/what.md
               - Install: network/modules/metallb/install.md

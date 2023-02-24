@@ -8,7 +8,7 @@ hide:
 应用工作台流水线支持自定义创建，通过该方式创建的流水线，您可对流水线进行可视化编排。
 
 您需要创建一个工作空间和一个用户，必须邀请该用户至工作空间中且赋予 `workspace edit` 角色。
-可参考[创建工作空间](../../../ghippo/user-guide/workspace/workspaces.md)、[用户和角色](../../../ghippo/user-guide/access-control/user.md)。
+可参考[创建工作空间](../../../ghippo/user-guide/workspace/workspace.md)、[用户和角色](../../../ghippo/user-guide/access-control/user.md)。
 
 具体操作步骤如下：
 

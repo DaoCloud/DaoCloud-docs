@@ -36,6 +36,14 @@ See the [Install insight-agent](../insight/06UserGuide/01quickstart/installagent
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/insight-agent.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
 </div>
 
+## Modify system configuration
+
+See the [modification of system configuration](../insight/06UserGuide/08systemconfig/modifyconfig.md) documentation page.
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/insight-agent.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
+</div>
+
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

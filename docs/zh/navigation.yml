@@ -64,8 +64,11 @@ nav:
                   - 健康检查: kpanda/user-guide/workloads/pod-config/health-check.md
                   - 集群调度: kpanda/user-guide/workloads/pod-config/scheduling-policy.md
           - 弹性伸缩:
-              - 指标弹性伸缩 HPA: kpanda/user-guide/scale/create-hpa.md
-              - 安装 metrics-server: kpanda/user-guide/scale/install-metrics-server.md
+              - 安装 metrics-server 插件: kpanda/user-guide/scale/install-metrics-server.md
+              - 安装 kubernetes-cronhpa-controller 插件: kpanda/user-guide/scale/install-cronhpa.md            
+              - 安装 vpa 插件: kpanda/user-guide/scale/install-vpa.md
+              - 创建 HPA 策略: kpanda/user-guide/scale/create-hpa.md
+              - 创建 VPA 策略: kpanda/user-guide/scale/create-vpa.md
           - Helm 应用:
               - Helm 模板: kpanda/user-guide/helm/README.md
               - 管理 Helm 应用: kpanda/user-guide/helm/helm-app.md
@@ -115,7 +118,7 @@ nav:
               - OIDC: ghippo/user-guide/access-control/oidc.md
           - 工作空间与层级:
               - ghippo/user-guide/workspace/ws-folder.md
-              - 创建和删除工作空间: ghippo/user-guide/workspace/workspaces.md
+              - 创建和删除工作空间: ghippo/user-guide/workspace/workspace.md
               - 工作空间权限: ghippo/user-guide/workspace/ws-permission.md
               - 创建和删除文件夹: ghippo/user-guide/workspace/folders.md
               - 文件夹权限: ghippo/user-guide/workspace/folder-permission.md
@@ -172,11 +175,13 @@ nav:
           - 仪表盘:
               - 仪表盘: insight/user-guide/dashboard/dashboard.md
               - 以管理员登录 Grafana: insight/user-guide/dashboard/login-grafana.md
-          - 场景监控:
+          - 资源监控:
               - 集群监控: insight/user-guide/scenario-insight/cluster.md
               - 节点监控: insight/user-guide/scenario-insight/node.md
               - 容器监控: insight/user-guide/scenario-insight/container.md
+          - 场景监控: 
               - 服务监控: insight/user-guide/scenario-insight/service.md
+              - 服务拓扑: insight/user-guide/scenario-insight/topology.md
           - 数据查询:
               - 日志查询: insight/user-guide/data-query/log.md
               - 指标查询: insight/user-guide/data-query/metric.md
@@ -189,6 +194,7 @@ nav:
               - 采集管理: insight/user-guide/collection-manag/collection-manag.md
               - 服务监控: insight/user-guide/collection-manag/service-monitor.md
           - 系统配置:
+              - 系统组件: insight/user-guide/system-config/system-component.md
               - 系统配置: insight/user-guide/system-config/system-config.md
               - 修改配置: insight/user-guide/system-config/modify-config.md
           - 权限说明: insight/user-guide/permission.md
@@ -209,7 +215,7 @@ nav:
               - 基本概念: amamba/intro/concepts.md
               - Release Notes: amamba/intro/release-notes.md
           - 命名空间管理: amamba/user-guide/namespace/namespace.md
-          - 向导:
+          - 应用创建:
               - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-git-based-ms.md
               - 基于 Jar 包构建 Java 应用: amamba/user-guide/wizard/jar-java-app.md
           - 流水线:
@@ -239,6 +245,7 @@ nav:
               - 集成 Harbor 实现镜像安全扫描: amamba/quickstart/scan-with-harbor.md
               - 基于 Argo Rollout 实现渐进式灰度发布: amamba/quickstart/argocd-rollout.md
               - 在指定的节点上运行流水线: amamba/quickstart/pipeline-on-node.md
+          - 常见问题: amamba/faq.md
       - 多云编排:
           - 介绍:
               - 什么是多云编排: kairship/intro/what.md
@@ -300,6 +307,7 @@ nav:
                       - 介绍: skoala/registry/managed/servicelist/intro.md
                       - 查看微服务详情: skoala/registry/managed/servicelist/check-details.md
                   - 微服务治理:
+                      - 应用接入 Sentinel 规范: skoala/registry/managed/governance/connect-sentinel.md
                       - 规则介绍: skoala/registry/managed/governance/governance-policy.md
                       - 流控规则: skoala/registry/managed/governance/flow-control.md
                   - 微服务配置列表: skoala/registry/managed/configcenter.md
@@ -430,7 +438,7 @@ nav:
           - Cilium:
               - 介绍: network/modules/cilium/what.md
               - 安装参数配置: network/modules/cilium/install.md
-              - 未支持功能说明: network/modules/cilium/notsupport.md
+              - 未支持功能说明: network/modules/cilium/not-support.md
           - Contour:
               - 介绍: network/modules/contour/what.md
               - 安装: network/modules/contour/install.md
@@ -444,10 +452,12 @@ nav:
               - 安装: network/modules/ingress-nginx/install.md
               - Ingress Class: network/modules/ingress-nginx/ingressclass.md
               - Ingress Scope: network/modules/ingress-nginx/scope.md
-              - CORS 跨域配置: network/modules/ingress-nginx/cors.md
-              - 负载均衡与流量代理配置指南: network/modules/ingress-nginx/proxy.md
+              - 跨域配置: network/modules/ingress-nginx/cors.md
+              - 负载均衡: network/modules/ingress-nginx/proxy.md
               - 超时配置: network/modules/ingress-nginx/timeout.md
               - 日志配置: network/modules/ingress-nginx/log.md
+              - 上传限制: network/modules/ingress-nginx/upload.md
+              - 镜像流量: network/modules/ingress-nginx/mirror.md
           - Metallb:
               - 介绍: network/modules/metallb/what.md
               - 安装: network/modules/metallb/install.md

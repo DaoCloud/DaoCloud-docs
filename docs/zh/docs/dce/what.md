@@ -18,7 +18,7 @@ DCE 5.0 的各个产品模块独立解耦，支持灵活升级，对业务没有
 <div class="grid cards" markdown>
 
 - :fontawesome-solid-jet-fighter-up: **安装** [安装社区版和商业版](../install/intro.md)
-- :octicons-container-16: **容器管理** [管理多集群容器和 Pod](../kpanda/intro/what.md)
+- :octicons-container-16: **容器管理** [管理集群、节点、负载等基础设施](../kpanda/intro/what.md)
 - :fontawesome-solid-user-group: **全局管理** [设置登录、访问权限、外观](../ghippo/intro/what.md)
 - :material-monitor-dashboard: **可观测性** [一站式图形化仪表盘](../insight/intro/what.md)
 - :material-microsoft-azure-devops: **应用工作台** [CI/CD 流水线](../amamba/intro/what.md)
@@ -32,7 +32,7 @@ DCE 5.0 的各个产品模块独立解耦，支持灵活升级，对业务没有
 
 </div>
 
-![模块图](../images/dce-modules03.png)
+![模块图](../images/dce-modules04.jpg)
 
 DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，可以应对海量应用场景。
 
