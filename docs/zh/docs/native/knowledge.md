@@ -83,6 +83,12 @@
 
 ### 最佳实践
 
+- [Dapr 集成 Flomesh 实现跨集群服务调用](https://mp.weixin.qq.com/s/Y-MewxHVMULKDi4_cbl6Yw)
+
+    [Flomesh 服务网格](https://github.com/flomesh-io/fsm)使用可编程代理 Pipy 为核心提供东西、南北向的流量管理。
+    通过基于 L7 的流量管理能力，突破计算环境间的网络隔离，建立一个虚拟的平面网络，使不同计算环境中应用可以互相通信。
+    文章介绍通过 Dapr 与 Flomesh 服务网格的集成进行跨集群的服务调用，实现“真正的”多集群互联互通。
+
 - [云原生场景下，如何缓减容器隔离漏洞，监控内核关键路径？](https://mp.weixin.qq.com/s/qlmm2h8RpQnKOnEjlK0pMA)
 
     文章介绍了 OpenCloudOS 社区自研的两个方案：CgroupFS 和 SLI，用于缓减容器隔离漏洞，监控内核关键路径。
@@ -371,6 +377,12 @@
     Harbor v2.2及其更高版本支持对相关指标的采集和使用，这篇文章介绍了如何使用 Prometheus 轻松抓取 Harbor 实例的一些关键指标。
 
 ### 工具推荐
+
+- [帮助 Go 团队使用 OpenTelemetry 的新方法](https://gethelios.dev/blog/helping-go-teams-implement-opentelemetry-a-new-approach/)
+
+    用 Go 实现 OTel 来向观测平台发送数据并不简单，Go instrumentation 需要大量的手动操作。
+    Helios 团队开发了一种[新的 OTel Go instrumentation 方法](https://app.gethelios.dev/get-started)，这种方法将 Go AST 和代理库的结合，易于实现和维护。
+    同时，对于最终用户而言，这种方法是非侵入性的，易于理解。
 
 - [为什么在 Kubernetes 中调试应用的体验如此糟糕？](https://mp.weixin.qq.com/s/maI6Nu6r431LtGzrgq_6rg)
 
@@ -701,6 +713,11 @@
 
 ### 前沿热点
 
+- [2023 年云原生发展趋势的预测](https://mp.weixin.qq.com/s/QePkownt0_Ex9RWWeGtaag)
+
+    文章是 CNCF CTO Chris Aniszczyk 关于 2023 年云原生和技术领域的热点话题的预测，
+    包括：云原生 IDE 成为常态、FinOps 成为主流并左移、开源 SBOM 无处不在、GitOps 走向成熟并进入实质生产高峰期、OpenTelemetry 日益成熟、Backstage 开发者门户继续完善、WebAssembly 进入稳步爬升期等等。
+
 - [探索基于隧道的 Kubernetes 跨集群通讯](https://mp.weixin.qq.com/s/uuWCr1d7V_aFdCAJCJS_XQ)
 
     文章介绍了基于 ssh 隧道的跨集群访问访问。
@@ -909,6 +926,12 @@
     该白皮书聚焦微服务治理业务领域，囊括了技术原理、业务场景、解决方案、最佳实践等微服务落地的全流程。
 
 ### 其他
+
+- [接管 K8s 部署运维，基础架构团队是否做好准备？](https://mp.weixin.qq.com/s/7Y5GfShZhFwBQkQfRUPnoA)
+
+    Kubernetes 非常适合作为一种 Infrastructure as a Service（IaaS），既可以在公有云上提供，也可以在企业私有云上作为新一代的基础架构，为现代化应用提供可靠的基础设施。
+    因此，Kubernetes 的建设和运维也将更多地交由基础架构团队负责。
+    文章探讨了为什么基础架构团队适合负责 Kubernetes 的运维管理，以及这样的转变是否可行。
 
 - [2022 云原生技术盘点与展望](https://mp.weixin.qq.com/s/yRMTS5z15-PERwlameMOIw)
 

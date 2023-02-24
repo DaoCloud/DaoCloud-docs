@@ -233,6 +233,10 @@
 
 ### D
 
+- [Dapr 分布式应用运行时 v1.10.0 发布（CNCF 项目）](https://github.com/dapr/dapr/releases/tag/v1.10.0)
+
+    版本特性：新增 Dapr Workflows 用于跨多个应用建立长期运行的进程或数据流、支持批量发布和订阅信息、允许创建可用任何语言编写的可插拔组件 SDK、新增 Multi-App Run 功能改善本地开发、弹性策略升级为 stable、新增服务调用指标。
+
 - [Dapr 分布式应用运行时 v1.9.0 发布（CNCF 项目）](https://github.com/dapr/dapr/releases/tag/v1.9.0)
 
     该版本主要新特性：允许自定义可插拔组件、支持 OTel 协议、增加弹性观测指标、支持应用健康检查、支持设置默认弹性策略、允许使用任何中间件组件进行服务见调用、新增 pub/sub 命名空间消费者组、支持 Podman 容器运行时。
@@ -477,6 +481,10 @@
 
     该版本主要新特性：`resource-service` 取代 `configuration-service`，以加快响应时间、支持在不停机的情况下升级 Keptn；v0.17 中，CLI 将删除安装/卸载/升级命令；支持直接向 Nats 发送事件；只有当服务连接到控制平面时，才会被视为准备就绪；允许在没有 distributor sideCar 的情况下运行 approval service。
 
+- [Kindling 云原生可观测工具 v0.7.0 发布](https://github.com/KindlingProject/kindling/releases/tag/v0.7.0)
+
+    版本特性：提供一个简易版视图来显示 Trace Profiling 数据、为 cpuevents 增加追踪功能、支持 NoAPM Java 应用的附属代理。
+
 - [Kindling 云原生可观测工具 v0.6.0 发布](https://github.com/KindlingProject/kindling/releases/tag/v0.6.0)
 
     该版本主要新特性：在 cpu 事件中增加 tracing span 数据、增加 Trace Profiling 的调试工具、支持 RocketMQ 协议。
@@ -564,6 +572,10 @@
 - [Kubernetes Gateway API v0.5.0 发布](https://github.com/kubernetes-sigs/gateway-api/releases/tag/v0.5.0)  
 
     该版本主要新特性：三个 API 升级为beta：`GatewayClass`、`Gateway`和`HTTPRoute`；引入了 experimental 和 standard 版本渠道；通过指定端口号，路由可以连接到网关；支持 URL 重写和路径重定向。
+
+- [kube-rs Kubernetes 的 Rust 客户端 v0.79.0 发布（CNCF 项目）](https://github.com/kube-rs/kube/releases/tag/0.79.0)
+
+    版本特性：增加对元数据 api 的支持以减少网络负载、暴露客户端的默认命名空间、允许在不消耗原始的 watcher stream 的情况下从 watcher 订阅事件、支持持久元数据 watch。
 
 - [KubeSphere v3.3.0 发布（CNCF 项目）](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.md)
 
@@ -1025,6 +1037,12 @@
     该版本主要新特性：支持基于真实节点负载的动态调度和重调度、支持弹性作业调度、新增 MPI job 插件、允许任务失败时不重试、支持查看 pod 请求的开销、支持在 pod group 入列过程中考虑资源配额、默认特权容器通过 admission webhook 的验证。
 
 ### W, X, Z
+
+- [werf CI/CD 的 CLI 工具 成为 CNCF 沙箱项目](https://mp.weixin.qq.com/s/DGA1_k16QAQImFmy8mWcDw)
+
+    [werf](https://github.com/werf/werf) 可以与用户现有的任何 CI/CD 系统融合，为 Kubernetes 提供了应用全生命周期管理。
+    werf 依赖 Buildah 来构建容器镜像，兼容各种容器注册中心来管理镜像，使用 Helm chart 将应用程序部署到 Kubernetes。
+    此外，其还支持自动构建缓存、基于内容的标签、Helm 中增强的资源跟踪功能、智能清理旧的/未使用的容器镜像等功能。
 
 - [Wolfi：Chainguard 发布首个保障软件供应链安全的 Linux 发行版，专为容器和云原生环境设计](https://www.chainguard.dev/unchained/introducing-wolfi-the-first-linux-un-distro)  
 

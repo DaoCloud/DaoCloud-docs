@@ -2,7 +2,7 @@
 
 This page lists, in alphabetical order, updates on some well-known commercial products.
 
-### A
+### A, B
 
 - [Aqua cloud-native security platform introduces Lightning Enforcer, a zero-day vulnerability detection tool based on eBPF technology](https://blog.aquasec.com/combat-zero-day-threats-with-aquas-ebpf-lightning-enforcer)
 
@@ -89,6 +89,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [BellSoft launches Alpaquita Cloud Native Platform for efficiently running cloud-native Java applications](https://containerjournal.com/features/bellsoft-optimizes-java-for-cloud-native-platform/)
 
      [Alpaquita Cloud Native Platform](https://bell-sw.com/cloud-native-platform/) leverages a Linux distribution for Java, JVM optimizations, a multipurpose framework, and native mirroring technology to provide a A runtime environment optimized for Java applications running in containers. Features of the platform: Cloud costs are reduced by 20%, smaller Pods are used, and the number of required nodes is reduced; zero migration costs, no refactoring is required; efficiency is increased by 50%, achieving low latency, low cost, and fast startup.
+
+- [BoCloud Container Platform v3.7 released](https://mp.weixin.qq.com/s/K68IWq18YWkmMyyRte-OlQ)
+
+    Support mixed management of X86 and ARM architectures, support localized database Damon, support production-grade windows containers, provide unified resource management service for ACK and TKE public cloud container clusters, support simultaneous release of multiple native yaml files, support native ingress capability, manage high-performance virtual machines independently as a new resource type, provide It also provides container resource oversharing capability, and completes the deep integration of container cloud, microservice management, service grid, middleware and other sub-products.
 
 ### C
 
@@ -313,6 +317,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates include: support for detecting Helm Chart drift, support for automatic collection of Kubernetes host costs, collected data can be imported into third-party audit tools, and visibility into all subcomponents of an environment definition.
 
+- [Qualys Container Security v1.22 released](https://www.qualys.com/docs/release-notes/qualys-container-security-1.22-release-notes.pdf)
+
+    Updates: Mirror vulnerability report supports displaying labels related to mirrors, container vulnerability report supports displaying mirror repository information and Kubernetes object information, support for scanning all mirrors in all registries, software component analysis (SCA) scanning adds support for programming languages PHP, Ruby and Rust.
+
 - [Qualys Container Security v1.21 released](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release-notes.pdf)
 
      Updates: Support for sensor profiles for regular and CI/CD sensors, support for defining sensor configurations in sensor profiles, allow scanning of all images during automatic registry scans.
@@ -374,6 +382,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Gloo Gateway is built on Envoy and utilizes the multi-tenancy and federation features of Gloo Platform, allowing users to easily manage gateway access for multiple development teams and multi-cluster traffic management. Gloo Network builds on Cilium and integrates the Kubernetes CNI layer as a component of the Gloo Platform.
 
+- [Spectro Cloud Kubernetes SaaS Management Platform Palette v3.1 Released](https://docs.spectrocloud.com/release-notes#december28,2022-release3.1.0)
+
+    Updates: Palette IaaS clusters support automatic scaling, provides Federal Information Processing Standards (FIPS) compliant versioning of Kubernetes, supports filtering user access by tag and viewing cluster detail views, supports versioning of application profiles, leverages Helm and OCI registries for custom package management, allows suspending and resuming unused virtual Clusters.
+
 - [Spectro Cloud released Kubernetes SaaS management platform Palette v2.8](https://docs.spectrocloud.com/release-notes#september10,2022-release2.8.0)
 
      The main new features of this version: support the use of nested clusters to quickly create a safe and isolated environment for applications; use the web-based Kubectl to allow users to deploy applications through the terminal; support reuse and sharing of large configuration files with many add-ons and integrations.
@@ -415,18 +427,9 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### T
 
-- [Tetrate Application Connectivity Platform Tetrate Service Bridge v1.6.0 Released](https://docs.tetrate.io/service-bridge/1.6.x/en-us/release_notes_announcements)
+- [Tencent Cloud Native API Gateway Update](https://cloud.tencent.com/product/events)
 
-     Updates: Add security rules such as security domain and service security settings; Add east-west gateway to improve service failover between clusters; User interface optimization to support visualization and monitoring of platform and service activities; New troubleshooting tool to troubleshoot without cluster access privileges; Support multiple Istio environments within clusters; Support WASM extensions across gateways and service agents; Skywalking The backend service OAP replaces Zipkin for collecting and querying traces.
-
-- [Tigera Releases Calico Runtime Threat Defense, a Kubernetes Network and Container Threat Defense Solution](https://www.tigera.io/news/tigera-introduces-calico-runtime-threat-defense-the-most-comprehensive-plug-and-play-defense-against-container-and-network-based-threats/)
-
-    Calico Runtime Threat Defense combines a combination of signature- and behavior-based techniques to detect known and zero-day threats, enabling detection of MITRE's most common container and network-based attacks.
-    Unlike traditional runtime threat detection platforms, Calico Runtime Threat Defense continuously monitors and analyzes network and container behavior for indicators of attack (IOA) without writing complex rules.
-
-- [Traefik Labs releases Traefik Hub 1.0, a cloud-native network platform](https://traefik.io/blog/announcing-the-general-availability-of-traefik-hub-1-0/)
-
-     Traefik Hub 1.0 allows users to quickly and securely publish Kubernetes or Docker containers using Traefik or Nginx. Traefik Hub provides the centralized control plane needed to network Kubernetes clusters without deploying container sidecars to run networking software. It supports container networking through secure encrypted tunnels and direct private connections, adds access control to services through JWT or OIDC, realizes scale automation through GitOps, and is equipped with workspaces to promote cross-team collaboration.
+    Updates: Support for docking to cloud function SCF and microservice platform TSF, support for regular elastic expansion and shrinkage, support for Annotation-style configuration of Kong Ingress, grayscale capability productization, support for docking to cloud WAF and cloud SSL, and support for mTLS.
 
 - [Tencent Cloud Container Service TKE Three Capabilities Upgrade](https://mp.weixin.qq.com/s/DfxCQM8KzMioSt6rVq5oHw)
 
@@ -440,9 +443,22 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
   
      The updates include: Added SecurityGroupPolicy enhancement component, which supports binding security groups for pods matching policies; supports business pods to use Service Account Token to access cloud resources such as CVM and VPC; supports modifying CPU and memory requests without restarting pods /limit value; support node/workload resource insight capabilities; add Request intelligent recommendation function; add native node-specific scheduler; optimize native node initialization process.
 
+- [Tetrate Application Connectivity Platform Tetrate Service Bridge v1.6.0 Released](https://docs.tetrate.io/service-bridge/1.6.x/en-us/release_notes_announcements)
+
+     Updates: Add security rules such as security domain and service security settings; Add east-west gateway to improve service failover between clusters; User interface optimization to support visualization and monitoring of platform and service activities; New troubleshooting tool to troubleshoot without cluster access privileges; Support multiple Istio environments within clusters; Support WASM extensions across gateways and service agents; Skywalking The backend service OAP replaces Zipkin for collecting and querying traces.
+
 - [Tianyi Cloud Releases Cloud Native Security Product - Red Shield 1.0](https://mp.weixin.qq.com/s/9crAAOde9_spFmk5TZcY2A)
 
      Red Shield integrates security capabilities into a unified security platform based on the cloud-native base, and builds an integrated cloud security trusted operation system and zero-trust architecture for the four major areas of cloud-native business application security, network security, data security, and cloud-native security. Its core products include Web Application Firewall, Anti-DDoS High, Website Security Monitoring, Enterprise Security Access, Tianyi Cloud Data Security Management Platform, etc.
+
+- [Tigera Releases Calico Runtime Threat Defense, a Kubernetes Network and Container Threat Defense Solution](https://www.tigera.io/news/tigera-introduces-calico-runtime-threat-defense-the-most-comprehensive-plug-and-play-defense-against-container-and-network-based-threats/)
+
+    Calico Runtime Threat Defense combines a combination of signature- and behavior-based techniques to detect known and zero-day threats, enabling detection of MITRE's most common container and network-based attacks.
+    Unlike traditional runtime threat detection platforms, Calico Runtime Threat Defense continuously monitors and analyzes network and container behavior for indicators of attack (IOA) without writing complex rules.
+
+- [Traefik Labs releases Traefik Hub 1.0, a cloud-native network platform](https://traefik.io/blog/announcing-the-general-availability-of-traefik-hub-1-0/)
+
+     Traefik Hub 1.0 allows users to quickly and securely publish Kubernetes or Docker containers using Traefik or Nginx. Traefik Hub provides the centralized control plane needed to network Kubernetes clusters without deploying container sidecars to run networking software. It supports container networking through secure encrypted tunnels and direct private connections, adds access control to services through JWT or OIDC, realizes scale automation through GitOps, and is equipped with workspaces to promote cross-team collaboration.
 
 ### V
 
