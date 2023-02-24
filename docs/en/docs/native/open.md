@@ -233,6 +233,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### D
 
+- [Dapr Distributed Application Runtime v1.10.0 Released (CNCF Project)](https://github.com/dapr/dapr/releases/tag/v1.10.0)
+
+    Release features: New Dapr Workflows for building long-running processes or data streams across multiple applications, support for bulk publishing and subscription information, allows creation of pluggable component SDKs written in any language, new Multi-App Run feature to improve local development, elasticity policy upgraded to stable, new service call metrics.
+
 - [Dapr Distributed Application Runtime v1.9.0 Release (CNCF project)](https://github.com/dapr/dapr/releases/tag/v1.9.0)
 
      The main new features of this version: allow custom pluggable components, support OTel protocol, add elastic observation indicators, support application health checks, support setting default elastic policies, allow service calls using any middleware components, add pub/sub Namespace consumer groups, support for Podman container runtime.
@@ -473,6 +477,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      Main new features of this version: `resource-service` replaces `configuration-service` to speed up response time and support Keptn upgrades without downtime; in v0.17, the CLI will remove install/uninstall/upgrade commands; support direct Sends events to Nats; service is considered ready only when connected to the control plane; allows running approval service without distributor sideCar.
 
+- [Kindling Cloud-native observable tool v0.7.0 Released](https://github.com/KindlingProject/kindling/releases/tag/v0.7.0)
+
+    Release features: provides a simple version of the view to display Trace Profiling data, adds tracing functionality to cpuevents, supports NoAPM Java applications with dependent agents.
+
 - [Kindling Cloud-native observable tool v0.6.0 released](https://github.com/KindlingProject/kindling/releases/tag/v0.6.0)
 
      Main new features in this release: add tracing span data in cpu events, add debugging tool for Trace Profiling, support RocketMQ protocol.
@@ -560,6 +568,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Kubernetes Gateway API v0.5.0 released](https://github.com/kubernetes-sigs/gateway-api/releases/tag/v0.5.0)
 
      The main new features of this version: three APIs have been upgraded to beta: `GatewayClass`, `Gateway` and `HTTPRoute`; the introduction of experimental and standard version channels; routing can be connected to the gateway by specifying the port number; URL rewriting and routing are supported redirect.
+
+- [kube-rs Rust client for Kubernetes v0.79.0 released (CNCF project)](https://github.com/kube-rs/kube/releases/tag/0.79.0)
+
+    Release features: add support for metadata api to reduce network load, expose default namespace for clients, allow event subscription from watcher without consuming raw watcher stream, support for persistent metadata watch.
 
 - [KubeSphere v3.3.0 release (CNCF project)](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.md)
 
@@ -1021,6 +1033,12 @@ This page lists activity in cloud native open source projects in alphabetical or
      The main new features of this version: support dynamic scheduling and rescheduling based on real node load, support elastic job scheduling, add MPI job plug-ins, allow tasks not to retry when they fail, support checking the overhead of pod requests, and support enqueueing in pod groups Resource quotas are considered in the process, and the default privileged container passes the verification of admission webhook.
 
 ### W, X, Z
+
+- [werf, CLI tools for CI/CD, become a CNCF sandbox project](https://mp.weixin.qq.com/s/DGA1_k16QAQImFmy8mWcDw)
+
+    [werf](https://github.com/werf/werf) can be integrated with any of your existing CI/CD systems, providing full application lifecycle management for Kubernetes.
+    werf relies on Buildah to build container images, is compatible with various container registries to manage images, and uses Helm chart to deploy applications to Kubernetes.
+    It also supports automatic build caching, content-based tagging, enhanced resource tracking capabilities in Helm, intelligent cleanup of old/unused container images, and more.
 
 - [Wolfi: Chainguard Releases First Linux Distribution to Secure Software Supply Chain, Designed for Containers and Cloud-Native Environments](https://www.chainguard.dev/unchained/introducing-wolfi-the-first-linux-un-distro)
 

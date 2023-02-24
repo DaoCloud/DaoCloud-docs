@@ -6,6 +6,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 ### 2023-05
 
+- [End of May China Academy of Information and Communications Technology officially launched the assessment of cloud consulting, cloud migration, cloud management and cloud disaster recovery in the first half of 2023 (registration closes at the end of May)](https://mp.weixin.qq.com/s/yZxSP5xb5juE9C-UWRoQAw)
+  
+    The cloud consulting assessment system aims to assess the service capabilities provided in enterprise cloud adoption and digital transformation; the cloud migration assessment system aims to assess cloud migration platform capabilities and service capabilities; the cloud management assessment system assessment mainly assesses enterprise-level integrated cloud management platform capabilities, one-cloud multi-core cloud management platform capabilities, and multi-cloud management platform solutions; the cloud disaster recovery assessment system aims to assess cloud multi-live, cloud disaster recovery, and cloud dual-live disaster recovery solutions.
+
 - [End of May China Academy of Information and Communications Technology officially launches hybrid and proprietary cloud assessment in the first half of 2023 (registration closes at the end of May)](https://mp.weixin.qq.com/s/qWtNRf5pQ5jpcam4uTSu1w)
   
     The Trusted Cloud Proprietary Cloud Assessment aims to assess the comprehensive level of proprietary cloud capabilities (including self-built and dedicated models), maturity (general), industry capabilities (financial), and special capabilities (compatibility) of the participating units.
@@ -17,6 +21,11 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     Topics may include: Getting Started with GitOps, Scaling and Managing GitOps, Lessons Learned from Production Deployments, Advanced Delivery Technologies, Open Source GitOps and CD Technology Practices in Cloud-Native Environments, Supply Chain Security, and more.
 
 ### 2023-04
+
+- [April 8 and April 22 The 2nd Open Source Cloud Native Developer Day will be held in Shanghai & Beijing, the call for lecturers has been launched](https://mp.weixin.qq.com/s/C9aIJAt2g5AmX-uCewo2kA)
+  
+    The second annual Open Source Cloud Native Developer Day, co-sponsored by Microsoft and Intel, will explore four key topics: examples of cloud native practices at scale, the latest open source cloud native technologies, the secure software supply chain, and GitOps.
+    The event is expected to take place in Shanghai (April 8) and Beijing (April 22).
 
 - [April 15-16 Global Open Source Technology Summit GOTC 2023 will be held in April in Shanghai, and the call for proposal is now open](https://gotc2023.oschina.net/)
   
@@ -39,6 +48,12 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     The event is co-hosted by DaoCloud, Edgeless, Tianmou Technology and DCE 5.0 community, with live dialogues with technical experts, end users and open source project contributors in the field of cloud-native.
     From the perspective of cloud-native technology, the event will focus on container management, cloud-native storage, low-code development, AIoT and other hot areas, and share the latest breakthroughs and application examples of cloud-native open source projects.
+
+- [February 21 OSS Compass Open Source Compass Officially Released: Focus on Open Source Ecological Health Assessment, No More Single Look at Star Number](https://mp.weixin.qq.com/s/M52CyVyunH913PXhmxhi2Q)
+  
+    [OSS Compass](https://oss-compass.org/) is a SaaS platform for open source ecosystem health assessment, open to all open source projects on GitHub, Gitee and other platforms.
+    Simply enter the name of a repository or community on GitHub or Gitee's hosting platform to get a comprehensive view of the health of that repository or project.
+    Currently, OSS Compass has built an open source ecosystem assessment system that includes three dimensions: productivity, robustness, and innovation, and covers 14 metric models.
 
 - [February 8 KubeCon + CloudNativeCon Europe 2023 Conference Agenda Released](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/program/schedule/)
   

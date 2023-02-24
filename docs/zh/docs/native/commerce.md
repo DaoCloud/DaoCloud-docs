@@ -2,7 +2,7 @@
 
 本页按字母顺序列出一些知名商业化产品的更新动态。
 
-### A
+### A, B
 
 - [Aqua 云原生安全平台引入基于 eBPF 技术的零日漏洞检测工具 Lightning Enforcer](https://blog.aquasec.com/combat-zero-day-threats-with-aquas-ebpf-lightning-enforcer)
 
@@ -89,6 +89,10 @@
 - [BellSoft 推出 Alpaquita Cloud Native Platform，用于高效运行云原生 Java 应用](https://containerjournal.com/features/bellsoft-optimizes-java-for-cloud-native-platform/)
 
     [Alpaquita Cloud Native Platform](https://bell-sw.com/cloud-native-platform/) 利用适用于 Java 的 Linux 发行版、JVM 优化、多用途框架和原生镜像技术，提供了一个专为在容器中运行的 Java 应用而优化的运行时环境。该平台特性：云成本降低 20%，使用更小的 Pod，所需节点的数量减少；零迁移成本，不需要重构；效率提升 50%，实现低延迟、低成本、快启动。
+
+- [博云容器云产品 BoCloud Container Platform v3.7 发布](https://mp.weixin.qq.com/s/K68IWq18YWkmMyyRte-OlQ)
+
+    支持 X86 架构和 ARM 架构的混合管理、支持国产化数据库达梦、支持生产级 windows 容器、提供 ACK 和 TKE 公有云容器集群的统一资源纳管服务、支持同时发布多个原生 yaml 文件、支持原生 ingress 能力、将高性能虚拟机作为一种全新的资源类型进行独立管理、提供容器资源超分能力、完成容器云和微服务管理、服务网格、中间件等子产品的深度融合。
 
 ### C, D
 
@@ -316,6 +320,10 @@ Ocean CD 是一个支持多集群的 SaaS 方案，以 Argo rollouts 为引擎�
 
     更新内容包括：支持检测 Helm Chart 漂移、支持自动收集 Kubernetes 主机成本、收集的数据可以导入第三方审计工具、提供对环境定义的所有子组件的可见性。
 
+- [Qualys 容器安全工具 Qualys Container Security v1.22 发布](https://www.qualys.com/docs/release-notes/qualys-container-security-1.22-release-notes.pdf)
+
+    更新内容：镜像漏洞报告支持显示与镜像相关的标签、容器漏洞报告支持显示镜像仓库信息和 Kubernetes 对象信息、支持扫描所有注册表中的所有镜像、软件成分分析（SCA）扫描增加对编程语言 PHP、Ruby 和 Rust 的支持。
+
 - [Qualys 容器安全工具 Qualys Container Security v1.21 发布](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release-notes.pdf)
 
     更新内容：支持为普通和 CI/CD 传感器提供传感器配置文件、支持在传感器配置文件中定义传感器配置、在自动注册表扫描时允许扫描所有镜像。
@@ -377,6 +385,10 @@ Ocean CD 是一个支持多集群的 SaaS 方案，以 Argo rollouts 为引擎�
 
     Gloo Gateway 基于 Envoy 构建，利用 Gloo Platform 的多租户和联邦特性，允许用户轻松管理多个开发团队的网关访问和进行多集群流量管理。Gloo Network 基于 Cilium 构建，将 Kubernetes CNI 层整合为 Gloo Platform 的组件。
 
+- [Spectro Cloud Kubernetes SaaS 管理平台 Palette v3.1 发布](https://docs.spectrocloud.com/release-notes#december28,2022-release3.1.0)
+
+    更新内容：Palette IaaS 集群支持自动扩缩容、提供符合联邦信息处理标准（FIPS）的 Kubernetes 版本、支持按标签过滤用户访问和查看集群详情视图、支持应用程序配置文件的版本管理、利用 Helm 和OCI 注册表进行自定义包管理、允许暂停和恢复未使用的虚拟集群。
+
 - [Spectro Cloud 发布 Kubernetes SaaS 管理平台 Palette v2.8](https://docs.spectrocloud.com/release-notes#september10,2022-release2.8.0)
 
     该版本主要新特性：支持利用嵌套集群为应用快速创建安全隔离的环境；利用基于 Web 的 Kubectl 允许用户通过终端部署应用；支持重复使用和共享具有许多附加组件和集成的大型配置文件。
@@ -430,6 +442,10 @@ Ocean CD 是一个支持多集群的 SaaS 方案，以 Argo rollouts 为引擎�
 - [Traefik Labs 发布云原生网络平台 Traefik Hub 1.0](https://traefik.io/blog/announcing-the-general-availability-of-traefik-hub-1-0/)
 
     Traefik Hub 1.0 允许用户可以使用 Traefik 或 Nginx 快速、安全地发布 Kubernetes 或 Docker 容器。Traefik Hub 提供了为 Kubernetes 集群联网所需的集中控制平面，而无需部署容器 sidecar 来运行网络软件。其支持通过安全加密隧道和直接私有连接进行容器联网，通过 JWT 或 OIDC 为服务添加访问控制，通过 GitOps 实现规模化的自动化等，并配有工作空间促进跨团队协作等。
+
+- [腾讯云云原生 API 网关更新](https://cloud.tencent.com/product/events)
+
+    更新内容：支持对接云函数 SCF 和微服务平台 TSF、支持定时弹性扩缩容和实例升降配、Kong Ingress 支持使用 Annotation 式配置、灰度能力产品化、支持对接云上 WAF 和云上 SSL、支持 mTLS。
 
 - [腾讯云容器服务 TKE 三项能力升级](https://mp.weixin.qq.com/s/DfxCQM8KzMioSt6rVq5oHw)
 
