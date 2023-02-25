@@ -76,8 +76,8 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/favicon.png
-  logo: images/DaoCloud.svg
+  favicon: images/favicon.ico
+  logo: images/DaoCloud.png
   icon:
     logo: logo
     repo: fontawesome/brands/github
