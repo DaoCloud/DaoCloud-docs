@@ -1,9 +1,4 @@
----
-hide:
-  - toc
----
-
-# 编辑 clusterConfig.yaml
+# 集群配置文件 clusterConfig.yaml
 
 此 YAML 文件包含了集群的各项配置字段，安装之前必须先配置此文件。
 该文件将定义部署的负载均衡类型、部署模式、集群节点信息等关键参数。默认位于 `offline/sample/` 目录。
@@ -94,7 +89,7 @@ spec:
     # centos
     repoType: centos
     # OS Package path, cannot be empty
-    osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node"
+    # osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node"
     # OS ISO file path, cannot be empty
     isoPath: "Please-replace-with-Your-Real-ISO-PATH-on-bootstrap-Node" # 操作系统 ISO 文件的路径 ，离线模式下必须定义
     dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos/$releasever/os/$basearch" 
@@ -282,7 +277,7 @@ spec:
     # centos
     repoType: centos
     # OS Package path, cannot be empty
-    osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node"
+    # osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node"
     # OS ISO file path, cannot be empty
     isoPath: "Please-replace-with-Your-Real-ISO-PATH-on-bootstrap-Node" # 操作系统 ISO 文件的路径 ，离线模式下必须定义
     dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos/$releasever/os/$basearch" 
