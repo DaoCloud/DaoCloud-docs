@@ -87,69 +87,68 @@ Skoala 所有的监控的信息，需要依赖 Insight 的能力，则需要在�
 
 ## 安装过程
 
-### 初始化 数据库表
+### ~~初始化 数据库表~~
 
-如果在 common-mysql 内的 skoala 数据库为空，请登录到 skoala 数据库后，执行以下 SQL：
+> 在 skoala-release/skoala 版本 v0.17.1 之后，不需要进行下方表格初始化，现已支持自动进行数据库初始化。
+
+~~如果在 common-mysql 内的 skoala 数据库为空，请登录到 skoala 数据库后，执行以下 SQL：~~
+
+如果提示初始化失败，请检查在 Skoala 数据库内有 3 张表，注意检测对应 SQL 是否全部是生效。
 
 ```sql
-CREATE TABLE `registry` (
-`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-`uid` varchar(32) DEFAULT NULL,
-`name` varchar(50) NOT NULL,
-`type` varchar(50) NOT NULL,
-`addresses` varchar(1000) NOT NULL,
-`namespaces` varchar(2000) NOT NULL,
-`deleted_at` timestamp NULL COMMENT 'Time deteled',
-`created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-`updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-PRIMARY KEY (`id`),
-UNIQUE KEY `idx_uid` (`uid`),
-UNIQUE KEY `idx_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
- 
-CREATE TABLE `book` (
-`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-`uid` varchar(32) DEFAULT NULL,
-`name` varchar(50) NOT NULL,
-`author` varchar(32) NOT NULL,
-`status` int(1) DEFAULT 1 COMMENT '0:下架，1:上架',
-`isPublished` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '0: unpublished, 1: published',
-`publishedAt` timestamp NULL DEFAULT NULL COMMENT '出版时间',
-`deleted_at` timestamp NULL COMMENT 'Time deteled',
-`createdAt` timestamp NOT NULL DEFAULT current_timestamp(),
-`updatedAt` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-PRIMARY KEY (`id`),
-UNIQUE KEY `idx_uid` (`uid`),
-UNIQUE KEY `idx_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
- 
-CREATE TABLE `api` (
-`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-`is_hosted` tinyint DEFAULT 0,
-`registry` varchar(50) NOT NULL,
-`service_name` varchar(200) NOT NULL,
-`nacos_namespace` varchar(200) NOT NULL COMMENT 'Nacos namespace id',
-`nacos_group_name` varchar(200) NOT NULL,
-`data_type` varchar(100) NOT NULL COMMENT 'JSON or YAML.',
-`detail` mediumtext NOT NULL,
-`deleted_at` timestamp NULL COMMENT 'Time deteled',
-`created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-`updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-PRIMARY KEY (`id`),
-UNIQUE KEY `idx_registry_and_service_name` (`registry`, `service_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
- 
-INSERT INTO `book` VALUES (1,'book-init','MicroService Pattern','daocloud',1,1,'2022-03-23 13:50:00',null,now(),now());
- 
-alter table registry add is_hosted tinyint default 0 not null after namespaces;
-alter table registry add workspace_id varchar(50) not null DEFAULT 'default' after uid;
-alter table registry add ext_id varchar(50) null after workspace_id;
- 
-drop index idx_name on registry;
-create unique index idx_name on registry (name, workspace_id);
-```
+mysql> desc api;
++------------------+-----------------+------+-----+-------------------+-----------------------------------------------+
+| Field            | Type            | Null | Key | Default           | Extra                                         |
++------------------+-----------------+------+-----+-------------------+-----------------------------------------------+
+| id               | bigint unsigned | NO   | PRI | NULL              | auto_increment                                |
+| is_hosted        | tinyint         | YES  |     | 0                 |                                               |
+| registry         | varchar(50)     | NO   | MUL | NULL              |                                               |
+| service_name     | varchar(200)    | NO   |     | NULL              |                                               |
+| nacos_namespace  | varchar(200)    | NO   |     | NULL              |                                               |
+| nacos_group_name | varchar(200)    | NO   |     | NULL              |                                               |
+| data_type        | varchar(100)    | NO   |     | NULL              |                                               |
+| detail           | mediumtext      | NO   |     | NULL              |                                               |
+| deleted_at       | timestamp       | YES  |     | NULL              |                                               |
+| created_at       | timestamp       | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
+| updated_at       | timestamp       | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
++------------------+-----------------+------+-----+-------------------+-----------------------------------------------+
 
- 完成以上操作，会在 Skoala 数据库内有 3 张表，注意检测对应 SQL 是否全部是生效。
+mysql> desc book;
++-------------+------------------+------+-----+-------------------+-----------------------------------------------+
+| Field       | Type             | Null | Key | Default           | Extra                                         |
++-------------+------------------+------+-----+-------------------+-----------------------------------------------+
+| id          | bigint unsigned  | NO   | PRI | NULL              | auto_increment                                |
+| uid         | varchar(32)      | YES  | UNI | NULL              |                                               |
+| name        | varchar(50)      | NO   | UNI | NULL              |                                               |
+| author      | varchar(32)      | NO   |     | NULL              |                                               |
+| status      | int              | YES  |     | 1                 |                                               |
+| isPublished | tinyint unsigned | NO   |     | 1                 |                                               |
+| publishedAt | timestamp        | YES  |     | NULL              |                                               |
+| deleted_at  | timestamp        | YES  |     | NULL              |                                               |
+| createdAt   | timestamp        | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
+| updatedAt   | timestamp        | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
++-------------+------------------+------+-----+-------------------+-----------------------------------------------+
+10 rows in set (0.00 sec)
+
+mysql> desc registry;
++--------------+-----------------+------+-----+-------------------+-----------------------------------------------+
+| Field        | Type            | Null | Key | Default           | Extra                                         |
++--------------+-----------------+------+-----+-------------------+-----------------------------------------------+
+| id           | bigint unsigned | NO   | PRI | NULL              | auto_increment                                |
+| uid          | varchar(32)     | YES  | UNI | NULL              |                                               |
+| workspace_id | varchar(50)     | NO   |     | default           |                                               |
+| ext_id       | varchar(50)     | YES  |     | NULL              |                                               |
+| name         | varchar(50)     | NO   | MUL | NULL              |                                               |
+| type         | varchar(50)     | NO   |     | NULL              |                                               |
+| addresses    | varchar(1000)   | NO   |     | NULL              |                                               |
+| namespaces   | varchar(2000)   | NO   |     | NULL              |                                               |
+| is_hosted    | tinyint         | NO   |     | 0                 |                                               |
+| deleted_at   | timestamp       | YES  |     | NULL              |                                               |
+| created_at   | timestamp       | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
+| updated_at   | timestamp       | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
++--------------+-----------------+------+-----+-------------------+-----------------------------------------------+
+12 rows in set (0.00 sec)
+```
 
 ### 配置 skoala helm repo
 
