@@ -69,7 +69,12 @@
 3. 安装 DCE 5.0。
 
     ```shell
-    ./dce5-installer install-app -c clusterConfig.yaml
+    
+    ./dce5-installer install-app -c clusterConfig.yaml -z
+    
+    # -z 参数为最小化安装
+    # -c 为指定集群配置文件
+    # debug 修改安装脚本输出命令 
     ```
 
     !!! note
