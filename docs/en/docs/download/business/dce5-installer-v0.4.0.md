@@ -81,7 +81,7 @@ The DCE 5.0 commercial edition includes the following modules, which are plug-an
 | Multi-cloud orchestration | Centralized management of application orchestration of multi-cloud, hybrid cloud, and cross-cloud resources, with multi-cloud disaster recovery and fault recovery capabilities | [v0.5.1](../../kairship/01product/release-notes.md# v051) |
 | Microservice Engine | Provide registration discovery, service governance, configuration management, microservice gateway and other governance capabilities | [v0.16.1](../../skoala/intro/release-notes.md#v0161) |
 | Service Mesh | A next-generation service mesh for cloud-native applications based on Istio open source technology | [v0.12.1](../../mspider/01Intro/release-notes.md#v0121) |
-| Middleware Elasticsearch | Currently preferred full-text search engine | [v0.4.0](../../middleware/elastic-search/release-notes.md#v040) |
+| Middleware Elasticsearch | Currently preferred full-text search engine | [v0.4.0](../../middleware/elasticsearch/release-notes.md#v040) |
 | Middleware Kafka | Distributed message queue service based on open source software Kafka | [v0.2.0](../../middleware/kafka/release-notes.md#v020) |
 | Middleware MinIO | A very popular lightweight, open source object storage solution | [v0.2.0](../../middleware/minio/release-notes.md#v020) |
 | Middleware MySQL | The most widely used open source relational database | [v0.5.0](../../middleware/mysql/release-notes.md#v050) |

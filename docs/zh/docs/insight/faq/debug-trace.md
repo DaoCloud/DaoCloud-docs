@@ -63,6 +63,6 @@ class sdk,workload,otel,jaeger,es cluster
 
 3. **global jaeger collector**
 
-    展示`全局管理集群`的 `jaeger collector` 在接收`全局管理集群`中 `otel collector` 的数据，并发送链路数据到 [ElasticSearch 集群](../../middleware/elastic-search/intro/what.md)的情况。
+    展示`全局管理集群`的 `jaeger collector` 在接收`全局管理集群`中 `otel collector` 的数据，并发送链路数据到 [ElasticSearch 集群](../../middleware/elasticsearch/intro/what.md)的情况。
 
     ![tracing debug](../images/insighttrace05.png)

@@ -9,7 +9,7 @@ DCE 5.0 针对实际应用场景，精选了一些经典的数据服务中间件
 
 用户可以按需安装/启用以下数据服务中间件，即插即用：
 
-- [Elasticsearch 搜索服务](elastic-search/intro/what.md)：目前首选的全文搜索引擎
+- [Elasticsearch 搜索服务](elasticsearch/intro/what.md)：目前首选的全文搜索引擎
 - [Kafka 消息队列](./kafka/intro/what.md)：常用于消息传输的数据管道
 - [MinIO 对象存储](./minio/intro/what.md)：一款非常热门的轻量对象存储方案
 - [MySQL 数据库](mysql/intro/what.md)：最流行的关系型数据库
@@ -44,10 +44,9 @@ graph TD
     click H "https://docs.daocloud.io/middleware/rabbitmq/quickstart/install/#_1"
 ```
 
-[Elasticsearch](elastic-search/intro/what.md){ .md-button .md-button--primary }
+[Elasticsearch](elasticsearch/intro/what.md){ .md-button .md-button--primary }
 [Kafka](./kafka/intro/what.md){ .md-button .md-button--primary }
 [MinIO](./minio/intro/what.md){ .md-button .md-button--primary }
 [MySQL](mysql/intro/what.md){ .md-button .md-button--primary }
 [RabbitMQ](rabbitmq/intro/what.md){ .md-button .md-button--primary }
 [Redis](./redis/intro/what.md){ .md-button .md-button--primary }
-

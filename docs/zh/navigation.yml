@@ -486,21 +486,22 @@ nav:
               - 数据服务版本适配: middleware/compatibility.md
               - 数据服务权限设计说明: middleware/permission.md
           - Elasticsearch 搜索服务:
-              - 什么是 Elasticsearch: middleware/elastic-search/intro/what.md
-              - 功能说明: middleware/elastic-search/intro/features.md
-              - 竞争优势: middleware/elastic-search/intro/benefits.md
-              - 适用场景: middleware/elastic-search/intro/scenarios.md
-              - 基本概念: middleware/elastic-search/intro/concepts.md
-              - 安装和卸载 Elasticsearch: middleware/elastic-search/user-guide/install.md
-              - 首次使用 Elasticsearch: middleware/elastic-search/user-guide/login.md
-              - 创建 Elasticsearch 实例: middleware/elastic-search/user-guide/create.md
-              - 更新 Elasticsearch 实例: middleware/elastic-search/user-guide/edit.md
-              - 删除 Elasticsearch 实例: middleware/elastic-search/user-guide/delete.md
-              - Elasticsearch 集群容量规划: middleware/elastic-search/user-guide/cluster-capacity-plan.md
-              - 查看列表: middleware/elastic-search/user-guide/view.md
-              - 概览: middleware/elastic-search/user-guide/basic.md
-              - 实例监控: middleware/elastic-search/user-guide/monitor.md
-              - Release Notes: middleware/elastic-search/release-notes.md
+              - 什么是 Elasticsearch: middleware/elasticsearch/intro/what.md
+              - 功能说明: middleware/elasticsearch/intro/features.md
+              - 竞争优势: middleware/elasticsearch/intro/benefits.md
+              - 适用场景: middleware/elasticsearch/intro/scenarios.md
+              - 基本概念: middleware/elasticsearch/intro/concepts.md
+              - 安装和卸载 Elasticsearch: middleware/elasticsearch/user-guide/install.md
+              - 首次使用 Elasticsearch: middleware/elasticsearch/user-guide/login.md
+              - 创建 Elasticsearch 实例: middleware/elasticsearch/user-guide/create.md
+              - 更新 Elasticsearch 实例: middleware/elasticsearch/user-guide/edit.md
+              - 删除 Elasticsearch 实例: middleware/elasticsearch/user-guide/delete.md
+              - Elasticsearch 集群容量规划: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
+              - 查看列表: middleware/elasticsearch/user-guide/view.md
+              - 概览: middleware/elasticsearch/user-guide/basic.md
+              - 实例监控: middleware/elasticsearch/user-guide/monitor.md
+              - 查看 Elasticsearch 日志: middleware/elasticsearch/user-guide/logs.md
+              - Release Notes: middleware/elasticsearch/release-notes.md
           - Kafka 消息队列:
               - 什么是 Kafka: middleware/kafka/intro/what.md
               - 适用场景: middleware/kafka/intro/scenarios.md
@@ -513,6 +514,7 @@ nav:
               - 查看消息队列: middleware/kafka/user-guide/view.md
               - 实例监控: middleware/kafka/user-guide/insight.md
               - 配置参数: middleware/kafka/user-guide/config.md
+              - 查看 Kafka 日志: middleware/kafka/user-guide/logs.md
               - Release Notes: middleware/kafka/release-notes.md
           - MinIO 对象存储:
               - 什么是 MinIO: middleware/minio/intro/what.md
@@ -523,6 +525,7 @@ nav:
               - 创建 MinIO 实例: middleware/minio/user-guide/create.md
               - 更新 MinIO 实例: middleware/minio/user-guide/update.md
               - 删除 MinIO 实例: middleware/minio/user-guide/delete.md
+              - 查看 MinIO 日志: middleware/minio/user-guide/logs.md
               - 查看消息队列: middleware/minio/user-guide/view.md
               - 实例监控: middleware/minio/user-guide/insight.md
               - 配置参数: middleware/minio/user-guide/config.md
@@ -538,6 +541,7 @@ nav:
               - 创建 MySQL: middleware/mysql/user-guide/create.md
               - 更新 MySQL: middleware/mysql/user-guide/update.md
               - 删除 MySQL: middleware/mysql/user-guide/delete.md
+              - 查看 MySQL 日志: middleware/mysql/user-guide/logs.md
               - MySQL 排障手册: middleware/mysql/faq/common-question.md
               - Release Notes: middleware/mysql/release-notes.md
           - RabbitMQ 消息队列:
@@ -554,6 +558,7 @@ nav:
               - 查看消息队列: middleware/rabbitmq/user-guide/view.md
               - 数据迁移: middleware/rabbitmq/user-guide/migrate.md
               - 实例监控: middleware/rabbitmq/user-guide/insight.md
+              - 查看 RabbitMQ 日志: middleware/rabbitmq/user-guide/logs.md
               - Release Notes: middleware/rabbitmq/release-notes.md
           - Redis 缓存服务:
               - 什么是 Redis: middleware/redis/intro/what.md
@@ -563,6 +568,7 @@ nav:
               - 创建 Redis 实例: middleware/redis/user-guide/create.md
               - 更新 Redis 实例: middleware/redis/user-guide/update.md
               - 删除 Redis 实例: middleware/redis/user-guide/delete.md
+              - 查看 Redis 日志: middleware/redis/user-guide/logs.md
               - Release Notes: middleware/redis/release-notes.md
       - 云原生存储:
           - 介绍:
