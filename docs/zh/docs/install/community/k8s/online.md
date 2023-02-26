@@ -69,12 +69,14 @@
 3. 安装 DCE 5.0。
 
     ```shell
-    ./dce5-installer install-app -c clusterConfig.yaml
+    ./dce5-installer install-app -c clusterConfig.yaml -z
     ```
 
     !!! note
 
-        如果使用 NodePort 暴露控制台，则命令不需要指定 `-c` 参数。
+        - `-z` 最小化安装
+        - `-c` 指定集群配置文件。使用 NodePort 暴露控制台时不需要指定 `-c`。
+        - `-d` 开启 debug 模式
 
 4. 安装完成后，命令行会提示安装成功。恭喜您！
    现在可以通过屏幕提示的 URL 使用 **默认的账户和密码（admin/changeme）** 探索全新的 DCE 5.0 啦！
