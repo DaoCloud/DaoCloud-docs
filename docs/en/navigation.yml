@@ -449,21 +449,21 @@ nav:
               - What is data service: middleware/midware.md
               - Version Compatibility: middleware/adaptation-k8s.md
           - Elasticsearch:
-              - What is Elasticsearch: middleware/elastic-search/intro/what.md
-              - Features: middleware/elastic-search/intro/features.md
-              - Benefits: middleware/elastic-search/intro/benefits.md
-              - Scenarios: middleware/elastic-search/intro/scenarios.md
-              - Concepts: middleware/elastic-search/intro/concepts.md
-              - Install/Uninstall Elasticsearch: middleware/elastic-search/userguide/install.md
-              - First Use of Elasticsearch: middleware/elastic-search/userguide/login.md
-              - Create Elasticsearch Instance: middleware/elastic-search/userguide/create.md
-              - Update Elasticsearch Instance: middleware/elastic-search/userguide/edit.md
-              - Delete Elasticsearch Instance: middleware/elastic-search/userguide/delete.md
-              - Elasticsearch Capacity Planning: middleware/elastic-search/userguide/cluster-capacity-plan.md
-              - View Instances: middleware/elastic-search/userguide/view.md
-              - Overview: middleware/elastic-search/userguide/basic.md
-              - Instance Monitor: middleware/elastic-search/userguide/monitor.md
-              - Release Notes: middleware/elastic-search/release-notes.md
+              - What is Elasticsearch: middleware/elasticsearch/intro/what.md
+              - Features: middleware/elasticsearch/intro/features.md
+              - Benefits: middleware/elasticsearch/intro/benefits.md
+              - Scenarios: middleware/elasticsearch/intro/scenarios.md
+              - Concepts: middleware/elasticsearch/intro/concepts.md
+              - Install/Uninstall Elasticsearch: middleware/elasticsearch/userguide/install.md
+              - First Use of Elasticsearch: middleware/elasticsearch/userguide/login.md
+              - Create Elasticsearch Instance: middleware/elasticsearch/userguide/create.md
+              - Update Elasticsearch Instance: middleware/elasticsearch/userguide/edit.md
+              - Delete Elasticsearch Instance: middleware/elasticsearch/userguide/delete.md
+              - Elasticsearch Capacity Planning: middleware/elasticsearch/userguide/cluster-capacity-plan.md
+              - View Instances: middleware/elasticsearch/userguide/view.md
+              - Overview: middleware/elasticsearch/userguide/basic.md
+              - Instance Monitor: middleware/elasticsearch/userguide/monitor.md
+              - Release Notes: middleware/elasticsearch/release-notes.md
           - Kafka:
               - What is Kafka: middleware/kafka/intro/what.md
               - Scenarios: middleware/kafka/intro/scenarios.md

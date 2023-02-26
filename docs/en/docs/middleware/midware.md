@@ -6,7 +6,7 @@ Users can install/enable the following middleware on demand, and plug and play.
 
 - [RabbitMQ](rabbitmq/intro/what.md): message queue (commonly used as a transport pipeline for data)
 - Kafka: message queue (commonly used as a data pipeline for messaging)
-- [Elasticsearch](elastic-search/intro/what.md): log searching
+- [Elasticsearch](elasticsearch/intro/what.md): log searching
 - [MySQL](mysql/intro/what.md): relational database
 - Redis: in-memory database
 - MinIO: object storage solution

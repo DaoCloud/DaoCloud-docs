@@ -16,7 +16,7 @@
 
 ## Elasticsearch search service management
 
-See the [Elasticsearch Search Service Instance Management](../middleware/elastic-search/userguide/create.md) documentation page.
+See the [Elasticsearch Search Service Instance Management](../middleware/elasticsearch/userguide/create.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/es.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>

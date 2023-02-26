@@ -81,7 +81,7 @@ DCE 5.0 商业版包含以下模块，按需即插即用满足各类应用场景
 | 多云编排             | 集中管理多云、混合云、跨云资源的应用编排，具备多云灾备、故障恢复等能力   | [v0.5.1](../../kairship/intro/release-notes.md#v051)         |
 | 微服务引擎           | 提供注册发现、服务治理、配置管理、微服务网关等治理能力                   | [v0.16.1](../../skoala/intro/release-notes.md#v0161)             |
 | 服务网格             | 基于 Istio 开源技术构建的面向云原生应用的下一代服务网格                  | [v0.12.1](../../mspider/intro/release-notes.md#v0121)          |
-| 中间件 Elasticsearch | 目前首选的全文搜索引擎                                                   | [v0.4.0](../../middleware/elastic-search/release-notes.md#v040) |
+| 中间件 Elasticsearch | 目前首选的全文搜索引擎                                                   | [v0.4.0](../../middleware/elasticsearch/release-notes.md#v040) |
 | 中间件 Kafka         | 基于开源软件 Kafka 提供的分布式消息队列服务                              | [v0.2.0](../../middleware/kafka/release-notes.md#v020)          |
 | 中间件 MinIO         | 一款非常热门的轻量、开源对象存储方案                                     | [v0.2.0](../../middleware/minio/release-notes.md#v020)          |
 | 中间件 MySQL         | 应用最广泛的开源关系数据库                                               | [v0.5.0](../../middleware/mysql/release-notes.md#v050)           |

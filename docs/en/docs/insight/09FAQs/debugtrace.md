@@ -64,6 +64,6 @@ As shown in the figure above, if the transmission fails at any step, the link da
 
 3. **global jaeger collector**
 
-    Show that `jaeger collector` of `global management cluster` is receiving data from `otel collector` in `global management cluster`, and sending link data to [ElasticSearch cluster](../../middleware/elastic-search/intro /what.md).
+    Show that `jaeger collector` of `global management cluster` is receiving data from `otel collector` in `global management cluster`, and sending link data to [ElasticSearch cluster](../../middleware/elasticsearch/intro /what.md).
 
     ![tracing debug](../images/insighttrace05.png)
