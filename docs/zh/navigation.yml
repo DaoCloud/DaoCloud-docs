@@ -479,6 +479,10 @@ nav:
               - 配置参考: network/modules/spiderpool/config.md
               - 常用命令: network/modules/spiderpool/command.md
               - Release Notes: network/modules/spiderpool/releasenotes.md
+          - Submariner:
+              - 介绍: network/modules/submariner/what.md
+              - 安装: network/modules/submariner/install.md
+              - 使用说明: network/modules/submariner/usage.md
       - 中间件数据服务:
           - 介绍:
               - 什么是数据服务: middleware/what.md
