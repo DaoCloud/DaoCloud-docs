@@ -40,7 +40,7 @@ fatal: Authentication failed for 'https://github.com/DaoCloud/dce-installer.git/
 
 **解决方案**：
 
-使用 SSH 方式导入导入 **GitHub** 仓库。
+使用 SSH 方式导入 **GitHub** 仓库。
 
 ## 在某个工作空间下在 GitOps 模块中添加仓库时提示仓库已经存在
 
