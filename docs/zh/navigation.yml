@@ -264,6 +264,8 @@ nav:
               - 一键升级为多云工作负载: kairship/workload/promote.md
               - 镜像创建任务: kairship/workload/job.md
               - 镜像创建定时任务: kairship/workload/cronjob.md
+          - 自定义资源管理:
+              - 多云自定义资源: kairship/crds/crd.md
           - 资源管理:
               - 多云服务: kairship/resource/service.md
               - 多云命名空间: kairship/resource/ns.md
@@ -277,7 +279,9 @@ nav:
               - 差异化策略: kairship/policy/override-policy.md
           - 绑定工作空间: kairship/workspace.md
           - 常见问题: kairship/faq.md
-          - 故障转移: kairship/failover.md
+          - 故障转移:
+              - 故障转移功能介绍: kairship/failover.md
+              - 优化故障转移延迟灵敏度: kairship/failover/optimization-failover.md
       - 微服务引擎:
           - 介绍:
               - 功能总览: skoala/intro/what.md
