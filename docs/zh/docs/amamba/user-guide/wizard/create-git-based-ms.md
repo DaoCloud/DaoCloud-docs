@@ -62,17 +62,15 @@
         
     - 资源限制：指定应用能使用的资源上限，包括 CPU、内存。
 
-    - 高级设置
+    - 生命周期：设置容器启动时、启动后、停止前需要执行的命令。详情可参考[容器生命周期配置](../../../kpanda/user-guide/workloads/pod-config/lifecycle.md)。
 
-      - 生命周期：设置容器启动时、启动后、停止前需要执行的命令。详情可参考[容器生命周期配置](../../../kpanda/user-guide/workloads/pod-config/lifecycle.md)。
+    - 健康检查：用于判断容器和应用的健康状态，有助于提高应用的可用性。详情可参考[容器健康检查配置](../../../kpanda/user-guide/workloads/pod-config/health-check.md)。
 
-      - 健康检查：用于判断容器和应用的健康状态，有助于提高应用的可用性。详情可参考[容器健康检查配置](../../../kpanda/user-guide/workloads/pod-config/health-check.md)。
+    - 环境变量：配置 Pod 内的容器参数，为 Pod 添加环境变量或传递配置等。详情可参考[容器环境变量配置](../../../kpanda/user-guide/workloads/pod-config/env-variables.md)。
 
-      - 环境变量：配置 Pod 内的容器参数，为 Pod 添加环境变量或传递配置等。详情可参考[容器环境变量配置](../../../kpanda/user-guide/workloads/pod-config/env-variables.md)。
+    - 数据存储：配置容器挂载数据卷和数据持久化的设置。
 
-      - 数据存储：配置容器挂载数据卷和数据持久化的设置。
-
-          ![容器配置](../../images/ms04.png)
+        ![容器配置](../../images/ms04.png)
 
 5. 在`高级配置`页面点击`开启接入微服务`，参考以下说明配置参数，然后点击`确定`。
 
