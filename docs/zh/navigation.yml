@@ -134,7 +134,7 @@ nav:
               - 关于平台: ghippo/user-guide/platform-setting/about.md
           - 个人中心:
               - 安全设置: ghippo/user-guide/personal-center/security-setting.md
-              - 访问密钥: ghippo/user-guide/personal-center/password.md
+              - 访问密钥: ghippo/user-guide/personal-center/accesstoken.md
               - 语言设置: ghippo/user-guide/personal-center/language.md
           - 权限说明:
               - 容器管理权限说明: kpanda/user-guide/permissions/permission-brief.md
