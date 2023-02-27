@@ -2,21 +2,53 @@
 
 本页列出 MySQL 数据库的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## v0.6.0
+
+发布日期：2023-02-23
+
+### API
+
+- **新增** `mcamel-mysql` helm-docs 模版文件。
+- **新增** `mcamel-mysql` 应用商店中的 Operator 只能安装在 mcamel-system。
+- **新增** `mcamel-mysql` 支持 cloud shell。
+- **新增** `mcamel-mysql` 支持导航栏单独注册。
+- **新增** `mcamel-mysql` 支持查看日志。
+- **新增** `mcamel-mysql` 更新 Operator 版本。
+- **新增** `mcamel-mysql` 展示 common MySQL 在实例列表中。
+- **新增** `mcamel-mysql` 支持 MySQL8.0.29。
+- **新增** `mcamel-mysql` 支持 LB。
+- **新增** `mcamel-mysql` 支持 Operator 对接 chart-syncer。
+- **新增** `mcamel-mysql` Operator 的 finalizers 权限以支持 openshift。
+- **修复** `mcamel-mysql` 实例名太长导致自定义资源无法创建的问题。
+- **修复** `mcamel-mysql` 工作空间 Editor 用户无法查看实例密码。
+- **修复** `mcamel-mysql` 配置文件里 `expire-logs-days` 参数定义重复。
+- **修复** `mcamel-mysql` 8.0 环境下 binlog 过期时间不符合预期。
+- **修复** `mcamel-mysql` 备份集列表会展示出同名集群旧的备份集。
+- **升级** `mcamel-mysql` 升级离线镜像检测脚本。  
+
+### UI
+
+- **新增** 增加 MySQL 主从复制延迟情况展示
+
+### 文档
+
+- **新增** 日志查看操作说明，支持自定义查询、导出等功能。
+
 ## v0.5.0
 
 发布日期：2022-12-25
 
 ### API
 
-- **新增** `mcamel-mysql` NodePort 端口冲突提前检测。
-- **新增** `mcamel-mysql` 节点亲和性配置。
-- **新增** `mcamel-mysql` 创建备份配置时，可校验 Bucket。
-- **修复** `mcamel-mysql` arm 环境中无法展示默认配置。
-- **修复** `mcamel-mysql` 创建实例时 name 校验与前端不一致。
-- **修复** `mcamel-mysql` 重新接入变更名字的集群后，配置管理地址展示错误。
-- **修复** `mcamel-mysql` 保存自动备份配置失败。
-- **修复** `mcamel-mysql` 自动备份集无法展示的问题。
-- **优化** `mcamel-mysql` 创建托管 MinIO 类型的备份配置时，可填写 AccessKey/SecretKey/Bucket。
+- **新增** NodePort 端口冲突提前检测。
+- **新增** 节点亲和性配置。
+- **新增** 创建备份配置时，可校验 Bucket。
+- **修复** arm 环境中无法展示默认配置。
+- **修复** 创建实例时 name 校验与前端不一致。
+- **修复** 重新接入变更名字的集群后，配置管理地址展示错误。
+- **修复** 保存自动备份配置失败。
+- **修复** 自动备份集无法展示的问题。
+- **优化** 创建托管 MinIO 类型的备份配置时，可填写 AccessKey/SecretKey/Bucket。
 
 ## v0.4
 
