@@ -1,89 +1,92 @@
 ---
-hide:
-- toc
+MTPE: TODO
+Revised: Jeanine-tw
+Pics: N/A
+Date: 2023-02-27
 ---
-# 使用说明
 
-## 注意事项
+# Instructions
 
-- 当集群的 CNI 为 Calico 时，由于 Calico 插入的 IPTables 规则优先级高于 Submariner 插入的 IPTables 规则，导致跨集群通讯出现问题。所以我们必须手动配置 Calico 的 IPPool 来规避这个问题：
+## Precautions
 
-比如：
+- When the CNI of the cluster is Calico, the IPTables rule inserted by Calico has a higher priority than the IPTables rule inserted by Submariner. As a result, inter-cluster communication fails. So we had to manually configure Calico's IPPool to get around this problem:
+
+For example:
 
 |Cluster|Pod CIDR|Service CIDR|
 |---|---|---|
-|A|10.244.64.0/18|10.244.0.0/18
-|B|10.245.64.0/18|10.245.0.0/18
+18 | | A | 10.244.64.0/10.244.0.0/18
+18 | | B | 10.245.64.0/10.245.0.0/18
 
-在 Cluster A：
+In Cluster A:
 
 ```shell
-cat > clusterb-cidr.yaml <<EOF
-  apiVersion: projectcalico.org/v3
-  kind: IPPool
-  metadata:
-    name: clusterB-pod-cidr
-  spec:
-    cidr: 10.245.64.0/18
-    natOutgoing: false
-    disabled: true
+cat &gt;  clusterb-cidr.yaml &lt; &lt; EOF
+apiVersion: projectcalico.org/v3
+kind: IPPool
+The metadata:
+name: clusterB-pod-cidr
+Spec:
+cidr: 10.245.64.0/18
+natOutgoing: false
+disabled: true
 EOF
 
-cat > podwestcluster.yaml <<EOF
-    apiVersion: projectcalico.org/v3
-    kind: IPPool
-    metadata:
-      name: clusterB-service-cidr
-    spec:
-      cidr: 10.245.0.0/18
-      natOutgoing: false
-      disabled: true
+cat &gt;  podwestcluster.yaml &lt; &lt; EOF
+apiVersion: projectcalico.org/v3
+kind: IPPool
+The metadata:
+name: clusterB-service-cidr
+Spec:
+cidr: 10.245.0.0/18
+natOutgoing: false
+disabled: true
 EOF
 ```
 
-在 Cluster B 执行同样操作：
+Do the same in Cluster B:
 
 ```shell
-cat > clusterb-cidr.yaml <<EOF
-  apiVersion: projectcalico.org/v3
-  kind: IPPool
-  metadata:
-    name: clusterB-pod-cidr
-  spec:
-    cidr: 10.244.64.0/18
-    natOutgoing: false
-    disabled: true
+cat &gt;  clusterb-cidr.yaml &lt; &lt; EOF
+apiVersion: projectcalico.org/v3
+kind: IPPool
+The metadata:
+name: clusterB-pod-cidr
+Spec:
+cidr: 10.244.6/18
+natOutgoing: false
+disabled: true
 EOF
 
-cat > podwestcluster.yaml <<EOF
-  apiVersion: projectcalico.org/v3
-  kind: IPPool
-  metadata:
-    name: clusterB-service-cidr
-  spec:
-    cidr: 10.244.0.0/18
-    natOutgoing: false
-    disabled: true
+cat &gt;  podwestcluster.yaml &lt; &lt; EOF
+apiVersion: projectcalico.org/v3
+kind: IPPool
+The metadata:
+name: clusterB-service-cidr
+Spec:
+cidr: 10.244.0.0/18
+natOutgoing: false
+disabled: true
 EOF
 ```
 
-> 注意：设置 natOutgoing 为 false !
+> Set natOutgoing to false!
 
-## 使用
+## Use
 
-- 使用 Subctl 工具导出 Service、验证和排查问题
+- Use the Subctl tool to export Service, verify, and troubleshoot problems
 
-下载 Subctl:
+To download Subctl:
 
 ```shell
 root@controller:~# curl -Ls https://get.submariner.io | bash
 root@controller:~# export PATH=$PATH:~/.local/bin
-root@controller:~# echo export PATH=\$PATH:~/.local/bin >> ~/.profile
+root@controller:~# echo export PATH=\$PATH:~/.local/bin &gt; &gt;  ~/.profile
 root@controller:~# subctl version
 version: v0.13.4
 ```
 
-1. 验证 Submariner 是否就绪：
+1. Verify that Submariner is ready:
 
 ```shell
 root@controller:~# subctl show all
@@ -118,7 +121,7 @@ submariner-operator             quay.m.daocloud.io/submariner                   
 service-discovery               quay.m.daocloud.io/submariner                         0.14.0
 ```
 
-2. 如果出现跨集群通讯失败，可以使用以下命令排查：
+2. If inter-cluster communication fails, run the following command to rectify the fault:
 
 ```shell
 root@controller:~# subctl diagnose all
@@ -176,17 +179,17 @@ Cluster "cluster.local"
 Skipping inter-cluster firewall check as it requires two kubeconfigs. Please run "subctl diagnose firewall inter-cluster" command manually.
 ```
 
-如果上面方式不能解决，通过以下方式收集当前环境所有信息：
+If the preceding methods fail, collect all information about the current environment in the following ways:
 
 ```shell
 root@controller:~# subctl gather
-```
+` ` `
 
-- 跨集群的服务发现：
+- Service discovery across clusters:
 
-如果你想使用跨集群的服务发现，你需要手动导出 Service 到其他集群，可以参考下面的方式：
+If you want to use cross-cluster Service discovery, you need to manually export services to other clusters, as shown in the following way:
 
-在 ClusterA 导出这个服务：
+Export this service at ClusterA:
 
 ```shell
 root@controller:~# kubectl get svc
@@ -196,7 +199,7 @@ test                                          ClusterIP      10.233.21.143   <no
 root@controller:~# subctl export service test
 ```
 
-上面命令将会导出 default 命令空间下一个名为 test 的 Service，导出完成之后查看状态：
+The above command will export a Service named test in the default command space. After the export is complete, check the status:
 
 ```shell
 root@controller:~# kubectl get serviceexports.multicluster.x-k8s.io
@@ -226,7 +229,7 @@ status:
     type: Synced
 ```
 
-显示导出成功, 即可在 ClusterB 访问这个 Service：
+If the export is successful, you can access the Service in ClusterB:
 
 ```shell
 root@controller-node-1:~# kubectl  exec -it dao2048-5745d9b5d7-bsjjl sh

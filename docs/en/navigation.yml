@@ -420,7 +420,7 @@ nav:
               - Ingress Scope: network/modules/ingress-nginx/scope.md
               - Load Balance: network/modules/ingress-nginx/proxy.md
               - Configure timeout: network/modules/ingress-nginx/timeout.md
-              - Configure log : network/modules/ingress-nginx/log.md
+              - Configure log: network/modules/ingress-nginx/log.md
               - Upload limit: network/modules/ingress-nginx/upload.md
               - Traffic mirror: network/modules/ingress-nginx/mirror.md
           - Metallb:
@@ -444,6 +444,10 @@ nav:
               - Config: network/modules/spiderpool/config.md
               - Commands: network/modules/spiderpool/command.md
               - Release notes: network/modules/spiderpool/releasenotes.md
+          - Submariner:
+              - Intro: network/modules/submariner/what.md
+              - Install: network/modules/submariner/install.md
+              - Use: network/modules/submariner/usage.md
       - Data Service:
           - Intro:
               - What is data service: middleware/midware.md
