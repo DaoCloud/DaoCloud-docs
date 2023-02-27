@@ -185,7 +185,7 @@
 
     GraphQL for Gloo Gateway 无缝地将 GraphQL API 添加到 Gloo Gateway 中。用户可以借此对 API 进行联合 GraphQL 查询，而不需要为 GraphQL 建立额外的服务器以及解析器和解析器模式库；所有策略和请求都可以在 Envoy Proxy 过滤器中进行管理；同时支持声明式配置，与 CI/CD 和 GitOps 工作流完全兼容。
 
-- [*Google Cloud Kubernetes 发行版 GKE 12 月更新](https://cloud.google.com/kubernetes-engine/docs/release-notes)
+- [Google Cloud Kubernetes 发行版 GKE 12 月更新](https://cloud.google.com/kubernetes-engine/docs/release-notes)
 
     更新内容：允许在 Autopilot 集群中运行基于 GPU 的工作负载；支持双栈集群；支持在多 GPU 工作负载上启用传输层插件 NCCL Fast Socket，提高英伟达集体通信库（NCCL）的性能；GKE 网关控制器支持全局外部 HTTP(S) 负载均衡器。
 
@@ -272,7 +272,8 @@
 
 - [Spot by NetApp 推出 Kubernetes 应用持续交付产品 Ocean CD](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release-notes.pdf)
 
-Ocean CD 是一个支持多集群的 SaaS 方案，以 Argo rollouts 为引擎，并在上面叠加许多管理功能。Ocean CD 允许快速启用智能部署，如金丝雀、蓝绿部署或使用验证和失败策略的简单滚动更新；支持持续验证，根据金丝雀策略定义正确执行回滚和自动行动；提供一个开发者友好型的 UI 界面。
+    Ocean CD 是一个支持多集群的 SaaS 方案，以 Argo rollouts 为引擎，并在上面叠加许多管理功能。
+    Ocean CD 允许快速启用智能部署，如金丝雀、蓝绿部署或使用验证和失败策略的简单滚动更新；支持持续验证，根据金丝雀策略定义正确执行回滚和自动行动；提供一个开发者友好型的 UI 界面。
 
 - [NetApp Kubernetes 应用数据管理方案 Astra Control 更新](https://www.netapp.com/blog/astra-kubernetes-data-protection/)
 
@@ -463,7 +464,8 @@ Ocean CD 是一个支持多集群的 SaaS 方案，以 Argo rollouts 为引擎�
 
 - [天翼云发布云原生安全产品——红盾 1.0](https://mp.weixin.qq.com/s/9crAAOde9_spFmk5TZcY2A)
 
-    红盾基于云原生底座将安全能力整合至统一的安全平台，面向云原生业务应用安全、网络安全、数据安全、云原生安全 4 大领域，打造一体化云安全可信运营体系和零信任架构。其核心产品包括 Web 应用防火墙、DDoS 高防、网站安全监测、企业安全访问、天翼云数据安全管理平台等。
+    红盾基于云原生底座将安全能力整合至统一的安全平台，面向云原生业务应用安全、网络安全、数据安全、云原生安全 4 大领域，打造一体化云安全可信运营体系和零信任架构。
+    其核心产品包括 Web 应用防火墙、DDoS 高防、网站安全监测、企业安全访问、天翼云数据安全管理平台等。
 
 ### V
 

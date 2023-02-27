@@ -451,7 +451,7 @@
     其核心思想是提供运行在“真实”集群之上隔离的 Kubernetes 控制平面（例如 API Server）。
     与完全独立的“真实“集群相比，虚拟集群没有自己的工作节点或者网络，工作负载实际上还是在底层宿主集群上调度。
 
-- [5个实用工具，提升 Kubernetes 生产力](https://mp.weixin.qq.com/s/KAg48nzlsL2jxm0sUDo3mw)
+- [5 个实用工具，提升 Kubernetes 生产力](https://mp.weixin.qq.com/s/KAg48nzlsL2jxm0sUDo3mw)
 
     文章列出了五种与 Kubernetes 一起工作的强大工具，
     分别是终端 UI [K9s](https://github.com/derailed/k9s)、清理 Kubernetes 集群的工具 [Popeye](https://github.com/derailed/popeye)、Kubernetes 集群部署检查工具  [Kube-bench](https://github.com/aquasecurity/kube-bench)、上下文和命名空间快速切换工具 [Kubectx](https://github.com/ahmetb/kubectx)、[Kubens](https://github.com/ahmetb/kubectx) 和 [fzf](https://github.com/junegunn/fzf)、日志聚合器 [Stern](https://github.com/stern/stern)、从 shell 快速检查文件 [Bat](https://github.com/sharkdp/bat)。
@@ -559,7 +559,7 @@
 - [Chainguard 版本的 下一代 Distroless 镜像](https://blog.chainguard.dev/minimal-container-images-towards-a-more-secure-future/)
 
     Chainguard 正在构建下一代 [distroless](https://github.com/distroless) 镜像，使用一个工具链即可轻松地从现有的软件包中组成 distroless 镜像，并创建自定义软件包。
-    与谷歌的 Bazel 和基于 Debian 的系统不同的是，Chainguard 工具链以 [apk](https://github.com/alpinelinux/apk-tools)（Alpine 软件包管理器）、[apko](https://github.com/chainguard-dev/apko)（用来构建基于 Alpine 的 distroless 镜像） 和 [melange](https://github.com/chainguard-dev/melange)（使用声明式 pipeline 构建 apk 包）为核心，减少 distroless 镜像的复杂性。
+    与谷歌的 Bazel 和基于 Debian 的系统不同的是，Chainguard 工具链以 [apk](https://github.com/alpinelinux/apk-tools)（Alpine 软件包管理器）、[apko](https://github.com/chainguard-dev/apko)（用来构建基于 Alpine 的 distroless 镜像）和 [melange](https://github.com/chainguard-dev/melange)（使用声明式 pipeline 构建 apk 包）为核心，减少 distroless 镜像的复杂性。
 
 - [通过 MetalLB 在 OpenYurt 边缘侧实现对 LoadBalancer类型 service 的支持](https://openyurt.io/zh/blog/Enable-MetalLB-in-OpenYurt/)
 
@@ -578,7 +578,8 @@
 
 - [OPAL 介绍：实时动态授权](https://www.cncf.io/blog/2022/06/27/real-time-dynamic-authorization-an-introduction-to-opal/)
 
-    [OPAL](https://github.com/permitio/opal) 是开放策略代理（OPA）的一个管理层，它能够保持授权层的实时更新。OPAL 对策略和策略数据的变化进行检测，并将实时更新推送给 agent。当应用状态发生变化时，OPAL 将确保服务始终与所需的授权数据和策略保持同步。
+    [OPAL](https://github.com/permitio/opal) 是开放策略代理（OPA）的一个管理层，它能够保持授权层的实时更新。
+    OPAL 对策略和策略数据的变化进行检测，并将实时更新推送给 agent。当应用状态发生变化时，OPAL 将确保服务始终与所需的授权数据和策略保持同步。
 
 - [夜莺（Nightingale）—— Prometheus 的企业级版本](https://mp.weixin.qq.com/s/OXmnH9KsygpB70-NmwxM1w)
 
@@ -641,11 +642,11 @@
 - [Prometheus 长期远程存储方案 VictoriaMetrics 入门实践](https://mp.weixin.qq.com/s/C3fzohygl5_tey70Qnz3og)
 
     VictoriaMetrics（简称 VM ）是一个支持高可用、经济高效且可扩展的开源监控解决方案和时间序列数据库，可用于 Prometheus 监控数据做长期远程存储。
-     除此之外，VM 的主要特点包括：对外支持 Prometheus 相关的 API、指标数据摄取和查询具备高性能和良好的可扩展性、高性能的数据压缩方式等。
+    除此之外，VM 的主要特点包括：对外支持 Prometheus 相关的 API、指标数据摄取和查询具备高性能和良好的可扩展性、高性能的数据压缩方式等。
 
 - [声明式管理 Helm 版本的工具](https://helm.sh/blog/tools-to-manage-helm-declaratively/)
 
-这篇文章介绍了 Kubernetes 生态中一些可用于声明式管理 Helm 版本的工具（如 CNCF 项目 Flux 和 Argo），并对这些工具进行了比较。
+    这篇文章介绍了 Kubernetes 生态中一些可用于声明式管理 Helm 版本的工具（如 CNCF 项目 Flux 和 Argo），并对这些工具进行了比较。
 
 - [使用 Kubecost 和 Kyverno 进行云原生工作负载成本治理](https://dzone.com/articles/cost-governance-of-cloud-native-workloads-using-kubecost-and-kyverno)
 
@@ -1025,10 +1026,10 @@
 
 - [Kubernetes 1.24: 避免为 Services 分配 IP 地址时发生冲突](https://kubernetes.io/blog/2022/05/23/service-ip-dynamic-and-static-allocation/)
 
-    Kubernetes 1.24 允许启用一个新的特性门控 ``ServiceIPStaticSubrange``。 
+    Kubernetes 1.24 允许启用一个新的特性门控 ``ServiceIPStaticSubrange``。
     启用此特性后，可以为 Service 使用不同的 IP 分配策略，减少冲突的风险。
 
 - [Harbor v2.5 远程复制：制品的签名如影随形](https://mp.weixin.qq.com/s/erH1iCbNn9yM1Bl5UlgGMg)
 
-    Harbor v2.5 于上周发布，其中Cosign制品签名和验证解决方案是重要功能，解决了镜像等制品在远程复制中，其签名信息无法被复制到目标端的问题。
+    Harbor v2.5 于上周发布，其中 Cosign 制品签名和验证解决方案是重要功能，解决了镜像等制品在远程复制中，其签名信息无法被复制到目标端的问题。
     这篇文章对该功能进行了详细介绍。
