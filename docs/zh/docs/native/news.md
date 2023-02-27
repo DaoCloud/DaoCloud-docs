@@ -188,7 +188,8 @@
     2021 年，中国私有云系统平台市场规模达到 51.4 亿元，同比增长45.2%。
     其中，容器平台的市场规模为 12.6 亿元，占私有云系统平台规模的 24.5 %。
     2021 私有云系统平台厂商竞争力象限分析图如下：
-![private](./images/private.png)
+
+    ![private](./images/private.png)
 
 - [12 月 14 日第二届「云原生十大技术创新/先锋实践」评选正式启动](https://mp.weixin.qq.com/s/UZ_05I06VCJYN5MKLwO7IA)
 
@@ -251,7 +252,8 @@
 - [11 月 29 日国际咨询公司沙利文发布 2022 年云原生应用保护平台雷达报告](https://1665891.fs1.hubspotusercontent-na1.net/hubfs/1665891/Frost%20Radar%20-%20CNAPP%202022%20-%20Aqua%20Security.pdf?_hsmi=235753068&_hsenc=p2ANqtz-_imKv0Cl7-_MGhYeSCsaey9txVoiKZQ7AiKuvvWdshrrAcw1zflc5_x9gLM_kJDXKVTZ8akc0IkBEXC_R-TNBxARFAbA)
   
     沙利文根据业务增长和创新指标评价评选出 15 家头部厂商，包括 Aqua Security、Check Point、Lacework、 Sysdig 等。其中，Aqua 被评选为投资或合作首选的标杆企业。
-![protection](./images/protection.png)
+
+    ![protection](./images/protection.png)
 
 - [11 月 29 日 KubeSphere 社区推出播客节目 KubeSphere Talk](https://mp.weixin.qq.com/s/Ud__u2YaUkdSx5yi7dKDHw)
   
@@ -478,7 +480,7 @@
 - [9 月 8 日 CNCF Prometheus 职业资格认证考试升级为 GA](https://www.cncf.io/announcements/2022/09/08/prometheus-certified-associate-exam-is-now-generally-available/?utm_source=thenewstack&utm_medium=website)
 
     在 Beta 测试版发布数月后，CNCF 宣布 [Prometheus 职业资格认证（PCA）考试](https://training.linuxfoundation.org/certification/prometheus-certified-associate/)已升级为 GA。
-    
+
     PCA 是一门在线认证的多项选择测试，专为对可观测性和监控感兴趣的工程师或应用开发人员设计，旨在测试考生使用 Prometheus 监控云原生应用和基础设施及通过可观测数据提高应用性能等相关基础知识的掌握情况。
 
 ### 2022-08
