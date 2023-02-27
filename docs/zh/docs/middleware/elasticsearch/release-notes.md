@@ -2,6 +2,29 @@
 
 本页列出 Elasticsearch 索引服务的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## v0.5.0
+
+发布日期：2023-02-23
+
+### API
+
+- **新增** `mcamel-elasticsearch` helm-docs 模版文件。
+- **新增** `mcamel-elasticsearch` 应用商店中的 Operator 只能安装在 mcamel-system。
+- **新增** `mcamel-elasticsearch` 支持 cloud shell。
+- **新增** `mcamel-elasticsearch` 支持导航栏单独注册。
+- **新增** `mcamel-elasticsearch` 支持查看日志。
+- **新增** `mcamel-elasticsearch` Operator 对接 chart-syncer。
+- **新增** `mcamel-elasticsearch` 支持 LB。
+- **修复** `mcamel-elasticsearch` 实例名太长导致自定义资源无法创建的问题。
+- **修复** `mcamel-elasticsearch` 工作空间 Editor 用户无法查看实例密码。
+- **修复** `mcamel-elasticsearch` 密码不能使用特殊字符的问题。
+- **修复** `mcamel-elasticsearch` 超出索引导致 panic 的问题。
+- **升级** `mcamel-elasticsearch` 升级离线镜像检测脚本。  
+
+### 文档
+
+- **新增** 日志查看操作说明，支持自定义查询、导出等功能。
+
 ## v0.4.0
 
 发布日期：2022-12-25

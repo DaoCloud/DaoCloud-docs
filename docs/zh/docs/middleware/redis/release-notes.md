@@ -2,6 +2,30 @@
 
 本页列出 Redis 缓存服务的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## v0.5.0
+
+发布日期：2023-02-23
+
+### API
+
+- **新增** `mcamel-redis` helm-docs 模版文件。
+- **新增** `mcamel-redis` 应用商店中的 Operator 只能安装在 mcamel-system。
+- **新增** `mcamel-redis` 支持 cloud shell。
+- **新增** `mcamel-redis` 支持导航栏单独注册。
+- **新增** `mcamel-redis` 支持查看日志。
+- **新增** `mcamel-redis` 更新单例/集群模式 Operator 的版本。
+- **新增** `mcamel-redis` 展示 common Redis 集群。
+- **新增** `mcamel-redis` Operator 对接 chart-syncer。
+- **修复** `mcamel-redis` 实例名太长导致自定义资源无法创建的问题。
+- **修复** `mcamel-redis` 工作空间 Editor 用户无法查看实例密码。
+- **修复** `mcamel-redis` 不能解析出正确的 Redis 版本号。
+- **修复** `mcamel-redis` 无法修改 Port 的问题。
+- **升级** `mcamel-redis` 升级离线镜像检测脚本。  
+
+### 文档
+
+- **新增** 日志查看操作说明，支持自定义查询、导出等功能。
+
 ## v0.4.0
 
 发布日期：2022-12-25

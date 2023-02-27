@@ -2,6 +2,25 @@
 
 本页列出 RabbitMQ 消息队列的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## v0.8.0
+
+发布日期：2023-02-23
+
+### API
+
+- **新增** `mcamel-rabbitmq` helm-docs 模版文件。
+- **新增** `mcamel-rabbitmq` 应用商店中的 Operator 只能安装在 mcamel-system。
+- **新增** `mcamel-rabbitmq` 支持 cloud shell。
+- **新增** `mcamel-rabbitmq` 支持导航栏单独注册。
+- **新增** `mcamel-rabbitmq` 支持查看日志。
+- **修复** `mcamel-rabbitmq` 实例名太长导致自定义资源无法创建的问题。
+- **修复** `mcamel-rabbitmq` 工作空间 Editor 用户无法查看实例密码。
+- **升级** `mcamel-rabbitmq` 升级离线镜像检测脚本。  
+
+### 文档
+
+- **新增** 日志查看操作说明，支持自定义查询、导出等功能。
+
 ## v0.7.0
 
 发布日期：2022-12-25
