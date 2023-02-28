@@ -24,11 +24,19 @@
     - `Master.AdminUser`: Jenkins 账户的用户名
     - `Master.AdminPassword`: Jenkins 用户名对应的密码
     - `Master.resources.requests`: Jenkins 的资源请求值
+    - `Master.resources.requests.cpu`: Jenkins master request CPU 资源，根据实际使用情况调整，一般生产级别推荐 4C8Gi 以上
     - `Master.resources.limits`: Jenkins 的资源限制值
+    - `Master.Casc.maxParallelRuns`: 最大并行流水线数，默认为 2。根据集群规划可用资源除以 jenkins agent 的平均申请资源
+    - `Master.JavaOpts`: Jenkins 的 Java 参数，根据实际使用情况调整。其中，`-javaagent` 是用来上报 metric 的 agent
+    - `Persistence.Size`: Jenkins master PV 大小，大小会影响日志和保存的制品，当存储超过这个数值，会导致 jenkins master 出现异常根据实际使用情况调整，实际生产环境推荐 200G 以上
     - `Deploy.JenkinsHost`: Jenkins 的访问链接。如果选择 `Node Port`，访问地址规则为：http://{集群地址:端口}
     - `eventProxy.enabled`: `true` 代表部署在 **非** 全局服务集群，`false` 代表部署在全局服务集群
         > 如果 `eventProxy.enabled=true`，则必须填写该字段下的其他各项配置，例如 `eventProxy.image.registry`、`eventProxy.image.repository`、`eventProxy.image.tag`、`eventProxy.imagePullPolicy` 等
     - 有关 `eventProxy.configMap.eventroxy.token` 字段中 token 的获取方式，可参考文档：[访问密钥](../../../ghippo/user-guide/password.md)
+    - `Agent.resources.requests.cpu`: Jenkins agent request CPU 资源，默认值 200m
+    - `Agent.resources.requests.memory`: Jenkins agent request memory 资源，默认值 256Mi
+    - `Agent.resources.limits.cpu`: Jenkins agent CPU 限制，默认值 200m。需要根据实际运行流水线的情况调整，过小会导致流水线运行时间过长，或者 agent 的 Pod 出现异常
+    - `Agent.resources.limits.memory`: Jenkins agent memory 限制，默认为 256Mi。需要根据实际运行流水线的情况调整，过小会导致流水线运行时间过长，或者 agent 的 Pod 会出现 OOM 等异常
 
         ![填写配置](../../images/install-jenkins04.png)
 
