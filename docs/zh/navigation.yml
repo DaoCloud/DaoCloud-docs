@@ -289,7 +289,7 @@ nav:
           - 绑定工作空间: kairship/workspace.md
           - 常见问题: kairship/faq.md
           - 故障转移:
-              - 故障转移功能介绍: kairship/failover.md
+              - 故障转移功能介绍: kairship/failover/failover.md
               - 优化故障转移延迟灵敏度: kairship/failover/optimization-failover.md
       - 微服务引擎:
           - 介绍:
