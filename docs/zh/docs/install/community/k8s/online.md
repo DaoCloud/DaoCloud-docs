@@ -33,8 +33,8 @@
     ```shell
     # 假定 VERSION 为 v0.4.0
     export VERSION=v0.4.0
-    curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION &&\ 
-         chmod +x dce5-installer
+    curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
+    chmod +x ./dce5-installer
     ```
 
 2. 设置配置文件 clusterConfig.yaml
