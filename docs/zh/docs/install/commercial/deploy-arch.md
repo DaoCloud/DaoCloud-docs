@@ -13,7 +13,7 @@ DCE 5.0 提供了三种部署架构：All-in-One、4 节点、7 节点。
 
 ## All-in-One
 
-All-in-One 模式仅需要一台主机。
+All-in-One 模式仅需要一台主机。使用 All-in-One 模式时，建议使用最小化安装 DCE 5.0，即安装命令后添加 `-z` 参数。
 
 ![allinone](../images/allinone.png)
 

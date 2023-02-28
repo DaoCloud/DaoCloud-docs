@@ -66,7 +66,7 @@ spec:
 
     # 支持内置、已有、在线
     type: built-in # options: built-in, external, online
-    builtinRegistryDomainName: built-in-registry.daocloud.io # 可选。内置镜像仓库的域名，并在每个节点的 /etc/hosts 和 coredns 的 hosts 区域进行域名解析的配置。
+    builtinRegistryDomainName: ${跟上述配置仓库地址一致。如果是 built-in ,则填写火种节点 IP} # 可选。内置镜像仓库的域名，并在每个节点的 /etc/hosts 和 coredns 的 hosts 区域进行域名解析的配置。
 
     # 使用已有的仓库，需要保证网络联通
     # type: external
@@ -250,7 +250,7 @@ spec:
 
     # 使用内置的仓库，由安装器进行部署安装
     type: built-in # options: built-in, external, online
-    builtinRegistryDomainName: built-in-registry.daocloud.io # 可选。内置镜像仓库的域名，并在每个节点的 /etc/hosts 和 coredns 的 hosts 区域进行域名解析的配置。
+    builtinRegistryDomainName: ${跟上述配置仓库地址一致。如果是 built-in ,则填写火种节点 IP} # 可选。内置镜像仓库的域名，并在每个节点的 /etc/hosts 和 coredns 的 hosts 区域进行域名解析的配置。
 
     # 使用已有的仓库，需要保证网络联通
     type: external
