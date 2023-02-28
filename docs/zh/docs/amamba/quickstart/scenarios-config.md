@@ -121,6 +121,6 @@ resources:
     -javaagent:/otel-auto-instrumentation/javaagent.jar
 ```
 
-### agent
+### agent 配置
 
 > 参照场景 1 的 agent 配置
