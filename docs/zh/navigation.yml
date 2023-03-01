@@ -433,6 +433,8 @@ nav:
           - 规划:
               - 网卡规划: network/plans/ethplan.md
               - 网络规划: network/plans/netplan.md
+          - 性能报告
+              - 网络 CNI 性能测试报告: network/performance/CNI-performance.md
           - Calico:
               - 介绍: network/modules/calico/what.md
               - 安装参数配置: network/modules/calico/install.md
