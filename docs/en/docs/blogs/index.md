@@ -7,6 +7,13 @@ hide:
 
 This page is a collection of blog posts and public articles related to DCE 5.0, sorted by alphabet and Pinyin.
 
+- [20230301 | KWOK Introduction](./kwok.md)
+
+    KWOK stands for Kubernetes WithOut Kubelet.
+    KWOK can help you set up a cluster of thousands of nodes just in seconds,
+    simulate real nodes with a low resource footprint, and test your Kubernetes
+    controller at scale without spending much on infrastructure?
+
 - [20230214 | DaoCloud and Kubernetes](./daocloud_k8s.md)
 
     This blog shares the story of how DaoCloud Enterprise was continually refined with Kubernetes and how does DaoCloud contribute to the cloud native undertakings.

@@ -215,6 +215,7 @@ nav:
               - 适用场景: amamba/intro/scenarios.md
               - 基本概念: amamba/intro/concepts.md
               - Release Notes: amamba/intro/release-notes.md
+          - 离线升级: amamba/offline-upgrade.md          
           - 命名空间管理: amamba/user-guide/namespace/namespace.md
           - 应用创建:
               - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-git-based-ms.md
@@ -246,6 +247,7 @@ nav:
               - 集成 Harbor 实现镜像安全扫描: amamba/quickstart/scan-with-harbor.md
               - 基于 Argo Rollout 实现渐进式灰度发布: amamba/quickstart/argocd-rollout.md
               - 在指定的节点上运行流水线: amamba/quickstart/pipeline-on-node.md
+              - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
           - 常见问题: amamba/faq.md
       - 多云编排:
           - 介绍:
@@ -287,7 +289,7 @@ nav:
           - 绑定工作空间: kairship/workspace.md
           - 常见问题: kairship/faq.md
           - 故障转移:
-              - 故障转移功能介绍: kairship/failover.md
+              - 故障转移功能介绍: kairship/failover/failover.md
               - 优化故障转移延迟灵敏度: kairship/failover/optimization-failover.md
       - 微服务引擎:
           - 介绍:
@@ -416,6 +418,7 @@ nav:
               - 网格多云部署: mspider/user-guide/multicluster/multicluster-install.md
               - 多集群网络通讯原理: mspider/user-guide/multicluster/multi-cluster-net.md
               - 多集群灰度发布: mspider/user-guide/multicluster/gray-scale-release.md
+              - 多云网络互联: mspider/user-guide/multicluster/cluster-interconnect.md
           - 测试:
               - OCP 接入网格: mspider/test/ocp.md
               - Openshift 与网格兼容性测试: mspider/test/openshift.md
@@ -673,6 +676,7 @@ nav:
       - 云原生网络: videos/network.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 202303 | KWOK 介绍: blogs/kwok.md
       - 202302 | 社区版涉及的开源项目: blogs/projects.md
       - 202302 | DaoCloud 与 K8s: blogs/daocloud_k8s.md
       - 202302 | DCE 5.0 攻坚语录集: blogs/peter.md
