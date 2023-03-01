@@ -80,6 +80,12 @@ related to KWOK, there are several ways to get involved:
 
 We welcome feedback and contributions from anyone who wants to join us in this exciting project.
 
+## References
+
+- KWOk repo: https://github.com/kubernetes-sigs/kwok
+- KWOk documentation: https://kwok.sigs.k8s.io/
+- KWOK slack: https://slack.k8s.io/
+
 [documents]: https://kwok.sigs.k8s.io/
 [sigs.k8s.io/kwok]: https://sigs.k8s.io/kwok/
 [#kwok]: https://kubernetes.slack.com/messages/kwok/

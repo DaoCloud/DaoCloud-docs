@@ -73,6 +73,12 @@ KWOK 并非试图完整替代其他什么。当然也有一些限制需要你多
 
 我们欢迎所有想要加入这个项目的贡献者，欢迎任何形式的反馈和贡献。
 
+## 参考链接
+
+- KWOk 代码仓库： https://github.com/kubernetes-sigs/kwok
+- KWOk 文档： https://kwok.sigs.k8s.io/
+- KWOK slack 频道： https://slack.k8s.io/
+
 [documents]: https://kwok.sigs.k8s.io/
 [sigs.k8s.io/kwok]: https://sigs.k8s.io/kwok/
 [#kwok]: https://kubernetes.slack.com/messages/kwok/
