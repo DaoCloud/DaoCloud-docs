@@ -190,6 +190,13 @@
         helm get values ghippo -n ghippo-system -o yaml > bak.yaml
         ```
 
+    1. 更新 ghippo crds
+
+        ```shell
+        helm pull ghippo/ghippo --version 0.9.0 && tar -zxf ghippo-0.9.0.tgz
+        kubectl apply -f ghippo/crds
+        ```
+
     1. 执行 `helm upgrade`。
 
         升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 字段为当前使用的镜像仓库地址。
@@ -214,6 +221,12 @@
 
         ```shell
         helm get values ghippo -n ghippo-system -o yaml > bak.yaml
+        ```
+
+    1. 更新 ghippo crds
+
+        ```shell
+        kubectl apply -f ./crds
         ```
 
     1. 执行 `helm upgrade`。
