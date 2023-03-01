@@ -66,7 +66,7 @@ nav:
                   - 集群调度: kpanda/user-guide/workloads/pod-config/scheduling-policy.md
           - 弹性伸缩:
               - 安装 metrics-server 插件: kpanda/user-guide/scale/install-metrics-server.md
-              - 安装 kubernetes-cronhpa-controller 插件: kpanda/user-guide/scale/install-cronhpa.md            
+              - 安装 kubernetes-cronhpa-controller 插件: kpanda/user-guide/scale/install-cronhpa.md
               - 安装 vpa 插件: kpanda/user-guide/scale/install-vpa.md
               - 创建 HPA 策略: kpanda/user-guide/scale/create-hpa.md
               - 创建 VPA 策略: kpanda/user-guide/scale/create-vpa.md
@@ -180,7 +180,7 @@ nav:
               - 集群监控: insight/user-guide/scenario-insight/cluster.md
               - 节点监控: insight/user-guide/scenario-insight/node.md
               - 容器监控: insight/user-guide/scenario-insight/container.md
-          - 场景监控: 
+          - 场景监控:
               - 服务监控: insight/user-guide/scenario-insight/service.md
               - 服务拓扑: insight/user-guide/scenario-insight/topology.md
           - 数据查询:
@@ -215,7 +215,7 @@ nav:
               - 适用场景: amamba/intro/scenarios.md
               - 基本概念: amamba/intro/concepts.md
               - Release Notes: amamba/intro/release-notes.md
-          - 离线升级: amamba/offline-upgrade.md          
+          - 离线升级: amamba/offline-upgrade.md
           - 命名空间管理: amamba/user-guide/namespace/namespace.md
           - 应用创建:
               - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-git-based-ms.md
@@ -436,6 +436,8 @@ nav:
           - 规划:
               - 网卡规划: network/plans/ethplan.md
               - 网络规划: network/plans/netplan.md
+          - 性能报告:
+              - 网络 CNI 性能测试报告: network/performance/cni-performance.md
           - Calico:
               - 介绍: network/modules/calico/what.md
               - 安装参数配置: network/modules/calico/install.md
