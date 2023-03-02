@@ -7,6 +7,7 @@
 
 <img style="float: right; display: inline-block; margin-left: 2em; max-width: 15em;" src="/blogs/images/kwok.svg" alt="KWOK logo" />
 
+是什么项目会被 Apple、IBM、腾讯、华为纷纷使用？
 你是否曾想过在几秒钟内搭建一个由数千个节点构成的集群，如何用少量资源模拟真实的节点，
 如何不耗费太多基础设施就能大规模地测试你的 Kubernetes 控制器？
 

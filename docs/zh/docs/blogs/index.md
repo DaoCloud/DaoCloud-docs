@@ -7,7 +7,9 @@ hide:
 
 本页汇总 DCE 5.0 相关的博客和公众号文章，默认按字母和拼音排序。
 
-- [20230301 | KWOK 介绍](./kwok.md)
+- [20230301 | 开源项目 KWOK 介绍](./kwok.md)
+
+    是什么样的开源项目会在发布 5 个月内，就被 Apple、IBM、腾讯、华为纷纷使用？
 
     KWOK 是 Kubernetes WithOut Kubelet 的缩写，即没有 Kubelet 的 Kubernetes。
     帮助你在几秒钟内搭建一个由数千个节点构成的集群，用少量资源模拟几千个真实的节点。

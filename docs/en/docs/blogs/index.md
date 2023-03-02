@@ -9,6 +9,8 @@ This page is a collection of blog posts and public articles related to DCE 5.0, 
 
 - [20230301 | KWOK Introduction](./kwok.md)
 
+    What kind of open source project can be popularly used by Apple, IBM, Tencent, and Huawei within 5 months of its release?
+
     KWOK stands for Kubernetes WithOut Kubelet.
     KWOK can help you set up a cluster of thousands of nodes just in seconds,
     simulate real nodes with a low resource footprint, and test your Kubernetes
