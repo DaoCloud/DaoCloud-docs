@@ -5,6 +5,7 @@
 
 <img style="float: right; display: inline-block; margin-left: 2em; max-width: 15em;" src="/blogs/images/kwok.svg" alt="KWOK logo" />
 
+What project is popularized recently by Apple, IBM, Tencent, and Huawei?
 Have you ever wondered how to set up a cluster of thousands of nodes just in seconds,
 how to simulate real nodes with a low resource footprint, and how to test your
 Kubernetes controller at scale without spending much on infrastructure?
