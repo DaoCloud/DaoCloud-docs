@@ -25,17 +25,20 @@
 
     ![HwameistorUI03](../../images/HwameistorUI03.jpg)
 
-    1. `Global Setting` —> `global image Registry`：设置所有镜像的仓库地址，默认已经填写了可用的在线仓库，如果是私有化环境，可修改为私有仓库地址。
-
-    2. `Global Setting` —> `K8s image Registry`：设置 K8S 镜像仓库地址，默认已经填写可用在线仓库，如果私有化环境，可修改为私有仓库地址。
-
-    3. `Global Setting` —> `Kubelet Root Dir`：默认的 `kubelet` 目录为 `/var/lib/kubelet`。如果您的 Kubernetes 发行版使用不同的 `kubelet` 目录，必须设置参数 `kubeletRootDir`。
-
-    4. `Config Settings` —> `EnableDRBD`：默认为关闭，开启后，创建的数据卷可创建 2 个副本，使用高可用模式。
-
-    5. `Config Settings` —> `DRDBStartPort`：默认为 43001 开始，当开启 `DRDB` 时，每创建一个高可用数据卷，需要占用主副本数据卷所在节点的一组端口。
-
-    6. **Storage Class 配置**
+    - `Global Setting` —> `global image Registry`：
+        设置所有镜像的仓库地址，默认已经填写了可用的在线仓库。
+        如果是私有化环境，可修改为私有仓库地址。
+    - `Global Setting` —> `K8s image Registry`：
+        设置 K8S 镜像仓库地址，默认已经填写可用在线仓库。
+        如果私有化环境，可修改为私有仓库地址。
+    - `Global Setting` —> `Kubelet Root Dir`：
+        默认的 `kubelet` 目录为 `/var/lib/kubelet`。
+        如果您的 Kubernetes 发行版使用不同的 `kubelet` 目录，必须设置参数 `kubeletRootDir`。
+    - `Config Settings` —> `EnableDRBD`：
+        默认为关闭，开启后，创建的数据卷可创建 2 个副本，使用高可用模式。
+    - `Config Settings` —> `DRDBStartPort`：
+        默认以 43001 开始，当开启 `DRDB` 时，每创建一个高可用数据卷，需要占用主副本数据卷所在节点的一组端口。
+    - **Storage Class 配置**
 
         Hwameistor 部署后，会自动创建  Storage Class。
 

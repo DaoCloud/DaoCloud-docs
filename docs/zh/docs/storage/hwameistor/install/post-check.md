@@ -87,7 +87,6 @@ k8s-worker-2   5           2
 k8s-worker-3   5           2
 
 $ kubectl get localdisks
-
 NAME               NODEMATCH      CLAIM   PHASE
 k8s-master-1-sda   k8s-master-1           Inuse
 k8s-worker-1-sda   k8s-worker-1           Inuse
@@ -122,7 +121,7 @@ drbd-adapter-zc882   1/1     Running   0          9h    10.6.254.23   k8s-worker
 drbd_transport_tcp     22227  0
 drbd                  606840  1 drbd_transport_tcp
 
-# cat /proc/drbd
+$ cat /proc/drbd
 version: 9.0.32-1 (api:2/proto:86-121)
 GIT-hash: 7d2933d5a3764fcc5e0bf54b71fd9cfb0363be1a build by @4904565a901d, 2022-09-07 08:53:17
 Transports (api:17): tcp (9.0.32-1)
