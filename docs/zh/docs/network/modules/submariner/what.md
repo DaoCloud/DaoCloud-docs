@@ -49,12 +49,12 @@ submariners.submariner.io                             2023-02-22T13:56:30Z
 
 ## 安装
 
-安装参考[Submariner安装](install.md)
+安装参考[安装 Submariner](install.md)
 
 ## 基本使用
 
-使用参考[Submariner使用](usage.md)
+使用参考[使用说明](usage.md)
 
 ## Debug 方式
 
-参考[Subctl 使用](subctl.md)
+参考[使用说明](usage.md)

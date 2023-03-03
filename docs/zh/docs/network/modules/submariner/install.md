@@ -16,7 +16,7 @@ hide:
     * Weave
     * Flannel
     * Canal
-    * Calico(存在兼容性问题, 需要手动规避, 参考[常见问题](subctl.md))
+    * Calico(存在兼容性问题，需要手动规避，参考[使用说明](usage.md))
     * OVN(要求 OVN NorthBound DB 的版本 > 6.1.0+)
 - Kube-proxy 的模式必须为 `IPtables`，`IPvs` 模式目前尚不支持
 - 集群内部需要允许 `Vxlan` 的流量，集群外部需要放通 udp/4500 端口
