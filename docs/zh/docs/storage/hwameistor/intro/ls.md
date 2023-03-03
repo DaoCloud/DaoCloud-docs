@@ -27,8 +27,9 @@ HwameiStor 提供两种本地数据卷：LVM、Disk。
 
 ## 使用 Helm Chart 安装部署
 
-本地存储是 HwameiStor 的一部分，必须与本地磁盘管理器一起工作。建议用户 [通过 helm-charts 部署](../install/deploy.md)。
+本地存储是 HwameiStor 的一部分，必须与本地磁盘管理器一起工作。建议用户 [通过 helm-charts 部署](../install/deploy-helmcharts.md)。
 
 ## 独立安装部署方式
 
-开发者可以[独立安装](../install/deploy.md) local-storage，从源代码进行安装，主要用于开发、测试场景。对于这种安装方式，您需要事先安装好[本地磁盘管理器](./ldm.md)。
+开发者可以[独立安装](../install/deploy-ui.md) local-storage，从源代码进行安装，主要用于开发、测试场景。
+对于这种安装方式，您需要事先安装好[本地磁盘管理器](./ldm.md)。

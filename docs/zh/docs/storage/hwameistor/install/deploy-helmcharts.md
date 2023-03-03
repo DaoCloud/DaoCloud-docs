@@ -1,8 +1,8 @@
 # 通过 Helm Chart 安装
 
-推荐使用这种安装方式，HwameiStor 的任何组件都可以通过 Helm Charts 轻松安装。
+推荐使用这种安装方式，HwameiStor 的任何组件都可以通过 Helm Chart 轻松安装。
 
-## 步骤
+## 操作步骤
 
 1. 准备 Helm 工具
 
@@ -14,9 +14,7 @@
 
     ```console
     helm repo add hwameistor http://hwameistor.io/hwameistor
-
     helm repo update hwameistor
-
     helm pull hwameistor/hwameistor --untar
     ```
 
@@ -36,6 +34,7 @@
 !!! tip
 
     默认的镜像仓库是 `quay.io` 和 `ghcr.io`。
+
     如果无法访问，可尝试使用 DaoCloud 提供的镜像源：`quay.m.daocloud.io` 和 `ghcr.m.daocloud.io`。
 
 要切换镜像仓库的镜像，请使用 `--set` 更改这两个参数值：`k8sImageRegistry` 和 `hwameistorImageRegistry`。
@@ -85,7 +84,7 @@ helm install hwameistor ./hwameistor \
 
 ## （可选）安装 DRBD
 
-如果要启用高可用卷, 必须安装 DRBD
+如果要启用高可用卷，必须安装 DRBD：
 
 ```console
 helm pull hwameistor/drbd9-adapter --untar
@@ -94,7 +93,7 @@ helm install drbd9 ./drbd9-adapter \
     -n hwameistor --create-namespace
 ```
 
-国内用户可以使用镜像仓库 `daocloud.io/daocloud` 加速
+国内用户可以使用镜像仓库 `daocloud.io/daocloud` 加速：
 
 ```console
 helm install drbd-adapter ./drbd-adapter \

@@ -5,6 +5,7 @@
 
 <img style="float: right; display: inline-block; margin-left: 2em; max-width: 15em;" src="/blogs/images/kwok.svg" alt="KWOK logo" />
 
+What project is popularized recently by Apple, IBM, Tencent, and Huawei?
 Have you ever wondered how to set up a cluster of thousands of nodes just in seconds,
 how to simulate real nodes with a low resource footprint, and how to test your
 Kubernetes controller at scale without spending much on infrastructure?
@@ -79,6 +80,12 @@ related to KWOK, there are several ways to get involved:
 - Open Issues/PRs/Discussions in [sigs.k8s.io/kwok]
 
 We welcome feedback and contributions from anyone who wants to join us in this exciting project.
+
+## References
+
+- KWOk repo: https://github.com/kubernetes-sigs/kwok
+- KWOk documentation: https://kwok.sigs.k8s.io/
+- KWOK slack: https://slack.k8s.io/
 
 [documents]: https://kwok.sigs.k8s.io/
 [sigs.k8s.io/kwok]: https://sigs.k8s.io/kwok/
