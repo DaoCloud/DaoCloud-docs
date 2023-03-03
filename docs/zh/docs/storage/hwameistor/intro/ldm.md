@@ -20,7 +20,7 @@
 
 ## 用法
 
-如果想完整地部署 HwameiStor，请参考[使用 Helm Chart 安装部署](../install/deploy.md)。
+如果想完整地部署 HwameiStor，请参考[使用 Helm Chart 安装部署](../install/deploy-helmcharts.md)。
 
 如果只想单独部署 LDM，可以参考下面的步骤进行安装。
 
@@ -62,12 +62,12 @@
 
     该命令用于获取集群中磁盘资源信息，获取的信息总共有四列，含义分别如下：
 
-      - **NAME：** 代表磁盘在集群中的名称。
-      - **NODEMATCH：** 表明磁盘所在的节点名称。
-      - **CLAIM：** 表明这个磁盘是被哪个 `Claim` 所引用。
-      - **PHASE：** 表明这个磁盘当前的状态。
+    - **NAME：** 代表磁盘在集群中的名称。
+    - **NODEMATCH：** 表明磁盘所在的节点名称。
+    - **CLAIM：** 表明这个磁盘是被哪个 `Claim` 所引用。
+    - **PHASE：** 表明这个磁盘当前的状态。
 
-    通过`kuebctl get localdisk <name> -o yaml` 查看更多关于某块磁盘的信息。
+    通过 `kuebctl get localdisk <name> -o yaml` 查看更多关于某块磁盘的信息。
 
 5. 申请可用磁盘
 
