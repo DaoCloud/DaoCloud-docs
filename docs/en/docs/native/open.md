@@ -359,6 +359,12 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      [Higress](https://github.com/alibaba/higress) follows the Ingress/Gateway API standard, combining traffic gateway, microservice gateway and security gateway, and extending the service management plug-in and security class on this basis Plug-ins and custom plug-ins are highly integrated with K8s and microservice ecology, including Nacos registration and configuration, Sentinel current limit and downgrade capabilities, and support hot update capabilities such as rule changes taking effect in milliseconds.
 
+- [Horizon: a cloud-native application deployment platform open sourced by NetEase](https://mp.weixin.qq.com/s/hRuHQ5egP_vzLD4IdKiOvA)
+
+    [Horizon](https://github.com/horizoncd/horizon) is a cloud-native continuous deployment platform based on Kubernetes and fully practices GitOps.
+    Platform teams can customize and create versioned service templates to define uniform standards-compliant deployment and operations for business applications and middleware.
+    Development teams can select pre-defined templates to automate service deployments and ensure uniform Kubernetes-based best practices. Ensure that any change (code, configuration, environment) is persistent, rollbackable, and auditable through Horizon GitOps mechanism.
+
 ### I, J
 
 - [All codes of iLogtail observable data collector open source](https://mp.weixin.qq.com/s/Cam_OjPWhcEj77kqC0Q1SA)
@@ -418,6 +424,11 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [k8gb Kubernetes Global Load Balancer v0.10.0 release (CNCF project)](https://github.com/k8gb-io/k8gb/releases/tag/v0.10.0)
 
      The main new features of this version: can access LeaderElection through environment variables, support the OpenTelemetry tracing scheme, support the creation of Grafana dashboard samples of K8GB indicators, and implement a consistent polling load balancing strategy.
+
+
+- Karmada Multi-Cloud Multi-Cluster Container Orchestration Platform v1.5.0 Released (CNCF Project)](https://github.com/karmada-io/karmada/releases/tag/v1.5.0)
+
+    Release features: multiple scheduling groups support, default scheduler compatible with any third-party scheduler, built-in interpreter support for StatefulSet, default interpreter support for CronJob aggregation state, and PodDisruptionBudget.
 
 - [Karmada multi-cloud multi-cluster container orchestration platform v1.4.0 release (CNCF project)](https://github.com/karmada-io/karmada/releases/tag/v1.4.0)
 
@@ -588,6 +599,12 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      Main new features of this version: Support Rocky Linux 8 and Kylin Linux, add "flush ip6tables" task in reset role, support NTP configuration, add kubelet systemd service hardening option, add rewrite plugin for CoreDNS/NodelocalDNS, add SeccompDefault for kubelet admission plugin, add extra_groups parameter for k8s_nodes, add ingress nginx webhook, add support for node and pod pid restrictions, and enable default Pod security configuration.
 
+- [KubeVela Upgrades to CNCF Incubation Program](https://mp.weixin.qq.com/s/mhH9u4aXJT2-qVwf06xn5Q)
+
+    [KubeVela](https://github.com/kubevela/kubevela) is built with the Kubernetes control plane, making it easier, faster, and more reliable to deploy and operate applications across hybrid and multi-cloud environments.
+    Going forward, the KubeVela community plans to improve the user experience of cloud resource creation and consumption through delivery workflows that enhance the security of the entire CI/CD delivery process in hybrid/multi-cluster scenarios.
+    Support for the KubeVela Dynamic API that allows users to easily integrate with third-party APIs, and more.
+
 - [KubeVela hybrid multi-cloud environment application delivery platform v1.6.0 release (CNCF project)](https://github.com/kubevela/kubevela/releases/tag/v1.6.0)
 
      The main new features of this version: support resource delivery visualization, provide observable infrastructure construction, application-oriented observability, observability as code capabilities, support unified management of multi-environment pipelines, support configuration sharing between applications and third-party external systems Do configuration integration.
@@ -748,6 +765,10 @@ This page lists activity in cloud native open source projects in alphabetical or
      [Notification Manager](https://github.com/kubesphere/notification-manager) can receive alarms, events, and audits from Kubernetes, generate notification messages according to templates set by users, and push them to users.
      Main functions of the new version: new routing function, users can send specified notifications to specified users by setting routing rules; new silent function, by configuring silent rules, specific notifications can be blocked in a specific time period; support dynamic update templates Wait.
 
+- [Nydus Container Image Acceleration Service v2.2.0 Released (CNCF Project)](https://github.com/dragonflyoss/image-service/releases/tag/v2.2.0)
+
+    Version features: enable mirror on-demand loading feature erofs over fscache, support v6 mirror conversion, merge subcommand supports merging multiple versions of mirrors, support converting Nydus mirror layer to tar file, add BackendProxy storage backend to emulate registry storage backend.
+
 ### O
 
 - [OCM multi-cluster management platform v0.9 release (CNCF project)](https://www.cncf.io/blog/2022/10/31/open-cluster-management-november-2022-update/)
@@ -884,7 +905,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: Vultr integration, Linode SD failure count indicator and `prometheus_ready` indicator added, `stripDomain` added to the template function, promtool supports using matchers when querying label values, and proxy pattern identifiers added.
 
-### R, S
+### R
 
 - [Rainbond cloud-native multi-cloud application management platform v5.9.0 released](https://github.com/goodrain/rainbond/releases/tag/v5.9.0-release)
 
@@ -893,6 +914,12 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Rainbond cloud-native multi-cloud application management platform v5.8.0 released](https://github.com/goodrain/rainbond/releases/tag/v5.8.0-release)
 
      The main new features of this version: support for one-click import of existing applications in the Kubernetes cluster, support for deploying components directly through Jar, War packages or Yaml files, support for creating Job/CronJob type tasks, support for extending the properties supported by applications and components, and support for Dockerfile Build using a private image.
+
+- [Rook Cloud Native Storage Project v1.11.0 Released (CNCF Project)](https://github.com/rook/rook/releases/tag/v1.11.0)
+
+    Release features: Support for K8s v1.21 and above, Ceph-CSI v3.8 becomes the default deployment, MachineDisruptionBudgets support removed, Object Storage Bucket notification and topic functionality brought to stable state, Support for data mirroring across multiple clusters with overlapping CIDRs, Ceph exporter becomes a source of metrics for the Ceph performance counter.
+
+### S
 
 - [Sealer Distributed application delivery tool v0.9.0 released (CNCF project)](https://github.com/sealerio/sealer/releases/tag/v0.9.0)
 

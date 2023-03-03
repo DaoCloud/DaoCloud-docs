@@ -96,6 +96,10 @@
 
 ### C, D
 
+- [Calico 云原生安全平台 Calico Enterprise 3.16 发布](https://www.tigera.io/blog/whats-new-in-calico-enterprise-3-16-egress-gateway-on-aks-service-graph-optimizations-and-more/)
+
+    更新内容：egress 网关支持 Azure 和 AKS、支持通过 Tigera operator 部署 egress 网关、新增 Manager UI 用于启用和配置基于工作负载的 Web 应用防火墙、Kubernetes 工作负载的可视化范围扩展至 100 多个命名空间、允许来自不同命名空间的 pod egress 到不同的外部网络。
+
 - [Calico 云原生应用安全平台 Calico Enterprise 3.15 发布](https://www.tigera.io/blog/whats-new-in-calico-enterprise-3-15-fips-140-2-compliance-new-dashboards-egress-gateway-pod-failover-and-more/)
 
     版本特性：支持将 Calico Enterprise 配置为符合 FIPS 140-2 的模式，FIPS 140-2 规定了应用程序和环境的加密模块需满足的安全标准；提供了一个基于工作负载的 IDS/IPS（入侵检测/入侵防御）系统，根据全球威胁情报源数据库检测并阻止不良工作负载的访问；自动化命名空间的安全策略建议；提供基于命名空间的仪表盘；支持出口网关 pod 的故障检测和故障转移。
@@ -185,6 +189,13 @@
 
     GraphQL for Gloo Gateway 无缝地将 GraphQL API 添加到 Gloo Gateway 中。用户可以借此对 API 进行联合 GraphQL 查询，而不需要为 GraphQL 建立额外的服务器以及解析器和解析器模式库；所有策略和请求都可以在 Envoy Proxy 过滤器中进行管理；同时支持声明式配置，与 CI/CD 和 GitOps 工作流完全兼容。
 
+- [Google Cloud GKE 引入 Network Function Optimizer，助力电信运营商采用云原生网络功能](https://cloud.google.com/blog/topics/telecommunications/network-function-optimizer-for-gke-and-gdc-edge)
+
+    Network Function Optimizer on GKE 主要提供三个方面的能力：
+    通过 Kubernetes 原生的多网络实现云网络的现代化，为 Kubernetes 集群定义了一个网络目录，允许 Pod 根据连接性或性能需求，将一个接口附加到一个或多个网络；
+    基于软件的高性能数据平面加速，云原生网络功能（CNF）可以在任何 Pod 上进行调度，消除网络功能和底层网卡之间的依赖性；
+    流量定向能力，简化流量分类，支持将一组 Pod 定义为下一跳（nexthop）。
+
 - [Google Cloud Kubernetes 发行版 GKE 12 月更新](https://cloud.google.com/kubernetes-engine/docs/release-notes)
 
     更新内容：允许在 Autopilot 集群中运行基于 GPU 的工作负载；支持双栈集群；支持在多 GPU 工作负载上启用传输层插件 NCCL Fast Socket，提高英伟达集体通信库（NCCL）的性能；GKE 网关控制器支持全局外部 HTTP(S) 负载均衡器。
@@ -232,6 +243,10 @@
 - [华为云发布分布式云原生产品——容器 CCE Turbo 和分布式云原生 UCS (Ubiquitous Cloud Native Service)](https://mp.weixin.qq.com/s/Bm_kFuyK3uLaSb4AvcYdmA)
 
     CCE Turbo 可通过计算、网络、调度全方位加速，实现极致弹性，如帮助客户以 3000 pod/min 的弹性轻松应对业务流量洪峰；UCS 提供跨云、跨地域的云原生应用管理，实现一致体验。
+
+- [Kong 云原生 API 平台 Kong Enterprise 3.2 发布](https://konghq.com/blog/kong-enterprise-3-2)
+
+    更新内容：当控制平面出现故障时，支持数据平面扩展；新增 Datadog 追踪插件，无需安装 Otel 收集器即可与 Datadog Agent 协同工作；支持基于时延的引导，允许 Kong 负载均衡器在代理上游服务时根据总响应时间选择“最快”的后端。
 
 - [Kong 服务网格产品 Kong Mesh v2.1 发布](https://konghq.com/blog/kong-mesh-kuma-2-1)
 
@@ -288,6 +303,10 @@
 - [Ocean 推出 Kubernetes 网络成本分析解决方案 Network Cost Analysis](https://spot.io/blog/dont-sweat-the-network-costs-ocean-provides-application-cost-visibility-to-your-kubernetes-cluster/)
 
     Network Cost Analysis（AWS EKS 集群上已提供 beta 支持）不仅支持显示 Kubernetes 应用使用的网络费用和带宽消耗，还支持预测未来支出和使用趋势。
+
+- [Ondat 云原生块存储平台 Ondat v2.10 发布](https://docs.ondat.io/docs/release-notes/#2100---release-2023-04-01)
+
+    更新内容：支持通过 storageoscluster 资源为大部分 Ondat pod 设置容器资源限制、支持实时计算平台 Red Hat Enterprise Linux for Real Time、operator 默认安装 CLI pod、允许在节点之间移动卷。
 
 - [Ondat v2.9 云原生块存储平台发布](https://www.ondat.io/blog/ondat-launches-version-2.9)
 

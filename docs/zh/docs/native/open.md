@@ -363,6 +363,12 @@
 
     [Higress](https://github.com/alibaba/higress) 遵循 Ingress/Gateway API 标准，将流量网关、微服务网关、安全网关三合一，并在此基础上扩展了服务管理插件、安全类插件和自定义插件，高度集成 K8s 和微服务生态，包括 Nacos 注册和配置、Sentinel 限流降级等能力，并支持规则变更毫秒级生效等热更新能力。
 
+- [Horizon：由网易云音乐开源的云原生应用部署平台](https://mp.weixin.qq.com/s/hRuHQ5egP_vzLD4IdKiOvA)
+
+    [Horizon](https://github.com/horizoncd/horizon) 是一个基于 Kubernetes 的云原生持续部署平台，并且全面践行 GitOps。
+    平台团队可以自定义创建版本化的服务模板，为业务应用程序和中间件定义符合统一标准的部署和运维。
+    开发团队可以选择预先定义的模板，进行自动化的服务部署，确保基于 Kubernetes 的统一最佳实践。通过 Horizon GitOps 机制，确保任意变更（代码、配置、环境）持久化、可回滚、可审计。
+
 ### I, J
 
 - [iLogtail 可观测数据采集器的全部代码开源](https://mp.weixin.qq.com/s/Cam_OjPWhcEj77kqC0Q1SA)
@@ -422,6 +428,10 @@
 - [k8gb Kubernetes 全局负载均衡器  v0.10.0 发布（CNCF 项目）](https://github.com/k8gb-io/k8gb/releases/tag/v0.10.0)
 
     该版本主要新特性：可以通过环境变量访问 LeaderElection、支持 OpenTelemetry 的 tracing 方案、支持创建 K8GB 指标的Grafana 仪表盘样本、实现一致的轮询负载均衡策略。
+
+- [Karmada 多云多集群容器编排平台 v1.5.0 发布（CNCF 项目）](https://github.com/karmada-io/karmada/releases/tag/v1.5.0)
+
+    版本特性：支持多个调度组、默认调度器兼容与任何第三方调度器、内置解释器支持 StatefulSet、默认解释器支持 CronJob 聚合状态以及 Pod 中断预算（PodDisruptionBudget）。
 
 - [Karmada 多云多集群容器编排平台 v1.4.0 发布（CNCF 项目）](https://github.com/karmada-io/karmada/releases/tag/v1.4.0)
 
@@ -592,6 +602,12 @@
 
     该版本主要新特性：支持 Rocky Linux 8 和 Kylin Linux、在重置角色中添加 “flush ip6tables” 任务、支持 NTP 配置、添加 kubelet systemd 服务加固选项、为 CoreDNS/NodelocalDNS 添加重写插件、为 kubelet 添加 SeccompDefault admission 插件、为 k8s_nodes 增加 extra_groups 参数、新增 ingress nginx webhook、增加对节点和 pod pid 限制的支持、支持启用默认的 Pod 安全配置。
 
+- [KubeVela 升级成为 CNCF 孵化项目](https://mp.weixin.qq.com/s/mhH9u4aXJT2-qVwf06xn5Q)
+
+    [KubeVela](https://github.com/kubevela/kubevela) 采用 Kubernetes 控制平面构建，使跨混合和多云环境部署和操作应用变得更容易、更快速、更可靠。
+    未来，KubeVela 社区计划通过交付工作流改善云资源创建和消费的用户体验，增强混合/多集群场景中整个 CI/CD 交付流程的安全，
+    支持允许用户轻松与第三方 API 集成的 KubeVela Dynamic API 等等。
+
 - [KubeVela 混合多云环境应用交付平台 v1.6.0 发布（CNCF 项目）](https://github.com/kubevela/kubevela/releases/tag/v1.6.0)
 
     该版本主要新特性：支持资源交付可视化、提供可观测基础设施搭建、面向应用的可观测、可观测即代码的能力、支持多环境流水线统一管理、支持应用间配置的共享并与第三方外部系统做配置集成。
@@ -752,6 +768,10 @@
     [Notification Manager](https://github.com/kubesphere/notification-manager) 能够从 Kubernetes 接收告警、事件、审计，根据用户设置的模板生成通知消息并推送给用户。
     新版本主要功能：新增路由功能，用户通过设置路由规则，将指定的通知发送给指定的用户；新增静默功能，通过配置静默规则，在特定的时间段屏蔽特定的通知；支持动态更新模板等。
 
+- [Nydus 容器镜像加速服务 v2.2.0 发布（CNCF 项目）](https://github.com/dragonflyoss/image-service/releases/tag/v2.2.0)
+
+    版本特性：启用镜像按需加载功能 erofs over fscache、支持 v6 镜像转换、合并子命令支持多个版本的镜像合并、支持将 Nydus 镜像层转换为 tar 文件、增加 BackendProxy 存储后端用于模拟注册表存储后端。
+
 ### O
 
 - [OCM 多集群管理平台 v0.9 发布（CNCF 项目）](https://www.cncf.io/blog/2022/10/31/open-cluster-management-november-2022-update/)
@@ -888,7 +908,7 @@
 
     该版本主要新特性：集成 Vultr、添加 Linode SD 故障计数指标和 `prometheus_ready` 指标、在模板 function 中添加 `stripDomain`、promtool 支持在查询标签值时使用匹配器、增加代理模式标识符。
 
-### R, S
+### R
 
 - [Rainbond 云原生多云应用管理平台 v5.9.0 发布](https://github.com/goodrain/rainbond/releases/tag/v5.9.0-release)
 
@@ -897,6 +917,12 @@
 - [Rainbond 云原生多云应用管理平台 v5.8.0 发布](https://github.com/goodrain/rainbond/releases/tag/v5.8.0-release)  
 
     该版本主要新特性：支持一键导入 Kubernetes 集群中已存在的应用、支持直接通过 Jar、War 包或 Yaml 文件部署组件、支持创建 Job/CronJob 类型任务、支持扩展应用和组件支持的属性、支持 Dockerfile 使用私有镜像构建。
+
+- [Rook 云原生存储项目 v1.11.0 发布（CNCF 项目）](https://github.com/rook/rook/releases/tag/v1.11.0)
+
+    版本特性：支持 K8s v1.21 及以上版本、Ceph-CSI v3.8 成为默认部署的版本、移除对机器中断预算（MachineDisruptionBudgets）的支持、对象存储桶的通知和主题功能升至稳定状态、支持在具有重叠 CIDR 的多个集群间进行数据镜像、Ceph exporter 成为 Ceph 性能计数器（performance counter）的指标来源。
+
+### S
 
 - [Sealer 分布式应用交付工具 v0.9.0 发布（CNCF 项目）](https://github.com/sealerio/sealer/releases/tag/v0.9.0)
 

@@ -96,6 +96,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### C
 
+- [Calico Enterprise 3.16, Calico's cloud-native security platform, was released](https://www.tigera.io/blog/whats-new-in-calico-enterprise-3-16-egress-gateway-on-aks- service-graph-optimizations-and-more/)
+
+    Updates: egress gateway support for Azure and AKS, support for deploying egress gateways via Tigera operators, new Manager UI for enabling and configuring workload-based web application firewalls, extended visualization of Kubernetes workloads to over 100 namespaces, allowing pod egress from different namespaces to different pod egress from different namespaces to different external networks.
+
 - [Calico Enterprise 3.15, a cloud-native application security platform, was released](https://www.tigera.io/blog/whats-new-in-calico-enterprise-3-15-fips-140-2-compliance-new-dashboards-egress-gateway-pod-failover-and-more/)
 
      Release features: supports configuring Calico Enterprise to comply with FIPS 140-2, which specifies the security standards to be met by cryptographic modules for applications and environments; provides a workload-based IDS/IPS (Intrusion Detection/Intrusion Prevention) system that detects and blocks bad workloads based on a global threat intelligence source database to detect and block access to undesirable workloads; automates namespace-based security policy recommendations; provides namespace-based dashboards; and supports failure detection and failover of egress gateway pods.
@@ -187,6 +191,13 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      GraphQL for Gloo Gateway seamlessly adds GraphQL APIs to Gloo Gateway. Users can use this to perform joint GraphQL queries on the API without the need to create additional servers, resolvers and resolver mode libraries for GraphQL; all policies and requests can be managed in the Envoy Proxy filter; while supporting declarative configuration, Fully compatible with CI/CD and GitOps workflows.
 
+- [Google Cloud GKE introduces Network Function Optimizer to help telcos adopt cloud-native network functions](https://cloud.google.com/blog/topics/telecommunications/network-function-optimizer-for-gke-and-gdc-edge)
+
+    Network Function Optimizer on GKE provides three main capabilities.
+    Modernization of cloud networks through Kubernetes-native multi-networking, defining a network catalog for Kubernetes clusters and allowing Pods to attach an interface to one or more networks based on connectivity or performance requirements.
+    Software-based high-performance data plane acceleration, with cloud-native network functions (CNFs) that can be scheduled on any Pod, eliminating dependencies between network functions and the underlying NIC.
+    Traffic targeting capabilities to simplify traffic classification and support for defining a group of Pods as the next hop (nexthop).
+
 - [Google Cloud Kubernetes Release GKE December Update](https://cloud.google.com/kubernetes-engine/docs/release-notes)
 
      Updates: Allow GPU-based workloads to run in Autopilot clusters; support for dual-stack clusters; support for enabling the transport layer plugin NCCL Fast Socket on multi-GPU workloads to improve performance of NVIDIA Collective Communication Library (NCCL); GKE gateway controllers support global external HTTP(S) load equalizer.
@@ -239,6 +250,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Kyndryl Cloud Native Services provides an end-to-end lifecycle framework that includes code assets, workflows, specialized fundamentals, consulting management services, and comprehensive services related to automated backups, patching, KPI monitoring, security, alerting, and event management for cloud native application migration and optimization . The solution allows enterprises to move their on-premise applications to cloud service provider environments such as AWS, GCP and Azure.
 
+- [Kong Enterprise 3.2, a Kong cloud native API platform, is released(https://konghq.com/blog/kong-enterprise-3-2)
+
+    Updates: Support for data plane extensions when the control plane fails; New Datadog tracking plugin to work with Datadog Agent without installing Otel collector; Support for latency-based bootstrapping, allowing Kong load balancers to select the "fastest" backend based on total response time when proxying upstream services. " backend when proxying upstream services.
+
 - [Kong Releases Service Grid Product Kong Mesh v2.1](https://konghq.com/blog/kong-mesh-kuma-2-1)
 
      Update: Completed implementation of all next-generation policies, including adding MeshHTTPRoute, MeshCircuitBreaker, MeshFaultInjection, MeshOPA and other policies; added gateway view in the UI; support for configuring ports in eBPF mode.
@@ -286,6 +301,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Ocean launches Network Cost Analysis, a Kubernetes network cost analysis solution](https://spot.io/blog/dont-sweat-the-network-costs-ocean-provides-application-cost-visibility-to-your-kubernetes-cluster/)
 
      Network Cost Analysis (already in beta support on AWS EKS clusters) not only supports displaying network costs and bandwidth consumption used by Kubernetes applications, but also supports forecasting future spending and usage trends.
+
+- [Ondat cloud-native block storage platform Ondat v2.10 released](https://docs.ondat.io/docs/release-notes/#2100---release-2023-04-01)
+
+    Updates: Support for setting container resource limits for most Ondat pods via storageoscluster resources, support for Red Hat Enterprise Linux for Real Time, operator installs CLI pods by default, allows moving volumes between nodes.
 
 - [Ondat v2.9 Cloud Native Block Storage Platform Launch](https://www.ondat.io/blog/ondat-launches-version-2.9)
 
