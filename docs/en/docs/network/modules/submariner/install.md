@@ -18,7 +18,7 @@ This page describes how to install Submariner.
     * Weave
     * Flannel
     * Canal
-    * Calico(there is a compatibility issue, you need to circumvent it manually, refer to [FAQ](subctl.md))
+    * Calico(there is a compatibility issue, you need to circumvent it manually, refer to [Usage](usage.md))
     * OVN (requires OVN NorthBound DB version > 6.1.0+)
 - Kube-proxy mode must be `IPtables`, `IPvs` mode is not supported yet
 - The cluster needs to allow `Vxlan` traffic internally and udp/4500 ports outside the cluster

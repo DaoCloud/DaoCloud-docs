@@ -59,4 +59,4 @@ Refer to [Submariner usage](usage.md)
 
 ## Debug method
 
-Refer to [Subctl Usage](subctl.md)
+Refer to [Subctl Usage](usage.md)
