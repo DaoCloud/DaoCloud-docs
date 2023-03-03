@@ -601,7 +601,9 @@ nav:
               - 资源介绍: storage/hwameistor/intro/resources.md
               - 安装管理:
                   - 准备工作: storage/hwameistor/install/prereq.md
-                  - 通过 Helm Chart 安装: storage/hwameistor/install/deploy.md
+                  - 存储网卡配置: storage/hwameistor/install/storage-eth.md
+                  - 通过 Helm Chart 安装: storage/hwameistor/install/deploy-helmcharts.md
+                  - 通过界面安装: storage/hwameistor/install/deploy-ui.md
                   - 安装后检查: storage/hwameistor/install/post-check.md
                   - 升级: storage/hwameistor/install/upgrade.md
                   - 卸载: storage/hwameistor/install/uninstall.md

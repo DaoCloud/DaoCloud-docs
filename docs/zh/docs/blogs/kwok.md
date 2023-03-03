@@ -7,6 +7,7 @@
 
 <img style="float: right; display: inline-block; margin-left: 2em; max-width: 15em;" src="/blogs/images/kwok.svg" alt="KWOK logo" />
 
+是什么项目会被 Apple、IBM、腾讯、华为纷纷使用？
 你是否曾想过在几秒钟内搭建一个由数千个节点构成的集群，如何用少量资源模拟真实的节点，
 如何不耗费太多基础设施就能大规模地测试你的 Kubernetes 控制器？
 
@@ -43,7 +44,7 @@ KWOK 可用于各种用途：
 - **开发**：你可以使用 KWOK 为 Kubernetes 开发新特性或新工具，无需接入真实的集群，也不需要其他组件。
 - **测试**：
     - 你可以衡量自己的应用程序或控制器在使用节点和 Pod 时的扩缩表现如何。
-    - 你可以用不同的资源或限制创建大量 Pod 或服务，在集群上营造高负载的环境。
+    - 你可以用不同的资源请求或限制创建大量 Pod 或服务，在集群上营造高负载的环境。
     - 你可以通过更改节点状况或随机删除节点来模拟节点故障或网络分区。
     - 你可以通过启用不同的特性门控或 API 版本来测试控制器如何与其他组件交互。
 
@@ -72,6 +73,12 @@ KWOK 并非试图完整替代其他什么。当然也有一些限制需要你多
 - 在 [sigs.k8s.io/kwok] 上提出 Issue/PR/Discussion
 
 我们欢迎所有想要加入这个项目的贡献者，欢迎任何形式的反馈和贡献。
+
+## 参考链接
+
+- KWOk 代码仓库： https://github.com/kubernetes-sigs/kwok
+- KWOk 文档： https://kwok.sigs.k8s.io/
+- KWOK slack 频道： https://slack.k8s.io/
 
 [documents]: https://kwok.sigs.k8s.io/
 [sigs.k8s.io/kwok]: https://sigs.k8s.io/kwok/

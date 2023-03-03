@@ -1,3 +1,8 @@
+---
+hide:
+  -toc
+---
+
 # 安装 metrics-server 插件
 
 `metrics-server` 是 Kubernetes 内置的资源使用指标采集组件。
@@ -40,17 +45,15 @@
 
     !!! note
 
-        开启`就绪等待`和/或`失败删除`后，应用需要经过较长时间才会被标记为“运行中”状态。
+        开启`就绪等待`和/或`失败删除`后，应用需要经过较长时间才会被标记为`运行中`状态。
 
 4. 高级参数配置
 
     - 如果集群网络无法访问 `k8s.gcr.io` 仓库，请尝试修改 `repositort` 参数为 `repository: k8s.m.daocloud.io/metrics-server/metrics-server`。
 
-    - 安装 `metrics-server` 插件还需提供 SSL 证书，您也可以在 `defaultArgs:` 处添加 `- --kubelet-insecure-tls` 参数，以绕过证书校验。
+    - 安装 `metrics-server` 插件还需提供 SSL 证书。如需绕过证书校验，需要在 `defaultArgs:` 处添加 `- --kubelet-insecure-tls` 参数。
 
-    !!! note
-
-        推荐使用如下参数来替换参数配置内的默认 `YAML` 内容：
+    ??? note “推荐使用如下参数来替换参数配置内的默认 `YAML` 内容”
 
         ```yaml
         image:
