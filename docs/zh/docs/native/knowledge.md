@@ -83,6 +83,12 @@
 
 ### 最佳实践
 
+- [我们如何基于云原生项目发展开源社区？](https://thenewstack.io/how-do-we-cultivate-community-within-cloud-native-projects/)
+
+    基于云原生项目发展开源社区，首先要知道哪些人会关心你的项目、谁是终端用户、利益相关者和贡献者？
+    他们做什么工作、在哪工作以及使用目标是什么？
+    发现更多的潜在利益相关者，为他们提供贡献途径，对提高项目的采用率来说至关重要。
+
 - [Dapr 集成 Flomesh 实现跨集群服务调用](https://mp.weixin.qq.com/s/Y-MewxHVMULKDi4_cbl6Yw)
 
     [Flomesh 服务网格](https://github.com/flomesh-io/fsm)使用可编程代理 Pipy 为核心提供东西、南北向的流量管理。
@@ -377,6 +383,11 @@
     Harbor v2.2及其更高版本支持对相关指标的采集和使用，这篇文章介绍了如何使用 Prometheus 轻松抓取 Harbor 实例的一些关键指标。
 
 ### 工具推荐
+
+- [FinOps 时代如何玩转应用资源配置](https://mp.weixin.qq.com/s/2ulduH_zKKcCsB64sVI0bg)
+
+    Kubernetes 会按照应用程序申请的资源配额进行调度，因此如何合理的配置应用资源规格就成为提升集群利用率的关键。
+    文章分享如何基于 FinOps 开源项目 Crane 正确的配置应用资源，以及如何在企业内推进资源优化的实践。
 
 - [帮助 Go 团队使用 OpenTelemetry 的新方法](https://gethelios.dev/blog/helping-go-teams-implement-opentelemetry-a-new-approach/)
 
@@ -714,6 +725,11 @@
 
 ### 前沿热点
 
+- [微服务进入深水区后该何去何从](https://mp.weixin.qq.com/s/yBY-E-tndUJCmA4KYRfrDw)
+
+    微服务进入深水区后，开发者和架构师更关心的是微服务安全、稳定性、成本优化、微服务治理标准化，以及促使云原生微服务架构逐步演进到多运行时微服务架构。
+    而对于多运行时架构存在的局限性，需要实现更加标准化与平台化的服务网格开发与运维能力，规范化 Sidecar 与运行时的定义，同时将运维平台变得更加标准易用。
+
 - [2023 年云原生发展趋势的预测](https://mp.weixin.qq.com/s/QePkownt0_Ex9RWWeGtaag)
 
     文章是 CNCF CTO Chris Aniszczyk 关于 2023 年云原生和技术领域的热点话题的预测，
@@ -927,6 +943,11 @@
     该白皮书聚焦微服务治理业务领域，囊括了技术原理、业务场景、解决方案、最佳实践等微服务落地的全流程。
 
 ### 其他
+
+- [云原生如何改变电信标准：自上而下与自下而上的对决](https://mp.weixin.qq.com/s/dH_3CAd0PS3EPYKpJA2yNQ)
+
+    文章介绍了云原生自下而上的开发原则、最佳实践和事实标准的逻辑，以及自上而下的、由委员会驱动的标准，如电信行业的标准。
+    而自上而下和自下而上的标准相遇会发生什么，当协议的管理者与云原生标准相遇时又会发生什么？
 
 - [接管 K8s 部署运维，基础架构团队是否做好准备？](https://mp.weixin.qq.com/s/7Y5GfShZhFwBQkQfRUPnoA)
 

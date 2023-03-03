@@ -78,6 +78,12 @@ This page shares some technical articles related to cloud native, and we hope th
 
 ### Best Practices
 
+- [How can we develop open source communities based on cloud-native projects?](https://thenewstack.io/how-do-we-cultivate-community-within-cloud-native-projects/)
+
+    Developing an open source community based on a cloud-native project starts with knowing who will care about your project, who are the end users, stakeholders and contributors?
+    What work do they do, where do they work, and what are their usage goals?
+    Discovering more potential stakeholders and providing them with a path to contribute is critical to increasing the adoption of your project.
+
 - [Dapr integration with Flomesh for cross-cluster service calling](https://mp.weixin.qq.com/s/Y-MewxHVMULKDi4_cbl6Yw)
 
     [Flomesh Service Mesh](https://github.com/flomesh-io/fsm) uses Pipy, a programmable agent, to provide east-west and north-south traffic management for the core.
@@ -367,6 +373,11 @@ This page shares some technical articles related to cloud native, and we hope th
     Harbor v2.2 and later versions support the collection and use of related indicators. This article introduces how to use Prometheus to easily capture some key indicators of Harbor instances.
 
 ### Tool recommendation
+
+- [How to Play with Application Resourcing in the FinOps Era](https://mp.weixin.qq.com/s/2ulduH_zKKcCsB64sVI0bg)
+
+    Kubernetes schedules applications according to the resource quotas they request, so how to properly configure application resource specifications becomes the key to improving cluster utilization.
+    The article shares how to properly configure application resources based on the FinOps open source project Crane, and how to promote resource optimization practices in the enterprise.
 
 - [A new way to help Go teams use OpenTelemetry](https://gethelios.dev/blog/helping-go-teams-implement-opentelemetry-a-new-approach/)
 
@@ -707,6 +718,11 @@ This page shares some technical articles related to cloud native, and we hope th
 
 ### Frontier hotspot
 
+- [Where to Go After Microservices Enter Deep Water](https://mp.weixin.qq.com/s/yBY-E-tndUJCmA4KYRfrDw)
+
+    As microservices enter deep water, developers and architects are more concerned about microservice security, stability, cost optimization, standardization of microservice governance, and driving the gradual evolution of cloud-native microservice architectures to multi-runtime microservice architectures.
+    For the limitations of multi-runtime architecture, it is necessary to realize more standardized and platform-based service grid development and operation and maintenance capabilities, standardize the definition of Sidecar and runtime, and make the operation and maintenance platform more standard and easy to use.
+
 - [Predictions for cloud-native trends in 2023](https://mp.weixin.qq.com/s/QePkownt0_Ex9RWWeGtaag)
 
     The article is CNCF CTO Chris Aniszczyk's predictions on the hot topics in cloud-native and technology in 2023.
@@ -910,6 +926,11 @@ This page shares some technical articles related to cloud native, and we hope th
     This white paper focuses on the business domain of microservice governance, covering the whole process of microservice implementation including technical principles, business scenarios, solutions, and best practices.
 
 ### Other
+
+- [How Cloud Native is Changing Telecom Standards: Top-Down vs. Bottom-Up](https://mp.weixin.qq.com/s/dH_3CAd0PS3EPYKpJA2yNQ)
+
+    The article describes the logic of cloud-native bottom-up development principles, best practices, and de facto standards, as well as top-down, committee-driven standards, such as those in the telecom industry.
+    And what happens when top-down and bottom-up standards meet, and what happens when managers of protocols meet cloud-native standards?
 
 - [Is the infrastructure team ready to take over K8s deployment ops?](https://mp.weixin.qq.com/s/7Y5GfShZhFwBQkQfRUPnoA)
 

@@ -4,6 +4,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 > We will maintain regularly to ensure the validity of all links and the timeliness of news.
 
+
 ### 2023-05
 
 - [End of May China Academy of Information and Communications Technology officially launched the assessment of cloud consulting, cloud migration, cloud management and cloud disaster recovery in the first half of 2023 (registration closes at the end of May)](https://mp.weixin.qq.com/s/yZxSP5xb5juE9C-UWRoQAw)
@@ -21,6 +22,11 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     Topics may include: Getting Started with GitOps, Scaling and Managing GitOps, Lessons Learned from Production Deployments, Advanced Delivery Technologies, Open Source GitOps and CD Technology Practices in Cloud-Native Environments, Supply Chain Security, and more.
 
 ### 2023-04
+
+- [April Cloud Cost Optimization Series and Cloud Resource Benefit Metrics Assessment Launched (Registration Deadline in April)](https://mp.weixin.qq.com/s/FGk8x5OaL4gYpnjGHa2Llg)
+  
+    The Cost Optimization Series standard assessment aims to evaluate cost optimization services, native cost optimization tools, and hybrid multi-cloud cost optimization tools.
+    The Resource Benefit Metrics Assessment is for cloud platform builders, operators, and users to assess the use and effectiveness of cloud resources. Participating companies can choose one or more of the three categories of cloud resource benefit modules: cost, performance, and security, for assessment.
 
 - [April 8 and April 22 The 2nd Open Source Cloud Native Developer Day will be held in Shanghai & Beijing, the call for lecturers has been launched](https://mp.weixin.qq.com/s/C9aIJAt2g5AmX-uCewo2kA)
   
@@ -41,6 +47,11 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     The "System Stability Assurance" assessment system includes three modules: platform capability assessment (chaos engineering, observability, full-link pressure test, application multi-live evaluation), construction effectiveness assessment (distributed system stability, stability of important systems in securities, funds and futures industry, etc.)
     and cloud service stability and security operation capability assessment (message queue, cloud database, cloud host, content distribution service, container cluster, cloud storage, network service stability).
+
+- [March 29-30 KubeCon Europe 2023 Preview Event - 'KubeCrash Spring 2023' will be held online from 3.29-3.30](https://www.kubecrash.io/)
+  
+    KubeCrash Spring 2023 invites experts from Xbox, Boeing and other experts as well as CNCF project maintainers to share their talks.
+    The first day will be a Zero Trust Day, focusing on secure access to clusters, intra-cluster communication security, managing TLS certificates and policy definitions, etc. The second day will be an Innovation Day, focusing on gaming, ML/AI and other breakthrough technologies.
 
 ### 2023-02
 

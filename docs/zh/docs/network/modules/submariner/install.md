@@ -149,4 +149,4 @@ hide:
 ## 注意事项
 
 - 安装完之后需要至少给一个节点打上标签："submariner.io/gateway: true"。只有该标签存在, Gateway 组件才会被安装。
-- 如果集群 CNI 为 Calico, 需要做一些额外的操作, 来解决与 Calico 的兼容性问题, 请参考[使用](usage.md)。
+- 如果集群 CNI 为 Calico, 需要做一些额外的操作, 来解决与 Calico 的兼容性问题, 请参考[使用说明](usage.md)。
