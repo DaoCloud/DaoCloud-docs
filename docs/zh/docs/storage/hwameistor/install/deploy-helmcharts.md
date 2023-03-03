@@ -2,7 +2,7 @@
 
 推荐使用这种安装方式，HwameiStor 的任何组件都可以通过 Helm Charts 轻松安装。
 
-## 步骤
+## 操作步骤
 
 1. 准备 Helm 工具
 
@@ -85,7 +85,7 @@ helm install hwameistor ./hwameistor \
 
 ## （可选）安装 DRBD
 
-如果要启用高可用卷, 必须安装 DRBD
+如果要启用高可用卷，必须安装 DRBD：
 
 ```console
 helm pull hwameistor/drbd9-adapter --untar
@@ -94,7 +94,7 @@ helm install drbd9 ./drbd9-adapter \
     -n hwameistor --create-namespace
 ```
 
-国内用户可以使用镜像仓库 `daocloud.io/daocloud` 加速
+国内用户可以使用镜像仓库 `daocloud.io/daocloud` 加速：
 
 ```console
 helm install drbd-adapter ./drbd-adapter \
