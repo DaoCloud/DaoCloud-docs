@@ -8,7 +8,7 @@
 
 ### API
 
-- **新增** `mcamel-mysql` helm-docs 模版文件。
+- **新增** `mcamel-mysql` helm-docs 模板文件。
 - **新增** `mcamel-mysql` 应用商店中的 Operator 只能安装在 mcamel-system。
 - **新增** `mcamel-mysql` 支持 cloud shell。
 - **新增** `mcamel-mysql` 支持导航栏单独注册。

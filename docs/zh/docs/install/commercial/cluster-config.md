@@ -78,13 +78,12 @@ spec:
   # RPM 或者 DEB 安装的源头
   repoConfig: 
     repoType: centos # (18)
-    # osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node" # (19)
-    isoPath: "Please-replace-with-Your-Real-ISO-PATH-on-bootstrap-Node" # (20) 
-    osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node" # (21)
+    isoPath: "Please-replace-with-Your-Real-ISO-PATH-on-bootstrap-Node" # (19) 
+    osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node" # (20)
     dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos/$releasever/os/$basearch" 
 
-    # dockerRepo: "" # (22)
-    # dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/redhat/$releasever/os/$basearch" # (23)
+    # dockerRepo: "" # (21)
+    # dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/redhat/$releasever/os/$basearch" # (22)
 
     extraRepos:
       - http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos-iso/\$releasever/os/\$basearch  
@@ -108,7 +107,7 @@ spec:
     serviceCIDR: 100.64.0.0/13
   cri:
     criProvider: containerd
-    # criVersion: 1.6.8 # (24)
+    # criVersion: 1.6.8 # (23)
 ```
 
 1. 集群名称
@@ -129,12 +128,11 @@ spec:
 16. 如果选择了已有仓库，需要填写外部镜像仓库地址
 17. 如果选择了已有仓库，需要填写外部 MinIO 地址
 18. `centos` 表示使用 CentOS、RedHat、kylin AlmaLinux 或 Fedora；`debian` 表示使用 Debian；`ubuntu` 表示使用 Ubuntu
-19. 操作系统包的路径，不得为空
-20. 操作系统 ISO 文件的绝对路径，不得为空
-21. 操作系统 osPackage 文件的绝对路径
-22. 如果是 kylin，安装器将会选择 containerd，所以需要将 dockerRepo 设置为空
-23. 如果是 redhat
-24. criVersion 仅在 online 模式下生效，请勿将其设置为 offline 模式
+19. 操作系统 ISO 文件的绝对路径，不得为空
+20. 操作系统 osPackage 文件的绝对路径，不得为空
+21. 如果是 kylin，安装器将会选择 containerd，所以需要将 dockerRepo 设置为空
+22. 如果是 redhat
+23. criVersion 仅在 online 模式下生效，请勿将其设置为 offline 模式
 
 ## 关键字段
 
@@ -182,7 +180,7 @@ spec:
 	  # 如果 loadBalancer 是 NodePort
     type: NodePort
 
-	  ## cloudLB 特性目前处于 todo 状态
+	  # cloudLB 特性目前处于 todo 状态
 ```
 
 1. 支持 3 个选项：NodePort(default), metallb, cloudLB (Cloud Controller)
@@ -261,7 +259,7 @@ spec:
     type: online # (1)
 
     type: built-in # (2)
-    # builtinRegistryDomainName: # (3)
+    builtinRegistryDomainName: # (3)
 
     type: external # (4)
     externalRegistry: external-registry.daocloud.io # (5)
