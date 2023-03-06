@@ -12,18 +12,13 @@ apiVersion: provision.daocloud.io/v1alpha2
 kind: ClusterConfig
 metadata: 
 spec:
-  clusterName: my-cluster # 集群名称
-
-  # metallb 
+  clusterName: my-cluster # # (1)
   loadBalancer:
+    type: metallb # (2)
+    istioGatewayVip: xx.xx.xx.xx/32 # (3)
+    insightVip: xx.xx.xx.xx/32 # (4)
 
-    # metallb，建议生产环境使用
-    type: metallb # 有 3 个可选项：NodePort (default)、metallb、cloudLB (Cloud Controller)
-    istioGatewayVip: xx.xx.xx.xx/32 # 当 loadBalancer.type 是 metallb 时必填，为 DCE 提供 UI 和 OpenAPI 访问权限
-    insightVip: xx.xx.xx.xx/32      # 别丢弃/32, 当 loadBalancer.type 是 metallb 时必填，用作 GLobal 集群的 Insight 数据采集入口，子集群的 insight-agent 可以向这个 VIP 报告数据
-
-  # 指定 ssh 私钥，定义后无需再定义节点的 ansibleUser、ansiblePass
-  # privateKeyPath: /root/.ssh/id_rsa_sample
+  # privateKeyPath: /root/.ssh/id_rsa_sample  # (5)
 
   masterNodes:
     - nodeName: "g-master1" 
@@ -43,65 +38,53 @@ spec:
       ip: xx.xx.xx.xx
       ansibleUser: "***"
       ansiblePass: "****"
-      nodeTaints:          # 为 7 节点模式： 至少3个工作节点应该被打上该污点，仅作为 ES 的工作节点
+      nodeTaints: # (6)
         - "node.daocloud.io/es-only=true:NoSchedule"
     - nodeName: "g-worker2"
       ip: xx.xx.xx.xx
       ansibleUser: "***"
       ansiblePass: "****"
-      nodeTaints:          # 为 7 节点模式： 至少3个工作节点应该被打上该污点，仅作为 ES 的工作节点
+      nodeTaints:  # (6)
         - "node.daocloud.io/es-only=true:NoSchedule"
     - nodeName: "g-worker3"
       ip: xx.xx.xx.xx
       ansibleUser: "***"
       ansiblePass: "****"
-      nodeTaints:          # 为 7 节点模式： 至少3个工作节点应该被打上该污点，仅作为 ES 的工作节点
+      nodeTaints: # (6)
         - "node.daocloud.io/es-only=true:NoSchedule"
 
-  ntpServer: #可以使用自己搭建的 ntpServer
+  ntpServer: # (7)
     - 0.pool.ntp.org
     - ntp1.aliyun.com
     - ntp.ntsc.ac.cn
   registry: 
 
-    # 支持内置、已有、在线
-    type: built-in # options: built-in, external, online
-    # builtinRegistryDomainName: ${跟上述配置仓库地址一致。如果是 built-in ,则填写火种节点 IP} # 可选。内置镜像仓库的域名，并在每个节点的 /etc/hosts 和 coredns 的 hosts 区域进行域名解析的配置。
+    type: built-in # (8)
+    # builtinRegistryDomainName: ${跟上述配置仓库地址一致。如果是 built-in，则填写火种节点 IP}。# (9)
 
-    # 使用已有的仓库，需要保证网络联通
-    # type: external
-    # externalRegistry: external-registry.daocloud.io # 已有镜像仓库的 IP 地址或者域名
-    # externalRegistryUsername: admin      # 只有 type: external 且推镜像时需要用户名和密码的情况下需要定义
-    # externalRegistryPassword: Harbor12345  # 只有 type: external 且推镜像时需要用户名和密码的情况下需要定义
-    # externalScheme: https # place holder for now
+    # type: external  # (10)
+    # externalRegistry: external-registry.daocloud.io # (11)
+    # externalRegistryUsername: admin   # (12)
+    # externalRegistryPassword: Harbor12345  # (13)
+    # externalScheme: https # (14)
     
-    addonOfflinePackagePath: "Please-replace-with-Your-Real-Addon-Offline-Package-PATH-on-bootstrap-Node" # addon 离线包文件的绝对路径，如果不需要 addon 离线化可以注释
+    addonOfflinePackagePath: "Please-replace-with-Your-Real-Addon-Offline-Package-PATH-on-bootstrap-Node" # (15)
 
   # kubean 所需要的仓库配置
   imageConfig: 
-    imageRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE} # 如果选择的已有的仓库，需要填写外部镜像仓库地址
-    binaryRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean # 如果选择的已有的仓库，需要填写外部 MinIO 地址
+    imageRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE} # (16)
+    binaryRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean # (17)
 
   # RPM 或者 DEB 安装的源头
   repoConfig: 
-    # `centos` using CentOS, RedHat,kylin AlmaLinux or Fedora
-    # `debian` using Debian
-    # `ubuntu` using Ubuntu
-
-    # centos
-    repoType: centos
-    # OS Package path, cannot be empty
-    # osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node"
-    # OS ISO file path, cannot be empty
-    isoPath: "Please-replace-with-Your-Real-ISO-PATH-on-bootstrap-Node" # 操作系统 ISO 文件的绝对路径
-    osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node" # 操作系统 osPackage 文件的绝对路径
+    repoType: centos # (18)
+    # osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node" # (19)
+    isoPath: "Please-replace-with-Your-Real-ISO-PATH-on-bootstrap-Node" # (20) 
+    osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node" # (21)
     dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos/$releasever/os/$basearch" 
 
-    # 如果是 kylin，安装器将会选择 containerd，所以需要将 dockerRepo 设置为空
-    # dockerRepo: ""
-
-    # 如果是 redhat
-    # dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/redhat/$releasever/os/$basearch" 
+    # dockerRepo: "" # (22)
+    # dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/redhat/$releasever/os/$basearch" # (23)
 
     extraRepos:
       - http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos-iso/\$releasever/os/\$basearch  
@@ -125,9 +108,33 @@ spec:
     serviceCIDR: 100.64.0.0/13
   cri:
     criProvider: containerd
-    # criVersion only take effect in online mode, dont set it in offline mode
-    # criVersion: 1.6.8
+    # criVersion: 1.6.8 # (24)
 ```
+
+1. 集群名称
+2. 有 3 个可选项：NodePort (default)、metallb、cloudLB (Cloud Controller)，建议生产环境使用 metallb
+3. 当 loadBalancer.type 是 metallb 时必填，为 DCE 提供 UI 和 OpenAPI 访问权限
+4. 别丢弃/32, 当 loadBalancer.type 是 metallb 时必填，用作 GLobal 集群的 Insight 数据采集入口，子集群的 insight-agent 可以向这个 VIP 报告数据
+5. 指定 ssh 私钥，定义后无需再定义节点的 ansibleUser、ansiblePass
+6. 对于 7 节点模式：至少 3 个工作节点应该被打上该污点，仅作为 ES 的工作节点
+7. 可以使用自己搭建的 ntpServer
+8. 支持 3 个选项：built-in, external, online
+9. 可选。内置镜像仓库的域名，并在每个节点的 /etc/hosts 和 coredns 的 hosts 区域进行域名解析的配置
+10. 使用已有的仓库，需要保证网络联通
+11. 已有镜像仓库的 IP 地址或者域名
+12. 只有 type: external 且推镜像时需要用户名和密码的情况下才需要定义此项
+13. 只有 type: external 且推镜像时需要用户名和密码的情况下才需要定义此项
+14. 这是一个占位符
+15. addon 离线包文件的绝对路径，如果不需要 addon 离线化可以注释掉
+16. 如果选择了已有仓库，需要填写外部镜像仓库地址
+17. 如果选择了已有仓库，需要填写外部 MinIO 地址
+18. `centos` 表示使用 CentOS、RedHat、kylin AlmaLinux 或 Fedora；`debian` 表示使用 Debian；`ubuntu` 表示使用 Ubuntu
+19. 操作系统包的路径，不得为空
+20. 操作系统 ISO 文件的绝对路径，不得为空
+21. 操作系统 osPackage 文件的绝对路径
+22. 如果是 kylin，安装器将会选择 containerd，所以需要将 dockerRepo 设置为空
+23. 如果是 redhat
+24. criVersion 仅在 online 模式下生效，请勿将其设置为 offline 模式
 
 ## 关键字段
 
@@ -162,22 +169,27 @@ spec:
 
 ## 场景配置说明
 
-### **负载均衡选择，支持 NodePort 、metallb、cloudLB**
+### 负载均衡选择
+
+支持 3 个选项：NodePort、metallb、cloudLB
 
 ```yaml
   loadBalancer:
-	## if loadBalancer is metallb
-    type: metallb # NodePort(default), metallb, cloudLB (Cloud Controller)
-    istioGatewayVip: xx.xx.xx.xx/32 # DO REMOVE those *Vip lines if loadBalancer != metallb.
-    insightVip: xx.xx.xx.xx/32      # Keep the /32
+    type: metallb # (1)
+    istioGatewayVip: xx.xx.xx.xx/32 # (2)
+    insightVip: xx.xx.xx.xx/32  # (3)
 
-	## if loadBalancer is NodePort
+	  # 如果 loadBalancer 是 NodePort
     type: NodePort
 
-	## cloudLB is todo state
+	  ## cloudLB 特性目前处于 todo 状态
 ```
 
-### **1/4/7 节点模式**
+1. 支持 3 个选项：NodePort(default), metallb, cloudLB (Cloud Controller)
+2. 如果 loadBalancer != metallb，请移除这一行
+3. 记住要保留 /32
+
+### 1/4/7 节点模式
 
 ```yaml
   ## all in one 模式
@@ -221,82 +233,87 @@ spec:
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
-      nodeTaints:   # for 7 node mode: at least 3 worker nodes should carry below taint(ES-Only nodes)
+      nodeTaints:   # (1)
         - "node.daocloud.io/es-only=true:NoSchedule"
     - nodeName: "g-worker2"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
-      nodeTaints:   # for 7 node mode: at least 3 worker nodes should carry below taint(ES-Only nodes)
+      nodeTaints:   # (1)
         - "node.daocloud.io/es-only=true:NoSchedule"
     - nodeName: "g-worker2"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
-      nodeTaints:   # for 7 node mode: at least 3 worker nodes should carry below taint(ES-Only nodes)
+      nodeTaints:   # (1)
         - "node.daocloud.io/es-only=true:NoSchedule"
 ```
 
-### **镜像仓库模式，支持三种：在线、内置、已有**
+1. 对于 7 节点模式：至少 3 个工作节点应该被打上该污点，仅作为 ES 的工作节点
+
+### 镜像仓库模式
+
+支持三种模式：online, built-in, external
 
 ```yaml
   registry: 
 
-    # 在线模式，设置为在线模式后，无需定义 spec.imageConfig、spec.repoConfig
-    type: online
+    type: online # (1)
 
-    # 使用内置的仓库，由安装器进行部署安装
-    type: built-in # options: built-in, external, online
-    # builtinRegistryDomainName: # 可选。内置镜像仓库的域名，并在每个节点的 /etc/hosts 和 coredns 的 hosts 区域进行域名解析的配置。
+    type: built-in # (2)
+    # builtinRegistryDomainName: # (3)
 
-    # 使用已有的仓库，需要保证网络联通
-    type: external
-    externalRegistry: external-registry.daocloud.io # 已有镜像仓库的 IP 地址或者域名
-    externalRegistryUsername: admin      # 只有 type: external 且推镜像时需要用户名和密码的情况下需要定义
-    externalRegistryPassword: Harbor12345  # 只有 type: external 且推镜像时需要用户名和密码的情况下需要定义
-    externalScheme: https # place holder for now
-    
+    type: external # (4)
+    externalRegistry: external-registry.daocloud.io # (5)
+    externalRegistryUsername: admin      # (6)
+    externalRegistryPassword: Harbor12345  # (6)
+    externalScheme: https # (7)
 ```
 
-### **Kubean 组件安装集群配置**
+1. 在线模式，设置为在线模式后，无需定义 spec.imageConfig、spec.repoConfig
+2. 使用内置的仓库，由安装器进行部署安装
+3. 可选。内置镜像仓库的域名，并在每个节点的 /etc/hosts 和 coredns 的 hosts 区域进行域名解析的配置
+4. 使用已有的仓库，需要保证网络联通
+5. 已有镜像仓库的 IP 地址或者域名
+6. 只有 type: external 且推镜像时需要用户名和密码的情况下才需要定义此项
+7. 这是一个占位符
+
+### Kubean 组件安装集群配置
 
 ```yaml
   # kubean 所需要的仓库配置
   imageConfig: 
-    imageRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE} 或者 上述“自定义的内置域名”} # 如果选择的已有的仓库，需要填写外部镜像仓库地址
-    binaryRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean # 如果选择的已有的仓库，需要填写外部 MinIO 地址
+    imageRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE} 或者 上述“自定义的内置域名”} # (1)
+    binaryRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean # (2)
 
   # RPM 或者 DEB 安装的源头
   repoConfig: 
-    # `centos` using CentOS, RedHat,kylin AlmaLinux or Fedora
-    # `debian` using Debian
-    # `ubuntu` using Ubuntu
-
-    # centos
-    repoType: centos
-    # OS Package path, cannot be empty
-    # osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node"
-    # OS ISO file path, cannot be empty
-    isoPath: "Please-replace-with-Your-Real-ISO-PATH-on-bootstrap-Node" # 操作系统 ISO 文件的绝对路径
-    osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node" # 操作系统 osPackage 文件的绝对路径
+    repoType: centos # (3)
+    isoPath: "Please-replace-with-Your-Real-ISO-PATH-on-bootstrap-Node" # (4)
+    osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node" # (5)
     dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos/$releasever/os/$basearch" 
-    
-    # 如果是 kylin，安装器将会选择 containerd，所以需要将 dockerRepo 设置为空
-    # dockerRepo: ""
 
-    # 如果是 redhat
-    # dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/redhat/$releasever/os/$basearch" 
+    # dockerRepo: "" # (6)
+    # dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/redhat/$releasever/os/$basearch" # (7)
     
     extraRepos:
       - http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos-iso/\$releasever/os/\$basearch 
       - http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos/\$releasever/os/\$basearch
  
-      #  如果系统是 RedHat 8 需要使用下方参数
+      #  如果系统是 RedHat 8，需要使用以下参数
       #- http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/redhat-iso/\$releasever/os/\$basearch/AppStream
       #- http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/redhat-iso/\$releasever/os/\$basearch/BaseOS
       #- http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/redhat/\$releasever/os/\$basearch
 
-      #  如果系统是 kylin 需要使用下方参数
+      #  如果系统是 kylin，需要使用以下参数
       #- http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/kylin-iso/\$releasever/os/\$basearch
       #- http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/kylin/\$releasever/os/\$basearch
 ```
+
+1. 如果选择了已有的仓库，需要填写外部镜像仓库地址
+2. 如果选择了已有的仓库，需要填写外部 MinIO 地址
+3. `centos` 表示使用 CentOS、RedHat、kylin AlmaLinux 或 Fedora；`debian` 表示使用 Debian；`ubuntu` 表示使用 Ubuntu
+4. 操作系统 ISO 文件路径，不得为空
+5. 操作系统 osPackage 文件的绝对路径，不得为空
+6. 如果是 kylin，安装器将会选择 containerd，所以需要将 dockerRepo 设置为空
+7. 如果是 redhat
