@@ -4,7 +4,7 @@
 
 ## 机器准备
 
-### All-in-One 模式
+### all-in-One 模式
 
 | **数量** | **服务器角色** | **服务器用途**                             | **cpu 数量** | **内存容量** | **系统硬盘** | **未分区的硬盘** |
 | -------- | -------------- | ------------------------------------------ | ------------ | ------------ | ------------ | ---------------- |
@@ -57,7 +57,7 @@
 # 下载脚本
 curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
 
-# 添加可执行权限``
+# 添加可执行权限
 chmod +x install_prerequisite.sh
 
 # 开始安装

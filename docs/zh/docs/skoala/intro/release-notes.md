@@ -69,7 +69,7 @@
 
 - **优化** 升级 gateway-api 到 v0.6.0
 - **优化** 待更新资源获取由 clusterpedia 改为 client-go
-- **优化** Sentinel 应用监控模版
+- **优化** Sentinel 应用监控模板
 
 ## 2022-12-30
 
