@@ -20,20 +20,20 @@
 
         如果集群中已安装所有依赖项，请确保依赖项版本符合要求：
         
-        - helm ≥ 3.9.4
-        - skopeo ≥ 1.9.2
-        - kubectl ≥ 1.22.0
-        - yq ≥ 4.27.5
+        - helm ≥ 3.11.1
+        - skopeo ≥ 1.11.1
+        - kubectl ≥ 1.25.6
+        - yq ≥ 4.31.1
 
 ## 下载和安装
 
 1. 在 k8s 集群控制平面节点（Master 节点）下载社区版的对应离线包并解压，或者从[下载中心](../../../download/dce5.md)下载离线包并解压。
 
     ```bash
-    # 假定版本 VERSION=0.4.0
-    export VERSION=v0.4.0
+    # 假定版本 VERSION=0.5.0
+    export VERSION=v0.5.0
     wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION-amd64.tar
-    tar -xvf offline-centos7-community-$VERSION-amd64.tar
+    tar -xvf offline-community-$VERSION-amd64.tar
     ```
 
 2. 准备镜像。
@@ -101,8 +101,8 @@
 3. 在 k8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件。
 
     ```shell
-    # 假定 VERSION 为 v0.4.0
-    export VERSION=v0.4.0
+    # 假定 VERSION 为 v0.5.0
+    export VERSION=v0.5.0
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     ```
 
@@ -170,6 +170,9 @@
 
         - 参数 -p 指定解压离线包的 offline 目录。
         - 有关 clusterConfig.yaml 文件设置，请参考[在线安装第 2 步](online.md#_2)。
+        - `-z` 最小化安装
+        - `-c` 指定集群配置文件。使用 NodePort 暴露控制台时不需要指定 `-c`。
+        - `-d` 开启 debug 模式
 
 6. 安装完成后，命令行会提示安装成功。恭喜您！
    现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！

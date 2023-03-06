@@ -66,7 +66,7 @@ spec:
 
     # 支持内置、已有、在线
     type: built-in # options: built-in, external, online
-    builtinRegistryDomainName: ${跟上述配置仓库地址一致。如果是 built-in ,则填写火种节点 IP} # 可选。内置镜像仓库的域名，并在每个节点的 /etc/hosts 和 coredns 的 hosts 区域进行域名解析的配置。
+    # builtinRegistryDomainName: ${跟上述配置仓库地址一致。如果是 built-in ,则填写火种节点 IP} # 可选。内置镜像仓库的域名，并在每个节点的 /etc/hosts 和 coredns 的 hosts 区域进行域名解析的配置。
 
     # 使用已有的仓库，需要保证网络联通
     # type: external
@@ -74,10 +74,12 @@ spec:
     # externalRegistryUsername: admin      # 只有 type: external 且推镜像时需要用户名和密码的情况下需要定义
     # externalRegistryPassword: Harbor12345  # 只有 type: external 且推镜像时需要用户名和密码的情况下需要定义
     # externalScheme: https # place holder for now
-  
+    
+    addonOfflinePackagePath: "Please-replace-with-Your-Real-Addon-Offline-Package-PATH-on-bootstrap-Node" # addon 离线包文件的绝对路径，如果不需要 addon 离线化可以注释
+
   # kubean 所需要的仓库配置
   imageConfig: 
-    imageRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE} 或者 上述“自定义的内置域名”} # 如果选择的已有的仓库，需要填写外部镜像仓库地址
+    imageRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE} # 如果选择的已有的仓库，需要填写外部镜像仓库地址
     binaryRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean # 如果选择的已有的仓库，需要填写外部 MinIO 地址
 
   # RPM 或者 DEB 安装的源头
@@ -91,7 +93,8 @@ spec:
     # OS Package path, cannot be empty
     # osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node"
     # OS ISO file path, cannot be empty
-    isoPath: "Please-replace-with-Your-Real-ISO-PATH-on-bootstrap-Node" # 操作系统 ISO 文件的路径 ，离线模式下必须定义
+    isoPath: "Please-replace-with-Your-Real-ISO-PATH-on-bootstrap-Node" # 操作系统 ISO 文件的绝对路径
+    osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node" # 操作系统 osPackage 文件的绝对路径
     dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos/$releasever/os/$basearch" 
 
     # 如果是 kylin，安装器将会选择 containerd，所以需要将 dockerRepo 设置为空
@@ -124,12 +127,6 @@ spec:
     criProvider: containerd
     # criVersion only take effect in online mode, dont set it in offline mode
     # criVersion: 1.6.8
-  addons:
-    ingress:
-      version: 1.2.3
-    dns:
-      type: CoreDNS
-      version: v1.8.4
 ```
 
 ## 关键字段
@@ -250,7 +247,7 @@ spec:
 
     # 使用内置的仓库，由安装器进行部署安装
     type: built-in # options: built-in, external, online
-    builtinRegistryDomainName: ${跟上述配置仓库地址一致。如果是 built-in ,则填写火种节点 IP} # 可选。内置镜像仓库的域名，并在每个节点的 /etc/hosts 和 coredns 的 hosts 区域进行域名解析的配置。
+    # builtinRegistryDomainName: # 可选。内置镜像仓库的域名，并在每个节点的 /etc/hosts 和 coredns 的 hosts 区域进行域名解析的配置。
 
     # 使用已有的仓库，需要保证网络联通
     type: external
@@ -258,6 +255,7 @@ spec:
     externalRegistryUsername: admin      # 只有 type: external 且推镜像时需要用户名和密码的情况下需要定义
     externalRegistryPassword: Harbor12345  # 只有 type: external 且推镜像时需要用户名和密码的情况下需要定义
     externalScheme: https # place holder for now
+    
 ```
 
 ### **Kubean 组件安装集群配置**
@@ -279,9 +277,10 @@ spec:
     # OS Package path, cannot be empty
     # osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node"
     # OS ISO file path, cannot be empty
-    isoPath: "Please-replace-with-Your-Real-ISO-PATH-on-bootstrap-Node" # 操作系统 ISO 文件的路径 ，离线模式下必须定义
+    isoPath: "Please-replace-with-Your-Real-ISO-PATH-on-bootstrap-Node" # 操作系统 ISO 文件的绝对路径
+    osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node" # 操作系统 osPackage 文件的绝对路径
     dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos/$releasever/os/$basearch" 
-
+    
     # 如果是 kylin，安装器将会选择 containerd，所以需要将 dockerRepo 设置为空
     # dockerRepo: ""
 
