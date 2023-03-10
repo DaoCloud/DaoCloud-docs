@@ -8,7 +8,7 @@
 
 ### API
 
-- **新增** `mcamel-minio` helm-docs 模版文件。
+- **新增** `mcamel-minio` helm-docs 模板文件。
 - **新增** `mcamel-minio` 应用商店中的 Operator 只能安装在 mcamel-system。
 - **新增** `mcamel-minio` 支持 cloud shell。
 - **新增** `mcamel-minio` 支持导航栏单独注册。

@@ -21,18 +21,18 @@
 
     如果集群中已安装所有依赖项，请确保依赖项版本符合要求：
           
-    - helm ≥ 3.9.4
-    - skopeo ≥ 1.9.2
-    - kubectl ≥ 1.22.0
-    - yq ≥ 4.27.5
+    - helm ≥ 3.11.1
+    - skopeo ≥ 1.11.1
+    - kubectl ≥ 1.25.6
+    - yq ≥ 4.31.1
 
 ## 下载和安装
 
 1. 在 K8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../../download/dce5.md)）。
 
     ```shell
-    # 假定 VERSION 为 v0.4.0
-    export VERSION=v0.4.0
+    # 假定 VERSION 为 v0.5.0
+    export VERSION=v0.5.0
     curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```

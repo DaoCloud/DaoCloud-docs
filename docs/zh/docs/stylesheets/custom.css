@@ -44,3 +44,13 @@ embed {
 .md-grid {
   max-width: 94%; /* or 100%, if you want to stretch to full-width */
 }
+
+
+img {
+  height: auto;
+  width: auto;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 4px;
+  background-color: #fff;
+}

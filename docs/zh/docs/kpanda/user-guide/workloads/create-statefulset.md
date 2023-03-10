@@ -118,7 +118,7 @@
 
 === "网络配置"
 
-    1. 容器网卡配置，请参考[工作负载使用 IP 池](../../network/modules/spiderpool/usage.md)
+    1. 容器网卡配置，请参考[工作负载使用 IP 池](../../../network/modules/spiderpool/usage.md)
     2. DNS 配置
     应用在某些场景下会出现冗余的 DNS 查询。Kubernetes 为应用提供了与 DNS 相关的配置选项，能够在某些场景下有效地减少冗余的 DNS 查询，提升业务并发量。
     
