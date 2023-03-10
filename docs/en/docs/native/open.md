@@ -31,6 +31,10 @@ This page lists activity in cloud native open source projects in alphabetical or
   
      The main new features of this version: increase the TrafficControl function to control the transmission of Pod traffic; support IPsec certificate authentication; enrich Antrea-native policies; enrich multicast functions; increase multi-cluster gateway functions; enrich secondary network IPAM functions.
 
+- [APISIX Cloud Native Gateway v3.2.0 Released](https://github.com/apache/apisix/releases/tag/3.2.0)
+
+    Release features: support for service discovery on four layers, a new plugin to convert RESTful requests to GraphQL, support for setting log format on each logging plugin, new plugin to support interconversion between JSON and XML.
+
 - [APISIX Cloud Native Gateway v3.1.0 Released](https://github.com/apache/apisix/blob/release/3.1/CHANGELOG.md#310)
 
      Major new features in this release: support for saving plugin-specific fields encrypted in etcd, allowing sensitive information to be stored in external security services, experimental support for gRPC-based etcd configuration synchronization, new Consul-based service discovery, and the addition of a built-in debugger plugin.
@@ -175,6 +179,12 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support for automatic renewal of machine certificates provided by the Kubeadm control plane provider, the ability to publish and consume cluster API images from the new container image registry registry.k8s.io, allowing the creation of clusters without taints on control plane nodes , clusterctl can now manage IPAM and RuntimeExtension providers.
 
+- [Clusternet Distributed Cloud Native Multi-Cluster Management Project Selected for CNCF Sandbox Project](https://www.51cto.com/article/748691.html)
+
+    On March 8, [Clusternet](https://github.com/clusternet/clusternet) was selected by the CNCF Foundation TOC Committee as a CNCF Sandbox project.
+    Clusternet extends the powerful single-cluster capability of Kubernetes to multiple clusters in a component-based, non-intrusive and lightweight way, and is well compatible with the cloud-native ecosystem.
+    In the future, Clusternet will explore richer multicluster scenarios and promote a fully functional and standardized multicluster framework.
+
 - [Clusternet multi-cloud multi-cluster management project v0.13.0 released](https://github.com/clusternet/clusternet/releases/tag/v0.13.0)
 
      The main new features of this version: increase the routing function from the parent cluster to the sub-cluster pod, add scheduler configuration and support custom scheduler plug-ins, support discovery v1beta1, only provide support for discovering endpointslices for k8s v1.21.0 and later versions, Aggregate worker node labels using thresholds, support scheduling by cluster subgroup, update RBAC rules for clusternet-agent running in capi.
@@ -188,6 +198,12 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Consul Service Discovery Framework v1.13.0 release (CNCF project)](https://github.com/hashicorp/consul/releases/tag/v1.13.0)
 
      The main new features of this version: Remove support for Envoy 1.19; Cluster Peering supports federated Consul clusters for service grid and traditional service discovery; allows routing egress traffic through terminal gateways in transparent proxy mode without modifying the directory.
+
+- [containererd completes fuzzy test audit](https://mp.weixin.qq.com/s/IUgdPaT6OAhPW5uCPlteEA)
+
+    This [containerd audit](https://containerd.io/img/ADA-fuzzing-audit-21-22.pdf) adds a total of 28 fuzzer testers (fuzzer), covering a wide range of container runtime features.
+    During this audit, a [vulnerability](https://github.com/containerd/containerd/security/advisories/GHSA-259w-8hf6-59c2) was found in the OCI image import process: importing a malicious image could lead to a DoS attack on the node .
+    This issue has been fixed in containerd 1.5.18 and 1.6.18.
 
 - [Contour Kubernetes ingress controller v1.22.0 release (CNCF project)](https://github.com/projectcontour/contour/releases/tag/v1.22.0)
 
@@ -326,6 +342,11 @@ This page lists activity in cloud native open source projects in alphabetical or
      The main new features of this version: add constraint mode verification tests, add TLS support for external data providers, add pod security context variables, support verification sub-resources, allow skipping tests in gator verification, add dockerfile for gator, add opencensus and stackdriver exporter.
 
 ### H
+
+- [HoloInsight: an intelligent observable platform open sourced by Ant Group](https://mp.weixin.qq.com/s/Tx7EKr0P_rhO-kltlW-wuQ)
+
+    [HoloInsight](https://github.com/traas-stack/holoinsight) is an open source version of AntMonitor, an observation platform by Ant Group, which focuses on real-time log-based observation capabilities, business metrics monitoring, and timing intelligence and AIOps.
+    It also incorporates other data types that have consensus in the observable domain, such as Trace, Event, etc.
 
 - [HAProxy Kubernetes Ingress Controller v1.8 released](https://www.haproxy.com/blog/announcing-haproxy-kubernetes-ingress-controller-1-8/)
 
@@ -906,6 +927,10 @@ This page lists activity in cloud native open source projects in alphabetical or
      The main new features of this version: Vultr integration, Linode SD failure count indicator and `prometheus_ready` indicator added, `stripDomain` added to the template function, promtool supports using matchers when querying label values, and proxy pattern identifiers added.
 
 ### R
+
+- [Rainbond Cloud Native Multi-Cloud Application Management Platform v5.12.0 Released](https://github.com/goodrain/rainbond/releases/tag/v5.12.0-release)
+
+    Release features: support for platform-level plugins and capability extensions, new pipeline plugins, support for creating components via OpenAPI, and optimized Helm repository installation application logic.
 
 - [Rainbond cloud-native multi-cloud application management platform v5.9.0 released](https://github.com/goodrain/rainbond/releases/tag/v5.9.0-release)
 

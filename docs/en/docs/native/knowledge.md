@@ -78,6 +78,11 @@ This page shares some technical articles related to cloud native, and we hope th
 
 ### Best Practices
 
+- [Running StatefulSet across clusters](https://mp.weixin.qq.com/s/y1dEO8Fb3SxqQUW9WrEsHQ)
+
+    Running StatefulSet reliably across clusters may require addressing both network and storage issues.
+    The article describes one way to configure and manage stateful application services across clusters, based on an example.
+
 - [How can we develop open source communities based on cloud-native projects?](https://thenewstack.io/how-do-we-cultivate-community-within-cloud-native-projects/)
 
     Developing an open source community based on a cloud-native project starts with knowing who will care about your project, who are the end users, stakeholders and contributors?
@@ -373,6 +378,12 @@ This page shares some technical articles related to cloud native, and we hope th
     Harbor v2.2 and later versions support the collection and use of related indicators. This article introduces how to use Prometheus to easily capture some key indicators of Harbor instances.
 
 ### Tool recommendation
+
+- [Kubernetes Exploration for Solving Noisy Neighbor Scenarios](https://mp.weixin.qq.com/s/g28ett0Z5LR0sHTyOljCRg)
+
+    The noisy neighbor problem occurs when one tenant's performance degrades due to another tenant's activity.
+    While Kubernetes provides a CPU manager, device plug-in manager, and topology manager to coordinate resource allocation and ensure optimal performance of critical workloads, it does not fundamentally address the problem.
+    In response, Intel Resource Provisioning Technology RDT supports limiting access to shared resources for non-critical workloads by configuring the appropriate RDT classes for each of the three Kubernetes QoS levels.
 
 - [How to Play with Application Resourcing in the FinOps Era](https://mp.weixin.qq.com/s/2ulduH_zKKcCsB64sVI0bg)
 
@@ -678,6 +689,12 @@ This page shares some technical articles related to cloud native, and we hope th
 
 ### Product comparison
 
+- [Kubernetes Policy Engines: OPA vs. Kyverno vs. jsPolicy](https://mp.weixin.qq.com/s/bMPraw5Q8-DZqCoJLJe2jQ)
+
+    The article discusses the concept of a Kubernetes policy engine and compares three different Kubernetes policy engines: OPA, Kyverno, and jsPolicy.
+    The conclusion is that jsPolicy is recommended for those who want a more straightforward and simple approach, or are proficient in JavaScript and TypeScript.
+    If YAML is more preferred and you want to continue using Kubernetes resources directly, Kyverno is a good choice.
+
 - [Comparison of 12 open source monitoring tools that have been open sourced in the past two decades](https://mp.weixin.qq.com/s/ByQ3skUrcf1c_DPD4dCbRg)
 
     The article briefly introduces and analyzes 12 typical open source monitoring tools, and points out their respective advantages and disadvantages.
@@ -717,6 +734,13 @@ This page shares some technical articles related to cloud native, and we hope th
     The article starts from the introduction of mainstream APM products (compared with Pinpoint, Jaeger, Skywalking, Tingyun, Tencent Cloud + Alibaba Cloud Arms and Datadog), and passes through several important dimensions in the production environment, such as product experience, Agent capability, alarm + DB support , cloud-native support capabilities, large data screens, etc., and give suggestions for APM selection solutions.
 
 ### Frontier hotspot
+
+- [The first domestic experience of landing a community dual-stack Istio solution, the implementation code is open source](https://mp.weixin.qq.com/s/E9HZIkSbZ3BLetDL0ZhzvA)
+
+    In the industry's widely used service grid projects (Istio and Linkerd as examples), support for dual-stack technology is still missing.
+    In order to better implement Service Grid and Kubernetes in the dual-stack support to work together.
+    The article focuses on the implementation scheme of Istio in dual-stack technology and the implementation scenario of this scheme in mobile cloud landing.
+    However, this solution is only [an experimental branch](https://github.com/istio/istio/tree/experimental-dual-stack) and does not refine unit and integration tests.
 
 - [Where to Go After Microservices Enter Deep Water](https://mp.weixin.qq.com/s/yBY-E-tndUJCmA4KYRfrDw)
 
@@ -903,6 +927,11 @@ This page shares some technical articles related to cloud native, and we hope th
     The risk of attack is greatest when the Kubernetes authentication or change webhook service is publicly exposed. This vulnerability is a 0day vulnerability.
 
 ### eBook
+
+- [Excellent Case Collection of Cloud Native Architecture Containers & Microservices](https://developer.aliyun.com/ebook/7898?spm=a2c6h.20345107.ebook-index.7.195a7863AvgDpI)
+
+    The case set is a summary of relevant customers' experience sharing and best practices in building production business systems through AliCloud cloud-native products.
+    There are 37 enterprise cases centered on container microservices, covering 7 industries and 10+ products such as ACK, MSE, ACR, ASK, ACK One, ASM, and observable.
 
 - [Chinese version of white paper "Assessment of Cloud Native Maturity Matrix"](https://mp.weixin.qq.com/s/xLuAOXwCVif7KrrpZIcUow)
 

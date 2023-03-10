@@ -50,6 +50,11 @@
 
     更新内容包括：Azure 容器注册中心新增软删除功能，可恢复误删除的工件；允许中止 AKS 集群或代理池上的任何操作；支持多实例 GPU（MIG）；将 Azure 网络策略管理器（NPM）扩展到 Windows server 2022 的 AKS 集群；集成用于 AKS 私有集群的 API Server VNET。
 
+- [阿里云容器镜像服务 ACR 正式推出云原生制品中心](https://mp.weixin.qq.com/s/atQF7WNfeodW3eizw6e1tg)
+
+    云原生制品中心为容器开发者免费提供来源于阿里云官方、龙蜥社区的安全可信容器基础镜像。
+    包含应用容器化基础 OS 镜像、基础语言镜像、AI/大数据相关镜像类别，覆盖 ARM、ARM 64、x64、x86-64 多种系统架构。
+
 - [阿里云微服务引擎 MSE 2022 年 12 月更新](https://mp.weixin.qq.com/s/j2si2vqTTcEugAWazpKL2A)
 
     更新内容：注册配置中心 zookeeper 支持导出快照和事务日志、云原生网关支持 HTTP/3、微服务洞察支持无损上下线过程中的日志采集以及关键节点信息展示。
@@ -318,7 +323,13 @@
     ODC 将 Kubernetes、Linux 容器、微服务和 AWS 原生云服务与 DORA 高性能级 CI/CD、企业级安全性以及基于模型的可视化开发相结合。
     支持大规模交易量和数据需求，通过高级可视化编程和人工智能提高开发人员生产力，实现高性能 CI/CD 实践。
 
-### P, Q
+### P
+
+- [PerfectScale 推出同名 Kubernetes 成本管理 SaaS 平台](https://www.perfectscale.io/blog/perfectscales-saas-platform-is-now-available)
+
+    PerfectScale 是业界首个专门为提高 K8s 环境的持久性和成本效益而建立的持续优化方案。
+    通过人工智能算法来评估使用模式和性能和成本指标，该平台提供了多集群、多云的可观测性，支持弹性和性能风险检测、资源浪费检测，
+    支持问题优先级排序，提供 GitOps 友好的的补救措施建议，支持预测系统变化对环境的影响等。
 
 - [Portworx Enterprise 2.12 云原生数据管理平台发布](https://docs.portworx.com/release-notes/portworx/#2-12-0)
 
@@ -327,6 +338,8 @@
 - [Portworx Backup v2.3 数据备份产品发布](https://portworx.com/blog/announcing-portworx-backup-2-3-for-simpler-backup-management-and-flexible-licensing/)
 
     该版本主要新特性：支持与其他用户和组共享备份、支持根据特定的基础设施定制备份许可证、支持使用用户提供的或默认的密钥为不同类型的备份提供加密支持。
+
+### Q
 
 - [青云发布云原生虚拟化平台 KSV 1.6](https://mp.weixin.qq.com/s/XxOWJdLRHS2s_Ev_N9qEgw)
 
@@ -462,6 +475,10 @@
 - [Traefik Labs 发布云原生网络平台 Traefik Hub 1.0](https://traefik.io/blog/announcing-the-general-availability-of-traefik-hub-1-0/)
 
     Traefik Hub 1.0 允许用户可以使用 Traefik 或 Nginx 快速、安全地发布 Kubernetes 或 Docker 容器。Traefik Hub 提供了为 Kubernetes 集群联网所需的集中控制平面，而无需部署容器 sidecar 来运行网络软件。其支持通过安全加密隧道和直接私有连接进行容器联网，通过 JWT 或 OIDC 为服务添加访问控制，通过 GitOps 实现规模化的自动化等，并配有工作空间促进跨团队协作等。
+
+- [腾讯云容器服务 TKE 2 月更新](https://mp.weixin.qq.com/s/w_rxP8K3C6nccxAsPP3tNw)
+
+    更新内容：集群节点升级入口支持 docker/containerd 组件小版本更新、上线 CFS-Turbo CSI 存储插件、集群日志采集规则支持对元数据的自定义配置、注册节点支持 GPU、支持通过云上控制台一键在用户 IDC 创建、管理和升级 Kubernetes 集群。
 
 - [腾讯云云原生 API 网关更新](https://cloud.tencent.com/product/events)
 
