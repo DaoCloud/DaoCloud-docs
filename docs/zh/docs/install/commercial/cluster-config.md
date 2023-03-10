@@ -12,7 +12,7 @@ apiVersion: provision.daocloud.io/v1alpha2
 kind: ClusterConfig
 metadata: 
 spec:
-  clusterName: my-cluster # # (1)
+  clusterName: my-cluster # (1)
   loadBalancer:
     type: metallb # (2)
     istioGatewayVip: xx.xx.xx.xx/32 # (3)
@@ -44,46 +44,45 @@ spec:
       ip: xx.xx.xx.xx
       ansibleUser: "***"
       ansiblePass: "****"
-      nodeTaints:  # (6)
+      nodeTaints:  # (7)
         - "node.daocloud.io/es-only=true:NoSchedule"
     - nodeName: "g-worker3"
       ip: xx.xx.xx.xx
       ansibleUser: "***"
       ansiblePass: "****"
-      nodeTaints: # (6)
+      nodeTaints: # (8)
         - "node.daocloud.io/es-only=true:NoSchedule"
 
-  ntpServer: # (7)
+  ntpServer: # (9)
     - 0.pool.ntp.org
     - ntp1.aliyun.com
     - ntp.ntsc.ac.cn
   registry: 
 
-    type: built-in # (8)
-    # builtinRegistryDomainName: ${跟上述配置仓库地址一致。如果是 built-in，则填写火种节点 IP}。# (9)
-
-    # type: external  # (10)
-    # externalRegistry: external-registry.daocloud.io # (11)
-    # externalRegistryUsername: admin   # (12)
-    # externalRegistryPassword: Harbor12345  # (13)
-    # externalScheme: https # (14)
+    type: built-in # (10)
+    # builtinRegistryDomainName: ${跟上述配置仓库地址一致。如果是 built-in，则填写火种节点 IP}。# (11)
+    # type: external  # (12)
+    # externalRegistry: external-registry.daocloud.io # (13)
+    # externalRegistryUsername: admin   # (14)
+    # externalRegistryPassword: Harbor12345  # (15)
+    # externalScheme: https # (16)
     
-    addonOfflinePackagePath: "Please-replace-with-Your-Real-Addon-Offline-Package-PATH-on-bootstrap-Node" # (15)
+    addonOfflinePackagePath: "Please-replace-with-Your-Real-Addon-Offline-Package-PATH-on-bootstrap-Node" # (17)
 
   # kubean 所需要的仓库配置
   imageConfig: 
-    imageRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE} # (16)
-    binaryRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean # (17)
+    imageRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE} # (18)
+    binaryRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean # (19)
 
   # RPM 或者 DEB 安装的源头
   repoConfig: 
-    repoType: centos # (18)
-    isoPath: "Please-replace-with-Your-Real-ISO-PATH-on-bootstrap-Node" # (19) 
-    osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node" # (20)
+    repoType: centos # (20)
+    isoPath: "Please-replace-with-Your-Real-ISO-PATH-on-bootstrap-Node" # (21) 
+    osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node" # (22)
     dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos/$releasever/os/$basearch" 
 
-    # dockerRepo: "" # (21)
-    # dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/redhat/$releasever/os/$basearch" # (22)
+    # dockerRepo: "" # (23)
+    # dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/redhat/$releasever/os/$basearch" # (24)
 
     extraRepos:
       - http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos-iso/\$releasever/os/\$basearch  
@@ -107,7 +106,7 @@ spec:
     serviceCIDR: 100.64.0.0/13
   cri:
     criProvider: containerd
-    # criVersion: 1.6.8 # (23)
+    # criVersion: 1.6.8 # (25)
 ```
 
 1. 集群名称
@@ -116,23 +115,25 @@ spec:
 4. 别丢弃/32, 当 loadBalancer.type 是 metallb 时必填，用作 GLobal 集群的 Insight 数据采集入口，子集群的 insight-agent 可以向这个 VIP 报告数据
 5. 指定 ssh 私钥，定义后无需再定义节点的 ansibleUser、ansiblePass
 6. 对于 7 节点模式：至少 3 个工作节点应该被打上该污点，仅作为 ES 的工作节点
-7. 可以使用自己搭建的 ntpServer
-8. 支持 3 个选项：built-in, external, online
-9. 可选。内置镜像仓库的域名，并在每个节点的 /etc/hosts 和 coredns 的 hosts 区域进行域名解析的配置
-10. 使用已有的仓库，需要保证网络联通
-11. 已有镜像仓库的 IP 地址或者域名
-12. 只有 type: external 且推镜像时需要用户名和密码的情况下才需要定义此项
-13. 只有 type: external 且推镜像时需要用户名和密码的情况下才需要定义此项
-14. 这是一个占位符
-15. addon 离线包文件的绝对路径，如果不需要 addon 离线化可以注释掉
-16. 如果选择了已有仓库，需要填写外部镜像仓库地址
-17. 如果选择了已有仓库，需要填写外部 MinIO 地址
-18. `centos` 表示使用 CentOS、RedHat、kylin AlmaLinux 或 Fedora；`debian` 表示使用 Debian；`ubuntu` 表示使用 Ubuntu
-19. 操作系统 ISO 文件的绝对路径，不得为空
-20. 操作系统 osPackage 文件的绝对路径，不得为空
-21. 如果是 kylin，安装器将会选择 containerd，所以需要将 dockerRepo 设置为空
-22. 如果是 redhat
-23. criVersion 仅在 online 模式下生效，请勿将其设置为 offline 模式
+7. 对于 7 节点模式：至少 3 个工作节点应该被打上该污点，仅作为 ES 的工作节点
+8. 对于 7 节点模式：至少 3 个工作节点应该被打上该污点，仅作为 ES 的工作节点
+9. 可以使用自己搭建的 ntpServer
+10. 支持 3 个选项：built-in, external, online
+11. 可选。内置镜像仓库的域名，并在每个节点的 /etc/hosts 和 coredns 的 hosts 区域进行域名解析的配置
+12. 使用已有的仓库，需要保证网络联通
+13. 已有镜像仓库的 IP 地址或者域名
+14. 只有 type: external 且推镜像时需要用户名和密码的情况下才需要定义此项
+15. 只有 type: external 且推镜像时需要用户名和密码的情况下才需要定义此项
+16. 这是一个占位符
+17. addon 离线包文件的绝对路径，如果不需要 addon 离线化可以注释掉
+18. 如果选择了已有仓库，需要填写外部镜像仓库地址
+19. 如果选择了已有仓库，需要填写外部 MinIO 地址
+20. `centos` 表示使用 CentOS、RedHat、kylin AlmaLinux 或 Fedora；`debian` 表示使用 Debian；`ubuntu` 表示使用 Ubuntu
+21. 操作系统 ISO 文件的绝对路径，不得为空
+22. 操作系统 osPackage 文件的绝对路径，不得为空
+23. 如果是 kylin，安装器将会选择 containerd，所以需要将 dockerRepo 设置为空
+24. 如果是 redhat
+25. criVersion 仅在 online 模式下生效，请勿将其设置为 offline 模式
 
 ## 关键字段
 
@@ -187,17 +188,17 @@ spec:
 2. 如果 loadBalancer != metallb，请移除这一行
 3. 记住要保留 /32
 
-### 1/4/7 节点模式
+### 1 / 4 / 7 节点模式
 
 ```yaml
-  ## all in one 模式
+  # all in one 模式
   masterNodes:
     - nodeName: "g-master1" 
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
 
-  ## 3 节点模式
+  # 3 节点模式
   masterNodes:
     - nodeName: "g-master1" 
       ip: xx.xx.xx.xx
@@ -212,7 +213,7 @@ spec:
       ansibleUser: "root"
       ansiblePass: "dangerous"
 
-  ## 7 节点模式
+  # 7 节点模式
   masterNodes:
     - nodeName: "g-master1" 
       ip: xx.xx.xx.xx
@@ -237,17 +238,19 @@ spec:
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
-      nodeTaints:   # (1)
+      nodeTaints:   # (2)
         - "node.daocloud.io/es-only=true:NoSchedule"
     - nodeName: "g-worker2"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
-      nodeTaints:   # (1)
+      nodeTaints:   # (3)
         - "node.daocloud.io/es-only=true:NoSchedule"
 ```
 
 1. 对于 7 节点模式：至少 3 个工作节点应该被打上该污点，仅作为 ES 的工作节点
+2. 对于 7 节点模式：至少 3 个工作节点应该被打上该污点，仅作为 ES 的工作节点
+3. 对于 7 节点模式：至少 3 个工作节点应该被打上该污点，仅作为 ES 的工作节点
 
 ### 镜像仓库模式
 
@@ -264,8 +267,8 @@ spec:
     type: external # (4)
     externalRegistry: external-registry.daocloud.io # (5)
     externalRegistryUsername: admin      # (6)
-    externalRegistryPassword: Harbor12345  # (6)
-    externalScheme: https # (7)
+    externalRegistryPassword: Harbor12345  # (7)
+    externalScheme: https # (8)
 ```
 
 1. 在线模式，设置为在线模式后，无需定义 spec.imageConfig、spec.repoConfig
@@ -274,7 +277,8 @@ spec:
 4. 使用已有的仓库，需要保证网络联通
 5. 已有镜像仓库的 IP 地址或者域名
 6. 只有 type: external 且推镜像时需要用户名和密码的情况下才需要定义此项
-7. 这是一个占位符
+7. 只有 type: external 且推镜像时需要用户名和密码的情况下才需要定义此项
+8. 这是一个占位符
 
 ### Kubean 组件安装集群配置
 
