@@ -64,18 +64,9 @@ This section lists some conventions about a file or folder name for your referen
 - **Only contain** English lower cases and hyphens (`-`)
 - **Do not** contain any of these characters like:
   - Chinese chars
-  - Spaces
-  - `*`
-  - `?`
-  - `\`
-  - `/`
-  - `:`
-  - `#`
-  - `%`
-  - `~`
-  - `{`
-  - `}`
-- Connect words with hyphens (`-`)
+  - spaces
+  - special chars like `*`, `?`, `\`, `/`, `:`, `#`, `%`, `~`, `{`, `}`
+- Connect words with a hyphen (`-`)
 - Keep short：up to 5 English words, avoid repetition, use abbreviations
 - Be descriptive: easy to understand and reflect the doc's subject
 
@@ -98,23 +89,17 @@ This section lists some conventions about a file or folder name for your referen
 
 For more details refer to [DaoCloud Style Guide of Writing](./style.md).
 
-## Acknowledgements
-
-We sincerely thank all the contributors who contribute to DaoCloud website.
-Once a PR you opened have been successfully merged, your ID will appear at the bottom of the page as an author.
-
-If any problem, feel free to reach out to us: [support@daocloud.io](mailto:support@daocloud.io?subject=FROM_DOCS_README) or scan the QR code to chat with developers:
-
-![wechat](./docs/zh/docs/images/assist.png)
-
 ## References
 
 - [DaoCloud Style Guide of Writing](./style.md)
 - [Contribution Guideline](./CONTRIBUTING.md)
-
-## More
-
 - [Docsite Release v1.0](docs/README.md)
 - [Download DCE 5.0](./docs/zh/docs/download/dce5.md)
 - [Install DCE 5.0](./docs/zh/docs/install/intro.md)
 - [Free Trial](./docs/zh/docs/dce/license0.md)
+
+## Thanks to all contributors ❤
+
+<a href="https://github.com/daocloud/daocloud-docs/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=daocloud/daocloud-docs" />
+</a>
