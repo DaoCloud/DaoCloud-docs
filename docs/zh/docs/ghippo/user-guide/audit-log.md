@@ -17,7 +17,7 @@
 
 ## 下载和导出审计日志
 
-1. 使用具有 `Admin` 或 `Audit Owner` 角色的用户登录 Web 控制台。
+1. 使用具有 `admin` 或 `Audit Owner` 角色的用户登录 Web 控制台。
 
     ![登录 web 控制台](../images/lang00.png)
 
