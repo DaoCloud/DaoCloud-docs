@@ -8,7 +8,7 @@ sidebar_label: "Minio"
 ## MinIO 简介
 
 MinIO 是一款高性能、分布式、兼容 S3 的多云对象存储系统套件。MinIO 原生支持 Kubernetes，能够支持所有公有云、私有云及边缘计算环境。
-MinIO 是 GNU AGPL v3 开源的软件定义产品，能够很好地运行在标准硬件如 X86 等设备上。
+MinIO 是 GNU AGPL v3 开源的软件定义产品，能够很好地运行在标准硬件如 x86 等设备上。
 
 ![MinIO 架构](minio-design.png)
 

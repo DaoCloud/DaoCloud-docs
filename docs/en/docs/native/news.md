@@ -4,7 +4,6 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 > We will maintain regularly to ensure the validity of all links and the timeliness of news.
 
-
 ### 2023-05
 
 - [End of May China Academy of Information and Communications Technology officially launched the assessment of cloud consulting, cloud migration, cloud management and cloud disaster recovery in the first half of 2023 (registration closes at the end of May)](https://mp.weixin.qq.com/s/yZxSP5xb5juE9C-UWRoQAw)
@@ -28,6 +27,11 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     The Cost Optimization Series standard assessment aims to evaluate cost optimization services, native cost optimization tools, and hybrid multi-cloud cost optimization tools.
     The Resource Benefit Metrics Assessment is for cloud platform builders, operators, and users to assess the use and effectiveness of cloud resources. Participating companies can choose one or more of the three categories of cloud resource benefit modules: cost, performance, and security, for assessment.
 
+- [April 21-22 InfoQ ArchSummit Global Architect Summit to be held in Shanghai, Call for Topics](https://mp.weixin.qq.com/s/u3EJewx2gO_P-x1xZgCW6Q)
+  
+    The topics identified for the summit include: Exploring Digital Transformation in the Financial Industry, Combining Big Data + Architecture Applications, ToB Software Quality Assurance, Enterprise Architecture Evolution, Application Modernization and Architecture Stability Assurance under Digital Transformation.
+    The summit's [Call for Proposal](https://jinshuju.net/f/PS5OHF) is still in progress, and we welcome proven and implemented practical cases to share at the conference.
+
 - [April 8 and April 22 The 2nd Open Source Cloud Native Developer Day will be held in Shanghai & Beijing, the call for lecturers has been launched](https://mp.weixin.qq.com/s/C9aIJAt2g5AmX-uCewo2kA)
   
     The second annual Open Source Cloud Native Developer Day, co-sponsored by Microsoft and Intel, will explore four key topics: examples of cloud native practices at scale, the latest open source cloud native technologies, the secure software supply chain, and GitOps.
@@ -40,6 +44,17 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [April 15 2023 Cloud Native Community Observability Summit to be Held, Instructor and Sponsor Recruitment Underway (3.10 Deadline)](https://mp.weixin.qq.com/s/erf33B2--kUgLg1D730tOg)
   
     The Cloud Native Community will hold an Observability Summit in Beijing on Saturday, April 15, 2023. Topics will focus on open source projects and applications in observability-related areas, including but not limited to: metrics monitoring, distributed tracking, log collection, technology innovation, application practices, etc.
+
+- [April 8 2023 China's First KCD in Dalian, Call for Topics Opened (3.20 Deadline)](https://mp.weixin.qq.com/s/hO8MLV80Z9CoQLbVTesyOA)
+  
+    Kubernetes Community Days (KCD) Dalian is co-sponsored by CNCF and technology enthusiasts from Huawei Cloud, Flomesh, and Extreme Fox GitLab.
+    The event will focus on open source projects and technical practices in the cloud native ecosystem.
+    The event is tentatively scheduled for April 8 and will cover any open source projects and cloud-native technology practices in the CNCF ecosystem, not limited to Kubernetes itself.
+
+- [April 8 KubeSphere Meetup Shenzhen, Call for Topics (3.27 deadline)](https://mp.weixin.qq.com/s/WSSSdgcm9i9fowLnQstvxg)
+  
+    The Meetup includes lightning talks (10 min) and single/duo talks (40 min).
+    Topics must be related to open source and cloud-native ecosystem, and topics related to KubeSphere are more than welcome.
 
 ### 2023-03
 

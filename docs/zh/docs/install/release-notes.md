@@ -8,8 +8,8 @@
 
 #### 新功能
 
-- **新增** 离线包分离 osPackage，需要在集群配置文件中定义`osPackagePath`
-- **新增** 支持 addon 离线化，需要在集群配置文件中定义`addonOfflinePackagePath`
+- **新增** 离线包分离 osPackage，需要在集群配置文件中定义 `osPackagePath`
+- **新增** 支持 addon 离线化，需要在集群配置文件中定义 `addonOfflinePackagePath`
 - **新增** 离线安装支持操作系统 REHL 8.4、REHL 7.9
 
 #### 优化
@@ -26,7 +26,8 @@
 #### 已知问题
 
 - 非最小化安装的 REHL8 上由于预装的 runc 导致安装器安装失败，临时解决方案：安装前在上述每台节点上执行 `rpm -qa | grep runc && yum remove -y runc`
-- 非最小化安装的 REHL8 上有非法的内核参数设置，临时解决方案；安装前在上述每台节点上执行 `eval $(grep -i 'vm.maxmapcount' /etc/sysctl.conf -r /etc/sysctl.d | xargs -L1 | awk -F ':' '{printf("sed -i -r \"s/(%s)/#\\1/\" %s; ", $2, $1)}') && sysctl --system`
+- 非最小化安装的 REHL8 上有非法的内核参数设置，临时解决方案；安装前在上述每台节点上执行
+  `eval $(grep -i 'vm.maxmapcount' /etc/sysctl.conf -r /etc/sysctl.d | xargs -L1 | awk -F ':' '{printf("sed -i -r \"s/(%s)/#\\1/\" %s; ", $2, $1)}') && sysctl --system`
 - helm 并发安装存在潜在风险，失败后无法继续执行安装
 
 ## 2022-12-30

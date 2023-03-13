@@ -83,6 +83,11 @@
 
 ### 最佳实践
 
+- [跨集群运行 StatefulSet](https://mp.weixin.qq.com/s/y1dEO8Fb3SxqQUW9WrEsHQ)
+
+    跨集群可靠地运行 StatefulSet 可能需要解决网络和存储两个方面的问题。
+    文章基于一个示例，介绍了配置和管理跨集群的有状态应用服务的一个方法。
+
 - [我们如何基于云原生项目发展开源社区？](https://thenewstack.io/how-do-we-cultivate-community-within-cloud-native-projects/)
 
     基于云原生项目发展开源社区，首先要知道哪些人会关心你的项目、谁是终端用户、利益相关者和贡献者？
@@ -383,6 +388,12 @@
     Harbor v2.2及其更高版本支持对相关指标的采集和使用，这篇文章介绍了如何使用 Prometheus 轻松抓取 Harbor 实例的一些关键指标。
 
 ### 工具推荐
+
+- [Kubernetes 解决“近邻干扰”（Noisy Neighbor）场景的探索](https://mp.weixin.qq.com/s/g28ett0Z5LR0sHTyOljCRg)
+
+    当一个租户的性能由于另一个租户的活动而下降时，就会出现 noisy neighbor 问题。
+    虽然 Kubernetes 提供了 CPU 管理器、设备插件管理器以及拓扑管理器，协调资源分配和保证关键工作负载的最佳性能，但是没有根本上解决该问题。
+    对此，Intel 资源调配技术 RDT 支持通过为三种 Kubernetes QoS 级别配置相应的 RDT 类来限制非关键工作负载对共享资源的访问。
 
 - [FinOps 时代如何玩转应用资源配置](https://mp.weixin.qq.com/s/2ulduH_zKKcCsB64sVI0bg)
 
@@ -685,6 +696,12 @@
 
 ### 产品选型
 
+- [Kubernetes 策略引擎：OPA vs. Kyverno vs. jsPolicy](https://mp.weixin.qq.com/s/bMPraw5Q8-DZqCoJLJe2jQ)
+
+    文章讨论了 Kubernetes 策略引擎的概念，并比较了三种不同的 Kubernetes 策略引擎：OPA、Kyverno 和 jsPolicy。
+    结论是：如果想要更直接和简单的方法，或者精通 JavaScript 和 TypeScript，推荐使用 jsPolicy。
+    如果更喜欢 YAML，并且希望继续直接使用 Kubernetes 资源，Kyverno 是一个不错的选择。
+
 - [过去二十年里开源的 12 个开源监控工具大对比](https://mp.weixin.qq.com/s/ByQ3skUrcf1c_DPD4dCbRg)
 
     文章对 12 款典型的开源监控工具做了简要的介绍和分析，指出各自的优势和不足。
@@ -724,6 +741,13 @@
     文章从主流 APM 产品介绍出发（对比 Pinpoint、Jaeger、Skywalking、听云、腾讯云+阿里云 Arms 和 Datadog），通过生产环境中关注的几个重要维度，如产品体验、Agent 能力、报警+ DB 支持、云原生的支持能力、数据大屏等，给予 APM 选型方案建议。
 
 ### 前沿热点
+
+- [国内首例社区双栈 Istio 方案落地经验，实现代码已开源](https://mp.weixin.qq.com/s/E9HZIkSbZ3BLetDL0ZhzvA)
+
+    在业界广泛应用的服务网格项目（以 Istio 和 Linkerd 为例）中，双栈技术的支持依然是缺失的。
+    为更好的实现服务网格与 Kubernetes 在双栈支持上的协同工作，
+    文章主要介绍了 Istio 在双栈技术中的实现方案以及该方案在移动云的落地实现场景。
+    但是，此方案只是[实验性的分支](https://github.com/istio/istio/tree/experimental-dual-stack)，并没有完善单元测试和集成测试。
 
 - [微服务进入深水区后该何去何从](https://mp.weixin.qq.com/s/yBY-E-tndUJCmA4KYRfrDw)
 
@@ -920,6 +944,11 @@
     当Kubernetes 验证或变更 webhook 服务公开暴露时，受攻击的风险最大。此漏洞为 0day 漏洞。
 
 ### 电子书
+
+- [《云原生架构容器&微服务优秀案例集》](https://developer.aliyun.com/ebook/7898?spm=a2c6h.20345107.ebook-index.7.195a7863AvgDpI)
+
+    案例集是相关客户通过阿里云云原生产品构建生产业务体系的经验分享及最佳实践总结。
+    案例集以容器微服务为中心共有 37 个企业案例，涵盖 7 大行业，覆盖 ACK、MSE、ACR、ASK、ACK One、ASM、可观测等 10+ 产品。
 
 - [白皮书《云原生成熟度矩阵评估》中文版](https://mp.weixin.qq.com/s/xLuAOXwCVif7KrrpZIcUow)
 

@@ -50,7 +50,12 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates include: Added soft-delete functionality to Azure Container Registry to restore accidentally deleted artifacts; allows aborting any operation on an AKS cluster or proxy pool; supports multi-instance GPU (MIG); extends Azure Network Policy Manager (NPM) AKS cluster to Windows server 2022; integrated API Server VNET for AKS private cluster.
 
-- AliCloud Microservice Engine MSE December 2022 Update](https://mp.weixin.qq.com/s/j2si2vqTTcEugAWazpKL2A)
+- [AliCloud Container Mirroring Service ACR Officially Launches Cloud Native Product Center](https://mp.weixin.qq.com/s/atQF7WNfeodW3eizw6e1tg)
+
+    Cloud Native Products Center provides free secure and trusted container base images from AliCloud and Dragon Lizard community for container developers.
+    It includes application containerization base OS image, base language image, AI/Big Data related image categories, covering ARM, ARM 64, x64, x86-64 multiple system architectures.
+
+- [AliCloud Microservice Engine MSE December 2022 Update](https://mp.weixin.qq.com/s/j2si2vqTTcEugAWazpKL2A)
 
      Updates: zookeeper support for exporting snapshots and transaction logs, cloud native gateway support for HTTP/3, microservice insight support for lossless log collection during up/down and key node information display.
 
@@ -314,7 +319,13 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      ODC is a high-performance low-code solution for building cloud-native applications. ODC combines Kubernetes, Linux containers, microservices, and AWS native cloud services with DORA's high-performance level CI/CD, enterprise-grade security, and model-based visual development. Support large-scale transaction volumes and data requirements, improve developer productivity with advanced visual programming and artificial intelligence, and enable high-performance CI/CD practices.
 
-### P, Q
+### P
+
+- [PerfectScale Launches Kubernetes Cost Management SaaS Platform of the same name](https://www.perfectscale.io/blog/perfectscales-saas-platform-is-now-available)
+
+    PerfectScale is the industry's first continuous optimization solution built specifically to improve the persistence and cost effectiveness of K8s environments.
+    Using artificial intelligence algorithms to evaluate usage patterns and performance and cost metrics, the platform provides multi-cluster, multi-cloud observability, support for elasticity and performance risk detection, resource waste detection, the
+    supports problem prioritization, provides GitOps-friendly remediation recommendations, supports predicting the impact of system changes on the environment, and more.
 
 - [Portworx Enterprise 2.12 Cloud Native Data Management Platform Release](https://docs.portworx.com/release-notes/portworx/#2-12-0)
 
@@ -323,6 +334,8 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Portworx Backup v2.3 data backup product announcement](https://portworx.com/blog/announcing-portworx-backup-2-3-for-simpler-backup-management-and-flexible-licensing/)
 
      The main new features of this version: support for sharing backups with other users and groups, support for customizing backup licenses based on specific infrastructure, and support for encryption support for different types of backups using user-supplied or default keys.
+
+### Q
 
 - [QingCloud releases KubeSphere Enterprise Edition 3.3, a distributed multi-tenant cloud-native operating system](https://mp.weixin.qq.com/s/ZuiY-la34DvHW5bQdc9q7Q)
 
@@ -445,6 +458,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      New features of this version: support for integrating any OCI container registry, and scan the container image in it; support for integrating any Kubernetes cluster, and scan the workload configuration and image in it; support for scanning third-party software bill of material files; support for any CI/CD pipeline Integrates the security scanning function of SEAL; can aggregate and manage resources at all stages of the whole link to provide full link security insights; supports automatic generation of multi-policy repair suggestions, priority ranking of vulnerabilities, and timely handling of security issues.
 
 ### T
+
+- [Tencent Cloud Container Service TKE February Update](https://mp.weixin.qq.com/s/w_rxP8K3C6nccxAsPP3tNw)
+
+    Updates: cluster node upgrade portal supports docker/containerd component minor version updates, online CFS-Turbo CSI storage plugin, cluster log collection rules support custom configuration of metadata, registered nodes support GPU, support for creating, managing and upgrading Kubernetes clusters in user IDCs with one click through the console on the cloud.
 
 - [Tencent Cloud Native API Gateway Update](https://cloud.tencent.com/product/events)
 

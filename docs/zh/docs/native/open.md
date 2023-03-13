@@ -31,6 +31,10 @@
   
     该版本主要新特性：增加 TrafficControl 功能，控制 Pod 流量的传递；支持 IPsec 证书认证；丰富 Antrea-native 策略；丰富组播功能；增加多集群网关功能；丰富二级网络 IPAM 功能。
 
+- [APISIX 云原生网关 v3.2.0 发布](https://github.com/apache/apisix/releases/tag/3.2.0)
+
+    版本特性：支持四层上的服务发现、新增一个能将 RESTful 请求转成 GraphQL 的插件、支持在每个日志插件上设置日志格式、新增插件支持 JSON 和 XML 之间的互相转换。
+
 - [APISIX 云原生网关 v3.1.0 发布](https://github.com/apache/apisix/blob/release/3.1/CHANGELOG.md#310)
 
     该版本主要新特性：支持将插件的特定字段加密保存到 etcd 中、允许将敏感信息存储在外部安全服务中、实验性地支持基于 gRPC 的 etcd 配置同步、新增基于 Consul 的服务发现功能、增加了一个内置的调试器插件。
@@ -175,6 +179,12 @@
 
     该版本主要新特性：支持自动更新由Kubeadm 控制平面提供商提供的机器证书、可以从新的容器镜像注册中心 registry.k8s.io 发布和消费集群 API 镜像、允许在控制平面节点上创建没有污点的集群、clusterctl 现在可以管理 IPAM 和 RuntimeExtension 提供者。
 
+- [Clusternet 分布式云原生多集群管理项目入选 CNCF 沙箱项目](https://www.51cto.com/article/748691.html)
+
+    3 月 8 日，[Clusternet](https://github.com/clusternet/clusternet) 通过 CNCF 基金会 TOC 委员会的评定，成功入选 CNCF 沙箱项目。
+    Clusternet 通过组件化的、无侵入、轻量化的方式，将Kubernetes 强大的单集群能力扩展至多集群，并且很好地兼容云原生生态。
+    未来，Clusternet 将探索更丰富多集群的落地场景，推动建立功能完备、API 标准化的多集群框架。
+
 - [Clusternet 多云多集群管理项目 v0.13.0 发布](https://github.com/clusternet/clusternet/releases/tag/v0.13.0)
 
     该版本主要新特性：增加从父集群到子集群 pod 的路由功能、添加调度器配置并支持自定义调度器插件、支持 discovery v1beta1、只为 k8s v1.21.0 及更高版本提供发现 endpointslice 的支持、使用阈值聚合工作节点标签、支持按集群 subgroup 进行调度、为在 capi 中运行的 clusternet-agent 更新 RBAC 规则。
@@ -188,6 +198,12 @@
 - [Consul 服务发现框架 v1.13.0 发布（CNCF 项目）](https://github.com/hashicorp/consul/releases/tag/v1.13.0)
 
     该版本主要新特性：移除对 Envoy 1.19 的支持；Cluster Peering 支持联合 Consul 集群用于服务网格和传统服务发现；允许在不修改目录的情况下，通过透明代理模式的终端网关路由出口流量。
+
+- [containerd 完成模糊测试审计](https://mp.weixin.qq.com/s/IUgdPaT6OAhPW5uCPlteEA)
+
+    此次 [containerd 审计](https://containerd.io/img/ADA-fuzzing-audit-21-22.pdf)共增加了 28 个模糊测试器（fuzzer），涵盖了广泛的容器运行时功能。
+    在此审计过程中，在 OCI 镜像导入程序中发现了一个[漏洞](https://github.com/containerd/containerd/security/advisories/GHSA-259w-8hf6-59c2)：导入恶意镜像可能会导致节点的 DoS 攻击。
+    该问题已在 containerd 1.5.18 和 1.6.18 中修复。
 
 - [Contour Kubernetes ingress 控制器 v1.22.0 发布（CNCF 项目）](https://github.com/projectcontour/contour/releases/tag/v1.22.0)  
 
@@ -330,6 +346,11 @@
     该版本主要新特性：增加约束模式验证测试、增加对外部数据提供商的 TLS 支持、增加 pod 安全上下文变量、支持验证子资源、允许在 gator 验证中跳过测试、为 gator 添加 dockerfile、添加 opencensus 和 stackdriver exporter。
 
 ### H
+
+- [HoloInsight：由蚂蚁集团开源的智能可观测平台](https://mp.weixin.qq.com/s/Tx7EKr0P_rhO-kltlW-wuQ)
+
+    [HoloInsight](https://github.com/traas-stack/holoinsight) 是蚂蚁集团观测平台 AntMonitor 的开源版本，它主要聚焦基于日志的实时观测能力、业务指标监控以及时序智能和 AIOps。
+    同时，它也融入可观测领域有共识的其他数据类型，比如 Trace，Event 等。
 
 - [HAProxy Kubernetes Ingress Controller v1.8 发布](https://www.haproxy.com/blog/announcing-haproxy-kubernetes-ingress-controller-1-8/)  
 
@@ -909,6 +930,10 @@
     该版本主要新特性：集成 Vultr、添加 Linode SD 故障计数指标和 `prometheus_ready` 指标、在模板 function 中添加 `stripDomain`、promtool 支持在查询标签值时使用匹配器、增加代理模式标识符。
 
 ### R
+
+- [Rainbond 云原生多云应用管理平台 v5.12.0 发布](https://github.com/goodrain/rainbond/releases/tag/v5.12.0-release)
+
+    版本特性：支持平台级插件和能力扩展、新增流水线插件、支持通过 OpenAPI 创建组件、优化 Helm 仓库安装应用逻辑。
 
 - [Rainbond 云原生多云应用管理平台 v5.9.0 发布](https://github.com/goodrain/rainbond/releases/tag/v5.9.0-release)
 

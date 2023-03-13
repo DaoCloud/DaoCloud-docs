@@ -8,7 +8,7 @@
 
 ### API
 
-- **新增** `mcamel-kafka` helm-docs 模版文件。
+- **新增** `mcamel-kafka` helm-docs 模板文件。
 - **新增** `mcamel-kafka` 应用商店中的 Operator 只能安装在 mcamel-system。
 - **新增** `mcamel-kafka` 支持 cloud shell。
 - **新增** `mcamel-kafka` 支持导航栏单独注册。
