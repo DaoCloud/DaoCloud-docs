@@ -30,7 +30,7 @@ Admin、Kpanda Owner 和 Workspace Admin 可以通过共享资源中的`资源�
 
 2. 新增共享资源
 
-    使工作空间中的用户/用户组具有该集群资源的使用权限，能够使用资源配额前往[应用工作台创建命名空间（Namespace）](#_2)。
+    使工作空间中的用户/用户组具有该集群资源的使用权限，能够使用资源配额前往应用工作台[创建命名空间（Namespace）](../../../amamba/user-guide/namespace/namespace.md)。
 
     ![共享资源](../../images/quota02.png)
 
