@@ -60,9 +60,11 @@
 
 3. 在 `YAML 创建`页面中填写 YAML 配置，点击`确定`。
 
+    > 支持从本地导入 YAML 文件或将填写好的文件下载保存到本地。
+
     ![YAML 创建](../../images/secret04.png)
 
-    **密钥示例：**
+## 密钥 YAML 示例
 
     ```yaml
     apiVersion: v1
