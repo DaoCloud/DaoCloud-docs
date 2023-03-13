@@ -65,7 +65,7 @@
     ![创建配置项](../../images/configmap04.png)
 
 
-    **配置项示例：**
+## 配置项 YAML 示例
 
     ```yaml
     kind: ConfigMap
