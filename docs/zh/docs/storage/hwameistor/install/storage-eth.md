@@ -11,7 +11,7 @@ HwameiStor 支持使用单独的网卡进行数据卷同步，可以避免使用
 
 ## 前提条件
 
-1. 已经提前完成存储网卡规划，请参考：[网卡规划](../../network/plans/ethplan.md)
+1. 已经提前完成存储网卡规划，请参考：[网卡规划](../../../network/plans/ethplan.md)
 
 ## 配置步骤
 
@@ -28,7 +28,7 @@ HwameiStor 支持使用单独的网卡进行数据卷同步，可以避免使用
 
    ![Ethedit01](../../images/ethEdit01.jpg)
 
-3. 找到`待修改节点`并点击`编辑 YAML`，修改 `spec` 中的 ` storage-ipv4=172.30.40.12`参数，指定 IP 地址为已规划网卡 IP [网卡规划](../../network/plans/ethplan.md)。
+3. 找到`待修改节点`并点击`编辑 YAML`，修改 `spec` 中的 ` storage-ipv4=172.30.40.12`参数，指定 IP 地址为已规划网卡 IP [网卡规划](../../../network/plans/ethplan.md)。
    ![ethedit02](../../images/ethedit02.jpg)
    ![ethedit03](../../images/editeth03.jpg)
 4. 完成后点击保存，并选择下一个节点进行修改。
