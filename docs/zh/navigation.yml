@@ -83,6 +83,7 @@ nav:
               - 数据卷声明: kpanda/user-guide/storage/pvc.md
               - 数据卷: kpanda/user-guide/storage/pv.md
               - 存储池: kpanda/user-guide/storage/sc.md
+              - 共享存储池: kpanda/user-guide/storage/sc-share.md
           - 配置与密钥:
               - 创建配置项: kpanda/user-guide/configmaps-secrets/create-configmap.md
               - 使用配置项: kpanda/user-guide/configmaps-secrets/use-configmap.md
