@@ -91,3 +91,5 @@ helm uninstall mcamel-minio -n mcamel-system
 2. 在弹窗中输入要删除的名称，确认无误后，点击`删除`。
 
     ![点击删除](../images/uninstall02.png)
+
+[创建 MinIO](../userguide/create.md){ .md-button .md-button--primary }

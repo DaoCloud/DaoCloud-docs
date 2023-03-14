@@ -47,4 +47,4 @@ MinIO 为云原生而设计，可以作为轻量级容器运行，由外部编�
 
 ![MinIO 主界面](../images/what01.png)
 
-[申请社区免费体验](../../../dce/license0.md){ .md-button .md-button--primary }
+[安装 MinIO](../quickstart/install.md){ .md-button .md-button--primary }
