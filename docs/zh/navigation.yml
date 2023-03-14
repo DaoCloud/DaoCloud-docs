@@ -67,7 +67,7 @@ nav:
           - 弹性伸缩:
               - 安装 metrics-server 插件: kpanda/user-guide/scale/install-metrics-server.md
               - 安装 kubernetes-cronhpa-controller 插件: kpanda/user-guide/scale/install-cronhpa.md
-              - 安装 vpa 插件: kpanda/user-guide/scale/install-vpa.md
+              - 安装 VPA 插件: kpanda/user-guide/scale/install-vpa.md
               - 创建 HPA 策略: kpanda/user-guide/scale/create-hpa.md
               - 创建 VPA 策略: kpanda/user-guide/scale/create-vpa.md
           - Helm 应用:
@@ -80,8 +80,9 @@ nav:
               - 网络策略: kpanda/user-guide/services-routes/network-policy.md
           - 自定义资源: kpanda/user-guide/custom-resources/create.md
           - 容器存储:
-              - 数据卷: kpanda/user-guide/storage/pvc.md
-              - 存储池: kpanda/user-guide/storage/storage-pool.md
+              - 数据卷声明: kpanda/user-guide/storage/pvc.md
+              - 数据卷: kpanda/user-guide/storage/pv.md
+              - 存储池: kpanda/user-guide/storage/sc.md
           - 配置与密钥:
               - 创建配置项: kpanda/user-guide/configmaps-secrets/create-configmap.md
               - 使用配置项: kpanda/user-guide/configmaps-secrets/use-configmap.md
