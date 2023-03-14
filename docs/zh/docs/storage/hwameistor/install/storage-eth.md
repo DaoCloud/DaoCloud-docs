@@ -11,7 +11,7 @@ HwameiStor 支持使用单独的网卡进行数据卷同步，可以避免使用
 
 ## 前提条件
 
-1. 已经提前完成存储网卡规划，请参考：[网卡规划](../../../network/plans/ethplan.md)
+已经提前完成存储网卡规划，请参考[网卡规划](../../../network/plans/ethplan.md)
 
 ## 配置步骤
 
@@ -24,14 +24,18 @@ HwameiStor 支持使用单独的网卡进行数据卷同步，可以避免使用
 
 1. 在左侧导航栏点击 `容器管理` —> `集群列表`，找到`待修改网卡配置的集群`，进入集群详情 。
 
-2. 在左侧导航栏中选择 `自定义资源`，找到`localdisknodes.hwameistor.io` ，点击进入详情。
+2. 在左侧导航栏中选择 `自定义资源`，找到 `localdisknodes.hwameistor.io`，点击进入详情。
 
-   ![Ethedit01](../../images/ethEdit01.jpg)
+    ![Ethedit01](../../images/ethEdit01.jpg)
 
-3. 找到`待修改节点`并点击`编辑 YAML`，修改 `spec` 中的 ` storage-ipv4=172.30.40.12`参数，指定 IP 地址为已规划网卡 IP [网卡规划](../../../network/plans/ethplan.md)。
-   ![ethedit02](../../images/ethedit02.jpg)
-   ![ethedit03](../../images/editeth03.jpg)
-4. 完成后点击保存，并选择下一个节点进行修改。
+3. 找到`待修改节点`并点击`编辑 YAML`，修改 `spec` 中的 `storage-ipv4=172.30.40.12` 参数，
+    指定 IP 地址为已规划网卡 IP [网卡规划](../../../network/plans/ethplan.md)。
+    
+    ![ethedit02](../../images/ethedit02.jpg)
+    
+    ![ethedit03](../../images/editeth03.jpg)
+
+4. 完成后点击`保存`，并选择下一个节点进行修改。
 
 ### 通过节点注释标记
 
@@ -44,9 +48,9 @@ HwameiStor 支持使用单独的网卡进行数据卷同步，可以避免使用
     kubectl annotate node <your_storage_node> localstorage.hwameistor.io``/storage-ipv4``=172.30.46.12
     ```
 
-3. **重启**节点上的 local-storage 服务
+3. **重启** 节点上的 local-storage 服务
 
-4. **验证**配置是否生效
+4. **验证** 配置是否生效
 
     ```sh
     kubectl get lsn <your_storage_node> -o yaml |``grep` `-i storageIP
