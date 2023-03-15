@@ -25,7 +25,7 @@
 1. 点击右上角的 ⚙️，以打开 `Settings` 页面。
 1. 点击左侧的 `Resource`，调整启动容器的资源上限（上调到 8C14G），点击 `Apply & Restart` 按钮。
 
-[调整资源](./images/docker.png)
+![调整资源](./images/docker.png)
 
 ## 安装 kind
 
