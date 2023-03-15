@@ -39,7 +39,7 @@
 
 #### 新功能
 
-- 支持在 DCE5.0 前面部署一个国密网关, 并用国密浏览器来访问 DCE5.0
+- 支持在 DCE 5.0 前面部署一个国密网关, 并用国密浏览器来访问 DCE 5.0
 - 在 helm values 里设置开关, 可以一键开关 istio sidecar 功能
 - 工作空间与层级增加 Workspace and Folder Owner 角色
 - 拥有 Workspace/Folder Admin 和 Kpanda Owner 权限的用户才可进行资源绑定

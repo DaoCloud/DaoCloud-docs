@@ -1,6 +1,6 @@
 # MinIO 的身份管理
 
-DCE5.0 提供的 MinIO 服务，自带 网页控制台（Web Console），了解 MinIO 的身份管理（identity management）, 帮助您快速了解如何在 MinIO 内完成子账号管理。
+DCE 5.0 提供的 MinIO 服务，自带 网页控制台（Web Console），了解 MinIO 的身份管理（identity management）, 帮助您快速了解如何在 MinIO 内完成子账号管理。
 
 ## 用户
 

@@ -680,7 +680,8 @@ nav:
       - 云原生网络: videos/network.md
   - 博客:
       - 博文索引: blogs/index.md
-      - 202303 | macOS 安装社区版: blogs/macos.md
+      - 202303 | Linux 单机安装社区版: blogs/linux.md
+      - 202303 | macOS 单机安装社区版: blogs/macos.md
       - 202303 | KWOK 介绍: blogs/kwok.md
       - 202302 | 社区版涉及的开源项目: blogs/projects.md
       - 202302 | DaoCloud 与 K8s: blogs/daocloud_k8s.md

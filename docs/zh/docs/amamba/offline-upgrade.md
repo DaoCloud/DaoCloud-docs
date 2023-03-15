@@ -110,7 +110,7 @@
     ```
     helm search  repo amamba-release-ci --versions |head
     NAME                                   CHART VERSION      	APP VERSION        	DESCRIPTION                               
-    amamba-release-ci/amamba                0.14.0  	        0.14.0  	         Amamba is the entrypoint to DCE5.0, provides de...
+    amamba-release-ci/amamba                0.14.0  	        0.14.0  	         Amamba is the entrypoint to DCE 5.0, provides de...
     ```
 
 5. 修改 `amamba.bak.yaml` 文件里的 `registry` 和 `tag`。
