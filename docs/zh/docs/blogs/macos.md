@@ -101,12 +101,24 @@ fire-kind-cluster-control-plane   Ready    control-plane   18h   v1.25.3
     EOF
     ```
 
-1. 安装 DCE5 社区版，大概用时 30 分钟，取决于镜像拉取的网速
+1. 安装 DCE5 社区版，大概用时 30 分钟，取决于镜像拉取的网速。
 
-    ```shell
-    myIP=$(ip r get 1.1.1.1| awk '{print $NF}') # 获取本机 IP
-    docker exec -it fire-kind-cluster-control-plane bash -c "./dce5-installer install-app -z -k $myIP:8888"
-    ```
+    1. 先获取本机 IP
+
+        ```shell
+        myIP=$(ip r get 1.1.1.1| awk '{print $NF}')
+        ```
+
+        如果报错 `zsh: command not found: ip`，有 2 个方案：
+
+        - 执行 `myIP=$(ifconfig en0| grep "inet[ ]" | awk '{print $2}')`
+        - 或通过 `brew install iproute2mac` 这类命令安装 iproute2mac 后重试。
+
+    1. 开始安装
+
+        ```shell
+        docker exec -it fire-kind-cluster-control-plane bash -c "./dce5-installer install-app -z -k $myIP:8888"
+        ```
 
 1. 在安装过程中可以另起一个终端窗口，执行如下命令，观察 Pod 启动情况
 
