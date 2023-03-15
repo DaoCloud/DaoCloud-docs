@@ -10,7 +10,7 @@
 
 - 支持创建托管 `harbor` 支持 `NodePort` 方式暴露，并校验端口是否被占用
 - 支持创建托管 `harbor` 支持 `https` 方式暴露
-- 支持创建托管 `harbor` 支持开启 `DCE5.0 ODIC` 接入，实现使用 `DCE 5.0` 用户登录 `Harboor`
+- 支持创建托管 `harbor` 支持开启 `DCE 5.0 ODIC` 接入，实现使用 `DCE 5.0` 用户登录 `Harboor`
 - 支持创建托管 `harbor` 支持校验部署的集群是否安装 `harbor-operator`
 - 支持创建托管 `harbor` 支持使用中间件模块部署的 `redis` 实例
 - 支持创建托管 `harbor` 支持修改 `Admin` 密码、资源配额、`Redis` 实例、访问类型

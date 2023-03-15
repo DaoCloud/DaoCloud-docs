@@ -1,8 +1,8 @@
-# 通过 Docker 和 kind 在 macOS 电脑上安装 DCE 5.0 社区版
+# 通过 Docker 和 kind 在 macOS 电脑上安装社区版
 
 本页说明如何使用 macOS 笔记本电脑创建单节点的 kind 集群，然后在线安装 DCE 5.0 社区版。
 
-!!! note
+!!! tip
 
     这是针对初学者的简化安装体验步骤，实际生产很少会使用 macOS。
     原文作者是 [panpan0000](https://github.com/panpan0000)。
@@ -11,9 +11,9 @@
 
 确认 MacBook 的性能和资源是否满足需求。最低配置为：
 
-- CPU：8C
-- 内存：16G
-- 磁盘剩余空间 >= 20G
+- CPU：**8 核**
+- 内存：**16G**
+- 磁盘剩余空间：大于 20G
 
 ## 安装和调整 Docker
 
@@ -23,7 +23,7 @@
 
 1. 启动 Docker。
 1. 点击右上角的 ⚙️，以打开 `Settings` 页面。
-1. 点击左侧的 `Resource`，调整启动容器的资源上限（上调到 8C14G），点击 `Apply & Restart` 按钮。
+1. 点击左侧的 `Resources`，将启动容器的资源上限调节到 8C14G，点击 `Apply & Restart` 按钮。
 
 ![调整资源](./images/docker.png)
 
@@ -101,14 +101,14 @@ fire-kind-cluster-control-plane   Ready    control-plane   18h   v1.25.3
     EOF
     ```
 
-1. 安装 DCE5 社区版，过程大概持续 30 分钟以上，取决于镜像拉取的网速
+1. 安装 DCE5 社区版，大概用时 30 分钟，取决于镜像拉取的网速
 
     ```shell
     myIP=$(ip r get 1.1.1.1| awk '{print $NF}') # 获取本机 IP
     docker exec -it fire-kind-cluster-control-plane bash -c "./dce5-installer install-app -z -k $myIP:8888"
     ```
 
-1. 可以在安装过程中另起一个窗口，执行如下命令，观察 Pod 启动情况
+1. 在安装过程中可以另起一个终端窗口，执行如下命令，观察 Pod 启动情况
 
     ```shell
     docker exec -it fire-kind-cluster-control-plane kubectl get po -A -w
