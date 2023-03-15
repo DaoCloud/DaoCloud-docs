@@ -120,10 +120,14 @@ fire-kind-cluster-control-plane   Ready    control-plane   18h   v1.25.3
         docker exec -it fire-kind-cluster-control-plane bash -c "./dce5-installer install-app -z -k $myIP:8888"
         ```
 
-1. 在安装过程中可以另起一个终端窗口，执行如下命令，观察 Pod 启动情况
+1. 在安装过程中可以另起一个终端窗口，执行如下命令，观察 Pod 启动情况。
 
     ```shell
     docker exec -it fire-kind-cluster-control-plane kubectl get po -A -w
     ```
 
-如果有 Pod 已在运行，则表明安装成功。
+    当看到以下提示，则表示 DCE 5.0 社区版安装成功了。
+
+    ![success](./images/success.jpg)
+
+1. 输入默认用户和密码 (admin/changeme) 登录后，系统将提示[申请许可密钥](../dce/license0.md)。
