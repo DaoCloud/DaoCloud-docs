@@ -4,7 +4,7 @@
 
 !!! tip
 
-    这是针对初学者的简化安装体验步骤，实际生产很少会使用 macOS。
+    这是针对初学者的简化安装体验步骤，实际生产很少会使用 macOS，
     原文作者是 [panpan0000](https://github.com/panpan0000)。
 
 ## 硬件环境
@@ -29,16 +29,35 @@
 
 ## 安装 kind
 
-参照 [kind 安装说明](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)安装 kind：
+按照实际电脑情况，以下任选其一，安装 kind。
+如果遇到其他问题，请参阅 [kind 官方安装说明](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)。
+
+=== "Mac 是 Intel 芯片"
+
+    ```shell
+    [ $(uname -m) = x86_64 ]&& curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.17.0/kind-darwin-amd64
+    ```
+
+=== "Mac 是 M1/ARM 芯片"
+
+    ```shell
+    [ $(uname -m) = arm64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.17.0/kind-darwin-arm64
+    chmod +x ./kind
+    sudo mv kind /usr/local/bin/kind
+    ```
+
+=== "Mac 已安装 Homebrew"
+
+    有了 Homebrew 后，就很简单了：
+
+    ```shell
+    brew install kind
+    ```
+
+最后执行以下命令，确认 kind 安装成功：
 
 ```shell
-# 对于 Intel Mac
-[ $(uname -m) = x86_64 ]&& curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.17.0/kind-darwin-amd64
-# 对于 M1 / ARM Mac
-[ $(uname -m) = arm64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.17.0/kind-darwin-arm64
-chmod +x ./kind
-sudo mv kind /usr/local/bin/kind
-kind version # 确认 kind 是否安装成功
+kind version
 ```
 
 ## 创建 kind 配置文件
@@ -90,10 +109,9 @@ fire-kind-cluster-control-plane   Ready    control-plane   18h   v1.25.3
     EOF
     ```
 
-1. 在 kind 容器里，下载 dce5-installer 二进制文件
+1. 下载 dce5-installer 二进制文件，假定 `VERSION=v0.5.0`：
 
     ```shell
-    # 假定 VERSION 为 v0.5.0
     cat <<EOF | docker exec -i fire-kind-cluster-control-plane  bash
     export VERSION=v0.5.0; 
     curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
