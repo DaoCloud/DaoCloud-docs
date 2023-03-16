@@ -109,17 +109,22 @@ fire-kind-cluster-control-plane   Ready    control-plane   18h   v1.25.3
     EOF
     ```
 
-1. 下载 dce5-installer 二进制文件，假定 `VERSION=v0.5.0`：
+1. 下载 dce5-installer 二进制文件
 
     ```shell
-    cat <<EOF | docker exec -i fire-kind-cluster-control-plane  bash
-    export VERSION=v0.5.0; 
-    curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
-    chmod +x ./dce5-installer 
-    EOF
+    docker exec -it fire-kind-cluster-control-plane /bin/bash
     ```
 
-1. 安装 DCE5 社区版，大概用时 30 分钟，取决于镜像拉取的网速。
+    假定 `VERSION=v0.5.0`
+
+    ```shell
+    export VERSION=v0.5.0; 
+    curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
+    chmod +x ./dce5-installer
+    exit
+    ```
+
+1. 安装 DCE5 社区版
 
     1. 先获取本机 IP
 
@@ -132,7 +137,7 @@ fire-kind-cluster-control-plane   Ready    control-plane   18h   v1.25.3
         - 执行 `myIP=$(ifconfig en0| grep "inet[ ]" | awk '{print $2}')`
         - 或通过 `brew install iproute2mac` 这类命令安装 iproute2mac 后重试。
 
-    1. 开始安装
+    1. 开始安装，大概用时 30 分钟，取决于镜像拉取的网速
 
         ```shell
         docker exec -it fire-kind-cluster-control-plane bash -c "./dce5-installer install-app -z -k $myIP:8888"
