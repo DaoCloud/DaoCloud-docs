@@ -149,3 +149,37 @@ fire-kind-cluster-control-plane   Ready    control-plane   18h   v1.25.3
     ![success](./images/success.jpg)
 
 1. 输入默认用户和密码 (admin/changeme) 登录后，系统将提示[申请许可密钥](../dce/license0.md)。
+
+## 体验使用
+
+申请到许可证后，将进入 DCE 5.0 主界面，显示当前安装的组件、集群/节点/资源、告警等信息。
+
+您可以尝试：
+
+- 创建一个[用户](../ghippo/user-guide/access-control/user.md)，
+  加入一个[用户组](../ghippo/user-guide/access-control/group.md)，
+  赋予[角色权限](../ghippo/user-guide/access-control/role.md)
+- [定制软件界面](../ghippo/user-guide/platform-setting/appearance.md)
+- [接入一个集群](../kpanda/user-guide/clusters/integrate-cluster.md)
+- [管理你的节点](../kpanda/user-guide/nodes/node-check.md)
+- [创建一个负载](../kpanda/user-guide/workloads/create-deployment.md)
+- 更多请查阅文档站页面
+
+## 卸载
+
+1. 卸载 [DCE 5.0 社区版](../install/uninstall.md)。
+1. 删除 kind 集群。
+
+    ```
+    kind delete cluster  --name=fire-kind-cluster
+    ```
+
+1. 卸载 kind 本身。
+
+    ```
+    rm -f $(which kind)
+    ```
+
+1. 在应用列表中卸载 Docker。
+
+至此您的 MacBook 恢复到了最初状态。
