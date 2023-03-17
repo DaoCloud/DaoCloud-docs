@@ -609,7 +609,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     Release features: add support for metadata api to reduce network load, expose default namespace for clients, allow event subscription from watcher without consuming raw watcher stream, support for persistent metadata watch.
 
-- [KubeSkoop: Kubernetes network monitoring tool open sourced by Aliyun](https://mp.weixin.qq.com/s/zbAcZCNT5vyzGvp7uTDB1w)
+- [KubeSkoop: Kubernetes network monitoring tool open sourced by Alicloud](https://mp.weixin.qq.com/s/zbAcZCNT5vyzGvp7uTDB1w)
 
      [KubeSkoop](https://github.com/alibaba/kubeskoop) supports functions including: Pod-level network monitoring, including traffic, application-level connection information, socket memory allocation status, etc.; Pod-level monitoring of indicators for abnormal network status, such as the wait time for a Pod process to perform a socket Pod-level network abnormal state metrics monitoring, such as the number of times a process within a Pod waits more than 100ms for a read or write operation, etc.; Pod-level network abnormal events on site, providing detailed observation of the events that occur.
 
