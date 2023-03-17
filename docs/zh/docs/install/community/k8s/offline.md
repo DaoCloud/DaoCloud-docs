@@ -52,11 +52,14 @@
           chmod +x offline_image_handler.sh
           ```
 
-      - 执行脚本推送镜像到镜像仓库中。
+      - 执行脚本推送镜像到镜像仓库中。请注意目前存在已知问题，需要执行脚本之前需要在镜像仓库中创建 `docker.m.daocloud.io` 仓库。
 
         ```bash
         # 指定镜像仓库地址
         export REGISTRY_ADDR=registry.daocloud.io:30080
+        # 指定镜像仓库用户名和密码
+        export REGISTRY_USER=admin
+        export REGISTRY_PASS=Harbor12345
         # 指定离线包解压目录
         export OFFLINE_DIR=$(pwd)/offline
         # 执行脚本导入镜像
@@ -69,7 +72,7 @@
             - 失败镜像信息将被记录在脚本同级目录 `import_image_failed.list` 文件中，便于定位。
             - 如果 docker pull 镜像时报错：`http: server gave HTTP response to HTTPS client`，请启用 Insecure Registry。
 
-      - 在集群的每个节点上运行 `vim /etc/docker/daemon.json` 命令以编辑 daemon.json 文件，输入以下内容并保存更改。
+      <!-- - 在集群的每个节点上运行 `vim /etc/docker/daemon.json` 命令以编辑 daemon.json 文件，输入以下内容并保存更改。
 
         ```json title="daemon.json"
         {
@@ -80,7 +83,7 @@
         !!! note
 
             请确保将 `172.30.120.180:80` 替换为您自己的 Harbor 仓库地址。
-            对于 Linux，daemon.json 文件的路径为 `/etc/docker/daemon.json`。
+            对于 Linux，daemon.json 文件的路径为 `/etc/docker/daemon.json`。 -->
 
       - 运行以下命令重启 Docker。
 
