@@ -199,6 +199,10 @@
 
     该版本主要新特性：移除对 Envoy 1.19 的支持；Cluster Peering 支持联合 Consul 集群用于服务网格和传统服务发现；允许在不修改目录的情况下，通过透明代理模式的终端网关路由出口流量。
 
+- [containerd 容器运行时 v1.7.0 发布（CNCF 项目）](https://github.com/containerd/containerd/releases/tag/v1.7.0)
+
+    版本特性：新增 Sandbox API，简化更高级别的容器组的管理，为 shim 实现和客户端提供了新的扩展点；新增 Transfer Service，可用于在源和目标之间传输工件对象；支持扩展节点资源接口 NRI 的范围，实现常见的可插拔式运行时扩展；增加对 CDI 设备注入的支持；支持 cgroups blockio；为增强型重启管理器增加重启策略；初步支持 gRPC shim。
+
 - [containerd 完成模糊测试审计](https://mp.weixin.qq.com/s/IUgdPaT6OAhPW5uCPlteEA)
 
     此次 [containerd 审计](https://containerd.io/img/ADA-fuzzing-audit-21-22.pdf)共增加了 28 个模糊测试器（fuzzer），涵盖了广泛的容器运行时功能。
@@ -608,6 +612,10 @@
 
     版本特性：增加对元数据 api 的支持以减少网络负载、暴露客户端的默认命名空间、允许在不消耗原始的 watcher stream 的情况下从 watcher 订阅事件、支持持久元数据 watch。
 
+- [KubeSkoop：由阿里云开源的 Kubernetes 网络监控工具](https://mp.weixin.qq.com/s/zbAcZCNT5vyzGvp7uTDB1w)
+
+    [KubeSkoop](https://github.com/alibaba/kubeskoop) 支持功能包括：Pod 级别的网络监控，包括流量，应用层连接信息， socket 内存分配状态等；Pod 级别的网络异常状态的指标监控，例如 Pod 内进程对 socket 进行读写操作的等待时间超过 100ms 的次数等；Pod 级别的网络异常事件的现场，提供事件发生的详细信息的观测。
+
 - [KubeSphere v3.3.0 发布（CNCF 项目）](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.md)
 
     该版本主要新特性：
@@ -799,6 +807,10 @@
 
     该版本主要新特性：降低托管集群上的worker agent 的权限、支持访问 kube-apiserver 及托管集群中的其他服务、支持使用 AddOn API 参考 AddOn 配置。
 
+- [OPA 通用策略引擎 v0.50.0 发布（CNCF 项目）](https://github.com/open-policy-agent/opa/releases/tag/v0.50.0)
+
+    版本特性：新增内置函数，用于验证 JSON Schema；package 范围内的 schema 注释可以跨模块应用；支持通过一个简单的命令用一个远程捆绑包启动 OPA；引入一个新的 EditTree 数据结构以改善 json.patch 的性能；支持通过状态 API 暴露决策日志错误；所有发布的 OPA 镜像现在都以非 root uid/gid 运行。
+
 - [OPA 通用策略引擎 v0.44.0 发布（CNCF 项目）](https://github.com/open-policy-agent/opa/releases/tag/v0.44.0)  
 
     该版本主要新特性：修复 3 个 CVE 漏洞、Set Element Addition 优化、内置 Set union 优化、在 OPA 评估命令中添加优化参数、允许将更多的捆绑程序编译到 WASM 中。
@@ -822,6 +834,10 @@
 - [OpenEBS 云原生存储 v3.3.0 发布（CNCF 项目）](https://github.com/openebs/openebs/releases/tag/v3.3.0)  
 
     该版本主要新特性：弃用 arch-specific 容器镜像、为 LocalPV Hostpath 强制执行带有 ext4 文件系统的主机路径配额、增强 NDM 功能、在 cstor 中添加日志以改善调试能力、增加速率限制器以减少 LocalPV LVM 中的日志泛滥问题。
+
+- [OpenFunction 函数即服务项目 v1.0.0 发布（CNCF 项目）](https://github.com/OpenFunction/OpenFunction/releases/tag/v1.0.0)
+
+    版本特性：集成 wasmedge、支持从本地源代码构建、单个 Pod 支持多个函数、支持检测源代码或镜像的变化并重建/重新部署新构建的镜像。
 
 - [OpenKruise 云原生应用自动化管理套件 v1.3.0 发布（CNCF 项目）](https://github.com/openkruise/kruise/releases/tag/v1.3.0)
 

@@ -50,6 +50,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates include: Added soft-delete functionality to Azure Container Registry to restore accidentally deleted artifacts; allows aborting any operation on an AKS cluster or proxy pool; supports multi-instance GPU (MIG); extends Azure Network Policy Manager (NPM) AKS cluster to Windows server 2022; integrated API Server VNET for AKS private cluster.
 
+- [AliCloud Service Grid ASM February 2023 Update](https://mp.weixin.qq.com/s/jNeC_gMQdCk8b8d3QXSeMQ)
+
+    Update: Support for defining management logs, monitoring and link tracing as Telemetry CRD; support for fine-grained configuration at the grid global and namespace levels; improved grid topology loading speed in clusters above 150 Pod size; support for configuring sidecar proxy environment variables, istio-proxy thread count, etc.; support for configuring in multiple clusters Support for intra-cluster traffic retention.
+
 - [AliCloud Container Mirroring Service ACR Officially Launches Cloud Native Product Center](https://mp.weixin.qq.com/s/atQF7WNfeodW3eizw6e1tg)
 
     Cloud Native Products Center provides free secure and trusted container base images from AliCloud and Dragon Lizard community for container developers.
@@ -125,7 +129,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates: Provide Sigstore-based keyless signature mode, add an out-of-the-box security policy library, support users to log in through their Gitlab accounts, support CloudEvents, support policies for fine-grained Kubernetes workload objects, and enhance large-scale clusters User stability.
 
-### D
+### D, E
 
 - [D2iQ Kubernetes Platform v2.4.0 released](https://docs.d2iq.com/dkp/2.4/dkp-2-4-0-features-and-enhancements)
 
@@ -159,6 +163,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Dynatrace Provides Root Cause Analysis in Kubernetes with Davis AI](https://www.dynatrace.com/news/blog/root-cause-analysis-in-kubernetes-with-davis-ai/)
 
      The Davis AI causal analysis engine provides root cause analysis of Kubernetes performance issues and their impact on business continuity. Specific features: Automated root cause analysis, support for real-time tracking of Kubernetes orchestration processes, linking performance issues to pod evictions, support for identifying the cause of performance degradation issues related to misconfigurations based on changes in workload deployment inventory.
+
+- [Ermetic Cloud Native Application Protection Platform supports Kubernetes security posture management](https://ermetic.com/news/ermetic-adds-kubernetes-security-posture-management-to-cloud-native -application-protection-platform/)
+
+    The Ermetic Cloud Native Application Protection Platform's Kubernetes Security Posture Management feature supports automatic discovery and remediation of misconfigurations, compliance violations, and risky or excessive privileges in Kubernetes clusters.
+    It provides a detailed inventory of all Kubernetes cluster internal resources, the ability to continuously perform security posture assessments and risk prioritization, and provides remediation methods and workflow integration.
 
 ### F, G
 
@@ -281,6 +290,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### M, N, O
 
+- [Mirantis Container Runtime Container Runtime 23.0 Released](https://www.mirantis.com/blog/announcing-the-23-0-major-release-for-mirantis-container- runtimeand-moby)
+
+    Updates: Experimental CSI support; Enhanced OCI runtime support for Kata Containers and gVisor; Overhead required to perform health checks no longer counts towards the time threshold, and the time required for health checks does not increase even with high container loads; Image build tool BuildKit is used by default.
+
 - [Mirantis OpenStack for Kubernetes 22.5, the Mirantis private cloud infrastructure platform, was released](https://www.mirantis.com/blog/mirantis-openstack-for-kubernetes-22-5-released)
 
      Release features: full support for OpenStack Yoga, introduction of a shared file system based on OpenStack Manila, and easier integration of OpenStack clouds into L3 networks with MetalLB-enabled BGP mode.
@@ -289,7 +302,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The main new features of this version: support for Kubernetes 1.24, support for Google Cloud Platform GCP, support for cri-dockerd instead of Dockershim, security access control updates (OPA gatekeeper is provided as an optional alternative to PSP).
 
-- Spot by NetApp Introduces Ocean CD, a Kubernetes Application Continuous Delivery Product](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release-notes. pdf) pdf)
+- [Spot by NetApp Introduces Ocean CD, a Kubernetes Application Continuous Delivery Product](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release-notes. pdf) pdf)
 
      Ocean CD is a SaaS solution that supports multiple clusters, using Argo rollouts as the engine and overlaying many management features on top. ocean CD allows for rapid enablement of intelligent deployments such as canary, blue-green deployments or simple rolling updates using validation and failure policies; supports continuous validation, correctly executing rollbacks and automated actions based on canary policy definitions; and provides a developer-friendly UI interface.
 

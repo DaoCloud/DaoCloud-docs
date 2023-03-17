@@ -1,4 +1,4 @@
-# Open source projects
+# Open source project
 
 This page lists activity in cloud native open source projects in alphabetical order.
 
@@ -199,7 +199,11 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: Remove support for Envoy 1.19; Cluster Peering supports federated Consul clusters for service grid and traditional service discovery; allows routing egress traffic through terminal gateways in transparent proxy mode without modifying the directory.
 
-- [containererd completes fuzzy test audit](https://mp.weixin.qq.com/s/IUgdPaT6OAhPW5uCPlteEA)
+- [containerd container runtime v1.7.0 released (CNCF project)](https://github.com/containerd/containerd/releases/tag/v1.7.0)
+
+     Release features: New Sandbox API to simplify management of higher-level container groups and provide new extension points for shim implementations and clients; New Transfer Service for transferring artifact objects between sources and targets; Support for extending the scope of the Node Resource Interface NRI to enable common pluggable runtime extensions; Added support for CDI device injection; Added support for cgroups blockio for enhanced restart manager; Added restart policy for enhanced restart manager; Added support for cgroups blockio for enhanced restart manager. support; support for cgroups blockio; add reboot policies for enhanced reboot manager; initial support for gRPC shim.
+
+- [containerd completes fuzzy test audit](https://mp.weixin.qq.com/s/IUgdPaT6OAhPW5uCPlteEA)
 
     This [containerd audit](https://containerd.io/img/ADA-fuzzing-audit-21-22.pdf) adds a total of 28 fuzzer testers (fuzzer), covering a wide range of container runtime features.
     During this audit, a [vulnerability](https://github.com/containerd/containerd/security/advisories/GHSA-259w-8hf6-59c2) was found in the OCI image import process: importing a malicious image could lead to a DoS attack on the node .
@@ -605,6 +609,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     Release features: add support for metadata api to reduce network load, expose default namespace for clients, allow event subscription from watcher without consuming raw watcher stream, support for persistent metadata watch.
 
+- [KubeSkoop: Kubernetes network monitoring tool open sourced by Aliyun](https://mp.weixin.qq.com/s/zbAcZCNT5vyzGvp7uTDB1w)
+
+     [KubeSkoop](https://github.com/alibaba/kubeskoop) supports functions including: Pod-level network monitoring, including traffic, application-level connection information, socket memory allocation status, etc.; Pod-level monitoring of indicators for abnormal network status, such as the wait time for a Pod process to perform a socket Pod-level network abnormal state metrics monitoring, such as the number of times a process within a Pod waits more than 100ms for a read or write operation, etc.; Pod-level network abnormal events on site, providing detailed observation of the events that occur.
+
 - [KubeSphere v3.3.0 release (CNCF project)](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.md)
 
      Main new features of this version:
@@ -796,6 +804,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: reduce the permissions of the worker agent on the managed cluster, support access to kube-apiserver and other services in the managed cluster, and support the use of AddOn API to refer to AddOn configuration.
 
+- [OPA Generic Policy Engine v0.50.0 Released (CNCF Project)](https://github.com/open-policy-agent/opa/releases/tag/v0.50.0)
+
+     Release features: New built-in function to validate JSON Schema; package scoped schema comments can be applied across modules; support for starting OPA with a remote bundle via a simple command; introduction of a new EditTree data structure to improve the performance of json.patch; support for exposing decision logs via the status API errors; all published OPA images now run with a non-root uid/gid.
+
 - [OPA Common Policy Engine v0.44.0 release (CNCF project)](https://github.com/open-policy-agent/opa/releases/tag/v0.44.0)
 
      The main new features of this version: fix 3 CVE vulnerabilities, Set Element Addition optimization, built-in Set union optimization, add optimization parameters to OPA evaluation command, allow more bundlers to be compiled into WASM.
@@ -819,6 +831,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [OpenEBS Cloud Native Storage v3.3.0 release (CNCF project)](https://github.com/openebs/openebs/releases/tag/v3.3.0)
 
      Major new features in this release: deprecated arch-specific container images, enforced hostpath quotas with ext4 filesystems for LocalPV Hostpath, enhanced NDM functionality, added logging in cstor to improve debugging, added rate limiters to reduce LocalPV Log flooding issue in LVM.
+
+- [OpenFunction Function as a Service Project v1.0.0 Released (CNCF Project)](https://github.com/OpenFunction/OpenFunction/releases/tag/v1.0.0)
+
+     Release features: integration with wasmedge, support for building from local source code, multiple functions supported in a single Pod, support for detecting changes to source code or images and rebuilding/redeploying newly built images.
 
 - [OpenKruise Cloud Native Application Automation Management Suite v1.3.0 release (CNCF project)](https://github.com/openkruise/kruise/releases/tag/v1.3.0)
 
