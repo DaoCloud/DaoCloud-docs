@@ -50,6 +50,10 @@
 
     更新内容包括：Azure 容器注册中心新增软删除功能，可恢复误删除的工件；允许中止 AKS 集群或代理池上的任何操作；支持多实例 GPU（MIG）；将 Azure 网络策略管理器（NPM）扩展到 Windows server 2022 的 AKS 集群；集成用于 AKS 私有集群的 API Server VNET。
 
+- [阿里云服务网格 ASM 2023 年 2 月更新](https://mp.weixin.qq.com/s/jNeC_gMQdCk8b8d3QXSeMQ)
+
+    更新内容：支持以 Telemetry CRD 的方式定义管理日志、监控及链路追踪；支持网格全局及命名空间级别的细粒度配置；在 150 Pod 规模以上的集群中，网格拓扑加载速度提升；支持配置 sidecar 代理的环境变量、istio-proxy 线程数等；支持在多集群内配置集群内流量保持功能。
+
 - [阿里云容器镜像服务 ACR 正式推出云原生制品中心](https://mp.weixin.qq.com/s/atQF7WNfeodW3eizw6e1tg)
 
     云原生制品中心为容器开发者免费提供来源于阿里云官方、龙蜥社区的安全可信容器基础镜像。
@@ -99,7 +103,7 @@
 
     支持 x86 架构和 ARM 架构的混合管理、支持国产化数据库达梦、支持生产级 windows 容器、提供 ACK 和 TKE 公有云容器集群的统一资源纳管服务、支持同时发布多个原生 yaml 文件、支持原生 ingress 能力、将高性能虚拟机作为一种全新的资源类型进行独立管理、提供容器资源超分能力、完成容器云和微服务管理、服务网格、中间件等子产品的深度融合。
 
-### C, D
+### C
 
 - [Calico 云原生安全平台 Calico Enterprise 3.16 发布](https://www.tigera.io/blog/whats-new-in-calico-enterprise-3-16-egress-gateway-on-aks-service-graph-optimizations-and-more/)
 
@@ -124,6 +128,8 @@
 - [Chainguard 云原生供应链安全平台  Chainguard Enforce 更新](https://www.chainguard.dev/unchained/chainguard-enforce-announces-new-software-signing-capability)
 
     更新内容：提供基于 Sigstore 的无密钥签名模式、增加一个开箱即用的安全策略库、支持用户通过其 Gitlab 账户登录、支持 CloudEvents、支持细粒度的 Kubernetes 工作负载对象的策略、增强大规模集群用户的稳定性。
+
+### D, E
 
 - [D2iQ Kubernetes Platform v2.4.0 发布](https://docs.d2iq.com/dkp/2.4/dkp-2-4-0-features-and-enhancements)
 
@@ -157,6 +163,11 @@
 - [Dynatrace 利用人工智能引擎 Davis AI 提供 Kubernetes 根因分析](https://www.dynatrace.com/news/blog/root-cause-analysis-in-kubernetes-with-davis-ai/)
 
     Davis AI 因果分析引擎为 Kubernetes 性能问题及其对业务连续性的影响提供根因分析。具体功能：自动化根因分析、支持实时跟踪 Kubernetes 的编排流程、将性能问题与 Pod 驱逐联系起来、支持根据工作负载部署清单的变化来识别与错误配置有关的性能下降问题的原因。
+
+- [Ermetic 云原生应用保护平台支持 Kubernetes 安全态势管理](https://ermetic.com/news/ermetic-adds-kubernetes-security-posture-management-to-cloud-native-application-protection-platform/)
+
+    Ermetic 云原生应用保护平台的 Kubernetes 安全姿势管理功能支持自动发现和修复 Kubernetes 集群中的错误配置、合规性违规以及风险或过度特权。
+    它提供了所有 Kubernetes 集群内部资源的详细清单，能够持续执行安全态势评估和风险优先级排序，并提供补救方法和工作流集成。
 
 ### F, G
 
@@ -281,6 +292,10 @@
     Kubernetes360 将日志、Prometheus 指标监控和 Jaeger 支持的分布式追踪统一在一个平台中，使 DevOps 团队能够以简单、高效和可操作的方式监控应用 SLO。
 
 ### M, N, O
+
+- [Mirantis 容器运行时 Container Runtime 23.0 发布](https://www.mirantis.com/blog/announcing-the-23-0-major-release-for-mirantis-container-runtimeand-moby)
+
+    更新内容：实验性地支持 CSI；增强 OCI运行时支持，支持  Kata Containers 和 gVisor；执行健康检查所需的开销不再计入时间阈值，即使容器负载大，健康检查所需的时间也不会增加；默认使用镜像构建工具 BuildKit。
 
 - [Mirantis 私有云基础设施平台 Mirantis OpenStack for Kubernetes 22.5 发布](https://www.mirantis.com/blog/mirantis-openstack-for-kubernetes-22-5-released)
 

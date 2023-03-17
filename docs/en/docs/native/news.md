@@ -15,12 +15,22 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     The Trusted Cloud Proprietary Cloud Assessment aims to assess the comprehensive level of proprietary cloud capabilities (including self-built and dedicated models), maturity (general), industry capabilities (financial), and special capabilities (compatibility) of the participating units.
     The hybrid cloud assessment evaluates the basic platform capabilities (including public cloud part, private cloud part, hyper-converged platform, and Cintron compatibility), special capabilities (security), application scenarios (data analysis, R&D operation), and comprehensive capabilities of the participating units.
 
+- [May 8-9 cdCon + GitOpsCon North America 2023 Conference Agenda Released](https://events.linuxfoundation.org/cdcon-gitopscon/program/schedule/)
+  
+    This session will feature 60+ presentations sharing topics including but not limited to
+    The difference between DevOps and GitOps, security/compliance practices for software delivery platforms, static configuration, advanced deployment, and more.
+
 - [May 8-9 cdCon + GitOpsCon 2023 Call for Topics (2.10 deadline)](https://events.linuxfoundation.org/cdcon-gitopscon/program/cfp/)
   
     cdCon + GitOpsCon 2023 is hosted by the CD Foundation and the CNCF Foundation and will be held in Vancouver from 5.8-5.9.
     Topics may include: Getting Started with GitOps, Scaling and Managing GitOps, Lessons Learned from Production Deployments, Advanced Delivery Technologies, Open Source GitOps and CD Technology Practices in Cloud-Native Environments, Supply Chain Security, and more.
 
 ### 2023-04
+
+- [March-Late April China Academy of Information and Communications Technology officially launches the "Trusted Cloud - Cloud Infrastructure and Cloud Software Assessment Series" in the first half of 2023](https://mp.weixin.qq.com/s/iB3anpkeXoiLxIiC7FDAgw)
+  
+    The cloud infrastructure and cloud software assessment system includes five modules.
+    Virtualization domain assessment (virtualization cloud platform assessment, private cloud construction effectiveness assessment, etc.), hyper-convergence domain solution, construction effectiveness and application scenario assessment, distributed storage domain assessment, and other assessments (cloud desktop assessment, cloud native API gateway, etc.).
 
 - [April Cloud Cost Optimization Series and Cloud Resource Benefit Metrics Assessment Launched (Registration Deadline in April)](https://mp.weixin.qq.com/s/FGk8x5OaL4gYpnjGHa2Llg)
   
@@ -67,6 +77,11 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     KubeCrash Spring 2023 invites experts from Xbox, Boeing and other experts as well as CNCF project maintainers to share their talks.
     The first day will be a Zero Trust Day, focusing on secure access to clusters, intra-cluster communication security, managing TLS certificates and policy definitions, etc. The second day will be an Innovation Day, focusing on gaming, ML/AI and other breakthrough technologies.
+
+- [March 25, on the Magic City! Cloud Native Open Source Project Application Practice Session 2 Registration Open](https://mp.weixin.qq.com/s/RHcxtZlSBfabuPDkCBGQbw)
+  
+    On March 25, DaoCloud, Observation Cloud, Stacked Realm Digital and DCE 5.0 community will jointly host a special session on cloud-native open source project application practice in Shanghai, with the participation of Microsoft, China Mobile and CloudSpace.
+    The event will focus on cluster management, cloud-native virtualization technology, digital twin, observability and other hot topics, discussing technical breakthroughs and application practices of cloud-native open source projects.
 
 ### 2023-02
 
