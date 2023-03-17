@@ -46,9 +46,15 @@
     sudo mv kind /usr/local/bin/kind
     ```
 
-=== "Mac 已安装 Homebrew"
+=== "通过 Homebrew 安装 kind"
 
-    有了 Homebrew 后，就很简单了：
+    安装 Homebrew：
+
+    ```
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
+
+    安装 kind
 
     ```shell
     brew install kind
