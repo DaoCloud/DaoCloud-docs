@@ -680,6 +680,7 @@ nav:
       - 云原生网络: videos/network.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 202303 | 边缘原生应用原则白皮书: blogs/edgeappwp.md
       - 202303 | Linux 单机安装社区版: blogs/linux.md
       - 202303 | macOS 单机安装社区版: blogs/macos.md
       - 202303 | KWOK 介绍: blogs/kwok.md
