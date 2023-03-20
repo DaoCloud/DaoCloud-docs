@@ -1,8 +1,19 @@
 # 自定义 DCE 5.0 反向代理服务器地址
 
-参照以下步骤为 DCE 5.0 自定义反向代理服务器地址。
+## 前置条件
 
-1. 设置环境变量，方便在下文中使用。
+要求 DCE 5.0 管理集群上的 ghippo-apiserver pod 必须能够访问通该反向代理入口地址，可在管理集群节点上 curl 反向代理入口地址来验证其连通性：
+
+```shell
+# 假设准备设置的反向代理入口地址为 https://demo-alpha.daocloud.io
+curl -k "https://demo-alpha.daocloud.io"
+```
+
+如不满足连通性要求，则下述设置步骤无效
+
+## 设置步骤
+
+1.  设置环境变量，方便在下文中使用。
 
     ```shell
     # 您的反向代理地址，例如：`export DCE_PROXY="https://demo-alpha.daocloud.io"`
@@ -15,19 +26,19 @@
     export GHIPPO_HELM_VERSION=$(helm get notes ghippo -n ghippo-system | grep "Chart Version" | awk -F ': ' '{ print $2 }')
     ```
 
-2. 更新全局管理 Helm 仓库。
+2.  更新全局管理 Helm 仓库。
 
     ```shell
     helm repo update ghippo
     ```
 
-3. 备份 --set 参数。
+3.  备份 --set 参数。
 
     ```shell
     helm get values ghippo -n ghippo-system -o yaml > ${GHIPPO_VALUES_BAK}
     ```
 
-4. 添加您的反向代理地址。
+4.  添加您的反向代理地址。
 
     !!! note
 
@@ -49,7 +60,7 @@
               reverseProxy: ${DCE_PROXY} # 只需要修改这一行
             ```
 
-5. 执行 `helm upgrade` 使配置生效。
+5.  执行 `helm upgrade` 使配置生效。
 
     ```shell
     helm upgrade ghippo ghippo/ghippo \
@@ -58,7 +69,7 @@
       --version ${GHIPPO_HELM_VERSION}
     ```
 
-6. 使用 `kubectl` 重启全局管理 Pod，使配置生效。
+6.  使用 `kubectl` 重启全局管理 Pod，使配置生效。
 
     ```shell
     kubectl rollout restart deploy/ghippo-apiserver -n ghippo-system
