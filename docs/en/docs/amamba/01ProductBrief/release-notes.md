@@ -13,7 +13,7 @@ This page lists the Release Notes of the application workbench, so that you can 
 
 #### Optimized
 
-- **Optimized** Optimized the application access service grid process
+- **Optimized** Optimized the application access service mesh process
 
 #### Fixed
 

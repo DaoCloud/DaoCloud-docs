@@ -78,11 +78,11 @@ type TenantSpec struct {
 
 ### Service Accounts
 
-通常使用用户登陆 console 或者通过 mc 命令对 minio 进行管理操作。如果应用程序需要访问 minio，通常是使用 service account（service account 是比较正式的叫法，某些上下文中，也可以成为 access key）。
+通常使用用户登录 console 或者通过 mc 命令对 minio 进行管理操作。如果应用程序需要访问 minio，通常是使用 service account（service account 是比较正式的叫法，某些上下文中，也可以成为 access key）。
 
 一个用户可以创建多个 service account。
 
-> 注意：无法通过 service account 登陆 minio console，这也是它与用户最大的不同之处。
+> 注意：无法通过 service account 登录 minio console，这也是它与用户最大的不同之处。
 
 #### 通过 console 创建 service account
 

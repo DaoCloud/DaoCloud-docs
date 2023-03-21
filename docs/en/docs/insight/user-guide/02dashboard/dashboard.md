@@ -25,6 +25,6 @@ For more information on open source Grafana, see [Grafana Official Documentation
 
 !!! note
 
-     To access native Grafana, please refer to: [Login to Grafana as administrator](../../06UserGuide/02dashboard/logingrafana.md)
+     To access native Grafana, please refer to: [Login to Grafana as administrator](logingrafana.md)
     
-     For importing a custom dashboard, please refer to: [Import a custom dashboard](../../09FAQs/importdashboard.md)
+     For importing a custom dashboard, please refer to: [Import a custom dashboard](../../faq/importdashboard.md)

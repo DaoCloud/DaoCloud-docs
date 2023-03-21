@@ -141,7 +141,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [January 11 2022 CNCF and Linux Foundation Open Source Project Rankings Announced](https://www.cncf.io/blog/2023/01/11/a-look-at-the-2022-velocity-of-cncf-linux-foundation-and- top-30-open-source-projects/)
   
     Among CNCF open source projects, Kubernetes has the most contributors, OpenTelemetry is in second place, and Backstage, which did not make the cut a year ago, is in fourth place this year.
-    In addition, GitOps project Argo, Service Grid technology Envoy, Cilium and Istio also ranked high.
+    In addition, GitOps project Argo, service mesh technology Envoy, Cilium and Istio also ranked high.
     The [2022 CNCF Project Rankings](https://docs.google.com/spreadsheets/d/1NifFdE45BlscO6j7vlDspccQ-i9Ksgip6yx2bmhmCCs/edit#gid=976519966) are shown below (bubble area is proportional to the number of authors) and the number of pr and issue on the y-axis, and the number of commits on the x-axis).
 
     ![CNCF](./images/CNCF-Projects.png)
@@ -567,7 +567,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [August 13 Lundao Native Cloud Native Meetup Nanjing station registration opens](https://mp.weixin.qq.com/s/f5I4hn_lHf9x9oDBUgAIIQ)
 
-     LunDaoNative Meetup Nanjing Station is hosted by DaoKe and Pengyun Network, focusing on topics such as service grid, cloud-native storage, cloud-native security and related open source projects.
+     LunDaoNative Meetup Nanjing Station is hosted by DaoKe and Pengyun Network, focusing on topics such as service mesh, cloud-native storage, cloud-native security and related open source projects.
      The event will be held on August 13, in the form of offline + online live broadcast.
 
 - [CloudNativeDay 2022 held online on August 10th](https://www.techstrongevents.com/cloud-native-days-2022?ref=in-article-ad&utm_source=Container+Journal&utm_medium=Referral&utm_campaign=in-article-ad)
@@ -726,10 +726,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      Project address: <https://github.com/devstream-io/devstream>
 
-- [The service grid project Aeraki Mesh entered the CNCF sandbox project on June 15](https://mp.weixin.qq.com/s/Q1wycrIJzgendfWbFTijfw)
+- [The service mesh project Aeraki Mesh entered the CNCF sandbox project on June 15](https://mp.weixin.qq.com/s/Q1wycrIJzgendfWbFTijfw)
 
      Aeraki Mesh aims to solve the pain point that the current service mesh project only meets the HTTP/gRPC protocol and does not support other open source and public protocols, and provides management services that are fully compatible with the Istio API.
-     Help users quickly obtain the traffic management and service governance capabilities provided by the service grid with a small migration cost and maintenance cost.
+     Help users quickly obtain the traffic management and service governance capabilities provided by the service mesh with a small migration cost and maintenance cost.
 
      Project address: <https://github.com/aeraki-mesh/aeraki>
 

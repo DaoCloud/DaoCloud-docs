@@ -9,7 +9,7 @@ vmstorage 是负责存储可观测性多集群指标。
 经过 14 天对不同规模的集群的 vmstorage 的磁盘观测，
 我们发现 vmstorage 的磁盘用量与其存储的指标量和单个数据点占用磁盘正相关。
 
-1. 瞬时存储的指标量：`increase(vm_rows{ type != "indexdb"}[30s])` ## 获取 30s 内增加的指标量
+1. 瞬时存储的指标量 `increase(vm_rows{ type != "indexdb"}[30s])` 以获取 30s 内增加的指标量
 2. 单个数据点 (datapoint) 的占用磁盘：`sum(vm_data_size_bytes{type!="indexdb"}) / sum(vm_rows{type != "indexdb"})`
 
 ## 计算方法
@@ -21,7 +21,7 @@ vmstorage 是负责存储可观测性多集群指标。
 1. 磁盘用量单位为 `Byte` 。
 2. `存储时长(天) x 60 x 24` 将时间(天)换算成分钟以便计算磁盘用量。
 3. Insight Agent 中 Prometheus 默认采集时间为 30s ，故在 1 分钟内产生两倍的指标量。
-4. vmstorage 中默认存储时长为 1 个月，修改配置请参考：[修改系统配置](https://docs.daocloud.io/insight/06UserGuide/08systemconfig/modifyconfig/)。
+4. vmstorage 中默认存储时长为 1 个月，修改配置请参考[修改系统配置](../user-guide/system-config/modify-config.md)。
 
 !!! warning
 
@@ -29,7 +29,8 @@ vmstorage 是负责存储可观测性多集群指标。
 
 ## 参考容量
 
-表格中数据是根据默认存储时间为一个月 (30 天), 单个数据点(datapoint)的占用磁盘取 0.9 计算所得结果。多集群场景下，Pod 数量表示多集群 Pod 数量的总和。
+表格中数据是根据默认存储时间为一个月 (30 天)，单个数据点 (datapoint) 的占用磁盘取 0.9 计算所得结果。
+多集群场景下，Pod 数量表示多集群 Pod 数量的总和。
 
 ### 当未开启服务网格时
 
@@ -61,14 +62,13 @@ vmstorage 是负责存储可观测性多集群指标。
 
 ### 举例说明
 
-DCE 5.0 平台中有两个集群，其中全局管理集群(开启服务网格)中运行 500 个 Pod，工作集群(未开启服务网格)运行了 1000 个 pod，预期指标存 30 天。
+DCE 5.0 平台中有两个集群，其中全局管理集群(开启服务网格)中运行 500 个 Pod，工作集群(未开启服务网格)运行了 1000 个 Pod，预期指标存 30 天。
 
 - 全局管理集群中指标量为 800x500 + 768x500 = 784000
-
 - 工作集群指标量为 800x1000 = 800000
 
 则当前 vmstorage 磁盘用量应设置为 （784000+80000)x2x0.9x60x24x31 =124384896000 byte = 116 GiB
 
 !!! note
 
-    集群中指标量与 Pod 数量的关系可参考：[Prometheus 资源规划](https://docs.daocloud.io/insight/10bestpractice/prometheusresource/)
+    集群中指标量与 Pod 数量的关系可参考[Prometheus 资源规划](./prometheus-res.md)。

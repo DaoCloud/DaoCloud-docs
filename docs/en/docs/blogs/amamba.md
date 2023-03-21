@@ -55,7 +55,7 @@ The cloud-native applications currently supported by the application workbench i
 ![img](images/amamba03.png)
 
 The application workbench is oriented towards application development and operation and maintenance, covering the entire application lifecycle, including application creation, deletion, configuration modification, automatic scaling, and automatic operation and maintenance.
-And support SpringCloud, Dubbo, ServiceMesh service governance architecture, and [5.0 Microservice Engine](../skoala/intro/features.md), [5.0 Service Grid](../mspider/01Intro/WhatismSpider.md) Seam integration:
+And support SpringCloud, Dubbo, ServiceMesh service governance architecture, and [5.0 Microservice Engine](../skoala/intro/features.md), [5.0 service mesh](../mspider/01Intro/WhatismSpider.md) Seam integration:
 
 ![img](images/amamba04.png)
 

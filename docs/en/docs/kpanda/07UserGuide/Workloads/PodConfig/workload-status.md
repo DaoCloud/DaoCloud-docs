@@ -50,4 +50,4 @@ Because different workload types (such as stateless workloads and tasks) have in
 | Stopped | The scheduled task is in this state when the stop task operation is performed. |
 | Deleting | The deletion operation is triggered, and the scheduled task is in this state. |
 
-When the workload is in an abnormal or unready state, you can move the mouse over the state value of the load, and the system will display more detailed error information through a prompt box. You can also view the [log](../../../../insight/06UserGuide/04dataquery/logquery.md) or events to obtain related running information of the workload.
+When the workload is in an abnormal or unready state, you can move the mouse over the state value of the load, and the system will display more detailed error information through a prompt box. You can also view the [log](../../../../insight/user-guide/04dataquery/logquery.md) or events to obtain related running information of the workload.
