@@ -22,7 +22,7 @@
 
 ## Dashboard
 
-See the [Dashboard](../insight/06UserGuide/02dashboard/dashboard.md) documentation page.
+See the [Dashboard](../insight/user-guide/02dashboard/dashboard.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/dashboard.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
@@ -30,7 +30,7 @@ See the [Dashboard](../insight/06UserGuide/02dashboard/dashboard.md) documentati
 
 ## Install insight-agent
 
-See the [Install insight-agent](../insight/06UserGuide/01quickstart/installagent.md) documentation page.
+See the [Install insight-agent](../insight/user-guide/01quickstart/installagent.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/insight-agent.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
@@ -38,7 +38,7 @@ See the [Install insight-agent](../insight/06UserGuide/01quickstart/installagent
 
 ## Modify system configuration
 
-See the [modification of system configuration](../insight/06UserGuide/08systemconfig/modifyconfig.md) documentation page.
+See the [modification of system configuration](../insight/user-guide/08systemconfig/modifyconfig.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/insight-agent.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>

@@ -261,7 +261,7 @@ Date: 2022-5-18
 - Added documentation station glossary
 - Added 4 pages of basic concept tasks and examples, data model, query language, etc. of the document station
 - Added user guides - documents such as scene monitoring, data query, alarm center, etc.
-- Added to the document site: [Product Advantage](../03ProductBrief/benefits.md), [Metric Query](../06UserGuide/04dataquery/metricquery.md), [Link Query](../06UserGuide/04dataquery /tracequery.md), Dashboard, [Overview](../06UserGuide/overview.md)
+- Added to the document site: [Product Advantage](benefits.md), [Metric Query](../user-guide/04dataquery/metricquery.md), [Link Query](../06UserGuide/04dataquery /tracequery.md), Dashboard, [Overview]../user-guide/overview.mdd)
 
 ## v0.4
 

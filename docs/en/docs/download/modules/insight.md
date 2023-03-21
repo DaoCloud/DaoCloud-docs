@@ -11,7 +11,7 @@ On this page, you can download the offline installation packages of each version
 
 | Filename | Version | Architecture | File Size | Installer | Date Updated |
 | ------------------------------ | ------------------ ------------------------------------- | ----- |------- - | ------------------------------------------------ -------------------------------------------------- -------- | ---------- |
-| insight_v0.13.1_amd64.tar | [v0.13.2](../../insight/03ProductBrief/releasenote.md) | AMD64 | 2.41 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/insight_v0.13.1_amd64.tar) | 2022-12-30 |
+| insight_v0.13.1_amd64.tar | [v0.13.2](../../insight/intro/releasenote.md) | AMD64 | 2.41 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/insight_v0.13.1_amd64.tar) | 2022-12-30 |
 
 ## Validation
 
@@ -29,7 +29,7 @@ insight.tar: ok
 
 ## Install
 
-Refer to [Observability](../../insight/06UserGuide/01quickstart/offlineInstall.md) installation process for installation.
+Refer to [Observability](../../insight/user-guide/01quickstart/offlineInstall.md) installation process for installation.
 
 If it is the first installation, please [apply for free trial](../../dce/license0.md) or [genuine authorization](https://qingflow.com/f/e3291647).
 If you have any license key related questions, please contact DaoCloud delivery team.

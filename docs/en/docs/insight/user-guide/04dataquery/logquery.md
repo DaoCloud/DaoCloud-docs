@@ -8,7 +8,7 @@ Log query supports querying logs of nodes, events, and workloads, and can quickl
 
 ## Prerequisites
 
-- The cluster has [insight-agent installed](../../06UserGuide/01quickstart/installagent.md) and the application is in `running` state.
+- The cluster has [insight-agent installed](../01quickstart/installagent.md) and the application is in `running` state.
 
 ## Query log
 

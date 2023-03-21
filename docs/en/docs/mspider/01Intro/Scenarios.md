@@ -14,7 +14,7 @@ Traffic governance is a very broad topic such as:
 
 - Dynamically modify the content in the service, or simulate service failures, etc.
 
-The service grid can provide non-intrusive traffic management capabilities, and these service governance functions can be realized without modifying any business code. Provide strategic and scenario-based network connection management according to the service agreement. Different governance rules can be configured for specific ports of specific services as needed.
+The service mesh can provide non-intrusive traffic management capabilities, and these service governance functions can be realized without modifying any business code. Provide strategic and scenario-based network connection management according to the service agreement. Different governance rules can be configured for specific ports of specific services as needed.
 
 ### Scenario Advantages
 
@@ -66,11 +66,11 @@ Facing these demands, Service Mesh provides comprehensive security solutions, in
 
 - Non-intrusive security
 
-     The service grid provides users with transparent security capabilities in the form of a security infrastructure, allowing codes that do not involve security issues to run safely, so that people who do not understand security can develop and operate secure services without modifying business code It can provide service access security. The application service grid provides a transparent distributed security layer, provides an underlying secure communication channel, manages the authentication, authorization, and encryption of service communication, and provides Pod-to-Pod, service-to-service communication security. Developers only need to focus on application-level security on top of this security infrastructure layer.
+     The service mesh provides users with transparent security capabilities in the form of a security infrastructure, allowing codes that do not involve security issues to run safely, so that people who do not understand security can develop and operate secure services without modifying business code It can provide service access security. The application service mesh provides a transparent distributed security layer, provides an underlying secure communication channel, manages the authentication, authorization, and encryption of service communication, and provides Pod-to-Pod, service-to-service communication security. Developers only need to focus on application-level security on top of this security infrastructure layer.
 
 - Multi-cluster security
 
-     In a multi-cluster scenario, the service grid provides global service access security. Grids of multiple clusters share a set of root certificates, distribute key and certificate pairs to service instances on the data plane, replace key certificates regularly, and revoke key certificates as needed. When accessing between services, the data plane agent of the grid will act as a proxy for the local service and the peer to perform two-way authentication and channel encryption. The two-way authentication service parties here can come from two different clusters, so as to achieve transparent end-to-end two-way authentication across clusters.
+     In a multi-cluster scenario, the service mesh provides global service access security. Grids of multiple clusters share a set of root certificates, distribute key and certificate pairs to service instances on the data plane, replace key certificates regularly, and revoke key certificates as needed. When accessing between services, the data plane agent of the grid will act as a proxy for the local service and the peer to perform two-way authentication and channel encryption. The two-way authentication service parties here can come from two different clusters, so as to achieve transparent end-to-end two-way authentication across clusters.
 
 - Fine-grained authorization
 
@@ -87,7 +87,7 @@ A service mesh can perform telemetry for all service communications within the m
 - Non-intrusive surveillance data collection
 
      In complex application scenarios, the access topology, call chain, and monitoring between services are all necessary means for positioning and demarcating when service access is abnormal.
-     An important capability of the service grid technology is to provide the collection of these monitoring data in a non-intrusive manner. Users only need to pay attention to their own business development and do not need to pay extra attention to the generation of monitoring data.
+     An important capability of the service mesh technology is to provide the collection of these monitoring data in a non-intrusive manner. Users only need to pay attention to their own business development and do not need to pay extra attention to the generation of monitoring data.
 
 - Rich performance monitoring capabilities
 
