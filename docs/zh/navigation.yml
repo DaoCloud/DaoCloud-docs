@@ -208,9 +208,9 @@ nav:
               - DCE 4.0 安装 insight-agent: insight/faq/install-agentindce.md
               - 指标抓取说明: insight/faq/service-monitor.md
           - 最佳实践:
-              - Prometheus 资源规划: insight/best-practice/prometheus-resource.md
-              - vmstorage 磁盘规划: insight/best-practice/vmstorage-resource-plan.md
-              - 调整 vmstorage 磁盘: insight/best-practice/modify-vmstorage-disk.md
+              - Prometheus 资源规划: insight/best-practice/prometheus-res.md
+              - vmstorage 磁盘规划: insight/best-practice/vms-res-plan.md
+              - 调整 vmstorage 磁盘: insight/best-practice/modify-vms-disk.md
       - 应用工作台:
           - 介绍:
               - 什么是应用工作台？: amamba/intro/what.md

@@ -1,13 +1,16 @@
 # vmstorage 磁盘容量规划
 
-vmstorage 是负责存储可观测性多集群指标。为保证 vmstorage 的稳定性，需要根据集群数量及集群规模调整 vmstorage 的磁盘容量。更多资料请参考：[vmstorage 保留期与磁盘空间](https://docs.victoriametrics.com/guides/understand-your-setup-size.html?highlight=datapoint#retention-perioddisk-space)。
+vmstorage 是负责存储可观测性多集群指标。
+为保证 vmstorage 的稳定性，需要根据集群数量及集群规模调整 vmstorage 的磁盘容量。
+更多资料请参考：[vmstorage 保留期与磁盘空间](https://docs.victoriametrics.com/guides/understand-your-setup-size.html?highlight=datapoint#retention-perioddisk-space)。
 
 ## 测试结果
 
-经过 14 天对不同规模的集群的 vmstorage 的磁盘观测，我们发现 vmstorage 的磁盘用量与其存储的指标量和单个数据点占用磁盘正相关。
+经过 14 天对不同规模的集群的 vmstorage 的磁盘观测，
+我们发现 vmstorage 的磁盘用量与其存储的指标量和单个数据点占用磁盘正相关。
 
-1. 瞬时存储的指标量： increase(vm_rows{ type != "indexdb"}[30s]) ## 获取 30s 内增加的指标量
-2. 单个数据点(datapoint)的占用磁盘：sum(vm_data_size_bytes{type!="indexdb"}) / sum(vm_rows{type != "indexdb"})
+1. 瞬时存储的指标量：`increase(vm_rows{ type != "indexdb"}[30s])` ## 获取 30s 内增加的指标量
+2. 单个数据点 (datapoint) 的占用磁盘：`sum(vm_data_size_bytes{type!="indexdb"}) / sum(vm_rows{type != "indexdb"})`
 
 ## 计算方法
 
@@ -66,6 +69,6 @@ DCE 5.0 平台中有两个集群，其中全局管理集群(开启服务网格)�
 
 则当前 vmstorage 磁盘用量应设置为 （784000+80000)x2x0.9x60x24x31 =124384896000 byte = 116 GiB
 
-!!! Note
+!!! note
 
     集群中指标量与 Pod 数量的关系可参考：[Prometheus 资源规划](https://docs.daocloud.io/insight/10bestpractice/prometheusresource/)
