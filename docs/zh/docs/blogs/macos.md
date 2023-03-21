@@ -193,4 +193,4 @@ fire-kind-cluster-control-plane   Ready    control-plane   18h   v1.25.3
 
 1. 在应用列表中卸载 Docker。
 
-至此您的 MacBook 恢复到了最初状态。
+至此您的 MacBook 恢复到了最初状态 😄
