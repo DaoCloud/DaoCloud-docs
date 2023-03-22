@@ -5,13 +5,7 @@ hide:
 
 # 生产环境资源要求
 
-生产环境需要：
-
-- 指定资源配置
-- 避免部署到 Master 节点
-- 实现控制器的快速故障切换
-
-`values.extra.prod.yaml` 文件中提供了一些推荐值，资源配置如下：
+如果在生产环境中部署 Hwameistor ，请指定资源配置，并且避免部署到 Master 节点上，因此`values.extra.prod.yaml` 文件中提供了一些推荐值，资源配置如下：
 
 ```console
 scheduler:
