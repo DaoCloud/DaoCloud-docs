@@ -4,7 +4,7 @@ Observability Insight provides monitoring of service indicators, and can view ke
 
 ## Prerequisites
 
-The insight-agent is installed in the cluster and the application is in `running` state. If not installed, please refer to: [Installing insight-agent to collect data](../../06UserGuide/01quickstart/installagent.md)
+The insight-agent is installed in the cluster and the application is in `running` state. If not installed, please refer to: [Installing insight-agent to collect data](../01quickstart/installagent.md)
 
 ## View node details
 

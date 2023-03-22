@@ -197,7 +197,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Consul Service Discovery Framework v1.13.0 release (CNCF project)](https://github.com/hashicorp/consul/releases/tag/v1.13.0)
 
-     The main new features of this version: Remove support for Envoy 1.19; Cluster Peering supports federated Consul clusters for service grid and traditional service discovery; allows routing egress traffic through terminal gateways in transparent proxy mode without modifying the directory.
+     The main new features of this version: Remove support for Envoy 1.19; Cluster Peering supports federated Consul clusters for service mesh and traditional service discovery; allows routing egress traffic through terminal gateways in transparent proxy mode without modifying the directory.
 
 - [containerd container runtime v1.7.0 released (CNCF project)](https://github.com/containerd/containerd/releases/tag/v1.7.0)
 
@@ -732,7 +732,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### M
 
-- [Merbridge: The service grid accelerator open sourced by DaoCloud has officially entered the CNCF sandbox](https://mp.weixin.qq.com/s/Ht1HuLxQ2RngrVD92TBl4Q)
+- [Merbridge: The service mesh accelerator open sourced by DaoCloud has officially entered the CNCF sandbox](https://mp.weixin.qq.com/s/Ht1HuLxQ2RngrVD92TBl4Q)
 
      On December 14, the CNCF Foundation announced that Merbridge was officially included in the CNCF sandbox project. [Merbridge](https://github.com/merbridge/merbridge) is currently the only open source project in CNCF focused on using eBPF to accelerate service mesh.
      Through Merbridge, you only need to execute a command in the Istio cluster, and you can directly use eBPF instead of iptables to achieve network acceleration and improve service performance.
@@ -880,11 +880,11 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: Added CRD `PersistentPodState` to persist certain states of Pods, such as "fixed IP scheduling"; CloneSet calculates logic changes for percentage-based partitions; sets Pod not-ready in the lifecycle hook stage; supports protection scale Any custom workload for subresource; new performance optimization methods for large-scale clusters, etc.
 
-- [osm-edge: Yiheng Technology Flomesh open source edge service grid](https://mp.weixin.qq.com/s/tbCxbKFQkvx84Ku5IWg38g)
+- [osm-edge: Yiheng Technology Flomesh open source edge service mesh](https://mp.weixin.qq.com/s/tbCxbKFQkvx84Ku5IWg38g)
 
      [osm-edge](https://github.com/flomesh-io/osm-edge) uses [osm](https://github.com/openservicemesh/osm) as the control plane and Programmable Gateway [Pipy](https://github.com/flomesh-io/pipy) as the data plane.
      Support SMI specification; support [fsm](https://github.com/flomesh-io/fsm) for ingress, gateway API, and cross-cluster service discovery, and provide "east-west + north-south" traffic of "k8s cluster + multi-cluster" Management and service governance capabilities.
-     Its development and testing environment uses k3s, k8e, etc., so users can quickly and cost-effectively deploy low-resource, high-performance service grids on x86, arm, RISC-V, Loongson and other hardware platforms.
+     Its development and testing environment uses k3s, k8e, etc., so users can quickly and cost-effectively deploy low-resource, high-performance service meshs on x86, arm, RISC-V, Loongson and other hardware platforms.
 
 ### P
 

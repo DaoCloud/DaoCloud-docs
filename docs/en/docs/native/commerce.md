@@ -50,7 +50,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates include: Added soft-delete functionality to Azure Container Registry to restore accidentally deleted artifacts; allows aborting any operation on an AKS cluster or proxy pool; supports multi-instance GPU (MIG); extends Azure Network Policy Manager (NPM) AKS cluster to Windows server 2022; integrated API Server VNET for AKS private cluster.
 
-- [AliCloud Service Grid ASM February 2023 Update](https://mp.weixin.qq.com/s/jNeC_gMQdCk8b8d3QXSeMQ)
+- [AliCloud service mesh ASM February 2023 Update](https://mp.weixin.qq.com/s/jNeC_gMQdCk8b8d3QXSeMQ)
 
     Update: Support for defining management logs, monitoring and link tracing as Telemetry CRD; support for fine-grained configuration at the grid global and namespace levels; improved grid topology loading speed in clusters above 150 Pod size; support for configuring sidecar proxy environment variables, istio-proxy thread count, etc.; support for configuring in multiple clusters Support for intra-cluster traffic retention.
 
@@ -63,7 +63,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates: zookeeper support for exporting snapshots and transaction logs, cloud native gateway support for HTTP/3, microservice insight support for lossless log collection during up/down and key node information display.
 
-- [AliCloud Service Grid ASM December 2022 Update](https://mp.weixin.qq.com/s/4lODob6kB7xjYDaKACzmhw)
+- [AliCloud service mesh ASM December 2022 Update](https://mp.weixin.qq.com/s/4lODob6kB7xjYDaKACzmhw)
 
      Updates: support for managed on-demand push xDS configuration, support for self-built Istio community version migration to ASM, ASM gateway support for configuring custom authorization services, enable Service Level Objective SLOs.
 
@@ -83,7 +83,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates: The registration configuration center provides migration tools and solutions, the cloud-native gateway service source supports the Serverless application engine, authentication and authentication supports the coexistence of multiple rules, the routing and service details page adds QPS, error, delay and other indicator monitoring, and the whole link Capabilities such as grayscale and label routing support the Consul registry.
 
-- [Alibaba Cloud Service Grid ASM September Update](https://mp.weixin.qq.com/s/tx7iHBzoelS-3xB0UWKK2A)
+- [Alibaba Cloud service mesh ASM September Update](https://mp.weixin.qq.com/s/tx7iHBzoelS-3xB0UWKK2A)
 
      Update content: application service governance supports warm-up function; supports application security policy in trial operation mode; optimizes sidecar proxy configuration; adds a variety of JWT algorithms in "request authentication"; supports access to O1DC protocol services through external authorization; supports K8s 1.24; AHPA Elastic Prediction supports prediction based on GPU indicators; Log Center supports log and large disk display of network components; when Pod mounts OSS storage volumes, it supports I/O observability.
 
@@ -91,7 +91,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates: Add managed node pools, support configuring network-configured load balancing NLB instances for Services through Annotation, provide resource portrait functions for workloads, and support lifecycle management of object storage OSS Buckets using container network file systems.
 
-- [Alibaba Cloud Service Grid ASM August Update](https://mp.weixin.qq.com/s/BDgNctG90oHpbrRWC0Hxkg)
+- [Alibaba Cloud service mesh ASM August Update](https://mp.weixin.qq.com/s/BDgNctG90oHpbrRWC0Hxkg)
 
      Updates include: compatibility with Istio 1.14 series versions, support for Kubernetes 1.21 - 1.24 versions, enhanced grid diagnostics, support for compatibility of third-party tokens in ACK clusters, support for user-defined EnvoyFilter, and priority for the same availability zone without modifying the code routing.
 
@@ -101,7 +101,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [BoCloud Container Platform v3.7 released](https://mp.weixin.qq.com/s/K68IWq18YWkmMyyRte-OlQ)
 
-    Support mixed management of X86 and ARM architectures, support localized database Damon, support production-grade windows containers, provide unified resource management service for ACK and TKE public cloud container clusters, support simultaneous release of multiple native yaml files, support native ingress capability, manage high-performance virtual machines independently as a new resource type, provide It also provides container resource oversharing capability, and completes the deep integration of container cloud, microservice management, service grid, middleware and other sub-products.
+    Support mixed management of X86 and ARM architectures, support localized database Damon, support production-grade windows containers, provide unified resource management service for ACK and TKE public cloud container clusters, support simultaneous release of multiple native yaml files, support native ingress capability, manage high-performance virtual machines independently as a new resource type, provide It also provides container resource oversharing capability, and completes the deep integration of container cloud, microservice management, service mesh, middleware and other sub-products.
 
 ### C
 
@@ -268,7 +268,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Updates: Support for data plane extensions when the control plane fails; New Datadog tracking plugin to work with Datadog Agent without installing Otel collector; Support for latency-based bootstrapping, allowing Kong load balancers to select the "fastest" backend based on total response time when proxying upstream services. " backend when proxying upstream services.
 
-- [Kong Releases Service Grid Product Kong Mesh v2.1](https://konghq.com/blog/kong-mesh-kuma-2-1)
+- [Kong Releases service mesh Product Kong Mesh v2.1](https://konghq.com/blog/kong-mesh-kuma-2-1)
 
      Update: Completed implementation of all next-generation policies, including adding MeshHTTPRoute, MeshCircuitBreaker, MeshFaultInjection, MeshOPA and other policies; added gateway view in the UI; support for configuring ports in eBPF mode.
 
@@ -403,7 +403,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Red Hat OpenShift Service Mesh 2.3 released](https://cloud.redhat.com/blog/introducing-openshift-service-mesh-2.3)
 
-     The main new features of this version: support for Istio v1.14, support for creating and managing gateways by injecting deployment instances, adding cluster-wide topology, adding an OpenShift service grid console operator, and supporting Istio visualization tool Kiali 1.57.
+     The main new features of this version: support for Istio v1.14, support for creating and managing gateways by injecting deployment instances, adding cluster-wide topology, adding an OpenShift service mesh console operator, and supporting Istio visualization tool Kiali 1.57.
 
 - [Red Hat Openshift Logging 5.5 release](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.11/html/logging/release-notes#cluster-logging-release-notes-5-5-0)
 

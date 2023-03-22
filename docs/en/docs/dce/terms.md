@@ -55,7 +55,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     The aggregation layer is different from Custom Resources, which are a way to make the kube-apiserver recognise new kinds of object.
 
-- [Alert Rule](../insight/06UserGuide/05alertcenter/alertrule.md)
+- [Alert Rule](../insight/user-guide/05alertcenter/alertrule.md)
 
     In Insight, this is an alert object created based on the resource status. You can customize the conditions for triggering rules and sending notifications.
 
@@ -1519,7 +1519,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - [Log](https://opentelemetry.io/docs/concepts/signals/logs/), 日志
 
-    在 Insight 中，[日志](../insight/06UserGuide/04dataquery/logquery.md)是集群或应用程序记录的事件列表。
+    在 Insight 中，[日志](../insight/user-guide/04dataquery/logquery.md)是集群或应用程序记录的事件列表。
     系统运行过程中变化的一种抽象数据，其内容为指定对象的操作和其操作结果按时间的有序集合。
 
     应用程序和系统日志可以帮助您了解集群内部发生的情况。日志对于调试问题和监视集群活动非常有用。
@@ -1568,7 +1568,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     一个网格可以有一个以上的主集群，以用于 HA 或需要低延迟的场景。
     主集群可以充当工作集群的控制平面。
 
-- [Metric](https://opentelemetry.io/docs/concepts/signals/metrics/), [指标](../insight/06UserGuide/04dataquery/metricquery.md)
+- [Metric](https://opentelemetry.io/docs/concepts/signals/metrics/), [指标](../insight/user-guide/04dataquery/metricquery.md)
 
     对资源性能的数据描述或状态描述，指标由命名空间、维度、指标名称和单位组成。
     采集目标暴露的、可以完整反映监控对象运行或者业务状态的一系列标签化数据。
@@ -1740,7 +1740,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Observability, 可观测性
 
-    [可观测性](../insight/03ProductBrief/WhatisInsight.md)指的是从所观测的系统采集信号，持续生成并发现可执行的洞察力。
+    [可观测性](../insight/intro/WhatisInsight.md)指的是从所观测的系统采集信号，持续生成并发现可执行的洞察力。
     换言之，可观测性允许用户从某个系统的外部输出中洞察该系统的状态并采取（修正）措施。
 
     计算机系统的衡量机制为观测 CPU 时间、内存、磁盘空间等底层信号以及每秒
@@ -2365,7 +2365,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     它还允许客户端应用程序积极地识别他们正在调用的服务器，从而降低客户端与欺诈站点通信的风险。
     这可以确保第三方无法查看和监控使用 TLS 在应用程序之间传输的数据，从而保护敏感隐私的信息，例如信用卡号、密码、位置等。
 
-- [Trace](https://opentelemetry.io/docs/concepts/signals/traces/), [链路](../insight/06UserGuide/04dataquery/tracequery.md)
+- [Trace](https://opentelemetry.io/docs/concepts/signals/traces/), [链路](../insight/user-guide/04dataquery/tracequery.md)
 
     记录单次请求范围内的处理信息，其中包括服务调用和处理时长等数据。
     一个 Trace 有一个唯一的 Trace ID ，并由多个 Span 组成。

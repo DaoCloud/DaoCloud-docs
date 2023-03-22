@@ -147,56 +147,60 @@ nav:
                   - Join Ingress and Login Authentication: ghippo/gproduct/route-authn.md
       - Insight:
           - Intro:
-              - What is Insight: insight/03ProductBrief/WhatisInsight.md
-              - Benefits: insight/03ProductBrief/benefits.md
-              - Concepts: insight/03ProductBrief/concepts.md
-              - Scenarios: insight/03ProductBrief/scenarios.md
-              - Features: insight/03ProductBrief/feature.md
-              - Release Notes: insight/03ProductBrief/releasenote.md
+              - What is Insight: insight/intro/WhatisInsight.md
+              - Benefits: insight/intro/benefits.md
+              - Concepts: insight/intro/concepts.md
+              - Scenarios: insight/intro/scenarios.md
+              - Features: insight/intro/feature.md
+              - Release Notes: insight/intro/releasenote.md
           - Quick Start:
               - Install Insight:
-                  - insight/06UserGuide/01quickstart/installagent.md
-                  - Get URL to Upload Data: insight/06UserGuide/01quickstart/gethosturl.md
-                  - Upgrade Precautions: insight/06UserGuide/01quickstart/upgradenote.md
-                  - Offline upgrade Insight: insight/06UserGuide/01quickstart/offlineInstall.md
+                  - insight/user-guide/01quickstart/installagent.md
+                  - Get URL to Upload Data: insight/user-guide/01quickstart/gethosturl.md
+                  - Upgrade Precautions: insight/user-guide/01quickstart/upgradenote.md
+                  - Offline upgrade Insight: insight/user-guide/01quickstart/offlineInstall.md
               - OTel Enables Observability:
-                  - insight/06UserGuide/01quickstart/otel/otel.md
-                  - Non-intrusive Enhancement with Operator: insight/06UserGuide/01quickstart/otel/operator.md
-                  - Enhance Go Apps with OTel SDK: insight/06UserGuide/01quickstart/otel/golang.md
-                  - Expose Metrics with OTel SDK: insight/06UserGuide/01quickstart/otel/meter.md
-                  - Enhance Go Apps with OTel Auto-Instrumentation: insight/06UserGuide/01quickstart/otel/golang-ebpf.md
-          - Overview: insight/06UserGuide/overview.md
+                  - insight/user-guide/01quickstart/otel/otel.md
+                  - Non-intrusive Enhancement with Operator: insight/user-guide/01quickstart/otel/operator.md
+                  - Enhance Go Apps with OTel SDK: insight/user-guide/01quickstart/otel/golang.md
+                  - Expose Metrics with OTel SDK: insight/user-guide/01quickstart/otel/meter.md
+                  - Enhance Go Apps with OTel Auto-Instrumentation: insight/user-guide/01quickstart/otel/golang-ebpf.md
+          - Overview: insight/user-guide/overview.md
           - Dashboard:
-              - Dashboard: insight/06UserGuide/02dashboard/dashboard.md
-              - Log in to Grafana with Admin: insight/06UserGuide/02dashboard/logingrafana.md
+              - Dashboard: insight/user-guide/02dashboard/dashboard.md
+              - Log in to Grafana with Admin: insight/user-guide/02dashboard/logingrafana.md
           - Cloud Insight:
-              - Cluster Insight: insight/06UserGuide/03scenarioinsight/clusterinsight.md
-              - Node Insight: insight/06UserGuide/03scenarioinsight/nodeinsight.md
-              - Container Insight: insight/06UserGuide/03scenarioinsight/containerinsight.md
-              - Service Insight: insight/06UserGuide/03scenarioinsight/serviceinsight.md
+              - Cluster Insight: insight/user-guide/03scenarioinsight/clusterinsight.md
+              - Node Insight: insight/user-guide/03scenarioinsight/nodeinsight.md
+              - Container Insight: insight/user-guide/03scenarioinsight/containerinsight.md
+              - Service Insight: insight/user-guide/03scenarioinsight/serviceinsight.md
           - Data Query:
-              - Log Query: insight/06UserGuide/04dataquery/logquery.md
-              - Metric Query: insight/06UserGuide/04dataquery/metricquery.md
-              - Trace Query: insight/06UserGuide/04dataquery/tracequery.md
+              - Log Query: insight/user-guide/04dataquery/logquery.md
+              - Metric Query: insight/user-guide/04dataquery/metricquery.md
+              - Trace Query: insight/user-guide/04dataquery/tracequery.md
           - Alert Center:
-              - Alert Rules: insight/06UserGuide/05alertcenter/alertrule.md
-              - Notifications: insight/06UserGuide/05alertcenter/message.md
-              - Message Template: insight/06UserGuide/05alertcenter/messagetemplate.md
+              - Alert Rules: insight/user-guide/05alertcenter/alertrule.md
+              - Notifications: insight/user-guide/05alertcenter/message.md
+              - Message Template: insight/user-guide/05alertcenter/messagetemplate.md
           - Data Collection:
-              - Collection Management: insight/06UserGuide/07collectionmanag/collectionmanag.md
-              - Service Monitor: insight/06UserGuide/07collectionmanag/servicemonitor.md
-              - Enable Logging: insight/09FAQs/collectauditlog.md
+              - Collection Management: insight/user-guide/07collectionmanag/collectionmanag.md
+              - Service Monitor: insight/user-guide/07collectionmanag/servicemonitor.md
+              - Enable Logging: insight/faq/collectauditlog.md
           - System Config:
-              - System Config: insight/06UserGuide/08systemconfig/systemconfig.md
-              - Modify Config: insight/06UserGuide/08systemconfig/modifyconfig.md
-          - Permissions: insight/06UserGuide/permission.md
+              - System Config: insight/user-guide/08systemconfig/systemconfig.md
+              - Modify Config: insight/user-guide/08systemconfig/modifyconfig.md
+          - Permissions: insight/user-guide/permission.md
           - FAQs:
-              - Import Custom Dashboard: insight/09FAQs/importdashboard.md
-              - Enable Audit Logs: insight/09FAQs/collectauditlog.md
-              - Log Troubleshooting: insight/09FAQs/debuglog.md
-              - Trace Troubleshooting: insight/09FAQs/debugtrace.md
-              - Install insight-agent with DCE 4.0: insight/09FAQs/installagentindce.md
-              - Metrics to Capture: insight/09FAQs/servicemonitor.md
+              - Import Custom Dashboard: insight/faq/importdashboard.md
+              - Enable Audit Logs: insight/faq/collectauditlog.md
+              - Log Troubleshooting: insight/faq/debuglog.md
+              - Trace Troubleshooting: insight/faq/debugtrace.md
+              - Install insight-agent with DCE 4.0: insight/faq/installagentindce.md
+              - Metrics to Capture: insight/faq/servicemonitor.md
+          - Best Practices:
+              - Prometheus Resource Planning: insight/best-practice/prometheus-res.md
+              - vmstorage Disk Planning: insight/best-practice/vms-res-plan.md
+              - Modify vmstorage Disk: insight/best-practice/modify-vms-disk.md
       - Workbench:
           - Intro:
               - What is Workbench?: amamba/01ProductBrief/WhatisAmamba.md

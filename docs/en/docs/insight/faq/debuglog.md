@@ -1,6 +1,6 @@
 # Log Collection Troubleshooting Guide
 
-After [installing insight-agent](../06UserGuide/01quickstart/installagent.md) in the cluster, `Fluent Bit` in `insight-agent` will collect the logs in the cluster by default, including Kubernetes event logs, node logs, container logs etc.
+After [installing insight-agent](../user-guide/01quickstart/installagent.md) in the cluster, `Fluent Bit` in `insight-agent` will collect the logs in the cluster by default, including Kubernetes event logs, node logs, container logs etc.
 `Fluent Bit` has been configured with various log collection plug-ins, related filter plug-ins and log output plug-ins.
 The working status of these plug-ins determines whether the log collection is normal.
 The following is a dashboard for `Fluent Bit`, which is used to monitor the working status of `Fluent Bit` in each cluster and the collection, processing, and export of logs by plug-ins.

@@ -93,7 +93,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
     [Flomesh Service Mesh](https://github.com/flomesh-io/fsm) uses Pipy, a programmable agent, to provide east-west and north-south traffic management for the core.
     By breaking through the network isolation between computing environments with L7-based traffic management capabilities, a virtual flat network is created that allows applications in different computing environments to communicate with each other.
-    The article describes the integration of Dapr with the Flomesh service grid for cross-cluster service calls, enabling "true" multi-cluster interoperability.
+    The article describes the integration of Dapr with the Flomesh service mesh for cross-cluster service calls, enabling "true" multi-cluster interoperability.
 
 - [How to mitigate container isolation vulnerabilities and monitor kernel critical paths in cloud-native scenarios?](https://mp.weixin.qq.com/s/qlmm2h8RpQnKOnEjlK0pMA)
 
@@ -128,9 +128,9 @@ This page shares some technical articles related to cloud native, and we hope th
 
     The guide covers global cloud-native application insights and trends, AliCloud's latest product and technology layout in the cloud-native space, AliCloud's new thinking and input on All in Serverless, and hands-on experience on cloud from companies like Transn, New Oriental, and Little Red Book.
 
-- [Service Grid Security and High Availability Deployment Best Practices](https://mp.weixin.qq.com/s/hFCshQpmF7Vr0jrpugArjA)
+- [service mesh Security and High Availability Deployment Best Practices](https://mp.weixin.qq.com/s/hFCshQpmF7Vr0jrpugArjA)
 
-    Article on security and high availability best practices when deploying service grids in a multi-cluster infrastructure, including: how control planes should be deployed near applications; how ingress should be deployed to promote security and agility; how to use Envoy to promote cross-cluster load balancing, and how to use certificates inside the grid.
+    Article on security and high availability best practices when deploying service meshs in a multi-cluster infrastructure, including: how control planes should be deployed near applications; how ingress should be deployed to promote security and agility; how to use Envoy to promote cross-cluster load balancing, and how to use certificates inside the grid.
 
 - [Open Source Strategy Development and Implementation for Medium and Large Technology Enterprises](https://mp.weixin.qq.com/s/9Z4zFPU0uHk6RhrpUDD-tw)
 
@@ -335,7 +335,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [How to enforce egress traffic using Istio authorization policies](https://www.tetrate.io/blog/istio-how-to-enforce-egress-traffic-using-istios-authorization-policies/)
 
-    The article takes "sleep services in two independent namespaces in the service grid to access external services of Google and Yahoo" as an example, and introduces how to use Istio's egress gateway to implement egress authorization policies with similar policies when implementing ingress policies.
+    The article takes "sleep services in two independent namespaces in the service mesh to access external services of Google and Yahoo" as an example, and introduces how to use Istio's egress gateway to implement egress authorization policies with similar policies when implementing ingress policies.
 
 - [Practice and exploration of solving traffic loss problem under microservice architecture](https://mp.weixin.qq.com/s/eQzy3zvvEokNXYL637LNCg)
 
@@ -669,7 +669,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Dubbo-go-Mesh opens a new generation of Go microservices](https://mp.weixin.qq.com/s/cSsnne_kGfUjm1lKZWLiOw)
 
-    Dubbo-go-Mesh is a cross-ecological service framework implementation scheme of the distributed RPC framework Dubbo-go in the agentless service grid scenario. Currently, Istio-compatible service governance capabilities are supported. It supports interface-level service discovery capabilities, is compatible with the flow control and management capabilities of the Istio ecosystem, and provides scaffolding and application templates to improve the efficiency of Go application development.
+    Dubbo-go-Mesh is a cross-ecological service framework implementation scheme of the distributed RPC framework Dubbo-go in the agentless service mesh scenario. Currently, Istio-compatible service governance capabilities are supported. It supports interface-level service discovery capabilities, is compatible with the flow control and management capabilities of the Istio ecosystem, and provides scaffolding and application templates to improve the efficiency of Go application development.
 
 - [How to bring your own scheduler into OpenShift with the secondary scheduler](https://cloud.redhat.com/blog/how-to-bring-your-own-scheduler-into-openshift-with-the-secondary-scheduler-operator)
 
@@ -737,15 +737,15 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [The first domestic experience of landing a community dual-stack Istio solution, the implementation code is open source](https://mp.weixin.qq.com/s/E9HZIkSbZ3BLetDL0ZhzvA)
 
-    In the industry's widely used service grid projects (Istio and Linkerd as examples), support for dual-stack technology is still missing.
-    In order to better implement Service Grid and Kubernetes in the dual-stack support to work together.
+    In the industry's widely used service mesh projects (Istio and Linkerd as examples), support for dual-stack technology is still missing.
+    In order to better implement service mesh and Kubernetes in the dual-stack support to work together.
     The article focuses on the implementation scheme of Istio in dual-stack technology and the implementation scenario of this scheme in mobile cloud landing.
     However, this solution is only [an experimental branch](https://github.com/istio/istio/tree/experimental-dual-stack) and does not refine unit and integration tests.
 
 - [Where to Go After Microservices Enter Deep Water](https://mp.weixin.qq.com/s/yBY-E-tndUJCmA4KYRfrDw)
 
     As microservices enter deep water, developers and architects are more concerned about microservice security, stability, cost optimization, standardization of microservice governance, and driving the gradual evolution of cloud-native microservice architectures to multi-runtime microservice architectures.
-    For the limitations of multi-runtime architecture, it is necessary to realize more standardized and platform-based service grid development and operation and maintenance capabilities, standardize the definition of Sidecar and runtime, and make the operation and maintenance platform more standard and easy to use.
+    For the limitations of multi-runtime architecture, it is necessary to realize more standardized and platform-based service mesh development and operation and maintenance capabilities, standardize the definition of Sidecar and runtime, and make the operation and maintenance platform more standard and easy to use.
 
 - [Predictions for cloud-native trends in 2023](https://mp.weixin.qq.com/s/QePkownt0_Ex9RWWeGtaag)
 
@@ -1039,7 +1039,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Why does Istio use SPIRE for authentication?](https://mp.weixin.qq.com/s/043yz1etTkJ1l4Eo6DG7WA)
 
     The most noteworthy feature in Istio 1.14 is the new support for [SPIRE](https://github.com/spiffe/spire).
-    SPIFFE unifies identity standards in heterogeneous environments. Istio uses SPIRE to provide a unique identifier for each workload. The workload in the service grid will use the service identifier when performing peer authentication, request authentication and authorization policies to verify whether access is allowed.
+    SPIFFE unifies identity standards in heterogeneous environments. Istio uses SPIRE to provide a unique identifier for each workload. The workload in the service mesh will use the service identifier when performing peer authentication, request authentication and authorization policies to verify whether access is allowed.
 
 - [How to ensure Pod security after deprecating Pod Security Policies](https://www.cncf.io/blog/2022/06/30/how-to-secure-kubernetes-pods-post-psps-deprecation/)
 

@@ -28,9 +28,9 @@ DCE 5.0 主推 Harbor 作为镜像仓库提供镜像服务。
     class create,setpublic,push,deploy cluster;
 
     click create "https://docs.daocloud.io/kangaroo/hosted/"
-    click setpublic "https://docs.daocloud.io/kangaroo/create-registry/"
+    click setpublic "https://docs.daocloud.io/kangaroo/integrate/create-space/"
     click push "https://docs.daocloud.io/kangaroo/quickstart/push/"
-    click deploy "https://docs.daocloud.io/kpanda/user-guide/workloads/CreateDeploymentByImage/"
+    click deploy "https://docs.daocloud.io/kpanda/user-guide/workloads/create-deployment/"
     ```
 
     预期结果：平台上所有用户在命名空间中部署应用时，均能够通过镜像选择器，选择公开镜像空间中的镜像进行部署。
@@ -75,10 +75,10 @@ DCE 5.0 主推 Harbor 作为镜像仓库提供镜像服务。
     class create,setpublic,push,bind,deploy cluster;
 
     click create "https://docs.daocloud.io/kangaroo/hosted/"
-    click setpublic "https://docs.daocloud.io/kangaroo/create-registry/"
+    click setpublic "https://docs.daocloud.io/kangaroo/integrate/create-space/"
     click push "https://docs.daocloud.io/kangaroo/quickstart/push/"
     click bind "https://docs.daocloud.io/kangaroo/bind-to-ws/"
-    click deploy "https://docs.daocloud.io/kpanda/user-guide/workloads/CreateDeploymentByImage/"
+    click deploy "https://docs.daocloud.io/kpanda/user-guide/workloads/create-deployment/"
     ```
 
     预期结果：仅在该工作空间下的命名空间部署应用时能够通过镜像选择器，选择该镜像空间下的私有镜像进行部署应用。
