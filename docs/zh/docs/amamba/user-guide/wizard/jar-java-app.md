@@ -1,6 +1,6 @@
 # 基于 Jar 包部署 Java 应用
 
-应用工作台支持通过 [Git 仓库](create-git-based-ms.md)、Jar 包、容器镜像、Helm 模板等四种方式构建应用。本文介绍如何通过 Jar 文件部署 Java 应用程序。
+应用工作台支持通过 [Git 仓库](create-app-git.md)、Jar 包、容器镜像、Helm 模板等四种方式构建应用。本文介绍如何通过 Jar 文件部署 Java 应用程序。
 
 ## 前提条件
 
@@ -59,7 +59,7 @@
 
     - 服务网格：选择是否启用 [DCE 5.0 的服务网格](../../../mspider/intro/what.md)模块来治理微服务流量。
     - 微服务引擎：是否将新创建的应用接入 [DCE 5.0 的微服务引擎](../../../skoala/intro/what.md)模块。
-        > 有关微服务引擎的配置，可参考[基于 Git 仓构建微服务应用](create-git-based-ms.md)。
+        > 有关微服务引擎的配置，可参考[基于 Git 仓构建微服务应用](create-app-git.md)。
     - 灰度发布：选择是否开启灰度发布。有关灰度发布的更多内容，可参考[金丝雀发布](../release/canary.md)。
 
         ![高级配置](../../images/jar05.png)

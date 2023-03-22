@@ -6,7 +6,7 @@
 
 1. 创建一个[工作空间](../../../ghippo/user-guide/workspace/workspace.md)和一个[用户](../../../ghippo/user-guide/access-control/user.md)，该用户需加入该工作空间并具备 `Workspace Editor` 角色。
 
-- 创建一个应用并开启`灰度发布`，可参考[基于 Git 仓构建微服务应用](../wizard/create-git-based-ms.md)、[基于 Jar 包部署 Java 应用](../wizard/jar-java-app.md)。
+- 创建一个应用并开启`灰度发布`，可参考[基于 Git 仓构建微服务应用](../wizard/create-app-git.md)、[基于 Jar 包部署 Java 应用](../wizard/jar-java-app.md)。
 
 - 发布对象所在的集群已经安装了 Istiod 和 Argo Rollout 两个组件。有关具体的安装方式，可参考[管理 Helm 应用](../../../kpanda/user-guide/helm/helm-app.md)。
 

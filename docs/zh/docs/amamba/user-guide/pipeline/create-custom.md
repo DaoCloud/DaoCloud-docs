@@ -61,6 +61,6 @@ hide:
 
     ![pipelinedetail](../../images/pipelinedetail.png)
 
-2. 在编辑流水线页面您可以对该流水进行可视化编排，详细操作请参考文档[使用图形化编辑流水线](graphical-edit-pipeline.md)
+2. 在编辑流水线页面您可以对该流水进行可视化编排，详细操作请参考文档[使用图形化编辑流水线](graphical-edit.md)
 
     ![editpipeline](../../images/editpipeline.png)

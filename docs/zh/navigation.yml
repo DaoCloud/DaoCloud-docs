@@ -222,20 +222,20 @@ nav:
           - 离线升级: amamba/offline-upgrade.md
           - 命名空间管理: amamba/user-guide/namespace/namespace.md
           - 应用创建:
-              - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-git-based-ms.md
+              - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-app-git.md
               - 基于 Jar 包构建 Java 应用: amamba/user-guide/wizard/jar-java-app.md
           - 流水线:
-              - 自定义创建流水线: amamba/user-guide/pipeline/create-pipeline-byself.md
+              - 自定义创建流水线: amamba/user-guide/pipeline/create-custom.md
               - 安装 Jenkins: amamba/user-guide/pipeline/install-jenkins.md
-              - Jenkinsfile 创建单代码分支流水线: amamba/user-guide/pipeline/create-pipeline-byjenkins.md
-              - 使用图形化编辑流水线: amamba/user-guide/pipeline/graphical-edit-pipeline.md
-              - 触发器触发流水线: amamba/user-guide/pipeline/pipeline-trigger.md
-              - 手动执行流水线: amamba/user-guide/pipeline/pipeline-hand.md
+              - Jenkinsfile 创建单代码分支流水线: amamba/user-guide/pipeline/create-jenkins.md
+              - 使用图形化编辑流水线: amamba/user-guide/pipeline/graphical-edit.md
+              - 触发器触发流水线: amamba/user-guide/pipeline/trigger.md
+              - 手动执行流水线: amamba/user-guide/pipeline/manual.md
               - 凭证管理: amamba/user-guide/pipeline/credential.md
               - 流水线配置参数:
-                  - 流水线中的概念: amamba/user-guide/pipeline/pipeline-config/pipeline-concept.md
-                  - 图形化任务模板参数: amamba/user-guide/pipeline/pipeline-config/pipeline-step.md
-                  - 流水线节点(Agent): amamba/user-guide/pipeline/pipeline-config/pipeline-agent.md
+                  - 流水线中的概念: amamba/user-guide/pipeline/config/concept.md
+                  - 图形化任务模板参数: amamba/user-guide/pipeline/config/step.md
+                  - 流水线节点(Agent): amamba/user-guide/pipeline/config/agent.md
           - GitOps:
               - 手动同步应用: amamba/user-guide/gitops/sync-manually.md
               - 导入代码仓库: amamba/user-guide/gitops/import-repo.md

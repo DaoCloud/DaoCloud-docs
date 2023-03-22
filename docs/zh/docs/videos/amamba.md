@@ -4,7 +4,7 @@
 
 ## 流水线管理
 
-参阅[流水线管理](../amamba/user-guide/pipeline/create-pipeline-byself.md)文档页面。
+参阅[流水线管理](../amamba/user-guide/pipeline/create-custom.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-pipeline.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>

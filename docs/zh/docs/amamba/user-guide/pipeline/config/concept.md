@@ -12,7 +12,7 @@
 - Agent
 
     Agent 描述了整个`流水线`执行过程或者某个`阶段`的执行环境，必须出现在`描述文件`顶格或者每一个`阶段`。
-    有关更多信息，请参见[选择 Jenkins Agent](pipeline-agent.md)。
+    有关更多信息，请参见[选择 Jenkins Agent](agent.md)。
 
 - 阶段
 
@@ -23,7 +23,7 @@
 - 并行阶段
 
     并行用来声明一些并行执行的`阶段`，通常适用于`阶段`与`阶段`之间不存在依赖关系的情况下，用来加快执行速度。
-    有关更多信息，请参见[选择 Jenkins Agent](pipeline-agent.md)。
+    有关更多信息，请参见[选择 Jenkins Agent](agent.md)。
 
 - 步骤
 
