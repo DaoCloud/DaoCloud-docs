@@ -54,9 +54,9 @@ click kind "https://docs.daocloud.io/install/community/kind/online/"
 click s1 "https://docs.daocloud.io/install/community/k8s/online/"
 click s2 "https://docs.daocloud.io/install/community/k8s/offline/"
 
-click kpanda "https://docs.daocloud.io/kpanda/03ProductBrief/WhatisKPanda/"
-click ghippo "https://docs.daocloud.io/ghippo/01ProductBrief/WhatisGhippo/"
-click insight "https://docs.daocloud.io/insight/03ProductBrief/WhatisInsight/"
+click kpanda "https://docs.daocloud.io/kpanda/intro/what/"
+click ghippo "https://docs.daocloud.io/ghippo/intro/what/"
+click insight "https://docs.daocloud.io/insight/intro/what/"
 click free "https://docs.daocloud.io/dce/license0/"
 click ask "https://docs.daocloud.io/install/intro/#_4"
 ```

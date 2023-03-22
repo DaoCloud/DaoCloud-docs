@@ -76,5 +76,5 @@ DCE 5.0 社区版默认包含以下模块：
 
 ## 更多
 
-- [在线文档](https://docs.daocloud.io/dce/what-is-dce/)
+- [在线文档](https://docs.daocloud.io/dce/what/)
 - [报告 bug](https://github.com/DaoCloud/DaoCloud-docs/issues)
