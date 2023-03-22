@@ -2,7 +2,7 @@
 
 在 `可观测性 Insight` 中服务是指使用 Opentelemtry SDK 接入链路数据，服务监控能够辅助运维过程中观察应用程序的性能和状态。
 
-如何使用 OpenTelemetry 请参考：[使用 OTel 赋予应用可观测性](https://docs.daocloud.io/insight/06UserGuide/01quickstart/otel/otel/)
+如何使用 OpenTelemetry 请参考：[使用 OTel 赋予应用可观测性](https://docs.daocloud.io/insight/user-guide/quickstart/otel/otel/)
 
 ## 服务列表
 

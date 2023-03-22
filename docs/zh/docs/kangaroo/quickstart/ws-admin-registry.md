@@ -29,7 +29,7 @@ class associate,push,deploy cluster;
 
 click associate "https://docs.daocloud.io/kangaroo/related-registry/"
 click push "https://docs.daocloud.io/kangaroo/quickstart/push/"
-click deploy "https://docs.daocloud.io/kpanda/user-guide/workloads/CreateDeploymentByImage/"
+click deploy "https://docs.daocloud.io/kpanda/user-guide/workloads/create-deployment/"
 ```
 
 预期结果：在该工作空间下的命名空间部署应用时能够通过镜像选择器，选择该镜像空间下的镜像进行部署应用。
