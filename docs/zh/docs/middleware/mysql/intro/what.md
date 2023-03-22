@@ -9,4 +9,4 @@ MySQL 是应用最广泛的开源关系数据库，是许多常见网站、应�
 
 它是应用层协议的一个开放标准，是面向消息的中间件而设计，基于此协议的客户端与数据库来传递消息，不受产品、开发语言等条件的限制。
 
-[申请社区免费体验](../../../dce/license0.md){ .md-button .md-button--primary }
+[创建 MySQL 实例](../user-guide/create.md){ .md-button .md-button--primary }
