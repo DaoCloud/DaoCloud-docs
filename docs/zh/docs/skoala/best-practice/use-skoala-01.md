@@ -102,7 +102,7 @@
 
 ### 使用容器镜像部署
 
-如果选择基于容器镜像部署应用，可以直接在用户界面配置中开启微服务治理并选取对应的注册中心模块，操作更简便。具体步骤可参考[基于 Git 仓构建微服务应用](../../amamba/user-guide/wizard/create-git-based-ms.md)。
+如果选择基于容器镜像部署应用，可以直接在用户界面配置中开启微服务治理并选取对应的注册中心模块，操作更简便。具体步骤可参考[基于 Git 仓构建微服务应用](../../amamba/user-guide/wizard/create-app-git.md)。
 
 ![image](../images/createbyimage.png)
 

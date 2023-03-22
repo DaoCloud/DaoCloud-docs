@@ -16,7 +16,7 @@
 
 ### 基于容器镜像构建应用
 
-具体操作步骤可参考[基于 Git 仓构建微服务应用](../user-guide/wizard/create-git-based-ms.md)、[基于 Jar 包部署 Java 应用](../user-guide/wizard/jar-java-app.md)。
+具体操作步骤可参考[基于 Git 仓构建微服务应用](../user-guide/wizard/create-app-git.md)、[基于 Jar 包部署 Java 应用](../user-guide/wizard/jar-java-app.md)。
 
 **需要注意**：
 
