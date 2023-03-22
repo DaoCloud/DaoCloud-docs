@@ -5,7 +5,7 @@ hide:
 
 # 通过 Helm Chart 安装
 
-推荐使用这种安装方式，HwameiStor 的任何组件都可以通过 Helm Chart 轻松安装。
+HwameiStor 的任何组件都可以通过 Helm Chart 进行安装。
 
 ## 前提条件
 
