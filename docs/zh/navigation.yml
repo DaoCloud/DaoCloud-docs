@@ -513,7 +513,7 @@ nav:
               - 更新 Elasticsearch 实例: middleware/elasticsearch/user-guide/edit.md
               - 删除 Elasticsearch 实例: middleware/elasticsearch/user-guide/delete.md
               - Elasticsearch 集群容量规划: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
-              - 查看列表: middleware/elasticsearch/user-guide/view.md
+              - 查看实例详情: middleware/elasticsearch/user-guide/view.md
               - 概览: middleware/elasticsearch/user-guide/basic.md
               - 实例监控: middleware/elasticsearch/user-guide/monitor.md
               - 查看 Elasticsearch 日志: middleware/elasticsearch/user-guide/logs.md
@@ -525,7 +525,7 @@ nav:
               - 创建 Kafka 实例: middleware/kafka/user-guide/create.md
               - 更新 Kafka 实例: middleware/kafka/user-guide/update.md
               - 删除 Kafka 实例: middleware/kafka/user-guide/delete.md
-              - 查看消息队列: middleware/kafka/user-guide/view.md
+              - 查看实例详情: middleware/kafka/user-guide/view.md
               - 实例监控: middleware/kafka/user-guide/insight.md
               - 配置参数: middleware/kafka/user-guide/config.md
               - 查看 Kafka 日志: middleware/kafka/user-guide/logs.md
@@ -538,7 +538,7 @@ nav:
               - 更新 MinIO 实例: middleware/minio/user-guide/update.md
               - 删除 MinIO 实例: middleware/minio/user-guide/delete.md
               - 查看 MinIO 日志: middleware/minio/user-guide/logs.md
-              - 查看消息队列: middleware/minio/user-guide/view.md
+              - 查看实例详情: middleware/minio/user-guide/view.md
               - 实例监控: middleware/minio/user-guide/insight.md
               - 配置参数: middleware/minio/user-guide/config.md
               - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
@@ -563,7 +563,7 @@ nav:
               - 创建 RabbitMQ 实例: middleware/rabbitmq/user-guide/create.md
               - 更新 RabbitMQ 实例: middleware/rabbitmq/user-guide/update.md
               - 删除 RabbitMQ 实例: middleware/rabbitmq/user-guide/delete.md
-              - 查看消息队列: middleware/rabbitmq/user-guide/view.md
+              - 查看实例详情: middleware/rabbitmq/user-guide/view.md
               - 数据迁移: middleware/rabbitmq/user-guide/migrate.md
               - 实例监控: middleware/rabbitmq/user-guide/insight.md
               - 查看 RabbitMQ 日志: middleware/rabbitmq/user-guide/logs.md

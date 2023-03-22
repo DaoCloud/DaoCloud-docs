@@ -16,4 +16,4 @@ RabbitMQ 是应用层协议的一个开放标准，为面向消息的中间件�
 
 ![架构数据流](../images/flow.png)
 
-[申请社区免费体验](../../../dce/license0.md){ .md-button .md-button--primary }
+[创建 RabbitMQ 实例](../user-guide/create.md){ .md-button .md-button--primary }
