@@ -13,17 +13,18 @@ hide:
 
 - 高可用功能需要安装和当前运行的 Kernel 版本一致的 `kernel-devel`
 
-- 已安装 `LVM2`，如未安装请参考如下安装方式
-
+- 已安装 `LVM2`，如未安装请参考如下安装方式:
+  
+  
   === "CentOS/RHEL、Rocky 和 Kylin"
-
+  
       ```console
       yum install -y lvm2
       yum install -y kernel-devel-$(uname -r)
       ```
-
+  
   === "Ubuntu"
-
+  
       ```console
       apt-get install -y lvm2
       apt-get install -y linux-headers-$(uname -r)
@@ -51,167 +52,3 @@ HwameiStor 支持物理硬盘 (HDD)、固态硬盘 (SSD) 和 NVMe 闪存盘.
 
 生产环境里，开启高可用模式后，建议使用有冗余保护的`万兆 TCP/IP` 网络。
 可通过[修改网卡的方式指定网卡 IP](storage-eth.md) 提前进行规划。
-
-## 生产环境要求
-
-生产环境需要：
-
-- 指定资源配置
-- 避免部署到 Master 节点
-- 实现控制器的快速故障切换
-
-`values.extra.prod.yaml` 文件中提供了一些推荐值，资源配置如下：
-
-```console
-scheduler:
-  replicas: 3
-  resources:
-    limits:
-      cpu: 300m
-      memory: 300Mi
-    requests:
-      cpu: 1m
-      memory: 20Mi
-
-admission:
-  replicas: 3
-  resources:
-    limits:
-      cpu: 300m
-      memory: 300Mi
-    requests:
-      cpu: 1m
-      memory: 20Mi
-
-evictor:
-  replicas: 2
-  resources:
-    limits:
-      cpu: 300m
-      memory: 300Mi
-    requests:
-      cpu: 1m
-      memory: 20Mi
-
-metrics:
-  replicas: 2
-  resources:
-    limits:
-      cpu: 300m
-      memory: 300Mi
-    requests:
-      cpu: 1m
-      memory: 20Mi
-
-apiserver:
-  replicas: 2
-  resources:
-    limits:
-      cpu: 300m
-      memory: 300Mi
-    requests:
-      cpu: 1m
-      memory: 20Mi
-
-localDiskManager:
-  tolerationsOnMaster: false
-  registrar:
-    resources:
-      limits:
-        cpu: 500m
-        memory: 500Mi
-      requests:
-        cpu: 1m
-        memory: 20Mi
-  manager:
-    resources:
-      limits:
-        cpu: 300m
-        memory: 300Mi
-      requests:
-        cpu: 1m
-        memory: 20Mi
-
-localDiskManagerCSIController:
-  replicas: 3
-  priorityClassName: system-node-critical
-  provisioner:
-    resources:
-      limits:
-        cpu: 500m
-        memory: 500Mi
-      requests:
-        cpu: 1m
-        memory: 20Mi
-  attacher:
-    resources:
-      limits:
-        cpu: 500m
-        memory: 500Mi
-      requests:
-        cpu: 1m
-        memory: 20Mi
-
-localStorage:
-  tolerationsOnMaster: false
-  priorityClassName: system-node-critical
-  registrar:
-    resources:
-      limits:
-        cpu: 500m
-        memory: 500Mi
-      requests:
-        cpu: 1m
-        memory: 20Mi
-  member:
-    resources:
-      limits:
-        cpu: 500m
-        memory: 500Mi
-      requests:
-        cpu: 1m
-        memory: 20Mi
-
-localStorageCSIController:
-  replicas: 3
-  priorityClassName: system-node-critical
-  provisioner:
-    resources:
-      limits:
-        cpu: 500m
-        memory: 500Mi
-      requests:
-        cpu: 1m
-        memory: 20Mi
-  attacher:
-    resources:
-      limits:
-        cpu: 500m
-        memory: 500Mi
-      requests:
-        cpu: 1m
-        memory: 20Mi
-  resizer:
-    resources:
-      limits:
-        cpu: 500m
-        memory: 500Mi
-      requests:
-        cpu: 1m
-        memory: 20Mi
-```
-
-1. 如通过 Helm 创建时可通过如下方式创建：
-
-```console
-helm install hwameistor ./hwameistor \
-    -n hwameistor --create-namespace \
-    -f ./hwameistor/values.yaml \
-    -f ./hwameistor/values.extra.prod.yaml
-```
-
-2. 如通过 UI 界面安装，请手动将如上资源通过 YAML 中的 Resource 值进行配置，否则使用默认值：
-
-   ![pro-Resource](../../images/hwameistor-resource.jpg)
-
-   
