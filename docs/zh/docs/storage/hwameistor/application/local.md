@@ -4,42 +4,42 @@
 
 ## 前提条件
 
-1. Hwameistor 已经安装成功
+- Hwameistor 已经安装成功
 
-2. 已经完成存储池创建，如未创建请进行[存储池 StorageClass 创建](../../../kpanda/user-guide/storage/sc.md)
-   目前 HwameiStor 安装成功后， Helm charts 会默认安装一个名为 `hwameistor-storage-lvm-hdd` 的 `StorageClass`，可使用此存储池进行本地数据卷创建。
+- 已经完成存储池创建，如未创建请进行[存储池 StorageClass 创建](../../../kpanda/user-guide/storage/sc.md)。
 
-   1. 点击 `容器管理`-->`选择对应集群`，进入集群详情，点击`容器存储`选择`存储池` 查看
-      ![sc01](../../images/sc01.jpg)
+   - 目前 HwameiStor 安装成功后， Helm charts 会默认安装一个名为 `hwameistor-storage-lvm-hdd` 的 `StorageClass`，可使用此存储池进行本地数据卷创建。
 
-   2. 点击`查看 YAML`,查看详情。
+      1. 点击 `容器管理`-->`选择对应集群`，进入集群详情，点击`容器存储`选择`存储池` 查看
+         ![sc01](../../images/sc01.jpg)
 
-   ```yaml
-   apiVersion: storage.k8s.io/v1
-   kind: StorageClass
-   metadata:
-     name: hwameistor-storage-lvm-hdd
-   parameters:
-     convertible: "false"
-     csi.storage.k8s.io/fstype: xfs
-     poolClass: HDD
-     poolType: REGULAR
-     replicaNumber: "1"
-     striped: "true"
-     volumeKind: LVM
-   provisioner: lvm.hwameistor.io
-   reclaimPolicy: Delete
-   volumeBindingMode: WaitForFirstConsumer
-   allowVolumeExpansion: true
-   ```
+      2. 点击`查看 YAML`,查看详情。
 
-   如果这个 `storageClass` 在安装时创建失败，可以[通过界面创建存储池 StorageClass ](../../../kpanda/user-guide/storage/sc.md)或 YAML 创建方式完成安装，YAML 方式如下：
+         ```yaml
+         apiVersion: storage.k8s.io/v1
+         kind: StorageClass
+         metadata:
+           name: hwameistor-storage-lvm-hdd
+         parameters:
+           convertible: "false"
+           csi.storage.k8s.io/fstype: xfs
+           poolClass: HDD
+           poolType: REGULAR
+           replicaNumber: "1"
+           striped: "true"
+           volumeKind: LVM
+         provisioner: lvm.hwameistor.io
+         reclaimPolicy: Delete
+         volumeBindingMode: WaitForFirstConsumer
+         allowVolumeExpansion: true
+         ```
 
-   ```sh
-   kubectl apply -f examples/sc-local.yaml
-   ```
+         如果这个 `storageClass` 在安装时创建失败，可以[通过界面创建存储池 StorageClass ](../../../kpanda/user-guide/storage/sc.md)或 YAML 创建方式完成安装，YAML 方式如下：
 
-   
+         ```sh
+         kubectl apply -f examples/sc-local.yaml
+         ```
+
 
 ## 操作步骤
 
@@ -52,10 +52,10 @@
 2. 完成`基本信息`进入到下一步，点击`创建数据卷声明模板`输入如下参数信息：
    ![pvctmp](../../../storage/images/pvctmp01.jpg)
 
-   1. `存储池`：已经创建的本地存储池。
-   2. `容量`：本地数据卷容量大小。
-   3. `访问模式`：Pod 读写模式，建议使用 ReadWriteOnce。
-   4. `容器路径`：数据存储挂载到容器上的路径。
+   - `存储池`：已经创建的本地存储池。
+   - `容量`：本地数据卷容量大小。
+   - `访问模式`：Pod 读写模式，建议使用 ReadWriteOnce。
+   - `容器路径`：数据存储挂载到容器上的路径。
 
 3. 完成后点击`确定`，连续点击`下一步`完成创建。创建完成后点击`数据卷`列表查看对应的`数据卷状态`是否正常。
 
@@ -102,7 +102,7 @@ spec:
 
 ### 查看 MySQL 容器和 `PVC/PV`
 
-在这个例子里，MySQL 容器被调度到了节点 `k8s-worker-3`。
+ 在这个例子里，MySQL 容器被调度到了节点 `k8s-worker-3`。
 
 ```console
 $ kubectl get po -l  app=sts-mysql-local -o wide
