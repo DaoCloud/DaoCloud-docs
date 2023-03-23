@@ -71,7 +71,8 @@ hide:
         name: id,
         entry: uiAssetsUrl,
         container: '#container',
-        activeRule: url, loader,
+        activeRule: url, 
+        loader,
         props: globalProps,
     }
     ```
@@ -85,18 +86,10 @@ hide:
     start({
       sandbox: {
         experimentalStyleIsolation: true,
-        strictStyleIsolation: true,
       },
       // 去除子应用中的favicon防止在Firefox中覆盖父应用的favicon
       getTemplate: (template) => template.replaceAll(/<link\s* rel="[\w\s]*icon[\w\s]*"\s*( href=".*?")?\s*\/?>/g, ''),
     });
     ```
-
-    所以子应用会被包裹在 shadow dom 中运行。带来的一些常见副作用有：
-
-    1. 各种要挂到 body 下的内容会被放到父应用中。
-        1. 导致 dialog 样式丢失，可以把需要的样式写在生命周期钩子中，并且记得销毁！
-        1. svg sprite loader 会把 svg 加到父应用上导致子应用 svg 无法通过 id 加载，可以改成普通的 url 载入。
-    1. 子应用无法加载自定义 font，也可以把需要的样式写在生命周期钩子中，并且记得销毁！
 
 请参阅前端团队出具的 [GProduct 对接 demo tar 包](./gproduct-demo-main.tar.gz)。
