@@ -100,7 +100,7 @@ spec:
       schedulerName: hwameistor-scheduler
 ```
 
-## 查看 MySQL 容器和 `PVC/PV`
+### 查看 MySQL 容器和 `PVC/PV`
 
 在这个例子里，MySQL 容器被调度到了节点 `k8s-worker-3`。
 
@@ -114,7 +114,7 @@ NAME                     STATUS   VOLUME                                     CAP
 data-sts-mysql-local-0   Bound    pvc-accf1ddd-6f47-4275-b520-dc317c90f80b   1Gi        RWO            hwameistor-storage-lvm-hdd    3m   Filesystem
 ```
 
-## 查看 `LocalVolume` 对象
+### 查看 `LocalVolume` 对象
 
 通过查看和 `PV` 同名的 `LocalVolume(LV)`, 可以看到本地卷创建在了节点 `k8s-worker-3`上：
 
@@ -125,7 +125,7 @@ NAME                                       POOL                   REPLICAS   CAP
 pvc-accf1ddd-6f47-4275-b520-dc317c90f80b   LocalStorage_PoolHDD   1          1073741824                   Ready   -1         k8s-worker-3    3m
 ```
 
-## [可选] 扩展 MySQL 应用成一个三节点的集群
+### [可选] 扩展 MySQL 应用成一个三节点的集群
 
 HwameiStor 支持 `StatefulSet` 的横向扩展. `StatefulSet`容器都会挂载一个独立的本地卷：
 

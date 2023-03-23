@@ -11,13 +11,13 @@ hide:
 
 1. 请 进入 `容器管理`-->`Helm 应用`，选择 `drbd-adapter`。
 
-   ![drdb01](../../images/drdb01.jpg)
-
 2. 点击 `drdb-adapter`，点击安装，进入配置页面。
 
    ![drbd02](../../images/drbd02.jpg)
 
    - `命名空间`：建议同 Hwameistor 部署在相同的命名空间中，此示例创建的命名空间为 `Hwameistor `。
+
+   - `版本`：默认选择最新版本。
 
    - `失败删除`：默认关闭。开启后，将默认同步开启安装等待，将在安装失败时删除安装。
 
