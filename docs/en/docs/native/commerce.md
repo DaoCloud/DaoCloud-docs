@@ -50,6 +50,18 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates include: Added soft-delete functionality to Azure Container Registry to restore accidentally deleted artifacts; allows aborting any operation on an AKS cluster or proxy pool; supports multi-instance GPU (MIG); extends Azure Network Policy Manager (NPM) AKS cluster to Windows server 2022; integrated API Server VNET for AKS private cluster.
 
+- [Azure Lightweight Kubernetes Release AKS Edge Essentials Officially Available](https://azure.microsoft.com/en-us/updates/now-available-azure-kubernetes-service- edge-essentials/)
+
+    AKS Edge Essentials is a native Kubernetes implementation of AKS that can run on resource-limited edge devices. It can be used to deploy single- and multi-node K3s and K8s clusters that can run Linux and Windows workloads on existing Windows devices.
+
+- [Azure Releases AKS Fleet Manager (Public Preview)](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
+
+    Azure Kubernetes Fleet Manager treats multiple cluster sites as a single cluster to be managed. Users can manage multiple clusters by creating a Fleet resource. Users can treat existing AKS clusters as member clusters, join them to the fleet, and then orchestrate multiple cluster scenarios such as Kubernetes resource propagation and multi-cluster load balancing using metadata from those clusters.
+
+- [AliCloud ACK February Product Update](https://mp.weixin.qq.com/s/nqW681bqKocpc7AWUV56jg)
+
+    Update: Node pool supports Kubelet parameter customization, AIOps supports Service diagnostics, supports changing cloud disk type, and supports using cloud-auto type cloud disk as dynamic storage volume.
+
 - [AliCloud Service Grid ASM February 2023 Update](https://mp.weixin.qq.com/s/jNeC_gMQdCk8b8d3QXSeMQ)
 
     Update: Support for defining management logs, monitoring and link tracing as Telemetry CRD; support for fine-grained configuration at the grid global and namespace levels; improved grid topology loading speed in clusters above 150 Pod size; support for configuring sidecar proxy environment variables, istio-proxy thread count, etc.; support for configuring in multiple clusters Support for intra-cluster traffic retention.
@@ -328,6 +340,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The main new features of this version: support for resizing volumes with zero downtime, control the type of storage used by workloads through storage pools, and allow the topology of volumes to be defined.
 
+- [Oracle Kubernetes Release Container Engine for Kubernetes Support for Virtual Node Pools and Virtual Nodes](https://docs.oracle.com/en-us/iaas/releasenotes/changes/c3688114- 0104-40b0-aece-67169868f990/)
+
+    Virtual nodes provide a serverless Kubernetes experience, allowing users to run containerized applications at scale without having to manage, scale, upgrade, and troubleshoot node infrastructure. Virtual nodes provide granular pod-level elasticity and usage-based pricing. Users can create virtual nodes by creating virtual node pools in an enhanced cluster.
+
 - [OutSystems Releases Cloud-Native Low-Code Development Solution OutSystems Developer Cloud (ODC)](https://mp.weixin.qq.com/s/yx63Um3ju1mC-qNF9_GJkw)
 
      ODC is a high-performance low-code solution for building cloud-native applications. ODC combines Kubernetes, Linux containers, microservices, and AWS native cloud services with DORA's high-performance level CI/CD, enterprise-grade security, and model-based visual development. Support large-scale transaction volumes and data requirements, improve developer productivity with advanced visual programming and artificial intelligence, and enable high-performance CI/CD practices.
@@ -371,6 +387,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      Updates: Support for sensor profiles for regular and CI/CD sensors, support for defining sensor configurations in sensor profiles, allow scanning of all images during automatic registry scans.
 
 ### R
+
+- [Rafay Systems Launches Environment Manager to Optimize Kubernetes Developer Experience](https://rafay.co/press-release/rafay-introduces-environment-manager-to- automate-environment-provisioning-and-accelerate-modern-application-deployment-from-code-to-cloud/)
+
+    Environment Manager improves the developer experience by providing self-service capabilities for full-stack environments. Developers are able to configure modern application stacks from an environment blueprint that is planned, tested, and continuously managed by the platform team. By integrating with Rafay's Kubernetes Operations Platform, Environment Manager abstracts the complexity of the underlying infrastructure and reduces the time required to configure and access Kubernetes' environments.
 
 - [Rafay Systems Launches Cost Management Service for Kubernetes](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
 
