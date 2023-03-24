@@ -86,11 +86,11 @@ You can go to `Container Management` -> `Privilege Management`, select `Add Auth
 
     - [Service Mesh](../../../mspider/01Intro/WhatismSpider.md)
 
-        Due to the particularity of its own resources, the service grid also has two states: bound and unbound.
-        Therefore, you can manage the resources in the service grid through the Admin role, or bind the resources (Mesh or Mesh-Namespace) to the workspace, so that users/groups can obtain the permissions of the resources in the service grid through the workspace, and are bound The specified resources will be displayed in the resource group of the workspace.
+        Due to the particularity of its own resources, the service mesh also has two states: bound and unbound.
+        Therefore, you can manage the resources in the service mesh through the Admin role, or bind the resources (Mesh or Mesh-Namespace) to the workspace, so that users/groups can obtain the permissions of the resources in the service mesh through the workspace, and are bound The specified resources will be displayed in the resource group of the workspace.
         Currently only the service mesh module provides a resource binding entry. (Admin role can perform resource binding)
 
-2. Sub-modules that support this mode: application workbench, microservice engine, middleware, container management, and service grid.
+2. Sub-modules that support this mode: application workbench, microservice engine, middleware, container management, and service mesh.
 
 3. You can create a workspace through `Global Management` -> `Workspace and Hierarchy`, and grant users/groups Workspace Admin, Workspace Editor, and Workspace Viewer roles in `Workspace-Authorization`.
 

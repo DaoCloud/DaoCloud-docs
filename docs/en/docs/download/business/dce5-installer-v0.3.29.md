@@ -72,7 +72,7 @@ The DCE 5.0 commercial edition includes the following modules, which are plug-an
 | -------------------- | ---------------------------- ----------------------------------------------- | ----- -------------------------------------------------- ------ |
 | Global Management | Responsible for user access control, permissions, enterprise space, audit logs, personalized appearance settings, etc. | [v0.11](../../ghippo/01ProductBrief/release-notes.md#v011) |
 | Container Management | Manage K8s core functions such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [v0.12](../../kpanda/03ProductBrief/release-notes.md#v012) |
-| Observability | Provide rich graphic information such as dashboards, scene monitoring, data query, and alarms | [v0.11](../../insight/03ProductBrief/releasenote.md#v011) |
+| Observability | Provide rich graphic information such as dashboards, scene monitoring, data query, and alarms | [v0.11](../../insight/intro/releasenote.md#v011) |
 | Application Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [v0.9](../../amamba/01ProductBrief/release-notes.md#v09) |
 | Multicloud orchestration| Centralized management of application orchestration of multicloud, hybrid cloud, and cross-cloud resources, with multicloud disaster recovery and fault recovery capabilities| [v0.3](../../kairship/01product/release-notes.md# v03) |
 | Microservice Engine | Provides governance capabilities such as registration discovery, service governance, configuration management, and microservice gateway | [v0.11](../../skoala/intro/release-notes.md#v011) |

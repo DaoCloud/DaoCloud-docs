@@ -1,4 +1,9 @@
-# 卸载
+---
+hide:
+  - toc
+---
+
+# 卸载 Hwameistor
 
 !!! danger
 

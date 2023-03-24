@@ -67,7 +67,7 @@ nav:
           - 弹性伸缩:
               - 安装 metrics-server 插件: kpanda/user-guide/scale/install-metrics-server.md
               - 安装 kubernetes-cronhpa-controller 插件: kpanda/user-guide/scale/install-cronhpa.md
-              - 安装 vpa 插件: kpanda/user-guide/scale/install-vpa.md
+              - 安装 VPA 插件: kpanda/user-guide/scale/install-vpa.md
               - 创建 HPA 策略: kpanda/user-guide/scale/create-hpa.md
               - 创建 VPA 策略: kpanda/user-guide/scale/create-vpa.md
           - Helm 应用:
@@ -80,8 +80,10 @@ nav:
               - 网络策略: kpanda/user-guide/services-routes/network-policy.md
           - 自定义资源: kpanda/user-guide/custom-resources/create.md
           - 容器存储:
-              - 数据卷: kpanda/user-guide/storage/pvc.md
-              - 存储池: kpanda/user-guide/storage/storage-pool.md
+              - 数据卷声明: kpanda/user-guide/storage/pvc.md
+              - 数据卷: kpanda/user-guide/storage/pv.md
+              - 存储池: kpanda/user-guide/storage/sc.md
+              - 共享存储池: kpanda/user-guide/storage/sc-share.md
           - 配置与密钥:
               - 创建配置项: kpanda/user-guide/configmaps-secrets/create-configmap.md
               - 使用配置项: kpanda/user-guide/configmaps-secrets/use-configmap.md
@@ -206,7 +208,9 @@ nav:
               - DCE 4.0 安装 insight-agent: insight/faq/install-agentindce.md
               - 指标抓取说明: insight/faq/service-monitor.md
           - 最佳实践:
-              - Prometheus 资源规划: insight/best-practice/prometheus-resource.md
+              - Prometheus 资源规划: insight/best-practice/prometheus-res.md
+              - vmstorage 磁盘规划: insight/best-practice/vms-res-plan.md
+              - 调整 vmstorage 磁盘: insight/best-practice/modify-vms-disk.md
       - 应用工作台:
           - 介绍:
               - 什么是应用工作台？: amamba/intro/what.md
@@ -218,20 +222,20 @@ nav:
           - 离线升级: amamba/offline-upgrade.md
           - 命名空间管理: amamba/user-guide/namespace/namespace.md
           - 应用创建:
-              - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-git-based-ms.md
+              - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-app-git.md
               - 基于 Jar 包构建 Java 应用: amamba/user-guide/wizard/jar-java-app.md
           - 流水线:
-              - 自定义创建流水线: amamba/user-guide/pipeline/create-pipeline-byself.md
+              - 自定义创建流水线: amamba/user-guide/pipeline/create-custom.md
               - 安装 Jenkins: amamba/user-guide/pipeline/install-jenkins.md
-              - Jenkinsfile 创建单代码分支流水线: amamba/user-guide/pipeline/create-pipeline-byjenkins.md
-              - 使用图形化编辑流水线: amamba/user-guide/pipeline/graphical-edit-pipeline.md
-              - 触发器触发流水线: amamba/user-guide/pipeline/pipeline-trigger.md
-              - 手动执行流水线: amamba/user-guide/pipeline/pipeline-hand.md
+              - Jenkinsfile 创建单代码分支流水线: amamba/user-guide/pipeline/create-jenkins.md
+              - 使用图形化编辑流水线: amamba/user-guide/pipeline/graphical-edit.md
+              - 触发器触发流水线: amamba/user-guide/pipeline/trigger.md
+              - 手动执行流水线: amamba/user-guide/pipeline/manual.md
               - 凭证管理: amamba/user-guide/pipeline/credential.md
               - 流水线配置参数:
-                  - 流水线中的概念: amamba/user-guide/pipeline/pipeline-config/pipeline-concept.md
-                  - 图形化任务模板参数: amamba/user-guide/pipeline/pipeline-config/pipeline-step.md
-                  - 流水线节点(Agent): amamba/user-guide/pipeline/pipeline-config/pipeline-agent.md
+                  - 流水线中的概念: amamba/user-guide/pipeline/config/concept.md
+                  - 图形化任务模板参数: amamba/user-guide/pipeline/config/step.md
+                  - 流水线节点(Agent): amamba/user-guide/pipeline/config/agent.md
           - GitOps:
               - 手动同步应用: amamba/user-guide/gitops/sync-manually.md
               - 导入代码仓库: amamba/user-guide/gitops/import-repo.md
@@ -498,19 +502,18 @@ nav:
               - 什么是数据服务: middleware/what.md
               - 数据服务版本适配: middleware/compatibility.md
               - 数据服务权限设计说明: middleware/permission.md
+              - 首次进入数据服务模块: middleware/first-visit.md
           - Elasticsearch 搜索服务:
               - 什么是 Elasticsearch: middleware/elasticsearch/intro/what.md
               - 功能说明: middleware/elasticsearch/intro/features.md
               - 竞争优势: middleware/elasticsearch/intro/benefits.md
               - 适用场景: middleware/elasticsearch/intro/scenarios.md
               - 基本概念: middleware/elasticsearch/intro/concepts.md
-              - 安装和卸载 Elasticsearch: middleware/elasticsearch/user-guide/install.md
-              - 首次使用 Elasticsearch: middleware/elasticsearch/user-guide/login.md
               - 创建 Elasticsearch 实例: middleware/elasticsearch/user-guide/create.md
               - 更新 Elasticsearch 实例: middleware/elasticsearch/user-guide/edit.md
               - 删除 Elasticsearch 实例: middleware/elasticsearch/user-guide/delete.md
               - Elasticsearch 集群容量规划: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
-              - 查看列表: middleware/elasticsearch/user-guide/view.md
+              - 查看实例详情: middleware/elasticsearch/user-guide/view.md
               - 概览: middleware/elasticsearch/user-guide/basic.md
               - 实例监控: middleware/elasticsearch/user-guide/monitor.md
               - 查看 Elasticsearch 日志: middleware/elasticsearch/user-guide/logs.md
@@ -519,12 +522,10 @@ nav:
               - 什么是 Kafka: middleware/kafka/intro/what.md
               - 适用场景: middleware/kafka/intro/scenarios.md
               - 常见术语: middleware/kafka/intro/concepts.md
-              - 安装和卸载 Kafka: middleware/kafka/quickstart/install.md
-              - 首次使用 Kafka: middleware/kafka/user-guide/login.md
               - 创建 Kafka 实例: middleware/kafka/user-guide/create.md
               - 更新 Kafka 实例: middleware/kafka/user-guide/update.md
               - 删除 Kafka 实例: middleware/kafka/user-guide/delete.md
-              - 查看消息队列: middleware/kafka/user-guide/view.md
+              - 查看实例详情: middleware/kafka/user-guide/view.md
               - 实例监控: middleware/kafka/user-guide/insight.md
               - 配置参数: middleware/kafka/user-guide/config.md
               - 查看 Kafka 日志: middleware/kafka/user-guide/logs.md
@@ -533,13 +534,11 @@ nav:
               - 什么是 MinIO: middleware/minio/intro/what.md
               - 适用场景: middleware/minio/intro/scenarios.md
               - 常见术语: middleware/minio/intro/concepts.md
-              - 安装和卸载 MinIO: middleware/minio/quickstart/install.md
-              - 首次使用 MinIO: middleware/minio/user-guide/login.md
               - 创建 MinIO 实例: middleware/minio/user-guide/create.md
               - 更新 MinIO 实例: middleware/minio/user-guide/update.md
               - 删除 MinIO 实例: middleware/minio/user-guide/delete.md
               - 查看 MinIO 日志: middleware/minio/user-guide/logs.md
-              - 查看消息队列: middleware/minio/user-guide/view.md
+              - 查看实例详情: middleware/minio/user-guide/view.md
               - 实例监控: middleware/minio/user-guide/insight.md
               - 配置参数: middleware/minio/user-guide/config.md
               - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
@@ -549,8 +548,6 @@ nav:
               - 功能说明: middleware/mysql/intro/features.md
               - 竞争优势: middleware/mysql/intro/benefits.md
               - 基本概念: middleware/mysql/intro/concepts.md
-              - 安装 MySQL: middleware/mysql/quickstart/install.md
-              - 首次使用 MySQL: middleware/mysql/user-guide/login.md
               - 创建 MySQL: middleware/mysql/user-guide/create.md
               - 更新 MySQL: middleware/mysql/user-guide/update.md
               - 删除 MySQL: middleware/mysql/user-guide/delete.md
@@ -563,12 +560,10 @@ nav:
               - 竞争优势: middleware/rabbitmq/intro/benefits.md
               - 适用场景: middleware/rabbitmq/intro/scenarios.md
               - 基本概念: middleware/rabbitmq/intro/concepts.md
-              - 首次使用 RabbitMQ: middleware/rabbitmq/user-guide/login.md
-              - 安装和卸载 RabbitMQ: middleware/rabbitmq/quickstart/install.md
               - 创建 RabbitMQ 实例: middleware/rabbitmq/user-guide/create.md
               - 更新 RabbitMQ 实例: middleware/rabbitmq/user-guide/update.md
               - 删除 RabbitMQ 实例: middleware/rabbitmq/user-guide/delete.md
-              - 查看消息队列: middleware/rabbitmq/user-guide/view.md
+              - 查看实例详情: middleware/rabbitmq/user-guide/view.md
               - 数据迁移: middleware/rabbitmq/user-guide/migrate.md
               - 实例监控: middleware/rabbitmq/user-guide/insight.md
               - 查看 RabbitMQ 日志: middleware/rabbitmq/user-guide/logs.md
@@ -576,8 +571,6 @@ nav:
           - Redis 缓存服务:
               - 什么是 Redis: middleware/redis/intro/what.md
               - 适用场景: middleware/redis/intro/scenarios.md
-              - 安装和卸载 Redis: middleware/redis/user-guide/install.md
-              - 首次使用 Redis: middleware/redis/user-guide/login.md
               - 创建 Redis 实例: middleware/redis/user-guide/create.md
               - 更新 Redis 实例: middleware/redis/user-guide/update.md
               - 删除 Redis 实例: middleware/redis/user-guide/delete.md
@@ -601,10 +594,14 @@ nav:
               - 资源介绍: storage/hwameistor/intro/resources.md
               - 安装管理:
                   - 准备工作: storage/hwameistor/install/prereq.md
-                  - 存储网卡配置: storage/hwameistor/install/storage-eth.md
-                  - 通过 Helm Chart 安装: storage/hwameistor/install/deploy-helmcharts.md
+                  - 资源要求: storage/hwameistor/install/proresource.md
                   - 通过界面安装: storage/hwameistor/install/deploy-ui.md
+                  - 通过 Helm Chart 安装: storage/hwameistor/install/deploy-helm.md
+                  - 通过镜像安装: storage/hwameistor/install/deploy-image.md
                   - 安装后检查: storage/hwameistor/install/post-check.md
+                  - DRDB 安装: storage/hwameistor/install/drbdinstall.md
+                  - 存储网卡配置: storage/hwameistor/install/storage-eth.md
+                  - 自定义 Kubelet 根目录: storage/hwameistor/install/customized-kubelet.md
                   - 升级: storage/hwameistor/install/upgrade.md
                   - 卸载: storage/hwameistor/install/uninstall.md
               - 运维管理:
@@ -678,6 +675,9 @@ nav:
       - 云原生网络: videos/network.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 202303 | 边缘原生应用准则: blogs/edgeappwp.md
+      - 202303 | Linux 单机安装社区版: blogs/linux.md
+      - 202303 | macOS 单机安装社区版: blogs/macos.md
       - 202303 | KWOK 介绍: blogs/kwok.md
       - 202302 | 社区版涉及的开源项目: blogs/projects.md
       - 202302 | DaoCloud 与 K8s: blogs/daocloud_k8s.md
@@ -695,6 +695,7 @@ nav:
           - 索引列表: download/dce5.md
           - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.5.0.md
           - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.5.0.md
+          - 下载 Addon 离线包: download/addon/v0.5.2.md
           - 下载全局管理: download/modules/ghippo.md
           - 下载 Insight: download/modules/insight.md
   - DaoCloud 开源生态:

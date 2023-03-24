@@ -25,11 +25,11 @@ spec:
       ip: xx.xx.xx.xx
       ansibleUser: "***" 
       ansiblePass: "****"
-    - nodeName: "g-master1" 
+    - nodeName: "g-master2" 
       ip: xx.xx.xx.xx
       ansibleUser: "***" 
       ansiblePass: "****"
-    - nodeName: "g-master1" 
+    - nodeName: "g-master3" 
       ip: xx.xx.xx.xx
       ansibleUser: "***" 
       ansiblePass: "****"

@@ -26,21 +26,20 @@ DCE 5.0 针对实际应用场景，精选了一些经典的数据服务中间件
 
 ```mermaid
 graph TD
-    A(通过 Helm 安装) -->B(选择工作空间)
-    B --> C{部署/创建实例}
+    
+    B(选择工作空间) --> C{部署/创建实例}
     C -.->D[更新/删除实例]
     C -.->E[实例概览]
     C -.->F[实例监控]
     C -.->G[数据迁移]
     C -.->H[卸载中间件]
     
-    click A "https://docs.daocloud.io/middleware/rabbitmq/quickstart/install/"
-    click B "https://docs.daocloud.io/middleware/rabbitmq/userguide/login/"
-    click C "https://docs.daocloud.io/middleware/rabbitmq/userguide/create/"
-    click D "https://docs.daocloud.io/middleware/rabbitmq/userguide/update/"
-    click E "https://docs.daocloud.io/middleware/rabbitmq/userguide/view/"
-    click F "https://docs.daocloud.io/middleware/rabbitmq/userguide/insight/"
-    click G "https://docs.daocloud.io/middleware/rabbitmq/userguide/migrate/"
+    click B "https://docs.daocloud.io/middleware/rabbitmq/user-guide/login/"
+    click C "https://docs.daocloud.io/middleware/rabbitmq/user-guide/create/"
+    click D "https://docs.daocloud.io/middleware/rabbitmq/user-guide/update/"
+    click E "https://docs.daocloud.io/middleware/rabbitmq/user-guide/view/"
+    click F "https://docs.daocloud.io/middleware/rabbitmq/user-guide/insight/"
+    click G "https://docs.daocloud.io/middleware/rabbitmq/user-guide/migrate/"
     click H "https://docs.daocloud.io/middleware/rabbitmq/quickstart/install/#_1"
 ```
 

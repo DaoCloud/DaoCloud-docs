@@ -55,6 +55,9 @@ hide:
 4. 填写网络配置信息，并点击`下一步`。
 
     - 网络插件：负责为集群内的 Pod 提供网络服务，**创建集群后不可更改网络插件**。支持 [cilium](../../../network/modules/cilium/what.md) 和 [calico](../../../network/modules/calico/what.md)。选择 `none` 表示暂不安装网络插件。
+
+        > 有关网络插件的参数配置，可参考 [cilium 安装参数配置](../../../network/modules/cilium/install.md)或 [calico 安装参数配置](../../../network/modules/calico/install.md)。
+
     - 容器网段：集群下容器使用的网段，决定集群下容器的数量上限。创建后不可修改。
     - 服务网段：同一集群下容器互相访问时使用的 Service 资源的网段，决定 Service 资源的上限。创建后不可修改。
 

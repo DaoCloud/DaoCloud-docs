@@ -14,7 +14,7 @@ DCE 5.0 natively supports the DevOps development and operation and maintenance m
 - :fontawesome-solid-jet-fighter-up: **Installation** [Install Community and Commercial releases](../install/intro.md)
 - :octicons-container-16: **Container Management** [Manage multi-cluster containers and pods](../kpanda/03ProductBrief/WhatisKPanda.md)
 - :fontawesome-solid-user-group: **Global Management** [Login, user and access, appearance](../ghippo/01ProductBrief/WhatisGhippo.md)
-- :material-monitor-dashboard: **Observability** [One-stop graphical dashboard](../insight/03ProductBrief/WhatisInsight.md)
+- :material-monitor-dashboard: **Observability** [One-stop graphical dashboard](../insight/intro/WhatisInsight.md)
 - :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](../amamba/01ProductBrief/WhatisAmamba.md)
 - :material-cloud-check: **Multicloud Orchestration** [Manage multi-cloud instances, workloads, policies](kairship/01product/whatiskairship.md)
 - :material-engine: **Microservice Engine** [Microservice registry and gateway](../skoala/intro/features.md)
@@ -65,7 +65,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     Seamless integrate with legacy and popular microservice technologies, such as the first-generation microservices represented by SpringCloud and Dubbo and the new generation of microservices represented by Istio service mesh, with the lifecycle management capabilities of development, deployment, joining, exposing to external, observation, and O&M. Seamlessly add the existing microservice system of the enterprise, provide the complete capabilities of managed microservice governance, and offer the high-performance cloud-native microservice gateway.
 
-    **Modules**: [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md), [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Microservice Engine](../skoala/intro/features.md), [Service Mesh](../mspider/01Intro/WhatismSpider.md), [Insight](../insight/03ProductBrief/WhatisInsight.md), [App Workbench](../amamba/01ProductBrief/WhatisAmamba.md), [Network](../network/intro/what-is-net.md), Storage
+    **Modules**: [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md), [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Microservice Engine](../skoala/intro/features.md), [Service Mesh](../mspider/01Intro/WhatismSpider.md), [Insight](../insight/intro/WhatisInsight.md), [App Workbench](../amamba/01ProductBrief/WhatisAmamba.md), [Network](../network/intro/what-is-net.md), Storage
 
     ![Microservie](../images/03msgov.jpg)
 
@@ -75,7 +75,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Benefits**: This solution provides in-depth and subtle observation of the current app status. With a comprehensive dashboard, you can query all cluster and workload data. It supports for microservice architecture, service mesh, eBPF-based network, and other observation capabilities.
 
-    **Modules**: [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md), [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Insight](../insight/03ProductBrief/WhatisInsight.md), [Network](../network/intro/what-is-net.md), Storage
+    **Modules**: [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md), [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Insight](../insight/intro/WhatisInsight.md), [Network](../network/intro/what-is-net.md), Storage
 
     ![Insight](../images/04insight.jpg)
 

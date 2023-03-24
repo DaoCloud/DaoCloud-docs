@@ -7,16 +7,18 @@ hide:
 
 MinIO 内置了 Prometheus 和 Grafana 监控模块。
 
-1. 在实例列表页面中，点击某个名称。
+1. 在实例列表页面中，找到想要查看监控信息的实例，点击该实例的名称。
 
     ![点击某个名称](../images/view01.png)
 
-2. 在左侧导航栏，点击`实例监控`，可以接入监控模块。
+2. 在左侧导航栏点击`实例监控`。
 
     ![点击实例监控](../images/insight01.png)
 
-!!! note
+    !!! note
 
-    如果提示监控组件异常，请按提示[安装 insight-agent 插件](../../../insight/user-guide/quickstart/install-agent.md)。
+        如果提示监控组件异常，请按提示[安装 insight-agent 插件](../../../insight/user-guide/quickstart/install-agent.md)。
 
-<!-- 各项监控指标的具体含义稍后补充 (@justedennnnn)。 -->
+3. 查看实例的监控信息。点击红框里的信息符号可查看每个指标的含义说明。
+
+    ![点击实例监控](../images/insight02.png)

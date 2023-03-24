@@ -1,6 +1,6 @@
 # Multi-cluster grayscale release
 
-The implementation logic of multi-cluster grayscale release is to deploy different business applications in different clusters, then configure corresponding policies through the service grid to realize traffic adjustment between business versions, and then offline the versions according to the running conditions.
+The implementation logic of multi-cluster grayscale release is to deploy different business applications in different clusters, then configure corresponding policies through the service mesh to realize traffic adjustment between business versions, and then offline the versions according to the running conditions.
 
 For pre-preparation, refer to the grid multi-cloud deployment document to build the grid infrastructure.
 

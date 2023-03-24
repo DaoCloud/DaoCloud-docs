@@ -86,6 +86,7 @@ theme:
 plugins:
   - search:
       separator: '[\\s\\u200b\\-]'
+  - swagger-ui-tag
   # - mermaid2
 
   # - with-pdf:
@@ -95,7 +96,7 @@ plugins:
   #     # enabled_if_env: ENABLE_PDF_EXPORT
   #     verbose: false
 
-  - print-site
+
 
   - minify:
       minify_html: true
@@ -133,6 +134,8 @@ plugins:
 
   # with mkdocs-git-authors-plugin
   # - git-authors
+
+  - print-site
 
 # Customization
 extra:
