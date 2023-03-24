@@ -36,15 +36,13 @@
     tar -xvf offline-community-$VERSION-amd64.tar
     ```
 
-2. 准备镜像。
-
-    - 如果使用镜像仓库，需要将离线包的镜像推送到镜像仓库。
+2. 准备镜像，需要将离线包的镜像推送到镜像仓库。
 
     - 下载镜像导入脚本。
 
         ```bash
         wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline_image_handler.sh
-          ```
+        ```
 
         为 `offline_image_handler.sh` 添加可执行权限：
 
@@ -52,7 +50,7 @@
         chmod +x offline_image_handler.sh
         ```
 
-    - 执行脚本推送镜像到镜像仓库中。请注意目前存在已知问题，需要执行脚本之前需要在镜像仓库中创建 `docker.m.daocloud.io` 仓库。
+    - 执行脚本推送镜像到镜像仓库中。请注意目前存在已知问题，需要执行脚本之前需要在 Harbor 中创建 `docker.m.daocloud.io`、`elastic.m.daocloud.io`、`gcr.m.daocloud.io`、`ghcr.io`、`ghcr.m.daocloud.io`、`k8s-gcr.m.daocloud.io`、`quay.io`、`quay.m.daocloud.io`、`release.daocloud.io` 仓库。
 
         ```bash
         # 指定镜像仓库地址
@@ -72,7 +70,7 @@
             - 失败镜像信息将被记录在脚本同级目录 `import_image_failed.list` 文件中，便于定位。
             - 如果 docker pull 镜像时报错：`http: server gave HTTP response to HTTPS client`，请启用 Insecure Registry。
 
-    <!-- - 在集群的每个节点上运行 `vim /etc/docker/daemon.json` 命令以编辑 daemon.json 文件，输入以下内容并保存更改。
+    - 在集群的每个节点上运行 `vim /etc/docker/daemon.json` 命令以编辑 daemon.json 文件，输入以下内容并保存更改。（如果需要启用 Insecure Registry 则执行此步骤）
 
         ```json title="daemon.json"
         {
@@ -83,22 +81,13 @@
         !!! note
 
             请确保将 `172.30.120.180:80` 替换为您自己的 Harbor 仓库地址。
-            对于 Linux，daemon.json 文件的路径为 `/etc/docker/daemon.json`。 -->
+            对于 Linux，daemon.json 文件的路径为 `/etc/docker/daemon.json`。 
 
-    - 运行以下命令重启 Docker。
+    - 运行以下命令重启 Docker。（如果需要启用 Insecure Registry 则执行此步骤）
 
         ```bash
         sudo systemctl daemon-reload
         sudo systemctl restart docker
-        ```
-
-    - 如果没有镜像仓库，请将离线包拷贝到每一台节点之后，通过 `docker load/nerdctl load` 命令加载：
-
-        ```shell
-        # 指定离线包解压目录
-        export OFFLINE_DIR=$(pwd)/offline
-        # 执行脚本加载镜像
-        ./offline_image_handler.sh load
         ```
 
 3. 在 k8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件。
