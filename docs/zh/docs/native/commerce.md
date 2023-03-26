@@ -50,6 +50,18 @@
 
     更新内容包括：Azure 容器注册中心新增软删除功能，可恢复误删除的工件；允许中止 AKS 集群或代理池上的任何操作；支持多实例 GPU（MIG）；将 Azure 网络策略管理器（NPM）扩展到 Windows server 2022 的 AKS 集群；集成用于 AKS 私有集群的 API Server VNET。
 
+- [Azure 轻量级 Kubernetes 发行版 AKS Edge Essentials 正式可用](https://azure.microsoft.com/en-us/updates/now-available-azure-kubernetes-service-edge-essentials/)
+
+    AKS Edge Essentials 是 AKS 的本地 Kubernetes 实现，可以在资源有限的边缘设备上运行。它可以用来部署单节点和多节点的 K3s 和 K8s 集群，可以在现有的 Windows 设备上运行 Linux 和 Windows 工作负载。
+
+- [Azure 发布 AKS 舰队管理器（公开预览版）](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
+
+    Azure Kubernetes 舰队管理器将多个群集地视为单个集群来管理。用户可通过创建一个 Fleet 资源来管理多个集群。用户可将现有 AKS 集群当作成员集群，加入到舰队中，然后用这些集群的元数据，编排多个集群场景，如 Kubernetes 资源传播和多集群负载均衡。
+
+- [阿里云 ACK 2 月产品更新](https://mp.weixin.qq.com/s/nqW681bqKocpc7AWUV56jg)
+
+    更新内容：节点池支持 Kubelet 参数自定义功能、AIOps 支持 Service 诊断功能、支持变更云盘类型、支持使用 cloud-auto 类型云盘作为动态存储卷。
+
 - [阿里云服务网格 ASM 2023 年 2 月更新](https://mp.weixin.qq.com/s/jNeC_gMQdCk8b8d3QXSeMQ)
 
     更新内容：支持以 Telemetry CRD 的方式定义管理日志、监控及链路追踪；支持网格全局及命名空间级别的细粒度配置；在 150 Pod 规模以上的集群中，网格拓扑加载速度提升；支持配置 sidecar 代理的环境变量、istio-proxy 线程数等；支持在多集群内配置集群内流量保持功能。
@@ -332,6 +344,10 @@
 
     该版本主要新特性：支持在零停机的情况下调整卷的大小、通过存储池可以控制工作负载所使用的存储类型、允许定义卷的拓扑结构。
 
+- [Oracle Kubernetes 发行版 Container Engine for Kubernetes 支持虚拟节点池和虚拟节点](https://docs.oracle.com/en-us/iaas/releasenotes/changes/c3688114-0104-40b0-aece-67169868f990/)
+
+    虚拟节点提供了 serverless Kubernetes 的体验，用户无需管理、扩展、升级和排障节点基础设施，即可规模化运行容器化应用程序。虚拟节点提供了细粒度的 pod 级别弹性和按使用量计费的定价。用户可以通过在增强的集群中创建虚拟节点池以创建虚拟节点。
+
 - [OutSystems 发布云原生低代码开发解决方案 OutSystems Developer Cloud (ODC)](https://mp.weixin.qq.com/s/yx63Um3ju1mC-qNF9_GJkw)
 
     ODC 是用于构建云原生应用程序的高性能低代码解决方案。
@@ -377,6 +393,10 @@
     更新内容：支持为普通和 CI/CD 传感器提供传感器配置文件、支持在传感器配置文件中定义传感器配置、在自动注册表扫描时允许扫描所有镜像。
 
 ### R
+
+- [Rafay Systems 推出 Environment Manager，优化 Kubernetes 开发者体验](https://rafay.co/press-release/rafay-introduces-environment-manager-to-automate-environment-provisioning-and-accelerate-modern-application-deployment-from-code-to-cloud/)
+
+    Environment Manager 通过为全栈环境提供自助服务功能，改善开发者体验。开发人员能够从平台团队策划、测试和持续管理的环境蓝图中配置现代应用堆栈。通过和 Rafay 的 Kubernetes 运维平台集成，Environment Manager 抽象了底层基础设施的复杂性，减少了配置和访问 Kubernetes 的环境所需的时间。
 
 - [Rafay Systems 发布 Kubernetes 成本管理服务](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
 
