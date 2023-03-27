@@ -49,6 +49,8 @@ hide:
 
     ![更多操作](../images/hosted07.png)
 
+下一步：[创建镜像空间](../integrate/create-space.md)
+
 !!! tip
 
     在创建托管 Harbor 实例之前，如果能准备好 Harbor 参数，可以提供很多方便。

@@ -14,6 +14,8 @@
 
 ## 操作步骤
 
+可以参阅[视频教程](../videos/kangaroo.md#_2)熟悉以下操作步骤：
+
 1. 使用具有 Workspace Admin 角色的用户登录 Web 控制台，从左侧导航栏点击`镜像仓库` -> `关联仓库`。
 
     ![镜像仓库](images/related01.png)
