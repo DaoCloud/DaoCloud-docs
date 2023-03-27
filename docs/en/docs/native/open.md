@@ -305,6 +305,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### F, G
 
+- [Falco 2023 Security Audit Results Released](https://mp.weixin.qq.com/s/Uae58tOQpqOfV0vCoXBsqw)
+
+    The [Audit Report](https://github.com/falcosecurity/falco/blob/master/audits/SECURITY_AUDIT_2023_01_23-01-1097-LIV.pdf) found one medium severity vulnerability and several low severity and information severity vulnerabilities, with no high severity vulnerabilities. All issues have been fixed in the Falco 0.34.0 and 0.34.1 patch releases.
+
 - [Falco Runtime Security Project v0.34.0 Released (CNCF Project)](https://github.com/falcosecurity/falco/releases/tag/0.34.0)
 
     Release features: support for manual download and application-related rules [`application_rules.yaml`](https://github.com/falcosecurity/rules/tree/main/rules), new detection rules using PTRACE to inject code into processes, rule results adding compile condition context, allow modern bpf probes to allocate more than one CPU to a ring buffer, add webserver endpoint to retrieve internal version number, support multiple drivers in systemd unit.
@@ -478,6 +482,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Kata Container Container Security Project v2.5.0 release](https://github.com/kata-containers/kata-containers/releases/tag/2.5.0)
 
      The main new features of this version: support containerd shimv2 log plugin, support virtio-block multi-queue, support QEMU sandbox function, support containerd core scheduling, kata-runtime iptables subcommand can operate iptables in guest, and support directly allocated volumes.
+
+- [Katalyst: byte-hopping open source cloud-native resource control system](https://mp.weixin.qq.com/s/A5_1h3RLmDNazmAddbhYaA)
+
+    The main features of [Katalyst](https://github.com/kubewharf/katalyst-core) include: fully incubated in the mega-mixed-part practice and synchronously take over the resource control link in the byte service cloud-native process; equipped with ByteBeat's internal Kubernetes distribution Enhanced Kubernetes is synchronized with open source; the system is built based on plug-in model, and users can customize various scheduling, control, policy, data and other module plug-ins on Katalyst Framework.
 
 - [KEDA Announces Security Audit Results Based on Kubernetes Event-Driven Autoscaling Project](https://mp.weixin.qq.com/s/ZwCg-qCeC2CMm7EbxJbi9w)
 
@@ -836,6 +844,14 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      Release features: integration with wasmedge, support for building from local source code, multiple functions supported in a single Pod, support for detecting changes to source code or images and rebuilding/redeploying newly built images.
 
+- [OpenKruise upgraded to CNCF Incubation Program](https://mp.weixin.qq.com/s/9knMn8eKJBNdXUU-TcmTQg)
+
+    [OpenKruise](https://github.com/openkruise/kruise/) is an extended suite of components focused on application automation such as deployment, upgrades, operations and availability protection. OpenKruise helps organizations with large workloads adopt and automate Kubernetes and cloud-native deployments, opening the door to new use cases in areas such as AI / ML.
+
+- [OpenKruise Cloud Native Application Automation Management Suite v1.4.0 Released (CNCF Project)](https://github.com/openkruise/kruise/releases/tag/v1.4.0)
+
+    Release features: new JobSidecarTerminator function to terminate sidecar containers after the main container exits; new field to immediately recreate containers; support for attaching metadata to the PullImage CRI interface during ImagePullJob; sidecarSet controller support for namespace selectors ; change Kubernetes image address reference from "k8s.gcr.io" to "registry.k8s.io".
+
 - [OpenKruise Cloud Native Application Automation Management Suite v1.3.0 release (CNCF project)](https://github.com/openkruise/kruise/releases/tag/v1.3.0)
 
      The main new features of this version: support custom probes and return the results to Pod yaml, SidecarSet supports injecting pods under the kube-system and kube-public namespaces, adds timezone support for upstream AdvancedCronJob, WorkloadSpread supports StatefulSet.
@@ -917,6 +933,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Podman container runtime project v4.2.0 released](https://github.com/containers/podman/releases/tag/v4.2.0)
 
      The main new features of this version: support for GitLab Runner, new commands for creating copies of existing pods, new commands for synchronizing state changes between the database and any volume plugins, new exit policies for pods, and automatic cleanup of unused pods Caches Podman virtual machine images, allowing multiple overlay volumes of different containers to reuse the same workdir or upperdir.
+
+- [Prometheus v2.43.0 released (CNCF project)](https://github.com/prometheus/prometheus/releases/tag/v2.43.0)
+
+    Version features: store all tags and corresponding values in a single string to reduce memory footprint (only enabled when compiling with Go tag stringlabels); provide HTTP client configuration in query commands; add option to import grab configuration from different files; add two new HTTP client configuration parameters; allow dynamic setting via API backtracking time of queries.
 
 - [Prometheus v2.42.0 released (CNCF project)](https://github.com/prometheus/prometheus/releases/tag/v2.42.0)
 
@@ -1101,6 +1121,10 @@ This page lists activity in cloud native open source projects in alphabetical or
      The main new features of this version: support dynamic scheduling and rescheduling based on real node load, support elastic job scheduling, add MPI job plug-ins, allow tasks not to retry when they fail, support checking the overhead of pod requests, and support enqueueing in pod groups Resource quotas are considered in the process, and the default privileged container passes the verification of admission webhook.
 
 ### W, X, Z
+
+- [Wazero: Tetrate open source WebAssembly runtime for Go language development](https://mp.weixin.qq.com/s/aozmJpuwD69vGWcM525ucg)
+
+    Wazero allows developers to write code in different programming languages and run it in a secure sandbox environment. Wazero features include: pure Go, no dependencies, cross-platform and cross-architecture support; follows the WebAssembly Core Specification 1.0 and 2.0; supports Go features such as concurrency safety and context passing; and provides a rich programming interface and command line tools.
 
 - [werf, CLI tools for CI/CD, become a CNCF sandbox project](https://mp.weixin.qq.com/s/DGA1_k16QAQImFmy8mWcDw)
 

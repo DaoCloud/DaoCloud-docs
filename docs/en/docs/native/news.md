@@ -4,6 +4,16 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 > We will maintain regularly to ensure the validity of all links and the timeliness of news.
 
+### 2023-06
+
+- [June 30 China Academy of Information and Communications Technology launches the registration of digital service capability assessment of smart marketing in the first half of 2023 (registration closes on 6.30)](https://mp.weixin.qq.com/s/yQfz9X3oPKWDSeqgxwzs8g)
+  
+    Smart marketing digital service capability assessment includes six modules: digital scenarios, digital governance, platform-based products, digital service operations, trustworthy and compatible ecology and digital trust security service capabilities. Among them, the platform-based product capability focuses on whether it has the ability of customer insight, marketing planning, customer reach, customer conversion, customer operation and other smart marketing whole-chain links.
+
+- [June 6 ICT China-2023 High Level Forum - Cloud Native Industry Summit will kick off on June 6 in Beijing](https://mp.weixin.qq.com/s/FTOBYjCZxYMoOM8WJUz8mQ)
+  
+    Sponsored by the Ministry of Industry and Information Technology, the Cloud Native Industry Summit Forum will invite leading think tanks, government leaders, academician experts, enterprise executives and other heavyweight guests to discuss the cloud native ecology and explore the cloud native future.
+
 ### 2023-05
 
 - [End of May China Academy of Information and Communications Technology officially launched the assessment of cloud consulting, cloud migration, cloud management and cloud disaster recovery in the first half of 2023 (registration closes at the end of May)](https://mp.weixin.qq.com/s/yZxSP5xb5juE9C-UWRoQAw)
@@ -55,6 +65,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     The Cloud Native Community will hold an Observability Summit in Beijing on Saturday, April 15, 2023. Topics will focus on open source projects and applications in observability-related areas, including but not limited to: metrics monitoring, distributed tracking, log collection, technology innovation, application practices, etc.
 
+- [April 8 KubeSphere Meetup Shenzhen Station has been launched](https://mp.weixin.qq.com/s/QGFS8nO6qMClUBdn2Bav3g)
+  
+    KubeSphere Meetup Shenzhen will cover topics such as multi-Kubernetes cluster traffic management, Jenkins practice, KubeSphere pluggable architecture, and more. In addition, the Meetup currently has one topic open for submissions to share practical experience in the cloud-native space or KubeSphere.
+
 - [April 8 2023 China's First KCD in Dalian, Call for Topics Opened (3.20 Deadline)](https://mp.weixin.qq.com/s/hO8MLV80Z9CoQLbVTesyOA)
   
     Kubernetes Community Days (KCD) Dalian is co-sponsored by CNCF and technology enthusiasts from Huawei Cloud, Flomesh, and Extreme Fox GitLab.
@@ -67,6 +81,14 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     Topics must be related to open source and cloud-native ecosystem, and topics related to KubeSphere are more than welcome.
 
 ### 2023-03
+
+- [March 27-April 2 The 2023 "Workforce Shanghai" Innovation Conference Series will be held from March 27-April 2](https://mp.weixin.qq.com/s/BvxB3K5vWhl2zqy_c6PvBA)
+  
+    The theme of the 2023 Innovation Conference series is "Digital Intelligence Ecology and Integration Link". Chen Qiyan, Founder and CEO of DaoCloud, was invited to participate in the roundtable forum of the Innovation Conference on 3.27 to discuss the best practices of industrial digital transformation with the theme of "Digital Intelligence Convergence for New Industrialization Development" and to participate in the TED talk of the Founder Summit on 3.29 with the theme of "Finding Global Optimal Solutions for Industrial Digitalization". He shared his thoughts on the optimal solution for industrial digitalization from a global perspective.
+
+- [March 31 Global Edge Computing Conference & Open Source Forum on Edge Computing will be held in Beijing](https://mp.weixin.qq.com/s/qBo4a3zo3wN6sxejOdnyBQ)
+  
+    The Global Edge Computing Conference is centered around edge computing, focusing on Edge Cloud, Edge Intelligence, Arithmetic Networks, Open Source and 6G & Frontier Networks. The concurrent Edge Computing Open Source Special Forum invites core maintainers of open source projects such as Edge X Foundry, LF Edge ekuiper, KubeEdge, Akraino, Shifu, YoMo, etc. to share their experiences and technologies at the conference.
 
 - [March 31 China Academy of Information and Communications Technology officially launches the assessment of "System Stability Assurance System" in the first half of 2023 (3.31 registration deadline)](https://mp.weixin.qq.com/s/N2DbhxL81M2AUYcPiSy0GQ)
   
