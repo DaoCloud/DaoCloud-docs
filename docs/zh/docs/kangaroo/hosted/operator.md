@@ -8,7 +8,7 @@ hide:
 托管 Harbor 使用的是 Harbor Operator 技术来进行 Harbor 创建、升级、删除等全生命周期管理。
 在创建托管 Harbor 之前，需要先在容器管理中安装 Harbor Operator，版本要求最低 1.4.0。
 
-1. 如果在创建实例时，出现以下异常提示，请点击`前往安装`。
+1. 如果在创建 Harbor 实例时，出现以下异常提示，请点击`前往安装`。
 
     ![operator 异常](../images/errors.png)
 
