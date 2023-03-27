@@ -48,3 +48,66 @@ hide:
 1. 点击某个实例右侧的 `...`，可以选择编辑、删除或进入原生 Harbor。
 
     ![更多操作](../images/hosted07.png)
+
+!!! tip
+
+    在创建托管 Harbor 实例之前，如果能准备好 Harbor 参数，可以提供很多方便。
+    以下是一个 Harbor 的参数示例：
+
+    ```json
+    {
+     "metadata": {
+    
+    },
+    "spec": {
+     "version": "2.6.0",
+     "replicas": 1,
+     "resources": {
+      "requests": {
+       "cpu":"0.1",
+       "memory":"0.25G"
+      },
+      "limits": {
+        "cpu":"0.1",
+        "memory":"0.25G"
+      }
+    },
+    "database": {
+      "type": "EXTERNAL_MODE",
+      "externalSpec": {
+        "hostAndPort": "postgres://acid-minimal-cluster.kangaroo-lrf02.svc:5432",
+        "username": "harbor",
+        "password": "iz2YJ5wo2NzEPEE91tasCcLBM2MKJzG1JjWIKgC1jAG5Ddy5JKDmnjtYw84ip2pG"
+      }
+    },
+    "cache": {
+      "type": "EXTERNAL_MODE",
+      "externalSpec": {
+        "hostAndPort": "redis+sentinel://rfs-kangaroo-lrf01-redis.kangaroo-lrf02.svc:26379?sentinelMasterId=mymaster",
+        "password": "pass"
+      }
+    },
+    "storage": {
+      "type": "STORAGE_CLASS",
+      "scSpec": {
+        "name": "local-path",
+        "resource": {
+          "requests": {
+            "storage":"1G"
+          }
+        }
+      }
+    },
+    "expose": {
+      "type": "NODE_PORT",
+      "nodePortSpec": {
+        "nodePort":30003
+      },
+      "exposeHttps":true
+    },
+    "adminPassword":"Kangaroo12345",
+    "enableTrivy":true,
+     "user_sync_to_harbor":true
+      }
+    }
+    ```
