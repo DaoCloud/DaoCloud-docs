@@ -642,7 +642,10 @@ nav:
               - kangaroo/integrate/integrate.md
               - 创建镜像空间: kangaroo/integrate/create-space.md
               - 绑定/解绑工作空间: kangaroo/integrate/bind-to-ws.md
-          - 托管 Harbor: kangaroo/hosted.md
+          - 托管 Harbor: 
+              - kangaroo/hosted/intro.md
+              - 安装 Harbor Operator: kangaroo/hosted/operator.md
+              - 创建托管 Harbor 实例: kangaroo/hosted/harbor.md
           - 快速入门:
               - 管理外部镜像仓库: kangaroo/quickstart/registry-in-one.md
               - 推送镜像: kangaroo/quickstart/push.md
