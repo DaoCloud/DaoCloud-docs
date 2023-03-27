@@ -203,14 +203,16 @@ nav:
           - 权限说明: insight/user-guide/permission.md
           - 常见问题:
               - 导入自定义仪表盘: insight/faq/import-dashboard.md
+              - 链路数据的时钟偏移: insight/faq/traceclockskew.md
               - 日志采集排障指南: insight/faq/debug-log.md
               - 链路采集排障指南: insight/faq/debug-trace.md
               - DCE 4.0 安装 insight-agent: insight/faq/install-agentindce.md
-              - 指标抓取说明: insight/faq/service-monitor.md
           - 最佳实践:
               - Prometheus 资源规划: insight/best-practice/prometheus-res.md
               - vmstorage 磁盘规划: insight/best-practice/vms-res-plan.md
               - 调整 vmstorage 磁盘: insight/best-practice/modify-vms-disk.md
+              - 通过 Sidecar 采集容器日志: insight/best-practice/tailsingidecar.md
+              - 指标抓取说明: insight/faq/service-monitor.md
       - 应用工作台:
           - 介绍:
               - 什么是应用工作台？: amamba/intro/what.md
