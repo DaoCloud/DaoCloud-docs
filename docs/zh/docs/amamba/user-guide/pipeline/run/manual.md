@@ -6,19 +6,19 @@
 
 1. 在流水线列表页选择某一个流水线，点击 `︙` ，在弹出的菜单中点击`立即执行` 。
 
-   ![handrun01](../../images/handrun01.jpeg)
+   ![handrun01](../../../images/handrun01.jpeg)
 
 2. 根据流水线是否配置了`构建参数`，执行后会出现一下两种情况：
 
    - 如果配置了`构建参数`，则会出现对话框并展示相关内容进行参数配置。
 
-     ![handrun02](../../images/handrun02.jpeg)
+     ![handrun02](../../../images/handrun02.jpeg)
 
    - 如果未配置`构建参数`，则流水线会立即执行。
 
 3. 流水线开始执行。
 
-   ![handrun03](../../images/handrun03.jpeg)
+   ![handrun03](../../../images/handrun03.jpeg)
 
 ## 重新运行流水线
 
@@ -30,11 +30,11 @@
 
 3. 点击右侧的 `︙`，在弹出的菜单中点击`重新运行`。
 
-   ![handrun04](../../images/handrun04.jpeg)
+   ![handrun04](../../../images/handrun04.jpeg)
 
 4. 流水线重新运行成功。
 
-   ![handrun05](../../images/handrun05.jpeg)
+   ![handrun05](../../../images/handrun05.jpeg)
 
 ## 取消运行流水线
 
@@ -46,8 +46,8 @@
 
 3. 点击右侧的 `︙`，在弹出的菜单中点击`取消`（适用于状态为`执行中`的流水线）。
 
-   ![handrun06](../../images/handrun06.jpeg)
+   ![handrun06](../../../images/handrun06.jpeg)
 
 4. 流水线取消运行成功。
 
-   ![handrun07](../../images/handrun07.jpeg)
+   ![handrun07](../../../images/handrun07.jpeg)
