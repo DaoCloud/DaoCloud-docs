@@ -1739,7 +1739,7 @@
 
 - Rolling update, 滚动更新
 
-    [滚动更新](../mspider/user-guide/upgrade/istio-update.md)指一次只更新一小部分副本、成功后再更新更多的副本、最终完成所有副本的更新。
+    [滚动更新](../mspider/install/istio-update.md)指一次只更新一小部分副本、成功后再更新更多的副本、最终完成所有副本的更新。
     滚动更新的最大的好处是零停机，整个更新过程始终有副本在运行，从而保证了业务的连续性。
 
 - Routing Rule, 路由规则
