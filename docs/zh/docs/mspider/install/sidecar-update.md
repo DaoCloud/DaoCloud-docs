@@ -7,7 +7,7 @@
 
 完成 Istio 版本升级后，进入`工作负载边车管理`界面，具备升级条件的工作负载将出现叹号提示信息，选中期望升级的工作负载，将出现`边车升级`按钮。
 
-![边车升级](../../images/SidecarUpdate01.png)
+![边车升级](../images/SidecarUpdate01.png)
 
 点击`边车升级`按钮将进入`边车升级版本`向导，该向导分为`环境检测`、`选择目标版本`、`执行升级`三个步骤，在“热升级”和“重启升级”两种方式下，操作会有一定差别。
 
@@ -21,31 +21,31 @@
 
 	以上三项满足后将在后续步骤中进入热升级流程。
 
-    ![环境监测](../../images/SidecarUpdate02.png)
+    ![环境监测](../images/SidecarUpdate02.png)
 
 2. **边车升级版本**：热升级流程中，可以选择期望升级的边车版本，默认为最新版本，如果选择了其他版本，相关 Pod 重启后也会自动升级至最新版本。
 
-    ![升级版本](../../images/SidecarUpdate03.png)
+    ![升级版本](../images/SidecarUpdate03.png)
 
 3. **执行升级**：升级页面中展示了所选工作负载及相关边车信息，点击`一键升级`将启动升级过程。
 
-    ![执行升级](../../images/SidecarUpdate04.png)
+    ![执行升级](../images/SidecarUpdate04.png)
 
 ## 重启升级
 
 1. **环境检测**：在检测阶段如果检测项不满足热升级要求，之后两个步骤将进入重启升级流程。
 
-    ![环境监测](../../images/SidecarUpdate05.png)
+    ![环境监测](../images/SidecarUpdate05.png)
 
 2. **边车升级版本** 在重启升级流程中，无法选择版本，仅支持升级至最新版本。
 
-	![升级版本](../../images/SidecarUpdate06.png)
+	![升级版本](../images/SidecarUpdate06.png)
 
 3. **执行升级**：升级页面中展示了所选工作负载的基本信息及边车版本信息，点击`一键升级`将立即重启 Pod，请务必谨慎操作。
 
-	![执行升级](../../images/SidecarUpdate07.png)
+	![执行升级](../images/SidecarUpdate07.png)
 
-	![执行升级](../../images/SidecarUpdate08.png)
+	![执行升级](../images/SidecarUpdate08.png)
 
 !!! note
 

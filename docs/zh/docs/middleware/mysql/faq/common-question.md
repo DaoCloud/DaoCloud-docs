@@ -226,7 +226,7 @@ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- my
 11:18  up 1 day, 17:49, 2 users, load averages: 9.33 7.08 6.28
 ```
 
-关注下 `load averages` ，正常情况下，不应该超过 3 个数值都不应长期超过 10；如果 超过 >30 以上，请合理调配下该节点的 POD 和磁盘
+关注下 `load averages`，正常情况下，不应该超过 3 个数值都不应长期超过 10；如果 超过 >30 以上，请合理调配下该节点的 Pod 和磁盘。
 
 ### 从库出现复制错误
 
