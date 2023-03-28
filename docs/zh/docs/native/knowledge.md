@@ -531,7 +531,7 @@
 
 - [在 Kubernetes 中实施零信任的难点及相关开源解决方案](https://thenewstack.io/introducing-open-source-zero-trust-to-kubernetes/)
 
-    Kubernetes 的复杂性使得标准化应用零信任原则成为挑战。默认情况下，kubectl 不启用 RBAC，执行的命令不会被用户账户记录。通过防火墙访问资源很困难，监督多个集群也变得繁杂易错。
+    Kubernetes 的复杂性使得标准化应用零信任原则成为挑战。默认情况下，kubectl 不启用 RBAC，执行的命令不会被用户账号记录。通过防火墙访问资源很困难，监督多个集群也变得繁杂易错。
     [Paralus](https://github.com/paralus/paralus) 是为多集群环境设计的资源访问管理、威胁识别响应方案，支持自定义角色、身份提供商（IdP）等，允许管理员创建具有不同权限的自定义规则。
 
 - [Kubernetes Gateway API 及其用例介绍](https://www.armosec.io/blog/kubernetes-gateway-api/)

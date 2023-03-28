@@ -17,7 +17,7 @@ hide:
 
 #### 离线镜像包
 
-可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本并使用
+可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
 
 | CPU 架构 | 版本   | 下载地址                                                     |
 | :------- | :----- | :----------------------------------------------------------- |
@@ -35,7 +35,7 @@ tar -xvf offline-v0.5.0-amd64.tar
 
 安装器从 v0.5.0 版本，支持了 addon 的离线包导入能力，如果需要支持 addon 中所有的 helm chart 离线化。
 
-首先需要事先下载好离线包，并在集群配置文件（clusterConfig.yaml）中定义 `addonOfflinePackagePath`。
+首先需要事先下载好离线包，并在[集群配置文件（clusterConfig.yaml）](./cluster-config.md)中定义 `addonOfflinePackagePath`。
 
 | CPU 架构 | 版本   | 下载地址                                                     |
 | :------- | :----- | :----------------------------------------------------------- |
@@ -48,7 +48,7 @@ tar -xvf offline-v0.5.0-amd64.tar
 
 #### ISO 离线包
 
-ISO 离线包需要在集群配置文件中进行配置，请根据操作系统进行下载。
+ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置，请根据操作系统进行下载。
 
 | CPU 架构 | 操作系统版本                                        | 下载地址                                                     |
 | :------- | :-------------------------------------------------- | :----------------------------------------------------------- |
@@ -58,7 +58,7 @@ ISO 离线包需要在集群配置文件中进行配置，请根据操作系统�
 
 #### osPackage 离线包
 
-安装器从 v0.5.0 版本，需要提供操作系统的 osPackage 离线包，并在集群配置文件（clusterConfig.yaml）中定义 `osPackagePath`。
+安装器从 v0.5.0 版本，需要提供操作系统的 osPackage 离线包，并在[集群配置文件（clusterConfig.yaml）](./cluster-config.md)中定义 `osPackagePath`。
 
 其中 [Kubean](https://github.com/kubean-io/kubean) 提供了不同操作系统的osPackage 离线包，可以前往 https://github.com/kubean-io/kubean/releases/tag/v0.4.4 查看。
 
@@ -71,7 +71,7 @@ ISO 离线包需要在集群配置文件中进行配置，请根据操作系统�
 
 ### 第 2 步：配置集群配置文件
 
-集群配置文件会在离线镜像包 offline/sample 目录下，集群配置文件具体的参数介绍请参考 [clusterConfig.yaml](cluster-config.md)。
+集群配置文件位于离线镜像包 `offline/sample` 目录下，具体的参数介绍请参考 [clusterConfig.yaml](cluster-config.md)。
 
 !!! note
 
@@ -96,7 +96,7 @@ ISO 离线包需要在集群配置文件中进行配置，请根据操作系统�
         - -d 开启 debug 模式
         - 更多命令请使用 --help 查询
 
-1. 安装完成后，命令行会提示安装成功。恭喜您！现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
+1. 安装完成后，命令行会提示安装成功。恭喜您！现在可以通过屏幕提示的 URL 使用默认的账号和密码（admin/changeme）探索全新的 DCE 5.0 啦！
 
     ![success](../images/success.png)
 

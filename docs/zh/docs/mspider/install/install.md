@@ -34,3 +34,5 @@ hide:
 4. 查看命名空间 `mspider-system` 下 Pod 信息，看到相关 Pod 已创建并运行，表示服务网格安装成功。
 
     ![安装采集器](../images/install02.jpg)
+
+下一步：[创建网格](../user-guide/service-mesh/create-mesh.md)

@@ -139,7 +139,7 @@
 
 - [Chainguard 云原生供应链安全平台  Chainguard Enforce 更新](https://www.chainguard.dev/unchained/chainguard-enforce-announces-new-software-signing-capability)
 
-    更新内容：提供基于 Sigstore 的无密钥签名模式、增加一个开箱即用的安全策略库、支持用户通过其 Gitlab 账户登录、支持 CloudEvents、支持细粒度的 Kubernetes 工作负载对象的策略、增强大规模集群用户的稳定性。
+    更新内容：提供基于 Sigstore 的无密钥签名模式、增加一个开箱即用的安全策略库、支持用户通过其 Gitlab 账号登录、支持 CloudEvents、支持细粒度的 Kubernetes 工作负载对象的策略、增强大规模集群用户的稳定性。
 
 ### D, E
 
@@ -195,7 +195,7 @@
 
 - [Fortinet 发布云原生防火墙服务 FortiGate CNF](https://www.fortinet.com/blog/business-and-technology/simplify-cloud-security-with-the-fortigate-cloud-native-firewall-on-aws)
 
-    FortiGate CNF 是一个 SaaS 产品，通过与 AWS Gateway Load Balancer、AWS Firewall Manager 等服务的深度云原生集成，支持不同 AWS 环境下的一致安全策略，消除了网络安全的复杂性。此外，还支持下一代防火墙的安全检查功能，提供对应用层的深度可视性，可以保护多个账户、子网、虚拟私有云和可用性区域。
+    FortiGate CNF 是一个 SaaS 产品，通过与 AWS Gateway Load Balancer、AWS Firewall Manager 等服务的深度云原生集成，支持不同 AWS 环境下的一致安全策略，消除了网络安全的复杂性。此外，还支持下一代防火墙的安全检查功能，提供对应用层的深度可视性，可以保护多个账号、子网、虚拟私有云和可用性区域。
 
 - [GitLab 15.7 发布](https://about.gitlab.com/releases/2022/12/22/gitlab-15-7-released/)
 
@@ -328,7 +328,7 @@
     支持为多个命名空间设置一个应用数据保护策略；
     扩大集群范围内资源的检测和保护范围；
     基于标签和标签选择器允许每个命名空间有多个应用程序；
-    K8s 应用现在可以在不同的项目、订阅或账户托管的集群间进行故障转移；
+    K8s 应用现在可以在不同的项目、订阅或账号托管的集群间进行故障转移；
     集成轻量目录访问协议 LDAP；
     支持更多 Self-managed K8s 平台。
 
@@ -401,7 +401,7 @@
 - [Rafay Systems 发布 Kubernetes 成本管理服务](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
 
     成本管理服务是 Rafay Kubernetes 运维平台的一部分，可为位于公有云和内部数据中心的集群提供 Kubernetes 云成本优化。
-    其支持实时查看云计算支出；与 RBAC 预集成，提供基于角色的成本指标的可见性和访问权；可集中查看多个公有云账户和内部数据中心的集群；可根据资源消耗优化云预算。
+    其支持实时查看云计算支出；与 RBAC 预集成，提供基于角色的成本指标的可见性和访问权；可集中查看多个公有云账号和内部数据中心的集群；可根据资源消耗优化云预算。
 
 - [Rafay Systems 推出 Service Mesh Manager and Network Policy Manager，提供企业级的 K8s 流量管理和通信安全保障](https://rafay.co/press-release/rafay-launches-service-mesh-manager-and-network-policy-manager-for-enterprise-grade-traffic-management-and-transport-security-for-kubernetes/)
 

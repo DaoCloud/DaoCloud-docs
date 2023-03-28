@@ -11,7 +11,7 @@ hide:
 
 2. 单集群应用如何无缝迁移到多云编排？
 
-    可以使用我们的新功能 [一键升级为多云工作负载](workload/promote.md)。
+    可以使用我们的新功能 [一键升级为多云工作负载](../workload/promote.md)。
 
 3. 是否支持跨集群的应用日志收集？
 
@@ -55,4 +55,4 @@ hide:
 
     可以在启动命令中增加对应的参数配置，`--chat-repo-url`
 
-    ![image](images/faq01.png)
+    ![image](../images/faq01.png)

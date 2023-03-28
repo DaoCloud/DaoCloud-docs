@@ -374,7 +374,7 @@
 
 - [HashiCorp Vault 私密信息管理工具 1.11 新增 Kubernetes Secret 引擎](https://github.com/hashicorp/vault/blob/main/website/content/docs/secrets/kubernetes.mdx)  
 
-    Kubernetes Secret 引擎可以动态生成 Kubernetes 服务账户令牌、服务账户、角色绑定和角色。创建的服务账户令牌有一个可配置的 TTL 值（Time To Live），当 lease 到期时，Vault 会自动删除创建的对象。对于每一个 lease，Vault 会创建一个连接到定义服务账户的令牌，服务账户令牌会返回给调用者。
+    Kubernetes Secret 引擎可以动态生成 Kubernetes 服务账号令牌、服务账号、角色绑定和角色。创建的服务账号令牌有一个可配置的 TTL 值（Time To Live），当 lease 到期时，Vault 会自动删除创建的对象。对于每一个 lease，Vault 会创建一个连接到定义服务账号的令牌，服务账号令牌会返回给调用者。
 
 - [Helm 包管理工具 v3.10.0 发布（CNCF 项目）](https://github.com/helm/helm/releases/tag/v3.10.0)  
 
