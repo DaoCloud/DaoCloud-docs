@@ -28,7 +28,7 @@
 
 ## Istio 版本升级
 
-参阅 [Istio 版本升级](../mspider/user-guide/upgrade/istio-update.md)文档页面。
+参阅 [Istio 版本升级](../mspider/install/istio-update.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/istio-upgrade.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -36,7 +36,7 @@
 
 ## 边车升级
 
-参阅[边车升级](../mspider/user-guide/upgrade/sidecar-update.md)文档页面。
+参阅[边车升级](../mspider/install/sidecar-update.md)文档页面。
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sidecarup.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
