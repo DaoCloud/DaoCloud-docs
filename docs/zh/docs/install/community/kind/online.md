@@ -57,17 +57,17 @@
         hostPort: 8888
     ```
 
-1. 创建一个名为 `fire-kind-cluster` 的 v1.21.1 示例集群。
+1. 创建一个名为 `fire-kind-cluster` 的 v1.25.3 示例集群。
 
     ```shell
-    kind create cluster --image release.daocloud.io/kpanda/kindest-node:v1.21.1 --name=fire-kind-cluster --config=kind_cluster.yaml 
+    kind create cluster --image release.daocloud.io/kpanda/kindest-node:v1.25.3 --name=fire-kind-cluster --config=kind_cluster.yaml 
     ```
 
     预期输出如下：
 
     ```console
     Creating cluster "fire-kind-cluster" ...
-     ✓ Ensuring node image (release.daocloud.io/kpanda/kindest-node:v1.21.1) 🖼 
+     ✓ Ensuring node image (release.daocloud.io/kpanda/kindest-node:v1.25.3) 🖼 
      ✓ Preparing nodes 📦  
      ✓ Writing configuration 📜 
      ✓ Starting control-plane 🕹️ 
