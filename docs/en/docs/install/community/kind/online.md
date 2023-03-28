@@ -57,17 +57,17 @@ This page explains how to install DCE 5.0 Community Edition online using a kind 
         hostPort: 8888
     ```
 
-1. Create a v1.21.1 example cluster named `fire-kind-cluster`.
+1. Create a v1.25.3 example cluster named `fire-kind-cluster`.
 
     ```shell
-    kind create cluster --image release.daocloud.io/kpanda/kindest-node:v1.21.1 --name=fire-kind-cluster --config=kind_cluster.yaml
+    kind create cluster --image release.daocloud.io/kpanda/kindest-node:v1.25.3 --name=fire-kind-cluster --config=kind_cluster.yaml
     ```
 
     The expected output is as follows:
 
     ```console
     Creating cluster "fire-kind-cluster" ...
-     ✓ Ensuring node image (release.daocloud.io/kpanda/kindest-node:v1.21.1) 🖼
+     ✓ Ensuring node image (release.daocloud.io/kpanda/kindest-node:v1.25.3) 🖼
      ✓ Preparing nodes 📦
      ✓ Writing configuration 📜
      ✓ Starting control-plane 🕹️
