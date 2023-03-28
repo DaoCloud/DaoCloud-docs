@@ -104,7 +104,7 @@
     
     在如上界面中:
 
-    - `BigIP Username`：F5 设备的登录账户。
+    - `BigIP Username`：F5 设备的登录账号。
     
     - `BigIP Password`：F5 设备的登录密码。
 

@@ -26,7 +26,7 @@ registries = ['temp-registry.daocloud.io']
 EOF
 ```
 
-![增加命令](images/faq01.png)
+![增加命令](../images/faq01.png)
 
 ## 在 GitOps 模块下添加 GitHub 仓库时报错
 

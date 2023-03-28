@@ -23,7 +23,7 @@ nav:
               - 准备工作: install/commercial/prepare.md
               - 离线安装步骤: install/commercial/start-install.md
               - 使用场景示例: install/commercial/scenarios.md
-              - 集群配置文件介绍: install/commercial/cluster-config.md
+              - 修改集群配置文件: install/commercial/cluster-config.md
           - 卸载: install/uninstall.md
           - Release Notes: install/release-notes.md
       - 容器管理:
@@ -42,6 +42,7 @@ nav:
               - 删除集群: kpanda/user-guide/clusters/delete-cluster.md
               - 集群角色: kpanda/user-guide/clusters/cluster-role.md
               - 集群状态: kpanda/user-guide/clusters/cluster-status.md
+          - 命名空间: kpanda/user-guide/namespaces/createns.md
           - 节点管理:
               - 节点可用性检查: kpanda/user-guide/nodes/node-check.md
               - 节点配置: kpanda/user-guide/nodes/node-config.md
@@ -89,12 +90,11 @@ nav:
               - 使用配置项: kpanda/user-guide/configmaps-secrets/use-configmap.md
               - 创建密钥: kpanda/user-guide/configmaps-secrets/create-secret.md
               - 使用密钥: kpanda/user-guide/configmaps-secrets/use-secret.md
-          - 命名空间: kpanda/user-guide/namespaces/createns.md
           - 集群运维:
               - 最近操作: kpanda/user-guide/clusterops/latest-operations.md
               - 集群升级: kpanda/user-guide/clusters/upgrade-cluster.md
               - 集群设置: kpanda/user-guide/clusterops/cluster-settings.md
-          - 权限说明:
+          - 权限管理:
               - 权限说明: kpanda/user-guide/permissions/permission-brief.md
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
       - 全局管理:
@@ -103,11 +103,11 @@ nav:
               - 功能总览: ghippo/intro/features.md
               - 常见术语: ghippo/intro/glossary.md
               - Release Notes: ghippo/intro/release-notes.md
-          - 登录: ghippo/user-guide/login.md
-          - 安装:
+          - 安装、登录和升级:
               - 离线升级全局管理: ghippo/install/offline-install.md
               - 自定义反向代理服务器地址: ghippo/install/reverse-proxy.md
               - 国密网关: ghippo/install/gm-gateway.md
+              - 登录: ghippo/install/login.md
           - 用户与访问控制:
               - 什么是用户与访问控制: ghippo/user-guide/access-control/iam.md
               - 用户: ghippo/user-guide/access-control/user.md
@@ -161,6 +161,7 @@ nav:
               - 基本概念: insight/intro/concepts.md
               - 应用场景: insight/intro/scenarios.md
               - 功能列表: insight/intro/feature.md
+              - 权限说明: insight/intro/permission.md
               - Release Notes: insight/intro/releasenote.md
           - 快速入门:
               - 安装 Insight:
@@ -174,8 +175,8 @@ nav:
                   - OTel SDK 增强 Go 应用: insight/user-guide/quickstart/otel/golang.md
                   - OTel SDK 为应用暴露指标: insight/user-guide/quickstart/otel/meter.md
                   - OTel 自动探针增强 Go 应用: insight/user-guide/quickstart/otel/golang-ebpf.md
-          - 概览: insight/user-guide/overview.md
           - 仪表盘:
+              - 概览: insight/user-guide/overview.md
               - 仪表盘: insight/user-guide/dashboard/dashboard.md
               - 以管理员登录 Grafana: insight/user-guide/dashboard/login-grafana.md
           - 资源监控:
@@ -200,7 +201,6 @@ nav:
               - 系统组件: insight/user-guide/system-config/system-component.md
               - 系统配置: insight/user-guide/system-config/system-config.md
               - 修改配置: insight/user-guide/system-config/modify-config.md
-          - 权限说明: insight/user-guide/permission.md
           - 常见问题:
               - 导入自定义仪表盘: insight/faq/import-dashboard.md
               - 链路数据的时钟偏移: insight/faq/traceclockskew.md
@@ -220,6 +220,8 @@ nav:
               - 产品优势: amamba/intro/benefits.md
               - 适用场景: amamba/intro/scenarios.md
               - 基本概念: amamba/intro/concepts.md
+              - 应用工作台权限说明: amamba/intro/permission.md
+              - 常见问题: amamba/intro/faq.md
               - Release Notes: amamba/intro/release-notes.md
           - 离线升级: amamba/offline-upgrade.md
           - 命名空间管理: amamba/user-guide/namespace/namespace.md
@@ -252,7 +254,6 @@ nav:
           - 灰度发布:
               - 创建金丝雀发布任务: amamba/user-guide/release/canary.md
               - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
-          - 应用工作台权限说明: ghippo/permissions/amamba.md
           - 最佳实践:
               - 快速创建流水线: amamba/quickstart/deploy-pipeline.md
               - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
@@ -260,7 +261,6 @@ nav:
               - 基于 Argo Rollout 实现渐进式灰度发布: amamba/quickstart/argocd-rollout.md
               - 在指定的节点上运行流水线: amamba/quickstart/pipeline-on-node.md
               - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
-          - 常见问题: amamba/faq.md
       - 多云编排:
           - 介绍:
               - 什么是多云编排: kairship/intro/what.md
@@ -268,6 +268,7 @@ nav:
               - 产品架构: kairship/intro/architecture.md
               - 产品优势: kairship/intro/benefits.md
               - 基本概念: kairship/intro/concepts.md
+              - 常见问题: kairship/intro/faq.md
               - Release Notes: kairship/intro/release-notes.md
           - 多云实例管理:
               - 多云实例介绍: kairship/instance/README.md
@@ -285,8 +286,7 @@ nav:
               - 一键升级为多云工作负载: kairship/workload/promote.md
               - 镜像创建任务: kairship/workload/job.md
               - 镜像创建定时任务: kairship/workload/cronjob.md
-          - 自定义资源管理:
-              - 多云自定义资源: kairship/crds/crd.md
+          - 自定义资源管理: kairship/crds/crd.md
           - 资源管理:
               - 多云服务: kairship/resource/service.md
               - 多云命名空间: kairship/resource/ns.md
@@ -299,7 +299,6 @@ nav:
               - 部署策略: kairship/policy/propagation-policy.md
               - 差异化策略: kairship/policy/override-policy.md
           - 绑定工作空间: kairship/workspace.md
-          - 常见问题: kairship/faq.md
           - 故障转移:
               - 故障转移功能介绍: kairship/failover/failover.md
               - 优化故障转移延迟灵敏度: kairship/failover/optimization-failover.md
@@ -443,11 +442,10 @@ nav:
               - 背景: network/intro/background.md
               - 挑战: network/intro/challenges.md
               - 网络组件: network/modules/modules.md
+              - 网络 CNI 性能测试报告: network/intro/cni-performance.md
           - 规划:
               - 网卡规划: network/plans/ethplan.md
-              - 网络规划: network/plans/netplan.md
-          - 性能报告:
-              - 网络 CNI 性能测试报告: network/performance/cni-performance.md
+              - 网络规划: network/plans/netplan.md           
           - Calico:
               - 介绍: network/modules/calico/what.md
               - 安装参数配置: network/modules/calico/install.md

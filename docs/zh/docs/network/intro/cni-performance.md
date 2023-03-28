@@ -75,7 +75,7 @@
 
 - Pod 吞吐量
 
-    ![pod](../../network/images/cni-perf1.png)
+    ![pod](../images/cni-perf1.png)
 
     |测试用例|结论|
     |----|----|
@@ -86,7 +86,7 @@
 
 - Service 吞吐量
 
-    ![service](../../network/images/cni-perf2.png)
+    ![service](../images/cni-perf2.png)
     |测试用例|结论|
     |----|----|
     |Service 和节点间, 位于同节点|macvlan 性能最好，cilium 次之，calico 三种模式表现相近，性能都较差|
@@ -96,7 +96,7 @@
 
 - Pod 长时延
 
-    ![long](../../network/images/cni-perf3.png)
+    ![long](../images/cni-perf3.png)
 
     |测试用例|结论|
     |----|----|
@@ -107,7 +107,7 @@
 
 - Pod 短链接
 
-    ![short](../../network/images/cni-perf4.png)
+    ![short](../images/cni-perf4.png)
 
     |测试用例|结论|
     |----|----|

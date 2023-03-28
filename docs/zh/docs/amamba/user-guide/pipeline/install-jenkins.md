@@ -21,7 +21,7 @@
 4. 参照下列说明填写各项配置。
 
     - `registry`: Jenkins 镜像的存储地址
-    - `Master.AdminUser`: Jenkins 账户的用户名
+    - `Master.AdminUser`: Jenkins 账号的用户名
     - `Master.AdminPassword`: Jenkins 用户名对应的密码
     - `Master.resources.requests`: Jenkins 的资源请求值
     - `Master.resources.requests.cpu`: Jenkins master request CPU 资源，根据实际使用情况调整，一般生产级别推荐 4C8Gi 以上

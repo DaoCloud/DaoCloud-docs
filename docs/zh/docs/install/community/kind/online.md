@@ -121,7 +121,7 @@
         kind 集群仅支持 NodePort 模式。
 
 1. 安装完成后，命令行会提示安装成功。恭喜您！
-   现在可以通过屏幕提示的 URL 使用 **默认的账户和密码（admin/changeme）** 探索全新的 DCE 5.0 啦！
+   现在可以通过屏幕提示的 URL 使用 **默认的账号和密码（admin/changeme）** 探索全新的 DCE 5.0 啦！
 
     ![安装成功](../../images/success.png)
 
