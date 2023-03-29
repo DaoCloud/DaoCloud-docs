@@ -111,7 +111,7 @@ Spiderpool provides many exciting features to support:
 
   - help coordinate routes for each NIC in pods that have multiple NICs assigned by
     [Multus](https://github.com/k8snetworkplumbingwg/multus-cni).
-    See [an example](./docs/usage/multi-interfaces-annotation.md) for details.
+    See [an example](https://github.com/windsonsea/spiderpool/blob/main/docs/usage/multi-interfaces-annotation.md) for details.
 
 - Private IPv4 addresses are scarce, but Spiderpool provides a reasonable IP recycling mechanism,
   especially for running new pods when nodes or old pods are abnormal. See
@@ -123,7 +123,8 @@ Spiderpool provides many exciting features to support:
 - Efficient performance in assigning and releasing Pod IPs ensures smooth application release and disaster recovery for the cluster.
   See [an example](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/performance.md) for details.
 
-- All above features can work in ipv4-only, ipv6-only, and dual-stack scenarios. See [example](./docs/usage/ipv6.md) for details
+- All above features can work in ipv4-only, ipv6-only, and dual-stack scenarios.
+  See [example](https://github.com/windsonsea/spiderpool/blob/main/docs/usage/ipv6.md) for details.
 
 # Org repo URL
 
