@@ -626,6 +626,7 @@ nav:
               - Rook-Ceph 介绍: storage/solutions/rook-ceph.md
               - Rook-Ceph 部署 - 应用商店: storage/solutions/dce-rook-ceph.md
               - Rook-Ceph 部署 - Helm: storage/solutions/helm-rook-ceph.md
+              - 如何接入 Ceph Dashboard: storage/solutions/ceph-dashboard.md
               - Longhorn 介绍: storage/solutions/longhorn.md
               - Longhorn 部署 - 应用商店: storage/solutions/dce-longhorn.md
               - OpenEBS 介绍: storage/solutions/openebs.md
