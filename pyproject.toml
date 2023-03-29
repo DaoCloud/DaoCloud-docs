@@ -28,7 +28,10 @@ googletrans = "3.1.0a0"
 python-docx = "^0.8.11"
 docxcompose = "^1.4.0"
 pandoc = "^2.3"
-beautifulsoup4 = "4.9.3"
+beautifulsoup4 = "^4.11.2"
+mkdocs-swagger-ui-tag = "^0.6.1"
+mkdocs-rss-plugin = "^1.6.0"
+mkdocs-macros-plugin = "^0.7.0"
 
 [tool.poetry.dev-dependencies]
 
