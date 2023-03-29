@@ -89,9 +89,9 @@ type TenantSpec struct {
 }
 ```
 
-### 服务账户
+### 服务账号
 
-服务账户 (Service Account) 通常使用用户登录 console 或者通过 mc 命令对 MinIO 进行管理操作。但如果应用程序需要访问 MinIO，则通常使用 Service Account（这是比较正式的叫法，某些上下文中也称之为 access key）。
+服务账号 (Service Account) 通常使用用户登录 console 或者通过 mc 命令对 MinIO 进行管理操作。但如果应用程序需要访问 MinIO，则通常使用 Service Account（这是比较正式的叫法，某些上下文中也称之为 access key）。
 
 一个用户可以创建多个 Service Account。
 

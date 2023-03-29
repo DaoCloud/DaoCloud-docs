@@ -41,7 +41,7 @@ Prometheus 在实际使用过程中，受到集群容器数量以及开启 Istio
 | 1000             | 156w                   | Request：5<br>Limit：10 | Request：18GB<br>Limit：36GB  |
 | 2000             | 312w                   | Request：7<br>Limit：14 | Request：40GB<br>Limit：80GB  |
 | 3000             | 468w                   | Request：8<br>Limit：16 | Request：65GB<br>Limit：130GB |
-18338765328
+
 !!! note
 
     1. 表格中的 `Pod 数量`指集群中基本稳定运行的 Pod 数量，如出现大量的 Pod 重启，则会造成短时间内指标量的陡增，此时资源需要进行相应上调。

@@ -50,4 +50,12 @@
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/cluster-upgrade.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
+## 命名空间独享节点
+
+<!--参阅[集群升级](../kpanda/user-guide/clusters/upgrade-cluster.md)文档页面。-->
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/exclusive-node.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
