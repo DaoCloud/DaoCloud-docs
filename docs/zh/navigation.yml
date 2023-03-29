@@ -24,7 +24,10 @@ nav:
               - 离线安装步骤: install/commercial/start-install.md
               - 使用场景示例: install/commercial/scenarios.md
               - 修改集群配置文件: install/commercial/cluster-config.md
+          - 升级:
+              - 升级 DCE 5.0 Gproduct: install/upgrade/upgrade.md
           - 卸载: install/uninstall.md
+          - 常见问题: install/faq.md
           - Release Notes: install/release-notes.md
       - 容器管理:
           - 介绍:
