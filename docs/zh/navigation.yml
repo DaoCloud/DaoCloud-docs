@@ -209,7 +209,8 @@ nav:
               - 链路数据的时钟偏移: insight/faq/traceclockskew.md
               - 日志采集排障指南: insight/faq/debug-log.md
               - 链路采集排障指南: insight/faq/debug-trace.md
-              - DCE 4.0 安装 insight-agent: insight/faq/install-agentindce.md
+              - 在 DCE4 安装 Insight Agent: insight/faq/install-agentindce.md
+              - 在 OpenShift 安装 Insight Agent: insight/faq/install-agent-on-ocp.md
           - 最佳实践:
               - Prometheus 资源规划: insight/best-practice/prometheus-res.md
               - vmstorage 磁盘规划: insight/best-practice/vms-res-plan.md
