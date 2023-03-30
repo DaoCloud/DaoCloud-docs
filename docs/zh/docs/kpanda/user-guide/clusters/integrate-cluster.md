@@ -18,7 +18,7 @@ hide:
 
 1. 进入`集群列表`页面，点击右上角的`接入集群`按钮。
 
-    ![接入集群](../../images/join-cluster01.png)
+    ![接入集群](../../images/join001.png)
 
 2. 填写基本信息。
 
@@ -29,10 +29,11 @@ hide:
 3. 填写目标集群的 KubeConfig，点击`验证 Config`，验证通过后才能成功接入集群。
 
     > 如果不知道如何获取集群的 KubeConfig 文件，可以在输入框右上角点击`如何获取 kubeConfig`查看对应步骤。
+    ![接入集群](../../images/join003.png)
 
 4. 确认所有参数填写正确，在页面右下角点击`确定`。
 
-    ![接入集群](../../images/join-cluster02.png)
+    ![接入集群](../../images/join002.png)
 
 !!! note
 

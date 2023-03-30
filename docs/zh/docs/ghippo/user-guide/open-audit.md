@@ -1,4 +1,172 @@
-# 开启/关闭审计日志
+# 开启/关闭采集k8s审计日志
+
+## 名称解释
+
+- k8s审计日志：k8s本身生成审计日志，开启该功能后，会在指定目录下生成k8s审计日志的日志文件
+- 采集k8s审计日志：通过insight-agent采集上述‘k8s审计日志’的日志文件，’采集k8s审计日志‘ 的前提条件是集群开启了上述 ‘k8s审计日志‘
+
+## dce5.0安装完成时状态
+
+- 社区版安装管理集群过程中未操作k8s审计日志开关
+- 商业版管理集群的k8s审计日志开关默认开启
+    - 如需设置成默认关闭，可修改安装器clusterConfigt.yaml来配置（logPath 设置为空”“）
+- 管理集群的采集k8s审计日志开关默认关闭
+    - 默认设置不支持配置
+
+## 管理集群采集k8s审计日志开关
+
+### 商业版安装环境
+
+#### 确认开启k8s审计日志
+
+通过命令
+
+    ls /var/log/kubernetes/audit
+ 
+查看`/var/log/kubernetes/audit` 目录下是否有审计日志生成，若有，则表示k8s审计日志成功开启。
+
+若未开启，请参考[文档的开启关闭k8s审计日志](#k8s)
+
+#### 开启采集k8s审计日志流程
+
+1. 添加chartmuseum到helm repo中
+
+    ```shell
+    helm repo add chartmuseum http://10.5.14.30:8081   # IP需要修改为火种节点的IP地址
+    ```
+    
+2. 保存当前insight-agent helm value
+
+    ```shell
+    helm get values insight-agent -n insight-system -o yaml > insight-agent-values-bak.yaml
+    ```
+    
+3. 获取当前版本号 ${insight_version_code}
+
+    ```shell
+    insight_version_code=`helm list -n insight-system |grep insight-agent | awk {'print $10'}` 
+    ```
+
+4. 更新helm value配置
+
+    ```shell
+    helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent chartmuseum/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=true
+    ```
+
+5. 重启insight-system下的所有fluentBit pod 
+
+    ```shell
+    fluent_pod=`kubectl get pod -n insight-system | grep insight-agent-fluent-bit | awk {'print $1'} | xargs`
+    kubectl delete pod ${fluent_pod} -n insight-system
+    ```
+    
+#### 关闭采集k8s审计日志
+
+其余步骤和开启采集k8s审计日志一致，仅需修改第4步:
+更新helm value配置
+
+    ```shell
+    helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent chartmuseum/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=false
+    ```
+
+### 社区版在线安装环境
+
+#### 开启采集k8s审计日志流程
+
+1. 保存当前 value
+
+    ```shell
+    helm get values insight-agent -n insight-system -o yaml > insight-agent-values-bak.yaml
+    ```
+
+2. 获取当前版本号 ${insight_version_code}，然后更新配置
+
+    ```shell
+    insight_version_code=`helm list -n insight-system |grep insight-agent | awk {'print $10'}` 
+    ```
+
+3. 更新helm value配置
+    ```shell
+    helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent insight-release/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=true 
+    ```
+
+    如果因为版本未找到而升级失败，请检查命令中使用的 helm repo 是否有这个版本。
+    若没有，请尝试更新 helm repo 后重试。
+
+    ```shell
+    helm repo update insight-release
+    ```
+
+4. 重启insight-system下的所有fluentBit pod 
+
+    ```shell
+    fluent_pod=`kubectl get pod -n insight-system | grep insight-agent-fluent-bit | awk {'print $1'} | xargs`
+    kubectl delete pod ${fluent_pod} -n insight-system
+    ```
+
+#### 关闭采集k8s审计日志
+
+其余步骤和开启采集k8s审计日志一致，仅需修改第3步:
+更新helm value配置
+
+    ```shell
+    helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent insight-release/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=false
+    ```
+
+
+## 工作集群开关
+
+各工作集群开关独立，按需开启
+
+### 创建集群时打开采集审计日志步骤
+
+采集k8s审计日志功能默认为关闭状态，若需要开启，可以按照如下步骤：
+
+![image](../../images/worker01.png)
+
+![image](../../images/worker02.png)
+
+将该按钮设置为启用状态，开启采集k8s审计日志功能
+
+通过dce5.0创建工作集群时，确认该集群的k8s审计日志选择‘true'，这样创建出来的工作集群k8s审计日志是开启的
+
+![image](../../images/worker03.png)
+
+等待集群创建成功后，该工作集群的k8s审计日志将被采集
+
+### 接入的集群和创建完成后开关步骤
+
+#### 确认开启k8s审计日志
+
+通过命令
+
+    ls /var/log/kubernetes/audit
+
+查看`/var/log/kubernetes/audit` 目录下是否有审计日志生成，若有，则表示k8s审计日志成功开启。
+
+若未开启，请参考[文档的开启关闭k8s审计日志](#k8s)
+
+#### 开启采集k8s审计日志
+
+采集k8s审计日志功能默认为关闭状态，若需要开启，可以按照如下步骤
+
+1. 选中已接入并且需要开启采集k8s审计日志功能的集群
+
+![image](../../images/worker04.png)
+
+2. 进入helm应用管理页面，更新insight-agent配置 （若未安装insight-agent，可以参考文档：[安装insight-agent](https://docs.daocloud.io/insight/user-guide/quickstart/install-agent/)）
+
+![image](../../images/worker05.png)
+
+3. 开启\关闭采集k8s审计日志按钮
+
+![image](../../images/worker06.png)
+
+4. 接入集群的情况下开关后仍需要重启fluent-bit pod 才能生效
+
+![image](../../images/worker07.png)
+
+## 开启关闭k8s审计日志
 
 默认 Kubernetes 集群不会输出审计日志信息。通过以下配置，可以开启 Kubernetes 的审计日志功能。
 
@@ -6,7 +174,7 @@
 2. 配置 API 服务器，开启审计日志
 3. 重启并验证
 
-## 准备审计日志 Policy 文件
+### 准备审计日志 Policy 文件
 
 ??? note "点击查看审计日志 Policy YAML 文件"
 
@@ -171,7 +339,7 @@
 
 将以上审计日志文件放到 `/etc/kubernetes/audit-policy/` 文件夹下，并取名为 `apiserver-audit-policy.yaml`。
 
-## 配置 API 服务器
+### 配置 API 服务器
 
 打开 API 服务器的配置文件 kube-apiserver.yaml，一般会在 `/etc/kubernetes/manifests/` 文件夹下，并添加以下配置信息：
 
@@ -209,92 +377,14 @@
       name: audit-policy
     ```
 
-## 测试并验证
+### 测试并验证
 
-稍等一会，API 服务器会自动重启，在 `/var/log/kubernetes/audit` 目录下查看是否有审计日志生成。
+稍等一会，API 服务器会自动重启，通过命令
+
+```shell
+ls /var/log/kubernetes/audit
+```
+
+查看`/var/log/kubernetes/audit` 目录下是否有审计日志生成，若有，则表示k8s审计日志成功开启。
 
 如果想关闭，去掉 `spec.containers.command` 中的相关命令即可。
-
-## 开启审计日志的采集
-
-通过 FluentBit 来采集审计日志。默认 FluentBit 不会采集 `/var/log/kubernetes/audit` 下的日志文件（Kubernetes 审计日志）。
-
-如需开启审计日志，按以下步骤操作：
-
-1. 保存当前 value
-
-    ```shell
-    helm get values insight-agent -n insight-system -o yaml > insight-agent-values-bak.yaml
-    ```
-
-2. 获取当前版本号 ${insight_version_code}，然后更新配置
-
-    ```shell
-    insight_version_code=`helm list -n insight-system |grep insight-agent | awk {'print $10'}` 
-    ```
-
-    ```shell
-    helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent insight-release/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=true 
-    ```
-
-    如果因为版本未找到而升级失败，请检查命令中使用的 helm repo 是否有这个版本。
-    若没有，请尝试更新 helm repo 后重试。
-
-    ```shell
-    helm repo update insight-release
-    ```
-
-3. 重启所有 Pod
-
-    重启所有 master 节点的 FluentBit Pod，重启后的 FluentBit 将会采集 `/var/log/kubernetes/audit` 下的日志。
-
-## 禁用审计日志的采集
-
-如需禁用 K8s 审计日志，按以下步骤操作：
-
-1. 保存当前 value
-
-    ```shell
-    helm get values insight-agent -n insight-system -o yaml > insight-agent-values-bak.yaml
-    ```
-
-2. 获取当前版本号 ${insight_version_code}，然后更新配置
-
-    ```shell
-    insight_version_code=`helm list -n insight-system |grep insight-agent | awk {'print $10'}` 
-    ```
-
-    与开启相比，以下这条命令只是将 true 改为了 false。
-
-    ```shell
-    helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent insight-release/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=false 
-    ```
-
-    如果因为版本未找到而升级失败，请检查命令中使用的 helm repo 是否有这个版本。
-    若没有，请尝试更新 helm repo 后重试。
-
-    ```shell
-    helm repo update insight-release
-    ```
-
-3. 重启所有 Pod
-
-    重启所有 master 节点的 FluentBit Pod，重启后的 FluentBit 将不再采集 `/var/log/kubernetes/audit` 下的日志。
-
-!!! note
-
-    此外，如果想停止全局管理的审计日志采集，可以执行 `kubectl edit cm insight-agent-fluent-bit-config -n insight-system`，删除以下 INPUT 即可：
-
-    ```console
-    [INPUT]
-    Name               tail
-    Tag                audit_log.ghippo.*
-    Parser             docker
-    Path               /var/log/containers/*_ghippo-system_audit-log*.log
-    DB                 /run/flb_audit.db
-    Mem_Buf_Limit      15MB
-    Buffer_Chunk_Size  1MB
-    Buffer_Max_Size    5MB
-    #DB.Sync           Normal
-    Refresh_Interval   10
-    ```
