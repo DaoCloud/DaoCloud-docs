@@ -99,6 +99,7 @@ nav:
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
           - 备份恢复:
               - 安装 velero 插件: kpanda/user-guide/backup/install-velero.md
+              - 备份一个无状态的 2048 应用: kpanda/user-guide/backup/backup-deploy-2048.md
       - 全局管理:
           - 介绍:
               - 什么是全局管理: ghippo/intro/what.md
