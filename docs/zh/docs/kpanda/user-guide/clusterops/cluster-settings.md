@@ -11,8 +11,8 @@ hide:
 
     点击目标集群的名称，在左侧导航栏点击`最近操作`->`集群设置`->`Addon 插件`。
 
-    ![gpu](../../images/settings01.png)
+    ![配置gpu](../../images/settings01.png)
 
-- Helm 仓库刷新周期、操作记录保留条数
+- Helm 操作基础镜像、仓库刷新周期、操作记录保留条数、是否开启集群删除保护（开启后集群将不能直接卸载）
 
-    ![gpu](../../images/settings02.png)
+    ![高级配置](../../images/Advanced-Configuration.png)
