@@ -661,6 +661,7 @@ nav:
               - 创建托管 Harbor 实例: kangaroo/hosted/harbor.md
           - 镜像扫描: kangaroo/scan.md
           - Release Notes: kangaroo/release-notes.md
+          - 镜像仓库FAQ: kangaroo/faq.md
       - 云原生安全:
           - 介绍: security/what.md
           - Falco:
