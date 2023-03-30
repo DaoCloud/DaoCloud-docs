@@ -349,8 +349,7 @@ nav:
                   - 创建网关: skoala/ms-gateway/gateway/create-gateway.md
                   - 查看网关: skoala/ms-gateway/gateway/check-details.md
                   - 更新网关: skoala/ms-gateway/gateway/update-gateway.md
-                  - 诊断网关: skoala/ms-gateway/gateway/diagnose-gateway.md
-                  - 移除网关: skoala/ms-gateway/gateway/delete-gateway.md
+                  - 删除网关: skoala/ms-gateway/gateway/delete-gateway.md
               - API 管理:
                   - 添加 API: skoala/ms-gateway/api/add-api.md
                   - 更新 API: skoala/ms-gateway/api/update-api.md
