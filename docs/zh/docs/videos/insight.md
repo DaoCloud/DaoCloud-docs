@@ -50,4 +50,12 @@
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sys-config.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
+## 场景监控和链路追踪
+
+参阅文档页面：[安装 Insight Agent](../insight/user-guide/quickstart/install-agent.md)、[通过 Operator 实现应用无侵入增强](../insight/user-guide/quickstart/otel/operator.md)、[链路追踪](../insight/user-guide/data-query/trace.md)
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/trace.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
