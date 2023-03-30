@@ -2,6 +2,49 @@
 
 本页列出服务网格各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023-03-30
+
+### v0.14.0
+
+#### 新功能
+
+- 新增 CloudShell 相关接口定义
+- 新增更新服务的标签实现
+- 新增服务列表和详情会返回 labels
+- 新增 CloudShell 相关实现
+- 新增服务列表支持对服务标签的查询
+- 新增了一个新的 API，用于更新服务的标签
+- 新增 istio 1.17.1 支持
+- 新增了一个新的 etcd 高可用方案
+- 新增场景化测试框架，用于测试场景化的功能
+- 新增选择不同网格规模时，自动调整组件资源配置
+- 新增了自定义角色的实现，支持自定义角色的创建、更新、删除、绑定、解绑等操作
+
+#### 优化
+
+- 优化 mcpc controller 启动逻辑，避免出现工作集群没有正确注册的情况
+- 优化 WorkloadShadow 清理逻辑：由定时触发改造事件触发：控制器启动时、检测到工作集群发生变化时；
+  WorkloadShadow 发生变化时，自健康检测，对应工作负载不存在时，触发清理逻辑
+- 优化 mcpc controller 启动逻辑，避免出现工作集群没有正确注册的情况
+- 升级 Insight api 升级到 v0.14.7 版本
+- 升级 ckube 支持 labels 的复杂条件查询
+- 移除 移除 Helm 升级时间限制
+
+#### 修复
+
+- 修复东西网关没 Ready 时界面无显示的问题
+- 修复多云互联会自动注册东西网关 LB IP，可能导致内部网络异常（移除东西网关实例 label：topology.istio.io/network， 该标签会将东西网关自动注册）
+- 修复携带东西网关的集群迁移会出错问题（无法修改实例的 label，如果需要修改组件 label 只能删除组件再重建）
+- 修复了一个导致 Mesh 绑定 workspace 服务失败（界面显示成功）的问题
+- 修复由于异常导致虚拟集群中存在游离的命名空间，在启动 mcpc-controller 时增加自检并且清除行为
+- 修复由于 controller 更新网格，导致 api 下发网格配置失败
+- 修复创建托管网格时，ServicePort 的 TargetPort 未正确设置的问题
+- 修复 GlobalMesh.Status.MeshVersion 错误覆盖问题
+- 修复 mcpc-controller 无法开启 debug 模式问题
+- 修复 mcpc-controller 无法触发集群删除事件
+- 修复删除 Mesh 再重建同名的 Mesh 时，会导致 Mesh 无法正常创建的问题（hosted proxy 无法正常更新）
+- 修复 mcpc controller 在某些情况下没有正确修改 istiod-remote 的 service 的问题
+
 ## 2023-02-28
 
 ### v0.13.1
