@@ -97,6 +97,8 @@ nav:
           - 权限管理:
               - 权限说明: kpanda/user-guide/permissions/permission-brief.md
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
+          - 备份恢复:
+              - 安装 velero 插件: kpanda/user-guide/backup/install-velero.md
       - 全局管理:
           - 介绍:
               - 什么是全局管理: ghippo/intro/what.md
