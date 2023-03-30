@@ -62,7 +62,7 @@ velero 是一个备份和恢复 Kubernetes 集群资源的开源工具。它可�
 
     ![备份恢复](../../images/backup4.png)
 
-    ??? note “Use existing secret” 参数中的 secret 的主要内容包括 key 和 vaule 两部分，其中 key 为固定的 `cloud` 参数，vaule 值如下：
+    !!! note "Use existing secret” 参数中的 secret 的主要内容包括 key 和 vaule 两部分，其中 key 为固定的 `cloud` 参数，vaule 值如下："
 
         ```yaml
         [default]
