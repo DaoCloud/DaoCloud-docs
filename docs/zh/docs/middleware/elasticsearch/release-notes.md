@@ -2,6 +2,24 @@
 
 本页列出 Elasticsearch 索引服务的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## v0.6.0
+
+发布日期：2023-03-28
+
+### API
+
+- **新增** `mcamel-elasticsearch` 支持中间件链路追踪适配。
+
+### 文档
+
+- **新增** 在安装 `mcamel-elasticsearch` 根据参数配置启用链路追踪。
+- **新增** `mcamel-elasticsearch` Kibana 支持 LoadBalancer 类型。
+
+### 其他
+
+- 升级 golang.org/x/net 到 v0.7.0
+- 升级 GHippo SDK 到 v0.14.0
+
 ## v0.5.0
 
 发布日期：2023-02-23

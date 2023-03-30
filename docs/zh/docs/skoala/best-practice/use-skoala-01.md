@@ -53,8 +53,8 @@
     -javaagent:./jmx_prometheus_javaagent-0.17.0.jar=12345:./prometheus-jmx-config.yaml
         -Dspring.extraAdLabel=Daocloud -Dspring.randomError=false
         -Dspring.matrixRow=200 -Dmeter.port=8888
-        -Dspring.cloud.nacos.discovery.enabled=false        # 修改，以启用 Nacos 服务注册发现
-        -Dspring.cloud.nacos.config.enabled=false           # 修改，以启用 Nacos 配置管理能力
+        -Dspring.cloud.nacos.discovery.enabled=true       # 修改，以启用 Nacos 服务注册发现
+        -Dspring.cloud.nacos.config.enabled=true          # 修改，以启用 Nacos 配置管理能力
         -Dspring.cloud.sentinel.enabled=false
         -Dspring.cloud.nacos.config.server-addr=nacos-test.skoala-test:8848           # 修改，以配置 Nacos 注册中心地址
         -Dspring.application.name=adservice-springcloud
