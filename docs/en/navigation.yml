@@ -398,6 +398,9 @@ nav:
           - Plan:
               - Eth card plan: network/plans/ethplan.md
               - Network plan: network/plans/netplan.md
+          -Performance report:
+              - Network CNI performance test report: network/performance/cni-performance.md
+              - Spiderpool performance test report: network/performance/spiderpool-performance.md
           - Calico:
               - Intro: network/modules/calico/what.md
               - Install: network/modules/calico/install.md
