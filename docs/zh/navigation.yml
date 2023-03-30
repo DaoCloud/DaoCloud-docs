@@ -97,6 +97,8 @@ nav:
           - 权限管理:
               - 权限说明: kpanda/user-guide/permissions/permission-brief.md
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
+          - 备份恢复:
+              - 安装 velero 插件: kpanda/user-guide/backup/install-velero.md
       - 全局管理:
           - 介绍:
               - 什么是全局管理: ghippo/intro/what.md
@@ -389,10 +391,10 @@ nav:
               - Istio 版本升级: mspider/install/istio-update.md
               - 边车版本升级: mspider/install/sidecar-update.md
           - 创建/删除网格:
-              - 网格介绍: mspider/user-guide/service-mesh/README.md
-              - 创建托管/专有网格: mspider/user-guide/service-mesh/create-mesh.md
+              - 创建托管/专有网格: mspider/user-guide/service-mesh/README.md
               - 创建外接网格: mspider/user-guide/service-mesh/integrate-mesh.md
               - 删除网格: mspider/user-guide/service-mesh/delete.md
+              - 网格规模对应资源用量: mspider/user-guide/service-mesh/capacity-resources.md
           - 服务管理:
               - mspider/user-guide/service-list/README.md
               - 从网格外部访问服务: mspider/user-guide/service-list/out-to-in.md
@@ -444,7 +446,7 @@ nav:
           - 规划:
               - 网卡规划: network/plans/ethplan.md
               - 网络规划: network/plans/netplan.md
-          - 性能报告:
+          - 性能测试:
               - 网络 CNI 性能测试报告: network/performance/cni-performance.md
               - Spiderpool 性能测试报告: network/performance/spiderpool-performance.md
           - Calico:
