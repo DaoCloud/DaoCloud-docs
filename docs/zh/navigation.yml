@@ -443,11 +443,12 @@ nav:
               - 背景: network/intro/background.md
               - 挑战: network/intro/challenges.md
               - 网络组件: network/modules/modules.md
-              - 网络 CNI 性能测试报告: network/intro/cni-performance.md
-              - Spiderpool 性能测试报告: network/intro/spiderpool-performance.md
           - 规划:
               - 网卡规划: network/plans/ethplan.md
-              - 网络规划: network/plans/netplan.md              
+              - 网络规划: network/plans/netplan.md
+          - 性能测试:
+              - 网络 CNI 性能测试报告: network/performance/cni-performance.md
+              - Spiderpool 性能测试报告: network/performance/spiderpool-performance.md
           - Calico:
               - 介绍: network/modules/calico/what.md
               - 安装参数配置: network/modules/calico/install.md
