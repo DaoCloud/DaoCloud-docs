@@ -30,6 +30,14 @@
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/apipolicy1.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
+## API 策略的高级配置（2）
+
+参阅 [API 策略配置](../skoala/ms-gateway/api/api-policy.md)文档页面。
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/api-policy2.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+
 ## 通过网格治理微服务流量
 
 参阅 [微服务流量治理](../mspider/user-guide/traffic-governance/README.md)文档页面。

@@ -25,6 +25,13 @@ mkdocs-redirects = "^1.2.0"
 mkdocs-with-pdf = "^0.9.3"
 mkdocs-print-site-plugin = "^2.3.4"
 googletrans = "3.1.0a0"
+python-docx = "^0.8.11"
+docxcompose = "^1.4.0"
+pandoc = "^2.3"
+beautifulsoup4 = "^4.11.2"
+mkdocs-swagger-ui-tag = "^0.6.1"
+mkdocs-rss-plugin = "^1.6.0"
+mkdocs-macros-plugin = "^0.7.0"
 
 [tool.poetry.dev-dependencies]
 
