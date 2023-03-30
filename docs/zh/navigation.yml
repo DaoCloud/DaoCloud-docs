@@ -129,7 +129,8 @@ nav:
               - 文件夹权限: ghippo/user-guide/workspace/folder-permission.md
               - 资源配额: ghippo/user-guide/workspace/quota.md
           - 审计日志:
-              - 开启和关闭审计日志: ghippo/user-guide/open-audit.md
+              - 开启和关闭采集k8s审计日志: ghippo/user-guide/open-audit.md
+              - 开启和关闭k8s审计日志: ghippo/user-guide/open-k8s-audit.md
               - 下载和导出审计日志: ghippo/user-guide/audit-log.md
           - 平台设置:
               - 密码重置: ghippo/user-guide/password.md
