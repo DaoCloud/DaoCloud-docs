@@ -4,11 +4,6 @@
 
 ![仓库不健康](./img/img.png)
 
-!!! tip
-
-    - 如下 A1、A2 都在托管 Harbor 所在的集群上排查问题，目标集群通过如下页面路径查看：`仓库实例` -> `概览` -> `部署位置`
-    - 如下 A3 在 `kpanda-global-cluster` 集群上验证。
-
 - A1：用户输入的数据库、Redis、S3 存储等信息有误，导致无法连接，可通过查看日志文件进行排查。现象主要是几个核心服务有 Pod 启动失败，可以通过查看日志进一步确认原因。
 
     ```shell
@@ -42,15 +37,21 @@
     $ kubectl -n kangaroo-system describe registrysecrets.kangaroo.io inte-bz-harbor-1
     ```
 
-## 创建了 `Project` 或者上传了镜像但发现页面上的镜像空间和可用存储没有增加
+!!! tip
+
+    - 上述 A1、A2 都在托管 Harbor 所在的集群上排查问题，目标集群通过如下页面路径查看：`仓库实例` -> `概览` -> `部署位置`
+    - 上述 A3 在 `kpanda-global-cluster` 集群上验证。
+
+## 创建 `Project` 或上传镜像后发现页面上的镜像空间和可用存储未增加
 
 这是因为 UI 页面上在`托管 Harbor` 首页、仓库集成详情中的统计信息是异步获取的数据，会有一定的延迟，最长延迟为 `10` 分钟。
 
-## 仓库集成后不健康
+## 仓库集成后但状态为不健康
 
 ![仓库集成不健康](./img/img_1.png)
 
-首先确认实例是否真的健康，如果实例不健康，则需要排查实例的问题；如果实例健康，则通过在 `kpanda-global-cluster` 集群上排查 `registrysecrets.kangaroo.io` 资源是否创建，以及 `status` 情况，可以初步确认情况。
+首先确认实例是否真的健康，如果实例不健康，则需要排查实例的问题；
+如果实例健康，则通过在 `kpanda-global-cluster` 集群上排查 `registrysecrets.kangaroo.io` 资源是否创建，并排查 `status` 情况，这样可以初步确认问题所在。
 
 ```shell
 # 提示：namespace 默认为 kangaroo-system
@@ -78,11 +79,11 @@ status:
 
 ## 仓库集成、关联仓库后，在镜像列表页面实例中不可查看
 
-请确认仓库集成或者关联仓库的资源是否健康，如果不健康是不会在镜像列表页面的实例列表中显示的。确认方式请参考[仓库集成后不健康的确认方法](#_3).
+请确认仓库集成或者关联仓库的资源是否健康，如果不健康是不会在镜像列表页面的实例列表中显示的。确认方式请参考[仓库集成后不健康的确认方法](#_2)。
 
-## 在 `Kpanda` 的镜像选择器中选中了一个私有 `Project` 的镜像，但是部署的时候提示镜像拉取失败
+## 在 `Kpanda` 镜像选择器中选中一个私有 `Project` 镜像但部署时提示镜像拉取失败
 
-- A1：能在镜像选择器中看到私有 `Project`，说明 `Project` 和 `Workspace` 已经进行了绑定，此时需要去镜像部署的目标集群 `namespace` 中确认是否生成 `registry-secret` 名字的 `secret`。
+- A1：能在镜像选择器中看到私有 `Project` 表明 `Project` 和 `Workspace` 已经进行了绑定，此时需要去镜像部署的目标集群 `namespace` 中确认是否生成名为 `registry-secret` 的 `secret`。
 
     ```shell
     $ kubectl -n default get secret registry-secret
@@ -90,7 +91,7 @@ status:
     registry-secret   kubernetes.io/dockerconfigjson   1      78d
     ```
 
-- A2：如果确认已经生成 `registry-secret` 的 `secret`，则需要确认 `secret` 中的 `dockerconfigjson` 是否正确。
+- A2：如果确认已经生成名为 `registry-secret` 的 `secret`，则需要确认 `secret` 中的 `dockerconfigjson` 是否正确。
 
     ```shell
     $ kubectl get secret registry-secret -o jsonpath='{.data.*}'| base64 -d | jq
