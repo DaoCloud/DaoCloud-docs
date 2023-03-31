@@ -374,6 +374,8 @@ nav:
                   - 删除域名: skoala/ms-gateway/domain/delete-domain.md
           - 最佳实践:
               - 示例应用体验微服务治理: skoala/best-practice/use-skoala-01.md
+              - 微服务网关 JWT 功能: skoala/best-practice/jwt.md
+              - 微服务网关接入认证服务器: skoala/best-practice/auth-server.md
           - 通用参考:
               - 微服务: reference/basic-knowledge/microservice.md
               - 注册中心: reference/basic-knowledge/registry.md
