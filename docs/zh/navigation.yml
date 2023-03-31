@@ -259,6 +259,8 @@ nav:
           - 灰度发布:
               - 创建金丝雀发布任务: amamba/user-guide/release/canary.md
               - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
+          - 工具链集成:
+              - 在 Jenkins 中使用自定义工具链: amamba/user-guide/tools/jenkins-custom.md
           - 最佳实践:
               - 快速创建流水线: amamba/quickstart/deploy-pipeline.md
               - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
