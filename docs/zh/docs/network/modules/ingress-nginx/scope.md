@@ -56,7 +56,7 @@ spec:
 
 ## 租户级 Ingress 实例
 
-当创建 Ingress 实例时，如果启用 `Ingress Scope`，IngressClass 设置了 `.spec.parameters`，并且设置 `.spec.parameters.scope` 为 `namespaceSelector`，并输入的 Label 为 `kubernetes.io/metadata.name :workspace01` (workspace01 为指定的工作空间 )那么 Ingress 实例的 Ingress Class 指向为`租户级`，适用范围为`workspace01`中所有在当前集群的命名空间。
+当创建 Ingress 实例时，如果启用 `Ingress Scope`，IngressClass 设置了 `.spec.parameters`，并且设置 `.spec.parameters.scope` 为 `namespaceSelector`，并输入的 Label 为 `workspace.ghippo.io/alias=workspace01`(需要给 workspace01 中的 namespace 打上 label workspace.ghippo.io/alias:default，其中 workspace01 为指定的工作空间)，那么 Ingress 实例的 Ingress Class 指向为`租户级`，适用范围为`workspace01`中所有在当前集群的命名空间。
 
 租户级的 Ingress 实例，相当于管理员将 Ingress 的使用权限下发给到某个工作空间，从而实现租户资源隔离。
 
