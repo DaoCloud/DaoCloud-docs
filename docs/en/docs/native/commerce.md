@@ -2,7 +2,7 @@
 
 This page lists, in alphabetical order, updates on some well-known commercial products.
 
-### A, B
+### A
 
 - [Aqua cloud-native security platform introduces Lightning Enforcer, a zero-day vulnerability detection tool based on eBPF technology](https://blog.aquasec.com/combat-zero-day-threats-with-aquas-ebpf-lightning-enforcer)
 
@@ -27,6 +27,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [AWS Launches Local Clusters for Running EKS Clusters Locally on Hybrid Cloud Service Outposts](https://aws.amazon.com/about-aws/whats-new/2022/09/amazon-eks-outposts-local-clusters/)
 
      Local clustering reduces the risk of application downtime due to network outages in the cloud. During this time, the application remains available and cluster operations can be performed. EKS manages the availability of the K8s control plane on Outposts when connected to the cloud. The Kubernetes running on the local cluster has the same functions as the EKS on the cloud, and supports automatic deployment of the latest security patches.
+
+- [Azure Arc Integration with Observable Platform Datadog, an Azure Hybrid Cloud Multi-Cloud Solution](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
+
+    Azure Arc's integration with Datadog provides the following capabilities: monitors connection status and agent versions to ensure Azure Arc-enabled servers, SQL servers, and Kubernetes clusters are connected and secure; integrates hybrid and multi-cloud servers, Kubernetes clusters, and data services into a unified dashboard for seamless cross-environment Simplifies compliance management and tracking, providing rich visualizations and actionable alerts.
 
 - [Azure Serverless container platform Azure Container Apps November update](https://azure.microsoft.com/en-us/updates/?query=azure%20container%20apps)
 
@@ -106,6 +110,14 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Alibaba Cloud service mesh ASM August Update](https://mp.weixin.qq.com/s/BDgNctG90oHpbrRWC0Hxkg)
 
      Updates include: compatibility with Istio 1.14 series versions, support for Kubernetes 1.21 - 1.24 versions, enhanced grid diagnostics, support for compatibility of third-party tokens in ACK clusters, support for user-defined EnvoyFilter, and priority for the same availability zone without modifying the code routing.
+
+### B
+
+- [Backslash Security launches cloud-native code visualization tool of the same name](https://www.backslash.security/post/backslash-security-emerges-from-stealth-to-fuse-code-security-with-cloud-native-context)
+
+    Backslash has launched a visualization tool that identifies workflows in cloud-native code that could lead to security vulnerabilities.
+    Specific features include: automatic discovery and mapping of cloud-native application code and its dependencies through contextual visualization dashboards; automatic prioritization of high-risk code based on the state of the application cloud in production; and simplified remediation of vulnerabilities and risks through intelligent, automated risk identification.
+    The tool currently supports AWS environments and GitHub code repositories.
 
 - [BellSoft launches Alpaquita Cloud Native Platform for efficiently running cloud-native Java applications](https://containerjournal.com/features/bellsoft-optimizes-java-for-cloud-native-platform/)
 
@@ -447,6 +459,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Gloo Gateway is built on Envoy and utilizes the multi-tenancy and federation features of Gloo Platform, allowing users to easily manage gateway access for multiple development teams and multi-cluster traffic management. Gloo Network builds on Cilium and integrates the Kubernetes CNI layer as a component of the Gloo Platform.
 
+- [Spectro Cloud Cloud Native Edge Computing Platform Palette Edge Platform v3.3 Released](https://docs.spectrocloud.com/release-notes#edge)
+
+    Release: Support for loading images from external OCI registry, installers can now include pre-loaded content packages (including packages and artifacts); support for creating custom Edge installer images; support for random production device UUID values.
+
 - [Spectro Cloud Kubernetes SaaS Management Platform Palette v3.1 Released](https://docs.spectrocloud.com/release-notes#december28,2022-release3.1.0)
 
     Updates: Palette IaaS clusters support automatic scaling, provides Federal Information Processing Standards (FIPS) compliant versioning of Kubernetes, supports filtering user access by tag and viewing cluster detail views, supports versioning of application profiles, leverages Helm and OCI registries for custom package management, allows suspending and resuming unused virtual Clusters.
@@ -539,6 +555,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      TLS Protect for Kubernetes is part of Control Plane for Machine Identities, Venafi's platform for machine identity management.
      Helps security and platform teams manage cloud-native machine identities such as TLS, mTLS, and SPIFFE in multi-cloud and multi-cluster Kubernetes environments, enhancing the observability, control, and automation of machine identity management.
+
+- [VMware Tanzu Service Mesh 3.0.3, a Service Mesh solution, was released](https://docs.vmware.com/en/Tanzu/services/rn/vmware-tanzu-service-mesh-global-controller-release-notes/index.html#Past%20Tanzu%20Service%20Mesh%20Releases)
+
+    Update: Tanzu Service Mesh CLI supports GitOps, which can be used to automatically deploy Tanzu Service Mesh environments to clusters; supports selecting the namespace to inject proxy sidecar into; supports enterprise-level proxy communication between client clusters and Tanzu Service Mesh SaaS.
 
 - [VWware Tanzu Multi-Cloud Multi-Cluster Kubernetes Management Solution Tanzu Mission Control Update](https://docs.vmware.com/en/VMware-Tanzu-Mission-Control/services/rn/vmware-tanzu-mission-control-release-notes/index.html)
 
