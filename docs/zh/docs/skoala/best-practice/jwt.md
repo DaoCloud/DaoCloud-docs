@@ -6,7 +6,7 @@
 
 - [创建一个集群](../../kpanda/user-guide/clusters/create-cluster.md)或[接入一个集群](../../kpanda/user-guide/clusters/integrate-cluster.md)
 - [创建一个网关](../ms-gateway/gateway/create-gateway.md)
-- [准备一个 Token 和用于验证 Token 的 JWKS 应用](#3)
+- [准备一个 Token 和用于验证 Token 的 JWKS 应用](#_3)
 
 ## 操作步骤
 
