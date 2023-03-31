@@ -1,4 +1,4 @@
-# 微服务网关 JWT 功能演示
+# 微服务网关的 JWT 功能
 
 微服务引擎网关支持 JWT 验证。下面介绍如何使用此功能。
 
@@ -6,7 +6,7 @@
 
 - [创建一个集群](../../kpanda/user-guide/clusters/create-cluster.md)或[接入一个集群](../../kpanda/user-guide/clusters/integrate-cluster.md)
 - [创建一个网关](../ms-gateway/gateway/create-gateway.md)
-- [准备一个 Token 和用于验证 Token 的 JWKS 应用](#_3)
+- 准备一个 Token 和用于验证 Token 的 JWKS 应用。如果尚且没有 JWKS 应用，可以参考[创建 JWKS 应用](#jwks)创建一个。
 
 ## 操作步骤
 
@@ -31,6 +31,8 @@
     ![基础配置](../images/jwt08.png)
 
 ## 创建 JWKS 应用
+
+如果当前环境中尚没有 JWKS 应用，可以参考以下流程部署一个应用。
 
 1. 将 JWKS 生成器代码下载到本地。
 
@@ -64,15 +66,16 @@
 
         ![基础配置](../images/jwt11.png)
 
-5. 配置 [YAML 文件](https://github.com/projectsesame/enovy-remote-jwks-go/blob/main/all-in-one.yaml)，通过 `kubectl apply` 命令安装 JWKS 应用
+5. 基于 [YAML 模板](https://github.com/projectsesame/enovy-remote-jwks-go/blob/main/all-in-one.yaml)创建 YAML 文件，然后使用 `kubectl apply` 命令安装 JWKS 应用
 
-    - 将 `namespace` 修改为网关所在的命名空间
+    - 将 `namespace` 修改为网关所在的命名空间，在本例中使用 `envoy-yang`
     - 将 `jwks.json` 修改为上述第三步生成的 JWKS 内容
 
         ![基础配置](../images/jwt13.png)
 
-    ??? note "假设 `namespace` 为 `envoy-yang`，则本例适用的 YAML 文件应该如下所示："
+    ??? note "本例中配置的 YAML 文件如下所示"
 
+        ```yaml
         apiVersion: apps/v1
         kind: Deployment
         metadata:
@@ -155,10 +158,11 @@
             }
               ]
             }
+        ```
 
-6. 访问应用的 `8080` 端口，出现 `success` 即为成功安装。
+6. 访问应用的 `8080` 端口，出现 `success` 说明应用安装成功。
 
-    此时 JWKS 地址应为 `网关访问地址/jwks`构成，例如 <http://13.5.245.34:31456/jwks>
+    JWKS 地址应为 `网关访问地址/jwks`构成，例如 <http://13.5.245.34:31456/jwks>
 
     > 在微服务引擎下的网关概览页面可以查看网关的访问地址。
 
