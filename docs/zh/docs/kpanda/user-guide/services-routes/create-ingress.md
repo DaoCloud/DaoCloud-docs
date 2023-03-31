@@ -11,7 +11,7 @@ Ingress 是对集群中服务的外部访问进行管理的 API 对象，典型�
 
 - 容器管理模块[已接入 Kubernetes 集群](../clusters/integrate-cluster.md)或者[已创建 Kubernetes](../clusters/create-cluster.md)，且能够访问集群的 UI 界面。
 - 已完成一个[命名空间的创建](../namespaces/createns.md)、[用户的创建](../../../ghippo/user-guide/access-control/user.md)，并将用户授权为 [`NS Edit`](../permissions/permission-brief.md#ns-edit) 角色 ，详情可参考[命名空间授权](../permissions/cluster-ns-auth.md)。
-- 已经完成 [Ingress 实例的创建](../../../network/modules/ingress-nginx/install.md)，已[部署应用工作负载](../../workloads/create-deployment.md)，并且已[创建对应 Service ](../../services-routes/create-services.md)
+- 已经完成 [Ingress 实例的创建](../../../network/modules/ingress-nginx/install.md)，已[部署应用工作负载](../workloads/create-deployment.md)，并且已[创建对应 Service ](../services-routes/create-services.md)
 - 单个实例中有多个容器时，请确保容器使用的端口不冲突，否则部署会失效。
 
 ## 创建路由
@@ -58,7 +58,7 @@ Ingress 是对集群中服务的外部访问进行管理的 API 对象，典型�
 | 命名空间       | 【类型】必填<br />【含义】选择新建服务所在的命名空间。关于命名空间更多信息请参考[命名空间概述](../namespaces/createns.md)。<br />【注意】请输入4 到 63 个字符的字符串，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。 | default             |
 | 协议           | 【类型】必填<br />【含义】指授权入站到达集群服务的协议，支持 HTTP （不需要身份认证）或 HTTPS（需需要配置身份认证） 协议。这里选择 HTTPS 协议的路由。 | HTTPS               |
 | 域名           | 【类型】必填<br />【含义】使用域名对外提供访问服务。默认为集群的域名 | testing.daocloud.io |
-| 秘钥           | 【类型】必填<br />【含义】Https TLS 证书，[创建秘钥](../../configmaps-secrets/create-secret.md)。 |                     |
+| 秘钥           | 【类型】必填<br />【含义】Https TLS 证书，[创建秘钥](../configmaps-secrets/create-secret.md)。 |                     |
 | 转发策略       | 【类型】选填<br />【含义】指定 Ingress 的访问策略。<br />**路径**：指定服务访问的URL路径，默认为根路径/<br />**目标服务**：进行路由的服务名称<br />**目标服务端口**：服务对外暴露的端口 |                     |
 | 负载均衡器类型 | 【类型】必填<br />【含义】Ingress 实例的使用范围。<br />`平台级负载均衡器`：同一个集群内，共享同一个 Ingress 实例，其中 Pod 都可以接收到由该负载均衡分发的请求。<br />`租户级负载均衡器`：租户负载均衡器，Ingress 实例独属于当前命名空或者独属于某一工作空间，此工作空间中包含当前命名空间，其中 Pod 都可以接收到由该负载均衡分发的请求。 | 平台级负载均衡器    |
 | Ingress Class  | 【类型】选填<br />【含义】选择对应的 Ingress 实例，选择后将流量导入到指定的 Ingress 实例。为 None 时使用默认的 DefaultClass，请在创建 Ingress 实例时设置 DefaultClass，更多信息，请参考 [Ingress Class](../../../network/modules/ingress-nginx/ingressclass.md)<br /> | None                |

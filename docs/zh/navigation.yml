@@ -99,6 +99,7 @@ nav:
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
           - 备份恢复:
               - 安装 velero 插件: kpanda/user-guide/backup/install-velero.md
+              - 备份一个无状态的 2048 应用: kpanda/user-guide/backup/backup-deploy-2048.md
       - 全局管理:
           - 介绍:
               - 什么是全局管理: ghippo/intro/what.md
@@ -129,7 +130,8 @@ nav:
               - 文件夹权限: ghippo/user-guide/workspace/folder-permission.md
               - 资源配额: ghippo/user-guide/workspace/quota.md
           - 审计日志:
-              - 开启和关闭审计日志: ghippo/user-guide/open-audit.md
+              - 开启和关闭采集k8s审计日志: ghippo/user-guide/open-audit.md
+              - 开启和关闭k8s审计日志: ghippo/user-guide/open-k8s-audit.md
               - 下载和导出审计日志: ghippo/user-guide/audit-log.md
           - 平台设置:
               - 密码重置: ghippo/user-guide/password.md
@@ -208,7 +210,8 @@ nav:
               - 链路数据的时钟偏移: insight/faq/traceclockskew.md
               - 日志采集排障指南: insight/faq/debug-log.md
               - 链路采集排障指南: insight/faq/debug-trace.md
-              - DCE 4.0 安装 insight-agent: insight/faq/install-agentindce.md
+              - 在 DCE4 安装 Insight Agent: insight/faq/install-agentindce.md
+              - 在 OpenShift 安装 Insight Agent: insight/faq/install-agent-on-ocp.md
           - 最佳实践:
               - Prometheus 资源规划: insight/best-practice/prometheus-res.md
               - vmstorage 磁盘规划: insight/best-practice/vms-res-plan.md
@@ -256,6 +259,8 @@ nav:
           - 灰度发布:
               - 创建金丝雀发布任务: amamba/user-guide/release/canary.md
               - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
+          - 工具链集成:
+              - 在 Jenkins 中使用自定义工具链: amamba/user-guide/tools/jenkins-custom.md
           - 最佳实践:
               - 快速创建流水线: amamba/quickstart/deploy-pipeline.md
               - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
@@ -351,8 +356,7 @@ nav:
                   - 创建网关: skoala/ms-gateway/gateway/create-gateway.md
                   - 查看网关: skoala/ms-gateway/gateway/check-details.md
                   - 更新网关: skoala/ms-gateway/gateway/update-gateway.md
-                  - 诊断网关: skoala/ms-gateway/gateway/diagnose-gateway.md
-                  - 移除网关: skoala/ms-gateway/gateway/delete-gateway.md
+                  - 删除网关: skoala/ms-gateway/gateway/delete-gateway.md
               - API 管理:
                   - 添加 API: skoala/ms-gateway/api/add-api.md
                   - 更新 API: skoala/ms-gateway/api/update-api.md
@@ -372,6 +376,8 @@ nav:
                   - 删除域名: skoala/ms-gateway/domain/delete-domain.md
           - 最佳实践:
               - 示例应用体验微服务治理: skoala/best-practice/use-skoala-01.md
+              - 微服务网关 JWT 功能: skoala/best-practice/jwt.md
+              - 微服务网关接入认证服务器: skoala/best-practice/auth-server.md
           - 通用参考:
               - 微服务: reference/basic-knowledge/microservice.md
               - 注册中心: reference/basic-knowledge/registry.md
@@ -661,6 +667,7 @@ nav:
               - 创建托管 Harbor 实例: kangaroo/hosted/harbor.md
           - 镜像扫描: kangaroo/scan.md
           - Release Notes: kangaroo/release-notes.md
+          - 镜像仓库 FAQ: kangaroo/faq.md
       - 云原生安全:
           - 介绍: security/what.md
           - Falco:

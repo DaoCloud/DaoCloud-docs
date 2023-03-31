@@ -1,6 +1,6 @@
 # Application contact emails
 
-weizhou.lan@daocloud.io, kay.yan@daocloud.io
+a@daocloud.io, b@daocloud.io
 
 # Project Summary
 
