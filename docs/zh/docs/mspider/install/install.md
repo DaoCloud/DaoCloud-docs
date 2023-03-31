@@ -35,4 +35,4 @@ hide:
 
     ![安装采集器](../images/install02.jpg)
 
-下一步：[创建网格](../user-guide/service-mesh/create-mesh.md)
+下一步：[创建网格](../user-guide/service-mesh/README.md)
