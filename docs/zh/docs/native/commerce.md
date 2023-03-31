@@ -2,7 +2,7 @@
 
 本页按字母顺序列出一些知名商业化产品的更新动态。
 
-### A, B
+### A
 
 - [Aqua 云原生安全平台引入基于 eBPF 技术的零日漏洞检测工具 Lightning Enforcer](https://blog.aquasec.com/combat-zero-day-threats-with-aquas-ebpf-lightning-enforcer)
 
@@ -27,6 +27,10 @@
 - [AWS 推出本地集群，用于在混合云服务 Outposts 上本地运行 EKS 集群](https://aws.amazon.com/about-aws/whats-new/2022/09/amazon-eks-outposts-local-clusters/)
 
     本地集群减少了因云端网络中断而导致的应用停机风险。在此期间，应用程序仍然可用，并且可以执行集群操作。当连接到云时，EKS 管理 Outposts 上 K8s 控制平面的可用性。本地集群运行的 Kubernetes 与云上 EKS 功能相同，支持自动部署最新的安全补丁。
+
+- [Azure 混合云多云解决方案 Azure Arc 集成可观测平台 Datadog](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
+
+    Azure Arc 与 Datadog 的集成提供了以下功能：监控连接状态和代理版本，确保 Azure Arc 启用的服务器、SQL 服务器和 Kubernetes 集群已连接且安全；将混合云和多云服务器、Kubernetes 集群和数据服务集成到一个统一仪表板中，实现跨环境的无缝管理；简化合规性的管理和跟踪，提供丰富的可视化效果和可操作告警。
 
 - [Azure Serverless 容器平台 Azure Container Apps 十一月更新](https://azure.microsoft.com/en-us/updates/?query=azure%20container%20apps)
 
@@ -106,6 +110,14 @@
 - [阿里云服务网格 ASM 八月更新](https://mp.weixin.qq.com/s/BDgNctG90oHpbrRWC0Hxkg)
 
     更新内容包括：兼容 Istio 1.14 系列版本、支持 Kubernetes 1.21 - 1.24 版本、增强网格诊断功能、支持第三方令牌在 ACK 集群的兼容、支持用户自定义 EnvoyFilter、无需修改代码即可实现同可用区优先路由。
+
+### B
+
+- [Backslash Security 推出同名云原生代码可视化工具](https://www.backslash.security/post/backslash-security-emerges-from-stealth-to-fuse-code-security-with-cloud-native-context)
+
+    Backslash 推出的可视化工具可以识别云原生代码中可能导致安全漏洞的工作流。
+    具体功能包括：通过上下文可视化仪表盘，自动发现和映射云原生应用的代码及其依赖关系；根据生产中的应用云状况，自动确定高风险代码的优先次序；通过智能的自动风险识别，简化漏洞和风险的补救。
+    该工具目前支持 AWS 环境和 GitHub 代码库。
 
 - [BellSoft 推出 Alpaquita Cloud Native Platform，用于高效运行云原生 Java 应用](https://containerjournal.com/features/bellsoft-optimizes-java-for-cloud-native-platform/)
 
@@ -453,6 +465,10 @@
 
     Gloo Gateway 基于 Envoy 构建，利用 Gloo Platform 的多租户和联邦特性，允许用户轻松管理多个开发团队的网关访问和进行多集群流量管理。Gloo Network 基于 Cilium 构建，将 Kubernetes CNI 层整合为 Gloo Platform 的组件。
 
+- [Spectro Cloud 云原生边缘计算平台 Palette Edge Platform v3.3 发布](https://docs.spectrocloud.com/release-notes#edge)
+
+    版本发布：支持从外部 OCI 注册表中加载镜像、安装程序现在可以包含预加载内容包（包括软件包和工件）；支持创建自定义 Edge 安装程序镜像；支持随机生产设备的 UUID 值。
+
 - [Spectro Cloud Kubernetes SaaS 管理平台 Palette v3.1 发布](https://docs.spectrocloud.com/release-notes#december28,2022-release3.1.0)
 
     更新内容：Palette IaaS 集群支持自动扩缩容、提供符合联邦信息处理标准（FIPS）的 Kubernetes 版本、支持按标签过滤用户访问和查看集群详情视图、支持应用程序配置文件的版本管理、利用 Helm 和OCI 注册表进行自定义包管理、允许暂停和恢复未使用的虚拟集群。
@@ -548,6 +564,10 @@
 
     TLS Protect for Kubernetes 是 Venafi 机器身份管理平台 Control Plane for Machine Identities 的一部分，
     帮助安全和平台团队在多云和多集群 Kubernetes 环境中管理云原生机器身份，如 TLS、mTLS 和 SPIFFE，增强机器身份管理的可观测性、控制和自动化。
+
+- [VMware Tanzu 服务网格方案 Tanzu Service Mesh 3.0.3 发布](https://docs.vmware.com/en/Tanzu/services/rn/vmware-tanzu-service-mesh-global-controller-release-notes/index.html#Past%20Tanzu%20Service%20Mesh%20Releases)
+
+    更新内容：Tanzu Service Mesh CLI 支持 GitOps，可用于自动部署 Tanzu Service Mesh 环境到集群中；支持选择要注入 proxy sidecar 的命名空间；支持客户端集群和 Tanzu Service Mesh SaaS 之间的企业级代理通信。
 
 - [VMware Tanzu 多云多集群 Kubernetes 管理方案 Tanzu Mission Control 更新](https://docs.vmware.com/en/VMware-Tanzu-Mission-Control/services/rn/vmware-tanzu-mission-control-release-notes/index.html)
 
