@@ -99,7 +99,9 @@ nav:
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
           - 备份恢复:
               - 安装 velero 插件: kpanda/user-guide/backup/install-velero.md
-              - 备份一个无状态的 2048 应用: kpanda/user-guide/backup/backup-deploy-2048.md
+              - 备份无状态工作负载: kpanda/user-guide/backup/deployment.md
+          - 最佳实践:
+              - ETCD 备份还原: kpanda/best-practice/etcd-backup.md
       - 全局管理:
           - 介绍:
               - 什么是全局管理: ghippo/intro/what.md
@@ -259,8 +261,6 @@ nav:
           - 灰度发布:
               - 创建金丝雀发布任务: amamba/user-guide/release/canary.md
               - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
-          - 工具链集成:
-              - 在 Jenkins 中使用自定义工具链: amamba/user-guide/tools/jenkins-custom.md
           - 最佳实践:
               - 快速创建流水线: amamba/quickstart/deploy-pipeline.md
               - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
@@ -268,6 +268,7 @@ nav:
               - 基于 Argo Rollout 实现渐进式灰度发布: amamba/quickstart/argocd-rollout.md
               - 在指定的节点上运行流水线: amamba/quickstart/pipeline-on-node.md
               - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
+              - 在 Jenkins 中使用自定义工具链: amamba/user-guide/tools/jenkins-custom.md
       - 多云编排:
           - 介绍:
               - 什么是多云编排: kairship/intro/what.md
