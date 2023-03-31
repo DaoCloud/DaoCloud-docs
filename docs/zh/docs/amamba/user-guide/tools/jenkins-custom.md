@@ -6,7 +6,9 @@
 - 安装流水线运行依赖的工具（例如：yq、curl、kustomize 等）；
 - 提前准备代码依赖的包以加快编译；
 
-## 通过 Volume 挂载添加自定义工具链
+应用工作台支持通过 Volume 挂载或构建自定义镜像两种方式添加自定义工具链。
+
+## 通过 Volume 挂载
 
 第一种方式是使用 `init` 容器和 `volumeMount` 的方式拷贝工具到 agent 容器里。通过修改jenkins casc 的 configmap，修改容器的默认行为。以 go 为例，下面这个例子中，`init` 容器使用另一个版本的 Helm 覆盖了 agent 中自带的 Helm：
 
@@ -50,9 +52,9 @@
                         subPath: helm
 ```
 
-## BYOI（Build Your Own Image）
+## 创建自定义镜像
 
-第二种方式是通过自定义镜像的方式，将自定义工具链打包到镜像中。这种方式的好处是不需要在每个流水线中都下载工具，但是需要维护一个自定义镜像。下面是一个例子：
+第二种方式是 BYOI (Build Your Own Image)，指通过自定义镜像的方式，将自定义工具链打包到镜像中。这种方式的好处是不需要在每个流水线中都下载工具，但是需要维护一个自定义镜像。下面是一个例子：
 
 ```dockerfile
 ARG RUNTIME
