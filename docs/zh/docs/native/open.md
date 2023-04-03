@@ -14,6 +14,10 @@
 
     该版本主要新特性：支持 Istio 1.12.x 版本；支持 bRPC（better RPC） 协议，bRPC 是百度开源的工业级 RPC 框架；MetaProtocol 支持流式调用、支持采用 MetaData 设置负载均衡 Hash 策略以及在 Response 中回传服务器真实 IP 等。  
 
+- [Antrea CNI 插件 v1.11.0 发布（CNCF 项目）](https://github.com/antrea-io/antrea/releases/tag/v1.11.0)
+
+    版本特性：ClusterSet scoped 策略规则支持命名空间字段、L7 策略规则支持流量日志、支持在 TCP 网络包上处理 DNS 请求、AntreaProxy 的端点切片（EndpointSlice）功能升级为 Beta、AntreaProxy 支持处理终止过程中的端点（ProxyTerminatingEndpoint）、Egress 策略支持限制分配到一个节点上的 Egress IP 数量、多集群网关支持多种流量模式。
+
 - [Antrea CNI 插件 v1.10.0 发布（CNCF 项目）](https://github.com/antrea-io/antrea/releases/tag/v1.10.0)
 
     该版本主要新特性：增加 L7 网络策略功能、Antrea 的 CRD API 能够在任何 K8s 节点或 ExternalNode 上收集 support bundle 文件、增加对跨集群流量的网络策略的支持、在 Windows 上使用 containerd 作为运行时时，antrea-agent 可作为 DaemonSet 运行。
@@ -242,6 +246,10 @@
 
     该版本主要新特性：默认阻止没有 CAP_SYS_ADMIN 的容器的 `unshare` 系统调用、使用任务集来生成新的 cri-o 运行命令、在 CRI-O HTTP API 中添加暂停和取消暂停功能。
 
+- [Crossplane 云原生控制平面构建框架完成模糊测试安全审计](https://mp.weixin.qq.com/s/BJXg8CCjaHFK29hxWe9W-g)
+
+    此次模糊测试共发现 4 个问题。其中一个问题是：允许部分不受信任的用户控制 crossplane-runtime 在某个状态下分配的内存量，这可能会造成由于资源耗尽而导致 DoS 攻击。该漏洞的修复版本 [crossplane-runtime 0.19.2](https://github.com/crossplane/crossplane-runtime/releases/tag/v0.19.2) 和 [Crossplane 1.11.2](https://github.com/crossplane/crossplane/releases/tag/v1.11.2) 已经发布。
+
 - [CubeFS 分布式存储系统 v3.1.0 发布（CNCF 项目）](https://github.com/cubefs/cubefs/releases/tag/v3.1.0)  
 
     该版本主要新特性：提供 QoS 服务以完善多租户隔离功能、优化混合云多级读缓存功能、支持两个副本的数据存储、卷支持配置 posixAcl 进行权限管理、为 datanode 添加数据分区总数限制。
@@ -307,6 +315,10 @@
 
 ### F, G
 
+- [Falco 2023 年安全审计结果发布](https://mp.weixin.qq.com/s/Uae58tOQpqOfV0vCoXBsqw)
+
+    [审计报告](https://github.com/falcosecurity/falco/blob/master/audits/SECURITY_AUDIT_2023_01_23-01-1097-LIV.pdf)发现了一个中等严重程度的漏洞和若干低严重程度和信息严重程度的漏洞，不存在严重程度高的漏洞。所有问题已在 Falco 0.34.0 和 0.34.1 补丁版本中修复。
+
 - [Falco 运行时安全项目 v0.34.0 发布（CNCF 项目）](https://github.com/falcosecurity/falco/releases/tag/0.34.0)
 
     版本特性：支持手动下载和应用相关的规则 [`application_rules.yaml`](https://github.com/falcosecurity/rules/tree/main/rules)、新检测规则使用 PTRACE 向进程注入代码、规则结果添加编译条件上下文、允许现代 bpf 探针为一个环形缓冲区分配一个以上的 CPU、添加 webserver 端点以检索内部版本号、在 systemd unit 中支持多个驱动。
@@ -370,7 +382,7 @@
 
 - [HashiCorp Vault 私密信息管理工具 1.11 新增 Kubernetes Secret 引擎](https://github.com/hashicorp/vault/blob/main/website/content/docs/secrets/kubernetes.mdx)  
 
-    Kubernetes Secret 引擎可以动态生成 Kubernetes 服务账户令牌、服务账户、角色绑定和角色。创建的服务账户令牌有一个可配置的 TTL 值（Time To Live），当 lease 到期时，Vault 会自动删除创建的对象。对于每一个 lease，Vault 会创建一个连接到定义服务账户的令牌，服务账户令牌会返回给调用者。
+    Kubernetes Secret 引擎可以动态生成 Kubernetes 服务账号令牌、服务账号、角色绑定和角色。创建的服务账号令牌有一个可配置的 TTL 值（Time To Live），当 lease 到期时，Vault 会自动删除创建的对象。对于每一个 lease，Vault 会创建一个连接到定义服务账号的令牌，服务账号令牌会返回给调用者。
 
 - [Helm 包管理工具 v3.10.0 发布（CNCF 项目）](https://github.com/helm/helm/releases/tag/v3.10.0)  
 
@@ -394,12 +406,16 @@
     平台团队可以自定义创建版本化的服务模板，为业务应用程序和中间件定义符合统一标准的部署和运维。
     开发团队可以选择预先定义的模板，进行自动化的服务部署，确保基于 Kubernetes 的统一最佳实践。通过 Horizon GitOps 机制，确保任意变更（代码、配置、环境）持久化、可回滚、可审计。
 
-### I, J
+### I
 
 - [iLogtail 可观测数据采集器的全部代码开源](https://mp.weixin.qq.com/s/Cam_OjPWhcEj77kqC0Q1SA)
 
     近日，阿里云正式发布完整功能的 [iLogtail](https://github.com/alibaba/ilogtail) 社区版。
     本次更新开源全部 C++ 核心代码，该版本在内核能力上首次对齐企业版。新增日志文件采集、容器文件采集、无锁化事件处理、多租户隔离、基于 Pipeline 的新版配置方式等诸多重要特性。
+
+- [Ingress-NGINX Controller v1.7.0 发布](https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.7.0)
+
+    版本特性：支持 golang 1.20、移除对 Kubernetes 1.23 的支持、集成 OpenTelemetry 模块。
 
 - [Istio 服务网格 v1.17 发布（CNCF 项目）](https://istio.io/latest/news/releases/1.17.x/announcing-1.17/)
 
@@ -430,6 +446,8 @@
     - 安全：支持通过 Envoy SDS API 进行 CA 集成、支持在 SDS 中使用 `PrivateKeyProvider`、支持工作负载的TLS 配置 API。
     - Telemetry：新增 OpenTelemetry 访问日志、在日志中添加 `WorkloadMode` 选项。
     - 扩展：支持 WasmPlugin 通过 `imagePullSecret` 从私有仓库中拉取镜像。
+
+### J
 
 - [Jaeger 分布式追踪系统 v1.36.0 发布（CNCF 项目）](https://github.com/jaegertracing/jaeger/releases/tag/v1.36.0)  
 
@@ -474,6 +492,10 @@
 
     该版本主要新特性：默认驱逐无控制器的 pod、将 AWS 设置从 CLI Args 迁移到 ConfigMap、支持 IPv6 自动发现、将 webhook和控制器合并为一个二进制文件。
 
+- [Kata Container 容器安全项目 v3.1.0 发布](https://github.com/kata-containers/kata-containers/releases/tag/3.1.0)
+
+    版本特性：支持 AMD SEV-SNP 机密虚拟机；支持 EROFS 文件系统；完善 Docker/Moby 网络支持改进运行时（runtime-rs），包括增加对大页面（hugepages）的支持；增加 QEMU 日志记录功能；兼容 CRI-O 和 containerd 1.6.8；支持 Kubernetes 1.23.1-00。
+
 - [Kata Containers 安全容器运行时 v3.0.0 发布](https://github.com/kata-containers/kata-containers/releases/tag/3.0.0)
 
     该版本主要新特性：新增 Rust 语言重写的容器运行时组件以及一个可选的集成虚拟机管理组件、支持主流的云原生生态组件（包括 Kubernetes、CRI-O、Containerd 以及 OCI 容器运行时标准等）、支持 cgroupv2、支持最新的 Linux 内核稳定版本。
@@ -481,6 +503,10 @@
 - [Kata Container 容器安全项目 v2.5.0 发布](https://github.com/kata-containers/kata-containers/releases/tag/2.5.0)  
 
     该版本主要新特性：支持 containerd shimv2 日志插件、支持 virtio-block 多队列、支持 QEMU 沙箱功能、支持 containerd 的核心调度、kata-runtime iptables 子命令可在 guest 中操作 iptables、支持直接分配的卷。
+
+- [Katalyst：字节跳动开源的云原生资源管控系统](https://mp.weixin.qq.com/s/A5_1h3RLmDNazmAddbhYaA)
+
+    [Katalyst](https://github.com/kubewharf/katalyst-core) 的主要特点包括：完全孵化于超大规模混部实践，并在字节服务云原生化的进程中同步接管资源管控链路；搭载字节跳动内部的 Kubernetes 发行版 Enhanced Kubernetes 同步开源；系统基于插件化模式构建，用户可以在 Katalyst Framework 之上自定制各类调度、管控、策略、数据等模块插件等。
 
 - [KEDA 基于 Kubernetes 事件驱动自动缩放项目公布安全审计结果](https://mp.weixin.qq.com/s/ZwCg-qCeC2CMm7EbxJbi9w)
 
@@ -581,6 +607,10 @@
 - [Kube-OVN v1.10.0 发布（CNCF 项目）](https://mp.weixin.qq.com/s/e1TW_s3r9__qSgZz6aWmAA)
 
     该版本主要新特性：在子网新增 ACL 字段，用户可以按照自己的需求编写符合 OVN 流表规范的 ACL 规则； KubeVirt 场景下， VM instance 的地址分配策略采用和 StatefulSet 类似的策略，支持 DPDK、DHCP；集成 Submariner 用于多集群的互联；针对大规模环境，对控制平面性能进行了优化等。
+
+- [Kubernetes Cluster API v1.4.0 发布](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.4.0)
+
+    版本特性：支持在 KCP 控制平面部署失败时自动进行故障恢复、支持将某些标签从 Machine 同步到 Node、以将标签、注释等信息从 ClusterClass 传播到 KubeadmControlPlane/MachineDeployment 和 Machine 中、支持 ClusterClass 和 Managed Topologies 中的变量发现。
 
 - [Kubernetes v1.26 发布](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.26.md)
 
@@ -839,6 +869,14 @@
 
     版本特性：集成 wasmedge、支持从本地源代码构建、单个 Pod 支持多个函数、支持检测源代码或镜像的变化并重建/重新部署新构建的镜像。
 
+- [OpenKruise 升级为 CNCF 孵化项目](https://mp.weixin.qq.com/s/9knMn8eKJBNdXUU-TcmTQg)
+
+    [OpenKruise](https://github.com/openkruise/kruise/) 是一个扩展的组件套件，专注于应用程序自动化，如部署、升级、运维和可用性保护等方面。OpenKruise 通过其创新的 CRD 扩展帮助具有大型工作负载的组织采用和自动化 Kubernetes 和云原生部署，为 AI / ML 等领域的新用例打开了大门。
+
+- [OpenKruise 云原生应用自动化管理套件 v1.4.0 发布（CNCF 项目）](https://github.com/openkruise/kruise/releases/tag/v1.4.0)
+
+    版本特性：新增 JobSidecarTerminator 功能，可以在主容器退出后终止 sidecar 容器；新增字段用于立即重新创建容器；在 ImagePullJob 的过程中，支持在 PullImage CRI 接口中附加元数据；sidecarSet 控制器支持命名空间选择器；将 Kubernetes 的镜像地址引用从 “k8s.gcr.io” 更改为 “registry.k8s.io”。
+
 - [OpenKruise 云原生应用自动化管理套件 v1.3.0 发布（CNCF 项目）](https://github.com/openkruise/kruise/releases/tag/v1.3.0)
 
     该版本主要新特性：支持自定义探针并将结果返回给 Pod yaml、SidecarSet 支持在 kube-system 和 kube-public 命名空间下注入 pod、增加对上游 AdvancedCronJob 的 timezone 支持、WorkloadSpread 支持 StatefulSet。
@@ -920,6 +958,10 @@
 - [Podman 容器运行时项目 v4.2.0 发布](https://github.com/containers/podman/releases/tag/v4.2.0)  
 
     该版本主要新特性：支持 GitLab Runner、新增命令用于创建现有 pod 的副本、新增命令用于同步数据库和任何卷插件之间的状态变化、pod 新增退出策略、自动清理未使用的缓存 Podman 虚拟机镜像、允许不同容器的多个 overlay 卷重复使用同一个 workdir 或 upperdir。
+
+- [Prometheus v2.43.0 发布（CNCF 项目）](https://github.com/prometheus/prometheus/releases/tag/v2.43.0)
+
+    版本特性：在一个单独的字符串中存储所有的标签和对应的值，以减小内存占用（只在使用 Go tag stringlabels 进行编译时启用）；在查询命令中提供 HTTP 客户端配置；添加从不同文件中导入抓取配置的选项；新增两个 HTTP 客户端配置参数；允许通过 API 动态设置查询的回溯时间。
 
 - [Prometheus v2.42.0 发布（CNCF 项目）](https://github.com/prometheus/prometheus/releases/tag/v2.42.0)
 
@@ -1104,6 +1146,10 @@
     该版本主要新特性：支持基于真实节点负载的动态调度和重调度、支持弹性作业调度、新增 MPI job 插件、允许任务失败时不重试、支持查看 pod 请求的开销、支持在 pod group 入列过程中考虑资源配额、默认特权容器通过 admission webhook 的验证。
 
 ### W, X, Z
+
+- [Wazero：Tetrate 开源的 Go 语言开发的 WebAssembly 运行时](https://mp.weixin.qq.com/s/aozmJpuwD69vGWcM525ucg)
+
+    Wazero 可以让开发者用不同的编程语言编写代码，并在安全的沙箱环境中运行。Wazero 的特点包括：纯 Go，无依赖，支持跨平台和跨架构；遵循 WebAssembly 核心规范 1.0 和 2.0；支持 Go 的特性，如并发安全和上下文传递；提供了丰富的编程接口和命令行工具。
 
 - [werf CI/CD 的 CLI 工具 成为 CNCF 沙箱项目](https://mp.weixin.qq.com/s/DGA1_k16QAQImFmy8mWcDw)
 

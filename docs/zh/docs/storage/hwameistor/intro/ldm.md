@@ -20,7 +20,7 @@
 
 ## 用法
 
-如果想完整地部署 HwameiStor，请参考[使用 Helm Chart 安装部署](../install/deploy-helmcharts.md)。
+如果想完整地部署 HwameiStor，请参考[使用 Helm Chart 安装部署](../install/deploy-helm.md)。
 
 如果只想单独部署 LDM，可以参考下面的步骤进行安装。
 

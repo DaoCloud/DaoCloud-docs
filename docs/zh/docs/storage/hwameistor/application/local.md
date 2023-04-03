@@ -8,7 +8,9 @@
 
 - 已经完成存储池创建，如未创建请进行[存储池 StorageClass 创建](../../../kpanda/user-guide/storage/sc.md)。
 
-   - 目前 HwameiStor 安装成功后， Helm charts 会默认安装一个名为 `hwameistor-storage-lvm-hdd` 的 `StorageClass`，可使用此存储池进行本地数据卷创建。
+2. 已经完成存储池创建，如未创建请进行[存储池 StorageClass 创建](../../../kpanda/user-guide/storage/sc.md)
+    
+    目前 HwameiStor 安装成功后，Helm charts 会默认安装一个名为 `hwameistor-storage-lvm-hdd` 的 `StorageClass`，可使用此存储池进行本地数据卷创建。
 
       1. 点击 `容器管理`-->`选择对应集群`，进入集群详情，点击`容器存储`选择`存储池` 查看
          ![sc01](../../images/sc01.jpg)

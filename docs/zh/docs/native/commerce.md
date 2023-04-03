@@ -2,7 +2,7 @@
 
 本页按字母顺序列出一些知名商业化产品的更新动态。
 
-### A, B
+### A
 
 - [Aqua 云原生安全平台引入基于 eBPF 技术的零日漏洞检测工具 Lightning Enforcer](https://blog.aquasec.com/combat-zero-day-threats-with-aquas-ebpf-lightning-enforcer)
 
@@ -28,6 +28,10 @@
 
     本地集群减少了因云端网络中断而导致的应用停机风险。在此期间，应用程序仍然可用，并且可以执行集群操作。当连接到云时，EKS 管理 Outposts 上 K8s 控制平面的可用性。本地集群运行的 Kubernetes 与云上 EKS 功能相同，支持自动部署最新的安全补丁。
 
+- [Azure 混合云多云解决方案 Azure Arc 集成可观测平台 Datadog](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
+
+    Azure Arc 与 Datadog 的集成提供了以下功能：监控连接状态和代理版本，确保 Azure Arc 启用的服务器、SQL 服务器和 Kubernetes 集群已连接且安全；将混合云和多云服务器、Kubernetes 集群和数据服务集成到一个统一仪表板中，实现跨环境的无缝管理；简化合规性的管理和跟踪，提供丰富的可视化效果和可操作告警。
+
 - [Azure Serverless 容器平台 Azure Container Apps 十一月更新](https://azure.microsoft.com/en-us/updates/?query=azure%20container%20apps)
 
     更新内容：无需 Dockerfile 即从源代码构建容器镜像、可以使用 Azure pipeline 任务从 Azure DevOps 构建和部署容器应用、支持从GitHub Actions 工作流中构建和部署容器应用、支持按 IP 限制 Azure 容器应用的入站流量。
@@ -49,6 +53,18 @@
 - [Azure Kubernetes 发行版 AKS 9 月更新](https://azure.microsoft.com/en-us/updates/?query=AKS)
 
     更新内容包括：Azure 容器注册中心新增软删除功能，可恢复误删除的工件；允许中止 AKS 集群或代理池上的任何操作；支持多实例 GPU（MIG）；将 Azure 网络策略管理器（NPM）扩展到 Windows server 2022 的 AKS 集群；集成用于 AKS 私有集群的 API Server VNET。
+
+- [Azure 轻量级 Kubernetes 发行版 AKS Edge Essentials 正式可用](https://azure.microsoft.com/en-us/updates/now-available-azure-kubernetes-service-edge-essentials/)
+
+    AKS Edge Essentials 是 AKS 的本地 Kubernetes 实现，可以在资源有限的边缘设备上运行。它可以用来部署单节点和多节点的 K3s 和 K8s 集群，可以在现有的 Windows 设备上运行 Linux 和 Windows 工作负载。
+
+- [Azure 发布 AKS 舰队管理器（公开预览版）](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
+
+    Azure Kubernetes 舰队管理器将多个群集地视为单个集群来管理。用户可通过创建一个 Fleet 资源来管理多个集群。用户可将现有 AKS 集群当作成员集群，加入到舰队中，然后用这些集群的元数据，编排多个集群场景，如 Kubernetes 资源传播和多集群负载均衡。
+
+- [阿里云 ACK 2 月产品更新](https://mp.weixin.qq.com/s/nqW681bqKocpc7AWUV56jg)
+
+    更新内容：节点池支持 Kubelet 参数自定义功能、AIOps 支持 Service 诊断功能、支持变更云盘类型、支持使用 cloud-auto 类型云盘作为动态存储卷。
 
 - [阿里云服务网格 ASM 2023 年 2 月更新](https://mp.weixin.qq.com/s/jNeC_gMQdCk8b8d3QXSeMQ)
 
@@ -95,6 +111,14 @@
 
     更新内容包括：兼容 Istio 1.14 系列版本、支持 Kubernetes 1.21 - 1.24 版本、增强网格诊断功能、支持第三方令牌在 ACK 集群的兼容、支持用户自定义 EnvoyFilter、无需修改代码即可实现同可用区优先路由。
 
+### B
+
+- [Backslash Security 推出同名云原生代码可视化工具](https://www.backslash.security/post/backslash-security-emerges-from-stealth-to-fuse-code-security-with-cloud-native-context)
+
+    Backslash 推出的可视化工具可以识别云原生代码中可能导致安全漏洞的工作流。
+    具体功能包括：通过上下文可视化仪表盘，自动发现和映射云原生应用的代码及其依赖关系；根据生产中的应用云状况，自动确定高风险代码的优先次序；通过智能的自动风险识别，简化漏洞和风险的补救。
+    该工具目前支持 AWS 环境和 GitHub 代码库。
+
 - [BellSoft 推出 Alpaquita Cloud Native Platform，用于高效运行云原生 Java 应用](https://containerjournal.com/features/bellsoft-optimizes-java-for-cloud-native-platform/)
 
     [Alpaquita Cloud Native Platform](https://bell-sw.com/cloud-native-platform/) 利用适用于 Java 的 Linux 发行版、JVM 优化、多用途框架和原生镜像技术，提供了一个专为在容器中运行的 Java 应用而优化的运行时环境。该平台特性：云成本降低 20%，使用更小的 Pod，所需节点的数量减少；零迁移成本，不需要重构；效率提升 50%，实现低延迟、低成本、快启动。
@@ -127,7 +151,7 @@
 
 - [Chainguard 云原生供应链安全平台  Chainguard Enforce 更新](https://www.chainguard.dev/unchained/chainguard-enforce-announces-new-software-signing-capability)
 
-    更新内容：提供基于 Sigstore 的无密钥签名模式、增加一个开箱即用的安全策略库、支持用户通过其 Gitlab 账户登录、支持 CloudEvents、支持细粒度的 Kubernetes 工作负载对象的策略、增强大规模集群用户的稳定性。
+    更新内容：提供基于 Sigstore 的无密钥签名模式、增加一个开箱即用的安全策略库、支持用户通过其 Gitlab 账号登录、支持 CloudEvents、支持细粒度的 Kubernetes 工作负载对象的策略、增强大规模集群用户的稳定性。
 
 ### D, E
 
@@ -183,7 +207,7 @@
 
 - [Fortinet 发布云原生防火墙服务 FortiGate CNF](https://www.fortinet.com/blog/business-and-technology/simplify-cloud-security-with-the-fortigate-cloud-native-firewall-on-aws)
 
-    FortiGate CNF 是一个 SaaS 产品，通过与 AWS Gateway Load Balancer、AWS Firewall Manager 等服务的深度云原生集成，支持不同 AWS 环境下的一致安全策略，消除了网络安全的复杂性。此外，还支持下一代防火墙的安全检查功能，提供对应用层的深度可视性，可以保护多个账户、子网、虚拟私有云和可用性区域。
+    FortiGate CNF 是一个 SaaS 产品，通过与 AWS Gateway Load Balancer、AWS Firewall Manager 等服务的深度云原生集成，支持不同 AWS 环境下的一致安全策略，消除了网络安全的复杂性。此外，还支持下一代防火墙的安全检查功能，提供对应用层的深度可视性，可以保护多个账号、子网、虚拟私有云和可用性区域。
 
 - [GitLab 15.7 发布](https://about.gitlab.com/releases/2022/12/22/gitlab-15-7-released/)
 
@@ -316,7 +340,7 @@
     支持为多个命名空间设置一个应用数据保护策略；
     扩大集群范围内资源的检测和保护范围；
     基于标签和标签选择器允许每个命名空间有多个应用程序；
-    K8s 应用现在可以在不同的项目、订阅或账户托管的集群间进行故障转移；
+    K8s 应用现在可以在不同的项目、订阅或账号托管的集群间进行故障转移；
     集成轻量目录访问协议 LDAP；
     支持更多 Self-managed K8s 平台。
 
@@ -331,6 +355,10 @@
 - [Ondat v2.9 云原生块存储平台发布](https://www.ondat.io/blog/ondat-launches-version-2.9)
 
     该版本主要新特性：支持在零停机的情况下调整卷的大小、通过存储池可以控制工作负载所使用的存储类型、允许定义卷的拓扑结构。
+
+- [Oracle Kubernetes 发行版 Container Engine for Kubernetes 支持虚拟节点池和虚拟节点](https://docs.oracle.com/en-us/iaas/releasenotes/changes/c3688114-0104-40b0-aece-67169868f990/)
+
+    虚拟节点提供了 serverless Kubernetes 的体验，用户无需管理、扩展、升级和排障节点基础设施，即可规模化运行容器化应用程序。虚拟节点提供了细粒度的 pod 级别弹性和按使用量计费的定价。用户可以通过在增强的集群中创建虚拟节点池以创建虚拟节点。
 
 - [OutSystems 发布云原生低代码开发解决方案 OutSystems Developer Cloud (ODC)](https://mp.weixin.qq.com/s/yx63Um3ju1mC-qNF9_GJkw)
 
@@ -378,10 +406,14 @@
 
 ### R
 
+- [Rafay Systems 推出 Environment Manager，优化 Kubernetes 开发者体验](https://rafay.co/press-release/rafay-introduces-environment-manager-to-automate-environment-provisioning-and-accelerate-modern-application-deployment-from-code-to-cloud/)
+
+    Environment Manager 通过为全栈环境提供自助服务功能，改善开发者体验。开发人员能够从平台团队策划、测试和持续管理的环境蓝图中配置现代应用堆栈。通过和 Rafay 的 Kubernetes 运维平台集成，Environment Manager 抽象了底层基础设施的复杂性，减少了配置和访问 Kubernetes 的环境所需的时间。
+
 - [Rafay Systems 发布 Kubernetes 成本管理服务](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
 
     成本管理服务是 Rafay Kubernetes 运维平台的一部分，可为位于公有云和内部数据中心的集群提供 Kubernetes 云成本优化。
-    其支持实时查看云计算支出；与 RBAC 预集成，提供基于角色的成本指标的可见性和访问权；可集中查看多个公有云账户和内部数据中心的集群；可根据资源消耗优化云预算。
+    其支持实时查看云计算支出；与 RBAC 预集成，提供基于角色的成本指标的可见性和访问权；可集中查看多个公有云账号和内部数据中心的集群；可根据资源消耗优化云预算。
 
 - [Rafay Systems 推出 Service Mesh Manager and Network Policy Manager，提供企业级的 K8s 流量管理和通信安全保障](https://rafay.co/press-release/rafay-launches-service-mesh-manager-and-network-policy-manager-for-enterprise-grade-traffic-management-and-transport-security-for-kubernetes/)
 
@@ -432,6 +464,10 @@
 - Solo.io 发布云原生网关 [Gloo Gateway](https://www.solo.io/blog/announcing-gloo-gateway/) 和 CNI 插件 [Gloo Network](https://www.solo.io/blog/announcing-gloo-network/)
 
     Gloo Gateway 基于 Envoy 构建，利用 Gloo Platform 的多租户和联邦特性，允许用户轻松管理多个开发团队的网关访问和进行多集群流量管理。Gloo Network 基于 Cilium 构建，将 Kubernetes CNI 层整合为 Gloo Platform 的组件。
+
+- [Spectro Cloud 云原生边缘计算平台 Palette Edge Platform v3.3 发布](https://docs.spectrocloud.com/release-notes#edge)
+
+    版本发布：支持从外部 OCI 注册表中加载镜像、安装程序现在可以包含预加载内容包（包括软件包和工件）；支持创建自定义 Edge 安装程序镜像；支持随机生产设备的 UUID 值。
 
 - [Spectro Cloud Kubernetes SaaS 管理平台 Palette v3.1 发布](https://docs.spectrocloud.com/release-notes#december28,2022-release3.1.0)
 
@@ -528,6 +564,10 @@
 
     TLS Protect for Kubernetes 是 Venafi 机器身份管理平台 Control Plane for Machine Identities 的一部分，
     帮助安全和平台团队在多云和多集群 Kubernetes 环境中管理云原生机器身份，如 TLS、mTLS 和 SPIFFE，增强机器身份管理的可观测性、控制和自动化。
+
+- [VMware Tanzu 服务网格方案 Tanzu Service Mesh 3.0.3 发布](https://docs.vmware.com/en/Tanzu/services/rn/vmware-tanzu-service-mesh-global-controller-release-notes/index.html#Past%20Tanzu%20Service%20Mesh%20Releases)
+
+    更新内容：Tanzu Service Mesh CLI 支持 GitOps，可用于自动部署 Tanzu Service Mesh 环境到集群中；支持选择要注入 proxy sidecar 的命名空间；支持客户端集群和 Tanzu Service Mesh SaaS 之间的企业级代理通信。
 
 - [VMware Tanzu 多云多集群 Kubernetes 管理方案 Tanzu Mission Control 更新](https://docs.vmware.com/en/VMware-Tanzu-Mission-Control/services/rn/vmware-tanzu-mission-control-release-notes/index.html)
 

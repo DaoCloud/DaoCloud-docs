@@ -14,6 +14,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support Istio 1.12.x version; support bRPC (better RPC) protocol, bRPC is Baidu's open source industrial-grade RPC framework; Pass the real IP of the server, etc.
 
+- [Antrea CNI Plugin v1.11.0 Released (CNCF Project)](https://github.com/antrea-io/antrea/releases/tag/v1.11.0)
+
+    Release features: ClusterSet scoped policy rules support namespace fields, L7 policy rules support traffic logging, support for handling DNS requests on TCP network packets, AntreaProxy's EndpointSlice feature upgraded to Beta, AntreaProxy supports handling endpoints in the process of termination ( ProxyTerminatingEndpoint), Egress policies support limiting the number of Egress IPs assigned to a node, and multiple traffic patterns are supported for multiple cluster gateways.
+
 - [Antrea CNI plugin v1.10.0 released (CNCF project)](https://github.com/antrea-io/antrea/releases/tag/v1.10.0)
 
      The main new features in this release: L7 network policy functionality added, Antrea's CRD API can collect support bundle files on any K8s node or ExternalNode, support for network policies for cross-cluster traffic added, antrea-agent can be used as a runtime on Windows when using containerd When using containerd as a runtime on Windows, antrea-agent can be run as DaemonSet.
@@ -242,6 +246,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      Major new features in this release: block `unshare` syscall for containers without CAP_SYS_ADMIN by default, use task sets to generate new cri-o run commands, add pause and unpause functionality to CRI-O HTTP API.
 
+- [Crossplane cloud-native control plane build framework completes fuzz testing security audit](https://mp.weixin.qq.com/s/BJXg8CCjaHFK29hxWe9W-g)
+
+    The fuzzing test found 4 issues. One of the issues was that allowing a partially untrusted user to control the amount of memory allocated by crossplane-runtime in a certain state could lead to a DoS attack due to resource exhaustion. The fixes for this vulnerability are [crossplane-runtime 0.19.2](https://github.com/crossplane/crossplane-runtime/releases/tag/v0.19.2) and [Crossplane 1.11.2](https://github.com/crossplane/crossplane/releases/tag/v1.11.2) have been released.
+
 - [CubeFS distributed storage system v3.1.0 release (CNCF project)](https://github.com/cubefs/cubefs/releases/tag/v3.1.0)
 
      The main new features of this version: provide QoS service to improve the multi-tenant isolation function, optimize the hybrid cloud multi-level read cache function, support two copies of data storage, support the configuration of posixAcl for volume management, and add a limit on the total number of data partitions for datanodes.
@@ -304,6 +312,10 @@ This page lists activity in cloud native open source projects in alphabetical or
      [eunomia-bpf](https://gitee.com/anolis/eunomia) is jointly developed by universities and the Eunomia community, aiming to simplify the development, distribution and operation of eBPF programs. In eunomia-bpf, you only need to write the kernel mode code to run correctly, and do not need to recompile when deploying, and provide a standardized distribution method of JSON/WASM.
 
 ### F, G
+
+- [Falco 2023 Security Audit Results Released](https://mp.weixin.qq.com/s/Uae58tOQpqOfV0vCoXBsqw)
+
+    The [Audit Report](https://github.com/falcosecurity/falco/blob/master/audits/SECURITY_AUDIT_2023_01_23-01-1097-LIV.pdf) found one medium severity vulnerability and several low severity and information severity vulnerabilities, with no high severity vulnerabilities. All issues have been fixed in the Falco 0.34.0 and 0.34.1 patch releases.
 
 - [Falco Runtime Security Project v0.34.0 Released (CNCF Project)](https://github.com/falcosecurity/falco/releases/tag/0.34.0)
 
@@ -390,12 +402,16 @@ This page lists activity in cloud native open source projects in alphabetical or
     Platform teams can customize and create versioned service templates to define uniform standards-compliant deployment and operations for business applications and middleware.
     Development teams can select pre-defined templates to automate service deployments and ensure uniform Kubernetes-based best practices. Ensure that any change (code, configuration, environment) is persistent, rollbackable, and auditable through Horizon GitOps mechanism.
 
-### I, J
+### I
 
-- [All codes of iLogtail observable data collector open source](https://mp.weixin.qq.com/s/Cam_OjPWhcEj77kqC0Q1SA)
+- [iLogtail: all codes of iLogtail observable data collector open source](https://mp.weixin.qq.com/s/Cam_OjPWhcEj77kqC0Q1SA)
 
      Recently, Alibaba Cloud officially released the community version of [iLogtail](https://github.com/alibaba/ilogtail) with full functions.
      This update open-sources all C++ core codes, and this version aligns with the enterprise version for the first time in terms of core capabilities. Added many important features such as log file collection, container file collection, lock-free event processing, multi-tenant isolation, and new configuration methods based on Pipeline.
+
+- [Ingress-NGINX Controller v1.7.0 Released](https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.7.0)
+
+    Version features: support for golang 1.20, removal of support for Kubernetes 1.23, integration with OpenTelemetry module.
 
 - [Istio Service Mesh v1.17 Released (CNCF Project)](https://istio.io/latest/news/releases/1.17.x/announcing-1.17/)
 
@@ -427,6 +443,8 @@ This page lists activity in cloud native open source projects in alphabetical or
      - Telemetry: Added OpenTelemetry access log, added `WorkloadMode` option to log.
      - Extension: Support WasmPlugin to pull images from private repositories via `imagePullSecret`.
 
+### J
+
 - [Jaeger Distributed Tracing System v1.36.0 release (CNCF project)](https://github.com/jaegertracing/jaeger/releases/tag/v1.36.0)
 
      The main new features of this version: support for reporting span size indicators, and increase multi-tenant support.
@@ -450,8 +468,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: can access LeaderElection through environment variables, support the OpenTelemetry tracing scheme, support the creation of Grafana dashboard samples of K8GB indicators, and implement a consistent polling load balancing strategy.
 
-
-- Karmada Multi-Cloud Multi-Cluster Container Orchestration Platform v1.5.0 Released (CNCF Project)](https://github.com/karmada-io/karmada/releases/tag/v1.5.0)
+- [Karmada Multi-Cloud Multi-Cluster Container Orchestration Platform v1.5.0 Released (CNCF Project)](https://github.com/karmada-io/karmada/releases/tag/v1.5.0)
 
     Release features: multiple scheduling groups support, default scheduler compatible with any third-party scheduler, built-in interpreter support for StatefulSet, default interpreter support for CronJob aggregation state, and PodDisruptionBudget.
 
@@ -471,6 +488,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      Major new features in this version: Evicting pods without a controller by default, migrating AWS settings from CLI Args to ConfigMap, supporting IPv6 auto-discovery, merging webhooks and controllers into one binary.
 
+- [Kata Container Container Security Project v3.1.0 Released](https://github.com/kata-containers/kata-containers/releases/tag/3.1.0)
+
+    Release features: support for AMD SEV-SNP confidential VMs; support for EROFS file system; improved Docker/Moby network support for improved runtime (runtime-rs), including adding support for large pages (hugepages); added QEMU logging capabilities; CRI-O and containerd 1.6.8 compatible; Support for Kubernetes 1.23.1-00.
+
 - [Kata Containers Secure Container Runtime v3.0.0 released](https://github.com/kata-containers/kata-containers/releases/tag/3.0.0)
 
      The main new features of this version: a new Rust language rewritten container runtime component and an optional integrated virtual machine management component, support for mainstream cloud-native ecological components (including Kubernetes,CRI-O, Containerd, and OCI container runtime standards, etc.), supports cgroupv2, and supports the latest stable version of the Linux kernel.
@@ -478,6 +499,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Kata Container Container Security Project v2.5.0 release](https://github.com/kata-containers/kata-containers/releases/tag/2.5.0)
 
      The main new features of this version: support containerd shimv2 log plugin, support virtio-block multi-queue, support QEMU sandbox function, support containerd core scheduling, kata-runtime iptables subcommand can operate iptables in guest, and support directly allocated volumes.
+
+- [Katalyst: byte-hopping open source cloud-native resource control system](https://mp.weixin.qq.com/s/A5_1h3RLmDNazmAddbhYaA)
+
+    The main features of [Katalyst](https://github.com/kubewharf/katalyst-core) include: fully incubated in the mega-mixed-part practice and synchronously take over the resource control link in the byte service cloud-native process; equipped with ByteBeat's internal Kubernetes distribution Enhanced Kubernetes is synchronized with open source; the system is built based on plug-in model, and users can customize various scheduling, control, policy, data and other module plug-ins on Katalyst Framework.
 
 - [KEDA Announces Security Audit Results Based on Kubernetes Event-Driven Autoscaling Project](https://mp.weixin.qq.com/s/ZwCg-qCeC2CMm7EbxJbi9w)
 
@@ -578,6 +603,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Kube-OVN v1.10.0 release (CNCF project)](https://mp.weixin.qq.com/s/e1TW_s3r9__qSgZz6aWmAA)
 
      The main new features of this version: ACL field is added in the subnet, and users can write ACL rules that conform to the OVN flow table specification according to their own needs; in the KubeVirt scenario, the address allocation strategy of VM instance adopts a strategy similar to that of StatefulSet, and supports DPDK, DHCP; Integrated SubMariner is used for the interconnection of multiple clusters; for large-scale environments, the performance of the control plane is optimized.
+
+- [Kubernetes Cluster API v1.4.0 Released](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.4.0)
+
+    Release features: support for automatic failback in case of KCP control plane deployment failure, support for synchronizing certain tags from Machine to Node, propagation of tags, annotations, etc. from ClusterClass to KubeadmControlPlane/MachineDeployment and Machine, support for Variable discovery in ClusterClass and Managed Topologies.
 
 - [Kubernetes v1.26 released](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.26.md)
 
@@ -836,6 +865,14 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      Release features: integration with wasmedge, support for building from local source code, multiple functions supported in a single Pod, support for detecting changes to source code or images and rebuilding/redeploying newly built images.
 
+- [OpenKruise upgraded to CNCF Incubation Program](https://mp.weixin.qq.com/s/9knMn8eKJBNdXUU-TcmTQg)
+
+    [OpenKruise](https://github.com/openkruise/kruise/) is an extended suite of components focused on application automation such as deployment, upgrades, operations and availability protection. OpenKruise helps organizations with large workloads adopt and automate Kubernetes and cloud-native deployments, opening the door to new use cases in areas such as AI / ML.
+
+- [OpenKruise Cloud Native Application Automation Management Suite v1.4.0 Released (CNCF Project)](https://github.com/openkruise/kruise/releases/tag/v1.4.0)
+
+    Release features: new JobSidecarTerminator function to terminate sidecar containers after the main container exits; new field to immediately recreate containers; support for attaching metadata to the PullImage CRI interface during ImagePullJob; sidecarSet controller support for namespace selectors ; change Kubernetes image address reference from "k8s.gcr.io" to "registry.k8s.io".
+
 - [OpenKruise Cloud Native Application Automation Management Suite v1.3.0 release (CNCF project)](https://github.com/openkruise/kruise/releases/tag/v1.3.0)
 
      The main new features of this version: support custom probes and return the results to Pod yaml, SidecarSet supports injecting pods under the kube-system and kube-public namespaces, adds timezone support for upstream AdvancedCronJob, WorkloadSpread supports StatefulSet.
@@ -917,6 +954,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Podman container runtime project v4.2.0 released](https://github.com/containers/podman/releases/tag/v4.2.0)
 
      The main new features of this version: support for GitLab Runner, new commands for creating copies of existing pods, new commands for synchronizing state changes between the database and any volume plugins, new exit policies for pods, and automatic cleanup of unused pods Caches Podman virtual machine images, allowing multiple overlay volumes of different containers to reuse the same workdir or upperdir.
+
+- [Prometheus v2.43.0 released (CNCF project)](https://github.com/prometheus/prometheus/releases/tag/v2.43.0)
+
+    Version features: store all tags and corresponding values in a single string to reduce memory footprint (only enabled when compiling with Go tag stringlabels); provide HTTP client configuration in query commands; add option to import grab configuration from different files; add two new HTTP client configuration parameters; allow dynamic setting via API backtracking time of queries.
 
 - [Prometheus v2.42.0 released (CNCF project)](https://github.com/prometheus/prometheus/releases/tag/v2.42.0)
 
@@ -1101,6 +1142,10 @@ This page lists activity in cloud native open source projects in alphabetical or
      The main new features of this version: support dynamic scheduling and rescheduling based on real node load, support elastic job scheduling, add MPI job plug-ins, allow tasks not to retry when they fail, support checking the overhead of pod requests, and support enqueueing in pod groups Resource quotas are considered in the process, and the default privileged container passes the verification of admission webhook.
 
 ### W, X, Z
+
+- [Wazero: Tetrate open source WebAssembly runtime for Go language development](https://mp.weixin.qq.com/s/aozmJpuwD69vGWcM525ucg)
+
+    Wazero allows developers to write code in different programming languages and run it in a secure sandbox environment. Wazero features include: pure Go, no dependencies, cross-platform and cross-architecture support; follows the WebAssembly Core Specification 1.0 and 2.0; supports Go features such as concurrency safety and context passing; and provides a rich programming interface and command line tools.
 
 - [werf, CLI tools for CI/CD, become a CNCF sandbox project](https://mp.weixin.qq.com/s/DGA1_k16QAQImFmy8mWcDw)
 

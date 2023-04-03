@@ -16,7 +16,7 @@ hide:
 
 - 通过 Helm Chart 部署
 
-    调度器必须与本地磁盘和本地磁盘管理器配合使用。建议通过 [Helm Chart 进行安装](../install/deploy-helmcharts.md)。
+    调度器必须与本地磁盘和本地磁盘管理器配合使用。建议通过 [Helm Chart 进行安装](../install/deploy-helm.md)。
 
 - 通过 YAML 部署（针对开发）
 

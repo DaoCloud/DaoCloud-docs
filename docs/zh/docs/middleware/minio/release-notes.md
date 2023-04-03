@@ -2,6 +2,20 @@
 
 本页列出 MinIO 对象存储的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## v0.4.1
+
+发布日期：2023-03-28
+
+### API
+
+- **修复** `mcamel-minio` 页面展示 LoadBalancer 地址错误。
+- **修复** `mcamel-minio` 删除 MinIO 时不应该校验野生存储配置的问题。
+- **修复** `mcamel-minio` 修复 创建 Bucket 偶尔会失败。
+
+### 其他
+
+- **升级** `mcamel-minio` golang.org/x/net 到 v0.7.0。
+
 ## v0.3.0
 
 发布日期：2023-02-23

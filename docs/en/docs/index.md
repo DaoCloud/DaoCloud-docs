@@ -29,7 +29,7 @@ DCE 5.0 natively supports the DevOps development and operation and maintenance m
 
 </div>
 
-![modules](./images/dce-modules04.jpg)
+![modules](./images/dce-modules04.png)
 
 DCE 5.0 features with cutting-edge capabilities as a cloud-native operating system to cope with different scenarios with custom solutions as below.
 

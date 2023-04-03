@@ -61,3 +61,6 @@ hide:
 5. 点击 Tab 选项卡中 `YAML` 通过 YAML 方式进行高级配置。然后，点击右下角`确定`按钮即可完成创建。
 
     ![contour-yaml](../../images/contour-yaml.png)
+
+创建完成后，创建 Ingress 路由，可通过 `平台级负载均衡` 选择 Contour 实例。详情参考： [创建路由](../../../kpanda/user-guide/services-routes/create-ingress.md)
+

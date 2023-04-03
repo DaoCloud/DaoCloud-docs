@@ -2,7 +2,7 @@
 
 This page lists, in alphabetical order, updates on some well-known commercial products.
 
-### A, B
+### A
 
 - [Aqua cloud-native security platform introduces Lightning Enforcer, a zero-day vulnerability detection tool based on eBPF technology](https://blog.aquasec.com/combat-zero-day-threats-with-aquas-ebpf-lightning-enforcer)
 
@@ -28,6 +28,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Local clustering reduces the risk of application downtime due to network outages in the cloud. During this time, the application remains available and cluster operations can be performed. EKS manages the availability of the K8s control plane on Outposts when connected to the cloud. The Kubernetes running on the local cluster has the same functions as the EKS on the cloud, and supports automatic deployment of the latest security patches.
 
+- [Azure Arc Integration with Observable Platform Datadog, an Azure Hybrid Cloud Multi-Cloud Solution](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
+
+    Azure Arc's integration with Datadog provides the following capabilities: monitors connection status and agent versions to ensure Azure Arc-enabled servers, SQL servers, and Kubernetes clusters are connected and secure; integrates hybrid and multi-cloud servers, Kubernetes clusters, and data services into a unified dashboard for seamless cross-environment Simplifies compliance management and tracking, providing rich visualizations and actionable alerts.
+
 - [Azure Serverless container platform Azure Container Apps November update](https://azure.microsoft.com/en-us/updates/?query=azure%20container%20apps)
 
      What's new: Build container images from source code without Dockerfile, use Azure pipeline tasks to build and deploy container applications from Azure DevOps, support building and deploying container applications from GitHub Actions workflows, and support inbound restrictions on Azure container applications by IP flow.
@@ -50,7 +54,19 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates include: Added soft-delete functionality to Azure Container Registry to restore accidentally deleted artifacts; allows aborting any operation on an AKS cluster or proxy pool; supports multi-instance GPU (MIG); extends Azure Network Policy Manager (NPM) AKS cluster to Windows server 2022; integrated API Server VNET for AKS private cluster.
 
-- [AliCloud service mesh ASM February 2023 Update](https://mp.weixin.qq.com/s/jNeC_gMQdCk8b8d3QXSeMQ)
+- [Azure Lightweight Kubernetes Release AKS Edge Essentials Officially Available](https://azure.microsoft.com/en-us/updates/now-available-azure-kubernetes-service- edge-essentials/)
+
+    AKS Edge Essentials is a native Kubernetes implementation of AKS that can run on resource-limited edge devices. It can be used to deploy single- and multi-node K3s and K8s clusters that can run Linux and Windows workloads on existing Windows devices.
+
+- [Azure Releases AKS Fleet Manager (Public Preview)](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
+
+    Azure Kubernetes Fleet Manager treats multiple cluster sites as a single cluster to be managed. Users can manage multiple clusters by creating a Fleet resource. Users can treat existing AKS clusters as member clusters, join them to the fleet, and then orchestrate multiple cluster scenarios such as Kubernetes resource propagation and multi-cluster load balancing using metadata from those clusters.
+
+- [AliCloud ACK February Product Update](https://mp.weixin.qq.com/s/nqW681bqKocpc7AWUV56jg)
+
+    Update: Node pool supports Kubelet parameter customization, AIOps supports Service diagnostics, supports changing cloud disk type, and supports using cloud-auto type cloud disk as dynamic storage volume.
+
+- [AliCloud Service Grid ASM February 2023 Update](https://mp.weixin.qq.com/s/jNeC_gMQdCk8b8d3QXSeMQ)
 
     Update: Support for defining management logs, monitoring and link tracing as Telemetry CRD; support for fine-grained configuration at the grid global and namespace levels; improved grid topology loading speed in clusters above 150 Pod size; support for configuring sidecar proxy environment variables, istio-proxy thread count, etc.; support for configuring in multiple clusters Support for intra-cluster traffic retention.
 
@@ -94,6 +110,14 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Alibaba Cloud service mesh ASM August Update](https://mp.weixin.qq.com/s/BDgNctG90oHpbrRWC0Hxkg)
 
      Updates include: compatibility with Istio 1.14 series versions, support for Kubernetes 1.21 - 1.24 versions, enhanced grid diagnostics, support for compatibility of third-party tokens in ACK clusters, support for user-defined EnvoyFilter, and priority for the same availability zone without modifying the code routing.
+
+### B
+
+- [Backslash Security launches cloud-native code visualization tool of the same name](https://www.backslash.security/post/backslash-security-emerges-from-stealth-to-fuse-code-security-with-cloud-native-context)
+
+    Backslash has launched a visualization tool that identifies workflows in cloud-native code that could lead to security vulnerabilities.
+    Specific features include: automatic discovery and mapping of cloud-native application code and its dependencies through contextual visualization dashboards; automatic prioritization of high-risk code based on the state of the application cloud in production; and simplified remediation of vulnerabilities and risks through intelligent, automated risk identification.
+    The tool currently supports AWS environments and GitHub code repositories.
 
 - [BellSoft launches Alpaquita Cloud Native Platform for efficiently running cloud-native Java applications](https://containerjournal.com/features/bellsoft-optimizes-java-for-cloud-native-platform/)
 
@@ -328,6 +352,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The main new features of this version: support for resizing volumes with zero downtime, control the type of storage used by workloads through storage pools, and allow the topology of volumes to be defined.
 
+- [Oracle Kubernetes Release Container Engine for Kubernetes Support for Virtual Node Pools and Virtual Nodes](https://docs.oracle.com/en-us/iaas/releasenotes/changes/c3688114- 0104-40b0-aece-67169868f990/)
+
+    Virtual nodes provide a serverless Kubernetes experience, allowing users to run containerized applications at scale without having to manage, scale, upgrade, and troubleshoot node infrastructure. Virtual nodes provide granular pod-level elasticity and usage-based pricing. Users can create virtual nodes by creating virtual node pools in an enhanced cluster.
+
 - [OutSystems Releases Cloud-Native Low-Code Development Solution OutSystems Developer Cloud (ODC)](https://mp.weixin.qq.com/s/yx63Um3ju1mC-qNF9_GJkw)
 
      ODC is a high-performance low-code solution for building cloud-native applications. ODC combines Kubernetes, Linux containers, microservices, and AWS native cloud services with DORA's high-performance level CI/CD, enterprise-grade security, and model-based visual development. Support large-scale transaction volumes and data requirements, improve developer productivity with advanced visual programming and artificial intelligence, and enable high-performance CI/CD practices.
@@ -371,6 +399,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      Updates: Support for sensor profiles for regular and CI/CD sensors, support for defining sensor configurations in sensor profiles, allow scanning of all images during automatic registry scans.
 
 ### R
+
+- [Rafay Systems Launches Environment Manager to Optimize Kubernetes Developer Experience](https://rafay.co/press-release/rafay-introduces-environment-manager-to- automate-environment-provisioning-and-accelerate-modern-application-deployment-from-code-to-cloud/)
+
+    Environment Manager improves the developer experience by providing self-service capabilities for full-stack environments. Developers are able to configure modern application stacks from an environment blueprint that is planned, tested, and continuously managed by the platform team. By integrating with Rafay's Kubernetes Operations Platform, Environment Manager abstracts the complexity of the underlying infrastructure and reduces the time required to configure and access Kubernetes' environments.
 
 - [Rafay Systems Launches Cost Management Service for Kubernetes](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
 
@@ -426,6 +458,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - Solo.io releases cloud native gateway [Gloo Gateway](https://www.solo.io/blog/announcing-gloo-gateway/) and CNI plugin [Gloo Network](https://www.solo.io/blog/announcing-gloo-network/)
 
      Gloo Gateway is built on Envoy and utilizes the multi-tenancy and federation features of Gloo Platform, allowing users to easily manage gateway access for multiple development teams and multi-cluster traffic management. Gloo Network builds on Cilium and integrates the Kubernetes CNI layer as a component of the Gloo Platform.
+
+- [Spectro Cloud Cloud Native Edge Computing Platform Palette Edge Platform v3.3 Released](https://docs.spectrocloud.com/release-notes#edge)
+
+    Release: Support for loading images from external OCI registry, installers can now include pre-loaded content packages (including packages and artifacts); support for creating custom Edge installer images; support for random production device UUID values.
 
 - [Spectro Cloud Kubernetes SaaS Management Platform Palette v3.1 Released](https://docs.spectrocloud.com/release-notes#december28,2022-release3.1.0)
 
@@ -519,6 +555,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      TLS Protect for Kubernetes is part of Control Plane for Machine Identities, Venafi's platform for machine identity management.
      Helps security and platform teams manage cloud-native machine identities such as TLS, mTLS, and SPIFFE in multi-cloud and multi-cluster Kubernetes environments, enhancing the observability, control, and automation of machine identity management.
+
+- [VMware Tanzu Service Mesh 3.0.3, a Service Mesh solution, was released](https://docs.vmware.com/en/Tanzu/services/rn/vmware-tanzu-service-mesh-global-controller-release-notes/index.html#Past%20Tanzu%20Service%20Mesh%20Releases)
+
+    Update: Tanzu Service Mesh CLI supports GitOps, which can be used to automatically deploy Tanzu Service Mesh environments to clusters; supports selecting the namespace to inject proxy sidecar into; supports enterprise-level proxy communication between client clusters and Tanzu Service Mesh SaaS.
 
 - [VWware Tanzu Multi-Cloud Multi-Cluster Kubernetes Management Solution Tanzu Mission Control Update](https://docs.vmware.com/en/VMware-Tanzu-Mission-Control/services/rn/vmware-tanzu-mission-control-release-notes/index.html)
 

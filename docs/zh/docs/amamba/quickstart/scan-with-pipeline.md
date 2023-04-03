@@ -30,7 +30,7 @@
     sonarqube-sonarqube-0    1/1     Running   0          3h59m
     ```
 
-3. 查看 SonarQube 控制台的访问地址。通常访问地址为 `http://<Node IP>:<NodePort>`，账户和密码为 `admin/admin`。
+3. 查看 SonarQube 控制台的访问地址。通常访问地址为 `http://<Node IP>:<NodePort>`，账号和密码为 `admin/admin`。
 
     ```bash
     export NODE_PORT=$(kubectl get --namespace amamba-system -o jsonpath="{.spec.ports[0].nodePort}" services sonarqube-sonarqube)

@@ -2,6 +2,23 @@
 
 本页列出全局管理各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023-03-29
+
+### v0.15.0
+
+#### 功能
+
+- 自定义角色功能(创建/编辑/删除/查看/列表)
+- 支持 GProduct 权限点及自定义角色功能对接
+- 失联集群资源处理
+- GHippo OpenAPI 文档实现
+- 给 GProduct 提供插入审计日志 SDK
+
+#### 修复
+
+- 修复密钥过期后 token 依旧可以使用的问题
+- 修复镜像仓库不受 license 控制问题
+
 ## 2023-02-27
 
 ### v0.14.0
@@ -189,7 +206,7 @@
 - 授权鉴权 -> 给前端提供当前登录用户的权限列表
 - 关于 -> 软件版本 -> 模块支持中文名
 - 添加整体双语文档站结构及主要内容
-- - 文档站新增页面：[什么是全局管理](what.md)、[常见术语](../intro/glossary.md)、[功能总览](features.md)、[快速入门/创建用户和授权](../user-guide/access-control/user.md)、[什么是用户访问和控制](../user-guide/access-control/iam.md)、[用户](../user-guide/access-control/user.md)、[创建用户组并授权](../user-guide/access-control/group.md)、[用户组](../user-guide/access-control/group.md)、[登录](../user-guide/login.md)、[密码重置](../user-guide/password.md)、[全局管理角色](../user-guide/access-control/global.md)、[资源管理（按工作空间）](../user-guide/workspace/ws-best-practice.md)、[资源管理（按角色）](../user-guide/workspace/quota.md)、[身份提供商](../user-guide/access-control/idprovider.md)、[邮件服务器设置](../user-guide/platform-setting/mail-server.md)、[外观定制](../user-guide/platform-setting/appearance.md)、[LDAP](../user-guide/access-control/ldap.md)、[OIDC](../user-guide/access-control/oidc.md)、[关于平台](../user-guide/platform-setting/about.md)、[审计日志](../user-guide/audit-log.md)、[访问密钥](../user-guide/personal-center/password.md)、[语言设置](../user-guide/personal-center/language.md)、[安全设置](../user-guide/personal-center/security-setting.md) 等文档
+- - 文档站新增页面：[什么是全局管理](what.md)、[常见术语](../intro/glossary.md)、[功能总览](features.md)、[快速入门/创建用户和授权](../user-guide/access-control/user.md)、[什么是用户访问和控制](../user-guide/access-control/iam.md)、[用户](../user-guide/access-control/user.md)、[创建用户组并授权](../user-guide/access-control/group.md)、[用户组](../user-guide/access-control/group.md)、[登录](../install/login.md)、[密码重置](../user-guide/password.md)、[全局管理角色](../user-guide/access-control/global.md)、[资源管理（按工作空间）](../user-guide/workspace/ws-best-practice.md)、[资源管理（按角色）](../user-guide/workspace/quota.md)、[身份提供商](../user-guide/access-control/idprovider.md)、[邮件服务器设置](../user-guide/platform-setting/mail-server.md)、[外观定制](../user-guide/platform-setting/appearance.md)、[LDAP](../user-guide/access-control/ldap.md)、[OIDC](../user-guide/access-control/oidc.md)、[关于平台](../user-guide/platform-setting/about.md)、[审计日志](../user-guide/audit-log.md)、[访问密钥](../user-guide/personal-center/password.md)、[语言设置](../user-guide/personal-center/language.md)、[安全设置](../user-guide/personal-center/security-setting.md) 等文档
 
 #### 优化
 
