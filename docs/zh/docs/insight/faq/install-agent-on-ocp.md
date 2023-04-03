@@ -15,6 +15,7 @@
 
 ## 启用适配 OpenShift4.x 的 Prometheus(CR)
 --set compatibility.openshift.prometheus.enabled=true \
+
 ## 关闭高版本的 Prometheus 实例
 --set kube-prometheus-stack.prometheus.enabled=false \
 --set kube-prometheus-stack.kubeApiServer.enabled=false \
@@ -27,6 +28,7 @@
 --set kube-prometheus-stack.kubeScheduler.enabled=false \
 --set kube-prometheus-stack.kubeStateMetrics.enabled=false \
 --set kube-prometheus-stack.nodeExporter.enabled=false \
+
 ## 限制 PrometheusOperator 处理的 namespace，避免与 OpenShift 自带的 PrometheusOperator 相互竞争
 --set kube-prometheus-stack.prometheusOperator.kubeletService.namespace="insight-system" \
 --set kube-prometheus-stack.prometheusOperator.prometheusInstanceNamespaces="insight-system" \

@@ -14,13 +14,13 @@
 
 2. 以下参数均针对集群，点击开启故障转移并保存。
 
-| 参数                               | 定义                           | 描述                                                         | 字段名EN                                             | 字段名ZH                 | 默认值 |
-| ---------------------------------- | ------------------------------ | ------------------------------------------------------------ | ---------------------------------------------------- | ------------------------ | ------ |
-| ClusterMonitorPeriod               | 检查周期间隔                   | 检查集群状态的时间间隔                                       | Check Internal                                       | 检查时间间隔             | 60s    |
-| ClusterMonitorGracePeriod          | 运行中标记集群不健康检查时长   | 集群运行中，超过此配置时间未获取集群健康状态信息，将集群标记为不健康 | The runtime marks the duration of an unhealthy check | 运行时标记不健康检查时长 | 40s    |
-| ClusterStartupGracePeriod          | 启动时标记集群不健康的检查时长 | 集群启动时，超过此配置时间未获取集群健康状态信息，将集群标记为不健康 | Mark health check duration at startup                | 启动时标记健康检查时长   | 600s   |
-| FailoverEvictionTimeout            | 驱逐容忍时长                   | 集群被标记为不健康后，超过此时长会给集群打上污点，并进入驱逐状态 （集群会增加驱逐污点） | Eviction tolerance time                              | 驱逐容忍时长             | 30s    |
-| ClusterTaintEvictionRetryFrequency | 优雅驱逐超时时长               | 进入优雅驱逐队列后，最长等待时长，超时后会立即删除           | Graceful ejection timeout duration                   | 优雅驱逐超时时长         | 5s     |
+    | 参数                               | 定义                           | 描述                                                                                    | 字段名 EN                                            | 字段名 ZH                | 默认值 |
+    | ---------------------------------- | ------------------------------ | --------------------------------------------------------------------------------------- | ---------------------------------------------------- | ------------------------ | ------ |
+    | ClusterMonitorPeriod               | 检查周期间隔                   | 检查集群状态的时间间隔                                                                  | Check Internal                                       | 检查时间间隔             | 60s    |
+    | ClusterMonitorGracePeriod          | 运行中标记集群不健康检查时长   | 集群运行中，超过此配置时间未获取集群健康状态信息，将集群标记为不健康                    | The runtime marks the duration of an unhealthy check | 运行时标记不健康检查时长 | 40s    |
+    | ClusterStartupGracePeriod          | 启动时标记集群不健康的检查时长 | 集群启动时，超过此配置时间未获取集群健康状态信息，将集群标记为不健康                    | Mark health check duration at startup                | 启动时标记健康检查时长   | 600s   |
+    | FailoverEvictionTimeout            | 驱逐容忍时长                   | 集群被标记为不健康后，超过此时长会给集群打上污点，并进入驱逐状态 （集群会增加驱逐污点） | Eviction tolerance time                              | 驱逐容忍时长             | 30s    |
+    | ClusterTaintEvictionRetryFrequency | 优雅驱逐超时时长               | 进入优雅驱逐队列后，最长等待时长，超时后会立即删除                                      | Graceful ejection timeout duration                   | 优雅驱逐超时时长         | 5s     |
 
 ## 验证故障转移
 
@@ -32,6 +32,6 @@
 
     ![为集群打污点](../images/failover03.png)
 
-3. 此时无状态负载的 pod 将会根据剩余集群的资源等情况进行迁移。最终不健康（被打上污点）的集群内将不存在任何 pod。
+3. 此时无状态负载的 Pod 将会根据剩余集群的资源等情况进行迁移。最终不健康（被打上污点）的集群内将不存在任何 Pod。
 
     ![pod迁移](../images/failover04.png)

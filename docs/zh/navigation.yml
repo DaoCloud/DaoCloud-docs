@@ -164,7 +164,6 @@ nav:
           - 介绍:
               - 什么是可观测性: insight/intro/what.md
               - 产品优势: insight/intro/benefits.md
-              - 基本概念: insight/intro/concepts.md
               - 应用场景: insight/intro/scenarios.md
               - 功能列表: insight/intro/feature.md
               - 权限说明: insight/intro/permission.md
