@@ -103,7 +103,7 @@ spec:
             },{
                 "type": "router", # router 插件 以 cni-chain 的方式调用
                 "overlay_interface": "eth0",
-                "migrate_route": -1,  # 取值范围`-1,0,1`, 默认为 -1, 表示是否将新增网卡的默认路由移动到一个新的 route table中去。-1 表示通过网卡名自动迁移(eth0 < net1 < net2)，0 为不迁移，-1表示强制迁移。
+                "migrate_route": -1,  # 取值范围`-1,0,1`, 默认为 -1, 表示是否将新增网卡的默认路由移动到一个新的 route table 中去。-1 表示通过网卡名自动迁移(eth0 < net1 < net2)，0 为不迁移，1 表示强制迁移。
                 "skip_call": false,
                 "service_hijack_subnet": ["172.96.0.0/18","2001:4860:fd00::/108"], # 集群 service的网段, 包括 IPv4 和 IPv6
                 "overlay_hijack_subnet": ["10.240.0.0/12","fd00:10:244::/96"],  # 集群 pod 的网段集合
