@@ -181,6 +181,152 @@ last_updated:
   sudo systemctl enable --now kubelet
   ```
 
-# kubeadm安装第一个master
-# kubeadm安装第一个jjie dian 
-# kubeadm安装第一个
+# kubeadm安装第一个master节点
+
+1. 预先下载镜像,使用daocloud的加速仓库
+
+    ```
+    kubeadm config images pull --image-repository k8s-gcr.m.daocloud.io
+    ```
+1. 调用kubeadm，初始化第一个节点 （使用daocloud加速仓库）
+   【注意】：如下pod CIDR不能与宿主机物理网络的网段重合(该CIDR未来还需要跟calico的配置一致)
+    ```
+    sudo kubeadm init --kubernetes-version=v1.25.8 --image-repository=k8s-gcr.m.daocloud.io --pod-network-cidr=192.168.0.0/16
+    ```
+    经过十几分钟，你能看到打印成功的信息如下（请记住最后打印出的`kubeadm join`命令，后续会用到）
+    ```
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 10.23.207.16:6443 --token p4vw62.shjjzm1ce3fza6q7 \
+--discovery-token-ca-cert-hash sha256:cb1946b96502cbd2826c52959d0400b6e214e06cc8462cdd13c1cb1dc6aa8155
+
+    ```
+
+
+1. 配置kubeconfig文件
+
+    ```bash
+    mkdir -p $HOME/.kube
+    sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+    sudo chown $(id -u):$(id -g) $HOME/.kube/config
+    kubectl get no
+    #你能看到第一个节点,但是仍然NotReady
+    ```
+    
+1. 安装CNI，以calico为例子
+
+    ```bash
+    kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/tigera-operator.yaml
+    ```
+    
+    ```
+    #下载配置文件模板
+    curl -LO https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/custom-resources.yaml
+    grep cidr custom-resources.yaml
+    #确认calico配置文件里的CIDR和kubeadm init时的CIDR是一致的！！！否则请修改!!!
+    vim custom-resources.yaml
+    kubectl apply -f custom-resources.yaml
+    kubectl get po -n calico-system -w #等待pod都Running
+    kubectl get no #可以看到第一个节点变为 ready 状态了
+    #
+    
+    
+    
+ # join其他工作节点
+ 
+ 最后在其他worker节点执行join命令。命令在上述master节点进行`kubeadm init`时最后会在屏幕打出。形如下方（注意三个参数都是跟环境相关的。请勿直接拷贝）
+ ```
+ kubeadm join $第一台master的IP:6443 --token p...7 --discovery-token-ca-cert-hash s....x
+ ```
+ 
+ 成功之后，信息形如：
+ ```
+ This node has joined the cluster:
+* Certificate signing request was sent to apiserver and a response was received.
+* The Kubelet was informed of the new secure connection details.
+
+Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
+```
+
+   在master 节点确认节点都被加入，并且等待其都变为 Ready 状态
+   ```kubectl get no -w ```
+   
+   
+# 安装默认存储 CSI
+
+    ```
+    #参考： https://github.com/rancher/local-path-provisioner
+    wget https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.24/deploy/local-path-storage.yaml
+    sed -i "s/image: rancher/image: docker.m.daocloud.io\/rancher/g" local-path-storage.yaml # replace docker.io to mirror
+    sed -i "s/image: busybox/image: docker.m.daocloud.io\/busybox/g" local-path-storage.yaml
+    kubectl apply -f local-path-storage.yaml
+    kubectl get po -n local-path-storage -w #等待 pod 都 running
+    #把local-path设置为默认SC
+    kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+    kubectl get sc #可以看到形如: local-path (default)
+    ```
+    
+    
+ 
+ ## 安装 DCE 5.0 社区版
+
+现在一切准备就绪，开始安装 DCE 5.0 社区版。
+
+### 安装基础依赖
+
+```bash linenums="1"
+curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
+bash install_prerequisite.sh online community 
+```
+
+### 下载 dce5-installer
+```bash
+export VERSION=v0.5.0
+curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
+chmod +x ./dce5-installer 
+```
+
+
+### 执行安装
+
+1.如果你的浏览器跟 master 节点的 IP 是可以直通的，直接执行
+
+```
+./dce5-installer install-app -z -k
+```
+
+1. 如果 master 节点的 IP 是内网（比如本示例的公有云机器），请在公有云中为其创建外网可达的 IP，然后执行如下
+
+```
+./dce5-installer install-app -z -k $外部IP:443
+```
+
+
+1. 登录 DCE
+
+    ![登录](./images/login.png)
+
+1. DCE 登录成功
+
+    ![成功登录](./images/firstscreen.png)
+
+[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
