@@ -9,10 +9,9 @@ last_updated:
 
 # 保姆式安装 DCE 5.0 社区版
 
-作者：[Peter Pan](https://github.com/panpan0000)
-作者：[SAMZONG](https://github.com/SAMZONG)
+作者：[Peter Pan](https://github.com/panpan0000), [SAMZONG](https://github.com/SAMZONG)
 
-本文完成了从 0 到 1 的 DCE 5.0 社区版安装，包含了 K8s 集群、依赖项、网络、存储等细节及更多注意事项。
+本文在 3 个节点的集群中完成了从 0 到 1 的 DCE 5.0 社区版安装，包含了 K8s 集群、依赖项、网络、存储等细节及更多注意事项。
 
 > 现阶段版本迭代较快，本文的安装方式可能与最新版有所差异，请以产品文档的[安装说明](../install/intro.md)为准。
 
@@ -29,7 +28,7 @@ last_updated:
 本示例采用的组件为：
 
 - Kubernetes：1.25.8
-- CRI：containerd （因为新版本K8s已经不再直接支持docker）
+- CRI：containerd（因为新版本 K8s 已经不再直接支持 Docker）
 - CNI：Calico
 - StorageClass：local-path
 - DCE 5.0 社区版：v0.5.0
@@ -143,12 +142,12 @@ last_updated:
   
 1. 安装 nerdctl（可选）
 
-   ```bash
-   curl -LO https://github.com/containerd/nerdctl/releases/download/v1.2.1/nerdctl-1.2.1-linux-amd64.tar.gz
-   tar xzvf nerdctl-1.2.1-linux-amd64.tar.gz
-   mv nerdctl /usr/local/bin
-   nerdctl -n k8s.io ps # 查看容器
-   ```
+    ```bash
+    curl -LO https://github.com/containerd/nerdctl/releases/download/v1.2.1/nerdctl-1.2.1-linux-amd64.tar.gz
+    tar xzvf nerdctl-1.2.1-linux-amd64.tar.gz
+    mv nerdctl /usr/local/bin
+    nerdctl -n k8s.io ps # 查看容器
+    ```
 
 ## 安装 k8s 集群
 
@@ -197,7 +196,9 @@ last_updated:
 
 1. 调用 kubeadm 初始化第一个节点（使用 DaoCloud 加速仓库）
 
-   【注意】：如下 pod CIDR 不能与宿主机物理网络的网段重合（该 CIDR 未来还需要跟 Calico 的配置一致)
+    !!! note
+
+        如下 Pod CIDR 不能与宿主机物理网络的网段重合（该 CIDR 未来还需要跟 Calico 的配置一致)。
 
     ```bash
     sudo kubeadm init --kubernetes-version=v1.25.8 --image-repository=k8s-gcr.m.daocloud.io --pod-network-cidr=192.168.0.0/16
@@ -263,43 +264,43 @@ last_updated:
 
 ### 接入其他 worker 工作节点
 
-    最后在其他 worker 节点执行 join 命令。
-    在上述 master 节点执行 `kubeadm init` 时最后会在屏幕打出（注意三个参数都是跟环境相关的，请勿直接拷贝）
+最后在其他 worker 节点执行 join 命令。
+在上述 master 节点执行 `kubeadm init` 时最后会在屏幕打出（注意三个参数都是跟环境相关的，请勿直接拷贝）
 
-    ```bash
-    kubeadm join $第一台master的IP:6443 --token p...7 --discovery-token-ca-cert-hash s....x
-    ```
- 
-    成功 join 之后，输出类似于：
+```bash
+kubeadm join $第一台master的IP:6443 --token p...7 --discovery-token-ca-cert-hash s....x
+```
 
-    ```none
-    This node has joined the cluster:
-    * Certificate signing request was sent to apiserver and a response was received.
-    * The Kubelet was informed of the new secure connection details.
+成功 join 之后，输出类似于：
 
-    Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
-    ```
+```none
+This node has joined the cluster:
+* Certificate signing request was sent to apiserver and a response was received.
+* The Kubelet was informed of the new secure connection details.
 
-    在 master 节点确认节点都被加入，并且等待其都变为 Ready 状态。
+Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
+```
 
-    ```bash
-    kubectl get no -w
-    ```
+在 master 节点确认节点都被加入，并且等待其都变为 Ready 状态。
+
+```bash
+kubectl get no -w
+```
 
 ### 安装默认存储 CSI（使用本地存储）
 
-    ```bash
-    # 参考： https://github.com/rancher/local-path-provisioner
-    wget https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.24/deploy/local-path-storage.yaml
-    sed -i "s/image: rancher/image: docker.m.daocloud.io\/rancher/g" local-path-storage.yaml # 替换 docker.io 为实际镜像
-    sed -i "s/image: busybox/image: docker.m.daocloud.io\/busybox/g" local-path-storage.yaml
-    kubectl apply -f local-path-storage.yaml
-    kubectl get po -n local-path-storage -w # 等待 pod 都 running
+```bash
+# 参考： https://github.com/rancher/local-path-provisioner
+wget https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.24/deploy/local-path-storage.yaml
+sed -i "s/image: rancher/image: docker.m.daocloud.io\/rancher/g" local-path-storage.yaml # 替换 docker.io 为实际镜像
+sed -i "s/image: busybox/image: docker.m.daocloud.io\/busybox/g" local-path-storage.yaml
+kubectl apply -f local-path-storage.yaml
+kubectl get po -n local-path-storage -w # 等待 pod 都 running
 
-    # 把 local-path 设置为默认 SC
-    kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
-    kubectl get sc # 可以看到形如: local-path (default)
-    ```
+# 把 local-path 设置为默认 SC
+kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+kubectl get sc # 可以看到形如: local-path (default)
+```
 
 ## 安装 DCE 5.0 社区版
 
@@ -307,7 +308,7 @@ last_updated:
 
 ### 安装基础依赖
 
-```bash linenums="1"
+```bash
 curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
 bash install_prerequisite.sh online community 
 ```
@@ -356,6 +357,6 @@ chmod +x ./dce5-installer
 
     ![成功登录](./images/firstscreen.png)
 
-- [下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-- [安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
-- [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
