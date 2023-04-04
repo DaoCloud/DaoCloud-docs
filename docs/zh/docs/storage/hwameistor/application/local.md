@@ -7,15 +7,14 @@
 - Hwameistor 已经安装成功
 
 - 已经完成存储池创建，如未创建请进行[存储池 StorageClass 创建](../../../kpanda/user-guide/storage/sc.md)。
-
-2. 已经完成存储池创建，如未创建请进行[存储池 StorageClass 创建](../../../kpanda/user-guide/storage/sc.md)
     
-    目前 HwameiStor 安装成功后，Helm charts 会默认安装一个名为 `hwameistor-storage-lvm-hdd` 的 `StorageClass`，可使用此存储池进行本地数据卷创建。
+    目前 HwameiStor 安装成功后，Helm chart 会默认安装一个名为 `hwameistor-storage-lvm-hdd` 的 `StorageClass`，可使用此存储池创建本地数据卷。
 
-      1. 点击 `容器管理`-->`选择对应集群`，进入集群详情，点击`容器存储`选择`存储池` 查看
+      1. 点击`容器管理` -> 选择对应集群，进入集群详情，点击`容器存储`，选择`存储池`
+      
          ![sc01](../../images/sc01.jpg)
 
-      2. 点击`查看 YAML`,查看详情。
+      2. 点击`查看 YAML`，查看详情。
 
          ```yaml
          apiVersion: storage.k8s.io/v1
@@ -42,26 +41,26 @@
          kubectl apply -f examples/sc-local.yaml
          ```
 
-
 ## 操作步骤
 
 ### 通过界面创建 `StatefulSet`
 
-1. 点击 `容器管理`-->`选择对应集群`，进入集群详情，点击`容器存储`选择`工作负载`下的`有状态工作负载`,点击`镜像创建`。
+1. 点击 `容器管理` -> `选择对应集群`，进入集群详情，点击`容器存储`选择`工作负载`下的`有状态工作负载`，点击`镜像创建`。
 
-   ![imagecreate](../../../storage/images/imagecreate01.jpg)
+    ![imagecreate](../../../storage/images/imagecreate01.jpg)
 
 2. 完成`基本信息`进入到下一步，点击`创建数据卷声明模板`输入如下参数信息：
-   ![pvctmp](../../../storage/images/pvctmp01.jpg)
 
-   - `存储池`：已经创建的本地存储池。
-   - `容量`：本地数据卷容量大小。
-   - `访问模式`：Pod 读写模式，建议使用 ReadWriteOnce。
-   - `容器路径`：数据存储挂载到容器上的路径。
+    ![pvctmp](../../../storage/images/pvctmp01.jpg)
+
+    - `存储池`：已经创建的本地存储池。
+    - `容量`：本地数据卷容量大小。
+    - `访问模式`：Pod 读写模式，建议使用 ReadWriteOnce。
+    - `容器路径`：数据存储挂载到容器上的路径。
 
 3. 完成后点击`确定`，连续点击`下一步`完成创建。创建完成后点击`数据卷`列表查看对应的`数据卷状态`是否正常。
 
-   ![pvctmp02](../../../storage/images/pvctmp02.jpg)
+    ![pvctmp02](../../../storage/images/pvctmp02.jpg)
 
 ### 通过 YAML 创建 `StatefulSet`
 
@@ -104,7 +103,7 @@ spec:
 
 ### 查看 MySQL 容器和 `PVC/PV`
 
- 在这个例子里，MySQL 容器被调度到了节点 `k8s-worker-3`。
+在这个例子里，MySQL 容器被调度到了节点 `k8s-worker-3`。
 
 ```console
 $ kubectl get po -l  app=sts-mysql-local -o wide
