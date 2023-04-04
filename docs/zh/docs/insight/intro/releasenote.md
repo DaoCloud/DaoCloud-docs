@@ -2,9 +2,26 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023.04.04
+
+### v0.15.3
+
+#### 优化
+
+- **优化** 更新 ES 索引的默认主分片数，使其与中间件默认的 ES 节点数匹配。
+- **优化** 修改 JVM 信息 API 响应体结构。
+
+#### 修复
+
+- **修复** 修复多次触发警报记录
+- **修复** Fluentbit CVE-2021-46848，从 2.0.5 升级到 2.0.8
+- **修复** 检查许可证资源的任务
+- **修复** 清除警报历史记录的 SQL 语句
+- **修复** 英文仪表盘存在的中文问题
+
 ## 2023.03.30
 
-### v0.15.1
+### v0.15.3
 
 #### 新增
 
@@ -47,7 +64,7 @@
 - **优化** 链路查询中的过滤条件并可查看存在 Error 的链路
 - **优化** 链路查询的散点图更新为气泡图
 - **优化** 将 Prometheus 的指标保留时间缩短至 2 小时
-- **优化** VMStorage的 retentionPeriod 默认参数调整为 1 个月
+- **优化** VMStorage 的 retentionPeriod 默认参数调整为 1 个月
 - **升级** fluentbit 的 helm chart 版本至 0.24.0
 - **更新** `tailing-sidecar/operator` 的镜像
 - **更新** 全局采集规则间隔为 60 秒
@@ -122,7 +139,7 @@
 - **优化** PromQL 查询支持原始的指标
 - **优化** 拓扑图的样式
 - **升级** 内置 MySQL 镜像版本，从 v5.7.34 升级到 v8.0.29.
-- **升级** Fluentbit ARM架构的 helm Chart 版本从
+- **升级** Fluentbit ARM 架构的 helm Chart 版本从
 - **升级** kube-prometheus-stack 的 helm Chart 版本从 v39.6.0 升级至 v41.9.1
 - **更新** 使用的 Bitnami 的镜像，包含 grafana-operator, grafana, kubernetes-event-exporter
 - **更新** prometheus 相关的的 API 代理地址，将 `/prometheus` 修改为 `/apis/insight.io/prometheus`
@@ -366,7 +383,7 @@
 - 为系统日志增加日志所属文件路径信息
 - 增加查询单条日志上下文 API
 - 增加查询 Kubernetes Event API
-- 增强 Insight 自身可观测性能力, 提供自身的指标接口和查询链路信息
+- 增强 Insight 自身可观测性能力，提供自身的指标接口和查询链路信息
 - 通过反向代理 Jaeger Query 的 API 供前端使用
 - 增加 Query Tracing Operations 相关 API
 - 增加 Span Metric 相关 API
@@ -380,7 +397,7 @@
 #### 文档
 
 - 添加整体双语文档站结构及主要内容
-- 增加文档所需插件, 优化渲染
+- 增加文档所需插件，优化渲染
 - 完成 ROADMAP 内容
 - 将文档 ROADMAP 内容合并如总 ROADMAP 文件
 - 更新文档结构
