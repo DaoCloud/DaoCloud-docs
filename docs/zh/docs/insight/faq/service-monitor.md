@@ -130,7 +130,7 @@ spec:
       [ example: k8s-app: redis-exporter ]
 ```
 
-### 举例
+### 举例 1
 
 ```yaml
 apiVersion: monitoring.coreos.com/v1
@@ -164,7 +164,7 @@ spec:
       k8s-app: redis-exporter
 ```
 
-### 举例
+### 举例 2
 
 ```yaml
 job_name: prometheus

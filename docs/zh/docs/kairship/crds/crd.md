@@ -27,7 +27,7 @@ hide:
 
 **CRD example**
 
-```
+```yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -70,19 +70,21 @@ spec:
 
     ![yaml创建cr](../images/crd06.png)
 
-3. 再填写部署策略，用来指定想要分发在哪些集群。注意需要将部署策略的 YAML 信息根据需要传播的资源的信息进行填写：`spec`的`resourceSelector`中`apiVersion`、`kind`、`namespace`、`name`四个参数需要和所需要传播的资源保持一致。若没有差异化需求，差异化策略可不填	
+3. 再填写部署策略，用来指定想要分发在哪些集群。注意需要将部署策略的 YAML 信息根据需要传播的资源的信息进行填写：
+   `spec`的`resourceSelector`中`apiVersion`、`kind`、`namespace`、`name`四个参数需要和所需要传播的资源保持一致。
+   若没有差异化需求，差异化策略可不填。
 
     ![必填pp](../images/crd07.png)
 
 4. 返回 CR 实例列表页，即可查看刚刚创建的名为 `my-new-cron-obiext` 的 CR 实例。
-   
+
     ![创建成功](../images/crd08.png)
 
 **CR 示例：**
 
 **CR example**
 
-```
+```yaml
 apiVersion: "stable.example.com/v1"
 kind: CronTab
 metadata:
@@ -91,4 +93,3 @@ spec:
   cronSpec: "* * * * */5"
   image: my-awesome-cron-image
 ```
-

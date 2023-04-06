@@ -32,6 +32,8 @@ beautifulsoup4 = "^4.11.2"
 mkdocs-swagger-ui-tag = "^0.6.1"
 mkdocs-rss-plugin = "^1.6.0"
 mkdocs-macros-plugin = "^0.7.0"
+anybadge = "^1.14.0"
+pydantic = "^1.10.6"
 
 [tool.poetry.dev-dependencies]
 

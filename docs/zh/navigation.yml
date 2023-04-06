@@ -99,7 +99,9 @@ nav:
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
           - 备份恢复:
               - 安装 velero 插件: kpanda/user-guide/backup/install-velero.md
-              - 备份一个无状态的 2048 应用: kpanda/user-guide/backup/backup-deploy-2048.md
+              - 备份无状态工作负载: kpanda/user-guide/backup/deployment.md
+          - 最佳实践:
+              - ETCD 备份还原: kpanda/best-practice/etcd-backup.md
       - 全局管理:
           - 介绍:
               - 什么是全局管理: ghippo/intro/what.md
@@ -162,7 +164,6 @@ nav:
           - 介绍:
               - 什么是可观测性: insight/intro/what.md
               - 产品优势: insight/intro/benefits.md
-              - 基本概念: insight/intro/concepts.md
               - 应用场景: insight/intro/scenarios.md
               - 功能列表: insight/intro/feature.md
               - 权限说明: insight/intro/permission.md
@@ -259,8 +260,6 @@ nav:
           - 灰度发布:
               - 创建金丝雀发布任务: amamba/user-guide/release/canary.md
               - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
-          - 工具链集成:
-              - 在 Jenkins 中使用自定义工具链: amamba/user-guide/tools/jenkins-custom.md
           - 最佳实践:
               - 快速创建流水线: amamba/quickstart/deploy-pipeline.md
               - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
@@ -268,6 +267,7 @@ nav:
               - 基于 Argo Rollout 实现渐进式灰度发布: amamba/quickstart/argocd-rollout.md
               - 在指定的节点上运行流水线: amamba/quickstart/pipeline-on-node.md
               - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
+              - 在 Jenkins 中使用自定义工具链: amamba/user-guide/tools/jenkins-custom.md
       - 多云编排:
           - 介绍:
               - 什么是多云编排: kairship/intro/what.md
@@ -594,7 +594,7 @@ nav:
               - 什么是云原生存储: storage/what.md
               - 背景和挑战: storage/background.md
               - 功能优势: storage/benifits.md
-              - 功能列表: storage/functions.md
+              - 功能列表: storage/features.md
               - Release Notes: storage/hwameistor/releasenotes.md
           - HwameiStor 本地存储:
               - 介绍: storage/hwameistor/intro/what.md
@@ -693,6 +693,7 @@ nav:
       - 云原生网络: videos/network.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 202304 | 保姆式安装社区版: blogs/new-dce5-free.md
       - 202303 | 边缘原生应用准则: blogs/edgeappwp.md
       - 202303 | Linux 单机安装社区版: blogs/linux.md
       - 202303 | macOS 单机安装社区版: blogs/macos.md
@@ -700,8 +701,8 @@ nav:
       - 202302 | 社区版涉及的开源项目: blogs/projects.md
       - 202302 | DaoCloud 与 K8s: blogs/daocloud_k8s.md
       - 202302 | DCE 5.0 攻坚语录集: blogs/peter.md
+      - 202301 | 2023 年云原生预测: blogs/forecast2023.md
       - 202301 | 让闲置算力跑起来: blogs/230110-res-usage.md
-      - 202212 | 保姆式安装 DCE 社区版: blogs/dce5-0328.md
       - 202211 | K8s 资深认证服务商: blogs/kcsp.md
       - 202210 | 容器管理能力介绍: blogs/kpanda.md
       - 202210 | 资源管理能力介绍: blogs/resource.md

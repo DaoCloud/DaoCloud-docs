@@ -1,7 +1,7 @@
 # support mkdocs-material-insider
 IMAGE_HUB ?= release.daocloud.io/
 BASE_IMAGE ?= ${IMAGE_HUB}daocloud/ndx-mkdocs-material
-BASE_IMAGE_VERSION ?= v1.1.1
+BASE_IMAGE_VERSION ?= v1.2.0
 
 INS_IMAGE_HUB ?= release-ci.daocloud.io/
 INS_IMAGE ?= ${INS_IMAGE_HUB}product/ndx-mkdocs-material-insider

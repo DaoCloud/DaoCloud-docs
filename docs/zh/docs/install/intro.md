@@ -63,8 +63,7 @@ click ask "https://docs.daocloud.io/install/intro/#_4"
 
 !!! tip
 
-    - 上图中的蓝色文字可点击跳转
-    - 可参考[保姆式安装 DCE 5.0](../blogs/dce5-0328.md)
+    上图中的蓝色文字可点击跳转
 
 ## 商业版安装流程
 
