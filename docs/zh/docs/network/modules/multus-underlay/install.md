@@ -24,11 +24,11 @@
 
     安装 Multus 之前, 必须要先安装一种 CNI 作为默认CNI。注意: 保证选择的 Value 必须与集群目前安装的默认 CNI 保持一致。
 
-    !!! Note:
+    !!! note
 
-        如果当前通过 kubean 安装的集群，那么 value 为 calico 或者 cilium 中二选一。
-        或通过查看主机：`/etc/cni/net.d/` 路径，按照字典顺序第一个 CNI 配置文件的 `name` key 所对应的 Value 值就为默认 CNI。比如：
-
+        > 如果当前通过 kubean 安装的集群，那么 value 为 calico 或者 cilium 中二选一。
+        > 或通过查看主机：`/etc/cni/net.d/` 路径，按照字典顺序第一个 CNI 配置文件的 `name` key 所对应的 Value 值就为默认 CNI。比如：
+        
         ```shell
         root@master:~# ls /etc/cni/net.d/
         10-calico.conflist  calico-kubeconfig
@@ -38,12 +38,9 @@
           "cniVersion": "0.3.1",
         ...
         ```
-
-        `name` 的值如果为 `k8s-pod-network`，那么这里就应该选中 `k8s-pod-network`。
-
-        ![Default CNI](../../images/install2.png)
-         
-        如果当前集群是接入的第三方、calico 为 CNI 的集群, 那么这里应该选择为 `k8s-pod-network`. 同样, 也可以通过查看主机上`/etc/cni/net.d`文件确认。
+        > `name` 的值如果为 `k8s-pod-network`，那么这里就应该选中 `k8s-pod-network`。
+        > ![Default CNI](../../images/install2.png)        
+        > 如果当前集群是接入的第三方、calico 为 CNI 的集群, 那么这里应该选择为 `k8s-pod-network`. 同样, 也可以通过查看主机上`/etc/cni/net.d`文件确认。
 
 5. 配置目前集群 Service 和 Pod 的 CIDR:
 
