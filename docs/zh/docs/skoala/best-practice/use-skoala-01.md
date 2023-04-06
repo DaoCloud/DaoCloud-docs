@@ -55,7 +55,6 @@
         -Dspring.matrixRow=200 -Dmeter.port=8888
         -Dspring.cloud.nacos.discovery.enabled=true       # 修改，以启用 Nacos 服务注册发现
         -Dspring.cloud.nacos.config.enabled=true          # 修改，以启用 Nacos 配置管理能力
-        -Dspring.cloud.sentinel.enabled=false
         -Dspring.cloud.nacos.config.server-addr=nacos-test.skoala-test:8848           # 修改，以配置 Nacos 注册中心地址
         -Dspring.application.name=adservice-springcloud
         -Dspring.cloud.nacos.discovery.server-addr=nacos-test.skoala-test:8848        # 修改，以配置 Nacos 注册中心地址
@@ -66,11 +65,13 @@
         -Dspring.cloud.nacos.discovery.metadata.k8s_workload_name=adservice-springcloud
         -Dspring.cloud.nacos.discovery.metadata.k8s_service_name=adservice-springcloud
         -Dspring.cloud.nacos.discovery.metadata.k8s_pod_name=${HOSTNAME}
-        -Dspring.cloud.sentinel.enabled=false
-        -Dspring.cloud.sentinel.transport.dashboard=nacos-test-sentinel.skoala-test:8080
+        -Dspring.cloud.sentinel.enabled=false          # 修改，以启用 Sentinel
+        -Dspring.cloud.sentinel.transport.dashboard=nacos-test-sentinel.skoala-test:8080  # 修改，以配置 Sentinel 控制台地址
     ```
 
-3. 应用创建成功后，会显示在应用工作台的 Helm 应用列表。
+> 获取集群 ID、集群名称、命名空间名称的方法可参考: `kubectl get cluster <clusername> -o json | jq .metadata.uid`
+
+1. 应用创建成功后，会显示在应用工作台的 Helm 应用列表。
 
     ![image](../images/helmapplist.png)
 
@@ -83,7 +84,7 @@
 ```java
     -Dspring.cloud.nacos.discovery.enabled=false        # 启用 Nacos 服务注册发现
     -Dspring.cloud.nacos.config.enabled=false           # 启用 Nacos 配置管理能力
-    -Dspring.cloud.sentinel.enabled=false
+    -Dspring.cloud.sentinel.enabled=false               # 启用 Sentinel
     -Dspring.cloud.nacos.config.server-addr=nacos-test.skoala-test:8848           # 配置 Nacos 注册中心地址
     -Dspring.application.name=adservice-springcloud
     -Dspring.cloud.nacos.discovery.server-addr=nacos-test.skoala-test:8848        # 配置 Nacos 注册中心地址
