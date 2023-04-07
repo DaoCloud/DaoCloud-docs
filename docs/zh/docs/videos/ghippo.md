@@ -2,6 +2,20 @@
 
 > 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。
 
+<div class="grid cards" markdown>
+
+- :one: [创建用户并授权](#_2)
+- :two: [管理文件夹](#folder)
+- :three: [管理工作空间](#workspace)
+- :four: [资源限额](#_3)
+- :five: [对接 LDAP 用户和用户组](#ldap)
+- :six: [对接 OIDC 用户](#oidc)
+- :seven: [开启审计日志](#_4)
+- :eight: [关闭审计日志](#_5)
+- :nine: [外观定制](#_6)
+
+</div>
+
 ## 创建用户并授权
 
 参阅[创建用户并授权](../ghippo/user-guide/access-control/user.md)文档页面。

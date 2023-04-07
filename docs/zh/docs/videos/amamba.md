@@ -2,6 +2,16 @@
 
 > 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。
 
+<div class="grid cards" markdown>
+
+- :one: [流水线管理](#_2)
+- :two: [创建命名空间](#_3)
+- :three: [基于 Git 仓库创建微服务应用](#git)
+- :four: [基于 Argo CD 实现持续部署](#argo-cd)
+- :five: [基于 Argo Rollout 实现渐进式灰度发布](#argo-rollout)
+
+</div>
+
 ## 流水线管理
 
 参阅[流水线管理](../amamba/user-guide/pipeline/create/custom.md)文档页面。
