@@ -61,7 +61,7 @@
 <td>新增全局管理的自定义角色管理集群</td>
 <td>支持通过全局管理创建自定义角色来管理集群</td>
 <td>0.16.0</td>
-<td><a href="https://docs.daocloud.io/ghippo/user-guide/access-control/role/">角色和权限管理</a></td>
+<td><a href="https://docs.daocloud.io/ghippo/user-guide/access-control/custom-role/">角色和权限管理</a></td>
 </tr>
 </tbody>
 </table>

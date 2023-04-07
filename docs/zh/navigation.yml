@@ -123,6 +123,7 @@ nav:
           - 角色和权限管理:
               - ghippo/user-guide/access-control/role.md
               - 全局管理角色: ghippo/user-guide/access-control/global.md
+              - 自定义角色: ghippo/user-guide/access-control/custom-role.md
           - 身份提供商:
               - ghippo/user-guide/access-control/idprovider.md
               - LDAP: ghippo/user-guide/access-control/ldap.md
