@@ -2,6 +2,18 @@
 
 > 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。
 
+<div class="grid cards" markdown>
+
+- :one: [创建网格网关](#_2)
+- :two: [通过外部应用访问网格服务](#_3)
+- :three: [安全治理](#_4)
+- :four: [Istio 版本升级](#istio)
+- :five: [边车升级](#_5)
+- :six: [流量透传](#_6)
+- :seven: [多云网络互联](#_7)
+
+</div>
+
 ## 创建网格网关
 
 参阅[网格网关管理](../mspider/user-guide/gateway-instance/create.md)文档页面。
