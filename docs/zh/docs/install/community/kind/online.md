@@ -156,7 +156,7 @@ precheck pass..
         - kubectl ≥ 1.25.6
         - yq ≥ 4.31.1
 
-1. 在 kind 主机下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../../download/dce5.md)）。
+1. 在 kind 主机下载 dce5-installer 二进制文件。
 
     假定 VERSION 为 v0.5.0
 
