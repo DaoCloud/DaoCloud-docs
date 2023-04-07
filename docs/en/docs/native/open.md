@@ -183,6 +183,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support for automatic renewal of machine certificates provided by the Kubeadm control plane provider, the ability to publish and consume cluster API images from the new container image registry registry.k8s.io, allowing the creation of clusters without taints on control plane nodes , clusterctl can now manage IPAM and RuntimeExtension providers.
 
+- [Clusternet Multi-Cloud Multi-Cluster Management Project v0.15.0 Released (CNCF Project)](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.4.0)
+
+    Release features: move all controllers out of clusternet-hub into a new component called "clusternet-controller-manager"; add functional gate for multicluster service discovery; add unit tests for scheduler migration validation.
+
 - [Clusternet Distributed Cloud Native Multi-Cluster Management Project Selected for CNCF Sandbox Project](https://www.51cto.com/article/748691.html)
 
     On March 8, [Clusternet](https://github.com/clusternet/clusternet) was selected by the CNCF Foundation TOC Committee as a CNCF Sandbox project.
@@ -379,6 +383,11 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [HashiCorp Vault private information management tool 1.11 adds Kubernetes Secret engine](https://github.com/hashicorp/vault/blob/main/website/content/docs/secrets/kubernetes.mdx)
 
      The Kubernetes Secret engine can dynamically generate Kubernetes service account tokens, service accounts, role bindings, and roles. The created service account token has a configurable TTL value (Time To Live), when the lease expires, Vault will automatically delete the created object. For each lease, Vault creates a token connected to the defined service account, and the service account token is returned to the caller.
+
+- [Helm completes fuzzing test security audit](https://mp.weixin.qq.com/s/sMPjsKC6gy9VkhXzI2bvzw)
+
+    A total of 38 fuzzers were written for [this audit](https://github.com/helm/community/tree/main/security-audit/FUZZING_AUDIT_2022.pdf), covering key parts of chart processing, version storage, and repository discovery.
+    A total of 9 issues were found (8 fixed so far), including 4 null pointer reference issues, 4 out-of-memory issues, and 1 stack overflow issue.
 
 - [Helm Package Manager v3.10.0 release (CNCF project)](https://github.com/helm/helm/releases/tag/v3.10.0)
 
@@ -806,6 +815,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     [Narrows](https://github.com/vmware-tanzu/cloud-native-security-inspector) enables runtime security posture assessment of Kubernetes clusters and the workloads within them, finds misconfigurations in Kubernetes clusters, and Ability to aggregate, aggregate, and analyze scan reports and provide an open API; seamlessly integrate with Harbor and automatically sync images from external public image repositories to Harbor to generate security data.
 
+- [nerdctl Containerd command line tool v1.3.0 released](https://github.com/containerd/nerdctl/releases/tag/v1.3.0)
+
+    Release features: support for image signing and verification using notation projects, support for Port Windows devices, new [project maintainer's guide](https://github.com/containerd/nerdctl/blob/main/MAINTAINERS_GUIDE.md) officially available The new [project maintainer's guide](https://github.com/containerd/nerdctl/blob/main/MAINTAINERS_GUIDE.md) is now available, fixes for rootless mode operations that do not allow systemd-homed.
+
 - [nerdctl Containerd Command Line Tool v1.2.0](https://github.com/containerd/nerdctl/releases/tag/v1.2.0)
 
      This version features: experimental support for reading Kubernetes container logs, improved compilation error messages, allows running Host Process containers on Windows, adds Windows HyperV container mode.
@@ -1071,6 +1084,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     The main new features of this release: Traffic Manager supports team mode and single-user mode, adding the secret of pulling mirrors in Helm Chart, OSS Helm chart will be pushed to telepresence proprietary repository (formerly datawire Helm repository).
 
+- [Tetragon Security Observable and Runtime Enhancement Platform v0.9.0 Released](https://github.com/cilium/tetragon/releases/tag/v0.9.0)
+
+    Release features: add logging function for loading BPF programs, support container image signing with cosign, support basic Cgroups tracing function, support pprof http, gRPC support using unix socket.
+
 - [Tetragon: Isovalent open source eBPF-based security observability and runtime enhancement platform](https://isovalent.com/blog/post/2022-05-16-tetragon)
 
      [Tetragon](https://github.com/cilium/tetragon) provides fully transparent security observability capabilities based on eBPF and real-time runtime enhancement capabilities.
@@ -1081,6 +1098,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [ThreatMapper Cloud Native Security Observation Platform v1.4.0 release](https://github.com/deepfence/ThreatMapper/releases/tag/v1.4.0)
 
      The main new features of this version: the new function ThreatGraph can combine the network and other runtime environments to determine the priority of threat scanning results, support agentless cloud security situation management for cloud assets, and integrate cloud-native environment malicious program scanning tools [YaraHunter]( https://github.com/deepfence/YaraHunter).
+
+- [Trivy Container Vulnerability Scanning Tool v0.39.0 released (CNCF project)](https://github.com/aquasecurity/trivy/releases/tag/v0.39.0)
+
+    Version features: OCI artifact download support authorization function, support SBOM discovery in OCI referrer, support k8s parallel resource scanning, add pipeline for concurrent processing, add node tolerance option.
 
 - [Trivy container vulnerability scanner v0.35.0 release (CNCF project)](https://github.com/aquasecurity/trivy/releases/tag/v0.35.0)
 

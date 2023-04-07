@@ -25,6 +25,16 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     The Trusted Cloud Proprietary Cloud Assessment aims to assess the comprehensive level of proprietary cloud capabilities (including self-built and dedicated models), maturity (general), industry capabilities (financial), and special capabilities (compatibility) of the participating units.
     The hybrid cloud assessment evaluates the basic platform capabilities (including public cloud part, private cloud part, hyper-converged platform, and Cintron compatibility), special capabilities (security), application scenarios (data analysis, R&D operation), and comprehensive capabilities of the participating units.
 
+- [May 30 "Cloud Management Products and Services Atlas (2023)" officially launches the call for applications (5.30 application deadline)](https://mp.weixin.qq.com/s/gXGxUqTdO46US74gYrYEPw)
+  
+    The scope of the "Cloud Management Products and Services Atlas (2023)" collection includes two categories of solutions and products and services.
+    Among them, solutions are divided into industry solutions, intelligent application solutions and general solutions on the cloud; product services are divided into consulting planning, migration implementation, operation management, value-added development and optimization governance.
+
+- [May 12 2023 Trusted Edge Computing Innovation and Practice Cases and Industry Panorama Collection Launch (5.12 Filing Deadline)](https://mp.weixin.qq.com/s/KM2hnAoJ1KXJ6J0eovPzcw)
+  
+    The scope of Trusted Edge Computing Technology Innovation Cases includes full-stack technology areas such as IoT edge computing, edge cloud, edge native, edge AI, edge data, management scheduling, edge-cloud collaboration, and performance/stability.
+    The scope of best practice cases includes edge computing application construction practices in various industries such as communication, government, and finance. The scope of the panorama includes edge software and solutions, edge applications, edge open source, industry services and other edge industry ecology.
+
 - [May 8-9 cdCon + GitOpsCon North America 2023 Conference Agenda Released](https://events.linuxfoundation.org/cdcon-gitopscon/program/schedule/)
   
     This session will feature 60+ presentations sharing topics including but not limited to
@@ -62,9 +72,19 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     The second annual Open Source Cloud Native Developer Day, co-sponsored by Microsoft and Intel, will explore four key topics: examples of cloud native practices at scale, the latest open source cloud native technologies, the secure software supply chain, and GitOps.
     The event is expected to take place in Shanghai (April 8) and Beijing (April 22).
 
+- [April 20 China Academy of Information and Communications Technology launches the 2023 Cloud Native Excellence Case Call (4.20 filing deadline)](https://mp.weixin.qq.com/s/K3awjJQPCnE30bTEER-vcg)
+  
+    There are four major categories of cloud-native excellent cases: excellent cases of cloud-native applications, cloud-native technology innovation solutions and products, excellent cases of cloud-native security, and new enterprises in cloud-native field.
+    Cloud service providers can jointly declare with their A-side customers, with the application cases of A-side customers as the main participants and cloud service providers as the technology provider as the joint declaration unit.
+
 - [April 15-16 Global Open Source Technology Summit GOTC 2023 will be held in April in Shanghai, and the call for proposal is now open](https://gotc2023.oschina.net/)
   
     The Global Open Source Technology Summit is co-sponsored by Shanghai Pudong Software Park, Linux Foundation Asia Pacific, and Open Source China. The conference focuses on hot topics such as cloud native, metaverse, eBPF, Web3.0, open source governance, open source education and training, front-end, infrastructure software, AI, IoT, etc.
+
+- [April 15 Microservices x Containers Open Source Developer Meetup to be held in Chengdu](https://mp.weixin.qq.com/s/GaluU-zRXKrtVvtR9H-hWQ)
+  
+    This Microservices x Containers Open Source Developer Meetup will focus on technology sharing and enterprise practices of the current hot open source projects in the cloud native area.
+    The core maintainers of Dubbo, KubeVela, OpenSergo, OpenYurt, Seata, Higress and other cloud-native open source projects will be invited to share cutting-edge technologies, recent community developments, architecture practices and enterprise application cases.
 
 - [April 15 Deadline: Open Call for Topics for 2023 Open Atom Global Open Source Summit](https://mp.weixin.qq.com/s/Z1W7x2-d7eTcj2jVHhiDUw)
   
@@ -90,6 +110,12 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     The Meetup includes lightning talks (10 min) and single/duo talks (40 min).
     Topics must be related to open source and cloud-native ecosystem, and topics related to KubeSphere are more than welcome.
+
+- [April 6 "Financial e-Commerce" magazine released the "Banking Industry Private Cloud Construction Development Research Report"](https://mp.weixin.qq.com/s/QHyDhH54LP5FeUs-Fr-jCw)
+  
+    The report shows that among the 129 banking financial institutions participating in the survey, 53.5% adopt private clouds and 28.7% adopt container clouds.
+    The financial infrastructure construction is crossing three stages of virtualization, private cloud and container cloud.
+    The ability to smoothly upgrade and "one cloud with multiple cores", and the ability to support the construction of Cintron platform and application migration are the top two high-value technologies that receive the most attention in private cloud construction.
 
 - [April 6 "2023 Cloud Cost Optimization Capacity Building - Enterprise Sharing Session" will be held in Beijing](https://mp.weixin.qq.com/s/ZD8CTtFsCkxVzVcISai60w)
   

@@ -183,6 +183,10 @@
 
     该版本主要新特性：支持自动更新由Kubeadm 控制平面提供商提供的机器证书、可以从新的容器镜像注册中心 registry.k8s.io 发布和消费集群 API 镜像、允许在控制平面节点上创建没有污点的集群、clusterctl 现在可以管理 IPAM 和 RuntimeExtension 提供者。
 
+- [Clusternet 多云多集群管理项目 v0.15.0 发布（CNCF 项目）](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.4.0)
+
+    版本特性：将所有控制器从 clusternet-hub 中移出，放入一个名为 “clusternet-controller-manager”的新组件中；增加多集群服务发现的功能门；为调度器迁移验证添加单元测试。
+
 - [Clusternet 分布式云原生多集群管理项目入选 CNCF 沙箱项目](https://www.51cto.com/article/748691.html)
 
     3 月 8 日，[Clusternet](https://github.com/clusternet/clusternet) 通过 CNCF 基金会 TOC 委员会的评定，成功入选 CNCF 沙箱项目。
@@ -383,6 +387,11 @@
 - [HashiCorp Vault 私密信息管理工具 1.11 新增 Kubernetes Secret 引擎](https://github.com/hashicorp/vault/blob/main/website/content/docs/secrets/kubernetes.mdx)  
 
     Kubernetes Secret 引擎可以动态生成 Kubernetes 服务账号令牌、服务账号、角色绑定和角色。创建的服务账号令牌有一个可配置的 TTL 值（Time To Live），当 lease 到期时，Vault 会自动删除创建的对象。对于每一个 lease，Vault 会创建一个连接到定义服务账号的令牌，服务账号令牌会返回给调用者。
+
+- [Helm 完成模糊测试安全审计](https://mp.weixin.qq.com/s/sMPjsKC6gy9VkhXzI2bvzw)
+
+    [本次审计](https://github.com/helm/community/tree/main/security-audit/FUZZING_AUDIT_2022.pdf)共编写了 38 个模糊器，测试范围覆盖 chart 处理、版本存储和仓库发现等关键部分。
+    共发现 9 个问题（目前已修复 8 个），其中，4 个 空指针引用问题，4 个内存不足问题，1 个栈溢出问题。
 
 - [Helm 包管理工具 v3.10.0 发布（CNCF 项目）](https://github.com/helm/helm/releases/tag/v3.10.0)  
 
@@ -810,6 +819,10 @@
 
     [Narrows](https://github.com/vmware-tanzu/cloud-native-security-inspector) 能够对 Kubernetes 集群和其中的工作负载进行运行时的安全态势评估，发现 Kubernetes 集群的错误配置，终止工作负载运行时中的攻击；对扫描报告进行汇总、聚合和分析并提供开放的API接口；与 Harbor 无缝集成，对于外部公共镜像仓库的镜像，可以自动同步到 Harbor 中，以生成安全数据。
 
+- [nerdctl Containerd 命令行工具 v1.3.0 发布](https://github.com/containerd/nerdctl/releases/tag/v1.3.0)
+
+    版本特性：支持使用 notation 项目进行镜像签名和验证、支持 Port Windows 设备、新的[项目维护者指南](https://github.com/containerd/nerdctl/blob/main/MAINTAINERS_GUIDE.md)正式可用、修复不允许使用 systemd-homed 的无根模式的操作。
+
 - [nerdctl Containerd 命令行工具 v1.2.0](https://github.com/containerd/nerdctl/releases/tag/v1.2.0)
 
     该版本特性：实验性支持读取 Kubernetes 容器日志、改进编译错误信息、允许在 Windows 上运行 Host Process 容器、添加 Windows HyperV 容器模式。
@@ -1075,6 +1088,10 @@
 
     该版本主要新特性：流量管理器支持被团队模式和单用户模式、在 Helm Chart 中添加拉取镜像的 secret、OSS Helm chart 将被推送到 telepresence 专有仓库（原先为 datawire Helm 仓库）。
 
+- [Tetragon 安全可观测和运行时增强平台 v0.9.0 发布](https://github.com/cilium/tetragon/releases/tag/v0.9.0)
+
+    版本特性：增加加载 BPF 程序的日志功能、支持使用 cosign 进行容器镜像签名、支持基本的 Cgroups 跟踪功能、支持 pprof http、gRPC 支持使用 unix socket。
+
 - [Tetragon：Isovalent 开源基于 eBPF 的安全可观测性和运行时增强平台](https://isovalent.com/blog/post/2022-05-16-tetragon)  
 
     [Tetragon](https://github.com/cilium/tetragon) 提供了基于 eBPF 的完全透明的安全可观测性能力以及实时的运行时增强能力。
@@ -1085,6 +1102,10 @@
 - [ThreatMapper 云原生安全观测平台 v1.4.0 发布](https://github.com/deepfence/ThreatMapper/releases/tag/v1.4.0)  
 
     该版本主要新特性：新功能 ThreatGraph 能够结合网络等运行时环境来确定威胁扫描结果的优先级、支持对云资产进行无代理的云安全态势管理、集成云原生环境恶意程序扫描工具 [YaraHunter](https://github.com/deepfence/YaraHunter)。
+
+- [Trivy 容器漏洞扫描工具 v0.39.0 发布（CNCF 项目）](https://github.com/aquasecurity/trivy/releases/tag/v0.39.0)
+
+    版本特性：OCI 工件下载支持授权功能、支持在 OCI referrer 中发现 SBOM、支持 k8s 并行资源扫描、增加并发处理的 pipeline、增加节点容忍选项。
 
 - [Trivy 容器漏洞扫描工具 v0.35.0 发布（CNCF 项目）](https://github.com/aquasecurity/trivy/releases/tag/v0.35.0)
 
