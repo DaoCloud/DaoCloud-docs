@@ -204,7 +204,7 @@ last_updated:
     sudo kubeadm init --kubernetes-version=v1.25.8 --image-repository=k8s-gcr.m.daocloud.io --pod-network-cidr=192.168.0.0/16
     ```
 
-    经过十几分钟，你能看到打印成功的信息如下（请记住最后打印出的 `kubeadm join` 命令，后续会用到 🔥）
+    经过十几分钟，你能看到打印成功的信息如下（请记住最后打印出的 `kubeadm join` 命令和相应token，后续会用到。 🔥）
 
     ```none
     Your Kubernetes control-plane has initialized successfully!
@@ -226,7 +226,7 @@ last_updated:
     --discovery-token-ca-cert-hash sha256:cb1946b96502cbd2826c52959d0400b6e214e06cc8462cdd13c1cb1dc6aa8155
     ```
 
-1. 配置 kubeconfig 文件
+1. 配置 kubeconfig 文件， 以便用Kubectl更方便管理集群
 
     ```bash
     mkdir -p $HOME/.kube
@@ -237,25 +237,26 @@ last_updated:
 
 1. 安装 CNI，以 calico 为例子
 
-    先安装 calico-operator
+    【请以官方安装方案为准。 参考：[官方calico安装文档](https://docs.tigera.io/calico/latest/getting-started/kubernetes/self-managed-onprem/onpremises#install-calico)】
+
+    a) 先安装 calico-operator
 
     ```bash
     kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/tigera-operator.yaml
     ```
 
-    再下发经过配置过的 CR
+    b)再下发经过修改/配置过的 CR
 
     ```bash
     # 下载配置文件模板
     curl -LO https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/custom-resources.yaml
-    grep cidr custom-resources.yaml
-
-    # 确认calico配置文件里的CIDR和kubeadm init时的CIDR是一致的！！！否则请修改!!!
+    grep cidr custom-resources.yaml #打印出默认的CIDR
+    # 请确认：calico配置文件里的CIDR 和 之前kubeadm init 时的CIDR是一致的！！！否则请修改!!!⚠️ 
     vim custom-resources.yaml
     kubectl apply -f custom-resources.yaml
     ```
 
-    等待部署成功
+    c)等待部署成功
 
     ```bash
     kubectl get po -n calico-system -w # 等待 pod 都 Running
