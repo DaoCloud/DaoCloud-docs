@@ -78,7 +78,7 @@ ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置�
 1. 执行以下命令开始安装 DCE 5.0，安装器二进制文件位置为 `offline/dce5-installer`
 
     ```shell
-    ./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml  -p ./offline/
+    ./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml
     ```
 
     !!! note
@@ -87,7 +87,6 @@ ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置�
     
         - -c 来指定集群配置文件，必选
         - -m 参数指定 manifest 文件，
-        - -p 指定离线镜像文件
         - -z 最小化安装
         - -d 开启 debug 模式
         - 更多命令请使用 --help 查询
