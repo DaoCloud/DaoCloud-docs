@@ -79,7 +79,7 @@ spec:
     type: builtin  # (1)
 ```
 
-1. 如果省略或为空采用官方的服务，有 2 个选项：builtin 或 external
+1. official-service(if omit or empty), builtin or external
 
 ### 第 3 步：配置 mainfest.yaml（可选）
 
