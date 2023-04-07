@@ -31,8 +31,8 @@
 1. 在 K8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../../download/dce5.md)）。
 
     ```shell
-    # 假定 VERSION 为 v0.5.0
-    export VERSION=v0.5.0
+    # 假定 VERSION 为 v0.6.0
+    export VERSION=v0.6.0
     curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```
@@ -74,9 +74,12 @@
 
     !!! note
 
+        - 参数 -p 指定解压离线包的 offline 目录。
+        - 有关 clusterConfig.yaml 文件设置，请参考[在线安装第 2 步](online.md#_2)。
         - `-z` 最小化安装
         - `-c` 指定集群配置文件。使用 NodePort 暴露控制台时不需要指定 `-c`。
         - `-d` 开启 debug 模式
+        - `--serial` 指定后所有安装任务串行执行
 
 4. 安装完成后，命令行会提示安装成功。恭喜您！
    现在可以通过屏幕提示的 URL 使用 **默认的账号和密码（admin/changeme）** 探索全新的 DCE 5.0 啦！

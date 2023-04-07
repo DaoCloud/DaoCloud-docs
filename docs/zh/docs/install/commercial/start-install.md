@@ -21,19 +21,19 @@ hide:
 
 | CPU 架构 | 版本   | 下载地址                                                     |
 | :------- | :----- | :----------------------------------------------------------- |
-| AMD64    | v0.5.0 | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.5.0-amd64.tar |
-| ARM64    | v0.5.0 | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.5.0-arm64.tar |
+| AMD64    | v0.6.0 | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.0-amd64.tar |
+| ARM64    | v0.6.0 | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.0-arm64.tar |
 
 下载完毕后解压离线包：
 
 ```bash
 # 以 amd64 架构离线包为例
-tar -xvf offline-v0.5.0-amd64.tar
+tar -xvf offline-v0.6.0-amd64.tar
 ```
 
 #### addon 离线包
 
-安装器从 v0.5.0 版本，支持了 addon 的离线包导入能力，如果需要支持 addon 中所有的 helm chart 离线化。
+安装器从 v0.5.0 版本，支持了 addon 的离线包导入能力，如果需要支持 addon 中所有的 helm chart 离线化。可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
 
 首先需要事先下载好离线包，并在[集群配置文件（clusterConfig.yaml）](./cluster-config.md)中定义 `addonOfflinePackagePath`。
 
@@ -41,10 +41,6 @@ tar -xvf offline-v0.5.0-amd64.tar
 | :------- | :----- | :----------------------------------------------------------- |
 | AMD64    | v0.5.2 | https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.5.2-amd64.tar.gz |
 | ARM64    | v0.5.2 | https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.5.2-arm64.tar.gz |
-
-!!! note
-
-    目前 addon 的离线包最新版本为 v0.5.2，安装器 v0.5.0 支持 addon 的 v0.5.X 版本。
 
 #### ISO 离线包
 
@@ -60,14 +56,14 @@ ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置�
 
 安装器从 v0.5.0 版本，需要提供操作系统的 osPackage 离线包，并在[集群配置文件（clusterConfig.yaml）](./cluster-config.md)中定义 `osPackagePath`。
 
-其中 [Kubean](https://github.com/kubean-io/kubean) 提供了不同操作系统的osPackage 离线包，可以前往 https://github.com/kubean-io/kubean/releases/tag/v0.4.4 查看。
+其中 [Kubean](https://github.com/kubean-io/kubean) 提供了不同操作系统的osPackage 离线包，可以前往 https://github.com/kubean-io/kubean/releases/tag/v0.4.8 查看。
 
 | 操作系统版本                                        | 下载地址                                                     |
 | :-------------------------------------------------- | :----------------------------------------------------------- |
-| Centos 7                                            | https://github.com/kubean-io/kubean/releases/download/v0.4.4/os-pkgs-centos7-v0.4.4.tar.gz |
-| Redhat 8                                            | https://github.com/kubean-io/kubean/releases/download/v0.4.4/os-pkgs-redhat8-v0.4.4.tar.gz |
-| Redhat 7                                            | https://github.com/kubean-io/kubean/releases/download/v0.4.4/os-pkgs-redhat7-v0.4.4.tar.gz |
-| Kylin Linux Advanced Server release V10 (Sword) SP2 | https://github.com/kubean-io/kubean/releases/download/v0.4.4/os-pkgs-kylinv10-v0.4.4.tar.gz |
+| Centos 7                                            | https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.8/os-pkgs-centos7-v0.4.8.tar.gz |
+| Redhat 8                                            | https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.8/os-pkgs-redhat8-v0.4.8.tar.gz |
+| Redhat 7                                            | https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.8/os-pkgs-redhat7-v0.4.8.tar.gz |
+| Kylin Linux Advanced Server release V10 (Sword) SP2 | https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.8/os-pkgs-kylinv10-v0.4.8.tar.gz |
 
 ### 第 2 步：配置集群配置文件
 
@@ -88,7 +84,7 @@ ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置�
     !!! note
 
         安装器脚本命令说明：
-
+    
         - -c 来指定集群配置文件，必选
         - -m 参数指定 manifest 文件，
         - -p 指定离线镜像文件
