@@ -155,6 +155,11 @@
 
 ### D, E
 
+- [D2iQ 推出专为政府部门设计的 Kubernetes 平台 DKP Gov](https://d2iq.com/blog/dkp-gov-kubernetes-management-platform)
+
+    DKP Gov 基于 D2iQ Kubernetes 平台 (DKP)创建，旨在满足政府、军事和民用机构对创新技术的需求。
+    DKP Gov 支持物理和逻辑上隔离的节点，支持集中式多云平台、多节点 fleet 管理，符合联邦信息处理标准 (FIPS) 140-2 认证等。
+
 - [D2iQ Kubernetes Platform v2.4.0 发布](https://docs.d2iq.com/dkp/2.4/dkp-2-4-0-features-and-enhancements)
 
     该版本主要新特性：支持在本地和物理隔离环境中运行 GPU 节点、支持红帽企业 Linux 系统、Rook Ceph 替代 MinIO 成为平台的默认存储、集成 Trivy 等第三方扫描工具。
@@ -384,6 +389,10 @@
 
 ### Q
 
+- [青云企业云平台 v6.1 版本正式发布](https://mp.weixin.qq.com/s/tNx1neUN5B9auBqp_Fpy3A)
+
+    更新内容；新增监控巡检功能；新增企业空间功能，涵盖组织管理、用户管理、配额管理、资源管理、流程审批等空间管理模块；新增对第三方存储的支持；提供 VMware vSphere 纳管工具；QKE 容器引擎支持裸金属服务器作为集群 Worker。
+
 - [青云发布云原生虚拟化平台 KSV 1.6](https://mp.weixin.qq.com/s/XxOWJdLRHS2s_Ev_N9qEgw)
 
     版本特性：统一管理与展示所有计算、存储和网络资源；支持 KSV 和 KubeSphere 融合部署，实现虚拟机和容器共存共管；基于 KubeVirt，支持以虚拟资源池的方式交付 CPU、存储等物理资源，并实现统一的管理、分配及调度，支持同时创建相互隔离的虚拟机环境；集成 Kube-OVN，实现了 Underlay & Overlay 的网络。
@@ -554,7 +563,12 @@
     红盾基于云原生底座将安全能力整合至统一的安全平台，面向云原生业务应用安全、网络安全、数据安全、云原生安全 4 大领域，打造一体化云安全可信运营体系和零信任架构。
     其核心产品包括 Web 应用防火墙、DDoS 高防、网站安全监测、企业安全访问、天翼云数据安全管理平台等。
 
-### V
+### U, V
+
+- [Upbound 推出基于 Crossplane 的托管型控制平面管理服务（MCP）](https://blog.upbound.io/upbound-general-availability/)
+
+    用户可以可以通过 MCP 扩展到数千个 CRD，使用控制平面来管理其所需的所有云服务资源，从而允许用户运行数十个甚至数百个控制平面来为不同的环境、团队、业务和客户服务。
+    此外，MCP 与 Git 无缝集成，提供用于管理和操作控制平面以及所有资源的控制台，支持安装在任何 Kubernetes 集群中，并支持在 GitOps 流程中管理基础设施和应用程序资源。
 
 - [Veeam 发布 Kubernetes 数据管理平台 Kasten K10 v5.5](https://www.kasten.io/kubernetes/resources/blog/scaling-simplicity-with-kasten-k10-v5.5)
 
@@ -564,6 +578,10 @@
 
     TLS Protect for Kubernetes 是 Venafi 机器身份管理平台 Control Plane for Machine Identities 的一部分，
     帮助安全和平台团队在多云和多集群 Kubernetes 环境中管理云原生机器身份，如 TLS、mTLS 和 SPIFFE，增强机器身份管理的可观测性、控制和自动化。
+
+- [VMware Tanzu 发布 Kubernetes DevOps 平台 VMware Tanzu Application Platform 1.5](https://tanzu.vmware.com/content/blog/tanzu-application-platform-1-5-ga)
+
+    更新内容：完成支持 GitOps 模式的 Namespace Provisioner；平台工程师可以使用私有 Git 仓库来引用模板化的资源；支持基于 GitOps 的安装流程；新增面板用于显示集群中工作负载的详细信息；新增 External Secrets Operator；支持分布式 API 网关 Spring Cloud Gateway for Kubernetes。
 
 - [VMware Tanzu 服务网格方案 Tanzu Service Mesh 3.0.3 发布](https://docs.vmware.com/en/Tanzu/services/rn/vmware-tanzu-service-mesh-global-controller-release-notes/index.html#Past%20Tanzu%20Service%20Mesh%20Releases)
 

@@ -155,6 +155,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### D, E
 
+- [D2iQ Launches DKP Gov, a Kubernetes Platform Designed for the Government Sector](https://d2iq.com/blog/dkp-gov-kubernetes-management-platform)
+
+    DKP Gov is based on the D2iQ Kubernetes Platform (DKP), created to meet the needs of government, military, and civilian agencies for innovative technology.
+    DKP Gov supports physically and logically isolated nodes, a centralized multi-cloud platform, multi-node fleet management, Federal Information Processing Standard (FIPS) 140-2 certification, and more.
+
 - [D2iQ Kubernetes Platform v2.4.0 released](https://docs.d2iq.com/dkp/2.4/dkp-2-4-0-features-and-enhancements)
 
      The main new features of this version: support for running GPU nodes in a local and physically isolated environment, support for Red Hat Enterprise Linux systems, Rook Ceph replaces MinIO as the platform's default storage, and integrates third-party scanning tools such as Trivy.
@@ -378,6 +383,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### Q
 
+- [QingCloud Enterprise Cloud Platform v6.1 version officially released](https://mp.weixin.qq.com/s/tNx1neUN5B9auBqp_Fpy3A)
+
+    Updates; New monitoring patrol function; New enterprise space function, covering organization management, user management, quota management, resource management, process approval and other space management modules; New support for third-party storage; Provides VMware vSphere nano-management tools; QKE container engine supports bare metal servers as cluster workers.
+
 - [QingCloud releases KubeSphere Enterprise Edition 3.3, a distributed multi-tenant cloud-native operating system](https://mp.weixin.qq.com/s/ZuiY-la34DvHW5bQdc9q7Q)
 
      Version features: New observable center to aggregate and synchronize data scattered across clusters; Refactored cluster monitoring page to focus on resource allocation; Optimized tenant monitoring to support displaying tenant quota settings, etc.; New support for Spring Cloud, a microservices framework; Integrated Argo CD to support GitOps.
@@ -545,7 +554,12 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Traefik Hub 1.0 allows users to quickly and securely publish Kubernetes or Docker containers using Traefik or Nginx. Traefik Hub provides the centralized control plane needed to network Kubernetes clusters without deploying container sidecars to run networking software. It supports container networking through secure encrypted tunnels and direct private connections, adds access control to services through JWT or OIDC, realizes scale automation through GitOps, and is equipped with workspaces to promote cross-team collaboration.
 
-### V
+### U, V
+
+- [Upbound Launches Managed Control Plane Management Service (MCP) based on Crossplane](https://blog.upbound.io/upbound-general-availability/)
+
+    With MCP, users can scale to thousands of CRDs and use control planes to manage all the cloud service resources they need, allowing them to run dozens or even hundreds of control planes to serve different environments, teams, businesses, and clients.
+    In addition, MCP integrates seamlessly with Git, providing a console for managing and manipulating control planes and all resources, support for installation in any Kubernetes cluster, and support for managing infrastructure and application resources in a GitOps process.
 
 - [Veeam Releases Kasten K10 v5.5, Kubernetes Data Management Platform](https://www.kasten.io/kubernetes/resources/blog/scaling-simplicity-with-kasten-k10-v5.5)
 
@@ -555,6 +569,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      TLS Protect for Kubernetes is part of Control Plane for Machine Identities, Venafi's platform for machine identity management.
      Helps security and platform teams manage cloud-native machine identities such as TLS, mTLS, and SPIFFE in multi-cloud and multi-cluster Kubernetes environments, enhancing the observability, control, and automation of machine identity management.
+
+- [VMware Tanzu Releases Kubernetes DevOps Platform VMware Tanzu Application Platform 1.5](https://tanzu.vmware.com/content/blog/tanzu-application- platform-1-5-ga)
+
+    Updates: Completed Namespace Provisioner with GitOps mode support; Platform engineers can use private Git repositories to reference templated resources; Support for GitOps-based installation process; New panel to display details of workloads in a cluster; New External Secrets Operator; Support for Spring Cloud Gateway for Kubernetes, a distributed API gateway.
 
 - [VMware Tanzu Service Mesh 3.0.3, a Service Mesh solution, was released](https://docs.vmware.com/en/Tanzu/services/rn/vmware-tanzu-service-mesh-global-controller-release-notes/index.html#Past%20Tanzu%20Service%20Mesh%20Releases)
 
