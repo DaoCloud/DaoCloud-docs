@@ -3,7 +3,7 @@
 此 YAML 文件包含了集群的各项配置字段，安装之前必须先配置此文件。
 该文件将定义部署模式、集群节点信息等关键参数。默认位于 `offline/sample/` 目录。
 
-v0.6.0 版本对配置文件的结构进行了优化，相对之前更加清晰，易读。
+v0.6.0 版本对配置文件的结构进行了优化，相对之前更加清晰易读。
 
 ## ClusterConfig 示例
 
@@ -16,21 +16,21 @@ metadata:
 spec:
   clusterName: my-cluster
    
-  #火种节点的域名或IP，默认解析为火种节点默认网关所在网卡的IP；可手动填入IP或域名，若为域名，如果检测到无法解析，将自动建立此域名和火种节点默认IP的映射
-  #bootstrapNode: auto
+  # 火种节点的域名或IP，默认解析为火种节点默认网关所在网卡的IP；可手动填入IP或域名，若为域名，如果检测到无法解析，将自动建立此域名和火种节点默认IP的映射
+  # bootstrapNode: auto
  
   loadBalancer:
  
     # NodePort(default), metallb, cloudLB (Cloud Controller)
     type: metallb
     istioGatewayVip: xx.xx.xx.xx/32 # 当 loadBalancer.type 是 metallb 时必填，为 DCE 提供 UI 和 OpenAPI 访问权限
-    insightVip: xx.xx.xx.xx/32 # 别丢弃/32, 当 loadBalancer.type 是 metallb 时必填，用作 GLobal 集群的 Insight 数据采集入口，子集群的 insight-agent 可以向这个 VIP 报告数据
+    insightVip: xx.xx.xx.xx/32 # 别丢弃 /32，当 loadBalancer.type 是 metallb 时必填，用作 global 集群的 Insight 数据采集入口，子集群的 insight-agent 可以向这个 VIP 报告数据
  
-  # # 指定 ssh 私钥，定义后无需再定义节点的 ansibleUser、ansiblePass
+  # 指定 ssh 私钥，定义后无需再定义节点的 ansibleUser、ansiblePass
   # privateKeyPath: /root/.ssh/id_rsa_sample
  
   masterNodes:
-    - nodeName: "g-master1" # Node Name will override the hostName, should align with RFC1123 stsandard
+    - nodeName: "g-master1" # nodeName 将覆盖 hostName，应符合 RFC1123 标准
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
@@ -47,7 +47,7 @@ spec:
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
-      nodeTaints:                       # for 7 node mode: at least 3 worker nodes should carry below taint(ES-Only nodes)
+      nodeTaints:                       # 对于 7 节点模式：至少 3 个 worker 节点应打污点（仅 ES 节点）
        - "node.daocloud.io/es-only=true:NoSchedule"
     - nodeName: "g-worker2"
       ip: xx.xx.xx.xx
@@ -62,10 +62,10 @@ spec:
       nodeTaints:
        - "node.daocloud.io/es-only=true:NoSchedule"
  
-  #ntpServer:
-  #  - 0.pool.ntp.org
-  #  - ntp1.aliyun.com
-  #  - ntp.ntsc.ac.cn
+  # ntpServer:
+    # - 0.pool.ntp.org
+    # - ntp1.aliyun.com
+    # - ntp.ntsc.ac.cn
   
   fullPackagePath: "/root/offline" # 解压后的离线包的路径，离线模式下该字段必填
   
@@ -76,16 +76,16 @@ spec:
     isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
     osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
  
-    #type: external
+    # type: external
     # Optional only if external repo already have full required resources
-    #isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
+    # isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
     # Optional only if external repo already have full required resources
-    #osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
+    # osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
     # `centos` as CentOS, RedHat,kylin AlmaLinux or Fedora
     # `debian` as Debian
     # `ubuntu` as Ubuntu
-    #externalRepoType: centos
-    #externalRepoURLs: ['https://extertal-repo.daocloud.io/centos/\$releasever/os/\$basearch/']
+    # externalRepoType: centos
+    # externalRepoURLs: ['https://extertal-repo.daocloud.io/centos/\$releasever/os/\$basearch/']
  
   imagesAndCharts: # 镜像仓库和 Chart仓库源
  
@@ -93,64 +93,64 @@ spec:
  
     type: builtin
  
-    #type: external
+    # type: external
     # IP or domain name
-    #externalImageRepo: https://external-registry.daocloud.io
+    # externalImageRepo: https://external-registry.daocloud.io
     # Set user and password. Optional
-    #externalImageRepoUsername: admin
-    #externalImageRepoPassword: Harbor12345
+    # externalImageRepoUsername: admin
+    # externalImageRepoPassword: Harbor12345
     # chartmuseum or harbor
-    #externalChartRepoType: chartmuseum
+    # externalChartRepoType: chartmuseum
     # IP or domain name
-    #externalChartRepo: https://external-charts.daocloud.io:8081
+    # externalChartRepo: https://external-charts.daocloud.io:8081
     # Set user and password. Optional
-    #externalChartRepoUsername: rootuser
-    #externalChartRepoPassword: rootpass123
+    # externalChartRepoUsername: rootuser
+    # externalChartRepoPassword: rootpass123
  
   addonPackage: # 应用商店 addon 包，定义后会对 addon 进行离线化
-    #path: "/root/addon-offline-full-package-v0.4.8-amd64.tar.gz"
+    # path: "/root/addon-offline-full-package-v0.4.8-amd64.tar.gz"
    
-binaries: # 二进制可执行文件
+  binaries: # 二进制可执行文件
  
     # official-service(default), builtin
     type: builtin
  
-    #type: external
+    # type: external
     # IP or domain name
-    #externalRepository: https://external-binaries.daocloud.io:9000/kubean
+    # externalRepository: https://external-binaries.daocloud.io:9000/kubean
  
   # Examples as below. More refer to kubespray options setting documentations.
-  #kubeanConfig: |-
-  #  bin_dir: /usr/local/bin
-  #  http_proxy: ""
-  #  https_proxy: ""
-  #  upstream_dns_servers:
-  #    - 8.8.8.8
-  #    - 8.8.4.4
+  # kubeanConfig: |-
+  # bin_dir: /usr/local/bin
+  # http_proxy: ""
+  # https_proxy: ""
+  # upstream_dns_servers:
+  #   - 8.8.8.8
+  #   - 8.8.4.4
  
   # k8sVersion only take effect in online mode, don't set it in offline mode.
   # Unless to install a non-latest k8s version with offline pkg in place.
-  #k8sVersion: v1.25.4
-  #auditConfig:
+  # k8sVersion: v1.25.4
+  # auditConfig:
   #  logPath: /var/log/audit/kube-apiserver-audit.log
   #  logHostPath: /var/log/kubernetes/audit
-  #  #policyFile: /etc/kubernetes/audit-policy/apiserver-audit-policy.yaml
-  #  #logMaxAge: 30
-  #  #logMaxBackups: 10
-  #  #logMaxSize: 100
-  #  #policyCustomRules: >
-  #  #  - level: None
-  #  #    users: []
-  #  #    verbs: []
-  #  #    resources: []
-  #network:
+  #  policyFile: /etc/kubernetes/audit-policy/apiserver-audit-policy.yaml
+  #  logMaxAge: 30
+  #  logMaxBackups: 10
+  #  logMaxSize: 100
+  #  policyCustomRules: >
+  #    - level: None
+  #      users: []
+  #      verbs: []
+  #      resources: []
+  # network:
   #  cni: calico
   #  clusterCIDR: 10.233.64.0/18
   #  serviceCIDR: 10.233.0.0/18
-  #cri:
+  # cri:
   #  criProvider: containerd
-  #  # criVersion only take effect in online mode, don't set it in offline mode
-  #  #criVersion: 1.6.8
+  #  criVersion only take effect in online mode, don't set it in offline mode
+  #  criVersion: 1.6.8
 ```
 
 ## 关键字段
@@ -204,7 +204,7 @@ metadata:
 spec:
   clusterName: my-cluster
   masterNodes:
-    # Node Name will override the hostName, should align with RFC1123 standard
+    # nodeName 将覆盖 hostName，应符合 RFC1123 标准
     - nodeName: "g-master1"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
@@ -218,7 +218,7 @@ spec:
     osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
   imagesAndCharts:
     # official-service(if omit or empty), builtin or external
-    # Not Support External S3 so far...... FIXME
+    # 目前还不支持 External S3 ...... FIXME
     type: builtin
   addonPackage:
     path: "/root/addon-offline-full-package-v0.4.8-amd64.tar.gz"
@@ -237,7 +237,7 @@ metadata:
 spec:
   clusterName: my-cluster
   masterNodes:
-    # Node Name will override the hostName, should align with RFC1123 standard
+    # nodeName 将覆盖 hostName，应符合 RFC1123 标准
     - nodeName: "g-master1"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
@@ -292,7 +292,7 @@ metadata:
 spec:
   clusterName: my-cluster
   masterNodes:
-    # Node Name will override the hostName, should align with RFC1123 standard
+    # nodeName 将覆盖 hostName，应符合 RFC1123 标准
     - nodeName: "g-master1"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
@@ -302,7 +302,7 @@ spec:
 
 ## 通过命令行生成 clusterConfig 配置文件模板
 
-### 全模式 1节点模式
+### 全模式 1 节点模式
 
 ``` bash
 # 官方在线:
@@ -319,10 +319,9 @@ spec:
 ./dce5-installer generate-config --install-mode=cluster-create --master=1 --access-type=external
 # 扩展离线简化版：
 ./dce5-installer generate-config --master=1 --access-type=external
-
 ```
- 
-### 全模式 4节点模式
+
+### 全模式 4 节点模式
 
 ``` bash
 # 官方在线:
@@ -359,7 +358,7 @@ spec:
 # 扩展离线简化版：
 ./dce5-installer generate-config --master=3 --worker=3 --access-type=external
 ```
- 
+
 ### 社区版
 
 ``` bash
