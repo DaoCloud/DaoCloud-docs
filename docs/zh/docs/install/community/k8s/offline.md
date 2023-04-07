@@ -29,14 +29,15 @@
 
 1. 在 k8s 集群控制平面节点（Master 节点）下载社区版的对应离线包并解压，或者从[下载中心](../../../download/dce5.md)下载离线包并解压。
 
+    假定版本 VERSION=0.6.0
+
     ```bash
-    # 假定版本 VERSION=0.6.0
     export VERSION=v0.6.0
     wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION-amd64.tar
     tar -xvf offline-community-$VERSION-amd64.tar
     ```
 
-2. 设置集群配置文件 clusterConfig.yaml
+1. 设置集群配置文件 clusterConfig.yaml
 
     - 如果是非公有云环境（虚拟机、物理机），请启用负载均衡 (metallb)，以规避 NodePort 因节点 IP 变动造成的不稳定。请仔细规划您的网络，设置 2 个必要的 VIP，配置文件范例如下：
 
@@ -52,8 +53,8 @@
           imagesAndCharts:        # 镜像仓库
             type: external 
             externalImageRepo: your-external-registry # 镜像仓库地址，必须是 http 或者 https
-            #externalImageRepoUsername: admin
-            #externalImageRepoPassword: Harbor123456
+            # externalImageRepoUsername: admin
+            # externalImageRepoPassword: Harbor123456
         ```
 
     - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 k8s 负载均衡能力, 配置文件范例如下:
@@ -68,8 +69,8 @@
           imagesAndCharts:        # 镜像仓库
             type: external 
             externalImageRepo: your-external-registry # 镜像仓库地址，必须是 http 或者 https
-            #externalImageRepoUsername: admin
-            #externalImageRepoPassword: Harbor123456
+            # externalImageRepoUsername: admin
+            # externalImageRepoPassword: Harbor123456
         ```
 
     - 如果使用 NodePort 暴露控制台（仅推荐 PoC 使用），配置文件范例如下:
@@ -84,11 +85,11 @@
           imagesAndCharts:        # 镜像仓库
             type: external 
             externalImageRepo: your-external-registry # 镜像仓库地址，必须是 http 或者 https
-            #externalImageRepoUsername: admin
-            #externalImageRepoPassword: Harbor123456
+            # externalImageRepoUsername: admin
+            # externalImageRepoPassword: Harbor123456
         ```
 
-3. 安装 DCE 5.0。
+1. 安装 DCE 5.0。
 
     ```shell
     ./dce5-installer install-app -c clusterConfig.yaml
@@ -102,7 +103,7 @@
         - `-d` 开启 debug 模式
         - `--serial` 指定后所有安装任务串行执行
 
-6. 安装完成后，命令行会提示安装成功。恭喜您！
+1. 安装完成后，命令行会提示安装成功。恭喜您！
    现在可以通过屏幕提示的 URL 使用默认的账号和密码（admin/changeme）探索全新的 DCE 5.0 啦！
 
    ![安装成功](../../images/success.png)
@@ -111,4 +112,4 @@
 
         请记录好提示的 URL，方便下次访问。
 
-7. 另外，安装 DCE 5.0 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](../../../dce/license0.md)。
+1. 另外，安装 DCE 5.0 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](../../../dce/license0.md)。

@@ -9,7 +9,7 @@
 
 ## 准备工作
 
-- 准备一个 K8s 集群，集群配置请参考文档 [集群资源规划](../resources.md)。
+- 准备一个 K8s 集群，集群配置请参考文档[集群资源规划](../resources.md)。
 
     !!! note
 
@@ -30,8 +30,9 @@
 
 1. 在 K8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../../download/dce5.md)）。
 
+    假定 VERSION 为 v0.6.0
+
     ```shell
-    # 假定 VERSION 为 v0.6.0
     export VERSION=v0.6.0
     curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer

@@ -1,20 +1,20 @@
-# 升级 DCE 5.0 Gproduct
+# 升级 DCE 5.0 GProduct
 
 GProduct 是 DCE 5.0 所有产品模块的统称。
 
-本文将介绍如何使用 dce5-installer 离线升级 DCE 5.0 Gproduct
+本文将介绍如何使用 dce5-installer 离线升级 DCE 5.0 GProduct。
 
 ## 前提条件
 
-- 您需要有一个 DCE5.0 的集群环境，[离线化部署全模式](../commercial/start-install.md)
+- 您需要有一个 DCE5.0 的集群环境，参阅[离线化部署全模式](commercial/start-install.md)
 - 请确保您的火种机器还存活
-- 请确认您想要升级的版本，[版本发布说明](../release-notes.md)
+- 请确认您想要升级的版本，参阅[版本发布说明](release-notes.md)
 
 ## 离线升级操作步骤
 
 本次操作步骤演示如何从 v0.5.0 升级到 v0.6.0。
 
-### 第 1 步 ：下载 v0.6.0 离线包
+### 第 1 步：下载 v0.6.0 离线包
 
 可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
 
@@ -23,22 +23,21 @@ GProduct 是 DCE 5.0 所有产品模块的统称。
 | AMD64    | v0.6.0 | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.0-amd64.tar |
 | ARM64    | v0.6.0 | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.0-arm64.tar |
 
-下载完毕后解压离线包：
+下载完毕后解压离线包，以 AMD64 架构离线包为例：
 
 ```bash
-# 以 amd64 架构离线包为例
 tar -xvf offline-v0.6.0-amd64.tar
 ```
 
-### 第 2 步 ：配置集群配置文件 clusterConfig.yaml
+### 第 2 步：配置集群配置文件 clusterConfig.yaml
 
 !!! note
 
-    离线安装 DCE5.0 时，集群配置文件采用的是什么配置，升级是也需要一致
+    离线安装 DCE 5.0 时，集群配置文件采用的是什么配置，升级时也需要一致。
     
-    由于 v0.6.0 版本更新了集群配置文件的结构，[集群配置文件说明](../commercial/cluster-config.md)，所以需要保证要与 v0.5.0 用的参数一致，但是结构要与 v0.6.0 的一致
+    由于 v0.6.0 版本更新了集群配置文件的结构，[集群配置文件说明](commercial/cluster-config.md)，所以需要保证要与 v0.5.0 用的参数一致，但是结构要与 v0.6.0 的一致。
     
-    目前仅对 imagesAndCharts 的 builtin 方式进行了测试
+    目前仅对 imagesAndCharts 的 builtin 方式进行了测试。
 
 文件在解压后的离线包 `offline/sample` 目录下，参考配置文件如下：
 
@@ -77,11 +76,12 @@ spec:
  
   addonPackage:
   binaries:
-    # official-service(if omit or empty), builtin or external
-    type: builtin
+    type: builtin  # (1)
 ```
 
-### 第 3 步 ：配置 mainfest.yaml（可选）
+1. 如果省略或为空采用官方的服务，有 2 个选项：builtin 或 external
+
+### 第 3 步：配置 mainfest.yaml（可选）
 
 文件在解压后的离线包 `offline/sample` 目录下。
 
@@ -98,11 +98,11 @@ spec:
 
     目前仅支持对当前环境中已经安装的产品组件进行升级，不存在的组件将会跳过升级步骤
 
-### 第 4 步 ：开始升级
+### 第 4 步：开始升级
 
 执行升级命令
 
-```
+```bash
 ./offline/dce5-installer cluster-create -c sample/clusterconfig.yaml -m sample/manifest.yaml --upgrade 4,5,gproduct
 ```
 
@@ -113,4 +113,4 @@ spec:
 
 安装成功结果：
 
-![upgrade](../images/upgrade.png)
+![upgrade](./images/upgrade.png)
