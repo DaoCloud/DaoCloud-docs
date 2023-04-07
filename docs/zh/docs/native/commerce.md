@@ -155,7 +155,7 @@
 
 ### D, E
 
-- [D2iQ 推出专为政府部门设计的 Kuberntes 平台 DKP Gov](https://d2iq.com/blog/dkp-gov-kubernetes-management-platform)
+- [D2iQ 推出专为政府部门设计的 Kubernetes 平台 DKP Gov](https://d2iq.com/blog/dkp-gov-kubernetes-management-platform)
 
     DKP Gov 基于 D2iQ Kubernetes 平台 (DKP)创建，旨在满足政府、军事和民用机构对创新技术的需求。
     DKP Gov 支持物理和逻辑上隔离的节点，支持集中式多云平台、多节点 fleet 管理，符合联邦信息处理标准 (FIPS) 140-2 认证等。
