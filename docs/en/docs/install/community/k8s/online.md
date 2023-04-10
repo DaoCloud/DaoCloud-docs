@@ -51,7 +51,7 @@ This page briefly explains the online installation steps for DCE 5.0 Community E
     - If it is a non-public cloud environment (virtual machine, physical machine), please enable load balancing (metallb) to avoid NodePort instability caused by node IP changes. Please plan your network carefully and set up 2 necessary VIPs. The configuration file example is as follows:
 
         ```yaml
-        apiVersion: provision.daocloud.io/v1alpha2
+        apiVersion: provision.daocloud.io/v1alpha3
         kind: ClusterConfig
         spec:
           loadBalancer:
@@ -66,7 +66,7 @@ This page briefly explains the online installation steps for DCE 5.0 Community E
     - If it is a public cloud environment and provides the K8s load balancing capability of the public cloud through the pre-prepared Cloud Controller Manager mechanism, the configuration file example is as follows:
 
         ```yaml
-        apiVersion: provision.daocloud.io/v1alpha2
+        apiVersion: provision.daocloud.io/v1alpha3
         kind: ClusterConfig
         spec:
           loadBalancer:
