@@ -61,7 +61,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
     提供非侵入式流量治理功能，支持无感接入传统微服务、云原生微服务和开源微服务框架，实现企业现有微服务体系及新旧微服务体系的融合治理，
     支持微服务从开发、部署、接入、观测、运维的全生命周期管理，提供高性能云原生微服务网关，保证微服务应用的连续可用性；引入自主开源的 eBPF 网格加速技术，全面提高流量转发效率。
 
-    **涉及的模块**：[全局管理](../ghippo/intro/what.md)、[容器管理](../kpanda/intro/what.md]、[微服务引擎](../skoala/intro/what.md)、[服务网格](../mspider/intro/what.md)、[可观测性](../insight/intro/what.md)、[应用工作台](../amamba/intro/what.md)、[云原生网络](../network/intro/what.md)、[云原生存储](../storage/what.md)
+    **涉及的模块**：[全局管理](../ghippo/intro/what.md)、[容器管理](../kpanda/intro/what.md)、[微服务引擎](../skoala/intro/what.md)、[服务网格](../mspider/intro/what.md)、[可观测性](../insight/intro/what.md)、[应用工作台](../amamba/intro/what.md)、[云原生网络](../network/intro/what.md)、[云原生存储](../storage/what.md)
 
     ![微服务](../images/03msgov.png)
 
