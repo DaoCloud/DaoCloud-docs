@@ -13,7 +13,7 @@ This file will define key parameters such as the deployed load balancing type, d
 The following is an example ClusterConfig file( assuming the bootstrap node IP is 10.6.127.220)
 
 ```yaml title="clusterConfig.yaml"
-apiVersion: provision.daocloud.io/v1alpha2
+apiVersion: provision.daocloud.io/v1alpha3
 kind: ClusterConfig
 metadata:
   creationTimestamp: null

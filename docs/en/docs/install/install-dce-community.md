@@ -54,7 +54,7 @@ This page describes the installation procedure of DCE 5.0.
     - For a private cloud (virtual and physical machines), enable your load balancer (metallb) to avoid the NodePort instability caused by IP variations. Carefully plan your network and IP addresses. Here is an example for your reference:
 
         ```yaml
-        apiVersion: provision.daocloud.io/v1alpha2
+        apiVersion: provision.daocloud.io/v1alpha3
         kind: ClusterConfig
         spec:
           loadBalancer:
@@ -66,7 +66,7 @@ This page describes the installation procedure of DCE 5.0.
     - For a public cloud, DCE integrates a Cloud Controller Manager to provide the load balancing capability for kubernetes. Here is an example for your reference:
 
         ``` yaml
-        apiVersion: provision.daocloud.io/v1alpha2
+        apiVersion: provision.daocloud.io/v1alpha3
         kind: ClusterConfig
         spec:
           loadBalancer:
@@ -102,7 +102,7 @@ This page describes the installation procedure of DCE 5.0.
 1. Ensure the port 32000 has been exposed to port 8888 from your cluster to external when you create the cluster with kind. The kind profile looks like:
         
     ``` yaml
-    apiVersion: provision.daocloud.io/v1alpha2
+    apiVersion: provision.daocloud.io/v1alpha3
     kind: ClusterConfig
     spec:
       loadBalancer:
