@@ -78,7 +78,7 @@ The installation process of DCE 5.0 Commercial Edition is as follows:
 ```mermaid
 flowchart TB
 
-    start([fa:fa-user DCE 5.0 Commercial Edition Installation Process]) -.- deploy[Deployment plan]
+    start([fa:fa-user DCE 5.0 Commercial Edition Installation Process]) -.- deploy[Deployment requirement]
     deploy --> tools[Install dependencies on bootstrapping node]
     tools --> download[Download offline package]
     download --> config[Edit clusterConfig.yaml]

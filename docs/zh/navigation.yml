@@ -18,8 +18,8 @@ nav:
               - 标准 K8s 集群在线安装: install/community/k8s/online.md
               - 标准 K8s 集群离线安装: install/community/k8s/offline.md
           - 安装商业版:
-              - 部署规划: install/commercial/deploy-plan.md
               - 部署架构: install/commercial/deploy-arch.md
+              - 部署要求: install/commercial/deploy-requirements.md
               - 准备工作: install/commercial/prepare.md
               - 离线安装步骤: install/commercial/start-install.md
               - 使用场景示例: install/commercial/scenarios.md

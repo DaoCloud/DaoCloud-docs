@@ -7,7 +7,7 @@ hide:
 
 Please do the following preparations before installation:
 
-- [Deployment planning and environment preparation](deploy-plan.md)
+- [Deployment requirement and environment preparation](deploy-requirements.md)
 - [install dependencies](../install-tools.md) for bootstrapping node
 - Make sure that the time of all nodes is synchronized, otherwise, after the installation is complete, kube.conf will report an error `Unable to connect to the server: x509: certificate has expired or is not yet`
 - Make sure that `/etc/resolv.conf` of all nodes has at least one nameserver, otherwise coredns will report `plugin/forward: no nameservers found`

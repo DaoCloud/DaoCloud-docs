@@ -1,4 +1,4 @@
-# Deployment planning
+# Deployment requirement
 
 DCE 5.0 Commercial Edition provides two modes: classic mode and minimalist mode.
 
