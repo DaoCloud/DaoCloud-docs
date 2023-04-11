@@ -698,6 +698,7 @@ nav:
       - 云原生网络: videos/network.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 202304 | 固定应用 IP 的新选择: blogs/spiderpool.md
       - 202304 | 保姆式安装社区版: blogs/new-dce5-free.md
       - 202303 | 边缘原生应用准则: blogs/edgeappwp.md
       - 202303 | Linux 单机安装社区版: blogs/linux.md
