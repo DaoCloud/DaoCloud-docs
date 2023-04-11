@@ -91,9 +91,9 @@
 
 参考: [Kubernetes Docs](https://kubernetes.io/docs/reference/networking/ports-and-protocols/)
 
-#### Calico - 全部 k8s 节点 (默认)
+#### Calico (默认)
 
-默认情况下，会使用 Calico 作为　CNI , 因此集群中的每一个节点都需要打开。
+默认情况下，会使用 Calico 作为　CNI , 因此 **全部 k8s 节点** 都需要打开。
 
 | Protocol | Port       | Description   |
 |----------|--------    | ------------  |
@@ -106,18 +106,18 @@
 
 参考:  [Calico Docs](https://docs.tigera.io/calico/latest/getting-started/kubernetes/requirements#network-requirements)
 
-#### MetalLB - 全部 k8s 节点 (默认)
+#### MetalLB (默认)
 
-当启用 MetalLB 建 VIP 的时候，集群中的每一个节点都需要打开。
+当启用 MetalLB 建 VIP 的时候， **全部 k8s 节点** 都需要打开。
 
 | Protocol | Port       | Description   | 
 |----------|--------    | ------------  | 
 | TCP/UDP  | 7472       | metallb metrics ports |
 | TCP/UDP  | 7946       | metallb L2 operating mode |
 
-#### Cilium - 全部 k8s 节点 (可选)
+#### Cilium (可选)
 
-如果使用 Cilium 作为　CNI , 因此集群中的每一个节点都需要打开。
+如果使用 Cilium 作为　CNI , 因此 **全部 k8s 节点** 都需要打开。
 
 | Protocol | Port     | Description   |
 |----------|--------  | ------------  |
@@ -134,9 +134,9 @@
 
 参考: [Cilium Docs](https://docs.cilium.io/en/v1.13/operations/system_requirements/)
 
-#### SpiderPool - 全部 k8s 节点 (可选)
+#### SpiderPool (可选)
 
-如果使用 SpiderPool 作为　CNI , 因此集群中的每一个节点都需要打开。
+如果使用 SpiderPool 作为　CNI , 因此 **全部 k8s 节点** 都需要打开。
 
 | Protocol | Port     | Description   |
 |----------|--------  | ------------  |
@@ -150,6 +150,15 @@
 | TCP      | 5724     | SpiderPool Controller gops enabled  |
 
 参考: [SpiderPool Docs](https://github.com/spidernet-io/spiderpool/blob/main/docs/concepts/config.md)
+
+#### KubeVIP - (可选)
+
+当启用 KubeVIP 建 Kube API VIP 的时候， **全部 Control Plane 节点** 都需要打开。
+
+| Protocol | Port       | Description   | 
+|----------|--------    | ------------  | 
+| TCP  | 2112           | kube-vip metrics ports |
+
 
 <!--
 #### 其他 Addon, 如 kube-vip
