@@ -6,7 +6,7 @@ GProduct 是 DCE 5.0 所有产品模块的统称。
 
 ## 前提条件
 
-- 您需要有一个 DCE5.0 的集群环境，参阅[离线化部署全模式](commercial/start-install.md)
+- 您需要有一个 DCE 5.0 的集群环境，参阅[离线化部署全模式](commercial/start-install.md)
 - 请确保您的火种机器还存活
 - 请确认您想要升级的版本，参阅[版本发布说明](release-notes.md)
 
@@ -108,8 +108,8 @@ spec:
 
 升级参数说明：
 
-- install-app or cluster-create，代表安装 DCE5.0 的安装模式类型，如果最初的环境是通过 cluster-create 来安装的，则升级时也采用这个命令
-- --upgrade，可以简写为 -u，命令后面需要加执行步骤，目前如果升级 gproduct 需要执行 `4,5,gproduct`，后续我们会进行优化。
+- `install-app` 或 `cluster-create`，代表安装 DCE 5.0 的安装模式类型。如果最初的环境是通过 `cluster-create` 来安装的，则升级时也采用这个命令
+- `--upgrade` 可以简写为 `-u`，命令后面需要加执行步骤，目前如果升级 GProduct 需要执行 `4,5,gproduct`，后续我们会进行优化。
 
 安装成功结果：
 
