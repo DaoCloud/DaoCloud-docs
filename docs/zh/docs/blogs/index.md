@@ -7,6 +7,11 @@ hide:
 
 本页汇总 DCE 5.0 相关的博客和公众号文章，默认按字母和拼音排序。
 
+- [20230411 | Spiderpool：Calico 固定应用 IP 的新选择](./spiderpool.md)
+
+    Spiderpool 是一个 Kubernetes 的 IPAM 插件项目，其主要针对于 Underlay 网络的 IP 地址管理需求而设计，
+    能够为任何兼容第三方 IPAM 插件的 CNI 项目所使用。
+
 - [20230405 | 保姆式安装 DCE 5.0 社区版](./new-dce5-free.md)
 
     本文在 3 个节点的集群中完成了从 0 到 1 的 DCE 5.0 社区版安装，
