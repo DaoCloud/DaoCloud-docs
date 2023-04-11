@@ -2,6 +2,27 @@
 
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
+<div class="grid cards" markdown>
+
+- :one: [Create mesh](#create-mesh)
+- :two: [Create mesh gateway](#create-mesh-gateway)
+- :three: [Access mesh from external apps](#access-mesh-services-from-external-applications)
+- :four: [Security governance](#security-governance)
+- :five: [Upgrade Istio](#istio-version-upgrade)
+- :six: [Upgrade sidecar](#sidecar-upgrade)
+- :seven: [Traffic passthrough](#traffic-passthrough)
+- :eight: [Multi-cloud interconnection](#multi-cloud-interconnection)
+
+</div>
+
+## Create mesh
+
+See the [Create mesh](../mspider/user-guide/service-mesh/README.md) documentation page.
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-mesh.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+
 ## Create mesh gateway
 
 <div class="responsive-video-container">
@@ -46,6 +67,14 @@ See the [traffic passthrough](../mspider/03UserGuide/07SidecarManagement/passthr
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/passthrough.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
+</div>
+
+## Multi-cloud interconnection
+
+See the [Multi-cloud interconnection](../mspider/user-guide/multicluster/cluster-interconnect.md) documentation page.
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multi-connect.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
