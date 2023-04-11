@@ -23,7 +23,7 @@
 
 1. 下载脚本。
 
-    ```shell
+    ```bash
     curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
     ```
 
