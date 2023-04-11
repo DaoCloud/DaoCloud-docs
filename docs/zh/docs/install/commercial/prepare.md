@@ -57,4 +57,15 @@
 | yq           | ≥ 4.31.1     | -                                 |
 | minio client | -            | `mc.RELEASE.2023-02-16T19-20-11Z` |
 
-如果不存在依赖组件，通过脚本进行[安装依赖组件](../install-tools.md)。
+如果不存在依赖组件，通过脚本进行安装依赖组件。
+
+```bash
+# 下载脚本
+curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
+
+# 添加可执行权限
+chmod +x install_prerequisite.sh
+
+# 开始安装
+bash install_prerequisite.sh online full
+```
