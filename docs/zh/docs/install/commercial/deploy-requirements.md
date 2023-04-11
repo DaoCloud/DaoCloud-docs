@@ -65,9 +65,9 @@
 ### Kube集群（包括 全局集群 和 工作集群）
 
 全局集群 和 工作集群都是通过 Kubean 部署的，因此他们需要打开同样的端口
-除了标准的 Kube 端口，对于 CNI 和 部分网络组件，也需要打开端口。
+除了标准的 k8s 端口，对于 CNI 和 部分网络组件，也需要打开端口。
 
-#### Kube Control plane
+#### k8s Control plane
 
 | Protocol | Port   | Description     |
 |----------|--------| ------------    |
@@ -78,7 +78,7 @@
 | TCP      | 10257  | kube-scheduler  |
 | TCP      | 10259  | kube-controller-manager  |
 
-#### 全部 Kube 节点
+#### 全部 k8s 节点
 
 集群中的每一个节点都需要打开。
 
@@ -91,7 +91,7 @@
 
 参考: [Kubernetes Docs](https://kubernetes.io/docs/reference/networking/ports-and-protocols/)
 
-#### Calico - 全部 Kube 节点 (默认)
+#### Calico - 全部 k8s 节点 (默认)
 
 默认情况下，会使用 Calico 作为　CNI , 因此集群中的每一个节点都需要打开。
 
@@ -100,11 +100,13 @@
 | TCP      | 179        | Calico networking (BGP) |
 | UDP      | 4789       | Calico CNI with VXLAN enabled |
 | TCP      | 5473       | Calico CNI with Typha enabled  |
+| UDP      | 51820      | Calico with IPv4 Wireguard enabled |
+| UDP      | 51821      | Calico with IPv6 Wireguard enabled |
 | IPENCAP / IPIP | -    | Calico CNI with IPIP enabled  |
 
 参考:  [Calico Docs](https://docs.tigera.io/calico/latest/getting-started/kubernetes/requirements#network-requirements)
 
-#### MetalLB - 全部 Kube 节点 (默认)
+#### MetalLB - 全部 k8s 节点 (默认)
 
 当启用 MetalLB 建 VIP 的时候，集群中的每一个节点都需要打开。
 
@@ -113,17 +115,26 @@
 | TCP/UDP  | 7472       | metallb metrics ports |
 | TCP/UDP  | 7946       | metallb L2 operating mode |
 
-#### Cilium - 全部 Kube 节点 (可选)
+#### Cilium - 全部 k8s 节点 (可选)
 
 如果使用 Cilium 作为　CNI , 因此集群中的每一个节点都需要打开。
 
 | Protocol | Port     | Description   |
 |----------|--------  | ------------  |
-| UDP      | 8472     | Cilium CNI with VXLAN  |
+| TCP      | 4240     | Cilium Health checks (``cilium-health``)  |
+| TCP      | 4244     | Hubble server  |
+| TCP      | 4245     | Hubble Relay  |
+| UDP      | 8472     | VXLAN overlay  |
+| TCP      | 9962     | Cilium-agent Prometheus metrics  |
+| TCP      | 9963     | Cilium-operator Prometheus metrics  |
+| TCP      | 9964     | Cilium-proxy Prometheus metrics  |
+| UDP      | 51871    | WireGuard encryption tunnel endpoint  |
+| ICMP     | -        | health checks  |
+
 
 参考: [Cilium Docs](https://docs.cilium.io/en/v1.13/operations/system_requirements/)
 
-#### SpiderPool - 全部 Kube 节点 (可选)
+#### SpiderPool - 全部 k8s 节点 (可选)
 
 如果使用 SpiderPool 作为　CNI , 因此集群中的每一个节点都需要打开。
 
@@ -140,9 +151,8 @@
 
 参考: [SpiderPool Docs](https://github.com/spidernet-io/spiderpool/blob/main/docs/concepts/config.md)
 
-
 <!--
-#### 其他 Addon
+#### 其他 Addon, 如 kube-vip
 -->
 
 ### 全局集群 其他 需要开放的端口
@@ -165,12 +175,12 @@
 
 ### 工作集群 其他 需要开放的端口
 
-工作集群需要开放 Kube API 的 6443 端口，给到全局管理集群访问。如果要是用部署功能，还要开放 22 端口，给全局集群访问。
+工作集群需要开放 k8s API 的 6443 端口，给到全局管理集群访问。如果要是用部署功能，还要开放 22 端口，给全局集群访问。
 
 | Protocol | Port       | Description   | Used By | 
 |----------|--------    | ------------  | ------- | 
 | TCP      | 22         | 各节点 SSH (for ansible) | 全局管理集群 |
-| TCP      | 6443       | Kube API 访问入口(如VIP) |  全局管理集群 |
+| TCP      | 6443       | k8s API 访问入口(如VIP) |  全局管理集群 |
 
 ### 其他各产品需要开放的端口
 
