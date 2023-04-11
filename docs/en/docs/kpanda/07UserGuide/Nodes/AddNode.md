@@ -13,17 +13,17 @@ Only through the container management platform [created cluster](../Clusters/Cre
 
     If the `Cluster Role` has the tag `Access Cluster`, it means that the cluster does not support node expansion and contraction.
 
-    ![Enter the cluster list page](../../images/addnode01.png)
+    
 
 2. Click `Node Management` in the left navigation bar, and then click `Access Node` in the upper right corner of the page.
 
-    ![Node Management](../../images/addnode02.png)
+    
 
 3. Enter the host name and node IP and click `OK`.
 
     Click `➕ Add Work Node` to continue to access more nodes.
 
-    ![Node Management](../../images/addnode03.png)
+    
 
 !!! note
 

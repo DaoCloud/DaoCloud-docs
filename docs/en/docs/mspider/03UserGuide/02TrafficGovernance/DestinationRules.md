@@ -38,20 +38,20 @@ Service mesh provides two creation methods: wizard and YAML. The specific steps 
 
 1. Click `Traffic Governance` -> `Target Rules` in the left navigation bar, and click the `Create` button in the upper right corner.
 
-    ![create](../../images/destirule01.png)
+    
 
 2. In the `Create Target` interface, first perform the basic configuration and then click `Next`.
 
-    ![Create Destination](../../images/destirule02.png)
+    
 
 3. Follow the screen prompts to select the route configuration, and click `OK`.
 
-    ![routing configuration](../../images/destirule03.png)
+    
 
 4. Return to the target rule list, and the screen prompts that the creation is successful.
 
-    ![Created successfully](../../images/destirule04.png)
+    
 
 5. On the right side of the list, click `⋮` in the operation column to perform more operations through the pop-up menu.
 
-    ![More Actions](../../images/destirule05.png)
+    

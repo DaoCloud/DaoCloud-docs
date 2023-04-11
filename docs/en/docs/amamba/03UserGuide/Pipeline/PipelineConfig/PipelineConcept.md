@@ -2,7 +2,7 @@
 
 Regardless of the graphical or text type, the editor is essentially used to facilitate users to view and edit the core of the construction process: Jenkinsfile (process description file). Therefore, before discussing the editor, it is necessary to understand several important concepts of the "process description file".
 
-![pipeline](../../../images/pipeline.png)
+
 
 - Pipeline
 

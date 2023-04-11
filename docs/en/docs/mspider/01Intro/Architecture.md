@@ -9,7 +9,7 @@ The service mesh product has the ability of multi-mesh management and multi-clus
 
 In terms of overall architecture, service mesh products can be divided into three levels: global management module, hosted mesh module, managed cluster mesh
 
-![System Architecture](../images/architecture1.png)
+
 
 - Global management module
 
@@ -38,6 +38,6 @@ The expansion modules that run through the overall architecture mainly include: 
 
 ## Functional Architecture
 
-![Service Mesh Features](../images/features.png)
+
 
 As shown in the figure above, the service mesh provides 9 modules and 12 sub-module functions, realizing the ability of diversified cluster access and mesh management in multiple modes.

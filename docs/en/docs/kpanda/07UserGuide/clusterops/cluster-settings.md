@@ -11,8 +11,8 @@ Cluster settings are used to customize advanced feature settings for your cluste
 
     Click the name of the target cluster, and click `Recent Operations`->`Cluster Settings`->`Addon Plugins` in the left navigation bar.
 
-    ![gpu](../../images/settings01.png)
+    
 
 - Helm registry refresh cycle, number of operation records retained
 
-    ![gpu](../../images/settings02.png)
+    

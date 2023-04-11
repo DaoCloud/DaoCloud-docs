@@ -34,23 +34,23 @@ Refer to the following steps to configure the built-in index auto scaling policy
 
 1. Click `Cluster List` on the left navigation bar to enter the cluster list page. Click on a cluster name to enter the `Cluster Details` page.
 
-     ![Cluster Details](../../images/deploy01.png)
+     
 
 2. On the cluster details page, click `Workload` in the left navigation bar to enter the workload list, and then click a workload name to enter the `Workload Details` page.
 
-     ![Workload](../../images/createScale.png)
+     
 
 3. Click the Auto Scaling tab to view the auto scaling configuration of the current cluster.
 
-     ![Scale](../../images/createScale02.png)
+     
 
 4. After confirming that the cluster has [installed the `metrics-server` plug-in](Install-metrics-server.md), and the plug-in is running normally, you can click the `New Scaling` button.
 
-     ![Create Scale](../../images/createScale07.png)
+     
 
 5. Create custom indicator auto scaling policy parameters.
 
-     ![Workload](../../images/createScale08.png)
+     
 
      - Policy name: Enter the name of the auto scaling policy. Please note that the name can contain up to 63 characters, and can only contain lowercase letters, numbers, and separators ("-"), and must start and end with lowercase letters or numbers, such as hpa- my-dep.
      - Namespace: The namespace where the workload resides.
@@ -61,7 +61,7 @@ Refer to the following steps to configure the built-in index auto scaling policy
 
 6. After completing the parameter configuration, click the `OK` button to automatically return to the elastic scaling details page. Click `⋮` on the right side of the list to edit, delete, and view related events.
 
-     ![Workload](../../images/createScale09.png)
+     
 
 ## Custom indicator elastic scaling strategy
 
@@ -87,25 +87,25 @@ Refer to the following steps to configure an index auto-scaling policy for a wor
 
 1. Click `Cluster List` on the left navigation bar to enter the cluster list page. Click on a cluster name to enter the `Cluster Details` page.
 
-     ![Cluster Details](../../images/deploy01.png)
+     
 
 2. On the cluster details page, click `Workload` in the left navigation bar to enter the workload list, and then click a workload name to enter the `Workload Details` page.
 
-     ![Workload](../../images/createScale.png)
+     
 
 3. Click the Auto Scaling tab to view the auto scaling configuration of the current cluster.
 
-     ![Scale](../../images/createScale02.png)
+     
 4. After confirming that the cluster has [`metrics-server`](Install-metrics-server.md), Insight, and Prometheus-adapter plug-ins installed and the plug-ins are running normally, click the `New Scaling` button.
 
 !!! note
 
      If the relevant plug-in is not installed or the plug-in is in an abnormal state, you will not be able to see the creation of custom metrics auto scaling entry on the page.
 
-     ![Create Scale](../../images/createScale07.png)
+     
 5. Create custom indicator auto scaling policy parameters.
 
-     ![Create Scale](../../images/createScale10.png)
+     
 
      - Policy name: Enter the name of the auto scaling policy. Please note that the name can contain up to 63 characters, and can only contain lowercase letters, numbers, and separators ("-"), and must start and end with lowercase letters or numbers, such as hpa- my-dep.
      - Namespace: The namespace where the workload resides.

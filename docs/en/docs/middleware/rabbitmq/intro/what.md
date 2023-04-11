@@ -7,6 +7,6 @@ It is an enterprise-class distributed messaging middleware service.
 
 Its system architecture and data flow are shown below:
 
-![flow](../images/flow.png)
+
 
 [[Free Trial Now](../../../dce/license0.md){ .md-button .md-button--primary }

@@ -28,11 +28,11 @@ Refer to the following steps to create a DaemonSet.
 
 1. After successfully logging in as the `NS Edit` user, click `Cluster List` in the upper left corner to enter the cluster list page. Click on a cluster name to enter `Cluster Details`.
 
-     ![Cluster Details](../../images/deploy01.png)
+     
 
 2. Click `Workload` in the left navigation bar to enter the workload list, click the `Daemon Process` tab, and click the `Image creation` button in the upper right corner.
 
-     ![Workload](../../images/daemon01.png)
+     
 
 3. The `Create Daemon` page will be displayed.
 
@@ -40,7 +40,7 @@ Refer to the following steps to create a DaemonSet.
 
 On the `Create Daemon Process` page, after entering the information according to the table below, click `Next`.
 
-![Basic Information](../../images/daemon02.png)
+
 
 - Workload name: Enter the name of the new workload, which must be unique. Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. For example daemonset-01.
 - Cluster: Select the cluster where the newly created workload resides. When a workload is created within a cluster, the workload is created in the current cluster. Clusters cannot be changed. When a workload is created outside a cluster, the workload is created on the selected cluster. For example Cluster-01.
@@ -55,7 +55,7 @@ After completing all the container configuration information below, click Next.
 
 === "Basic information (required)"
 
-     ![Basic Information](../../images/deploy05.png)
+     
 
      After entering the information as follows, click `Confirm`.
 
@@ -70,37 +70,37 @@ After completing all the container configuration information below, click Next.
 
      The container lifecycle configuration is used to set the commands that need to be executed when the container starts, after starting, and before stopping. For details, please refer to [Container Lifecycle Configuration](PodConfig/lifescycle.md).
 
-     ![Lifecycle](../../images/deploy06.png)
+     
 
 === "Health Check (optional)"
 
      Container health checks are used to determine the health status of containers and applications. Helps improve app usability. For details, please refer to [Container Health Check Configuration](PodConfig/healthcheck.md).
 
-     ![Health Check](../../images/deploy07.png)
+     
 
 === "Environment variables (optional)"
 
      Container environment variable configuration is used to configure container parameters in Pods, add environment flags or pass configurations to Pods, etc. For details, please refer to [Container Environment Variable Configuration](PodConfig/EnvironmentVariables.md).
 
-     ![environment variable](../../images/deploy08.png)
+     
 
 === "Data storage (optional)"
 
      Container data storage configuration is used to configure container mounted data volumes and data persistence settings. For details, please refer to [Container Data Storage Configuration](PodConfig/EnvironmentVariables.md).
 
-     ![datastore](../../images/deploy09.png)
+     
 
 === "Security settings (optional)"
 
      Set container permissions according to the table below to protect the system and other containers from them.
 
-     ![Security Settings](../../images/deploy10.png)
+     
 
 === "Container logs (optional)"
 
      Set the container log collection policy and configure the log directory. Used to collect container logs for unified management and analysis. For details, please refer to [Container Log Configuration](PodConfig/EnvironmentVariables.md).
     
-     ![container log](../../images/deploy11.png)
+     
 
 ### Service configuration
 
@@ -108,11 +108,11 @@ Set the workload access method, and you can set the service access method.
 
 1. Click the `Create Service` button.
 
-     ![Service Configuration](../../images/daemon03.png)
+     
 
 2. Choose to access various information of the service. For details, please refer to [Creating Services](../ServicesandRoutes/CreatingServices.md).
 
-     ![create service](../../images/deploy13.png)
+     
 
 3. Click `OK` and click `Next`.
 
@@ -122,7 +122,7 @@ In addition to basic information configuration, DCE also provides a wealth of ad
 
 === "Upgrade policy configuration"
 
-     ![Upgrade Strategy](../../images/daemon04.png)
+     
 
      - Upgrade method: **Rolling upgrade** will gradually replace instances of the old version with instances of the new version. During the upgrade process, business traffic will be load-balanced to the old and new instances at the same time, so the business will not be interrupted. **Replace and upgrade** will first delete the old version instance of your workload, and then install the specified new version. Business will be interrupted during the upgrade process.
      - Maximum number of invalid Pods: used to specify the upper limit of the number of Pods in the unavailable state of the Deployment during the update process. If it is equal to the number of instances, there is a risk of service. The default is 25%.
@@ -134,7 +134,7 @@ In addition to basic information configuration, DCE also provides a wealth of ad
 
      Users can set the tolerance time to define the tolerance time for scheduling the workload to other nodes when the node where the workload resides is damaged. It also supports scheduling nodes where workloads are deployed based on node labels and Pod labels. For details, please refer to [Scheduling Policy](../Workloads/PodConfig/SchedulingPolicy.md).
 
-     ![Scheduling Policy](../../images/deploy15.png)
+     
 
      - Tolerance time: When the node where the workload instance resides is unavailable, the time for rescheduling the workload instance to other available nodes, in seconds.
      - Node affinity: According to the label on the node, constrain which nodes the Pod can be scheduled on.
@@ -145,13 +145,13 @@ In addition to basic information configuration, DCE also provides a wealth of ad
 
      You can click the `Add` button to add tags and annotations to workloads and container groups.
 
-     ![Labels and annotations](../../images/deploy16.png)
+     
 
 === "DNS Configuration"
 
      In some scenarios, the application will have redundant DNS queries. Kubernetes provides DNS-related configuration options for applications. By configuring DNS for applications, redundant DNS queries can be effectively reduced in some scenarios and business concurrency can be increased. For details, please refer to [DNS Configuration](PodConfig/EnvironmentVariables.md).
 
-     ![DNS Configuration](../../images/deploy17.png)
+     
 
      - DNS strategy: Configure DNS for applications to reduce redundant DNS queries and increase business concurrency.
          - Default: The domain name resolution file of the container uses the domain name resolution file pointed to by the `--resolv-conf` parameter of kubelet. This configuration can only resolve external domain names registered on the Internet, but cannot resolve cluster internal domain names, and there is no invalid DNS query.

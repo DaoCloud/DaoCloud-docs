@@ -107,15 +107,15 @@ calico.yaml linux-amd64 longhorn-1.3.2.tgz rook rook-ceph-image.zip
 
 ## Upload the chart package to DCE 5.0 registry
 
-![dce registry-1](../images/registry-1.png)
 
-![dce registry-2](../images/registry-2.png)
 
-![dce-appstore-1](../images/cluster-1.png)
+
+
+
 
 ## Install Longhorn via DCE 5.0 App Store
 
-![dce-appstore-2](../images/cluster-2.png)
+
 
 ```
 [root@k8s-10-6-162-31 ~]# kubectl get po -n longhorn-system
@@ -158,14 +158,14 @@ longhorn-ui-68bc57db67-46brf 1/1 Running 0 3h20m
 
 Modify the Longhorn front-end service port:
 
-![longhorn-svc-1](../images/longhorn-svc-1.png)
 
-![longhorn-svc-2](../images/longhorn-svc-2.png)
+
+
 
 Enter the Longhorn UI:
 
-![longhorn interface](../images/longhorn-1.png)
 
-![longhorn interface](../images/longhorn-2.png)
+
+
 
 So far, the Longhorn storage system has been successfully deployed in the DCE 5.0 application store!

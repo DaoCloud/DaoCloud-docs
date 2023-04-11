@@ -2,13 +2,13 @@
 
 Click `Traffic Topology` in the left navigation bar to open the page. This function displays the topological relationship of all services under the mesh. Users can select `View Mode` and `Namespace` to filter and display service nodes.
 
-![Traffic Topology](../../images/monitor-topo.png)
+
 
 ## Display setting
 
 `Namespace Boundary` is used to set whether to display the namespace boundary wireframe. If selected, services under the same namespace will be framed and the namespace name will be marked.
 
-![Display Configuration](../../images/monitor-displayConfig.png)
+
 
 ## Service indicator data information
 
@@ -18,7 +18,7 @@ Click any service, and the sidebar will pop up to display service-related indica
 
 - TCP service: number of connections (number), receiving throughput (B/S), sending throughput (B/S)
 
-![Sidebar information](../../images/monitor-data.png)
+
 
 ## health status
 

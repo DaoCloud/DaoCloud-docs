@@ -6,7 +6,7 @@ The microservice gateway supports viewing request logs and instance logs. This p
 
 Click the name of the target gateway to enter the gateway overview page, and then click `Log View`->`Instance Log` in the left navigation bar.
 
-![Path to view instance logs](imgs/inslog-path.png)<!--Update screenshot-->
+<!--Update screenshot-->
 
 ## Related operations
 

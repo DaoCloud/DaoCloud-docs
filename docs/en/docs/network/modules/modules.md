@@ -7,7 +7,7 @@ hide:
 
 The network solution provided by DCE 5.0 is an optimized combination of current mainstream open source network components, which can meet the needs of various complex scenarios.
 
-![Web Components](../images/components.png)
+
 
 Currently, the network components supported by DCE 5.0 include:
 

@@ -36,7 +36,7 @@ The application workbench declares 6 labels through the podTemplate capability: 
 
 - You can also select an Agent whose type is `node` and whose label is `go` on the `Edit Pipeline` page.
 
-    ![agent-base](../../../images/agent-base.jpeg)
+    
 
 ### Built-in Label environment description
 
@@ -117,7 +117,7 @@ If you need to run the Jenkins Agent in a specific environment, you can customiz
 
 1. Select the Agent type as `kubernetes` on the `Edit Pipeline` page.
 
-    ![agent-kubernets](../../../images/agent-kubernets.jpeg)
+    
 
 2. Click `YAML Editor` and fill in the YAML statement in the dialog box, please refer to the following example:
 
@@ -142,8 +142,8 @@ If you need to run the Jenkins Agent in a specific environment, you can customiz
 
 3. Enter `golang` in Container as the default container for pipeline operation.
 
-    ![agent-golang](../../../images/agent-golang.jpeg)
+    
 
 4. To use other containers of the above examples in other steps of the pipeline, you can select `Specify container` to fill in the required container name.
 
-    ![agent-maven](../../../images/agent-maven.jpeg)
+    

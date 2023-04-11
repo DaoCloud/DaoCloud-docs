@@ -79,7 +79,7 @@ The multicloud orchestration management plane needs to operate each multicloud o
 
 All request data flows directly to the multicloud orchestration instance located at [Global Service Cluster](../../kpanda/07UserGuide/Clusters/ClusterRole.md). In this way, performance may be affected when large-scale requests are made, as shown in the figure:
 
-![Data Flow Diagram](../images/arch_kairship_instance.png)
+
 
 As shown in the figure above, all requests to access the multicloud module will be shunted after multicloud orchestration, and all read requests such as get/list will access the [container management module](../../kpanda/03ProductBrief/WhatisKPanda. md), write requests will access the Karmada instance. This will cause a problem: After creating a multicloud application through multicloud orchestration, how can the relevant resource information be obtained through the [container management module](../../kpanda/03ProductBrief/WhatisKPanda.md)?
 
@@ -91,14 +91,14 @@ In this way, the capabilities of the container management module can be fully ut
 
 ### Deployment topology
 
-![Deploy Topology](../images/deploy_topology.png)
+
 
 As shown in the figure, the entire multicloud orchestration consists of three components, kairship apiserver, kairship controller manager, and karmada operator are all deployed in [Global Service Cluster](../../kpanda/07UserGuide/Clusters/ClusterRole.md).
 Among them, the karmada operator fully complies with the deployment architecture of the open source community; the kairship apiserver stateless service supports horizontal expansion; the kairship controller manager has a high-availability architecture, has an internal election mechanism, and can work on a single Pod at the same time.
 
 ### Cluster import
 
-![cluster import](../images/cluster_sync.png)
+
 
 As shown in the figure, all the Kubernetes clusters managed by the Karmada instance come from the `Kpanda` cluster. After the Karmada instance joins a cluster, it will automatically perform CR synchronization (Kpanda Cluster --> Karmada Cluster).
 At the same time, the multicloud orchestration management plane has a control loop logic that monitors Kpanda Cluster changes in real time, synchronizes to the control plane immediately, and further feeds back to the Karmada Cluster corresponding to the `Karmada` instance. Currently, it mainly monitors changes in Kpanda cluster access credentials.

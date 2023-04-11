@@ -61,7 +61,7 @@ After obtaining specific permissions, users can operate on resources or services
 Use [Workspace](../04UserGuide/02Workspace/Workspaces.md) to coordinate global management and sub-module permission relationships, and resolve resource aggregation and mapping hierarchical relationships.
 Usually a workspace corresponds to a project, and different resources can be assigned to each workspace, and different users and groups can be assigned.
 
-![workspace](../images/workspace.png)
+
 
 ### Hierarchy
 

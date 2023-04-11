@@ -9,7 +9,7 @@ The DCE 5.0 service mesh supports the creation of managed meshs, dedicated meshs
 
 1. In the upper right corner of the service mesh list page, click `Create mesh`.
 
-    ![Create Mesh](../../images/servicemesh01.png)
+    
 
 2. Select `Hosted mesh` or `Proprietary mesh` and fill in the mesh configuration information.
 
@@ -19,7 +19,7 @@ The DCE 5.0 service mesh supports the creation of managed meshs, dedicated meshs
     - Control plane cluster: the cluster used to run the mesh management plane, the list includes the clusters that the current mesh platform can access and are in normal state. The item comes with a refresh icon and a `Create Cluster` button. Click `Create Cluster` to jump to `Container Management Platform` to create a new cluster. After the creation is complete, return to this page and click the refresh icon to update the list.
     - container registry: Enter the address of the container registry that contains the data plane component image. If the cluster can access the public network, you can fill in the official image address: `release.daocloud.io/mspider`. For private environments, please upload the image yourself and fill in the actual address.
   
-    ![Basic configuration](../../images/create-mesh-config.png)
+    
 
 3. Click the `OK` button to complete the mesh creation. The system automatically returns to the mesh list, and you can view and manage the newly added meshs.
 
@@ -35,4 +35,3 @@ After filling out the basic configuration correctly, you can successfully create
 - Sidecar injection strategy: You can enable/disable the sidecar automatic injection strategy at the mesh level. After enabling, all access clusters will automatically inject sidecars
 - Sidecar resource setting: implement resource restrictions on injected sidecars of all clusters under the mesh, which can be used as the default sidecar resource value under the mesh. The execution priority of sidecar resource limit rules at each level is: workload-level resource limit -> cluster-level resource limit -> mesh resource limit
 
-![Optional Settings](../../images/create-mesh-optional.png)

@@ -9,15 +9,15 @@ The specific operation steps are as follows.
 
 1. Log in to the web console as a user with `admin` role. Click `Global Management` at the bottom of the left navigation bar.
 
-    ![Global Management](../../images/ws01.png)
+    
 
 2. Navigate to `Users and Access Control` under `Global Management`, select `Identity Providers` -> `OIDC`, click `Create Identity Provider`.
 
-    ![Identity Provider](../../images/oidc02.png)
+    
 
 3. After completing the form fields and establishing a trust relationship with the identity provider, click `Save`.
 
-    ![Identity Provider](../../images/oidc03.png)
+    
 
     | Field | Description |
     | ---------- | -------------------------------------- ---------------------- |
@@ -39,7 +39,7 @@ The specific operation steps are as follows.
 
 The interactive process of user authentication is as follows:
 
-![oidc](../../images/oidc01.png)
+
 
 1. Use a browser to initiate a single sign-on request for DCE 5.0.
 1. According to the information carried in the login link, DCE 5.0 searches for the corresponding configuration information in `Global Management` -> `Access Control` -> `Identity Provider`, constructs an OIDC authorization Request, and sends it to the browser.

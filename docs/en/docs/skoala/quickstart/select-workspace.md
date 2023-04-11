@@ -4,13 +4,13 @@
 
 When entering the microservice governance module for the first time, you must first select a [workspace](../ghippo/04UserGuide/02Workspace/Workspaces.md).
 
-![Select Workspace](../images/workspace.png)
+
 
 ## Change workspace
 
 If you need to change the current workspace, you can click the change icon on the left sidebar to re-select the workspace.
 
-![Change Workspace](../images/change-ws.png)
+
 
 !!! note
 

@@ -37,7 +37,7 @@ You can download the tar package of each submodule separately, and upgrade each 
     - If you have any questions, please [give feedback](https://github.com/DaoCloud/DaoCloud-docs/issues).
     - Welcome to scan the QR code and communicate with developers freely:
     
-    ![Join to talk about installation](../images/assist.png)
+    
 
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

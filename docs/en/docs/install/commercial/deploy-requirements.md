@@ -12,7 +12,7 @@ The classic mode is suitable for multi-data centers across networks and regions,
 
 The deployment architecture diagram of the classic mode is as follows:
 
-![model01](../images/model01.png)
+
 
 ## Minimalistic mode
 
@@ -20,7 +20,7 @@ Deploy the global service cluster and the management cluster in one cluster, and
 
 The deployment architecture diagram of the simple mode is as follows:
 
-![model02](../images/model02.png)
+
 
 The global service cluster and the management cluster are deployed together. This mode can achieve the purpose of saving resources and is suitable for single data centers of enterprises.
 There is no need to manage the lifecycle of different clusters and communicate across networks. If there are multiple data center scenarios in the enterprise production environment, it is recommended to use the classic mode.

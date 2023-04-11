@@ -6,7 +6,7 @@ Users can perform operations such as viewing, enabling, and disabling sidecar in
 
 In the left navigation bar, click `Sidecar Management` -> `Workload Sidecar Management`, after selecting a cluster, you can view all workloads under the cluster and their sidecar injection status, namespace, resource limit, etc. information.
 
-![workload sidecar list](../../images/wl-sidecar01.png)
+
 
 The meaning of each column is as follows:
 
@@ -26,7 +26,7 @@ When there are many workloads, you can sort the workload names, and use the sear
 
 On the right side of the workload sidecar list, click the icon `┇` in the `Operation` column, and select `View Sidecar Status` from the pop-up menu. You can view the current running status and resource limit value of the sidecar.
 
-![sidecar running status](../../images/wl-sidecar02.png)
+
 
 ## Enable sidecar injection
 
@@ -34,15 +34,15 @@ After selecting one or more workloads, automatic sidecar injection can be enable
 
 1. Select one or more workloads that do not have sidecar injection enabled, and click the Enable Injection button on the right.
    
-    ![Select sidecar injection](../../images/wl-sidecar03.png)
+    
 
 2. In the pop-up dialog box, confirm whether the number of selected workloads is correct. After confirmation, check `Restart Now` and click `OK`.
    
-    ![Select sidecar injection](../../images/wl-sidecar04.png)
+    
 
 3. Return to the sidecar list of the workload, and you can see that the `Status` of the selected workload has changed to `Injected`. After the workload is restarted, the sidecar injection will be completed. For the progress of the injection, see the `Injected POD` column.
 
-    ![Sidecar injected successfully](../../images/wl-sidecar05.png)
+    
 
 !!! note
 
@@ -55,15 +55,15 @@ After selecting one or more workloads, automatic sidecar injection can be disabl
 
 1. Select one or more workloads with sidecar injection enabled, and click the `Injection Disable` button on the right.
    
-    ![Select sidecar disabled](../../images/wl-sidecar05.png)
+    
 
 2. In the pop-up dialog box, confirm whether the number of selected workloads is correct. After confirmation, check `Restart Now` and click `OK`.
    
-    ![Select sidecar injection](../../images/wl-sidecar06.png)
+    
 
 3. Return to the sidecar list of the workload, and you can see that the `Status` of the selected workload has changed to `Not Injected`. For related uninstallation progress, please check the `Injected POD` column.
 
-    ![Sidecar disabled successfully](../../images/wl-sidecar07.png)
+    
 
 ## Sidecar resource limit
 
@@ -71,10 +71,10 @@ To prevent workload resources from being overcommitted, resource usage limits ca
 
 1. Select one (or more) workloads with sidecar injection enabled, and click the `Sidecar Resource Limit` button.
 
-    ![Sidecar disabled successfully](../../images/wl-sidecar08.png)
+    
 
 2. In the pop-up dialog box, set the CPU/memory request value and limit value respectively. Select `Restart Now` and click `OK`.
 
-    ![Select sidecar injection](../../images/wl-sidecar09.png)
+    
 
 3. In the workload sidecar management list, you can see that the data in `CPU Requested Value/Limited Value` and `Memory Requested Value/Limited Value` of the specified workload have been updated.

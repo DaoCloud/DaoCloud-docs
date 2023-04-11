@@ -9,11 +9,11 @@ Please contact the administrator in advance to perform the following operations 
 
 1. Select `Middleware` -> `MinIO Storage` in the left navigation bar.
 
-    ![](../images/view01.png)
+    
 
 2. After selecting a workspace in the pop-up window, click `OK`.
 
-    ![](../images/login02.png)
+    
 
     !!! note
 
@@ -21,4 +21,4 @@ Please contact the administrator in advance to perform the following operations 
 
 3. When you use it for the first time, you can click `Deploy Now` to create a MinIO instance.
 
-    ![](../images/what03.png)
+    

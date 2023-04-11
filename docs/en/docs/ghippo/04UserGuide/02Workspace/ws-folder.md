@@ -7,7 +7,7 @@ hide:
 
 `Workspace and Hierarchy` is a hierarchical resource isolation and resource grouping feature, which mainly solves the problems of resource unified authorization, resource grouping and resource quota.
 
-![Hierarchy](../../images/fdpractice.png)
+
 
 `Workspace and Hierarchy` has two concepts: workspace and folder.
 
@@ -15,7 +15,7 @@ hide:
 
 The workspace can manage resources through `authorization`, `resource group` and `shared resources`, so that users (groups) can share the resources in the workspace.
 
-![Workspace](../../images/wsfd01.png)
+
 
 - resource
 

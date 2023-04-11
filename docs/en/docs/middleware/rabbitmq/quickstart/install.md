@@ -8,27 +8,27 @@ Follow the steps below to install RabbitMQ.
 
 1. On the left navigation bar, click `Container Management` -> `Cluster List`.
 
-    ![](../images/install01.png)
+    
 
 2. Select the cluster where RabbitMQ is to be installed, and click the cluster name.
 
-    ![](../images/install02.png)
+    
 
 3. In the left navigation bar, click `Helm Application` -> `Helm Template`, enter `rabbitmq` in the search box, press the Enter key, and click the RabbitMQ tile card.
 
-    ![](../images/install03.png)
+    
 
 4. After selecting the appropriate version, click the `Install` button. You can also follow the text prompts in the black area to install from the command line.
 
-    ![](../images/install04.png)
+    
 
 5. Enter an appropriate name, select the namespace and version, and click `OK`. You can also configure YAML at the bottom to install.
 
-    ![](../images/install05.png)
+    
 
 6. The system returns to the `Helm application` list, and the screen prompts that the creation is successful. After refreshing the page, the newly created application is at the first place.
 
-    ![](../images/install06.png)
+    
 
 ## Install mcamel-rabbitmq
 
@@ -84,11 +84,11 @@ helm uninstall mcamel-rabbitmq -n mcamel-system
 
 1. In the Helm application list, click `⋮` on the far right, and select `Delete` from the pop-up menu.
 
-    ![](../images/uninstall01.png)
+    
 
 2. Enter the name to be deleted in the pop-up window, and click `Delete` after confirming that it is correct.
 
-    ![](../images/uninstall02.png)
+    
 
 ## Installation parameter description
 

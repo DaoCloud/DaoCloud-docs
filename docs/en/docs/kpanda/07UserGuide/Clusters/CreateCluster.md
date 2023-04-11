@@ -17,11 +17,11 @@ Certain prerequisites must be met before creating a cluster:
 
 1. On the `Cluster List` page, click the `Create Cluster` button.
 
-    ![Create cluster button](../../images/createcluster.png)
+    
 
 2. Fill in the basic information of the cluster and click `Next`.
 
-    ![Fill in basic information](../../images/createcluster01.png)
+    
 
 3. Fill in the node configuration information and click `Next`.
 
@@ -30,15 +30,15 @@ Certain prerequisites must be met before creating a cluster:
     - If high availability is turned off, the default controller node is 1;
     - It is recommended to use high availability mode in production environment.
 
-        ![Fill in basic information](../../images/createcluster02.png)
+        
 
 4. Fill in the network configuration information and click `Next`.
 
-    ![Fill in the network configuration information](../../images/createcluster03.png)
+    
 
 5. Fill in the plug-in configuration information and click `Next`.
 
-    ![Fill in the plug-in configuration information](../../images/createcluster04.png)
+    
 
 6. Fill in the advanced configuration information and click `OK`.
 
@@ -49,7 +49,7 @@ Certain prerequisites must be met before creating a cluster:
     - `disable_firewalld&ufw`: Disable the firewall to prevent the node from being inaccessible during the installation.
     - `Insecure_registries`: Private container registry configuration. When using a private image registry to create a cluster, in order to avoid certificate issues causing the container engine to deny access, you need to fill in the address of the private image registry here to bypass the certificate authentication of the container engine and obtain the image.
 
-        ![Fill in advanced configuration information](../../images/createcluster05.png)
+        
 
 ## Complete creation
 
@@ -60,6 +60,5 @@ After filling in the correct information and completing the above steps, the pag
     Creating a cluster takes a long time, so you need to wait patiently. In the meantime, you can click the `Back to Cluster List` button to return to the cluster list page and wait for the cluster creation to complete.
     To view the current status, click `Real-time Log`.
 
-![created successfully](../../images/createcluster06.png)
 
-![View real-time log](../../images/createcluster07.png)
+

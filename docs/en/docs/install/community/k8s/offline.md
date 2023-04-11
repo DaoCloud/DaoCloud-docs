@@ -177,7 +177,7 @@ This page briefly describes the offline installation steps for DCE 5.0 Community
 
 6. After the installation is complete, the command line will prompt that the installation is successful. congratulations! :smile: Now you can use the default account and password (admin/changeme) to explore the new DCE 5.0 through the URL prompted on the screen!
 
-    ![Installation successful](../../images/success.png)
+    
 
     !!! success
 

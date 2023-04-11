@@ -11,11 +11,11 @@ Taint can make a node exclude a certain type of Pod and prevent Pod from being s
 
 1. Find the target cluster on the `Cluster List` page, and click the cluster name to enter the `Cluster Overview` page.
 
-    ![click cluster name](../../images/taint-click--cluster-name.png)
+    
 
 2. In the left navigation bar, click `Node Management`, find the node that needs to modify the taint, click the `ⵗ` operation icon on the right and click the `Modify taint` button.
 
-    ![Taint Change](../../images/taint-change.png)
+    
 
 3. Enter the key value information of the stain in the pop-up box, select the stain effect, and click `OK`.
 
@@ -27,4 +27,4 @@ Taint can make a node exclude a certain type of Pod and prevent Pod from being s
     - PreferNoSchedule: **Try to avoid** Pods that cannot tolerate a taint will not be scheduled on nodes with the taint.
     - NoExecute: Keep the status quo. Pods that cannot tolerate a taint will not be evicted if they were already running on the node before the taint was set. Pods that cannot tolerate a taint will not be scheduled on the node if they were not running on the node before the taint was set on the node.
 
-        ![Modify taint](../../images/taint-add-remove.png)
+        

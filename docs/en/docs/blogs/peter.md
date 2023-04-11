@@ -75,7 +75,7 @@ Inspire People, Enable People! This blog comes from the talented [panpan0000](ht
 
     Except truth and love.
 
-    ![Dynamic starry sky](./images/stars.gif)
+    
 
 - :material-run-fast:{ .lg .middle } __August in the heat of summer__
 
@@ -119,7 +119,7 @@ Inspire People, Enable People! This blog comes from the talented [panpan0000](ht
 
     Where to go, faith dictates...
 
-    ![Cosmic Light](./images/light.png)
+    
 
 - :material-flower-tulip:{ .lg .middle } __October Autumn Breeze__
 
@@ -134,7 +134,7 @@ Inspire People, Enable People! This blog comes from the talented [panpan0000](ht
     The autumn wind is deep, and the winter is coming. <br>
     But I know: you have an / invincible summer in your heart.
 
-    ![The flower](./images/flower.png)
+    
 
 - :sunny:{ .lg .middle } __November I'm okay__
 
@@ -148,7 +148,7 @@ Inspire People, Enable People! This blog comes from the talented [panpan0000](ht
 
     Maybe you may not be / always shining / but always / warm and bright /
 
-    ![move forward](./images/runner.png)
+    
 
 - :fontawesome-solid-hourglass-end:{ .lg .middle } __December release control__
 

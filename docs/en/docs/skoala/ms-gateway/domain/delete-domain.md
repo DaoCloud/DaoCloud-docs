@@ -11,12 +11,12 @@ There are two ways to delete a domain name.
 
 - Find the domain name that needs to be deleted on the `Domain Management` page, click **`ⵗ`** and select `Delete`.
 
-    ![Delete on list page](imgs/delete-domain-1.png)
+    
 
 - Click the domain name to enter the details page of the domain name, click the **`ⵗ`** operation in the upper right corner of the page and select `Delete`.
 
-    ![Delete on the details page](imgs/delete-domain-2.png)
+    
 
     If the domain name is being used by an API, you need to be prompted on the page to click `View Service Details` to delete the corresponding API. <!--Update the description after the ui is updated-->
 
-    ![Delete on the details page](imgs/delete-domain-3.png)
+    

@@ -18,7 +18,7 @@ Therefore, with the help of folders, enterprise managers can centrally manage an
 
     Folders are not directly linked to resources, but indirectly achieve resource grouping through workspaces.
 
-    ![Hierarchy](../../images/fdpractice.png)
+    
 
 2. User identity management
 

@@ -16,23 +16,23 @@ It is more intuitive and easier to create through the form, just fill in the cor
 
 1. Click the name of the target cluster in the cluster list, and then click `Container Network`->`Network Policy`->`Create with YAML` in the left navigation bar.
 
-    ![path](../../images/networkpolicy01.png)
+    
 
 2. Enter or paste the prepared YAML file in the pop-up box, and click `OK` at the bottom of the pop-up box.
 
-    ![yaml](../../images/networkpolicy02.png)
+    
 
 ### Form Creation
 
 1. Click the name of the target cluster in the cluster list, and then click `Container Network`->`Network Policy`->`Create Policy` in the left navigation bar.
 
-    ![path](../../images/networkpolicy03.png)
+    
 
 2. Fill in the basic information.
 
     Names and namespaces cannot be changed after creation.
 
-    ![Basic Information](../../images/networkpolicy04.png)
+    
 
 3. Fill in the policy configuration.
 
@@ -40,27 +40,27 @@ It is more intuitive and easier to create through the form, just fill in the cor
 
     - Incoming traffic policy: Click `➕` to start configuring policies, and multiple policies are supported. The effects of multiple network policies are superimposed on each other. Only when all network policies are satisfied at the same time can a connection be successfully established.
 
-        ![ingress](../../images/networkpolicy05.png)
+        
 
     - outbound traffic policy
 
-        ![egress](../../images/networkpolicy06.png)
+        
 
 ## View network policy
 
 1. Click the name of the target cluster in the cluster list, then click `Container Network`->`Network Policy` in the left navigation bar, and click the name of the network policy.
 
-    ![path](../../images/networkpolicy07.png)
+    
 
 2. View the basic configuration, associated instance information, inbound traffic policy, and outbound traffic policy of the policy.
 
-    ![Details](../../images/networkpolicy08.png)
+    
 
 !!! info
 
     Under the associated instance tab, you can view instance monitoring, logs, container lists, YAML files, events, etc.
 
-    ![View instance information](../../images/networkpolicy09.png)
+    
 
 ## Update network policy
 
@@ -68,11 +68,11 @@ There are two ways to update network policies. Supports updating network policie
 
 - On the network policy list page, find the policy that needs to be updated, select `Update` under the operation bar on the right to update it through the form, and select `Edit YAML` to update it through YAML.
 
-    ![Update](../../images/networkpolicy10.png)
+    
 
 - Click the name of the network policy to enter the details page of the network policy, select `Update` in the upper right corner of the page to update it through the form, and select `Edit YAML` to update it through YAML.
 
-    ![Update](../../images/networkpolicy11.png)
+    
 
 ## Delete network policy
 
@@ -80,8 +80,8 @@ There are two ways to delete a network policy. Supports updating network policie
 
 - On the network policy list page, find the policy that needs to be updated, select `Update` under the operation bar on the right to update it through the form, and select `Edit YAML` to delete it through YAML.
 
-    ![Deleted](../../images/networkpolicy12.png)
+    
 
 - Click on the name of the network policy to enter the details page of the network policy, select `Update` in the upper right corner of the page to update it through the form, and select `Edit YAML` to delete it through YAML.
 
-    ![Deleted](../../images/networkpolicy13.png)
+    

@@ -34,6 +34,5 @@ click deploy "https://docs.daocloud.io/en/kpanda/07UserGuide/Workloads/CreateDep
 
 Expected result: When deploying an application in the namespace under this workspace, you can use the image selector to select the image under this registry space to deploy the application.
 
-![Select Image](../images/wsadmin01.png)
 
-![Image Selection](../images/wsadmin02.png)
+

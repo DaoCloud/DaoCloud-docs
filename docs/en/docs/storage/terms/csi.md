@@ -6,7 +6,7 @@ CSI aims to define an industry standard that will enable CSI-enabled storage pro
 
 The diagram below depicts a high-level Kubernetes archetype integrated with CSI.
 
-![CSI interface](../hwameistor/img/csi.png)
+
 
 - Introduced three new external components to decouple Kubernetes and storage provider logic
 - The blue arrows indicate the normal way of making calls against the API server

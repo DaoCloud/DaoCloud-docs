@@ -15,11 +15,11 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
 1. Click `Container Management`->`Clusters` in the left navigation bar, and then find the cluster name where you want to install Metallb.
 
-    ![metallb_cluster](../../images/metallb-cluster.png)
+    
 
 2. In the left navigation bar, select `Helm Releases` -> `Helm Charts`, and then find and click `metallb`.
 
-    ![metallb_repo](../../images/metallb-helm-repo.png)
+    
 
 3. Select the version you want to install in `Version` and click `Install`.
 
@@ -41,13 +41,13 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
         - Each address segment entered should belong to a real "physical" segment of the cluster node, but should not conflict with an existing IP address.
 
-    ![metallb_ippool](../../images/metallb-ippool.png)
+    
 
 5. Configure `L2Advertisement Setting` -> `NodeSelectors`.
 
     By default, all nodes will be the next hop for the LoadBalancer IP, but you can restrict only certain nodes to be the next hop for the LoadBalancer IP via NodeSelector:
 
-    ![node_list](../../images/metallb_nodelist.png)
+    
 
     As shown above, only the node matching Label "kubernetes.io/os: linux" will be the next hop for the LoadBalancer IP.
 
@@ -55,11 +55,11 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
     By default, Metallb declares LB IPs from all NICs of the node, but we can configure specific network interfaces to declare them.
 
-    ![metallb-interface](../../images/metallb-interface.png)
+    
 
 7. Metallb is installed.
 
-    ![metallb_installed](../../images/metallb-installed.png)
+    
 
 !!! note
 

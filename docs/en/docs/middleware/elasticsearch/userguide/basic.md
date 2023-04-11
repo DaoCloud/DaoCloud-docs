@@ -12,4 +12,3 @@ This section describes the basic information of the Elasticsearch cluster, inclu
 - Resource allocation
 - Pod list
 
-![Overview](../images/overview.png)

@@ -118,7 +118,7 @@ DaoCloud Enterprise 5.0 is still in the early stages of release, and the install
 
 - Welcome to scan the QR code and communicate with developers freely:
 
-    ![Community Edition Exchange Group](../images/assist.png)
+    
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

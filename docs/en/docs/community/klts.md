@@ -20,11 +20,11 @@ Kubernetes versions are expressed as x.y.z, where x is the major version, y is t
 
 Assuming that the latest Kubernetes released by the community is x.y, according to the [Version Skew Policy](https://kubernetes.io/releases/version-skew-policy/#supported-versions), the community only maintains the latest three versions, and KLTS currently maintains nearly ten early versions starting from 1.10, as shown in the figure below.  
 
-![](images/klts01.png)
+
 
 When the Kubernetes community discovers new CVE vulnerabilities or bugs that may affect production, it may be affected not only the versions that the community is maintaining, but also the early versions that have been discontinued before but are still in use by some enterprises and cannot be upgraded rashly, which are maintained by the KLTS team. The current maintenance cycle of KLTS is as follows:  
 
-![](images/klts02.png)
+
 
 As shown above, the maintenance cycle of a certain version by the Kubernetes community is usually about one year, and KLTS can provide a long-term maintenance in the next three years until the code is incompatible, and then the corresponding version will be aborted.  
 
@@ -38,7 +38,7 @@ As an example, the [CVE-2021-3121](https://www.cvedetails.com/cve/CVE-2021-3121)
 - Announced that “all prior versions remain exposed and users should stop using them immediately”
 - Requests to [fix early versions](https://github.com/kubernetes/kubernetes/issues/101435) are denied:
 
-![](images/klts03.png)
+
 
 KLTS addresses this situation by diligently fixing eight earlier versions that were heavily affected by the
 [CVE-2021-3121](https://www.cvedetails.com/cve/CVE-2021-3121) vulnerability. No complaints, no demands!

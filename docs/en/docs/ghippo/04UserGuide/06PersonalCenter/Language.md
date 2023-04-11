@@ -16,16 +16,16 @@ The operation steps are as follows.
 
 1. Log in to the web console with your username/password. Click `Global Management` at the bottom of the left navigation bar.
 
-    ![Global Management](../../images/ws01.png)
+    
 
 2. Click the user name in the upper right corner and select `Personal Center`.
 
-    ![Personal Center](../../images/lang01.png)
+    
 
 3. Click the `Language Settings` tab.
 
-    ![Language Settings](../../images/lang02.png)
+    
 
 4. Toggle the language option.
 
-    ![Switch language](../../images/lang03.png)
+    

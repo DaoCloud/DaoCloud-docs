@@ -26,19 +26,19 @@ Currently, DaoCloud's certified and perfectly supported Kubernetes versions incl
 
 current version:
 
-[![1.23](../images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
-[![1.24](../images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
-[![1.25](../images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
-[![1.26](../images/1.26.png)](https://github.com/cncf/k8s-conformance/pull/2451)
+[](https://github.com/cncf/k8s-conformance/pull/2072)
+[](https://github.com/cncf/k8s-conformance/pull/2239)
+[](https://github.com/cncf/k8s-conformance/pull/2240)
+[](https://github.com/cncf/k8s-conformance/pull/2451)
 
 historic version:
 
-[![1.7](../images/1.7.png)](https://github.com/cncf/k8s-conformance/pull/68)
-[![1.9](../images/1.9.png)](https://github.com/cncf/k8s-conformance/pull/210)
-[![1.13](../images/1.13.png)](https://github.com/cncf/k8s-conformance/pull/418)
-[![1.15](../images/1.15.png)](https://github.com/cncf/k8s-conformance/pull/794)
-[![1.18](../images/1.18.png)](https://github.com/cncf/k8s-conformance/pull/1144)
-[![1.20](../images/1.20.png)](https://github.com/cncf/k8s-conformance/pull/1463)
+[](https://github.com/cncf/k8s-conformance/pull/68)
+[](https://github.com/cncf/k8s-conformance/pull/210)
+[](https://github.com/cncf/k8s-conformance/pull/418)
+[](https://github.com/cncf/k8s-conformance/pull/794)
+[](https://github.com/cncf/k8s-conformance/pull/1144)
+[](https://github.com/cncf/k8s-conformance/pull/1463)
 
 ## Technology Leading
 
@@ -87,19 +87,19 @@ One of the indicators for considering a cloud-native enterprise is community con
 
 DaoCloud's contribution to the **Kubernetes** community in the last 365 days **#3** in the world**
 
-![Kubernetes](./images/cncf01.png)
+
 
 DaoCloud's contributions to the **containerd** community in the last 365 days **#5 in the world**
 
-**![containerd](./images/cncf02.png)**
+****
 
 DaoCloud's contributions to the **Istio** community in the last 365 days **#3 in the world**
 
-**![Istio](./images/cncf03.png)**
+****
 
 Cumulative contribution of DaoCloud to all projects in the **CNCF community** in the past 365 days **ranked 7th in the world**
 
-![CNCF](./images/cncf04.png)
+
 
 ## Reference link
 

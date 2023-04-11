@@ -62,7 +62,7 @@ This page describes the features of Global Management.
      You can divide the management rights of different modules to different users,
      For example, user A manages the container management module, user B manages the application workbench module, and jointly manages the observability module.
 
-     ![role](../images/role.png)
+     
 
 4. Workspace
 
@@ -75,7 +75,7 @@ This page describes the features of Global Management.
 
      Although a hierarchy can contain multiple hierarchies or workspaces, a given hierarchy or workspace can only have one parent.
 
-     ![workspace](../images/workspace.png)
+     
 
 5. Audit logs
 

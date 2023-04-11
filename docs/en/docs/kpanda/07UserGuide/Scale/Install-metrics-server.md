@@ -21,15 +21,15 @@ Please perform the following steps to install the `metrics-server` plugin for th
 
 1. On the Auto Scaling page under workload details, click the `Install` button to enter the `metrics-server` plug-in installation interface.
 
-    ![Workload](../../images/createScale04.png)
+    
 
 2. Read the introduction of the `metrics-server` plugin, select the version and click the `Install` button. This article will use the `3.8.2` version as an example to install, and it is recommended that you install `3.8.2` and later versions.
 
-    ![Workload](../../images/createScale05.png)
+    
 
 3. Configure basic parameters on the installation configuration interface.
 
-    ![Workload](../../images/createScale06.png)
+    
 
     - Name: Enter the plugin name, please note that the name can be up to 63 characters, can only contain lowercase letters, numbers and separators ("-"), and must start and end with lowercase letters or numbers, such as metrics-server-01.
     - Namespace: Select the namespace for plugin installation, here we take `default` as an example.

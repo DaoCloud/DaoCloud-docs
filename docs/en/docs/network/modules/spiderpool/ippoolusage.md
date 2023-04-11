@@ -21,7 +21,7 @@ Spiderpool provides two ways to use fixed IP for workloads:
 
     **Applicable scenarios**: this method is applicable to IP coarse-grained management. The firewall can be released based on a large range of IP (such as: 10.6.124.10~10.6.124.200). After the release, the workload can automatically obtain an IP based on this IP segment and create a corresponding fixed IPPool. For the operation method, please refer to [Create Subnet and IPPool](createpool.md) and [Workload Uses IPPool](usage.md).
 
-    ![fixedippool](../../images/fixedippool.png)
+    
 
 ## Node affinity for IPPool
 
@@ -36,11 +36,11 @@ At the same time, when the workload is created:
 
 - The same workload needs to be scheduled to **cross-subnet** or **cross-data center** nodes. The use process is as follows:
 
-    ![nodeaffinity01](../../images/nodeaffinity1.png)
+    
 
 - Different workloads need to be scheduled on **different nodes** and use **different subnets**, such as: [Mixed use of SRI-OV and Macvlan CNI](../../plans/ethplan.md ). The use process is as follows:
 
-    ![nodeaffinity02](../../images/nodeaffinity2.png)
+    
 
 ## Namespace affinity for IPPools
 

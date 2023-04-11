@@ -15,8 +15,8 @@ There are also two ways to delete a gateway. In order to ensure that the service
 
 - Select the gateway instance to be removed on the `Microservice Gateway List` page, click **`⋯`** on the right side of the instance and select `Delete`.
 
-    ![Remove Gateway](imgs/delete.png)
+    
 
 - Click on the gateway name to enter the overview page, click **`⋯`** in the upper right corner and select `Delete`.
 
-    ![Delete Gateway](imgs/delete-gateway.png)
+    

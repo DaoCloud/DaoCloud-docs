@@ -101,20 +101,20 @@ Service mesh provides two creation methods: wizard and YAML. The specific steps 
 
 1. Click `Traffic Management` -> `Virtual Service` in the left navigation bar, and click the `Create` button in the upper right corner.
 
-    ![create](../../images/virtualserv01.png)
+    
 
 2. In the `Create Virtual Service` interface, first perform the basic configuration and then click `Next`.
 
-    ![Create Virtual Service](../../images/virtualserv02.png)
+    
 
 3. Follow the screen prompts to select the route configuration, and click `OK`.
 
-    ![routing configuration](../../images/virtualserv03.png)
+    
 
 4. Return to the virtual service list, and the screen prompts that the creation is successful.
 
-    ![Created successfully](../../images/virtualserv04.png)
+    
 
 5. On the right side of the list, click `⋮` in the operation column to perform more operations through the pop-up menu.
 
-    ![More Actions](../../images/virtualserv05.png)
+    

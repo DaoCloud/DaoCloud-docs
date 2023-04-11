@@ -52,19 +52,19 @@ Prerequisite: Managed Harbor and registry space have been created
 
 1. On the Managed Harbor list page, click `...` on the right side of the target registry, click `Native Harbor` to enter the login page of the native Harbor.
 
-    ![Native Harbor](../images/push01.png)
+    
 
 1. Enter the user name and password set when creating managed Harbor to enter native Harbor
 
-    ![Enter username and password](../images/push02.png)
+    
 
 1. Click the name of the target registry space (project) to enter the registry space
 
-    ![registry Space](../images/push03.png)
+    
 
 1. Click the push command on the right to view the push commands provided by native Harbor.
 
-    ![View push command](../images/push04.png)
+    
 
 !!! tip
 

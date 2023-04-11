@@ -69,29 +69,29 @@ rook-ceph-cluster-v1.10.5.tgz rook-ceph-v1.10.5.tgz rook-ceph rook-ceph-cluster 
 
 ### Upload the chart package with json format
 
-![Enter the mirror warehouse](../images/addon-rook-registry-1.png)
 
-![Upload chart package from mirror warehouse](../images/addon-rook-registry-2.png)
 
-![Upload chart package from mirror warehouse](../images/addon-rook-registry-3.png)
+
+
+
 
 ## DCE 5.0 cluster installation Rook-ceph
 
 ### Connect the cluster to DCE 5.0
 
-![Cluster Access](../images/addon-rook-cluster-1.png)
 
-![Cluster Access](../images/addon-rook-cluster-2.png)
+
+
 
 ### Install rook-ceph
 
-![rook-ceph install](../images/addon-rook-cluster-3.png)
 
-![rook-ceph install](../images/addon-rook-cluster-4.png)
 
-![rook-ceph component](../images/addon-rook-getpod.png)
 
-![rook-ceph-sc](../images/addon-rook-storageclass.png)
+
+
+
+
 
 ## App Deployment Verification
 

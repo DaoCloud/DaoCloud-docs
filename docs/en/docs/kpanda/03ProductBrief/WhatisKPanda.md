@@ -43,6 +43,6 @@ Support namespace or cluster-level policies for network, quota, resource limit, 
 
 **Product logical architecture**
 
-![logical architecture](../images/kpanda_architect.png)
+
 
 [[Free Trial Now](../../dce/license0.md){ .md-button .md-button--primary }

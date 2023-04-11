@@ -15,11 +15,11 @@ A namespace is an abstraction used in Kubernetes to isolate resources.
 
 1. Click `Namespace` in the left navigation bar to enter the namespace list, and click `Create` in the upper right corner.
 
-    ![namespace-listpng](../../images/namespace-listpng.png)
+    
 
 2. On the `Create Namespace` page, configure the basic information of the namespace.
 
-    ![namespace-create01](../../images/namespace-create01.png)
+    
 
     - name: set the name of the namespace
 
@@ -37,11 +37,11 @@ A namespace is an abstraction used in Kubernetes to isolate resources.
 
     The resource quotas currently supported in the workspace include: CPU request, CPU limit, memory request, memory limit, total storage request, and storage volume declaration. Among them, the limit value of CPU and memory resources must be greater than the requested value.
 
-    ![namespace-create02](../../images/namespace-create02.png)
+    
 
 4. Click `OK` to complete the resource creation. The screen prompts that the creation is successful, and returns to the namespace list page.
 
-    ![namespace-list01](../../images/namespace-list01.png)
+    
 
 5. Click `︙` on the right side of the list, and you can choose `Quota Management`, `Edit Label`, `Delete` and other operations in the pop-up menu.
 
@@ -55,10 +55,10 @@ In addition to the CPU request, CPU limit, memory request, memory limit, total s
 
 1. On the namespace list page, select a namespace and click `Quota Management`.
 
-    ![namespace-quota](../../images/namespace-quota.png)
+    
 
 2. In the pop-up `Resource Quota` dialog box, you can see the resource quota information of the current namespace. Click `Add` under `Application Resources`, select a resource and set a quota, for details, please refer to [Kubernetes Resource Quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) .
 
-    ![namespace-quota01](../../images/namespace-quota01.png)
+    
 
 3. Click `OK` to complete the quota setting.
