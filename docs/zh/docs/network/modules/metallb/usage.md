@@ -26,7 +26,7 @@ spec:
   ...
 ```
 
-创建 `LoadBalancer Service`	,详情请参考：[创建服务(Service)](/../../../create-services.md)![metallb ip pool](../../images/metallb ip pool.jpg)
+创建 `LoadBalancer Service`	,详情请参考：[创建服务(Service)](../../../kpanda/user-guide/services-routes/create-services.md)![metallb ip pool](../../images/metallb ip pool.jpg)
 
 ## 指定 IP 地址
 
