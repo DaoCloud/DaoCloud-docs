@@ -49,34 +49,19 @@
 
 ## 离线安装依赖项
 
-离线安装意味着目标主机的网络处于离线状态，无法下载所需依赖项，所以需先在一个在线环境中制作好离线包。
+离线安装意味着目标主机的网络处于离线状态，无法下载所需依赖项，所以需先下载好离线包。
 
-1. 制作离线包。
-
-    - 社区版制作命令
-
-        ```bash
-        bash install_prerequisite.sh export community
-        ```
-
-    - 商业版制作命令
-
-        ```bash
-        bash install_prerequisite.sh export full
-        ```
-
-    !!! note
-
-        当上述命令执行完成后，会在当前目录生成名为 pre_pkgs.tar.gz 的压缩包，该压缩包中会包含安装所需的所有文件。
-
-2. 上传目录中的所有文件到离线环境。
+1. 下载离线包。
 
     ```bash
-    # 脚本与离线包都位于同一目录层级
-    $ tree .
-    .
-    ├── install_prerequisite.sh
-    └── pre_pkgs.tar.gz
+    export VERSION=v0.6.0
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_$VERSION.tar.gz
+    ```
+
+2. 解压离线包。
+
+    ```bash
+    tar -xvf prerequisite_$VERSION.tar.gz
     ```
 
 3. 执行离线安装。
