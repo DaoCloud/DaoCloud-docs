@@ -12,11 +12,11 @@ The specific operation steps are as follows:
 
 1. Log in to the web console as a user with `admin` role. Click `Global Management` at the bottom of the left navigation bar.
 
-    ![Global Management](../../images/ws01.png)
+    
 
 1. Click `Platform Settings`, select `Mail Server Settings`.
 
-    ![mail server](../../images/mail01.png)
+    
 
     Complete the following fields to configure the mail server:
 
@@ -31,11 +31,11 @@ The specific operation steps are as follows:
 
 1. After the configuration is complete, click `Save`, and click `Test Mail Server`.
 
-    ![test](../../images/mail02.png)
+    
 
 1. A message indicating that the mail has been successfully sent appears in the upper right corner of the screen, indicating that the mail server has been successfully set up.
 
-    ![Success](../../images/mail03.png)
+    
 
 ## Common problem
 

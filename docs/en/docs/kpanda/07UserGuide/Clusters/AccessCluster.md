@@ -14,11 +14,11 @@ Clusters accessed or created using the DCE 5.0 [Container Management](../../03Pr
 
 1. On the `Cluster List` page, select the cluster to be accessed through CloudShell, click the `...` operation icon on the right and click `Console` in the drop-down list.
 
-    ![Invoke CloudShell console](../../images/access-cloudshell.png)
+    
 
 2. Execute the `kubectl get node` command on the CloudShell console to verify the connectivity between CloudShell and the cluster. As shown in the figure, the console will return the node information under the cluster.
 
-    ![Verify Connectivity](../../images/access-get-node.png)
+    
 
 You can now access and manage the cluster through CloudShell.
 
@@ -34,11 +34,11 @@ Before starting, the following conditions need to be met:
 
 1. On the `Cluster List` page, select the cluster that needs to download the certificate, click `...` on the right, and click `Get Certificate` in the pop-up menu.
 
-    ![Enter the download certificate page](../../images/access-get-cert.png)
+    
 
 2. Select the certificate validity period and click `Download Certificate`.
 
-    ![Download Certificate](../../images/access-download-cert.png)
+    
 
 ### Access the cluster through kubectl
 

@@ -6,15 +6,15 @@ The microservice engine supports group management of microservices based on the 
 
 1. Enter `Microservice Engine` -> `Microservice Governance Center` -> `Hosted Registry` module, click on the name of the target registry.
 
-    ![Click on the registration center name](imgs/config01.png)
+    
 
 2. Click `Microservice Configuration List` in the left navigation bar, and then click `Create` in the upper right corner.
 
-    ![Create the first step](imgs/config02.png)
+    
 
 3. Fill in the configuration information
 
-    ![Fill in configuration](imgs/config03.png)
+    
 
     - Namespace: Select the microservice namespace to which the current configuration belongs, the default is `public`
 
@@ -41,7 +41,7 @@ The microservice engine supports group management of microservices based on the 
 
     - More Configurations -> Belonging Application (optional): Select the application to which the current configuration belongs.
 
-        ![Fill in configuration](imgs/config04.png)
+        
 
 4. Click `OK` in the lower right corner of the page.
 
@@ -49,18 +49,18 @@ The microservice engine supports group management of microservices based on the 
 
 1. Enter `Microservice Engine` -> `Microservice Governance Center` -> `Hosted Registry` module, click on the name of the target registry.
 
-    ![Click on the registration center name](imgs/config01.png)
+    
 
 2. Click `Microservice Configuration List` on the left navigation bar, and click the Data ID of the target configuration.
 
-    ![click name](imgs/config05.png)
+    
 
 3. View the basic information, configuration content, historical version, listener, sample code and other information of the configuration.
 
     - Novices can use the sample code to quickly use the client programming to consume the configuration, lowering the threshold for novices.
     - Support querying the currently configured listener and MD5 check value, so as to know the microservices that are using this configuration and whether the configuration changes have been successfully pushed to the client.
 
-        ![view](imgs/config06.png)
+        
 
 ## Roll back the historical version
 
@@ -68,26 +68,26 @@ The microservice configuration list will record the historical version of the co
 
 1. Enter `Microservice Engine` -> `Microservice Governance Center` -> `Hosted Registry` module, click on the name of the target registry.
 
-    ![Click on the registration center name](imgs/config01.png)
+    
 
 2. Click `Microservice Configuration List` on the left navigation bar, and click the Data ID of the target configuration.
 
-    ![click name](imgs/config05.png)
+    
 
 3. Click the `Historical Version` tab, find the corresponding record, click `ⵗ` on the right side of the record and select `Rollback`.
 
-    ![click name](imgs/config07.png)
+    
 
 4. Compare the version differences and confirm, then click `Rollback` in the lower right corner.
 
-    ![rollback](imgs/config08.png)
+    
 
 ## update/delete config`
 
 1. Enter `Microservice Engine` -> `Microservice Governance Center` -> `Hosted Registry` module, click on the name of the target registry.
 
-    ![Click on the registration center name](imgs/config01.png)
+    
 
 2. Click `Microservice Configuration List` on the left navigation bar, and click the `ⵗ` button on the right side of the target configuration to select update or delete as required.
 
-    ![update/delete](imgs/config07.png)
+    

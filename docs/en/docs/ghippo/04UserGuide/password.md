@@ -10,26 +10,26 @@ If the user has not set an email address, he can only contact the administrator 
 
 1. If you have forgotten your password, you can click `Forgot password?` on the login screen.
 
-    ![Login Screen](../images/login02.png)
+    
 
 1. Enter your username and click `Submit`.
 
     To prevent spam, after clicking 'Submit', the button will be grayed out and a 1-minute countdown will be displayed.
     If you haven't received the email after 1 minute, please click this button again.
 
-    ![Password reset process](../images/password02.png)
+    
 
 1. Find the password reset email in the mailbox, and click the link in your email.
 
-    ![Password reset process](../images/password03.png)
+    
 
 1. Follow the screen prompts to set a new password and click `Submit`. The requirements for setting a new password are consistent with the password rules when creating a user.
 
-    ![Password reset process](../images/password04.png)
+    
 
 1. The screen prompts that the password has been changed successfully or directly log in to the DCE main screen.
 
-    ![Password reset process](../images/password05.png)
+    
 
 ## Reset password process
 

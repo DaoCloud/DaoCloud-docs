@@ -11,11 +11,11 @@ The specific operation steps are as follows:
 
 1. Click `Cluster Management` on the left navigation bar, and click the `Add Cluster` button. Or in the mesh list, click the `...` button on the far right, and select `Add Cluster` from the pop-up menu.
 
-    ![Add cluster button](../../images/addcluster01.png)
+    
 
 2. In the cluster list that pops up, check the cluster to be added, and click the `OK` button to complete the cluster addition operation.
 
-    ![Add cluster page](../../images/addcluster02.png)
+    
 
 !!! note
 

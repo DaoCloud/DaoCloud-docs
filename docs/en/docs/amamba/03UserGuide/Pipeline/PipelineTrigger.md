@@ -2,7 +2,7 @@
 
 Configure a trigger for the pipeline to automatically trigger the execution of the pipeline periodically. Click `Edit Configuration` when editing the pipeline to configure the build trigger.
 
-![trigger01](../../images/trigger01.png)
+
 
 ## Trigger type
 

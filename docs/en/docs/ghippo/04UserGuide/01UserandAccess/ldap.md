@@ -14,15 +14,15 @@ In global management, the operation steps are as follows:
 
 1. Log in to the web console as a user with `admin` role. Click `Global Management` in the upper left corner of the left navigation bar.
 
-    ![global](../../images/ws01.png)
+    
 
 1. Navigate to `Users and Access Control` under `Global Administration`, select `Create an Identity Provider`.
 
-    ![Identity Provider](../../images/ldap00.png)
+    
 
 1. In the `LDAP` tab, fill in the following fields and click `Save` to establish a trust relationship with the identity provider and a user mapping relationship.
 
-    ![ldap](../../images/ldap01.png)
+    
 
     | field | description | example value |
     | -------------- | ---------------------------------- -------------------------- | ----------------------- ------------ |
@@ -38,7 +38,7 @@ In global management, the operation steps are as follows:
 
 1. On the `Synchronize groups` tab, fill in the following fields to configure the mapping relationship of groups, and click `Save` again.
 
-    ![Identity Provider](../../images/ldap02.png)
+    
 
     | field | description | example value |
     | ---------------- | -------------------------------- ---------------------------- | --------------------- ------ |

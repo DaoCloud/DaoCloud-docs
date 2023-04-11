@@ -23,17 +23,17 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
 2. Select `Helm Releases` -> `Helm Charts` in the left navigation bar, and then find and click `spiderpool`.
 
-    ![spiderpool helm](../../images/spiderpool-install-1.png)
+    
 
 3. Select the version you want to install in `Version`, and click `Install`.
 
-    ![spiderpool version](../../images/spiderpool-install-2.png)
+    
 
 4. In the installation page, fill in the required parameters.
 
-    ![spiderpool install1](../../images/spiderpool-install-3.png)
+    
 
-    ![spiderpool install2](../../images/spiderpool-install-4.png)
+    
 
     The parameters in the above screens are described as follows:
 
@@ -49,7 +49,7 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
     - `Spiderpool Agent Setting` —> `Spiderpool Agent PrometheusRule` -> `Install`: install the prometheusRule object of Spiderpool Agent, which requires Prometheus to be installed in the cluster, otherwise the creation will fail.
 
-    ![spiderpool install3](../../images/spiderpool-install-5.png)
+    
 
     The parameters in the above screen are described as follows:
   
@@ -71,7 +71,7 @@ Please confirm that your cluster has successfully connected to the `Container Ma
     - `IP Family Setting -> enable IPv6`: enable IPv6 support. If enabled, when assigning an IP to the pod, it must try to assign an IPv6 address, otherwise it will cause the Pod to fail to start.
     Therefore, be sure to open the subsequent `Cluster Default Ippool Installation` -> `install IPv6 ippool` to create the default IPv6 pool for the cluster.
 
-    ![spiderpool install4](../../images/spiderpool-install-6.png)
+    
 
     The parameters in the above figure are described as follows:
 

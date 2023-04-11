@@ -16,19 +16,19 @@ The steps to create a mesh gateway are as follows.
 
 1. Click `mesh Gateway` in the left navigation bar to enter the gateway list, and click the `Create` button in the upper right corner.
 
-    ![create](../../images/create-gateway01.png)
+    
 
 2. In the `Create mesh Gateway` window, follow the prompts to configure parameters, which are basically required. After checking the configuration information is correct, click `OK`.
 
-    ![create](../../images/create-gateway02.png)
+    
 
 3. Return to the mesh gateway list, and the upper right corner of the screen will prompt that the creation is successful. The status of the newly created mesh gateway is `creating`.
 
-    ![create](../../images/create-gateway03.png)
+    
 
 4. Refresh the page after a few seconds, and the status will change to `Running`, indicating that the gateway is successfully configured. Click `...` on the right side of the list to perform edit and delete operations.
 
-    ![create](../../images/create-gateway04.png)
+    
 
 !!! info
 

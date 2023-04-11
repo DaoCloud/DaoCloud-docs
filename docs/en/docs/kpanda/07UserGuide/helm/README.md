@@ -7,7 +7,7 @@ hide:
 
 Helm is a package management tool for Kubernetes, which makes it easy for users to quickly discover, share and use applications built with Kubernetes. The fifth generation [Container Management Module](../../03ProductBrief/WhatisKPanda.md) provides hundreds of Helm templates, covering storage, network, monitoring, database and other main scenarios. With these templates, you can quickly deploy and easily manage Helm applications through the UI interface. In addition, it supports adding more personalized templates through [Add Helm repository](helm-repo.md) to meet various needs.
 
-![template](../../images/helm14.png)
+
 
 **Key Concepts**:
 

@@ -6,8 +6,8 @@ There are two ways to modify the basic information and policy configuration of t
 
 - Find the domain name that needs to be updated on the `Domain Name Management` page, click **`ⵗ`** on the right side and select `Edit Basic Information` or `Edit Policy Configuration`.
 
-    ![Update basic information on the list page](imgs/update-domain-1.png)
+    
 
 - Click the domain name name to enter the domain name details page, click `Modify Basic Configuration` in the upper right corner of the page to update the basic information, and click `Modify Policy` to update the policy.
 
-    ![Update on the details page](imgs/update-domain-2.png)
+    

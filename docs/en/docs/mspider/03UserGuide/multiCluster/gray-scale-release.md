@@ -12,11 +12,11 @@ First select a namespace (gray-demo), and enable the namespace sidecar injection
 
 Deploy the application on the application workbench, here we take the helloworld of istio as an example.
 
-![Deploy Application](./images/create-demo.png)
+
 
 Select the corresponding cluster (mdemo-cluster2) and namespace, and configure basic workload information.
 
-![Configure Workload](./images/create-demo1.png)
+
 
 - Select image: docker.m.daocloud.io/istio/examples-helloworld-v1
 - version: latest
@@ -31,16 +31,16 @@ Configure service information:
      - container port: 5000
      - Service port: 5000
 
-![access type](./images/create-demo2.png)
 
-![Port Configuration](./images/create-demo4.png)
+
+
 
 In order to distinguish different versions of workloads, you need to find the corresponding workloads in `Container Management Platform`, click `Labels and Annotations`, and add key-value pairs to container group tags:
 "version": "v1"
 
-![Labels and annotations](./images/add-labels.png)
 
-![Add key-value pair](./images/add-labels1.png)
+
+
 
 ### Cluster deployment v2 version helloworld
 
@@ -63,13 +63,13 @@ Its label key-value pair is the container group label added above: `version: <VE
 
 Policy: Istio Mutual TLS must be enabled
 
-![Enable Mutual TLS](./images/demo-dr.png)
 
-![Enable Mutual TLS](./images/demo-dr1.png)
+
+
 
 **Istio Mutual** TLS mode must be enabled
 
-![Enable Mutual TLS](./images/demo-dr2.png)
+
 
 The target rule YAML is as follows:
 
@@ -103,7 +103,7 @@ spec:
 
 First you need to create a gateway rule:
 
-![Create a gateway rule](./images/create-gw-ingress.png)
+
 
 The gateway rule YAML is as follows:
 
@@ -127,9 +127,9 @@ spec:
 
 Then configure the virtual service rules required to access the service.
 
-![Configure virtual service rules](./images/gw-vs.png)
 
-![Configure virtual service rules](./images/gw-vs1.png)
+
+
 
 The virtual service YAML is as follows:
 
@@ -165,7 +165,7 @@ spec:
 
 **INGRESS_LB_IP** refers to the Ingress grid load balancing address, which can be viewed in the container management platform. If there is no valid load balancing IP, it can be accessed through NodePort.
 
-![verify](./images/check-ingress-lb.png)
+
 
 (Because the container management platform interface cannot directly view the external IP, so use the ability of the console to view)
 
@@ -173,4 +173,4 @@ Visit in browser: http://${INGRESS_LB_IP}/hello
 
 Confirm that the access ratio of its v1 to v2 version is 8:2 with the ratio of the above policy
 
-![confirm](./images/get-hello.png)
+

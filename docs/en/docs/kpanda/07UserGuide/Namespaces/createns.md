@@ -11,11 +11,11 @@ A namespace is an abstraction used for resource isolation in Kubernetes. This ar
 
 1. Click the name of the target cluster to enter `Cluster Details`.
 
-    ![ns](../../images/crd01.png)
+    
 
 2. Click `Namespace` on the left navigation bar to enter the namespace management page, and click the `Create` button on the right side of the page.
 
-    ![ns](../../images/ns01.png)
+    
 
 3. Fill in the name of the namespace, configure the workspace and labels (optional settings), and click `OK`.
 
@@ -23,8 +23,8 @@ A namespace is an abstraction used for resource isolation in Kubernetes. This ar
 
         Workspaces are primarily used to divide groups of resources and grant users (groups of users) different access rights to that resource. For a detailed description of the workspace, please refer to [Workspace and Hierarchy](../../../ghippo/04UserGuide/02Workspace/Workspaces.md).
 
-    ![ns](../../images/ns02.png)
+    
 
 4. Click `OK` to complete the creation of the namespace. On the right side of the namespace list, click `⋮`, and you can choose to update, delete, and more from the pop-up menu.
 
-    ![ns](../../images/ns03.png)
+    

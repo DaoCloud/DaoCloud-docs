@@ -16,12 +16,12 @@ Clusters created through the DCE 5.0 [Container Management](../../03ProductBrief
 
 1. On the `Cluster List` page, find the cluster that needs to be uninstalled/unconnected, click `...` on the right and click `Uninstall Cluster`/`Unconnect` in the drop-down list.
 
-    ![Click the delete button](../../images/deletecluster01.png)
+    
 
 2. Enter the cluster name to confirm and click `Delete`.
 
-    ![Confirm Delete](../../images/deletecluster02.png)
+    
 
 3. Return to the `Cluster List` page, and you can see that the status of the cluster has changed to `Deleting`. It may take a while to uninstall the cluster, please wait patiently.
 
-    ![Deleting status](../../images/deletecluster03.png)
+    

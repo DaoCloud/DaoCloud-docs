@@ -23,12 +23,12 @@ When the peak business period is over, in order to save resource costs, you can 
 
     If the `Cluster Role` has the tag `Access Cluster`, it means that the cluster does not support node expansion and contraction.
 
-    ![Enter the cluster list page](../../images/addnode01.png)
+    
 
 2. Click `Node Management` on the left navigation bar, find the node to be uninstalled, click `ⵗ` and select `Remove Node`.
 
-    ![Delete Node](../../images/deletenode01.png)
+    
 
 3. Enter the node name, and click `Delete` to confirm.
 
-    ![Delete Node](../../images/deletenode02.png)
+    

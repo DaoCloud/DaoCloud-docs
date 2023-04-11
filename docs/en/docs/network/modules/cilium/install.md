@@ -6,13 +6,13 @@ This page describes the configuration of various arguments when installing Ciliu
 
 To install Cilium in DCE 5.0, you need to select `cilium` for `Network Plugins` on the `Create Cluster`->`Network Configuration` page. For creating a cluster, see [create worker cluster](../../../kpanda/07UserGuide/Clusters/CreateCluster.md).
 
-![cilium-install](../../images/cilium-install1.png)
+
 
 ## Argument configuration
 
 If you need to configure more features for Cilium, you can install Cilium via Kubean. Add and fill in arguments as needed under `Advanced Configuration`->`Custom arguments` when installing Cilium using Kubean.
 
-![cilium-arg](../../images/cilium-install2.png)
+
 
 The following describes the configuration of each argument when installing Cilium with Kubean：
 

@@ -28,7 +28,7 @@ Through the container registry service, you can assign the private registry spac
 
 **Product logical architecture**
 
-![Logical Architecture Diagram](./images/architect.png)
+
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

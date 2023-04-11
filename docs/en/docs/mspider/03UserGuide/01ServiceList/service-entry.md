@@ -11,33 +11,33 @@ This method of creation is relatively simple and intuitive.
 
 1. After entering the selected mesh, click `Traffic Governance` -> `Service Entry` in the left navigation bar, and click the `Create` button in the upper right corner.
 
-    ![create](../../images/entry01.png)
+    
 
 2. On the `Create Service Entry` page, configure various parameters and click `OK`. For the meaning of specific parameters, please refer to [parameter description](#parameters)
 
-    ![Configuration parameters](../../images/entry02.png)
+    
 
 3. Return to the list of service items, and the screen prompts that the creation is successful.
 
-    ![Created successfully](../../images/entry03.png)
+    
 
 5. On the right side of the list, click `⋮` in the operation column to perform more operations through the pop-up menu.
 
-    ![More Actions](../../images/entry04.png)
+    
 
 ## Create with YAML
 
 1. After entering the selected mesh, click `Traffic Governance` -> `Service Entry` in the left navigation bar, and click the `Create with YAML` button in the upper right corner.
 
-    ![Create with YAML](../../images/entry05.png)
+    
 
 2. Select the namespace, select the template, modify the parameters of each field, or directly import the existing YAML file, and click `OK` after confirming that the parameters are correct.
 
-    ![YAML parameter configuration](../../images/entry06.png)
+    
 
 3. Return to the list of service items, and the screen prompts that the creation is successful.
 
-    ![Created successfully](../../images/entry07.png)
+    
 
 Here is an example of a standard service entry YAML:
 

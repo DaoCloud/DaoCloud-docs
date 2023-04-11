@@ -6,7 +6,7 @@ HwameiStor creates a local storage resource pool for centrally managing all disk
 
 HwameiStor is an open source, lightweight, and cost-efficient local storage system that can replace expensive traditional SAN storage. The system architecture of HwameStor is as follows.
 
-![architecture](images/hwa.png)
+
 
 HwameiStor is composed of five components:
 

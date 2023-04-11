@@ -11,7 +11,7 @@ Daocloud 第五代[容器管理 (Kpanda）](../kpanda/03ProductBrief/WhatisKPand
 
 容器管理的主要功能如下：
 
-![img](images/kpanda01.jpeg)
+
 
 **集群管理**
 
@@ -101,7 +101,7 @@ Daocloud 第五代容器管理模块引入了自研开源组件 CloudTTY，支�
 
 首先前往目标集群的控制节点上获取它的 `KubeConfig` 文件，然后在容器管理的`集群列表`处点击接入集群按钮，并将 KubeConfig 文件内的内容作为参数复制粘贴到`接入参数`的表单内，既完成了对一个集群的接入操作。
 
-![img](images/kpanda04.png)
+
 
 **创建集群**
 
@@ -158,7 +158,7 @@ Daocloud 第五代容器管理模块引入了自研开源组件 CloudTTY，支�
 
     答：第五代容器管理兼容包括 AWS、谷歌云、信创架构、边云融合等任何基于标准 Kubeneters ApiServer 的发行版容器集群。
 
-    ![img](images/kpanda02.png)
+    
 
 - 问：如应对跨集群的网络中断问题？
 
@@ -173,7 +173,7 @@ Daocloud 第五代容器管理模块引入了自研开源组件 CloudTTY，支�
 
     答：借助自研开源组件 ClusterPedia 通过在目标集群上安装 Agent 组件，结合 Watch 机制能够实时将目标集群的资源变动信息同步到容器管理集群的 ETCD 内。
 
-    ![img](images/kpanda03.png)
+    
 
 - 问：容器管理在第五代产品中的定位？
 

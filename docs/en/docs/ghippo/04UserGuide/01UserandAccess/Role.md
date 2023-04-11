@@ -17,20 +17,20 @@ The submodule administrator role needs to be configured in the global management
 
 - Find the user in the user list of `Global Management` -> `Access Control` -> `User`; click `...`, select `Authorization`, and assign the user a predefined submodule of the system Administrator privileges.
 
-    ![User authorization](../../images/role01.png)
+    
 
 - Create a group in the group list of `Global Management` -> `Access Control` -> `group`, add the user to the group, and authorize the group (the specific operation is: in the group list Find the group, click `...`, select `Authorization`, and give the group the pre-defined sub-module administrator rights of the system).
 
-    ![group Authorization](../../images/role02.png)
+    
 
 - In the role list of `Global Management` -> `Users and Access Control` -> `Roles`, find the corresponding submodule administrator role, click the role name to enter the details, click the `Associate Member` button, select the user or The group to which the user belongs, click `OK`.
 
-    ![Role authorization](../../images/role03.png)
+    
 
 Submodules that support this mode: Access Control (IAM), Audit Log (Audit), Container Management (Kpanda)
 At the same time, the administrator role (Admin) of the platform can also be authorized through the above methods
 
-![Global Admin Mode](../../images/permission1.png)
+
 
 !!! note
 
@@ -56,7 +56,7 @@ Submodules that support this mode: [Container Management](../../../kpanda/03Prod
 
 You can go to `Container Management` -> `Privilege Management`, select `Add Authorization` to grant Cluster or Namespace permissions to users/groups.
 
-![submodule management mode](../../images/permission2.png)
+
 
 !!! note
 
@@ -94,7 +94,7 @@ You can go to `Container Management` -> `Privilege Management`, select `Add Auth
 
 3. You can create a workspace through `Global Management` -> `Workspace and Hierarchy`, and grant users/groups Workspace Admin, Workspace Editor, and Workspace Viewer roles in `Workspace-Authorization`.
 
-    ![Resource-Based Permission Mode 2](../../images/permission4.png)
+    
 
 !!! note
 

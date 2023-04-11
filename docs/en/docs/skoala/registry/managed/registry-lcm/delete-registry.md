@@ -7,11 +7,11 @@ hide:
 
 1. On the `Managed Registry List` page, select the registry to be deleted, click **`⋯`** on the right and select `Delete`.
 
-    ![Enter the delete page](imgs/delete01.png)
+    
 
 2. Enter the name of the registry and click `Remove`.
 
-    ![Confirm Name](imgs/delete02.png)
+    
 
 !!! note
 

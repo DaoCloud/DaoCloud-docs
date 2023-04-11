@@ -26,7 +26,7 @@ DCE 5.0 natively supports the DevOps development and operation mode, which can r
 
 </div>
 
-![modules](../images/dce-modules04.png)
+
 
 In the past eight years, DaoCloud has invested huge to explore and develop a cloud-native operating system with custom and scalable modules to facilitate your business digitalization. You can use each module like a LEGO brick, with zero downtime while upgrading any module. DCE 5.0 is also easy to integrate with hundreds of cloud-native ecological plugins, so you can simply customize solutions for different scenarios. Things go better with such a kind of modular style to grow day by day.
 
@@ -38,7 +38,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md), [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Multicloud Orchestration](../kairship/01product/whatiskairship.md), [Network](../network/intro/what-is-net.md), Storage, cloud to edge continuum, Xinchuang Heterogeneous
 
-    ![multi-cloud](../images/01multi-cloud.jpg)
+    
 
 === "Data Service"
 
@@ -48,7 +48,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md), [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Network](../network/intro/what-is-net.md), Storage, [Middleware](../middleware/midware.md)
 
-    ![data](../images/02data.jpg)
+    
 
 === "Microservice Governance"
 
@@ -67,7 +67,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md), [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Microservice Engine](../skoala/intro/features.md), [Service Mesh](../mspider/01Intro/WhatismSpider.md), [Insight](../insight/intro/WhatisInsight.md), [App Workbench](../amamba/01ProductBrief/WhatisAmamba.md), [Network](../network/intro/what-is-net.md), Storage
 
-    ![Microservie](../images/03msgov.jpg)
+    
 
 === "Insight"
 
@@ -77,7 +77,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md), [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Insight](../insight/intro/WhatisInsight.md), [Network](../network/intro/what-is-net.md), Storage
 
-    ![Insight](../images/04insight.jpg)
+    
 
 === "App Store"
 
@@ -95,7 +95,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md), [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [App Workbench](../amamba/01ProductBrief/WhatisAmamba.md), [Registry](../kangaroo/intro.md), [Network](../network/intro/what-is-net.md), Storage
 
-    ![App Delivery](../images/06appdeliv.jpg)
+    
 
 === "Cloud Native Base"
 
@@ -123,7 +123,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md), [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](../community/kubean.md), [Middware](../middleware/midware.md), [Network](../network/intro/what-is-net.md), Storage
 
-    ![Xinchuang](../images/08xinchuan.jpg)
+    
 
 === "Cloud to edge continuum"
 
@@ -133,7 +133,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md), [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [Cluster lifecycle manager](../community/kubean.md), [Network](../network/intro/what-is-net.md), Storage, Edge nodes, clusters in a weak network
 
-    ![cloud-edge](../images/09cloud-edge.jpg)
+    
 
 Just like Lego bricks, it combines dozens of the best open source technologies into a platform. After many dialectical selection, adaptation and running-in, coding debugging, and massive testing, a sword is sharpened in ten years. The new generation of containerized platforms can meet the needs of various scenarios for enterprises migrating to the cloud.
 

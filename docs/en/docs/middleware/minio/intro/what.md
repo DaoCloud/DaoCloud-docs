@@ -45,6 +45,6 @@ Designed to be cloud-native, MinIO can run as lightweight containers managed by 
 The entire server is about tens of MB of static binary files, which can efficiently use CPU and memory resources even under high load.
 Enables enterprises to co-host large numbers of tenants on shared hardware.
 
-![MinIO main interface](../images/what01.png)
+
 
 [Free Trial](../../../dce/license0.md){ .md-button .md-button--primary }

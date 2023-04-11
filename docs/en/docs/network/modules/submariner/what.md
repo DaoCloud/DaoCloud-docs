@@ -11,7 +11,7 @@ As Kubernetes continues to evolve, multi-clustering is becoming more and more po
 
 The **architecture diagram** is as follows:
 
-![submariner](../../images/submariner.png)
+
 
 It includes the following **important components**:
 

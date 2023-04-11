@@ -13,25 +13,25 @@ Taking the [workspace](../../ghippo/04UserGuide/02Workspace/ws-folder.md) as a m
 - Workspace management members can create namespace resources in the associated cluster.
 - Self service resource creation mode. Users can self create namespaces in the workspace to divide resources.
 
-![Multi-tenancy resources](../images/what01.png)
+
 
 === "Cloud Native Based"
 
 Support popular cloud native applications such as kubernetes manifests, Helm, OAM,OLM, etc. And it can seamlessly integrate with SpingCloud, Dubbo and ServiceMesh frameworks to achieve SOA (Service-Oriented Architecture). In additionally, DCE 5.0 [micro service engine](../../skoala/intro/features.md) and [service mesh](../../mspider/01Intro/WhatismSpider.md), enables scaling , logging, monitoring and upgrading for applications.
 
-![App-centered](../images/what02.png)
+
 
 === "Efficient Continuous Integration"
 
 You can use both Jenkins and Tekton in the same time. The pipeline can be edited simply by web UI. In the maintime, applications workbench support multiple SCM (Source Code Management).
 
-![CI/CD](../images/what03.png)
+
 
 === "Automated Secure Progressive Delivery"
 
 Application workbench introduces a concept of continuous deployment for cloud native, which designed for cooperate with GitOps. It integrates the progressive delivery component with Argo Rollout and supports grayscale publishing that improved the efficiency of application delivery.
 
-![Delivery one-by-one](../images/what04.png)
+
 
 !!! info
 
@@ -43,7 +43,7 @@ Application workbench introduces a concept of continuous deployment for cloud na
 
 The application workbench has a significant role in the roadmap of DCE 5.0 as shown below.
 
-![Locations](../images/what00.png)
+
 
 Application workbench is developed on the basis of Container Management and Global Management. It implements the hierarchical resource management and progressive delivery with CI/CD pipelines and GitOps workflow.
 

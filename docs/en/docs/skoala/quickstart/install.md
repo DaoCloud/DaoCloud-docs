@@ -38,7 +38,7 @@ Important: The default installer version carries the latest tested version at th
 
 ### Skoala Deployment Structure
 
-![image](../images/install-step.png)
+
 
 ### Detect skoala installation
 
@@ -78,7 +78,7 @@ The recommended database information for skoala is as follows:
 
 All monitoring information of Skoala needs to rely on the capability of Insight, and the corresponding insight-agent needs to be installed in the cluster;
 
-![image](../images/cluster-list.png)
+
 
 Impact on Skoala:
 

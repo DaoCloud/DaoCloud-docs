@@ -15,7 +15,7 @@ In Garner's top ten cloud trend predictions for 2021, edge computing becomes the
 In edge scenarios, the edge also has data storage requirements and edge data preprocessing requirements.
 On the edge side, storage-computing integration is generally adopted, but edge resources are limited. How to perform certain data storage and data calculation based on the edge side is also a problem that needs to be solved in cloud-edge collaboration scenarios.
 
-![Cloud-side collaboration scenario](./images/storagescenario.png)
+
 
 ## Challenge
 

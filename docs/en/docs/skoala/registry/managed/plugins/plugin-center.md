@@ -6,7 +6,7 @@ The plug-in center provides two plug-ins, Sentinel Governance and Mesh Governanc
 
     The same registry instance cannot enable both plug-ins at the same time, but they can be switched according to different scenarios.
 
-![Plugin Center](imgs/plugincenter01.png)
+
 
 ## Sentinel Governance
 

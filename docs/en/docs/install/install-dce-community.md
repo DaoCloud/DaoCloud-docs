@@ -87,7 +87,7 @@ This page describes the installation procedure of DCE 5.0.
 
 4. After installation, you will get a success tip on your screen. Congratulations! :smile: Now you can explore DCE 5.0 via the URL shown on your screen.
 
-    ![success](images/success.png)
+    
 
     !!! note
 

@@ -7,11 +7,11 @@ hide:
 
 1. On the `Access Registration Center List` page, select the registration center to be removed, click **`⋯`** on the right and select `Remove`.
 
-    ![Enter the delete page](imgs/delete-1.png)
+    
 
 2. Enter the name of the registry and click `Remove`.
 
-    ![Enter the delete page](imgs/delete-2.png)
+    
 
 !!! note
 

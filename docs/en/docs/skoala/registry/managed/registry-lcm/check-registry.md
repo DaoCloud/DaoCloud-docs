@@ -14,7 +14,7 @@ On the basic information page, you can view the registration center's `basic inf
 
 - Restart the registry instance: Click `Restart` in the upper right corner of the page to restart the entire managed registry instance.
 
-    ![Full restart](../imgs/check-1.png)
+    
 
 - Node offline: Select the target node in the node list to modify the node status.
 
@@ -26,8 +26,8 @@ On the basic information page, you can view the registration center's `basic inf
 
         Click "Online" in the "Operation" column to change the status of the node instance to "Online"
 
-        ![Single node restart](../imgs/check-2.png)
+        
 
 - View node metadata
 
-    ![View metadata](../imgs/check-3.png)
+    

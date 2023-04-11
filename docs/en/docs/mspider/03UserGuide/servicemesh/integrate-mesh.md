@@ -7,7 +7,7 @@ hide:
 
 1. In the upper right corner of the service mesh list page, click `Create mesh`.
 
-    ![Create Mesh](../../images/servicemesh01.png)
+    
 
 2. Select `External mesh` and fill in the mesh configuration information.
 
@@ -17,6 +17,6 @@ hide:
     - Istio root namespace: The Istio root namespace where the mesh resides.
     - container registry: Enter the URL address of the container registry.
   
-        ![Basic Configuration](../../images/integrate-mesh.png)
+        
 
 3. Click the `OK` button to complete the mesh creation. The system automatically returns to the mesh list, and you can view and manage the newly added meshs.

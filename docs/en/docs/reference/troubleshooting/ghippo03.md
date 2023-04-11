@@ -4,7 +4,7 @@
 
 MySQL is ready without errors. keycloak fails to start after installing global management (>10 times).
 
-![img](../images/restart01.png)
+
 
 ## Check items
 
@@ -14,7 +14,7 @@ MySQL is ready without errors. keycloak fails to start after installing global m
 
 ## Resolution steps
 
-![img](../images/restart02.png)
+
 
 1. Check whether the MySQL resource usage reaches the limit limit
 2. Check whether the number of database keycloak table in MySQL is 92

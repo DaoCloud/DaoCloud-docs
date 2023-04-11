@@ -9,11 +9,11 @@ The microservice engine currently only supports updating the configuration of th
 
 1. On the `Access Registration Center List` page, select the registration center to be updated, click **`⋯`** on the right and select `Edit`.
 
-    ![Enter the update page](imgs/update-1.png)
+    
 
 2. Add or delete the registry address, then click `OK` at the bottom of the page.
 
-    ![Enter the update page](imgs/update-2.png)
+    
 
 !!! note
 

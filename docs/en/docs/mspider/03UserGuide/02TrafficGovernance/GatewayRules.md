@@ -44,16 +44,16 @@ Service mesh provides two creation methods: wizard and YAML. The specific steps 
 
 1. In the left navigation bar, click `Traffic Governance` -> `Gateway Rules`, and click the `Create` button in the upper right corner.
 
-    ![create](../../images/gaterule01.png)
+    
 
 2. In the `Create Gateway Rule` interface, configure the basic information, add the server as needed, and click `OK`.
 
-    ![Create Gateway Rule](../../images/gaterule02.png)
+    
 
 3. Return to the list of gateway rules, and the screen prompts that the creation is successful.
 
-    ![Created successfully](../../images/gaterule03.png)
+    
 
 4. On the right side of the list, click `⋮` in the operation column to perform more operations through the pop-up menu.
 
-    ![More actions](../../images/gaterule04.png)
+    

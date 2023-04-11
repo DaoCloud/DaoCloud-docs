@@ -7,7 +7,7 @@ hide:
 
 Based on the best practice of Overlay CNI + Underlay CNI [network card planning](./ethplan.md), the network planning diagram of the cluster is as follows:
 
-![Network Plan](../images/networkplan.jpg)
+
 
 **Planning Instructions**:
 

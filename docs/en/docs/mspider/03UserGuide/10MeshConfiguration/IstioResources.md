@@ -2,7 +2,7 @@
 
 The `Istio Resource Management` page lists all Istio resources by resource type, providing users with the ability to display, create, edit, and delete various resources.
 
-![img](../../images/istio01.png)
+
 
 This page provides the following resource types:
 
@@ -46,11 +46,11 @@ Users can add, delete, modify and query resources in the form of YAML. Here is a
 
 1. Click `Grid Configuration` -> `Istio Resource Management` in the left navigation bar, and click the `Create with YAML` button in the upper right corner.
 
-     ![img](../../images/istio01.png)
+     
 
 2. On the Create with YAML page, enter the correct YAML statement and click `OK`.
 
-     ![img](../../images/istio02.png)
+     
 
      ```yaml
      apiVersion: telemetry.istio.io/v1alpha1
@@ -73,4 +73,4 @@ Users can add, delete, modify and query resources in the form of YAML. Here is a
 
 3. Return to the resource list, click the `⋮` button in the operation column, and you can select more operations such as edit and delete from the pop-up menu.
 
-     ![img](../../images/istio03.png)
+     

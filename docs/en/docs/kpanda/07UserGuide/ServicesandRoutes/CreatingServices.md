@@ -16,11 +16,11 @@ This requires creating a service through which you get a fixed IP address, decou
 
 1. After successfully logging in as the `NS Edit` user, click `Cluster List` in the upper left corner to enter the `Cluster List` page. In the list of clusters, click a cluster name.
 
-     ![Cluster List](../../images/service01.png)
+     
 
 2. In the left navigation bar, click `Service and Routing` to enter the service list, and click the `Create Service` button in the upper right corner.
 
-     ![Service and Routing](../../images/service02.png)
+     
 
      !!! tip
     
@@ -28,7 +28,7 @@ This requires creating a service through which you get a fixed IP address, decou
 
 3. Open the `Create Service` page, select an access type, and refer to the following three parameter tables for configuration.
 
-     ![Create Service](../../images/service03.png)
+     
 
 #### Create a cluster access (ClusterIP) type service
 
@@ -75,4 +75,3 @@ Click `Load Balancer`, which refers to using the cloud provider's load balancer 
 
 After configuring all parameters, click the `OK` button to return to the service list automatically. On the right side of the list, click `︙` to modify or delete the selected service.
 
-![Service List](../../images/service04.png)

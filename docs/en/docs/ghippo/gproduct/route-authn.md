@@ -7,13 +7,13 @@ hide:
 
 Unified login and password verification after docking, the effect is as follows:
 
-![Docking Effect](../images/gproduct02.png)
+
 
 The API bear token verification of each GProduct module goes through the Istio Gateway.
 
 The routing map after access is as follows:
 
-![Docking Effect](../images/gproduct03.png)
+
 
 ## Docking method
 

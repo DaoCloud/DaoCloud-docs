@@ -10,7 +10,7 @@ The insight-agent is installed in the cluster and the application is in `running
 
 1. In the left navigation bar, select `Scene Monitoring` -> `Service Monitoring`.
 
-    ![Service Monitoring](../../images/service01.png)
+    
 
 2. In the service details, you can view the current throughput, number of requests, request delay, and error rate of the service, as well as the change trend.
 
@@ -21,6 +21,6 @@ The insight-agent is installed in the cluster and the application is in `running
 
 3. Switch to the `Operation` tab to view the service call information within the time range.
 
-    ![Operation](../../images/service02.png)
+    
 
 4. In the operation column, click `View Link` to view the detailed information of the link.

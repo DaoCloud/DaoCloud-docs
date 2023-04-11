@@ -2,7 +2,7 @@
 
 The microservice list page lists all microservices under the current registry instance, and you can view the grouping, health status, protection threshold, request status, link tracking, and governance status of microservices. After clicking the microservice name in the list, you can further view the microservice instance list, monitoring information, interface list, metadata, etc.
 
-![Microservice List](imgs/servicelist-1.png)
+
 
 Grouping: refers to the configuration file grouping of microservices. Separating configuration files and microservice instances from each other makes it easy to apply the same configuration to different services or components.
 

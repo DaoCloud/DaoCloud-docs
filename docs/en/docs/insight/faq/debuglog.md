@@ -7,19 +7,19 @@ The following is a dashboard for `Fluent Bit`, which is used to monitor the work
 
 1. Use the DCE 5.0 platform, enter `Observability`, and select `Dashboard` in the left navigation bar.
 
-    ![insight entry](../images/insight01.png)
+    
 
 2. Click on the dashboard title `Overview`.
 
-    ![Overview](../images/insight02.png)
+    
 
 3. Switch to `insight-system` -> `Fluent Bit` dashboard.
 
-    ![fluentbit](../images/insight03.png)
+    
 
 4. There are several option boxes above the `Fluent Bit` dashboard, where you can choose the log collection plug-in, log filtering plug-in, log output plug-in and the name of the cluster.
 
-    ![fluentbit](../images/insight04.png)
+    
 
 ## Plugin description
 

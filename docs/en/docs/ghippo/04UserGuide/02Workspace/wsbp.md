@@ -9,7 +9,7 @@ Through the workspace, you can easily manage teams and resources, and solve cros
 
 A workspace consists of three functions: authorization, resource groups, and shared resources. It mainly solves the problems of unified authorization of resources, resource grouping and resource quota.
 
-![Workspace](../../images/quota01.png)
+
 
 1. Authorization: Grant users/groups different roles in the workspace, and apply the roles to the resources in the workspace.
 

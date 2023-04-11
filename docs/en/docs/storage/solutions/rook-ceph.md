@@ -15,34 +15,34 @@ When used with Kubernetes, Rook uses the capabilities provided by the Kubernetes
 
 - Rook-ceph architecture
 
-     ![rook-ceph architecture](../images/rook-1.png)
+     
 
 - Rook management
 
-     ![rook management](../images/rook-2.png)
+     
 
 - CSI storage provisioning
 
-     ![rook resource allocation](../images/rook-3.png)
+     
 
 - Ceph data path
 
-     ![rook data path](../images/rook-4.png)
+     
 
 - Distributed architecture
 
      Ceph is a distributed, scalable, open source storage solution for block, object, and shared file system storage.
      Ceph has grown over the past few years to become the standard for open source distributed storage solutions, with many years of production deployments in medium and large enterprises.
 
-     ![rook distributed architecture](../images/rook-5.png)
+     
 
 - Components: Ceph pools, placement groups (PGs), objects, OSDs
 
-     ![rook component](../images/rook-6.png)
+     
 
 - How Ceph RBD works
 
-     ![rook principle](../images/rook-7.png)
+     
 
 ## Test verification
 
@@ -177,11 +177,11 @@ rook-ceph-mon-b                                ClusterIP 10.100.168.72 <none> 67
 rook-ceph-mon-dClusterIP 10.101.56.41 <none> 6789/TCP,3300/TCP 5d16h
 ```
 
-![dashboard-1](../images/dashboard-1.png)
 
-![dashboard-2](../images/dashboard-2.png)
 
-![dashboard-3](../images/dashboard-3.png)
+
+
+
 
 #### Operate Rook tools used by Ceph storage management
 
@@ -301,11 +301,11 @@ myfs-metadata
 myfs-data0
 ```
 
-![dashboard-4](../images/dashboard-4.png)
 
-![dashboard-5](../images/dashboard-5.png)
 
-![dashboard-6](../images/dashboard-6.png)
+
+
+
 
 ```
 [root@k8s-10-6-162-21 kubernetes]# kubectl get pv,pvc
@@ -322,11 +322,11 @@ persistentvolumeclaim/wp-pv-claim Bound pvc-7647bc80-febc-4299-a62a-8446d2c364c6
 
 After successful deployment, check out the blog on wordpress/mysql:
 
-![blog-1](../images/blog-1.png)
+
 
 Also commented on the blog:
 
-![blog-2](../images/blog-2.png)
+
 
 ### Data Persistence Validation
 
@@ -336,4 +336,3 @@ Delete and restart the mysql/wordpress pods:
 [root@k8s-10-6-162-21 kubernetes]# kubectl delete po wordpress-mysql-79966d6c5b-wc6fs
 ```
 
-![blog-3](../images/blog-3.png)

@@ -14,13 +14,13 @@ Prerequisite: An external Harbor repository has been created or integrated.
 
 1. Log in to the web console as a user with the Admin role, and click `container registry` from the left navigation bar.
 
-    ![container registry](images/hosted01.png)
+    
 
 1. Click `Managed Harbor` on the left navigation bar, click a registry name, and navigate to the `registry space` menu.
 
 1. Click the `Create registry space` button in the upper right corner, fill in the name of the registry space, select the type and click `OK`.
 
-    ![Create instance](images/create01.png)
+    
 
 !!! info
 

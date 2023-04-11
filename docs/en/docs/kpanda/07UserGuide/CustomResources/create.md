@@ -21,19 +21,19 @@ The container management platform supports interface-based management of custom 
 
 1. Click on a cluster name to enter `Cluster Details`.
 
-    ![crd](../../images/crd01.png)
+    
 
 2. In the left navigation bar, click `Custom Resource`, and click the `Create with YAML` button in the upper right corner.
 
-    ![crd](../../images/crd02.png)
+    
 
 3. On the `Create with YAML` page, fill in the YAML statement and click `OK`.
 
-    ![crd](../../images/crd03.png)
+    
 
 4. Return to the custom resource list page, and you can view the custom resource named `crontabs.stable.example.com` just created.
 
-    ![crd](../../images/crd04.png)
+    
 
 **Custom resource example:**
 
@@ -74,19 +74,19 @@ spec:
 
 1. Click on a cluster name to enter `Cluster Details`.
 
-    ![crd](../../images/crd01.png)
+    
 
 2. In the left navigation bar, click `Custom Resource`, and click the `Create with YAML` button in the upper right corner.
 
-    ![crd](../../images/crd02.png)
+    
 
 3. Click the custom resource named `crontabs.stable.example.com`, enter the details, and click the `Create with YAML` button in the upper right corner.
 
-    ![crd](../../images/crd05.png)
+    
 
 4. On the `Create with YAML` page, fill in the YAML statement and click `OK`.
 
-    ![crd](../../images/crd06.png)
+    
 
 5. Return to the details page of `crontabs.stable.example.com`, and you can view the custom resource named `my-new-cron-object` just created.
 

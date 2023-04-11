@@ -7,7 +7,7 @@ After the Istio version of the mesh is upgraded, the sidecar upgrade function wi
 
 After the Istio version upgrade is completed, enter the `Workload Sidecar Management` interface, and the workload that meets the upgrade conditions will display an exclamation mark prompt message. Select the workload you want to upgrade, and the `Sidecar Upgrade` button will appear.
 
-![SidecarUpdate](../../images/SidecarUpdate01.png)
+
 
 Click the `Sidecar Upgrade` button to enter the `Sidecar Upgrade Version` wizard, which is divided into three steps: `Environment Detection`, `Select Target Version`, and `Execute Upgrade`. In "Hot Upgrade" and "Restart Upgrade" There will be some differences in operation under the two methods.
 
@@ -21,31 +21,31 @@ Click the `Sidecar Upgrade` button to enter the `Sidecar Upgrade Version` wizard
 
 After the above three items are met, it will enter the hot upgrade process in the next step.
 
-    ![Environmental Monitoring](../../images/SidecarUpdate02.png)
+    
 
 2. **Sidecar upgrade version**: During the hot upgrade process, you can select the sidecar version you want to upgrade. The default is the latest version. If you select another version, the relevant Pod will be automatically upgraded to the latest version after restarting.
 
-    ![Update Version](../../images/SidecarUpdate03.png)
+    
 
 3. **Execute upgrade**: The selected workload and related sidecar information are displayed on the upgrade page. Click `One-click upgrade` to start the upgrade process.
 
-    ![Execute Update](../../images/SidecarUpdate04.png)
+    
 
 ## restart upgrade
 
 1. **Environmental testing**: If the detected items do not meet the hot upgrade requirements during the testing phase, the next two steps will enter the restarting upgrade process.
 
-    ![Environmental Monitoring](../../images/SidecarUpdate05.png)
+    
 
 2. **Sidecar upgrade version** In the restart upgrade process, the version cannot be selected, and only the latest version is supported.
 
-![Update Version](../../images/SidecarUpdate06.png)
+
 
 3. **Execute upgrade**: The upgrade page displays the basic information of the selected workload and sidecar version information. Clicking `One-click Upgrade` will restart the Pod immediately. Please be careful.
 
-![Execute Update](../../images/SidecarUpdate07.png)
 
-![Execute Update](../../images/SidecarUpdate08.png)
+
+
 
 !!! note
 

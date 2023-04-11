@@ -13,21 +13,21 @@ Follow the steps below to create a workspace.
 
 1. Log in to the web console as a user with the admin/folder admin role, and click `Global Management` at the bottom of the left navigation bar.
 
-    ![Global Management](../../images/ws01.png)
+    
 
 1. Click `Workspace and Hierarchy` in the left navigation bar, and click the `Create Workspace` button in the upper right corner.
 
-    ![Create workspace](../../images/ws02.png)
+    
 
 1. After filling in the workspace name, folder and other information, click `OK` to complete the creation of the workspace.
 
-    ![OK](../../images/ws03.png)
+    
 
 !!! tip
 
     After the workspace is successfully created, the name of the workspace will be displayed in the tree structure on the left, and folders and workspaces will be represented by different icons.
 
-    ![folder and workspace](../../images/ws04.png)
+    
 
 !!! note
 

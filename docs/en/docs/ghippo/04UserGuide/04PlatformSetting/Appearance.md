@@ -11,19 +11,19 @@ In DCE 5.0, you can change the logo on the login interface and the top navigatio
 
 1. Log in to the web console as a user with `admin` role. Click `Global Management` - `Custom Appearance` at the bottom of the left navigation bar.
 
-    ![Global Management](../../images/ws01.png)
+    
 
 2. Click `Platform Settings` and select `Custom Appearance`.
 
-    ![Appearance customization](../../images/visual04.png)
+    
 
 3. In the `Login Page Customization` tab, after modifying the icon and text of the login page, click `Save`.
 
-    ![Login Page](../../images/visual02.png)
+    
 
 4. Click the `Top Nav Bar Customization` tab, modify the icon and text of the navigation bar, and click `Save`.
 
-    ![Top Nav Bar](../../images/visual06.png)
+    
 
 !!! note
 
@@ -34,7 +34,7 @@ In DCE 5.0, you can change the logo on the login interface and the top navigatio
 Advanced customization can modify the color, font spacing, font size, etc. of the entire container platform through CSS styles.
 You need to be familiar with CSS syntax. Delete the contents of the black input box to restore to the default state, of course, you can also click the `one-key restore` button.
 
-![Advanced Custom](../../images/advanced-custom.png)
+
 
 **CSS sample for login page customization:**
 

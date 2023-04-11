@@ -19,23 +19,23 @@ The audit log function has the following characteristics:
 
 1. Log in to the web console as a user with `Admin` or `Audit Owner` role.
 
-    ![login to web console](../images/login02.png)
+    
 
 2. Click `Global Management` at the bottom of the left navigation bar.
 
-    ![Global Management](../images/ws01.png)
+    
 
 3. Select `Audit Logs`.
 
-    ![Audit Log](../images/audit01.png)
+    
 
 4. Under `Audit Log`, select the time range and click `Export` to download the audit log to the local.
 
-    ![Audit Log](../images/audit02.png)
+    
 
 5. Under `Audit Log`, click `Settings` and configure the following information to complete the configuration of the audit log cleanup policy.
 
-    ![Audit Log](../images/audit03.png)
+    
 
     - Click the `Clear Now` button, enter the number of days to clean up, and click the `Clear Now` button, the system will automatically clean up the audit logs before that number of days. It is recommended to export and save before cleaning.
 

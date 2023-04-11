@@ -16,15 +16,15 @@ After accessing, when members deploy applications in the namespace under the wor
 
 1. Log in to the web console as a user with the Workspace Admin role, and click `container registry` -> `Associated registry` from the left navigation bar.
 
-    ![container registry](images/related01.png)
+    
 
 1. Click the `Associate registry` button in the upper right corner.
 
-    ![Relate registry](images/relate02.png)
+    
 
 1. After filling in the form information, click `OK`.
 
-    ![Fill out the form](images/relate03.png)
+    
 
     !!! note
 

@@ -32,4 +32,4 @@ Note when filling in the configuration:
 - Allowed headers: Qualify specific HTTP header keywords. After adding the keyword, you need to add the corresponding keyword in the request header to access the target service normally.
 - Exposed request headers: Control the exposed request header keywords, and you can configure multiple items.
 
-    ![cross-domain](imgs/cross-domain.png)
+    

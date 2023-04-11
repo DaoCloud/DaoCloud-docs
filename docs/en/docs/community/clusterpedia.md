@@ -14,7 +14,7 @@ It helps you effectively get any multi-cluster resource that you are looking for
 
 In the latest CNCF Cloud Native Landscape, Clusterpedia is listed in the Scheduling & Orchestration section of Orchestration & Management block.
 
-![landscape](images/cncf-clus.png)
+
 
 See [CNCF Landscape](https://landscape.cncf.io/card-mode?category=scheduling-orchestration&grouping=category&selected=clusterpedia)。
 

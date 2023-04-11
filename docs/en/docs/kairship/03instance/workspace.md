@@ -17,19 +17,19 @@ To put it simply, when a multicloud instance or a multicloud namespace is create
 
 In the multicloud instance list, you can see the management entry of the workspace:
 
-![Management entry.png](../images/20221128014958.png)
+
 
 ## Workspace management interface
 
 Through the interface, we can easily see the workspace to which each multicloud instance or multicloud namespace belongs.
 
-![Management interface](../images/20221128014948.png)
+
 
 ## Bind/unbind workspace
 
 Click the button at the end of the multicloud resource list to trigger the binding/unbinding operation.
 
-![Bind/Unbind](../images/20221128015020.png)
+
 
 > After the binding is successful, you can view the corresponding multicloud resources in the global management module.
 

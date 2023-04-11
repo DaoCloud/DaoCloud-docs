@@ -105,19 +105,19 @@ Refer to the following steps to modify the log data retention period:
 
 1. Log in `kibana`, select `Stack Management` in the left navigation bar.
 
-    ![kibana](../../images/logsys01.png)
+    
 
 2. Select the left navigation `Index Lifecycle Polices`, and find the index `insight-es-k8s-logs-policy`, click to enter the details.
 
-    ![kibana](../../images/logsys02.png)
+    
 
 3. Expand the `Hot phase` configuration panel, modify the `Maximum age` parameter, and set the retention period. The default storage period is `7d`.
 
-    ![kibana](../../images/logsys03.png)
+    
 
 4. After modification, click `Save policy` at the bottom of the page to complete the modification.
 
-    ![kibana](../../images/logsys04.png)
+    
 
 ## How to modify the link data storage duration
 
@@ -175,16 +175,16 @@ Refer to the following steps to modify the link data retention period:
 
 1. Log in `kibana`, select `Stack Management` in the left navigation bar.
 
-    ![kibana](../../images/logsys01.png)
+    
 
 2. Select the left navigation `Index Lifecycle Polices`, and find the index `jaeger-ilm-policy`, click to enter the details.
 
-    ![kibana](../../images/trace02.png)
+    
 
 3. Expand the `Hot phase` configuration panel, modify the `Maximum age` parameter, and set the retention period. The default storage period is `7d`.
 
-    ![kibana](../../images/trace03.png)
+    
 
 4. After modification, click `Save policy` at the bottom of the page to complete the modification.
 
-    ![kibana](../../images/trace04.png)
+    

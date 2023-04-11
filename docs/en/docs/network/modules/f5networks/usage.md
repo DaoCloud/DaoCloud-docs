@@ -44,9 +44,9 @@ A simple example is given below:
 
 3. Log in to the F5 Web UI, switch to the partition you are using, and you can observe the delivered forwarding rules.
 
-    ![f5network usage1](../../images/f5-usage1.png)
+    
 
-    ![f5network usage1](../../images/f5-usage2.png)
+    
 
 4. In the cluster, access the VIP assigned by F5 to access the service.
 
@@ -113,9 +113,9 @@ A simple example is given below:
 
 4. Log in to the F5 Web UI, switch to the partition you are using, and you can observe the delivered forwarding rules.
 
-   ![f5network usage3](../../images/f5-usage3.png)
+   
 
-   ![f5network usage4](../../images/f5-usage4.png)
+   
 
 5. In the outbound cluster, visit F5 and assign it to the URL http://VIP/http-server to access the service.
 

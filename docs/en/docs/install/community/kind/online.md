@@ -113,7 +113,7 @@ This page explains how to install DCE 5.0 Community Edition online using a kind 
 
 1. After the installation is complete, the command line will prompt that the installation is successful. congratulations! :smile: Now you can use the **default account and password (admin/changeme)** to explore the new DCE 5.0 through the URL prompted on the screen!
 
-    ![Installation successful](../../images/success.png)
+    
 
 !!! success
 
@@ -121,4 +121,4 @@ This page explains how to install DCE 5.0 Community Edition online using a kind 
     - After successfully installing DCE 5.0 Community Edition, please [apply for a community free trial](../../../dce/license0.md).
     - If you encounter any problems during the installation process, please scan the QR code and communicate with the developer freely:
 
-        ![Community Edition Exchange Group](../../../images/assist.png)
+        

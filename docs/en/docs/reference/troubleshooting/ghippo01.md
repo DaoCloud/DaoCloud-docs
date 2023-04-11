@@ -2,7 +2,7 @@
 
 The error message is as follows:
 
-![](../images/bug01.png)
+
 
 Possible cause: The jwtsUri address of the RequestAuthentication CR cannot be accessed,
 As a result, istiod cannot deliver configuration to istio-ingressgateway (Istio 1.15 can avoid this bug:
