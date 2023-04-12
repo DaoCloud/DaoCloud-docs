@@ -744,4 +744,4 @@ nav:
       - 开源项目: native/open.md
       - 知识分享: native/knowledge.md
   - OpenAPI 文档:
-      - 全局管理: openapi/ghippo/index.md
+      - OpenAPI 文档汇总: openapi/index.md

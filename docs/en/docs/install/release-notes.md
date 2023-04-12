@@ -1,11 +1,80 @@
 ---
 MTPE: todo
-Date: 2022-12-20
+Date: 2023-04-12
 ---
 
 # Installer Release Notes
 
 This page lists the Release Notes of the installer, so that you can understand the evolution path and feature changes of each version.
+
+## 2022-4-11
+
+### v0.6.1
+
+#### Optimization
+
+- **Optimized** Upgraded Kpanda to v0.16.1
+- **Optimized** Upgraded Skoala to v0.19.4
+
+## 2022-4-06
+
+### v0.6.0
+
+#### Features
+
+- **NEW** Added support for one-click upgrade of Gproduct components
+- **NEW** Adapted operating system: UOS V20 1020a / Ubuntu 20.04
+- **NEW** Support OCP (OpenShift Container Platform) to install DCE5.0
+- **NEW** CLI supports generating clusterConfig templates
+- **NEW** All in one mode starts the minimal installation mode by default
+- **NEW** Added Kcollie component in Gproduct component
+- **NEW** Support community version to sync image to external repository
+
+#### Optimization
+
+- **Optimize** Decouple the code for generating offline packages and the code required for the installation process
+- **Optimize** Optimize tinder node inotify parameters
+- **Optimize** Optimize the full-mode online installation experience
+- **Optimize** optimize clusterConfig structure and configuration
+- **Optimized** Community Edition allows not to check clusterConfig format and parameters
+- **Optimize** Optimize installer execution scheduler log output
+
+#### fix
+
+- **FIX** Removed dependency on wget
+- **Fix** Fix the problem of installation failure after repeated decompression of offline packages
+- **FIX** Fix MinIo non-reentrant issue
+- **Fix** Fix redis pvc that continues to be left behind when middleware Redis CR is removed
+- **Fix** Fix the problem of sequence dependency when Amamba and Amamba-jenkins are installed concurrently
+- **Fix** Fix the problem that the installer command line -j parameter parsing fails
+
+## 2022-2-28
+
+### v0.5.0
+
+#### Features
+
+- **NEW** Offline package separation osPackage, needs to define `osPackagePath` in the cluster configuration file
+- **NEW** Support addon offline, you need to define `addonOfflinePackagePath` in the cluster configuration file
+- **NEW** Offline installation supports operating systems REHL 8.4, REHL 7.9
+
+#### Optimization
+
+- **Optimization** Upgraded the version of pre-dependent tools
+
+#### fix
+
+- **Fix** installer command line `-j` parameter validity detection problem
+- **Fix** The installation path problem of pre-dependent tools
+- **Fix** the problem that the host list password is invalid for pure numbers
+- **Fix** When the runtime is Docker, the built-in warehouse image cannot be pulled
+
+#### Known Issues
+
+- The installer installation fails due to the pre-installed runc on REHL8 with non-minimal installation. Temporary solution: execute `rpm -qa | grep runc && yum remove -y runc` on each of the above nodes before installation
+- Illegal kernel parameter settings on REHL8 with non-minimal installation, temporary solution; execute on each of the above nodes before installation
+   `eval $(grep -i 'vm.maxmapcount' /etc/sysctl.conf -r /etc/sysctl.d | xargs -L1 | awk -F ':' '{printf("sed -i -r \"s /(%s)/#\\1/\" %s; ", $2, $1)}') && sysctl --system`
+- There are potential risks in the concurrent installation of helm, and the installation cannot continue after failure
 
 ## 2022-12-30
 
