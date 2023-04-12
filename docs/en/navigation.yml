@@ -3,7 +3,7 @@ nav:
   - DaoCloud Webiste: https://www.daocloud.io/en/
   - Documentation:
       - DCE Profile:
-          - What is DCE 5.0: dce/what-is-dce.md
+          - What is DCE 5.0: dce/what.md
           - K8s Certified Service Provider: dce/kcsp.md
           - Free Trial: dce/license0.md
           - Features and Benefits: dce/features.md
@@ -657,8 +657,8 @@ nav:
           - Download Community Release: download/free/dce5-installer-v0.6.0.md
           - Download Commercial Release: download/business/dce5-installer-v0.6.0.md
           - Download Addons: download/addon/v0.5.2.md
-          - Download Module Global Management: download/modules/ghippo.md
-          - Download Module Insight: download/modules/insight.md
+          - Download Global Management: download/modules/ghippo.md
+          - Download Insight: download/modules/insight.md
   - Cloud Native Institute:
       - Cloud Native News: native/news.md
       - Business Products: native/commerce.md
