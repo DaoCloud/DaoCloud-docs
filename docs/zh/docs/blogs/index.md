@@ -7,6 +7,11 @@ hide:
 
 本页汇总 DCE 5.0 及云原生技术相关的博客和公众号文章，默认按时间排序。
 
+- [20230412 | 近两年功能增加最多！Kubernetes 1.27 正式发布](./k8s1.27.md)
+
+    Kubernetes 1.27 正式发布。此版本距离上版本发布时隔 4 个月，是 2023 年的第一个版本。
+    新版本中 release 团队跟踪了 **60 个 enhancements**，比之前版本都要多得多。
+
 - [20230411 | Spiderpool：Calico 固定应用 IP 的新选择](./spiderpool.md)
 
     Spiderpool 是一个 Kubernetes 的 IPAM 插件项目，主要针对 Underlay 网络的 IP 地址管理需求而设计，
