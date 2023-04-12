@@ -8,8 +8,6 @@ hide:
 本页以 Ghippo 为例，说明制作 OpenAPI 文档的步骤。
 主要是生成一个 swagger json 文件，然后自动向文档站提 PR。
 
-![OpenAPI and Swagger](./images/index.png)
-
 1. 在 Makefile 中添加这几行代码：
 
     ```go title="Makefile"
