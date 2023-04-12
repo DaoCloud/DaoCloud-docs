@@ -38,7 +38,7 @@ Solution advantages: Northbound supports domestic chips and servers, and southbo
 
 Users adopt cloud-native technology on a large scale, and expect standardization and process-based integration with the DevOps concept to promote cloud-native technology to a wider range of application project groups.
 
-Modules involved: [Container Management](../kpanda/intro/WhatisKPanda.md), [Application Workbench](../amamba/intro/WhatisAmamba.md), [Container Network](../network/intro/ what-is-net.md), container registry, Edge Cloud Collaboration, Xinchuang Cloud
+Modules involved: [Container Management](../kpanda/intro/WhatisKPanda.md), [Application Workbench](../amamba/intro/WhatisAmamba.md), [Container Network](../network/intro/what-is-net.md), container registry, Edge Cloud Collaboration, Xinchuang Cloud
 
 Solution advantages: support hierarchical multi-tenant system, seamlessly adapt to user organization structure planning resource allocation.
 CI/CD pipeline capability automates application construction and deployment. Innovatively introduce GitOps and progressive delivery capability systems to help applications perform more detailed delivery management capabilities.
@@ -47,7 +47,7 @@ CI/CD pipeline capability automates application construction and deployment. Inn
 
 Users have weak ability to observe running applications, and hope to complete observation access with light-weight or no-modification access, and complete all-round application operation observation (logs, indicators, links).
 
-Modules involved: [Container Management](../kpanda/intro/WhatisKPanda.md), [Observability](../insight/intro/WhatisInsight.md), [Container Network](../network/intro/ what-is-net.md), Edge Cloud Synergy, Xinchuang Cloud
+Modules involved: [Container Management](../kpanda/intro/WhatisKPanda.md), [Observability](../insight/intro/WhatisInsight.md), [Container Network](../network/intro/what-is-net.md), Edge Cloud Synergy, Xinchuang Cloud
 
 Advantages of the solution: unified collection of observation data, one control panel can query all cluster and load observation data, and in-depth support for microservice architecture, [service mesh](../mspider/intro/WhatismSpider.md), network EBPF observation ability.
 
@@ -55,7 +55,7 @@ Advantages of the solution: unified collection of observation data, one control 
 
 The user's application architecture decides to adopt the microservice architecture or has already adopted microservices, and hopes to obtain technical support such as a full range of microservice frameworks and comprehensive operation and maintenance capabilities, or hopes to introduce service mesh technology and achieve smooth transition in the process of technology change.
 
-Modules involved: [Container Management](../kpanda/intro/WhatisKPanda.md), [Container Network](../network/intro/what-is-net.md), [Microservice Engine](../ skoala/intro/features.md), [Service Mesh](../mspide../mspider/intro/WhatismSpider.mdvability](../insight/intro/WhatisInsight.md), [Application Workbench](../amamba/intro/WhatisAmamba.md)
+Modules involved: [Container Management](../kpanda/intro/WhatisKPanda.md), [Container Network](../network/intro/what-is-net.md), [Microservice Engine](../skoala/intro/features.md), [Service Mesh](../mspider/intro/WhatismSpider.md), [Observability](../insight/intro/WhatisInsight.md), [Application Workbench](../amamba/intro/WhatisAmamba.md)
 
 Solution advantages: seamlessly integrate the first-generation microservices represented by SpringCloud and Dubbo with the new-generation microservice technology represented by Istio service mesh, and complete the microservice management of the whole lifecycle from development, deployment, access, external, observation, operation and maintenance ability.
 
@@ -63,7 +63,7 @@ Solution advantages: seamlessly integrate the first-generation microservices rep
 
 The user application architecture relies on mainstream middleware capabilities, and it is hoped that middleware can be operated and maintained in a unified manner, and more professional support capabilities for middleware planning, operation and maintenance can be obtained.
 
-Modules involved: [Container Management](../kpanda/intro/WhatisKPanda.md), [Container Network](../network/intro/what-is-net.md), [Container Local Storage](../ hwameistor/intro/what.md), [cloud-native middleware](../middleware/midware.md), Edge Cloud Synergy, Xinchuang Cloud
+Modules involved: [Container Management](../kpanda/intro/WhatisKPanda.md), [Container Network](../network/intro/what-is-net.md), [Container Local Storage](../storage/intro.md), [cloud-native middleware](../middleware/midware.md), Edge Cloud Synergy, Xinchuang Cloud
 
 Solution advantages: cloud-native local storage capabilities designed for stateful applications, unified platform management cloud-native middleware, providing middleware management capabilities for the full lifecycle of multi-tenancy, deployment, observation, backup, operation and maintenance, combined with the container platform Ability to adapt to edge and innovation scenarios.
 
@@ -79,7 +79,7 @@ Solution advantages: Include software products from ten major fields of ecologic
 
 Multi-cluster and multi-cloud deployments have become the norm among users, and they hope to complete multi-cloud unified release and have the ability of cross-cloud disaster recovery and backup
 
-Involved modules: [Container Management](../kpanda/intro/WhatisKPanda.md), [Multi-Cloud Orchestration](../kairship/intro/whatiskairship.md), [Container Network](../network/intro/what -is-net.md), Edge Cloud Synergy, Xinchuang Cloud
+Involved modules: [Container Management](../kpanda/intro/WhatisKPanda.md), [Multi-Cloud Orchestration](../kairship/intro/whatiskairship.md), [Container Network](../network/intro/what-is-net.md), Edge Cloud Synergy, Xinchuang Cloud
 
 Advantages of the solution: Innovative technology completes cross-cloud disaster recovery, high concurrency performance of cross-cloud resource retrieval, combined with container platform capabilities to adapt to edge and credit creation scenarios.
 

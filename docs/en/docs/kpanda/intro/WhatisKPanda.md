@@ -41,8 +41,4 @@ Support namespace or cluster-level policies for network, quota, resource limit, 
 
 - Security policy supports configuring disaster recovery policies at namespace or cluster level, and defining different isolation levels for Pods.
 
-**Product logical architecture**
-
-
-
 [[Free Trial Now](../../dce/license0.md){ .md-button .md-button--primary }
