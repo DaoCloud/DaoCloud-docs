@@ -1,10 +1,10 @@
-# Use a k8s cluster to install the community edition online
+# Use a k8s cluster to install the community release online
 
-This page briefly explains the online installation steps for DCE 5.0 Community Edition.
+This page briefly explains the online installation steps for DCE 5.0 Community Release.
 
 !!! note
 
-    - Click [Online Install Community Edition](../../../videos/install.md) to watch a video demo.
+    - Click [Online Install Community Release](../../../videos/install.md) to watch a video demo.
     - If offline installation is required, please refer to [Offline Installation Steps](offline.md).
 
 ## Preparation

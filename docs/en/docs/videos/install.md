@@ -2,7 +2,7 @@
 
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
-DCE 5.0 is divided into community edition and commercial edition. The community edition is free to use and includes three modules: global management, container management, and observability. With the commercial edition, you can order any module such as microservices, service mesh, multicloud, middleware, etc. For more details, please refer to [What is DCE 5.0](../dce/what-is-dce.md) and [Applicable Scenarios](../dce/scenario.md).
+DCE 5.0 is divided into community release and commercial release. The community release is free to use and includes three modules: global management, container management, and observability. With the commercial release, you can order any module such as microservices, service mesh, multicloud, middleware, etc. For more details, please refer to [What is DCE 5.0](../dce/what-is-dce.md) and [Applicable Scenarios](../dce/scenario.md).
 
 ## Use kind to build a cluster
 
@@ -10,9 +10,9 @@ DCE 5.0 is divided into community edition and commercial edition. The community 
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kind-cluster.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
 </div>
 
-## Install the community edition online
+## Install the community release online
 
-For related documents, please refer to: [Online Installation of DCE 5.0 Community Edition](../install/intro.md#_2).
+For related documents, please refer to: [Online Installation of DCE 5.0 Community Release](../install/intro.md#_2).
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/online-install-community.mp4" scrolling="no" border="0" frameborder="no" framespacing= "0" allowfullscreen="true"> </iframe>

@@ -1,10 +1,10 @@
-# Install DCE 5.0 Community Edition online using a kind cluster
+# Install DCE 5.0 Community Release online using a kind cluster
 
-This page explains how to install DCE 5.0 Community Edition online using a kind cluster.
+This page explains how to install DCE 5.0 Community Release online using a kind cluster.
 
 !!! note
 
-    Click [Install Community Edition Online](../../../videos/install.md#3) to watch a video demo.
+    Click [Install Community Release Online](../../../videos/install.md#3) to watch a video demo.
 
 ## Preparation
 
@@ -88,7 +88,7 @@ This page explains how to install DCE 5.0 Community Edition online using a kind 
     fire-kind-cluster
     ```
 
-## Install DCE 5.0 Community Edition
+## Install DCE 5.0 Community Release
 
 1. [Install dependencies](../../install-tools.md).
 
@@ -118,7 +118,7 @@ This page explains how to install DCE 5.0 Community Edition online using a kind 
 !!! success
 
     - Please record the URL of the reminder for the next visit.
-    - After successfully installing DCE 5.0 Community Edition, please [apply for a community free trial](../../../dce/license0.md).
+    - After successfully installing DCE 5.0 Community Release, please [apply for a community free trial](../../../dce/license0.md).
     - If you encounter any problems during the installation process, please scan the QR code and communicate with the developer freely:
 
         

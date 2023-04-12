@@ -5,16 +5,16 @@ hide:
 
 # Introduction to installation
 
-There are two editions of DCE 5.0: Community Edition and Commercial Edition.
+There are two editions of DCE 5.0: Community Release and Commercial Release.
 
 | Version | Included Modules | Description |
 | ------ | ------------------------------------------ ------------------ | ------------------------------- ------------------- |
-| Community Edition| [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md)<br />[Container Management](../kpanda/03ProductBrief/WhatisKPanda.md)<br />[Observability]( ../insight/03ProductBrief/WhatisInsight.md) | [Permanent free license](../dce/license0.md), the 3 modules will be updated continuously, and you can [download offline packages of submodules](../ download/dce5.md) |
+| Community Release| [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md)<br />[Container Management](../kpanda/03ProductBrief/WhatisKPanda.md)<br />[Observability]( ../insight/03ProductBrief/WhatisInsight.md) | [Permanent free license](../dce/license0.md), the 3 modules will be updated continuously, and you can [download offline packages of submodules](../ download/dce5.md) |
 | Commercial | [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md)<br />[Container Management](../kpanda/03ProductBrief/WhatisKPanda.md)<br />[Observability]( ../insight/03ProductBrief/WhatisInsight.md)<br />[Application Workbench](../amamba/01ProductBrief/WhatisAmamba.md)<br />[Multicloud Orchestration](../kairship/01product/whatiskairship. md)<br />[Microservice Engine](../skoala/intro/features.md)<br />[Service Mesh](../mspider/01Intro/WhatismSpider.md)<br />[Fine Choose Middleware](../middleware/midware.md)<br />[Cloud Native Network](../network/intro/what-is-net.md)<br />[Cloud Native Storage](. ./hwameistor/intro/what.md)<br />[container registry](../kangaroo/intro.md) | [Genuine Authorization](https://qingflow.com/f/e3291647), each module can Free combination on demand, you can [download the offline package of the submodule](../download/dce5.md) at any time |
 
-## Community Edition Installation Process
+## Community Release Installation Process
 
-The installation process of DCE 5.0 Community Edition is as follows:
+The installation process of DCE 5.0 Community Release is as follows:
 
 ```mermaid
 flowchart TB
@@ -28,7 +28,7 @@ subgraph second[Instructions for use]
     insight -.- ask[ASK!!!]
 end
 
-subgraph first[Install community edition]
+subgraph first[Install community release]
     direction TB
     S[ ] -.-
     plan[resource planning] --> k8s[Prepare K8s cluster]
@@ -38,7 +38,7 @@ subgraph first[Install community edition]
     tools -.-> s2[Offline install with k8s]
 end
 
-start([fa:fa-user DCE 5.0 Community Edition Installation and Usage Process]) --> first
+start([fa:fa-user DCE 5.0 Community Release Installation and Usage Process]) --> first
 start --> second
 
 classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:px,color:#000000, font-size:15px;
@@ -71,14 +71,14 @@ click ask "https://docs.daocloud.io/en/install/intro/#_4"
     - The blue text in the picture above can be clicked to jump
     - Refer to [Nanny Install DCE 5.0](../blogs/dce5-install1209.md)
 
-## Commercial Edition Installation Process
+## Commercial Release Installation Process
 
-The installation process of DCE 5.0 Commercial Edition is as follows:
+The installation process of DCE 5.0 Commercial Release is as follows:
 
 ```mermaid
 flowchart TB
 
-    start([fa:fa-user DCE 5.0 Commercial Edition Installation Process]) -.- deploy[Deployment requirement]
+    start([fa:fa-user DCE 5.0 Commercial Release Installation Process]) -.- deploy[Deployment requirement]
     deploy --> tools[Install dependencies on bootstrapping node]
     tools --> download[Download offline package]
     download --> config[Edit clusterConfig.yaml]

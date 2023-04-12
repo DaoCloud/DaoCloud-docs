@@ -1,6 +1,6 @@
 # Deployment requirement
 
-DCE 5.0 Commercial Edition provides two modes: classic mode and minimalist mode.
+DCE 5.0 Commercial Release provides two modes: classic mode and minimalist mode.
 
 ## Classic Mode
 

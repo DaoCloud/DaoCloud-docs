@@ -654,10 +654,11 @@ nav:
   - Download:
       - DaoCloud Enterprise 5.0:
           - Index: download/dce5.md
-          - Download Releases for Community: download/free/dce5-installer-v0.4.0.md
-          - Download Releases for Commerce: download/business/dce5-installer-v0.4.0.md
-          - Download Global Management: download/modules/ghippo.md
-          - Download Insight: download/modules/insight.md
+          - Download Community Release: download/free/dce5-installer-v0.6.0.md
+          - Download Commercial Release: download/business/dce5-installer-v0.6.0.md
+          - Download Addons: download/addon/v0.5.2.md
+          - Download Module: Global Management: download/modules/ghippo.md
+          - Download Module: Insight: download/modules/insight.md
   - Cloud Native Institute:
       - Cloud Native News: native/news.md
       - Business Products: native/commerce.md
