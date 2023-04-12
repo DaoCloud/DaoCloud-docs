@@ -36,7 +36,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Benefits**: Using innovative technologies to orchestrate disaster recovery (DR) across clouds, this solution has high concurrent performance of cross-cloud resource retrieval, and can help your IT departments quickly plan and implement DR capabilities in combination with the capabilities of the Container Management to adapt to various scenarios such as edge and Xinchuang.
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.mdcloud Orchestration](../kairsh../kairship/intro/whatiskairship.mdrk](../network/intro/what-is-net.md), Storage, cloud to edge continuum, Xinchuang Heterogeneous
+    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [Multi-cloud Orchestration](../kairship/intro/whatiskairship.md), [network](../network/intro/what-is-net.md), [Storage](../storage/intro.md), cloud to edge continuum, Heterogeneous architecture
 
     ![multi-cloud](../images/01multi-cloud.jpg)
 
@@ -46,7 +46,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Benefits**: This solution has selected middlewares with a consistent UI to manage, with the help of HwameiStor capabilities designed for stateful applications, providing features of multi-tenant, deployment, observation, backup, operation and maintenance of the whole lifecycle of middleware management capabilities.
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.mdrk](../network/intro/what-is-net.md), Storage, [Middleware](../middleware/midware.md)
+    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [network](../network/intro/what-is-net.md), [Storage](../storage/intro.md), [Middleware](../middleware/midware.md)
 
     ![data](../images/02data.png)
 
@@ -65,9 +65,9 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     Seamless integrate with legacy and popular microservice technologies, such as the first-generation microservices represented by SpringCloud and Dubbo and the new generation of microservices represented by Istio service mesh, with the lifecycle management capabilities of development, deployment, joining, exposing to external, observation, and O&M. Seamlessly add the existing microservice system of the enterprise, provide the complete capabilities of managed microservice governance, and offer the high-performance cloud-native microservice gateway.
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.mdservice Engine](../skoala/intro/features.md), [Service Mesh](../mspider/01Intro../mspider/intro/WhatismSpider.mdsight/intro/WhatisInsight.md), [App Workbench](../amamba/intro/WhatisAmamba.md), [Network](../network/intro/what-is-net.md), Storage
+    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [Microservice Engine](../skoala/intro/features.md), [Service Mesh](../mspider/intro/WhatismSpider.md), [Insight](../insight/intro/WhatisInsight.md), [App Workbench](../amamba/intro/WhatisAmamba.md), [Network](../network/intro/what-is-net.md), Storage
 
-    ![微服务](../images/03msgov.png)
+    ![microservie engine](../images/03msgov.jpg)
 
 === "Insight"
 
@@ -75,7 +75,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Benefits**: This solution provides in-depth and subtle observation of the current app status. With a comprehensive dashboard, you can query all cluster and workload data. It supports for microservice architecture, service mesh, eBPF-based network, and other observation capabilities.
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.mdht](../insight/intro/WhatisInsight.md), [Network](../network/intro/what-is-net.md), Storage
+    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [Insight](../insight/intro/WhatisInsight.md), [Network](../network/intro/what-is-net.md), Storage
 
     ![观测](../images/04insight.png)
 
@@ -85,7 +85,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Benefits**: This solution provides the ecological capabilities including software products from partners,  with a complete software stack to meet the actual business needs. Where, you can easily find, test, and deploy middlewares running on DaoCloud Enterprise 5.0 with a development process of low-code or no-code.
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.mdrk](../network/intro/what-is-net.md), Storage, App Store, Product Ecosystem
+    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [network](../network/intro/what-is-net.md), Storage, App Store, Product Ecosystem
 
 === "App Delivery"
 
@@ -93,7 +93,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Benefits**: With a consistent workflow to deliver apps, this solution supports a hierarchical multi-tenant system, seamlessly adapts to the user's organizational structure to plan resource allocation, automates app build and deployment with the CI/CD pipelines, and innovatively introduces the GitOps progressive delivery capability.
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.mdorkbench](../amamba/intro/WhatisAmamba.md), [Registry](../kangaroo/intro.md), [Network](../network/intro/what-is-net.md), Storage
+    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.md), [workbench](../amamba/intro/WhatisAmamba.md), [Container Registry](../kangaroo/intro.md), [Network](../network/intro/what-is-net.md), Storage
 
     ![应用交付](../images/06appdeliv.png)
 
@@ -113,7 +113,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     All clusters and workloads are managed through Clusterpedia. This solution is compatible with joining standard Kubernetes clusters, breaking through the performance bottleneck of Kubernetes API and supporting thousands of users using it at the same time.
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.mder lifecycle manager](../community/kubean.md), [Network](../network/intro/what-is-net.md), Storage,
+    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.md), [container lifecycle manager](../community/kubean.md), [Network](../network/intro/what-is-net.md), Storage
 
 === "Heterogeneous architecture"
 
@@ -121,7 +121,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Benefits**: This solution can consolidate heterogeneous cloud-native capabilities for government sectors and state-owned factories, supports domestic chips and servers in the north, and supports heterogeneous operating system and app ecosystem in containers in the south.
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.mder lifecycle manager](../community/kubean.md), [Middware](../middleware/midware.md), [Network](../network/intro/what-is-net.md), Storage
+    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.md), [Container lifecycle manager](../community/kubean.md), [Middware](../middleware/midware.md), [Network](../network/intro/what-is-net.md), Storage
 
     ![信创](../images/08xinchuan.png)
 
@@ -131,7 +131,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Benefits**: This solution extends the general cloud-native framework, empowers the edge computing capability, uniformly manages and controls all edge clusters and nodes. Based on the traditional three-tier model of cloud, edge, and terminal. To meet the strict edge computing requirements, this solution provides a four-tier model from cloud to edge continuum by adding the edge clusters and nodes.
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.mder lifecycle manager](../community/kubean.md), [Network](../network/intro/what-is-net.md), Storage, Edge nodes, clusters in a weak network
+    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.md), [Container lifecycle manager](../community/kubean.md), [Network](../network/intro/what-is-net.md), Storage, Edge nodes, clusters in a weak network
 
     ![Cloud to edge continuum](../images/09cloud-edge.png)
 
