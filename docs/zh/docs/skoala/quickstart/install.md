@@ -1,26 +1,24 @@
 # 安装微服务引擎
 
-## 前言
+如需安装微服务引擎，推荐通过 [DCE 5.0 商业版](../../install/commercial/start-install.md) 的安装包进行安装。通过商业版可以一次性同时安装  DCE 的所有模块。
 
-本教程旨在补充需要手工安装和升级的方式。
+本教程旨在补充需要手工 **单独安装** 微服务引擎的场景。下文出现的 `skoala` 是微服务引擎的内部开发代号，代指微服务引擎。
 
-优先通过安装器进行安装 [https://docs.daocloud.io/install/intro/](https://docs.daocloud.io/install/intro/) ，请以官方教程文档为准。
+## 使用商业版安装包安装
 
-### 安装器 v0.3.28 及之前
+通过商业版安装微服务引擎时，需要注意商业版的版本号（[点击查看最新版本](../../download/dce5.md)）。需要针对不同版本执行不同操作。
 
-默认安装不支持；在安装规划时，可以修改  mainfest.yaml  开启 Skoala 自动安装
+### 商业版 ≤ v0.3.28
+
+执行安装命令时，默认不会安装微服务引擎。需要对照下面的配置修改 `mainfest.yaml` 以允许安装微服务引擎。
+
+修改文件：
 
 ```bash
 ./dce5-installer install-app -m /sample/manifest.yaml
 ```
 
-### 安装器 v0.3.29 及之后
-
-> 安装时，注意查看当前最新版本号： [去下载页查看最新版本](../../download/dce5.md)
-
-支持默认安装 Skoala；但仍旧建议检查  mainfest.yaml，确保 Skoala 会被安装器安装。
-
-enable 需要为 true，需要指定对应的 helmVersion：
+修改后的内容：
 
 ```yaml
 ...
@@ -32,17 +30,29 @@ components:
 ...
 ```
 
-重要的话：默认安装器版本携带的是当时最新经过测试的版本；如无特殊情况，不建议更新默认的 helm 安装版本。
+### 商业版 ≥ v0.3.29
 
-## 安装前检测
+默认会安装微服务引擎，但仍旧建议检查 `mainfest.yaml` 文件进行确认 `components/skoala/enable` 的值是否为 `true`，以及是否指定了 Helm 的版本。
 
-### Skoala 部署结构
+!!! note
+
+    商业版中默认安装的是经过测试的最新版本。如无特殊情况，不建议修改默认的 Helm 版本。
+
+## 手动安装前检测
+
+微服务引擎由两个组件构成，在代码中分别命名为 `skoala` 和 `skoala-init`。安装微服务引擎时需要同时安装这两个组件。
+
+### 微服务引擎部署结构
 
 ![image](../images/install-step.png)
 
-### 检测 skoala 安装情况
+左侧蓝色框内的 chart 即 `skoala` 组件，需要安装在控制面集群，即 DCE 5.0 的全局集群 `kpanda-global-clsuter`，详情可参考 DCE 5.0 的[部署架构](../../install/commercial/deploy-arch.md)。安装 `skoala` 组件之后即可以在 DCE 5.0 的一级导航栏中看到微服务引擎模块。另外需要注意：安装 `skoala` 之前需要安装好其依赖的 `common-mysql` 组件用于存储资源。
 
-查看 命名空间为 skoala-system 的之中是否有以下对应的资源，如果没有任何资源，说明 Skoala 的确没有安装。
+右侧蓝色框内的 chart 即 `skoala-init` 组件，需要安装在工作集群。安装 `skoala-init` 组件之后即可以使用微服务引擎的各项功能，例如创建注册中心、网关实例等。另外需要注意，`skoala-init` 组件依赖  DCE 5.0 可观测模块的 `insight-agent` 组件提供指标监控和链路追踪等功能。如您需要使用该项功能，则需要事先安装好 `insight-agent` 组件，具体步骤可参考[安装组件 insight-agent](../../insight/user-guide/quickstart/install-agent.md)。
+
+### 检测微服务引擎是否已安装
+
+查看 `skoala-system` 命名空间中是否有以下对应的资源。如果没有任何资源，说明目前尚未安装微服务引擎。
 
 ```bash
 ~ kubectl -n skoala-system get pods
@@ -56,9 +66,9 @@ NAME        NAMESPACE       REVISION    UPDATED                                 
 skoala      skoala-system   3           2022-12-16 11:17:35.187799553 +0800 CST deployed    skoala-0.13.0       0.13.0
 ```
 
-### 依赖 common-mysql 的安装情况
+### 检测依赖的存储组件
 
-skoala 在安装时需要用到 mysql 来存储配置，所以必须要保证数据库存在；另外查看下 common-mysql 是否有 skoala 这个数据库。
+安装微服务引擎时需要用到 `common-mysql` 组件来存储配置，所以要确保该组件已经存在。此外，还需要查看 `common-mysql` 命名空间中是否有名为 `skoala` 的数据库。
 
 ```bash
 ~ kubectl -n mcamel-system get statefulset
@@ -66,7 +76,7 @@ NAME                                          READY   AGE
 mcamel-common-mysql-cluster-mysql             2/2     7d23h
 ```
 
-建议给到 skoala 用到的数据库信息如下：
+建议使用如下参数为微服务引擎配置数据库信息：
 
 - host: mcamel-common-mysql-cluster-mysql-master.mcamel-system.svc.cluster.local
 - port: 3306
@@ -74,81 +84,86 @@ mcamel-common-mysql-cluster-mysql             2/2     7d23h
 - user: skoala
 - password:
 
-### 关于 insight-agent
+### 检测依赖的监控组件
 
-Skoala 所有的监控的信息，需要依赖 Insight 的能力，则需要在集群中安装对应的 insight-agent；
+微服务引擎依赖 [DCE 5.0 可观测性](../../insight/intro/what.md)模块的能力。如您需要监控微服务的各项指标、追踪链路，则需要在集群中安装对应的 `insight-agent`，具体说明可参考[](../../insight/user-guide/quickstart/install-agent.md)。
 
 ![image](../images/cluster-list.png)
 
-对 Skoala 的影响：
+!!! note
 
-- 如果 skoala-init 安装时未先安装 insight-agent，不会安装 service-monitor
-- 如果需要安装 service-monitor，请先安装 insight-agent，再安装 skoala-init。
+    - 如果安装 `skoala-init` 之前没有事先安装 `insight-agent`，则不会安装 `service-monitor`。
+    - 如果需要安装 `service-monitor`，请先安装 `insight-agent`，然后再安装 `skoala-init`。
 
-## 安装过程
+## 手动安装过程
 
-### ~~初始化 数据库表~~
+一切就绪之后，就可以开始正式安装微服务引擎了。具体的流程如下：
 
-> 在 skoala-release/skoala 版本 v0.17.1 之后，不需要进行下方表格初始化，现已支持自动进行数据库初始化。
+~~### 初始化数据库表~~
+
+!!! note
+
+    - 此步骤仅适用于安装 skoala-release/skoala 版本 v0.17.1 以下的版本。
+    - 如果安装 skoala-release/skoala 版本 v0.17.1 及更高版本，直接跳过此步骤执行下一步。系统会自动完成表格初始化，无需手动进行。
 
 ~~如果在 common-mysql 内的 skoala 数据库为空，请登录到 skoala 数据库后，执行以下 SQL：~~
 
-如果提示初始化失败，请检查在 Skoala 数据库内有 3 张表，注意检测对应 SQL 是否全部是生效。
+??? note "如果初始化失败，请检查 skoala 数据库内是否有下方 3 张数据表以及对应的 SQL 是否全部生效。"
 
-```sql
-mysql> desc api;
-+------------------+-----------------+------+-----+-------------------+-----------------------------------------------+
-| Field            | Type            | Null | Key | Default           | Extra                                         |
-+------------------+-----------------+------+-----+-------------------+-----------------------------------------------+
-| id               | bigint unsigned | NO   | PRI | NULL              | auto_increment                                |
-| is_hosted        | tinyint         | YES  |     | 0                 |                                               |
-| registry         | varchar(50)     | NO   | MUL | NULL              |                                               |
-| service_name     | varchar(200)    | NO   |     | NULL              |                                               |
-| nacos_namespace  | varchar(200)    | NO   |     | NULL              |                                               |
-| nacos_group_name | varchar(200)    | NO   |     | NULL              |                                               |
-| data_type        | varchar(100)    | NO   |     | NULL              |                                               |
-| detail           | mediumtext      | NO   |     | NULL              |                                               |
-| deleted_at       | timestamp       | YES  |     | NULL              |                                               |
-| created_at       | timestamp       | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
-| updated_at       | timestamp       | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
-+------------------+-----------------+------+-----+-------------------+-----------------------------------------------+
+    ```sql
+    mysql> desc api;
+    +------------------+-----------------+------+-----+-------------------+-----------------------------------------------+
+    | Field            | Type            | Null | Key | Default           | Extra                                         |
+    +------------------+-----------------+------+-----+-------------------+-----------------------------------------------+
+    | id               | bigint unsigned | NO   | PRI | NULL              | auto_increment                                |
+    | is_hosted        | tinyint         | YES  |     | 0                 |                                               |
+    | registry         | varchar(50)     | NO   | MUL | NULL              |                                               |
+    | service_name     | varchar(200)    | NO   |     | NULL              |                                               |
+    | nacos_namespace  | varchar(200)    | NO   |     | NULL              |                                               |
+    | nacos_group_name | varchar(200)    | NO   |     | NULL              |                                               |
+    | data_type        | varchar(100)    | NO   |     | NULL              |                                               |
+    | detail           | mediumtext      | NO   |     | NULL              |                                               |
+    | deleted_at       | timestamp       | YES  |     | NULL              |                                               |
+    | created_at       | timestamp       | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
+    | updated_at       | timestamp       | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
+    +------------------+-----------------+------+-----+-------------------+-----------------------------------------------+
 
-mysql> desc book;
-+-------------+------------------+------+-----+-------------------+-----------------------------------------------+
-| Field       | Type             | Null | Key | Default           | Extra                                         |
-+-------------+------------------+------+-----+-------------------+-----------------------------------------------+
-| id          | bigint unsigned  | NO   | PRI | NULL              | auto_increment                                |
-| uid         | varchar(32)      | YES  | UNI | NULL              |                                               |
-| name        | varchar(50)      | NO   | UNI | NULL              |                                               |
-| author      | varchar(32)      | NO   |     | NULL              |                                               |
-| status      | int              | YES  |     | 1                 |                                               |
-| isPublished | tinyint unsigned | NO   |     | 1                 |                                               |
-| publishedAt | timestamp        | YES  |     | NULL              |                                               |
-| deleted_at  | timestamp        | YES  |     | NULL              |                                               |
-| createdAt   | timestamp        | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
-| updatedAt   | timestamp        | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
-+-------------+------------------+------+-----+-------------------+-----------------------------------------------+
-10 rows in set (0.00 sec)
+    mysql> desc book;
+    +-------------+------------------+------+-----+-------------------+-----------------------------------------------+
+    | Field       | Type             | Null | Key | Default           | Extra                                         |
+    +-------------+------------------+------+-----+-------------------+-----------------------------------------------+
+    | id          | bigint unsigned  | NO   | PRI | NULL              | auto_increment                                |
+    | uid         | varchar(32)      | YES  | UNI | NULL              |                                               |
+    | name        | varchar(50)      | NO   | UNI | NULL              |                                               |
+    | author      | varchar(32)      | NO   |     | NULL              |                                               |
+    | status      | int              | YES  |     | 1                 |                                               |
+    | isPublished | tinyint unsigned | NO   |     | 1                 |                                               |
+    | publishedAt | timestamp        | YES  |     | NULL              |                                               |
+    | deleted_at  | timestamp        | YES  |     | NULL              |                                               |
+    | createdAt   | timestamp        | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
+    | updatedAt   | timestamp        | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
+    +-------------+------------------+------+-----+-------------------+-----------------------------------------------+
+    10 rows in set (0.00 sec)
 
-mysql> desc registry;
-+--------------+-----------------+------+-----+-------------------+-----------------------------------------------+
-| Field        | Type            | Null | Key | Default           | Extra                                         |
-+--------------+-----------------+------+-----+-------------------+-----------------------------------------------+
-| id           | bigint unsigned | NO   | PRI | NULL              | auto_increment                                |
-| uid          | varchar(32)     | YES  | UNI | NULL              |                                               |
-| workspace_id | varchar(50)     | NO   |     | default           |                                               |
-| ext_id       | varchar(50)     | YES  |     | NULL              |                                               |
-| name         | varchar(50)     | NO   | MUL | NULL              |                                               |
-| type         | varchar(50)     | NO   |     | NULL              |                                               |
-| addresses    | varchar(1000)   | NO   |     | NULL              |                                               |
-| namespaces   | varchar(2000)   | NO   |     | NULL              |                                               |
-| is_hosted    | tinyint         | NO   |     | 0                 |                                               |
-| deleted_at   | timestamp       | YES  |     | NULL              |                                               |
-| created_at   | timestamp       | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
-| updated_at   | timestamp       | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
-+--------------+-----------------+------+-----+-------------------+-----------------------------------------------+
-12 rows in set (0.00 sec)
-```
+    mysql> desc registry;
+    +--------------+-----------------+------+-----+-------------------+-----------------------------------------------+
+    | Field        | Type            | Null | Key | Default           | Extra                                         |
+    +--------------+-----------------+------+-----+-------------------+-----------------------------------------------+
+    | id           | bigint unsigned | NO   | PRI | NULL              | auto_increment                                |
+    | uid          | varchar(32)     | YES  | UNI | NULL              |                                               |
+    | workspace_id | varchar(50)     | NO   |     | default           |                                               |
+    | ext_id       | varchar(50)     | YES  |     | NULL              |                                               |
+    | name         | varchar(50)     | NO   | MUL | NULL              |                                               |
+    | type         | varchar(50)     | NO   |     | NULL              |                                               |
+    | addresses    | varchar(1000)   | NO   |     | NULL              |                                               |
+    | namespaces   | varchar(2000)   | NO   |     | NULL              |                                               |
+    | is_hosted    | tinyint         | NO   |     | 0                 |                                               |
+    | deleted_at   | timestamp       | YES  |     | NULL              |                                               |
+    | created_at   | timestamp       | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
+    | updated_at   | timestamp       | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
+    +--------------+-----------------+------+-----+-------------------+-----------------------------------------------+
+    12 rows in set (0.00 sec)
+    ```
 
 ### 配置 skoala helm repo
 
@@ -174,7 +189,7 @@ mysql> desc registry;
 
 默认情况下，安装完成 skoala 到 kpanda-global-cluster(全局管理集群)，就可以在侧边栏看到对应的微服务引擎的入口了。
 
-### 查看 skoala 组件 最新版本
+### 查看 skoala 组件最新版本
 
 升级部署脚本，一键部署全部组件。
 
@@ -194,7 +209,7 @@ skoala-release/skoala       0.12.0          0.12.0      The helm chart for Skoal
 > 在部署 skoala 时，会携带当时最新的前端版本，如果想要指定前端 ui 的版本，
 > 可以去看前端代码仓库获取对应的版本号：
 
-在工作集群，查看 Skoala-init 的最新版本，直接通过 helm repo 来更新获取最新的
+在工作集群，查看 skoala-init 的最新版本，直接通过 helm repo 来更新获取最新的
 
 ```bash
 ~ helm repo update skoala-release
@@ -245,18 +260,6 @@ sesame-5955c878c6-jz8cd                2/2     Running   0               3h48m
 ui-7c9f5b7b67-9rpzc                    2/2     Running   0               3h48m
 ```
 
-### 卸载 skoala
-
-这一步骤卸载，会把 skoala 相关的资源删除。
-
-```bash
-~ helm uninstall skoala -n skoala-system
-```
-
-### 更新 skoala
-
- 更新操作同 3.4 部署，使用 helm upgrade 指定新版本即可
-
 ### 安装 skoala-init 到工作集群
 
 由于 Skoala 涉及的组件较多，我们将这些组件打包到同一个 Chart 内，也就是 skoala-init，所以我们应该在用到微服务引擎的工作集群安装好 skoala-init
@@ -288,3 +291,17 @@ skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for Skoala 
 ```bash
 ~ helm uninstall skoala-init -n skoala-system
 ```
+
+常见问题：
+
+- 安装之后如何卸载微服务引擎？
+
+    执行如下命令即可：
+
+    ```bash
+    ~ helm uninstall skoala -n skoala-system
+    ```
+
+- 后续如何更新微服务器引擎？
+
+    支持离线升级和在线升级两种方式，具体可参考[离线升级](../quickstart/offline-upgrade.md)或[在线升级](online-upgrade.md)
