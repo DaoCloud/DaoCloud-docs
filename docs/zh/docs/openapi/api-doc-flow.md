@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # OpenAPI 文档制作流程
 
 本页以 Ghippo 为例，说明制作 OpenAPI 文档的步骤。
