@@ -34,6 +34,14 @@
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ingress-nginx.mp4 " scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
+## MetalLB 的安装与使用
+
+参阅 [MetalLB](../network/modules/metallb/what.md) 文档页面。
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/MetalLB.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
 
 > 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。
