@@ -48,7 +48,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [network](../network/intro/what-is-net.md), [Storage](../storage/intro.md), [Middleware](../middleware/midware.md)
 
-    ![data](../images/02data.png)
+    ![data](../images/02data.jpg)
 
 === "Microservice Governance"
 
@@ -77,7 +77,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [Insight](../insight/intro/WhatisInsight.md), [Network](../network/intro/what-is-net.md), Storage
 
-    ![观测](../images/04insight.png)
+    ![Observability](../images/04insight.jpg)
 
 === "App Store"
 
@@ -95,7 +95,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.md), [workbench](../amamba/intro/WhatisAmamba.md), [Container Registry](../kangaroo/intro.md), [Network](../network/intro/what-is-net.md), Storage
 
-    ![应用交付](../images/06appdeliv.png)
+    ![app delivery](../images/06appdeliv.jpg)
 
 === "Cloud Native Base"
 
@@ -123,7 +123,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.md), [Container lifecycle manager](../community/kubean.md), [Middware](../middleware/midware.md), [Network](../network/intro/what-is-net.md), Storage
 
-    ![信创](../images/08xinchuan.png)
+    ![Heterogeneous](../images/08xinchuan.jpg)
 
 === "Cloud to edge continuum"
 
@@ -133,7 +133,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.md), [Container lifecycle manager](../community/kubean.md), [Network](../network/intro/what-is-net.md), Storage, Edge nodes, clusters in a weak network
 
-    ![Cloud to edge continuum](../images/09cloud-edge.png)
+    ![Cloud to edge continuum](../images/09cloud-edge.jpg)
 
 Just like Lego bricks, it combines dozens of the best open source technologies into a platform. After many dialectical selection, adaptation and running-in, coding debugging, and massive testing, a sword is sharpened in ten years. The new generation of containerized platforms can meet the needs of various scenarios for enterprises migrating to the cloud.
 

@@ -6,13 +6,9 @@
 
 According to the combination of cloud platforms with different cost performance, combined with different application scenarios, multicloud combination is carried out to reduce the overall cost. For industry users with high security requirements such as finance, based on the security and sensitivity requirements of business data, some business applications are deployed in the private cloud environment, while non-sensitive applications are deployed in cloud clusters for unified management .
 
-
-
 **Cross-cloud disaster recovery backup**
 
 In order to ensure high availability of services, services are deployed on multiple cloud container platforms in different regions at the same time, helping applications realize multi-region traffic distribution, and realizing cross-cloud application management on the same platform, reducing operation and maintenance costs. In addition, when a cloud container platform fails, business traffic is automatically switched to other cloud container platforms through a unified traffic distribution mechanism.
-
-
 
 ## Unified management across cloud clusters
 
@@ -25,8 +21,6 @@ Reduce additional management costs caused by different infrastructures and diffe
 **Unified operation and maintenance across cloud clusters**
 
 Different cloud container providers provide customers with different cloud platform monitoring based on different Kubernetes distributions. It is difficult to realize unified platform monitoring and operation and maintenance. Cluster-based unified management realizes integrated monitoring services, and realizes multi-dimensional, cross-cloud unified monitoring and operation and maintenance.
-
-
 
 ## Elastic scaling to deal with traffic peaks
 
