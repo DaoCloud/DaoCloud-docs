@@ -1,26 +1,20 @@
-# 离线升级微服务引擎模块
+# 离线升级微服务引擎
 
-本页说明从[下载中心](../../download/dce5.md)下载微服务引擎模块后，应该如何安装或升级。
+DCE 5.0 的各个模块松散耦合，支持独立安装、升级各个模块。此文档适用于通过离线方式安装微服务引擎之后进行的升级。
 
-!!! info
+## 同步镜像
 
-    下述命令或脚本内出现的 `skoala` 字样是微服务引擎模块的内部开发代号。
+将镜像下载到本地节点之后，需要通过 [chart-syncer](https://github.com/bitnami-labs/charts-syncer) 或容器运行时将最新版镜像同步到您的镜像仓库。推荐使用 chart-syncer 同步镜像，因为该方法更加高效便捷。
 
-## 从安装包中加载镜像
+### chart-syncer 同步镜像
 
-您可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择 chart-syncer 同步镜像到镜像仓库，该方法更加高效便捷。
+1. 使用如下内容创建 `load-image.yaml` 作为 chart-syncer 的配置文件
 
-### chart-syncer 同步镜像到镜像仓库
-
-1. 创建 load-image.yaml
-
-    !!! note  
-
-        该 YAML 文件中的各项参数均为必填项。您需要一个私有的镜像仓库，并修改相关配置。
+    `load-image.yaml` 文件中的各项参数均为必填项。您需要一个私有的镜像仓库，并参考如下说明修改各项配置。有关 chart-syncer 配置文件的详细解释，可参考其[官方文档](https://github.com/bitnami-labs/charts-syncer)。
 
     === "已安装 chart repo"
 
-        若当前环境已安装 chart repo，chart-syncer 也支持将 chart 导出为 tgz 文件。
+        若当前环境已安装 chart repo，则可以使用如下配置直接同步镜像。
 
         ```yaml
         source:
@@ -36,8 +30,8 @@
             password: "Harbor12345" # (7)
           containers:
             auth:
-              username: "admin" # (6)
-              password: "Harbor12345" # (7)
+              username: "admin" # (8)
+              password: "Harbor12345" # (9)
         ```
 
         1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
@@ -47,10 +41,12 @@
         5. 需更改为 chart repo url
         6. 你的镜像仓库用户名
         7. 你的镜像仓库密码
+        8. 你的镜像仓库用户名
+        9. 你的镜像仓库密码 
 
     === "未安装 chart repo"
 
-        若当前环境未安装 chart repo，chart-syncer 也支持将 chart 导出为 tgz 文件，并存放在指定路径。
+        若当前环境未安装 chart repo，chart-syncer 也支持将 chart 导出为 `tgz` 文件并存放在指定路径。
 
         ```yaml
         source:
@@ -74,17 +70,15 @@
         5. 你的镜像仓库用户名
         6. 你的镜像仓库密码
 
-1. 执行同步镜像命令。
+2. 执行同步镜像命令。
 
     ```shell
     charts-syncer sync --config load-image.yaml
     ```
 
-### Docker 或 containerd 直接加载
+### Docker/containerd 同步镜像
 
-解压并加载镜像文件。
-
-1. 解压 tar 压缩包。
+1. 解压 `tar` 压缩包。
 
     ```shell
     tar xvf skoala.bundle.tar
@@ -111,12 +105,12 @@
         ```
 
 !!! note
-    每个 node 都需要做 Docker 或 containerd 加载镜像操作，
-    加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
+    - 需要在每个节点上都通过 Docker 或 containerd 加载镜像。
+    - 加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
 
-## 升级
+## 开始升级
 
-有两种升级方式。您可以根据前置操作，选择对应的升级方案：
+镜像同步完成之后，就可以开始升级微服务引擎了。
 
 === "通过 helm repo 升级"
 
