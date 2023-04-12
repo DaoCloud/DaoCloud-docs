@@ -7,9 +7,9 @@ hide:
 
 This page lists the features supported by Observability Insight.
 
-## Community Edition - Observability
+## Community Release - Observability
 
-DCE 5.0 Community Edition provides the following observable features.
+DCE 5.0 Community Release provides the following observable features.
 
 | Category | Subcategory | Description |
 | -------- | ----------------------------------------- --------- | ---------------------------------------- --------- |
@@ -32,9 +32,9 @@ DCE 5.0 Community Edition provides the following observable features.
 | Metric collection | Metric data collection | Support to use ServiceMonitor to define the namespace scope of Pod discovery and select the listening Service through matchLabel |
 | System configuration | System configuration | System configuration displays the default storage time of indicators, logs, and links and the default Apdex threshold<br />Support custom modification of the storage time of indicators, logs, and link data |
 
-## Commercial Edition - Observability
+## Commercial Release - Observability
 
-On the basis of the community edition, the commercial edition of DCE 5.0 provides more abundant and customizable observable features.
+On the basis of the community release, the commercial release of DCE 5.0 provides more abundant and customizable observable features.
 
 | Category | Subcategory | Description |
 | -------------- | -------------- | ---------------- -------------------------------------------- |
@@ -62,4 +62,4 @@ On the basis of the community edition, the commercial edition of DCE 5.0 provide
 | Link Collection[^1] | Link Data Collection| Support link data collection by using OTEL SDK in a non-intrusive or less intrusive way<br />Support link collection by injecting Sidecar into grid applications data |
 | System configuration | System configuration | System configuration displays the default storage time of indicators, logs, and links and the default Apdex threshold<br />Support custom modification of the storage time of indicators, logs, and link data |
 
-[^1]: This is a feature only available in the commercial edition.
+[^1]: This is a feature only available in the commercial release.

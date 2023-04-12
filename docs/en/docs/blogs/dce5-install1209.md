@@ -7,11 +7,11 @@ tags: []
 last_updated:
 ---
 
-# Step-by-step install DCE 5.0 Community Edition
+# Step-by-step install DCE 5.0 Community Release
 
 Author: [SAMZONG](https://github.com/SAMZONG)
 
-This article completes the installation of DCE 5.0 Community Edition from 0 to 1, including K8s cluster, dependencies, network, storage and other details and more considerations.
+This article completes the installation of DCE 5.0 Community Release from 0 to 1, including K8s cluster, dependencies, network, storage and other details and more considerations.
 
 > At this stage, the version iteration is relatively fast. The installation procedure mentioned in this blog may be different from the latest version. Refer to [Installation Instructions](../install/intro.md) in the product documentation.
 
@@ -1893,9 +1893,9 @@ Save the following YAML as `metrics-server.yaml`.
     node02-k8s-com     464m         11%    9484Mi          60%
     ```
 
-## Install DCE 5.0 Community Edition
+## Install DCE 5.0 Community Release
 
-Now everything is ready to install DCE 5.0 Community Edition.
+Now everything is ready to install DCE 5.0 Community Release.
 
 ### Install basic dependencies
 
