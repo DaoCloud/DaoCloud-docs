@@ -5,12 +5,12 @@ hide:
 
 # Introduction to installation
 
-There are two editions of DCE 5.0: Community Release and Commercial Release.
+There are two releases of DCE 5.0: Community Release and Commercial Release.
 
 | Version | Included Modules | Description |
 | ------ | ------------------------------------------ ------------------ | ------------------------------- ------------------- |
-| Community Release| [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md)<br />[Container Management](../kpanda/03ProductBrief/WhatisKPanda.md)<br />[Observability]( ../insight/03ProductBrief/WhatisInsight.md) | [Permanent free license](../dce/license0.md), the 3 modules will be updated continuously, and you can [download offline packages of submodules](../ download/dce5.md) |
-| Commercial | [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md)<br />[Container Management](../kpanda/03ProductBrief/WhatisKPanda.md)<br />[Observability]( ../insight/03ProductBrief/WhatisInsight.md)<br />[Application Workbench](../amamba/01ProductBrief/WhatisAmamba.md)<br />[Multicloud Orchestration](../kairship/01product/whatiskairship. md)<br />[Microservice Engine](../skoala/intro/features.md)<br />[Service Mesh](../mspider/01Intro/WhatismSpider.md)<br />[Fine Choose Middleware](../middleware/midware.md)<br />[Cloud Native Network](../network/intro/what-is-net.md)<br />[Cloud Native Storage](. ./hwameistor/intro/what.md)<br />[container registry](../kangaroo/intro.md) | [Genuine Authorization](https://qingflow.com/f/e3291647), each module can Free combination on demand, you can [download the offline package of the submodule](../download/dce5.md) at any time |
+| Community Release| [Global Management](../ghippo/intro/what.md)<br />[Container Management](../kpanda/intro/WhatisKPanda.md)<br />[Observability]( ../insight/03ProductBrief/WhatisInsight.md) | [Permanent free license](../dce/license0.md), the 3 modules will be updated continuously, and you can [download offline packages of submodules](../ download/dce5.md) |
+| Commercial | [Global Management](../ghippo/intro/what.md)<br />[Container Management](../kpanda/intro/WhatisKPanda.md)<br />[Observability]( ../insight/03ProductBrief/WhatisInsight.md)<br />[Application Workbench](../amamba/intro/WhatisAmamba.md)<br />[Multicloud Orchestration](../kairship/01product/whatiskairship. md)<br />[Microservice Engine](../skoala/intro/features.md)<br />[Service Mesh](../mspide../mspider/intro/WhatismSpider.mdine Choose Middleware](../middleware/midware.md)<br />[Cloud Native Network](../network/intro/what-is-net.md)<br />[Cloud Native Storage](. ./hwameistor/intro/what.md)<br />[container registry](../kangaroo/intro.md) | [Genuine Authorization](https://qingflow.com/f/e3291647), each module can Free combination on demand, you can [download the offline package of the submodule](../download/dce5.md) at any time |
 
 ## Community Release Installation Process
 

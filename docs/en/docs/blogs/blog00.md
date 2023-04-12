@@ -140,7 +140,7 @@ historic version:
 [{ width="100" }](https://github.com/cncf/k8s-conformance/pull/1144)
 [{ width="100" }](https://github.com/cncf/k8s-conformance/pull/1463)
 
-Learn more about [What is DCE 5.0](../dce/what-is-dce.md)
+Learn more about [What is DCE 5.0](../dce/what.md)
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

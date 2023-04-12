@@ -15,7 +15,7 @@ A resource (cluster) can be shared by multiple workspaces, and a workspace can a
 
 ## Resource groups and shared resources
 
-Both shared resources and cluster resources in resource groups come from [Container Management](../../../kpanda/03ProductBrief/WhatisKPanda.md), but cluster binding and sharing to the same workspace will produce two very different effect.
+Both shared resources and cluster resources in resource groups come from [Container Management](../../../kpanda/intro/WhatisKPanda.md), but cluster binding and sharing to the same workspace will produce two very different effect.
 
 1. Binding resources
 

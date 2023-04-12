@@ -2,6 +2,80 @@
 
 This page lists the Release Notes for global management of each version, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-03-29
+
+### v0.15.0
+
+#### Features
+
+- Custom role function (create/edit/delete/view/list)
+- Support GProduct permission point and custom role function docking
+- Disconnected cluster resource processing
+- GHippo OpenAPI documentation implementation
+- Provide GProduct with insert audit log SDK
+
+#### fix
+
+- Fixed the problem that the token can still be used after the key expires
+- Fix the problem that the mirror warehouse is not controlled by the license
+
+## 2023-02-27
+
+### v0.14.0
+
+#### Features
+
+- Platform Settings->Appearance Customization->Advanced Customization->Login Page Customization and Post-Login Page Customization
+- Support the keycloak quarkus architecture to run in a dual-stack environment
+- A job is added to the CI process to detect whether there are non-compliant images in the helm chart package and whether the installation parameters are correct
+- Set the switch in helm values, you can switch audit related functions with one click
+- Audit log supports recording kpanda page operations
+
+#### Optimization
+
+- Optimization of OpenAPI calling method
+
+#### fix
+
+- Fixed some wrong audit log names
+- Modify the keycloak startup probe failureThreshold value to improve startup success rate
+- Fix bind/unbind resource error i18n
+
+## 2022-12-30
+
+### v0.13.2
+
+#### fix
+
+- The interface has supplemented the English copy that lacks permission instructions
+- When updating the database table, an error may be reported due to the database encoding
+
+## 2022-12-28
+
+### v0.13.0
+
+#### Features
+
+- Support deploying a national secret gateway in front of DCE 5.0, and use a national secret browser to access DCE 5.0
+- Set the switch in helm values, you can switch the istio sidecar function with one click
+- Add Workspace and Folder Owner role to workspace and hierarchy
+- Only users with Workspace/Folder Admin and Kpanda Owner permissions can perform resource binding
+- Scan the open source license for the library used
+- Added `Status` column to user list
+- Provide offline installation documentation internally
+- SDK unit testing up to 65%
+- The interface supports sending test emails and email servers without account passwords
+- The interface supports prompting for usernames that do not meet the system requirements
+
+#### Optimization
+
+- Ghippo authentication code optimization (reduce memory usage)
+- Optimized the preloading mechanism when the front-end interface is low in network conditions
+
+#### fix
+
+- Fixed the problem that OpenAPI cycle is a required parameter, and it is an optional parameter after the repair
+
 ## 2022-11-30
 
 ### v0.12.1
@@ -151,7 +225,7 @@ Release date: 2022-6-21
 - **NEW** Added About -> Technical Team (List/Initialize)
 - **NEW** License -> Lifecycle Management (Create/Edit/Delete/View/List)
 - **Added** License -> Get ESN serial number
-- **NEW** Added new pages in the documentation site: [Common Terminology](../01ProductBrief/glossary.md), [Function Overview](../01ProductBrief/Features.md), [Quick Start/Create User and Authorization](../04UserGuide/01UserandAccess/User.md), [What is User Access and Control](../04UserGuide/01UserandAccess/iam.md), [User](../04UserGuide/01UserandAccess/User.md )
+- **NEW** Added new pages in the documentation site: [Common Terminology](glossary.md), [Function Overview](Features.md), [Quick Start/Create User and Authorization](../04UserGuide/01UserandAccess/User.md), [What is User Access and Control](../04UserGuide/01UserandAccess/iam.md), [User](../04UserGuide/01UserandAccess/User.md )
 
 ## v0.5
 
@@ -172,4 +246,4 @@ Release date: 2022-5-23
 - Add overall bilingual document station structure and main content
 - Completion of ROADMAP content
 - merge document ROADMAP content into overall ROADMAP file
-- Documentation site updated [What is Ghippo](WhatisGhippo.md)
+- Documentation site updated [What is Ghippo](what.md)

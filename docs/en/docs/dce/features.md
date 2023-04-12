@@ -7,7 +7,7 @@ hide:
 
 DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typical featuers currently supported are as follows.
 
-=== "[Multi-cluster management](../kpanda/03ProductBrief/WhatisKPanda.md)"
+=== "[Multi-cluster management](../kpanda/intro/WhatisKPanda.md)"
 
 - Unified management of multi-cluster, supporting Kubernetes clusters in all version ranges to be included in the container management scope.
 
@@ -33,7 +33,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - Unified load management abbility of cross-cluster.
 
-=== "[Continuous business delivery](../amamba/01ProductBrief/WhatisAmamba.md)"
+=== "[Continuous business delivery](../amamba/intro/WhatisAmamba.md)"
 
 - Enterprise-level cloud native CI/CD capabilities enable standardized continuous integration and delivery ability, and agile iteration of applications.It meets new business needs quickly, and improve the efficiency of application integration and release.
 
@@ -46,7 +46,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 - DevOps tools popular in the community are integrated.Stepes in a single pipelines can run on multiple operating systems and multiple architecture nodes.Independent deployment on public cloud, private cloud or host is supported, and enterprise owned systems and platform can be well integrated.
   The integration of mainstream software in the industry, such as Kubernetes, Gitlab, SonarQube, Harbor, are supported.
 
-=== "[Multicloud application dispatch](../kairship/01product/whatiskairship.md)"
+=== "[Multicloud application dispatch](../kairship/intro/whatiskairship.md)"
 
 - Unified multicloud orchestration management, unified management of multiple cloud instances, and unified request entry.
 
@@ -56,7 +56,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - Multicloud application failover function.
 
-=== "[Unified user authority system](../ghippo/01ProductBrief/WhatisGhippo.md)"
+=== "[Unified user authority system](../ghippo/intro/what.md)"
 
 - Centralized management of user/group, unified user/group management by multi-functional modules, opening up the user system and reducing management, operation and maintenance costs.
 
