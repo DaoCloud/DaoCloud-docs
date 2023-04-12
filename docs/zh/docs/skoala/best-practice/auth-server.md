@@ -14,7 +14,11 @@
     ```
     git clone https://github.com/projectsesame/envoy-authz-java
     ```
-2. 直接使用 all-in-one-contour.yaml 以及 all-in-one-contour.yaml 下的默认镜像。
+2. 直接使用 [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) 以及 [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) 下的默认镜像。
+
+    默认镜像如下:
+    - release.daocloud.io/skoala/demo/envoy-authz-java:0.1.0
+    - release-ci.daocloud.io/skoala/demo/envoy-authz-java:0.1.0
 3. 模版为简单的路径判断，当访问路径为 `/` 时通过认证，其余路径为拒绝访问。
 ### 使用自定义的认证服务器
 
@@ -28,6 +32,7 @@
 
     - API 模块是 envoy 的 `protobuf` 文件的定义（无需修改）
     - authz-grpc-server 模块是认证服务器的认证逻辑处理地址（在这里填写认证逻辑）
+    - release.daocloud.io/skoala/demo/envoy-authz-java:0.1.0
 
 2. 使用如下命令编译 API 模块，解决类找不到的问题
 
@@ -43,8 +48,6 @@
 4. 代码编写完成之后，使用 Docker 打包镜像。
 
     代码模板仓库中已存在 Dockerfile 文件，可以直接使用该模板构建镜像。
-
-    > 或直接使用模版镜像 `release-ci.daocloud.io/skoala/demo/envoy-authz-java:0.1.0` 或 `release.daocloud.io/skoala/demo/envoy-authz-java:0.1.0`。
 
 5. 将镜像地址填入 [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) 文件中的 Deployment 下的 `spec/template/spec/containers/image` 字段。
 
