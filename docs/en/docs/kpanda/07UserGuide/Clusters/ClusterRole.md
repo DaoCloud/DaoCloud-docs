@@ -36,7 +36,7 @@ This cluster is used to manage the working cluster and generally does not carry 
 
 ## Working cluster
 
-This is a cluster created using [Container Management](../../03ProductBrief/WhatisKPanda.md), which is mainly used to carry business load. The cluster is managed by the management cluster.
+This is a cluster created using [Container Management](../../intro/WhatisKPanda.md), which is mainly used to carry business load. The cluster is managed by the management cluster.
 
 | Supported Features | Description |
 | -------------------------------------------------- ----------------- | -------------------------------- ------ |

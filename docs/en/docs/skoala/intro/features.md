@@ -31,7 +31,7 @@ The Nacos hosting registry can be used as a configuration manager for microservi
 
 The microservice gateway is responsible for managing the north-south traffic control of microservices, providing API management, interface current limiting, multiple policy security authentication, black and white lists, routing and forwarding, MockAPI and other capabilities, while providing enterprise-level high-performance and highly scalable cloud services ability.
 
-- Multi-gateway management: natively supports the management of multi-cluster and multi-namespace gateway instances in the [Container Management](../../kpanda/03ProductBrief/WhatisKPanda.md) module, and supports full lifecycle management of gateway instances .
+- Multi-gateway management: natively supports the management of multi-cluster and multi-namespace gateway instances in the [Container Management](../../kpanda/intro/WhatisKPanda.md) module, and supports full lifecycle management of gateway instances .
 - API policy management: Add, delete, modify and query APIs through a graphical interface, and configure API policies, such as load balancing, path rewriting, timeout configuration, retry mechanism, request header/response header rewriting, WebSocket, local current limiting, health check etc. **At the same time, the ability of the native API is not affected**.
 - Plug-in management: Provides a wealth of plug-in functions, supports plug-ins such as security, traffic control, and cache, and supports one-click enabling/disabling of plug-ins.
 - Monitoring and alarming: The microservice gateway will automatically configure monitoring, alarming and other functions when deployed. Each gateway comes with complete resource monitoring and gateway business monitoring.

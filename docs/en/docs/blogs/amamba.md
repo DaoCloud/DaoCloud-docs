@@ -55,7 +55,7 @@ The cloud-native applications currently supported by the application workbench i
 
 
 The application workbench is oriented towards application development and operation and maintenance, covering the entire application lifecycle, including application creation, deletion, configuration modification, automatic scaling, and automatic operation and maintenance.
-And support SpringCloud, Dubbo, ServiceMesh service governance architecture, and [5.0 Microservice Engine](../skoala/intro/features.md), [5.0 service mesh](../mspider/01Intro/WhatismSpider.md) Seam integration:
+And support SpringCloud, Dubbo, ServiceMesh service governance architecture, and [5.0 Microservice Engine](../skoala/intro/features.md), [5.0 service mesh](../mspider/intro/WhatismSpider.md) Seam integration:
 
 
 
@@ -123,7 +123,7 @@ The application workbench implements progressive grayscale release based on Argo
      The application workbench is centered on the application and has a unified observation plane, including monitoring, alarm, log and other information.
      Make the operation and maintenance of cloud-native applications in different forms easier and more convenient.
 
-[Learn About App Workbench](../amamba/01ProductBrief/WhatisAmamba.md){ .md-button }
+[Learn About App Workbench](../amamba/intro/WhatisAmamba.md){ .md-button }
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

@@ -26,7 +26,7 @@ For more sample applications, please check our open source site: <https://github
 
 The application workbench is an application management module provided by DCE5.0, which is convenient for you to create/maintain various types of applications here, supports CICD, and can easily and quickly deploy applications to any cluster.
 
-To learn more about the application workbench, click [Application Workbench to view](../../amamba/01ProductBrief/WhatisAmamba.md)
+To learn more about the application workbench, click [Application Workbench to view](../../amamba/intro/WhatisAmamba.md)
 
 ### Deployment method selection
 

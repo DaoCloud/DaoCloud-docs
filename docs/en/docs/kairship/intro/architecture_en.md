@@ -27,7 +27,7 @@ Multicloud orchestration mainly includes two core components:
 
 ### Kairship apiserver
 
-The kairship apiserver is mainly responsible for the entry of all traffic in multicloud orchestration (openapi, grpc, etc.). When starting up, it will obtain the identity information of the operator from [Global Management Module](../../ghippo/01ProductBrief/WhatisGhippo.md), It is used for subsequent security verification of AuthZ.
+The kairship apiserver is mainly responsible for the entry of all traffic in multicloud orchestration (openapi, grpc, etc.). When starting up, it will obtain the identity information of the operator from [Global Management Module](../../ghippo/intro/what.md), It is used for subsequent security verification of AuthZ.
 
 <!--Stateless service, specific interface to be added (currently relatively simple) -->
 
@@ -43,7 +43,7 @@ This component is mainly responsible for the processing of a series of control l
 
      The CRUD event monitoring of multicloud orchestration instance CRD, once the kariship instance is created, the corresponding Kpanda cluster (virtual type, container management interface does not need to be displayed) will be created synchronously.
 
-     The retrieval of all resources of the multicloud orchestration instance (multicloud workload, pp, op) will be completed through the internal acceleration mechanism of the [container management module](../../kpanda/03ProductBrief/WhatisKPanda.md) (with the help of [Clusterpedia]( ../../community/clusterpedia.md)) to separate reads and writes and improve performance.
+     The retrieval of all resources of the multicloud orchestration instance (multicloud workload, pp, op) will be completed through the internal acceleration mechanism of the [container management module](../../kpanda/intro/WhatisKPanda.md) (with the help of [Clusterpedia]( ../../community/clusterpedia.md)) to separate reads and writes and improve performance.
 
      If the instance is deleted, the virtual cluster registered in the container management module will be deleted synchronously.
 
@@ -57,12 +57,12 @@ This component is mainly responsible for the processing of a series of control l
 
 - instance registry controller
 
-     Multicloud orchestration needs to register all `Karmada` instances in the platform to [Global Management Module](../../ghippo/01ProductBrief/WhatisGhippo.md) through custom resources, so as to complete the role and Karmada instance in the global management binding relationship.
+     Multicloud orchestration needs to register all `Karmada` instances in the platform to [Global Management Module](../../ghippo/intro/what.md) through custom resources, so as to complete the role and Karmada instance in the global management binding relationship.
      Finally, these binding relationships will be synchronized to the multicloud orchestration module.
 
 -Ghippo webhook controller
 
-     After the [Global Management Module](../../ghippo/01ProductBrief/WhatisGhippo.md) completes the binding relationship between the role and the Karmada instance, notify the multicloud orchestration through the sdk, and the multicloud orchestration completes the authentication action accordingly.
+     After the [Global Management Module](../../ghippo/intro/what.md) completes the binding relationship between the role and the Karmada instance, notify the multicloud orchestration through the sdk, and the multicloud orchestration completes the authentication action accordingly.
 
 In the figure above `Kairship management`, there is an instance proxy component (internal component), which is mainly responsible for the communication between the multicloud orchestration management plane and each `Karmada` instance.
 It can be understood as a collection of Kubernetes clients, get the corresponding client according to the Cluster Name, and then access the real Karmada instance.
@@ -83,10 +83,10 @@ All request data flows directly to the multicloud orchestration instance located
 
 
 
-As shown in the figure above, all requests to access the multicloud module will be shunted after multicloud orchestration, and all read requests such as get/list will access the [container management module](../../kpanda/03ProductBrief/WhatisKPanda. md), write requests will access the Karmada instance. This will cause a problem: After creating a multicloud application through multicloud orchestration, how can the relevant resource information be obtained through the [container management module](../../kpanda/03ProductBrief/WhatisKPanda.md)?
+As shown in the figure above, all requests to access the multicloud module will be shunted after multicloud orchestration, and all read requests such as get/list will access the [container management module](../../kpanda/03ProductBrief/WhatisKPanda. md), write requests will access the Karmada instance. This will cause a problem: After creating a multicloud application through multicloud orchestration, how can the relevant resource information be obtained through the [container management../../kpanda/intro/WhatisKPanda.mdKPanda.md)?
 
 Friends who know Karmada know that the essence of Karmada control-plane is a complete Kubernetes control plane, but there are no nodes that carry workloads.
-Therefore, when multicloud orchestration creates an instance, it adopts a tricky action, adding the instance itself as a hidden cluster to the [container management module](../../kpanda/03ProductBrief/WhatisKPanda.md) (not in the container management).
+Therefore, when multicloud orchestration creates an instance, it adopts a tricky action, adding the instance itself as a hidden cluster to the [container management module](../../kpanda/intro/WhatisKPanda.md) (not in the container management).
 In this way, the capabilities of the container management module can be fully utilized (collecting and accelerating the retrieval of resources, CRD, etc. of each Kubernetes cluster), when querying the resources (deployment, pp, op, etc.) of a multicloud orchestration instance in the interface, they can be directly managed through the container The module can be retrieved to achieve separation of reading and writing to speed up the response time.
 
 ## Multicloud orchestration instance LCM

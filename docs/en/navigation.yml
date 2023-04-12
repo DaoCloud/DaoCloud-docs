@@ -27,12 +27,12 @@ nav:
           - Release Notes: install/release-notes.md
       - Container Management:
           - Intro:
-              - What is Container Management: kpanda/03ProductBrief/WhatisKPanda.md
-              - Features: kpanda/03ProductBrief/Features.md
-              - Benefits: kpanda/03ProductBrief/Benefits.md
-              - Scenarios: kpanda/03ProductBrief/Scenarios.md
-              - Concepts: kpanda/03ProductBrief/Concepts.md
-              - Release Notes: kpanda/03ProductBrief/release-notes.md
+              - What is Container Management: kpanda/intro/WhatisKPanda.md
+              - Features: kpanda/intro/Features.md
+              - Benefits: kpanda/intro/Benefits.md
+              - Scenarios: kpanda/intro/Scenarios.md
+              - Concepts: kpanda/intro/Concepts.md
+              - Release Notes: kpanda/intro/release-notes.md
           - Clusters:
               - Create Cluster: kpanda/07UserGuide/Clusters/CreateCluster.md
               - Join Cluster: kpanda/07UserGuide/Clusters/JoinACluster.md
@@ -90,10 +90,10 @@ nav:
               - Cluster and Namespace Authorization: kpanda/07UserGuide/Permissions/Cluster-NSAuth.md
       - Global Management:
           - Intro:
-              - What is Global Management: ghippo/01ProductBrief/WhatisGhippo.md
-              - Features: ghippo/01ProductBrief/Features.md
-              - Glossary: ghippo/01ProductBrief/glossary.md
-              - Release Notes: ghippo/01ProductBrief/release-notes.md
+              - What is Global Management: ghippo/intro/what.md
+              - Features: ghippo/intro/Features.md
+              - Glossary: ghippo/intro/glossary.md
+              - Release Notes: ghippo/intro/release-notes.md
           - Login: ghippo/04UserGuide/00Login.md
           - Installation:
               - Offline Upgrade: ghippo/install/offlineInstall.md
@@ -203,12 +203,12 @@ nav:
               - Modify vmstorage Disk: insight/best-practice/modify-vms-disk.md
       - Workbench:
           - Intro:
-              - What is Workbench?: amamba/01ProductBrief/WhatisAmamba.md
-              - Features: amamba/01ProductBrief/Features.md
-              - Benefits: amamba/01ProductBrief/Benefits.md
-              - Scenarios: amamba/01ProductBrief/Scenarios.md
-              - Concepts: amamba/01ProductBrief/Concepts.md
-              - Release Notes: amamba/01ProductBrief/release-notes.md
+              - What is Workbench?: amamba/intro/WhatisAmamba.md
+              - Features: amamba/intro/Features.md
+              - Benefits: amamba/intro/Benefits.md
+              - Scenarios: amamba/intro/Scenarios.md
+              - Concepts: amamba/intro/Concepts.md
+              - Release Notes: amamba/intro/release-notes.md
           - Namespaces: amamba/03UserGuide/Namespace/namespace.md
           - Wizard:
               - Create App with Git Repo: amamba/03UserGuide/wizard/create-git-based-ms.md
@@ -235,12 +235,12 @@ nav:
               - Scan Images with Managed Harbor: amamba/02QuickStart/scan-with-harbor.md
       - Multicloud Orchestration:
           - Intro:
-              - What is Multicloud Orchestration: kairship/01product/whatiskairship.md
-              - Features: kairship/01product/features.md
-              - Architecture: kairship/01product/architecture.md
-              - Benefits: kairship/01product/benefits.md
-              - Concepts: kairship/01product/concepts.md
-              - Release Notes: kairship/01product/release-notes.md
+              - What is Multicloud Orchestration: kairship/intro/whatiskairship.md
+              - Features: kairship/intro/features.md
+              - Architecture: kairship/intro/architecture.md
+              - Benefits: kairship/intro/benefits.md
+              - Concepts: kairship/intro/concepts.md
+              - Release Notes: kairship/intro/release-notes.md
           - Multicloud Instances:
               - Instance Intro: kairship/03instance/README.md
               - Add Instance: kairship/03instance/add.md
@@ -328,14 +328,14 @@ nav:
               - Gateway: reference/basic-knowledge/gateway.md
       - Service Mesh:
           - Intro:
-              - What is Service Mesh: mspider/01Intro/WhatismSpider.md
-              - Features: mspider/01Intro/Features.md
-              - Benefits: mspider/01Intro/Benefits.md
-              - Scenarios: mspider/01Intro/Scenarios.md
-              - Features supported by UI: mspider/01Intro/meshes.md
+              - What is Service Mesh: mspider/intro/WhatismSpider.md
+              - Features: mspider/intro/Features.md
+              - Benefits: mspider/intro/Benefits.md
+              - Scenarios: mspider/intro/Scenarios.md
+              - Features supported by UI: mspider/intro/meshes.md
               - Permissions: ghippo/permissions/mspider.md
-              - Architecture: mspider/01Intro/Architecture.md
-              - Release Notes: mspider/01Intro/release-notes.md
+              - Architecture: mspider/intro/Architecture.md
+              - Release Notes: mspider/intro/release-notes.md
           - Install and Deploy: mspider/install.md
           - Mesh Management:
               - Mesh Intro: mspider/03UserGuide/servicemesh/README.md
@@ -455,9 +455,9 @@ nav:
               - Intro: network/modules/submariner/what.md
               - Install: network/modules/submariner/install.md
               - Use: network/modules/submariner/usage.md
-      - Data Service:
+      - Middleware Service:
           - Intro:
-              - What is data service: middleware/midware.md
+              - What is Middleware Service: middleware/midware.md
               - Version Compatibility: middleware/adaptation-k8s.md
           - Elasticsearch:
               - What is Elasticsearch: middleware/elasticsearch/intro/what.md
@@ -657,8 +657,8 @@ nav:
           - Download Community Release: download/free/dce5-installer-v0.6.0.md
           - Download Commercial Release: download/business/dce5-installer-v0.6.0.md
           - Download Addons: download/addon/v0.5.2.md
-          - Download Module: Global Management: download/modules/ghippo.md
-          - Download Module: Insight: download/modules/insight.md
+          - Download Module Global Management: download/modules/ghippo.md
+          - Download Module Insight: download/modules/insight.md
   - Cloud Native Institute:
       - Cloud Native News: native/news.md
       - Business Products: native/commerce.md

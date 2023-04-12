@@ -26,7 +26,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     A resource object that extends the functionality of DCE.
     You can install more additional extensions via
-    [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md) -> [Helm Template](../kpanda/07UserGuide/helm/README.md).
+    [Container Management](../kpanda/intro/WhatisKPanda.md) -> [Helm Template](../kpanda/07UserGuide/helm/README.md).
 
 - Admission Controller
 
@@ -1720,7 +1720,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Resource Template
 
-    In [multi-cloud orchestration](../kairship/01product/whatiskairship.md), a template called a federated resource is used. This is a multi-cloud resource template based on the native K8s API, which facilitates the integration of all cloud-native tools within the K8s ecosystem. This resource template can be used to centrally manage [multi-cloud services](../kairship/06resource/service.md), [multi-cloud namespaces](../kairship/06resource/ns.md), [multi-cloud configmap](../kairship/06resource/configmap.md), and [multi-cloud secret](../kairship/06resource/secret.md).
+    In [multi-cloud orchestration](../kairship/intro/whatiskairship.md), a template called a federated resource is used. This is a multi-cloud resource template based on the native K8s API, which facilitates the integration of all cloud-native tools within the K8s ecosystem. This resource template can be used to centrally manage [multi-cloud services](../kairship/06resource/service.md), [multi-cloud namespaces](../kairship/06resource/ns.md), [multi-cloud configmap](../kairship/06resource/configmap.md), and [multi-cloud secret](../kairship/06resource/secret.md).
 
 - Role
 

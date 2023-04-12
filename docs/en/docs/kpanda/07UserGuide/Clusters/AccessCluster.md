@@ -1,6 +1,6 @@
 # Access cluster
 
-Clusters accessed or created using the DCE 5.0 [Container Management](../../03ProductBrief/WhatisKPanda.md) platform can not only be accessed directly through the UI interface, but also can be accessed through two other methods:
+Clusters accessed or created using the DCE 5.0 [Container Management](../../intro/WhatisKPanda.md) platform can not only be accessed directly through the UI interface, but also can be accessed through two other methods:
 
 - Online access via CloudShell
 - Access through kubectl after downloading the cluster certificate

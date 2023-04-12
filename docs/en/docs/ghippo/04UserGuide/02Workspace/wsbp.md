@@ -50,7 +50,7 @@ A workspace consists of three functions: authorization, resource groups, and sha
 
 ## The effect of the workspace on the DCE module
 
-1. Module name: [Application Workbench](../../../amamba/01ProductBrief/WhatisAmamba.md), [Microservice Engine](../../../skoala/intro/features. md), [Service Mesh](../../../mspider/01Intro/WhatismSpider.md), [Middleware](../../../middleware/midware.md)
+1. Module name: [Application Workbench](../../../amamba/intro/WhatisAmamba.md), [Microservice Engine](../../../skoala/intro/features. md), [Service Mesh](../../../../../../mspider/intro/WhatismSpider.mdeware](../../../middleware/midware.md)
 
     The premise of entering the above modules is to have the permission of a certain workspace, so you must have the Admin role or have certain role permissions of a certain workspace before using the module functions.
 
@@ -60,7 +60,7 @@ A workspace consists of three functions: authorization, resource groups, and sha
 
     In addition, the resources you create in these modules will also be automatically bound to the corresponding workspace without any additional operations.
 
-2. Module name: [Container Management](../../../kpanda/03ProductBrief/WhatisKPanda.md), [Service Mesh](../../../mspider/01Intro/WhatismSpider.md )
+2. Module name: [Container Management](../../../kpanda/intro/WhatisKPanda.md), [Service Mesh](../../../mspider/01Intro/WhatismSpider.md )
 
     Due to the particularity of functional modules, resources created in the container management module will not be automatically bound to a certain workspace.
 

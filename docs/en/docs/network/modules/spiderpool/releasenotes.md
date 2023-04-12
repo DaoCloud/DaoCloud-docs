@@ -1,28 +1,71 @@
----
-MTPE: Jeanine-tw
-Revised: Jeanine-tw
-Pics: NA
-Date: 2023-01-31
----
-
 # Spidernet Release Notes
 
-This page lists the Release Notes for Spidernet so you can understand the evolution path and feature changes for each version.
+This page lists the Release Notes of Spidernet, so that you can understand the evolution path and feature changes of each version.
 
-## 2022-12-30
+## 2022-03-28
 
-### v0.7.1
+### v0.5.0
 
-#### New features
+#### Optimization
 
-- **New** Interface-based IP reservation, IP unreservation, etc.
+- **Optimized** Spidernet API, adapted to **Spiderpool v0.4.0** new version CRD
 
-- **New** Interface-based IP pool management for creating, editing, deleting.
+#### fix
 
-- **New** Workloads are allowed to use multi-network interfaces, and select IP pool and fixed.
+- **Fix** The stateful load uses the automatic IP pool, the IP pool is created successfully, the IP allocation is successful, and the query IP pool is empty.
 
-- **New** View available IPs in the application fixed IP pool and total IP count.
+- **Fix** Subnet Management-Delete Subnet, choose to delete a subnet, the system prompts success, but the subnet is still there after refreshing.
 
-#### Enhancements
+- **Fix** Click "Container Network Card" several times, but can't get data.
 
-- **Enhance** resource usage,and reduce CPU and memory requests.
+- **Fix** Spidernet-UI Service Label in `Spidernet Chart` is incorrect.
+
+## 2022-02-28
+
+### v0.4.4
+
+#### Optimization
+
+- **Optimization** Adjust the CPU memory Request value.
+
+#### fix
+
+- **Fix** The stateful load uses the automatic IP pool, the IP pool is created successfully, the IP allocation is successful, and the query IP pool is empty.
+
+- **Fix** Subnet Management - Delete subnet, choose to delete a subnet, the system prompts success, but the subnet is still there after refreshing.
+
+- **Fix** Click "Container Network Card" several times, but can't get data.
+
+- **Fix** Spidernet-UI Service Label in `Spidernet Chart` is incorrect.
+
+## 2022-11-30
+
+### v0.4.3
+
+#### Optimization
+
+- **Optimize** resource usage, reduce CPU and memory requests.
+
+### v0.4.2
+
+#### Optimization
+
+- **Optimize** resource usage, reduce CPU and memory requests.
+- **Optimization** Subnet or IPPool cannot be deleted when IP is occupied.
+- **Optimize** pagination issue
+
+### v0.4.1
+
+#### Features
+
+- **NEW** Added functions such as interface-based IP reservation and IP release reservation.
+
+- **New** IP pool management, which can be created, edited, and deleted based on the interface.
+
+- **New** The workload uses the multi-NIC function of the container, and the IP pool can be selected and fixed.
+
+- **NEW** Check the number of available IPs/total IPs in the application fixed IP pool.
+
+#### Optimization
+
+- **Optimize** resource usage, reduce CPU and memory requests.
