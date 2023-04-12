@@ -4,9 +4,9 @@ On this page, you can download the offline installation packages of each version
 
 ## Download
 
-| Version | Architecture | File Size |
-| -------------------------------------------------- ----- | ----- |-------- | ----------------------------- -------------------------------------------------- --------------------------- | ---------- | ---------- |
-| [v0.13.1](../../insight/intro/releasenote.md) | AMD64 | 2.41GB | [:arrow_down: insight_v0.13.1_amd64.tar](https://qiniu-download-public.daocloud .io/DaoCloud_Enterprise/insight_v0.13.1_amd64.tar) | [:arrow_down: insight_v0.13.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/insight_v0.13.1_amd64_checksum.sha512sum) | 2022 -12-30 |
+| Version | Architecture | File Size | Pack | MD5 file | Date |
+| ------------------- | ----- |-------- | --------------- | ---------- | ---------- |
+| [v0.13.1](../../insight/intro/releasenote.md) | AMD64 | 2.41GB | [:arrow_down: insight_v0.13.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/insight_v0.13.1_amd64.tar) | [:arrow_down: insight_v0.13.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/insight_v0.13.1_amd64_checksum.sha512sum) | 2022 -12-30 |
 
 ## Validation
 
