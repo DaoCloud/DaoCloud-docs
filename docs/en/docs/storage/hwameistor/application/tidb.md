@@ -6,7 +6,7 @@ TiDB is a converged distributed database product that supports both online trans
 
 The TiDB distributed database splits the overall architecture into multiple modules, and each module communicates with each other to form a complete TiDB system. The corresponding architecture diagram is as follows:
 
-![TiDB Architecture Diagram](img/architecture.png)
+
 
 - **TiDB Server**
   
@@ -24,7 +24,7 @@ The TiDB distributed database splits the overall architecture into multiple modu
 
 ## Storage of TiDB database
 
-![TiDB database storage](img/storage.png)
+
 
 - **Key-Value Pair**
 
@@ -60,23 +60,23 @@ The TiDB distributed database splits the overall architecture into multiple modu
 
 This test uses three virtual machine nodes to deploy a Kubernetes cluster, including 1 master node and 2 worker nodes. Kubelete version is 1.22.0.
 
-![Kubernetes cluster](img/k8scluster.png)
+
 
 ### HwameiStor local storage
 
 1. Deploy HwameiStor local storage on the Kubernetes cluster
 
-     ![HwameiStor local storage](img/hwameistor.png)
+     
 
 2. Configure a 100G local disk sdb for HwameiStor on the two worker nodes respectively
 
-     ![sdb1](img/sdb1.png)
+     
 
-     ![sdb2](img/sdb2.png)
+     
 
 3. Create storageClass
 
-     ![Create StorageClass](img/storageclass.png)
+     
 
 ### Deploy TiDB on Kubernetes
 
@@ -113,7 +113,7 @@ The correspondence between TiDB and TiDB Operator versions is as follows:
 
 3. Check TiDB Operator components
 
-     ![Check TiDB Operator component](img/check.png)
+     
 
 #### Deploy TiDB cluster
 
@@ -123,7 +123,7 @@ kubectl -n tidb-cluster apply -f https://raw.githubusercontent.com/pingcap/tidb-
 kubectl -n tidb-cluster apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/master/examples/basic/tidb-monitor.yaml
 ```
 
-![Deploy TiDB cluster](img/deploytidb.png)
+
 
 #### Connect TiDB cluster
 
@@ -131,17 +131,17 @@ kubectl -n tidb-cluster apply -f https://raw.githubusercontent.com/pingcap/tidb-
 yum -y install mysql-client
 ```
 
-![connecttidb](img/connecttidb.png)
+
 
 ```bash
 kubectl port-forward -n tidb-cluster svc/basic-tidb 4000 > pf4000.out &
 ```
 
-![Connect TiDB cluster](img/connect1.png)
 
-![Connect TiDB cluster](img/connect2.png)
 
-![Connect TiDB cluster](img/connect3.png)
+
+
+
 
 #### Check and verify TiDB cluster status
 
@@ -150,43 +150,43 @@ kubectl port-forward -n tidb-cluster svc/basic-tidb 4000 > pf4000.out &
      ```sql
      create table hello_world (id int unsigned not null auto_increment primary key, v varchar(32));
      ```
-     ![Create Hello_world table](img/hellold.png)
+     
 
 2. Query the TiDB version number
 
      ```sql
      select tidb_version()\G;
      ```
-     ![Connect TiDB cluster](img/checkversion.png)
+     
 
 3. Query Tikv storage status
 
      ```sql
      select * from information_schema.tikv_store_status\G;
      ```
-     ![Check Tikv storage status](img/checkstorage.png)
+     
 
 #### HwameiStor storage configuration
 
 Create a PVC for tidb-tikv and tidb-pd from `storageClass local-storage-hdd-lvm`:
 
-![HwameiStor storage configuration](img/pvc.png)
 
-![HwameiStor storage configuration](img/pvc1.png)
 
-![HwameiStor storage configuration](img/pvc2.png)
+
+
+
 
 ```bash
 kubectl get po basic-tikv-0-oyaml
 ```
 
-![HwameiStor storage configuration](img/mountpvc.png)
+
 
 ```bash
 kubectl get po basic-pd-0-oyaml
 ```
 
-![HwameiStor storage configuration](img/mountpvc1.png)
+
 
 ## Test content
 

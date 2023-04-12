@@ -26,7 +26,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     A resource object that extends the functionality of DCE.
     You can install more additional extensions via
-    [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md) -> [Helm Template](../kpanda/07UserGuide/helm/README.md).
+    [Container Management](../kpanda/intro/WhatisKPanda.md) -> [Helm Template](../kpanda/07UserGuide/helm/README.md).
 
 - Admission Controller
 
@@ -51,41 +51,49 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Aggregation Layer
 
-    The aggregation layer allows Kubernetes to be extended with additional APIs, beyond what is offered by the core Kubernetes APIs. The additional APIs can either be ready-made solutions such as a metrics server, or APIs that you develop yourself.
+    The aggregation layer allows Kubernetes to be extended with additional APIs, beyond what is offered
+    by the core Kubernetes APIs. The additional APIs can either be ready-made solutions such as a metrics
+    server, or APIs that you develop yourself.
 
-    The aggregation layer is different from Custom Resources, which are a way to make the kube-apiserver recognise new kinds of object.
+    The aggregation layer is different from Custom Resources, which are a way to make the kube-apiserver
+    recognise new kinds of object.
 
 - [Alert Rule](../insight/user-guide/05alertcenter/alertrule.md)
 
-    In Insight, this is an alert object created based on the resource status. You can customize the conditions for triggering rules and sending notifications.
+    In Insight, this is an alert object created based on the resource status. You can customize the conditions
+    for triggering rules and sending notifications.
 
 - Annotation
 
-    [Annotation](../kpanda/07UserGuide/Nodes/labels-annotations.md) is a key-value pair that is used to attach arbitrary non-identifying metadata to objects.
+    [Annotation](../kpanda/07UserGuide/Nodes/labels-annotations.md) is a key-value pair that is used to attach
+    arbitrary non-identifying metadata to objects.
 
-    The metadata in an annotation can be small or large, structured or unstructured, and can include characters not permitted by labels. Clients such as tools and libraries can retrieve this metadata.
+    The metadata in an annotation can be small or large, structured or unstructured, and can include characters
+    not permitted by labels. Clients such as tools and libraries can retrieve this metadata.
 
 - API, Application Programming Interface
 
-    An API is a way for computer programs to interact with each other. 
-    Just as humans interact with a website via a web page, an API allows computer programs to interact with each other. 
-    Unlike human interactions, APIs have limitations on what can and cannot be asked of them. 
+    An API is a way for computer programs to interact with each other.
+    Just as humans interact with a website via a web page, an API allows computer programs to interact with each other.
+    Unlike human interactions, APIs have limitations on what can and cannot be asked of them.
     The limitation on interaction helps to create stable and functional communication between programs.
 
-    As applications become more complex, small code changes can have drastic effects on other functionality. 
+    As applications become more complex, small code changes can have drastic effects on other functionality.
     Applications need to take a modular approach to their functionality if they can grow and maintain stability simultaneously.
-    Without APIs, there is a lack of a framework for the interaction between applications. 
+    Without APIs, there is a lack of a framework for the interaction between applications.
     Without a shared framework, it is challenging for applications to scale and integrate.
 
     APIs allow computer programs or applications to interact and share information in a defined and understandable manner.
     They are the building blocks for modern applications and they provide developers with a way to integrate applications together.
-    Whenever you hear about microservices working together, you can infer that they interact via an API. 
+    Whenever you hear about microservices working together, you can infer that they interact via an API.
 
 - API-initiated eviction
 
-    API-initiated eviction is the process by which you use the Eviction API to create an Eviction object that triggers graceful pod termination.
+    API-initiated eviction is the process by which you use the Eviction API to create an Eviction object
+    that triggers graceful pod termination.
 
-    You can request eviction by calling the Eviction API directly, or programmatically using a client of the API server, like the `kubectl drain` command. This creates an `Eviction` object, which causes the API server to terminate the Pod.
+    You can request eviction by calling the Eviction API directly, or programmatically using a client of
+    the API server, like the `kubectl drain` command. This creates an `Eviction` object, which causes the API server to terminate the Pod.
 
     API-initiated evictions respect your configured `PodDisruptionBudgets` and `terminationGracePeriodSeconds`.
 
@@ -127,14 +135,16 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     Application containers are containers (or app containers) in a Pod that start after the Init container has started.
 
-    Init containers allow you to isolate initialization details that are important to the workload as a whole, and the init container does not need to continue running once the application container starts.
+    Init containers allow you to isolate initialization details that are important to the workload as a whole,
+    and the init container does not need to continue running once the application container starts.
     If a Pod does not have an Init container configured, all containers in that Pod are application containers.
 
 - App Architect
 
     The application architect is the development leader responsible for the high-level design of the application.
 
-    The application architect ensures that the implementation of the application allows it to interact with surrounding components in a scalable and sustainable manner.
+    The application architect ensures that the implementation of the application allows it to interact with
+    surrounding components in a scalable and sustainable manner.
     Surrounding components include databases, logging infrastructure, and other microservices.
 
 - App Developer
@@ -152,7 +162,8 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Authorization
 
-    [Authorization](../ghippo/04UserGuide/01UserandAccess/iam.md) refers to granting users the permissions required to complete specific tasks, and the authorization takes effect through the permissions of system roles or custom roles.
+    [Authorization](../ghippo/04UserGuide/01UserandAccess/iam.md) refers to granting users the permissions
+    required to complete specific tasks, and the authorization takes effect through the permissions of system roles or custom roles.
     After obtaining specific permissions, users can operate on resources or services.
 
 - Autoscaling
@@ -206,12 +217,12 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     The operator maintains two environments, dubbed “blue” and “green”.
     One serves production traffic (the version all users are currently using), whilst the other is updated.
     Once testing has concluded on the non-active (green) environment,
-    production traffic is switched over (often via the use of a load balancer.
+    production traffic is switched over (often via the use of a load balancer).
     Note that blue-green deployment usually means switching the entire environments, comprising many services, all at once.
     Confusingly, sometimes the term is used with regard to individual services within a system.
     To avoid this ambiguity, the term “zero-downtime deployment” is preferred when referring to individual components.
 
-    Blue-green deployments allow minimal downtime when updating software that must be changed in "lockstep" owing to a lack of backwards compatibility. 
+    Blue-green deployments allow minimal downtime when updating software that must be changed in "lockstep" owing to a lack of backwards compatibility.
     For example, blue-green deployment would be appropriate for an online store
     consisting of a website and a database that needs to be updated,
     but the new version of the database doesn’t work with the old version of the website, and vice versa.
@@ -246,15 +257,15 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - cAdvisor
 
-    cAdvisor (Container Advisor) 为用户提供运行中的容器资源用量和性能特征的相关信息。
-
-    cAdvisor 是一个守护进程，负责收集、聚合、处理并输出运行中容器的信息。
-    具体而言，针对每个容器，该进程记录容器的资源隔离参数、历史资源用量、完整历史资源用量和网络统计的直方图。
-    这些数据可以按容器或按机器层面输出。
+    cAdvisor is a daemon that provides users with information about the resource usage and performance characteristics
+    of running containers. It collects, aggregates, processes, and outputs information about running containers.
+    Specifically, for each container, the process records the container's resource isolation parameters, historical
+    resource usage, complete historical resource usage, and network statistics histogram.
+    This data can be output on a per-container or per-machine basis.
 
 - Certificate
 
-    A (digital) certificate — also often referred to as a public key certificate, or SSL certificate — 
+    A (digital) certificate — also often referred to as a public key certificate, or SSL certificate —
     is a digital document used to help secure communications over the network.
     Certificates allow us to know that the particular entity we're communicating with is who they say they are.
     They also allow us to ensure that our communications are private by encrypting the data we send and receive.
@@ -263,15 +274,15 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     Additionally, we can't guarantee that the traffic between any two devices won't be intercepted by a third party.
     Consequently, any communication can potentially be intercepted, compromising sensitive information like usernames and passwords.
 
-    Modern email clients that utilize certificates can notify you if a sender's identity is correct, as will web browsers (notice the little lock in front of the address bar of your web browser).
+    Modern email clients that utilize certificates can notify you if a sender's identity is correct, as will web browsers
+    (notice the little lock in front of the address bar of your web browser).
     On the other side, certificates can be used to encrypt communication between entities on the internet.
     They provide an encryption technique that makes it nearly impossible, for someone who intercepts the communication, to actually read the data.
 
-- cgroup, control group, 控制组
+- cgroup, control group
 
-    一组具有可选资源隔离、审计和限制的 Linux 进程。
-
-    cgroup 是一个 Linux 内核特性，对一组进程的资源使用（CPU、内存、磁盘 I/O 和网络等）进行限制、审计和隔离。
+    A group of Linux processes with optional resource isolation, auditing, and limitation.
+    cgroup is a Linux kernel feature that limits, audits, and isolates the resource usage (CPU, memory, disk I/O, network, etc.) of a group of processes.
 
 - Chaos Engineering
 
@@ -296,11 +307,10 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - CIDR, Classless Inter-Domain Routing
 
-    CIDR（无类域间路由）是一种描述 IP 地址块的符号，被广泛使用于各种网络配置中。
-
-    在 Kubernetes 的上下文中，每个节点以 CIDR 形式（含起始地址和子网掩码）获得一个 IP 地址段，
-    从而能够为每个 Pod 分配一个独一无二的 IP 地址。
-    虽然其概念最初源自 IPv4，CIDR 已经被扩展为涵盖 IPv6。
+    CIDR (Classless Inter-Domain Routing) is a notation used to describe IP address blocks and is widely used in various
+    network configurations. In the context of Kubernetes, each node is assigned an IP address range in CIDR format
+    (including the starting address and subnet mask), allowing for each Pod to be assigned a unique IP address.
+    Although the concept originated from IPv4, CIDR has been extended to cover IPv6.
 
 - Client-Server Architecture
 
@@ -342,17 +352,29 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     Cloud providers offer organizations the ability to rent compute resources on-demand and pay for usage.
     This allows for two major innovations:
-    Organizations can focus on their product or service without waiting, planning, and spending resources on new physical infrastructure. They can simply scale as needed and on-demand.
+    Organizations can focus on their product or service without waiting, planning, and spending resources on new
+    physical infrastructure. They can simply scale as needed and on-demand.
     Cloud computing allows organizations to adopt as much or as little infrastructure as they need.
 
-- Cloud Controller Manager, 云控制器管理器
+- Cloud Controller Manager
 
-    一个 Kubernetes 控制平面组件，嵌入了特定于云平台的控制逻辑。
-    云控制器管理器允许您将您的集群连接到云提供商的 API 之上，
-    并将与该云平台交互的组件同与您的集群交互的组件分离开来。
+    The `cloud-controller-manager` is a Kubernetes control plane component that embeds cloud-specific control logic.
+    It allows you to connect your cluster to the API of a cloud provider and separate the components that interact
+    with that cloud platform from the components that interact with your cluster.
 
-    通过分离 Kubernetes 和底层云基础设置之间的互操作性逻辑，
-    `cloud-controller-manager` 组件使云提供商能够以不同于 Kubernetes 主项目的步调发布新特征。
+    By separating the interoperability logic between Kubernetes and the underlying cloud infrastructure settings,
+    the cloud-controller-manager component enables cloud providers to release new features at a different pace than
+    the Kubernetes main project.
+
+    In addition, cloud-native apps are specifically designed to take advantage of innovations in cloud computing.
+    These applications integrate easily with their respective cloud architectures, taking advantage of the cloud's
+    resources and scaling capabilities. Cloud native applications today include apps that run in a cloud provider's
+    datacenter and on cloud native platforms on-premise.
+
+    Cloud native security is an approach that builds security into cloud native applications.
+    It ensures that security is part of the entire application lifecycle from development to production.
+    Cloud native security seeks to ensure the same standards as traditional security models while adapting to
+    the particulars of cloud native environments, namely rapid code changes and highly ephemeral infrastructure.
 
 - Cloud-Native Apps
 
@@ -422,18 +444,14 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     Combined with robust automation, they allow engineers to make high-impact changes frequently and predictably with minimal toil.
     Desirable traits of cloud native systems are easier to achieve with the cloud native stack.
 
-- Cloud Provider, 云提供商
+- Cloud Provider
 
-    一个提供云计算平台的商业机构或其他组织。
-    云提供商有时也称作云服务提供商（Cloud Service Provider, CSP）提供云计算平台或服务。
-
-    很多云提供商提供托管的基础设施（也称作基础设施即服务或 IaaS）。
-    针对托管的基础设施，云提供商负责服务器、存储和网络，而用户（您）
-    负责管理其上运行的各层软件，例如运行一个 Kubernetes 集群。
-
-    您也会看到 Kubernetes 被作为托管服务提供；有时也称作平台即服务或 PaaS。
-    针对托管的 Kubernetes，您的云提供商负责 Kubernetes 的控制平面以及节点及其所依赖的基础设施：
-    网络、存储以及其他一些诸如负载均衡器之类的元素。
+    Cloud providers, also known as Cloud Service Providers (CSP), offer infrastructure as a service (IaaS)
+    where they are responsible for the servers, storage, and network, while the user is responsible for
+    managing the software layers running on top of it, such as a Kubernetes cluster. Some cloud providers
+    also offer Kubernetes as a managed service, also known as platform as a service (PaaS), where the provider
+    is responsible for the Kubernetes control plane and the nodes and infrastructure it depends on,
+    such as networking, storage, and load balancers.
 
 - Cluster
 
@@ -454,38 +472,36 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     cloud native technologies.
     These new technologies are the building blocks that make the operation and creation of distributed systems easier.
 
-- Cluster Architect, 集群架构师
+- Cluster Architect
 
-    集群架构师是指涉及一个或多个 Kubernetes 集群基础设施设计的人员。
-    集群架构师通常更关心分布式系统的最佳实践，例如高可用性和安全性。
+    A person involved in the design of one or more Kubernetes cluster infrastructures. Cluster architects are usually more concerned with best practices for distributed systems, such as high availability and security.
 
-- Cluster Infrastructure, 集群基础设施
+- Cluster Infrastructure
 
-    处于基础设施层，提供并维护虚拟机、网络、安全组及其他资源。
+    At the infrastructure layer, it provides and maintains virtual machines, networks, security groups, and other resources.
 
-- Cluster Operations, 集群运营
+- Cluster Operations
 
-    Kubernetes 管理相关工作包括：日常管理运营和协调升级。
+    Kubernetes management-related work includes daily management and coordination of upgrades. Examples of cluster
+    operations work include deploying new nodes to scale the cluster, performing software upgrades, implementing
+    security controls, adding or removing storage, configuring cluster networks, managing cluster-wide observability, and responding to cluster events.
 
-    集群运营工作的示例包括：
+- Cluster Operator
 
-    - 部署新节点来扩容集群、执行软件升级、实施安全控制、
-    - 添加或删除存储、配置集群网络、管理集群范围的可观测性和响应集群事件。
+    A person who configures, controls, and monitors the cluster. Their main responsibility is to ensure the
+    normal operation of the cluster, which may require periodic maintenance and upgrade activities.
 
-- Cluster Operator, 集群运营人员
+- CNCF, Cloud Native Computing Foundation
 
-    配置、控制、监控集群的人员。
-    他们的主要职责是保证集群正常运行，可能需要进行周期性的维护和升级活动。
+    A non-profit organization under the Linux Foundation, established in December 2015, dedicated to cultivating
+    and maintaining a vendor-neutral open-source ecosystem to promote cloud-native technology and popularize cloud-native applications.
 
-- CNCF, Cloud Native Computing Foundation, 云原生计算基金会
+- CNI, Container network interface
 
-    隶属于 Linux 基金会，成立于 2015 年 12 月，是一个非营利性组织，致力于培育和维护一个厂商中立的开源生态系统来推广云原生技术，普及云原生应用。
+    [CNI](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/)
+    is a kind of network plugin that follows appc/CNI protocols.
 
-- CNI, Container network interface, 容器网络接口
-
-    [容器网络接口插件](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/)是遵循 appc/CNI 协议的一类网络插件。
-
-    DCE 5.0 支持的 CNI 包括但不限于：
+    CNIs supported by DCE 5.0 include but not limited to:
 
     - Calico
     - Cilium
@@ -496,28 +512,25 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     - Multus-underlay
     - Spiderpool
 
-- [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/), 配置项
+- [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/)
 
-    [ConfigMap](../kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md) 是一种 API 对象，用来将非机密性的数据保存到键值对中。
-    使用时可以用作环境变量、命令行参数或者存储卷中的配置文件。
+    [ConfigMap](../kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md) is an API object used to
+    store non-sensitive data as key-value pairs. It can be used as environment variables, command-line parameters,
+    or configuration files in storage volumes. ConfigMap decouples your environment configuration information
+    from container images, making it easier to modify application configurations.
 
-    ConfigMap 将您的环境配置信息和容器镜像解耦，便于应用配置的修改。
+- Container Environment Variables
 
-- Container Environment Variables, 容器环境变量
+    Container Environment Variables provide important information in the form of name=value for running
+    containerized applications. They provide necessary information for running containerized applications,
+    as well as other important resource-related information such as file system information, container-specific
+    information, and other cluster resource information such as service endpoints.
 
-    容器环境变量提供了 name=value 形式的、运行容器化应用所必须的一些重要信息。
+- Container Lifecycle Hooks
 
-    容器环境变量为运行中的容器化应用提供必要的信息，同时还提供与容器重要资源相关的其他信息，
-    例如文件系统信息、容器自身的信息以及其他像服务端点（Service endpoints）这样的集群资源信息。
-
-- Container Lifecycle Hooks, 容器生命周期钩子
-
-    生命周期钩子暴露容器管理生命周期中的事件，允许用户在事件发生时运行代码。
-
-    针对容器暴露了两个钩子：
-
-    - PostStart 在容器创建之后立即执行，
-    - PreStop 在容器停止之前立即阻塞并被调用。
+    Container Lifecycle Hooks expose events in container management lifecycles, allowing users to run code
+    when events occur. Two hooks are exposed for containers: PostStart, which is executed immediately after
+    the container is created, and PreStop, which is immediately blocked and called before the container stops.
 
 - Container Image
 
@@ -563,10 +576,9 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - containerd
 
-    强调简单性、健壮性和可移植性的一种容器运行时。
-
-    [containerd](https://github.com/containerd/containerd) 是一种容器行时，能在 Linux 或者 Windows 后台运行。
-    containerd 能取回、存储容器镜像，执行容器实例，提供网络访问等。
+    [containerd](https://github.com/containerd/containerd) is a container runtime that emphasizes simplicity,
+    robustness, and portability. It can run in the background on Linux or Windows and is capable of retrieving
+    and storing container images, executing container instances, and providing network access.
 
 - Containerization
 
@@ -676,102 +688,79 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     As such, it becomes a concrete implementation of quality control within teams.
     CI allows software teams to turn every code commit into either a concrete failure or a viable release candidate.
 
-- Control Plane, 控制平面
+- Control Plane
 
-    控制平面是指容器编排层，它暴露 API 和接口来定义、部署容器和管理容器的生命周期。
+    The control plane refers to the container orchestration layer that exposes APIs and interfaces to define, deploy,
+    and manage the lifecycle of containers. It is composed of multiple components, including etcd, API server, scheduler,
+    controller manager, and cloud controller manager, among others. These components can run as traditional OS services
+    or containers, and the hosts running these components are referred to as Masters.
 
-    这个编排层是由多个不同的组件组成，例如以下（但不限于）几种：
+- Controller
 
-    - etcd
-    - API 服务器
-    - 调度器
-    - 控制器管理器
-    - 云控制器管理器
+    Controllers, as part of the control plane, monitor the cluster's public state through the API server and
+    work towards transforming the current state into the desired state. Some controllers run within the control
+    plane and provide core control operations for Kubernetes, such as the deployment controller, daemonset
+    controller, namespace controller, and persistent volume controller, all of which run in kube-controller-manager.
 
-    这些组件可以作为传统的操作系统服务（守护程序）或容器运行。运行这些组件的主机也被称为 Master。
+- Counter
 
-- Controller, 控制器
+    Counters are a type of cumulative metric that is a **non-decreasing** value. Counters are mainly used
+    for data such as service request counts, task completion counts, and error occurrence counts.
 
-    控制器通过 API 服务器监控集群的公共状态，并致力于将当前状态转变为期望的状态。
+- Contour
 
-    控制器（作为控制平面的一部分）通过 API 服务器监控您的集群中的公共状态。
+    Contour is deployed as a control node and serves as the control plane for the microservice gateway,
+    providing convenient gateway configuration, dynamic configuration updates, and multi-cluster deployment
+    capabilities. Contour also provides the HTTPProxy CRD to enhance the core configuration capabilities of
+    Kubernetes Ingress. It is recommended to deploy Contour in multiple replicas to ensure the stability of production services.
 
-    其中一些控制器是运行在控制平面内部的，对 Kubernetes 来说，这些控制器提供核心控制操作。
-    比如部署控制器（deployment controller）、守护控制器（daemonset controller）、
-    命名空间控制器（namespace controller）、持久化数据卷控制器（persistent volume controller）等
-    都是运行在 kube-controller-manager 中的。
+- Control Plane
 
-- Counter, 计数器
+    The control plane is a set of system services that configure the mesh or subnet of the mesh to manage
+    communication between workload instances. All instances of the control plane in a single mesh share the same configuration resources.
 
-    计数器是一种累计型的度量指标，它是一个 **只能递增** 的数值。计数器主要用于统计类似于服务请求数、任务完成数和错误出现次数这样的数据。
+- [CRD](../kpanda/07UserGuide/CustomResources/create.md), CustomResourceDefinition
 
-- Contour, 网关控制节点
-
-    Contour 作为微服务网关的控制面，被部署为控制节点，充当 Envoy 的后端管理服务能力。
-    Contour 提供便捷的网关配置，支持动态配置更新，多集群部署能力。
-    Contour 同时提供了 HTTPProxy CRD 用于增强 Kubernetes Ingress 的核心配置能力，
-    Contour 以 Deployment 的方式部署，为保障生产服务稳定性，建议部署在多个副本。
-
-- Control Plane, 控制平面
-
-    控制平面是一组系统服务，这些服务配置网格或者网格的子网来管理工作负载实例之间的通信。
-    单个网格中控制平面的所有实例共享相同的配置资源。
-
-- [CRD](../kpanda/07UserGuide/CustomResources/create.md), CustomResourceDefinition, 自定义资源定义
-
-    通过定制化的代码给您的 Kubernetes API 服务器增加资源对象，而无需编译完整的定制 API 服务器。
-
-    当 Kubernetes 公开支持的 API 资源不能满足您的需要时，CRD 让您可以在自己的环境上扩展 Kubernetes API。
-
-    自定义资源定义是默认的 Kubernetes API 扩展，服务网格使用 Kubernetes CRD API 来进行配置。
+    CustomResourceDefinition (CRD) allows you to add resource objects to your Kubernetes API server with
+    customized code without having to compile a complete custom API server. When the API resources supported
+    by Kubernetes cannot meet your needs, CRD allows you to extend the Kubernetes API in your own environment.
+    Custom resource definitions are the default Kubernetes API extension, and the service mesh uses the Kubernetes CRD API for configuration.
 
 - CRI-O
 
-    专用于 Kubernetes 的轻量级容器运行时软件工具。该工具可让您通过 Kubernetes CRI 使用 OCI 容器运行时。
+    CRI-O is a lightweight container runtime software tool dedicated to Kubernetes. This tool allows you to use
+    [OCI](https://www.github.com/opencontainers/runtime-spec) container runtimes with Kubernetes CRI. CRI-O is an
+    implementation of CRI that allows you to run pods using any OCI-compliant runtime as a container runtime and
+    retrieve OCI container images from remote container repositories.
 
-    CRI-O 是 CRI 的一种实现，使得您可以使用与开放容器倡议（Open Container Initiative；OCI）
-    [运行时规范](https://www.github.com/opencontainers/runtime-spec)兼容的容器。
+- CRI, Container Runtime Interface
 
-    部署 CRI-O 允许 Kubernetes 使用任何符合 OCI 要求的运行时作为容器运行时去运行 Pod，并从远程容器仓库获取 OCI 容器镜像。
+    Container Runtime Interface (CRI) is a set of container runtime APIs integrated with kubelet on nodes,
+    which is the main protocol for communication between kubelet and container runtime. CRI defines the main
+    [gRPC](https://grpc.io) protocol for communication between cluster components kubelet and container runtime.
 
-- CRI, Container Runtime Interface, 容器运行时接口
+- CR, Container Runtime
 
-    CRI 是一组与节点上 kubelet 集成的容器运行时 API。
-    kubelet 和容器运行时之间通信的主要协议。
+    Container runtime is the component responsible for running containers. Kubernetes supports many container runtime environments, such as containerd, cri-o, and any other implementation of [Kubernetes CRI](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md).
 
-    CRI 定义了主要 [gRPC](https://grpc.io) 协议，用于集群组件 kubelet 和容器运行时。
+- [CronJob](../kpanda/07UserGuide/Workloads/CreateCronJobByImage.md)
 
-- CR, Container Runtime, 容器运行时
-
-    容器运行时是负责运行容器的组件。
-
-    Kubernetes 支持许多容器运行环境，例如 containerd、cri-o 以及
-    [Kubernetes CRI](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md)
-    的其他任何实现。
-
-- [CronJob](../kpanda/07UserGuide/Workloads/CreateCronJobByImage.md), 周期调度任务
-
-    管理定期运行的任务。
-
-    与 **crontab** 文件中的一行命令类似，周期调度任务（CronJob）对象使用
-    [cron](https://zh.wikipedia.org/wiki/Cron) 格式设置排期表。
+    CronJob manages tasks that run periodically. Similar to a line of command in a crontab file, the CronJob object uses the [cron](https://zh.wikipedia.org/wiki/Cron) format to set the schedule.
 
 - CSI, Container Storage Interface
 
-    容器存储接口 （CSI）定义了存储系统暴露给容器的标准接口。
-
-    CSI 允许存储驱动提供商为 Kubernetes 创建定制化的存储插件，
-    而无需将这些插件的代码添加到 Kubernetes 代码仓库（外部插件）。
-    要使用某个存储提供商的 CSI 驱动，您首先要[将它部署到您的集群上](https://kubernetes-csi.github.io/docs/deploying.html)。
-    然后您才能创建使用该 CSI 驱动的 Storage Class。
+    Container Storage Interface (CSI) defines the standard interface for storage systems exposed to containers.
+    CSI allows storage driver providers to create customized storage plugins for Kubernetes without adding the
+    code of these plugins to the Kubernetes code repository (external plugins). To use a CSI driver from a
+    storage provider, you must first [deploy it to your cluster](https://kubernetes-csi.github.io/docs/deploying.html).
+    Then you can create a Storage Class that uses the CSI driver.
 
 ### D
 
-- [DaemonSet](../kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md), 守护进程集
+- [DaemonSet](../kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md)
 
-    确保 Pod 的副本在集群中的一组节点上运行。
-
-    用来部署系统守护进程，例如日志搜集和监控代理，这些进程通常必须运行在每个节点。
+    A DaemonSet ensures that a copy of a Pod is running on each node in a cluster.
+    DaemonSets are useful for tasks that need to be performed on every node, such as collecting logs or monitoring system health.
 
 - Data Center
 
@@ -818,19 +807,21 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Data ID
 
-    Nacos 中某个配置集的 ID。配置集是一组配置项的集合，通常表现为一个配置文件，其中包括系统各方面的配置。
+    Data ID refers to the ID of a configuration set in Nacos, a platform for dynamic service discovery and
+    configuration management. A configuration set is a collection of configuration items, typically represented
+    as a configuration file, that includes various system configurations.
 
-- Data Plane, 数据平面
+- Data Plane
 
-    数据平面是网格的一部分，直接控制工作负载实例之间的通信。
-    服务网格的数据平面使用智能 Envoy 代理部署成边车去调节和控制服务网格中发送和接受的流量。
-
-    提供诸如 CPU、内存、网络和存储的能力，以便容器可以运行并连接到网络。
+    Data Plane, also known as the control plane, which is a part of a service mesh that directly controls
+    communication between instances of a workload. The data plane of a service mesh uses intelligent Envoy
+    proxies deployed as sidecars to regulate and control the traffic sent and received within the service mesh.
+    The data plane provides capabilities such as CPU, memory, network, and storage to enable containers to run and connect to the network.
 
 - Debugging
 
-    Debugging is the process or activity of finding and resolving bugs (or errors) from computer programs, software, or systems to get the desired result.
-    A bug is a defect or a problem leading to incorrect or unexpected results.
+    Debugging is the process or activity of finding and resolving bugs (or errors) from computer programs,
+    software, or systems to get the desired result. A bug is a defect or a problem leading to incorrect or unexpected results.
 
     Software development is a complex activity that makes it nearly impossible to write code without introducing bugs.
     Those bugs lead to code that will likely not function as desired (undefined behavior) when executed.
@@ -846,22 +837,19 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     Developers can use interactive debugging to step through the code at runtime while analyzing the related execution context.
     Once they have identified the source of the failure, they correct the code and create a bug fix or patch.
 
-- [Deployement](../kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md), 无状态负载
+- [Deployement](../kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md)
 
-    管理多副本应用的一种 API 对象，通常通过运行没有本地状态的 Pod 来完成工作。
+    Deployment is an API object used to manage multi-replica applications, typically achieved by running stateless Pods.
+    Each replica is represented by a Pod, which is distributed across nodes in the cluster.
+    For workloads that do require local state, consider using StatefulSet.
 
-    每个副本表现为一个 Pod，Pod 分布在集群中的节点上。
-    对于确实需要本地状态的工作负载，请考虑使用 StatefulSet。
+- Device Plugin
 
-- Device Plugin, 设备插件
-
-    一种软件扩展，可以使 Pod 访问由特定厂商初始化或者安装的设备。
-
-    设备插件在工作节点上运行并为 Pod 提供访问资源的能力，
-    例如：本地硬件这类资源需要特定于供应商的初始化或安装步骤。
-
-    设备插件向 kubelet 公布资源，以便工作负载 Pod 访问 Pod 运行所在节点上的硬件功能特性。
-    您可以将设备插件部署为 DaemonSet，或者直接在每个目标节点上安装设备插件软件。
+    Device Plugin is a software extension that allows Pods to access devices initialized or installed by specific vendors.
+    Device Plugins run on worker nodes and provide Pods with access to hardware features on the node where the Pod is running.
+    For example, local hardware resources that require vendor-specific initialization or installation steps.
+    Device Plugins expose resources to kubelet so that workload Pods can access hardware feature capabilities
+    on the node where the Pod is running. You can deploy Device Plugins as DaemonSets or install Device Plugin software directly on each target node.
 
 - DevOps
 
@@ -886,33 +874,34 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     as teams are also responsible for how code performs in production
     and increased employee satisfaction due to more autonomy and ownership.
 
-- Dependency topology, 依赖拓扑
+- Dependency topology
 
-    以拓扑图的方式展示服务调用之间的依赖关系。
+    Display the dependency relationship between service calls in a topology diagram.
 
-- Destination, 目标服务
+- Destination
 
-    目标服务是 envoy 代表一个源服务工作负载与之打交道的远程上游服务。
-    这些上游服务可以有多个服务版本，envoy 根据路由选择对应的版本。
+    The destination service is the remote upstream service that Envoy interacts with on behalf of a source service workload.
+    These upstream services can have multiple service versions, and Envoy selects the corresponding version based on routing.
 
-- Destination Rule, 目标规则
+- Destination Rule
 
-    目标规则定义了在路由发生后应用于服务的流量策略。
-    这些规则指定负载均衡的配置、来自边车代理的连接池大小以及异常检测设置，从而实现从负载均衡池中检测和熔断不健康的主机。
+    The destination rule defines traffic policies applied to a service after routing.
+    These rules specify load balancing configuration, connection pool size from the sidecar proxy, and outlier detection
+    settings, enabling detection and circuit breaking of unhealthy hosts from the load balancing pool.
 
-- Diagnosis, 诊断模式
+- Diagnosis
 
-    诊断模式即对 Contour 进行功能调试，支持在 Contour 启动时附加对应的启动参数。
+    Diagnosis mode is used to debug Contour and supports attaching corresponding startup parameters when Contour starts.
 
-- Disruption, 干扰
+- Disruption
 
-    导致 Pod 服务停止的事件。
+    An event that causes a Pod service to stop.
 
-    干扰（Disruption）是指导致一个或者多个 Pod 服务停止的事件。
-    干扰会影响依赖于受影响的 Pod 的资源，例如 Deployment。
+    Disruption refers to an event that causes one or more Pod services to stop.
+    Disruption affects resources that depend on the affected Pod, such as Deployments.
 
-    如果您作为一个集群操作人员，销毁了一个从属于某个应用的 Pod，Kubernetes 视之为主动干扰（Voluntary Disruption）。
-    如果由于节点故障或者影响更大区域故障的断电导致 Pod 离线，Kubernetes 视之为非主动干扰（Involuntary Disruption）。
+    If you, as a cluster operator, destroy a Pod that belongs to an application, Kubernetes considers it a voluntary disruption.
+    If a node failure or power outage affecting a larger area causes a Pod to go offline, Kubernetes considers it an involuntary disruption.
 
 - Distributed Apps
 
@@ -958,47 +947,50 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Docker
 
-    Docker 是一种可以提供操作系统级别虚拟化（也称作容器）的软件技术。
+    Docker is a software technology that provides operating system-level virtualization (also known as containers).
 
-    Docker 使用了 Linux 内核中的资源隔离特性（如 cgroup 和内核命名空间）以及支持联合文件系统（如 OverlayFS 和其他），
-    允许多个相互独立的“容器”一起运行在同一 Linux 实例上，从而避免启动和维护虚拟机（Virtual Machines；VM）的开销。
+    Docker uses resource isolation features in the Linux kernel (such as cgroups and kernel namespaces) and supports
+    union filesystems (such as OverlayFS and others) to allow multiple independent "containers" to run on the same
+    Linux instance, avoiding the overhead of starting and maintaining virtual machines (VMs).
 
 - Dockershim
 
-    Dockershim 是 Kubernetes v1.23 及之前版本中的一个组件，Kubernetes 系统组件通过它与 Docker Engine 通信。
+    Dockershim is a component in Kubernetes v1.23 and earlier versions that allows Kubernetes system components to communicate with the Docker Engine.
 
-    从 Kubernetes v1.24 起，Dockershim 已从 Kubernetes 中移除。
+    As of Kubernetes v1.24, Dockershim has been removed from Kubernetes.
 
 - Downward API
 
-    将 Pod 和容器字段值暴露给容器中运行的代码的机制。
-    在不需要修改容器代码的前提下让容器拥有关于自身的信息是很有用的。
-    修改代码可能使容器直接耦合到 Kubernetes。
+    A mechanism for exposing Pod and container field values to code running in the container.
+    It is useful to have information about the container without modifying the container code.
+    Modifying the code may couple the container directly to Kubernetes.
 
-    Kubernetes Downward API 允许容器使用它们自己或它们在 Kubernetes 集群中所处环境的信息。
-    容器中的应用程序可以访问该信息，而不需要以 Kubernetes API 客户端的形式执行操作。
+    The Kubernetes Downward API allows containers to use information about themselves or their environment in the Kubernetes cluster.
+    Applications in the container can access this information without having to perform operations in the form of a Kubernetes API client.
 
-    有两种方法可以将 Pod 和容器字段暴露给正在运行的容器：
+    There are two ways to expose Pod and container fields to running containers:
 
-    - 使用环境变量
-    - 使用 `downwardAPI` 卷
+    - Using environment variables
+    - Using the downwardAPI volume
 
-    这两种暴露 Pod 和容器字段的方式统称为 **Downward API**。
+    These two ways of exposing Pod and container fields are collectively referred to as the Downward API.
 
-- Dynamic Volume Provisioning, 动态卷供应
+- Dynamic Volume Provisioning
 
-    允许用户请求自动创建存储卷。
+    Allows users to request the automatic creation of storage volumes.
 
-    动态供应让集群管理员无需再预先供应存储。相反，它通过用户请求自动地供应存储。
-    动态卷供应是基于 API 对象 StorageClass 的，
-    StorageClass 可以引用卷插件（Volume Plugin）提供的卷，也可以引用传递给卷插件的参数集。
+    Dynamic provisioning allows cluster administrators to no longer pre-provision storage.
+    Instead, it automatically provisions storage through user requests.
+    Dynamic volume provisioning is based on the API object StorageClass,
+    which can reference volumes provided by volume plugins or a set of parameters passed to the volume plugin.
 
 ### E, F
 
 - Edge computing
 
-    Edge computing is a distributed system approach that shifts some storage and computing capacity from the primary data center to the data source.
-    The gathered data is computed locally (e.g., on a factory floor, in a store, or throughout a city) rather than sent to a centralized data center for processing and analysis.
+    Edge computing is a distributed system approach that shifts some storage and computing capacity
+    from the primary data center to the data source. The gathered data is computed locally
+    (e.g., on a factory floor, in a store, or throughout a city) rather than sent to a centralized data center for processing and analysis.
     These local processing units or devices represent the system's edge, whereas the data center is its center.
     The output computed at the edge is then sent back to the primary data center for further processing.
     Examples of edge computing include wrists gadgets or computers that analyze traffic flow.
@@ -1017,48 +1009,48 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - EndpointSlice
 
-    一种将网络端点与 Kubernetes 资源组合在一起的方法。
+    A method of combining network endpoints with Kubernetes resources.
 
-    一种将网络端点组合在一起的可扩缩、可扩展方式。
-    它们将被 kube-proxy 用于在每个节点上建立网络路由。
+    A scalable and extensible way to combine network endpoints.
+    They will be used by kube-proxy to establish network routing on each node.
 
-- Endpoint, 端点
+- Endpoint
 
-    端点负责记录与服务 Service 的选择算符相匹配的 Pod 的 IP 地址。
+    Endpoints are responsible for recording the IP addresses of Pods that match the selection operator of a Service.
 
-    端点可以手动配置到 Service 上，而不必指定选择算符标识。
+    Endpoints can be manually configured on a Service without specifying a selection operator identifier.
 
-    EndpointSlice 提供了一种可扩缩、可扩展的替代方案。
+    EndpointSlice provides a scalable and extensible alternative.
 
 - Envoy
 
-    Envoy 是在服务网格里使用的高性能代理，用于为所有服务网格里的服务调度进出的流量。
+    Envoy is a high-performance proxy used in service meshes to schedule incoming and outgoing traffic for all services in the service mesh.
 
-- Ephemeral Container, 临时容器
+- Ephemeral Container
 
-    一种可以在 Pod 中临时运行的容器类型。
+    A type of container that can be run temporarily in a Pod.
 
-    如果想要调查运行中有问题的 Pod，可以向该 Pod 添加一个临时容器并进行诊断。
-    临时容器没有资源或调度保证，因此不应该使用它们来运行任何部分的工作负载本身。
-    静态 Pod 不支持临时容器。
+    If you want to investigate a running Pod with problems, you can add a temporary container to the Pod for diagnosis.
+    Ephemeral containers have no resource or scheduling guarantees, so they should not be used to run any part of the workload itself.
+    Static Pods do not support ephemeral containers.
 
 - etcd
 
-    一致且高度可用的键值存储，用作 Kubernetes 的所有集群数据的后台数据库。
+    A consistent and highly available key-value store used as the backend database for all cluster data in Kubernetes.
 
-    如果您的 Kubernetes 集群使用 etcd 作为其后台数据库，请确保您针对这些数据有一份备份计划。
+    If your Kubernetes cluster uses etcd as its backend database, make sure you have a backup plan for this data.
 
-- Event, 事件
+- Event
 
-    对集群中某处所发生事件的报告。通常用来表述系统中某种状态变更。
+    A report of an event that occurred somewhere in the cluster. Typically used to describe a change in some kind of system state.
 
-    事件的保留时间有限，随着时间推进，其触发方式和消息都可能发生变化。
-    事件用户不应该对带有给定原因（反映下层触发源）的时间特征有任何依赖，
-    也不要寄希望于该原因所造成的事件会一直存在。
+    Events have a limited retention time, and as time goes on, their triggering conditions and messages may change.
+    Event users should not have any dependencies on the time characteristics of events with a given reason (reflecting the underlying trigger source),
+    nor should they expect events caused by that reason to persist indefinitely.
 
-    事件应该被视为一种告知性质的、尽力而为的、补充性质的数据。
+    Events should be treated as informative, best-effort, supplementary data.
 
-    在 Kubernetes 中，审计机制会生成一种不同类别的 Event 记录（API 组为 `audit.k8s.io`）。
+    In Kubernetes, an auditing mechanism generates a different category of Event records (API group `audit.k8s.io`).
 
 - Event-Driven Architecture
 
@@ -1076,27 +1068,27 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     This architecture ensures that services remain decoupled and events are properly routed from the producer to the consumer.
     The producer will take the incoming event, usually by HTTP protocol, then route the event information.
 
-- Eviction, 驱逐
+- Eviction
 
-    终止节点上一个或多个 Pod 的过程。
+    The process of terminating one or more Pods on a node.
 
-    驱逐的两种类型：
+    There are two types of eviction:
 
-    - 节点压力驱逐
-    - API 发起的驱逐
+    - Node pressure eviction
+    - API-initiated eviction
 
-- Extensions, 扩展组件
+- Extensions
 
-    扩展组件（Extensions）是扩展并与 Kubernetes 深度集成以支持新型硬件的软件组件。
+    Extensions are software components that extend Kubernetes and are deeply integrated with it to support new hardware.
 
-    许多集群管理员会使用托管的 Kubernetes 或其某种发行包，这些集群预装了扩展组件。
-    因此，大多数 Kubernetes 用户将不需要安装扩展组件，需要编写新的扩展组件的用户就更少了。
+    Many cluster administrators use managed Kubernetes or some distribution that comes with extensions pre-installed.
+    Therefore, most Kubernetes users will not need to install extensions, and even fewer will need to write new ones.
 
-- External Control Plane, 外部控制平面
+- External Control Plane
 
-    外部控制平面可以从外部管理运行在自己的集群或者其他基础设施中的网格工作负载。
-    控制屏幕可以部署在一个集群中，但是不能部署在它所控制的网格的一部分集群中。
-    它的目的是将控制平面与网格的数据屏幕完全分离。
+    An external control plane can manage mesh workloads running in its own cluster or other infrastructure.
+    The control plane can be deployed in one cluster but not in a subset of the mesh it controls.
+    Its purpose is to completely separate the control plane from the data plane of the mesh.
 
 - Firewall
 
@@ -1116,53 +1108,35 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Finalizer
 
-    一个带有命名空间的键，告诉 Kubernetes 等到特定的条件被满足后，再完全删除被标记为删除的资源。
+    `Finalizer` is a key with a namespace that tells Kubernetes to completely delete a resource marked for deletion only after specific conditions are met. Finalizers remind controllers to clean up resources owned by the deleted object. When you tell Kubernetes to delete an object with a Finalizer, the Kubernetes API marks the object to be deleted by populating `.metadata.deletionTimestamp` and returns a `202` status code (HTTP "Accepted") to put it in read-only mode. At this point, the control plane or other components take the action defined by the Finalizer, and the target object remains in the Terminating state. After these actions are completed, the controller deletes the Finalizer associated with the target object. When the `metadata.finalizers` field is empty, Kubernetes considers the deletion complete and deletes the object. You can use Finalizer to control the garbage collection of resources. For example, you can define a Finalizer to clean up related resources or infrastructure before deleting the target resource.
 
-    Finalizer 是带有命名空间的键，告诉 Kubernetes 等到特定的条件被满足后，
-    再完全删除被标记为删除的资源。Finalizer 提醒控制器清理被删除的对象拥有的资源。
+- Folder
 
-    当您告诉 Kubernetes 删除一个指定了 Finalizer 的对象时，
-    Kubernetes API 通过填充 `.metadata.deletionTimestamp` 来标记要删除的对象，
-    并返回 `202` 状态码(HTTP "已接受") 使其进入只读状态。
-    此时控制平面或其他组件会采取 Finalizer 所定义的行动，
-    而目标对象仍然处于终止中（Terminating）的状态。
-    这些行动完成后，控制器会删除目标对象相关的 Finalizer。
-    当 `metadata.finalizers` 字段为空时，Kubernetes 认为删除已完成并删除对象。
-
-    您可以使用 Finalizer 控制资源的垃圾回收。
-    例如，您可以定义一个 Finalizer，在删除目标资源前清理相关资源或基础设施。
-
-- Folder, 文件夹, 层级
-
-    为了满足企业内各个部门的分支划分，DCE 引入了[层级](../ghippo/04UserGuide/02Workspace/folders.md)的概念，通常层级对应着不同的部门，每个层级可以包含一个或多个工作空间。
+    In DCE, `Folder` is a [hierarchical concept](../ghippo/04UserGuide/02Workspace/folders.md) that corresponds to different departments, and each level can contain one or more workspaces to meet the branch division of various departments within the enterprise.
 
 ### G
 
-- Garbage Collection, 垃圾回收
+- Garbage Collection
 
-    Kubernetes 用于清理集群资源的各种机制的统称。
+    Garbage Collection is a general term for the various mechanisms Kubernetes uses to clean up cluster resources. Kubernetes uses garbage collection mechanisms to clean up resources such as:
 
-    Kubernetes 使用垃圾回收机制来清理资源，例如：
+    - [unused containers and images](https://kubernetes.io/docs/concepts/architecture/garbage-collection/#containers-images)
+    - [failed Pods](https://kubernetes.io//docs/concepts/workloads/pods/pod-lifecycle/#pod-garbage-collection)
+    - [objects owned by target resources](https://kubernetes.io//docs/concepts/overview/working-with-objects/owners-dependents/)
+    - [completed Jobs](https://kubernetes.io//docs/concepts/workloads/controllers/ttlafterfinished/)
+    - expired or erroneous resources
 
-    - [未使用的容器和镜像](https://kubernetes.io/docs/concepts/architecture/garbage-collection/#containers-images)
-    - [失败的 Pod](https://kubernetes.io//docs/concepts/workloads/pods/pod-lifecycle/#pod-garbage-collection)
-    - [目标资源拥有的对象](https://kubernetes.io//docs/concepts/overview/working-with-objects/owners-dependents/)
-    - [已完成的 Job](https://kubernetes.io//docs/concepts/workloads/controllers/ttlafterfinished/)
-    - 过期或出错的资源
+- Gateway node
 
-- Gateway node, 网关工作节点
+    A Gateway node is a worker node that mainly runs the Envoy open-source application, providing high-performance reverse proxy capabilities, supporting load balancing, routing, caching, custom routing, and other functions. The number and performance of worker nodes will directly affect the performance of the gateway, so it is recommended to deploy enough worker nodes according to needs.
 
-    工作节点主要运行 Envoy 开源应用，主要提供高性能的反向代理能力，支持负载均衡、路由、缓存、自定义路由等功能。
-    工作节点的数量和性能将直接影响网关的性能，建议根据需要部署足够的工作节点。
+- Gateway Rule
 
-- Gateway, 网关规则
+    In a service mesh, [Gateway Rules](../mspider/03UserGuide/02TrafficGovernance/GatewayRules.md) define the load balancer for north-south connection operations in the mesh, used to establish inbound and outbound HTTP/TCP access connections. It describes a set of ports, service domain names, protocol types, and SNI configurations for the load balancer that need to be exposed.
 
-    在服务网格中，[网关规则（Gateway）](../mspider/03UserGuide/02TrafficGovernance/GatewayRules.md)定义了在网格南北向连接操作的负载均衡器，
-    用于建立入站和出站的 HTTP/TCP 访问连接。它描述了需要公开的一组端口、服务域名、协议类型、负载均衡器的 SNI 配置等信息。
+- Gauge
 
-- Gauge, 计量器
-
-    计量器是一个 **既可增又可减** 的度量指标值。计量器主要用于测量类似于温度、内存使用量这样的瞬时数据。
+    A Gauge is a metric value that can be **both increased and decreased**. Gauges are mainly used to measure instantaneous data such as temperature and memory usage.
 
 - GitOps
 
@@ -1185,53 +1159,47 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     Operating in a close loop ensures the current live state of a system matches
     against the desired target state, specified in the git repository.
 
-- Global rate limit, 全局限流
+- Gateway Rate Limit
 
-    可选择增加网关限流组件，通过限流组件可以支持更多的流量管控能力。
-    但是，限流组件也会导致一定的资源消耗和性能损失，默认情况下不启用。请根据实际情况判断是否需要启用。
+    You can choose to add a gateway rate limiting component to support more traffic control capabilities. However, the rate limiting component can also cause some resource consumption and performance loss, and is not enabled by default. Please judge whether to enable it according to the actual situation.
 
 - Grafana
 
-    Grafana 是一个开源的可视化平台，提供了多样的监控数据可视化面板。
+    Grafana is an open-source visualization platform that provides a variety of monitoring data visualization panels.
 
 - Group
 
-    在全局管理中，这指的是由多个用户形成的组合，即[用户组](../ghippo/04UserGuide/01UserandAccess/Group.md)。
+    In global management, this refers to a combination of multiple users, that is, a [group](../ghippo/04UserGuide/01UserandAccess/Group.md).
 
-    在微服务引擎中，这是 Nacos 中的一组配置集。
+    In the microservice engine, this is a group of configurations in Nacos.
 
 ### H
 
-- Heartbeat, 心跳
+- Heartbeat
 
-    实例启动后每隔一段时间，内置的 Nacos 客户端会主动向 Nacos 服务器发起心跳包（HeartBeat），表示实例仍存活，避免被服务端剔除。
-    心跳包包含当前服务实例的名称、IP、端口、集群名称、权重等信息。
+    After the instance is started, the built-in Nacos client will actively send a heartbeat packet (HeartBeat) to the Nacos server every once in a while to indicate that the instance is still alive and avoid being removed by the server. The heartbeat packet contains information such as the name, IP, port, cluster name, and weight of the current service instance.
 
-- Helm Chart, Helm 模板
+- Helm Chart
 
-    Helm Chart 是一组预先配置的 K8s 资源所构成的包，可以使用 Helm 工具对其进行管理。
+    A Helm Chart is a package consisting of a set of pre-configured K8s resources that can be managed using the Helm tool.
 
-    Chart 提供了一种可重现的用来创建和共享 K8s 应用的方法。
-    单个 Chart 可用来部署简单的系统（例如 memcached Pod），
-    也可以用来部署复杂的系统（例如：HTTP 服务器、数据库、缓存等组件的完整 Web 应用堆栈）。
+    The Chart provides a reproducible way to create and share K8s applications. A single Chart can be used to deploy a simple system (such as a memcached Pod), or a complex system (such as a complete web application stack consisting of HTTP servers, databases, caches, and other components).
 
-- Histogram, 直方图
+- Histogram
 
-    直方图对观测结果（通常是请求持续时间或者响应大小这样的数据）进行采样，并在可配置的桶中对其进行统计。
-    有以下几种方式来产生直方图（假设度量指标为 `<basename>`）：
+    A histogram samples observation results (usually data such as request duration or response size) and statistically aggregates them into configurable buckets. There are several ways to generate a histogram (assuming the metric is `<basename>`):
 
-    - 按桶计数，相当于 `<basename>_bucket{le="<upper inclusive bound>"}`
-    - 采样值总和，相当于`<basename>_sum`
-    - 采样值总数，相当于 `<basename>_count` ，也等同于把所有采样值放到一个桶里来计数 `<basename>_bucket{le="+Inf"}`
+    - Count by bucket, equivalent to `<basename>_bucket{le="<upper inclusive bound>"}`
+    - Sum of sampled values, equivalent to `<basename>_sum`
+    - Total number of sampled values, equivalent to `<basename>_count`, also equivalent to counting all sampled values in a bucket `<basename>_bucket{le="+Inf"}`
 
-    Histogram 可以理解为柱状图，典型的应用如：请求持续时间，响应大小。可以对观测结果采样，分组及统计。
+    Histogram can be understood as a bar chart, typically used for observation results such as request duration and response size. It can sample, group, and statistically aggregate observation results.
 
-- Horizontal Pod Autoscaler, HPA, Pod 水平自动扩缩器
+- Horizontal Pod Autoscaler, HPA
 
-    Pod 水平自动扩缩器是一种 API 资源，它根据目标 CPU 利用率或自定义度量目标扩缩 Pod 副本的数量。
+    Horizontal Pod Autoscaler is an API resource that scales Pod replicas based on target CPU utilization or custom metric targets.
 
-    HPA 通常用于 ReplicationController、Deployment 或者 ReplicaSet 上。
-    HPA 不能用于不支持扩缩的对象，例如 DaemonSet。
+    HPA is usually used on ReplicationController, Deployment, or ReplicaSet. HPA cannot be used on objects that do not support scaling, such as DaemonSet.
 
 - Horizontal Scaling
 
@@ -1257,13 +1225,11 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     This allows the application to do more work concurrently
     without needing to increase the capacity of any node in particular.
 
-- HostAliases, 主机别名
-
-    主机别名是一组 IP 地址和主机名的映射，用于注入到 Pod 内的 host 文件。
+- HostAliases
 
     [HostAliases](https://kubernetes.io/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#hostalias-v1-core)
-    是一个包含主机名和 IP 地址的可选列表，配置后将被注入到 Pod 内的 hosts 文件中。
-    该选项仅适用于没有配置 hostNetwork 的 Pod。
+    is a list of hostnames and IP addresses that can be injected into the hosts file of a Pod.
+    This option is only applicable to Pods that do not have hostNetwork configured.
 
 - Hypervisor
 
@@ -1290,17 +1256,13 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 ### I
 
-- IAM, Identity and access management, 用户与访问控制
+- IAM, Identity and access management
 
-    在全局管理中，[IAM](../ghippo/04UserGuide/01UserandAccess/iam.md) 是用户与访问控制的简称，管理员被称为 IAM Admin，拥有该模块的最高权限。
-    被赋予 IAM Admin 的用户（用户组）将拥有用户与访问控制的全部且最高权限。
+    [IAM](../ghippo/04UserGuide/01UserandAccess/iam.md) stands for Identity and Access Management, which is a shorthand for user and access control in global management. An IAM Admin is the administrator with the highest level of permission in this module. Users or user groups assigned as IAM Admin will have full and highest permission for user and access control.
 
-- Image, 镜像
+- Image
 
-    [镜像](https://kubernetes.io/docs/concepts/containers/images/)是保存的容器实例，它打包了应用运行所需的一组软件。
-
-    镜像是软件打包的一种方式，可以将镜像存储在容器镜像仓库、拉取到本地系统并作为应用来运行。
-    镜像中包含的元数据指明了运行什么可执行程序、是由谁构建的以及其他信息。
+    [Image](https://kubernetes.io/docs/concepts/containers/images/), on the other hand, refers to a saved container instance that packages a set of software required for application runtime. It is a way of packaging software, which can be stored in a container image repository, pulled to a local system, and run as an application. The metadata contained in the image specifies what executable program to run, who built it, and other information.
 
 - Immutable Infrastructure
 
@@ -1362,99 +1324,68 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     also allows them to manage their data center in a CI/CD pipeline,
     implementing version control and deployment strategies.
 
-- Ingress, 路由
+- Ingress
 
     [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
-    是对集群中服务的外部访问进行管理的 API 对象，典型的访问方式是 HTTP。
+    is an API object that manages external access to services in a Kubernetes cluster, typically for HTTP access.
+    Ingress can provide load balancing, SSL termination, and name-based virtual hosting.
 
-    Ingress 可以提供负载均衡、SSL 终结和基于名称的虚拟托管。
+- [Init Container](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/)
 
-- Init Container, [Init 容器](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/)
-
-    应用容器运行前必须先运行完成的一个或多个 Init 容器。
-
-    Init 容器像常规应用容器一样，只有一点不同：Init 容器必须在应用容器启动前运行完成。
-    Init 容器的运行顺序：一个 Init 容器必须在下一个 Init 容器开始前运行完成。
+    Init Containers are one or more containers that must run to completion before the application container starts.
+    The order of execution for Init Containers is that one must complete before the next one starts.
 
 - Istio
 
-    [Istio](https://istio.io/) 是一个免费开源的服务网格，提供了一种统一的方式来集成微服务、管理流量、实施策略和汇总度量数据。
-
-    添加 Istio 时不需要修改应用代码。它是基础设施的一层，介于服务和网络之间。
-    当它和服务的 Deployment 相结合时，就构成了通常所谓的服务网格（Service Mesh）。
-    Istio 的控制面抽象掉了底层的集群管理平台，这一集群管理平台可以是 Kubernetes、Mesosphere 等。
+    [Istio](https://istio.io/) is a free and open-source service mesh that provides a unified way to integrate microservices, manage traffic, enforce policies, and aggregate metric data. It does not require modification of application code and is a layer of infrastructure between services and the network.
+    When combined with a service's deployment, it forms what is commonly referred to as a service mesh. Istio's control plane abstracts away the underlying cluster management platform, which can be Kubernetes, Mesosphere, and others.
 
 ### J, K
 
 - [Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
 
-    [Job](../kpanda/07UserGuide/Workloads/CreateJobByImage.md) 是需要运行完成的确定性的或批量的任务。
-
-    创建一个或多个 Pod 对象，并确保指定数量的 Pod 成功终止。
-    随着各 Pod 成功结束，Job 会跟踪记录成功完成的个数。
+    [Job](../kpanda/07UserGuide/Workloads/CreateJobByImage.md) is a deterministic or batch task that needs to run to completion. It creates one or more Pod objects and ensures that a specified number of Pods terminate successfully. As each Pod completes successfully, the Job tracks the number of successful completions.
 
 - Kops
 
     [Kops](https://kubernetes.io/docs/setup/production-environment/tools/kops/)
-    是一个命令行工具，可以帮助您创建、销毁、升级和维护生产级，高可用性的 Kubernetes 集群。
-    Kops 目前仅支持 AWS。对 GCE、VMware vSphere 及其他第三方 PaaS 平台的支持还处于 Alpha 阶段。
+    is a command-line tool that helps create, destroy, upgrade, and maintain production-grade, highly available Kubernetes clusters. Kops currently only supports AWS, and support for GCE, VMware vSphere, and other third-party PaaS platforms is still in alpha. You can also use your own cluster as a building block and construct a cluster using kubeadm. Kops is built on top of kubeadm.
 
-    您也可以将自己的集群作为一个构造块，使用 kubeadm 构造集群。
-    `kops` 是建立在 kubeadm 之上的。
-
-- kube-apiserver, k8s API 服务器
+- kube-apiserver
 
     [kube-apiserver](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/)
-    是提供 Kubernetes API 服务的控制面组件。
-    Kubernetes API 服务器验证并配置 API 对象的数据，这些对象包括 Pod、Service、replicationcontroller 等。
-    API 服务器为 REST 操作提供服务，并为集群的共享状态提供前端， 所有其他组件都通过该前端进行交互。
-
-    API 服务器是 Kubernetes 控制平面的组件，该组件负责公开了 Kubernetes API，负责处理接受请求的工作。
-    API 服务器是 Kubernetes 控制平面的前端。
-
-    Kubernetes API 服务器的主要实现是 [kube-apiserver](https://kubernetes.io//docs/reference/command-line-tools-reference/kube-apiserver/)。
-    `kube-apiserver` 设计上考虑了水平扩缩，也就是说，它可通过部署多个实例来进行扩缩。
-    您可以运行 `kube-apiserver` 的多个实例，并在这些实例之间平衡流量。
+    is the control plane component that provides the Kubernetes API service. The Kubernetes API server validates and configures the data of API objects, including Pod, Service, replication controller, and others. The API server provides services for REST operations and provides a frontend for the shared state of the cluster. All other components interact with the frontend. The API server is a component of the Kubernetes control plane and is responsible for accepting requests. It is designed for horizontal scaling and can be scaled by deploying multiple instances. You can run multiple instances of kube-apiserver and balance traffic between them.
 
 - kube-controller-manager
 
     [kube-controller-manager](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/)
-    是一个守护进程，是 Master 节点上运行控制器的组件，负责运行控制器进程。
-
-    从逻辑上讲，每个控制器都是一个单独的进程，
-    但是为了降低复杂性，它们都被编译到同一个可执行文件，并在同一个进程中运行。
+    is a daemon that runs controllers on the master node and is responsible for running controller processes.
+    Logically, each controller is a separate process, but for simplicity, they are compiled into the same executable and run in the same process.
 
 - kube-proxy
 
     [kube-proxy](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/)
-    是集群中每个节点上运行的网络代理，是实现 Kubernetes Service 概念的组成部分。
-
-    kube-proxy 维护节点上的一些网络规则，这些网络规则会允许从集群内部或外部的网络会话与 Pod 进行网络通信。
-
-    如果操作系统提供了可用的数据包过滤层，则 kube-proxy 会通过它来实现网络规则。否则，kube-proxy 仅做流量转发。
+    is a network proxy that runs on each node in the cluster and is a component of the Kubernetes Service concept.
+    kube-proxy maintains some network rules on the node that allow network sessions from inside or outside the cluster to communicate with Pods.
+    If the operating system provides an available packet filtering layer, kube-proxy uses it to implement network rules. Otherwise, kube-proxy only does traffic forwarding.
 
 - [kube-scheduler](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/)
 
-    这是一个控制平面组件，负责监视新创建的、未指定运行节点的 Pod，选择节点让 Pod 在上面运行。
-
-    调度决策考虑的因素包括单个 Pod 及 Pods 集合的资源需求、软硬件及策略约束、亲和性及反亲和性规范、数据位置、工作负载间的干扰及最后时限。
+    kube-scheduler is a control plane component that monitors newly created Pods that have not been assigned to a running node and selects a node for them to run on. Scheduling decisions consider factors such as the resource requirements of a single Pod or a set of Pods, hardware and policy constraints, affinity and anti-affinity specifications, data locality, workload interference, and deadlines.
 
 - [Kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/)
 
-    用来快速安装 Kubernetes 并搭建安全稳定的集群的工具。您可以使用 Kubeadm 安装控制面和工作节点组件。
+    Kubeadm is a tool for quickly installing Kubernetes and building a secure and stable cluster. You can use Kubeadm to install control plane and worker node components.
 
 - kubectl
 
-    [kubectl](https://kubernetes.io/docs/reference/kubectl/) 是用来和 Kubernetes 集群进行通信的命令行工具。
-    您可以使用 `kubectl` 创建、检视、更新和删除 Kubernetes 对象。
+    [kubectl](https://kubernetes.io/docs/reference/kubectl/) is a command-line tool for communicating with a Kubernetes cluster. You can use kubectl to create, inspect, update, and delete Kubernetes objects.
 
 - kubelet
 
-    一个在集群中每个节点上运行的代理。它保证容器都运行在 Pod 中。
+    [kubelet](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/) is a command-line tool for communicating with a Kubernetes cluster. You can use kubectl to create, inspect, update, and delete Kubernetes objects.
 
-    [kubelet](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/)
-    接收一组通过各类机制提供给它的 PodSpecs，确保这些 PodSpecs 中描述的容器处于运行状态且健康。
-    kubelet 不会管理不是由 Kubernetes 创建的容器。
+    kubelet is a proxy that runs on each node in the cluster and ensures that containers run in Pods. kubelet receives a set of PodSpecs provided by various mechanisms and ensures that the containers described in these PodSpecs are running and healthy. kubelet does not manage containers that are not created by Kubernetes.
 
 - Kubernetes, K8s
 
@@ -1463,13 +1394,13 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     Kubernetes schedules containers across nodes in a cluster, bundling several infrastructure resources such as load balancer, persistent storage, etc. to run containerized applications.
 
-    Kubernetes enables automation and extensibility, allowing users to deploy applications declaratively (see below) in a reproducible way. 
+    Kubernetes enables automation and extensibility, allowing users to deploy applications declaratively (see below) in a reproducible way.
     Kubernetes is extensible via its API, allowing experienced Kubernetes practitioners to leverage its automation capabilities according to their needs.
 
     Infrastructure automation and declarative configuration management have been important concepts for a long time, but they have become more pressing as cloud computing has gained popularity.
     As demand for compute resources increases and organizations need to provide more operational capabilities with fewer engineers, new technologies and working methods are required to meet that demand.
 
-    Similar to traditional infrastructure as code tools, Kubernetes helps with automation but has the advantage of working with containers. 
+    Similar to traditional infrastructure as code tools, Kubernetes helps with automation but has the advantage of working with containers.
     Containers are more resistant to configuration drift than virtual or physical machines.
 
     Additionally, Kubernetes works declaratively, which means that instead of operators instructing the machine how to do something, they describe — usually as manifest files (e.g., YAML) — what the infrastructure should look like.
@@ -1478,374 +1409,227 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     Kubernetes also self-heals.
     The cluster's actual state will always match the operator's desired state.
-    If Kubernetes detects a deviation from what is described in the manifest files, a Kubernetes controller kicks in and fixes it. 
+    If Kubernetes detects a deviation from what is described in the manifest files, a Kubernetes controller kicks in and fixes it.
     While the infrastructure Kubernetes uses may be continually changing, Kubernetes constantly and automatically adapts to changes and ensures that it matches with the desired state.
 
 - Kubernetes API
 
-    [Kubernetes API](https://kubernetes.io/docs/concepts/overview/kubernetes-api/)
-    是通过 RESTful 接口提供 Kubernetes 功能服务并负责集群状态存储的应用程序。
-
-    Kubernetes 资源和"意向记录"都是作为 API 对象储存的，并可以通过调用 RESTful 风格的 API 进行修改。
-    API 允许以声明方式管理配置。
-    用户可以直接和 Kubernetes API 交互，也可以通过 `kubectl` 这样的工具进行交互。
-    核心的 Kubernetes API 是很灵活的，可以扩展以支持定制资源。
+    [Kubernetes API](https://kubernetes.io/docs/concepts/overview/kubernetes-api/) provides Kubernetes functionality services through a RESTful interface and is responsible for storing the cluster state. Kubernetes resources and "intention records" are stored as API objects and can be modified by calling the RESTful API. The API allows for declarative management of configurations. Users can interact directly with the Kubernetes API or through tools like kubectl. The core Kubernetes API is very flexible and can be extended to support custom resources.
 
 ### L
 
-- Label, 标签
+- Label
 
-    用来为对象设置可标识的属性标记；这些标记对用户而言是有意义且重要的。
+    A label is used to set identifiable attribute tags for objects; these tags are meaningful and important to users.
 
-    标签是一些关联到 Pod 这类对象上的键值对。它们通常用来组织和选择对象子集。
+    Labels are key-value pairs associated with objects like Pods. They are typically used to organize and select subsets of objects.
 
 - LimitRange
 
-    提供约束来限制命名空间中每个容器或 Pod 的资源消耗。
+    LimitRange provides constraints to limit the resource consumption of each container or Pod in a namespace.
 
-    LimitRange 按照类型来限制命名空间中对象能够创建的数量，以及单个 容器（Containers）或 Pod 可以请求/使用的计算资源量。
+    LimitRanges limit the number of objects that can be created in a namespace by type, as well as the amount of compute resources a single container or Pod can request/use.
 
-- Load Balancer, 负载均衡器
+- Load Balancer
 
-    负载均衡器是一种在后端的一组服务器之间分配传入网络流量的方法。
-    该解决方案可以是基于软件或硬件的。
+    A load balancer is a method of distributing incoming network traffic among a group of backend servers. This solution can be software or hardware-based.
 
-    这有助于解决与高可用性和分布式系统相关的问题。
-    在处理需要扩展到数十万用户的应用程序或服务时，通常需要将该应用程序分布在多个服务器上。
-    负载均衡器是路由流量的“交通警察”。
+    This helps to address issues related to high availability and distributed systems. When dealing with applications or services that need to scale to hundreds of thousands of users, it is often necessary to distribute the application across multiple servers. Load balancers act as the "traffic cops" routing traffic and clients to the appropriate backend server.
 
-    负载均衡器将充当网络流量和客户端的前端。
-    它通常有多种方法来检查哪些服务器已启动并且处理请求的负载最低。
+    Load balancers serve as the frontend for network traffic and clients. They typically have multiple methods for checking which servers are up and handling requests with the lowest load.
 
-- [Log](https://opentelemetry.io/docs/concepts/signals/logs/), 日志
+- [Log](https://opentelemetry.io/docs/concepts/signals/logs/)
 
-    在 Insight 中，[日志](../insight/user-guide/04dataquery/logquery.md)是集群或应用程序记录的事件列表。
-    系统运行过程中变化的一种抽象数据，其内容为指定对象的操作和其操作结果按时间的有序集合。
+    In Insight, [logs](../insight/user-guide/04dataquery/logquery.md) are a list of events recorded by the cluster or application. They are an abstract data type that changes during system operation and consists of an ordered collection of operations and their operation results for a specified object over time.
 
-    应用程序和系统日志可以帮助您了解集群内部发生的情况。日志对于调试问题和监视集群活动非常有用。
+    Application and system logs can help you understand what is happening inside the cluster. Logs are useful for debugging issues and monitoring cluster activity.
 
-- Loosely coupled architecture, 松耦合架构
+- Loosely coupled architecture
 
-    松耦合架构（紧耦合架构的相反范式）是一种架构风格，其中应用程序的各个组件彼此独立构建。
-    每个组件，有时称为微服务，都是为了执行特定功能而构建的，以便被任意数量的其他服务使用。
-    这种模式的实现通常比紧耦合架构慢。但有许多好处，特别是随着应用程序的不断扩展。
-    松耦合的应用程序允许团队独立开发功能、部署和扩展，这允许组织快速迭代各个组件。
-    应用程序开发速度更快，团队结构可以围绕应用程序的能力构建，专注于他们的特定应用程序。
+    A loosely coupled architecture (the opposite paradigm of tightly coupled architecture) is an architectural style in which the various components of an application are built independently of each other. Each component, sometimes called a microservice, is built to perform a specific function so that it can be used by any number of other services. Implementing this pattern is usually slower than tightly coupled architecture. But there are many benefits, especially as the application continues to scale. Loosely coupled applications allow teams to develop, deploy, and scale independently, which allows organizations to iterate quickly on individual components. Application development is faster, and team structures can be built around the capabilities of the application.
 
 ### M
 
-- Managed Control Plane, 托管控制平面
+- Managed Control Plane
 
-    托管控制平面是一个为客户提供管理的控制平面。
-    托管控制平面降低了用户部署的复杂性，并通常保证一定水平的性能和可用性。
+    A managed control plane is a control plane that is managed for customers. It reduces the complexity of customer deployments and typically guarantees a certain level of performance and availability.
 
-- Managed Mesh, 托管网格
+- Managed Mesh
 
-    由服务网格在所选集群创建并托管的控制平面。具备简单、低成本、高可用、无需单独运维管理 的特点。
+    A control plane created and managed by a service mesh in a selected cluster. It is characterized by simplicity, low cost, high availability, and no separate operation and maintenance management.
 
-- Managed Service, 托管服务
+- Managed Service
 
-    托管服务是一种软件产品，其运营和管理由第三方负责。
-    例如类似 Amazon RDS 的数据库即服务或类似 Datadog 的外部监控服务。
+    A managed service is a software product whose operation and management are handled by a third party. Examples include database-as-a-service products like Amazon RDS or external monitoring services like Datadog.
 
-    软件的管理比较复杂，尤其是要考虑现代技术栈所包含的各种不同技术。
-    而想要将管理做到面面俱到并招募能胜任此职的内部专家，要么成本过于高昂，要么会耗用工程师的宝贵时间。
-    您的团队应投入精力构建新功能，而不是处理可以通过外包就能轻松解决的运营任务。
+    Managing software is complex, especially when considering the variety of different technologies included in modern tech stacks. And having internal experts who are capable of managing everything to the fullest extent is either too expensive or would consume valuable engineering time. Your team should be focused on building new features, not handling operational tasks that can easily be solved through outsourcing.
 
-    托管服务从一开始就处于使用就绪状态，运营开销非常小。
-    托管服务具备良好定义的、通常由 API 驱动的边界，
-    便于各个组织将超出其核心竞争力的任务有效外包出去。
+    Managed services are ready to use from the start and have very low operational overhead. Managed services have well-defined, typically API-driven boundaries that make it easy for organizations to effectively outsource tasks that fall outside their core competencies.
 
-- Manifest, 清单
+- Manifest
 
-    一个或多个 Kubernetes API 对象的序列化规范。
+    A serialization specification for one or more Kubernetes API objects.
 
-    清单指定了在应用该清单时 kubernetes 将维护的对象的期望状态。每个配置文件可包含多个清单。
+    A manifest specifies the desired state of objects that Kubernetes will maintain when applying the manifest. Each configuration file can contain multiple manifests.
 
-- Master cluster, 主集群
+- Master cluster
 
-    主集群是具有控制平面的集群。
-    一个网格可以有一个以上的主集群，以用于 HA 或需要低延迟的场景。
-    主集群可以充当工作集群的控制平面。
+    A master cluster is a cluster with a control plane. A mesh can have more than one master cluster for HA or low-latency scenarios. A master cluster can serve as the control plane for a working cluster.
 
-- [Metric](https://opentelemetry.io/docs/concepts/signals/metrics/), [指标](../insight/user-guide/04dataquery/metricquery.md)
+- [Metric](https://opentelemetry.io/docs/concepts/signals/metrics/)
 
-    对资源性能的数据描述或状态描述，指标由命名空间、维度、指标名称和单位组成。
-    采集目标暴露的、可以完整反映监控对象运行或者业务状态的一系列标签化数据。
+    A description of performance data or status data for a resource, metrics consist of a namespace, dimensions, metric name, and unit. They are a series of labeled data that can fully reflect the monitored object's operation or business status.
 
-- Metadata, 元数据
+- Metadata
 
-    元数据是数据本身的描述信息，是关于数据的数据，例如服务版本、各种自定义标签等。
-    元数据分为服务级别的元数据、集群的元数据及实例的元数据。
+    Metadata is descriptive information about data, or data about data, such as service version, various custom tags, etc. Metadata is divided into service-level metadata, cluster metadata, and instance metadata.
 
-- Microservice, 微服务
+- Microservice
 
-    微服务是一种通过多个小型服务组合来构建单个应用的架构风格。
-    在微服务引擎中，微服务指将一个完整的应用根据业务功能拆分而得到的各个小型服务。
+    A microservice is an architectural style that builds a single application by combining multiple small services. In a microservice engine, a microservice refers to the various small services obtained by splitting a complete application according to business functions.
 
-    微服务是一种利用云原生技术进行应用开发的现代方法。
-    虽然现代应用程序，如 Netflix，看起来是一个单一的应用程序，但它们实际上是一个较小的服务的集合——所有的服务都密切配合。
-    例如，一个允许您访问、搜索和预览视频的单一页面很可能是由较小的服务提供的，它们各自处理其中的一个方面（如搜索、认证和在浏览器中运行预览）。
-    简而言之，微服务指的是一种应用架构模式，通常与单体应用形成对比。
+    Microservices are a modern approach to application development using cloud-native technologies. Although modern applications like Netflix appear to be a single application, they are actually a collection of smaller services that work closely together. For example, a single page that allows you to access, search, and preview videos is likely provided by smaller services, each of which handles one aspect (such as search, authentication, and running previews in the browser). In short, microservices refer to an application architecture pattern that is typically contrasted with monolithic applications.
 
-    微服务是对单体应用所带来的挑战的一种回应。一般来说，一个应用程序的不同部分需要分别进行扩缩。
-    例如，一个在线商店将有更多的产品视图而不是结账。这意味着您需要更多的产品视图功能的运行，而不是结账。
-    在一个单一的应用程序中，这些逻辑位不能被单独部署。
-    如果您不能单独扩展产品功能，您将不得不复制整个应用程序和所有其他您不需要的组件：这是一种低效的资源利用。
-    单机式应用程序也使开发人员容易屈服于设计陷阱。
-    因为所有的代码都在一个地方，所以更容易使这些代码高耦合，更难执行关注点分离的原则。
-    单机通常要求开发人员了解整个代码库，然后才能有成效。
+    Microservices are a response to the challenges posed by monolithic applications. In a monolithic application, different parts of the application cannot be separately deployed or scaled. This can lead to inefficient resource utilization and high coupling between different parts of the codebase. Microservices address these issues by separating functionality into different services that can be independently deployed, updated, and scaled. This allows different teams to focus on their own small part of the application, without negatively impacting other parts of the organization.
 
-    将功能分离成不同的微服务，使它们更容易独立部署、更新和扩展。
-    通过允许不同的团队专注于更大的应用中他们自己的一小部分，也让他们更容易在不对组织的其他部分产生负面影响的情况下对他们的应用进行工作。
-    虽然微服务解决了许多问题，但它们也产生了运营开销：您需要部署和跟踪的东西增加了一个数量级或更多。
-    许多云原生技术旨在使微服务更容易部署和管理。
+    However, microservices also come with increased operational overhead, as there are more things to deploy and track. Many cloud-native technologies aim to make microservices easier to deploy and manage.
 
-- Microservice instance, 微服务实例
+- Microservice instance
 
-    将同一个微服务部署在多个容器或虚拟机上，每个容器或虚拟机上运行的微服务副本就是一个微服务实例。
-    多个微服务实例可以同时运行。
+    A microservice instance is a single instance of a microservice deployed on a container or virtual machine. Multiple instances of a microservice can run simultaneously. A microservice instance group is a grouping of all instances of a microservice based on demand.
 
-- Microservice instance group, 微服务实例分组
+- Microservice instance group
 
-    将同一个微服务下的所有微服务实例按照需求进一步划分得到的分组。
+    This refers to a group after division of microservice instances by following a customer requirements.
 
-- Monolithic Apps, 单体应用
+- Monolithic Apps
 
-    单体应用在一个简单可部署的程序中包含所有的功能。
-    在制作一个应用程序时，这通常是最简单和最容易的开始。
-    然而，一旦应用程序的复杂性增加，单体式就会变得难以维护。
-    随着更多的开发人员在同一个代码库上工作，发生冲突性变化的可能性和开发人员之间的人际沟通的需要就会增加。
+    Monolithic applications contain all functionality in a single deployable program. While this is the simplest and easiest way to create an application, it can become difficult to maintain as the complexity of the application increases. A well-designed monolith can adhere to lean principles and be the simplest way to start and run an application. Once the business value of the monolith has been proven, it can be broken down into microservices.
 
-    将一个应用程序转变成微服务会增加其运营开销——有更多的东西需要测试、部署和保持运行。
-    在产品生命周期的早期，推迟这种复杂性并建立一个单体应用，直到产品被确定为成功，可能是有利的。
+- Multitenancy
 
-    精心设计的单体可以坚持精益原则，因为它是启动和运行应用程序的最简单方式。
-    当单体应用的商业价值被证明是成功的，它可以被分解成微服务。
-    在证明有价值之前，制作一个基于微服务的应用程序可能是过早地花费了工程努力。
-    如果应用程序没有产生任何价值，这些努力就会被浪费掉。
+    Multitenancy refers to providing services to multiple tenants through a single software installation. Tenants can be individual users or groups of users/applications that use their own data sets to manipulate the same software. Multitenancy software provides each tenant with an isolated environment for their work data, settings, and credential lists, while providing services to multiple tenants. This saves resources and maintenance effort, ultimately reducing software costs.
 
-- Multitenancy, 多租户模式
+- Mutual Transport Layer Security, mTLS
 
-    多租户模式指的是通过单次软件安装为多个租户提供服务。
-    租户是一个用户、应用程序或一组用户/应用程序，租户们使用各自的数据集来操控同一个软件。
-    这些租户不共享数据（除非软件的所有者明确授权），甚至可能未意识到彼此的存在。
-
-    租户可以是小到只有一个登录 ID 的独立用户（就像单机版软件），
-    也可以是大到拥有数千个登录 ID 的整个公司，其中每个登录 ID 有自己的权限但又以多种方式相互关联。
-    多租户软件示例包括 Google Mail、Google Docs、Microsoft Office 365、Salesforce CRM 和 Dropbox，
-    以及更多归类为具有完全或部分多租户能力的软件。
-
-    如果没有多租户模式，每个租户都需要专门安装一次软件。
-    这会增加资源利用和维护的工作量，最终会加剧软件成本。
-
-    多租户软件为每个租户提供一个隔离（工作数据、设置、凭证列表等）的环境，同时为多个租户提供服务。
-    从租户的角度来看，每个租户都有其专用的软件安装实例，尽管实际上他们是在共享同一个软件。
-    具体实现的方式为：在服务器上运行一个软件，然后允许租户通过网络接口和/或 API 连接到该软件。
-    使用多租户软件时，各个租户可以共享同一个安装实例，彼此毫无影响，且能以预先定义和受控的方式使用该软件。
-    软件提供商由此达成的资源节省也可以转而让租户受益，显著降低每个用户的软件成本（想想基于 Web 的电子邮件或文档编辑器）。
-
-- Mutual Transport Layer Security, mTLS, 双向传输层安全性协议
-
-    双向 TLS (mTLS) 是一种用于对两个服务之间发送的消息进行身份验证和加密的技术。
-    双向 TLS (mTLS) 是标准的传输层安全性协议 (TLS)，但不是仅验证一个连接的身份，而是验证双方。
-
-    微服务通过网络进行通信，就像您的 WiFi 网络一样，通过该网络传输的通信可能会被黑客入侵。
-    mTLS 确保没有未经授权的一方监听或冒充合法请求。
-
-    mTLS 确保客户端和服务器之间的双向流量是安全和可信的，
-    为进入网络或应用程序的用户提供了额外的安全层。
-    它还验证不遵循登录过程的客户端设备连接，例如物联网 (IoT) 设备。
-    mTLS 可以防止诸如路径上的攻击、欺骗攻击、凭证填充、暴力攻击等攻击。
+    A security protocol that provides mutual authentication and encryption for messages sent between two services. It ensures that there is no unauthorized party listening or impersonating legitimate requests, and prevents attacks such as path traversal, credential stuffing, and brute force attacks.
 
 ### N
 
-- Nacos 集群节点角色
+- Nacos cluster node roles
 
-    这是[微服务引擎](../skoala/intro/features.md)中节点在 Raft 协议中的角色。Raft 是一种实现分布式共识的协议，即如何让多个节点达成一致。
+    In the Raft protocol used by Nacos, there are two roles for nodes: Leader and Follower. The Leader handles all requests and writes them to the local log and synchronizes the log with other nodes, while the Follower receives update requests from the Leader and writes them to the local log, and submits the log when notified by the Leader.
 
-    **Leader** 是所有请求的处理者，负责接收客户端发起的操作请求，将请求写入本地日志并向其他节点同步请求日志。
-    任何时候最多只能有一个 Leader。
+- Name
 
-    **Follower** 是 Leader 的跟随者，负责从 Leader 接收更新请求并将其写入本地日志，并在 Leader 通知可以提交日志时提交日志。
+    A string provided by the client that identifies an object in the resource URL, such as `/api/v1/pods/some-name`.
+    At any given time, only one object of a given type can have a given name. However, if the object is deleted, a new object with the same name can be created.
 
-- Name, 名称
+- [Namespace](../kpanda/07UserGuide/Namespaces/createns.md)
 
-    客户端提供的字符串，用来指代资源 URL 中的对象，如 `/api/v1/pods/some-name`。
+    An abstraction used by Kubernetes to support the isolation of resource groups within a single cluster. Objects within the same namespace must have unique names, but there is no requirement for names to be unique across namespaces. Namespace-based scoping only applies to objects within the namespace, not to cluster-scoped objects.
 
-    某一时刻，只能有一个给定类型的对象具有给定的名称。但是，如果删除该对象，则可以创建同名的新对象。
+- Network Policy
 
-- Namespace, 命名空间
+    A specification that defines how communication can occur between Pod groups and between Pods and other network endpoints. Network policies help you declaratively configure which Pods and namespaces are allowed to communicate with each other, and which port numbers are used to execute each policy.
 
-    [命名空间](../kpanda/07UserGuide/Namespaces/createns.md)是 Kubernetes 用来支持隔离单个集群中的资源组的一种抽象。
+- Node
 
-    命名空间用来组织集群中对象，并为集群资源划分提供了一种方法。
-    同一命名空间内的资源名称必须唯一，但跨命名空间时不作要求。
-    基于命名空间的作用域限定仅适用于命名空间作用域的对象（例如 Deployment、Services 等），
-    而不适用于集群作用域的对象（例如 StorageClass、Node、PersistentVolume 等）。
-    在一些文档里命名空间也称为命名空间。
+    [Node](../kpanda/07UserGuide/Nodes/AddNode.md) is a computer that can work with other computers (or nodes) to complete a common task. In cloud computing, a node can be a physical machine, a virtual machine, or even a container. Nodes provide a unique computing unit (memory, CPU, network) that can be allocated to a cluster.
 
-    在微服务引擎中，命名空间指的是 Nacos 命名空间，主要用于实现租户层级的配置隔离，例如隔离开发环境、测试环境、生产环境的资源配置。
+- Node Pressure Eviction
 
-- Network Policy, 网络策略
+     process in which the kubelet actively causes Pods to fail to reclaim resources on a node. The kubelet monitors CPU, memory, disk space, and file system inode resources on cluster nodes. When one or more of these resources reaches a specific consumption level, the kubelet can actively invalidate one or more Pods on the node to reclaim resources and prevent starvation.
 
-    网络策略是一种规范，规定了允许 Pod 组之间、Pod 与其他网络端点之间以怎样的方式进行通信。
+- Notification
 
-    网络策略帮助您声明式地配置允许哪些 Pod 之间、哪些命名空间之间允许进行通信，
-    并具体配置了哪些端口号来执行各个策略。`NetworkPolicy` 资源使用标签来选择 Pod，
-    并定义了所选 Pod 可以接受什么样的流量。网络策略由网络提供商提供的并被 Kubernetes 支持的网络插件实现。
-    请注意，当没有控制器实现网络资源时，创建网络资源将不会生效。
-
-- Node, 节点
-
-    [节点](../kpanda/07UserGuide/Nodes/AddNode.md)是一台能与其他计算机（或节点）协同工作以完成一个共同任务的计算机。
-    以您的笔记本电脑、调制解调器或打印机为例。它们都通过您的 wifi 网络进行通信和协作，各自代表一个节点。
-    在云计算中，节点可以是一台物理机，也可以是一台虚拟机（即 VM），甚至可以是容器。
-
-    虽然一个应用程序可以（很多应用程序确实是）运行在一台独立的机器上，但这样做存在一些风险。也就是说，底层系统的故障将会破坏应用程序。
-    为了解决这个问题，开发人员开始创建分布式应用程序，其中每个进程都在自己的节点上运行。
-    因此，节点作为集群或节点组的一部分运行着应用程序或进程，而这些节点一起工作以实现共同的目标。
-
-    节点为您提供了一个可以分配给集群的独特计算单元（内存、CPU、网络）。
-    在云原生平台或应用程序中，一个节点代表一个可执行工作的单元。
-    理想情况下，单个节点是不作区分的，因为任何特定类型的节点与其相同类型的节点应该是不可区分的。
-
-- Node Pressure Eviction, 节点压力驱逐
-
-    节点压力驱逐是 kubelet 主动使 Pod 失败以回收节点上的资源的过程。
-
-    kubelet 监控集群节点上的 CPU、内存、磁盘空间和文件系统 inode 等资源。
-    当这些资源中的一个或多个达到特定消耗水平时，
-    kubelet 可以主动使节点上的一个或多个 Pod 失效，以回收资源并防止饥饿。
-
-    节点压力驱逐不用于 [API 发起的驱逐](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/)。
-
-- Notification, 通知
-
-    当资源存在异常而产生告警时，可将告警信息通过邮件、钉钉、企业微信、webhook 等方式发送给指定的用户。
+    When an alarm is generated due to an abnormality in a resource, the alarm information can be sent to specified users via email, DingTalk, WeChat Work, webhook, etc.
 
 ### O
 
-- Object, 对象
+- Object
 
-    Kubernetes 系统中的实体，代表了集群的部分状态。Kubernetes API 用这些实体表示集群的状态。
+    Kubernetes objects are entities in the Kubernetes system that represent a portion of the cluster's state. The Kubernetes API uses these objects to represent the state of the cluster. Once an object is created, the Kubernetes control plane continuously works to ensure that the object's represented state exists. Creating an object is equivalent to telling the Kubernetes system what you expect a portion of the cluster's workload to look like, which is the expected state of your cluster.
 
-    Kubernetes 对象通常是一个“目标记录”。
-    一旦您创建了一个对象，Kubernetes 控制平面就会持续工作，确保该对象所代表的项目切实存在。
-    创建一个对象相当于告知 Kubernetes 系统：您期望这部分集群负载看起来像什么；这也就是您集群的期望状态。
+- Objective
 
-- Objective, 目标
+    It is the objectives that Prometheus captures. These objectives expose their own state or proxy the state of the monitored objects' operation and business metrics.
 
-    Prometheus 抓取的采集目标。采集目标暴露自身状态，或者代理暴露监控对象的运行、业务指标。
+- Observability
 
-- Observability, 可观测性
+    [Observability](../insight/intro/WhatisInsight.md) refers to the ability to collect signals from an observed system, continuously generate and discover actionable insights. In other words, observability allows users to gain insight into the state of a system from external outputs and take corrective action. The measuring mechanism of a computer system observes low-level signals such as CPU time, memory, and disk space, as well as high-level signals and business signals such as API response rate per second, error rate per second, and number of transactions processed per second.
 
-    [可观测性](../insight/intro/WhatisInsight.md)指的是从所观测的系统采集信号，持续生成并发现可执行的洞察力。
-    换言之，可观测性允许用户从某个系统的外部输出中洞察该系统的状态并采取（修正）措施。
-
-    计算机系统的衡量机制为观测 CPU 时间、内存、磁盘空间等底层信号以及每秒
-    API 响应次数、每秒错误率、每秒处理的事务数等高级信号和业务信号。
-
-    系统的可观测性对其运营和开发成本有重大影响。
-    可观测系统为操作人员提供了有意义的、可执行的数据，使他们能够达成有利的结果
-    （即更快的事件响应、更高的开发效率）以及更少的艰辛时刻和更短的停机时间。
-
-    请注意，更多的信息并不一定能转化为可观测性更好的系统。
-    事实上，有时系统生成的大量信息会形成信息噪音，会使得鉴别有价值的健康信号变得更加困难。
-    可观测性需要在合适的时间为合适的消费者（一个人或一个软件）提供合适的数据，从而做出合适的决策。
+    The observability of a system has a significant impact on its operational and development costs. An observable system provides meaningful and actionable data to operators, enabling them to achieve favorable results (i.e., faster event response, higher development efficiency) and fewer difficult moments and shorter downtime.
 
 - Operator
 
-    Operator 是打包，部署和管理 Kubernetes 应用程序的一种方法。
+    An operator is a way to package, deploy, and manage Kubernetes applications.
 
 - Operator Pattern, Operator 模式
 
-    一种用于管理自定义资源的专用控制器。
-    [Operator 模式](https://kubernetes.io//docs/concepts/extend-kubernetes/operator/)是一种系统设计，将控制器关联到一个或多个自定义资源。
+    The [operator pattern](https://kubernetes.io//docs/concepts/extend-kubernetes/operator/) is a specialized controller for managing custom resources. The operator pattern is a system design that associates controllers with one or more custom resources. In addition to using built-in controllers that are part of Kubernetes itself, you can also extend Kubernetes by adding controllers to the cluster. If a running application can act as a controller and manipulate tasks defined in custom resources in the control plane through API access, this is an example of an operator pattern.
 
-    除了使用作为 Kubernetes 自身一部分的内置控制器之外，您还可以通过将控制器添加到集群中来扩展 Kubernetes。
+- OverridePolicy
 
-    如果正在运行的应用程序能够充当控制器并通过 API 访问的方式来执行任务操控那些在控制平面中定义的自定义资源，这就是一个 Operator 模式的示例。
-
-- OverridePolicy, 差异化策略
-
-    [差异化策略](../kairship/07policy/overridepolicy.md)是定义多云资源对象分发到不同工作集群时的差异化配置策略，
-    例如在不同的工作集群中，可以使用不同的镜像，增加不同的标签等。
-
-    OverridePolicy 作为一个独立的策略 API 能够自动处理集群相关的配置，例如：
-
-    - 根据子集群的地域分布自动为镜像添加不同的前缀
-    - 根据您的云提供商使用不同的 StorageClass
+    [OverridePolicy](../kairship/07policy/overridepolicy.md) is a differentiated configuration policy that defines the differentiated configuration policy for distributing multi-cloud resource objects to different working clusters, such as using different images and adding different labels in different working clusters. OverridePolicy, as an independent policy API, can automatically handle cluster-related configurations, such as adding different prefixes to images based on the geographical distribution of subsets of clusters and using different StorageClasses based on your cloud provider.
 
 ### P
 
-- Permission, 权限
+- Permission
 
-    [权限](../ghippo/04UserGuide/01UserandAccess/iam.md)指是否允许用户对某种资源执行某种操作。
-    为了降低使用门槛，DCE 采用 RBAC 模型将权限聚合成一个个角色，管理员只需要将角色授权给用户，该用户就一次性得到了该角色下聚合的一组权限。
+    [Permissions](../ghippo/04UserGuide/01UserandAccess/iam.md) refer to whether a user is allowed to perform a certain operation on a certain resource. In order to reduce the threshold for use, DCE adopts the RBAC model to aggregate permissions into roles. Administrators only need to authorize roles to users, and the user will obtain a set of permissions aggregated under that role.
 
-    默认情况下，管理员创建的 IAM 用户没有任何角色权限，需要对其单独授予角色或将其加入用户组并给用户组授予角色，才能使得用户获得对应的角色权限，这一过程称为授权。授权后，用户就可以基于被授予的角色权限对平台资源进行操作。
+    By default, IAM users created by administrators have no role permissions. They need to be granted roles individually or added to user groups and granted roles in order to obtain corresponding role permissions. This process is called authorization. After authorization, users can operate on platform resources based on the role permissions granted to them.
 
-- Persistent Volume Claim, PVC, 持久卷申领
+- Persistent Volume Claim, PVC
 
-    申领在持久卷中定义的存储资源，以便可以将其挂载为容器中的卷。
+    A PVC is used to claim the storage resources defined in a persistent volume so that it can be mounted as a volume in a container.
 
-    指定存储的数量，如何访问存储（只读、读写或独占）以及如何回收存储（保留、回收或删除）。
-    存储本身的详细信息在 PersistentVolume 对象中。
+    It specifies the amount of storage, how to access the storage (read-only, read-write, or exclusive), and how to reclaim the storage (retain, recycle, or delete). The detailed information of the storage is in the PersistentVolume object.
 
-- Persistent Volume, PV, 持久卷
+- Persistent Volume, PV
 
-    持久卷是代表集群中一块存储空间的 API 对象。它是通用的、可插拔的、并且不受单个 Pod 生命周期约束的持久化资源。
+    A PV is an API object that represents a block of storage space in the cluster. It is a universal, pluggable, and persistent resource that is not constrained by the lifecycle of a single Pod.
 
-    持久卷提供了一个 API，该 API 对存储的供应方式细节进行抽象，令其与使用方式相分离。
-    在提前创建存储（静态供应）的场景中，PV 可以直接使用。
-    在按需提供存储（动态供应）的场景中，需要使用 PersistentVolumeClaims (PVC)。
+    The PV provides an API that abstracts the details of the storage supply method and separates it from the usage method. In the scenario of creating storage in advance (static supply), the PV can be used directly. In the scenario of providing storage on demand (dynamic supply), PersistentVolumeClaims (PVC) are needed.
 
-- Platform as a service, PaaS, 平台即服务
+- Platform as a service, PaaS
 
-    平台即服务（PaaS）是应用程序开发团队部署和运行其应用程序的外部平台。
-    Heroku、Cloud Foundry、App Engine 是 PaaS 产品的示例。
+    PaaS is an external platform on which application development teams deploy and run their applications. Heroku, Cloud Foundry, and App Engine are examples of PaaS products.
 
-    要利用好微服务或分布式应用程序等云原生模式，
-    运维团队和开发人员需要能够免去大量运维工作，其中包括供应基础设施、处理服务发现和负载平衡以及扩展应用程序等任务。
+    To make good use of cloud-native patterns such as microservices or distributed applications, operations teams and developers need to be able to eliminate a lot of operational work, including provisioning infrastructure, handling service discovery and load balancing, and scaling applications.
 
-    平台即服务（PaaS）以完全自动化的方式为应用程序开发人员提供通用基础设施工具。
-    它使开发人员可以了解基础设施并减少对基础设施的担忧，并将更多的时间和精力用于编写应用程序代码。
-    它还提供了一些监控和可观测性来帮助应用程序团队确保他们的应用程序是健康的。
+    PaaS provides application developers with general infrastructure tools in a fully automated way. It enables developers to understand the infrastructure and reduce their concerns about it, and to spend more time and energy writing application code. It also provides some monitoring and observability to help application teams ensure that their applications are healthy.
 
 - Pilot
 
-    Pilot 是服务网格里的一个组件，它控制 Envoy 代理，负责服务发现、负载均衡和路由分发。
+    Pilot is a component in the service mesh that controls the Envoy proxy and is responsible for service discovery, load balancing, and routing.
 
 - Pod
 
-    Pod 表示集群上正在运行的一组容器。Pod 是 Kubernetes 的原子对象，是 Kubernetes 部署的一个工作负载实例。
+    A Pod represents a group of running containers on the cluster. The Pod is an atomic object in Kubernetes and is an instance of a workload deployed in Kubernetes.
 
-    通常创建 Pod 是为了运行单个主容器。
-    Pod 还可以运行可选的边车（sidecar）容器，以添加诸如日志记录之类的补充特性。
-    通常用 Deployment 来管理 Pod。
+    Typically, a Pod is created to run a single main container. A Pod can also run optional sidecar containers to add supplementary features such as logging. Pods are usually managed by Deployments.
 
-    Pod 中包含了一个或多个共享存储和网络的容器以及如何运行容器的规约。
+    The Pod contains one or more containers that share storage and network, as well as specifications for how to run the containers.
 
-- Pod Disruption Budget, PDB
+- Pod Disruption Budget (PDB)
 
-    Pod Disruption Budget 是这样一种对象：它保证在主动干扰（voluntary disruptions）时，多实例应用的 Pod 不会少于一定的数量。
+    A Pod Disruption Budget is an object that ensures that the number of Pods in a multi-instance application does not fall below a certain number during voluntary disruptions.
 
-    PDB 无法防止非主动的干扰，但是会计入预算（budget）。
+    PDB cannot prevent non-voluntary disruptions, but they are counted towards the budget.
 
-- Pod Disruption, Pod 干扰
+- Pod Disruption
 
-    主动或非主动地终止节点上的 Pod 的过程。
+    The process of actively or non-actively terminating Pods on a node.
 
-    主动干扰是由应用程序所有者或集群管理员有意启动的。非主动干扰是无意的，
-    可能由不可避免的问题触发，如节点耗尽资源或意外删除。
+    Voluntary disruptions are initiated by application owners or cluster administrators. Non-voluntary disruptions are unintentional and may be triggered by unavoidable issues such as node resource exhaustion or accidental deletion.
 
-- Pod Lifecycle, Pod 生命周期
+- [Pod Lifecycle](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)
 
-    关于 Pod 在其生命周期中处于哪个阶段的更高层次概述。
+    It refers to what phase a pod is currently running in.
 
-    [Pod 生命周期](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)是关于 Pod
-    处于哪个阶段的概述。包含了下面 5 种可能的阶段：
+    Here is a brief overview of the different phases a Pod can be in during its lifecycle:
 
     - Running
     - Pending
@@ -1853,688 +1637,403 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     - Failed
     - Unknown
 
-    关于 Pod 的阶段的更高级描述请查阅
-    [PodStatus](https://kubernetes.io/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#podstatus-v1-core) `phase` 字段。
+    For a higher-level description of a Pod's phase, please refer to the `phase` field in the [PodStatus](https://kubernetes.io/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#podstatus-v1-core) object.
 
-- Pod Priority, Pod 优先级
+- Pod Priority
 
-    Pod 优先级表示一个 Pod 相对于其他 Pod 的重要性。
+    [Pod priority](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/#pod-priority) is a way to indicate the relative importance of a Pod compared to others. It allows users to set a priority for a Pod that is higher or lower than other Pods, which is an important feature for production cluster workloads.
 
-    [Pod 优先级](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/#pod-priority)允许用户为
-    Pod 设置高于或低于其他 Pod 的优先级，这对于生产集群工作负载而言是一个重要的特性。
+- Pod Security Policy
 
-- Pod Security Policy, Pod 安全策略
+    Pod security policy enables fine-grained authorization for creating and updating Pods. It is a cluster-level resource that controls security-sensitive content in Pod specifications. The `PodSecurityPolicy` object defines a set of conditions and default values for related fields that Pods must satisfy at runtime. Pod security policy is implemented as an optional admission controller.
 
-    为 Pod 的创建和更新操作启用细粒度的授权。
+    PodSecurityPolicy has been deprecated since Kubernetes v1.21 and removed in v1.25. As an alternative, use [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/) or third-party admission plugins.
 
-    Pod 安全策略是集群级别的资源，它控制着 Pod 规约中的安全性敏感的内容。
-    `PodSecurityPolicy` 对象定义了一组条件以及相关字段的默认值，Pod
-    运行时必须满足这些条件。Pod 安全策略控制实现上体现为一个可选的准入控制器。
+- Policy as code, PaC
 
-    PodSecurityPolicy 已于 Kubernetes v1.21 起弃用，并在 v1.25 中删除。
-    作为替代方案，请使用 [Pod 安全准入](https://kubernetes.io/docs/concepts/security/pod-security-admission/)或第三方准入插件。
+    Policy as code (PaC) is the practice of storing policy definitions as one or more machine-readable and processable format files. This replaces the traditional model of documenting policies in separate human-readable documents. PaC is useful for enforcing policies that constrain the building of applications and infrastructure, such as prohibiting storing secrets in source code, running containers with superuser privileges, or storing certain data outside of specific geographic regions. By using PaC, system properties and operations can be automatically checked. Best practices for software development also apply to building PaC, such as using Git and related workflows.
 
-- Policy as code, PaC, 策略即代码
+- Portability
 
-    策略即代码是将一些策略的定义存储为一个或多个机器可读和可处理格式文件的做法。
-    这取代了在传统模型中，以人类可读的形式记录在单独文档中的策略。
+    Portability is a software feature that is a form of reusability and helps avoid being "locked" into certain operational environments, such as cloud providers, operating systems, or vendors. Traditional software is often built for specific environments (e.g., AWS or Linux), while portable software can work in different operational environments without significant rework. If the amount of work required to adapt an application to a new environment is reasonable, the application is considered portable. The term "porting" implies modifying software to make it work on different computer systems.
 
-    构建应用和基础设施通常受到某组织所定义的许多策略的约束，
-    例如禁止在源代码中存储 Secret、禁止以超级用户权限运行容器或禁止将某些数据存储在特定地理区域之外的安全策略。
-    对于开发人员和审查人员来说，按照策略文档手动检查应用和基础设施既耗时费力又容易出错。
-    手动检查策略无法满足云原生应用的响应要求和扩缩要求。
+- [Preemption](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/#preemption)
 
-    通过使用策略即代码，可以自动检查系统属性和操作。
-    软件开发的最佳实践也适用于构建策略即代码，例如使用 Git 及相关工作流。
-
-- Portability, 可移植性
-
-    可移植性是一种软件特征，一种可重用性的形式，有助于避免“锁定”到某些操作环境，
-    例如云提供商、操作系统或供应商。
-
-    传统软件通常是为特定环境（例如 AWS 或 Linux）构建的。
-    而可移植软件可以在不同的操作环境中工作，无需大量返工。
-    如果应用适配新环境所需的工作量在合理范围内，则该应用被认为是可移植的。
-    “移植”这个词意味着修改软件并使其适应在不同的计算机系统上工作。
-
-- Preemption, 抢占
-
-    Kubernetes 中的抢占逻辑通过驱逐节点上的低优先级 Pod 来帮助悬决的 Pod 找到合适的节点。
-
-    如果一个 Pod 无法调度，调度器会尝试[抢占](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/#preemption)较低优先级的 Pod，以使得悬决的 Pod 有可能被调度。
+    Preemption logic in Kubernetes helps suspended Pods find suitable nodes by evicting low-priority Pods on nodes. If a Pod cannot be scheduled, the scheduler will attempt to preempt lower-priority Pods to make it possible to schedule the suspended Pod.
 
 - Prometheus
 
-    Prometheus 是一套开源的监控、报警、时间序列数据库的组合。
+    Prometheus is a combination of open-source monitoring, alerting, and time-series database.
 
 - PromQL
 
-    Prometheus 内置的数据查询语言，其提供对时间序列数据丰富的查询，聚合以及逻辑运算能力的支持。
+    PromQL is the built-in data query language in Prometheus, which provides rich query, aggregation, and logical operation capabilities for time-series data.
 
-- PropagationPolicy, 部署策略
+- PropagationPolicy
 
-    在多云编排中，[PropagationPolicy](../kairship/07policy/propagationpolicy.md) 是定义多云资源对象的分发策略，支持使用指定集群、指定标签等方式来规划将资源部署到哪些工作集群。
+    In multi-cloud orchestration, [PropagationPolicy](../kairship/07policy/propagationpolicy.md) defines the distribution strategy for multi-cloud resource objects, supporting planning which workloads to deploy to which working clusters using specified clusters or labels. PropagationPolicy is an independent policy API that can define multi-cluster scheduling methods based on distribution requirements.
 
-    PropagationPolicy 是一种独立的策略 API，可以根据分发要求来定义多集群调度方式。
+    - Supports 1:n `policy:workload`, and users do not need to repeat the scheduling constraints each time they create a multi-cloud application.
+    - When using the default policy, users can interact directly with the Kubernetes API.
 
-    - 支持 1:n 的`策略:工作负载`，用户每次创建多云应用时无需重复指出调度的约束条件。
-    - 采用默认的策略时，用户可以直接与 Kubernetes API 交互。
+- Proxy
 
-- Proxy, 代理
-
-    在计算机领域，代理指的是充当远程服务中介的服务器。
-
-    客户端与代理进行交互；代理将客户端的数据复制到实际服务器；实际服务器回复代理；代理将实际服务器的回复发送给客户端。
-
-    [kube-proxy](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/)
-    是集群中每个节点上运行的网络代理，实现了部分 Kubernetes Service 概念。
-
-    您可以将 kube-proxy 作为普通的用户态代理服务运行。
-    如果您的操作系统支持，则可以在混合模式下运行 kube-proxy；该模式使用较少的系统资源即可达到相同的总体效果。
+    In computer science, a proxy is a server that acts as an intermediary for requests from clients seeking resources from other servers. The client interacts with the proxy, which copies the client's data to the actual server. The actual server replies to the proxy, which sends the actual server's response to the client. [kube-proxy](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/) is a network proxy running on each node in the cluster that implements some Kubernetes Service concepts. You can run kube-proxy as a regular user-space proxy service. If your operating system supports it, you can run kube-proxy in mixed mode, which achieves the same overall effect with fewer system resources.
 
 ### R
 
-- RBAC, Role-Based Access Control, 基于角色的访问控制
+- RBAC
 
-    管理授权决策，允许管理员通过 Kubernetes API 动态配置访问策略。
+    Role-Based Access Control (RBAC) allows administrators to dynamically configure access policies through the Kubernetes API. RBAC uses [roles](../ghippo/04UserGuide/01UserandAccess/Role.md) (which contain permission rules) and role bindings (which grant a user group the permissions defined in a role).
 
-    RBAC 使用[角色](../ghippo/04UserGuide/01UserandAccess/Role.md) (包含权限规则）和角色绑定（将角色中定义的权限授予一个用户组）。
+- Registration center
 
-- Registration center, 注册中心
+    The registration center is like a "phone book" for microservices, responsible for recording the mapping relationship between services and service addresses. The microservice engine supports several types of registration centers, including Eureka, Zookeeper, Nacos, Mesh, and Kubernetes.
 
-    注册中心相当于微服务架构中的“通讯录”，负责记录服务和服务地址的映射关系。
-    微服务引擎支持的注册中心类型有：Eureka、Zookeeper、Nacos、Mesh、Kubernetes。
+- Reliability
 
-- Reliability, 可靠性
-
-    从云原生的角度来看，可靠性是指系统对故障的响应能力。
-    如果我们有一个可以在基础架构更改和单个组件发生故障时继续工作的分布式系统，那么它是可靠的。
-    另一方面，如果它很容易出现故障，并且需要操作人员手动干预以保持其运行，则它是不可靠的。
-    云原生应用的目标是构建内在可靠的系统。
+    From a cloud-native perspective, reliability refers to a system's ability to respond to failures. If we have a distributed system that can continue to work through infrastructure changes and individual component failures, then it is reliable. On the other hand, if it is prone to failure and requires manual intervention by operators to keep it running, then it is unreliable. The goal of cloud-native applications is to build inherently reliable systems.
 
 - ReplicaSet
 
-    ReplicaSet 是下一代副本控制器。
+    ReplicaSet is the next-generation replication controller. Like the ReplicationController, it ensures that a specified number of Pod replicas are running at any given time. However, ReplicaSet supports new collection-based selector requirements (described in the user guide for labels), while the ReplicationController only supports equality-based selector requirements.
 
-    ReplicaSet 就像 ReplicationController 那样，确保一次运行指定数量的 Pod 副本。
-    ReplicaSet 支持新的基于集合的选择器需求（在标签的用户指南中有相关描述），而副本控制器只支持基于等值的选择器需求。
+- Replication Controller
 
-- Replication Controller, 副本控制器
+    The Replication Controller is an (deprecated) API object that manages multi-replica applications. It is a workload that manages multiple replica applications and ensures that a specific number of Pod instances are running. The control plane ensures that the specified number of Pods are running, even if some Pods fail, such as when you manually delete them or start too many Pods due to other errors. The ReplicationController has been deprecated. Please refer to Deployment for similar functionality.
 
-    一种管理多副本应用的（已弃用）的 API 对象。
+- Resource
 
-    一种工作管理多副本应用的负载资源，能够确保特定个数的 Pod 实例处于运行状态。
+    Resource refers to the specific data that completes authorization on the DCE platform through various sub-modules. Typically, a resource describes one or more objects of operation, and each sub-module has its own resources and corresponding resource definition details, such as clusters, namespaces, gateways, etc. The owner of the resource is the main account Super Admin. Super Admin has the authority to create/manage/delete resources in each sub-module. Ordinary users do not automatically have access to resource access rights without authorization from Super Admin. The workspace supports cross-sub-module authorization of user (user group) access to resources.
 
-    控制面确保所指定的个数的 Pods 处于运行状态，即使某些 Pod 会失效，
-    比如被您手动删除或者因为其他错误启动过多 Pod 时。
+- Resource limit
 
-    ReplicationController 已被弃用。请参阅 Deployment 执行类似功能。
+    The limit value is the upper limit of available resources for an instance. The request value is less than the limit value.
 
-- Resource, 资源
+- Resource Quota
 
-    资源泛指 DCE 平台上通过各个子模块创建的资源，是完成授权的具体数据。
-    通常资源描述一个或多个操作对象，每个子模块拥有其各自的资源和对应的资源定义详情，如集群、Namesapce、网关等。
+    [Resource quotas](../ghippo/04UserGuide/02Workspace/quota.md) provide constraints on the total resource consumption of each namespace. They limit the number of objects that can be created in a namespace and also limit the total amount of computing resources that can be used by resource objects in the project.
 
-    资源的拥有者是主账号 Super Admin。
-    Super Admin 具有在各子模块创建/管理/删除资源的权限。
-    普通用户在没有授权的情况下，不会自动拥有资源的访问权限，需要 Super Admin 进行授权。
-    工作空间支持跨子模块授权用户（用户组）对于资源的访问权限。
+- Resource request
 
-- Resource limit, 资源限制值
+    The request value specifies how much available resources are pre-allocated for an instance.
 
-    限制值是实例的可用资源上限。请求值小于限制值。
+- Resource Template
 
-- Resource Quota, 资源配额
+    In [multi-cloud orchestration](../kairship/intro/whatiskairship.md), a template called a federated resource is used. This is a multi-cloud resource template based on the native K8s API, which facilitates the integration of all cloud-native tools within the K8s ecosystem. This resource template can be used to centrally manage [multi-cloud services](../kairship/06resource/service.md), [multi-cloud namespaces](../kairship/06resource/ns.md), [multi-cloud configmap](../kairship/06resource/configmap.md), and [multi-cloud secret](../kairship/06resource/secret.md).
 
-    [资源配额](../ghippo/04UserGuide/02Workspace/quota.md)提供了限制每个命名空间的资源消耗总和的约束。
+- Role
 
-    限制了命名空间中每种对象可以创建的数量，也限制了项目中可被资源对象利用的计算资源总数。
+    A [role](../ghippo/04UserGuide/01UserandAccess/Role.md) is a bridge that connects users and permissions.
+    A role corresponds to a set of permissions, and different roles have different permissions. Granting a
+    user a role means granting all the permissions included in that role.
+    There are two types of roles in global management:
 
-- Resource request, 资源请求值
+    - predefined roles created by the system that users can only use and cannot modify, and
+    - custom roles that users can create, update, and delete themselves.
 
-    请求值规定了为实例预先分配多少可用资源。
+    The permissions in custom roles are maintained by the users themselves. At the same time, because global management brings together multiple sub-modules, each sub-module also has a corresponding administrator role, such as IAM Admin, which manages user and access control, i.e., managing users/user groups and authorizations, Workspace Admin, which manages hierarchy and workspace permissions, and only this permission can create hierarchy, and Audit Admin, which manages audit logs.
 
-- Resource Template, 资源模板
+- Rolling update
 
-    在[多云编排](../kairship/01product/whatiskairship.md)中采用了一种叫做联邦资源的模板，
-    这是基于 K8s 原生 API 定义的一种多云资源模板，便于集成使用 K8s 生态范围内的所有云原生工具。
+    [Rolling update](../mspider/03UserGuide/upgrade/IstioUpdate.md) refers to updating a small portion of replicas at a time, then updating more replicas after success, and finally completing the update of all replicas. The biggest advantage of rolling updates is zero downtime, with replicas running throughout the update process, ensuring business continuity.
 
-    通过这种资源模板可以统一管理[多云服务](../kairship/06resource/service.md)、
-    [多云命名空间](../kairship/06resource/ns.md)、
-    [多云配置项](../kairship/06resource/configmap.md)和[多云密钥](../kairship/06resource/secret.md)。
+- Routing Rule
 
-- Role, 角色
-
-    [角色](../ghippo/04UserGuide/01UserandAccess/Role.md)是连接用户与权限的桥梁，
-    一个角色对应一组权限，不同角色具有不同的权限。向用户授予某角色，即授予该角色所包含的所有权限。
-    全局管理中有两种角色：
-
-    - 预定义角色：由系统创建，用户只能使用不能修改，每个子模块都有一个管理员 Admin 角色。
-    - 自定义角色：用户自主创建、更新和删除，自定义角色中的权限由用户自己维护。
-     同时因为全局管理汇聚了多个子模块，各子模块也拥有相应的管理员角色，例如：
-       - IAM Admin：管理用户与访问控制，即管理用户/用户组以及授权
-       - Workspace Admin：管理层级及工作空间的权限，仅此权限可以创建层级
-       - Audit Admin：管理审计日志
-
-- Rolling update, 滚动更新
-
-    [滚动更新](../mspider/03UserGuide/upgrade/IstioUpdate.md)指一次只更新一小部分副本、成功后再更新更多的副本、最终完成所有副本的更新。
-    滚动更新的最大的好处是零停机，整个更新过程始终有副本在运行，从而保证了业务的连续性。
-
-- Routing Rule, 路由规则
-
-    在服务网格的[虚拟服务](../mspider/03UserGuide/02TrafficGovernance/VirtualService.md)中配置的路由规则，遵循服务网格定义了请求的路径。
-    使用路由规则，可以定义将寻址到虚拟服务主机的流量路由到指定目标的工作负载。
-    路由规则使您可以控制流量，以实现按百分比分配流量的分阶段等任务。
+    In the virtual service configured in the service mesh's [virtual service](../mspider/03UserGuide/02TrafficGovernance/VirtualService.md), the routing rules follow the path defined by the service mesh for requests. Using routing rules, you can define the workload to which traffic addressed to the virtual service host is routed. Routing rules allow you to control traffic to achieve tasks such as phased traffic distribution by percentage.
 
 ### S
 
-- Scalability, 可扩缩性
+- Scalability
 
-    可扩缩性指的是一个系统能有多大的发展。这就是增加做任何系统应该做的事情的能力。
-    例如，Kubernetes 集群通过增加或减少容器化应用程序的数量来进行扩缩，但这种可扩缩性取决于几个因素。
-    它有多少节点，每个节点可以处理多少个容器，控制平面可以支持多少条记录和操作？
+    Scalability refers to how much a system can grow. This is the ability to add capacity to do anything a system should do. For example, a Kubernetes cluster scales by adding or removing containerized applications, but this scalability depends on several factors. How many nodes it has, how many containers each node can handle, how many records and operations the control plane can support?
 
-    可扩缩的系统使添加更多容量更容易。主要有两种扩缩方法。
-    一方面，有水平扩缩添加更多节点来处理增加的负载。
-    相比之下，在垂直扩缩中，单个节点的功能更强大，可以执行更多事务（例如，通过向单个机器添加更多内存或 CPU）。
-    可扩缩的系统能够轻松更改并满足用户需求。
+    Scalable systems make it easier to add more capacity. There are two main scaling methods. On the one hand, horizontal scaling adds more nodes to handle increased load. In contrast, in vertical scaling, a single node is more powerful and can perform more transactions (for example, by adding more memory or CPU to a single machine). Scalable systems can easily change and meet user needs.
 
 - Secret
 
-    [Secret](../kpanda/07UserGuide/ConfigMapsandSecrets/create-secret.md) 用于存储敏感信息，如密码、 OAuth 令牌和 SSH 密钥。
+    [Secret](../kpanda/07UserGuide/ConfigMapsandSecrets/create-secret.md) is used to store sensitive information such as passwords, OAuth tokens, and SSH keys.
 
-    Secret 允许用户对如何使用敏感信息进行更多的控制，并减少信息意外暴露的风险。
-    默认情况下，Secret 值被编码为 base64 字符串并以非加密的形式存储，
-    但可以配置为[静态加密（Encrypt at rest）](https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/#ensure-all-secrets-are-encrypted)。
+    Secrets allow users to have more control over how sensitive information is used and reduce the risk of accidental exposure. By default, secret values are encoded as base64 strings and stored in unencrypted form, but can be configured for [static encryption (Encrypt at rest)](https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/#ensure-all-secrets-are-encrypted).
 
-    Pod 可以通过多种方式引用 Secret，例如在卷挂载中引用或作为环境变量引用。Secret 设计用于机密数据，而
-    [ConfigMap](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/)
-    设计用于非机密数据。
+    Pods can reference secrets in various ways, such as in volume mounts or as environment variables. Secrets are designed for confidential data, while [ConfigMap](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/) is designed for non-confidential data.
 
-- Security Context, 安全上下文
+- Security Context
 
-    securityContext 字段定义 Pod 或容器的特权和访问控制设置，包括运行时 UID 和 GID。
+    The `securityContext` field defines privilege and access control settings for a Pod or container, including the runtime UID and GID.
 
-    在一个 `securityContext` 字段中，您可以设置进程所属用户和用户组、权限相关设置。
-    您也可以设置安全策略（例如 SELinux、AppArmor、seccomp）。
+    In a `securityContext` field, you can set the user and group to which the process belongs, permission-related settings. You can also set security policies (such as SELinux, AppArmor, seccomp).
 
-    `PodSpec.securityContext` 字段配置会应用到一个 Pod 中的所有的容器。
+    The `PodSpec.securityContext` field configuration applies to all containers in a Pod.
 
-- Selector, 选择算符
+- Selector
 
-    选择算符允许用户通过标签对一组资源对象进行筛选过滤。
+    Selector operators allow users to filter a set of resource objects by label.
 
-    在查询资源列表时，选择算符可以通过标签对资源进行过滤筛选。
+    When querying a resource list, selector operators can filter resources by label.
 
 - Serverless
 
-    Serverless 是一种云原生开发模型，允许开发人员构建和运行应用程序，而无需管理服务器。
-    Serverless 中仍有服务器，但它们被抽象出来，远离应用程序开发。
-    云提供商处理配置、维护和扩缩服务器基础架构的日常工作。
-    开发人员可以简单地将他们的代码打包在容器中进行部署。
-    部署后，Serverless 应用程序会响应需求并根据需要自动扩展和缩减。
-    公共云提供商的 Serverless 产品通常通过事件驱动的执行模型按需计量。
-    因此，当无服务器功能处于空闲状态时，它不会花费任何费用。
+    Serverless is a cloud-native development model that allows developers to build and run applications without
+    managing servers. There are still servers in Serverless, but they are abstracted away from application development.
+    Cloud providers handle the daily work of configuring, maintaining, and scaling server infrastructure. Developers
+    can simply package their code in containers for deployment. After deployment, the Serverless application responds
+    to demands and automatically scales up and down as needed. Public cloud providers' Serverless products typically
+    meter on an event-driven execution model. Therefore, when the serverless function is idle, it does not incur any costs.
 
-    在标准的基础设施即服务 (IaaS) 云计算模型下，用户预先购买容量单位，
-    这意味着您需要向公共云提供商支付永远在线的服务器组件的费用来运行您的应用程序。
-    用户有责任在高需求时扩缩服务器容量，并在不在需要该容量时缩减容量。
-    即使在不使用应用程序时，运行应用程序所需的云基础设施也处于活动状态。
+    In the standard infrastructure as a service (IaaS) cloud computing model, users purchase capacity units in advance,
+    which means that you need to pay the public cloud provider for the cost of the server components that are always
+    online to run your application. Users are responsible for scaling server capacity when demand is high and reducing
+    capacity when it is no longer needed. Even when the application is not in use, the cloud infrastructure required to
+    run the application remains active.
 
-    相比之下，使用 Serverless 架构，应用程序仅在需要时启动。
-    当事件触发应用程序代码运行时，公共云提供商会为该代码动态分配资源。
-    当代码执行完成后，用户就停止为资源付款。
-    除了成本和效率优势之外，Serverless 还使开发人员从与应用程序扩展和服务器配置相关的日常和琐碎任务中解放出来。
-    借助 Serverless，管理操作系统和文件系统、安全补丁、负载平衡、容量管理、扩缩、日志记录和监控等日常任务都被交给云服务提供商。
+    In contrast, using a Serverless architecture, the application only starts when needed. When an event triggers the
+    application code to run, the public cloud provider dynamically allocates resources for that code. When the code
+    execution is complete, the user stops paying for the resources. In addition to cost and efficiency advantages,
+    Serverless also frees developers from the daily and tedious tasks associated with application scaling and server
+    configuration. With Serverless, tasks such as managing operating systems and file systems, security patches,
+    load balancing, capacity management, scaling, logging, and monitoring are all handed over to cloud service providers.
 
-- Service, 服务
+- Service
 
-    请注意，在 IT 中，服务有多种含义。
-    在这个定义中，我们将关注更传统的定义：微服务中的服务。
-    服务与微服务哪里有、是否有区别是细微的，不同的人可能有不同的看法。
-    在更高层次的定义中，我们将它们视为相同。具体请参考微服务的定义。
+    Please note that in IT, the term "service" has multiple meanings. In this definition, we will focus on the more traditional definition: services in microservices. The difference between services and microservices, if any, is subtle and different people may have different opinions. In a higher-level definition, we will treat them as the same. Please refer to the definition of microservices for more details.
 
-    服务所针对的 Pod 集合（通常）由选择算符确定。
-    如果有 Pod 被添加或被删除，则与选择算符匹配的 Pod 集合将发生变化。
-    服务确保可以将网络流量定向到该工作负载的当前 Pod 集合。
+    The set of pods targeted by a service is typically determined by a selector. If a pod is added or removed, the set of pods matched by the selector will change. The service ensures that network traffic can be directed to the current set of pods for that workload.
 
 - ServiceAccount
 
-    为在 Pod 中运行的进程提供标识。
+    Provides identity for processes running in a pod.
 
-    当 Pod 中的进程访问集群时，API 服务器将它们作为特定的服务帐户进行身份验证，例如 `default`。
-    创建 Pod 时，如果您没有指定服务账户，它将自动被赋予同一个{{< glossary_tooltip text="命名空间" term_id="namespace" >}}中的 default 服务账户。
+    When processes in a pod access the cluster, the API server authenticates them as a specific service account, such as default. If you don't specify a service account when you create a pod, it will be automatically assigned the default service account in the same namespace.
 
-- Service Catalog, 服务目录
+- Service Catalog
 
-    服务目录是一种扩展 API，它能让 Kubernetes 集群中运行的应用易于使用外部托管的软件服务，例如云供应商提供的数据仓库服务。
+    The service catalog is an extension API that makes it easy for applications running in a Kubernetes cluster to use externally hosted software services, such as data warehousing services provided by cloud providers.
 
-    服务目录可以检索、供应并绑定外部托管服务（Managed Services），而无需知道那些服务具体是怎样创建和托管的。
+    The service catalog can retrieve, supply, and bind externally hosted services (Managed Services) without knowing how those services are created and managed.
 
-- Service Discovery, 服务发现
+- Service Discovery
 
-    服务发现是查找组成服务各个实例的过程。
-    服务发现工具持续跟踪构成服务的各种节点或端点。
+    Service discovery is the process of finding the various instances that make up a service. Service discovery tools continuously track the various nodes or endpoints that make up a service.
 
-    云原生架构是动态的和不确定的，这意味着它们不断在变化。
-    容器化的应用程序在其生命周期内可能会多次启动和停止。
-    每次这种情况发生时，它都会有一个新地址，任何应用程序想要找到它，都需要一个工具来提供新的地址信息。
+    Cloud-native architectures are dynamic and uncertain, which means they are constantly changing. Containerized applications may start and stop multiple times during their lifecycle. Each time this happens, it has a new address, and any application that wants to find it needs a tool to provide the new address information.
 
-    服务发现持续跟踪网络中的应用程序，以便在需要时可以找到彼此。
-    它提供了一个公共的地方来查找和识别不同服务。
-    服务发现引擎是类似数据库的工具，用于存储当前有哪些服务以及如何找到它们。
+    Service discovery continuously tracks applications in the network so that they can find each other when needed. It provides a common place to look up and identify different services. The service discovery engine is a database-like tool used to store which services are currently available and how to find them.
 
-- Service Entry, 服务条目
+- Service Entry
 
-    在服务网格中，服务条目用于将一个无法注册到服务注册表的网格内部服务（例如：vm）或网格外部服务器添加到服务网格抽象模型中。
-    添加服务条目后，Envoy 代理可以将流量发送到该服务，这个服务条目将和网格中的其他服务一样。
+    In a service mesh, a service entry is used to add an internal service (such as a VM) or an external server that cannot be registered with the service registry to the service mesh abstract model. After a service entry is added, the Envoy proxy can send traffic to that service, which will be treated like any other service in the mesh.
 
-- Service Mesh, 服务网格
+- Service Mesh
 
-    在微服务的理念里，应用程序被分解成多个较小的服务，通过网络进行通信。
-    就像您的 WIFI 网络一样，计算机网络本质上是不可靠的，可被黑客攻击的，而且往往很慢。
-    服务网格通过管理服务之间的流量（即通信），并在所有服务中统一添加可靠性、可观测性和安全功能来解决这一系列新的挑战。
+    In the concept of microservices, applications are broken down into smaller services that communicate over the network. Like your WIFI network, computer networks are inherently unreliable, hackable, and often slow. Service mesh solves this series of new challenges by managing the traffic (i.e., communication) between services and unifying reliability, observability, and security features across all services.
 
-    在转向微服务架构后，工程师们现在要处理数百个，甚至数千个单独的服务，都需要进行通信。
-    这意味着大量的流量在网络上来回传输。
-    除此之外，单个应用程序可能需要对通信进行加密，以支持监管要求，为运营团队提供通用指标，或提供对流量的详细洞察，以帮助诊断问题。
-    如果内置于单个应用程序中，这些功能中的每一个都会引起团队间的冲突，并减缓新功能的开发。
+    After transitioning to a microservices architecture, engineers now have to deal with hundreds or even thousands of individual services that need to communicate. This means a lot of traffic is being transmitted back and forth over the network. In addition to this, a single application may need to encrypt communication to support regulatory requirements, provide common metrics for the operations team, or provide detailed insights into traffic to help diagnose issues. If these features were built into a single application, each one would cause conflicts between teams and slow down the development of new features.
 
-    服务网格在集群的所有服务中统一增加了可靠性、可观测性和安全功能，而不需要改变代码。
-    在服务网格之前，这些功能必须被编码到每一个服务中，成为错误和技术债务的潜在来源。
+    The service mesh adds reliability, observability, and security features to all services in the cluster without changing the code. Before the service mesh, these features had to be coded into each service and become the source that causes bugs and technical traps.
 
-- Service Name, 服务名称
+- Service Name
 
-    服务名称是服务 Service 唯一的名字，是 Service 在服务网格里的唯一标识。服务名称是唯一的，不得重复。
-    一个服务有多个版本，但是服务名是与版本独立的。
+    The service name is the unique identifier for a service in a service mesh. It must be unique and is independent of the service's version.
 
 - Service Operator
 
-    Service Operator 是在服务网格里管理 Service 的代理，
-    通过操纵配置状态并通过各种仪表板监视服务的运行状况来管理这些服务。
+    The Service Operator manages services in the service mesh by manipulating configuration states and monitoring the services' runtime status through various dashboards.
 
-- Service Proxy, 服务代理
+- Service Proxy
 
-    服务代理拦截进出某项服务的流量，对其应用一些逻辑，然后将该流量转发给另一项服务。
-    它本质上是一个“中间人”，收集有关网络流量的信息，并决定是否对其应用规则。
+    The Service Proxy intercepts traffic in and out of a service, applies some logic to it, and then forwards the traffic to another service. It collects data on network traffic and decides whether to apply rules to it. The proxy provides insight into the types of communication happening between services and decides where to send a particular request or even reject it. It collects critical data, manages routing (distributing traffic evenly between services or rerouting when some services are down), encrypts connections, and caches content (reducing resource consumption).
 
-    为了跟踪服务与服务之间的通信（又称网络流量），并可能对其进行转换或重定向，我们需要收集数据。
-    传统上，实现数据收集和网络流量管理的代码被嵌入每个应用程序中。
+- Service Registry
 
-    服务代理允许我们将这种功能“外部化”。它不再需要生活在应用程序中。
-    相反，它现在被嵌入到平台层中（您的应用程序运行的地方）。
+    The Service Registry is an internal service registry maintained by the service mesh that contains a set of services running in the service mesh and their corresponding service endpoints. The service mesh uses the service registry to generate Envoy configurations.
 
-    作为服务之间的守门员，代理提供对正在发生的通信类型的洞察力。
-    根据他们的洞察力，他们决定将一个特定的请求发送到哪里，甚至完全拒绝它。
+- Self Healing
 
-    代理人收集关键数据，管理路由（在服务之间平均分配流量，或在某些服务中断时重新路由），加密连接，并缓存内容（减少资源消耗）。
+    A self-healing system can recover from certain types of failures without any human intervention. For example, DCE 5.0 has a "convergence" or "control" loop that actively checks the system's actual state against the operator's initial expected state. If there is a difference (e.g., the number of running application instances is less than the expected number), the system will automatically take corrective action (e.g., start new instances or pods).
 
-- Service Registry, 服务注册表
+- Shuffle Sharding
 
-    服务网格维护了一个内部服务注册表 (service registry)，包含在服务网格中运行的一组服务及其相应的服务 endpoints。服务网格使用服务注册表生成 Envoy 配置。
+    Shuffle sharding is a technique for assigning requests to queues that has better isolation than hashing the number of queues. It is used to ensure that high-density request sequences do not overwhelm low-density ones. The technique involves hashing certain feature values of the request, shuffling a deck of cards based on the resulting hash value, and then selecting the shortest checked queue as the target queue for the request.
 
-- Self Healing, 自愈
+- Site Reliability Engineering
 
-    一个自愈系统无需任何人为干预就能从某些类型的故障中恢复。
-    像 DCE 5.0 这种系统自带一个“收敛”或“控制”循环，可以主动查看系统的实际状态并将其与运营商最初期望的状态进行比较。
-    如果有所差异（例如运行的应用程序实例数少于预期实例数），系统将自动采取修正措施（例如启动新的实例或 Pod）。
+    Site Reliability Engineering (SRE) is a discipline that combines operations and software engineering, particularly for infrastructure and operational issues. SRE engineers build systems to run applications rather than building product features. They ensure that applications run reliably by monitoring performance, setting up alerts, debugging, and troubleshooting. Without these functions, operators can only react to problems rather than proactively avoiding them, and downtime is only a matter of time. SRE continuously measures and monitors infrastructure and application components. When problems arise, the system prompts SRE engineers when, where, and how to fix them. This approach helps create highly scalable and reliable software systems through automated tasks.
 
-- Shuffle Sharding, 混排切片
+- Software as a service
 
-    一种将请求指派给队列的技术，其隔离性好过对队列个数哈希取模的方式。
+    Software as a Service (SaaS) allows users to connect to or use cloud services over the internet. Common examples include email, calendars, and office tools (e.g., Gmail, AWS, GitHub, Slack). SaaS provides a complete software solution on a pay-as-you-go basis. All maintenance tasks and application data are handled by the service provider. Traditional commercial software is installed on separate computers and requires administrators to maintain and update it. SaaS applications work without any special effort from the internal IT department. These applications are installed, maintained, upgraded, and secured by the provider. Scalability, availability, and capacity issues are handled by the service provider on a pay-as-you-go basis. For organizations that want to use enterprise-level applications, SaaS is an affordable option.
 
-    我们通常会关心不同的请求序列间的相互隔离问题，目的是为了确保密度较高的请求序列不会湮没密度较低的序列。
-    将请求放入不同队列的一种简单方法是对请求的某些特征值执行哈希函数，将结果对队列的个数取模，从而得到要使用的队列的索引。
-    这一哈希函数使用请求的与其序列相对应的特征作为其输入。例如在互联网上，这一特征通常指的是由源地址、目标地址、协议、源端口和目标端口所组成的五元组。
+- Stateful Apps
 
-    这种简单的基于哈希的模式有一种特性，高密度的请求序列（流）会湮没那些被哈希到同一队列的其他低密度请求序列（流）。
-    为大量的序列提供较好的隔离性需要提供大量的队列，因此是有问题的。
-    混排切片是一种更为灵活的机制，能够更好地将低密度序列与高密度序列隔离。
-    混排切片的术语采用了对一叠扑克牌进行洗牌的类比，每个队列可类比成一张牌。
-    混排切片技术首先对请求的特定于所在序列的特征执行哈希计算，生成一个长度为十几个二进制位或更长的哈希值。
-    接下来，用该哈希值作为信息熵的来源，对一叠牌来混排，并对整个一手牌（队列）来洗牌。
-    最后，对所有处理过的队列进行检查，选择长度最短的已检查队列作为请求的目标队列。
-    在队列数量适中的时候，检查所有已处理的牌的计算量并不大，对于任一给定的低密度的请求序列而言，有相当的概率能够消除给定高密度序列的湮没效应。
-    当队列数量较大时，检查所有已处理队列的操作会比较耗时，低密度请求序列消除一组高密度请求序列的湮没效应的机会也随之降低。因此，选择队列数目时要颇为谨慎。
-
-- Site Reliability Engineering, SRE, 网站可靠性工程
-
-    网站可靠性工程（SRE） 是一门结合运营和软件工程的学科。
-    后者特别适用于基础设施和运营问题。
-    这意味着，网站可靠性工程师不是构建产品功能，而是构建系统来运行应用程序。
-    与 DevOps 有相似之处，但 DevOps 专注于将代码投入生产环境，
-    而 SRE 是确保在生产环境中运行的代码正常工作。
-
-    确保应用程序可靠运行需要多种功能，
-    从性能监控、警报、调试到故障排除。
-    没有这些，系统操作员只能对问题做出反应，而不是主动努力避免它们，因为停机只是时间问题。
-
-    网站可靠性工程通过不断改进底层系统来最小化软件开发过程的成本、时间和工作量。
-    该系统持续测量和监控基础设施和应用程序组件。
-    当出现问题时，系统会提示网站可靠性工程师何时、何地以及如何修复它。
-    这种方法通过自动化任务来帮助创建高度可扩展和可靠的软件系统。
-
-- Software as a service, SaaS, 软件即服务
-
-    软件即服务 (SaaS) 允许用户通过互联网连接或使用云服务。
-    常见的例子有电邮、日历和办公工具（例如 Gmail、AWS、GitHub、Slack）。
-    SaaS 以按需付费的方式提供完整的软件解决方案。
-    所有运维任务和应用数据由服务提供商处理。
-
-    传统的商业软件被安装在独立的计算机上，需要管理员维护和更新。
-    例如：某组织可能在企业内部使用客户关系管理 (CRM) 软件。
-    该软件需要内部 IT 部门采购、安装、确保安全、维护和定期升级，为 IT 团队增加了负担。
-    与许可证、安装和潜在附加硬件相关的前期成本可能令人望而却步。
-    也很难按需响应，很难随着业务增长或变化快速扩缩。
-
-    SaaS 应用无需内部 IT 部门付出任何特别努力即可工作。
-    这些应用由供应商安装、维护、升级和确保安全。
-    扩缩、可用性和容量问题由服务提供商处理，采用按需付费的模式。
-    对于想要使用企业级应用的各个组织而言，SaaS 是一种经济实惠的方式。
-
-- Stateful Apps, 有状态应用
-
-    当我们说到有状态（和无状态）应用时，状态是指应用需要存储以便其按设计运行的任何数据。
-    例如，任何能记住您购物车的在线商店都是有状态应用。
-
-    使用一个应用通常需要多个请求。
-    例如，使用网上银行时，您将通过输入密码（请求 #1）来验证自己的身份，
-    然后您可以将钱转给某个朋友（请求 #2），最后您需要查看转账详情（请求 #3）。
-    为了保证正常运行，每一步都必须记住前面的步骤，银行需要记住每个人的账户状态。
-    今天我们使用的大多数应用至少总有一部分是有状态的，
-    因为这些应用会存储诸如偏好和设置之类的东西以改善用户体验。
-
-    有几种方法可以为有状态应用存储状态。
-    最简单的是将状态保存在内存中，而不是将其持久保存在任何其他地方。
-    这样做的问题是，每次应用必须重启时，所有状态都会丢失。
-    为了防止这种情况发生，状态被持久存储在本地（磁盘上）或数据库系统中。
+    When we talk about stateful (and stateless) applications, state refers to any data that the application needs to store to function as designed. For example, any online store that remembers your shopping cart is a stateful application. Using an application typically requires multiple requests. For example, when using online banking, you will verify your identity by entering a password (request #1), then transfer money to a friend (request #2), and finally view the transfer details (request #3). To function properly, each step must remember the previous steps, and the bank needs to remember each person's account status. There are several ways to store state for stateful applications. The simplest is to store the state in memory rather than persisting it anywhere else. The problem with this approach is that all state is lost every time the application must restart. To prevent this, state is persisted locally (on disk) or in a database system.
 
 - StatefulSet
 
-    [StatefulSet](../kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md) 用来管理某 Pod 集合的部署和扩缩，并为这些 Pod 提供持久存储和持久标识符。
+    [StatefulSet](../kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md) is used to manage a set of Pods with persistent storage and identifiers. Each Pod has a unique, immutable ID.
 
-    与 Deployment 类似，StatefulSet 管理基于相同容器规约的一组 Pod。
-    但和 Deployment 不同的是，StatefulSet 为它们的每个 Pod 维护了一个有粘性的 ID。
-    这些 Pod 是基于相同的规约来创建的，但是不能相互替换：无论怎么调度，每个 Pod 都有一个永久不变的 ID。
+- Stateless Apps
 
-    如果希望使用存储卷为工作负载提供持久存储，可以使用 StatefulSet 作为解决方案的一部分。
-    尽管 StatefulSet 中的单个 Pod 仍可能出现故障，但持久的 Pod 标识符使得将现有卷与替换已失败 Pod 的新 Pod 相匹配变得更加容易。
+    It refers to applications that do not store any client session data on the server. Each session is treated as a new request, and responses are not dependent on previous data.
 
-- Stateless Apps, 无状态应用
+- Static Pod
 
-    无状态应用不会在应用所在的服务器上保存任何客户端会话（状态）数据。
-    每个会话都像第一次一样执行，响应不依赖于前一个会话的数据并提供使用打印服务、内容分发网络（CDN）或
-    Web 服务器的功能，以处理每个短期请求。
-    例如，有人在搜索引擎中搜索某个问题并按下了回车键。
-    如果搜索操作由于某种原因被中断或关闭，您必须重新开始一个新的，因为您之前的请求没有保存数据。
-
-    无状态应用解决了弹性问题，因为集群中的不同 Pod 可以独立工作，
-    同时允许多个请求到达这些 Pod。
-    如果应用出现故障，您只需重启应用，就能恢复到初始状态，停机时间很短或没有停机时间。
-    因此，无状态应用的好处包括坚韧、弹性和高可用性。
-    然而，我们今天使用的大多数应用至少总有一部分是有状态的，
-    因为它们会存储诸如偏好和设置之类的东西以改善用户体验。
-
-    归根结底，在无状态应用中集群唯一负责的是托管在其上的代码和其他静态内容。
-    就是这样，不更改数据库，没有写入，删除 Pod 时也没有留下文件。
-    无状态容器更易于部署，您无需担心如何将容器数据保存在持久存储卷上。
-    您也不必担心备份数据。
-
-- Static Pod, 静态 Pod
-
-    静态 Pod 是指由特定节点上的 kubelet 守护进程直接管理的 Pod。
-    API 服务器不会察觉这种 Pod。静态 Pod 不支持临时容器。
+    a Pod managed directly by the kubelet daemon on a specific node, not visible to the API server.
 
 - StorageClass
 
-    StorageClass 是管理员用来描述可用的不同存储类型的一种方法。
-
-    StorageClass 可以映射到服务质量等级（QoS）、备份策略、或者管理员任意定义的策略。
-    每个 StorageClass 对象包含的字段有 `provisioner`、`parameters` 和 `reclaimPolicy`。
-    动态制备该存储类别的持久卷时需要用到这些字段值。
-    通过设置 StorageClass 对象的名称，用户可以请求特定存储类别。
+    This is a way for administrators to describe available storage types, with fields for `provisioner`, `parameters`, and `reclaimPolicy`.
 
 - sysctl
 
-    用于获取和设置 Unix 内核参数的接口。`sysctl` 是一个半标准化的接口，用于读取或更改正在运行的 Unix 内核的属性。
+    This is an interface for getting and setting Unix kernel parameters.
 
-    在类 Unix 系统上，`sysctl` 既是管理员用于查看和修改这些设置的工具的名称，也是该工具所调用的系统调用的名称。
+- Summary
 
-    容器运行时和网络插件可能对 `sysctl` 的取值有一定的要求。
-
-- Summary, 汇总
-
-    类似于直方图，汇总也对观测结果进行采样。除了可以统计采样值总和和总数，它还能够按分位数统计。有以下几种方式来产生汇总（假设度量指标为 `<basename>`）：
-
-    - 按分位数，也就是采样值小于该分位数的个数占总数的比例小于 φ，相当于 `<basename>{quantile="<φ>"}`
-    - 采样值总和，相当于 `<basename>_sum`
-    - 采样值总数，相当于 `<basename>_count`
+    This is a way to sample and summarize observation results, with options for quantiles, sum, and count.
 
 ### T
 
-- Taint, 污点
+- Taint
 
-    [污点](../kpanda/07UserGuide/Nodes/Taints.md)是一种核心对象，包含三个必需的属性：key、value 和 effect。污点会阻止在节点或节点组上调度 Pod。
+    [Taint](../kpanda/07UserGuide/Nodes/Taints.md) is a core object that contains three required attributes: key, value, and effect. Taints prevent Pods from being scheduled on nodes or node groups. Taints work with tolerations to ensure that Pods are only scheduled on nodes with tolerations that match the taints. One or more taints can be marked on the same node. Nodes should only schedule Pods with tolerations that match the taints.
 
-    污点配合容忍度一起工作，以确保不会将 Pod 调度到不适合的节点上。
-    同一节点上可标记一个或多个污点。节点应该仅调度那些带着能与污点相匹配容忍度的 Pod。
+- Temporary microservice instance
 
-- Temporary microservice instance, 临时微服务实例
+    A temporary microservice instance is a microservice instance that cannot be persistently stored on the Nacos server. Temporary microservice instances need to be kept alive by reporting heartbeats. If no heartbeat is reported within a certain period of time, the Nacos server will remove the instance.
 
-    不能持久化存储在 Nacos 服务端的微服务实例。
-    临时微服务实例需要通过上报心跳的方式进行包活，如果一段时间内没有上报心跳，就会被 Nacos 服务端摘除。
+- Threshold
 
-- Threshold, 保护阈值
+    A threshold is a floating-point number between 0 and 1. When the number of healthy instances is less than this value, regardless of whether the instance is healthy or not, the instance will be returned to the client. This prevents healthy instances from being overwhelmed by traffic and causing a cascading effect.
 
-    阈值是一个 0 到 1 之间的浮点数。
-    当健康实例数占总服务实例数的比例小于该值时，无论实例是否健康，都会将这个实例返回给客户端。
-    这样可以防止流量压力把健康实例压垮并形成雪崩效应。
+- Tightly Coupled Architecture
 
-- Tightly Coupled Architecture, 紧耦合架构
+    A tightly coupled architecture is an architecture style in which many application components depend on each other. This means that a change to one component may affect other components. It is usually easier to implement than a loosely coupled architecture, but it makes the system more susceptible to cascading failures. It also means that the deployment of each component needs to be coordinated, which can slow down developers' productivity. A tightly coupled application architecture is a fairly traditional way of building applications. In some specific cases, it can be useful when we don't need to be consistent with all the best practices of microservice development. This means faster and simpler implementation, similar to a monolithic application, which can speed up the initial development cycle.
 
-    紧耦合架构（松耦合架构的相反范式）是一种架构风格，其中许多应用程序组件相互依赖。
-    这意味着一个组件的更改可能会影响其他组件。
-    它通常比松耦合架构更容易实现，但会使系统更容易受到级联故障的影响。
-    它还意味着需要协调各个组件的部署，这可能会拖累开发人员的生产力。
+- Toleration
 
-    紧耦合应用程序架构是一种相当传统的应用程序构建方式。
-    在某些特定情况下，当我们不需要与微服务开发的所有最佳实践一致时，它将变得很有用。
-    这意味着更快、更简单地实现， 和单体应用很像，可以加快最初的开发周期。
+    A toleration is a core object that consists of three required attributes: key, value, and effect. Tolerations allow Pods to be scheduled on nodes or node groups with corresponding taints. Tolerations and taints work together to ensure that Pods are not scheduled on unsuitable nodes. One or more tolerations can be set on the same Pod. Tolerations indicate that it is allowed (but not necessary) to schedule Pods on nodes or node groups that contain corresponding taints.
 
-- Toleration, 容忍度
+- Transport Layer Security
 
-    一个核心对象，由三个必需的属性组成：key、value 和 effect。
-    容忍度允许将 Pod 调度到具有对应污点的节点或节点组上。
+    Transport Layer Security (TLS) is a protocol designed to provide higher security for network communication. It ensures the secure delivery of data sent over the Internet, avoiding possible data monitoring and/or tampering. The protocol is widely used in applications such as messaging and email. Without TLS, sensitive information such as web browsing habits, email communication, online chat, and teleconferencing can be easily tracked and tampered with during transmission. Enabling support for TLS on server and client applications ensures that the data transmitted between them is encrypted and cannot be viewed by third parties. TLS uses multiple encoding techniques to provide security when transmitting data over the network. It allows for an encrypted connection between client applications and servers (such as browsers and bank sites). It also allows client applications to actively identify the servers they are calling, reducing the risk of client communication with fraudulent sites. This ensures that third parties cannot view and monitor data transmitted between applications using TLS, protecting sensitive privacy information such as credit card numbers, passwords, and locations.
 
-    容忍度和污点共同作用可以确保不会将 Pod 调度在不适合的节点上。
-    在同一 Pod 上可以设置一个或者多个容忍度。
-    容忍度表示在包含对应污点的节点或节点组上调度 Pod 是允许的（但不必要）。
+- [Trace](https://opentelemetry.io/docs/concepts/signals/traces/)
 
-- Transport Layer Security, TLS, 传输层安全性协议
-
-    传输层安全性协议 (TLS) 是一种旨在为网络通信提供更高安全性的协议。
-    它确保通过互联网发送的数据安全交付，避免可能的数据监视和/或篡改。
-    该协议广泛用于消息传递、电子邮件等应用程序中。
-
-    如果没有 TLS，网页浏览习惯、电子邮件通信、在线聊天和电话会议等敏感信息在传输过程中很容易被他人追踪和篡改。
-    启用服务器和客户端应用程序对 TLS 的支持，可以确保它们之间传输的数据是加密的，并且第三方无法查看。
-
-    TLS 使用多种编码技术，在通过网络传输数据时提供安全性。
-    TLS 允许客户端应用程序和服务器（如浏览器和银行站点）之间的加密连接。
-    它还允许客户端应用程序积极地识别他们正在调用的服务器，从而降低客户端与欺诈站点通信的风险。
-    这可以确保第三方无法查看和监控使用 TLS 在应用程序之间传输的数据，从而保护敏感隐私的信息，例如信用卡号、密码、位置等。
-
-- [Trace](https://opentelemetry.io/docs/concepts/signals/traces/), [链路](../insight/user-guide/04dataquery/tracequery.md)
-
-    记录单次请求范围内的处理信息，其中包括服务调用和处理时长等数据。
-    一个 Trace 有一个唯一的 Trace ID ，并由多个 Span 组成。
+    A trace records processing information within a single request scope, including
+    service calls and processing duration data. A trace has a unique Trace ID and is composed of multiple Spans.
 
 ### U, V
 
 - UID
 
-    由 Kubernetes 系统生成、用来唯一标识对象的字符串。
+    A string generated by the Kubernetes system to uniquely identify objects. Each object
+    created throughout the lifecycle of a Kubernetes cluster has a different UID, which is
+    intended to differentiate historical events of similar entities.
 
-    在 Kubernetes 集群的整个生命周期中创建的每个对象都有一个不同的 UID，它旨在区分类似实体的历史事件。
+- User
 
-- User, 用户
+    A [user](../ghippo/04UserGuide/01UserandAccess/User.md) is the subject who initiates an operation, each user has a unique ID and is granted different roles. The IAM users created by default have no permissions and need to be added to user groups, granted roles or policies to gain corresponding permissions.
 
-    [用户](../ghippo/04UserGuide/01UserandAccess/User.md)是发起操作的主体，每个用户都有唯一的 ID，并被授予不同的角色。
-    默认创建的 IAM 用户没有任何权限，需要将其加入用户组，授予角色或策略，才能让用户获得对应的权限。
+    Users log in to DCE with their usernames and operate platform resources and services according to the permissions granted to them. Therefore, users are the subjects of resource ownership and have corresponding permissions for the resources they own.
 
-    用户以用户名登录 DCE，按照被授予的权限操作平台资源和服务。
-    所以用户是资源归属的主体，对其拥有的资源具有相应权限。
+    Users can modify user information, set passwords, access keys, and UI languages in the personal center.
 
-    用户可以在个人中心修改用户信息，设置密码、访问密钥和 UI 语言。
+- User namespace
 
-- User namespace, 用户命名空间
+    A Linux kernel feature that simulates superuser privileges for non-privileged users. It is used to simulate the kernel feature of the root user to support "Rootless containers".
 
-    一种为非特权用户模拟超级用户特权的 Linux 内核功能特性。
+    User Namespace is a Linux kernel feature that allows non-root users to simulate the privileges of the superuser ("root"), for example, to run containers without having to be a superuser outside the container.
 
-    用来模拟 root 用户的内核功能特性，用来支持“Rootless 容器”。
+    User namespaces are effective in mitigating potential container escape attacks.
 
-    用户命名空间（User Namespace）是一种 Linux 内核功能特性，允许非 root 用户
-    模拟超级用户（"root"）的特权，例如用来运行容器却不必成为容器之外的超级用户。
+    In the context of user namespaces, namespaces are a Linux kernel feature rather than the namespace concept in Kubernetes.
 
-    用户命名空间对于缓解因潜在的容器逃逸攻击而言是有效的。
+- Version Control
 
-    在用户命名空间语境中，命名空间是 Linux 内核的功能特性而不是 Kubernetes 意义上的命名空间概念。
+    Source code management (or version control) is a behavior that tracks and manages document changes. It is a system that continuously records changes to a single file or group of files so that you can roll back to a specific version later.
 
-- Version Control, 版本控制
+    Version control systems are dedicated to solving the following problems: backing up documents or code repositories that change over time, resolving conflicts when multiple users make cross-modifications, and storing change logs over time.
 
-    源代码管理（或版本控制）是一种跟踪和管理文档更改的行为。
-    它是一个持续记录单个文件或一组文件变化的系统，以便您在以后可以回退到特定版本。
+    Handling critical business application code is often complex and important, so it is very important to track who changed the content, when, and why. In addition, many (even most) applications are modified by multiple developers, and conflicts often exist between changes introduced by different developers.
 
-    版本控制系统致力于解决以下问题，
-    备份随时间变化的文档或代码库，
-    允许在多个用户存在交叉修改时解决冲突，并随时间存储更改日志。
-    处理关键业务的应用程序代码通常复杂且重要，
-    因此，跟踪谁更改了内容、什么时候更改的以及更改原因是非常重要的。
-    此外，许多（甚至可以说大部分）应用程序是由多个开发人员修改的，并且不同开发人员引入的更改之间经常存在冲突。
+    Version control can help developers act quickly and maintain efficiency while storing change records and providing tools to resolve conflicts. It can store application code in a code repository and simplify collaboration between developers. Modern application development relies heavily on version control systems such as git to store their code.
 
-    版本控制可帮助开发人员快速行动并保持效率，同时存储更改记录并提供解决冲突的工具。
-    它可以将应用程序代码存储在代码仓库中并简化开发人员间的协作。
-    现代应用程序开发非常依赖版本控制系统，如 git，来存储他们的代码。
+- Vertical Scaling
 
-- Vertical Scaling, 垂直扩缩
+    Vertical scaling, also known as "up and down scaling", is a technique that increases system capacity by adding CPU and memory to a single node when the workload increases. Assuming you have a computer with 4GB of RAM and want to increase its capacity to 16GB of RAM, vertical scaling means switching to a 16GB RAM system. (See horizontal scaling for different scaling methods.)
 
-    垂直扩缩，也称为“向上和向下扩缩”，是一种通过在工作负载增加时向单个节点添加 CPU 和内存来增加系统容量的技术。
-    假设您有一台 4GB RAM 的计算机，并且想要将其容量增加到 16GB RAM，垂直扩缩就意味着切换到 16GB RAM 系统。
-    （请参阅水平扩缩了解不同的扩缩方法。）
+    As the demand for an application grows beyond the current capacity of the application instance, we need to find a way to scale the system. We can add more computing resources to existing nodes (vertical scaling) or add more nodes to the system (horizontal scaling). Scalability helps improve competitiveness, efficiency, reputation, and quality.
 
-    随着对应用程序的需求增长超出该应用程序实例的当前容量，我们需要找到一种方法来伸展（增加容量）系统。
-    我们可以向现有节点添加更多计算资源（垂直扩缩）或向系统添加更多节点(水平扩缩)。
-    可扩缩性有助于提高竞争力、效率、声誉和质量。
+    Vertical scaling allows you to adjust server size without changing the application code. This is in contrast to horizontal scaling, where the application must be able to be replicated for scaling, which may require code updates. Vertical scaling increases the capacity of existing applications by adding computing resources, allowing applications to handle more requests and perform more work at the same time.
 
-    垂直扩缩允许您在不更改应用程序代码的情况下调整服务器大小。
-    这与水平扩缩形成对比，在水平扩缩中，应用程序必须可以被复制来进行扩缩，而这可能需要代码更新。
-    垂直扩缩通过添加计算资源来增加现有应用程序的容量，允许应用程序处理更多请求并同时执行更多工作。
+- Virtual Machine
 
-- Virtual Machine, 虚拟机
+    A virtual machine (VM) is a computer and its operating system that is not constrained by specific hardware. Virtual machines rely on virtualization to partition a physical computer into multiple virtual machines. This separation allows organizations and infrastructure providers to easily create and destroy virtual machines without affecting the underlying hardware.
 
-    虚拟机（VM）是一台计算机及其操作系统，不受特定硬件的约束。
-    虚拟机依靠虚拟化将一台物理计算机分割成多个虚拟计算机。
-    这种分离使组织和基础设施供应商能够轻松地创建和销毁虚拟机，而不影响底层硬件。
+    Virtual machines take advantage of virtualization. When a bare-metal machine is bound to a single operating system, the use of resources on that machine is limited. In addition, when an operating system is bound to a single physical machine, its availability is directly tied to that hardware. If the physical machine goes offline due to maintenance or hardware failure, the operating system also goes offline.
 
-    虚拟机利用了虚拟化的优势。
-    当裸机机器被束缚在一个单一的操作系统上时，该机器的资源的使用受到一定的限制。
-    另外，当一个操作系统被绑定在一个单一的物理机上时，它的可用性直接与该硬件联系在一起。
-    如果物理机由于维护或硬件故障而脱机，操作系统也会脱机。
+    By eliminating the direct relationship between the operating system and a single physical machine, you solve several problems with bare-metal: configuration time, hardware utilization, and elasticity.
 
-    通过消除操作系统和单一物理机之间的直接关系，您解决了裸机的几个问题：配置时间、硬件利用率和弹性。
+    Since you don't need to buy, install, or configure new hardware to support it, the configuration time for new computers is greatly improved. Virtual machines allow you to better utilize existing physical hardware resources by placing multiple virtual machines on a single physical machine. Virtual machines are also more elastic than physical machines because they are not tied to a specific physical machine. When a physical machine needs to be taken offline, the virtual machines running on it can be moved to another machine with almost no downtime.
 
-    由于不需要购买、安装或配置新的硬件来支持它，新计算机的配置时间得到了极大的改善。
-    虚拟机通过在一台物理机上放置多个虚拟机，使您能够更好地利用现有的物理硬件资源。
-    不受特定物理机的约束，虚拟机也比物理机更有弹性。
-    当一台物理机需要下线时，在其上运行的虚拟机可以被转移到另一台机器上，几乎没有停机时间。
+- Virtualization
 
-- Virtualization, 虚拟化
+    Virtualization, in the context of cloud-native computing, refers to the process of taking a physical computer, sometimes called a server, and allowing it to run multiple isolated operating systems. These isolated operating systems and their dedicated computing resources (CPU, memory, and networking) are called virtual machines or VMs. When we talk about a virtual machine, we are talking about a software-defined computer. It looks and acts like a real computer, but shares hardware with other virtual machines. For example, you can rent a 'computer' from AWS that is actually a virtual machine.
 
-    虚拟化，在云原生计算的背景下，是指将一台物理计算机，有时称为服务器，并允许它运行多个隔离的操作系统的过程。
-    这些隔离的操作系统及其专用的计算资源（CPU、内存和网络）被称为虚拟机或 VM。
-    当我们谈论虚拟机时，我们在谈论一个软件定义的计算机。
-    它看起来和行动都像一台真正的计算机，但与其他虚拟机共享硬件。
-    举个例子，您可以从 AWS 租赁一台 "计算机"，该计算机实际上是一个虚拟机。
+    Virtualization solves many problems, including improving the use of physical hardware by allowing more applications to run on the same physical machine while still being isolated from each other for security purposes.
 
-    虚拟化解决了许多问题，包括通过允许更多的应用程序在同一台物理机器上运行，同时为了安全起见仍然相互隔离，从而改善物理硬件的使用。
+    Applications running on a virtual machine are not aware that they are sharing a physical computer. Virtualization also allows users in a data center to launch a new 'computer' (or virtual machine) in minutes without worrying about the physical limitations of adding a new computer to the data center. Virtual machines also enable users to get new virtual computers faster.
 
-    在虚拟机上运行的应用程序没有意识到他们正在共享一台物理计算机。
-    虚拟化还允许数据中心的用户在几分钟内启动一台新的 "计算机"（又称虚拟机），而不必担心在数据中心增加一台新计算机的物理限制。
-    虚拟机还使用户能够加快获得新的虚拟计算机的时间。
+- Virtual Service
 
-- Virtual Service, 虚拟服务
+    Virtual service defines a set of traffic routing rules for a specified service. Each routing rule defines traffic matching rules for a specific protocol. If the traffic matches these characteristics, it is sent to the target service (or subset or version of the target service) in the service registry according to the rules.
 
-    虚拟服务定义了一系列针对指定服务的流量路由规则。
-    每个路由规则都针对特定协议定义流量匹配规则。
-    如果流量符合这些特征，就会根据规则发送到服务注册表中的目标服务（或者目标服务的子集或版本）。
+- Volume
 
-- Volume, 卷
+    A volume is a data directory that can be accessed by containers in a Pod. Each Kubernetes volume remains in existence for the lifetime of the Pod in which it is created. Therefore, the life of the volume exceeds that of the container running in the Pod, and the data is guaranteed to be retained even after the container restarts.
 
-    包含可被 Pod 中容器访问的数据目录。
+- Volume Plugin
 
-    每个 Kubernetes 卷在所处的 Pod 存续期间保持存续状态。
-    因此，卷的生命期会超出 Pod 中运行的容器，并且保证容器重启之后仍保留数据。
-
-- Volume Plugin, 卷插件
-
-    卷插件可以让 Pod 集成存储。
-
-    卷插件让您能给 Pod 附加和挂载存储卷。
-    卷插件既可以是 **in tree** 也可以是 **out of tree** 。
-    **in tree** 插件是 Kubernetes 代码库的一部分，并遵循其发布周期。
-    而 **Out of tree** 插件则是独立开发的。
+    A volume plugin allows Pods to integrate with storage. Volume plugins allow you to attach and mount storage volumes to Pods. Volume plugins can be either in-tree or out-of-tree. In-tree plugins are part of the Kubernetes codebase and follow its release cycle, while out-of-tree plugins are developed independently.
 
 ### W, Z
 
-- Weight, 权重
+- Weight
 
-    权重为浮点数。权重越大，表示分配给该实例的流量越大。
+    The weight is a floating-point number. The larger the weight, the more traffic is allocated to the instance.
 
-- Workload, 工作负载
+- Workload
 
-    工作负载是在 Kubernetes 上运行的应用程序。
+    A workload is an application running on Kubernetes.
 
-    代表不同类型或部分工作负载的各种核心对象包括 [Deployment](../kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md)、[StatefulSet](../kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md)、[DaemonSet](../kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md)、[Job](../kpanda/07UserGuide/Workloads/CreateJobByImage.md)、ReplicaSet。
+    Various core objects representing different types or parts of workloads include [Deployment](../kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md), [StatefulSet](../kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md), [DaemonSet](../kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md), [Job](../kpanda/07UserGuide/Workloads/CreateJobByImage.md), and ReplicaSet.
 
-    例如，具有 Web 服务器和数据库的工作负载可能在一个 StatefulSet 中运行数据库，而 Web 服务器运行在 Deployment。
+    For example, a workload with a web server and a database may run the database in a StatefulSet, while the web server runs in a Deployment.
 
-- Workload Instance, 工作负载实例
+- Workload Instance
 
-    在服务网格中，工作负载实例是工作负载的一个二进制实例化对象。
-    一个工作负载实例可以开放零个或多个服务 endpoint，也可以消费零个或多个服务。
-    工作负载实例具有许多属性：名称和命名空间、IP 地址、唯一的 ID、标签、主体等
+    In a service mesh, a workload instance is a binary instantiation object of a workload. A workload instance can expose zero or more service endpoints and can also consume zero or more services. A workload instance has many attributes: name and namespace, IP address, unique ID, labels, principals, etc.
 
-- Workload Instance Principal, 工作负载实例主体
+- Workload Instance Principal
 
-    在服务网格中，工作负载实例主体是工作负载实例的可验证权限。服务网格的服务到服务身份验证用于生成工作负载实例主体。
-    默认情况下，工作负载实例主体与 SPIFFE ID 格式兼容。
+    In a service mesh, a workload instance principal is the verifiable authority of a workload instance. Service-to-service authentication in the service mesh is used to generate the workload instance principal. By default, the workload instance principal is compatible with the SPIFFE ID format.
 
-- Workspace, 工作空间
+- Workspace
 
-    [工作空间](../ghippo/04UserGuide/02Workspace/Workspaces.md)是一种资源范畴，代表一种资源层级关系。
-    工作空间可以包含集群、[命名空间](../kpanda/07UserGuide/Namespaces/createns.md)、注册中心等资源。
-    通常一个工作空间对应一个项目，可以为每个工作空间分配不同的资源，指派不同的用户和用户组。
+    A [workspace](../ghippo/04UserGuide/02Workspace/Workspaces.md) is a resource category that represents a resource hierarchy. A workspace can contain resources such as clusters, [namespaces](../kpanda/07UserGuide/Namespaces/createns.md), and registries. Typically, a workspace corresponds to a project, and different resources can be assigned to each workspace, with different users and user groups assigned.
 
-- Worker Cluster, 工作集群
+- Worker Cluster
 
-    工作集群是一个连接到集群外部控制平面的集群。
-    工作集群可以连接到主集群的控制平面，或连接到一个外部控制平面。
+    A worker cluster is a cluster that connects to an external control plane outside the main cluster. A worker cluster can connect to the control plane of the main cluster or to an external control plane.
 
-- Zero Trust Architecture, 零信任架构
+- Zero Trust Architecture
 
-    零信任架构规定了一种完全消除信任的 IT 系统设计和实施方法。
-    其核心原则是 "永不信任，永远验证"，设备或系统本身在与系统的其他组件进行通信时，总是先验证自己。
-    在今天的许多网络中，在企业网络中，内部的系统和设备可以自由地相互通信，因为它们在企业网络外围的信任边界内。
-    零信任架构采取了相反的方法，虽然在网络边界内，但系统内的组件在进行任何通信之前首先必须通过验证。
+    Zero Trust Architecture specifies a method of designing and implementing IT systems that completely eliminates trust. Its core principle is "never trust, always verify," and a device or system always verifies itself when communicating with other components of the system. In many networks today, in enterprise networks, internal systems and devices can freely communicate with each other because they are within the trusted boundary of the enterprise network. Zero Trust Architecture takes the opposite approach, recognizing that trust is a weakness.
 
-    在传统的基于信任的方法中，存在于企业网络周边的系统和设备，其假设是，因为有信任，所以没有问题。
-    然而，零信任架构认识到，信任是一个弱点。
-    如果攻击者获得了对受信任设备的访问，根据对该设备的信任和访问程度，系统现在很容易受到攻击，因为攻击者在 "受信任 "的网络边界内，能够在整个系统内横向移动。
-    在零信任架构中，信任被移除，因此减少了攻击面，因为攻击者现在被迫在进入整个系统之前进行验证。
+    In a traditional trust-based approach, systems and devices at the perimeter of the enterprise network assume that there are no problems because there is trust. However, Zero Trust Architecture recognizes that trust is a weakness. If an attacker gains access to a trusted device, the system is now vulnerable to attack based on the level of trust and access to that device, as the attacker is within the trusted network boundary and can move laterally throughout the system. In Zero Trust Architecture, trust is removed, reducing the attack surface, as attackers are now forced to authenticate before entering the entire system.
 
-    采用零信任架构带来的主要好处是增加安全，减少攻击面。
-    从您的企业系统中移除信任，现在增加了攻击者必须通过的安全门的数量和强度，以获得对系统的其他区域的访问。
+    The main benefit of adopting Zero Trust Architecture is increased security and reduced attack surface. Removing trust from your enterprise system now increases the number and strength of security gates that attackers must pass through to gain access to other areas of the system.
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

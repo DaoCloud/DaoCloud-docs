@@ -85,11 +85,11 @@ Please confirm that your cluster has installed a load balancer, and follow the s
 
 1. Click `Container Management` from the left navigation bar to enter `Cluster List`.
 
-    ![Install Collector](../../images/login01.png)
+    
 
 2. Select the cluster `kpanda-global-cluster`, select `Container Application` -> `Service` in the left navigation bar, select `insight-system` namespace, and view the ports exposed by the corresponding service.
 
-    ![View port](../../images/kpandaservice.png)
+    
 
 - `vminsert-insight-victoria-metrics-k8s-stack`: index data upload address, set the NodePort corresponding to port 8480
 - `insight-opentelemetry-collector`: link data upload address, set the NodePort corresponding to port 8006

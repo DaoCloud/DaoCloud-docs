@@ -1,5 +1,18 @@
 # 微服务引擎视频教程
 
+我们为微服务引擎精心制作了以下视频教程，欢迎任何形式的反馈，谢谢 🙏
+
+<div class="grid cards" markdown>
+
+- :one: [接入注册中心](#_2)
+- :two: [微服务配置列表](#_3)
+- :three: [管理网关和 API](#api)
+- :four: [API 策略的高级配置（1）](#api-1)
+- :five: [API 策略的高级配置（2）](#api-2)
+- :six: [通过网格治理微服务流量](#_4)
+
+</div>
+
 ## 接入注册中心
 
 参阅 [接入注册中心](../skoala/registry/integrated/integrate-registry.md))文档页面。
@@ -47,3 +60,5 @@
 </div>
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+
+> 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。

@@ -10,7 +10,7 @@ On the workload details page, you can view the number of alarms and the trend gr
 
 1. In the left navigation bar, select `Container Monitoring`, and the stateless load under all namespaces of the first cluster is displayed by default.
 
-    ![Container Monitoring](../../images/container01.png)
+    
 
 2. In the filter list, you can filter containers by cluster, namespace, and health status, or search through the search box.
 

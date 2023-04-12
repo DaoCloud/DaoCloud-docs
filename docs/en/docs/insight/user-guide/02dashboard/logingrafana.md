@@ -21,8 +21,8 @@ The specific operation steps are as follows:
 
      - Default password: admin
 
-     ![login to grafana](../../images/grafana02.png)
+     
 
 3. Click `Log in` to complete the login.
 
-     ![Successful login to grafana](../../images/grafana03.png)
+     

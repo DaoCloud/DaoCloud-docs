@@ -23,7 +23,7 @@ Or set the registry space as public for use by all namespaces of the platform.
 
 1. Log in to the web console as a user with the Admin role, and click `container registry` from the left navigation bar.
 
-    ![container registry](images/hosted01.png)
+    
 
 1. Click `registry Integration` on the left navigation bar, and click the `registry Integration` button in the upper right corner.
 

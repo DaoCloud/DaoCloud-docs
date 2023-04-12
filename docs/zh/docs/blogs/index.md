@@ -5,7 +5,17 @@ hide:
 
 # 博客文章
 
-本页汇总 DCE 5.0 相关的博客和公众号文章，默认按字母和拼音排序。
+本页汇总 DCE 5.0 及云原生技术相关的博客和公众号文章，默认按时间排序。
+
+- [20230412 | 近两年功能增加最多！Kubernetes 1.27 正式发布](./k8s1.27.md)
+
+    Kubernetes 1.27 正式发布。此版本距离上版本发布时隔 4 个月，是 2023 年的第一个版本。
+    新版本中 release 团队跟踪了 **60 个 enhancements**，比之前版本都要多得多。
+
+- [20230411 | Spiderpool：Calico 固定应用 IP 的新选择](./spiderpool.md)
+
+    Spiderpool 是一个 Kubernetes 的 IPAM 插件项目，主要针对 Underlay 网络的 IP 地址管理需求而设计，
+    能够为任何兼容第三方 IPAM 插件的 CNI 项目所使用。
 
 - [20230405 | 保姆式安装 DCE 5.0 社区版](./new-dce5-free.md)
 
@@ -82,7 +92,8 @@ hide:
 
 - [20221105 | DaoCloud 是 K8s 资深认证服务商](./kcsp.md)
 
-    DaoCloud 早在 2017 年就首次顺利通过了 Kubernetes 认证，是国内最早涉足并得到 CNCF 官方认可的服务商， 同时也是国内最早获得 Kubernetes Training Partner (KTP) 认证的厂商。
+    DaoCloud 早在 2017 年就首次顺利通过了 Kubernetes 认证，是国内最早涉足并得到 CNCF 官方认可的服务商，
+    同时也是国内最早获得 Kubernetes Training Partner (KTP) 认证的厂商。
     目前经 CNCF 官方认证可支持的 K8s 版本包括：v1.25, v1.24, v1.23, v1.20, v1.18, v1.15, v1.13, v1.9, v1.7
 
 - [20221105 | 原生思维看金融数字化转型](https://mp.weixin.qq.com/s/9BggFRr0aoEzzmemXplRWg)
@@ -93,7 +104,8 @@ hide:
 - [20221104 | HwameiStor 入选 CNCF 全景图：生产可运维的云原生本地存储系统](https://mp.weixin.qq.com/s/QqzU_YeUKmegaMiQ9MVbww)
 
     近日，CNCF（云原生计算基金会）[^1] 发布了最新版的云原生全景图 [^2]。
-    「DaoCloud 道客」自主开源的云原生本地存储系统 HwameiStor，被收录在 CNCF 云原生全景图中的 RunTime（运行时）层的 Cloud Native Storage（云原生存储）象限，成为 CNCF 推荐的云原生本地存储项目。
+    「DaoCloud 道客」自主开源的云原生本地存储系统 HwameiStor，被收录在 CNCF 云原生全景图中的
+    RunTime（运行时）层的 Cloud Native Storage（云原生存储）象限，成为 CNCF 推荐的云原生本地存储项目。
 
 - [20221028 | Kubean 集群生命周期管理](https://mp.weixin.qq.com/s/-NzXmyb-9yQc1ydcsZz0CA)
 

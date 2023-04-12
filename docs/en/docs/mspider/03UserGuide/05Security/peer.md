@@ -30,23 +30,23 @@ Service mesh provides two creation methods: wizard and YAML. The specific steps 
 
 1. Click `Security Governance` -> `Peer-to-Peer Authentication` in the left navigation bar, and click the `Create` button in the upper right corner.
 
-    ![create](../../images/peer01.png)
+    
 
 2. In the `Create Peer Authentication` interface, first perform the basic configuration and then click `Next`.
 
-    ![create](../../images/peer02.png)
+    
 
 3. After completing the authentication settings according to the screen prompts, click `OK`.
 
-    ![create](../../images/peer03.png)
+    
 
 4. The screen prompts that the creation is successful.
 
-    ![create](../../images/peer04.png)
+    
 
 5. On the right side of the list, click `⋮` in the operation column to perform more operations through the pop-up menu.
 
-    ![create](../../images/peer05.png)
+    
 
 !!! note
 

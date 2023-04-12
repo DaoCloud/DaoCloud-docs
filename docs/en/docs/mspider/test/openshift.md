@@ -67,35 +67,35 @@ users:
 
 View the status of the access cluster in container management:
 
-![Access openshift](./images/os01.png)
+
 
 ### Create a proprietary mesh
 
 1. Log in to the global-cluster node to view the status of the service mesh synchronization container management access cluster.
 
-     ![View cluster access status](./images/os02.png)
+     
 
 1. After completing the configuration when creating the mesh, click `OK`.
 
      > For the control plane cluster, select the openshift4-mspider cluster accessed through container management
 
-     ![create mesh](./images/os03.png)
+     
 
 1. The OpenShift cluster is successfully connected to the mesh
 
-     ![Successfully connected to the mesh](./images/os04.png)
+     
 
 1. Check whether each component is healthy
 
-     ![Component Status](./images/os05.png)
+     
 
-     ![Component Status](./images/os06.png)
+     
 
 #### Problems encountered when connecting
 
 1. Prompt error `istio-operator RS CreateFailed`
 
-     ![RS CreateFailed](./images/os07.png)
+     
 
      Cause Analysis: OpenShift (Security Context Constraints) SCC has permission restrictions on creating Pods
 
@@ -114,7 +114,7 @@ View the status of the access cluster in container management:
      Cause analysis: The literal hint is that the istiod/istio-ingressgateway service pod is missing under the istio-system namespace.
      Actually, the format of the memory resource parameter in the mesh global sidecar resource limit is wrong; the correct format is 500Mi
 
-     ![Resource parameter format](./images/os08.png)
+     
 
      Solution: Modify the yaml file and add the Mi unit
 
@@ -122,7 +122,7 @@ View the status of the access cluster in container management:
      kubectl edit gm -n mspider-system openshift -oyaml
      ```
 
-     ![Modify unit](./images/os09.png)
+     
 
 3. Prompt `pod Init:CrashLoopBackOff` when injecting sidecar
 
@@ -194,9 +194,9 @@ oc adm policy add-scc-to-user privileged -z bookinfo
 
 1. Enable namespace sidecar injection
 
-     ![Enable Namespace Sidecar Injection](./images/os10.png)
+     
 
-     ![View Namespace Sidecar](./images/os11.png)
+     
 
 1. Terminal view bookinfo namespace Labels
 
@@ -216,7 +216,7 @@ oc adm policy add-scc-to-user privileged -z bookinfo
      oc apply -f https://raw.githubusercontent.com/istio/istio/release-1.15/samples/bookinfo/platform/kube/bookinfo.yaml -n bookinfo
      ```
 
-     ![deploy bookinfo](./images/os12.png)
+     
 
      ```shell
      oc get pod -n bookinfo

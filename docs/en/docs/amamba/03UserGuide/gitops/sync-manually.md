@@ -9,11 +9,11 @@ This page demonstrates how to manually sync a continuously deployed application.
 
 1. On the `Application Workbench` -> `Continuous Publishing` page, click the name of an application whose synchronization status is `Not Synchronized`.
 
-    ![Not synced](../../images/sync01.png)
+    
 
 1. On the application details page, click the `Sync` button to enter the synchronization page:
 
-    ![Sync](../../images/sync02.png)
+    
 
 1. On the `Sync Application` page, configure the following parameters:
 
@@ -27,6 +27,6 @@ This page demonstrates how to manually sync a continuously deployed application.
 
     In the Synchronization Resources area, select at least one application to be synchronized. For example, some resources have already been synchronized, and only unsynchronized resources need to be synchronized.
 
-    ![Sync](../../images/sync03.png)
+    
 
 1. Click `OK`, wait for the synchronization to be successful, and then check the synchronization result.

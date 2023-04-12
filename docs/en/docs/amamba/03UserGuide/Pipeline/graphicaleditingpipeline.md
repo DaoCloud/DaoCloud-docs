@@ -19,7 +19,7 @@ You can intuitively see each [stage (Stage)](https://www.jenkins.io/doc/book/pip
 
 ## Canvas description
 
-![canvasdescribe](../../images/canvasdescribe.png)
+
 
 The graphical editing page includes two areas: **Canvas** and **Stage Settings**.
 
@@ -33,13 +33,13 @@ The graphical editing page includes two areas: **Canvas** and **Stage Settings**
 
 Click on a created custom pipeline. Click `Edit Pipeline` in the upper right corner to enter the graphical editing page.
 
-![pipelisetting](../../images/editpipe02.png)
+
 
 ### Configure global settings
 
 Click on `Global Settings`, select node from the `Type` drop-down list, and select go 16 from the label drop-down list.
 
-![pipelisetting](../../images/pipelisetting.png)
+
 
 ### Add stage - pull source code
 
@@ -51,7 +51,7 @@ Click on `Global Settings`, select node from the `Type` drop-down list, and sele
      - Branch: do not fill in, the default is the master branch.
      - Credentials: If your registry is a private registry, you need to provide a credential.
 
-     ![git_clone](../../images/git_clone.png)
+     
 
 ### Add Phase - Unit Test
 
@@ -59,7 +59,7 @@ Click on `Global Settings`, select node from the `Type` drop-down list, and sele
 
 2. In the step module, select to open `specify container`, fill in the container name: go in the pop-up dialog box, and then click `OK`.
 
-     ![container1](../../images/container1.png)
+     
 
 3. Click `Add step to unit test the code and generate a test report`, select shell under the step type in the pop-up dialog box, and enter the following command in the command line, and then click `OK`.
 
@@ -67,7 +67,7 @@ Click on `Global Settings`, select node from the `Type` drop-down list, and sele
      go test -coverprofile=coverage.out
      ```
 
-     ![go-test](../../images/go-test.png)
+     
 
 ### Add stage - build and push image
 
@@ -75,7 +75,7 @@ Click on `Global Settings`, select node from the `Type` drop-down list, and sele
 
 2. In the step module, select to open `specify container`, fill in the container name: go in the pop-up dialog box, and then click `OK`.
 
-     ![container2](../../images/container2.png)
+     
 
 3. Select to enable `Use Credentials` in the step module, fill in the relevant parameters in the pop-up dialog box, and then click `OK`.
 
@@ -83,7 +83,7 @@ Click on `Global Settings`, select node from the `Type` drop-down list, and sele
      - Password variable: PASS
      - Username variable: USER
 
-     ![creditional1](../../images/creditional1.png)
+     
 
 4. Click `Add Step` to build the code, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and click `OK`.
 
@@ -103,7 +103,7 @@ Click on `Global Settings`, select node from the `Type` drop-down list, and sele
      docker login $REGISTRY -u $USER -p $PASS
      ```
 
-     ![build3](../../images/build3.png)
+     
 
 6. Click `Add Step` to push the image to the container registry, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and click `OK`.
 
@@ -111,7 +111,7 @@ Click on `Global Settings`, select node from the `Type` drop-down list, and sele
      docker push $REGISTRY/$PROJECT/$NAME:latest
      ```
 
-     ![build4](../../images/build4.png)
+     
 
 !!! note
     
@@ -123,7 +123,7 @@ Click on `Global Settings`, select node from the `Type` drop-down list, and sele
 
 2. Click `Add Step`, select `Audit` under the step type in the pop-up dialog box, fill in `@admin` in the message field, that is, the `admin` account will be audited when the pipeline runs to this stage, and then Click `OK`.
 
-     ![review](../../images/review.png)
+     
 
 ### Add stage - deploy to cluster
 
@@ -131,7 +131,7 @@ Click on `Global Settings`, select node from the `Type` drop-down list, and sele
 
 2. In the step module, select to open `specify container`, fill in the container name: go in the pop-up dialog box, and then click `OK`.
 
-     ![container3](../../images/container3.png)
+     
 
 3. Select to enable `Use Credentials` in the step module, fill in the relevant parameters in the pop-up dialog box, and then click `OK`.
 
@@ -139,7 +139,7 @@ Click on `Global Settings`, select node from the `Type` drop-down list, and sele
 
      - kubeconfig variable: If you are using the kubectl apply deployment method, the variable value must be KUBECONFIG.
 
-     ![credentials2](../../images/credentials2.png)
+     
 
 4. Click `Add Step` to perform the cluster deployment operation, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and then click `OK`.
 
@@ -151,13 +151,13 @@ Click on `Global Settings`, select node from the `Type` drop-down list, and sele
 
 1. Click `Execute Now` on the transaction details page. In the pop-up dialog box, set the three string parameters defined in the prerequisites, and click `OK` to run the pipeline.
 
-     ![run](../../images/run.png)
+     
 
 2. After the operation is successfully started, the page will automatically switch to the pipeline details page, click the record of the currently running pipeline.
 
 3. After entering the pipeline record details page, you can view the running process of the current pipeline. The admin or platform administrator is required to review the pipeline. After the audit is successful, the resources will be deployed to the cluster.
 
-    ![report](../../images/report.png)
+    
 
 ### Verify cluster resources
 
@@ -165,4 +165,4 @@ Click on `Global Settings`, select node from the `Type` drop-down list, and sele
 
 2. Go to the container management platform, click `Workload` under the cluster, and you can see the stateless workload displayed in the list.
 
-     ![deployment](../../images/deployment.png)
+     

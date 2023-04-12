@@ -6,13 +6,13 @@ This page describes the configuration of various arguments when installing Calic
 
 To install Calico in DCE 5.0, you need to select `calico` for `Network Plugins` on the `Create Cluster`->`Network Configuration` page. For creating a cluster, see [create worker cluster](../../../kpanda/07UserGuide/Clusters/CreateCluster.md).
 
-![calico-install](../../images/calico-install.png)
+
 
 ## Argument configuration
 
 If you need to configure more features for Calico, you can install Calico via Kubespray. Add and fill in arguments as needed under `Advanced Configuration`->`Custom arguments` when installing Calico using Kubespray.
 
-![calico-arg](../../images/calico-arg.png)
+
 
 The following describes the configuration of each argument when installing Calico with Kubespray：
 

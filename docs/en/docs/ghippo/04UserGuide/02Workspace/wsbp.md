@@ -9,7 +9,7 @@ Through the workspace, you can easily manage teams and resources, and solve cros
 
 A workspace consists of three functions: authorization, resource groups, and shared resources. It mainly solves the problems of unified authorization of resources, resource grouping and resource quota.
 
-![Workspace](../../images/quota01.png)
+
 
 1. Authorization: Grant users/groups different roles in the workspace, and apply the roles to the resources in the workspace.
 
@@ -50,7 +50,7 @@ A workspace consists of three functions: authorization, resource groups, and sha
 
 ## The effect of the workspace on the DCE module
 
-1. Module name: [Application Workbench](../../../amamba/01ProductBrief/WhatisAmamba.md), [Microservice Engine](../../../skoala/intro/features. md), [Service Mesh](../../../mspider/01Intro/WhatismSpider.md), [Middleware](../../../middleware/midware.md)
+1. Module name: [Application Workbench](../../../amamba/intro/WhatisAmamba.md), [Microservice Engine](../../../skoala/intro/features. md), [Service Mesh](../../../../../../mspider/intro/WhatismSpider.mdeware](../../../middleware/midware.md)
 
     The premise of entering the above modules is to have the permission of a certain workspace, so you must have the Admin role or have certain role permissions of a certain workspace before using the module functions.
 
@@ -60,7 +60,7 @@ A workspace consists of three functions: authorization, resource groups, and sha
 
     In addition, the resources you create in these modules will also be automatically bound to the corresponding workspace without any additional operations.
 
-2. Module name: [Container Management](../../../kpanda/03ProductBrief/WhatisKPanda.md), [Service Mesh](../../../mspider/01Intro/WhatismSpider.md )
+2. Module name: [Container Management](../../../kpanda/intro/WhatisKPanda.md), [Service Mesh](../../../mspider/01Intro/WhatismSpider.md )
 
     Due to the particularity of functional modules, resources created in the container management module will not be automatically bound to a certain workspace.
 

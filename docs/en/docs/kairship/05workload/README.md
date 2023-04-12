@@ -7,7 +7,7 @@ hide:
 
 After connecting to the working cluster, you can create workloads. Workloads managed by multicloud orchestration software can be distributed across clusters and managed by region and availability zone.
 
-![workload](../images/workload01.png)
+
 
 !!! note
 

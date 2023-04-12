@@ -6,11 +6,11 @@ When the indicator data of the resource meets the threshold condition, an alarm 
 
 1. After entering `Observability`, in the left navigation bar, select `Alert Center` -> `Alarm Rules`, and click the `New Indicator Rule` button.
 
-    ![New indicator rule](../../images/rule01.png)
+    
 
 2. On the `Create Alert Rule` page, fill in the basic information, select indicators, trigger conditions and other information.
 
-    ![Fill out the form](../../images/rule02.png)
+    
 
     - select indicator
   
@@ -38,7 +38,7 @@ When the indicator data of the resource meets the threshold condition, an alarm 
 
 Click `...` on the right side of the list, and select `Edit`, `Copy` or `Delete` in the pop-up menu to modify, copy or delete the alarm rule.
 
-![Other actions](../../images/rule03.png)
+
 
 !!! warning
 

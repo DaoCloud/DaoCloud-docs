@@ -2,7 +2,7 @@
 
 Users can make uniform injection settings and sidecar resource limit settings for all clusters under the mesh.
 
-![Global Sidecar Management](../../images/globalSidecar.png)
+
 
 ## Global sidecar automatic injection
 
@@ -16,7 +16,7 @@ The global injection function will enable the label `values.sidecarInjectorWebho
 
 Select a cluster in the cluster list, click `Sidecar Resource Limit`, and set the requested resources and restricted resources for each Pod instance for the selected cluster in the pop-up window, where requested resources are resources that must be obtained, and restricted resources are available resources upper limit. Entering 0 means there is no limit for this item.
 
-![Sidecar Resource Limit](../../images/globalSidecar-resourceLimit.png)
+
 
 !!! note
 

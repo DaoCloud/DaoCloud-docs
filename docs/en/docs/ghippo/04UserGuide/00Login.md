@@ -35,4 +35,3 @@ class success,fail k8s
 
 The user login interface is shown in the figure below. For the specific login screen, please refer to the actual product.
 
-![Login Screen](../images/login02.png)

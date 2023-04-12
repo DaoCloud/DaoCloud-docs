@@ -15,11 +15,11 @@ Prerequisite: You have the platform administrator Admin permission or the access
 
 1. The administrator enters `Users and Access Control`, selects `Users`, enters the user list, and clicks `Create User` on the upper right.
 
-    ![Create User Button](../../images/createuser01.png)
+    
 
 2. Fill in the user name and login password on the `Create User` page. If you need to create multiple users at one time, you can click `Create User` to create in batches, and you can create up to 5 users at a time. Determine whether to set the user to reset the password when logging in for the first time according to your actual situation.
 
-    ![Set username and password](../../images/createuser02.png)
+    
 
 3. Click `OK`, the user is successfully created and returns to the user list page.
 
@@ -33,11 +33,11 @@ Prerequisite: The user already exists.
 
 1. The administrator enters `Users and Access Control`, selects `Users`, enters the user list, and clicks `...` -> `Authorization`.
 
-    ![Authorize Menu](../../images/authorize01.png)
+    
 
 2. On the `Authorization` page, check the required role permissions (multiple choices are allowed).
 
-    ![Authorize interface](../../images/authorize02.png)
+    
 
 3. Click `OK` to complete the authorization for the user.
 
@@ -49,11 +49,11 @@ Prerequisite: The user already exists.
 
 1. The administrator enters `Users and Access Control`, selects `Users`, enters the user list, and clicks `...` -> `Add group`.
 
-    ![Join Group Menu](../../images/joingroup01.png)
+    
 
 2. On the `Join group` page, check the groups to be joined (multiple choices are allowed). If there is no optional group, click `Create group` to create a group, and then return to this page and click the `Refresh` button to display the newly created group.
 
-    ![Join group interface](../../images/joingroup02.png)
+    
 
 3. Click `OK` to add the user to the group.
 
@@ -67,11 +67,11 @@ Once a user is deactivated, that user will no longer be able to access the Platf
 
 1. The administrator enters `Users and Access Control`, selects `Users`, enters the user list, and clicks a user name to enter user details.
 
-    ![User Details](../../images/createuser03.png)
+    
 
 2. Click `Edit` on the upper right, turn off the status button, and make the button gray and inactive.
 
-    ![edit](../../images/enableuser.png)
+    
 
 3. Click `OK` to finish disabling the user.
 
@@ -81,11 +81,11 @@ Premise: User mailboxes need to be set. There are two ways to set user mailboxes
 
 - On the user details page, the administrator clicks `Edit`, enters the user's email address in the pop-up box, and clicks `OK` to complete the email setting.
 
-    ![edit](../../images/enableuser.png)
+    
 
 - Users can also enter the `Personal Center` and set the email address on the `Security Settings` page.
 
-    ![Personal Center](../../images/mailbox.png)
+    
 
 If the user forgets the password when logging in, please refer to [Reset Password](../password.md).
 
@@ -100,8 +100,8 @@ If the user forgets the password when logging in, please refer to [Reset Passwor
 
 1. The administrator enters `Users and Access Control`, selects `Users`, enters the user list, and clicks `...` -> `Delete`.
 
-    ![Delete User Menu](../../images/deleteuser01.png)
+    
 
 2. Click `Remove` to finish deleting the user.
 
-    ![Delete user confirmation](../../images/deleteuser02.png)
+    

@@ -13,7 +13,7 @@ Prerequisite: An external Harbor registry has been created or integrated, and on
 
 1. Log in to the web console as a user with the Admin role, and click `container registry` from the left navigation bar.
 
-    ![container registry](./images/hosted01.png)
+    
 
 1. Click `registry Integration` on the left navigation bar, click a registry name to enter the registry, and navigate to the displayed `registry Space` menu.
 
@@ -21,7 +21,7 @@ Prerequisite: An external Harbor registry has been created or integrated, and on
 
 1. Click `OK` to finish binding the workspace.
 
-    ![container registry](./images/bind-space-to-ws.png)
+    
 
 ## FAQ
 
@@ -31,7 +31,7 @@ Prerequisite: An external Harbor registry has been created or integrated, and on
     - Check whether the registry space is bound to the workspace where the Kubernetes namespace is located (binding is required).
     - To check whether the status of the registry space is private or public, switch to the following tab to find out.
 
-    ![container registry](./images/bind-space-to-ws02.png)
+    
 
 2. What is the difference between assigning a registry space to a workspace and associating a registry under a workspace?
 

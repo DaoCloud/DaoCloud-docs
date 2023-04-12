@@ -36,4 +36,4 @@ If you choose to use SSH keys to connect to all the nodes of the cluster to be c
 
 5. Download the encoded private key file `id_rsa` to your current node, and upload the private key file on the interface.
 
-    ![SSH Authentication](../../../kpanda/images/createcluster-ssh01.png)
+    

@@ -14,7 +14,7 @@ The service mesh provides users with three mesh types: managed mesh, dedicated m
 - Proprietary mesh: used for mesh management of a single cluster, the mesh control plane is installed in the user's working cluster and cannot be connected to other clusters;
 - External mesh: access to the native Istio installed by the user, inject the sidecar uniformly through the service mesh management platform, and issue management policies, etc.
 
-![Mesh List](../../images/servicemesh01.png)
+
 
 The meanings of each mesh list card are as follows:
 

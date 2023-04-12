@@ -11,7 +11,7 @@ The steps to create a microservice gateway are as follows:
 
 1. Click `Microservice Gateway` on the left navigation bar, and click `Create Gateway` in the upper right corner of the `Microservice Gateway List` page to enter the microservice gateway creation page.
 
-    ![Enter creation page](imgs/enter-creation-page.png)
+    
 
 2. Fill in the configuration
 
@@ -22,11 +22,11 @@ The steps to create a microservice gateway are as follows:
     - Jurisdiction namespace: the namespace where the default jurisdiction gateway is located. It supports the jurisdiction of multiple namespaces at the same time. The same namespace cannot be governed by two gateways at the same time.
     - Control the number of nodes: a single copy is unstable and needs to be selected carefully.
 
-        ![Fill in the basic configuration](imgs/config.png)
-        ![Fill in advanced configuration](imgs/advance-config.png)
+        
+        
 
 3. Confirm the filled information and click `Confirm` in the lower right corner of the page.
 
-    ![Confirm the information filled in](imgs/confirm.png)
+    
 
 After clicking `Confirm`, a message that the gateway is successfully created will pop up in the upper right corner. The system will automatically return to the `Microservice Gateway List` page, and you can see the newly created gateway instance in the list.

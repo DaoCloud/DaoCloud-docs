@@ -21,8 +21,8 @@ Generally, no business load is carried.
 
 This cluster is used to manage the working cluster and generally does not carry business load.
 
-- [Classic mode](../../../install/commercial/deploy-plan.md#_2) Deploy the global service cluster and management cluster in different clusters, suitable for enterprise multi-data centers and multi-architecture Scenes.
-- [Simple Mode](../../../install/commercial/deploy-plan.md#_3) Deploy the management cluster and the global service cluster in the same cluster.
+- [Classic mode](../../../install/commercial/deploy-requirements.md#_2) Deploy the global service cluster and management cluster in different clusters, suitable for enterprise multi-data centers and multi-architecture Scenes.
+- [Simple Mode](../../../install/commercial/deploy-requirements.md#_3) Deploy the management cluster and the global service cluster in the same cluster.
 
 | Supported Features | Description |
 | -------------------------------------------------- ----------------- | -------------------------------- ------ |
@@ -36,7 +36,7 @@ This cluster is used to manage the working cluster and generally does not carry 
 
 ## Working cluster
 
-This is a cluster created using [Container Management](../../03ProductBrief/WhatisKPanda.md), which is mainly used to carry business load. The cluster is managed by the management cluster.
+This is a cluster created using [Container Management](../../intro/WhatisKPanda.md), which is mainly used to carry business load. The cluster is managed by the management cluster.
 
 | Supported Features | Description |
 | -------------------------------------------------- ----------------- | -------------------------------- ------ |

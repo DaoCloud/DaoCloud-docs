@@ -5,26 +5,18 @@ hide:
 
 # Free Trial
 
-The modules included in DCE 5.0 Community are [Global Management](../ghippo/01ProductBrief/WhatisGhippo.md), [Container Management](../kpanda/03ProductBrief/WhatisKPanda.md), [App Workbench](../amamba/01ProductBrief/WhatisAmamba.md), [Insight](../insight/intro/WhatisInsight.md), and more.
+The modules included in DCE 5.0 Community are [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [Workbench](../amamba/intro/WhatisAmamba.md), [Insight](../insight/intro/WhatisInsight.md), and more.
 
 Follow the steps below to get a license for your DCE 5.0 Community Package:
 
 1. Click [Apply for license](https://qingflow.com/f/58604bf8){ .md-button } and click `Submit` after you fill in required information in the form.
 
-    ![license](../images/license011.png)
-
 2. Follow the on-screen instructions, check your email containing the license, and then click [Get an offline authorization code](https://license.daocloud.io/dce5-license){ .md-button }.
-
-    ![get-auth-code](../images/license012.png)
 
 3. Input the license you just received and input your ESN, click `Get an offline authorization code`.
 
-    ![offline-auth-code](../images/license03.png)
-
     ESN is the unique device code of the cluster system.
     Follow the steps to get your ESN: Open DCE, click `Global Management`->`Settings`->`Licensing`, click `Manage License` to open the `Manage License` page, and copy the ESN code.
-
-    ![esn](../images/license02.png)
 
 4. Copy and paste the offline authorization code exchanged in the previous step, and click `Activate Now`. Congratulations! :smile: It's time to explore the new DCE 5.0 now!
 

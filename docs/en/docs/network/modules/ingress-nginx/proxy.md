@@ -24,7 +24,7 @@ ingress-nginx:
       load-balance: ewma
 ```
 
-![set-load-balancer](../../images/ingress-nginx-helm-set-load-balancer.png)
+
 
 ## Domain-based traffic load
 

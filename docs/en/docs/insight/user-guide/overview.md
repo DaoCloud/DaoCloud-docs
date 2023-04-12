@@ -9,7 +9,7 @@ This article introduces the overview information of the clusters managed in `Con
 
 1. Select `Overview` in the left navigation bar to enter the details page.
 
-    ![Overview](../images/overview01.png)
+    
 
 2. (Optional) Click the `Refresh` button in the upper right corner to automatically update the data.
 

@@ -9,7 +9,7 @@ Take container management (codename `kpanda`) as an example, docking to the navi
 
 The expected effect after docking is as follows:
 
-![Docking effect](../images/gproduct01.png)
+
 
 ## Docking method
 

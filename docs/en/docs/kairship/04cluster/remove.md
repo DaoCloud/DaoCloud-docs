@@ -7,11 +7,11 @@ hide:
 
 If you want to remove a cluster, you can click the `…` button on the right in the list of working clusters, and select `Remove` from the pop-up menu.
 
-![removal](../images/removecl01.png)
+
 
 Enter the name of the cluster in the pop-up window, and click `Confirm to remove` after confirming that it is correct.
 
-![removal](../images/removecl02.png)
+
 
 !!! note
 

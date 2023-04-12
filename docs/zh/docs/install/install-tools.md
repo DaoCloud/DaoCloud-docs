@@ -3,7 +3,7 @@
 安装 DCE 5.0 之前，需要先安装一些依赖项。
 
 - 对于社区版，请在 K8s Master 节点上安装依赖项。
-- 对于商业版，请在[火种节点](./commercial/deploy-plan.md#_4)上安装依赖项。
+- 对于商业版，请在[火种节点](./commercial/deploy-arch.md)上安装依赖项。
 
 !!! note
 
@@ -23,7 +23,7 @@
 
 1. 下载脚本。
 
-    ```shell
+    ```bash
     curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
     ```
 

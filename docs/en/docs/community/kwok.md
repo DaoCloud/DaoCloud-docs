@@ -1,6 +1,6 @@
 # KWOK (`K`ubernetes `W`ith`O`ut `K`ubelet)
 
-![kwok](./images/kwok.png){ align=right }
+{ align=right }
 
 [kwok](https://sigs.k8s.io/kwok) is a toolkit that enables setting up a cluster of thousands of Nodes in seconds.
 Under the scene, all Nodes are simulated to behave like real ones, so the overall approach employs

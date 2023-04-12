@@ -30,19 +30,19 @@ For associated and integrated repositories, will appear in the list of images. Y
 
 1. Enter the image list in the image registry, select an instance and registry space, and click an image.
 
-    ![image List](./images/scan01.jpg)
+    
 
 2. In the image details list, click `⋮` on the right side of the list, and select `Scan` from the pop-up menu.
 
-    ![Scan](./images/scan02.jpg)
+    
 
 3. The system starts to scan the image, usually the status is `queuing`, `scanning`, `scanning completed`.
 
-    ![Queuing](./images/scan03.jpg)
+    
 
-    ![Scanning](./images/scan04.jpg)
+    
 
-    ![Scan complete](./images/scan05.jpg)
+    
 
     Scan status includes:
 
@@ -55,7 +55,7 @@ For associated and integrated repositories, will appear in the list of images. Y
 
 4. After the scan is complete, hover the cursor over the scale bar of the scan to view the scan details.
 
-    ![Scan complete](./images/scan06.jpg)
+    
 
 ## Scan native Harbor images
 
@@ -65,10 +65,10 @@ The specific operation steps are:
 
 1. Log in to the image registry as a platform administrator, and click `registry Integration` at the bottom left.
 
-    ![registry Integration](./images/harbor01.jpg)
+    
 
 2. In the list of integrated registries, hover the cursor over a certain registry, and click the `Native Harbor` icon.
 
-    ![registry Integration](./images/harbor02.jpg)
+    
 
 3. Jump to the native Harbor, see [Scanning Harbor images](https://goharbor.io/docs/2.1.0/administration/vulnerability-scanning/scan-individual-artifact/).

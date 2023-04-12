@@ -9,4 +9,3 @@ Istio provides an authorization mechanism and two authentication methods (reques
 Users can create and edit resource files in the service mesh through wizards and YAML writing.
 And you can create rules for the three levels of mesh global, namespace, and workload. When the resources are successfully created, Istiod will convert them into configurations and distribute them to the sidecar agent for execution.
 
-![Security Governance](../../images/security.png)

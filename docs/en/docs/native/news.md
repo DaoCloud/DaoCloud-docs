@@ -219,7 +219,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     In addition, GitOps project Argo, service mesh technology Envoy, Cilium and Istio also ranked high.
     The [2022 CNCF Project Rankings](https://docs.google.com/spreadsheets/d/1NifFdE45BlscO6j7vlDspccQ-i9Ksgip6yx2bmhmCCs/edit#gid=976519966) are shown below (bubble area is proportional to the number of authors) and the number of pr and issue on the y-axis, and the number of commits on the x-axis).
 
-    ![CNCF](./images/CNCF-Projects.png)
+    
 
 - [January 9 China ICT Academy released 2022 China Serverless User Survey Report](https://mp.weixin.qq.com/s/qpWr5o3GTynHXhexHidx3Q)
   
@@ -280,7 +280,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     The X-axis represents customer satisfaction and the Y-axis represents market share.
     The leading container management platform products are AWS Fargate, Amazon ECS, Amazon EKS and Mirantis Kubernetes Engine.
 
-    ![G2](./images/G2.png)
+    
 
 - [Kasten launches free cloud native learning website KubeCampus.io](https://www.kasten.io/kubernetes/resources/blog/kubecon-detroit-recap-and-introducing-kubecampus)
   
@@ -311,7 +311,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     In 2021, the market size of China's private cloud system platform reaches 5.14 billion yuan, up 45.2% year-on-year.
     Among them, the market size of container platform is 1.26 billion yuan, accounting for 24.5 % of the private cloud system platform size.
     The 2021 private cloud system platform vendor competitiveness quadrant analysis chart is as follows.
-    ![private](./images/private.png)
+    
 
 - [On December 14, the selection of the second "Ten Cloud Native Technology Innovations/Pioneering Practices" was officially launched](https://mp.weixin.qq.com/s/UZ_05I06VCJYN5MKLwO7IA)
 
@@ -374,7 +374,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [International consulting firm Sullivan released the 2022 Cloud Native Application Protection Platform Radar Report on November 29](https://1665891.fs1.hubspotusercontent-na1.net/hubfs/1665891/Frost%20Radar%20-%20CNAPP%202022%20-%20Aqua%20Security.pdf?_hsmi=235753068&_hsenc=p2ANqtz-_imKv0Cl7-_MGhYeSCsaey9txVoiKZQ7AiKuvvWdshrrAcw1zflc5_x9gLM_kJDXKVTZ8akc0IkBEXC_FA-TNBAR)x
   
      Sullivan selected 15 leading manufacturers based on business growth and innovation indicators, including Aqua Security, Check Point, Lacework, Sysdig, etc. Among them, Aqua was selected as the preferred benchmarking enterprise for investment or cooperation.
-![protection](./images/protection.png)
+
 
 - [The KubeSphere community launched a podcast KubeSphere Talk on November 29](https://mp.weixin.qq.com/s/Ud__u2YaUkdSx5yi7dKDHw)
   
@@ -483,7 +483,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      The Gartner Magic Quadrant for CIPS focuses on infrastructure as a service (IaaS) and integration platform as a service (PaaS) offerings.
      This year's report shows that AWS, Azure, and Google Cloud continue to lead the way and are named in the Leaders quadrant. In China, Alibaba Cloud, Huawei Cloud and Tencent Cloud were selected, among which Huawei Cloud was selected for the first time.
 
-     ![quadrant](./images/Quadrant.png)
+     
 
 - [On October 17, iResearch released a research report "Insights on the Development of Basic Cloud Service Industry in 2022"](https://mp.weixin.qq.com/s/FGc2yFUfflUuf13Z0NAzvQ)
 
@@ -559,7 +559,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      Emerging technology trends for 2022 focus on three themes: Evolving/Scaling Immersive Experiences, Accelerating AI Automation, and Optimizing Technician Delivery.
      Among them, optimizing the delivery of technical personnel, OpenTelemetry, etc. will have a significant impact on business and society in the next 2-5 years, while data observability, observability-driven development, and industry cloud platforms will take 5-10 years to be widely adopted. use.
 
-     ![hype](./images/hype.png)
+     
 
 - [September 15-17 International Open Source Festival, Cloud Native becomes the focus](https://mp.weixin.qq.com/s/wrEzT5xXGCvijZ-sK4v21A)
 
@@ -577,7 +577,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      GigaOm evaluates mainstream service meshes from four dimensions: specialized infrastructure layer, sidecar practice, control plane configuration, and control plane telemetry.
      Among them, Gloo Mesh, greymatter.io, Kong Mesh, and Linkerd were rated as outstanding performers. Of note is Cilium Service Mesh, one of the first service meshes that can leverage either a sidecar or no sidecar model.
 
-     ![radar](./images/mesh.png)
+     
 
 - [September 13-16, the Linux Foundation announced the Open Source Summit Europe 2022 conference schedule](https://linuxfoundation.org/featured/the-linux-foundation-announces-conference-schedule-for-open-source-summit-europe-2022/)
 
@@ -611,7 +611,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      The maturity curve of cloud platform service technology in 2022 shows that cloud native technology is currently in a period of inflated expectations, and is expected to enter the production maturity period in the next 5-10 years;
      Container management technology is at the trough of the bubble burst, and will enter a mature stage in 2-5 years; integrated platform as a service (iPaaS) and low-code application platform (LCAP) technologies will reach production maturity within two years (the practical significance of the technology has been proven and Accept).
 
-     ![Gartner](./images/gartner.jpg)
+     
 
 - [August 27 KubeSphere Community Cloud Native Technology Exchange Meetup Hangzhou Station registration opens](https://mp.weixin.qq.com/s/TNqG6tRxUwRrA-NoP26lRg)
 
@@ -701,7 +701,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      What this group has in common is to combine storage platforms with Kubernetes distributions and cluster management products to provide Kubernetes users with a highly integrated overall solution.
      Vendors in the lower left quadrant are more oriented toward specific functions, deployment models, or personalized use cases.
 
-     ![radar](./images/storage.jpg)
+     
 
 - [Alibaba Cloud released "Cloud Native Architecture White Paper 2022 Edition" on July 27](https://mp.weixin.qq.com/s/G8TAkeezVQz22bevr1zdKw)
 
@@ -859,7 +859,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      Datadog, a cloud monitoring SaaS platform vendor, has also risen sharply in the rankings with its powerful platform product portfolio.
      Cisco (AppDynamics) and IBM (Instana) dropped more notably. In addition, Alibaba Cloud became the only domestic vendor selected by virtue of its core APM product - Application Real-time Monitoring Service (ARMS).
 
-     ![APM Quadrant](./images/Magic.png)
+     
 
 - [On June 6, Kubecost, a Kubernetes cost management company, joined forces with AWS and Google to submit a cost management open source project to CNCF—OpenCost](https://thenewstack.io/opencost-open-source-collaboration-on-kubernetes-cost-standards/)
 

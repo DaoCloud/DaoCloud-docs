@@ -6,7 +6,7 @@ An access key is required for every user login or access to a resource. Follow t
 
 Log in to DCE 5.0, find `Personal Center` in the drop-down menu in the upper right corner, and you can manage the access key pair of the account on the `Platform Settings` page.
 
-![img](../../images/platform01.png)
+
 
 !!! note
 

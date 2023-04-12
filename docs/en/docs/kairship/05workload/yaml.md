@@ -6,23 +6,23 @@ The steps for this creation method are relatively simple, as described below.
 
 1. In the left navigation bar, click `Multicloud Workload`, and click the `Create with YAML` button in the upper right corner.
 
-    ![image](../images/depyaml01.png)
+    
 
 2. For example, after entering the YAML statement for creating a Deployment, click `Next`.
 
-    ![image](../images/depyaml02.png)
+    
 
 3. After entering the YAML statement of the PropagationPolicy, click `Next`.
 
-    ![image](../images/depyaml03.png)
+    
 
 4. After entering the YAML statement of the OverridePolicy, click `OK`.
 
-    ![image](../images/depyaml04.png)
+    
 
 5. Automatically return to the list of multicloud workloads, click `⋮` on the right side of the list, you can edit and modify the YAML, and you can also pause, restart, and delete the workload.
 
-    ![image](../images/depyaml05.png)
+    
 
 ## YAML example
 

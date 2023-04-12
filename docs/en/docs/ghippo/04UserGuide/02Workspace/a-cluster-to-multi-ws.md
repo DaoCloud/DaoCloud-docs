@@ -45,15 +45,15 @@ Workspaces can be mapped to various concepts such as projects, tenants, enterpri
 
 1. Log in to the web console as a user with the admin/folder admin role, and click `Global Management` at the bottom of the left navigation bar.
 
-    ![Global Management](../../images/ws01.png)
+    
 
 1. Click `Workspace and Hierarchy` in the left navigation bar, and click the `Create Workspace` button in the upper right corner.
 
-    ![Create workspace](../../images/ws02.png)
+    
 
 1. After filling in the workspace name, folder and other information, click `OK` to complete the creation of the workspace.
 
-    ![OK](../../images/ws03.png)
+    
 
 ## Prepare a cluster
 
@@ -63,7 +63,7 @@ Follow the steps below to prepare a cluster.
 
 1. Click `Container Management` at the bottom of the left navigation bar, and select `Cluster List`.
 
-    ![Container Management](../../images/clusterlist01.png)
+    
 
 1. Click `Create Cluster`[Create a Cluster](../../../kpanda/07UserGuide/Clusters/CreateCluster.md), or click `Join Cluster`[Join a Cluster](../ ../../kpanda/07UserGuide/Clusters/JoinACluster.md).
 
@@ -73,10 +73,10 @@ Return to `Global Management` to add clusters for the workspace.
 
 1. Click `Global Management` -> `Workspace and Hierarchy` -> `Shared Resources`, click a workspace name, and click the `New Shared Resource` button.
 
-    ![Add resource](../../images/addcluster01.png)
+    
 
 1. Select a cluster, fill in the resource limit, and click `OK`.
 
-    ![Add resource](../../images/addcluster02.png)
+    
 
 Next step: After allocating cluster resources to multiple workspaces, users can go to `Application Workbench` under these workspaces [create namespace and deploy application](../../../amamba/03UserGuide/Namespace /namespace.md).

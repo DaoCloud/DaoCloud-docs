@@ -23,15 +23,15 @@ Two creation methods are supported:
 
 1. Click the name of a cluster on the `Cluster List` page to enter `Cluster Details`.
 
-    ![Cluster Details](../../images/deploy01.png)
+    
 
 2. In the left navigation bar, click `Configuration and Key` -> `Key`, and click the `Create Key` button in the upper right corner.
 
-    ![Create Secret](../../images/secret01.png)
+    
 
 3. Fill in the configuration information on the `Create Key` page, and click `OK`.
 
-    ![Create Secret](../../images/secret02.png)
+    
 
     Note when filling in the configuration:
 
@@ -52,15 +52,15 @@ Two creation methods are supported:
 
 1. Click the name of a cluster on the `Cluster List` page to enter `Cluster Details`.
 
-    ![Cluster Details](../../images/deploy01.png)
+    
 
 2. In the left navigation bar, click `Configuration and Key`->`Key`, and click the `Create with YAML` button in the upper right corner.
 
-    ![Create with YAML](../../images/secret03.png)
+    
 
 3. Fill in the YAML configuration on the `Create with YAML` page, and click `OK`.
 
-    ![Create with YAML](../../images/secret04.png)
+    
 
     **Example key:**
 

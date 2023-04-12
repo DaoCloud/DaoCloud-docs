@@ -68,7 +68,7 @@ In the case of a single cluster, all workloads are on the same network (cluster 
 
 As the name implies, in the case of a single network, network instances between multiple clusters can communicate directly. At this time, no mesh operation is required, and network communication between services can be direct. The architecture diagram is as follows:
 
-![Architecture Diagram](./images/single-net.png)
+
 
 The advantage of the single network model is very obvious. When users communicate, there is no need for complicated configuration and transit, so the network analysis is more intuitive, so it can also bring higher network performance.
 
@@ -83,7 +83,7 @@ In the multi-network model, workload instances in different networks cannot comm
 
 During service communication, the mesh will perform service discovery according to the network partition. When the requested service and the target service do not belong to the same network partition, the service request will be forwarded to the east-west gateway of the target partition, and routed to the real target service through the east-west gateway.
 
-![Service Request Distribution](./images/multi-net.png)
+
 
 ## Choose multicloud service mesh architecture
 
@@ -100,7 +100,7 @@ Let's analyze the architecture provided by the existing service mesh in detail. 
 
 In the simplest case, a mesh can be run with a control plane on a single cluster.
 
-![Control plane running mesh](./images/singlecluster-primary.png)
+
 
 ### Multi-cluster single control plane
 
@@ -108,9 +108,9 @@ Multi-cluster deployments can also share control plane instances.
 In this case, the shared control plane instance of the core is deployed in the core control cluster, and the communication strategy of the mesh core is controlled by **shared control plane instance**.
 In the slave cluster, there is actually a slave control plane instance whose core capability is **controlling the sidecar life cycle management of the cluster**.
 
-![Shared control surface instance](./images/multi-primary.png)
 
-![Control sidecar of this cluster](./images/multi-primary-control.png)
+
+
 
 Think about a question, how does the sidecar from the cluster establish a connection with the shared control plane? When answering, the shared control plane needs to expose its own control plane services.
 
@@ -124,7 +124,7 @@ Such as internal load balancers, avoid exposing the control plane to the public 
 In the above description, the shared control plane belongs to a certain mesh cluster. In fact, its remote shared control plane can also be deployed in a cluster outside the mesh.
 In this way, the control plane and data plane of the mesh can be physically isolated, avoiding problems on the control plane and data plane of the main cluster at the same time, and can disperse risks.
 
-![Remote shared deployment](./images/remote-primary.png)
+
 
 ### Multi-cluster multi-control plane
 
@@ -138,7 +138,7 @@ So there is a problem here, how to configure multiple control plane clusters syn
 This is a complex problem that requires additional synchronization operations.
 In a large-scale production environment, it may be necessary to cooperate with CI/CD tools to automate the process to achieve configuration synchronization.
 
-![config sync](./images/multi-multi.png)
+
 
 Under this multi-control plane model, it is necessary to pay a great price in terms of deployment difficulty and configuration complexity.
 But it can also reap higher returns. Its core advantages lie in:
@@ -160,7 +160,7 @@ Then aggregate the **same-named services** under the **same namespace** in the c
 Therefore, in order to be able to access the multi-cluster registration center of its control plane, the mesh control plane needs to authorize the remote key from the cluster to the control plane cluster it belongs to during the deployment phase.
 After authorization, the control plane can perform service discovery for multiple clusters, so it has subsequent cross-cluster load balancing capabilities.
 
-![Authorize Remote Key](./images/multi-discovery.png)
+
 
 Under the multi-cluster mesh deployment model, the default strategy for multi-cluster services is: each cluster balances the load.
 But in a complex and huge production environment, in fact, many services only need to communicate with traffic in certain areas. At this time, the local priority load balancing strategy can be adopted (for specific methods, refer to [Locality Load Balancing mentioned by Istio official] (https ://istio.io/latest/docs/tasks/traffic-management/locality-load-balancing/)).
@@ -175,7 +175,7 @@ How can we achieve this through the mesh? Under the Istio service mesh, there ar
 1. We don’t need to exchange the `API Server` remote key of the cluster, so that the cluster can only perform service discovery within its own cluster.
    If you need to load cross-cluster traffic, you can use `ServiceEntry` to cooperate with an external loader.
 
-     ![Multi-Dup Discovery](./images/multi-dup-discovery.png)
+     
 
 2. Disable the traffic load between multiple clusters by configuring the `VirtualService` and `DestinationRule` policies.
 
@@ -221,7 +221,7 @@ However, most of the above problems can be avoided in the multi-cluster single c
 
 Let's take a look at the actual architecture of a service mesh:
 
-![Hosted Mesh](./images/mspider-hosted-mesh.png)
+
 
 In fact, the original multi-cluster single control plane cannot solve the problem of polluting multiple control plane clusters mentioned above, but if we look at the above architecture carefully, you will find that there is a big difference between this part of the architecture and the solutions provided by the community. The difference is that there is an additional set of service mesh components in the control plane cluster. The biggest feature of this set of components is that it provides a virtual cluster, which is connected to the mesh control plane, and the purpose is to integrate mesh resources and control Isolate the resources of the control plane cluster to avoid the generation of dirty resources. At this time, the problem of governance resources polluting the cluster can be perfectly solved, and the deletion of control plane policy resources by user misoperation can be avoided.
 

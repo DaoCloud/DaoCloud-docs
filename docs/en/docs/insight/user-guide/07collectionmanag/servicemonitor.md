@@ -11,11 +11,11 @@ The cluster has the Helm application `insight-agent` installed and in the `runni
 
 1. Select `Acquisition Management` on the left navigation bar to view the status of all cluster collection plug-ins.
 
-    ![Cluster List](../../images/collectmanage02.png)
+    
 
 2. Click the list `cluster name` to enter the collection configuration details.
 
-    ![cluster list](../../images/service-discover.png)
+    
 
 3. Click the link to jump to `Container Management` to create a Service Monitor.
 

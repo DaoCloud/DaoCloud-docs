@@ -18,11 +18,11 @@ Ingress is an API object that manages external access to services in the cluster
 
 1. After successfully logging in as the `NS Edit` user, click `Cluster List` in the upper left corner to enter the `Cluster List` page. In the list of clusters, click a cluster name.
 
-    ![Cluster List](../../images/service01.png)
+    
 
 2. Click `Services and Routing` on the left, click the `Routing` tab, and click the `Create Routing` button in the upper right corner.
 
-    ![Service and Routing](../../images/ingress01.png)
+    
 
     !!! tip
     
@@ -30,7 +30,7 @@ Ingress is an API object that manages external access to services in the cluster
 
 3. Open `Create Route` page to configure. There are two protocol types to choose from, please refer to the following two parameter tables for configuration.
 
-    ![create route](../../images/ingress02.png)
+    
 
 #### Create a route with protocol HTTP
 
@@ -60,4 +60,3 @@ Ingress is an API object that manages external access to services in the cluster
 
 After configuring all the parameters, click the `OK` button to return to the routing list automatically. On the right side of the list, click `︙` to modify or delete the selected route.
 
-![route list](../../images/ingress03.png)

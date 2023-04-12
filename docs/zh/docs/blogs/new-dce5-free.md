@@ -204,7 +204,7 @@ last_updated:
     sudo kubeadm init --kubernetes-version=v1.25.8 --image-repository=k8s-gcr.m.daocloud.io --pod-network-cidr=192.168.0.0/16
     ```
 
-    经过十几分钟，你能看到打印成功的信息如下（请记住最后打印出的 `kubeadm join` 命令，后续会用到 🔥）
+    经过十几分钟，你能看到打印成功的信息如下（请记住最后打印出的 `kubeadm join` 命令和相应 token，后续会用到 🔥）
 
     ```none
     Your Kubernetes control-plane has initialized successfully!
@@ -226,7 +226,7 @@ last_updated:
     --discovery-token-ca-cert-hash sha256:cb1946b96502cbd2826c52959d0400b6e214e06cc8462cdd13c1cb1dc6aa8155
     ```
 
-1. 配置 kubeconfig 文件
+1. 配置 kubeconfig 文件，以便用 kubectl 更方便管理集群
 
     ```bash
     mkdir -p $HOME/.kube
@@ -235,32 +235,33 @@ last_updated:
     kubectl get no # 你能看到第一个节点，但是仍然 NotReady
     ```
 
-1. 安装 CNI，以 calico 为例子
+1. 安装 CNI，以 Calico 为例
 
-    先安装 calico-operator
+    【请以官方安装方案为准。参考[官方 Calico 安装文档](https://docs.tigera.io/calico/latest/getting-started/kubernetes/self-managed-onprem/onpremises#install-calico)】
 
-    ```bash
-    kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/tigera-operator.yaml
-    ```
+    1. 先安装 calico-operator
 
-    再下发经过配置过的 CR
+        ```bash
+        kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/tigera-operator.yaml
+        ```
 
-    ```bash
-    # 下载配置文件模板
-    curl -LO https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/custom-resources.yaml
-    grep cidr custom-resources.yaml
+    1. 再下发经过修改/配置过的 CR
 
-    # 确认calico配置文件里的CIDR和kubeadm init时的CIDR是一致的！！！否则请修改!!!
-    vim custom-resources.yaml
-    kubectl apply -f custom-resources.yaml
-    ```
+        ```bash
+        # 下载配置文件模板
+        curl -LO https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/custom-resources.yaml
+        grep cidr custom-resources.yaml #打印出默认的CIDR
+        # 请确认 calico 配置文件里的 CIDR 和之前 kubeadm init 时的 CIDR 是一致的！！！否则请修改!!!⚠️ 
+        vim custom-resources.yaml
+        kubectl apply -f custom-resources.yaml
+        ```
 
-    等待部署成功
+    1. 等待部署成功
 
-    ```bash
-    kubectl get po -n calico-system -w # 等待 pod 都 Running
-    kubectl get no # 可以看到第一个节点变为 ready 状态了
-    ```
+        ```bash
+        kubectl get po -n calico-system -w # 等待 Pod 都 Running
+        kubectl get no # 可以看到第一个节点变为 ready 状态了
+        ```
 
 ### 接入其他 worker 工作节点
 
@@ -281,7 +282,7 @@ This node has joined the cluster:
 Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 ```
 
-在 master 节点确认节点都被加入，并且等待其都变为 Ready 状态。
+在 master 节点确认节点都被接入，并且等待其都变为 Ready 状态。
 
 ```bash
 kubectl get no -w
@@ -295,7 +296,7 @@ wget https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.24/de
 sed -i "s/image: rancher/image: docker.m.daocloud.io\/rancher/g" local-path-storage.yaml # 替换 docker.io 为实际镜像
 sed -i "s/image: busybox/image: docker.m.daocloud.io\/busybox/g" local-path-storage.yaml
 kubectl apply -f local-path-storage.yaml
-kubectl get po -n local-path-storage -w # 等待 pod 都 running
+kubectl get po -n local-path-storage -w # 等待 Pod 都 running
 
 # 把 local-path 设置为默认 SC
 kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'

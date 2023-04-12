@@ -9,15 +9,15 @@ Two creation methods are currently provided: wizard creation and Create with YAM
 
 1. After entering a multicloud instance, in the left navigation bar, click `Resource Management` -> `Multicloud ConfigMap`, and click the `Create ConfigMap` button in the upper right corner.
 
-    ![image](../images/config01.png)
+    
 
 2. On the `Create ConfigMap` page, enter the name, select the namespace and other information, and click `OK`.
 
-    ![image](../images/config02.png)
+    
 
 3. Return to the list of multicloud ConfigMaps, and the newly created one will be the first one by default. Click `⋮` on the right side of the list to edit YAML, update, export and delete ConfigMaps.
 
-    ![image](../images/config03.png)
+    
 
     !!! note
 

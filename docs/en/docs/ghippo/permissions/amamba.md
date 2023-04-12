@@ -5,7 +5,7 @@ hide:
 
 # Application workbench permission description
 
-[Application Workbench](../../amamba/01ProductBrief/WhatisAmamba.md) supports three user roles:
+[Application Workbench](../../amamba/intro/WhatisAmamba.md) supports three user roles:
 
 - Workspace Admin
 - Workspace Editor

@@ -23,22 +23,22 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
 1. Click `Container Management`->`Clusters` in the left navigation bar, then find the cluster name where you want to install Falco-exporter.
 
-    ![falco_cluster](../images/falco-cluster.png)
+    
 
 2. In the left navigation bar, select `Helm Releases` -> `Helm Charts`, and then find and click `falco-exporter`.
 
-    ![falco-exporter_helm-1](../images/falco-exporter-install-1.png)
+    
 
 3. Select the version you want to install in `Version` and click `Install`.
-    ![falco-exporter_helm-2](../images/falco-exporter-install-2.png)
+    
 
 4. On the installation screen, fill in the required installation parameters.
 
-    ![falco-exporter_helm-3](../images/falco-exporter-install-3.png)
+    
 
     In the screen as above, fill in `application name`, `namespace`, `version`, etc.
 
-    ![falco-exporter_helm-4](../images/falco-exporter-install-4.png)
+    
 
     In the screen as above, fill in the following parameters:
 
@@ -52,9 +52,9 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
     - `Falco Prometheus Exporter` -> `Prometheus ServiceMonitor Settings` -> `Scrape Timeout`: user-defined scrape timeout; if not specified, the Prometheus default scrape timeout is used.
 
-    ![falco-exporter_helm-4](../images/falco-exporter-install-5.png)
+    
 
-    ![falco-exporter_helm-4](../images/falco-exporter-install-6.png)
+    
 
    In the screen as above, fill in the following parameters:
 

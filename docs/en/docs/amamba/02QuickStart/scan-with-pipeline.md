@@ -40,11 +40,11 @@ If you already have a SonarQube environment, you can skip this step, but you nee
 
 4. Generate an administrator token (Token) in SonarQube, the operation path is: `My Account` -> `Profile` -> `Security` -> `Generate` -> `Copy`
 
-    ![scan](../images/scan01.png)
+    
 
-    ![scan](../images/scan02.png)
+    
 
-    ![scan](../images/scan03.png)
+    
 
 5. Create a Webhook server in SonarQube, the operation path:
 
@@ -58,31 +58,31 @@ If you already have a SonarQube environment, you can skip this step, but you nee
 
 7. Create a SonarQube Token for the new project, the operation path is `Create new project` -> `Set Up` -> `Generate` -> `Continue`.
 
-    ![scan](../images/scan04.png)
+    
 
-    ![scan](../images/scan05.png)
+    
 
 ## Create pipeline
 
 1. On the Pipeline page, click `Create Pipeline`.
 
-    ![scan](../images/scanp01.png)
+    
 
 2. Select `Custom Creation`.
 
-    ![scan](../images/scanp02.png)
+    
 
 3. Enter a name, others can use the default value, click `OK`.
 
-    ![scan](../images/scanp03.png)
+    
 
 ## Edit Jenkinsfile
 
 1. Click a pipeline to enter its details page, click `...` -> `Edit Jenkinsfile` in the upper right corner.
 
-    ![scan](../images/scanp04.png)
+    
 
-    ![scan](../images/scanp05.png)
+    
 
 2. Copy and paste the following YAML code into jenkinsfile.
 
@@ -178,4 +178,3 @@ If you already have a SonarQube environment, you can skip this step, but you nee
 
 After waiting for the pipeline to run successfully, go to SonarQube to view the code scanning results.
 
-![scan](../images/scan06.png)

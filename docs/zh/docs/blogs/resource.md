@@ -131,7 +131,7 @@
 6. 谁能够创建 Workspace？
 
     答：Admin、Workspace Owner、Folder Admin。
-   
+
 7. 想要获得 微服务治理、应用工作台、服务网格权限找谁授权？
 
     答：微服务治理、应用工作台、服务网格下的资源均自动绑定 Workspace，且权限强依赖于 Workspace，需要通过获得 Workspace 权限继而获取相关的资源权限。

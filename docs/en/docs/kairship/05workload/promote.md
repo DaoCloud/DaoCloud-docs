@@ -6,19 +6,19 @@ status: new
 
 Multicloud orchestration supports one-click upgrade of sub-cluster workloads to multicloud workloads through simple selection operations.
 
-![image](../images/promote01.jpg)
+
 
 ## Operation Guide
 
 Click the `Try Now` button above to quickly upgrade the application of the sub-cluster to a multicloud application; this function is currently in the trial version, if you encounter any problems, you can give feedback in the button below.
 
-![image](../images/promote02.jpg)
+
 
 - Select the corresponding sub-cluster. Note that only the working cluster that the current workload has been connected to is displayed here. The current workload that is not connected cannot be viewed. The specific access list can be viewed on the working cluster management page
 - Select an application, which supports fuzzy retrieval based on the namespace and workload name, helping you quickly locate the application
 - Click `Confirm` to complete the multicloud workload
 
-![image](../images/promote03.jpg)
+
 
 After multicloudization is completed, actions such as editing and updating can be performed according to normal multicloud workloads, which are no different from standard multicloud workloads.
 

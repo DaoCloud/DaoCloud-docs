@@ -17,11 +17,11 @@ Configuration goal: realize the external exposure of the internal service `booki
 
 1. Through the URI matching method, realize the access routing of the specified page of the service `bookinfo.com` by external applications.
 
-    ![Access Route](../../images/out-to-in01.png)
+    
 
 2. Click `Traffic Governance` -> `Gateway Rules` -> `Create` to create a gateway rule for the istio gateway, and expose the service and port to the outside.
 
-    ![Create Rule](../../images/out-to-in02.png)
+    
 
     The YAML example after configuration is as follows:
 
@@ -46,7 +46,7 @@ Configuration goal: realize the external exposure of the internal service `booki
 
 4. Click `Traffic Governance` -> `Virtual Service` -> `Create` to create routing rules to route to specified pages based on the URI in the request.
 
-    ![Create routing rule](../../images/out-to-in04.png)
+    
 
     The YAML example after configuration is as follows:
 

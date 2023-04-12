@@ -9,7 +9,7 @@
 #### 新功能
 
 - **新增** 使用界面查询 PVC 事件。
-- **新增** 创建任务支持配置 Back Off Limit、Completions、Parallelism、Active Deadline Seconds 等参数。
+- **新增** 创建任务支持配置 backofflimit、completions、parallelism、activeDeadlineSeconds 等参数。
 - **新增** 集成自研开源存储组件 Hwameistor，支持在 `容器存储` 模块查看本地存储资源概览等信息。
 - **新增** 新增集群巡检功能，支持对集群进行秒级巡检（Alpha）。
 - **新增** 新增应用备份功能，支持界面化快速对应用进行备份和恢复（Alpha）。

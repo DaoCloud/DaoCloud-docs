@@ -109,7 +109,7 @@ flowchart TD
     click install "https://docs.daocloud.io/mspider/install/"
     click managed "https://docs.daocloud.io/mspider/user-guide/service-mesh/create-mesh/"
     click private "https://docs.daocloud.io/mspider/user-guide/service-mesh/create-mesh/"
-    click external "https://docs.daocloud.io/mspider/user-guide/service-mesh/integrate-mesh/"
+    click external "https://docs.daocloud.io/mspider/user-guide/service-mesh/external-mesh/"
     click cluster "https://docs.daocloud.io/mspider/user-guide/cluster-management/join-clus/"
     click global "https://docs.daocloud.io/mspider/user-guide/sidecar-management/global-sidecar/"
     click namespace "https://docs.daocloud.io/mspider/user-guide/sidecar-management/ns-sidecar/"

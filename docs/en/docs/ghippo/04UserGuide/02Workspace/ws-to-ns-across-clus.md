@@ -60,19 +60,19 @@ Workspaces can be mapped to various concepts such as projects, tenants, enterpri
 
 1. Log in to the web console as a user with the admin/folder admin role, and click `Global Management` at the bottom of the left navigation bar.
 
-    ![Global Management](../../images/ws01.png)
+    
 
 1. Click `Workspace and Hierarchy` in the left navigation bar, and click the `Create Workspace` button in the upper right corner.
 
-    ![Create workspace](../../images/ws02.png)
+    
 
 1. After filling in the workspace name, folder and other information, click `OK` to complete the creation of the workspace.
 
-    ![OK](../../images/ws03.png)
+    
 
 Tip: If the created namespace already exists in the platform, click on a workspace, and under the `Resource Group` tab, click `Bind Resource` to directly bind the namespace.
 
-![popup menu binding](../../images/across02.png)
+
 
 ## Prepare the namespace
 
@@ -82,15 +82,15 @@ Follow the steps below to prepare a namespace that is not yet bound to any works
 
 1. Click `Container Management` at the bottom of the left navigation bar.
 
-    ![Container Management](../../images/crd00.png)
+    
 
 1. Click the name of the target cluster to enter `Cluster Details`.
 
-    ![Cluster Details](../../../kpanda/images/crd01.png)
+    
 
 1. Click `Namespace` on the left navigation bar to enter the namespace management page, and click the `Create` button on the right side of the page.
 
-    ![create namespace](../../../kpanda/images/ns01.png)
+    
 
 1. Fill in the name of the namespace, configure the workspace and tags (optional settings), and click `OK`.
 
@@ -98,11 +98,11 @@ Follow the steps below to prepare a namespace that is not yet bound to any works
 
         Workspaces are primarily used to divide groups of resources and grant users (groups of users) different access rights to that resource. For a detailed description of the workspace, please refer to [Workspace and Hierarchy](../../../ghippo/04UserGuide/02Workspace/Workspaces.md).
 
-    ![Fill](../../../kpanda/images/ns02.png)
+    
 
 1. Click `OK` to complete the creation of the namespace. On the right side of the namespace list, click `⋮`, and you can select `Bind Workspace` from the pop-up menu.
 
-    ![OK and bind](../../../kpanda/images/ns03.png)
+    
 
 ## Bind the namespace to the workspace
 
@@ -110,18 +110,18 @@ In addition to binding in the namespace list, you can also return to `global man
 
 1. Click `Global Management` -> `Workspace and Hierarchy` -> `Resource Group`, click a workspace name, and click the `Bind Resource` button.
 
-    ![Bind resource](../../images/bind01.png)
+    
 
 1. Select the workspace to be bound (multiple choices are allowed), and click `OK` to complete the binding.
 
-    ![OK](../../images/bind02.png)
+    
 
 ## Add members to the workspace and authorize
 
 1. In `Workspace and Hierarchy` -> `Authorization`, click the name of a workspace, and click the `Add Authorization` button.
 
-    ![Add Authorization](../../images/wsauth01.png)
+    
 
 1. After selecting the `User/group` and `Role` to be authorized, click `OK` to complete the authorization.
 
-    ![OK](../../images/bind02.png)
+    

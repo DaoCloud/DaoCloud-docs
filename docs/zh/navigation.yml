@@ -18,13 +18,16 @@ nav:
               - 标准 K8s 集群在线安装: install/community/k8s/online.md
               - 标准 K8s 集群离线安装: install/community/k8s/offline.md
           - 安装商业版:
-              - 部署规划: install/commercial/deploy-plan.md
               - 部署架构: install/commercial/deploy-arch.md
+              - 部署要求: install/commercial/deploy-requirements.md
               - 准备工作: install/commercial/prepare.md
               - 离线安装步骤: install/commercial/start-install.md
               - 使用场景示例: install/commercial/scenarios.md
               - 修改集群配置文件: install/commercial/cluster-config.md
-          - 卸载: install/uninstall.md
+          - 升级/卸载/FAQ:
+              - 升级 DCE 5.0 GProduct: install/upgrade.md
+              - 卸载: install/uninstall.md
+              - 常见问题: install/faq.md
           - Release Notes: install/release-notes.md
       - 容器管理:
           - 介绍:
@@ -34,6 +37,7 @@ nav:
               - 适用场景: kpanda/intro/scenarios.md
               - 基本概念: kpanda/intro/concepts.md
               - Release Notes: kpanda/intro/release-notes.md
+              - 功能发布动态: kpanda/intro/news.md
           - 集群管理:
               - 创建集群: kpanda/user-guide/clusters/create-cluster.md
               - 接入集群: kpanda/user-guide/clusters/integrate-cluster.md
@@ -120,6 +124,7 @@ nav:
           - 角色和权限管理:
               - ghippo/user-guide/access-control/role.md
               - 全局管理角色: ghippo/user-guide/access-control/global.md
+              - 自定义角色: ghippo/user-guide/access-control/custom-role.md
           - 身份提供商:
               - ghippo/user-guide/access-control/idprovider.md
               - LDAP: ghippo/user-guide/access-control/ldap.md
@@ -318,7 +323,8 @@ nav:
               - Release Notes: skoala/intro/release-notes.md
           - 快速入门:
               - 安装微服务引擎: skoala/quickstart/install.md
-              - 离线升级微服务引擎: skoala/quickstart/offline-upgrade.md
+              - 在线升级: skoala/quickstart/online-upgrade.md
+              - 离线升级: skoala/quickstart/offline-upgrade.md
               - 选择工作空间: skoala/quickstart/select-workspace.md
           - 微服务治理中心:
               - 托管型注册中心:
@@ -398,7 +404,7 @@ nav:
               - 边车版本升级: mspider/install/sidecar-update.md
           - 创建/删除网格:
               - 创建托管/专有网格: mspider/user-guide/service-mesh/README.md
-              - 创建外接网格: mspider/user-guide/service-mesh/integrate-mesh.md
+              - 创建外接网格: mspider/user-guide/service-mesh/external-mesh.md
               - 删除网格: mspider/user-guide/service-mesh/delete.md
               - 网格规模对应资源用量: mspider/user-guide/service-mesh/capacity-resources.md
           - 服务管理:
@@ -488,7 +494,8 @@ nav:
           - Metallb:
               - 介绍: network/modules/metallb/what.md
               - 安装: network/modules/metallb/install.md
-              - 使用: network/modules/metallb/usage.md
+              - IPPool 使用说明: network/modules/metallb/usage.md
+              - L2&BGP 模式说明: network/modules/metallb/l2&bgp.md
               - 获取客户端源 IP: network/modules/metallb/source_ip.md
           - Multus-underlay:
               - 介绍: network/modules/multus-underlay/what.md
@@ -693,6 +700,8 @@ nav:
       - 云原生网络: videos/network.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 202304 | K8s 1.27 正式发布: blogs/k8s1.27.md
+      - 202304 | 固定应用 IP 的新选择: blogs/spiderpool.md
       - 202304 | 保姆式安装社区版: blogs/new-dce5-free.md
       - 202303 | 边缘原生应用准则: blogs/edgeappwp.md
       - 202303 | Linux 单机安装社区版: blogs/linux.md
@@ -713,8 +722,8 @@ nav:
   - 下载中心:
       - DaoCloud Enterprise 5.0:
           - 索引列表: download/dce5.md
-          - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.5.0.md
-          - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.5.0.md
+          - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.6.0.md
+          - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.6.0.md
           - 下载 Addon 离线包: download/addon/v0.5.2.md
           - 下载全局管理: download/modules/ghippo.md
           - 下载 Insight: download/modules/insight.md
@@ -736,4 +745,5 @@ nav:
       - 开源项目: native/open.md
       - 知识分享: native/knowledge.md
   - OpenAPI 文档:
-      - 全局管理: openapi/ghippo/index.md
+      - OpenAPI 文档汇总: openapi/index.md
+      - OpenAPI 制作流程: openapi/api-doc-flow.md

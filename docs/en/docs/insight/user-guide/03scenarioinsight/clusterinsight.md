@@ -10,7 +10,7 @@ The cluster has [insight-agent installed](../01quickstart/installagent.md) and t
 
 1. Select `Scene Monitoring -> Cluster Monitoring` in the left navigation bar, and the information of the first selected cluster will be displayed by default.
 
-    ![Container Monitoring](../../images/cluster01.png)
+    
 
 2. Select the target cluster in the cluster list to view the detailed information of the cluster
 
@@ -19,4 +19,4 @@ The cluster has [insight-agent installed](../01quickstart/installagent.md) and t
     - Memory usage: This metric refers to the ratio of the actual memory usage of all Pod resources in the cluster to the total memory of all nodes.
     - Memory allocation ratio: This metric refers to the ratio of the sum of the memory requests of all Pods in the cluster to the total memory of all nodes.
 
-    ![Container Monitoring](../../images/cluster02.png)
+    

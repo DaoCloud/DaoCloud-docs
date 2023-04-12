@@ -30,9 +30,9 @@ The configuration method is to add the corresponding Label to **each node** of t
 
 To add a Label, you can find the corresponding cluster through the container management platform, and configure the Label for the corresponding node
 
-![image-20221214101221559](./images/add-node-label.png)
 
-![image-20221214101633044](./images/add-node-labels2.png)
+
+
 
 ### mesh Planning
 
@@ -103,9 +103,9 @@ However, the clusters required for subsequent meshs must be connected to the con
 
 If the cluster is not created through the container management platform, such as an existing cluster, or a cluster created through a custom method (like kubeadm or Kind cluster), you need to connect the cluster to the container management platform.
 
-![Access cluster](./images/kpanda-import-cluster0.png)
 
-![Access cluster](./images/kpanda-import-cluster.png)
+
+
 
 ### Confirm observable components (optional)
 
@@ -115,11 +115,11 @@ The cluster created by creating a cluster on the container management platform w
 
 For other methods, you need to find the `Helm application` in the cluster in the container management interface, and select `insight-agent` to install.
 
-![Helm app](./images/kpanda-insgiht-agent-check.png)
 
-![install insight](./images/kpanda-install-insight-agent.png)
 
-![install insight](./images/kpanda-install-insight-agent1.png)
+
+
+
 
 ## Mesh ceployment
 
@@ -129,7 +129,7 @@ Create a mesh through the service mesh, and add the planned cluster to the corre
 
 First in the mesh management page -> `Create mesh`:
 
-![create-mesh](./images/create-mesh1.png)
+
 
 The specific parameters for creating the mesh are shown in the figure:
 
@@ -140,7 +140,7 @@ The specific parameters for creating the mesh are shown in the figure:
 5. Load balancing IP: This parameter is required by the Istiod that exposes the control plane and needs to be prepared in advance
 6. Mirror warehouse: In the private cloud, you need to upload the mirror image required by the mesh to the warehouse. For the public cloud, it is recommended to fill in `release.daocloud.io/mspider`
 
-![Upload image](./images/create-mesh2.png)
+
 
 The mesh is being created, you need to wait for the mesh to be created, and the status will change from `creating` to `running`;
 
@@ -150,7 +150,7 @@ The mesh is being created, you need to wait for the mesh to be created, and the 
 
 After ensuring that the mesh status is normal, observe whether the Services under `istio-system` of the control plane cluster `mdemo-cluster1` are successfully bound to the LoadBalancer IP.
 
-![bind lb ip](./images/hosted-istiod-lb-check.png)
+
 
 Found no LoadBalancer IP assigned for service `istiod-mdemo-cluster-hosted-lb` hosting the mesh control plane requires additional processing.
 
@@ -178,7 +178,7 @@ curl -I "${hosted_istiod_ip}:443"
 
      In the mesh `mdemo-mesh` control plane cluster `mdemo-cluster1`, confirm that the hosted mesh control plane service `istiod-mdemo-mesh-hosted-lb` has been allocated LoadBalancer IP, and record its IP, as follows:
 
-     ![Confirm](./images/hosted-istiod-lb-ip.png)
+     
 
      Confirm hosted mesh control plane service `istiod-mdemo-mesh-hosted-lb` `EXTERNAL-IP` is `10.64.30.72`.
 
@@ -193,11 +193,11 @@ curl -I "${hosted_istiod_ip}:443"
      - Add `istio.custom_params.values.global.remotePilotAddress` parameter in `.spec.ownerConfig.controlPlaneParams` field in YAML;
      - Its value is the `istiod-mdemo-mesh-hosted-lb` `EXTERNAL-IP` address noted above: `10.64.30.72`.
 
-     ![Add parameter](./images/get-gm-crd.png)
+     
 
-     ![Add parameter](./images/edit-gm-yaml.png)
+     
 
-     ![Add parameter](./images/edit-gm-yaml1.png)
+     
 
 ### Add worker cluster
 
@@ -205,15 +205,15 @@ Add clusters on the service mesh GUI.
 
 1. After the mesh control plane is successfully created, select the corresponding mesh and enter the mesh management page -> `Cluster Management` -> `Add Cluster`:
 
-     ![add cluster](./images/add-cluster1.png)
+     
 
 1. After selecting the desired working cluster, wait for the cluster installation mesh component to complete;
 
-     ![Install Component](./images/add-cluster2.png)
+     
 
 1. During the access process, the cluster status will change from `Accessing` to `Accessed`:
 
-     ![Access successfully](./images/add-cluster3.png)
+     
 
 #### Detect whether the multicloud control plane is normal
 
@@ -221,7 +221,7 @@ Since the current working cluster is different from the pod network of the mesh 
 
 To verify whether the Istio-related components of the working cluster can run normally, you need to check whether the `istio-ingressgateway` under the `istio-system` namespace can run normally in the working cluster:
 
-![Verify](./images/check-work-istiod.png)
+
 
 ## Install and configure mesh components in different network modes
 
@@ -255,11 +255,11 @@ Let's start configuring `Network ID`, the specific process is as follows:
          - Need to confirm whether the cluster role `global.clusterRole: HOSTED_WORKLOAD_CLUSTER` is a working cluster
      - Add parameter `istio.custom_params.values.global.network` with value according to network ID in original [planning form](#_8): `network-c2`
 
-     ![edit YAML](./images/add-network-id1.png)
+     
 
-     ![edit YAML](./images/add-network-id2.png)
+     
 
-     ![edit YAML](./images/add-network-id3.png)
+     
 
 Repeat the above steps to add `network ID` to all working clusters (`mdemo-cluster1, mdemo-cluster2, mdemo-cluster3`).
 
@@ -272,9 +272,9 @@ Enter the container management platform, enter the corresponding working cluster
 
 Let's take mdemo-cluster3 as an example, find `namespace`, select `istio-system` -> `modify label`.
 
-![label network ID](./images/edit-istio-system-label.png)
 
-![Identify Network ID](./images/add-istio-system-networkid.png)
+
+
 
 ### Manually install East-West Gateway
 
@@ -355,9 +355,9 @@ It is created by:
 3. Check the `istio-system` namespace
 4. Click `Create YAML`
 
-![Create Gateway Instance](./images/create-ew.png)
 
-![Create Gateway Instance](./images/create-ew2.png)
+
+
 
 ### Create East-West Gateway Gateway resource
 
@@ -407,7 +407,7 @@ istio.custom_params.values.global.meshNetworks.network-c3.gateways[0].address: 1
 istio.custom_params.values.global.meshNetworks.network-c3.gateways[0].port: '15443' # cluster3 east-west gateway port
 ```
 
-![Add parameter](./images/add-gm-meshnetowork0.png)
+
 
 ## Network connectivity demo application and verification
 
@@ -442,13 +442,13 @@ Points to note for each of these clusters:
 - **helloworld** Workload increase corresponding version **environment variables**
      - SERVICE_VERSION: ${VERSION}
 
-![image-20221226095647090](./images/create-demo11.png)
 
-![image-20221226100533974](./images/create-demo22.png)
 
-![image-20221226101100684](./images/create-demo33.png)
 
-![image-20221226102025014](./images/create-demo55.png)
+
+
+
+
 
 #### Command line deployment demo
 
@@ -521,25 +521,25 @@ while true; do kubectl exec -n sample -c sleep \
 
 There are many ways to create a cluster. It is recommended to use the cluster creation function in container management, but users can choose other creation methods. For other solutions provided in this article, please refer to [Other ways to create clusters] in the extended chapter (#_26)
 
-![Create Cluster](./images/kpanda-create-cluster1.png)
 
-![Create cluster](./images/kpanda-create-cluster2.png)
 
-![Create cluster](./images/kpanda-create-cluster3.png)
 
-![Create cluster](./images/kpanda-create-cluster4.png)
+
+
+
+
 
 You can flexibly select the components that need to be expanded in the cluster, and the observability of the mesh must rely on Insight-agent
 
-![install insight](./images/kpanda-create-cluster5.png)
+
 
 If the cluster needs to define more advanced cluster configurations, they can be added in this step.
 
-![Cluster advanced configuration](./images/kpanda-create-cluster6.png)
+
 
 It takes about 30 minutes to create the cluster.
 
-![waiting](./images/kpanda-create-cluster7.png)
+
 
 #### Create a cluster with kubeadm
 
@@ -605,9 +605,9 @@ kind create cluster --config kind-cluster2.yaml --name mdemo-kcluster2
 
 It is recommended to use `Helm application` -> `Helm template` in the container management platform -> find metallb -> `install`.
 
-![install metallb](./images/install-metallb-from-helm.png)
 
-![install metallb](./images/install-metallb-from-helm1.png)
+
+
 
 ##### Manual installation
 
@@ -693,4 +693,4 @@ curl -I 10.6.230.71:8080
 
 Sets managed by containersOn the group list interface, search for `Cluster Role: Global Service Cluster`.
 
-![Global Service Cluster](./images/get-kpanda-global-cluster.png)
+

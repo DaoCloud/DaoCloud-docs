@@ -31,15 +31,15 @@ The installation steps are as follows:
 
 1. Log in to the web console as a user with the Admin role, and click `container registry` from the left navigation bar.
 
-    ![container registry](images/hosted01.png)
+    
 
 1. Click `Managed Harbor` on the left navigation bar, and click the `Create Instance` button in the upper right corner.
 
-    ![Create instance](images/hosted02.png)
+    
 
 1. Fill in the instance name, select the deployment location and click `Next` (if there is no deployment location to choose, you need to go to the container management to create a cluster and namespace).
 
-    ![Basic Information](images/hosted03.png)
+    
 
 1. Fill in the database, Redis instance and image/Charts storage information and click `Next` (currently only supports access to external databases and Redis instances).
 
@@ -55,18 +55,18 @@ The installation steps are as follows:
     - Fill in the address in sentinel mode: redis+sentinel://{host}:{port}?sentinelMasterId={master_id}, you need to replace the three parameters host, port, and master_id.
     - Password: Fill in as required
 
-    ![Spec config](images/hosted04.png)
+    
 
 1. Fill in the domain name, select the ingress instance, enter the administrator password and click `OK` (username/password is used to log in to the native Harbor instance, please keep the password safe).
 
     Tips for filling in the domain name: http://{host}, `http://` in front of the host must be included.
 
-    ![Access and Policy Binding](images/hosted05.png)
+    
 
 1. Return to the list of managed Harbor instances. The newly created instance is the first one by default. Wait for the status to change from 'Updating' to 'Healthy' before it can be used normally.
 
-    ![Instance list](images/hosted06.png)
+    
 
 1. Click `...` on the right side of an instance, and you can choose to edit, delete, or enter the original Harbor.
 
-    ![More Actions](images/hosted07.png)
+    

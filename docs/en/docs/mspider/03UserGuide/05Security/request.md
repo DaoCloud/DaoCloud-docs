@@ -29,23 +29,23 @@ Service Mesh provides two creation methods: wizard wizard and YAML. The specific
 
 1. On the left navigation bar, click `Security Governance` -> `Request Authentication`, and click the `Create` button in the upper right corner.
 
-    ![create](../../images/request01.png)
+    
 
 2. In the `Create Request Identity Authentication` interface, first perform the basic configuration and then click `Next`.
 
-    ![create](../../images/request02.png)
+    
 
 3. After completing the authentication settings according to the screen prompts, click `OK`, and the system will verify the configured information.
 
-    ![create](../../images/request03.png)
+    
 
 4. After the verification is passed, the screen prompts that the creation is successful.
 
-    ![create](../../images/request04.png)
+    
 
 5. On the right side of the list, click `⋮` in the operation column to perform more operations through the pop-up menu.
 
-    ![create](../../images/request05.png)
+    
 
 !!! note
 

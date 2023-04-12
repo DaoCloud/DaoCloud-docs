@@ -13,7 +13,7 @@
 - Observability has one-stop collection and storage of logs, indicators, distributed link tracking, and event logs. Full-stack data observation realizes the integration of data collection, storage, analysis, visualization and alarm.
 - Real-time monitoring of resources in various dimensions, including cluster monitoring, node monitoring, workload monitoring, service monitoring, etc.
 
-![Install Collector](../images/scenerio01.png)
+
 
 ## Quick fault location and troubleshooting
 
@@ -28,4 +28,3 @@
 - After an abnormal application is found in the topology map, the root cause of the fault can be clearly seen through one-click drill-down through the call chain.
 - Query error logs by associating workloads to quickly resolve faults.
 
-![Install Collector](../images/scenerio02.png)

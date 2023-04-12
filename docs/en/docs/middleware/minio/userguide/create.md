@@ -9,15 +9,15 @@ In the list of MinIO instances, do the following to create a MinIO instance.
 
 1. Select `Minio Storage` from the left navigation bar.
 
-    ![](../images/create01.png)
+    
 
 2. Click `Deploy Now` to create a MinIO instance when using it for the first time. You can then click the `New Instance` button in the upper right corner of the list.
 
-    ![](../images/create02.png)
+    
 
 3. On the `Create MinIO instance` page, after setting the basic information, click `Next`.
 
-    ![](../images/create03.png)
+    
 
 4. After configuring the specifications, click `Next`.
 
@@ -26,19 +26,19 @@ In the list of MinIO instances, do the following to create a MinIO instance.
     - Resource quota: select the rules according to the actual situation
     - Storage: Select the storage volume and the total amount of storage space for the MinIO instance
 
-    ![](../images/create03.png)
+    
 
 5. After the service is set, click `Next`.
 
     - Access method: You can choose intra-cluster access or Nodeport access.
     - Service Settings: Set the username and password for connecting to the MinIO instance.
 
-    ![](../images/create04.png)
+    
 
 6. Confirm that the instance configuration information is correct, and click `Confirm` to complete the creation.
 
-    ![](../images/create05.png)
+    
 
 7. On the instance list page, check whether the instance is successfully created. The status of the newly created instance is `Not Ready`, and it will change to `Running` after a few minutes.
 
-    ![](../images/create06.png)
+    
