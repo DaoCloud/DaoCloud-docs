@@ -2,13 +2,13 @@
 
 The implementation logic of multi-cluster grayscale release is to deploy different business applications in different clusters, then configure corresponding policies through the service mesh to realize traffic adjustment between business versions, and then offline the versions according to the running conditions.
 
-For pre-preparation, refer to the grid multi-cloud deployment document to build the grid infrastructure.
+For pre-preparation, refer to the mesh multi-cloud deployment document to build the mesh infrastructure.
 
 ## Create a demo application and verify traffic
 
 ### Cluster deployment v1 version helloworld
 
-First select a namespace (gray-demo), and enable the namespace sidecar injection on the grid page.
+First select a namespace (gray-demo), and enable the namespace sidecar injection on the mesh page.
 
 Deploy the application on the application workbench, here we take the helloworld of istio as an example.
 
@@ -46,7 +46,7 @@ In order to distinguish different versions of workloads, you need to find the co
 
 > Note that the service name must be the same as the namespace.
 
-First select the above consistent namespace (gray-demo), and enable sidecar injection of this namespace on the grid page.
+First select the above consistent namespace (gray-demo), and enable sidecar injection of this namespace on the mesh page.
 
 The deployment process is the same as above, the main differences are:
 
@@ -163,7 +163,7 @@ spec:
 
 ## Verify
 
-**INGRESS_LB_IP** refers to the Ingress grid load balancing address, which can be viewed in the container management platform. If there is no valid load balancing IP, it can be accessed through NodePort.
+**INGRESS_LB_IP** refers to the Ingress mesh load balancing address, which can be viewed in the container management platform. If there is no valid load balancing IP, it can be accessed through NodePort.
 
 
 

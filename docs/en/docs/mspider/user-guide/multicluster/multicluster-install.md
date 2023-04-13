@@ -31,9 +31,6 @@ The configuration method is to add the corresponding Label to **each node** of t
 To add a Label, you can find the corresponding cluster through the container management platform, and configure the Label for the corresponding node
 
 
-
-
-
 ### mesh Planning
 
 #### mesh basic information

@@ -47,4 +47,4 @@ After the upgrade is complete, return to the mesh list page, and you can see tha
 !!! note
 
     - Once the upgrade process starts, it cannot be terminated, and it is recommended not to perform any setup operations on the mesh during the upgrade.
-    - For a more intuitive operation demonstration, please refer to [Video Tutorial](../../../videos/mspider.md).
+    - For a more intuitive operation demonstration, please refer to [Video Tutorial](../../videos/mspider.md).

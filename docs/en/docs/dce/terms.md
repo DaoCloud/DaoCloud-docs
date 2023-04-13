@@ -1132,7 +1132,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Gateway Rule
 
-    In a service mesh, [Gateway Rules](../mspider/03UserGuide/02TrafficGovernance/GatewayRules.md) define the load balancer for north-south connection operations in the mesh, used to establish inbound and outbound HTTP/TCP access connections. It describes a set of ports, service domain names, protocol types, and SNI configurations for the load balancer that need to be exposed.
+    In a service mesh, [Gateway Rules](../mspider/user-guide/traffic-governance/gateway-rules.md) define the load balancer for north-south connection operations in the mesh, used to establish inbound and outbound HTTP/TCP access connections. It describes a set of ports, service domain names, protocol types, and SNI configurations for the load balancer that need to be exposed.
 
 - Gauge
 
@@ -1736,11 +1736,11 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Rolling update
 
-    [Rolling update](../mspider/03UserGuide/upgrade/IstioUpdate.md) refers to updating a small portion of replicas at a time, then updating more replicas after success, and finally completing the update of all replicas. The biggest advantage of rolling updates is zero downtime, with replicas running throughout the update process, ensuring business continuity.
+    [Rolling update](../mspider/install/istio-update.md) refers to updating a small portion of replicas at a time, then updating more replicas after success, and finally completing the update of all replicas. The biggest advantage of rolling updates is zero downtime, with replicas running throughout the update process, ensuring business continuity.
 
 - Routing Rule
 
-    In the virtual service configured in the service mesh's [virtual service](../mspider/03UserGuide/02TrafficGovernance/VirtualService.md), the routing rules follow the path defined by the service mesh for requests. Using routing rules, you can define the workload to which traffic addressed to the virtual service host is routed. Routing rules allow you to control traffic to achieve tasks such as phased traffic distribution by percentage.
+    In the virtual service configured in the service mesh's [virtual service](../mspider/user-guide/traffic-governance/virtual-service.md), the routing rules follow the path defined by the service mesh for requests. Using routing rules, you can define the workload to which traffic addressed to the virtual service host is routed. Routing rules allow you to control traffic to achieve tasks such as phased traffic distribution by percentage.
 
 ### S
 

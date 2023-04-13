@@ -10,7 +10,7 @@ Several important fields are as follows:
 
     Use the short name of the Kubernetes Service. The meaning is the same as the `host` field of `destination` in VirtualService. The service must exist in the corresponding service registry, otherwise it will be ignored.
 
--LoadBalancer
+- LoadBalancer
 
     By default, Istio uses a round-robin load balancing strategy, where each instance in the pool gets requests in turn.
     Istio also supports the following load balancing models, which can be specified in a DestinationRule for traffic to a specific service or subset of services.
@@ -19,7 +19,7 @@ Several important fields are as follows:
     - Weight: Requests go to instances according to the specified percentage.
     - Least Requested: Requests are routed to the least accessed instance.
 
--Subsets
+- Subsets
 
     `subsets` is a collection of service endpoints, which can be used in scenarios such as A/B testing or version routing.
     The traffic of a service can be divided into N shares for the client to use in different scenarios.

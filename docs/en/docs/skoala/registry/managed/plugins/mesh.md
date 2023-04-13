@@ -13,7 +13,7 @@
 
 3. Select the service mesh you want to bind, and click `OK` at the bottom of the pop-up box.
 
-    If you can't find the service mesh you want, you can go to the service mesh module [create a mesh](../../../../mspider/03UserGuide/servicemesh/create-mesh.md).
+    If you can't find the service mesh you want, you can go to the service mesh module [create a mesh](../../../../mspider/user-guide/servicemesh/create-mesh.md).
 
     
 
