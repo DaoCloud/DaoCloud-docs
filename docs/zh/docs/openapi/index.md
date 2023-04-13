@@ -15,7 +15,7 @@ hide:
 - :material-microsoft-azure-devops: **应用工作台 OpenAPI**
 - :material-cloud-check: **多云编排 OpenAPI**
 - :material-engine: **微服务引擎 OpenAPI**
-- :material-table-refresh: **[服务网格 OpenAPI](./mspider/index.md)**
+- :material-table-refresh: **[服务网格 OpenAPI](./mspider/v0.105.1.md)**
 - :material-middleware: **中间件 OpenAPI**
 - :material-warehouse: **镜像仓库 OpenAPI**
 - :material-dot-net: **网络 OpenAPI**
