@@ -11,7 +11,7 @@ When the wizard mode is used, the peer-to-peer identity authentication is divide
 | **UI Item** | **YAML Field** | **Description** |
 | ---------------------- | -------------------------- ------------ | ------------------------------------- ----------------------- |
 | Name | metadata.name | Required. Peer identity authentication name, which cannot be duplicated in the same namespace. |
-| Namespace | metadata.namespace | Required. The namespace the peer authentication belongs to. Global policies are created when the grid's root namespace is selected. Only one global policy can be created, and it needs to be checked in the interface to avoid repeated creation by users. |
+| Namespace | metadata.namespace | Required. The namespace the peer authentication belongs to. Global policies are created when the mesh's root namespace is selected. Only one global policy can be created, and it needs to be checked in the interface to avoid repeated creation by users. |
 | workload tags | spec.selector | optional. Workload selection tags that apply peer authentication policies, multiple tags can be added without sorting. |
 | Label name | spec.selector.matchLabels | Required. Consists of lowercase letters, numbers, hyphens (-), underscores (_), and decimal points (.) |
 | Label value | spec.selector.matchLabels.{label name} | Required. Consists of lowercase letters, numbers, hyphens (-), underscores (_), and decimal points (.) |
@@ -32,7 +32,7 @@ When using the wizard wizard mode, requesting identity authentication is divided
 | **UI Item** | **YAML Field** | **Description** |
 | ------------ | ------------------------------------ | -------------------------------------------------- ----------- |
 | Name | metadata.name | Required. Request identity authentication name, the same name space cannot be duplicated. |
-| Namespace | metadata.namespace | Required. Namespace to which the request authentication belongs. Global policies are created when the grid's root namespace is selected. Only one global policy can be created, and it needs to be checked in the interface to avoid repeated creation by users. <br />In the same namespace, the name requesting authentication cannot be repeated. |
+| Namespace | metadata.namespace | Required. Namespace to which the request authentication belongs. Global policies are created when the mesh's root namespace is selected. Only one global policy can be created, and it needs to be checked in the interface to avoid repeated creation by users. <br />In the same namespace, the name requesting authentication cannot be repeated. |
 | workload tags | spec.selector | Optional. The application requests the workload selection tag of the identity authentication policy. Multiple selection tags can be added without sorting. |
 | Label name | spec.selector.matchLabels | Required. Consists of lowercase letters, numbers, hyphens (-), underscores (_), and decimal points (.) |
 | Label value | spec.selector.matchLabels.{label name} | Required. Consists of lowercase letters, numbers, hyphens (-), underscores (_), and decimal points (.) |
@@ -56,7 +56,7 @@ When the wizard mode is used, the creation of the authorization policy is divide
 | **Element** | **YAML Field** | **Description** |
 | -------------------- | ---------------------------- ---------- | --------------------------------------- --------------------- |
 | Name | metadata.name | Required. Authorized policy name. |
-| Namespace | metadata.namespace | Required. The namespace to which the authorization policy belongs. When the grid root namespace is selected, a global policy will be created. Only one global policy can be created, and it needs to be checked on the interface to avoid repeated creation by users. In the same namespace, request identity authentication cannot have the same name. |
+| Namespace | metadata.namespace | Required. The namespace to which the authorization policy belongs. When the mesh root namespace is selected, a global policy will be created. Only one global policy can be created, and it needs to be checked on the interface to avoid repeated creation by users. In the same namespace, request identity authentication cannot have the same name. |
 | workload tags | spec.selector | Optional. The workload selection tag of the application authorization policy, multiple selection tags can be added without sorting. |
 | Label name | spec.selector.matchLabels | Optional. Consists of lowercase letters, numbers, hyphens (-), underscores (_), and decimal points (.). |
 | Label value | spec.selector.matchLabels.{label name} | Optional. Consists of lowercase letters, numbers, hyphens (-), underscores (_), and decimal points (.). |

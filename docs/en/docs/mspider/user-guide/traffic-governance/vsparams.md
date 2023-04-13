@@ -8,7 +8,7 @@ This page describes the parameter configuration when creating and editing a **Vi
 | -------- | ------------------ | ------------------ ------------------------------------------ |
 | Name | metadata.name | Required. Virtual service name. <br />Format requirements: lowercase letters, numbers and dashes (-), must start with a lowercase letter and end with a lowercase letter or number, up to 63 characters. |
 | Namespace | metadata.namespace | Required. The namespace to which the virtual service belongs. In the same namespace, request identity authentication cannot have the same name. |
-| Application Scope |spec.gateways | Required. The scope of virtual service application includes two types:<br />- specified gateway rules (multiple can be added), which can be used to expose internal services of the grid;<br />- valid for all sidecars (-mesh). |
+| Application Scope |spec.gateways | Required. The scope of virtual service application includes two types:<br />- specified gateway rules (multiple can be added), which can be used to expose internal services of the mesh;<br />- valid for all sidecars (-mesh). |
 | Owning service |spec.hosts | Required. The service object of the application virtual service can include three types:<br />-registration service from the Kubernetes registry;<br />-registration service from the service entry;<br />-service domain name. |
 
 ## Routing configuration

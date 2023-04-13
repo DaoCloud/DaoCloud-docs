@@ -12,4 +12,4 @@ Microservice governance mainly refers to Istio-based mesh service traffic govern
     - This feature is only supported for Mesh-type registries.
     - Registries of the Kubernetes/Zookeeper/Nacos/Eureka type will not display the `Microservice Governance` operation on the left navigation bar.
 
-For more information about microservice governance, please refer to [Service Mesh --> Traffic Governance](../../../mspider/03UserGuide/02TrafficGovernance/README.md).
+For more information about microservice governance, please refer to [Service Mesh --> Traffic Governance](../../../mspider/user-guide/02TrafficGovernance/README.md).

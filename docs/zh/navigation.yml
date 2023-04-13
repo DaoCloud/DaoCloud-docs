@@ -407,6 +407,7 @@ nav:
               - 创建外接网格: mspider/user-guide/service-mesh/external-mesh.md
               - 删除网格: mspider/user-guide/service-mesh/delete.md
               - 网格规模对应资源用量: mspider/user-guide/service-mesh/capacity-resources.md
+              - 创建网格参数说明: mspider/user-guide/service-mesh/params.md
           - 服务管理:
               - mspider/user-guide/service-list/README.md
               - 从网格外部访问服务: mspider/user-guide/service-list/out-to-in.md

@@ -11,7 +11,7 @@ Gateway rules (Gateway) are used to expose services outside the mesh. Compared w
 
 For L7 support, gateway rules are implemented in conjunction with virtual services. Several important main fields are as follows:
 
--Selector
+- Selector
 
     Select the istio gateway for north-south traffic, you can use multiple or share one with other rules.
 
@@ -19,7 +19,7 @@ For L7 support, gateway rules are implemented in conjunction with virtual servic
 
     Information about services exposed externally, including hosts (service name), listening port, protocol type, etc.
 
--TLS
+- TLS
 
     Provide external mTLS protocol configuration, users can enable three TLS modes, and can customize CA certificate and other operations.
 
