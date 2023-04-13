@@ -84,7 +84,7 @@ You can go to `Container Management` -> `Privilege Management`, select `Add Auth
         Since there are two states of bound and unbound workspace for resources in container management, in order to distinguish the two different states, the resources bound to the workspace will be presented in the workspace-resource group, and the workspace - Both the resource group and the resource list managed by the container provide the resource binding/unbinding entry.
         (Admin role or Workspace admin + Kpanda Owner role can perform resource binding)
 
-    - [Service Mesh](../../../mspider/intro/WhatismSpider.md)
+    - [Service Mesh](../../../mspider/intro/what.md)
 
         Due to the particularity of its own resources, the service mesh also has two states: bound and unbound.
         Therefore, you can manage the resources in the service mesh through the Admin role, or bind the resources (Mesh or Mesh-Namespace) to the workspace, so that users/groups can obtain the permissions of the resources in the service mesh through the workspace, and are bound The specified resources will be displayed in the resource group of the workspace.

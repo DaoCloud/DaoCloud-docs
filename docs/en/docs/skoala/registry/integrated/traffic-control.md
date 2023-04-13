@@ -5,7 +5,7 @@ hide:
 
 # Microservice Governance
 
-Microservice governance mainly refers to Istio-based mesh service traffic governance. The [Service mesh](../../../mspider/intro/WhatismSpider.md) module of DCE 5.0 is integrated in the microservice engine, which supports three ways to govern the mesh through virtual services, target rules, and gateway rules Serve.
+Microservice governance mainly refers to Istio-based mesh service traffic governance. The [Service mesh](../../../mspider/intro/what.md) module of DCE 5.0 is integrated in the microservice engine, which supports three ways to govern the mesh through virtual services, target rules, and gateway rules Serve.
 
 !!! note
 
