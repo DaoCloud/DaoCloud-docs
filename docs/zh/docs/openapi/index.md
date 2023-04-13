@@ -26,6 +26,6 @@ hide:
 
 !!! tip
 
-    蓝色文字表示该模块已添加 OpenAPI 文档。
+    蓝色文字表示该模块已添加 OpenAPI 文档。参阅 [OpenAPI 制作流程](./api-doc-flow.md)。
 
 ![OpenAPI and Swagger](./images/index.png)
