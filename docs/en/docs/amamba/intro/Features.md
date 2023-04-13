@@ -11,7 +11,7 @@ Application Workbench provides the following functions.
 
     - Supports "polymorphic" cloud-native applications in cloud-native scenarios, including Kubernetes-native applications, Helm applications, and OAM applications.
     - Provides full lifecycle management of cloud-native applications, such as application scaling, logging, monitoring and viewing, and updating applications.
-    - Supports access to microservice applications of SpingCloud, Dubbo, and ServiceMesh frameworks to achieve microservice governance. It is compatible with DCE 5.0's [Microservice Engine](../../skoala/intro/features.md), [Service Mesh ](../../mspider/intro/WhatismSpider.md) seamlessly integrated.
+    - Supports access to microservice applications of SpingCloud, Dubbo, and ServiceMesh frameworks to achieve microservice governance. It is compatible with DCE 5.0's [Microservice Engine](../../skoala/intro/features.md), [Service Mesh ](../../mspider/intro/what.md) seamlessly integrated.
 
 - Pipeline orchestration
 

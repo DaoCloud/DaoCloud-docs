@@ -18,7 +18,7 @@ DCE 5.0 natively supports the DevOps development and operation mode, which can r
 - :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](../amamba/intro/WhatisAmamba.md)
 - :material-cloud-check: **Multicloud Orchestration** [Manage multi-cloud instances, workloads, policies](kairship/01product/whatiskairship.md)
 - :material-engine: **Microservice Engine** [Microservice registry and gateway](../skoala/intro/features.md)
-- :material-table-refresh: **Service Mesh** [Non-intrusive service governance](../mspider/intro/WhatismSpider.md)
+- :material-table-refresh: **Service Mesh** [Non-intrusive service governance](../mspider/intro/what.md)
 - :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](../middleware/midware.md)
 - :material-warehouse: **Container Registry** [Integrate and manage registries](../kangaroo/intro.md)
 - :material-dot-net: **Network** [Multi-CNI fusion solution](../network/intro/what-is-net.md)
@@ -65,7 +65,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     Seamless integrate with legacy and popular microservice technologies, such as the first-generation microservices represented by SpringCloud and Dubbo and the new generation of microservices represented by Istio service mesh, with the lifecycle management capabilities of development, deployment, joining, exposing to external, observation, and O&M. Seamlessly add the existing microservice system of the enterprise, provide the complete capabilities of managed microservice governance, and offer the high-performance cloud-native microservice gateway.
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [Microservice Engine](../skoala/intro/features.md), [Service Mesh](../mspider/intro/WhatismSpider.md), [Insight](../insight/intro/WhatisInsight.md), [App Workbench](../amamba/intro/WhatisAmamba.md), [Network](../network/intro/what-is-net.md), Storage
+    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [Microservice Engine](../skoala/intro/features.md), [Service Mesh](../mspider/intro/what.md), [Insight](../insight/intro/WhatisInsight.md), [App Workbench](../amamba/intro/WhatisAmamba.md), [Network](../network/intro/what-is-net.md), Storage
 
     ![microservie engine](../images/03msgov.jpg)
 

@@ -5,7 +5,7 @@ hide:
 
 # Description of Service Mesh Permissions
 
-[Service Mesh](../../mspider/intro/WhatismSpider.md) supports several user roles:
+[Service Mesh](../../mspider/intro/what.md) supports several user roles:
 
 -Admin
 - Workspace Admin
