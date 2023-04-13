@@ -9,7 +9,7 @@ hide:
 
 <div class="grid cards" markdown>
 
-- :fontawesome-solid-user-group: **[全局管理 OpenAPI v0.15.0](./ghippo/v0.15.0.md)**
+- :fontawesome-solid-user-group: **[全局管理 OpenAPI](./ghippo/v0.15.0.md)**
 - :octicons-container-16: **容器管理 OpenAPI**
 - :material-monitor-dashboard: **可观测性 OpenAPI**
 - :material-microsoft-azure-devops: **应用工作台 OpenAPI**
@@ -19,7 +19,13 @@ hide:
 - :material-middleware: **中间件 OpenAPI**
 - :material-warehouse: **镜像仓库 OpenAPI**
 - :material-dot-net: **网络 OpenAPI**
+- :floppy_disk: **存储 OpenAPI**
+- :material-more: **更多 OpenAPI**
 
 </div>
+
+!!! tip
+
+    蓝色文字表示该模块已添加 OpenAPI 文档。
 
 ![OpenAPI and Swagger](./images/index.png)
