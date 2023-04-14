@@ -136,15 +136,17 @@ nav:
               - 创建和删除文件夹: ghippo/user-guide/workspace/folders.md
               - 文件夹权限: ghippo/user-guide/workspace/folder-permission.md
               - 资源配额: ghippo/user-guide/workspace/quota.md
+              - 资源限额: ghippo/user-guide/workspace/limitrange.md
           - 审计日志:
               - 开启和关闭采集k8s审计日志: ghippo/user-guide/open-audit.md
               - 开启和关闭k8s审计日志: ghippo/user-guide/open-k8s-audit.md
               - 下载和导出审计日志: ghippo/user-guide/audit-log.md
           - 平台设置:
-              - 密码重置: ghippo/user-guide/password.md
+              - 安全策略: ghippo/user-guide/platform-setting/security.md
               - 邮箱服务器设置: ghippo/user-guide/platform-setting/mail-server.md
               - 外观定制: ghippo/user-guide/platform-setting/appearance.md
               - 关于平台: ghippo/user-guide/platform-setting/about.md
+              - 密码重置: ghippo/user-guide/password.md
           - 个人中心:
               - 安全设置: ghippo/user-guide/personal-center/security-setting.md
               - 访问密钥: ghippo/user-guide/personal-center/accesstoken.md
