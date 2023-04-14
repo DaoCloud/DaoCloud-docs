@@ -547,6 +547,12 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      Main new features of this version: `resource-service` replaces `configuration-service` to speed up response time and support Keptn upgrades without downtime; in v0.17, the CLI will remove install/uninstall/upgrade commands; support direct Sends events to Nats; service is considered ready only when connected to the control plane; allows running approval service without distributor sideCar.
 
+- [Keycloak Identity and Access Management Project becomes a CNCF Incubation Project](https://www.cncf.io/blog/2023/04/11/keycloak-joins-cncf-as-an-incubating-project/)
+
+    [Keycloak](https://github.com/keycloak/keycloak) provides centralized authentication and authorization of applications and APIs. Keycloak integrates well with cloud-native ecosystems.
+    It supports running on Kubernetes and can be installed using Operator Framework built operators. It also provides Prometheus metrics and integrates with the standard Kubernetes stack.
+    Many CNCF projects integrate directly with Keycloak for authentication and access, including Argo, Envoy, and Jaeger, among others.
+
 - [Kindling Cloud-native observable tool v0.7.0 Released](https://github.com/KindlingProject/kindling/releases/tag/v0.7.0)
 
     Release features: provides a simple version of the view to display Trace Profiling data, adds tracing functionality to cpuevents, supports NoAPM Java applications with dependent agents.
@@ -616,6 +622,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Kubernetes Cluster API v1.4.0 Released](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.4.0)
 
     Release features: support for automatic failback in case of KCP control plane deployment failure, support for synchronizing certain tags from Machine to Node, propagation of tags, annotations, etc. from ClusterClass to KubeadmControlPlane/MachineDeployment and Machine, support for Variable discovery in ClusterClass and Managed Topologies.
+
+- [Kubernetes v1.27.0 released](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.27.md#changelog-since-v1260)
+
+    Release features: freeze k8s.gcr.io image repository, upgrade SeccompDefault to GA, upgrade Job variable scheduling directive to GA, upgrade Pod scheduling Readiness to beta, allow access to node logs via Kubernetes API, introduce new access mode ReadWriteOncePod to limit volume Access is restricted to a single Pod in the cluster, and VolumeManager rebuild is upgraded to beta.
 
 - [Kubernetes v1.26 released](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.26.md)
 
@@ -717,6 +727,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     The main new features of this version: cross-grid gateway supports multi-region operation, grid gateway/built-in gateway adds observability function, rewrites CNI, grid gateway supports path rewriting and header addition/deletion, supports filtering proxy indicators, Simplify the implementation of TCP traffic logs and support Projected Service Account Tokens.
 
+- [Kurator Distributed Cloud Native Platform v0.3.0 Released](https://github.com/kurator-dev/kurator/releases/tag/v0.3.0)
+
+    Release Features: Adds a CRD cluster to the Cluster API, allowing users to manage the lifecycle of a kubernetes cluster by simply declaring an API object; supports kubernetes cluster upgrades; supports kubernetes cluster scaling; supports setting up a highly available kubernetes cluster locally.
+
 - [Kurator Distributed Cloud Native Platform v0.2.0 Released](https://github.com/kurator-dev/kurator/releases/tag/v0.2.0)
 
     Release features: support for Thanos-based multi-cluster monitoring and metrics persistence storage; support for Pixie-based real-time K8s application monitoring; new component Cluster Operator to manage the kubernetes cluster lifecycle for various infrastructures, including public clouds, hybrid clouds and local data centers, in a cloud-native way.
@@ -747,6 +761,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Lima Linux Virtual Machine v0.14.0 release (CNCF project)](https://github.com/lima-vm/lima/releases/tag/v0.14.0)
 
      The main new features of this version: support for virtual machine shared file system virtiofs, support for Apple's virtualization framework Virtualization.framework, and support for Containerd command-line tool nerdctl 1.1.0.
+
+- [Linkerd Service Grid Project v2.13.0 Released (CNCF Project)](https://github.com/linkerd/linkerd2/releases/tag/stable-2.13.0)
+
+    Release features: Introduces client-side policies, including dynamic routing and fuser mode; supports debugging HTTPRoute-based policies; introduces a new init container -- network-validator -- to ensure that local iptables rules work as expected.
 
 - [Linkerd Service Mesh Project v2.12.0 Release (CNCF Project)](https://github.com/linkerd/linkerd2/releases/tag/stable-2.12.0)
 
