@@ -2,19 +2,19 @@
 
 ## 最大重试次数 Max retries
 
-服务网格中内嵌了 Envoy 组件，所以这些参数字段沿袭自 Envoy 的设定。
+服务网格中内嵌了 Envoy 组件，在[创建网格](./README.md)时可以设置 Envoy 相关的一些参数。
 更多细节请参阅 [Envoy 文档](https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on)。
 
 ### HTTP
 
 - `5xx`
 
-    如果上游服务器响应任何 5xx 响应代码，或者根本不响应（断开连接/重置/读取超时），Envoy 将尝试重试
+    如果上游服务器响应任何 5xx 响应代码，或者根本不响应（断开连接/重置/读取超时），将尝试重试
     （包括 connect-failure 和 refused-stream）。
 
 - `connect-failure`
 
-    如果由于与上游服务器的连接失败（连接超时等）导致请求失败，Envoy 将尝试重试（包含在 5xx 中）。
+    如果由于与上游服务器的连接失败（连接超时等）导致请求失败，将尝试重试（包含在 5xx 中）。
 
 - `envoy-ratelimited`
 
@@ -26,20 +26,20 @@
 
 - `http3-post-connect-failure`
 
-    如果通过 HTTP/3 向上游服务器发送请求并在连接后失败，Envoy 将尝试重试。
+    如果通过 HTTP/3 向上游服务器发送请求并在连接后失败，将尝试重试。
 
 - `refused-stream`
 
-    如果上游服务器使用 REFUSED_STREAM 错误代码重置流，Envoy 将尝试重试。
+    如果上游服务器使用 REFUSED_STREAM 错误代码重置流，将尝试重试。
     此重置类型表示请求可以安全重试（包含在 5xx 中）。
 
 - `reset`
 
-    如果上游服务器根本没有响应（断开/重置/读取超时），Envoy 将尝试重试。
+    如果上游服务器根本没有响应（断开/重置/读取超时），将尝试重试。
 
 - `retriable-4xx`
 
-    如果上游服务器使用可重试的 4xx 响应代码进行响应，Envoy 将尝试重试。
+    如果上游服务器使用可重试的 4xx 响应代码进行响应，将尝试重试。
     目前，该类别中唯一的响应代码是 409。
 
     注意：小心打开此重试类型。在某些情况下，409 可能表示需要更新乐观锁定修订版。
@@ -47,33 +47,33 @@
 
 - `retriable-headers`
 
-    如果上游服务器响应包含任何与重试策略或 x-envoy-retriable-header-names 标头匹配的标头，Envoy 将尝试重试。
+    如果上游服务器响应包含任何与重试策略或 x-envoy-retriable-header-names 标头匹配的标头，将尝试重试。
 
 - `retriable-status-codes`
 
-    如果上游服务器响应任何与重试策略或 x-envoy-retriable-status-codes 标头中定义的响应代码匹配的响应代码，Envoy 将尝试重试。
+    如果上游服务器响应任何与重试策略或 x-envoy-retriable-status-codes 标头中定义的响应代码匹配的响应代码，将尝试重试。
 
 ### gRPC
 
 - `cancelled`
 
-    如果响应头中的 gRPC 状态码是 “cancelled”，Envoy 将尝试重试。
+    如果响应头中的 gRPC 状态码是 “cancelled”，将尝试重试。
 
 - `deadline-exceeded`
 
-    如果响应头中的 gRPC 状态码是 “deadline-exceeded”，Envoy 将尝试重试。
+    如果响应头中的 gRPC 状态码是 “deadline-exceeded”，将尝试重试。
 
 - `internal`
 
-    如果响应头中的 gRPC 状态码是 “internal”，Envoy 将尝试重试。
+    如果响应头中的 gRPC 状态码是 “internal”，将尝试重试。
 
 - `resource-exhausted`
 
-    如果响应头中的 gRPC 状态码是 “resource-exhausted”，Envoy 将尝试重试。
+    如果响应头中的 gRPC 状态码是 “resource-exhausted”，将尝试重试。
 
 - `unavailable`
 
-    如果响应头中的 gRPC 状态码是 “unavailable”，Envoy 将尝试重试。
+    如果响应头中的 gRPC 状态码是 “unavailable”，将尝试重试。
 
 ## 边车日志级别
 
