@@ -16,7 +16,7 @@ DCE 5.0 natively supports the DevOps development and operation mode, which can r
 - :fontawesome-solid-user-group: **Global Management** [Login, user and access, appearance](../ghippo/intro/what.md)
 - :material-monitor-dashboard: **Observability** [One-stop graphical dashboard](../insight/intro/WhatisInsight.md)
 - :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](../amamba/intro/WhatisAmamba.md)
-- :material-cloud-check: **Multicloud Orchestration** [Manage multi-cloud instances, workloads, policies](kairship/01product/whatiskairship.md)
+- :material-cloud-check: **Multicloud Orchestration** [Manage multi-cloud instances, workloads, policies](../kairship/intro/whatiskairship.md)
 - :material-engine: **Microservice Engine** [Microservice registry and gateway](../skoala/intro/features.md)
 - :material-table-refresh: **Service Mesh** [Non-intrusive service governance](../mspider/intro/what.md)
 - :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](../middleware/midware.md)
@@ -93,7 +93,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Benefits**: With a consistent workflow to deliver apps, this solution supports a hierarchical multi-tenant system, seamlessly adapts to the user's organizational structure to plan resource allocation, automates app build and deployment with the CI/CD pipelines, and innovatively introduces the GitOps progressive delivery capability.
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.md), [workbench](../amamba/intro/WhatisAmamba.md), [Container Registry](../kangaroo/intro.md), [Network](../network/intro/what-is-net.md), Storage
+    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [workbench](../amamba/intro/WhatisAmamba.md), [Container Registry](../kangaroo/intro.md), [Network](../network/intro/what-is-net.md), Storage
 
     ![app delivery](../images/06appdeliv.jpg)
 
@@ -113,7 +113,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     All clusters and workloads are managed through Clusterpedia. This solution is compatible with joining standard Kubernetes clusters, breaking through the performance bottleneck of Kubernetes API and supporting thousands of users using it at the same time.
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.md), [container lifecycle manager](../community/kubean.md), [Network](../network/intro/what-is-net.md), Storage
+    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [container lifecycle manager](../community/kubean.md), [Network](../network/intro/what-is-net.md), Storage
 
 === "Heterogeneous architecture"
 
@@ -121,7 +121,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Benefits**: This solution can consolidate heterogeneous cloud-native capabilities for government sectors and state-owned factories, supports domestic chips and servers in the north, and supports heterogeneous operating system and app ecosystem in containers in the south.
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.md), [Container lifecycle manager](../community/kubean.md), [Middware](../middleware/midware.md), [Network](../network/intro/what-is-net.md), Storage
+    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [Container lifecycle manager](../community/kubean.md), [Middware](../middleware/midware.md), [Network](../network/intro/what-is-net.md), Storage
 
     ![Heterogeneous](../images/08xinchuan.jpg)
 
@@ -131,7 +131,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Benefits**: This solution extends the general cloud-native framework, empowers the edge computing capability, uniformly manages and controls all edge clusters and nodes. Based on the traditional three-tier model of cloud, edge, and terminal. To meet the strict edge computing requirements, this solution provides a four-tier model from cloud to edge continuum by adding the edge clusters and nodes.
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.md), [Container lifecycle manager](../community/kubean.md), [Network](../network/intro/what-is-net.md), Storage, Edge nodes, clusters in a weak network
+    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [Container lifecycle manager](../community/kubean.md), [Network](../network/intro/what-is-net.md), Storage, Edge nodes, clusters in a weak network
 
     ![Cloud to edge continuum](../images/09cloud-edge.jpg)
 
