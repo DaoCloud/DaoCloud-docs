@@ -551,6 +551,12 @@
 
     该版本主要新特性：`resource-service` 取代 `configuration-service`，以加快响应时间、支持在不停机的情况下升级 Keptn；v0.17 中，CLI 将删除安装/卸载/升级命令；支持直接向 Nats 发送事件；只有当服务连接到控制平面时，才会被视为准备就绪；允许在没有 distributor sideCar 的情况下运行 approval service。
 
+- [Keycloak 身份和访问管理项目 成为 CNCF 孵化项目](https://www.cncf.io/blog/2023/04/11/keycloak-joins-cncf-as-an-incubating-project/)
+
+    [Keycloak](https://github.com/keycloak/keycloak) 提供对应用程序和 API 的集中身份验证和授权。Keycloak 可以与云原生生态系统很好地集成。
+    它支持在 Kubernetes 上运行，并可以使用 Operator Framework 构建的操作器进行安装。它还提供 Prometheus 指标，并与标准 Kubernetes 堆栈进行整合。
+    CNCF 许多项目直接集成了 Keycloak，用于身份验证和访问，包括 Argo、Envoy 和 Jaeger 等。
+
 - [Kindling 云原生可观测工具 v0.7.0 发布](https://github.com/KindlingProject/kindling/releases/tag/v0.7.0)
 
     版本特性：提供一个简易版视图来显示 Trace Profiling 数据、为 cpuevents 增加追踪功能、支持 NoAPM Java 应用的附属代理。
@@ -620,6 +626,10 @@
 - [Kubernetes Cluster API v1.4.0 发布](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.4.0)
 
     版本特性：支持在 KCP 控制平面部署失败时自动进行故障恢复、支持将某些标签从 Machine 同步到 Node、以将标签、注释等信息从 ClusterClass 传播到 KubeadmControlPlane/MachineDeployment 和 Machine 中、支持 ClusterClass 和 Managed Topologies 中的变量发现。
+
+- [Kubernetes v1.27.0 发布](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.27.md#changelog-since-v1260)
+
+    版本特性：冻结 k8s.gcr.io 镜像仓库、SeccompDefault 升级为 GA、Job 可变调度指令升级为 GA、Pod 调度 Readiness 升级为 beta、允许通过 Kubernetes API 访问节点日志、引入新访问模式 ReadWriteOncePod 以将卷访问限制在集群中的单个 Pod 上、VolumeManager 重建升级为 beta。
 
 - [Kubernetes v1.26 发布](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.26.md)
 
@@ -721,6 +731,10 @@
 
     该版本主要新特性：跨网格网关支持多区域运行、网格网关/内置网关增加可观测性功能、重写 CNI、网格网关支持路径重写和报头添加/删除、支持过滤代理的指标、简化 TCP 流量日志实现、支持 Projected Service Account Tokens。
 
+- [Kurator 分布式云原生平台 v0.3.0 发布](https://github.com/kurator-dev/kurator/releases/tag/v0.3.0)
+
+    版本特性：在 Cluster API 的基础上增加了一个 CRD 集群，用户只需声明一个 API 对象即可管理 kubernetes 集群的生命周期；支持 kubernetes 集群升级；支持 kubernetes 集群扩缩容；支持在本地设置高可用 kubernetes 集群。
+
 - [Kurator 分布式云原生平台 v0.2.0 发布](https://github.com/kurator-dev/kurator/releases/tag/v0.2.0)
 
     版本特性：支持基于 Thanos 的多集群监控及指标持久化存储；支持基于 Pixie 的实时 K8s 应用监控；新增组件 Cluster Operator，以云原生的方式来管理各种基础设施的 kubernetes 集群生命周期，包括公有云、混合云和本地数据中心。
@@ -751,6 +765,10 @@
 - [Lima Linux 虚拟机 v0.14.0 发布（CNCF 项目）](https://github.com/lima-vm/lima/releases/tag/v0.14.0)
 
     该版本主要新特性：支持虚拟机共享文件系统 virtiofs、支持 Apple 的虚拟化框架 Virtualization.framework、支持 Containerd 命令行工具 nerdctl 1.1.0。
+
+- [Linkerd 服务网格项目 v2.13.0 发布（CNCF 项目）](https://github.com/linkerd/linkerd2/releases/tag/stable-2.13.0)
+
+    版本特性：引入客户端策略，包括动态路由和熔断器模式；支持调试基于 HTTPRoute 的策略；引入新的 init 容器 —— network-validator，确保本地 iptables 规则按预期工作。
 
 - [Linkerd 服务网格项目 v2.12.0 发布（CNCF 项目）](https://github.com/linkerd/linkerd2/releases/tag/stable-2.12.0)  
 
