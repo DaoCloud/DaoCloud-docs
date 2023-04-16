@@ -191,7 +191,8 @@ last_updated:
 1. 预先下载镜像以加速安装，使用 DaoCloud 的加速仓库
 
     ```bash
-    kubeadm config images pull --image-repository k8s-gcr.m.daocloud.io
+    # 指定 K8s 版本，并拉取镜像
+    kubeadm config images pull --image-repository k8s-gcr.m.daocloud.io --kubernetes-version=v1.25.8
     ```
 
 1. 调用 kubeadm 初始化第一个节点（使用 DaoCloud 加速仓库）
