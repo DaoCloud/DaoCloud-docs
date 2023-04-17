@@ -707,6 +707,7 @@ nav:
       - 云原生网络: videos/network.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 202304 | CNCF 平台工程白皮书: blogs/cncf-platform-wp.md
       - 202304 | K8s 1.27 正式发布: blogs/k8s1.27.md
       - 202304 | 固定应用 IP 的新选择: blogs/spiderpool.md
       - 202304 | 保姆式安装社区版: blogs/new-dce5-free.md
