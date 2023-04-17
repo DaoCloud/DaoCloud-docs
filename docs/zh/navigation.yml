@@ -28,6 +28,10 @@ nav:
               - 升级 DCE 5.0 GProduct: install/upgrade.md
               - 卸载: install/uninstall.md
               - 常见问题: install/faq.md
+          - 在不同 K8s 发行版上安装:
+              - 在 OpenShift OCP 上安装: install/k8s-install/ocp-install-dce5.0.md
+          - 在不同操作系统上安装:
+              - 在 UOS V20 (1020a) 上安装: install/os-install/uos-v20-install-dce5.0.md
           - Release Notes: install/release-notes.md
       - 容器管理:
           - 介绍:
