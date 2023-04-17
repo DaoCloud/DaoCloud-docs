@@ -20,8 +20,8 @@
 
 | **UI 项**               | **YAML 字段**                        | **描述**                                                     |
 | ---------------------- | -------------------------------------- | ------------------------------------------------------------ |
-| mTLS 模式               | spec.mTLS.mode                         | 必填。用于设定命名空间的 mTLS 模式：- UNSET：继承父级选项。否则视为 PERMISSIVE。<br />- PERMISSIVE：明文和 mTLS 连接<br />- STRICT：仅 mTLS 连接<br />- DISABLE：仅明文连接 |
-| 为指定端口添加 mTLS 模式 | spec.portLevelMtls                     | 可选。针对指定端口设置 mTLS 规则，可添加多条规则，无需排序。<br />- PERMISSIVE：明文和 mTLS 连接<br />- STRICT：仅 mTLS 连接<br />- DISABLE：仅明文连接 |
+| mTLS 模式               | spec.mTLS.mode                         | 必填。用于设定命名空间的 mTLS 模式：<br />- UNSET：继承父级选项。否则视为 PERMISSIVE<br />- PERMISSIVE：明文和 mTLS 连接<br />- STRICT：仅 mTLS 连接<br />- DISABLE：仅明文连接 |
+| 为指定端口添加 mTLS 模式 | spec.portLevelMtls                     | 可选。针对指定端口设置 mTLS 规则，可添加多条规则，无需排序。<br />- UNSET：继承父级选项。否则视为 PERMISSIVE<br />- PERMISSIVE：明文和 mTLS 连接<br />- STRICT：仅 mTLS 连接<br />- DISABLE：仅明文连接 |
 
 ## 请求身份认证
 
@@ -70,9 +70,9 @@
 | 策略动作             | spec.action                            | 可选。包含：<br />- 允许（allow）<br />- 拒绝（deny）<br />- 审计（audit）<br />- 自定义（custom）<br />选择自定义时，增加`provider`输入项。 |
 | Provider        | spec.provider.name                     | 必填。仅在`策略动作`选择为`自定义`时，才显示该输入框。              |
 | 请求策略         | spec.rules                             | 可选。包含请求来源、请求操作、策略条件三部分，可添加多条，按顺序执行。 |
-| 添加请求来源         | spec.rules.-from                       | 可选。请求来源可基于命名空间、IP 段等进行定义，可添加多条。各项参数参见下文 [请求来源 Source](#请求来源-source)。 |
-| 添加请求操作         | spec.rules.-to                         | 可选。请求操作是对筛选出的请求执行的操作，例如发送至指定端口或主机，可添加多个操作。各项参数参见下文[请求操作 Operation](#请求操作-operation)。 |
-| 添加策略条件         | spec.rules.-when                       | 必填。策略条件是一个可选设置，可以增加类似黑名单（values）、白名单的限制条件（notValues），可添加多个策略条件。各项参数参见下文[策略条件 Condition](#策略条件-condition)。 |
+| 添加请求来源         | spec.rules.-from                       | 可选。请求来源可基于命名空间、IP 段等进行定义，可添加多条。各项参数参见下文 [请求来源 Source](#source)。 |
+| 添加请求操作         | spec.rules.-to                         | 可选。请求操作是对筛选出的请求执行的操作，例如发送至指定端口或主机，可添加多个操作。各项参数参见下文[请求操作 Operation](#operation)。 |
+| 添加策略条件         | spec.rules.-when                       | 必填。策略条件是一个可选设置，可以增加类似黑名单（values）、白名单的限制条件（notValues），可添加多个策略条件。各项参数参见下文[策略条件 Condition](#condition)。 |
 
 #### 请求来源 Source
 
