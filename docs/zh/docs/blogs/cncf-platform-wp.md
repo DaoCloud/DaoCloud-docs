@@ -7,9 +7,8 @@
     “平台工程”统一这两个矛盾点，或者说“平台工程”是 DevOps 的下一站。
 
     ![cncf curve](./images/cncf-blog01.png)
+    
     ![cncf comments](./images/cncf-blog02.png)
-
-    （图摘自 [InfoQ](https://www.infoq.cn/article/7porvp7qvf03bvc2tdd6)）
 
     但关于平台工程的诠释，一直比较模糊。几天前，CNCF 的应用交付技术小组（App-Delivery TAG）（TAG：Technical Advisory Groups）
     发布了[《平台白皮书》](https://tag-app-delivery.cncf.io/whitepapers/platforms/) 让我们一起来看看吧。
@@ -28,13 +27,13 @@
 
 目录：
 
-1. [为什么需要一个平台](#_3)
-2. [平台是什么](#_4)
+1. [为什么需要一个平台](#_2)
+2. [平台是什么](#_3)
 3. [一个成功的平台应具备的属性](#_5)
 4. [一个成功的平台团队应具备的属性](#_6)
 5. [实施平台的挑战](#_7)
-6. [如何度量平台的成功](#_8)
-7. [平台的能力](#_9)
+6. [如何度量平台的成功](#_9)
+7. [平台的能力](#_13)
 
 ## 为何需要一个平台?
 
