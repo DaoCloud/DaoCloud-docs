@@ -18,7 +18,7 @@ Karmada (Kubernetes Armada) 使用户能够跨多个集群运行云原生应用�
 
 如果您在阅读本文之前，还未了解或使用过 Karmada，推荐阅读：
 
-1. Karmada 官方文档：https://karmada.io/docs/
+1. [Karmada 官方文档](https://karmada.io/docs/)
 2. [云原生多云应用利器 -- Karmada 总览篇](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273869&idx=1&sn=f6e03df6f34aa6106972193dba1604d8&chksm=8bcbcc1fbcbc4509060f92b3d636c28c6ccaad62fa3aeb4da9f17971b06e655d1d1385ab2f2c&scene=21#wechat_redirect)
 3. [云原生多云应用利器 -- Karmada 控制器](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273922&idx=1&sn=f17630589507999fc0690741c22178b9&scene=21#wechat_redirect)
 4. [云原生多云应用利器 -- Karmada 调度器](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273971&idx=1&sn=2c81b1959c101573b5b185c342495f30&chksm=8bcbcc61bcbc45772270811a23c210e3faa156078e991f56a288bd58be4246e9572badfb1fbc&scene=21&cur_album_id=2687691821095059459#wechat_redirect)
@@ -48,11 +48,17 @@ Karmada 故障恢复支持两种方式：
 1. 下载 Karmada 官方 v1.4.2 sourece code 后，使用 `hack/local-up-karmada.sh`，启动本地的 Karmada。
    启动后，自动纳管了三个工作集群，其中集群 member1 和 member2 使用 push 模式，member3 使用 pull 模式。
 
+    ```shell
+    export KUBECONFIG=$HOME/.kube/karmada.config
+    kubectl --kubeconfig $HOME/.kube/karmada.config config use-context karmada-apiserver
+    ```
     ```none
-    [root@york-karmada ~]# export KUBECONFIG=$HOME/.kube/karmada.config
-    [root@york-karmada ~]# kubectl --kubeconfig $HOME/.kube/karmada.config config use-context karmada-apiserver
     Switched to context "karmada-apiserver".
-    [root@york-karmada ~]# kubectl get cluster
+    ```
+    ```shell
+    kubectl get cluster
+    ```
+    ```none
     NAME      VERSION   MODE   READY   AGE
     member1   v1.23.4   Push   True    32m
     member2   v1.23.4   Push   True    32m
@@ -118,20 +124,34 @@ Karmada 故障恢复支持两种方式：
     这里的 work 即是通过传播策略和覆盖策略作用后实际需要在成员集群上传播的资源对象的载体，
     同时，资源 deployment 的 rb (ResourceBinding) 中看到，deployment 调度到了集群 member1 和集群 member2。
 
+    ```shell
+    kubectl create -f failover.yaml
+    ```
     ```none
-    [root@york-karmada ~]# kubectl create -f failover.yaml
     deployment.apps/nginx created
     propagationpolicy.policy.karmada.io/nginx-propagation created
-    [root@york-karmada ~]# kubectl get deploy,pp
+    ```
+    ```shell
+    kubectl get deploy,pp
+    ```
+    ```none
     NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
     deployment.apps/nginx   3/3     3            3           2m
 
     NAME                                                    AGE
     propagationpolicy.policy.karmada.io/nginx-propagation   119s
-    [root@york-karmada ~]# kubectl get work -A | grep nginx
+    ```
+    ```shell
+    kubectl get work -A | grep nginx
+    ```
+    ```none
     karmada-es-member1   nginx-687f7fb96f                  True      20m
     karmada-es-member2   nginx-687f7fb96f                  True      20m
-    [root@york-karmada ~]# kubectl get rb nginx-deployment -o yaml
+    ```
+    ```shell
+    kubectl get rb nginx-deployment -o yaml
+    ```
+    ```yaml
     ...
     spec:
     clusters:
@@ -148,12 +168,20 @@ Karmada 故障恢复支持两种方式：
         resourceVersion: "5776"
         uid: 530aa301-760a-48a7-ada0-fc3a2112564b
     ...
-    [root@york-karmada ~]# karmadactl get po
+    ```
+    ```shell
+    karmadactl get po
+    ```
+    ```none
     NAME                     CLUSTER   READY   STATUS    RESTARTS   AGE
     nginx-85b98978db-d7q92   member2   1/1     Running   0          110s
     nginx-85b98978db-xmbp9   member2   1/1     Running   0          110s
     nginx-85b98978db-97xbx   member1   1/1     Running   0          110s
-    [root@york-karmada ~]# karmadactl get deploy
+    ```
+    ```shell
+    karmadactl get deploy
+    ```
+    ```none
     NAME    CLUSTER   READY   UP-TO-DATE   AVAILABLE   AGE     ADOPTION
     nginx   member2   2/2     2            2           3m15s   Y
     nginx   member1   1/1     1            1           3m15s   Y
@@ -162,14 +190,20 @@ Karmada 故障恢复支持两种方式：
 3. 模拟集群发生故障，由于安装集群是使用 kind 启动的，那么我们直接暂停集群 member1 的容器，
    模拟实际情况中，集群由于网络或者集群本身问题，从而在联邦中失联。
 
+    ```shell
+    docker ps -a
+    ```
     ```none
-    [root@york-karmada ~]# docker ps -a
     CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS          PORTS                       NAMES
     8794507af450   kindest/node:v1.23.4   "/usr/local/bin/entr…"   52 minutes ago   Up 51 minutes   127.0.0.1:40000->6443/tcp   member2-control-plane
     cc57b0eb54fe   kindest/node:v1.23.4   "/usr/local/bin/entr…"   52 minutes ago   Up 51 minutes   127.0.0.1:35728->6443/tcp   karmada-host-control-plane
     5ac1815cd40e   kindest/node:v1.23.4   "/usr/local/bin/entr…"   52 minutes ago   Up 51 minutes   127.0.0.1:39837->6443/tcp   member1-control-plane
     f5e5f753dcb8   kindest/node:v1.23.4   "/usr/local/bin/entr…"   52 minutes ago   Up 51 minutes   127.0.0.1:33529->6443/tcp   member3-control-plane
-    [root@york-karmada ~]# docker stop member1-control-plane
+    ```
+    ```shell
+    docker stop member1-control-plane
+    ```
+    ```none
     member1-control-plane
     ```
 
@@ -179,29 +213,47 @@ Karmada 故障恢复支持两种方式：
     但是有个问题，从 rb (rersourcebinding) 的配置中，我们可以看到，此时资源未调度到集群 member1，但是此时集群 member1 对应的执行命名空间下仍然存在对应的
     work，这是为什么呢？不急，我们来继续进一步探究。
 
+    ```shell
+    kubectl get cluster
+    ```
     ```none
-    [root@york-karmada ~]# kubectl get cluster
     NAME      VERSION   MODE   READY   AGE
     member1   v1.23.4   Push   False   43m
     member2   v1.23.4   Push   True    43m
     member3   v1.23.4   Pull   True    42m
-    [root@york-karmada ~]# kubectl get deploy,pp
+    ```
+    ```shell
+    kubectl get deploy,pp
+    ```
+    ```none
     NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
     deployment.apps/nginx   3/3     3            3           11m
 
     NAME                                                    AGE
     propagationpolicy.policy.karmada.io/nginx-propagation   11m
-    [root@york-karmada ~]# karmadactl get deploy
+    ```
+    ```shell
+    karmadactl get deploy
+    ```
+    ```none
     NAME    CLUSTER   READY   UP-TO-DATE   AVAILABLE   AGE   ADOPTION
     nginx   member2   3/3     3            3           12m   Y
     error: cluster(member1) is inaccessible, please check authorization or network
-    [root@york-karmada ~]# karmadactl get po
+    ```
+    ```shell
+    karmadactl get po
+    ```
+    ```none
     NAME                     CLUSTER   READY   STATUS    RESTARTS   AGE
     nginx-85b98978db-8zj5k   member2   1/1     Running   0          3m18s
     nginx-85b98978db-d7q92   member2   1/1     Running   0          12m
     nginx-85b98978db-xmbp9   member2   1/1     Running   0          12m
     error: cluster(member1) is inaccessible, please check authorization or network
-    [root@york-karmada ~]# kubectl get rb nginx-deployment -o yaml
+    ```
+    ```shell
+    kubectl get rb nginx-deployment -o yaml
+    ```
+    ```yaml
     ...
     spec:
     clusters:
@@ -216,7 +268,11 @@ Karmada 故障恢复支持两种方式：
         resourceVersion: "5776"
         uid: 530aa301-760a-48a7-ada0-fc3a2112564b
     ...
-    [root@york-karmada ~]# kubectl get work -A | grep nginx
+    ```
+    ```shell
+    kubectl get work -A | grep nginx
+    ```
+    ```none
     karmada-es-member1   nginx-687f7fb96f                  True      30m
     karmada-es-member2   nginx-687f7fb96f                  True      30m
     ```
@@ -225,13 +281,19 @@ Karmada 故障恢复支持两种方式：
     可以发现，当故障集群恢复后，集群 member2 上的副本数不变，同时，控制平面在集群
     member1 对应执行命名空间下的 work 被删除，集群 member1 上的 deployment 被删除。
 
+    ```shell
+    kubectl get cluster
+    ```
     ```none
-    [root@york-karmada ~]# kubectl get cluster
     NAME      VERSION   MODE   READY   AGE
     member1   v1.23.4   Push   True    147m
     member2   v1.23.4   Push   True    147m
     member3   v1.23.4   Pull   True    146m
-    [root@york-karmada ~]# karmadactl get deploy,po
+    ```
+    ```shell
+    karmadactl get deploy,po
+    ```
+    ```none
     NAME                         CLUSTER   READY   STATUS    RESTARTS   AGE
     pod/nginx-85b98978db-2p8hn   member2   1/1     Running   0          73m
     pod/nginx-85b98978db-7j8xs   member2   1/1     Running   0          73m
@@ -239,7 +301,11 @@ Karmada 故障恢复支持两种方式：
 
     NAME                    CLUSTER   READY   UP-TO-DATE   AVAILABLE   AGE
     deployment.apps/nginx   member2   3/3     3            3           73m
-    [root@york-karmada ~]# kubectl get work | grep nginx
+    ```
+    ```shell
+    kubectl get work | grep nginx
+    ```
+    ```none
     No resources found in default namespace.
     ```
 
@@ -466,7 +532,7 @@ func (s *ResourceBindingSpec) GracefulEvictCluster(name, producer, reason, messa
 }
 ```
 
-## Karmada scheduler
+### Karmada scheduler
 
 ![Karmada scheduler](./images/karmada08.png)
 
