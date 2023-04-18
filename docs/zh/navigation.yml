@@ -594,6 +594,7 @@ nav:
               - 数据迁移: middleware/rabbitmq/user-guide/migrate.md
               - 实例监控: middleware/rabbitmq/user-guide/insight.md
               - 查看 RabbitMQ 日志: middleware/rabbitmq/user-guide/logs.md
+              - 为 RabbitMQ 添加自定义插件: middleware/rabbitmq/faq/add-plugin.md
               - Release Notes: middleware/rabbitmq/release-notes.md
           - Redis 缓存服务:
               - 什么是 Redis: middleware/redis/intro/what.md
