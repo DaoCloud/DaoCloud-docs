@@ -758,3 +758,4 @@ nav:
       - OpenAPI 文档汇总: openapi/index.md
       - 全局管理 OpenAPI: openapi/ghippo/v0.15.0.md
       - 服务网格 OpenAPI: openapi/mspider/v0.105.1.md
+      - Insight OpenAPI: openapi/insight/v0.16.0-alpha1.md
