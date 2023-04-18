@@ -4,7 +4,7 @@
 
 !!! tip
 
-    这是一种极简安装方式，便于学习和体验，性能优于 [macOS 单机版](./macos.md)。原文作者是 [panpan0000](https://github.com/panpan0000)。
+    这是一种极简安装方式，便于学习和体验，性能优于 [macOS 单机版](230315-install-on-macos.md)。原文作者是 [panpan0000](https://github.com/panpan0000)。
 
 ## 准备工作
 
