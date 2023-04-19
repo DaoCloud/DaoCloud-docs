@@ -87,8 +87,8 @@ EOF
     4. Dotnet 应用
 
         ```bash
-       暂不支持，社区bug修复中... 
-       ```
+        instrumentation.opentelemetry.io/inject-dotnet: "insight-system/insight-opentelemetry-autoinstrumentation"
+        ```
 
 ## 自动注入示例 Demo
 
