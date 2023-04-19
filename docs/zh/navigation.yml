@@ -32,6 +32,7 @@ nav:
               - 在 OpenShift OCP 上安装: install/k8s-install/ocp-install-dce5.0.md
           - 在不同操作系统上安装:
               - 在 UOS V20 (1020a) 上安装: install/os-install/uos-v20-install-dce5.0.md
+              - Other Linux 离线部署 DCE 5.0: install/os-install/otherlinux.md
           - Release Notes: install/release-notes.md
       - 容器管理:
           - 介绍:

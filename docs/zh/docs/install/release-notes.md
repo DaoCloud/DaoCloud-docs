@@ -11,6 +11,11 @@
 - **优化** 升级了 Kpanda 至 v0.16.1
 - **优化** 升级了 Skoala 至 v0.19.4
 
+#### 已知问题
+
+- 采用 7 节点模式安装时，es 专属节点未占成功，预计下个版本修复
+- 安装器向火种节点 regsitry 导入镜像时报错 `skopeo copy 500 Internal Error -- "NAME_UNKNOWN","message":"repository name not known to registry`
+
 ## 2023-4-06
 
 ### v0.6.0

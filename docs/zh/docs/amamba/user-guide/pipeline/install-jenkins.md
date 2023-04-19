@@ -1,6 +1,12 @@
 # 安装 Jenkins
 
-安装 Jenkins 之前需要确保将要 Jenkins 的集群中存在默认的存储类。
+## 前提条件
+
+- 安装 Jenkins 之前需要确保将要 Jenkins 的集群中存在默认的存储类。
+- 请确保安装在 `amamba-system` 命名空间下。
+- 如果在全局服务集群安装，请确保在`容器管理->helm 应用`，`amamba-system` 命名空间下的 `amamba-jenkins` 实例。
+
+## 开始安装
 
 1. 进入`容器管理`模块，在`集群列表`中找到需要安装 Jenkins 的集群，点击该集群的名称。
 
