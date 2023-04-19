@@ -13,6 +13,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 | offline-community-v0.5.0-arm64.tar | v0.5.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.5.0.md) | 2023-03-06 |
 | offline-community-v0.5.0-amd64.tar | v0.5.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.5.0.md) | 2023-03-06 |
 
+[更多历史版本](./free/dce5-installer-history.md)
+
 ## 下载商业版
 
 此版本适合搭建私有云、混合云、多云、微服务等场景，可以定制丰富多样的云原生模块。
@@ -21,6 +23,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 | ---------------- | ------- | ----------------------------------------- | -------- |
 | offline-v0.5.0-arm64.tar | v0.5.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.5.0.md) | 2023-03-06 |
 | offline-v0.5.0-amd64.tar | v0.5.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.5.0.md) | 2023-03-06 |
+
+[更多历史版本](./business/dce5-installer-history.md)
 
 ## 下载 Addon 离线包
 
