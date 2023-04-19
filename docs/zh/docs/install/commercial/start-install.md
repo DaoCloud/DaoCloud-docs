@@ -15,7 +15,7 @@ hide:
 
 请根据业务环境下载对应的离线包。
 
-#### 离线镜像包
+#### 离线镜像包 （必须）
 
 可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
 
@@ -31,7 +31,7 @@ hide:
 tar -xvf offline-v0.6.1-amd64.tar
 ```
 
-#### addon 离线包
+#### addon 离线包 （可选）
 
 安装器从 v0.5.0 版本，支持了 addon 的离线包导入能力，如果需要支持 addon 中所有的 helm chart 离线化。可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
 
@@ -42,7 +42,7 @@ tar -xvf offline-v0.6.1-amd64.tar
 | AMD64    | v0.5.2 | https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.5.2-amd64.tar.gz |
 | ARM64    | v0.5.2 | https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.5.2-arm64.tar.gz |
 
-#### ISO 离线包
+#### ISO 离线包 （必须）
 
 ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置，请根据操作系统进行下载。
 
@@ -52,7 +52,7 @@ ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置�
 |          | Redhat 7/8                                          | https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451<br />注意：Redhat 操作系统需要 Redhat 的账号才可以下载 |
 | ARM64    | Kylin Linux Advanced Server release V10 (Sword) SP2 | 申请地址：https://www.kylinos.cn/scheme/server/1.html <br />注意：麒麟操作系统需要提供个人信息才能下载使用，下载时请选择 V10 (Sword) SP2 |
 
-#### osPackage 离线包
+#### osPackage 离线包 （必须）
 
 安装器从 v0.5.0 版本，需要提供操作系统的 osPackage 离线包，并在[集群配置文件（clusterConfig.yaml）](./cluster-config.md)中定义 `osPackagePath`。
 
