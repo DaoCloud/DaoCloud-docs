@@ -451,12 +451,19 @@ nav:
               - 多云网络分流配置: mspider/user-guide/multicluster/traffic-branch.md
               - Istio 资源管理: mspider/user-guide/mesh-config/istio-resources.md
               - 自定义组件资源: mspider/user-guide/mesh-config/custom-res.md
+              - TLS 密钥管理: mspider/user-guide/mesh-config/tls-secret.md
           - 测试:
               - OCP 接入网格: mspider/test/ocp.md
               - Openshift 与网格兼容性测试: mspider/test/openshift.md
               - 网格多云部署: mspider/user-guide/multicluster/multicluster-install.md
               - 多集群网络通讯原理: mspider/user-guide/multicluster/multi-cluster-net.md
               - 多集群灰度发布: mspider/user-guide/multicluster/gray-scale-release.md
+          - 故障排查:
+              - 创建网格故障排查: mspider/troubleshoot/index.md
+              - 创建网格时找不到所属集群: mspider/troubleshoot/cannot-find-cluster.md
+              - 创建网格时一直处于“创建中”: mspider/troubleshoot/always-in-creating.md
+              - 创建的网格异常但无法删除: mspider/troubleshoot/failed-to-delete.md
+              - 托管网格纳管集群失败: mspider/troubleshoot/failed-to-add-cluster.md
       - 云原生网络:
           - 介绍:
               - 什么是云原生网络: network/intro/what.md
