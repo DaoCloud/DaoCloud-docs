@@ -4,11 +4,14 @@
 
 ## 前提条件
 
-在 DCE 5.0 中安装 Cilium，需要在`创建集群`—>`网络配置`页面下，`网络插件`选择 `cilium`。关于创建集群，请参阅[创建工作集群](../../../kpanda/user-guide/clusters/create-cluster.md)。
+1. 请确认 操作系统 Kernel 版本号\>= 4.9.17，推荐 5.10+
 
-![cilium-install](../../images/cilium-install1.png)
+2. DCE 5.0 安装时，选择的网络 CNI 为 Cilium 
+   在 DCE 5.0 中安装 Cilium，需要在`创建集群`—>`网络配置`页面下，`网络插件`选择 `cilium`。关于创建集群，请参阅[创建工作集群](../../../kpanda/user-guide/clusters/create-cluster.md)。
 
-## 参数配置
+   ![](../../images/cilium-install1.jpg)
+
+## 高级参数
 
 如果用户需要为 Cilium 配置更多功能，可通过 Kubean 安装 Cilium。关于使用 Kubean 安装 Cilium 时的各项参数配置，请在`高级配置`—>`自定义参数`下根据需要添加并填写。
 
@@ -27,8 +30,7 @@
     支持的值有 “vxlan”、“geneve” 及 “disabled”，其中 “disabled” 表示使用路由模式。
 
 - IPAM 模式
-
-    默认使用 "Cluster Scope" 模式，可以通过以下参数进行设置：
+    IPAM负责分配和管理网络端点（容器或其它）的IP地址。Cilium支持多种IPAM模式。默认使用 "Cluster Scope" 模式，可以通过以下参数进行设置：
 
     ```yaml
     cilium_ipam_mode: cluster-pool
@@ -36,9 +38,15 @@
 
     支持的值有 “cluster-pool”、“kubernetes” 及各大公有云定制的模式。
 
+    1. `kubernetes`:  使用Kubernetes自带的 host-scope IPAM。地址分配委托给每个节点进行，per-node的 Pod CIDR存放在v1.Node中。
+
+    2. `cluster-pool`:默认的 `IPAM` 模式，它分配`per-node`的Pod CIDR，并在每个节点上使用`host-scope`的分配器来分配IP地址。
+
+       此模式和kubernetes 类似，区别在于后者在 v1.Node 资源中存储 per-node 的 Pod CIDR。
+
 - IPV4 及 IPV6
 
-    默认使用 IPV4，可以通过以下参数进行设置：
+    默认使用 IPV4，可以通过以下参数进行设置，如通过界面开启双栈开关，默认 IPv6 参数自动打开：
 
     ```yaml
     cilium_enable_ipv4: true
@@ -55,13 +63,13 @@
 
 - 身份模式
 
+    cilium id 存储结构，`crd` or `kvstore`，通常情况下直接使用 CRD 存储元信息会是一个更为便利的选择，不过在大规模集群下，拆分一组独立的 ETCD 给 cilium 单独使用会是一个更高效的选择。
+
     默认使用 “crd” 模式，可以通过以下参数进行设置：
-
+    
     ```yaml
-    cilium_identity_allocation_mode: crd
+cilium_identity_allocation_mode: crd
     ```
-
-    支持的值有 “crd” 及 “kvstore”。
 
 - 资源限制
 
