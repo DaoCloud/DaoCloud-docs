@@ -6,7 +6,7 @@ Application workbench is designed for the process of automated delivery of enter
 
 === "Multi Tenants Management"
 
-Taking the [workspace](../../ghippo/04UserGuide/02Workspace/ws-folder.md) as a minimum tenant unit, supports the ability to share resources in a single cluster and across clusters:
+Taking the [workspace](../../ghippo/user-guide/02Workspace/ws-folder.md) as a minimum tenant unit, supports the ability to share resources in a single cluster and across clusters:
 
 - Weak binding clusters, so as to obtain the ability to share resources across clusters and namespaces.
 - Strong cluster binding, so as to obtain the ability of exclusive resources.

@@ -7,7 +7,7 @@ hide:
 
 The observability module uses the following roles:
 
--Admin / Kpanda Owner
+- Admin / Kpanda Owner
 - [Cluster Admin](../../kpanda/07UserGuide/Permissions/PermissionBrief.md#cluster-admin)
 - [NS Admin](../../kpanda/07UserGuide/Permissions/PermissionBrief.md#ns-admin) / [NS Edit](../../kpanda/07UserGuide/Permissions/PermissionBrief.md#ns- edit)
 - [NS View](../../kpanda/07UserGuide/Permissions/PermissionBrief.md#ns-view)
@@ -61,4 +61,4 @@ You have permission to use `&check;`, but you don't have permission to use `&cro
 
 For more information on permissions, see [Container Management Permissions Description](../../kpanda/07UserGuide/Permissions/PermissionBrief.md).
 
-For creating, managing and deleting roles, please refer to [Role and Access Management](../../ghippo/04UserGuide/01UserandAccess/Role.md).
+For creating, managing and deleting roles, please refer to [Role and Access Management](../../ghippo/user-guide/01UserandAccess/Role.md).
