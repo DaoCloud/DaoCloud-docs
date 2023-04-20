@@ -10,7 +10,7 @@ This page describes the features of Global Management.
 1. User Management
 
      Having a user account is a prerequisite for users to access the DCE platform.
-     [User](../04UserGuide/01UserandAccess/User.md) is created by Super Admin or IAM Admin in `Global Management` -> `Users and Access Control` -> `Users` page , or connected via LDAP.
+     [User](../user-guide/01UserandAccess/User.md) is created by Super Admin or IAM Admin in `Global Management` -> `Users and Access Control` -> `Users` page , or connected via LDAP.
      Each user has an independent user name and password. By granting different permissions to a single or a group of users, different users have access to different resources.
 
      ```mermaid
@@ -33,7 +33,7 @@ This page describes the features of Global Management.
 
 2. Group management
 
-     [group](../04UserGuide/01UserandAccess/Group.md) is a collection of multiple users.
+     [group](../user-guide/01UserandAccess/Group.md) is a collection of multiple users.
      Users can inherit the role permissions of the group by joining the group. Authorize users in batches through groups to better manage users and their permissions.
 
      ```mermaid
@@ -57,7 +57,7 @@ This page describes the features of Global Management.
 
 3. Role Management
 
-     A [role](../04UserGuide/01UserandAccess/Role.md) corresponds to a set of permissions.
+     A [role](../user-guide/01UserandAccess/Role.md) corresponds to a set of permissions.
      Permissions determine the actions that can be performed on a resource. Granting a role to a user grants all the permissions included in that role.
      You can divide the management rights of different modules to different users,
      For example, user A manages the container management module, user B manages the application workbench module, and jointly manages the observability module.
@@ -66,7 +66,7 @@ This page describes the features of Global Management.
 
 4. Workspace
 
-     [Workspace](../04UserGuide/02Workspace/Workspaces.md) is used to manage resources, including two parts: hierarchy and workspace.
+     [Workspace](../user-guide/02Workspace/Workspaces.md) is used to manage resources, including two parts: hierarchy and workspace.
 
      Levels are nodes in the resource hierarchy, and a level can contain workspaces, other levels, or a combination of both.
      Hierarchy can be understood as a variety of concepts such as hierarchical departments, environments, and suppliers.
@@ -79,13 +79,13 @@ This page describes the features of Global Management.
 
 5. Audit logs
 
-     [Audit Log](../04UserGuide/03AuditLog.md) completely records the user's various operations,
+     [Audit Log](../user-guide/03AuditLog.md) completely records the user's various operations,
      Including operations initiated by users through pages or API interfaces and self-triggered operations within each service.
      It supports combined query through multiple dimensions such as event source, resource type, and operation status, and supports audit log export.
 
 6. Platform Settings
 
-     [Platform Settings](../04UserGuide/04PlatformSetting/about.md) includes account security settings, appearance customization, mail server, etc.
+     [Platform Settings](../user-guide/04PlatformSetting/about.md) includes account security settings, appearance customization, mail server, etc.
      When it is necessary to manage platform-level settings such as account security information, platform logo, license authorization, and mail server,
      It can be operated through `Platform Settings`, and only Admin have management rights for platform settings.
 
@@ -116,7 +116,7 @@ This page describes the features of Global Management.
 The specific function list is described below.
 
 1. Users and Access Control
-    1. [User](../04UserGuide/01UserandAccess/User.md)
+    1. [User](../user-guide/01UserandAccess/User.md)
          - List display username, description, creation time, last login time
          - List supports searching users by username
          - The list supports quick authorization to users
@@ -128,7 +128,7 @@ The specific function list is described below.
          - Details support recording user joining group information, support users joining new groups, support removing users from old groups
          - Support administrators to help users change passwords
          - Support administrators to help users create access keys
-    2. [group](../04UserGuide/01UserandAccess/Group.md)
+    2. [group](../user-guide/01UserandAccess/Group.md)
          - List display group name, number of users in the group, description, creation time
          - The list supports searching by group name
          - The list supports quick authorization to groups
@@ -138,25 +138,25 @@ The specific function list is described below.
          - Details support editing group basic information, such as description
          - Detailed support for recording group authorization information, support for adding/removing permissions
          - Detailed support for recording group member information, support for adding new members to groups, and support for removing members from groups
-    3. [Role](../04UserGuide/01UserandAccess/Role.md)
+    3. [Role](../user-guide/01UserandAccess/Role.md)
          - List display system role name, description
          - Record role authorization information in detail, support granting roles to users/groups, and support removing users/groups from this role
          - Supports three predefined folder roles: Folder Admin, Folder Editor, and Folder Viewer
          - Supports three predefined workspace roles: Workspace Admin, Workspace Editor, and Workspace Viewer
-    4. [Identity Provider](../04UserGuide/01UserandAccess/idprovider.md)
+    4. [Identity Provider](../user-guide/01UserandAccess/idprovider.md)
          - Support LDAP and OIDC to connect to external users
          - LDAP protocol supports manual/automatic synchronization of external users
          - LDAP protocol supports manual synchronization of external groups
          - OIDC protocol supports manual synchronization of external users
 2. Workspace and Hierarchy
-    1. [Folders](../04UserGuide/02Workspace/folders.md)
+    1. [Folders](../user-guide/02Workspace/folders.md)
          - Support tree structure to display folders and workspaces
          - Supports searching by folder name and workspace name
          - Support 5-level folder mapping enterprise hierarchy
          - Support for adding users/groups to folders and authorizing them
          - Support permission inheritance, subfolders and workspaces can inherit the permissions of users/groups in the parent folder
          - Support moving folders. Mapping changes of departments in the enterprise, after the move, the subfolders, workspaces and their resources/members under it will follow the move of the folder, and the inheritance relationship of permissions will change again
-    2. [Workspaces](../04UserGuide/02Workspace/Workspaces.md)
+    2. [Workspaces](../user-guide/02Workspace/Workspaces.md)
          - Support for adding users to the workspace/usergroup and authorize
          - Support adding resources to workspace - Resource group, supports 6 resource types
          - Support permission inheritance, the resources in the resource group can inherit the roles of the user/group in the workspace and parent folder
@@ -164,7 +164,7 @@ The specific function list is described below.
          - Support adding resources to the workspace - Share resources, share a cluster resource to multiple workspaces
          - Support for resource quotas for each shared cluster resource
          - Supports resource quotas through six dimensions: CPU Limit, CPU Request, Memory Limit, Memory Request, total storage request Request Storage, and storage volume statement PersistentVolumeClaim
-3. [Audit Log](../04UserGuide/03AuditLog.md)
+3. [Audit Log](../user-guide/03AuditLog.md)
      - List display event name, resource type, resource name, status, operator, operation time
      - List support to view audit log details
      - The list supports displaying the audit logs of the latest day or a custom time
@@ -182,8 +182,8 @@ The specific function list is described below.
          - Support custom session timeout policy, automatically log out of the current account when the time is exceeded
          - Support custom account lock strategy, if you fail to log in multiple times within the time limit, the account will be locked
          - Support login and logout strategy, log out while closing the browser after opening
-    2. [Mail Server Settings](../04UserGuide/04PlatformSetting/MailServer.md): Support administrators to configure the mail server, support retrieving user passwords by mail, receive alarm notifications, etc.
-    3. [Appearance Customization](../04UserGuide/04PlatformSetting/Appearance.md)
+    2. [Mail Server Settings](../user-guide/04PlatformSetting/MailServer.md): Support administrators to configure the mail server, support retrieving user passwords by mail, receive alarm notifications, etc.
+    3. [Appearance Customization](../user-guide/04PlatformSetting/Appearance.md)
          - Support custom login page, including changing platform LOGO, login page icon, tab page icon, etc.
          - Support one-click restore login page appearance configuration
          - Support for customizing the top navigation bar, including navigation bar icons, tab page icons, etc.
@@ -191,13 +191,13 @@ The specific function list is described below.
     4. [Genuine License](../../dce/license0.md)
          - The list shows the license name, the module it belongs to, the license level, and the expiration time of the license status
          - Support for managing licenses to ensure submodules are within the validity period
-    5. [About Platform](../04UserGuide/04PlatformSetting/about.md)
+    5. [About Platform](../user-guide/04PlatformSetting/about.md)
          - Support display module version
          - Open source software supported by the demonstration platform
          - Support the display of technical team style
 5. Personal center
-    1. [Security Settings](../04UserGuide/06PersonalCenter/SecuritySetting.md)
+    1. [Security Settings](../user-guide/06PersonalCenter/SecuritySetting.md)
          - Support users to update login password
          - Support retrieving login password through email
-    2. [Access Key](../04UserGuide/06PersonalCenter/Password.md): Support each user to create an independent API key, and support API key expiration settings to ensure system security
-    3. [Language Settings](../04UserGuide/06PersonalCenter/Language.md): Supports multiple languages, supports Simplified Chinese, English, and automatically detects your browser's preferred language to determine the language in three ways
+    2. [Access Key](../user-guide/06PersonalCenter/Password.md): Support each user to create an independent API key, and support API key expiration settings to ensure system security
+    3. [Language Settings](../user-guide/06PersonalCenter/Language.md): Supports multiple languages, supports Simplified Chinese, English, and automatically detects your browser's preferred language to determine the language in three ways

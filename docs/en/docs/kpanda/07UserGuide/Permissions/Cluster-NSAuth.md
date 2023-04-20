@@ -6,11 +6,11 @@ Container management implements authorization based on global authority manageme
 
 Before authorizing users/groups, complete the following preparations:
 
-- The user/group to be authorized has been created in the global management, please refer to [User](../../../ghippo/04UserGuide/01UserandAccess/User.md).
+- The user/group to be authorized has been created in the global management, please refer to [User](../../../ghippo/user-guide/01UserandAccess/User.md).
 
-- Only [`Kpanda Owner`](../../../ghippo/04UserGuide/01UserandAccess/global.md) and [`Cluster Admin`](PermissionBrief.md#cluster-admin) of the current cluster have cluster authorization ability. For details, please refer to [Permission Description](PermissionBrief.md).
+- Only [`Kpanda Owner`](../../../ghippo/user-guide/01UserandAccess/global.md) and [`Cluster Admin`](PermissionBrief.md#cluster-admin) of the current cluster have cluster authorization ability. For details, please refer to [Permission Description](PermissionBrief.md).
 
-- Only [`Kpanda Owner`](../../../ghippo/04UserGuide/01UserandAccess/global.md), [`Cluster Admin`](PermissionBrief.md#cluster-admin) for the current cluster, currently named The [`NS Admin`](PermissionBrief.md#ns-admin) of the space has the namespace authorization capability.
+- Only [`Kpanda Owner`](../../../ghippo/user-guide/01UserandAccess/global.md), [`Cluster Admin`](PermissionBrief.md#cluster-admin) for the current cluster, currently named The [`NS Admin`](PermissionBrief.md#ns-admin) of the space has the namespace authorization capability.
 
 ## Cluster Authorization
 

@@ -96,7 +96,7 @@ Follow the steps below to prepare a namespace that is not yet bound to any works
 
     !!! info
 
-        Workspaces are primarily used to divide groups of resources and grant users (groups of users) different access rights to that resource. For a detailed description of the workspace, please refer to [Workspace and Hierarchy](../../../ghippo/04UserGuide/02Workspace/Workspaces.md).
+        Workspaces are primarily used to divide groups of resources and grant users (groups of users) different access rights to that resource. For a detailed description of the workspace, please refer to [Workspace and Hierarchy](Workspaces.md).
 
     
 
