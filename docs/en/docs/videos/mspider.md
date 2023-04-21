@@ -25,13 +25,15 @@ See the [Create mesh](../mspider/user-guide/service-mesh/README.md) documentatio
 
 ## Create mesh gateway
 
+See the [Create mesh gateway](../mspider/user-guide/gateway-instance/create.md) documentation page.
+
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-mesh-gateway.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
 ## Access mesh services from external applications
 
-See [External Application Access to In-mesh Services](../mspider/03UserGuide/01ServiceList/out-to-in.md) documentation page.
+See [External Application Access to In-mesh Services](../mspider/user-guide/service-list/out-to-in.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/visit-from-external.mp4" scrolling="no" border="0" frameborder="no" framespacing= "0" allowfullscreen="true"> </iframe>
@@ -39,7 +41,7 @@ See [External Application Access to In-mesh Services](../mspider/03UserGuide/01S
 
 ## Security Governance
 
-See the [Security Governance](../mspider/03UserGuide/05Security/README.md) documentation page.
+See the [Security Governance](../mspider/user-guide/security/README.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/mesh-security.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
@@ -47,7 +49,7 @@ See the [Security Governance](../mspider/03UserGuide/05Security/README.md) docum
 
 ## Istio version upgrade
 
-See the [Istio Version Upgrade](../mspider/03UserGuide/upgrade/IstioUpdate.md) documentation page.
+See the [Istio Version Upgrade](../mspider/install/istio-update.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/istio-upgrade.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
@@ -55,7 +57,7 @@ See the [Istio Version Upgrade](../mspider/03UserGuide/upgrade/IstioUpdate.md) d
 
 ## Sidecar upgrade
 
-See the [Sidecar Upgrade](../mspider/03UserGuide/upgrade/SidecarUpdate.md) documentation page.
+See the [Sidecar Upgrade](../mspider/install/sidecar-update.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sidecarup.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
@@ -63,7 +65,7 @@ See the [Sidecar Upgrade](../mspider/03UserGuide/upgrade/SidecarUpdate.md) docum
 
 ## Traffic passthrough
 
-See the [traffic passthrough](../mspider/03UserGuide/07SidecarManagement/passthrough.md) documentation page.
+See the [traffic passthrough](../mspider/user-guide/sidecar-management/passthrough.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/passthrough.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>

@@ -12,7 +12,7 @@ Clusters created through the DCE 5.0 [Container Management](../../intro/WhatisKP
 
 !!! note
 
-    The current operating user should have the [`kpanda owner`](../../../ghippo/04UserGuide/01UserandAccess/global.md) permission to perform uninstallation or removal of access operations.
+    The current operating user should have the [`kpanda owner`](../../../ghippo/user-guide/01UserandAccess/global.md) permission to perform uninstallation or removal of access operations.
 
 1. On the `Cluster List` page, find the cluster that needs to be uninstalled/unconnected, click `...` on the right and click `Uninstall Cluster`/`Unconnect` in the drop-down list.
 

@@ -70,7 +70,7 @@ Facing these demands, Service Mesh provides comprehensive security solutions, in
 
 - Multi-cluster security
 
-     In a multi-cluster scenario, the service mesh provides global service access security. Grids of multiple clusters share a set of root certificates, distribute key and certificate pairs to service instances on the data plane, replace key certificates regularly, and revoke key certificates as needed. When accessing between services, the data plane agent of the grid will act as a proxy for the local service and the peer to perform two-way authentication and channel encryption. The two-way authentication service parties here can come from two different clusters, so as to achieve transparent end-to-end two-way authentication across clusters.
+     In a multi-cluster scenario, the service mesh provides global service access security. meshs of multiple clusters share a set of root certificates, distribute key and certificate pairs to service instances on the data plane, replace key certificates regularly, and revoke key certificates as needed. When accessing between services, the data plane agent of the mesh will act as a proxy for the local service and the peer to perform two-way authentication and channel encryption. The two-way authentication service parties here can come from two different clusters, so as to achieve transparent end-to-end two-way authentication across clusters.
 
 - Fine-grained authorization
 
@@ -91,5 +91,5 @@ A service mesh can perform telemetry for all service communications within the m
 
 - Rich performance monitoring capabilities
 
-     Generate service access data based on the grid, integrate various performance monitoring services, and provide cross-cluster intelligent service operation management.
+     Generate service access data based on the mesh, integrate various performance monitoring services, and provide cross-cluster intelligent service operation management.
      Including cross-cluster service call chains, service access topology and service running health status, associating access status between services through a cross-cluster global view, etc.

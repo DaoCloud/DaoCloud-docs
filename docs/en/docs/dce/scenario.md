@@ -49,13 +49,13 @@ Users have weak ability to observe running applications, and hope to complete ob
 
 Modules involved: [Container Management](../kpanda/intro/WhatisKPanda.md), [Observability](../insight/intro/WhatisInsight.md), [Container Network](../network/intro/what-is-net.md), Edge Cloud Synergy, Xinchuang Cloud
 
-Advantages of the solution: unified collection of observation data, one control panel can query all cluster and load observation data, and in-depth support for microservice architecture, [service mesh](../mspider/intro/WhatismSpider.md), network EBPF observation ability.
+Advantages of the solution: unified collection of observation data, one control panel can query all cluster and load observation data, and in-depth support for microservice architecture, [service mesh](../mspider/intro/what.md), network EBPF observation ability.
 
 === "Converged Microservices"
 
 The user's application architecture decides to adopt the microservice architecture or has already adopted microservices, and hopes to obtain technical support such as a full range of microservice frameworks and comprehensive operation and maintenance capabilities, or hopes to introduce service mesh technology and achieve smooth transition in the process of technology change.
 
-Modules involved: [Container Management](../kpanda/intro/WhatisKPanda.md), [Container Network](../network/intro/what-is-net.md), [Microservice Engine](../skoala/intro/features.md), [Service Mesh](../mspider/intro/WhatismSpider.md), [Observability](../insight/intro/WhatisInsight.md), [Application Workbench](../amamba/intro/WhatisAmamba.md)
+Modules involved: [Container Management](../kpanda/intro/WhatisKPanda.md), [Container Network](../network/intro/what-is-net.md), [Microservice Engine](../skoala/intro/features.md), [Service Mesh](../mspider/intro/what.md), [Observability](../insight/intro/WhatisInsight.md), [Application Workbench](../amamba/intro/WhatisAmamba.md)
 
 Solution advantages: seamlessly integrate the first-generation microservices represented by SpringCloud and Dubbo with the new-generation microservice technology represented by Istio service mesh, and complete the microservice management of the whole lifecycle from development, deployment, access, external, observation, operation and maintenance ability.
 

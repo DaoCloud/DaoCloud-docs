@@ -21,7 +21,7 @@ DCE 5.0 natively supports the DevOps development and operation and maintenance m
 - :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](amamba/intro/WhatisAmamba.md)
 - :material-cloud-check: **Multicloud Orchestration** [Manage multi-cloud instances, workloads, policies](kairship/intro/whatiskairship.md)
 - :material-engine: **Microservice Engine** [Microservice registry and gateway](skoala/intro/features.md)
-- :material-table-refresh: **Service Mesh** [Non-intrusive service governance](mspider/intro/WhatismSpider.md)
+- :material-table-refresh: **Service Mesh** [Non-intrusive service governance](mspider/intro/what.md)
 - :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](middleware/midware.md)
 - :material-warehouse: **Container Registry** [Integrate and manage registries](kangaroo/intro.md)
 - :material-dot-net: **Network** [Multi-CNI fusion solution](network/intro/what-is-net.md)

@@ -2,13 +2,13 @@
 
 Global Management (Ghippo) is a comprehensive user-centered service, including access control, enterprise space, audit log, platform configuration and other basic modules.
 
-- [Access control](../04UserGuide/01UserandAccess/global.md)：Help users manage access to resources. Users are allowed to create, manage, and delete users/groups, and flexibly configure user/group permissions to divide users' functional rights.
+- [Access control](../user-guide/01UserandAccess/global.md)：Help users manage access to resources. Users are allowed to create, manage, and delete users/groups, and flexibly configure user/group permissions to divide users' functional rights.
 
-- [Enterprise space](../04UserGuide/02Workspace/ws-folder.md)：A resource isolation unit with hierarchical structure and capability of access control. Users are allowed to set hierarchical structure depending on the enterprise development environment, department structure, etc., and control who has access to which resources.
+- [Enterprise space](../user-guide/02Workspace/ws-folder.md)：A resource isolation unit with hierarchical structure and capability of access control. Users are allowed to set hierarchical structure depending on the enterprise development environment, department structure, etc., and control who has access to which resources.
 
-- [Audit log](../04UserGuide/03AuditLog.md)：Provide operation logs of resources, which allows security analysis, resource changes, problem location, etc.
+- [Audit log](../user-guide/03AuditLog.md)：Provide operation logs of resources, which allows security analysis, resource changes, problem location, etc.
 
-- [Platform configuration](../04UserGuide/04PlatformSetting/MailServer.md)：Through platform security policy, mail server, appearance customization, etc., you can ensure secure user information and a personalized platform.
+- [Platform configuration](../user-guide/04PlatformSetting/MailServer.md)：Through platform security policy, mail server, appearance customization, etc., you can ensure secure user information and a personalized platform.
 
 ## Benefitss
 
@@ -32,11 +32,11 @@ Global Management (Ghippo) is a comprehensive user-centered service, including a
 
 1. Log in to the DCE platform using the DCE platform administrator (Admin) or a user with Admin privileges
 
-2. Go to`Access control`.  [Create users and authorize](../04UserGuide/01UserandAccess/User.md), and then [create groups and authorize](../04UserGuide/01UserandAccess/Group.md), and eventually [create identity provider](../04UserGuide/01UserandAccess/idprovider.md).
+2. Go to`Access control`.  [Create users and authorize](../user-guide/01UserandAccess/User.md), and then [create groups and authorize](../user-guide/01UserandAccess/Group.md), and eventually [create identity provider](../user-guide/01UserandAccess/idprovider.md).
 
-3. Go to`Workspace`. [Create hierarchy (enterprise hierarchy relationship)](../04UserGuide/02Workspace/ws-folder.md), and then [create workspace (tenant)](../04UserGuide/02Workspace/Workspaces.md).
+3. Go to`Workspace`. [Create hierarchy (enterprise hierarchy relationship)](../user-guide/02Workspace/ws-folder.md), and then [create workspace (tenant)](../user-guide/02Workspace/Workspaces.md).
 
-4. Go to`Audit log`. View and [export audit log](../04UserGuide/03AuditLog.md).
+4. Go to`Audit log`. View and [export audit log](../user-guide/03AuditLog.md).
 
 5. Go to `Platform configuration`. Configure security policy, mail server, appearance, and genuine license.
 

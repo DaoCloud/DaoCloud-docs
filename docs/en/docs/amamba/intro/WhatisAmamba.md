@@ -6,7 +6,7 @@ Application workbench is designed for the process of automated delivery of enter
 
 === "Multi Tenants Management"
 
-Taking the [workspace](../../ghippo/04UserGuide/02Workspace/ws-folder.md) as a minimum tenant unit, supports the ability to share resources in a single cluster and across clusters:
+Taking the [workspace](../../ghippo/user-guide/02Workspace/ws-folder.md) as a minimum tenant unit, supports the ability to share resources in a single cluster and across clusters:
 
 - Weak binding clusters, so as to obtain the ability to share resources across clusters and namespaces.
 - Strong cluster binding, so as to obtain the ability of exclusive resources.
@@ -17,7 +17,7 @@ Taking the [workspace](../../ghippo/04UserGuide/02Workspace/ws-folder.md) as a m
 
 === "Cloud Native Based"
 
-Support popular cloud native applications such as kubernetes manifests, Helm, OAM,OLM, etc. And it can seamlessly integrate with SpingCloud, Dubbo and ServiceMesh frameworks to achieve SOA (Service-Oriented Architecture). In additionally, DCE 5.0 [micro service engine](../../skoala/intro/features.md) and [service mesh](../../mspider/intro/WhatismSpider.md), enables scaling , logging, monitoring and upgrading for applications.
+Support popular cloud native applications such as kubernetes manifests, Helm, OAM,OLM, etc. And it can seamlessly integrate with SpingCloud, Dubbo and ServiceMesh frameworks to achieve SOA (Service-Oriented Architecture). In additionally, DCE 5.0 [micro service engine](../../skoala/intro/features.md) and [service mesh](../../mspider/intro/what.md), enables scaling , logging, monitoring and upgrading for applications.
 
 
 

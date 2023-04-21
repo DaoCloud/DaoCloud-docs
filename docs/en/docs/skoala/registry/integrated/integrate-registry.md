@@ -23,7 +23,7 @@ The steps to access the registration center are as follows:
 
         - If you can't find the Kubernetes cluster you want to add, you can go to the container management module [Access Cluster](../../../kpanda/07UserGuide/Clusters/JoinACluster.md) or [Create Cluster](.. /../../kpanda/07UserGuide/Clusters/CreateCluster.md).
 
-        - If you can't find the mesh service you want to add, you can go to the mesh service module [Create Mesh](../../../mspider/03UserGuide/servicemesh/README.md).
+        - If you can't find the mesh service you want to add, you can go to the mesh service module [Create Mesh](../../../mspider/user-guide/servicemesh/README.md).
 
             
 
