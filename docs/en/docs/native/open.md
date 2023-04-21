@@ -289,6 +289,14 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### E
 
+- [Envoy v1.26.0 released (CNCF project)](https://www.envoyproxy.io/docs/envoy/v1.26.0/version_history/v1.26/v1.26.0)
+
+    Version features: added support for tracking generic proxies, support for modifying request and response headers anywhere in the http filter chain, support for setting JWT authentication failure status codes and messages in dynamic metadata, added filter status input, support for enabling rate limiting before TLS handshake and filter matching, support for routing information in upstream access logs, support for dynamically disabling TCP tunnels, add load balancer Maglev extensions and ring hash extensions.
+
+- [Envoy v1.23.0 released (CNCF project)](https://www.envoyproxy.io/docs/envoy/v1.23.0/version_history/v1.23/v1.23.0)
+
+     The main new features of this version: send SDS resources of multiple clusters or listeners in one SDS request, obtain filter configuration through the configuration name of HTTP filter, update listener filter statistics, dns_resolver adds support for multiple addresses , Add dynamic listener filter configuration for listener filters, etc.
+
 - [Envoy Gateway v0.3 released](https://gateway.envoyproxy.io/v0.3.0/releases/v0.3.html)
 
     Release features: Support extended Gateway API fields; Support TCP routing API, UDP routing API and GRPC routing API; Support global rate limit; Support request authentication.
@@ -296,10 +304,6 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Envoy Gateway API Gateway v0.2 release](https://github.com/envoyproxy/gateway/releases/tag/v0.2.0)
 
      The main new features of this version: support for Kubernetes, support for Gateway API resources.
-
-- [Envoy v1.23.0 released (CNCF project)](https://www.envoyproxy.io/docs/envoy/v1.23.0/version_history/v1.23/v1.23.0)
-
-     The main new features of this version: send SDS resources of multiple clusters or listeners in one SDS request, obtain filter configuration through the configuration name of HTTP filter, update listener filter statistics, dns_resolver adds support for multiple addresses , Add dynamic listener filter configuration for listener filters, etc.
 
 - [Envoy Gateway Open Source](https://blog.envoyproxy.io/introducing-envoy-gateway-ad385cc59532)
 
@@ -371,6 +375,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [HAProxy Kubernetes Ingress Controller v1.8 released](https://www.haproxy.com/blog/announcing-haproxy-kubernetes-ingress-controller-1-8/)
 
      The main new features of this version: reduce the permissions of all processes in the container, and no longer run the privileged container by default; expose an endpoint for viewing pprof diagnostic data; support the collection of Prometheus indicators inside the controller, such as the amount of memory allocated and spent CPU time; if the ingress rules do not match, it supports custom setting of the backend port.
+
+- [Harbor Container Image Repository v2.8.0 Released (CNCF Project)](https://github.com/goharbor/harbor/releases/tag/v2.8.0)
+
+    Version features: support for OCI distribution spec v1.1.0-rc1, support for sending Webhook loads via CloudEvents format, support for skipping automatic update pull times for task scanners, removal of helm chart repository server ChartMuseum.
 
 - [Harbor Container Image Repository v2.7.0 Released (CNCF Project)](https://github.com/goharbor/harbor/releases/tag/v2.7.0)
 
@@ -577,6 +585,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version are: support for Gateway API, support for batch release of stateful applications, new "Pod batch marking" capability, integration into KubeVela to realize Helm Charts canary release capability.
 
+- [Kuasar: a multi-sandbox container runtime officially open-sourced by Huawei Cloud in association with several units](https://mp.weixin.qq.com/s/pXBZ-U1KF0_bNU8u6MOv8A)
+
+    [Kuasar](https://github.com/kuasar-io/kuasar) further reduces management overhead, simplifies invocation links, and extends support for mainstream sandbox technologies by retaining traditional container runtime functionality through comprehensive Rustification and optimizing management models and frameworks. In addition, by supporting multi-security sandbox co-node deployment, Kuasar can fully utilize node resources to achieve cost reduction and efficiency.
+
 - [KubeClipper: K8s multi-cluster lifecycle management tool open sourced by Kyushu Cloud](https://mp.weixin.qq.com/s/RVUB5Pw6-A5zZAQktl8AcQ)
 
      [KubeClipper](https://github.com/KubeClipper-labs) is based on the kubeadm tool for secondary packaging, providing rapid deployment of K8S clusters and continuous full lifecycle management (installation, uninstallation, upgrade, scaling, remote access, etc.) capabilities,
@@ -626,6 +638,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Kubernetes v1.27.0 released](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.27.md#changelog-since-v1260)
 
     Release features: freeze k8s.gcr.io image repository, upgrade SeccompDefault to GA, upgrade Job variable scheduling directive to GA, upgrade Pod scheduling Readiness to beta, allow access to node logs via Kubernetes API, introduce new access mode ReadWriteOncePod to limit volume Access is restricted to a single Pod in the cluster, and VolumeManager rebuild is upgraded to beta.
+
+- [Kubernetes third-party audit based on the 1.24 release](https://www.cncf.io/blog/2023/04/19/new-kubernetes-security-audit-complete-and-open-sourced/)
+
+    [This audit](https://github.com/kubernetes/sig-security/blob/main/sig-security-external-audit/security-audit-2021-2022/findings/Kubernetes%20v1.24%20Final%20Report.pdf) found the following issues: problems in restricting user or network privileges, which could lead to administrators obfuscating the privileges available to specific components; vulnerabilities in inter-component authentication, where a malicious user could gain cluster administrator privileges; flaws in logging and auditing, which could be exploited by an attacker after taking control of the The flaws in logging and auditing could be exploited by attackers to potentially conduct activities after taking control of the cluster; and vulnerabilities in user input filtering could allow authentication to be bypassed by modifying requests to the etcd datastore.
 
 - [Kubernetes v1.26 released](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.26.md)
 
@@ -718,6 +734,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      [KubeWharf](https://github.com/kubewharf) is a distributed operating system based on Kubernetes, which consists of a set of cloud-native components, focusing on improving system scalability, resource utilization, and scalability. Observability, security, etc., support scenarios such as large-scale multi-tenant clusters, offline mixing, and storage.
      The first batch of KubeWharf plans to open source three projects: KubeBrain, a high-performance meta-information storage system, KubeGateway, a seven-layer gateway for kube-apiserver, and KubeZoo, a lightweight multi-tenant solution.
+
+- [Kuma Service Grid Project v2.2.0 Released (CNCF Project)](https://github.com/kumahq/kuma/releases/tag/2.2.0)
+
+    Release features: support for OpenTelemetry, support for defining MeshProxyPatch policies using JSONPatch, support for retry directives and priorities, upgrade the underlying Envoy version to 1.25, new policies for more fine-grained control of load balancing between services, support for deploying generic patterns in Kubernetes clusters for global Support for global control plane deployment in Kubernetes clusters (supported by Postgres), and support for providing public keys for offline token signing and verification.
 
 - [Kuma Service Mesh v2.0 release (CNCF project)](https://github.com/kumahq/kuma/releases/tag/2.0.0)
 
@@ -1155,6 +1175,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Vcluster virtual Kubernetes cluster implementation v0.13.0 released](https://github.com/loft-sh/vcluster/releases/tag/v0.13.0)
 
      The main new features of this version: adding log and backup functions, adding high availability support for k3s with external data storage, and automatically synchronizing CSI resources when the vcluster scheduler is turned on.
+
+- [Velero Backup Disaster Recovery Tool v1.11.0 Released (CNCF Project)](https://github.com/vmware-tanzu/velero/releases/tag/v1.11.0)
+
+    Version features: add plugin progress monitoring feature, support filtering volumes to be skipped during backup, add cluster-wide and namespace-wide resource filters, add parameter for setting timeout connection between Velero server and k8s API server, support backup description command output in JSON format, refactor controller with controller-runtime, CSI The plugin will decide whether to restore data from snapshots by checking the setting of the `restorePVs` parameter.
 
 - [Velero backup disaster recovery tool v1.10.0 release (CNCF project)](https://github.com/vmware-tanzu/velero/releases/tag/v1.10.0)
 
