@@ -101,11 +101,11 @@ mcpc-remote-kube-api-server configmap 等待很长时间没有创建。
 
 ## 原因分析
 
-1. 情况一：托管网格由于控制面集群没有提前部署 `StorageClass` 导致无法创建高可用 ETCD。
+1. 情况 1：托管网格由于控制面集群没有提前部署 `StorageClass` 导致无法创建高可用 ETCD。
 
-2. 情况二：托管网格 istiod-xxxx-hosted-xxxx 组件异常
+2. 情况 2：托管网格 istiod-xxxx-hosted-xxxx 组件异常
 
-3. 情况三：mspider-mcpc-ckube-remote-xxxx 组件异常，describe 出现如下报错：
+3. 情况 3：mspider-mcpc-ckube-remote-xxxx 组件异常，describe 出现如下报错：
 
     ```none
      Normal   Scheduled    18m                  default-scheduler  Successfully assigned istio-system/mspider-mcpc-ckube-remote-5447c5bcfc-25t7t to yl-cluster20
@@ -115,7 +115,7 @@ mcpc-remote-kube-api-server configmap 等待很长时间没有创建。
      Warning  FailedMount  5s (x2 over 13m)     kubelet            Unable to attach or mount volumes: unmounted volumes=[remote-kube-api-server], unattached volumes=[kube-api-access-ljncs ckube-config remote-kube-api-server]: timed out waiting for the condition
     ```
 
-4. 情况四：inotify watcher limit problems, remote-ckube 组件日志
+4. 情况 4：inotify watcher limit problems, remote-ckube 组件日志
 
     ```none
     panic: too many open files
@@ -123,15 +123,15 @@ mcpc-remote-kube-api-server configmap 等待很长时间没有创建。
 
 ## 解决方案
 
-1. 情况一：控制面集群提前部署 sc。
+1. 情况 1：控制面集群提前部署 sc。
 
-2. 情况二：该组件异常可能控制面集群未部署 metalLB 导致网络不通，istiod-xxxx-hosed-lb 无法分配 endpoint。可在 addon 中为该集群部署 metalLB。
+2. 情况 2：该组件异常可能控制面集群未部署 metalLB 导致网络不通，istiod-xxxx-hosed-lb 无法分配 endpoint。可在 addon 中为该集群部署 metalLB。
 
-3. 情况三：在移除原有托管网格后的环境中，再次创建托管网格的情况下，容易出现控制面还没有及时下发导致
+3. 情况 3：在移除原有托管网格后的环境中，再次创建托管网格的情况下，容易出现控制面还没有及时下发导致
    "mspider-mcpc-remote-kube-api-server" ConfigMap 未及时创建。可以重启一下 global 集群 gsc controller：
 
     ```bash
     kubectl -n mspider-system delete pod $(kubectl -n mspider-system get pod -l app=mspider-gsc-controller -o 'jsonpath={.items..[metadata.name](http://metadata.name)}')
     ```
 
-4. 修改 fs.inotify.max_user_instances = 65535
+4. 情况 4：修改 fs.inotify.max_user_instances = 65535
