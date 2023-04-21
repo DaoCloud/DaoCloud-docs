@@ -9,8 +9,7 @@
 
 
 
-### 4.5. 其他类型错误
-### 4.5.1 从库出现了 [Note] Slave: MTS group recovery relay log info based on Worker-Id 0, group_r 类似的错误
+
 
 ## 1. MySQL 健康检查
 一句命令确定 MySQL 健康状态
@@ -27,7 +26,7 @@ mysql-operator-0                                                  2/2     Runnin
 如上所述，主备节点（`master` `replica`）的状态均为`yes`,即表示 MySQL 为正常状态。
 
 ## 2. MySQL Pod
-我们可以通过以下命令快速的查看 当前集群上所有 MySQL 的健康状态
+我们可以通过以下命令快速的查看 当前集群上所有 `MySQL` 的健康状态
 
 ```bash
 [root@-master-01 /]$ kubectl get mysql -A
@@ -39,7 +38,7 @@ mcamel-system   mcamel-common-mysql-cluster   False   2          62d
 
 ### 2.1. Pod `running` 为 `0/4`，状态为`Init:Error`
 
-遇到此类问题时，我们优先查看 master 节点的（sidecar）日志信息。
+遇到此类问题时，我们优先查看 `master` 节点的（sidecar）日志信息。
 
 ```bash
 kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep master | awk '{print $1}' | xargs -I {} kubectl logs -f {} -n mcamel-system -c sidecar
@@ -78,7 +77,7 @@ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep mast
 E0209 05:38:56.223635       1 deleg.go:144] sidecar "msg"="failed waiting for xtrabackup to finish" "error"="exit status 1"
 ```
 
-登录 master 节点的 MySQL，执行 alter 表结构：
+登录 `master` 节点的 `MySQL`，执行 `alter` 表结构：
 
 ```bash
 [root@master-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep master
@@ -118,7 +117,7 @@ ALTER TABLE OFFLINE_USER_SESSION ALGORITHM=COPY
 ```
 
 ### 2.2. Pod `running` 为 `2/4`
-一般出现此类问题，很可能是因为 MySQL 实例使用的磁盘用量达到了 100%，您可以在 master 节点上运行以下命令检测磁盘用量。
+一般出现此类问题，很可能是因为 MySQL 实例使用的磁盘用量达到了 100%，您可以在 `master` 节点上运行以下命令检测磁盘用量。
 
 ```bash
 kubectl get pod -n mcamel-system | grep cluster-mysql | awk '{print $1}' | xargs -I {} kubectl exec {} -n mcamel-system -c sidecar -- df -h | grep /var/lib/mysql
@@ -131,7 +130,7 @@ kubectl get pod -n mcamel-system | grep cluster-mysql | awk '{print $1}' | xargs
 /dev/drbd43005            80G   29G   52G  36% /var/lib/mysql
 ```
 
-如果发现某个 pvc 满了进行 pvc 扩容即可。
+如果发现某个 `pvc` 满了进行 `pvc` 扩容即可。
 
 ```bash
 kubectl edit pvc data-mcamel-common-mysql-cluster-mysql-0 -n mcamel-system # 修改request大小即可
@@ -145,7 +144,7 @@ kubectl edit pvc data-mcamel-common-mysql-cluster-mysql-0 -n mcamel-system # 修
 
 修复方式有两种：
 
-1. 可以 `重启mysql-operator`
+1. 可以重启 `mysql-operator`
 2. 手工更新 `sys_operator` 的配置状态
 
 ```bash
@@ -154,21 +153,24 @@ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- my
 
 
 ## 3. MySQL Operator
-### 3.1. 没有指定 storageClass，导致 mysql-operator 无法获取 pvc 而处于 `pending` 状态
+### 3.1. 未指定 `storageClass`
+由于没有指定 `storageClass`，导致 `mysql-operator` 无法获取 pvc 而处于 `pending` 状态
 如果采用 helm 启动，可以做如下设置： 
+1. 关闭 pvc 的申请
 ```bash
-# 可以关闭 pvc 的申请。
 orchestrator.persistence.enabled=false 
+```
 
-# 可以指定 storageClass 去获取 pvc
+2. 指定 storageClass 去获取 pvc
+```bash
 orchestrator.persistence.storageClass={storageClassName} 
 
 ```
-如果使用其他工具，可以修改 value.yaml 内对应字段，即可达到和 helm 启动一样的效果。
+如果使用其他工具，可以修改 `value.yaml` 内对应字段，即可达到和 helm 启动一样的效果。
 
 
 
-## 4. MySQL主从关系
+## 4. MySQL 主从关系
 1. 执行以下命令确认 MySQL 状态:
 ```bash
 [root@-master-01 /]# kubectl get mysql -A
@@ -337,9 +339,9 @@ pod "mcamel-common-mysql-cluster-mysql-1" deleted
 
 > `Duplicate entry '24' for key 'PRIMARY', Error_code:1062; handler error HA_ERR_FOUND_DUPP_KEY;`
 
-说明出现了主键冲突，或者主键不存在的错误。此时，可以以幂等模式恢复：
+说明出现了主键冲突，或者主键不存在的错误。此时，可以以幂等模式恢复或插入空事务的形式跳过错误：
 
-
+- 方法1：幂等模式恢复
 1. 寻找到从节点的pod
 ```bash
 [root@master-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}'
@@ -350,7 +352,8 @@ mcamel-common-mysql-cluster-mysql-1
 [root@master-01 ~]$ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'stop slave;set global slave_exec_mode="IDEMPOTENT";set global sync_binlog=10086;start slave;'
 ```
 
-3. 也可以插入空事务的形式跳过错误：
+- 方法2：插入空事务跳过错误
+
 
 ```sql
 mysql> stop slave;
@@ -379,6 +382,22 @@ mysql> show slave status\G;
 ```bash
 [root@master-01 ~]$ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'stop slave;set global slave_exec_mode="STRICT";set global sync_binlog=10086;start slave;
 ```
+#### 从库出现 `[Note] Slave: MTS group recovery relay log info based on Worker-Id 0, group_r` 类似错误
+1. 寻找到从节点的pod
+```shell
+[root@master-01 ~]# kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' 
+mcamel-common-mysql-cluster-mysql-1
+```
+2. 设置让从库跳过这个日志继续复制；
+```shell
+[root@master-01 ~]# kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'stop slave;reset slave;change master to MASTER_AUTO_POSITION = 1;start slave;'; 
+````
+
+>Note:
+
+>1.这种情况可以以幂等模式执行。
+
+>2.此种类型错误也可以重做从库。
 
 ### 4.3. 主备 Pod 均为 `replica` 
 
@@ -500,6 +519,7 @@ pt-table-sync --execute --charset=utf8 --ignore-databases=mysql,sys,percona --da
 这种场景往往适用于主从切换，发现新从库有多余的已执行的gtid在重做之前补充数据。
 
 这种补充数据只能保证数据不丢失，如果新主库已经删除的数据会被重新补充回去，是一个潜在的风险，如果是新主库有数据，会被替换成老数据，也是一个风险。
+
 
 ## 5. 其他故障
 ### 5.1 CR 创建数据库失败报错
