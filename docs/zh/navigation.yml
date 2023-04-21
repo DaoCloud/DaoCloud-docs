@@ -241,14 +241,14 @@ nav:
               - 产品优势: amamba/intro/benefits.md
               - 适用场景: amamba/intro/scenarios.md
               - 基本概念: amamba/intro/concepts.md
-              - 应用工作台权限说明: amamba/intro/permission.md
-              - 常见问题: amamba/intro/faq.md
+              - 权限说明: amamba/intro/permission.md
               - Release Notes: amamba/intro/release-notes.md
           - 离线升级: amamba/offline-upgrade.md
           - 命名空间管理: amamba/user-guide/namespace/namespace.md
           - 应用创建:
               - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-app-git.md
               - 基于 Jar 包构建 Java 应用: amamba/user-guide/wizard/jar-java-app.md
+              - 基于 Helm 模板部署 Helm 应用: amamba/user-guide/wizard/helm.md
           - 流水线:
               - 安装 Jenkins: amamba/user-guide/pipeline/install-jenkins.md
               - 创建流水线:
@@ -275,6 +275,8 @@ nav:
           - 灰度发布:
               - 创建金丝雀发布任务: amamba/user-guide/release/canary.md
               - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
+          - 常见问题: 
+              - amamba/intro/faq.md
           - 最佳实践:
               - 快速创建流水线: amamba/quickstart/deploy-pipeline.md
               - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
