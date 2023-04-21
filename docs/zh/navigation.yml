@@ -771,3 +771,12 @@ nav:
       - 服务网格 OpenAPI: openapi/mspider/v0.105.1.md
       - 可观测性 OpenAPI: openapi/insight/v0.16.0-alpha1.md
       - 网络 OpenAPI: openapi/spidernet/v0.5.0.md
+      - 中间件 OpenAPI: 
+          - openapi/midware.md
+          - Elasticsearch OpenAPI: openapi/mcamel/elasticsearch-v0.7.0.md
+          - Kafka OpenAPI: openapi/mcamel/kafka-v0.5.0.md
+          - MinIO OpenAPI: openapi/mcamel/minio-v0.5.0.md
+          - MySQL OpenAPI: openapi/mcamel/mysql-v0.8.0.md
+          - PostgreSQL OpenAPI: openapi/mcamel/postgresql-v0.1.1.md
+          - RabbitMQ OpenAPI: openapi/mcamel/rabbitmq-v0.10.0.md
+          - Redis OpenAPI: openapi/mcamel/redis-v0.7.0.md
