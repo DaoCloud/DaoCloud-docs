@@ -5,7 +5,7 @@
 
 > 如果您发现遇到的问题未包含在本手册，可以快速跳转到页面底部，提交您的问题。
 
-## 1. Elasticsearch PVC 磁盘容量满的情况
+## Elasticsearch PVC 磁盘容量满的情况
 
 > 存储依赖 hwameistor
 
@@ -91,7 +91,7 @@
       Normal   FileSystemResizeSuccessful  2m42s                  kubelet   
     ```
 
-## 2. Elasticsearch 业务索引别名被占用的情况
+## Elasticsearch 业务索引别名被占用的情况
 
 > 现象：索引别名被占用
 
@@ -129,7 +129,7 @@ curl -XPUT -u elastic:${ES_PASSWORD} -k "$ES_URL/${TEMPLATE_NAME}-000001" -H 'Co
 
 真实情况需要停止数据源的写入情况，再执行上述方法。
 
-## 3. 出现 `Error setting GoMAXPROCS for operator` 的报错
+## 出现 `Error setting GoMAXPROCS for operator` 的报错
 
 **报错信息**
 
@@ -150,7 +150,7 @@ k8s:1.21.1
 kind：1.23.6
 runc version 1.1.0
 ```
-## 4. 出现 `Terminating due to java.lang.OutOfMemoryError: Java heap space` 的情况
+## 出现 `Terminating due to java.lang.OutOfMemoryError: Java heap space` 的情况
 
 **报错信息**
 
@@ -180,7 +180,7 @@ kubectl edit elasticsearch mcamel-common-es-cluster-masters -n mcamel-system
 
 ![image](../images/faq-es-4.png)
 
-## 5. OCP 环境安装 `Elasticsearch` 出现 `Operation not permitted` 的情况
+## OCP 环境安装 `Elasticsearch` 出现 `Operation not permitted` 的情况
 
 **报错信息**
 
@@ -190,7 +190,7 @@ kubectl edit elasticsearch mcamel-common-es-cluster-masters -n mcamel-system
 
 ![image](../images/faq-es-6.png)
 
-## 6. 某个节点磁盘读吞吐异常、CPU load 很高
+## 某个节点磁盘读吞吐异常、CPU load 很高
 
 **异常信息**
 
@@ -202,7 +202,7 @@ kubectl edit elasticsearch mcamel-common-es-cluster-masters -n mcamel-system
 
 如果 es 在此节点，可以将ES进程杀掉恢复。
 
-## 7. 数据写入 `Elasticsearch` 时出现 `status:429 ，es_rejected_execution_exception` 错误
+## 数据写入 `Elasticsearch` 时出现 `status:429 ，es_rejected_execution_exception` 错误
 
 **报错信息**
 
