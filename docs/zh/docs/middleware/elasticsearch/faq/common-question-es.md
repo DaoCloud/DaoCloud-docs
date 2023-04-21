@@ -5,13 +5,13 @@
 
 > 如果您发现遇到的问题未包含在本手册，可以快速跳转到页面底部，提交您的问题。
 
-## Elasticsearch PVC 磁盘容量满的情况
+## Elasticsearch PVC 磁盘容量满
 
 > 存储依赖 hwameistor
 
 **报错信息**
 
-```none
+```info
 {"type": "server", "timestamp": "2022-12-18T10:47:08,573Z", "level": "ERROR", "component": "o.e.m.f.FsHealthService", "cluster.name": "mcamel-common-es-cluster-masters", "node.name": "mcamel-common-es-cluster-masters-es-masters-0", "message": "health check of [/usr/share/elasticsearch/data/nodes/0] failed", "cluster.uuid": "afIglgTVTXmYO2qPFNvsuA", "node.id": "nZRiBCUZQymQVV1son34pA" ,
 "stacktrace": ["java.io.IOException: No space left on device",
 "at sun.nio.ch.FileDispatcherImpl.write0(Native Method) ~[?:?]",
@@ -91,7 +91,7 @@
       Normal   FileSystemResizeSuccessful  2m42s                  kubelet   
     ```
 
-## Elasticsearch 业务索引别名被占用的情况
+## Elasticsearch 业务索引别名被占用
 
 > 现象：索引别名被占用
 
@@ -129,7 +129,7 @@ curl -XPUT -u elastic:${ES_PASSWORD} -k "$ES_URL/${TEMPLATE_NAME}-000001" -H 'Co
 
 真实情况需要停止数据源的写入情况，再执行上述方法。
 
-## 出现 `Error setting GoMAXPROCS for operator` 的报错
+## 报错 `Error setting GoMAXPROCS for operator`
 
 **报错信息**
 
@@ -150,9 +150,9 @@ k8s:1.21.1
 kind：1.23.6
 runc version 1.1.0
 ```
-## 出现 `Terminating due to java.lang.OutOfMemoryError: Java heap space` 的情况
+## 报错 `Terminating due to java.lang.OutOfMemoryError: Java heap space`
 
-**报错信息**
+**完整的报错信息如下：**
 
 ```info
 {"type": "server", "timestamp": "2023-01-04T14:44:05,920Z", "level": "WARN", "component": "o.e.d.PeerFinder", "cluster.name": "gsc-cluster-1-master-es", "node.name": "gsc-cluster-1-master-es-es-data-0", "message": "address [127.0.0.1:9305], node [null], requesting [false] connection failed: [][127.0.0.1:9305] connect_exception: Connection refused: /127.0.0.1:9305: Connection refused", "cluster.uuid": "JOa0U_Q6T7WT60SPYiR1Ig", "node.id": "_zlorWVeRbyrUMYf9wJgfQ"  }
@@ -180,7 +180,7 @@ kubectl edit elasticsearch mcamel-common-es-cluster-masters -n mcamel-system
 
 ![image](../images/faq-es-4.png)
 
-## OCP 环境安装 `Elasticsearch` 出现 `Operation not permitted` 的情况
+## OCP 环境安装 `Elasticsearch` 时报错 `Operation not permitted`
 
 **报错信息**
 
@@ -190,7 +190,7 @@ kubectl edit elasticsearch mcamel-common-es-cluster-masters -n mcamel-system
 
 ![image](../images/faq-es-6.png)
 
-## 某个节点磁盘读吞吐异常、CPU load 很高
+## 某个节点磁盘读吞吐异常、CPU workload 很高
 
 **异常信息**
 
@@ -202,9 +202,9 @@ kubectl edit elasticsearch mcamel-common-es-cluster-masters -n mcamel-system
 
 如果 es 在此节点，可以将ES进程杀掉恢复。
 
-## 数据写入 `Elasticsearch` 时出现 `status:429 ，es_rejected_execution_exception` 错误
+## 数据写入 `Elasticsearch` 时报错 `status:429, es_rejected_execution_exception`
 
-**报错信息**
+**完整的报错信息如下：**
 
 ```info
 [2023/03/23 09:47:16] [error] [output:es:es.kube.kubeevent.syslog] error: Output
