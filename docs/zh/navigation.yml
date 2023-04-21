@@ -28,6 +28,11 @@ nav:
               - 升级 DCE 5.0 GProduct: install/upgrade.md
               - 卸载: install/uninstall.md
               - 常见问题: install/faq.md
+          - 在不同 K8s 发行版上安装:
+              - 在 OpenShift OCP 上安装: install/k8s-install/ocp-install-dce5.0.md
+          - 在不同操作系统上安装:
+              - 在 UOS V20 (1020a) 上安装: install/os-install/uos-v20-install-dce5.0.md
+              - Other Linux 离线部署 DCE 5.0: install/os-install/otherlinux.md
           - Release Notes: install/release-notes.md
       - 容器管理:
           - 介绍:
@@ -46,7 +51,9 @@ nav:
               - 删除集群: kpanda/user-guide/clusters/delete-cluster.md
               - 集群角色: kpanda/user-guide/clusters/cluster-role.md
               - 集群状态: kpanda/user-guide/clusters/cluster-status.md
-          - 命名空间: kpanda/user-guide/namespaces/createns.md
+          - 命名空间: 
+              - 创建命名空间: kpanda/user-guide/namespaces/createns.md
+              - 命名空间独享节点: kpanda/user-guide/namespaces/exclusive.md
           - 节点管理:
               - 节点可用性检查: kpanda/user-guide/nodes/node-check.md
               - 节点配置: kpanda/user-guide/nodes/node-config.md
@@ -136,15 +143,17 @@ nav:
               - 创建和删除文件夹: ghippo/user-guide/workspace/folders.md
               - 文件夹权限: ghippo/user-guide/workspace/folder-permission.md
               - 资源配额: ghippo/user-guide/workspace/quota.md
+              - 资源限额: ghippo/user-guide/workspace/limitrange.md
           - 审计日志:
               - 开启和关闭采集k8s审计日志: ghippo/user-guide/open-audit.md
               - 开启和关闭k8s审计日志: ghippo/user-guide/open-k8s-audit.md
               - 下载和导出审计日志: ghippo/user-guide/audit-log.md
           - 平台设置:
-              - 密码重置: ghippo/user-guide/password.md
+              - 安全策略: ghippo/user-guide/platform-setting/security.md
               - 邮箱服务器设置: ghippo/user-guide/platform-setting/mail-server.md
               - 外观定制: ghippo/user-guide/platform-setting/appearance.md
               - 关于平台: ghippo/user-guide/platform-setting/about.md
+              - 密码重置: ghippo/user-guide/password.md
           - 个人中心:
               - 安全设置: ghippo/user-guide/personal-center/security-setting.md
               - 访问密钥: ghippo/user-guide/personal-center/accesstoken.md
@@ -407,6 +416,7 @@ nav:
               - 创建外接网格: mspider/user-guide/service-mesh/external-mesh.md
               - 删除网格: mspider/user-guide/service-mesh/delete.md
               - 网格规模对应资源用量: mspider/user-guide/service-mesh/capacity-resources.md
+              - 创建网格参数说明: mspider/user-guide/service-mesh/params.md
           - 服务管理:
               - mspider/user-guide/service-list/README.md
               - 从网格外部访问服务: mspider/user-guide/service-list/out-to-in.md
@@ -443,12 +453,19 @@ nav:
               - 多云网络分流配置: mspider/user-guide/multicluster/traffic-branch.md
               - Istio 资源管理: mspider/user-guide/mesh-config/istio-resources.md
               - 自定义组件资源: mspider/user-guide/mesh-config/custom-res.md
+              - TLS 密钥管理: mspider/user-guide/mesh-config/tls-secret.md
           - 测试:
               - OCP 接入网格: mspider/test/ocp.md
               - Openshift 与网格兼容性测试: mspider/test/openshift.md
               - 网格多云部署: mspider/user-guide/multicluster/multicluster-install.md
               - 多集群网络通讯原理: mspider/user-guide/multicluster/multi-cluster-net.md
               - 多集群灰度发布: mspider/user-guide/multicluster/gray-scale-release.md
+          - 故障排查:
+              - 创建网格故障排查: mspider/troubleshoot/index.md
+              - 创建网格时找不到所属集群: mspider/troubleshoot/cannot-find-cluster.md
+              - 创建网格时一直处于“创建中”: mspider/troubleshoot/always-in-creating.md
+              - 创建的网格异常但无法删除: mspider/troubleshoot/failed-to-delete.md
+              - 托管网格纳管集群失败: mspider/troubleshoot/failed-to-add-cluster.md
       - 云原生网络:
           - 介绍:
               - 什么是云原生网络: network/intro/what.md
@@ -587,6 +604,7 @@ nav:
               - 数据迁移: middleware/rabbitmq/user-guide/migrate.md
               - 实例监控: middleware/rabbitmq/user-guide/insight.md
               - 查看 RabbitMQ 日志: middleware/rabbitmq/user-guide/logs.md
+              - 为 RabbitMQ 添加自定义插件: middleware/rabbitmq/faq/add-plugin.md
               - Release Notes: middleware/rabbitmq/release-notes.md
           - Redis 缓存服务:
               - 什么是 Redis: middleware/redis/intro/what.md
@@ -700,25 +718,28 @@ nav:
       - 云原生网络: videos/network.md
   - 博客:
       - 博文索引: blogs/index.md
-      - 202304 | K8s 1.27 正式发布: blogs/k8s1.27.md
-      - 202304 | 固定应用 IP 的新选择: blogs/spiderpool.md
-      - 202304 | 保姆式安装社区版: blogs/new-dce5-free.md
-      - 202303 | 边缘原生应用准则: blogs/edgeappwp.md
-      - 202303 | Linux 单机安装社区版: blogs/linux.md
-      - 202303 | macOS 单机安装社区版: blogs/macos.md
-      - 202303 | KWOK 介绍: blogs/kwok.md
-      - 202302 | 社区版涉及的开源项目: blogs/projects.md
-      - 202302 | DaoCloud 与 K8s: blogs/daocloud_k8s.md
-      - 202302 | DCE 5.0 攻坚语录集: blogs/peter.md
-      - 202301 | 2023 年云原生预测: blogs/forecast2023.md
+      - 202304 | Karmada Failover详解: blogs/230418-karmada-failover.md
+      - 202304 | CNCF 平台工程白皮书: blogs/230417-cncf-platform-wp.md
+      - 202304 | K8s 1.27 正式发布: blogs/230412-k8s-1.27.md
+      - 202304 | 固定应用 IP 的新选择: blogs/230411-spiderpool.md
+      - 202304 | 保姆式安装社区版: blogs/230405-step-by-step-dce5.md
+      - 202303 | 边缘原生应用准则: blogs/230317-edge-app-wp.md
+      - 202303 | Linux 单机安装社区版: blogs/230315-install-on-linux.md
+      - 202303 | macOS 单机安装社区版: blogs/230315-install-on-macos.md
+      - 202303 | KWOK 介绍: blogs/230301-kwok.md
+      - 202302 | 社区版涉及的开源项目: blogs/230214-open-projects.md
+      - 202302 | DaoCloud 与 K8s: blogs/230214-daocloud_k8s.md
+      - 202302 | DCE 5.0 攻坚语录集: blogs/230201-peter.md
+      - 202301 | 2023 年云原生预测: blogs/230201-forecast.md
       - 202301 | 让闲置算力跑起来: blogs/230110-res-usage.md
-      - 202211 | K8s 资深认证服务商: blogs/kcsp.md
-      - 202210 | 容器管理能力介绍: blogs/kpanda.md
-      - 202210 | 资源管理能力介绍: blogs/resource.md
-      - 202209 | 应用工作台能力介绍: blogs/amamba.md
-      - 202208 | 多云编排能力介绍: blogs/kairship.md
-      - 202207 | 服务网格能力介绍: blogs/mspider.md
-      - 202206 | DCE 开发背景: blogs/blog00.md
+      - 202212 | K8s 1.26 正式发布: blogs/221209-k8s-1.26.md
+      - 202211 | K8s 资深认证服务商: blogs/221116-kcsp.md
+      - 202210 | 容器管理能力介绍: blogs/221026-kpanda.md
+      - 202210 | 资源管理能力介绍: blogs/221018-resource.md
+      - 202209 | 应用工作台能力介绍: blogs/220925-amamba.md
+      - 202208 | 多云编排能力介绍: blogs/220808-kairship.md
+      - 202207 | 服务网格能力介绍: blogs/220708-mspider.md
+      - 202206 | DCE 开发背景: blogs/221008-dce-bg.md
   - 下载中心:
       - DaoCloud Enterprise 5.0:
           - 索引列表: download/dce5.md
@@ -746,4 +767,7 @@ nav:
       - 知识分享: native/knowledge.md
   - OpenAPI 文档:
       - OpenAPI 文档汇总: openapi/index.md
-      - OpenAPI 制作流程: openapi/api-doc-flow.md
+      - 全局管理 OpenAPI: openapi/ghippo/v0.15.0.md
+      - 服务网格 OpenAPI: openapi/mspider/v0.105.1.md
+      - 可观测性 OpenAPI: openapi/insight/v0.16.0-alpha1.md
+      - 网络 OpenAPI: openapi/spidernet/v0.5.0.md

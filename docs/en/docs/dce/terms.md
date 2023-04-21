@@ -158,11 +158,11 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Audit log, audit log
 
-    [Audit Log](../ghippo/04UserGuide/03AuditLog.md) provides a historical record of changes made to objects in the system.
+    [Audit Log](../ghippo/user-guide/03AuditLog.md) provides a historical record of changes made to objects in the system.
 
 - Authorization
 
-    [Authorization](../ghippo/04UserGuide/01UserandAccess/iam.md) refers to granting users the permissions
+    [Authorization](../ghippo/user-guide/01UserandAccess/iam.md) refers to granting users the permissions
     required to complete specific tasks, and the authorization takes effect through the permissions of system roles or custom roles.
     After obtaining specific permissions, users can operate on resources or services.
 
@@ -1112,7 +1112,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Folder
 
-    In DCE, `Folder` is a [hierarchical concept](../ghippo/04UserGuide/02Workspace/folders.md) that corresponds to different departments, and each level can contain one or more workspaces to meet the branch division of various departments within the enterprise.
+    In DCE, `Folder` is a [hierarchical concept](../ghippo/user-guide/02Workspace/folders.md) that corresponds to different departments, and each level can contain one or more workspaces to meet the branch division of various departments within the enterprise.
 
 ### G
 
@@ -1132,7 +1132,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Gateway Rule
 
-    In a service mesh, [Gateway Rules](../mspider/03UserGuide/02TrafficGovernance/GatewayRules.md) define the load balancer for north-south connection operations in the mesh, used to establish inbound and outbound HTTP/TCP access connections. It describes a set of ports, service domain names, protocol types, and SNI configurations for the load balancer that need to be exposed.
+    In a service mesh, [Gateway Rules](../mspider/user-guide/traffic-governance/gateway-rules.md) define the load balancer for north-south connection operations in the mesh, used to establish inbound and outbound HTTP/TCP access connections. It describes a set of ports, service domain names, protocol types, and SNI configurations for the load balancer that need to be exposed.
 
 - Gauge
 
@@ -1169,7 +1169,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Group
 
-    In global management, this refers to a combination of multiple users, that is, a [group](../ghippo/04UserGuide/01UserandAccess/Group.md).
+    In global management, this refers to a combination of multiple users, that is, a [group](../ghippo/user-guide/01UserandAccess/Group.md).
 
     In the microservice engine, this is a group of configurations in Nacos.
 
@@ -1258,7 +1258,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - IAM, Identity and access management
 
-    [IAM](../ghippo/04UserGuide/01UserandAccess/iam.md) stands for Identity and Access Management, which is a shorthand for user and access control in global management. An IAM Admin is the administrator with the highest level of permission in this module. Users or user groups assigned as IAM Admin will have full and highest permission for user and access control.
+    [IAM](../ghippo/user-guide/01UserandAccess/iam.md) stands for Identity and Access Management, which is a shorthand for user and access control in global management. An IAM Admin is the administrator with the highest level of permission in this module. Users or user groups assigned as IAM Admin will have full and highest permission for user and access control.
 
 - Image
 
@@ -1577,7 +1577,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Permission
 
-    [Permissions](../ghippo/04UserGuide/01UserandAccess/iam.md) refer to whether a user is allowed to perform a certain operation on a certain resource. In order to reduce the threshold for use, DCE adopts the RBAC model to aggregate permissions into roles. Administrators only need to authorize roles to users, and the user will obtain a set of permissions aggregated under that role.
+    [Permissions](../ghippo/user-guide/01UserandAccess/iam.md) refer to whether a user is allowed to perform a certain operation on a certain resource. In order to reduce the threshold for use, DCE adopts the RBAC model to aggregate permissions into roles. Administrators only need to authorize roles to users, and the user will obtain a set of permissions aggregated under that role.
 
     By default, IAM users created by administrators have no role permissions. They need to be granted roles individually or added to user groups and granted roles in order to obtain corresponding role permissions. This process is called authorization. After authorization, users can operate on platform resources based on the role permissions granted to them.
 
@@ -1684,7 +1684,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - RBAC
 
-    Role-Based Access Control (RBAC) allows administrators to dynamically configure access policies through the Kubernetes API. RBAC uses [roles](../ghippo/04UserGuide/01UserandAccess/Role.md) (which contain permission rules) and role bindings (which grant a user group the permissions defined in a role).
+    Role-Based Access Control (RBAC) allows administrators to dynamically configure access policies through the Kubernetes API. RBAC uses [roles](../ghippo/user-guide/01UserandAccess/Role.md) (which contain permission rules) and role bindings (which grant a user group the permissions defined in a role).
 
 - Registration center
 
@@ -1712,7 +1712,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Resource Quota
 
-    [Resource quotas](../ghippo/04UserGuide/02Workspace/quota.md) provide constraints on the total resource consumption of each namespace. They limit the number of objects that can be created in a namespace and also limit the total amount of computing resources that can be used by resource objects in the project.
+    [Resource quotas](../ghippo/user-guide/02Workspace/quota.md) provide constraints on the total resource consumption of each namespace. They limit the number of objects that can be created in a namespace and also limit the total amount of computing resources that can be used by resource objects in the project.
 
 - Resource request
 
@@ -1724,7 +1724,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Role
 
-    A [role](../ghippo/04UserGuide/01UserandAccess/Role.md) is a bridge that connects users and permissions.
+    A [role](../ghippo/user-guide/01UserandAccess/Role.md) is a bridge that connects users and permissions.
     A role corresponds to a set of permissions, and different roles have different permissions. Granting a
     user a role means granting all the permissions included in that role.
     There are two types of roles in global management:
@@ -1736,11 +1736,11 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Rolling update
 
-    [Rolling update](../mspider/03UserGuide/upgrade/IstioUpdate.md) refers to updating a small portion of replicas at a time, then updating more replicas after success, and finally completing the update of all replicas. The biggest advantage of rolling updates is zero downtime, with replicas running throughout the update process, ensuring business continuity.
+    [Rolling update](../mspider/install/istio-update.md) refers to updating a small portion of replicas at a time, then updating more replicas after success, and finally completing the update of all replicas. The biggest advantage of rolling updates is zero downtime, with replicas running throughout the update process, ensuring business continuity.
 
 - Routing Rule
 
-    In the virtual service configured in the service mesh's [virtual service](../mspider/03UserGuide/02TrafficGovernance/VirtualService.md), the routing rules follow the path defined by the service mesh for requests. Using routing rules, you can define the workload to which traffic addressed to the virtual service host is routed. Routing rules allow you to control traffic to achieve tasks such as phased traffic distribution by percentage.
+    In the virtual service configured in the service mesh's [virtual service](../mspider/user-guide/traffic-governance/virtual-service.md), the routing rules follow the path defined by the service mesh for requests. Using routing rules, you can define the workload to which traffic addressed to the virtual service host is routed. Routing rules allow you to control traffic to achieve tasks such as phased traffic distribution by percentage.
 
 ### S
 
@@ -1933,7 +1933,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - User
 
-    A [user](../ghippo/04UserGuide/01UserandAccess/User.md) is the subject who initiates an operation, each user has a unique ID and is granted different roles. The IAM users created by default have no permissions and need to be added to user groups, granted roles or policies to gain corresponding permissions.
+    A [user](../ghippo/user-guide/01UserandAccess/User.md) is the subject who initiates an operation, each user has a unique ID and is granted different roles. The IAM users created by default have no permissions and need to be added to user groups, granted roles or policies to gain corresponding permissions.
 
     Users log in to DCE with their usernames and operate platform resources and services according to the permissions granted to them. Therefore, users are the subjects of resource ownership and have corresponding permissions for the resources they own.
 
@@ -2021,7 +2021,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Workspace
 
-    A [workspace](../ghippo/04UserGuide/02Workspace/Workspaces.md) is a resource category that represents a resource hierarchy. A workspace can contain resources such as clusters, [namespaces](../kpanda/07UserGuide/Namespaces/createns.md), and registries. Typically, a workspace corresponds to a project, and different resources can be assigned to each workspace, with different users and user groups assigned.
+    A [workspace](../ghippo/user-guide/02Workspace/Workspaces.md) is a resource category that represents a resource hierarchy. A workspace can contain resources such as clusters, [namespaces](../kpanda/07UserGuide/Namespaces/createns.md), and registries. Typically, a workspace corresponds to a project, and different resources can be assigned to each workspace, with different users and user groups assigned.
 
 - Worker Cluster
 

@@ -97,7 +97,7 @@ class typical,k8s,mng2,gsc2,k8s2 k8s
 class simple,start plain
 class gsc1,k8s1 grey
 
-click deploy "https://docs.daocloud.io/install/commercial/commercial/deploy-requirements/"
+click deploy "https://docs.daocloud.io/install/commercial/deploy-requirements/"
 click tools "https://docs.daocloud.io/install/install-tools/"
 click download "https://docs.daocloud.io/install/commercial/download-file/"
 click config "https://docs.daocloud.io/install/commercial/clusterconfig/"

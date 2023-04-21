@@ -141,6 +141,55 @@
         ...
     ```
 
+!!! note  
+
+    当从 v0.15.x (或更低版本) 升级到 v0.16.0 (或更高版本) 时，需要修改数据库连接参数。  
+
+    数据库连接参数的修改示例：
+
+    ```yaml title="bak.yaml"
+    USER-SUPPLIED VALUES:
+    global:
+      database:
+        host: 127.0.0.1
+        port: 3306
+        apiserver:
+          dbname: ghippo
+          password: passowrd
+          user: ghippo
+        keycloakx:
+          dbname: keycloak
+          password: passowrd
+          user: keycloak
+      auditDatabase:
+        auditserver:
+          dbname: audit
+          password: passowrd
+          user: audit
+        host: 127.0.0.1
+        port: 3306
+    ```
+
+    修改为：
+
+    ```yaml title="bak.yaml"
+    USER-SUPPLIED VALUES:
+    global:
+      storage:
+        ghippo:
+        - driver: mysql
+            accessType: readwrite
+            dsn: {global.database.apiserver.user}:{global.database.apiserver.password}@tcp({global.database.host}:{global.database.port})/{global.database.apiserver.dbname}?charset=utf8mb4&multiStatements=true&parseTime=true
+        audit:
+        - driver: mysql
+            accessType: readwrite
+            dsn: {global.auditDatabase.auditserver.user}:{global.auditDatabase.auditserver.password}@tcp({global.auditDatabase.host}:{global.auditDatabase.port})/{global.auditDatabase.auditserver.dbname}?charset=utf8mb4&multiStatements=true&parseTime=true
+        keycloak:
+        - driver: mysql
+            accessType: readwrite
+            dsn: {global.database.keycloakx.user}:{global.database.keycloakx.password}@tcp({global.database.host}:{global.database.port})/{global.database.keycloakx.dbname}?charset=utf8mb4
+    ```
+
 === "通过 helm repo 升级"
 
     1. 检查全局管理 helm 仓库是否存在。

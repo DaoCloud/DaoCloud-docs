@@ -21,19 +21,19 @@ The currently authorized and compliant Kubernetes versions of DaoCloud include b
 
 Current versions:
 
-[](https://github.com/cncf/k8s-conformance/pull/2072)
-[](https://github.com/cncf/k8s-conformance/pull/2239)
-[](https://github.com/cncf/k8s-conformance/pull/2240)
-[](https://github.com/cncf/k8s-conformance/pull/2451)
+[![1.23](../images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
+[![1.24](../images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
+[![1.25](../images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
+[![1.26](../images/1.26.png)](https://github.com/cncf/k8s-conformance/pull/2451)
 
 Historic versions:
 
-[](https://github.com/cncf/k8s-conformance/pull/68)
-[](https://github.com/cncf/k8s-conformance/pull/210)
-[](https://github.com/cncf/k8s-conformance/pull/418)
-[](https://github.com/cncf/k8s-conformance/pull/794)
-[](https://github.com/cncf/k8s-conformance/pull/1144)
-[](https://github.com/cncf/k8s-conformance/pull/1463)
+[![1.7](../images/1.7.png)](https://github.com/cncf/k8s-conformance/pull/68)
+[![1.9](../images/1.9.png)](https://github.com/cncf/k8s-conformance/pull/210)
+[![1.13](../images/1.13.png)](https://github.com/cncf/k8s-conformance/pull/418)
+[![1.15](../images/1.15.png)](https://github.com/cncf/k8s-conformance/pull/794)
+[![1.18](../images/1.18.png)](https://github.com/cncf/k8s-conformance/pull/1144)
+[![1.20](../images/1.20.png)](https://github.com/cncf/k8s-conformance/pull/1463)
 
 <!--
 Source: https://github.com/cncf/artwork/tree/master/projects/kubernetes/certified-kubernetes

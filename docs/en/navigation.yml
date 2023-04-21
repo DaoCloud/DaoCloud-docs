@@ -94,41 +94,41 @@ nav:
               - Features: ghippo/intro/Features.md
               - Glossary: ghippo/intro/glossary.md
               - Release Notes: ghippo/intro/release-notes.md
-          - Login: ghippo/04UserGuide/00Login.md
+          - Login: ghippo/user-guide/00Login.md
           - Installation:
               - Offline Upgrade: ghippo/install/offlineInstall.md
               - Custom Reverse Proxy: ghippo/install/reverseProxy.md
               - National Secret Gateway: ghippo/install/gmGateway.md
           - User and Access:
-              - What is User and Access: ghippo/04UserGuide/01UserandAccess/iam.md
-              - User: ghippo/04UserGuide/01UserandAccess/User.md
-              - Group: ghippo/04UserGuide/01UserandAccess/Group.md
+              - What is User and Access: ghippo/user-guide/01UserandAccess/iam.md
+              - User: ghippo/user-guide/01UserandAccess/User.md
+              - Group: ghippo/user-guide/01UserandAccess/Group.md
           - Role and Permission:
-              - ghippo/04UserGuide/01UserandAccess/Role.md
-              - Roles: ghippo/04UserGuide/01UserandAccess/global.md
+              - ghippo/user-guide/01UserandAccess/Role.md
+              - Roles: ghippo/user-guide/01UserandAccess/global.md
           - ID Provider:
-              - ghippo/04UserGuide/01UserandAccess/idprovider.md
-              - LDAP: ghippo/04UserGuide/01UserandAccess/ldap.md
-              - OIDC: ghippo/04UserGuide/01UserandAccess/oidc.md
+              - ghippo/user-guide/01UserandAccess/idprovider.md
+              - LDAP: ghippo/user-guide/01UserandAccess/ldap.md
+              - OIDC: ghippo/user-guide/01UserandAccess/oidc.md
           - Workspace and Folder:
-              - ghippo/04UserGuide/02Workspace/ws-folder.md
-              - Workspaces: ghippo/04UserGuide/02Workspace/Workspaces.md
-              - Workspace Permission: ghippo/04UserGuide/02Workspace/wspermission.md
-              - Folders: ghippo/04UserGuide/02Workspace/folders.md
-              - Folder Permission: ghippo/04UserGuide/02Workspace/fdpermission.md
-              - Resource Quota: ghippo/04UserGuide/02Workspace/quota.md
+              - ghippo/user-guide/02Workspace/ws-folder.md
+              - Workspaces: ghippo/user-guide/02Workspace/Workspaces.md
+              - Workspace Permission: ghippo/user-guide/02Workspace/wspermission.md
+              - Folders: ghippo/user-guide/02Workspace/folders.md
+              - Folder Permission: ghippo/user-guide/02Workspace/fdpermission.md
+              - Resource Quota: ghippo/user-guide/02Workspace/quota.md
           - Audit Logs:
-              - Enable/Disable: ghippo/04UserGuide/open-audit.md
-              - Download and Export: ghippo/04UserGuide/03AuditLog.md
+              - Enable/Disable: ghippo/user-guide/open-audit.md
+              - Download and Export: ghippo/user-guide/03AuditLog.md
           - Platform Settings:
-              - Reset Password: ghippo/04UserGuide/password.md
-              - Mail Server Settings: ghippo/04UserGuide/04PlatformSetting/MailServer.md
-              - Custom Appearance: ghippo/04UserGuide/04PlatformSetting/Appearance.md
-              - About: ghippo/04UserGuide/04PlatformSetting/about.md
+              - Reset Password: ghippo/user-guide/password.md
+              - Mail Server Settings: ghippo/user-guide/04PlatformSetting/MailServer.md
+              - Custom Appearance: ghippo/user-guide/04PlatformSetting/Appearance.md
+              - About: ghippo/user-guide/04PlatformSetting/about.md
           - Personal Center:
-              - Security: ghippo/04UserGuide/06PersonalCenter/SecuritySetting.md
-              - Access Key: ghippo/04UserGuide/06PersonalCenter/Password.md
-              - UI Language: ghippo/04UserGuide/06PersonalCenter/Language.md
+              - Security: ghippo/user-guide/06PersonalCenter/SecuritySetting.md
+              - Access Key: ghippo/user-guide/06PersonalCenter/Password.md
+              - UI Language: ghippo/user-guide/06PersonalCenter/Language.md
           - Permissions:
               - Container Management Permission: kpanda/07UserGuide/Permissions/PermissionBrief.md
               - Microservice Engine Permission: ghippo/permissions/skoala.md
@@ -136,11 +136,11 @@ nav:
               - Service Mesh Permission: ghippo/permissions/mspider.md
               - Middleware Permission: ghippo/permissions/mcamel.md
           - Best Practices:
-              - Workspace Practices: ghippo/04UserGuide/02Workspace/wsbp.md
-              - Bind a Workspace to a Namespace: ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus.md
-              - Allocate a Cluster to Multiple Workspaces: ghippo/04UserGuide/02Workspace/a-cluster-to-multi-ws.md
-              - Folder Practices: ghippo/04UserGuide/02Workspace/fdpractice.md
-              - Normal Authorization Plan: ghippo/04UserGuide/02Workspace/authu-plan.md
+              - Workspace Practices: ghippo/user-guide/02Workspace/wsbp.md
+              - Bind a Workspace to a Namespace: ghippo/user-guide/02Workspace/ws-to-ns-across-clus.md
+              - Allocate a Cluster to Multiple Workspaces: ghippo/user-guide/02Workspace/a-cluster-to-multi-ws.md
+              - Folder Practices: ghippo/user-guide/02Workspace/fdpractice.md
+              - Normal Authorization Plan: ghippo/user-guide/02Workspace/authu-plan.md
               - Join with GProduct:
                   - ghippo/gproduct/intro.md
                   - Join Nav Bar: ghippo/gproduct/nav.md
@@ -328,67 +328,66 @@ nav:
               - Gateway: reference/basic-knowledge/gateway.md
       - Service Mesh:
           - Intro:
-              - What is Service Mesh: mspider/intro/WhatismSpider.md
-              - Features: mspider/intro/Features.md
-              - Benefits: mspider/intro/Benefits.md
-              - Scenarios: mspider/intro/Scenarios.md
-              - Features supported by UI: mspider/intro/meshes.md
+              - What is service mesh: mspider/intro/what.md
+              - Features: mspider/intro/features.md
+              - Scenarios: mspider/intro/scenarios.md
+              - Features supported on UI: mspider/intro/meshes.md
               - Permissions: ghippo/permissions/mspider.md
-              - Architecture: mspider/intro/Architecture.md
+              - Architecture: mspider/intro/architecture.md
+              - FAQs: mspider/intro/faq.md
               - Release Notes: mspider/intro/release-notes.md
-          - Install and Deploy: mspider/install.md
-          - Mesh Management:
-              - Mesh Intro: mspider/03UserGuide/servicemesh/README.md
-              - Create Managed/Dedicated Mesh: mspider/03UserGuide/servicemesh/create-mesh.md
-              - Create External Mesh: mspider/03UserGuide/servicemesh/integrate-mesh.md
-              - Delete Mesh: mspider/03UserGuide/servicemesh/delete.md
-          - Service Management:
-              - mspider/03UserGuide/01ServiceList/README.md
-              - Access service out of Mesh: mspider/03UserGuide/01ServiceList/out-to-in.md
-              - Service Entry: mspider/03UserGuide/01ServiceList/service-entry.md
-          - Traffic Management:
-              - mspider/03UserGuide/02TrafficGovernance/README.md
-              - Virtual Service: mspider/03UserGuide/02TrafficGovernance/VirtualService.md
-              - Destination Rules: mspider/03UserGuide/02TrafficGovernance/DestinationRules.md
-              - Gateway Rules: mspider/03UserGuide/02TrafficGovernance/GatewayRules.md
-              - Args for Virtual Service: mspider/03UserGuide/02TrafficGovernance/vsparams.md
+          - Install, config, and upgrade:
+              - Install: mspider/install/install.md
+              - Upgrade Istio: mspider/install/istio-update.md
+              - Upgrade sidecar: mspider/install/sidecar-update.md
+          - Create/delete mesh:
+              - Create managed/private mesh: mspider/user-guide/service-mesh/README.md
+              - Create external mesh: mspider/user-guide/service-mesh/external-mesh.md
+              - Delete mesh: mspider/user-guide/service-mesh/delete.md
+              - Resource capacity: mspider/user-guide/service-mesh/capacity-resources.md
+              - Parameters to create mesh: mspider/user-guide/service-mesh/params.md
+          - Service management:
+              - mspider/user-guide/service-list/README.md
+              - Access service out of mesh: mspider/user-guide/service-list/out-to-in.md
+              - Service entry: mspider/user-guide/service-list/service-entry.md
+          - Traffic governance:
+              - mspider/user-guide/traffic-governance/README.md
+              - Virtual service: mspider/user-guide/traffic-governance/virtual-service.md
+              - Destination rules: mspider/user-guide/traffic-governance/destination-rules.md
+              - Gateway rules: mspider/user-guide/traffic-governance/gateway-rules.md
+              - Parameters for virtual service: mspider/user-guide/traffic-governance/vsparams.md
           - Security:
-              - Security Intro: mspider/03UserGuide/05Security/README.md
-              - Peer Authentication: mspider/03UserGuide/05Security/peer.md
-              - Request Authentication: mspider/03UserGuide/05Security/request.md
-              - Authorization Policy: mspider/03UserGuide/05Security/authorize.md
-              - Args for Security: mspider/03UserGuide/05Security/params.md
-          - Sidecars:
-              - Namespace Sidecars: mspider/03UserGuide/07SidecarManagement/NamespaceSidecar.md
-              - Workload Sidecars: mspider/03UserGuide/07SidecarManagement/WorkloadSidecar.md
-              - Global Sidecars: mspider/03UserGuide/07SidecarManagement/GlobalSidecar.md
-              - Traffic passthrough: mspider/03UserGuide/07SidecarManagement/passthrough.md
-          - Traffic Monitor:
-              - mspider/03UserGuide/06TrafficMonitor/README.md
-              - Traffic Topology: mspider/03UserGuide/06TrafficMonitor/connTopo.md
+              - Intro: mspider/user-guide/security/README.md
+              - Peer authentication: mspider/user-guide/security/peer.md
+              - Request authentication: mspider/user-guide/security/request.md
+              - Authorization policies: mspider/user-guide/security/authorize.md
+              - Security parameters: mspider/user-guide/security/params.md
+          - Sidecar management:
+              - Namespace sidecars: mspider/user-guide/sidecar-management/ns-sidecar.md
+              - Workload sidecars: mspider/user-guide/sidecar-management/workload-sidecar.md
+              - Global sidecars: mspider/user-guide/sidecar-management/global-sidecar.md
+              - Traffic passthrough: mspider/user-guide/sidecar-management/passthrough.md
+          - Traffic monitor:
+              - mspider/user-guide/traffic-monitor/README.md
+              - Traffic topology: mspider/user-guide/traffic-monitor/conn-topo.md
           - Clusters:
-              - Cluster Intro: mspider/03UserGuide/08ClusterManagement/README.md
-              - Join Cluster: mspider/03UserGuide/08ClusterManagement/join-clus.md
-              - Remove Cluster: mspider/03UserGuide/08ClusterManagement/remov-clus.md
-          - Gateway:
-              - Create Gateway: mspider/03UserGuide/09GatewayInstance/create.md
-              - Delete Gateway: mspider/03UserGuide/09GatewayInstance/delete.md
-          - Istio Resources: mspider/03UserGuide/10MeshConfiguration/IstioResources.md
-          - Upgrade:
-              - Upgrade Istio: mspider/03UserGuide/upgrade/IstioUpdate.md
-              - Upgrade Sidecar: mspider/03UserGuide/upgrade/SidecarUpdate.md
-          - Multi-cluster mesh:
-              - Deploy mesh with multicloud: mspider/03UserGuide/multiCluster/multiClusterInstall.md
-              - Multi-cluster network principle: mspider/03UserGuide/multiCluster/multi-cluster-net.md
-              - Multi-cluster grayscale releasea: mspider/03UserGuide/multiCluster/gray-scale-release.md
+              - Intro: mspider/user-guide/cluster-management/README.md
+              - Add cluster: mspider/user-guide/cluster-management/join-clus.md
+              - Remove cluster: mspider/user-guide/cluster-management/remove-clus.md
+          - Mesh gateway:
+              - Create mesh gateway: mspider/user-guide/gateway-instance/create.md
+              - Delete mesh gateway: mspider/user-guide/gateway-instance/delete.md
+          - Mesh config:
+              - Multi-cloud interconnection: mspider/user-guide/multicluster/cluster-interconnect.md
+              - Multi-cloud config: mspider/user-guide/multicluster/traffic-branch.md
+              - Istio resource management: mspider/user-guide/mesh-config/istio-resources.md
+              - Custom component resources: mspider/user-guide/mesh-config/custom-res.md
           - Test:
-              - Join an OCP cluster: mspider/test/ocp.md
-              - Compatibility test with OpenShift: mspider/test/openshift.md
-          - FAQs: mspider/07faq.md
-          - References:
-              - Virtual Service: reference/basic-knowledge/virtual-service.md
-              - Observability: reference/basic-knowledge/insight.md
-              - Traffic Control: reference/basic-knowledge/traffic-control.md
+              - Join OCP to mesh: mspider/test/ocp.md
+              - Openshift and mesh compatibility test: mspider/test/openshift.md
+              - Multi-cloud deployment: mspider/user-guide/multicluster/multicluster-install.md
+              - Multi-cloud principle: mspider/user-guide/multicluster/multi-cluster-net.md
+              - Multi-cloud grayscale release: mspider/user-guide/multicluster/gray-scale-release.md
       - Network:
           - Intro:
               - What is Network: network/intro/what-is-net.md
@@ -629,6 +628,7 @@ nav:
       - Container Registry: videos/kangaroo.md
   - Blogs:
       - Index: blogs/index.md
+      - 202304 | CNCF Platforms White Paper: blogs/cncf-platform-wp.md
       - 202303 | KWOK Introduction: blogs/kwok.md
       - 202302 | DaoCloud and K8s: blogs/daocloud_k8s.md
       - 202302 | Development Quotations for DCE 5.0: blogs/peter.md
