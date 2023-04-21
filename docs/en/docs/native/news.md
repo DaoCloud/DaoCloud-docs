@@ -19,6 +19,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     Sponsored by the Ministry of Industry and Information Technology, the Cloud Native Industry Summit Forum will invite leading think tanks, government leaders, academician experts, enterprise executives and other heavyweight guests to discuss the cloud native ecology and explore the cloud native future.
 
+- [June 3 KCD Beijing Open Call for Topics (5.8 deadline)](https://mp.weixin.qq.com/s/iX7Qk8jr7vM13srimYs_rA)
+  
+    This KCD Beijing event is co-sponsored by CNCF and technology enthusiasts from DaoCloud, Microsoft, and Tetrate, and includes three sharing formats: lightning talk (10min), single/double talk (40min), and roundtable discussion (30min). Topics may include eBPF, WASM, Multi Cluster, Observability, Software Supply Chain Security, Serverless, DevOps, HPC, Streaming and other hot areas.
+
 ### 2023-05
 
 - [End of May China Academy of Information and Communications Technology officially launched the assessment of cloud consulting, cloud migration, cloud management and cloud disaster recovery in the first half of 2023 (registration closes at the end of May)](https://mp.weixin.qq.com/s/yZxSP5xb5juE9C-UWRoQAw)
@@ -39,6 +43,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     "The main work of the Digital Business Safety Promotion Center is to improve the digital business safety production related to risk identification and prevention, business global awareness, real-time monitoring and early warning, rapid fault location, accident emergency disposal capabilities.
     The standardization and scientificity of the digital business safety production system and processes of enterprises in various industries.
+
+- [May 16 CICT Launches "Cloud Native Product Catalog 2.0" Call (5.16 deadline)](https://mp.weixin.qq.com/s/xDq9APQec-h-tSx8-JICIw)
+  
+    The scope of "Cloud Native Product Catalog 2.0" includes infrastructure, cloud native middleware, cloud native data, cloud native security, and cloud native converged services. The results of the selection will be presented at the ICT China - High Level Forum - Cloud Native Industry Summit on June 6.
 
 - [May 12 2023 Trusted Edge Computing Innovation and Practice Cases and Industry Panorama Collection Launch (5.12 Filing Deadline)](https://mp.weixin.qq.com/s/KM2hnAoJ1KXJ6J0eovPzcw)
   
@@ -91,6 +99,14 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     There are four major categories of cloud-native excellent cases: excellent cases of cloud-native applications, cloud-native technology innovation solutions and products, excellent cases of cloud-native security, and new enterprises in cloud-native field.
     Cloud service providers can jointly declare with their A-side customers, with the application cases of A-side customers as the main participants and cloud service providers as the technology provider as the joint declaration unit.
+
+- [April 20 China ICT officially launches industry cloud platform management assessment series](https://mp.weixin.qq.com/s/YTJSLiAF8OMcUG6eF2YRWg)
+  
+    The industry cloud platform management assessment series includes industry cloud platform management service (tenant management) capability assessment, industry cloud platform management (platform management) capability assessment, and industry cloud platform usage benefit maturity assessment. The first batch of assessments are for financial-grade, telecom-grade, and general industry cloud platform management service (tenant management) capabilities. The final results will be released at the Trusted Cloud Conference in July.
+
+- [April 17 InfoQ released "China Open Source Ecological Mapping 2023"](https://mp.weixin.qq.com/s/ea-2bd_Ohy_BxaPVbx9d6A)
+  
+    The mapping includes a total of 913 Chinese open source projects, of which front-end, AI and cloud-native are the most active areas of Chinese open source, middleware, database, big data and operating system have higher average scores than the overall average score (based on code value and community activity), and more than half of the Top100 projects are in the three major areas of front-end, database and AI.
 
 - [April 15-16 Global Open Source Technology Summit GOTC 2023 will be held in April in Shanghai, and the call for proposal is now open](https://gotc2023.oschina.net/)
   

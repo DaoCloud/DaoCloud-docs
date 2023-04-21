@@ -291,6 +291,14 @@
 
 ### E
 
+- [Envoy v1.26.0 发布（CNCF 项目）](https://www.envoyproxy.io/docs/envoy/v1.26.0/version_history/v1.26/v1.26.0)
+
+    版本特性：增加了对通用代理的跟踪支持、支持在 http 过滤器链的任何位置修改请求和响应头信息、支持在动态元数据中设置 JWT 认证失败状态代码和消息、增加过滤器状态输入、支持在 TLS 握手和过滤器匹配之前启用速率限制、支持上游访问日志中的路由信息、支持动态地禁用 TCP 隧道、增加负载均衡器 Maglev 扩展和环形哈希扩展。
+
+- [Envoy v1.23.0 发布（CNCF 项目）](https://www.envoyproxy.io/docs/envoy/v1.23.0/version_history/v1.23/v1.23.0)  
+
+    该版本主要新特性：在一个 SDS 请求中发送多个集群或监听器的 SDS 资源、通过 HTTP 过滤器的配置名称来获取过滤器配置、监听器过滤器统计更新、dns_resolver 增加对多个地址的支持、为监听器过滤器添加动态监听器过滤器配置等。
+
 - [Envoy Gateway v0.3 发布](https://gateway.envoyproxy.io/v0.3.0/releases/v0.3.html)
 
     版本特性：支持扩展的 Gateway API 字段；支持 TCP 路由 API、UDP 路由 API 和 GRPC 路由 API；支持全局速率限制；支持请求认证。
@@ -298,10 +306,6 @@
 - [Envoy Gateway API 网关 v0.2 发布](https://github.com/envoyproxy/gateway/releases/tag/v0.2.0)
 
     该版本主要新特性：支持 Kubernetes、支持 Gateway API 资源。
-
-- [Envoy v1.23.0 发布（CNCF 项目）](https://www.envoyproxy.io/docs/envoy/v1.23.0/version_history/v1.23/v1.23.0)  
-
-    该版本主要新特性：在一个 SDS 请求中发送多个集群或监听器的 SDS 资源、通过 HTTP 过滤器的配置名称来获取过滤器配置、监听器过滤器统计更新、dns_resolver 增加对多个地址的支持、为监听器过滤器添加动态监听器过滤器配置等。
 
 - [Envoy Gateway 开源](https://blog.envoyproxy.io/introducing-envoy-gateway-ad385cc59532)
 
@@ -375,6 +379,10 @@
 - [HAProxy Kubernetes Ingress Controller v1.8 发布](https://www.haproxy.com/blog/announcing-haproxy-kubernetes-ingress-controller-1-8/)  
 
     该版本主要新特性：降低容器中所有进程的权限，不再默认运行 privileged 容器；暴露了一个用于查看 pprof 诊断数据的端点；支持收集控制器内部的 Prometheus 指标，如分配的内存量和花费的 CPU 时间；若入口规则不匹配，支持自定义设置后端端口。
+
+- [Harbor 容器镜像仓库 v2.8.0 发布（CNCF 项目）](https://github.com/goharbor/harbor/releases/tag/v2.8.0)
+
+    版本特性：支持 OCI distribution spec v1.1.0-rc1、支持通过 CloudEvents 格式发送 Webhook 负载、支持跳过任务扫描器的自动更新拉取时间、移除 helm chart 仓库服务器 ChartMuseum。
 
 - [Harbor 容器镜像仓库 v2.7.0 发布（CNCF 项目）](https://github.com/goharbor/harbor/releases/tag/v2.7.0)
 
@@ -581,6 +589,10 @@
 
     该版本主要新特性：支持 Gateway API、支持有状态应用的分批发布、新增了“Pod 批次打标”能力、集成到 KubeVela 之中实现 Helm Charts 金丝雀发布能力。
 
+- [Kuasar：由华为云联合多家单位正式开源的多沙箱容器运行时](https://mp.weixin.qq.com/s/pXBZ-U1KF0_bNU8u6MOv8A)
+
+    [Kuasar](https://github.com/kuasar-io/kuasar) 在保留传统容器运行时功能的基础上，通过全面 Rust 化以及优化管理模型和框架等手段，进一步降低管理开销、简化调用链路，扩展对业界主流沙箱技术的支持。此外，通过支持多安全沙箱共节点部署，Kuasar 可以充分利用节点资源，实现降本增效。
+
 - [KubeClipper：九州云开源的 K8s 多集群全生命周期管理工具](https://mp.weixin.qq.com/s/RVUB5Pw6-A5zZAQktl8AcQ)  
 
     [KubeClipper](https://github.com/KubeClipper-labs) 基于 kubeadm 工具进行二次封装，提供在企业自有基础设施中快速部署 K8S 集群和持续化全生命周期管理（安装、卸载、升级、扩缩容、远程访问等）能力，
@@ -631,15 +643,13 @@
 
     版本特性：冻结 k8s.gcr.io 镜像仓库、SeccompDefault 升级为 GA、Job 可变调度指令升级为 GA、Pod 调度 Readiness 升级为 beta、允许通过 Kubernetes API 访问节点日志、引入新访问模式 ReadWriteOncePod 以将卷访问限制在集群中的单个 Pod 上、VolumeManager 重建升级为 beta。
 
+- [Kubernetes 1.24 的第三方安全审计结果发布](https://www.cncf.io/blog/2023/04/19/new-kubernetes-security-audit-complete-and-open-sourced/)
+
+    [本次审计](https://github.com/kubernetes/sig-security/blob/main/sig-security-external-audit/security-audit-2021-2022/findings/Kubernetes%20v1.24%20Final%20Report.pdf)发现以下问题：在限制用户或网络权限方面存在问题，可能导致管理员混淆特定组件可用的权限；组件间身份验证存在漏洞，恶意用户能够获得集群管理员权限；日志和审计存在缺陷，攻击者可以在控制集群后利用这些缺陷来进行潜在活动；用户输入过滤存在漏洞，允许通过修改 etcd 数据存储的请求来绕过身份验证。
+
 - [Kubernetes v1.26 发布](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.26.md)
 
     该版本主要新特性：允许用户跨命名空间从卷快照中配置卷、允许使用 CEL 进行 Admission Control、改进拓扑管理器中的多 numa 对齐、为 Pod 调度增加调度就绪的机制、移除 CRI v1alpha2、Auth API 允许获取 User 属性、减少 Kubelet 在 PLEG 中的 CPU 消耗。
-
-- [Kubernetes 1.26 抢先看](https://sysdig.com/blog/kubernetes-1-26-whats-new/)
-
-    Kubernetes 1.26 即将发布，包括 37 项增强功能，11 个将升级为稳定，10 个是现有功能的改进，16 个是全新功能，还有一个是废弃功能。
-    其中，有个新功能非常值得注意，可能改变用户与 Kubernetes 的交互方式——用其他命名空间的快照来配置卷。
-    还有一些针对机器学习等高性能工作负载的新功能，以及简化集群管理员操作的功能（对OpenAPIv3 的支持）。
 
 - [Kubernetes 发布 Kubernetes CVE 订阅列表](https://kubernetes.io/blog/2022/09/12/k8s-cve-feed-alpha/)
 
@@ -722,6 +732,10 @@
 
     [KubeWharf](https://github.com/kubewharf) 是一套以 Kubernetes 为基础构建的分布式操作系统，由一组云原生组件构成，专注于提高系统的可扩展性、资源利用率、可观测性、安全性等，支持大规模多租集群、在离线混部、存储等场景。
     KubeWharf 第一批计划开源三个项目：高性能元信息存储系统 KubeBrain、kube-apiserver 七层网关 KubeGateway、轻量级多租户方案 KubeZoo。
+
+- [Kuma 服务网格项目 v2.2.0 发布（CNCF 项目）](https://github.com/kumahq/kuma/releases/tag/2.2.0)
+
+    版本特性：支持 OpenTelemetry、支持使用 JSONPatch 定义 MeshProxyPatch 策略、支持重试指令和优先级、将底层 Envoy 版本升级到 1.25、新增策略以用于更精细地控制服务间的负载均衡、支持在 Kubernetes 集群中部署通用模式的全局控制平面（由 Postgres 支持）、支持为离线令牌签名和验证提供公钥。
 
 - [Kuma 服务网格 v2.0 发布（CNCF 项目）](https://github.com/kumahq/kuma/releases/tag/2.0.0)
 
@@ -1159,6 +1173,10 @@
 - [Vcluster 虚拟 Kubernetes 集群实现方案 v0.13.0 发布](https://github.com/loft-sh/vcluster/releases/tag/v0.13.0)
 
     该版本主要新特性：增加日志和备份功能、增加具有外部数据存储的 k3s 的高可用性支持、vcluster 调度器开启时自动同步 CSI 资源。
+
+- [Velero 备份容灾工具 v1.11.0 发布（CNCF 项目）](https://github.com/vmware-tanzu/velero/releases/tag/v1.11.0)
+
+    版本特性：增加插件进度监控功能、支持过滤备份时要跳过的卷、新增集群范围和命名空间范围的资源过滤器、增加用于设置 Velero 服务器与 k8s API 服务器的超时连接的参数、支持 JSON 格式的备份描述命令输出、用 controller-runtime 重构控制器、CSI 插件会通过检查 `restorePVs` 参数的设置来决定是否从快照中恢复数据。
 
 - [Velero 备份容灾工具 v1.10.0 发布（CNCF 项目）](https://github.com/vmware-tanzu/velero/releases/tag/v1.10.0)
 
