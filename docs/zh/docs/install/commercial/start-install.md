@@ -39,8 +39,8 @@ tar -xvf offline-v0.6.1-amd64.tar
 
 | CPU 架构 | 版本   | 下载地址                                                     |
 | :------- | :----- | :----------------------------------------------------------- |
-| AMD64    | v0.5.2 | https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.5.2-amd64.tar.gz |
-| ARM64    | v0.5.2 | https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.5.2-arm64.tar.gz |
+| AMD64    | v0.6.0 | https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.6.0-amd64.tar.gz |
+| ARM64    | v0.6.0 | https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.6.0-arm64.tar.gz |
 
 #### ISO 离线包 （必需）
 
@@ -49,7 +49,7 @@ ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置�
 | CPU 架构 | 操作系统版本                                        | 下载地址                                                     |
 | :------- | :-------------------------------------------------- | :----------------------------------------------------------- |
 | AMD64    | Centos 7                                            | https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso |
-|          | Redhat 7/8                                          | https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451<br />注意：Redhat 操作系统需要 Redhat 的账号才可以下载 |
+|          | Redhat 7、8                                          | https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451<br />注意：Redhat 操作系统需要 Redhat 的账号才可以下载 |
 | ARM64    | Kylin Linux Advanced Server release V10 (Sword) SP2 | 申请地址：https://www.kylinos.cn/scheme/server/1.html <br />注意：麒麟操作系统需要提供个人信息才能下载使用，下载时请选择 V10 (Sword) SP2 |
 
 #### osPackage 离线包 （必需）
