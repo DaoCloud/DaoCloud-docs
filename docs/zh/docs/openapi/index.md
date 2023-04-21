@@ -16,7 +16,7 @@ hide:
 - :material-cloud-check: **多云编排 OpenAPI**
 - :material-engine: **微服务引擎 OpenAPI**
 - :material-table-refresh: **[服务网格 OpenAPI](./mspider/v0.105.1.md)**
-- :material-middleware: **中间件 OpenAPI**
+- :material-middleware: **[中间件 OpenAPI](./midware.md)**
 - :material-warehouse: **镜像仓库 OpenAPI**
 - :material-dot-net: **[网络 OpenAPI](./spidernet/v0.5.0.md)**
 - :floppy_disk: **存储 OpenAPI**

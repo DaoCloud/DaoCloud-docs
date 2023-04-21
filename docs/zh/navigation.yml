@@ -113,6 +113,7 @@ nav:
               - 备份无状态工作负载: kpanda/user-guide/backup/deployment.md
           - 最佳实践:
               - ETCD 备份还原: kpanda/best-practice/etcd-backup.md
+              - 工作集群离线升级指南: kpanda/best-practice/update-offline-cluster.md
       - 全局管理:
           - 介绍:
               - 什么是全局管理: ghippo/intro/what.md
@@ -176,24 +177,30 @@ nav:
                   - 接入路由和登录认证: ghippo/gproduct/route-auth.md
       - 可观测性:
           - 介绍:
-              - 什么是可观测性: insight/intro/what.md
+              - 可观测性: insight/intro/what.md
               - 产品优势: insight/intro/benefits.md
               - 应用场景: insight/intro/scenarios.md
               - 功能列表: insight/intro/feature.md
               - 权限说明: insight/intro/permission.md
               - Release Notes: insight/intro/releasenote.md
           - 快速入门:
-              - 安装 Insight:
+              - 开始安装 insight-agent:
                   - insight/user-guide/quickstart/install-agent.md
                   - 获取数据上传地址: insight/user-guide/quickstart/gethosturl.md
                   - 升级注意事项: insight/user-guide/quickstart/upgrade-note.md
                   - 离线升级 Insight: insight/user-guide/quickstart/offline-install.md
-              - OTel 赋能应用可观测性:
+                  - 采集组件 insight-agent 状态: nsight/user-guide/quickstart/agent-status.md
+              - 开始采集链路数据:
                   - insight/user-guide/quickstart/otel/otel.md
                   - Operator 无侵入增强应用: insight/user-guide/quickstart/otel/operator.md
                   - OTel SDK 增强 Go 应用: insight/user-guide/quickstart/otel/golang.md
                   - OTel SDK 为应用暴露指标: insight/user-guide/quickstart/otel/meter.md
                   - OTel 自动探针增强 Go 应用: insight/user-guide/quickstart/otel/golang-ebpf.md
+              - 开始监控 Java 应用:
+                  - insight/user-guide/quickstart/jvm-monitor/jvm-catelogy.md
+                  - 使用 JMX Exporter 暴露 JVM 监控指标: insight/user-guide/quickstart/jvm-monitor/jmx-exporter.md
+                  - 使用 OTel Java Agent 暴露 JVM 监控指标: insight/user-guide/quickstart/jvm-monitor/otel-java-agent.md
+                  - 已有 JVM 指标的 Java 应用对接可观测性: insight/user-guide/quickstart/jvm-monitor/legacy-jvm.md
           - 仪表盘:
               - 概览: insight/user-guide/overview.md
               - 仪表盘: insight/user-guide/dashboard/dashboard.md
@@ -240,14 +247,14 @@ nav:
               - 产品优势: amamba/intro/benefits.md
               - 适用场景: amamba/intro/scenarios.md
               - 基本概念: amamba/intro/concepts.md
-              - 应用工作台权限说明: amamba/intro/permission.md
-              - 常见问题: amamba/intro/faq.md
+              - 权限说明: amamba/intro/permission.md
               - Release Notes: amamba/intro/release-notes.md
           - 离线升级: amamba/offline-upgrade.md
           - 命名空间管理: amamba/user-guide/namespace/namespace.md
           - 应用创建:
               - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-app-git.md
               - 基于 Jar 包构建 Java 应用: amamba/user-guide/wizard/jar-java-app.md
+              - 基于 Helm 模板部署 Helm 应用: amamba/user-guide/wizard/helm.md
           - 流水线:
               - 安装 Jenkins: amamba/user-guide/pipeline/install-jenkins.md
               - 创建流水线:
@@ -274,6 +281,8 @@ nav:
           - 灰度发布:
               - 创建金丝雀发布任务: amamba/user-guide/release/canary.md
               - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
+          - 常见问题: 
+              - amamba/intro/faq.md
           - 最佳实践:
               - 快速创建流水线: amamba/quickstart/deploy-pipeline.md
               - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
@@ -745,7 +754,7 @@ nav:
           - 索引列表: download/dce5.md
           - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.6.0.md
           - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.6.0.md
-          - 下载 Addon 离线包: download/addon/v0.5.2.md
+          - 下载 Addon 离线包: download/addon/v0.6.0.md
           - 下载全局管理: download/modules/ghippo.md
           - 下载 Insight: download/modules/insight.md
   - DaoCloud 开源生态:
@@ -766,8 +775,19 @@ nav:
       - 开源项目: native/open.md
       - 知识分享: native/knowledge.md
   - OpenAPI 文档:
-      - OpenAPI 文档汇总: openapi/index.md
+      - OpenAPI 文档索引: openapi/index.md
       - 全局管理 OpenAPI: openapi/ghippo/v0.15.0.md
       - 服务网格 OpenAPI: openapi/mspider/v0.105.1.md
       - 可观测性 OpenAPI: openapi/insight/v0.16.0-alpha1.md
       - 网络 OpenAPI: openapi/spidernet/v0.5.0.md
+      - 中间件 OpenAPI: 
+          - Index: openapi/midware.md
+          - Elasticsearch OpenAPI: openapi/mcamel/elasticsearch-v0.7.0.md
+          - Kafka OpenAPI: openapi/mcamel/kafka-v0.5.0.md
+          - MinIO OpenAPI: openapi/mcamel/minio-v0.5.0.md
+          - MySQL OpenAPI: openapi/mcamel/mysql-v0.8.0.md
+          - PostgreSQL OpenAPI: 
+              - v0.1.0: openapi/mcamel/postgresql-v0.1.0.md
+              - v0.1.1: openapi/mcamel/postgresql-v0.1.1.md
+          - RabbitMQ OpenAPI: openapi/mcamel/rabbitmq-v0.10.0.md
+          - Redis OpenAPI: openapi/mcamel/redis-v0.7.0.md
