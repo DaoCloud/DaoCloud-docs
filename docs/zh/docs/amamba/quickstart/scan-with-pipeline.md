@@ -18,7 +18,7 @@
     helm repo add sonarqube <https://SonarSource.github.io/helm-chart-sonarqube>
     helm repo update
     kubectl create namespace sonarqube
-    helm upgrade --install -n sonarqube sonarqube sonarqube/sonarqube -n amamba-system  --create-namespace --set service.type=NodePort
+    helm upgrade --install -n sonarqube sonarqube sonarqube/sonarqube  --create-namespace --set service.type=NodePort
     ```
 
 2. 查看对应 namespace 下的 Pod STATUS 都为 Running，表明 SonarQube 安装成功。
