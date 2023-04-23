@@ -103,6 +103,17 @@ mcpc-remote-kube-api-server configmap 等待很长时间没有创建。
 
 1. 情况 1：托管网格由于控制面集群没有提前部署 `StorageClass` 导致无法创建高可用 ETCD。
 
+    xxxxx-etcd-0 一直 pending，etcd pvc 无法绑定 sc 导致 pvc pending，
+    进而导致 etcd pod 无法绑定 pvc。可以尝试以下步骤解决问题：
+
+    1. 部署 hwameistor 或者 localPath 
+    2. 删除 istio-system 命名空间下 pending 的 pvc
+    3. 重启一下 xxx-etcd-0 pod，等待即可
+
+    !!! note
+    
+        使用 hwameistor 完成部署后，每个节点必须存在一个空盘。您需要创建 LDC，然后检查 LSN LocalStorage_PoolHDD。
+
 2. 情况 2：托管网格 istiod-xxxx-hosted-xxxx 组件异常
 
 3. 情况 3：mspider-mcpc-ckube-remote-xxxx 组件异常，describe 出现如下报错：
@@ -125,13 +136,14 @@ mcpc-remote-kube-api-server configmap 等待很长时间没有创建。
 
 1. 情况 1：控制面集群提前部署 sc。
 
-2. 情况 2：该组件异常可能控制面集群未部署 metalLB 导致网络不通，istiod-xxxx-hosed-lb 无法分配 endpoint。可在 addon 中为该集群部署 metalLB。
+2. 情况 2：该组件异常可能控制面集群未部署 metalLB 导致网络不通，
+   istiod-xxxx-hosed-lb 无法分配 endpoint。可在 addon 中为该集群部署 metalLB。
 
 3. 情况 3：在移除原有托管网格后的环境中，再次创建托管网格的情况下，容易出现控制面还没有及时下发导致
    "mspider-mcpc-remote-kube-api-server" ConfigMap 未及时创建。可以重启一下 global 集群 gsc controller：
 
     ```bash
-    kubectl -n mspider-system delete pod $(kubectl -n mspider-system get pod -l app=mspider-gsc-controller -o 'jsonpath={.items..[metadata.name](http://metadata.name)}')
+    kubectl -n mspider-system delete pod $(kubectl -n mspider-system get pod -l app=mspider-gsc-controller -o 'jsonpath={.items.metadata.name}')
     ```
 
 4. 情况 4：修改 fs.inotify.max_user_instances = 65535
