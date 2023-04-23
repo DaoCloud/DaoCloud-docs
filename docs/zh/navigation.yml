@@ -760,13 +760,13 @@ nav:
           - 下载 Insight: download/modules/insight.md
   - DaoCloud 开源生态:
       - 社区索引: community/index.md
-      - CloudTTY: community/cloudtty.md
+      - cloudtty: community/cloudtty.md
       - Clusterpedia: community/clusterpedia.md
       - Ferry: community/ferry.md
       - HwameiStor: community/hwameistor.md
       - KLTS: community/klts.md
       - Kubean: community/kubean.md
-      - kwok: community/kwok.md
+      - KWOK: community/kwok.md
       - Merbridge: community/merbridge.md
       - Spiderpool: community/spiderpool.md
       - 公开镜像加速: community/mirror.md

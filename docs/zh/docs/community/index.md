@@ -11,7 +11,7 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :one:{ .lg .middle } __CloudTTY__
+-   :one:{ .lg .middle } __cloudtty__
 
     ---
 
@@ -71,7 +71,7 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :seven:{ .lg .middle } __Kwok__
+-   :seven:{ .lg .middle } __KWOK__
 
     ---
 
