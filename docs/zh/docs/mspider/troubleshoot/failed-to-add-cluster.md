@@ -179,5 +179,5 @@
 1. 情况一：addon 部署 metalLB
 2. 情况二：检查
 
-   1. 控制面集群 `istio-remote ep: istio-${meshID}-hosted ${podIP}:15012/15017`
-   2. 工作负载集群 `istio-remote ep: istiod-hosted-mesh-hosted-lb 的 ${loadBalancerIP}:15012/15017`
+    1. 控制面集群 `istio-remote ep: istio-${meshID}-hosted ${podIP}:15012/15017`
+    2. 工作负载集群 `istio-remote ep: istiod-hosted-mesh-hosted-lb 的 ${loadBalancerIP}:15012/15017`
