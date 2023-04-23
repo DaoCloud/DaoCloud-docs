@@ -536,6 +536,7 @@ nav:
               - 创建 IP 池: network/modules/spiderpool/createpool.md
               - IP 池场景说明: network/modules/spiderpool/ippoolusage.md
               - 工作负载使用 IP 池: network/modules/spiderpool/usage.md
+              - 第三方工作负载使用 IP 池: network/modules/spiderpool/cutomizedusage.md
               - 配置参考: network/modules/spiderpool/config.md
               - 常用命令: network/modules/spiderpool/command.md
               - Release Notes: network/modules/spiderpool/releasenotes.md
