@@ -26,7 +26,7 @@ mysql-operator-0                                                  2/2     Runnin
 如上所述，主备节点（`master` `replica`）的状态均为`yes`,即表示 MySQL 为正常状态。
 
 ## 2. MySQL Pod
-我们可以通过以下命令快速的查看 当前集群上所有 `MySQL` 的健康状态
+我们可以通过以下命令快速地查看当前集群上所有 MySQL 的健康状态：
 
 ```bash
 [root@-master-01 /]$ kubectl get mysql -A
