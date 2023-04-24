@@ -186,13 +186,13 @@ nav:
           - 快速入门:
               - 开始观测:
                   - insight/user-guide/quickstart/quickstart-catelogy.md
-                  - 在线安装 insight-agent: insight/user-guide/quickstart/install-agent.md
-                  - 在 DCE 4.0.x 安装 insight-aent: insight/faq/install-agentindce.md
-                  - 在 OpenShift 4.x 安装 insight-agent: insight/faq/install-agent-on-ocp.md
+                  - 在线安装 insight-agent: insight/user-guide/quickstart/install-agent.md   
+                  - 离线升级 insight-agent: insight/user-guide/quickstart/offline-install.md        
                   - 获取数据上传地址: insight/user-guide/quickstart/gethosturl.md
                   - 升级注意事项: insight/user-guide/quickstart/upgrade-note.md
-                  - 离线升级 Insight: insight/user-guide/quickstart/offline-install.md
-                  - 采集组件 insight-agent 状态: insight/user-guide/quickstart/agent-status.md
+              - 在其他发行版安装 insight-agent: 
+                  - 在 DCE 4.0.x 安装 insight-aent: insight/faq/install-agentindce.md
+                  - 在 OpenShift 4.x 安装 insight-agent: insight/faq/install-agent-on-ocp.md
               - 开始采集链路数据:
                   - insight/user-guide/quickstart/otel/otel.md
                   - Operator 无侵入增强应用: insight/user-guide/quickstart/otel/operator.md
@@ -232,6 +232,7 @@ nav:
               - 采集管理: insight/user-guide/collection-manag/collection-manag.md
               - 服务监控: insight/user-guide/collection-manag/service-monitor.md
               - 指标抓取说明: insight/faq/service-monitor.md
+              - 采集组件 insight-agent 状态: insight/user-guide/quickstart/agent-status.md
           - 系统配置:
               - 系统组件: insight/user-guide/system-config/system-component.md
               - 系统配置: insight/user-guide/system-config/system-config.md
