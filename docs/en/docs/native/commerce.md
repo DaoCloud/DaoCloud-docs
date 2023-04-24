@@ -214,7 +214,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
     The Ermetic Cloud Native Application Protection Platform's Kubernetes Security Posture Management feature supports automatic discovery and remediation of misconfigurations, compliance violations, and risky or excessive privileges in Kubernetes clusters.
     It provides a detailed inventory of all Kubernetes cluster internal resources, the ability to continuously perform security posture assessments and risk prioritization, and provides remediation methods and workflow integration.
 
-### F, G
+### F
 
 - [F5 released the Chinese version of the container Ingress service CIS-C](https://mp.weixin.qq.com/s/4BuiZC8AEnRt-lwT7dNyxg)
 
@@ -226,9 +226,15 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Update: Added workload cost allocation functionality to allow viewing historical costs for a group of workloads; optimized cost page to refine the categorization of Kubernetes cluster costs; support for viewing the dynamics of costs over time.
 
+- [Finout Launches Agentless Kubernetes Cost Governance Suite](https://www.businesswire.com/news/home/20230413005018/en/Finout-Announces-Agentless-Cost-Governance-Suite-for-Kubernetes)
+
+    This agentless cost governance suite automatically detects and manages cloud waste, predicts spend and stays on budget when using Kubernetes across all major cloud platforms. It provides a unified MegaBill dashboard that manages costs across multiple cloud platforms and provides contextual information on Kubernetes spending; supports setting budgets and future spending for Kubernetes deployments; supports identifying spending anomalies across Kubernetes and cloud services; and provides real-time recommendations for cost optimization.
+
 - [Fortinet releases cloud-native firewall service FortiGate CNF](https://www.fortinet.com/blog/business-and-technology/simplify-cloud-security-with-the-fortigate-cloud-native-firewall-on-aws)
 
      FortiGate CNF is a SaaS product that supports consistent security policies in different AWS environments through deep cloud-native integration with services such as AWS Gateway Load Balancer and AWS Firewall Manager, eliminating the complexity of network security. In addition, it supports the security inspection function of the next-generation firewall, provides deep visibility into the application layer, and can protect multiple accounts, subnets, virtual private clouds, and availability zones.
+
+### G
 
 - [GitLab 15.7 release](https://about.gitlab.com/releases/2022/12/22/gitlab-15-7-released/)
 
@@ -472,6 +478,14 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Lightstep UQL supports unified "observability as code", simplifies the process of migrating from multiple disparate tools to the unified Lightstep platform through a single query language, and also supports querying and correlating metrics, logs and track.
 
+- [Solo.io releases Gloo Platform v2.3, a cloud-native application networking platform](https://www.solo.io/blog/gloo-platform-2-3/)
+
+    Updates: New Gloo Portal to help developers classify, share, and manage APIs; support for handling traffic of GraphQL requests in Istio Service Grid, including north-south and east-west traffic; support for Kubernetes 1.25 and Istio 1.17; commercial support for Ambient Mesh.
+
+- [Solo.io Launches Gloo Fabric, a Multi-Cloud Dynamic Resource Discovery Solution](https://www.solo.io/blog/introducing-solo-gloo-fabric/)
+
+    Gloo Fabric provides multi-cloud discovery, connectivity, security, and observability capabilities for the Gloo Platform. gloo Fabric configures and manages all features of the platform through a unified API, manages network and security policies through a unified management control plane, supports dynamic discovery of network and cluster resources, and provides API management and cross-cluster multi-tenant isolation functionality. In addition, Gloo Fabric provides automatic zero-trust security and observable capabilities for platform integration.
+
 - [Solo.io Releases Cloud-Native Gateway Gloo Gateway 1.13](https://www.solo.io/blog/gloo-edge-1-13/)
 
      Release features: Improved support for OpenCensus and OpenTelemetry trace extensions; Provides a built-in method to catch invalid rate-limiting configurations before errors occur; Adds support for RBAC; Enhances control plane high availability with support for continuous operation of multiple replicas and zero-downtime upgrades; Integrates cluster scheduling tool, HashiCorp Nomad.
@@ -499,6 +513,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Spectro Cloud Palette Edge Platform Update](https://www.businesswire.com/news/home/20220929005289/en/New-Spectro-Cloud-Palette-Edge-Platform-Brings-World-Class-Security-and-Operational-Efficiencies-to-Kubernetes-at-the-Edge)
 
      Updates include: new tamper-resistant features for edge K8s clusters, support for the edge-optimized K8s distribution Palette eXtended Kubernetes Edge, and simplified edge device deployment.
+
+- [StormForge Releases Optimize Live v2.0, an Optimization Solution for Kubernetes Production Environments](https://www.stormforge.io/press-releases/stormforge-launches-v2-optimize-live-kubernetes-resource-optimization/)
+
+    Updates: resizes applications with a single helm deployment; uses machine learning to analyze workload usage patterns and provide CPU and memory recommendations; can automatically detect the presence of HPAs; provides a range of resource usage reports; simplifies deployment of resource recommendations.
 
 - [StormForge K8s optimization platform integrates with Datadog's cloud application monitoring service to simplify Kubernetes observability](https://www.stormforge.io/press-releases/new-integration-couples-datadog-observability-stormforge-machine-learning-deliver-automatic-actionable-insights-for-kubernetes-application-optimization/?utm_source=thenewstack&utm_medium=website)
 
