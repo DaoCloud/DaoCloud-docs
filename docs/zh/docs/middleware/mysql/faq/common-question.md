@@ -393,11 +393,11 @@ mcamel-common-mysql-cluster-mysql-1
 [root@master-01 ~]# kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'stop slave;reset slave;change master to MASTER_AUTO_POSITION = 1;start slave;'; 
 ````
 
->Note:
+!!! note
 
->1.这种情况可以以幂等模式执行。
+    1. 这种情况可以按幂等模式执行。
 
->2.此种类型错误也可以重做从库。
+    2. 对于此种错误，也可以尝试重做从库。
 
 ### 4.3. 主备 Pod 均为 `replica` 
 
