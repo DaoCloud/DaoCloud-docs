@@ -418,6 +418,7 @@ nav:
               - UI 支持的特性: mspider/intro/meshes.md
               - 服务网格权限说明: ghippo/permissions/mspider.md
               - 网格架构: mspider/intro/architecture.md
+              - 网格控制面组件: mspider/intro/cp-component.md
               - 常见问题: mspider/intro/faq.md
               - Release Notes: mspider/intro/release-notes.md
           - 安装、配置和升级:
@@ -465,8 +466,9 @@ nav:
               - 多云网络互联: mspider/user-guide/multicluster/cluster-interconnect.md
               - 多云网络分流配置: mspider/user-guide/multicluster/traffic-branch.md
               - Istio 资源管理: mspider/user-guide/mesh-config/istio-resources.md
-              - 自定义组件资源: mspider/user-guide/mesh-config/custom-res.md
               - TLS 密钥管理: mspider/user-guide/mesh-config/tls-secret.md
+              - 组件资源自定义: mspider/user-guide/mesh-config/custom-res.md
+              - 组件资源弹性伸缩: mspider/user-guide/mesh-config/component-hpa.md              
           - 测试:
               - OCP 接入网格: mspider/test/ocp.md
               - Openshift 与网格兼容性测试: mspider/test/openshift.md
