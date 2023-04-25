@@ -23,7 +23,7 @@ body:
       description: 要更新的版本号。
       placeholder: v0.105.1
     validations:
-      required: false
+      required: true
   - type: textarea
     id: swagger
     attributes:
