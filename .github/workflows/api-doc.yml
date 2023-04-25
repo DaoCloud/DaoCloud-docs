@@ -1,0 +1,58 @@
+name: Release OpenAPI Doc
+
+on:
+  issues:
+    types:
+      - opened
+      - edited
+
+jobs:
+  add-openapi-doc:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Issue Forms Body Parser
+        id: parse
+        uses: zentered/issue-forms-body-parser@v2.0.0
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: OpenAPI PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -x
+          declare -A products=( ["mspider"]="服务网格" ["ghppo"]="全局管理" ["skoala"]="微服务引擎" )
+          cat > /tmp/x <<'EOF'
+          ${{ steps.parse.outputs.data }}
+          EOF
+          p=$(cat /tmp/x | jq -r .product.text)
+          d=docs/zh/docs/openapi/${p}
+          v=$(cat /tmp/x | jq -r .version.text)
+          mkdir -p ${d}
+          if [ -f ${d}/${v}.md ]; then
+            echo "file already exists"
+            exit 1
+          fi
+          if [ ! -f ${d}/index.md ]; then
+            cat > ${d}/index.md <<EOF
+          # ${products[$p]} OpenAPI
+          - [版本 ${v}](./${v}.md)
+          EOF
+          else
+            echo "- [版本 ${v}](./${v}.md)" >> ${d}/index.md
+          fi
+          echo "# <swagger-ui src=${v}.json>" > ${d}/${v}.md
+          cat > ${d}/${v}.json <<EOF
+          $(cat /tmp/x | jq -r .swagger.text)
+          EOF
+          sed -i 's/```.*//g' ${d}/${v}.json
+          git checkout -b feature/add-${p}-${v}-api-doc
+          git status
+          git add .
+          git config user.email "mspider-bot@7jun.cc"
+          git config user.name "mspider-bot"
+          commit="Add ${p} version ${v} OpenAPI doc for #${{ github.event.issue.number }}"
+          git commit -m "${commit}"
+          git push origin feature/add-${p}-${v}-api-doc -f
+          if ! gh pr list --search "${commit}" | grep -q "${commit}"; then
+            gh pr create --title "${commit}" -b "Fix #${{ github.event.issue.number }}"
+          fi

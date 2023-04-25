@@ -1,0 +1,34 @@
+name: Add OpenAPI Doc
+description: Add OpenAPI Doc
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      description: 希望更新 OpenAPI 的产品
+      options:
+        - mspider
+        - ghippo
+        - skoala
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: 要更新的版本号。
+      placeholder: v0.105.1
+    validations:
+      required: true
+  - type: textarea
+    id: swagger
+    attributes:
+      label: Swagger
+      description: Swagger 格式的 OpenAPI 文档，json。
+      render: JSON
+    validations:
+      required: true
