@@ -46,17 +46,28 @@
 
     ![scan](../images/scan03.png)
 
-5. 在 SonarQube 创建 Webhook 服务器，操作路径：
+5. 将 SonarQube 地址添加至 Jenkins，请确保可以互通，操作路径：
 
-    1. 操作路径为 `Administration` -> `Configuration` -> `Webhooks` -> `Create`。
+    1. 操作路径为 `Manage Jenkins` -> `Configure System` -> `SonarQube servers` -> ` Add SonarQube` 
 
-    2. 在弹出的对话框中输入 `Name` 和 `Jenkins Console URL`（即 SonarQube Webhook 地址，这个地址是前面获取的 SonarQube 地址 + sonarqube-webhook）。
+    2. 在弹出的对话框中输入 `Server URL` 和 `Server authentication token`（即 SonarQube 地址，这个地址是前面获取的 SonarQube 地址 + 管理员令牌）。
 
-    3. 点击 `Create` 完成操作。
+    3. 点击 `Save` 完成操作。
 
-6. 提供一个暴露 Jenkins 地址，这是为了让用户将 SonarQube 服务器添加至 Jenkins。
+    ![scan](../images/scan08.png)
 
-7. 为新项目创建 SonarQube Token，操作路径为 `Create new project` -> `Set Up` -> `Generate` -> `Continue`。
+    ![scan](../images/scan09.png)
+
+    ![scan](../images/scan10.png)
+
+    !!! note
+
+        如何访问应用工作台部署的 Jenkins Dashboard？
+        
+        - 前往容器管理->全局服务集群->无状态负载，在 amamba-system 下找到负载 amamba-jenkins，通过 NodePort 的方式暴露该服务。
+        - 默认用户名密码为 admin/Admin01
+
+6. 为新项目创建 SonarQube Token，操作路径为 `Create new project` -> `Set Up` -> `Generate` -> `Continue`。
 
     ![scan](../images/scan04.png)
 
@@ -90,7 +101,7 @@
     pipeline {
     agent {
         node {
-        label 'go16'
+        label 'go'
         }
         
     }
