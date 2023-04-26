@@ -4,9 +4,9 @@
 
 > 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。
 
-## 关联仓库
+## 仓库集成
 
-参阅[关联仓库](../kangaroo/related-registry.md)文档页面。
+参阅[仓库集成](../kangaroo/related-registry.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/join-registry.mp4" preload="metadata" poster="../images/kangaroo-repo.png"></video>
