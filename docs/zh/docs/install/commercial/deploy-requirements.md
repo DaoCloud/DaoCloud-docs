@@ -13,6 +13,7 @@
 |          | Redhat 7.X          | 3.10.0-1160.e17.x86                        | 操作系统推荐 Redhat 7.9          |
 |          | Ubuntu 20.04        | 4.19.0-91.82.42.uelc20.x86 64              | 操作系统推荐 Ubuntu20.04         |
 |          | 统信UOS V20         | 5.4.0-125-generic                          | 操作系统推荐统信UOS V20（1020a） |
+|          | openEuler 22.03     | 5.10.0-60.18.0.50.oe2203.x86_64            | 操作系统推荐 openEuler 22.03     |
 | ARM 64   | 银河麒麟 OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64            | -                                |
 
 ## 硬件要求
@@ -110,8 +111,8 @@
 
 当启用 MetalLB 建 VIP 的时候， **全部 k8s 节点** 都需要打开。
 
-| Protocol | Port       | Description   | 
-|----------|--------    | ------------  | 
+| Protocol | Port       | Description   |
+|----------|--------    | ------------  |
 | TCP/UDP  | 7472       | metallb metrics ports |
 | TCP/UDP  | 7946       | metallb L2 operating mode |
 
@@ -155,8 +156,8 @@
 
 当启用 KubeVIP 建 Kube API VIP 的时候， **全部 Control Plane 节点** 都需要打开。
 
-| Protocol | Port       | Description   | 
-|----------|--------    | ------------  | 
+| Protocol | Port       | Description   |
+|----------|--------    | ------------  |
 | TCP  | 2112           | kube-vip metrics ports |
 
 
@@ -168,15 +169,15 @@
 
 #### Istio-Gateway VIP
 
-| Protocol | Port       | Description   | Used By | 
-|----------|--------    | ------------  | ------- | 
+| Protocol | Port       | Description   | Used By |
+|----------|--------    | ------------  | ------- |
 | TCP      | 80         | Istio-Gateway HTTP   | Web Browser or API Client |
 | TCP      | 443        | Istio-Gateway HTTPS  | Web Browser or API Client |
 
 #### Insight VIP
 
-| Protocol | Port       | Description   |  Used By | 
-|----------|--------    | ------------  | -------  | 
+| Protocol | Port       | Description   |  Used By |
+|----------|--------    | ------------  | -------  |
 | TCP      | 8480       | Insight VIP for Metrics  | 所有节点 |
 | TCP      | 9200       | Insight VIP for Log      | 所有节点 |
 | TCP      | 4317       | Insight VIP for Trace    | 所有节点 |
@@ -186,8 +187,8 @@
 
 工作集群需要开放 k8s API 的 6443 端口，给到全局管理集群访问。如果要是用部署功能，还要开放 22 端口，给全局集群访问。
 
-| Protocol | Port       | Description   | Used By | 
-|----------|--------    | ------------  | ------- | 
+| Protocol | Port       | Description   | Used By |
+|----------|--------    | ------------  | ------- |
 | TCP      | 22         | 各节点 SSH (for ansible) | 全局管理集群 |
 | TCP      | 6443       | k8s API 访问入口(如VIP) |  全局管理集群 |
 
@@ -195,8 +196,8 @@
 
 #### 镜像仓库
 
-| Protocol | Port       | Description   | Used By | 
-|----------|--------    | ------------  | ------- | 
+| Protocol | Port       | Description   | Used By |
+|----------|--------    | ------------  | ------- |
 | TCP      | 443        | 访问入口(如VIP) 的端口 | 所有节点 |
 
 <!--
