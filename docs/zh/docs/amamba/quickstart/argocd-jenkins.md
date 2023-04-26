@@ -1,6 +1,6 @@
-# 基于流水线 + GitOps 实现CI/CD
+# 基于流水线和 GitOps 实现 CI/CD
 
-本文将介绍如何基于应用工作台的流水线与 GitOps 功能实现CI/CD。
+本文介绍如何基于应用工作台的流水线与 GitOps 功能实现 CI/CD。
 
 ## 整体流程
 
@@ -19,7 +19,7 @@
    应用配置：<https://github.com/jzhupup/argocd-example-apps.git>
    ```
 
-2. 准备一个 harbor 镜像仓库
+2. 准备一个 Harbor 镜像仓库
 
 3. 准备流水线凭证，分别命名为 git-credentials、git-app-credentials、harbor-credentials
 
@@ -33,61 +33,61 @@
 
 2. 创建成功后，选择该流水线操作：`编辑 Jenkinsfile`
 
-   以下 Jenkinsfile 参数请根据实际情况进行更新：
+   ??? note "以下 Jenkinsfile 参数请根据实际情况进行更新："
 
-   ```yaml
-   pipeline {
-     agent {
-       node {
-         label 'maven'
-       }
-     }
-     parameters {
-       string(name: 'DOCKER_REPO', defaultValue: 'release-ci.daocloud.io/test-jzh/dao-2048', description: '镜像名称')
-       string(name: 'DOCKER_IMAGE_VERSION', defaultValue: 'v2.0', description: '镜像版本')
-     }
-     stages {
-       stage('git clone') {
-         agent none
-         steps {
-           git(branch: 'main', credentialsId: ' git-credentials', url: '<http://172.30.40.32:9980/gitlab-instance-facdd89d/dao-2048.git>')
-         }
-       }
-       stage('docker build & push') {
-         agent none
-         steps {
-           container('maven') {
-             withCredentials([usernamePassword(passwordVariable:'PASS',usernameVariable:'USER',credentialsId:'harbor-credentials')]) {
-               sh 'docker login ${DOCKER_REPO} -u $USER -p $PASS'
-               sh 'docker build -f Dockerfile -t ${DOCKER_REPO}:${DOCKER_IMAGE_VERSION} .'
-               sh 'docker push ${DOCKER_REPO}:${DOCKER_IMAGE_VERSION}'
-             }
-           }
-         }
-       }
-       stage('update config') {
-         agent none
-         steps {
-           withCredentials([usernamePassword(passwordVariable:'password',usernameVariable:'username',credentialsId:'git-app-credentials')]) {
-             sh """
-               git config --global user.name "root"
-               git config --global user.email "test@gmail.com"
-               git clone <http://${username}:${password}@172.30.40.32:9980/gitlab-instance-facdd89d/argocd-example-apps.git>                                         
-               cd  ./argocd-example-apps
-               sed -i "s#${DOCKER_REPO}.*#${DOCKER_REPO}:${DOCKER_IMAGE_VERSION}#g" guestbook/dao-2048.yaml
-               git add . && git commit -m "update image"
-               git push <http://${username}:${password}@172.30.40.32:9980/gitlab-instance-facdd89d/argocd-example-apps.git>
-               """
-           }
-         }
-       }
-     }
-   }
-   ```
+      ```yaml
+      pipeline {
+        agent {
+          node {
+            label 'maven'
+          }
+        }
+        parameters {
+          string(name: 'DOCKER_REPO', defaultValue: 'release-ci.daocloud.io/test-jzh/dao-2048', description: '镜像名称')
+          string(name: 'DOCKER_IMAGE_VERSION', defaultValue: 'v2.0', description: '镜像版本')
+        }
+        stages {
+          stage('git clone') {
+            agent none
+            steps {
+              git(branch: 'main', credentialsId: ' git-credentials', url: '<http://172.30.40.32:9980/gitlab-instance-facdd89d/dao-2048.git>')
+            }
+          }
+          stage('docker build & push') {
+            agent none
+            steps {
+              container('maven') {
+                withCredentials([usernamePassword(passwordVariable:'PASS',usernameVariable:'USER',credentialsId:'harbor-credentials')]) {
+                  sh 'docker login ${DOCKER_REPO} -u $USER -p $PASS'
+                  sh 'docker build -f Dockerfile -t ${DOCKER_REPO}:${DOCKER_IMAGE_VERSION} .'
+                  sh 'docker push ${DOCKER_REPO}:${DOCKER_IMAGE_VERSION}'
+                }
+              }
+            }
+          }
+          stage('update config') {
+            agent none
+            steps {
+              withCredentials([usernamePassword(passwordVariable:'password',usernameVariable:'username',credentialsId:'git-app-credentials')]) {
+                sh """
+                  git config --global user.name "root"
+                  git config --global user.email "test@gmail.com"
+                  git clone <http://${username}:${password}@172.30.40.32:9980/gitlab-instance-facdd89d/argocd-example-apps.git>                                         
+                  cd  ./argocd-example-apps
+                  sed -i "s#${DOCKER_REPO}.*#${DOCKER_REPO}:${DOCKER_IMAGE_VERSION}#g" guestbook/dao-2048.yaml
+                  git add . && git commit -m "update image"
+                  git push <http://${username}:${password}@172.30.40.32:9980/gitlab-instance-facdd89d/argocd-example-apps.git>
+                  """
+              }
+            }
+          }
+        }
+      }
+      ```
 
 ## 创建持续部署应用
 
-1. http 的方式导入 argocd-example-apps 仓库，[参考步骤](../user-guide/gitops/import-repo.md)
+1. Http 的方式导入 argocd-example-apps 仓库，[参考步骤](../user-guide/gitops/import-repo.md)
 
 2. 创建一个持续部署应用
 
@@ -101,7 +101,7 @@
 
    ![cd:ci04](../images/cd:ci04.png)
 
-## 运行流水线触发CI/CD
+## 运行流水线触发 CI/CD
 
 1. 选择上述创建的流水线，点击立即运行
 
@@ -111,7 +111,7 @@
 
    ![cd:ci06](../images/cd:ci06.png)
 
-3. 流水线运行成功后，验证镜像是否上传到 harbor，Jenkinsfile 中我们定义的tag 为v2.0。
+3. 流水线运行成功后，验证镜像是否上传到 Harbor，Jenkinsfile 中定义的 tag 为 v2.0。
 
    ![cd:ci07](../images/cd:ci07.png)
 
