@@ -49,7 +49,10 @@ ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置�
 | CPU 架构 | 操作系统版本                                        | 下载地址                                                     |
 | :------- | :-------------------------------------------------- | :----------------------------------------------------------- |
 | AMD64    | Centos 7                                            | https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso |
-|          | Redhat 7、8                                          | https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451<br />注意：Redhat 操作系统需要 Redhat 的账号才可以下载 |
+|          | Redhat 7、8                                         | https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451<br />注意：Redhat 操作系统需要 Redhat 的账号才可以下载 |
+|          | Ubuntu20.04                                         | https://mirrors.hit.edu.cn/ubuntu-releases/20.04.5/ubuntu-20.04.5-live-server-amd64.iso |
+|          | 统信UOS V20（1020a）                                | https://cdimage-download.chinauos.com/uniontechos-server-20-1020a-amd64.iso |
+|          | openEuler22.03                                      | https://mirrors.nju.edu.cn/openeuler/openEuler-22.03-LTS-SP1/ISO/x86_64/openEuler-22.03-LTS-SP1-x86_64-dvd.iso |
 | ARM64    | Kylin Linux Advanced Server release V10 (Sword) SP2 | 申请地址：https://www.kylinos.cn/scheme/server/1.html <br />注意：麒麟操作系统需要提供个人信息才能下载使用，下载时请选择 V10 (Sword) SP2 |
 
 #### osPackage 离线包 （必需）
@@ -64,6 +67,10 @@ ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置�
 | Redhat 8                                            | https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.8/os-pkgs-redhat8-v0.4.8.tar.gz |
 | Redhat 7                                            | https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.8/os-pkgs-redhat7-v0.4.8.tar.gz |
 | Kylin Linux Advanced Server release V10 (Sword) SP2 | https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.8/os-pkgs-kylinv10-v0.4.8.tar.gz |
+| Ubuntu20.04                                         | https://github.com/kubean-io/kubean/releases/download/v0.4.9/os-pkgs-ubuntu2004-v0.4.9.tar.gz |
+| openEuler 22.03                                     | https://github.com/kubean-io/kubean/releases/download/v0.4.9/os-pkgs-openeuler22.03-v0.4.9.tar.gz |
+
+统信UOS V20（1020a）osPackage 部署请参考[UOS V20 (1020a) 操作系统上部署 DCE 5.0](../os-install/uos-v20-install-dce5.0.md)
 
 ### 第 2 步：配置集群配置文件
 
@@ -84,7 +91,7 @@ ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置�
     !!! note
 
         安装器脚本命令说明：
-    
+        
         - -c 来指定集群配置文件，必选
         - -m 参数指定 manifest 文件，
         - -z 最小化安装
