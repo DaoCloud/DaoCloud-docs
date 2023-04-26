@@ -109,6 +109,7 @@ nav:
               - 权限说明: kpanda/user-guide/permissions/permission-brief.md
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
           - 备份恢复:
+              - ETCD 备份: kpanda/user-guide/backup/etcd-backup.md
               - 安装 velero 插件: kpanda/user-guide/backup/install-velero.md
               - 备份无状态工作负载: kpanda/user-guide/backup/deployment.md
           - 最佳实践:
