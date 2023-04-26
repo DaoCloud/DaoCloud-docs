@@ -13,7 +13,7 @@ hide:
 - :octicons-container-16: **容器管理 OpenAPI**
 - :material-monitor-dashboard: **[可观测性 OpenAPI](./insight/v0.16.0-alpha1.md)**
 - :material-microsoft-azure-devops: **应用工作台 OpenAPI**
-- :material-cloud-check: **多云编排 OpenAPI**
+- :material-cloud-check: **[多云编排 OpenAPI](./kairship/v0.8.0.md)**
 - :material-engine: **微服务引擎 OpenAPI**
 - :material-table-refresh: **[服务网格 OpenAPI](./mspider/v0.105.1.md)**
 - :material-middleware: **[中间件 OpenAPI](./midware.md)**
