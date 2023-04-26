@@ -1,0 +1,2475 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "spidernet",
+    "version": "v0.6.0"
+  },
+  "tags": [
+    {
+      "name": "Common"
+    },
+    {
+      "name": "Multus"
+    },
+    {
+      "name": "Spiderpool"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/multus/instance-annotations": {
+      "get": {
+        "summary": "GetMultusInstanceAnnotations parse annotations of multus instances",
+        "operationId": "Multus_ListMultusInstanceAnnotations",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1alpha1ListMultusInstanceAnnotationsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "description": "Cluster the specified resources belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Multus"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/namespaces": {
+      "get": {
+        "operationId": "Common_ListNamespaces",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1alpha1ListNamespacesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NAMESPACE_SORT_BY_UNSPECIFIED",
+              "NAMESPACE_SORT_BY_NAME"
+            ],
+            "default": "NAMESPACE_SORT_BY_UNSPECIFIED"
+          },
+          {
+            "name": "sortDir",
+            "description": " - SORT_DIR_DESC: Desc stands for descending order.\n - SORT_DIR_ASC: Asc stands for ascending order.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "SORT_DIR_UNSPECIFIED",
+              "SORT_DIR_DESC",
+              "SORT_DIR_ASC"
+            ],
+            "default": "SORT_DIR_UNSPECIFIED"
+          },
+          {
+            "name": "searches",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fuzzy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Common"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/ipversion": {
+      "get": {
+        "operationId": "Spiderpool_GetIPVersionEnablement",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1alpha1IPVersionEnablement"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/spiderippools": {
+      "get": {
+        "operationId": "Spiderpool_ListSpiderIPPools",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1alpha1ListSpiderIPPoolsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "controllerSubnet",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ipVersion",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "IP_VERSION_UNSPECIFIED",
+              "IP_VERSION_IPV4",
+              "IP_VERSION_IPV6"
+            ],
+            "default": "IP_VERSION_UNSPECIFIED"
+          },
+          {
+            "name": "vlan",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "selectPod",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "selectNamespace",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "IPPOOL_SORT_BY_UNSPECIFIED",
+              "IPPOOL_SORT_BY_NAME",
+              "IPPOOL_SORT_BY_STATIC",
+              "IPPOOL_SORT_BY_SUBNET",
+              "IPPOOL_SORT_BY_VLAN"
+            ],
+            "default": "IPPOOL_SORT_BY_UNSPECIFIED"
+          },
+          {
+            "name": "sortDir",
+            "description": " - SORT_DIR_DESC: Desc stands for descending order.\n - SORT_DIR_ASC: Asc stands for ascending order.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "SORT_DIR_UNSPECIFIED",
+              "SORT_DIR_DESC",
+              "SORT_DIR_ASC"
+            ],
+            "default": "SORT_DIR_UNSPECIFIED"
+          },
+          {
+            "name": "searches",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fuzzy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      },
+      "post": {
+        "operationId": "Spiderpool_CreateSpiderIPPool",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "subnet": {
+                  "type": "string"
+                },
+                "gateway": {
+                  "type": "string"
+                },
+                "routes": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/typesRoute"
+                  }
+                },
+                "podAffinity": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                },
+                "namespaceAffinity": {
+                  "type": "string"
+                },
+                "nodeAffinity": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                },
+                "ips": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "vlan": {
+                  "type": "string",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/spiderippools/podresults": {
+      "get": {
+        "operationId": "Spiderpool_ListPodAllocationResults",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1alpha1ListPodAllocationResultsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "matchLabel",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "POD_ALLOCATION_RESULT_SORT_BY_UNSPECIFIED",
+              "POD_ALLOCATION_RESULT_SORT_BY_NIC"
+            ],
+            "default": "POD_ALLOCATION_RESULT_SORT_BY_UNSPECIFIED"
+          },
+          {
+            "name": "sortDir",
+            "description": " - SORT_DIR_DESC: Desc stands for descending order.\n - SORT_DIR_ASC: Asc stands for ascending order.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "SORT_DIR_UNSPECIFIED",
+              "SORT_DIR_DESC",
+              "SORT_DIR_ASC"
+            ],
+            "default": "SORT_DIR_UNSPECIFIED"
+          },
+          {
+            "name": "fuzzy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/spiderippools/{name}": {
+      "get": {
+        "operationId": "Spiderpool_GetSpiderIPPool",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1alpha1IPPoolBasicInfo"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      },
+      "delete": {
+        "operationId": "Spiderpool_DeleteSpiderIPPool",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      },
+      "put": {
+        "operationId": "Spiderpool_UpdateSpiderIPPool",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "resourceVersion": {
+                  "type": "string"
+                },
+                "gateway": {
+                  "type": "string"
+                },
+                "vlan": {
+                  "type": "string",
+                  "format": "int64"
+                },
+                "routes": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/typesRoute"
+                  }
+                },
+                "podAffinity": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                },
+                "namespaceAffinity": {
+                  "type": "string"
+                },
+                "nodeAffinity": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/spiderippools/{name}/addips": {
+      "put": {
+        "operationId": "Spiderpool_AddIPPoolIPs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "resourceVersion": {
+                  "type": "string"
+                },
+                "ips": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/spiderippools/{name}/allocations": {
+      "get": {
+        "operationId": "Spiderpool_ListIPAllocations",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1alpha1ListIPAllocationsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "IPPOOL_IP_SORT_BY_UNSPECIFIED",
+              "IPPOOL_IP_SORT_BY_ADDRESS",
+              "IPPOOL_IP_SORT_BY_STATUS",
+              "IPPOOL_IP_SORT_BY_NAMESPACE",
+              "IPPOOL_IP_SORT_BY_WORKLOAD",
+              "IPPOOL_IP_SORT_BY_POD"
+            ],
+            "default": "IPPOOL_IP_SORT_BY_UNSPECIFIED"
+          },
+          {
+            "name": "sortDir",
+            "description": " - SORT_DIR_DESC: Desc stands for descending order.\n - SORT_DIR_ASC: Asc stands for ascending order.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "SORT_DIR_UNSPECIFIED",
+              "SORT_DIR_DESC",
+              "SORT_DIR_ASC"
+            ],
+            "default": "SORT_DIR_UNSPECIFIED"
+          },
+          {
+            "name": "searches",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fuzzy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/spiderippools/{name}/exist": {
+      "get": {
+        "operationId": "Spiderpool_CheckSpiderIPPoolExist",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/typesExist"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/spiderippools/{name}/matchedworkloads": {
+      "get": {
+        "operationId": "Spiderpool_ListMatchedWorkloads",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1alpha1ListMatchedWorkloadsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "MATCHED_WORKLOAD_SORT_BY_UNSPECIFIED",
+              "MATCHED_WORKLOAD_SORT_BY_NAMESPACE",
+              "MATCHED_WORKLOAD_SORT_BY_TYPE",
+              "MATCHED_WORKLOAD_SORT_BY_NAME"
+            ],
+            "default": "MATCHED_WORKLOAD_SORT_BY_UNSPECIFIED"
+          },
+          {
+            "name": "sortDir",
+            "description": " - SORT_DIR_DESC: Desc stands for descending order.\n - SORT_DIR_ASC: Asc stands for ascending order.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "SORT_DIR_UNSPECIFIED",
+              "SORT_DIR_DESC",
+              "SORT_DIR_ASC"
+            ],
+            "default": "SORT_DIR_UNSPECIFIED"
+          },
+          {
+            "name": "fuzzy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/spiderippools/{name}/rmips": {
+      "put": {
+        "operationId": "Spiderpool_RemoveIPPoolIPs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "resourceVersion": {
+                  "type": "string"
+                },
+                "ips": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/spiderreservedips": {
+      "get": {
+        "operationId": "Spiderpool_ListSpiderReservedIPs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1alpha1ListSpiderReservedIPsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ipVersion",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "IP_VERSION_UNSPECIFIED",
+              "IP_VERSION_IPV4",
+              "IP_VERSION_IPV6"
+            ],
+            "default": "IP_VERSION_UNSPECIFIED"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sortDir",
+            "description": " - SORT_DIR_DESC: Desc stands for descending order.\n - SORT_DIR_ASC: Asc stands for ascending order.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "SORT_DIR_UNSPECIFIED",
+              "SORT_DIR_DESC",
+              "SORT_DIR_ASC"
+            ],
+            "default": "SORT_DIR_UNSPECIFIED"
+          },
+          {
+            "name": "fuzzy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/spiderreservedips/{ipVersion}/addips": {
+      "put": {
+        "operationId": "Spiderpool_AddSpiderReservedIPs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ipVersion",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "IP_VERSION_UNSPECIFIED",
+              "IP_VERSION_IPV4",
+              "IP_VERSION_IPV6"
+            ]
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "resourceVersion": {
+                  "type": "string"
+                },
+                "reservedIps": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/spiderreservedips/{ipVersion}/rmips": {
+      "put": {
+        "operationId": "Spiderpool_RemoveSpiderReservedIPs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ipVersion",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "IP_VERSION_UNSPECIFIED",
+              "IP_VERSION_IPV4",
+              "IP_VERSION_IPV6"
+            ]
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "resourceVersion": {
+                  "type": "string"
+                },
+                "reservedIps": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/spidersubnets": {
+      "get": {
+        "operationId": "Spiderpool_ListSpiderSubnets",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1alpha1ListSpiderSubnetsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ipVersion",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "IP_VERSION_UNSPECIFIED",
+              "IP_VERSION_IPV4",
+              "IP_VERSION_IPV6"
+            ],
+            "default": "IP_VERSION_UNSPECIFIED"
+          },
+          {
+            "name": "vlan",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "SUBNET_SORT_BY_UNSPECIFIED",
+              "SUBNET_SORT_BY_NAME",
+              "SUBNET_SORT_BY_SUBNET",
+              "SUBNET_SORT_BY_VLAN",
+              "SUBNET_SORT_BY_IPPOOL_COUNT",
+              "SUBNET_SORT_BY_IP_IN_USE"
+            ],
+            "default": "SUBNET_SORT_BY_UNSPECIFIED"
+          },
+          {
+            "name": "sortDir",
+            "description": " - SORT_DIR_DESC: Desc stands for descending order.\n - SORT_DIR_ASC: Asc stands for ascending order.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "SORT_DIR_UNSPECIFIED",
+              "SORT_DIR_DESC",
+              "SORT_DIR_ASC"
+            ],
+            "default": "SORT_DIR_UNSPECIFIED"
+          },
+          {
+            "name": "searches",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fuzzy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      },
+      "post": {
+        "operationId": "Spiderpool_CreateSpiderSubnet",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "subnet": {
+                  "type": "string"
+                },
+                "gateway": {
+                  "type": "string"
+                },
+                "vlan": {
+                  "type": "string",
+                  "format": "int64"
+                },
+                "routes": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/typesRoute"
+                  }
+                },
+                "ips": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/spidersubnets/{name}": {
+      "get": {
+        "operationId": "Spiderpool_GetSpiderSubnet",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1alpha1SubnetBasicInfo"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      },
+      "delete": {
+        "operationId": "Spiderpool_DeleteSpiderSubnet",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      },
+      "put": {
+        "operationId": "Spiderpool_UpdateSpiderSubnet",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "resourceVersion": {
+                  "type": "string"
+                },
+                "gateway": {
+                  "type": "string"
+                },
+                "vlan": {
+                  "type": "string",
+                  "format": "int64"
+                },
+                "routes": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/typesRoute"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/spidersubnets/{name}/addips": {
+      "put": {
+        "operationId": "Spiderpool_AddSubnetIPs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "resourceVersion": {
+                  "type": "string"
+                },
+                "ips": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/spidersubnets/{name}/allocations": {
+      "get": {
+        "operationId": "Spiderpool_ListPreIPAllocations",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1alpha1ListPreIPAllocationsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "SUBNET_IP_SORT_BY_UNSPECIFIED",
+              "SUBNET_IP_SORT_BY_ADDRESS",
+              "SUBNET_IP_SORT_BY_STATUS",
+              "SUBNET_IP_SORT_BY_IPPOOL"
+            ],
+            "default": "SUBNET_IP_SORT_BY_UNSPECIFIED"
+          },
+          {
+            "name": "sortDir",
+            "description": " - SORT_DIR_DESC: Desc stands for descending order.\n - SORT_DIR_ASC: Asc stands for ascending order.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "SORT_DIR_UNSPECIFIED",
+              "SORT_DIR_DESC",
+              "SORT_DIR_ASC"
+            ],
+            "default": "SORT_DIR_UNSPECIFIED"
+          },
+          {
+            "name": "searches",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fuzzy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/spidersubnets/{name}/exist": {
+      "get": {
+        "operationId": "Spiderpool_CheckSpiderSubnetExist",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/typesExist"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/spidersubnets/{name}/freeips": {
+      "get": {
+        "operationId": "Spiderpool_ListIPPoolAddibleIPs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1alpha1ListIPPoolAddibleIPsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "ADDIBLEIP_IP_SORT_BY_UNSPECIFIED",
+              "ADDIBLEIP_IP_SORT_BY_ADDRESS"
+            ],
+            "default": "ADDIBLEIP_IP_SORT_BY_UNSPECIFIED"
+          },
+          {
+            "name": "sortDir",
+            "description": " - SORT_DIR_DESC: Desc stands for descending order.\n - SORT_DIR_ASC: Asc stands for ascending order.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "SORT_DIR_UNSPECIFIED",
+              "SORT_DIR_DESC",
+              "SORT_DIR_ASC"
+            ],
+            "default": "SORT_DIR_UNSPECIFIED"
+          },
+          {
+            "name": "searches",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fuzzy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/clusters/{cluster}/spiderpool/spidersubnets/{name}/rmips": {
+      "put": {
+        "operationId": "Spiderpool_RemoveSubnetIPs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "resourceVersion": {
+                  "type": "string"
+                },
+                "ips": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    },
+    "/apis/spidernet.io/v1alpha1/spiderpool/clusters": {
+      "get": {
+        "operationId": "Spiderpool_ListSpiderpoolClusters",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1alpha1ListSpiderpoolClustersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "CLUSTER_SORT_BY_UNSPECIFIED",
+              "CLUSTER_SORT_BY_NAME"
+            ],
+            "default": "CLUSTER_SORT_BY_UNSPECIFIED"
+          },
+          {
+            "name": "sortDir",
+            "description": " - SORT_DIR_DESC: Desc stands for descending order.\n - SORT_DIR_ASC: Asc stands for ascending order.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "SORT_DIR_UNSPECIFIED",
+              "SORT_DIR_DESC",
+              "SORT_DIR_ASC"
+            ],
+            "default": "SORT_DIR_UNSPECIFIED"
+          },
+          {
+            "name": "searches",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fuzzy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Spiderpool"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "multusv1alpha1Type": {
+      "type": "string",
+      "enum": [
+        "default",
+        "macvlan_standalone",
+        "macvlan_overlay",
+        "sriov_standalone",
+        "sriov_overlay",
+        "sriov_dpdk",
+        "unknown"
+      ],
+      "default": "default",
+      "title": "- default: calico or cilium"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "typesExist": {
+      "type": "object",
+      "properties": {
+        "exist": {
+          "type": "boolean"
+        }
+      }
+    },
+    "typesIPStatus": {
+      "type": "string",
+      "enum": [
+        "IP_STATUS_UNSPECIFIED",
+        "IP_STATUS_FREE",
+        "IP_STATUS_IN_USE",
+        "IP_STATUS_UNALLOCATED",
+        "IP_STATUS_PRE_ALLOCATED"
+      ],
+      "default": "IP_STATUS_UNSPECIFIED"
+    },
+    "typesIPVersion": {
+      "type": "string",
+      "enum": [
+        "IP_VERSION_UNSPECIFIED",
+        "IP_VERSION_IPV4",
+        "IP_VERSION_IPV6"
+      ],
+      "default": "IP_VERSION_UNSPECIFIED"
+    },
+    "typesPagination": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Total is the total number of referents."
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Page is current page."
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32",
+          "description": "PageSize is the data number shown per page."
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Pages is the number of pages."
+        }
+      },
+      "description": "Pagination is for data paging."
+    },
+    "typesRoute": {
+      "type": "object",
+      "properties": {
+        "dst": {
+          "type": "string"
+        },
+        "gw": {
+          "type": "string"
+        }
+      }
+    },
+    "typesSortDir": {
+      "type": "string",
+      "enum": [
+        "SORT_DIR_UNSPECIFIED",
+        "SORT_DIR_DESC",
+        "SORT_DIR_ASC"
+      ],
+      "default": "SORT_DIR_UNSPECIFIED",
+      "description": "SortDir determines the data list order.\n\n - SORT_DIR_DESC: Desc stands for descending order.\n - SORT_DIR_ASC: Asc stands for ascending order."
+    },
+    "v1alpha1AddibleIPSortBy": {
+      "type": "string",
+      "enum": [
+        "ADDIBLEIP_IP_SORT_BY_UNSPECIFIED",
+        "ADDIBLEIP_IP_SORT_BY_ADDRESS"
+      ],
+      "default": "ADDIBLEIP_IP_SORT_BY_UNSPECIFIED"
+    },
+    "v1alpha1AnnotationKeys": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "type": "string",
+          "title": "value: v1.multus-cni.io/default-network"
+        },
+        "addon": {
+          "type": "string",
+          "title": "value: k8s.v1.cni.cncf.io/networks"
+        }
+      }
+    },
+    "v1alpha1AnnotationValues": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "name the name of the multus instance"
+        },
+        "namespace": {
+          "type": "string",
+          "title": "namespace the namespace of the multus instance"
+        },
+        "type": {
+          "$ref": "#/definitions/multusv1alpha1Type",
+          "title": "type the type of this multus instance"
+        },
+        "isDefault": {
+          "type": "boolean"
+        },
+        "isUnderlay": {
+          "type": "boolean",
+          "title": "isUnderlay indicates that is underlay cni"
+        },
+        "vlanId": {
+          "type": "string",
+          "title": "vlanId specify for underlay cni( required fot isUnderlay is true)"
+        },
+        "coexistTypeList": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "coexistTypeList the list of coexistedType that can be work with this multus\ninstance"
+        }
+      },
+      "title": "the base info for  multus InstanceAnnotations"
+    },
+    "v1alpha1ClusterRecord": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "v1alpha1ClusterSortBy": {
+      "type": "string",
+      "enum": [
+        "CLUSTER_SORT_BY_UNSPECIFIED",
+        "CLUSTER_SORT_BY_NAME"
+      ],
+      "default": "CLUSTER_SORT_BY_UNSPECIFIED"
+    },
+    "v1alpha1IPAllocation": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/typesIPStatus"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "pod": {
+          "type": "string"
+        }
+      }
+    },
+    "v1alpha1IPPoolBasicInfo": {
+      "type": "object",
+      "properties": {
+        "resourceVersion": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "allocatedIpCount": {
+          "type": "string",
+          "format": "int64"
+        },
+        "totalIpCount": {
+          "type": "string",
+          "format": "int64"
+        },
+        "gateway": {
+          "type": "string"
+        },
+        "vlan": {
+          "type": "string",
+          "format": "int64"
+        },
+        "routes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/typesRoute"
+          }
+        },
+        "status": {
+          "$ref": "#/definitions/v1alpha1IPPoolStatus"
+        },
+        "podAffinity": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "namespaceAffinity": {
+          "type": "string"
+        },
+        "nodeAffinity": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "creationTime": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1alpha1IPPoolIPSortBy": {
+      "type": "string",
+      "enum": [
+        "IPPOOL_IP_SORT_BY_UNSPECIFIED",
+        "IPPOOL_IP_SORT_BY_ADDRESS",
+        "IPPOOL_IP_SORT_BY_STATUS",
+        "IPPOOL_IP_SORT_BY_NAMESPACE",
+        "IPPOOL_IP_SORT_BY_WORKLOAD",
+        "IPPOOL_IP_SORT_BY_POD"
+      ],
+      "default": "IPPOOL_IP_SORT_BY_UNSPECIFIED"
+    },
+    "v1alpha1IPPoolRecord": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/v1alpha1IPPoolStatus"
+        },
+        "subnet": {
+          "type": "string"
+        },
+        "vlan": {
+          "type": "string",
+          "format": "int64"
+        },
+        "allocatedIpCount": {
+          "type": "string",
+          "format": "int64"
+        },
+        "totalIpCount": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1alpha1IPPoolSortBy": {
+      "type": "string",
+      "enum": [
+        "IPPOOL_SORT_BY_UNSPECIFIED",
+        "IPPOOL_SORT_BY_NAME",
+        "IPPOOL_SORT_BY_STATIC",
+        "IPPOOL_SORT_BY_SUBNET",
+        "IPPOOL_SORT_BY_VLAN"
+      ],
+      "default": "IPPOOL_SORT_BY_UNSPECIFIED"
+    },
+    "v1alpha1IPPoolStatus": {
+      "type": "string",
+      "enum": [
+        "IPPOOL_STATUS_UNSPECIFIED",
+        "IPPOOL_STATUS_ORDINARY",
+        "IPPOOL_STATUS_STATIC"
+      ],
+      "default": "IPPOOL_STATUS_UNSPECIFIED"
+    },
+    "v1alpha1IPVersionEnablement": {
+      "type": "object",
+      "properties": {
+        "enableIpv4": {
+          "type": "boolean"
+        },
+        "enableIpv6": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1alpha1ListIPAllocationsResponse": {
+      "type": "object",
+      "properties": {
+        "resourceVersion": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1alpha1IPAllocation"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/typesPagination"
+        }
+      }
+    },
+    "v1alpha1ListIPPoolAddibleIPsResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/typesPagination"
+        }
+      }
+    },
+    "v1alpha1ListMatchedWorkloadsResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1alpha1MatchedWorkloadRecord"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/typesPagination"
+        }
+      }
+    },
+    "v1alpha1ListMultusInstanceAnnotationsResponse": {
+      "type": "object",
+      "properties": {
+        "annotationValueList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1alpha1AnnotationValues"
+          },
+          "title": "items list of the all multus instances"
+        },
+        "annotationKeyList": {
+          "$ref": "#/definitions/v1alpha1AnnotationKeys"
+        }
+      }
+    },
+    "v1alpha1ListNamespacesResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1alpha1NamespaceRecord"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/typesPagination"
+        }
+      }
+    },
+    "v1alpha1ListPodAllocationResultsResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1alpha1PodAllocationResultRecord"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/typesPagination"
+        }
+      }
+    },
+    "v1alpha1ListPreIPAllocationsResponse": {
+      "type": "object",
+      "properties": {
+        "resourceVersion": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1alpha1PreIPAllocation"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/typesPagination"
+        }
+      }
+    },
+    "v1alpha1ListSpiderIPPoolsResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1alpha1IPPoolRecord"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/typesPagination"
+        }
+      }
+    },
+    "v1alpha1ListSpiderReservedIPsResponse": {
+      "type": "object",
+      "properties": {
+        "resourceVersion": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/typesPagination"
+        }
+      }
+    },
+    "v1alpha1ListSpiderSubnetsResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1alpha1SubnetRecord"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/typesPagination"
+        }
+      }
+    },
+    "v1alpha1ListSpiderpoolClustersResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1alpha1ClusterRecord"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/typesPagination"
+        }
+      }
+    },
+    "v1alpha1MatchedWorkloadRecord": {
+      "type": "object",
+      "properties": {
+        "namespace": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "v1alpha1MatchedWorkloadSortBy": {
+      "type": "string",
+      "enum": [
+        "MATCHED_WORKLOAD_SORT_BY_UNSPECIFIED",
+        "MATCHED_WORKLOAD_SORT_BY_NAMESPACE",
+        "MATCHED_WORKLOAD_SORT_BY_TYPE",
+        "MATCHED_WORKLOAD_SORT_BY_NAME"
+      ],
+      "default": "MATCHED_WORKLOAD_SORT_BY_UNSPECIFIED"
+    },
+    "v1alpha1NamespaceRecord": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "v1alpha1NamespaceSortBy": {
+      "type": "string",
+      "enum": [
+        "NAMESPACE_SORT_BY_UNSPECIFIED",
+        "NAMESPACE_SORT_BY_NAME"
+      ],
+      "default": "NAMESPACE_SORT_BY_UNSPECIFIED"
+    },
+    "v1alpha1PodAllocationResultRecord": {
+      "type": "object",
+      "properties": {
+        "nic": {
+          "type": "string"
+        },
+        "ipVersion": {
+          "$ref": "#/definitions/typesIPVersion"
+        },
+        "pool": {
+          "type": "string"
+        },
+        "poolStatus": {
+          "$ref": "#/definitions/v1alpha1IPPoolStatus"
+        },
+        "poolAllocatedIpCount": {
+          "type": "string",
+          "format": "int64"
+        },
+        "poolTotalIpCount": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1alpha1PodAllocationResultSortBy": {
+      "type": "string",
+      "enum": [
+        "POD_ALLOCATION_RESULT_SORT_BY_UNSPECIFIED",
+        "POD_ALLOCATION_RESULT_SORT_BY_NIC"
+      ],
+      "default": "POD_ALLOCATION_RESULT_SORT_BY_UNSPECIFIED"
+    },
+    "v1alpha1PreIPAllocation": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/typesIPStatus"
+        },
+        "pool": {
+          "type": "string"
+        }
+      }
+    },
+    "v1alpha1SubnetBasicInfo": {
+      "type": "object",
+      "properties": {
+        "resourceVersion": {
+          "type": "string"
+        },
+        "cluster": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "ipVersion": {
+          "$ref": "#/definitions/typesIPVersion"
+        },
+        "subnet": {
+          "type": "string"
+        },
+        "poolCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "allocatedIpCount": {
+          "type": "string",
+          "format": "int64"
+        },
+        "totalIpCount": {
+          "type": "string",
+          "format": "int64"
+        },
+        "gateway": {
+          "type": "string"
+        },
+        "vlan": {
+          "type": "string",
+          "format": "int64"
+        },
+        "routes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/typesRoute"
+          }
+        },
+        "creationTime": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1alpha1SubnetIPSortBy": {
+      "type": "string",
+      "enum": [
+        "SUBNET_IP_SORT_BY_UNSPECIFIED",
+        "SUBNET_IP_SORT_BY_ADDRESS",
+        "SUBNET_IP_SORT_BY_STATUS",
+        "SUBNET_IP_SORT_BY_IPPOOL"
+      ],
+      "default": "SUBNET_IP_SORT_BY_UNSPECIFIED"
+    },
+    "v1alpha1SubnetRecord": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "ipVersion": {
+          "$ref": "#/definitions/typesIPVersion"
+        },
+        "subnet": {
+          "type": "string"
+        },
+        "vlan": {
+          "type": "string",
+          "format": "int64"
+        },
+        "poolCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "allocatedIpCount": {
+          "type": "string",
+          "format": "int64"
+        },
+        "totalIpCount": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1alpha1SubnetSortBy": {
+      "type": "string",
+      "enum": [
+        "SUBNET_SORT_BY_UNSPECIFIED",
+        "SUBNET_SORT_BY_NAME",
+        "SUBNET_SORT_BY_SUBNET",
+        "SUBNET_SORT_BY_VLAN",
+        "SUBNET_SORT_BY_IPPOOL_COUNT",
+        "SUBNET_SORT_BY_IP_IN_USE"
+      ],
+      "default": "SUBNET_SORT_BY_UNSPECIFIED"
+    }
+  }
+}
