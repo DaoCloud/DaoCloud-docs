@@ -7,7 +7,7 @@ hide:
 
 应用工作台流水线支持基于代码仓库创建多分支流水线。
 
-## **前提条件**
+## 前提条件
 
 - [创建工作空间](https://docs.daocloud.io/ghippo/user-guide/workspace/workspace/)、[创建用户](https://docs.daocloud.io/ghippo/user-guide/access-control/user/)。
 - 将该用户添加至该工作空间，并赋予 `workspace editor` 或更高权限。
@@ -36,7 +36,7 @@ hide:
 
    - 分支发现策略：
 
-     - 开**启发现分支**：默认值为 `.*` ，通过正则表达式来过滤分支。
+     - 开启发现分支：默认值为 `.*` ，通过正则表达式来过滤分支。
 
    - 分支发现策略
 
