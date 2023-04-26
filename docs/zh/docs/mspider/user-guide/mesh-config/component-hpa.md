@@ -4,7 +4,8 @@
 ## 前提条件
 确保集群已安装 helm 应用 `Metrics Server`。
 
-    ![环境依赖](./images/meshrcfg06.png)
+     ![环境依赖](./images/meshrcfg07.png)
+
 
 !!! Note：应用安装操作方式可参考[安装 metrics-server 插件](../../../kpanda/user-guide/scale/install-metrics-server.md) 
 
@@ -33,11 +34,12 @@
 - `目标内存用量`：工作负载资源下的 Pod 的内存用量。当实际内存用量大于/小于目标值时，系统自动减少/增加 Pod 副本数量。
 - `副本范围`：Pod 副本数的弹性伸缩范围。默认区间为为 1 - 10。
 
-6. 点击`确定`完成创建，
+4. 点击`确定`完成编辑，此时新的策略已生效。
 
 
 
-## 更多弹性伸缩配置，请参考：
+## 更多弹性伸缩配置
+请参考：
 
 - [创建 HPA 弹性伸缩策略](../../../kpanda/user-guide/scale/create-hpa.md)
 

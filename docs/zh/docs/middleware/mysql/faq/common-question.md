@@ -26,7 +26,7 @@ mysql-operator-0                                                  2/2     Runnin
 如上所述，主备节点（`master` `replica`）的状态均为`yes`,即表示 MySQL 为正常状态。
 
 ## 2. MySQL Pod
-我们可以通过以下命令快速地查看当前集群上所有 MySQL 的健康状态：
+我们可以通过以下命令快速的查看 当前集群上所有 `MySQL` 的健康状态
 
 ```bash
 [root@-master-01 /]$ kubectl get mysql -A
@@ -296,7 +296,7 @@ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- my
 ### 4.2. 从库日志出现`复制错误`
 
 如果在查看从库 Pod 日志中出现从库复制错误，可能有多种情况，可以根据同时出现的其他错误信息，确认修复方法
-#### 出现 purged binlog 错误
+- #### 出现 purged binlog 错误
 注意以下示例，如果出现关键字 `purged binlog`，通常需要对从库执行重建处理，
 ```bash
 [root@demo-alpha-master-01 /]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' | xargs -I {} kubectl logs {} -n mcamel-system -c mysql | grep ERROR
@@ -327,7 +327,7 @@ persistentvolumeclaim "data-mcamel-common-mysql-cluster-mysql-1" deleted
 pod "mcamel-common-mysql-cluster-mysql-1" deleted
 ```
 
-#### 主键冲突错误
+- #### 主键冲突错误
 
 先看一段示例：
 ```bash
@@ -341,7 +341,7 @@ pod "mcamel-common-mysql-cluster-mysql-1" deleted
 
 说明出现了主键冲突，或者主键不存在的错误。此时，可以以幂等模式恢复或插入空事务的形式跳过错误：
 
-- 方法1：幂等模式恢复
+**方法1**：幂等模式恢复
 1. 寻找到从节点的pod
 ```bash
 [root@master-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}'
@@ -352,7 +352,7 @@ mcamel-common-mysql-cluster-mysql-1
 [root@master-01 ~]$ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'stop slave;set global slave_exec_mode="IDEMPOTENT";set global sync_binlog=10086;start slave;'
 ```
 
-- 方法2：插入空事务跳过错误
+**方法2**：插入空事务跳过错误
 
 
 ```sql
@@ -382,7 +382,7 @@ mysql> show slave status\G;
 ```bash
 [root@master-01 ~]$ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'stop slave;set global slave_exec_mode="STRICT";set global sync_binlog=10086;start slave;
 ```
-#### 从库出现 `[Note] Slave: MTS group recovery relay log info based on Worker-Id 0, group_r` 类似错误
+- #### 从库出现 `[Note] Slave: MTS group recovery relay log info based on Worker-Id 0, group_r` 类似错误
 1. 寻找到从节点的pod
 ```shell
 [root@master-01 ~]# kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' 
@@ -391,13 +391,13 @@ mcamel-common-mysql-cluster-mysql-1
 2. 设置让从库跳过这个日志继续复制；
 ```shell
 [root@master-01 ~]# kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'stop slave;reset slave;change master to MASTER_AUTO_POSITION = 1;start slave;'; 
-````
+```
 
-!!! note
+>Note:
 
-    1. 这种情况可以按幂等模式执行。
+>1.这种情况可以以幂等模式执行。
 
-    2. 对于此种错误，也可以尝试重做从库。
+>2.此种类型错误也可以重做从库。
 
 ### 4.3. 主备 Pod 均为 `replica` 
 
