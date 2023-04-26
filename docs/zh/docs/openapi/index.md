@@ -18,9 +18,9 @@ hide:
 - :material-table-refresh: **[服务网格 OpenAPI](./mspider/v0.105.1.md)**
 - :material-middleware: **[中间件 OpenAPI](./midware.md)**
 - :material-warehouse: **镜像仓库 OpenAPI**
-- :material-dot-net: **[网络 OpenAPI](./spidernet/v0.5.0.md)**
+- :material-dot-net: **[网络 OpenAPI v0.5.0](./spidernet/v0.5.0.md)**
+- :material-dot-net: **[网络 OpenAPI v0.6.0](./spidernet/v0.6.0.md)**
 - :floppy_disk: **存储 OpenAPI**
-- :material-more: **更多 OpenAPI**
 
 </div>
 
