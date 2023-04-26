@@ -481,6 +481,7 @@ nav:
               - 创建网格时一直处于“创建中”: mspider/troubleshoot/always-in-creating.md
               - 创建的网格异常但无法删除: mspider/troubleshoot/failed-to-delete.md
               - 托管网格纳管集群失败: mspider/troubleshoot/failed-to-add-cluster.md
+              - 托管网格纳管集群istio-ingressgateway异常: mspider/troubleshoot/hosted-mesh-errors.md
       - 云原生网络:
           - 介绍:
               - 什么是云原生网络: network/intro/what.md
