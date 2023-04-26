@@ -39,9 +39,7 @@
 
 上面报错信息显示连接 `10.233.48.75:15012` 即 `istiod-remote` 的 service ip:15012 timeout !!!。
 
-此时我们查看 `istio-system` 命名空间下 `istiod-remote` 的 `endpoint`。如下图：
-
-![timeout](./images/hosted02.png)
+此时我们查看 `istio-system` 命名空间下 `istiod-remote` 的 `endpoint`。
 
 ```bash
 kubectl get ep -n istio-system
@@ -54,7 +52,9 @@ istiod                  10.233.97.220:15012,10.233.97.220:15010,10.233.97.220:15
 istiod-remote           10.233.95.141:15012,10.233.95.141:15017                                   10m
 ```
 
-这里可以看出 `istio-remote` 分配的 `endpoint` 地址是 `istiod-remote 10.233.95.141:15012,10.233.95.141:15017`。
+这里可以看出 `istio-remote` 分配的 `endpoint` 地址是 `istiod-remote 10.233.95.141:15012,10.233.95.141:15017`。如下图：
+
+![timeout](./images/hosted02.png)
 
 !!! note
 
