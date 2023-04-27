@@ -742,6 +742,7 @@ nav:
       - 云原生网络: videos/network.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 202304 | 云原生监控之基础篇: blogs/20230427-victoriametrics.md
       - 202304 | Karmada Failover详解: blogs/230418-karmada-failover.md
       - 202304 | CNCF 平台工程白皮书: blogs/230417-cncf-platform-wp.md
       - 202304 | K8s 1.27 正式发布: blogs/230412-k8s-1.27.md
