@@ -10,37 +10,80 @@
 
 LocalVolumeMigrate 需要部署在 Kubernetes 系统中，需要部署应用满足下列条件：
 
-* 支持 lvm 类型的卷
+* LVM2 已安装，支持 lvm 类型的卷
 * convertible 类型卷（需要在 sc 中增加配置项 convertible: true）
     * 应用 Pod 申请多个数据卷 PVC 时，对应数据卷需要使用相同配置 sc
     * 基于 LocalVolume 粒度迁移时，默认所属相同 LocalVolumeGroup 的数据卷不会一并迁移（若一并迁移，需要配置开关 MigrateAllVols：true）
 
-## 步骤 1: 创建 convertible `StorageClass`
+## 界面操作步骤
+
+### 1. 创建 convertible `StorageClass`
+
+1. 通过界面安装，请参考：[如何创建 StorageClass](../../../kpanda/user-guide/storage/sc.md)
+
+### 2. 创建多个  `PVC`
+
+1. 通过界面创建多个 PVC ，请参考：[如何创建 PVC](../../../kpanda/user-guide/storage/pvc.md)
+
+### 3.部署多数据卷 Pod
+
+1. 通过界面创建应用，请参考： [如何创建工作负载](../../../kpanda/user-guide/workloads/create-deployment.md)  ，并挂载已创建好 2 个PVC
+
+### 4.解挂载多数据卷 Pod
+
+1. 迁移之前请先解除 PVC 挂载，可通过`编辑工作负载`进行解挂载。
+   ![unbound01](../../images/unboundpvc-01.jpg)
+
+### 5. 创建迁移任务
+
+进入`对应集群`--> 点击左侧`容器存储`-->`Hwameistor` 进入 `Hwameistor` 界面，选择 已经解绑的本地卷，对应的 PVCc为  `pvc-test01`、`pvc-test02`，点击 `...` 选择`迁移`,选择员`源节点`，`目标节点`。
+
+`源节点`： 本地卷副本所在的节点。
+
+`目标节点`： 指定后原副本将迁移至目标节点，如选择`自动选择`，则本地卷副本将自动调度至其他节点。
+
+如两个/多个本地卷挂载在同一个应用上，则两个卷会自动组成 本地卷组 统一进行迁移。
+
+![migration01](../../images/migrationaction-01.jpg)6. 点击对应的本地卷，进入详情查看迁移状态。
+
+
+
+## 在线试用步骤
+
+### 1. 创建 convertible `StorageClass`
+
+可执行如下命令，PVC 进行创建：
 
 ```console
 cd ../../deploy/
 kubectl apply -f storageclass-convertible-lvm.yaml
 ```
 
-## 步骤 2: 创建 multiple `PVC`
+### 2. 创建多个  `PVC`
+
+执行如下命令，PVC 进行创建：
 
 ```console
 kubectl apply -f pvc-multiple-lvm.yaml
 ```
 
-## 步骤 3: 部署多数据卷 Pod
+### 3.部署多数据卷 Pod
+
+执行如下命令，PVC 进行创建：
 
 ```console
 kubectl apply -f nginx-multiple-lvm.yaml
 ```
 
-## 步骤 4: 解挂载多数据卷 Pod
+### 4.解挂载多数据卷 Pod
+
+执行如下命令，PVC 进行创建：
 
 ```console
 kubectl patch deployment nginx-local-storage-lvm --patch '{"spec": {"replicas": 0}}' -n hwameistor
 ```
 
-## 步骤 5: 创建迁移任务
+### 5. 创建迁移任务
 
 ```console
 cat > ./migrate_lv.yaml <<- EOF
@@ -65,7 +108,7 @@ EOF
 kubectl apply -f ./migrate_lv.yaml
 ```
 
-## 步骤 6: 查看迁移状态
+###  6. 查看迁移状态
 
 ```console
 $ kubectl  get LocalVolumeMigrate  -o yaml
@@ -100,7 +143,9 @@ items:
     selfLink: ""
 ```
 
-## 步骤 7: 查看迁移成功状态
+## 
+
+### 7.查看迁移成功状态
 
 ```console
 [root@172-30-45-222 deploy]# kubectl  get lvr
@@ -109,7 +154,7 @@ pvc-1a0913ac-32b9-46fe-8258-39b4e3b696a4-9cdkkn   1073741824   172-30-45-223   R
 pvc-d9d3ae9f-64af-44de-baad-4c69b9e0744a-7ppmrx   1073741824   172-30-45-223   Ready   true     /dev/LocalStorage_PoolHDD-HA/pvc-d9d3ae9f-64af-44de-baad-4c69b9e0744a   77s
 ```
 
-## 步骤 8: 迁移成功后，重新挂载数据卷 Pod
+### 8. 迁移成功后，重新挂载数据卷 Pod
 
 ```console
 kubectl patch deployment nginx-local-storage-lvm --patch '{"spec": {"replicas": 1}}' -n hwameistor

@@ -1,38 +1,50 @@
-# 高可用卷
+# 使用高可用卷
 
-HwameiStor 使用开源的 DRBD 数据同步技术创建**高可用卷**，又叫 **HA 卷**。
-
-这里我们使用一个 MySQL 应用作为例子。
+HwameiStor 使用开源的 DRBD 数据同步技术创建**高可用卷**，本章节展示 高可用卷的使用这里我们使用一个 MySQL 应用作为例子。
 
 !!! note
 
     下面的 MySQL Yaml 文件来自于 [Kubernetes 的官方 Repo](https://github.com/kubernetes/website/blob/main/content/en/examples/application/mysql/mysql-statefulset.yaml)
 
-## 查看 `StorageClass`
+## 前提条件
 
-`StorageClass` "hwameistor-storage-lvm-hdd-ha" 使用参数 `replicaNumber: "2"` 开启高可用功能：
+- Hwameistor 已经安装成功
 
-```console
-$ kubectl apply -f examples/sc_ha.yaml
-$ kubectl get sc hwameistor-storage-lvm-hdd-ha -o yaml
+- 已经完成高可用存储池创建，如未创建请进行[存储池 StorageClass 创建](../../../kpanda/user-guide/storage/sc.md)。
 
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: hwameistor-storage-lvm-hdd-ha
-parameters:
-  replicaNumber: "2"
-  convertible: "false"
-  csi.storage.k8s.io/fstype: xfs
-  poolClass: HDD
-  poolType: REGULAR
-  striped: "true"
-  volumeKind: LVM
-provisioner: lvm.hwameistor.io
-reclaimPolicy: Delete
-volumeBindingMode: WaitForFirstConsumer
-allowVolumeExpansion: true
-```
+- 已经完成[DRDB 内核组件部署](../install/drbdinstall.md) 
+
+  目前 HwameiStor 安装成功后，Helm chart 会默认安装一个名为 `hwameistor-storage-lvm-hdd` 的 `StorageClass`，可使用此存储池创建本地数据卷。
+
+    1. 点击`容器管理` -> 选择对应集群，进入集群详情，点击`容器存储`，确认是否已创建`高可用存储池`
+
+       ![sc01](../../images/ha-sc01.jpg)
+
+    2. 点击`查看 YAML`，查看详情。`StorageClass` "hwameistor-storage-lvm-hdd-ha" 使用参数 `replicaNumber: "2"` 开启高可用功能：
+
+       ![sc-yaml](../../images/ha-sc02.jpg)
+
+       ```
+       $ kubectl apply -f examples/sc_ha.yaml
+       $ kubectl get sc hwameistor-storage-lvm-hdd-ha -o yaml
+       
+       apiVersion: storage.k8s.io/v1
+       kind: StorageClass
+       metadata:
+         name: hwameistor-storage-lvm-hdd-ha
+       parameters:
+         replicaNumber: "2"
+         convertible: "false"
+         csi.storage.k8s.io/fstype: xfs
+         poolClass: HDD
+         poolType: REGULAR
+         striped: "true"
+         volumeKind: LVM
+       provisioner: lvm.hwameistor.io
+       reclaimPolicy: Delete
+       volumeBindingMode: WaitForFirstConsumer
+       allowVolumeExpansion: true
+       ```
 
 ## 创建 `StatefulSet`
 
