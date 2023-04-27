@@ -1,4 +1,4 @@
-# 在 OpenShift OCP 上安装 DCE 5.0 全模式
+# 在 OpenShift OCP 上安装 DCE 5.0 商业版
 
 本文将介绍如何在 OCP 上安装 DCE 5.0。
 
