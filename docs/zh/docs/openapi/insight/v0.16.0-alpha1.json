@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "可观测性",
-    "version": "v0.16.0-alpha1"
+    "version": "v0.16.0"
   },
   "tags": [
     {
