@@ -21,11 +21,11 @@ The specific steps to create and manage credentials are as follows:
 
 1. Click `Pipeline`->`Certificate` in the left navigation bar to enter the list of certificates, and click `New Credentials` in the upper right corner.
 
-    ![createcredential](../../images/cred01.png)
+    
 
 2. On the `Create Credentials` page, configure the relevant parameters and click `OK`.
 
-    ![createcredential](../../images/cred02.png)
+    
 
     - Fill in the `credential name`, set the ID that can be used in the pipeline, such as `dockerhub-id`. Note: Once set it cannot be changed.
     - In the `Type` field, select the type of credential to add.
@@ -37,7 +37,7 @@ The specific steps to create and manage credentials are as follows:
 
 3. The screen prompts that the creation is successful, and the newly created credential is the first one by default.
 
-    ![createcredential](../../images/cred03.png)
+    
 
 4. Click `︙` on the right side of the list, and you can choose operations such as edit or delete in the pop-up menu.
 

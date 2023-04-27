@@ -24,7 +24,7 @@ Raid 5 guarantee, can tolerate 1 set of disk failure.
 
 Control flow and data flow are independent of each other to ensure the stability of data access.
 
-![Single node hot backup](../img/ioflow.png)
+
 
 ### Cross-node hot backup
 
@@ -32,16 +32,15 @@ Raid 5 + primary and backup copy protection.
 
 The HA private network logical interface dce-storage is planned to synchronize storage traffic between nodes. Synchronously replicate data across nodes to ensure hot backup of data.
 
-![Cross-node hot backup](../img/ha.png)
+
 
 ## Data rebalancing
 
 Balanced placement of data in the cluster is achieved through data volume migration technology. Move data online to nodes with more headroom.
 
-![Data Rebalance](../img/balance.png)
+
 
 ## Data volume type change
 
 In order to support some special scenarios, single-copy data volumes are allowed to be changed to multiple copies, and cross-node hot backup is supported.
 
-![Volume Type Change](../img/volumechange.png)

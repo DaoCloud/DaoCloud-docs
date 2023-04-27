@@ -25,7 +25,7 @@ The container management platform supports access to a variety of mainstream con
 
 1. Enter the `Cluster List` page, and click the `Connect to Cluster` button in the upper right corner.
 
-    ![join cluster](../../images/join-cluster01.png)
+    
 
 2. On the `Access Container Cluster` page, configure basic information.
 
@@ -33,29 +33,29 @@ The container management platform supports access to a variety of mainstream con
     - Cluster Alias: You can enter any characters, no more than 60 characters.
     - Release version: The issuer of the cluster, including mainstream cloud vendors in the market and local private physical clusters. For local private physical clusters or cluster vendors not displayed in the list, you can select other vendors and customize the vendor name.
 
-        ![join cluster](../../images/join-cluster02.png)
+        
 
 ## Fill in the access configuration
 
 1. In the `Access Configuration` area, click `How to get kubeConfig` in the upper right corner.
 
-    ![join cluster](../../images/join-cluster03.png)
+    
 
 2. Follow the on-screen prompts to get the KubeConfig for the target cluster.
 
-    ![join cluster](../../images/join-cluster04.png)
+    
 
 3. After filling in the KubeConfig of the target cluster, click `Validate Config`.
 
     If the information is correct, a successful verification prompt will appear in the upper right corner of the screen.
 
-    ![join cluster](../../images/join-cluster05.png)
+    
 
 4. Confirm that all parameters are filled in correctly, and click `OK` in the lower right corner of the page.
 
     The page will automatically jump to the cluster list. The status of the newly connected cluster is `Accessing`, and becomes `Running` after the access is successful.
 
-    ![join cluster](../../images/join-cluster07.png)
+    
 
 !!! note
 

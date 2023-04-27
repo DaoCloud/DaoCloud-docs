@@ -99,7 +99,7 @@ It is recommended to install it under the `submariner-k8s-broker` namespace.
 
 11. configure `submariner-operator`.
 
-    ![operator-install1](../../images/submariner-operator-install1.png)
+    
 
     The above configuration notes:
 
@@ -113,7 +113,7 @@ It is recommended to install it under the `submariner-k8s-broker` namespace.
     * `Submariner` -> `clusterId`: Used to identify this subcluster, the fill specification needs to satisfy DNS-1123 Label.
     * `Submariner` -> `clusterCidr`: Fill in the CIDR of the subcluster Pod.
 
-        ![operator-install2](../../images/submariner-opearator-install2.png)
+        
 
     * `Submariner` -> `serviceCidr`: Fill in the CIDR of the subcluster Service.
     * `Submariner` -> `globalCidr`: Enables the globalnet feature.
@@ -125,11 +125,11 @@ It is recommended to install it under the `submariner-k8s-broker` namespace.
 
 12. After the installation of subcluster master1 is complete.
 
-    ![opearator-install-3](../../images/submariner-opearator-install-3.png)
+    
 
 13. After the installation is complete, you need to manually set one of the nodes of subcluster master1 as a gateway node and add the tag "submariner.io/gateway: true": !
 
-    ![gateway](../../images/submariner-operator-gateway-label.png)
+    
 
     ```shell
     root@controller-node-1:~# kubectl  get po -n submariner-operator

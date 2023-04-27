@@ -24,11 +24,11 @@ This page describes how to configure multiple NICs for workload Pods in combinat
 
 1. Log in to the platform UI, click `Container Management`->`Cluster List` in the left navigation bar, and find the corresponding cluster. Then, select `Deployments` in the left navigation bar and click `Create from an Image`.
 
-    ![Image creation](../../images/spiderpool-image.png)
+    
 
 2. On the `Deployments` page, complete the infor,ation input of `Basic Information`, `Container Settings`, and `Service Settings`. Then, go to `Advanced Settings` and click `Container Network Card` —> `Configuration`.
 
-    ![Container NIC](../../images/spiderpool-nic.png)
+    
 
 3. On `Container Network Card Configuration` page, enter following arguments:
 
@@ -49,19 +49,19 @@ This page describes how to configure multiple NICs for workload Pods in combinat
 
     To manually select an IP pool, you need to create an IP pool in advance. You can select the range of the IP pool as `shared IP pool`, add the current `application affinity IP pool`, and add the current `namespace affinity IP pool`.
 
-    ![Manually select IP pool](../../images/spiderpool-manual.png)
+    
 
     **Automatically create fixed IP pool**
 
     You only need to select the corresponding subnet to automatically create a fixed IP pool
 
-    ![Automatically create fixed IP pool](../../images/spiderpool-automatic.png)
+    
 
 4. After creating the workload, you can click the corresponding workload `workload01` to view the IP used by the workload Pod.
 
-    ![View IP](../../images/spiderpool-workload-1.png)
+    
 
-    ![useippool07](../../images/spiderpool-workload-2.png)
+    
 
 ## YAML usage
 

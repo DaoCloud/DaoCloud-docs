@@ -7,19 +7,19 @@ The following is a dashboard for `Fluent Bit`, which is used to monitor the work
 
 1. Use the DCE 5.0 platform, enter `Observability`, and select `Dashboard` in the left navigation bar.
 
-    ![insight entry](../images/insight01.png)
+    
 
 2. Click on the dashboard title `Overview`.
 
-    ![Overview](../images/insight02.png)
+    
 
 3. Switch to `insight-system` -> `Fluent Bit` dashboard.
 
-    ![fluentbit](../images/insight03.png)
+    
 
 4. There are several option boxes above the `Fluent Bit` dashboard, where you can choose the log collection plug-in, log filtering plug-in, log output plug-in and the name of the cluster.
 
-    ![fluentbit](../images/insight04.png)
+    
 
 ## Plugin description
 
@@ -54,5 +54,5 @@ Several plugins for `Fluent Bit` are described here.
 | output plugin | Plugin introduction |
 | ------------------------ | ------------------------ ---------- |
 | es.kube.kubeevent.syslog | Write Kubernetes audit log, event log, syslog log to [ElasticSearch cluster](../../middleware/elasticsearch/intro/what.md) |
-| forward.audit_log | Forward the Kubernetes audit log and [Audit Log for Global Admin](../../ghippo/04UserGuide/03AuditLog.md) to `Global Admin` |
+| forward.audit_log | Forward the Kubernetes audit log and [Audit Log for Global Admin](../../ghippo/user-guide/03AuditLog.md) to `Global Admin` |
 | es.skoala | [Request log](../../skoala/ms-gateway/logs/reqlog.md) and [Instance log](../../skoala/ms-gateway /logs/inslog.md) is written to the ElasticSearch cluster |

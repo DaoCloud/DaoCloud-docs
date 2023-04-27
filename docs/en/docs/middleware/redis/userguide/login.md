@@ -4,11 +4,11 @@ Please contact the administrator in advance to perform the following operations 
 
 1. Select `Middleware` -> `Redis Cache Service` in the left navigation bar.
 
-    ![](../images/redis01.png)
+    
 
 2. After selecting a workspace in the pop-up window, click `OK`.
 
-    ![](../images/redis02.png)
+    
 
     !!! note
     
@@ -16,4 +16,4 @@ Please contact the administrator in advance to perform the following operations 
 
 3. When logging in for the first time, you can click `Deploy Now` to create an instance. When you log in thereafter, information such as all Redis instances and their running status will be displayed.
 
-    ![](../images/redis03.png)
+    

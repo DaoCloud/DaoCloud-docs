@@ -13,11 +13,11 @@ When entering multicloud orchestration for the first time, you need to `add mult
 
 1. In the multicloud instance list, click `Add Multicloud Instance` in the upper right corner.
 
-    ![add](../images/add01.png)
+    
 
 2. In the `Add Multicloud Instance` window, after configuring the instance name and alias, click `OK`.
 
-    ![add](../images/add02.png)
+    
 
 3. Return to the multicloud instance list, and the upper right corner of the screen will prompt that the creation is successful, and the newly created instance will be the first item in the list by default.
 

@@ -63,8 +63,7 @@ click ask "https://docs.daocloud.io/install/intro/#_4"
 
 !!! tip
 
-    - 上图中的蓝色文字可点击跳转
-    - 可参考[保姆式安装 DCE 5.0](../blogs/dce5-0328.md)
+    上图中的蓝色文字可点击跳转
 
 ## 商业版安装流程
 
@@ -73,7 +72,7 @@ DCE 5.0 商业版的安装流程如下图：
 ```mermaid
 flowchart TB
 
-    start([fa:fa-user DCE 5.0 商业版<br>安装流程]) -.- deploy[部署规划]
+    start([fa:fa-user DCE 5.0 商业版<br>安装流程]) -.- deploy[部署要求]
     deploy --> tools[在火种节点上安装依赖项]
     tools --> download[下载离线包]
     download --> config[编辑并配置<br>clusterConfig.yaml]
@@ -98,7 +97,7 @@ class typical,k8s,mng2,gsc2,k8s2 k8s
 class simple,start plain
 class gsc1,k8s1 grey
 
-click deploy "https://docs.daocloud.io/install/commercial/deploy-plan/"
+click deploy "https://docs.daocloud.io/install/commercial/deploy-requirements/"
 click tools "https://docs.daocloud.io/install/install-tools/"
 click download "https://docs.daocloud.io/install/commercial/download-file/"
 click config "https://docs.daocloud.io/install/commercial/clusterconfig/"

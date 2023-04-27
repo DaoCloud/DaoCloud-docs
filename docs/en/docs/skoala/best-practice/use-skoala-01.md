@@ -18,7 +18,7 @@ The sample application comes from the standard demo application of OpenTelemetry
 
 > Application Architecture Diagram
 
-![image](../images/demo-arch.png)
+
 
 For more sample applications, please check our open source site: <https://github.com/openinsight-proj/openinsight-helm-charts>
 
@@ -26,13 +26,13 @@ For more sample applications, please check our open source site: <https://github
 
 The application workbench is an application management module provided by DCE5.0, which is convenient for you to create/maintain various types of applications here, supports CICD, and can easily and quickly deploy applications to any cluster.
 
-To learn more about the application workbench, click [Application Workbench to view](../../amamba/01ProductBrief/WhatisAmamba.md)
+To learn more about the application workbench, click [Application Workbench to view](../../amamba/intro/WhatisAmamba.md)
 
 ### Deployment method selection
 
 The application workbench currently supports deployment methods based on Git repo, Jar package, Image, Helm Chart, etc. Here we use `Git repo` as an example.
 
-![image](../images/chooseInstalltype.png)
+
 
 ### Deployment preparation
 
@@ -40,7 +40,7 @@ The application workbench currently supports deployment methods based on Git rep
 
 This step needs to be operated in `container management`, jump to the Helm Chart registry, and add the registry:
 
-![image](../images/addhelmrepo.png)
+
 
 #### Prepare Nacos instance
 
@@ -48,21 +48,21 @@ For the specific operation here, please refer to the registry configuration, [](
 
 Pay attention to obtain the link address information of the registration center, which will be used later when the application below is installed.
 
-![image](../images/nacosservicelist.png)
+
 
 ### Deploy the application
 
 In the application workbench, directly choose to use Helm Chart to install, find the openinsight application, and then choose to deploy.
 
-![image](../images/helmtemplate.png)
 
-![image](../images/templatedetail.png)
+
+
 
 ### Parameter configuration
 
 On the Helm installation interface, pay attention to confirm the deployment location and the parameter configuration below, find the corresponding module through the keyword `JAVA_OPTS`, and update the configuration below.
 
-![image](../images/installchart.png)
+
 
 - Through the registration center address obtained above
 - Update the configuration parameters below, the main update fields are
@@ -99,7 +99,7 @@ On the Helm installation interface, pay attention to confirm the deployment loca
 
 After the creation is successful, the application will appear in the Helm application list of the application workbench.
 
-![image](../images/helmapplist.png)
+
 
 ### Other deployment methods
 
@@ -133,19 +133,19 @@ Note that the above `metadata` information should not be missing, otherwise the 
 
 When using container image deployment through the application workbench, you can easily enable microservice governance through configuration and directly select the corresponding registry module.
 
-![image](../images/createbyimage.png)
+
 
 ## Microservice Governance Strategy
 
 When the application is successfully deployed, we can see the corresponding service in the previously prepared registry.
 
-![image](../images/nacosservicelist.png)
+
 
 ### Governance strategy example: current limiting
 
 Here is an example of the current limiting policy. We can add the corresponding current limiting policy to the service through simple configuration.
 
-![image](../images/createratelimitrule.png)
+
 
 ### Current limiting strategy test
 
@@ -153,7 +153,7 @@ By accessing the service address, we can see that after the number of requests i
 
 ### More Strategies
 
-![image](../images/morerules.png)
+
 
 ## Cloud native gateway open API
 
@@ -165,7 +165,7 @@ First, we need to create a cloud-native gateway. For specific steps, please refe
 
 Here we have prepared a cloud native gateway
 
-![image](../images/gatewaylist.png)
+
 
 > Note that when creating a gateway, the working cluster application deployed by the gateway is in the same cluster as the sample application, and the managed namespace of the cloud-native gateway needs to include the namespace where the instance application resides
 
@@ -175,7 +175,7 @@ Based on the features of DCE5.0, the cloud-native gateway will automatically dis
 
 This demonstration uses the services of the Nacos registration center, which greatly expands the number of services that the gateway can access. We can choose from the service access to access the services of the Nacos registration center.
 
-![image](../images/gatewayservicelist.png)
+
 
 The role of manual access, when the service is not in the managed namespace, or we want to access the registration center or other external services (using domain name/IP), we can use manual access.
 
@@ -183,7 +183,7 @@ The role of manual access, when the service is not in the managed namespace, or 
 
 Jump to the API list, use the upper right to create an API, complete the corresponding API, and pay attention to select the corresponding service; the following is the basic information of the API corresponding to the sample application
 
-![image](../images/apiroute.png)
+
 
 > For more API creation details, please refer to the corresponding document [Create API](../ms-gateway/api/add-api.md)
 
@@ -193,11 +193,11 @@ After the gateway API is created, we can successfully access the application pag
 
 > Sample Application Home
 
-![image](../images/webstorehomepage.png)
+
 
 > Sample Application Order Confirmation Page
 
-![image](../images/webstorecheckoutpage.png)
+
 
 ## Conclusion
 

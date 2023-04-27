@@ -13,15 +13,15 @@ Two creation methods are currently provided: wizard creation and Create with YAM
 
 1. After entering a multicloud instance, in the left navigation bar, click `Resource Management` -> `Multicloud Secret`, and click the `Create Secret` button in the upper right corner.
 
-    ![image](../images/secret01.png)
+    
 
 2. On the `Create Secret` page, enter the name, select the namespace and other information, and click `OK`.
 
-    ![image](../images/secret02.png)
+    
 
 3. Back to the list of multicloud Secrets, the newly created one is the first one by default. Click `⋮` on the right side of the list to edit YAML, update, export and delete Secret.
 
-    ![image](../images/secret03.png)
+    
 
     !!! note
 

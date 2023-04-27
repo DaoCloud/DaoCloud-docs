@@ -11,12 +11,12 @@ The specific operation steps are as follows:
 
 1. Click in the upper left corner and select `Observability`.
 
-    ![Level 1 Navigation](../../images/collectmanage01.png)
+    
 
 2. Select `Acquisition Management` on the left navigation bar to view the status of all cluster collection plug-ins.
 
-    ![Cluster List](../../images/collectmanage02.png)
+    
 
 3. When the cluster is connected to `insight-agent` and is running, click `cluster name` to enter the details, click the shortcut link to jump to `container management` -> `custom resource` to add service discovery rules.
 
-    ![Cluster Details](../../images/collectmanage03.png)
+    

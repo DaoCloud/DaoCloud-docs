@@ -7,11 +7,11 @@ tags: []
 last_updated:
 ---
 
-# Step-by-step install DCE 5.0 Community Edition
+# Step-by-step install DCE 5.0 Community Release
 
 Author: [SAMZONG](https://github.com/SAMZONG)
 
-This article completes the installation of DCE 5.0 Community Edition from 0 to 1, including K8s cluster, dependencies, network, storage and other details and more considerations.
+This article completes the installation of DCE 5.0 Community Release from 0 to 1, including K8s cluster, dependencies, network, storage and other details and more considerations.
 
 > At this stage, the version iteration is relatively fast. The installation procedure mentioned in this blog may be different from the latest version. Refer to [Installation Instructions](../install/intro.md) in the product documentation.
 
@@ -1893,9 +1893,9 @@ Save the following YAML as `metrics-server.yaml`.
     node02-k8s-com     464m         11%    9484Mi          60%
     ```
 
-## Install DCE 5.0 Community Edition
+## Install DCE 5.0 Community Release
 
-Now everything is ready to install DCE 5.0 Community Edition.
+Now everything is ready to install DCE 5.0 Community Release.
 
 ### Install basic dependencies
 
@@ -1967,7 +1967,7 @@ Depending on the actual situation, run one of the following commands:
 
 If you see the page below, the installation is successful; the default account password is: `admin/changeme`
 
-![Installation succeeded](../install/images/success.png)
+
 
 ## Redirect Portal reverse proxy
 
@@ -2035,11 +2035,11 @@ When the cluster page needs to be opened to public network access, you will find
 
 1. Log in to DCE
 
-    ![login](./images/login.png)
+    
 
 1. DCE login is successful
 
-    ![Successful login](./images/firstscreen.png)
+    
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

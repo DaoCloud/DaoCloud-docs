@@ -1,0 +1,3236 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "中间件服务",
+    "version": "v0.1.1"
+  },
+  "tags": [
+    {
+      "name": "Cluster"
+    },
+    {
+      "name": "Postgresql"
+    },
+    {
+      "name": "Metric"
+    },
+    {
+      "name": "CloudShellService"
+    },
+    {
+      "name": "Version"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/apis/mcamel.io/postgresql/v1alpha1/cloudshells": {
+      "post": {
+        "operationId": "CloudShellService_CreateCloudShell",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CloudShell"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateCloudShellRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CloudShellService"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/cloudshells/{name}": {
+      "get": {
+        "summary": "GetCloudShell get a cloudshell in golobal cluster.",
+        "operationId": "CloudShellService_GetCloudShell",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CloudShell"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "CloudShellService"
+        ]
+      },
+      "delete": {
+        "summary": "DeleteCloudShell delete a cloudshell in golobal cluster.",
+        "operationId": "CloudShellService_DeleteCloudShell",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "CloudShellService"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/postgres-operator/versions": {
+      "get": {
+        "operationId": "Postgresql_GetPostgresqlOperatorVersionList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetPostgresqlOperatorVersionListResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "Postgresql"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/postgresql": {
+      "post": {
+        "operationId": "Postgresql_CreatePostgresql",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CreatePostgresqlResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreatePostgresqlReq"
+            }
+          }
+        ],
+        "tags": [
+          "Postgresql"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/postgresql-params/{cluster}": {
+      "get": {
+        "operationId": "Postgresql_GetPostgresqlParam",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetPostgresqlParamResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Postgresql"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/postgresql/version": {
+      "get": {
+        "operationId": "Version_Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetVersionReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "Version"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/postgresql/{cluster}/{namespace}/{name}": {
+      "get": {
+        "operationId": "Postgresql_GetPostgresql",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetPostgresqlResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "namespace",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Postgresql"
+        ]
+      },
+      "delete": {
+        "operationId": "Postgresql_DeletePostgresql",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/DeletePostgresqlResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "description": "@inject_tag: v:\"delete|required#RBAC error|unkonwn clusterName!\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "namespace",
+            "description": "@inject_tag: v:\"required#unkonwn namespace!\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "description": "@inject_tag: v:\"regex:^[a-z][a-z|0-9|-]{0,38}[a-z0-9]$#unknown name!\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Postgresql"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/postgresql/{cluster}/{namespace}/{name}/conf": {
+      "put": {
+        "operationId": "Postgresql_UpdatePostgresqlConf",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UpdatePostgresqlConfResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "description": "@inject_tag: v:\"update|required#RBAC error|choose clusterName!\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "namespace",
+            "description": "@inject_tag: v:\"required#choose Namespace\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "description": "@inject_tag: v:\"required#input name!\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "conf": {
+                  "type": "string",
+                  "title": "@inject_tag: v:\"validateConf#input valid conf!\""
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Postgresql"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/postgresql/{cluster}/{namespace}/{name}/confs": {
+      "get": {
+        "operationId": "Postgresql_GetPostgresqlConfs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetPostgresqlConfResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "description": "@inject_tag: v:\"required#choose clusterName!\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "namespace",
+            "description": "@inject_tag: v:\"required#choose Namespace\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "description": "@inject_tag: v:\"required#input name!\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sortDir",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "ASC",
+              "DESC"
+            ],
+            "default": "ASC"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "searchKey",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Postgresql"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/postgresql/{cluster}/{namespace}/{name}/grafana": {
+      "get": {
+        "operationId": "Postgresql_GetPostgresqlGrafanaAddr",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetPostgresqlGrafanaAddrResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "namespace",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Postgresql"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/postgresql/{cluster}/{namespace}/{name}/params": {
+      "put": {
+        "operationId": "Postgresql_UpdatePostgresqlParams",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UpdatePostgresqlParamsResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "description": "WHY check update? \nAdmin and Editor have 「update」verb, according to https://docs.daocloud.io/middleware/permission/, only Admin and Editor can create mcamel instance.\n@inject_tag: v:\"update|required#RBAC error|choose clusterName!\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "namespace",
+            "description": "@inject_tag: v:\"required#choose Namespace\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "description": "@inject_tag: v:\"required|regex:^[a-z][a-z|0-9|-]{0,38}[a-z0-9]$#input name!|input invalid name!\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "workspaceId": {
+                  "type": "integer",
+                  "format": "int32",
+                  "title": "@inject_tag: v:\"required#choose workspace_id!\""
+                },
+                "describe": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string",
+                  "title": "@inject_tag: v:\"required|in:15#input version!|input valid version!\""
+                },
+                "numberOfInstances": {
+                  "type": "integer",
+                  "format": "int32",
+                  "title": "@inject_tag: v:\"required|between:1,100#choose replicas|choose replicas between 1 and 100\""
+                },
+                "synchronousMode": {
+                  "type": "boolean"
+                },
+                "synchronousModeStrict": {
+                  "type": "boolean"
+                },
+                "synchronousNodeCount": {
+                  "type": "integer",
+                  "format": "int32",
+                  "title": "@inject_tag: v:\"required-if:synchronousMode,true#input synchronous_node_count when synchronous_mode is true!\""
+                },
+                "superuserPassword": {
+                  "type": "string",
+                  "title": "@inject_tag: v:\"required|passwordMid#input superuser_password|input valid superuser_password!\""
+                },
+                "storageClassName": {
+                  "type": "string",
+                  "title": "@inject_tag: v:\"required#choose sc\""
+                },
+                "storageCapacity": {
+                  "type": "string",
+                  "title": "@inject_tag: v:\"required|resource#choose capacity|resource\""
+                },
+                "serviceType": {
+                  "$ref": "#/definitions/commonServiceType",
+                  "title": "@inject_tag: v:\"serviceType#choose serviceType\""
+                },
+                "serviceAnnotations": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "title": "@inject_tag: v:\"k8sValidation:annotations#input valid annotations\""
+                },
+                "ports": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/CreatePostgresqlReqPorts"
+                  }
+                },
+                "cpuRequest": {
+                  "type": "string",
+                  "title": "@inject_tag: v:\"required|resource#input cpuRequest|resource\""
+                },
+                "cpuLimit": {
+                  "type": "string",
+                  "title": "@inject_tag: v:\"required|resource#input cpuLimit|resource\""
+                },
+                "memoryRequest": {
+                  "type": "string",
+                  "title": "@inject_tag: v:\"required|resource#input memoryRequest|resource\""
+                },
+                "memoryLimit": {
+                  "type": "string",
+                  "title": "@inject_tag: v:\"required|resource#input memoryLimit|resource\""
+                },
+                "conf": {
+                  "type": "string",
+                  "title": "@inject_tag: v:\"validateConf#input valid conf!\""
+                },
+                "isOpenPgAdmin": {
+                  "type": "boolean",
+                  "title": "isOpenPgAdmin, PgAdmin set ,if true,will deploy Pgadmin,if false do notiong with PgAdmin"
+                },
+                "pgAdminServiceType": {
+                  "$ref": "#/definitions/commonServiceType",
+                  "title": "@inject_tag: v:\"serviceType#choose PgAdminServiceType\""
+                },
+                "pgAdminNodePort": {
+                  "type": "integer",
+                  "format": "int32",
+                  "title": "if PgAdminServiceType is nodePort,it will required!"
+                },
+                "pgAdminCpuRequest": {
+                  "type": "string",
+                  "title": "@inject_tag: v:\"required-if:IsOpenPgAdmin,true#input pg_admin_cpu_request\""
+                },
+                "pgAdminCpuLimit": {
+                  "type": "string",
+                  "title": "@inject_tag: v:\"required-if:IsOpenPgAdmin,true#input pg_admin_cpu_limit\""
+                },
+                "pgAdminMemoryRequest": {
+                  "type": "string",
+                  "title": "@inject_tag: v:\"required-if:IsOpenPgAdmin,true#input pg_admin_memory_request\""
+                },
+                "pgAdminMemoryLimit": {
+                  "type": "string",
+                  "title": "@inject_tag: v:\"required-if:IsOpenPgAdmin,true#input pg_admin_memory_limit\""
+                },
+                "pgAdminServerModeEnable": {
+                  "type": "boolean"
+                },
+                "pgAdminDefaultEmail": {
+                  "type": "string",
+                  "title": "@inject_tag: v:\"required-if:PgAdminServerModeEnable,true#input pg_admin_default_email if PgAdminServerModeEnable is true\""
+                },
+                "pgAdminDefaultPassword": {
+                  "type": "string",
+                  "title": "@inject_tag: v:\"required-if:PgAdminServerModeEnable,true#input pg_admin_default_password if PgAdminServerModeEnable is true\""
+                },
+                "affinity": {
+                  "$ref": "#/definitions/commonAffinity",
+                  "title": "@inject_tag: v:\"k8sValidation:affinity#input valid affinity\""
+                },
+                "externalTrafficPolicy": {
+                  "$ref": "#/definitions/commonExternalTrafficPolicy",
+                  "title": "lb\n@inject_tag: v:\"checklb#checklb failed!\""
+                },
+                "lbTyp": {
+                  "$ref": "#/definitions/commonLBTyp"
+                },
+                "lbPoolName": {
+                  "type": "string"
+                },
+                "lbAddress": {
+                  "type": "string"
+                },
+                "pgAdminExternalTrafficPolicy": {
+                  "$ref": "#/definitions/commonExternalTrafficPolicy",
+                  "title": "pgAdmin lb"
+                },
+                "pgAdminLbTyp": {
+                  "$ref": "#/definitions/commonLBTyp"
+                },
+                "pgAdminLbPoolName": {
+                  "type": "string"
+                },
+                "pgAdminLbAddress": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Postgresql"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/postgresql/{cluster}/{namespace}/{name}/pods": {
+      "get": {
+        "operationId": "Postgresql_GetPostgresqlPodList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetPostgresqlPodListResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "namespace",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sortDir",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "ASC",
+              "DESC"
+            ],
+            "default": "ASC"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "searchKey",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Postgresql"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/postgresql/{cluster}/{namespace}/{name}/users": {
+      "get": {
+        "operationId": "Postgresql_GetPostgresqlUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetPostgresqlUsersResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "description": "WHY check update? \nAdmin and Editor have 「update」verb, according to https://docs.daocloud.io/middleware/permission/, only Admin and Editor can get password.\n@inject_tag: v:\"update|required#RBAC error|choose clusterName!\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "namespace",
+            "description": "@inject_tag: v:\"required#choose Namespace\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "description": "@inject_tag: v:\"required#input name!\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Postgresql"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/postgresqls": {
+      "post": {
+        "operationId": "Postgresql_DeletePostgresqls",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/DeletePostgresqlsResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DeletePostgresqlsReq"
+            }
+          }
+        ],
+        "tags": [
+          "Postgresql"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/workspaces": {
+      "get": {
+        "operationId": "Cluster_GetWorkspaceList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetWorkspaceListResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sortDir",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "ASC",
+              "DESC"
+            ],
+            "default": "ASC"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "searchKey",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Cluster"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/{cluster}/all-events-kinds": {
+      "get": {
+        "operationId": "Cluster_GetAllEventKindsList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetAllEventKindsListResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Cluster"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/{cluster}/insight/status": {
+      "get": {
+        "operationId": "Cluster_GetInsightAgentStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetInsightAgentStatusResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Cluster"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/{cluster}/lbaddress/pools": {
+      "get": {
+        "operationId": "Cluster_GetMetallbIPAddressPoolsList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetMetallbIPAddressPoolsListResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "description": "mcamel_type is holdplace for mcamel type.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Cluster"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/{cluster}/nodelabels": {
+      "get": {
+        "operationId": "Cluster_GetClusterNodeLabelList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetClusterNodeLabelListResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "description": "@inject_tag: v:\"required#请输入Cluster\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Cluster"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/{cluster}/nodeports": {
+      "get": {
+        "operationId": "Cluster_GetClusterNodePortList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetClusterNodePortListResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "description": "@inject_tag: v:\"required#请输入Cluster\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Cluster"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/{cluster}/{namespace}/events": {
+      "get": {
+        "summary": "pod 列表上会使用",
+        "operationId": "Cluster_GetEventList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetEventListResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "description": "cluster represents the name of deployment belongs to.\n@inject_tag: v:\"required#choose cluster\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "namespace",
+            "description": "Namespace represents which namespace the deployment belongs to.\n@inject_tag: v:\"required#choose namespace\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "kind",
+            "description": "Kind represents what type of event is needed.\n@inject_tag: v:\"required#choose kind\"\n\n - KIND_UNSPECIFIED: KIND_UNSPECIFIED is only a meaningless placeholder, to avoid zero not\nreturn.\n - Pod: ListEvents by deployment.\n       Deployment = 1;\n       // ListEvents by statefulSet.\n       StatefulSet = 2;\n       // ListEvents by daemonSet.\n       DaemonSet = 3;\n       // ListEvents by pod.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "KIND_UNSPECIFIED",
+              "Pod"
+            ],
+            "default": "KIND_UNSPECIFIED"
+          },
+          {
+            "name": "kindName",
+            "description": "The name of involvedObject.\nIf the kind is DEPLOYMENT,\nthis presents the name of deployments.\n@inject_tag: v:\"required#choose kind name\"",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "type",
+            "description": "Type is used for query, showing events of specified type.\nUse example: type=WARNING&type=NORMAL.\n\n - EVENT_TYPE_UNSPECIFIED: This is only a meaningless placeholder, to avoid zero not return.\n - Normal: Normal is a normal event type.\n - Warning: Warning is a warning event type.",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "EVENT_TYPE_UNSPECIFIED",
+                "Normal",
+                "Warning"
+              ]
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "tags": [
+          "Cluster"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/{cluster}/{namespace}/{name}/alerts": {
+      "get": {
+        "operationId": "Metric_GetAlertsList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetAlertsListResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "description": "@inject_tag: v:\"required#input cluster!\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "namespace",
+            "description": "@inject_tag: v:\"required#input namespace!\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "description": "@inject_tag: v:\"required#input name!\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Metric"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/{cluster}/{namespace}/{name}/all-events": {
+      "get": {
+        "operationId": "Cluster_GetAllEventList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetAllEventListResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cluster",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "namespace",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sortDir",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "ASC",
+              "DESC"
+            ],
+            "default": "ASC"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "searchKey",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "eventType",
+            "description": " - EVENT_TYPE_UNSPECIFIED: This is only a meaningless placeholder, to avoid zero not return.\n - Normal: Normal is a normal event type.\n - Warning: Warning is a warning event type.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "EVENT_TYPE_UNSPECIFIED",
+              "Normal",
+              "Warning"
+            ],
+            "default": "EVENT_TYPE_UNSPECIFIED"
+          },
+          {
+            "name": "kindName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Cluster"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/{workspaceId}/clusters": {
+      "get": {
+        "operationId": "Cluster_GetClusterList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetClusterListResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "Cluster"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/{workspaceId}/postgresqls": {
+      "get": {
+        "operationId": "Postgresql_GetPostgresqlList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetPostgresqlListResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "description": "@inject_tag: v:\"min:1#choose workspace_id!\"",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "page",
+            "description": "common.PageInfoReq=1;",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sortDir",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "ASC",
+              "DESC"
+            ],
+            "default": "ASC"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "searchKey",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "filterCluster",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "filterNamespace",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Postgresql"
+        ]
+      }
+    },
+    "/apis/mcamel.io/postgresql/v1alpha1/{workspaceId}/{cluster}/namespaces": {
+      "get": {
+        "operationId": "Cluster_GetClusterNamespaceList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetClusterNamespaceListResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "description": "@inject_tag: v:\"required#请输入WSid\"",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "cluster",
+            "description": "@inject_tag: v:\"required#请输入Cluster\"",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Cluster"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "CloudShell": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/ObjectMeta"
+        },
+        "spec": {
+          "$ref": "#/definitions/CloudShellSpec"
+        },
+        "status": {
+          "$ref": "#/definitions/CloudShellStatus"
+        }
+      }
+    },
+    "CloudShellSpec": {
+      "type": "object",
+      "properties": {
+        "configMapName": {
+          "type": "string"
+        },
+        "once": {
+          "type": "boolean"
+        },
+        "commandAction": {
+          "type": "string"
+        },
+        "ttl": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "cleanup": {
+          "type": "boolean"
+        }
+      }
+    },
+    "CloudShellStatus": {
+      "type": "object",
+      "properties": {
+        "phase": {
+          "type": "string"
+        },
+        "accessUrl": {
+          "type": "string"
+        }
+      }
+    },
+    "CommonReply": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "msg": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateCloudShellRequest": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/CreateCloudShellRequestType"
+        },
+        "cluster": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "podName": {
+          "type": "string"
+        },
+        "filePath": {
+          "type": "string"
+        },
+        "container": {
+          "type": "string"
+        },
+        "logCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/CloudShell"
+        }
+      }
+    },
+    "CreateCloudShellRequestType": {
+      "type": "string",
+      "enum": [
+        "TYPE_UNSPECIFIED",
+        "bash",
+        "exec",
+        "logs",
+        "upload",
+        "download"
+      ],
+      "default": "TYPE_UNSPECIFIED"
+    },
+    "CreatePostgresqlReq": {
+      "type": "object",
+      "properties": {
+        "workspaceId": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: v:\"required#choose workspace_id!\""
+        },
+        "cluster": {
+          "type": "string",
+          "title": "WHY check update? \nAdmin and Editor have 「update」verb, according to https://docs.daocloud.io/middleware/permission/, only Admin and Editor can create mcamel instance.\n@inject_tag: v:\"update|required#RBAC error|choose clusterName!\""
+        },
+        "namespace": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required#choose Namespace\""
+        },
+        "name": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required|regex:^[a-z][a-z|0-9|-]{0,38}[a-z0-9]$#input name!|input invalid name!\""
+        },
+        "describe": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required|in:15#input version!|input valid version!\""
+        },
+        "numberOfInstances": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: v:\"required|between:1,100#choose replicas|choose replicas between 1 and 100\""
+        },
+        "synchronousMode": {
+          "type": "boolean"
+        },
+        "synchronousModeStrict": {
+          "type": "boolean"
+        },
+        "synchronousNodeCount": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: v:\"required-if:synchronousMode,true#input synchronous_node_count when synchronous_mode is true!\""
+        },
+        "superuserPassword": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required|passwordMid#input superuser_password|input valid superuser_password!\""
+        },
+        "storageClassName": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required#choose sc\""
+        },
+        "storageCapacity": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required|resource#choose capacity|resource\""
+        },
+        "serviceType": {
+          "$ref": "#/definitions/commonServiceType",
+          "title": "@inject_tag: v:\"serviceType#choose serviceType\""
+        },
+        "serviceAnnotations": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "@inject_tag: v:\"k8sValidation:annotations#input valid annotations\""
+        },
+        "ports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CreatePostgresqlReqPorts"
+          }
+        },
+        "cpuRequest": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required|resource#input cpuRequest|resource\""
+        },
+        "cpuLimit": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required|resource#input cpuLimit|resource\""
+        },
+        "memoryRequest": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required|resource#input memoryRequest|resource\""
+        },
+        "memoryLimit": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required|resource#input memoryLimit|resource\""
+        },
+        "conf": {
+          "type": "string",
+          "title": "@inject_tag: v:\"validateConf#input valid conf!\""
+        },
+        "isOpenPgAdmin": {
+          "type": "boolean",
+          "title": "isOpenPgAdmin, PgAdmin set ,if true,will deploy Pgadmin,if false do notiong with PgAdmin"
+        },
+        "pgAdminServiceType": {
+          "$ref": "#/definitions/commonServiceType",
+          "title": "@inject_tag: v:\"serviceType#choose PgAdminServiceType\""
+        },
+        "pgAdminNodePort": {
+          "type": "integer",
+          "format": "int32",
+          "title": "if PgAdminServiceType is nodePort,it will required!"
+        },
+        "pgAdminCpuRequest": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required-if:IsOpenPgAdmin,true#input pg_admin_cpu_request\""
+        },
+        "pgAdminCpuLimit": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required-if:IsOpenPgAdmin,true#input pg_admin_cpu_limit\""
+        },
+        "pgAdminMemoryRequest": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required-if:IsOpenPgAdmin,true#input pg_admin_memory_request\""
+        },
+        "pgAdminMemoryLimit": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required-if:IsOpenPgAdmin,true#input pg_admin_memory_limit\""
+        },
+        "pgAdminServerModeEnable": {
+          "type": "boolean"
+        },
+        "pgAdminDefaultEmail": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required-if:PgAdminServerModeEnable,true#input pg_admin_default_email if PgAdminServerModeEnable is true\""
+        },
+        "pgAdminDefaultPassword": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required-if:PgAdminServerModeEnable,true#input pg_admin_default_password if PgAdminServerModeEnable is true\""
+        },
+        "affinity": {
+          "$ref": "#/definitions/commonAffinity",
+          "title": "@inject_tag: v:\"k8sValidation:affinity#input valid affinity\""
+        },
+        "externalTrafficPolicy": {
+          "$ref": "#/definitions/commonExternalTrafficPolicy",
+          "title": "lb\n@inject_tag: v:\"checklb#checklb failed!\""
+        },
+        "lbTyp": {
+          "$ref": "#/definitions/commonLBTyp"
+        },
+        "lbPoolName": {
+          "type": "string"
+        },
+        "lbAddress": {
+          "type": "string"
+        },
+        "pgAdminExternalTrafficPolicy": {
+          "$ref": "#/definitions/commonExternalTrafficPolicy",
+          "title": "pgAdmin lb"
+        },
+        "pgAdminLbTyp": {
+          "$ref": "#/definitions/commonLBTyp"
+        },
+        "pgAdminLbPoolName": {
+          "type": "string"
+        },
+        "pgAdminLbAddress": {
+          "type": "string"
+        }
+      }
+    },
+    "CreatePostgresqlReqPorts": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "port name be consistent with operator\nhttps://github.com/zalando/postgres-operator/blob/30b612489a2a20d968262791857d1db1a85e0b36/pkg/cluster/k8sres.go#L1861\n@inject_tag: v:\"required|in:postgresql#input name|input name postgresql\""
+        },
+        "protocol": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required|in:TCP,UDP#choose protocol|choose protocol\""
+        },
+        "port": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: v:\"required|in:5432#choose port|choose port 5432\""
+        },
+        "targetPort": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: v:\"required|in:5432#choose targetPort|choose targetPort 5432\""
+        },
+        "nodePort": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@inject_tag: v:\"required-if:serviceType,NodePort#choose nodePort|choose nodePort\""
+        }
+      }
+    },
+    "CreatePostgresqlResp": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "DataIntValue": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "DataResourceValue": {
+      "type": "object",
+      "properties": {
+        "cpuRequest": {
+          "type": "string"
+        },
+        "cpuLimit": {
+          "type": "string"
+        },
+        "memoryRequest": {
+          "type": "string"
+        },
+        "memoryLimit": {
+          "type": "string"
+        }
+      }
+    },
+    "DataStorageClassValue": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "allowVolumeExpansion": {
+          "type": "boolean"
+        }
+      }
+    },
+    "DataStringValue": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "DeletePostgresqlReq": {
+      "type": "object",
+      "properties": {
+        "cluster": {
+          "type": "string",
+          "title": "@inject_tag: v:\"delete|required#RBAC error|unkonwn clusterName!\""
+        },
+        "namespace": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required#unkonwn namespace!\""
+        },
+        "name": {
+          "type": "string",
+          "title": "@inject_tag: v:\"regex:^[a-z][a-z|0-9|-]{0,38}[a-z0-9]$#unknown name!\""
+        }
+      }
+    },
+    "DeletePostgresqlResp": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "DeletePostgresqlsReq": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DeletePostgresqlReq"
+          }
+        }
+      }
+    },
+    "DeletePostgresqlsResp": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "EventSource": {
+      "type": "object",
+      "properties": {
+        "component": {
+          "type": "string",
+          "title": "Component from which the event is generated.\n+optional"
+        },
+        "host": {
+          "type": "string",
+          "title": "Node name on which the event is generated.\n+optional"
+        }
+      },
+      "description": "EventSource contains information for an event."
+    },
+    "EventType": {
+      "type": "string",
+      "enum": [
+        "EVENT_TYPE_UNSPECIFIED",
+        "Normal",
+        "Warning"
+      ],
+      "default": "EVENT_TYPE_UNSPECIFIED",
+      "description": "Type of event (Normal, Warning), new types could be added in the\nfuture.\n\n - EVENT_TYPE_UNSPECIFIED: This is only a meaningless placeholder, to avoid zero not return.\n - Normal: Normal is a normal event type.\n - Warning: Warning is a warning event type."
+    },
+    "GetAlertsListResp": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1alpha1AlertSummary"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/commonPagination"
+        }
+      }
+    },
+    "GetAllEventKindsListResp": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "GetAllEventListReqSortDir": {
+      "type": "string",
+      "enum": [
+        "ASC",
+        "DESC"
+      ],
+      "default": "ASC"
+    },
+    "GetAllEventListResp": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GetAllEventListRespItems"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/commonPagination"
+        }
+      }
+    },
+    "GetAllEventListRespItems": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/definitions/ItemsSource"
+        },
+        "message": {
+          "type": "string"
+        },
+        "metadata": {
+          "$ref": "#/definitions/GetAllEventListRespItemsMetadata"
+        },
+        "apiVersion": {
+          "type": "string"
+        },
+        "lastTimestamp": {
+          "type": "string",
+          "format": "int64"
+        },
+        "firstTimestamp": {
+          "type": "string",
+          "format": "int64"
+        },
+        "involvedObject": {
+          "$ref": "#/definitions/ItemsInvolvedObject"
+        },
+        "reportingInstance": {
+          "type": "string"
+        },
+        "reportingComponent": {
+          "type": "string"
+        }
+      }
+    },
+    "GetAllEventListRespItemsMetadata": {
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "annotations": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "resourceVersion": {
+          "type": "string"
+        },
+        "creationTimestamp": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "GetClusterListResp": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/commonPagination"
+        }
+      }
+    },
+    "GetClusterNamespaceListResp": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/commonPagination"
+        }
+      }
+    },
+    "GetClusterNodeLabelListResp": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GetClusterNodeLabelListRespLabel"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/commonPagination"
+        }
+      }
+    },
+    "GetClusterNodeLabelListRespLabel": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "GetClusterNodePortListResp": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/commonPagination"
+        }
+      }
+    },
+    "GetEventListReqKind": {
+      "type": "string",
+      "enum": [
+        "KIND_UNSPECIFIED",
+        "Pod"
+      ],
+      "default": "KIND_UNSPECIFIED",
+      "description": " - KIND_UNSPECIFIED: KIND_UNSPECIFIED is only a meaningless placeholder, to avoid zero not\nreturn.\n - Pod: ListEvents by deployment.\n       Deployment = 1;\n       // ListEvents by statefulSet.\n       StatefulSet = 2;\n       // ListEvents by daemonSet.\n       DaemonSet = 3;\n       // ListEvents by pod."
+    },
+    "GetEventListResp": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GetEventListRespItem"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/commonPagination"
+        }
+      }
+    },
+    "GetEventListRespItem": {
+      "type": "object",
+      "properties": {
+        "involvedObject": {
+          "$ref": "#/definitions/ObjectReference",
+          "description": "The object that this event is about."
+        },
+        "reason": {
+          "type": "string",
+          "description": "reason is why the action was taken. It is human-readable.\nThis field cannot be empty for new Events and it can have at most 128\ncharacters."
+        },
+        "message": {
+          "type": "string",
+          "description": "A human-readable description of the status of this operation."
+        },
+        "source": {
+          "$ref": "#/definitions/EventSource",
+          "description": "The component reporting this event. Should be a short machine\nunderstandable string."
+        },
+        "lastTimestamp": {
+          "type": "string",
+          "format": "int64",
+          "description": "The time at which the most recent occurrence of this event was recorded."
+        },
+        "type": {
+          "$ref": "#/definitions/EventType",
+          "description": "Type of this event (Normal, Warning), new types could be added in the\nfuture."
+        }
+      }
+    },
+    "GetInsightAgentStatusResp": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "$ref": "#/definitions/GetInsightAgentStatusRespInsightAgentStatus"
+        }
+      }
+    },
+    "GetInsightAgentStatusRespInsightAgentStatus": {
+      "type": "string",
+      "enum": [
+        "NotInstall",
+        "Install"
+      ],
+      "default": "NotInstall"
+    },
+    "GetMetallbIPAddressPoolsListResp": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GetMetallbIPAddressPoolsListRespItem"
+          }
+        },
+        "isSupportLb": {
+          "type": "boolean"
+        },
+        "externalTrafficPolicy": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/commonExternalTrafficPolicy"
+          },
+          "title": "lb"
+        },
+        "lbTyp": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/commonLBTyp"
+          }
+        }
+      }
+    },
+    "GetMetallbIPAddressPoolsListRespItem": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "addresses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "autoAssign": {
+          "type": "boolean",
+          "description": "AutoAssign flag used to prevent MetallB from automatic allocation\nfor a pool."
+        },
+        "avoidBuggyIPs": {
+          "type": "boolean",
+          "description": "AvoidBuggyIPs prevents addresses ending with .0 and .255\nto be used by a pool."
+        }
+      }
+    },
+    "GetPostgresqlConfReqSortDir": {
+      "type": "string",
+      "enum": [
+        "ASC",
+        "DESC"
+      ],
+      "default": "ASC"
+    },
+    "GetPostgresqlConfResp": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GetPostgresqlConfRespItems"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/commonPagination"
+        },
+        "conf": {
+          "$ref": "#/definitions/UpdatePostgresqlConfReq"
+        }
+      }
+    },
+    "GetPostgresqlConfRespItems": {
+      "type": "object",
+      "properties": {
+        "paramType": {
+          "$ref": "#/definitions/ItemsParamType"
+        },
+        "paramName": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "GetPostgresqlGrafanaAddrResp": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "string"
+        }
+      }
+    },
+    "GetPostgresqlListReqSortDir": {
+      "type": "string",
+      "enum": [
+        "ASC",
+        "DESC"
+      ],
+      "default": "ASC"
+    },
+    "GetPostgresqlListResp": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PostgresqlItem"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/commonPagination"
+        }
+      }
+    },
+    "GetPostgresqlOperatorVersionListResp": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GetPostgresqlOperatorVersionListRespGetPostgresqlOperatorVersionListData"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/commonPagination"
+        }
+      }
+    },
+    "GetPostgresqlOperatorVersionListRespGetPostgresqlOperatorVersionListData": {
+      "type": "object",
+      "properties": {
+        "cluster": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "GetPostgresqlParamResp": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "$ref": "#/definitions/GetPostgresqlParamRespSelect"
+        },
+        "conf": {
+          "$ref": "#/definitions/GetPostgresqlParamRespSelect"
+        },
+        "replicas": {
+          "$ref": "#/definitions/GetPostgresqlParamRespSelect"
+        },
+        "resource": {
+          "$ref": "#/definitions/GetPostgresqlParamRespSelect"
+        },
+        "storage": {
+          "$ref": "#/definitions/GetPostgresqlParamRespSelect"
+        }
+      }
+    },
+    "GetPostgresqlParamRespSelect": {
+      "type": "object",
+      "properties": {
+        "selectType": {
+          "$ref": "#/definitions/SelectSelectType"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GetPostgresqlParamRespSelectData"
+          }
+        }
+      }
+    },
+    "GetPostgresqlParamRespSelectData": {
+      "type": "object",
+      "properties": {
+        "sValue": {
+          "$ref": "#/definitions/DataStringValue"
+        },
+        "rValue": {
+          "$ref": "#/definitions/DataResourceValue"
+        },
+        "iValue": {
+          "$ref": "#/definitions/DataIntValue"
+        },
+        "scValue": {
+          "$ref": "#/definitions/DataStorageClassValue"
+        }
+      }
+    },
+    "GetPostgresqlPodListReqSortDir": {
+      "type": "string",
+      "enum": [
+        "ASC",
+        "DESC"
+      ],
+      "default": "ASC"
+    },
+    "GetPostgresqlPodListResp": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GetPostgresqlPodListRespData"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/commonPagination"
+        }
+      }
+    },
+    "GetPostgresqlPodListRespData": {
+      "type": "object",
+      "properties": {
+        "podName": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/GetPostgresqlPodListRespPodStatus"
+        },
+        "ip": {
+          "type": "string"
+        },
+        "restart": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "cpuUsage": {
+          "type": "number",
+          "format": "double"
+        },
+        "cpuLimit": {
+          "type": "number",
+          "format": "double"
+        },
+        "memoryUsage": {
+          "type": "number",
+          "format": "double"
+        },
+        "memoryLimit": {
+          "type": "number",
+          "format": "double"
+        },
+        "createTimestamp": {
+          "type": "string",
+          "format": "int64"
+        },
+        "podType": {
+          "$ref": "#/definitions/GetPostgresqlPodListRespPodType"
+        },
+        "replicationLagInBytes": {
+          "type": "string"
+        },
+        "healthStatus": {
+          "$ref": "#/definitions/GetPostgresqlPodListRespHealthStatus"
+        },
+        "common": {
+          "$ref": "#/definitions/commonPodCommon"
+        }
+      }
+    },
+    "GetPostgresqlPodListRespHealthStatus": {
+      "type": "string",
+      "enum": [
+        "HealthStatusUnknown",
+        "HealthStatusHealthy",
+        "HealthStatusUnhealthy"
+      ],
+      "default": "HealthStatusUnknown",
+      "description": " - HealthStatusUnknown: Unknown means the state of the pod is unknown.\n - HealthStatusHealthy: Healthy means the pod is healthy.\n - HealthStatusUnhealthy: Unhealthy means the pod is unhealthy."
+    },
+    "GetPostgresqlPodListRespPodStatus": {
+      "type": "string",
+      "enum": [
+        "PHASE_UNSPECIFIED",
+        "Unknown",
+        "Pending",
+        "Running",
+        "Succeeded",
+        "Failed"
+      ],
+      "default": "PHASE_UNSPECIFIED",
+      "description": " - PHASE_UNSPECIFIED: This is only a meaningless placeholder, to avoid zero not return.\n - Unknown: PodUnknown means that for some reason the state of the pod could not be\nobtained, typically due to an error in communicating with the host of the\npod.\n - Pending: PodPending means the pod has been accepted by the system, but one or more\nof the containers has not been started. This includes time before being\nbound to a node, as well as time spent pulling images onto the host.\n - Running: PodRunning means the pod has been bound to a node and all of the\ncontainers have been started. At least one container is still running or\nis in the process of being restarted. PodSucceeded means that all\ncontainers in the pod have voluntarily terminated with a container exit\ncode of 0, and the system is not going to restart any of these\ncontainers.\n - Succeeded: PodFailed means that all containers in the pod have terminated, and at\nleast one container has terminated in a failure (exited with a non-zero\nexit code or was stopped by the system).\n - Failed: PodFailed means that all containers in the pod have terminated, and at\nleast one container has terminated in a failure (exited with a non-zero\nexit code or was stopped by the system)."
+    },
+    "GetPostgresqlPodListRespPodType": {
+      "type": "string",
+      "enum": [
+        "Master",
+        "Replica",
+        "PgAdmin"
+      ],
+      "default": "Master"
+    },
+    "GetPostgresqlResp": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/PostgresqlItem"
+        }
+      }
+    },
+    "GetPostgresqlUsersResp": {
+      "type": "object",
+      "properties": {
+        "users": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GetPostgresqlUsersRespUserItem"
+          }
+        }
+      }
+    },
+    "GetPostgresqlUsersRespUserItem": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "GetVersionReply": {
+      "type": "object",
+      "properties": {
+        "commonReply": {
+          "$ref": "#/definitions/CommonReply"
+        },
+        "gitCommit": {
+          "type": "string"
+        },
+        "gitVersion": {
+          "type": "string"
+        },
+        "buildTime": {
+          "type": "string"
+        }
+      }
+    },
+    "GetWorkspaceListReqSortDir": {
+      "type": "string",
+      "enum": [
+        "ASC",
+        "DESC"
+      ],
+      "default": "ASC"
+    },
+    "GetWorkspaceListResp": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GetWorkspaceListRespItem"
+          },
+          "title": "def items"
+        },
+        "pagination": {
+          "$ref": "#/definitions/commonPagination",
+          "title": "def pagination"
+        }
+      }
+    },
+    "GetWorkspaceListRespItem": {
+      "type": "object",
+      "properties": {
+        "workspaceId": {
+          "type": "integer",
+          "format": "int64",
+          "title": "id"
+        },
+        "alias": {
+          "type": "string",
+          "title": "alias"
+        }
+      }
+    },
+    "ItemsInvolvedObject": {
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "apiVersion": {
+          "type": "string"
+        },
+        "resourceVersion": {
+          "type": "string"
+        }
+      }
+    },
+    "ItemsParamType": {
+      "type": "string",
+      "enum": [
+        "conf"
+      ],
+      "default": "conf"
+    },
+    "ItemsSource": {
+      "type": "object",
+      "properties": {
+        "component": {
+          "type": "string"
+        }
+      }
+    },
+    "ObjectMeta": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "uid": {
+          "type": "string"
+        },
+        "resourceVersion": {
+          "type": "string"
+        },
+        "creationTimestamp": {
+          "type": "string",
+          "format": "int64"
+        },
+        "deletionTimestamp": {
+          "type": "string",
+          "format": "int64"
+        },
+        "labels": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "annotations": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "ownerReferences": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/commonOwnerReference"
+          }
+        },
+        "cluster": {
+          "type": "string"
+        },
+        "workspaceAlias": {
+          "type": "string"
+        }
+      }
+    },
+    "ObjectReference": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "title": "Kind of the referent.\nMore info:\nhttps://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds\n+optional"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name of the referent.\nMore info:\nhttps://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names"
+        }
+      },
+      "description": "ObjectReference contains enough information to let you inspect or modify the\nreferred object."
+    },
+    "PodCommonCondition": {
+      "type": "object",
+      "properties": {
+        "lastTransitionTime": {
+          "type": "string"
+        },
+        "lastUpdateTime": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/PodCommonConditionStatus"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "PodCommonConditionStatus": {
+      "type": "string",
+      "enum": [
+        "PodConditionStatusUnknown",
+        "PodConditionStatusTrue",
+        "PodConditionStatusFalse"
+      ],
+      "default": "PodConditionStatusUnknown"
+    },
+    "PodCommonPodPhase": {
+      "type": "string",
+      "enum": [
+        "PHASE_UNSPECIFIED",
+        "Unknown",
+        "Pending",
+        "Running",
+        "Succeeded",
+        "Failed"
+      ],
+      "default": "PHASE_UNSPECIFIED",
+      "description": " - PHASE_UNSPECIFIED: This is only a meaningless placeholder, to avoid zero not return.\n - Unknown: PodUnknown means that for some reason the state of the pod could not be\nobtained, typically due to an error in communicating with the host of the\npod.\n - Pending: PodPending means the pod has been accepted by the system, but one or more\nof the containers has not been started. This includes time before being\nbound to a node, as well as time spent pulling images onto the host.\n - Running: PodRunning means the pod has been bound to a node and all of the\ncontainers have been started. At least one container is still running or\nis in the process of being restarted. PodSucceeded means that all\ncontainers in the pod have voluntarily terminated with a container exit\ncode of 0, and the system is not going to restart any of these\ncontainers.\n - Succeeded: PodFailed means that all containers in the pod have terminated, and at\nleast one container has terminated in a failure (exited with a non-zero\nexit code or was stopped by the system).\n - Failed: PodFailed means that all containers in the pod have terminated, and at\nleast one container has terminated in a failure (exited with a non-zero\nexit code or was stopped by the system)."
+    },
+    "PostgresqlItem": {
+      "type": "object",
+      "properties": {
+        "apiVersion": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PostgresqlItemMetadata"
+        },
+        "spec": {
+          "$ref": "#/definitions/CreatePostgresqlReq"
+        },
+        "status": {
+          "$ref": "#/definitions/PostgresqlItemStatus"
+        }
+      },
+      "title": "generate by https://json2pb.vercel.app"
+    },
+    "PostgresqlItemMetadata": {
+      "type": "object",
+      "properties": {
+        "annotations": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "creationTimestamp": {
+          "type": "string",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        }
+      }
+    },
+    "PostgresqlItemStatus": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "$ref": "#/definitions/Status"
+        },
+        "podsAreReadyNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "clusterIPs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "avgReplicationLagInBytes": {
+          "type": "string"
+        },
+        "common": {
+          "$ref": "#/definitions/commonCommonItemStatus"
+        }
+      }
+    },
+    "SelectSelectType": {
+      "type": "string",
+      "enum": [
+        "Single",
+        "Multiple"
+      ],
+      "default": "Single"
+    },
+    "Status": {
+      "type": "string",
+      "enum": [
+        "Failed",
+        "Running",
+        "Creating"
+      ],
+      "default": "Failed"
+    },
+    "UpdatePostgresqlConfReq": {
+      "type": "object",
+      "properties": {
+        "cluster": {
+          "type": "string",
+          "title": "@inject_tag: v:\"update|required#RBAC error|choose clusterName!\""
+        },
+        "namespace": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required#choose Namespace\""
+        },
+        "name": {
+          "type": "string",
+          "title": "@inject_tag: v:\"required#input name!\""
+        },
+        "conf": {
+          "type": "string",
+          "title": "@inject_tag: v:\"validateConf#input valid conf!\""
+        }
+      }
+    },
+    "UpdatePostgresqlConfResp": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdatePostgresqlParamsResp": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "commonAffinity": {
+      "type": "object",
+      "properties": {
+        "nodeAffinity": {
+          "$ref": "#/definitions/commonNodeAffinity"
+        },
+        "podAffinity": {
+          "$ref": "#/definitions/commonPodAffinity"
+        },
+        "podAntiAffinity": {
+          "$ref": "#/definitions/commonPodAntiAffinity"
+        }
+      }
+    },
+    "commonCommonItemStatus": {
+      "type": "object",
+      "properties": {
+        "serviceAddresses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "webManagerAddress": {
+          "type": "string"
+        },
+        "webLogAddress": {
+          "type": "string"
+        },
+        "isHwameistorSc": {
+          "type": "boolean"
+        },
+        "avgPvAllocatedInGb": {
+          "type": "number",
+          "format": "double"
+        },
+        "avgPvUsedInGb": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "description": "CommonItemStatus define CR(MysqlCluster/Tenant...) common status."
+    },
+    "commonExternalTrafficPolicy": {
+      "type": "string",
+      "enum": [
+        "Cluster",
+        "Local"
+      ],
+      "default": "Cluster"
+    },
+    "commonLBTyp": {
+      "type": "string",
+      "enum": [
+        "MetalLB",
+        "Others"
+      ],
+      "default": "MetalLB"
+    },
+    "commonLabelSelector": {
+      "type": "object",
+      "properties": {
+        "matchLabels": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "matchExpressions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/commonLabelSelectorRequirement"
+          }
+        }
+      }
+    },
+    "commonLabelSelectorRequirement": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "operator": {
+          "type": "string",
+          "title": "Operator valid string: In, NotIn, Exists, DoesNotExist"
+        }
+      }
+    },
+    "commonNodeAffinity": {
+      "type": "object",
+      "properties": {
+        "requiredDuringSchedulingIgnoredDuringExecution": {
+          "$ref": "#/definitions/commonNodeSelector"
+        },
+        "preferredDuringSchedulingIgnoredDuringExecution": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/commonPreferredSchedulingTerm"
+          }
+        }
+      }
+    },
+    "commonNodeSelector": {
+      "type": "object",
+      "properties": {
+        "nodeSelectorTerms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/commonNodeSelectorTerm"
+          }
+        }
+      }
+    },
+    "commonNodeSelectorRequirement": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "operator": {
+          "type": "string",
+          "title": "Operator valid string: In, NotIn, Exists, DoesNotExist, Gt, Lt"
+        }
+      }
+    },
+    "commonNodeSelectorTerm": {
+      "type": "object",
+      "properties": {
+        "matchExpressions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/commonNodeSelectorRequirement"
+          }
+        },
+        "matchFields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/commonNodeSelectorRequirement"
+          }
+        }
+      }
+    },
+    "commonOwnerReference": {
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string"
+        },
+        "controller": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        }
+      }
+    },
+    "commonPagination": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "commonPodAffinity": {
+      "type": "object",
+      "properties": {
+        "requiredDuringSchedulingIgnoredDuringExecution": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/commonPodAffinityTerm"
+          }
+        },
+        "preferredDuringSchedulingIgnoredDuringExecution": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/commonWeightedPodAffinityTerm"
+          }
+        }
+      }
+    },
+    "commonPodAffinityTerm": {
+      "type": "object",
+      "properties": {
+        "labelSelector": {
+          "$ref": "#/definitions/commonLabelSelector"
+        },
+        "namespaces": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "topologyKey": {
+          "type": "string"
+        },
+        "namespaceSelector": {
+          "$ref": "#/definitions/commonLabelSelector"
+        }
+      }
+    },
+    "commonPodAntiAffinity": {
+      "type": "object",
+      "properties": {
+        "requiredDuringSchedulingIgnoredDuringExecution": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/commonPodAffinityTerm"
+          }
+        },
+        "preferredDuringSchedulingIgnoredDuringExecution": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/commonWeightedPodAffinityTerm"
+          }
+        }
+      }
+    },
+    "commonPodCommon": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "phase": {
+          "$ref": "#/definitions/PodCommonPodPhase"
+        },
+        "ip": {
+          "type": "string"
+        },
+        "restartCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "createTimestamp": {
+          "type": "string",
+          "format": "int64"
+        },
+        "cpuUsage": {
+          "type": "number",
+          "format": "double"
+        },
+        "cpuLimit": {
+          "type": "number",
+          "format": "double"
+        },
+        "memoryUsage": {
+          "type": "number",
+          "format": "double"
+        },
+        "memoryLimit": {
+          "type": "number",
+          "format": "double"
+        },
+        "pvUsedInGb": {
+          "type": "number",
+          "format": "double"
+        },
+        "pvAllocatedInGb": {
+          "type": "number",
+          "format": "double"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PodCommonCondition"
+          }
+        },
+        "containersName": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ownerReference": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/commonOwnerReference"
+          }
+        },
+        "initContainersName": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "commonPreferredSchedulingTerm": {
+      "type": "object",
+      "properties": {
+        "weight": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "preference": {
+          "$ref": "#/definitions/commonNodeSelectorTerm"
+        }
+      }
+    },
+    "commonServiceType": {
+      "type": "string",
+      "enum": [
+        "ClusterIP",
+        "NodePort",
+        "LoadBalancer"
+      ],
+      "default": "ClusterIP"
+    },
+    "commonWeightedPodAffinityTerm": {
+      "type": "object",
+      "properties": {
+        "weight": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "podAffinityTerm": {
+          "$ref": "#/definitions/commonPodAffinityTerm"
+        }
+      }
+    },
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string",
+          "description": "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
+        }
+      },
+      "additionalProperties": {},
+      "description": "`Any` contains an arbitrary serialized protocol buffer message along with a\nURL that describes the type of the serialized message.\n\nProtobuf library provides support to pack/unpack Any values in the form\nof utility functions or additional generated methods of the Any type.\n\nExample 1: Pack and unpack a message in C++.\n\n    Foo foo = ...;\n    Any any;\n    any.PackFrom(foo);\n    ...\n    if (any.UnpackTo(&foo)) {\n      ...\n    }\n\nExample 2: Pack and unpack a message in Java.\n\n    Foo foo = ...;\n    Any any = Any.pack(foo);\n    ...\n    if (any.is(Foo.class)) {\n      foo = any.unpack(Foo.class);\n    }\n\n Example 3: Pack and unpack a message in Python.\n\n    foo = Foo(...)\n    any = Any()\n    any.Pack(foo)\n    ...\n    if any.Is(Foo.DESCRIPTOR):\n      any.Unpack(foo)\n      ...\n\n Example 4: Pack and unpack a message in Go\n\n     foo := &pb.Foo{...}\n     any, err := anypb.New(foo)\n     if err != nil {\n       ...\n     }\n     ...\n     foo := &pb.Foo{}\n     if err := any.UnmarshalTo(foo); err != nil {\n       ...\n     }\n\nThe pack methods provided by protobuf library will by default use\n'type.googleapis.com/full.type.name' as the type URL and the unpack\nmethods only use the fully qualified type name after the last '/'\nin the type URL, for example \"foo.bar.com/x/y.z\" will yield type\nname \"y.z\".\n\n\nJSON\n====\nThe JSON representation of an `Any` value uses the regular\nrepresentation of the deserialized, embedded message, with an\nadditional field `@type` which contains the type URL. Example:\n\n    package google.profile;\n    message Person {\n      string first_name = 1;\n      string last_name = 2;\n    }\n\n    {\n      \"@type\": \"type.googleapis.com/google.profile.Person\",\n      \"firstName\": <string>,\n      \"lastName\": <string>\n    }\n\nIf the embedded message type is well-known and has a custom JSON\nrepresentation, that representation will be embedded adding a field\n`value` which holds the custom JSON in addition to the `@type`\nfield. Example (for message [google.protobuf.Duration][]):\n\n    {\n      \"@type\": \"type.googleapis.com/google.protobuf.Duration\",\n      \"value\": \"1.212s\"\n    }"
+    },
+    "v1alpha1AlertSummary": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64"
+        },
+        "groupName": {
+          "type": "string"
+        },
+        "groupId": {
+          "type": "string"
+        },
+        "ruleName": {
+          "type": "string"
+        },
+        "ruleId": {
+          "type": "string"
+        },
+        "clusterName": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "targetType": {
+          "$ref": "#/definitions/v1alpha1TargetType"
+        },
+        "target": {
+          "type": "string"
+        },
+        "severity": {
+          "$ref": "#/definitions/v1alpha1Severity"
+        },
+        "value": {
+          "type": "string"
+        },
+        "notifyResponse": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "startAt": {
+          "type": "string",
+          "format": "int64"
+        },
+        "updateAt": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1alpha1Severity": {
+      "type": "string",
+      "enum": [
+        "SEVERITY_UNSPECIFIED",
+        "CRITICAL",
+        "WARNING",
+        "INFO"
+      ],
+      "default": "SEVERITY_UNSPECIFIED"
+    },
+    "v1alpha1TargetType": {
+      "type": "string",
+      "enum": [
+        "TARGET_TYPE_UNSPECIFIED",
+        "GLOBAL",
+        "CLUSTER",
+        "NAMESPACE",
+        "NODE",
+        "DEPLOYMENT",
+        "STATEFULSET",
+        "DAEMONSET",
+        "POD"
+      ],
+      "default": "TARGET_TYPE_UNSPECIFIED"
+    }
+  }
+}

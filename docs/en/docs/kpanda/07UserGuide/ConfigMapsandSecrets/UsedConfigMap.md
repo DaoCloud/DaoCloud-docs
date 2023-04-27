@@ -32,7 +32,7 @@ When creating a workload through an image, you can set environment variables for
 
 1. Enter the [Image Creation Workload](../Workloads/CreateDeploymentByImage.md) page, in the `Container Configuration` step, select the `Environment Variables` configuration, and click the `Add Environment Variable` button.
 
-    ![Add environment variable](../../images/config05.png)
+    
 
 2. Select `ConfigMap Import` or `ConfigMap Key Value Import` in the environment variable type.
 
@@ -107,7 +107,7 @@ When creating a workload through an image, you can use the ConfigMap as the data
 
 1. Enter the [Image Creation Workload](../Workloads/CreateDeploymentByImage.md) page, in the `Container Configuration` step, select the `Data Storage` configuration, and click the `Add` button in the `Node Path Mapping` list .
 
-    ![Add environment variable](../../images/config06.png)
+    
 
 2. Select `ConfigMap` in the storage type, and enter `container path`, `subpath` and other information in sequence.
 

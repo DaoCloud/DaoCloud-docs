@@ -17,7 +17,7 @@ oc adm policy add-scc-to-user privileged system:serviceaccount:istio-system:isti
 
 Create a mesh, hooked up to an Openshift cluster. Return to the mesh list and find that the Openshift cluster has been successfully connected.
 
-![Cluster access successful](./images/ocp01.png)
+
 
 But the backend will report an error:
 

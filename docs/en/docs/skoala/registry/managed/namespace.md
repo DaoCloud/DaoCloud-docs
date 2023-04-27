@@ -11,27 +11,27 @@ The microservice namespace can be used to isolate resources such as services and
 
 1. Enter `Microservice Engine` -> `Microservice Governance Center` -> `Hosted Registry` module, click on the name of the target registry.
 
-    ![namespace](imgs/ns-1.png)
+    
 
 2. Click `Microservice Namespace` in the left navigation bar, and then click `Create` in the upper right corner.
   
-    ![Create Namespace](imgs/create-ns-1.png)
+    
 
 3. Fill in the ID, name and description information of the namespace, and click `OK` in the lower right corner of the page.
 
     If you do not fill in the ID, the system will automatically generate an ID. **Namespace ID cannot be changed after creation**.
 
-    ![Create Namespace](imgs/create-ns-2.png)
+    
 
 ## Update the microservice namespace
 
 1. Click `Edit` under the right operation column of the corresponding namespace to enter the update page.
 
-    ![Update Namespace](imgs/update-ns-1.png)
+    
 
 2. Modify the name and description of the namespace, and click `OK`.
   
-    ![Update Namespace](imgs/update-ns-2.png)
+    
 
 ## Delete the microservice namespace
 
@@ -41,4 +41,3 @@ Click `Delete` under the right operation bar of the corresponding namespace, and
   
     Before deleting a namespace, all resources under the namespace must be cleaned up, otherwise the namespace cannot be deleted.
 
-![delete namespace](imgs/delete-ns-1.png)

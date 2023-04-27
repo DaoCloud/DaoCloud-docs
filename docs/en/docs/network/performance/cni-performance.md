@@ -82,7 +82,7 @@ For the four test metrics, the test results for different CNI patterns in differ
 
 - Pod Throughput
 
-    ![pod](../../network/images/cni-perf1.png)
+    
 
     |test cases|conclusions|
     |----|----|
@@ -93,7 +93,7 @@ For the four test metrics, the test results for different CNI patterns in differ
 
 - Service Throughput
 
-    Service throughput ![service](../../network/images/cni-perf2.png)
+    Service throughput 
     |test cases|conclusions|
     |----|----|
     |service and node, located in the same node|macvlan performance is the best, cilium second, calico three modes are similar, performance is worse|
@@ -103,7 +103,7 @@ For the four test metrics, the test results for different CNI patterns in differ
 
 - Pod long latency
 
-    ![long](../../network/images/cni-perf3.png)
+    
 
     |test cases|conclusions|
     |----|----|
@@ -114,7 +114,7 @@ For the four test metrics, the test results for different CNI patterns in differ
 
 - Pod short links
 
-    ![short](../../network/images/cni-perf4.png)
+    
 
     |test cases|conclusions|
     |----|----|

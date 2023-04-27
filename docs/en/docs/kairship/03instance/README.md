@@ -9,7 +9,7 @@ hide:
 
 In the multicloud instance list, click the name of an instance to enter the overview page.
 
-![instance](../images/instance01.png)
+
 
 ## Instance search
 
@@ -20,7 +20,7 @@ The currently supported search fields are: fuzzy matching of cluster names
 
 The overview page displays the basic information of the current instance, multicloud workload status, resource information, and working cluster information.
 
-![instance](../images/instance02.png)
+
 
 You can list the following instance information through the current page:
 

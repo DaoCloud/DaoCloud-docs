@@ -16,21 +16,29 @@
 
 新增节点已经成功加入 Kubernetes 集群之后，检查并确保下列 Pod 正常运行在该节点上，以及相关资源存在于集群中：
 
-```console
-$ kubectl get node
+```shell
+kubectl get node
+```
+```none
 NAME           STATUS   ROLES            AGE     VERSION
 k8s-master-1   Ready    master           96d     v1.24.3-2+63243a96d1c393
 k8s-worker-1   Ready    worker           96h     v1.24.3-2+63243a96d1c393
 k8s-worker-2   Ready    worker           96h     v1.24.3-2+63243a96d1c393
 k8s-worker-3   Ready    worker           96d     v1.24.3-2+63243a96d1c393
 k8s-worker-4   Ready    worker           1h      v1.24.3-2+63243a96d1c393
-
-$ kubectl -n hwameistor get pod -o wide | grep k8s-worker-4
+```
+```shell
+kubectl -n hwameistor get pod -o wide | grep k8s-worker-4
+```
+```none
 hwameistor-local-disk-manager-c86g5     2/2     Running   0     19h   10.6.182.105      k8s-worker-4   <none>  <none>
 hwameistor-local-storage-s4zbw          2/2     Running   0     19h   192.168.140.82    k8s-worker-4   <none>  <none>
-
-# 检查 LocalStorageNode 资源
-$ kubectl get localstoragenode k8s-worker-4
+```
+检查 LocalStorageNode 资源
+```shell
+kubectl get localstoragenode k8s-worker-4
+```
+```none
 NAME                 IP           ZONE      REGION    STATUS   AGE
 k8s-worker-4   10.6.182.103       default   default   Ready    8d
 ```
@@ -56,8 +64,10 @@ EOF
 
 完成上述步骤后，检查新增存储节点及其存储池的状态，确保节点和 HwameiStor 系统的正常运行。具体如下：
 
-```console
-$ kubectl get localstoragenode k8s-worker-4
+```shell
+kubectl get localstoragenode k8s-worker-4
+```
+```yaml
 apiVersion: hwameistor.io/v1alpha1
 kind: LocalStorageNode
 metadata:

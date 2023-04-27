@@ -10,7 +10,7 @@ hide:
 ## 前置条件
 
 - 至少准备两个集群，可将 submariner-k8s-broker 部署在其中一个集群中，也可以单独部署在其他集群，submariner-operator 部署在每个 join 的子集群中。子集群和 submariner-k8s-broke 部署的集群之间应能够正常通讯
-- 不同子集群的子网最好不要重启, 否则需要启用 Globalnet 功能, 而 Globalnet 功能有一定的限制
+- 不同子集群的子网最好不要重叠, 否则需要启用 Globalnet 功能, 而 Globalnet 功能有一定的限制
 - 支持的 CNI 列表为:
     * OpenShift-SDN
     * Weave
@@ -149,4 +149,4 @@ hide:
 ## 注意事项
 
 - 安装完之后需要至少给一个节点打上标签："submariner.io/gateway: true"。只有该标签存在, Gateway 组件才会被安装。
-- 如果集群 CNI 为 Calico, 需要做一些额外的操作, 来解决与 Calico 的兼容性问题, 请参考[使用说明](usage.md)。
+- 如果集群 CNI 为 Calico, 需要做一些额外的操作，来解决与 Calico 的兼容性问题，请参考[使用说明](usage.md)。

@@ -38,7 +38,7 @@ After hundreds of domestic and foreign financial government and enterprise produ
 DaoCloud has also grown to nearly 500 employees, and the proportion of R&D personnel exceeds 70%. It brings together top talents from major domestic and foreign companies to focus on container technology.
 Established a series of complete container technology assembly line systems from pre-sales, products, development, testing, delivery, and after-sales to serve domestic and foreign customers wholeheartedly.
 
-![img](images/ops-rank.png)
+![rank](images/ops-rank.png)
 
 In July 2020, Gartner's 2020 China ICT Technology Maturity Curve Report mentioned DaoCloud as a professional container vendor.
 The main force of container technology lies in the open source community, and the ranking of the contribution of the open source community can prove the deep understanding of container technology by container manufacturers.
@@ -50,7 +50,7 @@ DaoCloud has comprehensively led thousands of industries in China to realize clo
 
 The two are not in parallel, but in a trade-off relationship. Containers are the future.
 
-![img](images/trend.png)
+![container vs vm](images/trend.png)
 
 For the past 15 years, server virtualization has been the method of choice for application deployment in enterprise data centers.
 Hypervisors are nearly ubiquitous. The most common unit of sale for public cloud IaaS service providers is the virtual machine (VM).
@@ -81,7 +81,7 @@ In addition, can the virtual machine effectively support the container stack?
 
 Compared with virtual machine-based containers, bare metal containers reduce the number of layers to be managed, and because bare metal is more efficient, fewer hardware resources are required to run the same number of containers, reducing the total number of managed devices.
 
-![img](images/compare.png)
+![vm-based](images/compare.png)
 
 As can be seen from the figure above, bare metal container deployment, management, and troubleshooting require fewer team members, but support higher application density.
 
@@ -114,7 +114,7 @@ At the same time, the product has built an end-to-end cloud-native overall solut
 At present, it has provided container cloud solutions based on cloud-native technology for hundreds of leading customers in key industries including finance, securities, industrial interconnection, Internet of Vehicles, intelligent manufacturing, and e-commerce.
 And the corresponding Xinchuang container cloud solution has been implemented in many industries such as government affairs and finance.
 
-![img](images/position.png)
+![dce](images/position.png)
 
 For application developers, DCE can be regarded as a cluster operating system. DCE provides functions such as service discovery, scaling, load balancing, self-healing and even election.
 Free developers from infrastructure-related configuration, etc. DCE can treat a large number of servers as a huge server and run applications on a large server.
@@ -140,7 +140,7 @@ historic version:
 [![1.18](../images/1.18.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/1144)
 [![1.20](../images/1.20.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/1463)
 
-Learn more about [What is DCE 5.0](../dce/what-is-dce.md)
+Learn more about [What is DCE 5.0](../dce/what.md)
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

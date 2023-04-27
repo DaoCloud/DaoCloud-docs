@@ -19,7 +19,7 @@ Different IP pools meets various scenarios of application communication. The mai
 4. The external access IP provided through SpiderFlat / MacVLAN CNI / SRI-OV CNI enables Pod Layer 2 external communication. Complemented by Calico dynamic virtual network, it reduces chores of network operation and maintenance and also saves IP resources.
    If there is no external access requirement in the application scenario, you do not need to install Underlay CNI.
 
-![solution01](../images/solution01.png)
+
 
 ## Solution 2：Calico + MacVLAN/SpiderFlat + SpiderPool + Multus
 
@@ -33,7 +33,7 @@ This solution is suitable for low kernel versions of Linux OS, and applicable fo
    Calico is a must-have network CNI in this portfolio. If there is no external access requirement in the application scenario, you do not need to install Underlay CNI.
 4. The Submariner component provides cross-cluster Pod communication.Both Submariner and Core DNS service discovery makes cross-cluster service discovery possible. Submariner can be installed according to your demand.
 
-![solution02](../images/solution02.png)
+
 
 ## Network components
 

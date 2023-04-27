@@ -5,7 +5,7 @@ hide:
 
 # Description of Service Mesh Permissions
 
-[Service Mesh](../../mspider/01Intro/WhatismSpider.md) supports several user roles:
+[Service Mesh](../../mspider/intro/what.md) supports several user roles:
 
 -Admin
 - Workspace Admin
@@ -20,12 +20,12 @@ The specific permissions of these roles are shown in the table below.
 
 | Menu Objects | Actions | Admin | Workspace Admin | Workspace Editor | Workspace Viewer |
 | ---------------- | -------------- | ------- | --------- ------ | ---------------- | ---------------- |
-| Service Mesh List | [Create Mesh](../../mspider/03UserGuide/servicemesh/create-mesh.md) | &check; | &cross; | &cross; | &cross; |
+| Service Mesh List | [Create Mesh](../../mspider/user-guide/service-mesh/README.md) | &check; | &cross; | &cross; | &cross; |
 | | Edit mesh | &check; | &check; | &check; | &cross; |
-| | [Delete Mesh](../../mspider/03UserGuide/servicemesh/delete.md) | &check; | &check; | &cross; | &cross; |
-| | [View Mesh](../../mspider/03UserGuide/servicemesh/README.md) | &check; | &check; | &check; | &check; |
+| | [Delete Mesh](../../mspider/user-guide/service-mesh/delete.md) | &check; | &check; | &cross; | &cross; |
+| | [View Mesh](../../mspider/user-guide/service-mesh/README.md) | &check; | &check; | &check; | &check; |
 | mesh Overview | View | &check; | &check; | &check; | &check; |
-| Service List | [Jump to Governance Page](../../mspider/03UserGuide/01ServiceList/README.md) | &check; | &check; | &check; | &cross; |
+| Service List | [Jump to Governance Page](../../mspider/user-guide/service-list/README.md) | &check; | &check; | &check; | &cross; |
 | | View | &check; | &check; | &check; | &check; |
 | Service Entry | Create | &check; | &check; | &cross; | &cross; |
 | | edit | &check; | &check; | &check; | &cross; |

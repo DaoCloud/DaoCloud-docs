@@ -16,7 +16,7 @@ The steps to create a hosted registry are as follows.
 
 1. In the left navigation bar, click `Microservice Governance Center`->`Hosted Registry`, and then click `Create Managed Registry` in the upper right corner of the page to enter the creation page of a managed registry instance.
 
-    ![Enter the create registration center page](imgs/create01.png)
+    
 
 2. Fill in the configuration information.
 
@@ -34,29 +34,29 @@ The steps to create a hosted registry are as follows.
 
         - Click "Instance Capacity Evaluation" to view the throughput (TPS) of mainstream specifications such as 2 Core 4 GiB, 4 Core 8 GiB, and 8 Core 16 GiB.
 
-        ![Enter the create registration center page](imgs/create02.png)
+        
 
     - Access method: Select `node access` to access the registration center from the outside through **service port + target port**, and select `internal access` to access the registration center only through the service port within the cluster. The default service port is 8848.
     - Deployment mode: When the high availability mode is selected, the number of nodes should not be less than 3. It is recommended to use the `high availability` mode in a production environment.
 
-        ![Enter the registration center page](imgs/create03.png)
+        
 
     - Data persistence: It is recommended to use external storage.
 
         - Do not use external storage: data is stored in the file system of the Pod where Nacos is located. The data will be lost after the pod is restarted, so it is recommended to use external storage.
         - Use database: fill in the name, address, port, user name and password of the database
 
-            ![Enter the create registration center page](imgs/create04.png)
+            
 
         - Use a storage pool: Select an existing storage pool in the cluster where the registration center resides and configure storage capacity. <!--If you can't find the storage pool you want, you can [create a storage pool] through the container management module. -->
 
-            ![Enter the registration center page](imgs/create05.png)
+            
 
 3. Click `OK` at the bottom of the page.
 
     If the operation is correct, a successful creation message will pop up in the upper right corner of the page, and the `Hosted Registry List` page will display the newly created registry instance.
 
-    ![Create successfully](imgs/create06.png)
+    
 
 !!! info
 

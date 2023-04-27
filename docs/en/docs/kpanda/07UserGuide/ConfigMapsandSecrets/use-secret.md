@@ -24,15 +24,15 @@ When creating a workload from an image, you can set environment variables for th
 
 1. Go to the [Image Creation Workload](../Workloads/CreateDeploymentByImage.md) page.
 
-    ![Create deployment](../../images/secret05.png)
+    
 
 2. Select the `Environment Variables` configuration in `Container Configuration`, and click the `Add Environment Variable` button.
 
-    ![Add environment variable](../../images/secret06.png)
+    
 
 3. Select `Key Import` or `Key Key Value Import` in the environment variable type.
 
-    ![Key Import](../../images/secret07.png)
+    
 
     - When the environment variable type is selected as `key import`, enter `variable name`, `prefix` name, `key` name in sequence.
 
@@ -76,11 +76,11 @@ When creating a workload through an image, you can use the key as the data volum
 
 1. Go to the [Image Creation Workload](../Workloads/CreateDeploymentByImage.md) page.
 
-    ![Create deployment](../../images/secret05.png)
+    
 
 2. In the `Container Configuration`, select the `Data Storage` configuration, and click the `Add` button in the `Node Path Mapping` list.
 
-    ![Create deployment](../../images/secret08.png)
+    
 
 3. Select `Key` in the storage type, and enter `container path`, `subpath` and other information in sequence.
 
@@ -120,15 +120,15 @@ When creating a workload through an image, you can use the key as the data volum
 
 1. Go to the [Image Creation Workload](../Workloads/CreateDeploymentByImage.md) page.
 
-    ![Create deployment](../../images/secret05.png)
+    
 
 2. In the second step of `Container Configuration`, select the `Basic Information` configuration, and click the `Select Image` button.
 
-    ![Select Image](../../images/secret09.png)
+    
 
 3. Select the name of the private container registry in the drop-down list of `container registry' in the pop-up box. Please see [Create Secret](create-secret.md) for details on private image secret creation.
 
-    ![Select Image](../../images/secret10.png)
+    
 
 4. Enter the image name in the private registry, click `OK` to complete the image selection.
 

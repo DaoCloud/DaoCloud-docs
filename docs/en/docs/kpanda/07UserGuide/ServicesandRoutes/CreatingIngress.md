@@ -10,7 +10,7 @@ Ingress is an API object that manages external access to services in the cluster
 ## Prerequisites
 
 - Container management platform [connected to Kubernetes cluster](../Clusters/JoinACluster.md) or [created Kubernetes](../Clusters/CreateCluster.md), and can access the cluster UI interface.
-- A [Namespace Creation](../Namespaces/createtens.md), [User Creation](../../../ghippo/04UserGuide/01UserandAccess/User.md) has been completed, and the user Authorization is the [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) role, for details, please refer to [Namespace Authorization](../Permissions/Cluster-NSAuth.md).
+- A [Namespace Creation](../Namespaces/createtens.md), [User Creation](../../../ghippo/user-guide/01UserandAccess/User.md) has been completed, and the user Authorization is the [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) role, for details, please refer to [Namespace Authorization](../Permissions/Cluster-NSAuth.md).
 
 - When there are multiple containers in a single instance, please make sure that the ports used by the containers do not conflict, otherwise the deployment will fail.
 
@@ -18,11 +18,11 @@ Ingress is an API object that manages external access to services in the cluster
 
 1. After successfully logging in as the `NS Edit` user, click `Cluster List` in the upper left corner to enter the `Cluster List` page. In the list of clusters, click a cluster name.
 
-    ![Cluster List](../../images/service01.png)
+    
 
 2. Click `Services and Routing` on the left, click the `Routing` tab, and click the `Create Routing` button in the upper right corner.
 
-    ![Service and Routing](../../images/ingress01.png)
+    
 
     !!! tip
     
@@ -30,7 +30,7 @@ Ingress is an API object that manages external access to services in the cluster
 
 3. Open `Create Route` page to configure. There are two protocol types to choose from, please refer to the following two parameter tables for configuration.
 
-    ![create route](../../images/ingress02.png)
+    
 
 #### Create a route with protocol HTTP
 
@@ -60,4 +60,3 @@ Ingress is an API object that manages external access to services in the cluster
 
 After configuring all the parameters, click the `OK` button to return to the routing list automatically. On the right side of the list, click `︙` to modify or delete the selected route.
 
-![route list](../../images/ingress03.png)

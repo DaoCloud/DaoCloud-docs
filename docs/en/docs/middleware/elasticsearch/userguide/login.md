@@ -9,11 +9,11 @@ Please contact the administrator in advance. After `container management` -> `He
 
 1. Select `Middleware` -> `Elasticsearch Search Service` in the left navigation bar.
 
-    ![](../images/login01.png)
+    
 
 2. After selecting a workspace in the pop-up window, click `OK`.
 
-    ![](../images/login02.png)
+    
 
     !!! note
 
@@ -21,4 +21,4 @@ Please contact the administrator in advance. After `container management` -> `He
 
 3. Click `Deploy Now` to start deploying the Elasticsearch instance.
 
-    ![](../images/login03.png)
+    

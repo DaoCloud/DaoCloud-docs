@@ -23,7 +23,7 @@ There are three main stages in the user's use process: **development stage, deli
 
 3. **In the operation and maintenance phase**: The application workbench provides a unified observation plane for various forms of cloud-native applications, including monitoring, alarms, logs and other information. It also provides functions such as application upgrade, rollback, stop and delete application.
 
-![img](images/amamba01.png)
+
 
 ## Features
 
@@ -33,7 +33,7 @@ The application workbench provides hierarchical resource management, cloud-nativ
 
 In the enterprise environment, each department under the enterprise is composed of different projects, and each project is mapped to our workspace (workspace). The figure below shows the Kubernetes-based multi-tenant management solution provided by the application workbench.
 
-![img](images/amamba02.png)
+
 
 Precondition: Users can be set as the administrator of the workspace in the 5.0 global management module to participate in the management of the workspace, thereby participating in the collaboration of the project.
 
@@ -52,12 +52,12 @@ The application workbench is application-centric and covers various forms of app
 
 The cloud-native applications currently supported by the application workbench include:
 
-![img](images/amamba03.png)
+
 
 The application workbench is oriented towards application development and operation and maintenance, covering the entire application lifecycle, including application creation, deletion, configuration modification, automatic scaling, and automatic operation and maintenance.
-And support SpringCloud, Dubbo, ServiceMesh service governance architecture, and [5.0 Microservice Engine](../skoala/intro/features.md), [5.0 service mesh](../mspider/01Intro/WhatismSpider.md) Seam integration:
+And support SpringCloud, Dubbo, ServiceMesh service governance architecture, and [5.0 Microservice Engine](../skoala/intro/features.md), [5.0 service mesh](../mspider/intro/what.md) Seam integration:
 
-![img](images/amamba04.png)
+
 
 ### CI/CD pipeline
 
@@ -67,14 +67,14 @@ Pipeline is a custom CI/CD pipeline pattern that defines a complete build proces
 - Dual Engines: Supports Jenkins and Tekton as Pipeline Engines for Application Workbench.
 - Abundant pipeline templates: multiple official pipeline templates are built in, which greatly reduces the threshold for users to use, and can adapt to different business scenarios and meet the daily needs of users.
 
-![img](images/amamba05.png)
+
 
 ### GitOps
 
 GitOps is a philosophy of continuous deployment for cloud-native applications. The application workbench fully embraces GitOps. The core idea of GitOps is to have a Git registry, and store the declarative infrastructure and applications of the application system in the Git registry for version control.
 GitOps combined with Kubernetes can use automatic delivery pipelines to apply changes to any number of specified clusters, thereby solving the problem of consistency across cloud deployments.
 
-![img](images/amamba06.png)
+
 
 ### Progressive release
 
@@ -82,7 +82,7 @@ In order to ensure the security of application deployment, enterprises have adop
 
 The application workbench implements progressive grayscale release based on Argo Rollouts, allowing developers to choose their own analysis indicators, customize their progressive release steps, and even choose their own portal or service mesh provider to Perform flow control.
 
-![img](images/amamba07.png)
+
 
 ## Frequently Asked Questions
 
@@ -123,7 +123,7 @@ The application workbench implements progressive grayscale release based on Argo
      The application workbench is centered on the application and has a unified observation plane, including monitoring, alarm, log and other information.
      Make the operation and maintenance of cloud-native applications in different forms easier and more convenient.
 
-[Learn About App Workbench](../amamba/01ProductBrief/WhatisAmamba.md){ .md-button }
+[Learn About App Workbench](../amamba/intro/WhatisAmamba.md){ .md-button }
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

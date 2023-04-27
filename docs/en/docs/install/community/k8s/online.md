@@ -1,10 +1,10 @@
-# Use a k8s cluster to install the community edition online
+# Use a k8s cluster to install the community release online
 
-This page briefly explains the online installation steps for DCE 5.0 Community Edition.
+This page briefly explains the online installation steps for DCE 5.0 Community Release.
 
 !!! note
 
-    - Click [Online Install Community Edition](../../../videos/install.md) to watch a video demo.
+    - Click [Online Install Community Release](../../../videos/install.md) to watch a video demo.
     - If offline installation is required, please refer to [Offline Installation Steps](offline.md).
 
 ## Preparation
@@ -51,7 +51,7 @@ This page briefly explains the online installation steps for DCE 5.0 Community E
     - If it is a non-public cloud environment (virtual machine, physical machine), please enable load balancing (metallb) to avoid NodePort instability caused by node IP changes. Please plan your network carefully and set up 2 necessary VIPs. The configuration file example is as follows:
 
         ```yaml
-        apiVersion: provision.daocloud.io/v1alpha2
+        apiVersion: provision.daocloud.io/v1alpha3
         kind: ClusterConfig
         spec:
           loadBalancer:
@@ -66,7 +66,7 @@ This page briefly explains the online installation steps for DCE 5.0 Community E
     - If it is a public cloud environment and provides the K8s load balancing capability of the public cloud through the pre-prepared Cloud Controller Manager mechanism, the configuration file example is as follows:
 
         ```yaml
-        apiVersion: provision.daocloud.io/v1alpha2
+        apiVersion: provision.daocloud.io/v1alpha3
         kind: ClusterConfig
         spec:
           loadBalancer:
@@ -85,7 +85,7 @@ This page briefly explains the online installation steps for DCE 5.0 Community E
 
 4. After the installation is complete, the command line will prompt that the installation is successful. congratulations! :smile: Now you can use the **default account and password (admin/changeme)** to explore the new DCE 5.0 through the URL prompted on the screen!
 
-    ![Installation successful](../../images/success.png)
+    
 
     !!! success
 

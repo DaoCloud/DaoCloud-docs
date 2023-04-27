@@ -15,12 +15,12 @@ The steps to add/delete tags and annotations are as follows:
 
 1. On the `Cluster List` page, click the name of the target cluster.
 
-    ![Enter the cluster list page](../../images/schedule01.png)
+    
 
 2. Click `Node Management` on the left navigation bar, click the `ⵗ` operation icon on the right side of the node, and click `Modify Label` or `Modify Comment`.
 
-    ![Pause Scheduling](../../images/labels01.png)
+    
 
 3. Click `➕ Add` to add tags or annotations, click `X` to delete tags or annotations, and finally click `OK`.
 
-    ![Node Management](../../images/labels02.png)
+    

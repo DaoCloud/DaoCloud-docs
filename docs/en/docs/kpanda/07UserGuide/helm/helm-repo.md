@@ -15,7 +15,7 @@ In addition to the above preset repositories, you can also add third-party Helm 
 
 - Container management platform [connected to Kubernetes cluster](../Clusters/JoinACluster.md) or [created Kubernetes cluster](../Clusters/CreateCluster.md), and can access the UI interface of the cluster
 
-- Completed a [Namespace Creation](../Namespaces/createtens.md), [User Creation](../../../ghippo/04UserGuide/01UserandAccess/User.md), and created a Grant [`NS Admin`](../Permissions/PermissionBrief.md#ns-admin) or higher permissions, please refer to [Namespace Authorization](../Permissions/Cluster-NSAuth.md) for details.
+- Completed a [Namespace Creation](../Namespaces/createtens.md), [User Creation](../../../ghippo/user-guide/01UserandAccess/User.md), and created a Grant [`NS Admin`](../Permissions/PermissionBrief.md#ns-admin) or higher permissions, please refer to [Namespace Authorization](../Permissions/Cluster-NSAuth.md) for details.
 
 - If using a private registry, the current operating user should have read and write permissions to the private registry.
 
@@ -25,11 +25,11 @@ The following takes the public container registry of Kubevela as an example to i
 
 1. Find the cluster that needs to be imported into the third-party Helm registry, click the cluster name, and enter `Cluster Details`.
 
-    ![ns](../../images/crd01.png)
+    
 
 2. In the left navigation bar, click `Helm Application` -> `Helm registry` to enter the Helm registry page.
 
-    ![helm-repo](../../images/helmrepo01.png)
+    
 
 3. Click the `Create registry` button on the Helm registry page to enter the Create registry page, and configure relevant parameters according to the table below.
 
@@ -40,11 +40,11 @@ The following takes the public container registry of Kubevela as an example to i
     - Annotations: Add annotations to the Helm repository. For example key: repo4; value: Kubevela
     - Description: Add a description for this Helm repository. Example: This is a Kubevela public Helm repository
 
-    ![helm-repo](../../images/helmrepo02.png)
+    
 
 4. Click `OK` to complete the creation of the Helm repository. The page will automatically jump to the list of Helm repositories.
 
-    ![helm-repo](../../images/helmrepo03.png)
+    
 
 ## Update the Helm repository
 
@@ -52,19 +52,19 @@ When the address information of the Helm registry changes, the address, authenti
 
 1. Find the cluster where the registry to be updated is located, click the cluster name, and enter `Cluster Details`.
 
-    ![ns](../../images/crd01.png)
+    
 
 2. In the left navigation bar, click `Helm Application` -> `Helm registry` to enter the Helm registry list page.
 
-    ![helm-repo](../../images/helmrepo01.png)
+    
 
 3. Find the Helm repository that needs to be updated on the repository list page, click the `⋮` button on the right side of the list, and click `Update` in the pop-up menu.
 
-    ![helm-repo](../../images/helmrepo04.png)
+    
 
 4. Update on the `Edit Helm Repository` page, and click `OK` when finished.
 
-    ![helm-repo](../../images/helmrepo05.png)
+    
 
 5. Return to the Helm registry list, and the screen prompts that the update is successful.
 
@@ -74,18 +74,18 @@ In addition to importing and updating registrys, you can also delete unnecessary
 
 1. Find the cluster where the registry to be deleted is located, click the cluster name, and enter `Cluster Details`.
 
-    ![ns](../../images/crd01.png)
+    
 
 2. In the left navigation bar, click `Helm Application` -> `Helm registry` to enter the Helm registry list page.
 
-    ![helm-repo](../../images/helmrepo01.png)
+    
 
 3. Find the Helm repository that needs to be updated on the repository list page, click the `⋮` button on the right side of the list, and click `Delete` in the pop-up menu.
 
-    ![helm-repo](../../images/helmrepo07.png)
+    
 
 4. Enter the registry name to confirm, and click `Delete`.
 
-    ![helm-repo](../../images/helmrepo08.png)
+    
 
 5. Return to the list of Helm repositories, and the screen prompts that the deletion is successful.

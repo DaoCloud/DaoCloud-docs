@@ -5,7 +5,7 @@ Build traditional microservice applications based on the source code of the Git 
 ## Prerequisites
 
 - Need to create a workspace and a user, the user needs to join the workspace and give `workspace edit` role.
-  Refer to [Creating Workspaces](../../../ghippo/04UserGuide/02Workspace/Workspaces.md), [Users and Roles](../../../ghippo/04UserGuide/01UserandAccess/User. md).
+  Refer to [Creating Workspaces](../../../ghippo/user-guide/02Workspace/Workspaces.md), [Users and Roles](../../../ghippo/04UserGuide/01UserandAccess/User. md).
 - Create two credentials that can access the codebase registry and the container registry, and name them respectively: `git-credential` and `registry`. For more information on creating credentials, please refer to [Credential Management](../Pipeline/Credential.md).
 - Prepare a Gitlab registry, Harbor registry
 
@@ -22,7 +22,7 @@ Build traditional microservice applications based on the source code of the Git 
 
 1. On `Application Workbench` -> `Wizard` page, click `Build Based on Git Repository`.
 
-    ![wizard](../../images/ms01.png)
+    
 
 1. On the `Build Based on Git Repository` page, set the following basic information and click `Next`:
 
@@ -34,7 +34,7 @@ Build traditional microservice applications based on the source code of the Git 
         - Namespace: Select the namespace where the application needs to be deployed.
     - Number of instances: Fill in the number of instances and the number of Pods.
 
-    ![Basic Information](../../images/ms02.png)
+    
 
 1. After setting the pipeline construction information, click `Next`.
 
@@ -51,7 +51,7 @@ Build traditional microservice applications based on the source code of the Git 
         - ContextPath: ContextPath is the execution context path of the docker build command. Fill in the path relative to the root directory of the code, such as target, or the directory where the Dockerfile is located if not filled.
         - Build parameters: Build parameters will be passed to the parameters of the build command in the form of --build-arg, which supports setting the upstream product download address and upstream image download address as parameters, and supports custom arbitrary parameters.
 
-    ![Pipeline Build](../../images/ms03.png)
+    
 
 1. After configuring the container, click `Next`.
 
@@ -67,7 +67,7 @@ Build traditional microservice applications based on the source code of the Git 
     - resource constraints
         - Specify the upper limit of resources that the application can use, including CPU and memory.
 
-    ![container configuration](../../images/ms04.png)
+    
 
 1. On the `Advanced Configuration` page, select `Enable Microservice Access`, configure the following fields and click `OK`.
 
@@ -83,12 +83,12 @@ Build traditional microservice applications based on the source code of the Git 
         - Log: enabled by default
         - Link tracking: After opening, you can view the link tracking information of the service, currently only supports Java language
 
-    ![Advanced Configuration](../../images/ms05.png)
+    
 
 ## View and access microservice related information
 
 1. Click `Overview` on the left navigation bar, and in the `Native App` tab, hover the cursor over an app, and click `View More Details` on the floating menu.
 
-    ![Floating menu](../../images/ms06.png)
+    
 
 1. Jump to the microservice engine to view service details.

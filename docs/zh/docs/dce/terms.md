@@ -65,6 +65,7 @@
     API (即应用程序接口) 是计算机程序间交互的一种方式。
     就像人类可以通过网页与网站进行交互一样，API 允许计算机程序之间进行交互。
     与人类的交互不同，API 可以限制对方可以问什么和不能问什么。对交互的限制有助于在程序之间创建稳定、实用的信息传输。
+    我们提供了完善的 [OpenAPI 文档](../openapi/index.md)供第三方调用和开发。
 
 - API-initiated eviction, API 发起的驱逐
 
@@ -149,6 +150,8 @@
     这样区分在现代计算环境中很重要，因为许多（甚至可以说大部分）服务器都是虚拟机。
     物理服务器通常是一台相当大的计算机，内置强大的硬件。
     直接在该物理硬件上安装操作系统并运行应用程序，无需虚拟化，称为在“裸机”上运行。
+
+    DaoCloud 提供了集成容器化管理平台的[云原生一体机](https://www.daocloud.io/dch)，实现软硬协同多架构融合体。
 
 - Blue Green Deployment，蓝绿部署
 
@@ -359,14 +362,15 @@
 
     DCE 5.0 支持的 CNI 包括但不限于：
 
-    - Calico
-    - Cilium
-    - Contour
-    - F5networks
-    - Ingress-nginx
-    - Metallb
-    - Multus-underlay
-    - Spiderpool
+    - [Calico](../network/modules/calico/what.md)
+    - [Cilium](../network/modules/cilium/what.md)
+    - [Contour](../network/modules/contour/what.md)
+    - [F5networks](../network/modules/f5networks/what.md)
+    - [Ingress-nginx](../network/modules/ingress-nginx/what.md)
+    - [Metallb](../network/modules/metallb/what.md)
+    - [Multus-underlay](../network/modules/multus-underlay/what.md)
+    - [Spiderpool](../network/modules/spiderpool/what.md)
+    - [Submariner](../network/modules/submariner/what.md)
 
 - [ConfigMap](https://kubernetes.io/zh-cn/docs/concepts/configuration/configmap/), 配置项
 

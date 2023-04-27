@@ -14,30 +14,30 @@ It is more intuitive and easier to create through the form, just fill in the cor
 
 1. Click the name of the target cluster in the cluster list, and then click `Container Storage`->`Storage Pool`->`Create with YAML` in the left navigation bar.
 
-    ![path](../../images/storagepool01.png)
+    
 
 2. Enter or paste the prepared YAML file in the pop-up box, and click `OK` at the bottom of the pop-up box.
 
-    ![yaml](../../images/storagepool02.png)
+    
 
 ### Form Creation
 
 1. Click the name of the target cluster in the cluster list, and then click `Container Storage`->`Storage Pool`->`Create Storage Pool` in the left navigation bar.
 
-    ![path](../../images/storagepool03.png)
+    
 
 2. Fill in the basic information.
 
     - CSI storage driver: based on the standard Kubernetes Container Storage Interface (Container Storage Interface) plug-in
     - Recycling strategy: When deleting a data volume, delete the data in the data volume and the data source together, or keep the data and the data source.
 
-        ![Basic Information](../../images/storagepool04.png)
+        
 
 ## Update storage pool
 
 On the storage pool list page, find the storage pool that needs to be updated, and select Edit under the operation bar on the right to update the storage pool.
 
-![Update](../../images/storagepool05.png)
+
 
 !!! info
 
@@ -47,4 +47,3 @@ On the storage pool list page, find the storage pool that needs to be updated, a
 
 On the storage pool list page, find the storage pool to be deleted, and select Delete in the operation column on the right.
 
-![Deleted](../../images/storagepool06.png)

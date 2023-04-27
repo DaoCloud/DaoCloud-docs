@@ -5,7 +5,7 @@ This page shows how to import repositories.
 ## Prerequisites
 
 - Need to create a workspace and a user, the user needs to join the workspace and give `workspace edit` role.
-  Refer to [Creating Workspaces](../../../ghippo/04UserGuide/02Workspace/Workspaces.md), [Users and Roles](../../../ghippo/04UserGuide/01UserandAccess/User. md).
+  Refer to [Creating Workspaces](../../../ghippo/user-guide/02Workspace/Workspaces.md), [Users and Roles](../../../ghippo/04UserGuide/01UserandAccess/User. md).
 - Prepare a Git repository.
 
 ## Import repository
@@ -16,21 +16,21 @@ If the codebase where the manifest file of the continuous deployment application
 
 1. On `Application Workbench` -> `GitOps` -> `Repository` page, click the `Import Repository` button and select `Use HTTPS`.
 
-    ![import](../../images/import01.png)
+    
 
 2. On the `Import registry using HTTPS` page, configure the relevant parameters and click `OK`.
 
-    ![import](../../images/import02.png)
+    
 
 ### Import repository using SSH
 
 1. On `Application Workbench` -> `GitOps` -> `Repository` page, click the `Import Repository` button and select `Use SSH`.
 
-    ![import](../../images/import01.png)
+    
 
 2. On the `Import registry using SSH` page, configure the relevant parameters and click `OK`.
 
-    ![import](../../images/import03.png)
+    
 
 ## Delete repository
 
@@ -38,8 +38,8 @@ If you no longer use a code repository, you can delete it by following the steps
 
 1. Select a registry on the registry list page, click `︙`, and click `Delete` in the pop-up menu.
 
-    ![Delete](../../images/import04.png)
+    
 
 2. Click `OK` in the secondary confirmation pop-up window.
 
-    ![Delete Confirmation](../../images/import05.png)
+    

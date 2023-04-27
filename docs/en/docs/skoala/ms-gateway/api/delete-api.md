@@ -10,8 +10,8 @@ APIs can be removed in two ways.
 
 - Find the API that needs to be deleted on the `API Management` page, click **`ⵗ`** on the right side of the API and select `Remove`.
 
-    ![Delete on list page](imgs/delete-api-1.png)
+    
 
 - Click the API name to enter the API details page, click the **`ⵗ`** operation in the upper right corner of the page and select `Remove`.
 
-    ![Delete on the details page](imgs/delete-api-2.png)
+    

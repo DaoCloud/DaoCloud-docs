@@ -1,4 +1,6 @@
-# 安装
+# 安装 Multus-underlay
+
+本页介绍如何安装 Multus-underlay 组件。
 
 ## 注意事项
 
@@ -12,11 +14,13 @@
 
 ## 安装步骤
 
-1. 通过 Helm 安装, Helm Chart 存放于 system repo 下:
+请确认您的集群已成功接入`容器管理`平台，然后执行以下步骤安装 Multus-underlay。
+
+1. 在左侧导航栏点击`容器管理`—>`集群列表`，然后找到准备安装 Multus-underlay 的集群名称。然后，在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `multus-underlay`。
 
     ![helm repo](../../images/repo.png)
 
-2. 装在 kube-system 下, 并开启 就绪等待:
+2. 进入安装界面，填写基础配置信息。命名空间选择 `kube-system`, 并开启`就绪等待`:
 
     ![helm install-1](../../images/install1.png)
 
@@ -24,11 +28,11 @@
 
     安装 Multus 之前, 必须要先安装一种 CNI 作为默认CNI。注意: 保证选择的 Value 必须与集群目前安装的默认 CNI 保持一致。
 
-    !!! Note:
+    !!! note
 
-        如果当前通过 kubean 安装的集群，那么 value 为 calico 或者 cilium 中二选一。
-        或通过查看主机：`/etc/cni/net.d/` 路径，按照字典顺序第一个 CNI 配置文件的 `name` key 所对应的 Value 值就为默认 CNI。比如：
-
+        > 如果当前通过 kubean 安装的集群，那么 value 为 calico 或者 cilium 中二选一。
+        > 或通过查看主机：`/etc/cni/net.d/` 路径，按照字典顺序第一个 CNI 配置文件的 `name` key 所对应的 Value 值就为默认 CNI。比如：
+        
         ```shell
         root@master:~# ls /etc/cni/net.d/
         10-calico.conflist  calico-kubeconfig
@@ -38,14 +42,11 @@
           "cniVersion": "0.3.1",
         ...
         ```
+        > `name` 的值如果为 `k8s-pod-network`，那么这里就应该选中 `k8s-pod-network`。
+        > ![Default CNI](../../images/install2.png)        
+        > 如果当前集群是接入的第三方、calico 为 CNI 的集群, 那么这里应该选择为 `k8s-pod-network`. 同样, 也可以通过查看主机上`/etc/cni/net.d`文件确认。
 
-        `name` 的值如果为 `k8s-pod-network`，那么这里就应该选中 `k8s-pod-network`。
-
-        ![Default CNI](../../images/install2.png)
-         
-        如果当前集群是接入的第三方、calico 为 CNI 的集群, 那么这里应该选择为 `k8s-pod-network`. 同样, 也可以通过查看主机上`/etc/cni/net.d`文件确认。
-
-5. 配置目前集群 Service 和 Pod 的 CIDR:
+4. 配置目前集群 Service 和 Pod 的 CIDR:
 
     此步骤的目的是告知 [Meta-Plugins](https://github.com/spidernet-io/cni-plugins) 集群的 CIDR，Meta-Plugins 会创建对应的路由规则，解决 Underlay CNI 的集群东西向通信问题。
 
@@ -60,7 +61,7 @@
         如果为双栈集群, 也需要填写 IPv6 的地址。
         如果 CNI 为 Calico 且 有多个 IP 池，Pod CIDR 可配置多个。
 
-6. 安装 MacVLAN（可选，默认安装）：
+5. 安装 MacVLAN（可选，默认安装）：
 
     此步骤会根据配置创建 MacVLAN 对应的 Multus CRD 实例:
 
@@ -77,7 +78,7 @@
     - `Master Interface`：MacVLAN 主接口的名称。注意：配置的主接口必须存在于主机上, 否则 MacVLAN 无法工作。
     - `Vlan ID`：可选，MacVLAN 主接口的 Vlan tag。
 
-7. 安装 SRIOV（可选，默认不安装）：
+6. 安装 SRIOV（可选，默认不安装）：
 
     配置 SRIOV Multus CRD：
 
@@ -106,7 +107,7 @@
     
         不建议同时启用 MacVLAN 和 SRIOV。另外启用 SRIOV 需要硬件支持, 安装前确认物理主机的网卡是否支持 SRIOV。
 
-8. 配置完成，点击`安装`。
+7. 配置完成，点击`安装`。
 
 ## 验证
 
@@ -156,10 +157,10 @@
                 ipam.spidernet.io/ippool: |-
                   {
                       "interface": "net1",  # 1. 指定 Pod 第二张网卡(net1)从哪一个 IPPool 池中分配 IP. 
-                      "ipv4pools": [
+                      "ipv4": [
                         "172-81-0-1"
                       ],
-                      "ipv6pools": [
+                      "ipv6": [
                         "172-81-0-1-v6"
                       ]
                   }

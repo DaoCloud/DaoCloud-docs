@@ -3,7 +3,7 @@
 自 2013 年 Docker 开源以来，以 Docker 为代表的容器技术为软件行业带来了颠覆性的变革。数字经济成为当代经济发展的重要驱动力量。
 基础设施云化，软件云原生化已成了整个社会科技发展的必然趋势。以金融行业为代表，传统制造业为基石的各行各业都在积极拥抱和探索这一技术发展的新趋势。
 云原生技术抽象了底层基础设施，使开发人员能够专注于应用本身开发，而无需担心底层系统架构等运维问题，让应用更加弹性、高效。
-Daocloud 第五代[容器管理 (Kpanda）](../kpanda/03ProductBrief/WhatisKPanda.md)是基于 Kubernetes 开源技术构建的面向云原生工作负载的容器管理平台，基于原生多云架构，完全解耦底层基础设施平台，
+Daocloud 第五代[容器管理 (Kpanda）](../kpanda/intro/WhatisKPanda.md)是基于 Kubernetes 开源技术构建的面向云原生工作负载的容器管理平台，基于原生多云架构，完全解耦底层基础设施平台，
 实现多云与多集群统一化管理，进一步简化企业的应用上云流程，降低运维管理和人力成本。
 支持一键式创建 Kubernetes 集群，帮助企业快速搭建企业级的容器云平台。
 
@@ -11,7 +11,7 @@ Daocloud 第五代[容器管理 (Kpanda）](../kpanda/03ProductBrief/WhatisKPand
 
 容器管理的主要功能如下：
 
-![img](images/kpanda01.jpeg)
+
 
 **集群管理**
 
@@ -101,7 +101,7 @@ Daocloud 第五代容器管理模块引入了自研开源组件 CloudTTY，支�
 
 首先前往目标集群的控制节点上获取它的 `KubeConfig` 文件，然后在容器管理的`集群列表`处点击接入集群按钮，并将 KubeConfig 文件内的内容作为参数复制粘贴到`接入参数`的表单内，既完成了对一个集群的接入操作。
 
-![img](images/kpanda04.png)
+
 
 **创建集群**
 
@@ -158,7 +158,7 @@ Daocloud 第五代容器管理模块引入了自研开源组件 CloudTTY，支�
 
     答：第五代容器管理兼容包括 AWS、谷歌云、信创架构、边云融合等任何基于标准 Kubeneters ApiServer 的发行版容器集群。
 
-    ![img](images/kpanda02.png)
+    
 
 - 问：如应对跨集群的网络中断问题？
 
@@ -173,7 +173,7 @@ Daocloud 第五代容器管理模块引入了自研开源组件 CloudTTY，支�
 
     答：借助自研开源组件 ClusterPedia 通过在目标集群上安装 Agent 组件，结合 Watch 机制能够实时将目标集群的资源变动信息同步到容器管理集群的 ETCD 内。
 
-    ![img](images/kpanda03.png)
+    
 
 - 问：容器管理在第五代产品中的定位？
 
@@ -187,7 +187,7 @@ Daocloud 第五代容器管理模块引入了自研开源组件 CloudTTY，支�
 
     答：取决于用户所采用的权限控制解决方案，一般来说除了拥有 Global Admin、Kpanda Owner、Cluster Admin、Cluster Admin角色的用户外，拥有 Cluster Edit 角色的用户及拥有强绑定的 Floder Admin、WorkerSpace Admin 角色的用户也能够实现对集群内资源的增删改查操作，以及对用户进行授权。
 
-[了解容器管理](../kpanda/03ProductBrief/WhatisKPanda.md){ .md-button }
+[了解容器管理](../kpanda/intro/WhatisKPanda.md){ .md-button }
 
 [下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

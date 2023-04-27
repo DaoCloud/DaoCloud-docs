@@ -11,7 +11,7 @@ Before using image to create stateless workloads, the following prerequisites ne
 
 - The container management platform [has joined the Kubernetes cluster](../Clusters/JoinACluster.md) or [has created the Kubernetes cluster](../Clusters/CreateCluster.md), and can access the UI interface of the cluster.
 
-- Completed a [Namespace Creation](../Namespaces/createtens.md), [User Creation](../../../ghippo/04UserGuide/01UserandAccess/User.md), and created a Grant [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) or higher permissions, please refer to [Namespace Authorization](../Namespaces/createns.md) for details.
+- Completed a [Namespace Creation](../Namespaces/createtens.md), [User Creation](../../../ghippo/user-guide/01UserandAccess/User.md), and created a Grant [`NS Edit`](../Permissions/PermissionBrief.md#ns-edit) or higher permissions, please refer to [Namespace Authorization](../Namespaces/createns.md) for details.
 
 - When there are multiple containers in a single instance, please make sure that the ports used by the containers do not conflict, otherwise the deployment will fail.
 
@@ -23,15 +23,15 @@ Follow the steps below to create a stateless workload using image.
 
 1. After successfully logging in as the `NS Edit` user, click `Cluster List` on the left navigation bar to enter the cluster list page. Click on a cluster name to enter the `Cluster Details` page.
 
-     ![Cluster Details](../../images/deploy01.png)
+     
 
 2. On the cluster details page, click `Workload` in the left navigation bar to enter the workload list, and click the `Image creation` button in the upper right corner of the page.
 
-     ![Workload](../../images/deploy02.png)
+     
 
 3. On the `Create Stateless Load` page, enter the basic information according to the table below, and click `Next`.
 
-     ![Basic Information](../../images/deploy04.png)
+     
 
      - Workload name: Enter the name of the new workload, which must be unique. Please note that the name can be up to 63 characters, can only contain lowercase letters, numbers, and separators ("_"), and must start and end with lowercase letters or numbers, such as deployment-01.
      - Cluster: Select the cluster where the newly created workload resides. When a workload is created within a cluster, the workload is created in the current cluster. Clusters cannot be changed. When a workload is created outside the cluster, the workload is created on the selected cluster, for example Cluster-01.
@@ -47,7 +47,7 @@ After completing all the container configuration information below, click Next.
 
 === "Basic information (required)"
 
-     ![Basic Information](../../images/deploy05.png)
+     
 
      After entering the information as follows, click `Confirm`.
 
@@ -63,31 +63,31 @@ After completing all the container configuration information below, click Next.
 
      The container lifecycle configuration is used to set the commands that need to be executed when the container starts, after starting, and before stopping. For details, please refer to [Container Lifecycle Configuration](PodConfig/lifescycle.md).
 
-     ![Lifecycle](../../images/deploy06.png)
+     
 
 === "Health Check (optional)"
 
      Container health checks are used to determine the health status of containers and applications. Helps improve app usability. For details, please refer to [Container Health Check Configuration](PodConfig/healthcheck.md).
 
-     ![Health Check](../../images/deploy07.png)
+     
 
 === "Environment variables (optional)"
 
      Container environment variable configuration is used to configure container parameters in Pods, add environment variables to Pods or pass configurations, etc. For details, please refer to [Container Environment Variable Configuration](PodConfig/EnvironmentVariables.md).
 
-     ![environment variable](../../images/deploy08.png)
+     
 
 === "Data storage (optional)"
 
      Container data storage configuration is used to configure container mounted data volumes and data persistence settings. For details, please refer to [Container Data Storage Configuration](PodConfig/EnvironmentVariables.md).
 
-     ![datastore](../../images/deploy09.png)
+     
 
 === "Security settings (optional)"
 
      Containers are securely isolated through Linux's built-in account authority isolation mechanism. You can limit container permissions by using account UIDs (digital identity tokens) with different permissions. To use root account privileges, please enter `0`.
 
-     ![Security Settings](../../images/deploy10.png)
+     
 
 ### Service configuration
 
@@ -95,11 +95,11 @@ Configure [Services](../ServicesandRoutes/CreatingServices.md) for the stateless
 
 1. Click the `Create Service` button.
 
-     ![Service Configuration](../../images/deploy12.png)
+     
 
 2. Refer to [Creating Services](../ServicesandRoutes/CreatingServices.md) to configure service parameters.
 
-     ![create service](../../images/deploy13.png)
+     
 
 3. Click `OK` and click `Next`.
 
@@ -109,7 +109,7 @@ In addition to basic information configuration, the Daocloud container managemen
 
 === "Upgrade Strategy"
 
-     ![Upgrade Policy](../../images/deploy14.png)
+     
 
      - Upgrade method: **Rolling upgrade** will gradually replace instances of the old version with instances of the new version. During the upgrade process, business traffic will be load-balanced to the old and new instances at the same time, so the business will not be interrupted. **Rebuild and upgrade** will first delete the old version instance of your workload, and then install the specified new version. Business will be interrupted during the upgrade process.
      - Maximum number of invalid Pods: used to specify the upper limit of the number of Pods in the unavailable state of the Deployment during the update process. If it is equal to the number of instances, there is a risk of service. Default is 25%.
@@ -123,7 +123,7 @@ In addition to basic information configuration, the Daocloud container managemen
 
      Users can set the tolerance time to define the tolerance time for scheduling the workload to other nodes when the node where the workload resides is damaged. It also supports scheduling nodes where workloads are deployed based on node labels and Pod labels. For details, please refer to [Scheduling Policy](PodConfig/SchedulingPolicy.md).
 
-     ![Scheduling Policy](../../images/deploy15.png)
+     
 
      - Tolerance time: When the node where the workload instance resides is unavailable, the time for rescheduling the workload instance to other available nodes, in seconds.
      - Node affinity: According to the label on the node, constrain which nodes the Pod can be scheduled on.
@@ -134,13 +134,13 @@ In addition to basic information configuration, the Daocloud container managemen
 
      You can click the `Add` button to add tags and annotations to workloads and container groups.
 
-     ![Labels and annotations](../../images/deploy16.png)
+     
 
 === "DNS Configuration"
 
      In some scenarios, the application will have redundant DNS queries. Kubernetes provides DNS-related configuration options for applications. By configuring DNS for applications, redundant DNS queries can be effectively reduced in some scenarios and business concurrency can be increased. For details, please refer to [DNS Configuration](PodConfig/EnvironmentVariables.md).
 
-     ![DNS Configuration](../../images/deploy17.png)
+     
 
      - DNS strategy: Configure DNS for applications to reduce redundant DNS queries and increase business concurrency.
 
@@ -159,7 +159,7 @@ In addition to basic information configuration, the Daocloud container managemen
 After confirming that all parameters are entered, click the `OK` button to complete the creation of the workload, and the system will automatically return to the list of `stateless workloads`.
 Click `︙` on the right side of the list to perform operations such as update, delete, elastic scaling, restart, and version rollback on the workload.
 
-![Action Menu](../../images/deploy18.png)
+
 
 Wait for the workload status to change to `Running`.
 If the workload status is abnormal, please refer to [Workload Status](../Workloads/PodConfig/workload-status.md) for specific exception information.
@@ -172,11 +172,11 @@ In addition to creating a Deployment by image as described above, it can also be
 
 1. After successfully logging in as the `NS Edit` user, click `Cluster List` on the left navigation bar to enter the cluster list page. Click on a cluster name to enter the `Cluster Details` page.
 
-     ![Cluster Details](../../images/deploy01.png)
+     
 
 2. On the cluster details page, click `Workload` in the left navigation bar to enter the workload list, and click the `Create with YAML` button in the upper right corner of the page.
 
-     ![Workload](../../images/deploy02Yaml.png)
+     
 
 3. After completing the above steps, you will jump to the detailed configuration page of `Create a stateless workload`, please refer to the following steps to complete the creation of a stateless workload.
 
@@ -211,6 +211,6 @@ spec:
 After confirming that all parameters have been entered, click the `OK` button to complete the workload creation and automatically return to the `Stateless Load` list.
 Click `︙` on the right side of the list to perform operations such as update, delete, elastic scaling, restart, and version rollback on the workload.
 
-![Action Menu](../../images/deploy18.png)
+
 
 Wait for the workload status to change to `Running`. If the workload status is abnormal, please refer to [Workload Status](../Workloads/PodConfig/workload-status.md) for specific exception information.

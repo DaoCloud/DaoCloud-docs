@@ -20,7 +20,7 @@ hide:
 
 | 菜单对象         | 操作           | Admin   | Workspace Admin | Workspace Editor | Workspace Viewer |
 | ---------------- | -------------- | ------- | --------------- | ---------------- | ---------------- |
-| 服务网格列表     | [创建网格](../../mspider/user-guide/service-mesh/create-mesh.md)       | &check; | &cross;         | &cross;          | &cross;          |
+| 服务网格列表     | [创建网格](../../mspider/user-guide/service-mesh/README.md)       | &check; | &cross;         | &cross;          | &cross;          |
 |                  | 编辑网格       | &check; | &check;         | &check;          | &cross;          |
 |                  | [删除网格](../../mspider/user-guide/service-mesh/delete.md)       | &check; | &check;         | &cross;          | &cross;          |
 |                  | [查看网格](../../mspider/user-guide/service-mesh/README.md)           | &check; | &check;         | &check;          | &check;          |

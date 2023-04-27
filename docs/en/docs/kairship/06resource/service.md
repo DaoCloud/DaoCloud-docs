@@ -13,15 +13,15 @@ Follow the steps below to manage multicloud services.
 
 1. After entering a multicloud instance, in the left navigation bar, click `Resource Management` -> `Multicloud Service`, and click the `Create` button in the upper right corner.
 
-    ![image](../images/service01.png)
+    
 
 2. On the `Create Multicloud Service` page, after configuring the access type and other information, click `OK`.
 
-    ![image](../images/service02.png)
+    
 
 3. Return to the multicloud service list, and the newly created one is the first one by default. Click `⋮` on the right side of the list to update and delete the service.
 
-    ![image](../images/service03.png)
+    
 
     !!! note
 

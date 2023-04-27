@@ -4,7 +4,7 @@
 
 如何高效管理这些资源？
 
-![resource](images/resource01.png)
+
 
 基于资源的管理能力本质上是建立一套与企业相关的，基于资源使用的关系结构。
 在 DCE 5.0 中主要通过工作空间与层级模块实现，该模块具有全局一致性的特点，方便您基于此关系结构对平台上多个子模块内的各种资源进行高效规划和管理。
@@ -36,7 +36,7 @@
 同时，用户（用户组）在层级中能够通过层级结构继承来自于父项的权限。
 用户在层次结构中每个节点权限来自于直接在该节点获取的权限和继承其父项权限的组合结果，权限之间是加合关系不存在互斥。
 
-![resource](images/resource02.png)
+
 
 资源通过工作空间进行分组，而工作空间中存在两种分组模式，分别是资源组和共享资源。
 一个资源只能加入一个资源组，资源组与工作空间一一对应，资源被加入到资源组后，工作空间的所有者将获得资源的管理权限，相当于该资源的所有者。
@@ -137,7 +137,7 @@
     答：微服务治理、应用工作台、服务网格下的资源均自动绑定 Workspace，且权限强依赖于 Workspace，需要通过获得 Workspace 权限继而获取相关的资源权限。
     能够进行 Workspace 授权的有 Admin、Workspace Owner、Folder Admin、Workspace Admin。
 
-[了解服务网格](../ghippo/01ProductBrief/WhatisGhippo.md){ .md-button }
+[了解服务网格](../ghippo/intro/what.md){ .md-button }
 
 [下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

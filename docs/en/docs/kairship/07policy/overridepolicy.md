@@ -8,15 +8,15 @@ Follow the steps below to create a OverridePolicy.
 
 1. After entering a multicloud instance, in the left navigation bar, click `Policy Management` -> `Differential Policy`, and click the `Create with YAML` button in the upper right corner.
 
-    ![image](../images/deploy01.png)
+    
 
 2. On the `Create with YAML` page, after entering the correct YAML statement, click `OK`.
 
-    ![image](../images/deploy02.png)
+    
 
 3. Return to the differentiated policy list, the newly created one is the first one by default. Click `⋮` on the right side of the list to edit YAML and perform delete operations.
 
-    ![image](../images/deploy03.png)
+    
 
     !!! note
 

@@ -50,7 +50,7 @@ Multus + Macvlan generally has two usage scenarios:
 
 A common network scenario using macvlan:
 
-![](../../images/vlan.png)
+
 
 As shown in the figure, combine two physical interfaces (ens224, ens256) on the host into a bond0, and then create two VLAN sub-interfaces based on bond0, namely bond0.100 and bond0.200.
 Then connect bond0 (that is, ens224 and ens256) to the switch trunk. And configure on the switch to allow vlan100 and vlan200 to pass through.

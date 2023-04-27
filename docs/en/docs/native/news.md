@@ -10,9 +10,18 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     Smart marketing digital service capability assessment includes six modules: digital scenarios, digital governance, platform-based products, digital service operations, trustworthy and compatible ecology and digital trust security service capabilities. Among them, the platform-based product capability focuses on whether it has the ability of customer insight, marketing planning, customer reach, customer conversion, customer operation and other smart marketing whole-chain links.
 
+- [June 19 KubeDay Israel will be held on June 19](https://www.cncf.io/blog/2023/04/06/announcing-kubeday-israel-will-take-place-on-june-19/)
+  
+    KubeDay is a regional cloud-native event series hosted by CNCF, targeting regions with active communities and interest in cloud-native technologies such as Kubernetes.
+    After kicking off in Japan last December, KubeDay makes its second stop in Tel Aviv, Israel. Applications for speaker proposals are now open (until 4.30), and speakers need to be present in person.
+
 - [June 6 ICT China-2023 High Level Forum - Cloud Native Industry Summit will kick off on June 6 in Beijing](https://mp.weixin.qq.com/s/FTOBYjCZxYMoOM8WJUz8mQ)
   
     Sponsored by the Ministry of Industry and Information Technology, the Cloud Native Industry Summit Forum will invite leading think tanks, government leaders, academician experts, enterprise executives and other heavyweight guests to discuss the cloud native ecology and explore the cloud native future.
+
+- [June 3 KCD Beijing Open Call for Topics (5.8 deadline)](https://mp.weixin.qq.com/s/iX7Qk8jr7vM13srimYs_rA)
+  
+    This KCD Beijing event is co-sponsored by CNCF and technology enthusiasts from DaoCloud, Microsoft, and Tetrate, and includes three sharing formats: lightning talk (10min), single/double talk (40min), and roundtable discussion (30min). Topics may include eBPF, WASM, Multi Cluster, Observability, Software Supply Chain Security, Serverless, DevOps, HPC, Streaming and other hot areas.
 
 ### 2023-05
 
@@ -24,6 +33,25 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     The Trusted Cloud Proprietary Cloud Assessment aims to assess the comprehensive level of proprietary cloud capabilities (including self-built and dedicated models), maturity (general), industry capabilities (financial), and special capabilities (compatibility) of the participating units.
     The hybrid cloud assessment evaluates the basic platform capabilities (including public cloud part, private cloud part, hyper-converged platform, and Cintron compatibility), special capabilities (security), application scenarios (data analysis, R&D operation), and comprehensive capabilities of the participating units.
+
+- [May 30 "Cloud Management Products and Services Atlas (2023)" officially launches the call for applications (5.30 application deadline)](https://mp.weixin.qq.com/s/gXGxUqTdO46US74gYrYEPw)
+  
+    The scope of the "Cloud Management Products and Services Atlas (2023)" collection includes two categories of solutions and products and services.
+    Among them, solutions are divided into industry solutions, intelligent application solutions and general solutions on the cloud; product services are divided into consulting planning, migration implementation, operation management, value-added development and optimization governance.
+
+- [May 19 China Academy of Information and Communication Technology Enterprise Digital Development Common Construction and Sharing Platform opened the latest batch of members of the "Digital Business Safety Production Promotion Center" recruitment (5.19 recruitment deadline)](https://mp.weixin.qq.com/s/ZNlJ76nTw4nj_z174Sqg0Q)
+  
+    "The main work of the Digital Business Safety Promotion Center is to improve the digital business safety production related to risk identification and prevention, business global awareness, real-time monitoring and early warning, rapid fault location, accident emergency disposal capabilities.
+    The standardization and scientificity of the digital business safety production system and processes of enterprises in various industries.
+
+- [May 16 CICT Launches "Cloud Native Product Catalog 2.0" Call (5.16 deadline)](https://mp.weixin.qq.com/s/xDq9APQec-h-tSx8-JICIw)
+  
+    The scope of "Cloud Native Product Catalog 2.0" includes infrastructure, cloud native middleware, cloud native data, cloud native security, and cloud native converged services. The results of the selection will be presented at the ICT China - High Level Forum - Cloud Native Industry Summit on June 6.
+
+- [May 12 2023 Trusted Edge Computing Innovation and Practice Cases and Industry Panorama Collection Launch (5.12 Filing Deadline)](https://mp.weixin.qq.com/s/KM2hnAoJ1KXJ6J0eovPzcw)
+  
+    The scope of Trusted Edge Computing Technology Innovation Cases includes full-stack technology areas such as IoT edge computing, edge cloud, edge native, edge AI, edge data, management scheduling, edge-cloud collaboration, and performance/stability.
+    The scope of best practice cases includes edge computing application construction practices in various industries such as communication, government, and finance. The scope of the panorama includes edge software and solutions, edge applications, edge open source, industry services and other edge industry ecology.
 
 - [May 8-9 cdCon + GitOpsCon North America 2023 Conference Agenda Released](https://events.linuxfoundation.org/cdcon-gitopscon/program/schedule/)
   
@@ -47,6 +75,11 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     The Cost Optimization Series standard assessment aims to evaluate cost optimization services, native cost optimization tools, and hybrid multi-cloud cost optimization tools.
     The Resource Benefit Metrics Assessment is for cloud platform builders, operators, and users to assess the use and effectiveness of cloud resources. Participating companies can choose one or more of the three categories of cloud resource benefit modules: cost, performance, and security, for assessment.
 
+- [April 22 Observability Summit 2023 to be held in Beijing](https://mp.weixin.qq.com/s/UTLrc97XaPpo1DCrw85xaQ)
+  
+    The "Observability Summit 2023" is organized by the cloud-native community to discuss and share best practices on observability.
+    This includes the latest technologies and tools for enabling observability in cloud-native applications and infrastructure, such as Prometheus, SkyWalking, eBPF, and more.
+
 - [April 21-22 InfoQ ArchSummit Global Architect Summit to be held in Shanghai, Call for Topics](https://mp.weixin.qq.com/s/u3EJewx2gO_P-x1xZgCW6Q)
   
     The topics identified for the summit include: Exploring Digital Transformation in the Financial Industry, Combining Big Data + Architecture Applications, ToB Software Quality Assurance, Enterprise Architecture Evolution, Application Modernization and Architecture Stability Assurance under Digital Transformation.
@@ -57,13 +90,51 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     The second annual Open Source Cloud Native Developer Day, co-sponsored by Microsoft and Intel, will explore four key topics: examples of cloud native practices at scale, the latest open source cloud native technologies, the secure software supply chain, and GitOps.
     The event is expected to take place in Shanghai (April 8) and Beijing (April 22).
 
+- [April 21 Edge Native Platform Technology Salon to be held in Beijing](https://mp.weixin.qq.com/s/3uYaLamKdeHAJrQEhWLsPw)
+  
+    The Edge Native Platform Technology Salon, hosted by VMware, is a technology sharing and discussion event that takes the edge as the target scenario and enables the combination of multi-cloud/cross-cloud services and edge computing with the help of cloud native technology (Kubernetes).
+    The event invites several technical experts in the field of edge computing to share edge-native application platforms, infrastructure, frameworks, use cases and other related technical topics, and the event will also launch the ACE Edge Native Alliance for the first time.
+
+- [April 20 China Academy of Information and Communications Technology launches the 2023 Cloud Native Excellence Case Call (4.20 filing deadline)](https://mp.weixin.qq.com/s/K3awjJQPCnE30bTEER-vcg)
+  
+    There are four major categories of cloud-native excellent cases: excellent cases of cloud-native applications, cloud-native technology innovation solutions and products, excellent cases of cloud-native security, and new enterprises in cloud-native field.
+    Cloud service providers can jointly declare with their A-side customers, with the application cases of A-side customers as the main participants and cloud service providers as the technology provider as the joint declaration unit.
+
+- [April 20 China ICT officially launches industry cloud platform management assessment series](https://mp.weixin.qq.com/s/YTJSLiAF8OMcUG6eF2YRWg)
+  
+    The industry cloud platform management assessment series includes industry cloud platform management service (tenant management) capability assessment, industry cloud platform management (platform management) capability assessment, and industry cloud platform usage benefit maturity assessment. The first batch of assessments are for financial-grade, telecom-grade, and general industry cloud platform management service (tenant management) capabilities. The final results will be released at the Trusted Cloud Conference in July.
+
+- [April 17 InfoQ released "China Open Source Ecological Mapping 2023"](https://mp.weixin.qq.com/s/ea-2bd_Ohy_BxaPVbx9d6A)
+  
+    The mapping includes a total of 913 Chinese open source projects, of which front-end, AI and cloud-native are the most active areas of Chinese open source, middleware, database, big data and operating system have higher average scores than the overall average score (based on code value and community activity), and more than half of the Top100 projects are in the three major areas of front-end, database and AI.
+
 - [April 15-16 Global Open Source Technology Summit GOTC 2023 will be held in April in Shanghai, and the call for proposal is now open](https://gotc2023.oschina.net/)
   
     The Global Open Source Technology Summit is co-sponsored by Shanghai Pudong Software Park, Linux Foundation Asia Pacific, and Open Source China. The conference focuses on hot topics such as cloud native, metaverse, eBPF, Web3.0, open source governance, open source education and training, front-end, infrastructure software, AI, IoT, etc.
 
+- [April 15 Microservices x Containers Open Source Developer Meetup to be held in Chengdu](https://mp.weixin.qq.com/s/GaluU-zRXKrtVvtR9H-hWQ)
+  
+    This Microservices x Containers Open Source Developer Meetup will focus on technology sharing and enterprise practices of the current hot open source projects in the cloud native area.
+    The core maintainers of Dubbo, KubeVela, OpenSergo, OpenYurt, Seata, Higress and other cloud-native open source projects will be invited to share cutting-edge technologies, recent community developments, architecture practices and enterprise application cases.
+
+- [April 15 Deadline: Open Call for Topics for 2023 Open Atom Global Open Source Summit](https://mp.weixin.qq.com/s/Z1W7x2-d7eTcj2jVHhiDUw)
+  
+    The Open Atom Global Open Source Summit 2023 is sponsored by the Open Atom Open Source Foundation and will open in mid-June with the theme of "Open Source Empowers, Include the Future".
+    This year's summit focuses on the latest development of global open source ecology and cutting-edge technology dynamics, covering open source governance, open source projects, open source cutting-edge technologies, open source industry practices and other directions.
+    It focuses on new technologies in the fields of database, cloud-native, blockchain, artificial intelligence, smart driving, Internet of Things, front-end technology, and the latest application results in various fields and industries.
+
 - [April 15 2023 Cloud Native Community Observability Summit to be Held, Instructor and Sponsor Recruitment Underway (3.10 Deadline)](https://mp.weixin.qq.com/s/erf33B2--kUgLg1D730tOg)
   
     The Cloud Native Community will hold an Observability Summit in Beijing on Saturday, April 15, 2023. Topics will focus on open source projects and applications in observability-related areas, including but not limited to: metrics monitoring, distributed tracking, log collection, technology innovation, application practices, etc.
+
+- [April 12 CNCF Platform Working Group Releases White Paper on Cloud Native Computing Platform](https://appdelivery.cncf.io/whitepapers/platforms/)
+  
+    The platform enables the rapid integration of infrastructure and application components to accelerate the delivery of applications and services.
+    The white paper describes the nature and benefits of the cloud-native platform, how the CNCF project serves as the foundation for the platform in conjunction with platform construction, and the challenges that platform teams may face as well as best practices.
+
+- [April 12 IDC Officially Launches Cloud Native Research Series](https://mp.weixin.qq.com/s/Sj5OFKy0Shyk1XSwZvAQfw)
+  
+    This research will start from six major areas and business scenarios of cloud native, deeply analyze cloud native technologies, and conduct relevant research on technology development trends, market space situation, key vendor products and solutions, and excellent practices.
 
 - [April 8 KubeSphere Meetup Shenzhen Station has been launched](https://mp.weixin.qq.com/s/QGFS8nO6qMClUBdn2Bav3g)
   
@@ -80,7 +151,23 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     The Meetup includes lightning talks (10 min) and single/duo talks (40 min).
     Topics must be related to open source and cloud-native ecosystem, and topics related to KubeSphere are more than welcome.
 
+- [April 6 "Financial e-Commerce" magazine released the "Banking Industry Private Cloud Construction Development Research Report"](https://mp.weixin.qq.com/s/QHyDhH54LP5FeUs-Fr-jCw)
+  
+    The report shows that among the 129 banking financial institutions participating in the survey, 53.5% adopt private clouds and 28.7% adopt container clouds.
+    The financial infrastructure construction is crossing three stages of virtualization, private cloud and container cloud.
+    The ability to smoothly upgrade and "one cloud with multiple cores", and the ability to support the construction of Cintron platform and application migration are the top two high-value technologies that receive the most attention in private cloud construction.
+
+- [April 6 "2023 Cloud Cost Optimization Capacity Building - Enterprise Sharing Session" will be held in Beijing](https://mp.weixin.qq.com/s/ZD8CTtFsCkxVzVcISai60w)
+  
+    This sharing session will release the evaluation results of the first batch of MSPs, native cost optimization tools, and hybrid multi-cloud cost optimization tools (the first batch) in 2023, and announce the latest members of the Cloud Optimization Working Group.
+    In addition, several business users and service experts with best practices in cloud cost optimization will be invited to share their real-world experiences related to cloud cost optimization.
+
 ### 2023-03
+
+- [March The "Multi-Cloud Data Storage White Paper", written by DaoCloud, was officially released](https://mp.weixin.qq.com/s/mbUpKTNI231ehgf3cSaNeQ)
+  
+    The White Paper systematically sorts out the driving forces and data challenges in the multi-cloud era, and proposes measures and development trends for multi-cloud data storage.
+    The white paper emphasizes that the development of multi-cloud data storage focuses on expanding data sharing applications, enhancing data storage intelligent grading capabilities, enabling data flow across clouds, helping transform applications to the cloud through container-oriented storage innovation, and developing new storage and computing architectures to achieve flat hierarchy and flexible assembly of cloud computing infrastructures.
 
 - [March 27-April 2 The 2023 "Workforce Shanghai" Innovation Conference Series will be held from March 27-April 2](https://mp.weixin.qq.com/s/BvxB3K5vWhl2zqy_c6PvBA)
   
@@ -99,6 +186,17 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     KubeCrash Spring 2023 invites experts from Xbox, Boeing and other experts as well as CNCF project maintainers to share their talks.
     The first day will be a Zero Trust Day, focusing on secure access to clusters, intra-cluster communication security, managing TLS certificates and policy definitions, etc. The second day will be an Innovation Day, focusing on gaming, ML/AI and other breakthrough technologies.
+
+- [March 29 InfoQ Research Center Releases White Paper "China Open Source Ecological Mapping 2022 - Cloud Native Domain"](https://mp.weixin.qq.com/s/jyUR2BaD32--f0B_1LFRBQ)
+  
+    The white paper shows that there are more than 110 domestic open source projects in the cloud-native domain, involving 26 project sponsors.
+    They can be divided into 7 major technology segments, which are microservices, middleware, service grid, container technology and orchestration, platform & database & data collection, framework & engine, and functional system.
+    Among them, microservices, container technology and orchestration, service grid and other cloud-native core technology areas are the core of the cloud-native technology system.
+
+- [March 27 LF Research Launches "Focus on Global 2023" Open Source Trends Survey, Open Call for Sponsors and Partners](https://mp.weixin.qq.com/s/j82QnOQym8W2WtXsTpT87g)
+  
+    Linux Foundation Research has launched the "Focus on Global 2023" project to investigate perceptions of open source participation in different regions, providing valuable insights to better understand and support open source participation around the world.
+    This includes: the scope of open source projects across organizations and industries, opportunities and challenges for private and public sector participation in open source, the value proposition of open source, leading open source technologies and best practices.
 
 - [March 25, on the Magic City! Cloud Native Open Source Project Application Practice Session 2 Registration Open](https://mp.weixin.qq.com/s/RHcxtZlSBfabuPDkCBGQbw)
   
@@ -166,7 +264,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     In addition, GitOps project Argo, service mesh technology Envoy, Cilium and Istio also ranked high.
     The [2022 CNCF Project Rankings](https://docs.google.com/spreadsheets/d/1NifFdE45BlscO6j7vlDspccQ-i9Ksgip6yx2bmhmCCs/edit#gid=976519966) are shown below (bubble area is proportional to the number of authors) and the number of pr and issue on the y-axis, and the number of commits on the x-axis).
 
-    ![CNCF](./images/CNCF-Projects.png)
+    
 
 - [January 9 China ICT Academy released 2022 China Serverless User Survey Report](https://mp.weixin.qq.com/s/qpWr5o3GTynHXhexHidx3Q)
   
@@ -227,7 +325,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     The X-axis represents customer satisfaction and the Y-axis represents market share.
     The leading container management platform products are AWS Fargate, Amazon ECS, Amazon EKS and Mirantis Kubernetes Engine.
 
-    ![G2](./images/G2.png)
+    
 
 - [Kasten launches free cloud native learning website KubeCampus.io](https://www.kasten.io/kubernetes/resources/blog/kubecon-detroit-recap-and-introducing-kubecampus)
   
@@ -258,7 +356,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     In 2021, the market size of China's private cloud system platform reaches 5.14 billion yuan, up 45.2% year-on-year.
     Among them, the market size of container platform is 1.26 billion yuan, accounting for 24.5 % of the private cloud system platform size.
     The 2021 private cloud system platform vendor competitiveness quadrant analysis chart is as follows.
-    ![private](./images/private.png)
+    
 
 - [On December 14, the selection of the second "Ten Cloud Native Technology Innovations/Pioneering Practices" was officially launched](https://mp.weixin.qq.com/s/UZ_05I06VCJYN5MKLwO7IA)
 
@@ -321,7 +419,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [International consulting firm Sullivan released the 2022 Cloud Native Application Protection Platform Radar Report on November 29](https://1665891.fs1.hubspotusercontent-na1.net/hubfs/1665891/Frost%20Radar%20-%20CNAPP%202022%20-%20Aqua%20Security.pdf?_hsmi=235753068&_hsenc=p2ANqtz-_imKv0Cl7-_MGhYeSCsaey9txVoiKZQ7AiKuvvWdshrrAcw1zflc5_x9gLM_kJDXKVTZ8akc0IkBEXC_FA-TNBAR)x
   
      Sullivan selected 15 leading manufacturers based on business growth and innovation indicators, including Aqua Security, Check Point, Lacework, Sysdig, etc. Among them, Aqua was selected as the preferred benchmarking enterprise for investment or cooperation.
-![protection](./images/protection.png)
+
 
 - [The KubeSphere community launched a podcast KubeSphere Talk on November 29](https://mp.weixin.qq.com/s/Ud__u2YaUkdSx5yi7dKDHw)
   
@@ -430,7 +528,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      The Gartner Magic Quadrant for CIPS focuses on infrastructure as a service (IaaS) and integration platform as a service (PaaS) offerings.
      This year's report shows that AWS, Azure, and Google Cloud continue to lead the way and are named in the Leaders quadrant. In China, Alibaba Cloud, Huawei Cloud and Tencent Cloud were selected, among which Huawei Cloud was selected for the first time.
 
-     ![quadrant](./images/Quadrant.png)
+     
 
 - [On October 17, iResearch released a research report "Insights on the Development of Basic Cloud Service Industry in 2022"](https://mp.weixin.qq.com/s/FGc2yFUfflUuf13Z0NAzvQ)
 
@@ -506,7 +604,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      Emerging technology trends for 2022 focus on three themes: Evolving/Scaling Immersive Experiences, Accelerating AI Automation, and Optimizing Technician Delivery.
      Among them, optimizing the delivery of technical personnel, OpenTelemetry, etc. will have a significant impact on business and society in the next 2-5 years, while data observability, observability-driven development, and industry cloud platforms will take 5-10 years to be widely adopted. use.
 
-     ![hype](./images/hype.png)
+     
 
 - [September 15-17 International Open Source Festival, Cloud Native becomes the focus](https://mp.weixin.qq.com/s/wrEzT5xXGCvijZ-sK4v21A)
 
@@ -524,7 +622,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      GigaOm evaluates mainstream service meshes from four dimensions: specialized infrastructure layer, sidecar practice, control plane configuration, and control plane telemetry.
      Among them, Gloo Mesh, greymatter.io, Kong Mesh, and Linkerd were rated as outstanding performers. Of note is Cilium Service Mesh, one of the first service meshes that can leverage either a sidecar or no sidecar model.
 
-     ![radar](./images/mesh.png)
+     
 
 - [September 13-16, the Linux Foundation announced the Open Source Summit Europe 2022 conference schedule](https://linuxfoundation.org/featured/the-linux-foundation-announces-conference-schedule-for-open-source-summit-europe-2022/)
 
@@ -558,7 +656,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      The maturity curve of cloud platform service technology in 2022 shows that cloud native technology is currently in a period of inflated expectations, and is expected to enter the production maturity period in the next 5-10 years;
      Container management technology is at the trough of the bubble burst, and will enter a mature stage in 2-5 years; integrated platform as a service (iPaaS) and low-code application platform (LCAP) technologies will reach production maturity within two years (the practical significance of the technology has been proven and Accept).
 
-     ![Gartner](./images/gartner.jpg)
+     
 
 - [August 27 KubeSphere Community Cloud Native Technology Exchange Meetup Hangzhou Station registration opens](https://mp.weixin.qq.com/s/TNqG6tRxUwRrA-NoP26lRg)
 
@@ -648,7 +746,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      What this group has in common is to combine storage platforms with Kubernetes distributions and cluster management products to provide Kubernetes users with a highly integrated overall solution.
      Vendors in the lower left quadrant are more oriented toward specific functions, deployment models, or personalized use cases.
 
-     ![radar](./images/storage.jpg)
+     
 
 - [Alibaba Cloud released "Cloud Native Architecture White Paper 2022 Edition" on July 27](https://mp.weixin.qq.com/s/G8TAkeezVQz22bevr1zdKw)
 
@@ -806,7 +904,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      Datadog, a cloud monitoring SaaS platform vendor, has also risen sharply in the rankings with its powerful platform product portfolio.
      Cisco (AppDynamics) and IBM (Instana) dropped more notably. In addition, Alibaba Cloud became the only domestic vendor selected by virtue of its core APM product - Application Real-time Monitoring Service (ARMS).
 
-     ![APM Quadrant](./images/Magic.png)
+     
 
 - [On June 6, Kubecost, a Kubernetes cost management company, joined forces with AWS and Google to submit a cost management open source project to CNCF—OpenCost](https://thenewstack.io/opencost-open-source-collaboration-on-kubernetes-cost-standards/)
 

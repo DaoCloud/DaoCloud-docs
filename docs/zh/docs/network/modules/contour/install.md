@@ -62,5 +62,5 @@ hide:
 
     ![contour-yaml](../../images/contour-yaml.png)
 
-创建完成后，创建 Ingress 路由，可通过 `平台级负载均衡` 选择 Contour 实例。详情参考： [创建路由](../../../services-routes/create-ingress.md)
+创建完成后，创建 Ingress 路由，可通过 `平台级负载均衡` 选择 Contour 实例。详情参考： [创建路由](../../../kpanda/user-guide/services-routes/create-ingress.md)
 

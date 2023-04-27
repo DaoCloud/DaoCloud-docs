@@ -11,7 +11,7 @@ Longhorn and DCE can be used together to deploy high-availability persistent blo
      - Control plane: Longhorn Manager deployed with DaemonSet
      - Data plane: Longhorn Engine is a storage controller that can have multiple replicas
 
-     ![Architecture Diagram](../images/long-archi.png)
+     
 
 1. Longhorn Storage Volumes
 
@@ -21,7 +21,7 @@ Longhorn and DCE can be used together to deploy high-availability persistent blo
      - The default number of replicas of the storage volume can be set in settings. The number of replicas can be changed through the UI after the storage volume is mounted.
      - Longhorn is a crash-consistent block storage solution that automatically synchronizes the sync command before creating a snapshot snapshot
 
-     ![volume](../images/long-volume.png)
+     
 
 1. Data backup and external secondary storage
 
@@ -31,7 +31,7 @@ Longhorn and DCE can be used together to deploy high-availability persistent blo
      - Supports continuous and repeated snapshots and backups.
      - Support Clone of CSI storage volume
 
-     ![Data Backup](../images/long-backup.png)
+     
 
 1. High Availability
 

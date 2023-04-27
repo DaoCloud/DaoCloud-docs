@@ -35,9 +35,9 @@ DCE 5.0 mainly promotes Harbor as a registry to provide image services.
 
     Expected result: When all users on the platform deploy applications in the namespace, they can select images in the public registry space for deployment through the image selector.
 
-    ![Select Image](../images/admin01.png)
+    
 
-    ![Image Selection](../images/admin02.png)
+    
 
 1. Assuming that you have created a managed Harbor or connected to an external Harbor, follow the steps below to share the private image to the namespace under the specified workspace (tenant) (you can select the private image through the image selector when deploying the application image):
 
@@ -83,9 +83,9 @@ DCE 5.0 mainly promotes Harbor as a registry to provide image services.
 
     Expected result: Only when deploying applications in namespaces under this workspace, you can use the image selector to select private images under this registry space to deploy applications.
 
-    ![Select Image](../images/admin03.png)
+    
 
-    ![Image Selection](../images/admin04.png)
+    
 
 !!! tip
 

@@ -30,7 +30,7 @@ Without migrating data, switch the production end first, and then switch the con
 
 - Viewed on the RabbitMQ Management Web UI page.
 
-    ![view](../images/migrate01.png)
+    
 
 - Call the API to view
 
@@ -47,7 +47,7 @@ Without migrating data, switch the production end first, and then switch the con
 
 - In the Overview view, the number of consumed messages (Ready) and the number of unacknowledged messages (Unacked) are both 0, indicating that the consumption is complete.
 
-    ![Number of messages is 0](../images/migrate02.png)
+    
 
 ### Option II
 
@@ -57,7 +57,7 @@ Migrate the data first, and then switch the production end and the consumer end 
 
 Both `rabbitmq-cluster-a` and `rabbitmq-cluster-b` need to enable the shovel plugin.
 
-![Open plugin](../images/migrate03.png)
+
 
 Parameter Description:
 
@@ -76,15 +76,15 @@ Parameter Description:
 
 #### Number of messages before migration
 
-![Pre-migration message](../images/migrate04.png)
+
 
 #### Configure shovel information
 
-![Configure shovel](../images/migrate05.png)
+
 
 #### shovel running status
 
-![running status](../images/migrate06.png)
+
 
 When the shovel status is "running", the migration starts. After the data migration is complete, switch the production end and consumer end to the `rabbitmq-cluster-b` cluster to complete the migration process.
 
@@ -92,8 +92,8 @@ When the shovel status is "running", the migration starts. After the data migrat
 
 - rabbitmq-cluster-a cluster message status
 
-    ![cluster message](../images/migrate07.png)
+    
 
 - rabbitmq-cluster-b cluster message status
 
-    ![cluster message](../images/migrate08.png)
+    

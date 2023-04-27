@@ -1,109 +1,107 @@
-# Sentinel 服务治理规则
+# Sentinel service governance rules
 
-微服务引擎支持通过[服务网格](../../../../mspider/03UserGuide/02TrafficGovernance/README.md)或 Sentinel 治理东西向流量。本页介绍使用 Sentinel 进行服务治理时使用的治理规则。
+The microservice engine supports managing east-west traffic through [service grid](../../../../mspider/user-guide/02TrafficGovernance/README.md) or Sentinel. This page describes the governance rules used when using Sentinel for service governance.
 
-## 流控规则
+## flow control rules
 
-流控规则的原理是监控应用或服务流量的 QPS 指标，当指标达到阈值时根据预先设定的规则对请求流量进行控制，防止应用因短时间内无法处理过多流量而崩溃。使用流控规则后，系统可以在接下来的空闲期间逐渐处理堆积的请求，当指标重新恢复到阈值以下后，恢复正常的流量请求控制。
+The principle of flow control rules is to monitor the QPS indicator of application or service traffic. When the indicator reaches the threshold, the request flow is controlled according to the preset rules to prevent the application from crashing due to the inability to handle too much traffic in a short period of time. After using flow control rules, the system can gradually process accumulated requests during the next idle period, and resume normal flow request control when the indicator returns below the threshold.
 
-- 资源名：资源的名称，资源是指规则的作用领域。
+- Resource name: the name of the resource, and the resource refers to the role domain of the rule.
 
-- 来源应用：Sentinel 可以针对调用者进行限流，默认为 default，表示不区分来源，全部限制。
+- Source application: Sentinel can limit the flow for the caller, and the default is default, which means that it does not distinguish the source and limits all.
 
-- 流控模式：流控模式分为三种。
+- Flow control mode: There are three types of flow control modes.
   
-    - 直接模式：当前的资源达到阈值时，直接限流。
-    - 关联模式：当关联的资源达到阈值时，限流关联资源。
-    - 链路模式：只记录指定链路上的流量（指定资源从入口资源进来的流量，如果达到阈值，就可以限流）。
+     - Direct mode: When the current resource reaches the threshold, the flow is directly limited.
+     - Association mode: When the associated resource reaches the threshold, the associated resource is limited.
+     - Link mode: Only record the traffic on the specified link (the traffic of the specified resource coming in from the ingress resource, if it reaches the threshold, the traffic can be limited).
 
-- 阈值类型：
+- Threshold type:
 
-    - QPS：QPS 指每秒钟的请求数量，当调用该接口的 QPS 达到阈值时进行限流。
-    - 线程数：调用该接口的线程数达到阈值时进行限流。
+     - QPS: QPS refers to the number of requests per second. When the QPS of calling this interface reaches the threshold, the flow will be limited.
+     - Number of threads: Limit the flow when the number of threads calling this interface reaches the threshold.
 
-- 阈值模式：
+- Threshold mode:
 
-    - 单机阈值：仅针对某个节点设置阈值。
-    - 是否集群：是否针对整个集群设置阈值。
+     - Standalone Threshold: Set the threshold only for a certain node.
+     - Cluster or not: Whether to set the threshold for the entire cluster.
 
-- 流控效果：
+- Flow control effect:
 
-    - 快速失败：流量超过设定的阈值时，直接拒绝请求。
+     - Fast fail: When the traffic exceeds the set threshold, the request is directly rejected.
 
-    - Warm Up：缓慢增加通过的流量，逐渐预热系统，防止空闲系统突然涌入大量流量而被压垮。从请求 QPS 从 阈值 / 3 开始，设置预热时长，经预热时长后逐渐升至设定的 QPS 阈值。
+     - Warm Up: Slowly increase the passing traffic, gradually warm up the system, and prevent the idle system from being overwhelmed by a sudden influx of large amounts of traffic. Starting from the requested QPS threshold / 3, set the warm-up time, and gradually increase to the set QPS threshold after the warm-up time.
 
-    - 排队等待：流量超过阈值时排队匀速通过，阈值类型必须需设成 QPS，否则无效。适用于处理间隔性突发流量，在某一秒有大量请求涌入，而接下来的几秒则处于空闲状态，例如消息队列。
+     - Waiting in queue: When the traffic exceeds the threshold, the queue passes at a uniform speed. The threshold type must be set to QPS, otherwise it is invalid. It is suitable for dealing with intermittent burst traffic, where a large number of requests flood in in a certain second, and it is idle in the next few seconds, such as a message queue.
 
-    ![流控规则页面](../imgs/flow-control-rule01.png)
+    
 
-## 熔断降级
+## Fuse downgrade
 
-在分布式系统中，各个服务通常需要调用其他的内部或外部服务才能正常运行，如果被调用的服务不够稳定，那么级联效应会导致调用者自身的响应时间也变长，产生线程堆积甚至导致服务不可用。为了避免这种情况出现，需要通过熔断机制根据预设的规则切断不稳定的调用链路，或者对下游服务进行降级，保护系统的整体可用性。
+In a distributed system, each service usually needs to call other internal or external services to run normally. If the called service is not stable enough, the cascading effect will cause the caller's own response time to become longer, resulting in thread accumulation and even causing service is not available. In order to avoid this situation, it is necessary to cut off unstable call links according to preset rules through the fuse mechanism, or downgrade downstream services to protect the overall availability of the system.
 
-- 熔断策略：
+- Circuit breaker strategy:
 
-    - 慢调用比例：当请求的每秒平均响应时间超过最大 RT，且时间窗口内通过的请求数量 >=5，同时满足这两个条件时触发降级。
+     - Slow call ratio: When the average response time per second of the request exceeds the maximum RT, and the number of requests passed within the time window >=5, the degradation is triggered when these two conditions are met at the same time.
 
-    - 异常比例：当统计时长内的请求数量达到最小请求数，并且异常请求的比例大于阈值时，触发熔断。
+     - Abnormal ratio: When the number of requests within the statistical period reaches the minimum number of requests and the ratio of abnormal requests is greater than the threshold, a circuit breaker is triggered.
 
-    - 异常数：统计时长内的异常请求数量超过阈值之后，触发熔断降级。
+     - Number of exceptions: After the number of abnormal requests within the statistical period exceeds the threshold, a fuse downgrade is triggered.
 
-- 比例阈值：触发熔断的慢调用比例阈值百分比。
+- Ratio Threshold: The slow call ratio threshold percentage that triggers the circuit breaker.
 
-- 最大 RT ：请求的最长响应时间，超过该时间则判定为慢请求，单位为 ms，最大值为 4900。
+- Maximum RT: The longest response time of the request, if it exceeds this time, it will be judged as a slow request, the unit is ms, and the maximum value is 4900.
 
-- 熔断时长：设置熔断持续的时长，超过熔断时长后即取消熔断，恢复原来的服务调用。
+- Fuse duration: Set the duration of the fusing, after the fusing duration is exceeded, the fusing will be canceled and the original service call will be restored.
 
-- 最小请求数：触发熔断的最小请求数量，超出该数量时即启动熔断机制。
+- Minimum number of requests: The minimum number of requests to trigger a circuit breaker, and the circuit breaker mechanism will be activated when this number is exceeded.
 
-    ![熔断规则页面](../imgs/breaker-ui.png)
+    
 
-- 统计时长：统计时间窗口，即统计某一段时间内的请求量。
+- Statistical duration: Statistical time window, that is, to count the number of requests within a certain period of time.
 
-## 热点规则
+## Hotspot rules
 
-热点指经常被访问的数据。设置热点规则时，需要配置热点参数（即需要统计访问量的目标参数），然后系统会统计对该热点参数的请求量，当达到一定的阈值后，包含该热点参数的资源就是被限制调用。热点规则适用于统计被频繁访问的资源，达到一定的阈值后限制对该资源的访问。
+Hotspots refer to data that is accessed frequently. When setting hotspot rules, you need to configure hotspot parameters (that is, the target parameters that need to count visits), and then the system will count the requests for this hotspot parameter. When a certain threshold is reached, resources containing this hotspot parameter will be restricted from calling. The hotspot rule is suitable for counting resources that are frequently accessed, and restricts access to the resource after a certain threshold is reached.
 
 
-- 参数索引：指定热点参数的下标，从 0 开始。如果额外参数不匹配则默认为 0.
-- 参数例外项：针对指定的参数值单独设置阈值，仅支持基本类型和字符串类型。
+- Parameter index: Specifies the subscript of the hotspot parameter, starting from 0. Defaults to 0 if extra arguments don't match.
+- Parameter exceptions: set thresholds individually for specified parameter values, and only support basic types and string types.
 
-![热点规则页面](../imgs/hotspot-ui.png)
 
-## 系统规则
 
-系统规则是指，由 Sentinel 综合系统容量、CPU 使用率、平均响应时间、入口 QPS 等数据，从整体维度出发自动选择流控规则控制请求流量。需要注意的是，系统规则仅对入口流量生效，即进入应用的流量。设置系统规则时需要选择阈值类型，目前支持五种阈值：
+## System rules
 
-- Load：将系统的负载作为启发指标，进行自适应系统保护。当系统负载超过设定的启发值，且系统当前的并发线程数超过估算的系统容量时才会触发系统保护。
+System rules refer to Sentinel's comprehensive system capacity, CPU usage, average response time, entrance QPS and other data, and automatically select flow control rules to control request traffic from the overall dimension. It should be noted that system rules only take effect on ingress traffic, that is, traffic entering the application. When setting system rules, you need to select the threshold type. Currently, five thresholds are supported:
+
+- Load: Use the system load as a heuristic indicator for adaptive system protection. System protection will only be triggered when the system load exceeds the set heuristic value and the current number of concurrent threads in the system exceeds the estimated system capacity.
 
 !!! note
 
-    Load 类型的阈值仅对 Linux/Unix-like 机器生效。
+     Load type thresholds are only valid for Linux/Unix-like machines.
 
-- RT：当单台机器上所有入口流量的平均响应时间达到阈值即触发系统保护，单位是毫秒。
+- RT: When the average response time of all ingress traffic on a single machine reaches the threshold, system protection is triggered, and the unit is milliseconds.
 
-- 线程数：当单台机器上所有入口流量的并发线程数达到阈值即触发系统保护。
+- Number of threads: When the number of concurrent threads of all ingress traffic on a single machine reaches the threshold, system protection is triggered.
 
-- 入口 QPS：当单台机器上所有入口流量的 QPS 达到阈值即触发系统保护。
+- Ingress QPS: When the QPS of all ingress traffic on a single machine reaches the threshold, system protection is triggered.
 
-- CPU 使用率：当系统 CPU 使用率超过阈值即触发系统保护（取值范围 0.0-1.0）。
+- CPU usage: When the system CPU usage exceeds the threshold, system protection will be triggered (value range 0.0-1.0).
 
-    ![系统规则页面](../imgs/system-rule-ui.png)
+    
 
-## 授权规则
+## Authorization rules
 
-- 流控应用：调用方，也就是调用来源，比如 app 端调用或 pc 端调用。
+- Flow control application: the caller, that is, the source of the call, such as an app-side call or a PC-side call.
 
-- 授权类型：
+- Authorization type:
 
-    - 白名单：只有请求来源位于白名单内时才可放行。
+     - Whitelist: Only when the request source is in the whitelist can it be released.
 
-    - 黑名单：请求来源位于黑名单时不通过，放行其余的请求。
+     - Blacklist: If the source of the request is in the blacklist, it will not pass, and the rest of the requests will be allowed.
 
-    ![授权规则页面](../imgs/auth-rule-ui.png)
+    
 
-## 集群流控
+## Cluster flow control
 
-集群流控可以控制某个服务调用整个集群的实时调用量，可以解决因流量不均匀导致总体限流效果不佳的问题。集群流控可以精确地控制整个集群的调用总量，结合单机限流兜底，更好地发挥流量防护的效果。
-
-![集群流控页面](../imgs/cluster-fc-ui.png)
+Cluster flow control can control the real-time call volume of a service calling the entire cluster, and can solve the problem of poor overall flow limiting effect due to uneven flow. Cluster flow control can accurately control the total number of calls in the entire cluster, and combined with single-machine current limiting, it can better exert the effect of traffic protection.

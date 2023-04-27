@@ -12,7 +12,7 @@ The specific deployment plan is based on business needs, refer to the following 
 
 ## Single data center single management cluster
 
-![Scenario Schematic](../images/scenario01.png)
+
 
 Premise: Prepare a node. The operating system and architecture of the node must be consistent with the node to be created in the cluster.
 
@@ -24,7 +24,7 @@ Premise: Prepare a node. The operating system and architecture of the node must 
 
 When the user needs to add a management cluster in the current single data center to manage the lifecycle of the new business cluster, there is no need to use the bootstrapping node to install it again, and only need to install the kubean operator on a working cluster that has already been created The component can endow the cluster with the ability and role to manage the cluster. As shown below:
 
-![Scenario Schematic](../images/scenario02.png)
+
 
 Prerequisite: The previous step of deploying a single-data center single-management cluster has been completed.
 
@@ -40,7 +40,7 @@ When a user has multiple data centers, or the networks of different data centers
 
 Premise: Prepare a node. The operating system and architecture of the node must be consistent with the node to be created in the cluster.
 
-![Scenario Schematic](../images/scenario03.png)
+
 
 #### Shanghai Data Center
 

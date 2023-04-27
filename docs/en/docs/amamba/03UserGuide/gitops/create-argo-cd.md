@@ -5,14 +5,14 @@ Application Workbench is based on open source software [Argo CD](https://argo-cd
 ## Prerequisites
 
 - Need to create a workspace and a user, the user needs to join the workspace and give `workspace edit` role.
-  Refer to [Creating Workspaces](../../../ghippo/04UserGuide/02Workspace/Workspaces.md), [Users and Roles](../../../ghippo/04UserGuide/01UserandAccess/User. md).
+  Refer to [Creating Workspaces](../../../ghippo/user-guide/02Workspace/Workspaces.md), [Users and Roles](../../../ghippo/04UserGuide/01UserandAccess/User. md).
 - Prepare a Git repository.
 
 ## Create the Argo CD application
 
 1. On the `Application Workbench` -> `Continuous Release` page, click the `Create Application` button.
 
-    ![Create Application](../../images/argo01.png)
+    
 
 1. On the `Create Application` page, after configuring `Basic Information`, `Deployment Location`, `codebase Source` and `Sync Policy`, click `OK`.
 
@@ -36,20 +36,20 @@ Application Workbench is based on open source software [Argo CD](https://argo-cd
             - Replace resources: whether to replace existing resources
             - Synchronous retries: parameterize application synchronous retries, support setting the maximum number of retries, retry duration, maximum retry duration, factor
 
-    ![Create Application](../../images/argo02.png)
+    
 
 ## View application
 
 1. After the creation is successful, click the application name to enter the details page, where you can view the application details.
 
-    ![Application Details](../../images/argo03.png)
+    
 
 1. Since the synchronization method is "Manual Synchronization", we need to manually synchronize, click "Synchronization".
 
-    ![Manual sync](../../images/argo04.png)
+    
 
 1. Please refer to [Manual Synchronization Application](./sync-manually.md) for specific parameter descriptions during the synchronization process, and click `OK`.
 
-    ![Manual sync](../../images/argo05.png)
+    
 
 1. After the synchronization is successful, check the synchronization result.

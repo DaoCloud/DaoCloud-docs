@@ -21,15 +21,15 @@ As shown in the figure above, if the transmission fails at any step, the link da
 
 1. Use the DCE 5.0 platform, enter `Observability`, and select `Dashboard` in the left navigation bar.
 
-    ![insight entry](../images/insight01.png)
+    
 
 2. Click on the dashboard title `Overview`.
 
-    ![Overview](../images/insight02.png)
+    
 
 3. Switch to `insight-system` -> `insight tracing debug` dashboard.
 
-    ![tracing debug](../images/insighttrace01.png)
+    
 
 4. You can see that the dashboard consists of three blocks, which are responsible for monitoring the data status of different clusters and transmission links of different components. Through the generated timing chart, check whether there is any problem with the data transmission of the link.
 
@@ -37,7 +37,7 @@ As shown in the figure above, if the transmission fails at any step, the link da
     -global opentelemetry collector
     -global jaeger collector
 
-    ![tracing debug](../images/insighttrace02.png)
+    
 
 ## Block introduction
 
@@ -45,7 +45,7 @@ As shown in the figure above, if the transmission fails at any step, the link da
 
     It shows that `opentelemetry collector` of different working clusters is receiving language probe/SDK link data and sending aggregated link data. You can select the cluster you are in through the `Cluster` selection box in the upper left corner.
 
-    ![tracing debug](../images/insighttrace03.png)
+    
 
     !!! note
 
@@ -55,7 +55,7 @@ As shown in the figure above, if the transmission fails at any step, the link da
 
     It shows how `opentelemetry collector` of `global service cluster` receives link data from `otel collector` in `working cluster` and sends aggregated link data.
 
-    ![tracing debug](../images/insighttrace04.png)
+    
 
     !!! note
 
@@ -66,4 +66,4 @@ As shown in the figure above, if the transmission fails at any step, the link da
 
     Show that `jaeger collector` of `global management cluster` is receiving data from `otel collector` in `global management cluster`, and sending link data to [ElasticSearch cluster](../../middleware/elasticsearch/intro /what.md).
 
-    ![tracing debug](../images/insighttrace05.png)
+    

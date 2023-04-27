@@ -2,7 +2,7 @@
 
 本页按字母顺序列出一些知名商业化产品的更新动态。
 
-### A, B
+### A
 
 - [Aqua 云原生安全平台引入基于 eBPF 技术的零日漏洞检测工具 Lightning Enforcer](https://blog.aquasec.com/combat-zero-day-threats-with-aquas-ebpf-lightning-enforcer)
 
@@ -27,6 +27,16 @@
 - [AWS 推出本地集群，用于在混合云服务 Outposts 上本地运行 EKS 集群](https://aws.amazon.com/about-aws/whats-new/2022/09/amazon-eks-outposts-local-clusters/)
 
     本地集群减少了因云端网络中断而导致的应用停机风险。在此期间，应用程序仍然可用，并且可以执行集群操作。当连接到云时，EKS 管理 Outposts 上 K8s 控制平面的可用性。本地集群运行的 Kubernetes 与云上 EKS 功能相同，支持自动部署最新的安全补丁。
+
+- [Azure 推出面向 AKS 的 Kubernetes 应用方案](https://mp.weixin.qq.com/s/Uk8t5pWoRiWmz1VL4nMOaQ)
+
+    Azure Kubernetes 应用方案旨在助力合作方在微软 Azure 市场中创建、发布和管理商业商品化的 Kubernetes 解决方案的“工具箱”。
+    Azure Kubernetes 应用方案支持利用现有 Helm Chart 打包，为 Kubernetes 应用方案创建捆绑包；
+    仅需 48 小时即可创建和发布方案；自动进行安全扫描；全方位赋能销售增量。
+
+- [Azure 混合云多云解决方案 Azure Arc 集成可观测平台 Datadog](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
+
+    Azure Arc 与 Datadog 的集成提供了以下功能：监控连接状态和代理版本，确保 Azure Arc 启用的服务器、SQL 服务器和 Kubernetes 集群已连接且安全；将混合云和多云服务器、Kubernetes 集群和数据服务集成到一个统一仪表板中，实现跨环境的无缝管理；简化合规性的管理和跟踪，提供丰富的可视化效果和可操作告警。
 
 - [Azure Serverless 容器平台 Azure Container Apps 十一月更新](https://azure.microsoft.com/en-us/updates/?query=azure%20container%20apps)
 
@@ -57,6 +67,10 @@
 - [Azure 发布 AKS 舰队管理器（公开预览版）](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
 
     Azure Kubernetes 舰队管理器将多个群集地视为单个集群来管理。用户可通过创建一个 Fleet 资源来管理多个集群。用户可将现有 AKS 集群当作成员集群，加入到舰队中，然后用这些集群的元数据，编排多个集群场景，如 Kubernetes 资源传播和多集群负载均衡。
+
+- [阿里云服务网格 ASM 2023 年 3 月产品动态](https://mp.weixin.qq.com/s/Yca5J3liIg6oznZDz6fVrA)
+
+    更新内容：网关支持对接 WAF、支持配置 Ingress 资源、支持 Knative 服务的管理、网格拓扑支持 OIDC 方式登录、Sidecar 代理支持超卖模式、新增出口流量策略、支持配置全局默认的 HTTP 请求重试策略。
 
 - [阿里云 ACK 2 月产品更新](https://mp.weixin.qq.com/s/nqW681bqKocpc7AWUV56jg)
 
@@ -107,6 +121,14 @@
 
     更新内容包括：兼容 Istio 1.14 系列版本、支持 Kubernetes 1.21 - 1.24 版本、增强网格诊断功能、支持第三方令牌在 ACK 集群的兼容、支持用户自定义 EnvoyFilter、无需修改代码即可实现同可用区优先路由。
 
+### B
+
+- [Backslash Security 推出同名云原生代码可视化工具](https://www.backslash.security/post/backslash-security-emerges-from-stealth-to-fuse-code-security-with-cloud-native-context)
+
+    Backslash 推出的可视化工具可以识别云原生代码中可能导致安全漏洞的工作流。
+    具体功能包括：通过上下文可视化仪表盘，自动发现和映射云原生应用的代码及其依赖关系；根据生产中的应用云状况，自动确定高风险代码的优先次序；通过智能的自动风险识别，简化漏洞和风险的补救。
+    该工具目前支持 AWS 环境和 GitHub 代码库。
+
 - [BellSoft 推出 Alpaquita Cloud Native Platform，用于高效运行云原生 Java 应用](https://containerjournal.com/features/bellsoft-optimizes-java-for-cloud-native-platform/)
 
     [Alpaquita Cloud Native Platform](https://bell-sw.com/cloud-native-platform/) 利用适用于 Java 的 Linux 发行版、JVM 优化、多用途框架和原生镜像技术，提供了一个专为在容器中运行的 Java 应用而优化的运行时环境。该平台特性：云成本降低 20%，使用更小的 Pod，所需节点的数量减少；零迁移成本，不需要重构；效率提升 50%，实现低延迟、低成本、快启动。
@@ -141,7 +163,18 @@
 
     更新内容：提供基于 Sigstore 的无密钥签名模式、增加一个开箱即用的安全策略库、支持用户通过其 Gitlab 账号登录、支持 CloudEvents、支持细粒度的 Kubernetes 工作负载对象的策略、增强大规模集群用户的稳定性。
 
+- [CloudCasa 基于 Velero 的企业级 Kubernetes 数据保护方案 CloudCasa for Velero](https://www.catalogicsoftware.com/press-releases/introducing-cloudcasa-for-velero-to-manage-and-run-kubernetes-backups-at-enterprise-scale/)
+
+    CloudCasa for Velero 为企业和服务提供商提供了在所有 Kubernetes 发行版以及混合云和公有云环境中对 Velero 备份进行多集群管理的能力。
+    开发人员和平台工程师可以通过策略驱动的模板和引导式恢复功能，在控制台管理和监控基于 Velero 的备份。
+    Velero 用户可以订阅 CloudCasa 服务，并将其现有设置编入目录，以便在几分钟内进行集中管理。
+
 ### D, E
+
+- [D2iQ 推出专为政府部门设计的 Kubernetes 平台 DKP Gov](https://d2iq.com/blog/dkp-gov-kubernetes-management-platform)
+
+    DKP Gov 基于 D2iQ Kubernetes 平台 (DKP)创建，旨在满足政府、军事和民用机构对创新技术的需求。
+    DKP Gov 支持物理和逻辑上隔离的节点，支持集中式多云平台、多节点 fleet 管理，符合联邦信息处理标准 (FIPS) 140-2 认证等。
 
 - [D2iQ Kubernetes Platform v2.4.0 发布](https://docs.d2iq.com/dkp/2.4/dkp-2-4-0-features-and-enhancements)
 
@@ -181,7 +214,7 @@
     Ermetic 云原生应用保护平台的 Kubernetes 安全姿势管理功能支持自动发现和修复 Kubernetes 集群中的错误配置、合规性违规以及风险或过度特权。
     它提供了所有 Kubernetes 集群内部资源的详细清单，能够持续执行安全态势评估和风险优先级排序，并提供补救方法和工作流集成。
 
-### F, G
+### F
 
 - [F5 发布中国版容器 Ingress 服务 CIS-C](https://mp.weixin.qq.com/s/4BuiZC8AEnRt-lwT7dNyxg)
 
@@ -193,9 +226,15 @@
 
     更新内容：增加工作负载成本分配功能，允许查看一组工作负载的历史成本；优化成本页面，细化 Kubernetes 集群成本的分类；支持查看成本随时间变化的动态。
 
+- [Finout 推出无代理 Kubernetes 成本治理套件](https://www.businesswire.com/news/home/20230413005018/en/Finout-Announces-Agentless-Cost-Governance-Suite-for-Kubernetes)
+
+    该无代理成本治理套件可以在跨各大云平台使用 Kubernetes 时自动检测和管理云浪费，预测支出并保持预算。其提供统一的 MegaBill 仪表盘，管理跨多个云平台的成本，并提供 Kubernetes 支出的上下文信息；支持设置 Kubernetes 部署的预算和未来支出；支持识别跨 Kubernetes 和云服务的支出异常；提供成本优化实时建议。
+
 - [Fortinet 发布云原生防火墙服务 FortiGate CNF](https://www.fortinet.com/blog/business-and-technology/simplify-cloud-security-with-the-fortigate-cloud-native-firewall-on-aws)
 
     FortiGate CNF 是一个 SaaS 产品，通过与 AWS Gateway Load Balancer、AWS Firewall Manager 等服务的深度云原生集成，支持不同 AWS 环境下的一致安全策略，消除了网络安全的复杂性。此外，还支持下一代防火墙的安全检查功能，提供对应用层的深度可视性，可以保护多个账号、子网、虚拟私有云和可用性区域。
+
+### G
 
 - [GitLab 15.7 发布](https://about.gitlab.com/releases/2022/12/22/gitlab-15-7-released/)
 
@@ -372,6 +411,10 @@
 
 ### Q
 
+- [青云企业云平台 v6.1 版本正式发布](https://mp.weixin.qq.com/s/tNx1neUN5B9auBqp_Fpy3A)
+
+    更新内容；新增监控巡检功能；新增企业空间功能，涵盖组织管理、用户管理、配额管理、资源管理、流程审批等空间管理模块；新增对第三方存储的支持；提供 VMware vSphere 纳管工具；QKE 容器引擎支持裸金属服务器作为集群 Worker。
+
 - [青云发布云原生虚拟化平台 KSV 1.6](https://mp.weixin.qq.com/s/XxOWJdLRHS2s_Ev_N9qEgw)
 
     版本特性：统一管理与展示所有计算、存储和网络资源；支持 KSV 和 KubeSphere 融合部署，实现虚拟机和容器共存共管；基于 KubeVirt，支持以虚拟资源池的方式交付 CPU、存储等物理资源，并实现统一的管理、分配及调度，支持同时创建相互隔离的虚拟机环境；集成 Kube-OVN，实现了 Underlay & Overlay 的网络。
@@ -441,6 +484,14 @@
 
     Lightstep UQL 支持统一的“可观测性即代码”，通过单一查询语言简化从多个不同工具迁移到统一 Lightstep 平台的过程，还支持跨多个 Kubernetes 节点、服务器或 serverless 函数查询和关联指标、日志和跟踪。
 
+- [Solo.io 发布云原生应用网络平台 Gloo Platform v2.3](https://www.solo.io/blog/gloo-platform-2-3/)
+
+    更新内容：新增 Gloo Portal，帮助开发者对 API 进行分类、分享和管理；支持在 Istio 服务网格中处理 GraphQL 请求的流量，包括南北向和东西向的流量；支持 Kubernetes 1.25 和 Istio 1.17；商业化支持 Ambient Mesh。
+
+- [Solo.io 推出多云动态资源发现方案 Gloo Fabric](https://www.solo.io/blog/introducing-solo-gloo-fabric/)
+
+    Gloo Fabric 为 Gloo Platform 提供了多云发现、连接、安全和可观测性功能。Gloo Fabric 通过统一的 API 来配置和管理平台的所有功能，通过统一的管理控制平面来管理网络和安全策略，支持动态地发现网络和集群资源，并提供 API 管理和跨集群多租户隔离功能。此外，Gloo Fabric 还提供自动零信任安全和平台集成的可观测功能。
+
 - [Solo.io 发布云原生网关 Gloo Gateway 1.13](https://www.solo.io/blog/gloo-edge-1-13/)
 
     版本特性：改进对 OpenCensus 和 OpenTelemetry 追踪扩展的支持；提供了一种内置的方法，可以在错误发生前捕获无效的速率限制配置；增加对 RBAC 的支持；增强控制平面的高可用性，支持多个副本的连续运行和零停机升级；集成集群调度工具 HashiCorp Nomad。
@@ -453,6 +504,10 @@
 
     Gloo Gateway 基于 Envoy 构建，利用 Gloo Platform 的多租户和联邦特性，允许用户轻松管理多个开发团队的网关访问和进行多集群流量管理。Gloo Network 基于 Cilium 构建，将 Kubernetes CNI 层整合为 Gloo Platform 的组件。
 
+- [Spectro Cloud 云原生边缘计算平台 Palette Edge Platform v3.3 发布](https://docs.spectrocloud.com/release-notes#edge)
+
+    版本发布：支持从外部 OCI 注册表中加载镜像、安装程序现在可以包含预加载内容包（包括软件包和工件）；支持创建自定义 Edge 安装程序镜像；支持随机生产设备的 UUID 值。
+
 - [Spectro Cloud Kubernetes SaaS 管理平台 Palette v3.1 发布](https://docs.spectrocloud.com/release-notes#december28,2022-release3.1.0)
 
     更新内容：Palette IaaS 集群支持自动扩缩容、提供符合联邦信息处理标准（FIPS）的 Kubernetes 版本、支持按标签过滤用户访问和查看集群详情视图、支持应用程序配置文件的版本管理、利用 Helm 和OCI 注册表进行自定义包管理、允许暂停和恢复未使用的虚拟集群。
@@ -464,6 +519,10 @@
 - [Spectro Cloud 云原生边缘计算平台 Palette Edge Platform 更新](https://www.businesswire.com/news/home/20220929005289/en/New-Spectro-Cloud-Palette-Edge-Platform-Brings-World-Class-Security-and-Operational-Efficiencies-to-Kubernetes-at-the-Edge)
 
     更新内容包括：新增边缘 K8s 集群的防篡改功能、支持边缘优化的 K8s 发行版 Palette eXtended Kubernetes Edge、简化边缘设备部署。
+
+- [StormForge 发布 Kubernetes 生产环境优化方案 Optimize Live v2.0](https://www.stormforge.io/press-releases/stormforge-launches-v2-optimize-live-kubernetes-resource-optimization/)
+
+    更新内容：通过一个 helm deployment 即可调整应用的大小；使用机器学习分析工作负载使用模式，提供 CPU 和内存建议；能够自动检测 HPA 的存在；提供一系列资源使用报告；简化资源建议的部署。
 
 - [StormForge K8s 优化平台与 Datadog 的云应用监控服务集成，简化 Kubernetes 的可观测性](https://www.stormforge.io/press-releases/new-integration-couples-datadog-observability-stormforge-machine-learning-deliver-automatic-actionable-insights-for-kubernetes-application-optimization/?utm_source=thenewstack&utm_medium=website)
 
@@ -497,6 +556,12 @@
     该版本新特性：支持集成任意 OCI 镜像仓库，扫描其中的容器镜像；支持集成任意 Kubernetes 集群，扫描其中的工作负载配置及镜像；支持扫描第三方软件物料清单文件；支持在任意 CI/CD 流水线中集成 SEAL 的安全扫描功能；能够聚合管理全链路各个阶段的资源提供全链路安全洞察；支持自动生成多策略修复建议、漏洞优先级排序、因时制宜处理安全问题。
 
 ### T
+
+- [Tetrate 推出针对 Amazon EKS 设计的服务网格解决方案 TSE](https://mp.weixin.qq.com/s/Q4qTLOv8kNn7lf0flHCOzg)
+
+    TSE 基于 Istio 和 Envoy 等开源服务网格组件构建，并针对 Amazon EKS 对 TSE 进行了简化安装、配置和操作的优化。
+    TSE 提供了 Istio 和 Envoy 之上的服务网格自动化。
+    它用于在 Amazon EKS 上安装和配置开源组件，与 AWS 服务集成，并为平台运营商提供管理控制台，以快速配置服务网格以实现安全、弹性和可观察性。
 
 - [Tetrate 应用连接平台 Tetrate Service Bridge v1.6.0 发布](https://docs.tetrate.io/service-bridge/1.6.x/en-us/release_notes_announcements)
 
@@ -538,7 +603,12 @@
     红盾基于云原生底座将安全能力整合至统一的安全平台，面向云原生业务应用安全、网络安全、数据安全、云原生安全 4 大领域，打造一体化云安全可信运营体系和零信任架构。
     其核心产品包括 Web 应用防火墙、DDoS 高防、网站安全监测、企业安全访问、天翼云数据安全管理平台等。
 
-### V
+### U, V
+
+- [Upbound 推出基于 Crossplane 的托管型控制平面管理服务（MCP）](https://blog.upbound.io/upbound-general-availability/)
+
+    用户可以可以通过 MCP 扩展到数千个 CRD，使用控制平面来管理其所需的所有云服务资源，从而允许用户运行数十个甚至数百个控制平面来为不同的环境、团队、业务和客户服务。
+    此外，MCP 与 Git 无缝集成，提供用于管理和操作控制平面以及所有资源的控制台，支持安装在任何 Kubernetes 集群中，并支持在 GitOps 流程中管理基础设施和应用程序资源。
 
 - [Veeam 发布 Kubernetes 数据管理平台 Kasten K10 v5.5](https://www.kasten.io/kubernetes/resources/blog/scaling-simplicity-with-kasten-k10-v5.5)
 
@@ -548,6 +618,14 @@
 
     TLS Protect for Kubernetes 是 Venafi 机器身份管理平台 Control Plane for Machine Identities 的一部分，
     帮助安全和平台团队在多云和多集群 Kubernetes 环境中管理云原生机器身份，如 TLS、mTLS 和 SPIFFE，增强机器身份管理的可观测性、控制和自动化。
+
+- [VMware Tanzu 发布 Kubernetes DevOps 平台 VMware Tanzu Application Platform 1.5](https://tanzu.vmware.com/content/blog/tanzu-application-platform-1-5-ga)
+
+    更新内容：完成支持 GitOps 模式的 Namespace Provisioner；平台工程师可以使用私有 Git 仓库来引用模板化的资源；支持基于 GitOps 的安装流程；新增面板用于显示集群中工作负载的详细信息；新增 External Secrets Operator；支持分布式 API 网关 Spring Cloud Gateway for Kubernetes。
+
+- [VMware Tanzu 服务网格方案 Tanzu Service Mesh 3.0.3 发布](https://docs.vmware.com/en/Tanzu/services/rn/vmware-tanzu-service-mesh-global-controller-release-notes/index.html#Past%20Tanzu%20Service%20Mesh%20Releases)
+
+    更新内容：Tanzu Service Mesh CLI 支持 GitOps，可用于自动部署 Tanzu Service Mesh 环境到集群中；支持选择要注入 proxy sidecar 的命名空间；支持客户端集群和 Tanzu Service Mesh SaaS 之间的企业级代理通信。
 
 - [VMware Tanzu 多云多集群 Kubernetes 管理方案 Tanzu Mission Control 更新](https://docs.vmware.com/en/VMware-Tanzu-Mission-Control/services/rn/vmware-tanzu-mission-control-release-notes/index.html)
 

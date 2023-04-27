@@ -7,10 +7,11 @@ hide:
 
 DaoCloud Enterprise 5.0 是一款高性能、可扩展的云原生操作系统。
 它能够在任何基础设施和任意环境中提供一致、稳定的体验，支持异构云、边缘云和多云编排。
-DCE 5.0 集成了最新的服务网格和微服务技术，能够跟踪每一个流量生发的始终，帮助您洞察集群、节点、应用和服务的详细指标，并通过动态仪表盘和拓扑大图可视化掌握应用健康状态。
+DCE 5.0 集成了最新的服务网格和微服务技术，能够跟踪每一个流量的生发始终，
+帮助您洞察集群、节点、应用和服务的详细指标，并通过动态仪表盘和拓扑大图可视化掌握应用健康状态。
 
 DCE 5.0 原生支持 DevOps 开发运维模式，可以实现应用交付的全流程标准化和自动化，并集成各类精选数据库和中间件，使运维治理更加高效。
-DCE 5.0 的各个产品模块独立解耦，支持灵活升级，对业务没有影响，并且能够与众多云原生生态产品对接，提供完整的解决方案体系。
+各个产品模块独立解耦，支持灵活升级，对业务没有影响，并且能够与众多云原生生态产品对接，提供完整的解决方案体系。
 它经过了近千家行业客户的生产场景检验，构建了坚实、可靠的数字底座，帮助企业定义数字边界，释放云原生生产力。
 
 *[DCE]: DaoCloud Enterprise 云原生操作系统的简称
@@ -18,11 +19,11 @@ DCE 5.0 的各个产品模块独立解耦，支持灵活升级，对业务没有
 <div class="grid cards" markdown>
 
 - :fontawesome-solid-jet-fighter-up: **安装** [安装社区版和商业版](../install/intro.md)
-- :octicons-container-16: **容器管理** [管理集群/节点/负载等基础设施](../kpanda/intro/what.md)
+- :octicons-container-16: **容器管理** [集群/节点/负载等基础设施](../kpanda/intro/what.md)
 - :fontawesome-solid-user-group: **全局管理** [设置登录/访问权限/外观](../ghippo/intro/what.md)
 - :material-monitor-dashboard: **可观测性** [一站式图形化仪表盘](../insight/intro/what.md)
 - :material-microsoft-azure-devops: **应用工作台** [CI/CD 流水线](../amamba/intro/what.md)
-- :material-cloud-check: **多云编排** [管理多云实例/负载/策略](../kairship/intro/what.md)
+- :material-cloud-check: **多云编排** [多云实例/负载/策略](../kairship/intro/what.md)
 - :material-engine: **微服务引擎** [微服务治理中心和网关](../skoala/intro/what.md)
 - :material-table-refresh: **服务网格** [非侵入式服务治理](../mspider/intro/what.md)
 - :material-middleware: **中间件** [ES, Kafka, MinIO, MySQL 等](../middleware/what.md)
@@ -60,7 +61,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
     提供非侵入式流量治理功能，支持无感接入传统微服务、云原生微服务和开源微服务框架，实现企业现有微服务体系及新旧微服务体系的融合治理，
     支持微服务从开发、部署、接入、观测、运维的全生命周期管理，提供高性能云原生微服务网关，保证微服务应用的连续可用性；引入自主开源的 eBPF 网格加速技术，全面提高流量转发效率。
 
-    **涉及的模块**：[全局管理](../ghippo/intro/what.md)、[容器管理](../kpanda/intro/what.md]、[微服务引擎](../skoala/intro/what.md)、[服务网格](../mspider/intro/what.md)、[可观测性](../insight/intro/what.md)、[应用工作台](../amamba/intro/what.md)、[云原生网络](../network/intro/what.md)、[云原生存储](../storage/what.md)
+    **涉及的模块**：[全局管理](../ghippo/intro/what.md)、[容器管理](../kpanda/intro/what.md)、[微服务引擎](../skoala/intro/what.md)、[服务网格](../mspider/intro/what.md)、[可观测性](../insight/intro/what.md)、[应用工作台](../amamba/intro/what.md)、[云原生网络](../network/intro/what.md)、[云原生存储](../storage/what.md)
 
     ![微服务](../images/03msgov.png)
 

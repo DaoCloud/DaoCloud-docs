@@ -16,7 +16,7 @@ F5 devices have two modes to forward traffic to the cluster (for more informatio
 
     Requirement: The loadBalancer service object of the cluster application must be assigned a nodePort.
 
-    ![nodeport](../../images/F5nodeport.png)
+    
 
 2. Cluster forwarding mode: F5 forwards the traffic directly to the Pod IP, and this mode can work in "layer 4 forwarding" and "layer 7 forwarding".
 
@@ -24,7 +24,7 @@ F5 devices have two modes to forward traffic to the cluster (for more informatio
 
     Requirements: The cluster forwards Pod routes to the routers and F5 devices in the network through the BPG protocol, or requires the nodes in the cluster to establish VXLAN tunnels with the F5 devices.
 
-    ![cluster](../../images/F5cluster.png)
+    
 
 ## Function Description
 

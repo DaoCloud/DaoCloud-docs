@@ -1,4 +1,4 @@
-# DCE 4.0 中安装 insight-agent
+# DCE 4.0 中安装 Insight Agent
 
 在 DCE 5.0 中，可以将以前的 DCE 4.0 可作为子集群接入。
 但由于大多数 DCE 4.0 集群已安装 dx-insight 作为监控系统，若此时安装 insight-agent 会与集群中已有的 prometheus operator 冲突，导致无法顺利安装。
