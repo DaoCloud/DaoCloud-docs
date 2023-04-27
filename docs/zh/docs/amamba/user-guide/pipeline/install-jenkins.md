@@ -1,5 +1,3 @@
-
-
 # 安装 Jenkins
 
 ## 前提条件
@@ -26,7 +24,7 @@
 
     ![安装](../../images/install-jenkins13.png)
 
-4. 在安装界面，填写所需的安装参数。
+4. 在安装界面，填写所需的安装参数，最后在右下角点击`确定`按钮。
 
     ![填写配置](../../images/install-jenkins14.png)
 
@@ -53,12 +51,9 @@
     | eventProxy.configMap.eventroxy.proto | 如果 enabled=true 必须填写                                   |
     | eventProxy.configMap.eventroxy.token | 如果 enabled=true 必须填写<br />token 获取方式参考全局管理访问密钥文档：https://docs.daocloud.io/ghippo/04UserGuide/06PersonalCenter/Password/ |
 
-5. 在右下角点击`确定`按钮即可完成创建。
+5. 前往 Helm 应用查看部署结果。
 
-
-6. 前往 Helm 应用查看部署结果。
-
-   ![完成创建](../../images/install-jenkins15.png)
+    ![完成创建](../../images/install-jenkins15.png)
 
 ## 集成 Jenkins
 
@@ -66,19 +61,18 @@
 
 1. 使用具有应用工作台管理员角色的用户登录 Web 控制台并进入应用工作台
 
-   ![完成创建](../../images/install-jenkins16.png)
+    ![完成创建](../../images/install-jenkins16.png)
 
 2. 在左侧导航栏点击平台管理下的`工具链集成`，点击右上角的`集成`按钮。
 
-   ![完成创建](../../images/install-jenkins17.png)
+    ![完成创建](../../images/install-jenkins17.png)
 
 3. 选择工具链类型 `Jenkins`，填写集成名称，Jenkins 地址，用户名和密码。如果 Jenkins 地址为 https 协议时，需要提供证书。通过helm 部署出来的 jenkins 默认账户密码为 `admin/Admin01` 。
 
-   ![完成创建](../../images/install-jenkins18.png)
+    ![完成创建](../../images/install-jenkins18.png)
 
 4. 集成完毕后会在`工具链列表`页面成功生成一条记录。
 
-   ![完成创建](../../images/install-jenkins19.png)
+    ![完成创建](../../images/install-jenkins19.png)
 
 5. 接下来就可以前往工作空间内[创建流水线](create/custom.md)。
-
