@@ -24,103 +24,103 @@ hide:
 
 2. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `Hwameistor Operator`。
 
-   ![](../../images/operator1.jpg)
+    ![点击](../../images/operator1.jpg)
 
 3. 在`版本选择`中选择希望安装的版本，点击`安装`。
 
 4. 在安装界面，填写所需的安装参数。
 
-   ![Operator02](../../images/operator2.jpg)
+    ![Operator02](../../images/operator2.jpg)
 
-   **`Value.yaml`**参数如下，默认可不进行修改：
+    **`Value.yaml`**参数如下，默认可不进行修改：
 
-   ```
-   global:
-     targetNamespace: hwameistor
-     hwameistorImageRegistry: ghcr.io
-     k8sImageRegistry: registry.k8s.io
-     hwameistorVersion: v0.9.2
-   operator:
-     replicas: 1
-     imageRepository: hwameistor/operator
-     tag: ''
-   localDiskManager:
-     tolerationOnMaster: true
-     kubeletRootDir: /var/lib/kubelet
-     manager:
-       imageRepository: hwameistor/local-disk-manager
-       tag: ''
-     csi:
-       registrar:
-         imageRepository: sig-storage/csi-node-driver-registrar
-         tag: v2.5.0
-       provisioner:
-         imageRepository: sig-storage/csi-provisioner
-         tag: v2.0.3
-       attacher:
-         imageRepository: sig-storage/csi-attacher
-         tag: v3.0.1
-   localStorage:
-     tolerationOnMaster: true
-     kubeletRootDir: /var/lib/kubelet
-     member:
-       imageRepository: hwameistor/local-storage
-       tag: ''
-     csi:
-       registrar:
-         imageRepository: sig-storage/csi-node-driver-registrar
-         tag: v2.5.0
-       provisioner:
-         imageRepository: sig-storage/csi-provisioner
-         tag: v2.0.3
-       attacher:
-         imageRepository: sig-storage/csi-attacher
-         tag: v3.0.1
-       resizer:
-         imageRepository: sig-storage/csi-resizer
-         tag: v1.0.1
-       monitor:
-         imageRepository: sig-storage/csi-external-health-monitor-controller
-         tag: v0.8.0
-   scheduler:
-     imageRepository: hwameistor/scheduler
-     tag: ''
-   admission:
-     imageRepository: hwameistor/admission
-     tag: ''
-   evictor:
-     imageRepository: hwameistor/evictor
-     tag: ''
-   apiserver:
-     imageRepository: hwameistor/apiserver
-     tag: ''
-   exporter:
-     imageRepository: hwameistor/exporter
-     tag: ''
-   ui:
-     imageRepository: hwameistor/hwameistor-ui
-     tag: ''
-   ha:
-     module: drbd
-     deployOnMaster: 'yes'
-   ```
+    ```
+    global:
+      targetNamespace: hwameistor
+      hwameistorImageRegistry: ghcr.io
+      k8sImageRegistry: registry.k8s.io
+      hwameistorVersion: v0.9.2
+    operator:
+      replicas: 1
+      imageRepository: hwameistor/operator
+      tag: ''
+    localDiskManager:
+      tolerationOnMaster: true
+      kubeletRootDir: /var/lib/kubelet
+      manager:
+        imageRepository: hwameistor/local-disk-manager
+        tag: ''
+      csi:
+        registrar:
+          imageRepository: sig-storage/csi-node-driver-registrar
+          tag: v2.5.0
+        provisioner:
+          imageRepository: sig-storage/csi-provisioner
+          tag: v2.0.3
+        attacher:
+          imageRepository: sig-storage/csi-attacher
+          tag: v3.0.1
+    localStorage:
+      tolerationOnMaster: true
+      kubeletRootDir: /var/lib/kubelet
+      member:
+        imageRepository: hwameistor/local-storage
+        tag: ''
+      csi:
+        registrar:
+          imageRepository: sig-storage/csi-node-driver-registrar
+          tag: v2.5.0
+        provisioner:
+          imageRepository: sig-storage/csi-provisioner
+          tag: v2.0.3
+        attacher:
+          imageRepository: sig-storage/csi-attacher
+          tag: v3.0.1
+        resizer:
+          imageRepository: sig-storage/csi-resizer
+          tag: v1.0.1
+        monitor:
+          imageRepository: sig-storage/csi-external-health-monitor-controller
+          tag: v0.8.0
+    scheduler:
+      imageRepository: hwameistor/scheduler
+      tag: ''
+    admission:
+      imageRepository: hwameistor/admission
+      tag: ''
+    evictor:
+      imageRepository: hwameistor/evictor
+      tag: ''
+    apiserver:
+      imageRepository: hwameistor/apiserver
+      tag: ''
+    exporter:
+      imageRepository: hwameistor/exporter
+      tag: ''
+    ui:
+      imageRepository: hwameistor/hwameistor-ui
+      tag: ''
+    ha:
+      module: drbd
+      deployOnMaster: 'yes'
+    ```
 
-   -  `hwameistorImageRegistry`：
+    -  `hwameistorImageRegistry`：
 
-     设置 Hwameistor 镜像的仓库地址，默认已经填写了可用的在线仓库。
-     如果是私有化环境，可修改为私有仓库地址。
+        设置 Hwameistor 镜像的仓库地址，默认已经填写了可用的在线仓库。
+        如果是私有化环境，可修改为私有仓库地址。
 
-   -  `K8s image Registry`：
+    -  `K8s image Registry`：
 
-     设置 K8S 镜像仓库地址，默认已经填写可用在线仓库。
-     如果私有化环境，可修改为私有仓库地址。
+        设置 K8S 镜像仓库地址，默认已经填写可用在线仓库。
+        如果私有化环境，可修改为私有仓库地址。
 
 5. 确认参数无误后，点击`确定`完成安装，完成安装后可点击 `Helm 应用`查看 `Hwameistor Operator` 安装状态。
 
-   ![Operator03](../../images/operator3.jpg)
+    ![Operator03](../../images/operator3.jpg)
 
 6. Operator 安装完成后，Hwameistor 组件（Local Storage ，Local Disk Manager 等） 默认进行安装！可点击`工作负载`-->`无状态工作负载`，选择对应命名空间，查看 Hwameistor 组件状态。
 
-   ​	![hwameistor 状态](../../images/operator4.jpg)
+    ![hwameistor 状态](../../images/operator4.jpg)
 
-   通过命令行验证安装效果，请参[安装后检查](./post-check.md)。
+    通过命令行验证安装效果，请参[安装后检查](./post-check.md)。
