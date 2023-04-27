@@ -61,7 +61,7 @@
 
 ```bash
 # 下载脚本
-curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
+curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
 
 # 添加可执行权限
 chmod +x install_prerequisite.sh
