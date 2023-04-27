@@ -15,6 +15,12 @@
 
 </div>
 
+## SpringCloud 微服务接入云原生网关
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/skoala-intro1.mp4" preload="metadata" poster="../images/skoala-intro1.png"></video>
+</div>
+
 ## 接入注册中心
 
 参阅 [接入注册中心](../skoala/registry/integrated/integrate-registry.md)文档页面。

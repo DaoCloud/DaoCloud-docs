@@ -657,6 +657,7 @@ nav:
               - 安装管理:
                   - 准备工作: storage/hwameistor/install/prereq.md
                   - 资源要求: storage/hwameistor/install/proresource.md
+                  - 通过 Operator 安装: storage/hwameistor/install/deploy-operator.md
                   - 通过界面安装: storage/hwameistor/install/deploy-ui.md
                   - 通过 Helm Chart 安装: storage/hwameistor/install/deploy-helm.md
                   - 通过镜像安装: storage/hwameistor/install/deploy-image.md
@@ -742,6 +743,7 @@ nav:
       - 云原生网络: videos/network.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 202304 | 云原生监控之基础篇: blogs/20230427-victoriametrics.md
       - 202304 | Karmada Failover详解: blogs/230418-karmada-failover.md
       - 202304 | CNCF 平台工程白皮书: blogs/230417-cncf-platform-wp.md
       - 202304 | K8s 1.27 正式发布: blogs/230412-k8s-1.27.md
@@ -772,6 +774,7 @@ nav:
           - 下载 Addon 离线包: download/addon/v0.6.0.md
           - 下载全局管理: download/modules/ghippo.md
           - 下载 Insight: download/modules/insight.md
+          - 下载网络 spidernet: download/modules/spidernet.md
   - DaoCloud 开源生态:
       - 社区索引: community/index.md
       - cloudtty: community/cloudtty.md

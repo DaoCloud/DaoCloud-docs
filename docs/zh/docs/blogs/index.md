@@ -7,6 +7,13 @@ hide:
 
 本页汇总 DCE 5.0 及云原生技术相关的博客和公众号文章，默认按时间排序。
 
+- [20230427 | 云原生监控 - VictoriaMetrics 之基础篇](./20230427-victoriametrics.md)
+
+    说到云原生监控方案，第一时间基本上都会想到 Prometheus+AlertManager+Grafana 的一套成熟解决方案。
+    Prometheus 作为监控核心，具备强大的数据模型、高效率运作、丰富的监控能力、强大的查询语言 PromQL、
+    简单易用、管理方便等特点。但是 Prometheus 目前在高可用层面上做得还并不完美。为此，在开源社区中，
+    孕育出了许多替代、增强方案，VictoriaMetrics 属于其中较为优异的一个，是一个快速、经济高效且可扩展的监控解决方案和时间序列数据库。
+
 - [20230418 | Karmada Failover 详解](./230418-karmada-failover.md)
 
     多云时代，如何实现应用跨数据中心，跨可用区和跨集群高可用，成为我们探讨的新话题。
