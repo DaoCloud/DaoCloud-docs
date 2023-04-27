@@ -30,16 +30,27 @@
 
 2. 填写基本信息，然后在底部点击`确定`。
 
+    **自定义存储系统**
+
     - 存储池名称、驱动、回收策略在创建后不可修改。
     - CSI 存储驱动：基于标准 Kubernetes 的容器存储接口插件，需遵守存储厂商规定的格式，例如`rancher.io/local-path`。
 
         - 有关如何填写不同厂商提供的 CSI 驱动，可参考 Kubernetes 官方文档[存储类](https://kubernetes.io/zh-cn/docs/concepts/storage/storage-classes/#provisioner)。
-        - DaoCloud 自主开源的存储 [HwameiStor](https://github.com/hwameistor/hwameistor) 的格式应为 `lvm.hwameistor.io`。
-
     - 回收策略：删除数据卷时，保留数据卷中的数据或者删除其中的数据。
     - 快照/扩容：开启后，基于该存储池的数据卷/数据卷声明才能支持扩容和快照功能，但 **前提是底层使用的存储驱动支持快照和扩容功能**。
 
-        ![基本信息](../../images/sc04.png)
+    **Hwameistor 存储系统**
+
+    - 存储池名称、驱动、回收策略在创建后不可修改。
+    - 存储系统：Hwameistor 存储系统。
+    - 存储类型：支持 LVM，裸磁盘类型
+      - `LVM 类型`：Hwameistor 推荐使用方式，可使用高可用数据卷，对应的的 CSI 存储驱动为： `lvm.hwameistor.io`。
+      - `裸磁盘数据卷`： 适用于高可用场景，无高可用能力，对应的 CSI 驱动为： `hdd.hwameistor.io`
+    - 高可用模式：使用高可用能力之前请确认 `DRDB 组件`已安装。开启高可用模式后，可将数据卷副本数设置为 1 和 2。 如需要可将数据卷副本从 1 Convert 成 1
+    - 回收策略：删除数据卷时，保留数据卷中的数据或者删除其中的数据。
+    - 快照/扩容：开启后，基于该存储池的数据卷/数据卷声明才能支持扩容和快照功能，但 **前提是底层使用的存储驱动支持快照和扩容功能**。
+
+    ![基本信息](../../images/sc04.jpg)
 
 ## 更新存储池(SC)
 
