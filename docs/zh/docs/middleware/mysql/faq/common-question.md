@@ -4,17 +4,17 @@
 
 > 如果您发现遇到的问题，未包含在本手册，可以快速跳转到页面底部，提交您的问题。
 
+## MySQL 健康检查
 
+可以通过一句命令查看 MySQL 健康状态
 
-
-
-
-
-
-## 1. MySQL 健康检查
-一句命令确定 MySQL 健康状态
 ```none
-[root@demo-dev-master-01 ~]# kubectl get pod -n mcamel-system -Lhealthy,role | grep mysql
+kubectl get pod -n mcamel-system -Lhealthy,role | grep mysql
+```
+
+输出类似于：
+
+```
 mcamel-common-mysql-cluster-auto-2023-03-28t00-00-00-backujgg9m   0/1     Completed          0               27h              
 mcamel-common-mysql-cluster-auto-2023-03-29t00-00-00-backusgf59   0/1     Completed          0               3h43m            
 mcamel-common-mysql-cluster-mysql-0                               4/4     Running            6 (11h ago)     25h     yes       master
@@ -22,23 +22,30 @@ mcamel-common-mysql-cluster-mysql-1                               4/4     Runnin
 mcamel-mysql-apiserver-9797c7f76-bvf5n                            2/2     Running            0               22h              
 mcamel-mysql-ui-7ffd9dd8db-d5jfm                                  2/2     Running            0               25m              
 mysql-operator-0                                                  2/2     Running            109 (47m ago)   2d21h  
- ```
-如上所述，主备节点（`master` `replica`）的状态均为`yes`,即表示 MySQL 为正常状态。
+```
 
-## 2. MySQL Pod
-我们可以通过以下命令快速的查看 当前集群上所有 `MySQL` 的健康状态
+如上所述，主备节点（`master` `replica`）的状态均为 `yes`,说明 MySQL 为正常状态。
+
+## MySQL Pod
+
+可以通过以下命令快速的查看当前集群上所有 `MySQL` 实例的健康状态：
 
 ```bash
-[root@-master-01 /]$ kubectl get mysql -A
+kubectl get mysql -A
+```
+
+输出类似于：
+
+```bash
 NAMESPACE       NAME                          READY   REPLICAS   AGE
 ghippo-system   test                          True    1          3d
 mcamel-system   mcamel-common-mysql-cluster   False   2          62d
 ```
 
 
-### 2.1. Pod `running` 为 `0/4`，状态为`Init:Error`
+### Pod running = 0/4，状态为 `Init:Error`
 
-遇到此类问题时，我们优先查看 `master` 节点的（sidecar）日志信息。
+遇到此类问题时，首先应该查看 `master` 节点的（sidecar）日志信息。
 
 ```bash
 kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep master | awk '{print $1}' | xargs -I {} kubectl logs -f {} -n mcamel-system -c sidecar
@@ -116,8 +123,9 @@ ALTER TABLE REALM_ATTRIBUTE ALGORITHM=COPY;
 ALTER TABLE OFFLINE_USER_SESSION ALGORITHM=COPY
 ```
 
-### 2.2. Pod `running` 为 `2/4`
-一般出现此类问题，很可能是因为 MySQL 实例使用的磁盘用量达到了 100%，您可以在 `master` 节点上运行以下命令检测磁盘用量。
+### Pod running=2/4
+
+一般出现此类问题，很可能是因为 MySQL 实例使用的磁盘用量达到了 100%，可以在 `master` 节点上运行以下命令检测磁盘用量。
 
 ```bash
 kubectl get pod -n mcamel-system | grep cluster-mysql | awk '{print $1}' | xargs -I {} kubectl exec {} -n mcamel-system -c sidecar -- df -h | grep /var/lib/mysql
@@ -135,7 +143,8 @@ kubectl get pod -n mcamel-system | grep cluster-mysql | awk '{print $1}' | xargs
 ```bash
 kubectl edit pvc data-mcamel-common-mysql-cluster-mysql-0 -n mcamel-system # 修改request大小即可
 ```
-### 2.3. Pod `running` 为 `3/4`
+### Pod running=3/4
+
 ![image](../images/faq-mysql-1.png)
 
 使用 `kubectl describe` 上图中框起来的 pod，发现异常提示： `Warning Unhealthy 4m50s (x7194 over 3h58m) kubelet Readiness probe failed: `
@@ -152,41 +161,51 @@ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- my
 ```
 
 
-## 3. MySQL Operator
-### 3.1. 未指定 `storageClass`
-由于没有指定 `storageClass`，导致 `mysql-operator` 无法获取 pvc 而处于 `pending` 状态
+## MySQL Operator
+
+### 未指定 `storageClass`
+
+由于没有指定 `storageClass`，导致 `mysql-operator` 无法获取 pvc 而处于 `pending` 状态。
+
 如果采用 helm 启动，可以做如下设置： 
+
 1. 关闭 pvc 的申请
+
 ```bash
 orchestrator.persistence.enabled=false 
 ```
 
 2. 指定 storageClass 去获取 pvc
+
 ```bash
 orchestrator.persistence.storageClass={storageClassName} 
-
 ```
+
 如果使用其他工具，可以修改 `value.yaml` 内对应字段，即可达到和 helm 启动一样的效果。
 
+## MySQL 主从关系
 
-
-## 4. MySQL 主从关系
 1. 执行以下命令确认 MySQL 状态:
+
 ```bash
 [root@-master-01 /]# kubectl get mysql -A
 NAMESPACE       NAME                          READY   REPLICAS   AGE
 ghippo-system   test                          True    1          3d
 mcamel-system   mcamel-common-mysql-cluster   False   2          62d
-
 ```
-2. 关注 `Ready` 为 `False` 的库 (这里为 True 的判断是 延迟小于 30s 同步)，查看 MySQL 从库的日志
+
+2. 关注 `Ready` 为 `False` 的库 (这里为 True 的判断是延迟小于 30s 同步)，查看 MySQL 从库的日志
+
 ```bash
 [root@master-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' | xargs -I {} kubectl logs {} -n mcamel-system -c mysql | grep ERROR
 ```
-### 4.1. 从库无报错，但同步延迟较大
-如果日志中没有任何错误 `ERROR` 信息，说明  `False` 只是因为主从同步的延迟过大，可对从库执行以下命令进一步排查：
 
-1. 寻找到从节点的 pod
+### 从库无报错，但同步延迟较大
+
+如果日志中没有任何错误 `ERROR` 信息，说明 `False` 只是因为主从同步的延迟过大，可对从库执行以下命令进一步排查：
+
+1. 寻找到从节点的 Pod
+
 ```bash
 [root@master-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}'
 mcamel-common-mysql-cluster-mysql-1
@@ -198,12 +217,16 @@ mcamel-common-mysql-cluster-mysql-1
 ```
 
 3. 进入 MySQL 的容器
+
 ```bash
 [root@master-01 ~]$ kubectl exec -it mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf
 ```
 
 
-4. 在 MySQL 容器中执行查看命令，获取从库状态。 `Seconds_Behind_Master` 字段为主从延迟，如果取值在 0~30，可以认为没有延迟；表示主从可以保持同步。
+4. 在 MySQL 容器中执行查看命令，获取从库状态。 
+
+`Seconds_Behind_Master` 字段为主从延迟，如果取值在 0~30，可以认为没有延迟；表示主从可以保持同步。
+
 ```sql
 mysql> show slave status\G; 
 *************************** 1. row ***************************
@@ -277,9 +300,8 @@ e17dae09-8da0-11ed-9104-c2f9484728fd:1-21621569
 1 row in set, 1 warning (0.00 sec)
 ```
 
-
-
 5. 主从同步后 (Seconds_Behind_Master 小于 30s)，设置 sync_binlog=1
+
 ```bash
 kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'set global sync_binlog=1';
 ```
@@ -290,14 +312,17 @@ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- my
 [root@master-01 ~]$ uptime
 11:18  up 1 day, 17:49, 2 users, load averages: 9.33 7.08 6.28
 ```
+
 `load averages`在正常情况下 3 个数值都不应长期超过 10；如果 超过 >30 以上，请合理调配下该节点的 Pod 和磁盘。
 
+### 从库日志出现`复制错误`
 
-### 4.2. 从库日志出现`复制错误`
+如果在查看从库 Pod 日志中出现从库复制错误，可能有多种情况，可以根据同时出现的其他错误信息，确认修复方法。
 
-如果在查看从库 Pod 日志中出现从库复制错误，可能有多种情况，可以根据同时出现的其他错误信息，确认修复方法
-- #### 出现 purged binlog 错误
-注意以下示例，如果出现关键字 `purged binlog`，通常需要对从库执行重建处理，
+#### purged binlog 错误
+
+注意以下示例，如果出现关键字 `purged binlog`，通常需要对从库执行重建处理。
+
 ```bash
 [root@demo-alpha-master-01 /]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' | xargs -I {} kubectl logs {} -n mcamel-system -c mysql | grep ERROR
 2023-02-08T18:43:21.991730Z 116 [ERROR] [MY-010557] [Repl] Error reading packet from server for channel '': Cannot replicate because the master purged required binary logs. Replicate the missing transactions from elsewhere, or provision a new slave from backup. Consider increasing the master's binary log expiration period. The GTID sets and the missing purged transactions are too long to print in this message. For more information, please see the master's error log or the manual for GTID_SUBTRACT (server_errno=1236)
@@ -305,31 +330,38 @@ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- my
 ```
 重建操作如下：
 
-
 1. 寻找从节点的 Pod
+
 ```bash
 [root@master-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}'
 mcamel-common-mysql-cluster-mysql-1
 ```
+
 2. 寻找从节点的 pvc
+
 ```bash
 [root@master-01 /]$ kubectl get pvc -n mcamel-system | grep mcamel-common-mysql-cluster-mysql-1
 data-mcamel-common-mysql-cluster-mysql-1                                        Bound    pvc-5840569e-834f-4236-a5c6-878e41c55c85   50Gi       RWO            local-path                   33d
 ```
+
 3. 删除从节点的 pvc
+
 ```bash
 [root@master-01 /]$ kubectl delete pvc data-mcamel-common-mysql-cluster-mysql-1 -n mcamel-system
 persistentvolumeclaim "data-mcamel-common-mysql-cluster-mysql-1" deleted
 ```
+
 4. 删除从库的 Pod
+
 ```bash
 [root@master-01 /]$ kubectl delete pod mcamel-common-mysql-cluster-mysql-1 -n mcamel-system
 pod "mcamel-common-mysql-cluster-mysql-1" deleted
 ```
 
-- #### 主键冲突错误
+#### 主键冲突错误
 
 先看一段示例：
+
 ```bash
 [root@demo-alpha-master-01 /]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' | xargs -I {} kubectl logs {} -n mcamel-system -c mysql | grep ERROR
 2023-02-08T18:43:21.991730Z 116 [ERROR] [MY-010557] [Repl] Could notexecute Write_rows event on table dr_brower_db.dr_user_info; Duplicate entry '24' for key 'PRIMARY', Error_code:1062; handler error HA_ERR_FOUND_DUPP_KEY; the event's master logmysql-bin.000010, end_log_pos 5295916
@@ -342,18 +374,21 @@ pod "mcamel-common-mysql-cluster-mysql-1" deleted
 说明出现了主键冲突，或者主键不存在的错误。此时，可以以幂等模式恢复或插入空事务的形式跳过错误：
 
 **方法1**：幂等模式恢复
-1. 寻找到从节点的pod
+
+1. 寻找到从节点的 Pod
+
 ```bash
 [root@master-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}'
 mcamel-common-mysql-cluster-mysql-1
 ```
-2. 设置mysql 幂等模式
+
+2. 设置 mysql 幂等模式
+
 ```bash
 [root@master-01 ~]$ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'stop slave;set global slave_exec_mode="IDEMPOTENT";set global sync_binlog=10086;start slave;'
 ```
 
 **方法2**：插入空事务跳过错误
-
 
 ```sql
 mysql> stop slave;
@@ -382,26 +417,32 @@ mysql> show slave status\G;
 ```bash
 [root@master-01 ~]$ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'stop slave;set global slave_exec_mode="STRICT";set global sync_binlog=10086;start slave;
 ```
-- #### 从库出现 `[Note] Slave: MTS group recovery relay log info based on Worker-Id 0, group_r` 类似错误
-1. 寻找到从节点的pod
+
+#### 从库 `[Note] Slave: MTS group recovery relay log info based on Worker-Id 0, group_r` 类似错误
+
+1. 寻找到从节点的 Pod
+
 ```shell
 [root@master-01 ~]# kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' 
 mcamel-common-mysql-cluster-mysql-1
 ```
-2. 设置让从库跳过这个日志继续复制；
+
+2. 设置让从库跳过这个日志继续复制
+
 ```shell
 [root@master-01 ~]# kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'stop slave;reset slave;change master to MASTER_AUTO_POSITION = 1;start slave;'; 
 ```
 
->Note:
+>提示:
 
 >1.这种情况可以以幂等模式执行。
 
 >2.此种类型错误也可以重做从库。
 
-### 4.3. 主备 Pod 均为 `replica` 
+### 主备 Pod 均为 `replica` 
 
 1. 通过以下命令，发现两个 MySQL 的 Pod均为 `replica` 角色，需修正其中一个为 `master`。
+
 ```bash
 [root@aster-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role|grep mysql
 mcamel-common-mysql-cluster-mysql-0                          4/4     Running   5 (16h ago)   16h   no       replica
@@ -506,8 +547,10 @@ mysql > start slave;
 -- 注意替换下 {master-host-pod-index}
 mysql > change master to master_host='mcamel-common-mysql-cluster-mysql-{master-host-pod-index}.mysql.mcamel-system',master_port=3306,master_user='root',master_password='{password}',master_auto_position=1,MASTER_HEARTBEAT_PERIOD=2,MASTER_CONNECT_RETRY=1, MASTER_RETRY_COUNT=86400;
 ```
-### 4.4. 主备数据不一致——主动数据同步
+### 主备数据不一致——主动数据同步
+
 当主从实例数据不一致时，可以执行以下命令完成主从一致性同步：
+
 ```sql
 pt-table-sync --execute --charset=utf8 --ignore-databases=mysql,sys,percona --databases=amamba,audit,ghippo,insight,ipavo,keycloak,kpanda,skoala dsn=u=root,p=xxx,h=mcamel-common-kpanda-mysql-cluster-mysql-0.mysql.mcamel-system,P=3306 dsn=u=root,p=xxx,h=mcamel-common-kpanda-mysql-cluster-mysql.mysql.mcamel-system,P=3306  --print
 
@@ -520,9 +563,9 @@ pt-table-sync --execute --charset=utf8 --ignore-databases=mysql,sys,percona --da
 
 这种补充数据只能保证数据不丢失，如果新主库已经删除的数据会被重新补充回去，是一个潜在的风险，如果是新主库有数据，会被替换成老数据，也是一个风险。
 
+## 其他故障
 
-## 5. 其他故障
-### 5.1 CR 创建数据库失败报错
+### CR 创建数据库失败报错
 
 数据库运行正常，使用 CR 创建数据库出现了报错，此类问题的原因有：`mysql root` 密码有特殊字符
 
@@ -533,20 +576,31 @@ pt-table-sync --execute --charset=utf8 --ignore-databases=mysql,sys,percona --da
 ```bash
 [root@master-01 ~]$ kubectl get secret -n mcamel-system mcamel-common-mysql-cluster-secret -o=jsonpath='{.data.ROOT_PASSWORD}' | base64 -d
 ```
+
 2. 如果密码含有特殊字符 `-` ，进入 MySQL 的 shell 输入原密码出现以下错误
+
 ```bash
 bash-4.4# mysql -uroot -p
 Enter password:
 ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
 ```
+
 3. 清理重建：
 
 - 方法一：清理数据目录，删除 Pod 等待 sidecar running 以后，再删除一次数据目录，再删除 Pod 即可恢复:
+
 ```bash
 [root@master-01 ~]# kubectl exec -it mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c sidecar -- /bin/sh
 sh-4.4# cd /var/lib/mysql
 sh-4.4# ls | xargs rm -rf
 ```
-- 方法二：删除 pvc 再删除 Pod 只需要处理一次,即可恢复：
-[root@master-01 ~]# kubectl delete pvc data-mcamel-common-mysql-cluster-mysql-1 -n mcamel-system
-[root@master-01 ~]# kubectl delete pod mcamel-common-mysql-cluster-mysql-1 -n mcamel-system
+
+- 方法二：删除 pvc 再删除 Pod，只需要处理一次,即可恢复：
+
+```bash
+kubectl delete pvc data-mcamel-common-mysql-cluster-mysql-1 -n mcamel-system
+```
+
+```bash
+kubectl delete pod mcamel-common-mysql-cluster-mysql-1 -n mcamel-system
+```
