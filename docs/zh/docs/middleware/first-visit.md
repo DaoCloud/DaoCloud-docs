@@ -5,7 +5,7 @@ hide:
 
 # 首次进入中间件数据服务
 
-首次使用 DCE 5.0 的 [Elasticsearch 搜索服务](elasticsearch/intro/what.md)、[Kafka 消息队列](./kafka/intro/what.md)、[MinIO 对象存储](./minio/intro/what.md)、[MySQL 数据库](mysql/intro/what.md)、[RabbitMQ 消息队列](rabbitmq/intro/what.md)，或 [Redis 缓存服务](./redis/intro/what.md)组件时，需要选择工作空间。有关工作空间的概念介绍，可参考[工作空间与层级](../ghippo/user-guide/workspace/ws-folder.md)。
+首次使用 DCE 5.0 的 [Elasticsearch 搜索服务](elasticsearch/intro/what.md)、[Kafka 消息队列](./kafka/intro/what.md)、[MinIO 对象存储](./minio/intro/what.md)、[MySQL 数据库](mysql/intro/what.md)、[RabbitMQ 消息队列](rabbitmq/intro/what.md)、[PostgreSQL 数据库](postgresql/intro/what.md)，或 [Redis 缓存服务](./redis/intro/what.md)组件时，需要选择工作空间。有关工作空间的概念介绍，可参考[工作空间与层级](../ghippo/user-guide/workspace/ws-folder.md)。
 
 下面以 MinIO 为例介绍如何选择工作空间，其他数据服务组件同理。
 
