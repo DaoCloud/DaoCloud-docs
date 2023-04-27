@@ -12,13 +12,8 @@
 - :four: [API 策略的高级配置（1）](#api-1)
 - :five: [API 策略的高级配置（2）](#api-2)
 - :six: [通过网格治理微服务流量](#_4)
+- :seven: [SpringCloud 微服务接入云原生网关](#springcloud)
 
-</div>
-
-## SpringCloud 微服务接入云原生网关
-
-<div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/skoala-intro1.mp4" preload="metadata" poster="../images/skoala-intro1.png"></video>
 </div>
 
 ## 接入注册中心
@@ -65,6 +60,12 @@
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/traffic-governance.mp4" preload="metadata" poster="../images/skoala-mesh.png"></video>
+</div>
+
+## SpringCloud 微服务接入云原生网关
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/skoala-intro1.mp4" preload="metadata" poster="../images/skoala-intro1.png"></video>
 </div>
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
