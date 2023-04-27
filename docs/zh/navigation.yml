@@ -639,6 +639,13 @@ nav:
               - 删除 Redis 实例: middleware/redis/user-guide/delete.md
               - 查看 Redis 日志: middleware/redis/user-guide/logs.md
               - Release Notes: middleware/redis/release-notes.md
+          - PostgreSQL 数据库:
+              - 什么是 PostgreSQL: middleware/postgresql/intro/what.md
+              - 创建 PostgreSQL: middleware/postgresql/user-guide/create.md
+              - 更新 PostgreSQL: middleware/postgresql/user-guide/update.md
+              - 删除 PostgreSQL: middleware/postgresql/user-guide/delete.md
+              - 查看 PostgreSQL 日志: middleware/postgresql/user-guide/logs.md
+              - Release Notes: middleware/postgresql/release-notes.md
       - 云原生存储:
           - 介绍:
               - 什么是云原生存储: storage/what.md
