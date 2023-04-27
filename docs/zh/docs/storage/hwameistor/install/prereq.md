@@ -14,22 +14,20 @@ hide:
 - 高可用功能需要安装和当前运行的 Kernel 版本一致的 `kernel-devel`
 
 - 已安装 `LVM2`，如未安装请参考如下安装方式:
-  
-  
-  === "CentOS/RHEL、Rocky 和 Kylin"
-  
-      ```console
-      yum install -y lvm2
-      yum install -y kernel-devel-$(uname -r)
-      ```
-  
-  === "Ubuntu"
-  
-      ```console
-      apt-get install -y lvm2
-      apt-get install -y linux-headers-$(uname -r)
-      ```
 
+    === "CentOS/RHEL、Rocky 和 Kylin"
+  
+        ```console
+        yum install -y lvm2
+        yum install -y kernel-devel-$(uname -r)
+        ```
+  
+    === "Ubuntu"
+  
+        ```console
+        apt-get install -y lvm2
+        apt-get install -y linux-headers-$(uname -r)
+        ```
 
 ## 节点配置
 

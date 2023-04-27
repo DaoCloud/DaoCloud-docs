@@ -34,7 +34,7 @@ hide:
 
     **`Value.yaml`**参数如下，默认可不进行修改：
 
-    ```
+    ```yaml
     global:
       targetNamespace: hwameistor
       hwameistorImageRegistry: ghcr.io
@@ -119,7 +119,7 @@ hide:
 
     ![Operator03](../../images/operator3.jpg)
 
-6. Operator 安装完成后，Hwameistor 组件（Local Storage ，Local Disk Manager 等）默认进行安装！
+6. Operator 安装完成后，Hwameistor 组件（Local Storage、Local Disk Manager 等）默认进行安装！
    可点击`工作负载`-->`无状态工作负载`，选择对应命名空间，查看 Hwameistor 组件状态。
 
     ![hwameistor 状态](../../images/operator4.jpg)
