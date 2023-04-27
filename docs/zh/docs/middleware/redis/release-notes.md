@@ -60,7 +60,7 @@
 - **修复** `Mcamel-Redis` 无法修改 Port 的问题
 - **修复** `Mcamel-Redis` Redis 恢复时无法识别到备份文件名
 - **升级** `Mcamel-Redis` release notes 脚本 
-- **升级** `Mcamel-Redis` **升级**离线镜像检测脚本
+- **升级** `Mcamel-Redis` 离线镜像检测脚本
 - **升级** `Mcamel-Redis` 单实例/集群模式的 Operator 以支持 PVC 扩容
 - **升级** `Mcamel-Redis` 哨兵模式的 Operator 以支持备份恢复
 
