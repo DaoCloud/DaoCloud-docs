@@ -9,7 +9,7 @@
 
 ## :material-monitor-dashboard: 可观测性 OpenAPI
 
-- [v0.16.0-alpha1](./insight/v0.16.0.md)
+- [v0.16.0](./insight/v0.16.0.md)
 
 ## :material-cloud-check: 多云编排 OpenAPI
 
