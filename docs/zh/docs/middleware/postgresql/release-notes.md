@@ -10,11 +10,11 @@
 
 - **新增** `Mcamel-PostgreSQL` UI 模块上线，支界面化管理
 - **新增** 安装 `Mcamel-PostgreSQL` PgAdmin 离线镜像版本能力。
-- **新增** `Mcamel-PostgreSQL` PhpMyAdmin 支持 LoadBalancer 类型。
+- **新增** `Mcamel-PostgreSQL` PgAdmin 支持 LoadBalancer 类型。
 
 #### 升级
 
-- **优化** `Mcamel-PostgreSQL` 在 IPV6 的情况下 Exporter 没有权限连接到 PostgreSQ
+- **优化** `Mcamel-PostgreSQL` 在 IPV6 的情况下 Exporter 没有权限连接到 PostgreSQL
 - **优化** `Mcamel-PostgreSQL` 调度策略增加滑动按钮
 
 ## 2023-04-20
