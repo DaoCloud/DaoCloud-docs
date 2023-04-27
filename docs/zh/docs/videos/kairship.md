@@ -11,6 +11,7 @@
 - :three: [创建多云工作负载](#_4)
 - :four: [创建多云任务](#_5)
 - :five: [管理多云资源](#_6)
+- :six: [DCE4 应用升级为 DCE5 应用](#dce4)
 
 </div>
 
@@ -50,6 +51,12 @@
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-resoruces.mp4" preload="metadata" poster="../images/kairship-resource.png"></video>
+</div>
+
+## DCE4 应用升级为 DCE5 应用
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-migrate.mp4" preload="metadata" poster="../images/kairship-migrate.png"></video>
 </div>
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
