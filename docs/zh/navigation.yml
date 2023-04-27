@@ -295,9 +295,11 @@ nav:
               - 多云命名空间: kairship/resource/ns.md
               - 多云配置项: kairship/resource/configmap.md
               - 多云密钥: kairship/resource/secret.md
+              - 多云路由: kairship/resource/ingress.md
               - 更新多云服务: kairship/resource/update-service.md
               - 更新多云密钥: kairship/resource/update-secret.md
               - 更新多云配置项: kairship/resource/update-configmap.md
+              - 更多多云路由: kairship/resource/update-ingress.md
           - 策略管理:
               - 部署策略: kairship/policy/propagation-policy.md
               - 差异化策略: kairship/policy/override-policy.md
@@ -305,6 +307,8 @@ nav:
           - 故障转移:
               - 故障转移功能介绍: kairship/failover/failover.md
               - 优化故障转移延迟灵敏度: kairship/failover/optimization-failover.md
+          - 最佳实践:
+              - 实现 DCE4 到 DCE5 应用的一键转换: kairship/best-pratice/One-click conversion.md
       - 微服务引擎:
           - 介绍:
               - 功能总览: skoala/intro/what.md
