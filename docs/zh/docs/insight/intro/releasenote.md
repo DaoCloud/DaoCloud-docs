@@ -6,6 +6,10 @@
 
 ### v0.16.0
 
+!!! Warning
+
+    可观测性 Insight v0.16.0 中存在 Breaking Change。建议您直接卸载当前版本，重新安装。
+
 #### 新增
 
 - **新增** Java 应用的 JVM 监控。
