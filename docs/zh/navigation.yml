@@ -681,6 +681,7 @@ nav:
                   - 数据卷迁移: storage/hwameistor/resources/migrate.md
                   - 数据卷扩容: storage/hwameistor/resources/expand.md
                   - 磁盘扩展: storage/hwameistor/resources/disk-expansion.md
+                  - 磁盘预留: storage/hwameistor/resources/reserveddisk.md
               - 应用场景:
                   - 应用场景概述: storage/hwameistor/application/overview.md
                   - 部署有状态应用:
