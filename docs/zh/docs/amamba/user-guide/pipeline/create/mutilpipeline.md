@@ -14,7 +14,7 @@ hide:
 - 提供一个代码仓库，并且代码仓库的源码有多个分支，并且均有 Jenkinsfile 文本文件。
 - 如果是私有仓库，需要事先[创建仓库访问凭证](https://docs.daocloud.io/amamba/user-guide/pipeline/credential/)。
 
-## 创建多分支流水线
+## 操作步骤
 
 1. 在流水线列表页点击`创建流水线`。
 

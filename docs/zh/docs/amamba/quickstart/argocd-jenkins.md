@@ -29,11 +29,11 @@
 
 当`更新应用配置文件`步骤执行成功后，Argo CD 会监测到变化，并会触发更新同步最新的配置文件部署到集群中。
 
-1. 创建流水线的步骤可以参考<加个超链接>。
+1. 创建流水线的步骤可以参考: [创建流水线](../user-guide/pipeline/create/custom.md)。
 
 2. 创建成功后，选择该流水线操作：`编辑 Jenkinsfile`
 
-    ??? note "以下 Jenkinsfile 参数请根据实际情况进行更新："
+    ??? note "可根据实际需要更新以下 Jenkinsfile 参数"
 
         ```yaml
         pipeline {
