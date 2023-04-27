@@ -1,7 +1,6 @@
 ---
 hide:
   - toc
-
 ---
 
 # 通过 Operator 安装
@@ -14,7 +13,8 @@ hide:
 - 已完成[准备工作](prereq.md)中事项
 - 如需要使用高可用数据卷，请提前完成[DRDB 安装](drbdinstall.md)
 - 如部署环境为生产环境，请提前阅读[生产环境资源要求](proresource.md)
-- 如果您的 Kubernetes 发行版使用不同的 `kubelet` 目录，请提前确认 `kubeletRootDir`。详细信息参考： [自定义 Kubelet 根目录](customized-kubelet.md)
+- 如果您的 Kubernetes 发行版使用不同的 `kubelet` 目录，请提前确认 `kubeletRootDir`。
+  详细信息请参考[自定义 Kubelet 根目录](customized-kubelet.md)
 
 ## 安装步骤
 
@@ -119,7 +119,8 @@ hide:
 
     ![Operator03](../../images/operator3.jpg)
 
-6. Operator 安装完成后，Hwameistor 组件（Local Storage ，Local Disk Manager 等） 默认进行安装！可点击`工作负载`-->`无状态工作负载`，选择对应命名空间，查看 Hwameistor 组件状态。
+6. Operator 安装完成后，Hwameistor 组件（Local Storage ，Local Disk Manager 等）默认进行安装！
+   可点击`工作负载`-->`无状态工作负载`，选择对应命名空间，查看 Hwameistor 组件状态。
 
     ![hwameistor 状态](../../images/operator4.jpg)
 
