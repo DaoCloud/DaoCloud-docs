@@ -354,7 +354,7 @@ Karmada 故障恢复支持两种方式：
 检测到集群故障后，控制器将从故障集群中移除应用。然后，被移除的应用将被调度到满足要求的其他集群。
 这样可以实现故障转移，保证用户业务的高可用性和连续性。
 
-![failover](./images/karmada03.png)
+![failover](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/karmada03.png)
 
 > 图源：Karmada 官方文档 <https://karmada.io>
 
@@ -367,7 +367,7 @@ Karmada 故障恢复支持两种方式：
 
 Karmada 实现故障转移，主要由 karmada-controller-manager 中的 6 个控制器和 karmada-scheduler 参与完成。
 
-![failover](./images/karmada04.png)
+![failover](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/karmada04.png)
 
 1. clusterStatus controller：感知集群状态，并将集群状态写入到控制平面的 cluster 资源对象的状态中。
 2. cluster controller：在控制平面创建执行命名空间（这里的执行命名空间指的是 Karmada
@@ -383,7 +383,7 @@ Karmada 实现故障转移，主要由 karmada-controller-manager 中的 6 个�
 
 ### clusterStatus controller
 
-![clusterStatus controller](./images/karmada05.png)
+![clusterStatus controller](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/karmada05.png)
 
 clusterStatus controller 主要用于同步集群实际状态。当集群无法访问时，clusterStatus controller
 就会感知到集群状态处于非在线状态，此时便会更新控制平面的 cluster 资源对象的状态，修改 conditions 中
@@ -449,7 +449,7 @@ if !online && readyCondition.Status != metav1.ConditionTrue {
 
 ### cluster controller
 
-![clusterStatus controller](./images/karmada06.png)
+![clusterStatus controller](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/karmada06.png)
 
 cluster conntroller 会根据集群当前状态下的 conditions，判断是否需要为集群打上不可调度和不可执行的污点。
 以下代码为核心实现逻辑，当 conditions 中 type 为 Ready 的 condition 状态为 'False' 时，
@@ -488,7 +488,7 @@ func (c *Controller) taintClusterByCondition(ctx context.Context, cluster *clust
 
 ### taint-manager controller
 
-![clusterStatus controller](./images/karmada07.png)
+![clusterStatus controller](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/karmada07.png)
 
 taint-manager controller 控制器随 cluster controller 同步启动，可参数配置是否启动，默认启动。
 它感知 cluster 资源对象的变更事件，当感知到集群拥有 effect 为 NoExecute 的污点时，
@@ -567,7 +567,7 @@ func (s *ResourceBindingSpec) GracefulEvictCluster(name, producer, reason, messa
 
 ### Karmada scheduler
 
-![Karmada scheduler](./images/karmada08.png)
+![Karmada scheduler](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/karmada08.png)
 
 Karmada scheduler，如果调度的目标副本和期望的目标副本不等，也就是当 rb.spec.clusters（资源调度集群结果）下所有的副本之和不等于
 rb.spec.replicas（资源期望副本）时，调度器认为这是一次扩容或者缩容操作，从而触发重调度操作。
@@ -708,7 +708,7 @@ I0217 06:46:53.151403       1 scheduler.go:491] "End scheduling resource binding
 
 ### gracefulEviction controller
 
-![gracefulEviction controller](./images/karmada09.png)
+![gracefulEviction controller](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/karmada09.png)
 
 gracefulEviction controller 感知带有 rb.spec.gracefulEvictionTasks 的 rb(ResourceBinding) 资源的变更，
 即只关心需要优雅驱逐的 rb (ResourceBinding)。然后根据调度目标集群，获取到调度结果集群的资源健康状态，
@@ -753,7 +753,7 @@ func assessEvictionTasks(bindingSpec workv1alpha2.ResourceBindingSpec,
 
 ### binding controller
 
-![Image](./images/karmada10.png)
+![Image](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/karmada10.png)
 
 当 rb (ResourceBinding) 资源发生变更时，会被 binding controller 所感知。
 首先会移除孤儿 work（work 用于存放经过传播策略规则后，在成员集群上需要真正创建的资源对象模板。
@@ -862,7 +862,7 @@ func (c *ResourceBindingController) syncBinding(binding *workv1alpha2.ResourceBi
 
 ### execution controller
 
-![execution controller](./images/karmada11.png)
+![execution controller](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/karmada11.png)
 
 execution controller 的能力是 **将成员集群对应执行命名空间的 work 中存放的实际需要下发的资源在对应成员集群创建、更新或删除。**
 所以，它的执行逻辑是和 work 的状态和集群的状态是息息相关的。如果 work 的 DeletionTimestamp 不为空，也就是 work 已经被删除，
