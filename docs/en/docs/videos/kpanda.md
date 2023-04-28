@@ -9,7 +9,7 @@ We have crafted the following video tutorials for container management, any kind
 See the [HwameiStor introduction](../storage/hwameistor/intro/what.md) documentation page or you can check [this video on YouTube](https://youtu.be/6D1vgj86hHY).
 
 <div class="responsive-video-container">
-<iframe src="//player.bilibili.com/player.html?aid=528009438&bvid=BV1NM411G7hB&cid=1111640689&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/hwa.mp4" preload="metadata" poster="../images/hwacover.png"></video>
 </div>
 
 ## Join cluster
