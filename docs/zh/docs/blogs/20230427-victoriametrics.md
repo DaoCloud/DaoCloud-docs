@@ -1,6 +1,6 @@
 # 云原生监控 - VictoriaMetrics 之基础篇
 
-![VictoriaMetrics](./images/victoria.png)
+![VictoriaMetrics](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/victoria.png)
 
 说到云原生监控方案，第一时间基本上都会想到 Prometheus+AlertManager+Grafana 的一套成熟解决方案。
 Prometheus 作为监控核心，具备强大的数据模型、高效率运作、丰富的监控能力、强大的查询语言 PromQL、
@@ -77,7 +77,7 @@ VictoriaMetrics 还支持直接取代 Prometheus 进行 exporter 搜集。
 单节点版本可以根据 CPU 内核、RAM 和可用存储空间的数量完美扩展。与群集版本相比，
 单节点版本更易于配置和操作，因此在选择群集版本之前要三思。
 
-![Image](./images/victoria01.png)
+![Image](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/victoria01.png)
 
 VictoriaMetrics 集群由以下服务组成：
 
@@ -118,11 +118,11 @@ VictoriaMetrics 使用 “-retentionPeriod”命令行标志进行配置，该�
 
 ### 数据删除
 
-VictoriaMetrics 除了支持配置定时过期外，还支持手动进行数据删除操作，使用 “http://<victoriametrics-addr>:8428/api/v1/admin/tsdb/delete_series?match[]=<timeseries_selector_for_delete>”。删除的时间序列的存储空间不会立即释放，而是在随后的数据文件后台合并过程中释放。请注意，对于前几个月的数据，后台合并可能永远不会发生，因此不会为历史数据释放存储空间。在这种情况下，强制合并可能有助于释放存储空间。
+VictoriaMetrics 除了支持配置定时过期外，还支持手动进行数据删除操作，使用 “<http://<victoriametrics-addr>:8428/api/v1/admin/tsdb/delete_series?match[>]=<timeseries_selector_for_delete>”。删除的时间序列的存储空间不会立即释放，而是在随后的数据文件后台合并过程中释放。请注意，对于前几个月的数据，后台合并可能永远不会发生，因此不会为历史数据释放存储空间。在这种情况下，强制合并可能有助于释放存储空间。
 
 ### 强制合并
 
-VictoriaMetrics 会在后台以每个月为一个分区的形式进行数据压缩，以保持良好的性能。可以使用 “http://victoriametrics:8428/internal/force_merge?partition_prefix=YYYY_MM” 进行强制数据压缩，会以异步的形式，立马返回请求结果，并在后台执行数据压缩任务。当需要立即删除数据的时候，可以使用强制合并触发数据删除。
+VictoriaMetrics 会在后台以每个月为一个分区的形式进行数据压缩，以保持良好的性能。可以使用 “<http://victoriametrics:8428/internal/force_merge?partition_prefix=YYYY_MM>” 进行强制数据压缩，会以异步的形式，立马返回请求结果，并在后台执行数据压缩任务。当需要立即删除数据的时候，可以使用强制合并触发数据删除。
 
 ### 数据导入导出
 
@@ -219,7 +219,7 @@ VictoriaMetrics 以类似于 Prometheus 的方式在 “/api/v1/status/TSDB“ �
 
 当出现无法拉取指标的场景下，VictoriaMetrics 支持以 Prometheus 数据格式的方式，通过 push 模式进行指标推送：
 
-1. -pushmetrics.url，推送地址，比如”-pushmetrics.url=http://victoria-metrics:8428/api/v1/import/prometheus“；
+1. -pushmetrics.url，推送地址，比如”-pushmetrics.url=<http://victoria-metrics:8428/api/v1/import/prometheus“；>
 
 2. -pushmetrics.extraLabel，拓展标签，支持以 label="value" 的形式给 push 数据增加标签；
 
@@ -306,7 +306,7 @@ helm install victoria-metrics vm/victoria-metrics-cluster -f values.yaml -n vict
 
 稍等片刻 Helm 则会机提示安装成功，查询资源可以看到都已经部署起来了。
 
-![Image](./images/victoria02.jpeg)
+![Image](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/victoria02.jpeg)
 
 ## 使用
 
@@ -322,10 +322,10 @@ remote_write:
 把 Prometheus 的数据，写入 VictoriaMetrics，通过 VictoriaMetrics 的 UI 地址
 `http://IP:NodePort/select/0/vmui`，即可查看 Prometheus 采集到的数据了。
 
-![Image](./images/victoria03.jpeg)
+![Image](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/victoria03.jpeg)
 
-![Image](./images/victoria04.jpeg)
+![Image](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/victoria04.jpeg)
 
 可以看出，两者数据基本一致。
 
-参考资料：https://docs.victoriametrics.com/
+参考资料：<https://docs.victoriametrics.com/>
