@@ -6,6 +6,7 @@
 
 - [v0.15.0](./ghippo/v0.15.0.md)
 - [v0.16.0](./ghippo/v0.16.0.md)
+- [v0.16.1](./ghippo/v0.16.1.md)
 
 ## :material-monitor-dashboard: 可观测性 OpenAPI
 
