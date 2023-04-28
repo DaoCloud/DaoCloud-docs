@@ -8,7 +8,7 @@
 
 #### 修复
 
-- 修复死循环导致的CPU占用过高问题
+- 修复死循环导致的 CPU 占用过高问题
 - 修复审计日志导出不全的问题
 
 ## 2023-04-27
@@ -92,11 +92,11 @@
 #### 新功能
 
 - 支持在 DCE 5.0 前面部署一个国密网关, 并用国密浏览器来访问 DCE 5.0
-- 在 helm values 里设置开关, 可以一键开关 istio sidecar 功能
+- 在 helm values 里设置开关, 可以一键开关 Istio Sidecar 功能
 - 工作空间与层级增加 Workspace and Folder Owner 角色
 - 拥有 Workspace/Folder Admin 和 Kpanda Owner 权限的用户才可进行资源绑定
 - 对所用的库，进行开源 License 扫描
-- 用户列表新增 `状态` 列
+- 用户列表新增`状态`列
 - 对内提供离线安装文档
 - SDK 单元测试达 65%
 - 界面支持发送测试邮件和无账号密码邮件服务器
@@ -104,12 +104,12 @@
 
 #### 优化
 
-- Ghippo 鉴权代码优化(减少内存使用量)
+- Ghippo 鉴权代码优化（减少内存使用量）
 - 前端界面低网络情况下预加载机制优化
 
 #### 修复
 
-- 修复 OpenAPI cycle 为必填参数问题, 修复后为可选参数
+- 修复 OpenAPI cycle 为必填参数问题，修复后为可选参数
 
 ## 2022-11-30
 
@@ -126,16 +126,16 @@
 
 #### 新功能
 
-- 资源组里的 `模块` 改为 `来源`
+- 资源组里的`模块`改为`来源`
 - SDK 提供 Workspace 和 Resource 的绑定变化通知
-- 完整对接 Insight metrics 和 otel tracing(加入 keycloak 和 db 链路)
+- 完整对接 Insight metrics 和 otel tracing（加入 keycloak 和 db 链路）
 - Keycloak 改成 Quarkus 架构
 - Keycloak 镜像升级成 20.0.1 版本
 
 #### 优化
 
 - 重构导出审计日志 http 接口为 gprc stream 接口
-- SDK 内存使用量优化, 峰值减少 50%
+- SDK 内存使用量优化，峰值减少 50%
 - 审计日志部分代码优化
 - e2e 的 kind 镜像切到 1.25
 - 提高资源使用效率到 40% 以上
@@ -162,7 +162,7 @@
 
 - 给第三方应用提供接口在 Keycloak 创建 SSO 对接 Client
 - 支持 Mysql8
-- 对接 Insight(metrics, log, otel tracing)
+- 对接 Insight（metrics, log, otel tracing）
 - License 模块名支持 i18n
 - 支持一个 License 中可以包含多个 GProduct
 - 资源组新增绑定集群类型资源
@@ -241,7 +241,6 @@
 - 授权鉴权 -> 给前端提供当前登录用户的权限列表
 - 关于 -> 软件版本 -> 模块支持中文名
 - 添加整体双语文档站结构及主要内容
-- - 文档站新增页面：[什么是全局管理](what.md)、[常见术语](../intro/glossary.md)、[功能总览](features.md)、[快速入门/创建用户和授权](../user-guide/access-control/user.md)、[什么是用户访问和控制](../user-guide/access-control/iam.md)、[用户](../user-guide/access-control/user.md)、[创建用户组并授权](../user-guide/access-control/group.md)、[用户组](../user-guide/access-control/group.md)、[登录](../install/login.md)、[密码重置](../user-guide/password.md)、[全局管理角色](../user-guide/access-control/global.md)、[资源管理（按工作空间）](../user-guide/workspace/ws-best-practice.md)、[资源管理（按角色）](../user-guide/workspace/quota.md)、[身份提供商](../user-guide/access-control/idprovider.md)、[邮件服务器设置](../user-guide/platform-setting/mail-server.md)、[外观定制](../user-guide/platform-setting/appearance.md)、[LDAP](../user-guide/access-control/ldap.md)、[OIDC](../user-guide/access-control/oidc.md)、[关于平台](../user-guide/platform-setting/about.md)、[审计日志](../user-guide/audit-log.md)、[访问密钥](../user-guide/personal-center/password.md)、[语言设置](../user-guide/personal-center/language.md)、[安全设置](../user-guide/personal-center/security-setting.md) 等文档
 
 #### 优化
 
