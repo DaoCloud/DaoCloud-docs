@@ -10,8 +10,8 @@
 
 - 在 `API 管理`页面找到需要删除的 API，在该 API 的右侧点击 **`ⵗ`** 并选择`移除`。
 
-    ![在列表页删除](imgs/delete-api-1.png)
+    ![在列表页删除](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/delete-api-1.png)
 
 - 点击 API 名称进入 API 详情页，在页面右上角点击 **`ⵗ`** 操并选择`移除`。
 
-    ![在详情页删除](imgs/delete-api-2.png)
+    ![在详情页删除](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/delete-api-2.png)

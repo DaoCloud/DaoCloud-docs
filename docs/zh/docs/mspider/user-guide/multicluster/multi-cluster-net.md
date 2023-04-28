@@ -68,7 +68,7 @@
 
 顾名思义，在单一网络的情况下，多集群之间的网络实例能给直接通讯，这时候不需要网格进行任何操作，服务之间网络通讯能够直达，其架构图如下：
 
-![架构图](images/single-net.png)
+![架构图](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/single-net.png)
 
 单一网络模型的优势是非常明显的，用户通讯时，无需复杂的配置和中转，因此网络解析也更加直观，因此也能带来更高的网络性能。
 
@@ -83,7 +83,7 @@
 
 在服务通讯时，网格会根据网络分区进行服务发现，当请求服务与目标服务不属于同一网络分区时，服务请求将会转发给目标分区的东西网关，通过东西网关路由到真实的目标服务。
 
-![服务请求分发](images/multi-net.png)
+![服务请求分发](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/multi-net.png)
 
 ## 多云服务网格架构的抉择
 
@@ -100,7 +100,7 @@
 
 在最简单的情况下，可以在单一集群上使用控制平面运行网格。
 
-![控制平面运行网格](images/singlecluster-primary.png)
+![控制平面运行网格](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/singlecluster-primary.png)
 
 ### 多集群单控制面
 
@@ -108,9 +108,9 @@
 在这种情况下，在核心控制集群部署核心的共享控制面实例，其网格核心的通讯策略都由 **共享控制面实例** 控制。
 在从集群中，其实也存在一个从控制面实例，该实例其核心能力是 **控制本集群的边车生命周期管理** 。
 
-![共享控制面实例](images/multi-primary.png)
+![共享控制面实例](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/multi-primary.png)
 
-![控制本集群边车](images/multi-primary-control.png)
+![控制本集群边车](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/multi-primary-control.png)
 
 思考一个问题，从集群的边车如何与共享控制面建立连接？其回答时共享控制面需要暴露自身控制面服务。
 
@@ -124,7 +124,7 @@
 共享控制面在上面描述中都是属于某一个网格集群中，其实其远程共享控制面也可以部署在网格外的集群中，
 这样能够让网格的控制面与数据面在物理上实现隔离，避免主集群的控制面与数据面同时出现问题，可以分散风险。
 
-![远程共享部署](images/remote-primary.png)
+![远程共享部署](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/remote-primary.png)
 
 ### 多集群多控制面
 
@@ -138,7 +138,7 @@
 这是一个很复杂的问题，需要增加另外的同步操作。
 在大型的生产环境可能需要配合 CI/CD 工具一起自动化该过程，实现配置同步。
 
-![image-20221209083658951](images/multi-multi.png)
+![image-20221209083658951](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/multi-multi.png)
 
 在这种多控制面模型下的在部署难度与配置复杂度上需要付出很大代价。
 但是也能收获更高的回报，其核心优势在于：
@@ -160,7 +160,7 @@
 因此网格控制面为了能够访问其控制面的多集群的注册中心，在部署阶段需要从集群 **授权远程密钥** 给所属的控制面集群。
 授权以后控制面才能对多集群进行服务发现，因此才具有后续的跨集群负载均衡能力。
 
-![授权远程密钥](images/multi-discovery.png)
+![授权远程密钥](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/multi-discovery.png)
 
 在多集群网格部署模型下，多集群服务默认的策略是：每个集群均衡负载。
 但是在复杂且庞大的生产环境中，其实很多服务只需要在某些区域进行流量通讯，这时候就可以采用本地优先负载均衡策略（具体方式为参考 [Istio 官方提到的 Locality Load Balancing](https://istio.io/latest/docs/tasks/traffic-management/locality-load-balancing/)）。
@@ -175,7 +175,7 @@
 1. 我们可以不交换集群的 `API Server` 远程密钥，这样的话集群只能进行自身集群内的服务发现。
   如果需要进行跨集群流量负载，可以通过 `ServiceEntry` 配合外部负载器的方式实现。
 
-    ![多副本恢复](images/multi-dup-discovery.png)
+    ![多副本恢复](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/multi-dup-discovery.png)
 
 2. 通过配置 `VirtualService` 与 `DestinationRule` 策略，禁用多集群之间的流量负载。
 
@@ -221,7 +221,7 @@ DaoCloud 深耕在服务网格产品多年的 ，拥有实际落地客户，以�
 
 接下来让我们来了解一下服务网格的实际架构：
 
-![托管网格](images/mspider-hosted-mesh.png)
+![托管网格](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/mspider-hosted-mesh.png)
 
 在原生的多集群单控制面下其实并不能解决上文提到的污染多个控制面集群问题，但是我们仔细看上面的架构，大家会发现在这部分架构与社区提供的方案有一个很大的不同，在控制面集群中多了一套服务网格组件，这一套组件的最大的特色是提供了一个虚拟集群，该集群与网格控制面连接，并且目的是将网格资源与控制面集群的资源进行隔离，避免产生脏资源，这时候就能完美解决治理资源污染集群的问题，并且避免用户误操作删除控制面策略资源。
 

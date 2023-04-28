@@ -1,6 +1,6 @@
 # DCE 5.0 社区版 Release Notes - 202209
 
-![DCE 5.0 ](images/rn01.png)
+![DCE 5.0 ](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/release/images/rn01.png)
 
 2022 年 DCE 5.0 社区版发布，由于 release notes 详细的内容比较庞杂，所以本页按以下模块列出一些主要的特性变化：
 

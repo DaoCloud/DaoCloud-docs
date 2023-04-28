@@ -6,7 +6,7 @@
 通过这种方式，构建最适合企业的应用架构，从而保证业务高可用、增强应用弹性、提升负载能力。
 当然，企业也可以通过构建冗余部署，实现快速的故障转移 ，来降低单个云供应商的宕机的风险。
 
-![多云能力](images/kairship04.png)
+![多云能力](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/kairship04.png)
 
 在面对复杂的多云环境，5.0多云编排将给我们带来一致的集群运维，降低管理负担；跨集群应用分发能力，打破数据孤岛，实现应用跨集群级别的容灾部署。
 
@@ -109,7 +109,7 @@
 
     答：通过获取其它厂商集群的 KubeConfig 文件，在容器管理模块执行接入集群操作，填入目标集群的 KubeConfig 文件，即完成了对一个容器集群在容器管理的接入管理。然后在多云编排模块，可以在多云集群实例的工作集群列表中，接入新加入容器管理模块的集群。
 
-    ![管理 KubeConfig](images/kairship01.png)
+    ![管理 KubeConfig](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/kairship01.png)
 
 - **问：应用如何实现跨集群通信？**
 
@@ -119,13 +119,13 @@
 
     答：借助自研开源组件 ClusterPedia，通过在目标集群上安装 Agent 组件，结合 Watch 机制能够实时将目标集群的资源变动信息同步到容器管理集群的 ETCD 内。多云编排直接查询容器管理的 ETCD，从而获取多集群资源的实时状态。
 
-    ![获取集群资源状态](images/kairship02.png)
+    ![获取集群资源状态](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/kairship02.png)
 
 - **问：5.0多云编排在第五代产品中的定位？**
 
     答：在第五代产品中，多云编排模块处于承上启下的核心位置，对上：对接 DCE 5.0 应用工作台。对上层的场景化管理模块而言，多云编排模块能够把任何一个标准的 Kubernetes API 对上暴露，轻松实现应用跨集群分发、容灾部署。对下：对接容器管理平台 Kpanda，而 Kpanda 对接 Any Kubernetes ，例如边缘的 K3S、信创环境、DCE、DKG、DKE、以及外部的 Openshift，Tanzu、CCE等等，多云编排基于容器管理模块，快速实现多集群管理。
 
-    ![定位](images/kairship03.png)
+    ![定位](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/kairship03.png)
 
 - **问：谁能够创建多云集群？**
 

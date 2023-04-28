@@ -13,8 +13,8 @@ hide:
 
 - 在`微服务网关列表`页选择需要更新的网关实例，在实例右侧点击 **`⋯`** 并选择`编辑`。
 
-    ![更新网关](imgs/update.png)
+    ![更新网关](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/gateway/imgs/update.png)
 
 - 点击网关名称进入进入概览页面后，在右上角点击`编辑`。
 
-    ![更新网关](imgs/update-gateway.png)
+    ![更新网关](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/gateway/imgs/update-gateway.png)
