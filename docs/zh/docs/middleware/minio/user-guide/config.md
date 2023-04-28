@@ -13,10 +13,10 @@ MinIO 内置了参数配置 UI 界面。
 
 2. 在左侧导航栏，点击`配置参数`。
 
-    ![点击配置参数](../images/view02.png)
+    ![点击配置参数](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/view02.png)
 
 3. 打开`编辑配置`，对 MinIO 的各项参数进行添加、删除、修改。
 
-    ![配置参数](../images/view03.png)
+    ![配置参数](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/view03.png)
 
 4. 点击`保存`，修改内容将立即生效。

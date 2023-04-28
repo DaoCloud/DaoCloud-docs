@@ -17,7 +17,7 @@ hide:
 
 ## Calico 搭配 Macvlan CNI
 
-![calico-macvlan](../images/calico-macvlan.jpg)
+![calico-macvlan](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/calico-macvlan.jpg)
 
 **规划说明**：
 
@@ -32,7 +32,7 @@ hide:
 
 ## Calico 搭配 Macvlan 及 SRI-OV CNI
 
-![macvlan-sriov](../images/macvlan-sriov.jpg)
+![macvlan-sriov](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/macvlan-sriov.jpg)
 
 **规划说明**：
 

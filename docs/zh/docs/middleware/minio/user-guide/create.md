@@ -7,13 +7,13 @@ hide:
 
 1. 从左侧导航栏选择 `Minio 存储`。
 
-    ![选择 minio 存储](../images/create01.png)
+    ![选择 minio 存储](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create01.png)
 
 2. 可以点击列表右上角的`新建实例`按钮。
 
     > 如果是首次使用，需要[先选择工作空间](../../first-visit.md)，然后点击`立即部署`创建 MinIO 实例。
 
-    ![点击新建实例](../images/create02.png)
+    ![点击新建实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create02.png)
 
 3. 参考下方信息填写实例基本信息，然后点击`下一步`。
 
@@ -23,7 +23,7 @@ hide:
         - 注意查看输入框下方的填写要求，输入符合要求的内容
         - 如未通过安装环境检测，可根据提示安装相关插件后重新创建实例，或勾选`不需要监控`后直接进行后续操作
 
-    ![基本信息](../images/create03.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create03.png)
 
 4. 参考下方信息填写配置规格，然后点击`下一步`。
 
@@ -34,7 +34,7 @@ hide:
     - 存储容量：每个磁盘具有多少容量。**实例创建之后不可调低**
     - 每副本磁盘数：为每个副本提供多少个次盘。**实例创建之后不可调低**
 
-        ![配置规格](../images/create07.png)
+        ![配置规格](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create07.png)
 
 5. 参考下方信息填写服务设置，点击`下一步`。
 
@@ -48,7 +48,7 @@ hide:
 
     - 控制台账号：访问此新建实例时需要用到的用户名、密码
         
-        ![访问模式](../images/create08.png)
+        ![访问模式](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create08.png)
 
     ??? note "点击查看高级配置说明"
 
@@ -68,14 +68,14 @@ hide:
             - Gt：节点必须包含某个标签，并且标签的取值必须大于某个整数
             - Lt：节点必须包含某个标签，并且标签的取值必须小于某个整数
 
-                ![访问模式](../images/create09.png)
+                ![访问模式](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create09.png)
 
 6. 确认实例配置信息无误，点击`确认`完成创建。
 
-    ![点击确认](../images/create05.png)
+    ![点击确认](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create05.png)
 
 7. 返回实例列表页查看实例是否创建成功。
 
     > 新创建的实例状态为`未就绪`，等所有相关容器成功启动之后状态变为`运行中`。
 
-    ![状态](../images/create06.png)
+    ![状态](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create06.png)

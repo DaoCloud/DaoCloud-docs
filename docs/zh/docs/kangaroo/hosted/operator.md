@@ -10,22 +10,22 @@ hide:
 
 1. 如果在创建 Harbor 实例时，出现以下异常提示，请点击`前往安装`。
 
-    ![operator 异常](../images/errors.png)
+    ![operator 异常](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/errors.png)
 
 1. 进入`容器管理`的 `Helm 应用` -> `Helm 模板`，找到并点击 Harbor Operator 卡片。
 
-    ![找到 operator](../images/operator01.png)
+    ![找到 operator](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/operator01.png)
 
 1. 选择版本，点击`安装`。
 
-    ![安装](../images/operator02.png)
+    ![安装](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/operator02.png)
 
 1. 输入名称和命名空间后，点击`确定`。
 
-    ![填表](../images/operator03.png)
+    ![填表](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/operator03.png)
 
 1. 等待安装完成。
 
-    ![安装](../images/operator04.png)
+    ![安装](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/operator04.png)
 
 下一步：[创建托管 Harbor 实例](./harbor.md)

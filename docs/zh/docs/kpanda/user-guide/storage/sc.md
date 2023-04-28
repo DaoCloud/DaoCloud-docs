@@ -14,19 +14,19 @@
 
 1. 在集群列表中点击目标集群的名称，然后在左侧导航栏点击`容器存储`->`存储池(SC)`->`YAML 创建`。
 
-    ![路径](../../images/sc01.png)
+    ![路径](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/sc01.png)
 
 2. 在弹框中输入或粘贴事先准备好的 YAML 文件，然后在弹框底部点击`确定`。
 
     > 支持从本地导入 YAML 文件或将填写好的文件下载保存到本地。
 
-    ![yaml](../../images/sc02.png)
+    ![yaml](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/sc02.png)
 
 ### 表单创建
 
 1. 在集群列表中点击目标集群的名称，然后在左侧导航栏点击`容器存储`->`存储池(SC)`->`创建存储池(SC)`。
 
-    ![路径](../../images/sc03.png)
+    ![路径](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/sc03.png)
 
 2. 填写基本信息，然后在底部点击`确定`。
 
@@ -50,13 +50,13 @@
     - 回收策略：删除数据卷时，保留数据卷中的数据或者删除其中的数据。
     - 快照/扩容：开启后，基于该存储池的数据卷/数据卷声明才能支持扩容和快照功能，但 **前提是底层使用的存储驱动支持快照和扩容功能**。
 
-    ![基本信息](../../images/sc04.jpg)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/sc04.jpg)
 
 ## 更新存储池(SC)
 
 在存储池列表页面，找到需要更新的存储池，在右侧的操作栏下选择`编辑`即可通过更新存储池。
 
-![更新](../../images/sc05.png)
+![更新](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/sc05.png)
 
 !!! info
 
@@ -66,4 +66,4 @@
 
 在存储池列表页面，找到需要删除的存储池，在右侧的操作栏下选择`删除`。
 
-![删除](../../images/sc06.png)
+![删除](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/sc06.png)

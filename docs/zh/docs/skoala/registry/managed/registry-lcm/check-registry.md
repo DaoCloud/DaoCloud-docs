@@ -14,7 +14,7 @@ hide:
 
 - 重启注册中心实例：在页面右上角点击`重启`可以对整个托管注册中心实例进行重启。
 
-    ![全量重启](../imgs/check-1.png)
+    ![全量重启](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/imgs/check-1.png)
 
 - 节点上下线：在节点列表中选择目标节点，修改节点状态。
 
@@ -26,8 +26,8 @@ hide:
 
         点击`操作`列的`上线`，修改节点实例状态为“上线”
 
-        ![单节点重启](../imgs/check-2.png)
+        ![单节点重启](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/imgs/check-2.png)
 
 - 查看节点元数据
 
-    ![查看元数据](../imgs/check-3.png)
+    ![查看元数据](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/imgs/check-3.png)

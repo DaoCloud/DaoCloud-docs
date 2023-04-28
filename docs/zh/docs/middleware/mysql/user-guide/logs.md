@@ -11,11 +11,11 @@ hide:
 
 1. 在 MySQL 实例列表中，选择想要查看的日志，点击 `实例名称` 进入到实例详情页面。
 
-    ![image](../images/log01.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/mysql/images/log01.png)
 
 2. 在实例的左侧菜单栏，会发现有一个日志查看的菜单栏选项。
 
-    ![image](../images/log02.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/mysql/images/log02.png)
 
 3. 点击 `日志查看` 即可进入到日志查看页面（Insight 日志查看）。
 
@@ -29,4 +29,4 @@ hide:
 * 支持 查看日志的上下文，点击右侧 `上下文` 图标即可
 * 支持 导出日志
 
-![image](../images/log03.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/mysql/images/log03.png)

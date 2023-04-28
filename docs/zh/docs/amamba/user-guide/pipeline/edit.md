@@ -28,11 +28,11 @@
 
 1. 点击一个创建好的自定义流水线。在右上角点击`编辑流水线`，进入图形化编辑页面。
 
-    ![pipelisetting](../../images/editpipe02.png)
+    ![pipelisetting](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/editpipe02.png)
 
 2. 图形化编辑页面包括两个区域：**画布（左侧）** 和 **阶段设置（右侧）**。
 
-    ![canvasdescribe](../../images/canvasdescribe.png)
+    ![canvasdescribe](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/canvasdescribe.png)
 
     - 点击 `+添加阶段`后，会生成一个串行阶段，点击后，会生成一个新的阶段，可以在该阶段中添加流水线步骤，通过选择步骤类型，可以快速创建当前阶段中的流水线步骤。
 
@@ -44,7 +44,7 @@
 
 点击`全局设置`，从`类型`下拉列表中选择 node，从 label 下拉列表选择 go 16。
 
-![pipelisetting](../../images/pipelisetting.png)
+![pipelisetting](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipelisetting.png)
 
 ### 添加阶段 - 拉取源代码
 
@@ -56,7 +56,7 @@
     - 分支：不填写，默认为 master 分支。
     - 凭证：如果您的仓库属于私有仓库则需要提供一个凭证。
 
-    ![git_clone](../../images/git_clone.png)
+    ![git_clone](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/git_clone.png)
 
 ### 添加阶段 - 单元测试
 
@@ -64,7 +64,7 @@
 
 2. 在步骤模块中选择开启`指定容器`，在弹出的对话框中填写容器名称：go，然后点击`确定`。
 
-    ![container1](../../images/container1.png)
+    ![container1](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/container1.png)
 
 3. 点击`添加步骤以对代码进行单元测试，并生成测试报告`，在弹出的对话框中步骤类型下选择 shell，并在命令行中输入以下命令，然后点击`确定`。
 
@@ -72,7 +72,7 @@
     go test -coverprofile=coverage.out
     ```
 
-    ![go-test](../../images/go-test.png)
+    ![go-test](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/go-test.png)
 
 ### 添加阶段 - 构建并推送镜像
 
@@ -80,7 +80,7 @@
 
 2. 在步骤模块中选择开启`指定容器`，在弹出的对话框中填写容器名称：go，然后点击`确定`。
 
-    ![container2](../../images/container2.png)
+    ![container2](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/container2.png)
 
 3. 在步骤模块中选择开启`使用凭证`，在弹出的对话框中填写相关参数，然后点击`确定`。
 
@@ -88,7 +88,7 @@
     - 密码变量：PASS
     - 用户名变量：USER
 
-    ![creditional1](../../images/creditional1.png)
+    ![creditional1](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/creditional1.png)
 
 4. 点击`添加步骤`进行代码构建，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
 
@@ -108,7 +108,7 @@
     docker login $REGISTRY -u $USER -p $PASS
     ```
 
-    ![build3](../../images/build3.png)
+    ![build3](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/build3.png)
 
 6. 点击`添加步骤`以将镜像推送至镜像仓库中，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
 
@@ -116,7 +116,7 @@
     docker push $REGISTRY/$PROJECT/$NAME:latest
     ```
 
-    ![build4](../../images/build4.png)
+    ![build4](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/build4.png)
 
 !!! note
     
@@ -128,7 +128,7 @@
 
 2. 点击`添加步骤`，在弹出的对话框中步骤类型下选择`审核`，在消息字段中填入 `@admin`，即 `admin` 帐户在流水线运行到该阶段时会进行审核，然后点击`确定`。
 
-    ![review](../../images/review.png)
+    ![review](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/review.png)
 
 ### 添加阶段 - 部署至集群
 
@@ -136,7 +136,7 @@
 
 2. 在步骤模块中选择开启`指定容器`，在弹出的对话框中填写容器名称：go，然后点击`确定`。
 
-    ![container3](../../images/container3.png)
+    ![container3](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/container3.png)
 
 3. 在步骤模块中选择开启`使用凭证`，在弹出的对话框中填写相关参数，然后点击`确定`。
 
@@ -144,7 +144,7 @@
 
     - kubeconfig 变量：如果使用的是 kubectl apply 的部署方式，变量值必须为 KUBECONFIG。
 
-    ![credentials2](../../images/credentials2.png)
+    ![credentials2](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/credentials2.png)
 
 4. 点击`添加步骤`以进行集群部署操作，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
 
@@ -156,13 +156,13 @@
 
 1. 在流水详情页面点击`立即执行`。在弹出的对话框中设置前提条件中定义的三个字符串参数，点击`确定`来运行流水线。
 
-    ![run](../../images/run.png)
+    ![run](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/run.png)
 
 2. 成功开始运行后，页面会自动切换到流水线详情页面，点击当前运行的流水线记录。
 
 3. 进入流水线记录详情页面后，您可以查看到当前流水线运行的过程，需要 admin 或者平台管理员来为流水线进行审核，审核成功后，资源会部署至集群。
 
-    ![report](../../images/report.png)
+    ![report](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/report.png)
 
 ### 验证集群资源
 
@@ -170,7 +170,7 @@
 
 2. 前往容器管理平台，点击集群下的`工作负载`，您可以看到列表中显示的无状态工作负载。
 
-    ![deployment](../../images/deployment.png)
+    ![deployment](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/deployment.png)
 
 ## 通过 Jenkinsfile 编辑流水线
 
@@ -178,10 +178,10 @@
 
 1. 在流水线列表页面找到需要新建的流水线，在右侧点击`编辑 Jenkinsfile`。
 
-    ![edit](../../images/edit01.png)
+    ![edit](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/edit01.png)
 
     > 也可以点击流水线名称后，在页面右上角点击`编辑 Jenkinsfile`。
 
 2. 输入或粘贴事先准备好的 Jenkinsfile，然后点击`确定`即可。
 
-    ![edit](../../images/edit02.png)
+    ![edit](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/edit02.png)

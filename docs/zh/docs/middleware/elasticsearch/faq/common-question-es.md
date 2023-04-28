@@ -95,13 +95,13 @@
 
 > 现象：索引别名被占用
 
-![image](../images/faq-es-1.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/faq-es-1.png)
 
 此图中`*-write`为别名，例如`jaeger-span-write`，需要对此别名进行处理
 
 查看业务索引模板中使用的别名 `rollover_alias 对应值`
 
-![image](../images/faq-es-2.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/faq-es-2.png)
 
 临时处理方式：进入 es pod 容器内执行以下脚本：
 
@@ -133,7 +133,7 @@ curl -XPUT -u elastic:${ES_PASSWORD} -k "$ES_URL/${TEMPLATE_NAME}-000001" -H 'Co
 
 **报错信息**
 
-![image](../images/faq-es-3.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/faq-es-3.png)
 
 环境信息：
 
@@ -178,25 +178,25 @@ Terminating due to java.lang.OutOfMemoryError: Java heap space
 kubectl edit elasticsearch mcamel-common-es-cluster-masters -n mcamel-system
 ```
 
-![image](../images/faq-es-4.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/faq-es-4.png)
 
 ## OCP 环境安装 `Elasticsearch` 时报错 `Operation not permitted`
 
 **报错信息**
 
-![image](../images/faq-es-5.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/faq-es-5.png)
 
 **解决方式**
 
-![image](../images/faq-es-6.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/faq-es-6.png)
 
 ## 某个节点磁盘读吞吐异常、CPU workload 很高
 
 **异常信息**
 
-![image](../images/faq-es-7.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/faq-es-7.png)
 
-![image](../images/faq-es-8.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/faq-es-8.png)
 
 **解决方式**
 

@@ -44,7 +44,7 @@ components:
 
 ### 微服务引擎部署结构
 
-![image](../images/install-step.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/install-step.png)
 
 左侧蓝色框内的 chart 即 `skoala` 组件，需要安装在控制面集群，即 DCE 5.0 的全局集群 `kpanda-global-clsuter`，详情可参考 DCE 5.0 的[部署架构](../../install/commercial/deploy-arch.md)。安装 `skoala` 组件之后即可以在 DCE 5.0 的一级导航栏中看到微服务引擎模块。另外需要注意：安装 `skoala` 之前需要安装好其依赖的 `common-mysql` 组件用于存储资源。
 
@@ -88,7 +88,7 @@ mcamel-common-mysql-cluster-mysql             2/2     7d23h
 
 微服务引擎依赖 [DCE 5.0 可观测性](../../insight/intro/what.md)模块的能力。如您需要监控微服务的各项指标、追踪链路，则需要在集群中安装对应的 `insight-agent`，具体说明可参考[](../../insight/user-guide/quickstart/install-agent.md)。
 
-![image](../images/cluster-list.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/cluster-list.png)
 
 !!! note
 
@@ -284,7 +284,7 @@ skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for Skoala 
 
 除了通过终端安装，UI 的方式 可以在 Kpanda 集群管理中 Helm 应用内找到 Skoala-init 进行安装。
 
-![image](../images/skoala-init.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/skoala-init.png)
 
 卸载命令
 

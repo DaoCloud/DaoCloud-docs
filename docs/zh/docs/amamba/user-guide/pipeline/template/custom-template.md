@@ -12,7 +12,7 @@
 
 1. 在`自定义流水线模版`页面点击`创建模版`
 
-    ![click-create](../../../images/template04.png)
+    ![click-create](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/template04.png)
 
 2. 参考以下说明填写基本信息，然后点击`确定` 。
 
@@ -20,8 +20,8 @@
     - 描述信息：对当前流水线的描述信息，支持中文。
     - 模版文件：参考[流水线模版文件](info.md)填写或粘贴事先准备好的参数。
 
-        ![config](../../../images/template05.png)
+        ![config](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/template05.png)
 
 3. 返回流水线模版列表页面，点击模板卡片可以删除或修改模板。
 
-    ![config](../../../images/template06.png)
+    ![config](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/template06.png)

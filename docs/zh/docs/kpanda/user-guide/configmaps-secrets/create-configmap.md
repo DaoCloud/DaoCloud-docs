@@ -27,7 +27,7 @@
 
 2. 在左侧导航栏，点击`配置与密钥`->`配置项`，点击右上角`创建配置项`按钮。
 
-    ![创建配置项](../../images/configmap01.png)
+    ![创建配置项](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/configmap01.png)
 
 3. 在`创建配置项`页面中填写配置信息，点击`确定`。
 
@@ -35,11 +35,11 @@
 
         点击`上传文件`可以从本地导入已有的文件，快速创建配置项。
 
-    ![创建配置项](../../images/configmap03.png)
+    ![创建配置项](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/configmap03.png)
 
 4. 创建完成后在配置项右侧点击更多可以，可以编辑 YAML、更新、导出、删除等操作。
 
-    ![创建配置项](../../images/configmap04.png)
+    ![创建配置项](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/configmap04.png)
 
 ## YAML 创建
 
@@ -49,7 +49,7 @@
 
 2. 在左侧导航栏，点击`配置与密钥`->`配置项`，点击右上角`YAML 创建`按钮。
 
-    ![创建配置项](../../images/configmap02.png)
+    ![创建配置项](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/configmap02.png)
 
 3. 填写或粘贴事先准备好的配置文件，然后在弹框右下角点击`确定`。
 
@@ -58,11 +58,11 @@
         - 点击`导入`可以从本地导入已有的文件，快速创建配置项。
         - 填写数据之后点击`下载`可以将配置文件保存在本地。
 
-    ![创建配置项](../../images/configmap05.png)
+    ![创建配置项](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/configmap05.png)
 
 4. 创建完成后在配置项右侧点击更多可以，可以编辑 YAML、更新、导出、删除等操作。
 
-    ![创建配置项](../../images/configmap04.png)
+    ![创建配置项](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/configmap04.png)
 
 
 ## 配置项 YAML 示例

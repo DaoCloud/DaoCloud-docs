@@ -4,7 +4,7 @@
 
 ## 整体流程
 
-![cd:ci01](../images/cd:ci01.png)
+![cd:ci01](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci01.png)
 
 ## 前提条件
 
@@ -91,38 +91,38 @@
 
 2. 创建一个持续部署应用
 
-    ![cd:ci02](../images/cd:ci02.png)
+    ![cd:ci02](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci02.png)
 
 3. 创建完成后，生成一条记录，同步状态显示`未同步`
 
-    ![cd:ci03](../images/cd:ci03.png)
+    ![cd:ci03](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci03.png)
 
 4. 点击同步，完成应用部署
 
-    ![cd:ci04](../images/cd:ci04.png)
+    ![cd:ci04](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci04.png)
 
 ## 运行流水线触发 CI/CD
 
 1. 选择上述创建的流水线，点击立即运行
 
-    ![cd:ci05](../images/cd:ci05.png)
+    ![cd:ci05](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci05.png)
 
 2. 查看运行日志
 
-    ![cd:ci06](../images/cd:ci06.png)
+    ![cd:ci06](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci06.png)
 
 3. 流水线运行成功后，验证镜像是否上传到 Harbor，Jenkinsfile 中定义的 tag 为 v2.0。
 
-    ![cd:ci07](../images/cd:ci07.png)
+    ![cd:ci07](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci07.png)
 
 4. 继续验证持续部署应用，发现处于`未同步`状态。看到 Deployment 资源未同步，并跳转到`容器管理`确认目前镜像版本。
 
-    ![cd:ci08](../images/cd:ci08.png)
+    ![cd:ci08](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci08.png)
 
-    ![cd:ci09](../images/cd:ci09.png)
+    ![cd:ci09](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci09.png)
 
 5. 点击`同步`，等待同步成功后，查看 Deployment 资源，确认目前的镜像版本。
 
-    ![cd:ci11](../images/cd:ci11.png)
+    ![cd:ci11](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci11.png)
 
-    ![cd:ci10](../images/cd:ci10.png)
+    ![cd:ci10](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci10.png)

@@ -55,4 +55,4 @@ hide:
 
     可以在启动命令中增加对应的参数配置，`--chat-repo-url`
 
-    ![image](../images/faq01.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/faq01.png)

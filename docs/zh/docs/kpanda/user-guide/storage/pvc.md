@@ -14,19 +14,19 @@
 
 1. 在集群列表中点击目标集群的名称，然后在左侧导航栏点击`容器存储`->`数据卷声明 (PVC)`->`YAML 创建`。
 
-    ![路径](../../images/pvc01.png)
+    ![路径](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pvc01.png)
 
 2. 在弹框中输入或粘贴事先准备好的 YAML 文件，然后在弹框底部点击`确定`。
 
     > 支持从本地导入 YAML 文件或将填写好的文件下载保存到本地。
 
-    ![yaml](../../images/pvc02.png)
+    ![yaml](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pvc02.png)
 
 ### 表单创建
 
 1. 在集群列表中点击目标集群的名称，然后在左侧导航栏点击`容器存储`->`数据卷声明 (PVC)`->`创建数据卷声明 (PVC)`。
 
-    ![路径](../../images/pvc03.png)
+    ![路径](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pvc03.png)
 
 2. 填写基本信息。
 
@@ -43,7 +43,7 @@
       - ReadOnlyMany，数据卷声明可以被多个节点以只读方式挂载。
       - ReadWriteOncePod，数据卷声明可以被单个 Pod 以读写方式挂载。
 
-        ![基本信息](../../images/pvc04.png)
+        ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pvc04.png)
 
 ## 查看数据卷声明
 
@@ -53,25 +53,25 @@
 
 - 支持按照数据卷声明的名称、状态、命名空间、创建时间进行顺序或逆序排序。
 
-    ![详情](../../images/pvc06.png)
+    ![详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pvc06.png)
 
 - 点击数据卷声明的名称，可以查看该数据卷声明的基本配置、存储池信息、标签、注解等信息。
 
-    ![详情](../../images/pvc05.png)
+    ![详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pvc05.png)
 
 ## 扩容数据卷声明
 
 1. 在左侧导航栏点击`容器存储`->`数据卷声明(PVC)`，找到想要调整容量的数据卷声明。
 
-    ![扩容](../../images/pvc14.png)
+    ![扩容](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pvc14.png)
 
 2. 点击数据卷声明的名称，然后在页面右上角点击操作按钮选择`扩容`。
 
-    ![扩容](../../images/pvc15.png)
+    ![扩容](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pvc15.png)
 
 3. 输入目标容量，然后点击`确定`。
 
-    ![克隆](../../images/pvc16.png)
+    ![克隆](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pvc16.png)
 
 ## 克隆数据卷声明
 
@@ -83,11 +83,11 @@
 
         > 也可以点击数据卷声明的名称，在详情页面的右上角点击操作按钮选择`克隆`。
 
-        ![克隆](../../images/pvc11.png)
+        ![克隆](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pvc11.png)
 
 2. 直接使用原配置，或者按需进行修改，然后在页面底部点击`确定`。
 
-    ![克隆](../../images/pvc12.png)
+    ![克隆](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pvc12.png)
 
 ## 更新数据卷声明
 
@@ -99,11 +99,11 @@
 
 - 在数据卷列表页面，找到需要更新的数据卷声明，在右侧的操作栏下选择`更新`即可通过表单更新，选择`编辑 YAML` 即可通过 YAML 更新。
 
-    ![更新](../../images/pvc07.png)
+    ![更新](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pvc07.png)
 
 - 点击数据卷声明的名称，进入数据卷声明的详情页面后，在页面右上角选择`更新`即可通过表单更新，选择`编辑 YAML` 即可通过 YAML 更新。
 
-    ![更新](../../images/pvc08.png)
+    ![更新](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pvc08.png)
 
 ## 删除数据卷声明
 
@@ -111,7 +111,7 @@
 
 > 也可以点击数据卷声明的名称，在详情页面的右上角点击操作按钮选择`删除`。
 
-![删除](../../images/pvc09.png)
+![删除](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pvc09.png)
 
 ## 常见问题
 
@@ -119,9 +119,9 @@
 
 2. 如果列表中没有可选的快照，可以进入数据卷声明的详情页，在右上角制作快照。
 
-    ![制作快照](../../images/pvc17.png)
+    ![制作快照](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pvc17.png)
 
 3. 如果数据卷声明所使用的存储池 (SC) 没有启用快照，则无法制作快照，页面不会显示“制作快照”选项。
 4. 如果数据卷声明所使用的存储池 (SC) 没有开启扩容功能，则该数据卷不支持扩容，页面不会显示扩容选项。
 
-    ![开启快照](../../images/pvc18.png)
+    ![开启快照](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pvc18.png)

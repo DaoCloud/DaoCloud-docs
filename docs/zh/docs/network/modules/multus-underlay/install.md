@@ -18,11 +18,11 @@
 
 1. 在左侧导航栏点击`容器管理`—>`集群列表`，然后找到准备安装 Multus-underlay 的集群名称。然后，在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `multus-underlay`。
 
-    ![helm repo](../../images/repo.png)
+    ![helm repo](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/repo.png)
 
 2. 进入安装界面，填写基础配置信息。命名空间选择 `kube-system`, 并开启`就绪等待`:
 
-    ![helm install-1](../../images/install1.png)
+    ![helm install-1](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/install1.png)
 
 3. 为 Multus 配置默认 CNI：
 
@@ -43,18 +43,18 @@
         ...
         ```
         > `name` 的值如果为 `k8s-pod-network`，那么这里就应该选中 `k8s-pod-network`。
-        > ![Default CNI](../../images/install2.png)        
+        > ![Default CNI](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/install2.png)        
         > 如果当前集群是接入的第三方、calico 为 CNI 的集群, 那么这里应该选择为 `k8s-pod-network`. 同样, 也可以通过查看主机上`/etc/cni/net.d`文件确认。
 
 4. 配置目前集群 Service 和 Pod 的 CIDR:
 
     此步骤的目的是告知 [Meta-Plugins](https://github.com/spidernet-io/cni-plugins) 集群的 CIDR，Meta-Plugins 会创建对应的路由规则，解决 Underlay CNI 的集群东西向通信问题。
 
-    ![Cluster CIDR](../../images/install3.png)
+    ![Cluster CIDR](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/install3.png)
 
     可通过查看 `configMap`: `kube-system/kubeadm-config` 获取目前集群中 Service 和 Pod 的 CIDR：
 
-    ![kubeadm-config](../../images/kubeadm-config.png)
+    ![kubeadm-config](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/kubeadm-config.png)
 
     !!! note
 
@@ -65,7 +65,7 @@
 
     此步骤会根据配置创建 MacVLAN 对应的 Multus CRD 实例:
 
-    ![macvlan](../../images/macvlan.png)
+    ![macvlan](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/macvlan.png)
 
     - `Install Macvlan CNI`：true/false，是否创建 MacVLAN 的 Multus CRD 实例。
     - `Macvlan Type`：macvlan-overlay/macvlan-standalone，安装 MacVLAN CRD 实例的类型。
@@ -82,7 +82,7 @@
 
     配置 SRIOV Multus CRD：
 
-    ![sriov_install](../../images/sriov_install.png)
+    ![sriov_install](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/sriov_install.png)
 
     - `Install SRIOV CNI`：是否安装 SRIOV，默认不安装。
     - `SRIOV Type`：安装 SRIOV 的 Multus CRD 实例的类型，有以下几种：
@@ -101,7 +101,7 @@
     - `drivers`：PCI 设备驱动，如 'mlx5_core'
     - `pfNames`：PF 设备的名称列表
 
-    ![sriov-net-device](../../images/sriov-net-device.png)
+    ![sriov-net-device](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/sriov-net-device.png)
 
     !!! note
     
@@ -115,7 +115,7 @@
 
     包括 Multus、Meta-plugins、SRIOV-CNI（如果启用）、SRIOV-Device-Plugins（如果启用）。
 
-    ![install_finished](../../images/install_finished.png)
+    ![install_finished](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/install_finished.png)
 
 2. 创建工作负载，以 MacVLAN 为例：
 

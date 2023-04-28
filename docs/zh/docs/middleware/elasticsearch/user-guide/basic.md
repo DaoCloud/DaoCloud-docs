@@ -12,4 +12,4 @@ hide:
 - 资源配置
 - Pod 列表
 
-![概览](../images/overview.png)
+![概览](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/overview.png)

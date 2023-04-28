@@ -16,17 +16,17 @@ DCE 5.0 提供了三种部署架构：[all-in-one](#all-in-one)、[4 节点](#4)
 all-in-one 模式仅需要一台主机，仅建议个人客户体验时采用此模式进行安装 DCE 5.0。
 使用 all-in-one 模式时，建议使用最小化安装 DCE 5.0，即安装命令后添加 `-z` 参数。
 
-![allinone](../images/allinone.png)
+![allinone](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/allinone.png)
 
 ## 4 节点模式
 
 4 节点模式由 1 个火种节点、3 个集群的主节点组成，仅建议 PoC 或测试环境时采用此模式进行安装 DCE 5.0。
 
-![four](../images/four.png)
+![four](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/four.png)
 
 ## 7 节点模式（1 + 6）
 
 7 节点模式由 1 个火种节点、3 个集群的主节点、3 个集群的工作节点组成，其中工作节点作为 Elasticsearch 组件的专属节点。
 建议客户生产环境中采用此模式进行安装 DCE 5.0。
 
-![seven](../images/seven.png)
+![seven](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/seven.png)

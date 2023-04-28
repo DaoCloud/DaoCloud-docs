@@ -134,15 +134,15 @@ helm upgrade --install --create-namespace --version ${insight_version_code} --cl
 
 采集 k8s 审计日志功能默认为关闭状态。若需要开启，可以按照如下步骤：
 
-![默认关闭](../images/worker01.png)
+![默认关闭](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker01.png)
 
-![开启审计日志](../images/worker02.png)
+![开启审计日志](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker02.png)
 
 将该按钮设置为启用状态，开启采集 k8s 审计日志功能。
 
 通过 DCE 5.0 创建工作集群时，确认该集群的 k8s 审计日志选择 ‘true'，这样创建出来的工作集群 k8s 审计日志是开启的。
 
-![审计日志开启](../images/worker03.png)
+![审计日志开启](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker03.png)
 
 等待集群创建成功后，该工作集群的 k8s 审计日志将被采集。
 
@@ -164,17 +164,17 @@ ls /var/log/kubernetes/audit
 
 1. 选中已接入并且需要开启采集 k8s 审计日志功能的集群
 
-    ![选中集群](../images/worker04.png)
+    ![选中集群](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker04.png)
 
 2. 进入 helm 应用管理页面，更新 insight-agent 配置
    （若未安装 insight-agent，可以[安装 insight-agent](../../insight/user-guide/quickstart/install-agent.md)）
 
-    ![进入 Helm 应用页面](../images/worker05.png)
+    ![进入 Helm 应用页面](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker05.png)
 
 3. 开启/关闭采集 k8s 审计日志按钮
 
-    ![开启/关闭按钮](../images/worker06.png)
+    ![开启/关闭按钮](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker06.png)
 
 4. 接入集群的情况下开关后仍需要重启 fluent-bit pod 才能生效
 
-    ![重启](../images/worker07.png)
+    ![重启](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker07.png)

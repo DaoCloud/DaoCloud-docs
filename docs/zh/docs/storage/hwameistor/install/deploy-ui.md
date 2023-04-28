@@ -24,15 +24,15 @@ hide:
 
 2. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `Hwameistor`。
 
-    ![UI Install01](../../images/hwameistorUI01.jpg)
+    ![UI Install01](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/hwameistorUI01.jpg)
 
 3. 在`版本选择`中选择希望安装的版本，点击`安装`。
 
 4. 在安装界面，填写所需的安装参数。如需要部署生产环境，建议调整资源配置：[生产环境资源要求](proresource.md)。
 
-    ![HwameistorUI02](../../images/hwameistorUI02.jpg)
+    ![HwameistorUI02](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/hwameistorUI02.jpg)
 
-    ![HwameistorUI03](../../images/HwameistorUI03.jpg)
+    ![HwameistorUI03](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/HwameistorUI03.jpg)
 
     - `Global Setting` —> `global image Registry`：
     
@@ -71,6 +71,6 @@ hide:
     
 5. 参数输入完成后，点击`确定`完成创建，完成创建后可点击 `Helm 应用`查看 `Hwameistor` 安装状态。
 
-    ![HwameistorUI04](../../images/HwameistorUI04.jpg)
+    ![HwameistorUI04](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/HwameistorUI04.jpg)
     
 6. 安装完成！要验证安装效果，请参见下一章[安装后检查](./post-check.md)。

@@ -6,23 +6,23 @@
 
 1. 在左侧导航栏中，点击`多云工作负载`，点击右上角的 `YAML 创建`按钮。
 
-    ![yaml创建](../images/depyaml01.png)
+    ![yaml创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/depyaml01.png)
 
 2. 例如输入创建 Deployment 的 YAML 语句后，点击`下一步`。
 
-    ![输入代码](../images/depyaml02.png)
+    ![输入代码](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/depyaml02.png)
 
 3. 输入部署策略的 YAML 语句后，点击`下一步`。
 
-    ![输入PropagationPolicy](../images/depyaml03.png)
+    ![输入PropagationPolicy](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/depyaml03.png)
 
 4. 输入差异化策略的 YAML 语句后，点击`确定`。
 
-    ![OverridePolicy](../images/depyaml04.png)
+    ![OverridePolicy](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/depyaml04.png)
 
 5. 自动返回多云工作负载列表，点击列表右侧的 `⋮`，可以编辑修改 YAML，还可以暂停、重启和删除该负载。
 
-    ![其他操作](../images/depyaml05.png)
+    ![其他操作](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/depyaml05.png)
 
 ## YAML 示例
 

@@ -9,13 +9,13 @@ hide:
 
 1. 点击右侧导航栏，选择`系统配置`。
 
-    ![系统配置](../../images/sysconfig01.png)
+    ![系统配置](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/sysconfig01.png)
 
 2. 目前仅支持修改历史告警存储时长，点击 `编辑` 输入目标时长。
 
     当存储时长设置为 "0" 将不清除历史告警。
 
-    ![系统配置](../../images/sysconfig02.png)
+    ![系统配置](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/sysconfig02.png)
 
 !!! note
 

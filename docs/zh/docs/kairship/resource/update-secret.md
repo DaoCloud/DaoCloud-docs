@@ -4,15 +4,15 @@
 
 1. 进入某一个多云实例后，在左侧导航栏中，点击`资源管理` -> `多云密钥`，点击`···`可以编辑 YAML 或者更新密钥。
 
-    ![密钥列表](../images/update-secret01.png)
+    ![密钥列表](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/update-secret01.png)
 
 2. 在`编辑 YAML `弹窗中，修改 YAML 信息，点击确定则更新了密钥。
 
-    ![YAML 更新](../images/update-secret02.png)
+    ![YAML 更新](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/update-secret02.png)
 
 3. 点击更新，可以通过表单方式更新，名称、多云命名空间、密钥类型无法更新。
 
-    ![表单更新](../images/update-secret03.png)
+    ![表单更新](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/update-secret03.png)
 
 4. 完成需要修改的内容后点击确定，更新成功。
 

@@ -52,7 +52,7 @@ INFO[0000] Go OS/Arch: linux/amd64
 
     DCE 5.0 的备份是全量数据备份，还原时将还原最后一次备份的全量数据。
 
-![minio](../images/bp01.png)
+![minio](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/bp01.png)
 
 ### 关闭集群
 
