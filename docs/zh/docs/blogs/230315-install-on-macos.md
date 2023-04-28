@@ -25,7 +25,7 @@
 1. 点击右上角的 ⚙️，以打开 `Settings` 页面。
 1. 点击左侧的 `Resources`，将启动容器的资源上限调节到 8C14G，点击 `Apply & Restart` 按钮。
 
-![调整资源](./images/docker.png)
+![调整资源](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/docker.png)
 
 ## 安装 kind
 
@@ -157,7 +157,7 @@ fire-kind-cluster-control-plane   Ready    control-plane   18h   v1.25.3
 
     当看到以下提示，则表示 DCE 5.0 社区版安装成功了。
 
-    ![success](./images/success.jpg)
+    ![success](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/success.jpg)
 
 1. 输入默认用户和密码 (admin/changeme) 登录后，系统将提示[申请许可密钥](../dce/license0.md)。
 

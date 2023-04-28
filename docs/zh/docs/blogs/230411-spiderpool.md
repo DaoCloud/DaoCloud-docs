@@ -1,6 +1,6 @@
 # Spiderpool：Calico 固定应用 IP 的一种新选择
 
-![spiderpool](./images/spiderpool.png)
+![spiderpool](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/spiderpool.png)
 
 **Calico 是一套开源的网络和网络安全解决方案**，也是作为 Kubernetes 容器网络解决方案 (CNI: Container Network Interface) 的一种实现。
 它基于 Linux 纯三层路由实现，在一些场景下用户可以将 Pod 子网的路由通过 Calico BGP 模式宣告到网关，
@@ -39,7 +39,7 @@ Spiderpool 是一个 Kubernetes 的 IPAM 插件项目，其主要针对于 Under
 [Spiderpool 官方文档](https://spidernet-io.github.io/spiderpool/usage/get-started-calico/#configure-calico-bgp-optional)搭建了一套
 Calico BGP 模式搭配 Spiderpool 的环境，网络环境拓扑图如下:
 
-![spiderpool](./images/spiderpool01.png)
+![spiderpool](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/spiderpool01.png)
 
 根据自身环境创建 SpiderSubnet 实例: nginx-subnet-v4，体验 Spiderpool 固定 IP 等功能。
 

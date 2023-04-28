@@ -2,7 +2,7 @@
 
 作者：[Fish-pro](https://github.com/Fish-pro)
 
-![karmada failover](./images/karmada01.png)
+![karmada failover](imagesarmada01.png)
 
 多云时代，如何实现应用跨数据中心，跨可用区和跨集群高可用，成为我们探讨的新话题。
 在单个集群中，如果集群发生故障，那么在集群中的所有应用将不可被访问。
@@ -43,7 +43,7 @@ Karmada 故障恢复支持两种方式：
 
 本文以 `Divided` 为例：
 
-![Divided](./images/karmada02.png)
+![Divided](imagesarmada02.png)
 
 1. 下载 Karmada 官方 v1.4.2 sourece code 后，使用 `hack/local-up-karmada.sh`，启动本地的 Karmada。
    启动后，自动纳管了三个工作集群，其中集群 member1 和 member2 使用 push 模式，member3 使用 pull 模式。
@@ -52,12 +52,15 @@ Karmada 故障恢复支持两种方式：
     export KUBECONFIG=$HOME/.kube/karmada.config
     kubectl --kubeconfig $HOME/.kube/karmada.config config use-context karmada-apiserver
     ```
+
     ```none
     Switched to context "karmada-apiserver".
     ```
+
     ```shell
     kubectl get cluster
     ```
+
     ```none
     NAME      VERSION   MODE   READY   AGE
     member1   v1.23.4   Push   True    32m
@@ -127,13 +130,16 @@ Karmada 故障恢复支持两种方式：
     ```shell
     kubectl create -f failover.yaml
     ```
+
     ```none
     deployment.apps/nginx created
     propagationpolicy.policy.karmada.io/nginx-propagation created
     ```
+
     ```shell
     kubectl get deploy,pp
     ```
+
     ```none
     NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
     deployment.apps/nginx   3/3     3            3           2m
@@ -141,16 +147,20 @@ Karmada 故障恢复支持两种方式：
     NAME                                                    AGE
     propagationpolicy.policy.karmada.io/nginx-propagation   119s
     ```
+
     ```shell
     kubectl get work -A | grep nginx
     ```
+
     ```none
     karmada-es-member1   nginx-687f7fb96f                  True      20m
     karmada-es-member2   nginx-687f7fb96f                  True      20m
     ```
+
     ```shell
     kubectl get rb nginx-deployment -o yaml
     ```
+
     ```yaml
     ...
     spec:
@@ -169,18 +179,22 @@ Karmada 故障恢复支持两种方式：
         uid: 530aa301-760a-48a7-ada0-fc3a2112564b
     ...
     ```
+
     ```shell
     karmadactl get po
     ```
+
     ```none
     NAME                     CLUSTER   READY   STATUS    RESTARTS   AGE
     nginx-85b98978db-d7q92   member2   1/1     Running   0          110s
     nginx-85b98978db-xmbp9   member2   1/1     Running   0          110s
     nginx-85b98978db-97xbx   member1   1/1     Running   0          110s
     ```
+
     ```shell
     karmadactl get deploy
     ```
+
     ```none
     NAME    CLUSTER   READY   UP-TO-DATE   AVAILABLE   AGE     ADOPTION
     nginx   member2   2/2     2            2           3m15s   Y
@@ -193,6 +207,7 @@ Karmada 故障恢复支持两种方式：
     ```shell
     docker ps -a
     ```
+
     ```none
     CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS          PORTS                       NAMES
     8794507af450   kindest/node:v1.23.4   "/usr/local/bin/entr…"   52 minutes ago   Up 51 minutes   127.0.0.1:40000->6443/tcp   member2-control-plane
@@ -200,9 +215,11 @@ Karmada 故障恢复支持两种方式：
     5ac1815cd40e   kindest/node:v1.23.4   "/usr/local/bin/entr…"   52 minutes ago   Up 51 minutes   127.0.0.1:39837->6443/tcp   member1-control-plane
     f5e5f753dcb8   kindest/node:v1.23.4   "/usr/local/bin/entr…"   52 minutes ago   Up 51 minutes   127.0.0.1:33529->6443/tcp   member3-control-plane
     ```
+
     ```shell
     docker stop member1-control-plane
     ```
+
     ```none
     member1-control-plane
     ```
@@ -216,15 +233,18 @@ Karmada 故障恢复支持两种方式：
     ```shell
     kubectl get cluster
     ```
+
     ```none
     NAME      VERSION   MODE   READY   AGE
     member1   v1.23.4   Push   False   43m
     member2   v1.23.4   Push   True    43m
     member3   v1.23.4   Pull   True    42m
     ```
+
     ```shell
     kubectl get deploy,pp
     ```
+
     ```none
     NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
     deployment.apps/nginx   3/3     3            3           11m
@@ -232,17 +252,21 @@ Karmada 故障恢复支持两种方式：
     NAME                                                    AGE
     propagationpolicy.policy.karmada.io/nginx-propagation   11m
     ```
+
     ```shell
     karmadactl get deploy
     ```
+
     ```none
     NAME    CLUSTER   READY   UP-TO-DATE   AVAILABLE   AGE   ADOPTION
     nginx   member2   3/3     3            3           12m   Y
     error: cluster(member1) is inaccessible, please check authorization or network
     ```
+
     ```shell
     karmadactl get po
     ```
+
     ```none
     NAME                     CLUSTER   READY   STATUS    RESTARTS   AGE
     nginx-85b98978db-8zj5k   member2   1/1     Running   0          3m18s
@@ -250,9 +274,11 @@ Karmada 故障恢复支持两种方式：
     nginx-85b98978db-xmbp9   member2   1/1     Running   0          12m
     error: cluster(member1) is inaccessible, please check authorization or network
     ```
+
     ```shell
     kubectl get rb nginx-deployment -o yaml
     ```
+
     ```yaml
     ...
     spec:
@@ -269,9 +295,11 @@ Karmada 故障恢复支持两种方式：
         uid: 530aa301-760a-48a7-ada0-fc3a2112564b
     ...
     ```
+
     ```shell
     kubectl get work -A | grep nginx
     ```
+
     ```none
     karmada-es-member1   nginx-687f7fb96f                  True      30m
     karmada-es-member2   nginx-687f7fb96f                  True      30m
@@ -284,15 +312,18 @@ Karmada 故障恢复支持两种方式：
     ```shell
     kubectl get cluster
     ```
+
     ```none
     NAME      VERSION   MODE   READY   AGE
     member1   v1.23.4   Push   True    147m
     member2   v1.23.4   Push   True    147m
     member3   v1.23.4   Pull   True    146m
     ```
+
     ```shell
-    karmadactl get deploy,po
+    karmada(imagesloy,po
     ```
+
     ```none
     NAME                         CLUSTER   READY   STATUS    RESTARTS   AGE
     pod/nginx-85b98978db-2p8hn   member2   1/1     Running   0          73m
@@ -302,9 +333,11 @@ Karmada 故障恢复支持两种方式：
     NAME                    CLUSTER   READY   UP-TO-DATE   AVAILABLE   AGE
     deployment.apps/nginx   member2   3/3     3            3           73m
     ```
-    ```shell
+
+    ```shel(images
     kubectl get work | grep nginx
     ```
+
     ```none
     No resources found in default namespace.
     ```
@@ -317,13 +350,13 @@ Karmada 故障恢复支持两种方式：
 
 在多集群场景下，用户应用可能部署在多个集群中，以提高业务的高可用性。
 在 Karmada 中，当集群发生故障或用户不想继续在集群上运行应用时，集群状态将被标记为不可用，并添加两个污点。
-
+(images(images
 检测到集群故障后，控制器将从故障集群中移除应用。然后，被移除的应用将被调度到满足要求的其他集群。
 这样可以实现故障转移，保证用户业务的高可用性和连续性。
 
 ![failover](./images/karmada03.png)
 
-> 图源：Karmada 官方文档 https://karmada.io
+> 图源：Karmada 官方文档 <https://karmada.io>
 
 如上图，用户在 Karmada 中加入了三个集群: member1、member2 和 member3。
 部署一个名为 foo 的 deployment，它有两个副本，在 Karmada 控制平面上创建。
@@ -383,7 +416,7 @@ func getClusterHealthStatus(clusterClient *util.ClusterClient) (online, healthy 
 其次，根据在线状态和健康状态初始化 conditions。
 
 ```go
-func generateReadyCondition(online, healthy bool) metav1.Condition {
+func generateReadyCondition(imagesalthy bool) metav1.Condition {
     if !online {
         return util.NewCondition(clusterv1alpha1.ClusterConditionReady, clusterNotReachableReason, clusterNotReachableMsg, metav1.ConditionFalse)
     }
@@ -422,7 +455,7 @@ cluster conntroller 会根据集群当前状态下的 conditions，判断是否�
 以下代码为核心实现逻辑，当 conditions 中 type 为 Ready 的 condition 状态为 'False' 时，
 执行 UpdateClusterControllerTaint 函数添加 effect 为 NoSchedule 和 NoExecute 的污点。
 
-```go
+```go(images(images
 func (c *Controller) taintClusterByCondition(ctx context.Context, cluster *clusterv1alpha1.Cluster) error {
     currentReadyCondition := meta.FindStatusCondition(cluster.Status.Conditions, clusterv1alpha1.ClusterConditionReady)
     var err error
@@ -501,7 +534,7 @@ if needEviction || tolerationTime == 0 {
 也就是说由于集群故障，会触发调度器重新调度，资源应该从故障的集群上驱逐，在新的集群上创建。
 
 ```go
-// This function no-opts if the cluster does not exist.
+// This function no-(images cluster does not exist.
 func (s *ResourceBindingSpec) GracefulEvictCluster(name, producer, reason, message string) {
    // find the cluster index
    var i int
@@ -642,7 +675,7 @@ func (a *Dispenser) TakeByWeight(w ClusterWeightInfoList) {
     }
     // TODO(Garrybest): take rest replicas by fraction part
     for i := range result {
-        if remain == 0 {
+        if remain == 0 {(image(images
             break
         }
         result[i].Replicas++
@@ -687,7 +720,7 @@ gracefulEviction controller 感知带有 rb.spec.gracefulEvictionTasks 的 rb(Re
 // assessEvictionTasks assesses each task according to graceful eviction rules and
 // returns the tasks that should be kept.
 func assessEvictionTasks(bindingSpec workv1alpha2.ResourceBindingSpec,
-    observedStatus []workv1alpha2.AggregatedStatusItem,
+    obse(images[]workv1alpha2.AggregatedStatusItem,
     timeout time.Duration,
     now metav1.Time,
 ) ([]workv1alpha2.GracefulEvictionTask, []string) {
@@ -742,6 +775,7 @@ func assessEvictionTasks(bindingSpec workv1alpha2.ResourceBindingSpec,
 ```shell
 kubectl -n karmada-es-member1 get work nginx-687f7fb96f -oyaml
 ```
+
 ```yaml
 ...
 apiVersion: work.karmada.io/v1alpha1
@@ -794,7 +828,7 @@ func (c *ResourceBindingController) syncBinding(binding *workv1alpha2.ResourceBi
     }
     var errs []error
     start := time.Now()
-    err = ensureWork(c.Client, c.ResourceInterpreter, workload, c.OverrideManager, binding, apiextensionsv1.NamespaceScoped)
+    err = ensureWork(c.(imagesesourceInterpreter, workload, c.OverrideManager, binding, apiextensionsv1.NamespaceScoped)
     metrics.ObserveSyncWorkLatency(binding.ObjectMeta, err, start)
     if err != nil {
         klog.Errorf("Failed to transform resourceBinding(%s/%s) to works. Error: %v.",

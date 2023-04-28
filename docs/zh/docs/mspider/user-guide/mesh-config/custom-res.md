@@ -15,22 +15,22 @@
 
 1. 服务网格下查看托管网格 nicole-dsm-mesh 的接入集群为 nicole-dsm-c2，如下图所示。
 
-    ![接入集群](./images/meshrcfg01.png)
+    ![接入集群](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/meshrcfg01.png)
 
 2. 点击集群名称，跳转至`容器管理`模块中集群页面，点击进入`工作负载` -> `无状态负载`页面查找 `istiod`；
 
-    ![查找 istiod](./images/meshrcfg02.png)
+    ![查找 istiod](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/meshrcfg02.png)
 
 3. 点击工作负载名称进入`容器配置` -> `基本信息`标签页；
 
-    ![查看配额](./images/meshrcfg03.png)
+    ![查看配额](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/meshrcfg03.png)
 
 4. 点击编辑按钮，修改 CPU 和内存配额，点击`下一步`、`确定`。
 
-    ![修改配额](./images/meshrcfg04.png)
+    ![修改配额](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/meshrcfg04.png)
 
 5. 查看该工作负载下的 Pod 资源信息，可见已变更.
 
-    ![确认配额](./images/meshrcfg05.png)
+    ![确认配额](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/meshrcfg05.png)
 
 

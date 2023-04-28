@@ -5,7 +5,7 @@ hide:
 
 # KWOK (`K`ubernetes `W`ith`O`ut `K`ubelet)
 
-![kwok](./images/kwok.png){ align=right }
+![kwok](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/community/images/kwok.png){ align=right }
 
 KWOK 是 DaoCloud 自主开源并被 Kubernetes 社区接纳和管理一个开源项目。
 
@@ -19,7 +19,7 @@ KWOK 是 DaoCloud 自主开源并被 Kubernetes 社区接纳和管理一个开�
 
 请参阅 [https://kwok.sigs.k8s.io/](https://kwok.sigs.k8s.io/) 了解更深入的信息。
 
-![管理集群](./images/manage-clusters.svg)
+![管理集群](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/community/images/manage-clusters.svg)
 
 ## 社区、讨论、贡献和支持
 

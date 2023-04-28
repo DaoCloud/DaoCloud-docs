@@ -20,13 +20,13 @@ hide:
 
         在`容器管理`中，选择该集群 –> `命名空间` –> 修改标签 —> 移除 `istio-injection: enabled` 标签，重启该命名空间下的所有 Pod。
 
-        ![移除标签](./images/delete01.png)
+        ![移除标签](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/troubleshoot/images/delete01.png)
 
     1. 禁用工作负载边车注入：
 
         在`容器管理`中，选择该集群 –> `工作负载` —> `无状态负载` —> `标签与注解` —> 移除 `sidecar.istio.io/inject: true` 标签。
 
-        ![禁用边车注入](./images/delete02.png)
+        ![禁用边车注入](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/troubleshoot/images/delete02.png)
 
 1. 删除创建的网格网关实例。
 
@@ -35,6 +35,6 @@ hide:
     在`容器管理`中，选择 global 集群，自定义资源搜索 `globalmeshes.discovery.mspider.io`。
     在 mspider-system 命名空间下选择要移除集群的网格，编辑 YAML：
 
-    ![编辑yaml](./images/delete03.png)
+    ![编辑yaml](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/troubleshoot/images/delete03.png)
 
 1. 返回服务网格，删除该网格实例。

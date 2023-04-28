@@ -47,4 +47,4 @@
 
     参阅 [OpenAPI 制作流程](./api-doc-flow.md)。
 
-![OpenAPI and Swagger](./images/index.png)
+![OpenAPI and Swagger](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/openapi/images/index.png)

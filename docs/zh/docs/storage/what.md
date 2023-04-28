@@ -15,4 +15,4 @@
 DCE 5.0 云原生存储基于 Kubernetes CSI 标准，可根据不同 SLA 要求及用户场景对接符合 CSI 标准的存储。
 DaoCloud 推出的云原生本地存储天然具备云原生特性，满足容器场景中高扩展性、高可用性等特点。
 
-![云原生存储](./images/nativestorage.jpg)
+![云原生存储](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/images/nativestorage.jpg)

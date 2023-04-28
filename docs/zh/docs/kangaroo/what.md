@@ -28,7 +28,7 @@ hide:
 
 **产品逻辑架构**
 
-![逻辑架构图](./images/architect.png)
+![逻辑架构图](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/kangaroo/images/architect.png)
 
 [下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

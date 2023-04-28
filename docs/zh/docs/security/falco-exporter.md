@@ -17,23 +17,23 @@ Falco-exporter 会部署为 Kubernetes 集群上的守护进程集。如果集�
 
 1. 从左侧导航栏点击`容器管理`—>`集群列表`，然后找到准备安装 Falco-exporter 的集群名称。
 
-    ![falco_cluster](./images/falco_cluster.png)
+    ![falco_cluster](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/security/images/falco_cluster.png)
 
 2. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `falco-exporter`。
 
-    ![falco-exporter_helm-1](./images/falco-exporter-install-1.png)
+    ![falco-exporter_helm-1](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/security/images/falco-exporter-install-1.png)
 
 3. 在`版本选择`中选择希望安装的版本，点击`安装`。
 
-    ![falco-exporter_helm-2](./images/falco-exporter-install-2.png)
+    ![falco-exporter_helm-2](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/security/images/falco-exporter-install-2.png)
 
 4. 在安装界面，填写所需的安装参数。
 
-    ![falco-exporter_helm-3](./images/falco-exporter-install-3.png)
+    ![falco-exporter_helm-3](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/security/images/falco-exporter-install-3.png)
 
     在如上界面中，填写`应用名称`、`命名空间`、`版本`等。
 
-    ![falco-exporter_helm-4](./images/falco-exporter-install-4.png)
+    ![falco-exporter_helm-4](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/security/images/falco-exporter-install-4.png)
 
     在如上界面中，填写以下参数:
 
@@ -43,9 +43,9 @@ Falco-exporter 会部署为 Kubernetes 集群上的守护进程集。如果集�
     - `Falco Prometheus Exporter` -> `Prometheus ServiceMonitor Settings` -> `Scrape Interval`：用户自定义的间隔；如果未指定，则使用 Prometheus 默认间隔。
     - `Falco Prometheus Exporter` -> `Prometheus ServiceMonitor Settings` -> `Scrape Timeout`：用户自定义的抓取超时时间；如果未指定，则使用 Prometheus 默认的抓取超时时间。
 
-    ![falco-exporter_helm-4](./images/falco-exporter-install-5.png)
+    ![falco-exporter_helm-4](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/security/images/falco-exporter-install-5.png)
 
-    ![falco-exporter_helm-4](./images/falco-exporter-install-6.png)
+    ![falco-exporter_helm-4](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/security/images/falco-exporter-install-6.png)
 
     在如上界面中，填写以下参数:
 

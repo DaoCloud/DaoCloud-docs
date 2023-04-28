@@ -1,6 +1,6 @@
 # 2023 年云原生预测
 
-![头图](./images/forecast01.png)
+![头图](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/forecast01.png)
 
 > 作者：Chris Aniszczyk
 
