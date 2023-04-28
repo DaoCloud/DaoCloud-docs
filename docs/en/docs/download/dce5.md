@@ -47,7 +47,7 @@ The many submodules included in DCE 5.0 can be downloaded individually, and each
      - If you have any questions, please [give feedback](https://github.com/DaoCloud/DaoCloud-docs/issues).
      - Welcome to scan the QR code and communicate with developers freely:
 
-     ![Chat about Community Release](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/en/docs/images/assist.png)
+     ![Chat about Community Release](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/assist.png)
 
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
 [Apply for community free experience](../dce/license0.md){ .md-button .md-button--primary }
