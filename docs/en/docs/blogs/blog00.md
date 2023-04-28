@@ -126,19 +126,19 @@ The currently authorized and compliant Kubernetes versions of DaoCloud include b
 
 current version:
 
-[![1.23](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/en/docs/images/1.23.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/2072)
-[![1.24](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/en/docs/images/1.24.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/2239)
-[![1.25](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/en/docs/images/1.25.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/2240)
-[![1.26](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/en/docs/images/1.26.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/2451)
+[![1.23](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.23.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/2072)
+[![1.24](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.24.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/2239)
+[![1.25](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.25.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/2240)
+[![1.26](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.26.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/2451)
 
 historic version:
 
-[![1.7](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/en/docs/images/1.7.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/68)
-[![1.9](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/en/docs/images/1.9.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/210)
-[![1.13](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/en/docs/images/1.13.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/418)
-[![1.15](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/en/docs/images/1.15.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/794)
-[![1.18](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/en/docs/images/1.18.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/1144)
-[![1.20](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/en/docs/images/1.20.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/1463)
+[![1.7](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.7.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/68)
+[![1.9](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.9.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/210)
+[![1.13](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.13.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/418)
+[![1.15](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.15.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/794)
+[![1.18](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.18.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/1144)
+[![1.20](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.20.png){ width="100" }](https://github.com/cncf/k8s-conformance/pull/1463)
 
 Learn more about [What is DCE 5.0](../dce/what.md)
 
