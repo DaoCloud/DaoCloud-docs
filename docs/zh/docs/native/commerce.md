@@ -13,6 +13,10 @@
 
     该解决方案是 Aqua 云原生应用保护平台的一部分，提供的功能包括：代码扫描、CI/CD 态势管理、流水线安全管理、优化 SBOM 功能、评估开源代码的健康状况和口碑情况。
 
+- [ARMO Platform Kubernetes 安全平台 推出基于 eBPF 技术的漏洞分析和评估功能](https://www.armosec.io/blog/kubernetes-vulnerability-relevancy-and-prioritization/)
+
+    该功能可以针对 Kubernetes 平台上存在的漏洞进行分析和评估，识别和确定漏洞的相关性和优先级，为用户提供有针对性的修复建议。其中，相关性和优先级允许用户降低未使用的软件包和组件的漏洞的优先级，从而专注于解决对集群构成更大威胁的漏洞。
+
 - [AtomicJar 发布集成测试工具 Testcontainers Cloud](https://containerjournal.com/topics/container-management/atomicjar-unveils-testcontainers-cloud-service/)
 
     Testcontainers Cloud 基于轻量级开源测试框架 [Testcontainers](https://github.com/testcontainers) 构建，通过 Docker 容器创建更真实的测试环境，
@@ -188,6 +192,10 @@
 
     DaoCloud Enterprise 5.0 是自主开放、高性能、可扩展的新一代云原生操作系统。围绕云原生底座延伸能力场景，打通云边壁垒，跨越多云环境，解决信创基础设施兼容难题，提升应用交付效能，使能应用敏捷创新，丰富的数据服务赋能业务系统，融合微服务治理和全局可观测应对庞大业务系统运维管理挑战。
 
+- [Databend 发布云原生数据仓库 Databend Cloud](https://mp.weixin.qq.com/s/LzjRQ8_XA-896AZQj2n3hA)
+
+    Databend Cloud 是基于开源云原生数仓项目 [Databend](https://github.com/datafuselabs/databend) 打造的弹性云数仓，由 3 层组成：存储层、计算层和元信息服务。底层基于对象存储，上层计算节点采用不同的规格，最上层是元数据和管理集群，实现多租户的隔离，保证用户的数据安全。
+
 - [Datadog 推出云安全平台 Cloud Security Management](https://www.datadoghq.com/about/latest-news/press-releases/datadog-launches-cloud-security-management-to-provide-cloud-native-application-protection/)
 
     Cloud Security Management 将云安全态势管理、云工作负载安全、警报、事件管理和报告等功能集中在一个平台上，开发和安全团队能够借此识别错误配置、检测威胁并确保云原生应用的安全。
@@ -311,6 +319,10 @@
 
     CCE Turbo 可通过计算、网络、调度全方位加速，实现极致弹性，如帮助客户以 3000 pod/min 的弹性轻松应对业务流量洪峰；UCS 提供跨云、跨地域的云原生应用管理，实现一致体验。
 
+- [火山引擎发布分布式云原生平台 DCP](https://mp.weixin.qq.com/s/Fz7R8R0keKFEryq8zQKFoA)
+
+    [DCP](https://www.volcengine.com/product/dcp) 是面向多云多 Kubernetes 集群场景的企业级云原生统一管理平台，提供多云集群统一管理与运维、应用跨集群分发、统一流量管控等能力。DCP 将火山引擎容器集群、第三方集群、自建集群等统一纳管与运维；基于集群联邦等技术，提供跨集群、跨云的弹性调度能力；提供多集群服务发现、多集群统一入口访问等能力；可基于备份数据进行应用数据恢复及跨集群/云应用迁移。
+
 - [Kong 云原生 API 平台 Kong Enterprise 3.2 发布](https://konghq.com/blog/kong-enterprise-3-2)
 
     更新内容：当控制平面出现故障时，支持数据平面扩展；新增 Datadog 追踪插件，无需安装 Otel 收集器即可与 Datadog Agent 协同工作；支持基于时延的引导，允许 Kong 负载均衡器在代理上游服务时根据总响应时间选择“最快”的后端。
@@ -410,6 +422,10 @@
     该版本主要新特性：支持与其他用户和组共享备份、支持根据特定的基础设施定制备份许可证、支持使用用户提供的或默认的密钥为不同类型的备份提供加密支持。
 
 ### Q
+
+- [青云发布 KubeSphere 容器平台企业版 3.4.0](https://mp.weixin.qq.com/s/spjVK8jWtXYb53aYjMWFxw)
+
+    更新内容：支持 Prometheus 内部 TLS 认证访问、内置集成 HPA 扩展插件 KEDA、新增企业空间级网关与租户级存储配额、提升资源别名展示权重、支持通过 UI 配置 Whizard 可观测中心。
 
 - [青云企业云平台 v6.1 版本正式发布](https://mp.weixin.qq.com/s/tNx1neUN5B9auBqp_Fpy3A)
 
@@ -571,6 +587,10 @@
 
     Calico Runtime Threat Defense 结合结合基于签名和行为的技术来检测已知威胁和零日威胁，能够检测 MITRE 最常见的容器和网络的攻击。
     与传统的运行时威胁检测平台不同，Calico Runtime Threat Defense 无需编写复杂的规则即可持续监控和分析网络和容器行为，获取攻击指标（IOA）。
+
+- [Traefik Labs 发布云原生 API 网关 Traefik Enterprise 2.10](https://traefik.io/blog/announcing-traefik-enterprise-2-10/)
+
+    更新内容：允许 OIDC 中间件检查访问令牌中的要求、允许从 Kubernetes Secret 中加载敏感数据、支持限制 API 的访问速率。
 
 - [Traefik Labs 发布云原生网络平台 Traefik Hub 1.0](https://traefik.io/blog/announcing-the-general-availability-of-traefik-hub-1-0/)
 

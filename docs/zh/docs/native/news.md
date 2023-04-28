@@ -15,6 +15,10 @@
     KubeDay 是 CNCF 主办的地区性云原生系列活动，主要针对社区发展活跃和对 Kubernetes 等云原生技术感兴趣的地区。
     继去年 12 月在日本拉开帷幕后，KubeDay 第二站来到以色列特拉维夫。演讲提案申请现已开放（截至 4.30），演讲者需亲临现场。
 
+- [6.18 2023 年上海 KubeCon + CloudNativeCon 或 开源峰会开启议题征集（6.18 截止）](https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/program/call-for-proposals/)
+  
+    本次峰会将于 9.25-9.27 在上海举行，提交的议题内容可围绕软件开发生命周期、平台工程、运维+性能、安全性、数据+处理+存储、网络+边缘+电信、服务网格等话题，议题类型包括四类：单人演讲（30 min）、双人演讲（30 min）、小组讨论（30 min，3 至 5 名演讲者）、教程（90 min）。
+
 - [6.6 ICT 中国·2023 高层论坛-云原生产业高峰论坛将于 6 月 6 日在北京拉开帷幕](https://mp.weixin.qq.com/s/FTOBYjCZxYMoOM8WJUz8mQ)
   
     云原生产业高峰论坛由工业和信息化部主办，将邀请云原生领域领军智库、政府领导、院士专家、企业高层等重量级嘉宾共话云原生生态，共探云原生未来。
@@ -24,6 +28,10 @@
     本次 KCD 北京站活动由 CNCF 和来自「DaoCloud 道客」、Microsoft、Tetrate 的技术爱好者联合发起，包括闪电演讲（10min）、单人/双人演讲（40min）和圆桌讨论（30min）等三种分享形式。议题内容可包括 eBPF、WASM、Multi Cluster、可观测性、软件供应链安全、Serverless、DevOps、HPC、Streaming 等热点领域。
 
 ### 2023-05
+
+- [5.31 中国信通院启动大规模边缘容器集群服务质量首批评测（5.31 截止）](https://mp.weixin.qq.com/s/8TjJBIFp46vscKBMILZBUg)
+  
+    评测体系包括节点管理指标体系和应用分发指标体系。节点管理重点考察集群节点的管理性能、稳定性、效率等指标；应用分发重点考察应用副本创建不同阶段的功能和性能，以及对应用的综合管理能力。
 
 - [5.30 《云管理产品与服务图谱（2023）》正式启动征集工作（5.30 申请截止）](https://mp.weixin.qq.com/s/gXGxUqTdO46US74gYrYEPw)
   
@@ -47,6 +55,10 @@
 - [5.16 中国信通院启动“云原生产品目录 2.0”征集（5.16 截止）](https://mp.weixin.qq.com/s/xDq9APQec-h-tSx8-JICIw)
   
     “云原生产品目录 2.0”的征集范围包括基础设施类、云原生中间件类、云原生数据类、云原生安全类、云原生融合服务类等。评选结果将于 6 月 6 日在ICT 中国·高层论坛-云原生产业高峰论坛。
+
+- [5.15 KubeSphere 社区开启 5.27 云原生 Meetup 杭州站议题征集（5.15 截止）](https://mp.weixin.qq.com/s/C3IvXg_zNxUtNK2_3cZRzw)
+  
+    本次云原生 Meetup 由 KubeSphere 社区与极狐 GitLab 共同组织，暂定于 5.27 下午举行，包括闪电演讲（10 min）、单人/双人演讲（40 min）两种形式。
 
 - [5.12 2023 可信边缘计算创新与实践案例暨产业全景图征集启动（5.12 申报截止）](https://mp.weixin.qq.com/s/KM2hnAoJ1KXJ6J0eovPzcw)
   
