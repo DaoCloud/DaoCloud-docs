@@ -9,11 +9,11 @@ hide:
 
 1. 在`应用工作台` -> `持续发布`页面中，点击一个同步状态为`未同步`的应用名称。
 
-    ![未同步](../../images/sync01.png)
+    ![未同步](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/sync01.png)
 
 1. 在应用详情页面，点击`同步`按钮，进入同步页面：
 
-    ![同步](../../images/sync02.png)
+    ![同步](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/sync02.png)
 
 1. 在`同步应用`页面中，配置以下参数：
 
@@ -27,6 +27,6 @@ hide:
 
     在`同步资源`区域，至少选择一个应用进行同步。例如一些资源已经被同步，只需要同步未同步的资源即可。
 
-    ![同步](../../images/sync03.png)
+    ![同步](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/sync03.png)
 
 1. 点击`确定`，等待同步成功后，查看同步结果。

@@ -9,13 +9,13 @@
 2. DCE 5.0 安装时，选择的网络 CNI 为 Cilium 
    在 DCE 5.0 中安装 Cilium，需要在`创建集群`—>`网络配置`页面下，`网络插件`选择 `cilium`。关于创建集群，请参阅[创建工作集群](../../../kpanda/user-guide/clusters/create-cluster.md)。
 
-   ![](../../images/cilium-install1.jpg)
+   ![](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/cilium-install1.jpg)
 
 ## 高级参数
 
 如果用户需要为 Cilium 配置更多功能，可通过 Kubean 安装 Cilium。关于使用 Kubean 安装 Cilium 时的各项参数配置，请在`高级配置`—>`自定义参数`下根据需要添加并填写。
 
-![cilium-arg](../../images/cilium-install2.png)
+![cilium-arg](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/cilium-install2.png)
 
 以下介绍使用 Kubean 安装 Cilium 时的各项参数配置：
 

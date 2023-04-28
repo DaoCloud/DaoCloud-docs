@@ -6,13 +6,13 @@ status: new
 
 多云编排支持通过简单的选取操作，即可将子集群的工作负载，一键转换为多云工作负载。
 
-![工作负载](../images/promote01.png)
+![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/promote01.png)
 
 ## 操作指南
 
 点击上面的`立即体验`按钮，即可快速将子集群的应用转换为多云应用；目前此功能处于体验版，如有遇到任何问题，可在下方按钮中反馈。子集群转换时可选择是否同步转换其服务（Service），默认将同步转换。
 
-![转换应用](../images/promote02.png)
+![转换应用](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/promote02.png)
 
 - 选择对应的子集群，注意这里仅展示当前工作负载已接入的工作集群，未接入当前工作负载不支持查看，具体接入列表可以到工作集群管理页面查看
 - 选取应用，这里支持根据命名空间和工作负载名称模糊检索的能力，帮助您快速定位应用

@@ -159,4 +159,4 @@ hide:
 
 2. 如通过 UI 界面安装，请手动将如上资源通过 YAML 中的 Resource 值进行配置，否则默认不配置：
 
-    ![pro-Resource](../../images/hwameistor-resource.jpg)
+    ![pro-Resource](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/hwameistor-resource.jpg)

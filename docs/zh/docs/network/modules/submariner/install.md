@@ -34,35 +34,35 @@ hide:
 
 2. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `submariner-k8s-broker`。
 
-    ![helm](../../images/submariner-k8s-broker-helm-repo.png)
+    ![helm](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-k8s-broker-helm-repo.png)
 
 3. 在版本选择中选择希望安装的版本，点击安装。
 
 4. 推荐安装到 `submariner-k8s-broker` 命名空间下：
 
-    ![broker-ns](../../images/submariner-k8s-broker-ns.png)
+    ![broker-ns](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-k8s-broker-ns.png)
 
 5. 下图所示配置无需更改，保持默认参数即可：
 
-    ![config](../../images/submariner-k8s-broker-config.png)
+    ![config](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-k8s-broker-config.png)
 
 6. 在 Broker 集群成功安装 `submariner-k8s-broker`：
 
-    ![broker](../../images/submariner-k8s-broker-install.png)
+    ![broker](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-k8s-broker-install.png)
 
 7. 切换到其中子集群：master01，安装 `submariner-operator`：
 
-    ![operator](../../images/submariner-operator-helm-repo.png)
+    ![operator](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-operator-helm-repo.png)
 
 8. 在版本选择中选择希望安装的版本，点击安装。
 
 9. 推荐安装到 `submariner-operator` 命名空间下，开启就绪等待：
 
-    ![operator-ns](../../images/submariner-operator-ns.png)
+    ![operator-ns](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-operator-ns.png)
 
 10. 配置 `submariner-operator` 连接 Broker 集群的配置:
 
-    ![operator-broker](../../images/submariner-operator-broker.png)
+    ![operator-broker](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-operator-broker.png)
 
     上面的参数说明:
 
@@ -97,7 +97,7 @@ hide:
 
 11. 配置 `submariner-operator`：
 
-    ![operator-install1](../../images/submariner-operator-install1.png)
+    ![operator-install1](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-operator-install1.png)
 
     以上配置说明:
 
@@ -111,7 +111,7 @@ hide:
     * `Submariner` —> `clusterId`：用于标识该子集群，填写规范需要满足 DNS-1123 Label。
     * `Submariner` —> `clusterCidr`：填写子集群 Pod 的 CIDR。
 
-        ![operator-install2](../../images/submariner-opearator-install2.png)
+        ![operator-install2](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-opearator-install2.png)
 
     * `Submariner` —> `serviceCidr`：填写子集群 Service 的 CIDR。
     * `Submariner` —> `globalCidr`：开启 globalnet 功能。
@@ -123,11 +123,11 @@ hide:
 
 12. 在子集群 master1 安装完成：
 
-    ![opearator-install-3](../../images/submariner-opearator-install-3.png)
+    ![opearator-install-3](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-opearator-install-3.png)
 
 13. 安装完成后，需要手动设置子集群 master1 其中某个节点为网关节点，需要添加标签 "submariner.io/gateway: true"：
 
-    ![gateway](../../images/submariner-operator-gateway-label.png)
+    ![gateway](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-operator-gateway-label.png)
 
 14. 查看组件是否正常 running：
 

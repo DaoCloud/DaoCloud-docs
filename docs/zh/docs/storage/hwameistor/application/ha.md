@@ -18,11 +18,11 @@ HwameiStor 使用开源的 DRBD 数据同步技术创建**高可用卷**，本�
 
     1. 点击`容器管理` -> 选择对应集群，进入集群详情，点击`容器存储`，确认是否已创建`高可用存储池`
 
-        ![sc01](../../images/ha-sc01.jpg)
+        ![sc01](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/ha-sc01.jpg)
 
     2. 点击`查看 YAML`，查看详情。`StorageClass` "hwameistor-storage-lvm-hdd-ha" 使用参数 `replicaNumber: "2"` 开启高可用功能：
 
-        ![sc-yaml](../../images/ha-sc02.jpg)
+        ![sc-yaml](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/ha-sc02.jpg)
 
         ```
         $ kubectl apply -f examples/sc_ha.yaml

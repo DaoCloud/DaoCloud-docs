@@ -62,7 +62,7 @@ hide:
     您可以将不同模块的管理权限划分给不同的用户，
     比如用户 A 管理[容器管理模块](../../kpanda/intro/what.md)，用户 B 管理[应用工作台模块](../../amamba/intro/what.md)，共同管理[可观测性模块](../../insight/intro/what.md)。
 
-    ![角色](../images/role.png)
+    ![角色](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/role.png)
 
 4. 工作空间
 

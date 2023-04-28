@@ -51,7 +51,7 @@
 
 5. 将镜像地址填入 [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) 文件中的 Deployment 下的 `spec/template/spec/containers/image` 字段。
 
-    ![填写镜像](../images/jwt04.png)
+    ![填写镜像](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt04.png)
 
 ## 接入认证服务器
 
@@ -63,20 +63,20 @@
 
 2. 在网关下创建一个使用 `https` 协议的域名，填写基础信息。
 
-    ![基础配置](../images/jwt01.png)
+    ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt01.png)
 
 3. 填写该域名的安全配置，指定认证服务器的地址。认证服务器地址格式为 `namespace/name`。
 
-    ![基础配置](../images/jwt02.png)
+    ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt02.png)
 
     !!! note
 
         认证服务器的 `namespace/name` 指的是 [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) 文件中 ExtensionService 下的 `metadata` 部分的 `namespace` 和 `name` 字段的取值。
 
-        ![基础配置](../images/jwt05.png)
+        ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt05.png)
 
 4. 在网关下创建一个 API，`关联域名`填写刚才新创建的域名，匹配路径为 `/`，并开启`安全认证`，并将 API 上线。
 
-    ![基础配置](../images/jwt03.png)
+    ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt03.png)
 
 5. 现在即可通过认证服务器访问该 API 了。

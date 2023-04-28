@@ -8,7 +8,7 @@
 
 2. 选择左侧导航栏的`自定义资源`，在列表中查找 `grafanadashboards.integreatly.org` 文件，进入详情。
 
-    ![导入仪表盘](../images/importboard00.png)
+    ![导入仪表盘](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/importboard00.png)
 
 3. 点击 `Yaml 创建`，使用以下模板，在 `Json` 字段中替换仪表盘 JSON。
 
@@ -65,7 +65,7 @@
 
 1. 点击左侧导航栏 `Dashboards` > `Import`。
 
-    ![导入仪表盘](../images/importboard01.png)
+    ![导入仪表盘](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/importboard01.png)
 
 2. 可选择以下方式导入：
 
@@ -73,7 +73,7 @@
     - 粘贴 [Grafana.com](https://grafana.com)仪表盘 URL
     - 粘贴仪表盘 JSON 到文本区域
 
-    ![导入仪表盘](../images/importboard02.png)
+    ![导入仪表盘](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/importboard02.png)
 
 3. 点击 `Load` 后，填写以下参数：
 
@@ -81,11 +81,11 @@
     - Floder：选择仪表盘存储的目标路径
     - Prometheus：选择数据源
 
-    ![导入仪表盘](../images/importboard03.png)
+    ![导入仪表盘](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/importboard03.png)
 
 4. 点击 `Import` 即可成功导入仪表盘。
 
-    ![导入仪表盘](../images/importboard04.png)
+    ![导入仪表盘](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/importboard04.png)
 
 !!! info
 

@@ -13,4 +13,4 @@ hide:
 
 2. 进入消息队列概览，查看基本信息、访问设置、资源配额和 Pod 列表等信息。
 
-    ![查看信息](../images/view02.png)
+    ![查看信息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/view02.png)

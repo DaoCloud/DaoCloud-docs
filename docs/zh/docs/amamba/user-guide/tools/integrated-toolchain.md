@@ -16,7 +16,7 @@ DevOps 工具链是一组工具，使 DevOps 团队能够在整个产品生命�
 
 1. 进入`工具链集成` 页面，点击`工具链集成`按钮。
 
-    ![tool01](../../images/tool01.png)
+    ![tool01](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/tool01.png)
 
 2. 参考以下说明，配置相关参数：
 
@@ -25,8 +25,8 @@ DevOps 工具链是一组工具，使 DevOps 团队能够在整个产品生命�
     - 地址：可访问工具链的地址，以 http://, https:// 开头的域名或 IP 地址。
     - 用户名和密码：可以登录工具链的用户和密码、
 
-    ![tool02](../../images/tool02.png)
+    ![tool02](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/tool02.png)
 
 3. 单击`确定`，集成成功返回到工具链列表页面。
 
-    ![tool03](../../images/tool03.png)
+    ![tool03](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/tool03.png)

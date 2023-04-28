@@ -16,40 +16,40 @@
 
 1. 用户登录平台后，点击左侧菜单栏`容器管理`下的`权限管理`，默认位于`集群权限`页签。
 
-    ![集群权限](../../images/perm01.png)
+    ![集群权限](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/perm01.png)
 
 2. 点击`添加授权`按钮。
 
-    ![添加授权](../../images/perm02.png)
+    ![添加授权](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/perm02.png)
 
 3. 在`添加集群权限`页面中，选择目标集群、待授权的用户/用户组后，点击`确定`。
 
     目前仅支持的集群角色为 `Cluster Admin`，详情权限可参考[权限说明](permission-brief.md)。如需要给多个用户/用户组同时进行授权， 可点击`添加用户权限`进行多次添加。
 
-    ![添加集群权限](../../images/perm03.png)
+    ![添加集群权限](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/perm03.png)
 
 4. 返回集群权限管理页面，屏幕出现消息：`添加集群权限成功`。
 
-    ![添加成功](../../images/perm04.png)
+    ![添加成功](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/perm04.png)
 
 ## 命名空间授权
 
 1. 用户登录平台后，点击左侧菜单栏`容器管理`下的`权限管理`，点击`命名空间权限`页签。
 
-    ![命名空间权限](../../images/perm05.png)
+    ![命名空间权限](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/perm05.png)
 
 2. 点击`添加授权`按钮。在`添加命名空间权限`页面中，选择目标集群、目标命名空间，以及待授权的用户/用户组后，点击`确定`。
 
     目前支持的命名空间角色为 NS Admin、NS Edit、NS View，详情权限可参考[权限说明](permission-brief.md)。如需给多个用户/用户组同时进行授权，可点击`添加用户权限`进行多次添加。点击`确定`完成权限授权。
 
-    ![添加命名空间权限](../../images/perm06.png)
+    ![添加命名空间权限](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/perm06.png)
 
 3. 返回命名空间权限管理页面，屏幕出现消息：`添加集群权限成功`。
 
-    ![添加成功](../../images/perm07.png)
+    ![添加成功](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/perm07.png)
 
     !!! tip
 
         后续如需删除或编辑权限，可点击列表右侧的 `⋮`，选择`编辑`或`删除`。
 
-        ![编辑或删除](../../images/perm08.png)
+        ![编辑或删除](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/perm08.png)

@@ -15,37 +15,37 @@
 
 示例应用的架构图如下：
 
-![image](../images/demo-arch.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/demo-arch.png)
 
 ## 应用部署
 
 [应用工作台](../../amamba/intro/what.md)是 DCE 5.0 的应用管理模块，支持创建/维护多种类型的应用、GitOps 和灰度发布等功能，可以快速将应用部署到任何集群。应用工作台支持基于 Git 仓、Jar 包、容器镜像、Helm 模板部署应用。本次实践基于 `Helm 模板` 部署示例应用。
 
-![image](../images/chooseInstalltype.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/chooseInstalltype.png)
 
 部署应用之前需要满足如下的前提条件：
 
 - 在容器管理中[添加 Helm 仓库](../../kpanda/user-guide/helm/helm-repo.md):
 
-    ![image](../images/addhelmrepo.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/addhelmrepo.png)
 
 - 在微服务引擎中[创建 Nacos 注册中心实例](../registry/managed/registry-lcm/create-registry.md)
 
     > 注意记录注册中心的地址信息，后续安装应用时需要用到。
 
-    ![image](../images/registry.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/registry.png)
 
 ### 基于 Helm 模板部署
 
 1. 在`应用工作台`->`向导`->`基于 Helm 模板`中，找到 opentelemetry-demo 应用，点击应用卡片进行安装
 
-    ![image](../images/helmtemplate.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/helmtemplate.png)
 
-    ![image](../images/templatedetail.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/templatedetail.png)
 
 2. 在 Helm 的安装界面，注意确认部署位置是否正确，然后按照下方要求更新 `JAVA_OPTS` 部分的参数配置。
 
-    ![image](../images/installchart.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/installchart.png)
 
     根据上方记录的注册中心地址，将下方带有注释的参数更新如下：
 
@@ -73,7 +73,7 @@
 
 1. 应用创建成功后，会显示在应用工作台的 Helm 应用列表。
 
-    ![image](../images/helmapplist.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/helmapplist.png)
 
 ### Java 项目自行开发调试
 
@@ -105,7 +105,7 @@
 
 如果选择基于容器镜像部署应用，可以直接在用户界面配置中开启微服务治理并选取对应的注册中心模块，操作更简便。具体步骤可参考[基于 Git 仓构建微服务应用](../../amamba/user-guide/wizard/create-app-git.md)。
 
-![image](../images/createbyimage.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/createbyimage.png)
 
 ## 启用传统微服务治理
 
@@ -119,13 +119,13 @@
 
 应用部署成功后，可以在之前准备注册中心下的`微服务列表`中查看对应的服务。微服务列表提供流控规则、熔断降级、热点规则、系统规则、授权规则等流量治理规则。本次实践以流控规则为例进行演示。
 
-![image](../images/nacosservicelist.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/nacosservicelist.png)
 
 ### 配置流控策略
 
 这里限流策略示例，我们通过简单的配置即可为服务增加对应的限流策略。
 
-![image](../images/createratelimitrule.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/createratelimitrule.png)
 
 ### 测试流控策略
 
@@ -143,7 +143,7 @@
 
     创建网关时，应该将网关部署在示例应用所在的集群，并且该网关需要管辖示例应用所在的命名空间。
 
-![image](../images/gatewaylist.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/gatewaylist.png)
 
 ### 接入服务
 
@@ -151,7 +151,7 @@
 
 本次演示采用 Nacos 注册中心的服务，很大程度上扩宽了网关可接入的服务数量，可以在`服务接入`中选择接入 Nacos 注册中心的服务。
 
-![image](../images/gatewayservicelist.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/gatewayservicelist.png)
 
 !!! info
 
@@ -161,7 +161,7 @@
 
 参考文档 [添加 API](../ms-gateway/api/add-api.md) 创建对应的 API 路由。
 
-![image](../images/apiroute.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/apiroute.png)
 
 ### 访问应用
 
@@ -169,11 +169,11 @@
 
 **示例应用的首页**:
 
-![image](../images/webstorehomepage.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/webstorehomepage.png)
 
 **示例应用的订单确认页面**:
 
-![image](../images/webstorecheckoutpage.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/webstorecheckoutpage.png)
 
 ## 结语
 

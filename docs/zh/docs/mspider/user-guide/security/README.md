@@ -9,7 +9,7 @@ Istio 提供了一种授权机制和两种认证方式（请求身份认证和�
 用户可以在服务网格中通过向导和 YAML 编写两种方式创建、编辑资源文件，
 并可以针对网格全局、命名空间、工作负载三个层面创建规则。当资源创建成功后，Istiod 将转换为配置分发至边车代理执行。
 
-![安全治理](../../images/security.png)
+![安全治理](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/security.png)
 
 ### 授权机制
 

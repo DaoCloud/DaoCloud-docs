@@ -9,7 +9,7 @@ hide:
 
 1. 在左侧导航栏中，点击`多云工作负载`，进入多云无状态负载页面，点击右上角的`镜像创建`按钮。
 
-    ![镜像创建](../images/deployment01.png)
+    ![镜像创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/deployment01.png)
 
 2. 在`创建无状态负载`页面中，配置负载的基本信息后，点击`下一步`。
 
@@ -19,15 +19,15 @@ hide:
 
     - 指定集群：从当前多云实例中指定想要部署的工作集群
 
-        ![指定集群](../images/gao-deploy01.png)
+        ![指定集群](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/gao-deploy01.png)
 
     - 指定区域：可以选择厂商、地域、可用区三种，支持多选。若当前选择无法满足要求，可以展开高级部署策略，选择是否需要排除集群、配置集群污点容忍度、动态区域选择。由于上述条件并不直观，我们还同时将展示预期调度的集群供您查看。
 
-        ![指定区域](../images/gao-deploy02.png)
+        ![指定区域](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/gao-deploy02.png)
 
     - 指定标签：支持添加一条或者多条标签信息，该标签信息和工作集群的标签有关，可以通过填写标签和选择不同的操作符`存在`或者`等于`来选出目标集群。若当前选择无法满足要求，可以展开高级部署策略，选择是否需要排除集群、配置集群污点容忍度、动态区域选择。由于上述条件并不直观，我们还同时将展示预期调度的集群供您查看。
 
-        ![指定标签](../images/gao-deploy03.png)
+        ![指定标签](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/gao-deploy03.png)
 
         注意在部署副本数的调度策略选取时，需要关注下方提示的说明：
     
@@ -36,24 +36,24 @@ hide:
     
 3. 在`容器配置`页面中，配置负载所在容器的基本信息，支持选择镜像（包括共有、私有镜像），可选择配置生命周期、健康检查等信息，然后点击`下一步`。
 
-    ![基本信息](../images/chooseimage.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/chooseimage.png)
 
 4. 在`高级配置`页面中，分配配置升级策略、调度策略、标签与注解以及 DNS 后点击`下一步`。
 
-    ![高级配置](../images/deployment06.png)
+    ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/deployment06.png)
 
     如果您在创建完成后，无需配置差异化时，则可以直接使用 `确认` 完成多云工作负载的创建
 
 5. 在`差异化配置`页面中，选择个性化的容器配置、标签和注解后，点击`确定`。
 
-    ![差异化配置](../images/deployment07.png)
+    ![差异化配置](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/deployment07.png)
 
     您可以在左侧列表区域增加对应的差异化配置项，当您新增一个差异化配置项之后，需要指定对应的集群。
     集群的可选择范围仅为刚开始选择的集群，被选择的集群则会使用指定的差异化配置；未被指定的集群仍旧使用默认配置
 
 6. 屏幕出现创建成功提示，您现在可以[创建多云服务](../resource/service.md)了！
 
-    ![创建多云服务](../images/deployment-service.png)
+    ![创建多云服务](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/deployment-service.png)
 
 !!! note
 

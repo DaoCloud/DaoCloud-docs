@@ -12,7 +12,7 @@
 
       1. 点击`容器管理` -> 选择对应集群，进入集群详情，点击`容器存储`，选择`存储池`
       
-         ![sc01](../../images/sc01.jpg)
+         ![sc01](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/sc01.jpg)
 
       2. 点击`查看 YAML`，查看详情。
 
@@ -47,11 +47,11 @@
 
 1. 点击 `容器管理` -> `选择对应集群`，进入集群详情，点击`容器存储`选择`工作负载`下的`有状态工作负载`，点击`镜像创建`。
 
-    ![imagecreate](../../../storage/images/imagecreate01.jpg)
+    ![imagecreate](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/imagecreate01.jpg)
 
 2. 完成`基本信息`进入到下一步，点击`创建数据卷声明模板`输入如下参数信息：
 
-    ![pvctmp](../../../storage/images/pvctmp01.jpg)
+    ![pvctmp](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/pvctmp01.jpg)
 
     - `存储池`：已经创建的本地存储池。
     - `容量`：本地数据卷容量大小。
@@ -60,7 +60,7 @@
 
 3. 完成后点击`确定`，连续点击`下一步`完成创建。创建完成后点击`数据卷`列表查看对应的`数据卷状态`是否正常。
 
-    ![pvctmp02](../../../storage/images/pvctmp02.jpg)
+    ![pvctmp02](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/pvctmp02.jpg)
 
 ### 通过 YAML 创建 `StatefulSet`
 

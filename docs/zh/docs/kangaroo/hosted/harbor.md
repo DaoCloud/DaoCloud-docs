@@ -9,15 +9,15 @@ hide:
 
 1. 使用具有 Admin 角色的用户登录 Web 控制台，从左侧导航栏点击`镜像仓库` -> `托管 Harbor`。
 
-    ![镜像仓库](../images/hosted01.png)
+    ![镜像仓库](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/hosted01.png)
 
 1. 点击右上角的`创建实例`按钮。
 
-    ![创建实例](../images/hosted02.png)
+    ![创建实例](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/hosted02.png)
 
 1. 填写实例名称，选择部署位置后点击`下一步`（若无部署位置可选，需先前往容器管理创建集群和命名空间）。
 
-    ![基本信息](../images/hosted03.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/hosted03.png)
 
 1. 填写数据库、Redis 实例和镜像/Charts 存储信息后点击`下一步`（当前只支持接入外部数据库和 Redis 实例）。
 
@@ -33,20 +33,20 @@ hide:
     - 哨兵模式填写地址：`redis+sentinel://{host}:{port}?sentinelMasterId={master_id}`，需要替换 host、port、master_id 三个参数。
     - 密码：按需填写
 
-    ![规格配置](../images/hosted04.png)
+    ![规格配置](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/hosted04.png)
 
 1. 填写域名，选择 ingress 实例，输入管理员密码后点击`确定`（用户名/密码用于登录原生 Harbor 实例，请妥善保管密码）。
 
     域名填写提示: `http://{host}`，host 前面的 `http://` 必须要带上。
 
-    ![访问与策略绑定](../images/hosted05.png)
+    ![访问与策略绑定](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/hosted05.png)
 
 1. 返回托管 Harbor 实例列表，新创建的实例默认位于第一个，等待状态从`更新中`变为`健康`，即可正常使用。
 
-    ![实例列表](../images/hosted06.png)
+    ![实例列表](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/hosted06.png)
 
 1. 点击某个实例右侧的 `...`，可以选择编辑、删除或进入原生 Harbor。
 
-    ![更多操作](../images/hosted07.png)
+    ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/hosted07.png)
 
 下一步：[创建镜像空间](../integrate/create-space.md)

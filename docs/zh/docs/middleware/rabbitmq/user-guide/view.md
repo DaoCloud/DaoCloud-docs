@@ -13,4 +13,4 @@ hide:
 
 2. 进入消息队列概览，查看访问设置、资源配额和 Pod 列表等信息。
 
-    ![查看](../images/view02.png)
+    ![查看](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/view02.png)

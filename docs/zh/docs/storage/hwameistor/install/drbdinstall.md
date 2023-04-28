@@ -13,7 +13,7 @@ hide:
 
 2. 点击 `drdb-adapter`，点击安装，进入配置页面。
 
-    ![drbd02](../../images/drbd02.jpg)
+    ![drbd02](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/drbd02.jpg)
 
     - `命名空间`：建议同 Hwameistor 部署在相同的命名空间中，此示例创建的命名空间为 `Hwameistor`。
     - `版本`：默认选择最新版本。

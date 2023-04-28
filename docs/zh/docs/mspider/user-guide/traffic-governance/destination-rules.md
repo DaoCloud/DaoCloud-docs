@@ -45,7 +45,7 @@
 - 客户端 TLS
 - 熔断
 
-![目标规则列表](../../images/destirule06.png)
+![目标规则列表](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule06.png)
 
 ## 操作步骤
 
@@ -53,24 +53,24 @@
 
 1. 在左侧导航栏点击`流量治理` -> `目标规则`，点击右上角的`创建`按钮。
 
-    ![创建](../../images/destirule01.png)
+    ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule01.png)
 
 2. 在`创建目标`界面中，先进行基本配置后点击`下一步`。
 
-    ![创建目标](../../images/destirule02.png)
+    ![创建目标](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule02.png)
 
 3. 按屏幕提示选择策略类型，并配置对应的治理策略后，点击`确定`。
 
-    ![治理策略](../../images/destirule03.png)
+    ![治理策略](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule03.png)
 
 4. 返回目标规则列表，屏幕提示创建成功。
 
-    ![创建成功](../../images/destirule04.png)
+    ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule04.png)
 
 5. 在列表右侧，点击操作一列的 `⋮`，可通过弹出菜单进行更多操作。
 
-    ![更多操作](../../images/destirule05.png)
+    ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule05.png)
 
 YAML 创建方式与虚拟服务相似，您可以直接借助内置模板创建 YAML 文件，如下图所示。
 
-![YAML 创建](../../images/destirule07.png)
+![YAML 创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule07.png)

@@ -36,11 +36,11 @@ DCE 5.0 支持通过容器垂直扩缩容策略（Vertical Pod Autoscaler, VPA�
 
 3. 点击`弹性伸缩`页签，查看当前集群的弹性伸缩配置，确认已经安装了相关插件并且插件是否运行正常。
 
-    ![垂直伸缩](../../images/createVpaScale.png)
+    ![垂直伸缩](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createVpaScale.png)
 
 4. 点击`新建伸缩`按钮，并配置 VPA 垂直伸缩策略参数。
 
-    ![新建伸缩](../../images/createVpaScale01.png)
+    ![新建伸缩](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createVpaScale01.png)
 
     - 策略名称：输入垂直伸缩策略的名称，请注意名称最长 63 个字符，只能包含小写字母、数字及分隔符（“-”），且必须以小写字母或数字开头及结尾，例如 vpa-my-dep。
     - 伸缩模式：执行修改 CPU 和内存请求值的方式，目前垂直伸缩支持手动和自动两种伸缩模式。
@@ -50,4 +50,4 @@ DCE 5.0 支持通过容器垂直扩缩容策略（Vertical Pod Autoscaler, VPA�
 
 5. 完成参数配置后，点击`确定`按钮，自动返回弹性伸缩详情页面。点击列表右侧的 `⋮`，可以执行编辑、删除操作。
 
-    ![工作负载](../../images/createVpaScale02.png)
+    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createVpaScale02.png)

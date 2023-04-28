@@ -25,23 +25,23 @@ DCE 5.0 服务网格支持 3 种网格：
     - 控制面地址：输入控制面的 IP 地址。
     - 网格组件仓库：输入包含数据面组件镜像的镜像仓库地址，例如 `release.daocloud.io/mspider`。
   
-    ![基本信息](../../images/create-mesh-config.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/create-mesh-config.png)
 
 1. 系统设置。配置是否开启可观测性，设置网格规模后点击`下一步`。
 
-    ![系统设置](../../images/mesh-sys-set.png)
+    ![系统设置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/mesh-sys-set.png)
 
 1. 治理设置。设置出站流量策略、位置感知负载均衡、请求重试等。参阅[请求重试参数说明](./params.md#max-retries)。
 
-    ![治理设置](../../images/gov-set.png)
+    ![治理设置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/gov-set.png)
 
 1. 边车设置。设置全局边车、资源限制、日志后点击`确定`。参阅[日志级别说明](./params.md#_2)。
 
-    ![边车设置](../../images/create-sidecar-set.png)
+    ![边车设置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/create-sidecar-set.png)
 
 1. 自动返回网格列表，新创建的网格默认位于第一个，一段时间后状态将从`创建中`变为`运行中`。点击右侧的 `...` 可以编辑网格基本信息、添加集群等。
 
-    ![网格列表](../../images/create-list.png)
+    ![网格列表](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/create-list.png)
 
 !!! info
 

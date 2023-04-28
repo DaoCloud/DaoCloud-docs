@@ -26,19 +26,19 @@
 
 2. 在集群详情页面，点击左侧导航栏的`工作负载` -> `定时任务`，然后点击页面右上角的`镜像创建`按钮。
 
-    ![工作负载](../../images/cronjob01.png)
+    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/cronjob01.png)
 
 3. 依次填写[基本信息](create-cronjob.md#_3)、[容器配置](create-cronjob.md#_4)、[定时任务配置](create-cronjob.md#_5)、[高级配置](create-cronjob.md#_6)后，在页面右下角点击`确定`完成创建。
 
     系统将自动返回`定时任务`列表。点击列表右侧的 `︙`，可以对定时任务执行执行更新、删除、重启等操作。
 
-    ![操作菜单](../../images/cronjob06.png)
+    ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/cronjob06.png)
 
 ### 基本信息
 
 在`创建定时任务`页面中，根据下表输入信息后，点击`下一步`。
 
-![基本信息](../../images/cronjob02.png)
+![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/cronjob02.png)
 
 - 负载名称：最多包含 63 个字符，只能包含小写字母、数字及分隔符（“-”），且必须以小写字母或数字开头及结尾。同一命名空间内同一类型工作负载的名称不得重复，而且负载名称在工作负载创建好之后不可更改。
 - 命名空间：选择将新建的定时任务部署在哪个命名空间，默认使用 default 命名空间。找不到所需的命名空间时可以根据页面提示去[创建新的命名空间](../namespaces/createns.md)。
@@ -52,7 +52,7 @@
 
 === "基本信息（必填）"
 
-    ![基本信息](../../images/cronjob03.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/cronjob03.png)
 
     在配置容器相关参数时，必须正确填写容器的名称、镜像参数，否则将无法进入下一步。参考以下要求填写配置后，点击`确认`。
 
@@ -97,7 +97,7 @@
 
 ### 定时任务配置
 
-![定时任务配置](../../images/cronjob04.png)
+![定时任务配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/cronjob04.png)
 
 - 并发策略：是否允许多个 Job 任务并行执行。
 
@@ -119,7 +119,7 @@
 
 可以点击`添加`按钮为工作负载实例 Pod 添加标签和注解。
 
-![定时任务配置](../../images/cronjob05.png)
+![定时任务配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/cronjob05.png)
 
 ## YAML 创建
 
@@ -131,11 +131,11 @@
 
 2. 在集群详情页面，点击左侧导航栏的`工作负载` -> `定时任务`，然后点击页面右上角的 `YAML 创建`按钮。
 
-    ![工作负载](../../images/cronjob07.png)
+    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/cronjob07.png)
 
 3. 输入或粘贴事先准备好的 YAML 文件，点击`确定`即可完成创建。
 
-    ![工作负载](../../images/cronjob08.png)
+    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/cronjob08.png)
 
 ??? note "点击查看创建定时任务的 YAML 示例"
 

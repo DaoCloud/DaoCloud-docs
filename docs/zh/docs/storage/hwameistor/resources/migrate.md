@@ -36,7 +36,7 @@ LocalVolumeMigrate 需要部署在 Kubernetes 系统中，需要部署应用满�
 
     迁移之前请先解除 PVC 挂载，可通过`编辑工作负载`进行解挂载。
 
-    ![unbound01](../../images/unboundpvc-01.jpg)
+    ![unbound01](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/unboundpvc-01.jpg)
 
 5. 创建迁移任务
 
@@ -49,7 +49,7 @@ LocalVolumeMigrate 需要部署在 Kubernetes 系统中，需要部署应用满�
 
     如两个/多个本地卷挂载在同一个应用上，则两个卷会自动组成 本地卷组 统一进行迁移。
 
-    ![migration01](../../images/migrationaction-01.jpg)
+    ![migration01](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/migrationaction-01.jpg)
 
 6. 点击对应的本地卷，进入详情查看迁移状态。
 

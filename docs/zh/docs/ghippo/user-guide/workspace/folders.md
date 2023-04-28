@@ -15,11 +15,11 @@ hide:
 
 1. 点击左侧导航栏的`工作空间与层级`，点击右上角的`创建文件夹`按钮。
 
-    ![创建文件夹](../../images/fd02.png)
+    ![创建文件夹](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/fd02.png)
 
 1. 填写文件夹名称、上一级文件夹等信息后，点击`确定`，完成创建文件夹。
 
-    ![确定](../../images/fd03.png)
+    ![确定](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/fd03.png)
 
 !!! tip
 

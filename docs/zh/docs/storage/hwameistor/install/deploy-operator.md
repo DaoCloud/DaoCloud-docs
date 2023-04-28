@@ -24,13 +24,13 @@ hide:
 
 2. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `Hwameistor Operator`。
 
-    ![点击](../../images/operator1.jpg)
+    ![点击](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/operator1.jpg)
 
 3. 在`版本选择`中选择希望安装的版本，点击`安装`。
 
 4. 在安装界面，填写所需的安装参数。
 
-    ![Operator02](../../images/operator2.jpg)
+    ![Operator02](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/operator2.jpg)
 
     **`Value.yaml`**参数如下，默认可不进行修改：
 
@@ -117,11 +117,11 @@ hide:
 
 5. 确认参数无误后，点击`确定`完成安装，完成安装后可点击 `Helm 应用`查看 `Hwameistor Operator` 安装状态。
 
-    ![Operator03](../../images/operator3.jpg)
+    ![Operator03](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/operator3.jpg)
 
 6. Operator 安装完成后，Hwameistor 组件（Local Storage、Local Disk Manager 等）默认进行安装！
    可点击`工作负载`-->`无状态工作负载`，选择对应命名空间，查看 Hwameistor 组件状态。
 
-    ![hwameistor 状态](../../images/operator4.jpg)
+    ![hwameistor 状态](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/operator4.jpg)
 
     通过命令行验证安装效果，请参[安装后检查](./post-check.md)。

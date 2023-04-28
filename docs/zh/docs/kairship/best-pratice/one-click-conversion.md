@@ -11,26 +11,26 @@
 
 1. 进入`多云实例-工作负载管理`，点击`接入集群`选择将 DCE4 集群接入多云实例。
 
-    ![接入集群](../../kairship/images/conversion01.png)
+    ![接入集群](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/conversion01.png)
 
 2. 进入`多云工作负载-无状态负载`，点击立即体验，选中目标应用，将会自动勾选其关联的 service，同时相关联的配置项、密钥也会被同步转换。
 
-    ![一键转移](../../kairship/images/conversion02.png)
+    ![一键转移](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/conversion02.png)
 
-    ![同步转换](../../kairship/images/conversion03.png)
+    ![同步转换](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/conversion03.png)
 
 3. 转换成功后点击更新，选择目标部署集群，并开启自动传播（将默认自动检测多云工作负载配置中依赖的 ConfigMap 与 Secret 等资源，并实现自动传播）。
 
-    ![更新nginx](../../kairship/images/conversion04.png)
+    ![更新nginx](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/conversion04.png)
 
 4. 更新 service 的部署策略，选择部署集群。
 
-    ![更新部署策略](../../kairship/images/conversion05.png)
+    ![更新部署策略](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/conversion05.png)
 
 5. 验证多云 nginx 是否运行成功：在两个集群内 Pod 都成功运行，并且可以正常访问。
 
-    ![验证是否成功](../../kairship/images/conversion06.png)
+    ![验证是否成功](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/conversion06.png)
 
 6. DCE4 集群内的工作负载 nginx 不受影响，应用不断服。
 
-    ![不断服](../../kairship/images/conversion07.png)
+    ![不断服](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/conversion07.png)

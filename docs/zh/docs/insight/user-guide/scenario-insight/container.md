@@ -21,11 +21,11 @@ hide:
 
 3. 切换顶部 Tab，查看不同类型工作负载的数据。
 
-    ![容器监控](../../images/containerinsight01.png)
+    ![容器监控](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/containerinsight01.png)
 
 4. 点击目标工作负载名称查看详情。
 
-    ![容器监控](../../images/containerinsight02.png)
+    ![容器监控](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/containerinsight02.png)
 
 ### 内容说明
 

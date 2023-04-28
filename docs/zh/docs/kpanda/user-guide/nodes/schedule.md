@@ -13,12 +13,12 @@ hide:
 
 2. 在左侧导航栏点击`节点管理`，在节点右侧点击 `ⵗ` 操作图标，点击`暂停调度`按钮即可暂停调度该节点。
 
-    ![暂停调度](../../images/schedule02.png)
+    ![暂停调度](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/schedule02.png)
 
 3. 在节点右侧点击 `ⵗ` 操作图标，点击`恢复调度`按钮即可恢复调度该节点。
 
-    ![节点管理](../../images/schedule03.png)
+    ![节点管理](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/schedule03.png)
 
 节点调度状态可能因网络情况有所延迟，点击搜索框右侧的刷新图标可以刷新节点调度状态。
 
-![节点管理](../../images/schedule04.png)
+![节点管理](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/schedule04.png)

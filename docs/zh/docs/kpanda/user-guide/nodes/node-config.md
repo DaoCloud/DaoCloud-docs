@@ -36,4 +36,4 @@
 
 5. 将编码后的私钥文件 `id_rsa` 下载到您当前节点上，并在界面完成私钥文件的上传。
 
-    ![SSH 认证](../../../kpanda/images/createcluster-ssh01.png)
+    ![SSH 认证](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createcluster-ssh01.png)

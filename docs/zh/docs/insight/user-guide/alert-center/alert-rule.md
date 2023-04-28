@@ -6,11 +6,11 @@
 
 1. 进入`可观测性`后，在左侧导航栏中，选择`告警中心` -> `告警规则`，点击`新建指标规则`按钮。
 
-    ![新建指标规则](../../images/rule01.png)
+    ![新建指标规则](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/rule01.png)
 
 2. 在`创建告警规则`页面中，分别填写基本信息，选择指标，触发条件等信息。
 
-    ![填表](../../images/rule02.png)
+    ![填表](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/rule02.png)
 
     - 选择指标
   
@@ -38,7 +38,7 @@
 
 在列表右侧点击`...`，在弹出菜单中选择`编辑`、`复制`或`删除`，可以修改、复制或删除告警规则。
 
-![其他操作](../../images/rule03.png)
+![其他操作](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/rule03.png)
 
 !!! warning
 

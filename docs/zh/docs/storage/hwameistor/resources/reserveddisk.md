@@ -25,4 +25,4 @@
 
 预留后磁盘将不会被 Hwameistor 使用。
 
-![](../../images/reserveddisk.jpg)
+![](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/reserveddisk.jpg)

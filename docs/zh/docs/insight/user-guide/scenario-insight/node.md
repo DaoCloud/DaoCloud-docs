@@ -11,8 +11,8 @@
 
 1. 在左侧导航栏中，选择`节点监控`，默认展示第一个集群下的节点。
 
-    ![节点监控](../../images/node01.png)
+    ![节点监控](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/node01.png)
 
 2. 在筛选列表中，可按照集群、健康状态筛选节点，也可以通过搜索框进行搜索。
 
-    ![节点监控](../../images/node02.png)
+    ![节点监控](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/node02.png)
