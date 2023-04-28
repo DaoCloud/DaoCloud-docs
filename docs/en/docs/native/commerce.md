@@ -4,6 +4,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### A
 
+- [ARMO Platform, Kubernetes Security Platform, introduces vulnerability analysis and assessment capabilities based on eBPF technology](https://www.armosec.io/blog/kubernetes-vulnerability-relevancy-and-prioritization/)
+
+    This feature analyzes and evaluates vulnerabilities on the Kubernetes platform, identifies and prioritizes vulnerabilities, and provides users with targeted remediation recommendations. Among other things, relevance and prioritization allows users to deprioritize vulnerabilities in unused packages and components to focus on addressing vulnerabilities that pose a greater threat to the cluster.
+
 - [Aqua cloud-native security platform introduces Lightning Enforcer, a zero-day vulnerability detection tool based on eBPF technology](https://blog.aquasec.com/combat-zero-day-threats-with-aquas-ebpf-lightning-enforcer)
 
      Aqua Lightning Enforcer utilizes drift and behavior-based automated detection methods to detect unknown threats such as zero-day vulnerabilities, and provides incident management, suspicious behavior alerts, and out-of-the-box CNDR (cloud-native detection and response).
@@ -188,6 +192,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      DaoCloud Enterprise 5.0 is an independent, open, high-performance, scalable next-generation cloud-native operating system. Focusing on the cloud-native base extension capability scenario, break through cloud-side barriers, cross multi-cloud environments, solve the compatibility problem of Xinchuang infrastructure, improve application delivery efficiency, enable agile innovation of applications, enable business systems with rich data services, and integrate microservice governance and Global observability can meet the challenges of operation and maintenance management of huge business systems.
 
+- [Databend Releases Cloud-Native Data Warehouse Databend Cloud](https://mp.weixin.qq.com/s/LzjRQ8_XA-896AZQj2n3hA)
+
+    Databend Cloud is an elastic cloud data warehouse based on the open source cloud-native data warehouse project [Databend](https://github.com/datafuselabs/databend), which consists of 3 layers: storage layer, compute layer and meta information service. The bottom tier is based on object storage, the upper tier compute nodes use different specifications, and the top tier is a metadata and management cluster to achieve multi-tenant isolation and ensure users' data security.
+
 - [Datadog Launches Cloud Security Management to Provide Cloud Security Management](https://www.datadoghq.com/about/latest-news/press-releases/datadog-launches-cloud-security-management-to-provide-cloud-native-application-protection/)
 
      Cloud Security Management brings cloud security posture management, cloud workload security, alerting, event management, and reporting together in one platform, enabling development and security teams to identify misconfigurations, detect threats, and secure cloud-native applications.
@@ -209,7 +217,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The Davis AI causal analysis engine provides root cause analysis of Kubernetes performance issues and their impact on business continuity. Specific features: Automated root cause analysis, support for real-time tracking of Kubernetes orchestration processes, linking performance issues to pod evictions, support for identifying the cause of performance degradation issues related to misconfigurations based on changes in workload deployment inventory.
 
-- [Ermetic Cloud Native Application Protection Platform supports Kubernetes security posture management](https://ermetic.com/news/ermetic-adds-kubernetes-security-posture-management-to-cloud-native -application-protection-platform/)
+- [Ermetic Cloud Native Application Protection Platform supports Kubernetes security posture management](https://ermetic.com/news/ermetic-adds-kubernetes-security-posture-management-to-cloud-native-application-protection-platform/)
 
     The Ermetic Cloud Native Application Protection Platform's Kubernetes Security Posture Management feature supports automatic discovery and remediation of misconfigurations, compliance violations, and risky or excessive privileges in Kubernetes clusters.
     It provides a detailed inventory of all Kubernetes cluster internal resources, the ability to continuously perform security posture assessments and risk prioritization, and provides remediation methods and workflow integration.
@@ -405,6 +413,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### Q
 
+- [QingCloud Releases KubeSphere Container Platform Enterprise Edition 3.4.0](https://mp.weixin.qq.com/s/spjVK8jWtXYb53aYjMWFxw)
+
+    Updates: Support for Prometheus internal TLS authenticated access, built-in integration with HPA extension plugin KEDA, new enterprise space-level gateway and tenant-level storage quota, improved resource alias display weight, support for Whizard observable center configuration via UI.
+
 - [QingCloud Enterprise Cloud Platform v6.1 version officially released](https://mp.weixin.qq.com/s/tNx1neUN5B9auBqp_Fpy3A)
 
     Updates; New monitoring patrol function; New enterprise space function, covering organization management, user management, quota management, resource management, process approval and other space management modules; New support for third-party storage; Provides VMware vSphere nano-management tools; QKE container engine supports bare metal servers as cluster workers.
@@ -590,6 +602,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
     Calico Runtime Threat Defense combines a combination of signature- and behavior-based techniques to detect known and zero-day threats, enabling detection of MITRE's most common container and network-based attacks.
     Unlike traditional runtime threat detection platforms, Calico Runtime Threat Defense continuously monitors and analyzes network and container behavior for indicators of attack (IOA) without writing complex rules.
 
+- [Traefik Labs releases Traefik Enterprise 2.10, a cloud-native API gateway](https://traefik.io/blog/announcing-traefik-enterprise-2-10/)
+
+    Updates: allows OIDC middleware to check requests in access tokens, allows loading sensitive data from Kubernetes Secret, and supports limiting API access rates.
+
 - [Traefik Labs releases Traefik Hub 1.0, a cloud-native network platform](https://traefik.io/blog/announcing-the-general-availability-of-traefik-hub-1-0/)
 
      Traefik Hub 1.0 allows users to quickly and securely publish Kubernetes or Docker containers using Traefik or Nginx. Traefik Hub provides the centralized control plane needed to network Kubernetes clusters without deploying container sidecars to run networking software. It supports container networking through secure encrypted tunnels and direct private connections, adds access control to services through JWT or OIDC, realizes scale automation through GitOps, and is equipped with workspaces to promote cross-team collaboration.
@@ -610,7 +626,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      TLS Protect for Kubernetes is part of Control Plane for Machine Identities, Venafi's platform for machine identity management.
      Helps security and platform teams manage cloud-native machine identities such as TLS, mTLS, and SPIFFE in multi-cloud and multi-cluster Kubernetes environments, enhancing the observability, control, and automation of machine identity management.
 
-- [VMware Tanzu Releases Kubernetes DevOps Platform VMware Tanzu Application Platform 1.5](https://tanzu.vmware.com/content/blog/tanzu-application- platform-1-5-ga)
+- [Volcano Engine Releases Distributed Cloud Native Platform DCP](https://mp.weixin.qq.com/s/Fz7R8R0keKFEryq8zQKFoA)
+
+    [DCP](https://www.volcengine.com/product/dcp) is an enterprise-level cloud native unified management platform for multi-cloud and multi-Kubernetes cluster scenarios, providing unified management and operation and maintenance of multi-cloud clusters, cross-cluster distribution of applications, unified traffic control and other capabilities, DCP provides unified management and operation and maintenance of Volcano Engine container clusters, third-party clusters and self-built clusters; provides cross-cluster and cross-cloud elastic scheduling capability based on cluster federation and other technologies; provides multi-cluster service discovery, multi-cluster unified portal access and other capabilities; enables application data recovery and cross-cluster/cloud application migration based on backup data.
+
+- [VMware Tanzu Releases Kubernetes DevOps Platform VMware Tanzu Application Platform 1.5](https://tanzu.vmware.com/content/blog/tanzu-application-platform-1-5-ga)
 
     Updates: Completed Namespace Provisioner with GitOps mode support; Platform engineers can use private Git repositories to reference templated resources; Support for GitOps-based installation process; New panel to display details of workloads in a cluster; New External Secrets Operator; Support for Spring Cloud Gateway for Kubernetes, a distributed API gateway.
 
