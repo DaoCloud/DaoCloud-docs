@@ -25,19 +25,19 @@
 
 1. 进入镜像仓库的`镜像列表`中，选择一个实例和镜像空间，点击某一个镜像。
 
-    ![镜像列表](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/kangaroo/images/scan01.jpg)
+    ![镜像列表](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/scan01.jpg)
 
 2. 在镜像详情列表中，点击列表右侧的 `⋮`，在弹出菜单中选择`扫描`。
 
-    ![扫描](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/kangaroo/images/scan02.jpg)
+    ![扫描](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/scan02.jpg)
 
 3. 系统开始扫描镜像，通常状态依次为`排队中`、`扫描中`、`扫描完成`。
 
-    ![排队中](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/kangaroo/images/scan03.jpg)
+    ![排队中](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/scan03.jpg)
 
-    ![扫描中](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/kangaroo/images/scan04.jpg)
+    ![扫描中](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/scan04.jpg)
 
-    ![扫描完成](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/kangaroo/images/scan05.jpg)
+    ![扫描完成](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/scan05.jpg)
 
     扫描状态包括：
 
@@ -50,7 +50,7 @@
 
 4. 扫描完成后，将光标悬浮在扫描完成的比例条上，可以查看扫描详情。
 
-    ![扫描完成](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/kangaroo/images/scan06.jpg)
+    ![扫描完成](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/scan06.jpg)
 
 ## 扫描原生 Harbor 镜像
 
@@ -60,10 +60,10 @@
 
 1. 以平台管理员登录镜像仓库，点击左侧底部的`仓库集成`。
 
-    ![仓库集成](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/kangaroo/images/harbor01.jpg)
+    ![仓库集成](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/harbor01.jpg)
 
 2. 在集成的仓库列表中，光标悬浮于某个仓库上，点击`原生 Harbor` 图标。
 
-    ![仓库集成](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/kangaroo/images/harbor02.jpg)
+    ![仓库集成](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/harbor02.jpg)
 
 3. 跳转到原生 Harbor，参阅[扫描 Harbor 镜像](https://goharbor.io/docs/2.1.0/administration/vulnerability-scanning/scan-individual-artifact/)。

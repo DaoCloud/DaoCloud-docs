@@ -12,11 +12,11 @@
 
 在应用工作台部署应用，在这里我们以 istio 的 helloworld 为例。
 
-![部署应用](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-demo.png)
+![部署应用](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-demo.png)
 
 选择对应集群（mdemo-cluster2）与命名空间，并且配置工作负载基本信息。
 
-![配置工作负载](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-demo1.png)
+![配置工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-demo1.png)
 
 - 选择镜像：docker.m.daocloud.io/istio/examples-helloworld-v1
 - 版本：latest
@@ -31,16 +31,16 @@
     - 容器端口：5000
     - 服务端口：5000
 
-![访问类型](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-demo2.png)
+![访问类型](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-demo2.png)
 
-![端口配置](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-demo4.png)
+![端口配置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-demo4.png)
 
 为了区分不同版本的工作负载，需要在`容器管理平台`找到对应的工作负载，点击`标签与注解`，给容器组标签添加键值对：
 "version"："v1"
 
-![标签与注解](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-labels.png)
+![标签与注解](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-labels.png)
 
-![添加键值对](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-labels1.png)
+![添加键值对](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-labels1.png)
 
 ### 集群部署 v2 版本 helloworld
 
@@ -63,13 +63,13 @@
 
 策略：必须开启 Istio 双向 TLS
 
-![开启双向 TLS](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/demo-dr.png)
+![开启双向 TLS](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/demo-dr.png)
 
-![开启双向 TLS](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/demo-dr1.png)
+![开启双向 TLS](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/demo-dr1.png)
 
 必须开启 **Istio 双向** TLS 模式
 
-![开启双向 TLS](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/demo-dr2.png)
+![开启双向 TLS](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/demo-dr2.png)
 
 目标规则 YAML 如下：
 
@@ -103,7 +103,7 @@ spec:
 
 首先需要创建一条网关规则：
 
-![创建一条网关规则](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-gw-ingress.png)
+![创建一条网关规则](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-gw-ingress.png)
 
 网关规则 YAML 如下：
 
@@ -127,9 +127,9 @@ spec:
 
 然后配置访问服务所需的虚拟服务规则。
 
-![配置虚拟服务规则](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/gw-vs.png)
+![配置虚拟服务规则](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/gw-vs.png)
 
-![配置虚拟服务规则](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/gw-vs1.png)
+![配置虚拟服务规则](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/gw-vs1.png)
 
 虚拟服务 YAML 如下：
 
@@ -165,7 +165,7 @@ spec:
 
 **INGRESS_LB_IP** 是指 Ingress 网格负载均衡地址，可以在容器管理平台中查看，如果没有有效的负载均衡 IP 可以通过 NodePort 方式访问。
 
-![验证](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/check-ingress-lb.png)
+![验证](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/check-ingress-lb.png)
 
 （由于容器管理平台界面无法直接查看外部 IP，因此使用控制台的能力查看）
 
@@ -173,4 +173,4 @@ spec:
 
 确认其 v1 与 v2 版本的访问比例是否与上面策略的比例为 8:2
 
-![确认](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/get-hello.png)
+![确认](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/get-hello.png)

@@ -9,7 +9,7 @@ hide:
 
 HwameiStor 的调度器是以 Pod 的形式部署在 HwameiStor 的命名空间。
 
-![img](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/img/clip_image002.png)
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/img/clip_image002.png)
 
 当应用（Deployment 或 StatefulSet ）被创建后，应用的 Pod 会被自动部署到已配置好具备 HwameiStor 本地存储能力的 Worker 节点上。
 
@@ -19,7 +19,7 @@ HwameiStor 建议使用有状态的 StatefulSet 用于多副本的工作负载�
 
 有状态应用 StatefulSet 会将复制的副本部署到同一 Worker 节点，但会为每一个 Pod 副本创建一个对应的 PV 数据卷。如果需要部署到不同节点分散 workload，需要通过 pod affinity 手动配置。
 
-![img](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/img/clip_image004.png)
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/img/clip_image004.png)
 
 由于无状态应用 deployment 不能共享 block 数据卷，所以建议使用单副本。
 

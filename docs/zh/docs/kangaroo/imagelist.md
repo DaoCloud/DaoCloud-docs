@@ -11,7 +11,7 @@ hide:
 1. 第一部分是平台集成或托管的镜像仓库中全部的公开镜像，以及通过镜像空间与工作空间绑定而单独分配给该工作空间的私有镜像。
 2. 第二部分是工作空间主动关联某镜像仓库而获得的全部公开或私有镜像。
 
-![镜像列表](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/kangaroo/images/list01.png)
+![镜像列表](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/list01.png)
 
 **主要功能**
 

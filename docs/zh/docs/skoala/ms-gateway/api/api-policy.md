@@ -22,19 +22,19 @@ DCE 5.0 微服务网关支持九种 API 策略：负载均衡、路径改写、�
   
     默认的负载均衡策略。选择随机规则时，网关会将请求随机分发给后端服务的任意实例。在流量较小时，部分后端服务可能会负载较多。效果参考下图：
 
-    ![负载均衡](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/lb-random.png)
+    ![负载均衡](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/lb-random.png)
 
 - 轮询
   
     向后端服务的所有实例轮流分发请求，各个服务实例接收到的请求数基本相近。此规则可以在流量较小时保障流量的平均分配。效果参考下图：
 
-    ![负载均衡](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/lb-rc.png)
+    ![负载均衡](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/lb-rc.png)
 
 - 权重
   
     根据 API 目标后端服务的权重分发流量，权重数值越大，优先级越高，承担的流量也相对较多。服务权重的配置入口见下图：
 
-    ![负载均衡](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/lb-weight.png)
+    ![负载均衡](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/lb-weight.png)
 
 - Cookie
   
@@ -44,7 +44,7 @@ DCE 5.0 微服务网关支持九种 API 策略：负载均衡、路径改写、�
   
     选择请求 Hash 时，可以通过一些高级策略来进负载均衡分配。当前支持的 Hash 策略为：IP、请求参数。
 
-    ![负载均衡](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/lb.png)
+    ![负载均衡](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/lb.png)
 
 ## 路径改写
 
@@ -53,7 +53,7 @@ DCE 5.0 微服务网关支持九种 API 策略：负载均衡、路径改写、�
 
 注意：**需要确保重写的路径是真实存在的，并且路径正确，以 “/” 开头**。
 
-![路径改写](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/rewrite.png)
+![路径改写](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/rewrite.png)
 
 ## 超时配置
 
@@ -61,7 +61,7 @@ DCE 5.0 微服务网关支持九种 API 策略：负载均衡、路径改写、�
 
 超时配置默认处于关闭状态，开启后必须配置超时时长。开启超时配置有助于减少异常处理导致的阻塞问题。
 
-![超时](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/timeout.png)
+![超时](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/timeout.png)
 
 ## 重试机制
 
@@ -86,7 +86,7 @@ DCE 5.0 微服务网关支持九种 API 策略：负载均衡、路径改写、�
 - 资源不足：当响应结果为资源不足时，自动进行重试。
 - 服务不可用时：当响应结果为后端不可用时，自动进行重试。
 
-    ![重试](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/retry.png)
+    ![重试](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/retry.png)
 
 ## 请求头/响应头改写
 
@@ -96,7 +96,7 @@ DCE 5.0 微服务网关支持九种 API 策略：负载均衡、路径改写、�
 - 修改请求头/响应头：使用`设置`动作，填写已有的关键字并赋予新值。
 - 移除请求头/响应头，使用`移除`动作，只填写需要移除的关键字即可，无需填写对应的值。
 
-    ![header 改写](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/header-rewrite.png)
+    ![header 改写](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/header-rewrite.png)
 
 ## Websocket
 
@@ -104,7 +104,7 @@ WebSocket 是一种在单个 TCP 连接上进行全双工通信的协议。WebSo
 
 启用 Websocket 之后支持通过 Websocket 协议访问 API 的后端服务。
 
-![websocket](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/websocket.png)
+![websocket](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/websocket.png)
 
 ## 本地限流
 
@@ -117,7 +117,7 @@ WebSocket 是一种在单个 TCP 连接上进行全双工通信的协议。WebSo
 
 下图中的配置表示：每分钟最多允许请求 8 次 (3+5)，第 9 次访问时会返回 429 状态码，提示访问次数过多。每次请求成功后返回的响应内容都会带上 `ratelimit：8` 响应头。
 
-![本地限流](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/ratelimit.png)
+![本地限流](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/ratelimit.png)
 
 !!! info
 
@@ -134,7 +134,7 @@ WebSocket 是一种在单个 TCP 连接上进行全双工通信的协议。WebSo
 - 标记健康检查次数：连续检查 N 次并且每次结果都是健康时，才将服务实例标记为健康状态；当服务实例被标记为健康状态后，请求流量将会自动分发到该服务实例。
 - 标记不健康检查次数：连续检查 N 次并且每次结果都是不健康时，就将服务实例标记为不健康状态，当服务实例被标记为不健康时，停止向该实例分发请求流量。
 
-    ![健康检查](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/healthcheck.png)
+    ![健康检查](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/healthcheck.png)
 
 ## Cookie 重写
 
@@ -150,7 +150,7 @@ WebSocket 是一种在单个 TCP 连接上进行全双工通信的协议。WebSo
     - Lax：大多数情况禁止，但是导航到目标网址的 Get 请求除外。
     - None：跨域请求允许携带本站 cookie，前提是 Secure 必须设置为`保持`，即只能在 HTTPS 协议下使用
 
-        ![cookie 重写](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/cookie.png)
+        ![cookie 重写](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/cookie.png)
 
 ## 访问黑白名单
 
@@ -162,8 +162,8 @@ WebSocket 是一种在单个 TCP 连接上进行全双工通信的协议。WebSo
 
 - Remote：IP 来源为 Remote 时，黑白名单是否生效取决于网关前置代理层数。当代理层数为 n 时，生效的是从网关开始向前第 n+1 个端点的 IP。例如 `**客户端-Nginx-网关**` 前置代理层数为 1，则仅对网关向前第 2 个端点的 IP 生效，即客户端的 IP。如果填写 Nginx 的 IP，黑白名单不会生效。
 
-    ![黑白名单](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/backlist01.png)
+    ![黑白名单](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/backlist01.png)
 
 - Peer：IP 来源为 Peer 时，无论网关前置代理层数是多少，黑白名单都仅对网关的 **直接** 对端 IP 生效。例如`客户端-...-Nginx-网关`，无论客户端和 Nginx 中间有多少个代理端点，黑白名单都仅对最后一个 Nginx 的 IP 生效。
 
-    ![黑白名单](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/blacklist.png)
+    ![黑白名单](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/blacklist.png)

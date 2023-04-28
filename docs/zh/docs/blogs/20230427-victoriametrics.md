@@ -1,6 +1,6 @@
 # 云原生监控 - VictoriaMetrics 之基础篇
 
-![VictoriaMetrics](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/victoria.png)
+![VictoriaMetrics](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/victoria.png)
 
 说到云原生监控方案，第一时间基本上都会想到 Prometheus+AlertManager+Grafana 的一套成熟解决方案。
 Prometheus 作为监控核心，具备强大的数据模型、高效率运作、丰富的监控能力、强大的查询语言 PromQL、
@@ -77,7 +77,7 @@ VictoriaMetrics 还支持直接取代 Prometheus 进行 exporter 搜集。
 单节点版本可以根据 CPU 内核、RAM 和可用存储空间的数量完美扩展。与群集版本相比，
 单节点版本更易于配置和操作，因此在选择群集版本之前要三思。
 
-![Image](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/victoria01.png)
+![Image](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/victoria01.png)
 
 VictoriaMetrics 集群由以下服务组成：
 
@@ -306,7 +306,7 @@ helm install victoria-metrics vm/victoria-metrics-cluster -f values.yaml -n vict
 
 稍等片刻 Helm 则会机提示安装成功，查询资源可以看到都已经部署起来了。
 
-![Image](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/victoria02.jpeg)
+![Image](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/victoria02.jpeg)
 
 ## 使用
 
@@ -322,9 +322,9 @@ remote_write:
 把 Prometheus 的数据，写入 VictoriaMetrics，通过 VictoriaMetrics 的 UI 地址
 `http://IP:NodePort/select/0/vmui`，即可查看 Prometheus 采集到的数据了。
 
-![Image](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/victoria03.jpeg)
+![Image](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/victoria03.jpeg)
 
-![Image](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/victoria04.jpeg)
+![Image](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/victoria04.jpeg)
 
 可以看出，两者数据基本一致。
 

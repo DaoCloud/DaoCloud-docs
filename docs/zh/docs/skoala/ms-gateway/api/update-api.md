@@ -6,8 +6,8 @@
 
 - 在 `API 管理`页面找到需要更新的 API，在该 API 的右侧点击 **`ⵗ`** 选择`修改基础配置`、`修改策略配置`或`修改安全配置`。
 
-    ![在列表页更新基础信息](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/update-api-1.png)
+    ![在列表页更新基础信息](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/update-api-1.png)
 
 - 点击 API 名称进入 API 详情页，在页面右上角`修改基础配置`、`修改策略配置`或`修改安全配置`。
 
-    ![在详情页更新](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/update-api-2.png)
+    ![在详情页更新](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/update-api-2.png)

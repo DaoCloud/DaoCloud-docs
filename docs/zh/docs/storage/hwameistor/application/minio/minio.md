@@ -10,7 +10,7 @@ sidebar_label: "Minio"
 MinIO 是一款高性能、分布式、兼容 S3 的多云对象存储系统套件。MinIO 原生支持 Kubernetes，能够支持所有公有云、私有云及边缘计算环境。
 MinIO 是 GNU AGPL v3 开源的软件定义产品，能够很好地运行在标准硬件如 x86 等设备上。
 
-![MinIO 架构](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/minio-design.png)
+![MinIO 架构](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/minio-design.png)
 
 MinIO 的架构设计从一开始就是针对性能要求很高的私有云标准，在实现对象存储所需要的全部功能的基础上追求极致的性能。
 MinIO 具备易用性、高效性及高性能，能够以更简单的方式提供具有弹性扩缩能力的云原生对象存储服务。
@@ -23,7 +23,7 @@ MinIO 为云原生架构设计，可以作为轻量级容器运行并由外部�
 MinIO 整个服务包约为不到 100 MB 的静态二进制文件，即使在很高负载下也可以高效利用 CPU 和内存资源并可以在共享硬件上共同托管大量租户。
 对应的架构图如下：
 
-![架构图](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/architect.png)
+![架构图](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/architect.png)
 
 MinIO 用作云原生应用程序的主要存储，与传统对象存储相比，云原生应用程序需要更高的吞吐量和更低的延迟，而这些都是 MinIO 能够达成的性能指标，读/写速度高达 183 GB/秒和 171 GB/秒。
 
@@ -44,7 +44,7 @@ MinIO 专为大规模、多数据中心云存储服务而设计。
 每个租户都运行自己的 MinIO 集群，该集群与其他租户完全隔离，从而使租户能够免受升级、更新和安全事件的任何干扰。
 每个租户通过联合跨地理区域的集群来独立扩展。
 
-![node-distribution-setup](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/node-setup.png)
+![node-distribution-setup](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/node-setup.png)
 
 ### 以 HwameiStor 为底座搭建 MinIO 的优势
 
@@ -89,27 +89,27 @@ MinIO 专为大规模、多数据中心云存储服务而设计。
 
 本次测试使用了三台虚拟机节点部署了 Kubernetes 集群：1 Master + 2 Worker 节点，kubelet 版本为 1.22.0。
 
-![k8s-cluster](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/k8s-cluster.png)
+![k8s-cluster](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/k8s-cluster.png)
 
 ### 部署 HwameiStor 本地存储
 
 在 Kubernetes 上部署 HwameiStor 本地存储。
 
-![查看 HwameiStor 本地存储](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-hwamei-pod.png)
+![查看 HwameiStor 本地存储](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-hwamei-pod.png)
 
 两台 Worker 节点各配置了五块磁盘（SDB、SDC、SDD、SDE、SDF）用于 HwameiStor 本地磁盘管理。
 
-![lsblk](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/lsblk01.png)
+![lsblk](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/lsblk01.png)
 
-![lsblk](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/lsblk02.png)
+![lsblk](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/lsblk02.png)
 
 查看 local storage node 状态。
 
-![get-lsn](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-lsn.png)
+![get-lsn](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-lsn.png)
 
 创建了 storagClass。
 
-![get-sc](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-sc.png)
+![get-sc](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-sc.png)
 
 ## 分布式多租户源码部署安装（minio operator）
 
@@ -125,13 +125,13 @@ MinIO 专为大规模、多数据中心云存储服务而设计。
     git clone <https://github.com/minio/operator.git>
     ```
 
-    ![helm-repo-list](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/helm-repo-list.png)
+    ![helm-repo-list](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/helm-repo-list.png)
 
-    ![ls-operator](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/ls-opeartor.png)
+    ![ls-operator](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/ls-opeartor.png)
 
 2. 进入 helm operator 目录：`/root/operator/helm/operator`。
 
-    ![ls-pwd](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/ls-pwd.png)
+    ![ls-pwd](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/ls-pwd.png)
 
 3. 部署 minio-operator 实例。
 
@@ -145,7 +145,7 @@ MinIO 专为大规模、多数据中心云存储服务而设计。
 
 4. 检查 minio-operator 资源运行情况。
 
-    ![get-all](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-all.png)
+    ![get-all](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-all.png)
 
 ### 创建租户
 
@@ -153,23 +153,23 @@ MinIO 专为大规模、多数据中心云存储服务而设计。
 
 1. 进入 `/root/operator/examples/kustomization/base` 目录。如下修改 tenant.yaml。
 
-    ![git-diff-yaml](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/git-diff-tenant-yaml.png)
+    ![git-diff-yaml](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/git-diff-tenant-yaml.png)
 
 2. 进入 `/root/operator/helm/tenant/` 目录。如下修改 `values.yaml` 文件。
 
-    ![git-diff-values.yaml](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/git-diff-values-yaml.png)
+    ![git-diff-values.yaml](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/git-diff-values-yaml.png)
 
 3. 进入 `/root/operator/examples/kustomization/tenant-lite` 目录。如下修改 `kustomization.yaml` 文件。
 
-    ![git-diff-kustomization-yaml](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/git-diff-kustomization-yaml.png)
+    ![git-diff-kustomization-yaml](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/git-diff-kustomization-yaml.png)
 
 4. 如下修改 `tenant.yaml` 文件。
 
-    ![git-diff-tenant-yaml02](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/git-diff-tenant-yaml02.png)
+    ![git-diff-tenant-yaml02](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/git-diff-tenant-yaml02.png)
 
 5. 如下修改 `tenantNamePatch.yaml` 文件。
 
-    ![git-diff-tenant-name-patch-yaml](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/git-diff-tenant-name-patch-yaml.png)
+    ![git-diff-tenant-name-patch-yaml](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/git-diff-tenant-name-patch-yaml.png)
 
 6. 创建租户：
 
@@ -179,15 +179,15 @@ MinIO 专为大规模、多数据中心云存储服务而设计。
 
 7. 检查租户 minio-t1 资源状态：
 
-    ![kubectl-get-all-nminio-tenant](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-all-nminio-tenant.png)
+    ![kubectl-get-all-nminio-tenant](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-all-nminio-tenant.png)
 
 8. 如要创建一个新的租户可以在 `/root/operator/examples/kustomization` 目录下建一个新的 `tenant` 目录（本案例为 `tenant-lite-2`）并对相应文件做对应修改。
 
-    ![pwd-ls-ls](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/pwd-ls-ls.png)
+    ![pwd-ls-ls](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/pwd-ls-ls.png)
 
 9. 执行 `kubectl apply –k .` 创建新的租户 `minio-t2`。
 
-    ![kubectl-get-all-nminio](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-all-minio.png)
+    ![kubectl-get-all-nminio](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-all-minio.png)
 
 ### 配置 HwameiStor 本地卷
 
@@ -197,43 +197,43 @@ MinIO 专为大规模、多数据中心云存储服务而设计。
 kubectl get statefulset.apps/minio-t1-pool-0 -nminio-tenant -oyaml
 ```
 
-![local-storage-hdd-lvm](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/local-storage-hdd-lvm.png)
+![local-storage-hdd-lvm](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/local-storage-hdd-lvm.png)
 
 ```sh
 kubectl get pvc –A
 ```
 
-![kubectl-get-pvc](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-pvc.png)
+![kubectl-get-pvc](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-pvc.png)
 
 ```sh
 kubectl get pvc export-minio6-0 -nminio-6 -oyaml
 ```
 
-![kubectl-get-pvc-export-oyaml](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-pvc-export-oyaml.png)
+![kubectl-get-pvc-export-oyaml](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-pvc-export-oyaml.png)
 
 ```sh
 kubectl get pv
 ```
 
-![kubectl-get-pv](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-pv.png)
+![kubectl-get-pv](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-pv.png)
 
 ```sh
 kubectl get pvc data0-minio-t1-pool-0-0 -nminio-tenant -oyaml
 ```
 
-![kubectl-get-pvc-oyaml](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-pvc-oyaml.png)
+![kubectl-get-pvc-oyaml](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-pvc-oyaml.png)
 
 ```sh
 kubectl get lv
 ```
 
-![kubectl-get-lv](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-lv.png)
+![kubectl-get-lv](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-lv.png)
 
 ```sh
 kubect get lvr
 ```
 
-![kubectl-get-lvr](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-lvr.png)
+![kubectl-get-lvr](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-lvr.png)
 
 ## HwameiStor 与 MinIo 测试验证
 
@@ -245,77 +245,77 @@ kubect get lvr
 
 1. 从浏览器登录 `minio console：10.6.163.52:30401/login`。
 
-    ![minio-opeartor-console-login](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/minio-opeartor-console-login.png)
+    ![minio-opeartor-console-login](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/minio-opeartor-console-login.png)
 
 2. 通过 `kubectl minio proxy -n minio-operator `获取 JWT。
 
-    ![minio-opeartor-console-login](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-minio-proxy-jwt.png)
+    ![minio-opeartor-console-login](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-minio-proxy-jwt.png)
 
 3. 浏览及管理创建的租户信息。
 
-    ![tenant01](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/tenant01.png)
+    ![tenant01](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/tenant01.png)
 
-    ![tenant02](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/tenant02.png)
+    ![tenant02](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/tenant02.png)
 
-    ![tenant03](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/tenant03.png)
+    ![tenant03](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/tenant03.png)
 
-    ![tenant04](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/tenant04.png)
+    ![tenant04](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/tenant04.png)
 
-    ![tenant05](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/tenant05.png)
+    ![tenant05](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/tenant05.png)
 
-    ![tenant06](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/tenant06.png)
+    ![tenant06](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/tenant06.png)
 
 4. 登录 minio-t1 租户（用户名 minio，密码 minio123）。
 
-    ![login-minio](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/login-minio-t1-01.png)
+    ![login-minio](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/login-minio-t1-01.png)
 
-    ![login-minio](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/login-minio-t1-02.png)
+    ![login-minio](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/login-minio-t1-02.png)
 
 5. 浏览 bucket bk-1。
 
-    ![view-bucket-1](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/view-bucket-01.png)
+    ![view-bucket-1](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/view-bucket-01.png)
 
-    ![view-bucket-1](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/view-bucket-02.png)
+    ![view-bucket-1](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/view-bucket-02.png)
 
-    ![view-bucket-1](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/view-bucket-03.png)
+    ![view-bucket-1](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/view-bucket-03.png)
 
 6. 创建新的 bucket bk-1-1。
 
-    ![create-bucket-1-1](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-bucket-1-1.png)
+    ![create-bucket-1-1](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-bucket-1-1.png)
 
-    ![create-bucket-1-1](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-bucket-1-2.png)
+    ![create-bucket-1-1](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-bucket-1-2.png)
 
-    ![create-bucket-1-1](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-bucket-1-3.png)
+    ![create-bucket-1-1](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-bucket-1-3.png)
 
 7. 创建 path path-1-2。
 
-    ![create-path-1-2](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-path-1-2-01.png)
+    ![create-path-1-2](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-path-1-2-01.png)
 
-    ![create-path-1-2](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-path-1-2-02.png)
+    ![create-path-1-2](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-path-1-2-02.png)
 
 8. 上传文件成功：
 
-    ![upload-file](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-file-success.png)
+    ![upload-file](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-file-success.png)
 
-    ![upload-file](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-file-success-02.png)
+    ![upload-file](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-file-success-02.png)
 
-    ![upload-file](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-file-success-03.png)
+    ![upload-file](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-file-success-03.png)
 
 9. 上传文件夹成功：
 
-    ![upload-folder](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-folder-success-01.png)
+    ![upload-folder](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-folder-success-01.png)
 
-    ![upload-folder](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-folder-success-02.png)
+    ![upload-folder](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-folder-success-02.png)
 
-    ![upload-folder](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-folder-success-03.png)
+    ![upload-folder](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-folder-success-03.png)
 
-    ![upload-folder](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-folder-success-04.png)
+    ![upload-folder](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-folder-success-04.png)
 
 10. 创建只读用户：
 
-    ![create-user](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-readonly-user-01.png)
+    ![create-user](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-readonly-user-01.png)
 
-    ![create-user](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-readonly-user-02.png)
+    ![create-user](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-readonly-user-02.png)
 
 ### 多租户隔离测试
 
@@ -323,63 +323,63 @@ kubect get lvr
 
 1. 登录 minio-t2 租户。
 
-    ![login-t2](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/login-minio-t2-01.png)
+    ![login-t2](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/login-minio-t2-01.png)
 
-    ![login-t2](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/login-minio-t2-02.png)
+    ![login-t2](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/login-minio-t2-02.png)
 
 2. 此时只能看到 minio-t2 内容，minio-t1 的内容被屏蔽。
 
-    ![only-t2](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/only-t2.png)
+    ![only-t2](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/only-t2.png)
 
 3. 创建 bucket。
 
-    ![create-bucket](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-bucket01.png)
+    ![create-bucket](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-bucket01.png)
 
-    ![create-bucket](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/createbucket02.png)
+    ![create-bucket](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/createbucket02.png)
 
 4. 创建 path。
 
-    ![create-path](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-path01.png)
+    ![create-path](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-path01.png)
 
-    ![create-path](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-path02.png)
+    ![create-path](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-path02.png)
 
 5. 上传文件。
 
-    ![upload-file](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-file01.png)
+    ![upload-file](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-file01.png)
 
-    ![upload-file](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-file02.png)
+    ![upload-file](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-file02.png)
 
 6. 创建用户。
 
-    ![create-user](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-user01.png)
+    ![create-user](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-user01.png)
 
-    ![create-user](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-user02.png)
+    ![create-user](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-user02.png)
 
-    ![create-user](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-user03.png)
+    ![create-user](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-user03.png)
 
-    ![create-user](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-user04.png)
+    ![create-user](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-user04.png)
 
-    ![create-user](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-user05.png)
+    ![create-user](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-user05.png)
 
 7. 配置用户 policy。
 
-    ![user-policy](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/user-policy01.png)
+    ![user-policy](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/user-policy01.png)
 
-    ![user-policy](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/user-policy02.png)
+    ![user-policy](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/user-policy02.png)
 
 8. 删除 bucket。
 
-    ![delete-bucket](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/delete-bk01.png)
+    ![delete-bucket](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/delete-bk01.png)
 
-    ![delete-bucket](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/delete-bk02.png)
+    ![delete-bucket](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/delete-bk02.png)
 
-    ![delete-bucket](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/delete-bk03.png)
+    ![delete-bucket](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/delete-bk03.png)
 
-    ![delete-bucket](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/delete-bk04.png)
+    ![delete-bucket](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/delete-bk04.png)
 
-    ![delete-bucket](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/delete-bk05.png)
+    ![delete-bucket](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/delete-bk05.png)
 
-    ![delete-bucket](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/minio/delete-bk06.png)
+    ![delete-bucket](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/delete-bk06.png)
 
 ## 结论
 

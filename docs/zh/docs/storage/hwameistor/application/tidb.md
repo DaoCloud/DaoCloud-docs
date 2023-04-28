@@ -6,7 +6,7 @@ TiDB 是一款同时支持在线事务处理 (OLTP) 与在线分析处理 (OATP)
 
 TiDB 分布式数据库将整体架构拆分成了多个模块，各模块之间互相通信，组成完整的 TiDB 系统。对应的架构图如下：
 
-![TiDB 架构图](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/architecture.png)
+![TiDB 架构图](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/architecture.png)
 
 - **TiDB Server**
   
@@ -24,7 +24,7 @@ TiDB 分布式数据库将整体架构拆分成了多个模块，各模块之间
 
 ## TiDB 数据库的存储
 
-![TiDB数据库的存储](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/storage.png)
+![TiDB数据库的存储](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/storage.png)
 
 - **键值对 (Key-Value Pair)**
 
@@ -60,23 +60,23 @@ TiDB 分布式数据库将整体架构拆分成了多个模块，各模块之间
 
 本次测试使用三台虚拟机节点部署 Kubernetes 集群，包括 1 个 master 节点和 2 个 worker节点。Kubelete 版本为 1.22.0。
 
-![Kubernetes cluster](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/k8scluster.png)
+![Kubernetes cluster](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/k8scluster.png)
 
 ### HwameiStor 本地存储
 
 1. 在 Kubernetes 集群上部署 HwameiStor 本地存储
 
-    ![HwameiStor 本地存储](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/hwameistor.png)
+    ![HwameiStor 本地存储](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/hwameistor.png)
 
 2. 在两台 worker 节点上分别为 HwameiStor 配置一块 100G 的本地磁盘 sdb
 
-    ![sdb1](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/sdb1.png)
+    ![sdb1](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/sdb1.png)
 
-    ![sdb2](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/sdb2.png)
+    ![sdb2](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/sdb2.png)
 
 3. 创建 storagClass
 
-    ![创建 StorageClass](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/storageclass.png)
+    ![创建 StorageClass](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/storageclass.png)
 
 ### 在 Kubernetes 上部署 TiDB
 
@@ -113,7 +113,7 @@ TiDB 与 TiDB Operator 版本的对应关系如下：
 
 3. 检查 TiDB Operator 组件
 
-    ![检查 TiDB Operator 组件](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/check.png)
+    ![检查 TiDB Operator 组件](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/check.png)
 
 #### 部署 TiDB 集群
 
@@ -123,7 +123,7 @@ kubectl -n tidb-cluster apply -f https://raw.githubusercontent.com/pingcap/tidb-
 kubectl -n tidb-cluster apply -f https://raw.githubusercontent.com /pingcap/tidb-operator/master/examples/basic/tidb-monitor.yaml
 ```
 
-![部署 TiDB 集群](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/deploytidb.png)
+![部署 TiDB 集群](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/deploytidb.png)
 
 #### 连接 TiDB 集群
 
@@ -131,17 +131,17 @@ kubectl -n tidb-cluster apply -f https://raw.githubusercontent.com /pingcap/tidb
 yum -y install mysql-client
 ```
 
-![connecttidb](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/connecttidb.png)
+![connecttidb](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/connecttidb.png)
 
 ```bash
 kubectl port-forward -n tidb-cluster svc/basic-tidb 4000 > pf4000.out & 
 ```
 
-![连接 TiDB 集群](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/connect1.png)
+![连接 TiDB 集群](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/connect1.png)
 
-![连接 TiDB 集群](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/connect2.png)
+![连接 TiDB 集群](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/connect2.png)
 
-![连接 TiDB 集群](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/connect3.png)
+![连接 TiDB 集群](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/connect3.png)
 
 #### 检查并验证 TiDB 集群状态
 
@@ -150,43 +150,43 @@ kubectl port-forward -n tidb-cluster svc/basic-tidb 4000 > pf4000.out &
     ```sql
     create table hello_world (id int unsigned not null auto_increment primary key, v varchar(32)); 
     ```
-    ![创建 Hello_world 表](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/helloworld.png)
+    ![创建 Hello_world 表](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/helloworld.png)
 
 2. 查询 TiDB 版本号
 
     ```sql
     select tidb_version()\G;
     ```
-    ![连接 TiDB 集群](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/checkversion.png)
+    ![连接 TiDB 集群](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/checkversion.png)
 
 3. 查询 Tikv 存储状态
 
     ```sql
     select * from information_schema.tikv_store_status\G;
     ```
-    ![查询 Tikv 存储状态](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/checkstorage.png)
+    ![查询 Tikv 存储状态](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/checkstorage.png)
 
 #### HwameiStor 存储配置
 
 从 `storageClass local-storage-hdd-lvm` 分别为 tidb-tikv 及 tidb-pd 创建一个 PVC:
 
-![HwameiStor 存储配置](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/pvc.png)
+![HwameiStor 存储配置](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/pvc.png)
 
-![HwameiStor 存储配置](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/pvc1.png)
+![HwameiStor 存储配置](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/pvc1.png)
 
-![HwameiStor 存储配置](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/pvc2.png)
+![HwameiStor 存储配置](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/pvc2.png)
 
 ```bash
 kubectl get po basic-tikv-0 -oyaml
 ```
 
-![HwameiStor 存储配置](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/mountpvc.png)
+![HwameiStor 存储配置](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/mountpvc.png)
 
 ```bash
 kubectl get po basic-pd-0 -oyaml
 ```
 
-![HwameiStor 存储配置](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/storage/hwameistor/application/img/mountpvc1.png)
+![HwameiStor 存储配置](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/img/mountpvc1.png)
 
 ## 测试内容
 

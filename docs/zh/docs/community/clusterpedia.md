@@ -15,7 +15,7 @@ Clusterpedia 的能力不仅是搜索和查看，而且还可以简单地控制�
 
 在 CNCF 最新发布的云原生全景图 (Cloud Native Landscape) 中，Clusterpedia 入选 Orchestration & Management (编排与管理) 层的 Scheduling & Orchestration (调度与编排) 象限，成为 CNCF 推荐的云原生多集群复杂检索工具。
 
-![landscape](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/community/images/cncf-clus.png)
+![landscape](https://docs.daocloud.io/daocloud-docs-images/docs/community/images/cncf-clus.png)
 
 参见 [CNCF 全景图](https://landscape.cncf.io/card-mode?category=scheduling-orchestration&grouping=category&selected=clusterpedia)。
 

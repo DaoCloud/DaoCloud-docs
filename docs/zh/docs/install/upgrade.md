@@ -113,4 +113,4 @@ spec:
 
 安装成功结果：
 
-![upgrade](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/install/images/upgrade.png)
+![upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/upgrade.png)

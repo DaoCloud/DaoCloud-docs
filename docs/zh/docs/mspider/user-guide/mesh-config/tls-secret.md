@@ -70,15 +70,15 @@ WQuRxan+FuKE3RiKHFXkslks=
 
 1. 进入某个网格后，在左侧导航栏点击`网格配置` -> `TLS 密钥管理`，点击`创建`按钮。
 
-    ![点击创建](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/secret01.png)
+    ![点击创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/secret01.png)
 
 1. 填写名称，选择命名空间，填入刚创建的凭证和私钥，根据情况添加标签后，点击`确定`。
 
-    ![填写](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/secret02.png)
+    ![填写](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/secret02.png)
 
 1. 屏幕提示创建成功，点击右侧的 `⋮` 按钮，可以执行编辑、YAML 编辑以及删除等操作。
 
-    ![填写](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/secret03.png)
+    ![填写](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/secret03.png)
 
 本例创建成功后的密钥 YAML 如下：
 
@@ -130,7 +130,7 @@ type: kubernetes.io/tls
     - 简单模式
     - 双向模式
 
-    ![目标规则](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/secret04.png)
+    ![目标规则](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/secret04.png)
 
 1. `网关规则`。启用服务端 TLS 模式后，可以在以下 3 种模式种选择创建好的密钥：
 
@@ -138,4 +138,4 @@ type: kubernetes.io/tls
     - 双向模式
     - Istio 双向模式
 
-    ![网关规则](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/secret05.png)
+    ![网关规则](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/secret05.png)

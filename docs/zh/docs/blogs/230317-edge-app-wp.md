@@ -30,7 +30,7 @@
 基于地理位置的边缘被分类为多个类别，具体取决于与用户的距离。下图显示了根据
 [Linux 基金会边缘白皮书](https://www.lfedge.org/wp-content/uploads/2020/07/LFedge_Whitepaper.pdf) 定义的类别。
 
-![edgetype](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/edgetype.png)
+![edgetype](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/edgetype.png)
 
 边缘原生准则与云原生准则存在许多相似之处，但也有一些关键的区别。
 
@@ -100,7 +100,7 @@
 
 ### 边缘原生准则分组
 
-![edgegroup](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/blogs/images/edgegroup.png)
+![edgegroup](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/edgegroup.png)
 
 这九项准则可以归纳为一组较小的五项准则。硬件管理、外部设备连接、可变连接感知(网络)都可以在更广泛的资源和硬件管理准则下考虑。
 同样，边缘应用可大规模管理、可集中观测以及具有可管理的基础设施和平台，这些都可以归类为大规模管理的准则。

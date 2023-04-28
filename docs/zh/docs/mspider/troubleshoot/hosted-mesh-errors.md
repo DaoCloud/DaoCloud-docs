@@ -6,7 +6,7 @@
 
 如下图：
 
-![不健康](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted01.png)
+![不健康](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted01.png)
 
 首先查看 istio-ingressgateway 日志报错信息：
 
@@ -54,7 +54,7 @@ istiod-remote           10.233.95.141:15012,10.233.95.141:15017                 
 
 这里可以看出 `istio-remote` 分配的 `endpoint` 地址是 `istiod-remote 10.233.95.141:15012,10.233.95.141:15017`。如下图：
 
-![timeout](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted02.png)
+![timeout](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted02.png)
 
 !!! note
 
@@ -72,20 +72,20 @@ istiod-remote           10.233.95.141:15012,10.233.95.141:15017                 
     kubectl get svc -n istio-system istiod-ywistio-hosted-lb -o "jsonpath={.status.loadBalancer.ingress[0].ip}"
     ```
 
-    ![获取地址](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted03.png)
+    ![获取地址](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted03.png)
 
 1. 点击右侧菜单，选择`编辑基本信息`。
 
-    ![基本信息](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted04.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted04.png)
 
 1. 填写控制面地址。
 
-    ![填写地址](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted05.png)
+    ![填写地址](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted05.png)
 
 1. 再次查看工作负载集群的 `istio-ingressgateway`，发现此时已经正常。
 
-    ![查看集群状态](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted06.png)
+    ![查看集群状态](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted06.png)
 
 1. 查看 `istiod-remote endpoint` 信息也正常。
 
-    ![查看信息](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted07.png)
+    ![查看信息](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted07.png)

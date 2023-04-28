@@ -17,7 +17,7 @@ oc adm policy add-scc-to-user privileged  system:serviceaccount:istio-system:ist
 
 创建一个网格，接入 Openshift 集群。返回网格列表，发现 Openshift 集群已接入成功。
 
-![集群接入成功](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/test/images/ocp01.png)
+![集群接入成功](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/test/images/ocp01.png)
 
 但后端会报错：
 

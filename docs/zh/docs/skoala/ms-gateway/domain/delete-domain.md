@@ -11,12 +11,12 @@
 
 - 在`域名管理`页面找到需要删除的域名，在点击 **`ⵗ`** 并选择`删除`。
 
-    ![在列表页删除](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/domain/imgs/delete-domain-1.png)
+    ![在列表页删除](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/domain/imgs/delete-domain-1.png)
 
 - 点击域名名称进入域名的详情页，在页面右上角点击 **`ⵗ`** 操并选择`删除`。
 
-    ![在详情页删除](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/domain/imgs/delete-domain-2.png)
+    ![在详情页删除](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/domain/imgs/delete-domain-2.png)
 
     如果域名正在被某个 API 使用，需要页面提示点击`查看服务详情`去删除对应的 API。<!--待ui更新后更新描述-->
 
-    ![在详情页删除](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/domain/imgs/delete-domain-3.png)
+    ![在详情页删除](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/domain/imgs/delete-domain-3.png)

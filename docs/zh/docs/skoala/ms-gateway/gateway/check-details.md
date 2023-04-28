@@ -6,7 +6,7 @@
 
 在`网关列表`页面，选择目标网关的名称，即可进入网关概览页面`。
 
-![概览页面](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/gateway/imgs/overview.png)
+![概览页面](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/gateway/imgs/overview.png)
 
 ## 网关详情
 

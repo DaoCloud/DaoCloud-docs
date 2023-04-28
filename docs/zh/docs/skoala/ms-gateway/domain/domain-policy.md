@@ -32,4 +32,4 @@
 - 允许的请求头：限定特定的 HTTP 请求头关键字。添加关键字后，需在请求头中加上对应的关键字才能正常访问目标服务。
 - 暴露的请求头：控制暴露的请求头关键字，可以配置多项。
 
-    ![跨域](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/domain/imgs/cross-domain.png)
+    ![跨域](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/domain/imgs/cross-domain.png)

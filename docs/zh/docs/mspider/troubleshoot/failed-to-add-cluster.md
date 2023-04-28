@@ -166,7 +166,7 @@
 
     托管集群当作工作负载集群接入托管网格时，istiod-remote ep ip 分配为 metalLB IP，应该为 PodIP（mspider-mcpc-ckube-remote-xxx）
 
-    ![istiod-remote](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/mspider/troubleshoot/images/add-cluster01.png)
+    ![istiod-remote](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/add-cluster01.png)
 
 ## 原因分析
 

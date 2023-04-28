@@ -8,19 +8,19 @@
 
 2. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `Falco`。
 
-    ![falco_helm-1](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/security/images/falco-install-1.png)
+    ![falco_helm-1](https://docs.daocloud.io/daocloud-docs-images/docs/security/images/falco-install-1.png)
 
 3. 在`版本选择`中选择希望安装的版本，点击`安装`。
 
-    ![falco-helm-2](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/security/images/falco-install-2.png)
+    ![falco-helm-2](https://docs.daocloud.io/daocloud-docs-images/docs/security/images/falco-install-2.png)
 
 4. 在安装界面，填写所需的安装参数。
 
-    ![falco_helm-3](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/security/images/falco-install-3.png)
+    ![falco_helm-3](https://docs.daocloud.io/daocloud-docs-images/docs/security/images/falco-install-3.png)
 
     在如上界面中，填写`应用名称`、`命名空间`、`版本`等。
 
-    ![falco_helm-4](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/security/images/falco-install-4.png)
+    ![falco_helm-4](https://docs.daocloud.io/daocloud-docs-images/docs/security/images/falco-install-4.png)
 
     在如上界面中，填写以下参数：
 

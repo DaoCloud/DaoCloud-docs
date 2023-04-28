@@ -54,6 +54,6 @@ Podman 相关 issue 地址：https://github.com/containers/podman/issues/13388
 
 ## 在 CentOS 7.6 安装时报错
 
-![FAQ1](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/install/images/FAQ1.png)
+![FAQ1](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/FAQ1.png)
 
 在安装全局服务集群的每个节点上执行 `modprobe br_netfilter`，将 `br_netfilter` 加载之后就好了。

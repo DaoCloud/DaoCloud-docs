@@ -39,7 +39,7 @@
 
 假设使用 VIP 作为全局集群的负载均衡方式：
 
-![Network-Topology](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/install/commercial/images/Network-Topology.png)
+![Network-Topology](https://docs.daocloud.io/daocloud-docs-images/docs/install/commercial/images/Network-Topology.png)
 
 ### 网络要求
 

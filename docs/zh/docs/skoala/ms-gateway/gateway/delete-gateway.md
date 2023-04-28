@@ -15,8 +15,8 @@ hide:
 
 - 在`微服务网关列表`页选择需要移除的网关实例，在实例右侧点击 **`⋯`** 并选择`删除`。
 
-    ![移除网关](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/gateway/imgs/delete.png)
+    ![移除网关](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/gateway/imgs/delete.png)
 
 - 点击网关名称进入进入概览页面后，在右上角 **`⋯`** 并选择`删除`。
 
-    ![移除网关](https://community-github.cn-sh2.ufileos.com/daocloud-docs-images/docs/skoala/ms-gateway/gateway/imgs/delete-gateway.png)
+    ![移除网关](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/gateway/imgs/delete-gateway.png)
