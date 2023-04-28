@@ -14,7 +14,7 @@
 1. 进入`可观测性` 产品模块，
 2. 在左边导航栏选择 `场景监控 -> 服务监控`。
 
-    ![服务监控](../../images/service01.png)
+    ![服务监控](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/service01.png)
 
 !!! attention
 
@@ -29,7 +29,7 @@
 - 在流量指标模块，切换指标的过滤条件。
 - 在操作列表模块，支持基于操作名称和类型对列表中的数据进行查询。
 
-    ![服务监控](../../images/service02.png)
+    ![服务监控](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/service02.png)
 
 ### 服务指标说明
 

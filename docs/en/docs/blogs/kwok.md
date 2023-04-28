@@ -68,7 +68,7 @@ KWOK is not intended to replace others completely. It has some limitations that 
 
 If you are interested in trying out KWOK, please check its [documents] for more details.
 
-![Animation of a terminal showing kwokctl in use](./images/manage-clusters.svg)
+![Animation of a terminal showing kwokctl in use](images/manage-clusters.svg)
 
 ## Getting Involved
 
@@ -83,9 +83,9 @@ We welcome feedback and contributions from anyone who wants to join us in this e
 
 ## References
 
-- KWOk repo: https://github.com/kubernetes-sigs/kwok
-- KWOk documentation: https://kwok.sigs.k8s.io/
-- KWOK slack: https://slack.k8s.io/
+- KWOk repo: <https://github.com/kubernetes-sigs/kwok>
+- KWOk documentation: <https://kwok.sigs.k8s.io/>
+- KWOK slack: <https://slack.k8s.io/>
 
 [documents]: https://kwok.sigs.k8s.io/
 [sigs.k8s.io/kwok]: https://sigs.k8s.io/kwok/

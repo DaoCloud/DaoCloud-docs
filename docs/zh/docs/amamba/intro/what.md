@@ -16,7 +16,7 @@
 
 - 自助式资源创建的模式，用户可以在工作空间内自助创建命名空间来进行资源隔离
 
-![多租户资源管理](../images/what01.png)
+![多租户资源管理](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/what01.png)
 
 === "以云原生应用为中心"
 
@@ -24,19 +24,19 @@
 能够接入 SpingCloud、Dubbo、ServiceMesh 框架的微服务应用，实现微服务的治理，与 DCE 5.0 的[微服务引擎](../../skoala/intro/what.md)、[服务网格](../../mspider/intro/what.md)无缝集成。
 支持云原生应用的全生命周期管理，例如应用的扩缩容、日志、监控查看、更新应用等等。
 
-![多形态云原生应用](../images/what02.png)
+![多形态云原生应用](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/what02.png)
 
 === "高效的持续集成"
 
 支持 Jenkins 和 Tekton 双流水线引擎系统。采用图形化方式编辑流水线，做到所见即所得的效果。可以用不同来源的代码构建应用。
 
-![持续集成](../images/what03.png)
+![持续集成](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/what03.png)
 
 === "安全自动化渐进式交付"
 
 应用工作台引入一种为云原生应用实现持续部署的理念 – GitOps，全面拥抱 GitOps，以集成渐进式交付组件 Argo Rollout，支持灰度发布，从而提高应用交付的稳定性和效率。
 
-![自动化渐进式交付](../images/what04.png)
+![自动化渐进式交付](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/what04.png)
 
 !!! info
 
@@ -48,7 +48,7 @@
 
 应用工作台在 DCE 5.0 中的地位如下图所示。
 
-![应用工作台在 DCE 5.0 中的地位](../images/what00.png)
+![应用工作台在 DCE 5.0 中的地位](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/what00.png)
 
 以容器管理为底座，借助全局管理实现层级资源管理，以 CI/CD 流水线和 GitOps 流程增删改查云原生应用，实现渐进式交付。
 

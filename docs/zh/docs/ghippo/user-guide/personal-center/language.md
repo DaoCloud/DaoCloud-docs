@@ -20,12 +20,12 @@ hide:
 
 2. 点击右上角的用户名位置，选择`个人中心`。
 
-    ![个人中心](../../images/lang01.png)
+    ![个人中心](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/lang01.png)
 
 3. 点击`语言设置`页签。
 
-    ![语言设置](../../images/lang02.png)
+    ![语言设置](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/lang02.png)
 
 4. 切换语言选项。
 
-    ![切换语言](../../images/lang03.png)
+    ![切换语言](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/lang03.png)

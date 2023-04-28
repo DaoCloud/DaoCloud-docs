@@ -6,7 +6,7 @@
 
 确保集群已安装 helm 应用 `Metrics Server`，可参考[安装 metrics-server 插件](../../../kpanda/user-guide/scale/install-metrics-server.md) 
 
-     ![环境依赖](./images/meshrcfg07.png)
+     ![环境依赖](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/meshrcfg07.png)
 
 ## 创建策略
 
@@ -15,11 +15,11 @@
 
 1. 在[容器管理]中选择对应集群，点击进入`工作负载` -> `无状态负载`页面查找 `istiod`；
 
-    ![查找 istiod](./images/meshrcfg08.png)
+    ![查找 istiod](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/meshrcfg08.png)
 
 2. 点击工作负载名称进入`弹性伸缩`标签页；
 
-    ![标签页](./images/meshrcfg09.png)
+    ![标签页](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/meshrcfg09.png)
 
 3. 点击`编辑`按钮，配置弹性伸缩策略参数；
 
@@ -30,7 +30,7 @@
      - 目标内存用量：工作负载资源下的 Pod 的内存用量。当实际内存用量大于/小于目标值时，系统自动减少/增加 Pod 副本数量。
      - 副本范围：Pod 副本数的弹性伸缩范围。默认区间为为 1 - 10。
      
-     ![编辑页](./images/meshrcfg10.png)
+     ![编辑页](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/meshrcfg10.png)
 
 4. 点击`确定`完成编辑，此时新的策略已生效。
 

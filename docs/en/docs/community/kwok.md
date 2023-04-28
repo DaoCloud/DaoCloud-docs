@@ -13,7 +13,7 @@ So far we provide two tools:
 
 Please see [https://kwok.sigs.k8s.io](https://kwok.sigs.k8s.io) for more in-depth information.
 
-![manage clusters](./images/manage-clusters.svg)
+![manage clusters](images/manage-clusters.svg)
 
 ## Community, discussion, contribution, and support
 

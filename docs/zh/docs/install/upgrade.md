@@ -113,4 +113,4 @@ spec:
 
 安装成功结果：
 
-![upgrade](./images/upgrade.png)
+![upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/upgrade.png)

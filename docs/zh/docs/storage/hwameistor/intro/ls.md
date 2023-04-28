@@ -2,7 +2,7 @@
 
 本地存储 (local Storage, LS) 是 HwameiStor 的一个模块，它旨在为应用提供高性能的本地持久化 LVM 存储卷。
 
-![本地存储架构图.png](../img/localstor.png)
+![本地存储架构图.png](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/img/localstor.png)
 
 目前支持的本地持久化数据卷类型：`LVM`。
 

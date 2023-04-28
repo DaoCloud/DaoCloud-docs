@@ -8,7 +8,7 @@
 
 1. 进入`应用工作台`模块，在左侧导航栏点击`灰度发布`，点击目标任务的名称。
 
-    ![点击名称](../../images/checkcanary01.png)
+    ![点击名称](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/checkcanary01.png)
 
 2. 查看灰度发布任务详情页面。
 
@@ -21,7 +21,7 @@
         - 主要版本：展示当前版本以及金丝雀版本信息。
         - 历史版本：展示历史版本记录。
 
-          ![详情页](../../images/checkcanary02.png)
+          ![详情页](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/checkcanary02.png)
 
 ## 更新版本
 
@@ -29,15 +29,15 @@
 
 1. 点击目标任务的名称，然后在右上角点击`更新版本`。
 
-    ![详情页](../../images/checkcanary02.png)
+    ![详情页](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/checkcanary02.png)
 
 2. 设置金丝雀发布的镜像。
 
-    ![镜像地址](../../images/checkcanary03.png)
+    ![镜像地址](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/checkcanary03.png)
 
 3. 应用更新成功后会触发一次新的灰度发布过程。
 
-    ![自动触发](../../images/checkcanary04.png)
+    ![自动触发](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/checkcanary04.png)
 
 ## 更新发布任务
 
@@ -45,11 +45,11 @@
 
 1. 在`灰度发布任务` 详情页面，在页面右上角点击 `ⵗ` 并选择`更新发布任务`。
 
-    ![详情页](../../images/checkcanary02.png)
+    ![详情页](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/checkcanary02.png)
 
 2. 调整发布规则并点击`确定`。
 
-    ![修改发布规则](../../images/checkcanary05.png)
+    ![修改发布规则](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/checkcanary05.png)
 
 ## 回滚
 
@@ -57,15 +57,15 @@
 
 1. 在`灰度发布任务`详情页面，点击`历史版本` 标签。
 
-    ![点击历史版本](../../images/checkcanary06.png)
+    ![点击历史版本](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/checkcanary06.png)
 
 2. 选择目标版本，点击`回滚`。
 
-    ![回滚](../../images/checkcanary07.png)
+    ![回滚](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/checkcanary07.png)
 
 3. 回滚成功后会触发一次新的灰度发布过程。
 
-    ![查看灰度进度](../../images/checkcanary08.png)
+    ![查看灰度进度](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/checkcanary08.png)
 
 ## 其他操作说明
 

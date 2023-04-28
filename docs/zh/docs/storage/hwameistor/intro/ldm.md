@@ -2,7 +2,7 @@
 
 本地磁盘管理器 (Local Disk Manager, LDM) 是 HwameiStor 系统的一个重要功能模块。`LDM` 旨在简化管理节点上的磁盘。它将磁盘抽象成一种可以被管理和监控的资源。它本身是一种 DaemonSet 对象，集群中每一个节点都会运行该服务，通过该服务检测存在的磁盘并将其转换成相应的 LocalDisk 资源。
 
-![LDM 架构图](../img/ldm.png)
+![LDM 架构图](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/img/ldm.png)
 
 目前 LDM 还处于 `alpha` 阶段。
 

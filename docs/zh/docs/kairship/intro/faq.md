@@ -54,8 +54,8 @@ hide:
     Kairship 采用开源的 `karmada-operator` 进行多实例 LCM 管理；Operator 提供了丰富的自定义能力。支持在启动参数中自定义 karmada 资源镜像的仓库地址。
 
     可以在启动命令中增加对应的参数配置，`--chat-repo-url`
-
-    ![image](../images/faq01.png)
+    
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/faq01.png)
 
 13. 如何连接 karmada 集群？
 

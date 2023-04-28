@@ -2,7 +2,7 @@
 
 > 本文作者：云原生研究院产品经理 [Stella](https://github.com/Stella0621)
 
-![提升资源利用率](./images/640.png)
+![提升资源利用率](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/640.png)
 
 ## 资源利用率现状
 
@@ -36,7 +36,7 @@
 
 ### 1. 合理设置 Request 和 Limit
 
-![Request 和 Limit](./images/usage01.png)
+![Request 和 Limit](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/usage01.png)
 
 Kubernetes 中创建⼀个 Pod 时，可以指定容器对 CPU 和内存的资源请求量 (即 request)，以及资源限制量(即 limit)。
 其中 Request 字段代表 Pod 对资源需求的最⼩值，每个 Kubernetes 节点可以分配给 Pod 的 CPU 和内存数量都是⼀定的。

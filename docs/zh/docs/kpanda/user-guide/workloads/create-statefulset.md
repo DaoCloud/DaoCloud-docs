@@ -28,7 +28,7 @@
 
 2. 点击左侧导航栏的`工作负载` -> `有状态负载`，然后点击右上角`镜像创建`按钮。
 
-    ![工作负载](../../images/state02.png)
+    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/state02.png)
 
 3. 依次填写[基本信息](create-statefulset.md#_3)、[容器配置](create-statefulset.md#_4)、[服务配置](create-statefulset.md#_5)、[高级配置](create-statefulset.md#_6)后，在页面右下角点击`确定`完成创建。
 
@@ -36,11 +36,11 @@
 
     点击新建工作负载列右侧的 `︙`，可以对工作负载执行执行更新、删除、弹性扩缩、重启、版本回退等操作。
 
-    ![操作菜单](../../images/state10.png)
+    ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/state10.png)
 
 ### 基本信息
 
-![基本信息](../../images/state01.png)
+![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/state01.png)
 
 - 负载名称：最多包含 63 个字符，只能包含小写字母、数字及分隔符（“-”），且必须以小写字母或数字开头及结尾，例如 deployment-01。同一命名空间内同一类型工作负载的名称不得重复，而且负载名称在工作负载创建好之后不可更改。
 - 命名空间：选择将新建的负载部署在哪个命名空间，默认使用 default 命名空间。找不到所需的命名空间时可以根据页面提示去[创建新的命名空间](../namespaces/createns.md)。
@@ -55,7 +55,7 @@
 
 === "基本信息（必填）"
 
-    ![基本信息](../../images/state11.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/state11.png)
     
     在配置容器相关参数时，必须正确填写容器的名称、镜像参数，否则将无法进入下一步。参考以下要求填写配置后，点击`确认`。
     
@@ -104,7 +104,7 @@
 
 1. 点击`创建服务`按钮。
 
-    ![服务配置](../../images/state12.png)
+    ![服务配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/state12.png)
 
 2. 参考[创建服务](../services-routes/create-services.md)，配置服务参数。
 
@@ -150,7 +150,7 @@
 
 === "容器管理策略"
 
-    ![容器管理策略](../../images/state05.png)
+    ![容器管理策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/state05.png)
     
     Kubernetes v1.7 及其之后的版本可以通过 `.spec.podManagementPolicy` 设置 Pod 的管理策略，支持以下两种方式：
     
@@ -190,7 +190,7 @@
 
 3. 输入或粘贴事先准备好的 YAML 文件，点击`确定`即可完成创建。
 
-    ![工作负载](../../images/state03yaml.png)
+    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/state03yaml.png)
 
 ??? note "点击查看创建有状态负载的 YAML 示例"
 

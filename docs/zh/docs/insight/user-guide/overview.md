@@ -9,7 +9,7 @@ hide:
 
 1. 在左边导航栏选择`概览`，进入详情页。
 
-    ![概览](../images/overview01.png)
+    ![概览](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/overview01.png)
 
 2. （可选）点击右上角`刷新`按钮，自动更新数据。
 

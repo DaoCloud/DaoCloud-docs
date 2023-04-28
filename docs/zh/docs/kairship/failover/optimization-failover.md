@@ -23,16 +23,16 @@
 此时我们将 DCE 与集群 APIserver 之间的 TCP 断开 10s-20s 之内，若没有获取到集群的健康状态将认为集群异常，
 指定时间内若集群没有恢复健康，将被标记为非健康状态，同时打上 NoSchedule 的污点，超过指定的驱逐容忍时长后，将被打上 NoExecute 的污点，最终被驱逐。
 
-![时间线](../images/you-failover01.png)
+![时间线](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/you-failover01.png)
 
 ## 多云实例的优化配置
 
 多云实例需要进入高级设置->故障转移部分，以下配置可参考上图填写参数信息。
 
-![故障转移](../images/you-failover02.png)
+![故障转移](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/you-failover02.png)
 
 ## 多云工作负载的配置优化
 
 多云工作负载主要和其部署策略（PP）相关，需要在部署策略中修改对应的集群污点容忍时长。
 
-![工作负载](../images/you-failover03.png)
+![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/you-failover03.png)

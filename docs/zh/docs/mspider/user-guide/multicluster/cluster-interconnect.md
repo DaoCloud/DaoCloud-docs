@@ -36,17 +36,17 @@
 
 建议操作流程如下图所示
 
-![操作流程](../../images/ci-process.png)
+![操作流程](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ci-process.png)
 
 ## 操作步骤
 
 1. 进入某个网格，点击启用开关，将自动创建用于东西网关的`网关规则`。点击`创建网络分组`按钮，为网络分组添加至少一个集群。
 
-    ![创建](../../images/ci-CreateGroupButton.jpg)
+    ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ci-CreateGroupButton.jpg)
 
 1. 为网络分组填入名称，并添加至少一个集群。
 
-    ![创建对话框](../../images/ci-CreateGroupDialog.png)
+    ![创建对话框](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ci-CreateGroupDialog.png)
 
     !!! note
 
@@ -56,11 +56,11 @@
 
     创建网络分组后，即可为分组内添加更多的集群，同一分组的集群需确保处于同一网络类型并可以互通，否则可能造成互联失败。
 
-    ![添加集群](../../images/ci-AddCluster.png)
+    ![添加集群](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ci-AddCluster.png)
 
     添加完成后即可在网络分组下看到多个集群。
 
-    ![集群列表](../../images/ci-ClusterList.jpg)
+    ![集群列表](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ci-ClusterList.jpg)
 
     !!! note
 
@@ -70,18 +70,18 @@
 
     东西网关用于网络分组间通信，可以在分组内的任一集群上创建一个或多个网关。点击一个集群右侧的 `⋮`，选择`编辑东西网关`：
 
-    ![编辑东西网关](../../images/ci-destirule01.png)
+    ![编辑东西网关](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ci-destirule01.png)
 
     创建配置项如下：
 
     - `负载均衡注释`为可选设置，部分云平台会以注释方式提供负载均衡 IP 分配，请参考云平台提供的技术文档；
     - `东西网关副本数`默认为 1，如果需要提高网关可用性，可创建多个副本；点击`确定`；
 
-        ![网关参数](../../images/ci-destirule02.png)
+        ![网关参数](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ci-destirule02.png)
 
         选择一个东西网关，点击操作中的`删除东西网关`，可以删除该网关，如图所示：
 
-        ![删除网关](../../images/ci-destirule03.png)
+        ![删除网关](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ci-destirule03.png)
 
     !!! note
 
@@ -91,15 +91,15 @@
 
     1. 如果要将一个网络分组加入互联，点击`加入互联`按钮。
 
-        ![加入互联](../../images/ci-join.png)
+        ![加入互联](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ci-join.png)
 
     1. 勾选一个网络分组，点击`下一步`。
 
-        ![选择集群](../../images/ci-join01.png)
+        ![选择集群](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ci-join01.png)
 
     1. 选择可用的`东西网关地址`，点击`确定`。
 
-        ![选择东西网关地址](../../images/ci-join02.png)
+        ![选择东西网关地址](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ci-join02.png)
 
     1. 在互联列表中可以看到新加入的网络分组，列表内的分组之间彼此建立了通信。
 
@@ -114,18 +114,18 @@
 
     用户可以对处于互联状态的网络分组增删东西网关地址。在互联列表中勾选一个分组，点击`更新东西网关地址`。
 
-    ![更新东西网关地址](../../images/ci-update.png)
+    ![更新东西网关地址](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ci-update.png)
 
     更新地址后点击`确定`。
 
-    ![确定](../../images/ci-update01.png)
+    ![确定](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ci-update01.png)
 
 1. 移除互联
 
     如果网络分组不再需要和其他网络分组建立互联，或需要调整分组内集群及东西网关设置，可以移除互联。
     选择需要移除的网络分组，点击`移除互联`按钮，出现下图对话框。
 
-    ![移除互联](../../images/ci-removeclusterfromC.png)
+    ![移除互联](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ci-removeclusterfromC.png)
 
     经过二次确认，网络分组即可移除互联列表。
 
@@ -133,18 +133,18 @@
 
     在需要删除的网络分组操作下拉框中点击`删除网络分组`，即可删除所选网络分组。
 
-    ![删除分组](../../images/ci-deletegroup.png)
+    ![删除分组](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ci-deletegroup.png)
 
 1. 关闭`多云网络互联`功能
 
     在顶部`基本设置`区域，点击`启用`状态的滑块，将弹出关闭多云互联的前提条件：
 
-    ![关闭互联](../../images/ci-closeinterconn.png)
+    ![关闭互联](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ci-closeinterconn.png)
 
     先移除网络分组：
 
-    ![创建](../../images/ci-closedoublecheck.png)
+    ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ci-closedoublecheck.png)
 
     在文本框输入`关闭基本设置`进行确认后，即可关闭多云互联功能：
 
-    ![创建](../../images/ci-closed.png)
+    ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ci-closed.png)

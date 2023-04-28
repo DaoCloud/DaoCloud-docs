@@ -16,7 +16,7 @@ F5 设备有两种模式来转发流量到集群（关于转发模式，更多�
 
     要求：集群应用的 loadBalancer service 对象必须分配了 nodePort。
 
-    ![nodeport](../../images/F5nodeport.png)
+    ![nodeport](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/F5nodeport.png)
 
 2. Cluster 转发模式：F5 把流量直接转发到 Pod IP 上，该模式即可工作在 “4 层转发” 和 “7 层转发”。
 
@@ -24,7 +24,7 @@ F5 设备有两种模式来转发流量到集群（关于转发模式，更多�
 
     要求：集群通过 BPG 协议把 Pod 路由转发到网络中的路由器和 F5 设备上，或者集群中的节点同 F5 设备间建立 VXLAN 隧道。
 
-    ![cluster](../../images/F5cluster.png)
+    ![cluster](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/F5cluster.png)
 
 ## 功能说明
 

@@ -12,7 +12,7 @@
 
 当命名空间较多时，可以按命名空间的名称进行排序，并通过搜索功能进行查找。
 
-![查看边车注入](../../images/ns-sidecar01.png)
+![查看边车注入](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ns-sidecar01.png)
 
 ## 启用边车注入
 
@@ -20,11 +20,11 @@
 
 1. 选择一个未启用边车注入的命名空间，点击`注入启用`按钮；
 
-    ![点击注入启用](../../images/ns-sidecar01.png)
+    ![点击注入启用](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ns-sidecar01.png)
 
 2. 在弹出的对话框中，确认选择的命名空间数量是否正确，确认无误后，点击`确定`。
 
-    ![确定](../../images/ns-sidecar02.png)
+    ![确定](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ns-sidecar02.png)
 
 3. 自动返回命名空间的边车列表，可以看到刚刚所选命名空间的`边车自动注入`状态已变更为`启用`。在用户完成工作负载的重启后，将完成边车注入，相关注入进度可查看`边车注入量`一列。
 
@@ -34,10 +34,10 @@
 
 1. 选择一个已启用边车注入的命名空间，点击`注入禁用`按钮；
 
-    ![注入禁用](../../images/ns-sidecar01.png)
+    ![注入禁用](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ns-sidecar01.png)
 
 2. 在弹出的对话框中，确认选择的命名空间数量是否正确，确认无误后，点击`确定`。
 
-    ![确定](../../images/ns-sidecar03.png)
+    ![确定](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/ns-sidecar03.png)
 
 3. 自动返回命名空间的边车列表，可以看到刚刚所选命名空间的`边车自动注入`状态已变更为`禁用`。在用户完成工作负载的重启后，将完成边车禁用，相关卸载进度可查看`边车注入量`一列。

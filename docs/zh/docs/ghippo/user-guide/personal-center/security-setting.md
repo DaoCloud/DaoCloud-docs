@@ -22,4 +22,4 @@ hide:
 
 3. 点击`安全设置`页签。填写您的邮箱地址或修改登录密码。
 
-    ![安全设置](../../images/security01.png)
+    ![安全设置](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/security01.png)

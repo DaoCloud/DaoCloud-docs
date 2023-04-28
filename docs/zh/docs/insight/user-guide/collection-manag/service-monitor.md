@@ -11,11 +11,11 @@
 
 1. 选择左侧导航栏的`采集管理`，查看全部集群采集插件的状态。
 
-    ![集群列表](../../images/collectmanage02.png)
+    ![集群列表](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/collectmanage02.png)
 
 2. 点击列表`集群名称`进入采集配置详情。
 
-    ![集群列表](../../images/service-discover.png)
+    ![集群列表](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/service-discover.png)
 
 3. 点击链接跳转到`容器管理` 中创建 Service Monitor。
 

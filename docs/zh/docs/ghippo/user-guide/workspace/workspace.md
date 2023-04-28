@@ -17,17 +17,17 @@ hide:
 
 3. 点击左侧导航栏的`工作空间与层级`，点击右上角的`创建工作空间`按钮。
 
-    ![创建工作空间](../../images/ws02.png)
+    ![创建工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws02.png)
 
 4. 填写工作空间名称、所属文件夹等信息后，点击`确定`，完成创建工作空间。
 
-    ![确定](../../images/ws03.png)
+    ![确定](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws03.png)
 
 !!! tip
 
     创建成功后工作空间名称将显示在左侧的树状结构中，以不同的图标表示文件夹和工作空间。
 
-    ![文件夹与工作空间](../../images/ws04.png)
+    ![文件夹与工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws04.png)
 
 !!! note
 

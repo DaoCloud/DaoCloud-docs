@@ -22,7 +22,7 @@
 
 1. 在`应用工作台` -> `向导`页面中，点击 `基于 Git 仓构建`。
 
-    ![向导](../../images/ms01.png)
+    ![向导](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms01.png)
 
 2. 参考以下说明填写基本信息，然后点击`下一步`：
 
@@ -32,7 +32,7 @@
     - 部署位置：选择将应用部署到哪个集群下的哪个命名空间。如果要接入微服务，请确保当前工作空间下已经[创建了注册中心](../../../skoala/registry/managed/registry-lcm/create-registry.md)。
     - 实例数：填写实例的数量，Pod 的数量。
 
-        ![基本信息](../../images/ms02.png)
+        ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms02.png)
 
 3. 参考以下说明填写流水线配置，然后点击`下一步`。
 
@@ -46,7 +46,7 @@
     - ContextPath：ContextPath 为 docker build 命令执行上下文路径。填写相对于代码根目录的路径，如 target，如果不填则为 Dockerfile 文件所在目录。
     - 构建参数：构建参数会以 --build-arg 的形式传递到 build 命令的参数中，支持将上游制品下载地址、上游镜像下载地址设置为参数，同时支持自定义任意参数。
 
-        ![流水线构建](../../images/ms03.png)
+        ![流水线构建](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms03.png)
 
 4. 参考以下说明填写容器配置，然后点击`下一步`。
 
@@ -70,7 +70,7 @@
 
     - 数据存储：配置容器挂载数据卷和数据持久化的设置。
 
-        ![容器配置](../../images/ms04.png)
+        ![容器配置](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms04.png)
 
 5. 在`高级配置`页面点击`开启接入微服务`，参考以下说明配置参数，然后点击`确定`。
 
@@ -84,12 +84,12 @@
     - 日志：默认开启
     - 链路追踪：开启后可查看服务的链路追踪信息，目前仅支持 Java 语言
 
-        ![高级配置](../../images/ms05.png)
+        ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms05.png)
 
 ## 查看并访问微服务相关信息
 
 1. 在左侧导航栏点击`概览`，在`原生应用`页签中，光标悬浮在某一个应用上，点击悬浮菜单`查看更多详情`。
 
-    ![悬浮菜单](../../images/ms06.png)
+    ![悬浮菜单](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms06.png)
 
 1. 跳转到微服务引擎，查看服务详情。

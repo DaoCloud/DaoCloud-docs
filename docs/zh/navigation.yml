@@ -756,6 +756,7 @@ nav:
       - 云原生网络: videos/network.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 202305 | K8s 1.27加快了Pod启动速度: blogs/20230428-pod-startup.md
       - 202304 | 云原生监控之基础篇: blogs/20230427-victoriametrics.md
       - 202304 | Karmada Failover详解: blogs/230418-karmada-failover.md
       - 202304 | CNCF 平台工程白皮书: blogs/230417-cncf-platform-wp.md
@@ -810,6 +811,7 @@ nav:
       - 全局管理 OpenAPI:
           - v0.15.0: openapi/ghippo/v0.15.0.md
           - v0.16.0: openapi/ghippo/v0.16.0.md
+          - v0.16.1: openapi/ghippo/v0.16.1.md
       - 服务网格 OpenAPI: openapi/mspider/v0.105.1.md
       - 可观测性 OpenAPI: openapi/insight/v0.16.0.md
       - 多云编排 OpenAPI: openapi/kairship/v0.8.0.md

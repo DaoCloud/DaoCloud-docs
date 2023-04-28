@@ -45,12 +45,12 @@
 
 2. 在左侧导航栏点击`命名空间`，然后点击页面右侧的`YAML 创建`按钮。
 
-    ![点击创建](../../images/ns00.png)
+    ![点击创建](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/ns00.png)
 
 3. 输入或粘贴事先准备好的 YAML 内容，或者从本地直接导入已有的 YAML 文件。
 
     > 输入 YAML 内容后，点击`下载`可以将该 YAML 文件保存到本地。
 
-    ![点击创建](../../images/ns04.png)
+    ![点击创建](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/ns04.png)
 
 4. 最后在弹框右下角点击`确定`即可。

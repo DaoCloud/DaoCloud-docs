@@ -32,7 +32,7 @@ Admin、Kpanda Owner 和 Workspace Admin 可以通过共享资源中的`资源�
 
     使工作空间中的用户/用户组具有该集群资源的使用权限，这些资源可以在[创建命名空间（Namespace）](../../../amamba/user-guide/namespace/namespace.md#_3)时使用。
 
-    ![共享资源](../../images/quota02.png)
+    ![共享资源](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/quota02.png)
 
     与资源组不同，将集群共享到工作空间时，用户在工作空间的角色不会映射到资源上，因此 Workspace Admin 不会被映射为 Cluster admin。
 
@@ -44,11 +44,11 @@ Admin、Kpanda Owner 和 Workspace Admin 可以通过共享资源中的`资源�
 
 1. 在工作空间 ws01 新增一个共享集群。
 
-    ![新增共享集群](../../images/quota03.png)
+    ![新增共享集群](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/quota03.png)
 
 1. 在应用工作台选择工作空间 ws01 和共享集群，创建命名空间 ns01。
 
-    ![创建命名空间](../../images/quota04.png)
+    ![创建命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/quota04.png)
 
     - 若在共享集群中未设置资源配额，则创建命名空间时可不设置资源配额。
     - 若在共享集群中已设置资源配额（例如 CPU 请求 = 100 core），则创建命名空间时 `CPU 请求 ≤ 100 core`。
@@ -61,14 +61,14 @@ Admin、Kpanda Owner 和 Workspace Admin 可以通过共享资源中的`资源�
 
 - 在容器管理中将创建的命名空间 ns01 绑定到 ws01
 
-    ![绑定到工作空间](../../images/quota05.png)
+    ![绑定到工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/quota05.png)
 
     - 若在共享集群未设置资源配额，则命名空间 ns01 无论是否已设置资源配额，均可成功绑定。
     - 若在共享集群已设置资源配额 `CPU 请求 = 100 core`，则命名空间 ns01 必须满足 `CPU 请求 ≤ 100 core` 才能绑定成功。
 
 - 在全局管理中，将命名空间 ns01 绑定到 ws01
 
-    ![绑定到工作空间](../../images/quota06.png)
+    ![绑定到工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/quota06.png)
 
     - 若在共享集群未设置资源配额，则命名空间 ns01 无论是否已设置资源配额，均可成功绑定。
     - 若在共享集群已设置资源配额 `CPU 请求 = 100 core`，则命名空间 ns01 必须满足 `CPU 请求 ≤ 100 core` 才能绑定成功。
@@ -79,14 +79,14 @@ Admin、Kpanda Owner 和 Workspace Admin 可以通过共享资源中的`资源�
 
 - 在容器管理中将命名空间 ns01 从工作空间 ws01 解绑
 
-    ![绑定到工作空间](../../images/quota07.png)
+    ![绑定到工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/quota07.png)
 
     - 若在共享集群中未设置资源配额，则命名空间 ns01 无论是否已设置资源配额，解绑后均不会对资源配额产生影响。
     - 若在共享集群已设置资源配额 `CPU 请求 = 100 core`，命名空间 ns01 也设置了资源配额，则解绑后将释放相应的资源额度。
 
 - 在全局管理中将命名空间 ns01 从工作空间 ws01 解绑
 
-    ![绑定到工作空间](../../images/quota08.png)
+    ![绑定到工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/quota08.png)
 
     - 若在共享集群未设置资源配额，则命名空间 ns01 无论是否已设置资源配额，解绑后均不会对资源配额产生影响。
     - 若在共享集群已设置资源配额 `CPU 请求 = 100 core`，命名空间 ns01 也设置了资源配额，则解绑后将释放相应的资源额度。

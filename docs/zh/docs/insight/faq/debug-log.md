@@ -15,11 +15,11 @@
 
 3. 切换到 `insight-system` -> `Fluent Bit` 仪表盘。
 
-    ![fluentbit](../images/insight03.png)
+    ![fluentbit](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insight03.png)
 
 4. `Fluent Bit` 仪表盘上方有几个选项框，可以选择日志采集插件、日志过滤插件、日志输出插件及所在集群名。
 
-    ![fluentbit](../images/insight04.png)
+    ![fluentbit](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insight04.png)
 
 ## 插件说明
 

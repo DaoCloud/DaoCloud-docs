@@ -19,15 +19,15 @@ hide:
 
 1. 在左侧导航栏点击`容器管理`—>`集群列表`，然后找到准备安装 Metallb 的集群名称。
 
-    ![metallb_cluster](../../images/metallb-cluster.png)
+    ![metallb_cluster](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/metallb-cluster.png)
 
 2. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `metallb`。
 
-    ![metallb_repo](../../images/metallb_helm_repo.png)
+    ![metallb_repo](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/metallb_helm_repo.png)
 
 3. 在`版本选择`中选择希望安装的版本，点击`安装`。
 
-    ![metallb_version](../../images/metallb-helm-version.png)
+    ![metallb_version](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/metallb-helm-version.png)
 
 4. 在安装界面，初始化 Metallb ARP 模式。
 
@@ -47,13 +47,13 @@ hide:
         
         - 创建后的 IP 池默认开启默认地址池参数 `autoAssign: true`。参数详情：[使用说明](usage.md)
 
-    ![metallb_ippool](../../images/metallb_ippool.png)
+    ![metallb_ippool](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/metallb_ippool.png)
 
 5. 配置 `L2Advertisement Setting` -> `NodeSelectors`。
 
     默认情况下, 所有节点都会作为 LoadBalancer IP 的下一跳, 但可以通过 NodeSelector 限制只有某些节点作为 LoadBalancer IP 的下一跳:
 
-    ![node_list](../../images/metallb_nodelist.png)
+    ![node_list](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/metallb_nodelist.png)
 
     如上图配置表示, 只有匹配 Label "kubernetes.io/os: linux" 的节点才会作为 LoadBalancer IP 的下一跳。
 
@@ -61,11 +61,11 @@ hide:
 
     默认情况下, Metallb 从节点所有网卡宣告 LB IPs, 我们可以配置指定网络接口宣告。
 
-    ![metallb-interface](../../images/metallb-interface.png)
+    ![metallb-interface](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/metallb-interface.png)
 
 7. 安装完成。
 
-    ![metallb_installed](../../images/metallb_installed.png)
+    ![metallb_installed](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/metallb_installed.png)
 
 !!! note
 

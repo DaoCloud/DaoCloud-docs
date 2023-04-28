@@ -35,9 +35,9 @@ DCE 5.0 主推 Harbor 作为镜像仓库提供镜像服务。
 
     预期结果：平台上所有用户在命名空间中部署应用时，均能够通过镜像选择器，选择公开镜像空间中的镜像进行部署。
 
-    ![选择镜像](../images/admin01.png)
+    ![选择镜像](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/admin01.png)
 
-    ![镜像选择](../images/admin02.png)
+    ![镜像选择](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/admin02.png)
 
 1. 假设您已创建了托管 Harbor 或接入了一个外部 Habor，按照以下步骤可以将私有镜像共享给指定的工作空间（租户）下的命名空间使用（在部署应用时能够通过镜像选择器选择私有的镜像）：
 
@@ -83,9 +83,9 @@ DCE 5.0 主推 Harbor 作为镜像仓库提供镜像服务。
 
     预期结果：仅在该工作空间下的命名空间部署应用时能够通过镜像选择器，选择该镜像空间下的私有镜像进行部署应用。
 
-    ![选择镜像](../images/admin03.png)
+    ![选择镜像](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/admin03.png)
 
-    ![镜像选择](../images/admin04.png)
+    ![镜像选择](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/admin04.png)
 
     !!! tip
 

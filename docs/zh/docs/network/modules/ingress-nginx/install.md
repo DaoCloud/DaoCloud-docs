@@ -6,23 +6,23 @@
 
 1. 在左侧导航栏点击`容器管理`—>`集群列表`，然后找到准备安装 ingress-nginx 的集群名称。
 
-    ![cluster](../../images/ingress-install-1.png)
+    ![cluster](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/ingress-install-1.png)
 
 2. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `ingress-nginx`。
 
-    ![helm](../../images/ingress-install-2.png)
+    ![helm](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/ingress-install-2.png)
 
 3. 在`版本选择`中选择希望安装的版本，点击`安装`。
 
-    ![version](../../images/ingress-install-3.png)
+    ![version](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/ingress-install-3.png)
 
 4. 在安装界面，填写所需的安装参数。
 
-    ![parameter1](../../images/ingress-install-4.png)
+    ![parameter1](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/ingress-install-4.png)
 
     在以上界面中，输入部署后的应用名称、命名空间以及部署的选项。
 
-    ![parameter2](../../images/ingress-install-5.png)
+    ![parameter2](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/ingress-install-5.png)
 
     上图中的各项参数说明：
 
@@ -33,7 +33,7 @@
     - `Ingress Controller` -> `Ingress Class` -> `Default IngressClass`：设置 Ingress Class 为默认 Class。开启该选项后创建 Ingress CR 时无需显式指定 ingressClass 字段。Kubernetes 自动更新 Ingress 的字段为默认 Class。同一个集群只能有一个默认 Ingress Class。
     - `Ingress Controller` -> `Ingress Class` -> `Election ID`：同一个租户部署多套 Ingress 时，需要保证此名称不会重复。
 
-    ![parameter3](../../images/ingress-install-6.png)
+    ![parameter3](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/ingress-install-6.png)
 
     上图中的各项参数说明：
 
@@ -42,7 +42,7 @@
     - `Ingress Controller` -> `Ingress Controller Image`：配置镜像仓库和镜像名称。
     - `Ingress Controller` -> `Admission Webhook Image`：自定义 Webhook Pod 的镜像仓库和镜像名称。
 
-    ![parameter4](../../images/ingress-install-7.png)
+    ![parameter4](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/ingress-install-7.png)
 
     上图中的各项参数说明：
 

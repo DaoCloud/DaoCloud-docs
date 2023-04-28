@@ -19,15 +19,15 @@
 
 1. 使用具有 `Admin` 或 `Audit Owner` 角色的用户登录 Web 控制台。
 
-    ![登录 web 控制台](../images/lang00.png)
+    ![登录 web 控制台](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/lang00.png)
 
 2. 点击左侧导航栏底部的`全局管理`。
 
-    ![全局管理](../images/ws01.png)
+    ![全局管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws01.png)
 
 3. 导航至全局管理下的审计日志，选择`审计日志`。
 
-    ![审计日志](../images/audit01.png)
+    ![审计日志](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/audit01.png)
 
 4. 在`审计日志`下，选择时间范围，点击`导出`，下载审计日志到本地。
 

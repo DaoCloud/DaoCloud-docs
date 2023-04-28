@@ -15,7 +15,7 @@
 - 鼠标悬浮在连线上时，可查看服务之间请求的流量指标。
 - 在 `显示设置` 模块，可配置拓扑图中的显示元素。
 
-    ![服务拓扑](../../images/topology01.png)
+    ![服务拓扑](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/topology01.png)
 
 ## 节点健康状态
 

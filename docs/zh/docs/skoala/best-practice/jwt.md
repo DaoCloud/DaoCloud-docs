@@ -20,15 +20,15 @@
     - Token缓存时长：JWKS内存的缓存时间，在缓存有效期内不会重复请求 JWKS 服务器地址
     - 验证超时时长：JWKS 服务器的响应超时时间，超过超时时间获取 JWKS 失败
 
-        ![基础配置](../images/jwt06.png)
+        ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt06.png)
 
 2. 参考[添加 API](../ms-gateway/api/add-api.md) 创建 API 并启用 JWT 认证安全策略。
 
-    ![基础配置](../images/jwt07.png)
+    ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt07.png)
 
 3. 带上 Token 访问验证，如果访问成功说明 JWT 策略配置成功
 
-    ![基础配置](../images/jwt08.png)
+    ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt08.png)
 
 ## 创建 JWKS 应用
 
@@ -48,7 +48,7 @@
 
     访问 <http://localhost:8080>，如果出现下方界面说明 JWKS 生成器已经在本地成功运行起来。
 
-    ![基础配置](../images/jwt09.png)
+    ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt09.png)
 
 3. 参考下方说明填写信息，点击 `Generate` 生成 JWKS 内容。
 
@@ -57,21 +57,21 @@
     - Algorithm：算法，选择 HS256
     - KeyID：可选项，JWKS 有多个值时的匹配参数
 
-        ![基础配置](../images/jwt10.png)
+        ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt10.png)
 
 4. 复制上图中 `k` 字段的取值，访问 <https://jwt.io>，生成 Token。
 
       - 算法选择 HS256
       - 将复制好的 k 值粘贴到 secret 里面，并勾选 `secret base64 encoded`
 
-        ![基础配置](../images/jwt11.png)
+        ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt11.png)
 
 5. 基于 [YAML 模板](https://github.com/projectsesame/enovy-remote-jwks-go/blob/main/all-in-one.yaml)创建 YAML 文件，然后使用 `kubectl apply` 命令安装 JWKS 应用
 
     - 将 `namespace` 修改为网关所在的命名空间，在本例中使用 `envoy-yang`
     - 将 `jwks.json` 修改为上述第三步生成的 JWKS 内容
 
-        ![基础配置](../images/jwt13.png)
+        ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt13.png)
 
     ??? note "本例中配置的 YAML 文件如下所示"
 
@@ -166,4 +166,4 @@
 
     > 在微服务引擎下的网关概览页面可以查看网关的访问地址。
 
-    ![基础配置](../images/jwt12.png)
+    ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt12.png)

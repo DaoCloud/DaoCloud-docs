@@ -10,15 +10,15 @@
 
 2. 选择`外观定制`。
 
-    ![外观定制](../../images/visual04.png)
+    ![外观定制](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/visual04.png)
 
 3. 在`登录页定制`页签中，修改登录页的图标和文字后，点击`保存`。
 
-    ![登录页](../../images/visual02.png)
+    ![登录页](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/visual02.png)
 
 4. 点击`顶部导航栏定制`页签，修改导航栏的图标和文字后，点击`保存`。
 
-    ![顶部导航栏](../../images/visual06.png)
+    ![顶部导航栏](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/visual06.png)
 
 !!! note
 
@@ -29,7 +29,7 @@
 高级定制能够通过 CSS 样式来修改整个容器平台的颜色、字体间隔、字号等。
 您需要熟悉 CSS 语法。删除黑色输入框的内容，可恢复到默认状态，当然也可以点击`一键还原`按钮。
 
-![高级定制](../../images/advanced-custom.png)
+![高级定制](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/advanced-custom.png)
 
 **登录页定制的 CSS 样例：**
 

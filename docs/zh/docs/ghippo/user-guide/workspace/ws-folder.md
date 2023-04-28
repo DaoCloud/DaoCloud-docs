@@ -7,7 +7,7 @@ hide:
 
 `工作空间与层级`是一个具有层级的资源隔离和资源分组特性，主要解决资源统一授权、资源分组以及资源限额问题。
 
-![层级结构](../../images/fdpractice.png)
+![层级结构](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/fdpractice.png)
 
 `工作空间与层级`有两个概念：工作空间和文件夹。
 
@@ -15,7 +15,7 @@ hide:
 
 工作空间可通过`授权`、`资源组`和`共享资源`来管理资源，使用户（用户组）之间能够共享工作空间中的资源。
 
-![工作空间](../../images/wsfd01.png)
+![工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/wsfd01.png)
 
 - 资源
 

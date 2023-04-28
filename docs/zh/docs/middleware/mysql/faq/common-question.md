@@ -145,7 +145,7 @@ kubectl edit pvc data-mcamel-common-mysql-cluster-mysql-0 -n mcamel-system # 修
 
 ### Pod running = 3/4
 
-![image](../images/faq-mysql-1.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/mysql/images/faq-mysql-1.png)
 
 使用 `kubectl describe` 上图中框起来的 Pod，发现异常提示： `Warning Unhealthy 4m50s (x7194 over 3h58m) kubelet Readiness probe failed: `
 
@@ -586,7 +586,7 @@ pt-table-sync --execute --charset=utf8 --ignore-databases=mysql,sys,percona --da
 
 数据库运行正常，使用 CR 创建数据库出现了报错，此类问题的原因有：`mysql root` 密码有特殊字符
 
-![image](../images/faq-mysql-2.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/mysql/images/faq-mysql-2.png)
 
 1. 获取查看原密码：
 

@@ -14,7 +14,7 @@
 
     **适用场景**：此方式适用于 IP 粗粒度管理场景，可以基于较大范围 IP（如：10.6.124.10~10.6.124.200）范围进行防火墙放行，放行后工作负载可基于此 IP 段自动获取 IP 并创建对应的固定 IP 池。操作方式可参考[创建子网及 IP 池](createpool.md)及[工作负载使用 IP 池](usage.md)。
 
-    ![fixedippool](../../images/fixedippool.jpg)
+    ![fixedippool](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/fixedippool.jpg)
 
 ## IP 池的节点亲和性
 
@@ -29,11 +29,11 @@
 
 - 同一工作负载需要调度至 **跨子网** 或 **跨数据中心** 节点上，使用流程如下：
 
-    ![nodeaffinity01](../../images/nodeaffinity01.jpg)
+    ![nodeaffinity01](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/nodeaffinity01.jpg)
 
 - 不同工作负载需要调度至 **不同节点** 上，并使用 **不同子网** ，如：[SRI-OV 同 Macvlan CNI 混用场景](../../plans/ethplan.md)，具体使用流程如下：
 
-    ![nodeaffinity02](../../images/nodeaffinity02.jpg)
+    ![nodeaffinity02](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/nodeaffinity02.jpg)
 
 ## IP 池的命名空间亲和性
 

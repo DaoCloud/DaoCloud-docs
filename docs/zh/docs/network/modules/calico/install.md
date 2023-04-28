@@ -8,7 +8,7 @@
 
 ## 参数配置
 
-1. 进入`创建集群`第三步`网络配置`，配置如下参数：![calico-install](../../images/calico-install.png)
+1. 进入`创建集群`第三步`网络配置`，配置如下参数：![calico-install](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/calico-install.png)
    1. `双栈`：是否开启双栈，默认关闭。`enable_dual_stack_networks`： 开启后，将为 pod 和 service 提供 IPv4 和 IPv6 网络。
    2. `网卡检测模式`： Calico 网卡检测模式，选择后会通过此网卡进行流量通信。
       1. `First Found`：默认模式，枚举所有的节点 IP（忽略一些常见的本地网卡，如 docker0，kube-ipvs0 等)，并选择第一个地址。
@@ -25,7 +25,7 @@
    7. `服务网段`：同一集群下容器互相访问时使用的 Service 资源的网段决定了 Service 资源的上限。 创建后不可修改。默认为 10.244.0.0/18 。
 2. 如果用户需要为 Calico 配置更多功能，可通过 Kubespray 安装 Calico。关于使用 Kubespray 安装 Calico 时的各项参数配置，请在`高级配置`—>`自定义参数`下根据需要添加并填写。
 
-![calico-install](../../images/calico-arg.png)
+![calico-install](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/calico-arg.png)
 
 以下介绍使用 Kubespray 安装 Calico 时的各项参数配置：
 

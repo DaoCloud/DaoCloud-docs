@@ -35,4 +35,4 @@ class success,fail k8s
 
 用户登录界面如下图。具体登录画面，请与实际产品为准。
 
-![登录界面](../images/login02.png)
+![登录界面](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/login02.png)

@@ -16,21 +16,21 @@
 
 1. 在`应用工作台` -> `GitOps` -> `仓库` 页面中，点击`导入仓库`按钮，选择`使用 HTTPS`。
 
-    ![导入](../../images/import01.png)
+    ![导入](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/import01.png)
 
 2. 在`使用 HTTPS 导入仓库`页面中，配置相关参数后点击`确定`。
 
-    ![导入](../../images/import02.png)
+    ![导入](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/import02.png)
 
 ### 使用 SSH 导入仓库
 
 1. 在`应用工作台` -> `GitOps` -> `仓库` 页面中，点击`导入仓库`按钮，选择`使用 SSH`。
 
-    ![导入](../../images/import01.png)
+    ![导入](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/import01.png)
 
 2. 在`使用 SSH 导入仓库`页面中，配置相关参数后点击`确定`。
 
-    ![导入](../../images/import03.png)
+    ![导入](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/import03.png)
 
 ## 删除仓库
 
@@ -38,8 +38,8 @@
 
 1. 在仓库列表页选择某一个仓库，点击 `︙` ，在弹出的菜单中点击`删除` 。
 
-    ![删除](../../images/import04.png)
+    ![删除](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/import04.png)
 
 2. 在二次确认弹窗中点击`确定`。
 
-    ![删除确认](../../images/import05.png)
+    ![删除确认](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/import05.png)
