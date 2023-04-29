@@ -21,7 +21,7 @@
 
 1. 点击一个集群名称，进入`集群详情`。
 
-    ![集群详情](../../images/crd01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd01.png)
 
 2. 在左侧导航栏，点击`自定义资源`，点击右上角 `YAML 创建`按钮。
 
@@ -74,7 +74,7 @@ spec:
 
 1. 点击一个集群名称，进入`集群详情`。
 
-    ![集群详情](../../images/crd01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd01.png)
 
 2. 在左侧导航栏，点击`自定义资源`，点击右上角 `YAML 创建`按钮。
 

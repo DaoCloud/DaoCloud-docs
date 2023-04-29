@@ -49,7 +49,7 @@
 
 2. 在右上角点击`编辑流水线`，
 
-    ![pipelisetting](../images/editpipe02.png)
+    ![pipelisetting](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/editpipe02.png)
 
 3. 在右上角点击`全局设置`。
 
@@ -115,7 +115,7 @@
 
     - 在步骤模块中选择开启`指定容器`，在弹出的对话框中填写容器名称：go，然后点击`确定`。
 
-        ![container2](../images/container2.png)
+        ![container2](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/container2.png)
 
     - 在步骤模块中选择开启`使用凭证`，在弹出的对话框中填写相关参数，然后点击`确定`。
 

@@ -22,7 +22,7 @@ Admin、Kpanda Owner 和 Workspace Admin 可以通过共享资源中的`资源�
     使工作空间中的用户/用户组具有该集群的全部管理和使用权限，Workspace Admin 将被映射为 Cluster Admin。
     Workspace Admin 能够进入[容器管理模块](../../../kpanda/user-guide/permissions/permission-brief.md)管理该集群。
 
-    ![资源组](../../images/quota01.png)
+    ![资源组](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/quota01.png)
 
     !!! note
 

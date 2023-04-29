@@ -10,7 +10,7 @@
 
 1. 进入微服务引擎模块，点击目标注册中心的名称。
 
-    ![点击名称](imgs/monitor01.png)
+    ![点击名称](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/monitor/imgs/monitor01.png)
 
 2. 在左侧导航栏点击`监控`->`微服务监控`。
 

@@ -179,7 +179,7 @@
 
 2. 选择左侧导航 `Index Lifecycle Polices`，并找到索引 `jaeger-ilm-policy`，点击进入详情。
 
-    ![索引](../../images/trace02.png)
+    ![索引](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/trace02.png)
 
 3. 展开 `Hot phase` 配置面板，修改 `Maximum age` 参数，并设置保留期限，默认存储时长为 `7d`。
 

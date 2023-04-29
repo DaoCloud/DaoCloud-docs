@@ -15,9 +15,9 @@ DCE 5.0 服务网格支持 3 种网格：
 
 1. 在服务网格列表页面的右上角，点击`创建网格`。
 
-    ![创建网格](../../images/servicemesh01.png)
+    ![创建网格](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/servicemesh01.png)
 
-1. 选择`托管网格`或`专有网格`，填写基本信息后点击`下一步`。
+2. 选择`托管网格`或`专有网格`，填写基本信息后点击`下一步`。
 
     - 网格名称：以小写字母开头，由小写字母、数字、中划线 (-) 组成，且不能以中划线 (-) 结尾
     - Istio 版本：如果是托管网格，所有被纳管集群的 Istio 都将使用此版本。
@@ -27,19 +27,19 @@ DCE 5.0 服务网格支持 3 种网格：
   
     ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/create-mesh-config.png)
 
-1. 系统设置。配置是否开启可观测性，设置网格规模后点击`下一步`。
+3. 系统设置。配置是否开启可观测性，设置网格规模后点击`下一步`。
 
     ![系统设置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/mesh-sys-set.png)
 
-1. 治理设置。设置出站流量策略、位置感知负载均衡、请求重试等。参阅[请求重试参数说明](./params.md#max-retries)。
+4. 治理设置。设置出站流量策略、位置感知负载均衡、请求重试等。参阅[请求重试参数说明](./params.md#max-retries)。
 
     ![治理设置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/gov-set.png)
 
-1. 边车设置。设置全局边车、资源限制、日志后点击`确定`。参阅[日志级别说明](./params.md#_2)。
+5. 边车设置。设置全局边车、资源限制、日志后点击`确定`。参阅[日志级别说明](./params.md#_2)。
 
     ![边车设置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/create-sidecar-set.png)
 
-1. 自动返回网格列表，新创建的网格默认位于第一个，一段时间后状态将从`创建中`变为`运行中`。点击右侧的 `...` 可以编辑网格基本信息、添加集群等。
+6. 自动返回网格列表，新创建的网格默认位于第一个，一段时间后状态将从`创建中`变为`运行中`。点击右侧的 `...` 可以编辑网格基本信息、添加集群等。
 
     ![网格列表](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/create-list.png)
 

@@ -16,7 +16,7 @@
 
 1. 点击一个集群名称，进入`集群详情`。
 
-    ![集群详情](../../images/crd01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd01.png)
 
 2. 在左侧导航栏，依次点击 `Helm 应用` -> `Helm 模板`，进入 Helm 模板页面。
 
@@ -45,7 +45,7 @@
 
 1. 点击一个集群名称，进入`集群详情`。
 
-    ![集群详情](../../images/crd01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd01.png)
 
 2. 在左侧导航栏，点击 `Helm 应用`，进入 Helm 应用列表页面。
 
@@ -87,7 +87,7 @@ Helm 应用的每次安装、更新、删除都有详细的操作记录和日志
 
 1. 找到待删除的 Helm 应用所在的集群，点击集群名称，进入`集群详情`。
 
-    ![集群详情](../../images/crd01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd01.png)
 
 2. 在左侧导航栏，点击 `Helm 应用`，进入 Helm 应用列表页面。
 

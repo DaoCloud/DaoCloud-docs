@@ -18,7 +18,7 @@ hide:
 
     文件夹不直接与资源挂钩，而是通过工作空间间接实现资源分组。
 
-    ![层级结构](../../images/fdpractice.png)
+    ![层级结构](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/fdpractice.png)
 
 2. 用户身份管理
 

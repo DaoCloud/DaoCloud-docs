@@ -17,11 +17,11 @@
 
 1. 在`集群列表`页面点击目标集群的名称。
 
-    ![集群详情](../../images/crd01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd01.png)
 
 2. 在左侧导航栏点击`命名空间`，然后点击页面右侧的`创建`按钮。
 
-    ![点击创建](../../images/ns01.png)
+    ![点击创建](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/ns01.png)
 
 3. 填写命名空间的名称，配置工作空间和标签（可选设置），然后点击`确定`。
 
@@ -31,17 +31,17 @@
 
         - 命名空间创建完成后，仍然可以绑定/解绑工作空间。
 
-    ![填写表单](../../images/ns02.png)
+    ![填写表单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/ns02.png)
 
 4. 点击`确定`，完成命名空间的创建。在命名空间列表右侧，点击 `⋮`，可以从弹出菜单中选择更新、绑定/解绑工作空间、配额管理、删除等更多操作。
 
-    ![更多操作](../../images/ns03.png)
+    ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/ns03.png)
 
 ### YAML 创建
 
 1. 在`集群列表`页面点击目标集群的名称。
 
-    ![集群详情](../../images/crd01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd01.png)
 
 2. 在左侧导航栏点击`命名空间`，然后点击页面右侧的`YAML 创建`按钮。
 

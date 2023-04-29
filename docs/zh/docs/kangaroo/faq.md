@@ -25,13 +25,14 @@
 
 ## 创建的托管仓库状态为不健康
 
-![仓库不健康](images/img.png)
+![仓库不健康](img/img.png)
 
 - A1：用户输入的数据库、Redis、S3 存储等信息有误，导致无法连接，可通过查看日志文件进行排查。现象主要是几个核心服务有 Pod 启动失败，可以通过查看日志进一步确认原因。
 
     ```shell
     kubectl -n kangaroo-lrf04 get pods
     ```
+
     ```none
     NAME                                                         READY   STATUS    RESTARTS   AGE
     trust-node-port-harbor-harbor-chartmuseum-57fdfb9cdc-qznwc   1/1     Running   0          20h
@@ -48,6 +49,7 @@
     ```shell
     kubectl -n kangaroo-lrf04 get harborclusters.goharbor.io
     ```
+
     ```none
     NAME              PUBLIC URL                 STATUS
     trust-node-port   https://10.6.232.5:30010   healthy
@@ -60,10 +62,12 @@
     ```shell
     kubectl -n kangaroo-system get registrysecrets.kangaroo.io
     ```
+
     ```none
     NAME                        AGE
     inte-bz-harbor-1            34d
     ```
+
     ```shell
     kubectl -n kangaroo-system describe registrysecrets.kangaroo.io inte-bz-harbor-1
     ```
@@ -79,7 +83,7 @@
 
 ## 仓库集成后但状态为不健康
 
-![仓库集成不健康](images/img_1.png)
+![仓库集成不健康](img/img_1.png)
 
 首先确认实例是否真的健康，如果实例不健康，则需要排查实例的问题；
 如果实例健康，则通过在 `kpanda-global-cluster` 集群上排查 `registrysecrets.kangaroo.io`
@@ -90,6 +94,7 @@
 ```shell
 kubectl -n kangaroo-system get registrysecrets.kangaroo.io
 ```
+
 ```none
 NAME                     AGE
 trust-test-xjw           34d
@@ -98,6 +103,7 @@ trust-test-xjw           34d
 ```shell
 kubectl -n kangaroo-system get registrysecrets.kangaroo.io trust-test-xjw -o yaml
 ```
+
 ```yaml
 apiVersion: kangaroo.io/v1alpha1
 kind: RegistrySecret
@@ -129,6 +135,7 @@ status:
     ```shell
     kubectl -n default get secret registry-secret
     ```
+
     ```none
     NAME              TYPE                             DATA   AGE
     registry-secret   kubernetes.io/dockerconfigjson   1      78d
@@ -139,6 +146,7 @@ status:
     ```shell
     kubectl get secret registry-secret -o jsonpath='{.data.*}'| base64 -d | jq
     ```
+
     ```none
     {
       "auths": {
@@ -148,9 +156,11 @@ status:
       }
     }
     ```
+
     ```shell
     echo "YWRtaW46SGFyYm9yMTIzNDU=" | base64 -d
     ```
+
     ```none
     admin:Harbor12345
     ```

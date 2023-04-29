@@ -8,7 +8,7 @@
 
 1. 在流水线列表页点击`创建流水线`。
 
-    ![click-create](../../../images/createpipelinbutton.png)
+    ![click-create](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/createpipelinbutton.png)
 
 2. 在弹出的对话框中，选择`模板创建`，点击`确定`。
 

@@ -45,15 +45,15 @@ click modifyns "https://docs.daocloud.io/amamba/user-guide/namespace/namespace/#
 
 1. 使用 admin/folder admin 角色的用户登录 Web 控制台，点击左侧导航栏底部的`全局管理`。
 
-    ![全局管理](../../images/ws01.png)
+    ![全局管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws01.png)
 
-1. 点击左侧导航栏的`工作空间与层级`，点击右上角的`创建工作空间`按钮。
+2. 点击左侧导航栏的`工作空间与层级`，点击右上角的`创建工作空间`按钮。
 
-    ![创建工作空间](../../images/ws02.png)
+    ![创建工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws02.png)
 
-1. 填写工作空间名称、所属文件夹等信息后，点击`确定`，完成创建工作空间。
+3. 填写工作空间名称、所属文件夹等信息后，点击`确定`，完成创建工作空间。
 
-    ![确定](../../images/ws03.png)
+    ![确定](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws03.png)
 
 ## 准备一个集群
 
@@ -65,7 +65,7 @@ click modifyns "https://docs.daocloud.io/amamba/user-guide/namespace/namespace/#
 
     ![容器管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/clusterlist01.png)
 
-1. 点击`创建集群`[创建一个集群](../../../kpanda/user-guide/clusters/create-cluster.md)，或点击`接入集群`[接入一个集群](../../../kpanda/user-guide/clusters/integrate-cluster)。
+1. 点击`创建集群`[创建一个集群](../../../kpanda/user-guide/clusters/create-cluster.md)，或点击`接入集群`[接入一个集群](../../../kpanda/user-guide/clusters/integrate-cluster.md)。
 
 ## 在工作空间添加集群
 

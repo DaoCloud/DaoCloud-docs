@@ -9,7 +9,7 @@ Kafka 内置了参数配置 UI 界面。
 
 1. 在消息队列页面中，点击某个名称。
 
-    ![点击某个名称](../images/view01.png)
+    ![点击某个名称](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/view01.png)
 
 2. 在左侧导航栏，点击`配置参数`。
 
