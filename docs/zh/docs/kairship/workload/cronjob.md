@@ -9,11 +9,11 @@ hide:
 
 在左侧导航栏中，点击`多云工作负载`，进入定时任务页面，点击右上角的`镜像创建`按钮。
 
-![镜像创建](../images/cronjob01.png)
+![镜像创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/cronjob01.png)
 
 在`创建任务`页面中，配置负载的基本信息后，点击`下一步`。
 
-![基本信息](../images/cronjob02.png)
+![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/cronjob02.png)
 
 - 负载名称：最多包含 63 个字符，只能包含小写字母、数字及分隔符（“-”），且必须以小写字母或数字开头及结尾。同一命名空间内同一类型工作负载的名称不得重复，而且负载名称在工作负载创建好之后不可更改。
 - 多云命名空间：选择将新建的任务部署在哪个命名空间，默认使用 default 命名空间。找不到所需的命名空间时可以根据页面提示去创建新的。
@@ -37,11 +37,11 @@ hide:
 
 在`容器配置`页面中，配置负载所在容器的基本信息，可选择配置生命周期、健康检查等信息，然后点击`下一步`。
 
-![容器配置](../images/cronjob03.png)
+![容器配置](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/cronjob03.png)
 
 在`定时任务配置`页面，配置并发策略、定时规则、任务记录、其他配置等信息
 
-![定时任务配置](../images/cronjob04.png)
+![定时任务配置](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/cronjob04.png)
 
 - 并发策略：是否允许多个 Job 任务并行执行。
 
@@ -63,13 +63,13 @@ hide:
 
 在`高级配置`页面中，可以配置任务设置和标签与注解。
 
-![高级配置](../images/cronjob05.png)
+![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/cronjob05.png)
 
 如果您在创建完成后，无需配置差异化时，则可以直接使用 `确认` 完成多云任务的创建
 
 在`差异化配置`页面中，选择个性化的容器配置、标签和注解后，点击`确定`。
 
-![差异化配置](../images/cronjob06.png)
+![差异化配置](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/cronjob06.png)
 
 您可以在左侧列表区域增加对应的差异化配置项，当您新增一个差异化配置项之后，需要指定对应的集群。
 集群的可选择范围仅为刚开始选择的集群，被选择的集群则会使用指定的差异化配置；未被指定的集群仍旧使用默认配置

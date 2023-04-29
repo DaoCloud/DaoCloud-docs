@@ -15,6 +15,10 @@
     KubeDay 是 CNCF 主办的地区性云原生系列活动，主要针对社区发展活跃和对 Kubernetes 等云原生技术感兴趣的地区。
     继去年 12 月在日本拉开帷幕后，KubeDay 第二站来到以色列特拉维夫。演讲提案申请现已开放（截至 4.30），演讲者需亲临现场。
 
+- [6.18 2023 年上海 KubeCon + CloudNativeCon 或 开源峰会开启议题征集（6.18 截止）](https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/program/call-for-proposals/)
+  
+    本次峰会将于 9.25-9.27 在上海举行，提交的议题内容可围绕软件开发生命周期、平台工程、运维+性能、安全性、数据+处理+存储、网络+边缘+电信、服务网格等话题，议题类型包括四类：单人演讲（30 min）、双人演讲（30 min）、小组讨论（30 min，3 至 5 名演讲者）、教程（90 min）。
+
 - [6.6 ICT 中国·2023 高层论坛-云原生产业高峰论坛将于 6 月 6 日在北京拉开帷幕](https://mp.weixin.qq.com/s/FTOBYjCZxYMoOM8WJUz8mQ)
   
     云原生产业高峰论坛由工业和信息化部主办，将邀请云原生领域领军智库、政府领导、院士专家、企业高层等重量级嘉宾共话云原生生态，共探云原生未来。
@@ -24,6 +28,10 @@
     本次 KCD 北京站活动由 CNCF 和来自「DaoCloud 道客」、Microsoft、Tetrate 的技术爱好者联合发起，包括闪电演讲（10min）、单人/双人演讲（40min）和圆桌讨论（30min）等三种分享形式。议题内容可包括 eBPF、WASM、Multi Cluster、可观测性、软件供应链安全、Serverless、DevOps、HPC、Streaming 等热点领域。
 
 ### 2023-05
+
+- [5.31 中国信通院启动大规模边缘容器集群服务质量首批评测（5.31 截止）](https://mp.weixin.qq.com/s/8TjJBIFp46vscKBMILZBUg)
+  
+    评测体系包括节点管理指标体系和应用分发指标体系。节点管理重点考察集群节点的管理性能、稳定性、效率等指标；应用分发重点考察应用副本创建不同阶段的功能和性能，以及对应用的综合管理能力。
 
 - [5.30 《云管理产品与服务图谱（2023）》正式启动征集工作（5.30 申请截止）](https://mp.weixin.qq.com/s/gXGxUqTdO46US74gYrYEPw)
   
@@ -47,6 +55,10 @@
 - [5.16 中国信通院启动“云原生产品目录 2.0”征集（5.16 截止）](https://mp.weixin.qq.com/s/xDq9APQec-h-tSx8-JICIw)
   
     “云原生产品目录 2.0”的征集范围包括基础设施类、云原生中间件类、云原生数据类、云原生安全类、云原生融合服务类等。评选结果将于 6 月 6 日在ICT 中国·高层论坛-云原生产业高峰论坛。
+
+- [5.15 KubeSphere 社区开启 5.27 云原生 Meetup 杭州站议题征集（5.15 截止）](https://mp.weixin.qq.com/s/C3IvXg_zNxUtNK2_3cZRzw)
+  
+    本次云原生 Meetup 由 KubeSphere 社区与极狐 GitLab 共同组织，暂定于 5.27 下午举行，包括闪电演讲（10 min）、单人/双人演讲（40 min）两种形式。
 
 - [5.12 2023 可信边缘计算创新与实践案例暨产业全景图征集启动（5.12 申报截止）](https://mp.weixin.qq.com/s/KM2hnAoJ1KXJ6J0eovPzcw)
   
@@ -264,7 +276,7 @@
     此外，GitOps 项目 Argo、服务网格技术 Envoy、Cilium和 Istio 等也排名前列。
     [2022 年 CNCF 项目排名](https://docs.google.com/spreadsheets/d/1NifFdE45BlscO6j7vlDspccQ-i9Ksgip6yx2bmhmCCs/edit#gid=976519966)如下图（气泡面积与作者的数量成正比，y 轴为 pr 和 issue 的数量、x 轴是 commit 的数量）：
 
-    ![CNCF](./images/CNCF-Projects.png)
+    ![CNCF](https://docs.daocloud.io/daocloud-docs-images/docs/native/images/CNCF-Projects.png)
 
 - [1 月 9 日 中国信通院发布 2022 中国 Serverless 用户调查报告](https://mp.weixin.qq.com/s/qpWr5o3GTynHXhexHidx3Q)
   
@@ -318,7 +330,7 @@
     G2 根据 G2 上的评论以及从在线资料和社交平台上收集的数据，对厂商及其产品进行评估，形成如下的 G2 Grid。
     其中，X 轴代表客户满意度，Y 轴代表市场份额。
     取得领导者地位的容器管理平台产品为：AWS Fargate、Amazon ECS、Amazon EKS 和 Mirantis Kubernetes Engine。
-    ![G2](./images/G2.png)
+    ![G2](https://docs.daocloud.io/daocloud-docs-images/docs/native/images/G2.png)
 
 - [Kasten 上线免费的云原生学习网站 KubeCampus.io](https://www.kasten.io/kubernetes/resources/blog/kubecon-detroit-recap-and-introducing-kubecampus)
   
@@ -350,7 +362,7 @@
     其中，容器平台的市场规模为 12.6 亿元，占私有云系统平台规模的 24.5 %。
     2021 私有云系统平台厂商竞争力象限分析图如下：
 
-    ![private](./images/private.png)
+    ![private](https://docs.daocloud.io/daocloud-docs-images/docs/native/images/private.png)
 
 - [12 月 14 日第二届「云原生十大技术创新/先锋实践」评选正式启动](https://mp.weixin.qq.com/s/UZ_05I06VCJYN5MKLwO7IA)
 
@@ -414,7 +426,7 @@
   
     沙利文根据业务增长和创新指标评价评选出 15 家头部厂商，包括 Aqua Security、Check Point、Lacework、 Sysdig 等。其中，Aqua 被评选为投资或合作首选的标杆企业。
 
-    ![protection](./images/protection.png)
+    ![protection](https://docs.daocloud.io/daocloud-docs-images/docs/native/images/protection.png)
 
 - [11 月 29 日 KubeSphere 社区推出播客节目 KubeSphere Talk](https://mp.weixin.qq.com/s/Ud__u2YaUkdSx5yi7dKDHw)
   
@@ -523,7 +535,7 @@
     Gartner CIPS 魔力象限关注基础设施即服务（IaaS）和集成平台即服务（PaaS）两类产品。
     今年的报告显示，AWS、Azure 和 Google Cloud 继续保持领先地位，入选领导者象限。而国内方面，阿里云、华为云和腾讯云入选，其中，华为云是首次入选。
 
-    ![quadrant](./images/Quadrant.png)
+    ![quadrant](https://docs.daocloud.io/daocloud-docs-images/docs/native/images/Quadrant.png)
 
 - [10 月 17 日艾瑞咨询发布研究报告《2022 年基础云服务行业发展洞察》](https://mp.weixin.qq.com/s/FGc2yFUfflUuf13Z0NAzvQ)
 
@@ -599,7 +611,7 @@
     2022 年新兴技术趋势主要专注于三个主题：发展/扩展沉浸式体验、加速人工智能自动化以及优化技术人员交付。
     其中，优化技术人员交付部分，OpenTelemetry 等在未来 2-5 年将对商业及社会产生显著影响，而数据可观测性、可观测性驱动开发、行业云平台等需 5-10 年才会得到广泛采用。
 
-    ![hype](./images/hype.png)
+    ![hype](https://docs.daocloud.io/daocloud-docs-images/docs/native/images/hype.png)
 
 - [9 月 15-17 日国际开源节，云原生成为焦点](https://mp.weixin.qq.com/s/wrEzT5xXGCvijZ-sK4v21A)
 
@@ -617,7 +629,7 @@
     GigaOm 从专门基础设施层、sidecar 实践、控制平面配置以及控制平面遥测四个维度，对主流服务网格进行了评测。
     其中，Gloo Mesh、greymatter.io、Kong Mesh 和 Linkerd 被评定为表现优异者。值得关注是 Cilium Service Mesh，是首批既可以利用 sidecar 模式也可以选择无 sidecar 模式的服务网格之一。
 
-    ![radar](./images/mesh.png)
+    ![radar](https://docs.daocloud.io/daocloud-docs-images/docs/native/images/mesh.png)
 
 - [9 月 13-16 日 Linux 基金会公布 Open Source Summit 欧洲 2022 会议日程](https://linuxfoundation.org/featured/the-linux-foundation-announces-conference-schedule-for-open-source-summit-europe-2022/)
 
@@ -651,7 +663,7 @@
     2022 年云平台服务技术成熟度曲线显示，云原生技术当前处在期望膨胀期，预计未来 5-10 年进入生产成熟期；
     容器管理技术处在泡沫破裂低谷期，2-5 年进入成熟期；集成平台即服务（iPaaS）和低代码应用平台（LCAP）技术将在两年内达到生产成熟期（技术的现实意义已得到证明和接受）。
 
-    ![Gartner](./images/gartner.jpg)
+    ![Gartner](https://docs.daocloud.io/daocloud-docs-images/docs/native/images/gartner.jpg)
 
 - [8 月 27 日 KubeSphere 社区云原生技术交流 Meetup 杭州站报名开启](https://mp.weixin.qq.com/s/TNqG6tRxUwRrA-NoP26lRg)
 
@@ -741,7 +753,7 @@
     这一组的共同点是将存储平台与 Kubernetes 发行版和集群管理产品结合起来，为 Kubernetes 用户提供一个高度集成的整体方案。
     而左下象限的厂商更多面向特定功能、部署模式或个性化使用案例。
 
-    ![radar](./images/storage.jpg)
+    ![radar](https://docs.daocloud.io/daocloud-docs-images/docs/native/images/storage.jpg)
 
 - [7 月 27 日阿里云发布《云原生架构白皮书 2022 版》](https://mp.weixin.qq.com/s/G8TAkeezVQz22bevr1zdKw)
 
@@ -899,7 +911,7 @@
     云监控 SaaS 平台厂商 Datadog 也凭借其平台强大的产品组合排名大幅上升。
     Cisco（AppDynamics）和 IBM (Instana）的排名下降较明显。此外，阿里云凭借其 APM 的核心产品——应用实时监控服务（ARMS）成为国内唯一入选的厂商。
 
-    ![APM Quadrant](./images/Magic.png)
+    ![APM Quadrant](https://docs.daocloud.io/daocloud-docs-images/docs/native/images/Magic.png)
 
 - [6 月 6 日 Kubernetes 成本管理公司 Kubecost 联合 AWS、谷歌等向 CNCF 提交成本管理开源项目—— OpenCost](https://thenewstack.io/opencost-open-source-collaboration-on-kubernetes-cost-standards/)
 

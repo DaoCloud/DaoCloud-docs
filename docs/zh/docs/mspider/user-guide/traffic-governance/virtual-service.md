@@ -27,19 +27,19 @@
 
 1. 在左侧导航栏点击`流量治理` -> `虚拟服务`，点击右上角的`创建`按钮。
 
-    ![创建](../../images/virtualserv01.png)
+    ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/virtualserv01.png)
 
 1. 在`创建虚拟服务`界面中，先进行基本配置后点击`下一步`。
 
-    ![创建虚拟服务](../../images/virtualserv02.png)
+    ![创建虚拟服务](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/virtualserv02.png)
 
 1. 按屏幕提示分别配置 HTTP 路由、TLS 路由和 TCP 路由后，点击`确定`。
 
-    ![路由配置](../../images/virtualserv03.png)
+    ![路由配置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/virtualserv03.png)
 
 1. 返回虚拟服务列表，屏幕提示创建成功。在虚拟服务列表右侧，点击操作一列的 `⋮`，可通过弹出菜单进行更多操作。
 
-    ![更多操作](../../images/virtualserv05.png)
+    ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/virtualserv05.png)
 
 ## YAML 创建
 

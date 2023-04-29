@@ -11,7 +11,7 @@ Longhorn 与 DCE 可以结合使用部署高可用性持久化块存储。
     - 控制平面：Longhorn Manager 以DaemonSet 部署
     - 数据平面：Longhorn Engine 是 storage controller 可以有多个 replicas
 
-    ![架构图](../images/long-archi.png)
+    ![架构图](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/long-archi.png)
 
 1. Longhorn 存储卷
 
@@ -21,7 +21,7 @@ Longhorn 与 DCE 可以结合使用部署高可用性持久化块存储。
     - 默认的存储卷的 replica 数量可以在 settings 设置. 当存储卷被挂载以后 replica 数量可以通过UI改变。
     - Longhorn 是一个 crash-consistent 块存储方案，在创建快照 snapshot 之前会自动先同步 sync 命令
 
-    ![存储卷](../images/long-volume.png)
+    ![存储卷](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/long-volume.png)
 
 1. 数据备份及外部二级存储
 
@@ -31,7 +31,7 @@ Longhorn 与 DCE 可以结合使用部署高可用性持久化块存储。
     - 支持连续重复快照及备份。
     - 支持 CSI 存储卷的 Clone
 
-    ![数据备份](../images/long-backup.png)
+    ![数据备份](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/long-backup.png)
 
 1. 高可用 High Availability
 

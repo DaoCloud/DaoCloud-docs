@@ -8,7 +8,7 @@ CSI 旨在定义行业标准，该标准将使支持 CSI 的存储提供商能�
 
 下图描述了一种与 CSI 集成的高级 Kubernetes 原型。
 
-![CSI 接口](../images/csi.png)
+![CSI 接口](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/csi.png)
 
 - 引入了三个新的外部组件以解耦 Kubernetes 和存储提供程序逻辑
 - 蓝色箭头表示针对 API 服务器进行调用的常规方法

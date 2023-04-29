@@ -42,4 +42,4 @@
 
     更多中间件 OpenAPI 文档正在制作中。
 
-![what is midware](images/middleware02.jpeg)
+![what is midware](https://docs.daocloud.io/daocloud-docs-images/docs/openapi/images/middleware02.jpeg)

@@ -33,11 +33,11 @@ root 用户拥有所有资源的所有操作权限。
 
 1. 在 DCE 5.0 的 MinIO 实例详情页面，点击访问地址，使用右侧的用户名和密码即可登录该实例的 Console 控制台。
 
-    ![登录 Console](../images/insight03.png)
+    ![登录 Console](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/insight03.png)
 
 2. 登录 Console 控制台之后根据下图所示，创建用户。
 
-    ![通过 Console 创建普通用户](../images/miniouser01.png)
+    ![通过 Console 创建普通用户](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/miniouser01.png)
 
 #### mc 创建
 
@@ -99,7 +99,7 @@ type TenantSpec struct {
 
 #### Console 创建
 
-![通过 console 创建 service account](../images/miniouser02.png)
+![通过 console 创建 service account](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/miniouser02.png)
 
 #### mc 命令创建
 

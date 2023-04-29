@@ -36,19 +36,19 @@
 
 2. 在集群详情页面，点击左侧导航栏的`工作负载` -> `守护进程`，然后点击页面右上角的`镜像创建`按钮。
 
-    ![工作负载](../../images/daemon01.png)
+    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/daemon01.png)
 
 3. 依次填写[基本信息](create-daemonset.md#_3)、[容器配置](create-daemonset.md#_4)、[服务配置](create-daemonset.md#_5)、[高级配置](create-daemonset.md#_6)后，在页面右下角点击`确定`完成创建。
 
     系统将自动返回`守护进程`列表。点击列表右侧的 `︙`，可以对守护进程执行执行更新、删除、重启等操作。
 
-    ![操作菜单](../../images/daemon05.png)
+    ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/daemon05.png)
 
 ### 基本信息
 
 在`创建守护进程`页面中，根据下表输入信息后，点击`下一步`。
 
-![基本信息](../../images/daemon02.png)
+![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/daemon02.png)
 
 - 负载名称：最多包含 63 个字符，只能包含小写字母、数字及分隔符（“-”），且必须以小写字母或数字开头及结尾。同一命名空间内同一类型工作负载的名称不得重复，而且负载名称在工作负载创建好之后不可更改。
 - 命名空间：选择将新建的守护进程部署在哪个命名空间，默认使用 default 命名空间。找不到所需的命名空间时可以根据页面提示去[创建新的命名空间](../namespaces/createns.md)。
@@ -62,7 +62,7 @@
 
 === "基本信息（必填）"
 
-    ![基本信息](../../images/daemon06.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/daemon06.png)
 
     在配置容器相关参数时，必须正确填写容器的名称、镜像参数，否则将无法进入下一步。参考以下要求填写配置后，点击`确认`。
 
@@ -111,7 +111,7 @@
 
 1. 点击`创建服务`按钮。
 
-    ![服务配置](../../images/daemon03.png)
+    ![服务配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/daemon03.png)
 
 2. 配置服务参数，详情请参考[创建服务](../services-routes/create-services.md)。
 
@@ -181,11 +181,11 @@
 
 2. 在集群详情页面，点击左侧导航栏的`工作负载` -> `守护进程`，然后点击页面右上角的 `YAML 创建`按钮。
 
-    ![工作负载](../../images/daemon07.png)
+    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/daemon07.png)
 
 3. 输入或粘贴事先准备好的 YAML 文件，点击`确定`即可完成创建。
 
-    ![工作负载](../../images/daemon08.png)
+    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/daemon08.png)
 
 ??? note "点击查看创建守护进程的 YAML 示例"
 

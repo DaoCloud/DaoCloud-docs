@@ -333,7 +333,7 @@ chmod +x ./dce5-installer
     - 请在公有云配置中，在该主机的的防火墙规则中，允许 32088 端口的进出
     - 如上的 32088 端口是 `kubectl -n istio-system get svc istio-ingressgateway` 的 NodePort 端口
 
-    ![image](./images/firewall.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/firewall.png)
 
 ### 执行安装
 
@@ -353,11 +353,11 @@ chmod +x ./dce5-installer
 
 1. 在浏览器中打开登录界面。
 
-    ![登录](./images/login.png)
+    ![登录](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/login.png)
 
 1. 以用户名 admin 密码 changeme 登录 DCE 5.0。
 
-    ![成功登录](./images/firstscreen.png)
+    ![成功登录](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/firstscreen.png)
 
 [下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

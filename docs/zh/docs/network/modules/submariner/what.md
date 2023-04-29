@@ -11,7 +11,7 @@ Submariner 是一款开源的多集群网络解决方案，它以一种安全的
 
 **架构图** 如下:
 
-![submariner](../../images/submariner.png)
+![submariner](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner.png)
 
 它包括下面几个 **重要组件** :
 

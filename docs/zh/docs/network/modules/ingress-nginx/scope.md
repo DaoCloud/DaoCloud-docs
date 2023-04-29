@@ -88,11 +88,11 @@ spec:
 
 如下示例，创建的 Ingress-nginx 为 Default 独享：
 
-![scope01](../../images/scope01.jpg)
+![scope01](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/scope01.jpg)
 
 对应的 `value.yaml` 中的配置信息：
 
-![scope02](../../images/scope02.jpg)
+![scope02](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/scope02.jpg)
 
 ## 如何部署租户级 Ingress 实例？
 
@@ -100,11 +100,11 @@ spec:
 
 部署 Ingress-Ngnix 时 指定 在 `Namespace Selector` 中输入 `kubernetes.io/metadata.name :workspace01`,创建后的 Ingress 实例为 工作空间 `workspace01` 独享。
 
-![工作空间Ingress](../../images/workspaceingress.jpg)
+![工作空间Ingress](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/workspaceingress.jpg)
 
 对应的 `value.yaml` 中的配置信息：
 
-![workspaceingress02](../../images/workspaceingress02.jpg)
+![workspaceingress02](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/workspaceingress02.jpg)
 
 Ingress 实例部署后，可在对应的命名空间中[创建 Ingress 规则](../../../kpanda/user-guide/services-routes/create-ingress.md)，并选择对应实例的 Ingress Class 进行使用。
 

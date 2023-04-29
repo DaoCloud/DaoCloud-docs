@@ -34,23 +34,23 @@ DaoCloud Enterprise 5.0 支持 Pod 资源基于指标进行弹性伸缩（Horizo
 
 1. 点击左侧导航栏上的`集群列表`进入集群列表页面。点击一个集群名称，进入`集群详情`页面。
 
-    ![集群详情](../../images/deploy01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
 2. 在集群详情页面，点击左侧导航栏的`工作负载`进入工作负载列表后，点击一个负载名称，进入`工作负载详情`页面。
 
-    ![工作负载](../../images/createScale.png)
+    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale.png)
 
 3. 点击`弹性伸缩`页签，查看当前集群的弹性伸缩配置情况。
 
-    ![弹性伸缩](../../images/createScale02.png)
+    ![弹性伸缩](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale02.png)
 
 4. 确认集群已[安装了 `metrics-server` 插件](install-metrics-server.md)，且插件运行状态为正常后，即可点击`新建伸缩`按钮。
 
-    ![新建伸缩](../../images/createScale07.png)
+    ![新建伸缩](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale07.png)
 
 5. 创建自定义指标弹性伸缩策略参数。
 
-    ![工作负载](../../images/createScale08.png)
+    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale08.png)
 
     - 策略名称：输入弹性伸缩策略的名称，请注意名称最长 63 个字符，只能包含小写字母、数字及分隔符（“-”），且必须以小写字母或数字开头及结尾，例如 hpa-my-dep。
     - 命名空间：负载所在的命名空间。
@@ -61,7 +61,7 @@ DaoCloud Enterprise 5.0 支持 Pod 资源基于指标进行弹性伸缩（Horizo
 
 6. 完成参数配置后，点击`确定`按钮，自动返回弹性伸缩详情页面。点击列表右侧的 `⋮`，可以执行编辑、删除操作，还可以查看相关事件。
 
-    ![工作负载](../../images/createScale09.png)
+    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale09.png)
 
 ## 自定义指标弹性伸缩策略
 
@@ -87,15 +87,15 @@ DaoCloud Enterprise 5.0 支持 Pod 资源基于指标进行弹性伸缩（Horizo
 
 1. 点击左侧导航栏上的`集群列表`进入集群列表页面。点击一个集群名称，进入`集群详情`页面。
 
-    ![集群详情](../../images/deploy01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
 2. 在集群详情页面，点击左侧导航栏的`工作负载`进入工作负载列表后，点击一个负载名称，进入`工作负载详情`页面。
 
-    ![工作负载](../../images/createScale.png)
+    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale.png)
 
 3. 点击`弹性伸缩`页签，查看当前集群的弹性伸缩配置情况。
 
-    ![弹性伸缩配置](../../images/createScale02.png)
+    ![弹性伸缩配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale02.png)
 
 4. 确认集群已[安装了 `metrics-server`](install-metrics-server.md)、Insight、Prometheus-adapter 插件且插件运行状态为正常后，即可点击`新建伸缩`按钮。
 
@@ -103,11 +103,11 @@ DaoCloud Enterprise 5.0 支持 Pod 资源基于指标进行弹性伸缩（Horizo
 
         如果相关插件未安装或插件处于异常状态，您在页面上将无法看见创建自定义指标弹性伸缩入口。
 
-    ![新建伸缩](../../images/createScale07.png)
+    ![新建伸缩](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale07.png)
 
 5. 创建自定义指标弹性伸缩策略参数。
 
-    ![伸缩策略参数](../../images/createScale10.png)
+    ![伸缩策略参数](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale10.png)
 
     - 策略名称：输入弹性伸缩策略的名称，请注意名称最长 63 个字符，只能包含小写字母、数字及分隔符（“-”），且必须以小写字母或数字开头及结尾，例如 hpa-my-dep。
     - 命名空间：负载所在的命名空间。

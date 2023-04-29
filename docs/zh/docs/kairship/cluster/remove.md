@@ -7,11 +7,11 @@ hide:
 
 如果想要移除一个集群，可以在工作集群列表中，点击右侧的 `…` 按钮，在弹出菜单中选择`移除`。
 
-![removal](../images/removecl01.png)
+![removal](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/removecl01.png)
 
 在弹窗中输入集群的名称，确认无误后点击`确认移除`。
 
-![removal](../images/removecl02.png)
+![removal](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/removecl02.png)
 
 !!! note
 

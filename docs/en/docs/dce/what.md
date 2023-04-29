@@ -26,7 +26,7 @@ DCE 5.0 natively supports the DevOps development and operation mode, which can r
 
 </div>
 
-![modules](../images/dce-modules04.jpg)
+![modules](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/dce-modules04.jpg)
 
 In the past eight years, DaoCloud has invested huge to explore and develop a cloud-native operating system with custom and scalable modules to facilitate your business digitalization. You can use each module like a LEGO brick, with zero downtime while upgrading any module. DCE 5.0 is also easy to integrate with hundreds of cloud-native ecological plugins, so you can simply customize solutions for different scenarios. Things go better with such a kind of modular style to grow day by day.
 
@@ -38,7 +38,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [Multi-cloud Orchestration](../kairship/intro/whatiskairship.md), [network](../network/intro/what-is-net.md), [Storage](../storage/intro.md), cloud to edge continuum, Heterogeneous architecture
 
-    ![multi-cloud](../images/01multi-cloud.jpg)
+    ![multi-cloud](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/01multi-cloud.jpg)
 
 === "Middleware Service"
 
@@ -48,7 +48,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [network](../network/intro/what-is-net.md), [Storage](../storage/intro.md), [Middleware](../middleware/midware.md)
 
-    ![data](../images/02data.jpg)
+    ![data](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/02data.jpg)
 
 === "Microservice Governance"
 
@@ -67,7 +67,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [Microservice Engine](../skoala/intro/features.md), [Service Mesh](../mspider/intro/what.md), [Insight](../insight/intro/WhatisInsight.md), [App Workbench](../amamba/intro/WhatisAmamba.md), [Network](../network/intro/what-is-net.md), Storage
 
-    ![microservie engine](../images/03msgov.jpg)
+    ![microservie engine](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/03msgov.jpg)
 
 === "Insight"
 
@@ -77,7 +77,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [Insight](../insight/intro/WhatisInsight.md), [Network](../network/intro/what-is-net.md), Storage
 
-    ![Observability](../images/04insight.jpg)
+    ![Observability](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/04insight.jpg)
 
 === "App Store"
 
@@ -95,7 +95,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [workbench](../amamba/intro/WhatisAmamba.md), [Container Registry](../kangaroo/intro.md), [Network](../network/intro/what-is-net.md), Storage
 
-    ![app delivery](../images/06appdeliv.jpg)
+    ![app delivery](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/06appdeliv.jpg)
 
 === "Cloud Native Base"
 
@@ -123,7 +123,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [Container lifecycle manager](../community/kubean.md), [Middware](../middleware/midware.md), [Network](../network/intro/what-is-net.md), Storage
 
-    ![Heterogeneous](../images/08xinchuan.jpg)
+    ![Heterogeneous](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/08xinchuan.jpg)
 
 === "Cloud to edge continuum"
 
@@ -133,7 +133,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
     **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [Container lifecycle manager](../community/kubean.md), [Network](../network/intro/what-is-net.md), Storage, Edge nodes, clusters in a weak network
 
-    ![Cloud to edge continuum](../images/09cloud-edge.jpg)
+    ![Cloud to edge continuum](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/09cloud-edge.jpg)
 
 Just like Lego bricks, it combines dozens of the best open source technologies into a platform. After many dialectical selection, adaptation and running-in, coding debugging, and massive testing, a sword is sharpened in ten years. The new generation of containerized platforms can meet the needs of various scenarios for enterprises migrating to the cloud.
 

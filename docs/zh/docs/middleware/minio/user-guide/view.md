@@ -21,4 +21,4 @@ hide:
     - 可以查看或创建告警规则
     - 点击容器组名称可以跳转到容器管理模块查看该容器组的详细情况
 
-        ![查看](../images/view022.png)
+        ![查看](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/view022.png)

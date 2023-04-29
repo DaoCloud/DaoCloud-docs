@@ -11,17 +11,17 @@ Grafana 是一跨平台的开源的可视化分析工具。可观测性 Insight 
 
 1. 在左侧导航栏选择`仪表盘`。
 
-    ![dashboard](../../images/dashboard01.png)
+    ![dashboard](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/dashboard01.png)
 
 2. 以 `Insight 概览` 为例，执行以下步骤，设置相关参数，查看集群指标。
 
     在页面左上角处，选择集群，查看选中集群中的资源使用情况。
 
-    ![dashboard](../../images/dashboard02.png)
+    ![dashboard](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/dashboard02.png)
 
 3. 点击标题 `Insight 概览` 区域，可切换仪表盘。
 
-    ![dashboard](../../images/dashboard03.png)
+    ![dashboard](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/dashboard03.png)
 
 !!! note
 

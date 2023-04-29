@@ -30,7 +30,7 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 
 - 在 RabbitMQ Management Web UI 页面查看。
 
-    ![查看](../images/migrate01.png)
+    ![查看](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate01.png)
 
 - 调用 API 查看
 
@@ -47,7 +47,7 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 
 - 在 Overview 视图中，消费消息数（Ready）以及未确定的消息数（Unacked）都为 0，说明消费完成。
 
-    ![消息数为 0](../images/migrate02.png)
+    ![消息数为 0](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate02.png)
 
 ### 方案二
 
@@ -57,7 +57,7 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 
 `rabbitmq-cluster-a` 和 `rabbitmq-cluster-b` 均需要开启 shovel 插件。
 
-![开启插件](../images/migrate03.png)
+![开启插件](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate03.png)
 
 参数说明：
 
@@ -76,15 +76,15 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 
 #### 迁移前消息数量
 
-![迁移前消息](../images/migrate04.png)
+![迁移前消息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate04.png)
 
 #### 配置 shovel 信息
 
-![配置 shovel](../images/migrate05.png)
+![配置 shovel](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate05.png)
 
 #### shovel 运行状态
 
-![运行状态](../images/migrate06.png)
+![运行状态](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate06.png)
 
 当 shovel 状态为“running”时，表示迁移开始。等数据迁移完成后，将生产端、消费端切换至 `rabbitmq-cluster-b` 集群中，完成迁移过程。
 
@@ -92,8 +92,8 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 
 - rabbitmq-cluster-a 集群消息情况
 
-    ![集群消息](../images/migrate07.png)
+    ![集群消息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate07.png)
 
 - rabbitmq-cluster-b 集群消息情况
 
-    ![集群消息](../images/migrate08.png)
+    ![集群消息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate08.png)

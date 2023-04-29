@@ -63,18 +63,18 @@
 
 1. 在集群列表页面点击集群名称，然后在左侧导航栏点击`命名空间`。
 
-    ![命名空间](../../images/exclusive01.png)
+    ![命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive01.png)
 
 2. 点击命名空间名称，然后点击`独享节点` 页签，在下方右侧点击`添加节点`。
 
-    ![命名空间](../../images/exclusive02.png)
+    ![命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive02.png)
 
 3. 在页面左侧选择让该命名空间独享哪些节点，在右侧可以清空或删除某个已选节点，最后在底部点击`确定`。
 
-    ![命名空间](../../images/exclusive03.png)
+    ![命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive03.png)
 
 4. 可以在列表中查看此命名空间的已有的独享节点，在节点右侧可以选择`取消独享`。
 
     > 取消独享之后，其他命名空间下的 Pod 也可以被调度到该节点上。
 
-    ![命名空间](../../images/exclusive04.png)
+    ![命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive04.png)

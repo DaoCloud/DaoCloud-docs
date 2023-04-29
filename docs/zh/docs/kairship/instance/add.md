@@ -11,7 +11,7 @@ DaoCloud 基于 Karmada 提供强大的多云模块的多实例管理能力，�
 
 1. 在多云实例列表中，点击右上角的`添加多云实例`。
 
-    ![add](../images/add01.png)
+    ![add](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/add01.png)
 
 2. 在`添加多云实例`窗口中，需要填写名称、别名、下拉选择管理面集群、填写标签注解。
 
@@ -19,7 +19,7 @@ DaoCloud 基于 Karmada 提供强大的多云模块的多实例管理能力，�
 
         选择安装多云实例的管理面集群时，所有从容器管理平台接入的集群均可以作为管理面集群，建议使用运行正常并且安装了存储卷声明（PVC）的集群，否则存在安装失败的风险。
 
-    ![Management](../images/instance-guanli.png)
+    ![Management](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/instance-guanli.png)
 
 3. 返回多云实例列表，屏幕右上角提示创建成功，新创建的实例默认位于列表第一项。
 

@@ -2,6 +2,20 @@
 
 本页列出 Elasticsearch 索引服务的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023-04-27
+
+### v0.5.1
+
+#### 新功能
+
+- **新增** `mcamel-elasticsearch` 详情页面展示相关的事件
+- **新增** `mcamel-elasticsearch` 支持自定义角色
+
+#### 优化
+
+- **优化** `mcamel-elasticsearch` 调度策略增加滑动按钮
+- **修复** `mcamel-elasticsearch` 在纳管集群时可能会中断重试的问题
+
 ## 2023-03-28
 
 ### v0.6.0

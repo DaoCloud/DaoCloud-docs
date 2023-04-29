@@ -5,9 +5,9 @@
 
 登录 DCE 5.0，在右上角的下拉菜单中找到`个人中心`，可以在`访问密钥`页面管理账号的访问密钥。
 
-![img](../../images/platform02.png)
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/platform02.png)
 
-![img](../../images/platform03.png)
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/platform03.png)
 
 > 访问密钥信息仅显示一次。如果您忘记了访问密钥信息，您需要重新创建新的访问密钥。
 

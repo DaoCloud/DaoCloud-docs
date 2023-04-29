@@ -9,7 +9,7 @@ RabbitMQ 适用的场景广泛，本节列觉了几个典型场景。
 引入消息队列后，用户的响应时间就等于写入数据库的时间 + 写入消息队列的时间（这个可以忽略不计）。
 引入消息队列后处理后，响应时间是串行的 3 倍，是并行的 2 倍。
 
-![异步处理](../images/scenario01.png)
+![异步处理](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/scenario01.png)
 
 ## 应用解耦
 
@@ -19,7 +19,7 @@ RabbitMQ 适用的场景广泛，本节列觉了几个典型场景。
 如果使用消息队列（如下图），用户下单后，订单系统完成持久化处理，将消息写入消息队列，返回用户订单下单成功。
 订阅下单的消息，获取下单消息，进行库操作。就算库存系统出现故障，消息队列也能保证消息的可靠投递，不会导致消息丢失。
 
-![应用解耦](../images/scenario02.png)
+![应用解耦](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/scenario02.png)
 
 ## 流量削峰
 
@@ -30,4 +30,4 @@ RabbitMQ 适用的场景广泛，本节列觉了几个典型场景。
 服务器收到用户的请求之后，首先写入消息队列，假如消息队列长度超过最大值，则直接抛弃用户请求或跳转到错误页面。
 秒杀业务根据消息队列中的请求信息，再做后续处理。
 
-![流量削峰](../images/scenario03.png)
+![流量削峰](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/scenario03.png)

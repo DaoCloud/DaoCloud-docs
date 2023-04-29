@@ -6,7 +6,7 @@
 
 登录 DCE 5.0，在右上角的下拉菜单中找到`个人中心`，可以在`平台设置`页面管理账号的访问密钥对。
 
-![平台设置](../../images/platform01.png)
+![平台设置](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/platform01.png)
 
 !!! note
 

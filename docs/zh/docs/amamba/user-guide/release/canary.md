@@ -15,7 +15,7 @@
 
 1. 进入`应用工作台`模块，在左侧导航栏点击 `灰度发布`，然后在页面右上角点击`创建发布任务`->`金丝雀发布`。
 
-    ![进入创建页面](../../images/canary01.png)
+    ![进入创建页面](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/canary01.png)
 
 2. 参考下列要求填写基本信息，然后点击`下一步`。
 
@@ -24,7 +24,7 @@
     - 命名空间：选择发布对象所在的命名空间，且该命名空间中已经部署了开启了`灰度发布`的应用。
     - 无状态负载：选择具体的发布对象。
 
-        ![基本信息](../../images/canary02.png)
+        ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/canary02.png)
 
 3. 参考下列说明配置发布规则。
     - 实例数量：进行灰度发布任务时应用的副本数量。
@@ -37,14 +37,14 @@
 
     - 监控分析：开启后即可利用 Prometheus 的能力进行监控。根据预先定义的监控指标以及采集间隔，在整个发布过程中自动执行监控分析。如果不满足定义的规则，则自动回滚至旧版本，灰度发布失败。
 
-        ![设置发布规则](../../images/canary03.png)
+        ![设置发布规则](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/canary03.png)
 
 4. 在页面底部点击`创建并更新应用`，然后在弹框中设置灰度版本的镜像地址并点击`确定`。
 
     此时原工作负载的副本数会被设置为 0。
 
-    ![填写镜像地址](../../images/canary04.png)
+    ![填写镜像地址](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/canary04.png)
 
 5. 系统自动跳转至灰度发布的任务列表页面，提示`更新版本成功`。
 
-    ![返回列表](../../images/canary05.png)
+    ![返回列表](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/canary05.png)

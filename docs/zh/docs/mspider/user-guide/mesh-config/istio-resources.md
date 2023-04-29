@@ -2,7 +2,7 @@
 
 `Istio 资源管理`页面按资源类型列出了 Istio 的所有资源，为用户提供了各类资源的展示、创建、编辑、删除等能力。
 
-![img](../../images/istio01.png)
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/istio01.png)
 
 ## UI 操作示例
 
@@ -10,11 +10,11 @@
 
 1. 在左侧导航栏中点击`网格配置` -> `Istio 资源管理`，点击右上角的 `YAML 创建`按钮。
 
-    ![img](../../images/istio01.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/istio01.png)
 
 2. 在 YAML 创建页面中，输入正确的 YAML 语句后点击`确定`。
 
-    ![img](../../images/istio02.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/istio02.png)
 
     ```yaml
     apiVersion: telemetry.istio.io/v1alpha1
@@ -37,7 +37,7 @@
 
 3. 返回资源列表，点击操作一列的 `⋮` 按钮，可以从弹出菜单中选择编辑和删除等更多操作。
 
-    ![img](../../images/istio03.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/istio03.png)
 
 ## Istio 资源类型
 

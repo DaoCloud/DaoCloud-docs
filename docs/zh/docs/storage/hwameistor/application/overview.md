@@ -24,7 +24,7 @@ Raid 5 保障，可容忍 1 组磁盘故障。
 
 控制流和数据流彼此独立，保证数据访问的稳定性。
 
-![单节点热备份](../img/ioflow.png)
+![单节点热备份](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/img/ioflow.png)
 
 ### 跨节点热备份
 
@@ -32,16 +32,16 @@ Raid 5 + 主备副本保障。
 
 规划了 HA 专用网络逻辑接口 dce-storage 在节点间同步存储流量。跨节点同步复制数据，保证数据的热备份。
 
-![跨节点热备份](../img/ha.png)
+![跨节点热备份](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/img/ha.png)
 
 ## 数据再平衡
 
 通过数据卷迁移技术实现数据在集群中的均衡放置。在线移动数据到有更多富裕空间的节点上。
 
-![数据再平衡](../img/balance.png)
+![数据再平衡](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/img/balance.png)
 
 ## 数据卷类型变更
 
 为了支持某些特殊场景，允许单副本数据卷变更为多副本，支持跨节点热备份。
 
-![数据卷类型变更](../img/volumechange.png)
+![数据卷类型变更](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/img/volumechange.png)

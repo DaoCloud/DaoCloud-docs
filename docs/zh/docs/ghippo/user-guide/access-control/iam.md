@@ -2,7 +2,7 @@
 
 IAM（Identity and Access Management，用户与访问控制）是全局管理的一个重要模块，您可以通过用户与访问控制模块创建、管理和销毁用户（用户组），并使用系统角色和自定义角色控制其他用户使用 DCE 平台的权限。
 
-![IAM定义](../../images/iam.png)
+![IAM定义](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/iam.png)
 
 ## 优势
 

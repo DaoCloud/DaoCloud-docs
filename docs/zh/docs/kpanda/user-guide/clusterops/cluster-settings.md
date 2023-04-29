@@ -11,8 +11,8 @@ hide:
 
     点击目标集群的名称，在左侧导航栏点击`最近操作`->`集群设置`->`Addon 插件`。
 
-    ![配置gpu](../../images/settings01.png)
+    ![配置gpu](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/settings01.png)
 
 - Helm 操作基础镜像、仓库刷新周期、操作记录保留条数、是否开启集群删除保护（开启后集群将不能直接卸载）
 
-    ![高级配置](../../images/Advanced-Configuration.png)
+    ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/Advanced-Configuration.png)

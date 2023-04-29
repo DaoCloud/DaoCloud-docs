@@ -13,7 +13,7 @@ hide:
 
 1. 在左侧导航栏点击`微服务治理中心`-->`接入注册中心`，然后在页面右上角点击`接入注册中心`。
 
-    ![进入接入注册中心页面](imgs/integrate01.png)
+    ![进入接入注册中心页面](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/integrated/imgs/integrate01.png)
 
 2. 填写配置信息，然后在页面底部点击`确定`。
 
@@ -25,10 +25,10 @@ hide:
 
         - 如果找不到想要添加的网格服务，可以去网格服务模块[创建网格](../../../mspider/user-guide/service-mesh/README.md)。
 
-            ![接入 Mesh/Kubernetes](imgs/integrate03.png)
+            ![接入 Mesh/Kubernetes](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/integrated/imgs/integrate03.png)
 
     - Nacos/Zookeeper/Eureka 注册中心：填写注册中心的名称和地址，点击`接入测试`。
 
         地址栏变灰则说明接入测试成功。对于分布式的高可用注册中心，还可以点击`+ 添加`可以输入多个地址。
 
-        ![接入 Nacos/Zookeeper/Eureka](imgs/integrate02.png)
+        ![接入 Nacos/Zookeeper/Eureka](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/integrated/imgs/integrate02.png)

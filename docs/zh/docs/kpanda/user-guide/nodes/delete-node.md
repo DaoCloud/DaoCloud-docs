@@ -27,8 +27,8 @@
 
 2. 在左侧导航栏点击`节点管理`，找到需要卸载的节点，点击 `ⵗ` 选择`移除节点`。
 
-    ![移除节点](../../images/deletenode01.png)
+    ![移除节点](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deletenode01.png)
 
 3. 输入节点名称,并点击`删除`进行确认。
 
-    ![移除节点](../../images/deletenode02.png)
+    ![移除节点](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deletenode02.png)

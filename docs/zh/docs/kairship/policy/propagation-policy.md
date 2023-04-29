@@ -11,11 +11,11 @@
 
 1. 进入某一个多云实例后，在左侧导航栏中，点击`策略管理` -> `部署策略`->`命名空间级别`，点击右上角的 `YAML 创建`按钮。
 
-    ![命名空间级别部署策略](../images/pp01.png)
+    ![命名空间级别部署策略](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/pp01.png)
 
 2. 在 `YAML 创建`页面中，输入正确的 YAML 语句后，点击`确定`。
 
-    ![yaml创建](../images/pp02.png)
+    ![yaml创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/pp02.png)
 
 3. 返回部署策略列表，新创建的默认位于第一个。点击列表右侧的 `⋮`，可以编辑 YAML 和执行删除操作。
 
@@ -64,13 +64,13 @@ spec:
     - 配置资源：选择多云资源和目标部署集群
     - 部署策略：调度类型、污点容忍度、可以选择是否开启传播约束、支持填写优先级（创建资源时也可以同时创建部署策略，当在本页面也创建了部署策略时，可以根据优先级的高低来判断该资源使用哪个部署策略）
 
-    ![表单创建命名空间级别](../images/pp03.png)
+    ![表单创建命名空间级别](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/pp03.png)
 
-    ![表单创建](../images/pp04.png)
+    ![表单创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/pp04.png)
 
 2. 表单创建集群级别的部署策略，不需要选择命名空间。
 
-    ![表单创建集群级别](../images/pp05.png)
+    ![表单创建集群级别](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/pp05.png)
 
     !!! note
 

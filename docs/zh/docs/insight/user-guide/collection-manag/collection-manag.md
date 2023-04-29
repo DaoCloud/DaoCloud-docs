@@ -11,7 +11,7 @@ hide:
 
 1. 点击左上角的，选择`可观测性`。
 
-    ![一级导航](../../images/collectmanage01.png)
+    ![一级导航](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/collectmanage01.png)
 
 2. 选择左侧导航栏的`采集管理`，查看全部集群采集插件的状态。
 
@@ -20,9 +20,9 @@ hide:
 
 3. 集群接入 `insight-agent` 且处于运行中状态时，点击`集群名称`进入详情。
 
-    ![集群详情](../../images/collectmanage03.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/collectmanage03.png)
 
 
 4. 点击快捷链接跳转到`容器管理` -> `自定义资源`添加服务发现规则。
 
-    ![集群详情](../../images/collectmanage04.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/collectmanage04.png)
