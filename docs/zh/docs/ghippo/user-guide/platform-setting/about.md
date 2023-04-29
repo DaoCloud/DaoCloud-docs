@@ -11,7 +11,7 @@ hide:
 
 1. 使用具有 `Admin` 角色的用户登录 Web 控制台。点击左侧导航栏底部的`全局管理`。
 
-    ![全局管理](../../images/ws01.png)
+    ![全局管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws01.png)
 
 2. 点击`平台设置`，选择`关于平台`，查看产品版本、开源软件声明和技术团队。
 

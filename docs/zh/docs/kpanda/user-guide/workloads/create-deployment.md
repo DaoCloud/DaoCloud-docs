@@ -24,7 +24,7 @@
 
 1. 点击左侧导航栏上的`集群列表`，然后点击目标集群的名称，进入`集群详情`页面。
 
-    ![集群详情](../../images/deploy01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
 2. 在集群详情页面，点击左侧导航栏的`工作负载` -> `无状态负载`，然后点击页面右上角的`镜像创建`按钮。
 
@@ -170,7 +170,7 @@
 
 1. 点击左侧导航栏上的`集群列表`，然后点击目标集群的名称，进入`集群详情`页面。
 
-    ![集群详情](../../images/deploy01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
 2. 在集群详情页面，点击左侧导航栏的`工作负载` -> `无状态负载`，然后点击页面右上角的 `YAML 创建`按钮。
 

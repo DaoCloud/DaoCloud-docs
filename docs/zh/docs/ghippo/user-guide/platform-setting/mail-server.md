@@ -12,7 +12,7 @@ DCE 5.0 会在用户忘记密码时，向用户发送电子邮件以验证电子
 
 1. 使用具有 `admin` 角色的用户登录 Web 控制台。点击左侧导航栏底部的`全局管理`。
 
-    ![全局管理](../../images/ws01.png)
+    ![全局管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws01.png)
 
 1. 点击`平台设置`，选择`邮件服务器设置`。
 

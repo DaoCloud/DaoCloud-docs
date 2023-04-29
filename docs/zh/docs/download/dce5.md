@@ -52,7 +52,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
     - 若有任何疑问，请[提出反馈](https://github.com/DaoCloud/DaoCloud-docs/issues)。
     - 欢迎扫描二维码，与开发者畅快交流：
 
-    ![社区版交流群](../images/assist.png)
+    ![社区版交流群](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
 
 [安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

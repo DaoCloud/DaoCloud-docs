@@ -60,15 +60,15 @@ click createns "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns/#_
 
 1. 使用 admin/folder admin 角色的用户登录 Web 控制台，点击左侧导航栏底部的`全局管理`。
 
-    ![全局管理](../../images/ws01.png)
+    ![全局管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws01.png)
 
 1. 点击左侧导航栏的`工作空间与层级`，点击右上角的`创建工作空间`按钮。
 
-    ![创建工作空间](../../images/ws02.png)
+    ![创建工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws02.png)
 
 1. 填写工作空间名称、所属文件夹等信息后，点击`确定`，完成创建工作空间。
 
-    ![确定](../../images/ws03.png)
+    ![确定](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws03.png)
 
 提示：若平台中已存在创建好的命名空间，点击某个工作空间，在`资源组`页签下，点击`绑定资源`，可以直接绑定命名空间。
 

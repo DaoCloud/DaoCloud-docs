@@ -75,7 +75,7 @@ hide:
 
     虽然一个层级可以包含多个层级或工作空间，但是给定的层级或者工作空间只能有一个父级。
 
-    ![工作空间](../images/workspace.png)
+    ![工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/workspace.png)
 
 5. 审计日志
 

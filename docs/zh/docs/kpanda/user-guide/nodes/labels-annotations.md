@@ -18,7 +18,7 @@ hide:
 
 1. 在`集群列表`页面点击目标集群的名称。
 
-    ![进入集群列表页面](../../images/schedule01.png)
+    ![进入集群列表页面](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/schedule01.png)
 
 2. 在左侧导航栏点击`节点管理`，在节点右侧点击 `ⵗ` 操作图标，点击`修改标签`或`修改注解`。
 

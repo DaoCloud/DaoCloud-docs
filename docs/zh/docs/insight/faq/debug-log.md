@@ -7,11 +7,11 @@
 
 1. 使用 DCE 5.0 平台，进入`可观测性`，选择左侧导航栏的 `仪表盘`。
 
-    ![insight 入口](../images/insight01.png)
+    ![insight 入口](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insight01.png)
 
 2. 点击仪表盘标题`概览`。
 
-    ![概览](../images/insight02.png)
+    ![概览](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insight02.png)
 
 3. 切换到 `insight-system` -> `Fluent Bit` 仪表盘。
 

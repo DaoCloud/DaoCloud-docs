@@ -25,7 +25,7 @@ Helm 仓库是用来存储和发布 Chart 的存储库。Helm 应用模块支持
 
 1. 找到需要引入第三方 Helm 仓库的集群，点击集群名称，进入`集群详情`。
 
-    ![集群详情](../../images/crd01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd01.png)
 
 2. 在左侧导航栏，依次点击 `Helm 应用` -> `Helm 仓库`，进入 Helm 仓库页面。
 
@@ -52,7 +52,7 @@ Helm 仓库是用来存储和发布 Chart 的存储库。Helm 应用模块支持
 
 1. 找到待更新仓库所在的集群，点击集群名称，进入`集群详情`。
 
-    ![集群详情](../../images/crd01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd01.png)
 
 2. 在左侧导航栏，依次点击`Helm 应用` -> `Helm 仓库`，进入 Helm 仓库列表页面。
 
@@ -74,7 +74,7 @@ Helm 仓库是用来存储和发布 Chart 的存储库。Helm 应用模块支持
 
 1. 找到待删除仓库所在的集群，点击集群名称，进入`集群详情`。
 
-    ![集群详情](../../images/crd01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd01.png)
 
 2. 在左侧导航栏，依次点击`Helm 应用` -> `Helm 仓库`，进入 Helm 仓库列表页面。
 

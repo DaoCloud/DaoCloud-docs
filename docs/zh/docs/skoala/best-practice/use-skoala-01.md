@@ -113,7 +113,7 @@
 
 本次实践采用传统微服务治理，即开启 Sentinel 治理插件。如需了解详细步骤，可参考[启用 Sentinel 治理插件](../registry/managed/plugins/sentinel.md)。
 
-![image](../registry/managed/plugins/imgs/plugincenter01.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/plugins/imgs/plugincenter01.png)
 
 ## 配置对应的治理规则
 

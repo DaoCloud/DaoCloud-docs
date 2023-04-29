@@ -10,7 +10,7 @@
 
 1. 在`微服务网关列表`页面点击目标网关的名称，进入网关概览页后，在左侧导航栏点击`服务接入`-->`服务列表`。
 
-    ![服务列表](imgs/service-list.png)
+    ![服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/service/imgs/service-list.png)
 
 2. 在`服务列表`页面点击`手工接入`-->`添加服务`。
 

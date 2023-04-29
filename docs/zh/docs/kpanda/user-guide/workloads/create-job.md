@@ -20,7 +20,7 @@
 
 1. 点击左侧导航栏上的`集群列表`，然后点击目标集群的名称，进入`集群详情`页面。
 
-    ![集群详情](../../images/deploy01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
 2. 在集群详情页面，点击左侧导航栏的`工作负载` -> `任务`，然后点击页面右上角的`镜像创建`按钮。
 
@@ -68,31 +68,31 @@
 
     设置容器启动时、启动后、停止前需要执行的命令。详情可参考[容器生命周期配置](pod-config/lifecycle.md)。
 
-    ![生命周期](../../images/deploy06.png)
+    ![生命周期](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy06.png)
 
 === "健康检查（选填）"
 
     用于判断容器和应用的健康状态，有助于提高应用的可用性。详情可参考[容器健康检查配置](pod-config/health-check.md)。
 
-    ![健康检查](../../images/deploy07.png)
+    ![健康检查](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy07.png)
 
 === "环境变量（选填）"
 
     配置 Pod 内的容器参数，为 Pod 添加环境变量或传递配置等。详情可参考[容器环境变量配置](pod-config/env-variables.md)。
 
-    ![环境变量](../../images/deploy08.png)
+    ![环境变量](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy08.png)
 
 === "数据存储（选填）"
 
     配置容器挂载数据卷和数据持久化的设置。详情可参考[容器数据存储配置](pod-config/env-variables.md)。
 
-    ![数据存储](../../images/deploy09.png)
+    ![数据存储](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy09.png)
 
 === "安全设置（选填）"
 
     通过 Linux 内置的账号权限隔离机制来对容器进行安全隔离。您可以通过使用不同权限的账号 UID（数字身份标记）来限制容器的权限。例如，输入 `0` 表示使用 root 账号的权限。
 
-    ![安全设置](../../images/deploy10.png)
+    ![安全设置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy10.png)
 
 ### 服务配置
 
@@ -104,7 +104,7 @@
 
 2. 参考[创建服务](../services-routes/create-services.md)，配置服务参数。
 
-    ![创建服务](../../images/deploy13.png)
+    ![创建服务](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy13.png)
 
 3. 点击`确定`，点击`下一步`。
 
@@ -132,7 +132,7 @@
 
 1. 点击左侧导航栏上的`集群列表`，然后点击目标集群的名称，进入`集群详情`页面。
 
-    ![集群详情](../../images/deploy01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
 2. 在集群详情页面，点击左侧导航栏的`工作负载` -> `任务`，然后点击页面右上角的 `YAML 创建`按钮。
 
@@ -140,7 +140,7 @@
 
 3. 输入或粘贴事先准备好的 YAML 文件，点击`确定`即可完成创建。
 
-    ![工作负载](../../images/cronjob08.png)
+    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/cronjob08.png)
 
 ??? note "点击查看创建任务的 YAML 示例"
 

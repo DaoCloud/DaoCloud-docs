@@ -18,7 +18,7 @@ hide:
 
 1. 在流水线列表页点击`创建流水线`。
 
-    ![createpipelinbutton](../../../images/createpipelinbutton.png)
+    ![createpipelinbutton](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/createpipelinbutton.png)
 
 2. 在弹出的对话框中，选择`自定义创建流水线`，点击`确定`。
 
@@ -35,7 +35,7 @@ hide:
 
     - 不允许并发构建：开启后，一次只能执行一个流水线构建任务。
     - 构建参数：在开始运行流水线时传入一个或多个构建参数。默认提供五种参数类型：`布尔值`、`字符串`、`多行文本`、`选项`、`密码`、`上传文件`。
-    - 添加构建参数后，运行流水线时需要为每个构建参数输入对应的取值。    
+    - 添加构建参数后，运行流水线时需要为每个构建参数输入对应的取值。
 
         ![构建设置](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/custom02.png)
 
@@ -49,7 +49,7 @@ hide:
 
 5. 完成创建。确认所有参数输入完成后，点击`确定`按钮，完成自定义流水线创建，自动返回流水线列表。点击列表右侧的 `︙` 可以执行各项操作。
 
-    ![pipeline05](../../../images/pipeline05.png)
+    ![pipeline05](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline05.png)
 
 !!! warning
 

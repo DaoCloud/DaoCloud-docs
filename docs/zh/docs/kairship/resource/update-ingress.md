@@ -6,7 +6,7 @@
 
     ![路由列表](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/update-ingress01.png)
 
-2. 在`编辑 YAML `弹窗中，修改 YAML 信息，点击确定则更新了路由。
+2. 在`编辑 YAML`弹窗中，修改 YAML 信息，点击确定则更新了路由。
 
     ![YAML 更新](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/update-ingress03.png)
 

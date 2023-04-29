@@ -20,7 +20,7 @@
 - [安装依赖项](../../install-tools.md)。
 
     如果集群中已安装所有依赖项，请确保依赖项版本符合要求：
-          
+
     - helm ≥ 3.11.1
     - skopeo ≥ 1.11.1
     - kubectl ≥ 1.25.6
@@ -85,7 +85,7 @@
 4. 安装完成后，命令行会提示安装成功。恭喜您！
    现在可以通过屏幕提示的 URL 使用 **默认的账号和密码（admin/changeme）** 探索全新的 DCE 5.0 啦！
 
-    ![安装成功](../../images/success.png)
+    ![安装成功](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
     !!! success
 

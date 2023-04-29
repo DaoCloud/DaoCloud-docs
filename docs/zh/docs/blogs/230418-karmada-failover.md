@@ -2,7 +2,7 @@
 
 作者：[Fish-pro](https://github.com/Fish-pro)
 
-![karmada failover](imagesarmada01.png)
+![karmada failover](images/karmada01.png)
 
 多云时代，如何实现应用跨数据中心，跨可用区和跨集群高可用，成为我们探讨的新话题。
 在单个集群中，如果集群发生故障，那么在集群中的所有应用将不可被访问。
@@ -43,7 +43,7 @@ Karmada 故障恢复支持两种方式：
 
 本文以 `Divided` 为例：
 
-![Divided](imagesarmada02.png)
+![Divided](images/karmada02.png)
 
 1. 下载 Karmada 官方 v1.4.2 sourece code 后，使用 `hack/local-up-karmada.sh`，启动本地的 Karmada。
    启动后，自动纳管了三个工作集群，其中集群 member1 和 member2 使用 push 模式，member3 使用 pull 模式。

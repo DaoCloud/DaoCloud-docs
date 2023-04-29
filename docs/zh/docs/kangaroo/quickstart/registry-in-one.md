@@ -16,16 +16,16 @@ hide:
 
 1. 以 Workspace Admin 角色登录，从左侧导航栏点击`仓库集成(工作空间)`，点击右上角的`仓库集成`按钮。
 
-    ![仓库集成(工作空间)](../images/relate02.png)
+    ![仓库集成(工作空间)](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/relate02.png)
 
-1. 填写表单信息后点击`确定`。
+2. 填写表单信息后点击`确定`。
 
-    ![填写表单](../images/relate03.png)
+    ![填写表单](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/relate03.png)
 
     !!! note
 
         1. Docker Registry 镜像仓库若未设置密码可不填写，Harbor 仓库必须填写用户名/密码。
-        1. 有关实际操作演示，请参阅[仓库集成视频演示](../../videos/kangaroo.md)。
+        2. 有关实际操作演示，请参阅[仓库集成视频演示](../../videos/kangaroo.md)。
 
 ## 仓库集成(管理员)
 

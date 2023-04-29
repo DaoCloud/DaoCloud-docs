@@ -23,7 +23,7 @@
 
 1. 在`集群列表`页面点击某个集群的名称，进入`集群详情`。
 
-    ![集群详情](../../images/deploy01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
 2. 在左侧导航栏，点击`配置与密钥`->`密钥`，点击右上角`创建密钥`按钮。
 
@@ -52,7 +52,7 @@
 
 1. 在`集群列表`页面点击某个集群的名称，进入`集群详情`。
 
-    ![集群详情](../../images/deploy01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
 2. 在左侧导航栏，点击`配置与密钥`->`密钥`，点击右上角 `YAML 创建`按钮。
 

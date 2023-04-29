@@ -14,11 +14,11 @@
 
 1. 使用具有 Admin 角色的用户登录 Web 控制台，从左侧导航栏点击`镜像仓库` -> `仓库集成(管理员)`。
 
-    ![仓库集成](../images/integrated01.png)
+    ![仓库集成](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/integrated01.png)
 
 1. 点击某个仓库名称。
 
-    ![点击某个名称](../images/managed01.png)
+    ![点击某个名称](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/managed01.png)
 
 1. 在左侧导航栏点击`镜像空间`，在某个镜像空间最右侧，点击 `⋮`，选择`绑定/解绑工作空间`。
 
