@@ -583,6 +583,7 @@ nav:
               - 实例监控: middleware/elasticsearch/user-guide/monitor.md
               - 查看 Elasticsearch 日志: middleware/elasticsearch/user-guide/logs.md
               - Elasticsearch 排障手册: middleware/elasticsearch/faq/common-question-es.md
+              - 基于 Hwameistor 的 Elasticsearch 迁移实践: middleware/elasticsearch/user-guide/migrate-es.md
               - Release Notes: middleware/elasticsearch/release-notes.md
           - Kafka 消息队列:
               - 什么是 Kafka: middleware/kafka/intro/what.md
