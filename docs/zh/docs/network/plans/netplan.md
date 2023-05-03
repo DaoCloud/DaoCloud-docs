@@ -8,7 +8,7 @@ hide:
 本页主要描述基于[网卡规划](./ethplan.md)中的 Overlay + Underlay CNI 网络方案中的的最佳实践，主要覆盖场景为：
 
 1. Calico 搭配 Macvlan CNI
-2. Calico 搭配 Macvlan 及 SRI-OV CNI
+2. Calico 搭配 Macvlan 及 SR-IOV CNI
 
 在如下场景中，最佳实践均为 2 张网卡，不同网卡承载流量如下：
 
@@ -30,7 +30,7 @@ hide:
   创建的业务应用 Pod 使用对应网段地址，可满足多 VLAN 多子网场景。
 - eth1.1，eth1.2 VLAN 子接口可不设置 IP 地址。
 
-## Calico 搭配 Macvlan 及 SRI-OV CNI
+## Calico 搭配 Macvlan 及 SR-IOV CNI
 
 ![macvlan-sriov](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/macvlan-sriov.jpg)
 
