@@ -87,6 +87,7 @@
 - Service 吞吐量
 
     ![service](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/cni-perf2.png)
+    
     |测试用例|结论|
     |----|----|
     |Service 和节点间, 位于同节点|macvlan 性能最好，cilium 次之，calico 三种模式表现相近，性能都较差|

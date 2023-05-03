@@ -68,8 +68,9 @@
     默认使用 “crd” 模式，可以通过以下参数进行设置：
     
     ```yaml
-cilium_identity_allocation_mode: crd
+    cilium_identity_allocation_mode: crd
     ```
+
 
 - 资源限制
 
@@ -86,7 +87,7 @@ cilium_identity_allocation_mode: crd
 
 - Cilium DaemonSet 再次准备就绪的时间
 
-    Cilium DaemonSet 再次准备就绪的时间可以通过以下参数进行设置：
+    可以通过以下参数进行设置：
 
     ```yaml
     cilium_rolling_restart_wait_retries_count: 30
