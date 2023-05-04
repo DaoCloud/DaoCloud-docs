@@ -31,6 +31,14 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0 # Required for mkdocs to be able to display pages last update info
+      
+      # Clone 
+      - name: Checkout public repository
+        uses: actions/checkout@v2
+        with:
+          repository: daocloud/daocloud-api-docs
+          path: dao-openapi
+      
       - uses: actions/setup-python@v2
 #       - uses: actions/setup-python@v4
         with:
@@ -60,10 +68,15 @@ jobs:
               mkdocs-awesome-pages-plugin \
               mkdocs-redirects \
               mkdocs-print-site-plugin \
-              mkdocs-swagger-ui-tag
+              mkdocs-swagger-ui-tag \
+              yaml
       
       # add custom plugin with pdf support
       - run: pip install git+https://github.com/SAMZONG/mkdocs-with-pdf-support-material-v8
+
+      # merged openapi docs
+      - run: cp -av dao-openapi/docs/openapi docs/zh/docs/
+      - run: python scripts/merged_nav.py
 
       # build docs
       - run: pwd
