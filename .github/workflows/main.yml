@@ -69,7 +69,7 @@ jobs:
               mkdocs-redirects \
               mkdocs-print-site-plugin \
               mkdocs-swagger-ui-tag \
-              yaml
+              pyyaml
       
       # add custom plugin with pdf support
       - run: pip install git+https://github.com/SAMZONG/mkdocs-with-pdf-support-material-v8
