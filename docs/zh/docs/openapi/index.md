@@ -2,32 +2,50 @@
 
 本页列出 DCE 5.0 相关模块的 OpenAPI 文档，方便以程序方式调用。
 
-## :fontawesome-solid-user-group: 全局管理 OpenAPI
+<div class="grid cards" markdown>
 
-- [v0.15.0](./ghippo/v0.15.0.md)
-- [v0.16.0](./ghippo/v0.16.0.md)
-- [v0.16.1](./ghippo/v0.16.1.md)
+-   :fontawesome-solid-user-group:{ .lg .middle } __全局管理 OpenAPI__
 
-## :material-monitor-dashboard: 可观测性 OpenAPI
+    ---
 
-- [v0.16.0](./insight/v0.16.0.md)
+    - [v0.15.0](./ghippo/v0.15.0.md)
+    - [v0.16.0](./ghippo/v0.16.0.md)
+    - [v0.16.1](./ghippo/v0.16.1.md)
 
-## :material-cloud-check: 多云编排 OpenAPI
+-   :material-monitor-dashboard:{ .lg .middle } __可观测性 OpenAPI__
 
-- [v0.8.0](./kairship/v0.8.0.md)
+    ---
 
-## :material-table-refresh: 服务网格 OpenAPI
+    - [v0.16.0](./insight/v0.16.0.md)
 
-- [v0.105.1](./mspider/v0.105.1.md)
+-   :material-cloud-check:{ .lg .middle } __多云编排 OpenAPI__
 
-## :material-dot-net: 网络 OpenAPI
+    ---
 
-- [v0.5.0](./spidernet/v0.5.0.md)
-- [v0.6.0](./spidernet/v0.6.0.md)
+    - [v0.8.0](./kairship/v0.8.0.md)
 
-## :material-middleware: 中间件 OpenAPI
+-   :material-table-refresh:{ .lg .middle } __服务网格 OpenAPI__
 
-参阅[中间件 OpenAPI 文档索引](./midware.md)
+    ---
+
+    - [v0.105.1](./mspider/v0.105.1.md)
+
+-   :material-dot-net:{ .lg .middle } __网络 OpenAPI__
+
+    ---
+
+    - [v0.5.0](./spidernet/v0.5.0.md)
+    - [v0.6.0](./spidernet/v0.6.0.md)
+
+-   :material-middleware:{ .lg .middle } __中间件 OpenAPI__
+
+    ---
+
+    DCE 5.0 涵盖了 Elasticsearch、Kafka、MinIO、MySQL、PostgreSQL、RabbitMQ、Redis 等中间件。
+
+    [:octicons-arrow-right-24: 中间件 OpenAPI 文档索引](./midware.md)
+
+</div>
 
 ## 其他
 
