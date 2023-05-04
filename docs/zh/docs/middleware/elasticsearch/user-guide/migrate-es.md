@@ -176,6 +176,27 @@ pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c 37580963840 prod-master3 Ready true /de
 同样，按照停止顺序来恢复即可。
 
 ```bash
-[root@prod-master1 ~]# kubectl -n mcamel-system scale --replicas=0 sts elastic-operator
-[root@prod-master1 ~]# kubectl -n mcamel-system scale --replicas=0 sts mcamel-common-es-cluster-masters-es-data
+[root@prod-master1 ~]# kubectl -n mcamel-system scale --replicas=2 sts elastic-operator
+[root@prod-master1 ~]# kubectl -n mcamel-system scale --replicas=3 sts mcamel-common-es-cluster-masters-es-data
+```
+
+## 权限恢复
+
+由于 HwameiStor 使用 rclone 来迁移 PV，rclone 在迁移过程中可能会丢失权限（见 [rclone#1202](https://github.com/rclone/rclone/issues/1202) 和 [hwameistor#830](https://github.com/hwameistor/hwameistor/issues/830)）。
+
+具体表现在 es 上的现象则是 es 一直反复启动失败，日志中包含如下错误信息：
+```
+java.lang.IllegalStateException: failed to obtain node locks, tried [[/usr/share/elasticsearch/data]]] with lock id [0]; maybe these locations are not writable or multiple nodes were started without increasing [node.max_local_storage_nodes] (was [1])?
+```
+
+这时我们需要修改 es 的 CR，为 es 的 pod 添加一个 initcontainer，initcontainer 的内容如下：
+```
+- command:
+  - sh
+  - -c
+  - chown -R elasticsearch:elasticsearch /usr/share/elasticsearch/data
+  name: change-permission
+  resources: {}
+  securityContext:
+    privileged: true
 ```
