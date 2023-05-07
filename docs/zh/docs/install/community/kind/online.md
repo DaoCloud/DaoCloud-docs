@@ -100,7 +100,7 @@ precheck pass..
 
 1. 设置 `kind_cluster.yaml` 配置文件。
 
-    注意，暴露集群内的 32000 端口到 kind 对外的 8888 端口（可自行修改），配置文件示例如下：
+    注意，暴露集群内的 32088 端口到 kind 对外的 8888 端口（可自行修改），配置文件示例如下：
 
     ```yaml title="kind_cluster.yaml"
     apiVersion: kind.x-k8s.io/v1alpha4
