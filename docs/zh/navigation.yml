@@ -458,6 +458,7 @@ nav:
               - 请求身份认证: mspider/user-guide/security/request.md
               - 授权策略: mspider/user-guide/security/authorize.md
               - 安全治理参数配置: mspider/user-guide/security/params.md
+              - 服务网格身份和认证: mspider/user-guide/security/mtls.md
           - 边车管理:
               - 命名空间边车管理: mspider/user-guide/sidecar-management/ns-sidecar.md
               - 工作负载边车管理: mspider/user-guide/sidecar-management/workload-sidecar.md
