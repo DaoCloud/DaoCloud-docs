@@ -677,7 +677,7 @@
 
 - [VMware Spring Cloud Gateway for Kubernetes v1.2.0 发布](https://docs.vmware.com/en/VMware-Spring-Cloud-Gateway-for-Kubernetes/1.2/scg-k8s/GUID-release-notes.html)  
 
-    该版本主要新特性：分离客户端入口和上游应用服务通信的 TLS 配置、扩大自定义扩展云秘密管理的权限、增加熔断器状态指标、新增全局和每个 API 路由的响应缓存配置、增加 JSON 请求转换到 gRPC 上游服务的过滤器、增加 podOverrides 以配置 API 网关实例上的 K8s pod override、API 网关现在可以通过独立的 JAR 部署。
+    该版本主要新特性：分离客户端入口和上游应用服务通信的 TLS 配置、扩大自定义扩展云秘密管理的权限、增加离群检测器状态指标、新增全局和每个 API 路由的响应缓存配置、增加 JSON 请求转换到 gRPC 上游服务的过滤器、增加 podOverrides 以配置 API 网关实例上的 K8s pod override、API 网关现在可以通过独立的 JAR 部署。
 
 ### W, Z
 

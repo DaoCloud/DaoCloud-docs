@@ -29,7 +29,7 @@ hide:
     Spring Cloud 是一款基于 Spring Boot 的微服务框架。
     Spring Cloud 将市面上成熟的、经过验证的微服务框架整合起来，在 Spring Boot 的基础上进行再封装，屏蔽复杂的配置和实现原理，
     最终为开发人员提供了一套简单易懂、易部署和易维护的分布式系统开发工具包。
-    Spring Cloud 包括 Spring Cloud Config、Spring Cloud Bus 等 20 多个子项目，提供了服务治理、服务网关、智能路由、负载均衡、熔断器、监控跟踪、分布式消息队列、配置管理等领域的解决方案。
+    Spring Cloud 包括 Spring Cloud Config、Spring Cloud Bus 等 20 多个子项目，提供了服务治理、服务网关、智能路由、负载均衡、离群检测器、监控跟踪、分布式消息队列、配置管理等领域的解决方案。
 
 - Dubbo 框架
 

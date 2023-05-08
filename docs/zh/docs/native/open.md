@@ -790,7 +790,7 @@
 
 - [Linkerd 服务网格项目 v2.13.0 发布（CNCF 项目）](https://github.com/linkerd/linkerd2/releases/tag/stable-2.13.0)
 
-    版本特性：引入客户端策略，包括动态路由和熔断器模式；支持调试基于 HTTPRoute 的策略；引入新的 init 容器 —— network-validator，确保本地 iptables 规则按预期工作。
+    版本特性：引入客户端策略，包括动态路由和离群检测器模式；支持调试基于 HTTPRoute 的策略；引入新的 init 容器 —— network-validator，确保本地 iptables 规则按预期工作。
 
 - [Linkerd 服务网格项目 v2.12.0 发布（CNCF 项目）](https://github.com/linkerd/linkerd2/releases/tag/stable-2.12.0)  
 
@@ -1095,7 +1095,7 @@
 
 - [Spring Cloud Tencent：腾讯开源一站式微服务解决方案](https://mp.weixin.qq.com/s/A-DcZJY9sJcTQSEoWEibww)  
 
-    [Spring Cloud Tencent](https://github.com/Tencent/spring-cloud-tencent) 依托腾讯开源的一站式微服务解决方案 北极星（Polaris），主要提供微服务领域常见的服务注册与发现、配置中心、服务路由、限流熔断以及元数据链路透传能力。
+    [Spring Cloud Tencent](https://github.com/Tencent/spring-cloud-tencent) 依托腾讯开源的一站式微服务解决方案 北极星（Polaris），主要提供微服务领域常见的服务注册与发现、配置中心、服务路由、限流离群检测以及元数据链路透传能力。
 
 - [Strimzi 消息中间件 Kafka 的 K8s operator v0.31.0 发布（CNCF 项目）](https://github.com/strimzi/strimzi-kafka-operator/releases/tag/0.31.0)  
 
