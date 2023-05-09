@@ -17,7 +17,7 @@
 | AMD 64   | centos 7.X          | Kernel 3.10.0-1127.el7.x86_64 on an x86_64 | 操作系统推荐 CentOS 7.9          |
 |          | Redhat 8.X          | 4.18.0-305.el8.x86_64                      | 操作系统推荐 Redhat 8.4          |
 |          | Redhat 7.X          | 3.10.0-1160.e17.x86                        | 操作系统推荐 Redhat 7.9          |
-|          | Ubuntu 20.04        | 4.19.0-91.82.42.uelc20.x86 64              | 操作系统推荐 Ubuntu20.04         |
+|          | Ubuntu 20.04        | 5.10.104                                   | 操作系统推荐 Ubuntu20.04         |
 |          | 统信UOS V20         | 5.4.0-125-generic                          | 操作系统推荐统信 UOS V20（1020a） |
 |          | openEuler 22.03     | 5.10.0-60.18.0.50.oe2203.x86_64            | 操作系统推荐 openEuler 22.03     |
 | ARM 64   | 银河麒麟 OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64            | -                                |
