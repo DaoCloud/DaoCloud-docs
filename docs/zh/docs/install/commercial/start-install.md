@@ -21,8 +21,8 @@ hide:
 
 | CPU 架构 | 版本   | 下载地址                                                     |
 | :------- | :----- | :----------------------------------------------------------- |
-| AMD64    | v0.6.1 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-amd64.tar> |
-| ARM64    | v0.6.1 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-arm64.tar> |
+| AMD64    | v0.7.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.7.0-amd64.tar> |
+| ARM64    | v0.7.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.7.0-arm64.tar> |
 
 下载完毕后解压离线包：
 
@@ -39,8 +39,8 @@ tar -xvf offline-v0.6.1-amd64.tar
 
 | CPU 架构 | 版本   | 下载地址                                                     |
 | :------- | :----- | :----------------------------------------------------------- |
-| AMD64    | v0.6.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.6.0-amd64.tar.gz> |
-| ARM64    | v0.6.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.6.0-arm64.tar.gz> |
+| AMD64    | v0.6.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.7.0-amd64.tar.gz> |
+| ARM64    | v0.6.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.7.0-arm64.tar.gz> |
 
 #### ISO 离线包 （必需）
 
@@ -63,12 +63,12 @@ ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置�
 
 | 操作系统版本                                        | 下载地址                                                     |
 | :-------------------------------------------------- | :----------------------------------------------------------- |
-| Centos 7                                            | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.8/os-pkgs-centos7-v0.4.8.tar.gz> |
-| Redhat 8                                            | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.8/os-pkgs-redhat8-v0.4.8.tar.gz> |
-| Redhat 7                                            | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.8/os-pkgs-redhat7-v0.4.8.tar.gz> |
-| Kylin Linux Advanced Server release V10 (Sword) SP2 | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.8/os-pkgs-kylinv10-v0.4.8.tar.gz> |
-| Ubuntu20.04                                         | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.9/os-pkgs-ubuntu2004-v0.4.9.tar.gz> |
-| openEuler 22.03                                     | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.9/os-pkgs-openeuler22.03-v0.4.9.tar.gz> |
+| Centos 7                                            | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.9-rc1/os-pkgs-centos7-v0.4.9-rc1.tar.gz> |
+| Redhat 8                                            | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.9-rc1/os-pkgs-redhat8-v0.4.9-rc1.tar.gz> |
+| Redhat 7                                            | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.9-rc1/os-pkgs-redhat7-v0.4.9-rc1.tar.gz> |
+| Kylin Linux Advanced Server release V10 (Sword) SP2 | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.9-rc1/os-pkgs-kylinv10-v0.4.9-rc1.tar.gz> |
+| Ubuntu20.04                                         | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.9-rc1/os-pkgs-ubuntu2004-v0.4.9-rc1.tar.gz> |
+| openEuler 22.03                                     | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.9-rc1/os-pkgs-openeuler22.03-v0.4.9-rc1.tar.gz> |
 
 统信UOS V20（1020a）osPackage 部署请参考[UOS V20 (1020a) 操作系统上部署 DCE 5.0](../os-install/uos-v20-install-dce5.0.md)
 
