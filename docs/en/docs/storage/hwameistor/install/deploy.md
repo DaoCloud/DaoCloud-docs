@@ -35,16 +35,16 @@ This installation method is recommended, and any component of HwameiStor can be 
 
 !!! tip
 
-    The default registries are `quay.io` and `ghcr.io`.
-    If you can’t access it, you can try to use the image sources provided by DaoCloud: `quay.m.daocloud.io` and `ghcr.m.daocloud.io`.
+    The default registries are `registry.k8s.io` and `ghcr.io`.
+    If you can’t access it, you can try to use the image sources provided by DaoCloud: `m.daocloud.io` and `ghcr.m.daocloud.io`.
 
-To switch the image of the registry, use `--set` to change the values ​​of these two parameters: `k8sImageRegistry` and `hwameistorImageRegistry`.
+To switch the image of the registry, use `--set` to change the values ​​of these two parameters: `global.k8sImageRegistry` and `global.hwameistorImageRegistry`.
 
 ```console
 helm install hwameistor ./hwameistor \
     -n hwameistor --create-namespace \
-    --set k8sImageRegistry=k8s-gcr.m.daocloud.io \
-    --set hwameistorImageRegistry=ghcr.m.daocloud.io
+    --set global.k8sImageRegistry=m.daocloud.io/registry.k8s.io \
+    --set global.hwameistorImageRegistry=ghcr.m.daocloud.io
 ```
 
 ## Customize kubelet root directory
@@ -88,10 +88,13 @@ helm install hwameistor ./hwameistor \
 If you want to enable highly available volumes, you must install DRBD
 
 ```console
-helm pull hwameistor/drbd9-adapter --untar
+helm repo add hwameistor https://hwameistor.io/hwameistor
 
-helm install drbd9 ./drbd9-adapter \
-    -n hwameistor --create-namespace
+helm repo update hwameistor
+
+helm pull hwameistor/drbd-adapter --untar
+
+helm install drbd-adapter ./drbd-adapter -n hwameistor --create-namespace
 ```
 
 Domestic users can use the container registry `daocloud.io/daocloud` to speed up
@@ -99,5 +102,6 @@ Domestic users can use the container registry `daocloud.io/daocloud` to speed up
 ```console
 helm install drbd-adapter ./drbd-adapter \
     -n hwameistor --create-namespace \
+    --set imagePullPolicy=Always \
     --set registry=daocloud.io/daocloud
 ```
