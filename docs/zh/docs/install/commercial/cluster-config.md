@@ -76,22 +76,22 @@ spec:
     isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
     osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
 
-    #type: external
+    # type: external
     # Set the block below only if target is S3-compatible storage which need to upload files automatically(e.g. minio).
-    #isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
-    #osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
-    #externalRepoEndpoint: https://external-repo.daocloud.io
-    #externalRepoUsername: rootuser
-    #externalRepoPassword: rootpass123
+    # isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
+    # osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
+    # externalRepoEndpoint: https://external-repo.daocloud.io
+    # externalRepoUsername: rootuser
+    # externalRepoPassword: rootpass123
  
-    #type: external
+    # type: external
     # Set the block below if target is other storage which cannot or does not need to upload automatically(e.g. nginx).
     # That requires you to import the required packages(iso, os-pkgs) manually if not all the required offline resources exist.
     # `centos` as CentOS, RedHat, kylin, AlmaLinux, Fedora or Openeuler
     # `debian` as Debian
     # `ubuntu` as Ubuntu
-    #externalRepoType: centos
-    #externalRepoURLs: ['https://extertal-repo.daocloud.io/kubean/centos/\$releasever/os/\$basearch/']
+    # externalRepoType: centos
+    # externalRepoURLs: ['https://extertal-repo.daocloud.io/kubean/centos/\$releasever/os/\$basearch/']
  
   imagesAndCharts: # 镜像仓库和 Chart仓库源
  
