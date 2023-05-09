@@ -2,6 +2,53 @@
 
 本页列出安装器的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023-4-30
+
+### v0.7.0
+
+#### 新功能
+
+- **新增** 支持 Other Linux 来部署 DCE5.0，[参考文档](os-install/otherlinux.md)
+- **新增** 支持了操作系统 OpenEuler 22.03
+- **新增** 支持外接 OS Repos，[参考集群配置文件说明](commercial/cluster-config.md)
+- **新增** 支持了内核参数调优，[参考集群配置文件说明](commercial/cluster-config.md)
+- **新增** 支持检测外部 ChartMuseum 和 MinIo 服务是否可用
+
+#### 优化
+
+- **优化** 优化了对 tar 等命令的前置校验
+- **优化** 优化了升级操作命令行参数
+- **优化** 关闭了 Kibana 通过 NodePort 访问，Insight 使用 ES 的 NodePort or VIP 访问
+- **优化** 优化了并发日志展示，终止任务使用 SIGTERM 信号而不是 SIGKILL
+
+#### 修复
+
+- **修复** 修复在线安装时 Kcoral heml chart 无法查到问题
+- **修复** 修复升级时 KubeConfig 无法找到问题
+
+#### 已知问题
+
+- 在线安装 global 集群会失败，需在 clusterConfig.yaml 的 `kubeanConfig` 块里进行如下配置:
+  
+  ```yaml
+  kubeanConfig: |- 
+
+    calico_crds_download_url: "https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/calico-crds-v3.25.1.tar.gz"
+  ```
+  
+  同时通过容器管理在线创建工作集群也有相同问题，需在集群创建页面高级配置的自定义参数中添加上述配置，键为 `calico_crds_download_url`，值为上述 calico_crds_download_url 的值
+
+- Kubean 存在低概率无法创建 spray-job 任务，通过手动删除对应的 clusteroperations CR 资源再重新执行安装命令
+- 使用外部 OS Repo 部署 DCE5.0后，无法通过容器管理离线创建工作集群，通过手动修改 global 集群 kubean-system 命名空间的 configmap kubean-localservice 来解决。在 `yumRepos` 下新增如下配置,需要在 external 内填写 clusterConfig.yaml 中配置的外部OS Repo 地址:
+
+  ```yaml
+  yumRepos:
+    external: []
+
+  ```
+
+  完成修改后对容器管理创建集群页面的节点配置的yum源选择新配置
+
 ## 2023-4-11
 
 ### v0.6.1
