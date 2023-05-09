@@ -757,6 +757,7 @@ nav:
       - 云原生网络: videos/network.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 202305 | K8s 安装教程(KLTS版): blogs/230509-k8s-install.md
       - 202305 | Cilium 基于 eBPF 实现 socket 加速: blogs/230508-cilium.md
       - 202305 | K8s 1.27加快Pod启动: blogs/230428-pod-startup.md
       - 202304 | 云原生监控之基础篇: blogs/230427-victoriametrics.md

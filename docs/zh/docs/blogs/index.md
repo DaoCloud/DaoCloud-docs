@@ -7,6 +7,11 @@ hide:
 
 本页汇总 DCE 5.0 及云原生技术相关的博客和公众号文章，默认按时间排序。
 
+- [20230509 | 安装 Kubernetes 教程 (KLTS 版)](./230509-k8s-install.md)
+
+    以 DaoCloud 自主维护的 [KLTS (Kubernetes Long Term Support)](https://klts.io/zh/docs/intro/) 为例，
+    简要介绍安装 Kubernetes 的准备工作、安装步骤。
+
 - [20230508 | Cilium 基于 eBPF 实现 socket 加速](./230508-cilium.md)
 
     随着云原生的不断发展，越来越多的应用部署在云上。其中有些应用对实时性要求非常严苛，这使得我们必须提升这些应用性能，达到更快的服务速度。
