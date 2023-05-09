@@ -110,99 +110,99 @@ setenforce 0
 
 为了在 Pod 中运行容器，Kubernetes 使用容器运行时（Container Runtime）。
 
-=== "Linux 节点"
+#### 如果是 Linux 节点
 
-    默认情况下，Kubernetes 使用容器运行时接口（Container Runtime Interface，CRI）来与您所选择的容器运行时交互。
+默认情况下，Kubernetes 使用容器运行时接口（Container Runtime Interface，CRI）来与您所选择的容器运行时交互。
 
-    如果您不指定运行时，则 kubeadm 会自动尝试检测系统上已经安装的运行时，方法是扫描一组众所周知的 Unix 域套接字。
+如果您不指定运行时，则 kubeadm 会自动尝试检测系统上已经安装的运行时，方法是扫描一组众所周知的 Unix 域套接字。
 
-    下面的表格列举了一些容器运行时及其对应的套接字路径：
+下面的表格列举了一些容器运行时及其对应的套接字路径：
 
-    | 运行时     | 域套接字                        |
-    | ---------- | ------------------------------- |
-    | Docker     | /var/run/dockershim.sock        |
-    | Containerd | /run/containerd/containerd.sock |
-    | CRI-O      | /var/run/crio/crio.sock         |
+| 运行时     | 域套接字                        |
+| ---------- | ------------------------------- |
+| Docker     | /var/run/dockershim.sock        |
+| Containerd | /run/containerd/containerd.sock |
+| CRI-O      | /var/run/crio/crio.sock         |
 
-    如果同时检测到 Docker 和 Containerd，则优先选择 Docker。
-    这是必然的，即使您仅安装了 Docker，因为 Docker 18.09 附带了 Containerd，所以两者都是可以检测到的。
-    如果检测到其他两个或多个运行时，则 kubeadm 输出错误信息并退出。
+如果同时检测到 Docker 和 Containerd，则优先选择 Docker。
+这是必然的，即使您仅安装了 Docker，因为 Docker 18.09 附带了 Containerd，所以两者都是可以检测到的。
+如果检测到其他两个或多个运行时，则 kubeadm 输出错误信息并退出。
 
-    kubelet 通过内置的 `dockershim` CRI 实现与 Docker 集成。
+kubelet 通过内置的 `dockershim` CRI 实现与 Docker 集成。
 
-    === “Docker”
+=== “Docker”
 
-        === “基于 Red Hat 发行版”
+    === “基于 Red Hat 发行版”
 
-            执行以下命令安装基于 Red Hat 发行版的 Docker：
-
-            ```bash
-            yum install docker
-            ```
-
-        === “基于 Debian 发行版”
-
-            执行以下命令安装基于 Debian 发行版的 Docker：
-
-            ```bash
-            apt-get install docker.io
-            ```
-
-    === “containerd”
-
-        containerd 官方默认只提供 amd64 架构的下载包，如果您采用的是其他基础架构，
-        可以从 Docker 官方仓库安装 `containerd.io` 软件包。在[安装 Docker 引擎](https://docs.docker.com/engine/install/#server)中
-        找到为各自的 Linux 发行版设置 Docker 存储库和安装 containerd.io 软件包的有关说明。
-
-        也可以使用以下源代码构建。
+        执行以下命令安装基于 Red Hat 发行版的 Docker：
 
         ```bash
-        VERSION=1.5.4
-        wget -c https://github.com/containerd/containerd/releases/download/v${VERSION}/containerd-${VERSION}-linux-amd64.tar.gz
-        tar xvf containerd-${VERSION}-linux-amd64.tar.gz -C /usr/local/
-        mkdir /etc/containerd/ && containerd config default > /etc/containerd/config.toml
-        wget -c -O /etc/systemd/system/containerd.service https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
-        systemctl start containerd && systemctl enable containerd
+        yum install docker
         ```
 
-=== "其它操作系统"
+    === “基于 Debian 发行版”
 
-    默认情况下， kubeadm 使用 docker 作为容器运行时。kubelet 通过内置的 `dockershim` CRI 实现与 Docker 集成。
-
-    === “Docker”
-
-        === “基于 Red Hat 发行版”
-
-            执行以下命令安装基于 Red Hat 发行版的 Docker：
-
-            ```bash
-            yum install docker
-            ```
-
-        === “基于 Debian 发行版”
-
-            执行以下命令安装基于 Debian 发行版的 Docker：
-
-            ```bash
-            apt-get install docker.io
-            ```
-
-    === “containerd”
-
-        containerd 官方默认只提供 amd64 架构的下载包，如果您采用的是其他基础架构，
-        可以从 Docker 官方仓库安装 `containerd.io` 软件包。在[安装 Docker 引擎](https://docs.docker.com/engine/install/#server)中
-        找到为各自的 Linux 发行版设置 Docker 存储库和安装 containerd.io 软件包的有关说明。
-
-        也可以使用以下源代码构建。
+        执行以下命令安装基于 Debian 发行版的 Docker：
 
         ```bash
-        VERSION=1.5.4
-        wget -c https://github.com/containerd/containerd/releases/download/v${VERSION}/containerd-${VERSION}-linux-amd64.tar.gz
-        tar xvf containerd-${VERSION}-linux-amd64.tar.gz -C /usr/local/
-        mkdir /etc/containerd/ && containerd config default > /etc/containerd/config.toml
-        wget -c -O /etc/systemd/system/containerd.service https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
-        systemctl start containerd && systemctl enable containerd
+        apt-get install docker.io
         ```
+
+=== “containerd”
+
+    containerd 官方默认只提供 amd64 架构的下载包，如果您采用的是其他基础架构，
+    可以从 Docker 官方仓库安装 `containerd.io` 软件包。在[安装 Docker 引擎](https://docs.docker.com/engine/install/#server)中
+    找到为各自的 Linux 发行版设置 Docker 存储库和安装 containerd.io 软件包的有关说明。
+
+    也可以使用以下源代码构建。
+
+    ```bash
+    VERSION=1.5.4
+    wget -c https://github.com/containerd/containerd/releases/download/v${VERSION}/containerd-${VERSION}-linux-amd64.tar.gz
+    tar xvf containerd-${VERSION}-linux-amd64.tar.gz -C /usr/local/
+    mkdir /etc/containerd/ && containerd config default > /etc/containerd/config.toml
+    wget -c -O /etc/systemd/system/containerd.service https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
+    systemctl start containerd && systemctl enable containerd
+    ```
+
+#### 如果是其它操作系统
+
+默认情况下，kubeadm 使用 docker 作为容器运行时。kubelet 通过内置的 `dockershim` CRI 实现与 Docker 集成。
+
+=== “Docker”
+
+    === “基于 Red Hat 发行版”
+
+        执行以下命令安装基于 Red Hat 发行版的 Docker：
+
+        ```bash
+        yum install docker
+        ```
+
+    === “基于 Debian 发行版”
+
+        执行以下命令安装基于 Debian 发行版的 Docker：
+
+        ```bash
+        apt-get install docker.io
+        ```
+
+=== “containerd”
+
+    containerd 官方默认只提供 amd64 架构的下载包，如果您采用的是其他基础架构，
+    可以从 Docker 官方仓库安装 `containerd.io` 软件包。在[安装 Docker 引擎](https://docs.docker.com/engine/install/#server)中
+    找到为各自的 Linux 发行版设置 Docker 存储库和安装 containerd.io 软件包的有关说明。
+
+    也可以使用以下源代码构建。
+
+    ```bash
+    VERSION=1.5.4
+    wget -c https://github.com/containerd/containerd/releases/download/v${VERSION}/containerd-${VERSION}-linux-amd64.tar.gz
+    tar xvf containerd-${VERSION}-linux-amd64.tar.gz -C /usr/local/
+    mkdir /etc/containerd/ && containerd config default > /etc/containerd/config.toml
+    wget -c -O /etc/systemd/system/containerd.service https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
+    systemctl start containerd && systemctl enable containerd
+    ```
 
 参阅[容器运行时](https://kubernetes.io/zh-cn/docs/setup/production-environment/container-runtimes/)以了解更多信息。
 
@@ -527,7 +527,7 @@ Usage: ./install.sh [OPTIONS]
   --others-deb-source=https://github.com/klts-io/others/raw/deb : Other DEB source
   --focus=enable-iptables-discover-bridged-traffic,disable-swap,disable-selinux,setup-source,install-kubernetes,install-containerd,install-runc,install-crictl,install-cniplugins,setup-crictl-config,setup-containerd-cni-config,setup-kubelet-config,setup-containerd-config,daemon-reload,start-containerd,status-containerd,enable-containerd,start-kubelet,status-kubelet,enable-kubelet,images-pull,control-plane-init,status-nodes,show-join-command : Focus on specific step
   --skip='' : Skip on specific step
-  ```
+```
 
 ## 更多安装方式
 

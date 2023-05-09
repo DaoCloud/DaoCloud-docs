@@ -49,7 +49,7 @@
             type: metallb
             istioGatewayVip: 10.6.229.10/32
             insightVip: 10.6.229.11/32      
-          fullPackagePath: absolute-path-of-the-offline-directory ## 解压离线包后的路径
+          fullPackagePath: absolute-path-of-the-offline-directory # 解压离线包后的路径
           imagesAndCharts:        # 镜像仓库
             type: external 
             externalImageRepo: your-external-registry # 镜像仓库地址，必须是 http 或者 https
@@ -65,7 +65,7 @@
         spec:
           loadBalancer:
             type: cloudLB
-          fullPackagePath: absolute-path-of-the-offline-directory ## 解压离线包后的路径
+          fullPackagePath: absolute-path-of-the-offline-directory # 解压离线包后的路径
           imagesAndCharts:        # 镜像仓库
             type: external 
             externalImageRepo: your-external-registry # 镜像仓库地址，必须是 http 或者 https
@@ -81,7 +81,7 @@
         spec:
           loadBalancer:
             type: NodePort
-          fullPackagePath: absolute-path-of-the-offline-directory ## 解压离线包后的路径
+          fullPackagePath: absolute-path-of-the-offline-directory # 解压离线包后的路径
           imagesAndCharts:        # 镜像仓库
             type: external 
             externalImageRepo: your-external-registry # 镜像仓库地址，必须是 http 或者 https

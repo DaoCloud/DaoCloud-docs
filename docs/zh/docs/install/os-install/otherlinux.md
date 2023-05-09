@@ -151,7 +151,7 @@ Other Linux 本质上是由于 DCE 对某些 Linux 操作系统没有提供安�
       binaries:
         type: builtin
       kubeanConfig: |-
-    allow_unsupported_distribution_setup: true
+      allow_unsupported_distribution_setup: true
         debian_os_family_extensions:
           - "UnionTech OS Server 20\" "
     ```

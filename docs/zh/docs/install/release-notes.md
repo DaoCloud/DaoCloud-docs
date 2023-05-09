@@ -29,25 +29,24 @@
 #### 已知问题
 
 - 在线安装 global 集群会失败，需在 clusterConfig.yaml 的 `kubeanConfig` 块里进行如下配置:
-  
-  ```yaml
-  kubeanConfig: |- 
 
-    calico_crds_download_url: "https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/calico-crds-v3.25.1.tar.gz"
-  ```
-  
-  同时通过容器管理在线创建工作集群也有相同问题，需在集群创建页面高级配置的自定义参数中添加上述配置，键为 `calico_crds_download_url`，值为上述 calico_crds_download_url 的值
+    ```yaml
+    kubeanConfig: |- 
+      calico_crds_download_url: "https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/calico-crds-v3.25.1.tar.gz"
+    ```
+
+    同时通过容器管理在线创建工作集群也有相同问题，需在集群创建页面高级配置的自定义参数中添加上述配置，键为 `calico_crds_download_url`，值为上述 calico_crds_download_url 的值
 
 - Kubean 存在低概率无法创建 spray-job 任务，通过手动删除对应的 clusteroperations CR 资源再重新执行安装命令
-- 使用外部 OS Repo 部署 DCE5.0后，无法通过容器管理离线创建工作集群，通过手动修改 global 集群 kubean-system 命名空间的 configmap kubean-localservice 来解决。在 `yumRepos` 下新增如下配置,需要在 external 内填写 clusterConfig.yaml 中配置的外部OS Repo 地址:
+- 使用外部 OS Repo 部署 DCE5.0后，无法通过容器管理离线创建工作集群，通过手动修改 global 集群 kubean-system 命名空间的 configmap kubean-localservice 来解决。
+  在 `yumRepos` 下新增如下配置,需要在 external 内填写 clusterConfig.yaml 中配置的外部OS Repo 地址:
 
-  ```yaml
-  yumRepos:
-    external: []
+    ```yaml
+    yumRepos:
+      external: []
+    ```
 
-  ```
-
-  完成修改后对容器管理创建集群页面的节点配置的yum源选择新配置
+    完成修改后对容器管理创建集群页面的节点配置的yum源选择新配置
 
 ## 2023-4-11
 

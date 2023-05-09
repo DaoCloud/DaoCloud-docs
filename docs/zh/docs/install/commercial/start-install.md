@@ -55,7 +55,7 @@ ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置�
 |          | openEuler22.03                                      | <https://mirrors.nju.edu.cn/openeuler/openEuler-22.03-LTS-SP1/ISO/x86_64/openEuler-22.03-LTS-SP1-x86_64-dvd.iso> |
 | ARM64    | Kylin Linux Advanced Server release V10 (Sword) SP2 | 申请地址：<https://www.kylinos.cn/scheme/server/1.html> <br />注意：麒麟操作系统需要提供个人信息才能下载使用，下载时请选择 V10 (Sword) SP2 |
 
-#### osPackage 离线包 （必需）
+#### osPackage 离线包（必需）
 
 安装器从 v0.5.0 版本，需要提供操作系统的 osPackage 离线包，并在[集群配置文件（clusterConfig.yaml）](./cluster-config.md)中定义 `osPackagePath`。
 

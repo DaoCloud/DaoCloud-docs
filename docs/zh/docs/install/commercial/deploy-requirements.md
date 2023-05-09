@@ -22,7 +22,6 @@
 |          | openEuler 22.03     | 5.10.0-60.18.0.50.oe2203.x86_64            | 操作系统推荐 openEuler 22.03     |
 | ARM 64   | 银河麒麟 OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64            | -                                |
 
-
 ## 硬件要求
 
 | **类型** | **具体要求**                |
@@ -61,14 +60,12 @@
 
 ### 火种节点
 
-
 | Protocol | Port   | Description     |
 |----------|--------| ------------    |
 | TCP      | 443    | Docker Registry  |
 | TCP      | 8081   | Chart Museum
 | TCP      | 9000   | Minio API  |
 | TCP      | 9001   | Minio UI |
-
 
 ### Kube集群（包括 全局集群 和 工作集群）
 
@@ -139,7 +136,6 @@
 | UDP      | 51871    | WireGuard encryption tunnel endpoint  |
 | ICMP     | -        | health checks  |
 
-
 参考: [Cilium Docs](https://docs.cilium.io/en/v1.13/operations/system_requirements/)
 
 #### SpiderPool (可选)
@@ -166,7 +162,6 @@
 | Protocol | Port       | Description   |
 |----------|--------    | ------------  |
 | TCP  | 2112           | kube-vip metrics ports |
-
 
 <!--
 #### 其他 Addon, 如 kube-vip
