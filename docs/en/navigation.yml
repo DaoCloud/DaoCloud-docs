@@ -27,67 +27,86 @@ nav:
           - Release Notes: install/release-notes.md
       - Container Management:
           - Intro:
-              - What is Container Management: kpanda/intro/WhatisKPanda.md
-              - Features: kpanda/intro/Features.md
-              - Benefits: kpanda/intro/Benefits.md
-              - Scenarios: kpanda/intro/Scenarios.md
-              - Concepts: kpanda/intro/Concepts.md
+              - What is Container Management: kpanda/intro/what.md
+              - Features: kpanda/intro/features.md
+              - Benefits: kpanda/intro/benefits.md
+              - Scenarios: kpanda/intro/scenarios.md
+              - Concepts: kpanda/intro/concepts.md
               - Release Notes: kpanda/intro/release-notes.md
+              - Lastest News: kpanda/intro/news.md
           - Clusters:
-              - Create Cluster: kpanda/07UserGuide/Clusters/CreateCluster.md
-              - Join Cluster: kpanda/07UserGuide/Clusters/JoinACluster.md
-              - Access Cluster: kpanda/07UserGuide/Clusters/AccessCluster.md
-              - Upgrade Cluster: kpanda/07UserGuide/Clusters/UpgradeCluster.md
-              - Delete Cluster: kpanda/07UserGuide/Clusters/DeleteCluster.md
-              - Cluster Roles: kpanda/07UserGuide/Clusters/ClusterRole.md
-              - Cluster Status: kpanda/07UserGuide/Clusters/ClusterStatus.md
+              - Create Cluster: kpanda/user-guide/clusters/create-cluster.md
+              - Join Cluster: kpanda/user-guide/clusters/integrate-cluster.md
+              - Access Cluster: kpanda/user-guide/clusters/access-cluster.md
+              - Upgrade Cluster: kpanda/user-guide/clusters/upgrade-cluster.md
+              - Delete Cluster: kpanda/user-guide/clusters/delete-cluster.md
+              - Cluster Roles: kpanda/user-guide/clusters/cluster-role.md
+              - Cluster Status: kpanda/user-guide/clusters/cluster-status.md
+              - Choose Runtime: kpanda/user-guide/clusters/runtime.md
+          - Namespaces: 
+              - Create Namespace: kpanda/user-guide/namespaces/createns.md
+              - Exclusive Node to Namespace: kpanda/user-guide/namespaces/exclusive.md
           - Nodes:
-              - Node Config: kpanda/07UserGuide/Nodes/NodeConfig.md
-              - Node Scaling out: kpanda/07UserGuide/Nodes/AddNode.md
-              - Node Scaling in: kpanda/07UserGuide/Nodes/DeleteNode.md
-              - Taints: kpanda/07UserGuide/Nodes/Taints.md
-              - Node Scheduling: kpanda/07UserGuide/Nodes/schedule.md
-              - Node Details: kpanda/07UserGuide/Nodes/node-details.md
-              - Labels and Annotations: kpanda/07UserGuide/Nodes/labels-annotations.md
+              - Node Availability Check: kpanda/user-guide/nodes/node-check.md
+              - Node Config: kpanda/user-guide/nodes/node-config.md
+              - Node Scaling Out: kpanda/user-guide/nodes/add-node.md
+              - Node Scaling In: kpanda/user-guide/nodes/delete-node.md
+              - Taints: kpanda/user-guide/nodes/taints.md
+              - Node Scheduling: kpanda/user-guide/nodes/schedule.md
+              - Node Details: kpanda/user-guide/nodes/node-details.md
+              - Labels and Annotations: kpanda/user-guide/nodes/labels-annotations.md
           - Workloads:
-              - Create Deployment: kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md
-              - Create StatefulSet: kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md
-              - Create DaemonSet: kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md
-              - Create CronJob: kpanda/07UserGuide/Workloads/CreateCronJobByImage.md
-              - Create Job: kpanda/07UserGuide/Workloads/CreateJobByImage.md
-              - Parameters:
-                  - Workload Status: kpanda/07UserGuide/Workloads/PodConfig/workload-status.md
-                  - Args for Job: kpanda/07UserGuide/Workloads/PodConfig/JobParameters.md
-                  - Lifecycle: kpanda/07UserGuide/Workloads/PodConfig/lifescycle.md
-                  - Env Variable: kpanda/07UserGuide/Workloads/PodConfig/EnvironmentVariables.md
-                  - Health Check: kpanda/07UserGuide/Workloads/PodConfig/healthcheck.md
-                  - Scheduling Policies: kpanda/07UserGuide/Workloads/PodConfig/SchedulingPolicy.md
+              - Create Deployment: kpanda/user-guide/workloads/create-deployment.md
+              - Create StatefulSet: kpanda/user-guide/workloads/create-statefulset.md
+              - Create DaemonSet: kpanda/user-guide/workloads/create-daemonset.md
+              - Create CronJob: kpanda/user-guide/workloads/create-cronjob.md
+              - Create Job: kpanda/user-guide/workloads/create-job.md
+              - Parameters Config:
+                  - Workload Status: kpanda/user-guide/workloads/pod-config/workload-status.md
+                  - Job Parameters: kpanda/user-guide/workloads/pod-config/job-parameters.md
+                  - Lifecycle: kpanda/user-guide/workloads/pod-config/lifecycle.md
+                  - Env Variable: kpanda/user-guide/workloads/pod-config/env-variables.md
+                  - Health Check: kpanda/user-guide/workloads/pod-config/health-check.md
+                  - Cluster Scheduling: kpanda/user-guide/workloads/pod-config/scheduling-policy.md
           - Autoscaling:
-              - Horizontal Pod Autoscaling: kpanda/07UserGuide/Scale/Create-HPA.md
-              - Install metrics-server: kpanda/07UserGuide/Scale/Install-metrics-server.md
+              - Install metrics-server: kpanda/user-guide/scale/install-metrics-server.md
+              - Install kubernetes-cronhpa-controller: kpanda/user-guide/scale/install-cronhpa.md
+              - Install VPA Plugin: kpanda/user-guide/scale/install-vpa.md
+              - Create HPA Policy: kpanda/user-guide/scale/create-hpa.md
+              - Create VPA Policy: kpanda/user-guide/scale/create-vpa.md
           - Helm Apps:
-              - Helm Charts: kpanda/07UserGuide/helm/README.md
-              - Helm Apps: kpanda/07UserGuide/helm/helm-app.md
-              - Helm Registry: kpanda/07UserGuide/helm/helm-repo.md
+              - Helm Charts: kpanda/user-guide/helm/README.md
+              - Helm Apps: kpanda/user-guide/helm/helm-app.md
+              - Helm Registries: kpanda/user-guide/helm/helm-repo.md
           - Network:
-              - Create Service: kpanda/07UserGuide/ServicesandRoutes/CreatingServices.md
-              - Create Ingress: kpanda/07UserGuide/ServicesandRoutes/CreatingIngress.md
-              - Network Policies: kpanda/07UserGuide/ServicesandRoutes/network-policy.md
-          - CRDs: kpanda/07UserGuide/CustomResources/create.md
+              - Create Service: kpanda/user-guide/services-routes/create-services.md
+              - Create Ingress: kpanda/user-guide/services-routes/create-ingress.md
+              - Network Policies: kpanda/user-guide/services-routes/network-policy.md
+          - CRDs: kpanda/user-guide/custom-resources/create.md
           - Storage:
-              - Volumes: kpanda/07UserGuide/storage/pvc.md
-              - Storage Pool: kpanda/07UserGuide/storage/storage-pool.md
+              - Volume Claim: kpanda/user-guide/storage/pvc.md
+              - Volume: kpanda/user-guide/storage/pv.md
+              - Storage Pool: kpanda/user-guide/storage/sc.md
+              - Shared Storage Pool: kpanda/user-guide/storage/sc-share.md
           - ConfigMaps and Secrets:
-              - Create Secret: kpanda/07UserGuide/ConfigMapsandSecrets/create-secret.md
-              - Use Secret: kpanda/07UserGuide/ConfigMapsandSecrets/use-secret.md
-              - Use ConfigMap: kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md
-          - Namespaces: kpanda/07UserGuide/Namespaces/createns.md
+              - Create ConfigMap: kpanda/user-guide/configmaps-secrets/create-configmap.md
+              - Use ConfigMap: kpanda/user-guide/configmaps-secrets/use-configmap.md
+              - Create Secret: kpanda/user-guide/configmaps-secrets/create-secret.md
+              - Use Secret: kpanda/user-guide/configmaps-secrets/use-secret.md
           - Cluster Operation & Maintenance:
-              - Recent Operations: kpanda/07UserGuide/clusterops/latest-operations.md
-              - Cluster Settings: kpanda/07UserGuide/clusterops/cluster-settings.md
+              - Recent Operations: kpanda/user-guide/clusterops/latest-operations.md
+              - Upgrade Cluster: kpanda/user-guide/clusters/upgrade-cluster.md
+              - Cluster Settings: kpanda/user-guide/clusterops/cluster-settings.md
           - Permissions:
-              - Permission Brief: kpanda/07UserGuide/Permissions/PermissionBrief.md
-              - Cluster and Namespace Authorization: kpanda/07UserGuide/Permissions/Cluster-NSAuth.md
+              - Permission Brief: kpanda/user-guide/permissions/permission-brief.md
+              - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md
+          - Backup and Restore:
+              - ETCD Backup: kpanda/user-guide/backup/etcd-backup.md
+              - Install Velero: kpanda/user-guide/backup/install-velero.md
+              - Back up Deployment: kpanda/user-guide/backup/deployment.md
+          - Best Practices:
+              - ETCD Backup and Restore: kpanda/best-practice/etcd-backup.md
+              - Offline Upgrade Worker Cluster: kpanda/best-practice/update-offline-cluster.md
       - Global Management:
           - Intro:
               - What is Global Management: ghippo/intro/what.md

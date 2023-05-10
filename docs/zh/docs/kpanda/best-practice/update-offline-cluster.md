@@ -8,7 +8,9 @@
 
 在离线场景下，用户可以通过制作增量离线包的方式对使用 DCE 5.0 平台所创建的工作集群的 kubernetes 的版本进行升级。整体的升级思路为：在联网节点构建离线包 → 将离线包导入火种节点 → 更新 Global 集群的 kubernetes 版本清单  →  使用平台 UI 升级工作集群的 kubernetes 版本 。
 
-!!! 目前支持构建的离线 kubernetes 版本如下：
+!!! note
+
+    目前支持构建的离线 kubernetes 版本如下：
 
     - v1.26.3, v1.26.2, v1.26.1, v1.26.0, v1.25.8
     - v1.25.7, v1.25.6, v1.25.5, v1.25.4, v1.25.3, v1.25.2, v1.25.1, v1.25.0,
@@ -115,7 +117,8 @@
         DEST_USER=${username} DEST_PASS=${password} DEST_TLS_VERIFY=false ./import_images.sh https://x.x.x.x:443
         ```
         
-        ”https://x.x.x.x:443” 为外部仓库的地址。“DEST_USER=${username} DEST_PASS=${password}” 外部仓库的用户名和密码参数。
+        ”https://x.x.x.x:443” 为外部仓库的地址。
+        “DEST_USER=${username} DEST_PASS=${password}” 外部仓库的用户名和密码参数。
         如果外部仓库为免密，则可删除此参数。
 
 3. 在火种节点上将`/data` 文件内的二进制文件拷贝至火种节点内置的 Minio 服务上。
