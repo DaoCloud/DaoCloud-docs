@@ -5,7 +5,7 @@ hide:
 
 # overview
 
-This article introduces the overview information of the clusters managed in `Container Management`, including the abnormal number and total number of all cluster resources, alarms, link data, and log data statistics, the resource usage of Top5 clusters and nodes, and the status of nodes and container groups. Top 5 trends and service delays.
+This article introduces the overview information of the clusters managed in `Container Management`, including the abnormal number and total number of all cluster resources, alarms, link data, and log data statistics, the resource usage of Top5 clusters and nodes, and the status of nodes and pods. Top 5 trends and service delays.
 
 1. Select `Overview` in the left navigation bar to enter the details page.
 

@@ -38,10 +38,10 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 #### fix
 
-- **Fix** display style of container group running status
+- **Fix** display style of pod running status
 - **Fix** When the link function is not enabled, hide related configuration parameters
 - **Fix** Some front-end styles do not take effect
-- **Fix** collection container group indicators no data problem
+- **Fix** collection pod indicators no data problem
 - **FIXED** Unable to install insight-agent in OpenShift cluster
 
 ## 2023.02.27

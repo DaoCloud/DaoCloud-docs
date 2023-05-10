@@ -171,9 +171,9 @@ INFO[0000] Go OS/Arch: linux/amd64
 
     首先将 etcd 静态 Pod 的 manifest 文件移动到 `/etc/kubernetes/manifests` 目录下，kubelet 将会重启 etcd：
 
-        ```shell
-        mv /tmp/etcd.yaml /etc/kubernetes/manifests/etcd.yaml
-        ```
+    ```shell
+    mv /tmp/etcd.yaml /etc/kubernetes/manifests/etcd.yaml
+    ```
 
     然后等待 etcd 服务启动完成以后，检查 etcd 的状态，etcd 相关证书默认目录：`/etc/kubernetes/ssl`。如果集群证书存放在其他位置，请指定对应路径。
 

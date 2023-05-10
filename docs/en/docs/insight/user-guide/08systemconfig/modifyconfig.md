@@ -47,7 +47,7 @@ Refer to the following steps to modify the indicator data retention period.
           replicaCount: 1
     ```
 
-3. After saving the modification, the container group of the component responsible for storing the indicators will automatically restart, just wait for a while.
+3. After saving the modification, the pod of the component responsible for storing the indicators will automatically restart, just wait for a while.
 
 ## How to modify the log data storage duration
 
