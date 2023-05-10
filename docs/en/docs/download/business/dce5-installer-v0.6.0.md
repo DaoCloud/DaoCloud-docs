@@ -4,28 +4,28 @@ date: 2023-04-07
 
 # DCE 5.0 Commercial Release v0.6.0
 
-This page can download the offline installation package and verification file of DCE 5.0 commercial version.
+This page can download the offline installation package and verification file of DCE 5.0 Commercial release.
 
 ## Download
 
 | File Name | Version | Architecture | File Size | Downloads | Date Updated |
 | ----------------------------- | ------- | -------- | -- ----------------------------------------------- | ----- ----- | -------------------------------- |
-| offline-v0.6.0-amd64.tar | v0.6.0 | AMD64 | 16.36GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.0 -amd64.tar) | 2023-04-07 |
-| offline-v0.6.0-arm64.tar | v0.6.0 | ARM64 | 15.12GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.0 -arm64.tar) | 2023-04-07 |
+| offline-v0.6.0-amd64.tar | v0.6.0 | AMD64 | 16.36GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.0-amd64.tar) | 2023-04-07 |
+| offline-v0.6.0-arm64.tar | v0.6.0 | ARM64 | 15.12GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.0-arm64.tar) | 2023-04-07 |
 
 ## Validation
 
-Enter the download directory of the offline installation package.
+Go to the download directory of the offline installation package.
 
 === "AMD64"
 
-    Execute the following command to verify the installation package:
+    Run the following command to verify the installation package:
 
     ```sh
     echo "4e810a67268f8e0125a486018c3da8e8165d16cd0206d6d6e0560773caf8983cfe2b0827692e3ac6efbd26345c0bbfed58139ff01affd96d525b59f7967cec5d9 offline. var0-var1" sum -c
     ```
 
-    If the verification is successful, it will print:
+    If the validation is successful, it will print:
 
     ```none
     offline-v0.6.0-amd64.tar: OK
@@ -33,13 +33,13 @@ Enter the download directory of the offline installation package.
 
 === "ARM64"
 
-    Execute the following command to verify the installation package:
+    Run the following command to verify the installation package:
 
     ```sh
     echo "4c778c6aad168e19bdffec234c5096795b6b7cfa9c5d17c9d9e64cb7ddc526263d6f0d863c631e2e4cc5d205866f29a69d9a38c92b8c751af0ed1db25304ba7d4.offline-varm0" um -c
     ```
 
-    If the verification is successful, it will print:
+    If the validation is successful, it will print:
 
     ```none
     offline-v0.6.0-arm64.tar: OK
@@ -51,7 +51,7 @@ After successfully verifying the offline package,
 
 === "AMD64"
 
-    Execute the following command to extract the tarball:
+    Run the following command to extract the tarball:
 
     ```sh
     tar -zxvf offline-v0.6.0-amd64.tar
@@ -59,13 +59,13 @@ After successfully verifying the offline package,
 
 === "ARM64"
 
-    Execute the following command to extract the tarball:
+    Run the following command to extract the tarball:
 
     ```sh
     tar -zxvf offline-v0.6.0-arm64.tar
     ```
 
-- For installation, please refer to [Commercial version installation process](../../install/commercial/start-install.md)
+- For installation, please refer to [Commercial release installation process](../../install/commercial/start-install.md)
 - After successful installation, please contact us for authorization: email info@daocloud.io or call 400 002 6898
 
 ## Modules

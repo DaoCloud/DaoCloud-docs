@@ -659,25 +659,27 @@ nav:
       - 202208 | Multicloud Orchestration Capabilities: blogs/kairship.md
       - 202207 | Service Mesh Capabilities: blogs/mspider.md
       - 202206 | DCE Dev Background: blogs/blog00.md
+  - Download:
+      - DaoCloud Enterprise 5.0:
+          - Index: download/dce5.md
+          - Download DCE 5.0 Community Releases: download/free/dce5-installer-v0.7.0.md
+          - Download DCE 5.0 Commercial Releases: download/business/dce5-installer-v0.7.0.md
+          - Modules and Addons:
+              - Download Addon Offline Package: download/addon/v0.6.0.md
+              - Download Global Management: download/modules/ghippo.md
+              - Download Insight: download/modules/insight.md
+              - Download Spidernet: download/modules/spidernet.md
   - DaoCloud Ecosystem:
       - Index: community/index.md
-      - CloudTTY: community/cloudtty.md
+      - cloudtty: community/cloudtty.md
       - Clusterpedia: community/clusterpedia.md
       - Ferry: community/ferry.md
       - HwameiStor: community/hwameistor.md
       - KLTS: community/klts.md
       - Kubean: community/kubean.md
-      - kwok: community/kwok.md
+      - KWOK: community/kwok.md
       - Merbridge: community/merbridge.md
       - Spiderpool: community/spiderpool.md
-  - Download:
-      - DaoCloud Enterprise 5.0:
-          - Index: download/dce5.md
-          - Download Community Release: download/free/dce5-installer-v0.6.0.md
-          - Download Commercial Release: download/business/dce5-installer-v0.6.0.md
-          - Download Addons: download/addon/v0.5.2.md
-          - Download Global Management: download/modules/ghippo.md
-          - Download Insight: download/modules/insight.md
   - Cloud Native Institute:
       - Cloud Native News: native/news.md
       - Business Products: native/commerce.md
