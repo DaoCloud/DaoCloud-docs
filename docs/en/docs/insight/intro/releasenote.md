@@ -370,7 +370,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 - Added documentation station glossary
 - Added 4 pages of basic concept tasks and examples, data model, query language, etc. of the document station
 - Added user guides - documents such as scene monitoring, data query, alarm center, etc.
-- New additions to the document site: [Product Benefits](../intro/benefits.md), [Metric Query](../user-guide/data-query/metric.md), [Link Query](.. /user-guide/data-query/trace.md), dashboard, [overview](../user-guide/overview.md)
+- New additions to the document site: [Product Benefits](../intro/benefits.md), [Metric Query](../user-guide/data-query/metric.md), [Link Query](../user-guide/data-query/trace.md), dashboard, [overview](../user-guide/overview.md)
 
 ## 2022-4-22
 
