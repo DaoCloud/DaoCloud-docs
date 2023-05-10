@@ -1,22 +1,22 @@
-# Enable the Mesh Governance plugin
+# The Mesh governance plug-in is enabled
 
-<!--## Prerequisites-->
-## Steps
+<! --## Prerequisite -->
+## Operation procedure
 
-1. On the Managed Registry List page, click the name of the target registry, and then click .
+1. Click the name of the target registry on the Hosting Registry list page, and.
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-2. Click `Plugin Center` on the left navigation bar, and click `Open Now` on the `Mesh Governance` card.
+2. In the left navigation bar, click `Plugins`, and on the `Service Mesh` card, click `Enable`.
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-3. Select the service mesh you want to bind, and click `OK` at the bottom of the pop-up box.
+3. Select the service grid you want to bind to and click `OK` at the bottom of the box.
 
-    If you can't find the service mesh you want, you can go to the service mesh module [create a mesh](../../../../mspider/user-guide/servicemesh/create-mesh.md).
+    If you can"t find the service grid you want, go to the service grid module [Create Service Mesh](../../../../mspider/user-guide/service-mesh/README.md).
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-4. If the prerequisites are met and the configuration is correct, a message "Enabling the Mesh Plugin Successfully" will pop up in the upper right corner of the page.
+4. If the prerequisites are met and the configuration is correct, the "Mesh plug-in enabled successfully" message is displayed in the upper right corner of the page.
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->

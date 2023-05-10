@@ -262,34 +262,41 @@ nav:
           - Policies:
               - PropagationPolicy: kairship/07policy/propagationpolicy.md
               - OverridePolicy: kairship/07policy/overridepolicy.md
-      - Microservie Engine:
+      - Microservice Engine:
           - Intro:
-              - Features: skoala/intro/features.md
+              - Feature Overview: skoala/intro/what.md
               - Scenarios: skoala/intro/scenarios.md
-              - Benefits: skoala/intro/advantages.md
-              - Env Requirements: skoala/intro/components.md
+              - Advantages: skoala/intro/advantages.md
               - Release Notes: skoala/intro/release-notes.md
-          - Quickstart:
-              - Install microservice engine: skoala/quickstart/install.md
-              - Offline upgrade microservice engine: skoala/quickstart/offline-upgrade.md
+          - Quick Start:
+              - Install: skoala/quickstart/install.md
+              - Online Upgrade: skoala/quickstart/online-upgrade.md
+              - Offline Upgrade: skoala/quickstart/offline-upgrade.md
               - Select Workspace: skoala/quickstart/select-workspace.md
-          - Select Workspace: skoala/select-workspace.md
-          - Microservice:
-              - Hosted Registry:
+          - Microservice Governance:
+              - Managed Registry:
                   - Registry Management:
-                      - Create: skoala/registry/managed/registry-lcm/create-registry.md
-                      - Update: skoala/registry/managed/registry-lcm/update-registry.md
-                      - View: skoala/registry/managed/registry-lcm/check-registry.md
-                      - Delete: skoala/registry/managed/registry-lcm/delete-registry.md
+                      - Create Registry: skoala/registry/managed/registry-lcm/create-registry.md
+                      - Update Registry: skoala/registry/managed/registry-lcm/update-registry.md
+                      - Check Registry: skoala/registry/managed/registry-lcm/check-registry.md
+                      - Delete Registry: skoala/registry/managed/registry-lcm/delete-registry.md
                   - Microservice Namespace: skoala/registry/managed/namespace.md
                   - Microservice List:
-                      - skoala/registry/managed/servicelist/intro.md
-                      - Governance Policy: skoala/registry/managed/servicelist/governance-policy.md
-                  - Microservice Config: skoala/registry/managed/configcenter.md
-                  - Plugins:
+                      - Intro: skoala/registry/managed/servicelist/intro.md
+                      - Microservice Details: skoala/registry/managed/servicelist/check-details.md
+                  - Microservice Governance:
+                      - Sentinel Specification: skoala/registry/managed/governance/connect-sentinel.md
+                      - Ruls: skoala/registry/managed/governance/governance-policy.md
+                      - Flow Control: skoala/registry/managed/governance/flow-control.md
+                  - Microservice Configuration List: skoala/registry/managed/configcenter.md
+                  - Monitoring:
+                      - Microservices: skoala/registry/managed/monitor/microservices.md
+                      - Components: skoala/registry/managed/monitor/components.md
+                      - Traces: skoala/registry/managed/monitor/traces.md
+                  - Plugin Center:
                       - skoala/registry/managed/plugins/plugin-center.md
-                      - Enable Sentinel: skoala/registry/managed/plugins/sentinel.md
-                      - Enable Mesh: skoala/registry/managed/plugins/mesh.md
+                      - Sentinel Governance: skoala/registry/managed/plugins/sentinel.md
+                      - Mesh Governance: skoala/registry/managed/plugins/mesh.md
               - Integrated Registry:
                   - Integrate Registry: skoala/registry/integrated/integrate-registry.md
                   - Update Registry: skoala/registry/integrated/update-registry.md
@@ -298,34 +305,36 @@ nav:
                   - Microservice Governance: skoala/registry/integrated/traffic-control.md
                   - Traces: skoala/registry/integrated/trace.md
           - Microservice Gateway:
-              - Gateways:
-                  - Create: skoala/ms-gateway/gateway/create-gateway.md
-                  - View: skoala/ms-gateway/gateway/check-details.md
-                  - Update: skoala/ms-gateway/gateway/update-gateway.md
-                  - Diagnosis: skoala/ms-gateway/gateway/diagnose-gateway.md
-                  - Remove: skoala/ms-gateway/gateway/delete-gateway.md
+              - Gateway Management:
+                  - Create Gateway: skoala/ms-gateway/gateway/create-gateway.md
+                  - Check Gateway: skoala/ms-gateway/gateway/check-details.md
+                  - Update Gateway: skoala/ms-gateway/gateway/update-gateway.md
+                  - Delete gateway: skoala/ms-gateway/gateway/delete-gateway.md
               - API Management:
                   - Add API: skoala/ms-gateway/api/add-api.md
                   - Update API: skoala/ms-gateway/api/update-api.md
-                  - Configure API Policy: skoala/ms-gateway/api/api-policy.md
-                  - Remove API: skoala/ms-gateway/api/delete-api.md
-              - Service Integration:
-                  - Manually Integrate: skoala/ms-gateway/service/manual-integrate.md
-                  - Auto Manage: skoala/ms-gateway/service/auto-manage.md
+                  - API Policy: skoala/ms-gateway/api/api-policy.md
+                  - Delete API: skoala/ms-gateway/api/delete-api.md
+              - Service Management:
+                  - Manual Add: skoala/ms-gateway/service/manual-integrate.md
+                  - Auto Add: skoala/ms-gateway/service/auto-manage.md
+              - Monitoring & Alarming: skoala/ms-gateway/alert.md
               - Logs:
                   - Request Logs: skoala/ms-gateway/logs/reqlog.md
                   - Instance Logs: skoala/ms-gateway/logs/inslog.md
-              - Domain Names:
-                  - Add DN: skoala/ms-gateway/domain/add-domain.md
-                  - Update DN: skoala/ms-gateway/domain/update-domain.md
-                  - Configure DN Policy: skoala/ms-gateway/domain/domain-policy.md
-                  - Delete DN: skoala/ms-gateway/domain/delete-domain.md
+              - Domain Management:
+                  - Add Domain: skoala/ms-gateway/domain/add-domain.md
+                  - Update Domain: skoala/ms-gateway/domain/update-domain.md
+                  - Configure Domain Policy: skoala/ms-gateway/domain/domain-policy.md
+                  - Delete Domain: skoala/ms-gateway/domain/delete-domain.md
           - Best Practices:
-              - Experience microservice: skoala/best-practice/use-skoala-01.md
-          - References:
+              - Complete Process of Microservice Governance: skoala/best-practice/use-skoala-01.md
+              - Microservice Gateway JWT: skoala/best-practice/jwt.md
+              - Microservice Gateway Authentication Server: skoala/best-practice/auth-server.md
+          - General Reference:
               - Microservice: reference/basic-knowledge/microservice.md
-              - Service Registry: reference/basic-knowledge/registry.md
-              - Gateway: reference/basic-knowledge/gateway.md
+              - Registry: reference/basic-knowledge/registry.md
+              - Cloud Native Gateway: reference/basic-knowledge/gateway.md
       - Service Mesh:
           - Intro:
               - What is service mesh: mspider/intro/what.md

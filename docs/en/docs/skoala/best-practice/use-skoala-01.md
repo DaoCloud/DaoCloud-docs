@@ -1,212 +1,185 @@
-# Example application experience microservice governance
+# Sample application experience microservice governance
 
-The microservice engine belongs to the advanced version of DCE5.0, which includes registration center, configuration center, microservice governance (traditional microservices, cloud-native microservices), cloud-native gateway and other modules; it will take you to experience how the sample application is deployed successfully Finally, experience the microservice governance function.
+The micro service engine is a function of DCE 5.0 Advanced edition, which includes registry center, configuration center, micro service governance (traditional micro service, cloud native micro service), cloud native gateway and other functions. This article will walk you through the microservice governance capabilities of a sample application.
 
-## Flow Description
+The full process of this best practice is as follows:
 
-- Deploy the sample application on the application workbench and enable microservice governance
-- Enable traditional microservices governance
-- Configure the corresponding governance rules
-- Expose service API
-- Access to testing services via Postman
+1. Deploy the sample application in the application workbench and enable microservice governance
+2. Enable the traditional micro-service governance plug-in in the micro-service engine
+3. Configure the corresponding governance rules in the microservice engine
+4. Expose apis and access applications in the microservice engine
 
 ## Sample application introduction
 
-The sample application comes from the standard demo application of OpenTelemetry, which can well reflect the cloud native and observability capabilities. It is also convenient for our governance rules to be presented. Below is the sample application optimized by the DaoCloud large and micro service team based on DCE5.0 functions and open sourced on Github.
+The sample application used in this practice is based on the OpenTelemetry standard demo application. The DaoCloud Large and Micro Services team has optimized it based on DCE 5.0 features to better reflect cloud native and observable capabilities, and to show the effects of micro-service governance. The sample application is open source on Github, visit [Github warehouse address ](https://github.com/openinsight-proj/openinsight-helm-charts) for more details.
 
-- <https://github.com/openinsight-proj/openinsight-helm-charts>
+The architecture diagram for the sample application is as follows:
 
-> Application Architecture Diagram
+<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->-->
 
+## Application deployment
 
+[Workbench](../../amamba/intro/what.md) is an application management module of DCE 5.0. It supports the creation and maintenance of various types of applications, GitOps, and grayscale publishing, and can quickly deploy applications to any cluster. Application workbench supports deployment of applications based on Git repository, Jar package, container image and Helm template. This practice deployable the sample application based on `Helm Template`.
 
-For more sample applications, please check our open source site: <https://github.com/openinsight-proj/openinsight-helm-charts>
+<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-## Application Deployment
+Before deploying applications, the following conditions must be met:
 
-The application workbench is an application management module provided by DCE5.0, which is convenient for you to create/maintain various types of applications here, supports CICD, and can easily and quickly deploy applications to any cluster.
+- [Add Helm Repo](../../kpanda/user-guide/helm/helm-repo.md) in container management:
 
-To learn more about the application workbench, click [Application Workbench to view](../../amamba/intro/WhatisAmamba.md)
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-### Deployment method selection
+- [ Create the Nacos registry instance ](../registry/managed/registry-lcm/create-registry.md)
 
-The application workbench currently supports deployment methods based on Git repo, Jar package, Image, Helm Chart, etc. Here we use `Git repo` as an example.
+    > Notice Record the address of the registry for subsequent application installation.
 
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
+### Deployment based on Helm template
 
-### Deployment preparation
+1. Locate the opentelemetry-demo application in `Workbench` -> `Wizard` -> `From Helm Template` and click the application card to install it
 
-#### Import Helm Chart
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-This step needs to be operated in `container management`, jump to the Helm Chart registry, and add the registry:
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
+2. On the Helm installation interface, make sure that the deployment position is correct, and then update the parameter configuration in `JAVA_OPTS` according to the requirements below.
 
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-#### Prepare Nacos instance
+    Based on the registry address recorded above, update the parameter below with comments as follows:
 
-For the specific operation here, please refer to the registry configuration, [](../registry/managed/registry-lcm/create-registry.md)
+    ```java
+    -javaagent:./jmx_prometheus_javaagent-0.17.0.jar=12345:./prometheus-jmx-config.yaml
+        -Dspring.extraAdLabel=Daocloud -Dspring.randomError=false
+        -Dspring.matrixRow=200 -Dmeter.port=8888
+        -Dspring.cloud.nacos.discovery.enabled=true       # change to true to enable
+        -Dspring.cloud.nacos.config.enabled=true          # change to true to enable
+        -Dspring.cloud.nacos.config.server-addr=nacos-test.skoala-test:8848           # change to address of Nacos
+        -Dspring.application.name=adservice-springcloud
+        -Dspring.cloud.nacos.discovery.server-addr=nacos-test.skoala-test:8848        # change to address of Nacos
+        -Dspring.cloud.nacos.discovery.metadata.k8s_cluster_id=xxx                    # change to cluster ID of Nacos 
+        -Dspring.cloud.nacos.discovery.metadata.k8s_cluster_name=skoala-dev           # change to cluster name of Nacos
+        -Dspring.cloud.nacos.discovery.metadata.k8s_namespace_name=skoala-test        # change to ns of Nacos
+        -Dspring.cloud.nacos.discovery.metadata.k8s_workload_type=deployment
+        -Dspring.cloud.nacos.discovery.metadata.k8s_workload_name=adservice-springcloud
+        -Dspring.cloud.nacos.discovery.metadata.k8s_service_name=adservice-springcloud
+        -Dspring.cloud.nacos.discovery.metadata.k8s_pod_name=${HOSTNAME}
+        -Dspring.cloud.sentinel.enabled=false          # change to true to enable Sentinel
+        -Dspring.cloud.sentinel.transport.dashboard=nacos-test-sentinel.skoala-test:8080  # change to address of Sentinel console
+    ```
 
-Pay attention to obtain the link address information of the registration center, which will be used later when the application below is installed.
+> For details about how to obtain the cluster ID, cluster name, and namespace name, see `kubectl get cluster <clusername> -o json | jq.metadata.uid`.
 
+1. After the application is successfully created, the list of Helm applications in the application workbench is displayed.
 
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-### Deploy the application
+### Java project development and debugging
 
-In the application workbench, directly choose to use Helm Chart to install, find the openinsight application, and then choose to deploy.
+If other deployment modes are used, the method of configuring the registry address may be different. Java projects need to integrate the SDK of Nacos during development, and the registry provided by DCE 5.0 is fully compatible with open source Nacos, so you can directly use the SDK of open source Nacos. For details, see [ Deploy Java applications based on Jar packages ](../../amamba/user-guide/wizard/jar-java-app.md).
 
-
-
-
-
-### Parameter configuration
-
-On the Helm installation interface, pay attention to confirm the deployment location and the parameter configuration below, find the corresponding module through the keyword `JAVA_OPTS`, and update the configuration below.
-
-
-
-- Through the registration center address obtained above
-- Update the configuration parameters below, the main update fields are
-     -Dspring.cloud.nacos.discovery.enabled
-     -Dspring.cloud.nacos.config.enabled
-     -Dspring.cloud.nacos.config.server-addr
-     -Dspring.cloud.nacos.discovery.server-addr
-     -Dspring.cloud.nacos.discovery.metadata.k8s_cluster_id
-     -Dspring.cloud.nacos.discovery.metadata.k8s_cluster_name
-     -Dspring.cloud.nacos.discovery.metadata.k8s_namespace_name
-
-> The configuration modification location is as follows:
-
-```java
--javaagent:./jmx_prometheus_javaagent-0.17.0.jar=12345:./prometheus-jmx-config.yaml
-     -Dspring.extraAdLabel=Daocloud -Dspring.randomError=false
-     -Dspring.matrixRow=200 -Dmeter.port=8888
-     -Dspring.cloud.nacos.discovery.enabled=false # Enable Nacos service registration discovery
-     -Dspring.cloud.nacos.config.enabled=false # Enable Nacos configuration management capabilities
-     -Dspring.cloud.sentinel.enabled=false
-     -Dspring.cloud.nacos.config.server-addr=nacos-test.skoala-test:8848 # Configure Nacos registration center address
-     -Dspring.application.name=adservice-springcloud
-     -Dspring.cloud.nacos.discovery.server-addr=nacos-test.skoala-test:8848 # Configure Nacos registration center address
-     -Dspring.cloud.nacos.discovery.metadata.k8s_cluster_id=xxx # Configure the cluster ID where the Nacos registry is located
-     -Dspring.cloud.nacos.discovery.metadata.k8s_cluster_name=skoala-dev # Configure the name of the cluster where the Nacos registry is located
-     -Dspring.cloud.nacos.discovery.metadata.k8s_namespace_name=skoala-test # Configure the namespace where the Nacos registry is located
-     -Dspring.cloud.nacos.discovery.metadata.k8s_workload_type=deployment
-     -Dspring.cloud.nacos.discovery.metadata.k8s_workload_name=adservice-springcloud
-     -Dspring.cloud.nacos.discovery.metadata.k8s_service_name=adservice-springcloud
-     -Dspring.cloud.nacos.discovery.metadata.k8s_pod_name=${HOSTNAME}
-     -Dspring.cloud.sentinel.enabled=false
-     -Dspring.cloud.sentinel.transport.dashboard=nacos-test-sentinel.skoala-test:8080
-```
-
-After the creation is successful, the application will appear in the Helm application list of the application workbench.
-
-
-
-### Other deployment methods
-
-If you use other deployment methods, the method for configuring the registry address may be different depending on the deployment method.
-
-#### Java project self-development and debugging
-
-This generally refers to Java projects. When developing, you need to integrate the Nacos SDK. The registry module provided by DCE5.0 is fully compatible with the open source Nacos, so you can directly use the open source Nacos SDK.
-
-When using java -jar to start the project, pay attention to add the corresponding environment variable configuration
+When using `java -jar` to start a project, add the corresponding environment variable configuration
 
 ```java
-     -Dspring.cloud.nacos.discovery.enabled=false # Enable Nacos service registration discovery
-     -Dspring.cloud.nacos.config.enabled=false # Enable Nacos configuration management capabilities
-     -Dspring.cloud.sentinel.enabled=false
-     -Dspring.cloud.nacos.config.server-addr=nacos-test.skoala-test:8848 # Configure Nacos registration center address
-     -Dspring.application.name=adservice-springcloud
-     -Dspring.cloud.nacos.discovery.server-addr=nacos-test.skoala-test:8848 # Configure Nacos registration center address
-     -Dspring.cloud.nacos.discovery.metadata.k8s_cluster_id=xxx # Configure the cluster ID where the Nacos registry is located
-     -Dspring.cloud.nacos.discovery.metadata.k8s_cluster_name=skoala-dev # Configure the name of the cluster where the Nacos registry is located
-     -Dspring.cloud.nacos.discovery.metadata.k8s_namespace_name=skoala-test # Configure the namespace where the Nacos registry is located
-     -Dspring.cloud.nacos.discovery.metadata.k8s_workload_type=deployment
-     -Dspring.cloud.nacos.discovery.metadata.k8s_workload_name=adservice-springcloud
-     -Dspring.cloud.nacos.discovery.metadata.k8s_service_name=adservice-springcloud
-     -Dspring.cloud.nacos.discovery.metadata.k8s_pod_name=${HOSTNAME}
+    -Dspring.cloud.nacos.discovery.enabled=false        # change to true to enable
+    -Dspring.cloud.nacos.config.enabled=false           # change to true to enable
+    -Dspring.cloud.sentinel.enabled=false               # change to true to enable
+    -Dspring.cloud.nacos.config.server-addr=nacos-test.skoala-test:8848           # change to address of Nacos
+    -Dspring.application.name=adservice-springcloud
+    -Dspring.cloud.nacos.discovery.server-addr=nacos-test.skoala-test:8848        # change to address of Nacos
+    -Dspring.cloud.nacos.discovery.metadata.k8s_cluster_id=xxx                    # change to cluster ID of Nacos
+    -Dspring.cloud.nacos.discovery.metadata.k8s_cluster_name=skoala-dev           # change to cluster name of Nacos
+    -Dspring.cloud.nacos.discovery.metadata.k8s_namespace_name=skoala-test        # change to ns of Nacos
+    -Dspring.cloud.nacos.discovery.metadata.k8s_workload_type=deployment
+    -Dspring.cloud.nacos.discovery.metadata.k8s_workload_name=adservice-springcloud
+    -Dspring.cloud.nacos.discovery.metadata.k8s_service_name=adservice-springcloud
+    -Dspring.cloud.nacos.discovery.metadata.k8s_pod_name=${HOSTNAME}
 ```
 
-Note that the above `metadata` information should not be missing, otherwise the service presented in the registry will be missing this part of information
-
-#### Deploy using the Application Workbench image
-
-When using container image deployment through the application workbench, you can easily enable microservice governance through configuration and directly select the corresponding registry module.
+!!! note
 
 
+### Use container image deployment
 
-## Microservice Governance Strategy
+If you choose to deploy applications based on container images, you can directly enable micro-service governance in the user interface configuration and select the corresponding registry module for easier operation. For details, see [ Build micro-service application based on Git repository ](../../amamba/user-guide/wizard/create-app-git.md).
 
-When the application is successfully deployed, we can see the corresponding service in the previously prepared registry.
+<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
+## Enable traditional micro-service governance
 
+Before using the micro-service governance function, you need to enable the corresponding governance plug-in in the plug-in center under the corresponding registry. The plug-in Center provides two plug-ins, Sentinel governance and Mesh governance, and supports visual configuration through the user interface. After the plug-in is installed, the micro-service governance capability can be expanded to meet service requirements in different scenarios.
 
-### Governance strategy example: current limiting
+In this practice, traditional micro-service governance is adopted, namely, Sentinel governance plug-in is opened. For details, see [ Enable the Sentinel governance plug-in ](../registry/managed/plugins/sentinel.md).
 
-Here is an example of the current limiting policy. We can add the corresponding current limiting policy to the service through simple configuration.
+<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
+## Configure corresponding governance rules
 
+After the application is successfully deployed, you can view the corresponding service in `Microservice List` under the prepared registry. The microservice list provides traffic governance rules, such as flow control rules, circuit breaker degradation rules, hotspot rules, system rules, and authorization rules. This practice takes the flow control rule as an example to demonstrate.
 
-### Current limiting strategy test
+<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-By accessing the service address, we can see that after the number of requests is greater than 2 within 1 minute, subsequent requests will be blocked; it will be automatically restored after more than 1 minute.
+### Configure the flow control policy
 
-### More Strategies
+Here is an example of a traffic limiting policy. You can add a corresponding traffic limiting policy to a service through simple configuration.
 
+<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
+### Test the flow control policy
 
-## Cloud native gateway open API
+By accessing the service address, we can see that if the number of requests in one minute is more than 2, the subsequent requests will be intercepted. It automatically recovers after more than 1 minute.
 
-When the deployment of the microservice application is completed, we need to open the application entrance to external access through the API gateway. Only at this step is the completed service experience.
+## Expose the API and access the application
 
-### Create a cloud-native gateway
+After the deployment of a micro-service application is complete, the application portal needs to be opened to external access through the API gateway. This step is the complete service usage experience. To expose service apis, you need to create a cloud native gateway, connect services to the gateway, and create API routes.
 
-First, we need to create a cloud-native gateway. For specific steps, please refer to: [Create a cloud-native gateway](../ms-gateway/gateway/create-gateway.md)
+### Create a cloud native gateway
 
-Here we have prepared a cloud native gateway
+Create a cloud native gateway. For details, see [Create Gateway](../ms-gateway/gateway/create-gateway.md).
 
-
-
-> Note that when creating a gateway, the working cluster application deployed by the gateway is in the same cluster as the sample application, and the managed namespace of the cloud-native gateway needs to include the namespace where the instance application resides
-
-### Service access and discovery
-
-Based on the features of DCE5.0, the cloud-native gateway will automatically discover services in the managed namespace, so we don't need to create services separately.
-
-This demonstration uses the services of the Nacos registration center, which greatly expands the number of services that the gateway can access. We can choose from the service access to access the services of the Nacos registration center.
-
+!!! note
 
 
-The role of manual access, when the service is not in the managed namespace, or we want to access the registration center or other external services (using domain name/IP), we can use manual access.
+<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-### Create the corresponding API route
+### Access service
 
-Jump to the API list, use the upper right to create an API, complete the corresponding API, and pay attention to select the corresponding service; the following is the basic information of the API corresponding to the sample application
+Based on the DCE 5.0 feature, the cloud native gateway can automatically discover services in the managed namespace. Therefore, you do not need to manually access services.
 
+Nacos Registry services are adopted in this demonstration, which greatly expands the number of services accessible to the gateway. Services accessible to Nacos registry can be selected from `Add Service`.
 
+<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-> For more API creation details, please refer to the corresponding document [Create API](../ms-gateway/api/add-api.md)
-
-### Access the application
-
-After the gateway API is created, we can successfully access the application page by using the **domain name** and **external API path** configured when creating the API; the access page is below.
-
-> Sample Application Home
+!!! info
 
 
+### Create an API route
 
-> Sample Application Order Confirmation Page
+See [Add API](../ms-gateway/api/add-api.md) to create an API route.
 
+<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
+### Access application
 
-## Conclusion
+After the gateway API is created, you can access the application page by using ** Domain name ** and ** External API path ** configured during API creation, as shown in the following figure.
 
-The above is the experience journey of the entire microservice engine module. With the support of the entire DCE5.0 capability, we have successfully completed the application deployment, the configuration of the microservice governance strategy, and the use of cloud-native gateway capabilities to open and actually access the API.
+** The home page of the sample application **:
 
-### More Capabilities
+<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-After our application is successfully deployed, we actually rely heavily on the observability provided by DCE5.0 in the subsequent application maintenance process; next, we will supplement the practice of corresponding observability.
+** The order confirmation page for the sample application **:
 
-- View the topology structure after application deployment
-- View the log content of the application
-- View the access logs of the cloud gateway gateway API
+<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+
+## conclusion
+
+This is the experience of the entire microservices engine module. With the support of the entire DCE 5.0 capability, we successfully completed application deployment, enabling micro-service governance, configuring and testing micro-service governance policies, opening apis through cloud native gateway, and actually accessing applications.
+
+### More capacity
+
+After our application is deployed successfully, we rely heavily on the observation capability provided by DCE 5.0 for subsequent application maintenance. Next, we will add the corresponding observable capability practice.
+
+- View the topology of the deployed application
+- View application logs
+- View API access logs of the CSA
