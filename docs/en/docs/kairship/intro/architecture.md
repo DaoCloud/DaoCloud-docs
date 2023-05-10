@@ -41,7 +41,7 @@ This component is mainly responsible for the processing of a series of control l
 
     The CRUD event monitoring of multicloud orchestration instance CRD, once the kariship instance is created, the corresponding Kpanda cluster (virtual type, container management interface does not need to be displayed) will be created synchronously.
 
-    The retrieval of all resources of the multicloud orchestration instance (multicloud workload, pp, op) will be completed through the internal acceleration mechanism of the [container management module](../../kpanda/intro/WhatisKPanda.md) (with the help of [Clusterpedia]( ../../community/clusterpedia.md)) to separate reads and writes and improve performance.
+    The retrieval of all resources of the multicloud orchestration instance (multicloud workload, pp, op) will be completed through the internal acceleration mechanism of the [container management module](../../kpanda/intro/WhatisKPanda.md) (with the help of [Clusterpedia](../../community/clusterpedia.md)) to separate reads and writes and improve performance.
 
     If the instance is deleted, the virtual cluster registered in the container management module will be deleted synchronously.
 

@@ -1,6 +1,6 @@
 # Cluster and Namespace Authorization
 
-Container management implements authorization based on global authority management and global user/user group management. If you need to grant users the highest authority for container management (can create, manage, and delete all clusters), please refer to [What are users and access control](.. /../../ghippo/user-guide/access-control/iam.md).
+Container management implements authorization based on global authority management and global user/user group management. If you need to grant users the highest authority for container management (can create, manage, and delete all clusters), please refer to [What are users and access control](../../../ghippo/user-guide/access-control/iam.md).
 
 ## Prerequisites
 

@@ -5,7 +5,7 @@ hide:
 
 # Access registry
 
-The registry supports access to [Nacos registry](../../../reference/basic-knowledge/registry.md#nacos-registry), [Eureka registry](../../.. /reference/basic-knowledge/registry.md#eureka-registry), [Zookeeper registry](../../../reference/basic-knowledge/registry.md#zookeeper-registry), [Kubernetes Registry](../../../reference/basic-knowledge/registry.md#kubernetes-registry), [Mesh Registry](../../../reference/basic-knowledge/ registry.md#service-mesh-registry).
+The registry supports access to [Nacos registry](../../../reference/basic-knowledge/registry.md#nacos-registry), [Eureka registry](../../../reference/basic-knowledge/registry.md#eureka-registry), [Zookeeper registry](../../../reference/basic-knowledge/registry.md#zookeeper-registry), [Kubernetes Registry](../../../reference/basic-knowledge/registry.md#kubernetes-registry), [Mesh Registry](../../../reference/basic-knowledge/ registry.md#service-mesh-registry).
 
 Compared with the hosting registration center, the access registration center only supports some basic operations, such as viewing basic information, monitoring information, etc. To experience more advanced and comprehensive management operations, you need to create a [Managed Registry](../managed/registry-lcm/create-registry.md).
 
@@ -21,7 +21,7 @@ The steps to access the registration center are as follows:
 
     - Kubernetes/Mesh registration center: directly select the cluster or mesh service you want to access.
 
-        - If you can't find the Kubernetes cluster you want to add, you can go to the container management module [Access Cluster](../../../kpanda/07UserGuide/Clusters/JoinACluster.md) or [Create Cluster](.. /../../kpanda/07UserGuide/Clusters/CreateCluster.md).
+        - If you can't find the Kubernetes cluster you want to add, you can go to the container management module [Access Cluster](../../../kpanda/07UserGuide/Clusters/JoinACluster.md) or [Create Cluster](../../../kpanda/07UserGuide/Clusters/CreateCluster.md).
 
         - If you can't find the mesh service you want to add, you can go to the mesh service module [Create Mesh](../../../mspider/user-guide/servicemesh/README.md).
 

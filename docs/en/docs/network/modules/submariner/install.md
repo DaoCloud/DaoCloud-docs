@@ -36,35 +36,35 @@ Make sure your cluster is successfully connected to the `container management` p
 
 2. In the left navigation bar, select `Helm Applications` -> `Helm Templates`, find and click `submariner-k8s-broker`.
 
-    ! [helm](... /... /images/submariner-k8s-broker-helm-repo.png)
+    ! [helm](../../images/submariner-k8s-broker-helm-repo.png)
 
 3. Select the version you want to install in the version selection, and click Install. 4.
 
 It is recommended to install it under the `submariner-k8s-broker` namespace.
 
-    ! [broker-ns](... /... /images/submariner-k8s-broker-ns.png)
+    ! [broker-ns](../../images/submariner-k8s-broker-ns.png)
 
 5. The configuration shown below does not need to be changed, just leave the default parameters as they are: !
 
-    ! [config](... /... /images/submariner-k8s-broker-config.png)
+    ! [config](../../images/submariner-k8s-broker-config.png)
 
 6. Successfully install `submariner-k8s-broker` in the Broker cluster.
 
-    ! [broker](... /... /images/submariner-k8s-broker-install.png)
+    ! [broker](../../images/submariner-k8s-broker-install.png)
 
 7. Switch to its subcluster: master01 and install `submariner-operator`: !
 
-    ! [operator](... /... /images/submariner-operator-helm-repo.png)
+    ! [operator](../../images/submariner-operator-helm-repo.png)
 
 8. Select the version you want to install in the version selection, and click Install. 9.
 
 9. Recommend installing under the `submariner-operator` namespace, turn on Ready to Wait: !
 
-    ! [operator-ns](... /... /images/submariner-operator-ns.png)
+    ! [operator-ns](../../images/submariner-operator-ns.png)
 
 10. Configure `submariner-operator` to connect to the Broker cluster:
 
-    ! [operator-broker](... /... /images/submariner-operator-broker.png)
+    ! [operator-broker](../../images/submariner-operator-broker.png)
 
     The above parameter description:
 

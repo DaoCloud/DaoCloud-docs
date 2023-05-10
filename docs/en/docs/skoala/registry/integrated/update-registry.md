@@ -20,4 +20,4 @@ The microservice engine currently only supports updating the configuration of th
     To update the Kubernetes/Mesh registry:
 
     - You can [remove the connected registry](remove-registry.md) first, and then reconnect to other registry.
-    - You can also go to the container management module [update the corresponding cluster](../../../kpanda/07UserGuide/Clusters/UpgradeCluster.md), or go to the service mesh module [update the corresponding mesh service](. ./../../mspider/03UserGuide/servicemesh/create-mesh.md).
+    - You can also go to the container management module [update the corresponding cluster](../../../kpanda/07UserGuide/Clusters/UpgradeCluster.md), or go to the service mesh module [update the corresponding mesh service](../../../mspider/03UserGuide/servicemesh/create-mesh.md).
