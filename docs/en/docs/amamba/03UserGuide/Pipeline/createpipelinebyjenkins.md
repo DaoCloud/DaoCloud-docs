@@ -10,7 +10,7 @@ App Workbench Pipelines supports creating pipelines using a Jenkinsfile in a rep
 **Prerequisites**
 
 - A workspace and a user need to be created, the user must be invited to the workspace and given the `workspace edit` role.
-  Refer to [Creating Workspaces](../../../ghippo/user-guide/02Workspace/Workspaces.md), [Users and Roles](../../../ghippo/04UserGuide/01UserandAccess/User. md).
+  Refer to [Creating Workspaces](../../../ghippo/user-guide/workspace/Workspaces.md), [Users and Roles](../../../ghippo/04UserGuide/01UserandAccess/User. md).
 
 - There needs to be a code repository, and the source code in the code repository has a Jenkinsfile text file.
 

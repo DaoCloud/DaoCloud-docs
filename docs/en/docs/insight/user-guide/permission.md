@@ -61,4 +61,4 @@ You have permission to use `&check;`, but you don't have permission to use `&cro
 
 For more information on permissions, see [Container Management Permissions Description](../../kpanda/07UserGuide/Permissions/PermissionBrief.md).
 
-For creating, managing and deleting roles, please refer to [Role and Access Management](../../ghippo/user-guide/01UserandAccess/Role.md).
+For creating, managing and deleting roles, please refer to [Role and Access Management](../../ghippo/user-guide/access-control/Role.md).
