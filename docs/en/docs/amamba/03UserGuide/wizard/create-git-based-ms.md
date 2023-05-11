@@ -5,7 +5,7 @@ Build traditional microservice applications based on the source code of the Git 
 ## Prerequisites
 
 - Need to create a workspace and a user, the user needs to join the workspace and give `workspace edit` role.
-  Refer to [Creating Workspaces](../../../ghippo/user-guide/02Workspace/Workspaces.md), [Users and Roles](../../../ghippo/04UserGuide/01UserandAccess/User. md).
+  Refer to [Creating Workspaces](../../../ghippo/user-guide/workspace/Workspaces.md), [Users and Roles](../../../ghippo/04UserGuide/01UserandAccess/User. md).
 - Create two credentials that can access the codebase registry and the container registry, and name them respectively: `git-credential` and `registry`. For more information on creating credentials, please refer to [Credential Management](../Pipeline/Credential.md).
 - Prepare a Gitlab registry, Harbor registry
 

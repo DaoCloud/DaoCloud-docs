@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# docking navigation bar
+# Docking navigation bar
 
 Take container management (codename `kpanda`) as an example, docking to the navigation bar.
 
@@ -90,4 +90,4 @@ Refer to the following steps to dock the GProduct:
     });
     ```
 
-Refer to [demo tar to dock GProduct](./gproduct-demo-main.tar.gz) provided by frontend team.
+Refer to [Docking demo tar to GProduct](./gproduct-demo-main.tar.gz) provided by frontend team.

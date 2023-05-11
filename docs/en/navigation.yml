@@ -110,60 +110,64 @@ nav:
       - Global Management:
           - Intro:
               - What is Global Management: ghippo/intro/what.md
-              - Features: ghippo/intro/Features.md
+              - Features: ghippo/intro/features.md
               - Glossary: ghippo/intro/glossary.md
               - Release Notes: ghippo/intro/release-notes.md
-          - Login: ghippo/user-guide/00Login.md
-          - Installation:
-              - Offline Upgrade: ghippo/install/offlineInstall.md
-              - Custom Reverse Proxy: ghippo/install/reverseProxy.md
-              - National Secret Gateway: ghippo/install/gmGateway.md
-          - User and Access:
-              - What is User and Access: ghippo/user-guide/01UserandAccess/iam.md
-              - User: ghippo/user-guide/01UserandAccess/User.md
-              - Group: ghippo/user-guide/01UserandAccess/Group.md
-          - Role and Permission:
-              - ghippo/user-guide/01UserandAccess/Role.md
-              - Roles: ghippo/user-guide/01UserandAccess/global.md
+          - Install, Login, and Upgrade:
+              - Offline Upgrade: ghippo/install/offline-install.md
+              - Customize Reverse Proxy Address: ghippo/install/reverse-proxy.md
+              - National Secret Gateway: ghippo/install/gm-gateway.md
+              - Login: ghippo/install/login.md
+          - User and Access Control:
+              - Intro: ghippo/user-guide/access-control/iam.md
+              - User: ghippo/user-guide/access-control/user.md
+              - Group: ghippo/user-guide/access-control/group.md
+          - Roles and Permissions:
+              - ghippo/user-guide/access-control/role.md
+              - Global Roles: ghippo/user-guide/access-control/global.md
+              - Custom Roles: ghippo/user-guide/access-control/custom-role.md
           - ID Provider:
-              - ghippo/user-guide/01UserandAccess/idprovider.md
-              - LDAP: ghippo/user-guide/01UserandAccess/ldap.md
-              - OIDC: ghippo/user-guide/01UserandAccess/oidc.md
-          - Workspace and Folder:
-              - ghippo/user-guide/02Workspace/ws-folder.md
-              - Workspaces: ghippo/user-guide/02Workspace/Workspaces.md
-              - Workspace Permission: ghippo/user-guide/02Workspace/wspermission.md
-              - Folders: ghippo/user-guide/02Workspace/folders.md
-              - Folder Permission: ghippo/user-guide/02Workspace/fdpermission.md
-              - Resource Quota: ghippo/user-guide/02Workspace/quota.md
-          - Audit Logs:
-              - Enable/Disable: ghippo/user-guide/open-audit.md
-              - Download and Export: ghippo/user-guide/03AuditLog.md
+              - ghippo/user-guide/access-control/idprovider.md
+              - LDAP: ghippo/user-guide/access-control/ldap.md
+              - OIDC: ghippo/user-guide/access-control/oidc.md
+          - Workspaces and Folders:
+              - ghippo/user-guide/workspace/ws-folder.md
+              - Create and Delete Workspace: ghippo/user-guide/workspace/workspace.md
+              - Workspace Permissions: ghippo/user-guide/workspace/ws-permission.md
+              - Create and Delete Folder: ghippo/user-guide/workspace/folders.md
+              - Folder Permissions: ghippo/user-guide/workspace/folder-permission.md
+              - Resource Quota: ghippo/user-guide/workspace/quota.md
+              - Resource Limit: ghippo/user-guide/workspace/limitrange.md
+          - Audit Log:
+              - Enable/disable Capture: ghippo/user-guide/open-audit.md
+              - Enable/disable K8s Audit Log: ghippo/user-guide/open-k8s-audit.md
+              - Download and Export: ghippo/user-guide/audit-log.md
           - Platform Settings:
+              - Security Policies: ghippo/user-guide/platform-setting/security.md
+              - Mail Server Settings: ghippo/user-guide/platform-setting/mail-server.md
+              - Custom Appearance: ghippo/user-guide/platform-setting/appearance.md
+              - About: ghippo/user-guide/platform-setting/about.md
               - Reset Password: ghippo/user-guide/password.md
-              - Mail Server Settings: ghippo/user-guide/04PlatformSetting/MailServer.md
-              - Custom Appearance: ghippo/user-guide/04PlatformSetting/Appearance.md
-              - About: ghippo/user-guide/04PlatformSetting/about.md
           - Personal Center:
-              - Security: ghippo/user-guide/06PersonalCenter/SecuritySetting.md
-              - Access Key: ghippo/user-guide/06PersonalCenter/Password.md
-              - UI Language: ghippo/user-guide/06PersonalCenter/Language.md
+              - Security Settings: ghippo/user-guide/personal-center/security-setting.md
+              - Access Key: ghippo/user-guide/personal-center/accesstoken.md
+              - Language Settings: ghippo/user-guide/personal-center/language.md
           - Permissions:
-              - Container Management Permission: kpanda/07UserGuide/Permissions/PermissionBrief.md
-              - Microservice Engine Permission: ghippo/permissions/skoala.md
-              - Workbench Permission: ghippo/permissions/amamba.md
-              - Service Mesh Permission: ghippo/permissions/mspider.md
-              - Middleware Permission: ghippo/permissions/mcamel.md
+              - Container Management Permissions: kpanda/user-guide/permissions/permission-brief.md
+              - Microservice Permissions: ghippo/permissions/skoala.md
+              - App Workbench Permissions: ghippo/permissions/amamba.md
+              - Service Mesh Permissions: ghippo/permissions/mspider.md
+              - Middleware Permissions: ghippo/permissions/mcamel.md
           - Best Practices:
-              - Workspace Practices: ghippo/user-guide/02Workspace/wsbp.md
-              - Bind a Workspace to a Namespace: ghippo/user-guide/02Workspace/ws-to-ns-across-clus.md
-              - Allocate a Cluster to Multiple Workspaces: ghippo/user-guide/02Workspace/a-cluster-to-multi-ws.md
-              - Folder Practices: ghippo/user-guide/02Workspace/fdpractice.md
-              - Normal Authorization Plan: ghippo/user-guide/02Workspace/authu-plan.md
+              - Workspace Practices: ghippo/user-guide/workspace/ws-best-practice.md
+              - Bind a Workspace to Namespace: ghippo/user-guide/workspace/ws-to-ns.md
+              - Allocate a Cluster to Workspaces: ghippo/user-guide/workspace/cluster-for-multiws.md
+              - Folder Practices: ghippo/user-guide/workspace/folder-practice.md
+              - Normal Authorization Planning: ghippo/user-guide/workspace/authu-plan.md
               - Join with GProduct:
                   - ghippo/gproduct/intro.md
                   - Join Nav Bar: ghippo/gproduct/nav.md
-                  - Join Ingress and Login Authentication: ghippo/gproduct/route-authn.md
+                  - Join Ingress and Login Authentication: ghippo/gproduct/route-auth.md
       - Insight:
           - Intro:
               - What is Insight: insight/intro/WhatisInsight.md
