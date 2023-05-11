@@ -71,25 +71,25 @@ status: {}
 
 The meaning of each parameter in the above YAML file and creation wizard is briefly explained as follows.
 
--Hosts
+- Hosts
 
     Service Name. Can be used for hosts field matching in traffic governance policies (virtual services, destination rules, etc.).
 
     - In HTTP traffic, the service name will be the HTTP Host or Authority header
     - In HTTP, TLS traffic with SNI names, the service name will be the SNI name
 
--Addresses
+- Addresses
 
     service address. The virtual IP address associated with the service, which can also be a CIDR prefix.
 
     - If the Addresses field is set, the service name and IP/CIDR of the requested HTTP traffic will be matched to confirm whether it belongs to the service.
     - If the Addresses field is empty, traffic is identified based on the destination port only. At this time, any other service in the mesh cannot share this port, and the sidecar will forward all incoming traffic on this port to the specified destination IP/host.
 
--Ports
+- Ports
   
     service port. The port associated with the service. If the endpoint is a Unix domain socket address, there must be a port.
 
--Location
+- Location
     
     service address. A valid IP address needs to be entered. Used to indicate whether the service is inside the mesh.
 
