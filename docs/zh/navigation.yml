@@ -670,11 +670,9 @@ nav:
               - 资源介绍: storage/hwameistor/intro/resources.md
               - 安装管理:
                   - 准备工作: storage/hwameistor/install/prereq.md
+                  - Hwameistor 安装: storage/hwameistor/install/deploy-operator.md
                   - 资源要求: storage/hwameistor/install/proresource.md
                   - DRDB 安装: storage/hwameistor/install/drbdinstall.md
-                  - 通过 Operator 安装: storage/hwameistor/install/deploy-operator.md
-                  - 通过界面安装: storage/hwameistor/install/deploy-ui.md
-                  - 通过 Helm Chart 安装: storage/hwameistor/install/deploy-helm.md
                   - 安装后检查: storage/hwameistor/install/post-check.md
                   - 存储网卡配置: storage/hwameistor/install/storage-eth.md
                   - 自定义 Kubelet 根目录: storage/hwameistor/install/customized-kubelet.md
