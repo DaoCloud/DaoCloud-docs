@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# data monitoring
+# Traffic monitoring
 
 The traffic monitoring chart uses Istio's native grafana chart, and currently uses the following four chart sections:
 

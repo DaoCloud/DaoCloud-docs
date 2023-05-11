@@ -9,6 +9,53 @@ Date: 2022-12-20
 
 This page lists all Release Notes of each version of Service Mesh, to provide your convenience to learn the evolution path and feature changes.
 
+## 2023-04-27
+
+### v0.15.0
+
+#### Upgrade
+
+- **Added** introduced d2 as drawing tool
+- **Added** Added a new wasm plugin, which is used to add different headers to the request according to the trace id.
+- **Added** mesh configuration hosting Istiod's LoadBalancer Annotations implementation
+- **Added** Implementation of mesh gateway configuration service Annotations
+- **Added** Add mesh field load_balancer_annotations, support custom load balancing Annotations
+- **Added** In mspider-api, manually execute the pipeline, set SYNC_OPENAPI_DOCS as the key, which can trigger the upload of the document site (raise PR)
+- **Added** When the MCPC Controller perceives that the mspider.io/managed label exists in the Service, it will trigger the automatic creation of the governance policy corresponding to the service.
+- **Added** MCPC Controller multiple workload type support.
+- **Added** a health check function, when a mesh APIServer proxy fails to connect, it will automatically rebuild the proxy to prevent PortForward's own logic from being unreliable (may be related to Istio Sidecar)
+
+#### Fix
+
+- **Fixed** Not compatible with grpcgateway-accept-language (equivalent to HTTP's Accept-Language) Header, resulting in the inability to switch between Chinese and English modes correctly.
+Currently compatible with both Accept and Accept-Language modes
+- **Fixed** When synchronizing OpenAPI, upstream cannot push due to shadow clone code
+- **Fixed** Unable to update Istio resources with .
+- **Fixed** In version 1.17.1, istio-proxy cannot start normally
+- **Fixed** the problem that the ingress gateway lacks a name, which causes the merge to fail and cannot be deployed
+- **Fixed** the problem that the service address cannot be searched
+- **Fixed** unable to update Istio resources with .
+- **Fixed**
+- **Fixed** Fixed previous controller memory leak issue.
+- **Fixed** Fixed add/delete cluster logic not triggering correctly sometimes.
+- **Fixed** Fixed the situation where istio-system might be accidentally deleted in hosted mode.
+- **Fixed** the problem that the ingress gateway lacks a name, which causes the merge to fail and cannot be deployed.
+- **Fixed** When global injection is turned on, updating the mesh may cause the istio-operator pod to be injected, causing the mesh creation to fail
+- **Fixed** The two parts associated with the service and WorkloadShadow have no cleaning logic, causing the service to be wrongly bound to the workload
+- **Fixed** Fixed a problem that caused the virtual cluster to be synchronized to Mspider and lead to access failure
+- **Optimize** the controller namespace and service resource processing logic to reduce frequent triggering of workloadShadow resource updates.
+- **Optimized** Fixed the problem of frequent acquisition/update of workloadShadow resources, and now only reconcile some resources that have undergone specific changes.
+- **Optimize** Reduce pod changes and constantly update WorkloadShadow
+- **Fixed** the wrong spelling of wasm plugin image address in relok8s.
+- **Fixed** TrafficLane default repository bug.
+- **Optimized** Helm image rendering template. The image structure is split into three parts: registry/repository:tag
+
+#### Removal
+
+- **REMOVED** logic to sync global cluster to mesh
+- **DEPRECATED** Deprecate Deployment Controller logic
+- **Deprecated** ui.version parameter, changed to ui.image.tag parameter to set the front-end version
+
 ## 2023-03-31
 
 ### v0.14.3
@@ -19,9 +66,9 @@ This page lists all Release Notes of each version of Service Mesh, to provide yo
 
 #### fix
 
-- **FIX** Unable to update Istio resources with .
-- **FIXED** In version 1.17.1, istio-proxy cannot start normally
-- **Fix** the problem that the ingress gateway lacks a name, which causes the merge to fail and cannot be deployed.
+- **Fixed** Unable to update Istio resources with .
+- **Fixed** In version 1.17.1, istio-proxy cannot start normally
+- **Fixed** the problem that the ingress gateway lacks a name, which causes the merge to fail and cannot be deployed.
 
 ## 2023-03-30
 
@@ -29,17 +76,17 @@ This page lists all Release Notes of each version of Service Mesh, to provide yo
 
 #### Features
 
-- **Add** CloudShell related interface definition
-- **NEW** Tag implementation for update service
-- **Add** service list and details will return labels
-- **Add** CloudShell related implementation
-- **NEW** The service list supports querying service labels
-- **NEW** Added a new API for updating a service's tags
+- **Added** CloudShell related interface definition
+- **Added** Tag implementation for update service
+- **Added** service list and details will return labels
+- **Added** CloudShell related implementation
+- **Added** The service list supports querying service labels
+- **Added** Added a new API for updating a service's tags
 - **Added** istio 1.17.1 support
-- **NEW** Added a new etcd high availability solution
-- **Add** scenario-based testing framework for testing scenario-based functions
-- **NEW** When selecting different mesh sizes, automatically adjust component resource configuration
-- **New** Added the implementation of custom roles, supporting operations such as creation, update, deletion, binding, and unbinding of custom roles
+- **Added** Added a new etcd high availability solution
+- **Added** scenario-based testing framework for testing scenario-based functions
+- **Added** When selecting different mesh sizes, automatically adjust component resource configuration
+- **Added** Added the implementation of custom roles, supporting operations such as creation, update, deletion, binding, and unbinding of custom roles
 
 #### Optimization
 
@@ -53,18 +100,18 @@ This page lists all Release Notes of each version of Service Mesh, to provide yo
 
 #### fix
 
-- **Fix** the problem that the interface does not display when the east-west gateway is not Ready
+- **Fixed** the problem that the interface does not display when the east-west gateway is not Ready
 - **Fixed** The multi-cloud interconnection will automatically register the east-west gateway LB IP, which may cause internal network abnormalities (remove the east-west gateway instance label: topology.istio.io/network, this label will automatically register the east-west gateway)
-- **Fix** The cluster migration with east-west gateways will cause errors (the label of the instance cannot be modified, if you need to modify the component label, you can only delete the component and rebuild it)
-- **FIXED** Fixed a problem that caused Mesh to bind the workspace service to fail (the interface shows success)
-- **Fix** Due to abnormality, there is a free namespace in the virtual cluster, add self-check and clear behavior when starting mcpc-controller
-- **Fix** Due to the update of the mesh by the controller, the api fails to deliver the mesh configuration
-- **FIXED** ServicePort's TargetPort was not set correctly when creating hosted mesh
-- **FIX** GlobalMesh.Status.MeshVersion wrong coverage issue
-- **Fix** mcpc-controller cannot open debug mode
-- **Fix** mcpc-controller can't trigger cluster delete event
-- **FIXED** When deleting a Mesh and rebuilding a Mesh with the same name, the Mesh cannot be created normally (hosted proxy cannot be updated normally)
-- **Fix** mcpc controller does not modify the istiod-remote service correctly in some cases
+- **Fixed** The cluster migration with east-west gateways will cause errors (the label of the instance cannot be modified, if you need to modify the component label, you can only delete the component and rebuild it)
+- **Fixed** Fixed a problem that caused Mesh to bind the workspace service to fail (the interface shows success)
+- **Fixed** Due to abnormality, there is a free namespace in the virtual cluster, add self-check and clear behavior when starting mcpc-controller
+- **Fixed** Due to the update of the mesh by the controller, the api fails to deliver the mesh configuration
+- **Fixed** ServicePort's TargetPort was not set correctly when creating hosted mesh
+- **Fixed** GlobalMesh.Status.MeshVersion wrong coverage issue
+- **Fixed** mcpc-controller cannot open debug mode
+- **Fixed** mcpc-controller can't trigger cluster delete event
+- **Fixed** When deleting a Mesh and rebuilding a Mesh with the same name, the Mesh cannot be created normally (hosted proxy cannot be updated normally)
+- **Fixed** mcpc controller does not modify the istiod-remote service correctly in some cases
 
 ## 2023-02-28
 
@@ -72,9 +119,9 @@ This page lists all Release Notes of each version of Service Mesh, to provide yo
 
 #### Features
 
-- **Add** multi-cloud network interconnection management and related interfaces
-- **NEW** Enhanced mesh global configuration capabilities (mesh system configuration, global traffic management capabilities, global sidecar injection settings)
-- **NEW** Added support for zookeeper proxy
+- **Added** multi-cloud network interconnection management and related interfaces
+- **Added** Enhanced mesh global configuration capabilities (mesh system configuration, global traffic management capabilities, global sidecar injection settings)
+- **Added** Added support for zookeeper proxy
 
 #### Optimization
 
@@ -83,13 +130,13 @@ This page lists all Release Notes of each version of Service Mesh, to provide yo
 
 #### fix
 
-- **FIXED** mesh related logic error caused by container management platform removing cluster
-- **Fix** RegProxy injecting Sidecar will cause Nacos to fail to register
-- **Fix** Spring Cloud service identification error
-- **Fix** The cluster status information of the container management platform is not synchronized
-- **Fix** traffic transparent transmission policy - traffic filtering IP segment configuration does not take effect
-- **Fix** traffic transparent transmission policy - traffic transparent transmission policy cannot be deleted
-- **FIXED** When getting the mesh configuration, an error is returned because the configuration path does not exist
+- **Fixed** mesh related logic error caused by container management platform removing cluster
+- **Fixed** RegProxy injecting Sidecar will cause Nacos to fail to register
+- **Fixed** Spring Cloud service identification error
+- **Fixed** The cluster status information of the container management platform is not synchronized
+- **Fixed** traffic transparent transmission policy - traffic filtering IP segment configuration does not take effect
+- **Fixed** traffic transparent transmission policy - traffic transparent transmission policy cannot be deleted
+- **Fixed** When getting the mesh configuration, an error is returned because the configuration path does not exist
 
 ## 2022-12-29
 

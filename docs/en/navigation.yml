@@ -407,6 +407,7 @@ nav:
               - Request authentication: mspider/user-guide/security/request.md
               - Authorization policies: mspider/user-guide/security/authorize.md
               - Security parameters: mspider/user-guide/security/params.md
+              - Identity and mTLS: mspider/user-guide/security/mtls.md
           - Sidecar management:
               - Namespace sidecars: mspider/user-guide/sidecar-management/ns-sidecar.md
               - Workload sidecars: mspider/user-guide/sidecar-management/workload-sidecar.md
@@ -426,13 +427,22 @@ nav:
               - Multi-cloud interconnection: mspider/user-guide/multicluster/cluster-interconnect.md
               - Multi-cloud config: mspider/user-guide/multicluster/traffic-branch.md
               - Istio resource management: mspider/user-guide/mesh-config/istio-resources.md
-              - Custom component resources: mspider/user-guide/mesh-config/custom-res.md
+              - TLS key management: mspider/user-guide/mesh-config/tls-secret.md
+              - Custom component resource: mspider/user-guide/mesh-config/custom-res.md
+              - Component resoruce HPA: mspider/user-guide/mesh-config/component-hpa.md   
           - Test:
               - Join OCP to mesh: mspider/test/ocp.md
               - Openshift and mesh compatibility test: mspider/test/openshift.md
               - Multi-cloud deployment: mspider/user-guide/multicluster/multicluster-install.md
               - Multi-cloud principle: mspider/user-guide/multicluster/multi-cluster-net.md
               - Multi-cloud grayscale release: mspider/user-guide/multicluster/gray-scale-release.md
+          - Troubleshooting:
+              - Index: mspider/troubleshoot/index.md
+              - Cannot find cluster on mesh creation: mspider/troubleshoot/cannot-find-cluster.md
+              - Always in creating on mesh creation: mspider/troubleshoot/always-in-creating.md
+              - Created mesh is abnormal but cannot be deleted: mspider/troubleshoot/failed-to-delete.md
+              - Failed to add cluster for managed mesh: mspider/troubleshoot/failed-to-add-cluster.md
+              - istio-ingressgateway abnormal: mspider/troubleshoot/hosted-mesh-errors.md
       - Network:
           - Intro:
               - What is Network: network/intro/what-is-net.md
