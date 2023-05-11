@@ -58,7 +58,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     The aggregation layer is different from Custom Resources, which are a way to make the kube-apiserver
     recognise new kinds of object.
 
-- [Alert Rule](../insight/user-guide/05alertcenter/alertrule.md)
+- [Alert Rule](../insight/user-guide/alert-center/alertrule.md)
 
     In Insight, this is an alert object created based on the resource status. You can customize the conditions
     for triggering rules and sending notifications.
@@ -1440,7 +1440,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - [Log](https://opentelemetry.io/docs/concepts/signals/logs/)
 
-    In Insight, [logs](../insight/user-guide/04dataquery/logquery.md) are a list of events recorded by the cluster or application. They are an abstract data type that changes during system operation and consists of an ordered collection of operations and their operation results for a specified object over time.
+    In Insight, [logs](../insight/user-guide/data-query/log.md) are a list of events recorded by the cluster or application. They are an abstract data type that changes during system operation and consists of an ordered collection of operations and their operation results for a specified object over time.
 
     Application and system logs can help you understand what is happening inside the cluster. Logs are useful for debugging issues and monitoring cluster activity.
 
@@ -1557,7 +1557,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Observability
 
-    [Observability](../insight/intro/WhatisInsight.md) refers to the ability to collect signals from an observed system, continuously generate and discover actionable insights. In other words, observability allows users to gain insight into the state of a system from external outputs and take corrective action. The measuring mechanism of a computer system observes low-level signals such as CPU time, memory, and disk space, as well as high-level signals and business signals such as API response rate per second, error rate per second, and number of transactions processed per second.
+    [Observability](../insight/intro/what.md) refers to the ability to collect signals from an observed system, continuously generate and discover actionable insights. In other words, observability allows users to gain insight into the state of a system from external outputs and take corrective action. The measuring mechanism of a computer system observes low-level signals such as CPU time, memory, and disk space, as well as high-level signals and business signals such as API response rate per second, error rate per second, and number of transactions processed per second.
 
     The observability of a system has a significant impact on its operational and development costs. An observable system provides meaningful and actionable data to operators, enabling them to achieve favorable results (i.e., faster event response, higher development efficiency) and fewer difficult moments and shorter downtime.
 
