@@ -1,6 +1,6 @@
 # Build microservice applications based on Git repository
 
-Build traditional microservice applications based on the source code of the Git registry through the application workbench, so as to manage the traffic of the application, view logs, monitor, link tracking and other functions.
+Build traditional microservice applications based on the source code of the Git registry through the App Workbench, so as to manage the traffic of the application, view logs, monitor, link tracking and other functions.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ Build traditional microservice applications based on the source code of the Git 
 
 ## Create a microservice application based on Git
 
-1. On `Application Workbench` -> `Wizard` page, click `Build Based on Git Repository`.
+1. On `App Workbench` -> `Wizard` page, click `Build Based on Git Repository`.
 
     
 

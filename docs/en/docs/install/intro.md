@@ -9,8 +9,8 @@ There are two releases of DCE 5.0: Community Release and Commercial Release.
 
 | Version | Included Modules | Description |
 | ------ | ------------------------------------------ ------------------ | ------------------------------- ------------------- |
-| Community Release| [Global Management](../ghippo/intro/what.md)<br />[Container Management](../kpanda/intro/WhatisKPanda.md)<br />[Observability](../insight/intro/what.md) | [Permanent free license](../dce/license0.md), the 3 modules will be updated continuously, and you can [download offline packages of submodules](../download/dce5.md) |
-| Commercial | [Global Management](../ghippo/intro/what.md)<br />[Container Management](../kpanda/intro/WhatisKPanda.md)<br />[Observability](../insight/intro/what.md)<br />[Application Workbench](../amamba/intro/WhatisAmamba.md)<br />[Multicloud Orchestration](../kairship/intro/whatiskairship.md)<br />[Microservice Engine](../skoala/intro/features.md)<br />[Service Mesh](../mspider/intro/WhatismSpider.md)<br />[Choose Middleware](../middleware/midware.md)<br />[Cloud Native Network](../network/intro/what-is-net.md)<br />[Cloud Native Storage](../storage/what.md)<br />[container registry](../kangaroo/what.md) | [Genuine Authorization](https://qingflow.com/f/e3291647), each module can Free combination on demand, you can [download the offline package of the submodule](../download/dce5.md) at any time |
+| Community Release| [Global Management](../ghippo/intro/what.md)<br />[Container Management](../kpanda/intro/what.md)<br />[Observability](../insight/intro/what.md) | [Permanent free license](../dce/license0.md), the 3 modules will be updated continuously, and you can [download offline packages of submodules](../download/dce5.md) |
+| Commercial | [Global Management](../ghippo/intro/what.md)<br />[Container Management](../kpanda/intro/what.md)<br />[Observability](../insight/intro/what.md)<br />[App Workbench](../amamba/intro/what.md)<br />[Multicloud Orchestration](../kairship/intro/what.md)<br />[Microservice Engine](../skoala/intro/features.md)<br />[Service Mesh](../mspider/intro/what.md)<br />[Choose Middleware](../middleware/midware.md)<br />[Cloud Native Network](../network/intro/what-is-net.md)<br />[Cloud Native Storage](../storage/what.md)<br />[container registry](../kangaroo/what.md) | [Genuine Authorization](https://qingflow.com/f/e3291647), each module can Free combination on demand, you can [download the offline package of the submodule](../download/dce5.md) at any time |
 
 ## Community Release Installation Process
 
@@ -59,9 +59,9 @@ click kind "https://docs.daocloud.io/en/install/community/kind/online/"
 click s1 "https://docs.daocloud.io/en/install/community/k8s/online/"
 click s2 "https://docs.daocloud.io/en/install/community/k8s/offline/"
 
-click kpanda "https://docs.daocloud.io/en/kpanda/03ProductBrief/WhatisKPanda/"
-click ghippo "https://docs.daocloud.io/en/ghippo/01ProductBrief/WhatisGhippo/"
-click insight "https://docs.daocloud.io/en/insight/03ProductBrief/WhatisInsight/"
+click kpanda "https://docs.daocloud.io/en/kpanda/intro/what/"
+click ghippo "https://docs.daocloud.io/en/ghippo/intro/what/"
+click insight "https://docs.daocloud.io/en/insight/intro/what/"
 click free "https://docs.daocloud.io/en/dce/license0/"
 click ask "https://docs.daocloud.io/en/install/intro/#_4"
 ```

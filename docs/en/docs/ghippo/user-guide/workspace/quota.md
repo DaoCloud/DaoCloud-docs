@@ -15,7 +15,7 @@ A resource (cluster) can be shared by multiple workspaces, and a workspace can a
 
 ## Resource groups and shared resources
 
-Both shared resources and cluster resources in resource groups come from [Container Management](../../../kpanda/intro/WhatisKPanda.md), but cluster binding and sharing to the same workspace will produce two very different effect.
+Both shared resources and cluster resources in resource groups come from [Container Management](../../../kpanda/intro/what.md), but cluster binding and sharing to the same workspace will produce two very different effect.
 
 1. Binding resources
 
@@ -30,7 +30,7 @@ Both shared resources and cluster resources in resource groups come from [Contai
 
 2. Add shared resources
 
-    Make the user/group in the workspace have the permission to use the cluster resources, and can use the resource quota to go to [Create a namespace (Namespace) in the application workbench](#_2).
+    Make the user/group in the workspace have the permission to use the cluster resources, and can use the resource quota to go to [Create a namespace (Namespace) in the App Workbench](#_2).
 
     
 
@@ -46,7 +46,7 @@ Resource quotas are involved when creating a namespace.
 
     
 
-1. Select the workspace ws01 and the shared cluster in the application workbench, and create a namespace ns01.
+1. Select the workspace ws01 and the shared cluster in the App Workbench, and create a namespace ns01.
 
     
 

@@ -2,7 +2,7 @@
 
 Harbor is an open-source container registry service for safe hosting and efficient distribution of OCI-compliant Artifacts such as container images and Helm Charts.
 Can help you manage Artifact consistently and securely across cloud-native computing platforms such as Kubernetes and Docker.
-DCE 5.0 provides a fast deployment capability based on Harbor, and through a series of convenient channels such as connecting with the application workbench and container management module in the platform, and binding with the workspace,
+DCE 5.0 provides a fast deployment capability based on Harbor, and through a series of convenient channels such as connecting with the App Workbench and container management module in the platform, and binding with the workspace,
 It realizes a one-stop high-availability, high-performance, and high-efficiency deployment, management, and use of full-cycle container registry services.
 
 ## Product Features
@@ -17,7 +17,7 @@ It realizes a one-stop high-availability, high-performance, and high-efficiency 
 ## Functional advantages
 
 - Multiple container registry instances to meet the needs of multiple container registrys in various environments such as development, testing, and production.
-- Break the calling barriers between modules, and support rapid image pull when deploying applications in the application workbench and container management module
+- Break the calling barriers between modules, and support rapid image pull when deploying applications in the App Workbench and container management module
 - Provides a unified management control plane, allowing administrators to manage the full life cycle of multiple Harbor instances on the same interface.
 
 ## Steps

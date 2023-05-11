@@ -10,11 +10,11 @@ This page shows how to import repositories.
 
 ## Import repository
 
-If the codebase where the manifest file of the continuous deployment application is located is not public, you need to import the registry to the application workbench in advance. Application Workbench currently supports two import methods: `Import repository using HTTPS` and `Import repository using SSH`.
+If the codebase where the manifest file of the continuous deployment application is located is not public, you need to import the registry to the App Workbench in advance. App Workbench currently supports two import methods: `Import repository using HTTPS` and `Import repository using SSH`.
 
 ### Import repository using HTTPS
 
-1. On `Application Workbench` -> `GitOps` -> `Repository` page, click the `Import Repository` button and select `Use HTTPS`.
+1. On `App Workbench` -> `GitOps` -> `Repository` page, click the `Import Repository` button and select `Use HTTPS`.
 
     
 
@@ -24,7 +24,7 @@ If the codebase where the manifest file of the continuous deployment application
 
 ### Import repository using SSH
 
-1. On `Application Workbench` -> `GitOps` -> `Repository` page, click the `Import Repository` button and select `Use SSH`.
+1. On `App Workbench` -> `GitOps` -> `Repository` page, click the `Import Repository` button and select `Use SSH`.
 
     
 

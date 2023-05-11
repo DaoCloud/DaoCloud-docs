@@ -77,7 +77,7 @@ The DCE 5.0 Commercial Release includes the following modules, which are plug-an
 | Global Management | Responsible for user access control, permissions, enterprise space, audit logs, personalized appearance settings, etc. | [0.15.0](../../ghippo/intro/release-notes.md#0150) |
 | Container Management | Manage K8s core functions such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [0.16.1](../../kpanda/intro/release-notes.md#0161) |
 | Observability | Provide rich graphic information such as dashboards, scene monitoring, data query, and alarms | [0.15.4](../../insight/intro/releasenote.md#0154) |
-| Application Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [0.15.1](../../amamba/intro/release-notes.md#0151) |
+| App Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [0.15.1](../../amamba/intro/release-notes.md#0151) |
 | Multi-cloud orchestration| Centralized management of application orchestration of multi-cloud, hybrid cloud, and cross-cloud resources, with multi-cloud disaster recovery and fault recovery capabilities| [0.7.4](../../kairship/intro/release-notes.md# 074) |
 | Microservice Engine | Provide registration discovery, service governance, configuration management, microservice gateway and other governance capabilities | [0.19.4](../../skoala/intro/release-notes.md#0194) |
 | Service Mesh | A next-generation service mesh for cloud-native applications based on Istio open source technology | [v0.14.3](../../mspider/intro/release-notes.md#v0143) |

@@ -60,7 +60,7 @@ This page describes the features of Global Management.
      A [role](../user-guide/access-control/Role.md) corresponds to a set of permissions.
      Permissions determine the actions that can be performed on a resource. Granting a role to a user grants all the permissions included in that role.
      You can divide the management rights of different modules to different users,
-     For example, user A manages the container management module, user B manages the application workbench module, and jointly manages the observability module.
+     For example, user A manages the container management module, user B manages the App Workbench module, and jointly manages the observability module.
 
      
 

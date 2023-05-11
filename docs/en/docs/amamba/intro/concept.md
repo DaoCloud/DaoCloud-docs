@@ -5,8 +5,8 @@ hide:
 
 # Basic concept
 
-The application workbench provides a unified entrance for DCE 5.0 application deployment and supports the entire lifecycle management of cloud-native applications.
-It lowers the threshold for enterprises to use cloud-native applications, and improves the efficiency from enterprise software development to application delivery.
+The App Workbench provides a unified entrance for DCE 5.0 application deployment and supports the entire lifecycle management of cloud-native applications.
+It lowers the threshold for enterprises to use cloud-native applications, and improves the efficiency from enterprise software development to app delivery.
 
 - Workspace Workspace
 
@@ -21,11 +21,11 @@ It lowers the threshold for enterprises to use cloud-native applications, and im
 
 - Pipeline Pipeline
 
-    [Pipeline](../02QuickStart/deploypipline.md) provides a visualized and customizable automatic delivery pipeline to help enterprises shorten the delivery cycle and improve delivery efficiency. Currently the pipeline is implemented based on Jenkins.
+    [Pipeline](../quickstart/deploypipline.md) provides a visualized and customizable automatic delivery pipeline to help enterprises shorten the delivery cycle and improve delivery efficiency. Currently the pipeline is implemented based on Jenkins.
 
--Credential
+- Credential
 
-    When the pipeline interacts with third-party applications, users need to configure Jenkins [credentials](../03UserGuide/Pipeline/Credential.md), and the pipeline can interact with third-party applications.
+    When the pipeline interacts with third-party applications, users need to configure Jenkins [credentials](../user-guide/Pipeline/Credential.md), and the pipeline can interact with third-party applications.
 
 - GitOps
 

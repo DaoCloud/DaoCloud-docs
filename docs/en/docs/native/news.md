@@ -1085,7 +1085,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      On April 27th, OpenFunction passed the vote of the CNCF Technical Oversight Committee (TOC) and officially entered the CNCF sandbox hosting.
      OpenFunction helps developers focus on business logic without worrying about the underlying operating environment and infrastructure. Users only need to submit a piece of code to generate event-driven, dynamically scalable Serverless workloads.
 
-- [Sealer became a CNCF Sandbox project on April 26, aiming to build a new standard for distributed application delivery](https://mp.weixin.qq.com/s/S18xq2OzTCDOup2m7VyaVg)
+- [Sealer became a CNCF Sandbox project on April 26, aiming to build a new standard for distributed app delivery](https://mp.weixin.qq.com/s/S18xq2OzTCDOup2m7VyaVg)
 
      On April 26, the CNCF TOC regular meeting voted and unanimously approved the sealer open source project to become a CNCF sandbox project.
      The sealer project was born in Alibaba Cloud Intelligence, aiming to solve the standardization of packaging, distribution and operation of distributed software.

@@ -12,9 +12,9 @@ This article will introduce how to integrate Harbor in the pipeline and implemen
 
     
 
-## Configure the pipeline in the application workbench
+## Configure the pipeline in the App Workbench
 
-1. In the application workbench, create a pipeline, refer to [Quickly create a pipeline](deploypipline.md), and click `Execute Now` after the configuration is complete.
+1. In the App Workbench, create a pipeline, refer to [Quickly create a pipeline](deploypipline.md), and click `Execute Now` after the configuration is complete.
 
     
 

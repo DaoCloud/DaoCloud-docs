@@ -5,7 +5,7 @@ hide:
 
 # Create a custom pipeline
 
-The application workbench pipeline supports custom creation, and you can visually arrange the pipeline through the pipeline created in this way.
+The App Workbench pipeline supports custom creation, and you can visually arrange the pipeline through the pipeline created in this way.
 
 You need to create a workspace and a user who must be invited to the workspace and given the `workspace edit` role.
 Refer to [Create Workspace](../../../ghippo/user-guide/workspace/Workspaces.md), [Users and Roles](../../../ghippo/user-guide/access-control/User.md).

@@ -52,7 +52,7 @@ For example, the NS Admin role in Namespace01 under cluster A in container manag
 The NS Editor role of Namespace01 can edit and view Namespace01, and can deploy applications.
 The Viewer role for Namespace01 can only view Namespace01.
 
-Submodules that support this mode: [Container Management](../../../kpanda/intro/WhatisKPanda.md)
+Submodules that support this mode: [Container Management](../../../kpanda/intro/what.md)
 
 You can go to `Container Management` -> `Privilege Management`, select `Add Authorization` to grant Cluster or Namespace permissions to users/groups.
 
@@ -70,14 +70,14 @@ You can go to `Container Management` -> `Privilege Management`, select `Add Auth
     You can grant users (groups) different access rights to the same set of resources through "Authorization" in the workspace.
     At the same time, the workspace contains multiple types of resources in different modules, and different types of resources have different presentation methods in the workspace.
 
-    - Module Name: [Application Workbench](../../../amamba/intro/WhatisAmamba.md), [Microservice Engine](../../../skoala/intro/features.md ), [middleware](../../../middleware/midware.md)
+    - Module Name: [App Workbench](../../../amamba/intro/what.md), [Microservice Engine](../../../skoala/intro/features.md ), [middleware](../../../middleware/midware.md)
 
         Because these modules do not support the authorization methods of the global management mode and the sub-module management mode, they only rely on the workspace to obtain authorization.
         Therefore, all resources are created under the workspace, and the resources are automatically bound to the workspace after creation to ensure that these resources can be authorized for use after creation.
         After these resources are created, they will not be automatically displayed in the resource group or shared resources in the workspace, but can only be displayed in the resource list of each module.
         (Any role with Workspace can enter the above modules)
 
-    - [Container Management](../../../kpanda/intro/WhatisKPanda.md)
+    - [Container Management](../../../kpanda/intro/what.md)
 
         Container management supports three authorization modes: global management mode, sub-module management mode and resource-based management.
         Therefore, in the container management module, you can choose to grant the user/group the Kpanda Owner role through the access control module, or grant the user/group the corresponding permission for a resource through the permission management function of the container management module itself, or by assigning the resource ( Cluster or Namespace) is bound to the workspace to inherit the role permissions of the user/group in the workspace.
@@ -90,7 +90,7 @@ You can go to `Container Management` -> `Privilege Management`, select `Add Auth
         Therefore, you can manage the resources in the service mesh through the Admin role, or bind the resources (Mesh or Mesh-Namespace) to the workspace, so that users/groups can obtain the permissions of the resources in the service mesh through the workspace, and are bound The specified resources will be displayed in the resource group of the workspace.
         Currently only the service mesh module provides a resource binding entry. (Admin role can perform resource binding)
 
-2. Sub-modules that support this mode: application workbench, microservice engine, middleware, container management, and service mesh.
+2. Sub-modules that support this mode: App Workbench, microservice engine, middleware, container management, and service mesh.
 
 3. You can create a workspace through `Global Management` -> `Workspace and Hierarchy`, and grant users/groups Workspace Admin, Workspace Editor, and Workspace Viewer roles in `Workspace-Authorization`.
 

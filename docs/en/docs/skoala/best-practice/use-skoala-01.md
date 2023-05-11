@@ -4,7 +4,7 @@ The micro service engine is a function of DCE 5.0 Advanced edition, which includ
 
 The full process of this best practice is as follows:
 
-1. Deploy the sample application in the application workbench and enable microservice governance
+1. Deploy the sample application in the App Workbench and enable microservice governance
 2. Enable the traditional micro-service governance plug-in in the micro-service engine
 3. Configure the corresponding governance rules in the microservice engine
 4. Expose apis and access applications in the microservice engine
@@ -19,7 +19,7 @@ The architecture diagram for the sample application is as follows:
 
 ## Application deployment
 
-[Workbench](../../amamba/intro/what.md) is an application management module of DCE 5.0. It supports the creation and maintenance of various types of applications, GitOps, and grayscale publishing, and can quickly deploy applications to any cluster. Application workbench supports deployment of applications based on Git repository, Jar package, container image and Helm template. This practice deployable the sample application based on `Helm Template`.
+[Workbench](../../amamba/intro/what.md) is an application management module of DCE 5.0. It supports the creation and maintenance of various types of applications, GitOps, and grayscale publishing, and can quickly deploy applications to any cluster. App Workbench supports deployment of applications based on Git repository, Jar package, container image and Helm template. This practice deployable the sample application based on `Helm Template`.
 
 <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
@@ -71,7 +71,7 @@ Before deploying applications, the following conditions must be met:
 
 > For details about how to obtain the cluster ID, cluster name, and namespace name, see `kubectl get cluster <clusername> -o json | jq.metadata.uid`.
 
-1. After the application is successfully created, the list of Helm applications in the application workbench is displayed.
+1. After the application is successfully created, the list of Helm applications in the App Workbench is displayed.
 
     <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
