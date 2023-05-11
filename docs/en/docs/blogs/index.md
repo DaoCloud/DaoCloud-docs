@@ -24,9 +24,9 @@ This page is a collection of blog posts and public articles related to DCE 5.0, 
 
     In 2022, in Shanghai, the epidemic is raging, the city is locked and under control. Everyone were working at home, and programmers were running around in the cracks of the virus 🦠. That year is when DCE 5.0 is developing in tough, and it is also a difficult year for every Chinese.
 
-- 20221209 | [DCE 5.0 Community Edition Installation Guide](./dce5-install1209.md)
+- 20221209 | [DCE 5.0 Community Release Installation Guide](./dce5-install1209.md)
 
-    This is a real-life example of installing DCE 5.0 Community Edition from scratch, including details about the K8s cluster, dependencies, network, storage, and more.
+    This is a real-life example of installing DCE 5.0 Community Release from scratch, including details about the K8s cluster, dependencies, network, storage, and more.
 
 - 20221130 | [Karmada Resource Interpreter](https://mp.weixin.qq.com/s/DLDmWRmhM_gMVg1qGnj_fA)
 

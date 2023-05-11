@@ -9,4 +9,4 @@ Its system architecture and data flow are shown below:
 
 
 
-[[Free Trial Now](../../../dce/license0.md){ .md-button .md-button--primary }
+[Free Trial Now](../../../dce/license0.md){ .md-button .md-button--primary }

@@ -7,7 +7,7 @@ hide:
 
 This article introduces how to install Hwameistor through the Hwameistor Operator on the platform interface.
 
-## prerequisites
+## Prerequisites
 
 - Free HDD and SSD disks have been prepared on the nodes to be used
 - Completed the items in [Preparation] (prereq.md)

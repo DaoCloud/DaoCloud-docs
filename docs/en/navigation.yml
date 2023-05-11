@@ -11,19 +11,28 @@ nav:
           - Glossary: dce/terms.md
       - Installation:
           - Briefs: install/intro.md
-          - Install Dependencies: install/install-tools.md
-          - Install DCE 5.0 for Community:
-              - Deployment Plan: install/community/resources.md
-              - Online Install with kind: install/community/kind/online.md
-              - Online Install with K8s: install/community/k8s/online.md
-              - Offline Install with K8s: install/community/k8s/offline.md
-          - Install DCE 5.0 for Commerce:
-              - Deployment Plan: install/commercial/deploy-requirements.md
-              - Download Packages: install/commercial/download-file.md
-              - Edit clusterConfig.yaml: install/commercial/clusterconfig.md
-              - Offline Installation: install/commercial/start-install.md
+          - Install dependencies: install/install-tools.md
+          - Install Community Release:
+              - Resource planning: install/community/resources.md
+              - Online install with kind: install/community/kind/online.md
+              - Online with K8s cluster: install/community/k8s/online.md
+              - Offline install with K8s cluster: install/community/k8s/offline.md
+          - Install Commercial Release:
+              - Deployment architecture: install/commercial/deploy-arch.md
+              - Deployment requirements: install/commercial/deploy-requirements.md
+              - Preparation: install/commercial/prepare.md
+              - Offline install: install/commercial/start-install.md
               - Scenarios: install/commercial/scenarios.md
-          - Uninstall: install/uninstall.md
+              - Edit clusterConfig.yaml: install/commercial/cluster-config.md
+          - Upgrade/Uninstall/FAQ:
+              - Upgrade DCE 5.0 GProduct: install/upgrade.md
+              - Uninstall: install/uninstall.md
+              - Troubleshooting: install/faq.md
+          - Install on different K8s distributions:
+              - Install Commercial Release on OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
+          - Install on different OS:
+              - Install Commercial Release on UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
+              - Offline Install Commercial Release on Other Linux: install/os-install/otherlinux.md
           - Release Notes: install/release-notes.md
       - Container Management:
           - Intro:
@@ -511,8 +520,10 @@ nav:
               - Use: network/modules/submariner/usage.md
       - Middleware Service:
           - Intro:
-              - What is Middleware Service: middleware/midware.md
-              - Version Compatibility: middleware/adaptation-k8s.md
+              - What is Middleware Service: middleware/what.md
+              - Version Compatibility: middleware/compatibility.md
+              - Permissions: middleware/permission.md
+              - When you visit middleware first time: middleware/first-visit.md
           - Elasticsearch:
               - What is Elasticsearch: middleware/elasticsearch/intro/what.md
               - Features: middleware/elasticsearch/intro/features.md

@@ -4,4 +4,4 @@ MySQL is the most widely adopted open source relational database and serves as t
 
 It is an open standard for application layer protocols and is designed for message-oriented middleware. Clients based on it are able to communicate with the messaging middleware to deliver messages, regardless of products, language, and other conditions.
 
-[[Free Trial Now](../../../dce/license0.md){ .md-button .md-button--primary }
+[Free Trial Now](../../../dce/license0.md){ .md-button .md-button--primary }

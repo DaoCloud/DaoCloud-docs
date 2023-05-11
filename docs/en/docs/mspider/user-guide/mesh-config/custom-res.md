@@ -26,7 +26,7 @@ The control plane components of the service mesh are as follows:
 
 The preset resource settings of each control plane component of the service mesh are shown in the above table. Users can find the corresponding workload in the [Container Management] module and customize CPU and memory resources for the workload.
 
-## prerequisites
+## Prerequisites
 
 The cluster has been managed by the service mesh, and the mesh components have been installed normally;
 The login account has the admin or editor authority of the namespace istio-system in the global management cluster and the working cluster;
