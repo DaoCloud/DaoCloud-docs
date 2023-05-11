@@ -13,11 +13,11 @@
 
 1. 在`集群列表`页找到目标集群，点击集群名称，进入`集群概览`页面。
 
-    ![点击集群名称](../../images/taint-click--cluster-name.png)
+    ![点击集群名称](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/taint-click--cluster-name.png)
 
 2. 在左侧导航栏，点击`节点管理`，找到需要修改污点的节点，点击右侧的 `ⵗ` 操作图标并点击`修改污点`按钮。
 
-    ![修改污点](../../images/taint-change.png)
+    ![修改污点](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/taint-change.png)
 
 3. 在弹框内输入污点的键值信息，选择污点效果，点击`确定`。
 
@@ -29,4 +29,4 @@
     - PreferNoSchedule：**尽量避免** 将不能容忍某个污点的 Pod 不会被调度到存在该污点的节点上。
     - NoExecute：保持现状。如果不能容忍某个污点的 Pod 在节点设置污点之前，已经运行在该节点上，也不会驱逐该 Pod。如果不能容忍某个污点的 Pod 在节点设置污点之前，还未运行在该节点上，则不会被调度到该节点。
 
-        ![修改污点](../../images/taint-add-remove.png)
+        ![修改污点](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/taint-add-remove.png)

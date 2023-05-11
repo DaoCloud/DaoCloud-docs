@@ -21,19 +21,19 @@
 
 1. 点击一个集群名称，进入`集群详情`。
 
-    ![集群详情](../../images/crd01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd01.png)
 
 2. 在左侧导航栏，点击`自定义资源`，点击右上角 `YAML 创建`按钮。
 
-    ![点击创建按钮](../../images/crd02.png)
+    ![点击创建按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd02.png)
 
 3. 在 `YAML 创建`页面中，填写 YAML 语句后，点击`确定`。
 
-    ![填写 yaml](../../images/crd03.png)
+    ![填写 yaml](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd03.png)
 
 4. 返回自定义资源列表页，即可查看刚刚创建的名为 `crontabs.stable.example.com` 的自定义资源。
 
-    ![查看](../../images/crd04.png)
+    ![查看](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd04.png)
 
 **自定义资源示例：**
 
@@ -74,19 +74,19 @@ spec:
 
 1. 点击一个集群名称，进入`集群详情`。
 
-    ![集群详情](../../images/crd01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd01.png)
 
 2. 在左侧导航栏，点击`自定义资源`，点击右上角 `YAML 创建`按钮。
 
-    ![点击创建按钮](../../images/crd02.png)
+    ![点击创建按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd02.png)
 
 3. 点击名为 `crontabs.stable.example.com` 的自定义资源，进入详情，点击右上角 `YAML 创建`按钮。
 
-    ![点击创建按钮](../../images/crd05.png)
+    ![点击创建按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd05.png)
 
 4. 在 `YAML 创建`页面中，填写 YAML 语句后，点击`确定`。
 
-    ![填写 yaml](../../images/crd06.png)
+    ![填写 yaml](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd06.png)
 
 5. 返回 `crontabs.stable.example.com` 的详情页面，即可查看刚刚创建的名为 `my-new-cron-object` 的自定义资源。
 

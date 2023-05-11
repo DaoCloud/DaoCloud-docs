@@ -22,12 +22,12 @@ DCE 5.0 云原生网络基于多个开源技术构建，不仅提供单个 CNI �
 
     > 在此方案组合中，Cilium 为必备的网络 CNI。
 
-4. 通过 SpiderFlat / MacVLAN CNI / SRI-OV CNI 提供对外访问 IP，实现 Pod 二层对外通信能力。
+4. 通过 SpiderFlat / MacVLAN CNI / SR-IOV CNI 提供对外访问 IP，实现 Pod 二层对外通信能力。
 搭配 Calico 动态虚拟网络，降低网络运维难度，并节省 IP 资源。
 
     > 如果在应用落地场景中没有对外访问需求，可以不安装 Underlay CNI。
 
-![solution01](../images/solution01.png)
+![solution01](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/solution01.png)
 
 ## 方案二：Calico + MacVLAN/SpiderFlat + SpiderPool + Multus
 
@@ -41,7 +41,7 @@ DCE 5.0 云原生网络基于多个开源技术构建，不仅提供单个 CNI �
 
     > 如果在应用落地场景中，未安装 Underlay CNI，可以不安装 SpiderPool。
 
-3. 通过 SpiderFlat / MacVLAN CNI / SRI-OV CNI 提供对外访问 IP，实现 Pod 二层对外通信能力。
+3. 通过 SpiderFlat / MacVLAN CNI / SR-IOV CNI 提供对外访问 IP，实现 Pod 二层对外通信能力。
    搭配 Calico 动态虚拟网络，降低网络运维难度，节省 IP 资源。
 
     > 在此方案组合中，Calico 为必备的网络 CNI。如果在应用落地场景中，没有对外访问需求，可以不安装 Underlay CNI。
@@ -50,7 +50,7 @@ DCE 5.0 云原生网络基于多个开源技术构建，不仅提供单个 CNI �
 
     > Submariner 可根据需求选择安装。
 
-![solution02](../images/solution02.png)
+![solution02](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/solution02.png)
 
 [下载 DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }

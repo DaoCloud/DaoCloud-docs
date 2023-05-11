@@ -11,21 +11,21 @@ hide:
 
 1. 使用 admin/folder admin 角色的用户登录 Web 控制台，点击左侧导航栏底部的`全局管理`。
 
-    ![全局管理](../../images/ws01.png)
+    ![全局管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws01.png)
 
 1. 点击左侧导航栏的`工作空间与层级`，点击右上角的`创建文件夹`按钮。
 
-    ![创建文件夹](../../images/fd02.png)
+    ![创建文件夹](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/fd02.png)
 
 1. 填写文件夹名称、上一级文件夹等信息后，点击`确定`，完成创建文件夹。
 
-    ![确定](../../images/fd03.png)
+    ![确定](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/fd03.png)
 
 !!! tip
 
     创建成功后文件夹名称将显示在左侧的树状结构中，以不同的图标表示工作空间和文件夹。
 
-    ![工作空间和文件夹](../../images/ws04.png)
+    ![工作空间和文件夹](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws04.png)
 
 !!! note
 

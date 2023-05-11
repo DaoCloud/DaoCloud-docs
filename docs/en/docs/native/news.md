@@ -15,6 +15,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     KubeDay is a regional cloud-native event series hosted by CNCF, targeting regions with active communities and interest in cloud-native technologies such as Kubernetes.
     After kicking off in Japan last December, KubeDay makes its second stop in Tel Aviv, Israel. Applications for speaker proposals are now open (until 4.30), and speakers need to be present in person.
 
+- [June 18 Call for Topics for KubeCon + CloudNativeCon or Open Source Summit 2023 in Shanghai (6.18 deadline)](https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/program/call-for-proposals/)
+  
+    The summit will be held in Shanghai from 9.25 to 9.27. Topics to be submitted can focus on software development lifecycle, platform engineering, O&M+performance, security, data+processing+storage, network+edge+telecom, service grid, etc. The topic types include four categories: single talk (30 min), double talk (30 min), panel discussion (30 min, 3 to 5 (30 min), panel discussion (30 min, 3-5 speakers), and tutorial (90 min).
+
 - [June 6 ICT China-2023 High Level Forum - Cloud Native Industry Summit will kick off on June 6 in Beijing](https://mp.weixin.qq.com/s/FTOBYjCZxYMoOM8WJUz8mQ)
   
     Sponsored by the Ministry of Industry and Information Technology, the Cloud Native Industry Summit Forum will invite leading think tanks, government leaders, academician experts, enterprise executives and other heavyweight guests to discuss the cloud native ecology and explore the cloud native future.
@@ -34,6 +38,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     The Trusted Cloud Proprietary Cloud Assessment aims to assess the comprehensive level of proprietary cloud capabilities (including self-built and dedicated models), maturity (general), industry capabilities (financial), and special capabilities (compatibility) of the participating units.
     The hybrid cloud assessment evaluates the basic platform capabilities (including public cloud part, private cloud part, hyper-converged platform, and Cintron compatibility), special capabilities (security), application scenarios (data analysis, R&D operation), and comprehensive capabilities of the participating units.
 
+- [May 31 China ICT launches the first batch of service quality evaluation of large-scale edge container clusters (5.31 deadline)](https://mp.weixin.qq.com/s/8TjJBIFp46vscKBMILZBUg)
+  
+    The evaluation system includes node management metrics system and application distribution metrics system. Node management focuses on the management performance, stability, efficiency and other indicators of cluster nodes; application distribution focuses on the functionality and performance of different stages of application copy creation and the comprehensive management capability of applications.
+
 - [May 30 "Cloud Management Products and Services Atlas (2023)" officially launches the call for applications (5.30 application deadline)](https://mp.weixin.qq.com/s/gXGxUqTdO46US74gYrYEPw)
   
     The scope of the "Cloud Management Products and Services Atlas (2023)" collection includes two categories of solutions and products and services.
@@ -47,6 +55,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [May 16 CICT Launches "Cloud Native Product Catalog 2.0" Call (5.16 deadline)](https://mp.weixin.qq.com/s/xDq9APQec-h-tSx8-JICIw)
   
     The scope of "Cloud Native Product Catalog 2.0" includes infrastructure, cloud native middleware, cloud native data, cloud native security, and cloud native converged services. The results of the selection will be presented at the ICT China - High Level Forum - Cloud Native Industry Summit on June 6.
+
+- [May 15 KubeSphere Community Open 5.27 Cloud Native Meetup Hangzhou Call for Topics (5.15 deadline)](https://mp.weixin.qq.com/s/C3IvXg_zNxUtNK2_3cZRzw)
+  
+    The Cloud Native Meetup, co-organized by KubeSphere and GitLab, will be held in the afternoon of 5.27, and will consist of lightning talks (10 min) and single and double talks (40 min).
 
 - [May 12 2023 Trusted Edge Computing Innovation and Practice Cases and Industry Panorama Collection Launch (5.12 Filing Deadline)](https://mp.weixin.qq.com/s/KM2hnAoJ1KXJ6J0eovPzcw)
   

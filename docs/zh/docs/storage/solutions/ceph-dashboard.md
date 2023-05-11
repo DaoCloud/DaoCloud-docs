@@ -21,7 +21,7 @@
 
 1. rook-ceph-cluster 的监控指标通过 9283 端口暴露。
 
-    ![port 9283](./images/agen01.png)
+    ![port 9283](https://docs.daocloud.io/daocloud-docs-images/docs/storage/solutions/images/agen01.png)
 
 1. 在工作集群中为 rook-ceph-mgr [创建 ServiceMonitor](../../insight/user-guide/collection-manag/service-monitor.md#_3)。
 
@@ -85,4 +85,4 @@ spec:
 
 目前的面板还未区分集群，后续将陆续优化增加 cluster 标识选项。
 
-![监控面板](./images/dashboard01.png)
+![监控面板](https://docs.daocloud.io/daocloud-docs-images/docs/storage/solutions/images/dashboard01.png)

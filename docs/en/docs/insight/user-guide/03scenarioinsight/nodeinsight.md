@@ -1,6 +1,6 @@
 # Node monitoring
 
-Through node monitoring, you can get an overview of the current health status of the nodes in the selected cluster and the number of abnormalities in the corresponding container group; on the current node details page, you can view the number of alarms and the trend graph of resource consumption such as CPU, memory, and disk.
+Through node monitoring, you can get an overview of the current health status of the nodes in the selected cluster and the number of abnormalities in the corresponding pod; on the current node details page, you can view the number of alarms and the trend graph of resource consumption such as CPU, memory, and disk.
 
 ## Prerequisites
 

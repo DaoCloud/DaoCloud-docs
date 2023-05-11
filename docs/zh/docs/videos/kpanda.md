@@ -13,6 +13,7 @@
 - :five: [创建基于指标的 HPA 策略](#hpa)
 - :six: [集群升级](#_5)
 - :seven: [命名空间独享节点](#_6)
+- :eight: [HwameiStor 存储](#hwameistor)
 
 </div>
 
@@ -70,6 +71,14 @@
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/exclusive-node.mp4" preload="metadata" poster="../images/kpanda-exclude.png"></video>
+</div>
+
+## HwameiStor 存储
+
+参阅 [HwameiStor 简介](../storage/hwameistor/intro/what.md)文档页面，本视频也上传到了[YouTube](https://youtu.be/6D1vgj86hHY)。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/hwa.mp4" preload="metadata" poster="../images/hwacover.png"></video>
 </div>
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

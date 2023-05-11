@@ -11,7 +11,7 @@ DCE 5.0 支持众多第三方存储方案，我们针对 OpenEBS 进行了相关
 这些存储控制器可在 Kubernetes 能运行的任何地方运行，包括任何云、裸机服务器或传统共享存储系统之上。
 至关重要的是，数据本身也可以通过容器访问，而不是存储在平台外共享的横向扩展存储系统中。
 
-![openebs-1](../images/openebs-1.svg)
+![openebs-1](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/openebs-1.svg)
 
 CAS 是一种非常符合非聚合数据的趋势以及运行小型、松散耦合工作负载的小型自治团队。
 开发人员能保持自主并可以使用 Kubernetes 集群可用的任何存储来启动他们自己的 CAS 容器。
@@ -59,7 +59,7 @@ OpenEBS 是容器附加存储 (CAS) 模式的领先开源实现。
 作为这种方法的一部分，OpenEBS 使用容器来动态配置卷并提供高可用性等数据服务。
 OpenEBS 依赖并扩展 Kubernetes 本身来编排其卷服务。
 
-![openebs-2](../images/openebs-2.svg)
+![openebs-2](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/openebs-2.svg)
 
 OpenEBS 有很多组件，可以分为以下两大类：
 
@@ -81,7 +81,7 @@ OpenEBS 遵循微服务模型来实现数据引擎，其中功能进一步分解
 
 OpenEBS 数据引擎由以下几层组成：
 
-![openebs-3](../images/openebs-3.svg)
+![openebs-3](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/openebs-3.svg)
 
 #### 卷访问层
 
@@ -157,7 +157,7 @@ OpenEBS 上下文中的控制平面是指部署在集群中的一组工具或组
 OpenEBS 控制平面由一组微服务组成，这些微服务本身由 Kubernetes 管理，使 OpenEBS 真正成为 Kubernetes 原生的。
 由 OpenEBS 控制平面管理的配置被保存为 Kubernetes 自定义资源。控制平面的功能可以分解为以下各个阶段：
 
-![openebs-4](../images/openebs-4.svg)
+![openebs-4](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/openebs-4.svg)
 
 #### YAML 或 Helm 图表
 

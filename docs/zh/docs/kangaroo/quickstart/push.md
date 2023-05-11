@@ -55,19 +55,19 @@
 
 1. 在托管 Harbor 列表页面中，点击目标镜像仓库右侧的 `...`，点击`原生 Harbor`，进入原生 Harbor 的登录页。
 
-    ![原生 Harbor](../images/push01.png)
+    ![原生 Harbor](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/push01.png)
 
 1. 输入创建托管 Harbor 时设置的用户名和密码进入原生 Harbor。
 
-    ![输入用户名和密码](../images/push02.png)
+    ![输入用户名和密码](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/push02.png)
 
 1. 点击目标镜像空间（项目）的名称，进入镜像空间。
 
-    ![镜像空间](../images/push03.png)
+    ![镜像空间](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/push03.png)
 
 1. 点击右侧的推送命令，查看原生 Harbor 提供的推送命令。
 
-    ![查看推送命令](../images/push04.png)
+    ![查看推送命令](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/push04.png)
 
 !!! tip
 

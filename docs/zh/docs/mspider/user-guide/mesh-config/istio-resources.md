@@ -2,7 +2,7 @@
 
 `Istio 资源管理`页面按资源类型列出了 Istio 的所有资源，为用户提供了各类资源的展示、创建、编辑、删除等能力。
 
-![img](../../images/istio01.png)
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/istio01.png)
 
 ## UI 操作示例
 
@@ -10,11 +10,11 @@
 
 1. 在左侧导航栏中点击`网格配置` -> `Istio 资源管理`，点击右上角的 `YAML 创建`按钮。
 
-    ![img](../../images/istio01.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/istio01.png)
 
 2. 在 YAML 创建页面中，输入正确的 YAML 语句后点击`确定`。
 
-    ![img](../../images/istio02.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/istio02.png)
 
     ```yaml
     apiVersion: telemetry.istio.io/v1alpha1
@@ -37,7 +37,7 @@
 
 3. 返回资源列表，点击操作一列的 `⋮` 按钮，可以从弹出菜单中选择编辑和删除等更多操作。
 
-    ![img](../../images/istio03.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/istio03.png)
 
 ## Istio 资源类型
 
@@ -47,7 +47,7 @@ Istio 常见的资源类型如下：
 
 | **资源类型**                | **描述**                                                                                                                                                                                                                                                                                                                                                     |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| DestinationRule（目标规则） | 目标规则是服务治理中重要的组成部分，目标规则通过端口、服务版本等方式对请求流量进行划分，并对各请求分流量订制 Envoy 流量策略，应用到流量的策略不仅有负载均衡，还有最小连接数、熔断等。                                                                                                                                                                        |
+| DestinationRule（目标规则） | 目标规则是服务治理中重要的组成部分，目标规则通过端口、服务版本等方式对请求流量进行划分，并对各请求分流量订制 Envoy 流量策略，应用到流量的策略不仅有负载均衡，还有最小连接数、离群检测等。                                                                                                                                                                        |
 | EnvoyFilter                 | 该资源提供了对 Envoy 配置的能力，可以定义新的过滤器、监听器\集群等。使用该资源时需谨慎，错误配置可能会对整个网格环境的稳定性造成较大影响。 注意： <br> - EnvoyFilter 可以配置在 Istio 根目录（对所有工作负载生效）或某个工作负载（使用工作负载选择标签）； <br> - 当多个 EnvoyFilter 作用于同一个工作负载时，会按创建顺序优先执行；                          |
 | Gateway（网关规则）         | 网关规则用于定义网格边缘的负载均衡器，用于将服务暴露于网格之外，或提供内部服务的对外访问。相较于 k8s 的 ingress 对象，istio 的网关规则增加了更多的功能： l L4-L6 负载均衡 l 对外 mTLS l SNI 的支持 l 其他 istio 中已经实现的内部网络功能： Fault Injection，Traffic Shifting， Circuit Breaking， Mirroring 对于 L7 的支持，网关规则通过与虚拟服务配合实现。 |
 | ProxyConfig                 | 用于暴露代理的配置选项，例如：代理的线程数。该资源为可选资源，如不创建，系统将使用内建默认值；注意：<br> - ProxyConfig 中任何配置变更需要重启相关工作负载才会生效；<br > - 作用于网格或命名空间的 ProxyConfig 不可以包含任何工作负载选择标签，否则将仅作用于选定的工作负载；                                                                                 |

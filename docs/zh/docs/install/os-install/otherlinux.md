@@ -1,8 +1,8 @@
-# Other Linux 离线部署 DCE 5.0
+# Other Linux 离线部署 DCE 5.0 商业版
 
 本文将介绍如何在 Other Linux 操作系统上部署 DCE 5.0。
 
- Other Linux 本质上是 Kubean 对某些 Linux 操作系统没有提供安装系统离线包（OS package），需要客户自己去制作。
+Other Linux 本质上是由于 DCE 对某些 Linux 操作系统没有提供安装系统离线包（OS package），需要客户自己去制作。
 
 ## 已验证操作系统
 
@@ -22,7 +22,7 @@
 
 ### 制作及安装
 
-1.  下载制作工具。
+1. 下载制作工具。
 
     ```bash
     cd /home
@@ -30,7 +30,7 @@
     curl -Lo ./other_os_pkgs.sh https://raw.githubusercontent.com/kubean-io/kubean/main/build/os-packages/others/other_os_pkgs.sh && chmod +x other_os_pkgs.sh
     ```
 
-2.  构建操作系统离线包
+2. 构建操作系统离线包
 
     ```bash
     # 指定 pkgs.yml 包配置文件路径(若 pkgs.yml 位于 other_os_pkgs.sh 同级路径，则可以不设置此环境变量)
@@ -39,7 +39,7 @@
     ./other_os_pkgs.sh build
     ```
 
-3.  安装操作系统离线包
+3. 安装操作系统离线包
 
     ```bash
     # 指定 pkgs.yml 包配置文件路径(若 pkgs.yml 位于 other_os_pkgs.sh 同级路径，则可以不设置此环境变量)
@@ -55,7 +55,7 @@
     ./other_os_pkgs.sh install >>log.txt
     ```
 
-4.  安装成功后，会输出如下日志：
+4. 安装成功后，会输出如下日志：
 
     ```bash
     [root@master test]# cat log.txt |egrep 'INFO|WARN'
@@ -86,11 +86,11 @@
 
 ### 注意
 
-1.  通过 `cat log.txt |egrep 'INFO|WARN'`检查安装情况：
+1. 通过 `cat log.txt |egrep 'INFO|WARN'`检查安装情况：
 
     如果出现`failed to install package` 关键字，则说明未安装成功，并且最终失败时，会输出`the packages that failed to install are: ipset ipvsadm xfsprogs`。
 
-2.  相同系统族（os family）的不同版本（major version）所对应的包名存在差异:
+2. 相同系统族（os family）的不同版本（major version）所对应的包名存在差异:
 
     | 系统族               | 版本  | 包名               |
     | -------------------- | ----- | ------------------ |
@@ -101,30 +101,31 @@
 
 ## 开始离线安装
 
-1.  下载全模式离线包，可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
+1. 下载全模式离线包，可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
 
     | CPU 架构 | 版本   | 下载地址                                                                                          |
     | -------- | ------ | ------------------------------------------------------------------------------------------------- |
-    | AMD64    | v0.6.1 | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-amd64.tar |
+    | AMD64    | v0.6.1 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-amd64.tar> |
 
     下载完毕后解压离线包：
 
     ```bash
-    curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-amd64.tar
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-amd64.tar
     tar -xvf offline-v0.6.1-amd64.tar
     ```
 
-2.  下载 Other Linux 操作系统镜像，此处以 `UnionTech OS Server 20 1050d` 为例：
+2. 下载 Other Linux 操作系统镜像，此处以 `UnionTech OS Server 20 1050d` 为例：
 
     ```bash
     curl -LO https://cdimage-download.chinauos.com/uniontechos-server-20-1050d-amd64.iso
     ```
 
-3.  参考上一步`制作操作系统离线包`。
+3. 参考上一步`制作操作系统离线包`。
 
-4.  下载 addon 离线包，可以在[下载中心](../../download/dce5.md)下载最新版本（可选）
+4. 下载 addon 离线包，可以在[下载中心](../../download/dce5.md)下载最新版本（可选）
 
-6.  设置[集群配置文件 clusterConfig.yaml](../commercial/cluster-config.md)，可以在离线包 `offline/sample` 下获取该文件并按需修改。
+5. 设置[集群配置文件 clusterConfig.yaml](../commercial/cluster-config.md)，可以在离线包 `offline/sample` 下获取该文件并按需修改。
+
     以 `UnionTech OS Server 20 1050d` 为例，参考配置为：
 
     ```yaml
@@ -150,21 +151,21 @@
       binaries:
         type: builtin
       kubeanConfig: |-
-    allow_unsupported_distribution_setup: true
+      allow_unsupported_distribution_setup: true
         debian_os_family_extensions:
           - "UnionTech OS Server 20\" "
     ```
-    
+
     配置参数说明：
-    
+
     | 参数                                                   | 说明                                  | 是否必填                   |
     | ------------------------------------------------------ | ------------------------------------- | -------------------------- |
     | spec.kubeanConfig.allow_unsupported_distribution_setup | 是否跳过已支持发行版检测              | 必填                       |
     | spec.kubeanConfig.debian_os_family_extensions          | 可通过查看 `ansible_os_family` 来填写 | 若为 Debian 系统族则需填写 |
     | spec.kubeanConfig.redhat_os_family_extensions          | 可通过查看 `ansible_os_family` 来填写 | 若为 Redhat 系统族则需填写 |
-    
+
     如何查看当前发行版环境的系统族标识：
-    
+
     ```bash
     export USER=root
     export PASS=xxxx
@@ -172,9 +173,9 @@
     export ANSIBLE_HOST_KEY_CHECKING=False
     ansible -m setup -a 'filter=ansible_os_family' -e "ansible_user=${USER} ansible_password=${PASS}" -i ${ADDR}, all
     ```
-    
+
     执行成功后将输出以下信息：
-    
+
     ```bash
     192.168.10.xxx | SUCCESS => {
         "ansible_facts": {
@@ -185,7 +186,7 @@
     }
     ```
 
-6.  开始安装 DCE 5.0。
+6. 开始安装 DCE 5.0。
 
     ```bash
     ./dce5-installer cluster-create -m ./sample/mainfest.yaml -c ./sample/clusterConfig.yaml
@@ -193,18 +194,19 @@
 
     !!! note
 
-       部分参数介绍，更多参数可以通过 `./dce5-installer --help` 来查看：
-       - `-z` 最小化安装
-       - `-c` 指定集群配置文件，使用 NodePort 暴露控制台时不需要指定 `-c`
-       - `-d` 开启 debug 模式
-       - `--serial` 指定后所有安装任务串行执行
+        部分参数介绍，更多参数可以通过 `./dce5-installer --help` 来查看：
 
-7.  安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
+        - `-z` 最小化安装
+        - `-c` 指定集群配置文件，使用 NodePort 暴露控制台时不需要指定 `-c`
+        - `-d` 开启 debug 模式
+        - `--serial` 指定后所有安装任务串行执行
 
-    ![success](../images/success.png)
+7. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
+
+    ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
     !!! success
 
-       请记录好提示的 URL，方便下次访问。
+        请记录好提示的 URL，方便下次访问。
 
-8.  成功安装 DCE 5.0 商业版之后，请联系我们授权：电邮 [info@daocloud.io](mailto:info@daocloud.io) 或致电 400 002 6898。
+8. 成功安装 DCE 5.0 商业版之后，请联系我们授权：电邮 [info@daocloud.io](mailto:info@daocloud.io) 或致电 400 002 6898。

@@ -14,27 +14,27 @@
 
 1. 使用具有 Admin 角色的用户登录 Web 控制台，从左侧导航栏点击`镜像仓库` -> `仓库集成(管理员)`。
 
-    ![仓库集成](../images/integrated01.png)
+    ![仓库集成](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/integrated01.png)
 
 1. 点击某个仓库名称。
 
-    ![点击某个名称](../images/managed01.png)
+    ![点击某个名称](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/managed01.png)
 
 1. 在左侧导航栏点击`镜像空间`，在某个镜像空间最右侧，点击 `⋮`，选择`绑定/解绑工作空间`。
 
-    ![绑定/解绑](../images/bind00.png)
+    ![绑定/解绑](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/bind00.png)
 
     若没有绑定任何工作空间，`工作空间`一栏将显示`待分配`。
 
 1. 可以选择一个或多个工作空间，点击`确定`。
 
-    ![绑定](../images/bind01.png)
+    ![绑定](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/bind01.png)
 
     若想取消某个工作空间的绑定，只需在已选中的工作空间列表中，点击 `x`。
 
 1. 提示`绑定/解绑工作空间成功`，光标移到`工作空`间一栏，将显示所绑定的工作空间。
 
-    ![绑定](../images/bind02.png)
+    ![绑定](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/bind02.png)
 
     该工作空间（租户）下的成员将都能拉取这个镜像空间中的镜像。
 
@@ -46,7 +46,7 @@
     - 排查该镜像空间是否绑定了 Kubernetes 命名空间所在的工作空间（需要绑定）。
     - 排查该镜像空间状态是私有该是公开，切换如下 tab 查找。
 
-    ![镜像仓库](../images/bind-space-to-ws02.png)
+    ![镜像仓库](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/bind-space-to-ws02.png)
 
 2. 将镜像空间分配给工作空间使用，与在工作空间下集成仓库有什么区别？
 

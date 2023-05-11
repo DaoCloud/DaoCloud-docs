@@ -9,11 +9,11 @@ RabbitMQ 内置了 Prometheus 和 Grafana 监控模块。
 
 1. 在消息队列页面中，点击某个名称。
 
-    ![点击某个名称](../images/view01.png)
+    ![点击某个名称](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/view01.png)
 
 2. 在左侧导航栏，点击`实例监控`，可以接入监控模块。
 
-    ![实例监控](../images/insight.png)
+    ![实例监控](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/insight.png)
 
 各项监控指标如下。
 

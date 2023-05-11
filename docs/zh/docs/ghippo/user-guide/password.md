@@ -10,26 +10,26 @@
 
 1. 如果用户忘记了密码，可以在登录界面点击`忘记密码`。
 
-    ![登录界面](../images/password00.png)
+    ![登录界面](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/password00.png)
 
 1. 输入用户名，点击`提交`。
 
     为防止滥发邮件，点击`提交`后，该按钮将变灰并显示一个为期 1 分钟的倒计时。
     如果 1 分钟后还未收到邮件，请再次点击此按钮。
 
-    ![密码重置流程](../images/password02.png)
+    ![密码重置流程](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/password02.png)
 
 1. 在邮箱中找到密码重置邮件，点击`密码重置`按钮。
 
-    ![密码重置流程](../images/password03.png)
+    ![密码重置流程](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/password03.png)
 
 1. 按照屏幕提示，设置新密码，点击`确定`。设置新密码的要求与创建用户时的密码规则一致。
 
-    ![密码重置流程](../images/password04.png)
+    ![密码重置流程](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/password04.png)
 
 1. 屏幕提示密码修改成功。
 
-    ![密码重置流程](../images/password05.png)
+    ![密码重置流程](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/password05.png)
 
 ## 重置密码流程
 

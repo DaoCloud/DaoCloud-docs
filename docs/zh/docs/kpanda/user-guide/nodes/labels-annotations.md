@@ -18,12 +18,12 @@ hide:
 
 1. 在`集群列表`页面点击目标集群的名称。
 
-    ![进入集群列表页面](../../images/schedule01.png)
+    ![进入集群列表页面](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/schedule01.png)
 
 2. 在左侧导航栏点击`节点管理`，在节点右侧点击 `ⵗ` 操作图标，点击`修改标签`或`修改注解`。
 
-    ![暂停调度](../../images/labels01.png)
+    ![暂停调度](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/labels01.png)
 
 3. 点击`➕ 添加`可以添加标签或注解，点击 `X` 可以删除标签或注解，最后点击`确定`。
 
-    ![节点管理](../../images/labels02.png)
+    ![节点管理](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/labels02.png)

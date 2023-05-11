@@ -8,7 +8,7 @@
 
 对于`工作空间分配`的工具链实例，支持`解除集成`操作：
 
-![tool04](../../images/tool04.png)
+![tool04](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/tool04.png)
 
 对于`平台分配`的工具链实例，不支持`解除集成`操作：
 
@@ -24,7 +24,7 @@
 
 另外已绑定的项目支持解除绑定。
 
-![tool05](../../images/tool05.png)
+![tool05](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/tool05.png)
 
 对于`平台分配`的工具链实例，仅支持查看，不支持`绑定`操作。
 
@@ -32,4 +32,4 @@
 
 支持`分配项目`到工作空间，分配成功后，会在工作空间下生成一条实例，并且项目可以被该工作空间使用。
 
-![tool06](../../images/tool06.png)
+![tool06](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/tool06.png)

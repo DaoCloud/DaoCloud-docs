@@ -13,11 +13,11 @@
 
 1. 在`集群列表`页选择需要通过 CloudShell 访问的集群，点击右侧的 `...` 操作图标并在下拉列表中点击`控制台`。
 
-    ![调用 CloudShell 控制台](../../images/access-cloudshell.png)
+    ![调用 CloudShell 控制台](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/access-cloudshell.png)
 
 2. 在 CloudShell 控制台执行 `kubectl get node` 命令，验证 CloudShell 与集群的连通性。如图，控制台将返回集群下的节点信息。
 
-    ![验证连通性](../../images/access-get-node.png)
+    ![验证连通性](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/access-get-node.png)
 
 现在，您可以通过 CloudShell 来访问并管理该集群了。
 
@@ -31,11 +31,11 @@
 
 1. 在`集群列表`页选择需要下载证书的集群，点击右侧的 `...`，并在弹出菜单中点击`证书获取`。
 
-    ![进入下载证书页面](../../images/access-get-cert.png)
+    ![进入下载证书页面](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/access-get-cert.png)
 
 2. 选择证书有效期并点击`下载证书`。
 
-    ![下载证书](../../images/access-download-cert.png)
+    ![下载证书](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/access-download-cert.png)
 
 3. 打开下载好的集群证书，将证书内容复制至本地节点的 `config` 文件。
 

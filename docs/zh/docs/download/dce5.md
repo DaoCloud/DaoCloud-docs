@@ -10,8 +10,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 离线包           | 版本    | 下载                                          | 更新日期   |
 | ---------------- | ------- | ------------------------------------------- | -------- |
-| offline-community-v0.6.1-arm64.tar | v0.6.1 | [:arrow_right: 下载页](./free/dce5-installer-v0.6.1.md) | 2023-04-12 |
-| offline-community-v0.6.1-amd64.tar | v0.6.1 | [:arrow_right: 下载页](./free/dce5-installer-v0.6.1.md) | 2023-04-12 |
+| offline-community-v0.7.0-arm64.tar | v0.7.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.7.0.md) | 2023-05-09 |
+| offline-community-v0.7.0-amd64.tar | v0.7.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.7.0.md) | 2023-05-09 |
 
 [更多历史版本](./free/dce5-installer-history.md)
 
@@ -21,8 +21,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 离线包            | 版本    | 下载                                        | 更新日期   |
 | ---------------- | ------- | ----------------------------------------- | -------- |
-| offline-v0.6.1-arm64.tar | v0.6.1 | [:arrow_right: 下载页](./business/dce5-installer-v0.6.1.md) | 2023-04-12 |
-| offline-v0.6.1-amd64.tar | v0.6.1 | [:arrow_right: 下载页](./business/dce5-installer-v0.6.1.md) | 2023-04-12 |
+| offline-v0.7.0-arm64.tar | v0.7.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.7.0.md) | 2023-05-09 |
+| offline-v0.7.0-amd64.tar | v0.7.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.7.0.md) | 2023-05-09 |
 
 [更多历史版本](./business/dce5-installer-history.md)
 
@@ -41,8 +41,9 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 
 | 模块     | 文件大小 | 下载                                         | 更新日期   |
 | -------- | -------- | -------------------------------------------- | ---------- |
-| 全局管理 | 440 MB   | [:arrow_right: 下载页](./modules/ghippo.md)  | 2023-03-29 |
+| 全局管理 | 440 MB   | [:arrow_right: 下载页](./modules/ghippo.md)  | 2023-04-27 |
 | 可观测性 | 2.41 GB  | [:arrow_right: 下载页](./modules/insight.md) | 2022-12-30 |
+| 网络 spidernet | 55.47 MB | [:arrow_right: 下载页](./modules/spidernet.md) | 2023-04-26 |
 
 !!! note
 
@@ -51,7 +52,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
     - 若有任何疑问，请[提出反馈](https://github.com/DaoCloud/DaoCloud-docs/issues)。
     - 欢迎扫描二维码，与开发者畅快交流：
 
-    ![社区版交流群](../images/assist.png)
+    ![社区版交流群](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
 
 [安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

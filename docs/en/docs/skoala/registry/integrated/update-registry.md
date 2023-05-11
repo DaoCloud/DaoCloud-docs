@@ -1,6 +1,6 @@
 ---
 hide:
-  - heel
+  - toc
 ---
 
 # Update the registry configuration

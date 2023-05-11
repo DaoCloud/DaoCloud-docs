@@ -38,10 +38,10 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 #### fix
 
-- **Fix** display style of container group running status
+- **Fix** display style of pod running status
 - **Fix** When the link function is not enabled, hide related configuration parameters
 - **Fix** Some front-end styles do not take effect
-- **Fix** collection container group indicators no data problem
+- **Fix** collection pod indicators no data problem
 - **FIXED** Unable to install insight-agent in OpenShift cluster
 
 ## 2023.02.27
@@ -370,7 +370,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 - Added documentation station glossary
 - Added 4 pages of basic concept tasks and examples, data model, query language, etc. of the document station
 - Added user guides - documents such as scene monitoring, data query, alarm center, etc.
-- New additions to the document site: [Product Benefits](../intro/benefits.md), [Metric Query](../user-guide/data-query/metric.md), [Link Query](.. /user-guide/data-query/trace.md), dashboard, [overview](../user-guide/overview.md)
+- New additions to the document site: [Product Benefits](../intro/benefits.md), [Metric Query](../user-guide/data-query/metric.md), [Link Query](../user-guide/data-query/trace.md), dashboard, [overview](../user-guide/overview.md)
 
 ## 2022-4-22
 

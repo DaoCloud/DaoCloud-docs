@@ -14,19 +14,19 @@
 
 1. 在集群列表中点击目标集群的名称，然后在左侧导航栏点击`容器存储`->`数据卷(PV)`->`YAML 创建`。
 
-    ![路径](../../images/pv01.png)
+    ![路径](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pv01.png)
 
 2. 在弹框中输入或粘贴事先准备好的 YAML 文件，然后在弹框底部点击`确定`。
 
     > 支持从本地导入 YAML 文件或将填写好的文件下载保存到本地。
 
-    ![yaml](../../images/pv02.png)
+    ![yaml](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pv02.png)
 
 ### 表单创建
 
 1. 在集群列表中点击目标集群的名称，然后在左侧导航栏点击`容器存储`->`数据卷(PV)`->`创建数据卷(PV)`。
 
-    ![路径](../../images/pv03.png)
+    ![路径](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pv03.png)
 
 2. 填写基本信息。
 
@@ -57,7 +57,7 @@
 
     - 节点亲和性：
 
-        ![基本信息](../../images/pv04.png)
+        ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pv04.png)
 
 ## 查看数据卷
 
@@ -67,11 +67,11 @@
 
 - 支持按照数据卷的名称、状态、命名空间、创建时间进行顺序或逆序排序。
 
-    ![详情](../../images/pv06.png)
+    ![详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pv06.png)
 
 - 点击数据卷的名称，可以查看该数据卷的基本配置、存储池信息、标签、注解等信息。
 
-    ![详情](../../images/pv05.png)
+    ![详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pv05.png)
 
 ## 克隆数据卷
 
@@ -83,7 +83,7 @@
 
         > 也可以点击数据卷的名称，在详情页面的右上角点击操作按钮选择`克隆`。
 
-        ![克隆](../../images/pv11.png)
+        ![克隆](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pv11.png)
 
 2. 直接使用原配置，或者按需进行修改，然后在页面底部点击`确定`。
 
@@ -97,11 +97,11 @@
 
 - 在数据卷列表页面，找到需要更新的数据卷，在右侧的操作栏下选择`更新`即可通过表单更新，选择`编辑 YAML` 即可通过 YAML 更新。
 
-    ![更新](../../images/pv07.png)
+    ![更新](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pv07.png)
 
 - 点击数据卷的名称，进入数据卷的详情页面后，在页面右上角选择`更新`即可通过表单更新，选择`编辑 YAML` 即可通过 YAML 更新。
 
-    ![更新](../../images/pv08.png)
+    ![更新](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pv08.png)
 
 ## 删除数据卷
 
@@ -109,4 +109,4 @@
 
 > 也可以点击数据卷的名称，在详情页面的右上角点击操作按钮选择`删除`。
 
-![删除](../../images/pv09.png)
+![删除](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pv09.png)

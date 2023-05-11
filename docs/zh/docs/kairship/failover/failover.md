@@ -10,7 +10,7 @@
 
 1. 进入多云编排模块，点击`系统设置`->`高级配置`，故障转移可实现多个集群之间的副本调度，默认关闭，如有需要请开启。
 
-    ![开启故障转移](../images/failover01.png)
+    ![开启故障转移](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/failover01.png)
 
 2. 以下参数均针对集群，点击开启故障转移并保存。
 
@@ -26,12 +26,12 @@
 
 1. 创建一个多云无状态负载，选择部署在多个集群上，调度策略选择聚合/动态权重模式.
 
-    ![创建一个多云无状态负载](../images/failover02.png)
+    ![创建一个多云无状态负载](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/failover02.png)
 
 2. 若此时一个集群不健康并且在指定的时间范围内并未恢复，则将会为此集群打上污点，进入驱逐状态（此文档将手动为某一集群打上污点）
 
-    ![为集群打污点](../images/failover03.png)
+    ![为集群打污点](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/failover03.png)
 
 3. 此时无状态负载的 Pod 将会根据剩余集群的资源等情况进行迁移。最终不健康（被打上污点）的集群内将不存在任何 Pod。
 
-    ![pod迁移](../images/failover04.png)
+    ![pod迁移](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/failover04.png)

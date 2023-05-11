@@ -299,6 +299,10 @@
 
     该版本主要新特性：在一个 SDS 请求中发送多个集群或监听器的 SDS 资源、通过 HTTP 过滤器的配置名称来获取过滤器配置、监听器过滤器统计更新、dns_resolver 增加对多个地址的支持、为监听器过滤器添加动态监听器过滤器配置等。
 
+- [Envoy Gateway 基于 Envoy 的网关 v0.4 发布](https://gateway.envoyproxy.io/v0.4.0/releases/v0.4.html)
+
+    版本特性：支持通过 Helm 安装 Envoy Gateway；新增初始框架用于扩展 Envoy Gateway；支持基于 IP 子网的速率限制；支持自定义 Envoy 代理引导配置、Envoy 代理镜像和服务配置注释、资源和安全上下文设置等；支持 EDS（Endpoint Discovery Service)。
+
 - [Envoy Gateway v0.3 发布](https://gateway.envoyproxy.io/v0.3.0/releases/v0.3.html)
 
     版本特性：支持扩展的 Gateway API 字段；支持 TCP 路由 API、UDP 路由 API 和 GRPC 路由 API；支持全局速率限制；支持请求认证。
@@ -690,6 +694,10 @@
 
     该版本主要新特性：支持 Rocky Linux 8 和 Kylin Linux、在重置角色中添加 “flush ip6tables” 任务、支持 NTP 配置、添加 kubelet systemd 服务加固选项、为 CoreDNS/NodelocalDNS 添加重写插件、为 kubelet 添加 SeccompDefault admission 插件、为 k8s_nodes 增加 extra_groups 参数、新增 ingress nginx webhook、增加对节点和 pod pid 限制的支持、支持启用默认的 Pod 安全配置。
 
+- [KubeVela 混合多云环境应用交付平台 v1.8.0 发布（CNCF 项目）](https://github.com/kubevela/kubevela/releases/tag/v1.8.0)
+
+    版本特性：支持通过多个分片对控制平面进行横向扩展、支持从现有的 KubeVela 定义中生成语言感知的 SDK、新增基于工作流的触发器 kube-trigger、允许应用开发人员以金丝雀发布的风格来协调应用交付过程。
+
 - [KubeVela 升级成为 CNCF 孵化项目](https://mp.weixin.qq.com/s/mhH9u4aXJT2-qVwf06xn5Q)
 
     [KubeVela](https://github.com/kubevela/kubevela) 采用 Kubernetes 控制平面构建，使跨混合和多云环境部署和操作应用变得更容易、更快速、更可靠。
@@ -996,6 +1004,10 @@
 
     [Pixie Plugin System](https://github.com/pixie-io/pixie-plugin) 允许用户将其 Pixie 数据导出到任何支持 OpenTelemetry 的服务中。这意味着用户可以利用外部数据存储长期保留数据，在现有工作流和仪表盘中无缝采用 Pixie，将 Pixie 数据与其他数据流结合。
 
+- [Podman 容器运行时项目 v4.5.0 发布](https://github.com/containers/podman/releases/tag/v4.5.0)
+
+    版本特性：支持对在 Pod 内运行的容器进行自动更新、支持使用 SQLite 数据库作为后端、增加对容器网络堆栈 Netavark 插件的支持、支持带有 Macvlan 和 Netavark 后台的 DHCP。
+
 - [Podman 容器引擎 v4.3.0 发布](https://github.com/containers/podman/releases/tag/v4.3.0)
 
     命令更新：支持改变容器的资源限制、删除 K8s YAML 创建的 pod 和容器、支持 K8s secret、支持从 URL 读取 YAML、支持 emptyDir 卷类型、支持 ConfigMap 中的二进制数据；支持重复的卷挂载。
@@ -1170,6 +1182,10 @@
 
 ### V
 
+- [Vcluster 虚拟 Kubernetes 集群实现方案 v0.15.0 发布](https://github.com/vmware-tanzu/velero/releases/tag/v1.11.0)
+
+    版本特性：允许用户在 vcluster 内访问所有主机集群服务、新增内置指标服务器、通用同步功能支持从主机集群导入集群范围资源。
+
 - [Vcluster 虚拟 Kubernetes 集群实现方案 v0.13.0 发布](https://github.com/loft-sh/vcluster/releases/tag/v0.13.0)
 
     该版本主要新特性：增加日志和备份功能、增加具有外部数据存储的 k3s 的高可用性支持、vcluster 调度器开启时自动同步 CSI 资源。
@@ -1203,6 +1219,10 @@
     该版本主要新特性：支持基于真实节点负载的动态调度和重调度、支持弹性作业调度、新增 MPI job 插件、允许任务失败时不重试、支持查看 pod 请求的开销、支持在 pod group 入列过程中考虑资源配额、默认特权容器通过 admission webhook 的验证。
 
 ### W, X, Z
+
+- [WasmEdge WebAssembly 运行时 v0.12.0 发布（CNCF 项目）](https://github.com/WasmEdge/WasmEdge/releases/tag/0.12.0)
+
+    版本特性：引入了插件上下文和相关的 API、引入了多个 WASI 套接字 API 实现、增加 VM API、增加 wasm_bpf 插件。
 
 - [Wazero：Tetrate 开源的 Go 语言开发的 WebAssembly 运行时](https://mp.weixin.qq.com/s/aozmJpuwD69vGWcM525ucg)
 

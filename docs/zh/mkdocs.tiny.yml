@@ -1,0 +1,14 @@
+# This file is used to split config and docs navigation
+# Project information
+site_name: DaoCloud Enterprise
+
+# custom module path
+docs_dir: docs/middleware/
+
+# Configuration
+theme:
+  name: material
+
+  # navigation config
+  features:
+    - navigation.tabs

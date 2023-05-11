@@ -1,14 +1,38 @@
 # 镜像仓库 FAQ
 
+## Harbor Operator 安装不成功
+
+`Harbor Operator` 安装不成功需要检查这几点，`cert-manager`是否安装成功，`installCRDs` 是否设置为`true`。
+安装`Harbor operator` 的 `helm` 任务是否成功。
+
+## 创建托管 Harbor 可以使用 redis cluster 模式吗
+
+目前 `Harbor` 仍然不能使用 `redis` cluster 模式。
+
+## 私有镜像在非镜像仓库模块能看到吗？
+
+镜像仓库是严格按照 DEC 5.0 的权限来执行的，在镜像仓库中某个用户必须要属于某个租户，才能看到当前租户下的私有镜像空间，否则即使管理员也不能看到。
+
+## 私有镜像绑定工作空间后不能查询到
+
+私有镜像绑定工作空间后程序需要异步执行很多逻辑，所以不会马上能看到。
+这个过程会受到系统的影响，如果系统响应较快，则异步执行较快，1 分钟内能看到。最长应该不会超过 5 分钟。
+
+## 托管Harbor创建后能访问了但是状态依然不健康
+
+目前托管 Harbor 页面上的状态和仓库集成的状态是二合一的，当两个状态都为健康的时候才是健康，
+因此可能出现托管 `Harbor` 已经可以访问了，但是状态依然不健康，这种情况需要等一个服务探测周期，一个探测周期是 10 分钟，在一个周期后就会恢复如初。
+
 ## 创建的托管仓库状态为不健康
 
-![仓库不健康](./img/img.png)
+![仓库不健康](img/img.png)
 
 - A1：用户输入的数据库、Redis、S3 存储等信息有误，导致无法连接，可通过查看日志文件进行排查。现象主要是几个核心服务有 Pod 启动失败，可以通过查看日志进一步确认原因。
 
     ```shell
     kubectl -n kangaroo-lrf04 get pods
     ```
+
     ```none
     NAME                                                         READY   STATUS    RESTARTS   AGE
     trust-node-port-harbor-harbor-chartmuseum-57fdfb9cdc-qznwc   1/1     Running   0          20h
@@ -25,6 +49,7 @@
     ```shell
     kubectl -n kangaroo-lrf04 get harborclusters.goharbor.io
     ```
+
     ```none
     NAME              PUBLIC URL                 STATUS
     trust-node-port   https://10.6.232.5:30010   healthy
@@ -37,10 +62,12 @@
     ```shell
     kubectl -n kangaroo-system get registrysecrets.kangaroo.io
     ```
+
     ```none
     NAME                        AGE
     inte-bz-harbor-1            34d
     ```
+
     ```shell
     kubectl -n kangaroo-system describe registrysecrets.kangaroo.io inte-bz-harbor-1
     ```
@@ -56,7 +83,7 @@
 
 ## 仓库集成后但状态为不健康
 
-![仓库集成不健康](./img/img_1.png)
+![仓库集成不健康](img/img_1.png)
 
 首先确认实例是否真的健康，如果实例不健康，则需要排查实例的问题；
 如果实例健康，则通过在 `kpanda-global-cluster` 集群上排查 `registrysecrets.kangaroo.io`
@@ -67,6 +94,7 @@
 ```shell
 kubectl -n kangaroo-system get registrysecrets.kangaroo.io
 ```
+
 ```none
 NAME                     AGE
 trust-test-xjw           34d
@@ -75,6 +103,7 @@ trust-test-xjw           34d
 ```shell
 kubectl -n kangaroo-system get registrysecrets.kangaroo.io trust-test-xjw -o yaml
 ```
+
 ```yaml
 apiVersion: kangaroo.io/v1alpha1
 kind: RegistrySecret
@@ -106,6 +135,7 @@ status:
     ```shell
     kubectl -n default get secret registry-secret
     ```
+
     ```none
     NAME              TYPE                             DATA   AGE
     registry-secret   kubernetes.io/dockerconfigjson   1      78d
@@ -116,6 +146,7 @@ status:
     ```shell
     kubectl get secret registry-secret -o jsonpath='{.data.*}'| base64 -d | jq
     ```
+
     ```none
     {
       "auths": {
@@ -125,9 +156,11 @@ status:
       }
     }
     ```
+
     ```shell
     echo "YWRtaW46SGFyYm9yMTIzNDU=" | base64 -d
     ```
+
     ```none
     admin:Harbor12345
     ```

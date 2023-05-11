@@ -6,31 +6,42 @@ HwameiStor 支持 `CSI 卷扩容` 。这个功能实现了通过修改 `PVC` 的
 
 当前 `PVC/PV` 大小：
 
-```console
-$ kubectl get pvc data-sts-mysql-local-0
+```shell
+kubectl get pvc data-sts-mysql-local-0
+```
+```none
 NAME                     STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                 AGE
 data-sts-mysql-local-0   Bound    pvc-b9fc8651-97b8-414c-8bcf-c8d2708c4ee8   1Gi        RWO            hwameistor-storage-lvm-hdd   85m
-
-$ kubectl get pv pvc-b9fc8651-97b8-414c-8bcf-c8d2708c4ee8
+```
+```shell
+kubectl get pv pvc-b9fc8651-97b8-414c-8bcf-c8d2708c4ee8
+```
+```none
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                            STORAGECLASS                 REASON   AGE
 pvc-b9fc8651-97b8-414c-8bcf-c8d2708c4ee8   1Gi        RWO            Delete           Bound    default/data-sts-mysql-local-0   hwameistor-storage-lvm-hdd            85m
 ```
 
 ## 查看 `StorageClass` 是否使用了参数 `allowVolumeExpansion: true`
 
-```console
-$ kubectl get pvc data-sts-mysql-local-0 -o jsonpath='{.spec.storageClassName}'
+```shell
+kubectl get pvc data-sts-mysql-local-0 -o jsonpath='{.spec.storageClassName}'
+```
+```none
 hwameistor-storage-lvm-hdd
-
-$ kubectl get sc hwameistor-storage-lvm-hdd -o jsonpath='{.allowVolumeExpansion}'
+```
+```shell
+kubectl get sc hwameistor-storage-lvm-hdd -o jsonpath='{.allowVolumeExpansion}'
+```
+```none
 true
 ```
 
 ## 修改 `PVC` 的大小
 
-```console
-$ kubectl get edit pvc data-sts-mysql-local-0
-
+```shell
+kubectl get edit pvc data-sts-mysql-local-0
+```
+```yaml
 ...
 spec:
   resources:
@@ -43,9 +54,10 @@ spec:
 
 增加的容量越多，扩容所需时间越长。可以在 `PVC` 的事件日志中观察整个扩容的过程.
 
-```console
-$ kubectl describe pvc data-sts-mysql-local-0
-
+```shell
+kubectl describe pvc data-sts-mysql-local-0
+```
+```none
 Events:
   Type     Reason                      Age                From                                Message
   ----     ------                      ----               ----                                -------
@@ -58,12 +70,17 @@ Events:
 
 ## 观察扩容完成后的 `PVC/PV`
 
-```console
-$ kubectl get pvc data-sts-mysql-local-0
+```shell
+kubectl get pvc data-sts-mysql-local-0
+```
+```none
 NAME                     STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                 AGE
 data-sts-mysql-local-0   Bound    pvc-b9fc8651-97b8-414c-8bcf-c8d2708c4ee8   2Gi        RWO            hwameistor-storage-lvm-hdd   96m
-
-$ kubectl get pv pvc-b9fc8651-97b8-414c-8bcf-c8d2708c4ee8
+```
+```shell
+kubectl get pv pvc-b9fc8651-97b8-414c-8bcf-c8d2708c4ee8
+```
+```none
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                            STORAGECLASS                 REASON   AGE
 pvc-b9fc8651-97b8-414c-8bcf-c8d2708c4ee8   2Gi        RWO            Delete           Bound    default/data-sts-mysql-local-0   hwameistor-storage-lvm-hdd            96m
 ```

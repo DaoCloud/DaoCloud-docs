@@ -2,6 +2,53 @@
 
 本页列出服务网格各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023-04-27
+
+### v0.15.0
+
+#### 升级
+
+- **新增** 引入 d2 作为绘图工具
+- **新增** 了一个新的 wasm 插件，用于根据 trace id，给请求加上不同的 header。
+- **新增** 网格配置托管 Istiod 的 LoadBalancer Annotations 实现
+- **新增** 网格网关配置服务 Annotations 实现
+- **新增** 增加网格字段 load_balancer_annotations，支持自定义负载均衡 Annotations
+- **新增** 在 mspider-api 中，手动执行 pipeline，设置 SYNC_OPENAPI_DOCS 为key，既可触发上传文档站（提 PR）
+- **新增** MCPC Controller 感知到 Service 的中存在 mspider.io/managed 的标签时，将触发自动创建该服务对应的治理策略。
+- **新增** MCPC Controller 多工作负载类型支持。
+- **新增** 了健康检查功能，当某个网格 APIServer 代理出现无法连通的情况时，自动重建该代理，防止 PortForward 自身逻辑不可靠（可能和 Istio Sidecar 有关）
+
+#### 修复
+
+- **修复** 未兼容 grpcgateway-accept-language（等价与 HTTP 的 Accept-Language）Header，导致无法正确切换中英文模式模式。
+当前同时兼容 Accept 与 Accept-Language 两种模式
+- **修复** 了同步 OpenAPI 时，由于 shadow clone 代码导致 upstream 无法 push 的问题
+- **修复** 无法更新带 . 的 Istio 资源
+- **修复** 在 1.17.1 版本中，istio-proxy 无法正常启动的问题
+- **修复** ingress gateway 缺少 name 导致 merge 失败无法部署的问题
+- **修复** 服务地址无法搜索的问题
+- **修复** 无法更新带 . 的 Istio 资源 的问题
+- **修复** 
+- **修复** 了之前 controller 内存泄漏的问题。
+- **修复** 了 add/delete cluster 有时没有正确触发的逻辑。
+- **修复** 了托管模式下 istio-system 可能被误删的情况。
+- **修复** ingress gateway 缺少 name 导致 merge 失败无法部署的问题。
+- **修复** 在开启全局注入情况下，更新网格可能导致 istio-operator pod 被注入，从而使网格创建失败的问题
+- **修复** 服务与 WorkloadShadow 关联的两个部分没有清理逻辑，导致服务被错误绑定在工作负载上
+- **修复** 了一个导致虚拟集群被同步到 Mspider 导致接入失败的问题
+- **优化** controller 命名空间、服务资源处理逻辑，减少频繁触发 workloadShadow 资源更新。
+- **优化** 了 workloadShadow 资源频繁获取/更新的问题，现在只对某些发生特定改变的资源进行 reconcile。
+- **优化** 减少 pod 变更不断更新 WorkloadShadow
+- **修复** relok8s 中 wasm 插件镜像地址拼写错误的问题。
+- **修复** TrafficLane 默认 repository 错误。
+- **优化** Helm 镜像渲染模版。镜像结构拆分为三个部分：registry/repository:tag
+
+#### 移除
+
+- **移除** 同步全局集群到网格的逻辑
+- **弃用** 弃用 Deployment Controller 的逻辑
+- **弃用** ui.version 参数，改为 ui.image.tag 参数设定前端版本
+
 ## 2023-03-31
 
 ### v0.14.3

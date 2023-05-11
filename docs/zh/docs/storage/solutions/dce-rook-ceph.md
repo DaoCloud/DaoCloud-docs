@@ -69,29 +69,29 @@ rook-ceph-cluster-v1.10.5.tgz rook-ceph-v1.10.5.tgz rook-ceph rook-ceph-cluster 
 
 ### 将含有 json 格式的 chart 包上传
 
-![进入镜像仓库](../images/addon-rook-registry-1.png)
+![进入镜像仓库](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/addon-rook-registry-1.png)
 
-![镜像仓库上传 chart 包](../images/addon-rook-registry-2.png)
+![镜像仓库上传 chart 包](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/addon-rook-registry-2.png)
 
-![镜像仓库上传 chart 包](../images/addon-rook-registry-3.png)
+![镜像仓库上传 chart 包](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/addon-rook-registry-3.png)
 
 ## DCE 5.0 集群安装 Rook-ceph
 
 ### 将集群接入 DCE 5.0
 
-![集群接入](../images/addon-rook-cluster-1.png)
+![集群接入](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/addon-rook-cluster-1.png)
 
-![集群接入](../images/addon-rook-cluster-2.png)
+![集群接入](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/addon-rook-cluster-2.png)
 
 ### 安装 rook-ceph
 
-![rook-ceph 安装](../images/addon-rook-cluster-3.png)
+![rook-ceph 安装](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/addon-rook-cluster-3.png)
 
-![rook-ceph 安装](../images/addon-rook-cluster-4.png)
+![rook-ceph 安装](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/addon-rook-cluster-4.png)
 
-![rook-ceph 组件](../images/addon-rook-getpod.png)
+![rook-ceph 组件](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/addon-rook-getpod.png)
 
-![rook-ceph-sc](../images/addon-rook-storageclass.png)
+![rook-ceph-sc](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/addon-rook-storageclass.png)
 
 ## 应用部署验证
 

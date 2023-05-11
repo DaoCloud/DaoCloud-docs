@@ -8,11 +8,11 @@
 
 1. 在左侧导航栏点击`网格网关`，在网格列表右侧点击 `...` 按钮，在弹出菜单中选择`删除`。
 
-    ![删除网关](../../images/delete-gate01.png)
+    ![删除网关](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/delete-gate01.png)
 
 2. 在弹出窗口中，确认信息无误后，点击`确定`，该网关将被删除。
 
-    ![删除网关](../../images/delete-gate02.png)
+    ![删除网关](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/delete-gate02.png)
 
 !!! warning
 
@@ -24,7 +24,7 @@
 
 1. 在网关列表中勾选多个网关后，点击右上角的垃圾箱图标。
 
-    ![删除网关](../../images/delete-gate03.png)
+    ![删除网关](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/delete-gate03.png)
 
 2. 在弹出窗口中，确认信息无误后，点击`确定`，选中的网关将全部被删除。
 

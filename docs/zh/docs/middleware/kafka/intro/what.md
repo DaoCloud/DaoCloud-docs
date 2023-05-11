@@ -19,6 +19,6 @@ Kafka 是一个拥有高吞吐、可持久化、可水平扩展，支持流式�
 - 多语言客户端支持  
 - 简单易用的图形界面  
 
-![kafka 主界面](../images/what01.png)
+![kafka 主界面](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/what01.png)
 
 [创建 Kafka 实例](../user-guide/create.md){ .md-button .md-button--primary }

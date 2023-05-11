@@ -41,6 +41,6 @@ MinIO 之所以广受欢迎，是因为其具有以下特点：
 
 MinIO 为云原生而设计，可以作为轻量级容器运行，由外部编排服务（如 Kubernetes）管理。整个服务器约为几十 MB 的静态二进制文件，即使在高负载下也可以高效利用 CPU 和内存资源，使得企业可以在共享硬件上共同托管大量租户。
 
-![MinIO 主界面](../images/what01.png)
+![MinIO 主界面](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/what01.png)
 
 [创建 MinIO 实例](../user-guide/create.md){ .md-button .md-button--primary }

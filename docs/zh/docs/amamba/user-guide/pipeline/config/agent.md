@@ -36,7 +36,7 @@ Agent 描述了整个`流水线`执行过程或者某个`阶段`的执行环境�
 
 - 也可以在`编辑流水线`页面上选择类型为 `node` 且 label 为 `go` 的 Agent。
 
-    ![agent-base](../../../images/agent-base.jpeg)
+    ![agent-base](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/agent-base.jpeg)
 
 ### 内置 Label 环境说明
 
@@ -117,7 +117,7 @@ Agent 描述了整个`流水线`执行过程或者某个`阶段`的执行环境�
 
 1. 在`编辑流水线`页面上选择 Agent 类型为 `kubernetes`。
 
-    ![agent-kubernets](../../../images/agent-kubernets.jpeg)
+    ![agent-kubernets](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/agent-kubernets.jpeg)
 
 2. 点击 `YAML 编辑器`，在对话框中填写 YAML 语句，请参考以下示例：
 
@@ -142,8 +142,8 @@ Agent 描述了整个`流水线`执行过程或者某个`阶段`的执行环境�
 
 3. 在 Container 中输入 `golang` 作为流水线运行的默认容器。
 
-    ![agent-golang](../../../images/agent-golang.jpeg)
+    ![agent-golang](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/agent-golang.jpeg)
 
 4. 要在流水线其他步骤中使用上述示例的其他容器，可以选择`指定容器`填写所需要的容器名称。
 
-    ![agent-maven](../../../images/agent-maven.jpeg)
+    ![agent-maven](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/agent-maven.jpeg)

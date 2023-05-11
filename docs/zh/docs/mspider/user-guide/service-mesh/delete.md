@@ -13,20 +13,20 @@ hide:
 
 1. 在网格列表的右侧，点击 `...` 按钮，在弹出菜单中选择`删除`。
 
-    ![删除网格](../../images/deletemesh01.png)
+    ![删除网格](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/deletemesh01.png)
 
 1. 按照网格类型，系统将自动检测是否满足删除条件。
 
     - 删除外接网格。
 
-        ![外接网格](../../images/deletemesh02.png)
+        ![外接网格](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/deletemesh02.png)
 
     - 删除专有网格。需要按提示移除边车、清除网关、移除集群。
 
-        ![专有网格](../../images/deletemesh03.png)
+        ![专有网格](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/deletemesh03.png)
 
     - 删除托管网格。需要按提示移除边车、清除网关、移除集群。
 
-        ![托管网格](../../images/deletemesh04.png)
+        ![托管网格](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/deletemesh04.png)
 
 1. 清除所有依赖项之后，输入屏幕提示的确认码，`删除`按钮被激活，点击`删除`按钮删除网格。

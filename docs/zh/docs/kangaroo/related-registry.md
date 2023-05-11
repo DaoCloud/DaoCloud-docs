@@ -18,15 +18,15 @@
 
 1. 使用具有 Workspace Admin 角色的用户登录 Web 控制台，从左侧导航栏点击`镜像仓库` -> `仓库集成(工作空间)`。
 
-    ![镜像仓库](images/related01.png)
+    ![镜像仓库](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/related01.png)
 
 1. 点击右上角的`仓库集成(工作空间)`按钮。
 
-    ![仓库集成(工作空间)](images/relate02.png)
+    ![仓库集成(工作空间)](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/relate02.png)
 
 1. 填写表单信息后点击`确定`。
 
-    ![填写表单](images/relate03.png)
+    ![填写表单](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/relate03.png)
 
     !!! note
 

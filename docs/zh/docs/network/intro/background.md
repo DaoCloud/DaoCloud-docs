@@ -16,7 +16,7 @@ hide:
 
 - 为保障高可用，微服务应用负载在不同集群中互为主备。在此场景中，同样需要保障网络的互联互通。
 
-![all-in-one](../images/intro01.png)
+![all-in-one](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/intro01.png)
 
 **传统应用云原生化**
 
@@ -26,7 +26,7 @@ hide:
 
 - 网络类型多样化：基于对外访问 IP 的强管控需求，用户常在一个容器云平台中开放部分应用对外访问。而对于无需对外访问的应用，仍使用动态虚拟 IP，如部分应用使用 MacVLAN CNI 进行对外访问，部分使用 Calico CNI。因此，网络类型多样化同样也逐渐成为应用上云需求。
 
-![cloud-native](../images/intro02.png)
+![cloud-native](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/intro02.png)
 
 **数据库、机器学习等应用上云**
 

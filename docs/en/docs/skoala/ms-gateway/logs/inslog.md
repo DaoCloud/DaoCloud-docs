@@ -10,7 +10,8 @@ Click the name of the target gateway to enter the gateway overview page, and the
 
 ## Related operation
 
-- Filtering logs: The filtering instance can view logs of a container group only. You can also see [KQL Syntax](https://www.elastic.co/guide/en/kibana/current/kuery-query.html) to search for specific content by entering keywords.
+
+- Filtering logs: support filtering instances to view only the logs of a certain pod, or refer to [KQL syntax](https://www.elastic.co/guide/en/kibana/current/kuery-query.html) to enter directly Keywords to find specific content.
 
 - Time range: The log time range can be set to the latest 5 minutes, the latest 1 hour, the latest 12 hours, or the latest 7 days, or a user-defined time range.
 
@@ -19,4 +20,6 @@ Click the name of the target gateway to enter the gateway overview page, and the
 <! -- Add screenshots -->
 
 !!! info
+
+    If you want to view more logs or download logs, you can go to [Observability Module](../../../insight/intro/WhatisInsight.md) through [Log Query](../../../insight/06UserGuide/04dataquery/logquery.md) function to query or download logs of a specific cluster, namespace, workload, or pod.
 

@@ -40,11 +40,11 @@
 
 4. 在 SonarQube 生成管理员令牌（Token），操作路径为：`My Account` -> `Profile` -> `Security` -> `Generate` -> `Copy`
 
-    ![scan](../images/scan01.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan01.png)
 
-    ![scan](../images/scan02.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan02.png)
 
-    ![scan](../images/scan03.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan03.png)
 
 5. 将 SonarQube 地址添加至 Jenkins，请确保可以互通，操作路径：
 
@@ -54,11 +54,11 @@
 
     3. 点击 `Save` 完成操作。
 
-    ![scan](../images/scan08.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan08.png)
 
-    ![scan](../images/scan09.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan09.png)
 
-    ![scan](../images/scan10.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan10.png)
 
     !!! note
 
@@ -69,31 +69,31 @@
 
 6. 为新项目创建 SonarQube Token，操作路径为 `Create new project` -> `Set Up` -> `Generate` -> `Continue`。
 
-    ![scan](../images/scan04.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan04.png)
 
-    ![scan](../images/scan05.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan05.png)
 
 ## 创建流水线
 
 1. 在流水线页面，点击`创建流水线`。
 
-    ![scan](../images/scanp01.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scanp01.png)
 
 2. 选择`自定义创建`。
 
-    ![scan](../images/scanp02.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scanp02.png)
 
 3. 输入名称，其他可使用默认值，点击`确定`。
 
-    ![scan](../images/scanp03.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scanp03.png)
 
 ## 编辑 Jenkinsfile
 
 1. 点击一个流水线进入其详情页面，在右上角点击 `...` -> `编辑 Jenkinsfile`。
 
-    ![scan](../images/scanp04.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scanp04.png)
 
-    ![scan](../images/scanp05.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scanp05.png)
 
 2. 将以下 YAML 代码复制粘贴至 jenkinsfile。
 
@@ -189,4 +189,4 @@
 
 等待流水线运行成功后，前往 SonarQube 查看代码扫描结果。
 
-![scan](../images/scan06.png)
+![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan06.png)

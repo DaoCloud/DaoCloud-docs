@@ -10,11 +10,11 @@
 
 1. 在左侧导航栏中，点击`数据查询` -> `指标查询`。
 
-    ![查询结果](../../images/metric01.png)
+    ![查询结果](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/metric01.png)
 
 2. 选择集群、类型、节点、指标名称查询条件后，点击`搜索`，屏幕右侧将显示对应指标图表及数据详情。
 
-    ![查询结果](../../images/metric02.png)
+    ![查询结果](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/metric02.png)
 
 !!! tip
 
@@ -24,8 +24,8 @@
 
 1. 在左侧导航栏中，点击`数据查询` -> `指标查询`，点击`高级查询`页签切换到高级查询页面。
 
-    ![高级查询](../../images/metric03.png)
+    ![高级查询](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/metric03.png)
 
 2. 输入一条 PromQL 语句（参阅 [PromQL 语法](https://prometheus.io/docs/prometheus/latest/querying/basics/)，点击`查询`，将显示查询的指标图表及数据详情。
 
-    ![查询结果](../../images/metric04.png)
+    ![查询结果](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/metric04.png)

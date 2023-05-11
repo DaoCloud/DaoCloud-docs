@@ -9,7 +9,7 @@ hide:
 
 1. 在实例列表页面中，找到想要查看详情的实例，点击实例名称。
 
-    ![点击实例名称](../images/view01.png)
+    ![点击实例名称](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/view01.png)
 
 2. 查看基本信息、访问设置、资源配额和 Pod 列表等信息。
 
@@ -21,4 +21,4 @@ hide:
     - 可以查看或创建告警规则
     - 点击容器组名称可以跳转到容器管理模块查看该容器组的详细情况
 
-        ![查看](../images/view022.png)
+        ![查看](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/view022.png)

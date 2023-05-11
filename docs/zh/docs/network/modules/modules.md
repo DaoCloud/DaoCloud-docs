@@ -9,7 +9,7 @@ hide:
 
 DCE 5.0 提供的网络方案对当前主流的开源网络组件进行优化组合，能够满足各种复杂场景的需求。
 
-![网络组件](../images/components.png)
+![网络组件](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/components.png)
 
 目前，DCE 5.0 已支持的网络组件包括：
 

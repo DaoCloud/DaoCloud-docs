@@ -2,7 +2,7 @@
 
 不论图形化或文本类型，编辑器本质上都是用来方便用户查看与编辑构建流程的核心：Jenkinsfile（过程描述文件）。因此在讨论编辑器之前需理解「过程描述文件」的几个重要概念。
 
-![pipeline](../../../images/pipeline.png)
+![pipeline](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline.png)
 
 - 流水线
 

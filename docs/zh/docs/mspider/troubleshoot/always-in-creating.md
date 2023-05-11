@@ -5,7 +5,7 @@
 mcpc-ckube-remote pod 一直 `ContainerCreating`。
 mcpc-remote-kube-api-server configmap 等待很长时间没有创建。
 
-![故障截图](./images/creating01.png)
+![故障截图](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/creating01.png)
 
 ### 日志
 

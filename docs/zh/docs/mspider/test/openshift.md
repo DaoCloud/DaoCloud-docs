@@ -67,35 +67,35 @@ users:
 
 在容器管理中查看接入集群的状态：
 
-![接入 openshift](./images/os01.png)
+![接入 openshift](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/test/images/os01.png)
 
 ### 创建专有网格
 
 1. 登录 global-cluster 节点，查看服务网格同步容器管理接入集群的状态。
 
-    ![查看集群接入状态](./images/os02.png)
+    ![查看集群接入状态](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/test/images/os02.png)
 
 1. 完成创建网格时的配置后，点击`确定`。
 
     > 对于控制面集群，请选择通过容器管理接入的 openshift4-mspider 集群
 
-    ![创建网格](./images/os03.png)
+    ![创建网格](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/test/images/os03.png)
 
 1. OpenShift 集群成功接入网格
 
-    ![成功接入网格](./images/os04.png)
+    ![成功接入网格](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/test/images/os04.png)
 
 1. 查看各个组件是否健康
 
-    ![组件状况](./images/os05.png)
+    ![组件状况](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/test/images/os05.png)
 
-    ![组件状况](./images/os06.png)
+    ![组件状况](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/test/images/os06.png)
 
 #### 接入时遇到的问题
 
 1. 提示错误 `istio-operator RS CreateFailed`
 
-    ![RS CreateFailed](./images/os07.png)
+    ![RS CreateFailed](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/test/images/os07.png)
 
     原因分析：OpenShift（安全上下文约束）SCC 对创建 Pod 有权限限制
 
@@ -114,7 +114,7 @@ users:
     原因分析：字面提示是 istio-system 命名空间下缺少 istiod/istio-ingressgateway service pod。
     实际是网格全局边车资源限制中的内存资源参数格式错误；正确格式为 500Mi
 
-    ![资源参数格式](./images/os08.png)
+    ![资源参数格式](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/test/images/os08.png)
 
     解决办法：修改 yaml 文件，添加 Mi 单位
 
@@ -122,7 +122,7 @@ users:
     kubectl edit gm -n mspider-system openshift -oyaml
     ```
 
-    ![修改单位](./images/os09.png)
+    ![修改单位](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/test/images/os09.png)
 
 3. 注入边车时提示 `pod Init:CrashLoopBackOff`
 
@@ -194,9 +194,9 @@ oc adm policy add-scc-to-user privileged -z bookinfo
 
 1. 启用命名空间边车注入
 
-    ![启用命名空间边车注入](./images/os10.png)
+    ![启用命名空间边车注入](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/test/images/os10.png)
 
-    ![查看命名空间边车](./images/os11.png)
+    ![查看命名空间边车](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/test/images/os11.png)
 
 1. 终端查看 bookinfo 命名空间 Labels
 
@@ -216,7 +216,7 @@ oc adm policy add-scc-to-user privileged -z bookinfo
     oc apply -f https://raw.githubusercontent.com/istio/istio/release-1.15/samples/bookinfo/platform/kube/bookinfo.yaml -n bookinfo
     ```
 
-    ![部署 bookinfo](./images/os12.png)
+    ![部署 bookinfo](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/test/images/os12.png)
 
     ```shell
     oc get pod -n bookinfo

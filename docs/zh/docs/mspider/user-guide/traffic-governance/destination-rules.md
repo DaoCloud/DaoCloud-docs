@@ -1,6 +1,6 @@
 # 目标规则
 
-目标规则（DestinationRule）同样是服务治理中重要的组成部分，目标规则通过端口、服务版本等方式对请求流量进行划分，并对各请求分流量订制 envoy 流量策略，应用到流量的策略不仅有负载均衡，还有最小连接数、熔断等。
+目标规则（DestinationRule）同样是服务治理中重要的组成部分，目标规则通过端口、服务版本等方式对请求流量进行划分，并对各请求分流量订制 envoy 流量策略，应用到流量的策略不仅有负载均衡，还有最小连接数、离群检测等。
 
 ## 概念介绍
 
@@ -29,7 +29,7 @@
 
 - OutlierDetection
 
-    熔断是减少服务异常和降低服务延迟的一种设计模式，主要是无感的处理服务异常并保证不会发生级联甚至雪崩。
+    离群检测是减少服务异常和降低服务延迟的一种设计模式，主要是无感的处理服务异常并保证不会发生级联甚至雪崩。
     如果在一定时间内服务累计发生错误的次数超过了预先定义的阈值，就会将该错误的服务从负载均衡池中移除，并持续关注服务的健康状态，当服务回复正常后，又会将服务再移回到负载均衡池。
 
 ## 目标规则列表介绍
@@ -43,9 +43,9 @@
 - HTTP 连接池
 - TCP 连接池
 - 客户端 TLS
-- 熔断
+- 离群检测
 
-![目标规则列表](../../images/destirule06.png)
+![目标规则列表](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule06.png)
 
 ## 操作步骤
 
@@ -53,24 +53,24 @@
 
 1. 在左侧导航栏点击`流量治理` -> `目标规则`，点击右上角的`创建`按钮。
 
-    ![创建](../../images/destirule01.png)
+    ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule01.png)
 
 2. 在`创建目标`界面中，先进行基本配置后点击`下一步`。
 
-    ![创建目标](../../images/destirule02.png)
+    ![创建目标](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule02.png)
 
 3. 按屏幕提示选择策略类型，并配置对应的治理策略后，点击`确定`。
 
-    ![治理策略](../../images/destirule03.png)
+    ![治理策略](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule03.png)
 
 4. 返回目标规则列表，屏幕提示创建成功。
 
-    ![创建成功](../../images/destirule04.png)
+    ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule04.png)
 
 5. 在列表右侧，点击操作一列的 `⋮`，可通过弹出菜单进行更多操作。
 
-    ![更多操作](../../images/destirule05.png)
+    ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule05.png)
 
 YAML 创建方式与虚拟服务相似，您可以直接借助内置模板创建 YAML 文件，如下图所示。
 
-![YAML 创建](../../images/destirule07.png)
+![YAML 创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule07.png)

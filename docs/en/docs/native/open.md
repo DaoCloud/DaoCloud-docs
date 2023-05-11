@@ -209,7 +209,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [containerd container runtime v1.7.0 released (CNCF project)](https://github.com/containerd/containerd/releases/tag/v1.7.0)
 
-     Release features: New Sandbox API to simplify management of higher-level container groups and provide new extension points for shim implementations and clients; New Transfer Service for transferring artifact objects between sources and targets; Support for extending the scope of the Node Resource Interface NRI to enable common pluggable runtime extensions; Added support for CDI device injection; Added support for cgroups blockio for enhanced restart manager; Added restart policy for enhanced restart manager; Added support for cgroups blockio for enhanced restart manager. support; support for cgroups blockio; add reboot policies for enhanced reboot manager; initial support for gRPC shim.
+     Release features: New Sandbox API to simplify management of higher-level pods and provide new extension points for shim implementations and clients; New Transfer Service for transferring artifact objects between sources and targets; Support for extending the scope of the Node Resource Interface NRI to enable common pluggable runtime extensions; Added support for CDI device injection; Added support for cgroups blockio for enhanced restart manager; Added restart policy for enhanced restart manager; Added support for cgroups blockio for enhanced restart manager. support; support for cgroups blockio; add reboot policies for enhanced reboot manager; initial support for gRPC shim.
 
 - [containerd completes fuzzy test audit](https://mp.weixin.qq.com/s/IUgdPaT6OAhPW5uCPlteEA)
 
@@ -296,6 +296,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Envoy v1.23.0 released (CNCF project)](https://www.envoyproxy.io/docs/envoy/v1.23.0/version_history/v1.23/v1.23.0)
 
      The main new features of this version: send SDS resources of multiple clusters or listeners in one SDS request, obtain filter configuration through the configuration name of HTTP filter, update listener filter statistics, dns_resolver adds support for multiple addresses , Add dynamic listener filter configuration for listener filters, etc.
+
+- [Envoy Gateway Envoy-based Gateway v0.4 Released](https://gateway.envoyproxy.io/v0.4.0/releases/v0.4.html)
+
+    Release features: support for installing Envoy Gateway via Helm; new initial framework for extending Envoy Gateway; support for IP-based subnet rate limiting; support for custom Envoy proxy boot configuration, Envoy proxy image and service configuration annotations, resource and security context settings, etc.; support for EDS (Endpoint Discovery Service).
 
 - [Envoy Gateway v0.3 released](https://gateway.envoyproxy.io/v0.3.0/releases/v0.3.html)
 
@@ -692,6 +696,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      Main new features of this version: Support Rocky Linux 8 and Kylin Linux, add "flush ip6tables" task in reset role, support NTP configuration, add kubelet systemd service hardening option, add rewrite plugin for CoreDNS/NodelocalDNS, add SeccompDefault for kubelet admission plugin, add extra_groups parameter for k8s_nodes, add ingress nginx webhook, add support for node and pod pid restrictions, and enable default Pod security configuration.
 
+- [KubeVela Hybrid Multi-Cloud Application Delivery Platform v1.8.0 Released (CNCF Project)](https://github.com/kubevela/kubevela/releases/tag/v1.8.0)
+
+    Release features: support for horizontal scaling of the control plane through multiple slices, support for language-aware SDK generation from existing KubeVela definitions, new workflow-based trigger kube-trigger, allows application developers to orchestrate the application delivery process in the style of a canary release.
+
 - [KubeVela Upgrades to CNCF Incubation Program](https://mp.weixin.qq.com/s/mhH9u4aXJT2-qVwf06xn5Q)
 
     [KubeVela](https://github.com/kubevela/kubevela) is built with the Kubernetes control plane, making it easier, faster, and more reliable to deploy and operate applications across hybrid and multi-cloud environments.
@@ -998,6 +1006,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      [Pixie Plugin System](https://github.com/pixie-io/pixie-plugin) allows users to export their Pixie data into any service that supports OpenTelemetry. This means users can leverage external data storage for long-term data retention, seamlessly adopt Pixie in existing workflows and dashboards, and combine Pixie data with other data streams.
 
+- [Podman Container Runtime Project v4.5.0 released](https://github.com/containers/podman/releases/tag/v4.5.0)
+
+    Release features: support for automatic update of containers running inside Pod, support for using SQLite database as backend, added support for container network stack Netavark plugin, support for DHCP with Macvlan and Netavark backend.
+
 - [Podman container engine v4.3.0 released](https://github.com/containers/podman/releases/tag/v4.3.0)
 
      Command update: support changing container resource limits, delete pods and containers created by K8s YAML, support K8s secret, support reading YAML from URL, support emptyDir volume type, support binary data in ConfigMap; support repeated volume mounts.
@@ -1172,6 +1184,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### V
 
+- [Vcluster Virtual Kubernetes Clustering Implementation Solution v0.15.0 Released](https://github.com/vmware-tanzu/velero/releases/tag/v1.11.0)
+
+    Release features: allows users to access all host cluster services within vcluster, new built-in metrics server, generic synchronization feature supports importing cluster-wide resources from host clusters.
+
 - [Vcluster virtual Kubernetes cluster implementation v0.13.0 released](https://github.com/loft-sh/vcluster/releases/tag/v0.13.0)
 
      The main new features of this version: adding log and backup functions, adding high availability support for k3s with external data storage, and automatically synchronizing CSI resources when the vcluster scheduler is turned on.
@@ -1205,6 +1221,10 @@ This page lists activity in cloud native open source projects in alphabetical or
      The main new features of this version: support dynamic scheduling and rescheduling based on real node load, support elastic job scheduling, add MPI job plug-ins, allow tasks not to retry when they fail, support checking the overhead of pod requests, and support enqueueing in pod groups Resource quotas are considered in the process, and the default privileged container passes the verification of admission webhook.
 
 ### W, X, Z
+
+- [WasmEdge WebAssembly Runtime v0.12.0 Released (CNCF Project)](https://github.com/WasmEdge/WasmEdge/releases/tag/0.12.0)
+
+    Release features: introduced plugin context and related API, introduced multiple WASI socket API implementations, added VM API, added wasm_bpf plugin.
 
 - [Wazero: Tetrate open source WebAssembly runtime for Go language development](https://mp.weixin.qq.com/s/aozmJpuwD69vGWcM525ucg)
 

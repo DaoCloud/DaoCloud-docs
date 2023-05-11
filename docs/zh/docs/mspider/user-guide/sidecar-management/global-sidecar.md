@@ -2,7 +2,7 @@
 
 用户可以对`外接网格`的所有集群做统一注入设置和边车资源限制设置。
 
-![全局边车管理](../../images/globalSidecar.png)
+![全局边车管理](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/globalSidecar.png)
 
 ## 全局边车自动注入
 
@@ -16,7 +16,7 @@
 
 在集群列表中选择集群，点击`边车资源限制`，在弹出窗口中为所选集群设置每一个 Pod 实例的请求资源和限制资源，其中请求资源为一定可以获取的资源，限制资源为可用资源上限。输入为 0 表示该项不做限制。
 
-![边车资源限制](../../images/globalSidecar-resourceLimit.png)
+![边车资源限制](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/globalSidecar-resourceLimit.png)
 
 !!! note
 

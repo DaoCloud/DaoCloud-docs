@@ -55,7 +55,7 @@
 
 ### 基本配置
 
-| **元素**             | **YAML 字段**                       | **描述**                                                     |
+| **可配置项**             | **YAML 字段**                       | **描述**                                                     |
 | -------------------- | -------------------------------------- | ------------------------------------------------------------ |
 | 名称                 | metadata.name | 必填。授权的策略名称。 |
 | 命名空间             | metadata.namespace                     | 必选。授权策略所属命名空间，当选择网格根命名空间时，将创建全局策略，全局策略仅能创建一个，需在界面做检查，避免用户重复创建。同一个命名空间内，请求身份认证不可重名。 |
@@ -65,7 +65,7 @@
 
 ### 策略设置
 
-| **元素**             | **YAML 字段**                       | **描述**                                                     |
+| **可配置项**             | **YAML 字段**                       | **描述**                                                     |
 | -------------------- | -------------------------------------- | ------------------------------------------------------------ |
 | 策略动作             | spec.action                            | 可选。包含：<br />- 允许（allow）<br />- 拒绝（deny）<br />- 审计（audit）<br />- 自定义（custom）<br />选择自定义时，增加`provider`输入项。 |
 | Provider        | spec.provider.name                     | 必填。仅在`策略动作`选择为`自定义`时，才显示该输入框。              |
@@ -94,7 +94,7 @@ notIpBlocks: ["1.2.3.4"]
 
 具体字段说明如下：
 
-| 字段                  | 类型       | 描述                                                  |
+| Key 字段                  | 类型       | 描述                                                  |
 | ---------------------- | ---------- | ------------------------------------------------------------ |
 | `principals`           | `string[]` | 可选。从对等证书衍生的对等身份列表。对等身份的格式为 `"<TRUST_DOMAIN>/ns/<NAMESPACE>/sa/<SERVICE_ACCOUNT>"`，例如 `"cluster.local/ns/default/sa/productpage"`。此字段要求启用 mTLS，且等同于 `source.principal` 属性。如果不设置，则允许所有主体。 |
 | `notPrincipals`        | `string[]` | 可选。对等身份的反向匹配列表。       |
@@ -123,7 +123,7 @@ methods: ["GET", "HEAD"]
 notPaths: ["/admin*"]
 ```
 
-| 字段        | 类型       | 描述                                                  |
+| Key 字段        | 类型       | 描述                                                  |
 | ------------ | ---------- | ------------------------------------------------------------ |
 | `hosts`      | `string[]` | 可选。在 HTTP 请求中指定的主机列表。不区分大小写。如果不设置，则允许所有主机。仅适用于 HTTP。 |
 | `notHosts`   | `string[]` | 可选。在 HTTP 请求中指定的主机反向匹配列表。不区分大小写。 |
@@ -138,21 +138,21 @@ notPaths: ["/admin*"]
 
 您还可以增加策略条件(Condition)。Condition 指定其他必需的属性。
 
-| 名称 | 描述 | 支持的协议 | 示例 |
+| Key 字段| 描述 | 支持的协议 | Value 示例|
 |------|-------------|--------------------|---------|
-| `request.headers` | `HTTP` 请求头，需要用 `[]` 括起来 | HTTP only | `key: request.headers[User-Agent]`<br/>`values: ["Mozilla/*"]` |
-| `source.ip`  | 源 `IP` 地址，支持单个 `IP` 或 `CIDR` | HTTP and TCP | `key: source.ip`<br/>`values: ["10.1.2.3"]` |
-| `remote.ip`  | 由 `X-Forwarded-For` 请求头或代理协议确定的原始客户端 IP 地址，支持单个 IP 或 CIDR | HTTP and TCP | `key: remote.ip`<br />`values: ["10.1.2.3", "10.2.0.0/16"]` |
-| `source.namespace`  | 源负载实例命名空间，需启用双向 TLS | HTTP and TCP | `key: source.namespace`<br/>`values: ["default"]` |
-| `source.principal` | 源负载的标识，需启用双向 TLS | HTTP and TCP | `key: source.principal`<br/>`values: ["cluster.local/ns/default/sa/productpage"]` |
-| `request.auth.principal` | 已认证过 `principal` 的请求 | HTTP only | `key: request.auth.principal`<br/>`values: ["accounts.my-svc.com/104958560606"]` |
-| `request.auth.audiences` | 此身份验证信息的目标主体 | HTTP only | `key: request.auth.audiences`<br/>`values: ["my-svc.com"]` |
-| `request.auth.presenter` | 证书的颁发者 | HTTP only | `key: request.auth.presenter`<br/>`values: ["123456789012.my-svc.com"]` |
-| `request.auth.claims` | `Claims` 来源于 `JWT`。需要用 `[]` 括起来 | HTTP only | `key: request.auth.claims[iss]`<br/>`values: ["*@foo.com"]` |
-| `destination.ip` | 目标 `IP` 地址，支持单个 `IP` 或 `CIDR` | HTTP and TCP | `key: destination.ip`<br/>`values: ["10.1.2.3", "10.2.0.0/16"]` |
-| `destination.port` | 目标 `IP` 地址上的端口，必须在 `[0，65535]` 范围内 | HTTP and TCP | `key: destination.port`<br/>`values: ["80", "443"]` |
-| `connection.sni` | 服务器名称指示，需启用双向 TLS | HTTP and TCP | `key: connection.sni`<br/>`values: ["www.example.com"]` |
-| `experimental.envoy.filters.*` | 用于过滤器的实验性元数据匹配，包装的值 `[]` 作为列表匹配 | HTTP and TCP | `key: experimental.envoy.filters.network.mysql_proxy[db.table]`<br/>`values: ["[update]"]` |
+| `request.headers` | `HTTP` 请求头，需要用 `[]` 括起来 | HTTP only | `["Mozilla/*"]` |
+| `source.ip`  | 源 `IP` 地址，支持单个 `IP` 或 `CIDR` | HTTP and TCP | `["10.1.2.3"]` |
+| `remote.ip`  | 由 `X-Forwarded-For` 请求头或代理协议确定的原始客户端 IP 地址，支持单个 IP 或 CIDR | HTTP and TCP | `["10.1.2.3", "10.2.0.0/16"]` |
+| `source.namespace`  | 源负载实例命名空间，需启用双向 TLS | HTTP and TCP | `["default"]` |
+| `source.principal` | 源负载的标识，需启用双向 TLS | HTTP and TCP | `["cluster.local/ns/default/sa/productpage"]` |
+| `request.auth.principal` | 已认证过 `principal` 的请求 | HTTP only | `["accounts.my-svc.com/104958560606"]` |
+| `request.auth.audiences` | 此身份验证信息的目标主体 | HTTP only | `["my-svc.com"]` |
+| `request.auth.presenter` | 证书的颁发者 | HTTP only | `["123456789012.my-svc.com"]` |
+| `request.auth.claims` | `Claims` 来源于 `JWT`。需要用 `[]` 括起来 | HTTP only | `["*@foo.com"]` |
+| `destination.ip` | 目标 `IP` 地址，支持单个 `IP` 或 `CIDR` | HTTP and TCP | `["10.1.2.3", "10.2.0.0/16"]` |
+| `destination.port` | 目标 `IP` 地址上的端口，必须在 `[0，65535]` 范围内 | HTTP and TCP | `["80", "443"]` |
+| `connection.sni` | 服务器名称指示，需启用双向 TLS | HTTP and TCP | `["www.example.com"]` |
+| `experimental.envoy.filters.*` | 用于过滤器的实验性元数据匹配，包装的值 `[]` 作为列表匹配 | HTTP and TCP | `["[update]"]` |
 
 !!! note
 

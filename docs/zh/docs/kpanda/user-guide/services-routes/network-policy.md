@@ -16,23 +16,23 @@
 
 1. 在集群列表中点击目标集群的名称，然后在左侧导航栏点击`容器网络`->`网络策略`->`YAML 创建`。
 
-    ![路径](../../images/networkpolicy01.png)
+    ![路径](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/networkpolicy01.png)
 
 2. 在弹框中输入或粘贴事先准备好的 YAML 文件，然后在弹框底部点击`确定`。
 
-    ![yaml](../../images/networkpolicy02.png)
+    ![yaml](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/networkpolicy02.png)
 
 ### 表单创建
 
 1. 在集群列表中点击目标集群的名称，然后在左侧导航栏点击`容器网络`->`网络策略`->`创建策略`。
 
-    ![路径](../../images/networkpolicy03.png)
+    ![路径](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/networkpolicy03.png)
 
 2. 填写基本信息。
 
     名称和命名空间在创建之后不可更改。
 
-    ![基本信息](../../images/networkpolicy04.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/networkpolicy04.png)
 
 3. 填写策略配置。
 
@@ -40,27 +40,27 @@
 
     - 入流量策略：点击`➕`开始配置策略，支持配置多条策略。多条网络策略的效果相互叠加，只有同时满足所有网络策略，才能成功建立连接。
 
-        ![ingress](../../images/networkpolicy05.png)
+        ![ingress](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/networkpolicy05.png)
 
     - 出流量策略
 
-        ![egress](../../images/networkpolicy06.png)
+        ![egress](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/networkpolicy06.png)
 
 ## 查看网络策略
 
 1. 在集群列表中点击目标集群的名称，然后在左侧导航栏点击`容器网络`->`网络策略`，点击网络策略的名称。
 
-    ![路径](../../images/networkpolicy07.png)
+    ![路径](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/networkpolicy07.png)
 
 2. 查看该策略的基本配置、关联实例信息、入流量策略、出流量策略。
 
-    ![详情](../../images/networkpolicy08.png)
+    ![详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/networkpolicy08.png)
 
 !!! info
 
     在关联实例页签下，支持查看实例监控、日志、容器列表、YAML 文件、事件等。
 
-    ![查看实例信息](../../images/networkpolicy09.png)
+    ![查看实例信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/networkpolicy09.png)
 
 ## 更新网络策略
 
@@ -68,11 +68,11 @@
 
 - 在网络策略列表页面，找到需要更新的策略，在右侧的操作栏下选择`更新`即可通过表单更新，选择`编辑 YAML` 即可通过 YAML 更新。
 
-    ![更新](../../images/networkpolicy10.png)
+    ![更新](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/networkpolicy10.png)
 
 - 点击网络策略的名称，进入网络策略的详情页面后，在页面右上角选择`更新`即可通过表单更新，选择`编辑 YAML` 即可通过 YAML 更新。
 
-    ![更新](../../images/networkpolicy11.png)
+    ![更新](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/networkpolicy11.png)
 
 ## 删除网络策略
 
@@ -80,8 +80,8 @@
 
 - 在网络策略列表页面，找到需要更新的策略，在右侧的操作栏下选择`更新`即可通过表单更新，选择`编辑 YAML` 即可通过 YAML 删除。
 
-    ![删除](../../images/networkpolicy12.png)
+    ![删除](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/networkpolicy12.png)
 
 - 点击网络策略的名称，进入网络策略的详情页面后，在页面右上角选择`更新`即可通过表单更新，选择`编辑 YAML` 即可通过 YAML 删除。
 
-    ![删除](../../images/networkpolicy13.png)
+    ![删除](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/networkpolicy13.png)

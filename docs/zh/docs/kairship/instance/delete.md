@@ -9,11 +9,11 @@ hide:
 
 1. 在多云实例列表中，点击右侧的 `...` 按钮，在弹出菜单中选择`删除`。
 
-    ![delete](../images/delete01.png)
+    ![delete](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/delete01.png)
 
 2. 在弹窗中输入该实例的名称，确认无误后，点击`删除`按钮。
 
-    ![delete](../images/delete02.png)
+    ![delete](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/delete02.png)
 
 !!! note
 

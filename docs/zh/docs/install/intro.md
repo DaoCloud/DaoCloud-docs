@@ -112,7 +112,7 @@ DaoCloud Enterprise 5.0 还处于发布初期，安装流程可能会有变更�
 
 - 欢迎扫描二维码，与开发者畅快交流：
 
-    ![社区版交流群](../images/assist.png)
+    ![社区版交流群](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
 
 [下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

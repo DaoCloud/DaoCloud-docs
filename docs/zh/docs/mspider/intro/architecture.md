@@ -9,7 +9,7 @@ hide:
 
 从整体架构上讲，服务网格产品可分为三个层面：全局管理模块、托管网格模块、被托管集群网格
 
-![系统架构](../images/architecture1.png)
+![系统架构](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/architecture1.png)
 
 - 全局管理模块
 
@@ -38,6 +38,6 @@ hide:
 
 ## 功能架构
 
-![服务网格功能](../images/features.png)
+![服务网格功能](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/features.png)
 
 如上图所示，服务网格提供了 9 个模块 12 个子模块功能，实现了多样化集群接入、多种模式的网格管理的能力。

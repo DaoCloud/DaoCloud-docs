@@ -27,12 +27,12 @@ nav:
           - 升级/卸载/FAQ:
               - 升级 DCE 5.0 GProduct: install/upgrade.md
               - 卸载: install/uninstall.md
-              - 常见问题: install/faq.md
+              - 安装排障: install/faq.md
           - 在不同 K8s 发行版上安装:
-              - 在 OpenShift OCP 上安装: install/k8s-install/ocp-install-dce5.0.md
+              - 在 OpenShift OCP 上安装 DCE 5.0 商业版: install/k8s-install/ocp-install-dce5.0.md
           - 在不同操作系统上安装:
-              - 在 UOS V20 (1020a) 上安装: install/os-install/uos-v20-install-dce5.0.md
-              - Other Linux 离线部署 DCE 5.0: install/os-install/otherlinux.md
+              - 在 UOS V20 (1020a) 上安装 DCE 5.0 商业版: install/os-install/uos-v20-install-dce5.0.md
+              - Other Linux 离线部署 DCE 5.0 商业版: install/os-install/otherlinux.md
           - Release Notes: install/release-notes.md
       - 容器管理:
           - 介绍:
@@ -51,6 +51,7 @@ nav:
               - 删除集群: kpanda/user-guide/clusters/delete-cluster.md
               - 集群角色: kpanda/user-guide/clusters/cluster-role.md
               - 集群状态: kpanda/user-guide/clusters/cluster-status.md
+              - 如何选择运行时: kpanda/user-guide/clusters/runtime.md
           - 命名空间: 
               - 创建命名空间: kpanda/user-guide/namespaces/createns.md
               - 命名空间独享节点: kpanda/user-guide/namespaces/exclusive.md
@@ -323,7 +324,7 @@ nav:
               - 镜像创建: kairship/workload/deployment.md
               - YAML 创建: kairship/workload/yaml.md
               - 更新多云工作负载: kairship/workload/update-deployment.md
-              - 一键升级为多云工作负载: kairship/workload/promote.md
+              - 一键升级为多云负载: kairship/workload/promote.md
               - 镜像创建任务: kairship/workload/job.md
               - 镜像创建定时任务: kairship/workload/cronjob.md
           - 自定义资源管理: kairship/crds/crd.md
@@ -332,9 +333,11 @@ nav:
               - 多云命名空间: kairship/resource/ns.md
               - 多云配置项: kairship/resource/configmap.md
               - 多云密钥: kairship/resource/secret.md
+              - 多云路由: kairship/resource/ingress.md
               - 更新多云服务: kairship/resource/update-service.md
               - 更新多云密钥: kairship/resource/update-secret.md
               - 更新多云配置项: kairship/resource/update-configmap.md
+              - 更多多云路由: kairship/resource/update-ingress.md
           - 策略管理:
               - 部署策略: kairship/policy/propagation-policy.md
               - 差异化策略: kairship/policy/override-policy.md
@@ -342,6 +345,8 @@ nav:
           - 故障转移:
               - 故障转移功能介绍: kairship/failover/failover.md
               - 优化故障转移延迟灵敏度: kairship/failover/optimization-failover.md
+          - 最佳实践:
+              - 一键转换 DCE 4.0 到 5.0 应用: kairship/best-pratice/one-click-conversion.md
       - 微服务引擎:
           - 介绍:
               - 功能总览: skoala/intro/what.md
@@ -453,6 +458,7 @@ nav:
               - 请求身份认证: mspider/user-guide/security/request.md
               - 授权策略: mspider/user-guide/security/authorize.md
               - 安全治理参数配置: mspider/user-guide/security/params.md
+              - 服务网格身份和认证: mspider/user-guide/security/mtls.md
           - 边车管理:
               - 命名空间边车管理: mspider/user-guide/sidecar-management/ns-sidecar.md
               - 工作负载边车管理: mspider/user-guide/sidecar-management/workload-sidecar.md
@@ -578,6 +584,7 @@ nav:
               - 实例监控: middleware/elasticsearch/user-guide/monitor.md
               - 查看 Elasticsearch 日志: middleware/elasticsearch/user-guide/logs.md
               - Elasticsearch 排障手册: middleware/elasticsearch/faq/common-question-es.md
+              - 基于 Hwameistor 的 Elasticsearch 迁移实践: middleware/elasticsearch/user-guide/migrate-es.md
               - Release Notes: middleware/elasticsearch/release-notes.md
           - Kafka 消息队列:
               - 什么是 Kafka: middleware/kafka/intro/what.md
@@ -638,6 +645,13 @@ nav:
               - 删除 Redis 实例: middleware/redis/user-guide/delete.md
               - 查看 Redis 日志: middleware/redis/user-guide/logs.md
               - Release Notes: middleware/redis/release-notes.md
+          - PostgreSQL 数据库:
+              - 什么是 PostgreSQL: middleware/postgresql/intro/what.md
+              - 创建 PostgreSQL: middleware/postgresql/user-guide/create.md
+              - 更新 PostgreSQL: middleware/postgresql/user-guide/update.md
+              - 删除 PostgreSQL: middleware/postgresql/user-guide/delete.md
+              - 查看 PostgreSQL 日志: middleware/postgresql/user-guide/logs.md
+              - Release Notes: middleware/postgresql/release-notes.md
       - 云原生存储:
           - 介绍:
               - 什么是云原生存储: storage/what.md
@@ -657,11 +671,11 @@ nav:
               - 安装管理:
                   - 准备工作: storage/hwameistor/install/prereq.md
                   - 资源要求: storage/hwameistor/install/proresource.md
+                  - DRDB 安装: storage/hwameistor/install/drbdinstall.md
+                  - 通过 Operator 安装: storage/hwameistor/install/deploy-operator.md
                   - 通过界面安装: storage/hwameistor/install/deploy-ui.md
                   - 通过 Helm Chart 安装: storage/hwameistor/install/deploy-helm.md
-                  - 通过镜像安装: storage/hwameistor/install/deploy-image.md
                   - 安装后检查: storage/hwameistor/install/post-check.md
-                  - DRDB 安装: storage/hwameistor/install/drbdinstall.md
                   - 存储网卡配置: storage/hwameistor/install/storage-eth.md
                   - 自定义 Kubelet 根目录: storage/hwameistor/install/customized-kubelet.md
                   - 升级: storage/hwameistor/install/upgrade.md
@@ -672,6 +686,7 @@ nav:
                   - 数据卷迁移: storage/hwameistor/resources/migrate.md
                   - 数据卷扩容: storage/hwameistor/resources/expand.md
                   - 磁盘扩展: storage/hwameistor/resources/disk-expansion.md
+                  - 磁盘预留: storage/hwameistor/resources/reserveddisk.md
               - 应用场景:
                   - 应用场景概述: storage/hwameistor/application/overview.md
                   - 部署有状态应用:
@@ -742,6 +757,10 @@ nav:
       - 云原生网络: videos/network.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 202305 | K8s 安装教程(KLTS版): blogs/230509-k8s-install.md
+      - 202305 | Cilium 基于 eBPF 实现 socket 加速: blogs/230508-cilium.md
+      - 202305 | K8s 1.27加快Pod启动: blogs/230428-pod-startup.md
+      - 202304 | 云原生监控之基础篇: blogs/230427-victoriametrics.md
       - 202304 | Karmada Failover详解: blogs/230418-karmada-failover.md
       - 202304 | CNCF 平台工程白皮书: blogs/230417-cncf-platform-wp.md
       - 202304 | K8s 1.27 正式发布: blogs/230412-k8s-1.27.md
@@ -767,11 +786,13 @@ nav:
   - 下载中心:
       - DaoCloud Enterprise 5.0:
           - 索引列表: download/dce5.md
-          - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.6.0.md
-          - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.6.0.md
-          - 下载 Addon 离线包: download/addon/v0.6.0.md
-          - 下载全局管理: download/modules/ghippo.md
-          - 下载 Insight: download/modules/insight.md
+          - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.7.0.md
+          - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.7.0.md
+          - 子模块和插件:
+              - 下载 Addon 离线包: download/addon/v0.6.0.md
+              - 下载全局管理: download/modules/ghippo.md
+              - 下载 Insight: download/modules/insight.md
+              - 下载网络 Spidernet: download/modules/spidernet.md
   - DaoCloud 开源生态:
       - 社区索引: community/index.md
       - cloudtty: community/cloudtty.md
@@ -789,36 +810,4 @@ nav:
       - 商业产品: native/commerce.md
       - 开源项目: native/open.md
       - 知识分享: native/knowledge.md
-  - OpenAPI 文档:
-      - OpenAPI 文档索引: openapi/index.md
-      - 全局管理 OpenAPI: openapi/ghippo/v0.15.0.md
-      - 服务网格 OpenAPI: openapi/mspider/v0.105.1.md
-      - 可观测性 OpenAPI: openapi/insight/v0.16.0-alpha1.md
-      - 多云编排 OpenAPI: openapi/kairship/v0.8.0.md
-      - 网络 OpenAPI: 
-          - v0.5.0: openapi/spidernet/v0.5.0.md
-          - v0.6.0: openapi/spidernet/v0.6.0.md
-      - 中间件 OpenAPI: 
-          - Index: openapi/midware.md
-          - Elasticsearch OpenAPI:
-              - v0.7.0: openapi/mcamel/elasticsearch-v0.7.0.md
-              - v0.7.1: openapi/mcamel/elasticsearch-v0.7.1.md
-          - Kafka OpenAPI:
-              - v0.5.0: openapi/mcamel/kafka-v0.5.0.md
-              - v0.5.1: openapi/mcamel/kafka-v0.5.1.md
-          - MinIO OpenAPI: 
-              - v0.5.0: openapi/mcamel/minio-v0.5.0.md
-              - v0.5.1: openapi/mcamel/minio-v0.5.1.md
-          - MySQL OpenAPI: 
-              - v0.8.0: openapi/mcamel/mysql-v0.8.0.md
-              - v0.8.1: openapi/mcamel/mysql-v0.8.1.md
-          - PostgreSQL OpenAPI: 
-              - v0.1.0: openapi/mcamel/postgresql-v0.1.0.md
-              - v0.1.1: openapi/mcamel/postgresql-v0.1.1.md
-              - v0.1.2: openapi/mcamel/postgresql-v0.1.2.md
-          - RabbitMQ OpenAPI: 
-              - v0.10.0: openapi/mcamel/rabbitmq-v0.10.0.md
-              - v0.10.1: openapi/mcamel/rabbitmq-v0.10.1.md
-          - Redis OpenAPI: 
-              - v0.7.0: openapi/mcamel/redis-v0.7.0.md
-              - v0.7.1: openapi/mcamel/redis-v0.7.1.md
+

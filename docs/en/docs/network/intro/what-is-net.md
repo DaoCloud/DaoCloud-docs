@@ -16,7 +16,7 @@ Different IP pools meets various scenarios of application communication. The mai
    The installation of SpiderPool is not a must, if Underlay CNI is not installed in the application scenario.
 3. Cilium, a high-performance Overlay CNI, provides many capabilities, including eBPF kernel acceleration, cross-cluster Pod communication, cross-cluster Service communication, flexible fine-grained network policy distribution, and traffic observation.
    Cilium is a must-have network CNI in this portfolio.
-4. The external access IP provided through SpiderFlat / MacVLAN CNI / SRI-OV CNI enables Pod Layer 2 external communication. Complemented by Calico dynamic virtual network, it reduces chores of network operation and maintenance and also saves IP resources.
+4. The external access IP provided through SpiderFlat / MacVLAN CNI / SR-IOV CNI enables Pod Layer 2 external communication. Complemented by Calico dynamic virtual network, it reduces chores of network operation and maintenance and also saves IP resources.
    If there is no external access requirement in the application scenario, you do not need to install Underlay CNI.
 
 
@@ -29,7 +29,7 @@ This solution is suitable for low kernel versions of Linux OS, and applicable fo
    The installation of Multus is not a must, if the application does not require multiple Pod NICs and different network modes.
 2. Spiderpool serves as the IPAM management component of Underlay CNI to achieve fine-grained IP management and flexible IP planning and allocation.
    The installation of SpiderPool is not a must, if Underlay CNI is not installed in the application scenario.
-3. The external access IP provided through SpiderFlat / MacVLAN CNI / SRI-OV CNI enables Pod Layer 2 external communication. Complemented by Calico dynamic virtual network, it reduces chores of network operation and maintenance and also saves IP resources.
+3. The external access IP provided through SpiderFlat / MacVLAN CNI / SR-IOV CNI enables Pod Layer 2 external communication. Complemented by Calico dynamic virtual network, it reduces chores of network operation and maintenance and also saves IP resources.
    Calico is a must-have network CNI in this portfolio. If there is no external access requirement in the application scenario, you do not need to install Underlay CNI.
 4. The Submariner component provides cross-cluster Pod communication.Both Submariner and Core DNS service discovery makes cross-cluster service discovery possible. Submariner can be installed according to your demand.
 

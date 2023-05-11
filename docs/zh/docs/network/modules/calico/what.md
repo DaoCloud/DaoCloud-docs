@@ -11,7 +11,7 @@ Calico 基于 iptables 提供了丰富而灵活的网络 Policy，保证通过�
 
     Calico 原意为”有斑点的“花猫，也叫三色猫，所以 Calico 的 logo 是一只三色猫。
 
-    ![calico](../../images/cat.jpeg)
+    ![calico](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/cat.jpeg)
 
 ## Calico 组件
 

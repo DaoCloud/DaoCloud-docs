@@ -44,9 +44,9 @@
 
 3. 登录到 F5 Web UI，切换到所使用的 partition，即可观测到下发的转发规则。
 
-    ![f5network usage1](../../images/f5-usage1.png)
+    ![f5network usage1](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/f5-usage1.png)
 
-    ![f5network usage1](../../images/f5-usage2.png)
+    ![f5network usage1](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/f5-usage2.png)
 
 4. 在集群外发，访问 F5 分配到的 VIP，即可访问到服务。
 
@@ -113,9 +113,9 @@
 
 4. 登录到 F5 Web UI，切换到所使用的 partition，即可观测到下发的转发规则。
 
-   ![f5network usage3](../../images/f5-usage3.png)
+   ![f5network usage3](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/f5-usage3.png)
 
-   ![f5network usage4](../../images/f5-usage4.png)
+   ![f5network usage4](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/f5-usage4.png)
 
 5. 在集群外发，访问 F5 分配到 URL http://VIP/http-server，即可访问到服务。
 
