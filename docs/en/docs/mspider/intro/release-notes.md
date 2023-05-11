@@ -64,7 +64,7 @@ Currently compatible with both Accept and Accept-Language modes
 
 - **Upgrade** front-end version to v0.12.2
 
-#### fix
+#### Fix
 
 - **Fixed** Unable to update Istio resources with .
 - **Fixed** In version 1.17.1, istio-proxy cannot start normally
@@ -98,7 +98,7 @@ Currently compatible with both Accept and Accept-Language modes
 - **Upgrade** ckube supports complex conditional query of labels
 - **REMOVED** Remove Helm upgrade time limit
 
-#### fix
+#### Fix
 
 - **Fixed** the problem that the interface does not display when the east-west gateway is not Ready
 - **Fixed** The multi-cloud interconnection will automatically register the east-west gateway LB IP, which may cause internal network abnormalities (remove the east-west gateway instance label: topology.istio.io/network, this label will automatically register the east-west gateway)
@@ -128,7 +128,7 @@ Currently compatible with both Accept and Accept-Language modes
 - **Optimize** Namespace controller plus Cache, when there are too many Namespaces in the cluster, it will cause too many repeated Get requests
 - **Optimize** reduce the log output of ckube in normal mode
 
-#### fix
+#### Fix
 
 - **Fixed** mesh related logic error caused by container management platform removing cluster
 - **Fixed** RegProxy injecting Sidecar will cause Nacos to fail to register
@@ -142,7 +142,7 @@ Currently compatible with both Accept and Accept-Language modes
 
 ### v0.12.0
 
-#### New features
+#### Features
 
 - Interface implementation of traffic transparent transmission function
 - Support for istio 1.15.4, 1.16.1
@@ -153,7 +153,7 @@ Currently compatible with both Accept and Accept-Language modes
 - Publish pipeline parameter optimization
 - Optimize the logic of sidecar injection and sidecar resource limitation to avoid out-of-sync phenomenon
 
-#### Fixed
+#### Fix
 
 - The problem that some components are not updated after mesh upgrade
 - The problem that some resources are not cleared after the mesh is removed - The sidecar resources are not synchronized correctly, instead the actual sidecar resources through the istio-proxy container in the Pod
@@ -165,7 +165,7 @@ Currently compatible with both Accept and Accept-Language modes
 
 ### v0.11.1
 
-#### New features
+#### Features
 
 - Added `Key Management` related APIs
 - Added governance policy tags and related filtering capabilities in the lists of `Virtual Service`, `Target Rules`, and `Gateway Rules`
@@ -182,7 +182,7 @@ Currently compatible with both Accept and Accept-Language modes
 - Optimize the mesh control plane processing process to avoid conflicts caused by updating objects that have been updated
 - Optimize mesh cluster access and removal logic
 
-#### Fixed
+#### Fix
 
 - When the control plane is upgraded, components such as MCPC are not updated
 - Get cluster resource error

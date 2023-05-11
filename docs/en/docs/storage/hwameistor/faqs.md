@@ -5,7 +5,7 @@ hide:
 
 # FAQs
 
-**Question 1: How does the HwameiStor local storage scheduler work in the Kubernetes platform? **
+**Question 1: How does the HwameiStor local storage scheduler work in the Kubernetes platform?**
 
 HwameiStor's scheduler is deployed in the HwameiStor namespace in the form of Pods.
 
@@ -13,7 +13,7 @@ HwameiStor's scheduler is deployed in the HwameiStor namespace in the form of Po
 
 When the application (Deployment or StatefulSet) is created, the Pod of the application will be automatically deployed to the Worker node configured with HwameiStor local storage capability.
 
-**Question 2: How does HwameiStor handle the scheduling of application multi-copy workloads? How is it different from traditional general-purpose shared storage? **
+**Question 2: How does HwameiStor handle the scheduling of application multi-copy workloads? How is it different from traditional general-purpose shared storage?**
 
 HwameiStor recommends using a stateful StatefulSet for multi-replica workloads.
 

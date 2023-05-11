@@ -19,7 +19,7 @@ With DME, you can:
 DME uses Sentinel and service mesh to meet the different demands of governing service-to-service traffic of traditional and cloud-native microservices.
 
 - Use Sentinel to set flow control, circuit breaker, degradation, hotspot, system, authorization, cluster flow control and other rules to govern the east-west traffic of traditional micro services.
-- Use Service Mesh to to set virtual services, target rules and gateway rules to control traffic between services in a mesh.
+- Use Service Mesh to set virtual services, target rules and gateway rules to control traffic between services in a mesh.
 
 ## Microservice Configuration Center
 
@@ -27,7 +27,7 @@ Nacos registry can be used as a configuration manager, which extracts common con
 
 - Isolate configuration files based on microservice namespaces and Groups.
 - Dynamically update configuration items with `@RefreshScope` annotations.
-- Manage historical versions of configuration files, compare version differences, and roll back to a specific versions.
+- Manage historical versions of configuration files, compare version differences, and roll back to a specific version.
 - Query the listener and MD5 checksum of configurations.
 - Provide sample code to help novices understand and use this function.
 

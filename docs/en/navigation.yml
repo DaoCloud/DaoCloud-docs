@@ -592,10 +592,10 @@ nav:
               - Release Notes: middleware/redis/release-notes.md
       - Cloud-native Storage:
           - Intro:
-              - What is storage: storage/intro.md
+              - What is storage: storage/what.md
               - Background: storage/background.md
-              - Benefits: storage/benifits.md
-              - Features: storage/functions.md
+              - Benefits: storage/benefits.md
+              - Features: storage/features.md
               - Release Notes: storage/hwameistor/releasenotes.md
           - HwameiStor local storage:
               - Intro: storage/hwameistor/intro/what.md
@@ -608,8 +608,14 @@ nav:
               - Resources: storage/hwameistor/intro/resources.md
               - Installation:
                   - Preparation: storage/hwameistor/install/prereq.md
-                  - Install by Helm Chart: storage/hwameistor/install/deploy.md
+                  - Resource requirements: storage/hwameistor/install/proresource.md
+                  - Install DRDB: storage/hwameistor/install/drbdinstall.md
+                  - Install with Operator: storage/hwameistor/install/deploy-operator.md
+                  - Intall with UI: storage/hwameistor/install/deploy-ui.md
+                  - Install with Helm Charts: storage/hwameistor/install/deploy-helm.md
                   - Post-check: storage/hwameistor/install/post-check.md
+                  - Storage and network adapter config: storage/hwameistor/install/storage-eth.md
+                  - Custom Kubelet root directory: storage/hwameistor/install/customized-kubelet.md
                   - Upgrade: storage/hwameistor/install/upgrade.md
                   - Uninstall: storage/hwameistor/install/uninstall.md
               - O&M:
@@ -618,6 +624,7 @@ nav:
                   - Volume migration: storage/hwameistor/resources/migrate.md
                   - Volume expansion: storage/hwameistor/resources/expand.md
                   - Disk expansion: storage/hwameistor/resources/disk-expansion.md
+                  - Disk reservation: storage/hwameistor/resources/reserveddisk.md
               - Scenarios:
                   - Overview: storage/hwameistor/application/overview.md
                   - Deploy StatefulSets:
@@ -630,6 +637,7 @@ nav:
               - Rook-Ceph intro: storage/solutions/rook-ceph.md
               - Deploy Rook-Ceph via app store: storage/solutions/dce-rook-ceph.md
               - Deploy Rook-Ceph via Helm: storage/solutions/helm-rook-ceph.md
+              - Join Ceph Dashboard: storage/solutions/ceph-dashboard.md
               - Longhorn intro: storage/solutions/longhorn.md
               - Deploy Longhorn via app store: storage/solutions/dce-longhorn.md
               - OpenEBS intro: storage/solutions/openebs.md
