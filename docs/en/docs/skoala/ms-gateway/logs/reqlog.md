@@ -1,23 +1,23 @@
-# request log
+# Request log
 
-The microservice gateway supports viewing request logs and instance logs. This page describes how to view instance logs and related operations when viewing logs.
+The microservice gateway supports viewing request logs and instance logs. This page describes how to view instance logs and how to view logs.
 
-## view mode
+## Viewing mode
 
-Click the name of the target gateway to enter the gateway overview page, and then click `Log View`->`Request Log` in the left navigation bar.
+Click the name of the target gateway to enter the gateway overview page, and then click `Check Logs` -> `Request Logs` in the left navigation bar.
 
+<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
+## Related operation
 
-## Related operations
+- Filtering logs: Logs are filtered by Request ID, request path, domain name, request method, HTTP, and GRPC. Logs are sorted by request start time, request time, and request service time.
 
-- Filtering logs: Support filtering logs by Request ID, request path, domain name, request method, HTTP, GRPC and other conditions, and support sorting logs according to request start time, request time consumption, and request service time consumption.
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-    
+- Set a time range: You can select logs that last 5 minutes, 10 minutes, or 15 minutes, or set a time range.
 
-- Limited time range: You can choose the logs of the last 5 minutes, 10 minutes, 15 minutes, or customize the time range.
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-    
+- Export logs: You can export log files to a local PC.
 
-- Export log: support exporting log files to local.
-
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->

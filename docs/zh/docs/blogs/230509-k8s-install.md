@@ -130,79 +130,79 @@ setenforce 0
 
 kubelet 通过内置的 `dockershim` CRI 实现与 Docker 集成。
 
-=== “Docker”
+**对于 Docker**
 
-    === “基于 Red Hat 发行版”
+=== “基于 Red Hat 发行版”
 
-        执行以下命令安装基于 Red Hat 发行版的 Docker：
-
-        ```bash
-        yum install docker
-        ```
-
-    === “基于 Debian 发行版”
-
-        执行以下命令安装基于 Debian 发行版的 Docker：
-
-        ```bash
-        apt-get install docker.io
-        ```
-
-=== “containerd”
-
-    containerd 官方默认只提供 amd64 架构的下载包，如果您采用的是其他基础架构，
-    可以从 Docker 官方仓库安装 `containerd.io` 软件包。在[安装 Docker 引擎](https://docs.docker.com/engine/install/#server)中
-    找到为各自的 Linux 发行版设置 Docker 存储库和安装 containerd.io 软件包的有关说明。
-
-    也可以使用以下源代码构建。
+    执行以下命令安装基于 Red Hat 发行版的 Docker：
 
     ```bash
-    VERSION=1.5.4
-    wget -c https://github.com/containerd/containerd/releases/download/v${VERSION}/containerd-${VERSION}-linux-amd64.tar.gz
-    tar xvf containerd-${VERSION}-linux-amd64.tar.gz -C /usr/local/
-    mkdir /etc/containerd/ && containerd config default > /etc/containerd/config.toml
-    wget -c -O /etc/systemd/system/containerd.service https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
-    systemctl start containerd && systemctl enable containerd
+    yum install docker
     ```
+
+=== “基于 Debian 发行版”
+
+    执行以下命令安装基于 Debian 发行版的 Docker：
+
+    ```bash
+    apt-get install docker.io
+    ```
+
+**对于 containerd**
+
+containerd 官方默认只提供 amd64 架构的下载包，如果您采用的是其他基础架构，
+可以从 Docker 官方仓库安装 `containerd.io` 软件包。在[安装 Docker 引擎](https://docs.docker.com/engine/install/#server)中
+找到为各自的 Linux 发行版设置 Docker 存储库和安装 containerd.io 软件包的有关说明。
+
+也可以使用以下源代码构建。
+
+```bash
+VERSION=1.5.4
+wget -c https://github.com/containerd/containerd/releases/download/v${VERSION}/containerd-${VERSION}-linux-amd64.tar.gz
+tar xvf containerd-${VERSION}-linux-amd64.tar.gz -C /usr/local/
+mkdir /etc/containerd/ && containerd config default > /etc/containerd/config.toml
+wget -c -O /etc/systemd/system/containerd.service https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
+systemctl start containerd && systemctl enable containerd
+```
 
 #### 如果是其它操作系统
 
 默认情况下，kubeadm 使用 docker 作为容器运行时。kubelet 通过内置的 `dockershim` CRI 实现与 Docker 集成。
 
-=== “Docker”
+**对于 Docker**
 
-    === “基于 Red Hat 发行版”
+=== “基于 Red Hat 发行版”
 
-        执行以下命令安装基于 Red Hat 发行版的 Docker：
-
-        ```bash
-        yum install docker
-        ```
-
-    === “基于 Debian 发行版”
-
-        执行以下命令安装基于 Debian 发行版的 Docker：
-
-        ```bash
-        apt-get install docker.io
-        ```
-
-=== “containerd”
-
-    containerd 官方默认只提供 amd64 架构的下载包，如果您采用的是其他基础架构，
-    可以从 Docker 官方仓库安装 `containerd.io` 软件包。在[安装 Docker 引擎](https://docs.docker.com/engine/install/#server)中
-    找到为各自的 Linux 发行版设置 Docker 存储库和安装 containerd.io 软件包的有关说明。
-
-    也可以使用以下源代码构建。
+    执行以下命令安装基于 Red Hat 发行版的 Docker：
 
     ```bash
-    VERSION=1.5.4
-    wget -c https://github.com/containerd/containerd/releases/download/v${VERSION}/containerd-${VERSION}-linux-amd64.tar.gz
-    tar xvf containerd-${VERSION}-linux-amd64.tar.gz -C /usr/local/
-    mkdir /etc/containerd/ && containerd config default > /etc/containerd/config.toml
-    wget -c -O /etc/systemd/system/containerd.service https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
-    systemctl start containerd && systemctl enable containerd
+    yum install docker
     ```
+
+=== “基于 Debian 发行版”
+
+    执行以下命令安装基于 Debian 发行版的 Docker：
+
+    ```bash
+    apt-get install docker.io
+    ```
+
+**对于 containerd**
+
+containerd 官方默认只提供 amd64 架构的下载包，如果您采用的是其他基础架构，
+可以从 Docker 官方仓库安装 `containerd.io` 软件包。在[安装 Docker 引擎](https://docs.docker.com/engine/install/#server)中
+找到为各自的 Linux 发行版设置 Docker 存储库和安装 containerd.io 软件包的有关说明。
+
+也可以使用以下源代码构建。
+
+```bash
+VERSION=1.5.4
+wget -c https://github.com/containerd/containerd/releases/download/v${VERSION}/containerd-${VERSION}-linux-amd64.tar.gz
+tar xvf containerd-${VERSION}-linux-amd64.tar.gz -C /usr/local/
+mkdir /etc/containerd/ && containerd config default > /etc/containerd/config.toml
+wget -c -O /etc/systemd/system/containerd.service https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
+systemctl start containerd && systemctl enable containerd
+```
 
 参阅[容器运行时](https://kubernetes.io/zh-cn/docs/setup/production-environment/container-runtimes/)以了解更多信息。
 

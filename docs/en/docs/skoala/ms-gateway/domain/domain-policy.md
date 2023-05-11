@@ -1,35 +1,34 @@
-# Configure domain name policy
+# Configuring Domain name Policies
 
-The microservice gateway provides domain-level policy configuration capabilities. After configuring domain-level policies, there is no need to repeatedly configure policies for multiple APIs under the same domain name. Currently, two domain-level policies are supported: cross-domain and local traffic limiting.
+The micro-service gateway provides the domain name level policy configuration capability. After a domain name level policy is configured, you do not need to configure policies for multiple apis under the same domain name. Currently, two domain-level policies are supported: cross-domain and local traffic limiting.
 
-There are two ways to configure domain name policies:
+You can configure domain name policies in either of the following ways:
 
-- Set policies during the process of creating a domain name, refer to [Add Domain Name](add-domain.md).
-- Make adjustments through [Modify Domain Name](update-domain.md) after the domain name is created.
+- For details about how to set policies when creating domain names, see [Add Domain](add-domain.md).
+- After the domain name is created, run the [Change Domain](update-domain.md) command to adjust the domain name.
 
-The detailed description of cross-domain and local traffic limiting policies is as follows:
+The cross-domain and local traffic limiting policies are described as follows:
 
-## Local current limit
+## Local current limiting
 
-After configuring local rate limiting for a domain name, the configuration will be automatically applied to all APIs using this domain name.
+After you configure local traffic limiting for a domain name, the configuration is automatically applied to all apis that use the domain name.
 
-For detailed configuration instructions on local rate limiting, please refer to [Local rate limiting](../api/api-policy.md#_6).
+For details about configuring local traffic limiting, see [Local Rate Limit](../api/api-policy.md#_6).
 
 !!! note
 
-    If there is a conflict between the rate limiting policy at the API level and the domain name level, the rate limiting policy at the API level shall prevail.
 
-## Cross-domain
+## cross-domain
 
-<!--to be added: explain what is cross-domain, cross-domain function, effect, etc. -->
+<! -- To be added: Explain what is cross-domain, cross-domain functions, effects, etc. -->
 
-Note when filling in the configuration:
+Note the following when filling in the configuration:
 
-- Enable Credentials: When enabled, credential checks are required for cross-origin requests. After the check is passed, the cross-domain request can be processed.
-- Allowed request method: Select the HTTP protocol request method. For detailed descriptions of various request methods, refer to W3C's official document [Method Definitions](https://www.rfc-editor.org/rfc/rfc9110.html#name-method-definitions).
-- Allowed request sources: Limit multiple specific request sources, usually using IP.
-- Preflight duration: the time it takes to check credentials, request methods, etc. before processing cross-domain requests, and the time unit is seconds, minutes, and hours.
-- Allowed headers: Qualify specific HTTP header keywords. After adding the keyword, you need to add the corresponding keyword in the request header to access the target service normally.
-- Exposed request headers: Control the exposed request header keywords, and you can configure multiple items.
+- Enable credentials: After this is enabled, cross-domain requests need to be checked for credentials. After the check is passed, the cross-domain request can be processed.
+- Allowed request method: Select the HTTP request mode. See the official W3C document [Name Method Definitions](https://www.rfc-editor.org/rfc/rfc9110.html#name-method-definitions) for detailed instructions on the various request methods.
+- Allowable request sources: Limit multiple specific request sources, usually using IP.
+- Pre-check duration: indicates the duration of checking credentials and request methods before processing cross-domain requests. The unit of time is seconds, minutes, and hours.
+- Allowable request headers: Qualifies specific HTTP request header keywords. After the keyword is added, the corresponding keyword must be added to the request header to access the target service.
+- Exposed request header: Controls the exposed request header keyword. Multiple values can be configured.
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->

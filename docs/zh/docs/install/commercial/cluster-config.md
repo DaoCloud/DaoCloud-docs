@@ -113,7 +113,7 @@ spec:
     # externalChartRepoUsername: rootuser
     # externalChartRepoPassword: rootpass123
  
-  addonPackage: # 应用商店 addon 包，定义后会对 addon 进行离线化
+  addonPackage: # 应用商店 addon 离线包，定义后会对 addon 进行离线部署
     # path: "/root/addon-offline-full-package-v0.4.8-amd64.tar.gz"
    
   binaries: # 二进制可执行文件

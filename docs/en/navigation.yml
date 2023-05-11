@@ -27,181 +27,217 @@ nav:
           - Release Notes: install/release-notes.md
       - Container Management:
           - Intro:
-              - What is Container Management: kpanda/intro/WhatisKPanda.md
-              - Features: kpanda/intro/Features.md
-              - Benefits: kpanda/intro/Benefits.md
-              - Scenarios: kpanda/intro/Scenarios.md
-              - Concepts: kpanda/intro/Concepts.md
+              - What is Container Management: kpanda/intro/what.md
+              - Features: kpanda/intro/features.md
+              - Benefits: kpanda/intro/benefits.md
+              - Scenarios: kpanda/intro/scenarios.md
+              - Concepts: kpanda/intro/concepts.md
               - Release Notes: kpanda/intro/release-notes.md
+              - Lastest News: kpanda/intro/news.md
           - Clusters:
-              - Create Cluster: kpanda/07UserGuide/Clusters/CreateCluster.md
-              - Join Cluster: kpanda/07UserGuide/Clusters/JoinACluster.md
-              - Access Cluster: kpanda/07UserGuide/Clusters/AccessCluster.md
-              - Upgrade Cluster: kpanda/07UserGuide/Clusters/UpgradeCluster.md
-              - Delete Cluster: kpanda/07UserGuide/Clusters/DeleteCluster.md
-              - Cluster Roles: kpanda/07UserGuide/Clusters/ClusterRole.md
-              - Cluster Status: kpanda/07UserGuide/Clusters/ClusterStatus.md
+              - Create Cluster: kpanda/user-guide/clusters/create-cluster.md
+              - Join Cluster: kpanda/user-guide/clusters/integrate-cluster.md
+              - Access Cluster: kpanda/user-guide/clusters/access-cluster.md
+              - Upgrade Cluster: kpanda/user-guide/clusters/upgrade-cluster.md
+              - Delete Cluster: kpanda/user-guide/clusters/delete-cluster.md
+              - Cluster Roles: kpanda/user-guide/clusters/cluster-role.md
+              - Cluster Status: kpanda/user-guide/clusters/cluster-status.md
+              - Choose Runtime: kpanda/user-guide/clusters/runtime.md
+          - Namespaces: 
+              - Create Namespace: kpanda/user-guide/namespaces/createns.md
+              - Exclusive Node to Namespace: kpanda/user-guide/namespaces/exclusive.md
           - Nodes:
-              - Node Config: kpanda/07UserGuide/Nodes/NodeConfig.md
-              - Node Scaling out: kpanda/07UserGuide/Nodes/AddNode.md
-              - Node Scaling in: kpanda/07UserGuide/Nodes/DeleteNode.md
-              - Taints: kpanda/07UserGuide/Nodes/Taints.md
-              - Node Scheduling: kpanda/07UserGuide/Nodes/schedule.md
-              - Node Details: kpanda/07UserGuide/Nodes/node-details.md
-              - Labels and Annotations: kpanda/07UserGuide/Nodes/labels-annotations.md
+              - Node Availability Check: kpanda/user-guide/nodes/node-check.md
+              - Node Config: kpanda/user-guide/nodes/node-config.md
+              - Node Scaling Out: kpanda/user-guide/nodes/add-node.md
+              - Node Scaling In: kpanda/user-guide/nodes/delete-node.md
+              - Taints: kpanda/user-guide/nodes/taints.md
+              - Node Scheduling: kpanda/user-guide/nodes/schedule.md
+              - Node Details: kpanda/user-guide/nodes/node-details.md
+              - Labels and Annotations: kpanda/user-guide/nodes/labels-annotations.md
           - Workloads:
-              - Create Deployment: kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md
-              - Create StatefulSet: kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md
-              - Create DaemonSet: kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md
-              - Create CronJob: kpanda/07UserGuide/Workloads/CreateCronJobByImage.md
-              - Create Job: kpanda/07UserGuide/Workloads/CreateJobByImage.md
-              - Parameters:
-                  - Workload Status: kpanda/07UserGuide/Workloads/PodConfig/workload-status.md
-                  - Args for Job: kpanda/07UserGuide/Workloads/PodConfig/JobParameters.md
-                  - Lifecycle: kpanda/07UserGuide/Workloads/PodConfig/lifescycle.md
-                  - Env Variable: kpanda/07UserGuide/Workloads/PodConfig/EnvironmentVariables.md
-                  - Health Check: kpanda/07UserGuide/Workloads/PodConfig/healthcheck.md
-                  - Scheduling Policies: kpanda/07UserGuide/Workloads/PodConfig/SchedulingPolicy.md
+              - Create Deployment: kpanda/user-guide/workloads/create-deployment.md
+              - Create StatefulSet: kpanda/user-guide/workloads/create-statefulset.md
+              - Create DaemonSet: kpanda/user-guide/workloads/create-daemonset.md
+              - Create CronJob: kpanda/user-guide/workloads/create-cronjob.md
+              - Create Job: kpanda/user-guide/workloads/create-job.md
+              - Parameters Config:
+                  - Workload Status: kpanda/user-guide/workloads/pod-config/workload-status.md
+                  - Job Parameters: kpanda/user-guide/workloads/pod-config/job-parameters.md
+                  - Lifecycle: kpanda/user-guide/workloads/pod-config/lifecycle.md
+                  - Env Variable: kpanda/user-guide/workloads/pod-config/env-variables.md
+                  - Health Check: kpanda/user-guide/workloads/pod-config/health-check.md
+                  - Cluster Scheduling: kpanda/user-guide/workloads/pod-config/scheduling-policy.md
           - Autoscaling:
-              - Horizontal Pod Autoscaling: kpanda/07UserGuide/Scale/Create-HPA.md
-              - Install metrics-server: kpanda/07UserGuide/Scale/Install-metrics-server.md
+              - Install metrics-server: kpanda/user-guide/scale/install-metrics-server.md
+              - Install kubernetes-cronhpa-controller: kpanda/user-guide/scale/install-cronhpa.md
+              - Install VPA Plugin: kpanda/user-guide/scale/install-vpa.md
+              - Create HPA Policy: kpanda/user-guide/scale/create-hpa.md
+              - Create VPA Policy: kpanda/user-guide/scale/create-vpa.md
           - Helm Apps:
-              - Helm Charts: kpanda/07UserGuide/helm/README.md
-              - Helm Apps: kpanda/07UserGuide/helm/helm-app.md
-              - Helm Registry: kpanda/07UserGuide/helm/helm-repo.md
+              - Helm Charts: kpanda/user-guide/helm/README.md
+              - Helm Apps: kpanda/user-guide/helm/helm-app.md
+              - Helm Registries: kpanda/user-guide/helm/helm-repo.md
           - Network:
-              - Create Service: kpanda/07UserGuide/ServicesandRoutes/CreatingServices.md
-              - Create Ingress: kpanda/07UserGuide/ServicesandRoutes/CreatingIngress.md
-              - Network Policies: kpanda/07UserGuide/ServicesandRoutes/network-policy.md
-          - CRDs: kpanda/07UserGuide/CustomResources/create.md
+              - Create Service: kpanda/user-guide/services-routes/create-services.md
+              - Create Ingress: kpanda/user-guide/services-routes/create-ingress.md
+              - Network Policies: kpanda/user-guide/services-routes/network-policy.md
+          - CRDs: kpanda/user-guide/custom-resources/create.md
           - Storage:
-              - Volumes: kpanda/07UserGuide/storage/pvc.md
-              - Storage Pool: kpanda/07UserGuide/storage/storage-pool.md
+              - Volume Claim: kpanda/user-guide/storage/pvc.md
+              - Volume: kpanda/user-guide/storage/pv.md
+              - Storage Pool: kpanda/user-guide/storage/sc.md
+              - Shared Storage Pool: kpanda/user-guide/storage/sc-share.md
           - ConfigMaps and Secrets:
-              - Create Secret: kpanda/07UserGuide/ConfigMapsandSecrets/create-secret.md
-              - Use Secret: kpanda/07UserGuide/ConfigMapsandSecrets/use-secret.md
-              - Use ConfigMap: kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md
-          - Namespaces: kpanda/07UserGuide/Namespaces/createns.md
+              - Create ConfigMap: kpanda/user-guide/configmaps-secrets/create-configmap.md
+              - Use ConfigMap: kpanda/user-guide/configmaps-secrets/use-configmap.md
+              - Create Secret: kpanda/user-guide/configmaps-secrets/create-secret.md
+              - Use Secret: kpanda/user-guide/configmaps-secrets/use-secret.md
           - Cluster Operation & Maintenance:
-              - Recent Operations: kpanda/07UserGuide/clusterops/latest-operations.md
-              - Cluster Settings: kpanda/07UserGuide/clusterops/cluster-settings.md
+              - Recent Operations: kpanda/user-guide/clusterops/latest-operations.md
+              - Upgrade Cluster: kpanda/user-guide/clusters/upgrade-cluster.md
+              - Cluster Settings: kpanda/user-guide/clusterops/cluster-settings.md
           - Permissions:
-              - Permission Brief: kpanda/07UserGuide/Permissions/PermissionBrief.md
-              - Cluster and Namespace Authorization: kpanda/07UserGuide/Permissions/Cluster-NSAuth.md
+              - Permission Brief: kpanda/user-guide/permissions/permission-brief.md
+              - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md
+          - Backup and Restore:
+              - ETCD Backup: kpanda/user-guide/backup/etcd-backup.md
+              - Install Velero: kpanda/user-guide/backup/install-velero.md
+              - Back up Deployment: kpanda/user-guide/backup/deployment.md
+          - Best Practices:
+              - ETCD Backup and Restore: kpanda/best-practice/etcd-backup.md
+              - Offline Upgrade Worker Cluster: kpanda/best-practice/update-offline-cluster.md
       - Global Management:
           - Intro:
               - What is Global Management: ghippo/intro/what.md
-              - Features: ghippo/intro/Features.md
+              - Features: ghippo/intro/features.md
               - Glossary: ghippo/intro/glossary.md
               - Release Notes: ghippo/intro/release-notes.md
-          - Login: ghippo/user-guide/00Login.md
-          - Installation:
-              - Offline Upgrade: ghippo/install/offlineInstall.md
-              - Custom Reverse Proxy: ghippo/install/reverseProxy.md
-              - National Secret Gateway: ghippo/install/gmGateway.md
-          - User and Access:
-              - What is User and Access: ghippo/user-guide/01UserandAccess/iam.md
-              - User: ghippo/user-guide/01UserandAccess/User.md
-              - Group: ghippo/user-guide/01UserandAccess/Group.md
-          - Role and Permission:
-              - ghippo/user-guide/01UserandAccess/Role.md
-              - Roles: ghippo/user-guide/01UserandAccess/global.md
+          - Install, Login, and Upgrade:
+              - Offline Upgrade: ghippo/install/offline-install.md
+              - Customize Reverse Proxy Address: ghippo/install/reverse-proxy.md
+              - National Secret Gateway: ghippo/install/gm-gateway.md
+              - Login: ghippo/install/login.md
+          - User and Access Control:
+              - Intro: ghippo/user-guide/access-control/iam.md
+              - User: ghippo/user-guide/access-control/user.md
+              - Group: ghippo/user-guide/access-control/group.md
+          - Roles and Permissions:
+              - ghippo/user-guide/access-control/role.md
+              - Global Roles: ghippo/user-guide/access-control/global.md
+              - Custom Roles: ghippo/user-guide/access-control/custom-role.md
           - ID Provider:
-              - ghippo/user-guide/01UserandAccess/idprovider.md
-              - LDAP: ghippo/user-guide/01UserandAccess/ldap.md
-              - OIDC: ghippo/user-guide/01UserandAccess/oidc.md
-          - Workspace and Folder:
-              - ghippo/user-guide/02Workspace/ws-folder.md
-              - Workspaces: ghippo/user-guide/02Workspace/Workspaces.md
-              - Workspace Permission: ghippo/user-guide/02Workspace/wspermission.md
-              - Folders: ghippo/user-guide/02Workspace/folders.md
-              - Folder Permission: ghippo/user-guide/02Workspace/fdpermission.md
-              - Resource Quota: ghippo/user-guide/02Workspace/quota.md
-          - Audit Logs:
-              - Enable/Disable: ghippo/user-guide/open-audit.md
-              - Download and Export: ghippo/user-guide/03AuditLog.md
+              - ghippo/user-guide/access-control/idprovider.md
+              - LDAP: ghippo/user-guide/access-control/ldap.md
+              - OIDC: ghippo/user-guide/access-control/oidc.md
+          - Workspaces and Folders:
+              - ghippo/user-guide/workspace/ws-folder.md
+              - Create and Delete Workspace: ghippo/user-guide/workspace/workspace.md
+              - Workspace Permissions: ghippo/user-guide/workspace/ws-permission.md
+              - Create and Delete Folder: ghippo/user-guide/workspace/folders.md
+              - Folder Permissions: ghippo/user-guide/workspace/folder-permission.md
+              - Resource Quota: ghippo/user-guide/workspace/quota.md
+              - Resource Limit: ghippo/user-guide/workspace/limitrange.md
+          - Audit Log:
+              - Enable/disable Capture: ghippo/user-guide/open-audit.md
+              - Enable/disable K8s Audit Log: ghippo/user-guide/open-k8s-audit.md
+              - Download and Export: ghippo/user-guide/audit-log.md
           - Platform Settings:
+              - Security Policies: ghippo/user-guide/platform-setting/security.md
+              - Mail Server Settings: ghippo/user-guide/platform-setting/mail-server.md
+              - Custom Appearance: ghippo/user-guide/platform-setting/appearance.md
+              - About: ghippo/user-guide/platform-setting/about.md
               - Reset Password: ghippo/user-guide/password.md
-              - Mail Server Settings: ghippo/user-guide/04PlatformSetting/MailServer.md
-              - Custom Appearance: ghippo/user-guide/04PlatformSetting/Appearance.md
-              - About: ghippo/user-guide/04PlatformSetting/about.md
           - Personal Center:
-              - Security: ghippo/user-guide/06PersonalCenter/SecuritySetting.md
-              - Access Key: ghippo/user-guide/06PersonalCenter/Password.md
-              - UI Language: ghippo/user-guide/06PersonalCenter/Language.md
+              - Security Settings: ghippo/user-guide/personal-center/security-setting.md
+              - Access Key: ghippo/user-guide/personal-center/accesstoken.md
+              - Language Settings: ghippo/user-guide/personal-center/language.md
           - Permissions:
-              - Container Management Permission: kpanda/07UserGuide/Permissions/PermissionBrief.md
-              - Microservice Engine Permission: ghippo/permissions/skoala.md
-              - Workbench Permission: ghippo/permissions/amamba.md
-              - Service Mesh Permission: ghippo/permissions/mspider.md
-              - Middleware Permission: ghippo/permissions/mcamel.md
+              - Container Management Permissions: kpanda/user-guide/permissions/permission-brief.md
+              - Microservice Permissions: ghippo/permissions/skoala.md
+              - App Workbench Permissions: ghippo/permissions/amamba.md
+              - Service Mesh Permissions: ghippo/permissions/mspider.md
+              - Middleware Permissions: ghippo/permissions/mcamel.md
           - Best Practices:
-              - Workspace Practices: ghippo/user-guide/02Workspace/wsbp.md
-              - Bind a Workspace to a Namespace: ghippo/user-guide/02Workspace/ws-to-ns-across-clus.md
-              - Allocate a Cluster to Multiple Workspaces: ghippo/user-guide/02Workspace/a-cluster-to-multi-ws.md
-              - Folder Practices: ghippo/user-guide/02Workspace/fdpractice.md
-              - Normal Authorization Plan: ghippo/user-guide/02Workspace/authu-plan.md
+              - Workspace Practices: ghippo/user-guide/workspace/ws-best-practice.md
+              - Bind a Workspace to Namespace: ghippo/user-guide/workspace/ws-to-ns.md
+              - Allocate a Cluster to Workspaces: ghippo/user-guide/workspace/cluster-for-multiws.md
+              - Folder Practices: ghippo/user-guide/workspace/folder-practice.md
+              - Normal Authorization Planning: ghippo/user-guide/workspace/authu-plan.md
               - Join with GProduct:
                   - ghippo/gproduct/intro.md
                   - Join Nav Bar: ghippo/gproduct/nav.md
-                  - Join Ingress and Login Authentication: ghippo/gproduct/route-authn.md
+                  - Join Ingress and Login Authentication: ghippo/gproduct/route-auth.md
       - Insight:
           - Intro:
-              - What is Insight: insight/intro/WhatisInsight.md
+              - What is Insight: insight/intro/what.md
               - Benefits: insight/intro/benefits.md
-              - Concepts: insight/intro/concepts.md
-              - Scenarios: insight/intro/scenarios.md
+              - Scenario: insight/intro/scenarios.md
               - Features: insight/intro/feature.md
+              - Permissions: insight/intro/permission.md
               - Release Notes: insight/intro/releasenote.md
           - Quick Start:
-              - Install Insight:
-                  - insight/user-guide/01quickstart/installagent.md
-                  - Get URL to Upload Data: insight/user-guide/01quickstart/gethosturl.md
-                  - Upgrade Precautions: insight/user-guide/01quickstart/upgradenote.md
-                  - Offline upgrade Insight: insight/user-guide/01quickstart/offlineInstall.md
-              - OTel Enables Observability:
-                  - insight/user-guide/01quickstart/otel/otel.md
-                  - Non-intrusive Enhancement with Operator: insight/user-guide/01quickstart/otel/operator.md
-                  - Enhance Go Apps with OTel SDK: insight/user-guide/01quickstart/otel/golang.md
-                  - Expose Metrics with OTel SDK: insight/user-guide/01quickstart/otel/meter.md
-                  - Enhance Go Apps with OTel Auto-Instrumentation: insight/user-guide/01quickstart/otel/golang-ebpf.md
-          - Overview: insight/user-guide/overview.md
+              - Enable Observability:
+                  - insight/user-guide/quickstart/quickstart-catelogy.md
+                  - Online Install insight-agent: insight/user-guide/quickstart/install-agent.md   
+                  - Offline Install insight-agent: insight/user-guide/quickstart/offline-install.md        
+                  - Get URL to Upload Data: insight/user-guide/quickstart/gethosturl.md
+                  - Upgrade Precautions: insight/user-guide/quickstart/upgrade-note.md
+              - Install insight-agent on distributions: 
+                  - Install insight-aent on DCE 4.0.x: insight/faq/install-agentindce.md
+                  - Install insight-agent on OpenShift 4.x: insight/faq/install-agent-on-ocp.md
+              - Enable Observability with OTel:
+                  - insight/user-guide/quickstart/otel/otel.md
+                  - Non-intrusive Enhancement with Operator: insight/user-guide/quickstart/otel/operator.md
+                  - Enhance GO Apps with OTel SDK: insight/user-guide/quickstart/otel/golang.md
+                  - Expose Metrics with OTel SDK: insight/user-guide/quickstart/otel/meter.md
+                  - Enhance Go Apps with OTel Auto-Instrumentation: insight/user-guide/quickstart/otel/golang-ebpf.md
+              - Enable Observability for Java Apps:
+                  - insight/user-guide/quickstart/jvm-monitor/jvm-catelogy.md
+                  - Use JMX Exporter to Expose JVM Metrics: insight/user-guide/quickstart/jvm-monitor/jmx-exporter.md
+                  - Use OTel Java Agent to Expose JVM Metrics: insight/user-guide/quickstart/jvm-monitor/otel-java-agent.md
+                  - How Does a Java App with JVM Metrics Enable Observability: insight/user-guide/quickstart/jvm-monitor/legacy-jvm.md
+              - Resource Planning:              
+                    - Prometheus Resource Planning: insight/best-practice/prometheus-res.md
+                    - vmstorage Disk Planning: insight/best-practice/vms-res-plan.md
+                    - Adjust vmstorage Disk: insight/best-practice/modify-vms-disk.md
           - Dashboard:
-              - Dashboard: insight/user-guide/02dashboard/dashboard.md
-              - Log in to Grafana with Admin: insight/user-guide/02dashboard/logingrafana.md
+              - Overview: insight/user-guide/overview.md
+              - Dashboard: insight/user-guide/dashboard/dashboard.md
+              - Log in to Grafana with Admin: insight/user-guide/dashboard/login-grafana.md
+              - Import Custom Dashboard: insight/faq/import-dashboard.md
           - Cloud Insight:
-              - Cluster Insight: insight/user-guide/03scenarioinsight/clusterinsight.md
-              - Node Insight: insight/user-guide/03scenarioinsight/nodeinsight.md
-              - Container Insight: insight/user-guide/03scenarioinsight/containerinsight.md
-              - Service Insight: insight/user-guide/03scenarioinsight/serviceinsight.md
+              - Cluster Insight: insight/user-guide/scenario-insight/cluster.md
+              - Node Insight: insight/user-guide/scenario-insight/node.md
+              - Container Insight: insight/user-guide/scenario-insight/container.md
+          - Scenario Insight:
+              - Service Insight: insight/user-guide/scenario-insight/service.md
+              - Service Topology: insight/user-guide/scenario-insight/topology.md
           - Data Query:
-              - Log Query: insight/user-guide/04dataquery/logquery.md
-              - Metric Query: insight/user-guide/04dataquery/metricquery.md
-              - Trace Query: insight/user-guide/04dataquery/tracequery.md
+              - Log Query: insight/user-guide/data-query/log.md
+              - Metric Query: insight/user-guide/data-query/metric.md
+              - Trace Query: insight/user-guide/data-query/trace.md
           - Alert Center:
-              - Alert Rules: insight/user-guide/05alertcenter/alertrule.md
-              - Notifications: insight/user-guide/05alertcenter/message.md
-              - Message Template: insight/user-guide/05alertcenter/messagetemplate.md
+              - Alert Rules: insight/user-guide/alert-center/alert-rule.md
+              - Notification Config: insight/user-guide/alert-center/message.md
+              - Message Template: insight/user-guide/alert-center/message-template.md
           - Data Collection:
-              - Collection Management: insight/user-guide/07collectionmanag/collectionmanag.md
-              - Service Monitor: insight/user-guide/07collectionmanag/servicemonitor.md
-              - Enable Logging: insight/faq/collectauditlog.md
+              - Collection Management: insight/user-guide/collection-manag/collection-manag.md
+              - Service Monitor: insight/user-guide/collection-manag/service-monitor.md
+              - Collection Metrics: insight/faq/service-monitor.md
+              - insight-agent Status: insight/user-guide/quickstart/agent-status.md
           - System Config:
-              - System Config: insight/user-guide/08systemconfig/systemconfig.md
-              - Modify Config: insight/user-guide/08systemconfig/modifyconfig.md
-          - Permissions: insight/user-guide/permission.md
-          - FAQs:
-              - Import Custom Dashboard: insight/faq/importdashboard.md
-              - Enable Audit Logs: insight/faq/collectauditlog.md
-              - Log Troubleshooting: insight/faq/debuglog.md
-              - Trace Troubleshooting: insight/faq/debugtrace.md
-              - Install insight-agent with DCE 4.0: insight/faq/installagentindce.md
-              - Metrics to Capture: insight/faq/servicemonitor.md
-          - Best Practices:
-              - Prometheus Resource Planning: insight/best-practice/prometheus-res.md
-              - vmstorage Disk Planning: insight/best-practice/vms-res-plan.md
-              - Modify vmstorage Disk: insight/best-practice/modify-vms-disk.md
-      - Workbench:
+              - System Components: insight/user-guide/system-config/system-component.md
+              - System Config: insight/user-guide/system-config/system-config.md
+              - Modify Config: insight/user-guide/system-config/modify-config.md
+          - FAQ:
+              - Clock Skew of Trace Data: insight/faq/traceclockskew.md
+              - Alert Notification Flow: insight/faq/alertnotification.md
+          - Best Practice:
+              - Collect Container Log with Sidecar: insight/best-practice/tailing-sidecar.md
+              - Log Collection Troubleshooting: insight/faq/debug-log.md
+              - Trace Collection Troubleshooting: insight/faq/debug-trace.md
+      - App Workbench:
           - Intro:
               - What is Workbench?: amamba/intro/WhatisAmamba.md
               - Features: amamba/intro/Features.md
@@ -262,34 +298,41 @@ nav:
           - Policies:
               - PropagationPolicy: kairship/07policy/propagationpolicy.md
               - OverridePolicy: kairship/07policy/overridepolicy.md
-      - Microservie Engine:
+      - Microservice Engine:
           - Intro:
-              - Features: skoala/intro/features.md
+              - Feature Overview: skoala/intro/what.md
               - Scenarios: skoala/intro/scenarios.md
-              - Benefits: skoala/intro/advantages.md
-              - Env Requirements: skoala/intro/components.md
+              - Advantages: skoala/intro/advantages.md
               - Release Notes: skoala/intro/release-notes.md
-          - Quickstart:
-              - Install microservice engine: skoala/quickstart/install.md
-              - Offline upgrade microservice engine: skoala/quickstart/offline-upgrade.md
+          - Quick Start:
+              - Install: skoala/quickstart/install.md
+              - Online Upgrade: skoala/quickstart/online-upgrade.md
+              - Offline Upgrade: skoala/quickstart/offline-upgrade.md
               - Select Workspace: skoala/quickstart/select-workspace.md
-          - Select Workspace: skoala/select-workspace.md
-          - Microservice:
-              - Hosted Registry:
+          - Microservice Governance:
+              - Managed Registry:
                   - Registry Management:
-                      - Create: skoala/registry/managed/registry-lcm/create-registry.md
-                      - Update: skoala/registry/managed/registry-lcm/update-registry.md
-                      - View: skoala/registry/managed/registry-lcm/check-registry.md
-                      - Delete: skoala/registry/managed/registry-lcm/delete-registry.md
+                      - Create Registry: skoala/registry/managed/registry-lcm/create-registry.md
+                      - Update Registry: skoala/registry/managed/registry-lcm/update-registry.md
+                      - Check Registry: skoala/registry/managed/registry-lcm/check-registry.md
+                      - Delete Registry: skoala/registry/managed/registry-lcm/delete-registry.md
                   - Microservice Namespace: skoala/registry/managed/namespace.md
                   - Microservice List:
-                      - skoala/registry/managed/servicelist/intro.md
-                      - Governance Policy: skoala/registry/managed/servicelist/governance-policy.md
-                  - Microservice Config: skoala/registry/managed/configcenter.md
-                  - Plugins:
+                      - Intro: skoala/registry/managed/servicelist/intro.md
+                      - Microservice Details: skoala/registry/managed/servicelist/check-details.md
+                  - Microservice Governance:
+                      - Sentinel Specification: skoala/registry/managed/governance/connect-sentinel.md
+                      - Ruls: skoala/registry/managed/governance/governance-policy.md
+                      - Flow Control: skoala/registry/managed/governance/flow-control.md
+                  - Microservice Configuration List: skoala/registry/managed/configcenter.md
+                  - Monitoring:
+                      - Microservices: skoala/registry/managed/monitor/microservices.md
+                      - Components: skoala/registry/managed/monitor/components.md
+                      - Traces: skoala/registry/managed/monitor/traces.md
+                  - Plugin Center:
                       - skoala/registry/managed/plugins/plugin-center.md
-                      - Enable Sentinel: skoala/registry/managed/plugins/sentinel.md
-                      - Enable Mesh: skoala/registry/managed/plugins/mesh.md
+                      - Sentinel Governance: skoala/registry/managed/plugins/sentinel.md
+                      - Mesh Governance: skoala/registry/managed/plugins/mesh.md
               - Integrated Registry:
                   - Integrate Registry: skoala/registry/integrated/integrate-registry.md
                   - Update Registry: skoala/registry/integrated/update-registry.md
@@ -298,34 +341,36 @@ nav:
                   - Microservice Governance: skoala/registry/integrated/traffic-control.md
                   - Traces: skoala/registry/integrated/trace.md
           - Microservice Gateway:
-              - Gateways:
-                  - Create: skoala/ms-gateway/gateway/create-gateway.md
-                  - View: skoala/ms-gateway/gateway/check-details.md
-                  - Update: skoala/ms-gateway/gateway/update-gateway.md
-                  - Diagnosis: skoala/ms-gateway/gateway/diagnose-gateway.md
-                  - Remove: skoala/ms-gateway/gateway/delete-gateway.md
+              - Gateway Management:
+                  - Create Gateway: skoala/ms-gateway/gateway/create-gateway.md
+                  - Check Gateway: skoala/ms-gateway/gateway/check-details.md
+                  - Update Gateway: skoala/ms-gateway/gateway/update-gateway.md
+                  - Delete gateway: skoala/ms-gateway/gateway/delete-gateway.md
               - API Management:
                   - Add API: skoala/ms-gateway/api/add-api.md
                   - Update API: skoala/ms-gateway/api/update-api.md
-                  - Configure API Policy: skoala/ms-gateway/api/api-policy.md
-                  - Remove API: skoala/ms-gateway/api/delete-api.md
-              - Service Integration:
-                  - Manually Integrate: skoala/ms-gateway/service/manual-integrate.md
-                  - Auto Manage: skoala/ms-gateway/service/auto-manage.md
+                  - API Policy: skoala/ms-gateway/api/api-policy.md
+                  - Delete API: skoala/ms-gateway/api/delete-api.md
+              - Service Management:
+                  - Manual Add: skoala/ms-gateway/service/manual-integrate.md
+                  - Auto Add: skoala/ms-gateway/service/auto-manage.md
+              - Monitoring & Alarming: skoala/ms-gateway/alert.md
               - Logs:
                   - Request Logs: skoala/ms-gateway/logs/reqlog.md
                   - Instance Logs: skoala/ms-gateway/logs/inslog.md
-              - Domain Names:
-                  - Add DN: skoala/ms-gateway/domain/add-domain.md
-                  - Update DN: skoala/ms-gateway/domain/update-domain.md
-                  - Configure DN Policy: skoala/ms-gateway/domain/domain-policy.md
-                  - Delete DN: skoala/ms-gateway/domain/delete-domain.md
+              - Domain Management:
+                  - Add Domain: skoala/ms-gateway/domain/add-domain.md
+                  - Update Domain: skoala/ms-gateway/domain/update-domain.md
+                  - Configure Domain Policy: skoala/ms-gateway/domain/domain-policy.md
+                  - Delete Domain: skoala/ms-gateway/domain/delete-domain.md
           - Best Practices:
-              - Experience microservice: skoala/best-practice/use-skoala-01.md
-          - References:
+              - Complete Process of Microservice Governance: skoala/best-practice/use-skoala-01.md
+              - Microservice Gateway JWT: skoala/best-practice/jwt.md
+              - Microservice Gateway Authentication Server: skoala/best-practice/auth-server.md
+          - General Reference:
               - Microservice: reference/basic-knowledge/microservice.md
-              - Service Registry: reference/basic-knowledge/registry.md
-              - Gateway: reference/basic-knowledge/gateway.md
+              - Registry: reference/basic-knowledge/registry.md
+              - Cloud Native Gateway: reference/basic-knowledge/gateway.md
       - Service Mesh:
           - Intro:
               - What is service mesh: mspider/intro/what.md
@@ -640,25 +685,27 @@ nav:
       - 202208 | Multicloud Orchestration Capabilities: blogs/kairship.md
       - 202207 | Service Mesh Capabilities: blogs/mspider.md
       - 202206 | DCE Dev Background: blogs/blog00.md
+  - Download:
+      - DaoCloud Enterprise 5.0:
+          - Index: download/dce5.md
+          - Download DCE 5.0 Community Releases: download/free/dce5-installer-v0.7.0.md
+          - Download DCE 5.0 Commercial Releases: download/business/dce5-installer-v0.7.0.md
+          - Modules and Addons:
+              - Download Addon Offline Package: download/addon/v0.6.0.md
+              - Download Global Management: download/modules/ghippo.md
+              - Download Insight: download/modules/insight.md
+              - Download Spidernet: download/modules/spidernet.md
   - DaoCloud Ecosystem:
       - Index: community/index.md
-      - CloudTTY: community/cloudtty.md
+      - cloudtty: community/cloudtty.md
       - Clusterpedia: community/clusterpedia.md
       - Ferry: community/ferry.md
       - HwameiStor: community/hwameistor.md
       - KLTS: community/klts.md
       - Kubean: community/kubean.md
-      - kwok: community/kwok.md
+      - KWOK: community/kwok.md
       - Merbridge: community/merbridge.md
       - Spiderpool: community/spiderpool.md
-  - Download:
-      - DaoCloud Enterprise 5.0:
-          - Index: download/dce5.md
-          - Download Community Release: download/free/dce5-installer-v0.6.0.md
-          - Download Commercial Release: download/business/dce5-installer-v0.6.0.md
-          - Download Addons: download/addon/v0.5.2.md
-          - Download Global Management: download/modules/ghippo.md
-          - Download Insight: download/modules/insight.md
   - Cloud Native Institute:
       - Cloud Native News: native/news.md
       - Business Products: native/commerce.md

@@ -8,7 +8,7 @@ hide:
 The application workbench pipeline supports custom creation, and you can visually arrange the pipeline through the pipeline created in this way.
 
 You need to create a workspace and a user who must be invited to the workspace and given the `workspace edit` role.
-Refer to [Create Workspace](../../../ghippo/user-guide/02Workspace/Workspaces.md), [Users and Roles](../../../ghippo/user-guide/01UserandAccess/User.md).
+Refer to [Create Workspace](../../../ghippo/user-guide/workspace/Workspaces.md), [Users and Roles](../../../ghippo/user-guide/access-control/User.md).
 
 The specific operation steps are as follows:
 

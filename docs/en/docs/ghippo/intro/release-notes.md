@@ -2,6 +2,41 @@
 
 This page lists the Release Notes for global management of each version, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-04-28
+
+### v0.16.1
+
+#### Fix
+
+- Fix the problem of high CPU usage caused by infinite loop
+- Fixed the problem of incomplete export of audit logs
+
+## 2023-04-27
+
+### v0.16.0
+
+#### Features
+
+- LDAP support for AD
+- LDAP supports more parameters
+- Support modifying the background image of the landing page
+- Support the modification of filing information at the bottom of the home page and login page (update/display)
+- Helm parameter format modification for database connection
+- Access Management - Access Client API (Create/View/List/Update/Delete)
+- Reverse generation URL supports adding Path in front
+- The Audit Log SDK directly calls the AuditServer API
+- Audit log user and system audits are divided into table storage and API access
+- Remove the dependency of API Server accessing the external network
+
+#### Optimization
+
+- When creating a custom role, filter permissions that do not exist
+- Simplified audit log database partition function
+
+#### Fix
+
+- Fixed the wrong display of custom character types
+
 ## 2023-03-29
 
 ### v0.15.0
@@ -179,7 +214,7 @@ Release date: 2022-9-25
 - **NEW** Keycloak High Availability
 - **Add** mail server configuration -> support Insight and application workbench to send mail
 - **NEW** Meet the Helm specification, support installer and offline
-- **Added** [About Platform](../user-guide/04PlatformSetting/about.md), [Audit Log](../user-guide/03AuditLog.md), [Access Key](../04UserGuide/ 06PersonalCenter/Password.md), [Language Settings]../user-guide/06PersonalCenter/Language.mdd), [Security Settings]../user-guide/06PersonalCenter/SecuritySetting.mdd) and other documents
+- **Added** [About Platform](../user-guide/platform-setting/about.md), [Audit Log](../user-guide/audit-log.md), [Access Key](../04UserGuide/ 06PersonalCenter/Password.md), [Language Settings]../user-guide/06PersonalCenter/Language.mdd), [Security Settings]../user-guide/06PersonalCenter/SecuritySetting.mdd) and other documents
 
 ## v0.8
 
@@ -194,7 +229,7 @@ Release date: 2022-8-21
 - **NEW** Workspace -> Shared Cluster Authority Management.
 - **NEW** Workspace -> Shared Cluster Quota Management -> Storage
 - **NEW** Platform Settings -> Top Navigation Appearance Customization -> Reset Function
-- **NEW** Added new pages on the documentation site: [Identity Provider](../user-guide/01UserandAccess/idprovider.md), [Mail Server Settings](../user-guide/04PlatformSetting/MailServer.md), [ Appearance Customization](../user-guide/04PlatformSetting/Appearance.md), [LDAP](../user-guide/01UserandAccess/ldap.md), [OIDC](../user-guide/01UserandAccess/oidc.md)
+- **NEW** Added new pages on the documentation site: [Identity Provider](../user-guide/access-control/idprovider.md), [Mail Server Settings](.../user-guide/platform-setting/MailServer.md, [ Appearance Customization](.../user-guide/platform-setting/Appearance.md, [LDAP](../user-guide/access-control/ldap.md), [OIDC](../user-guide/access-control/oidc.md)
 
 ## v0.7
 
@@ -208,7 +243,7 @@ Release date: 2022-7-23
 - **New** Identity Provider -> LDAP Connection -> User/group Synchronization Settings (Create/Edit/Delete/View/Sync)
 - **NEW** Platform Settings -> Security Policy -> Password Policy Settings
 - **Optimize** workspace -> code structure adjustment
-- **NEW** Added new pages on the document site: [Create group and Authorize](../user-guide/01UserandAccess/Group.md), [group](../user-guide/01UserandAccess/Group.md), [Login](../user-guide/00Login.md), [Password Reset](../user-guide/password.md), [Global Admin Roles](../user-guide/01UserandAccess/global.md), [Resources Management (by Workspace)](../user-guide/02Workspace/wsbp.md), [Resource Management (by Role)](../user-guide/02Workspace/quota.md)
+- **NEW** Added new pages on the document site: [Create group and Authorize](../user-guide/access-control/Group.md), [group](../user-guide/access-control/Group.md), [Login](../user-guide/00Login.md), [Password Reset](../user-guide/password.md), [Global Admin Roles](../user-guide/access-control/global.md), [Resources Management (by Workspace)](../../user-guide/workspace/wsbp.md[Resource Management (by Role)](../../user-guide/workspace/quota.md
 
 ## v0.6
 
@@ -225,7 +260,7 @@ Release date: 2022-6-21
 - **NEW** Added About -> Technical Team (List/Initialize)
 - **NEW** License -> Lifecycle Management (Create/Edit/Delete/View/List)
 - **Added** License -> Get ESN serial number
-- **NEW** Added new pages in the documentation site: [Common Terminology](glossary.md), [Function Overview](Features.md), [Quick Start/Create User and Authorization](../user-guide/01UserandAccess/User.md), [What is User Access and Control](../user-guide/01UserandAccess/iam.md), [User](../04UserGuide/01UserandAccess/User.md )
+- **NEW** Added new pages in the documentation site: [Common Terminology](glossary.md), [Function Overview](features.md), [Quick Start/Create User and Authorization](../user-guide/access-control/User.md), [What is User Access and Control](../user-guide/access-control/iam.md), [User](../04UserGuide/01UserandAccess/User.md )
 
 ## v0.5
 

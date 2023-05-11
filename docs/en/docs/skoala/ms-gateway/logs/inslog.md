@@ -1,23 +1,25 @@
-# instance log
+# Instance log
 
-The microservice gateway supports viewing request logs and instance logs. This page describes how to view instance logs and related operations when viewing logs.
+The microservice gateway supports viewing request logs and instance logs. This page describes how to view instance logs and how to view logs.
 
-## view mode
+## Viewing mode
 
-Click the name of the target gateway to enter the gateway overview page, and then click `Log View`->`Instance Log` in the left navigation bar.
+Click the name of the target gateway to enter the gateway overview page, and then click `Check Logs` -> `Instance Logs` in the left navigation bar.
 
-<!--Update screenshot-->
+<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-## Related operations
+## Related operation
 
-- Filtering logs: support filtering instances to view only the logs of a certain container group, or refer to [KQL syntax](https://www.elastic.co/guide/en/kibana/current/kuery-query.html) to enter directly Keywords to find specific content.
 
-- Limited time range: The log time range can be selected: logs of the last 5 minutes, logs of the last 1 hour, logs of the last 12 hours, logs of the last 7 days, or a custom time range.
+- Filtering logs: support filtering instances to view only the logs of a certain pod, or refer to [KQL syntax](https://www.elastic.co/guide/en/kibana/current/kuery-query.html) to enter directly Keywords to find specific content.
 
-- Auto Refresh: When viewing logs, turn on `Auto Refresh` to view real-time logs.
+- Time range: The log time range can be set to the latest 5 minutes, the latest 1 hour, the latest 12 hours, or the latest 7 days, or a user-defined time range.
 
-<!--Supplementary Screenshot-->
+- Automatic refresh: When viewing logs, enable `Auto Refresh` to view real-time logs.
+
+<! -- Add screenshots -->
 
 !!! info
 
-    If you want to view more logs or download logs, you can go to [Observability Module](../../../insight/intro/WhatisInsight.md) through [Log Query](../../.. /insight/06UserGuide/04dataquery/logquery.md) function to query or download logs of a specific cluster, namespace, workload, or container group.
+    If you want to view more logs or download logs, you can go to [Observability Module](../../../insight/intro/what.md) through [Log Query](../../../insight/06UserGuide/04dataquery/logquery.md) function to query or download logs of a specific cluster, namespace, workload, or pod.
+

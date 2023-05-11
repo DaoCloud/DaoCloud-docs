@@ -209,7 +209,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [containerd container runtime v1.7.0 released (CNCF project)](https://github.com/containerd/containerd/releases/tag/v1.7.0)
 
-     Release features: New Sandbox API to simplify management of higher-level container groups and provide new extension points for shim implementations and clients; New Transfer Service for transferring artifact objects between sources and targets; Support for extending the scope of the Node Resource Interface NRI to enable common pluggable runtime extensions; Added support for CDI device injection; Added support for cgroups blockio for enhanced restart manager; Added restart policy for enhanced restart manager; Added support for cgroups blockio for enhanced restart manager. support; support for cgroups blockio; add reboot policies for enhanced reboot manager; initial support for gRPC shim.
+     Release features: New Sandbox API to simplify management of higher-level pods and provide new extension points for shim implementations and clients; New Transfer Service for transferring artifact objects between sources and targets; Support for extending the scope of the Node Resource Interface NRI to enable common pluggable runtime extensions; Added support for CDI device injection; Added support for cgroups blockio for enhanced restart manager; Added restart policy for enhanced restart manager; Added support for cgroups blockio for enhanced restart manager. support; support for cgroups blockio; add reboot policies for enhanced reboot manager; initial support for gRPC shim.
 
 - [containerd completes fuzzy test audit](https://mp.weixin.qq.com/s/IUgdPaT6OAhPW5uCPlteEA)
 

@@ -1,42 +1,41 @@
 ---
 hide:
-  - toc
+  - heel
 ---
 
-# Microservice Management
+# Microservice management
 
-After [connecting to the registry](integrate-registry.md), the microservices in it can be managed through the registry. Microservice management mainly refers to viewing the microservices under the registration center,
+After [integrating a registry](integrate-registry.md), you can manage the microservices in the registry. Microservice management refers to viewing the microservices in the registry.
 
 !!! note
 
-    Access-type registries only support basic management operations. For more complex management scenarios, it is recommended to create a [managed registry](../managed/registry-lcm/create-registry.md) to perform more advanced operations.
 
-1. On the `Access Registry List` page, click the name of the target registry.
+1. Click the name of the target registry on the `In` page.
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-2. Click `Microservice Management` on the left navigation bar to view the microservice list and basic information.
+2. Click `Microservice Management` in the left navigation bar to view the list of micro-services and basic information.
 
-    On the current page, you can copy the name of the microservice, and you can view all microservices under the current registration center, as well as the namespace, instance status, and request statistics of each microservice.
+    On the current page, you can copy the name of the micro-service and view all micro-services in the current registry, as well as the namespace, instance, and request statistics of each micro-service.
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-3. Click the name of the microservice to view the instance list, interface list, monitoring information, etc. of the microservice.
+3. Click the name of the micro-service to view the instance list, interface list, and monitoring information of the micro-service.
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-    - Instance list: View instance status, IP address, service port, etc.
+    - Instance list: Displays instance status, IP address, and service port.
 
-        Click the instance name to further view the monitoring information and metadata of the instance.
+        You can click the instance name to view the monitoring information and metadata of the instance.
 
-        
+        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-    - Interface list: view the interfaces that the microservice already has, or create new interfaces.
+    - Interface list: View the existing interfaces of the microservice, or create a new interface.
 
-        
+        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-    - Monitoring information: View the monitoring information of microservices, including the number of requests, error rate, response time, request rate, etc.
+    - Monitoring information: Displays monitoring information about the micro-service, including the number of requests, error rate, response time, and request rate.
 
-        Support custom time range.
+        User-defined time range is supported.
 
-        
+        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
