@@ -7,7 +7,7 @@ hide:
 
 DaoCloud Enterprise 5.0 is a high-performance, scalable cloud-native operating system. It can provide a consistent and stable experience in any infrastructure and environment, supporting heterogeneous clouds, edge clouds, and multi-cloud orchestration. DCE 5.0 integrates the latest service mesh and microservice technologies, which can track the entire lifecycle of each traffic, help you understand the detailed metrics of clusters, nodes, applications, and services, and visualize the health status of applications through dynamic dashboards and topology maps.
 
-DCE 5.0 natively supports the DevOps development and operation mode, which can realize the standardization and automation of the entire application delivery process, and integrates various selected databases and middleware to make operation and maintenance governance more efficient. Each product module is independently decoupled, supports flexible upgrades, has no impact on business, and can be docked with many cloud-native ecological products to provide a complete solution system. It has been tested in production scenarios by nearly a thousand industry customers, building a solid and reliable digital foundation, helping enterprises define digital boundaries, and unleashing cloud-native productivity.
+DCE 5.0 natively supports the DevOps development and operation mode, which can realize the standardization and automation of the entire app delivery process, and integrates various selected databases and middleware to make operation and maintenance governance more efficient. Each product module is independently decoupled, supports flexible upgrades, has no impact on business, and can be docked with many cloud-native ecological products to provide a complete solution system. It has been tested in production scenarios by nearly a thousand industry customers, building a solid and reliable digital foundation, helping enterprises define digital boundaries, and unleashing cloud-native productivity.
 
 <div class="grid cards" markdown>
 
@@ -52,7 +52,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
      Provides non-intrusive traffic management functions, supports non-sensing access to traditional microservices, cloud-native microservices, and open source microservice frameworks, and realizes the integrated management of existing microservice systems and old and new microservice systems of enterprises.
      Support the full life cycle management of microservices from development, deployment, access, observation, operation and maintenance, provide high-performance cloud-native microservice gateways, and ensure the continuous availability of microservice applications; introduce the independent open source eBPF mesh acceleration technology to comprehensively improve Traffic forwarding efficiency.
 
-     **Related modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Microservice Engine](../skoala/intro/what.md), [Service Mesh](../mspider/intro/what.md), [Observability](../insight/intro/what.md), [Application Workbench ](../amamba/intro/what.md), [Cloud Native Network](../network/intro/what.md), [Cloud Native Storage](../storage/what.md)
+     **Related modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Microservice Engine](../skoala/intro/what.md), [Service Mesh](../mspider/intro/what.md), [Observability](../insight/intro/what.md), [App Workbench](../amamba/intro/what.md), [Cloud Native Network](../network/intro/what.md), [Cloud Native Storage](../storage/what.md)
 
     ![microservie engine](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/03msgov.jpg)
 
@@ -71,14 +71,14 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
      Include software products from ecological partners in ten major fields such as big data, AI, middleware, realize the integration of ecological technology, products, operation services and other capabilities, provide out-of-the-box ecological application software, and create a complete solution system.
 
-     **Related modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Cloud Native Network](../network/intro/what.md), [cloud native storage](../storage/what.md), application store, product ecology
+     **Related modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Cloud Native Network](../network/intro/what.md), [cloud native storage](../storage/what.md), app store, product ecology
 
 === "App Delivery"
 
-     Realize self-service migration to the cloud through a consistent and scalable application delivery process, support flexible tenant systems, dynamically adapt to user organizational structure planning and real-time resource allocation, based on cloud-native CI/CD pipelines, integrate rich tool chains and support pipelines Efficient concurrent execution flow,
+     Realize self-service migration to the cloud through a consistent and scalable app delivery process, support flexible tenant systems, dynamically adapt to user organizational structure planning and real-time resource allocation, based on cloud-native CI/CD pipelines, integrate rich tool chains and support pipelines Efficient concurrent execution flow,
      Automate the construction and deployment of applications, innovatively introduce Gitops and progressive delivery capability systems, and achieve more refined management and operation of applications.
 
-     **Modules involved**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Application Workbench](../amamba/intro/what.md), [container registry](../kangaroo/what.md), [cloud native network](../network/intro/what.md), [cloud native storage](../storage/what.md)
+     **Modules involved**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [App Workbench](../amamba/intro/what.md), [container registry](../kangaroo/what.md), [cloud native network](../network/intro/what.md), [cloud native storage](../storage/what.md)
 
     ![app delivery](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/06appdeliv.jpg)
 
@@ -93,7 +93,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
 === "Cloud to Edge Continuum"
 
-     Extend the cloud-native capabilities to the edge, adopt the edge cluster and edge node mode, move the computing power of the data center down, and move up the computing power of the end device, and unify the control and scheduling of discrete and heterogeneous computing resources to solve the problem of massive edge and end devices. Unify the requirements of large-scale application delivery, operation and maintenance, and management and control on the Internet, and realize the true integration of cloud and edge.
+     Extend the cloud-native capabilities to the edge, adopt the edge cluster and edge node mode, move the computing power of the data center down, and move up the computing power of the end device, and unify the control and scheduling of discrete and heterogeneous computing resources to solve the problem of massive edge and end devices. Unify the requirements of large-scale app delivery, operation and maintenance, and management and control on the Internet, and realize the true integration of cloud and edge.
 
      **Related modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Cluster Lifecycle Management](../community/kubean.md), [cloud native network](../network/intro/what.md), [cloud native storage](../storage/what.md), weak network cluster
 

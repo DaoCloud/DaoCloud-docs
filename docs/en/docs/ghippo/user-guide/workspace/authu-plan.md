@@ -29,7 +29,7 @@ click authu "https://docs.daocloud.io/en/ghippo/04UserGuide/02Workspace/wspermis
 
 After authorization, the permissions of ordinary users in each module are:
 
-- [Application Workbench](../../permissions/amamba.md)
+- [App Workbench](../../permissions/amamba.md)
 - [Microservice Engine](../../permissions/skoala.md)
 - [Service Mesh](../../permissions/mspider.md) (need to repeat 2 - 4 to prepare mesh/mesh namespace and bind to workspace)
 - [Observability](../../../insight/user-guide/permission.md)

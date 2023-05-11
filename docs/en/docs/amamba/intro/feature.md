@@ -5,7 +5,7 @@ hide:
 
 # Features
 
-Application Workbench provides the following functions.
+App Workbench provides the following functions.
 
 - Application management
 

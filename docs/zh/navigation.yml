@@ -428,7 +428,7 @@ nav:
               - 适用场景: mspider/intro/scenarios.md
               - UI 支持的特性: mspider/intro/meshes.md
               - 服务网格权限说明: ghippo/permissions/mspider.md
-              - 网格架构: mspider/intro/architecture.md
+              - 网格架构: mspider/intro/architect.md
               - 网格控制面组件: mspider/intro/cp-component.md
               - 常见问题: mspider/intro/faq.md
               - Release Notes: mspider/intro/release-notes.md

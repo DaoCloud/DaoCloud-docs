@@ -110,7 +110,7 @@ nav:
       - Global Management:
           - Intro:
               - What is Global Management: ghippo/intro/what.md
-              - Features: ghippo/intro/features.md
+              - Features: ghippo/intro/feature.md
               - Glossary: ghippo/intro/glossary.md
               - Release Notes: ghippo/intro/release-notes.md
           - Install, Login, and Upgrade:
@@ -239,39 +239,39 @@ nav:
               - Trace Collection Troubleshooting: insight/faq/debug-trace.md
       - App Workbench:
           - Intro:
-              - What is Workbench?: amamba/intro/WhatisAmamba.md
-              - Features: amamba/intro/Features.md
-              - Benefits: amamba/intro/Benefits.md
-              - Scenarios: amamba/intro/Scenarios.md
-              - Concepts: amamba/intro/Concepts.md
+              - What is Workbench?: amamba/intro/what.md
+              - Features: amamba/intro/feature.md
+              - Benefits: amamba/intro/benefit.md
+              - Scenarios: amamba/intro/scenarios.md
+              - Concepts: amamba/intro/concept.md
               - Release Notes: amamba/intro/release-notes.md
-          - Namespaces: amamba/03UserGuide/Namespace/namespace.md
+          - Namespaces: amamba/user-guide/Namespace/namespace.md
           - Wizard:
-              - Create App with Git Repo: amamba/03UserGuide/wizard/create-git-based-ms.md
+              - Create App with Git Repo: amamba/user-guide/wizard/create-git-based-ms.md
           - Pipeline:
-              - Custome Pipeline: amamba/03UserGuide/Pipeline/createpipelinebyself.md
-              - Create a Pipeline by Jenkinsfile: amamba/03UserGuide/Pipeline/createpipelinebyjenkins.md
-              - Edit Pipeline with GUI: amamba/03UserGuide/Pipeline/graphicaleditingpipeline.md
-              - Trigger and Pipeline: amamba/03UserGuide/Pipeline/PipelineTrigger.md
-              - Manually Run Pipeline: amamba/03UserGuide/Pipeline/PipelineHand.md
-              - Credential: amamba/03UserGuide/Pipeline/Credential.md
+              - Custome Pipeline: amamba/user-guide/Pipeline/createpipelinebyself.md
+              - Create a Pipeline by Jenkinsfile: amamba/user-guide/Pipeline/createpipelinebyjenkins.md
+              - Edit Pipeline with GUI: amamba/user-guide/Pipeline/graphicaleditingpipeline.md
+              - Trigger and Pipeline: amamba/user-guide/Pipeline/PipelineTrigger.md
+              - Manually Run Pipeline: amamba/user-guide/Pipeline/PipelineHand.md
+              - Credential: amamba/user-guide/Pipeline/Credential.md
               - Pipeline Args:
-                  - Pipeline Concepts: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineConcept.md
-                  - Job Template args in GUI: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineStep.md
-                  - Pipeline Agent: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineAgent.md
+                  - Pipeline Concepts: amamba/user-guide/Pipeline/PipelineConfig/PipelineConcept.md
+                  - Job Template args in GUI: amamba/user-guide/Pipeline/PipelineConfig/PipelineStep.md
+                  - Pipeline Agent: amamba/user-guide/Pipeline/PipelineConfig/PipelineAgent.md
           - GitOps:
-              - Manually Sync with App: amamba/03UserGuide/gitops/sync-manually.md
-              - Import Repo: amamba/03UserGuide/gitops/import-repo.md
-              - Create Argo CD App: amamba/03UserGuide/gitops/create-argo-cd.md
-              - Argo CD App Status: amamba/03UserGuide/gitops/argo-cd-status.md
+              - Manually Sync with App: amamba/user-guide/gitops/sync-manually.md
+              - Import Repo: amamba/user-guide/gitops/import-repo.md
+              - Create Argo CD App: amamba/user-guide/gitops/create-argo-cd.md
+              - Argo CD App Status: amamba/user-guide/gitops/argo-cd-status.md
           - Workbench Permissions: ghippo/permissions/amamba.md
           - Best Practice:
-              - Quickly Create Pipeline: amamba/02QuickStart/deploypipline.md
-              - Scan Code with Pipeline: amamba/02QuickStart/scan-with-pipeline.md
-              - Scan Images with Managed Harbor: amamba/02QuickStart/scan-with-harbor.md
+              - Quickly Create Pipeline: amamba/quickstart/deploypipline.md
+              - Scan Code with Pipeline: amamba/quickstart/scan-with-pipeline.md
+              - Scan Images with Managed Harbor: amamba/quickstart/scan-with-harbor.md
       - Multicloud Orchestration:
           - Intro:
-              - What is Multicloud Orchestration: kairship/intro/whatiskairship.md
+              - What is Multicloud Orchestration: kairship/intro/what.md
               - Features: kairship/intro/features.md
               - Architecture: kairship/intro/architecture.md
               - Benefits: kairship/intro/benefits.md
@@ -378,7 +378,7 @@ nav:
               - Scenarios: mspider/intro/scenarios.md
               - Features supported on UI: mspider/intro/meshes.md
               - Permissions: ghippo/permissions/mspider.md
-              - Architecture: mspider/intro/architecture.md
+              - Architecture: mspider/intro/architect.md
               - FAQs: mspider/intro/faq.md
               - Release Notes: mspider/intro/release-notes.md
           - Install, config, and upgrade:

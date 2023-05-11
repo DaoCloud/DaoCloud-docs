@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# system structure
+# System structure
 
 The service mesh product has the ability of multi-mesh management and multi-cluster service aggregation governance; users can connect clusters from different sources to the mesh in a multicloud environment for unified traffic management and security management.
 
@@ -26,13 +26,13 @@ In terms of overall architecture, service mesh products can be divided into thre
 
     The actual working cluster in a mesh contains the basic components of Istio, but it will not be used as a control plane. It only provides a mode similar to a management agent, which is mainly responsible for sidecar injection, certificate forwarding, xDS forwarding and other services. Synchronize policies and service registration information from MCPC and send them to the business sidecar of the cluster.
 
-The expansion modules that run through the overall architecture mainly include: observation module, microservice platform/application workbench
+The expansion modules that run through the overall architecture mainly include: observation module, microservice platform/App Workbench
 
 - Observation module
 
     Observability is completely handled by Insight. The service mesh obtains traffic indicator information to draw a topology map through interface calls, and directly calls Istio's native grafana to provide users with various indicator charts.
 
-- Microservice Platform/Application Workbench
+- Microservice Platform/App Workbench
 
     The microservice platform can empower its microservices with mesh capabilities through the mesh, which is convenient for users to conduct unified management of various microservice systems through a single platform.
 

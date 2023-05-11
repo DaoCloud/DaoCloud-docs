@@ -1,6 +1,6 @@
 # Create the Argo CD application
 
-Application Workbench is based on open source software [Argo CD](https://argo-cd.readthedocs.io/en/stable/) for continuous deployment. This page demonstrates how to implement continuous deployment of applications.
+App Workbench is based on open source software [Argo CD](https://argo-cd.readthedocs.io/en/stable/) for continuous deployment. This page demonstrates how to implement continuous deployment of applications.
 
 ## Prerequisites
 
@@ -10,7 +10,7 @@ Application Workbench is based on open source software [Argo CD](https://argo-cd
 
 ## Create the Argo CD application
 
-1. On the `Application Workbench` -> `Continuous Release` page, click the `Create Application` button.
+1. On the `App Workbench` -> `Continuous Release` page, click the `Create Application` button.
 
     
 

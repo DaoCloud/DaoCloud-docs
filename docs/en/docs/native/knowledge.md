@@ -565,7 +565,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Application continuous delivery practice based on Flux v2 in multi-cluster scenarios](https://mp.weixin.qq.com/s/a9lRoa36tFl1_1-ESvXJpA)
 
     [Flux v2](https://github.com/fluxcd/flux2) provides a set of tools that can support the implementation of GitOps, and provides a general solution for the continuous delivery of cloud-native applications.
-    This article mainly starts from deploying cloud-native applications with differentiated configurations in multi-cluster scenarios, and introduces the practice of continuous application delivery based on Flux v2.
+    This article mainly starts from deploying cloud-native applications with differentiated configurations in multi-cluster scenarios, and introduces the practice of continuous app delivery based on Flux v2.
 
 - [Use Chain-bench to Audit Your Software Supply Chain for CIS Compliance](https://blog.aquasec.com/cis-software-supply-chain-compliance)
 
@@ -651,7 +651,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Kruise Rollout: Enabling Progressive Delivery for All Application Loads](https://mp.weixin.qq.com/s/m-r3AQMbv2IPoAAJMhReZg)
 
-    [Kruise Rollout](https://github.com/openkruise/rollouts) is the definition model of OpenKruise (Alibaba Cloud's open-source cloud-native application automation management suite) for progressive delivery abstraction, aiming to solve traffic scheduling in the field of application delivery and Batch deployment problem.
+    [Kruise Rollout](https://github.com/openkruise/rollouts) is the definition model of OpenKruise (Alibaba Cloud's open-source cloud-native application automation management suite) for progressive delivery abstraction, aiming to solve traffic scheduling in the field of app delivery and Batch deployment problem.
     It can cooperate with application traffic and canary release, blue-green release, etc. of actual deployment instances, and the release process can be automated in batches and pauses based on Prometheus Metrics, compatible with various workloads, etc.
 
 - [Prometheus long-term remote storage solution VictoriaMetrics entry practice](https://mp.weixin.qq.com/s/C3fzohygl5_tey70Qnz3og)
@@ -999,8 +999,8 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [ToB application privatization delivery technology development history and comparison](https://mp.weixin.qq.com/s/JcDZxabHImljPCEus_inlg)
 
-    In traditional application delivery, managing runtime environment and operating system differences is a pain point. The current cloud-native application delivery uses container and kubernetes-related technologies to solve this problem, but the learning and use threshold of these technologies is too high.
-    Thus, the abstracted application model becomes the next-generation solution, for example, OAM-based KubeVela application delivery and RAM-based Rainbond application delivery.
+    In traditional app delivery, managing runtime environment and operating system differences is a pain point. The current cloud-native app delivery uses container and kubernetes-related technologies to solve this problem, but the learning and use threshold of these technologies is too high.
+    Thus, the abstracted application model becomes the next-generation solution, for example, OAM-based KubeVela app delivery and RAM-based Rainbond app delivery.
 
 - [Survey on Backup and Recovery Solutions for Container Services of Domestic and Foreign Cloud Vendors](https://mp.weixin.qq.com/s/P71vBPiID8o1GI6pqbaO6w)
 

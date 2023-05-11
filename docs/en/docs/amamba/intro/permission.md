@@ -1,11 +1,11 @@
 ---
 hide:
-  - toc
+   - toc
 ---
 
 # App Workbench permission description
 
-[App Workbench](../../amamba/intro/what.md) supports three user roles:
+[App Workbench](./what.md) supports three user roles:
 
 - Workspace Admin
 - Workspace Editor
@@ -64,9 +64,9 @@ You have permission to use `&check;`, but you don't have permission to use `&cro
 | | Continue posting | &check; | &check; | &cross; |
 | | End of publication | &check; | &check; | &cross; |
 | | Update | &check; | &check; | &cross; |
-| | rollback | &check; | &check; | &cross; |
+| | rollback | &check;| &check; | &cross; |
 | | delete | &check; | &check; | &cross; |
 
 !!! note
 
-    For a complete introduction to role and access management, please refer to [Role and Access Management](../user-guide/access-control/Role.md).
+     For a complete introduction to role and permission management, please refer to [Role and permission management](../../ghippo/user-guide/access-control/role.md).

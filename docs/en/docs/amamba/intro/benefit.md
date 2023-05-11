@@ -5,7 +5,7 @@ hide:
 
 # Benefits
 
-"DaoCloud" relies on years of leading experience in the cloud-native field, and the newly developed application workbench has the following product advantages:
+DaoCloud relies on years of leading experience in the cloud-native field, and the newly developed App Workbench has the following product advantages:
 
 - Enterprise CI/CD
 
@@ -13,7 +13,7 @@ hide:
 
 - Cloud native as the base
 
-    The application workbench implements containerized management of the application build environment, customizes resources such as build machines, ensures pipeline-level resource isolation, and supports multiple types of application deployment, making the delivery of cloud-native applications easier.
+    The App Workbench implements containerized management of the application build environment, customizes resources such as build machines, ensures pipeline-level resource isolation, and supports multiple types of application deployment, making the delivery of cloud-native applications easier.
 
 - Improve R&D efficiency
 
@@ -29,7 +29,7 @@ hide:
 
     Provides Kubernetes-based declarative GitOps continuous delivery capabilities, and controls applications through versions to achieve automated application deployment and lifecycle management.
   
-- [Pipeline as Code](../02QuickStart/deploypipline.md)
+- [Pipeline as Code](../quickstart/deploypipline.md)
 
     The declarative (syntax)-based pipeline is easy to learn, the syntax of different steps is standardized, and its configuration is version-controllable, modular, reusable, and declarative.
 

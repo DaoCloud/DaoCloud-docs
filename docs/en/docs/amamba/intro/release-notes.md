@@ -1,6 +1,6 @@
 # Workbench Release Notes
 
-This page lists the Release Notes of the application workbench, so that you can understand the evolution path and feature changes of each version.
+This page lists the Release Notes of the App Workbench, so that you can understand the evolution path and feature changes of each version.
 
 ## 2022-03-31
 
@@ -59,7 +59,7 @@ This page lists the Release Notes of the application workbench, so that you can 
 
 - **Added** supports cascading deletion, and you can select resources to be deleted according to the actual situation
 - **Added** Grayscale release supports editing YAML function
-- **Added** Jenkins has been removed from the Chart package of the deployment application workbench, and Jenkins can be installed using a separate Helm Chart
+- **Added** Jenkins has been removed from the Chart package of the deployment App Workbench, and Jenkins can be installed using a separate Helm Chart
 
 #### Optimization
 

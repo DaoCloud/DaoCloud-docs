@@ -212,7 +212,7 @@ Release date: 2022-9-25
 - **Added** Product Navigation -> Homepage is only displayed for admin users
 - **Added** Workspace -> Users can only view the workspace & folder tree structure with permission
 - **Added** Keycloak High Availability
-- **Added** mail server configuration -> support Insight and application workbench to send mail
+- **Added** mail server configuration -> support Insight and App Workbench to send mail
 - **Added** Meet the Helm specification, support installer and offline
 - **Added** [About Platform](../user-guide/platform-setting/about.md), [Audit Log](../user-guide/audit-log.md), [Access Key](../04UserGuide/ 06PersonalCenter/Password.md), [Language Settings]../user-guide/06PersonalCenter/Language.mdd), [Security Settings]../user-guide/06PersonalCenter/SecuritySetting.mdd) and other documents
 
@@ -260,7 +260,7 @@ Release date: 2022-6-21
 - **Added** Added About -> Technical Team (List/Initialize)
 - **Added** License -> Lifecycle Management (Create/Edit/Delete/View/List)
 - **Added** License -> Get ESN serial number
-- **Added** Added new pages in the documentation site: [Common Terminology](glossary.md), [Function Overview](features.md), [Quick Start/Create User and Authorization](../user-guide/access-control/User.md), [What is User Access and Control](../user-guide/access-control/iam.md), [User](../04UserGuide/01UserandAccess/User.md )
+- **Added** Added new pages in the documentation site: [Common Terminology](glossary.md), [Function Overview](feature.md), [Quick Start/Create User and Authorization](../user-guide/access-control/User.md), [What is User Access and Control](../user-guide/access-control/iam.md), [User](../04UserGuide/01UserandAccess/User.md )
 
 ## v0.5
 
