@@ -49,7 +49,7 @@ ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置�
 | CPU 架构 | 操作系统版本                                        | 下载地址                                                     |
 | :------- | :-------------------------------------------------- | :----------------------------------------------------------- |
 | AMD64    | Centos 7                                            | <https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso> |
-|          | Redhat 7、8                                         | <https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451<br> />注意：Redhat 操作系统需要 Redhat 的账号才可以下载 |
+|          | Redhat 7、8                                         | <https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451> <br />注意：Redhat 操作系统需要 Redhat 的账号才可以下载 |
 |          | Ubuntu20.04                                         | <https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso> |
 |          | 统信UOS V20（1020a）                                | <https://cdimage-download.chinauos.com/uniontechos-server-20-1020a-amd64.iso> |
 |          | openEuler22.03                                      | <https://mirrors.nju.edu.cn/openeuler/openEuler-22.03-LTS-SP1/ISO/x86_64/openEuler-22.03-LTS-SP1-x86_64-dvd.iso> |
