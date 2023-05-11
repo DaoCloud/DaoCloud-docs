@@ -8,7 +8,7 @@ HwameiStor supports the use of a separate network card for data volume synchroni
      - [Configuration during operation]: If HwameiStor has been deployed, and the above configuration modification is performed later, then **will not take effect on the previously created data volume**, that is, the previous network card will be used for data volume synchronization.
      - If you need to modify the storage network cards of multiple nodes, please configure them one by one. Currently, batch configuration is not possible
 
-## prerequisites
+## Prerequisites
 
 The storage NIC planning has been completed in advance, please refer to [Network Card Planning](../../../network/plans/ethplan.md).
 

@@ -7,6 +7,52 @@ Date: 2023-04-12
 
 This page lists the Release Notes of the installer, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-4-30
+
+### v0.7.0
+
+#### Features
+
+- **Added** Added support for Other Linux to deploy DCE5.0, [Reference Documentation](os-install/otherlinux.md)
+- **Added** Added support for operating system OpenEuler 22.03
+- **Added** supports external OS Repos, [refer to cluster configuration file description](commercial/cluster-config.md)
+- **Added** supports kernel parameter tuning, [refer to cluster configuration file description](commercial/cluster-config.md)
+- **Added** support for detecting whether external ChartMuseum and MinIo services are available
+
+#### Optimization
+
+- **Optimized** Optimized the pre-verification of tar and other commands
+- **Optimized** Optimized the command line parameters of the upgrade operation
+- **Optimized** closed Kibana's access through NodePort, Insight uses ES's NodePort or VIP access
+- **Optimized** Optimized the display of concurrent logs, terminate tasks using SIGTERM signal instead of SIGKILL
+
+#### Fix
+
+- **Fixed** Fix the problem that the Kcoral heml chart cannot be found during online installation
+- **Fixed** Fix KubeConfig can't find problem when upgrading
+
+#### Known Issues
+
+- Online installation of the global cluster will fail, and the following configuration needs to be performed in the `kubeanConfig` block of clusterConfig.yaml:
+
+     ```yaml
+     kubeanConfig: |-
+       calico_crds_download_url: "https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/calico-crds-v3.25.1.tar.gz"
+     ```
+
+     At the same time, creating a working cluster online through container management also has the same problem. You need to add the above configuration in the custom parameters of the advanced configuration on the cluster creation page. The key is `calico_crds_download_url`, and the value is the value of the above calico_crds_download_url
+
+- There is a low probability that Kubean cannot create a spray-job task. Manually delete the corresponding clusteroperations CR resource and execute the installation command again
+- After deploying DCE5.0 using an external OS Repo, the working cluster cannot be created offline through container management, which can be solved by manually modifying the configmap kubean-localservice of the kubean-system namespace of the global cluster.
+   Add the following configuration under `yumRepos`, you need to fill in the external OS Repo address configured in clusterConfig.yaml in external:
+
+     ```yaml
+     yumRepos:
+       external: []
+     ```
+
+     After the modification is complete, select the new configuration for the yum source of the node configuration on the container management creation cluster page
+
 ## 2022-4-11
 
 ### v0.6.1
@@ -32,12 +78,12 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 #### Optimization
 
-- **Optimize** Decouple the code for generating offline packages and the code required for the installation process
-- **Optimize** Optimize tinder node inotify parameters
-- **Optimize** Optimize the full-mode online installation experience
-- **Optimize** optimize clusterConfig structure and configuration
-- **Optimized** Community Edition allows not to check clusterConfig format and parameters
-- **Optimize** Optimize installer execution scheduler log output
+- **Optimized** Decouple the code for generating offline packages and the code required for the installation process
+- **Optimized** Optimize bootstrapping node inotify parameters
+- **Optimized** Optimize the full-mode online installation experience
+- **Optimized** optimize clusterConfig structure and configuration
+- **Optimized** Community Release allows not to check clusterConfig format and parameters
+- **Optimized** Optimize installer execution scheduler log output
 
 #### Fix
 
@@ -60,7 +106,7 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 #### Optimization
 
-- **Optimization** Upgraded the version of pre-dependent tools
+- **Optimized** Upgraded the version of pre-dependent tools
 
 #### Fix
 
@@ -92,15 +138,15 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 #### Optimized
 
-- **Optimization** The offline package no longer includes the ISO of the operating system, which needs to be downloaded separately. In the case of pure offline, the absolute path of the ISO needs to be defined in the clusterConfig file
+- **Optimized** The offline package no longer includes the ISO of the operating system, which needs to be downloaded separately. In the case of pure offline, the absolute path of the ISO needs to be defined in the clusterConfig file
 - **Optimized** Commercial version uses Contour as default ingress-controller
 - **Optimized** MinIO supports using VIP
-- **Optimize** coredns automatically inject registry VIP analysis
-- **Optimization** Optimize the offline package production process and speed up the packaging of Docker images
+- **Optimized** coredns automatically inject registry VIP analysis
+- **Optimized** Optimize the offline package production process and speed up the packaging of Docker images
 - **Optimized** Optimized the offline package size
 - **Optimized** infrastructure support 1.25: upgrade redis-operator, eck-operator, hwameiStor
 - **optimized** upgrade to keycloakX
-- **Optimize** istio version upgrade v1.16.1
+- **Optimized** istio version upgrade v1.16.1
 
 #### Known Issues
 
@@ -128,11 +174,11 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 #### Optimized
 
-- **Optimize** Create permanent harbor with operator, enable HTTPS, and use Postgressql operator.
+- **Optimized** Create permanent harbor with operator, enable HTTPS, and use Postgressql operator.
 - **Optimized** Commercial version uses contour as default ingress-controller.
 - **Optimized** MinIO supports using VIP.
 - **Optimized** coredns is automatically injected into registry VIP resolution.
-- **Optimization** Optimize the offline package production process and speed up the packaging of docker images.
+- **Optimized** Optimize the offline package production process and speed up the packaging of docker images.
 
 #### Bug fixes
 

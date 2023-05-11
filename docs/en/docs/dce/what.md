@@ -12,17 +12,17 @@ DCE 5.0 natively supports the DevOps development and operation mode, which can r
 <div class="grid cards" markdown>
 
 - :fontawesome-solid-jet-fighter-up: **Install** [Install Community Release and Commercial Release](../install/intro.md)
-- :octicons-container-16: **Container management** [Cluster/node/load infrastructure](../kpanda/intro/what.md)
-- :fontawesome-solid-user-group: **Global Management** [Set Login/Access Permissions/Appearance](../ghippo/intro/what.md)
+- :octicons-container-16: **Container management** [Cluster/node/workload infrastructure](../kpanda/intro/what.md)
+- :fontawesome-solid-user-group: **Global Management** [Set login/permissions/appearance](../ghippo/intro/what.md)
 - :material-monitor-dashboard: **Observability** [One-stop graphical dashboard](../insight/intro/what.md)
-- :material-microsoft-azure-devops: **App Workbench** [CI/CD Pipeline](../amamba/intro/what.md)
+- :material-microsoft-azure-devops: **App Workbench** [CI/CD pipeline](../amamba/intro/what.md)
 - :material-cloud-check: **Multi-cloud orchestration** [Multi-cloud instance/load/policy](../kairship/intro/what.md)
-- :material-engine: **Microservice Engine** [Microservice Governance Center and Gateway](../skoala/intro/what.md)
-- :material-table-refresh: **Service Mesh** [Non-intrusive Service Governance](../mspider/intro/what.md)
+- :material-engine: **Microservice Engine** [Microservice Governance and Gateway](../skoala/intro/what.md)
+- :material-table-refresh: **Service Mesh** [Non-intrusive service governance](../mspider/intro/what.md)
 - :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](../middleware/what.md)
-- :material-registry: **Container Registry** [Registry Integration and Hosting Service](../kangaroo/what.md)
+- :material-registry: **Container Registry** [Registry integration and hosting service](../kangaroo/what.md)
 - :material-dot-net: **Network** [Multi-CNI fusion solution](../network/intro/what.md)
-- :floppy_disk: **Storage** [Containerized Storage](../storage/what.md)
+- :floppy_disk: **Storage** [Containerized storage](../storage/what.md)
 
 </div>
 

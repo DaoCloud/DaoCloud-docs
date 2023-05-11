@@ -760,7 +760,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      
 
-- [Alibaba Cloud released "Cloud Native Architecture White Paper 2022 Edition" on July 27](https://mp.weixin.qq.com/s/G8TAkeezVQz22bevr1zdKw)
+- [Alibaba Cloud released "Cloud Native Architecture White Paper 2022 Release" on July 27](https://mp.weixin.qq.com/s/G8TAkeezVQz22bevr1zdKw)
 
      While explaining the definition of cloud-native architecture, the white paper also summarizes the evolution path and design rules required for cloud-native architecture applications based on Alibaba Cloud's cloud-native practical experience.
      Compared with the old version, the 2022 version adds dozens of enterprise cloud-native practical experience collections. At the same time, in the cloud-native product matrix, several core product families are added, such as container products, micro-service products, and cloud-native technology middle-end products. family etc.

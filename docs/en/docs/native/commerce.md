@@ -413,7 +413,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### Q
 
-- [QingCloud Releases KubeSphere Container Platform Enterprise Edition 3.4.0](https://mp.weixin.qq.com/s/spjVK8jWtXYb53aYjMWFxw)
+- [QingCloud Releases KubeSphere Container Platform Enterprise Release 3.4.0](https://mp.weixin.qq.com/s/spjVK8jWtXYb53aYjMWFxw)
 
     Updates: Support for Prometheus internal TLS authenticated access, built-in integration with HPA extension plugin KEDA, new enterprise space-level gateway and tenant-level storage quota, improved resource alias display weight, support for Whizard observable center configuration via UI.
 
@@ -421,7 +421,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Updates; New monitoring patrol function; New enterprise space function, covering organization management, user management, quota management, resource management, process approval and other space management modules; New support for third-party storage; Provides VMware vSphere nano-management tools; QKE container engine supports bare metal servers as cluster workers.
 
-- [QingCloud releases KubeSphere Enterprise Edition 3.3, a distributed multi-tenant cloud-native operating system](https://mp.weixin.qq.com/s/ZuiY-la34DvHW5bQdc9q7Q)
+- [QingCloud releases KubeSphere Enterprise Release 3.3, a distributed multi-tenant cloud-native operating system](https://mp.weixin.qq.com/s/ZuiY-la34DvHW5bQdc9q7Q)
 
      Version features: New observable center to aggregate and synchronize data scattered across clusters; Refactored cluster monitoring page to focus on resource allocation; Optimized tenant monitoring to support displaying tenant quota settings, etc.; New support for Spring Cloud, a microservices framework; Integrated Argo CD to support GitOps.
 

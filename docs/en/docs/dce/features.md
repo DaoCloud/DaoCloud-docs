@@ -88,7 +88,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - It provides unified collection of indicators, logs, and links, supports multi-dimensional alarms on indicators and logs, and provides a concise and clear visual management interface.
 
-=== "Featured [Middleware](../middleware/midware.md)"
+=== "Featured [Middleware](../middleware/what.md)"
 
 - It supports a variety of mainstream middleware: Redis, MySQL, Elasticsearch, RabbitMQ, Kafka, MinIO, etc.
 

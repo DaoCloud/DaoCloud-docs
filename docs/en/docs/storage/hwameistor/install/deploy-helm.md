@@ -7,7 +7,7 @@ hide:
 
 Any component of HwameiStor can be installed through Helm Chart.
 
-## prerequisites
+## Prerequisites
 
 - Free HDD and SSD disks have been prepared on the nodes to be used
 - Completed the items in [Preparation] (prereq.md)

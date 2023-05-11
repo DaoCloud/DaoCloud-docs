@@ -1,8 +1,3 @@
----
-hide:
-  - toc
----
-
 # 离线安装 DCE 5.0 商业版
 
 请在安装之前确保您以阅读并理解[部署要求](deploy-requirements.md)、[部署架构](deploy-arch.md)、[准备工作](prepare.md)

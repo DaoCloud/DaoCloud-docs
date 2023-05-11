@@ -1,77 +1,212 @@
-# Deployment requirement
+# Deployment requirements
 
-DCE 5.0 Commercial Release provides two modes: classic mode and minimalist mode.
+When deploying DCE 5.0, software planning, hardware planning, and network planning need to be done well.
 
-## Classic Mode
+## Operating System Requirements
 
-The classic mode is suitable for multi-data centers across networks and regions, and its deployment mode is:
+!!! note
 
-- [Global Service Cluster](../../kpanda/07UserGuide/Clusters/ClusterRole.md#_1) Deploy all components of DCE 5.0: global management, container management, observability, App Workbench, multicloud orchestration, image registrys, microservice engines, service meshes, middleware, networks, and more.
-- [Manage Cluster](../../kpanda/07UserGuide/Clusters/ClusterRole.md#_2) Deploy the Operator of [Kubean](https://github.com/kubean-io/kubean)
-- [Working cluster](../../kpanda/07UserGuide/Clusters/ClusterRole.md#_3) supports business applications and services (deploy the working cluster after successfully installing DCE)
+     For Unicom UOS V20 (1020a) installation guidance document, please refer to [Deploy DCE 5.0 Commercial Release on UOS V20 (1020a) Operating System](../os-install/uos-v20-install-dce5.0.md)
 
-The deployment architecture diagram of the classic mode is as follows:
+     Other operating systems in the table below use a unified installation guide document, please refer to [Offline installation of DCE 5.0 commercial version] (start-install.md)
 
+     Please refer to [Other Linux Offline Deployment of DCE 5.0 Commercial Release](../os-install/otherlinux.md)
 
+| **Architecture** | **Operating System** | **Kernel Version** | Remarks |
+| -------- | ------------------- | -------------------- ---------------------- | --------------------------- ----- |
+| AMD 64 | centos 7.X | Kernel 3.10.0-1127.el7.x86_64 on an x86_64 | Operating system recommended CentOS 7.9 |
+| | Redhat 8.X | 4.18.0-305.el8.x86_64 | Recommended operating system Redhat 8.4 |
+| | Redhat 7.X | 3.10.0-1160.e17.x86 | Recommended Operating System Redhat 7.9 |
+| | Ubuntu 20.04 | 5.10.104 | Recommended operating system Ubuntu20.04 |
+| | Unicom UOS V20 | 5.4.0-125-generic | Recommended operating system Unicom UOS V20 (1020a) |
+| | openEuler 22.03 | 5.10.0-60.18.0.50.oe2203.x86_64 | Recommended operating system openEuler 22.03 |
+| ARM 64 | Galaxy Kirin OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64 | - |
 
-## Minimalistic mode
+## Hardware Requirements
 
-Deploy the global service cluster and the management cluster in one cluster, and keep the others unchanged. This mode is suitable for a single data center that does not need to cross networks or regions.
+| **Type** | **Specific Requirements** |
+| -------- | --------------------------- |
+| CPU | No Oversubscription |
+| Memory | No Oversold |
+| HDD | IOPS > 500 Throughput >200 MB/s |
 
-The deployment architecture diagram of the simple mode is as follows:
+For resource requirements, please refer to [Preparation](./prepare.md)
 
+## Network Requirements
 
+### Network topology
 
-The global service cluster and the management cluster are deployed together. This mode can achieve the purpose of saving resources and is suitable for single data centers of enterprises.
-There is no need to manage the lifecycle of different clusters and communicate across networks. If there are multiple data center scenarios in the enterprise production environment, it is recommended to use the classic mode.
+Assuming that VIP is used as the load balancing method of the global cluster:
 
-## Node Requirements
+![Network-Topology](https://docs.daocloud.io/daocloud-docs-images/docs/install/commercial/images/Network-Topology.png)
 
-No matter which mode you choose, installing the commercial version of DCE 5.0 first requires a temporary bootstrapping node.
+### Network Requirements
 
-### Bootstrapping node
+| **Resources** | **Requirements** | **Instructions** |
+| ----------------- | ---------- | -------------------- ----------------- |
+| `istioGatewayVip` | 1 | If the load balancing mode is metallb, you need to specify a VIP for DCE UI and OpenAPI access |
+| `insightVip` | 1 | If the load balancing mode is metallb, you need to specify a VIP for the insight data collection portal of the GLobal cluster, and the insight-agent of the sub-cluster can report data to this VIP |
+| Network speed | 1000 M/s | Not less than Gigabit, 10 Gigabit is recommended. |
+| Protocol | - | IPv6 is supported. |
+| Reserved IP address segments | Two segments need to be reserved | for Pod (10.233.64.0/18 by default) and Service (10.233.0.0/18 by default). If it is already in use, you can customize other network segments to avoid IP address conflicts. |
+| Route | - | The server has a default or route to 0.0.0.0. |
+| NTP service address | 1~4 | Make sure your data center has an accessible NTP server IP address. |
+| DNS service address | 1~2 | If your application needs DNS service, please be prepared to access the DNS server IP address. |
 
-On bootstrapping nodes, you can deploy global service clusters and manage clusters by starting the kind cluster and performing a series of automated installation processes.
+## Port requirements
 
-**System and Hardware Requirements for a bootstrapping node**
+In order to function properly, some ports need to be open. If your network is configured with firewall rules, you need to ensure that infrastructure components can communicate with each other over specific ports.
+Make sure the required following ports are open on the network and configured to allow access between hosts. Some ports are optional based on configuration and usage.
 
-| Resource Entry | Requirements | Recommended Values ​​|
-| :------------ | :------------ | :----------- |
-| Available CPU Cores | 4 Core | 8 Core |
-| Available memory | 8 GB | 16 GB |
-| Free disk space | > 100 GB | 200 GB |
-| Operating System | Linux, macOS | Linux, macOS |
+### bootstrapping node
 
-### Classic Mode Resource Planning
+| Protocol | Port | Description |
+|----------|--------| ------------|
+| TCP | 443 | Docker Registry |
+| TCP | 8081 |
+| TCP | 9000 | Minio API |
+| TCP | 9001 | Minio UI |
 
-**Test environment**
+### Kube cluster (including global cluster and working cluster)
 
-| Cluster type | Method 1 | Method 2 |
-| :----------- | :----------------------------------- -------------------------------------------------- -------------------------------- | :---------------- -------------------------------------------------- --- |
-| Global Service Cluster| **3 Master + 2 Worker** <br />Master node: 4C8G; system disk 100G <br />Worker node: 8C16G; system disk 100G + unpartitioned disk 200G | **3 Master* *<br />Master node: 10C20G; system disk 100G + unpartitioned disk 200G |
-| Manage Cluster | **3 Master** <br />Master node: 4C4G; system disk 100G | **3 Master** <br />Master node: 4C4G; system disk 100G |
-| Operating System | CentOS 7.9 | CentOS 7.9 |
+Both global and worker clusters are deployed via Kubean, so they need to open the same ports
+In addition to standard k8s ports, ports also need to be opened for CNI and some network components.
 
-**Production Environment**
+#### k8s Control plane
 
-| Cluster type | Method 1 | Method 2 |
-| :----------- | :----------------------------------- -------------------------------------------------- ---------------------------------- | :-------------- -------------------------------------------------- ----- |
-| Global Service Cluster| **3 Master + 2 Worker** <br />Master node: 6C10G; system disk 100G <br />Worker node: 8C16G; system disk 100G + unpartitioned disk 200G | **3 Master* *<br />Master node: 10C20G; system disk 100G + unpartitioned disk 200G |
-| Manage Cluster | **3 Master** <br />Master node: 4C4G; system disk 100G | **3 Master** <br />Master node: 4C4G; system disk 100G |
-| Operating System | CentOS 7.9 | CentOS 7.9 |
+| Protocol | Port | Description |
+|----------|--------| ------------|
+| TCP | 2379 | etcd client port|
+| TCP | 2380 | etcd peer port |
+| TCP | 6443 | kubernetes-api |
+| TCP | 10250 | kubelet-api |
+| TCP | 10257 | kube-scheduler |
+| TCP | 10259 | kube-controller-manager |
 
-### Simple Mode Resource Planning
+#### All k8s nodes
 
-**Test environment**
+Every node in the cluster needs to be turned on.
 
-| Cluster type | Method 1 | Method 2 |
-| :-------------------- | :------------------------- -------------------------------------------------- -------------------------------------------- | :------- -------------------------------------------------- ------------ |
-| Global service cluster + management cluster | **3 Master + 2 Worker** <br />Master node: 4C8G; system disk 100G <br />Worker node: 8C16G; system disk 100G + unpartitioned disk 200G | ** 3 Master**<br />Master node: 10C20G; system disk 100G + unpartitioned disk 200G |
-| Operating System | CentOS 7.9 | CentOS 7.9 |
+| Protocol | Port | Description |
+|----------|-------- | ------------ |
+| TCP | 22 | ssh for ansible |
+| TCP | 9100 | node exporter(Insight-Agent) |
+| TCP | 10250 | kubelet-api |
+| TCP | 30000-32767 | kube nodePort range |
 
-**Production Environment**
+Reference: [Kubernetes Docs](https://kubernetes.io/docs/reference/networking/ports-and-protocols/)
 
-| Cluster type | Size |
-| :-------------------- | :------------------------- -------------------------------------------------- -------------------------------------------------- ------------ |
-| Global service cluster + management cluster | **3 Master + 2 Worker** <br />Master node: 6C10G; system disk 100G + unpartitioned disk 200G <br />Worker node: 8C16G; system disk 100G + unpartitioned Disk 200G |
-| Operating System | CentOS 7.9 |
+#### Calico (default)
+
+By default, Calico will be used as CNI, so **all k8s nodes** need to be turned on.
+
+| Protocol | Port | Description |
+|----------|-------- | ------------ |
+| TCP | 179 | Calico networking (BGP) |
+| UDP | 4789 | Calico CNI with VXLAN enabled |
+| TCP | 5473 | Calico CNI with Typha enabled |
+| UDP | 51820 | Calico with IPv4 Wireguard enabled |
+| UDP | 51821 | Calico with IPv6 Wireguard enabled |
+| IPENCAP / IPIP | - | Calico CNI with IPIP enabled |
+
+Reference: [Calico Docs](https://docs.tigera.io/calico/latest/getting-started/kubernetes/requirements#network-requirements)
+
+#### MetalLB (default)
+
+When enabling MetalLB to build a VIP, **all k8s nodes** need to be turned on.
+
+| Protocol | Port | Description |
+|----------|-------- | ------------|
+| TCP/UDP | 7472 | metallb metrics ports |
+| TCP/UDP | 7946 | metallb L2 operating mode |
+
+#### Cilium (optional)
+
+If you use Cilium as CNI, so **all k8s nodes** need to be opened.
+
+| Protocol | Port | Description |
+|----------|-------- | ------------ |
+| TCP | 4240 | Cilium Health checks (``cilium-health``) |
+| TCP | 4244 | Hubble server |
+| TCP | 4245 | Hubble Relay |
+| UDP | 8472 | VXLAN overlay |
+| TCP | 9962 | Cilium-agent Prometheus metrics |
+| TCP | 9963 | Cilium-operator Prometheus metrics |
+| TCP | 9964 | Cilium-proxy Prometheus metrics |
+| UDP | 51871 | WireGuard encryption tunnel endpoint |
+| ICMP | - | health checks |
+
+Reference: [Cilium Docs](https://docs.cilium.io/en/v1.13/operations/system_requirements/)
+
+#### SpiderPool (optional)
+
+If SpiderPool is used as CNI, **all k8s nodes** need to be opened.
+
+| Protocol | Port | Description |
+|----------|-------- | ------------ |
+| TCP | 5710 | SpiderPool Agent HTTP Server |
+| TCP | 5711 | SpiderPool Agent Metrics |
+| TCP | 5712 | SpiderPool Agent gops enabled |
+| TCP | 5720 | SpiderPool Controller HTTP Server |
+| TCP | 5721 | SpiderPool Controller Metrics |
+| TCP | 5722 | SpiderPool Controller Webhook Port |
+| TCP | 5723 | Spiderpool-CLI HTTP server port. |
+| TCP | 5724 | SpiderPool Controller gops enabled |
+
+Reference: [SpiderPool Docs](https://github.com/spidernet-io/spiderpool/blob/main/docs/concepts/config.md)
+
+#### KubeVIP - (optional)
+
+When KubeVIP is enabled to create a Kube API VIP, **all Control Plane nodes** need to be opened.
+
+| Protocol | Port | Description |
+|----------|-------- | ------------ |
+| TCP | 2112 | kube-vip metrics ports |
+
+<!--
+#### Other Addons, such as kube-vip
+-->
+
+### Global cluster Other ports that need to be opened
+
+#### Istio-Gateway VIP
+
+| Protocol | Port | Description | Used By |
+|----------|-------- | ------------ | ------- |
+| TCP | 80 | Istio-Gateway HTTP | Web Browser or API Client |
+| TCP | 443 | Istio-Gateway HTTPS | Web Browser or API Client |
+
+#### Insight VIP
+
+| Protocol | Port | Description | Used By |
+|----------|-------- | ------------ | ------- |
+| TCP | 8480 | Insight VIP for Metrics | All Nodes |
+| TCP | 9200 | Insight VIP for Log | All Nodes |
+| TCP | 4317 | Insight VIP for Trace | All Nodes |
+| TCP | 8006 | Insight VIP for AduitLog | All Nodes |
+
+### Working cluster Other ports that need to be opened
+
+The working cluster needs to open port 6443 of the k8s API to give access to the global management cluster. If you want to use the deployment function, you need to open port 22 for global cluster access.
+
+| Protocol | Port | Description | Used By |
+|----------|-------- | ------------ | ------- |
+| TCP | 22 | Each node SSH (for ansible) | Global management cluster |
+| TCP | 6443 | k8s API access entry (such as VIP) | global management cluster |
+
+### Other products need to open ports
+
+#### Mirror repository
+
+| Protocol | Port | Description | Used By |
+|----------|-------- | ------------ | ------- |
+| TCP | 443 | Port of access portal (such as VIP) | All nodes |
+
+<!--
+### Other Gproduct ports
+-->
+
+## Client browser requirements
+
+- Firefox **≥** 49
+- Chrome **≥** 54
