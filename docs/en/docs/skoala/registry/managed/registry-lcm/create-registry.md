@@ -1,64 +1,64 @@
 ---
 hide:
-  - toc
+  - heel
 ---
 
-# Create hosting registry
+# Create a managed registry
 
-The microservice engine supports hosting the Nacos registry, that is, a new registry of Nacos type is created from scratch in the microservice governance center, and the registry can be fully managed through the microservice governance center. Compared with the [access registry](../../integrated/integrate-registry.md), the managed registry supports more operations, including viewing the basic information of the registry instance, microservice namespace management , microservice list, microservice configuration list, monitoring alarm, log view, plug-in center, etc.
+The microservices engine supports hosting the Nacos registry, which creates a new NacOS-type registry from scratch in the microservices governance Center and can be fully managed through the microservices Governance Center. The managed registry supports more operations than [Integrated Registry](../../integrated/integrate-registry.md), including viewing the basic information of the registry instance, microservice namespace management, microservice list, microservice configuration list, monitoring alarms, log viewing, plug-in center, and more.
 
 !!! note
 
-    - The skoala-init component needs to be installed in the **skoala-system** namespace of the target cluster in advance. For specific steps, please refer to [Managing Helm Applications](../../../../kpanda/07UserGuide/helm /helm-app.md).
-    - If there is no **skoala-system** namespace in the selected cluster, you can refer to [Create a Namespace](../../../../kpanda/07UserGuide/Namespaces/createns.md) to create one Namespace for **skoala-system**.
+    - Install the skoala-init component in the ** skoala-system ** namespace of the target cluster. For details, see [Manage Helm App](../../../../kpanda/user-guide/helm/helm-app.md).
+    - If the selected group does not have a ** skoala-system ** namespace, refer to [Create Namespace](../../../../kpanda/user-guide/namespaces/createns.md) to create a namespace named ** skoala-system **.
 
-The steps to create a hosted registry are as follows.
+The steps to create a managed registry are as follows.
 
-1. In the left navigation bar, click `Microservice Governance Center`->`Hosted Registry`, and then click `Create Managed Registry` in the upper right corner of the page to enter the creation page of a managed registry instance.
+1. Click `Microservice Governance`-> `Managed Registry`in the left navigation bar, and then click `Create Managed Registry` in the upper right corner of the page to enter the page for creating the hosting registry instance.
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-2. Fill in the configuration information.
+2. Enter the configuration information.
 
-    have to be aware of is:
+    What should be noted is:
 
-    - Registry name: supports input of letters, numbers and separators (-), the name cannot be changed after the registry is created.
-    - Deployment location: The system will automatically check whether the skoala-init component is installed in the **skoala-system** namespace under the selected cluster.
+    - Registry name: Letters, numbers, and delimiters (-) are supported. The registry name cannot be changed after it is created.
+    - Deployment location: The system automatically verifies whether the skoala-init component is installed in the **skoala-system** namespace of the selected group.
 
-        - If not installed, registry cannot be created. You can install the component according to the prompt on the page.
-        - The deployment location cannot be changed after the registration center is created.
+        - If it is not installed, the registry cannot be created. Follow the prompts on the page to install the component.
+        - The deployment location cannot be changed after the registry is created.
 
-    - Resource configuration: You can directly choose `1 core 2G`, `2 core 4G` and other configurations, or you can customize the configuration resource limit.
+    - Resource configuration: You can directly set `1Core2G`, `2Core4G`, or customize the resource quota.
 
-        - `1 core 2G` means that the request value and limit value of CPU are 2 cores, the request value and limit value of memory are 2 G, and so on.
+        -  `1Core2G` indicates that the request value and limit value of CPU are 2 cores respectively, the request value and limit value of memory are 2 G respectively, and so on.
 
-        - Click "Instance Capacity Evaluation" to view the throughput (TPS) of mainstream specifications such as 2 Core 4 GiB, 4 Core 8 GiB, and 8 Core 16 GiB.
+        - Click `Resource Advice` to see throughput (TPS) for mainstream specifications such as 2 Core 4 GiB, 4 Core 8 GiB, and 8 Core 16 GiB.
 
-        
+        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-    - Access method: Select `node access` to access the registration center from the outside through **service port + target port**, and select `internal access` to access the registration center only through the service port within the cluster. The default service port is 8848.
-    - Deployment mode: When the high availability mode is selected, the number of nodes should not be less than 3. It is recommended to use the `high availability` mode in a production environment.
+    - Access mode: If `NodePort` is selected, the registry can be accessed externally through ** Service port + destination port **. If `Internal Access` is selected, the registry can be accessed through service ports only in the cluster where the registry resides. The default service port is 8848.
+    - Deployment mode: If high availability mode is selected, the number of nodes must be at least three. In the production environment, the `High Availability` mode is recommended.
 
-        
+        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-    - Data persistence: It is recommended to use external storage.
+    - Data persistence: External storage is recommended.
 
-        - Do not use external storage: data is stored in the file system of the Pod where Nacos is located. The data will be lost after the pod is restarted, so it is recommended to use external storage.
-        - Use database: fill in the name, address, port, user name and password of the database
+        - No external storage is used: The data is stored in the Pod file system where Nacos resides. Data is lost after the Pod restarts, so external storage is recommended.
+        - Using the database: Enter the name, address, port, username, and password of the database
 
-            
+            <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-        - Use a storage pool: Select an existing storage pool in the cluster where the registration center resides and configure storage capacity. <!--If you can't find the storage pool you want, you can [create a storage pool] through the container management module. -->
+        - Using a storage pool: Select an existing storage pool in the registry cluster and configure the storage capacity. 
 
-            
+            <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-3. Click `OK` at the bottom of the page.
+3. At the bottom of the page click `OK`.
 
-    If the operation is correct, a successful creation message will pop up in the upper right corner of the page, and the `Hosted Registry List` page will display the newly created registry instance.
+    If the operation is correct, a message indicating that the registry is created successfully is displayed in the upper right corner of the page. The `Managed Registry List` page displays the new registry instance.
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
 !!! info
 
-     - It takes a while to initialize the new registration center, during which it is in the "starting" state. After the initialization is complete, it enters the "Running" state.
-     - Click the name of the registration center to view basic information such as the cluster/namespace, running status, resource quota, service port, storage configuration, and node list.
+     - A new registry takes a period of time to initialize and is in the "Starting" state. After the initialization, the system enters the Running state.
+     - You can click the registry name to view basic information such as the cluster/namespace, running status, resource quota, service port, storage configuration, and node list.

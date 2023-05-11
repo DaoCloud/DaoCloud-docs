@@ -1,30 +1,30 @@
 ---
 hide:
-  - toc
+  - heel
 ---
 
-# Product advantages
+# Product advantage
 
-The microservice engine provided by "DaoCloud Taoke" includes two modules: microservice governance center and microservice gateway, providing a set of simple, practical and high-performance microservice governance such as microservice registration discovery, traffic governance, configuration management, and gateway API Ability to help stabilize the upgrade from traditional microservice architecture to cloud-native microservice architecture.
+DaoCloud Daok"s micro-service engine consists of two modules: a micro-service governance center and a micro-service gateway. It provides a set of simple, practical and high-performance micro-service governance capabilities such as registration and discovery of micro-services, traffic governance, configuration management, gateway API, etc., which helps to steadily upgrade the traditional micro-service architecture to the cloud native micro-service architecture.
 
-Compared with other similar products, the microservice engine provided by "DaoCloud" has the following advantages:
+DaoCloud Daoke"s micro-service engine has the following advantages over other DaoCloud products:
 
-=== "One-stop governance"
+- One-stop management
 
-    Provides functions such as service registration discovery, configuration management, traffic management, link tracking, indicator monitoring, gateway management, API management, domain name management, monitoring alarms, gateway policies, etc., to meet the management needs of each stage in the microservice lifecycle and realize one-stop governance.
+    It provides service registration and discovery, configuration management, traffic governance, link tracking, indicator monitoring, gateway management, API management, domain name management, alarm monitoring, gateway policy and other functions to meet the management requirements of each stage of the micro-service life cycle and achieve one-stop governance.
 
-=== "Senseless Migration"
+- Noninductive transfer
 
-    It is fully compatible with the Nacos open source registration center and Envoy and contour open source gateways, and supports the migration from self-built services to the "DaoCloud Daoke" microservice engine on the premise of zero code transformation. Traditional microservices can be connected to the microservice engine through the registration center without any modification, and then realize functions such as traffic management, configuration management, link tracking, and indicator monitoring.
+    Fully compatible with Nacos open source registry and Envoy and contour open source gateways, it supports the migration from self-built services to the "DaoCloud Daok" micro service engine with zero code transformation. Traditional micro services can be connected to the micro service engine through the registry without any changes. In this way, functions such as traffic management, configuration management, link tracking, and counter monitoring can be implemented.
 
-=== "Smooth Transition"
+- Smooth transition
 
-    Unified management of traditional micro-services and cloud-native micro-services, support for access to traditional registration centers (Zookeeper, Eureka, Nacos) and cloud-native registration centers (Kubernetes, Service Mesh) types of registration centers, to realize the transition from traditional micro-service ecology to cloud-native micro-services The smooth transition of the service ecosystem helps enterprises move towards cloud nativeization.
+    Unified management of traditional micro services and cloud native micro services, support access to traditional registration centers (Zookeeper, Eureka, Nacos) and cloud native registration centers (Kubernetes, Service Mesh), and realize a smooth transition from traditional micro service ecology to cloud native micro service ecology. Help enterprises to go to the cloud.
 
-=== "Open Compatibility"
+- Open and compatible
 
-    The microservice engine supports traditional and cloud music registration centers, as well as mainstream open source microservice frameworks such as Spring Cloud and Dubbo, and open source gateway components such as Envoy, Sentinel, and Contour. In addition, it can be freely combined with [DCE 5.0](../../dce/what.md) modules such as multicloud orchestration, data service middleware, service mesh, and application workbench to achieve more Customized and refined functions.
+    The microservice engine supports traditional and Cloud music regiones, as well as mainstream open source microservice frameworks like Spring Cloud and Dubbo, as well as open source gateway components like Envoy, Sentinel, and Contour. In addition, it can also be freely combined with [DCE 5.0](../../dce/what.md) multi-cloud choreography, data service middleware, service grid, application workbench and other modules to achieve more customized and refined functions.
 
-=== "Visual interface and data"
+- Visual interface and data
 
-    Expose simple and easy-to-use interactive pages through functional encapsulation, support all operations through a simple and intuitive UI interface, reduce operational difficulty, and truly realize various management operations in the entire lifecycle of microservices with a click of a mouse.
+    Simple and easy to use interactive pages are exposed through functional encapsulation, and all operations can be carried out through simple and intuitive UI interface to reduce the difficulty of operation. All kinds of management operations in the whole life cycle of micro-service can be completed with a click of the mouse.

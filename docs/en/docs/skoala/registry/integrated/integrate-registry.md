@@ -5,30 +5,30 @@ hide:
 
 # Access registry
 
-The registry supports access to [Nacos registry](../../../reference/basic-knowledge/registry.md#nacos-registry), [Eureka registry](../../../reference/basic-knowledge/registry.md#eureka-registry), [Zookeeper registry](../../../reference/basic-knowledge/registry.md#zookeeper-registry), [Kubernetes Registry](../../../reference/basic-knowledge/registry.md#kubernetes-registry), [Mesh Registry](../../../reference/basic-knowledge/ registry.md#service-mesh-registry).
+Registry supports access [Nacos Registry](../../../reference/basic-knowledge/registry.md#nacos-Registry), [ The Eureka Registry ](../../../reference/basic-knowledge/registry.md#eureka-Registry), [ Zookeeper Registration Center ](../../../reference/basic-knowledge/registry.md#zookeeper-Registry), [ Kubernetes Registry ](../../../reference/basic-knowledge/registry.md#kubernetes-Registry), [Mesh Registry](../../../reference/basic-knowledge/registry.md#service-mesh-Registry).
 
-Compared with the hosting registration center, the access registration center only supports some basic operations, such as viewing basic information, monitoring information, etc. To experience more advanced and comprehensive management operations, you need to create a [Managed Registry](../managed/registry-lcm/create-registry.md).
+In contrast to managed registries, access registries support only basic operations, such as viewing basic information and monitoring information. To perform more advanced and comprehensive management operations, create [Managed Registry](../managed/registry-lcm/create-registry.md).
 
-The steps to access the registration center are as follows:
+To access the registry, perform the following steps:
 
-1. Click `Microservice Management Center`-->`Access Registration Center` in the left navigation bar, and then click `Access Registration Center` in the upper right corner of the page.
+1. In the left navigation bar click `Microservice Governance` -- > `Integrate Registry`, then at the upper right corner of the page by clicking on the `Integrate Registry`.
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-2. Fill in the configuration information and click `OK` at the bottom of the page.
+2. Fill in the configuration information, then click `OK` at the bottom of the page.
 
-    Accessing different types of registries requires filling in different configuration information.
+    Different types of registries require different configurations.
 
-    - Kubernetes/Mesh registration center: directly select the cluster or mesh service you want to access.
+    - Kubernetes/Mesh Registry: Directly select the cluster or mesh service you want to access.
 
-        - If you can't find the Kubernetes cluster you want to add, you can go to the container management module [Access Cluster](../../../kpanda/07UserGuide/Clusters/JoinACluster.md) or [Create Cluster](../../../kpanda/07UserGuide/Clusters/CreateCluster.md).
+        - If you cannot find the Kubernetes cluster you want to add, you can go to the container management module [Integrate Cluster](../../../kpanda/user-guide/clusters/integrate-cluster) or [Create Cluster](../../../kpanda/user-guide/clusters/create-cluster.md).
 
-        - If you can't find the mesh service you want to add, you can go to the mesh service module [Create Mesh](../../../mspider/user-guide/servicemesh/README.md).
+        - If you cannot find the grid service you want to add, you can go to the grid service module [Create Mesh](../../../mspider/user-guide/service-mesh/README.md).
 
-            
+            <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-    - Nacos/Zookeeper/Eureka registration center: fill in the name and address of the registration center, and click `Access Test`.
+    - Nacos/Zookeeper/Eureka Registry: Fill in the name and address of the registry and click `Test Connectivity`.
 
-        If the address bar turns gray, it means that the access test is successful. For a distributed high-availability registry, you can also click `+ Add` to enter multiple addresses.
+        If the address bar is gray, the access test is successful. For distributed high availability registries, you can also enter multiple addresses by clicking `+ Add`.
 
-        
+        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->

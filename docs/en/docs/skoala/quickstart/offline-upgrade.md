@@ -1,75 +1,83 @@
-# Offline upgrade microservice engine
+# Upgrade the microservice engine offline
 
-This page explains how to install or upgrade the microservice engine module after downloading it from [Download Center](../../download/dce5.md).
+Each DCE 5.0 module is loosely coupled and supports independent installation and upgrade of each module. This document is intended for upgrades that occur after the microservice engine is installed offline.
 
-!!! info
+## Synchronous mirror
 
-    The word `skoala` appearing in the following commands or scripts is the internal development code name of the microservice engine module.
+After downloading the image to the local node, you need to sync the latest version of the image to your image repository via [ chart-syncer ](https://github.com/bitnami-labs/charts-syncer) or the container runtime. chart-syncer synchronous mirroring is recommended because it is more efficient and convenient.
 
-## Load the image from the installation package
+### chart-syncer synchronous image
 
-You can load the image in one of the following two ways. When there is a container registry in the environment, it is recommended to select chart-syncer to synchronize the image to the container registry. This method is more efficient and convenient.
+1. Create `load-image.yaml` as a chart-syncer profile using the following
 
-### chart-syncer synchronously mirrors to the container registry
-
-1. Create load-image.yaml
-
-    !!! note
-
-        All parameters in this YAML file are required. You need a private container registry and modify related configurations.
+     `load-image.yaml` All parameters in the file are mandatory. You need a private mirror repository and modify the configurations as described below. See [Official Doc](https://github.com/bitnami-labs/charts-syncer) for a detailed explanation of the chart-syncer profile.
 
     === "chart repo installed"
 
-        If the current environment has installed the chart repo, chart-syncer also supports exporting the chart as a tgz file.
 
         ```yaml
         source:
-          intermediateBundlesPath: skoala-offline # The relative path to execute the charts-syncer command, not the relative path between this YAML file and the offline bundle
+          intermediateBundlesPath: skoala-offline # (1)
         target:
-          containerRegistry: 10.16.23.145 # need to be changed to your container registry url
-          containerRepository: release.daocloud.io/skoala # need to be changed to your container registry
+          containerRegistry: 10.16.23.145 # (2)
+          containerRepository: release.daocloud.io/skoala # (3)
           repo:
-            kind: HARBOR # Can also be any other supported Helm Chart repository class
-            url: http://10.16.23.145/chartrepo/release.daocloud.io # need to change to chart repo url
+            kind: HARBOR # (4)
+            url: http://10.16.23.145/chartrepo/release.daocloud.io # (5)
             auth:
-            username: "admin" # Your container registry username
-            password: "Harbor12345" # Your container registry password
+            username: "admin" # (6)
+            password: "Harbor12345" # (7)
           containers:
             auth:
-              username: "admin" # Your container registry username
-              password: "Harbor12345" # Your container registry password
+              username: "admin" # (8)
+              password: "Harbor12345" # (9)
         ```
+
+        1. A relative path to the executing chart-syncer command, not a relative path between this YAML file and the offline package
+        2. Change to your mirror repository url
+        3. Need to change to your mirror repository
+        4. It can also be any of the other supported Helm Chart warehouse categories
+        5. Change to chart repo url
+        6. Your mirror warehouse user name
+        7. Your mirror vault password
+        8. Your mirror warehouse user name
+        9. Your mirror vault password
 
     === "chart repo not installed"
 
-        If the chart repo is not installed in the current environment, chart-syncer also supports exporting the chart as a tgz file and storing it in the specified path.
+        Chart-syncer also supports exporting chart to a `tgz` file in a specified path if chart repo is not installed in your current environment.
 
         ```yaml
         source:
-          intermediateBundlesPath: skoala-offline # The relative path to execute the charts-syncer command, not the relative path between this YAML file and the offline bundle
+          intermediateBundlesPath: skoala-offline # (1)
         target:
-          containerRegistry: 10.16.23.145 # need to be changed to your container registry url
-          containerRepository: release.daocloud.io/skoala # need to be changed to your container registry
+          containerRegistry: 10.16.23.145 # (2)
+          containerRepository: release.daocloud.io/skoala # (3)
           repo:
             kind: LOCAL
-            path: ./local-repo # chart local path
+            path: ./local-repo # (4)
           containers:
             auth:
-              username: "admin" # Your container registry username
-              password: "Harbor12345" # Your container registry password
+              username: "admin" # (5)
+              password: "Harbor12345" # (6)
         ```
 
-1. Execute the synchronous mirroring command.
+        1. A relative path to the executing chart-syncer command, not a relative path between this YAML file and the offline package
+        2. Change to your mirror repository url
+        3. Need to change to your mirror repository
+        4. chart local path
+        5. Your mirror warehouse user name
+        6. Your mirror vault password
+
+2. Run the mirror synchronization command.
 
     ```shell
     charts-syncer sync --config load-image.yaml
     ```
 
-### docker or containerd direct loading
+### Docker/containerd Synchronizes images
 
-Unzip and load the image file.
-
-1. Unzip the tar archive.
+1. Decompress the `tar` package.
 
     ```shell
     tar xvf skoala.bundle.tar
@@ -81,7 +89,7 @@ Unzip and load the image file.
     - images.tar
     - original-chart
 
-2. Load the image locally to Docker or containerd.
+2. Load the image from the local to a Docker or containerd.
 
     === "Docker"
 
@@ -96,40 +104,42 @@ Unzip and load the image file.
         ```
 
 !!! note
-    Each node needs to do docker or containerd loading image operation
-    After the loading is complete, the tag image is required to keep the Registry and Repository consistent with the installation.
+    - The image needs to be loaded via Docker or containerd on each node.
+    - After the loading is complete, the tag image is required to keep Registry and Repository consistent with the installation.
 
-## upgrade
+## Start upgrading
 
-There are two ways to upgrade. You can choose the corresponding upgrade plan according to the pre-operations:
+After mirror synchronization is complete, you can start upgrading the microservice engine.
 
-=== "upgrade via helm repo"
+=== "Upgrade through helm repo"
 
-    1. Check whether the microservice engine helm repository exists.
+    1. Check whether microservice engine helm repository exists.
 
         ```shell
         helm repo list | grep skoala
         ```
 
-        If the returned result is empty or as prompted, proceed to the next step; otherwise, skip the next step.
+        If nothing is returned or the following information is displayed, proceed to the next step. Otherwise, skip the next step.
 
         ```none
         Error: no repositories to show
         ```
 
-    2. Add the helm repository of the microservice engine.
+    2. Add helm repository for microservice engine.
 
         ```shell
         heml repo add skoala-release http://{harbor url}/chartrepo/{project}
         ```
 
-    3. Update the helm repository of the microservice engine.
+    3. Update helm repository for microservice engine.
 
         ```shell
-        helm repo update skoala-release # If the helm version is too low, it will fail. If it fails, please try to execute helm update repo
+        helm repo update skoala-release # (1)
         ```
 
-    4. Select the microservice engine version you want to install (the latest version is recommended).
+        1. If the helm version is too low, it will fail. If this fails, try running helm update repo
+
+    4. Select the version of the microservice engine you want to install (the latest version is recommended).
 
         ```shell
         helm search repo skoala-release/skoala --versions
@@ -137,25 +147,25 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
         ```none
         [root@master ~]# helm search repo skoala-release/skoala --versions
-        NAME CHART VERSION APP VERSION DESCRIPTION
-        skoala-release/skoala 0.14.0 v0.14.0 A Helm chart for Skoala
+        NAME                   CHART VERSION  APP VERSION  DESCRIPTION
+        skoala-release/skoala  0.14.0          v0.14.0       A Helm chart for Skoala
         ...
         ```
 
-    5. Back up the `--set` parameter.
+    5. Backup `--set` Parameter.
 
-        Before upgrading the microservice engine version, it is recommended that you execute the following command to back up the `--set` parameter of the old version.
+        Before upgrading the micro service engine, you are advised to run the following command to back up the `--set` parameter of the previous version.
 
         ```shell
-        helm get values ​​skoala -n skoala-system -o yaml > bak.yaml
+        helm get values skoala -n skoala-system -o yaml > bak.yaml
         ```
 
-    6. Execute `helm upgrade`.
+    6. Run `helm upgrade`.
 
-        Before upgrading, it is recommended that you override the `global.imageRegistry` field in bak.yaml to the address of the currently used container registry.
+        Before upgrading, it is recommended that you override the `global.imageRegistry` field in bak.yaml as the address of the image warehouse currently in use.
 
         ```shell
-        export imageRegistry={your container registry}
+        export imageRegistry={your image repo}
         ```
 
         ```shell
@@ -166,22 +176,22 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
         --version 0.14.0
         ```
 
-=== "upgrade via chart package"
+=== "Upgrade via chart pack"
 
-    1. Back up the `--set` parameter.
+    1. Backup `--set` Parameter.
 
-        Before upgrading the microservice engine version, it is recommended that you execute the following command to back up the `--set` parameter of the old version.
+        Before upgrading the micro service engine, you are advised to run the following command to back up the `--set` parameter of the old version.
 
         ```shell
-        helm get values ​​skoala -n skoala-system -o yaml > bak.yaml
+        helm get values skoala -n skoala-system -o yaml > bak.yaml
         ```
 
-    2. Execute `helm upgrade`.
+    2. Run the `helm upgrade` command.
 
-        Before upgrading, it is recommended that you overwrite `global.imageRegistry` in bak.yaml to the address of the current image registry.
+        Before upgrading, it is recommended that you override `global.imageRegistry` in bak.yaml as the address of the image warehouse currently in use.
 
         ```shell
-        export imageRegistry={your container registry}
+        export imageRegistry={your image repo}
         ```
 
         ```shell

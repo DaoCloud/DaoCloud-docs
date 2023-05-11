@@ -1,86 +1,86 @@
-# Manually access the service
+# Manual access service
 
-The successfully added service will appear on the service list page, and you can also select the service in the list as the target backend service when adding an API. The microservice gateway supports adding services through manual access and automatic discovery. This page describes how to manually access the service.
+The services that are successfully added will be displayed on the service list page. You can also select the services in the list as the target back-end services when adding apis. The microservice gateway supports manual access and automatic discovery to add services. This page describes how to manually add services.
 
-**Prerequisites**
+** Prerequisites **
 
-You need to add the corresponding service source in the source management <!--to-be-supplemented link--> in advance, so that you can select the corresponding service source type when manually accessing the service.
+You need to add the corresponding service source in Source management so that you can select the corresponding service source type when manually adding services.
 
 ## Access service
 
-1. Click the name of the target gateway on the `Microservice Gateway List` page, enter the gateway overview page, and click `Service Access`-->`Service List` in the left navigation bar.
+1. In the `Gateway List` page click on the name of the target gateway, enter the gateway overview page, in the left navigation bar click `Add Service` -- > `Service List`.
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-2. On the `Service List` page, click `Manual Access`-->`Add Service`.
+2. On the `Service List` page click `Manual Add` --> `Add Service`.
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-3. Select the service source, configure the service connection information, and click `OK`.
+3. Select the service source, configure the service connection information and click `OK`.
 
-    - Cluster service: Select the cluster and namespace where the target service is located, and fill in the access protocol, address, and port.
+    - Cluster service: Select the cluster and namespace where the target service resides, and enter the access protocol, address, and port number.
 
-        
+        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-        For the access method of the cluster service, you can click the service name in `Container Management`->`Container Network`->`Service` to view:
+        For the cluster service access, can be in the `Container Management` -- > `Container Network` -- > `Services` click on the service name to view:
 
-        
+        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-    - mesh Services:
+    - Grid service:
 
-        The function of accessing mesh services is under development, so stay tuned.
+        The functionality of the access grid service is under development, so stay tuned.
 
-    - Registration Center Service: Select the registration center where the target service is located, and fill in the access protocol, address and port.
+    - Registry Service: Select the registry where the target service resides, and enter the access protocol, address, and port number.
 
-        
+        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-    - External service: fill in service name, access protocol, address, port.
+    - External service: Enter the service name, access protocol, address, and port number.
   
-        
+        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-## View service details
+## Viewing service details
 
-1. Click the name of the target service on the service list page to enter the service details page.
+1. On the service list page, click the name of the target service to access the service details page.
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-2. Check the service source, connection information, associated API and other information.
+2. View service sources, connection information, and associated apis.
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
 ## Update service
 
 ### Update basic information
 
-1. Find the service that needs to be updated on the `Service List` page, click **`ⵗ`** on the right side of the service, and select `Basic Information`.
+1. In the `Service List` page find need to update the service, in the service of right click ** `ⵗ` **, choose `Basic Info`.
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-2. Update the basic information and click `OK`.
+2. To update the basic information, click `OK`.
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
 !!! danger
 
-    If other services are selected when updating basic information, the original service will be deleted, which is equivalent to adding a new service. But the API associated with the original service will be automatically associated with the new service.
 
-
+<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
 ### Update policy configuration
 
-1. Find the service that needs to be updated on the `Service List` page, click **`ⵗ`** on the right side of the service, and select `Policy Configuration`.
+1. In the `Service List` page find need to update the service, in the service of right click ** `ⵗ` **, choose `Policy Settings`.
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-2. Update the policy configuration and click `OK`.
+2. To update policy configuration, click `OK`.
 
-    
+    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-## Delete service
+## Deletion service
 
-Find the service to be deleted on the `Service List` page, click **`ⵗ`** on the right side of the service, and select `Delete`.
+In the `Service List` page to find the need to delete the service, in the service of right click ** `ⵗ` **, choose `Delete`.
 
+<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
+Before deleting a service, you need to make sure that no apis are using the service. If the service is being used by an API, click `API Management` to delete the associated API as prompted before deleting the service.
 
-Before deleting a service, you need to make sure that no APIs are using the service. If the service is being used by an API, you need to follow the page prompts and click `API Management` to delete the associated API before deleting the service.
-
+<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
