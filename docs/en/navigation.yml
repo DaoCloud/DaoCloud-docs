@@ -643,21 +643,25 @@ nav:
               - LVM: storage/terms/lvm.md
               - PV and PVC: storage/terms/pv_pvc.md
       - Container Registry:
-          - What is Container Registry: kangaroo/intro.md
+          - What is Container Registry: kangaroo/what.md
           - Image List: kangaroo/imagelist.md
-          - Connected Registry: kangaroo/related-registry.md
-          - Registry Integration:
-              - kangaroo/integrate.md
-              - Bind Registry Space to Workspace: kangaroo/bind-to-ws.md
-              - Create Registry Space: kangaroo/create-registry.md
-          - Managed Harbor: kangaroo/hosted.md
           - Quick Start:
-              - Manage external registries: kangaroo/quickstart/registry-in-one.md
-              - Push image: kangaroo/quickstart/push.md
-              - Admin quickly use registry: kangaroo/quickstart/admin-registry.md
-              - Workspace Admin quickly use registry: kangaroo/quickstart/ws-admin-registry.md
-          - Scan image: kangaroo/scan.md
+              - Manage External Registry: kangaroo/quickstart/registry-in-one.md
+              - Push Image: kangaroo/quickstart/push.md
+              - Admin Quickly Uses Registry: kangaroo/quickstart/admin-registry.md
+              - Workspace Admin Quickly Uses Registry: kangaroo/quickstart/ws-admin-registry.md
+          - Registry Integration: 
+              - Registry Integration (Workspace): kangaroo/related-registry.md
+              - Registry Integration (Admin): kangaroo/integrate/integrate.md
+              - Create Registry Space: kangaroo/integrate/create-space.md
+              - Bind/Unbind Workspace: kangaroo/integrate/bind-to-ws.md
+          - Hosted Harbor:
+              - kangaroo/hosted/intro.md
+              - Install Harbor Operator: kangaroo/hosted/operator.md
+              - Create Hosted Harbor Instances: kangaroo/hosted/harbor.md
+          - Scan Images: kangaroo/scan.md
           - Release Notes: kangaroo/release-notes.md
+          - Registry FAQs: kangaroo/faq.md
       - Cloud Native Security:
           - Intro: security/intro.md
           - Falco:
