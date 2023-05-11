@@ -19,3 +19,4 @@
 - [创建网格时一直处于“创建中”，最终创建失败](./always-in-creating.md)
 - [创建的网格异常，但无法删除网格](./failed-to-delete.md)
 - [托管网格纳管集群失败](./failed-to-add-cluster.md)
+- [托管网格纳管集群时 istio-ingressgateway 异常](./hosted-mesh-errors.md)

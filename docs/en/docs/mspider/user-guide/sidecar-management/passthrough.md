@@ -1,4 +1,4 @@
-# passthrough of sidecar traffic
+# Passthrough of sidecar traffic
 
 Traffic passthrough refers to the fact that all or part of the upstream and downstream traffic of the workload is directly sent to the workload itself without being forwarded by the sidecar.
 

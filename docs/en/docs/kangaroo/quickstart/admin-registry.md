@@ -8,7 +8,7 @@ hide:
 In DCE 5.0, there are two registry management methods: hosting Harbor (self-built Harbor on DCE) and registry integration (integrating external Harbor or Docker Registry):
 
 - [Hosted Harbor](../hosted.md) (recommended)
-- [Repository Integration](../integrate.md)
+- [Repository Integration](../integrate/integrate.md)
 
 DCE 5.0 mainly promotes Harbor as a registry to provide image services.
 
