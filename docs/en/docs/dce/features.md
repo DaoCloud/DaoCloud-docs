@@ -78,7 +78,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - The Microservice gateway plays an important role in managing the north-south traffic control of Microservices.
 
-=== "[Insight](../insight/intro/WhatisInsight.md)"
+=== "[Insight](../insight/intro/what.md)"
 
 - The application-centric, out-of-the-box, new generation cloud-native observability operation and maintenance platform realizes fast fault location and quick troubleshooting.
 
