@@ -8,22 +8,22 @@ This page lists the Release Notes related to Hwameistor, so that you can underst
 
 #### Optimization
 
-- **ADD** UI relok8s
+- **Added** UI relok8s
 
 ### v0.9.1
 
 #### Optimization
 
 - **Added** Volume Status monitoring [Issue#741](https://github.com/hwameistor/hwameistor/pull/741)
-- **Fix** Local Storage deployment parameter [Issue #742](https://github.com/hwameistor/hwameistor/pull/742)
+- **Fixed** Local Storage deployment parameter [Issue #742](https://github.com/hwameistor/hwameistor/pull/742)
 
 ### v0.9.0
 
 #### Features
 
-- **NEW** Disk Owner [Issue #681](https://github.com/hwameistor/hwameistor/pull/681)
+- **Added** Disk Owner [Issue #681](https://github.com/hwameistor/hwameistor/pull/681)
 - **Added** Grafana DashBoard [Issue #733](https://github.com/hwameistor/hwameistor/pull/733)
-- **Add** Operator installation method, automatically pull UI when installing [Issue #679](https://github.com/hwameistor/hwameistor/pull/679)
+- **Added** Operator installation method, automatically pull UI when installing [Issue #679](https://github.com/hwameistor/hwameistor/pull/679)
 - **Added** UI application Label [Issue #710](https://github.com/hwameistor/hwameistor/pull/710)
 
 #### Optimization
@@ -51,7 +51,7 @@ This page lists the Release Notes related to Hwameistor, so that you can underst
 
 - **Added** Hwameistor DashBoard UI, which can display the usage status of storage resources and storage nodes.
 
-- **New** interface to manage Hwameistor storage nodes, local disks, and migration records.
+- **Added** interface to manage Hwameistor storage nodes, local disks, and migration records.
 
 - **Added** storage pool management function, which supports the interface to display the basic information of the storage pool and the corresponding node information of the storage pool.
 

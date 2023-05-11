@@ -656,7 +656,7 @@ nav:
           - 介绍:
               - 什么是云原生存储: storage/what.md
               - 背景和挑战: storage/background.md
-              - 功能优势: storage/benifits.md
+              - 功能优势: storage/benefits.md
               - 功能列表: storage/features.md
               - Release Notes: storage/hwameistor/releasenotes.md
           - HwameiStor 本地存储:

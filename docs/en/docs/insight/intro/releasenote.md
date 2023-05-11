@@ -13,14 +13,14 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 #### New
 
 - **Added** JVM monitoring for Java applications.
-- **NEW** Set alarm silent notification.
+- **Added** Set alarm silent notification.
 - **Added** alarm policy function, which supports adding multiple alarm rules in an alarm policy for management.
-- **Add** Nginx Ingress, Contour and other components monitoring dashboard.
-- **NEW** The service topology supports enabling or disabling virtual nodes.
-- **NEW** Added statistics on the number of currently active alarms.
+- **Added** Nginx Ingress, Contour and other components monitoring dashboard.
+- **Added** The service topology supports enabling or disabling virtual nodes.
+- **Added** Added statistics on the number of currently active alarms.
 - **Added** ServiceMonitor with built-in HwameiStor component.
-- **NEW** domain name supports access to sub path.
-- **NEW** [Dashboard] Add record information according to the global management configuration
+- **Added** domain name supports access to sub path.
+- **Added** [Dashboard] Add record information according to the global management configuration
 - **Added** [Dashboard] domain name supports access to sub path.
 
 #### Optimization
@@ -32,10 +32,10 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 #### Fix
 
-- **FIXED** The problem of Chinese invalid search.
-- **FIXED** The problem that the service topology namespace permission cannot view the topology map.
-- **Fix** [Dashboard] Kylin icon style problem
-- **Fix** [dashboard] tooltip is too long
+- **Fixed** The problem of Chinese invalid search.
+- **Fixed** The problem that the service topology namespace permission cannot view the topology map.
+- **Fixed** [Dashboard] Kylin icon style problem
+- **Fixed** [dashboard] tooltip is too long
 
 ## 2023.04.04
 
@@ -48,11 +48,11 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 #### Fix
 
-- **FIX** Fix multiple trigger alarm logging
-- **Fix** Fluentbit CVE-2021-46848, upgrade from 2.0.5 to 2.0.8
-- **FIX** task to check license resources
-- **FIX** SQL statement to clear alert history
-- **Fix** the Chinese problem in the English dashboard
+- **Fixed** Fix multiple trigger alarm logging
+- **Fixed** Fluentbit CVE-2021-46848, upgrade from 2.0.5 to 2.0.8
+- **Fixed** task to check license resources
+- **Fixed** SQL statement to clear alert history
+- **Fixed** the Chinese problem in the English dashboard
 
 ## 2023.03.30
 
@@ -60,11 +60,11 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 #### New
 
-- **NEW** JVM indicator collection and integrated monitoring panel
-- **NEW** Link Access Guidance
-- **NEW** service topology supports error rate and request delay filtering
-- **NEW** link supports Trace ID search
-- **Add** Prometheus component to enable automatic vertical expansion
+- **Added** JVM indicator collection and integrated monitoring panel
+- **Added** Link Access Guidance
+- **Added** service topology supports error rate and request delay filtering
+- **Added** link supports Trace ID search
+- **Added** Prometheus component to enable automatic vertical expansion
 
 #### Optimization
 
@@ -73,11 +73,11 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 #### Fix
 
-- **Fix** display style of pod running status
-- **Fix** When the link function is not enabled, hide related configuration parameters
-- **Fix** Some front-end styles do not take effect
-- **Fix** collection pod indicators no data problem
-- **FIXED** Unable to install insight-agent in OpenShift cluster
+- **Fixed** display style of pod running status
+- **Fixed** When the link function is not enabled, hide related configuration parameters
+- **Fixed** Some front-end styles do not take effect
+- **Fixed** collection pod indicators no data problem
+- **Fixed** Unable to install insight-agent in OpenShift cluster
 
 ## 2023.02.27
 
@@ -85,14 +85,14 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 #### New
 
-- **NEW** Added a refresh button to the chart
-- **New** service topology supports selecting multiple clusters and supports searching by service name
-- **Add** service topology details and indicators of traffic egress and ingress
-- **New** Click on the service name in the service topology details to jump to the details of the service
-- **Add** list of service monitoring and indicators of traffic egress and ingress
-- **New** system component monitoring list
-- **NEW** CoreDNS monitoring panel
-- **NEW** When installing Insight Agent, add whether to enable kubeAudit collection settings
+- **Added** Added a refresh button to the chart
+- **Added** service topology supports selecting multiple clusters and supports searching by service name
+- **Added** service topology details and indicators of traffic egress and ingress
+- **Added** Click on the service name in the service topology details to jump to the details of the service
+- **Added** list of service monitoring and indicators of traffic egress and ingress
+- **Added** system component monitoring list
+- **Added** CoreDNS monitoring panel
+- **Added** When installing Insight Agent, add whether to enable kubeAudit collection settings
 
 #### Optimization
 
@@ -106,15 +106,15 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 #### Fix
 
-- **FIXED** built-in vmcluster dashboard
-- **Fix** When the link is not opened, the navigation bar cannot be loaded
-- **Fix** System component jump to view details link error
-- **FIXED** The quick installation/uninstallation link of the acquisition management list is wrong
-- **FIXED** After advanced index query query, the overlapping part of the index association and chart in the drop-down box cannot be selected
-- **Fix** Allow input of decimals when modifying the storage duration of historical alarms
-- **FIXED** Send multiple notifications when an alert rule generates multiple alerts
+- **Fixed** built-in vmcluster dashboard
+- **Fixed** When the link is not opened, the navigation bar cannot be loaded
+- **Fixed** System component jump to view details link error
+- **Fixed** The quick installation/uninstallation link of the acquisition management list is wrong
+- **Fixed** After advanced index query query, the overlapping part of the index association and chart in the drop-down box cannot be selected
+- **Fixed** Allow input of decimals when modifying the storage duration of historical alarms
+- **Fixed** Send multiple notifications when an alert rule generates multiple alerts
 - **Fixed** `configmap-reload` mirror error for `vmalert` and `vmalertmanager`
-- **FIX** fluentbit for Insight Agent on ARM architecture
+- **Fixed** fluentbit for Insight Agent on ARM architecture
 
 ## 2023.01.10
 
@@ -122,8 +122,8 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 #### Fix
 
-- **Fix** the problem that `kubernetes-event-exporter` image address in insight-agent is wrong
-- **FIXED** Filter alerts API by resource name
+- **Fixed** the problem that `kubernetes-event-exporter` image address in insight-agent is wrong
+- **Fixed** Filter alerts API by resource name
 
 ## 2023.12.30
 
@@ -131,8 +131,8 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 #### Fix
 
-- **FIXED** Build offline package to add `.relok8s-images` file
-- **FIX** Adjust the port name corresponding to the component `otel-collector` port in insight-agent
+- **Fixed** Build offline package to add `.relok8s-images` file
+- **Fixed** Adjust the port name corresponding to the component `otel-collector` port in insight-agent
 
 ## 2022.12.29
 
@@ -140,10 +140,10 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 #### Features
 
-- **Add** support for modifying the storage time of historical alarms
-- **NEW** Added status details of collection management components
-- **NEW** built-in message template
-- **Add** Chart Indicator Calculation Instructions
+- **Added** support for modifying the storage time of historical alarms
+- **Added** Added status details of collection management components
+- **Added** built-in message template
+- **Added** Chart Indicator Calculation Instructions
 
 ### Optimization
 
@@ -153,13 +153,13 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 ### fix
 
-- **Fix** Some built-in alarm rules do not take effect
-- **Fix** Fix the error that the name can be duplicated when creating a rule
-- **Fix** DingTalk robot ending with '-'
-- **FIX** case-insensitive fuzzy search in alert rules
-- **FIXED** service indicator error delay calculation is not accurate
-- **FIXED** Jaeger query has `too many open files` problem
-- **FIXED** es index rollover alias and cleanup strategy not working
+- **Fixed** Some built-in alarm rules do not take effect
+- **Fixed** Fix the error that the name can be duplicated when creating a rule
+- **Fixed** DingTalk robot ending with '-'
+- **Fixed** case-insensitive fuzzy search in alert rules
+- **Fixed** service indicator error delay calculation is not accurate
+- **Fixed** Jaeger query has `too many open files` problem
+- **Fixed** es index rollover alias and cleanup strategy not working
 
 ## 2022.11.28
 
@@ -167,7 +167,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 #### Features
 
-- **Add** insight-agent Helm template installation supports form
+- **Added** insight-agent Helm template installation supports form
 
 #### Optimization
 
@@ -181,13 +181,13 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 #### Fix
 
-- **FIX** service list caching logic
-- **Fix** the problem that the built-in rules do not take effect
-- **FIX** request delay unit issue
-- **Fix** Insight internal link issue
+- **Fixed** service list caching logic
+- **Fixed** the problem that the built-in rules do not take effect
+- **Fixed** request delay unit issue
+- **Fixed** Insight internal link issue
 - **Disable** PSP resource in vm-stack
-- **Fix** victoriaMetrics operator not available in Kubernetes 1.25.
-- **Fix** browser compatibility issues with front-end mirroring
+- **Fixed** victoriaMetrics operator not available in Kubernetes 1.25.
+- **Fixed** browser compatibility issues with front-end mirroring
 
 ## 2022-11-21
 
@@ -202,9 +202,9 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 #### Bugfixes
 
-- **FIX** no data `dashboard`, including OpenTelemetry related dashboards
-- **Fix** the problem that there is no content under some log paths
-- **Fix** delete wrong alarm rule: KubeletPodStartUpLatencyHigh
+- **Fixed** no data `dashboard`, including OpenTelemetry related dashboards
+- **Fixed** the problem that there is no content under some log paths
+- **Fixed** delete wrong alarm rule: KubeletPodStartUpLatencyHigh
 
 #### other
 
