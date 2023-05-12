@@ -302,35 +302,51 @@ nav:
               - Run the pipeline on the specified node: amamba/quickstart/pipeline-on-node.md
               - Jenkins scenario configuration: amamba/quickstart/scenarios-config.md
               - Using a custom toolchain in Jenkins: amamba/user-guide/tools/jenkins-custom.md
-      - Multicloud Orchestration:
-          - Intro:
-              - What is Multicloud Orchestration: kairship/intro/what.md
-              - Features: kairship/intro/features.md
-              - Architecture: kairship/intro/architecture.md
-              - Benefits: kairship/intro/benefits.md
-              - Concepts: kairship/intro/concepts.md
+      - Multi-cloud orchestration:
+          - introduce:
+              - What is multi-cloud orchestration: kairship/intro/what.md
+              - Feature overview: kairship/intro/features.md
+              - Product Architecture: kairship/intro/architecture.md
+              - Product Benefits: kairship/intro/benefits.md
+              - Basic concepts: kairship/intro/concepts.md
+              - Frequently Asked Questions: kairship/intro/faq.md
               - Release Notes: kairship/intro/release-notes.md
-          - Multicloud Instances:
-              - Instance Intro: kairship/03instance/README.md
-              - Add Instance: kairship/03instance/add.md
-              - Delete Instance: kairship/03instance/delete.md
-              - Workspace: kairship/03instance/workspace.md
-          - Clusters:
-              - Joint Cluster: kairship/04cluster/join.md
-              - Remove Cluster: kairship/04cluster/remove.md
-          - Multicloud Workload:
-              - Workload Intro: kairship/05workload/README.md
-              - Create with Image: kairship/05workload/image.md
-              - Create with YAML: kairship/05workload/yaml.md
-              - Upgrade to Multicloud Workload with One-click: kairship/05workload/promote.md
-          - Resources:
-              - Multicloud Service: kairship/06resource/service.md
-              - Multicloud Namespace: kairship/06resource/ns.md
-              - Multicloud ConfigMap: kairship/06resource/configmap.md
-              - Multicloud Secret: kairship/06resource/secret.md
-          - Policies:
-              - PropagationPolicy: kairship/07policy/propagationpolicy.md
-              - OverridePolicy: kairship/07policy/overridepolicy.md
+          - Multi-cloud instance management:
+              - Multi-cloud instance introduction: kairship/instance/README.md
+              - Add instance: kairship/instance/add.md
+              - Delete instance: kairship/instance/delete.md
+              - Workspace: kairship/instance/workspace.md
+          - Worker cluster management:
+              - Join the cluster: kairship/cluster/join.md
+              - Remove cluster: kairship/cluster/remove.md
+          - Multi-cloud workloads:
+              - Workload Introduction: kairship/workload/README.md
+              - Image creation: kairship/workload/deployment.md
+              - YAML creation: kairship/workload/yaml.md
+              - Update multi-cloud workload: kairship/workload/update-deployment.md
+              - One-click upgrade to multi-cloud load: kairship/workload/promote.md
+              - Image creation task: kairship/workload/job.md
+              - Mirror creation cron job: kairship/workload/cronjob.md
+          - Custom resource management: kairship/crds/crd.md
+          - Resource management:
+              - Multi-cloud service: kairship/resource/service.md
+              - Multi-cloud namespace: kairship/resource/ns.md
+              - Multi-cloud configuration item: kairship/resource/configmap.md
+              - Multi-cloud secret: kairship/resource/secret.md
+              - Multi-cloud routing: kairship/resource/ingress.md
+              - Update multi-cloud service: kairship/resource/update-service.md
+              - Update multi-cloud secret: kairship/resource/update-secret.md
+              - Update multi-cloud configuration items: kairship/resource/update-configmap.md
+              - More multi-cloud routing: kairship/resource/update-ingress.md
+          - Policy management:
+              - Deployment policy: kairship/policy/propagation-policy.md
+              - Differentiation strategy: kairship/policy/override-policy.md
+          - Binding workspace: kairship/workspace.md
+          - Failover:
+              - Failover function introduction: kairship/failover/failover.md
+              - Optimize failover latency sensitivity: kairship/failover/optimization-failover.md
+          - Best Practices:
+              - DCE4 to DCE5: kairship/best-pratice/one-click-conversion.md
       - Microservice Engine:
           - Intro:
               - Features: skoala/intro/what.md
