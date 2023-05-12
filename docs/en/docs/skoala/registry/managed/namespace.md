@@ -11,27 +11,27 @@ Microservice namespaces can be used to isolate services, configuration, and othe
 
 1. Enter `Microservice Engine` -- > `Microservice Governance` -- > `Managed Registry` module, click on the name of the target registry.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 2. Click `Microservice Namespace` in the left navigation bar, then click `Create` in the upper right corner.
   
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 3. Enter the ID, name, and description of the namespace and click `OK` in the lower right corner of the page.
 
     If you do not enter an ID, the system automatically generates an ID. ** The namespace ID cannot be changed after creation **
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 ## Update the microservice namespace
 
 1. In the right operation bar of the corresponding namespace, click `Edit` to enter the update page.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 2. To modify the namespace name and description, click `OK`.
   
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 ## Delete the microservice namespace
 
@@ -40,4 +40,4 @@ Click `Delete` in the right operation bar of the corresponding namespace, and th
 !!! note
   
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->

@@ -20,15 +20,15 @@ The microservice engine gateway supports JWT validation. Here"s how to use this 
     - Token cache duration: Indicates the cache duration of the JWKS memory. The JWKS server address is not requested repeatedly within the cache validity period
     - Authentication timeout duration: Response timeout duration of the JWKS server. Obtaining JWKS fails after the timeout duration
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
 2. See [Add API](../ms-gateway/api/add-api.md) to create the API and enable the JWT authentication security policy.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 3. With the Token access authentication, if the access succeeds, the JWT policy is successfully configured
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 ## Create the JWKS application
 
@@ -48,7 +48,7 @@ If no JWKS application exists in the current environment, follow the following s
 
     Go to <http://localhost:8080>. If the following screen appears, the JWKS generator is running locally successfully.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 3. Refer to the instructions below to fill in the information, click `Generate` to generate the JWKS content.
 
@@ -57,21 +57,21 @@ If no JWKS application exists in the current environment, follow the following s
     - Algorithm: indicates the algorithm. Select HS256
     - KeyID: Optional, matching parameter when JWKS has multiple values
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
 4. Copy the value of `k` in the figure above and access <https://jwt.io> to generate a Token.
 
       - The algorithm selects HS256
       - Paste the copied k value into secret and check `secret base64 encoded`
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
 5. Create the YAML file based on [YAML Template](https://github.com/projectsesame/enovy-remote-jwks-go/blob/main/all-in-one.yaml), and then install the JWKS application using the `kubectl apply` command
 
     - Change `namespace` to the namespace where the gateway resides, in this example `envoy-yang`
     - Change `jwks.json` to the JWKS content generated in Step 3 above
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
     ????? note "The YAML file configured in this example is shown below"
 
@@ -166,4 +166,4 @@ If no JWKS application exists in the current environment, follow the following s
 
     > You can view the gateway address on the gateway overview page of the Micro Service Engine.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->

@@ -3,21 +3,18 @@ hide:
   - toc
 ---
 
-# Applicable scenarios
+# Application scenario
 
 - Continuous delivery pipeline
 
-    For complex business systems, each stage from project creation, compilation, construction, self-inspection, integration verification, class production verification, and launch requires a lot of manpower and time, and is prone to errors due to human factors.
-    Due to the standardization and automation characteristics of continuous integration and continuous delivery, code changes are used as flow units, and based on the release pipeline, all functions of development, testing, and operation and maintenance are pulled through, and software is released continuously, quickly, and with high reliability, which can solve this problem very well. question.
+    For complex business systems, the various stages from project creation, compilation, construction, self-verification, integration verification, class production verification, and online require a lot of manpower and time, and are prone to human factors and errors. Continuous integration and continuous delivery with the characteristics of standardization and automation, code change as a fluid unit, based on the release pipeline, pull all functions of development, testing, operation and maintenance, continuous, fast, high reliable release of software, can be a good solution to this problem.
 
-    **Automated CI/CD pipeline**
+    ** Automatic CI/CD pipeline **
 
-    
+    <!--![]()screenshots-->
 
-- Based on pipeline + GitOps to achieve continuous delivery of applications under cloud native
+- Implementation of continuous application delivery under cloud native based on pipeline + GitOps
 
-    Thanks to the concept of GitOps, the open source software Argo CD is used to practice Kubernetes application release.
-    Users only need to submit the Kubernetes YAML file to the codebase, and GitOps will automatically sense the changes in the YAML file, and cooperate with the merge request function of the codebase.
-    Automatically push the changes of the YAML file to the cluster, the whole process does not need to learn Kubernetes release commands, and does not need to directly operate the cluster.
+    Thanks to the concept of GitOps, we use open source software Argo CD to practice Kubernetes application release. Users only need to submit Kubernetes YAML files to the code warehouse, and GitOps will automatically perceive the changes of YAML files and push the changes to the cluster automatically with the combination request function of the code warehouse. There is no need to learn the Kubernetes publishing command or manipulate the cluster directly.
 
-    
+    <!--![]()screenshots-->

@@ -8,34 +8,34 @@ After [created a gateway](../gateway/create-gateway.md) succeeds, the services i
 
 1. In the `Gateway List` page click on the name of the target gateway, enter the gateway overview page, in the left navigation bar click `Add Service` -- > `Service List`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 2. On the `Service List` page click `Auto Add`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 ## Configure service policy
 
 1. In the `Service List` -- > `Auto Add` page to find the target service, on the right side click ** `ⵗ` ** choose `Policy Settings`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 2. To adjust the service policy configuration as required, click `OK` in the lower right corner of the pop-up box.
 
     - HTTPS certificate verification: After HTTPS is enabled, you must pass certificate verification to access the service successfully.
     - Service circuit breaker: When the maximum number of connections, processing connections, parallel requests, and parallel retries ** Any one ** reaches the threshold, service calls are automatically cut off to protect the overall system availability. When the metric drops to a set threshold, calls to the service are automatically resumed.
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
 ## Viewing service details
 
 1. Locate the target service on the `Service List` -> `Auto Add` page and click on the service name.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 2. View information such as the service name, source, and associated API. Supports sorting by installing `Last Update`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 !!! info
 

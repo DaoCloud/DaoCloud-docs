@@ -5,11 +5,11 @@ hide:
 
 # Credential management
 
-Credentials can save sensitive information, such as username and password, access token (Secret text), Kubeconfig, etc., making the saved data more secure and flexible and avoiding being exposed to the image.
-When the pipeline is running, it will interact with third-party websites or applications in most cases, such as Git registrys, container registrys, etc.
+Credentials can save sensitive information, such as username and password, access token (Secret text), Kubeconfig, etc., making the saved data more secure and flexible and avoiding being exposed to the mirror.
+When the pipeline is running, it will interact with third-party websites or applications in most cases, such as Git warehouses, mirror warehouses, etc.
 Corresponding credentials need to be provided during this process, so users are required to configure credentials for the pipeline. After users configure credentials, they can use these credentials to interact with third-party websites or applications.
 
-Currently, you can create the following 3 types of credentials in App Workbench:
+Currently, you can create the following 3 types of credentials in Application Workbench:
 
 - **Username and Password**: Used to store the authentication information of username and password. If the third-party website or application supports username/password access, you can choose this type, such as those of GitHub, GitLab and Docker Hub account.
 
@@ -21,11 +21,11 @@ The specific steps to create and manage credentials are as follows:
 
 1. Click `Pipeline`->`Certificate` in the left navigation bar to enter the list of certificates, and click `New Credentials` in the upper right corner.
 
-    
+    <!--![]()screenshots-->
 
 2. On the `Create Credentials` page, configure the relevant parameters and click `OK`.
 
-    
+    <!--![]()screenshots-->
 
     - Fill in the `credential name`, set the ID that can be used in the pipeline, such as `dockerhub-id`. Note: Once set it cannot be changed.
     - In the `Type` field, select the type of credential to add.
@@ -37,7 +37,7 @@ The specific steps to create and manage credentials are as follows:
 
 3. The screen prompts that the creation is successful, and the newly created credential is the first one by default.
 
-    
+    <!--![]()screenshots-->
 
 4. Click `︙` on the right side of the list, and you can choose operations such as edit or delete in the pop-up menu.
 

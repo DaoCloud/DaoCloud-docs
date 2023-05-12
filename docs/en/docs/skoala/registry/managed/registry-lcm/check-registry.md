@@ -13,7 +13,7 @@ In basic information page to view the registry `Basic Info`, `Governance Info` (
 
 - Restart the registry instance: Click `Restart` in the upper right corner of the page to restart the entire managed registry instance.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 - Node offline: Select a node in the node list and modify the node status.
 
@@ -25,8 +25,8 @@ In basic information page to view the registry `Basic Info`, `Governance Info` (
 
         Click `Online` in the `Actions` column to change the node instance status to "Online".
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
 - View node metadata
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->

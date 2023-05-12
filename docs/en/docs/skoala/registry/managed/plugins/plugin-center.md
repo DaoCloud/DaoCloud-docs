@@ -5,7 +5,7 @@ The plug-in Center provides two plug-ins, Sentinel governance and Mesh governanc
 !!! info
 
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 ## Sentinel governance
 

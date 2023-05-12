@@ -1,50 +1,59 @@
-# What is App Workbench?
+# What is an application workbench?
 
-App Workbench is a container-based cloud native DevOps platform, which provides a unified entrypoint for creating DCE 5.0 applications. In additionally, it is built-in with multi tenants supports and cross cluster deployments.
+The Application Workbench is a container-based cloud native application platform for DevOps. It provides a unified entry point for DCE 5.0 application creation, a comprehensive hierarchical multi-tenant solution, and supports resource deployment across clusters.
 
-App Workbench is designed for the process of automated delivery of enterprise applications and infrastructures. It enables full lifecycle management of applications from development to testing, deployment and operation.
+Application workbench focuses on the process of automatic delivery and infrastructure change of enterprise applications, and provides the full life cycle management of business applications from "development -> testing -> deployment -> operation and maintenance". IT can effectively help enterprises realize digital transformation and improve the IT delivery capability and competitiveness of enterprises.
 
-=== "Multi Tenants Management"
+=== "Hierarchical Multi-tenant Resource Management"
 
-Taking the [workspace](../../ghippo/user-guide/workspace/ws-folder.md) as a minimum tenant unit, supports the ability to share resources in a single cluster and across clusters:
+If [Workspace](../../ghippo/user-guide/workspace/ws-folder.md) is used as the smallest tenant unit, resources can be shared across clusters as well as in a single cluster.
 
-- Weak binding clusters, so as to obtain the ability to share resources across clusters and namespaces.
-- Strong cluster binding, so as to obtain the ability of exclusive resources.
-- Workspace management members can create namespace resources in the associated cluster.
-- Self service resource creation mode. Users can self create namespaces in the workspace to divide resources.
+- Weakly bound clusters are supported, enabling resources to be shared across clusters and namespaces
 
+- Support for strongly binding clusters to obtain exclusive resources
 
+- Workspace management members can create namespace resources in associated clusters
 
-=== "Cloud Native Based"
+- Self-service resource creation mode. Users can create namespaces in the workspace to isolate resources
 
-Support popular cloud native applications such as kubernetes manifests, Helm, OAM, OLM, etc. And it can seamlessly integrate with SpingCloud, Dubbo and ServiceMesh frameworks to achieve SOA (Service-Oriented Architecture). In additionally, DCE 5.0 [micro service engine](../../skoala/intro/features.md) and [service mesh](../../mspider/intro/what.md), enables scaling, logging, monitoring and upgrading for applications.
+<!--![]()screenshots-->
 
+=== "Cloud native app centric"
 
+Supports "multi-form" cloud native applications in cloud native scenarios, including Kubernetes native applications, Helm applications, OAM applications, etc. It can access micro-service applications of SpingCloud, Dubbo and ServiceMesh frameworks to realize micro-service governance and seamlessly integrate with [Microservice Engine](../../skoala/intro/what.md) and [Service Mesh](../../mspider/intro/what.md) of DCE 5.0. Supports the full life cycle management of cloud native applications, such as application expansion and shrinkage, logging, monitoring, and updating.
 
-=== "Efficient Continuous Integration"
+<!--![]()screenshots-->
 
-You can use both Jenkins and Tekton in the same time. The pipeline can be edited simply by web UI. In the maintime, applications workbench support multiple SCM (Source Code Management).
+=== "Efficient continuous integration"
 
+Support Jenkins and Tekton dual pipelined engine systems. Use graphic editing pipeline to achieve the effect of what you see is what you get. Applications can be built from different sources of code.
 
+<!--![]()screenshots-->
 
-=== "Automated Secure Progressive Delivery"
+=== "Incremental Delivery of security Automation"
 
-App Workbench introduces a concept of continuous deployment for cloud native, which designed for cooperate with GitOps. It integrates the progressive delivery component with Argo Rollout and supports grayscale publishing that improved the efficiency of app delivery.
+The application Workbench introduces a concept of continuous deployment for cloud native applications -- GitOps. It fully embraces GitOps to integrate the progressive delivery component Argo Rollout and support grayscale publishing, thus improving the stability and efficiency of application delivery.
 
-
-
-!!! info
-
-    Progressive delivery is an approach to gradually expose a new version to few initial users, and then become a larger subset to mitigate the risk of negative impacts (such as errors).
-    
-    Argo-Rollout Kubernetes Progressive Delivery Controller，provide powerful deployment capabilities. Including grayscale publishing, blue-green deployment, experimentation, progressive delivery and so on.
-
-## Where the workbench is located in DCE 5.0
-
-The App Workbench has a significant role in the roadmap of DCE 5.0 as shown below.
+<!--![]()screenshots-->
 
 
+## Status in DCE 5.0
 
-App Workbench is developed on the basis of Container Management and Global Management. It implements the hierarchical resource management and progressive delivery with CI/CD pipelines and GitOps workflow.
+The status of the application workbench in DCE 5.0 is shown below.
 
-[Free trial now](../../dce/license0.md){ .md-button .md-button--primary }
+<!--![]()screenshots-->
+
+With container management as the base, it realizes hierarchical resource management with the help of global management, and uses CI/CD pipeline and GitOps process to add, delete, modify and check cloud native applications to achieve progressive delivery.
+
+## Deployment method
+
+Run the following commands in sequence to deploy the VM.
+
+```bash
+export VERSION=**** # Change to version you need to deploy
+helm repo add mspider-release https://release.daocloud.io/chartrepo/amamba
+helm repo update amamba
+helm upgrade --install --create-namespace --cleanup-on-fail amamba amamba-release/amamba -n amamba-system --version=${VERSION}
+```
+
+[Download DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }[Install DCE 5.0](../../install/intro.md) { .md-button .md-button--primary }[Free Try](../../dce/license0.md) { .md-button .md-button--primary }

@@ -13,8 +13,8 @@ There are two ways to update the gateway configuration.
 
 - In the `Gateway List` page choose the gateway instance needs to be updated, at the instance of right click ** `⋯` ** and select `Edit`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 - Click the gateway name to access the overview page. In the upper right corner, click `Edit`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->

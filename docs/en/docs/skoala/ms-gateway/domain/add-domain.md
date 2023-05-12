@@ -6,7 +6,7 @@ To add a domain name, perform the following steps:
 
 1. Click the name of the target gateway to enter the gateway overview page. Then click `Domain Management` in the left navigation bar and `Add Domain` in the upper right corner of the page.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 2. Fill in the configuration information
 
@@ -17,16 +17,16 @@ To add a domain name, perform the following steps:
 
         > Currently, only existing certificates can be selected. Automatic certificate issuance and manual certificate upload functions are being developed.
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
     - Local current limiting: refer to [Local Rate Limit](../api/api-policy.md#_6)
     - Cross-domain: refer to [Cross-domain](domain-policy.md#_2)
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
 
 3. Click `OK` in the lower right corner of the page
 
     Click `OK`, and the `Domain Management` page is automatically displayed. You can view the newly created domain name in the domain name list.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->

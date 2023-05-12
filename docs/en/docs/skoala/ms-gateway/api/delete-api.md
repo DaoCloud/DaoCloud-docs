@@ -9,8 +9,8 @@ You can remove an API in two ways.
 
 - In the `API Management` page to find the need to delete the API, on the API right click ** `ⵗ` ** and select `Remove`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 - Click the API names into the API details page, at the upper right corner of the page by clicking on the ** `ⵗ` ** hold and select `Remove`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->

@@ -22,19 +22,19 @@ When the target back-end service of an API serves multiple instances, you can us
   
     Default load balancing policy. When a random rule is selected, the gateway randomly distributes the request to any instance of the back-end service. Some back-end services may be overloaded when the traffic is low. The effect is shown in the following figure:
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 - polling
   
     All instances of the back-end service distribute requests in turn, and each service instance receives roughly the same number of requests. This rule ensures equal distribution of traffic when the traffic volume is small. The effect is shown in the following figure:
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 - weight
   
     Traffic is distributed based on the weight of the API target back-end service. A larger weight indicates a higher priority and more traffic is borne. See the following figure for the service weight configuration entry:
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 - Cookie
   
@@ -44,7 +44,7 @@ When the target back-end service of an API serves multiple instances, you can us
   
     When you select request Hash, you can use some advanced policies to implement load balancing. Currently, the supported Hash policies are IP and request parameters.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 ## Path rewriting
 
@@ -52,7 +52,7 @@ If the exposed API path is inconsistent with the path provided by the back-end s
 
 Note: ** You need to make sure that the overwritten path is real and that the path is correct, starting with a "/" **.
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 ## Timeout configuration
 
@@ -60,7 +60,7 @@ This section describes how to set the maximum response duration. If the maximum 
 
 The timeout configuration is disabled by default. After it is enabled, you must set a timeout period. Enabling the timeout configuration helps reduce congestion caused by exception handling.
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 ## Retry mechanism
 
@@ -85,7 +85,7 @@ You can customize retry conditions and retry status codes.
 - Insufficient resources: Automatically retry when the response is insufficient resources.
 - When the service is unavailable: Automatically retry when the response is unavailable at the back end.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 ## Request header/response header rewriting
 
@@ -95,7 +95,7 @@ Support for adding, modifying, and deleting request and response headers and the
 - Modify the request header/response header: Use the `Settings` action to fill in the existing keywords and assign a new value.
 - To remove the request header or response header, run the `Remove` action and enter only the keyword to be removed.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 ## Websocket
 
@@ -103,7 +103,7 @@ WebSocket is a protocol for full-duplex communication over a single TCP connecti
 
 After Websocket is enabled, you can use Websocket to access API back-end services.
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 ## Local current limiting
 
@@ -116,7 +116,7 @@ The microservice gateway supports abundant traffic limiting capabilities, includ
 
 The configuration shown in the following figure indicates that a maximum of 8 requests are allowed per minute (3+5). The 9th access will return a 429 status code indicating that the number of requests is too many. The response content returned after each successful request will have a `ratelimit：8` response header.
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 !!! info
 
@@ -132,7 +132,7 @@ By setting the health check address, you can ensure that the gateway automatical
 - Marking the number of health checks: The service instance is marked as healthy only when the check result is healthy for N consecutive times. When a service instance is marked as healthy, request traffic is automatically distributed to the service instance.
 - Marking the number of unhealthy checks: If the service instance is checked for N consecutive times and the result is unhealthy each time, the service instance is marked as unhealthy. When the service instance is marked as unhealthy, the request traffic to the instance is stopped.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 ## Cookie rewriting
 
@@ -148,7 +148,7 @@ Configure the cookie rewriting policy by referring to the following instructions
     - Lax: Banned in most cases, except for Get requests that navigate to the target URL.
     - None: Cross-domain requests are allowed to carry cookies of this site, provided that Secure is set to `Enable`, that is, it can only be used under HTTPS
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
 ## Access blacklist and whitelist
 
@@ -160,8 +160,8 @@ After `Black List` is enabled, only IP requests in the whitelist are allowed to 
 
 - Remote: If the IP source is Remote, whether the whitelist takes effect depends on the number of proxy layers before the gateway. When the number of proxy layers is n, the IP address of the n+1 endpoints from the gateway takes effect. For example, `**Client-Nginx-Gateway**` If the number of proxy layers before the gateway is 1, this parameter takes effect only for the IP address of the second endpoint before the gateway, that is, the IP address of the client. If you fill in the IP address of Nginx, the whitelist will not take effect.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 - Peer: If the IP source is Peer, the whitelist is valid only for the **direct** peer IP address of the gateway, regardless of the number of proxy layers before the gateway. For example `Client-...-Nginx-Gateway`, no matter how many proxy endpoints there are between the client and Nginx, the whitelist is only valid for the IP of the last Nginx.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->

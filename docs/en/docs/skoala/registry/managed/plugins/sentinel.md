@@ -13,16 +13,16 @@ Sentinel is a traffic governance component oriented to distributed and multi-lan
 
 1. Click the name of the target registry on the Hosting Registry list page, and.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 2. In the left navigation bar, click `Plugins`, and on the `Sentinel` card, click `Enable`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 3. Fill in the configuration information and click `OK` at the bottom of the box.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 4. If the prerequisites are met and the configuration is correct, the message "Success in enabling the Sentinel plug-in" pops up in the upper right corner of the page.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->

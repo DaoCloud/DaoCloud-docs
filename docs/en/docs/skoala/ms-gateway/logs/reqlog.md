@@ -6,18 +6,18 @@ The microservice gateway supports viewing request logs and instance logs. This p
 
 Click the name of the target gateway to enter the gateway overview page, and then click `Check Logs` -> `Request Logs` in the left navigation bar.
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 ## Related operation
 
 - Filtering logs: Logs are filtered by Request ID, request path, domain name, request method, HTTP, and GRPC. Logs are sorted by request start time, request time, and request service time.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 - Set a time range: You can select logs that last 5 minutes, 10 minutes, or 15 minutes, or set a time range.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 - Export logs: You can export log files to a local PC.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->

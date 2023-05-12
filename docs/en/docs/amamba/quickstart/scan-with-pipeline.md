@@ -1,12 +1,12 @@
 # Use pipeline to implement code scanning
 
-The source code in the codebase is the original form of software, and its security flaws are the direct root cause of software vulnerabilities.
+The source code in the code warehouse is the original form of software, and its security flaws are the direct root cause of software vulnerabilities.
 Therefore, finding security flaws in source code through code scanning analysis is an important method to reduce potential software vulnerabilities.
 
 For example, SonarQube is an automatic code review tool for detecting bugs in project code, improving test coverage, and more.
 It can be integrated with existing workflows in a project for continuous code reviews between project branches and pull requests.
 
-This page will introduce how to integrate SonarQube in the pipeline to achieve code scanning capabilities.
+This article will introduce how to integrate SonarQube in the pipeline to achieve code scanning capabilities.
 
 ## Deploy SonarQube
 
@@ -18,16 +18,16 @@ If you already have a SonarQube environment, you can skip this step, but you nee
     helm repo add sonarqube <https://SonarSource.github.io/helm-chart-sonarqube>
     helm repo update
     kubectl create namespace sonarqube
-    helm upgrade --install -n sonarqube sonarqube sonarqube/sonarqube -n amamba-system --create-namespace --set service.type=NodePort
+    helm upgrade --install -n sonarqube sonarqube sonarqube/sonarqube  --create-namespace --set service.type=NodePort
     ```
 
 2. Check that the Pod STATUS under the corresponding namespace is Running, indicating that SonarQube is installed successfully.
 
     ```none
     kubectl get po
-    NAME READY STATUS RESTARTS AGE
-    sonarqube-postgresql-0 1/1 Running 0 3h59m
-    sonarqube-sonarqube-0 1/1 Running 0 3h59m
+    NAME                     READY   STATUS    RESTARTS   AGE
+    sonarqube-postgresql-0   1/1     Running   0          3h59m
+    sonarqube-sonarqube-0    1/1     Running   0          3h59m
     ```
 
 3. View the access address of the SonarQube console. Usually the access address is `http://<Node IP>:<NodePort>`, and the account and password are `admin/admin`.
@@ -40,49 +40,60 @@ If you already have a SonarQube environment, you can skip this step, but you nee
 
 4. Generate an administrator token (Token) in SonarQube, the operation path is: `My Account` -> `Profile` -> `Security` -> `Generate` -> `Copy`
 
-    
+    <!--![]()screenshots-->
 
-    
+    <!--![]()screenshots-->
 
-    
+    <!--![]()screenshots-->
 
-5. Create a Webhook server in SonarQube, the operation path:
+5. Add the SonarQube address to Jenkins, please ensure that it can communicate with each other, the operation path:
 
-    1. The operation path is `Administration` -> `Configuration` -> `Webhooks` -> `Create`.
+     1. The operation path is `Manage Jenkins` -> `Configure System` -> `SonarQube servers` -> `Add SonarQube`
 
-    2. In the pop-up dialog box, enter `Name` and `Jenkins Console URL` (that is, the SonarQube Webhook address, which is the previously obtained SonarQube address + sonarqube-webhook).
+     2. In the pop-up dialog box, enter `Server URL` and `Server authentication token` (that is, the SonarQube address, which is the previously obtained SonarQube address + administrator token).
 
-    3. Click `Create` to complete the operation.
+     3. Click `Save` to complete the operation.
 
-6. Provide an exposed Jenkins address, this is for users to add SonarQube server to Jenkins.
+    <!--![]()screenshots-->
 
-7. Create a SonarQube Token for the new project, the operation path is `Create new project` -> `Set Up` -> `Generate` -> `Continue`.
+    <!--![]()screenshots-->
 
-    
+    <!--![]()screenshots-->
 
-    
+    !!! note
+
+        How do I access the Jenkins Dashboard for an App Workbench deployment?
+        
+         - Go to Container Management -> Global Service Cluster -> Stateless Load, find the load amamba-jenkins under amamba-system, and expose the service through NodePort.
+         - The default username and password are admin/Admin01
+
+6. Create a SonarQube Token for the new project, the operation path is `Create new project` -> `Set Up` -> `Generate` -> `Continue`.
+
+    <!--![]()screenshots-->
+
+    <!--![]()screenshots-->
 
 ## Create pipeline
 
 1. On the Pipeline page, click `Create Pipeline`.
 
-    
+    <!--![]()screenshots-->
 
 2. Select `Custom Creation`.
 
-    
+    <!--![]()screenshots-->
 
 3. Enter a name, others can use the default value, click `OK`.
 
-    
+    <!--![]()screenshots-->
 
 ## Edit Jenkinsfile
 
 1. Click a pipeline to enter its details page, click `...` -> `Edit Jenkinsfile` in the upper right corner.
 
-    
+    <!--![]()screenshots-->
 
-    
+    <!--![]()screenshots-->
 
 2. Copy and paste the following YAML code into jenkinsfile.
 
@@ -90,7 +101,7 @@ If you already have a SonarQube environment, you can skip this step, but you nee
     pipeline {
     agent {
         node {
-        label 'go16'
+        label 'go'
         }
         
     }
@@ -104,7 +115,7 @@ If you already have a SonarQube environment, you can skip this step, but you nee
         stage('unit test') {
         steps {
             container('go') {
-                sh 'go test-json > test-report.out'
+                sh 'go test -json > test-report.out'
                 sh 'go test -coverprofile=coverage.out'
             }
         }
@@ -124,7 +135,7 @@ If you already have a SonarQube environment, you can skip this step, but you nee
         steps {
             container('go') {
             timeout(time: 1, unit: 'HOURS') {
-                waitForQualityGate abortPipeline: false // Set to false here, indicating that the pipeline can continue even if it does not pass the QUALITY GATE of sonarQube
+                waitForQualityGate abortPipeline: false // false means pipeline will continue even if sonarQube QUALITY GATE failed
             }
             }
         }
@@ -169,8 +180,8 @@ If you already have a SonarQube environment, you can skip this step, but you nee
 
         In the above code,
         
-        - waitForQualityGate abortPipeline: false, indicating that the pipeline can continue even if it fails the gate quality check. If true, give up
-        - For the shell statement under withSonarQubeEnv, it can be copied from SonarQube in the previous step
+         - waitForQualityGate abortPipeline: false, indicating that the pipeline can continue even if it fails the gate quality check. If true, give up
+         - For the shell statement under withSonarQubeEnv, it can be copied from SonarQube in the previous step
 
 3. Run the pipeline immediately after saving.
 
@@ -178,3 +189,4 @@ If you already have a SonarQube environment, you can skip this step, but you nee
 
 After waiting for the pipeline to run successfully, go to SonarQube to view the code scanning results.
 
+<!--![]()screenshots-->

@@ -1,36 +1,36 @@
-# FAQs
+# Q&A
 
-This page lists some failures you may encounter when using the App Workbench and gives solutions.
+This page lists some of the problems you may encounter when using the application workbench and provides solutions.
 
-## Execute the pipeline and report an error
+## Execution pipeline times are incorrect
 
-When the cluster where Jenkins resides and the application deployment cluster cross data centers, the network communication delay will become higher, and the following error message may be encountered:
+When the Jenkins cluster and the application deployment cluster cross the data center, the network communication delay becomes high, and the following error messages may be reported:
 
 ```bash
 E0113 01:47:27.690555 50 request.go:1058] Unexpected error when reading response body: net/http: request canceled (Client.Timeout or context cancellation while reading body)
 error: unexpected error when reading response body. Please retry. Original error: net/http: request canceled (Client.Timeout or context cancellation while reading body)
 ```
 
-**solution**:
+**Solution**：
 
-In the Jenkinsfile of the pipeline, modify the deployment command from `kubectl apply -f` to `kubectl apply -f . --request-timeout=30m`
+Change the deployment command from `kubectl apply -f` to `kubectl apply -f. --request-timeout=30m` in the pipeline"s Jenkinsfile
 
-## When building an image through Jenkins, the container cannot access the private image repository****
+## When building images via Jenkins, the container cannot access the private image repository ****
 
-When encountering this problem, you can add the following command to the Jenkinsfile of the pipeline:
+When you encounter this problem, you can add the following command to the pipeline Jenkinsfile:
 
 ```bash
 cat > /etc/containers/registries.conf << EOF
-[registries. insecure]
+[registries.insecure]
 registries = ['temp-registry.daocloud.io']
 EOF
 ```
 
-![Add command](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/faq01.png)
+<!--![]()screenshots-->
 
-## Adding a GitHub repository under the GitOps module reports an error
+## Error adding GitHub repository under GitOps module
 
-Since GitHub has removed the support for username/password, when importing **GitHub** repositories via HTTP, the import will fail, and the following error message may appear:
+Because GitHub has removed support for username/password, the **GitHub** repository fails to be imported through HTTP. The following error message may be displayed:
 
 ```bash
 remote: Support for password authentication was removed on August 13, 2021.
@@ -38,10 +38,10 @@ remote: Please see https://docs.github.com/en/get-started/getting-started-with-g
 fatal: Authentication failed for 'https://github.com/DaoCloud/dce-installer.git/'
 ```
 
-**solution**:
+**Solution**：
 
-Import the **GitHub** repository using SSH.
+Import **GitHub** to the warehouse using SSH.
 
-## When adding a registry in the GitOps module under a certain workspace, it prompts that the registry already exists
+## Adding a repository in the GitOps module under a workspace prompts that the repository already exists
 
-Currently, a registry can only be bound to one workspace, and cannot be bound to different workspaces.
+Currently, a warehouse binding can only be bound to one workspace, not to different workspaces.
