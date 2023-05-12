@@ -1,6 +1,6 @@
-# Multicloud Secret
+# multi-cloud key
 
-A Secret is an object that contains a small amount of sensitive information such as a password, token, or Secret.
+A Secret is an object that contains a small amount of sensitive information such as a password, token, or key.
 Such information may be placed in the Pod specification or in the image.
 Using Secret means you don't need to include secret data in your application code.
 
@@ -9,19 +9,19 @@ DCE and applications running in the cluster can also take additional precautions
 
 Secret is similar to ConfigMap but designed to hold secret data.
 
-Two creation methods are currently provided: wizard creation and Create with YAML. This page takes wizard creation as an example, and follows the steps below.
+Two creation methods are currently provided: wizard creation and YAML creation. This article takes wizard creation as an example, and follows the steps below.
 
-1. After entering a multicloud instance, in the left navigation bar, click `Resource Management` -> `Multicloud Secret`, and click the `Create Secret` button in the upper right corner.
+1. After entering a multi-cloud instance, in the left navigation bar, click `Resource Management` -> `Multi-cloud Key`, and click the `Create Key` button in the upper right corner.
 
-    
+    <!--screenshot-->
 
-2. On the `Create Secret` page, enter the name, select the namespace and other information, and click `OK`.
+2. On the `Create Key` page, enter the name, select the namespace and other information, and click `OK`.
 
-    
+    <!--screenshot-->
 
-3. Back to the list of multicloud Secrets, the newly created one is the first one by default. Click `⋮` on the right side of the list to edit YAML, update, export and delete Secret.
+3. Back to the list of multi-cloud keys, the newly created one is the first one by default. Click `⋮` on the right side of the list to edit YAML, update, export and delete Secret.
 
-    
+    <!--screenshot-->
 
     !!! note
 
