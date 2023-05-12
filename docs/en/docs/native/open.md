@@ -217,6 +217,10 @@ This page lists activity in cloud native open source projects in alphabetical or
     During this audit, a [vulnerability](https://github.com/containerd/containerd/security/advisories/GHSA-259w-8hf6-59c2) was found in the OCI image import process: importing a malicious image could lead to a DoS attack on the node .
     This issue has been fixed in containerd 1.5.18 and 1.6.18.
 
+- [Contour Kubernetes ingress controller v1.25.0 released (CNCF project)](https://github.com/projectcontour/contour/releases/tag/v1.25.0)
+
+    Version features: HTTPProxy support for configuring IP filters, support for exporting trace data to OpenTelemetry, support for external authorization for all hosts, support for internal redirection.
+
 - [Contour Kubernetes ingress controller v1.22.0 release (CNCF project)](https://github.com/projectcontour/contour/releases/tag/v1.22.0)
 
      The main new features of this version: support for Gateway API v0.5.0, allow configuring a direct response for a set of conditions in a single route, enable revocation checking for user certificate verification, merge access records and TLS cipher suite verification.
@@ -340,6 +344,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Finch: AWS Open Source Container Development Client Command Line Tool](https://aws.amazon.com/cn/blogs/opensource/introducing-finch-an-open-source-client-for-container-development/)
 
      [Finch](https://github.com/runfinch/finch) can be used to build, run and distribute Linux containers. It provides native, extensible macOS client installers for open source tools such as Lima, nerdctl, containerd, and BuildKit, simplifying the use of Containerd on macOS. users can use Finch to create and execute containers on the local side, and to publish OCI container image files.
+
+- [Flagger Progressive Delivery Attack v1.31.0 Released (CNCF Project)](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1310)
+
+    Version features: Support for Service Mesh Linkerd 2.12 and higher, removal of OSM e2e testing.
 
 - [Flagger Progressive Delivery Attack v1.22.0 released (CNCF project)](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1220)
 
@@ -940,6 +948,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: Added CRD `PersistentPodState` to persist certain states of Pods, such as "fixed IP scheduling"; CloneSet calculates logic changes for percentage-based partitions; sets Pod not-ready in the lifecycle hook stage; supports protection scale Any custom workload for subresource; new performance optimization methods for large-scale clusters, etc.
 
+- [OSM (Open Service Mesh) Open Service Mesh Project is no longer maintained](https://mp.weixin.qq.com/s/_eqhL999E1ojmTAoaAOuiQ)
+
+    OSM has adopted the Service Mesh Interface (SMI) as its standard API, allowing compatibility with other Service Mesh implementations that support SMI to simplify the Service Mesh operating experience. Recently, the OSM maintenance team announced that there will be no new releases of OSM and that the team will move to work with the Istio community to advance Istio.
+
 - [Open Service Mesh v1.2.0 release (CNCF project)](https://github.com/openservicemesh/osm/releases/tag/v1.2.0)
 
      The main new features of this version: support for custom trust domains (that is, the common name of certificates), Envoy updated to v1.22, and use envoyproxy/envoy-distroless mirroring, added support for Kubernetes 1.23 and 1.24, support for limiting TCP connections and HTTP requests local per-instance rate, fix Statefulset and headless service.
@@ -1148,6 +1160,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [ThreatMapper Cloud Native Security Observation Platform v1.4.0 release](https://github.com/deepfence/ThreatMapper/releases/tag/v1.4.0)
 
      The main new features of this version: the new function ThreatGraph can combine the network and other runtime environments to determine the priority of threat scanning results, support agentless cloud security situation management for cloud assets, and integrate cloud-native environment malicious program scanning tools [YaraHunter]( https://github.com/deepfence/YaraHunter).
+
+- [Trivy Container Vulnerability Scanning Tool v0.41.0 Released (CNCF Project)](https://github.com/aquasecurity/trivy/discussions/4135)
+
+    Version features: support for using Vulnerability Exploitability Exchange (VEX) to filter detected vulnerabilities, support for SBOM for generating VM images, support for nested JAR paths, support for using custom Docker sockets.
 
 - [Trivy Container Vulnerability Scanning Tool v0.39.0 released (CNCF project)](https://github.com/aquasecurity/trivy/releases/tag/v0.39.0)
 

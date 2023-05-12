@@ -15,9 +15,21 @@
     KubeDay 是 CNCF 主办的地区性云原生系列活动，主要针对社区发展活跃和对 Kubernetes 等云原生技术感兴趣的地区。
     继去年 12 月在日本拉开帷幕后，KubeDay 第二站来到以色列特拉维夫。演讲提案申请现已开放（截至 4.30），演讲者需亲临现场。
 
+- [6.18 KubeCon + CloudNativeCon 北美 2023 开启议题征集（6.18 截止）](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/cfp/)
+  
+    KubeCon + CloudNativeCon 北美 2023 将于 11.6-11.9 在芝加哥举行。本次峰会对云原生新手、应用交付和 CI/CD 结合、平台工程、安全、网络+边缘+电信等主题进行了更新和扩充。议题类型包括五类：单人演讲（30 min）、双人演讲（30 min）、小组讨论（30 min，3 至 5 名演讲者）、闪电演讲（5 min）以及教程（90 min）。
+
 - [6.18 2023 年上海 KubeCon + CloudNativeCon 或 开源峰会开启议题征集（6.18 截止）](https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/program/call-for-proposals/)
   
     本次峰会将于 9.25-9.27 在上海举行，提交的议题内容可围绕软件开发生命周期、平台工程、运维+性能、安全性、数据+处理+存储、网络+边缘+电信、服务网格等话题，议题类型包括四类：单人演讲（30 min）、双人演讲（30 min）、小组讨论（30 min，3 至 5 名演讲者）、教程（90 min）。
+
+- [6.15 & 6.23 2023 IDC 全球金融科技厂商排名及真实价值案例评选正式启动](https://mp.weixin.qq.com/s/0z2h92akTEOVF1hqa3Q9GQ)
+  
+    金融科技厂商排名评选分为金融科技厂商（Top 100）及综合行业IT服务厂商（Enterprise 25）两个类别，报名截止时间 6 月 23 日。金融行业真实价值案例评选该评选由厂商单独，或联合其行业用户共同申报，截止时间为 6 月 15 日。根据金融科技服务商为金融机构服务的案例实践，对八个金融服务类别进行评估并选出入围案例，并且根据这八个类别的整体评估，评选出整体数字化转型卓越奖。
+
+- [6.6 ASF Conference Asia 2023 开启议题征集（6.6 截止）](https://apachecon.com/acasia2023/index.html)
+  
+    ASF Conference Asia 2023 将于 8.18-8.20 在北京举行，本次峰会将围绕 AI/机器学习、API/微服务、社区、云原生、数据存储/计算、性能工程等主题展开。
 
 - [6.6 ICT 中国·2023 高层论坛-云原生产业高峰论坛将于 6 月 6 日在北京拉开帷幕](https://mp.weixin.qq.com/s/FTOBYjCZxYMoOM8WJUz8mQ)
   
@@ -28,6 +40,10 @@
     本次 KCD 北京站活动由 CNCF 和来自「DaoCloud 道客」、Microsoft、Tetrate 的技术爱好者联合发起，包括闪电演讲（10min）、单人/双人演讲（40min）和圆桌讨论（30min）等三种分享形式。议题内容可包括 eBPF、WASM、Multi Cluster、可观测性、软件供应链安全、Serverless、DevOps、HPC、Streaming 等热点领域。
 
 ### 2023-05
+
+- [5 月底 2023 年可信云首批性能专项测试启动（5 月底报名截止）](https://mp.weixin.qq.com/s/9WmnPUeAQP8e-UfWYMg5Hg)
+  
+    可信云性能专项测试涵盖基础资源类、平台类、工具类共 3 大类，包括专有云、容器平台、信创云管平台、混合多云管理平台等13 项云服务性能测试项目，同时可提供场景化、定制化的性能测试的能力。
 
 - [5.31 中国信通院启动大规模边缘容器集群服务质量首批评测（5.31 截止）](https://mp.weixin.qq.com/s/8TjJBIFp46vscKBMILZBUg)
   
@@ -51,6 +67,10 @@
   
     “数字化业务安全生产推进中心”的主要工作内容是提升数字化业务安全生产相关的风险识别预防、业务全局感知、实时监测预警、故障快速定位、事故应急处置能力，
     规范各行业企业数字化业务安全生产制度流程的规范性、科学性。
+
+- [5.18 标准参编单位征集 |《DevOps系列标准第13部分：平台工程能力要求》（5.18 征集截止）](https://mp.weixin.qq.com/s/zz4_f0XSQC57ecOpuOAFgg)
+  
+    《研发运营一体化（DevOps）能力成熟度模型 第13部分：平台工程能力要求》是首个针对 DevOps 平台工程能力成熟度的标准，此标准现开放征集参编单位及专家。
 
 - [5.16 中国信通院启动“云原生产品目录 2.0”征集（5.16 截止）](https://mp.weixin.qq.com/s/xDq9APQec-h-tSx8-JICIw)
   

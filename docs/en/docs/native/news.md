@@ -10,14 +10,26 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     Smart marketing digital service capability assessment includes six modules: digital scenarios, digital governance, platform-based products, digital service operations, trustworthy and compatible ecology and digital trust security service capabilities. Among them, the platform-based product capability focuses on whether it has the ability of customer insight, marketing planning, customer reach, customer conversion, customer operation and other smart marketing whole-chain links.
 
+- [June 15 & June 23 2023 IDC Global FinTech Vendor Ranking and Real Value Case Selection Officially Launched](https://mp.weixin.qq.com/s/0z2h92akTEOVF1hqa3Q9GQ)
+  
+    FinTech vendor rankings are divided into two categories: FinTech vendors (Top 100) and integrated industry IT service vendors (Enterprise 25), with registration deadline on June 23. The Financial Industry Real Value Case Awards are submitted by vendors alone or jointly with their industry users, with a deadline of June 15. Based on case studies of FinTech service providers serving financial institutions, the eight financial services categories will be evaluated and finalists selected, and the overall digital transformation excellence award will be based on the overall evaluation of the eight categories.
+
 - [June 19 KubeDay Israel will be held on June 19](https://www.cncf.io/blog/2023/04/06/announcing-kubeday-israel-will-take-place-on-june-19/)
   
     KubeDay is a regional cloud-native event series hosted by CNCF, targeting regions with active communities and interest in cloud-native technologies such as Kubernetes.
     After kicking off in Japan last December, KubeDay makes its second stop in Tel Aviv, Israel. Applications for speaker proposals are now open (until 4.30), and speakers need to be present in person.
 
+- [June 18 KubeCon + CloudNativeCon North America 2023 Open Call for Proposal (6.18 Deadline)](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/cfp/)
+  
+    KubeCon + CloudNativeCon North America 2023 will be held in Chicago from 11.6-11.9. The summit updates and expands on topics such as cloud-native novice, application delivery and CI/CD combination, platform engineering, security, and network + edge + telecom. Session types include five categories: single presentations (30 min), dual presentations (30 min), panel discussions (30 min, 3 to 5 presenters), lightning talks (5 min), and tutorials (90 min).
+
 - [June 18 Call for Topics for KubeCon + CloudNativeCon or Open Source Summit 2023 in Shanghai (6.18 deadline)](https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/program/call-for-proposals/)
   
     The summit will be held in Shanghai from 9.25 to 9.27. Topics to be submitted can focus on software development lifecycle, platform engineering, O&M+performance, security, data+processing+storage, network+edge+telecom, service grid, etc. The topic types include four categories: single talk (30 min), double talk (30 min), panel discussion (30 min, 3 to 5 (30 min), panel discussion (30 min, 3-5 speakers), and tutorial (90 min).
+
+- [June 6 ASF Conference Asia 2023 opens Call for Topics (6.6 deadline)](https://apachecon.com/acasia2023/index.html)
+  
+    ASF Conference Asia 2023 will be held in Beijing from 8.18-8.20. The summit will focus on AI/Machine Learning, APIs/Microservices, Community, Cloud Native, Data Storage/Computing, Performance Engineering, and other topics.
 
 - [June 6 ICT China-2023 High Level Forum - Cloud Native Industry Summit will kick off on June 6 in Beijing](https://mp.weixin.qq.com/s/FTOBYjCZxYMoOM8WJUz8mQ)
   
@@ -28,6 +40,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     This KCD Beijing event is co-sponsored by CNCF and technology enthusiasts from DaoCloud, Microsoft, and Tetrate, and includes three sharing formats: lightning talk (10min), single/double talk (40min), and roundtable discussion (30min). Topics may include eBPF, WASM, Multi Cluster, Observability, Software Supply Chain Security, Serverless, DevOps, HPC, Streaming and other hot areas.
 
 ### 2023-05
+
+- [End of May 2023 Trusted Cloud First Performance Specialized Testing Launch (Registration closes at the end of May)](https://mp.weixin.qq.com/s/9WmnPUeAQP8e-UfWYMg5Hg)
+  
+    The Trusted Cloud Performance Special Test covers three major categories, including basic resources, platforms, and tools, including 13 cloud service performance test items such as proprietary cloud, container platform, Cintron cloud management platform, and hybrid multi-cloud management platform, etc. It also provides the ability to provide scenario-based and customized performance tests.
 
 - [End of May China Academy of Information and Communications Technology officially launched the assessment of cloud consulting, cloud migration, cloud management and cloud disaster recovery in the first half of 2023 (registration closes at the end of May)](https://mp.weixin.qq.com/s/yZxSP5xb5juE9C-UWRoQAw)
   
@@ -51,6 +67,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     "The main work of the Digital Business Safety Promotion Center is to improve the digital business safety production related to risk identification and prevention, business global awareness, real-time monitoring and early warning, rapid fault location, accident emergency disposal capabilities.
     The standardization and scientificity of the digital business safety production system and processes of enterprises in various industries.
+
+- [May 18 Call for Standard Participants | DevOps Series Standard Part 13: Platform Engineering Capability Requirements (5.18 Deadline)](https://mp.weixin.qq.com/s/zz4_f0XSQC57ecOpuOAFgg)
+  
+    The DevOps Capability Maturity Model Part 13: Platform Engineering Capability Requirements is the first standard for DevOps platform engineering capability maturity, and is now open for participation and experts.
 
 - [May 16 CICT Launches "Cloud Native Product Catalog 2.0" Call (5.16 deadline)](https://mp.weixin.qq.com/s/xDq9APQec-h-tSx8-JICIw)
   
