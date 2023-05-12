@@ -7,7 +7,7 @@ hide:
 
 DaoCloud Daok"s micro-service engine consists of two modules: a micro-service governance center and a micro-service gateway. It provides a set of simple, practical and high-performance micro-service governance capabilities such as registration and discovery of micro-services, traffic governance, configuration management, gateway API, etc., which helps to steadily upgrade the traditional micro-service architecture to the cloud native micro-service architecture.
 
-DaoCloud Daoke"s micro-service engine has the following advantages over other DaoCloud products:
+DaoCloud"s micro-service engine has the following advantages over other DaoCloud products:
 
 - One-stop management
 

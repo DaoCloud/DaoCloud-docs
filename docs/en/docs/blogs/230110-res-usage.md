@@ -160,4 +160,4 @@ And using appropriate tools and methods to improve resource utilization can make
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE5.0](../install/intro.md){ .md-button .md-button--primary }
-[Apply for community free experience](../dce/license0.md){ .md-button .md-button--primary }
+[Free Trial](../dce/license0.md){ .md-button .md-button--primary }

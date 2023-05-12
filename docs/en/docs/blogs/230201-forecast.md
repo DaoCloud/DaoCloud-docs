@@ -167,7 +167,7 @@ Large conference, registration is open!
 
 **DaoCloud Company Profile**
 
-"DaoCloud" is an innovative leader in the field of cloud native. Founded at the end of 2014, it has core technologies with independent intellectual property rights and is committed to creating an open cloud operating system to empower digital transformation of enterprises.
+DaoCloud is an innovative leader in the field of cloud native. Founded at the end of 2014, it has core technologies with independent intellectual property rights and is committed to creating an open cloud operating system to empower digital transformation of enterprises.
 Product capabilities cover the entire life cycle of cloud-native application development, delivery, and operation and maintenance, and provide multiple delivery methods such as public cloud, private cloud, and hybrid cloud. Since its establishment, the company has been involved in financial technology, advanced manufacturing, smart cars,
 Retail outlets, urban brain and other fields have been deeply cultivated. Benchmark customers include Bank of Communications, Shanghai Pudong Development Bank, SAIC Motor, Dongfeng Motor, Haier Group, Watsons, Golden Arches (McDonald's), etc.
 At present, the company has completed the D round of financing exceeding 100 million yuan, and is known as a quasi-unicorn enterprise in the technology field. The company has set up a number of branches and joint ventures in Beijing, Nanjing, Wuhan, Shenzhen and Chengdu.

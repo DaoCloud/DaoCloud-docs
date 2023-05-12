@@ -44,7 +44,7 @@ For shared resources, multiple workspaces can share one or more resources. Resou
 After resources are shared, the owner of the workspace only has resource usage rights under the resource limit, and cannot manage resources or adjust the amount of resources that the workspace can use.
 At the same time, shared resources also have certain requirements for the resources themselves. Only hierarchical resources can be shared, such as Cluster-Namespace. Cluster resource owners can share Cluster resources to different workspaces, and limit the workspace to this Cluster. The workspace owner can create multiple Namespaces within the resource quota, but the sum of the resource quotas of the Namespaces cannot exceed the resource quota of the Cluster in the workspace. For Kubernetes resources, the only resource type that can be shared currently is Cluster.
 
-[Apply for community free experience](../dce/license0.md){ .md-button .md-button--primary }
+[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
 
 ## Resource management elements
 
@@ -64,7 +64,7 @@ A workspace has one and only one parent level, and the workspace and the resourc
 
 In DCE 5.0, due to the different authorization methods of resources, resources that strongly depend on workspace authorization, such as gateways, pipelines, etc., are derived; and resources that can be selectively bound to workspaces, such as Cluster and Namespace.
 
-Since the resources of the application workbench, microservice engine, and service grid take the workspace as the top-level concept, the resources are completely dependent on the workspace for authorization, so the resources will be automatically bound to a certain workspace, and the owner of the workspace is The owner of the resource.
+Since the resources of the application workbench, microservice engine, and service mesh take the workspace as the top-level concept, the resources are completely dependent on the workspace for authorization, so the resources will be automatically bound to a certain workspace, and the owner of the workspace is The owner of the resource.
 Such resources do not need to be manually bound, and the resources do not need to be displayed in the resource group of the workspace. The prerequisite for users (user groups) to use resources is to be granted the corresponding permissions in the workspace.
 For Cluster and Namespace resources, since container management has an independent authorization module, resource owners have the right to selectively bind.
 The resource is manually bound to the resource group of the workspace, which means that the workspace owner is allowed to manage and use the resource. At this time, the workspace owner is equivalent to the resource owner, and the bound resources will be displayed in the resource group of the workspace , and can be unbound at any time.
@@ -88,7 +88,7 @@ There is no change to the authorization relationship of the level itself and its
 
 ## Who Needs Resource Management
 
-Enterprise users who need to manage K8S, microservice engine, service grid and other resources, and the resources have a certain scale
+Enterprise users who need to manage K8S, microservice engine, service mesh and other resources, and the resources have a certain scale
 
 ### Solve what problem
 
@@ -113,7 +113,7 @@ Enterprise users who need to manage K8S, microservice engine, service grid and o
 
      A: The resource is directly associated with the workspace, and the resource will inherit the permissions of the workspace.
      When the number of resources is large, the unified authorization of resources through the workspace can effectively reduce the workload of resource operation and maintenance.
-     In addition, in DCE 5.0, the resources in the application workbench, microservice engine, and service grid depend on the workspace authorization, so the prerequisite for creating such resources is to have the corresponding permissions of the workspace.
+     In addition, in DCE 5.0, the resources in the application workbench, microservice engine, and service mesh depend on the workspace authorization, so the prerequisite for creating such resources is to have the corresponding permissions of the workspace.
 
 3. What is the relationship between hierarchy, workspace and resources?
 
@@ -132,13 +132,13 @@ Enterprise users who need to manage K8S, microservice engine, service grid and o
 
      Answer: Admin, Workspace Owner, Folder Admin.
 
-7. Who can I ask for authorization for microservice governance, application workbench, and service grid permissions?
+7. Who can I ask for authorization for microservice governance, application workbench, and service mesh permissions?
 
-     Answer: The resources under microservice governance, application workbench, and service grid are all automatically bound to Workspace, and permissions are strongly dependent on Workspace. You need to obtain Workspace permissions and then obtain related resource permissions.
+     Answer: The resources under microservice governance, application workbench, and service mesh are all automatically bound to Workspace, and permissions are strongly dependent on Workspace. You need to obtain Workspace permissions and then obtain related resource permissions.
      Admin, Workspace Owner, Folder Admin, and Workspace Admin can be authorized for Workspace.
 
 [Learn about service mesh](../ghippo/intro/what.md){ .md-button }
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
-[Apply for community free experience](../dce/license0.md){ .md-button .md-button--primary }
+[Free Trial](../dce/license0.md){ .md-button .md-button--primary }

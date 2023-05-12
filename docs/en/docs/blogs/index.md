@@ -97,15 +97,15 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20221123 | On the Digital Native Road of Auto Enterprises | Review of the Forum](https://mp.weixin.qq.com/s/1leu7b8KQw9pcqma8A_cuw)
 
-    On November 18th, the "Native Road Forum | Cloud-Native Digital Ecosystem Private Sharing Meeting for Auto Enterprises" hosted by "DaoCloud Daoke" was successfully held. Starting from specific cases of auto enterprises, this event mainly shared the application and practice of cloud-native in the automotive industry. Let's review the wonderful content of this event together.
+    On November 18th, the "Native Road Forum | Cloud-Native Digital Ecosystem Private Sharing Meeting for Auto Enterprises" hosted by DaoCloud was successfully held. Starting from specific cases of auto enterprises, this event mainly shared the application and practice of cloud-native in the automotive industry. Let's review the wonderful content of this event together.
 
 - [20221115 | SpiderPool - Cloud-Native Container Network IPAM Plugin](https://mp.weixin.qq.com/s/r6YiuUBGD2KmmMOxl26X6A)
 
-    SpiderPool comes from the experience accumulation of container network landing practice and is an open-source native container network IPAM plugin (github: https://github.com/spidernet-io/spiderpool) developed by "Daocloud". It is mainly used with Underlay CNI to achieve fine-grained management and distribution of IP for container cloud platforms.
+    SpiderPool comes from the experience accumulation of container network landing practice and is an open-source native container network IPAM plugin (github: https://github.com/spidernet-io/spiderpool) developed by DaoCloud. It is mainly used with Underlay CNI to achieve fine-grained management and distribution of IP for container cloud platforms.
 
-- [20221110 | Originating from Passion, Insisting on Beginning with the Original Intention - Happy 8th Birthday to "DaoCloud Daoke"!](https://mp.weixin.qq.com/s/4cYUXtZFc3tIjzphVRCSLg)
+- [20221110 | Originating from Passion, Insisting on Beginning with the Original Intention - Happy 8th Birthday to DaoCloud!](https://mp.weixin.qq.com/s/4cYUXtZFc3tIjzphVRCSLg)
 
-    Time flies, and years pass by. Since its establishment in November 2014, "DaoCloud Daoke" has gone through eight years of unremitting efforts by DaoClouders. On the afternoon of November 8th, all the crew members of "DaoCloud Daoke" held a birthday party for "DaoCloud Daoke". Let's take a look at the grand occasion of "DaoCloud Daoke" eighth birthday party together!
+    Time flies, and years pass by. Since its establishment in November 2014, DaoCloud has gone through eight years of unremitting efforts by DaoClouders. On the afternoon of November 8th, all the crew members of DaoCloud held a birthday party for DaoCloud. Let's take a look at the grand occasion of DaoCloud eighth birthday party together!
 
 - [20221105 | DaoCloud is a Senior Certified Service Provider for K8s](221116-kcsp.md)
 
@@ -113,11 +113,11 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20221105 | Financial Digital Transformation from a Native Thinking Perspective](https://mp.weixin.qq.com/s/9BggFRr0aoEzzmemXplRWg)
 
-    On November 5th to 6th, 2022, the 5th International Forum on Financial Technology was successfully held in Chengdu, jointly organized by Southwest University of Finance and Economics, Chengdu Local Financial Supervision and Administration Bureau, and Wenchuan District People's Government of Chengdu. On the afternoon of November 5th, "DaoCloud Daoke" founder and CEO, cloud-native computing foundation ambassador Chen Qiyuan, gave a keynote speech on the theme of "Digital Economy Empowers Financial Technology Innovation." Thisspeech mainly discusses the importance of cloud-native technology in the financial industry's digital transformation. Chen Qiyuan points out that when promoting digital transformation, companies should not only focus on technology but also pay attention to native thinking, which means understanding the needs of the business and users, and providing personalized solutions based on cloud-native technology. The speech also introduces several successful cases of cloud-native technology application in the financial industry, such as real-time risk control, intelligent investment advisory, and intelligent customer service.
+    On November 5th to 6th, 2022, the 5th International Forum on Financial Technology was successfully held in Chengdu, jointly organized by Southwest University of Finance and Economics, Chengdu Local Financial Supervision and Administration Bureau, and Wenchuan District People's Government of Chengdu. On the afternoon of November 5th, DaoCloud founder and CEO, cloud-native computing foundation ambassador Chen Qiyuan, gave a keynote speech on the theme of "Digital Economy Empowers Financial Technology Innovation." Thisspeech mainly discusses the importance of cloud-native technology in the financial industry's digital transformation. Chen Qiyuan points out that when promoting digital transformation, companies should not only focus on technology but also pay attention to native thinking, which means understanding the needs of the business and users, and providing personalized solutions based on cloud-native technology. The speech also introduces several successful cases of cloud-native technology application in the financial industry, such as real-time risk control, intelligent investment advisory, and intelligent customer service.
 
-- [20221103 | "DaoCloud Daoke" Empowers Digital Transformation of Small and Medium-sized Enterprises and Smart Agriculture](https://mp.weixin.qq.com/s/G2nT3DIvWUaCk0aNZmAs1A)
+- [20221103 | DaoCloud Empowers Digital Transformation of Small and Medium-sized Enterprises and Smart Agriculture](https://mp.weixin.qq.com/s/G2nT3DIvWUaCk0aNZmAs1A)
 
-    On November 2nd, 2022, the "Smart Agriculture and Cross-border E-commerce Summit Forum" was held in Chengdu. At the forum, "DaoCloud Daoke" founder and CEO, cloud-native computing foundation ambassador Chen Qiyuan gave a speech on "DaoCloud Daoke Empowers Digital Transformation of Small and Medium-sized Enterprises and Smart Agriculture." In this speech, Chen Qiyuan shared his insights on digital transformation and introduced how "DaoCloud Daoke" can help small and medium-sized enterprises and smart agriculture through cloud-native technology solutions. He emphasized that the key to digital transformation lies in "people-oriented", and only by focusing on the user experience can technology bring real value.
+    On November 2nd, 2022, the "Smart Agriculture and Cross-border E-commerce Summit Forum" was held in Chengdu. At the forum, DaoCloud founder and CEO, cloud-native computing foundation ambassador Chen Qiyuan gave a speech on "DaoCloud Empowers Digital Transformation of Small and Medium-sized Enterprises and Smart Agriculture." In this speech, Chen Qiyuan shared his insights on digital transformation and introduced how DaoCloud can help small and medium-sized enterprises and smart agriculture through cloud-native technology solutions. He emphasized that the key to digital transformation lies in "people-oriented", and only by focusing on the user experience can technology bring real value.
 
 - [20221025 | Openyurt Goes to Europe! Openyurt Community Organizes Meetup in Germany](https://mp.weixin.qq.com/s/EBL-r8LZfGJydEi28N8jYw)
 
@@ -125,11 +125,11 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20221022 | KubeCon 2022 North America Station | DaoCloud Shares Cloud-Native Best Practices with Global Developers](https://mp.weixin.qq.com/s/5Uoq9uuITZJFhJjyRcJX0A)
 
-    On October 20th, 2022, KubeCon North America Station officially kicked off in Los Angeles, California. As a cloud-native technology service provider with many years of experience, "DaoCloud Daoke" was invited to participate in this grand event and shared its insights on cloud-native best practices with global developers. In this article, we will summarize "DaoCloud Daoke"'s speeches and interactions during the event, including how to choose the right container image registry, how to optimize Kubernetes cluster performance, and how to implement GitOps-based continuous delivery.
+    On October 20th, 2022, KubeCon North America Station officially kicked off in Los Angeles, California. As a cloud-native technology service provider with many years of experience, DaoCloud was invited to participate in this grand event and shared its insights on cloud-native best practices with global developers. In this article, we will summarize DaoCloud's speeches and interactions during the event, including how to choose the right container image registry, how to optimize Kubernetes cluster performance, and how to implement GitOps-based continuous delivery.
 
 - [20221021 | DaoCloud Launches Container Image Registry Service Based on Alibaba Cloud Object Storage Service (OSS)](https://mp.weixin.qq.com/s/C89eKlFw8nH7QJzPxT4v1g)
 
-    On October 20th, 2022, "DaoCloud Daoke" officially released its container image registry service based on Alibaba Cloud Object Storage Service (OSS). This service provides users with secure and reliable storage and management of container images, helping them reduce the cost of image storage and improve image access efficiency. Moreover, by using Alibaba Cloud OSS as the underlying storage engine, "DaoCloud Daoke" can provide users with more diversified storage options, such as cold storage and disaster recovery.
+    On October 20th, 2022, DaoCloud officially released its container image registry service based on Alibaba Cloud Object Storage Service (OSS). This service provides users with secure and reliable storage and management of container images, helping them reduce the cost of image storage and improve image access efficiency. Moreover, by using Alibaba Cloud OSS as the underlying storage engine, DaoCloud can provide users with more diversified storage options, such as cold storage and disaster recovery.
 
 - [20221026 | Introduction to Container Management Capability of DCE 5.0](221026-kpanda.md)
 
@@ -151,13 +151,13 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
     With the increasing scale of business applications running on Kubernetes platforms, the number of clusters is also increasing, and internal resource management and retrieval are becoming more and more complex. In the era of multiple clusters, we can use Cluster-api to create and manage clusters in batches, and use Karmada/Clusternet to deploy applications. However, there seems to be a lack of functionality. How can we view resources in multiple clusters in a unified way?
 
-- [20220908 | Huawei and "DaoCloud Daoke" Launch Cloud-Edge Collaborative Superconverged All-in-One Machine for Metaverse](https://mp.weixin.qq.com/s/r8vfFofBy7v1VcUMInp_Iw)
+- [20220908 | Huawei and DaoCloud Launch Cloud-Edge Collaborative Superconverged All-in-One Machine for Metaverse](https://mp.weixin.qq.com/s/r8vfFofBy7v1VcUMInp_Iw)
 
     On September 2, 2022, at the World Artificial Intelligence Conference, Huawei and Shanghai DaoCloud Network Technology jointly launched a "cloud-edge collaborative superconverged all-in-one machine" for innovative businesses in the metaverse, bringing cloud-native capabilities to the edge to provide real-time virtual digital world experiences and achieve true cloud-edge integration in the metaverse.
 
 - [20220905 | How to Build a Storage Foundation and Create a Cloud-Native Application Base? | Discussion on Native](https://mp.weixin.qq.com/s/vrBAjdCkI2BKxG7SsSX2Uw)
 
-    The cloud-native transformation of applications greatly improves their core capabilities such as availability, stability, scalability, and performance, while also profoundly changing all aspects of applications. As the cornerstone of application running, storage is inevitably affected. In the context of the cloud-native era, what challenges has it brought to storage, and how can we respond to them? In the eleventh issue of Discussion on Native, "DaoCloud Daoke" and Huawei will share their cloud-native storage solutions.
+    The cloud-native transformation of applications greatly improves their core capabilities such as availability, stability, scalability, and performance, while also profoundly changing all aspects of applications. As the cornerstone of application running, storage is inevitably affected. In the context of the cloud-native era, what challenges has it brought to storage, and how can we respond to them? In the eleventh issue of Discussion on Native, DaoCloud and Huawei will share their cloud-native storage solutions.
 
 - [20220810 | Cluster API Retrieval Has Never Been So Easy](https://mp.weixin.qq.com/s/8F20pchW6WhbEdlU56qFsg)
 
@@ -173,7 +173,7 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20220622 | Clusterpedia Officially Enters CNCF Sandbox as the First Multi-Cloud Retrieval Open Source Project](https://mp.weixin.qq.com/s/K2jG64msI4j-mWqPF0qkKg)
 
-    On June 15, 2022, the Cloud Native Computing Foundation (CNCF) announced that Clusterpedia had officially joined the CNCF sandbox project. Clusterpedia is an open-source project launched by "DaoCloud Daoke" at the end of 2021. It is a tool that can perform complex resource retrieval across multiple clusters with kubectl, and it is currently the only project in CNCF that focuses on multi-cloud information retrieval and is widely used.
+    On June 15, 2022, the Cloud Native Computing Foundation (CNCF) announced that Clusterpedia had officially joined the CNCF sandbox project. Clusterpedia is an open-source project launched by DaoCloud at the end of 2021. It is a tool that can perform complex resource retrieval across multiple clusters with kubectl, and it is currently the only project in CNCF that focuses on multi-cloud information retrieval and is widely used.
 
 - [20220611 | CloudTTY: Next-generation Cloud-native Open Source Cloud Shell](https://mp.weixin.qq.com/s/sFjZmvumQNbP6gnlnpglWQ)
 
