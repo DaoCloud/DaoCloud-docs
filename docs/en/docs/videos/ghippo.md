@@ -16,7 +16,7 @@
 
 ## Manage Workspaces
 
-See the [Managing Workspaces](../ghippo/user-guide/02Workspace/Workspaces.md) documentation page.
+See the [Managing Workspaces](../ghippo/user-guide/workspace/Workspaces.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/workspace.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
@@ -24,7 +24,7 @@ See the [Managing Workspaces](../ghippo/user-guide/02Workspace/Workspaces.md) do
 
 ## Resource Quotas
 
-See the [Resource Quotas](../ghippo/user-guide/02Workspace/quota.md) documentation page.
+See the [Resource Quotas](../ghippo/user-guide/workspace/quota.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/resourcequota.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
@@ -32,7 +32,7 @@ See the [Resource Quotas](../ghippo/user-guide/02Workspace/quota.md) documentati
 
 ## Connect LDAP users and groups
 
-See the [LDAP](../ghippo/user-guide/01UserandAccess/ldap.md) documentation page.
+See the [LDAP](../ghippo/user-guide/access-control/ldap.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ldap.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
@@ -40,7 +40,7 @@ See the [LDAP](../ghippo/user-guide/01UserandAccess/ldap.md) documentation page.
 
 ## Connect OIDC users
 
-See the [OIDC](../ghippo/user-guide/01UserandAccess/oidc.md) documentation page.
+See the [OIDC](../ghippo/user-guide/access-control/oidc.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oidc.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
@@ -64,7 +64,7 @@ See [how to disable audit log](../ghippo/user-guide/open-audit.md#_4) documentat
 
 ## Custom appearance
 
-See [Custom appearance](../ghippo/user-guide/04PlatformSetting/Appearance.md) documentation page.
+See [Custom appearance](../ghippo/user-guide/platform-setting/Appearance.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/appearance.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>

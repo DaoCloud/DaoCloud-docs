@@ -27,7 +27,7 @@ nav:
           - 升级/卸载/FAQ:
               - 升级 DCE 5.0 GProduct: install/upgrade.md
               - 卸载: install/uninstall.md
-              - 常见问题: install/faq.md
+              - 安装排障: install/faq.md
           - 在不同 K8s 发行版上安装:
               - 在 OpenShift OCP 上安装 DCE 5.0 商业版: install/k8s-install/ocp-install-dce5.0.md
           - 在不同操作系统上安装:
@@ -428,7 +428,7 @@ nav:
               - 适用场景: mspider/intro/scenarios.md
               - UI 支持的特性: mspider/intro/meshes.md
               - 服务网格权限说明: ghippo/permissions/mspider.md
-              - 网格架构: mspider/intro/architecture.md
+              - 网格架构: mspider/intro/architect.md
               - 网格控制面组件: mspider/intro/cp-component.md
               - 常见问题: mspider/intro/faq.md
               - Release Notes: mspider/intro/release-notes.md
@@ -458,6 +458,7 @@ nav:
               - 请求身份认证: mspider/user-guide/security/request.md
               - 授权策略: mspider/user-guide/security/authorize.md
               - 安全治理参数配置: mspider/user-guide/security/params.md
+              - 服务网格身份和认证: mspider/user-guide/security/mtls.md
           - 边车管理:
               - 命名空间边车管理: mspider/user-guide/sidecar-management/ns-sidecar.md
               - 工作负载边车管理: mspider/user-guide/sidecar-management/workload-sidecar.md
@@ -655,7 +656,7 @@ nav:
           - 介绍:
               - 什么是云原生存储: storage/what.md
               - 背景和挑战: storage/background.md
-              - 功能优势: storage/benifits.md
+              - 功能优势: storage/benefits.md
               - 功能列表: storage/features.md
               - Release Notes: storage/hwameistor/releasenotes.md
           - HwameiStor 本地存储:
@@ -669,13 +670,10 @@ nav:
               - 资源介绍: storage/hwameistor/intro/resources.md
               - 安装管理:
                   - 准备工作: storage/hwameistor/install/prereq.md
+                  - Hwameistor 安装: storage/hwameistor/install/deploy-operator.md
                   - 资源要求: storage/hwameistor/install/proresource.md
-                  - 通过 Operator 安装: storage/hwameistor/install/deploy-operator.md
-                  - 通过界面安装: storage/hwameistor/install/deploy-ui.md
-                  - 通过 Helm Chart 安装: storage/hwameistor/install/deploy-helm.md
-                  - 通过镜像安装: storage/hwameistor/install/deploy-image.md
-                  - 安装后检查: storage/hwameistor/install/post-check.md
                   - DRDB 安装: storage/hwameistor/install/drbdinstall.md
+                  - 安装后检查: storage/hwameistor/install/post-check.md
                   - 存储网卡配置: storage/hwameistor/install/storage-eth.md
                   - 自定义 Kubelet 根目录: storage/hwameistor/install/customized-kubelet.md
                   - 升级: storage/hwameistor/install/upgrade.md
@@ -757,8 +755,10 @@ nav:
       - 云原生网络: videos/network.md
   - 博客:
       - 博文索引: blogs/index.md
-      - 202305 | K8s 1.27加快了Pod启动速度: blogs/20230428-pod-startup.md
-      - 202304 | 云原生监控之基础篇: blogs/20230427-victoriametrics.md
+      - 202305 | K8s 安装教程(KLTS版): blogs/230509-k8s-install.md
+      - 202305 | Cilium 基于 eBPF 实现 socket 加速: blogs/230508-cilium.md
+      - 202305 | K8s 1.27加快Pod启动: blogs/230428-pod-startup.md
+      - 202304 | 云原生监控之基础篇: blogs/230427-victoriametrics.md
       - 202304 | Karmada Failover详解: blogs/230418-karmada-failover.md
       - 202304 | CNCF 平台工程白皮书: blogs/230417-cncf-platform-wp.md
       - 202304 | K8s 1.27 正式发布: blogs/230412-k8s-1.27.md
@@ -784,12 +784,13 @@ nav:
   - 下载中心:
       - DaoCloud Enterprise 5.0:
           - 索引列表: download/dce5.md
-          - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.6.0.md
-          - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.6.0.md
-          - 下载 Addon 离线包: download/addon/v0.6.0.md
-          - 下载全局管理: download/modules/ghippo.md
-          - 下载 Insight: download/modules/insight.md
-          - 下载网络 spidernet: download/modules/spidernet.md
+          - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.7.0.md
+          - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.7.0.md
+          - 子模块和插件:
+              - 下载 Addon 离线包: download/addon/v0.6.0.md
+              - 下载全局管理: download/modules/ghippo.md
+              - 下载 Insight: download/modules/insight.md
+              - 下载网络 Spidernet: download/modules/spidernet.md
   - DaoCloud 开源生态:
       - 社区索引: community/index.md
       - cloudtty: community/cloudtty.md

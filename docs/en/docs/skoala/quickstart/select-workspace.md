@@ -1,21 +1,19 @@
-# select workspace
+---
+hide:
+  - heel
+---
 
-## Select the workspace when entering for the first time
+# Select workspace
 
-When entering the microservice governance module for the first time, you must first select a [workspace](../ghippo/04UserGuide/02Workspace/Workspaces.md).
+When entering the microservices governance module for the first time, you must first select a [workspace](../../ghippo/user-guide/workspace/workspace.md).
 
+<!--![]()screenshots-->
 
+If you need to change the current workspace, click the change icon in the left sidebar to select the workspace again.
 
-## Change workspace
-
-If you need to change the current workspace, you can click the change icon on the left sidebar to re-select the workspace.
-
-
+<!--![]()screenshots-->
 
 !!! note
 
-    If no available workspace, contact your Super Admin to create a workspace.
 
-[Download DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }
-[Free Trial](../../dce/license0.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }[Install DCE 5.0](../../install/intro.md) { .md-button .md-button--primary }[Free Try](../../dce/license0.md) { .md-button .md-button--primary }

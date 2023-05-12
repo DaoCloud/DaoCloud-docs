@@ -52,3 +52,5 @@ Service mesh provides two creation methods: wizard and YAML. The specific steps 
 
     - For the configuration of specific parameters, please refer to [Security Governance Parameter Configuration](./params.md).
     - For a more intuitive operation demonstration, please refer to [Video Tutorial](../../../videos/mspider.md).
+    - See [Service Mesh Identity and Authentication](./mtls.md).
+    

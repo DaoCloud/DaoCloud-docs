@@ -12,7 +12,7 @@ Provide users with service traffic governance, security governance, service traf
 
 DCE 5.0's service mesh is compatible with the community's native Istio open source service mesh, providing native Istio access management capabilities. At a high level, a service mesh can help reduce the complexity of service governance and reduce the pressure on DevOps teams.
 
-As a member of the DCE 5.0 product system, the service mesh is seamlessly connected to the [Container Management](../../kpanda/intro/WhatisKPanda.md) platform, which can provide users with an out-of-the-box experience.
+As a member of the DCE 5.0 product system, the service mesh is seamlessly connected to the [Container Management](../../kpanda/intro/what.md) platform, which can provide users with an out-of-the-box experience.
 And as an infrastructure, it provides container microservice governance support for [microservice engine](../../skoala/intro/features.md), which is convenient for users to manage all kinds of microservice systems through a single platform.
 
 ## Product benefits
@@ -31,7 +31,7 @@ Here are the advantages of DCE 5.0 service mesh compared to other products.
 
     - HTTP sessions are maintained to meet the demands of business processing continuity.
 
-    - Current limiting and fusing to achieve stable and reliable links between services.
+    - Current limiting and fusing to achieve stable and reliable traces between services.
 
     - Network persistent connection management reduces resource loss and improves network throughput.
 

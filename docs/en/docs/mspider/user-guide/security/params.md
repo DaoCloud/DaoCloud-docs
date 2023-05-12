@@ -4,9 +4,9 @@ This page introduces parameter configuration related to peer identity authentica
 
 ## Peer Authentication
 
-When the wizard mode is used, the peer-to-peer identity authentication is divided into two steps: basic configuration and authentication setting, and the description of each parameter is as follows.
+When using the graphical wizard mode, [Peer Identity Authentication](./peer.md) is divided into two steps: basic configuration and authentication setting, and the description of each parameter is as follows.
 
-### Basic configuration
+### basic configuration
 
 | **UI Item** | **YAML Field** | **Description** |
 | ---------------------- | -------------------------- ------------ | ------------------------------------- ----------------------- |
@@ -16,24 +16,24 @@ When the wizard mode is used, the peer-to-peer identity authentication is divide
 | Label name | spec.selector.matchLabels | Required. Consists of lowercase letters, numbers, hyphens (-), underscores (_), and decimal points (.) |
 | Label value | spec.selector.matchLabels.{label name} | Required. Consists of lowercase letters, numbers, hyphens (-), underscores (_), and decimal points (.) |
 
-## Authentication Settings
+### Authentication Settings - mTLS Mode
 
 | **UI Item** | **YAML Field** | **Description** |
 | ---------------------- | -------------------------- ------------ | ------------------------------------- ----------------------- |
-| mTLS Mode | spec.mTLS.mode | Required. mTLS mode for setting the namespace:<br /> - PERMISSIVE: cleartext and mTLS connections<br /> - STRICT: mTLS connections only<br /> - DISABLE: cleartext connections only |
-| Add mTLS mode for specified port | spec.portLevelMtls | Optional. Set mTLS rules for specified ports, multiple rules can be added without sorting. <br />- PERMISSIVE: cleartext and mTLS connections<br />- STRICT: mTLS connections only<br />- DISABLE: cleartext connections only |
+| mTLS Mode | spec.mTLS.mode | Required. mTLS mode for setting the namespace:<br /> - UNSET: Inherit parent option. Otherwise treat as PERMISSIVE<br />- PERMISSIVE: cleartext and mTLS connections<br />- STRICT: mTLS connections only<br />- DISABLE: cleartext connections only |
+| Add mTLS mode for specified port | spec.portLevelMtls | Optional. Set mTLS rules for specified ports, multiple rules can be added without sorting. <br /> - UNSET: Inherit parent options. Otherwise treat as PERMISSIVE<br />- PERMISSIVE: cleartext and mTLS connections<br />- STRICT: mTLS connections only<br />- DISABLE: cleartext connections only |
 
 ## request authentication
 
-When using the wizard wizard mode, requesting identity authentication is divided into two steps: basic configuration and authentication setting, and the description of each parameter is as follows.
+When using the graphical wizard mode, [Request identity authentication](./request.md) is divided into two steps: basic configuration and authentication setting, and the descriptions of each parameter are as follows.
 
-## Basic configuration
+### basic configuration
 
 | **UI Item** | **YAML Field** | **Description** |
 | ------------ | ------------------------------------ | -------------------------------------------------- ----------- |
 | Name | metadata.name | Required. Request identity authentication name, the same name space cannot be duplicated. |
 | Namespace | metadata.namespace | Required. Namespace to which the request authentication belongs. Global policies are created when the mesh's root namespace is selected. Only one global policy can be created, and it needs to be checked in the interface to avoid repeated creation by users. <br />In the same namespace, the name requesting authentication cannot be repeated. |
-| workload tags | spec.selector | Optional. The application requests the workload selection tag of the identity authentication policy. Multiple selection tags can be added without sorting. |
+| workload tags | spec.selector | optional. The application requests the workload selection tag of the identity authentication policy. Multiple selection tags can be added without sorting. |
 | Label name | spec.selector.matchLabels | Required. Consists of lowercase letters, numbers, hyphens (-), underscores (_), and decimal points (.) |
 | Label value | spec.selector.matchLabels.{label name} | Required. Consists of lowercase letters, numbers, hyphens (-), underscores (_), and decimal points (.) |
 
@@ -44,43 +44,47 @@ When using the wizard wizard mode, requesting identity authentication is divided
 | Add JWT rules | spec.jwtRules | Optional. JWT rules for user request authentication, multiple rules can be added. |
 | Issuer | spec.jwtRules.issuers | Required. JSON Web Token (JWT) issuer information. |
 | Audiences | spec.jwtRules.issuers.Audiences | Optional. Configure the list of accessible audiences, if empty, the service name will be accessed. |
-| jwkURI | spec.jwtRules.issuers.jwkUri | Optional. The path to the JSON file of the JSON Web Key (JWK), in the format: URI. |
-| jwks | spec.jwtRules.issuers.jwks | Optional. JSON Web Key Set (JWKS) file content, which can be provided with jwkURI alternatively. |
+| jwksUri | spec.jwtRules.issuers.jwksUri | Optional. JSON Web Key (JWK) JSON file path, mutually exclusive with jwks, choose one of the two. For example https://www.googleapis.com/oauth2/v1/certs |
+| jwks | spec.jwtRules.issuers.jwks | Optional. JSON Web Key Set (JWKS) file content, mutually exclusive with jwksUri, choose one of the two. |
+
+For more information, please refer to [OpenID Provider Metadata](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
 
 ## Authorization Policy
 
-When the wizard mode is used, the creation of the authorization policy is divided into two steps: `basic configuration` and `policy setting`, and the description of each parameter is as follows.
+When using the graphical wizard mode, the creation of [Authorization Policy](./authorize.md) is divided into two steps: `Basic Configuration` and `Policy Settings`, and the description of each parameter is as follows.
 
-### Basic configuration
+### basic configuration
 
-| **Element** | **YAML Field** | **Description** |
+| **Configurable Items** | **YAML Field** | **Description** |
 | -------------------- | ---------------------------- ---------- | --------------------------------------- --------------------- |
 | Name | metadata.name | Required. Authorized policy name. |
 | Namespace | metadata.namespace | Required. The namespace to which the authorization policy belongs. When the mesh root namespace is selected, a global policy will be created. Only one global policy can be created, and it needs to be checked on the interface to avoid repeated creation by users. In the same namespace, request identity authentication cannot have the same name. |
-| workload tags | spec.selector | Optional. The workload selection tag of the application authorization policy, multiple selection tags can be added without sorting. |
+| workload tags | spec.selector | optional. The workload selection tag of the application authorization policy, multiple selection tags can be added without sorting. |
 | Label name | spec.selector.matchLabels | Optional. Consists of lowercase letters, numbers, hyphens (-), underscores (_), and decimal points (.). |
 | Label value | spec.selector.matchLabels.{label name} | Optional. Consists of lowercase letters, numbers, hyphens (-), underscores (_), and decimal points (.). |
 
 ### Policy Settings
 
-| **Element** | **YAML Field** | **Description** |
+| **Configurable Items** | **YAML Field** | **Description** |
 | -------------------- | ---------------------------- ---------- | --------------------------------------- --------------------- |
 | policy action | spec.action | Optional. Contains:<br />- Allow (allow)<br />- Deny (deny)<br />- Audit (audit)<br />- Custom (custom)<br />When you choose custom, add` provider` entry. |
 | Provider | spec.provider.name | Required. This input box is displayed only when the option of `Strategy Action` is `Custom`. |
 | Request Policy | spec.rules | Optional. It includes three parts: request source, request operation, and policy conditions. Multiple items can be added and executed in order. |
-| Add request source | spec.rules.-from | Optional. Request sources can be defined based on namespaces, IP segments, etc., and multiple entries can be added. For each parameter, see [Request Source Source](#Request Source-source) below. |
-| Add request action | spec.rules.-to | Optional. The request operation is the operation performed on the filtered requests, such as sending to a specified port or host, and multiple operations can be added. For parameters, see [Request Operation Operation](#Request Operation-operation) below. |
-| Add Policy Conditions | spec.rules.-when | Required. The policy condition is an optional setting, which can add restrictions like blacklist (values) and whitelist (notValues), and multiple policy conditions can be added. For parameters, see [Strategy Condition Condition](#Strategy Condition-condition) below. |
+| Add request source | spec.rules.-from | Optional. Request sources can be defined based on namespaces, IP segments, etc., and multiple entries can be added. See the following [Request Source](#source) for each parameter. |
+| Add request action | spec.rules.-to | Optional. The request operation is the operation performed on the filtered requests, such as sending to a specified port or host, and multiple operations can be added. See the parameters below [Request Operation Operation](#opgeneration). |
+| Add Policy Conditions | spec.rules.-when | Required. The policy condition is an optional setting, which can add restrictions like blacklist (values) and whitelist (notValues), and multiple policy conditions can be added. For parameters, see [Strategy Condition Condition](#condition) below. |
 
 #### Request source Source
 
-Source specifies the source identity of a request. Performs a logical AND operation on the fields in the request source.
+You can increase the request source (Source). Source specifies the source identity of a request and performs a logical AND operation on the fields in the request source.
 
-For example, the following Source will match:
+For example, if Source is:
 
 - principal is "admin" or "dev"
-- The namespace is "prod" or "test"
+- Namespaced as "prod" or "test"
 - and ip is not "1.2.3.4".
+
+The matching YAML content is:
 
 ```yaml
 principals: ["admin", "dev"]
@@ -88,7 +92,9 @@ namespaces: ["prod", "test"]
 notIpBlocks: ["1.2.3.4"]
 ```
 
-| Field | Type | Description |
+The specific fields are described as follows:
+
+| Key Field | Type | Description |
 | ---------------------- | ---------- | --------------- ------------------------------------------------ |
 | `principals` | `string[]` | Optional. A list of peer identities derived from peer certificates. The format of the peer identity is `"<TRUST_DOMAIN>/ns/<NAMESPACE>/sa/<SERVICE_ACCOUNT>"`, for example `"cluster.local/ns/default/sa/productpage"`. This field requires mTLS to be enabled and is equivalent to the `source.principal` property. If not set, all principals are allowed. |
 | `notPrincipals` | `string[]` | Optional. A reverse match list of peer identities. |
@@ -103,7 +109,7 @@ notIpBlocks: ["1.2.3.4"]
 
 #### Request Operation Operation
 
-Operation specifies the requested operation. Performs a logical AND operation on the fields in the operation.
+You can increase the request operation (Operation). Operation specifies the requested operation, performing a logical AND operation on the fields in the operation.
 
 For example, the following operations will match:
 
@@ -117,7 +123,7 @@ methods: ["GET", "HEAD"]
 notPaths: ["/admin*"]
 ```
 
-| Field | Type | Description |
+| Key Field | Type | Description |
 | ------------ | ---------- | ------------------------- -------------------------------------- |
 | `hosts` | `string[]` | Optional. List of hosts specified in the HTTP request. not case sensitive. If not set, all hosts are allowed. Applies to HTTP only. |
 | `notHosts` | `string[]` | Optional. A reverse match list of hosts specified in the HTTP request. not case sensitive. |
@@ -130,23 +136,23 @@ notPaths: ["/admin*"]
 
 #### Policy Condition Condition
 
-Condition specifies other required properties.
+You can also add policy conditions (Condition). Condition specifies other required properties.
 
-| Name | Description | Supported Protocols | Examples |
+| Key Field | Description | Supported Protocols | Value Example|
 |------|-------------|--------------------|------- --|
-| `request.headers` | `HTTP` request headers, need to be enclosed by `[]` | HTTP only | `key: request.headers[User-Agent]`<br/>`values: ["Mozilla/*" ]` |
-| `source.ip` | source `IP` address, support single `IP` or `CIDR` | HTTP and TCP | `key: source.ip`<br/>`values: ["10.1.2.3"]` |
-| `remote.ip` | Original client IP address determined by `X-Forwarded-For` request header or proxy protocol, single IP or CIDR supported | HTTP and TCP | `key: remote.ip`<br />` values: ["10.1.2.3", "10.2.0.0/16"]` |
-| `source.namespace` | source workload instance namespace, mutual TLS needs to be enabled | HTTP and TCP | `key: source.namespace`<br/>`values: ["default"]` |
-| `source.principal` | source workload identifier, mutual TLS needs to be enabled | HTTP and TCP | `key: source.principal`<br/>`values: ["cluster.local/ns/default/sa/productpage"] ` |
-| `request.auth.principal` | Authenticated requests for `principal` | HTTP only | `key: request.auth.principal`<br/>`values: ["accounts.my-svc.com/104958560606"] ` |
-| `request.auth.audiences` | The target principal for this authentication | HTTP only | `key: request.auth.audiences`<br/>`values: ["my-svc.com"]` |
-| `request.auth.presenter` | Issuer of the certificate | HTTP only | `key: request.auth.presenter`<br/>`values: ["123456789012.my-svc.com"]` |
-| `request.auth.claims` | `Claims` are derived from `JWT`. Need to be surrounded by `[]` | HTTP only | `key: request.auth.claims[iss]`<br/>`values: ["*@foo.com"]` |
-| `destination.ip` | destination `IP` address, support single `IP` or `CIDR` | HTTP and TCP | `key: destination.ip`<br/>`values: ["10.1.2.3", "10.2 .0.0/16"]` |
-| `destination.port` | The port on the destination `IP` address, must be in the range `[0, 65535]` | HTTP and TCP | `key: destination.port`<br/>`values: ["80" , "443"]` |
-| `connection.sni` | server name indication, mutual TLS needs to be enabled | HTTP and TCP | `key: connection.sni`<br/>`values: ["www.example.com"]` |
-| `experimental.envoy.filters.*` | Experimental metadata matching for filters, wrapped values `[]` as list matches | HTTP and TCP | `key: experimental.envoy.filters.network.mysql_proxy[ db.table]`<br/>`values: ["[update]"]` |
+| `request.headers` | `HTTP` request headers, need to be surrounded by `[]` | HTTP only | `["Mozilla/*"]` |
+| `source.ip` | source `IP` address, support single `IP` or `CIDR` | HTTP and TCP | `["10.1.2.3"]` |
+| `remote.ip` | Original client IP address determined by `X-Forwarded-For` request header or proxy protocol, single IP or CIDR supported | HTTP and TCP | `["10.1.2.3", "10.2.0.0 /16"]` |
+| `source.namespace` | source workload instance namespace, need to enable mutual TLS | HTTP and TCP | `["default"]` |
+| `source.principal` | The identity of the source payload, mutual TLS needs to be enabled | HTTP and TCP | `["cluster.local/ns/default/sa/productpage"]` |
+| `request.auth.principal` | Authenticated requests for `principal` | HTTP only | `["accounts.my-svc.com/104958560606"]` |
+| `request.auth.audiences` | Target principals for this authentication | HTTP only | `["my-svc.com"]` |
+| `request.auth.presenter` | Issuer of the certificate | HTTP only | `["123456789012.my-svc.com"]` |
+| `request.auth.claims` | `Claims` are derived from `JWT`. Need to be surrounded by `[]` | HTTP only | `["*@foo.com"]` |
+| `destination.ip` | destination `IP` address, support single `IP` or `CIDR` | HTTP and TCP | `["10.1.2.3", "10.2.0.0/16"]` |
+| `destination.port` | The port on the destination `IP` address, must be in the range `[0, 65535]` | HTTP and TCP | `["80", "443"]` |
+| `connection.sni` | server name indication, mutual TLS needs to be enabled | HTTP and TCP | `["www.example.com"]` |
+| `experimental.envoy.filters.*` | Experimental metadata matching for filters, wrapping values `[]` as list matches | HTTP and TCP | `["[update]"]` |
 
 !!! note
 

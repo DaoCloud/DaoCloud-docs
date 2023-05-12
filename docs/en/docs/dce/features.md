@@ -7,7 +7,7 @@ hide:
 
 DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typical featuers currently supported are as follows.
 
-=== "[Multi-cluster management](../kpanda/intro/WhatisKPanda.md)"
+=== "[Multi-cluster management](../kpanda/intro/what.md)"
 
 - Unified management of multi-cluster, supporting Kubernetes clusters in all version ranges to be included in the container management scope.
 
@@ -33,7 +33,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - Unified load management abbility of cross-cluster.
 
-=== "[Continuous business delivery](../amamba/intro/WhatisAmamba.md)"
+=== "[Continuous business delivery](../amamba/intro/what.md)"
 
 - Enterprise-level cloud native CI/CD capabilities enable standardized continuous integration and delivery ability, and agile iteration of applications.It meets new business needs quickly, and improve the efficiency of application integration and release.
 
@@ -46,7 +46,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 - DevOps tools popular in the community are integrated.Stepes in a single pipelines can run on multiple operating systems and multiple architecture nodes.Independent deployment on public cloud, private cloud or host is supported, and enterprise owned systems and platform can be well integrated.
   The integration of mainstream software in the industry, such as Kubernetes, Gitlab, SonarQube, Harbor, are supported.
 
-=== "[Multicloud application dispatch](../kairship/intro/whatiskairship.md)"
+=== "[Multicloud application dispatch](../kairship/intro/what.md)"
 
 - Unified multicloud orchestration management, unified management of multiple cloud instances, and unified request entry.
 
@@ -78,17 +78,17 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - The Microservice gateway plays an important role in managing the north-south traffic control of Microservices.
 
-=== "[Insight](../insight/intro/WhatisInsight.md)"
+=== "[Insight](../insight/intro/what.md)"
 
 - The application-centric, out-of-the-box, new generation cloud-native observability operation and maintenance platform realizes fast fault location and quick troubleshooting.
 
-- Monitor applications and resources in real time, collect data such as various indicators, logs, and events to analyze application health status, and provide alarm capabilities and comprehensive, clear, and multi-dimensional data visualization capabilities.
+- Monitor applications and resources in real time, collect data such as various metrics, logs, and events to analyze application health status, and provide alarm capabilities and comprehensive, clear, and multi-dimensional data visualization capabilities.
 
 - The mainstream open source compoments are open and compatible, providing fast fault location and one-key monitoring and diagnosis capabilities.
 
-- It provides unified collection of indicators, logs, and links, supports multi-dimensional alarms on indicators and logs, and provides a concise and clear visual management interface.
+- It provides unified collection of metrics, logs, and traces, supports multi-dimensional alarms on metrics and logs, and provides a concise and clear visual management interface.
 
-=== "Featured [Middleware](../middleware/midware.md)"
+=== "Featured [Middleware](../middleware/what.md)"
 
 - It supports a variety of mainstream middleware: Redis, MySQL, Elasticsearch, RabbitMQ, Kafka, MinIO, etc.
 

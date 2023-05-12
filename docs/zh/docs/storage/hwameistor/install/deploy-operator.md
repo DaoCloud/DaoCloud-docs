@@ -3,9 +3,9 @@ hide:
   - toc
 ---
 
-# 通过 Operator 安装
+# Hwameistor 安装
 
-本文介绍在平台界面通过 Hwameistor Operator 安装 Hwameistor。
+本文介绍在平台界面通过 Hwameistor Operator 安装 Hwameistor，Operator 安装后会自动将 Hwameistor 相关组件拉起。
 
 ## 前提条件
 

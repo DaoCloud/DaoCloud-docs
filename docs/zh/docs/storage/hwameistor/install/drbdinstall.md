@@ -5,7 +5,7 @@ hide:
 
 # 安装 DRBD（可选）
 
-如需要使用 高可用数据卷，请在部署 Hwameistor 时开启 DRDB
+如需要使用 高可用数据卷，请在部署 Hwameistor 时开启 DRDB，如下提供两种安装方式：
 
 ## 通过 UI 界面
 
@@ -28,10 +28,13 @@ hide:
 如通过 Helm 安装，请使用如下方式进行安装:
 
 ```console
-helm pull hwameistor/drbd9-adapter --untar
+helm repo add hwameistor https://hwameistor.io/hwameistor
 
-helm install drbd9 ./drbd9-adapter \
-    -n hwameistor --create-namespace
+helm repo update hwameistor
+
+helm pull hwameistor/drbd-adapter --untar
+
+helm install drbd-adapter ./drbd-adapter -n hwameistor --create-namespace
 ```
 
 国内用户可以使用镜像仓库 `daocloud.io/daocloud` 加速：
@@ -39,5 +42,6 @@ helm install drbd9 ./drbd9-adapter \
 ```console
 helm install drbd-adapter ./drbd-adapter \
     -n hwameistor --create-namespace \
+    --set imagePullPolicy=Always \
     --set registry=daocloud.io/daocloud
 ```

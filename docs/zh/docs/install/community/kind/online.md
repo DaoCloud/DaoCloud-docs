@@ -100,7 +100,7 @@ precheck pass..
 
 1. 设置 `kind_cluster.yaml` 配置文件。
 
-    注意，暴露集群内的 32000 端口到 kind 对外的 8888 端口（可自行修改），配置文件示例如下：
+    注意，暴露集群内的 32088 端口到 kind 对外的 8888 端口（可自行修改），配置文件示例如下：
 
     ```yaml title="kind_cluster.yaml"
     apiVersion: kind.x-k8s.io/v1alpha4
@@ -158,10 +158,10 @@ precheck pass..
 
 1. 在 kind 主机下载 dce5-installer 二进制文件。
 
-    假定 VERSION 为 v0.6.1
+    假定 VERSION 为 v0.7.0
 
     ```shell
-    export VERSION=v0.6.1
+    export VERSION=v0.7.0
     curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```

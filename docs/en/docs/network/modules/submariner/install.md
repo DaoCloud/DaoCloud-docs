@@ -24,47 +24,47 @@ This page describes how to install Submariner.
 - The cluster needs to allow `Vxlan` traffic internally and udp/4500 ports outside the cluster
 > Submariner is in a relatively early stage, and bugs are common.
 
-## Installation steps
+## Steps
 
 !!! Note
 
-    `submariner-k8s-broker` can be deployed in a single cluster or in a subcluster of Join. This article shows the installation process with `submariner-k8s-broker` deployed in a single cluster as an example.
+    `submariner-k8s-broker` can be deployed in a single cluster or in a subcluster of Join. This page shows the installation process with `submariner-k8s-broker` deployed in a single cluster as an example.
 
 Make sure your cluster is successfully connected to the `container management` platform, and then perform the following steps to first install `submariner-k8s-broker`. 1:
 
 1. Click `Container Management` -> `Cluster List` in the left navigation bar, and then find the cluster name where you want to install `submariner-k8s-broker`. 2.
 
-2. In the left navigation bar, select `Helm Applications` -> `Helm Templates`, find and click `submariner-k8s-broker`.
+2. In the left navigation bar, select `Helm Applications` -> `Helm charts`, find and click `submariner-k8s-broker`.
 
-    ! [helm](... /... /images/submariner-k8s-broker-helm-repo.png)
+    ! [helm](../../images/submariner-k8s-broker-helm-repo.png)
 
 3. Select the version you want to install in the version selection, and click Install. 4.
 
 It is recommended to install it under the `submariner-k8s-broker` namespace.
 
-    ! [broker-ns](... /... /images/submariner-k8s-broker-ns.png)
+    ! [broker-ns](../../images/submariner-k8s-broker-ns.png)
 
 5. The configuration shown below does not need to be changed, just leave the default parameters as they are: !
 
-    ! [config](... /... /images/submariner-k8s-broker-config.png)
+    ! [config](../../images/submariner-k8s-broker-config.png)
 
 6. Successfully install `submariner-k8s-broker` in the Broker cluster.
 
-    ! [broker](... /... /images/submariner-k8s-broker-install.png)
+    ! [broker](../../images/submariner-k8s-broker-install.png)
 
 7. Switch to its subcluster: master01 and install `submariner-operator`: !
 
-    ! [operator](... /... /images/submariner-operator-helm-repo.png)
+    ! [operator](../../images/submariner-operator-helm-repo.png)
 
 8. Select the version you want to install in the version selection, and click Install. 9.
 
 9. Recommend installing under the `submariner-operator` namespace, turn on Ready to Wait: !
 
-    ! [operator-ns](... /... /images/submariner-operator-ns.png)
+    ! [operator-ns](../../images/submariner-operator-ns.png)
 
 10. Configure `submariner-operator` to connect to the Broker cluster:
 
-    ! [operator-broker](... /... /images/submariner-operator-broker.png)
+    ! [operator-broker](../../images/submariner-operator-broker.png)
 
     The above parameter description:
 

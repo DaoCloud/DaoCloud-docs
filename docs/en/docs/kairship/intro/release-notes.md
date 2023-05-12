@@ -2,11 +2,31 @@
 
 This page lists the Release Notes of multi-cloud orchestration, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-04-27
+
+### v0.8.0
+
+#### new function
+
+- **NEW** supports cluster scheduling group
+- **NEW** Support mirror selector selection
+- **NEW** advanced settings, new scheduled rescheduling
+- **New** advanced settings, new cluster health status threshold setting
+
+#### fix
+
+- **Fix** When the deployment strategy selects the CR resource type, the kind is not automatically filled
+- **Fix** Instance deletion pop-up window, whether to delete the Karmada instance synchronously to adjust the prompt information
+
+#### remove
+
+- **Remove** istio's sidecar injection for controller-manager and proxy
+
 ## 2023-03-29
 
 ### v0.7.4
 
-#### Features
+#### new function
 
 - **NEW** support custom management cluster
 - **NEW** Load form supports data storage
@@ -34,7 +54,7 @@ This page lists the Release Notes of multi-cloud orchestration, so that you can 
 
 ### v0.6.3
 
-#### Features
+#### new function
 
 - **New** Add multi-cloud custom resource module, support addition, deletion, modification, query, and distribution functions
 - **NEW** Add multi-cloud routing module, support addition, deletion, modification, query and distribution functions
@@ -58,14 +78,14 @@ This page lists the Release Notes of multi-cloud orchestration, so that you can 
 
 ### v0.5
 
-#### Features
+#### new function
 
 - **NEW** Add cronjob related interfaces such as adding, deleting, modifying and checking
 - **NEW** Add related interfaces such as adding, deleting, modifying and checking jobs
 - **NEW** Added one-click migration of multi-cluster applications for single-cluster applications, automatic upgrade of dependent resources
 - **NEW** Add job and cronjob types to ListPropagationPolicies and ListInstanceOverridePolicies interfaces
 - **NEW** ETCD high availability
-- **NEW** Added priority field to deployment strategy
+- **NEW** Added priority field to deployment policy
 - **NEW** New support for differentiation strategy imageOverride, CommandOverrider ArgsOverrider LabelsOverrider AnnotationsOverrider
 - **NEW** If the deployment strategy has been used and associated with the workload, the deployment strategy does not support deletion
 - **NEW** multi-cloud workload, new support for Job, CronJob
@@ -93,7 +113,7 @@ This page lists the Release Notes of multi-cloud orchestration, so that you can 
 
 ### v0.4
 
-#### Features
+#### new function
 
 - **Add** prometheus metrics, opentelemetry link trace
 - **NEW** Displays the corresponding cluster list after creating a workload in a specified region
@@ -109,7 +129,7 @@ This page lists the Release Notes of multi-cloud orchestration, so that you can 
 
 ### v0.3
 
-#### Features
+#### new function
 
 - **Add** multi-cloud orchestration enable permission verification
 - **New** multi-cloud orchestration list instance interface, display data according to permissions
@@ -133,7 +153,7 @@ This page lists the Release Notes of multi-cloud orchestration, so that you can 
 
 ### v0.2
 
-#### Features
+#### new function
 
 - **Add** query interface for scheduling time
 - **Add** multi-cloud service ConfigMap management interface
@@ -150,7 +170,7 @@ This page lists the Release Notes of multi-cloud orchestration, so that you can 
 
 ### v0.1
 
-#### Features
+#### new function
 
 - **NEW** Added cloudshell API to manage karmada cluster through cloudshell
 - **NEW** Added management interface for multi-cloud namespaces

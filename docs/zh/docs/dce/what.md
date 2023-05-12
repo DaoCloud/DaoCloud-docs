@@ -115,7 +115,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](../ghippo/intro/what.md)、[容器管理](../kpanda/intro/what.md)、[集群生命周期管理](../community/kubean.md)、[云原生全场景网络](../network/intro/what.md)、[云原生存储](../storage/what.md)
 
-    ![云原生底座](https://docs.daocloud.io/daocloud-docs-images/docs/mages/07base.png)
+    ![云原生底座](https://docs.daocloud.io/daocloud-docs-images/docs/images/07base.png)
 
 [下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

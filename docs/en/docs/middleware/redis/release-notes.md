@@ -2,6 +2,20 @@
 
 This page lists the Release Notes of the Redis cache service, so that you can understand the evolution path and feature changes of each version.
 
+##v0.7.1
+
+Release date: 2023-04-27
+
+### new function
+
+- **NEW** `mcamel-redis` details page displays related events
+- **NEW** `mcamel-redis` list interface supports Cluster and Namespace field filtering
+- **Added** `mcamel-redis` custom role
+
+#### fix
+
+- **Fix** `mcamel-redis` optimizes the scheduling strategy and adds a sliding button
+
 ## v0.6.2
 
 Release date: 2023-03-29
@@ -55,7 +69,7 @@ Release date: 2022-12-25
 - **Fix** `mcamel-redis` singleton and cluster setting nodeport invalid issue.
 - **Fixed** the problem that the slave node cannot be set to 0 in `mcamel-redis` cluster mode.
 
-## v0.2.6
+##v0.2.6
 
 Release date: 2022-11-28
 
@@ -71,7 +85,7 @@ Release date: 2022-11-28
 - **Add** Validation Service annotation
 - **Fix** service address display error
 
-## v0.2.2
+##v0.2.2
 
 Release date: 2022-10-26
 

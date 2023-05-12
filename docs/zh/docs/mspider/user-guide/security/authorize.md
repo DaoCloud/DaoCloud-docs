@@ -5,7 +5,30 @@ hide:
 
 # 授权策略
 
-授权策略类似于一种四层到七层的“防火墙”，它会像传统防火墙一样，对数据流进行分析和匹配，然后执行相应的动作。无论是来自内部还是外部的请求，都适用授权策略。
+授权策略类似于一种四层到七层的“防火墙”，它会像传统防火墙一样，对数据流进行分析和匹配，然后执行相应的动作。
+无论是来自内部还是外部的请求，都适用授权策略。
+
+授权策略的参考 YAML 示例如下：
+
+```yaml
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: "ratings-viewer"
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: ratings
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/default/sa/bookinfo-reviews"]
+    to:
+    - operation:
+        methods: ["GET"]
+```
 
 服务网格提供了两种创建方式：向导和 YAML。通过向导创建的具体操作步骤如下：
 

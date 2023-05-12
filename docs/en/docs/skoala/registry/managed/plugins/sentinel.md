@@ -1,23 +1,28 @@
-# Enable Sentinel governance plugin
+---
+hide:
+  - heel
+---
 
-Sentinel is a traffic management component for distributed, multilingual and heterogeneous service architectures. It mainly takes traffic as the entry point, and provides various services from traffic routing, traffic control, traffic shaping, circuit breaker downgrading, system adaptive overload protection, hotspot traffic protection, etc. dimensions to help developers ensure the stability of microservices.
+# Enable the Sentinel governance plug-in
 
-<!--## Prerequisites-->
+Sentinel is a traffic governance component oriented to distributed and multi-language heterogeneous service architecture. It mainly takes traffic as the entry point and helps developers to ensure the stability of micro-services from multiple dimensions, such as traffic routing, traffic control, traffic shaping, circuit breaker degradation, system adaptive overload protection and hotspot traffic protection.
 
-## Steps
+<! --## Prerequisite -->
 
-1. On the Managed Registry List page, click the name of the target registry, and then click .
+## Operation procedure
 
-    
+1. Click the name of the target registry on the Hosting Registry list page, and.
 
-2. Click `Plugin Center` on the left navigation bar, and click `Open Now` on the `Sentinel Governance` card.
+    <!--![]()screenshots-->
 
-    
+2. In the left navigation bar, click `Plugins`, and on the `Sentinel` card, click `Enable`.
 
-3. Fill in the configuration information, and click `OK` at the bottom of the pop-up box.
+    <!--![]()screenshots-->
 
-    
+3. Fill in the configuration information and click `OK` at the bottom of the box.
 
-4. If the prerequisites are met and the configuration is correct, a message "Enable Sentinel plugin successful" will pop up in the upper right corner of the page.
+    <!--![]()screenshots-->
 
-    
+4. If the prerequisites are met and the configuration is correct, the message "Success in enabling the Sentinel plug-in" pops up in the upper right corner of the page.
+
+    <!--![]()screenshots-->

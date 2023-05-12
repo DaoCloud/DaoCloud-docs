@@ -2,6 +2,25 @@
 
 This page lists the release notes of the image registry, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-05-08
+
+### v0.7
+
+#### Features
+
+- Support page configuration image synchronization between multiple instances
+- Support for associating `jfrog` type repositories in workspaces
+- Support for creating managed `harbor` in offline `ARM` environment
+
+#### Fix
+
+- Fixed the problem that the registry integration URL could not be updated after modification
+- Fixed logical incompatibilities after `Project` was deleted from the native `Harbor` page
+
+#### Optimization
+
+- Optimize the performance of docking `jfrog` interface to within `2s`
+
 ## 2023-04-07
 
 ### v0.6.2
@@ -14,7 +33,7 @@ This page lists the release notes of the image registry, so that you can underst
 - Create hosted `harbor` support for editing image scanners.
 - Create hosted `harbor` support for using `S3` storage.
 
-#### fix
+#### Fix
 
 - Solve the problem that the installation byte of harbor-operator helm is too large
 
@@ -35,15 +54,15 @@ This page lists the release notes of the image registry, so that you can underst
 - Support for creating hosted `harbor` instances of `redis` that support deployment using middleware modules
 - Support to create managed `harbor`, support to modify `Admin` password, resource quota, `Redis` instance, access type
 - Support for creating hosted `harbor` Support for automatic creation of image scanners
-- Support warehouse integration, associate warehouses to verify user passwords and user permissions
-     - Support warehouse integration to verify that the user name and password are correct, and ensure that the user has administrator privileges
-     - Support associated warehouses to verify that the username and password are correct
-- Add fuzzy query to support warehouse integration list
+- Support registry integration, associate registrys to verify user passwords and user permissions
+     - Support registry integration to verify that the user name and password are correct, and ensure that the user has administrator privileges
+     - Support associated registrys to verify that the username and password are correct
+- Add fuzzy query to support registry integration list
 - Support page editing `Project` as public or private
-- Support `harbor`, `docker registry` type warehouse multi-architecture image page display
+- Support `harbor`, `docker registry` type registry multi-architecture image page display
 
 
-#### fix
+#### Fix
 
 - Repair `harbor`, `docker registry` repositories that support associated repositories connected to `https`
 

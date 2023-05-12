@@ -10,7 +10,7 @@
 
 ## Create namespace
 
-See the [Namespace Management](../amamba/03UserGuide/Namespace/namespace.md) documentation page.
+See the [Namespace Management](../amamba/user-guide/Namespace/namespace.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-ns.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
@@ -26,7 +26,7 @@ See the [Namespace Management](../amamba/03UserGuide/Namespace/namespace.md) doc
 
 ## Continuous deployment based on Argo CD
 
-See the [Creating an Argo CD Application](../amamba/03UserGuide/gitops/create-argo-cd.md) documentation page.
+See the [Creating an Argo CD Application](../amamba/user-guide/gitops/create-argo-cd.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gitops.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>

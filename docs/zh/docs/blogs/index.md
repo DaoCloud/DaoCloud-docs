@@ -7,7 +7,26 @@ hide:
 
 本页汇总 DCE 5.0 及云原生技术相关的博客和公众号文章，默认按时间排序。
 
-- [20230427 | 云原生监控 - VictoriaMetrics 之基础篇](./20230427-victoriametrics.md)
+- [20230509 | 安装 Kubernetes 教程 (KLTS 版)](./230509-k8s-install.md)
+
+    以 DaoCloud 自主维护的 [KLTS (Kubernetes Long Term Support)](https://klts.io/zh/docs/intro/) 为例，
+    简要介绍安装 Kubernetes 的准备工作、安装步骤。
+
+- [20230508 | Cilium 基于 eBPF 实现 socket 加速](./230508-cilium.md)
+
+    随着云原生的不断发展，越来越多的应用部署在云上。其中有些应用对实时性要求非常严苛，这使得我们必须提升这些应用性能，达到更快的服务速度。
+    为了达到更快的服务速度，一个场景是：当两个互相调用的应用部署在同一个节点上的时候，每次请求和返回都需要经过 socket 层、TCP/IP 协议栈、数据链路层、物理层。
+    如果请求和返回绕过 TCP/IP 协议栈，直接在 socket 层将数据包重定向到对端 socket，那将大大减少发送数据包耗时，从而加快服务速度。
+    基于这个思路，eBPF 技术通过映射存储 socket 信息，利用帮助函数实现了将数据包重定向到对端 socket 层的能力。Cilium 正是基于 eBPF 这个能力，实现了 socket 层加速效果。
+
+- [20230428 | Kubernetes 1.27：加快了 Pod 启动速度](./230428-pod-startup.md)
+
+    如何在大型集群中加快节点上的 Pod 启动？这是企业中集群管理员常常会面临的问题。
+    这篇博文重点介绍了从 kubelet 一侧加快 Pod 启动的方法。此方法不涉及通过
+    kube-apiserver 由 controller-manager 创建 Pod 所用的时间段，
+    也不包含 Pod 的调度时间或在其上执行 Webhook 的时间。
+
+- [20230427 | 云原生监控 - VictoriaMetrics 之基础篇](./230427-victoriametrics.md)
 
     说到云原生监控方案，第一时间基本上都会想到 Prometheus+AlertManager+Grafana 的一套成熟解决方案。
     Prometheus 作为监控核心，具备强大的数据模型、高效率运作、丰富的监控能力、强大的查询语言 PromQL、

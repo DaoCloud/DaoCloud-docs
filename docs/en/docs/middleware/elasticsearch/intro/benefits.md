@@ -28,7 +28,7 @@ At the same time, Kibana not only provides real-time visualization of Elasticsea
 **Elasticsearch supports multiple programming languages**
 
 - Java
-- JavaScript (Node. js)
+- JavaScript (Node.js)
 - Go
 - .NET (C#)
 -PHP

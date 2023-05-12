@@ -1,22 +1,21 @@
 ---
 hide:
-  - toc
+  - heel
 ---
 
-# Delete the microservice gateway
+# Example Delete the microservice gateway
 
-The microservice gateway supports a high-availability architecture of multi-tenant instances, and is compatible with the unified gateway access capability of microservices in various modes. This page describes how to delete a Microservice Gateway instance.
+The micro-service gateway supports the high-availability architecture of multi-tenant instances and is compatible with the unified gateway access capabilities of micro-services in various modes. This page describes how to delete a microservice gateway instance.
 
-There are also two ways to delete a gateway. In order to ensure that the service is not affected, before deleting the gateway, it is necessary to release the APIs of all routes in the gateway.
+There are also two ways to delete a gateway. To ensure that services are not affected, release the API of all routes to the gateway before deleting it.
 
-!!!danger
+!!! danger
 
-    After the gateway is removed, it cannot be restored, please proceed with caution.
 
-- Select the gateway instance to be removed on the `Microservice Gateway List` page, click **`⋯`** on the right side of the instance and select `Delete`.
+- In the `Gateway List` page choose the need to remove the gateway instance, at the instance of right click ** `⋯` ** and select `Delete`.
 
-    
+    <!--![]()screenshots-->
 
-- Click on the gateway name to enter the overview page, click **`⋯`** in the upper right corner and select `Delete`.
+- After entering into the overview page, click on the gateway name in the upper right corner of the ** `⋯` ** and select `Delete`.
 
-    
+    <!--![]()screenshots-->

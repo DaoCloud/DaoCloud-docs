@@ -13,17 +13,20 @@ hide:
 
 一个对全网格生效的严格 mTLS 策略。生效后，网格内部服务间访问将必须启用 mTLS。
 
-示例：
+YAML 示例：
 
 ```yaml
-apiVersion: "security.istio.io/v1beta1"
-kind: "PeerAuthentication"
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
 metadata:
   name: "default"
-  namespace: "istio-system"  #生效的名称空间
+  namespace: "istio-system"
 spec:
+  selector:
+    matchLabels:
+      app: reviews
   mtls:
-    mode: STRICT      #策略 
+    mode: STRICT
 ```
 
 服务网格提供了两种创建方式：向导和 YAML。通过向导创建的具体操作步骤如下：
@@ -51,4 +54,5 @@ spec:
 !!! note
 
     - 具体参数的配置，请参阅[对等身份认证参数配置](./params.md#_2)
-    - 更直观的操作演示，可参阅[视频教程](../../../videos/mspider.md)
+    - 参阅[服务网格身份和认证](./mtls.md)。
+    - 更直观的操作演示，可参阅[视频教程](../../../videos/mspider.md#_5)

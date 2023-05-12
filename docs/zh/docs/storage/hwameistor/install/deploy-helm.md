@@ -35,6 +35,22 @@ HwameiStor 的任何组件都可以通过 Helm Chart 进行安装。
         -n hwameistor --create-namespace
     ```
 
+
+!!! tip
+
+    默认的镜像仓库是 `registry.k8s.io` 和 `ghcr.io`。
+    
+    如果无法访问，可尝试使用 DaoCloud 提供的镜像源：`m.daocloud.io` 和 `ghcr.m.daocloud.io`。
+
+要切换镜像仓库的镜像，请使用 `--set` 更改这两个参数值：`global.k8sImageRegistry` 和 `global.hwameistorImageRegistry`。
+
+```console
+helm install hwameistor ./hwameistor \
+    -n hwameistor --create-namespace \
+    --set global.k8sImageRegistry=m.daocloud.io/registry.k8s.io \
+    --set global.hwameistorImageRegistry=ghcr.m.daocloud.io
+```
+
 !!! success
 
     安装完成！要验证安装效果，请参见下一章[安装后检查](./post-check.md)。

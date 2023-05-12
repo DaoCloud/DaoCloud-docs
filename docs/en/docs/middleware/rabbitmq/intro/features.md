@@ -1,9 +1,14 @@
+---
+hide:
+  - toc
+---
+
 # Features
 
 Common features of RabbitMQ include:
 
 - Reliability
-     
+
     RabbitMQ uses some mechanisms to ensure reliability, such as persistence, transmission confirmation, and release confirmation.
 
 - Message clustering (Clustering)

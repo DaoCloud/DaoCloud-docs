@@ -1,19 +1,19 @@
 ---
 hide:
-  - toc
+  - heel
 ---
 
-# Update hosting registry
+# Update the managed registry
 
-1. On the `Access Registration Center List` page, select the registration center to be updated, click **`⋯`** on the right and select `Edit`.
+1. In the `Integrated Registry List` page choose need to update the registry, on the right side click ** `⋯` ** and select `Edit`.
 
-    
+    <!--![]()screenshots-->
 
-2. Update the registry configuration and click `OK` at the bottom of the page.
+2. Update the registry configuration, then click `OK` at the bottom of the page.
 
     !!! warning
 
-        - After modifying the storage pool/database and changing the storage location, the previous data will not be migrated along with it!
-        - Hosted Registry Name and Deployment Location are not editable.
+        - Modify the storage pool/database. After the storage location is changed, the previous data will not be migrated.
+        - The managed registry name and deployment location are not editable.
 
-    
+    <!--![]()screenshots-->

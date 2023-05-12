@@ -2,7 +2,7 @@
 
 DCE 5.0 provides [four cluster roles](../../kpanda/07UserGuide/Clusters/ClusterRole.md) to meet different usage scenarios. Users can freely combine different cluster deployment combinations based on their own business characteristics and infrastructure scenarios.
 
-This article will describe several common usage scenarios.
+This page will describe several common usage scenarios.
 
 ## Single data center scenario
 
@@ -28,7 +28,7 @@ When the user needs to add a management cluster in the current single data cente
 
 Prerequisite: The previous step of deploying a single-data center single-management cluster has been completed.
 
-1. Use the [helm template](../../kpanda/07UserGuide/helm/README.md) to install kubean on a working cluster details interface, and wait for the kubean status to change to running.
+1. Use the [Helm chart](../../kpanda/07UserGuide/helm/README.md) to install kubean on a working cluster details interface, and wait for the kubean status to change to running.
 
 1. After the kubean is installed in the current working cluster, the cluster role will automatically become the management cluster, and one or more working clusters can be created based on the management cluster on the container management module under the platform as needed.
 

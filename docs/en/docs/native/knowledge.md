@@ -66,15 +66,15 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Kubernetes Network Troubleshooting Hardcore Guide](https://mp.weixin.qq.com/s/mp5coRHPAdx5nIfcCnPFhw)
 
-    This article introduces the idea of network troubleshooting in a Kubernetes cluster, including Pod common network anomaly classification, troubleshooting tools, troubleshooting ideas and process models, CNI network anomaly troubleshooting steps, and case studies.
+    This page introduces the idea of network troubleshooting in a Kubernetes cluster, including Pod common network anomaly classification, troubleshooting tools, troubleshooting ideas and process models, CNI network anomaly troubleshooting steps, and case studies.
 
 - [Summary of Redis cache exceptions and solutions](https://mp.weixin.qq.com/s/P38ETBZJO2lNlE-i7g6HhA)
 
-    In the actual application process of Redis, there will be abnormal situations such as cache avalanche, cache breakdown and cache penetration. If these situations are ignored, it may bring disastrous consequences. This article analyzes and analyzes these cache abnormalities and corresponding solutions. Summarize.
+    In the actual application process of Redis, there will be abnormal situations such as cache avalanche, cache breakdown and cache penetration. If these situations are ignored, it may bring disastrous consequences. This page analyzes and analyzes these cache abnormalities and corresponding solutions. Summarize.
 
-- [K8S Internals Series: The Mystery of the Disappearance of Storage Volume Indicators](https://mp.weixin.qq.com/s/Sd1TY9ml65MQYVSupmvpbw)
+- [K8S Internals Series: The Mystery of the Disappearance of Storage Volume metrics](https://mp.weixin.qq.com/s/Sd1TY9ml65MQYVSupmvpbw)
 
-    This article was inspired by the fact that Grafana does not display the capacity indicators of storage volumes created with storage drivers. It shows the troubleshooting ideas and methods for this problem, and then outlines the implementation process of Kubelet for collecting storage volume indicators.
+    This page was inspired by the fact that Grafana does not display the capacity metrics of storage volumes created with storage drivers. It shows the troubleshooting ideas and methods for this problem, and then outlines the implementation process of Kubelet for collecting storage volume metrics.
 
 ### Best Practices
 
@@ -97,9 +97,9 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [How to mitigate container isolation vulnerabilities and monitor kernel critical paths in cloud-native scenarios?](https://mp.weixin.qq.com/s/qlmm2h8RpQnKOnEjlK0pMA)
 
-    This article introduces two solutions developed by the OpenCloudOS community: CgroupFS and SLI, for mitigating container isolation vulnerabilities and monitoring kernel critical paths.
+    This page introduces two solutions developed by the OpenCloudOS community: CgroupFS and SLI, for mitigating container isolation vulnerabilities and monitoring kernel critical paths.
     The CgroupFS scheme provides a kernel-state container view of the VM file system (/proc, /sys), which enhances container resource view isolation.
-    SLI is a container-level performance tracking mechanism that tracks and observes the competition for CPU and memory resources from the container's perspective, thus providing reliable indicators for locating and analyzing container performance problems.
+    SLI is a container-level performance tracking mechanism that tracks and observes the competition for CPU and memory resources from the container's perspective, thus providing reliable metrics for locating and analyzing container performance problems.
 
 - [Easy gRPC to REST transcoding based on Kubernetes and Istio](https://cloud.redhat.com/blog/grpc-to-rest-transcoding-with-openshift-and-service-mesh)
 
@@ -130,7 +130,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [service mesh Security and High Availability Deployment Best Practices](https://mp.weixin.qq.com/s/hFCshQpmF7Vr0jrpugArjA)
 
-    Article on security and high availability best practices when deploying service meshs in a multi-cluster infrastructure, including: how control planes should be deployed near applications; how ingress should be deployed to promote security and agility; how to use Envoy to promote cross-cluster load balancing, and how to use certificates inside the grid.
+    Article on security and high availability best practices when deploying service meshs in a multi-cluster infrastructure, including: how control planes should be deployed near applications; how ingress should be deployed to promote security and agility; how to use Envoy to promote cross-cluster load balancing, and how to use certificates inside the mesh.
 
 - [Open Source Strategy Development and Implementation for Medium and Large Technology Enterprises](https://mp.weixin.qq.com/s/9Z4zFPU0uHk6RhrpUDD-tw)
 
@@ -139,7 +139,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Use of ServiceAccount Token in Different K8s Versions](https://mp.weixin.qq.com/s/F0V8nyo3LtATFmS7pHuxXw)
 
-    This article describes the different ways of using ServiceAccount Token in different K8s versions.
+    This page describes the different ways of using ServiceAccount Token in different K8s versions.
     The article introduces the different ways to use ServiceAccount Token under different K8s versions, mainly including automatic Secret creation and Kubelet to request API via TokenRequest API.
 
 - [Tencent's Million-Level Container Cloud Platform Practice Revealed](https://mp.weixin.qq.com/s/Gusp1ah_qIoMMOg7FhX6Vg)
@@ -149,7 +149,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [mTLS Best Practices for Kubernetes Zero Trust Security](https://mp.weixin.qq.com/s/QYeP6WZKG0gjJ2u6k1fXxQ)
 
-    This article describes three best practices for implementing mutual TLS (mTLS) in Kubernetes,
+    This page describes three best practices for implementing mutual TLS (mTLS) in Kubernetes,
     These include not using self-signed certificates, rooting Istio's trust in existing public key infrastructure (PKI), using intermediate certificates.
 
 - [Interpretation of how to choose K8s elastic strategy from the perspective of microservice application](https://mp.weixin.qq.com/s/jfpF3WUs4YvtlJ8Q4zsuxg)
@@ -179,7 +179,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Alibaba cloud container attack and defense matrix & API security lifecycle, how to build a financial security cloud native platform](https://mp.weixin.qq.com/s/ZKsIn0UzrrSGWWMv8Sk4Nw)
 
-    This article introduces the threat surface brought by the application of container platforms (container attack and defense matrix) and APIs in the financial technology field from the perspective of attackers, analyzes the threats, and gives practical suggestions for the security protection practices of container platforms and APIs throughout their lifecycle.
+    This page introduces the threat surface brought by the application of container platforms (container attack and defense matrix) and APIs in the financial technology field from the perspective of attackers, analyzes the threats, and gives practical suggestions for the security protection practices of container platforms and APIs throughout their lifecycle.
 
 - [How did the world's top open source company find the top 1000 community users? ](https://mp.weixin.qq.com/s/edy6FsD1d_9fp-U60H_dug)
 
@@ -191,18 +191,18 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Three Misunderstandings of Kubernetes HPA and Guide to Avoiding Pitfalls](https://mp.weixin.qq.com/s/3eSm0BZSrPUAZQQhG_L_5A)
 
-    Kubernetes provides horizontal elastic expansion capability (HPA), which allows applications to expand/shrink according to real-time indicators.
+    Kubernetes provides horizontal elastic expansion capability (HPA), which allows applications to expand/shrink according to real-time metrics.
     However, the actual working situation of HPA may be different from what we expected. There are some cognitive misunderstandings here. For example, HPA has a dead zone for expansion, expansion does not match the expected usage, and elastic behavior always lags behind.
     In this regard, the article summarizes some precautions to help "effectively avoid pits" when using HPA.
 
 - [It's time to think about K8s outbound traffic security (top)](https://mp.weixin.qq.com/s/Lj3sl-Ukday9WP4U-8-vqA)[&(bottom)](https://mp. weixin.qq.com/s/NMh1XbBXeyfGuJJ8kZ6J2Q)
 
     We often pay attention to the capabilities of Ingress, but ignore the security control of Egress traffic. However, no matter from the perspective of security or compliance, egress traffic should be strictly controlled.
-    This article analyzes the reasons for egress traffic policy control, existing challenges, and analysis of industry solutions. The solutions include six categories: based on K8s Network Policy, CNI, Service Mesh, micro-segmentation technology, and DNS interception.
+    This page analyzes the reasons for egress traffic policy control, existing challenges, and analysis of industry solutions. The solutions include six categories: based on K8s Network Policy, CNI, Service Mesh, micro-segmentation technology, and DNS interception.
 
 - [How to ensure cloud-native clustersSecurity](https://mp.weixin.qq.com/s/sv40SzD7Ic1eMeElvccs7A)
 
-    This article is a summary of the contents of the container cluster security exchange forum.
+    This page is a summary of the contents of the container cluster security exchange forum.
     Contents include: classification, prevention and solutions of cloud cluster security, principles of cluster division on container cloud, cluster audit, node security guarantee, etcd cluster security, design of network strategy to ensure the security of cluster resources, network isolation issues, and security levels according to security Standardized policies or configurations for k8s clusters, etc.
 
 - [How many nodes should the Kubernetes control plane have](https://thenewstack.io/how-many-nodes-for-your-kubernetes-control-plane/)
@@ -222,11 +222,11 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Practice of Proxyless Mesh in Dubbo](https://mp.weixin.qq.com/s/TH8waHN00y6q26NUDY9wzg)
 
-    [Dubbo Proxyless Mesh](https://github.com/apache/dubbo-awesome/blob/master/proposals/D3.2-proxyless-mesh.md) directly implements xDS protocol analysis and realizes direct communication between Dubbo and Control Plane , and then realize the unified control of traffic control, service governance, observability, security, etc., and avoid the performance loss and deployment architecture complexity brought by the Sidecar mode.
+    [Dubbo Proxyless Mesh](https://github.com/apache/dubbo-awesome/blob/master/proposals/D3.2-proxyless-mesh.md) directly implements xDS protocol analysis and realizes direct communication between Dubbo and Control Plane, and then realize the unified control of traffic control, service governance, observability, security, etc., and avoid the performance loss and deployment architecture complexity brought by the Sidecar mode.
 
 - [Best Practices of K8s Security Monitoring under Zero Trust Strategy](https://mp.weixin.qq.com/s/wYUNsGaWEnQZ0BVxsQORbA)
 
-    This article introduces how to use K8s-related security data sources and collection technologies in a distributed containerized environment to monitor K8s clusters, discover abnormal API access events, abnormal traffic, abnormal configurations, abnormal logs and other behaviors in a timely manner, and combine reasonable alarm strategies to establish A more proactive security defense system.
+    This page introduces how to use K8s-related security data sources and collection technologies in a distributed containerized environment to monitor K8s clusters, discover abnormal API access events, abnormal traffic, abnormal configurations, abnormal logs and other behaviors in a timely manner, and combine reasonable alarm strategies to establish A more proactive security defense system.
 
 - [Best Practices of Container Security Based on DevOps Process](https://mp.weixin.qq.com/s/y42BgaosyIQnA1uDEgqTPA)
 
@@ -244,7 +244,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Microservice Full Link Grayscale New Capabilities](https://mp.weixin.qq.com/s/JL7Ru4nIiP2XuXwNiw2TtA)
 
-    This article mainly introduces the application scenarios and pain points of Alibaba Cloud MSE service governance based on the full-link grayscale capability and two new capabilities: white screen at runtime and configuration grayscale.
+    This page mainly introduces the application scenarios and pain points of Alibaba Cloud MSE service governance based on the full-link grayscale capability and two new capabilities: white screen at runtime and configuration grayscale.
     The white screen at runtime is used to gain insight into the traffic matching and running behavior of the whole link grayscale; the configuration grayscale refers to the grayscale capability that the ConfigMaps in the microservice application should have, so as to deal with the grayscale application’s special configuration value appeal.
 
 - [Kubernetes Cluster Utilization Improvement Practice](https://mp.weixin.qq.com/s/IAo41AZ0aAkIxY-JzonXMQ)
@@ -277,7 +277,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Observability sampling scenarios and landing cases (Part 2)](https://mp.weixin.qq.com/s/nxnz37VJydNHFMaEywu9KA)
 
     The author shared some thoughts on the sampling design of observable systems around some landing cases.
-    First analyze the necessity of full sampling and the links suitable for full sampling, and then share the complete sampling solutions in the industry such as Ali Eagle Eye and ByteDance and the sampling case of OpenTelemetry production environment.
+    First analyze the necessity of full sampling and the traces suitable for full sampling, and then share the complete sampling solutions in the industry such as Ali Eagle Eye and ByteDance and the sampling case of OpenTelemetry production environment.
 
 - [How to extend K8s Descheduler strategy](https://mp.weixin.qq.com/s/pkDxexvrzmtuLMWwzi0p_g)
 
@@ -302,7 +302,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [vivo container cluster monitoring system architecture and practice](https://mp.weixin.qq.com/s/SBZO48fWcEojlDlBROdogQ)
 
-    Based on the practical experience of vivo container cluster monitoring, this article discusses how to build the cloud-native monitoring architecture, introduces the design ideas of vivo container cluster monitoring architecture from two aspects of monitoring high availability and data forwarding layer components high availability, and finally summarizes the practical Challenges encountered in the process and countermeasures.
+    Based on the practical experience of vivo container cluster monitoring, This page discusses how to build the cloud-native monitoring architecture, introduces the design ideas of vivo container cluster monitoring architecture from two aspects of monitoring high availability and data forwarding layer components high availability, and finally summarizes the practical Challenges encountered in the process and countermeasures.
 
 - [Multi-Active Architecture Guide for Hybrid Cloud](https://mp.weixin.qq.com/s/NXXwjxUAGXDD3krKXyJbaQ)
 
@@ -324,7 +324,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
     Hybrid technology, that is, online business and offline tasks are mixed and deployed on the same physical resources, and resource isolation, scheduling and other control methods are used to make full use of resources while ensuring service stability.
     The Baidu cloud-native hybrid system is mainly divided into three parts: stand-alone management layer, scheduling layer, and operation layer.
-    The stand-alone layer provides resource quality management, kernel-level QoS isolation, resource view reporting and policy enforcement, and eBPF fine-grained indicator collection capabilities;
+    The stand-alone layer provides resource quality management, kernel-level QoS isolation, resource view reporting and policy enforcement, and eBPF fine-grained metric collection capabilities;
     The scheduling layer is responsible for the perception of resource dynamic source view and providing the best scheduling strategy;
     The operation layer provides functions such as resource portrait, resource operation, water level setting, and hot spot management.
 
@@ -340,7 +340,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Practice and exploration of solving traffic loss problem under microservice architecture](https://mp.weixin.qq.com/s/eQzy3zvvEokNXYL637LNCg)
 
     Although the three axes of grayscale, observable, and rollback safety production can minimize the impact on users caused by the application's own code problems during the release process, it is harmful to short-term traffic in the case of high concurrency and large traffic But still can't solve it.
-    Therefore, this article focuses on how to solve the problem of traffic loss during the publishing process, and how to achieve lossless online and offline effects during the application publishing process.
+    Therefore, This page focuses on how to solve the problem of traffic loss during the publishing process, and how to achieve lossless online and offline effects during the application publishing process.
 
 - [Alibaba's Envoy Gateway Practice](https://mp.weixin.qq.com/s/t1ppAQfm0cPmqhxEARB03Q)
 
@@ -363,7 +363,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Distributed Timed Task Scheduling Framework Practice](https://mp.weixin.qq.com/s/9gBY_QHyBrzSoMlBG83zug)
 
-    This article introduces the demand background and pain points of the task scheduling framework, explores and practices the open source scheduling frameworks commonly used in the industry, and analyzes their respective advantages and disadvantages.
+    This page introduces the demand background and pain points of the task scheduling framework, explores and practices the open source scheduling frameworks commonly used in the industry, and analyzes their respective advantages and disadvantages.
 
 - [Split the three separate application questions: What, When, How](https://dzone.com/articles/split-the-monolith-what-when-how)
 
@@ -375,7 +375,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Prometheus Monitoring Harbor Actual Combat](https://blog.51cto.com/u_15331726/5177735)
 
-    Harbor v2.2 and later versions support the collection and use of related indicators. This article introduces how to use Prometheus to easily capture some key indicators of Harbor instances.
+    Harbor v2.2 and later versions support the collection and use of related metrics. This page introduces how to use Prometheus to easily capture some key metrics of Harbor instances.
 
 ### Tool recommendation
 
@@ -450,15 +450,15 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [GitLab + Jenkins + Harbor Toolchain Quick Landing Guide](https://mp.weixin.qq.com/s/fA38H5up9VqZ3zEBy1eXnA)
 
-    This article describes how to quickly deploy a DevOps toolchain (GitLab + Jenkins + Harbor) using the DevOps toolchain manager [DevStream](https://github.com/devstream-io/devstream).
+    This page describes how to quickly deploy a DevOps toolchain (GitLab + Jenkins + Harbor) using the DevOps toolchain manager [DevStream](https://github.com/devstream-io/devstream).
 
 - [Helm deploys highly available Harbor container registry](https://mp.weixin.qq.com/s/ev_QE9NhwiCcLHpapbAU7A)
 
-    This article introduces how to use the Helm package management tool to deploy harbor in a kubernetes cluster and achieve high availability.
+    This page introduces how to use the Helm package management tool to deploy harbor in a kubernetes cluster and achieve high availability.
 
 - [Microsoft Azure's Open Source Practices in Container Supply Chain Security](https://mp.weixin.qq.com/s/bXt-pPID4CyDyp0XEmDyZQ)
 
-    This article mainly introduces Azure's open source practices in the field of container supply chain security.
+    This page mainly introduces Azure's open source practices in the field of container supply chain security.
     For example: [Microsoft/SBOM Tool](https://github.com/microsoft/sbom-tool) generates SBOM files, [Notary v2](https://github.com/notaryproject/notation) generates software products such as container images Sign and verify, [ORAS](https://github.com/oras-project/oras) extends OCI to enable supply chain security, [Ratify](https://github.com/deislabs/ratify) helps Kubernetes verification Application deployment security.
 
 - [vcluster -- multi-tenant solution based on virtual cluster](https://mp.weixin.qq.com/s/831cv8ONpzcJ3FJeyQ3sxQ)
@@ -565,7 +565,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Application continuous delivery practice based on Flux v2 in multi-cluster scenarios](https://mp.weixin.qq.com/s/a9lRoa36tFl1_1-ESvXJpA)
 
     [Flux v2](https://github.com/fluxcd/flux2) provides a set of tools that can support the implementation of GitOps, and provides a general solution for the continuous delivery of cloud-native applications.
-    This article mainly starts from deploying cloud-native applications with differentiated configurations in multi-cluster scenarios, and introduces the practice of continuous application delivery based on Flux v2.
+    This page mainly starts from deploying cloud-native applications with differentiated configurations in multi-cluster scenarios, and introduces the practice of continuous app delivery based on Flux v2.
 
 - [Use Chain-bench to Audit Your Software Supply Chain for CIS Compliance](https://blog.aquasec.com/cis-software-supply-chain-compliance)
 
@@ -580,7 +580,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Enable support for LoadBalancer type service on OpenYurt edge side through MetalLB](https://openyurt.io/blog/Enable-MetalLB-in-OpenYurt/)
 
     In the cloud-edge collaboration scenario, since the edge side does not have the cloud SLB service capability, edge Ingress or edge applications cannot expose LoadBalancer-type services for access outside the cluster.
-    In this scenario, this article discusses how to implement support for LoadBalancer type service on the edge side of OpenYurt through MetalLB.
+    In this scenario, This page discusses how to implement support for LoadBalancer type service on the edge side of OpenYurt through MetalLB.
 
 - [Implementing Hot Reloading in Kubernetes](https://loft.sh/blog/implementing-hot-reloading-in-kubernetes/?utm_medium=reader&utm_source=rss&utm_campaign=blog_implementing-hot-reloading-in-kubernetes?utm_source=thenewstack&utm_medium=website)
 
@@ -599,7 +599,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Nightingale - Enterprise version of Prometheus](https://mp.weixin.qq.com/s/OXmnH9KsygpB70-NmwxM1w)
 
     [Nightingale](https://github.com/ccfos/nightingale) is an open source cloud-native monitoring and analysis system, adopting the All-In-One design, integrating data collection, visualization, monitoring and alarming, and data analysis. The cloud-native ecosystem provides out-of-the-box enterprise-level monitoring, analysis and alarm capabilities.
-    The article mainly introduces how Nightingale correlates the three observability indicators, operation and maintenance quantification, alarm noise processing, product positioning, and AIOps applications, etc.
+    The article mainly introduces how Nightingale correlates the three observability metrics, operation and maintenance quantification, alarm noise processing, product positioning, and AIOps applications, etc.
 
 - [Porting eBPF applications to BumbleBee - the easiest way to develop BPF CO-RE programs](https://www.solo.io/blog/porting-ebpf-applications-to-bumblebee/)
 
@@ -626,10 +626,10 @@ This page shares some technical articles related to cloud native, and we hope th
 
     The article describes how the OpenShift 4.10 developer preview leverages Multus CNI to use Kubernetes services on the secondary network, achieving functional parity with the Kubernetes secondary network.
 
-- [Use vmagent instead of Prometheus to collect monitoring indicators](https://mp.weixin.qq.com/s/jGf1L-8c8id8umB72b3AsQ)
+- [Use vmagent instead of Prometheus to collect monitoring metrics](https://mp.weixin.qq.com/s/jGf1L-8c8id8umB72b3AsQ)
 
     vmagent is a component in the open source time series database VictoriaMetrics (VM), which helps us collect metrics from various sources and store them in VM or any other Prometheus-compatible storage system that supports the remote write protocol.
-    vmagent can implement many functions of Prometheus, but index capture is more flexible, supports pulling and pushing indicators, and uses less memory, CPU, disk I/O, and network bandwidth.
+    vmagent can implement many functions of Prometheus, but index capture is more flexible, supports pulling and pushing metrics, and uses less memory, CPU, disk I/O, and network bandwidth.
 
 - [In-depth Interpretation: Distributed System Resilience Architecture Ballast Stone OpenChaos](https://mp.weixin.qq.com/s/x-aRajL_ThKgVpOwV5GgXA)
 
@@ -647,11 +647,11 @@ This page shares some technical articles related to cloud native, and we hope th
     Karpenter is an open source component released by Amazon for elastic scaling of Kubernetes cluster nodes.
     This component can automatically create appropriate new nodes and join them in the cluster according to the needs of Unscheduleable Pods.
     Karpenter completely abandons the concept of node groups and uses EC2 Fleet API to directly manage nodes.
-    This article takes the GPU inference scenario as an example to elaborate on the working principle, configuration process and test results of Karpenter.
+    This page takes the GPU inference scenario as an example to elaborate on the working principle, configuration process and test results of Karpenter.
 
 - [Kruise Rollout: Enabling Progressive Delivery for All Application Loads](https://mp.weixin.qq.com/s/m-r3AQMbv2IPoAAJMhReZg)
 
-    [Kruise Rollout](https://github.com/openkruise/rollouts) is the definition model of OpenKruise (Alibaba Cloud's open-source cloud-native application automation management suite) for progressive delivery abstraction, aiming to solve traffic scheduling in the field of application delivery and Batch deployment problem.
+    [Kruise Rollout](https://github.com/openkruise/rollouts) is the definition model of OpenKruise (Alibaba Cloud's open-source cloud-native application automation management suite) for progressive delivery abstraction, aiming to solve traffic scheduling in the field of app delivery and Batch deployment problem.
     It can cooperate with application traffic and canary release, blue-green release, etc. of actual deployment instances, and the release process can be automated in batches and pauses based on Prometheus Metrics, compatible with various workloads, etc.
 
 - [Prometheus long-term remote storage solution VictoriaMetrics entry practice](https://mp.weixin.qq.com/s/C3fzohygl5_tey70Qnz3og)
@@ -665,7 +665,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Cost Governance of Cloud Native Workloads Using Kubecost and Kyverno](https://dzone.com/articles/cost-governance-of-cloud-native-workloads-using-kubecost-and-kyverno)
 
-    This article describes how to use the policy engine Kyverno and the cost management tool Kubecost to perform cost governance on cloud native workloads. When the cost of a certain Kubernetes workload calculated by Kubecost is higher than the assigned value, Kyverno will create a violation/failure.
+    This page describes how to use the policy engine Kyverno and the cost management tool Kubecost to perform cost governance on cloud native workloads. When the cost of a certain Kubernetes workload calculated by Kubecost is higher than the assigned value, Kyverno will create a violation/failure.
 
 - [Dubbo-go-Mesh opens a new generation of Go microservices](https://mp.weixin.qq.com/s/cSsnne_kGfUjm1lKZWLiOw)
 
@@ -685,7 +685,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Virtual Kubernetes Clusters: New Model Multitenancy](https://opensource.com/article/22/3/virtual-kubernetes-clusters-new-model-multitenancy)
 
     For a long time, the two multi-tenancy models based on namespace and cluster have many disadvantages.
-    This article introduces a newer concept - virtual clusters. It combines the advantages of the two multi-tenancy approaches described above: multi-tenancy uses only one namespace, and tenants have full control within the virtual cluster.
+    This page introduces a newer concept - virtual clusters. It combines the advantages of the two multi-tenancy approaches described above: multi-tenancy uses only one namespace, and tenants have full control within the virtual cluster.
 
 ### Product comparison
 
@@ -706,7 +706,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Discussion on K8s CNI plug-in selection and application scenarios](https://mp.weixin.qq.com/s/GG7GX_E1oyZf-cmjk80OYg)
 
-    This article introduces seven common network application scenarios in the container environment and the implementation of the Kubernetes CNI plug-in function for the corresponding scenarios.
+    This page introduces seven common network application scenarios in the container environment and the implementation of the Kubernetes CNI plug-in function for the corresponding scenarios.
 
 - [The Way of DevOps Platform Design in the Cloud Native Era (Rancher vs KubeSphere vs Rainbond)](https://mp.weixin.qq.com/s/oxeNq4GHE85NUBIDcgixcg)
 
@@ -731,7 +731,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [How to choose a reliable APM system in a production environment](https://mp.weixin.qq.com/s/3dD0hIuqpXdepLVC6V7aoA)
 
-    The article starts from the introduction of mainstream APM products (compared with Pinpoint, Jaeger, Skywalking, Tingyun, Tencent Cloud + Alibaba Cloud Arms and Datadog), and passes through several important dimensions in the production environment, such as product experience, Agent capability, alarm + DB support , cloud-native support capabilities, large data screens, etc., and give suggestions for APM selection solutions.
+    The article starts from the introduction of mainstream APM products (compared with Pinpoint, Jaeger, Skywalking, Tingyun, Tencent Cloud + Alibaba Cloud Arms and Datadog), and passes through several important dimensions in the production environment, such as product experience, Agent capability, alarm + DB support, cloud-native support capabilities, large data screens, etc., and give suggestions for APM selection solutions.
 
 ### Frontier hotspot
 
@@ -784,7 +784,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [OCI Container and Wasm First Experience](https://mp.weixin.qq.com/s/4oFErzG65b-0FfpHQB941A)
 
-     This article describes how to configure the OCI runtime to run Linux containers and WASI-compliant workloads.
+     This page describes how to configure the OCI runtime to run Linux containers and WASI-compliant workloads.
 
 - [Is Sidecarless the next stop for Service Mesh?](https://mp.weixin.qq.com/s/SF5uN8VHwrqji4xdME4hCg)
 
@@ -792,8 +792,8 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [eBPF program camera - strive to solve the most valuable and challenging problems in the field of observability in the future](https://mp.weixin.qq.com/s/FYNe1H5dmBpbKFOrIpjuzQ)
   
-    Currently, observability users are easily lost in the maze of indicators. They don’t know when to view which indicators, and how to understand large-scale and fine-grained indicators.
-    To solve this problem, the Kindling community chose an eBPF-based observability camera to obtain fine-grained indicators during program execution according to the eBPF granularity, helping users understand the real process of program execution and understand how fine-grained indicators affect the program implemented.
+    Currently, observability users are easily lost in the maze of metrics. They don’t know when to view which metrics, and how to understand large-scale and fine-grained metrics.
+    To solve this problem, the Kindling community chose an eBPF-based observability camera to obtain fine-grained metrics during program execution according to the eBPF granularity, helping users understand the real process of program execution and understand how fine-grained metrics affect the program implemented.
 
 - [Is GitOps the emperor's new clothes](https://mp.weixin.qq.com/s/CpLvQM2rTI4InIN1Vk5ZKg)
 
@@ -999,12 +999,12 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [ToB application privatization delivery technology development history and comparison](https://mp.weixin.qq.com/s/JcDZxabHImljPCEus_inlg)
 
-    In traditional application delivery, managing runtime environment and operating system differences is a pain point. The current cloud-native application delivery uses container and kubernetes-related technologies to solve this problem, but the learning and use threshold of these technologies is too high.
-    Thus, the abstracted application model becomes the next-generation solution, for example, OAM-based KubeVela application delivery and RAM-based Rainbond application delivery.
+    In traditional app delivery, managing runtime environment and operating system differences is a pain point. The current cloud-native app delivery uses container and kubernetes-related technologies to solve this problem, but the learning and use threshold of these technologies is too high.
+    Thus, the abstracted application model becomes the next-generation solution, for example, OAM-based KubeVela app delivery and RAM-based Rainbond app delivery.
 
 - [Survey on Backup and Recovery Solutions for Container Services of Domestic and Foreign Cloud Vendors](https://mp.weixin.qq.com/s/P71vBPiID8o1GI6pqbaO6w)
 
-    This article investigates and analyzes the container service backup and recovery solutions of four vendors (Alibaba Cloud Container Service ACK, Tencent Cloud Container Service TKE, Huawei Cloud Backup Product CBR, Google Cloud Backup for GKE), and compares their respective advantages and disadvantages.
+    This page investigates and analyzes the container service backup and recovery solutions of four vendors (Alibaba Cloud Container Service ACK, Tencent Cloud Container Service TKE, Huawei Cloud Backup Product CBR, Google Cloud Backup for GKE), and compares their respective advantages and disadvantages.
 
 - [Trends behind Apache APISIX 3.0 and Kong 3.0 features in cloud-native gateways](https://mp.weixin.qq.com/s/hyqqDojuzEU-LvfR5deBZw)
 
@@ -1048,7 +1048,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [CryptoMB - Speed up Istio TLS handshake](https://istio.io/latest/blog/2022/cryptomb-privatekeyprovider/)
 
-    This article describes a new feature introduced in Envoy 1.20 and Istio 1.14: Accelerating the Istio TLS handshake via the CryptoMB Private Key Provider.
+    This page describes a new feature introduced in Envoy 1.20 and Istio 1.14: Accelerating the Istio TLS handshake via the CryptoMB Private Key Provider.
     CryptoMB is an Envoy extension that leverages Intel multi-buffer technology, enabling service meshes to offload TLS handshakes to handle more connections, lower latency, and save CPU.
 
 - [How to think about the multi-runtime architecture of Dapr and Layotto](https://mp.weixin.qq.com/s/sKaKzlOXsLSmqBwv9uI5Cw)
@@ -1064,4 +1064,4 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Harbor v2.5 remote replication: the signature of the artifact is always there](https://mp.weixin.qq.com/s/erH1iCbNn9yM1Bl5UlgGMg)
 
     Harbor v2.5 was released last week. The Cosign product signature and verification solution is an important function, which solves the problem that the signature information of products such as images cannot be copied to the target during remote replication.
-    This article describes the functionality in detail.
+    This page describes the functionality in detail.

@@ -19,6 +19,6 @@ Currently supported features are as follows:
 - Multilingual client support
 - Simple and easy to use graphical interface
 
+<!--screenshot-->
 
-
-[Free Trial](../../../dce/license0.md){ .md-button .md-button--primary }
+[Create a Kafka instance](../user-guide/create.md){ .md-button .md-button--primary }

@@ -86,7 +86,7 @@ A tag value of null is considered equivalent to no tag being present.
 
     This is the same notation used by [OpenTSDB](http://opentsdb.net/).
 
-## Indicator type
+## metric type
 
 Insight has the following types of metrics.
 

@@ -10,15 +10,15 @@ This page lists the Release Notes of Spidernet, so that you can understand the e
 
 - **Optimized** Spidernet API, adapted to **Spiderpool v0.4.0** new version CRD
 
-#### fix
+#### Fix
 
-- **Fix** The stateful load uses the automatic IP pool, the IP pool is created successfully, the IP allocation is successful, and the query IP pool is empty.
+- **Fixed** The stateful load uses the automatic IP pool, the IP pool is created successfully, the IP allocation is successful, and the query IP pool is empty.
 
-- **Fix** Subnet Management-Delete Subnet, choose to delete a subnet, the system prompts success, but the subnet is still there after refreshing.
+- **Fixed** Subnet Management-Delete Subnet, choose to delete a subnet, the system prompts success, but the subnet is still there after refreshing.
 
-- **Fix** Click "Container Network Card" several times, but can't get data.
+- **Fixed** Click "Container Network Card" several times, but can't get data.
 
-- **Fix** Spidernet-UI Service Label in `Spidernet Chart` is incorrect.
+- **Fixed** Spidernet-UI Service Label in `Spidernet Chart` is incorrect.
 
 ## 2022-02-28
 
@@ -28,15 +28,15 @@ This page lists the Release Notes of Spidernet, so that you can understand the e
 
 - **Optimization** Adjust the CPU memory Request value.
 
-#### fix
+#### Fix
 
-- **Fix** The stateful load uses the automatic IP pool, the IP pool is created successfully, the IP allocation is successful, and the query IP pool is empty.
+- **Fixed** The stateful load uses the automatic IP pool, the IP pool is created successfully, the IP allocation is successful, and the query IP pool is empty.
 
-- **Fix** Subnet Management - Delete subnet, choose to delete a subnet, the system prompts success, but the subnet is still there after refreshing.
+- **Fixed** Subnet Management - Delete subnet, choose to delete a subnet, the system prompts success, but the subnet is still there after refreshing.
 
-- **Fix** Click "Container Network Card" several times, but can't get data.
+- **Fixed** Click "Container Network Card" several times, but can't get data.
 
-- **Fix** Spidernet-UI Service Label in `Spidernet Chart` is incorrect.
+- **Fixed** Spidernet-UI Service Label in `Spidernet Chart` is incorrect.
 
 ## 2022-11-30
 
@@ -58,13 +58,13 @@ This page lists the Release Notes of Spidernet, so that you can understand the e
 
 #### Features
 
-- **NEW** Added functions such as interface-based IP reservation and IP release reservation.
+- **Added** Added functions such as interface-based IP reservation and IP release reservation.
 
-- **New** IP pool management, which can be created, edited, and deleted based on the interface.
+- **Added** IP pool management, which can be created, edited, and deleted based on the interface.
 
-- **New** The workload uses the multi-NIC function of the container, and the IP pool can be selected and fixed.
+- **Added** The workload uses the multi-NIC function of the container, and the IP pool can be selected and fixed.
 
-- **NEW** Check the number of available IPs/total IPs in the application fixed IP pool.
+- **Added** Check the number of available IPs/total IPs in the application fixed IP pool.
 
 #### Optimization
 
