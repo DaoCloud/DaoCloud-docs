@@ -8,7 +8,7 @@
 
     - Dashboard: Insight provides a variety of out-of-the-box prefabricated monitoring dashboards. You can comprehensively monitor clusters, nodes, workloads and other components through the built-in dashboards.
 
-    - Alert rules: Insight provides built-in alarm rules that enable you to monitor cluster resources, system components, and other basic metrics out of the box without configuration.
+    - Alert rules: Insight provides built-in alert rules that enable you to monitor cluster resources, system components, and other basic metrics out of the box without configuration.
 
 - High Availability
 

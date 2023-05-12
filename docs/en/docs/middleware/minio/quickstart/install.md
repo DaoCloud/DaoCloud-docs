@@ -14,7 +14,7 @@ Follow the steps below to install MinIO.
 
     
 
-3. In the left navigation bar, click `Helm Application` -> `Helm Template`, enter `minio` in the search box, press the Enter key, and click the MinIO-operator tile card.
+3. In the left navigation bar, click `Helm Application` -> `Helm chart`, enter `minio` in the search box, press the Enter key, and click the MinIO-operator tile card.
 
     
 

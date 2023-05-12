@@ -14,7 +14,7 @@ Follow the steps below to install RabbitMQ.
 
     
 
-3. In the left navigation bar, click `Helm Application` -> `Helm Template`, enter `rabbitmq` in the search box, press the Enter key, and click the RabbitMQ tile card.
+3. In the left navigation bar, click `Helm Application` -> `Helm chart`, enter `rabbitmq` in the search box, press the Enter key, and click the RabbitMQ tile card.
 
     
 

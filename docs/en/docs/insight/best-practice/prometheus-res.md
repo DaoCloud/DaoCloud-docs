@@ -11,7 +11,7 @@ it is necessary to adjust the resources of Prometheus according to the actual si
 In the case that the mesh is not enabled, the test statistics show that the relationship
 between the system Job index and Pod is: **Series number = 800\*Pod number**
 
-When the service mesh is enabled, the magnitude of the Istio-related indicators generated
+When the service mesh is enabled, the magnitude of the Istio-related metrics generated
 by the Pod after the function is enabled is: **Series number = 768\*Pod number**
 
 ### When the service mesh is not enabled
@@ -34,7 +34,7 @@ The following resource planning is recommended by Prometheus when the service me
 
 The following resource planning is recommended by Prometheus in the scenario of **starting the service mesh**:
 
-| Cluster size (Pod number) | Indicator volume (service mesh enabled) | CPU (core) | Memory (GB) |
+| Cluster size (Pod number) | metric volume (service mesh enabled) | CPU (core) | Memory (GB) |
 | ---------------- | ---------------------- | --------- -------------- | ----------------------------- |
 | 100 | 15w | Request: 1<br>Limit: 2 | Request: 3GB<br>Limit: 6GB |
 | 200 | 31w | Request: 2<br>Limit: 3 | Request: 5GB<br>Limit: 10GB |

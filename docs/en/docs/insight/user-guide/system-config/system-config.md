@@ -5,15 +5,15 @@ hide:
 
 # System Configuration
 
-`System Configuration` displays the default storage time of indicators, logs, links and the default Apdex threshold.
+`System Configuration` displays the default storage time of metrics, logs, traces and the default Apdex threshold.
 
 1. Click on the right navigation bar and select `System Configuration`.
 
      
 
-2. Currently only supports modifying the storage duration of historical alarms, click `Edit` to enter the target duration.
+2. Currently only supports modifying the storage duration of historical alerts, click `Edit` to enter the target duration.
 
-     When the storage duration is set to "0", the historical alarms will not be cleared.
+     When the storage duration is set to "0", the historical alerts will not be cleared.
 
      
 

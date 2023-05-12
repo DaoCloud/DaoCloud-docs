@@ -132,7 +132,7 @@ cilium_enable_ipv6: false # true enable IPV6
 
 - Hubble
 
-    Hubble is installed and enabled by default, and how to enable Hubble metrics. The indicators exposed by default are:
+    Hubble is installed and enabled by default, and how to enable Hubble metrics. The metrics exposed by default are:
 
     ```yaml
     - dns

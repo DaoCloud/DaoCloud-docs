@@ -19,4 +19,4 @@ MinIO has built-in Prometheus and Grafana monitoring modules.
 
     If it prompts that the monitoring component is abnormal, please follow the prompt [Install the insight-agent plug-in](../../../insight/user-guide/quickstart/install-agent.md).
 
-<!-- The specific meaning of each monitoring indicator will be added later (@justedennnnn). -->
+<!-- The specific meaning of each monitoring metric will be added later (@justedennnnn). -->

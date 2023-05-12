@@ -11,8 +11,8 @@ Follow the steps below to view service monitoring metrics:
 2. In the left navigation bar, select `Scene Monitoring -> Service Topology`.
 3. In the topology map, you can perform the following operations as required:
 
-- Click on the node to view the traffic indicators of the service.
-- When the mouse hovers over the connection, you can view the traffic indicators requested between services.
+- Click on the node to view the traffic metrics of the service.
+- When the mouse hovers over the connection, you can view the traffic metrics requested between services.
 - In the `Display Settings` module, it is possible to configure the display elements in the topology map.
 
      

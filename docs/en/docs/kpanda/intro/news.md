@@ -26,7 +26,7 @@ This page provides an update on DCE 5.0 container management.
 <ul>
   <li><code>backoffLimit</code>: Specifies the number of retries before marking this Job as failed. The default value is 6. </li>
   <li><code>completions</code>: Specifies the number of Pods that the Job should run and expect to complete successfully. Setting to nil means that the success of any Pod marks the success of all Pods, and allows parallelism to be set to any positive value. A setting of 1 means that parallelism is limited to 1, and the success of this Pod marks the success of the task. </li>
-  <li><code>parallelism</code>: Specifies an upper bound on the number of Pods that the Job should expect to run at any given moment. When (.spec.completions - .status.successful) < .spec.parallelism , i.e. when the remaining work is less than the maximum degree of parallelism, the actual number of Pods running in steady state will be less than this number. </li>
+  <li><code>parallelism</code>: Specifies an upper bound on the number of Pods that the Job should expect to run at any given moment. When (.spec.completions - .status.successful) < .spec.parallelism, i.e. when the remaining work is less than the maximum degree of parallelism, the actual number of Pods running in steady state will be less than this number. </li>
   <li><code>activeDeadlineSeconds</code>: The number of seconds that the job can be active before the system tries to terminate the job. This length of time is relative to startTime; the field value must be a positive integer. If the Job is suspended, this timer is stopped and reset when the Job resumes again. </li>
 </ul>
 </td>

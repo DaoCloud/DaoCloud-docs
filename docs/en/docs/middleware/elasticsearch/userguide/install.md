@@ -14,7 +14,7 @@ Follow the steps below to install Elasticsearch.
 
     
 
-3. In the left navigation bar, click `Helm Application` -> `Helm Template`, enter `elasticsearch` in the search box, press the Enter key, and click the elasticsearch tile card.
+3. In the left navigation bar, click `Helm Application` -> `Helm chart`, enter `elasticsearch` in the search box, press the Enter key, and click the elasticsearch tile card.
 
     
 

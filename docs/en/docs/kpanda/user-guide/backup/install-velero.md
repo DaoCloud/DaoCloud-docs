@@ -18,7 +18,7 @@ Before installing the `velero` plugin, the following prerequisites need to be me
 
 Please perform the following steps to install the `velero` plugin for your cluster.
 
-1. On the cluster list page, find the target cluster that needs to install the `velero` plugin, click the name of the cluster, click `Helm Application` -> `Helm Template` in the left navigation bar, and enter `velero` in the search bar to search .
+1. On the cluster list page, find the target cluster that needs to install the `velero` plugin, click the name of the cluster, click `Helm Application` -> `Helm chart` in the left navigation bar, and enter `velero` in the search bar to search .
 
      
 

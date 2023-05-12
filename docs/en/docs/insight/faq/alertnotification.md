@@ -63,4 +63,3 @@ In this case:
 
 - If Alertmanager keeps receiving alerts with the same labels and content within 1 hour, it will resend the alert notifications that have already been sent before.
 
-     

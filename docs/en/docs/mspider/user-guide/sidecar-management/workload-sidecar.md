@@ -12,13 +12,13 @@ The meaning of each column is as follows:
 
 | Workloads | All workloads under the selected cluster (excluding workloads whose system usage cannot be injected by sidecars) |
 | ----------------- | -------------------------------- -------------------------------- |
-| Status | Three states:<br />Injected - sidecar auto-injection completed<br />Not Injected - sidecar auto-injection disabled<br />Pending restart - istio-injection for the namespace in question has changed , but the related Pod has not restarted |
+| Status | Three states:<br />Injected - sidecar auto-injection completed<br />Not Injected - sidecar auto-injection disabled<br />Pending restart - istio-injection for the namespace in question has changed, but the related Pod has not restarted |
 | namespace | the namespace to which the workload belongs; |
 | Service | This workload-related service, there may be multiple items, and the expansion and contraction list can be used. After the user clicks, the floating window will display all the content; |
-| Injected Pod | The injection status of the Pod under the workload;<br />Format: Injected Pod/All Pods that can be injected<br />If the injection status of the workload is `Injected`, but some Pods are not injected , such as 3/5, this item will be highlighted to remind the user that there is a Pod that fails to be injected and needs to be dealt with in time |
+| Injected Pod | The injection status of the Pod under the workload;<br />Format: Injected Pod/All Pods that can be injected<br />If the injection status of the workload is `Injected`, but some Pods are not injected, such as 3/5, this item will be highlighted to remind the user that there is a Pod that fails to be injected and needs to be dealt with in time |
 | CPU application value/limit value | Contains two values ​​of `request` resource and `limit` resource, if the user has not set the resource, this item is `not set`. <br />Format: request / limit |
 | Memory application value/limit value | Contains two values ​​of `request` resource and `limit` resource, if the user has not set the resource, this item is `not set`. <br />Format: request / limit |
-|Operation| Contains two operation links:<br />Sidecar resource limit: make resource settings for the current workload, this operation is valid for all state workloads;<br />View sidecar state: only when the state is` Injected workloads are displayed, calling the `Sidecar Running Status` dialog; |
+|Operation| Contains two operation traces:<br />Sidecar resource limit: make resource settings for the current workload, this operation is valid for all state workloads;<br />View sidecar state: only when the state is` Injected workloads are displayed, calling the `Sidecar Running Status` dialog; |
 
 When there are many workloads, you can sort the workload names, and use the search function to find the target workload under the current cluster.
 

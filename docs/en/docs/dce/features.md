@@ -82,11 +82,11 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - The application-centric, out-of-the-box, new generation cloud-native observability operation and maintenance platform realizes fast fault location and quick troubleshooting.
 
-- Monitor applications and resources in real time, collect data such as various indicators, logs, and events to analyze application health status, and provide alarm capabilities and comprehensive, clear, and multi-dimensional data visualization capabilities.
+- Monitor applications and resources in real time, collect data such as various metrics, logs, and events to analyze application health status, and provide alarm capabilities and comprehensive, clear, and multi-dimensional data visualization capabilities.
 
 - The mainstream open source compoments are open and compatible, providing fast fault location and one-key monitoring and diagnosis capabilities.
 
-- It provides unified collection of indicators, logs, and links, supports multi-dimensional alarms on indicators and logs, and provides a concise and clear visual management interface.
+- It provides unified collection of metrics, logs, and traces, supports multi-dimensional alarms on metrics and logs, and provides a concise and clear visual management interface.
 
 === "Featured [Middleware](../middleware/what.md)"
 

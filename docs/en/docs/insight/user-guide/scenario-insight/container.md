@@ -6,7 +6,7 @@ hide:
 # container monitoring
 
 Through container monitoring, you can monitor the current health status of the workload and the abnormal number of the corresponding pod according to the list overview page.
-On the workload details page, you can view the number of alarms and the trend graph of resource consumption such as CPU and memory.
+On the workload details page, you can view the number of alerts and the trend graph of resource consumption such as CPU and memory.
 
 1. In the left navigation bar, select `Container Monitoring`, and the stateless load under all namespaces of the first cluster is displayed by default.
 
@@ -16,4 +16,4 @@ On the workload details page, you can view the number of alarms and the trend gr
 
     !!! note
     
-        On the "Fault" card, click "View Log" to view detailed alarm information. Click `Alarming` to view the alarm list of the current resource.
+        On the "Fault" card, click "View Log" to view detailed alert information. Click `alerting` to view the alert list of the current resource.

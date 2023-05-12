@@ -9,12 +9,12 @@
 | case | | Test method | Rancher rke2c1(k8s 1.24.11) | Remarks |
 | ------------ | ------------------------ | ----------- ----- |--------- |--------- |
 | Collect and query web application metrics | | Manually | ✅| |
-| Add custom indicator collection | | Manual | ✅| |
-| Query real-time indicators | | Manual | ✅| |
+| Add custom metric collection | | Manual | ✅| |
+| Query real-time metrics | | Manual | ✅| |
 | Instantaneous index query | | Manual | ✅| |
-| Instantaneous indicator api field function verification | | Manual | ✅| |
-| Query indicators over a period of time | | Manually | ✅| |
-| Query api field function verification of indicators within a period of time | | Manual | ✅| |
+| Instantaneous metric api field function verification | | Manual | ✅| |
+| Query metrics over a period of time | | Manually | ✅| |
+| Query api field function verification of metrics within a period of time | | Manual | ✅| |
 | Batch query cluster CPU, memory usage, total cluster CPU, cluster memory usage, total number of cluster nodes | | Manual | ✅| |
 | Batch query node CPU, memory usage, total node CPU, node memory usage | | Manual | ✅| |
 | Batch query cluster CPU, memory usage, total cluster CPU, cluster memory usage, and total number of cluster nodes within a period of time | | Manual | ✅| |
@@ -31,8 +31,8 @@
 | Log precise query-cluster | | Manual | ✅| |
 | Log precise query-namespace | | Manual | ✅| |
 | Log query api field function verification | | Manual | ✅| |
-| Alarm rules - addition, deletion, modification and query | | Manual | ✅ ||
-| Alarm template - addition, deletion, modification and query | | Manual | ✅ ||
+| alert rules - addition, deletion, modification and query | | Manual | ✅ ||
+| alert template - addition, deletion, modification and query | | Manual | ✅ ||
 | Notification method - addition, deletion, modification and query | | Manual | ✅ ||
-| Link query | | Manual | ✅ ||
+| trace query | | Manual | ✅ ||
 | Topology query | | Manual | ✅ ||

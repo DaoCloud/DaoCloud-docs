@@ -16,7 +16,7 @@ Please confirm that your cluster has successfully connected to the container man
 
     
 
-1. In the left navigation bar, select `Helm Application` -> `Helm Template`, find `insight-agent`, and click the tile card.
+1. In the left navigation bar, select `Helm Application` -> `Helm chart`, find `insight-agent`, and click the tile card.
 
     
 

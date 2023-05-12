@@ -22,7 +22,7 @@ Please confirm that your cluster has successfully connected to `container manage
 
 1. On the left navigation bar, click `Container Management` —> `Cluster List`, and find the name of the cluster where Hwameistor is to be installed.
 
-2. In the left navigation bar, select `Helm Application` -> `Helm Template`, find and click `Hwameistor`.
+2. In the left navigation bar, select `Helm Application` -> `Helm chart`, find and click `Hwameistor`.
 
      ![UI Install01](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/hwameistorUI01.jpg)
 
@@ -63,7 +63,7 @@ Please confirm that your cluster has successfully connected to `container manage
          - `DiskType`: the disk type of the created storage pool (Storage Class), supported types are: HDD, SSD. HDD is the default.
          - `Enable HA`: `HA` is turned off by default, that is, the created data volume is `non-highly available`, when enabled, use this `Storage Class`
            The created data volume can be set as `highly available data volume`. Please complete [DRDB Installation](drbdinstall.md) before opening.
-         - `Replicas`: In non-HA mode, the number of `Replicas` is `1`; when the `HA` mode is enabled, the number of `Replicas` can be `1` or `2`, and the number is `1` , which can be converted to `2`.
+         - `Replicas`: In non-HA mode, the number of `Replicas` is `1`; when the `HA` mode is enabled, the number of `Replicas` can be `1` or `2`, and the number is `1`, which can be converted to `2`.
          - `ReclaimPolicy`: When the data volume is deleted, the data retention policy, the default is `delete`.
         
              1. `Delete`: When deleting a data volume, the data is also deleted.

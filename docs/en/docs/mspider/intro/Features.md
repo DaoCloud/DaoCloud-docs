@@ -54,7 +54,7 @@ The features supported by the service mesh are described here.
 
 - Service operation monitoring
 
-    Support viewing service access information, including indicators such as QPS and latency of services and service versions.
+    Support viewing service access information, including metrics such as QPS and latency of services and service versions.
 
 - access log
 

@@ -34,7 +34,7 @@ Make sure your cluster is successfully connected to the `container management` p
 
 1. Click `Container Management` -> `Cluster List` in the left navigation bar, and then find the cluster name where you want to install `submariner-k8s-broker`. 2.
 
-2. In the left navigation bar, select `Helm Applications` -> `Helm Templates`, find and click `submariner-k8s-broker`.
+2. In the left navigation bar, select `Helm Applications` -> `Helm charts`, find and click `submariner-k8s-broker`.
 
     ! [helm](../../images/submariner-k8s-broker-helm-repo.png)
 

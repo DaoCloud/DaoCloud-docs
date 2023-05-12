@@ -1,6 +1,6 @@
 # Microservice monitoring
 
-The Microservice engine provides a full range of Grafana monitoring capabilities covering various microservices, system components, and service invocation links. The micro-service monitoring function can provide monitoring information of each micro-service in the managed registry, including service response time, concurrency, abnormal QPS, blocked QPS, passed QPS, successful QPS and other dimensions.
+The Microservice engine provides a full range of Grafana monitoring capabilities covering various microservices, system components, and service invocation traces. The micro-service monitoring function can provide monitoring information of each micro-service in the managed registry, including service response time, concurrency, abnormal QPS, blocked QPS, passed QPS, successful QPS and other dimensions.
 
 !!! note
 

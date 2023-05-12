@@ -15,7 +15,7 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
     
 
-2. In the left navigation bar, select `Helm Applications` -> `Helm Templates`, and find and click `ingress-nginx`.
+2. In the left navigation bar, select `Helm Applications` -> `Helm charts`, and find and click `ingress-nginx`.
 
     
 

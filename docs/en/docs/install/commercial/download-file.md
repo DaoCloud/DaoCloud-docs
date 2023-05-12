@@ -46,4 +46,4 @@ This page lists the download addresses of installers and image packages.
 | CPU Architecture | Operating System Version | Download URL |
 | --------- | --------------------------------------- ------------ | ------------------------------------- ----------------------- |
 | AMD64 | Centos 7 | https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso |
-| ARM64 | Kylin Linux Advanced Server release V10 (Sword) SP2 | Application address: https://www.kylinos.cn/scheme/server/1.html<br />Note: Kylin operating system needs to provide personal information to download and use , please choose V10 (Sword) SP2 when downloading |
+| ARM64 | Kylin Linux Advanced Server release V10 (Sword) SP2 | Application address: https://www.kylinos.cn/scheme/server/1.html<br />Note: Kylin operating system needs to provide personal information to download and use, please choose V10 (Sword) SP2 when downloading |

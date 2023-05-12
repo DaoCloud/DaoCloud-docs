@@ -85,7 +85,7 @@ This page lists the Release Notes of the App Workbench, so that you can understa
 - **Added** Pipeline step logs support to get full logs
 - **Added** Added cache to query plug-in information interface
 - **Added** Copy the existing pipeline directly to generate a new pipeline
-- **Added** Provides differentiated configuration for access indicator monitoring when microservices are enabled, and the path can be customized
+- **Added** Provides differentiated configuration for access metric monitoring when microservices are enabled, and the path can be customized
 - **Added** Jenkins trace docking
 - **Added** ListWorkload interface return value to add application-associated resources
 

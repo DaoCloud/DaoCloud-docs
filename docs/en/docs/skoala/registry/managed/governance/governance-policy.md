@@ -6,11 +6,11 @@ The micro-service engine supports east-west traffic governance via a service mes
 
 - [flow-control.md](flow-control.md)
 
-    The principle of the flow control rule is to monitor the QPS indicator of application or service traffic. When the indicator reaches the threshold, the traffic is controlled according to the preset rule, preventing application crashes due to excessive traffic processing in a short period of time. After the flow control rule is used, the system can gradually process the accumulated requests in the following idle period. When the indicator falls below the threshold again, normal traffic request control is resumed.
+    The principle of the flow control rule is to monitor the QPS metric of application or service traffic. When the metric reaches the threshold, the traffic is controlled according to the preset rule, preventing application crashes due to excessive traffic processing in a short period of time. After the flow control rule is used, the system can gradually process the accumulated requests in the following idle period. When the metric falls below the threshold again, normal traffic request control is resumed.
 
 - Fuse degradation
 
-    In a distributed system, each service usually needs to call other internal or external services in order to run properly. If the called service is not stable, the cascading effect will lead to the response time of the caller, resulting in thread accumulation and even service unavailability. To avoid this situation, the circuit breaker should be used to cut off unstable call links according to preset rules, or degrade downstream services to protect the overall availability of the system.
+    In a distributed system, each service usually needs to call other internal or external services in order to run properly. If the called service is not stable, the cascading effect will lead to the response time of the caller, resulting in thread accumulation and even service unavailability. To avoid this situation, the circuit breaker should be used to cut off unstable call traces according to preset rules, or degrade downstream services to protect the overall availability of the system.
 
 - Hotspot rule
 

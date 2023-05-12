@@ -39,7 +39,7 @@ spec:
          methods: ["GET"]
 ```
 
-In this example, we create an `AuthorizationPolicy` resource that allows traffic to the my-service service from any namespace except my-namespace , but only for GET requests.
+In this example, we create an `AuthorizationPolicy` resource that allows traffic to the my-service service from any namespace except my-namespace, but only for GET requests.
 See also [How GUIs are created](./authorize.md).
 
 ### Request authentication

@@ -31,7 +31,7 @@ Here are the advantages of DCE 5.0 service mesh compared to other products.
 
     - HTTP sessions are maintained to meet the demands of business processing continuity.
 
-    - Current limiting and fusing to achieve stable and reliable links between services.
+    - Current limiting and fusing to achieve stable and reliable traces between services.
 
     - Network persistent connection management reduces resource loss and improves network throughput.
 

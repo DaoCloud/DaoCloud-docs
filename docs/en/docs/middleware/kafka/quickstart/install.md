@@ -14,7 +14,7 @@ Follow the steps below to install Kafka.
 
     
 
-3. In the left navigation bar, click `Helm Application` -> `Helm Template`, enter `kafka` in the search box, press the Enter key, and click the kafka-operator tile card.
+3. In the left navigation bar, click `Helm Application` -> `Helm chart`, enter `kafka` in the search box, press the Enter key, and click the kafka-operator tile card.
 
     
 

@@ -10,7 +10,7 @@ JMX-Exporter provides two usages:
 !!! note
 
      Officials do not recommend the first method. On the one hand, the configuration is complicated, and on the other hand, it requires a separate process, and the monitoring of this process itself has become a new problem.
-     So This page focuses on the second usage and how to use JMX Exporter to expose JVM monitoring indicators in the Kubernetes environment.
+     So This page focuses on the second usage and how to use JMX Exporter to expose JVM monitoring metrics in the Kubernetes environment.
 
 The second usage is used here, and the JMX Exporter jar package file and configuration file need to be specified when starting the JVM.
 The jar package is a binary file, so it is not easy to mount it through configmap. We hardly need to modify the configuration file.
@@ -53,7 +53,7 @@ ENTRYPOINT java $JAVA_OPTS -jar my-app.jar
 Notice:
 
 - Start parameter format: -javaagent:=:
-- Port 8088 is used here to expose the monitoring indicators of the JVM. If it conflicts with Java applications, you can change it yourself
+- Port 8088 is used here to expose the monitoring metrics of the JVM. If it conflicts with Java applications, you can change it yourself
 
 ## Method 2: mount via init container container
 
@@ -130,7 +130,7 @@ Add the following init container to the Java application deployment Yaml:
           restartPolicy: Always
     ```
 
-After the above modification, the sample application my-demo-app has the ability to expose JVM indicators.
-After running the service, we can access the prometheus format indicators exposed by the service through `http://lcoalhost:8088`.
+After the above modification, the sample application my-demo-app has the ability to expose JVM metrics.
+After running the service, we can access the prometheus format metrics exposed by the service through `http://lcoalhost:8088`.
 
 Then, you can refer to [Java Application Docking Observability with JVM Metrics](./legacy-jvm.md).
