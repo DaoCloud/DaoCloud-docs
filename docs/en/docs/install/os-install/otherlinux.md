@@ -1,6 +1,6 @@
 # Other Linux Offline Deployment of DCE 5.0 Commercial Release
 
-This article will introduce how to deploy DCE 5.0 on Other Linux operating system.
+This page will introduce how to deploy DCE 5.0 on Other Linux operating system.
 
 Other Linux is essentially because DCE does not provide the installation system offline package (OS package) for some Linux operating systems, and customers need to make it themselves.
 

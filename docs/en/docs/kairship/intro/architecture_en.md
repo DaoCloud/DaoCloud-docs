@@ -108,4 +108,4 @@ At the same time, the multicloud orchestration management plane has a control lo
 ### Karmada instance CR
 
 The Karmada community is working on the Karmada operator recently. Here we do not make a separate design, just refer to the latest developments in the community.
-Therefore, this article does not design the LCM of the `Karmada` example. Assuming that the operator in the community is still not perfect at this stage, we can first connect the CR conversion.
+Therefore, This page does not design the LCM of the `Karmada` example. Assuming that the operator in the community is still not perfect at this stage, we can first connect the CR conversion.

@@ -55,7 +55,7 @@ There are two network modes:
      > If the Pod network can communicate directly, it proves that it is the same network mode, but it should be noted that if there is a conflict between the **Pod network**, you need to choose a different network mode
 - Multi-network mode
      > If the network between the clusters is disconnected, you need to divide the **network ID** for the cluster, and you need to install east-west gateways in clusters in different network areas,
-     > And configure related configurations. The specific operation steps are in the following chapter [Installation and Configuration of mesh Components in Different Network Modes] (#_21).
+     > And configure related configurations. The specific operation steps are in the following chapter [Installation and Configuration of mesh Components in Different Network Modes](#_21).
 
 ### planning form
 
@@ -135,7 +135,7 @@ The specific parameters for creating the mesh are shown in the figure:
 3. According to the pre-condition environment, select the pre-selected mesh version that meets the requirements
 4. Select the cluster where the managed control plane resides
 5. Load balancing IP: This parameter is required by the Istiod that exposes the control plane and needs to be prepared in advance
-6. Mirror warehouse: In the private cloud, you need to upload the mirror image required by the mesh to the warehouse. For the public cloud, it is recommended to fill in `release.daocloud.io/mspider`
+6. container registry: In the private cloud, you need to upload the mirror image required by the mesh to the registry. For the public cloud, it is recommended to fill in `release.daocloud.io/mspider`
 
 
 
@@ -155,7 +155,7 @@ Found no LoadBalancer IP assigned for service `istiod-mdemo-cluster-hosted-lb` h
 
 There are different ways to apply for or allocate LoadBalancer IP in different environments, especiallyIt is a public cloud environment, and the LoadBalancer IP needs to be created according to the method provided by the public cloud vendor.
 
-This article demonstrates that the demo adopts the metallb method to assign an IP to the LoadBalancer Service. For related deployment and configuration, refer to the [Metallb Installation Configuration] (#metallb) section.
+This page demonstrates that the demo adopts the metallb method to assign an IP to the LoadBalancer Service. For related deployment and configuration, refer to the [Metallb Installation Configuration](#metallb) section.
 
 After deploying metallb, [confirm hosted mesh control plane service](#_17) again.
 
@@ -338,7 +338,7 @@ spec:
          injectionTemplate: gateway
      global:
        network: ${CLUSTER_NET_ID} # Change to the network ID of the current cluster
-       hub: ${HUB} # Optional, if you can't bypass the wall or private warehouse, please modify
+       hub: ${HUB} # Optional, if you can't bypass the wall or private registry, please modify
        meshID: ${MESH_ID} # Change to the mesh ID (Mesh ID) of the current cluster
        multiCluster:
          clusterName: ${CLUSTER} # modify to current
@@ -516,7 +516,7 @@ while true; do kubectl exec -n sample -c sleep \
 
 #### Create a cluster through container management
 
-There are many ways to create a cluster. It is recommended to use the cluster creation function in container management, but users can choose other creation methods. For other solutions provided in this article, please refer to [Other ways to create clusters] in the extended chapter (#_26)
+There are many ways to create a cluster. It is recommended to use the cluster creation function in container management, but users can choose other creation methods. For other solutions provided in This page, please refer to [Other ways to create clusters] in the extended chapter (#_26)
 
 
 

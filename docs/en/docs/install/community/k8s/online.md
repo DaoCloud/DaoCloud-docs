@@ -30,7 +30,8 @@ This page briefly explains the online installation steps for DCE 5.0 Community R
 
 1. Download the dce5-installer binary file on the control plane node (Master node) of the K8s cluster (you can also [download via browser](../../../download/dce5.md)).
 
-     Assume VERSION is v0.7.0
+     Assume VERSION is v0.7.0.
+     If it is an ARM architecture, please update `dce5-installer-$VERSION` to `dce5-installer-$VERSION-linux-arm64`.
 
      ```shell
      export VERSION=v0.7.0

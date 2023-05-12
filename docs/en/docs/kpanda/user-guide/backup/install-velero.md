@@ -22,7 +22,7 @@ Please perform the following steps to install the `velero` plugin for your clust
 
      
 
-2. Read the introduction of the `velero` plugin, select the version and click the `Install` button. This article will take `3.0.0` version as an example to install, and it is recommended that you install `3.0.0` and later versions.
+2. Read the introduction of the `velero` plugin, select the version and click the `Install` button. This page will take `3.0.0` version as an example to install, and it is recommended that you install `3.0.0` and later versions.
 
      
 

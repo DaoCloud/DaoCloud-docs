@@ -2,7 +2,7 @@
 
 Agent describes the entire `pipeline` execution process or the execution environment of a certain `stage`, and must appear at the top of the `description file` or each `stage`.
 
-This article describes how to extend the Jenkins Agent running in Kubernetes based on the [Kubernetes plugin for Jenkins](https://plugins.jenkins.io/kubernetes/) plugin.
+This page describes how to extend the Jenkins Agent running in Kubernetes based on the [Kubernetes plugin for Jenkins](https://plugins.jenkins.io/kubernetes/) plugin.
 
 ## Kubernetes Pod template introduction
 

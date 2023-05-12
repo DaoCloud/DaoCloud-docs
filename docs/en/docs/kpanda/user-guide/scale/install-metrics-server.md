@@ -28,7 +28,7 @@ Please perform the following steps to install the `metrics-server` plugin for th
 
     
 
-2. Read the introduction of the `metrics-server` plugin, select the version and click the `Install` button. This article will use the `3.8.2` version as an example to install, and it is recommended that you install `3.8.2` and later versions.
+2. Read the introduction of the `metrics-server` plugin, select the version and click the `Install` button. This page will use the `3.8.2` version as an example to install, and it is recommended that you install `3.8.2` and later versions.
 
     
 

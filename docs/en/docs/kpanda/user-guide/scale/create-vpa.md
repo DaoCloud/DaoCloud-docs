@@ -4,7 +4,7 @@ The container vertical scaling policy (Vertical Pod Autoscaler, VPA) calculates 
 
 DCE 5.0 supports Vertical Pod Autoscaler (VPA) through containers. Based on this function, the Pod request value can be dynamically adjusted according to the usage of container resources. DCE 5.0 supports manual and automatic modification of resource request values, and you can configure them according to actual needs.
 
-This article describes how to configure Pod vertical scaling for a workload.
+This page describes how to configure Pod vertical scaling for a workload.
 
 !!! warning
 

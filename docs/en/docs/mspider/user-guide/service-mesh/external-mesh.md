@@ -15,7 +15,7 @@ External mesh means that the existing mesh of the enterprise can be connected to
      - Cluster: The cluster used to run the mesh management plane, the list contains the clusters that the current mesh platform can access and are in normal state.
        Click `Create Cluster` to jump to `Container Management` to create a new cluster. After the creation is complete, return to this page and click the refresh icon to update the list.
      - Istio root namespace: The Istio root namespace where the mesh resides.
-     - mesh component repository: Enter the URL address of the mirror repository.
+     - mesh component repository: Enter the URL address of the Container registry.
   
 
 1. System settings. After setting observability and mesh size, click `Next`.

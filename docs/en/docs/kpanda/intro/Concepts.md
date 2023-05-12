@@ -38,7 +38,7 @@ There are several workload resources built into Kubernetes:
 
 Relationship between services and containers
 
-A service consists of one or more pods. A pod consists of one or more containers, each corresponding to a container mirror. For stateless workloads, the pods are all identical.
+A service consists of one or more pods. A pod consists of one or more containers, each corresponding to a container image. For stateless workloads, the pods are all identical.
 
 #### Apply the template
 

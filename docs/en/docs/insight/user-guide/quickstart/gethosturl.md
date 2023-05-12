@@ -1,7 +1,7 @@
 # How to get the address of data upload?
 
 When [installing insight-agent](install-agent.md), you need to configure the service address to upload the cluster indicators, logs, and link data to `global service cluster`.
-This article outlines the steps on how to obtain the address for data uploads.
+This page outlines the steps on how to obtain the address for data uploads.
 
 ## Parameter Description
 

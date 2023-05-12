@@ -10,9 +10,9 @@ Any component of HwameiStor can be installed through Helm Chart.
 ## Prerequisites
 
 - Free HDD and SSD disks have been prepared on the nodes to be used
-- Completed the items in [Preparation] (prereq.md)
+- Completed the items in [Preparation](prereq.md)
 - If you need to use highly available data volumes, please complete [DRDB installation](drbdinstall.md) in advance
-- If the deployment environment is a production environment, please read [Resource Requirements for Production Environment] (proresource.md) in advance
+- If the deployment environment is a production environment, please read [Resource Requirements for Production Environment](proresource.md) in advance
 - If your Kubernetes distribution uses a different `kubelet` directory, please confirm `kubeletRootDir` in advance.
    For details, please refer to [Customize Kubelet root directory](customized-kubelet.md).
 

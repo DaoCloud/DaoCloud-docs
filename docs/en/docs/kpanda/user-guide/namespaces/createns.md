@@ -2,7 +2,7 @@
 
 Namespaces are an abstraction used in Kubernetes for resource isolation. A cluster can contain multiple namespaces with different names, and the resources in each namespace are isolated from each other. For a detailed introduction to namespaces, refer to [Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/).
 
-This article will introduce the related operations of the namespace.
+This page will introduce the related operations of the namespace.
 
 ## create namespace
 

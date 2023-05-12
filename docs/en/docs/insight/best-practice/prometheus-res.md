@@ -8,7 +8,7 @@ it is necessary to adjust the resources of Prometheus according to the actual si
 
 ## Reference Resource Planning
 
-In the case that the grid is not enabled, the test statistics show that the relationship
+In the case that the mesh is not enabled, the test statistics show that the relationship
 between the system Job index and Pod is: **Series number = 800\*Pod number**
 
 When the service mesh is enabled, the magnitude of the Istio-related indicators generated

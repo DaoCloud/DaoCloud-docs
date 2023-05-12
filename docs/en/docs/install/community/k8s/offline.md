@@ -50,9 +50,9 @@ Click [Community Release Deployment Demo](../../../videos/install.md) to watch a
              istioGatewayVip: 10.6.229.10/32
              insightVip: 10.6.229.11/32
            fullPackagePath: absolute-path-of-the-offline-directory # The path after decompressing the offline package
-           imagesAndCharts: # mirror warehouse
+           imagesAndCharts: # container registry
              type: external
-             externalImageRepo: your-external-registry # Mirror repository address, must be http or https
+             externalImageRepo: your-external-registry # Container registry address, must be http or https
              # externalImageRepoUsername: admin
              # externalImageRepoPassword: Harbor123456
          ```
@@ -66,9 +66,9 @@ Click [Community Release Deployment Demo](../../../videos/install.md) to watch a
            loadBalancer:
              type: cloudLB
            fullPackagePath: absolute-path-of-the-offline-directory # The path after decompressing the offline package
-           imagesAndCharts: # mirror warehouse
+           imagesAndCharts: # container registry
              type: external
-             externalImageRepo: your-external-registry # Mirror repository address, must be http or https
+             externalImageRepo: your-external-registry # Container registry address, must be http or https
              # externalImageRepoUsername: admin
              # externalImageRepoPassword: Harbor123456
          ```
@@ -82,9 +82,9 @@ Click [Community Release Deployment Demo](../../../videos/install.md) to watch a
            loadBalancer:
              type: NodePort
            fullPackagePath: absolute-path-of-the-offline-directory # The path after decompressing the offline package
-           imagesAndCharts: # mirror warehouse
+           imagesAndCharts: # container registry
              type: external
-             externalImageRepo: your-external-registry # Mirror repository address, must be http or https
+             externalImageRepo: your-external-registry # Container registry address, must be http or https
              # externalImageRepoUsername: admin
              # externalImageRepoPassword: Harbor123456
          ```

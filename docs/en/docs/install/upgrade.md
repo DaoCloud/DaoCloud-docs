@@ -2,7 +2,7 @@
 
 GProduct is the collective name for all product modules of DCE 5.0.
 
-This article will introduce how to use dce5-installer to upgrade DCE 5.0 GProduct offline.
+This page will introduce how to use dce5-installer to upgrade DCE 5.0 GProduct offline.
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ tar -xvf offline-v0.6.0-amd64.tar
 
      When DCE 5.0 is installed offline, what configuration is used in the cluster configuration file also needs to be consistent during the upgrade.
     
-     Since the v0.6.0 version updates the structure of the cluster configuration file, [cluster configuration file description] (commercial/cluster-config.md), it is necessary to ensure that the parameters used in v0.5.0 are consistent, but the structure must be the same as that of v0.6.0 unanimous.
+     Since the v0.6.0 version updates the structure of the cluster configuration file, [cluster configuration file description](commercial/cluster-config.md), it is necessary to ensure that the parameters used in v0.5.0 are consistent, but the structure must be the same as that of v0.6.0 unanimous.
     
      Only the builtin method of imagesAndCharts is currently tested.
 

@@ -1,6 +1,6 @@
 # Container management function release dynamics
 
-This article provides an update on DCE 5.0 container management.
+This page provides an update on DCE 5.0 container management.
 
 ## April 2023
 

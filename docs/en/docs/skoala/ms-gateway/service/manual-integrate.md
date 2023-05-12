@@ -26,9 +26,9 @@ You need to add the corresponding service source in Source management so that yo
 
         <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-    - Grid service:
+    - mesh service:
 
-        The functionality of the access grid service is under development, so stay tuned.
+        The functionality of the access mesh service is under development, so stay tuned.
 
     - Registry Service: Select the registry where the target service resides, and enter the access protocol, address, and port number.
 

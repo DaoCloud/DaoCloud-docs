@@ -6,10 +6,10 @@ The following table describes the terms involved in the architecture:
 
 | Name | introduction |
 | ------------ | ------------------------------------ -------------------------------------------------- -------------------- |
-| bootstrapping node | bootstrapping node is also called boostrap node, it installs and executes the deployment program, and runs the mirror warehouse and chart museum required by the platform. |
+| bootstrapping node | bootstrapping node is also called boostrap node, it installs and executes the deployment program, and runs the container registry and chart museum required by the platform. |
 | Global Service Cluster | Used to deploy all components of DCE 5.0, and [Kubean](https://github.com/kubean-io/kubean), where Kubean is used to manage the life cycle of the cluster. |
 | Work cluster | Support business applications and services (deploy the work cluster after successfully installing DCE) |
-| DCE Componet | All components of DCE 5.0, including product modules such as global management, container management, observability, application workbench, multi-cloud orchestration, mirror warehouse, microservice engine, service grid, and middleware. |
+| DCE Componet | All components of DCE 5.0, including product modules such as global management, container management, observability, application workbench, multi-cloud orchestration, container registry, microservice engine, service mesh, and middleware. |
 
 ## All-in-one
 

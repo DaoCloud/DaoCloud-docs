@@ -1,6 +1,6 @@
 # Deploy DCE 5.0 commercial version on UOS V20 (1020a) operating system
 
-This article will introduce how to deploy DCE 5.0 on UOS V20(1020a) operating system.
+This page will introduce how to deploy DCE 5.0 on UOS V20(1020a) operating system.
 
 ## Prerequisites
 

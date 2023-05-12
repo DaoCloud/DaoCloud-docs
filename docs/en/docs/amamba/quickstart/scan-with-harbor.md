@@ -1,6 +1,6 @@
 # Integrate Harbor to realize image security scanning
 
-This article will introduce how to integrate Harbor in the pipeline and implement image security scanning.
+This page will introduce how to integrate Harbor in the pipeline and implement image security scanning.
 
 ## Enable automatic scanning of images in Harbor
 

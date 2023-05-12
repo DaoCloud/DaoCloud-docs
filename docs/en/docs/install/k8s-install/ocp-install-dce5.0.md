@@ -1,12 +1,12 @@
 # Install DCE 5.0 Commercial on OpenShift OCP
 
-This article describes how to install DCE 5.0 on OCP.
+This page describes how to install DCE 5.0 on OCP.
 
 ## Prerequisites
 
 - The default Kubernetes versions supported by DCE 5.0 are v1.22.x, v1.23.x, v1.24.x, v1.25.x
 - Already have an OCP environment, and the version is not lower than v1.22.x
-- Prepare a private mirror warehouse and ensure that the cluster can access it
+- Prepare a private container registry and ensure that the cluster can access it
 - Ensure sufficient resources, it is recommended that the cluster has at least 12 cores and 24 GB of available resources
 
 ## Offline installation
@@ -44,7 +44,7 @@ This article describes how to install DCE 5.0 on OCP.
        fullPackagePath: /home/offline # offline package directory
        imagesAndCharts:
          type: external
-         externalImageRepo: http://10.5.14.XXX:XXXX # Private mirror warehouse address
+         externalImageRepo: http://10.5.14.XXX:XXXX # Private container registry address
          externalImageRepoUsername: admin
          externalImageRepoPassword: Harbor12345
      ```

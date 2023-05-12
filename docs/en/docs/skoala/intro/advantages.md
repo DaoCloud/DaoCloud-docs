@@ -23,7 +23,7 @@ DaoCloud Daoke"s micro-service engine has the following advantages over other Da
 
 - Open and compatible
 
-    The microservice engine supports traditional and Cloud music regiones, as well as mainstream open source microservice frameworks like Spring Cloud and Dubbo, as well as open source gateway components like Envoy, Sentinel, and Contour. In addition, it can also be freely combined with [DCE 5.0](../../dce/what.md) multi-cloud choreography, data service middleware, service grid, App Workbench and other modules to achieve more customized and refined functions.
+    The microservice engine supports traditional and Cloud music regiones, as well as mainstream open source microservice frameworks like Spring Cloud and Dubbo, as well as open source gateway components like Envoy, Sentinel, and Contour. In addition, it can also be freely combined with [DCE 5.0](../../dce/what.md) multi-cloud choreography, data service middleware, service mesh, App Workbench and other modules to achieve more customized and refined functions.
 
 - Visual interface and data
 

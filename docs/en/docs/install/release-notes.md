@@ -113,7 +113,7 @@ This page lists the Release Notes of the installer, so that you can understand t
 - **Fixed** installer command line `-j` parameter validity detection problem
 - **Fixed** The installation path problem of pre-dependent tools
 - **Fixed** the problem that the host list password is invalid for pure numbers
-- **Fixed** When the runtime is Docker, the built-in warehouse image cannot be pulled
+- **Fixed** When the runtime is Docker, the built-in registry image cannot be pulled
 
 #### Known Issues
 

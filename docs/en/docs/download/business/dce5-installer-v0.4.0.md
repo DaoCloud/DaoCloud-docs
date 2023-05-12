@@ -87,7 +87,7 @@ The DCE 5.0 Commercial Release includes the following modules, which are plug-an
 | Middleware MySQL | The most widely used open source relational database | [v0.5.0](../../middleware/mysql/release-notes.md#v050) |
 | Middleware RabbitMQ | Open source message broker software implementing the Advanced Message Queuing Protocol (AMQP) | [v0.7.0](../../middleware/rabbitmq/release-notes.md#v070) |
 | Middleware Redis | An in-memory database caching service | [v0.4.1](../../middleware/redis/release-notes.md#v041) |
-| Mirror repository | Used to store images for K8s, DevOps and container application development | [v0.4.0](../../release/rn5.0.md) |
+| Container registry | Used to store images for K8s, DevOps and container application development | [v0.4.0](../../release/rn5.0.md) |
 | Network | Support multiple CNI combinations for different Linux kernels | [v0.4.2](../../release/rn5.0.md) |
 | Storage | Provide unified data storage services, support files, objects, blocks, and local storage, and easily access storage vendor solutions | [0.7.1](../../release/rn5.0.md) |
 

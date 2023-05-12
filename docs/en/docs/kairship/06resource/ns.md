@@ -7,7 +7,7 @@ hide:
 
 A multicloud namespace can manage workloads across clouds and across clusters. Currently, a wizard-based creation method is provided.
 
-This article takes wizard creation as an example, and follows the steps below.
+This page takes wizard creation as an example, and follows the steps below.
 
 1. After entering a multicloud instance, in the left navigation bar, click `Resource Management` -> `Multicloud Namespace`, and click the `Create` button in the upper right corner.
 

@@ -24,11 +24,11 @@ This page describes how to install Submariner.
 - The cluster needs to allow `Vxlan` traffic internally and udp/4500 ports outside the cluster
 > Submariner is in a relatively early stage, and bugs are common.
 
-## Installation steps
+## Steps
 
 !!! Note
 
-    `submariner-k8s-broker` can be deployed in a single cluster or in a subcluster of Join. This article shows the installation process with `submariner-k8s-broker` deployed in a single cluster as an example.
+    `submariner-k8s-broker` can be deployed in a single cluster or in a subcluster of Join. This page shows the installation process with `submariner-k8s-broker` deployed in a single cluster as an example.
 
 Make sure your cluster is successfully connected to the `container management` platform, and then perform the following steps to first install `submariner-k8s-broker`. 1:
 

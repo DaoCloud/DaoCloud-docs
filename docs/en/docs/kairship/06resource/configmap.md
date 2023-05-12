@@ -5,7 +5,7 @@ When used, Pods can use it as an environment variable, as a command-line argumen
 
 Multicloud ConfigMaps can decouple multicloud environment configuration information from container images, making it easy to modify the configuration of multicloud applications.
 
-Two creation methods are currently provided: wizard creation and Create with YAML. This article takes wizard creation as an example, and follows the steps below.
+Two creation methods are currently provided: wizard creation and Create with YAML. This page takes wizard creation as an example, and follows the steps below.
 
 1. After entering a multicloud instance, in the left navigation bar, click `Resource Management` -> `Multicloud ConfigMap`, and click the `Create ConfigMap` button in the upper right corner.
 

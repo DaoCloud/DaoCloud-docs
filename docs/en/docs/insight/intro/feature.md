@@ -59,7 +59,7 @@ On the basis of the community release, the commercial release of DCE 5.0 provide
 | | Persistent storage of logs | Logs can be marked and output to middleware such as Elasticsearch for persistence |
 | Metric collection | Metric data collection | Support to use ServiceMonitor to define the namespace scope of Pod discovery and select the monitored Service through matchLabel |
 | | Component status[^1] | Support to view the status of the pod of the collection component, and jump to the corresponding pod details |
-| Link Collection[^1] | Link Data Collection| Support link data collection by using OTEL SDK in a non-intrusive or less intrusive way<br />Support link collection by injecting Sidecar into grid applications data |
+| Link Collection[^1] | Link Data Collection| Support link data collection by using OTEL SDK in a non-intrusive or less intrusive way<br />Support link collection by injecting Sidecar into mesh applications data |
 | System configuration | System configuration | System configuration displays the default storage time of indicators, logs, and links and the default Apdex threshold<br />Support custom modification of the storage time of indicators, logs, and link data |
 
 [^1]: This is a feature only available in the commercial release.

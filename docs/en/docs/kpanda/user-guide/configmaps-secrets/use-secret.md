@@ -116,7 +116,7 @@ If the Pod contains multiple containers, each container needs its own `volumeMou
 
 ## Used as the identity authentication credential for the image registry when the kubelet pulls the container image
 
-You can use the key as the identity authentication credential for the mirror repository through the GUI or the terminal command line.
+You can use the key as the identity authentication credential for the Container registry through the GUI or the terminal command line.
 
 ### Graphical operation
 

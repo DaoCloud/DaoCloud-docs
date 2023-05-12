@@ -1,6 +1,6 @@
 # Service mesh component resource custom configuration
 
-This article describes how to customize mesh component resources via [Container Management](../../../kpanda/user-guide/workloads/create-deployment.md).
+This page describes how to customize mesh component resources via [Container Management](../../../kpanda/user-guide/workloads/create-deployment.md).
 The control plane components of the service mesh are as follows:
 
 | Component Name | Location | Description | Default Resource Settings |

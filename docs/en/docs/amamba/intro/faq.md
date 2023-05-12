@@ -42,6 +42,6 @@ fatal: Authentication failed for 'https://github.com/DaoCloud/dce-installer.git/
 
 Import the **GitHub** repository using SSH.
 
-## When adding a warehouse in the GitOps module under a certain workspace, it prompts that the warehouse already exists
+## When adding a registry in the GitOps module under a certain workspace, it prompts that the registry already exists
 
-Currently, a warehouse can only be bound to one workspace, and cannot be bound to different workspaces.
+Currently, a registry can only be bound to one workspace, and cannot be bound to different workspaces.

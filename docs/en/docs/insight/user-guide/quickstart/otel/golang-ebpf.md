@@ -2,7 +2,7 @@
 
 This is an experimental feature.
 
-If you don't want to manually change the application code, you can try this article's eBPF-based automatic enhancement method.
+If you don't want to manually change the application code, you can try This page's eBPF-based automatic enhancement method.
 This feature is currently in the review stage of donating to the OpenTelemetry community, and does not support Operator injection through annotations (it will be supported in the future), so you need to manually change the Deployment YAML or use a patch.
 
 ## Prerequisites

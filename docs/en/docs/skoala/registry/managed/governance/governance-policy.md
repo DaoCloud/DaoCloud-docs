@@ -1,6 +1,6 @@
 # Rule introduction
 
-The micro-service engine supports east-west traffic governance via a service grid or Sentinel.
+The micro-service engine supports east-west traffic governance via a service mesh or Sentinel.
 
 ## Sentinel governance rules
 

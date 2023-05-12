@@ -10,7 +10,7 @@ After downloading the image to the local node, you need to sync the latest versi
 
 1. Create `load-image.yaml` as a chart-syncer profile using the following
 
-     `load-image.yaml` All parameters in the file are mandatory. You need a private mirror repository and modify the configurations as described below. See [Official Doc](https://github.com/bitnami-labs/charts-syncer) for a detailed explanation of the chart-syncer profile.
+     `load-image.yaml` All parameters in the file are mandatory. You need a private Container registry and modify the configurations as described below. See [Official Doc](https://github.com/bitnami-labs/charts-syncer) for a detailed explanation of the chart-syncer profile.
 
     === "chart repo installed"
 
@@ -34,13 +34,13 @@ After downloading the image to the local node, you need to sync the latest versi
         ```
 
         1. A relative path to the executing chart-syncer command, not a relative path between this YAML file and the offline package
-        2. Change to your mirror repository url
-        3. Need to change to your mirror repository
-        4. It can also be any of the other supported Helm Chart warehouse categories
+        2. Change to your Container registry url
+        3. Need to change to your Container registry
+        4. It can also be any of the other supported Helm Chart registry categories
         5. Change to chart repo url
-        6. Your mirror warehouse user name
+        6. Your container registry user name
         7. Your mirror vault password
-        8. Your mirror warehouse user name
+        8. Your container registry user name
         9. Your mirror vault password
 
     === "chart repo not installed"
@@ -63,10 +63,10 @@ After downloading the image to the local node, you need to sync the latest versi
         ```
 
         1. A relative path to the executing chart-syncer command, not a relative path between this YAML file and the offline package
-        2. Change to your mirror repository url
-        3. Need to change to your mirror repository
+        2. Change to your Container registry url
+        3. Need to change to your Container registry
         4. chart local path
-        5. Your mirror warehouse user name
+        5. Your container registry user name
         6. Your mirror vault password
 
 2. Run the mirror synchronization command.
@@ -162,7 +162,7 @@ After mirror synchronization is complete, you can start upgrading the microservi
 
     6. Run `helm upgrade`.
 
-        Before upgrading, it is recommended that you override the `global.imageRegistry` field in bak.yaml as the address of the image warehouse currently in use.
+        Before upgrading, it is recommended that you override the `global.imageRegistry` field in bak.yaml as the address of the image registry currently in use.
 
         ```shell
         export imageRegistry={your image repo}
@@ -188,7 +188,7 @@ After mirror synchronization is complete, you can start upgrading the microservi
 
     2. Run the `helm upgrade` command.
 
-        Before upgrading, it is recommended that you override `global.imageRegistry` in bak.yaml as the address of the image warehouse currently in use.
+        Before upgrading, it is recommended that you override `global.imageRegistry` in bak.yaml as the address of the image registry currently in use.
 
         ```shell
         export imageRegistry={your image repo}

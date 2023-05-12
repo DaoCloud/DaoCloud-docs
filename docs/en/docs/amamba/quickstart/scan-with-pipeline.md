@@ -6,7 +6,7 @@ Therefore, finding security flaws in source code through code scanning analysis 
 For example, SonarQube is an automatic code review tool for detecting bugs in project code, improving test coverage, and more.
 It can be integrated with existing workflows in a project for continuous code reviews between project branches and pull requests.
 
-This article will introduce how to integrate SonarQube in the pipeline to achieve code scanning capabilities.
+This page will introduce how to integrate SonarQube in the pipeline to achieve code scanning capabilities.
 
 ## Deploy SonarQube
 

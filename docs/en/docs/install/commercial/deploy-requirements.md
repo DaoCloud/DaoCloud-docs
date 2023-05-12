@@ -8,7 +8,7 @@ When deploying DCE 5.0, software planning, hardware planning, and network planni
 
      For Unicom UOS V20 (1020a) installation guidance document, please refer to [Deploy DCE 5.0 Commercial Release on UOS V20 (1020a) Operating System](../os-install/uos-v20-install-dce5.0.md)
 
-     Other operating systems in the table below use a unified installation guide document, please refer to [Offline installation of DCE 5.0 commercial version] (start-install.md)
+     Other operating systems in the table below use a unified installation guide document, please refer to [Offline installation of DCE 5.0 commercial version](start-install.md)
 
      Please refer to [Other Linux Offline Deployment of DCE 5.0 Commercial Release](../os-install/otherlinux.md)
 
@@ -196,7 +196,7 @@ The working cluster needs to open port 6443 of the k8s API to give access to the
 
 ### Other products need to open ports
 
-#### Mirror repository
+#### Container registry
 
 | Protocol | Port | Description | Used By |
 |----------|-------- | ------------ | ------- |

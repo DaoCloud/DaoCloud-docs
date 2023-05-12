@@ -17,7 +17,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [June 18 Call for Topics for KubeCon + CloudNativeCon or Open Source Summit 2023 in Shanghai (6.18 deadline)](https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/program/call-for-proposals/)
   
-    The summit will be held in Shanghai from 9.25 to 9.27. Topics to be submitted can focus on software development lifecycle, platform engineering, O&M+performance, security, data+processing+storage, network+edge+telecom, service grid, etc. The topic types include four categories: single talk (30 min), double talk (30 min), panel discussion (30 min, 3 to 5 (30 min), panel discussion (30 min, 3-5 speakers), and tutorial (90 min).
+    The summit will be held in Shanghai from 9.25 to 9.27. Topics to be submitted can focus on software development lifecycle, platform engineering, O&M+performance, security, data+processing+storage, network+edge+telecom, service mesh, etc. The topic types include four categories: single talk (30 min), double talk (30 min), panel discussion (30 min, 3 to 5 (30 min), panel discussion (30 min, 3-5 speakers), and tutorial (90 min).
 
 - [June 6 ICT China-2023 High Level Forum - Cloud Native Industry Summit will kick off on June 6 in Beijing](https://mp.weixin.qq.com/s/FTOBYjCZxYMoOM8WJUz8mQ)
   
@@ -202,8 +202,8 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [March 29 InfoQ Research Center Releases White Paper "China Open Source Ecological Mapping 2022 - Cloud Native Domain"](https://mp.weixin.qq.com/s/jyUR2BaD32--f0B_1LFRBQ)
   
     The white paper shows that there are more than 110 domestic open source projects in the cloud-native domain, involving 26 project sponsors.
-    They can be divided into 7 major technology segments, which are microservices, middleware, service grid, container technology and orchestration, platform & database & data collection, framework & engine, and functional system.
-    Among them, microservices, container technology and orchestration, service grid and other cloud-native core technology areas are the core of the cloud-native technology system.
+    They can be divided into 7 major technology segments, which are microservices, middleware, service mesh, container technology and orchestration, platform & database & data collection, framework & engine, and functional system.
+    Among them, microservices, container technology and orchestration, service mesh and other cloud-native core technology areas are the core of the cloud-native technology system.
 
 - [March 27 LF Research Launches "Focus on Global 2023" Open Source Trends Survey, Open Call for Sponsors and Partners](https://mp.weixin.qq.com/s/j82QnOQym8W2WtXsTpT87g)
   
