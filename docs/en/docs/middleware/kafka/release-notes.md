@@ -1,111 +1,124 @@
-# Kafka message queue Release Notes
+# Kafka 消息队列 Release Notes
 
-This page lists the Release Notes of Kafka message queue, so that you can understand the evolution path and feature changes of each version.
+本页列出 Kafka 消息队列的 Release Notes，便于您了解各版本的演进路径和特性变化。
+
+## 2023-04-27
+
+### v0.5.1
+
+#### 新功能
+
+- **新增** `mcamel-kafka` 详情页面展示相关的事件
+- **新增** `mcamel-kafka` 支持自定义角色
+
+#### 优化
+
+- **优化** `mcamel-kafka` 调度策略增加滑动按钮
 
 ## 2023-03-28
 
 ### v0.4.0
 
-#### Features
+#### 新功能
 
-- **Added** `mcamel-kafka` supports middleware link tracking adaptation.
-- **Added** Install `mcamel-kafka` to enable link tracking according to parameter configuration.
+- **新增** `mcamel-kafka` 支持中间件链路追踪适配。
+- **新增** 安装 `mcamel-kafka` 根据参数配置启用链路追踪。
 
-#### Optimization
+#### 优化
 
-- **Optimize** `mcamel-kafka` optimizes Kafka's default configuration.
-- **upgrade** golang.org/x/net to v0.7.0
-- **Upgrade** GHippo SDK to v0.14.0
+- **优化** `mcamel-kafka` 优化 Kafka 的默认配置。
+- **升级** golang.org/x/net 到 v0.7.0
+- **升级** GHippo SDK 到 v0.14.0
 
 ## 2023-02-23
 
 ### v0.3.0
 
-#### Features
+#### 新功能
 
-- **Added** `mcamel-kafka` helm-docs template file.
-- **Added** The Operator in the `mcamel-kafka` app store can only be installed in mcamel-system.
-- **Added** `mcamel-kafka` supports cloud shell.
-- **Added** `mcamel-kafka` supports separate registration of navigation bar.
-- **Added** `mcamel-kafka` supports viewing logs.
-- **Added** `mcamel-kafka` Operator docking with chart-syncer.
+- **新增** `mcamel-kafka` helm-docs 模板文件。
+- **新增** `mcamel-kafka` 应用商店中的 Operator 只能安装在 mcamel-system。
+- **新增** `mcamel-kafka` 支持 cloud shell。
+- **新增** `mcamel-kafka` 支持导航栏单独注册。
+- **新增** `mcamel-kafka` 支持查看日志。
+- **新增** `mcamel-kafka` Operator 对接 chart-syncer。
 
-#### Optimization
+#### 优化
 
-- **Optimize** `mcamel-kafka` upgrade offline mirror detection script.
+- **优化** `mcamel-kafka` 升级离线镜像检测脚本。  
 
-#### Fix
+#### 修复
 
-- **Fixed** the problem that `mcamel-kafka` instance name is too long and the custom resource cannot be created.
-- **Fixed** `mcamel-kafka` workspace Editor user cannot view instance password.
-- **Added** log view operation instructions, support custom query, export and other functions.
+- **修复** `mcamel-kafka` 实例名太长导致自定义资源无法创建的问题。
+- **修复** `mcamel-kafka` 工作空间 Editor 用户无法查看实例密码。
+- **新增** 日志查看操作说明，支持自定义查询、导出等功能。
 
 ## 2022-12-25
 
 ### v0.2.0
 
-#### Features
+#### 新功能
 
-- **Added** `mcamel-kafka` NodePort port conflict early detection.
-- **Added** `mcamel-kafka` node affinity configuration.
+- **新增** `mcamel-kafka` NodePort 端口冲突提前检测。
+- **新增** `mcamel-kafka` 节点亲和性配置。
 
-#### Optimization
+#### 优化
 
-- **Optimize** `mcamel-kafka` manager removes the probe to prevent kafka from being unable to open the manager when it is not ready.
-- **Optimize** `mcamel-kafka` zooEntrance repackage mirror address to 1.0.0.
+- **优化** `mcamel-kafka` manager 去掉 probe，防止 kafka 没准备好不能打开 manager。  
+- **优化** `mcamel-kafka` zooEntrance 重新打包镜像地址为 1.0.0。  
 
 ## 2022-11-28
 
 ### v0.1.6
 
-#### Features
+#### 新功能
 
-- **Optimized** Improve and optimize the copy function
-- **Optimized** instance details - access settings, remove cluster IPv4
-- **Optimized** Middleware password verification difficulty adjustment
-- **Added** Docking alarm capability
-- **Added** Added the function of judging whether sc supports capacity expansion and prompting in advance
-- **Optimization** Optimize the prompt logic of installation environment detection & adjust its style
-- **Optimize** middleware style walkthrough optimization
-- **Fixed** The offline image has numbers and capital letters that cannot be scanned
+- **改进** 完善优化复制功能
+- **改进** 实例详情 - 访问设置，移除集群 IPv4
+- **改进** 中间件密码校验难度调整
+- **新增** 对接告警能力
+- **新增** 新增判断 sc 是否支持扩容并提前提示功能
+- **优化** 优化安装环境检测的提示逻辑 & 调整其样式
+- **优化** 中间件样式走查优化
+- **修复** 离线镜像有数字和大写无法被扫描到
 
 ## 2022-11-08
 
 ### v0.1.4
 
-#### Features
+#### 新功能
 
-- **Fixed** The correct field cannot be verified when updating, such as managerPass
-- **Optimized** Password validation adjusted to MCamel low password strength
-- **Added** Returns whether the sc capacity can be updated
-- **Added** public field when returning list or details
-- **Added** Added return alert
-- **Added** Validation Service annotation
-- **Fixed** operator select by name
-- **Fixed** service address display error
-- **Fixed** When Kafka uses NodePort, the creation fails
+- **修复** 更新时无法校验到正确字段，如 managerPass
+- **改进** 密码校验调整为 MCamel 低等密码强度
+- **新增** 返回是否可以更新 sc 容量的校验
+- **新增** 返回列表或者详情时的公共字段
+- **新增** 返回告警
+- **新增** 校验 Service 注释
+- **修复** operator 用名字选择
+- **修复** 服务地址展示错误
+- **修复** Kafka 使用 NodePort 时，创建失败
 
 ## 2022-10-28
 
 ### v0.1.2
 
-#### Features
+#### 新功能
 
-- **Added** Sync Pod status to instance details page
-- **Optimize** workspace interface logic adjustment
-- **Optimization** Style adjustments that do not conform to design specifications
-- **Optimized** password acquisition logic adjustment
-- **Optimize** cpu&memory request amount should be less than limit logic adjustment
+- **新增** 同步 Pod 状态到实例详情页
+- **优化** workspace 界面逻辑调整
+- **优化** 不符合设计规范的样式调整
+- **优化** password 获取逻辑调整
+- **优化** cpu&内存请求量应该小于限制量逻辑调整
 
 ## 2022-9-25
 
 ### v0.1.1
 
-#### Features
+#### 新功能
 
-- **Added** supports kafka list query, status query, creation, deletion and modification
-- **Added** Support kafka-manager to manage kafka
-- **Added** Support kafka metric monitoring, check the monitoring chart
-- **Added** support for ghippo permission linkage
-- **Added** `mcamel-elasticsearch` interface to get user list
-- **Optimize** Update the release note script and execute the release-process specification
+- **新增** 支持 kafka 列表查询，状态查询，创建，删除和修改
+- **新增** 支持 kafka-manager 对 kafka 进行管理
+- **新增** 支持 kafka 的指标监控，查看监控图表
+- **新增** 支持 ghippo 权限联动
+- **新增** `mcamel-elasticsearch` 获取用户列表接口
+- **优化** 更新 release note 脚本，执行 release-process 规范

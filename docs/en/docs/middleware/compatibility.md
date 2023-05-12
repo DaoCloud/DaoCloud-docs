@@ -1,55 +1,55 @@
 ---
 hide:
-   - toc
+  - toc
 ---
 
-# The data service is adapted to the Kubernetes version
+# 数据服务与 Kubernetes 版本适配
 
-At present, the data service has officially released seven data service middlewares: RabbitMQ, Elasticsearch, MySQL, Redis, Kafka, MinIO, and PostgreSQL.
+目前数据服务已正式发布了 RabbitMQ、Elasticsearch、MySQL、Redis、Kafka、MinIO、PostgreSQL 七个数据服务中间件。
 
-## Kubernetes version adaptation
+## Kubernetes 版本适配情况
 
-| Middleware | Version | Features | 1.26 | 1.25 | 1.24 | 1.23 | 1.22 | Remarks |
-| ------------- | ------ | -------- | -------- | -------- | - ------- | -------- | -------- | --------- |
-| RabbitMq | 0.6.2-24-gb25cc385 | operator | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Create instance | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Edit Example | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Query Example | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Instance connection | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Delete instance | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| ElasticSearch | 0.3.4-16-g90e5ad9 | operator | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Create instance | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Edit Example | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Query Example | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Instance connection | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Delete instance | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| MySQL | 0.3.1-90-gb98cd99 | operator | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Create instance | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Edit Example | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Query Example | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Instance connection | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Delete instance | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| Redis | 0.3.0-19-g706a21c | operator | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Create instance | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Edit Example | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Query Example | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Instance connection | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Delete instance | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| Kafka | 0.1.8-16-g0387939 | operator | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Create instance | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Edit Example | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Query Example | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Instance connection | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Delete instance | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| MinIO | 0.1.5-15-g2adfc58 | operator | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Create instance | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Edit Example | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Query Example | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Instance connection | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Delete instance | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| PostgreSQL | 0.1.2 | operator | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Create instance | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Edit Example | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Query Example | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Instance connection | ✅ | ✅ | ✅ | ✅ | ✅ | |
-| | | Delete instance | ✅ | ✅ | ✅ | ✅ | ✅ | |
+| 中间件        | 版本   | 功能     | 1.26 | 1.25 | 1.24 | 1.23 | 1.22 | 备注      |
+| ------------- | ------ | -------- | -------- | -------- | -------- | -------- | -------- | --------- |
+| RabbitMq      | 0.6.2-24-gb25cc385 | operator | ✅        | ✅        | ✅        | ✅        | ✅        |           |
+|               |        | 创建实例 | ✅        | ✅        | ✅        | ✅        | ✅        |           |
+|               |        | 编辑实例 | ✅        | ✅        | ✅        | ✅        | ✅        |           |
+|               |        | 查询实例 | ✅        | ✅        | ✅        | ✅        | ✅        |           |
+|               |        | 实例连接 | ✅        | ✅        | ✅        | ✅        | ✅        |           |
+|               |        | 删除实例 | ✅        | ✅        | ✅        | ✅        | ✅        |           |
+| ElasticSearch | 0.3.4-16-g90e5ad9 | operator | ✅        | ✅        | ✅        | ✅        | ✅        |           |
+|               |        | 创建实例 | ✅        | ✅        | ✅        | ✅        | ✅        |           |
+|               |        | 编辑实例 | ✅        | ✅        | ✅        | ✅        | ✅        |           |
+|               |        | 查询实例 | ✅        | ✅        | ✅        | ✅        | ✅        |           |
+|               |        | 实例连接 | ✅        | ✅        | ✅        | ✅        | ✅        |           |
+|               |        | 删除实例 | ✅        | ✅        | ✅        | ✅        | ✅        |           |
+| MySQL         | 0.3.1-90-gb98cd99 | operator | ✅        | ✅        | ✅        | ✅        | ✅       |  |
+|               |        | 创建实例 | ✅        | ✅        | ✅        | ✅        | ✅        |           |
+|               |        | 编辑实例 | ✅        | ✅        | ✅        | ✅        | ✅        |           |
+|               |        | 查询实例 | ✅        | ✅        | ✅        | ✅        | ✅        |           |
+|               |        | 实例连接 | ✅        | ✅        | ✅        | ✅        | ✅        |           |
+|               |        | 删除实例 | ✅        | ✅        | ✅        | ✅        | ✅        |           |
+| Redis | 0.3.0-19-g706a21c | operator | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 创建实例 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 编辑实例 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 查询实例 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 实例连接 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 删除实例 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+| Kafka | 0.1.8-16-g0387939 | operator | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 创建实例 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 编辑实例 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 查询实例 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 实例连接 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 删除实例 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+| MinIO | 0.1.5-15-g2adfc58 | operator | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 创建实例 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 编辑实例 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 查询实例 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 实例连接 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 删除实例 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+| PostgreSQL | 0.1.2 | operator | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 创建实例 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 编辑实例 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 查询实例 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 实例连接 | ✅    | ✅    | ✅    | ✅    | ✅    |      |
+|       |      | 删除实例 | ✅    | ✅    | ✅    | ✅    | ✅    |      |

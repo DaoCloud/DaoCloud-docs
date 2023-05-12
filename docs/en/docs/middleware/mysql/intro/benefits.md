@@ -1,37 +1,37 @@
 ---
-title: Product Advantages
+title: 产品优势
 hide:
   - toc
 ---
 
-MySQL has the following product advantages.
+MySQL 具有以下产品优势。
 
-- lead the industry
+- 行业领先
   
-    - Supports rapid deployment and lifecycle management of ActiveMQ. ActiveMQ is currently the most popular open source multi-protocol database. It supports applications and platforms written in JavaScript, C, C++, Python, .Net and other languages, and can exchange messages across applications. The management operations of production clusters, consumption clusters, message queries, etc. are realized through the message console.
+    - 支持 ActiveMQ 的快速部署与生命周期管理。ActiveMQ 是目前最流行的开源多协议数据库，支持 JavaScript, C, C++, Python, .Net 等语言编写的应用和平台，能够跨应用交换消息。通过消息控制台实现对生产集群、消费集群、消息查询等的管理操作。
 
-    - Adopt the industry's advanced and mature technology route to ensure the stability and reliability of the platform; at the same time, fully consider the convenience of user interaction and the ease of use of the interface operation, adopt the popular flexible and easy-to-expand system architecture, and use the advanced technology framework route to carry out Design and development, support the collaborative work of various components based on API calls, and can meet the information interaction of vertical integration and horizontal integration of the system.
+    - 采用业界先进、成熟的技术路线，保证平台的稳定可靠性；同时充分考虑用户交互的便利性和界面操作的易用性，采用流行的灵活且易扩展系统架构，使用先进的技术框架路线进行设计与开发，支持基于 API 调用各组件协同工作，能够满足系统纵向集成与横向整合的信息交互。
 
-    - A reliable technical architecture is adopted to support the stable operation of the system, and each component can provide high availability, which can ensure the redundancy and high availability of key components.
+    - 采用可靠的技术架构，支持系统稳定运行，每个组件都能提供高可用性，能够保障关键组件冗余与高可用。
 
-    - It can collect, analyze and process the internal state data of its own operation, and summarize it into index data through reasonable aggregation, so that the operation and maintenance personnel can understand the real-time state of the system operation in the shortest time, and at the same time provide the corresponding API for Other systems read status metric data.
+    - 能够将自身运行的内在状态数据，通过采集、分析、处理后，通过合理的聚合，归纳为指标数据，方便运维人员在最短时间内了解到系统运行实时状态，同时可提供对应的 API 供其它系统读取状态指标数据。
 
-- lifecycle management
+- 生命周期管理
 
-    - Supports creating, updating and deleting MySQL instances graphically or via YAML.
+    - 支持图形化或通过 YAML 创建、更新和删除 MySQL 实例。
 
-    - Supports hot deployment and hot update. Except for major upgrades such as general technical service component upgrades and platform upgrades, system deployment and upgrades do not require downtime.
+    - 支持热部署、热更新，除通用技术服务组件升级、平台升级等重大升级改造外，系统部署和升级无需停机。
 
-- GUI operation
+- 图形化界面操作
 
-    Support graphical creation, viewing, updating, deletion and elastic expansion. Administrators can customize graphical parameters according to their preferences.
+    支持以图形化方式创建、查看、更新、删除以及弹性扩容。管理员可以根据自己的偏好，定制图形化参数。
 
-- Containerized messaging platform
+- 容器化消息平台
 
-    Based on Kubernetes and Docker, MySQL natively supports containerized deployment to maximize resource utilization.
+    MySQL 基于 Kubernetes 和 Docker，原生支持容器化部署，将资源利用率提高到最大。
 
-- Compatibility and openness
+- 兼容性和开放性
 
-    - MySQL is compatible with Intel CPU and domestic CPU (such as Phytium ARM, Huawei Kunpeng ARM and Haiguang X86, etc.), compatible with domestic operating systems (such as Kirin operating system v10, Tongxin server operating system UOS, etc.), all of which have authorized electronic certificates and certificates.
+    - MySQL 兼容 Intel CPU 和国产化 CPU（如飞腾 ARM，华为鲲鹏 ARM 和海光 x86 等），兼容国产操作系统（如麒麟操作系统 v10，统信服务器操作系统 UOS 等），这些均有授权的电子证明和证书。
 
-    - It has an open architecture and provides an open standard API interface to ensure that resources and services such as basic capabilities, management services, logs, and monitoring are efficiently scheduled, managed, and used, and supports third-party management platforms to achieve related orchestration and use through API interfaces, etc. .
+    - 具有开放的体系架构，提供开放标准 API 接口保证基础能力、管理服务、日志、监控等资源和服务被高效的调度、管理与使用，支持第三方管理平台通过 API 接口等方式实现相关编排与使用。

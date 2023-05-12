@@ -1,108 +1,122 @@
 # RabbitMQ Release Notes
 
-This page lists the Release Notes of the RabbitMQ message queue, so that you can understand the evolution path and feature changes of each version.
+本页列出 RabbitMQ 消息队列的 Release Notes，便于您了解各版本的演进路径和特性变化。
+
+## 2023-04-27
+
+### v0.10.1
+
+#### 新功能
+
+- **新增** `mcamel-rabbitmq` 详情页面展示相关的事件
+- **新增** `mcamel-rabbitmq` 支持自定义角色
+- **新增** `mcamel-rabbitmq` 支持接入链路追踪
+
+#### 优化
+
+- **优化** `mcamel-rabbitmq` 调度策略增加滑动按钮
 
 ## 2023-03-30
 
 ### v0.9.1
 
-#### Optimization
+#### 优化
 
-- **Optimize** `mcamel-rabbitmq` improves Operator image to speed up addresses.
+- **优化** `mcamel-rabbitmq` 改进 Operator 镜像为加速地址。
 
 ## 2023-03-28
 
 ### v0.9.0
 
-#### Features
+#### 新功能
 
-- **Added** `mcamel-rabbitmq` supports middleware link tracking adaptation.
-- **Added** Enable link tracking according to parameter configuration when installing `mcamel-rabbitmq`.
+- **新增** `mcamel-rabbitmq` 支持中间件链路追踪适配。
+- **新增** 在安装 `mcamel-rabbitmq` 根据参数配置启用链路追踪。
 
 ## 2023-02-23
 
 ### v0.8.0
 
-#### Features
+#### 新功能
 
-- **Added** `mcamel-rabbitmq` helm-docs template file.
-- **Added** The Operator in the `mcamel-rabbitmq` app store can only be installed in mcamel-system.
-- **Added** `mcamel-rabbitmq` supports cloud shell.
-- **Added** `mcamel-rabbitmq` supports separate registration of navigation bar.
+- **新增** `mcamel-rabbitmq` helm-docs 模板文件。
+- **新增** `mcamel-rabbitmq` 应用商店中的 Operator 只能安装在 mcamel-system。
+- **新增** `mcamel-rabbitmq` 支持 cloud shell。
+- **新增** `mcamel-rabbitmq` 支持导航栏单独注册。
 
-- **Added** log view operation instructions, support custom query, export and other functions.
+- **新增** 日志查看操作说明，支持自定义查询、导出等功能。
 
-#### upgrade
+#### 升级
 
-- **Upgrade** `mcamel-rabbitmq` upgrade offline mirror detection script.
+- **升级** `mcamel-rabbitmq` 升级离线镜像检测脚本。
 
-#### Fix
+#### 修复
 
-- **Added** `mcamel-rabbitmq` supports viewing logs.
-- **Fixed** the problem that `mcamel-rabbitmq` instance name is too long and the custom resource cannot be created.
-- **Fixed** `mcamel-rabbitmq` workspace Editor user cannot view instance password.
+- **新增** `mcamel-rabbitmq` 支持查看日志。
+- **修复** `mcamel-rabbitmq` 实例名太长导致自定义资源无法创建的问题。
+- **修复** `mcamel-rabbitmq` 工作空间 Editor 用户无法查看实例密码。
 
 ## 2022-12-25
 
 ### v0.7.0
 
-#### Features
+#### 新功能
 
-- **Added** `mcamel-rabbitmq` NodePort port conflict detection in advance.
-- **Added** `mcamel-rabbitmq` node affinity configuration.
+- **新增** `mcamel-rabbitmq` NodePort 端口冲突提前检测。
+- **新增** `mcamel-rabbitmq` 节点亲和性配置。
 
-#### Optimization
+#### 优化
 
-- **Optimize** `mcamel-rabbitmq-ui` middleware style walkthrough optimization.
+- **优化** `mcamel-rabbitmq-ui` 中间件样式走查优化。  
 
 ## 2022-11-28
 
 ### v0.6.4
 
-#### Features
+#### 新功能
 
-- **Added** Add interface to get user list
-- **Added** supports multi-architecture images, the configuration method is `depend.arm64-img.rabbitClusterImageFormat: xxxx`
-- **Added** supports sc expansion interception, when sc does not support expansion, directly intercept it
-- **Added** public field when returning list or details
-- **Added** return alerts
-- **Added** Validation Service annotation
+- **新增** 获取用户列表接口
+- **新增** 支持多架构的镜像，配置方式为 `depend.arm64-img.rabbitClusterImageFormat: xxxx`
+- **新增** 支持 sc 扩容拦截，当 sc 不支持扩容的时候，直接拦截掉
+- **新增** 返回列表或者详情时的公共字段
+- **新增** 返回 alerts
+- **新增** 校验 Service 注释
 
-#### Optimization
+#### 优化
 
-- **Optimized** Password verification is adjusted to MCamel medium password strength
+- **优化** 密码校验调整为 MCamel 中等密码强度
 
-#### Fix
+#### 修复
 
-- **Fixed** page console may access wrong port
+- **修复** 页面控制台可能访问到错误的端口
 
 ## 2022-10-27
 
 ### v0.6.1
 
-#### Features
+#### 新功能
 
-- **Added** Added to increase coverage
-- **Added** front-end UI registration function
-- **Added** Performance enhancements
-- **Added** Added pagination function to the list page
-- **Added** Added the function of modifying the configuration
-- **Added** Added the ability to return modifiable configuration items
-- **Added** Change the limitation of creating instances to the cluster level instead of the namespace level
-- **Added** Added splicing function of monitoring address
-- **Added** Added the ability to modify the version number
-- **Added** Modify the underlying update logic to patch logic
-- **Added** RabbitMQ e2e test coverage is about 17.24%
-- **Added** Added RabbitMQ performance pressure test report
-- **Added** Added RabbitMQ bug spot check
-- **Added** Docking ghippo adds workspace interface
-- **Added** Docking insight injected into dashboard through crd
-- **Added** uniformly adjust the timestamp api field to int64
-- **Added** Increased single-test coverage to 53%
-- **Optimize** Update the release note script and execute the release-process specification
-- **Added** New function description
-- **Added** Create RabbitMQ
-- **Added** RabbitMQ data migration
-- **Added** instance monitoring
-- **Added** Enter RabbitMQ for the first time
-- **Added** Applicable scenarios
+- **新增** 增加覆盖率
+- **新增** 前端的 UI 注册功能
+- **新增** 性能增强
+- **新增** 列表页增加分页功能
+- **新增** 增加修改配置的功能
+- **新增** 增加返回可修改配置项的功能
+- **新增** 更改创建实例的限制为集群级别，原来为 namespace 级别
+- **新增** 增加监控地址的拼接功能
+- **新增** 增加可以修改版本号的功能
+- **新增** 修改底层 update 逻辑为 patch 逻辑
+- **新增** RabbitMQ e2e 测试覆盖率 17.24% 左右
+- **新增** 增加 RabbitMQ 性能压测报告
+- **新增** 增加 RabbitMQ bug 抽查
+- **新增** 对接 ghippo 增加 workspace 接口
+- **新增** 对接 insight 通过 crd 注入 dashboard
+- **新增** 将时间戳 api 字段统一调整为 int64
+- **新增** 单测覆盖率提升到 53%
+- **优化** 更新 release note 脚本，执行 release-process 规范
+- **新增** 新增功能说明
+- **新增** 创建 RabbitMQ
+- **新增** RabbitMQ 数据迁移
+- **新增** 实例监控
+- **新增** 首次进入 RabbitMQ
+- **新增** 适用场景

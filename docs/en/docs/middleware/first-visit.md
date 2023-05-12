@@ -1,26 +1,26 @@
 ---
 hide:
-   - toc
+  - toc
 ---
 
-# Enter the middleware data service for the first time
+# 首次进入中间件数据服务
 
-[Elasticsearch search service](elasticsearch/intro/what.md), [Kafka message queue](./kafka/intro/what.md), [MinIO object storage](./minio/intro/what.md) using DCE 5.0 for the first time .md), [MySQL Database](mysql/intro/what.md), [RabbitMQ Message Queue](rabbitmq/intro/what.md), [PostgreSQL Database](postgresql/intro/what.md), or [Redis Cache Service](./redis/intro/what.md) component, you need to select a workspace. For an introduction to the concept of workspace, please refer to [Workspace and Hierarchy](../ghippo/user-guide/workspace/ws-folder.md).
+首次使用 DCE 5.0 的 [Elasticsearch 搜索服务](elasticsearch/intro/what.md)、[Kafka 消息队列](./kafka/intro/what.md)、[MinIO 对象存储](./minio/intro/what.md)、[MySQL 数据库](mysql/intro/what.md)、[RabbitMQ 消息队列](rabbitmq/intro/what.md)、[PostgreSQL 数据库](postgresql/intro/what.md)，或 [Redis 缓存服务](./redis/intro/what.md)组件时，需要选择工作空间。有关工作空间的概念介绍，可参考[工作空间与层级](../ghippo/user-guide/workspace/ws-folder.md)。
 
-The following uses MinIO as an example to introduce how to select a workspace, and the same applies to other data service components.
+下面以 MinIO 为例介绍如何选择工作空间，其他数据服务组件同理。
 
-1. Select `Middleware` -> `MinIO Storage` in the left navigation bar.
+1. 在左侧导航栏中选择`中间件` -> `MinIO 存储`。
 
-     ![Select workspace](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/first-visit01.png)
+    ![选择工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/first-visit01.png)
 
-2. After selecting a workspace in the pop-up window, click `OK`.
+2. 在弹窗中选择一个工作空间后，点击`确认`。
 
-     ![Select workspace](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/login02.png)
+    ![选择工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/login02.png)
 
-     !!! note
+    !!! note
 
-         If the pop-up window does not appear / you want to switch the workspace, you can manually click the switch icon in the red box to select a new workspace.
+        如果未出现弹窗/想要切换工作空间，可手动点击红框中的切换图标选择新的工作空间。
 
-3. When using it for the first time, you can click [`Deploy Now`](minio/user-guide/create.md) to create a MinIO instance.
+3. 初次使用时，可以点击[`立即部署`](minio/user-guide/create.md)来创建 MinIO 实例。
 
-     ![Deploy Now](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/what03.png)
+    ![立即部署](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/what03.png)

@@ -1,47 +1,47 @@
-# scenes to be used
+# 使用场景
 
-Compared with [RabbitMQ](../../rabbitmq/intro/what. md), Kafka message queue is suitable for scenarios such as building real-time data pipelines, streaming data processing, third-party decoupling, and traffic peak shaving and valley removal. It has the characteristics of large-scale, high reliability, high concurrent access, scalability, and full hosting.
+相比支持广播、事务消息、消息路由、死信队列、优先级队列等且广泛应用于秒杀、流控、系统解耦等场景的 [RabbitMQ](../../rabbitmq/intro/what.md)，Kafka 消息队列适用于构建实时数据管道、流式数据处理、第三方解耦、流量削峰去谷等场景，具有大规模、高可靠、高并发访问、可扩展且完全托管的特点。
 
-## Comparison with RabbitMQ
+## 与 RabbitMQ 对比
 
-As the saying goes, there is no best technology, only the most suitable technology. Each messaging middleware service has its own advantages and disadvantages. Here is a simple comparison between RabbitMQ and Kafka.
+正所谓没有最好的技术，只有最合适的技术。每个消息中间件服务都有自己的优劣，以下对 RabbitMQ 和 Kafka 做一个简单的对比。
 
-| | Kafka | RabbitMQ |
-| ---------- | -------------------------------------- ---------------------- | --------------------------- ------------------------------------ |
-| Performance | Single-node QPS reaches one million, high throughput | Single-node QPS is ten thousand, low throughput |
-| Reliability | Multi-copy mechanism, high data reliability | Multi-copy mechanism, high data reliability |
-| Function | Persistence<br />Transaction Message<br />Sequence at Single Partition Level| Persistence<br />Priority Queue<br />Delay Queue<br />Dead Letter Queue<br />Transaction Message |
-| Consumption mode | Message filtering<br />Client actively pulls<br />Message backtracking<br />Broadcast consumption | Client actively pulls and server pushes<br />Broadcast consumption |
-| Client Support| Only supports Kafka custom protocol<br />Written in Scala and Java<br />Supports SSL/SASL authentication and read and write permission control| Supports MQTT, STOMP and other protocols<br />Written in Erlang <br />Support SSL/SASL authentication and read and write permission control |
-| Service Availability | Using cluster deployment, partition and multi-copy design, using a single agent downtime has no impact on services, and supports linear increase in message capacity | Supports cluster deployment, and the number of cluster agents has various specifications |
-| Others| Message accumulation<br />Flow control: support client and user levels, flow control can be applied to producers or consumers through active settings| Message tracking<br />Message accumulation<br />Multi-tenancy<br /> >Flow control: Flow control is based on the Credit-based algorithm, which is an internal passively triggered protection mechanism and acts on the producer level |
+|            | Kafka                                                        | RabbitMQ                                                     |
+| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 性能       | 单节点 QPS 达百万级，吞吐量高                                | 单节点 QPS 为万级，吞吐量低                                  |
+| 可靠性     | 多副本机制，数据可靠性高                                     | 多副本机制，数据可靠性高                                     |
+| 功能       | 持久化<br />事务消息<br />单分区级别的顺序性                 | 持久化<br />优先级队列<br />延迟队列<br />死信队列<br />事务消息 |
+| 消费模式   | 消息过滤<br />客户端主动拉取<br />消息回溯<br />广播消费     | 客户端主动拉取和服务端推送<br />广播消费                     |
+| 客户端支持 | 只支持 Kafka 自定义协议<br />采用 Scala 和 Java 编写<br />支持 SSL/SASL 认证和读写权限控制 | 支持 MQTT、STOMP 等多种协议<br />采用 Erlang 编写<br />支持 SSL/SASL 认证和读写权限控制 |
+| 服务可用性 | 采用集群部署，分区与多副本的设计，使用单代理宕机对服务无影响，且支持消息容量的线性提升 | 支持集群部署，集群代理数量有多种规格                         |
+| 其他       | 消息堆积<br />流量控制：支持 client 和 user 级别，通过主动设置可将流控作用于生产者或消费者 | 消息追踪<br />消息堆积<br />多租户<br />流量控制：流控基于 Credit-based 算法，是内部被动触发的保护机制，作用于生产者层面 |
 
-In short, Kafka uses the pull method to consume messages, which has a relatively higher throughput and is suitable for massive data collection and delivery scenarios, such as log collection and centralized analysis.
+总之，Kafka 采用拉取（Pull）方式消费消息，吞吐量相对更高，适用于海量数据收集与传递场景，例如日志采集和集中分析。
 
-However, RabbitMQ is developed based on the Erlang language, which is not conducive to secondary development and maintenance. It is suitable for scenarios that have high requirements for routing, load balancing, data consistency, stability and reliability, but not so high requirements for performance and throughput.
+而 RabbitMQ 基于 Erlang 语言开发，不利于做二次开发和维护，适用于对路由、负载均衡、数据一致性、稳定性和可靠性要求很高，对性能和吞吐量要求没那么高的场景。
 
-## Typical scenario
+## 典型场景
 
-As a popular message queue middleware, Kafka has an efficient and reliable message asynchronous delivery mechanism, mainly used for data exchange and delivery between different systems, in enterprise solutions, financial payment, telecommunications, e-commerce, social networking, instant messaging, Video, Internet of Things, Internet of Vehicles and many other fields have a wide range of applications.
+Kafka 作为一款热门的消息队列中间件，具备高效可靠的消息异步传递机制，主要用于不同系统间的数据交流和传递，在企业解决方案、金融支付、电信、电子商务、社交、即时通信、视频、物联网、车联网等众多领域都有广泛应用。
 
-1. Asynchronous communication
+1. 异步通信
 
-    The non-core or unimportant process part of the business is sent to the target system by asynchronous message notification, so that the main business process does not need to wait for the processing results of other systems synchronously, so as to achieve the purpose of rapid system response.
+    将业务中属于非核心或不重要的流程部分使用消息异步通知的方式发给目标系统，这样主业务流程无需同步等待其他系统的处理结果，从而达到系统快速响应的目的。
 
-    For example, in the user registration scenario of the website, after the user registers successfully, registration emails and registration SMSs need to be sent. These two processes use Kafka message service to notify the email sending system and SMS sending system, thereby improving the response speed of the registration process.
+    如网站的用户注册场景，在用户注册成功后，还需要发送注册邮件与注册短信，这两个流程使用 Kafka 消息服务通知邮件发送系统与短信发送系统，从而提升注册流程的响应速度。
 
-2. Peak stagger flow control and flow clipping
+2. 错峰流控与流量削峰
 
-    In e-commerce or large-scale websites, there are differences in the processing capabilities of upstream and downstream systems. The sudden flow of upstream systems with high processing capabilities may impact some downstream systems with low processing capabilities. It is necessary to improve system availability while reducing system implementation. complexity.
-    When traffic floods such as e-commerce sales promotions suddenly hit, queue services can be used to accumulate and cache orders and other information, and then process them when the downstream system is capable of processing the messages, so as to avoid the downstream subscription system from collapsing due to sudden traffic.
-    The message queue provides hundreds of millions of message accumulation capabilities, with a default retention period of 3 days, and the message consumption system can process messages during off-peak hours.
+    在电子商务或大型网站中，上下游系统处理能力存在差异，处理能力高的上游系统的突发流量可能会对处理能力低的某些下游系统造成冲击，需要提高系统的可用性的同时降低系统实现的复杂性。
+    电商大促销等流量洪流突然来袭时，可以通过队列服务堆积缓存订单等信息，在下游系统有能力处理消息的时候再处理，避免下游订阅系统因突发流量崩溃。
+    消息队列提供亿级消息堆积能力，3 天的默认保留时长，消息消费系统可以错峰进行消息处理。
 
-    In addition, in scenarios where traffic surges in a short period of time, such as commodity flash sales and panic buying, in order to prevent back-end applications from being overwhelmed, Kafka message queues can be used to transmit requests between front-end and back-end systems.
+    另外，在商品秒杀、抢购等流量短时间内暴增场景中，为了防止后端应用被压垮，可在前后端系统间使用 Kafka 消息队列传递请求。
 
-3. Log synchronization
+3. 日志同步
 
-    In the design of large-scale business systems, in order to quickly locate problems, track logs across the entire link, and monitor faults in a timely manner, it is usually necessary to centrally analyze and process the logs of each system application.
+    在大型业务系统设计中，为了快速定位问题，全链路追踪日志，以及故障及时预警监控，通常需要将各系统应用的日志集中分析处理。
 
-    The original intention of Kafka design is to cope with a large number of log transmission scenarios. The application synchronizes log messages to the message service in a reliable and asynchronous manner, and then uses other components to analyze the logs in real time or offline. It can also be used to collect key log information for application monitoring.
+    Kafka 设计初衷就是为了应对大量日志传输场景，应用通过可靠异步方式将日志消息同步到消息服务，再通过其他组件对日志做实时或离线分析，也可用于关键日志信息收集进行应用监控。
 
-    Log synchronization has three key parts: the log collection client, the Kafka message queue, and the backend log processing application.
+    日志同步主要有三个关键部分：日志采集客户端，Kafka 消息队列以及后端的日志处理应用。

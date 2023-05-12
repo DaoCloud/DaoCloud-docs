@@ -3,48 +3,44 @@ hide:
   - toc
 ---
 
-# What is MinIO
+# 什么是 MinIO
 
-MinIO is a very popular lightweight, open-source object storage solution, which is perfectly compatible with the AWS S3 protocol and has very friendly support for K8s. It is designed for cloud-native workloads such as AI.
-Including building high-performance cloud-native data machine learning, big data analysis, and infrastructure for mass storage, MinIO can provide data workloads.
+[MinIO](https://www.minio.org.cn/) 是一款热门、轻量、开源的对象存储方案，完美兼容 AWS S3 协议，友好支持 K8s。MinIO 是专为 AI 等云原生工作负载而设计的，可以为高性能的云原生数据机器学习、大数据分析、海量存储的基础架构等提供数据工作负载。
 
-DCE's MinIO module is an object storage middleware built on the open source MinIO, which is plug-and-play.
-DaoCloud has developed an easy-to-use graphical interface for it, providing users with exclusive MinIO instances for computing, storage, and bandwidth resources.
+DCE 的 MinIO 模块是基于开源 MinIO 构建的对象存储中间件，即插即用。DaoCloud 为其开发了简单易用的图形化界面，向用户提供计算、存储和带宽资源独占的 MinIO 专享实例。
 
-MinIO is popular because of the following features:
+MinIO 之所以广受欢迎，是因为其具有以下特点：
 
-1. High performance.
+1. 高性能。
 
-    MinIO is the world's leading pioneer in object storage services and currently has millions of users around the world. Read/write speeds of up to several hundred GB per second on standard hardware.
+    MinIO 是全球领先的对象存储服务先锋，目前在全世界有数百万的用户。在标准硬件上，读/写速度高达每秒几百 GB。
 
-2. Scalability.
+2. 可扩展性。
 
-    MinIO borrows from web scalers to bring a simple scaling model to object storage. When deploying MinIO, scaling starts with a single cluster.
+    MinIO 借鉴了 Web 缩放器，为对象存储带来了简单的扩缩模型。在部署 MinIO 时，扩展从单个群集开始。
 
-3. Cloud native support.
+3. 云原生支持。
 
-    MinIO is a storage solution built from scratch in the past few years. It conforms to all cloud-native computing architectures and construction processes, and includes the latest cloud computing technologies and concepts.
+    MinIO 是在过去几年内从 0 开始打造的一款存储方案，符合一切云原生计算的架构和构建流程，并且包含最新的云计算技术和理念。
 
-4. Pure open source.
+4. 纯开源。
 
-    MinIO is 100% open source based on the Apache V2 license. This means that MinIO's customers can use and integrate MinIO automatically, without restrictions, freely and freely, freely innovate and create, freely modify and improve, freely redistribute new versions and combine software.
+    MinIO 基于 Apache V2 license 100% 开放源代码。这就意味着 MinIO 的客户能够自动、无限制、自由免费地使用和集成 MinIO、自由创新和创造、自由修改和完善、自由再次发行新版本和组合软件。
 
-5. Compatible with S3 storage.
+5. 兼容 S3 存储。
 
-    AWS's S3 API (Interface Protocol) is an object storage protocol that has reached consensus on a global scale, and is a standard recognized by everyone around the world.
+    AWS 的 S3 API（接口协议）是在全球范围内达到共识的对象存储协议，是全世界内大家都认可的标准。
 
-6. Minimalist.
+6. 极简。
    
-    Minimalism is the guiding design principle of MinIO. Simplicity reduces the chance of error, increases uptime, provides reliability, and is fundamental to performance.
+    极简主义是 MinIO 的指导性设计原则。简单性减少了出错的机会，提高了正常运行时间，提供了可靠性，同时简单性又是性能的基础。
 
-7. Support multicloud.
+7. 支持多云。
 
-    Millions of instances can be created and deployed in private cloud, public cloud and edge computing environments.
+    可以创建数以百万计的实例部署在私有云、公有云和边缘计算环境。
 
-Designed to be cloud-native, MinIO can run as lightweight containers managed by external orchestration services such as Kubernetes.
-The entire server is about tens of MB of static binary files, which can efficiently use CPU and memory resources even under high load.
-Enables enterprises to co-host large numbers of tenants on shared hardware.
+MinIO 为云原生而设计，可以作为轻量级容器运行，由外部编排服务（如 Kubernetes）管理。整个服务器约为几十 MB 的静态二进制文件，即使在高负载下也可以高效利用 CPU 和内存资源，使得企业可以在共享硬件上共同托管大量租户。
 
+![MinIO 主界面](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/what01.png)
 
-
-[Free Trial](../../../dce/license0.md){ .md-button .md-button--primary }
+[创建 MinIO 实例](../user-guide/create.md){ .md-button .md-button--primary }

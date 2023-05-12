@@ -1,90 +1,90 @@
 ---
 hide:
-   - toc
+  - toc
 ---
 
-# Data service (middleware) permission design description
+# 数据服务（中间件）权限设计说明
 
-The data service module is built on [workspace](../ghippo/user-guide/workspace/ws-permission.md). Each middleware module of the data service corresponds to the permission mapping of each module in the workspace as follows:
+数据服务模块建立在 [工作空间](../ghippo/user-guide/workspace/ws-permission.md) 之上，数据服务的各个中间件模块，对应工作空空间各个模块权限映射如下：
 
-| | | | | | |
-| ------------- | ---------------------- | ------------ -------- | --------------- | ---------------- | -------- -------- |
-| Middleware Modules | Menu Objects | Actions | Workspace Admin | Workspace Editor | Workspace Viewer |
-| MySQL | MySQL Instance List | View List | ✅ | ✅ | ✅ |
-| | | Instance Name Search | ✅ | ✅ | ✅ |
-| | | Create instance | ✅ | ✅ | ❌ |
-| | | Update Instance Configuration | ✅ | ✅ | ❌ |
-| | | Delete instance | ✅ | ❌ | ❌ |
-| | MySQL Instance Details | Instance Overview | ✅ | ✅ | ✅ |
-| | | Instance Monitoring | ✅ | ✅ | ✅ |
-| | | View instance configuration parameters | ✅ | ✅ | ✅ |
-| | | Modify instance configuration parameters | ✅ | ✅ | ❌ |
-| | | View Instance Access Password | ✅ | ✅ | ❌ |
-| | | View instance backup list | ✅ | ✅ | ✅ |
-| | | Instance creation backup | ✅ | ✅ | ❌ |
-| | | Instance modification automatic backup task | ✅ | ✅ | ❌ |
-| | | Create new instance with backup | ✅ | ✅ | ❌ |
-| | Backup configuration management | Backup configuration list | ✅ | ❌ | ❌ |
-| | | Create Backup Configuration | ✅ | ❌ | ❌ |
-| | | Modify backup configuration | ✅ | ❌ | ❌ |
-| | | Delete backup configuration | ✅ | ❌ | ❌ |
-| RabbitMQ | List of RabbitMQ Instances | View List | ✅ | ✅ | ✅ |
-| | | Instance Name Search | ✅ | ✅ | ✅ |
-| | | Create instance | ✅ | ✅ | ❌ |
-| | | Update Instance Configuration | ✅ | ✅ | ❌ |
-| | | Delete instance | ✅ | ❌ | ❌ |
-| | RabbitMQ Instance Details | Instance Overview | ✅ | ✅ | ✅ |
-| | | Instance Monitoring | ✅ | ✅ | ✅ |
-| | | View instance configuration parameters | ✅ | ✅ | ✅ |
-| | | Modify instance configuration parameters | ✅ | ✅ | ❌ |
-| | | View Instance Access Password | ✅ | ✅ | ❌ |
-| Elasticsearch | Elasticsearch Instance List | View List | ✅ | ✅ | ✅ |
-| | | Instance Name Search | ✅ | ✅ | ✅ |
-| | | Create instance | ✅ | ✅ | ❌ |
-| | | Update Instance Configuration | ✅ | ✅ | ❌ |
-| | | Delete instance | ✅ | ❌ | ❌ |
-| | Elasticsearch Instance Details | Instance Overview | ✅ | ✅ | ✅ |
-| | | Instance Monitoring | ✅ | ✅ | ✅ |
-| | | View instance configuration parameters | ✅ | ✅ | ✅ |
-| | | Modify instance configuration parameters | ✅ | ✅ | ❌ |
-| | | View Instance Access Password | ✅ | ✅ | ❌ |
-| Redis | List of Redis Instances | View List | ✅ | ✅ | ✅ |
-| | | Instance Name Search | ✅ | ✅ | ✅ |
-|| | Create instance | ✅ | ✅ | ❌ |
-| | | Update Instance Configuration | ✅ | ✅ | ❌ |
-| | | Delete instance | ✅ | ❌ | ❌ |
-| | Redis Instance Details | Instance Overview | ✅ | ✅ | ✅ |
-| | | Instance Monitoring | ✅ | ✅ | ✅ |
-| | | View instance configuration parameters | ✅ | ✅ | ✅ |
-| | | Modify instance configuration parameters | ✅ | ✅ | ❌ |
-| | | View Instance Access Password | ✅ | ✅ | ❌ |
-| Kafka | Kafka Instance List | View List | ✅ | ✅ | ✅ |
-| | | Instance Name Search | ✅ | ✅ | ✅ |
-| | | Create instance | ✅ | ✅ | ❌ |
-| | | Update Instance Configuration | ✅ | ✅ | ❌ |
-| | | Delete instance | ✅ | ❌ | ❌ |
-| | Kafka Instance Details | Instance Overview | ✅ | ✅ | ✅ |
-| | | Instance Monitoring | ✅ | ✅ | ✅ |
-| | | View instance configuration parameters | ✅ | ✅ | ✅ |
-| | | Modify instance configuration parameters | ✅ | ✅ | ❌ |
-| | | View Instance Access Password | ✅ | ✅ | ❌ |
-| MinIO | List of MinIO Instances | View List | ✅ | ✅ | ✅ |
-| | | Instance Name Search | ✅ | ✅ | ✅ |
-| | | Create instance | ✅ | ✅ | ❌ |
-| | | Update Instance Configuration | ✅ | ✅ | ❌ |
-| | | Delete instance | ✅ | ❌ | ❌ |
-| | MinIO Instance Details | Instance Overview | ✅ | ✅ | ✅ |
-| | | Instance Monitoring | ✅ | ✅ | ✅ |
-| | | View instance configuration parameters | ✅ | ✅ | ✅ |
-| | | Modify instance configuration parameters | ✅ | ✅ | ❌ |
-| | | View Instance Access Password | ✅ | ✅ | ❌ |
-| PostgreSQL | PostgreSQL Instance List | View List | ✅ | ✅ | ✅ |
-| | | Instance Name Search | ✅ | ✅ | ✅ |
-| | | Create instance | ✅ | ✅ | ❌ |
-| | | Update Instance Configuration | ✅ | ✅ | ❌ |
-| | | Delete instance | ✅ | ❌ | ❌ |
-| | PostgreSQL Instance Details | Instance Overview | ✅ | ✅ | ✅ |
-| | | Instance Monitoring | ✅ | ✅ | ✅ |
-| | | View instance configuration parameters | ✅ | ✅ | ✅ |
-| | | Modify instance configuration parameters | ✅ | ✅ | ❌ |
-| | | View Instance Access Password | ✅ | ✅ | ❌ |
+|               |                        |                      |                 |                  |                  |
+| ------------- | ---------------------- | -------------------- | --------------- | ---------------- | ---------------- |
+| 中间件模块    | 菜单对象               | 操作                 | Workspace Admin | Workspace Editor | Workspace Viewer |
+| MySQL         | MySQL 实例列表         | 查看列表             | ✅              | ✅               | ✅               |
+|               |                        | 实例名称搜索         | ✅              | ✅               | ✅               |
+|               |                        | 创建实例             | ✅              | ✅               | ❌               |
+|               |                        | 更新实例配置         | ✅              | ✅               | ❌               |
+|               |                        | 删除实例             | ✅              | ❌               | ❌               |
+|               | MySQL 实例详情         | 实例概览             | ✅              | ✅               | ✅               |
+|               |                        | 实例监控             | ✅              | ✅               | ✅               |
+|               |                        | 查看实例配置参数     | ✅              | ✅               | ✅               |
+|               |                        | 修改实例配置参数     | ✅              | ✅               | ❌               |
+|               |                        | 查看实例访问密码     | ✅              | ✅               | ❌               |
+|               |                        | 查看实例备份列表     | ✅              | ✅               | ✅               |
+|               |                        | 实例创建备份         | ✅              | ✅               | ❌               |
+|               |                        | 实例修改自动备份任务 | ✅              | ✅               | ❌               |
+|               |                        | 使用备份创建新实例   | ✅              | ✅               | ❌               |
+|               | 备份配置管理           | 备份配置列表         | ✅              | ❌               | ❌               |
+|               |                        | 创建备份配置         | ✅              | ❌               | ❌               |
+|               |                        | 修改备份配置         | ✅              | ❌               | ❌               |
+|               |                        | 删除备份配置         | ✅              | ❌               | ❌               |
+| RabbitMQ      | RabbitMQ 实例列表      | 查看列表             | ✅              | ✅               | ✅               |
+|               |                        | 实例名称搜索         | ✅              | ✅               | ✅               |
+|               |                        | 创建实例             | ✅              | ✅               | ❌               |
+|               |                        | 更新实例配置         | ✅              | ✅               | ❌               |
+|               |                        | 删除实例             | ✅              | ❌               | ❌               |
+|               | RabbitMQ 实例详情      | 实例概览             | ✅              | ✅               | ✅               |
+|               |                        | 实例监控             | ✅              | ✅               | ✅               |
+|               |                        | 查看实例配置参数     | ✅              | ✅               | ✅               |
+|               |                        | 修改实例配置参数     | ✅              | ✅               | ❌               |
+|               |                        | 查看实例访问密码     | ✅              | ✅               | ❌               |
+| Elasticsearch | Elasticsearch 实例列表 | 查看列表             | ✅              | ✅               | ✅               |
+|               |                        | 实例名称搜索         | ✅              | ✅               | ✅               |
+|               |                        | 创建实例             | ✅              | ✅               | ❌               |
+|               |                        | 更新实例配置         | ✅              | ✅               | ❌               |
+|               |                        | 删除实例             | ✅              | ❌               | ❌               |
+|               | Elasticsearch 实例详情 | 实例概览             | ✅              | ✅               | ✅               |
+|               |                        | 实例监控             | ✅              | ✅               | ✅               |
+|               |                        | 查看实例配置参数     | ✅              | ✅               | ✅               |
+|               |                        | 修改实例配置参数     | ✅              | ✅               | ❌               |
+|               |                        | 查看实例访问密码     | ✅              | ✅               | ❌               |
+| Redis         | Redis 实例列表         | 查看列表             | ✅              | ✅               | ✅               |
+|               |                        | 实例名称搜索         | ✅              | ✅               | ✅               |
+|               |                        | 创建实例             | ✅              | ✅               | ❌               |
+|               |                        | 更新实例配置         | ✅              | ✅               | ❌               |
+|               |                        | 删除实例             | ✅              | ❌               | ❌               |
+|               | Redis 实例详情         | 实例概览             | ✅              | ✅               | ✅               |
+|               |                        | 实例监控             | ✅              | ✅               | ✅               |
+|               |                        | 查看实例配置参数     | ✅              | ✅               | ✅               |
+|               |                        | 修改实例配置参数     | ✅              | ✅               | ❌               |
+|               |                        | 查看实例访问密码     | ✅              | ✅               | ❌               |
+| Kafka         | Kafka 实例列表         | 查看列表             | ✅              | ✅               | ✅               |
+|               |                        | 实例名称搜索         | ✅              | ✅               | ✅               |
+|               |                        | 创建实例             | ✅              | ✅               | ❌               |
+|               |                        | 更新实例配置         | ✅              | ✅               | ❌               |
+|               |                        | 删除实例             | ✅              | ❌               | ❌               |
+|               | Kafka 实例详情         | 实例概览             | ✅              | ✅               | ✅               |
+|               |                        | 实例监控             | ✅              | ✅               | ✅               |
+|               |                        | 查看实例配置参数     | ✅              | ✅               | ✅               |
+|               |                        | 修改实例配置参数     | ✅              | ✅               | ❌               |
+|               |                        | 查看实例访问密码     | ✅              | ✅               | ❌               |
+| MinIO         | MinIO 实例列表         | 查看列表             | ✅              | ✅               | ✅               |
+|               |                        | 实例名称搜索         | ✅              | ✅               | ✅               |
+|               |                        | 创建实例             | ✅              | ✅               | ❌               |
+|               |                        | 更新实例配置         | ✅              | ✅               | ❌               |
+|               |                        | 删除实例             | ✅              | ❌               | ❌               |
+|               | MinIO 实例详情         | 实例概览             | ✅              | ✅               | ✅               |
+|               |                        | 实例监控             | ✅              | ✅               | ✅               |
+|               |                        | 查看实例配置参数     | ✅              | ✅               | ✅               |
+|               |                        | 修改实例配置参数     | ✅              | ✅               | ❌               |
+|               |                        | 查看实例访问密码     | ✅              | ✅               | ❌               |
+| PostgreSQL         | PostgreSQL 实例列表         | 查看列表             | ✅              | ✅               | ✅               |
+|               |                        | 实例名称搜索         | ✅              | ✅               | ✅               |
+|               |                        | 创建实例             | ✅              | ✅               | ❌               |
+|               |                        | 更新实例配置         | ✅              | ✅               | ❌               |
+|               |                        | 删除实例             | ✅              | ❌               | ❌               |
+|               | PostgreSQL 实例详情         | 实例概览             | ✅              | ✅               | ✅               |
+|               |                        | 实例监控             | ✅              | ✅               | ✅               |
+|               |                        | 查看实例配置参数     | ✅              | ✅               | ✅               |
+|               |                        | 修改实例配置参数     | ✅              | ✅               | ❌               |
+|               |                        | 查看实例访问密码     | ✅              | ✅               | ❌               |

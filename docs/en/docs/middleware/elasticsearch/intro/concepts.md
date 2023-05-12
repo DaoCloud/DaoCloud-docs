@@ -3,29 +3,29 @@ hide:
   - toc
 ---
 
-# Basic concept
+# 基本概念
 
-This section lists proper nouns and terms related to Elasticsearch.
+本节列出有关 Elasticsearch 涉及的专有名词及术语。
 
-- node
+- 节点（node）
 
-    Data node: a node that stores index data, and mainly performs operations such as adding, deleting, modifying, checking, and aggregating documents.
+    数据节点：存储索引数据的节点，主要对文档进行增删改查、聚合等操作。
 
-    Dedicated Master Node: Operates on the cluster, such as creating or deleting indexes, keeps track of which nodes are part of the cluster, and decides which shards are assigned to the relevant nodes. A stable master node is very important to the health of the cluster. By default, any node in the cluster may be elected as the master node.
+    专有主节点：对集群进行操作，例如创建或删除索引，跟踪哪些节点是集群的一部分，并决定哪些分片分配给相关的节点。稳定的主节点对集群的健康非常重要，默认情况下集群中的任一节点都可能被选为主节点。
 
-    Coordinator node: share the CPU overhead of data nodes, thereby improving processing performance and service stability.
+    协调节点：分担数据节点的 CPU 开销，从而提高处理性能和服务稳定性。
 
-- Index
+- 索引（Index）
 
-    The data used to store Elasticsearch is a logical space grouped together by one or more shards.
+    用于存储 Elasticsearch 的数据，是一个或多个分片分组在一起的逻辑空间。
 
-- Shard
+- 分片（Shard）
 
-    Indexes can store data whose amount of data exceeds the hardware limit of 1 node. To meet such needs, Elasticsearch provides the ability to split an index into multiple ones, called Shards.
-    When you create an index, you can specify the number of shards according to the actual situation. Each shard is hosted on any node in the cluster, and each shard is itself an independent, fully functional "index".
-    The number of shards can only be specified before creating the index, and cannot be modified after the index is created successfully.
+    索引可以存储数据量超过 1 个节点硬件限制的数据。为满足这样的需求，Elasticsearch 提供了一个能力，将一个索引拆分为多个，称为 Shard。
+    当您创建一个索引时，您可以根据实际情况指定 Shard 的数量。每个 Shard 托管在集群中的任意一个节点中，且每个 Shard 本身是一个独立的、全功能的“索引”。
+    Shard 的数量只能在创建索引前指定，且在索引创建成功后无法修改。
 
-- replicas
+- 副本（replicas）
 
-    Replicas are backups of the index, and Elasticsearch can set up multiple copies. Write operations are first completed on the primary shard and then distributed to replica shards.
-    Because both the primary and replica shards of the index can provide query services to the outside world, replicas can improve the high availability of the system and the concurrency performance of searches. But if there are too many copies, it will also increase the burden of data synchronization during write operations.
+    replicas 是索引的备份，Elasticsearch 可以设置多个副本。写操作会先在主分片上完成，然后分发到副本分片上。
+    因为索引的主分片和副本分片都可以对外提供查询服务，所以副本能够提升系统的高可用性和搜索时的并发性能。但如果副本太多，也会增加写操作时数据同步的负担。

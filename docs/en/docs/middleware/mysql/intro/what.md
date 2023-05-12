@@ -1,7 +1,12 @@
-# What is MySQL
+---
+hide:
+  - toc
+---
 
-MySQL is the most widely adopted open source relational database and serves as the primary relational data store for many popular websites, applications, and commercial products. It enjoys high throughput, low latency, and scalability.
+# 什么是 MySQL
 
-It is an open standard for application layer protocols and is designed for message-oriented middleware. Clients based on it are able to communicate with the messaging middleware to deliver messages, regardless of products, language, and other conditions.
+MySQL 是应用最广泛的开源关系数据库，是许多常见网站、应用程序和商业产品使用的主要关系数据存储，具有高吞吐、低延迟、可扩展等特性。
 
-[Free Trial Now](../../../dce/license0.md){ .md-button .md-button--primary }
+它是应用层协议的一个开放标准，是面向消息的中间件而设计，基于此协议的客户端与数据库来传递消息，不受产品、开发语言等条件的限制。
+
+[创建 MySQL 实例](../user-guide/create.md){ .md-button .md-button--primary }

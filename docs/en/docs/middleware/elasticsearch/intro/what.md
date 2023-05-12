@@ -1,17 +1,22 @@
-# What is Elasticsearch
+---
+hide:
+  - toc
+---
 
-Elasticsearch, the current full-text search engine of the best choice, can quickly store, search, and analyze a sea of data. Elasticsearch is built on top of Lucene that cannot be used directly. It encapsulates Lucene and provides out-of-box REST APIs.
+# 什么是 Elasticsearch
 
-Based on Elasticsearch, the search service built into DCE 5.0 offers a distributed search service,  provides users with structured and unstructured text as well as AI vector-based multi-criteria search, statistics, and reports. It is fully compatible with Elasticsearch native interface. It can help websites and APPs build search boxes to improve users' search experience; it can also be used to build log analysis platforms to realize data-driven operation and maintenance; its vector search can help users quickly build rich applications such as AI-based image search, recommendation, semantic search and face recognition.
+Elasticsearch（下文简称 Elastic）是目前全文搜索引擎的首选。它可以快速地存储、搜索和分析海量数据。Elastic 的底层是开源库 Lucene，但是 Lucene 无法直接用，必须自己写代码去调用它的接口。Elastic 是 Lucene 的封装，提供了 REST API 的操作接口，开箱即用。
 
+DCE 5.0 内置的搜索服务基于 Elasticsearch，能够提供分布式搜索服务，为用户提供结构化、非结构化文本以及基于 AI 向量的多条件检索、统计、报表。完全兼容 Elasticsearch 原生接口。它可以帮助网站和 APP 搭建搜索框，提升用户的搜索体验；也可以用于搭建日志分析平台，助力企业实现数据驱动运维，数据驱动运营；它的向量检索能力可以帮助客户快速构建基于 AI 的图搜、推荐、语义搜索、人脸识别等丰富的应用。
 
+![欢迎界面](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/es01.png)
 
-## Task management for ElasticSearch
+## ElasticSearch 的工作管理
 
-Raw data flows into Elasticsearch from a variety of sources, including logs, system metrics, and web applications. Data ingestion is the process by which this raw data is parsed, normalized, and enriched before it is indexed in Elasticsearch. Once indexed in Elasticsearch, users can run complex queries against their data and use aggregations to retrieve complex summaries of their data. From Kibana, users can create powerful visualizations of their data.
+原始数据会从多个来源（包括日志、系统指标和网络应用程序）输入到 Elasticsearch 中。数据采集旨在 Elasticsearch 中进行索引之前解析、标准化并充实这些原始数据的过程。这些数据在 Elasticsearch 中完成索引之后，用户便可针对数据运行复杂的查询，并使用聚合来检索自身数据的复杂汇总。在 Kibana 中，用户可以基于自己的数据创建强大的可视化。
 
-## What is Kibana
+## Kibana 是什么？
 
-Kibana is a data visualization and management tool for Elasticsearch that provides real-time histograms, line graphs, pie charts, and maps. Kibana also includes advanced applications such as Canvas, which allows users to create custom dynamic infographics based on their data, and Elastic Maps for visualizing geospatial data.
+Kibana 是一款适用于 Elasticsearch 的数据可视化和管理工具，可以提供实时的直方图、线形图、饼状图和地图。Kibana 同时还包括诸如 Canvas 和 Elastic Maps 等高级应用程序；其中 Canvas 允许用户基于自身数据创建定制的动态信息图表，而 Elastic Maps 则可用来对地理空间数据进行可视化。
 
-[Apply for free community experience](../../../dce/license0.md){ .md-button .md-button--primary }
+[创建 Elasticsearch 实例](../user-guide/create.md){ .md-button .md-button--primary }
