@@ -11,19 +11,28 @@ nav:
           - Glossary: dce/terms.md
       - Installation:
           - Briefs: install/intro.md
-          - Install Dependencies: install/install-tools.md
-          - Install DCE 5.0 for Community:
-              - Deployment Plan: install/community/resources.md
-              - Online Install with kind: install/community/kind/online.md
-              - Online Install with K8s: install/community/k8s/online.md
-              - Offline Install with K8s: install/community/k8s/offline.md
-          - Install DCE 5.0 for Commerce:
-              - Deployment Plan: install/commercial/deploy-requirements.md
-              - Download Packages: install/commercial/download-file.md
-              - Edit clusterConfig.yaml: install/commercial/clusterconfig.md
-              - Offline Installation: install/commercial/start-install.md
+          - Install dependencies: install/install-tools.md
+          - Install Community Release:
+              - Resource planning: install/community/resources.md
+              - Online install with kind: install/community/kind/online.md
+              - Online with K8s cluster: install/community/k8s/online.md
+              - Offline install with K8s cluster: install/community/k8s/offline.md
+          - Install Commercial Release:
+              - Deployment architecture: install/commercial/deploy-arch.md
+              - Deployment requirements: install/commercial/deploy-requirements.md
+              - Preparation: install/commercial/prepare.md
+              - Offline install: install/commercial/start-install.md
               - Scenarios: install/commercial/scenarios.md
-          - Uninstall: install/uninstall.md
+              - Edit clusterConfig.yaml: install/commercial/cluster-config.md
+          - Upgrade/Uninstall/FAQ:
+              - Upgrade DCE 5.0 GProduct: install/upgrade.md
+              - Uninstall: install/uninstall.md
+              - Troubleshooting: install/faq.md
+          - Install on different K8s distributions:
+              - Install Commercial Release on OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
+          - Install on different OS:
+              - Install Commercial Release on UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
+              - Offline Install Commercial Release on Other Linux: install/os-install/otherlinux.md
           - Release Notes: install/release-notes.md
       - Container Management:
           - Intro:
@@ -110,7 +119,7 @@ nav:
       - Global Management:
           - Intro:
               - What is Global Management: ghippo/intro/what.md
-              - Features: ghippo/intro/features.md
+              - Features: ghippo/intro/feature.md
               - Glossary: ghippo/intro/glossary.md
               - Release Notes: ghippo/intro/release-notes.md
           - Install, Login, and Upgrade:
@@ -239,39 +248,39 @@ nav:
               - Trace Collection Troubleshooting: insight/faq/debug-trace.md
       - App Workbench:
           - Intro:
-              - What is Workbench?: amamba/intro/WhatisAmamba.md
-              - Features: amamba/intro/Features.md
-              - Benefits: amamba/intro/Benefits.md
-              - Scenarios: amamba/intro/Scenarios.md
-              - Concepts: amamba/intro/Concepts.md
+              - What is Workbench?: amamba/intro/what.md
+              - Features: amamba/intro/feature.md
+              - Benefits: amamba/intro/benefit.md
+              - Scenarios: amamba/intro/scenarios.md
+              - Concepts: amamba/intro/concept.md
               - Release Notes: amamba/intro/release-notes.md
-          - Namespaces: amamba/03UserGuide/Namespace/namespace.md
+          - Namespaces: amamba/user-guide/Namespace/namespace.md
           - Wizard:
-              - Create App with Git Repo: amamba/03UserGuide/wizard/create-git-based-ms.md
+              - Create App with Git Repo: amamba/user-guide/wizard/create-git-based-ms.md
           - Pipeline:
-              - Custome Pipeline: amamba/03UserGuide/Pipeline/createpipelinebyself.md
-              - Create a Pipeline by Jenkinsfile: amamba/03UserGuide/Pipeline/createpipelinebyjenkins.md
-              - Edit Pipeline with GUI: amamba/03UserGuide/Pipeline/graphicaleditingpipeline.md
-              - Trigger and Pipeline: amamba/03UserGuide/Pipeline/PipelineTrigger.md
-              - Manually Run Pipeline: amamba/03UserGuide/Pipeline/PipelineHand.md
-              - Credential: amamba/03UserGuide/Pipeline/Credential.md
+              - Custome Pipeline: amamba/user-guide/Pipeline/createpipelinebyself.md
+              - Create a Pipeline by Jenkinsfile: amamba/user-guide/Pipeline/createpipelinebyjenkins.md
+              - Edit Pipeline with GUI: amamba/user-guide/Pipeline/graphicaleditingpipeline.md
+              - Trigger and Pipeline: amamba/user-guide/Pipeline/PipelineTrigger.md
+              - Manually Run Pipeline: amamba/user-guide/Pipeline/PipelineHand.md
+              - Credential: amamba/user-guide/Pipeline/Credential.md
               - Pipeline Args:
-                  - Pipeline Concepts: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineConcept.md
-                  - Job Template args in GUI: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineStep.md
-                  - Pipeline Agent: amamba/03UserGuide/Pipeline/PipelineConfig/PipelineAgent.md
+                  - Pipeline Concepts: amamba/user-guide/Pipeline/PipelineConfig/PipelineConcept.md
+                  - Job Template args in GUI: amamba/user-guide/Pipeline/PipelineConfig/PipelineStep.md
+                  - Pipeline Agent: amamba/user-guide/Pipeline/PipelineConfig/PipelineAgent.md
           - GitOps:
-              - Manually Sync with App: amamba/03UserGuide/gitops/sync-manually.md
-              - Import Repo: amamba/03UserGuide/gitops/import-repo.md
-              - Create Argo CD App: amamba/03UserGuide/gitops/create-argo-cd.md
-              - Argo CD App Status: amamba/03UserGuide/gitops/argo-cd-status.md
+              - Manually Sync with App: amamba/user-guide/gitops/sync-manually.md
+              - Import Repo: amamba/user-guide/gitops/import-repo.md
+              - Create Argo CD App: amamba/user-guide/gitops/create-argo-cd.md
+              - Argo CD App Status: amamba/user-guide/gitops/argo-cd-status.md
           - Workbench Permissions: ghippo/permissions/amamba.md
           - Best Practice:
-              - Quickly Create Pipeline: amamba/02QuickStart/deploypipline.md
-              - Scan Code with Pipeline: amamba/02QuickStart/scan-with-pipeline.md
-              - Scan Images with Managed Harbor: amamba/02QuickStart/scan-with-harbor.md
+              - Quickly Create Pipeline: amamba/quickstart/deploypipline.md
+              - Scan Code with Pipeline: amamba/quickstart/scan-with-pipeline.md
+              - Scan Images with Managed Harbor: amamba/quickstart/scan-with-harbor.md
       - Multicloud Orchestration:
           - Intro:
-              - What is Multicloud Orchestration: kairship/intro/whatiskairship.md
+              - What is Multicloud Orchestration: kairship/intro/what.md
               - Features: kairship/intro/features.md
               - Architecture: kairship/intro/architecture.md
               - Benefits: kairship/intro/benefits.md
@@ -378,7 +387,7 @@ nav:
               - Scenarios: mspider/intro/scenarios.md
               - Features supported on UI: mspider/intro/meshes.md
               - Permissions: ghippo/permissions/mspider.md
-              - Architecture: mspider/intro/architecture.md
+              - Architecture: mspider/intro/architect.md
               - FAQs: mspider/intro/faq.md
               - Release Notes: mspider/intro/release-notes.md
           - Install, config, and upgrade:
@@ -511,8 +520,10 @@ nav:
               - Use: network/modules/submariner/usage.md
       - Middleware Service:
           - Intro:
-              - What is Middleware Service: middleware/midware.md
-              - Version Compatibility: middleware/adaptation-k8s.md
+              - What is Middleware Service: middleware/what.md
+              - Version Compatibility: middleware/compatibility.md
+              - Permissions: middleware/permission.md
+              - When you visit middleware first time: middleware/first-visit.md
           - Elasticsearch:
               - What is Elasticsearch: middleware/elasticsearch/intro/what.md
               - Features: middleware/elasticsearch/intro/features.md
@@ -592,10 +603,10 @@ nav:
               - Release Notes: middleware/redis/release-notes.md
       - Cloud-native Storage:
           - Intro:
-              - What is storage: storage/intro.md
+              - What is storage: storage/what.md
               - Background: storage/background.md
-              - Benefits: storage/benifits.md
-              - Features: storage/functions.md
+              - Benefits: storage/benefits.md
+              - Features: storage/features.md
               - Release Notes: storage/hwameistor/releasenotes.md
           - HwameiStor local storage:
               - Intro: storage/hwameistor/intro/what.md
@@ -608,8 +619,14 @@ nav:
               - Resources: storage/hwameistor/intro/resources.md
               - Installation:
                   - Preparation: storage/hwameistor/install/prereq.md
-                  - Install by Helm Chart: storage/hwameistor/install/deploy.md
+                  - Resource requirements: storage/hwameistor/install/proresource.md
+                  - Install DRDB: storage/hwameistor/install/drbdinstall.md
+                  - Install with Operator: storage/hwameistor/install/deploy-operator.md
+                  - Intall with UI: storage/hwameistor/install/deploy-ui.md
+                  - Install with Helm Charts: storage/hwameistor/install/deploy-helm.md
                   - Post-check: storage/hwameistor/install/post-check.md
+                  - Storage and network adapter config: storage/hwameistor/install/storage-eth.md
+                  - Custom Kubelet root directory: storage/hwameistor/install/customized-kubelet.md
                   - Upgrade: storage/hwameistor/install/upgrade.md
                   - Uninstall: storage/hwameistor/install/uninstall.md
               - O&M:
@@ -618,6 +635,7 @@ nav:
                   - Volume migration: storage/hwameistor/resources/migrate.md
                   - Volume expansion: storage/hwameistor/resources/expand.md
                   - Disk expansion: storage/hwameistor/resources/disk-expansion.md
+                  - Disk reservation: storage/hwameistor/resources/reserveddisk.md
               - Scenarios:
                   - Overview: storage/hwameistor/application/overview.md
                   - Deploy StatefulSets:
@@ -630,6 +648,7 @@ nav:
               - Rook-Ceph intro: storage/solutions/rook-ceph.md
               - Deploy Rook-Ceph via app store: storage/solutions/dce-rook-ceph.md
               - Deploy Rook-Ceph via Helm: storage/solutions/helm-rook-ceph.md
+              - Join Ceph Dashboard: storage/solutions/ceph-dashboard.md
               - Longhorn intro: storage/solutions/longhorn.md
               - Deploy Longhorn via app store: storage/solutions/dce-longhorn.md
               - OpenEBS intro: storage/solutions/openebs.md

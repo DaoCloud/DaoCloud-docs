@@ -163,7 +163,7 @@ After authorization, the control plane can perform service discovery for multipl
 
 
 Under the multi-cluster mesh deployment model, the default strategy for multi-cluster services is: each cluster balances the load.
-But in a complex and huge production environment, in fact, many services only need to communicate with traffic in certain areas. At this time, the local priority load balancing strategy can be adopted (for specific methods, refer to [Locality Load Balancing mentioned by Istio official] (https ://istio.io/latest/docs/tasks/traffic-management/locality-load-balancing/)).
+But in a complex and huge production environment, in fact, many services only need to communicate with traffic in certain areas. At this time, the local priority load balancing strategy can be adopted (for specific methods, refer to [Locality Load Balancing mentioned by Istio official](https ://istio.io/latest/docs/tasks/traffic-management/locality-load-balancing/)).
 
 In some scenarios, we will find that the cross-cluster traffic load capacity is not frequently operated, and the cross-cluster load all the time is not what we expected.
 For example, we just need blue-green deployment, and its versions are located in different clusters;
@@ -238,6 +238,6 @@ Summarize the advantages of the service mesh technology selection scheme:
 
 ## Reference
 
-Some pictures in this article are from [Istio official website](https://istio.io/latest/docs/) and [DaoCloud documentation website](https://docs.daocloud.io/).
+Some pictures in This page are from [Istio official website](https://istio.io/latest/docs/) and [DaoCloud documentation website](https://docs.daocloud.io/).
 
 See [Istio Deployment Models](https://istio.io/latest/docs/ops/deployment/deployment-models/).

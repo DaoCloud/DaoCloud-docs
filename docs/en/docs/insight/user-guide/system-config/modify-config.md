@@ -1,6 +1,6 @@
 # Modify system configuration
 
-Observability will persist the data of indicators, logs, and links by default. Users can modify the system configuration according to this article.
+Observability will persist the data of indicators, logs, and links by default. Users can modify the system configuration according to This page.
 
 ## How to modify the indicator data retention period
 

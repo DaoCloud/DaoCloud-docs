@@ -39,7 +39,7 @@ Two creation methods are supported:
      - Key type:
          - Default (Opaque): Kubernetes default key type, which supports arbitrary data defined by users.
          - TLS (kubernetes.io/tls): credentials for TLS client or server data access.
-         - Mirror repository information (kubernetes.io/dockerconfigjson): Credentials for mirror repository access.
+         - Container registry information (kubernetes.io/dockerconfigjson): Credentials for Container registry access.
          - username and password (kubernetes.io/basic-auth): Credentials for basic authentication.
          - Custom: the type customized by the user according to business needs.
      - Key data: the data stored in the key, the parameters that need to be filled in are different for different data

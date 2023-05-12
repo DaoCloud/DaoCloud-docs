@@ -55,4 +55,4 @@ The many submodules included in DCE 5.0 can be downloaded individually, and each
      ![Chat about Community Release](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/assist.png)
 
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
-[Apply for community free experience](../dce/license0.md){ .md-button .md-button--primary }
+[Free Trial Now](../dce/license0.md){ .md-button .md-button--primary }

@@ -1,17 +1,17 @@
 # Sample application experience microservice governance
 
-The micro service engine is a function of DCE 5.0 Advanced edition, which includes registry center, configuration center, micro service governance (traditional micro service, cloud native micro service), cloud native gateway and other functions. This article will walk you through the microservice governance capabilities of a sample application.
+The micro service engine is a function of DCE 5.0 Advanced edition, which includes registry center, configuration center, micro service governance (traditional micro service, cloud native micro service), cloud native gateway and other functions. This page will walk you through the microservice governance capabilities of a sample application.
 
 The full process of this best practice is as follows:
 
-1. Deploy the sample application in the application workbench and enable microservice governance
+1. Deploy the sample application in the App Workbench and enable microservice governance
 2. Enable the traditional micro-service governance plug-in in the micro-service engine
 3. Configure the corresponding governance rules in the microservice engine
 4. Expose apis and access applications in the microservice engine
 
 ## Sample application introduction
 
-The sample application used in this practice is based on the OpenTelemetry standard demo application. The DaoCloud Large and Micro Services team has optimized it based on DCE 5.0 features to better reflect cloud native and observable capabilities, and to show the effects of micro-service governance. The sample application is open source on Github, visit [Github warehouse address ](https://github.com/openinsight-proj/openinsight-helm-charts) for more details.
+The sample application used in this practice is based on the OpenTelemetry standard demo application. The DaoCloud Large and Micro Services team has optimized it based on DCE 5.0 features to better reflect cloud native and observable capabilities, and to show the effects of micro-service governance. The sample application is open source on Github, visit [Github registry address ](https://github.com/openinsight-proj/openinsight-helm-charts) for more details.
 
 The architecture diagram for the sample application is as follows:
 
@@ -19,7 +19,7 @@ The architecture diagram for the sample application is as follows:
 
 ## Application deployment
 
-[Workbench](../../amamba/intro/what.md) is an application management module of DCE 5.0. It supports the creation and maintenance of various types of applications, GitOps, and grayscale publishing, and can quickly deploy applications to any cluster. Application workbench supports deployment of applications based on Git repository, Jar package, container image and Helm template. This practice deployable the sample application based on `Helm Template`.
+[Workbench](../../amamba/intro/what.md) is an application management module of DCE 5.0. It supports the creation and maintenance of various types of applications, GitOps, and grayscale publishing, and can quickly deploy applications to any cluster. App Workbench supports deployment of applications based on Git repository, Jar package, container image and Helm template. This practice deployable the sample application based on `Helm Template`.
 
 <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
@@ -71,7 +71,7 @@ Before deploying applications, the following conditions must be met:
 
 > For details about how to obtain the cluster ID, cluster name, and namespace name, see `kubectl get cluster <clusername> -o json | jq.metadata.uid`.
 
-1. After the application is successfully created, the list of Helm applications in the application workbench is displayed.
+1. After the application is successfully created, the list of Helm applications in the App Workbench is displayed.
 
     <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 

@@ -1,6 +1,6 @@
 # Backup stateless workloads
 
-This article describes how to back up data for stateless workloads through the `Application Backup` module. The workload used in this tutorial is named `dao-2048`.
+This page describes how to back up data for stateless workloads through the `Application Backup` module. The workload used in this tutorial is named `dao-2048`.
 
 ## Prerequisites
 

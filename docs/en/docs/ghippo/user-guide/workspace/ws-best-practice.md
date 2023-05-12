@@ -13,7 +13,7 @@ A workspace consists of three functions: authorization, resource groups, and sha
 
 1. Authorization: Grant users/groups different roles in the workspace, and apply the roles to the resources in the workspace.
 
-    Best practice: When ordinary users want to use the application workbench, microservice engine, service mesh, and middleware module functions, or need to have permission to use container management and some resources in the service mesh, the administrator needs to grant the workspace permissions (Workspace Admin, Workspace Edit, Workspace View).
+    Best practice: When ordinary users want to use the App Workbench, microservice engine, service mesh, and middleware module functions, or need to have permission to use container management and some resources in the service mesh, the administrator needs to grant the workspace permissions (Workspace Admin, Workspace Edit, Workspace View).
     The administrator here can be the Admin role, the Workspace Admin role of the workspace, or the Folder Admin role above the workspace.
     See [Relationship between Folder and Workspace](ws-folder.md).
 
@@ -35,11 +35,11 @@ A workspace consists of three functions: authorization, resource groups, and sha
     A cluster can be shared by multiple workspaces (referring to the shared resource function in the workspace); a workspace can also use the resources of multiple clusters at the same time.
     However, resource sharing does not mean that the sharer (workspace) can use the shared resource (cluster) without restriction, so the resource quota that the sharer (workspace) can use is usually limited.
 
-    At the same time, unlike resource groups, workspace members are only users of shared resources and can use resources in the cluster under resource quotas. For example, go to the application workbench to create a namespace, deploy applications, etc., but do not have the management authority of the cluster. After the restriction, the total resource quota of the namespace created/bound under this workspace cannot exceed the resources set by the cluster in this workspace Use cap.
+    At the same time, unlike resource groups, workspace members are only users of shared resources and can use resources in the cluster under resource quotas. For example, go to the App Workbench to create a namespace, deploy applications, etc., but do not have the management authority of the cluster. After the restriction, the total resource quota of the namespace created/bound under this workspace cannot exceed the resources set by the cluster in this workspace Use cap.
 
     Best practice: The operation and maintenance department has a high-availability cluster 01, and wants to allocate it to department A (workspace A) and department B (workspace B), where department A allocates 50 CPU cores, and department B allocates CPU 100 cores .
     Then you can borrow the concept of shared resources, share cluster 01 with department A and department B respectively, and limit the CPU usage quota of department A to 50, and the CPU usage quota of department B to 100.
-    Then the administrator of department A (workspace A Admin) can create and use a namespace in the application workbench, and the sum of the namespace quotas cannot exceed 50 cores, and the administrator of department B (workspace B Admin) can create a namespace in the application workbench And use namespaces, where the sum of namespace credits cannot exceed 100 cores.
+    Then the administrator of department A (workspace A Admin) can create and use a namespace in the App Workbench, and the sum of the namespace quotas cannot exceed 50 cores, and the administrator of department B (workspace B Admin) can create a namespace in the App Workbench And use namespaces, where the sum of namespace credits cannot exceed 100 cores.
     The namespaces created by the administrators of department A and department B will be automatically bound to the department, and other members of the department will have the roles of Namesapce Admin, Namesapce Edit, and Namesapce View corresponding to the namespace (the department here refers to Workspace, workspace can also be mapped to other concepts such as organization, supplier, etc.). The whole process is as follows:
 
     | Department | Role | Cluster | Resource Quota |
@@ -50,7 +50,7 @@ A workspace consists of three functions: authorization, resource groups, and sha
 
 ## The effect of the workspace on the DCE module
 
-1. Module name: [Application Workbench](../../../amamba/intro/WhatisAmamba.md), [Microservice Engine](../../../skoala/intro/features. md), [Service Mesh](../../../../../../mspider/intro/WhatismSpider.mdeware](../../../middleware/midware.md)
+1. Module name: [App Workbench](../../../amamba/intro/what.md), [Microservice Engine](../../../skoala/intro/features. md), [Service Mesh](../../../../../../mspider/intro/what.mdeware](../../../middleware/midware.md)
 
     The premise of entering the above modules is to have the permission of a certain workspace, so you must have the Admin role or have certain role permissions of a certain workspace before using the module functions.
 
@@ -60,7 +60,7 @@ A workspace consists of three functions: authorization, resource groups, and sha
 
     In addition, the resources you create in these modules will also be automatically bound to the corresponding workspace without any additional operations.
 
-2. Module name: [Container Management](../../../kpanda/intro/WhatisKPanda.md), [Service Mesh](../../../mspider/01Intro/WhatismSpider.md )
+2. Module name: [Container Management](../../../kpanda/intro/what.md), [Service Mesh](../../../mspider/01Intro/what.md )
 
     Due to the particularity of functional modules, resources created in the container management module will not be automatically bound to a certain workspace.
 

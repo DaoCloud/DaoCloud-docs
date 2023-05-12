@@ -22,7 +22,7 @@ The steps to create a managed mesh/private mesh are as follows:
      - Istio version: In case of a managed mesh, all managed clusters will use this version of Istio.
      - Control Plane Cluster: The cluster used to run the mesh management plane, with a refresh icon and `Create Cluster` button. Click `Create Cluster` to jump to the `Container Management` platform to create a new cluster. After the creation is complete, return to this page and click the refresh icon to update the cluster list.
      - Control Plane Address: Enter the IP address of the control plane.
-     - mesh component warehouse: Enter the address of the mirror warehouse that contains the data surface component mirror, such as `release.daocloud.io/mspider`.
+     - mesh component registry: Enter the address of the container registry that contains the data surface component mirror, such as `release.daocloud.io/mspider`.
   
 
 1. System settings. Configure whether to enable observability, set the mesh size and click `Next`.

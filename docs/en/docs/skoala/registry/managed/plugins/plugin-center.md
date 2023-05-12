@@ -17,4 +17,4 @@ When the Sentinel governance plug-in is enabled, a Sentinel instance is created 
 
 Mesh plug-in is mainly applicable to the governance scenario of cloud native micro services, providing governance rules such as virtual services, target rules, gateway rules, peer authentication, request authentication, and authorization policies.
 
-To enable the Mesh governance plug-in, bind a grid instance, add micro-services to the grid, and configure resources such as sidecar according to the requirements of the service grid.
+To enable the Mesh governance plug-in, bind a mesh instance, add micro-services to the mesh, and configure resources such as sidecar according to the requirements of the service mesh.

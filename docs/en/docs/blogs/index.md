@@ -24,9 +24,9 @@ This page is a collection of blog posts and public articles related to DCE 5.0, 
 
     In 2022, in Shanghai, the epidemic is raging, the city is locked and under control. Everyone were working at home, and programmers were running around in the cracks of the virus 🦠. That year is when DCE 5.0 is developing in tough, and it is also a difficult year for every Chinese.
 
-- 20221209 | [DCE 5.0 Community Edition Installation Guide](./dce5-install1209.md)
+- 20221209 | [DCE 5.0 Community Release Installation Guide](./dce5-install1209.md)
 
-    This is a real-life example of installing DCE 5.0 Community Edition from scratch, including details about the K8s cluster, dependencies, network, storage, and more.
+    This is a real-life example of installing DCE 5.0 Community Release from scratch, including details about the K8s cluster, dependencies, network, storage, and more.
 
 - 20221130 | [Karmada Resource Interpreter](https://mp.weixin.qq.com/s/DLDmWRmhM_gMVg1qGnj_fA)
 
@@ -34,7 +34,7 @@ This page is a collection of blog posts and public articles related to DCE 5.0, 
 
 - 20221125 | [KubeCon 2022 North America | Highlights Review](https://mp.weixin.qq.com/s/HIxBZjCK8ofCN6C5KRY25w)
 
-    At the 2022 KubeCon North America conference, which took place in November 2022, cloud native technology experts, product or solution providers, and users from all over the world gathered together to share the latest developments, trends, and insights in the cloud native field. This article will review some of the highlights of the conference.
+    At the 2022 KubeCon North America conference, which took place in November 2022, cloud native technology experts, product or solution providers, and users from all over the world gathered together to share the latest developments, trends, and insights in the cloud native field. This page will review some of the highlights of the conference.
 
 - 20221123 | [Entering the Digital Native Journey of Automobile Manufacturers | A Review of the Roundtable](https://mp.weixin.qq.com/s/1leu7b8KQw9pcqma8A_cuw)
 

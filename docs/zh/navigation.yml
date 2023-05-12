@@ -428,7 +428,7 @@ nav:
               - 适用场景: mspider/intro/scenarios.md
               - UI 支持的特性: mspider/intro/meshes.md
               - 服务网格权限说明: ghippo/permissions/mspider.md
-              - 网格架构: mspider/intro/architecture.md
+              - 网格架构: mspider/intro/architect.md
               - 网格控制面组件: mspider/intro/cp-component.md
               - 常见问题: mspider/intro/faq.md
               - Release Notes: mspider/intro/release-notes.md
@@ -656,7 +656,7 @@ nav:
           - 介绍:
               - 什么是云原生存储: storage/what.md
               - 背景和挑战: storage/background.md
-              - 功能优势: storage/benifits.md
+              - 功能优势: storage/benefits.md
               - 功能列表: storage/features.md
               - Release Notes: storage/hwameistor/releasenotes.md
           - HwameiStor 本地存储:
@@ -670,11 +670,9 @@ nav:
               - 资源介绍: storage/hwameistor/intro/resources.md
               - 安装管理:
                   - 准备工作: storage/hwameistor/install/prereq.md
+                  - Hwameistor 安装: storage/hwameistor/install/deploy-operator.md
                   - 资源要求: storage/hwameistor/install/proresource.md
                   - DRDB 安装: storage/hwameistor/install/drbdinstall.md
-                  - 通过 Operator 安装: storage/hwameistor/install/deploy-operator.md
-                  - 通过界面安装: storage/hwameistor/install/deploy-ui.md
-                  - 通过 Helm Chart 安装: storage/hwameistor/install/deploy-helm.md
                   - 安装后检查: storage/hwameistor/install/post-check.md
                   - 存储网卡配置: storage/hwameistor/install/storage-eth.md
                   - 自定义 Kubelet 根目录: storage/hwameistor/install/customized-kubelet.md

@@ -2,7 +2,7 @@
 
 Users can control the [Control Plane Components](../../intro/ cp-component.md) realizes the elastic scaling strategy. Currently, it provides three elastic scaling methods: indicator shrinking (HPA), timing shrinking (CronHPA), and vertical scaling (VPA). Users can choose the appropriate elastic scaling strategy according to their needs. The following uses index scaling (HPA) as an example to introduce the method of creating an auto scaling policy.
 
-## prerequisites
+## Prerequisites
 
 Make sure the helm application `Metrics Server` is installed on the cluster, please refer to [Install metrics-server plugin](../../../kpanda/user-guide/scale/install-metrics-server.md)
 

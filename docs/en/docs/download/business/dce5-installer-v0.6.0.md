@@ -77,7 +77,7 @@ The DCE 5.0 commercial release includes the following modules, which are plug-an
 | Global Management | Responsible for user access control, permissions, enterprise space, audit logs, personalized appearance settings, etc. | [0.15.0](../../ghippo/intro/release-notes.md#v0150) |
 | Container Management | Manage K8s core functions such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [0.16.0](../../kpanda/intro/release-notes.md#v0160) |
 | Observability | Provide rich graphic information such as dashboards, scene monitoring, data query, and alarms | [0.15.4](../../insight/intro/releasenote.md#v0154) |
-| Application Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [0.15.1](../../amamba/intro/release-notes.md#v0151) |
+| App Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [0.15.1](../../amamba/intro/release-notes.md#v0151) |
 | Multi-cloud orchestration| Centralized management of application orchestration of multi-cloud, hybrid cloud, and cross-cloud resources, with multi-cloud disaster recovery and fault recovery capabilities| [0.7.4](../../kairship/intro/release-notes.md# v074) |
 | Microservice Engine | Provide registration discovery, service governance, configuration management, microservice gateway and other governance capabilities | [0.19.1](../../skoala/intro/release-notes.md#v0191) |
 | Service Mesh | A next-generation service mesh for cloud-native applications based on Istio open source technology | [v0.14.3](../../mspider/intro/release-notes.md#v0143) |
@@ -87,7 +87,7 @@ The DCE 5.0 commercial release includes the following modules, which are plug-an
 | Middleware MySQL | The most widely used open source relational database | [0.7.0](../../middleware/mysql/release-notes.md#v070) |
 | Middleware RabbitMQ | Open source message broker software implementing the Advanced Message Queuing Protocol (AMQP) | [0.9.1](../../middleware/rabbitmq/release-notes.md#v091) |
 | Middleware Redis | An in-memory database caching service | [0.6.2](../../middleware/redis/release-notes.md#v062) |
-| Mirror repository | Used to store images for K8s, DevOps and container application development | [0.6.2](../../kangaroo/release-notes.md#v062) |
+| Container registry | Used to store images for K8s, DevOps and container application development | [0.6.2](../../kangaroo/release-notes.md#v062) |
 | Network | Support multiple CNI combinations for different Linux kernels | [0.5.0](../../network/modules/spiderpool/releasenotes.md#v050) |
 | Storage | Provide unified data storage services, support files, objects, blocks, and local storage, and easily access storage vendor solutions | [v0.9.2](../../storage/hwameistor/releasenotes.md#v092) |
 

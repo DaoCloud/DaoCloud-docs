@@ -49,10 +49,10 @@ This page lists the Release Notes for global management of each version, so that
 - GHippo OpenAPI documentation implementation
 - Provide GProduct with insert audit log SDK
 
-#### fix
+#### Fix
 
 - Fixed the problem that the token can still be used after the key expires
-- Fix the problem that the mirror warehouse is not controlled by the license
+- Fix the problem that the container registry is not controlled by the license
 
 ## 2023-02-27
 
@@ -70,7 +70,7 @@ This page lists the Release Notes for global management of each version, so that
 
 - Optimization of OpenAPI calling method
 
-#### fix
+#### Fix
 
 - Fixed some wrong audit log names
 - Modify the keycloak startup probe failureThreshold value to improve startup success rate
@@ -80,7 +80,7 @@ This page lists the Release Notes for global management of each version, so that
 
 ### v0.13.2
 
-#### fix
+#### Fix
 
 - The interface has supplemented the English copy that lacks permission instructions
 - When updating the database table, an error may be reported due to the database encoding
@@ -107,7 +107,7 @@ This page lists the Release Notes for global management of each version, so that
 - Ghippo authentication code optimization (reduce memory usage)
 - Optimized the preloading mechanism when the front-end interface is low in network conditions
 
-#### fix
+#### Fix
 
 - Fixed the problem that OpenAPI cycle is a required parameter, and it is an optional parameter after the repair
 
@@ -124,7 +124,7 @@ This page lists the Release Notes for global management of each version, so that
 
 ### v0.12.0
 
-#### New features
+#### Features
 
 - Change `module` to `source` in resource group
 - SDK provides Workspace and Resource binding change notification
@@ -158,7 +158,7 @@ This page lists the Release Notes for global management of each version, so that
 
 ### v0.11.0
 
-#### New features
+#### Features
 
 - Provide an interface for third-party applications to create an SSO docking Client in Keycloak
 - Support Mysql8
@@ -187,13 +187,13 @@ This page lists the Release Notes for global management of each version, so that
 
 Release date: 2022-10-21
 
-- **NEW** License -> Not Filled or Error Handling
-- **NEW** audit log -> database automatically creates and merges partitions
-- **NEW** Added support for ARM64 architecture
-- **NEW** support https
-- **NEW** Login -> background theme supports animation
-- **New** Authorization Authentication -> Provide the front-end with the permission list of the currently logged-in user
-- **NEW** Added About -> Software Version -> Module Support Chinese Name
+- **Added** License -> Not Filled or Error Handling
+- **Added** audit log -> database automatically creates and merges partitions
+- **Added** Added support for ARM64 architecture
+- **Added** support https
+- **Added** Login -> background theme supports animation
+- **Added** Authorization Authentication -> Provide the front-end with the permission list of the currently logged-in user
+- **Added** Added About -> Software Version -> Module Support Chinese Name
 - **Optimize** authorization authentication -> provide a job to ensure the synchronization of db and cr
 - **Optimized** LDAP -> configuration error checking
 - **Optimization** The operation feedback and prompts for each function support Chinese and English
@@ -204,79 +204,79 @@ Release date: 2022-10-21
 
 Release date: 2022-9-25
 
-- **NEW** Platform Settings -> Security Policy -> Session Timeout Policy
-- **NEW** Audit Log -> Auto Cleanup
-- **NEW** Platform Settings -> Security Policy-Account Lockout Policy
-- **NEW** Platform Settings -> Top Navigation Appearance Customization-Restore Function
-- **NEW** Platform Settings -> Login Page Appearance Customization-Restore Function
-- **NEW** Product Navigation -> Homepage is only displayed for admin users
-- **New** Workspace -> Users can only view the workspace & folder tree structure with permission
-- **NEW** Keycloak High Availability
-- **Add** mail server configuration -> support Insight and application workbench to send mail
-- **NEW** Meet the Helm specification, support installer and offline
+- **Added** Platform Settings -> Security Policy -> Session Timeout Policy
+- **Added** Audit Log -> Auto Cleanup
+- **Added** Platform Settings -> Security Policy-Account Lockout Policy
+- **Added** Platform Settings -> Top Navigation Appearance Customization-Restore Function
+- **Added** Platform Settings -> Login Page Appearance Customization-Restore Function
+- **Added** Product Navigation -> Homepage is only displayed for admin users
+- **Added** Workspace -> Users can only view the workspace & folder tree structure with permission
+- **Added** Keycloak High Availability
+- **Added** mail server configuration -> support Insight and App Workbench to send mail
+- **Added** Meet the Helm specification, support installer and offline
 - **Added** [About Platform](../user-guide/platform-setting/about.md), [Audit Log](../user-guide/audit-log.md), [Access Key](../04UserGuide/ 06PersonalCenter/Password.md), [Language Settings]../user-guide/06PersonalCenter/Language.mdd), [Security Settings]../user-guide/06PersonalCenter/SecuritySetting.mdd) and other documents
 
 ## v0.8
 
 Release date: 2022-8-21
 
-- **New** Personal Center -> Access Key (Create/Edit/Delete/View/List)
-- **Add** audit log -> global management operation insert audit log
-- **New** Audit Log -> connect to Insight to collect audit log
-- **NEW** Platform Settings -> Security Policy -> Account Lockout Policy
-- **NEW** Platform Settings -> Security Policy -> Browser Closing Policy
-- **Add** Identity Provider -> Interconnect with IDP (OIDC protocol)
-- **NEW** Workspace -> Shared Cluster Authority Management.
-- **NEW** Workspace -> Shared Cluster Quota Management -> Storage
-- **NEW** Platform Settings -> Top Navigation Appearance Customization -> Reset Function
-- **NEW** Added new pages on the documentation site: [Identity Provider](../user-guide/access-control/idprovider.md), [Mail Server Settings](.../user-guide/platform-setting/MailServer.md, [ Appearance Customization](.../user-guide/platform-setting/Appearance.md, [LDAP](../user-guide/access-control/ldap.md), [OIDC](../user-guide/access-control/oidc.md)
+- **Added** Personal Center -> Access Key (Create/Edit/Delete/View/List)
+- **Added** audit log -> global management operation insert audit log
+- **Added** Audit Log -> connect to Insight to collect audit log
+- **Added** Platform Settings -> Security Policy -> Account Lockout Policy
+- **Added** Platform Settings -> Security Policy -> Browser Closing Policy
+- **Added** Identity Provider -> Interconnect with IDP (OIDC protocol)
+- **Added** Workspace -> Shared Cluster Authority Management.
+- **Added** Workspace -> Shared Cluster Quota Management -> Storage
+- **Added** Platform Settings -> Top Navigation Appearance Customization -> Reset Function
+- **Added** Added new pages on the documentation site: [Identity Provider](../user-guide/access-control/idprovider.md), [Mail Server Settings](.../user-guide/platform-setting/MailServer.md, [ Appearance Customization](.../user-guide/platform-setting/Appearance.md, [LDAP](../user-guide/access-control/ldap.md), [OIDC](../user-guide/access-control/oidc.md)
 
 ## v0.7
 
 Release date: 2022-7-23
 
-- **NEW** Workspace -> Resource Quota Management (Create/Edit/Delete/View/List/Calculate Allocated)
-- **NEW** Workspace -> GProduct resource quota registration
-- **New** Access Control -> Authentication (APIServer/SDK)
-- **NEW** Audit Log -> Display (View/List/Clean Settings/Export)
-- **Add** audit log -> batch insert
-- **New** Identity Provider -> LDAP Connection -> User/group Synchronization Settings (Create/Edit/Delete/View/Sync)
-- **NEW** Platform Settings -> Security Policy -> Password Policy Settings
+- **Added** Workspace -> Resource Quota Management (Create/Edit/Delete/View/List/Calculate Allocated)
+- **Added** Workspace -> GProduct resource quota registration
+- **Added** Access Control -> Authentication (APIServer/SDK)
+- **Added** Audit Log -> Display (View/List/Clean Settings/Export)
+- **Added** audit log -> batch insert
+- **Added** Identity Provider -> LDAP Connection -> User/group Synchronization Settings (Create/Edit/Delete/View/Sync)
+- **Added** Platform Settings -> Security Policy -> Password Policy Settings
 - **Optimize** workspace -> code structure adjustment
-- **NEW** Added new pages on the document site: [Create group and Authorize](../user-guide/access-control/Group.md), [group](../user-guide/access-control/Group.md), [Login](../user-guide/00Login.md), [Password Reset](../user-guide/password.md), [Global Admin Roles](../user-guide/access-control/global.md), [Resources Management (by Workspace)](../../user-guide/workspace/wsbp.md[Resource Management (by Role)](../../user-guide/workspace/quota.md
+- **Added** Added new pages on the document site: [Create group and Authorize](../user-guide/access-control/Group.md), [group](../user-guide/access-control/Group.md), [Login](../user-guide/00Login.md), [Password Reset](../user-guide/password.md), [Global Admin Roles](../user-guide/access-control/global.md), [Resources Management (by Workspace)](../../user-guide/workspace/wsbp.md[Resource Management (by Role)](../../user-guide/workspace/quota.md
 
 ## v0.6
 
 Release date: 2022-6-21
 
-- **NEW** Workspace -> Lifecycle Management (Create/Edit/Delete/View/List)
-- **NEW** Workspace -> Hierarchical relationship management (binding/list)
-- **NEW** Workspace -> Workspace and resource relationship management (bind/unbind/list)
-- **NEW** Workspace -> Workspace and role and user (group) relationship management (binding/unbinding/list) (API/SDK)
-- **New** Workspace -> Authentication (API/SDK)
-- **NEW** Workspace -> GProduct resource name registration
-- **NEW** About -> Product Versions (Create/Edit/Delete/View/List)
-- **NEW** About -> Open Source Software (List/Initialize)
-- **NEW** Added About -> Technical Team (List/Initialize)
-- **NEW** License -> Lifecycle Management (Create/Edit/Delete/View/List)
+- **Added** Workspace -> Lifecycle Management (Create/Edit/Delete/View/List)
+- **Added** Workspace -> Hierarchical relationship management (binding/list)
+- **Added** Workspace -> Workspace and resource relationship management (bind/unbind/list)
+- **Added** Workspace -> Workspace and role and user (group) relationship management (binding/unbinding/list) (API/SDK)
+- **Added** Workspace -> Authentication (API/SDK)
+- **Added** Workspace -> GProduct resource name registration
+- **Added** About -> Product Versions (Create/Edit/Delete/View/List)
+- **Added** About -> Open Source Software (List/Initialize)
+- **Added** Added About -> Technical Team (List/Initialize)
+- **Added** License -> Lifecycle Management (Create/Edit/Delete/View/List)
 - **Added** License -> Get ESN serial number
-- **NEW** Added new pages in the documentation site: [Common Terminology](glossary.md), [Function Overview](features.md), [Quick Start/Create User and Authorization](../user-guide/access-control/User.md), [What is User Access and Control](../user-guide/access-control/iam.md), [User](../04UserGuide/01UserandAccess/User.md )
+- **Added** Added new pages in the documentation site: [Common Terminology](glossary.md), [Function Overview](feature.md), [Quick Start/Create User and Authorization](../user-guide/access-control/User.md), [What is User Access and Control](../user-guide/access-control/iam.md), [User](../04UserGuide/01UserandAccess/User.md )
 
 ## v0.5
 
 Release date: 2022-5-23
 
-- **Improved** Simplify mocking with mockery framework
-- **NEW** e2e tests for users, groups and logins
-- **Add** login page update configuration interface
-- **NEW** Added support for login
-- **NEW** Add support for forgotten password
-- **NEW** Added support for adding, deleting, modifying and checking of messages in the station
-- **NEW** Added support for OPA authority management
-- **NEW** Added support for SMTP setting mail server
-- **NEW** Added support for getting queries from the top navigation bar
-- **NEW** Added support for updating the top navigation bar
-- **Add** support for user role rights management CRUD
+- **Optimized** Simplify mocking with mockery framework
+- **Added** e2e tests for users, groups and logins
+- **Added** login page update configuration interface
+- **Added** Added support for login
+- **Added** Add support for forgotten password
+- **Added** Added support for adding, deleting, modifying and checking of messages in the station
+- **Added** Added support for OPA authority management
+- **Added** Added support for SMTP setting mail server
+- **Added** Added support for getting queries from the top navigation bar
+- **Added** Added support for updating the top navigation bar
+- **Added** support for user role rights management CRUD
 - Added Honkit based documentation station template
 - Add overall bilingual document station structure and main content
 - Completion of ROADMAP content

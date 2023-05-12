@@ -4,7 +4,7 @@ This page introduces parameter configuration related to peer identity authentica
 
 ## Peer Authentication
 
-When using the graphical wizard mode, [Peer Identity Authentication] (./peer.md) is divided into two steps: basic configuration and authentication setting, and the description of each parameter is as follows.
+When using the graphical wizard mode, [Peer Identity Authentication](./peer.md) is divided into two steps: basic configuration and authentication setting, and the description of each parameter is as follows.
 
 ### basic configuration
 
@@ -25,7 +25,7 @@ When using the graphical wizard mode, [Peer Identity Authentication] (./peer.md)
 
 ## request authentication
 
-When using the graphical wizard mode, [Request identity authentication] (./request.md) is divided into two steps: basic configuration and authentication setting, and the descriptions of each parameter are as follows.
+When using the graphical wizard mode, [Request identity authentication](./request.md) is divided into two steps: basic configuration and authentication setting, and the descriptions of each parameter are as follows.
 
 ### basic configuration
 

@@ -6,7 +6,7 @@ After creating managed Harbor and registry space, you can follow the instruction
 
 Prerequisite: Managed Harbor and registry space have been created
 
-You can build a new container image locally or grab a public image from DockerHub for testing. This article takes the latest official Nginx image of DockerHub as an example. Execute the following commands in sequence in the command line tool to push the image. Please replace library and `nginx` with the name of the registry space and container registry you actually created.
+You can build a new container image locally or grab a public image from DockerHub for testing. This page takes the latest official Nginx image of DockerHub as an example. Execute the following commands in sequence in the command line tool to push the image. Please replace library and `nginx` with the name of the registry space and container registry you actually created.
 
 1. Log in to the container registry
 

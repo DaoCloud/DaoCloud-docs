@@ -1,6 +1,6 @@
 # Multi-cloud network traffic distribution configuration under the mesh
 
-This article describes how to configure different traffic flows for workloads in a multi-cloud network.
+This page describes how to configure different traffic flows for workloads in a multi-cloud network.
 
 Preconditions:
 

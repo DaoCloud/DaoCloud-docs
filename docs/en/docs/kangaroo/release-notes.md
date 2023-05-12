@@ -33,7 +33,7 @@ This page lists the release notes of the image registry, so that you can underst
 - Create hosted `harbor` support for editing image scanners.
 - Create hosted `harbor` support for using `S3` storage.
 
-#### fix
+#### Fix
 
 - Solve the problem that the installation byte of harbor-operator helm is too large
 
@@ -62,7 +62,7 @@ This page lists the release notes of the image registry, so that you can underst
 - Support `harbor`, `docker registry` type registry multi-architecture image page display
 
 
-#### fix
+#### Fix
 
 - Repair `harbor`, `docker registry` repositories that support associated repositories connected to `https`
 

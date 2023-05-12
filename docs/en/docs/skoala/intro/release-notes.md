@@ -334,6 +334,7 @@ This page lists the release notes of DME to help you learn its feature developme
 - Revert default configuration of Nacos image to community version
 - Remove CI flows associated with Nacos image
 
+
 ## 2022-12-13
 
 ### v0.12.2

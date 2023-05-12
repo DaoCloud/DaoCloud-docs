@@ -51,8 +51,6 @@ helm install hwameistor ./hwameistor \
     --set global.hwameistorImageRegistry=ghcr.m.daocloud.io
 ```
 
-
-
 !!! success
 
     安装完成！要验证安装效果，请参见下一章[安装后检查](./post-check.md)。

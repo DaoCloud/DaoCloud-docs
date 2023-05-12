@@ -1,6 +1,6 @@
 # Create a stateless load (Deployment)
 
-This article describes how to create stateless payloads through images and YAML files.
+This page describes how to create stateless payloads through images and YAML files.
 
 [Stateless load (Deployment)](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) is a common resource in Kubernetes, mainly [Pod](https://kubernetes.io /docs/concepts/workloads/pods/) and [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) provide declarative updates, support elastic scaling, rolling upgrades, version rollbacks, etc. Function. Declare the desired Pod state in the Deployment, and the Deployment Controller will modify the current state through the ReplicaSet to make it reach the pre-declared desired state. Deployment is stateless and does not support data persistence. It is suitable for deploying stateless applications that do not need to save data and can be restarted and rolled back at any time.
 

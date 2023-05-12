@@ -3,7 +3,7 @@
 Observable Insight supports the way of creating CRD ServiceMonitor through `container management` to meet your collection requirements for custom service discovery.
 Users can use ServiceMonitor to define the scope of the Namespace discovered by the Pod and select the monitored Service through `matchLabel`.
 
-## prerequisites
+## Prerequisites
 
 The cluster has the Helm application `insight-agent` installed and in the `running` state.
 

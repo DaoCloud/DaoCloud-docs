@@ -453,7 +453,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Istio community launches Istio data plane mode Ambient Mesh without sidecar proxy](https://mp.weixin.qq.com/s/JpLPuqbPggXsQzFR5pii8A)
 
      [Ambient Mesh](https://github.com/istio/istio/tree/experimental-ambient) separates the data plane agent from the application pod and deploys it independently, completely solving the coupling problem between mesh infrastructure and application deployment.
-     Through the introduction of zero trust tunnel (ztunnel) and Waypoint proxy (waypoint proxy) to achieve zero trust and reduce the resource occupation of the grid, it can also seamlessly interoperate with the sidecar mode, reducing the user's operation and maintenance costs.
+     Through the introduction of zero trust tunnel (ztunnel) and Waypoint proxy (waypoint proxy) to achieve zero trust and reduce the resource occupation of the mesh, it can also seamlessly interoperate with the sidecar mode, reducing the user's operation and maintenance costs.
 
 - [Istio v1.14 release](https://istio.io/latest/news/releases/1.14.x/announcing-1.14/change-notes/)
 
@@ -696,9 +696,9 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      Main new features of this version: Support Rocky Linux 8 and Kylin Linux, add "flush ip6tables" task in reset role, support NTP configuration, add kubelet systemd service hardening option, add rewrite plugin for CoreDNS/NodelocalDNS, add SeccompDefault for kubelet admission plugin, add extra_groups parameter for k8s_nodes, add ingress nginx webhook, add support for node and pod pid restrictions, and enable default Pod security configuration.
 
-- [KubeVela Hybrid Multi-Cloud Application Delivery Platform v1.8.0 Released (CNCF Project)](https://github.com/kubevela/kubevela/releases/tag/v1.8.0)
+- [KubeVela Hybrid Multi-Cloud App delivery Platform v1.8.0 Released (CNCF Project)](https://github.com/kubevela/kubevela/releases/tag/v1.8.0)
 
-    Release features: support for horizontal scaling of the control plane through multiple slices, support for language-aware SDK generation from existing KubeVela definitions, new workflow-based trigger kube-trigger, allows application developers to orchestrate the application delivery process in the style of a canary release.
+    Release features: support for horizontal scaling of the control plane through multiple slices, support for language-aware SDK generation from existing KubeVela definitions, new workflow-based trigger kube-trigger, allows application developers to orchestrate the app delivery process in the style of a canary release.
 
 - [KubeVela Upgrades to CNCF Incubation Program](https://mp.weixin.qq.com/s/mhH9u4aXJT2-qVwf06xn5Q)
 
@@ -706,11 +706,11 @@ This page lists activity in cloud native open source projects in alphabetical or
     Going forward, the KubeVela community plans to improve the user experience of cloud resource creation and consumption through delivery workflows that enhance the security of the entire CI/CD delivery process in hybrid/multi-cluster scenarios.
     Support for the KubeVela Dynamic API that allows users to easily integrate with third-party APIs, and more.
 
-- [KubeVela hybrid multi-cloud environment application delivery platform v1.6.0 release (CNCF project)](https://github.com/kubevela/kubevela/releases/tag/v1.6.0)
+- [KubeVela hybrid multi-cloud environment app delivery platform v1.6.0 release (CNCF project)](https://github.com/kubevela/kubevela/releases/tag/v1.6.0)
 
      The main new features of this version: support resource delivery visualization, provide observable infrastructure construction, application-oriented observability, observability as code capabilities, support unified management of multi-environment pipelines, support configuration sharing between applications and third-party external systems Do configuration integration.
 
-- [KubeVela hybrid multi-cloud environment application delivery platform v1.5.0 release (CNCF project)](https://github.com/kubevela/kubevela/releases/tag/v1.5.0)
+- [KubeVela hybrid multi-cloud environment app delivery platform v1.5.0 release (CNCF project)](https://github.com/kubevela/kubevela/releases/tag/v1.5.0)
 
      Main new features of this version: Plug-in framework optimization, providing management of the entire plug-in lifecycle such as creating scaffolding, packaging, and pushing to the plug-in registry; supporting defining plug-ins in CUE format, and using CUE parameters to render some plug-ins; adding a large number of vela cli command; VelaUX supports managing applications created by the CLI.
 
@@ -743,7 +743,7 @@ This page lists activity in cloud native open source projects in alphabetical or
      [KubeWharf](https://github.com/kubewharf) is a distributed operating system based on Kubernetes, which consists of a set of cloud-native components, focusing on improving system scalability, resource utilization, and scalability. Observability, security, etc., support scenarios such as large-scale multi-tenant clusters, offline mixing, and storage.
      The first batch of KubeWharf plans to open source three projects: KubeBrain, a high-performance meta-information storage system, KubeGateway, a seven-layer gateway for kube-apiserver, and KubeZoo, a lightweight multi-tenant solution.
 
-- [Kuma Service Grid Project v2.2.0 Released (CNCF Project)](https://github.com/kumahq/kuma/releases/tag/2.2.0)
+- [Kuma service mesh Project v2.2.0 Released (CNCF Project)](https://github.com/kumahq/kuma/releases/tag/2.2.0)
 
     Release features: support for OpenTelemetry, support for defining MeshProxyPatch policies using JSONPatch, support for retry directives and priorities, upgrade the underlying Envoy version to 1.25, new policies for more fine-grained control of load balancing between services, support for deploying generic patterns in Kubernetes clusters for global Support for global control plane deployment in Kubernetes clusters (supported by Postgres), and support for providing public keys for offline token signing and verification.
 
@@ -753,7 +753,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Kuma Service Mesh Project v1.8.0 release (CNCF project)](https://github.com/kumahq/kuma/releases/tag/1.8.0)
 
-    The main new features of this version: cross-grid gateway supports multi-region operation, grid gateway/built-in gateway adds observability function, rewrites CNI, grid gateway supports path rewriting and header addition/deletion, supports filtering proxy indicators, Simplify the implementation of TCP traffic logs and support Projected Service Account Tokens.
+    The main new features of this version: cross-mesh gateway supports multi-region operation, mesh gateway/built-in gateway adds observability function, rewrites CNI, mesh gateway supports path rewriting and header addition/deletion, supports filtering proxy indicators, Simplify the implementation of TCP traffic logs and support Projected Service Account Tokens.
 
 - [Kurator Distributed Cloud Native Platform v0.3.0 Released](https://github.com/kurator-dev/kurator/releases/tag/v0.3.0)
 
@@ -790,7 +790,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support for virtual machine shared file system virtiofs, support for Apple's virtualization framework Virtualization.framework, and support for Containerd command-line tool nerdctl 1.1.0.
 
-- [Linkerd Service Grid Project v2.13.0 Released (CNCF Project)](https://github.com/linkerd/linkerd2/releases/tag/stable-2.13.0)
+- [Linkerd service mesh Project v2.13.0 Released (CNCF Project)](https://github.com/linkerd/linkerd2/releases/tag/stable-2.13.0)
 
     Release features: Introduces client-side policies, including dynamic routing and fuser mode; supports debugging HTTPRoute-based policies; introduces a new init container -- network-validator -- to ensure that local iptables rules work as expected.
 
@@ -1066,7 +1066,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### S
 
-- [Sealer Distributed application delivery tool v0.9.0 released (CNCF project)](https://github.com/sealerio/sealer/releases/tag/v0.9.0)
+- [Sealer Distributed app delivery tool v0.9.0 released (CNCF project)](https://github.com/sealerio/sealer/releases/tag/v0.9.0)
 
      The main new features of this release: support for configuring tags, permissions, roles, registry, cluster host aliases via Clusterfile; support for ipv4/ipv6 dual stack; support for high availability mode for local registry; support for buildah-based OCI standard; Kubefile support for Helm packages, k8s yaml files, Kubefile supports Helm packages, k8s yaml files, shell scripts, and other application types.
 

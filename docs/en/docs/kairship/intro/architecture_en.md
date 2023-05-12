@@ -43,7 +43,7 @@ This component is mainly responsible for the processing of a series of control l
 
      The CRUD event monitoring of multicloud orchestration instance CRD, once the kariship instance is created, the corresponding Kpanda cluster (virtual type, container management interface does not need to be displayed) will be created synchronously.
 
-     The retrieval of all resources of the multicloud orchestration instance (multicloud workload, pp, op) will be completed through the internal acceleration mechanism of the [container management module](../../kpanda/intro/WhatisKPanda.md) (with the help of [Clusterpedia](../../community/clusterpedia.md)) to separate reads and writes and improve performance.
+     The retrieval of all resources of the multicloud orchestration instance (multicloud workload, pp, op) will be completed through the internal acceleration mechanism of the [container management module](../../kpanda/intro/what.md) (with the help of [Clusterpedia](../../community/clusterpedia.md)) to separate reads and writes and improve performance.
 
      If the instance is deleted, the virtual cluster registered in the container management module will be deleted synchronously.
 
@@ -83,10 +83,10 @@ All request data flows directly to the multicloud orchestration instance located
 
 
 
-As shown in the figure above, all requests to access the multicloud module will be shunted after multicloud orchestration, and all read requests such as get/list will access the [container management module](../../kpanda/03ProductBrief/WhatisKPanda. md), write requests will access the Karmada instance. This will cause a problem: After creating a multicloud application through multicloud orchestration, how can the relevant resource information be obtained through the [container management../../kpanda/intro/WhatisKPanda.mdKPanda.md)?
+As shown in the figure above, all requests to access the multicloud module will be shunted after multicloud orchestration, and all read requests such as get/list will access the [container management module](../../kpanda/intro/what. md), write requests will access the Karmada instance. This will cause a problem: After creating a multicloud application through multicloud orchestration, how can the relevant resource information be obtained through the [container management../../kpanda/intro/what.mdKPanda.md)?
 
 Friends who know Karmada know that the essence of Karmada control-plane is a complete Kubernetes control plane, but there are no nodes that carry workloads.
-Therefore, when multicloud orchestration creates an instance, it adopts a tricky action, adding the instance itself as a hidden cluster to the [container management module](../../kpanda/intro/WhatisKPanda.md) (not in the container management).
+Therefore, when multicloud orchestration creates an instance, it adopts a tricky action, adding the instance itself as a hidden cluster to the [container management module](../../kpanda/intro/what.md) (not in the container management).
 In this way, the capabilities of the container management module can be fully utilized (collecting and accelerating the retrieval of resources, CRD, etc. of each Kubernetes cluster), when querying the resources (deployment, pp, op, etc.) of a multicloud orchestration instance in the interface, they can be directly managed through the container The module can be retrieved to achieve separation of reading and writing to speed up the response time.
 
 ## Multicloud orchestration instance LCM
@@ -108,4 +108,4 @@ At the same time, the multicloud orchestration management plane has a control lo
 ### Karmada instance CR
 
 The Karmada community is working on the Karmada operator recently. Here we do not make a separate design, just refer to the latest developments in the community.
-Therefore, this article does not design the LCM of the `Karmada` example. Assuming that the operator in the community is still not perfect at this stage, we can first connect the CR conversion.
+Therefore, This page does not design the LCM of the `Karmada` example. Assuming that the operator in the community is still not perfect at this stage, we can first connect the CR conversion.

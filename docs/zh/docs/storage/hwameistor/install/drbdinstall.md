@@ -5,7 +5,7 @@ hide:
 
 # 安装 DRBD（可选）
 
-如需要使用 高可用数据卷，请在部署 Hwameistor 时开启 DRDB
+如需要使用 高可用数据卷，请在部署 Hwameistor 时开启 DRDB，如下提供两种安装方式：
 
 ## 通过 UI 界面
 

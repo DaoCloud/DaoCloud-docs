@@ -17,7 +17,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [June 18 Call for Topics for KubeCon + CloudNativeCon or Open Source Summit 2023 in Shanghai (6.18 deadline)](https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/program/call-for-proposals/)
   
-    The summit will be held in Shanghai from 9.25 to 9.27. Topics to be submitted can focus on software development lifecycle, platform engineering, O&M+performance, security, data+processing+storage, network+edge+telecom, service grid, etc. The topic types include four categories: single talk (30 min), double talk (30 min), panel discussion (30 min, 3 to 5 (30 min), panel discussion (30 min, 3-5 speakers), and tutorial (90 min).
+    The summit will be held in Shanghai from 9.25 to 9.27. Topics to be submitted can focus on software development lifecycle, platform engineering, O&M+performance, security, data+processing+storage, network+edge+telecom, service mesh, etc. The topic types include four categories: single talk (30 min), double talk (30 min), panel discussion (30 min, 3 to 5 (30 min), panel discussion (30 min, 3-5 speakers), and tutorial (90 min).
 
 - [June 6 ICT China-2023 High Level Forum - Cloud Native Industry Summit will kick off on June 6 in Beijing](https://mp.weixin.qq.com/s/FTOBYjCZxYMoOM8WJUz8mQ)
   
@@ -202,8 +202,8 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [March 29 InfoQ Research Center Releases White Paper "China Open Source Ecological Mapping 2022 - Cloud Native Domain"](https://mp.weixin.qq.com/s/jyUR2BaD32--f0B_1LFRBQ)
   
     The white paper shows that there are more than 110 domestic open source projects in the cloud-native domain, involving 26 project sponsors.
-    They can be divided into 7 major technology segments, which are microservices, middleware, service grid, container technology and orchestration, platform & database & data collection, framework & engine, and functional system.
-    Among them, microservices, container technology and orchestration, service grid and other cloud-native core technology areas are the core of the cloud-native technology system.
+    They can be divided into 7 major technology segments, which are microservices, middleware, service mesh, container technology and orchestration, platform & database & data collection, framework & engine, and functional system.
+    Among them, microservices, container technology and orchestration, service mesh and other cloud-native core technology areas are the core of the cloud-native technology system.
 
 - [March 27 LF Research Launches "Focus on Global 2023" Open Source Trends Survey, Open Call for Sponsors and Partners](https://mp.weixin.qq.com/s/j82QnOQym8W2WtXsTpT87g)
   
@@ -760,7 +760,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      
 
-- [Alibaba Cloud released "Cloud Native Architecture White Paper 2022 Edition" on July 27](https://mp.weixin.qq.com/s/G8TAkeezVQz22bevr1zdKw)
+- [Alibaba Cloud released "Cloud Native Architecture White Paper 2022 Release" on July 27](https://mp.weixin.qq.com/s/G8TAkeezVQz22bevr1zdKw)
 
      While explaining the definition of cloud-native architecture, the white paper also summarizes the evolution path and design rules required for cloud-native architecture applications based on Alibaba Cloud's cloud-native practical experience.
      Compared with the old version, the 2022 version adds dozens of enterprise cloud-native practical experience collections. At the same time, in the cloud-native product matrix, several core product families are added, such as container products, micro-service products, and cloud-native technology middle-end products. family etc.
@@ -1085,7 +1085,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      On April 27th, OpenFunction passed the vote of the CNCF Technical Oversight Committee (TOC) and officially entered the CNCF sandbox hosting.
      OpenFunction helps developers focus on business logic without worrying about the underlying operating environment and infrastructure. Users only need to submit a piece of code to generate event-driven, dynamically scalable Serverless workloads.
 
-- [Sealer became a CNCF Sandbox project on April 26, aiming to build a new standard for distributed application delivery](https://mp.weixin.qq.com/s/S18xq2OzTCDOup2m7VyaVg)
+- [Sealer became a CNCF Sandbox project on April 26, aiming to build a new standard for distributed app delivery](https://mp.weixin.qq.com/s/S18xq2OzTCDOup2m7VyaVg)
 
      On April 26, the CNCF TOC regular meeting voted and unanimously approved the sealer open source project to become a CNCF sandbox project.
      The sealer project was born in Alibaba Cloud Intelligence, aiming to solve the standardization of packaging, distribution and operation of distributed software.

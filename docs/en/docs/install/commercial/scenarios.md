@@ -2,7 +2,7 @@
 
 DCE 5.0 provides [four cluster roles](../../kpanda/07UserGuide/Clusters/ClusterRole.md) to meet different usage scenarios. Users can freely combine different cluster deployment combinations based on their own business characteristics and infrastructure scenarios.
 
-This article will describe several common usage scenarios.
+This page will describe several common usage scenarios.
 
 ## Single data center scenario
 

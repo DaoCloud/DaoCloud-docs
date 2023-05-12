@@ -1,12 +1,12 @@
 # Install the microservice engine
 
-If you need to install the micro-service engine, you are advised to install it in the installation package [DCE 5.0 Business Edition](../../install/commercial/start-install.md). With the Commercial Edition, you can install all of the DCE modules at once.
+If you need to install the micro-service engine, you are advised to install it in the installation package [DCE 5.0 Business Release](../../install/commercial/start-install.md). With the Commercial Release, you can install all of the DCE modules at once.
 
 This tutorial is intended to complement scenarios that require a manual **Separate installation** microservice engine. `skoala` appears below is the internal development code of the micro-service engine, and refers to the micro-service engine.
 
 ## Use the commercial version installer
 
-When installing the microservice engine through the commercial Edition, note the version number of the commercial edition ([Latest Versions](../../download/dce5.md)). You need to perform different operations for different versions.
+When installing the microservice engine through the commercial Release, note the version number of the commercial edition ([Latest Versions](../../download/dce5.md)). You need to perform different operations for different versions.
 
 ### Commercial version ≤ v0.3.28
 
@@ -165,7 +165,7 @@ With everything in place, you can begin the formal installation of the microserv
 
 ### Configure skoala helm repo
 
-After skoala warehouse is configured, skoala application chart can be viewed and obtained
+After skoala registry is configured, skoala application chart can be viewed and obtained
 
 ```bash
 ~ helm repo add skoala-release https://release.daocloud.io/chartrepo/skoala

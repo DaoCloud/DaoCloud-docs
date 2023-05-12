@@ -6,7 +6,7 @@ hide:
 
 # create worker cluster
 
-In the DCE 5.0 container management module, [cluster roles] (cluster-role.md) are divided into four categories: global service cluster, management cluster, working cluster, and access cluster. Among them, the integrated cluster can only be accessed from third-party vendors, see [Integrate-cluster](integrate-cluster).
+In the DCE 5.0 container management module, [cluster roles](cluster-role.md) are divided into four categories: global service cluster, management cluster, working cluster, and access cluster. Among them, the integrated cluster can only be accessed from third-party vendors, see [Integrate-cluster](integrate-cluster).
 
 This page describes how to create a worker cluster.
 
@@ -80,7 +80,7 @@ Certain prerequisites must be met before creating a cluster:
     - `kubernetes_audit`: Kubernetes audit log, enabled by default.
     - `auto_renew_certificate`: Automatically renew the Kubernetes control plane certificate on the first Monday of each month, enabled by default.
     - `disable_firewalld&ufw`: Disable the firewall to prevent the node from being inaccessible during the installation.
-    - `Insecure_registries`: Private mirror registry configuration. When using a private mirror repository to create a cluster, in order to avoid certificate issues causing the container engine to deny access, you need to fill in the address of the private mirror repository here to bypass the certificate authentication of the container engine and obtain the image.
+    - `Insecure_registries`: Private container registry configuration. When using a private Container registry to create a cluster, in order to avoid certificate issues causing the container engine to deny access, you need to fill in the address of the private Container registry here to bypass the certificate authentication of the container engine and obtain the image.
     - `yum_repos`: fill in the Yum source registry address.
 
         
