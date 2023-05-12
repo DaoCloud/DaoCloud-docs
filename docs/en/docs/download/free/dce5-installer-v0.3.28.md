@@ -10,7 +10,7 @@ This page can download the offline installation package of DCE 5.0 Community Rel
 
 ## Validation
 
-Go to the download directory of the offline installation package. Run the following command to verify the installation package:
+Go to the download directory of the offline installation package. run the following command to verify the installation package:
 
 ```sh
 echo "4e1d839ee51f6ff837e2363576cd7ccb794bf81de5fac3c840d14781abc3e077f9014466a3f21d29b83af12643e59e4fa310ecd08831266d2b361ba9e9b81933 offline-community-v0.3.28.tar" | sha512sum -c

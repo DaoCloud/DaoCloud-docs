@@ -10,7 +10,7 @@ This page can download the offline installation package of DCE 5.0 Commercial Re
 
 ## Validation
 
-Go to the download directory of the offline installation package. Run the following command to verify the installation package:
+Go to the download directory of the offline installation package. run the following command to verify the installation package:
 
 ```sh
 echo "88d89872d04d95ee44073c70460c2eb3ae4785a150fbfce672a5882c6f7d77f0d8f58359c5c8695e80d7e5fce93431c0c5ec6b710c080f4840d8adbb25daeb55 offline-v0.3.28.tar" | sha512sum -c

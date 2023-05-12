@@ -19,7 +19,7 @@ Go to the download directory of the offline installation package.
 
 === "AMD64"
 
-     Run the following command to verify the installation package:
+     run the following command to verify the installation package:
 
      ```sh
      echo "00a785ba2f3b2abe7f634410ae08b798771d2d9de27b7d39e9ed6a9d9eff0e04ea544478b04f75610190b7f46c33179711ac5be6ecd219ea4f407c38850d350c offline-v0.6.1-amd64.tar" | sha512sum -c
@@ -33,7 +33,7 @@ Go to the download directory of the offline installation package.
 
 === "ARM64"
 
-     Run the following command to verify the installation package:
+     run the following command to verify the installation package:
 
      ```sh
      echo "1ebbd5fb7841d9e36e972ec6316cf43f62fe770401026fa07e9da58908f71b9ef9ae30c4b345efc60fb1a8ee3a6a2ba1f1e50b9858da223b56dca17a32548733 off line-v0.6.1-arm64.tar" | sha512sum -c
@@ -51,7 +51,7 @@ After successfully verifying the offline package,
 
 === "AMD64"
 
-     Run the following command to extract the tarball:
+     run the following command to extract the tarball:
 
      ```sh
      tar -zxvf offline-v0.6.1-amd64.tar
@@ -59,7 +59,7 @@ After successfully verifying the offline package,
 
 === "ARM64"
 
-     Run the following command to extract the tarball:
+     run the following command to extract the tarball:
 
      ```sh
      tar -zxvf offline-v0.6.1-arm64.tar

@@ -60,7 +60,7 @@ If the expansion of the storage volume fails, you can refer to the following met
 
      
 
-1. After logging in to the `master` node of the `kpanda-global-cluster` cluster on the command line, execute the following command to copy the vm-data directory in the vmstorage container to store the metric information locally:
+1. After logging in to the `master` node of the `kpanda-global-cluster` cluster on the command line, run the following command to copy the vm-data directory in the vmstorage container to store the metric information locally:
 
      ```bash
      kubectl cp -n insight-system vmstorage-insight-victoria-metrics-k8s-stack-1:vm-data ./vm-data
@@ -76,7 +76,7 @@ If the expansion of the storage volume fails, you can refer to the following met
 
      
 
-1. Wait for a while, after the storage volume declaration is bound to the cloned data volume, execute the following command to import the data exported in step 3 into the corresponding container, and then start the previously suspended `vmstorage`.
+1. Wait for a while, after the storage volume declaration is bound to the cloned data volume, run the following command to import the data exported in step 3 into the corresponding container, and then start the previously suspended `vmstorage`.
 
      ```bash
      kubectl cp -n insight-system ./vm-data vmstorage-insight-victoria-metrics-k8s-stack-1:vm-data

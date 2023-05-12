@@ -11,7 +11,7 @@ This page can download the offline installation packages of various versions of 
 
 ## Validation
 
-In the directory where the offline installation package and verification file are downloaded, Run the following command to verify the integrity:
+In the directory where the offline installation package and verification file are downloaded, run the following command to verify the integrity:
 
 ```sh
 echo "$(cat spidernet_v0.5.0_amd64_checksum.sha512sum)" | sha512sum -c
