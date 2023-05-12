@@ -3,40 +3,40 @@ hide:
   - toc
 ---
 
-# 功能特性
+# Features
 
-本页说明有关 MySQL 的功能特性。
+This page explains about the functional features of MySQL.
 
-- 高可用架构
+- High availability architecture
 
-    支持主从热备架构，灵活满足各类可用性需求，稳定可靠的性能远超业界平均水准。
+    It supports master-slave hot backup architecture, flexibly meets various availability requirements, and its stable and reliable performance far exceeds the industry average.
 
-- 快速部署
+- Rapid deployment
 
-    可在线快速部署实例，图形化界面操作简便，节省采购、部署、配置等自建数据库工作，缩短项目周期，帮助业务快速上线。
+    Instances can be quickly deployed online, and the graphical interface is easy to operate, which saves the work of self-built databases such as procurement, deployment, and configuration, shortens the project cycle, and helps businesses go online quickly.
 
-- 确保数据安全
+- Ensure data security
 
-    基于实时副本技术，适配公有云、混合云和私有云，严密账号确保数据安全。
+    Based on real-time copy technology, it adapts to public cloud, hybrid cloud and private cloud, and strictly controls accounts to ensure data security.
 
-- 更低成本
+- lower cost
 
-    可依据业务需求即时开通所需资源，无需在业务初期采购高成本硬件，有效减少初期的资产投入，避免资源闲置浪费。
+    The required resources can be activated in real time according to business needs, and there is no need to purchase high-cost hardware at the initial stage of business, effectively reducing initial asset investment and avoiding waste of idle resources.
 
-- 弹性扩缩
+- Elastic scaling
 
-    可依据业务压力弹性扩缩数据库资源，满足不同业务阶段对于数据库性能和存储空间的需求。
+    Database resources can be elastically scaled according to business pressure to meet the needs of database performance and storage space in different business stages.
 
-- 自动运维
+- Automatic operation and maintenance
 
-    可设置自动备份策略、监控告警策略、自动扩容策略等。
+    You can set automatic backup policies, monitoring and alarm policies, automatic capacity expansion policies, etc.
 
-在 DCE 5.0 中部署 MySQL 后，还将支持以下特性：
+After MySQL is deployed in DCE 5.0, the following features will also be supported:
 
-- 基于 Orchestrator 实现 MySQL 高可用和拓扑管理
-- 支持单节点和主备模式
-- 支持 phpmyadmin，提供管理页面
-- 基于 mysqld-exporter 暴露指标
-- 使用 Grafana Operator 集成 MySQL Dashboard，展示监控数据
-- 使用 S erviceMonitor 对接 Prometheus 抓取指标
-- 支持备份、恢复（依赖支持 S3 协议的存储）
+- Implement MySQL high availability and topology management based on Orchestrator
+- Support single node and active/standby mode
+- Support phpmyadmin, provide management page
+- Expose metrics based on mysqld-exporter
+- Use Grafana Operator to integrate MySQL Dashboard to display monitoring data
+- Use ServiceMonitor to connect to Prometheus to capture indicators
+- Supports backup and recovery (depends on storage that supports the S3 protocol)

@@ -1,31 +1,31 @@
-# 基于 Hwameistor 的 Elasticsearch 迁移实践
+# Elasticsearch migration practice based on Hwameistor
 
-## 介绍
+## introduce
 
-K8s 的特性，有状态的应用在部署完成后，其是否可以偏移是依赖底层 `CSI` 的能力，在使用 `Hwameistor` 作为`CSI` 时，应用是不具备进行跨 Node的能力。
+The characteristics of K8s, after the stateful application is deployed, whether it can be shifted depends on the underlying `CSI` capability. When `Hwameistor` is used as `CSI`, the application does not have the ability to cross Node.
 
-然而，当我们的最初集群资源可能出现不均匀等一些意外情况，所以需要将一些有状态的应用进行迁移。
+However, when our initial cluster resources may have some unexpected situations such as unevenness, some stateful applications need to be migrated.
 
-这篇文章讲述的是：在使用 `Hwameistor` 时，如果进行 数据服务中间件的迁移，本文以`Elasticsearch` 为例；同时参考 `Hwameistor` 官方提供的迁移指南，演示迁移过程。
+This article is about: When using `Hwameistor`, if you want to migrate the data service middleware, this article takes `Elasticsearch` as an example; at the same time, refer to the migration guide officially provided by `Hwameistor` to demonstrate the migration process.
 
-## 实验场景介绍
+## Experimental scene introduction
 
-以下梳理了本次实验的基本信息
+The basic information of this experiment is summarized as follows
 
-### 集群基本信息
+### Cluster basic information
 
 ```bash
 [root@prod-master1 ~]# kubectl get node
-NAME           STATUS   ROLES           AGE   VERSION
-prod-master1   Ready    control-plane   15h   v1.25.4
-prod-master2   Ready    control-plane   15h   v1.25.4
-prod-master3   Ready    control-plane   15h   v1.25.4
-prod-worker1   Ready    <none>          15h   v1.25.4
-prod-worker2   Ready    <none>          15h   v1.25.4
-prod-worker3   Ready    <none>          15h   v1.25.4
+NAME STATUS ROLES AGE VERSION
+prod-master1 Ready control-plane 15h v1.25.4
+prod-master2 Ready control-plane 15h v1.25.4
+prod-master3 Ready control-plane 15h v1.25.4
+prod-worker1 Ready <none> 15h v1.25.4
+prod-worker2 Ready <none> 15h v1.25.4
+prod-worker3 Ready <none> 15h v1.25.4
 ```
 
-### ES 安装的基本信息
+### Basic information about ES installation
 
 ```bash
 [root@prod-master1 ~]# kubectl get pods -o wide | grep es-cluster-masters-es-data
@@ -35,25 +35,25 @@ mcamel-common-es-cluster-masters-es-data-1 Running prod-worker3
 mcamel-common-es-cluster-masters-es-data-2 Running prod-worker2
 ```
 
-### 获取 es 使用的 pvc 信息
+### Get the pvc information used by es
 
 ```bash
 kubectl -n mcamel-system get pvc -l elasticsearch.k8s.elastic.co/statefulset-name=mcamel-common-es-cluster-masters-es-data
-NAME                                                            STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                 AGE
-elasticsearch-data-mcamel-common-es-cluster-masters-es-data-0   Bound    pvc-61776435-0df5-448f-abb9-4d06774ec0e8   35Gi       RWO            hwameistor-storage-lvm-hdd   15h
-elasticsearch-data-mcamel-common-es-cluster-masters-es-data-1   Bound    pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c   35Gi       RWO            hwameistor-storage-lvm-hdd   15h
-elasticsearch-data-mcamel-common-es-cluster-masters-es-data-2   Bound    pvc-955bd221-3e83-4bb5-b842-c11584bced10   35Gi       RWO            hwameistor-storage-lvm-hdd   15h
+NAME STATUS VOLUME CAPACITY ACCESS MODES STORAGE CLASS AGE
+elasticsearch-data-mcamel-common-es-cluster-masters-es-data-0 Bound pvc-61776435-0df5-448f-abb9-4d06774ec0e8 35Gi RWO hwameistor-storage-lvm-hdd 15h
+elasticsearch-data-mcamel-common-es-cluster-masters-es-data-1 Bound pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c 35Gi RWO hwameistor-storage-lvm-hdd 15h
+elasticsearch-data-mcamel-common-es-cluster-masters-es-data-2 Bound pvc-955bd221-3e83-4bb5-b842-c11584bced10 35Gi RWO hwameistor-storage-lvm-hdd 15h
 ```
 
-## 实验目标
+## Experiment Objectives
 
-将 `prod-worker3` 上的 `mcamel-common-es-cluster-masters-es-data-1` （以下简称 `esdata-1`）迁移到 `prod-master3` 之上
+Migrate `mcamel-common-es-cluster-masters-es-data-1` (hereafter referred to as `esdata-1`) on `prod-worker3` to `prod-master3`
 
-## 准备工作
+## Preparation
 
-### 确认需要迁移 PV
+### Confirm that the PV needs to be migrated
 
-明确 `esdata-1` 对应的 `PV` 磁盘是那个
+Make sure that the `PV` disk corresponding to `esdata-1` is the one
 
 ```bash
 [root@prod-master1 ~]# kubectl -n mcamel-system get pod mcamel-common-es-cluster-masters-es-data-1 -ojson | jq .spec.volumes[0]
@@ -65,84 +65,84 @@ elasticsearch-data-mcamel-common-es-cluster-masters-es-data-2   Bound    pvc-955
 }
 
 [root@prod-master1 ~]# kubectl -n mcamel-system get pvc elasticsearch-data-mcamel-common-es-cluster-masters-es-data-1
-NAME                                                            STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                 AGE
-elasticsearch-data-mcamel-common-es-cluster-masters-es-data-1   Bound    pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c   35Gi       RWO            hwameistor-storage-lvm-hdd   17h
+NAME STATUS VOLUME CAPACITY ACCESS MODES STORAGE CLASS AGE
+elasticsearch-data-mcamel-common-es-cluster-masters-es-data-1 Bound pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c 35Gi RWO hwameistor-storage-lvm-hdd 17h
 [root@prod-master1 ~]# kubectl -n mcamel-system get pv pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c
-NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                                                         STORAGECLASS                 REASON   AGE
-pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c   35Gi       RWO            Delete           Bound    mcamel-system/elasticsearch-data-mcamel-common-es-cluster-masters-es-data-1   hwameistor-storage-lvm-hdd            17h
+NAME CAPACITY ACCESS MODES RECLAIM POLICY STATUS CLAIM STORAGE CLASS REASON AGE
+pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c 35Gi RWO Delete Bound mcamel-system/elasticsearch-data-mcamel-common-es-cluster-masters-es-data-1 hwameistor-storage-lvm-hdd 17h
 ```
 
-根据以上信息确认`PV` 为 `pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c`
+According to the above information, it is confirmed that `PV` is `pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c`
 
-### 停止 common-es
+### stop common-es
 
-停止 `common-es` 主要是 2 条动作：先停止 `operator`, 再停止 `es`
+Stopping `common-es` is mainly 2 actions: first stop `operator`, then stop `es`
 
 ```bash
 [root@prod-master1 ~]# kubectl -n mcamel-system get sts
-NAME                                       READY   AGE
-elastic-operator                           2/2     20h
-mcamel-common-es-cluster-masters-es-data   3/3     20h
-mcamel-common-kpanda-mysql-cluster-mysql   2/2     20h
-mcamel-common-minio-cluster-pool-0         1/1     20h
-mcamel-common-mysql-cluster-mysql          2/2     20h
-mysql-operator                             1/1     20h
-rfr-mcamel-common-redis-cluster            3/3     20h
+NAME READY AGE
+elastic-operator 2/2 20h
+mcamel-common-es-cluster-masters-es-data 3/3 20h
+mcamel-common-kpanda-mysql-cluster-mysql 2/2 20h
+mcamel-common-minio-cluster-pool-0 1/1 20h
+mcamel-common-mysql-cluster-mysql 2/2 20h
+mysql-operator 1/1 20h
+rfr-mcamel-common-redis-cluster 3/3 20h
 [root@prod-master1 ~]# kubectl -n mcamel-system scale --replicas=0 sts elastic-operator
 [root@prod-master1 ~]# kubectl -n mcamel-system scale --replicas=0 sts mcamel-common-es-cluster-masters-es-data
 # --- wait about 3 mins ----
 [root@prod-master1 ~]# kubectl -n mcamel-system get sts
-NAME                                       READY   AGE
-elastic-operator                           0/0     20h
-mcamel-common-es-cluster-masters-es-data   0/0     20h
-mcamel-common-kpanda-mysql-cluster-mysql   2/2     20h
-mcamel-common-minio-cluster-pool-0         1/1     20h
-mcamel-common-mysql-cluster-mysql          2/2     20h
-mysql-operator                             1/1     20h
-rfr-mcamel-common-redis-cluster            3/3     20h
+NAME READY AGE
+elastic-operator 0/0 20h
+mcamel-common-es-cluster-masters-es-data 0/0 20h
+mcamel-common-kpanda-mysql-cluster-mysql 2/2 20h
+mcamel-common-minio-cluster-pool-0 1/1 20h
+mcamel-common-mysql-cluster-mysql 2/2 20h
+mysql-operator 1/1 20h
+rfr-mcamel-common-redis-cluster 3/3 20h
 ```
 
-> 以下是命令演示
+> The following is a demonstration of the command
 
 [![asciicast](https://asciinema.org/a/581583.svg)](https://asciinema.org/a/581583)](https://asciinema.org/a/NUqARym7BTS8BpudRpbmjroFz)
 
-### 建立迁移任务
+### Create a migration task
 
-具体文档可以参考 `Hwameistor` 官方文档： <https://hwameistor.io/docs/quick_start/create_stateful/advanced/migrate>
+For specific documents, please refer to `Hwameistor` official documentation: <https://hwameistor.io/docs/quick_start/create_stateful/advanced/migrate>
 
 ```bash
 [root@prod-master1 ~]# cat migrate.yaml
 apiVersion: hwameistor.io/v1alpha1
-kind: LocalVolumeMigrate
+kind:LocalVolumeMigrate
 metadata:
   namespace: hwameistor
-  name: migrate-es-pvc # 任务名称
+  name: migrate-es-pvc # task name
 spec:
-  sourceNode: prod-worker3 # 来源 node，可以通过 `kubectl get ldn` 获取
+  sourceNode: prod-worker3 # source node, can be obtained through `kubectl get ldn`
   targetNodesSuggested:
-  - prod-master3
-  volumeName: pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c # 需要迁移的 pvc
+  -prod-master3
+  volumeName: pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c # pvc that needs to be migrated
   migrateAllVols: false
 ```
 
-### 执行迁移命令
+### Execute the migration command
 
-此时会在命名空间为 `hwameistor` 创建一个 `pod`，用于执行迁移动作：
+At this point, a `pod` will be created for `hwameistor` in the namespace to perform the migration action:
 
 ```bash
 [root@prod-master1 ~]# kubectl apply -f migrate.yaml
 ```
 
-查看迁移状态
+View migration status
 
 ```bash
-[root@prod-master1 ~]# kubectl get localvolumemigrates.hwameistor.io  migrate-es-pvc -o yaml
+[root@prod-master1 ~]# kubectl get localvolumemigrates.hwameistor.io migrate-es-pvc -o yaml
 apiVersion: hwameistor.io/v1alpha1
-kind: LocalVolumeMigrate
+kind:LocalVolumeMigrate
 metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"hwameistor.io/v1alpha1","kind":"LocalVolumeMigrate","metadata":{"annotations":{},"name":"migrate-es-pvc"},"spec":{"migrateAllVols":false,"sourceNode":"prod-worker3","targetNodesSuggested":["prod-master3"],"volumeName":"pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c"}}
+      {"apiVersion":"hwameistor.io/v1alpha1","kind":"LocalVolumeMigrate","metadata":{"annotations":{},"name":"migrate-es-pvc"},"spec": {"migrateAllVols": false,"sourceNode":"prod-worker3","targetNodesSuggested":["prod-master3"],"volumeName":"pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c"}}
   creationTimestamp: "2023-04-30T12:24:17Z"
   generation: 1
   name: migrate-es-pvc
@@ -153,7 +153,7 @@ spec:
   migrateAllVols: false
   sourceNode: prod-worker3
   targetNodesSuggested:
-  - prod-master3
+  -prod-master3
   volumeName: pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c
 status:
   message: 'waiting for the sync job to complete: migrate-es-pvc-datacopy-elasticsearch-data-mcamel'
@@ -163,46 +163,46 @@ status:
 
 ```
 
-等到迁移状态为完成后，查看迁移结果。
+Wait until the migration status is complete to view the migration results.
 
 ```bash
 [root@prod-master1 ~]# kubectl get lvr
-NAME CAPACITY NODE STATE SYNCED DEVICE AGE  
-pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c 37580963840 prod-master3 Ready true /dev/LocalStorage_PoolHDD/pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c 129s  
+NAME CAPACITY NODE STATE SYNCED DEVICE AGE
+pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c 37580963840 prod-master3 Ready true /dev/LocalStorage_PoolHDD/pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c 129s
 ```
 
-## 恢复 common-es
+## restore common-es
 
-同样，按照停止顺序来恢复即可。
+Similarly, it is enough to resume in the order of stopping.
 
 ```bash
 [root@prod-master1 ~]# kubectl -n mcamel-system scale --replicas=2 sts elastic-operator
 [root@prod-master1 ~]# kubectl -n mcamel-system scale --replicas=3 sts mcamel-common-es-cluster-masters-es-data
 ```
 
-## 权限恢复
+## Privilege Restoration
 
-由于 HwameiStor 使用 rclone 来迁移 PV，rclone 在迁移过程中可能会丢失权限（见 [rclone#1202](https://github.com/rclone/rclone/issues/1202) 和 [hwameistor#830](https://github.com/hwameistor/hwameistor/issues/830)）。
+Since HwameiStor uses rclone to migrate PV, rclone may lose permissions during migration (see [rclone#1202](https://github.com/rclone/rclone/issues/1202) and [hwameistor#830](https: //github.com/hwameistor/hwameistor/issues/830)).
 
-具体表现在 es 上的现象则是 es 一直反复启动失败，使用一下命令查看 pod 日志：
+The specific phenomenon on es is that es keeps failing to start repeatedly. Use the following command to view pod logs:
 ```bash
 kubectl -n mcamel-system logs mcamel-common-es-cluster-masters-es-data-0 -c elasticsearch
 ```
 
-日志中包含如下错误信息：
-```log
-java.lang.IllegalStateException: failed to obtain node locks, tried [[/usr/share/elasticsearch/data]]] with lock id [0]; maybe these locations are not writable or multiple nodes were started without increasing [node.max_local_storage_nodes] (was [1])?
+The log contains the following error messages:
+``` log
+java.lang.IllegalStateException: failed to obtain node locks, tried [[/usr/share/elasticsearch/data]]] with lock id [0]; maybe these locations are not writable or multiple nodes were started without increasing [node.max_local_storage_nodes ] (was [1])?
 ```
 
-这时我们需要使用以下命令修改 es 的 CR：
+At this time, we need to use the following command to modify the CR of es:
 ```bash
 kubectl -n mcamel-system edit elasticsearches.elasticsearch.k8s.elastic.co mcamel-common-es-cluster-masters
 ```
 
-为 es 的 pod 添加一个 initcontainer，initcontainer 的内容如下：
+Add an initcontainer to the pod of es. The content of the initcontainer is as follows:
 ```yaml
         - command:
-          - sh
+          -sh
           - -c
           - chown -R elasticsearch:elasticsearch /usr/share/elasticsearch/data
           name: change-permission
@@ -211,7 +211,7 @@ kubectl -n mcamel-system edit elasticsearches.elasticsearch.k8s.elastic.co mcame
             privileged: true
 ```
 
-它在 CR 中的位置如下：
+Its location in CR is as follows:
 ```yaml
 spec:
   ...
@@ -228,7 +228,7 @@ spec:
         ...
         initContainers:
         - command:
-          - sh
+          -sh
           - -c
           - sysctl -w vm.max_map_count=262144
           name: sysctl
@@ -236,7 +236,7 @@ spec:
           securityContext:
             privileged: true
         - command:
-          - sh
+          -sh
           - -c
           - chown -R elasticsearch:elasticsearch /usr/share/elasticsearch/data
           name: change-permission

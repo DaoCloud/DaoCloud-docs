@@ -3,32 +3,32 @@ hide:
   - toc
 ---
 
-# 更新 MinIO 实例
+# update the MinIO instance
 
-如果想要更新或修改 MinIO 的资源配置，可以按照本页说明操作。
+If you want to update or modify MinIO's resource configuration, you can follow the instructions on this page.
 
-1. 在实例列表中，点击右侧的 `...` 按钮，在弹出菜单中选择`更新实例`。
+1. In the instance list, click the `...` button on the right, and select `Update Instance` from the pop-up menu.
 
-    ![选择更新实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/update01.png)
+    <!--screenshot-->
 
-2. 修改基本信息，然后点击`下一步`。
+2. Modify the basic information and click `Next`.
 
-    - 仅支持修改描述信息
-    - 实例名称、部署位置不可修改
+    - Only support modification of description information
+    - The instance name and deployment location cannot be modified
 
-        ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/update02.png)
+        <!--screenshot-->
 
-3. 修改规格配置，然后点击`下一步`。
+3. Modify the specification configuration, and click `Next`.
 
-    - 仅支持修改：CPU 配额和内存配额
-    - 不可修改：版本、部署模式、存储类、容量
+    - Only support modification: CPU quota and memory quota
+    - Unmodifiable: version, deployment mode, storage class, capacity
 
-    ![规格配置](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/update03.png)
+    <!--screenshot-->
 
-4. 修改服务设置，然后点击`确认`。
+4. Modify the service settings and click `OK`.
 
-    ![服务设置](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/update04.png)
+    <!--screenshot-->
 
-5. 返回实例列表，屏幕右上角将显示消息：`更新实例成功`。
+5. Back to the instance list, a message will be displayed in the upper right corner of the screen: `Update instance successful`.
 
-    ![成功](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/update05.png)
+    <!--screenshot-->

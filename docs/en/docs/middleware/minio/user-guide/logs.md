@@ -3,28 +3,28 @@ hide:
   - toc
 ---
 
-# 查看 MinIO 日志
+# View MinIO logs
 
-通过访问每个 MinIO 的实例详情页面；可以支持查看 MinIO 的日志。
+By visiting each MinIO's instance details page; it is possible to view MinIO's logs.
 
-1. 在 MinIO 实例列表中，找到想要查看日志的实例，点击实例名称进入详情页面。
+1. In the MinIO instance list, find the instance you want to view logs, and click the instance name to enter the details page.
 
-    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/log01.png)
+    <!--screenshot-->
 
-2. 在左侧菜单栏点击`日志查看`。
+2. Click `Log View` on the left menu bar.
 
-    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/log02.png)
+    <!--screenshot-->
 
-3. 根据需要调整日志查询的时间范围和刷新周期，具体可参考[日志查询](../../../insight/user-guide/data-query/log.md)。
+3. Adjust the time range and refresh cycle of the log query as needed. For details, please refer to [Log Query](../../../insight/user-guide/data-query/log.md).
 
-    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/log04.png)
+    <!--screenshot-->
 
-!!! note "常用操作"
+!!! note "Common Operations"
 
-    * 自定义日志查询时间范围：在日志页面右上角可以切换日志的查询时间范围
-    * 通过关键字检索日志：在左侧`搜索框`下输入关键字即可查询带有特定内容的日志
-    * 查看日志的时间分布情况：通过柱状图查看在某一时间范围内的日志数量
-    * 查看日志的上下文：在日志最右侧点击 `查看上下文` 即可
-    * 导出日志：在柱状图下方点击`下载`即可
+    * Custom log query time range: You can switch the log query time range in the upper right corner of the log page
+    * Retrieve logs by keywords: Enter keywords in the left `search box` to query logs with specific content
+    * View the time distribution of logs: view the number of logs in a certain time range through the histogram
+    * View the context of the log: click `View Context` on the far right side of the log
+    * Export log: Click `Download` below the histogram
 
-    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/log03.png)
+    <!--screenshot-->

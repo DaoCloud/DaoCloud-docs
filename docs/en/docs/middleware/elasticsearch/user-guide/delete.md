@@ -3,22 +3,22 @@ hide:
   - toc
 ---
 
-# 删除 Elasticsearch 实例
+# Delete the Elasticsearch instance
 
-如果想要删除一个 Elasticsearch 实例，可以执行如下操作：
+If you want to delete an Elasticsearch instance, you can do the following:
 
     !!! warning
 
-        删除实例后，该实例相关的所有信息也会被全部删除，请谨慎操作。
+        After an instance is deleted, all information related to the instance will also be deleted, so please proceed with caution.
 
-1. 在 Elasticsearch 实例列表中，点击右侧的 `...` 按钮，在弹出菜单中选择`删除实例`。
+1. In the list of Elasticsearch instances, click the `...` button on the right, and select `Delete Instance` from the pop-up menu.
 
-    ![删除实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/delete01.png)
+    <!--screenshot-->
 
-2. 在弹窗中输入该实例的名称，确认无误后，点击`删除`按钮。
+2. Enter the name of the instance in the pop-up window, and click the `Delete` button after confirming that it is correct.
 
-    ![删除实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/delete03.png)
+    <!--screenshot-->
 
-3. 自动返回实例列表，屏幕提示：`删除实例 xxx 成功`。
+3. Automatically return to the instance list, and the screen prompts: `Instance xxx deleted successfully`.
 
-    ![删除实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/delete04.png)
+    <!--screenshot-->

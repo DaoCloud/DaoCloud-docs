@@ -3,26 +3,26 @@ hide:
   - toc
 ---
 
-# 更新 PostgreSQL 实例
+# update the PostgreSQL instance
 
-如果想要更新或修改 PostgreSQL 的资源配置，可以按照本页说明操作。
+If you want to update or modify the resource configuration of PostgreSQL, you can follow the instructions on this page.
 
-1. 在实例列表中，点击右侧的 `...` 按钮，在弹出菜单中选择`更新实例`。
+1. In the instance list, click the `...` button on the right, and select `Update Instance` from the pop-up menu.
 
-    ![更新实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/postgresql/images/update01.png)
+    <!--screenshot-->
 
-2. 基本信息：只能修改描述。然后点击`下一步`。
+2. Basic information: Only the description can be modified. Then click `Next`.
 
-    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/postgresql/images/update02.png)
+    <!--screenshot-->
 
-3. 修改规格配置后点击`下一步`。
+3. After modifying the specification configuration, click `Next`.
 
-    ![规格配置](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/postgresql/images/update03.png)
+    <!--screenshot-->
 
-4. 修改服务设置后点击`确认`。
+4. After modifying the service settings, click `Confirm`.
 
-    ![服务设置](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/postgresql/images/update04.png)
+    <!--screenshot-->
 
-5. 实例配置更新成功，可以在右上角看到更新结果提示。
+5. The instance configuration is updated successfully, and you can see the update result prompt in the upper right corner.
 
-    ![更新完成](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/postgresql/images/update05.png)
+    <!--screenshot-->

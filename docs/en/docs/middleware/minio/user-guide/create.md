@@ -3,79 +3,79 @@ hide:
   - toc
 ---
 
-# 创建 MinIO 实例
+# Create a MinIO instance
 
-1. 从左侧导航栏选择 `Minio 存储`。
+1. Select `Minio Storage` from the left navigation bar.
 
-    ![选择 minio 存储](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create01.png)
+    <!--screenshot-->
 
-2. 可以点击列表右上角的`新建实例`按钮。
+2. You can click the `New Instance` button in the upper right corner of the list.
 
-    > 如果是首次使用，需要[先选择工作空间](../../first-visit.md)，然后点击`立即部署`创建 MinIO 实例。
+    > If you are using it for the first time, you need to [select the workspace first](../../first-visit.md), and then click `Deploy Now` to create a MinIO instance.
 
-    ![点击新建实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create02.png)
+    <!--screenshot-->
 
-3. 参考下方信息填写实例基本信息，然后点击`下一步`。
+3. Fill in the basic information of the instance by referring to the information below, and then click `Next`.
 
     !!! note
 
-        - 实例名称、所在集群/命名空间在实例创建之后不可修改
-        - 注意查看输入框下方的填写要求，输入符合要求的内容
-        - 如未通过安装环境检测，可根据提示安装相关插件后重新创建实例，或勾选`不需要监控`后直接进行后续操作
+        - The instance name and cluster/namespace cannot be modified after the instance is created
+        - Pay attention to check the filling requirements below the input box, and enter the content that meets the requirements
+        - If the installation environment test fails, you can follow the prompts to install the relevant plug-ins and re-create the instance, or check `Do not need to monitor` and proceed directly to follow-up operations
 
-    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create03.png)
+    <!--screenshot-->
 
-4. 参考下方信息填写配置规格，然后点击`下一步`。
+4. Fill in the configuration specifications with reference to the information below, and then click `Next`.
 
-    - 部署模式在实例创建之后不可更改
-    - 生产模式下建议采用高可用部署模式
-    - 高可用模式下需要至少 4 个副本
-    - 存储类：所选的存储类应有足够的可用资源，否则会因资源不足导致实例创建失败
-    - 存储容量：每个磁盘具有多少容量。**实例创建之后不可调低**
-    - 每副本磁盘数：为每个副本提供多少个次盘。**实例创建之后不可调低**
+    - The deployment mode cannot be changed after the instance is created
+    - High availability deployment mode is recommended in production mode
+    - At least 4 replicas are required in high availability mode
+    - Storage class: The selected storage class should have enough available resources, otherwise the instance creation will fail due to insufficient resources
+    - Storage capacity: how much capacity each disk has. **Cannot be lowered after instance creation**
+    - Disks per copy: How many secondary disks to provide for each copy. **Cannot be lowered after instance creation**
 
-        ![配置规格](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create07.png)
+        <!--screenshot-->
 
-5. 参考下方信息填写服务设置，点击`下一步`。
+5. Fill in the service settings with reference to the information below, and click `Next`.
 
-    - 集群内访问：只能在同一集群内部访问服务
-    - 节点端口：通过节点的 IP 和静态端口访问服务，支持从集群外部访问服务
-    - 负载均衡器：使用云服务提供商的负载均衡器使得服务可以公开访问
-    - 负载均衡器/外部流量策略：规定服务将外部流量路由到节点本地还是集群范围内的断点
+    - Intra-cluster access: services can only be accessed within the same cluster
+    - Node port: access services through node IP and static ports, and support access to services from outside the cluster
+    - Load balancer: use the cloud service provider's load balancer to make the service publicly accessible
+    - Load Balancer/External Traffic Policy: Specifies whether the service routes external traffic to node-local or cluster-wide breakpoints
 
-        - Cluster：流量可以转发到集群中其他节点上的 Pod
-        - Local：流量只能转发到本节点上的 Pod
+        - Cluster: Traffic can be forwarded to Pods on other nodes in the cluster
+        - Local: Traffic can only be forwarded to Pods on this node
 
-    - 控制台账号：访问此新建实例时需要用到的用户名、密码
+    - Console account: the user name and password needed to access this newly created instance
         
-        ![访问模式](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create08.png)
+        <!--screenshot-->
 
-    ??? note "点击查看高级配置说明"
+    ??? note "Click to view advanced configuration instructions"
 
-        - Bucket 名称：在此实例下新建一个存储桶，设置新建存储桶的名称
-        - 调度策略/条件：设置 Pod 调度的节点亲和性，可参考 Kubernetes 官方文档[节点亲和性](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity)
+        - Bucket name: create a new bucket under this instance, and set the name of the new bucket
+        - Scheduling policy/condition: set the node affinity of Pod scheduling, refer to the official Kubernetes document [node affinity](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/assign-pod -node/#affinity-and-anti-affinity)
 
-            - 尽量满足：先尝试调度到满足规则的节点。如果找不到匹配的节点，也会执行 Pod 调度
-            - 必须满足：只有找到满足规则的节点时才执行 Pod 调度
+            - Satisfy as much as possible: try to schedule to the nodes that meet the rules first. Pod scheduling is also performed if no matching node is found
+            - Must be satisfied: Pod scheduling is only performed when a node satisfying the rules is found
 
-        - 调度策略/权重：为满足每条调度策略的节点设置权重，优选使用权重高的策略。取值范围 1 到 100
-        - 调度策略/选择器
+        - Scheduling strategy/weight: Set weights for nodes that meet each scheduling strategy, preferably using a strategy with a high weight. Value range 1 to 100
+        - Scheduling strategy/selector
 
-            - In：节点必须包含所选的标签，并且该标签的取值必须 **属于** 某个取值集合。多个值用 `；` 隔开
-            - NotIn：节点必须包含所选的标签，并且该标签的取值必须 **不属于** 某个取值集合。多个值用 `；` 隔开
-            - Exists：节点包含某个标签即可，不关注标签的具体取值
-            - DoesNotExists：节点不包含某个标签，不关注标签的具体取值
-            - Gt：节点必须包含某个标签，并且标签的取值必须大于某个整数
-            - Lt：节点必须包含某个标签，并且标签的取值必须小于某个整数
+            - In: The node must contain the selected label, and the value of the label must **belong** to a set of values. Multiple values ​​are separated by `;`
+            - NotIn: The node must contain the selected label, and the value of the label must **not belong to a value set. Multiple values ​​are separated by `;`
+            - Exists: It is enough for the node to contain a certain label, and do not pay attention to the specific value of the label
+            - DoesNotExists: The node does not contain a certain label, and does not pay attention to the specific value of the label
+            - Gt: The node must contain a certain label, and the value of the label must be greater than a certain integer
+            - Lt: The node must contain a certain label, and the value of the label must be less than a certain integer
 
-                ![访问模式](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create09.png)
+                <!--screenshot-->
 
-6. 确认实例配置信息无误，点击`确认`完成创建。
+6. Confirm that the instance configuration information is correct, and click `Confirm` to complete the creation.
 
-    ![点击确认](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create05.png)
+    <!--screenshot-->
 
-7. 返回实例列表页查看实例是否创建成功。
+7. Return to the instance list page to check whether the instance is successfully created.
 
-    > 新创建的实例状态为`未就绪`，等所有相关容器成功启动之后状态变为`运行中`。
+    > The status of the newly created instance is `Not Ready`, and the status becomes `Running` after all related containers are successfully started.
 
-    ![状态](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create06.png)
+    <!--screenshot-->

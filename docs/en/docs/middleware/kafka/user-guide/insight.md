@@ -3,16 +3,16 @@ hide:
   - toc
 ---
 
-# 实例监控
+# instance monitoring
 
-Kafka 内置了 Prometheus 和 Grafana 监控模块。
+Kafka has built-in Prometheus and Grafana monitoring modules.
 
-1. 在消息队列页面中，点击某个名称。
+1. On the Message Queue page, click a name.
 
-    ![点击某个名称](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/view01.png)
+    <!--screenshot-->
 
-2. 在左侧导航栏，点击`实例监控`，可以接入监控模块。
+2. In the left navigation bar, click `Instance Monitoring` to access the monitoring module.
 
-    ![点击实例监控](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/insight.png)
+    <!--screenshot-->
 
-<!-- 各项监控指标的具体含义稍后补充 (@justedennnnn)。 -->
+<!-- The specific meaning of each monitoring indicator will be added later (@justedennnnn). -->

@@ -3,20 +3,20 @@ hide:
   - toc
 ---
 
-# 配置参数
+# configuration parameters
 
-Kafka 内置了参数配置 UI 界面。
+Kafka has a built-in parameter configuration UI interface.
 
-1. 在消息队列页面中，点击某个名称。
+1. On the Message Queue page, click a name.
 
-    ![点击某个名称](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/view01.png)
+    <!--screenshot-->
 
-2. 在左侧导航栏，点击`配置参数`。
+2. In the left navigation bar, click `Configuration parameters`.
 
-    ![点击配置参数](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/config01.png)
+    <!--screenshot-->
 
-3. 点击`编辑配置`滑块开关，可以很方便地配置 Kafka 和 Zookeeper 的各项参数。
+3. Click the `Edit Configuration` slider switch to easily configure various parameters of Kafka and Zookeeper.
 
-    ![配置参数](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/config02.png)
+    <!--screenshot-->
 
-4. 点击`保存`，参数将立即生效。
+4. Click `Save`, the parameters will take effect immediately.

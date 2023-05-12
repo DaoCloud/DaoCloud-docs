@@ -3,13 +3,13 @@ hide:
   - toc
 ---
 
-# 节点信息
+# Node information
 
-本节说明 Elasticsearch 集群的基本信息，包括：
+This section describes the basic information of the Elasticsearch cluster, including:
 
-- 实例运行状态、部署位置、创建时间、版本等信息
-- 访问设置
-- 资源配置
-- Pod 列表
+-Instance running status, deployment location, creation time, version and other information
+- Access Settings
+- Resource allocation
+- Pod list
 
-![概览](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/overview.png)
+<!--screenshot-->

@@ -1,141 +1,141 @@
 # MySQL Release Notes
 
-本页列出 MySQL 数据库的 Release Notes，便于您了解各版本的演进路径和特性变化。
+This page lists the Release Notes of the MySQL database, so that you can understand the evolution path and feature changes of each version.
 
 ## 2023-04-27
 
 ### v0.8.1
 
-#### 新功能
+#### new function
 
-- **新增** `mcamel-mysql` 详情页面展示相关的事件
-- **新增** `mcamel-mysql` openapi 列表接口支持 Cluster 与 Namespace 字段过滤
-- **新增** `mcamel-mysql` 自定义角色
-- **新增** `mcamel-mysql` 对接 HwameiStor，支持存储容量展示（需要手动创建 HwameiStor exporter ServiceMonitor）
+- **NEW** `mcamel-mysql` details page displays related events
+- **NEW** `mcamel-mysql` openapi list interface supports Cluster and Namespace field filtering
+- **Add** `mcamel-mysql` custom role
+- **Added** `mcamel-mysql` is connected to HwameiStor and supports storage capacity display (you need to manually create HwameiStor exporter ServiceMonitor)
 
-#### 升级
+#### upgrade
 
-- **升级** 优化 调度策略增加滑动按钮
+- **Upgrade** Optimize the scheduling strategy to add a sliding button
 
 
 ## 2023-03-28
 
 ### v0.7.0
 
-#### 新功能
+#### new function
 
-- **新增** `mcamel-mysql` 支持中间件链路追踪适配。
-- **新增** 安装 `mcamel-mysql` 根据参数配置启用链路追踪。
-- **新增** `mcamel-mysql` PhpMyAdmin 支持 LoadBalancer 类型。
+- **NEW** `mcamel-mysql` supports middleware link tracking adaptation.
+- **NEW** Install `mcamel-mysql` to enable link tracking according to parameter configuration.
+- **Added** `mcamel-mysql` PhpMyAdmin supports LoadBalancer type.
 
-#### 升级
+#### upgrade
 
-- **升级** golang.org/x/net 到 v0.7.0
-- **升级** GHippo SDK 到 v0.14.0
-- **优化** `mcamel-mysql` common-mysql 支持多个实例优化。
-- **优化** `mcamel-mysql` 排障手册增加更多处理方法。
+- **upgrade** golang.org/x/net to v0.7.0
+- **Upgrade** GHippo SDK to v0.14.0
+- **optimization** `mcamel-mysql` common-mysql supports multiple instance optimization.
+- **Optimize** `mcamel-mysql` troubleshooting manual adds more processing methods.
 
 ## 2023-02-23
 
 ### v0.6.0
 
-### 新功能
+### new function
 
-- **新增** `mcamel-mysql` helm-docs 模板文件。
-- **新增** `mcamel-mysql` 应用商店中的 Operator 只能安装在 mcamel-system。
-- **新增** `mcamel-mysql` 支持 cloud shell。
-- **新增** `mcamel-mysql` 支持导航栏单独注册。
-- **新增** `mcamel-mysql` 支持查看日志。
-- **新增** `mcamel-mysql` 更新 Operator 版本。
-- **新增** `mcamel-mysql` 展示 common MySQL 在实例列表中。
-- **新增** `mcamel-mysql` 支持 MySQL8.0.29。
-- **新增** `mcamel-mysql` 支持 LB。
-- **新增** `mcamel-mysql` 支持 Operator 对接 chart-syncer。
-- **新增** `mcamel-mysql` Operator 的 finalizers 权限以支持 openshift。
-- **新增** `UI` 增加 MySQL 主从复制延迟情况展示
-- **新增** `文档` 增加 日志查看操作说明，支持自定义查询、导出等功能。
+- **Added** `mcamel-mysql` helm-docs template file.
+- **Added** The Operator in the `mcamel-mysql` app store can only be installed in mcamel-system.
+- **NEW** `mcamel-mysql` supports cloud shell.
+- **NEW** `mcamel-mysql` supports separate registration of navigation bar.
+- **NEW** `mcamel-mysql` supports viewing logs.
+- **Added** `mcamel-mysql` updated Operator version.
+- **NEW** `mcamel-mysql` shows common MySQL in the instance list.
+- **NEW** `mcamel-mysql` supports MySQL8.0.29.
+- **NEW** `mcamel-mysql` supports LB.
+- **NEW** `mcamel-mysql` supports Operator docking with chart-syncer.
+- **Added** `mcamel-mysql` Operator finalizers permission to support openshift.
+- **NEW** `UI` adds MySQL master-slave replication delay display
+- **Added** `Documentation` adds log viewing operation instructions, supports custom query, export and other functions.
 
-#### 优化
+#### Optimization
 
-- **升级** `mcamel-mysql` 升级离线镜像检测脚本。  
+- **Upgrade** `mcamel-mysql` upgrade offline mirror detection script.
 
-#### 修复
+#### fix
 
-- **修复** `mcamel-mysql` 实例名太长导致自定义资源无法创建的问题。
-- **修复** `mcamel-mysql` 工作空间 Editor 用户无法查看实例密码。
-- **修复** `mcamel-mysql` 配置文件里 `expire-logs-days` 参数定义重复。
-- **修复** `mcamel-mysql` 8.0 环境下 binlog 过期时间不符合预期。
-- **修复** `mcamel-mysql` 备份集列表会展示出同名集群旧的备份集。
+- **Fix** the problem that `mcamel-mysql` instance name is too long and the custom resource cannot be created.
+- **FIXED** `mcamel-mysql` workspace Editor user cannot view instance password.
+- **FIXED** Duplicate definition of `expire-logs-days` parameter in `mcamel-mysql` configuration file.
+- **FIXED** The binlog expiration time in `mcamel-mysql` 8.0 environment is not as expected.
+- **FIXED** `mcamel-mysql` backup set listing would show older backup sets for clusters with the same name.
 
 ## 2022-12-25
 
 ### v0.5.0
 
-#### 新功能
+#### new function
 
-- **新增** NodePort 端口冲突提前检测。
-- **新增** 节点亲和性配置。
-- **新增** 创建备份配置时，可校验 Bucket。
+- **NEW** Added early detection of NodePort port conflicts.
+- **New** node affinity configuration.
+- **Add** Bucket can be verified when creating a backup configuration.
 
-- **修复** arm 环境中无法展示默认配置。
-- **修复** 创建实例时 name 校验与前端不一致。
-- **修复** 重新接入变更名字的集群后，配置管理地址展示错误。
-- **修复** 保存自动备份配置失败。
-- **修复** 自动备份集无法展示的问题。
+- **FIX** The default configuration cannot be displayed in the arm environment.
+- **Fix** The name verification is inconsistent with the front end when creating an instance.
+- **Fix** After reconnecting to the cluster with changed name, the configuration management address display error.
+- **FIX** Failed to save auto backup configuration.
+- **FIXED** The problem that the automatic backup set cannot be displayed.
 
 ## 2022-11-08
 
 ### v0.4.0
 
-### 新功能
+### new function
 
-- **新增** 增加 MySQL 生命周期管理接口功能
-- **新增** 增加 MySQL 详情接口功能
-- **新增** 基于 grafana crd 对接 insight
-- **新增** 增加与 ghippo 服务对接接口
-- **新增** 增加与 kpanda 对接接口
-- **新增** 单测覆盖率提升到 30%
-- **新增** 新增备份恢复功能
-- **新增** 新增备份配置接口
-- **新增** 实例列表接口新增备份恢复来源字段
-- **新增** 获取用户列表接口
-- **新增** `mysql-operator` chart 参数，来指定 metric exporter 镜像
-- **新增** 支持 arm64 架构
-- **新增** 添加 arm64 operator 镜像打包
-- **新增** 支持密码脱敏
-- **新增** 支持服务暴露为 nodeport
-- **新增** 支持 mtls
-- **新增** `文档` 第一次文档网站发布
-- **新增** `文档` 基本概念
-- **新增** `文档` Concepts
-- **新增** `文档` 首次使用 MySQL
-- **新增** `文档` 删除 MySQL 实例
+- **NEW** Added MySQL lifecycle management interface function
+- **NEW** Added MySQL details interface function
+- **Add** docking insight based on grafana crd
+- **NEW** Add interface with ghippo service
+- **NEW** Add an interface with kpanda
+- **NEW** Increased single-test coverage to 30%
+- **NEW** Added backup and restore function
+- **NEW** Added backup configuration interface
+- **NEW** Added backup and restore source field in instance list interface
+- **NEW** Add interface to get user list
+- **Add** `mysql-operator` chart parameter to specify the metric exporter image
+- **New** support arm64 architecture
+- **NEW** Added arm64 operator image packaging
+- **NEW** Added support for password desensitization
+- **NEW** Added support for service exposure as nodeport
+- **NEW** Added support for mtls
+- **Added** `documentation` first release of documentation website
+- **NEW** `documentation` basic concept
+- **NEW** `Documentation` Concepts
+- **Added** `documentation` for first time use of MySQL
+- **NEW** `documentation` delete MySQL instance
 
-#### 优化
+#### Optimization
 
-- **优化** 将时间戳 api 字段统一调整为 int64
+- **Optimize** uniformly adjust the timestamp api field to int64
 
-#### 修复
+#### fix
 
-- **修复** 修复备份列表接口模糊搜索无效
-- **修复** 修复依赖漏洞
-- **修复** 备份 Job 被删除后，无法展示备份任务列表
-- **修复** 当镜像有大写和数字时不能被抓取到的问题
+- **Fix** Fix fuzzy search of backup list interface invalid
+- **FIX** Fix dependency bug
+- **FIXED** After the backup job is deleted, the backup task list cannot be displayed
+- **FIXED** The problem that the image cannot be grabbed when it has uppercase and numbers
 
 ## 2022-10-18
 
 ### v0.3
 
-#### 新功能
+#### new function
 
-- **新增** 增加 MySQL 生命周期管理接口功能
-- **新增** 增加 MySQL 详情接口功能
-- **新增** 基于 grafana crd 对接 insight
-- **新增** 增加与 ghippo 服务对接接口
-- **新增** 增加与 kpanda 对接接口
-- **新增** 单测覆盖率提升到 30%
-- **新增** 新增备份恢复功能
-- **新增** 新增备份配置接口
-- **新增** 实例列表接口新增备份恢复来源字段
-- **修复** 修复备份列表接口模糊搜索无效
-- **优化** 将时间戳 api 字段统一调整为 int64
+- **NEW** Added MySQL lifecycle management interface function
+- **NEW** Added MySQL details interface function
+- **Add** docking insight based on grafana crd
+- **NEW** Add interface with ghippo service
+- **NEW** Add an interface with kpanda
+- **NEW** Increased single-test coverage to 30%
+- **NEW** Added backup and restore function
+- **NEW** Added backup configuration interface
+- **NEW** Added backup and restore source field in instance list interface
+- **Fix** Fix fuzzy search of backup list interface invalid
+- **Optimize** uniformly adjust the timestamp api field to int64

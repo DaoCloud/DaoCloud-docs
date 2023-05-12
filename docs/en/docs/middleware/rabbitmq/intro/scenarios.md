@@ -1,33 +1,33 @@
-# 适用场景
+# Applicable scene
 
-RabbitMQ 适用的场景广泛，本节列觉了几个典型场景。
+RabbitMQ is applicable to a wide range of scenarios, and this section lists several typical scenarios.
 
-## 异步处理
+## Asynchronous processing
 
-场景说明：用户注册后，需要发送注册邮件和注册短信。
+Scenario description: After the user registers, it is necessary to send a registration email and a registration SMS.
 
-引入消息队列后，用户的响应时间就等于写入数据库的时间 + 写入消息队列的时间（这个可以忽略不计）。
-引入消息队列后处理后，响应时间是串行的 3 倍，是并行的 2 倍。
+After the message queue is introduced, the user's response time is equal to the time of writing to the database + the time of writing to the message queue (this can be ignored).
+After the introduction of message queue post-processing, the response time is 3 times that of serial and 2 times that of parallel.
 
-![异步处理](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/scenario01.png)
+<!--screenshot-->
 
-## 应用解耦
+## Application Decoupling
 
-场景说明：在促销活动时用户下单数量激增，用户下单后，订单系统需要通知库存系统。
+Scenario description: The number of orders placed by users surges during promotional activities. After users place orders, the order system needs to notify the inventory system.
 
-传统的做法就是订单系统调用库存系统的接口，这会导致库存系统出现故障时，订单会失败。
-如果使用消息队列（如下图），用户下单后，订单系统完成持久化处理，将消息写入消息队列，返回用户订单下单成功。
-订阅下单的消息，获取下单消息，进行库操作。就算库存系统出现故障，消息队列也能保证消息的可靠投递，不会导致消息丢失。
+The traditional method is that the order system calls the interface of the inventory system, which will cause the order to fail when the inventory system fails.
+If you use a message queue (as shown in the figure below), after the user places an order, the order system completes the persistence process, writes the message into the message queue, and returns the user's order placement success.
+Subscribe to the news of the order, get the news of the order, and perform library operations. Even if the inventory system fails, the message queue can ensure reliable delivery of messages without causing message loss.
 
-![应用解耦](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/scenario02.png)
+<!--screenshot-->
 
-## 流量削峰
+## Traffic clipping
 
-场景说明：某平台策划的秒杀活动，一般会因为流量过大，导致应用不可用。
+Scenario description: A flash sale event planned by a certain platform usually causes the application to be unavailable due to excessive traffic.
 
-为了解决这个问题，一般在应用前端加入消息队列。
-通过消息队列可以控制活动人数，超过此一定阀值的订单直接丢弃，同时可以缓解短时间的高流量压垮应用。
-服务器收到用户的请求之后，首先写入消息队列，假如消息队列长度超过最大值，则直接抛弃用户请求或跳转到错误页面。
-秒杀业务根据消息队列中的请求信息，再做后续处理。
+In order to solve this problem, a message queue is generally added to the front end of the application.
+The number of active people can be controlled through the message queue, and orders exceeding this certain threshold are discarded directly, and at the same time, it can relieve short-term high traffic from overwhelming the application.
+After the server receives the user's request, it first writes into the message queue. If the message queue length exceeds the maximum value, it will directly discard the user's request or jump to the error page.
+The seckill business performs follow-up processing according to the request information in the message queue.
 
-![流量削峰](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/scenario03.png)
+<!--screenshot-->

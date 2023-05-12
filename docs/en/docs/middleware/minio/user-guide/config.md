@@ -3,20 +3,20 @@ hide:
   - toc
 ---
 
-# 配置参数
+# configuration parameters
 
-MinIO 内置了参数配置 UI 界面。
+MinIO has a built-in parameter configuration UI interface.
 
-1. 在 MinIO 实例列表中，找到想要配置参数的 MinIO 实例，点击实例名称。
+1. In the MinIO instance list, find the MinIO instance whose parameters you want to configure, and click the instance name.
 
-    ![点击某个名称](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/view01.png)
+    <!--screenshot-->
 
-2. 在左侧导航栏，点击`配置参数`。
+2. In the left navigation bar, click `Configuration parameters`.
 
-    ![点击配置参数](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/view02.png)
+    <!--screenshot-->
 
-3. 打开`编辑配置`，对 MinIO 的各项参数进行添加、删除、修改。
+3. Open `Edit Configuration` to add, delete, and modify various parameters of MinIO.
 
-    ![配置参数](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/view03.png)
+    <!--screenshot-->
 
-4. 点击`保存`，修改内容将立即生效。
+4. Click `Save`, the modified content will take effect immediately.

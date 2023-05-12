@@ -3,14 +3,14 @@ hide:
   - toc
 ---
 
-# 实例监控
+# instance monitoring
 
-本页说明如何从图表面板快速获取 Elasticsearch 有关的信息以及一些注意点和小提示。
+This page explains how to quickly get information about Elasticsearch from the chart panel, as well as some notes and tips.
 
-1. 在 Elasticsearch 实例列表中点击一个实例名称。
+1. Click an instance name in the list of Elasticsearch instances.
 
-    ![实例监控](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/monitor01.png)
+    <!--screenshot-->
 
-2. 在左侧导航栏点击`实例监控`，进入实例监控大屏。
+2. Click `Instance Monitoring` on the left navigation bar to enter the large screen of instance monitoring.
 
-    ![实例监控](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/monitor02.png)
+    <!--screenshot-->

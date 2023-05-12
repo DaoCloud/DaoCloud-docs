@@ -3,22 +3,22 @@ hide:
   - toc
 ---
 
-# 实例监控
+# instance monitoring
 
-MinIO 内置了 Prometheus 和 Grafana 监控模块。
+MinIO has built-in Prometheus and Grafana monitoring modules.
 
-1. 在实例列表页面中，找到想要查看监控信息的实例，点击该实例的名称。
+1. On the instance list page, find the instance whose monitoring information you want to view, and click the name of the instance.
 
-    ![点击某个名称](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/view01.png)
+    <!--screenshot-->
 
-2. 在左侧导航栏点击`实例监控`。
+2. Click `Instance Monitoring` on the left navigation bar.
 
-    ![点击实例监控](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/insight01.png)
+    <!--screenshot-->
 
     !!! note
 
-        如果提示监控组件异常，请按提示[安装 insight-agent 插件](../../../insight/user-guide/quickstart/install-agent.md)。
+        If it prompts that the monitoring component is abnormal, please follow the prompt [Install the insight-agent plug-in](../../../insight/user-guide/quickstart/install-agent.md).
 
-3. 查看实例的监控信息。点击红框里的信息符号可查看每个指标的含义说明。
+3. View the monitoring information of the instance. Click on the information symbol in the red box to view the description of the meaning of each indicator.
 
-    ![点击实例监控](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/insight02.png)
+    <!--screenshot-->

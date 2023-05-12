@@ -3,86 +3,86 @@ hide:
   - toc
 ---
 
-# 基本概念
+# basic concept
 
-本页的词汇表定义了 MySQL 背后的核心概念，以帮助您构建 MySQL 工作原理的思维模型，并了解文档在使用某些术语时所指代的内容。
+The glossary on this page defines the core concepts behind MySQL to help you build a mental model of how MySQL works and understand what the documentation refers to when it uses certain terms.
 
-- ACID 合规
+- ACID compliance
 
-    ACID 合规性是 Atomiciy、Consistency、Isolation 和 Durability 这 4 个单词的首字母缩写，是一组由原子性、一致性、隔离性和持久性组成的数据库特性，可确保高效完成数据库事务。
+    ACID compliance is an acronym for the four words Atomiciy, Consistency, Isolation, and Durability, and is a set of database characteristics consisting of atomicity, consistency, isolation, and durability that ensure efficient completion of database transactions.
 
-- ACL
+- ACLs
 
-    访问控制列表或 ACL 是控制对系统资源访问的用户权限列表。
+    Access Control Lists or ACLs are lists of user permissions that control access to system resources.
 
-- Connection Status Metric（连接状态指标）
+- Connection Status Metric (connection status indicator)
 
-    连接状态指标是衡量创建、连接和运行的线程数与数据库连接限制相关的指标。
+    The connection state metric is a measure of the number of threads created, connected, and running relative to the database connection limit.
 
-- DBaaS（数据库即服务）
+- DBaaS (Database as a Service)
   
-    数据库即服务、托管数据库服务，简称为 DBaaS，这是一种云服务，允许用户在订阅的基础上访问云数据库系统，而无需拥有个人云数据系统。
+    Database as a Service, Managed Database Service, or DBaaS for short, is a cloud service that allows users to access cloud database systems on a subscription basis without owning a personal cloud data system.
 
-- E2EE
+-E2EE
 
-    英文全称为 End-to-end encryption，即端到端加密，或简称为 E2EE，是一种通信系统，它为所有人加密消息和消息服务，但接收消息的用户和发送消息的用户除外。
+    The English full name is End-to-end encryption, which is end-to-end encryption, or E2EE for short, is a communication system that encrypts messages and message services for everyone, except the user who receives the message and the user who sends the message.
 
-- Failover（故障转移）
+- Failover
 
-    故障转移是一种高可用性 (HA) 机制，可监控服务器的故障并在主服务器发生故障时将流量或操作重新路由到备用服务器。
+    Failover is a high availability (HA) mechanism that monitors servers for failure and reroutes traffic or operations to a standby server if the primary server fails.
 
-- High Availability（高可用性）
+- High Availability
 
-    高可用性 (HA) 是一种基础架构设计方法，专注于减少停机时间和消除单点故障。
+    High Availability (HA) is an infrastructure design approach focused on reducing downtime and eliminating single points of failure.
 
-- Hot Standby（热备）
+- Hot Standby
 
-    热备用是侦听主节点何时发生故障以便备用节点取代其位置的行为。
+    Hot standby is the act of listening for when a primary node fails so that a standby node can take its place.
 
-- Index vs. Sequential Reads Metric（索引与顺序读取指标）
+- Index vs. Sequential Reads Metric (index and sequential read indicators)
 
-    索引与顺序读取指标图显示了使用索引的读取占主服务器上所有数据库（模式）的读取总数的比例。
+    The Index vs. Sequential Reads metric graph shows reads using indexes as a proportion of the total reads for all databases (schemas) on the master.
 
-- LUKS Disk Encryption（LUKS 磁盘加密）
+- LUKS Disk Encryption (LUKS Disk Encryption)
 
-    Linux 统一密钥设置磁盘加密 (LUKS) 是 Linux 存储设备的开源磁盘加密规范。
+    Linux Unified Key Set Disk Encryption (LUKS) is an open source disk encryption specification for Linux storage devices.
 
-- Machine Type（机器类型）
+- Machine Type
 
-    机器类型是用于虚拟机 (VM) 实例的一组虚拟化硬件资源。
+    A machine type is a group of virtualized hardware resources for a virtual machine (VM) instance.
 
-- Node Plan（节点计划）
+- Node Plan (node ​​plan)
 
-    节点计划、数据库或集群配置是节点规格的硬件计划。
+    A node plan, database or cluster configuration is a hardware plan for a node specification.
 
-- Operations Throughput Metric（运营吞吐量指标）
+- Operations Throughput Metric
 
-    操作吞吐量指标是对服务器上所有数据库的获取、插入、更新和删除操作的吞吐量的度量。
+    The Operational Throughput metric is a measure of the throughput of get, insert, update, and delete operations for all databases on the server.
 
-- Point-In-Time-Recovery（恢复时间点）
+- Point-In-Time-Recovery (recovery point in time)
 
-    恢复时间点（简称 PITR）确保进行自动备份，以便恢复在服务器先前状态下创建的数据。
+    Point-in-time recovery, or PITR for short, ensures that automatic backups are made so that data created in a previous state of the server can be recovered.
 
-- Port（端口）
+- Port
 
-    端口是网络连接的通信端点。使用每个传输协议所用的端口号来标识一个端口。
+    A port is a communication endpoint for a network connection. A port is identified by the port number used by each transport protocol.
 
-- Read-Only Node（只读节点）
+- Read-Only Node (read-only node)
 
-    只读节点是集群主节点的副本。
+    Read-only nodes are replicas of the cluster master.
 
-- SQL Mode（SQL 模式）
+- SQL Mode
 
-    SQL 模式或 sql_mode 是一个 MySQL 系统变量，用于配置 MySQL 服务器的操作特性。
+    SQL mode or sql_mode is a MySQL system variable used to configure the operational characteristics of the MySQL server.
 
-- SSL Certificate（SSL 证书）
+- SSL Certificate
 
-    SSL 证书是描述网站身份的数字凭证。
+    An SSL certificate is a digital certificate that describes a website's identity.
 
-- Standby Node（备用节点）
+- Standby Node
 
-    备用节点是在热备模式时设为空闲待用的节点。
+    A standby node is a node that is set to be idle while in hot standby mode.
 
-- Tag（标记）
+- Tag
 
-    标记是与资源相关联的关键字，有助于管理资源所有权并组织对资源的查找和操作。
+    Tags are keywords associated with resources that help manage resource ownership and organize finding and manipulating resources.

@@ -3,16 +3,16 @@ hide:
   - toc
 ---
 
-# 适用场景
+# Applicable scene
 
-Elasticsearch 在速度和可扩展性方面都表现出色，而且还能够索引多种类型的内容，这意味着其可用于多种使用场景：
+Elasticsearch excels in speed and scalability, and its ability to index many types of content means it can be used in a variety of usage scenarios:
 
-- 应用程序搜索
-- 网站搜索
-- 企业搜索
-- 日志处理和分析
-- 基础设施指标和容器监测
-- 应用程序性能监测
-- 地理空间数据分析和可视化
-- 安全分析
-- 业务分析
+- App search
+- Site search
+- Enterprise search
+- Log processing and analysis
+- Infrastructure metrics and container monitoring
+- Application performance monitoring
+- Geospatial data analysis and visualization
+- Safety analysis
+- business analysis

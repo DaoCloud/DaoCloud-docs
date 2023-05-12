@@ -3,14 +3,14 @@ hide:
   - toc
 ---
 
-# 查看消息队列
+# Check the message queue
 
-本节说明如何查看 Kafka 消息队列。
+This section explains how to view the Kafka message queue.
 
-1. 在消息队列页面中，点击某个名称。
+1. On the Message Queue page, click a name.
 
-    ![点击某个名称](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/view01.png)
+    <!--screenshot-->
 
-2. 进入消息队列概览，查看基本信息、访问设置、资源配额和 Pod 列表等信息。
+2. Enter the message queue overview to view information such as basic information, access settings, resource quotas, and Pod lists.
 
-    ![查看信息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/view02.png)
+    <!--screenshot-->

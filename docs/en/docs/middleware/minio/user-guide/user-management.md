@@ -1,67 +1,67 @@
-# MinIO 的身份管理
+# Identity management for MinIO
 
-DCE 5.0 提供的 MinIO 服务自带网页控制台（Web Console）。了解 MinIO 的身份管理（identity management）有助于快速了解如何在 MinIO 内安全有效地管理子账号。
+The MinIO service provided by DCE 5.0 comes with a web console (Web Console). Understanding MinIO's identity management (identity management) helps to quickly understand how to manage sub-accounts safely and effectively within MinIO.
 
-本文简单介绍 MinIO 的身份管理规则，更多详细说明可参考 [MinIO 的官方文档](http://docs.minio.org.cn/minio/baremetal/index.html)。
+This article briefly introduces MinIO's identity management rules. For more details, please refer to [MinIO's official documentation](http://docs.minio.org.cn/minio/baremetal/index.html).
 
-## 用户
+## users
 
-默认情况下，MinIO 使用内置的 IDentity Provider（IDP）来完成身份管理。除了 IDP，还支持第三方 [OIDC](http://docs.minio.org.cn/minio/baremetal/security/openid-external-identity-management/external-authentication-with-openid-identity-provider.html#minio-external-identity-management-openid) 和 [LDAP](http://docs.minio.org.cn/minio/baremetal/security/ad-ldap-external-identity-management/external-authentication-with-ad-ldap-identity-provider.html#minio-external-identity-management-ad-ldap) 的方式。
+By default, MinIO uses the built-in IDentity Provider (IDP) for identity management. In addition to IDP, it also supports third-party [OIDC] (http://docs.minio.org.cn/minio/baremetal/security/openid-external-identity-management/external-authentication-with-openid-identity-provider.html #minio-external-identity-management-openid) and [LDAP](http://docs.minio.org.cn/minio/baremetal/security/ad-ldap-external-identity-management/external-authentication-with- ad-ldap-identity-provider.html#minio-external-identity-management-ad-ldap ).
 
-用户由一对 username 和 password 组成。在 MinIO 的语境中，username 又被称为 `access key`（注意与后面 service account 层级的 access key 区分开来），password 又称为 `secret key`。
+A user consists of a username and password pair. In the context of MinIO, username is also called `access key` (note that it is distinguished from the access key at the service account level later), and password is also called `secret key`.
 
-### root 用户
+### root user
 
-在启动 MinIO 时，可以通过环境变量的方式设置 MinIO 集群中 root 用户的账号密码，分别是以下两个变量：
+When starting MinIO, you can set the account password of the root user in the MinIO cluster through environment variables, which are the following two variables:
 
 - MINIO_ROOT_USER
 - MINIO_ROOT_PASSWORD
 
-root 用户拥有所有资源的所有操作权限。
+The root user has all operation permissions on all resources.
 
-> 注意：如果要变更 root 用户，需要重启 MinIO 集群中所有的节点。
+> Note: If you want to change the root user, you need to restart all nodes in the MinIO cluster.
 
-### 普通用户
+### general user
 
-支持通过三种方式创建普通用户：
+There are three ways to create common users:
 
-- Web Console，在 UI 界面中通过表单进行创建
-- mc，使用 CLI 命令行创建
-- Operator CR，使用 CR 进行创建
+- Web Console, created through the form in the UI interface
+- mc, created using the CLI command line
+- Operator CR, use CR for creation
 
-#### Console 创建
+#### Console Creation
 
-1. 在 DCE 5.0 的 MinIO 实例详情页面，点击访问地址，使用右侧的用户名和密码即可登录该实例的 Console 控制台。
+1. On the MinIO instance details page of DCE 5.0, click the access address, and use the user name and password on the right to log in to the console of the instance.
 
-    ![登录 Console](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/insight03.png)
+    <!--screenshot-->
 
-2. 登录 Console 控制台之后根据下图所示，创建用户。
+2. After logging in to the Console console, create a user according to the figure below.
 
-    ![通过 Console 创建普通用户](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/miniouser01.png)
+    <!--screenshot-->
 
-#### mc 创建
+#### mc create
 
-> 需要事先[安装 `mc` 命令](https://min.io/docs/minio/linux/reference/minio-mc.html?ref=docs#install-mc)，并配置连接到 MinIO 实例
+> Need to [install the `mc` command](https://min.io/docs/minio/linux/reference/minio-mc.html?ref=docs#install-mc) in advance and configure the connection to the MinIO instance
 
-创建用户：
+Create user:
 
-> `ALIAS` 指 MinIO 实例的别名
+> `ALIAS` refers to the alias name of the MinIO instance
 
 ```bash
 mc admin user add ALIAS ACCESSKEY SECRETKEY
 ```
 
-授予权限：
+Granted permission:
 
-> `USERNAME` 指 MinIO 用户的用户名，即 `ACCESSKEY`
+> `USERNAME` refers to the username of the MinIO user, which is `ACCESSKEY`
 
 ```bash
 mc admin policy set ALIAS readwrite user=USERNAME
 ```
 
-#### operator CR 创建
+#### operator CR Create
 
-如果是通过 cr 安装 MinIO，也可以通过 users 字段来指定普通用户的 secret：
+If you install MinIO through cr, you can also specify the secret of a common user through the users field:
 
 ```go
 type TenantSpec struct {
@@ -89,58 +89,58 @@ type TenantSpec struct {
 }
 ```
 
-### 服务账号
+### Service account
 
-服务账号 (Service Account) 通常使用用户登录 console 或者通过 mc 命令对 MinIO 进行管理操作。但如果应用程序需要访问 MinIO，则通常使用 Service Account（这是比较正式的叫法，某些上下文中也称之为 access key）。
+The service account (Service Account) usually uses the user to log in to the console or manage MinIO through the mc command. But if the application needs to access MinIO, it usually uses a Service Account (this is a more formal name, and it is also called an access key in some contexts).
 
-一个用户可以创建多个 Service Account。
+A user can create multiple Service Accounts.
 
-> 注意：无法通过 Service Account 登录 MinIO console，这也是它与用户最大的不同之处。
+> Note: MinIO console cannot be logged in through Service Account, which is the biggest difference between it and users.
 
-#### Console 创建
+#### Console Creation
 
-![通过 console 创建 service account](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/miniouser02.png)
+<!--screenshot-->
 
-#### mc 命令创建
+#### mc command creation
 
 ```bash
-mc [GLOBALFLAGS] admin user svcacct add     \
-                            [--access-key]  \
-                            [--secret-key]  \
-                            [--policy]      \
+mc [GLOBALFLAGS] admin user svcacct add \
+                            [--access-key]\
+                            [--secret-key]\
+                            [--policy]\
                             ALIAS
                             USER
 ```
 
-有关 MinIO 用户的详细说明，可参考 [User Management](http://docs.minio.org.cn/minio/baremetal/security/minio-identity-management/user-management.html)
+For details about MinIO users, please refer to [User Management](http://docs.minio.org.cn/minio/baremetal/security/minio-identity-management/user-management.html)
 
-## 用户组
+## user group
 
-用户组，顾名思义即多个用户形成的集合。通过用户组结合授权策略可以批量管理一组用户的权限。通过授权策略可以为用户组分配资源权限，该组中的用户会继承用户组的资源权限。
+A user group, as the name implies, is a collection of multiple users. By combining user groups with authorization policies, the permissions of a group of users can be managed in batches. Authorization policies can be used to assign resource permissions to user groups, and users in this group will inherit the resource permissions of the user group.
 
-MinIO 用户的权限分为两部分：用户原本具有的权限 + 从所在用户组继承而来的权限。在 MinIO 语境中，用户仅具有其明确被授予或从用户组继承而来的授权。如果用户没有明确获得（被直接授予或继承）某一资源的权限，则无法访问该资源。
+The permissions of MinIO users are divided into two parts: the original permissions of the user + the permissions inherited from the user group. In the context of MinIO, users only have the authorizations they are explicitly granted or inherited from usergroups. If a user has not been explicitly granted (either directly granted or inherited) permissions to a resource, they cannot access that resource.
 
-有关 MinIO 用户组的详细说明，可参考 [Group Management](http://docs.minio.org.cn/minio/baremetal/security/minio-identity-management/group-management.html)
+For details about MinIO user groups, please refer to [Group Management](http://docs.minio.org.cn/minio/baremetal/security/minio-identity-management/group-management.html)
 
-## 授权策略
+## Authorization Policy
 
-MinIO 使用基于策略的访问控制 (PBAC)来管理用户对哪些资源具有哪些权限。每条策略通过规定一些动作或条件来限制用户和用户组具有的权限。
+MinIO uses policy-based access control (PBAC) to manage which permissions users have on which resources. Each policy limits the permissions that users and user groups have by specifying some actions or conditions.
 
-### 内置策略
+### Built-in Strategies
 
-MinIO 内置了四种策略可以直接分配给用户或用户组。为用户/用户组授权时需要使用 `mc admin policy set` 命令，具体可参考 [mc admin policy](http://docs.minio.org.cn/minio/baremetal/reference/minio-cli/minio-mc-admin/mc-admin-policy.html#mc-admin-policy-set)
+MinIO has four built-in policies that can be directly assigned to users or user groups. When authorizing users/user groups, you need to use the `mc admin policy set` command. For details, please refer to [mc admin policy](http://docs.minio.org.cn/minio/baremetal/reference/minio-cli/minio- mc-admin/mc-admin-policy.html#mc-admin-policy-set)
 
-- readonly：对 MinIO 副本中的所有存储桶和存储对象具有 **只读** 权限
+- readonly: **read-only** permission to all buckets and storage objects in the MinIO replica
 
-- readwrite：对 MinIO 副本中的所有存储桶和存储对象具有 **读写** 的权限
+- readwrite: **Read and write** permissions on all buckets and storage objects in the MinIO replica
 
-- diagnostics：对 MinIO 副本具有 **诊断** 权限
+- diagnostics: **Diagnostics** permissions on the MinIO copy
 
-- writeonly：对 MinIO 副本中的所有存储桶和存储对象具有 **只写** 权限
+- writeonly: have **write-only** permissions to all buckets and storage objects in MinIO replicas
 
-### 策略文件示例
+### Policy file example
 
- MinIO 授权策略文件的模式和[亚马逊云 IAM Policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) 相同。
+ The mode of the MinIO authorization policy file is the same as [Amazon Cloud IAM Policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html).
 
 ```
 {
@@ -163,4 +163,4 @@ MinIO 内置了四种策略可以直接分配给用户或用户组。为用户/�
 ```
 
 
-有关 MinIO 授权策略的详细说明，可参考 [Policy Management](http://docs.minio.org.cn/minio/baremetal/security/minio-identity-management/policy-based-access-control.html)
+For a detailed description of the MinIO authorization policy, please refer to [Policy Management](http://docs.minio.org.cn/minio/baremetal/security/minio-identity-management/policy-based-access-control.html)

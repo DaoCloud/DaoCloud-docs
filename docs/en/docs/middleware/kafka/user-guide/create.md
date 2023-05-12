@@ -3,38 +3,38 @@ hide:
   - toc
 ---
 
-# 创建 Kafka
+# Create Kafka
 
-在 Kafka 消息队列中，执行以下操作创建 Kafka 实例。
+In the Kafka message queue, perform the following operations to create a Kafka instance.
 
-1. 在右上角点击`新建实例`。
+1. Click `New Instance` in the upper right corner.
 
-    ![新建实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/create01.png)
+    <!--screenshot-->
 
-2. 在`创建 Kafka 实例`页面中，设置基本信息后，点击`下一步`。
+2. On the `Create Kafka Instance` page, after setting the basic information, click `Next`.
 
-    ![设置基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/create02.png)
+    <!--screenshot-->
 
-3. 配置规格后，点击`下一步`。
+3. After configuring the specifications, click `Next`.
 
-    - 版本：Kafka 的版本号，当前仅支持 Kafka 3.1.0。
-    - 副本数：支持 1、3、5、7 副本数。
-    - 资源配额：根据实际情况选择规则。
-    - 存储卷：选择 Kafka 实例的存储卷和储存空间总量。
+    - Version: The version number of Kafka, currently only supports Kafka 3.1.0.
+    - Number of copies: 1, 3, 5, 7 copies are supported.
+    - Resource Quota: Select the rules according to the actual situation.
+    - Storage Volume: Select the storage volume and the total amount of storage space for the Kafka instance.
 
-    ![配置规格](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/create03.png)
+    <!--screenshot-->
 
-4. 服务设置后，点击`下一步`。
+4. After setting up the service, click `Next`.
 
-    - 访问方式：可以选择集群内访问还是 Nodeport 访问。
-    - 服务设置：设置连接 Kafka 实例的用户名、密码。
+    - Access method: You can choose intra-cluster access or Nodeport access.
+    - Service Settings: Set the user name and password for connecting to the Kafka instance.
 
-    ![服务设置](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/create04.png)
+    <!--screenshot-->
 
-5. 确认实例配置信息无误，点击`确认`完成创建。
+5. Confirm that the instance configuration information is correct, and click `Confirm` to complete the creation.
 
-    ![点击确认](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/create05.png)
+    <!--screenshot-->
 
-6. 在实例列表页查看实例是否创建成功。刚创建的实例状态为`未就绪`，等几分钟后该状态变为`运行中`。
+6. On the instance list page, check whether the instance is successfully created. The status of the newly created instance is `Not Ready`, and it will change to `Running` after a few minutes.
 
-    ![查看状态](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/create06.png)
+    <!--screenshot-->

@@ -3,18 +3,18 @@ hide:
   - toc
 ---
 
-# 什么是 PostgreSQL
+# What is PostgreSQL
 
-PostgreSQL 是一种关系型数据库管理系统（RDBMS），它采用了对象-关系模型（ORM）并遵循 ACID（原子性，一致性，隔离性和持久性）属性。PostgreSQL 在功能上与其他流行的关系数据库管理系统（如 MySQL 和 Oracle ）相当，并且具有可扩展性，高可靠性和数据完整性等特点。它是一个开源项目，因此可以自由地使用、修改和分发。PostgreSQL 广泛用于大型企业应用程序中，包括 Web 应用程序、金融服务、科学研究、生命科学和物联网（IoT）等领域。
+PostgreSQL is a relational database management system (RDBMS) that employs an object-relational model (ORM) and adheres to ACID (atomicity, consistency, isolation, and durability) properties. PostgreSQL is functionally equivalent to other popular relational database management systems such as MySQL and Oracle, and features scalability, high reliability, and data integrity. It is an open source project, so it can be used, modified and distributed freely. PostgreSQL is widely used in large enterprise applications, including web applications, financial services, scientific research, life sciences, and the Internet of Things (IoT).
 
-1. Web 应用程序：PostgreSQL是一个出色的Web应用程序数据库，因为它支持高并发请求，并具有可扩展性、安全性和可靠性。
+1. Web applications: PostgreSQL is an excellent database for web applications because it supports high concurrent requests and is scalable, secure, and reliable.
 
-2. 大型企业应用程序：PostgreSQL适合处理大量数据和复杂的数据关系。它还支持事务处理和数据完整性，这对于企业级应用程序非常重要。
+2. Large-scale enterprise applications: PostgreSQL is suitable for processing large amounts of data and complex data relationships. It also supports transaction processing and data integrity, which is very important for enterprise-level applications.
 
-3. 科学研究：由于PostgreSQL能够处理大量数据，在科学领域中广泛使用，包括天文学、气象学和生物学等研究领域。
+3. Scientific research: Because PostgreSQL can handle large amounts of data, it is widely used in scientific fields, including research fields such as astronomy, meteorology, and biology.
 
-4. 物联网（IoT）：物联网应用程序需要快速有效地处理数据，而PostgreSQL支持海量数据存储和高效查询，因此在物联网领域被广泛应用。
+4. Internet of Things (IoT): IoT applications need to process data quickly and efficiently, and PostgreSQL supports massive data storage and efficient query, so it is widely used in the field of IoT.
 
-5. 移动应用程序：PostgreSQL与移动应用程序开发框架结合使用，例如React Native或Flutter，可以使移动应用程序快速连接到后端数据库，并实现高效数据存储和检索。
+5. Mobile applications: PostgreSQL combined with mobile application development frameworks, such as React Native or Flutter, can enable mobile applications to quickly connect to back-end databases and achieve efficient data storage and retrieval.
 
-[创建 PostgreSQL 实例](../user-guide/create.md){ .md-button .md-button--primary }
+[Create a PostgreSQL instance](../user-guide/create.md){ .md-button .md-button--primary }

@@ -3,32 +3,32 @@ hide:
   - toc
 ---
 
-# 功能说明
+# Function Description
 
-Elasticsearch 以 JSON 文档的形式存储数据。
-每个文档都会在一组键（字段或属性的名称）与它们对应的值（字符串、数字、布尔值、日期、数值组、地理位置或其他类型的数据）之间建立联系。
+Elasticsearch stores data in the form of JSON documents.
+Each document establishes a relationship between a set of keys (names of fields or properties) and their corresponding values ​​(strings, numbers, Booleans, dates, groups of numbers, geographic locations, or other types of data).
 
-Elasticsearch 使用的是一种名为倒排索引的数据结构，这一结构的设计可以允许十分快速地进行全文本搜索。
-倒排索引会列出在所有文档中出现的每个特有词汇，并且可以找到包含每个词汇的全部文档。
+Elasticsearch uses a data structure called an inverted index, which is designed to allow very fast full-text searches.
+An inverted index lists every unique term that occurs in all documents, and finds all documents that contain each term.
 
-在索引过程中，Elasticsearch 会存储文档并构建倒排索引，这样用户便可以近实时地对文档数据进行搜索。
-索引过程是在索引 API 中启动的，通过此 API 您既可向特定索引中添加 JSON 文档，也可更改特定索引中的 JSON 文档。
+During the indexing process, Elasticsearch stores the documents and builds an inverted index so that users can search the document data in near real time.
+The indexing process is initiated in the Indexing API, which allows you to both add and change JSON documents in a particular index.
 
-Elasticsearch 支持的通用功能特性如下：
+The general features supported by Elasticsearch are as follows:
 
-| 分类       | 特性                                                         | 说明                                                 |
-| ---------- | ------------------------------------------------------------ | ---------------------------------------------------- |
-| 分布式集群 | 集群部署集群监控                                             | 提供运维平台页面监控集群、节点、索引的运行状况       |
-| 搜索管理   | 索引配置管理结构定义、索引重建                               | 搜索管理平台提供配置功能                             |
-| 全文搜索   | 搜索功能排序功能统计分析功能                                 | 通过 RESTful API 方式提供                            |
-| 数据采集   | ElasticSearch 数据导入 APIMaxcompute 数据导入工具全量、增量采集方式 | 丰富的原生数据采集接口，集成 Maxcompute 数据导入工具 |
-| 服务鉴权   | 服务级别的用户鉴权机制                                       | 统一的用户鉴权设置                                   |
+| Category | Features | Description |
+| ---------- | -------------------------------------- ---------------------- | --------------------------- ------------------------- |
+| Distributed Clusters | Cluster Deployment Cluster Monitoring | Provide an operation and maintenance platform page to monitor the health status of clusters, nodes, and indexes |
+| Search management | Index configuration management structure definition, index reconstruction | Search management platform provides configuration functions |
+| Full-text search | Search function, sorting function, statistical analysis function | Provided through RESTful API |
+| Data collection | ElasticSearch data import APIMaxcompute data import tool full and incremental collection methods | Abundant native data collection interfaces, integrated with Maxcompute data import tool |
+| Service Authentication | User Authentication Mechanism at Service Level | Unified User Authentication Settings |
 
-在 DCE 5.0 中部署 Elasticsearch 后，还将支持以下特性：
+After Elasticsearch is deployed in DCE 5.0, the following features will also be supported:
 
-- 支持 Elasticsearch 专有节点、热数据节点、冷数据节点、数据节点角色部署
-- 集成 Kibana
-- 基于 elasticsearch-exporter 暴露指标
-- 基于 Grafana Operator 集成 Elasticsearch Dashboard，展示监控数据
-- 使用 ServiceMonitor 对接 Prometheus 抓取指标
-- 基于[工作空间 Workspace](../../../ghippo/user-guide/workspace/workspace.md) 多租户化管理
+- Support Elasticsearch dedicated node, hot data node, cold data node, data node role deployment
+-Integrate Kibana
+- Exposure indicators based on elasticsearch-exporter
+- Integrate Elasticsearch Dashboard based on Grafana Operator to display monitoring data
+- Use ServiceMonitor to interface with Prometheus to capture indicators
+- Multi-tenancy management based on [Workspace Workspace](../../../ghippo/user-guide/workspace/workspace.md)

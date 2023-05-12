@@ -1,26 +1,26 @@
-# 为 RabbitMQ 添加自定义插件
+# Add custom plugins for RabbitMQ
 
-## 问题描述
+## Problem Description
 
-RabbitMQ 有很多插件，但是在安装 RabbitMQ 时，只能安装默认的插件，如果需要安装其他插件，需要在安装完成后，手动安装。
+RabbitMQ has many plug-ins, but when installing RabbitMQ, only the default plug-ins can be installed. If you need to install other plug-ins, you need to install them manually after the installation is complete.
 
-## 解决方案
+## solution
 
-在创建的 RabbitMQ 的 yaml 中，增加 initContainer，用于下载插件，然后将插件挂在到 RabbitMQ 的插件目录中，最后在 rabbitmq 的 config 中，增加了插件的配置，并在启用的插件模块中启用插件。
+In the yaml of RabbitMQ created, add initContainer to download the plugin, then hang the plugin in the plugin directory of RabbitMQ, and finally add the configuration of the plugin in the config of rabbitmq, and enable the plugin in the enabled plugin module .
 
-## 示例
+## Example
 
-这里以 rabbitmq_message_timestamp-3.8.0.ez 为例，主要做的内容如下：
+Here, taking rabbitmq_message_timestamp-3.8.0.ez as an example, the main content is as follows:
 
-- 增加了 initContainer，用于下载插件
-- 然后将插件挂在到 RabbitMQ 的插件目录中
-- 在 rabbitmq 的 config 中，增加了插件的配置
-- 并在启用的插件模块中启用插件
+- Added initContainer for downloading plugins
+- Then hang the plugin in the plugin directory of RabbitMQ
+- In the config of rabbitmq, the configuration of the plug-in is added
+- and enable the plugin in the enabled plugins module
 
-> 修改示例实例代码
+> Modify the sample instance code
 
 ```yaml
-- 
+-
 
 ```yaml
 apiVersion: rabbitmq.com/v1beta1
@@ -39,11 +39,11 @@ spec:
             port: 5672
             protocol: TCP
             targetPort: 5672
-          - name: management
+          -name: management
             port: 15672
             protocol: TCP
             targetPort: 15672
-          - name: prometheus
+          -name: prometheus
             port: 15692
             protocol: TCP
             targetPort: 15692
@@ -51,30 +51,30 @@ spec:
       spec:
         template:
           spec:
-          # 以下为增加部分
-+           volumes:
-+             - name: community-plugins
-+               emptyDir: { }
-+           initContainers:
-+             - command:
-+                 - sh
-+                 - -c
-+                 - curl -L -v https://github.com/rabbitmq/rabbitmq-message-timestamp/releases/download/v3.8.0/rabbitmq_message_timestamp-3.8.0.ez --output rabbitmq_message_timestamp-3.8.0.ez
-+               image: docker.m.daocloud.io/curlimages/curl:7.70.0
-+               imagePullPolicy: IfNotPresent
-+               name: copy-community-plugins
-+               resources:
-+                 limits:
-+                   cpu: 100m
-+                   memory: 500Mi
-+                 requests:
-+                   cpu: 100m
-+                   memory: 500Mi
-+               terminationMessagePolicy: FallbackToLogsOnError
-+               volumeMounts:
-+                 - mountPath: /community-plugins/
-+                   name: community-plugins
-        # 以上为增加部分
+          # The following is the added part
++ volumes:
++ - name: community-plugins
++ emptyDir: { }
++ initContainers:
++ - command:
++ -sh
++ - -c
++ - curl -L -v https://github.com/rabbitmq/rabbitmq-message-timestamp/releases/download/v3.8.0/rabbitmq_message_timestamp-3.8.0.ez --output rabbitmq_message_timestamp-3.8.0.ez
++ image: docker.m.daocloud.io/curlimages/curl:7.70.0
++ imagePullPolicy: IfNotPresent
++ name: copy-community-plugins
++ resources:
++ limits:
++ cpu: 100m
++ memory: 500Mi
++ requests:
++ cpu: 100m
++ memory: 500Mi
++ terminationMessagePolicy: FallbackToLogsOnError
++ volumeMounts:
++ - mountPath: /community-plugins/
++ name: community-plugins
+        # The above is the added part
             containers:
               - name: rabbitmq
                 ports:
@@ -88,18 +88,18 @@ spec:
                     name: prometheus
                     protocol: TCP
                 resources: {}
-                # 以下为增加部分
-+               volumeMounts:
-+                 - mountPath: /opt/rabbitmq/community-plugins
-+                   name: community-plugins
-                # 以上为增加部分
+                # The following is the added part
++ volumeMounts:
++ - mountPath: /opt/rabbitmq/community-plugins
++ name: community-plugins
+                # The above is the added part
   persistence:
     storage: 1Gi
     storageClassName: hwameistor-storage-lvm-hdd
   rabbitmq:
-+   envConfig: |
-+     PLUGINS_DIR=/opt/rabbitmq/plugins:/opt/rabbitmq/community-plugins
-      # 以上一行为增加部分
++ envConfig: |
++ PLUGINS_DIR=/opt/rabbitmq/plugins:/opt/rabbitmq/community-plugins
+      # The above line adds part
     additionalConfig: |
 
       log.console.level = info
@@ -110,7 +110,7 @@ spec:
       disk_free_limit.relative = 1.0
       collect_statistics_interval = 10000
     additionalPlugins:
-+     - rabbitmq_message_timestamp  # 增加次插件启用
++ - rabbitmq_message_timestamp # Increase the number of times the plugin is enabled
       - rabbitmq_peer_discovery_k8s
       - rabbitmq_prometheus
       - rabbitmq_management
@@ -129,8 +129,8 @@ spec:
   tls: {}
 ```
 
-这里的插件采用 github 官方作为下载地址，生成使用，建议自行维护插件位置，以免下载失败。
+The plug-in here uses the official github as the download address, and it is generated and used. It is recommended to maintain the plug-in location by yourself to avoid download failure.
 
-## 注意事项
+## Precautions
 
-目前支持手工在 YAML 编辑自定义资源的方式增加对应的插件，存在一定的操作风险性，建议谨慎操作。
+Currently, it is supported to manually edit custom resources in YAML to add corresponding plug-ins. There are certain operational risks, and it is recommended to operate with caution.

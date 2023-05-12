@@ -3,37 +3,37 @@ hide:
   - toc
 ---
 
-# 数据服务介绍
+# Data service introduction
 
-DCE 5.0 针对实际应用场景，精选了一些经典的数据服务中间件，通过前后端开发，能够满足各类应用场景的开发和维护。
+DCE 5.0 selects some classic data service middleware for actual application scenarios, and through front-end and back-end development, it can meet the development and maintenance of various application scenarios.
 
-用户可以按需安装/启用以下数据服务中间件，即插即用：
+Users can install/enable the following data service middleware on demand, plug and play:
 
-- [Elasticsearch 搜索服务](elasticsearch/intro/what.md)：目前首选的全文搜索引擎
-- [Kafka 消息队列](./kafka/intro/what.md)：常用于消息传输的数据管道
-- [MinIO 对象存储](./minio/intro/what.md)：一款非常热门的轻量对象存储方案
-- [MySQL 数据库](mysql/intro/what.md)：最流行的开源关系型数据库之一
-- [RabbitMQ 消息队列](rabbitmq/intro/what.md)：常用于交易数据的传输管道
-- [Redis 缓存服务](./redis/intro/what.md)：一种内存数据库
-- [PostgreSQL 数据库](./postgresql/intro/what.md)：最流行的开源关系型数据库之一
+- [Elasticsearch Search Service](elasticsearch/intro/what.md): Currently the preferred full-text search engine
+- [Kafka message queue](./kafka/intro/what.md): data pipeline commonly used for message transmission
+- [MinIO Object Storage](./minio/intro/what.md): A very popular lightweight object storage solution
+- [MySQL Database](mysql/intro/what.md): One of the most popular open source relational databases
+- [RabbitMQ message queue](rabbitmq/intro/what.md): a transmission pipeline commonly used for transaction data
+- [Redis Cache Service](./redis/intro/what.md): an in-memory database
+- [PostgreSQL database](./postgresql/intro/what.md): One of the most popular open source relational databases
 
-## 数据服务学习路径
+## Data service learning path
 
-上述几个数据服务中间件的学习路径大致相同，此处以 RabbitMQ 为例，简单说明学习路径。
+The learning paths of the above data service middleware are roughly the same. Here we take RabbitMQ as an example to briefly explain the learning paths.
 
 !!! info
 
-    在下方流程流程图中点击相应文字可以直接跳转到对应的操作指南页面。
+    Click the corresponding text in the flow chart below to jump directly to the corresponding operation guide page.
 
 ```mermaid
 graph TD
     
-    B(选择工作空间) --> C{部署/创建实例}
-    C -.->D[更新/删除实例]
-    C -.->E[实例概览]
-    C -.->F[实例监控]
-    C -.->G[数据迁移]
-    C -.->H[卸载中间件]
+    B(select workspace) --> C{deploy/create instance}
+    C -.-> D [update/delete instance]
+    C -.->E [instance overview]
+    C -.->F [instance monitoring]
+    C -.->G[data migration]
+    C -.->H[uninstall middleware]
     
     click B "https://docs.daocloud.io/middleware/rabbitmq/user-guide/login/"
     click C "https://docs.daocloud.io/middleware/rabbitmq/user-guide/create/"

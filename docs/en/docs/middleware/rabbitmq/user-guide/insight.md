@@ -3,27 +3,27 @@ hide:
   - toc
 ---
 
-# 实例监控
+# instance monitoring
 
-RabbitMQ 内置了 Prometheus 和 Grafana 监控模块。
+RabbitMQ has built-in Prometheus and Grafana monitoring modules.
 
-1. 在消息队列页面中，点击某个名称。
+1. On the Message Queue page, click a name.
 
-    ![点击某个名称](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/view01.png)
+    <!--screenshot-->
 
-2. 在左侧导航栏，点击`实例监控`，可以接入监控模块。
+2. In the left navigation bar, click `Instance Monitoring` to access the monitoring module.
 
-    ![实例监控](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/insight.png)
+    <!--screenshot-->
 
-各项监控指标如下。
+The monitoring indicators are as follows.
 
-| Panel 名      | 指标名称      | 说明                                |
-| ------------ | --------- | --------------------------------- |
-| connections  | 连接数       | 该指标用于统计 RabbitMQ 实例中的总连接数。          |
-| channels     | 通道数       | 该指标用于统计 RabbitMQ 实例中的总通道数。          |
-| queues       | 队列数       | 该指标用于统计 RabbitMQ 实例中的总队列数。          |
-| consumers    | 消费者数      | 该指标用于统计 RabbitMQ 实例中的总消费者数。         |
-| publish      | 生产速率      | 统计 RabbitMQ 实例中实时消息生产速率。            |
-| socket_used | Socket 连接数 | 该指标用于统计当前节点 RabbitMQ 所使用的 Socket 连接数。 |
-| CPU Usage    | CPU 使用量    | 该指标用于统计节点 CPU 使用量。                  |
-| Memory Usage | 内存使用量     | 该指标用于统计节点内存使用量。                   |
+| Panel Name | Indicator Name | Description |
+| ------------ | --------- | -------------------------- ------- |
+| connections | Connections | This metric is used to count the total number of connections in the RabbitMQ instance. |
+| channels | Number of channels | This metric is used to count the total number of channels in the RabbitMQ instance. |
+| queues | Number of queues | This metric is used to count the total number of queues in the RabbitMQ instance. |
+| consumers | Number of consumers | This indicator is used to count the total number of consumers in the RabbitMQ instance. |
+| publish | Production Rate | Statistics on the real-time message production rate in a RabbitMQ instance. |
+| socket_used | Number of Socket connections | This indicator is used to count the number of Socket connections used by the current node RabbitMQ. |
+| CPU Usage | CPU Usage | This indicator is used to count the CPU usage of the node. |
+| Memory Usage | Memory Usage | This indicator is used to count the memory usage of the node. |

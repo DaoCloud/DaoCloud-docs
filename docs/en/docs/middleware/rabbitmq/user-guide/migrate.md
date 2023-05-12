@@ -1,99 +1,99 @@
-# RabbitMQ 数据迁移
+# RabbitMQ data migration
 
-RabbitMQ 的数据包括元数据（RabbitMQ 用户、vhost、队列、交换和绑定）和消息数据，其中消息数据存储在单独的消息存储库中。
+Data for RabbitMQ includes metadata (RabbitMQ users, vhosts, queues, exchanges, and bindings) and message data, where message data is stored in a separate message store.
 
-由于业务需要，要求把 `rabbitmq-cluster-a` 集群上的数据迁移到 `rabbitmq-cluster-b` 集群上。
+Due to business needs, it is required to migrate the data on the `rabbitmq-cluster-a` cluster to the `rabbitmq-cluster-b` cluster.
 
-## 数据迁移步骤
+## Data Migration Steps
 
 !!! info
 
-    从 V3.7.0 开始，RabbitMQ 将所有消息数据存储在 `msg_stores/vhosts` 目录中，并存储在每个 vhost 的子目录中。
-    每个 vhost 目录都以哈希命名，并包含一个带有 vhost 名称的 `.vhost` 文件，因此可以单独备份特定 vhost 的消息集。
-    了解[更多信息](https://www.rabbitmq.com/backup.html)。
+    Starting with V3.7.0, RabbitMQ stores all message data in the `msg_stores/vhosts` directory, with subdirectories for each vhost.
+    Each vhost directory is hash-named and contains a `.vhost` file with the vhost name, so that a particular vhost's message set can be backed up individually.
+    Learn about [more information](https://www.rabbitmq.com/backup.html).
 
-RabbitMQ 数据迁移，可以采用如下两种方案：
+RabbitMQ data migration can adopt the following two solutions:
 
-- 方案一：不迁移数据，先切换生产端，再切换消费端。
-- 方案二：先迁移数据，然后同时切换生产端和消费端。
+- Option 1: Do not migrate data, switch the production end first, and then switch the consumer end.
+- Option 2: Migrate the data first, and then switch the production end and the consumer end at the same time.
 
-### 方案一
+### Option One
 
-不迁移数据，先切换生产端，再切换消费端。
+Without migrating data, switch the production end first, and then switch the consumer end.
 
-#### 操作流程
+#### Operating procedures
 
-1. 将消息生产端切换到集群 `rabbitmq-cluster-b`，不再生产消息到 `rabbitmq-cluster-a` 集群中。
-2. 消费端同时消费 `rabbitmq-cluster-a` 和 `rabbitmq-cluster-b` 集群中的消息，当 `rabbitmq-cluster-a` 集群中消息全部消费完后，将消息消费端切换到 `rabbitmq-cluster-b` 集群中，完成数据迁移。
+1. Switch the message producer to the cluster `rabbitmq-cluster-b`, and stop producing messages to the `rabbitmq-cluster-a` cluster.
+2. The consumer consumes the messages in `rabbitmq-cluster-a` and `rabbitmq-cluster-b` clusters at the same time. When all the messages in the `rabbitmq-cluster-a` cluster are consumed, switch the message consumer to `rabbitmq -cluster-b` In the cluster, the data migration is completed.
 
-#### 验证方法
+#### Authentication method
 
-- 在 RabbitMQ Management Web UI 页面查看。
+- Viewed on the RabbitMQ Management Web UI page.
 
-    ![查看](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate01.png)
+    <!--screenshot-->
 
-- 调用 API 查看
+- Call the API to view
 
     ```shell
     curl -s -u username:password -XGET http://ip:port/api/overview
     ```
 
-    参数说明：
+    Parameter Description:
 
-    - username：使用`rabbitmq-cluster-a`集群的 RabbitMQ Management WebUI 的帐号
-    - password：使用`rabbitmq-cluster-a`集群的 RabbitMQ Management WebUI 的密码
-    - ip：使用`rabbitmq-cluster-a`集群的 RabbitMQ Management WebUI 的 IP 地址
-    - port：使用`rabbitmq-cluster-a`集群的 RabbitMQ Management WebUI 的端口号
+    - username: the account of the RabbitMQ Management WebUI using the `rabbitmq-cluster-a` cluster
+    - password: the password for the RabbitMQ Management WebUI using the `rabbitmq-cluster-a` cluster
+    - ip: the IP address of the RabbitMQ Management WebUI using the `rabbitmq-cluster-a` cluster
+    - port: the port number of the RabbitMQ Management WebUI using the `rabbitmq-cluster-a` cluster
 
-- 在 Overview 视图中，消费消息数（Ready）以及未确定的消息数（Unacked）都为 0，说明消费完成。
+- In the Overview view, the number of consumed messages (Ready) and the number of unacknowledged messages (Unacked) are both 0, indicating that the consumption is complete.
 
-    ![消息数为 0](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate02.png)
+    <!--screenshot-->
 
-### 方案二
+### Option II
 
-先迁移数据，然后同时切换生产端和消费端。借助 shove 插件完成数据迁移。
+Migrate the data first, and then switch the production end and the consumer end at the same time. Data migration is done with the help of the shove plugin.
 
-> shovel 迁移数据的原理是消费`rabbitmq-cluster-a`集群中的消息，将消息生产到`rabbitmq-cluster-b`集群中，迁移后`rabbitmq-cluster-a`集群中的消息被清空，建议离线迁移，业务会出现中断。
+> The principle of shovel data migration is to consume the messages in the `rabbitmq-cluster-a` cluster and produce the messages to the `rabbitmq-cluster-b` cluster. After the migration, the messages in the `rabbitmq-cluster-a` cluster are cleared. It is recommended to migrate offline, and the business will be interrupted.
 
-`rabbitmq-cluster-a` 和 `rabbitmq-cluster-b` 均需要开启 shovel 插件。
+Both `rabbitmq-cluster-a` and `rabbitmq-cluster-b` need to enable the shovel plugin.
 
-![开启插件](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate03.png)
+<!--screenshot-->
 
-参数说明：
+Parameter Description:
 
-- Name: 配置 shovel 的名称。
-- Source: 指定协议类型、连接的源集群地址，源端的类型。
-- Prefech count: 表示 shovel 内部缓存（从源端集群到目的集群之间的缓存部分）的消息条数。
-- Auto-delete: 默认为 Never，表示不删除本集群消息，如果设置为 `After initial length transferred`，则在消息转移完成后删除。
-- Destination: 指定协议类型，连接目标集群地址，目标端的类型。
-- Add forwarding headers: 设置为 `true`，则会在转发的消息内添加 x-shovelled 的 header 属性。
-- Reconnect delay：指定在 Shovel link 失效的情况下，重新建立连接前需要等待的时间，单位为秒。如果设置为 0，则不会进行重连动作，即 Shovel 会在首次连接失效时停止工作。默认为 5 秒。
-- Acknowledgement mode：参考 Federation 的配置。
+- Name: Configure the name of the shovel.
+- Source: Specify the protocol type, the source cluster address of the connection, and the type of the source.
+- Prefech count: Indicates the number of messages in the shovel's internal cache (the cache part from the source cluster to the destination cluster).
+- Auto-delete: The default is Never, which means that the cluster message will not be deleted. If it is set to `After initial length transferred`, it will be deleted after the message transfer is completed.
+- Destination: Specify the protocol type, the connection target cluster address, and the type of the target end.
+- Add forwarding headers: If set to `true`, the x-shoveled header attribute will be added to the forwarded message.
+- Reconnect delay: Specify the time to wait before re-establishing the connection when the Shovel link fails, in seconds. If set to 0, there will be no reconnection action, that is, Shovel will stop working when the first connection fails. The default is 5 seconds.
+- Acknowledgment mode: Refer to Federation configuration.
 
-    - `no ack` 表示无须任何消息确认行为；
-    - `on publish` 表示 Shovel 会把每一条消息发送到目的端之后再向源端发送消息确认；
-    - `on confirm` 表示 Shovel 会使用 publisher confirm 机制，在收到目的端的消息确认之后再向源端发送消息确认。
+    - `no ack` means that no message acknowledgment is required;
+    - `on publish` means that Shovel will send each message to the destination and then send a message confirmation to the source;
+    - `on confirm` indicates that Shovel will use the publisher confirm mechanism to send a message confirmation to the source after receiving the message confirmation from the destination.
 
-#### 迁移前消息数量
+#### Number of messages before migration
 
-![迁移前消息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate04.png)
+<!--screenshot-->
 
-#### 配置 shovel 信息
+#### Configure shovel information
 
-![配置 shovel](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate05.png)
+<!--screenshot-->
 
-#### shovel 运行状态
+#### shovel running status
 
-![运行状态](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate06.png)
+<!--screenshot-->
 
-当 shovel 状态为“running”时，表示迁移开始。等数据迁移完成后，将生产端、消费端切换至 `rabbitmq-cluster-b` 集群中，完成迁移过程。
+Migration starts when the shovel status is "running". After the data migration is complete, switch the production end and consumer end to the `rabbitmq-cluster-b` cluster to complete the migration process.
 
-#### 迁移后消息数量
+#### Number of messages after migration
 
-- rabbitmq-cluster-a 集群消息情况
+- rabbitmq-cluster-a cluster message situation
 
-    ![集群消息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate07.png)
+    <!--screenshot-->
 
-- rabbitmq-cluster-b 集群消息情况
+- rabbitmq-cluster-b cluster message status
 
-    ![集群消息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate08.png)
+    <!--screenshot-->

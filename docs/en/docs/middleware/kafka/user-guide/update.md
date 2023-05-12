@@ -3,26 +3,26 @@ hide:
   - toc
 ---
 
-# 更新 Kafka
+# Update Kafka
 
-如果想要更新或修改 Kafka 的资源配置，可以按照本页说明操作。
+If you want to update or modify Kafka's resource configuration, you can follow the instructions on this page.
 
-1. 在消息队列中，点击右侧的 `...` 按钮，在弹出菜单中选择`更新实例`。
+1. In the message queue, click the `...` button on the right, and select `Update Instance` from the pop-up menu.
 
-    ![选择更新实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/update01.png)
+    <!--screenshot-->
 
-2. 修改基本信息后，点击`下一步`。
+2. After modifying the basic information, click `Next`.
 
-    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/update02.png)
+    <!--screenshot-->
 
-3. 修改规格配置后，点击`下一步`。
+3. After modifying the specification configuration, click `Next`.
 
-    ![规格配置](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/update03.png)
+    <!--screenshot-->
 
-4. 修改服务设置后，点击`确认`。
+4. After modifying the service settings, click `Confirm`.
 
-    ![服务设置](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/update04.png)
+    <!--screenshot-->
 
-5. 返回消息队列，屏幕右上角将显示消息：`更新实例成功`。
+5. Return to the message queue, and a message will be displayed in the upper right corner of the screen: `Update instance successful`.
 
-    ![成功](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/update05.png)
+    <!--screenshot-->

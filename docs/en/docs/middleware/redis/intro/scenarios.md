@@ -3,34 +3,34 @@ hide:
   - toc
 ---
 
-# 适用场景
+# Applicable scene
 
-很多大型电商网站、视频直播和游戏平台等，存在 **大规模数据访问**，对 **数据查询效率要求高**，且 **数据结构简单**，**不涉及太多关联查询**。
-这种场景使用 Redis，在速度上对传统磁盘数据库有很大优势，能够有效减少数据库磁盘 IO，提高数据查询效率，减轻管理维护工作量，降低数据库存储成本。
-Redis 对传统磁盘数据库是一个重要的补充，成为了互联网应用，尤其是支持高并发访问的互联网应用必不可少的基础服务之一。
+Many large-scale e-commerce websites, live video and game platforms, etc., have **large-scale data access**, and require high **data query efficiency**, and **data structure is simple**, and **does not involve too many associations Inquire**.
+Using Redis in this scenario has great advantages over traditional disk databases in terms of speed. It can effectively reduce database disk IO, improve data query efficiency, reduce management and maintenance workload, and reduce database storage costs.
+Redis is an important supplement to traditional disk databases and has become one of the essential basic services for Internet applications, especially Internet applications that support high concurrent access.
 
-以下举几个典型样例：
+Here are a few typical examples:
 
-1. 电商网站 - 秒杀抢购
+1. E-commerce website - flash sale
 
-    电商网站的商品类目、推荐系统以及秒杀抢购活动，适宜使用 Redis 缓存数据库。
+    Redis cache database is suitable for commodity categories, recommendation systems, and flash-buying activities of e-commerce websites.
 
-    例如秒杀抢购活动，并发高，对于传统关系型数据库来说访问压力大，需要较高的硬件配置（如磁盘 IO）支撑。
-    Redis 数据库单节点 QPS 支撑能达到 10 万，轻松应对秒杀并发。实现秒杀和数据加锁的命令简单，使用 SET、GET、DEL、RPUSH 等命令即可。
+    For example, flash sales activities, high concurrency, high access pressure for traditional relational databases, require high hardware configuration (such as disk IO) support.
+    The QPS support of a single node of the Redis database can reach 100,000, which can easily handle spike concurrency. The commands to realize seckill and data locking are simple, just use SET, GET, DEL, RPUSH and other commands.
 
-2. 视频直播 - 消息弹幕
+2. Live video - message barrage
 
-    直播间的在线用户列表，礼物排行榜，弹幕消息等信息，都适合使用 Redis 中的 SortedSet 结构进行存储。
+    The online user list in the live broadcast room, gift rankings, barrage messages and other information are all suitable for storage using the SortedSet structure in Redis.
 
-    例如弹幕消息，可使用 ZREVRANGEBYSCORE 排序返回，在 Redis 5.0 中，新增了 zpopmax、zpopmin 命令，更加方便消息处理。
+    For example, barrage messages can be sorted and returned using ZREVRANGEBYSCORE. In Redis 5.0, the new zpopmax and zpopmin commands are added to facilitate message processing.
 
-3. 游戏应用 - 游戏排行榜
+3. Game App - Game Leaderboard
 
-    在线游戏一般涉及排行榜实时展现，比如列出当前得分或战力最高的 10 个用户。
-    使用 Redis 的有序集合存储用户排行榜非常合适，有序集合使用非常简单，提供多达 20 个操作集合的命令。
+    Online games generally involve real-time display of leaderboards, such as listing the 10 users with the highest current score or combat power.
+    It is very suitable to use Redis's ordered collection to store user leaderboards. The ordered collection is very easy to use and provides up to 20 commands for operating the collection.
 
-4. 社交 App - 返回最新评论/回复
+4. Social App - Back to latest comments/replies
 
-    在 web 类应用中，常有“最新评论”之类的查询，如果使用关系型数据库，往往涉及到按评论时间逆排序，随着评论越来越多，排序效率越来越低，且并发频繁。
+    In web applications, there are often queries such as "latest comments". If a relational database is used, it often involves reverse sorting by comment time. As more and more comments are made, the sorting efficiency is getting lower and lower, and the concurrency is frequent .
 
-    使用 Redis 的 List（链表）来存储最新 1000 条评论，当请求的评论数在这个范围，就不需要访问磁盘数据库，直接从缓存中返回，减少数据库压力的同时，提升 App 的响应速度。
+    Use Redis's List (linked list) to store the latest 1000 comments. When the number of requested comments is within this range, you don't need to access the disk database and return it directly from the cache, reducing the pressure on the database and improving the response speed of the App.

@@ -3,26 +3,26 @@ hide:
   - toc
 ---
 
-# 更新 Elasticsearch 实例
+# Update the Elasticsearch instance
 
-如果想要更新或修改 Elasticsearch 实例的资源配置，可以按照本页说明操作。
+If you want to update or modify the resource configuration of your Elasticsearch instance, you can follow the instructions on this page.
 
-1. 在 Elasticsearch 实例列表中，点击右侧的 `...` 按钮，在弹出菜单中选择`更新实例`。
+1. In the Elasticsearch instance list, click the `...` button on the right, and select `Update Instance` from the pop-up menu.
 
-    ![更新实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/update01.png)
+    <!--screenshot-->
 
-2. 修改基本信息后，点击`下一步`。此处暂时只支持修改描述信息。
+2. After modifying the basic information, click `Next`. For the time being, only the description information is supported.
 
-    ![更新实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/update02.png)
+    <!--screenshot-->
 
-3. 修改规格配置（包括热数据节点、Kibana 节点、专用主节点和冷数据节点）后，点击`下一步`。
+3. After modifying the specification configuration (including hot data nodes, Kibana nodes, dedicated master nodes, and cold data nodes), click `Next`.
 
-    ![更新实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/update03.png)
+    <!--screenshot-->
 
-4. 修改服务设置后，点击`确认`。
+4. After modifying the service settings, click `Confirm`.
 
-    ![更新实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/update04.png)
+    <!--screenshot-->
 
-5. 返回消息队列，屏幕右上角将显示消息：`更新实例成功`。
+5. Return to the message queue, and a message will be displayed in the upper right corner of the screen: `Update instance successful`.
 
-    ![更新实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/update05.png)
+    <!--screenshot-->

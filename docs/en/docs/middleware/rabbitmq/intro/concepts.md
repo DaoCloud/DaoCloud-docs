@@ -3,42 +3,42 @@ hide:
   - toc
 ---
 
-# 基本概念
+# basic concept
 
-本节列出有关 RabbitMQ 涉及的专有名词及术语，方便您更好地理解相关概念并使用 RabbitMQ 消息队列。
+This section lists the proper nouns and terms involved in RabbitMQ, so that you can better understand related concepts and use RabbitMQ message queues.
 
-- 消息（Message）
+- Message
 
-    消息一般分为两部分：消息体和标签。标签也称为消息头，主要用来描述这条消息。消息体是消息的内容，是一个 json 体或者数据等。
+    Messages are generally divided into two parts: message body and tags. Labels are also called message headers and are mainly used to describe the message. The message body is the content of the message, which is a json body or data.
 
-    消息体是不透明的，而消息头则由一系列的可选属性组成，这些属性包括 routing-key（路由键）、priority（相对于其他消息的优先权）、delivery-mode（指出该消息可能需要持久性存储）等。
+    The message body is opaque, while the message header consists of a series of optional attributes, including routing-key (routing key), priority (priority relative to other messages), delivery-mode (indicating that the message may require persistent storage), etc.
 
-    生产者发布消息，消费者使用消息，生产者和消费者彼此并无直接关系。
+    Producers publish messages, consumers consume messages, and producers and consumers have no direct relationship with each other.
 
-- 消息标识（Message ID）
+- Message ID (Message ID)
 
-    消息标识是消息的可选属性，类型为一个短字符串（short string）。
+    The message ID is an optional attribute of the message, and its type is a short string.
 
-- 队列（Queue）
+- Queue
 
-    队列用于存储消息，生产者将消息送到队列，消费者从队列中获取消息。多个消费者可以同时订阅同一个队列，队列里的消息分配给不同的消费者。每个消息都会被投入到一个或多个队列里。
+    Queues are used to store messages, producers send messages to the queue, and consumers get messages from the queue. Multiple consumers can subscribe to the same queue at the same time, and the messages in the queue are assigned to different consumers. Each message is put into one or more queues.
 
-- 消息存活时间
+- message lifetime
 
-    消息在队列中的有效期。某条消息在队列中的留存时间超过配置的消息存活时间时，则该消息过期。消息存活时间的值必须为非负整型数，单位为毫秒。例如，某条消息的存活时间的值是 1000，则代表该消息最多会在队列中存活 1 秒。
+    The validity period of the message in the queue. When a message stays in the queue for longer than the configured message lifetime, the message expires. The value of the message lifetime must be a non-negative integer in milliseconds. For example, a time-to-live value of a message is 1000, which means that the message will survive in the queue for at most 1 second.
 
-- 延时消息
+- Delayed messages
 
-    生产者将消息发布到消息队列 RabbitMQ 版服务端，但并不期望这条消息立马投递，而是延迟一定时间后才投递到消费者进行消费，该消息即延时消息。
+    The producer publishes the message to the RabbitMQ version of the message queue server, but does not expect the message to be delivered immediately, but is delayed for a certain period of time before being delivered to the consumer for consumption. The message is a delayed message.
 
-- 生产者（Publisher）
+- Producer (Publisher)
 
-    消息的生产者，也是一个向交换器发布消息的客户端应用程序。即向队列发布消息的一方。发布消息的最终目的在于将消息内容传递给其他系统/模块，使对方按照约定处理该消息。
+    A producer of messages is also a client application that publishes messages to an exchange. That is, the party that publishes a message to the queue. The ultimate purpose of publishing a message is to pass the content of the message to other systems/modules, so that the other party can process the message according to the agreement.
 
-- 消费者（Consumer）
+- Consumer
 
-    消息的消费者，表示一个从消息队列中取得消息的客户端应用程序。消费者订阅 RabbitMQ 的队列。当消费者使用一条消息时，只是使用消息的消息体。在消息路由的过程中，会丢弃标签，存入到队列中的只有消息体。
+    The consumer of the message represents a client application program that obtains messages from the message queue. Consumers subscribe to RabbitMQ queues. When a consumer consumes a message, it only consumes the message body. During message routing, tags are discarded, and only the message body is queued.
 
-- 代理（Broker）
+- Broker
 
-    消息中间件的服务节点，即消息队列服务器实体。
+    The service node of the message middleware, that is, the message queue server entity.

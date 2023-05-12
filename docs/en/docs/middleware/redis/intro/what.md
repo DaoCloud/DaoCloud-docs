@@ -3,28 +3,28 @@ hide:
   - toc
 ---
 
-# 什么是 Redis 缓存服务
+# What is Redis cache service
 
-Redis 缓存服务是 DaoCloud 提供的一款内存数据库缓存服务，兼容了 Redis 和 Memcached 两种内存数据库引擎，为您提供开箱即用、安全可靠、弹性扩容、便捷管理的在线分布式缓存能力，满足用户高并发及数据快速访问的业务诉求。
+Redis cache service is an in-memory database cache service provided by DaoCloud. It is compatible with two in-memory database engines, Redis and Memcached. Business requirements for high concurrency and fast data access.
 
-- 开箱即用
+- out of the box
 
-    提供单机、高可用集群、Cluster 集群、读写分离类型的缓存实例，拥有从 128M 到 1024G 的丰富内存规格。您可以通过 UI 控制台直接创建，无需单独准备服务器资源。
+    Provides stand-alone, high-availability clusters, Cluster clusters, and read-write split cache instances, with rich memory specifications ranging from 128M to 1024G. You can directly create it through the UI console without preparing server resources separately.
 
-    所有 Redis 版本采用容器化部署，秒级完成创建。
+    All Redis versions are deployed in containers, and can be created in seconds.
 
-- 安全可靠
+- Safe and reliable
 
-    借助 DaoCloud 全局管理、审计日志等安全管理服务，全方位保护实例数据的存储与访问。
+    With the help of security management services such as DaoCloud global management and audit logs, the storage and access of instance data are fully protected.
 
-    灵活的容灾策略，主备/集群实例从单集群内部署，到支持多集群多云部署。
+    Flexible disaster recovery strategy, master/standby/cluster instances are deployed in a single cluster to support multi-cluster and multi-cloud deployment.
 
-- 弹性伸缩
+- Elastic expansion
 
-    提供对实例内存规格的在线扩容与缩容服务，帮助您实现基于实际业务量的成本控制，达到按需使用的目标。
+    Provides online expansion and contraction services for instance memory specifications, helping you achieve cost control based on actual business volume and achieve the goal of on-demand usage.
 
-- 便捷管理
+- Convenient management
 
-    可视化 Web 管理界面，在线完成实例重启、参数修改等操作。还提供 RESTful API，方便您进一步实现实例自动化管理。
+    Visualize the web management interface to complete operations such as instance restart and parameter modification online. A RESTful API is also provided to facilitate further automated instance management.
 
-[创建 Redis 实例](../user-guide/create.md){ .md-button .md-button--primary }
+[Create a Redis instance](../user-guide/create.md){ .md-button .md-button--primary }

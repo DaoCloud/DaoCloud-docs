@@ -3,30 +3,30 @@ hide:
   - toc
 ---
 
-# 查看 PostgreSQL 日志
+# View PostgreSQL logs
 
-## 操作步骤
+## Steps
 
-通过访问每个 PostgreSQL 的实例详情，页面；可以支持查看 PostgreSQL 的日志。
+By visiting the instance details page of each PostgreSQL; it is possible to view PostgreSQL logs.
 
-1. 在 PostgreSQL 实例列表中，选择想要查看的日志，点击 `实例名称` 进入到实例详情页面。
+1. In the PostgreSQL instance list, select the log you want to view, and click `Instance Name` to enter the instance details page.
 
-    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/postgresql/images/log01.png)
+    <!--screenshot-->
 
-2. 在实例的左侧菜单栏，会发现有一个日志查看的菜单栏选项。
+2. In the left menu bar of the instance, you will find a menu bar option for log viewing.
 
-    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/postgresql/images/log02.png)
+    <!--screenshot-->
 
-3. 点击 `日志查看` 即可进入到日志查看页面（Insight 日志查看）。
+3. Click `Log View` to enter the log view page (Insight log view).
 
-## 日志查看说明
+## Log View Instructions
 
-在日志查看页面，我们可以很方便的进行日志查看，常用操作说明如下：
+On the log viewing page, we can easily view logs. Common operations are described as follows:
 
-* 支持 自定义日志时间范围，在日志页面右上角，可以方便地切换查看日志的时间范围（可查看的日志范围以 可观测系统设置内保存的日志时长为准）
-* 支持 关键字检索日志，左侧检索区域支持查看更多的日志信息
-* 支持 日志量分布查看，中上区域柱状图，可以查看在时间范围内的日志数量分布
-* 支持 查看日志的上下文，点击右侧 `上下文` 图标即可
-* 支持 导出日志
+* Support custom log time range, in the upper right corner of the log page, you can easily switch the time range to view the log (the viewable log range is subject to the log duration saved in the observable system settings)
+* Support keyword search logs, the search area on the left supports viewing more log information
+* Support log volume distribution viewing, the histogram in the upper middle area, you can view the log volume distribution within the time range
+* Support to view the context of the log, click the `context` icon on the right
+* Support export log
 
-![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/postgresql/images/log03.png)
+<!--screenshot-->
