@@ -19,7 +19,7 @@ Go to the download directory of the offline installation package.
 
 === "AMD64"
 
-     Run the following command to verify the installation package:
+     run the following command to verify the installation package:
 
      ```sh
      echo "9fdc24ea0eda2994cb1ab253d3c6f079b76b138618fb5601176be5a4d660893c3cc64dfb151e32d57a1f843c6b598bed270a20654e6cd8d815c7901124b04 431 offline-centos7-v0.4.0-rc2-amd64.tar" | sha512sum -c
@@ -33,7 +33,7 @@ Go to the download directory of the offline installation package.
 
 === "ARM64"
 
-     Run the following command to verify the installation package:
+     run the following command to verify the installation package:
 
      ```sh
      echo "ec6eca321a80f26f70c11739eb15dc67914579af610e2fb9cb49fcf8d9691de2ceddac7cfd8bd40ce3f3927cfea3166d15366f06909fcbbf15a330bc718fd358 off line-kylin-v10sp2-v0.4.0-rc2-arm64.tar" | sha512sum -c
@@ -51,7 +51,7 @@ After successfully verifying the offline package,
 
 === "AMD64"
 
-     Run the following command to extract the tarball:
+     run the following command to extract the tarball:
 
      ```sh
      tar -zxvf offline-centos7-v0.4.0-rc2-amd64.tar
@@ -59,7 +59,7 @@ After successfully verifying the offline package,
 
 === "ARM64"
 
-     Run the following command to extract the tarball:
+     run the following command to extract the tarball:
 
      ```sh
      tar -zxvf offline-kylin-v10sp2-v0.4.0-rc2-arm64.tar

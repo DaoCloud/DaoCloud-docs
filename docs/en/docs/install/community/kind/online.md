@@ -11,7 +11,7 @@ This page explains how to install DCE 5.0 Community Release online using a kind 
 - Prepare a machine, recommended machine resources: CPU > 8 cores, memory > 12 GB, disk space > 100 GB.
 - Make sure the machine can connect to the Internet.
 
-Execute the following script to check system resources and networking:
+Run the following script to check system resources and networking:
 
 ```shell
 set -e

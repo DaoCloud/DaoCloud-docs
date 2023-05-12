@@ -41,7 +41,7 @@ When accessing and managing cloud clusters through local nodes, the following co
 
     By default, the kubectl tool will look for a file named `config` from the `$HOME/.kube` directory of the local node. This file stores the access credentials of the relevant cluster, and kubectl can connect to the cluster with this configuration file.
 
-4. Execute the following command on the local node to verify the connectivity of the cluster:
+4. run the following command on the local node to verify the connectivity of the cluster:
 
     ```sh
     kubectl get pod -n default

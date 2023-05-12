@@ -17,7 +17,7 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/VictoriaMetrics
 
 !!! note
 
-     If you are installing offline, you can execute the following command to update the CRD after decompressing the insight offline package.
+     If you are installing offline, you can run the following command to update the CRD after decompressing the insight offline package.
     
      ```shell
      kubectl apply --server-side -f insight/dependency-crds --force-conflicts
@@ -29,7 +29,7 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/VictoriaMetrics
 
 0.12.x Upgrade kube-prometheus-stack chart from 39.6.0 to 41.9.1, including prometheus-operator to v0.60.1, prometheus-node-exporter chart to 4.3.0, etc.
   Prometheus-node-exporter uses [Kubernetes recommended label](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/) after upgrading, so you need to delete `node- exporter`s daemonset.
-  prometheus-operator has updated the CRD, so you need to execute the following command before upgrading the insight agent:
+  prometheus-operator has updated the CRD, so you need to run the following command before upgrading the insight agent:
 
 ```shell linenums="1"
 kubectl delete daemonset insight-agent-prometheus-node-exporter -n insight-system
@@ -45,7 +45,7 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-oper
 
 !!! note
 
-     If you are installing offline, you can execute the following command to update the CRD after decompressing the insight-agent offline package.
+     If you are installing offline, you can run the following command to update the CRD after decompressing the insight-agent offline package.
     
      ```shell
      kubectl apply --server-side -f insight-agent/dependency-crds --force-conflicts

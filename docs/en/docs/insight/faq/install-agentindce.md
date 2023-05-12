@@ -11,7 +11,7 @@ The specific operation steps are as follows:
 
 1. Log in to the console.
 1. Enable the `--deny-namespaces` parameter in the two prometheus operators respectively.
-1. Execute the following command (the following command is for reference only, the prometheus operator name and namespace in the command need to be replaced actually).
+1. run the following command (the following command is for reference only, the prometheus operator name and namespace in the command need to be replaced actually).
 
     ```bash
     kubectl edit deploy insight-agent-kube-prometh-operator -n insight-system

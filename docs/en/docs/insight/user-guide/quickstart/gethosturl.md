@@ -34,7 +34,7 @@ The `Working Cluster` needs to upload the data of metrics, logs, and traces to t
 
 Refer to the following steps to obtain insight-agent through the interface.
 
-1. Log in to the console of `Global Service Cluster` and execute the following command:
+1. Log in to the console of `Global Service Cluster` and run the following command:
 
    ```sh
    export INSIGHT_SERVER_IP=$(kubectl get service insight-server -n insight-system --output=jsonpath={.spec.clusterIP})
@@ -51,7 +51,7 @@ Refer to the following steps to obtain insight-agent through the interface.
 
 Please confirm that your cluster has installed a load balancer, and follow the steps below to connect insight-agent through LoadBalancer:
 
-1. Log in to the console of the global management cluster and execute the following command:
+1. Log in to the console of the global management cluster and run the following command:
 
     ```sh
     kubectl get service -n insight-system | grep lb
@@ -100,7 +100,7 @@ Please confirm that your cluster has installed a load balancer, and follow the s
 
 Connect insight-agent via NodePort.
 
-1. Log in to the console of the global management cluster and execute the following command:
+1. Log in to the console of the global management cluster and run the following command:
 
     ```shell
     kubectl get service -n insight-system

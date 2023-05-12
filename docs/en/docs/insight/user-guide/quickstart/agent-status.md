@@ -13,13 +13,13 @@ In `Observability` -> `Acquisition Management` section, you can view the status 
 
 Can be checked by:
 
-1. Execute the following command, if the status is `deployed`, go to the next step. If it is `failed`, since it will affect the upgrade of the application, it is recommended to reinstall after uninstalling `Container Management -> Helm Application`:
+1. run the following command, if the status is `deployed`, go to the next step. If it is `failed`, since it will affect the upgrade of the application, it is recommended to reinstall after uninstalling `Container Management -> Helm Application`:
 
      ```bash
      helm list -n insight-system
      ```
 
-2. Execute the following command or check the status of the components deployed in the cluster in `Observability -> Collection Management`. If there is a container group that is not in the `Running` state, please restart the abnormal container group.
+2. run the following command or check the status of the components deployed in the cluster in `Observability -> Collection Management`. If there is a container group that is not in the `Running` state, please restart the abnormal container group.
 
      ```bash
      kubectl get pods -n insight-system

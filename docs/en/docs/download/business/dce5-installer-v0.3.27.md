@@ -10,7 +10,7 @@ This page can download the offline installation package and verification file of
 
 ## Validation
 
-Go to the download directory of the offline installation package. Run the following command to verify the installation package:
+Go to the download directory of the offline installation package. run the following command to verify the installation package:
 
 ```sh
 echo "f637ec103af6e77d1af85bf0708bef71aee123ce4ac71c4a0adef539492cdbb1661a479d3e999cd51aa7cb47d49e001565908b237ef7999140e3435f6219bb08 offline -v0.3.27.tar" | sha512sum -c
