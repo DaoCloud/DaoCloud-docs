@@ -23,7 +23,7 @@
 
 ```bash
 # 以 amd64 架构离线包为例
-tar -xvf offline-v0.6.1-amd64.tar
+tar -xvf offline-v0.7.0-amd64.tar
 ```
 
 #### addon 离线包 （可选）
