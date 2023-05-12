@@ -18,7 +18,7 @@
 
 - `envoy-ratelimited`
 
-    如果标头 x-envoy-ratelimited 存在，特使将重试。
+    如果标头 x-envoy-ratelimited 存在，Envoy 将重试。
 
 - `gateway-error`
 
