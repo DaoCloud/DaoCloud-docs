@@ -1,72 +1,68 @@
 ---
 hide:
-   - toc
+  - toc
 ---
 
-# App Workbench permission description
+# Apply workbench permission description
 
-[App Workbench](./what.md) supports three user roles:
+[Workbench](./what.md) Three user roles are supported:
 
 - Workspace Admin
 - Workspace Editor
 - Workspace Viewer
 
-Each role has different permissions, which are described below.
+Each role has different rights, as described below.
 
 <!--
-You have permission to use `&check;`, but you don't have permission to use `&cross;`
+mark yes by `&check;` and no by `&cross;`
 -->
 
-| Menu Objects | Actions | Workspace Admin | Workspace Editor | Workspace Viewer |
-| -------- | ----------------------------------- | ----- ---------- | ---------------- | ---------------- |
-| Apps | View App List | &check; | &check; | &check; |
-| | View details (jump to container management) | &check; | &check; | &check; |
-| | View application logs (jump to observables) | &check; | &check; | &check; |
-| | View application monitoring (jump to observables) | &check; | &check; | &check; |
-| | View RabbitMQ Details - Basic Information | &check; | &check; | &check; |
-| | View service mesh (jump to service mesh) | &check; | &check; | &check; |
-| | View microservice engine (jump to microservice engine) | &check; | &check; | &check; |
-| | Create App | &check; | &check; | &cross; |
-| | Edit YAML | &check; | &check; | &cross; |
-| | Update replica count | &check; | &check; | &cross; |
-| | Update container image | &check; | &check; | &cross; |
-| | Edit Pipeline | &check; | &check; | &cross; |
-| | App Grouping | &check; | &check; | &cross; |
-| | delete | &check; | &check; | &cross; |
-| Namespace | View | &check; | &check; | &check; |
-| | Create | &check; | &cross; | &cross; |
-| | Edit Tab | &check; | &cross; | &cross; |
-| | Edit Resource Quota | &check; | &cross; | &cross; |
-| | delete | &check; | &cross; | &cross; |
-| Pipeline | View Pipeline | &check; | &check; | &check; |
-| | View running records | &check; | &check; | &check; |
-| | Create | &check; | &check; | &cross; |
-| | run | &check; | &check; | &cross; |
-| | delete | &check; | &check; | &cross; |
-| | Copy | &check; | &check; | &cross; |
-| | edit | &check; | &check; | &cross; |
-| | cancel run | &check; | &check; | &cross; |
-| Credentials | View | &check; | &check; | &check; |
-| | Create | &check; | &check; | &cross; |
-| | edit | &check; | &check; | &cross; |
-| | delete | &check; | &check; | &cross; |
-| Continuous Deployment | View | &check; | &check; | &check; |
-| | Create | &check; | &check; | &cross; |
-| | sync | &check; | &check; | &cross; |
-| | edit | &check; | &check; | &cross; |
-| | delete | &check; | &check; | &check; |
-| Code repository | View | &check; | &check; | &cross; |
-| | import | &check; | &check; | &cross; |
-| | delete | &check; | &check; | &cross; |
-| Grayscale release | View | &check; | &check; | &check; |
-| | Create | &check; | &check; | &cross; |
-| | Post | &check; | &check; | &cross; |
-| | Continue posting | &check; | &check; | &cross; |
-| | End of publication | &check; | &check; | &cross; |
-| | Update | &check; | &check; | &cross; |
-| | rollback | &check;| &check; | &cross; |
-| | delete | &check; | &check; | &cross; |
-
-!!! note
-
-     For a complete introduction to role and permission management, please refer to [Role and permission management](../../ghippo/user-guide/access-control/role.md).
+| Object |operation| Workspace Admin | Workspace Editor | Workspace Viewer |
+| -------- | ---------------------------------- | --------------- | ---------------- | ---------------- |
+| Application     |Viewing the application list| &check;         | &check;          | &check;          |
+|          |View details (Jump to Container Management)| &check;         | &check;          | &check;          |
+|          |Viewing application logs (Jump to Observable)| &check;         | &check;          | &check;          |
+|          |View Application Monitor (Skip to Observable)| &check;         | &check;          | &check;          |
+|          |View RabbitMQ details – Basic information| &check;         | &check;          | &check;          |
+|          |View the Service grid (Jump to the Service Grid)| &check;         | &check;          | &check;          |
+|          |View the Microservice Engine (Skip to Microservice Engine)| &check;         | &check;          | &check;          |
+|          |Create an application| &check;         | &check;          | &cross;          |
+|          |Editor YAML| &check;         | &check;          | &cross;          |
+|          |Update the number of copies| &check;         | &check;          | &cross;          |
+|          |Update container image| &check;         | &check;          | &cross;          |
+|          |Editing pipeline| &check;         | &check;          | &cross;          |
+|          |Application grouping| &check;         | &check;          | &cross;          |
+|          |delete| &check;         | &check;          | &cross;          |
+| Namespace |view| &check;         | &check;          | &check;          |
+|          |create| &check;         | &cross;          | &cross;          |
+|          |Edit tag| &check;         | &cross;          | &cross;          |
+|          |Edit resource quota| &check;         | &cross;          | &cross;          |
+|          |delete| &check;         | &cross;          | &cross;          |
+| Pipeline   |View pipeline| &check;         | &check;          | &check;          |
+|          |View running record| &check;         | &check;          | &check;          |
+|          |create| &check;         | &check;          | &cross;          |
+|          |run| &check;         | &check;          | &cross;          |
+|          |delete| &check;         | &check;          | &cross;          |
+|          |copy| &check;         | &check;          | &cross;          |
+|          |edit| &check;         | &check;          | &cross;          |
+|          |Cancel run| &check;         | &check;          | &cross;          |
+| Credential     |view| &check;         | &check;          | &check;          |
+|          |create| &check;         | &check;          | &cross;          |
+|          |edit| &check;         | &check;          | &cross;          |
+|          |delete| &check;         | &check;          | &cross;          |
+| GitOps |view| &check;         | &check;          | &check;          |
+|          |create| &check;         | &check;          | &cross;          |
+|          |synchronization| &check;         | &check;          | &cross;          |
+|          |edit| &check;         | &check;          | &cross;          |
+|          |delete| &check;         | &check;          | &check;          |
+| Code Repo |view| &check;         | &check;          | &cross;          |
+|          |import| &check;         | &check;          | &cross;          |
+|          |delete| &check;         | &check;          | &cross;          |
+| Grayscale Release |view| &check;         | &check;          | &check;          |
+|          |create| &check;         | &check;          | &cross;          |
+|          |release| &check;         | &check;          | &cross;          |
+|          |Continue to publish| &check;         | &check;          | &cross;          |
+|          |Termination of publication| &check;         | &check;          | &cross;          |
+|          |update| &check;         | &check;          | &cross;          |
+|          |rollback| &check;         | &check;          | &cross;          |
+|          |delete| &check;         | &check;          | &cross;          |

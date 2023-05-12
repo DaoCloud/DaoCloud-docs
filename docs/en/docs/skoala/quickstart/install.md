@@ -42,7 +42,7 @@ The microservice engine consists of two components named in the code `skoala` an
 
 ### Microservice engine deployment structure
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 chart in the blue box on the left is the component `skoala`, which needs to be installed in the control plane cluster, namely the global cluster `kpanda-global-clsuter` of DCE 5.0. For details, please refer to [Deploy Architecture](../../install/commercial/deploy-arch.md) of DCE 5.0. After installing the `skoala` component, you can see the microservice engine module in the level 1 navigation bar of DCE 5.0. Note the following: Before installing `skoala`, install the `common-mysql` component that is used for storage resources.
 
@@ -86,7 +86,7 @@ You are advised to set the following parameters to configure database informatio
 
 The microservice engine relies on the capabilities of the [ DCE 5.0 Observability](../../insight/intro/what.md) module. If you want to monitor metrics of the micro-service and trace traces, install corresponding `insight-agent` in the cluster. For details, see [](../../insight/user-guide/quickstart/install-agent.md).
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 !!! note
 
@@ -282,7 +282,7 @@ Installation command, with the update; Verify that you need to install the Pods 
 
 In addition to terminal installation, UI can be found in the Helm application in Kpanda cluster management Skoala-init for installation.
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 Unload command
 

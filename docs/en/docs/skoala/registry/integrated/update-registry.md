@@ -9,11 +9,11 @@ The microservice engine currently only supports updating the Nacos/Zookeeper/Eur
 
 1. In the `Integrated Registry List` page choose need to update the registry, on the right side click ** `⋯` ** and select `Edit`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 2. Add or remove the registry address, then click `OK` at the bottom of the page.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 !!! note
 

@@ -53,7 +53,7 @@ The microservice gateway supports access to a third-party authentication server.
 
 5. Fill the image address in the `spec/template/spec/containers/image` field under Deployment in the [ all-in-one-contour.yaml ](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) file.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->-->
+    <!--![]()screenshots-->-->
 
 ## Access authentication server
 
@@ -65,11 +65,11 @@ The microservice gateway supports access to a third-party authentication server.
 
 2. Create a domain name under the gateway that uses the `https` protocol and fill in basic information.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->-->
+    <!--![]()screenshots-->-->
 
 3. Enter the security configuration of this domain name and specify the address of the authentication server. The authentication server address is in `namespace/name` format.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->-->
+    <!--![]()screenshots-->-->
 
     !!! note
 
@@ -77,6 +77,6 @@ The microservice gateway supports access to a third-party authentication server.
 
 4. Create an API under the gateway, and enter the newly created domain name in the path `/`. Enable `Security Auth`, and take the API online.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 5. You can now access the API through the authentication server.

@@ -7,11 +7,11 @@ hide:
 
 1. In the `Managed Registry List` page select need to delete the registry, on the right side click ** `⋯` ** and select `Delete`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 2. Enter a name for the registry and click `Remove`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 !!! note
 

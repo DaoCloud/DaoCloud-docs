@@ -10,21 +10,21 @@ You need to add the corresponding service source in Source management so that yo
 
 1. In the `Gateway List` page click on the name of the target gateway, enter the gateway overview page, in the left navigation bar click `Add Service` -- > `Service List`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 2. On the `Service List` page click `Manual Add` --> `Add Service`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 3. Select the service source, configure the service connection information and click `OK`.
 
     - Cluster service: Select the cluster and namespace where the target service resides, and enter the access protocol, address, and port number.
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
         For the cluster service access, can be in the `Container Management` -- > `Container Network` -- > `Services` click on the service name to view:
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
     - mesh service:
 
@@ -32,21 +32,21 @@ You need to add the corresponding service source in Source management so that yo
 
     - Registry Service: Select the registry where the target service resides, and enter the access protocol, address, and port number.
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
     - External service: Enter the service name, access protocol, address, and port number.
   
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
 ## Viewing service details
 
 1. On the service list page, click the name of the target service to access the service details page.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 2. View service sources, connection information, and associated apis.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 ## Update service
 
@@ -54,33 +54,33 @@ You need to add the corresponding service source in Source management so that yo
 
 1. In the `Service List` page find need to update the service, in the service of right click ** `ⵗ` **, choose `Basic Info`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 2. To update the basic information, click `OK`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 !!! danger
 
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 ### Update policy configuration
 
 1. In the `Service List` page find need to update the service, in the service of right click ** `ⵗ` **, choose `Policy Settings`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 2. To update policy configuration, click `OK`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 ## Deletion service
 
 In the `Service List` page to find the need to delete the service, in the service of right click ** `ⵗ` **, choose `Delete`.
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 Before deleting a service, you need to make sure that no apis are using the service. If the service is being used by an API, click `API Management` to delete the associated API as prompted before deleting the service.
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->

@@ -6,7 +6,7 @@ The microservice gateway supports viewing request logs and instance logs. This p
 
 Click the name of the target gateway to enter the gateway overview page, and then click `Check Logs` -> `Instance Logs` in the left navigation bar.
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 ## Related operation
 

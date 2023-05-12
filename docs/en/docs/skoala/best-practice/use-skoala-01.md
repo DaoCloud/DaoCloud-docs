@@ -15,37 +15,37 @@ The sample application used in this practice is based on the OpenTelemetry stand
 
 The architecture diagram for the sample application is as follows:
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->-->
+<!--![]()screenshots-->-->
 
 ## Application deployment
 
 [Workbench](../../amamba/intro/what.md) is an application management module of DCE 5.0. It supports the creation and maintenance of various types of applications, GitOps, and grayscale publishing, and can quickly deploy applications to any cluster. App Workbench supports deployment of applications based on Git repository, Jar package, container image and Helm chart. This practice deployable the sample application based on `Helm chart`.
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 Before deploying applications, the following conditions must be met:
 
 - [Add Helm Repo](../../kpanda/user-guide/helm/helm-repo.md) in container management:
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 - [ Create the Nacos registry instance ](../registry/managed/registry-lcm/create-registry.md)
 
     > Notice Record the address of the registry for subsequent application installation.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 ### Deployment based on Helm chart
 
 1. Locate the opentelemetry-demo application in `Workbench` -> `Wizard` -> `From Helm chart` and click the application card to install it
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 2. On the Helm installation interface, make sure that the deployment position is correct, and then update the parameter configuration in `JAVA_OPTS` according to the requirements below.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
     Based on the registry address recorded above, update the parameter below with comments as follows:
 
@@ -73,7 +73,7 @@ Before deploying applications, the following conditions must be met:
 
 1. After the application is successfully created, the list of Helm applications in the App Workbench is displayed.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 ### Java project development and debugging
 
@@ -104,7 +104,7 @@ When using `java -jar` to start a project, add the corresponding environment var
 
 If you choose to deploy applications based on container images, you can directly enable micro-service governance in the user interface configuration and select the corresponding registry module for easier operation. For details, see [ Build micro-service application based on Git repository ](../../amamba/user-guide/wizard/create-app-git.md).
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 ## Enable traditional micro-service governance
 
@@ -112,19 +112,19 @@ Before using the micro-service governance function, you need to enable the corre
 
 In this practice, traditional micro-service governance is adopted, namely, Sentinel governance plug-in is opened. For details, see [ Enable the Sentinel governance plug-in ](../registry/managed/plugins/sentinel.md).
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 ## Configure corresponding governance rules
 
 After the application is successfully deployed, you can view the corresponding service in `Microservice List` under the prepared registry. The microservice list provides traffic governance rules, such as flow control rules, circuit breaker degradation rules, hotspot rules, system rules, and authorization rules. This practice takes the flow control rule as an example to demonstrate.
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 ### Configure the flow control policy
 
 Here is an example of a traffic limiting policy. You can add a corresponding traffic limiting policy to a service through simple configuration.
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 ### Test the flow control policy
 
@@ -141,7 +141,7 @@ Create a cloud native gateway. For details, see [Create Gateway](../ms-gateway/g
 !!! note
 
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 ### Access service
 
@@ -149,7 +149,7 @@ Based on the DCE 5.0 feature, the cloud native gateway can automatically discove
 
 Nacos Registry services are adopted in this demonstration, which greatly expands the number of services accessible to the gateway. Services accessible to Nacos registry can be selected from `Add Service`.
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 !!! info
 
@@ -158,7 +158,7 @@ Nacos Registry services are adopted in this demonstration, which greatly expands
 
 See [Add API](../ms-gateway/api/add-api.md) to create an API route.
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 ### Access application
 
@@ -166,11 +166,11 @@ After the gateway API is created, you can access the application page by using *
 
 ** The home page of the sample application **:
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 ** The order confirmation page for the sample application **:
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 ## conclusion
 

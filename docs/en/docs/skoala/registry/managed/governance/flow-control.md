@@ -13,15 +13,15 @@ You can create a flow control rule as follows:
 
     > Notice that the incognito to be controlled should be displayed as `Yes` in the column `Traffic Governance` before you proceed to the subsequent steps.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 2. Select `Flow Control Rules` and click `Create Rules` on the right.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 3. Follow the instructions below to fill in the rule configuration and click `OK` in the lower right corner.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
     - Resource name: Specifies the name of the resource. Resource refers to the domain of the rule. That is, the rule is created to govern the traffic of the service. Must be a resource that does exist.
 
@@ -35,5 +35,5 @@ You can create a flow control rule as follows:
 
 4. After the rule is created, you can view it in the flow control rule list. Click More on the right to edit the update rule or delete it.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 

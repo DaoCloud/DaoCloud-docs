@@ -11,7 +11,7 @@ The steps to create an API are as follows:
 
 1. Click the gateway name to enter the gateway overview page, then click `API Management` in the left navigation bar, and click `Add API` in the upper right corner of the page.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 2. Fill in basic configurations by referring to the following instructions.
 
@@ -25,26 +25,26 @@ The steps to create an API are as follows:
     - Target service: Choose to send the request directly to the back-end service, redirect it to another service, or return the HTTP status code directly.
     - If you select back-end services, you need to set weights. The larger the weight, the more traffic the gateway distributes to the weight.
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
 3. Fill in the policy configuration by referring to the following description (Optional).
 
     Supports 11 API policies: load balancing, path rewriting, timeout configuration, retry mechanism, request header rewriting, response header rewriting, Websocket, local traffic limiting, health check, cookie rewriting, and access whitelist. For details about how to configure each policy, see [API Policies](api-policy.md).
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 4. Fill in the security configuration by referring to the following description (Optional).
 
     - JWT authentication: Enables or disables JWT authentication
     - Security authentication: Enables or disables security authentication
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
 5. Click `Save` in the lower right corner of the page (not online). If you click `Save & Online`, you can directly go online API.
 
     After you click `OK`, if all configurations are normal, a `Successfully create an API` message will appear in the upper right corner. You can view the new API on `API Management`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 6. API online
 
@@ -52,11 +52,11 @@ The steps to create an API are as follows:
 
     - The API in `API Management` page to find the need to update the API, on the API right click ** `ⵗ` ** choose `API Online`.
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
     - Click the API name to enter the API details page. In the upper right corner of the page, click ** `ⵗ` ** and select `API Online`.
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
 !!! info
 

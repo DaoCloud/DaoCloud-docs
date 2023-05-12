@@ -6,7 +6,7 @@ You can view the gateway details on `Overview`, including the name, deployment l
 
 On the `Gateway List` page, select the name of the target gateway to access the gateway overview page ".
 
-<!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+<!--![]()screenshots-->
 
 ## Gateway details
 

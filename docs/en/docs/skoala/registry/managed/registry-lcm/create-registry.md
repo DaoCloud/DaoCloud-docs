@@ -16,7 +16,7 @@ The steps to create a managed registry are as follows.
 
 1. Click `Microservice Governance`-> `Managed Registry`in the left navigation bar, and then click `Create Managed Registry` in the upper right corner of the page to enter the page for creating the hosting registry instance.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 2. Enter the configuration information.
 
@@ -34,29 +34,29 @@ The steps to create a managed registry are as follows.
 
         - Click `Resource Advice` to see throughput (TPS) for mainstream specifications such as 2 Core 4 GiB, 4 Core 8 GiB, and 8 Core 16 GiB.
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
     - Access mode: If `NodePort` is selected, the registry can be accessed externally through ** Service port + destination port **. If `Internal Access` is selected, the registry can be accessed through service ports only in the cluster where the registry resides. The default service port is 8848.
     - Deployment mode: If high availability mode is selected, the number of nodes must be at least three. In the production environment, the `High Availability` mode is recommended.
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
 
     - Data persistence: External storage is recommended.
 
         - No external storage is used: The data is stored in the Pod file system where Nacos resides. Data is lost after the Pod restarts, so external storage is recommended.
         - Using the database: Enter the name, address, port, username, and password of the database
 
-            <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+            <!--![]()screenshots-->
 
         - Using a storage pool: Select an existing storage pool in the registry cluster and configure the storage capacity. 
 
-            <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+            <!--![]()screenshots-->
 
 3. At the bottom of the page click `OK`.
 
     If the operation is correct, a message indicating that the registry is created successfully is displayed in the upper right corner of the page. The `Managed Registry List` page displays the new registry instance.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 !!! info
 

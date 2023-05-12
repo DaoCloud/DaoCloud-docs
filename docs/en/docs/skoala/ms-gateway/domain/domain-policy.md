@@ -31,4 +31,4 @@ Note the following when filling in the configuration:
 - Allowable request headers: Qualifies specific HTTP request header keywords. After the keyword is added, the corresponding keyword must be added to the request header to access the target service.
 - Exposed request header: Controls the exposed request header keyword. Multiple values can be configured.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->

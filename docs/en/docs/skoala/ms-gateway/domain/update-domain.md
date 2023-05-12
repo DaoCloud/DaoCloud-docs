@@ -6,8 +6,8 @@ You can modify the basic information and policy configuration of a domain name i
 
 - In the `Domain Management` page find need to update the domain name, on the right side click ** `ⵗ` ** choose `Edit Basic Settings` or `Edit Policy Settings`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 - Click the domain name to go to the domain name details page. Click `Edit Basic Settings` at the upper right corner of the page to update basic information and `Edit Policy Settings` to update policy.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->

@@ -14,8 +14,8 @@ There are also two ways to delete a gateway. To ensure that services are not aff
 
 - In the `Gateway List` page choose the need to remove the gateway instance, at the instance of right click ** `⋯` ** and select `Delete`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 - After entering into the overview page, click on the gateway name in the upper right corner of the ** `⋯` ** and select `Delete`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->

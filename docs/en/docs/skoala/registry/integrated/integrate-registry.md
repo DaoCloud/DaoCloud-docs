@@ -13,7 +13,7 @@ To access the registry, perform the following steps:
 
 1. In the left navigation bar click `Microservice Governance` -- > `Integrate Registry`, then at the upper right corner of the page by clicking on the `Integrate Registry`.
 
-    <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+    <!--![]()screenshots-->
 
 2. Fill in the configuration information, then click `OK` at the bottom of the page.
 
@@ -25,10 +25,10 @@ To access the registry, perform the following steps:
 
         - If you cannot find the mesh service you want to add, you can go to the mesh service module [Create Mesh](../../../mspider/user-guide/service-mesh/README.md).
 
-            <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+            <!--![]()screenshots-->
 
     - Nacos/Zookeeper/Eureka Registry: Fill in the name and address of the registry and click `Test Connectivity`.
 
         If the address bar is gray, the access test is successful. For distributed high availability registries, you can also enter multiple addresses by clicking `+ Add`.
 
-        <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
+        <!--![]()screenshots-->
