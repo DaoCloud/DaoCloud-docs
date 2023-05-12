@@ -5,11 +5,9 @@ hide:
 
 # What is MinIO
 
-MinIO is a very popular lightweight, open-source object storage solution, which is perfectly compatible with the AWS S3 protocol and has very friendly support for K8s. It is designed for cloud-native workloads such as AI.
-Including building high-performance cloud-native data machine learning, big data analysis, and infrastructure for mass storage, MinIO can provide data workloads.
+[MinIO](https://www.minio.org.cn/) is a popular, lightweight, and open-source object storage solution that is perfectly compatible with the AWS S3 protocol and supports K8s friendly. MinIO is specially designed for cloud-native workloads such as AI, and can provide data workloads for high-performance cloud-native data machine learning, big data analysis, and massive storage infrastructure.
 
-DCE's MinIO module is an object storage middleware built on the open source MinIO, which is plug-and-play.
-DaoCloud has developed an easy-to-use graphical interface for it, providing users with exclusive MinIO instances for computing, storage, and bandwidth resources.
+DCE's MinIO module is an object storage middleware built on the open source MinIO, which is plug-and-play. DaoCloud has developed an easy-to-use graphical interface for it, providing users with exclusive MinIO instances for computing, storage, and bandwidth resources.
 
 MinIO is popular because of the following features:
 
@@ -37,14 +35,12 @@ MinIO is popular because of the following features:
    
     Minimalism is the guiding design principle of MinIO. Simplicity reduces the chance of error, increases uptime, provides reliability, and is fundamental to performance.
 
-7. Support multicloud.
+7. Support multi-cloud.
 
     Millions of instances can be created and deployed in private cloud, public cloud and edge computing environments.
 
-Designed to be cloud-native, MinIO can run as lightweight containers managed by external orchestration services such as Kubernetes.
-The entire server is about tens of MB of static binary files, which can efficiently use CPU and memory resources even under high load.
-Enables enterprises to co-host large numbers of tenants on shared hardware.
+Designed to be cloud-native, MinIO can run as lightweight containers managed by external orchestration services such as Kubernetes. The entire server is about tens of MB of static binary files, which can efficiently utilize CPU and memory resources even under high load, allowing enterprises to co-host a large number of tenants on shared hardware.
 
+<!--screenshot-->
 
-
-[Free Trial](../../../dce/license0.md){ .md-button .md-button--primary }
+[Create a MinIO instance](../user-guide/create.md){ .md-button .md-button--primary }

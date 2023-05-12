@@ -1,4 +1,9 @@
-# Basic concept
+---
+hide:
+  - toc
+---
+
+# basic concept
 
 The glossary on this page defines the core concepts behind MySQL to help you build a mental model of how MySQL works and understand what the documentation refers to when it uses certain terms.
 
@@ -10,7 +15,7 @@ The glossary on this page defines the core concepts behind MySQL to help you bui
 
     Access Control Lists or ACLs are lists of user permissions that control access to system resources.
 
-- Connection Status Metric (connection status metric)
+- Connection Status Metric (connection status indicator)
 
     The connection state metric is a measure of the number of threads created, connected, and running relative to the database connection limit.
 
@@ -34,7 +39,7 @@ The glossary on this page defines the core concepts behind MySQL to help you bui
 
     Hot standby is the act of listening for when a primary node fails so that a standby node can take its place.
 
-- Index vs. Sequential Reads Metric (index and sequential read metrics)
+- Index vs. Sequential Reads Metric (index and sequential read indicators)
 
     The Index vs. Sequential Reads metric graph shows reads using indexes as a proportion of the total reads for all databases (schemas) on the master.
 

@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Features
 
 This page explains about the functional features of MySQL.
@@ -11,8 +16,8 @@ This page explains about the functional features of MySQL.
     Instances can be quickly deployed online, and the graphical interface is easy to operate, which saves the work of self-built databases such as procurement, deployment, and configuration, shortens the project cycle, and helps businesses go online quickly.
 
 - Ensure data security
-    
-    Based on real-time copy technology, it adapts to public cloud, hybrid cloud and private cloud, and strictly accounts to ensure data security.
+
+    Based on real-time copy technology, it adapts to public cloud, hybrid cloud and private cloud, and strictly controls accounts to ensure data security.
 
 - lower cost
 
@@ -23,7 +28,7 @@ This page explains about the functional features of MySQL.
     Database resources can be elastically scaled according to business pressure to meet the needs of database performance and storage space in different business stages.
 
 - Automatic operation and maintenance
-    
+
     You can set automatic backup policies, monitoring and alarm policies, automatic capacity expansion policies, etc.
 
 After MySQL is deployed in DCE 5.0, the following features will also be supported:
@@ -33,5 +38,5 @@ After MySQL is deployed in DCE 5.0, the following features will also be supporte
 - Support phpmyadmin, provide management page
 - Expose metrics based on mysqld-exporter
 - Use Grafana Operator to integrate MySQL Dashboard to display monitoring data
-- Use ServiceMonitor to connect to Prometheus to capture metrics
+- Use ServiceMonitor to connect to Prometheus to capture indicators
 - Supports backup and recovery (depends on storage that supports the S3 protocol)

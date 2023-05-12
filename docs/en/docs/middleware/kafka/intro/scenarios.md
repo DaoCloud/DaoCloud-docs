@@ -20,7 +20,7 @@ In short, Kafka uses the pull method to consume messages, which has a relatively
 
 However, RabbitMQ is developed based on the Erlang language, which is not conducive to secondary development and maintenance. It is suitable for scenarios that have high requirements for routing, load balancing, data consistency, stability and reliability, but not so high requirements for performance and throughput.
 
-## Typical scenario
+## Typical scene
 
 As a popular message queue middleware, Kafka has an efficient and reliable message asynchronous delivery mechanism, mainly used for data exchange and delivery between different systems, in enterprise solutions, financial payment, telecommunications, e-commerce, social networking, instant messaging, Video, Internet of Things, Internet of Vehicles and many other fields have a wide range of applications.
 

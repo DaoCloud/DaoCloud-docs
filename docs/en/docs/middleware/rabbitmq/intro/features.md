@@ -1,9 +1,14 @@
+---
+hide:
+  - toc
+---
+
 # Features
 
 Common features of RabbitMQ include:
 
 - Reliability
-     
+
     RabbitMQ uses some mechanisms to ensure reliability, such as persistence, transmission confirmation, and release confirmation.
 
 - Message clustering (Clustering)
@@ -38,6 +43,6 @@ After deploying RabbitMQ in DCE 5.0, the following features will also be support
 
 - Support single-node and multi-node RabbitMQ cluster deployment
 - Support RabbitMQ Managerment plug-in, provide management page
-- Support RabbitMQ Prometheus plug-in, expose monitoring metrics
-- Use ServiceMonitor to interface with Prometheus to capture metrics
+- Support RabbitMQ Prometheus plug-in, expose monitoring indicators
+- Use ServiceMonitor to interface with Prometheus to capture indicators
 - Support the expansion and rolling upgrade of RabbitMQ cluster

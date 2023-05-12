@@ -1,6 +1,6 @@
 ---
 hide:
-   - toc
+  - toc
 ---
 
 # Enter the middleware data service for the first time
@@ -11,16 +11,16 @@ The following uses MinIO as an example to introduce how to select a workspace, a
 
 1. Select `Middleware` -> `MinIO Storage` in the left navigation bar.
 
-     ![Select workspace](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/first-visit01.png)
+    <!--screenshot-->
 
 2. After selecting a workspace in the pop-up window, click `OK`.
 
-     ![Select workspace](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/login02.png)
+    <!--screenshot-->
 
-     !!! note
+    !!! note
 
-         If the pop-up window does not appear / you want to switch the workspace, you can manually click the switch icon in the red box to select a new workspace.
+        If the pop-up window does not appear / you want to switch the workspace, you can manually click the switch icon in the red box to select a new workspace.
 
 3. When using it for the first time, you can click [`Deploy Now`](minio/user-guide/create.md) to create a MinIO instance.
 
-     ![Deploy Now](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/what03.png)
+    <!--screenshot-->

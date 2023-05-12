@@ -1,7 +1,12 @@
+---
+hide:
+  - toc
+---
+
 # What is MySQL
 
-MySQL is the most widely adopted open source relational database and serves as the primary relational data store for many popular websites, applications, and commercial products. It enjoys high throughput, low latency, and scalability.
+MySQL is the most widely used open source relational database. It is the main relational data storage used by many common websites, applications and commercial products. It has the characteristics of high throughput, low latency and scalability.
 
-It is an open standard for application layer protocols and is designed for message-oriented middleware. Clients based on it are able to communicate with the messaging middleware to deliver messages, regardless of products, language, and other conditions.
+It is an open standard of the application layer protocol, and it is designed as a message-oriented middleware. Based on this protocol, the client and the database can transmit messages without being restricted by conditions such as products and development languages.
 
-[Free Trial Now](../../../dce/license0.md){ .md-button .md-button--primary }
+[Create a MySQL instance](../user-guide/create.md){ .md-button .md-button--primary }

@@ -1,15 +1,53 @@
-# Middleware Introduction
+---
+hide:
+  - toc
+---
 
-DCE 5.0 selects some classic middleware for practical application scenarios, which can meet the development and maintenance of various application scenarios through front and back-end development.
+# Data service introduction
 
-Users can install/enable the following middleware on demand, and plug and play.
+DCE 5.0 selects some classic data service middleware for actual application scenarios, and through front-end and back-end development, it can meet the development and maintenance of various application scenarios.
 
-- [RabbitMQ](rabbitmq/intro/what.md): message queue (commonly used as a transport pipeline for data)
-- Kafka: message queue (commonly used as a data pipeline for messaging)
-- [Elasticsearch](elasticsearch/intro/what.md): log searching
-- [MySQL](mysql/intro/what.md): relational database
-- Redis: in-memory database
-- MinIO: object storage solution
+Users can install/enable the following data service middleware on demand, plug and play:
 
-[Free Trial Now](../dce/license0.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+- [Elasticsearch Search Service](elasticsearch/intro/what.md): Currently the preferred full-text search engine
+- [Kafka message queue](./kafka/intro/what.md): data pipeline commonly used for message transmission
+- [MinIO Object Storage](./minio/intro/what.md): A very popular lightweight object storage solution
+- [MySQL Database](mysql/intro/what.md): One of the most popular open source relational databases
+- [RabbitMQ message queue](rabbitmq/intro/what.md): a transmission pipeline commonly used for transaction data
+- [Redis Cache Service](./redis/intro/what.md): an in-memory database
+- [PostgreSQL database](./postgresql/intro/what.md): One of the most popular open source relational databases
+
+## Data service learning path
+
+The learning paths of the above data service middleware are roughly the same. Here we take RabbitMQ as an example to briefly explain the learning paths.
+
+!!! info
+
+    Click the corresponding text in the flow chart below to jump directly to the corresponding operation guide page.
+
+```mermaid
+graph TD
+    
+    B(select workspace) --> C{deploy/create instance}
+    C -.-> D [update/delete instance]
+    C -.->E [instance overview]
+    C -.->F [instance monitoring]
+    C -.->G[data migration]
+    C -.->H[uninstall middleware]
+    
+    click B "https://docs.daocloud.io/middleware/rabbitmq/user-guide/login/"
+    click C "https://docs.daocloud.io/middleware/rabbitmq/user-guide/create/"
+    click D "https://docs.daocloud.io/middleware/rabbitmq/user-guide/update/"
+    click E "https://docs.daocloud.io/middleware/rabbitmq/user-guide/view/"
+    click F "https://docs.daocloud.io/middleware/rabbitmq/user-guide/insight/"
+    click G "https://docs.daocloud.io/middleware/rabbitmq/user-guide/migrate/"
+    click H "https://docs.daocloud.io/middleware/rabbitmq/quickstart/install/#_1"
+```
+
+[Elasticsearch](elasticsearch/intro/what.md){ .md-button .md-button--primary }
+[Kafka](./kafka/intro/what.md){ .md-button .md-button--primary }
+[MinIO](./minio/intro/what.md){ .md-button .md-button--primary }
+[MySQL](mysql/intro/what.md){ .md-button .md-button--primary }
+[RabbitMQ](rabbitmq/intro/what.md){ .md-button .md-button--primary }
+[Redis](./redis/intro/what.md){ .md-button .md-button--primary }
+[PostgreSQL](./postgresql/intro/what.md){ .md-button .md-button--primary }

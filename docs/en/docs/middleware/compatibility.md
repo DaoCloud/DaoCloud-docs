@@ -1,6 +1,6 @@
 ---
 hide:
-   - toc
+  - toc
 ---
 
 # The data service is adapted to the Kubernetes version
