@@ -6,7 +6,7 @@ Observability will persist the data of metrics, logs, and traces by default. Use
 
 Refer to the following steps to modify the metric data retention period.
 
-1. Execute the following command:
+1. run the following command:
 
     ```sh
     kubectl edit vmcluster insight-victoria-metrics-k8s-stack -n insight-system

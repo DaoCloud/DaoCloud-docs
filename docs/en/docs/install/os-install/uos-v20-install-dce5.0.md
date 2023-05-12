@@ -13,10 +13,10 @@ This page will introduce how to deploy DCE 5.0 on UOS V20(1020a) operating syste
 1. Since the installer depends on python, you need to install `python3.6` on the tinder machine first.
 
      ```bash
-     ## Execute the following command to download dependencies
+     ## run the following command to download dependencies
      dnf install -y --downloadonly --downloaddir=rpm/python36
 
-     ## Execute the following command to start the installation
+     ## run the following command to start the installation
      rpm -ivh python3-pip-9.0.3-18.uelc20.01.noarch.rpm python3-setuptools-39.2.0-7.uelc20.2.noarch.rpm python36-3.6.8-2.module+uelc20+36 +6174170c.x86_64.rpm
      ```
 

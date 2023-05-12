@@ -284,7 +284,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     Among them, 80% of users have started to adopt Serverless, but the adoption rate of production environment needs to be further improved.
     Serverless still has a long way to go from large-scale promotion, and needs to be continuously optimized in terms of transformation cost, user habits, and startup performance.
 
-- [On January 9,the "Application Modernization Construction Guide" led by ICT Academy and compiled by "DaoCloud" was officially released](https://mp.weixin.qq.com/s/rfUZjEx452640_BTRG_nJg).
+- [On January 9,the "Application Modernization Construction Guide" led by ICT Academy and compiled by DaoCloud was officially released](https://mp.weixin.qq.com/s/rfUZjEx452640_BTRG_nJg).
   
     The "Application Modernization Construction Guide" systematically composes the development history of application modernization, gives a clear definition of application modernization, breaks down the "Five Modernization and Two Guidelines" construction methodology, and presents a complete application modernization construction path.
     "DaoCloud's application modernization experts mainly contributed to the application modernization construction ideas, application architecture modernization, and application modernization construction path.

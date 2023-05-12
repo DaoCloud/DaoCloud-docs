@@ -111,7 +111,7 @@ You only need to restore the data of one node, and the etcd data of other nodes 
 
 1. Set environment variables
 
-    Before restoring the data using etcdbrctl, execute the following command to set the authentication information of the connection S3 as an environment variable:
+    Before restoring the data using etcdbrctl, run the following command to set the authentication information of the connection S3 as an environment variable:
 
     ```shell
     export ECS_ENDPOINT=http://10.6.212.13:9000 # (1)

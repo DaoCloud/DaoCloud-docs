@@ -59,7 +59,7 @@ Because the offline environment cannot be connected to the Internet, users need 
     mkdir data
     ```
 
-    Execute the following command to generate an offline package using `ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.4.8` the image.
+    run the following command to generate an offline package using `ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.4.8` the image.
 
     For more information about `ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.4.8` mirroring, go to [kubean](https://github.com/kubean-io/kubean/pkgs/container/kubean-operator).
 
@@ -84,7 +84,7 @@ Because the offline environment cannot be connected to the Internet, users need 
 
 ## Import Offline Packages into the Fire Node
 
-1. Copy the files of the `/data` networking node to the directory of the `/root` fire node, and then ** Networking node ** execute the following command:
+1. Copy the files of the `/data` networking node to the directory of the `/root` fire node, and then ** Networking node ** run the following command:
 
     ```bash
     scp -r data root@x.x.x.x:/root
@@ -94,7 +94,7 @@ Because the offline environment cannot be connected to the Internet, users need 
 
 `x.x.x.x` is the IP address of bootstrapping node.
 
-2. Copy the image file in the `/data` folder to the docker registry built in the bootstrapping node. After logging in the fire node, execute the following command:
+2. Copy the image file in the `/data` folder to the docker registry built in the bootstrapping node. After logging in the fire node, run the following command:
 
     1. Enter the directory where the image file is located
     
@@ -140,7 +140,7 @@ Because the offline environment cannot be connected to the Internet, users need 
 
 ## Update kubernetes version manifest for Global cluster
 
-1. Copy the inventory configuration file in `kubeanofflineversion.cr.patch` the file of the `/data` networking node to any ** Master node ** `/root` directory in the Global cluster, and ** Networking node ** execute the following command:
+1. Copy the inventory configuration file in `kubeanofflineversion.cr.patch` the file of the `/data` networking node to any ** Master node ** `/root` directory in the Global cluster, and ** Networking node ** run the following command:
 
     ```bash
     scp -r data/v_offline_patch/kubeanofflineversion.cr.patch.yaml root@x.x.x.x:/root

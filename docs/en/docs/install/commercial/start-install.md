@@ -77,7 +77,7 @@ The cluster configuration file is located in the `offline/sample` directory of t
 
 ### Step 3: Start the installation
 
-1. Execute the following command to start installing DCE 5.0, the location of the installer binary file is `offline/dce5-installer`
+1. run the following command to start installing DCE 5.0, the location of the installer binary file is `offline/dce5-installer`
 
      ```shell
      ./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml

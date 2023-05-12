@@ -4,7 +4,7 @@
 
 If you choose to use SSH keys to connect to all the nodes of the cluster to be created, you need to configure the public and private keys as described below.
 
-1. Execute the following command to generate public and private keys on any node of the managed cluster.
+1. run the following command to generate public and private keys on any node of the managed cluster.
 
     ```shell
     cd /root/.ssh

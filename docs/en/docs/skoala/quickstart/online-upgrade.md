@@ -38,7 +38,7 @@ Because the `skoala` component is installed in the control plane cluster, you ne
     1. The value is fixed and does not need to be modified
     2. The value is fixed and does not need to be modified
 
-2. Run the following command to back up the original data
+2. run the following command to back up the original data
 
     ```
     helm -n skoala-system get values skoala > skoala.yaml

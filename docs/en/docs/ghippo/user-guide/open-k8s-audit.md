@@ -211,7 +211,7 @@ Please back up kube-apiserver.yaml before this step, and the backup file cannot 
 
 ## Test and verify
 
-After a while, the API server will automatically restart. Execute the following command to check whether there is an audit log generated in the `/var/log/kubernetes/audit` directory. If so, it means that the k8s audit log is successfully enabled.
+After a while, the API server will automatically restart. run the following command to check whether there is an audit log generated in the `/var/log/kubernetes/audit` directory. If so, it means that the k8s audit log is successfully enabled.
 
 ```shell
 ls /var/log/kubernetes/audit

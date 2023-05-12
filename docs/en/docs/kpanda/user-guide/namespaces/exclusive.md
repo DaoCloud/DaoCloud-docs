@@ -10,7 +10,7 @@ Namespace exclusive node refers to the exclusive use of CPU, memory and other re
 
 Using the namespace exclusive node function requires the user to enable the `PodNodeSelector` and `PodTolerationRestriction` two feature admission controllers (Admission Controllers) on the cluster API server. For more information about admission controllers, please refer to [kubernetes Admission Controllers Reference](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/).
 
-1. Check if the API server of the current cluster has the `PodNodeSelector` and `PodTolerationRestriction` admission controllers enabled. You can go to any Master node in the current cluster to check whether these two features are enabled in the `kube-apiserver.yaml` file, or execute the following command on the Master node for a quick check:
+1. Check if the API server of the current cluster has the `PodNodeSelector` and `PodTolerationRestriction` admission controllers enabled. You can go to any Master node in the current cluster to check whether these two features are enabled in the `kube-apiserver.yaml` file, or run the following command on the Master node for a quick check:
 
     ```bash
     [root@g-master1 ~]# cat /etc/kubernetes/manifests/kube-apiserver.yaml | grep enable-admission-plugins
@@ -25,7 +25,7 @@ Using the namespace exclusive node function requires the user to enable the `Pod
 
     If the result output in the previous step contains two parameters `PodNodeSelector` and `PodTolerationRestriction`, please skip this step and go directly to the user interface to set exclusive nodes for the namespace.
 
-Go to any Master node in the current cluster to modify the `kube-apiserver.yaml` configuration file, or execute the following command on the Master node to configure:
+Go to any Master node in the current cluster to modify the `kube-apiserver.yaml` configuration file, or run the following command on the Master node to configure:
 
     ```bash
     [root@g-master1 ~]# vi /etc/kubernetes/manifests/kube-apiserver.yaml

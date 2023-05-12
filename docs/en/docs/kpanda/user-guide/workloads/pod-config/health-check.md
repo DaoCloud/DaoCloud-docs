@@ -2,7 +2,7 @@
 
 Container health check checks the health status of containers according to user requirements. After configuration, if the application in the container is abnormal, the container will automatically restart and recover. Kubernetes provides Liveness checks, Readiness checks, and Startup checks.
 
-- **LivenessProbe** can detect application deadlock (the application is running, but cannot continue to execute the following steps). Restarting containers in this state can help improve the availability of applications, even if there are bugs in them.
+- **LivenessProbe** can detect application deadlock (the application is running, but cannot continue to run the following steps). Restarting containers in this state can help improve the availability of applications, even if there are bugs in them.
 
 - **ReadinessProbe** can detect when a container is ready to accept request traffic. A Pod can only be considered ready when all containers in a Pod are ready. One use of this signal is to control which Pod is used as the backend of the Service. If the Pod is not ready, it will be removed from the Service's load balancer.
 

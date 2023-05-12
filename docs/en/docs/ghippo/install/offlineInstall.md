@@ -164,7 +164,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
     1. Back up the `--set` parameter.
 
-        Before upgrading the global management version, it is recommended that you execute the following command to back up the `--set` parameter of the old version.
+        Before upgrading the global management version, it is recommended that you run the following command to back up the `--set` parameter of the old version.
 
         ```shell
         helm get values ​​ghippo -n ghippo-system -o yaml > bak.yaml
@@ -190,7 +190,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
     1. Back up the `--set` parameter.
 
-        Before upgrading the global management version, it is recommended that you execute the following command to back up the `--set` parameter of the old version.
+        Before upgrading the global management version, it is recommended that you run the following command to back up the `--set` parameter of the old version.
 
         ```shell
         helm get values ​​ghippo -n ghippo-system -o yaml > bak.yaml

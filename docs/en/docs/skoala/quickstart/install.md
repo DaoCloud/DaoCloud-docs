@@ -294,7 +294,7 @@ Frequently asked Questions:
 
 - How do I uninstall the microservice engine after installation?
 
-    Run the following command:
+    run the following command:
 
     ```bash
     ~ helm uninstall skoala -n skoala-system

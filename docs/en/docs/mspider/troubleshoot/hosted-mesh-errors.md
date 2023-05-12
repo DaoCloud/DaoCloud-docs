@@ -66,7 +66,7 @@ It can be seen here that the `endpoint` address assigned by `istio-remote` is `i
 
 Update the control plane address in the mesh `basic information` configuration:
 
-1. Log in to the control plane cluster and execute the following command to obtain this address:
+1. Log in to the control plane cluster and run the following command to obtain this address:
 
      ```bash
      kubectl get svc -n istio-system istiod-ywistio-hosted-lb -o "jsonpath={.status.loadBalancer.ingress[0].ip}"
