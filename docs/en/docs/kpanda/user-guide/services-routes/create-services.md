@@ -8,7 +8,7 @@ This requires creating a service through which you get a fixed IP address, decou
 
 - Container management module [connected to Kubernetes cluster](../clusters/integrate-cluster.md) or [created Kubernetes](../clusters/create-cluster.md), and can access the cluster UI interface.
 
-- Completed a [namespace creation](../namespaces/createtens.md), [user creation](../../../ghippo/user-guide/access-control/user.md) , and authorize the user as [`NS Edit`](../permissions/permission-brief.md#ns-edit) role, for details, please refer to [Namespace Authorization](../permissions/cluster-ns-auth. md).
+- Completed a [namespace creation](../namespaces/createtens.md), [user creation](../../../ghippo/user-guide/access-control/user.md), and authorize the user as [`NS Edit`](../permissions/permission-brief.md#ns-edit) role, for details, please refer to [Namespace Authorization](../permissions/cluster-ns-auth. md).
 
 - When there are multiple containers in a single instance, please make sure that the ports used by the containers do not conflict, otherwise the deployment will fail.
 

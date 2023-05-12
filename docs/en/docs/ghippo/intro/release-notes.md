@@ -128,7 +128,7 @@ This page lists the Release Notes for global management of each version, so that
 
 - Change `module` to `source` in resource group
 - SDK provides Workspace and Resource binding change notification
-- Complete docking Insight metrics and otel tracing (join keycloak and db links)
+- Complete docking Insight metrics and otel tracing (join keycloak and db traces)
 - Keycloak changed to Quarkus architecture
 - Keycloak image upgraded to version 20.0.1
 

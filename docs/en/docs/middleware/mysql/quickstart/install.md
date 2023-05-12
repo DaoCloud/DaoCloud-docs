@@ -14,7 +14,7 @@ Follow the steps below to install MySQL.
 
     
 
-3. In the left navigation bar, click `Helm Application` -> `Helm Template`, enter `MySQL` in the search box, press the Enter key, and click the MySQL tile card.
+3. In the left navigation bar, click `Helm Application` -> `Helm chart`, enter `MySQL` in the search box, press the Enter key, and click the MySQL tile card.
 
     
 

@@ -112,7 +112,7 @@ For the four test metrics, the test results for different CNI patterns in differ
     |Pod and Pod, located on the same node|macvlan has the best performance, cilium is second, and calico has similar performance across all three modes, with relatively poor performance|
     |Between Pod and Pod, on different nodes|macvlan has the best performance, calico-underlay has the second best performance, and calico-vxlan has the worst performance|
 
-- Pod short links
+- Pod short traces
 
     
 

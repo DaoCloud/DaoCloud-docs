@@ -2,7 +2,7 @@
 
 This page contains instructions on how to set up OpenTelemetry enhancements in a Go application.
 
-OpenTelemetry, also known simply as OTel, is an open-source observability framework that helps generate and collect telemetry data: links, metrics, and logs in Go apps.
+OpenTelemetry, also known simply as OTel, is an open-source observability framework that helps generate and collect telemetry data: traces, metrics, and logs in Go apps.
 
 ## Enhance Go apps with the OpenTelemetry SDK
 

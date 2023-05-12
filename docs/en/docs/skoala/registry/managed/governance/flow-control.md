@@ -5,7 +5,7 @@ hide:
 
 # Create a flow control rule
 
-The principle of the flow control rule is to monitor the QPS indicator of application or service traffic. When the indicator reaches the threshold, the traffic is controlled according to the preset rule, preventing application crashes due to excessive traffic processing in a short period of time. After the flow control rule is used, the system can gradually process the accumulated requests in the following idle period. When the indicator falls below the threshold again, normal traffic request control is resumed.
+The principle of the flow control rule is to monitor the QPS metric of application or service traffic. When the metric reaches the threshold, the traffic is controlled according to the preset rule, preventing application crashes due to excessive traffic processing in a short period of time. After the flow control rule is used, the system can gradually process the accumulated requests in the following idle period. When the metric falls below the threshold again, normal traffic request control is resumed.
 
 You can create a flow control rule as follows:
 

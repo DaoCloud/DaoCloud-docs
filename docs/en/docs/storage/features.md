@@ -66,6 +66,6 @@
 
      The unified dashboard displays resource usage and distribution, storage resource status, and monitoring alarms.
 
-- Rich Metrics indicators
+- Rich Metrics metrics
 
      All-round data service monitoring and alarming realizes comprehensive monitoring of data disks, storage pools and storage drivers, and comprehensively guarantees data security.

@@ -80,7 +80,7 @@ GitOps combined with Kubernetes can use automatic delivery pipelines to apply ch
 
 In order to ensure the security of application deployment, enterprises have adopted the grayscale release solution. This PropagationPolicy makes application deployment more secure, but it still lacks automation. The process of publishing services to production and analyzing metrics remains a manual process. This will drive us to the next phase, progressive delivery.
 
-The App Workbench implements progressive grayscale release based on Argo Rollouts, allowing developers to choose their own analysis indicators, customize their progressive release steps, and even choose their own portal or service mesh provider to Perform flow control.
+The App Workbench implements progressive grayscale release based on Argo Rollouts, allowing developers to choose their own analysis metrics, customize their progressive release steps, and even choose their own portal or service mesh provider to Perform flow control.
 
 
 

@@ -30,7 +30,7 @@ The expansion modules that run through the overall architecture mainly include: 
 
 - Observation module
 
-    Observability is completely handled by Insight. The service mesh obtains traffic indicator information to draw a topology map through interface calls, and directly calls Istio's native grafana to provide users with various indicator charts.
+    Observability is completely handled by Insight. The service mesh obtains traffic metric information to draw a topology map through interface calls, and directly calls Istio's native grafana to provide users with various metric charts.
 
 - Microservice Platform/App Workbench
 

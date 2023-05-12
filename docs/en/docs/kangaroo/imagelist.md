@@ -13,7 +13,7 @@ The second part is all the public or private images obtained by actively associa
 
 **The main function**
 
-- Rapid application deployment: Both the image list and the App Workbench take the workspace as the dimension, so when you select the same workspace to deploy the application under the App Workbench, you can click the `Select Image` button to obtain the image list under the workspace with one click All visible images in , quickly complete the deployment.
+- Rapid application deployment: Both the image list and the App Workbench take the workspace as the dimension, so when you select the same workspace to deploy the application under the App Workbench, you can click the `Select Image` button to obtain the image list under the workspace with one click All visible images in, quickly complete the deployment.
 - Fine-grained allocation: After integrating the platform or creating a managed Harbor instance, the administrator can assign different registry spaces to different workspaces by binding the registry space to the workspace to achieve fine-grained allocation.
 - image scanning: Provides image scanning and analysis functions, visually checks the level and distribution of vulnerabilities, and provides scanning logs to facilitate tracking of vulnerabilities.
 - Push image: The image can be pushed to the authorized registry space through the commands provided by the platform.

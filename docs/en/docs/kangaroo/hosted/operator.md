@@ -12,7 +12,7 @@ Before creating a managed Harbor, you need to install Harbor Operator in the con
 
      
 
-1. Go to `Helm Application` -> `Helm Template` of `Container Management`, find and click the Harbor Operator card.
+1. Go to `Helm Application` -> `Helm chart` of `Container Management`, find and click the Harbor Operator card.
 
      
 

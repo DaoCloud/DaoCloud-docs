@@ -23,7 +23,7 @@ Please confirm that your cluster has successfully connected to `container manage
 
 1. On the left navigation bar, click `Container Management` —> `Cluster List`, and find the name of the cluster where Hwameistor is to be installed.
 
-2. In the left navigation bar, select `Helm Application` -> `Helm Template`, find and click `Hwameistor Operator`.
+2. In the left navigation bar, select `Helm Application` -> `Helm chart`, find and click `Hwameistor Operator`.
 
      ![click](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/operator1.jpg)
 

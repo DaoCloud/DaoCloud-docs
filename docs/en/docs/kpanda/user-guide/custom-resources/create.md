@@ -15,7 +15,7 @@ The container management module supports interface-based management of custom re
 
 - The container management module [connected to the Kubernetes cluster](../clusters/integrate-cluster.md) or [created Kubernetes](../clusters/create-cluster.md), and can access the cluster UI interface
 
-- Completed a [namespace creation](../namespaces/createtens.md), [user creation](../../../ghippo/user-guide/access-control/user.md) , and authorize the user as [`Cluster Admin`](../permissions/permission-brief.md#cluster-admin) role, for details, please refer to [Namespace Authorization](../permissions/cluster-ns-auth. md)
+- Completed a [namespace creation](../namespaces/createtens.md), [user creation](../../../ghippo/user-guide/access-control/user.md), and authorize the user as [`Cluster Admin`](../permissions/permission-brief.md#cluster-admin) role, for details, please refer to [Namespace Authorization](../permissions/cluster-ns-auth. md)
 
 ## Create custom resources via YAML
 

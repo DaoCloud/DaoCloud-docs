@@ -29,7 +29,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Antrea CNI Plugin v1.8.0 released (CNCF project)](https://github.com/antrea-io/antrea/releases/tag/v1.8.0)
 
-     The main new features of this version: add ExternalNode function, K8s network policy adds audit log support, supports the use of Antrea ClusterNetworkPolicy to control external access to NodePort services, allows logical grouping of different network endpoints, and generates a new Helm Chart version every time Antrea releases , Support topology awareness TopologyAwareHints, add status field in IPPool CRD.
+     The main new features of this version: add ExternalNode function, K8s network policy adds audit log support, supports the use of Antrea ClusterNetworkPolicy to control external access to NodePort services, allows logical grouping of different network endpoints, and generates a new Helm Chart version every time Antrea releases, Support topology awareness TopologyAwareHints, add status field in IPPool CRD.
 
 - [Antrea CNI plugin v1.7.0 release (CNCF project)](https://github.com/antrea-io/antrea/releases/tag/v1.7.0)
   
@@ -140,7 +140,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Chaos Mesh Chaos Engineering Platform v2.5.0 release (CNCF project)](https://github.com/chaos-mesh/chaos-mesh/releases/tag/v2.5.0)
 
-     The main new features of this version: support for multi-cluster chaos experiments, HTTPChaos adds TLS support, allows configuring Pod security contexts for controller manager and dashboards in Helm templates, and StressChaos supports cgroups v2.
+     The main new features of this version: support for multi-cluster chaos experiments, HTTPChaos adds TLS support, allows configuring Pod security contexts for controller manager and dashboards in Helm charts, and StressChaos supports cgroups v2.
 
 - [Chaos Mesh Chaos Engineering Test Platform v2.2.0 Release (CNCF Project)](https://github.com/chaos-mesh/chaos-mesh/releases/tag/v2.2.0)
 
@@ -181,7 +181,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Cluster API Declarative Cluster Lifecycle Management Tool v1.3.0 released (CNCF project)](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.3.0)
 
-     The main new features of this version: support for automatic renewal of machine certificates provided by the Kubeadm control plane provider, the ability to publish and consume cluster API images from the new container image registry registry.k8s.io, allowing the creation of clusters without taints on control plane nodes , clusterctl can now manage IPAM and RuntimeExtension providers.
+     The main new features of this version: support for automatic renewal of machine certificates provided by the Kubeadm control plane provider, the ability to publish and consume cluster API images from the new container image registry registry.k8s.io, allowing the creation of clusters without taints on control plane nodes, clusterctl can now manage IPAM and RuntimeExtension providers.
 
 - [Clusternet Multi-Cloud Multi-Cluster Management Project v0.15.0 Released (CNCF Project)](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.4.0)
 
@@ -271,12 +271,12 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Dapr Distributed Application Runtime v1.9.0 Release (CNCF project)](https://github.com/dapr/dapr/releases/tag/v1.9.0)
 
-     The main new features of this version: allow custom pluggable components, support OTel protocol, add elastic observation indicators, support application health checks, support setting default elastic policies, allow service calls using any middleware components, add pub/sub Namespace consumer groups, support for Podman container runtime.
+     The main new features of this version: allow custom pluggable components, support OTel protocol, add elastic observation metrics, support application health checks, support setting default elastic policies, allow service calls using any middleware components, add pub/sub Namespace consumer groups, support for Podman container runtime.
 
 - [The first open source version of the DeepFlow automated cloud-native observability platform is officially released](https://mp.weixin.qq.com/s/79wZ00RKoei_boZfiUmqgg)
 
      [DeepFlow](https://github.com/deepflowys/deepflow) is an observability platform developed by Yunshan Network. Based on technologies such as eBPF, it realizes automatic synchronization of resources, services, and K8s custom labels and injects them into observations as labels data.
-     It can automatically collect application performance indicators and track data without interpolation, and the innovative mechanism of SmartEncoding reduces the resource consumption of tag storage by 10 times.
+     It can automatically collect application performance metrics and track data without interpolation, and the innovative mechanism of SmartEncoding reduces the resource consumption of tag storage by 10 times.
      In addition, it can integrate a wide range of data sources and provide a northbound interface based on SQL.
 
 - [Devspace becomes a CNCF sandbox project](https://mp.weixin.qq.com/s/7ySQLtyYBX1ZDLvpeVObvQ)
@@ -295,7 +295,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Envoy v1.23.0 released (CNCF project)](https://www.envoyproxy.io/docs/envoy/v1.23.0/version_history/v1.23/v1.23.0)
 
-     The main new features of this version: send SDS resources of multiple clusters or listeners in one SDS request, obtain filter configuration through the configuration name of HTTP filter, update listener filter statistics, dns_resolver adds support for multiple addresses , Add dynamic listener filter configuration for listener filters, etc.
+     The main new features of this version: send SDS resources of multiple clusters or listeners in one SDS request, obtain filter configuration through the configuration name of HTTP filter, update listener filter statistics, dns_resolver adds support for multiple addresses, Add dynamic listener filter configuration for listener filters, etc.
 
 - [Envoy Gateway Envoy-based Gateway v0.4 Released](https://gateway.envoyproxy.io/v0.4.0/releases/v0.4.html)
 
@@ -347,7 +347,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Fluent Bit log processing tool v2.0.0 release (CNCF project)](https://github.com/fluent/fluent-bit/releases/tag/v2.0.0)
 
-     The main new features of this version: Add support for Traces (fully integrated with Prometheus and OpenTelemetry), allow the input plug-in to run in a separate thread, all network transport layers that need to be enabled will use OpenSSL, and the input plug-in will add native TLS functionality , support for integrating more plugin types with Golang and WebAssembly, support for inspecting data flowing through pipelines, and introduction of new input plugins that collect and process internal metrics.
+     The main new features of this version: Add support for Traces (fully integrated with Prometheus and OpenTelemetry), allow the input plug-in to run in a separate thread, all network transport layers that need to be enabled will use OpenSSL, and the input plug-in will add native TLS functionality, support for integrating more plugin types with Golang and WebAssembly, support for inspecting data flowing through pipelines, and introduction of new input plugins that collect and process internal metrics.
 
 - [Fluentd log collection tool v1.15.0 released (CNCF project)](https://github.com/fluent/fluentd/releases/tag/v1.15.0)
 
@@ -378,7 +378,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [HAProxy Kubernetes Ingress Controller v1.8 released](https://www.haproxy.com/blog/announcing-haproxy-kubernetes-ingress-controller-1-8/)
 
-     The main new features of this version: reduce the permissions of all processes in the container, and no longer run the privileged container by default; expose an endpoint for viewing pprof diagnostic data; support the collection of Prometheus indicators inside the controller, such as the amount of memory allocated and spent CPU time; if the ingress rules do not match, it supports custom setting of the backend port.
+     The main new features of this version: reduce the permissions of all processes in the container, and no longer run the privileged container by default; expose an endpoint for viewing pprof diagnostic data; support the collection of Prometheus metrics inside the controller, such as the amount of memory allocated and spent CPU time; if the ingress rules do not match, it supports custom setting of the backend port.
 
 - [Harbor Container Image Repository v2.8.0 Released (CNCF Project)](https://github.com/goharbor/harbor/releases/tag/v2.8.0)
 
@@ -468,7 +468,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Jaeger Distributed Tracing System v1.36.0 release (CNCF project)](https://github.com/jaegertracing/jaeger/releases/tag/v1.36.0)
 
-     The main new features of this version: support for reporting span size indicators, and increase multi-tenant support.
+     The main new features of this version: support for reporting span size metrics, and increase multi-tenant support.
 
 - [Jaeger v1.35.0 release (CNCF project)](https://github.com/jaegertracing/jaeger/releases/tag/v1.35.0)
 
@@ -487,7 +487,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [k8gb Kubernetes Global Load Balancer v0.10.0 release (CNCF project)](https://github.com/k8gb-io/k8gb/releases/tag/v0.10.0)
 
-     The main new features of this version: can access LeaderElection through environment variables, support the OpenTelemetry tracing scheme, support the creation of Grafana dashboard samples of K8GB indicators, and implement a consistent polling load balancing strategy.
+     The main new features of this version: can access LeaderElection through environment variables, support the OpenTelemetry tracing scheme, support the creation of Grafana dashboard samples of K8GB metrics, and implement a consistent polling load balancing strategy.
 
 - [Karmada Multi-Cloud Multi-Cluster Container Orchestration Platform v1.5.0 Released (CNCF Project)](https://github.com/karmada-io/karmada/releases/tag/v1.5.0)
 
@@ -495,7 +495,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Karmada multi-cloud multi-cluster container orchestration platform v1.4.0 release (CNCF project)](https://github.com/karmada-io/karmada/releases/tag/v1.4.0)
 
-     The main new features of this version: new declarative resource interpreter, support for priority of declarative distribution strategy/cluster distribution strategy, enhanced observability through indicators and events, failover/elegant eviction FeatureGate is upgraded to Beta and enabled by default.
+     The main new features of this version: new declarative resource interpreter, support for priority of declarative distribution strategy/cluster distribution strategy, enhanced observability through metrics and events, failover/elegant eviction FeatureGate is upgraded to Beta and enabled by default.
 
 - [Karmada multi-cloud multi-cluster container orchestration platform v1.3.0 release (CNCF project)](https://github.com/karmada-io/karmada/releases/tag/v1.3.0)
 
@@ -533,7 +533,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [KEDA Event-Driven Autoscaler v2.9.0 Release (CNCF Project)](https://github.com/kedacore/keda/releases/tag/v2.9.0)
 
-     The main new features of this version: add CouchDB, Etcd and Loki extensions, introduce Grafana dashboard for monitoring application auto-scaling, integrate all exposed Prometheus indicators in KEDA Operator, experimental support for extensions during polling intervals Cache metric values.
+     The main new features of this version: add CouchDB, Etcd and Loki extensions, introduce Grafana dashboard for monitoring application auto-scaling, integrate all exposed Prometheus metrics in KEDA Operator, experimental support for extensions during polling intervals Cache metric values.
 
 - [KEDA Kubernetes-based event-driven automatic scaling tool v2.8.0 released (CNCF project)](https://github.com/kedacore/keda/releases/tag/v2.8.0)
 
@@ -591,7 +591,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Kuasar: a multi-sandbox container runtime officially open-sourced by Huawei Cloud in association with several units](https://mp.weixin.qq.com/s/pXBZ-U1KF0_bNU8u6MOv8A)
 
-    [Kuasar](https://github.com/kuasar-io/kuasar) further reduces management overhead, simplifies invocation links, and extends support for mainstream sandbox technologies by retaining traditional container runtime functionality through comprehensive Rustification and optimizing management models and frameworks. In addition, by supporting multi-security sandbox co-node deployment, Kuasar can fully utilize node resources to achieve cost reduction and efficiency.
+    [Kuasar](https://github.com/kuasar-io/kuasar) further reduces management overhead, simplifies invocation traces, and extends support for mainstream sandbox technologies by retaining traditional container runtime functionality through comprehensive Rustification and optimizing management models and frameworks. In addition, by supporting multi-security sandbox co-node deployment, Kuasar can fully utilize node resources to achieve cost reduction and efficiency.
 
 - [KubeClipper: K8s multi-cluster lifecycle management tool open sourced by Kyushu Cloud](https://mp.weixin.qq.com/s/RVUB5Pw6-A5zZAQktl8AcQ)
 
@@ -679,7 +679,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [KubeSkoop: Kubernetes network monitoring tool open sourced by Alicloud](https://mp.weixin.qq.com/s/zbAcZCNT5vyzGvp7uTDB1w)
 
-     [KubeSkoop](https://github.com/alibaba/kubeskoop) supports functions including: Pod-level network monitoring, including traffic, application-level connection information, socket memory allocation status, etc.; Pod-level monitoring of indicators for abnormal network status, such as the wait time for a Pod process to perform a socket Pod-level network abnormal state metrics monitoring, such as the number of times a process within a Pod waits more than 100ms for a read or write operation, etc.; Pod-level network abnormal events on site, providing detailed observation of the events that occur.
+     [KubeSkoop](https://github.com/alibaba/kubeskoop) supports functions including: Pod-level network monitoring, including traffic, application-level connection information, socket memory allocation status, etc.; Pod-level monitoring of metrics for abnormal network status, such as the wait time for a Pod process to perform a socket Pod-level network abnormal state metrics monitoring, such as the number of times a process within a Pod waits more than 100ms for a read or write operation, etc.; Pod-level network abnormal events on site, providing detailed observation of the events that occur.
 
 - [KubeSphere v3.3.0 release (CNCF project)](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.md)
 
@@ -688,7 +688,7 @@ This page lists activity in cloud native open source projects in alphabetical or
      - DevOps: The backend supports independent deployment, provides a GitOps-based continuous deployment solution, introduces Argo CD as the backend of CD, and can count the status of continuous deployment in real time.
      - Network: The integrated load balancer OpenELB can expose the LoadBalancer service even under the K8s cluster in a non-public cloud environment.
      - Multi-tenancy and multi-cluster: Cluster applications can obtain the name of the cluster through a ConfigMap, and support setting cluster members and cluster roles for the cluster.
-     - Observability: Add container process/thread indicators, optimize disk usage indicators, and support importing Grafana templates in namespace custom monitoring.
+     - Observability: Add container process/thread metrics, optimize disk usage metrics, and support importing Grafana templates in namespace custom monitoring.
      - Storage: Support PVC automatic expansion policy, support management of volume snapshot content and type, and support setting authorization rules for storage types.
      - Edge: KubeEdge integrated.
 
@@ -753,7 +753,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Kuma Service Mesh Project v1.8.0 release (CNCF project)](https://github.com/kumahq/kuma/releases/tag/1.8.0)
 
-    The main new features of this version: cross-mesh gateway supports multi-region operation, mesh gateway/built-in gateway adds observability function, rewrites CNI, mesh gateway supports path rewriting and header addition/deletion, supports filtering proxy indicators, Simplify the implementation of TCP traffic logs and support Projected Service Account Tokens.
+    The main new features of this version: cross-mesh gateway supports multi-region operation, mesh gateway/built-in gateway adds observability function, rewrites CNI, mesh gateway supports path rewriting and header addition/deletion, supports filtering proxy metrics, Simplify the implementation of TCP traffic logs and support Projected Service Account Tokens.
 
 - [Kurator Distributed Cloud Native Platform v0.3.0 Released](https://github.com/kurator-dev/kurator/releases/tag/v0.3.0)
 
@@ -782,7 +782,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Kyverno Cloud Native Policy Engine v1.7.0 release (CNCF project)](https://github.com/kyverno/kyverno/releases/tag/v1.7.0)
 
-     Main new features of this version: support query `mutate.target` via dynamic client, allow Kyverno jp to work on Yaml files, optimize image verification signatures, mutate existing resources when policies are updated, allow users to define inline variables in context , disable leader election for update request controllers, support apiCall and CLI updates in tests, etc.
+     Main new features of this version: support query `mutate.target` via dynamic client, allow Kyverno jp to work on Yaml files, optimize image verification signatures, mutate existing resources when policies are updated, allow users to define inline variables in context, disable leader election for update request controllers, support apiCall and CLI updates in tests, etc.
 
 ### L
 
@@ -800,7 +800,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Litmus Chaos Engineering Framework v2.14.0 release (CNCF project)](https://github.com/litmuschaos/litmus/releases/tag/2.14.0)
 
-     The main new features of this version: Add support for containerd CRI in DNS experiment, support for http-chaos experiment in service mesh environment, add support for source and destination ports in network experiment, support for providing custom labels for chaos runner pods , Optimizing the description of probe state patterns in chaotic results.
+     The main new features of this version: Add support for containerd CRI in DNS experiment, support for http-chaos experiment in service mesh environment, add support for source and destination ports in network experiment, support for providing custom labels for chaos runner pods, Optimizing the description of probe state patterns in chaotic results.
 
 - [Litmus Chaos Engineering Framework v2.10.0 release (CNCF project)](https://github.com/litmuschaos/litmus/releases/tag/2.10.0)
 
@@ -812,7 +812,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Longhorn Cloud Native Distributed Block Storage v1.3.0 release (CNCF project)](https://github.com/longhorn/longhorn/releases/tag/v1.3.0)
 
-     Main new features of this version: support for multi-network K8s clusters, compatibility with fully managed K8s clusters (EKS, GKE, AKS), new Snapshot CRD, new Mutating & Validating admission webhooks, support for automatic identification and cleaning of unowned/unused volumes , introduce CSI snapshots, and support cluster expansion through Kubernetes Cluster Autoscaler.
+     Main new features of this version: support for multi-network K8s clusters, compatibility with fully managed K8s clusters (EKS, GKE, AKS), new Snapshot CRD, new Mutating & Validating admission webhooks, support for automatic identification and cleaning of unowned/unused volumes, introduce CSI snapshots, and support cluster expansion through Kubernetes Cluster Autoscaler.
 
 ### M
 
@@ -835,7 +835,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Mimir Prometheus long-term storage project v2.3.0 released](https://github.com/grafana/mimir/releases/tag/mimir-2.3.0)
 
-     The main new features of this version: support for ingesting indicators in OpenTelemetry format, new tenant alliance for metadata query, simplified object storage configuration, support for importing historical data, optimized instant query function, and enabled query sharding by default.
+     The main new features of this version: support for ingesting metrics in OpenTelemetry format, new tenant alliance for metadata query, simplified object storage configuration, support for importing historical data, optimized instant query function, and enabled query sharding by default.
 
 - [Mimir new feature: Integrating Graphite, Datadog, Influx and Prometheus metrics into a unified storage backend](https://grafana.com/blog/2022/07/25/new-in-grafana-mimir-ingest-graphite-datadog-influx-and-prometheus-metrics-into-a-single-storage-backend/)
 
@@ -950,7 +950,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [OpenTelemetry v1.13.0 release (CNCF project)](https://github.com/open-telemetry/opentelemetry-specification/releases/tag/v1.13.0)
 
-     The main new features of this version: Context is immutable when setting span, supports experimental configuration of default histogram aggregation of OTLP indicator exporter, allows log processor to modify log records, adds experimental event and log API specifications, in Add network indicators to process semantic conventions, and add semantic conventions to GraphQL.
+     The main new features of this version: Context is immutable when setting span, supports experimental configuration of default histogram aggregation of OTLP metric exporter, allows log processor to modify log records, adds experimental event and log API specifications, in Add network metrics to process semantic conventions, and add semantic conventions to GraphQL.
 
 - [OpenTelemetry Metrics release RC version](https://opentelemetry.io/blog/2022/metrics-announcement/)
 
@@ -958,7 +958,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [OpenTelemetry v1.11.0 release (CNCF project)](https://github.com/open-telemetry/opentelemetry-specification/releases/tag/v1.11.0)
 
-     The main new features of this version: replace the histogram with a more clear bucket histogram, support displaying examples on OpenMetrics counters, increase the semantic specification of database connection pool indicators, allow all metrics specifications to be synchronous or asynchronous, add HTTP/3, etc.
+     The main new features of this version: replace the histogram with a more clear bucket histogram, support displaying examples on OpenMetrics counters, increase the semantic specification of database connection pool metrics, allow all metrics specifications to be synchronous or asynchronous, add HTTP/3, etc.
 
 - [Openyurt Cloud Native Edge Computing Project v1.2.0 Released (CNCF Project)](https://github.com/openyurtio/openyurt/releases/tag/v1.2.0)
 
@@ -995,7 +995,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Phlare: Grafana open source large-scale continuous profiling database](https://grafana.com/blog/2022/11/02/announcing-grafana-phlare-oss-continuous-profiling-database/)
 
-     [Phlare](https://github.com/grafana/phlare) is a horizontally scalable, highly available, multi-tenant continuous analysis data aggregation system, fully integrated with Grafana, and can be related to observation indicators such as indicators, logs and traces couplet. Installation requires only one binary and no other dependencies.
+     [Phlare](https://github.com/grafana/phlare) is a horizontally scalable, highly available, multi-tenant continuous analysis data aggregation system, fully integrated with Grafana, and can be related to observation metrics such as metrics, logs and traces couplet. Installation requires only one binary and no other dependencies.
      Phlare uses object storage for long-term data storage and is compatible with multiple object storage implementations. Its native multi-tenancy and isolation feature set allows multiple independent teams or business units to run a single database.
 
 - [Pisanix: SphereEx Open Source Solution for Database Mesh](https://mp.weixin.qq.com/s/p8bi14s8FWdp7GlqQxKzzw)
@@ -1044,7 +1044,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Prometheus v2.36.0 release (CNCF project)](https://github.com/prometheus/prometheus/releases/tag/v2.36.0)
 
-     The main new features of this version: Vultr integration, Linode SD failure count indicator and `prometheus_ready` indicator added, `stripDomain` added to the template function, promtool supports using matchers when querying label values, and proxy pattern identifiers added.
+     The main new features of this version: Vultr integration, Linode SD failure count metric and `prometheus_ready` metric added, `stripDomain` added to the template function, promtool supports using matchers when querying label values, and proxy pattern identifiers added.
 
 ### R
 
@@ -1080,7 +1080,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Skywalking application performance monitoring system v9.3.0 released](https://github.com/apache/skywalking/releases/tag/v9.3.0)
 
-     The main new features of this version: increase the indicator correlation function, use Sharding MySQL as the database, visualize the performance of virtual cache and message queue, use Skywalking OpenTelemetry receiver instead of prometheus-fetcher plug-in to grab Prometheus indicators.
+     The main new features of this version: increase the metric correlation function, use Sharding MySQL as the database, visualize the performance of virtual cache and message queue, use Skywalking OpenTelemetry receiver instead of prometheus-fetcher plug-in to grab Prometheus metrics.
 
 - [Skywalking application performance monitoring system v9.2.0 released](https://github.com/apache/skywalking/releases/tag/v9.2.0)
 
@@ -1116,7 +1116,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [TDengine Cloud Native Time Series Database v3.0 released](https://github.com/taosdata/TDengine/releases/tag/ver-3.0.0.0)
 
-     The main new features of this version: support data collected by 1 billion devices, 100 nodes; support separation of storage and computing, introduce computing nodes, and restructure the entire computing engine; optimize support for message queues, streaming computing, and caching , introduce event-driven stream computing; support container and Kubernetes deployment.
+     The main new features of this version: support data collected by 1 billion devices, 100 nodes; support separation of storage and computing, introduce computing nodes, and restructure the entire computing engine; optimize support for message queues, streaming computing, and caching, introduce event-driven stream computing; support container and Kubernetes deployment.
 
 - [Tekton Cloud-native CI/CD framework v0.43.0 released](https://github.com/tektoncd/pipeline/releases/tag/v0.43.0)
 

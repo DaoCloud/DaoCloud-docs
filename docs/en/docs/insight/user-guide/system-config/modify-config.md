@@ -1,10 +1,10 @@
 # Modify system configuration
 
-Observability will persist the data of indicators, logs, and links by default. Users can modify the system configuration according to This page.
+Observability will persist the data of metrics, logs, and traces by default. Users can modify the system configuration according to This page.
 
-## How to modify the indicator data retention period
+## How to modify the metric data retention period
 
-Refer to the following steps to modify the indicator data retention period.
+Refer to the following steps to modify the metric data retention period.
 
 1. Execute the following command:
 
@@ -47,7 +47,7 @@ Refer to the following steps to modify the indicator data retention period.
           replicaCount: 1
     ```
 
-3. After saving the modification, the pod of the component responsible for storing the indicators will automatically restart, just wait for a while.
+3. After saving the modification, the pod of the component responsible for storing the metrics will automatically restart, just wait for a while.
 
 ## How to modify the log data storage duration
 

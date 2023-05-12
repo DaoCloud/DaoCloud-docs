@@ -60,7 +60,7 @@ basic_auth:
 tls_config:
    [<tls_config>]
 
-# Use the proxy service to capture the indicators on the target, and fill in the corresponding proxy service address.
+# Use the proxy service to capture the metrics on the target, and fill in the corresponding proxy service address.
 [ proxy_url: <string> ]
 
 # Specify the target through static configuration, see the description below for details.
@@ -274,7 +274,7 @@ The corresponding ConfigMaps are described as follows:
 [ honorTimestamps: bool | default = true ]
 # Basic auth authentication information, username/password fill in the corresponding K8S secret key value, note that the secret namespace needs to be the same as PodMonitor/ServiceMonitor.
 [ basicAuth: BasicAuth ]
-# Use the proxy service to capture the indicators on the target, and fill in the corresponding proxy service address
+# Use the proxy service to capture the metrics on the target, and fill in the corresponding proxy service address
 [ proxyUrl: string ]
 # After capturing the data, rewrite the corresponding label on the target through the relabel mechanism, and execute multiple relabel rules in order.
 # relabel_config See below for details

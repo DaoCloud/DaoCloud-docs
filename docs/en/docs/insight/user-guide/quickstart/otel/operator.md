@@ -47,9 +47,9 @@ spec:
 EOF
 ```
 
-## Add annotations to automatically access links
+## Add annotations to automatically access traces
 
-After the above is ready, you can access link tracking for the application through annotations (Annotation). Otel currently supports accessing links through annotations. Depending on the service language, different pod annotations need to be added.
+After the above is ready, you can access link tracking for the application through annotations (Annotation). Otel currently supports accessing traces through annotations. Depending on the service language, different pod annotations need to be added.
 Each service can add one of two types of annotations:
 
 - Only inject environment variable annotations

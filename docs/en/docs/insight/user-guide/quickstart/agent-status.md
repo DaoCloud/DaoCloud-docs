@@ -27,10 +27,10 @@ Can be checked by:
 
 ## Supplementary instructions
 
-1. The resource consumption of the indicator collection component Prometheus in `insight-agent` is directly proportional to the number of container groups running in the cluster.
+1. The resource consumption of the metric collection component Prometheus in `insight-agent` is directly proportional to the number of container groups running in the cluster.
     Please adjust Prometheus resources according to the cluster size, please refer to: [Prometheus Resource Planning](../../best-practice/prometheus-res.md)
 
-2. Since the storage capacity of the indicator storage component vmstorage in the global service cluster is directly proportional to the sum of the number of container groups in each cluster.
+2. Since the storage capacity of the metric storage component vmstorage in the global service cluster is directly proportional to the sum of the number of container groups in each cluster.
 
      - Please contact the platform administrator to adjust the disk capacity of vmstorage according to the cluster size, see [vmstorage disk capacity planning](../../best-practice/vms-res-plan.md)
      - Adjust vmstorage disk according to multi-cluster size, see [vmstorge disk expansion](../../best-practice/modify-vms-disk.md)

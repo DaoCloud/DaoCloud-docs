@@ -105,7 +105,7 @@ This page lists the container-managed Release Notes to help you understand the e
 
 #### Features
 
-- **Added** Helm template supports the display of Chinese names and template suppliers.
+- **Added** Helm chart supports the display of Chinese names and template suppliers.
 - **Added** CronHPA, which supports timed scaling workloads.
 - **Added** VPA (Vertical Scaling) supports manual/automatic modification of resource request values to achieve vertical workload scaling.
 - **Added** Namespace has exclusive hosting capabilities.
@@ -191,7 +191,7 @@ This page lists the container-managed Release Notes to help you understand the e
 
 - **Optimized** The cluster drop-down list supports the display of cluster status, and optimizes the user’s experience of selecting the managed cluster when creating a cluster, selecting the target cluster when creating a namespace, and selecting the target cluster when authorizing a cluster
 - **Optimized** Install the insight-agent plug-in in the helm application to support the automatic acquisition and filling of the insight-server related address of the global service cluster
-- **Optimized** The default icon when the Helm template icon is empty
+- **Optimized** The default icon when the Helm chart icon is empty
 - **Optimized** Select the network mode as None when creating the cluster to allow the user to install the network plug-in after the cluster is created
 - **Optimized** Cluster Operations Information Architecture:
     - Adjust the cluster upgrade operation on the cluster list and cluster overview page to the cluster operation and maintenance function in the cluster details.

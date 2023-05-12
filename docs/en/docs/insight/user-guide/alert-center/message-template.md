@@ -4,7 +4,7 @@ The message template function supports customizing the content of the message te
 
 ## Create a message template
 
-1. In the left navigation bar, select `Alarm Center` -> `Message Template`, and click the `New Message Template` button.
+1. In the left navigation bar, select `alert Center` -> `Message Template`, and click the `New Message Template` button.
 
     
 

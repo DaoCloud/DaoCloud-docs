@@ -13,7 +13,7 @@ For more information on open source Grafana, see [Grafana Official Documentation
 
      
 
-2. Taking `Insight Overview` as an example, perform the following steps to set relevant parameters and view cluster indicators.
+2. Taking `Insight Overview` as an example, perform the following steps to set relevant parameters and view cluster metrics.
 
      - In the upper left corner of the page, select a cluster to view resource usage in the selected cluster.
 

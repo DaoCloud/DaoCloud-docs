@@ -15,7 +15,7 @@ MinIO is a GNU AGPL v3 open source software-defined product that can run well on
 MinIO's architectural design has been aimed at private cloud standards with high performance requirements from the very beginning, pursuing the ultimate performance on the basis of realizing all the functions required by object storage.
 MinIO is easy to use, efficient, and high-performance, and can provide cloud-native object storage services with elastic scalability in a simpler way.
 
-MinIO performs well in traditional object storage scenarios (such as auxiliary storage, disaster recovery, and archiving), and is also unique in storage technologies in machine learning, big data, private cloud, hybrid cloud, etc., including data analysis, high-performance application loads , native cloud applications, etc.
+MinIO performs well in traditional object storage scenarios (such as auxiliary storage, disaster recovery, and archiving), and is also unique in storage technologies in machine learning, big data, private cloud, hybrid cloud, etc., including data analysis, high-performance application loads, native cloud applications, etc.
 
 ### MinIO architecture design
 
@@ -25,7 +25,7 @@ The corresponding architecture diagram is as follows:
 
 ![Architecture Diagram](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/architect.png)
 
-MinIO is used as the main storage for cloud-native applications. Compared with traditional object storage, cloud-native applications require higher throughput and lower latency, and these are the performance indicators that MinIO can achieve. The read/write speed is as high as 183 GB/s and 171 GB/s.
+MinIO is used as the main storage for cloud-native applications. Compared with traditional object storage, cloud-native applications require higher throughput and lower latency, and these are the performance metrics that MinIO can achieve. The read/write speed is as high as 183 GB/s and 171 GB/s.
 
 The ultimate high performance of MinIO is inseparable from the underlying storage platform. Local storage has the highest read and write performance among many storage protocols, which undoubtedly provides performance guarantee for MinIO.
 HwameiStor is exactly the storage system that meets the requirements of the cloud-native era. It has the advantages of high performance, high availability, automation, low cost, and rapid deployment, and can replace expensive traditional SAN storage.

@@ -4,7 +4,7 @@ On the `Notification Configuration` page, you can configure to send messages to 
 
 ## mail
 
-1. After entering `Observability`, click `Alarm Center` -> `Notification Configuration` -> `Email` in the left navigation bar, click `Add Mailbox Group` to add one or more email addresses.
+1. After entering `Observability`, click `alert Center` -> `Notification Configuration` -> `Email` in the left navigation bar, click `Add Mailbox Group` to add one or more email addresses.
 
     
 
@@ -16,7 +16,7 @@ On the `Notification Configuration` page, you can configure to send messages to 
 
 ## Enterprise WeChat
 
-1. In the left navigation bar, click `Alarm Center` -> `Notification Configuration` -> `WeChat`, click `Add Group Robot` to add one or more group robots.
+1. In the left navigation bar, click `alert Center` -> `Notification Configuration` -> `WeChat`, click `Add Group Robot` to add one or more group robots.
 
     
 
@@ -24,7 +24,7 @@ On the `Notification Configuration` page, you can configure to send messages to 
 
 ## DingTalk
 
-1. In the left navigation bar, click `Alarm Center` -> `Notification Configuration` -> `DingTalk`, click `Add Group Robot` to add one or more group robots.
+1. In the left navigation bar, click `alert Center` -> `Notification Configuration` -> `DingTalk`, click `Add Group Robot` to add one or more group robots.
 
     
 
@@ -32,7 +32,7 @@ On the `Notification Configuration` page, you can configure to send messages to 
 
 ## Webhooks
 
-1. In the left navigation bar, click `Alarm Center` -> `Notification Configuration` -> `Webhook`, click `New Webhook` to add one or more Webhooks.
+1. In the left navigation bar, click `alert Center` -> `Notification Configuration` -> `Webhook`, click `New Webhook` to add one or more Webhooks.
 
     
 

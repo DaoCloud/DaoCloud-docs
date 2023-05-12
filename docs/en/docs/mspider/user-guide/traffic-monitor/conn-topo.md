@@ -10,9 +10,9 @@ Click `Traffic Topology` in the left navigation bar to open the page. This funct
 
 
 
-## Service indicator data information
+## Service metric data information
 
-Click any service, and the sidebar will pop up to display service-related indicators based on the protocol type:
+Click any service, and the sidebar will pop up to display service-related metrics based on the protocol type:
 
 - HTTP service: request rate (RPM), error rate (%), average delay (ms)
 

@@ -72,9 +72,9 @@ This page shares some technical articles related to cloud native, and we hope th
 
     In the actual application process of Redis, there will be abnormal situations such as cache avalanche, cache breakdown and cache penetration. If these situations are ignored, it may bring disastrous consequences. This page analyzes and analyzes these cache abnormalities and corresponding solutions. Summarize.
 
-- [K8S Internals Series: The Mystery of the Disappearance of Storage Volume Indicators](https://mp.weixin.qq.com/s/Sd1TY9ml65MQYVSupmvpbw)
+- [K8S Internals Series: The Mystery of the Disappearance of Storage Volume metrics](https://mp.weixin.qq.com/s/Sd1TY9ml65MQYVSupmvpbw)
 
-    This page was inspired by the fact that Grafana does not display the capacity indicators of storage volumes created with storage drivers. It shows the troubleshooting ideas and methods for this problem, and then outlines the implementation process of Kubelet for collecting storage volume indicators.
+    This page was inspired by the fact that Grafana does not display the capacity metrics of storage volumes created with storage drivers. It shows the troubleshooting ideas and methods for this problem, and then outlines the implementation process of Kubelet for collecting storage volume metrics.
 
 ### Best Practices
 
@@ -99,7 +99,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
     This page introduces two solutions developed by the OpenCloudOS community: CgroupFS and SLI, for mitigating container isolation vulnerabilities and monitoring kernel critical paths.
     The CgroupFS scheme provides a kernel-state container view of the VM file system (/proc, /sys), which enhances container resource view isolation.
-    SLI is a container-level performance tracking mechanism that tracks and observes the competition for CPU and memory resources from the container's perspective, thus providing reliable indicators for locating and analyzing container performance problems.
+    SLI is a container-level performance tracking mechanism that tracks and observes the competition for CPU and memory resources from the container's perspective, thus providing reliable metrics for locating and analyzing container performance problems.
 
 - [Easy gRPC to REST transcoding based on Kubernetes and Istio](https://cloud.redhat.com/blog/grpc-to-rest-transcoding-with-openshift-and-service-mesh)
 
@@ -191,7 +191,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Three Misunderstandings of Kubernetes HPA and Guide to Avoiding Pitfalls](https://mp.weixin.qq.com/s/3eSm0BZSrPUAZQQhG_L_5A)
 
-    Kubernetes provides horizontal elastic expansion capability (HPA), which allows applications to expand/shrink according to real-time indicators.
+    Kubernetes provides horizontal elastic expansion capability (HPA), which allows applications to expand/shrink according to real-time metrics.
     However, the actual working situation of HPA may be different from what we expected. There are some cognitive misunderstandings here. For example, HPA has a dead zone for expansion, expansion does not match the expected usage, and elastic behavior always lags behind.
     In this regard, the article summarizes some precautions to help "effectively avoid pits" when using HPA.
 
@@ -222,7 +222,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Practice of Proxyless Mesh in Dubbo](https://mp.weixin.qq.com/s/TH8waHN00y6q26NUDY9wzg)
 
-    [Dubbo Proxyless Mesh](https://github.com/apache/dubbo-awesome/blob/master/proposals/D3.2-proxyless-mesh.md) directly implements xDS protocol analysis and realizes direct communication between Dubbo and Control Plane , and then realize the unified control of traffic control, service governance, observability, security, etc., and avoid the performance loss and deployment architecture complexity brought by the Sidecar mode.
+    [Dubbo Proxyless Mesh](https://github.com/apache/dubbo-awesome/blob/master/proposals/D3.2-proxyless-mesh.md) directly implements xDS protocol analysis and realizes direct communication between Dubbo and Control Plane, and then realize the unified control of traffic control, service governance, observability, security, etc., and avoid the performance loss and deployment architecture complexity brought by the Sidecar mode.
 
 - [Best Practices of K8s Security Monitoring under Zero Trust Strategy](https://mp.weixin.qq.com/s/wYUNsGaWEnQZ0BVxsQORbA)
 
@@ -277,7 +277,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Observability sampling scenarios and landing cases (Part 2)](https://mp.weixin.qq.com/s/nxnz37VJydNHFMaEywu9KA)
 
     The author shared some thoughts on the sampling design of observable systems around some landing cases.
-    First analyze the necessity of full sampling and the links suitable for full sampling, and then share the complete sampling solutions in the industry such as Ali Eagle Eye and ByteDance and the sampling case of OpenTelemetry production environment.
+    First analyze the necessity of full sampling and the traces suitable for full sampling, and then share the complete sampling solutions in the industry such as Ali Eagle Eye and ByteDance and the sampling case of OpenTelemetry production environment.
 
 - [How to extend K8s Descheduler strategy](https://mp.weixin.qq.com/s/pkDxexvrzmtuLMWwzi0p_g)
 
@@ -324,7 +324,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
     Hybrid technology, that is, online business and offline tasks are mixed and deployed on the same physical resources, and resource isolation, scheduling and other control methods are used to make full use of resources while ensuring service stability.
     The Baidu cloud-native hybrid system is mainly divided into three parts: stand-alone management layer, scheduling layer, and operation layer.
-    The stand-alone layer provides resource quality management, kernel-level QoS isolation, resource view reporting and policy enforcement, and eBPF fine-grained indicator collection capabilities;
+    The stand-alone layer provides resource quality management, kernel-level QoS isolation, resource view reporting and policy enforcement, and eBPF fine-grained metric collection capabilities;
     The scheduling layer is responsible for the perception of resource dynamic source view and providing the best scheduling strategy;
     The operation layer provides functions such as resource portrait, resource operation, water level setting, and hot spot management.
 
@@ -375,7 +375,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Prometheus Monitoring Harbor Actual Combat](https://blog.51cto.com/u_15331726/5177735)
 
-    Harbor v2.2 and later versions support the collection and use of related indicators. This page introduces how to use Prometheus to easily capture some key indicators of Harbor instances.
+    Harbor v2.2 and later versions support the collection and use of related metrics. This page introduces how to use Prometheus to easily capture some key metrics of Harbor instances.
 
 ### Tool recommendation
 
@@ -599,7 +599,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Nightingale - Enterprise version of Prometheus](https://mp.weixin.qq.com/s/OXmnH9KsygpB70-NmwxM1w)
 
     [Nightingale](https://github.com/ccfos/nightingale) is an open source cloud-native monitoring and analysis system, adopting the All-In-One design, integrating data collection, visualization, monitoring and alarming, and data analysis. The cloud-native ecosystem provides out-of-the-box enterprise-level monitoring, analysis and alarm capabilities.
-    The article mainly introduces how Nightingale correlates the three observability indicators, operation and maintenance quantification, alarm noise processing, product positioning, and AIOps applications, etc.
+    The article mainly introduces how Nightingale correlates the three observability metrics, operation and maintenance quantification, alarm noise processing, product positioning, and AIOps applications, etc.
 
 - [Porting eBPF applications to BumbleBee - the easiest way to develop BPF CO-RE programs](https://www.solo.io/blog/porting-ebpf-applications-to-bumblebee/)
 
@@ -626,10 +626,10 @@ This page shares some technical articles related to cloud native, and we hope th
 
     The article describes how the OpenShift 4.10 developer preview leverages Multus CNI to use Kubernetes services on the secondary network, achieving functional parity with the Kubernetes secondary network.
 
-- [Use vmagent instead of Prometheus to collect monitoring indicators](https://mp.weixin.qq.com/s/jGf1L-8c8id8umB72b3AsQ)
+- [Use vmagent instead of Prometheus to collect monitoring metrics](https://mp.weixin.qq.com/s/jGf1L-8c8id8umB72b3AsQ)
 
     vmagent is a component in the open source time series database VictoriaMetrics (VM), which helps us collect metrics from various sources and store them in VM or any other Prometheus-compatible storage system that supports the remote write protocol.
-    vmagent can implement many functions of Prometheus, but index capture is more flexible, supports pulling and pushing indicators, and uses less memory, CPU, disk I/O, and network bandwidth.
+    vmagent can implement many functions of Prometheus, but index capture is more flexible, supports pulling and pushing metrics, and uses less memory, CPU, disk I/O, and network bandwidth.
 
 - [In-depth Interpretation: Distributed System Resilience Architecture Ballast Stone OpenChaos](https://mp.weixin.qq.com/s/x-aRajL_ThKgVpOwV5GgXA)
 
@@ -731,7 +731,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [How to choose a reliable APM system in a production environment](https://mp.weixin.qq.com/s/3dD0hIuqpXdepLVC6V7aoA)
 
-    The article starts from the introduction of mainstream APM products (compared with Pinpoint, Jaeger, Skywalking, Tingyun, Tencent Cloud + Alibaba Cloud Arms and Datadog), and passes through several important dimensions in the production environment, such as product experience, Agent capability, alarm + DB support , cloud-native support capabilities, large data screens, etc., and give suggestions for APM selection solutions.
+    The article starts from the introduction of mainstream APM products (compared with Pinpoint, Jaeger, Skywalking, Tingyun, Tencent Cloud + Alibaba Cloud Arms and Datadog), and passes through several important dimensions in the production environment, such as product experience, Agent capability, alarm + DB support, cloud-native support capabilities, large data screens, etc., and give suggestions for APM selection solutions.
 
 ### Frontier hotspot
 
@@ -792,8 +792,8 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [eBPF program camera - strive to solve the most valuable and challenging problems in the field of observability in the future](https://mp.weixin.qq.com/s/FYNe1H5dmBpbKFOrIpjuzQ)
   
-    Currently, observability users are easily lost in the maze of indicators. They don’t know when to view which indicators, and how to understand large-scale and fine-grained indicators.
-    To solve this problem, the Kindling community chose an eBPF-based observability camera to obtain fine-grained indicators during program execution according to the eBPF granularity, helping users understand the real process of program execution and understand how fine-grained indicators affect the program implemented.
+    Currently, observability users are easily lost in the maze of metrics. They don’t know when to view which metrics, and how to understand large-scale and fine-grained metrics.
+    To solve this problem, the Kindling community chose an eBPF-based observability camera to obtain fine-grained metrics during program execution according to the eBPF granularity, helping users understand the real process of program execution and understand how fine-grained metrics affect the program implemented.
 
 - [Is GitOps the emperor's new clothes](https://mp.weixin.qq.com/s/CpLvQM2rTI4InIN1Vk5ZKg)
 

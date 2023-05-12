@@ -1,6 +1,6 @@
 # Service Monitoring
 
-Observability Insight provides monitoring of service indicators, and can view key indicators such as real-time throughput, number of requests, request delay, and error rate of services.
+Observability Insight provides monitoring of service metrics, and can view key metrics such as real-time throughput, number of requests, request delay, and error rate of services.
 
 ## Prerequisites
 

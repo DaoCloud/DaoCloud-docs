@@ -26,7 +26,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     A resource object that extends the functionality of DCE.
     You can install more additional extensions via
-    [Container Management](../kpanda/intro/what.md) -> [Helm Template](../kpanda/07UserGuide/helm/README.md).
+    [Container Management](../kpanda/intro/what.md) -> [Helm chart](../kpanda/07UserGuide/helm/README.md).
 
 - Admission Controller
 

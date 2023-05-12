@@ -16,10 +16,10 @@ This page demonstrates how to import and successfully use the Ceph Monitoring Pl
 
 ## Deploy Insight Agent in a worker cluster
 
-To collect the monitoring indicators of rook-ceph-cluster, you need to [Install Insight Agent](../../insight/user-guide/quickstart/install-agent.md),
+To collect the monitoring metrics of rook-ceph-cluster, you need to [Install Insight Agent](../../insight/user-guide/quickstart/install-agent.md),
 Then create CR ServiceMonitor to collect monitoring information of rook-ceph-cluster.
 
-1. The monitoring indicators of rook-ceph-cluster are exposed through port 9283.
+1. The monitoring metrics of rook-ceph-cluster are exposed through port 9283.
 
      ![port 9283](https://docs.daocloud.io/daocloud-docs-images/docs/storage/solutions/images/agen01.png)
 

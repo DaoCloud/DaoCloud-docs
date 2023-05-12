@@ -43,7 +43,7 @@ When the team has multicloud capabilities, it only needs to manage its own relat
 
 ### Observation capabilities in cloudy dimensions
 
-In single-cluster mode, users can only know the business operation status in the current cluster, and the business communication between each cluster is opaque and independent. Users cannot perceive the business communication links outside the cluster.
+In single-cluster mode, users can only know the business operation status in the current cluster, and the business communication between each cluster is opaque and independent. Users cannot perceive the business communication traces outside the cluster.
 
 However, in multicloud scenarios, as long as they belong to the same mesh, the mesh can aggregate and analyze the communication between different clusters under the same network, and draw it into a complete multicloud network topology.
 Just like the original single cluster is just a 2D photo, in the multicloud scene, the service mesh can provide a 3D topological network.
