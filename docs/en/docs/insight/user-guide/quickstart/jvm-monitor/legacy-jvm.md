@@ -1,6 +1,6 @@
 # Java application docking observability with existing JVM metrics
 
-If your Java application exposes JVM monitoring indicators through other means (such as Spring Boot Actuator),
+If your Java application exposes JVM monitoring metrics through other means (such as Spring Boot Actuator),
 We need to allow monitoring data to be collected. You can let Insight collect existing JVM metrics by adding annotations (Kubernetes Annotations) to the workload:
 
 ```yaml

@@ -58,7 +58,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
 === "Observability"
 
-     Based on logs, links, indicators, eBPF and other technical means, comprehensive collection of service data, in-depth acquisition of request link information, dynamic observation, multi-dimensional control of real-time changes in clusters, nodes, applications and services,
+     Based on logs, traces, metrics, eBPF and other technical means, comprehensive collection of service data, in-depth acquisition of request link information, dynamic observation, multi-dimensional control of real-time changes in clusters, nodes, applications and services,
      Realize the query of all clusters and load observation data through a unified control plane, introduce topology analysis technology to visualize the application health status, and realize second-level fault location.
 
      *[eBPF]: Extended Berkeley Packet Filter, which is a component of the Linux kernel that can run sandboxed programs in the kernel

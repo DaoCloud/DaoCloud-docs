@@ -45,7 +45,7 @@ CI/CD pipeline capability automates application construction and deployment. Inn
 
 === "Cloud Native Observables"
 
-Users have weak ability to observe running applications, and hope to complete observation access with light-weight or no-modification access, and complete all-round application operation observation (logs, indicators, links).
+Users have weak ability to observe running applications, and hope to complete observation access with light-weight or no-modification access, and complete all-round application operation observation (logs, metrics, traces).
 
 Modules involved: [Container Management](../kpanda/intro/what.md), [Observability](../insight/intro/what.md), [Container Network](../network/intro/what-is-net.md), Edge Cloud Synergy, Xinchuang Cloud
 

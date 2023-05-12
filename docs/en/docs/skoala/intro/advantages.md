@@ -11,7 +11,7 @@ DaoCloud Daoke"s micro-service engine has the following advantages over other Da
 
 - One-stop management
 
-    It provides service registration and discovery, configuration management, traffic governance, link tracking, indicator monitoring, gateway management, API management, domain name management, alarm monitoring, gateway policy and other functions to meet the management requirements of each stage of the micro-service life cycle and achieve one-stop governance.
+    It provides service registration and discovery, configuration management, traffic governance, link tracking, metric monitoring, gateway management, API management, domain name management, alarm monitoring, gateway policy and other functions to meet the management requirements of each stage of the micro-service life cycle and achieve one-stop governance.
 
 - Noninductive transfer
 

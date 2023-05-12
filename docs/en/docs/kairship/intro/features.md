@@ -12,7 +12,7 @@ The list of capabilities for Multicloud orchestration is as follows:
 - Native API support: Supports all Kubernetes native APIs.
 - Multicloud application distribution: Rich Multicloud application distribution strategies, differentiated strategies, etc.
 - Application failover: Built-in Multicloud application failover (failover) capability.
-- Observability: Rich auditing, indicator measurement, and the ability to improve observability.
+- Observability: Rich auditing, metric measurement, and the ability to improve observability.
 - Docking with global management authority: manage user access scope with workspace, and perform authentication operations on users and instances.
 
 ## Multicloud instance management
@@ -46,7 +46,7 @@ The list of capabilities for Multicloud orchestration is as follows:
 
 - add cluster
 
-    Supports dynamic (hot-swapping) adding new clusters to the current Multicloud instance, adds a cluster interface for selecting container management, and displays all the clusters to be connected that are currently authorized to access by default, and supports the display of basic information of the cluster, including the cluster name , status, platform, region, availability zone, Kubernetes version, etc.
+    Supports dynamic (hot-swapping) adding new clusters to the current Multicloud instance, adds a cluster interface for selecting container management, and displays all the clusters to be connected that are currently authorized to access by default, and supports the display of basic information of the cluster, including the cluster name, status, platform, region, availability zone, Kubernetes version, etc.
 
 - remove cluster
 

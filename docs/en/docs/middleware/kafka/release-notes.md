@@ -105,7 +105,7 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 - **Added** supports kafka list query, status query, creation, deletion and modification
 - **Added** Support kafka-manager to manage kafka
-- **Added** Support kafka indicator monitoring, check the monitoring chart
+- **Added** Support kafka metric monitoring, check the monitoring chart
 - **Added** support for ghippo permission linkage
 - **Added** `mcamel-elasticsearch` interface to get user list
 - **Optimize** Update the release note script and execute the release-process specification

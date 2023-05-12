@@ -57,7 +57,7 @@ Workspaces can be mapped to various concepts such as projects, tenants, enterpri
 
 ## Prepare a cluster
 
-The workspace is to meet the multi-tenant usage scenarios. It forms an isolated resource environment based on multiple resources such as clusters, cluster namespaces, meshs, mesh namespaces, multiclouds, and multicloud namespaces. Workspaces can be mapped to projects and tenants. , business, supplier and many other concepts.
+The workspace is to meet the multi-tenant usage scenarios. It forms an isolated resource environment based on multiple resources such as clusters, cluster namespaces, meshs, mesh namespaces, multiclouds, and multicloud namespaces. Workspaces can be mapped to projects and tenants., business, supplier and many other concepts.
 
 Follow the steps below to prepare a cluster.
 

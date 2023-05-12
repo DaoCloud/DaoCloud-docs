@@ -15,7 +15,7 @@ In addition to the above preset repositories, you can also add third-party Helm 
 
 - The container management module [connected to the Kubernetes cluster](../clusters/integrate-cluster.md) or [created the Kubernetes cluster](../clusters/create-cluster.md), and can access the UI interface of the cluster
 
-- Completed a [namespace creation](../namespaces/createtens.md), [user creation](../../../ghippo/user-guide/access-control/user.md) , and grant [`NS Admin`](../permissions/permission-brief.md#ns-admin) or higher permissions to the user. For details, please refer to [Namespace Authorization](../permissions/cluster-ns- auth.md).
+- Completed a [namespace creation](../namespaces/createtens.md), [user creation](../../../ghippo/user-guide/access-control/user.md), and grant [`NS Admin`](../permissions/permission-brief.md#ns-admin) or higher permissions to the user. For details, please refer to [Namespace Authorization](../permissions/cluster-ns- auth.md).
 
 - If using a private registry, the current operating user should have read and write permissions to the private registry.
 

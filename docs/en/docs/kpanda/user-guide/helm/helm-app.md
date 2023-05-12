@@ -1,6 +1,6 @@
 # Manage Helm applications
 
-The container management module supports interface-based management of Helm, including creating Helm instances using Helm templates, customizing Helm instance parameters, and managing the full lifecycle of Helm instances.
+The container management module supports interface-based management of Helm, including creating Helm instances using Helm charts, customizing Helm instance parameters, and managing the full lifecycle of Helm instances.
 
 This section will take [cert-manager](https://cert-manager.io/docs/) as an example to introduce how to create and manage Helm applications through the container management interface.
 
@@ -8,7 +8,7 @@ This section will take [cert-manager](https://cert-manager.io/docs/) as an examp
 
 - The container management module [connected to the Kubernetes cluster](../clusters/integrate-cluster.md) or [created the Kubernetes cluster](../clusters/create-cluster.md), and can access the UI interface of the cluster .
 
-- Completed a [namespace creation](../namespaces/createtens.md), [user creation](../../../ghippo/user-guide/access-control/user.md) , and grant [`NS Admin`](../permissions/permission-brief.md#ns-admin) or higher permissions to the user. For details, please refer to [Namespace Authorization](../permissions/cluster-ns- auth.md).
+- Completed a [namespace creation](../namespaces/createtens.md), [user creation](../../../ghippo/user-guide/access-control/user.md), and grant [`NS Admin`](../permissions/permission-brief.md#ns-admin) or higher permissions to the user. For details, please refer to [Namespace Authorization](../permissions/cluster-ns- auth.md).
 
 ## Install the Helm application
 
@@ -18,9 +18,9 @@ Follow the steps below to install the Helm application.
 
      
 
-2. In the left navigation bar, click `Helm Application` -> `Helm Template` to enter the Helm template page.
+2. In the left navigation bar, click `Helm Application` -> `Helm chart` to enter the Helm chart page.
 
-     On the Helm template page, select the [Helm repository](helm-repo.md) named `addon`, and all the Helm chart templates under the `addon` repository will be displayed on the interface.
+     On the Helm chart page, select the [Helm repository](helm-repo.md) named `addon`, and all the Helm chart templates under the `addon` repository will be displayed on the interface.
      Click on the Chart named `cert-manager`.
 
      

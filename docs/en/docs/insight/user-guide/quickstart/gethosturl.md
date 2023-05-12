@@ -1,13 +1,13 @@
 # How to get the address of data upload?
 
-When [installing insight-agent](install-agent.md), you need to configure the service address to upload the cluster indicators, logs, and link data to `global service cluster`.
+When [installing insight-agent](install-agent.md), you need to configure the service address to upload the cluster metrics, logs, and link data to `global service cluster`.
 This page outlines the steps on how to obtain the address for data uploads.
 
 ## Parameter Description
 
 | parameter | description |
 | -------------------------- | ----------------------- -------------------------------------------------- ------------- |
-| ${vminsert_host} | Indicator data upload address, the default is the externally accessible address of the global service cluster vminsert service |
+| ${vminsert_host} | metric data upload address, the default is the externally accessible address of the global service cluster vminsert service |
 | ${es_host} | Log data upload address, consistent with the elasticsearch service configuration used by the global service cluster |
 | ${otel_col_auditlog_port} | audit log data upload address, the default is the externally accessible address of the global service cluster opentelemetry-collector service |
 | ${otel_col_host} | link data upload address, the default is the externally accessible address of the global service cluster opentelemetry-collector service |
@@ -28,7 +28,7 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 
 ## Install insight-agent on `worker cluster`
 
-The `Working Cluster` needs to upload the data of indicators, logs, and links to the `Global Service Cluster`. Please ensure that the Insight in the `global service cluster` is running and has exposed the address that the working cluster can access.
+The `Working Cluster` needs to upload the data of metrics, logs, and traces to the `Global Service Cluster`. Please ensure that the Insight in the `global service cluster` is running and has exposed the address that the working cluster can access.
 
 ### Obtain insight-agent through the interface
 

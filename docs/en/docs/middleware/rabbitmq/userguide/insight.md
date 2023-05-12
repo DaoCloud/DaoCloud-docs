@@ -10,15 +10,15 @@ RabbitMQ has built-in Prometheus and Grafana monitoring modules.
 
     
 
-The monitoring indicators are as follows.
+The monitoring metrics are as follows.
 
-| Panel Name | Indicator Name | Description |
+| Panel Name | metric Name | Description |
 | ------------ | --------- | -------------------------- ------- |
 | connections | Connections | This metric is used to count the total number of connections in the RabbitMQ instance. |
 | channels | Number of channels | This metric is used to count the total number of channels in the RabbitMQ instance. |
 | queues | Number of queues | This metric is used to count the total number of queues in the RabbitMQ instance. |
-| consumers | Number of consumers | This indicator is used to count the total number of consumers in the RabbitMQ instance. |
+| consumers | Number of consumers | This metric is used to count the total number of consumers in the RabbitMQ instance. |
 | publish | Production Rate | Statistics on the real-time message production rate in a RabbitMQ instance. |
-| socket_used | Number of Socket connections | This indicator is used to count the number of Socket connections used by the current node RabbitMQ. |
-| CPU Usage | CPU Usage | This indicator is used to count the CPU usage of the node. |
-| Memory Usage | Memory Usage | This indicator is used to count the memory usage of the node. |
+| socket_used | Number of Socket connections | This metric is used to count the number of Socket connections used by the current node RabbitMQ. |
+| CPU Usage | CPU Usage | This metric is used to count the CPU usage of the node. |
+| Memory Usage | Memory Usage | This metric is used to count the memory usage of the node. |

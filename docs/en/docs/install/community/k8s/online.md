@@ -56,7 +56,7 @@ This page briefly explains the online installation steps for DCE 5.0 Community R
          ```
 
          1. This is the VIP of the Istio gateway and also the browser access IP of the DCE 5.0 console
-         2. The VIP used by the Insight-Server of the global service cluster to collect the network paths of all sub-cluster monitoring indicators
+         2. The VIP used by the Insight-Server of the global service cluster to collect the network paths of all sub-cluster monitoring metrics
 
      - If it is a public cloud environment and provides the K8s load balancing capability of the public cloud through the pre-prepared Cloud Controller Manager mechanism, the configuration file example is as follows:
 

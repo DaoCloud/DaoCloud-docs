@@ -19,7 +19,7 @@ The architecture diagram for the sample application is as follows:
 
 ## Application deployment
 
-[Workbench](../../amamba/intro/what.md) is an application management module of DCE 5.0. It supports the creation and maintenance of various types of applications, GitOps, and grayscale publishing, and can quickly deploy applications to any cluster. App Workbench supports deployment of applications based on Git repository, Jar package, container image and Helm template. This practice deployable the sample application based on `Helm Template`.
+[Workbench](../../amamba/intro/what.md) is an application management module of DCE 5.0. It supports the creation and maintenance of various types of applications, GitOps, and grayscale publishing, and can quickly deploy applications to any cluster. App Workbench supports deployment of applications based on Git repository, Jar package, container image and Helm chart. This practice deployable the sample application based on `Helm chart`.
 
 <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
@@ -35,9 +35,9 @@ Before deploying applications, the following conditions must be met:
 
     <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-### Deployment based on Helm template
+### Deployment based on Helm chart
 
-1. Locate the opentelemetry-demo application in `Workbench` -> `Wizard` -> `From Helm Template` and click the application card to install it
+1. Locate the opentelemetry-demo application in `Workbench` -> `Wizard` -> `From Helm chart` and click the application card to install it
 
     <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 

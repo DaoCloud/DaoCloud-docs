@@ -14,7 +14,7 @@ MySQL has the following product advantages.
 
     - A reliable technical architecture is adopted to support the stable operation of the system, and each component can provide high availability, which can ensure the redundancy and high availability of key components.
 
-    - It can collect, analyze and process the internal state data of its own operation, and summarize it into index data through reasonable aggregation, so that the operation and maintenance personnel can understand the real-time state of the system operation in the shortest time, and at the same time provide the corresponding API for Other systems read status indicator data.
+    - It can collect, analyze and process the internal state data of its own operation, and summarize it into index data through reasonable aggregation, so that the operation and maintenance personnel can understand the real-time state of the system operation in the shortest time, and at the same time provide the corresponding API for Other systems read status metric data.
 
 - lifecycle management
 

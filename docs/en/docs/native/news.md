@@ -2,13 +2,13 @@
 
 This page lists the more popular news, events, activities, etc. in the cloud native community by month for your one-stop reference and retrieval.
 
-> We will maintain regularly to ensure the validity of all links and the timeliness of news.
+> We will maintain regularly to ensure the validity of all traces and the timeliness of news.
 
 ### 2023-06
 
 - [June 30 China Academy of Information and Communications Technology launches the registration of digital service capability assessment of smart marketing in the first half of 2023 (registration closes on 6.30)](https://mp.weixin.qq.com/s/yQfz9X3oPKWDSeqgxwzs8g)
   
-    Smart marketing digital service capability assessment includes six modules: digital scenarios, digital governance, platform-based products, digital service operations, trustworthy and compatible ecology and digital trust security service capabilities. Among them, the platform-based product capability focuses on whether it has the ability of customer insight, marketing planning, customer reach, customer conversion, customer operation and other smart marketing whole-chain links.
+    Smart marketing digital service capability assessment includes six modules: digital scenarios, digital governance, platform-based products, digital service operations, trustworthy and compatible ecology and digital trust security service capabilities. Among them, the platform-based product capability focuses on whether it has the ability of customer insight, marketing planning, customer reach, customer conversion, customer operation and other smart marketing whole-chain traces.
 
 - [June 19 KubeDay Israel will be held on June 19](https://www.cncf.io/blog/2023/04/06/announcing-kubeday-israel-will-take-place-on-june-19/)
   
@@ -40,7 +40,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [May 31 China ICT launches the first batch of service quality evaluation of large-scale edge container clusters (5.31 deadline)](https://mp.weixin.qq.com/s/8TjJBIFp46vscKBMILZBUg)
   
-    The evaluation system includes node management metrics system and application distribution metrics system. Node management focuses on the management performance, stability, efficiency and other indicators of cluster nodes; application distribution focuses on the functionality and performance of different stages of application copy creation and the comprehensive management capability of applications.
+    The evaluation system includes node management metrics system and application distribution metrics system. Node management focuses on the management performance, stability, efficiency and other metrics of cluster nodes; application distribution focuses on the functionality and performance of different stages of application copy creation and the comprehensive management capability of applications.
 
 - [May 30 "Cloud Management Products and Services Atlas (2023)" officially launches the call for applications (5.30 application deadline)](https://mp.weixin.qq.com/s/gXGxUqTdO46US74gYrYEPw)
   
@@ -372,7 +372,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [On December 14, the selection of the second "Ten Cloud Native Technology Innovations/Pioneering Practices" was officially launched](https://mp.weixin.qq.com/s/UZ_05I06VCJYN5MKLwO7IA)
 
-     The selection was initiated by the Creation Association, and CNCF, China Academy of Information and Communications Technology, and Huawei Cloud participated in the selection. It aims to select cloud-native technology application practices that have achieved remarkable results, have certain replicability and reference, and cloud-native open source projects and innovative products that have achieved innovative breakthroughs. , scientific papers, etc.
+     The selection was initiated by the Creation Association, and CNCF, China Academy of Information and Communications Technology, and Huawei Cloud participated in the selection. It aims to select cloud-native technology application practices that have achieved remarkable results, have certain replicability and reference, and cloud-native open source projects and innovative products that have achieved innovative breakthroughs., scientific papers, etc.
      Awarded projects will be invited to participate in the Cloud Native Annual Technology Innovation Summit and get media promotion opportunities, etc.
 
 - [Looking for the top 1% of China's cloud native practice pioneers on December 13! CNBPA 2022 Cloud Native Best Practice Selection Launch](https://mp.weixin.qq.com/s/UXz_UJTee2rSt_takLcOzg)
@@ -430,7 +430,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [International consulting firm Sullivan released the 2022 Cloud Native Application Protection Platform Radar Report on November 29](https://1665891.fs1.hubspotusercontent-na1.net/hubfs/1665891/Frost%20Radar%20-%20CNAPP%202022%20-%20Aqua%20Security.pdf?_hsmi=235753068&_hsenc=p2ANqtz-_imKv0Cl7-_MGhYeSCsaey9txVoiKZQ7AiKuvvWdshrrAcw1zflc5_x9gLM_kJDXKVTZ8akc0IkBEXC_FA-TNBAR)x
   
-     Sullivan selected 15 leading manufacturers based on business growth and innovation indicators, including Aqua Security, Check Point, Lacework, Sysdig, etc. Among them, Aqua was selected as the preferred benchmarking enterprise for investment or cooperation.
+     Sullivan selected 15 leading manufacturers based on business growth and innovation metrics, including Aqua Security, Check Point, Lacework, Sysdig, etc. Among them, Aqua was selected as the preferred benchmarking enterprise for investment or cooperation.
 
 
 - [The KubeSphere community launched a podcast KubeSphere Talk on November 29](https://mp.weixin.qq.com/s/Ud__u2YaUkdSx5yi7dKDHw)
@@ -609,7 +609,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [DaoCloud released the "White Paper on Cloud Native Industry Development" on September 23](https://mp.weixin.qq.com/s/mP0hG1FY-4RfH8NBo9NmPw)
 
-     Starting from the definition, origin and application status of cloud native, the white paper sorts out the development logic and industry panorama of cloud native industry, analyzes the opportunities cloud native brings to China's innovation industry, and combines domestic leading cloud native practices to look forward to future trends , defining the operating system in the cloud era.
+     Starting from the definition, origin and application status of cloud native, the white paper sorts out the development logic and industry panorama of cloud native industry, analyzes the opportunities cloud native brings to China's innovation industry, and combines domestic leading cloud native practices to look forward to future trends, defining the operating system in the cloud era.
 
 - [Gartner released the 2022 Hype Cycle for Emerging Technologies on September 22](https://www.infoq.cn/article/5Bp8BIJd5DSgFzaRjzAT)
 
@@ -695,7 +695,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [In mid-August, the 2022 "Science and Technology China" open source innovation list selection will be fully launched](https://cccst.org.cn/osis)
 
-     The 2022 "Science and Technology China" Open Source Innovation List is sponsored by the China Association for Science and Technology and organized by the Open Source Innovation Consortium. , to select products, communities, activities, and people with innovation, contribution, and influence.
+     The 2022 "Science and Technology China" Open Source Innovation List is sponsored by the China Association for Science and Technology and organized by the Open Source Innovation Consortium., to select products, communities, activities, and people with innovation, contribution, and influence.
 
 - [August 13 Lundao Native Cloud Native Meetup Nanjing station registration opens](https://mp.weixin.qq.com/s/f5I4hn_lHf9x9oDBUgAIIQ)
 
@@ -854,7 +854,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [June 15 DevOps toolchain manager DevStream enters CNCF sandbox project](https://mp.weixin.qq.com/s/oqww9Wvxy_5WgDRNv6mmOg)
 
-     DevStream can use a simple configuration file to manage DevOps tools in all links of the software R&D lifecycle in a unified manner, and complete the rapid installation and deployment of each tool, integration between tools, and best practice configuration.
+     DevStream can use a simple configuration file to manage DevOps tools in all traces of the software R&D lifecycle in a unified manner, and complete the rapid installation and deployment of each tool, integration between tools, and best practice configuration.
 
      Project address: <https://github.com/devstream-io/devstream>
 
@@ -964,7 +964,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [On June 1, CNCF released "kubernetes 2021Annual Report"](https://www.cncf.io/reports/kubernetes-annual-report-2021/)
 
-     The report records quantitative indicators of the development status of the Kubernetes community in 2021: 62,000 people participated in contributions in the past year, a new SIG K8s Infra was added, etc.;
+     The report records quantitative metrics of the development status of the Kubernetes community in 2021: 62,000 people participated in contributions in the past year, a new SIG K8s Infra was added, etc.;
 
      A qualitative summary of reports from community leaders and project contributors is also documented:
      v1.21-1.24 Formal GA or features that have made significant progress, results achieved in supply chain security, plans for future work in the community (including establishment of "project health" metrics, addition of group reviewers, long-term contributions, etc.), and challenges faced by different SIGs Dilemma etc.

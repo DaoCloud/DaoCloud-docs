@@ -111,11 +111,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Alibaba Cloud Microservice Engine MSE October Update](https://mp.weixin.qq.com/s/Puud_MYgCMezqKESaAiG-w)
 
-     Updates: The registration configuration center provides migration tools and solutions, the cloud-native gateway service source supports the Serverless application engine, authentication and authentication supports the coexistence of multiple rules, the routing and service details page adds QPS, error, delay and other indicator monitoring, and the whole link Capabilities such as grayscale and label routing support the Consul registry.
+     Updates: The registration configuration center provides migration tools and solutions, the cloud-native gateway service source supports the Serverless application engine, authentication and authentication supports the coexistence of multiple rules, the routing and service details page adds QPS, error, delay and other metric monitoring, and the whole link Capabilities such as grayscale and label routing support the Consul registry.
 
 - [Alibaba Cloud service mesh ASM September Update](https://mp.weixin.qq.com/s/tx7iHBzoelS-3xB0UWKK2A)
 
-     Update content: application service governance supports warm-up function; supports application security policy in trial operation mode; optimizes sidecar proxy configuration; adds a variety of JWT algorithms in "request authentication"; supports access to O1DC protocol services through external authorization; supports K8s 1.24; AHPA Elastic Prediction supports prediction based on GPU indicators; Log Center supports log and large disk display of network components; when Pod mounts OSS storage volumes, it supports I/O observability.
+     Update content: application service governance supports warm-up function; supports application security policy in trial operation mode; optimizes sidecar proxy configuration; adds a variety of JWT algorithms in "request authentication"; supports access to O1DC protocol services through external authorization; supports K8s 1.24; AHPA Elastic Prediction supports prediction based on GPU metrics; Log Center supports log and large disk display of network components; when Pod mounts OSS storage volumes, it supports I/O observability.
 
 - [Alibaba Cloud Container Service ACK September update](https://mp.weixin.qq.com/s/uI5sw-HwCJf56W9wDcmysw)
 
@@ -250,11 +250,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [GitLab 15.5 released](https://mp.weixin.qq.com/s/AiRU9pQUxTex0F_XvuHiHg)
 
-     The main new features of this version: run security scanning tools in the merge request pipeline, support Kubernetes container scanning, support importing more relationships when importing projects from GitHub, and add a predefined DORA (indicator for evaluating DevOps effectiveness level) visual comparison report.
+     The main new features of this version: run security scanning tools in the merge request pipeline, support Kubernetes container scanning, support importing more relationships when importing projects from GitHub, and add a predefined DORA (metric for evaluating DevOps effectiveness level) visual comparison report.
 
 - [GitLab 15.4 Released](https://about.gitlab.com/releases/2022/09/22/gitlab-15-4-released/)
 
-     The main new features of this version: improve VSCode CI/CD integration function, support Gitee project import, professional version support test management, support DORA indicators for evaluating enterprise DevOps performance, and integrate Harbor container registry.
+     The main new features of this version: improve VSCode CI/CD integration function, support Gitee project import, professional version support test management, support DORA metrics for evaluating enterprise DevOps performance, and integrate Harbor container registry.
 
 - [Gloo Mesh v2.1 service mesh management platform released](https://www.solo.io/blog/announcing-gloo-mesh-2-1/)
 
@@ -547,11 +547,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [SUSE releases SUSE Edge 2.0, a cloud-native edge management platform](https://mp.weixin.qq.com/s/LszXlp9iKT6FudzWY3EmaQ)
 
-     The main new features of this version: Simplify the operation of adding and updating edge devices, support the management of Kubernetes and the underlying operating system through a unified operation panel, and integrate SUSE Linux Enterprise Micro 5.3, a lightweight operating system specially designed for containerized and virtualized workloads , Provide security protection for all distributed environments.
+     The main new features of this version: Simplify the operation of adding and updating edge devices, support the management of Kubernetes and the underlying operating system through a unified operation panel, and integrate SUSE Linux Enterprise Micro 5.3, a lightweight operating system specially designed for containerized and virtualized workloads, Provide security protection for all distributed environments.
 
 - [Real-time monitoring platform observation cloud update](https://mp.weixin.qq.com/s/RZCpDuNbq0C0SJfWI2E63w)
 
-     Updates include: support for viewing YAML files corresponding to infrastructure containers, new log viewer DQL search mode, optimized application performance monitoring, DataKit supports synchronizing k8s label as a tag to pod indicators and logs, and supports various The yaml information is collected on the corresponding object data, and the Trace collection supports automatic extraction of some key meta information.
+     Updates include: support for viewing YAML files corresponding to infrastructure containers, new log viewer DQL search mode, optimized application performance monitoring, DataKit supports synchronizing k8s label as a tag to pod metrics and logs, and supports various The yaml information is collected on the corresponding object data, and the Trace collection supports automatic extraction of some key meta information.
 
 - [Time Speed Cloud Microservice Governance Platform TMF v5.6.0 released](https://mp.weixin.qq.com/s/8J0uJIKBwR9RIRwn299Acw)
 
@@ -600,7 +600,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Tigera Releases Calico Runtime Threat Defense, a Kubernetes Network and Container Threat Defense Solution](https://www.tigera.io/news/tigera-introduces-calico-runtime-threat-defense-the-most-comprehensive-plug-and-play-defense-against-container-and-network-based-threats/)
 
     Calico Runtime Threat Defense combines a combination of signature- and behavior-based techniques to detect known and zero-day threats, enabling detection of MITRE's most common container and network-based attacks.
-    Unlike traditional runtime threat detection platforms, Calico Runtime Threat Defense continuously monitors and analyzes network and container behavior for indicators of attack (IOA) without writing complex rules.
+    Unlike traditional runtime threat detection platforms, Calico Runtime Threat Defense continuously monitors and analyzes network and container behavior for metrics of attack (IOA) without writing complex rules.
 
 - [Traefik Labs releases Traefik Enterprise 2.10, a cloud-native API gateway](https://traefik.io/blog/announcing-traefik-enterprise-2-10/)
 
@@ -668,7 +668,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [VMware Spring Cloud Gateway for Kubernetes v1.2.0 release](https://docs.vmware.com/en/VMware-Spring-Cloud-Gateway-for-Kubernetes/1.2/scg-k8s/GUID-release-notes.html)
 
-     The main new features of this version: separate the TLS configuration of client entrance and upstream application service communication, expand the authority of customizing and extending cloud secret management, increase the circuit breaker status indicator, add global and each API route response cache configuration, and add JSON Filters for request translation to gRPC upstream services, podOverrides added to configure K8s pod override on API Gateway instances, API Gateway can now be deployed via a standalone JAR.
+     The main new features of this version: separate the TLS configuration of client entrance and upstream application service communication, expand the authority of customizing and extending cloud secret management, increase the circuit breaker status metric, add global and each API route response cache configuration, and add JSON Filters for request translation to gRPC upstream services, podOverrides added to configure K8s pod override on API Gateway instances, API Gateway can now be deployed via a standalone JAR.
 
 ### W, Z
 

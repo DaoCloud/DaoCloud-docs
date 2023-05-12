@@ -28,7 +28,7 @@ After Elasticsearch is deployed in DCE 5.0, the following features will also be 
 
 - Support Elasticsearch dedicated node, hot data node, cold data node, data node role deployment
 -Integrate Kibana
-- Exposure indicators based on elasticsearch-exporter
+- Exposure metrics based on elasticsearch-exporter
 - Integrate Elasticsearch Dashboard based on Grafana Operator to display monitoring data
-- Use ServiceMonitor to interface with Prometheus to capture indicators
+- Use ServiceMonitor to interface with Prometheus to capture metrics
 - Multi-tenancy management based on [Workspace Workspace](../../../ghippo/user-guide/workspace/Workspaces.md)

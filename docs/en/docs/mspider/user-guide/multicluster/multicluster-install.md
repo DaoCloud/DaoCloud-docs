@@ -600,7 +600,7 @@ kind create cluster --config kind-cluster2.yaml --name mdemo-kcluster2
 
 #### Container management platform Helm installation
 
-It is recommended to use `Helm application` -> `Helm template` in the container management platform -> find metallb -> `install`.
+It is recommended to use `Helm application` -> `Helm chart` in the container management platform -> find metallb -> `install`.
 
 
 

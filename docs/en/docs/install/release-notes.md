@@ -170,7 +170,7 @@ This page lists the Release Notes of the installer, so that you can understand t
 - **Added** Added support for kylin v10 sp2 offline package.
 - **Added** Infrastructure Support 1.25: Upgrade redis-operator, eck-operator, hwameiStor and other components.
 - **Added** Added support for cluster deployment in private key mode.
-- **Added** The workload is elastically scaled based on custom indicators, which is closer to the user's actual business elastic expansion and contraction needs.
+- **Added** The workload is elastically scaled based on custom metrics, which is closer to the user's actual business elastic expansion and contraction needs.
 
 #### Optimized
 

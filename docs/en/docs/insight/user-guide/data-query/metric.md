@@ -8,11 +8,11 @@ Metric query supports querying the index data of each container resource, and yo
 
 ## Common query
 
-1. In the left navigation bar, click `Data Query` -> `Indicator Query`.
+1. In the left navigation bar, click `Data Query` -> `metric Query`.
 
     
 
-2. After selecting query conditions such as cluster, type, node, and indicator name, click `Search`, and the corresponding indicator chart and data details will be displayed on the right side of the screen.
+2. After selecting query conditions such as cluster, type, node, and metric name, click `Search`, and the corresponding metric chart and data details will be displayed on the right side of the screen.
 
     
 
@@ -22,10 +22,10 @@ Metric query supports querying the index data of each container resource, and yo
 
 ## Advanced Search
 
-1. In the left navigation bar, click `Data Query` -> `Indicator Query`, click the `Advanced Query` tab to switch to the advanced query page.
+1. In the left navigation bar, click `Data Query` -> `metric Query`, click the `Advanced Query` tab to switch to the advanced query page.
 
     
 
-2. Enter a PromQL statement (see [PromQL Syntax](https://prometheus.io/docs/prometheus/latest/querying/basics/), click `Query`, and the query indicator chart and data details will be displayed.
+2. Enter a PromQL statement (see [PromQL Syntax](https://prometheus.io/docs/prometheus/latest/querying/basics/), click `Query`, and the query metric chart and data details will be displayed.
 
     

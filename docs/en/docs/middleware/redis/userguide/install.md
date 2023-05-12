@@ -14,7 +14,7 @@ Follow the steps below to install Redis.
 
     
 
-3. In the left navigation bar, click `Helm Application` -> `Helm Template`, enter `redis` in the search box, press the Enter key, and click the Redis tile card.
+3. In the left navigation bar, click `Helm Application` -> `Helm chart`, enter `redis` in the search box, press the Enter key, and click the Redis tile card.
 
     
 

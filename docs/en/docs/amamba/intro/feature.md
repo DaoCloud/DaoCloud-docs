@@ -42,4 +42,4 @@ App Workbench provides the following functions.
 
     - Supports canary release, blue-green deployment, and A/B Testing advanced release strategies.
     - Canary releases support automated incremental release processes.
-    - Supports quick rollback of applications through monitoring indicator analysis.
+    - Supports quick rollback of applications through monitoring metric analysis.

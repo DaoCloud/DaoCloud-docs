@@ -34,6 +34,6 @@ If `node-exporter` has been installed in the existing monitoring system of the c
 
 !!! note
 
-    Insight's `node exporter` will enable some features to collect special indicators, so it is recommended to install it.
+    Insight's `node exporter` will enable some features to collect special metrics, so it is recommended to install it.
 
 Currently, it is not supported to modify the port in the installation command, you need to manually modify the related ports of insight node-exporter daemonset and svc after `helm install insight-agent`.

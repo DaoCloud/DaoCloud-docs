@@ -17,7 +17,7 @@ Taking the [workspace](../../ghippo/user-guide/workspace/ws-folder.md) as a mini
 
 === "Cloud Native Based"
 
-Support popular cloud native applications such as kubernetes manifests, Helm, OAM, OLM, etc. And it can seamlessly integrate with SpingCloud, Dubbo and ServiceMesh frameworks to achieve SOA (Service-Oriented Architecture). In additionally, DCE 5.0 [micro service engine](../../skoala/intro/features.md) and [service mesh](../../mspider/intro/what.md), enables scaling , logging, monitoring and upgrading for applications.
+Support popular cloud native applications such as kubernetes manifests, Helm, OAM, OLM, etc. And it can seamlessly integrate with SpingCloud, Dubbo and ServiceMesh frameworks to achieve SOA (Service-Oriented Architecture). In additionally, DCE 5.0 [micro service engine](../../skoala/intro/features.md) and [service mesh](../../mspider/intro/what.md), enables scaling, logging, monitoring and upgrading for applications.
 
 
 

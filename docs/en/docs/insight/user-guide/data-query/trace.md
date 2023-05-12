@@ -5,7 +5,7 @@ hide:
 
 # Trace query
 
-Through link query, you can view detailed service request links to help you quickly locate faults.
+Through trace query, you can view detailed service request traces to help you quickly locate faults.
 
 1. In the left navigation, select `Data Query` -> `Trace Query`.
 

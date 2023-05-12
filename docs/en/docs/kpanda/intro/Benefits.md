@@ -19,7 +19,7 @@ The container management module has the following advantages:
 
 - One-stop application distribution, which can distribute applications through mirroring, YAML, and Helm, and realize unified management across clouds/clusters.
 - High availability of applications, support for distributed deployment of applications, and automatic switching of single-point-of-failure traffic.
-- Abundant monitoring indicators to realize all-round monitoring of applications, early warning of application traffic peaks and application failures.
+- Abundant monitoring metrics to realize all-round monitoring of applications, early warning of application traffic peaks and application failures.
 
 **Unified distribution of policies**
 

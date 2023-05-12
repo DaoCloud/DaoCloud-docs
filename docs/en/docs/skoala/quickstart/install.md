@@ -84,7 +84,7 @@ You are advised to set the following parameters to configure database informatio
 
 ### Monitor components that detect dependencies
 
-The microservice engine relies on the capabilities of the [ DCE 5.0 Observability](../../insight/intro/what.md) module. If you want to monitor indicators of the micro-service and trace links, install corresponding `insight-agent` in the cluster. For details, see [](../../insight/user-guide/quickstart/install-agent.md).
+The microservice engine relies on the capabilities of the [ DCE 5.0 Observability](../../insight/intro/what.md) module. If you want to monitor metrics of the micro-service and trace traces, install corresponding `insight-agent` in the cluster. For details, see [](../../insight/user-guide/quickstart/install-agent.md).
 
 <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
