@@ -1,336 +1,353 @@
-# The microservice engine releases Notes
+# Releases Notes
 
-This page lists the Release Notes of the microservice engine so that you can understand the evolution path and feature changes of each version.
+This page lists the release notes of DME to help you learn its feature development and bug fixing progress.
+
+## 2023-04-26
+
+### V0.21.1
+
+#### Bug Fixing
+
+- Cloud-native microservice pagination
+
+#### Enhancement
+
+- "disable Istio sidecar injection" for Nacos
+- Insight version to official v0.16.0
+- Retry mechanism of components accessing database
+- Nacos port 9848 to GRPC to work with service mesh
 
 # 2023-04-25
 
 ## V0.21.0
 
-### New function
+### New Features
 
-- ** add ** Separate display of gateway access internal and external addresses
-- ** add ** API related to cloud native micro-service governance capability
-- ** add ** Alarm message list API
-- ** add ** The gateway uses plug-in related apis
-- ** add ** Gateway logical API of various plug-ins
+- Separate display of gateway access internal and external addresses
+- API related to cloud-native microservice governance capability
+- Alarm message list API
+- API related to gateway using plugins
+- Gateway logical API of various plugins
 
-### repair
+### Bug Fixing
 
-- ** repair ** Problem that Envoy configuration is not updated when the gateway is updated
-- ** repair ** Only a single port can be added to the gateway
-- ** repair ** Insight problems integrating JVM queries
-- ** repair ** The problem of cloud native micro-service governance API
-- ** repair ** The Sentinel rule cannot be accessed
-- ** repair ** Some API calls cause the program to crash when the database is not connected
-- ** repair ** Problem with resource state API
-- ** repair ** Cloud native micro service governance API time unit problem
-- ** repair ** Domain name format verification problem
-- ** repair ** Plugin issues with some fields being named incorrectly
+- Envoy configuration is not updated when the gateway is updated
+- Only a single port can be added to the gateway
+- Insight problems of integrating JVM queries
+- Cloud-native microservice governance API
+- Sentinel rule cannot be stored or pulled
+- Some API calls cause the program to crash when the database is not connected
+- Resource state API
+- Cloud-native microservice governance API time unit
+- Domain format verification
+- Some fields of plugins are named incorrectly
 
-### optimization
+### Enhancement
 
-- ** optimization ** Insight integrated to 0.16.0
-- ** optimization ** Deployment template end front-end service name Add a prefix to the module name
+- Version of Insight integrated to 0.16.0
+- Add a prefix to the module name for template end service
+- Virtualhost crd
+- Httpproxy crd
+- Skoalaplugin crd
 
 # 2023-04-21
 
 ## V0.20.0
 
-### repair
+### New Features
 
-- ** repair ** Contour Image version
-- ** repair ** User-defined role function points and API mappings
-- ** repair ** Gateway Overview API sort and entry
+- Sentinel portal version
+- Gateway domain-level whitelist
+- Native service governance list API
+- Native service governance editing API
+- Observable JVM monitoring integration
+- Visualized status of the gateway resource workload
+- Gateway workload policy selection
 
-### New function
+### Bug Fixing
 
-- ** add ** Sentinel portal version
-- ** add ** Gateway domain name level whitelist Supported
-- ** add ** Native service governance list API
-- ** add ** Native service governance editing API
-- ** add ** Observable JVM monitoring integration
-- ** add ** Displays the status of the gateway resource workload
-- ** add ** Select the gateway load policy
+- Contour image version
+- User-defined role and API mappings
+- API sort and entry in gateway overview page
 
-### optimization
+### Enhancement
 
-- ** optimization ** plug-in center related API
-- ** optimization ** Configuration file structure
-- ** optimization ** The configuration parameter is implemented in the configuration package instead of being read directly
-- ** optimization ** Manage the overall package structure of components
-- ** optimization ** Management component
-- ** optimization ** Contour upgraded to v1.24.3-ipfilter-tracing
-- ** optimization ** Envoy upgraded to v1.25.4
+- Plugins related API
+- Configuration file structure
+- Configuration parameter is implemented in the configuration package instead of being read directly
+- Overall package structure of management components
+- Management component
+- Contour version to 1.24.3-ipfilter-tracing
+- Envoy version to v1.25.4
 
 # 2023-04-10
 
 ## V0.19.4
 
-### repair
+### Bug Fixing
 
-- ** repair ** Startup problems with managed Nacos
+- Startup issues of managed Nacos
 
 # 2023-04-10
 
 ## V0.19.3
 
-### repair
+### Bug Fixing
 
-- ** repair ** Front-end problem
+- Front-end problems
 
 # 2023-04-04
 
 ## V0.19.2
 
-### repair
+### Bug Fixing
 
-- ** repair ** Nacos and Sentinel verify account problem by default
-- ** repair ** Overview of gateway API sorting problems
+- Nacos and Sentinel verify account by default
+- Gateway API sorting in overview page
 
 ## 2023-04-04
 
 ### v0.19.1
 
-#### repair
+#### Bug Fixing
 
-- ** repair ** CVE-2022-31045 vulnerability
-- ** repair ** Plug-in center API problem
-- ** repair ** The gateway is restarted
-- ** repair ** The version cannot be successfully updated when the plugin is updated
-- ** repair ** Nacos and Sentinel verify account by default
-- ** repair ** Overview of the gateway API sorting problem of the micro service gateway
+- CVE-2022-31045
+- Plugin API
+- Gateway restart
+- Version cannot be updated when the plugin is updated
+- Nacos and Sentinel verify account by default
+- Gateway API sorting in overview page
 
 ## 2023-03-24
 
 ### v0.19.0
 
-#### New function
+#### New Features
 
-- ** add ** Custom permission points and API implementation
-- ** add ** Registry Overview related apis
-- ** add ** API related to gateway whitelist
-- ** add ** API related to gateway health in Overview
-- ** add ** Nacos supports versions up to 2.1.2
-- ** add ** API for obtaining Nacos and gateway version information
-- ** add ** Register the Configuration Center statistics collector in Overview
-- ** add ** Register the Configuration center statistics API in Overview
-- ** add ** Cloud native micro service service list API
-- ** add ** Cloud native micro-service service import related apis
-- ** add ** Plug-in Center custom resource design
-- ** add ** Plug-in center plug-in management related apis
-- ** add ** Gateway front-end traffic interception configuration API
-- ** add ** Cascade resource operation adds transaction (similar) mechanism processing package
-- ** add ** Resource restart function
+- Custom permissions and API implementation
+- APIs related to registry overview
+- APIs related to gateway whitelist
+- APIs related to gateway health status in overview page
+- Supported Nacos versions of 2.1.2
+- API for obtaining Nacos and gateway version information
+- Registry statistics collector in overview page
+- Registry statistics API in overview page
+- Cloud-native microservice list API
+- APIs related to importing cloud-native microservices
+- Custom resource design of plugins
+- APIs related to plugin management
+- API to intercept gateway front-end traffic
+- Package of how cascade resource operation adding transaction
+- Resource restart
 
-#### repair
+#### Bug Fixing
 
-- ** repair ** Database script problem for initializing Nacos in Nacos Operator
-- ** repair ** Sentinel related data overview API problems
-- ** repair ** Overview API problems with gateway related data
-- ** repair ** Gateway lifecycle management reduces the abnormal restart of the gateway
-- ** repair ** Overview API path capitalization
-- ** repair ** Nacos 2.1.2 Cluster Creation failure
-- ** repair ** The traffic interception modification does not take effect
-- ** repair ** Gateway whitelist API problem
-- ** repair ** Nacos GRPC port name Problems in integrating Istio
-- ** repair ** External mirror security scan in daily builds
+- Database script for initializing Nacos in Nacos Operator
+- APIs related to overview Sentinel data
+- APIs related to overview gateway data
+- Gateway abnormal restart in gateway lifecycle management
+- Capitalization of overview API path
+- Nacos 2.1.2 cannot create cluster
+- Traffic interception modification does not take effect
+- Gateway whitelist API
+- Nacos GRPC port name affect integrating Istio
+- External mirror security scan in daily builds
 
-#### optimization
+#### Enhancement
 
-- ** optimization ** CI flow and simplify unnecessary tasks
-- ** optimization ** All resources are updated using the retry mechanism
-- ** optimization ** Reconstruct functions related to the gateway
+- Streamline CI actions
+- Use retry mechanism to update all resources
+- Reconstruct gateway features
 
 ## 2023-02-25
 
 ### v0.18.0
 
-#### New function
+#### New Features
 
-- ** add ** Add registry configure hub separation API
-- ** add ** Add overview related logic and API
+- APIs to separate registries and configuration centers
+- APIs related to overview
 
-#### repair
+#### Bug Fixing
 
-- ** repair ** The gateway-api image version is incorrect
-- ** repair ** Load balancing mode The IP address pool loading of the gateway fails
-- ** repair ** Health check related problems
+- Image version of gateway-api
+- IP pool loading issues of gateways under load balancer mode
+- Health check issues
 
 ## 2023-02-22
 
 ### v0.17.1
 
-#### New function
+#### New Features
 
-** add ** Gateway NodePort Support
+- Gateway NodePort
+- Gateway LoadBalancer
+- Statistics API of Sentinel rules
+- List API of services governed by Sentinel
+- Cookie rewriting policy for gateway API
+- Cronjobs in overview page
+- Regular collection of abnormal Sentinel jobs
+- API about Sentinel cluster flow control details
+- Service options to be added into gateway
+- Health check policy of gateway
+- Health policies in the gateway API
+- API related to Sentinel statistics
+- CI process with offline chart
+- Security scanning for external images in daily builds
+- Automatic update of image version in the chart
 
-- ** add ** Gateway LoadBalancer
-- ** add ** Sentinel rule statistics API
-- ** add ** Service list API governed by Sentinel
-- ** add ** Cookie rewriting policy for gateway API
-- ** add ** Overview data scheduling tasks
-- ** add ** Regular collection of exception Sentinel tasks
-- ** add ** Sentinel cluster flow control detail API
-- ** add ** Gateway Access Service list port selection
-- ** add ** Gateway service health check policy
-- ** add ** Support for health policies in the gateway API
-- ** add ** Sentinel statistics related API
-- ** add ** Support chart offline CI process
-- ** add ** Added security scanning capability for external images in daily builds
-- ** add ** Publish an automatic update of the mirrored version in the chart
+#### Bug Fixing
 
-#### repair
+- Error in creating Nacos namespace
+- Error in editing  Nacos persistent storage
+- Resource verification of Nacos life cycle management
+- Data display of gateway monitoring panel
+- Ghippo link GRPC address missing
+- Error of Sentinel cannot acquire cluster flow control API
+- Status of managed Nacos resource is not updated
+- Sentinel adaption to Nacos public strings
+- Error of Sentinel resource collection API cannot aggregate instances
+- Invalid Sentinel system rules
+- Paging error of gateway service registries
+- Error in creating service port
+- Error in database initialization setup
+- Use Helm commands instead of Argocd to deploy Alpha environment
+- Base image CVE and upgrade to v3.17.2
+- Error of chat update in release process
 
-- ** repair ** Nacos Namespace creation exception
-- ** repair ** Nacos persistent storage modification exception
-- ** repair ** Nacos life cycle management resource verification problem
-- ** repair ** Gateway monitoring panel data display problem
-- ** repair ** Ghippo link GRPC address missing problem
-- ** repair ** Sentinel acquiring cluster flow control API problems
-- ** repair ** The status of the managed Nacos resource is not updated
-- ** repair ** Sentinel ADAPTS to Nacos public string problems
-- ** repair ** Sentinel does not have problems aggregating different instances of the resource API
-- ** repair ** Sentinel system rule invalid problem
-- ** repair ** Gateway service Registry type paging error
-- ** repair ** Incorrect service port creation
-- ** repair ** Database initialization setup problem
-- ** repair ** Use the Helm command instead of Argocd to deploy the Alpha environment
-- ** repair ** Base image CVE problem and upgrade to 3.17.2
-- ** repair ** Issue process Chart update problem
+#### Enhancement
 
-#### optimization
-
-- ** optimization ** Upgrade gateway-api to v0.6.0
-- ** optimization ** Resource to be updated gets client-go instead of clusterpedia
-- ** optimization ** Sentinel application monitoring template
-- ** optimization ** makes the off-line chart build CI step independent
-- ** optimization ** Contour upgraded to v1.24.1
-- ** optimization ** envoy upgraded to v1.25.1
-- ** optimization ** Fixed namespace when Skoala Init is installed with Chart capability
+- Gateway-api version to v0.6.0
+- Use client-go instead of clusterpedia to get to-be-updated resources
+- Sentinel application monitoring template
+- CI steps of building offline chart as independent
+- Contour version to v1.24.1
+- Envoy version to v1.25.1
+- Use Chart to fix the namespace when installing skoala init
 
 ## 2022-12-30
 
 ### v0.16.1
 
-#### repair
+#### Bug Fixing
 
-- ** repair ** Problem of repeatedly creating the builder when building an image
+- Repetitive builder creation when building an image
 
-#### optimization
+#### Enhancement
 
-- ** optimization ** Sentinel application monitor panel details
+- Details in Sentinel application monitor panel
 
 ## 2022-12-29
 
 ### v0.16.0
 
-#### repair
+#### Bug Fixing
 
-- ** repair ** Sentinel invoke problem of opening Nacos interface with authentication
-- ** repair ** nacos-operator Frequently modifies service resources
+- Error in Sentinel invoking Nacos interface with authentication enabled
+- Error of nacos-operator frequently modifying service resources
 
-#### optimization
+#### Enhancement
 
-- ** optimization ** Adds the Grafana monitor panel for the Sentinel service
-- ** optimization ** Upgrading Insight to the latest version supports querying monitoring data by cluster name
+- Add Grafana monitor panel for Sentinel service
+- Insight to the latest version to support querying monitoring data by cluster name
 
 ## 2022-12-28
 
 ### v0.15.2
 
-#### New function
+#### New Features
 
-- ** add ** Gateway API support for authentication servers
-- ** add ** Managed registry service access API
-- ** add ** Sentinel cluster flow control API
+- Gateway API support for authentication servers
+- API to integrate services in managed registries
+- API about Sentinel cluster flow control
 
-#### repair
+#### Bug Fixing
 
-- ** repair ** Sentinel rule concatenation error
-- ** repair ** Sentinel dashboard name problem
-- ** repair ** Management component Chart for the Service IP problem of the production change environment
-- ** repair ** Problem of Nacos controller processing logic
-- ** repair ** The address of the egress integrated with cluster management is faulty
+- Sentinel rule concatenation error
+- Error in Sentinel dashboard name
+- Error in management component Chart when Service IPs are changed in production environment
+- Error in Nacos controller logic
+- Error in integrating egress with cluster management
 
-#### optimization
+#### Enhancement
 
-- ** optimization ** Managed Nacos monitors dashboard problems
-- ** optimization ** nacos-operator database initialization file obtain address
-- ** optimization ** Update the Sentinel image to v0.6.0
+- Error in dashboard of managed Nacos
+- File obtain address for nacos-operator database initialization
+- Sentinel image to v0.6.0
 
 ## 2022-12-22
 
 ### v0.14.0
 
-#### New function
+#### New Features
 
-- ** add ** Init Chart requires offline support for images
-- ** add ** Gets a token to host Nacos
+- Offline images required by init Chart
+- Token to get managed Nacos
 
-#### repair
+#### Bug Fixing
 
-- ** repair ** Naming of Values in Skoala Chart
-- ** repair ** Mirroring problem in CI flow
+- Error in naming values in Skoala Chart
+- Mirroring errors in CI flows
 
-#### optimization
+#### Enhancement
 
-- ** optimization ** Sets the default log output to the console
-- ** optimization ** Upgrade nacos-operator to the community version
-- ** optimization ** Updated enable support for authentication of Nacos custom resources
-- ** optimization ** Set the default component log level
+- Output logs to console by default
+- Nacos-operator to the community version
+- Enable for authentication of Nacos custom resources
+- Log level of default components
 
 ## 2022-12-21
 
 ### v0.13.0
 
-#### New function
+#### New Features
 
-- ** add ** Connect to apis of the middleware MySQL and Redis
-- ** add ** Gateway JWT verifies supported apis
-- ** add ** Gateway domain name verification logic
-- ** add ** Sentinel resource listing API
-- ** add ** Gateway interface for querying registry services
-- ** add ** Push Init Chart to addon warehouse after release
-- ** add ** Complete the gitlab release operation when the version is released
-- ** add ** Dynamically change the log level
+- Connectivity with APIs of MySQL and Redis components
+- API to support gateway JWT verification
+- Logic of gateway domain verification
+- API of Sentinel resource listing
+- API for gateway to query services in registries
+- Push Init Chart to addon helm repo after release
+- Complete gitlab release operations after version release
+- Dynamically change log level
 
-#### repair
+#### Bug Fixing
 
-- ** repair ** All restricted flow rules do not take effect when updated
-- ** repair ** Envoy Log Level No problem set
-- ** repair ** An error occurred when the gateway was updated
-- ** repair ** Database initialization problem of managed Nacos
+- Global flow rules do not take effect after update
+- Envoy log level was not set
+- Error in updated gateways are not classified
+- Error in database initialization of managed Nacos
 
-#### optimization
+#### Enhancement
 
-- ** optimization ** The registry is listed in descending order by update time
-- ** optimization ** Field name of unified gateway JWT
-- ** optimization ** Added whether to enable the JWT field in the gateway domain name list
-- ** optimization ** Logic for the Sentinel service name connector
-- ** optimization ** Upgrade Contour to version 1.23
-- ** optimization ** Upgrade Envoy to version 1.24
-- ** optimization ** Upgrade k8s.io/ related components to version 0.25
-- ** optimization ** Return the go-replayers component to the community version
-- ** optimization ** Revert the go-helm-client component to the community version
-- ** optimization ** Upgrade Contour to version 1.23.1
-- ** optimization ** Modified Agent component to force no grid side car injection
-- ** optimization ** Revert the default configuration of the Nacos image to the community version
-- ** optimization ** Remove CI flow associated with Nacos image
+- Registries are listed in descending order by update time
+- Unified field name of gateway JWT
+- Add "whether to enable JWT" field in gateway domain list
+- Logic for Sentinel service name connector
+- Upgrade Contour to version 1.23
+- Upgrade Envoy to version 1.24
+- Upgrade k8s.io/ related components to version 0.25
+- Revert `go-replayers` component to community version
+- Revert `go-helm-client` component to community version
+- Upgrade Contour to version 1.23.1
+- Modified Agent component as **Must** not inject sidecar
+- Revert default configuration of Nacos image to community version
+- Remove CI flows associated with Nacos image
 
 ## 2022-12-13
 
 ### v0.12.2
 
-#### New function
+#### New Features
 
-- ** add ** Adds Grafana template support for Sentinel"s own monitoring
-- ** add ** Add the configuration information of the customized gateway index
+- Add Grafana template for Sentinel"s own monitoring
+- Add configuration information of the customized gateway index
 
-#### repair
+#### Bug Fixing
 
-- ** repair ** State problem of microservice integration observable components
-- ** repair ** Governance status issue of registry"s ability to enable grid plug-ins
-- ** repair ** Gateway log index problem
-- ** repair ** Pre-dependency check interface problems
-- ** repair ** Logical problem of Sentinel matching Nacos default namespace
-- ** repair ** Logic of the abnormal port connected to the container management module
+- Status error of Insight after added into microservices
+- Status error of Mesh plugin after enabled in managed registries
+- Error in gateway log index
+- Error in pre-dependency check interface
+- Logical error of Sentinel matching Nacos default namespace
+- Logic error in handling port connected to the container management module is wrong

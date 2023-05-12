@@ -300,7 +300,7 @@ nav:
               - OverridePolicy: kairship/07policy/overridepolicy.md
       - Microservice Engine:
           - Intro:
-              - Feature Overview: skoala/intro/what.md
+              - Features: skoala/intro/what.md
               - Scenarios: skoala/intro/scenarios.md
               - Advantages: skoala/intro/advantages.md
               - Release Notes: skoala/intro/release-notes.md
@@ -309,6 +309,29 @@ nav:
               - Online Upgrade: skoala/quickstart/online-upgrade.md
               - Offline Upgrade: skoala/quickstart/offline-upgrade.md
               - Select Workspace: skoala/quickstart/select-workspace.md
+          - Microservice Gateway:
+              - Gateway Management:
+                  - Create Gateway: skoala/ms-gateway/gateway/create-gateway.md
+                  - Check Gateway: skoala/ms-gateway/gateway/check-details.md
+                  - Update Gateway: skoala/ms-gateway/gateway/update-gateway.md
+                  - Delete gateway: skoala/ms-gateway/gateway/delete-gateway.md
+              - API Management:
+                  - Add API: skoala/ms-gateway/api/add-api.md
+                  - Update API: skoala/ms-gateway/api/update-api.md
+                  - API Policies: skoala/ms-gateway/api/api-policy.md
+                  - Delete API: skoala/ms-gateway/api/delete-api.md
+              - Service Management:
+                  - Manual Add: skoala/ms-gateway/service/manual-integrate.md
+                  - Auto Add: skoala/ms-gateway/service/auto-manage.md
+              - Monitoring & Alarming: skoala/ms-gateway/alert.md
+              - Logs:
+                  - Request Logs: skoala/ms-gateway/logs/reqlog.md
+                  - Instance Logs: skoala/ms-gateway/logs/inslog.md
+              - Domain Management:
+                  - Add Domain: skoala/ms-gateway/domain/add-domain.md
+                  - Update Domain: skoala/ms-gateway/domain/update-domain.md
+                  - Domain Policies: skoala/ms-gateway/domain/domain-policy.md
+                  - Delete Domain: skoala/ms-gateway/domain/delete-domain.md          
           - Microservice Governance:
               - Managed Registry:
                   - Registry Management:
@@ -322,7 +345,7 @@ nav:
                       - Microservice Details: skoala/registry/managed/servicelist/check-details.md
                   - Microservice Governance:
                       - Sentinel Specification: skoala/registry/managed/governance/connect-sentinel.md
-                      - Ruls: skoala/registry/managed/governance/governance-policy.md
+                      - Rules: skoala/registry/managed/governance/governance-policy.md
                       - Flow Control: skoala/registry/managed/governance/flow-control.md
                   - Microservice Configuration List: skoala/registry/managed/configcenter.md
                   - Monitoring:
@@ -340,29 +363,6 @@ nav:
                   - Microservice Management: skoala/registry/integrated/manage-service.md
                   - Microservice Governance: skoala/registry/integrated/traffic-control.md
                   - Traces: skoala/registry/integrated/trace.md
-          - Microservice Gateway:
-              - Gateway Management:
-                  - Create Gateway: skoala/ms-gateway/gateway/create-gateway.md
-                  - Check Gateway: skoala/ms-gateway/gateway/check-details.md
-                  - Update Gateway: skoala/ms-gateway/gateway/update-gateway.md
-                  - Delete gateway: skoala/ms-gateway/gateway/delete-gateway.md
-              - API Management:
-                  - Add API: skoala/ms-gateway/api/add-api.md
-                  - Update API: skoala/ms-gateway/api/update-api.md
-                  - API Policy: skoala/ms-gateway/api/api-policy.md
-                  - Delete API: skoala/ms-gateway/api/delete-api.md
-              - Service Management:
-                  - Manual Add: skoala/ms-gateway/service/manual-integrate.md
-                  - Auto Add: skoala/ms-gateway/service/auto-manage.md
-              - Monitoring & Alarming: skoala/ms-gateway/alert.md
-              - Logs:
-                  - Request Logs: skoala/ms-gateway/logs/reqlog.md
-                  - Instance Logs: skoala/ms-gateway/logs/inslog.md
-              - Domain Management:
-                  - Add Domain: skoala/ms-gateway/domain/add-domain.md
-                  - Update Domain: skoala/ms-gateway/domain/update-domain.md
-                  - Configure Domain Policy: skoala/ms-gateway/domain/domain-policy.md
-                  - Delete Domain: skoala/ms-gateway/domain/delete-domain.md
           - Best Practices:
               - Complete Process of Microservice Governance: skoala/best-practice/use-skoala-01.md
               - Microservice Gateway JWT: skoala/best-practice/jwt.md
