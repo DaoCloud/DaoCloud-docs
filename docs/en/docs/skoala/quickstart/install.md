@@ -165,7 +165,7 @@ With everything in place, you can begin the formal installation of the microserv
 
 ### Configure skoala helm repo
 
-After skoala warehouse is configured, skoala application chart can be viewed and obtained
+After skoala registry is configured, skoala application chart can be viewed and obtained
 
 ```bash
 ~ helm repo add skoala-release https://release.daocloud.io/chartrepo/skoala

@@ -112,7 +112,7 @@ This page lists the container-managed Release Notes to help you understand the e
 - **Added** Storage Pools (StrogeClass) support exclusive or shared entitlement to specific namespaces.
 - **Added** The Create Workload support exposes the remaining resource quota for the current namespace.
 - **Added** Node connectivity check function.
-- **Added** Added Mirror Selector to support the selection of mirrors within the mirror repository when creating workloads.
+- **Added** Added Mirror Selector to support the selection of mirrors within the Container registry when creating workloads.
 - **Added** Apply backup and recovery features.
 
 #### Optimize

@@ -34,7 +34,7 @@ This page is a collection of blog posts and public articles related to DCE 5.0, 
 
 - 20221125 | [KubeCon 2022 North America | Highlights Review](https://mp.weixin.qq.com/s/HIxBZjCK8ofCN6C5KRY25w)
 
-    At the 2022 KubeCon North America conference, which took place in November 2022, cloud native technology experts, product or solution providers, and users from all over the world gathered together to share the latest developments, trends, and insights in the cloud native field. This article will review some of the highlights of the conference.
+    At the 2022 KubeCon North America conference, which took place in November 2022, cloud native technology experts, product or solution providers, and users from all over the world gathered together to share the latest developments, trends, and insights in the cloud native field. This page will review some of the highlights of the conference.
 
 - 20221123 | [Entering the Digital Native Journey of Automobile Manufacturers | A Review of the Roundtable](https://mp.weixin.qq.com/s/1leu7b8KQw9pcqma8A_cuw)
 

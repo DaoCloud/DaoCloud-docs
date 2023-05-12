@@ -10,7 +10,7 @@ JMX-Exporter provides two usages:
 !!! note
 
      Officials do not recommend the first method. On the one hand, the configuration is complicated, and on the other hand, it requires a separate process, and the monitoring of this process itself has become a new problem.
-     So this article focuses on the second usage and how to use JMX Exporter to expose JVM monitoring indicators in the Kubernetes environment.
+     So This page focuses on the second usage and how to use JMX Exporter to expose JVM monitoring indicators in the Kubernetes environment.
 
 The second usage is used here, and the JMX Exporter jar package file and configuration file need to be specified when starting the JVM.
 The jar package is a binary file, so it is not easy to mount it through configmap. We hardly need to modify the configuration file.

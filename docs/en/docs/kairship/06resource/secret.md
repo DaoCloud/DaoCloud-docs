@@ -9,7 +9,7 @@ DCE and applications running in the cluster can also take additional precautions
 
 Secret is similar to ConfigMap but designed to hold secret data.
 
-Two creation methods are currently provided: wizard creation and Create with YAML. This article takes wizard creation as an example, and follows the steps below.
+Two creation methods are currently provided: wizard creation and Create with YAML. This page takes wizard creation as an example, and follows the steps below.
 
 1. After entering a multicloud instance, in the left navigation bar, click `Resource Management` -> `Multicloud Secret`, and click the `Create Secret` button in the upper right corner.
 

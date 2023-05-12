@@ -9,7 +9,7 @@ The Helm repository is a repository for storing and publishing Charts. The Helm 
 | addon | Common Chart in business scenarios | cert-manager |
 | community | The most popular open source components in the Kubernetes community Chart | Istio |
 
-In addition to the above preset repositories, you can also add third-party Helm repositories yourself. This article will introduce how to add and update third-party Helm repositories.
+In addition to the above preset repositories, you can also add third-party Helm repositories yourself. This page will introduce how to add and update third-party Helm repositories.
 
 ## Prerequisites
 

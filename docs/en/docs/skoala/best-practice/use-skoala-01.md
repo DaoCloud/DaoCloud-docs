@@ -1,6 +1,6 @@
 # Sample application experience microservice governance
 
-The micro service engine is a function of DCE 5.0 Advanced edition, which includes registry center, configuration center, micro service governance (traditional micro service, cloud native micro service), cloud native gateway and other functions. This article will walk you through the microservice governance capabilities of a sample application.
+The micro service engine is a function of DCE 5.0 Advanced edition, which includes registry center, configuration center, micro service governance (traditional micro service, cloud native micro service), cloud native gateway and other functions. This page will walk you through the microservice governance capabilities of a sample application.
 
 The full process of this best practice is as follows:
 
@@ -11,7 +11,7 @@ The full process of this best practice is as follows:
 
 ## Sample application introduction
 
-The sample application used in this practice is based on the OpenTelemetry standard demo application. The DaoCloud Large and Micro Services team has optimized it based on DCE 5.0 features to better reflect cloud native and observable capabilities, and to show the effects of micro-service governance. The sample application is open source on Github, visit [Github warehouse address ](https://github.com/openinsight-proj/openinsight-helm-charts) for more details.
+The sample application used in this practice is based on the OpenTelemetry standard demo application. The DaoCloud Large and Micro Services team has optimized it based on DCE 5.0 features to better reflect cloud native and observable capabilities, and to show the effects of micro-service governance. The sample application is open source on Github, visit [Github registry address ](https://github.com/openinsight-proj/openinsight-helm-charts) for more details.
 
 The architecture diagram for the sample application is as follows:
 

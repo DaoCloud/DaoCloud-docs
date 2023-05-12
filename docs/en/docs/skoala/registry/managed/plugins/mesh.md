@@ -11,9 +11,9 @@
 
     <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 
-3. Select the service grid you want to bind to and click `OK` at the bottom of the box.
+3. Select the service mesh you want to bind to and click `OK` at the bottom of the box.
 
-    If you can"t find the service grid you want, go to the service grid module [Create Service Mesh](../../../../mspider/user-guide/service-mesh/README.md).
+    If you can"t find the service mesh you want, go to the service mesh module [Create Service Mesh](../../../../mspider/user-guide/service-mesh/README.md).
 
     <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 

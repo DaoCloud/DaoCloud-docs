@@ -24,7 +24,7 @@ This page lists the Release Notes of multi-cloud orchestration, so that you can 
 #### Fix
 
 - **Fixed** Fix the problem that one-click propagation service fails
-- **Fixed** fix grid jump link style
+- **Fixed** fix mesh jump link style
 - **Fixed** Incorrect front-end version
 - **Fixed** One-click upgrade workload automatically propagates dependent services
 - **Fixed** filter subcluster LB type service for one-click upgrade

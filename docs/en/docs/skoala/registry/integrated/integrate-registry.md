@@ -23,7 +23,7 @@ To access the registry, perform the following steps:
 
         - If you cannot find the Kubernetes cluster you want to add, you can go to the container management module [Integrate Cluster](../../../kpanda/user-guide/clusters/integrate-cluster) or [Create Cluster](../../../kpanda/user-guide/clusters/create-cluster.md).
 
-        - If you cannot find the grid service you want to add, you can go to the grid service module [Create Mesh](../../../mspider/user-guide/service-mesh/README.md).
+        - If you cannot find the mesh service you want to add, you can go to the mesh service module [Create Mesh](../../../mspider/user-guide/service-mesh/README.md).
 
             <!--!\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)-->
 

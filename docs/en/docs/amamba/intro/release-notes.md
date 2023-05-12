@@ -67,7 +67,7 @@ This page lists the Release Notes of the App Workbench, so that you can understa
 
 #### Fix
 
-**Fix** Fixed the problem of adding a private warehouse in continuous deployment and reporting an error
+**Fix** Fixed the problem of adding a private registry in continuous deployment and reporting an error
 
 ## 2022-12-30
 
@@ -75,8 +75,8 @@ This page lists the Release Notes of the App Workbench, so that you can understa
 
 #### Features
 
-- **Added** Support to open traditional microservices and service grid at the same time when creating an application
-- **Added** Query gray release supports fuzzy query, query continuous deployment supports fuzzy query and state retrieval, query gitops warehouse supports fuzzy query and state retrieval
+- **Added** Support to open traditional microservices and service mesh at the same time when creating an application
+- **Added** Query gray release supports fuzzy query, query continuous deployment supports fuzzy query and state retrieval, query gitops registry supports fuzzy query and state retrieval
 - **Added** Add an interface to get jso data according to GVR
 - **Added** Add an interface to get helm information, you can deploy helm chart through argocd
 - **Added** Hot reload of Jenkins configuration file and hot reload of syncer configuration file
@@ -110,7 +110,7 @@ This page lists the Release Notes of the App Workbench, so that you can understa
 #### Optimization
 
 - **Optimize** Reduce the memory usage of jenkins without workload by adjusting jvm parameters
-- **Optimize** When the gitops module creates a warehouse, it adds a judgment on the connectivity of the warehouse
+- **Optimize** When the gitops module creates a registry, it adds a judgment on the connectivity of the registry
 - **Optimization** Real-time synchronization of pipeline running status and other information causes too much pressure on jenkins, so change to lazy loading
 - **Optimization** Optimized the api release process and supports separate release
 
@@ -125,7 +125,7 @@ This page lists the Release Notes of the App Workbench, so that you can understa
 
 #### Features
 
-- **Added** Added the warehouse function in gitops, which supports import and deletion
+- **Added** Added the registry function in gitops, which supports import and deletion
 - **Added** Added sync function for gitops app
 
 #### Optimized
@@ -142,7 +142,7 @@ This page lists the Release Notes of the App Workbench, so that you can understa
 - **Fixed** Fixed the problem that the binding relationship between namespace and workspace was lost when updating the label of namespace
 - **Fixed** Fixed the error of trigger conversion when synchronizing the jenkins config to the database after completing the pipeline
 - **Fixed** Fixed the problem that the credential of the kubeconfig type in the ArgoCD cluster and jenkins was out of sync due to the change of the cluster's kubeconfig
-- **Fixed** Fixed unordered and paginated problems in warehouse list
+- **Fixed** Fixed unordered and paginated problems in registry list
 - **Fixed** Fixed the problem that from-jar failed to upload more than 32M files
 
 ## 2022-11-18

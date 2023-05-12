@@ -1,6 +1,6 @@
 # Deploy Rook-ceph via App Store
 
-This article will provide the operation steps and instructions for installing and deploying the Rook-ceph cloud native storage system on the graphical interface of Addon in the DCE 5.0 app store.
+This page will provide the operation steps and instructions for installing and deploying the Rook-ceph cloud native storage system on the graphical interface of Addon in the DCE 5.0 app store.
 
 ## Format conversion of Rook-ceph helm charts
 

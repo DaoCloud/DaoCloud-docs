@@ -453,7 +453,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Istio community launches Istio data plane mode Ambient Mesh without sidecar proxy](https://mp.weixin.qq.com/s/JpLPuqbPggXsQzFR5pii8A)
 
      [Ambient Mesh](https://github.com/istio/istio/tree/experimental-ambient) separates the data plane agent from the application pod and deploys it independently, completely solving the coupling problem between mesh infrastructure and application deployment.
-     Through the introduction of zero trust tunnel (ztunnel) and Waypoint proxy (waypoint proxy) to achieve zero trust and reduce the resource occupation of the grid, it can also seamlessly interoperate with the sidecar mode, reducing the user's operation and maintenance costs.
+     Through the introduction of zero trust tunnel (ztunnel) and Waypoint proxy (waypoint proxy) to achieve zero trust and reduce the resource occupation of the mesh, it can also seamlessly interoperate with the sidecar mode, reducing the user's operation and maintenance costs.
 
 - [Istio v1.14 release](https://istio.io/latest/news/releases/1.14.x/announcing-1.14/change-notes/)
 
@@ -743,7 +743,7 @@ This page lists activity in cloud native open source projects in alphabetical or
      [KubeWharf](https://github.com/kubewharf) is a distributed operating system based on Kubernetes, which consists of a set of cloud-native components, focusing on improving system scalability, resource utilization, and scalability. Observability, security, etc., support scenarios such as large-scale multi-tenant clusters, offline mixing, and storage.
      The first batch of KubeWharf plans to open source three projects: KubeBrain, a high-performance meta-information storage system, KubeGateway, a seven-layer gateway for kube-apiserver, and KubeZoo, a lightweight multi-tenant solution.
 
-- [Kuma Service Grid Project v2.2.0 Released (CNCF Project)](https://github.com/kumahq/kuma/releases/tag/2.2.0)
+- [Kuma service mesh Project v2.2.0 Released (CNCF Project)](https://github.com/kumahq/kuma/releases/tag/2.2.0)
 
     Release features: support for OpenTelemetry, support for defining MeshProxyPatch policies using JSONPatch, support for retry directives and priorities, upgrade the underlying Envoy version to 1.25, new policies for more fine-grained control of load balancing between services, support for deploying generic patterns in Kubernetes clusters for global Support for global control plane deployment in Kubernetes clusters (supported by Postgres), and support for providing public keys for offline token signing and verification.
 
@@ -753,7 +753,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Kuma Service Mesh Project v1.8.0 release (CNCF project)](https://github.com/kumahq/kuma/releases/tag/1.8.0)
 
-    The main new features of this version: cross-grid gateway supports multi-region operation, grid gateway/built-in gateway adds observability function, rewrites CNI, grid gateway supports path rewriting and header addition/deletion, supports filtering proxy indicators, Simplify the implementation of TCP traffic logs and support Projected Service Account Tokens.
+    The main new features of this version: cross-mesh gateway supports multi-region operation, mesh gateway/built-in gateway adds observability function, rewrites CNI, mesh gateway supports path rewriting and header addition/deletion, supports filtering proxy indicators, Simplify the implementation of TCP traffic logs and support Projected Service Account Tokens.
 
 - [Kurator Distributed Cloud Native Platform v0.3.0 Released](https://github.com/kurator-dev/kurator/releases/tag/v0.3.0)
 
@@ -790,7 +790,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support for virtual machine shared file system virtiofs, support for Apple's virtualization framework Virtualization.framework, and support for Containerd command-line tool nerdctl 1.1.0.
 
-- [Linkerd Service Grid Project v2.13.0 Released (CNCF Project)](https://github.com/linkerd/linkerd2/releases/tag/stable-2.13.0)
+- [Linkerd service mesh Project v2.13.0 Released (CNCF Project)](https://github.com/linkerd/linkerd2/releases/tag/stable-2.13.0)
 
     Release features: Introduces client-side policies, including dynamic routing and fuser mode; supports debugging HTTPRoute-based policies; introduces a new init container -- network-validator -- to ensure that local iptables rules work as expected.
 

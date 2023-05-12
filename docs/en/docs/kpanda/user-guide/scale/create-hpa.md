@@ -4,7 +4,7 @@ DaoCloud Enterprise 5.0 supports elastic scaling of Pod resources based on indic
 Users can dynamically adjust the number of copies of Pod resources by setting CPU utilization, memory usage, and custom indicators.
 For example, after setting an auto scaling policy based on the CPU utilization indicator for the workload, when the CPU utilization of the Pod exceeds/belows the indicator threshold you set, the workload controller will automatically increase/decrease the number of Pod replicas.
 
-This article describes how to configure auto scaling based on built-in metrics and custom metrics for workloads.
+This page describes how to configure auto scaling based on built-in metrics and custom metrics for workloads.
 
 !!! note
 
@@ -22,7 +22,7 @@ Before configuring the built-in index auto scaling policy for the workload, the 
 
 - The container management module [connected to the Kubernetes cluster](../clusters/integrate-cluster.md) or [created the Kubernetes cluster](../clusters/create-cluster.md), and can access the UI interface of the cluster .
 
-- Completed a [namespace creation](../namespaces/createns.md), [stateless workload creation](../workloads/create-deployment.md) or [stateful workload creation] (../workloads/create-statefulset.md).
+- Completed a [namespace creation](../namespaces/createns.md), [stateless workload creation](../workloads/create-deployment.md) or [stateful workload creation](../workloads/create-statefulset.md).
 
 - The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, please refer to [Namespace Authorization](../namespaces/createns.md).
 
@@ -73,7 +73,7 @@ Before configuring a custom index auto scaling policy for a workload, the follow
 
 - The container management module [connected to the Kubernetes cluster](../clusters/integrate-cluster.md) or [created the Kubernetes cluster](../clusters/create-cluster.md), and can access the UI interface of the cluster .
 
-- Completed a [namespace creation](../namespaces/createns.md), [stateless workload creation](../workloads/create-deployment.md) or [stateful workload creation] (../workloads/create-statefulset.md).
+- Completed a [namespace creation](../namespaces/createns.md), [stateless workload creation](../workloads/create-deployment.md) or [stateful workload creation](../workloads/create-statefulset.md).
 
 - The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, please refer to [Namespace Authorization](../namespaces/createns.md).
 

@@ -1,6 +1,6 @@
 # Expose metrics for applications using OTel SDK
 
-> This article is intended as a reference only for users wishing to evaluate or explore OTLP indicators under development.
+> This page is intended as a reference only for users wishing to evaluate or explore OTLP indicators under development.
 
 The OpenTelemetry project requires APIs and SDKs to be available in languages ​​that must emit data in the OpenTelemetry Protocol (OTLP).
 

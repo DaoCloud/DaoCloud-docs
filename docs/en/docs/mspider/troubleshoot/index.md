@@ -1,6 +1,6 @@
 # Create mesh troubleshooting
 
-This article will continue to count and sort out the error reports that may be caused by the environment or irregular operation during the process of creating the mesh, as well as the problem analysis and solutions for some error reports encountered during the use of the service mesh.
+This page will continue to count and sort out the error reports that may be caused by the environment or irregular operation during the process of creating the mesh, as well as the problem analysis and solutions for some error reports encountered during the use of the service mesh.
 If you encounter problems with the use of the service mesh, please review this troubleshooting manual first.
 
 - Managed mode: the control plane and the data plane are separated, and a virtual cluster is created to store managed Istio CRD resources

@@ -93,7 +93,7 @@ spec:
      # externalRepoType: centos
      # externalRepoURLs: ['https://extertal-repo.daocloud.io/kubean/centos/\$releasever/os/\$basearch/']
  
-   imagesAndCharts: # Mirror warehouse and Chart warehouse source
+   imagesAndCharts: # container registry and Chart registry source
  
      # official-service(default), builtin or external
  
@@ -217,12 +217,12 @@ For key field descriptions in this YAML file, see the table below.
 | clusterName | Global cluster name in KuBean Cluster | - |
 | fullPackagePath | The path of the decompressed offline package, this field is required in offline mode | - |
 | addonPackage.path | App store addon package local file system path | - |
-| imagesAndCharts | Mirror repository and Chart repository source | - |
+| imagesAndCharts | Container registry and Chart repository source | - |
 | imagesAndCharts.externalChartRepo | IP or domain name of external Chart repository | - |
 | imagesAndCharts.externalChartRepoPassword | The password of the external Chart repository, used to push the image | - |
 | imagesAndCharts.externalChartRepoType | The type of external Chart repository, the value is chartmuseum, harbor | - |
 | imagesAndCharts.externalChartRepoUsername | The username of the external Chart repository, used to push images | - |
-| imagesAndCharts.externalImageRepo | Specify the IP or domain name of the external warehouse (need to specify the protocol header) | - |
+| imagesAndCharts.externalImageRepo | Specify the IP or domain name of the external registry (need to specify the protocol header) | - |
 | imagesAndCharts.externalImageRepoPassword | The password of the external image repository, used to push images | - |
 | imagesAndCharts.externalImageRepoUsername | The username of the external image repository, used to push images | - |
 | imagesAndCharts.type| Mirror and Chart access mode, the value is official-service (online), buitin (Tinder built-in registry and chartmuseum), external (external) | official-service |

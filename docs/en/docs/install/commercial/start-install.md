@@ -23,7 +23,7 @@ Unzip the offline package after downloading:
 
 ```bash
 # Take the amd64 architecture offline package as an example
-tar -xvf offline-v0.6.1-amd64.tar
+tar -xvf offline-v0.7.0-amd64.tar
 ```
 
 #### addon offline package (optional)

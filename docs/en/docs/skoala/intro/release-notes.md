@@ -290,7 +290,7 @@ This page lists the Release Notes of the microservice engine so that you can und
 - ** add ** Gateway domain name verification logic
 - ** add ** Sentinel resource listing API
 - ** add ** Gateway interface for querying registry services
-- ** add ** Push Init Chart to addon warehouse after release
+- ** add ** Push Init Chart to addon registry after release
 - ** add ** Complete the gitlab release operation when the version is released
 - ** add ** Dynamically change the log level
 
@@ -313,7 +313,7 @@ This page lists the Release Notes of the microservice engine so that you can und
 - ** optimization ** Return the go-replayers component to the community version
 - ** optimization ** Revert the go-helm-client component to the community version
 - ** optimization ** Upgrade Contour to version 1.23.1
-- ** optimization ** Modified Agent component to force no grid side car injection
+- ** optimization ** Modified Agent component to force no mesh sidecar injection
 - ** optimization ** Revert the default configuration of the Nacos image to the community version
 - ** optimization ** Remove CI flow associated with Nacos image
 
@@ -329,7 +329,7 @@ This page lists the Release Notes of the microservice engine so that you can und
 #### repair
 
 - ** repair ** State problem of microservice integration observable components
-- ** repair ** Governance status issue of registry"s ability to enable grid plug-ins
+- ** repair ** Governance status issue of registry"s ability to enable mesh plug-ins
 - ** repair ** Gateway log index problem
 - ** repair ** Pre-dependency check interface problems
 - ** repair ** Logical problem of Sentinel matching Nacos default namespace

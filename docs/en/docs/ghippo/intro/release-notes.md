@@ -52,7 +52,7 @@ This page lists the Release Notes for global management of each version, so that
 #### Fix
 
 - Fixed the problem that the token can still be used after the key expires
-- Fix the problem that the mirror warehouse is not controlled by the license
+- Fix the problem that the container registry is not controlled by the license
 
 ## 2023-02-27
 

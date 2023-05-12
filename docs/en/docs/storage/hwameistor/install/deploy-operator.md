@@ -5,18 +5,19 @@ hide:
 
 # Install via Operator
 
-This article introduces how to install Hwameistor through the Hwameistor Operator on the platform interface.
+This page introduces how to install Hwameistor through the Hwameistor Operator.
+After the Operator is installed, it will automatically start Hwameistor related components.
 
 ## Prerequisites
 
 - Free HDD and SSD disks have been prepared on the nodes to be used
-- Completed the items in [Preparation] (prereq.md)
+- Completed the items in [Preparation](prereq.md)
 - If you need to use highly available data volumes, please complete [DRDB installation](drbdinstall.md) in advance
-- If the deployment environment is a production environment, please read [Resource Requirements for Production Environment] (proresource.md) in advance
+- If the deployment environment is a production environment, please read [Resource Requirements for Production Environment](proresource.md) in advance
 - If your Kubernetes distribution uses a different `kubelet` directory, please confirm `kubeletRootDir` in advance.
-   For details, please refer to [Customize Kubelet root directory](customized-kubelet.md)
+  For details, please refer to [Customize Kubelet root directory](customized-kubelet.md)
 
-## installation steps
+## Steps
 
 Please confirm that your cluster has successfully connected to `container management` platform, and then perform the following steps to install Hwameistor.
 
@@ -107,13 +108,13 @@ Please confirm that your cluster has successfully connected to `container manage
 
      - `hwameistorImageRegistry`:
 
-         Set the warehouse address of the Hwameistor mirror, and the available online warehouses have been filled in by default.
-         If it is a privatized environment, it can be modified to a private warehouse address.
+         Set the registry address of the Hwameistor mirror, and the available online registrys have been filled in by default.
+         If it is a privatized environment, it can be modified to a private registry address.
 
      - `K8s image Registry`:
 
-         Set the address of the K8S mirror warehouse, and the available online warehouse has been filled in by default.
-         If the environment is privatized, it can be modified to a private warehouse address.
+         Set the address of the K8S container registry, and the available online registry has been filled in by default.
+         If the environment is privatized, it can be modified to a private registry address.
 
 5. After confirming that the parameters are correct, click `OK` to complete the installation. After the installation is complete, you can click `Helm Application` to view the installation status of `Hwameistor Operator`.
 

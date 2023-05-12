@@ -1,6 +1,6 @@
 # vmstorge disk expansion
 
-This article describes the method of vmstorge disk expansion,
+This page describes the method of vmstorge disk expansion,
 Please refer to [vmstorage disk capacity planning](./vms-res-plan.md) for vmstorge disk specifications.
 
 ## Steps

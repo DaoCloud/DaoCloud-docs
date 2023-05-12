@@ -72,19 +72,19 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Azure Kubernetes Fleet Manager treats multiple cluster sites as a single cluster to be managed. Users can manage multiple clusters by creating a Fleet resource. Users can treat existing AKS clusters as member clusters, join them to the fleet, and then orchestrate multiple cluster scenarios such as Kubernetes resource propagation and multi-cluster load balancing using metadata from those clusters.
 
-- [AliCloud Service Grid ASM March 2023 Product Update](https://mp.weixin.qq.com/s/Yca5J3liIg6oznZDz6fVrA)
+- [AliCloud service mesh ASM March 2023 Product Update](https://mp.weixin.qq.com/s/Yca5J3liIg6oznZDz6fVrA)
 
-    Updates: Gateway support for docking WAF, support for configuring Ingress resources, support for managing Knative services, support for OIDC login for grid topology, Sidecar proxy support for oversell mode, new egress traffic policy, support for configuring global default HTTP request retry policy.
+    Updates: Gateway support for docking WAF, support for configuring Ingress resources, support for managing Knative services, support for OIDC login for mesh topology, Sidecar proxy support for oversell mode, new egress traffic policy, support for configuring global default HTTP request retry policy.
 
 - [AliCloud ACK February Product Update](https://mp.weixin.qq.com/s/nqW681bqKocpc7AWUV56jg)
 
     Update: Node pool supports Kubelet parameter customization, AIOps supports Service diagnostics, supports changing cloud disk type, and supports using cloud-auto type cloud disk as dynamic storage volume.
 
-- [AliCloud Service Grid ASM February 2023 Update](https://mp.weixin.qq.com/s/jNeC_gMQdCk8b8d3QXSeMQ)
+- [AliCloud service mesh ASM February 2023 Update](https://mp.weixin.qq.com/s/jNeC_gMQdCk8b8d3QXSeMQ)
 
-    Update: Support for defining management logs, monitoring and link tracing as Telemetry CRD; support for fine-grained configuration at the grid global and namespace levels; improved grid topology loading speed in clusters above 150 Pod size; support for configuring sidecar proxy environment variables, istio-proxy thread count, etc.; support for configuring in multiple clusters Support for intra-cluster traffic retention.
+    Update: Support for defining management logs, monitoring and link tracing as Telemetry CRD; support for fine-grained configuration at the mesh global and namespace levels; improved mesh topology loading speed in clusters above 150 Pod size; support for configuring sidecar proxy environment variables, istio-proxy thread count, etc.; support for configuring in multiple clusters Support for intra-cluster traffic retention.
 
-- [AliCloud Container Mirroring Service ACR Officially Launches Cloud Native Product Center](https://mp.weixin.qq.com/s/atQF7WNfeodW3eizw6e1tg)
+- [AliCloud container imageing Service ACR Officially Launches Cloud Native Product Center](https://mp.weixin.qq.com/s/atQF7WNfeodW3eizw6e1tg)
 
     Cloud Native Products Center provides free secure and trusted container base images from AliCloud and Dragon Lizard community for container developers.
     It includes application containerization base OS image, base language image, AI/Big Data related image categories, covering ARM, ARM 64, x64, x86-64 multiple system architectures.
@@ -192,9 +192,9 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      DaoCloud Enterprise 5.0 is an independent, open, high-performance, scalable next-generation cloud-native operating system. Focusing on the cloud-native base extension capability scenario, break through cloud-side barriers, cross multi-cloud environments, solve the compatibility problem of Xinchuang infrastructure, improve app delivery efficiency, enable agile innovation of applications, enable business systems with rich data services, and integrate microservice governance and Global observability can meet the challenges of operation and maintenance management of huge business systems.
 
-- [Databend Releases Cloud-Native Data Warehouse Databend Cloud](https://mp.weixin.qq.com/s/LzjRQ8_XA-896AZQj2n3hA)
+- [Databend Releases Cloud-Native Data registry Databend Cloud](https://mp.weixin.qq.com/s/LzjRQ8_XA-896AZQj2n3hA)
 
-    Databend Cloud is an elastic cloud data warehouse based on the open source cloud-native data warehouse project [Databend](https://github.com/datafuselabs/databend), which consists of 3 layers: storage layer, compute layer and meta information service. The bottom tier is based on object storage, the upper tier compute nodes use different specifications, and the top tier is a metadata and management cluster to achieve multi-tenant isolation and ensure users' data security.
+    Databend Cloud is an elastic cloud data registry based on the open source cloud-native data registry project [Databend](https://github.com/datafuselabs/databend), which consists of 3 layers: storage layer, compute layer and meta information service. The bottom tier is based on object storage, the upper tier compute nodes use different specifications, and the top tier is a metadata and management cluster to achieve multi-tenant isolation and ensure users' data security.
 
 - [Datadog Launches Cloud Security Management to Provide Cloud Security Management](https://www.datadoghq.com/about/latest-news/press-releases/datadog-launches-cloud-security-management-to-provide-cloud-native-application-protection/)
 
@@ -435,7 +435,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Qualys Container Security v1.22 released](https://www.qualys.com/docs/release-notes/qualys-container-security-1.22-release-notes.pdf)
 
-    Updates: Mirror vulnerability report supports displaying labels related to mirrors, container vulnerability report supports displaying mirror repository information and Kubernetes object information, support for scanning all mirrors in all registries, software component analysis (SCA) scanning adds support for programming languages PHP, Ruby and Rust.
+    Updates: Mirror vulnerability report supports displaying labels related to mirrors, container vulnerability report supports displaying Container registry information and Kubernetes object information, support for scanning all mirrors in all registries, software component analysis (SCA) scanning adds support for programming languages PHP, Ruby and Rust.
 
 - [Qualys Container Security v1.21 released](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release-notes.pdf)
 
@@ -492,7 +492,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Solo.io releases Gloo Platform v2.3, a cloud-native application networking platform](https://www.solo.io/blog/gloo-platform-2-3/)
 
-    Updates: New Gloo Portal to help developers classify, share, and manage APIs; support for handling traffic of GraphQL requests in Istio Service Grid, including north-south and east-west traffic; support for Kubernetes 1.25 and Istio 1.17; commercial support for Ambient Mesh.
+    Updates: New Gloo Portal to help developers classify, share, and manage APIs; support for handling traffic of GraphQL requests in Istio service mesh, including north-south and east-west traffic; support for Kubernetes 1.25 and Istio 1.17; commercial support for Ambient Mesh.
 
 - [Solo.io Launches Gloo Fabric, a Multi-Cloud Dynamic Resource Discovery Solution](https://www.solo.io/blog/introducing-solo-gloo-fabric/)
 
@@ -541,7 +541,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [SUSE Launches Rancher Prime, an Enterprise Container Management Platform](https://mp.weixin.qq.com/s/iVFsSGlRd4TdJGcRKLQBuQ)
 
     Rancher Prime is a distribution of Rancher with core code from Rancher Community Release, but with more emphasis on security and enhanced features and services for enterprise users.
-    The features of Rancher Prime are: improved comprehensive security governance and a trusted mirror repository.
+    The features of Rancher Prime are: improved comprehensive security governance and a trusted Container registry.
     introduce UI extensions; full lifecycle support for hosting clusters on Ali Cloud, Tencent Cloud and Huawei Cloud;
     support openEuler Linux and support for ARM systems.
 
@@ -583,11 +583,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
   
      The updates include: Added SecurityGroupPolicy enhancement component, which supports binding security groups for pods matching policies; supports business pods to use Service Account Token to access cloud resources such as CVM and VPC; supports modifying CPU and memory requests without restarting pods /limit value; support node/workload resource insight capabilities; add Request intelligent recommendation function; add native node-specific scheduler; optimize native node initialization process.
 
-- [Tetrate Launches TSE, a Service Grid Solution Designed for Amazon EKS](https://mp.weixin.qq.com/s/Q4qTLOv8kNn7lf0flHCOzg)
+- [Tetrate Launches TSE, a service mesh Solution Designed for Amazon EKS](https://mp.weixin.qq.com/s/Q4qTLOv8kNn7lf0flHCOzg)
 
-    TSE is built on open source Service Grid components such as Istio and Envoy, and is optimized for Amazon EKS to simplify installation, configuration and operation.
-    TSE provides Service Grid automation on top of Istio and Envoy.
-    It is used to install and configure open source components on Amazon EKS, integrate with AWS services, and provide a management console for platform operators to quickly configure the Service Grid for security, resiliency, and observability.
+    TSE is built on open source service mesh components such as Istio and Envoy, and is optimized for Amazon EKS to simplify installation, configuration and operation.
+    TSE provides service mesh automation on top of Istio and Envoy.
+    It is used to install and configure open source components on Amazon EKS, integrate with AWS services, and provide a management console for platform operators to quickly configure the service mesh for security, resiliency, and observability.
 
 - [Tetrate Application Connectivity Platform Tetrate Service Bridge v1.6.0 Released](https://docs.tetrate.io/service-bridge/1.6.x/en-us/release_notes_announcements)
 

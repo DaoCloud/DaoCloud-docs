@@ -1,6 +1,6 @@
 # Create a scheduled task (CronJob)
 
-This article introduces how to create a cron job (CronJob) through mirror images and YAML files.
+This page introduces how to create a cron job (CronJob) through mirror images and YAML files.
 
 Scheduled tasks (CronJob) are suitable for performing periodic operations, such as backup and report generation. These tasks can be configured to repeat periodically (for example: daily/weekly/monthly), and the time interval at which the task starts to execute can be defined.
 

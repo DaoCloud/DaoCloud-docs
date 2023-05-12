@@ -2,6 +2,26 @@
 
 This page lists the Release Notes related to Hwameistor, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-4-30
+
+### v0.9.3
+
+#### Optimization
+
+- **Optimized** Populate disk owner information during use phase.
+- **Optimized** Merge the properties of the disk itself when the udev event is triggered
+- **Optimized** Add tags to svc
+- **Optimized** Separate disk allocation and disk status update process
+- **Optimized** Rename the Exportor port to http-metrics
+- **Optimized** Add port name in exporter service
+
+#### Fix
+
+- **Fixed** LD bound, but no capacity in LSN
+- **Fixed** Metrics port listening issue.
+- **Fixed** May occur `not found` issue
+- **Fixed** UI tag issue in Helm
+
 ## 2023-3-30
 
 ### v0.9.2
@@ -29,7 +49,7 @@ This page lists the Release Notes related to Hwameistor, so that you can underst
 #### Optimization
 
 - **Added** disk used capacity [Issue #681](https://github.com/hwameistor/hwameistor/pull/681)
-- **Optimize** Skip scoring mechanism when no available disk is found [Issue #724](https://github.com/hwameistor/hwameistor/pull/724)
+- **Optimized** Skip scoring mechanism when no available disk is found [Issue #724](https://github.com/hwameistor/hwameistor/pull/724)
 - **SET** DRDB port defaults to 43001 [Issue #723](https://github.com/hwameistor/hwameistor/pull/723)
 
 ## 2023-1-30
@@ -59,4 +79,4 @@ This page lists the Release Notes related to Hwameistor, so that you can underst
 
 #### Optimization
 
-- **Optimize** Unnecessary logs before data migration, and avoid the impact of Job execution under other Namespaces.
+- **Optimized** Unnecessary logs before data migration, and avoid the impact of Job execution under other Namespaces.
