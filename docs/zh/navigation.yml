@@ -352,7 +352,6 @@ nav:
               - 功能总览: skoala/intro/what.md
               - 使用场景: skoala/intro/scenarios.md
               - 产品优势: skoala/intro/advantages.md
-              - 环境要求: skoala/intro/components.md
               - Release Notes: skoala/intro/release-notes.md
           - 快速入门:
               - 安装微服务引擎: skoala/quickstart/install.md

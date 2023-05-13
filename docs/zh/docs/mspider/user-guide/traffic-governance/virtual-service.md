@@ -31,7 +31,7 @@
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/virtualserv01.png)
 
-1. 在`创建虚拟服务`界面中，先进行基本配置后点击`下一步`。
+1. 在`创建虚拟服务`界面中，先确认并选择需要将虚拟服务创建到的命名空间、所属服务和应用范围后，点击`下一步`。
 
     ![创建虚拟服务](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/virtualserv02.png)
 
