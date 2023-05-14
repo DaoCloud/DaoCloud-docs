@@ -217,6 +217,10 @@
     在此审计过程中，在 OCI 镜像导入程序中发现了一个[漏洞](https://github.com/containerd/containerd/security/advisories/GHSA-259w-8hf6-59c2)：导入恶意镜像可能会导致节点的 DoS 攻击。
     该问题已在 containerd 1.5.18 和 1.6.18 中修复。
 
+- [Contour Kubernetes ingress 控制器 v1.25.0 发布（CNCF 项目）](https://github.com/projectcontour/contour/releases/tag/v1.25.0)
+
+    版本特性：HTTPProxy 支持配置 IP 过滤器、支持将追踪数据导出到 OpenTelemetry、支持所有主机的外部授权、支持内部重定向。
+
 - [Contour Kubernetes ingress 控制器 v1.22.0 发布（CNCF 项目）](https://github.com/projectcontour/contour/releases/tag/v1.22.0)  
 
     该版本主要新特性：支持 Gateway API v0.5.0、允许在单一的路由中为一组条件配置一个直接响应、可以为用户证书验证启用撤销检查、合并访问记录和 TLS 密码套件验证。
@@ -344,6 +348,10 @@
     [Finch](https://github.com/runfinch/finch) 可用于构建、运行和发布 Linux 容器。
     它为 Lima、nerdctl、containerd 和 BuildKit 等开源工具提供了原生的、可扩展的 macOS 客户端安装程序，简化在 macOS 上使用 Containerd。
     用户可以使用 Finch 在本地端创建和执行容器，并发布 OCI 容器镜像文件。
+
+- [Flagger 进式交付攻击 v1.31.0 发布（CNCF 项目）](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1310)
+
+    版本特性：支持服务网格 Linkerd 2.12 及更高版本、删除 OSM e2e 测试。
 
 - [Flagger 渐进式交付攻击 v1.22.0 发布（CNCF 项目）](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1220)  
 
@@ -938,6 +946,10 @@
 
     该版本主要新特性：新增 CRD `PersistentPodState`来持久化 Pod 的某些状态，如“固定 IP 调度”；CloneSet 针对百分比形式 partition 计算逻辑变化；在 lifecycle hook 阶段设置 Pod not-ready；支持保护 scale subresource 的任意自定义工作负载；新增大规模集群的性能优化方法等。
 
+- [OSM（Open Service Mesh）开放服务网格项目停止维护](https://mp.weixin.qq.com/s/_eqhL999E1ojmTAoaAOuiQ)
+
+    OSM 采用 Service Mesh Interface （SMI）作为其标准 API，从而允许与支持 SMI 的其他服务网格实现进行兼容，以简化服务网格操作体验。近日，OSM 维护团队宣布 OSM 不再发布新的版本，团队将转向与 Istio 社区共同合作，来推进 Istio 的发展。
+
 - [Open Service Mesh 服务网格 v1.2.0 发布（CNCF 项目）](https://github.com/openservicemesh/osm/releases/tag/v1.2.0)  
 
     该版本主要新特性：支持自定义信任域（即证书通用名）、Envoy 更新到 v1.22，并且使用 envoyproxy/envoy-distroless 镜像、增加对 Kubernetes 1.23 和 1.24 的支持、支持限制 TCP 连接和 HTTP 请求的本地 per-instance 速率、修复 Statefulset 和 headless service。
@@ -1146,6 +1158,10 @@
 - [ThreatMapper 云原生安全观测平台 v1.4.0 发布](https://github.com/deepfence/ThreatMapper/releases/tag/v1.4.0)  
 
     该版本主要新特性：新功能 ThreatGraph 能够结合网络等运行时环境来确定威胁扫描结果的优先级、支持对云资产进行无代理的云安全态势管理、集成云原生环境恶意程序扫描工具 [YaraHunter](https://github.com/deepfence/YaraHunter)。
+
+- [Trivy 容器漏洞扫描工具 v0.41.0 发布（CNCF 项目）](https://github.com/aquasecurity/trivy/discussions/4135)
+
+    版本特性：支持使用 Vulnerability Exploitability Exchange（VEX）来过滤已检测到的漏洞、支持生成虚拟机镜像的 SBOM、支持嵌套 JAR 路径、支持使用自定义的 Docker socket。
 
 - [Trivy 容器漏洞扫描工具 v0.39.0 发布（CNCF 项目）](https://github.com/aquasecurity/trivy/releases/tag/v0.39.0)
 

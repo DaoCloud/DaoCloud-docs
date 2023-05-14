@@ -72,7 +72,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Azure Kubernetes Fleet Manager treats multiple cluster sites as a single cluster to be managed. Users can manage multiple clusters by creating a Fleet resource. Users can treat existing AKS clusters as member clusters, join them to the fleet, and then orchestrate multiple cluster scenarios such as Kubernetes resource propagation and multi-cluster load balancing using metadata from those clusters.
 
-- [AliCloud service mesh ASM March 2023 Product Update](https://mp.weixin.qq.com/s/Yca5J3liIg6oznZDz6fVrA)
+- [AliCloud Microservices Engine MSE April Product Update](https://mp.weixin.qq.com/s/hYarQaUdKRY5pHi4dAVosg)
+
+    Updates: Nacos and Service Governance combine to non-intrusively implement Java application registration discovery, full-link grayscale, etc.; Cloud Native Gateway introduces migration tools for container service Nginx Ingress; Microservice Governance Basic Edition supports lossless up and down, canary publishing, etc.; Nacos supports TLS link encryption.
+
+- [AliCloud Service Grid ASM March 2023 Product Update](https://mp.weixin.qq.com/s/Yca5J3liIg6oznZDz6fVrA)
 
     Updates: Gateway support for docking WAF, support for configuring Ingress resources, support for managing Knative services, support for OIDC login for mesh topology, Sidecar proxy support for oversell mode, new egress traffic policy, support for configuring global default HTTP request retry policy.
 
@@ -174,6 +178,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
     Velero users can subscribe to the CloudCasa service and catalog their existing settings for centralized management in minutes.
 
 ### D, E
+
+- [D2iQ Enterprise K8s Platform D2iQ Kubernetes Platform v2.5 Released](https://docs.d2iq.com/dkp/2.5/dkp-2-5-0-features-and-enhancements)
+
+    Updates: Support for extending standalone DKP Essential clusters to DKP Enterprise Management clusters for centralized management, support for checking cluster compliance with CIS Kubernetes benchmarks via Kube-bench, alerts now include root cause information and solution recommendations, full support for Istio, support for ARM64 machines, support for external Load Balancer support.
 
 - [D2iQ Launches DKP Gov, a Kubernetes Platform Designed for the Government Sector](https://d2iq.com/blog/dkp-gov-kubernetes-management-platform)
 
@@ -309,7 +317,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      Bridging the gap between black-box data for performance testing and white-box data inside the system.
      The integration allows correlating k6's test run data with server-side trace data for root cause analysis; aggregates the collected trace data to generate real-time metrics, helping users narrow the search space and quickly spot anomalous behavior.
 
-### H, K, L
+### H, K
 
 - [Harness Launches Fully Managed Gitops-as-a-Service](https://harness.io/blog/generally-available-harness-gitops-as-a-service)
 
@@ -318,6 +326,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Huawei Cloud Releases Distributed Cloud Native Products - Container CCE Turbo and Distributed Cloud Native UCS (Ubiquitous Cloud Native Service)](https://mp.weixin.qq.com/s/Bm_kFuyK3uLaSb4AvcYdmA)
 
      CCE Turbo can accelerate all aspects of computing, network, and scheduling to achieve extreme elasticity, such as helping customers easily cope with business traffic peaks with an elasticity of 3000 pod/min; UCS provides cross-cloud and cross-region cloud-native application management to achieve a consistent experience.
+
+- [KSOC Launches Industry's First Real-Time Kubernetes Security Posture Management Platform](https://www.einnews.com/pr_news/628624388/ksoc-launches-first-real-time-kubernetes-security-posture-management-kspm-platform)
+
+    The Kubernetes Security Posture Management Platform pinpoints attack activity with real-time context and current and historical information, while also providing actionable remediation based on the current state of the cluster. Specific capabilities include: real-time posture management to discover event-based misconfigurations; aggregating and finding excessive privileges in Kubernetes RBAC; preventing the deployment of non-compliant workloads and reducing the potential blast radius; and scanning for vulnerabilities and generating SBOMs for running containers.
 
 - [Kyndryl introduces Cloud Native Services, a multi-cloud cloud native application migration and optimization solution](https://www.kyndryl.com/gb/en/about-us/news/2022/12/kyndryl-cloud-native-services-digital-modernization)
 
@@ -335,6 +347,8 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The main new features of this version: provide federal information processing standard FIPS packages to meet security and compliance requirements, support the execution order of plug-ins, increase native support for WebSocket traffic, add OpenTelemetry plug-ins, introduce new routing engines to handle complex Routing requirements, throughput, latency, and memory consumption are significantly optimized.
 
+### L
+
 - [Lacework Platform Cloud Security Platform November Update](https://docs.lacework.com/releases/2022-11-platform-releases)
 
      What's new: platform scanner supports multi-architecture container images, provides attack path analysis capabilities, agentless workload scanning is generally available, vulnerabilities found on inactive host kernels are automatically marked as exceptions, CIS GCP 1.3.0 Benchmark reports and policies are generally available, and new host policies are added to detect reverse shell connections and cryptojacking artifacts.
@@ -347,7 +361,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Kubernetes360 unifies logging, Prometheus metrics monitoring, and Jaeger-powered distributed tracing in one platform, enabling DevOps teams to monitor application SLOs in a simple, efficient, and actionable manner.
 
-### M, N, O
+### M
 
 - [Mirantis Container Runtime Container Runtime 23.0 Released](https://www.mirantis.com/blog/announcing-the-23-0-major-release-for-mirantis-container- runtimeand-moby)
 
@@ -361,7 +375,9 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The main new features of this version: support for Kubernetes 1.24, support for Google Cloud Platform GCP, support for cri-dockerd instead of Dockershim, security access control updates (OPA gatekeeper is provided as an optional alternative to PSP).
 
-- [Spot by NetApp Introduces Ocean CD, a Kubernetes Application Continuous Delivery Product](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release-notes. pdf) pdf)
+### N
+
+- [Spot by NetApp Introduces Ocean CD, a Kubernetes Application Continuous Delivery Product](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release-notes.pdf)
 
      Ocean CD is a SaaS solution that supports multiple clusters, using Argo rollouts as the engine and overlaying many management features on top. ocean CD allows for rapid enablement of intelligent deployments such as canary, blue-green deployments or simple rolling updates using validation and failure policies; supports continuous validation, correctly executing rollbacks and automated actions based on canary policy definitions; and provides a developer-friendly UI interface.
 
@@ -374,6 +390,12 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      K8s applications can now failover between clusters hosted by different projects, subscriptions, or accounts;
      Integrated Lightweight Directory Access Protocol LDAP;
      Support for more Self-managed K8s platforms.
+
+- [Nutanix Launches Nutanix Data Services for Kubernetes (NDK), a Kubernetes Data Management Platform](https://www.nutanix.com/blog/nutanix-announces-early-access-of-ndk)
+
+    NDK provides an application-aware Kubernetes data services solution. nDK provides data protection, recovery, migration, cloning and replication data management capabilities for Kubernetes applications; supports easy reduction of recovery time objectives (RTOs) and recovery point objectives (RPOs) from days to minutes; and provides policy-driven stateful application management; Kubernetes and IT administrators can enable self-service workflows by setting a number of rules and restrictions to manage the infrastructure.
+
+### O
 
 - [Ocean launches Network Cost Analysis, a Kubernetes network cost analysis solution](https://spot.io/blog/dont-sweat-the-network-costs-ocean-provides-application-cost-visibility-to-your-kubernetes-cluster/)
 

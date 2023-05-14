@@ -72,6 +72,10 @@
 
     Azure Kubernetes 舰队管理器将多个群集地视为单个集群来管理。用户可通过创建一个 Fleet 资源来管理多个集群。用户可将现有 AKS 集群当作成员集群，加入到舰队中，然后用这些集群的元数据，编排多个集群场景，如 Kubernetes 资源传播和多集群负载均衡。
 
+- [阿里云微服务引擎 MSE 4 月产品更新](https://mp.weixin.qq.com/s/hYarQaUdKRY5pHi4dAVosg)
+
+    更新内容：Nacos 和服务治理结合，无侵入地实现 Java 应用的注册发现、全链路灰度等功能；云原生网关推出针对容器服务 Nginx Ingress 的迁移工具；微服务治理基础版支持无损上下线、金丝雀发布等功能；Nacos 支持 TLS 链路加密。
+
 - [阿里云服务网格 ASM 2023 年 3 月产品动态](https://mp.weixin.qq.com/s/Yca5J3liIg6oznZDz6fVrA)
 
     更新内容：网关支持对接 WAF、支持配置 Ingress 资源、支持 Knative 服务的管理、网格拓扑支持 OIDC 方式登录、Sidecar 代理支持超卖模式、新增出口流量策略、支持配置全局默认的 HTTP 请求重试策略。
@@ -174,6 +178,10 @@
     Velero 用户可以订阅 CloudCasa 服务，并将其现有设置编入目录，以便在几分钟内进行集中管理。
 
 ### D, E
+
+- [D2iQ 企业级 K8s 平台 D2iQ Kubernetes Platform v2.5 发布](https://docs.d2iq.com/dkp/2.5/dkp-2-5-0-features-and-enhancements)
+
+    更新内容：支持将独立的 DKP Essential 集群扩展到 DKP 企业管理集群下进行集中管理、支持通过 Kube-bench 检查集群是否符合 CIS Kubernetes 基准、警报内容现在包括根因信息和解决方案建议、完全支持 Istio、支持 ARM64 机器、支持外部 Load Balancer。
 
 - [D2iQ 推出专为政府部门设计的 Kubernetes 平台 DKP Gov](https://d2iq.com/blog/dkp-gov-kubernetes-management-platform)
 
@@ -309,7 +317,7 @@
     缩小性能测试的黑盒数据和系统内部白盒数据之间的差距。
     该集成允许关联 k6 的测试运行数据和服务器端的追踪数据，从而进行根本原因分析；汇总收集的追踪数据以生成实时指标，帮助用户缩小搜索空间并快速发现异常行为。
 
-### H, K, L
+### H
 
 - [Harness 推出全托管 GitOps-as-a-Service](https://harness.io/blog/generally-available-harness-gitops-as-a-service)
 
@@ -323,6 +331,8 @@
 
     [DCP](https://www.volcengine.com/product/dcp) 是面向多云多 Kubernetes 集群场景的企业级云原生统一管理平台，提供多云集群统一管理与运维、应用跨集群分发、统一流量管控等能力。DCP 将火山引擎容器集群、第三方集群、自建集群等统一纳管与运维；基于集群联邦等技术，提供跨集群、跨云的弹性调度能力；提供多集群服务发现、多集群统一入口访问等能力；可基于备份数据进行应用数据恢复及跨集群/云应用迁移。
 
+### K
+
 - [Kong 云原生 API 平台 Kong Enterprise 3.2 发布](https://konghq.com/blog/kong-enterprise-3-2)
 
     更新内容：当控制平面出现故障时，支持数据平面扩展；新增 Datadog 追踪插件，无需安装 Otel 收集器即可与 Datadog Agent 协同工作；支持基于时延的引导，允许 Kong 负载均衡器在代理上游服务时根据总响应时间选择“最快”的后端。
@@ -335,12 +345,18 @@
 
     该版本主要新特性：提供联邦信息处理标准 FIPS 包以满足安全和合规性要求、支持选择插件的执行顺序、增加对 WebSocket 流量的本地支持、新增 OpenTelemetry 插件、引入新路由引擎用于处理复杂路由要求、吞吐量、延迟及内存消耗等性能显著优化。
 
+- [KSOC 推出业内首个实时 Kubernetes 安全态势管理平台](https://www.einnews.com/pr_news/628624388/ksoc-launches-first-real-time-kubernetes-security-posture-management-kspm-platform)
+
+    Kubernetes 安全态势管理平台可以通过实时上下文以及当前和历史信息准确定位攻击活动，同时还可以根据集群的当前状态提供可操作的补救措施。具体功能包括：实时态势管理，发现基于事件的错误配置；汇总并找到 Kubernetes RBAC 中的过度权限；防止部署不合规的工作负载，减少潜在爆炸半径；扫描漏洞并为运行的容器生成 SBOM。
+
 - [Kyndryl 推出多云云原生应用迁移和优化方案 Cloud Native Services](https://www.kyndryl.com/gb/en/about-us/news/2022/12/kyndryl-cloud-native-services-digital-modernization)
 
     Kyndryl Cloud Native Services 提供了一个端到端的生命周期框架，
     这个框架包括云原生应用迁移和优化所需的代码资产、工作流、专业基础知识、咨询管理服务，
     以及与自动备份、补丁、KPI 监测、安全、告警和事件管理相关的综合服务。
     该方案允许企业将其内部应用转移到云服务提供商的环境上，如 AWS、GCP 和 Azure。
+
+### L
 
 - [Lacework Platform 云安全平台十一月更新](https://docs.lacework.com/releases/2022-11-platform-releases)
 
@@ -354,7 +370,7 @@
 
     Kubernetes360 将日志、Prometheus 指标监控和 Jaeger 支持的分布式追踪统一在一个平台中，使 DevOps 团队能够以简单、高效和可操作的方式监控应用 SLO。
 
-### M, N, O
+### M, N
 
 - [Mirantis 容器运行时 Container Runtime 23.0 发布](https://www.mirantis.com/blog/announcing-the-23-0-major-release-for-mirantis-container-runtimeand-moby)
 
@@ -367,6 +383,10 @@
 - [Mirantis 企业级容器平台 Mirantis Kubernetes Engine v3.6 发布](https://www.mirantis.com/blog/mke-3-6-release)
 
     该版本主要新特性：支持 Kubernetes 1.24、支持谷歌云平台 GCP、支持 cri-dockerd 取代 Dockershim、安全准入控制更新（提供 OPA gatekeeper 作为 PSP 的可选替代方案）。
+
+- [Nutanix 推出 Kubernetes 数据管理平台 Nutanix Data Services for Kubernetes (NDK)](https://www.nutanix.com/blog/nutanix-announces-early-access-of-ndk)
+
+    NDK 提供了一个应用感知的 Kubernetes 数据服务方案。NDK 为 Kubernetes 应用提供数据保护、恢复、迁移、克隆和复制数据管理功能；支持轻松将恢复时间目标（RTO）和恢复点目标（RPO）从几天缩短到几分钟；提供策略驱动的有状态应用管理；Kubernetes 和 IT 管理员可以通过设置一些规则和限制来管理基础设施，启用自助服务工作流程。
 
 - [Spot by NetApp 推出 Kubernetes 应用持续交付产品 Ocean CD](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release-notes.pdf)
 
@@ -382,6 +402,8 @@
     K8s 应用现在可以在不同的项目、订阅或账号托管的集群间进行故障转移；
     集成轻量目录访问协议 LDAP；
     支持更多 Self-managed K8s 平台。
+
+### O
 
 - [Ocean 推出 Kubernetes 网络成本分析解决方案 Network Cost Analysis](https://spot.io/blog/dont-sweat-the-network-costs-ocean-provides-application-cost-visibility-to-your-kubernetes-cluster/)
 
