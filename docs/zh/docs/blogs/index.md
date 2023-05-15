@@ -7,6 +7,10 @@ hide:
 
 本页汇总 DCE 5.0 及云原生技术相关的博客和公众号文章，默认按时间排序。
 
+- [20230515 | 云原生混沌工程--Chaos Mesh 实战篇](./230515-chaos-mesh.md)
+
+    安装和使用 Chaos Mesh，了解 Chaos Mesh 的能力。
+
 - [20230509 | 安装 Kubernetes 教程 (KLTS 版)](./230509-k8s-install.md)
 
     以 DaoCloud 自主维护的 [KLTS (Kubernetes Long Term Support)](https://klts.io/zh/docs/intro/) 为例，
