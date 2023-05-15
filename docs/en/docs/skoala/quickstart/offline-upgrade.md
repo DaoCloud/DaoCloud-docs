@@ -10,7 +10,7 @@ After downloading the image to your local node, you need to sync the latest imag
 
 1. Create `load-image.yaml` as the chart-syncer profile
 
-     All parameters in the `load-image.yaml` file are mandatory. You need a private image registry and modify configurations as described below. See [Official Doc](https://github.com/bitnami-labs/charts-syncer) for a detailed explanation of the chart-syncer profile.
+    All parameters in the `load-image.yaml` file are mandatory. You need a private image registry and modify configurations as described below. See [Official Doc](https://github.com/bitnami-labs/charts-syncer) for a detailed explanation of the chart-syncer profile.
 
     === "chart repo installed"
 
@@ -129,7 +129,7 @@ After the image is synced, you can start upgrading DME.
     2. Add DME's helm repository.
 
         ```shell
-        heml repo add skoala-release http://{harbor url}/chartrepo/{project}
+        helm repo add skoala-release http://{harbor url}/chartrepo/{project}
         ```
 
     3. Update DME'S helm repository.
@@ -138,7 +138,7 @@ After the image is synced, you can start upgrading DME.
         helm repo update skoala-release # (1)
         ```
 
-        1. If the helm version is too low, it will fail. If it fails, try `helm update repo` command
+        1. If the helm version is outdated, it will fail. If it fails, try `helm update repo` command
 
     4. Select the version of DME you want to install (the latest version is recommended).
 

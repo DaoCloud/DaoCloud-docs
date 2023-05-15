@@ -15,7 +15,7 @@ error: unexpected error when reading response body. Please retry. Original error
 
 在该流水线的 Jenkinsfile 中将部署命令由 `kubectl apply -f` 修改为 `kubectl apply -f . --request-timeout=30m`
 
-## 通过 Jenkins 构建镜像时，容器无法访问私有镜像仓库****
+## 通过 Jenkins 构建镜像时，容器无法访问私有镜像仓库
 
 遇到此问题时可以在流水线的 Jenkinsfile 中增加如下命令：
 
@@ -44,4 +44,8 @@ fatal: Authentication failed for 'https://github.com/DaoCloud/dce-installer.git/
 
 ## 在某个工作空间下在 GitOps 模块中添加仓库时提示仓库已经存在
 
-目前一个仓库绑定只能到一个工作空间，不能绑定到不同工作空间。
+目前一个仓库绑定只能到一个工作空间，不能绑定到不同工作空间。如果一个仓库已经绑定到了 A 工作空间，此时尝试在 B 工作空间下将其添加到 GitOps 中就会提示仓库已经存在。
+
+**解决方案**：
+
+先将该仓库与其当前绑定的工作空间解绑，然后再重新将其添加到目标的工作空间。

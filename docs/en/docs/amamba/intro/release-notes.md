@@ -1,193 +1,194 @@
-# The application workbench releases Notes
+# Releases Notes
 
-This page lists the Release Notes of the application Workbench so that you can understand the evolution path and feature changes of each version.
+This page lists the release notes for Application Workspace to help you understand the development and feature changes in each version.
 
 ## 2022-04-30
 
 ### v0.16.1
 
-#### New function
+#### New Features
 
-- ** add ** Create applications independently of observability-related configurations, including metrics monitoring, link tracking, and JVM monitoring
-- ** add ** Integrated Toolchain supports Jenkins
-- ** add ** Supports the creation and management of multi-branch pipeline
-- ** add ** Supports tool chain integration from an administrator perspective
-- ** add ** API supports blue-green publishing, including create, delete, rollback, upgrade, details, etc
+- Independent observability-related configurations when creating applications, including metrics, tracing, and JVM monitoring
+- Toolchains support Jenkins integration
+- Creation and management of multi-branch pipelines
+- Toolchain integration capabilities from an administrator's view
+- API support for blue/green release, including creation, deletion, rollback, upgrade, details, etc.
 
-#### repair
+#### Fixes
 
-- ** repair ** The bug cannot be obtained when the administrator binds the project to the specified workspace and obtains the details of the associated tool chain instance
-- ** repair ** If IMAGE_TAG is empty when creating an application based on from-jar and from-git, set it to latest in the corresponding template file
+- When an administrator binds a project to a specific workspace, the associated toolchain instance details cannot be obtained
+- IMAGE_TAG is set to latest in the corresponding template file when it is empty during application creation based on a jar package or a git repo
 
-#### optimization
+#### Optimization
 
-- ** optimization ** Unified integration tool link interface
+- Unified toolchain interface
 
 ## 2022-03-31
 
 ### v0.15.1
 
-#### New function
+#### New Features
 
-- ** add ** Container configuration supports more options (lifecycle, environment variables, and data storage)
-- ** add ** jira Toolchain integration interface, including a list of CRUDs for jira instances and instance projects
-- ** add ** Defect list supports fuzzy query, query of type, status, and priority
-- ** add ** list/watch mechanism for ghippo smtp configuration, support jenkins email notification function
-- ** add ** Allows the creation of custom roles
-- ** add ** API supports toolchain integration Add jenkins type, add get jenkins list and details
-- ** add ** The API supports a multi-branch pipeline
-- ** add ** Support the test report for pipeline running record details
-- ** add ** Pipeline Added the procedure for collecting test reports from SVN and Junit
-- ** add ** Support pipeline-creating through templates
-- ** add ** Supports the creation of custom pipeline templates
-- ** add ** API supports toolchain integration Add jenkins type, add get jenkins list and details
-- ** add ** API supports toolchain integration Add jenkins type, add get jenkins list and details
+- More options for container configuration (lifecycle, environment variables, and data storage)
+- Jira toolchain integration interface, including CRUD for Jira instances and the list of instance projects
+- Fuzzy query of Defect List to query type, status, priority in Defect List
+- List/watch mechanism for SMTP configuration for Ghippo, supporting email notification of Jenkins
+- Creation of custom roles
+- API support for Jenkins integration in toolchains, to get Jenkins list and details
+- API support for multi-branch pipelines
+- Test reports in the page of pipeline running record details
+- SVN and Junit collection test report steps for the pipeline
+- Creation of pipelines based on templates
+- Creation of custom pipeline templates
 
-#### optimization
+#### Optimization
 
-** optimization ** Adjust jenkins cpu, memory parameters
+- Adjusted CPU and memory parameters for Jenkins
 
-#### repair
+#### Fixes
 
-** repair ** Fixes the problem of not being able to search for the corresponding toolchain data if page is less than 0, and adds some fields for the front end to display
+- Cannot search toolchain data if page is less than 0
 
 ## 2022-02-22
 
 ### v0.14.0
 
-#### New function
+#### New Features
 
-- ** add ** The API supports pipelining using built-in templates
-- ** add ** The API supports creating, updating, and deleting user-defined templates
-- ** add ** apiserver and devopserver support Jenkins for accessing https
-- ** add ** The event-proxy component supports Jenkins event persistence
-- ** add ** Support retry and limiting traffic when accessing Jenkins
+- API support for creating pipelines using built-in templates
+- API support for creating, updating, and deleting custom templates
+- `apiserver` and `devopserver` can access Jenkins using the https protocol
+- `event-proxy`component supports Jenkins event persistence
+- Retry and rate limit when accessing Jenkins
 
-#### optimization
+#### Optimization
 
-** optimization ** Improved prompt for failure to rerun a pipeline
+- The prompt message when rerunning a pipeline fails
 
-#### repair
+#### Fixes
 
-- ** repair ** Fixed an issue where the credentials were inconsistent between the database and Jenkins
-- ** repair ** Fixed an issue where the traffic ratio was greater than 100 when creating grayscale publications
+- Inconsistency between the credentials in the database and Jenkins
+- Gray releases could be created successfully even with traffic ratios greater than 100%
 
 ## 2022-01-30
 
 ### v0.13.0
 
-#### New function
+#### New Features
 
-- ** add ** Cascading deletion is supported. You can select resources to be deleted based on site requirements
-- ** add ** Grayscale publishing supports editing YAML functionality
-- ** add ** Jenkins has been removed from the Chart package of the deployment application Workbench, supporting installation of Jenkins using a separate Helm Chart
+- Support for cascading delete, allowing you to select the resources you want to delete based on your actual needs
+- Gray release supports editing YAML
+- The Chart for deploying the Workbench no longer includes Jenkins. You can install Jenkins using a separate Helm Chart
 
-#### optimization
+#### Optimization
 
-** optimization ** Product report download, not all cache in apiserver, using io block mode partial cache forwarding
+- Downloaded artifact reports are no longer fully cached in `apiserver`; they are partly cached through io chunking mode forwarding
 
-#### repair
+#### Fixes
 
-** repair ** Fixed an error when adding private repository in continuous deployment
+- Error when adding private repositories during continuous deployment.
 
 ## 2022-12-30
 
 ### v0.12.0
 
-#### New function
+#### New Features
 
-- ** add ** Both traditional micro services and service grids can be enabled during application creation
-- ** add ** Query gray scale publication supports fuzzy query, query continuous deployment supports fuzzy query and search by status, query gitops warehouse supports fuzzy query and status search
-- ** add ** Adds an interface to get jso data according to GVR
-- ** add ** Add interface to get helm information, you can deploy helm chart via argocd
-- ** add ** Hot loading of the Jenkins configuration file and hot loading of the syncer configuration file
-- ** add ** Return Value of ListRegistry interface Added Whether Nacos requires the authentication field
-- ** add ** Pipeline artifact report list interface and download artifact report interface
-- ** add ** Pipeline step logs Full logs can be obtained
-- ** add ** Query plug-in information interface added cache
-- ** add ** Directly copy the existing pipeline to generate a new pipeline
-- ** add ** Monitoring access counters when the micro-service is enabled Provides differentiated configurations and customized paths
-- ** add ** Jenkins trace docking
-- ** add ** ListWorkload interface Returned Value Add resources associated with an application
+- Creating applications now supports enabling traditional microservices and service meshes at the same time
+- Fuzzy search is supported for gray releases
+- Fuzzy search and status retrievals are supported for continuous deployment
+- Fuzzy search and status retrievals are supported for gitops repositories
+- An interface to get json data based on GVR
+- An interface to get helm information, which can deploy helm charts through argocd
+- Hot reloading of Jenkins configuration files and syncer configuration files
+- The return value of the ListRegistry interface adds a field indicating whether Nacos authentication is required
+- API for pipeline artifact report list
+- API for downloading artifact reports
+- Pipeline step log supports obtaining the full log
+- Interface for querying plugin information added caching
+- Copy existing pipelines to generate new pipelines
+- Customizable metric monitoring path when enabling the new application to be added into a registry in the Microservices module
+- Integration with Jenkins trace
+- The return value of the ListWorkload interface adds application-related resources
 
-#### repair
+#### Fixes
 
-- ** repair ** Restart pipeline, probability panic fix
-- ** repair ** The instrumentation mirror used in link tracing when creating the microservice is offline
-- ** repair ** Monitoring analysis of gray release failed
-- ** repair ** Setting the argo-rollouts controller replicas is supported
+- Accidental panic when rerunning the pipeline
+- Errors related to instrumentation image offline used in microservice tracing
+- Failure of analyzing monitoring statistics of gray releases
+- Supports setting argo-rollouts controller replicas
 
 ## 2022-12-18
 
 ### v0.11.0
 
-#### New function
+#### New Features
 
-- ** add ** trace connection between Ghippo and Skoala. Ghippo supports only trace of some apis
-- ** add ** helm package image check pipeline under off-line condition
-- ** add ** Add a solution to the problem of credential invalidation after the jenkins migration is added
-- ** add ** The list of credentials supports fuzzy search by name
+- Integration with Ghippo and Skoala trace
+- Pipeline steps to check images when helm packages are offline
+- A solution for invalid credentials after adding migration Jenkins
+- Fuzzy search for credential list by name
 
-#### optimization
+#### Optimization
 
-- ** optimization ** Reduced jenkins memory footprint when there was no workload by adjusting jvm parameters
-- ** optimization ** gitops module adds judgment on warehouse connectivity when creating a warehouse
-- ** optimization ** Real-time synchronization of pipeline running status and other information caused excessive pressure on jenkins, so it was changed to lazy loading mode
-- ** optimization ** Optimized api release process, support separate release
+- Use jvm parameters to reduced Jenkins memory usage when without workloads
+- Repository connectivity test when creating gitops modules
+- Changed real-time synchronization of pipeline running status and other information to lazy loading
+- Optimized the api release process to support separate release
 
-#### repair
+#### Fixes
 
-- ** repair ** If the micro-service creation fails, the micro-service can be rolled back without limit
-- ** repair ** argocd application deployment/removal failed when cluster kubeconfig changed. And the invalidation of jenkins credential
+- Endless rollback if app creation fails when Microservice modules is enabled
+- ArgoCD application deployment/deletion fails and invalid credentials due to changes in the kubeconfig of the cluster
 
 ## 2022-11-30
 
 ### v0.10.0
 
-#### New function
+#### New Features
 
-- ** add ** Added the warehouse function in gitops, supporting import and deletion
-- ** add ** Added the synchronization function for gitops
+- Gitops repository, supporting import and delete
+- Synchronization for gitops applications
 
-#### optimization
+#### Optimization
 
-** optimization ** Optimized the application access service grid flow
+- The process of integrating an application into a service mesh
 
-#### repair
+#### Fixes
 
-- ** repair ** Fixed the problem that the admin user does not authenticate the cluster/namespace deployment target
-- ** repair ** Fixed the gitops application creation time, synchronization start time, and synchronization end time being `Invalida date`
-- ** repair ** Fixed an error in getting nacos registry list data
-- ** repair ** Fixed an error listing workload interfaces sorted by name
-- ** repair ** Fixed cluster and namespace loss in destionation in ArgoCD after cluster unbundling and rebinding
-- ** repair ** Fixed the problem that the namespace and workspace binding relationship was lost when the namespace label was updated
-- ** repair ** Fixed trigger conversion when synchronizing jenkins config to database after pipelining
-- ** repair ** Fixed an issue with kubeconfig type credential in the ArgoCD cluster and jenkins being out of sync due to a kubeconfig change in the cluster
-- ** repair ** Fixes unordered and paging issues with warehouse lists
-- ** repair ** Fixed the failure to upload more than 32M files from-jar
+- Admin users fail to authenticate deployment target (cluster/namespace)
+- `Invalida date` error of the creation time, sync start time, and sync end time of gitops applications
+- Error of getting data about the Nacos registry list
+- Error that occurs when sorting workloads by name
+- Loss of cluster and namespace in the destionation of ArgoCD after unbinding and then re-binding the cluster
+- Loss of binding relationship between namespace and workspace due to update of namesapce label
+- Error of trigger conversion when synching Jenkins config to a database after completing the pipeline
+- Error that kubeconfig credentials in a ArgoCD cluster and in Jenkins are not synchronized due to changes in the kubeconfig of the cluster
+- Out-of-order list and paging issues of the repository list
+- Cannot upload a jar package larger than 32M
 
 ## 2022-11-18
 
 ### v0.9.0
 
-#### New function
+#### New Features
 
-- ** add ** jenkins-agent Image is published continuously
-- ** add ** Added the option to use the middleware database
-- ** upgrade ** jenkins was upgraded from 2.319.1 to 2.346.2,kubernetes plugin was upgraded to 3734.v562b_b_a_627ea_c, and plugins were also updated
+- Continuous release of jenkins-agent image
+- The option to use the mysql component from DCE 5.0 data service module as the database
+- Upgrad Jenkins from 2.319.1 to 2.346.2, and kubernetes plugin to 3734.v562b_b_a_627ea_c, along with other related plugins
 
-#### optimization
+#### Improvements
 
-- ** optimization ** Obtain the rollout image list, application group list, native application list and other performance optimization
-- ** optimization ** The image used by from-jar is no longer written in the source code. It is passed as env and guaranteed to be obtained correctly by the installer
+- Improved performance for obtaining rollout image lists, application group lists, native application lists, etc.
+- The image used in creating app from jar packages is provided by env variable, instead of being hardcoded in the source code. Also ensure that the whole DCE 5.0 install package can obtain that image
 
-#### repair
+#### Fixes
 
-- ** repair ** rollout indistinguishable problem in different workspace
-- ** repair ** The gitops module is not authenticated
-- ** repair ** Occasionally the pipeline step status is not correct
-- ** repair ** Gets an empty description for helmchart
-- ** repair ** The namespace fails to verify the storage
-- ** repair ** list argocd Fix for unordered and paging issues in repository
-- ** repair ** from-jar failed to upload more than 32M files
-- ** repair ** If too many pipeline logs are obtained, all pipeline logs cannot be obtained
+- Rollout cannot be distinguished under different workspaces
+- Unauthenticated gitops module
+- Occasional incorrect status of pipeline steps
+- Empty description of helm chart
+- Storage is not verified during namespace creation
+- Out-of-order and paging error of list argocd repository
+- Cannot upload a jar package larger than 32M
+- Cannot obtain the full log if the pipeline log is too large

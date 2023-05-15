@@ -1,22 +1,31 @@
 # Offline upgrade
 
-The application workbench supports offline upgrade. You need to load the image from the installation package first, and then run the corresponding command to upgrade.
+Workbench supports offline upgrade. This guide will walk you through the Workbench upgrade process.
 
-## Load the image from the installation package
+<!--!!! note
+
+    获取应用工作台的最新镜像：
+-->
+
+## Load image from installation package
 
 You can load an image in two ways.
 
-### Image synchronization through chart-Syncer
+### Load with chart-Syncer
 
 If a mirror warehouse exists in the environment, it is recommended to use chart-syncer to synchronize images to the mirror warehouse, which is more efficient and convenient.
 
-1. Create the `load-image.yaml` file.
+1. Create `load-image.yaml` as the chart-syncer profile
 
-    > Note: The parameters in this YAML file are mandatory. You need a private mirror repository and modify the configuration.
+    All parameters in the `load-image.yaml` file are mandatory. You need a private image registry and modify configurations as described below. See [Official Doc](https://github.com/bitnami-labs/charts-syncer) for a detailed explanation of the chart-syncer profile.
+
+    === "chart repo installed"
+
+        If chart repo is already install, use the following configuration to synchronize the image directly.
 
     ```yaml title="load-image.yaml"
     source:
-      intermediateBundlesPath: ghippo-offline # relative path to run `charts-syncer`，not the path of this YAML file to offline package
+      intermediateBundlesPath: amamba-offline # Relative path to executing chart-syncer command, **not** the relative path between this YAML file and the offline package
     target:
       containerRegistry: 10.16.10.111 # image repo url
       containerRepository: amamba # the specific project in image repo
@@ -32,11 +41,13 @@ If a mirror warehouse exists in the environment, it is recommended to use chart-
           password: "Harbor12345"
     ```
 
-    !!!!!!!!! note "If chart repo is not installed in your current environment, you can also export chart to a `tgz` file via chart-syncer and store it in the specified path."
+    === "chart repo not installed"
+
+        Chart-syncer also supports exporting a chart as a `tgz` file in a specified path if chart repo is not installed.
 
         ```yaml title="load-image.yaml"
         source:
-            intermediateBundlesPath: amamba-offline #  relative path to run `charts-syncer`，not the path of this YAML file to offline package
+            intermediateBundlesPath: amamba-offline #  Relative path to executing chart-syncer command, **not** the relative path between this YAML file and the offline package
         target:
             containerRegistry: 10.16.10.111 # change to your image repo url
             containerRepository: release.daocloud.io/amamba # change to the project in your image repo
@@ -49,59 +60,72 @@ If a mirror warehouse exists in the environment, it is recommended to use chart-
                 password: "Harbor12345" # your password to access image repo
         ```
 
-2. Run the following command to synchronize a mirror.
+2. Run this command to sync the image.
 
     ```bash
     charts-syncer sync --config load-image.yaml
     ```
 
-### Load the image directly via Docker or containerd
+### Load with Docker/containerd
 
-1. Run the following command to decompress the image.
+1. Decompress the `tar` package.
 
     ```shell
     tar xvf amamba.bundle.tar
     ```
 
-    Decompression after success will get three file: `images.tar`, `hints.yaml`, `original-chart`.
+    After the decompression, you will get 3 files:
 
-1. Run the following command to load the image locally to Docker or containerd.
+    - hints.yaml
+    - images.tar
+    - original-chart
 
-    > Note: You need to perform the following operations on ** Each node ** in the cluster. After the loading is complete, label the image to ensure that Registry and Repository are consistent with those during installation.
+2. Load the image from local to a Docker or containerd.
 
-    ```shell
-    docker load -i images.tar # for Docker
-    ctr image import images.tar # for containerd
-    ```
+    === "Docker"
 
-## upgrade
+        ```shell
+        docker load -i images.tar
+        ```
 
-1. Check that the Helm repository for the application workbench exists.
+    === "containerd"
+
+        ```shell
+        ctr image import images.tar
+        ```
+
+!!! note
+    - The image needs to be loaded via Docker or containerd to each node.
+    - After the loading is complete, you should tag the image to keep version consistency.
+
+## Start Upgrade
+
+1. Check if the helm repository of Workbench exists. `amamba` is the internal code for Workbench.
 
     ```shell
     helm repo list | grep amamba
     ```
 
-    If nothing is returned or `Error: no repositories to show` is displayed, run the following command to add the Helm repository for the application workbench.
+    If nothing is returned or `Error: no repositories to show` is displayed, run the following command to add the Helm repository for Workbench.
 
     ```shell
-    heml repo add amamba http://{harbor url}/chartrepo/{project}
+    helm repo add amamba http://{harbor url}/chartrepo/{project}
     ```
 
-2. Update the Helm repository for the application workbench.
+2. Update Workbench's Helm repository.
 
     ```shell
     # outdated Helm versions may cause failure. If failed, try `helm update repo`
     helm repo update amamba
     ```
 
-3. Backup `--set` Parameter. Before upgrading the global management version, you are advised to run the following commands to back up `--set` parameters of the previous version.
+3. Backup `--set` parameters. Before upgrading the global management version, it is recommended to run the following commands to back up `--set` parameters of the previous version.
 
     ```shell
-    helm get values ghippo -n ghippo-system -o yaml > amamba.bak.yaml
+    helm get values amamba -n amamab-system -o yaml > amamba.bak.yaml
     ```
 
-4. Select the version of the application workbench you want to install (the latest version is recommended).
+4. Select the version of Workbench you want to install (the latest version is recommended).
 
     ```shell
     $ helm search  repo amamba-release-ci --versions |head
@@ -111,7 +135,7 @@ If a mirror warehouse exists in the environment, it is recommended to use chart-
 
 5. Modify `registry` and `tag` in `amamba.bak.yaml`.
 
-    ????? note "Click to view sample YAML file"
+    ????? note "Click to see sample YAML file"
 
         ```yaml title="amamba.bak.yaml"
         amambaSyncer:
