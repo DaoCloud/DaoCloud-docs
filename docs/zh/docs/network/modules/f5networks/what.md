@@ -1,7 +1,7 @@
 # 什么是 F5network
 
 F5network 组件整合了 F5 官方项目 [f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller) 和 [k8s bigip ctlr](https://github.com/F5Networks/k8s-bigip-ctlr)，
-完成对 F5 设备的控制，将集群中 service 和 ingress 配置同步到 F5 硬件设备上，实现集群北向入口的负载均衡。
+完成对 F5 设备的控制，将集群中 service 和 ingress 配置同步到 F5 硬件设备上，实现集群南北向入口的负载均衡。
 
 其中，[k8s bigip ctlr](https://github.com/F5Networks/k8s-bigip-ctlr) 组件负责监控 service 或 ingress 对象，实现对 F5 硬件设备的控制面规则下发；
 当工作在 4 层负载均衡模式下时，[f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller) 组件主要负责 F5 硬件的入口 VIP 分配。
