@@ -8,7 +8,7 @@
 
 #### 新功能
 
-- **新增** 支持 Other Linux 来部署 DCE5.0，[参考文档](os-install/otherlinux.md)
+- **新增** 支持 Other Linux 来部署 DCE 5.0，[参考文档](os-install/otherlinux.md)
 - **新增** 支持了操作系统 OpenEuler 22.03
 - **新增** 支持外接 OS Repos，[参考集群配置文件说明](commercial/cluster-config.md)
 - **新增** 支持了内核参数调优，[参考集群配置文件说明](commercial/cluster-config.md)
@@ -38,7 +38,7 @@
     同时通过容器管理在线创建工作集群也有相同问题，需在集群创建页面高级配置的自定义参数中添加上述配置，键为 `calico_crds_download_url`，值为上述 calico_crds_download_url 的值
 
 - Kubean 存在低概率无法创建 spray-job 任务，通过手动删除对应的 clusteroperations CR 资源再重新执行安装命令
-- 使用外部 OS Repo 部署 DCE5.0后，无法通过容器管理离线创建工作集群，通过手动修改 global 集群 kubean-system 命名空间的 configmap kubean-localservice 来解决。
+- 使用外部 OS Repo 部署 DCE 5.0后，无法通过容器管理离线创建工作集群，通过手动修改 global 集群 kubean-system 命名空间的 configmap kubean-localservice 来解决。
   在 `yumRepos` 下新增如下配置,需要在 external 内填写 clusterConfig.yaml 中配置的外部OS Repo 地址:
 
     ```yaml
@@ -70,7 +70,7 @@
 
 - **新增** 支持一键升级 Gproduct 组件
 - **新增** 适配了操作系统：UOS V20 1020a / Ubuntu 20.04
-- **新增** 支持 OCP (OpenShift Container Platform)安装 DCE5.0
+- **新增** 支持 OCP (OpenShift Container Platform)安装 DCE 5.0
 - **新增** CLI 支持生成 clusterConfig 模板
 - **新增** all in one 模式默认启动最小化安装模式
 - **新增** Gproduct 组件中新增了 Kcollie 组件
