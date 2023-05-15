@@ -350,7 +350,7 @@ helm install nginx --set service.type=NodePort my-repo/nginx
 
 ### 工作流
 
-    定义一个工作流，包含入口节点 the-entry 和 Chaos 类型的节点 workflow-pod-chaos。
+定义一个工作流，包含入口节点 the-entry 和 Chaos 类型的节点 workflow-pod-chaos。
 
 - 定义：
 
@@ -605,7 +605,7 @@ helm install nginx --set service.type=NodePort my-repo/nginx
       Normal  StatusCheckSuccessThresholdExceed  4m29s  statuscheck  success threshold exceed
     ```
 
-总结：
+## 总结
 
 经过安装和实践，可以更好地理解使用 Chaos Mesh 的一些方式。这里只是举了一些例子帮助理解，对于其它更多的使用方式可以参考官方的文档。
 
