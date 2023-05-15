@@ -40,25 +40,25 @@
 
 2. 执行如下命令备份原有数据
 
-    ```
+    ```bash
     helm -n skoala-system get values skoala > skoala.yaml
     ```
 
 3. 添加微服务引擎的 Helm 仓库
 
-	  ```
+    ```bash
     helm repo add skoala https://release.daocloud.io/chartrepo/skoala
     ```
 
 4. 更新微服务引擎的 Helm 仓库
 
-    ```
+    ```bash
     helm repo update
     ```
 
 5. 执行 `helm upgrade` 命令
 
-    ```
+    ```bash
     helm --kubeconfig /tmp/deploy-kube-config upgrade --install --create-namespace -n skoala-system skoala skoala/skoala --version=0.19.2 --set hive.image.tag=v0.19.2 --set sesame.image.tag=v0.19.2 -f skoala.yaml
     ```
 
@@ -71,25 +71,25 @@
 
 1. 备份原有参数
 
-    ```
+    ```bash
     helm -n skoala-system get values skoala-init > skoala-init.yaml
     ```
 
 2. 添加微服务引擎的 Helm 仓库
 
-    ```
+    ```bash
     helm repo add skoala https://release.daocloud.io/chartrepo/skoala
     ```
 
 3. 添加微服务引擎的 Helm 仓库
 
-    ```
+    ```bash
     helm repo update
     ```
 
 4. 执行 `helm upgrade` 命令
 
-    ```
+    ```bash
     helm --kubeconfig /tmp/deploy-kube-config upgrade --install --create-namespace -n skoala-system skoala-init skoala/skoala-init --version=0.19.2 --set nacos-operator.image.tag=v0.19.2 --set skoala-agent.image.tag=v0.19.2 --set sentinel-operator.image.tag=v0.19.2 -f skoala-init.yaml
     ```
   
@@ -99,6 +99,6 @@
 
 5. 根据自身需要，手动删除所需更新的其他 crd 文件，重新运行对应的文件。
 
-    ```
+    ```bash
     kubectl apply -f xxx.yaml
     ```

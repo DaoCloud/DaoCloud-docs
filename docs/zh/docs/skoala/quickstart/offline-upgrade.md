@@ -129,7 +129,7 @@ DCE 5.0 的各个模块松散耦合，支持独立安装、升级各个模块。
     2. 添加微服务引擎的 helm 仓库。
 
         ```shell
-        heml repo add skoala-release http://{harbor url}/chartrepo/{project}
+        helm repo add skoala-release http://{harbor url}/chartrepo/{project}
         ```
 
     3. 更新微服务引擎的 helm 仓库。
