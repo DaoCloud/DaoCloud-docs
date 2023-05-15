@@ -9,7 +9,7 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20230509 | Kubernetes Installation Tutorial (KLTS Version)](./230509-k8s-install.md)
 
-    Using the DaoCloud-maintained [KLTS (Kubernetes Long Term Support)](https://klts.io/zh/docs/intro/) as an example,
+    Using the DaoCloud-maintained [KLTS (Kubernetes Long Term Support)](https://klts.io/docs/intro/) as an example,
     this article briefly introduces the preparation work and installation steps for installing Kubernetes.
 
 - [20230508 | Cilium Accelerates Sockets with eBPF](./230508-cilium.md)

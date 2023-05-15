@@ -1,6 +1,6 @@
 # Install the Kubernetes Tutorial (KLTS version)
 
-This article takes [KLTS (Kubernetes Long Term Support)](https://klts.io/zh/docs/intro/) self-maintained by DaoCloud as an example to briefly introduce how to install Kubernetes.
+This article takes [KLTS (Kubernetes Long Term Support)](https://klts.io/docs/intro/) self-maintained by DaoCloud as an example to briefly introduce how to install Kubernetes.
 
 ## Preparation
 

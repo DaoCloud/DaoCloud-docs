@@ -22,7 +22,7 @@ After creating a custom pipeline, the pipeline stages need to be defined manuall
 
 ## Edit the pipeline through the interface form
 
-The application workbench has designed a graphical pipeline editing view, which is compatible with editing most of the custom operations in the Jenkinsfile, making it easy to view or define each [stage (Stage)] of the pipeline (https://www.jenkins.io/zh/ doc/book/pipeline/#stage) and each [Step (Step)](https://www.jenkins.io/zh/doc/book/pipeline/#step), to achieve a WYSIWYG pipeline editing experience .
+The application workbench has designed a graphical pipeline editing view, which is compatible with editing most of the custom operations in the Jenkinsfile, making it easy to view or define each [stage (Stage)] of the pipeline (https://www.jenkins.io/ doc/book/pipeline/#stage) and each [Step (Step)](https://www.jenkins.io/doc/book/pipeline/#step), to achieve a WYSIWYG pipeline editing experience .
 
 ### Interface layout description
 

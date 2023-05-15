@@ -9,35 +9,35 @@
 #### 升级
 
 - **新增** 引入 d2 作为绘图工具
-- **新增** 了一个新的 wasm 插件，用于根据 trace id，给请求加上不同的 header。
+- **新增** 一个新的 wasm 插件，用于根据 trace id，给请求加上不同的 header。
 - **新增** 网格配置托管 Istiod 的 LoadBalancer Annotations 实现
 - **新增** 网格网关配置服务 Annotations 实现
 - **新增** 增加网格字段 load_balancer_annotations，支持自定义负载均衡 Annotations
 - **新增** 在 mspider-api 中，手动执行 pipeline，设置 SYNC_OPENAPI_DOCS 为key，既可触发上传文档站（提 PR）
 - **新增** MCPC Controller 感知到 Service 的中存在 mspider.io/managed 的标签时，将触发自动创建该服务对应的治理策略。
 - **新增** MCPC Controller 多工作负载类型支持。
-- **新增** 了健康检查功能，当某个网格 APIServer 代理出现无法连通的情况时，自动重建该代理，防止 PortForward 自身逻辑不可靠（可能和 Istio Sidecar 有关）
+- **新增** 健康检查功能，当某个网格 APIServer 代理出现无法连通的情况时，自动重建该代理，
+  防止 PortForward 自身逻辑不可靠（可能和 Istio Sidecar 有关）
 
 #### 修复
 
 - **修复** 未兼容 grpcgateway-accept-language（等价与 HTTP 的 Accept-Language）Header，导致无法正确切换中英文模式模式。
-当前同时兼容 Accept 与 Accept-Language 两种模式
-- **修复** 了同步 OpenAPI 时，由于 shadow clone 代码导致 upstream 无法 push 的问题
-- **修复** 无法更新带 . 的 Istio 资源
+  当前同时兼容 Accept 与 Accept-Language 两种模式
+- **修复** 同步 OpenAPI 时，由于 shadow clone 代码导致 upstream 无法 push 的问题
+- **修复** 无法更新带 `.` 的 Istio 资源
 - **修复** 在 1.17.1 版本中，istio-proxy 无法正常启动的问题
 - **修复** ingress gateway 缺少 name 导致 merge 失败无法部署的问题
 - **修复** 服务地址无法搜索的问题
-- **修复** 无法更新带 . 的 Istio 资源 的问题
-- **修复** 
-- **修复** 了之前 controller 内存泄漏的问题。
-- **修复** 了 add/delete cluster 有时没有正确触发的逻辑。
+- **修复** 无法更新带 `.` 的 Istio 资源 的问题
+- **修复** 之前 controller 内存泄漏的问题。
+- **修复** add/delete cluster 有时没有正确触发的逻辑。
 - **修复** 了托管模式下 istio-system 可能被误删的情况。
 - **修复** ingress gateway 缺少 name 导致 merge 失败无法部署的问题。
 - **修复** 在开启全局注入情况下，更新网格可能导致 istio-operator pod 被注入，从而使网格创建失败的问题
 - **修复** 服务与 WorkloadShadow 关联的两个部分没有清理逻辑，导致服务被错误绑定在工作负载上
-- **修复** 了一个导致虚拟集群被同步到 Mspider 导致接入失败的问题
+- **修复** 一个导致虚拟集群被同步到 Mspider 导致接入失败的问题
 - **优化** controller 命名空间、服务资源处理逻辑，减少频繁触发 workloadShadow 资源更新。
-- **优化** 了 workloadShadow 资源频繁获取/更新的问题，现在只对某些发生特定改变的资源进行 reconcile。
+- **优化** workloadShadow 资源频繁获取/更新的问题，现在只对某些发生特定改变的资源进行 reconcile。
 - **优化** 减少 pod 变更不断更新 WorkloadShadow
 - **修复** relok8s 中 wasm 插件镜像地址拼写错误的问题。
 - **修复** TrafficLane 默认 repository 错误。
@@ -59,9 +59,9 @@
 
 #### 修复
 
-- **修复**  无法更新带 . 的 Istio 资源
-- **修复**  在 1.17.1 版本中，istio-proxy 无法正常启动的问题
-- **修复**  ingress gateway 缺少 name 导致 merge 失败无法部署的问题。
+- **修复** 无法更新带 `.` 的 Istio 资源
+- **修复** 在 1.17.1 版本中，istio-proxy 无法正常启动的问题
+- **修复** ingress gateway 缺少 name 导致 merge 失败无法部署的问题。
 
 ## 2023-03-30
 
@@ -74,12 +74,12 @@
 - **新增** 服务列表和详情会返回 labels
 - **新增** CloudShell 相关实现
 - **新增** 服务列表支持对服务标签的查询
-- **新增** 了一个新的 API，用于更新服务的标签
+- **新增** 一个新的 API，用于更新服务的标签
 - **新增** istio 1.17.1 支持
-- **新增** 了一个新的 etcd 高可用方案
+- **新增** 一个新的 etcd 高可用方案
 - **新增** 场景化测试框架，用于测试场景化的功能
 - **新增** 选择不同网格规模时，自动调整组件资源配置
-- **新增** 了自定义角色的实现，支持自定义角色的创建、更新、删除、绑定、解绑等操作
+- **新增** 自定义角色的实现，支持自定义角色的创建、更新、删除、绑定、解绑等操作
 
 #### 优化
 
@@ -100,9 +100,9 @@
 - **修复** 由于异常导致虚拟集群中存在游离的命名空间，在启动 mcpc-controller 时增加自检并且清除行为
 - **修复** 由于 controller 更新网格，导致 api 下发网格配置失败
 - **修复** 创建托管网格时，ServicePort 的 TargetPort 未正确设置的问题
-- **修复**  GlobalMesh.Status.MeshVersion 错误覆盖问题
-- **修复**  mcpc-controller 无法开启 debug 模式问题
-- **修复**  mcpc-controller 无法触发集群删除事件
+- **修复** GlobalMesh.Status.MeshVersion 错误覆盖问题
+- **修复** mcpc-controller 无法开启 debug 模式问题
+- **修复** mcpc-controller 无法触发集群删除事件
 - **修复** 删除 Mesh 再重建同名的 Mesh 时，会导致 Mesh 无法正常创建的问题（hosted proxy 无法正常更新）
 - **修复** mcpc controller 在某些情况下没有正确修改 istiod-remote 的 service 的问题
 
@@ -143,7 +143,7 @@
 #### 优化
 
 - **优化** 命名空间边车管理页面中增加“未设置”边车策略，避免命名空间层面的边车策略对工作负载层面产生连带影响；
-- **优化** 发布流水线参数**优化**
+- **优化** 发布流水线参数
 - **优化** 边车注入、边车资源限制逻辑、避免出现不同步现象
 
 #### 修复
@@ -161,7 +161,8 @@
 #### 新功能
 
 - **新增** `密钥管理`相关 API
-- **新增** 在`虚拟服务`、`目标规则`、`网关规则`列表**新增**治理策略标签及相关筛选能力
+- **新增** 在`虚拟服务`、`目标规则`、`网关规则`列表
+- **新增**治理策略标签及相关筛选能力
 - **新增** 网格中集群健康状态检查能力
 - **新增** otel sdk 接入
 - **新增** secret 的多个接口实现
