@@ -22,7 +22,7 @@ Containers are instances that run through container image deployment. Containers
 
 Workloads are applications running on Kubernetes.
 
-Whether the workload is a single component or consists of multiple components, it is possible to run these workloads in a group [Pod](https://kubernetes.io/zh/docs/concepts/workloads/pods) in Kubernetes.
+Whether the workload is a single component or consists of multiple components, it is possible to run these workloads in a group [Pod](https://kubernetes.io/docs/concepts/workloads/pods) in Kubernetes.
 
 There are several workload resources built into Kubernetes:
 
