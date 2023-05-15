@@ -1,50 +1,46 @@
 # 在线安装微服务引擎
 
-如需安装微服务引擎，推荐通过 [DCE 5.0 商业版](../../install/commercial/start-install.md) 的安装包进行安装；通过商业版可以一次性同时安装  DCE 的所有模块。
+如需安装微服务引擎，推荐通过 [DCE 5.0 商业版](../../install/commercial/start-install.md) 的安装包进行安装；通过商业版可以一次性同时安装 DCE 的所有模块。
 
 本教程旨在补充需要手工 **单独在线安装** 微服务引擎模块的场景。下文出现的 `skoala` 是微服务引擎的内部开发代号，代指微服务引擎。
 
 !!! note
 
-    本文提供了在线安装的方式，如果您已部署了离线商业版，建议参考 [离线升级微服务引擎](offline-upgrade.md)，进行新安装，该文档同样适用。
+    本文提供了在线安装的方式，如果已部署了离线商业版，建议参考[离线升级微服务引擎](offline-upgrade.md)离线安装或升级微服务引擎。
 
 ## 使用商业版安装包安装
 
 通过商业版安装微服务引擎时，需要注意商业版的版本号（[点击查看最新版本](../../download/dce5.md)）。需要针对不同版本执行不同操作。
 
-### 商业版 ≤ v0.3.28
-
-!!! note
-
-    DCE5.0 最新版本请参考最新版本文档，本章节仅适用于商业版 ≤ v0.3.28；大部分情况您的版本都会大于此版本。
-
-执行安装命令时，默认不会安装微服务引擎。需要对照下面的配置修改 `mainfest.yaml` 以允许安装微服务引擎。
-
-修改文件：
-
-```bash
-./dce5-installer install-app -m /sample/manifest.yaml
-```
-
-修改后的内容：
-
-```yaml
-...
-components:
-  skoala:
-    enable: true
-    helmVersion: v0.12.2 # 应该获取当前最新的版本号
-    variables:
-...
-```
-
-### 商业版 ≥ v0.3.29
-
-默认会安装微服务引擎，但仍旧建议检查 `mainfest.yaml` 文件进行确认 `components/skoala/enable` 的值是否为 `true`，以及是否指定了 Helm 的版本。
+商业版的** 版本号 ≥ v0.3.29 ** 时，默认会安装微服务引擎，但仍旧建议检查 `mainfest.yaml` 文件进行确认 `components/skoala/enable` 的值是否为 `true`，以及是否指定了 Helm 的版本。
 
 !!! note
 
     商业版中默认安装的是经过测试的最新版本。如无特殊情况，不建议修改默认的 Helm 版本。
+
+??? note "如果商业版 ≤ v0.3.28，点击查看对应操作“
+
+    此注释仅适用于商业版 ≤ v0.3.28；大多数情况下您的版本都会大于此版本。
+
+    执行安装命令时，默认不会安装微服务引擎。需要对照下面的配置修改 `mainfest.yaml` 以允许安装微服务引擎。
+
+    修改文件：
+
+    ```bash
+    ./dce5-installer install-app -m /sample/manifest.yaml
+    ```
+
+    修改后的内容：
+
+    ```yaml
+    ...
+    components:
+      skoala:
+        enable: true
+        helmVersion: v0.12.2 # 应该获取当前最新的版本号
+        variables:
+    ...
+    ```
 
 ## 手动安装前检测
 
@@ -111,8 +107,7 @@ mcamel-common-mysql-cluster-mysql             2/2     7d23h
 
 !!! note
 
-    - 此步骤仅适用于安装 skoala-release/skoala 版本 v0.17.1 以下的版本。
-    - 如果安装 skoala-release/skoala 版本 v0.17.1 及更高版本，直接跳过此步骤执行下一步。系统会自动完成表格初始化，无需手动进行。
+    如果安装 skoala-release/skoala 版本 v0.17.1 及更高版本，直接跳过此步骤执行下一步。系统会自动完成表格初始化，无需手动进行。
 
 ~~如果在 common-mysql 内的 skoala 数据库为空，请登录到 skoala 数据库后，执行以下 SQL：~~
 
@@ -184,24 +179,22 @@ mcamel-common-mysql-cluster-mysql             2/2     7d23h
 
 > 需要事先安装 Helm
 
-重点内容：增加完成后 Skoala-release 之后，常用需要关注的有 2 个 Chart：
+注意：添加 Skoala-release 仓库之后，通常需要关注的有 2 个 Chart：
 
-- Skoala 是 Skoala 的控制端的服务，
-    - 安装完成后，可以网页看到微服务引擎的入口
+- `Skoala` 是 DME 的控制端的服务，
+    - 安装完成后，可以在 DCE 5.0 平台看到微服务引擎的入口
     - 包含 3 个组件 ui、hive、sesame
     - 需要安装在全局管理集群
-- Skoala-init 是 Skoala 所有的组件 Operator
-    - 仅安装到指定工作集群即可
+- Skoala-init 是 DME 所有的组件 Operator
+    - 仅安装到工作集群即可
     - 包含组件有：skoala-agent, nacos, contour, sentinel
     - 未安装时，创建注册中心和网关时会提示缺少组件
 
 默认情况下，安装完成 skoala 到 kpanda-global-cluster(全局管理集群)，就可以在侧边栏看到对应的微服务引擎的入口了。
 
-### 查看 skoala 组件最新版本
+### 查看 DME 最新版本
 
-升级部署脚本，一键部署全部组件。
-
-在全局管理集群，查看 Skoala 的最新版本，直接通过 helm repo 来更新获取最新的；
+在全局管理集群，查看 Skoala 的最新版本，直接通过 helm 命令获取版本信息；
 
 ```bash
 ~ helm repo update skoala-release
@@ -213,9 +206,6 @@ skoala-release/skoala       0.12.1          0.12.1      The helm chart for Skoal
 skoala-release/skoala       0.12.0          0.12.0      The helm chart for Skoala
 ......
 ```
-
-> 在部署 skoala 时，会携带当时最新的前端版本，如果想要指定前端 ui 的版本，
-> 可以去看前端代码仓库获取对应的版本号：
 
 在工作集群，查看 skoala-init 的最新版本，直接通过 helm repo 来更新获取最新的
 
@@ -254,11 +244,8 @@ skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for Skoala 
 > --set hive.configMap.data.database.user= \
 > --set hive.configMap.data.database.password= \
 > --set hive.configMap.data.database.database= \
->
-> 自定义前端 ui 版本
-> ui.image.tag=v0.9.0
 
-查看部署的 pod 是否启动成功
+查看 Pod 是否启动成功
 
 ```bash
 ~ kubectl -n skoala-system get pods
@@ -270,7 +257,7 @@ ui-7c9f5b7b67-9rpzc                    2/2     Running   0               3h48m
 
 ### 安装 skoala-init 到工作集群
 
-由于 Skoala 涉及的组件较多，我们将这些组件打包到同一个 Chart 内，也就是 skoala-init，所以我们应该在用到微服务引擎的工作集群安装好 skoala-init
+由于 Skoala 涉及的组件较多，我们将这些组件打包到同一个 Chart 内，也就是 skoala-init，所以我们应该在用到微服务引擎的工作集群安装好 skoala-init。此安装命令也可用于更新该组件。
 
 ```bash
 ~  helm search repo skoala-release/skoala-init --versions
@@ -282,7 +269,7 @@ skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for Skoala 
 ......
 ```
 
-安装命令，同更新; 确认需要安装到指定的命名空间，确认看到全部 Pod 启动成功。
+确认所有 Pod 启动成功：
 
 ```bash
 ~ helm upgrade --install skoala-init --create-namespace -n skoala-system --cleanup-on-fail \
@@ -290,26 +277,20 @@ skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for Skoala 
     --version 0.13.0
 ```
 
-除了通过终端安装，UI 的方式 可以在 Kpanda 集群管理中 Helm 应用内找到 Skoala-init 进行安装。
+除了通过终端安装，也可以在 `容器管理`->`Helm 应用` 内找到 `skoala-init` 进行安装。
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/skoala-init.png)
 
-卸载命令
+## 更新 DME
+
+支持离线升级和在线升级两种方式，具体可参考[离线升级](../quickstart/offline-upgrade.md)或[在线升级](online-upgrade.md)
+
+## 卸载 DME
 
 ```bash
 ~ helm uninstall skoala-init -n skoala-system
 ```
 
-常见问题：
-
-- 安装之后如何卸载微服务引擎？
-
-    执行如下命令即可：
-
-    ```bash
-    ~ helm uninstall skoala -n skoala-system
-    ```
-
-- 后续如何更新微服务器引擎？
-
-    支持离线升级和在线升级两种方式，具体可参考[离线升级](../quickstart/offline-upgrade.md)或[在线升级](online-upgrade.md)
+```bash
+~ helm uninstall skoala -n skoala-system
+```

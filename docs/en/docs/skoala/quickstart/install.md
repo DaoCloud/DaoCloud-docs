@@ -1,56 +1,62 @@
-# Install the microservice engine
+# Install Guides
 
-If you need to install the micro-service engine, you are advised to install it in the installation package [DCE 5.0 Business Release](../../install/commercial/start-install.md). With the Commercial Release, you can install all of the DCE modules at once.
+It is recommended to install DaoCloud Microservice Engine (DME) through the installation package of [DCE 5.0 Commercial Release](../../install/commercial/start-install.md), because you can install all modules of DCE 5.0 once a time with that package, no need to worry about incompatibility.
 
-This tutorial is intended to complement scenarios that require a manual **Separate installation** microservice engine. `skoala` appears below is the internal development code of the micro-service engine, and refers to the micro-service engine.
-
-## Use the commercial version installer
-
-When installing the microservice engine through the commercial Release, note the version number of the commercial edition ([Latest Versions](../../download/dce5.md)). You need to perform different operations for different versions.
-
-### Commercial version ≤ v0.3.28
-
-By default, the microservice engine is not installed when the installation command is executed. You need to modify `mainfest.yaml` against the configuration below to allow the microservice engine to be installed.
-
-Modify the file:
-
-```bash
-./dce5-installer install-app -m /sample/manifest.yaml
-```
-
-The revised content:
-
-```yaml
-...
-components:
-  skoala:
-    enable: true
-    helmVersion: v0.12.2
-    variables:
-...
-```
-
-### Commercial version ≥ v0.3.29
-
-The microservice engine is installed by default, but it is still recommended to check the `mainfest.yaml` file to make sure that the `components/skoala/enable` value is `true` and that the version of Helm is specified.
+This guides is designed for **manual online install of DME alone**. To be clear, `skoala` mentioned below is the internal development code of DME.
 
 !!! note
 
-## Check before manual installation
+    If you have already deployed DCE 5.0 commercial release, it is recommended to see [Offline Upgrade Microservice Engine](offline-upgrade.md) for DME's offline install and upgrade. 
 
-The microservice engine consists of two components named in the code `skoala` and `skoala-init`. Both components must be installed when installing the microservice engine.
+## Install with Commercial Release Package
 
-### Microservice engine deployment structure
+When the commercial release version **≥ v0.3.29**, DME will be installed by default. However, it is still recommended to check the `mainfest.yaml` file to confirm whether the value of `components/skoala/enable` is `true`, and whether the helm version is specified.
 
-<!--![]()screenshots-->
+!!! note
 
-chart in the blue box on the left is the component `skoala`, which needs to be installed in the control plane cluster, namely the global cluster `kpanda-global-clsuter` of DCE 5.0. For details, please refer to [Deploy Architecture](../../install/commercial/deploy-arch.md) of DCE 5.0. After installing the `skoala` component, you can see the microservice engine module in the level 1 navigation bar of DCE 5.0. Note the following: Before installing `skoala`, install the `common-mysql` component that is used for storage resources.
+    The commercial package will install by default the latest version of DME that has passed internal tests. Unless there are special requirements, it is not recommended to modify the default Helm version.
 
-chart in the blue box on the right is the `skoala-init` component that needs to be installed in the working cluster. After the `skoala-init` component is installed, various features of the microservice engine, such as creating registries, gateway instances, and so on, are available. Also note that the `skoala-init` component relies on the `insight-agent` component of the DCE 5.0 observable module to provide metrics monitoring and link tracking. If you want to use this function, install the `insight-agent` component. For details, see [Install the insight agent component ](../../insight/user-guide/quickstart/install-agent.md).
+??? note "If commercial release ≤ v0.3.28, click to see corresponding actions"
 
-### Check whether the microservice engine is installed
+    This note applies only when commercial release ≤ v0.3.28; in most cases your version will be greater than this.
 
-Check whether the following resources exist in the `skoala-system` namespace. If no resources are available, the microservice engine is not currently installed.
+    When executing the installation command, DME will not be installed by default. You need to change the `mainfest.yaml` according to the configuration below.
+
+    Modify the file:
+
+    ```bash
+    ./dce5-installer install-app -m /sample/manifest.yaml
+    ```
+
+    Modified content:
+
+    ```yaml
+    ...
+    components:
+      skoala:
+        enable: true
+        helmVersion: v0.12.2 # replace with the latest version number
+        variables:
+    ...
+    ```
+
+## Manual Separate Install
+
+DME consists of two components: `skoala` and `skoala-init`. Both are necessary for normal running of DME.
+
+### Deployment Structure
+
+![images](../images/install01.jpg)
+
+Chart in the blue box on the left is the component `skoala`, which needs to be installed in the control plane cluster, namely the global cluster `kpanda-global-clsuter` of DCE 5.0. For details, refer to [Deploy Architecture](../../install/commercial/deploy-arch.md) of DCE 5.0. After installing the `skoala` component, you can see DME module in the navigation bar of DCE 5.0. Note: Before installing `skoala`, install the `common-mysql` component for storage.
+
+Chart in the blue box on the right is the `skoala-init` component that needs to be installed in a worker cluster. After `skoala-init` is installed, various features of DME are available, such as creating registries, gateway instances, and so on. Also note that `skoala-init` relies on the `insight-agent` component of the DCE 5.0 observability module to provide metrics monitoring and tracing. If you want to use observability, install the `insight-agent` component first. For details, see [Install the insight agent component](../../insight/user-guide/quickstart/install-agent.md).
+
+### Pre-install Check
+
+#### If DME is already installed
+
+Check whether the following resources exist in the `skoala-system` namespace. If no resources, it means DME is not installed yet.
 
 ```bash
 ~ kubectl -n skoala-system get pods
@@ -64,9 +70,9 @@ NAME        NAMESPACE       REVISION    UPDATED                                 
 skoala      skoala-system   3           2022-12-16 11:17:35.187799553 +0800 CST deployed    skoala-0.13.0       0.13.0
 ```
 
-### Detect dependent storage components
+#### If `common-mysql` is installed
 
-The `common-mysql` component is required to store the configuration when installing the microservice engine, so make sure it already exists. In addition, you need to see if there is a database named `skoala` in the `common-mysql` namespace.
+The `common-mysql` component is required to store the configuration when installing DME, so make sure it already exists. In addition, you need to see if there is a database named `skoala` in the `common-mysql` namespace.
 
 ```bash
 ~ kubectl -n mcamel-system get statefulset
@@ -74,7 +80,7 @@ NAME                                          READY   AGE
 mcamel-common-mysql-cluster-mysql             2/2     7d23h
 ```
 
-You are advised to set the following parameters to configure database information for the micro-service engine:
+It is recommended to set the database configuration as the following:
 
 - host: mcamel-common-mysql-cluster-mysql-master.mcamel-system.svc.cluster.local
 - port: 3306
@@ -82,31 +88,30 @@ You are advised to set the following parameters to configure database informatio
 - user: skoala
 - password:
 
-### Monitor components that detect dependencies
+#### If `insight-agent` is installed
 
-The microservice engine relies on the capabilities of the [ DCE 5.0 Observability](../../insight/intro/what.md) module. If you want to monitor metrics of the micro-service and trace traces, install corresponding `insight-agent` in the cluster. For details, see [](../../insight/user-guide/quickstart/install-agent.md).
+DME relies on the capabilities of the [DCE 5.0 Observability](../../insight/intro/what.md) module to provide microservice monitoring. If you want to monitor metrics and trace links, you should install `insight-agent` in the cluster. For details, see [](../../insight/user-guide/quickstart/install-agent.md).
 
-<!--![]()screenshots-->
-
-!!! note
-
-    - If the installation before `skoala-init` without prior to install `insight-agent`, do not install `service-monitor`.
-    - If you need to install the `service-monitor`, please install the `insight-agent`, and then install `skoala-init`.
-
-## Manual installation procedure
-
-With everything in place, you can begin the formal installation of the microservice engine. The specific process is as follows:
-
-~~### Initializes the database table ~~
+![images](../images/install02.png)
 
 !!! note
 
-    - This step only applies to skoala-release/skoala version v0.17.1 or later.
-    - If skoala-Release /skoala version v0.17.1 or later is installed, skip this step and go to the next step. The system automatically initializes the table.
+    - If `insight-agent` is not install when you install `skoala-init`, `service-monitor` won't be installed.
+    - If you need to install `service-monitor`, you should install `insight-agent` first, and then install `skoala-init`.
 
-~~ If skoala database in common-mysql is empty, log in to skoala database and run the following SQL: ~~
+### Start Install
 
-????? note "If the initialization fails, check whether the following three tables exist in the skoala database and whether the corresponding SQL has taken effect."
+With everything in place, you can start installing DME. The specific process is as follows:
+
+#### Initialize data table
+
+!!! note
+
+    If you install skoala v0.17.1 or later, skip this step. The data table will be automatically initialized.
+
+If skoala database in common-mysql is empty, log in to skoala database and run the following SQL command:
+
+????? note "If initialization fails, check whether the following three tables exist in the skoala database and whether the corresponding SQL has taken effect."
 
     ```sql
     mysql> desc api;
@@ -163,66 +168,62 @@ With everything in place, you can begin the formal installation of the microserv
     12 rows in set (0.00 sec)
     ```
 
-### Configure skoala helm repo
+#### Configure skoala helm repo
 
-After skoala registry is configured, skoala application chart can be viewed and obtained
+After skoala image registry is configured, you can check and get the Helm chart of skoala.
 
 ```bash
 ~ helm repo add skoala-release https://release.daocloud.io/chartrepo/skoala
 ~ helm repo update
 ```
 
-> The Helm needs to be installed beforehand
+> install Helm beforehand
 
-Key content: After the completion of Skoala-release, there are two charts that need to be paid attention to:
+Note: After `skoala-release` image registry is added, there are two charts that need to be paid attention to:
 
-- Skoala is the control side service of Skoala,
-    - After the installation is complete, you can see the entry of the micro-service engine on the web page
-    - Contains 3 components ui, hive and sesame
+- `skoala` is the control plane of DME
+    - After `skoala` is installed, you can see DME in the first-level navigation bar of DCE 5.0
+    - `skoala` contains 3 components: ui, hive and sesame
     - It must be installed in the global management cluster
-- Skoala-init is the Operator of all Skoala components
-    - Install it only to the specified working cluster
-    - Included components: skoala-agent, nacos, contour, sentinel
-    - When not installed, you are prompted for missing components when you create the registry and gateway
 
-By default, after installing skoala to kpanda-global-cluster, you will see the entry to the corresponding microservice engine in the sidebar.
+- `skoala-init` is the operator of all components of DME
+    - Install it only to a working cluster
+    - Include four components: skoala-agent, nacos, contour, sentinel
+    - If `skoala-init` is not installed, you are prompted for missing components when creating a registry or gateway
 
-### View the latest version of the skoala component
+By default, after installing `skoala` component to the global cluster, you will see the "Microservices" option in the sidebar of DCE 5.0.
 
-Upgrade the deployment script to deploy all components with one click.
+#### Check latest version of DME's components
 
-In the global management cluster, check the latest version of Skoala, directly through the helm repo update to get the latest;
+In the global management cluster, check the latest version of `skoala` directly by this helm command.
 
 ```bash
 ~ helm repo update skoala-release
 ~ helm search repo skoala-release/skoala --versions
 NAME                        CHART VERSION   APP VERSION DESCRIPTION
-skoala-release/skoala       0.13.0          0.13.0      The helm chart for Skoala
-skoala-release/skoala       0.12.2          0.12.2      The helm chart for Skoala
-skoala-release/skoala       0.12.1          0.12.1      The helm chart for Skoala
-skoala-release/skoala       0.12.0          0.12.0      The helm chart for Skoala
+skoala-release/skoala       0.13.0          0.13.0      The helm chart for skoala
+skoala-release/skoala       0.12.2          0.12.2      The helm chart for skoala
+skoala-release/skoala       0.12.1          0.12.1      The helm chart for skoala
+skoala-release/skoala       0.12.0          0.12.0      The helm chart for skoala
 ......
 ```
 
-> When skoala is deployed, it takes the most recent front-end version with it. If you want to specify the front-end ui version,
-> See the front-end code repository for the corresponding version number:
-
-In the working cluster, look at the latest version of skoala-init and update directly through helm repo to get the latest one
+In the working cluster, check the latest version of `skoala-init` directly by this helm command.
 
 ```bash
 ~ helm repo update skoala-release
 ~ helm search repo skoala-release/skoala-init --versions
 NAME                        CHART VERSION   APP VERSION DESCRIPTION
-skoala-release/skoala-init  0.13.0          0.13.0      A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.2          0.12.2      A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.1          0.12.1      A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init  0.13.0          0.13.0      A Helm Chart for skoala init, it includes Skoal...
+skoala-release/skoala-init  0.12.2          0.12.2      A Helm Chart for skoala init, it includes Skoal...
+skoala-release/skoala-init  0.12.1          0.12.1      A Helm Chart for skoala init, it includes Skoal...
+skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for skoala init, it includes Skoal...
 ......
 ```
 
-### Perform deployment (also for upgrades)
+#### Install/Upgrade `skoala` to the global cluster
 
-Run the command directly. Note the corresponding version number
+Run the command directly to deploy or upgrade `skoala`. Pay attention to setting a right version.
 
 ```bash
 ~ helm upgrade --install skoala --create-namespace -n skoala-system --cleanup-on-fail \
@@ -237,18 +238,15 @@ Run the command directly. Note the corresponding version number
     --version 0.13.0
 ```
 
-> Customize and initialize database parameters; The database information needs to be added to the configuration
+> Customize and initialize database parameters; the database information needs to be added into the configuration
 > --set sweet. enable=true \
 > --set hive.configMap.data.database. host= \
 > --set hive.configMap.data.database. port= \
 > --set hive.configMap.data.database. user= \
 > --set hive.configMap.data.database. password= \
 > --set hive.configMap.data.database. database= \
->
-> Customize the front-end ui version
-> ui.image.tag=v0.9.0
 
-Check whether the deployed pod is successfully started
+Check whether the Pod is successfully started:
 
 ```bash
 ~ kubectl -n skoala-system get pods
@@ -258,21 +256,21 @@ sesame-5955c878c6-jz8cd                2/2     Running   0               3h48m
 ui-7c9f5b7b67-9rpzc                    2/2     Running   0               3h48m
 ```
 
-### Install skoala-init to the working cluster
+#### Install/upgrade `skoala-init` to a working cluster
 
-Since skoala involves a large number of components, we package these components into the same Chart, which is Skoala-init, so we should install Skoala-init in the working cluster that uses the micro-service engine
+Since DME contains many components, we packaged these components into the same Chart, which is `skoala-init`. This installation command can also be used to upgrade the component.
 
 ```bash
 ~  helm search repo skoala-release/skoala-init --versions
 NAME                        CHART VERSION   APP VERSION DESCRIPTION
-skoala-release/skoala-init  0.13.0          0.13.0      A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.2          0.12.2      A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.1          0.12.1      A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init  0.13.0          0.13.0      A Helm Chart for skoala init, it includes Skoal...
+skoala-release/skoala-init  0.12.2          0.12.2      A Helm Chart for skoala init, it includes Skoal...
+skoala-release/skoala-init  0.12.1          0.12.1      A Helm Chart for skoala init, it includes Skoal...
+skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for skoala init, it includes Skoal...
 ......
 ```
 
-Installation command, with the update; Verify that you need to install the Pods in the specified namespace and that all Pods have started successfully.
+Use the following command to check all Pods are running as expected：
 
 ```bash
 ~ helm upgrade --install skoala-init --create-namespace -n skoala-system --cleanup-on-fail \
@@ -280,26 +278,20 @@ Installation command, with the update; Verify that you need to install the Pods 
     --version 0.13.0
 ```
 
-In addition to terminal installation, UI can be found in the Helm application in Kpanda cluster management Skoala-init for installation.
+In addition to terminal installation, you can also install `skoala-init` by Helm chart in `Container Management` -> `Helm App`.
 
-<!--![]()screenshots-->
+![](../images/install03.png)
 
-Unload command
+## Upgrade DME
+
+Supports offline upgrade and online upgrade. For details, see [Offline Upgrade](../quickstart/offline-upgrade.md) or [Online Upgrade](online-upgrade.md).
+
+## Unload DME
 
 ```bash
 ~ helm uninstall skoala-init -n skoala-system
 ```
 
-Frequently asked Questions:
-
-- How do I uninstall the microservice engine after installation?
-
-    run the following command:
-
-    ```bash
-    ~ helm uninstall skoala -n skoala-system
-    ```
-
-- How to update the microserver engine?
-
-    Supports offline upgrade and online upgrade. For details, see [Offline Upgrade](../quickstart/offline-upgrade.md) or [Online Upgrade](online-upgrade.md).
+```bash
+~ helm uninstall skoala -n skoala-system
+```
