@@ -1,19 +1,20 @@
-# Upgrade the microservice engine offline
+# Offline Upgrade
 
-Each DCE 5.0 module is loosely coupled and supports independent installation and upgrade of each module. This document is intended for upgrades that occur after the microservice engine is installed offline.
+Components of DCE 5.0 are loosely coupled and can be installed/upgraded independently. This guide is intended for upgrading DaoCloud Microservice Engine (DME) after installing it with the [offline mode](../../install/commercial/start-install.md).
 
-## Synchronous mirror
+## Synch Image
 
-After downloading the image to the local node, you need to sync the latest version of the image to your image repository via [ chart-syncer ](https://github.com/bitnami-labs/charts-syncer) or the container runtime. chart-syncer synchronous mirroring is recommended because it is more efficient and convenient.
+After downloading the image to your local node, you need to sync the latest image version to your image registry via [chart-syncer ](https://github.com/bitnami-labs/charts-syncer) or a container runtime. chart-syncer is more recommended for its efficiency and convenience.
 
-### chart-syncer synchronous image
+### Sync with chart-syncer
 
-1. Create `load-image.yaml` as a chart-syncer profile using the following
+1. Create `load-image.yaml` as the chart-syncer profile
 
-     `load-image.yaml` All parameters in the file are mandatory. You need a private Container registry and modify the configurations as described below. See [Official Doc](https://github.com/bitnami-labs/charts-syncer) for a detailed explanation of the chart-syncer profile.
+     All parameters in the `load-image.yaml` file are mandatory. You need a private image registry and modify configurations as described below. See [Official Doc](https://github.com/bitnami-labs/charts-syncer) for a detailed explanation of the chart-syncer profile.
 
     === "chart repo installed"
 
+        If chart repo is already install, use the following configuration to synchronize the image directly.
 
         ```yaml
         source:
@@ -33,19 +34,19 @@ After downloading the image to the local node, you need to sync the latest versi
               password: "Harbor12345" # (9)
         ```
 
-        1. A relative path to the executing chart-syncer command, not a relative path between this YAML file and the offline package
-        2. Change to your Container registry url
-        3. Need to change to your Container registry
-        4. It can also be any of the other supported Helm Chart registry categories
+        1. Relative path to executing chart-syncer command, **not** the relative path between this YAML file and the offline package
+        2. Change to your image registry url
+        3. Change to your image registry
+        4. Can be any of the supported Helm Chart registries
         5. Change to chart repo url
-        6. Your container registry user name
-        7. Your mirror vault password
-        8. Your container registry user name
-        9. Your mirror vault password
+        6. Your image registry user name
+        7. Your image registry password
+        8. Your image registry user name
+        9. Your image vault password
 
     === "chart repo not installed"
 
-        Chart-syncer also supports exporting chart to a `tgz` file in a specified path if chart repo is not installed in your current environment.
+        Chart-syncer also supports exporting a chart as a `tgz` file in a specified path if chart repo is not installed.
 
         ```yaml
         source:
@@ -62,20 +63,20 @@ After downloading the image to the local node, you need to sync the latest versi
               password: "Harbor12345" # (6)
         ```
 
-        1. A relative path to the executing chart-syncer command, not a relative path between this YAML file and the offline package
-        2. Change to your Container registry url
-        3. Need to change to your Container registry
+        1. Relative path to executing chart-syncer command, **not** the relative path between this YAML file and the offline package
+        2. Change to your image registry url
+        3. Change to your image registry
         4. chart local path
-        5. Your container registry user name
-        6. Your mirror vault password
+        5. Your image registry user name
+        6. Your image vault password
 
-2. Run the mirror synchronization command.
+2. Run this command to sync the image.
 
     ```shell
     charts-syncer sync --config load-image.yaml
     ```
 
-### Docker/containerd Synchronizes images
+### Sync with Docker/containerd
 
 1. Decompress the `tar` package.
 
@@ -83,13 +84,13 @@ After downloading the image to the local node, you need to sync the latest versi
     tar xvf skoala.bundle.tar
     ```
 
-    After successful decompression, you will get 3 files:
+    After the decompression, you will get 3 files:
 
     - hints.yaml
     - images.tar
     - original-chart
 
-2. Load the image from the local to a Docker or containerd.
+2. Load the image from local to a Docker or containerd.
 
     === "Docker"
 
@@ -104,16 +105,16 @@ After downloading the image to the local node, you need to sync the latest versi
         ```
 
 !!! note
-    - The image needs to be loaded via Docker or containerd on each node.
-    - After the loading is complete, the tag image is required to keep Registry and Repository consistent with the installation.
+    - The image needs to be loaded via Docker or containerd to each node.
+    - After the loading is complete, you should tag the image to keep version consistency.
 
-## Start upgrading
+## Start Upgrade
 
-After mirror synchronization is complete, you can start upgrading the microservice engine.
+After the image is synced, you can start upgrading DME.
 
 === "Upgrade through helm repo"
 
-    1. Check whether microservice engine helm repository exists.
+    1. Check if the helm repository of DME exists. `skoala` is the internal code for DME.
 
         ```shell
         helm repo list | grep skoala
@@ -125,21 +126,21 @@ After mirror synchronization is complete, you can start upgrading the microservi
         Error: no repositories to show
         ```
 
-    2. Add helm repository for microservice engine.
+    2. Add DME's helm repository.
 
         ```shell
         heml repo add skoala-release http://{harbor url}/chartrepo/{project}
         ```
 
-    3. Update helm repository for microservice engine.
+    3. Update DME'S helm repository.
 
         ```shell
         helm repo update skoala-release # (1)
         ```
 
-        1. If the helm version is too low, it will fail. If this fails, try running helm update repo
+        1. If the helm version is too low, it will fail. If it fails, try `helm update repo` command
 
-    4. Select the version of the microservice engine you want to install (the latest version is recommended).
+    4. Select the version of DME you want to install (the latest version is recommended).
 
         ```shell
         helm search repo skoala-release/skoala --versions
@@ -152,9 +153,9 @@ After mirror synchronization is complete, you can start upgrading the microservi
         ...
         ```
 
-    5. Backup `--set` Parameter.
+    5. Backup `--set` parameters.
 
-        Before upgrading the micro service engine, you are advised to run the following command to back up the `--set` parameter of the previous version.
+        Before upgrading DME, it is recommended to run the following command to back up the `--set` parameters of the previous version.
 
         ```shell
         helm get values skoala -n skoala-system -o yaml > bak.yaml
@@ -162,7 +163,7 @@ After mirror synchronization is complete, you can start upgrading the microservi
 
     6. Run `helm upgrade`.
 
-        Before upgrading, it is recommended that you override the `global.imageRegistry` field in bak.yaml as the address of the image registry currently in use.
+        Before upgrading, it is recommended to override the `global.imageRegistry` field in `bak.yaml` as the address of the image registry currently in use.
 
         ```shell
         export imageRegistry={your image repo}
@@ -176,11 +177,11 @@ After mirror synchronization is complete, you can start upgrading the microservi
         --version 0.14.0
         ```
 
-=== "Upgrade via chart pack"
+=== "Upgrade via chart"
 
-    1. Backup `--set` Parameter.
+    1. Backup `--set` parameters.
 
-        Before upgrading the micro service engine, you are advised to run the following command to back up the `--set` parameter of the old version.
+        Before upgrading DME, it is recommended to run the following command to back up the `--set` parameter of the old version.
 
         ```shell
         helm get values skoala -n skoala-system -o yaml > bak.yaml
@@ -188,7 +189,7 @@ After mirror synchronization is complete, you can start upgrading the microservi
 
     2. Run the `helm upgrade` command.
 
-        Before upgrading, it is recommended that you override `global.imageRegistry` in bak.yaml as the address of the image registry currently in use.
+        Before upgrading, it is recommended that you override `global.imageRegistry` in `bak.yaml` as the address of the image registry currently in use.
 
         ```shell
         export imageRegistry={your image repo}
