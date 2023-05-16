@@ -23,7 +23,7 @@ DCE 5.0 natively supports the DevOps development and operation and maintenance m
 - :material-engine: **Microservice Engine** [Microservice Governance Center and Gateway](skoala/intro/what.md)
 - :material-table-refresh: **Service Mesh** [Non-intrusive Service Governance](mspider/intro/what.md)
 - :material-middleware: **middleware** [ES, Kafka, MinIO, MySQL, etc.](middleware/what.md)
-- :material-registry: **Container Registry** [Registry Integration and Hosting Service](kangaroo/what.md)
+- :material-warehouse: **Container Registry** [Registry Integration and Hosting Service](kangaroo/what.md)
 - :material-dot-net: **Network** [Multi-CNI fusion solution](network/intro/what-is-net.md)
 - :floppy_disk: **Storage** [Containerized Storage](storage/what.md)
 

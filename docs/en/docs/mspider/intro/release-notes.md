@@ -25,7 +25,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - MCPC Controller multiple workload type support.
 - Added health check function, which automatically rebuilds proxy when mesh APIServer fails to connect to prevent PortForward's own logic from being unreliable (may be related to Istio Sidecar).
 
-#### Fixed
+#### Fixes
 
 - Previously not compatible with `grpcgateway-accept-language` (equivalent to HTTP's Accept-Language) header, resulting in inability to switch between Chinese and English modes correctly. Compatible with both Accept and Accept-Language modes now.
 - When synchronizing OpenAPI, upstream cannot push due to shadow clone code.
@@ -59,7 +59,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 
 - Frontend version upgraded to `v0.12.2`.
 
-#### Fixed
+#### Fixes
 
 - Unable to update Istio resources with `.`.
 - In version 1.17.1, istio-proxy cannot start normally.
@@ -92,7 +92,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - `Ckube` supports complex conditional query of labels.
 - Helm upgrade time limit removed.
 
-#### Fixed
+#### Fixes
 
 - The interface does not display when the east-west gateway is not Ready.
 - Multi-cloud interconnection will automatically register the east-west gateway LB IP, which may cause internal network abnormalities (remove the east-west gateway instance label: `topology.istio.io/network`. This label will automatically register the east-west gateway).
@@ -129,7 +129,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - The performance of the `WorkloadShadow` module optimized through reducing unnecessary requests and adding local caching.
 - Upgraded the `insight-api` version to improve stability.
 
-#### Fixed
+#### Fixes
 
 - Fixed an issue where the Istiod pod is stuck in the "Pending" state when deployed on specific Kubernetes distributions.
 - Fixed an issue where VirtualServices cannot be updated due to conflicting port numbers.
@@ -180,7 +180,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - Optimized the handling of expired certificates in the mesh components.
 - Upgraded the `insight-api` version to improve stability.
 
-#### Fixed
+#### Fixes
 
 - Fixed an issue where the Istiod pod may fail to start due to a timing issue.
 - Fixed an issue where the `workloadLabels` field in Istio resources is not properly handled by the controller.
@@ -203,7 +203,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - Improved the stability and performance of the MCPC controller.
 - Upgraded the `insight-api` version to improve stability.
 
-#### Fixed
+#### Fixes
 
 - Fixed an issue where the Istiod pod may fail to start due to a timing issue.
 - Fixed an issue where the `workloadLabels` field in Istio resources is not properly handled by the controller.

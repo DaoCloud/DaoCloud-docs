@@ -15,7 +15,7 @@ This page lists the Release Notes related to Hwameistor, so that you can underst
 - **Optimized** Rename the Exportor port to http-metrics
 - **Optimized** Add port name in exporter service
 
-#### Fix
+#### Fixes
 
 - **Fixed** LD bound, but no capacity in LSN
 - **Fixed** Metrics port listening issue.

@@ -6,9 +6,9 @@ This page lists the Release Notes for global management of each version, so that
 
 ### v0.16.1
 
-#### Fix
+#### Fixes
 
-- Fix the problem of high CPU usage caused by infinite loop
+- Fixed the problem of high CPU usage caused by infinite loop
 - Fixed the problem of incomplete export of audit logs
 
 ## 2023-04-27
@@ -33,7 +33,7 @@ This page lists the Release Notes for global management of each version, so that
 - When creating a custom role, filter permissions that do not exist
 - Simplified audit log database partition function
 
-#### Fix
+#### Fixes
 
 - Fixed the wrong display of custom character types
 
@@ -49,10 +49,10 @@ This page lists the Release Notes for global management of each version, so that
 - GHippo OpenAPI documentation implementation
 - Provide GProduct with insert audit log SDK
 
-#### Fix
+#### Fixes
 
 - Fixed the problem that the token can still be used after the key expires
-- Fix the problem that the container registry is not controlled by the license
+- Fixed the problem that the container registry is not controlled by the license
 
 ## 2023-02-27
 
@@ -70,17 +70,17 @@ This page lists the Release Notes for global management of each version, so that
 
 - Optimization of OpenAPI calling method
 
-#### Fix
+#### Fixes
 
 - Fixed some wrong audit log names
 - Modify the keycloak startup probe failureThreshold value to improve startup success rate
-- Fix bind/unbind resource error i18n
+- Fixed bind/unbind resource error i18n
 
 ## 2022-12-30
 
 ### v0.13.2
 
-#### Fix
+#### Fixes
 
 - The interface has supplemented the English copy that lacks permission instructions
 - When updating the database table, an error may be reported due to the database encoding
@@ -107,7 +107,7 @@ This page lists the Release Notes for global management of each version, so that
 - Ghippo authentication code optimization (reduce memory usage)
 - Optimized the preloading mechanism when the front-end interface is low in network conditions
 
-#### Fix
+#### Fixes
 
 - Fixed the problem that OpenAPI cycle is a required parameter, and it is an optional parameter after the repair
 
@@ -140,16 +140,16 @@ This page lists the Release Notes for global management of each version, so that
 - e2e's kind image cut to 1.25
 - Improve resource usage efficiency to over 40%
 
-#### Bug fixes
+#### Fixes
 
-- Fix the problem of strong binding cluster
+- Fixed the problem of strong binding cluster
 - Fixed the problem that the option `Client secret sent as basic auth` in the configuration identity provider interface was not saved to keycloak
 
 ## 2022-11-01
 
 ### v0.11.2
 
-#### Bug fixes
+#### Fixes
 
 - Turn off the resource group binding cluster function
 - Fixed the problem that the workspace cannot be created when there is no workspace
@@ -176,11 +176,11 @@ This page lists the Release Notes for global management of each version, so that
 - Whether the GProduct license needs to be filled with variables and changed to configurable
 - Optimize CICD process
 
-#### Bug fixes
+#### Fixes
 
-- Repair deleted clusters still have problems
+- Fixed deleted clusters still have problems
 - Fixed istio cache not being reset after keycloak jwks change
-- Fix the zero value problem of group creation time
+- Fixed the zero value problem of group creation time
 - Fixed access key 'last used time' field returning null character when not used`
 
 ## v0.10
@@ -260,7 +260,7 @@ Release date: 2022-6-21
 - **Added** Added About -> Technical Team (List/Initialize)
 - **Added** License -> Lifecycle Management (Create/Edit/Delete/View/List)
 - **Added** License -> Get ESN serial number
-- **Added** Added new pages in the documentation site: [Common Terminology](glossary.md), [Function Overview](feature.md), [Quick Start/Create User and Authorization](../user-guide/access-control/User.md), [What is User Access and Control](../user-guide/access-control/iam.md), [User](../04UserGuide/01UserandAccess/User.md )
+- **Added** Added new pages in the documentation site: [Common Terminology](glossary.md), [Function Overview](features.md), [Quick Start/Create User and Authorization](../user-guide/access-control/User.md), [What is User Access and Control](../user-guide/access-control/iam.md), [User](../04UserGuide/01UserandAccess/User.md )
 
 ## v0.5
 
@@ -278,7 +278,7 @@ Release date: 2022-5-23
 - **Added** Added support for updating the top navigation bar
 - **Added** support for user role rights management CRUD
 - Added Honkit based documentation station template
-- Add overall bilingual document station structure and main content
+- Added overall bilingual document station structure and main content
 - Completion of ROADMAP content
 - merge document ROADMAP content into overall ROADMAP file
 - Documentation site updated [What is Ghippo](what.md)

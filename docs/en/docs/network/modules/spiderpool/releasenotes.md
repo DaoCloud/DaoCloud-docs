@@ -10,7 +10,7 @@ This page lists the Release Notes of Spidernet, so that you can understand the e
 
 - **Optimized** Spidernet API, adapted to **Spiderpool v0.4.0** new version CRD
 
-#### Fix
+#### Fixes
 
 - **Fixed** The stateful load uses the automatic IP pool, the IP pool is created successfully, the IP allocation is successful, and the query IP pool is empty.
 
@@ -28,7 +28,7 @@ This page lists the Release Notes of Spidernet, so that you can understand the e
 
 - **Optimization** Adjust the CPU memory Request value.
 
-#### Fix
+#### Fixes
 
 - **Fixed** The stateful load uses the automatic IP pool, the IP pool is created successfully, the IP allocation is successful, and the query IP pool is empty.
 
