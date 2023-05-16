@@ -423,8 +423,8 @@ nav:
       - Service Mesh:
           - Intro:
               - What is service mesh: mspider/intro/what.md
-              - Features: mspider/intro/feature.md
-              - Scenarios: mspider/intro/scenario.md
+              - Features: mspider/intro/features.md
+              - Scenarios: mspider/intro/scenarios.md
               - Features supported on UI: mspider/intro/meshes.md
               - Permissions: ghippo/permissions/mspider.md
               - Architecture: mspider/intro/architect.md
