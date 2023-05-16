@@ -26,7 +26,7 @@ This page lists the Release Notes of the installer, so that you can understand t
 - **Optimized** closed Kibana's access through NodePort, Insight uses ES's NodePort or VIP access
 - **Optimized** Optimized the display of concurrent logs, terminate tasks using SIGTERM signal instead of SIGKILL
 
-#### Fix
+#### Fixes
 
 - **Fixed** Fix the problem that the Kcoral helm chart cannot be found during online installation
 - **Fixed** Fix KubeConfig can't find problem when upgrading
@@ -85,7 +85,7 @@ This page lists the Release Notes of the installer, so that you can understand t
 - **Optimized** Community Release allows not to check clusterConfig format and parameters
 - **Optimized** Optimize installer execution scheduler log output
 
-#### Fix
+#### Fixes
 
 - **Fixed** Removed dependency on wget
 - **Fixed** Fix the problem of installation failure after repeated decompression of offline packages
@@ -108,7 +108,7 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 - **Optimized** Upgraded the version of pre-dependent tools
 
-#### Fix
+#### Fixes
 
 - **Fixed** installer command line `-j` parameter validity detection problem
 - **Fixed** The installation path problem of pre-dependent tools
@@ -180,7 +180,7 @@ This page lists the Release Notes of the installer, so that you can understand t
 - **Optimized** coredns is automatically injected into registry VIP resolution.
 - **Optimized** Optimize the offline package production process and speed up the packaging of docker images.
 
-#### Bug fixes
+#### Fixes
 
 - **Fixed** Fixed issues with fair cloud service.
 - **Fixed** Fixed issues with image and helm for various submodules.

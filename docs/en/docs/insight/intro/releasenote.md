@@ -30,7 +30,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 - **Optimization** The filter display problem when the service namespace is empty.
 - **Optimize** Add cache to service list.
 
-#### Fix
+#### Fixes
 
 - **Fixed** The problem of Chinese invalid search.
 - **Fixed** The problem that the service topology namespace permission cannot view the topology map.
@@ -46,7 +46,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 - **Optimization** Update the default number of primary shards for ES index to match the default number of ES nodes in the middleware.
 - **Optimization** Modify the JVM information API response body structure.
 
-#### Fix
+#### Fixes
 
 - **Fixed** Fix multiple trigger alert logging
 - **Fixed** Fluentbit CVE-2021-46848, upgrade from 2.0.5 to 2.0.8
@@ -71,7 +71,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 - **Optimize** the style of the topology map virtual node
 - **Optimized** service topology virtual node increase switch
 
-#### Fix
+#### Fixes
 
 - **Fixed** display style of pod running status
 - **Fixed** When the link function is not enabled, hide related configuration parameters
@@ -104,7 +104,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 - **updated** `tailing-sidecar/operator` mirror
 - **UPDATE** Global collection rule interval is 60 seconds
 
-#### Fix
+#### Fixes
 
 - **Fixed** built-in vmcluster dashboard
 - **Fixed** When the link is not opened, the navigation bar cannot be loaded
@@ -120,7 +120,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 ### v0.13.2
 
-#### Fix
+#### Fixes
 
 - **Fixed** the problem that `kubernetes-event-exporter` image address in insight-agent is wrong
 - **Fixed** Filter alerts API by resource name
@@ -129,7 +129,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 ### v0.13.1
 
-#### Fix
+#### Fixes
 
 - **Fixed** Build offline package to add `.relok8s-images` file
 - **Fixed** Adjust the port name corresponding to the component `otel-collector` port in insight-agent
@@ -179,7 +179,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 - **updated** used Bitnami mirror, including grafana-operator, grafana, kubernetes-event-exporter
 - **Update** prometheus-related API proxy address, change `/prometheus` to `/apis/insight.io/prometheus`
 
-#### Fix
+#### Fixes
 
 - **Fixed** service list caching logic
 - **Fixed** the problem that the built-in rules do not take effect

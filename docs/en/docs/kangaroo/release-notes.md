@@ -12,7 +12,7 @@ This page lists the release notes of the image registry, so that you can underst
 - Support for associating `jfrog` type repositories in workspaces
 - Support for creating managed `harbor` in offline `ARM` environment
 
-#### Fix
+#### Fixes
 
 - Fixed the problem that the registry integration URL could not be updated after modification
 - Fixed logical incompatibilities after `Project` was deleted from the native `Harbor` page
@@ -33,7 +33,7 @@ This page lists the release notes of the image registry, so that you can underst
 - Create hosted `harbor` support for editing image scanners.
 - Create hosted `harbor` support for using `S3` storage.
 
-#### Fix
+#### Fixes
 
 - Solve the problem that the installation byte of harbor-operator helm is too large
 
@@ -62,9 +62,9 @@ This page lists the release notes of the image registry, so that you can underst
 - Support `harbor`, `docker registry` type registry multi-architecture image page display
 
 
-#### Fix
+#### Fixes
 
-- Repair `harbor`, `docker registry` repositories that support associated repositories connected to `https`
+- Fixed `harbor`, `docker registry` repositories that support associated repositories connected to `https`
 
 ## 2022-12-30
 

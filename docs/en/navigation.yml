@@ -119,7 +119,7 @@ nav:
       - Global Management:
           - Intro:
               - What is Global Management: ghippo/intro/what.md
-              - Features: ghippo/intro/feature.md
+              - Features: ghippo/intro/features.md
               - Glossary: ghippo/intro/glossary.md
               - Release Notes: ghippo/intro/release-notes.md
           - Install, Login, and Upgrade:
@@ -182,7 +182,7 @@ nav:
               - What is Insight: insight/intro/what.md
               - Benefits: insight/intro/benefits.md
               - Scenario: insight/intro/scenarios.md
-              - Features: insight/intro/feature.md
+              - Features: insight/intro/features.md
               - Permissions: insight/intro/permission.md
               - Release Notes: insight/intro/releasenote.md
           - Quick Start:
