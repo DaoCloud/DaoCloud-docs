@@ -1,4 +1,7 @@
-Here is the improved text:
+---
+hide:
+  - toc
+---
 
 # Latest News on Container Management Features
 
