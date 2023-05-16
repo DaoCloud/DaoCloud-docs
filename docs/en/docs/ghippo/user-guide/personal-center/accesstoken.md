@@ -1,14 +1,10 @@
 # access key
 
-The access key can be used to access the open API and continuous publishing. Users can obtain the key and access the API by referring to the following steps in the personal center. For Ghippo version ≥ v0.14, please refer to this document. For older versions, please refer to: [Access Key (Ghippo version < v0.14)](password.md)
+The access key can be used to access the open API and continuous publishing. Users can obtain the key and access the API by referring to the following steps in the personal center.
 
 ## Get key
 
 Log in to DCE 5.0, find `Personal Center` in the drop-down menu in the upper right corner, and you can manage the access key of the account on the `Access Key` page.
-
-
-
-
 
 > Access key information is displayed only once. If you forget your access key information, you will need to recreate a new access key.
 
@@ -47,5 +43,4 @@ curl -X GET -H 'Authorization:Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkRKVjlBTHRBLXZ
         "total": 1
     }
 }
-
 ```
