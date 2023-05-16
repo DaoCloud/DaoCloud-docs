@@ -3,39 +3,37 @@ hide:
   - toc
 ---
 
-# What is container management?
+# What is Container Management
 
-Container management is a cloud-native application-oriented container management platform built on the basis of Kubernetes open-source technology. Based on the native multi-cluster architecture, it decouples the underlying infrastructure platform, realizes unified management of multi-cloud and multi-cluster, simplifies the process of enterprise applications to the cloud, and reduces operational costs. Dimension management and labor costs. Create Kubernetes clusters conveniently, helping enterprises quickly build enterprise-level container cloud platforms. The main functions of the container management module are as follows:
+Container management is a cloud-native container management platform for deploying and managing Kubernetes clusters. It is designed to simplify the process of enterprise application deployment to the cloud, reduce operational costs and improve management efficiency, and supports multi-cloud and hybrid cloud environments.
+
+Some of the key features of container management include:
 
 **Cluster Management**
 
-- Unified management of clusters, which supports any Kubernetes cluster within a specific version range to be included in the scope of container management, and realizes unified management of on-cloud, off-cloud, multi-cloud, and hybrid cloud container cloud platforms.
-- Rapid deployment of clusters, based on DaoCloud's independent open source project [Kubean](https://github.com/kubean-io/kubean), supports rapid deployment of enterprise-level Kubernetes clusters through the Web UI interface, and quickly builds enterprise-level container cloud platforms, Adapt to the underlying environment of physical machines and virtual machines.
-- One-click cluster upgrade, one-click upgrade of Kubernetes version, unified management system component upgrade.
-- The cluster is highly available, with built-in cluster disaster recovery and backup capabilities, ensuring that the business system can be restored in the event of host failure, computer room interruption, natural disasters, etc., improving the stability of the production environment and reducing the risk of business interruption.
-- Full lifecycle management of clusters, realizing full lifecycle management of self-built cloud native clusters.
-- Open API capability, providing native Kubernetes OpenAPI capability.
+- Unified management of clusters, supporting any Kubernetes cluster within a specific version range.
+- Rapid deployment of clusters through the Web UI interface, adaptable to physical and virtual machines.
+- One-click cluster upgrade with built-in disaster recovery and backup capabilities, ensuring business continuity.
+- Full lifecycle management of clusters with OpenAPI capability.
 
 **Application Management**
 
-- One-stop deployment, decoupling the underlying Kubernetes platform, one-stop deployment and operation and maintenance of business applications, and realizing the full life cycle management of applications.
-- Elastic scaling of application load, supports manual/automatic scaling of application load, supports horizontal scaling, vertical scaling, and scheduled scaling, and calmly handles traffic peaks.
-- The full life cycle of the application, supporting full life cycle management such as application viewing, updating, deletion, rollback, event viewing, and upgrading.
-- Unified management capability across cluster loads.
+- One-stop deployment and operation of business applications with full lifecycle management capabilities.
+- Elastic scaling of application load with support for horizontal, vertical, and scheduled scaling.
+- Unified management across cluster loads.
 
 **Strategy Management**
 
-Supports formulation of network policies, quota policies, resource limit policies, disaster recovery policies, and security policies at the namespace or cluster granularity.
+- Supports network policies, quota policies, resource limit policies, disaster recovery policies, and security policies.
+- Network policy formulates communication rules between pods and network "entities" on the network plane.
+- Quota policy limits resource usage of namespaces in the cluster.
+- Resource limit policy constrains use of resources by applications in the corresponding namespace.
+- Disaster recovery strategy realizes disaster recovery backup with namespace as the dimension, ensuring the security of the cluster.
+- Security policy defines different isolation levels for Pods.
 
-- Network policy, supports the formulation of network policies at the granularity of namespace or cluster, and limits the communication rules between pods and network "entities" on the network plane.
-- Quota policy, which supports setting quota policies at namespace or cluster granularity to limit the resource usage of namespaces in the cluster.
-- Resource limit policy, which supports setting resource limit policies at namespace or cluster granularity, and constrains the use of resources by applications in the corresponding namespace.
-- Disaster recovery strategy, supports the setting of disaster recovery strategy at the granularity of namespace or cluster, realizes disaster recovery backup with namespace as the dimension, and ensures the security of the cluster.
-- Security policy, which supports setting security policies at namespace or cluster granularity, and defines different isolation levels for Pods.
+**Product Logical Architecture**
 
-**Product logical architecture**
-
-
+Download DCE 5.0, install DCE 5.0, or start a free trial now.
 
 [Download DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }
