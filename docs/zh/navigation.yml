@@ -342,7 +342,7 @@ nav:
               - 更新多云服务: kairship/resource/update-service.md
               - 更新多云密钥: kairship/resource/update-secret.md
               - 更新多云配置项: kairship/resource/update-configmap.md
-              - 更多多云路由: kairship/resource/update-ingress.md
+              - 更新多云路由: kairship/resource/update-ingress.md
           - 策略管理:
               - 部署策略: kairship/policy/propagation-policy.md
               - 差异化策略: kairship/policy/override-policy.md
