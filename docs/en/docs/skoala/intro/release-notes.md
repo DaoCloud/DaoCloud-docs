@@ -6,7 +6,7 @@ This page lists the release notes of DME to help you learn its feature developme
 
 ### V0.21.1
 
-#### Bug Fixing
+#### Bug Fixes
 
 - Cloud-native microservice pagination
 
@@ -17,11 +17,11 @@ This page lists the release notes of DME to help you learn its feature developme
 - Retry mechanism of components accessing database
 - Nacos port 9848 to GRPC to work with service mesh
 
-# 2023-04-25
+## 2023-04-25
 
-## V0.21.0
+### V0.21.0
 
-### New Features
+#### New Features
 
 - Separate display of gateway access internal and external addresses
 - API related to cloud-native microservice governance capability
@@ -29,7 +29,7 @@ This page lists the release notes of DME to help you learn its feature developme
 - API related to gateway using plugins
 - Gateway logical API of various plugins
 
-### Bug Fixing
+#### Bug Fixes
 
 - Envoy configuration is not updated when the gateway is updated
 - Only a single port can be added to the gateway
@@ -42,7 +42,7 @@ This page lists the release notes of DME to help you learn its feature developme
 - Domain format verification
 - Some fields of plugins are named incorrectly
 
-### Enhancement
+#### Enhancement
 
 - Version of Insight integrated to 0.16.0
 - Add a prefix to the module name for template end service
@@ -50,11 +50,11 @@ This page lists the release notes of DME to help you learn its feature developme
 - Httpproxy crd
 - Skoalaplugin crd
 
-# 2023-04-21
+## 2023-04-21
 
-## V0.20.0
+### V0.20.0
 
-### New Features
+#### New Features
 
 - Sentinel portal version
 - Gateway domain-level whitelist
@@ -64,13 +64,13 @@ This page lists the release notes of DME to help you learn its feature developme
 - Visualized status of the gateway resource workload
 - Gateway workload policy selection
 
-### Bug Fixing
+#### Bug Fixes
 
 - Contour image version
 - User-defined role and API mappings
 - API sort and entry in gateway overview page
 
-### Enhancement
+#### Enhancement
 
 - Plugins related API
 - Configuration file structure
@@ -80,27 +80,27 @@ This page lists the release notes of DME to help you learn its feature developme
 - Contour version to 1.24.3-ipfilter-tracing
 - Envoy version to v1.25.4
 
-# 2023-04-10
+## 2023-04-10
 
-## V0.19.4
+### V0.19.4
 
-### Bug Fixing
+#### Bug Fixes
 
 - Startup issues of managed Nacos
 
-# 2023-04-10
+## 2023-04-10
 
-## V0.19.3
+### V0.19.3
 
-### Bug Fixing
+#### Bug Fixes
 
 - Front-end problems
 
-# 2023-04-04
+## 2023-04-04
 
-## V0.19.2
+### V0.19.2
 
-### Bug Fixing
+#### Bug Fixes
 
 - Nacos and Sentinel verify account by default
 - Gateway API sorting in overview page
@@ -109,7 +109,7 @@ This page lists the release notes of DME to help you learn its feature developme
 
 ### v0.19.1
 
-#### Bug Fixing
+#### Bug Fixes
 
 - CVE-2022-31045
 - Plugin API
@@ -140,7 +140,7 @@ This page lists the release notes of DME to help you learn its feature developme
 - Package of how cascade resource operation adding transaction
 - Resource restart
 
-#### Bug Fixing
+#### Bug Fixes
 
 - Database script for initializing Nacos in Nacos Operator
 - APIs related to overview Sentinel data
@@ -168,7 +168,7 @@ This page lists the release notes of DME to help you learn its feature developme
 - APIs to separate registries and configuration centers
 - APIs related to overview
 
-#### Bug Fixing
+#### Bug Fixes
 
 - Image version of gateway-api
 - IP pool loading issues of gateways under load balancer mode
@@ -196,7 +196,7 @@ This page lists the release notes of DME to help you learn its feature developme
 - Security scanning for external images in daily builds
 - Automatic update of image version in the chart
 
-#### Bug Fixing
+#### Bug Fixes
 
 - Error in creating Nacos namespace
 - Error in editing  Nacos persistent storage
@@ -229,7 +229,7 @@ This page lists the release notes of DME to help you learn its feature developme
 
 ### v0.16.1
 
-#### Bug Fixing
+#### Bug Fixes
 
 - Repetitive builder creation when building an image
 
@@ -241,7 +241,7 @@ This page lists the release notes of DME to help you learn its feature developme
 
 ### v0.16.0
 
-#### Bug Fixing
+#### Bug Fixes
 
 - Error in Sentinel invoking Nacos interface with authentication enabled
 - Error of nacos-operator frequently modifying service resources
@@ -261,7 +261,7 @@ This page lists the release notes of DME to help you learn its feature developme
 - API to integrate services in managed registries
 - API about Sentinel cluster flow control
 
-#### Bug Fixing
+#### Bug Fixes
 
 - Sentinel rule concatenation error
 - Error in Sentinel dashboard name
@@ -284,7 +284,7 @@ This page lists the release notes of DME to help you learn its feature developme
 - Offline images required by init Chart
 - Token to get managed Nacos
 
-#### Bug Fixing
+#### Bug Fixes
 
 - Error in naming values in Skoala Chart
 - Mirroring errors in CI flows
@@ -311,7 +311,7 @@ This page lists the release notes of DME to help you learn its feature developme
 - Complete gitlab release operations after version release
 - Dynamically change log level
 
-#### Bug Fixing
+#### Bug Fixes
 
 - Global flow rules do not take effect after update
 - Envoy log level was not set
@@ -334,7 +334,6 @@ This page lists the release notes of DME to help you learn its feature developme
 - Revert default configuration of Nacos image to community version
 - Remove CI flows associated with Nacos image
 
-
 ## 2022-12-13
 
 ### v0.12.2
@@ -344,7 +343,7 @@ This page lists the release notes of DME to help you learn its feature developme
 - Add Grafana template for Sentinel"s own monitoring
 - Add configuration information of the customized gateway index
 
-#### Bug Fixing
+#### Bug Fixes
 
 - Status error of Insight after added into microservices
 - Status error of Mesh plugin after enabled in managed registries

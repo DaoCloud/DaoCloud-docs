@@ -28,7 +28,7 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 #### Fix
 
-- **Fixed** Fix the problem that the Kcoral heml chart cannot be found during online installation
+- **Fixed** Fix the problem that the Kcoral helm chart cannot be found during online installation
 - **Fixed** Fix KubeConfig can't find problem when upgrading
 
 #### Known Issues

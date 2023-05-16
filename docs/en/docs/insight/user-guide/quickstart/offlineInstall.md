@@ -120,7 +120,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
      1. Add the globally managed helm repository.
 
          ```shell
-         heml repo add insight http://{harbor url}/chartrepo/{project}
+         helm repo add insight http://{harbor url}/chartrepo/{project}
          ```
 
      1. Update the globally managed helm repository.

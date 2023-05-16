@@ -3,43 +3,43 @@ hide:
   - toc
 ---
 
-# Function overview
+# Feature Overview
 
-The application workbench provides the following functions.
+Application Workbench provides the following features:
 
-- Application management
+- Application Management
 
-    - Supports "multi-form" cloud native applications in cloud native scenarios, including Kubernetes native applications, Helm applications, OAM applications, etc.
-    - You can manage the full life cycle of cloud native applications, such as application expansion and shrinkage, logging, monitoring, and updating.
-    - Supports access to SpingCloud, Dubbo, and ServiceMesh frameworks for micro service governance and seamless integration with [Microservice Engine](../../skoala/intro/what.md) and [Service Mesh](../../mspider/intro/what.md) of DCE 5.0.
+    - Supports "multi-form" cloud-native applications, including Kubernetes native applications, Helm applications, OAM applications, and so on.
+    - Provides full lifecycle management for cloud-native applications, such as scaling, logs, monitoring, and application updates.
+    - Supports integrating and managing SpringCloud and Dubbo microservices, as well as cloud-native microservices based on Kubernetes and Service Mesh.
 
-- pipelining
+- Pipeline Orchestration
 
-    Pipelining is a custom CI/CD schema.
+    Pipeline is a customizable CI/CD mode.
 
-    - Support for custom creation, code repository based jenkinsfile creation pipeline two modes.
-    - Support pipelined graphical editing.
-    - Applications can be built by means of source code, Jar packages.
+    - Supports four modes to create pipelines: custom creation, Jenkinsfile-based creation, tempalte-based creation, and create multiple-branch pipelines.
+    - Supports editing pipelines with graphical UI.
+    - Supports building applications from source code in GitHub repos, Jar packages, Helm charts, or container images.
 
-- Certificate management
+- Credential Management
 
-    Provides different types of credential management functions for the code base and image warehouse in the pipeline.
+    Manages different types of credentials for code repositories and image registries used in a pipeline.
 
-- Continuous deployment
+- Continuous Deployment
 
-    The concept of GitOps is introduced to realize continuous application deployment, which is used to control the application release and deployment delivery process after the code is built.
+    Introduces the concept of GitOps to achieve continuous deployment of applications, which helps control the application release and deployment process after code building.
 
-    - Argo CD enables frequent and continuous deployment of enterprise applications to production environments in an automated manner.
-    - Provide Argo CD Application to create, synchronize, delete management.
+    - Based on Argo CD, automates the deployment of applications to production environments frequently and continuously.
+    - Provides creation, synchronization, and deletion of Argo CD applications.
 
-- Warehouse management
+- Repository Management
 
-    Support for importing Git repositories that you can use in continuous deployment for continuous deployment of your applications.
+    Supports importing code repositories from Git, allowing you to use them for continuous deployment of applications.
 
-- Grayscale release
+- Canary Release
 
-    Gray release can ensure the stability of the whole system, and problems can be found and adjusted at the initial gray level to reduce the influence range of problems.
+    Canary release ensures system stability by allowing you to discover and fix bugs during the initial grayscale phase, reducing the impact range of bugs and vulnerabilities.
 
-    - Support Canary release, blue-green deployment, A/B Testing advanced release strategy.
-    - Canary Publishing supports an automated and progressive publishing process.
-    - Supports rapid application rollback based on monitoring indicator analysis.
+    - Supports advanced release policies such as Canary release, Blue/Green deployment, and A/B Testing.
+    - Canary release supports automated progressive release.
+    - Supports quick rollback based on metric analysis.
