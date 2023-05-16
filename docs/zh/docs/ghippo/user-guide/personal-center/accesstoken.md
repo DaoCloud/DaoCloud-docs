@@ -1,6 +1,6 @@
 # 访问密钥
 
-访问密钥可用于访问开放API和持续发布，用户可在个人中心参照以下步骤获取密钥并访问 API。Ghippo版本≥v0.14请参照该文档，旧版本请参照：[访问密钥（Ghippo版本＜v0.14）](./password.md)
+访问密钥可用于访问开放 API 和持续发布，用户可在个人中心参照以下步骤获取密钥并访问 API。
 
 ## 获取密钥
 
@@ -14,7 +14,8 @@
 
 ## 使用密钥访问 API
 
-在访问 DCE 5.0 openAPI 时，在请求中加上请求头 `Authorization:Bearer ${token}` 以标识访问者的身份，其中 `${token}` 是上一步中获取到的密钥，具体接口信息参见 [OpenAPI 接口文档](https://docs.daocloud.io/openapi/)。
+在访问 DCE 5.0 openAPI 时，在请求中加上请求头 `Authorization:Bearer ${token}` 以标识访问者的身份，
+其中 `${token}` 是上一步中获取到的密钥，具体接口信息参见 [OpenAPI 接口文档](https://docs.daocloud.io/openapi/)。
 
 **请求示例**
 
@@ -47,5 +48,4 @@ curl -X GET -H 'Authorization:Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkRKVjlBTHRBLXZ
         "total": 1
     }
 }
-
 ```
