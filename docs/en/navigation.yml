@@ -37,10 +37,10 @@ nav:
       - Container Management:
           - Intro:
               - What is Container Management: kpanda/intro/what.md
-              - Features: kpanda/intro/features.md
-              - Benefits: kpanda/intro/benefits.md
-              - Scenarios: kpanda/intro/scenarios.md
-              - Concepts: kpanda/intro/concepts.md
+              - Features: kpanda/intro/feature.md
+              - Benefits: kpanda/intro/benefit.md
+              - Scenarios: kpanda/intro/scenario.md
+              - Concepts: kpanda/intro/concept.md
               - Release Notes: kpanda/intro/release-notes.md
               - Lastest News: kpanda/intro/news.md
           - Clusters:
