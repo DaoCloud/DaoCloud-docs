@@ -57,7 +57,7 @@ nav:
               - 命名空间独享节点: kpanda/user-guide/namespaces/exclusive.md
           - 节点管理:
               - 节点可用性检查: kpanda/user-guide/nodes/node-check.md
-              - 节点配置: kpanda/user-guide/nodes/node-config.md
+              - 节点认证: kpanda/user-guide/nodes/node-authentication.md
               - 节点扩容: kpanda/user-guide/nodes/add-node.md
               - 节点缩容: kpanda/user-guide/nodes/delete-node.md
               - 污点管理: kpanda/user-guide/nodes/taints.md
