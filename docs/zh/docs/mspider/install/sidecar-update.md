@@ -15,11 +15,11 @@
 
 1. **环境检测**：该步骤中将检测集群环境是否满足热升级需求，检测项包括以下三项：
 
-	- Istio 版本：是否是定制版本（版本后缀：-mspider）
-	- K8s 版本：是否符合热升级要求范围
-	- EphemeralContainer：是否已启用
+- Istio 版本：是否是定制版本（版本后缀：-mspider）
+- K8s 版本：是否符合热升级要求范围
+- EphemeralContainer：是否已启用
 
-	以上三项满足后将在后续步骤中进入热升级流程。
+ 以上三项满足后将在后续步骤中进入热升级流程。
 
     ![环境监测](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/SidecarUpdate02.png)
 
@@ -39,13 +39,13 @@
 
 2. **边车升级版本** 在重启升级流程中，无法选择版本，仅支持升级至最新版本。
 
-	![升级版本](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/SidecarUpdate06.png)
+ ![升级版本](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/SidecarUpdate06.png)
 
 3. **执行升级**：升级页面中展示了所选工作负载的基本信息及边车版本信息，点击`一键升级`将立即重启 Pod，请务必谨慎操作。
 
-	![执行升级](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/SidecarUpdate07.png)
+ ![执行升级](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/SidecarUpdate07.png)
 
-	![执行升级](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/SidecarUpdate08.png)
+ ![执行升级](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/SidecarUpdate08.png)
 
 !!! note
 

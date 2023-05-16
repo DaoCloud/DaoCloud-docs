@@ -26,17 +26,17 @@ Istio 升级向导包含`选择目标版本`、`环境检测`、`执行升级`�
 
     ![环境检测](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/IstioUpdate03.png)
 
- 	- 如果集群（k8s）版本过低，可以在容器管理平台先升级集群（k8s）版本后，点击`重新检测`按钮；
+- 如果集群（k8s）版本过低，可以在容器管理平台先升级集群（k8s）版本后，点击`重新检测`按钮；
 
-	- 如果集群（k8s）版本过高，建议回退至“选择目标版本”选择其他更高版本的 Istio。
+- 如果集群（k8s）版本过高，建议回退至“选择目标版本”选择其他更高版本的 Istio。
 
     ![环境检测](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/IstioUpdate04.png)
 
 3. **执行升级**：环境检测通过后，将进入升级阶段，该过程包含`升级`和`健康检测`两阶段。
 
-	- Istio 升级：Istio镜像拉取和控制面组件升级
+- Istio 升级：Istio镜像拉取和控制面组件升级
 
-	- Istio 健康检测：Istio 控制面组件运行状态检查
+- Istio 健康检测：Istio 控制面组件运行状态检查
 
     ![执行升级](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/IstioUpdate05.png)
 
