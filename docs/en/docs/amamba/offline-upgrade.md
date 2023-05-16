@@ -95,6 +95,7 @@ If a mirror warehouse exists in the environment, it is recommended to use chart-
         ```
 
 !!! note
+    
     - The image needs to be loaded via Docker or containerd to each node.
     - After the loading is complete, you should tag the image to keep version consistency.
 
@@ -135,7 +136,7 @@ If a mirror warehouse exists in the environment, it is recommended to use chart-
 
 5. Modify `registry` and `tag` in `amamba.bak.yaml`.
 
-    ????? note "Click to see sample YAML file"
+    ??? note "Click to see sample YAML file"
 
         ```yaml title="amamba.bak.yaml"
         amambaSyncer:
