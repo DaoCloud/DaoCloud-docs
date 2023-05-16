@@ -3,40 +3,38 @@ hide:
   - toc
 ---
 
-# common problem
+# FAQs
 
 1. Can Istio in the service mesh be installed separately?
 
-    Yes, but not recommended. The Istio control plane components installed separately by the user can be connected to the service mesh through an external mesh, but compared with other modes, it only provides basic Istio functions.
+    Yes, it is possible to install Istio control plane components separately as desired by the user. However, this approach is not recommended since the external mesh connection only offers basic Istio functions compared to other modes.
 
-1. Istio component versions in the service mesh?
+2. What are the available Istio component versions in the service mesh?
 
-    There are several versions that the user can choose from when creating the mesh.
+    There are multiple Istio component versions that a user can select from while creating the mesh.
 
-1. Can the Istio of the service mesh be upgraded?
+3. Is it possible to upgrade Istio components in the service mesh?
 
-    Yes, users can upgrade independently.
+    Yes, users can perform independent upgrades of Istio components.
 
-1. Can the injected sidecars in the mesh be upgraded?
+4. Can sidecars injected in the mesh be upgraded?
 
-    Yes, it supports sidecar hot upgrade at the same time.
+    Yes, sidecar hot upgrades are supported.
 
-1. Can a 4th generation service mesh (DSM) be upgraded to a 5th generation service mesh?
+5. Can a 4th generation service mesh (DSM) be upgraded to a 5th generation service mesh?
 
-    It cannot be upgraded, but it can be connected to the service mesh in the form of an external mesh. It is recommended to adopt the method of reinstallation to obtain the best scalability and post-maintenance.
+    It is not feasible to upgrade a 4th generation service mesh (DSM) to a 5th generation service mesh, but it is possible to connect it to the service mesh in the form of an external mesh. For optimal scalability and post-maintenance, it is recommended to adopt the reinstallation method.
 
-1. If different namespace sidecar injection policies and workload sidecar injection policies are set, what is the actual execution effect?
+6. If different namespace sidecar injection policies and workload sidecar injection policies are set, what is the actual execution result?
 
-    The following rules will be matched in order, and the following rules will not be executed if a valid rule is matched:
+    In such a scenario, the following rules are matched in order, and if a valid rule is matched, the subsequent rules are not executed:
 
-    - Disable sidecar injection if one of the two is set to disabled
-    - Enable sidecar injection if one of the two is set to enabled
-    - If neither is set, the mesh global sidecar injection strategy will be executed (values.sidecarInjectorWebhook.enableNamespacesByDefault)
-    
-    For details, please refer to [Install Sidecar](https://istio.io/latest/docs/setup/additional-setup/sidecar-injection/)
+    - Disable sidecar injection if either one of the two is set to disabled
+    - Enable sidecar injection if either one of the two is set to enabled
+    - If neither is set, the mesh global sidecar injection strategy (values.sidecarInjectorWebhook.enableNamespacesByDefault) will be executed.
 
-1. What is the difference between traditional microservices and service mesh?
+    For further details, please refer to [Install Sidecar](https://istio.io/latest/docs/setup/additional-setup/sidecar-injection/).
 
-    Adding a traditional microservice to a service mesh simply requires injecting its corresponding workload into a sidecar so that the mesh can manage it.
-    Based on different microservice frameworks and the non-invasive nature of the mesh, the governance strategy of the original framework may be changed, but users do not need to implement it themselves.
-    After accessing the mesh, traditional microservices can obtain all the capabilities of the mesh, including traffic management, security, observability, and so on.
+7. What distinguishes traditional microservices from service mesh?
+
+    To incorporate a traditional microservice into a service mesh, it is simply necessary to inject the corresponding workload into a sidecar so that all of the mesh's capabilities, such as traffic management, security, observability, and more, can be leveraged. Due to the non-invasive nature of the mesh and varying microservice frameworks, the governance strategy of the original framework may require modification, but users need not implement these changes themselves.

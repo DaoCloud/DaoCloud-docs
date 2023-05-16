@@ -1,24 +1,26 @@
-# Control plane components of the service mesh
+# Control Plane Components
 
-| Component Name | Location | Description | Default Resource Settings |
-| ---------------------------- | ------------ | ------- --------------------- | ---------------- |
-| mspider-ui | Global Management Cluster | Service Mesh Interface | requests: CPU: Not set; Memory: Not set<br> limits: CPU: Not set; Memory: Not set |
-| mspider-ckube | Global management cluster | Acceleration component of Kubernetes API Server, used to call global cluster-related resources | requests: CPU: not set; memory: not set<br/> limits: CPU: not set; memory: not set settings |
-| mspider-ckube-remote | Global Management Cluster | Used to call Kubernetes of remote clusters, aggregate multi-cluster resources, and accelerate | requests: CPU: not set; memory: not set<br/> limits: CPU: not set; memory : not set |
-| mspider-gsc-controller | Global management cluster | Service mesh management component, used for mesh creation, mesh configuration and other mesh control plane life cycle management, and Mspider control plane capabilities such as permission management | requests: CPU: Not set ;memory: not set<br/>limits: CPU: not set; memory: not set |
-| mspider-api-service | Global management cluster | Provide interface for Mspider background API interaction and other control behaviors | requests: CPU: not set; memory: not set <br/>limits: CPU: not set; memory: not set |
-| Managed mesh | | | |
-| istiod-{meshID}-hosted | control plane cluster | policy management for hosted mesh | requests: CPU: 100m; memory: 100m <br/>limits: CPU: not set; memory: not set |
-| mspider-mcpc-ckube-remote | Control plane cluster | Invoke remote mesh work clusters to accelerate and aggregate multi-cluster resources | requests: CPU: 100m; memory: 50m<br/>limits: CPU: 500m; memory: 500m |
-| mspider-mcpc-mcpc-controller | Control plane cluster | Aggregate mesh multi-cluster related data plane information | requests: CPU: 100m; memory: 0<br/> limits: CPU: 300m; memory: 1.56G |
-| {meshID}-hosted-apiserver | Control Plane Cluster | Hosted Control Plane Virtual Cluster API Server | requests: CPU: not set; memory: not set<br/> limits: CPU: not set; memory: not set |
-| istiod | working cluster | Mainly used for sidecar lifecycle management of the cluster | requests: CPU: 100; memory: 100<br/> limits: CPU: not set; memory: not set |
-| Proprietary mesh | | | |
-| istiod | | used for policy creation, delivery, and sidecar lifecycle management | requests: CPU: 100; memory: 100<br/> limits: CPU: not set; memory: not set |
-| mspider-mcpc-ckube-remote | working cluster | call remote mesh working cluster | requests: CPU: 100m; memory: 50m<br/> limits: CPU: 500m; memory: 500m |
-| mspider-mcpc-mcpc-controller | Working cluster | Collect cluster data surface information | requests: CPU: 100m; memory: 0<br/> limits: CPU: 300m; memory: 1.56G |
-| External mesh | | | |
-| mspider-mcpc-ckube-remote | working cluster | call remote mesh working cluster | requests: CPU: 100m; memory: 50m<br/> limits: CPU: 500m; memory: 500m |
-| mspider-mcpc-mcpc-controller | Working cluster | Collect cluster data surface information | requests: CPU: 100m; memory: 0<br/> limits: CPU: 300m; memory: 1.56G |
+This page lists the various components in the control plane of the service mesh along with their locations, descriptions, and default resource settings.
 
-The preset resource settings of each control plane component of the service mesh are shown in the table above, and users can find the corresponding work in the [Container Management](../../kpanda/user-guide/workloads/create-deployment.md) module Load, customize CPU and memory resources for the workload.
+| Component | Location | Description | Default Resource Settings |
+| ----------|----------|-------------|--------------------------|
+| mspider-ui | Global Management Cluster | Service Mesh Interface | Requests: CPU - Unset; Memory - Unset<br>Limits: CPU - Unset; Memory - Unset |
+| mspider-ckube | Global Management Cluster | Acceleration component of Kubernetes API Server used to call global cluster-related resources | Requests: CPU - Unset; Memory - Unset<br>Limits: CPU - Unset; Memory - Unset |
+| mspider-ckube-remote | Global Management Cluster | Used to call Kubernetes of remote clusters, aggregate multi-cluster resources, and accelerate | Requests: CPU - Unset; Memory - Unset<br>Limits: CPU - Unset; Memory - Unset |
+| mspider-gsc-controller | Global Management Cluster | Service mesh management component used for mesh creation, configuration, and other mesh control plane life cycle management, as well as Mspider control plane capabilities such as permission management | Requests: CPU - Unset; Memory - Unset<br>Limits: CPU - Unset; Memory - Unset |
+| mspider-api-service | Global Management Cluster | Provides an interface for Mspider background API interaction and other control behaviors | Requests: CPU - Unset; Memory - Unset<br>Limits: CPU - Unset; Memory - Unset |
+| Managed Mesh | | | |
+| istiod-{meshID}-hosted | Control Plane Cluster | Policy management for hosted mesh | Requests: CPU - 100m; Memory - 100m<br>Limits: CPU - Unset; Memory - Unset |
+| mspider-mcpc-ckube-remote | Control Plane Cluster | Invokes remote mesh work clusters to accelerate and aggregate multi-cluster resources | Requests: CPU - 100m; Memory - 50m<br>Limits: CPU - 500m; Memory - 500m |
+| mspider-mcpc-mcpc-controller | Control Plane Cluster | Aggregates mesh multi-cluster related data plane information | Requests: CPU - 100m; Memory - 0<br>Limits: CPU - 300m; Memory - 1.56G |
+| {meshID}-hosted-apiserver | Control Plane Cluster | Hosted Control Plane Virtual Cluster API Server | Requests: CPU - Unset; Memory - Unset<br>Limits: CPU - Unset; Memory - Unset |
+| istiod | Working Cluster | Mainly used for sidecar lifecycle management of the cluster | Requests: CPU - 100; Memory - 100<br>Limits: CPU - Unset; Memory - Unset |
+| Proprietary Mesh | | | |
+| istiod | | Used for policy creation, delivery, and sidecar lifecycle management | Requests: CPU - 100; Memory - 100<br>Limits: CPU - Unset; Memory - Unset |
+| mspider-mcpc-ckube-remote | Working Cluster | Calls remote mesh working cluster | Requests: CPU - 100m; Memory - 50m<br>Limits: CPU - 500m; Memory - 500m |
+| mspider-mcpc-mcpc-controller | Working Cluster | Collects cluster data surface information | Requests: CPU - 100m; Memory - 0<br>Limits: CPU - 300m; Memory - 1.56G |
+| External Mesh | | | |
+| mspider-mcpc-ckube-remote | Working Cluster | Calls remote mesh working cluster | Requests: CPU - 100m; Memory - 50m<br>Limits: CPU - 500m; Memory - 500m |
+| mspider-mcpc-mcpc-controller | Working Cluster | Collects cluster data surface information | Requests: CPU - 100m; Memory - 0<br>Limits: CPU - 300m; Memory - 1.56G |
+
+These are the default resource settings for each control plane component of the service mesh. Users can customize CPU and memory resources for each workload in the [Container Management](../../kpanda/user-guide/workloads/create-deployment.md) module.

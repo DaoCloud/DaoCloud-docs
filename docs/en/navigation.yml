@@ -37,10 +37,10 @@ nav:
       - Container Management:
           - Intro:
               - What is Container Management: kpanda/intro/what.md
-              - Features: kpanda/intro/feature.md
-              - Benefits: kpanda/intro/benefit.md
-              - Scenarios: kpanda/intro/scenario.md
-              - Concepts: kpanda/intro/concept.md
+              - Features: kpanda/intro/features.md
+              - Benefits: kpanda/intro/benefits.md
+              - Scenarios: kpanda/intro/scenarios.md
+              - Concepts: kpanda/intro/concepts.md
               - Release Notes: kpanda/intro/release-notes.md
               - Lastest News: kpanda/intro/news.md
           - Clusters:
@@ -423,8 +423,8 @@ nav:
       - Service Mesh:
           - Intro:
               - What is service mesh: mspider/intro/what.md
-              - Features: mspider/intro/features.md
-              - Scenarios: mspider/intro/scenarios.md
+              - Features: mspider/intro/feature.md
+              - Scenarios: mspider/intro/scenario.md
               - Features supported on UI: mspider/intro/meshes.md
               - Permissions: ghippo/permissions/mspider.md
               - Architecture: mspider/intro/architect.md
