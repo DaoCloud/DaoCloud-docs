@@ -3,40 +3,41 @@ hide:
   - toc
 ---
 
-# Appearance customization
+# Customize Appearance
 
-In DCE 5.0, you can change the logo on the login interface and the top navigation bar through `Appearance Customization` to help users better identify products.
+In DCE 5.0, you have the option to customize the appearance of the login interface and top navigation bar to enhance product recognition for your users.
 
-## Custom login page and top nav bar
+## Customizing Login Page and Top Navigation Bar
 
-1. Log in to the web console as a user with `admin` role. Click `Global Management` - `Custom Appearance` at the bottom of the left navigation bar.
+1. To get started, log in to the web console as an `admin` user and navigate to `Global Management` -> `Settings` found at the bottom of the left navigation bar.
 
-    
+    ![settings](../../images/appear01.png)
 
-2. Click `Platform Settings` and select `Custom Appearance`.
+2. Select `Appearance`. On the `Custom your login page` tab, modify the icon and text of the login page as needed, then click `Save`.
 
-    
+    ![login](../../images/appear02.png)
 
-3. In the `Login Page Customization` tab, after modifying the icon and text of the login page, click `Save`.
+3. On the `Custom top navigation bar` tab, modify the icon and text of the navigation bar as needed, then click `Save`.
 
-    
+    ![nav](../../images/appear03.png)
 
-4. Click the `Top Nav Bar Customization` tab, modify the icon and text of the navigation bar, and click `Save`.
+4. On the `Custom filing and registration` tab, modify the ICP registration and cybersecurity infomration.
 
-    
+    ![registration](../../images/appear04.png)
 
 !!! note
 
-    If you want to restore the default settings, you can click `One Key Restore`. Note that all custom settings will be discarded after a one-click restore.
+    If you wish to restore the default settings, simply click `Revert`. This action will discard all customized settings.
 
-## Advanced customization
+## Advanced Customization
 
-Advanced customization can modify the color, font spacing, font size, etc. of the entire container platform through CSS styles.
-You need to be familiar with CSS syntax. Delete the contents of the black input box to restore to the default state, of course, you can also click the `one-key restore` button.
+Advanced customization allows you to modify the color, font spacing, font size, etc. of the entire container platform using CSS styles. Please note that familiarity with CSS syntax is required.
 
+![advanced](../../images/appear05.png)
 
+To reset any advanced customizations, delete the contents of the black input box or click the `Revert` button.
 
-**CSS sample for login page customization:**
+**Sample CSS for Login Page Customization:**
 
 ```css
 .test {

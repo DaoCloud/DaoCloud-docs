@@ -24,7 +24,7 @@
 
     安装 Multus 之前, 必须要先安装一种 CNI 作为默认CNI。注意: 保证选择的 Value 必须与集群目前安装的默认 CNI 保持一致。
 
-    !!! Note:
+    !!! note:
 
         如果当前通过 kubean 安装的集群，那么 value 为 calico 或者 cilium 中二选一。
         或通过查看主机：`/etc/cni/net.d/` 路径，按照字典顺序第一个 CNI 配置文件的 `name` key 所对应的 Value 值就为默认 CNI。比如：

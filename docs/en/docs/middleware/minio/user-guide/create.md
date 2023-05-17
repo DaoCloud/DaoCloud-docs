@@ -46,7 +46,7 @@ hide:
         - Cluster: Traffic can be forwarded to Pods on other nodes in the cluster
         - Local: Traffic can only be forwarded to Pods on this node
 
-    - Console account: the user name and password needed to access this newly created instance
+    - Console account: the username and password needed to access this newly created instance
         
         <!--screenshot-->
 

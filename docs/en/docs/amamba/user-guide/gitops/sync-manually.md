@@ -7,7 +7,7 @@ hide:
 
 This page demonstrates how to manually sync a continuously deployed application.
 
-1. On the `Application Workbench` -> `Continuous Publishing` page, click the name of an application whose synchronization status is `Not Synchronized`.
+1. On the `Application Workbench` -> `continuous delivery` page, click the name of an application whose synchronization status is `Not Synchronized`.
 
     <!--![]()screenshots-->
 

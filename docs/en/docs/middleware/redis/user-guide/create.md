@@ -19,7 +19,7 @@ After accessing the Redis cache service, follow the steps below to create a Redi
 
     <!--screenshot-->
 
-4. Set `service settings` such as user name and password, and use ClusterIP as the access method by default.
+4. Set `service settings` such as username and password, and use ClusterIP as the access method by default.
 
     <!--screenshot-->
 

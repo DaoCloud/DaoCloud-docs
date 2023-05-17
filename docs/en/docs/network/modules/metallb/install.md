@@ -27,7 +27,7 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
 4. In the installation screen, initialize Metallb ARP mode.
 
-    !!! Note
+    !!! note
 
         - If ARP mode is enabled during installation, please turn on Ready Wait.
 

@@ -120,7 +120,7 @@ You only need to restore the data of one node, and the etcd data of other nodes 
     ```
 
     1. Access points for S3 storage
-    2. S3 Stored User Name
+    2. S3 Stored username
     3. S3 Stored Password
 
 2. Perform the restore operation

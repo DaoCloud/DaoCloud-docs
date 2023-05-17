@@ -209,7 +209,7 @@ How to change `BlockSize`:
 
 4. Delete all previous Pods
 
-    !!! Note
+    !!! note
     
         This step needs to delete all Pods under `default-ipv4-ippool`, so the connectivity of Pods will be temporarily interrupted, please do this operation at the right time.
 

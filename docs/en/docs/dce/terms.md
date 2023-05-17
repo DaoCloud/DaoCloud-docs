@@ -1939,13 +1939,13 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     Users can modify user information, set passwords, access keys, and UI languages in the personal center.
 
-- User namespace
+- user namespace
 
     A Linux kernel feature that simulates superuser privileges for non-privileged users. It is used to simulate the kernel feature of the root user to support "Rootless containers".
 
-    User Namespace is a Linux kernel feature that allows non-root users to simulate the privileges of the superuser ("root"), for example, to run containers without having to be a superuser outside the container.
+    user namespace is a Linux kernel feature that allows non-root users to simulate the privileges of the superuser ("root"), for example, to run containers without having to be a superuser outside the container.
 
-    User namespaces are effective in mitigating potential container escape attacks.
+    user namespaces are effective in mitigating potential container escape attacks.
 
     In the context of user namespaces, namespaces are a Linux kernel feature rather than the namespace concept in Kubernetes.
 

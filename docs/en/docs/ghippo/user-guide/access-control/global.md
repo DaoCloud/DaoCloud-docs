@@ -2,7 +2,7 @@
 
 ## Applicable scenarios
 
-If you need to set up administrators for sub-modules to further manage user/group permissions through administrators, you can use roles in users and access control. Possessing this role means having the highest administrative authority for this submodule.
+If you need to set up administrators for sub-modules to further manage user/group permissions through administrators, you can use roles in Access Control. Possessing this role means having the highest administrative authority for this submodule.
 
 !!! note
 

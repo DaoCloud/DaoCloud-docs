@@ -23,7 +23,7 @@ The submodule administrator role needs to be configured in the global management
 
     
 
-- In the role list of `Global Management` -> `Users and Access Control` -> `Roles`, find the corresponding submodule administrator role, click the role name to enter the details, click the `Associate Member` button, select the user or The group to which the user belongs, click `OK`.
+- In the role list of `Global Management` -> `Access Control` -> `Roles`, find the corresponding submodule administrator role, click the role name to enter the details, click the `Associate Member` button, select the user or The group to which the user belongs, click `OK`.
 
     
 

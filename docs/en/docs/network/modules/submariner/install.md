@@ -26,7 +26,7 @@ This page describes how to install Submariner.
 
 ## Steps
 
-!!! Note
+!!! note
 
     `submariner-k8s-broker` can be deployed in a single cluster or in a subcluster of Join. This page shows the installation process with `submariner-k8s-broker` deployed in a single cluster as an example.
 
