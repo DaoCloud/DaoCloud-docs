@@ -9,7 +9,7 @@ hide:
 Submariner 是一款开源的多集群网络解决方案，它以一种安全的方式实现了跨集群间 Pod 与 Service 连通性，并且通过 Lighthouse 组件实现
 [KMCS](https://github.com/kubernetes/enhancements/tree/master/keps/sig-multicluster/1645-multi-cluster-services-api) 以提供跨集群的服务发现能力。
 
-**架构图** 如下:
+**架构图**:
 
 ![submariner](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner.png)
 

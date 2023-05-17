@@ -80,7 +80,7 @@
     |测试用例|结论|
     |----|----|
     |Pod 和节点间，位于同节点| macvlan-standalone 吞吐量最大，cilium vxlan 最小|
-    |Pod 和节点间，位于不同节点|caico-ipip、calico-underlay 和 macvlan-standalone 性能较好，calico-vxlan、cilium-vxlan 较差|
+    |Pod 和节点间，位于不同节点|Calico-ipip、calico-underlay 和 macvlan-standalone 性能较好，calico-vxlan、cilium-vxlan 较差|
     |Pod 和 Pod 间，位于同节点|macvlan 性能最好，cilium 次之，calico 三种模式表现相近，性能都较差|
     |Pod 和 Pod 间，位于不同节点|macvlan 性能最好，cilium-vxlan 次之，calico 较差|
 
