@@ -1,6 +1,6 @@
 # Service Monitoring
 
-Observability Insight provides monitoring of service metrics, and can view key metrics such as real-time throughput, number of requests, request delay, and error rate of services.
+Insight provides monitoring of service metrics, and can view key metrics such as real-time throughput, number of requests, request delay, and error rate of services.
 
 ## Prerequisites
 

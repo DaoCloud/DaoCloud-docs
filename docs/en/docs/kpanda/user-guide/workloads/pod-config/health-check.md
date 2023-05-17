@@ -6,7 +6,7 @@ Container health check checks the health status of containers according to user 
 
 - **ReadinessProbe** can detect when a container is ready to accept request traffic. A Pod can only be considered ready when all containers in a Pod are ready. One use of this signal is to control which Pod is used as the backend of the Service. If the Pod is not ready, it will be removed from the Service's load balancer.
 
-- **Startup check (StartupProbe)** can know when the application container is started. After configuration, it can control the container to check the viability and readiness after it starts successfully, so as to ensure that these liveness and readiness probes will not affect the start of the application. . Startup detection can be used to perform liveness checks on slow-starting containers, preventing them from being killed before they start running.
+- **Startup check (StartupProbe)** can know when the application container is started. After configuration, it can control the container to check the viability and readiness after it starts successfully, so as to ensure that these liveness and readiness probes will not affect the start of the application. Startup detection can be used to perform liveness checks on slow-starting containers, preventing them from being killed before they start running.
 
 ## Liveness and readiness checks
 

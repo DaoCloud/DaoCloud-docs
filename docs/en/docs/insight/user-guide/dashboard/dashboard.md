@@ -5,7 +5,7 @@ hide:
 
 # dash board
 
-Grafana is a cross-platform open source visual analysis tool. Observability Insight uses open source Grafana to provide monitoring services, and supports viewing resource consumption from multiple dimensions such as clusters, nodes, and namespaces.
+Grafana is a cross-platform open source visual analysis tool. Insight uses open source Grafana to provide monitoring services, and supports viewing resource consumption from multiple dimensions such as clusters, nodes, and namespaces.
 
 For more information on open source Grafana, see [Grafana Official Documentation](https://grafana.com/docs/grafana/latest/getting-started/?spm=a2c4g.11186623.0.0.1f34de53ksAH9a).
 

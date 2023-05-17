@@ -6,9 +6,9 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 ### v0.16.0
 
-!!! Warning
+!!! warning
 
-     Observability Insight v0.16.0 uses the new feature parameter `disableRouteContinueEnforce` of vmalertmanagers CRD, before upgrading insight server, please refer to: [Upgrade from v0.15.x (or earlier) to v0.16.x](. ./user-guide/quickstart/upgrade-note.md/#Upgrade from -v015x or lower to -v016x)
+     Insight v0.16.0 uses the new feature parameter `disableRouteContinueEnforce` of vmalertmanagers CRD, before upgrading insight server, please refer to: [Upgrade from v0.15.x (or earlier) to v0.16.x](../user-guide/quickstart/upgrade-note.md)
 
 #### New
 
