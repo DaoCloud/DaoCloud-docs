@@ -8,7 +8,7 @@ The following is a description of the parameters of the graphical pipeline task 
 | -------- | ----------------------------------------- ---------------- |
 | Code Warehouse | Fill in the address of the remote code warehouse |
 | Branch | Fill in which branch you want to build the pipeline based on, the default is `master` |
-| Credentials | For private warehouses, you need to [create credentials](../credential.md) in advance and select the corresponding credentials when using |
+| Credentials | For private warehouses, you need to [create credentials](../credentials.md) in advance and select the corresponding credentials when using |
 
 ## Shell
 
@@ -56,7 +56,7 @@ If the execution time of the current task exceeds the timeout period, the task w
 | parameter | description |
 | --- | --- |
 | Code repository | Fill in the remote svn address, for example `http://svn.apache.org/repos/asf/ant/` |
-| Credentials | For private warehouses, you need to [create credentials](../credential.md) in advance and select the corresponding credentials when using |
+| Credentials | For private warehouses, you need to [create credentials](../credentials.md) in advance and select the corresponding credentials when using |
 
 ## Collect test reports
 

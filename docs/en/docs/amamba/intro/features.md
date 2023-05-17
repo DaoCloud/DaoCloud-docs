@@ -25,7 +25,7 @@ Application Workbench provides the following features:
 
     Manages different types of credentials for code repositories and image registries used in a pipeline.
 
-- Continuous Deployment
+- GitOps
 
     Introduces the concept of GitOps to achieve continuous deployment of applications, which helps control the application release and deployment process after code building.
 
@@ -43,3 +43,7 @@ Application Workbench provides the following features:
     - Supports advanced release policies such as Canary release, Blue/Green deployment, and A/B Testing.
     - Canary release supports automated progressive release.
     - Supports quick rollback based on metric analysis.
+
+- Toolchain Integration
+
+    This means you can integrate your favorite DevOps tools as a toolchain, no need to log into multiple platforms and dealing with different views of these tools.

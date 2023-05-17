@@ -1,24 +1,24 @@
-# Pipeline template file
+## Pipeline Template File
 
-The pipeline template file mainly consists of two parts: `parameterDefinitions` and `jenkinsfileTemplate`.
+The pipeline template file mainly contains two parts: `parameterDefinitions` and `jenkinsfileTemplate`.
 
-- `parameterDefinitions` area: defines which parameters are exposed by the pipeline template. Multiple parameter types are supported such as Boolean, dropdown, credential, password, text, etc.
-- `jenkinsfileTemplate` area: defines the `jenkinsfile` of the Jenkins pipeline, and can refer to the parameters exposed in `parameterDefinitions`.
+- The `parameterDefinitions` section defines which parameters are exposed in the pipeline template. Multiple parameter types are supported, such as booleans, drop-down lists, credentials, passwords, and text.
+- The `jenkinsfileTemplate` section defines a `jenkinsfile` for the Jenkins pipeline and can reference the parameters exposed in `parameterDefinitions` part.
 
-## `parameterDefinitions` section
+## `parameterDefinitions` Section
 
-| Field | Type | Description | Default | Required |
+| Field | Type | Description | Default Value | Required |
 | --- | --- | --- | --- | --- |
-| name | string | parameter name | - | required |
-| displayName | []byte | The name displayed on the form, the length is less than X characters | "" | optional |
-| description | string | description of the parameter | "" | optional |
-| default | json.Value | default value, if filled, the field is optional, otherwise it is required | nil | not required |
-| type | string | For parameter type support, please refer to the parameter type (need to link to the following) | string | required |
+| name | string | Parameter name | - | Required |
+| displayName | []byte | Name displayed on the UI form, less than X characters | "" | Optional |
+| description | string | Parameter description | "" | Optional |
+| default | json.Value | Set a default value for the corresponding parameter | nil | Optional |
+| type | string | Parameter type (booleans, drop-down lists, credentials, passwords, or text)| string | Required |
 
-## Supported parameter types
+## Supported Parameter Types
 
-- boolean: Boolean value, the default value can only be `true` or `false`
-- choice: a drop-down list, a default value must be provided, for example
+- boolean: a Boolean value, with a default value of either `true` or `false`
+- choice: a drop-down list, must provide a default value, for example,
 
     ```yaml
     type: choice
@@ -27,20 +27,20 @@ The pipeline template file mainly consists of two parts: `parameterDefinitions` 
       - choice 2
     ```
 
-- credential: Credentials, which will get the list of credentials under the current workspace
-- password: password
-- text: text, input box
+- credential: a credential, which can obtain the credential list in the current workspace
+- password: a password
+- text: a text input box
 
-## Template file example
+## Example Template File
 
 ```yaml
 parameterDefinitions:
   - name: gitCloneURL
-    displayName: code warehouse address
+    displayName: code repo address
     description: The git clone url of the source code
     type: string
   - name: gitRevision
-    displayName: code warehouse branch
+    displayName: code repo branch
     description: The git revision of the source code
     type: string
     default: master
@@ -74,7 +74,7 @@ parameterDefinitions:
     type: string
     default: latest
   - name: registryCredential
-    displayName: mirror repository credentials
+    displayName: image repository credentials
     description: The credential to access the image registry
     type: credential
     default: ""
