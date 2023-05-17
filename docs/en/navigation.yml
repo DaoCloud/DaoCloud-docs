@@ -151,6 +151,10 @@ nav:
               - Enable/disable Capture: ghippo/user-guide/open-audit.md
               - Enable/disable K8s Audit Log: ghippo/user-guide/open-k8s-audit.md
               - Download and Export: ghippo/user-guide/audit-log.md
+          - Operation Management:
+              - ghippo/user-guide/report-billing/index.md
+              - Reports: ghippo/user-guide/report-billing/report.md
+              - Billing and Accounting: ghippo/user-guide/report-billing/billing.md
           - Platform Settings:
               - Security Policies: ghippo/user-guide/platform-setting/security.md
               - Mail Server Settings: ghippo/user-guide/platform-setting/mail-server.md
