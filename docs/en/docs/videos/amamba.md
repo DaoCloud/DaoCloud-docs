@@ -10,7 +10,7 @@
 
 ## Create namespace
 
-See the [Namespace Management](../amamba/user-guide/Namespace/namespace.md) documentation page.
+See the [Namespace Management](../amamba/user-guide/namespace/namespace.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-ns.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>

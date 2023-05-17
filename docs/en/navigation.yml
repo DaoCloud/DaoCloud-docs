@@ -251,7 +251,7 @@ nav:
               - What is Application Workbench?: amamba/intro/what.md
               - Features: amamba/intro/features.md
               - Advantages: amamba/intro/benefits.md
-              - Applicable Scenarios: amamba/intro/scenarios.md
+              - Applicable Scenarios: amamba/intro/scenario.md
               - Basic Concepts: amamba/intro/concepts.md
               - Permissions: amamba/intro/permission.md
               - Release Notes: amamba/intro/release-notes.md
@@ -277,8 +277,8 @@ nav:
                   - Graphical task template parameters: amamba/user-guide/pipeline/config/step.md
                   - Pipeline Node (Agent): amamba/user-guide/pipeline/config/agent.md
               - Pipeline Template:
-                  - Custom Pipeline Template: amamba/user-guide/pipeline/template/custom-template.md
-                  - Pipeline Template: amamba/user-guide/pipeline/template/info.md
+                  - Custom Template: amamba/user-guide/pipeline/template/custom-template.md
+                  - Template File: amamba/user-guide/pipeline/template/info.md
               - Credentials: amamba/user-guide/pipeline/credential.md
           - GitOps:
               - Manually Sync App: amamba/user-guide/gitops/sync-manually.md

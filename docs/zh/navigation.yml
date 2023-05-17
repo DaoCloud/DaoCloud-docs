@@ -278,8 +278,8 @@ nav:
                   - 图形化任务模板参数: amamba/user-guide/pipeline/config/step.md
                   - 流水线节点(Agent): amamba/user-guide/pipeline/config/agent.md
               - 流水线模板:
-                  - 自定义流水线模板: amamba/user-guide/pipeline/template/custom-template.md
-                  - 流水线模板文件: amamba/user-guide/pipeline/template/info.md
+                  - 自定义模板: amamba/user-guide/pipeline/template/custom-template.md
+                  - 模板说明: amamba/user-guide/pipeline/template/info.md
               - 凭证管理: amamba/user-guide/pipeline/credential.md
           - GitOps:
               - 手动同步应用: amamba/user-guide/gitops/sync-manually.md
