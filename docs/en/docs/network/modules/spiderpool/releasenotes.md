@@ -2,6 +2,30 @@
 
 This page lists the Release Notes of Spidernet, so that you can understand the evolution path and feature changes of each version.
 
+## 2022-04-28
+
+### v0.6.0
+
+Adapted to **Spiderpool version** : `v0.4.1`
+
+#### Fixes
+
+- **Fixed** Pointer error when viewing workload on single stack
+- **Fixed** Controller timeout when adding large number of IPs
+- **Fixed** Affinity can be filled in Chinese
+- **Fixed** Workload name does not match with namespace
+- **Fixed** Auto pool display problem
+- **Fixed** Route deletion issue
+- **Fixed** Paging number display issue
+- **Fixed** Get IP pools by Pod issue
+- **Fixed** Cache issue with sequential fast delete
+
+#### Features
+
+- **Added** Fill in VLAN ID when creating IP pools
+- **Added** Show IP total and used number
+- **Added** `e2e` automatically uses the latest version of the DCE component
+
 ## 2022-03-28
 
 ### v0.5.0
@@ -26,7 +50,7 @@ This page lists the Release Notes of Spidernet, so that you can understand the e
 
 #### Optimization
 
-- **Optimization** Adjust the CPU memory Request value.
+- **Optimized** Adjust the CPU memory Request value.
 
 #### Fixes
 
@@ -44,15 +68,15 @@ This page lists the Release Notes of Spidernet, so that you can understand the e
 
 #### Optimization
 
-- **Optimize** resource usage, reduce CPU and memory requests.
+- **Optimized** resource usage, reduce CPU and memory requests.
 
 ### v0.4.2
 
 #### Optimization
 
-- **Optimize** resource usage, reduce CPU and memory requests.
-- **Optimization** Subnet or IPPool cannot be deleted when IP is occupied.
-- **Optimize** pagination issue
+- **Optimized** resource usage, reduce CPU and memory requests.
+- **Optimized** Subnet or IPPool cannot be deleted when IP is occupied.
+- **Optimized** pagination issue
 
 ### v0.4.1
 
@@ -68,4 +92,4 @@ This page lists the Release Notes of Spidernet, so that you can understand the e
 
 #### Optimization
 
-- **Optimize** resource usage, reduce CPU and memory requests.
+- **Optimized** resource usage, reduce CPU and memory requests.

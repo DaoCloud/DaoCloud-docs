@@ -345,11 +345,11 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      [Finch](https://github.com/runfinch/finch) can be used to build, run and distribute Linux containers. It provides native, extensible macOS client installers for open source tools such as Lima, nerdctl, containerd, and BuildKit, simplifying the use of Containerd on macOS. users can use Finch to create and execute containers on the local side, and to publish OCI container image files.
 
-- [Flagger Progressive Delivery Attack v1.31.0 Released (CNCF Project)](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1310)
+- [Flagger Progressive Delivery Project v1.31.0 Released (CNCF Project)](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1310)
 
     Version features: Support for Service Mesh Linkerd 2.12 and higher, removal of OSM e2e testing.
 
-- [Flagger Progressive Delivery Attack v1.22.0 released (CNCF project)](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1220)
+- [Flagger Progressive Delivery Project v1.22.0 released (CNCF project)](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1220)
 
      The main new features of this version: support for replacing HPA with KEDA ScaledObjects, adding namespace parameters in the parameter table, and adding an optional `appProtocol` field for Canary.Service.
 
