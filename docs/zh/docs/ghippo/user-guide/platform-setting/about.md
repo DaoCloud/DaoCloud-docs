@@ -17,10 +17,6 @@ hide:
 
     ![关于平台](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/about05.png)
 
-    **产品版本**
-
-    ![产品版本](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/about01.png)
-
     **License 声明**
 
     ![license 声明](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/about02.png)

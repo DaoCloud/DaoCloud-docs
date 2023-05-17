@@ -54,7 +54,7 @@ Prerequisite: Managed Harbor and registry space have been created
 
     
 
-1. Enter the user name and password set when creating managed Harbor to enter native Harbor
+1. Enter the username and password set when creating managed Harbor to enter native Harbor
 
     
 

@@ -51,7 +51,7 @@ This page describes how to create subnets and IP pools before creating workloads
 
 5. On the subnet details page, click `Create IP Pool`.
 
-    !!! Note
+    !!! note
 
         Creating an IP pool is optional.
 
@@ -68,7 +68,7 @@ This page describes how to create subnets and IP pools before creating workloads
     - `Node Affinity`: a node label (such as `node:controller-1`). After the IP pool is created, the workload Pod needs to be scheduled to the corresponding node to use the created IP pool.
     - `Namespace Affinity`: After enabling it, you can select the corresponding namespace. After selecting, only workloads in the corresponding namespace can use the created IP pool.
 
-    !!! Note
+    !!! note
 
         If no affinity is added at creation time, the created IP pool will be a `shared IP pool`.
 

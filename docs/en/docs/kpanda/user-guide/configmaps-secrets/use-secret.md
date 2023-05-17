@@ -138,4 +138,4 @@ When creating a workload through an image, you can use the key as the data volum
 
 !!! note
 
-     When creating a key, you need to ensure that you enter the correct image registry address, user name, password, and select the correct mirror name, otherwise you will not be able to obtain the mirror image in the image registry.
+     When creating a key, you need to ensure that you enter the correct image registry address, username, password, and select the correct mirror name, otherwise you will not be able to obtain the mirror image in the image registry.

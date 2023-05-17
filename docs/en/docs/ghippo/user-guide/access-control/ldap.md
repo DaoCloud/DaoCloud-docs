@@ -16,7 +16,7 @@ In global management, the operation steps are as follows:
 
     
 
-1. Navigate to `Users and Access Control` under `Global Administration`, select `Create an Identity Provider`.
+1. Navigate to `Access Control` under `Global Administration`, select `Create an Identity Provider`.
 
     
 

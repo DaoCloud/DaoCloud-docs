@@ -14,7 +14,7 @@ This page outlines the steps on how to obtain the address for data uploads.
 
 !!! note
 
-    If you use an external ElasticSearch cluster, please fill in the address, user name and password of the corresponding cluster.
+    If you use an external ElasticSearch cluster, please fill in the address, username and password of the corresponding cluster.
 
 ## Install insight-agent in `global service cluster`
 

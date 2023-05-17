@@ -26,7 +26,7 @@ If you choose to use SSH keys to connect to all the nodes of the cluster to be c
     scp /root/.ssh/id_rsa.pub root@10.0.0.0:/root/.ssh/id_rsa.pub
     ```
 
-    Replace the root@10.0.0.0 user account and IP in the above command with the user name and IP of the node to create the cluster. Each planned node of the cluster to be created needs to perform the same operation.
+    Replace the root@10.0.0.0 user account and IP in the above command with the username and IP of the node to create the cluster. Each planned node of the cluster to be created needs to perform the same operation.
 
 4. Base 64 encode the private key file `id_rsa`.
 

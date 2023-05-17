@@ -55,7 +55,7 @@ This page lists the release notes of the image registry, so that you can underst
 - Support to create managed `harbor`, support to modify `Admin` password, resource quota, `Redis` instance, access type
 - Support for creating hosted `harbor` Support for automatic creation of image scanners
 - Support registry integration, associate registrys to verify user passwords and user permissions
-     - Support registry integration to verify that the user name and password are correct, and ensure that the user has administrator privileges
+     - Support registry integration to verify that the username and password are correct, and ensure that the user has administrator privileges
      - Support associated registrys to verify that the username and password are correct
 - Add fuzzy query to support registry integration list
 - Support page editing `Project` as public or private

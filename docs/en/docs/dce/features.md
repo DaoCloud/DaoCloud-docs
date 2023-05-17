@@ -19,7 +19,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - Full lifecycle management of clusters, realizing the full lifecycle management of self-build cloud native clusters.
 
-- Open API ability, providing native Kubernetes Open API ability.
+- openAPI ability, providing native Kubernetes openAPI ability.
 
 === "Cloud native application management"
 

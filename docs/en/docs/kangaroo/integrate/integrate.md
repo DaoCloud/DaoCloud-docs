@@ -27,4 +27,4 @@ Or set the registry space as public for use by all namespaces of the platform.
 
 1. Click `registry Integration` on the left navigation bar, and click the `registry Integration` button in the upper right corner.
 
-1. Select the registry type, fill in the integration name, registry address, user name and password to integrate the external container registry into the platform.
+1. Select the registry type, fill in the integration name, registry address, username and password to integrate the external container registry into the platform.
