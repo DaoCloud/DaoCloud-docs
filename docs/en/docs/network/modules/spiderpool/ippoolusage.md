@@ -48,7 +48,7 @@ At the same time, when the workload is created:
 
 If the created IPPool is only assigned to a certain namespace, the IP in this IPPool can be used when the workload in this namespace is created, and the IPPool with namespace affinity is added to be shared by the specified namespace. For the operation method, please refer to [Create subnet and IPPool](createpool.md).
 
-## FAQ
+## FAQs
 
 1. Question: What is the final effect of adding namespace affinity and adding workload affinity, or node affinity?
 
@@ -60,6 +60,5 @@ If the created IPPool is only assigned to a certain namespace, the IP in this IP
 
     1. 10.6.124.10~19 is assigned to the workload01 under the `default` namespace and is **fixed**.
     2. 10.6.124.20~29 is assigned to the workload02 under the `default` namespace and is **fixed**.
-    3. ...
 
     Answer: No, it cannot. It only can be used for **one** workload and be **fixed**. The usage method is to add the affinity of the corresponding workload to the IPPool at the same time.

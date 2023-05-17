@@ -34,4 +34,4 @@ MySQL has the following product advantages.
 
     - MySQL is compatible with Intel CPUs and domestic CPUs (such as Feiteng ARM, Huawei Kunpeng ARM and Haiguang x86, etc.), compatible with domestic operating systems (such as Kirin operating system v10, Tongxin server operating system UOS, etc.), all of which have authorized electronic certificates and certificates.
 
-    - It has an open architecture and provides an open standard API interface to ensure that resources and services such as basic capabilities, management services, logs, and monitoring are efficiently scheduled, managed, and used, and supports third-party management platforms to achieve related orchestration and use through API interfaces, etc. .
+    - It has an open architecture and provides an open standard API interface to ensure that resources and services such as basic capabilities, management services, logs, and monitoring are efficiently scheduled, managed, and used, and supports third-party management platforms to achieve related orchestration and use through API interfaces, etc.
