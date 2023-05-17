@@ -15,7 +15,7 @@ Falco-exporter is deployed as a DaemonSet on a Kubernetes cluster. If Prometheus
 
 This section describes how to install Falco-exporter.
 
-!!! Note
+!!! note
 
     Before installing and using Falco-exporter, you need to [install](./falco/install.md) and run Falco with gRPC output enabled (enabled by via Unix sockets by default). For more information on enabling gRPC output in Falco Helm Chart, see [Enabling gRPC](https://github.com/falcosecurity/charts/tree/master/falco#enabling-grpc).
 

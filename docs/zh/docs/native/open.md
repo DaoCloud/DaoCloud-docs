@@ -349,11 +349,11 @@
     它为 Lima、nerdctl、containerd 和 BuildKit 等开源工具提供了原生的、可扩展的 macOS 客户端安装程序，简化在 macOS 上使用 Containerd。
     用户可以使用 Finch 在本地端创建和执行容器，并发布 OCI 容器镜像文件。
 
-- [Flagger 进式交付攻击 v1.31.0 发布（CNCF 项目）](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1310)
+- [Flagger 渐进式交付项目 v1.31.0 发布（CNCF 项目）](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1310)
 
     版本特性：支持服务网格 Linkerd 2.12 及更高版本、删除 OSM e2e 测试。
 
-- [Flagger 渐进式交付攻击 v1.22.0 发布（CNCF 项目）](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1220)  
+- [Flagger 渐进式交付项目 v1.22.0 发布（CNCF 项目）](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1220)  
 
     该版本主要新特性：支持以 KEDA ScaledObjects 替代 HPA、在参数表中添加命名空间参数、为 Canary.Service 添加可选的 `appProtocol` 字段。
 

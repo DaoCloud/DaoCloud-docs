@@ -12,7 +12,7 @@ This section describes how to create an pipeline by compiling, constructing, and
 
 1. Create two credentials on the `Credential` page:
 
-    - docker-credential: The user name and password used to access the image repository.
+    - docker-credential: The username and password used to access the image repository.
     - demo-dev-kubeconfig: Used to access the Kubernetes cluster using this kubeconfig.
 
 2. After the creation is complete, you can see the credential information on the `Credential List` page.
@@ -81,7 +81,7 @@ This section describes how to create an pipeline by compiling, constructing, and
 
         - Credentials: Select the Docker hub credentials created for users to access the image repository.
         - Password variable: PASS
-        - USER name variable: USER
+        - username variable: USER
 
         <!--![]()screenshots-->
 

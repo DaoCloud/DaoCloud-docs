@@ -6,7 +6,7 @@ DCE 5.0 provides security policies based on passwords and access control on the 
 
 - The new password cannot be the same as the most recent historical password.
 - After the password expires, the system will force you to change the password.
-- the password and user name can not not be the same.
+- the password and username can not not be the same.
 - The password cannot be the same as the user's email address.
 - Customize password rules.
 - Custom password minimum length.

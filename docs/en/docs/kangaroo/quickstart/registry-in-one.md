@@ -40,7 +40,7 @@ Registry integration is the entrance to the container registry of the centralize
 
     
 
-1. Select the registry type, fill in the integration name, registry address, user name and password, and click `OK`.
+1. Select the registry type, fill in the integration name, registry address, username and password, and click `OK`.
 
     
 

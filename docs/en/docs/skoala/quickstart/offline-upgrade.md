@@ -39,9 +39,9 @@ After downloading the image to your local node, you need to sync the latest imag
         3. Change to your image registry
         4. Can be any of the supported Helm Chart registries
         5. Change to chart repo url
-        6. Your image registry user name
+        6. Your image registry username
         7. Your image registry password
-        8. Your image registry user name
+        8. Your image registry username
         9. Your image vault password
 
     === "chart repo not installed"
@@ -67,7 +67,7 @@ After downloading the image to your local node, you need to sync the latest imag
         2. Change to your image registry url
         3. Change to your image registry
         4. chart local path
-        5. Your image registry user name
+        5. Your image registry username
         6. Your image vault password
 
 2. Run this command to sync the image.

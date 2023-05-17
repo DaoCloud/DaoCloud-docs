@@ -345,11 +345,11 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      [Finch](https://github.com/runfinch/finch) can be used to build, run and distribute Linux containers. It provides native, extensible macOS client installers for open source tools such as Lima, nerdctl, containerd, and BuildKit, simplifying the use of Containerd on macOS. users can use Finch to create and execute containers on the local side, and to publish OCI container image files.
 
-- [Flagger Progressive Delivery Attack v1.31.0 Released (CNCF Project)](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1310)
+- [Flagger Progressive Delivery Project v1.31.0 Released (CNCF Project)](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1310)
 
     Version features: Support for Service Mesh Linkerd 2.12 and higher, removal of OSM e2e testing.
 
-- [Flagger Progressive Delivery Attack v1.22.0 released (CNCF project)](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1220)
+- [Flagger Progressive Delivery Project v1.22.0 released (CNCF project)](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1220)
 
      The main new features of this version: support for replacing HPA with KEDA ScaledObjects, adding namespace parameters in the parameter table, and adding an optional `appProtocol` field for Canary.Service.
 
@@ -867,7 +867,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Narrows: Cloud-native security detector open-sourced by VMware that adds dynamic scanning for container security on Harbor](https://mp.weixin.qq.com/s/xJ1Sx5pc0rKkJaYopD-vjw)
 
-    [Narrows](https://github.com/vmware-tanzu/cloud-native-security-inspector) enables runtime security posture assessment of Kubernetes clusters and the workloads within them, finds misconfigurations in Kubernetes clusters, and Ability to aggregate, aggregate, and analyze scan reports and provide an open API; seamlessly integrate with Harbor and automatically sync images from external public image repositories to Harbor to generate security data.
+    [Narrows](https://github.com/vmware-tanzu/cloud-native-security-inspector) enables runtime security posture assessment of Kubernetes clusters and the workloads within them, finds misconfigurations in Kubernetes clusters, and Ability to aggregate, aggregate, and analyze scan reports and provide an openAPI; seamlessly integrate with Harbor and automatically sync images from external public image repositories to Harbor to generate security data.
 
 - [nerdctl Containerd command line tool v1.3.0 released](https://github.com/containerd/nerdctl/releases/tag/v1.3.0)
 

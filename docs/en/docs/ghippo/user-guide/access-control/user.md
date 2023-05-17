@@ -1,7 +1,7 @@
 # User
 
-A user refers to a user created by the platform administrator Admin or the access control administrator IAM Admin on the `Global Management` -> `Users and Access Control` -> `Users` page, or a user connected through LDAP / OIDC .
-The user name represents the account, and the user logs in to the DaoCloud Enterprise platform through the user name and password.
+A user refers to a user created by the platform administrator Admin or the access control administrator IAM Admin on the `Global Management` -> `Access Control` -> `Users` page, or a user connected through LDAP / OIDC .
+The username represents the account, and the user logs in to the DaoCloud Enterprise platform through the username and password.
 
 Having a user account is a prerequisite for users to access the platform. The newly created user does not have any permissions by default. For example, you need to assign corresponding role permissions to users, such as granting administrator permissions to submodules in `User List` or `User Details`.
 The sub-module administrator has the highest authority of the sub-module, and can create, manage, and delete all resources of the module.
@@ -13,11 +13,11 @@ This page introduces operations such as creating, authorizing, disabling, enabli
 
 Prerequisite: You have the platform administrator Admin permission or the access control administrator IAM Admin permission.
 
-1. The administrator enters `Users and Access Control`, selects `Users`, enters the user list, and clicks `Create User` on the upper right.
+1. The administrator enters `Access Control`, selects `Users`, enters the user list, and clicks `Create User` on the upper right.
 
     
 
-2. Fill in the user name and login password on the `Create User` page. If you need to create multiple users at one time, you can click `Create User` to create in batches, and you can create up to 5 users at a time. Determine whether to set the user to reset the password when logging in for the first time according to your actual situation.
+2. Fill in the username and login password on the `Create User` page. If you need to create multiple users at one time, you can click `Create User` to create in batches, and you can create up to 5 users at a time. Determine whether to set the user to reset the password when logging in for the first time according to your actual situation.
 
     
 
@@ -31,7 +31,7 @@ Prerequisite: You have the platform administrator Admin permission or the access
 
 Prerequisite: The user already exists.
 
-1. The administrator enters `Users and Access Control`, selects `Users`, enters the user list, and clicks `...` -> `Authorization`.
+1. The administrator enters `Access Control`, selects `Users`, enters the user list, and clicks `...` -> `Authorization`.
 
     
 
@@ -47,7 +47,7 @@ Prerequisite: The user already exists.
 
 ## Add user to group
 
-1. The administrator enters `Users and Access Control`, selects `Users`, enters the user list, and clicks `...` -> `Add group`.
+1. The administrator enters `Access Control`, selects `Users`, enters the user list, and clicks `...` -> `Add group`.
 
     
 
@@ -65,7 +65,7 @@ Prerequisite: The user already exists.
 
 Once a user is deactivated, that user will no longer be able to access the Platform. Unlike deleting a user, a disabled user can be enabled again as needed. It is recommended to disable the user before deleting it to ensure that no critical service is using the key created by the user.
 
-1. The administrator enters `Users and Access Control`, selects `Users`, enters the user list, and clicks a user name to enter user details.
+1. The administrator enters `Access Control`, selects `Users`, enters the user list, and clicks a username to enter user details.
 
     
 
@@ -98,7 +98,7 @@ If the user forgets the password when logging in, please refer to [Reset Passwor
     If you are unsure, it is recommended to disable the user before deleting.
     If you delete a user and then create a new user with the same name, the new user is considered a new, separate identity that does not inherit the deleted user's roles.
 
-1. The administrator enters `Users and Access Control`, selects `Users`, enters the user list, and clicks `...` -> `Delete`.
+1. The administrator enters `Access Control`, selects `Users`, enters the user list, and clicks `...` -> `Delete`.
 
     
 

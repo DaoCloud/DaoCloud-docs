@@ -8,7 +8,7 @@ CAS means that developers can work without worrying about the underlying require
 
 CAS reflects a broader trend of solutions, many of which are CNCF projects, built on top of Kubernetes and microservices, resulting in a thriving cloud-native ecosystem. Today, CNCF's cloud-native ecosystem includes security, DNS, networking, network policy management, messaging, tracking, logging, and many other projects.
 
-## Benefitss of CAS
+## Benefits of CAS
 
 ### Agility
 

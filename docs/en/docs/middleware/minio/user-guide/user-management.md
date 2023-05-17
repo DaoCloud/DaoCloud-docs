@@ -31,7 +31,7 @@ There are three ways to create common users:
 
 #### Console Creation
 
-1. On the MinIO instance details page of DCE 5.0, click the access address, and use the user name and password on the right to log in to the console of the instance.
+1. On the MinIO instance details page of DCE 5.0, click the access address, and use the username and password on the right to log in to the console of the instance.
 
     <!--screenshot-->
 
