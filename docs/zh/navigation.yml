@@ -152,6 +152,10 @@ nav:
               - 开启和关闭采集k8s审计日志: ghippo/user-guide/open-audit.md
               - 开启和关闭k8s审计日志: ghippo/user-guide/open-k8s-audit.md
               - 下载和导出审计日志: ghippo/user-guide/audit-log.md
+          - 运营管理:
+              - ghippo/user-guide/report-billing/index.md
+              - 报表管理: ghippo/user-guide/report-billing/report.md
+              - 计费计量: ghippo/user-guide/report-billing/billing.md
           - 平台设置:
               - 安全策略: ghippo/user-guide/platform-setting/security.md
               - 邮箱服务器设置: ghippo/user-guide/platform-setting/mail-server.md
@@ -278,8 +282,8 @@ nav:
                   - 图形化任务模板参数: amamba/user-guide/pipeline/config/step.md
                   - 流水线节点(Agent): amamba/user-guide/pipeline/config/agent.md
               - 流水线模板:
-                  - 自定义流水线模板: amamba/user-guide/pipeline/template/custom-template.md
-                  - 流水线模板文件: amamba/user-guide/pipeline/template/info.md
+                  - 自定义模板: amamba/user-guide/pipeline/template/custom-template.md
+                  - 模板说明: amamba/user-guide/pipeline/template/info.md
               - 凭证管理: amamba/user-guide/pipeline/credential.md
           - GitOps:
               - 手动同步应用: amamba/user-guide/gitops/sync-manually.md

@@ -46,15 +46,15 @@
 
 ## 在 DCE 5.0 中的地位
 
-应用工作台在 DCE 5.0 中的地位如下图所示。
+以容器管理为底座，借助全局管理实现层级资源管理，以 CI/CD 流水线和 GitOps 流程增删改查云原生应用，实现渐进式交付。
 
 ![应用工作台在 DCE 5.0 中的地位](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/what00.png)
 
-以容器管理为底座，借助全局管理实现层级资源管理，以 CI/CD 流水线和 GitOps 流程增删改查云原生应用，实现渐进式交付。
-
 ## 部署方法
 
-依次执行以下命令进行部署。
+建议通过【DCE 5.0 商业版】的安装包（../../install/commercial/start-install.md）安装Workbench，因为这样可以一次性安装 DCE 5.0 的所有模块 ，无需担心组件不兼容的问题。
+
+但是，如果你想单独安装或升级应用工作台模块，执行以下命令即可：
 
 ```bash
 export VERSION=**** # 修改为实际部署的版本。
@@ -65,4 +65,3 @@ helm upgrade --install --create-namespace --cleanup-on-fail amamba amamba-releas
 
 [下载 DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }
-[申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

@@ -1,6 +1,6 @@
 # Insight-agent component status description
 
-Observability Insight is a multi-cluster observation product in DCE 5.0. In order to realize the unified collection of multi-cluster observation data, users need to install the Helm application `insight-agent`
+Insight is a multi-cluster observation product in DCE 5.0. In order to realize the unified collection of multi-cluster observation data, users need to install the Helm application `insight-agent`
 (Installed in insight-system namespace by default). See [How to install `insight-agent`](./install-agent.md).
 
 ## Status description

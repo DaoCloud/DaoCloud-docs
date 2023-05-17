@@ -151,6 +151,10 @@ nav:
               - Enable/disable Capture: ghippo/user-guide/open-audit.md
               - Enable/disable K8s Audit Log: ghippo/user-guide/open-k8s-audit.md
               - Download and Export: ghippo/user-guide/audit-log.md
+          - Operation Management:
+              - ghippo/user-guide/report-billing/index.md
+              - Reports: ghippo/user-guide/report-billing/report.md
+              - Billing and Accounting: ghippo/user-guide/report-billing/billing.md
           - Platform Settings:
               - Security Policies: ghippo/user-guide/platform-setting/security.md
               - Mail Server Settings: ghippo/user-guide/platform-setting/mail-server.md
@@ -251,7 +255,7 @@ nav:
               - What is Application Workbench?: amamba/intro/what.md
               - Features: amamba/intro/features.md
               - Advantages: amamba/intro/benefits.md
-              - Applicable Scenarios: amamba/intro/scenarios.md
+              - Applicable Scenarios: amamba/intro/scenario.md
               - Basic Concepts: amamba/intro/concepts.md
               - Permissions: amamba/intro/permission.md
               - Release Notes: amamba/intro/release-notes.md
@@ -277,8 +281,8 @@ nav:
                   - Graphical task template parameters: amamba/user-guide/pipeline/config/step.md
                   - Pipeline Node (Agent): amamba/user-guide/pipeline/config/agent.md
               - Pipeline Template:
-                  - Custom Pipeline Template: amamba/user-guide/pipeline/template/custom-template.md
-                  - Pipeline Template: amamba/user-guide/pipeline/template/info.md
+                  - Custom Template: amamba/user-guide/pipeline/template/custom-template.md
+                  - Template File: amamba/user-guide/pipeline/template/info.md
               - Credentials: amamba/user-guide/pipeline/credential.md
           - GitOps:
               - Manually Sync App: amamba/user-guide/gitops/sync-manually.md

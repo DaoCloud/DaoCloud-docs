@@ -11,7 +11,7 @@ The specific operation steps are as follows.
 
     
 
-2. Navigate to `Users and Access Control` under `Global Management`, select `Identity Providers` -> `OIDC`, click `Create Identity Provider`.
+2. Navigate to `Access Control` under `Global Management`, select `Identity Providers` -> `OIDC`, click `Create Identity Provider`.
 
     
 
@@ -44,7 +44,7 @@ The interactive process of user authentication is as follows:
 1. Use a browser to initiate a single sign-on request for DCE 5.0.
 1. According to the information carried in the login link, DCE 5.0 searches for the corresponding configuration information in `Global Management` -> `Access Control` -> `Identity Provider`, constructs an OIDC authorization Request, and sends it to the browser.
 1. After the browser receives the request, it forwards the OIDC authorization Request to the enterprise IdP.
-1. Enter the user name and password on the login page of the enterprise IdP. The enterprise IdP verifies the provided identity information, constructs an ID token carrying user information, and sends an OIDC authorization response to the browser.
+1. Enter the username and password on the login page of the enterprise IdP. The enterprise IdP verifies the provided identity information, constructs an ID token carrying user information, and sends an OIDC authorization response to the browser.
 1. After the browser responds, it forwards the OIDC authorization Response to DCE 5.0.
 1. DCE 5.0 takes the ID Token from the OIDC Authorization Response, maps it to a specific user list according to the configured identity conversion rules, and issues the Token.
 1. Complete single sign-on to access DCE 5.0.

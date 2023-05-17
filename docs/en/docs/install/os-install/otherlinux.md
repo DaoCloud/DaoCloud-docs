@@ -48,7 +48,7 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
      export PKGS_TAR_PATH=/home/os-pkgs-${DISTRO}-${VERSION}.tar.gz
      # Specify the cluster master/worker node IP (multi-node IP addresses are separated by spaces)
      export HOST_IPS='192.168.10.11 192.168.10.12'
-     # Specify the target node access information for installation (multi-node user names and passwords must be consistent)
+     # Specify the target node access information for installation (multi-node usernames and passwords must be consistent)
      export SSH_USER=root
      export SSH_PASS=dangerous
      # Execute the installation command and output the log

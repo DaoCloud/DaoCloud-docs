@@ -1,7 +1,7 @@
 # Start monitoring Java applications
 
 This document mainly describes how to monitor the JVM of the customer's Java application.
-It describes how Java applications that have exposed JVM metrics, and those that have not, interface with Observability Insight.
+It describes how Java applications that have exposed JVM metrics, and those that have not, interface with Insight.
 
 If your Java application does not start exposing JVM metrics, you can refer to the following documents:
 

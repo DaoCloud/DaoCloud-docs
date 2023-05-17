@@ -41,6 +41,6 @@ The specific operation steps are as follows:
 
 Q: What is the reason why the user still cannot retrieve the password after the mail server is set up?
 
-Answer: The user may not have an email address or set a wrong email address; at this time, users with the admin role can find the user by username in `Global Management` -> `Users and Access Control`, and set it as The user sets a new login password.
+Answer: The user may not have an email address or set a wrong email address; at this time, users with the admin role can find the user by username in `Global Management` -> `Access Control`, and set it as The user sets a new login password.
 
-If the mail server is not connected, please check whether the mail server address, user name and password are correct.
+If the mail server is not connected, please check whether the mail server address, username and password are correct.

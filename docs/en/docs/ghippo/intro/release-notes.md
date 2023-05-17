@@ -94,7 +94,7 @@ This page lists the Release Notes for global management of each version, so that
 - Support deploying a national secret gateway in front of DCE 5.0, and use a national secret browser to access DCE 5.0
 - Set the switch in helm values, you can switch the istio sidecar function with one click
 - Add Workspace and Folder Owner role to workspace and hierarchy
-- Only users with Workspace/Folder Admin and Kpanda Owner permissions can perform resource binding
+- Only users with `Workspace Admin`, `Folder Admin`, and `Kpanda Owner` permissions can perform resource binding
 - Scan the open source license for the library used
 - Added `Status` column to user list
 - Provide offline installation documentation internally

@@ -6,7 +6,7 @@ Global management supports single sign-on based on LDPA and OIDC protocols. If y
 
 - Identity Provider (IdP for short)
 
-    Responsible for collecting and storing user identity information, user names, passwords, etc., and responsible for authenticating users when they log in. In the identity authentication process between an enterprise and DCE 5.0, the identity provider refers to the identity provider of the enterprise itself.
+    Responsible for collecting and storing user identity information, usernames, passwords, etc., and responsible for authenticating users when they log in. In the identity authentication process between an enterprise and DCE 5.0, the identity provider refers to the identity provider of the enterprise itself.
 
 - Service Provider (SP)
 

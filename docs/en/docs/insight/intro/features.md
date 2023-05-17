@@ -5,7 +5,7 @@ hide:
 
 # Features list
 
-This page lists the features supported by Observability Insight.
+This page lists the features supported by Insight.
 
 ## Community Release - Observability
 

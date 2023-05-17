@@ -18,7 +18,7 @@ The operation steps are as follows.
 
     
 
-2. Click the user name in the upper right corner and select `Personal Center`.
+2. Click the username in the upper right corner and select `Personal Center`.
 
     
 

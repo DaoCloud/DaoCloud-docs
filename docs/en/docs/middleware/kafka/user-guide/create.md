@@ -27,7 +27,7 @@ In the Kafka message queue, perform the following operations to create a Kafka i
 4. After setting up the service, click `Next`.
 
     - Access method: You can choose intra-cluster access or Nodeport access.
-    - Service Settings: Set the user name and password for connecting to the Kafka instance.
+    - Service Settings: Set the username and password for connecting to the Kafka instance.
 
     <!--screenshot-->
 
