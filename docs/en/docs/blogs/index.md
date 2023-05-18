@@ -7,6 +7,16 @@ hide:
 
 This page summarizes blogs and public account articles related to DCE 5.0 and cloud-native technology, sorted by date by default.
 
+- [20230518| Having fun with seccomp profiles on the edge](./230518-seccom.md)
+
+    The Security Profiles Operator (SPO) is a feature-rich
+    operator for Kubernetes to make managing seccomp, SELinux and
+    AppArmor profiles easier than ever. Recording those profiles from scratch is one
+    of the key features of this operator, which usually involves the integration
+    into large CI/CD systems. Being able to test the recording capabilities of the
+    operator in edge cases is one of the recent development efforts of the SPO and
+    makes it excitingly easy to play around with seccomp profiles.
+
 - [20230509 | Kubernetes Installation Tutorial (KLTS Version)](./230509-k8s-install.md)
 
     Using the DaoCloud-maintained [KLTS (Kubernetes Long Term Support)](https://klts.io/docs/intro/) as an example,
