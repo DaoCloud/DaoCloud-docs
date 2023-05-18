@@ -8,7 +8,7 @@ Make sure insight-agent is ready. If not, please refer to [Install insight-agent
 
 - Enable trace function for insight-agent
 - Whether the address and port of the trace data are filled in correctly
-- Pods corresponding to deployment/opentelemetry-operator-controller-manager and deployment/insight-agent-opentelemetry-collector are ready
+- Pods corresponding to deployment/insight-agent-opentelemetry-operator and deployment/insight-agent-opentelemetry-collector are ready
 
 ## Install Instrumentation CR
 
