@@ -10,10 +10,10 @@
 
 基于整体流程，我们需要准备如下信息：
 
-1. 在 gitlab 上准备两个代码仓库，其中一个作为存业务代码的仓库，一个作为应用的配置文件（yaml）仓库。
+1. 准备两个代码仓库，其中一个作为存业务代码的仓库，一个作为应用的配置文件（yaml）仓库。
 
     ```bash
-    可以参考 github 中的配置：
+    可以参考 GitHub 中的配置：
    
     业务代码：<https://github.com/jzhupup/dao-2048.git>
     应用配置：<https://github.com/jzhupup/argocd-example-apps.git>
@@ -21,19 +21,19 @@
 
 2. 准备一个 Harbor 镜像仓库
 
-3. 准备流水线凭证，分别命名为 git-credentials、git-app-credentials、harbor-credentials
+3. 准备访问上述三个仓库的凭证。此教程中使用的三个凭证分别命为 git-credentials、git-app-credentials、harbor-credentials
 
 ## 创建流水线
 
-本案例主要包含的步骤有：拉取业务代码→构建镜像→更新应用配置文件
+此教程主要包含的步骤有：拉取业务代码→构建镜像→更新应用配置文件
 
-当`更新应用配置文件`步骤执行成功后，Argo CD 会监测到变化，并会触发更新同步最新的配置文件部署到集群中。
+当`更新应用配置文件`步骤执行成功后，Argo CD 会监测变化，并会触发更新同步最新的配置文件部署到集群中。
 
 1. 创建流水线的步骤可以参考: [创建流水线](../user-guide/pipeline/create/custom.md)。
 
 2. 创建成功后，选择该流水线操作：`编辑 Jenkinsfile`
 
-    ??? note "可根据实际需要更新以下 Jenkinsfile 参数"
+    ??? note "点击查看流水线 Jenkinsfile 文件，可根据实际需要参数"
 
         ```yaml
         pipeline {
@@ -87,23 +87,23 @@
 
 ## 创建持续部署应用
 
-1. Http 的方式导入 argocd-example-apps 仓库，[参考步骤](../user-guide/gitops/import-repo.md)
+1. 用 Https 方式导入 argocd-example-apps 仓库，[参考步骤](../user-guide/gitops/import-repo.md)
 
-2. 创建一个持续部署应用
+2. 创建一个 GitOps 应用
 
     ![cd:ci02](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci02.png)
 
-3. 创建完成后，生成一条记录，同步状态显示`未同步`
+3. 创建完成后，会自动生成一条记录，同步状态显示`未同步`
 
     ![cd:ci03](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci03.png)
 
-4. 点击同步，完成应用部署
+4. 点击`同步`，完成应用部署
 
     ![cd:ci04](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci04.png)
 
 ## 运行流水线触发 CI/CD
 
-1. 选择上述创建的流水线，点击立即运行
+1. 选择上述创建的流水线，点击`立即运行`
 
     ![cd:ci05](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci05.png)
 
@@ -115,7 +115,7 @@
 
     ![cd:ci07](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci07.png)
 
-4. 继续验证持续部署应用，发现处于`未同步`状态。看到 Deployment 资源未同步，并跳转到`容器管理`确认目前镜像版本。
+4. 继续验证持续部署应用，发现处于`未同步`状态。看到 Deployment 资源未同步，并跳转到`容器管理`模块确认目前镜像版本。
 
     ![cd:ci08](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci08.png)
 
