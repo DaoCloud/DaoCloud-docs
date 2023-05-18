@@ -92,7 +92,7 @@ EOF
             app: voting-svc
             version: v11
           annotations:
-            instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation" # 👈
+            instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation" # The operator will add OpenTelemetry-related environment variables
         spec:
           containers:
             -env:
