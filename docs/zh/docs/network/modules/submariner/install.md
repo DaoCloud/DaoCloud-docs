@@ -101,7 +101,7 @@ hide:
 
     以上配置说明:
 
-    * `IPsec Configuration` —> `ceIPSecPSK`：用于建立 IPsec 隧道时所需要的预共享密钥。如果对安全性有较高要求，可以使用下面的方式获取：
+    * `IPsec Configuration` —> `ceIPSecPSK`：建立 IPsec 隧道时所需要的预共享密钥。如果对安全性有较高要求，可以使用下面的方式获取：
 
         ```shell
         [root@broker ~]# LC_CTYPE=C tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w 64 | head -n 1
@@ -109,11 +109,11 @@ hide:
         ```
 
     * `Submariner` —> `clusterId`：用于标识该子集群，填写规范需要满足 DNS-1123 Label。
-    * `Submariner` —> `clusterCidr`：填写子集群 Pod 的 CIDR。
+    * `Submariner` —> `clusterCidr`：子集群 Pod 的 CIDR。
 
         ![operator-install2](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-opearator-install2.png)
 
-    * `Submariner` —> `serviceCidr`：填写子集群 Service 的 CIDR。
+    * `Submariner` —> `serviceCidr`：子集群 Service 的 CIDR。
     * `Submariner` —> `globalCidr`：开启 globalnet 功能。
 
         > 注意: 如果不使用  globalnet 功能, 请不要配置该字段。
@@ -121,11 +121,11 @@ hide:
     * `Image Configuration` —> `cableDriver`：隧道模式，支持 `libreswan`(默认)、`wireguard`、`vxlan`。
     * `Image Configuration` —> `natEnabled`：是否打开网关节点之间的 NAT 功能。如果不同子集群的网关节点需要跨公网才能通讯, 则开启。
 
-12. 在子集群 master1 安装完成：
+12. 在子集群 master01 安装完成：
 
     ![opearator-install-3](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-opearator-install-3.png)
 
-13. 安装完成后，需要手动设置子集群 master1 其中某个节点为网关节点，需要添加标签 "submariner.io/gateway: true"：
+13. 安装完成后，需要手动设置子集群 master01 其中某个节点为网关节点，需要添加标签 "submariner.io/gateway: true"：
 
     ![gateway](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-operator-gateway-label.png)
 
@@ -144,7 +144,7 @@ hide:
     submariner-routeagent-kh4hp                              1/1     Running     0              31h
     ```
 
-15. 子集群 master1 join 完成，按照同样方式在另一个子集群安装 submariner。
+15. 子集群 master01 join 完成，按照同样方式在另一个子集群安装 submariner。
 
 ## 注意事项
 
