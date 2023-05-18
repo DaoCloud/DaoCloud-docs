@@ -30,7 +30,7 @@
 
 ## 绑定多云命名空间与工作空间
 
-1. 进入多云编排模块，在页面右上角点击工作空间，选择`多云实例`页签。
+1. 进入多云编排模块，在页面右上角点击工作空间，选择`多云命名空间`页签。
 
     ![点击工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/wp05.png)
 
