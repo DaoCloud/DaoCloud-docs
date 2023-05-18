@@ -12,6 +12,7 @@
 | mspider-mcpc-ckube-remote    | 控制面集群   | 调用远程的网格工作集群，加速并且聚合多集群资源                                                       | requests: CPU: 100m；内存: 50m<br/>limits: CPU: 500m；内存: 500m     |
 | mspider-mcpc-mcpc-controller | 控制面集群   | 聚合网格多集群相关数据面信息                                                                         | requests: CPU: 100m；内存: 0<br/> limits: CPU: 300m；内存: 1.56G      |
 | {meshID}-hosted-apiserver    | 控制面集群   | 托管控制面虚拟集群 API Server                                                                       | requests: CPU: 未设置；内存: 未设置<br/> limits: CPU: 未设置；内存: 未设置 |
+| {meshID}-etcd    | 控制面集群   | 托管控制面虚拟集群 etcd，用于托管网格的策略存储                                                                       | requests: CPU: 未设置；内存: 未设置<br/> limits: CPU: 未设置；内存: 未设置 |
 | istiod                       | 工作集群     | 主要用于所在集群的边车生命周期管理                                                                   | requests: CPU: 100；内存: 100<br/> limits: CPU: 未设置；内存: 未设置  |
 | 专有网格                     |              |                                                                                                      |                                                                        |
 | istiod                       |              | 用于策略创建、下发、边车生命周期管理的工作                                                           | requests: CPU: 100；内存: 100<br/> limits: CPU: 未设置；内存: 未设置  |
