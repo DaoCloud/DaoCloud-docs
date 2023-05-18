@@ -759,6 +759,7 @@ nav:
       - 云原生网络: videos/network.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 202305 | 边缘场景玩转seccomp配置文件: blogs/230518-seccom.md
       - 202305 | 云原生混沌工程Chaos Mesh: blogs/230515-chaos-mesh.md
       - 202305 | K8s 安装教程(KLTS版): blogs/230509-k8s-install.md
       - 202305 | Cilium 基于 eBPF 实现 socket 加速: blogs/230508-cilium.md

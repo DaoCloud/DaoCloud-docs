@@ -7,6 +7,14 @@ hide:
 
 本页汇总 DCE 5.0 及云原生技术相关的博客和公众号文章，默认按时间排序。
 
+- [20230515 | 边缘场景玩转 seccomp 配置文件](./230518-seccom.md)
+
+    Security Profiles Operator (SPO) 是一个功能丰富的 Kubernetes Operator，
+    相比以往可以简化 seccomp、SELinux 和 AppArmor 配置文件的管理。
+    从头开始记录这些配置文件是该 Operator 的关键特性之一，这通常涉及与大型 CI/CD 系统集成。
+    是否能够在边缘场景中测试 Operator 的记录能力是 SPO 的最新开发工作之一，
+    非常有助于轻松玩转 seccomp 配置文件。
+
 - [20230515 | 云原生混沌工程--Chaos Mesh 实战篇](./230515-chaos-mesh.md)
 
     安装和使用 Chaos Mesh，了解 Chaos Mesh 的能力。

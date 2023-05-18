@@ -756,6 +756,7 @@ nav:
       - Container Registry: videos/kangaroo.md
   - Blogs:
       - Index: blogs/index.md
+      - 202305 | Having fun with seccomp profiles on the edge: blogs/230518-seccom.md
       - 202305 | Install K8s (KLTS): blogs/230509-k8s-install.md
       - 202305 | Accelerate Socket based on eBPF by Cilium: blogs/230508-cilium.md
       - 202305 | K8s 1.27 Updated Pod Startup: blogs/230428-pod-startup.md
