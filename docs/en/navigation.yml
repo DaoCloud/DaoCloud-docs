@@ -231,6 +231,7 @@ nav:
               - Metric Query: insight/user-guide/data-query/metric.md
               - Trace Query: insight/user-guide/data-query/trace.md
           - Alert Center:
+              - insight/user-guide/alert-center/index.md
               - Alert Rules: insight/user-guide/alert-center/alert-rule.md
               - Notification Config: insight/user-guide/alert-center/message.md
               - Message Template: insight/user-guide/alert-center/message-template.md
