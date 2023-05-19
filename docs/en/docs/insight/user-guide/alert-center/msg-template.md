@@ -1,6 +1,6 @@
 # Message Templates
 
-The message template feature supports customizing the content of message templates and can notify specified objects in the form of email, WeChat Work, DingTalk, Webhook, and SMS.
+The message template feature supports customizing the content of message templates and can notify specified objects in the form of email, WeCom, DingTalk, Webhook, and SMS.
 
 ## Creating a Message Template
 

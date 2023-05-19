@@ -16,4 +16,4 @@ On the Alert Silence page, users can see two tabs: Active Rules and Expired Rule
 
 3. Return to the rule list, and on the right side of the list, click `︙` to edit or delete a silent rule.
 
-Through the Alert Silence feature, you can flexibly control which alerts should be ignored and when they should be effective, thereby improving operational efficiency and reducing the possibility of false alarms.
+Through the Alert Silence feature, you can flexibly control which alerts should be ignored and when they should be effective, thereby improving operational efficiency and reducing the possibility of false alerts.
