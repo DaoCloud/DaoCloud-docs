@@ -1,23 +1,21 @@
-# message template
+# Message Templates
 
-The message template function supports customizing the content of the message template, and can notify the specified object in the form of email, WeChat, DingTalk, and Webhook.
+The message template feature supports customizing the content of message templates and can notify specified objects in the form of email, WeChat Work, DingTalk, Webhook, and SMS.
 
-## Create a message template
+## Creating a Message Template
 
-1. In the left navigation bar, select `alert Center` -> `Message Template`, and click the `New Message Template` button.
+1. In the left navigation bar, select `Alert Center` -> `Message Templates`, and click the `New Message Template` button.
 
-    
+    ![Click button](../../images/template01.png)
 
 2. Fill in the template content.
 
-    
+    ![message template](../../images/template02.png)
 
-## Edit or delete message templates
+## Editing or Deleting a Message Template
 
-Click `...` on the right side of the list, and select `Edit` or `Delete` in the pop-up menu to modify or delete the message template.
-
-
+Click `︙` on the right side of the list and select `Edit` or `Delete` from the pop-up menu to modify or delete the message template.
 
 !!! warning
 
-    Note that templates cannot be recovered after deletion, so please proceed with caution.
+    Once a template is deleted, it cannot be recovered, so please use caution when deleting templates.

@@ -1,39 +1,48 @@
-# Notification configuration
+# Notification Settings
 
-On the `Notification Configuration` page, you can configure to send messages to users through email, WeChat, DingTalk, and Webhook.
+On the `Notification Settings` page, you can configure how to send messages to users through email, WeChat Work, DingTalk, Webhook, and SMS.
 
-## mail
+## Email Group
 
-1. After entering `Observability`, click `alert Center` -> `Notification Configuration` -> `Email` in the left navigation bar, click `Add Mailbox Group` to add one or more email addresses.
+1. After entering `Observability`, click `Alert Center` -> `Notification Settings` in the left navigation bar. By default, the email notification object is selected. Click on `Add email group` and add one or more email addresses.
 
-    
+2. Multiple email addresses can be added.
 
-2. Support adding multiple email addresses.
+   ![WeChat Work](../../images/notify02.png)
 
-    
+3. After the configuration is complete, the notification list will automatically return. Click `︙` on the right side of the list to edit or delete the email group.
 
-3. After the configuration is completed, it will automatically return to the notification list, click `︙` on the right side of the list, and select `Send Test Information`.
+## WeChat Work
 
-## Enterprise WeChat
+1. In the left navigation bar, click `Alert Center` -> `Notification Settings` -> `WeChat Work`. Click `Add Group Robot` and add one or more group robots.
 
-1. In the left navigation bar, click `alert Center` -> `Notification Configuration` -> `WeChat`, click `Add Group Robot` to add one or more group robots.
+   For the URL of the WeChat Work group robot, please refer to the [official document of WeChat Work: How to use group robots](https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html).
 
-    
-
-2. After the configuration is complete, it will automatically return to the notification list, click `︙` on the right side of the list, and select `Send Test Information`.
+2. After the configuration is complete, the notification list will automatically return. Click `︙` on the right side of the list, select `Send Test Information`, and you can also edit or delete the group robot.
 
 ## DingTalk
 
-1. In the left navigation bar, click `alert Center` -> `Notification Configuration` -> `DingTalk`, click `Add Group Robot` to add one or more group robots.
+1. In the left navigation bar, click `Alert Center` -> `Notification Settings` -> `DingTalk`. Click `Add Group Robot` and add one or more group robots.
 
-    
 
-2. After the configuration is complete, it will automatically return to the notification list, click `︙` on the right side of the list, and select `Send Test Information`.
+   For the URL of the DingTalk group robot, please refer to the [official document of DingTalk: Custom Robot Access](https://developers.dingtalk.com/document/robots/custom-robot-access).
 
-## Webhooks
+2. After the configuration is complete, the notification list will automatically return. Click `︙` on the right side of the list, select `Send Test Information`, and you can also edit or delete the group robot.
 
-1. In the left navigation bar, click `alert Center` -> `Notification Configuration` -> `Webhook`, click `New Webhook` to add one or more Webhooks.
+## Webhook
 
-    
+1. In the left navigation bar, click `Alert Center` -> `Notification Settings` -> `Webhook`. Click `New Webhook` and add one or more Webhooks.
 
-2. After the configuration is complete, it will automatically return to the notification list, click `︙` on the right side of the list, and select `Send Test Information`.
+   For the Webhook URL and more configuration methods, please refer to the [webhook document](https://github.com/webhooksite/webhook.site).
+
+2. After the configuration is complete, the notification list will automatically return. Click `︙` on the right side of the list, select `Send Test Information`, and you can also edit or delete the Webhook.
+
+## SMS Group
+
+1. In the left navigation bar, click `Alert Center` -> `Notification Settings` -> `SMS`. Click `Add SMS Group` and add one or more SMS groups.
+
+2. Enter the name, the object receiving the message, phone number, and notification server in the pop-up window.
+
+   The notification server needs to be created in advance under `Notification Settings` -> `Notification Server`. Currently, two cloud servers, Alibaba Cloud and Tencent Cloud, are supported. Please refer to your own cloud server information for the specific configuration parameters.
+
+3. After the SMS group is successfully added, the notification list will automatically return. Click `︙` on the right side of the list to edit or delete the SMS group.
