@@ -12,7 +12,7 @@ IngressClass Scope 用于指定 Ingress 实例的使用范围为集群级、命�
 
 ## 平台级 Ingress 实例
 
-创建 Ingress 实例时，如果启用 `Ingress Scope`，创建后的 IngressClass 资源在以下两种情况下， Ingress 实例的使用范围都为`集群级`：
+创建 Ingress 实例时，如果启用 `Ingress Scope`，创建后的 IngressClass 资源在以下两种情况下， Ingress 实例的使用范围都为`平台级`：
 
 1. 仅设置了 `parameters` 但是未设置 ` .spec.parameters.scope` 
 2. 设置了 ` .spec.parameters.scope` 为 `cluster`

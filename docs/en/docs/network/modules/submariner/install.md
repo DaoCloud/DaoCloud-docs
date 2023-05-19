@@ -34,37 +34,37 @@ Make sure your cluster is successfully connected to the `container management` p
 
 1. Click `Container Management` -> `Cluster List` in the left navigation bar, and then find the cluster name where you want to install `submariner-k8s-broker`.
 
-2. In the left navigation bar, select `Helm Applications` -> `Helm charts`, find and click `submariner-k8s-broker`.
+2. In the left navigation bar, select `Helm Applications` -> `Helm Charts`, find and click `submariner-k8s-broker`.
 
-    ! [helm](../../images/submariner-k8s-broker-helm-repo.png)
+    ![helm](../../images/submariner-install-1.png)
 
 3. Select the version you want to install in the version selection, and click Install. 
 
 4. It is recommended to install `submariner-k8s-broker` under the `submariner-k8s-broker` namespace.
 
-    ! [broker-ns](../../images/submariner-k8s-broker-ns.png)
+    ![broker-ns](../../images/submariner-install-2.png)
 
 5. The configuration shown below does not need to be changed, just leave the default parameters as they are:
 
-    ! [config](../../images/submariner-k8s-broker-config.png)
+    ![config](../../images/submariner-install-3.png)
 
 6. Successfully install `submariner-k8s-broker` in the Broker cluster.
 
-    ! [broker](../../images/submariner-k8s-broker-install.png)
+    ![broker](../../images/submariner-install-4.png)
 
 7. Switch to its subcluster: master01, and install `submariner-operator`:
 
-    ! [operator](../../images/submariner-operator-helm-repo.png)
+    ![operator](../../images/submariner-install-5.png)
 
 8. Select the version you want to install in the version selection, and click Install.
 
-9. Recommend install `submariner-operator` under the `submariner-operator` namespace, and enable:
+9. Recommend install `submariner-operator` under the `submariner-operator` namespace, and enable `Wait`:
 
-    ! [operator-ns](../../images/submariner-operator-ns.png)
+    ![operator-ns](../../images/submariner-install-6.png)
 
 10. Configure `submariner-operator` to connect to the Broker cluster:
 
-    ! [operator-broker](../../images/submariner-operator-broker.png)
+    ![operator-broker](../../images/submariner-install-7.png)
 
     The above parameters description:
 
@@ -99,7 +99,7 @@ Make sure your cluster is successfully connected to the `container management` p
 
 11. Configure `submariner-operator`.
 
-    
+    ![submariner-operator](../../images/submariner-install-8.png)
 
     The above parameters description:
 
@@ -113,7 +113,7 @@ Make sure your cluster is successfully connected to the `container management` p
     * `Submariner` -> `clusterId`: the identity of a subcluster, which should be filled to meet specification of the  DNS-1123 Label.
     * `Submariner` -> `clusterCidr`: the CIDR of the subcluster Pod.
 
-        
+        ![operator-install2](../../images/submariner-install-9.png)        
 
     * `Submariner` -> `serviceCidr`: the CIDR of the subcluster Service.
     * `Submariner` -> `globalCidr`: enable the globalnet feature.
@@ -125,10 +125,11 @@ Make sure your cluster is successfully connected to the `container management` p
 
 12. Successfully install `submariner-operator` in subcluster master01:
 
-    
+    ![opearator-install-3](../../images/submariner-install-10.png)
 
 13. After the installation is complete, you need to manually set one of the nodes of subcluster master01 as a gateway node and add the tag "submariner.io/gateway: true":
 
+    ![gateway](../../images/submariner-install-11.png)
     
 14. Check if `submariner-operator` is running:
 
