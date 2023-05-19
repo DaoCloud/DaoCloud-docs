@@ -54,4 +54,12 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/canary.mp4" preload="metadata" poster="../images/amamba-canary.png"></video>
 </div>
 
-[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+## 基于流水线和 GitOps 实现 CICD
+
+参阅[基于流水线和 GitOps 实现 CICD](../amamba/quickstart/argocd-jenkins.md)文档页面。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/amamba-cicd.mp4" preload="metadata" poster="../images/amamba-cicd.png"></video>
+</div>
+
+[应用工作台常见问题](../amamba/intro/faq.md){ .md-button .md-button--primary }
