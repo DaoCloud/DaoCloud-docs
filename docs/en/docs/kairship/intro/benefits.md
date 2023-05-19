@@ -3,25 +3,30 @@ hide:
   - toc
 ---
 
-# Product advantages
+# Advantages
 
-Let developers use multi-cloud like using a Kubernetes cluster, multi-cloud orchestration Kairship has the following advantages:
+Multicloud Management boasts the following competitiveness over its counterparts. It allows developers to use multiple clouds as easy as if they were using a single Kubernetes cluster.
 
-- Compatible with Kubernetes native API
-    - Upgrade from single-cluster to multi-cluster with zero modification
+- Easy Conversions
 
-- Seamlessly integrate Kubernetes single-cluster tool chain ecology
-    - Say goodbye to binding: multi-cloud platform support, automatic allocation, free migration
-    - Commercial products that are not bound to the manufacturer
+    Single-cluster applications can be easily deployed into multiple clusters with just several clicks, along with their configmaps, secrets, and other related resources, no need to deploy it many times and no need to change application codes.
 
-- Rich multi-cluster scheduling
-    - Cluster affinity scheduling, multi-granule multi-cluster high-availability deployment
-    - Multi-region (region), multi-availability zone, multi-cluster, multi-provider
+- Rich scheduling actions
 
-- open and neutral
-    - Jointly sponsored by Internet, finance, manufacturing, operators, cloud vendors, etc.
-    - Out of the box: built-in strategy set for multiple scenarios: three centers in two places, active-active in the same city, remote disaster recovery
+    Schedule workloads into selected clusters based on affinity, regions, availability zones, labels, providers, etc.
 
-- Centralized management
-    - No need to worry about cluster location
-    - Support public cloud, private cloud, edge and other clusters
+- Out-of-the-box
+
+    Provides user-friendly UI and high-performance features, allowing you to directly use it in production environment.
+
+- Centralized Management
+
+    Manage applications in a centralized way regardless of they are deployed in which cluster.
+
+- Multiple Cloud Providers
+
+    Support public clouds, private clouds, edges from Huawei CCE, Microsoft Azure, Amzon EKS, SUSE Rancher, VMware Tanzu, Aliyun ACK, and other providers.
+
+- Compatible with Kubernetes-native APIs
+
+    Seamless integrated with Kubernetes toolchains for single-cluster applications
