@@ -32,6 +32,12 @@ See the [Creating an Argo CD Application](../amamba/user-guide/gitops/create-arg
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gitops.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
 </div>
 
-[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
-[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
+## CICD based on Pipeline and GitOps
+
+See [CICD based on Pipeline and GitOps](../amamba/quickstart/argocd-jenkins.md) for reference。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/amamba-cicd.mp4" preload="metadata" poster="../images/amamba-cicd.png"></video>
+</div>
+
+[FAQ](../amamba/intro/faq.md){ .md-button .md-button--primary }
