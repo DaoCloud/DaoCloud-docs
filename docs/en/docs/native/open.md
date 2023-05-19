@@ -960,6 +960,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      [OpenShift Toolkit](https://github.com/redhat-developer/vscode-openshift-tools) is a set of extensions for VS Code and IntelliJ. Its features include: support for connecting and configuring OpenShift; providing hybrid cloud support, developers can connect to any running OpenShift instance; develop applications through local workspaces, git repositories, or default devfile templates; allow one-click Strategy, directly deploy registry code to OpenShift; provide Kubernetes resource management, seamless Kube configuration context switching; multi-platform s platform support.
 
+- [OpenTelemetry Observable Project v1.21.0 released (CNCF project)](https://github.com/open-telemetry/opentelemetry-specification/releases/tag/v1.21.0)
+
+    Version features: add experimental histogram suggestion API, clarify parameters used when logging, mark OpenCensus compatibility specification as stable.
+
 - [OpenTelemetry v1.13.0 release (CNCF project)](https://github.com/open-telemetry/opentelemetry-specification/releases/tag/v1.13.0)
 
      The main new features of this version: Context is immutable when setting span, supports experimental configuration of default histogram aggregation of OTLP metric exporter, allows log processor to modify log records, adds experimental event and log API specifications, in Add network metrics to process semantic conventions, and add semantic conventions to GraphQL.
@@ -971,6 +975,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [OpenTelemetry v1.11.0 release (CNCF project)](https://github.com/open-telemetry/opentelemetry-specification/releases/tag/v1.11.0)
 
      The main new features of this version: replace the histogram with a more clear bucket histogram, support displaying examples on OpenMetrics counters, increase the semantic specification of database connection pool metrics, allow all metrics specifications to be synchronous or asynchronous, add HTTP/3, etc.
+
+- [Openyurt Cloud Native Edge Computing Project v1.3.0 Released (CNCF Project)](https://github.com/openyurtio/openyurt/releases/tag/v1.3.0)
+
+    Release features: refactoring Openyurt control plane components, new component yurt-manager for managing controllers and webhooks of multiple components; allowing users to define Pod templates and upgrade models for static Pods; NodePort Service supports node pool isolation.
 
 - [Openyurt Cloud Native Edge Computing Project v1.2.0 Released (CNCF Project)](https://github.com/openyurtio/openyurt/releases/tag/v1.2.0)
 
@@ -1030,6 +1038,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support for GitLab Runner, new commands for creating copies of existing pods, new commands for synchronizing state changes between the database and any volume plugins, new exit policies for pods, and automatic cleanup of unused pods Caches Podman virtual machine images, allowing multiple overlay volumes of different containers to reuse the same workdir or upperdir.
 
+- [Prometheus v2.44.0 released (CNCF project)](https://github.com/prometheus/prometheus/releases/tag/v2.44.0)
+
+    Release features: default number of samples per send increased to 2,000, support for handling native histogram data, added functionality for checking Prometheus server health status and availability at the command line, added metrics for total number of samples loaded for all queries.
+
 - [Prometheus v2.43.0 released (CNCF project)](https://github.com/prometheus/prometheus/releases/tag/v2.43.0)
 
     Version features: store all tags and corresponding values in a single string to reduce memory footprint (only enabled when compiling with Go tag stringlabels); provide HTTP client configuration in query commands; add option to import grab configuration from different files; add two new HTTP client configuration parameters; allow dynamic setting via API backtracking time of queries.
@@ -1059,6 +1071,10 @@ This page lists activity in cloud native open source projects in alphabetical or
      The main new features of this version: Vultr integration, Linode SD failure count metric and `prometheus_ready` metric added, `stripDomain` added to the template function, promtool supports using matchers when querying label values, and proxy pattern identifiers added.
 
 ### R
+
+- [Rainbond Cloud Native Multi-Cloud Application Management Platform v5.14.0 Released](https://github.com/goodrain/rainbond/releases/tag/v5.14.0-release)
+
+    Version features: upgrade the source code builder version of each language; support one-click deletion of applications and related resources under applications; reasonable recycling mechanism for Pods created using cluster command line; add search function or prioritize matching certificates with the same domain name when configuring https certificates for domain names; support configuration of log storage path.
 
 - [Rainbond Cloud Native Multi-Cloud Application Management Platform v5.12.0 Released](https://github.com/goodrain/rainbond/releases/tag/v5.12.0-release)
 

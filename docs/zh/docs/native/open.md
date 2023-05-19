@@ -958,6 +958,10 @@
 
     [OpenShift Toolkit](https://github.com/redhat-developer/vscode-openshift-tools) 是一套 VS Code 和 IntelliJ 扩展。其功能包括：支持连接和配置 OpenShift；提供混合云支持，开发者可以连接到任何正在运行的 OpenShift 实例；可通过本地工作区、git 仓库或默认的 devfile 模板来开发应用程序；允许采用一键式策略，将仓库代码直接部署到 OpenShift；提供 Kubernetes 资源管理、无缝 Kube 配置上下文切换；多平s台支持。
 
+- [OpenTelemetry 可观测项目 v1.21.0 发布（CNCF 项目）](https://github.com/open-telemetry/opentelemetry-specification/releases/tag/v1.21.0)
+
+    版本特性：添加实验性的直方图建议 API、明确记录日志时使用的参数、将 OpenCensus 兼容性规范标记为稳定。
+
 - [OpenTelemetry v1.13.0 发布（CNCF 项目）](https://github.com/open-telemetry/opentelemetry-specification/releases/tag/v1.13.0)  
 
     该版本主要新特性：在设置 span 时Context 是不可变的、支持实验性的配置 OTLP 指标输出器的默认直方图聚合、允许日志处理器修改日志记录、添加实验性的事件和日志 API 规范、在流程语义约定中添加网络指标、为 GraphQL 添加语义约定。
@@ -969,6 +973,10 @@
 - [OpenTelemetry v1.11.0 发布 （CNCF 项目）](https://github.com/open-telemetry/opentelemetry-specification/releases/tag/v1.11.0)
 
     该版本主要新特性：用更加了然的 bucket 直方图取代直方图、支持在 OpenMetrics 计数器上显示示例、增加数据库连接池指标的语义规范、允许所有 metrics 规范为同步或异步、添加HTTP/3 等。
+
+- [Openyurt 云原生边缘计算项目 v1.3.0 发布（CNCF 项目）](https://github.com/openyurtio/openyurt/releases/tag/v1.3.0)
+
+    版本特性：重构 Openyurt 控制平面组件， 新组件 yurt-manager 用于管理多个组件的控制器和 webhook；允许用户为静态 Pod 定义 Pod 模板和升级模型；NodePort Service 支持节点池隔离。
 
 - [Openyurt 云原生边缘计算项目 v1.2.0 发布（CNCF 项目）](https://github.com/openyurtio/openyurt/releases/tag/v1.2.0)
 
@@ -1028,6 +1036,10 @@
 
     该版本主要新特性：支持 GitLab Runner、新增命令用于创建现有 pod 的副本、新增命令用于同步数据库和任何卷插件之间的状态变化、pod 新增退出策略、自动清理未使用的缓存 Podman 虚拟机镜像、允许不同容器的多个 overlay 卷重复使用同一个 workdir 或 upperdir。
 
+- [Prometheus v2.44.0 发布（CNCF 项目）](https://github.com/prometheus/prometheus/releases/tag/v2.44.0)
+
+    版本特性：每次发送的默认样本数提高到 2,000、支持处理原生直方图数据、在命令行中添加用于检查 Prometheus 服务器健康状态和可用性的功能、添加所有查询加载的样本总数指标。
+
 - [Prometheus v2.43.0 发布（CNCF 项目）](https://github.com/prometheus/prometheus/releases/tag/v2.43.0)
 
     版本特性：在一个单独的字符串中存储所有的标签和对应的值，以减小内存占用（只在使用 Go tag stringlabels 进行编译时启用）；在查询命令中提供 HTTP 客户端配置；添加从不同文件中导入抓取配置的选项；新增两个 HTTP 客户端配置参数；允许通过 API 动态设置查询的回溯时间。
@@ -1057,6 +1069,10 @@
     该版本主要新特性：集成 Vultr、添加 Linode SD 故障计数指标和 `prometheus_ready` 指标、在模板 function 中添加 `stripDomain`、promtool 支持在查询标签值时使用匹配器、增加代理模式标识符。
 
 ### R
+
+- [Rainbond 云原生多云应用管理平台 v5.14.0 发布](https://github.com/goodrain/rainbond/releases/tag/v5.14.0-release)
+
+    版本特性：升级各语言源码构建包版本；支持一键删除应用及应用下相关资源；使用集群命令行创建的 Pod 有合理的回收机制；域名配置 https 证书时，增加搜索功能或优先匹配与域名相同的证书；支持配置日志存储路径。
 
 - [Rainbond 云原生多云应用管理平台 v5.12.0 发布](https://github.com/goodrain/rainbond/releases/tag/v5.12.0-release)
 

@@ -32,6 +32,10 @@
 
     本地集群减少了因云端网络中断而导致的应用停机风险。在此期间，应用程序仍然可用，并且可以执行集群操作。当连接到云时，EKS 管理 Outposts 上 K8s 控制平面的可用性。本地集群运行的 Kubernetes 与云上 EKS 功能相同，支持自动部署最新的安全补丁。
 
+- [Azure AKS 正式推出网络方案 Azure CNI Overlay](https://azure.microsoft.com/en-us/blog/announcing-the-general-availability-of-azure-cni-overlay-in-azure-kubernetes-service/)
+
+    Azure CNI Overlay 有助于简化 Azure 虚拟网络（VNet）子网中的集群节点和 Pod 管理工作，用户可将节点直接放置在 VNet 子网中，Pod 则可从一个单独的专用 CIDR 处获得 IP 地址。借此，AKS 集群管理、路由的配置以及集群的扩展工作都将得以大幅简化。
+
 - [Azure 推出面向 AKS 的 Kubernetes 应用方案](https://mp.weixin.qq.com/s/Uk8t5pWoRiWmz1VL4nMOaQ)
 
     Azure Kubernetes 应用方案旨在助力合作方在微软 Azure 市场中创建、发布和管理商业商品化的 Kubernetes 解决方案的“工具箱”。
@@ -370,7 +374,11 @@
 
     Kubernetes360 将日志、Prometheus 指标监控和 Jaeger 支持的分布式追踪统一在一个平台中，使 DevOps 团队能够以简单、高效和可操作的方式监控应用 SLO。
 
-### M, N
+### M
+
+- [Mirantis 发布轻量级 Kubernetes 发行版 k0s v1.27](https://www.mirantis.com/blog/k0s-1-27-released)
+
+    更新内容：兼容 Kubernetes 1.27；支持 containerd 插件，例如 WebAssembly(WASM) 和 gVisor 容器沙箱；k0s 将用自建的镜像来运行所有的系统组件；支持控制 Helm chart 的安装顺序。
 
 - [Mirantis 容器运行时 Container Runtime 23.0 发布](https://www.mirantis.com/blog/announcing-the-23-0-major-release-for-mirantis-container-runtimeand-moby)
 
@@ -383,6 +391,8 @@
 - [Mirantis 企业级容器平台 Mirantis Kubernetes Engine v3.6 发布](https://www.mirantis.com/blog/mke-3-6-release)
 
     该版本主要新特性：支持 Kubernetes 1.24、支持谷歌云平台 GCP、支持 cri-dockerd 取代 Dockershim、安全准入控制更新（提供 OPA gatekeeper 作为 PSP 的可选替代方案）。
+
+### N
 
 - [Nutanix 推出 Kubernetes 数据管理平台 Nutanix Data Services for Kubernetes (NDK)](https://www.nutanix.com/blog/nutanix-announces-early-access-of-ndk)
 
@@ -609,6 +619,10 @@
 
     Calico Runtime Threat Defense 结合结合基于签名和行为的技术来检测已知威胁和零日威胁，能够检测 MITRE 最常见的容器和网络的攻击。
     与传统的运行时威胁检测平台不同，Calico Runtime Threat Defense 无需编写复杂的规则即可持续监控和分析网络和容器行为，获取攻击指标（IOA）。
+
+- [Traefik Labs 推出业内首个 Kubernetes API 管理方案 Traefik Hub](https://traefik.io/blog/ushering-in-a-new-generation-of-api-management/)
+
+    Traefik Hub 用于发布、保护和管理 API，支持 Traefik 和主要的第三方入口控制器，包括NGINX、HAProxy、Ambassador 等。支持 GitOps，提供强大的安全功能，如基于角色的访问控制（RBAC），并支持认证和授权机制，如 OAuth 2.0 和 JWT。
 
 - [Traefik Labs 发布云原生 API 网关 Traefik Enterprise 2.10](https://traefik.io/blog/announcing-traefik-enterprise-2-10/)
 
