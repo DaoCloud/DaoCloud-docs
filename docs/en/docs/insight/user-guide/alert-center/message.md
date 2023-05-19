@@ -1,22 +1,22 @@
 # Notification Settings
 
-On the `Notification Settings` page, you can configure how to send messages to users through email, WeChat Work, DingTalk, Webhook, and SMS.
+On the `Notification Settings` page, you can configure how to send messages to users through email, WeCom, DingTalk, Webhook, and SMS.
 
 ## Email Group
 
-1. After entering `Observability`, click `Alert Center` -> `Notification Settings` in the left navigation bar. By default, the email notification object is selected. Click on `Add email group` and add one or more email addresses.
+1. After entering `Insight`, click `Alert Center` -> `Notification Settings` in the left navigation bar. By default, the email notification object is selected. Click on `Add email group` and add one or more email addresses.
 
 2. Multiple email addresses can be added.
 
-   ![WeChat Work](../../images/notify02.png)
+   ![WeCom](../../images/notify02.png)
 
 3. After the configuration is complete, the notification list will automatically return. Click `︙` on the right side of the list to edit or delete the email group.
 
-## WeChat Work
+## WeCom
 
-1. In the left navigation bar, click `Alert Center` -> `Notification Settings` -> `WeChat Work`. Click `Add Group Robot` and add one or more group robots.
+1. In the left navigation bar, click `Alert Center` -> `Notification Settings` -> `WeCom`. Click `Add Group Robot` and add one or more group robots.
 
-   For the URL of the WeChat Work group robot, please refer to the [official document of WeChat Work: How to use group robots](https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html).
+   For the URL of the WeCom group robot, please refer to the [official document of WeCom: How to use group robots](https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html).
 
 2. After the configuration is complete, the notification list will automatically return. Click `︙` on the right side of the list, select `Send Test Information`, and you can also edit or delete the group robot.
 

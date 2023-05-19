@@ -24,7 +24,7 @@ Users can also add labels and annotations to alert rules. Alert rules can be cla
 active or expired, and certain rules can be enabled/disabled to achieve silent alerts.
 
 When the threshold condition is met, users can configure how they want to be notified,
-including email, DingTalk, WeChat Work, webhook, and SMS notifications. All notification
+including email, DingTalk, WeCom, webhook, and SMS notifications. All notification
 message templates can be customized and all messages are sent at specified intervals.
 
 In addition, the Alert Center also supports sending alert messages to designated users
