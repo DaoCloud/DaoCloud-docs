@@ -4,11 +4,21 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 > We will maintain regularly to ensure the validity of all traces and the timeliness of news.
 
+### 2023-07
+
+- [July 21-July 22 2023 ArchSummit Global Architect Summit - Shenzhen Presentation Topics Wanted](https://mp.weixin.qq.com/s/oxtXzu3Nme1QvSgYjiT5zQ)
+  
+    The ArchSummit Global Architect Summit is a technical conference focused on high-end technical managers and architects, launched by the InfoQ China team. The Shenzhen Summit will feature topics such as Microservice Architecture, Sustainable Software Architecture, ChatGPT + Big Data Exploration, Digital Transformation Exploration in the Financial Industry, and Business Going Abroad. Each presentation will be 45 minutes long, including a 5-minute Q&A session at the end.
+
 ### 2023-06
 
 - [June 30 China Academy of Information and Communications Technology launches the registration of digital service capability assessment of smart marketing in the first half of 2023 (registration closes on 6.30)](https://mp.weixin.qq.com/s/yQfz9X3oPKWDSeqgxwzs8g)
   
     Smart marketing digital service capability assessment includes six modules: digital scenarios, digital governance, platform-based products, digital service operations, trustworthy and compatible ecology and digital trust security service capabilities. Among them, the platform-based product capability focuses on whether it has the ability of customer insight, marketing planning, customer reach, customer conversion, customer operation and other smart marketing whole-chain traces.
+
+- [Late June: China Academy of Information and Communications Technology (CAICT) officially launches the first batch of evaluation of the first half of the One Cloud, Many Cores series of standards (registration closes in mid-late June)](https://mp.weixin.qq.com/s/XKpcv_QdP2lQX_a-eq_TuA)
+  
+    The evaluation items of this assessment include: One Cloud Multi-core IaaS/PaaS platform capability assessment, One Cloud Multi-core IaaS/PaaS platform performance assessment, and One Cloud Multi-core cloud management platform capability assessment. The evaluation results will be released at the Trusted Cloud Conference in July.
 
 - [June 15 & June 23 2023 IDC Global FinTech Vendor Ranking and Real Value Case Selection Officially Launched](https://mp.weixin.qq.com/s/0z2h92akTEOVF1hqa3Q9GQ)
   
@@ -26,6 +36,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [June 18 Call for Topics for KubeCon + CloudNativeCon or Open Source Summit 2023 in Shanghai (6.18 deadline)](https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/program/call-for-proposals/)
   
     The summit will be held in Shanghai from 9.25 to 9.27. Topics to be submitted can focus on software development lifecycle, platform engineering, O&M+performance, security, data+processing+storage, network+edge+telecom, service mesh, etc. The topic types include four categories: single talk (30 min), double talk (30 min), panel discussion (30 min, 3 to 5 (30 min), panel discussion (30 min, 3-5 speakers), and tutorial (90 min).
+
+- [June 15 2023 Annual China DevOps Status Survey Excellent Practice Case Collection Officially Launched (6.15 Application Deadline)](https://mp.weixin.qq.com/s/jJIO3T4YB0giW5HAripGEg)
+  
+    This DevOps Excellent Practice Case Collection is open to all enterprises and institutions in China, and each unit can declare up to 2 cases, which can be jointly declared by A and B units. The call for cases includes 11 areas, which can be declared in any one of them or across them: agile development, continuous delivery, technical operation, continuous testing, application design, security and risk management (DevSecOps), R&D and operation performance metrics, BizDevOps, system and tools, platform engineering, and autonomous controlled tool chain.
 
 - [June 6 ASF Conference Asia 2023 opens Call for Topics (6.6 deadline)](https://apachecon.com/acasia2023/index.html)
   
@@ -68,6 +82,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     "The main work of the Digital Business Safety Promotion Center is to improve the digital business safety production related to risk identification and prevention, business global awareness, real-time monitoring and early warning, rapid fault location, accident emergency disposal capabilities.
     The standardization and scientificity of the digital business safety production system and processes of enterprises in various industries.
 
+- [May 18 Global Distributed Cloud Conference Distributed Innovative Companies List is Hot Call](https://mp.weixin.qq.com/s/HzcSrjs1a-jD-Oo568y-Xw)
+  
+    The Distributed Innovative Companies list is based on the [Distributed Cloud Top 10 Technology Trends Radar Chart] and is based on ten keywords: Distributed Cloud, Distributed Storage, Distributed Data Center, Distributed Database, Distributed Computing Power, Distributed Network, and Distributed Innovation, to select companies with outstanding contribution and influence in this field. Applicant companies are required to provide 2~3 practical cases to introduce their products or services.
+
 - [May 18 Call for Standard Participants | DevOps Series Standard Part 13: Platform Engineering Capability Requirements (5.18 Deadline)](https://mp.weixin.qq.com/s/zz4_f0XSQC57ecOpuOAFgg)
   
     The DevOps Capability Maturity Model Part 13: Platform Engineering Capability Requirements is the first standard for DevOps platform engineering capability maturity, and is now open for participation and experts.
@@ -79,6 +97,14 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [May 15 KubeSphere Community Open 5.27 Cloud Native Meetup Hangzhou Call for Topics (5.15 deadline)](https://mp.weixin.qq.com/s/C3IvXg_zNxUtNK2_3cZRzw)
   
     The Cloud Native Meetup, co-organized by KubeSphere and GitLab, will be held in the afternoon of 5.27, and will consist of lightning talks (10 min) and single and double talks (40 min).
+
+- [May 15 "Cloud Native Application Engine Technology Development White Paper" Released](https://mp.weixin.qq.com/s/oHEZE3RtcdAsU2Ck95eK2w)
+  
+    The white paper provides an in-depth analysis of the current situation and future of cloud-native application engine technology development in China from the definition of cloud-native application engines, product forms, industry application scenarios and future trends, as well as how to achieve a breakthrough in cloud-native "root" technology through application engines and drive the construction of cloud-native industrial ecology.
+
+- [May 12 China ICT officially launched the first batch of assessments for cloud computing storage category in the first half of the year](https://mp.weixin.qq.com/s/4rZJKe5uQIFZREQzjZvCgg)
+  
+    The evaluation items of this assessment include: assessment of the effectiveness of distributed storage platform construction, assessment of the effectiveness of hyper-converged platform construction, and assessment of the effectiveness of hyper-converged platform implementation in cloud-native and Trustworthy scenarios. The evaluation results will be released at the Trusted Cloud Conference in July.
 
 - [May 12 2023 Trusted Edge Computing Innovation and Practice Cases and Industry Panorama Collection Launch (5.12 Filing Deadline)](https://mp.weixin.qq.com/s/KM2hnAoJ1KXJ6J0eovPzcw)
   
@@ -271,7 +297,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
     component-level container platform performance assessment, large-scale container platform performance assessment for financial scenarios, container platform security capability assessment, and container security solution assessment.
     The evaluation results will be released in June at ICT China - High-End Forum.
 
-- [February 1 CNCF Foundation to launch Kubernetes and Cloud Security (KCSA) certification in Q3](https://www.cncf.io/blog/2023/02/01/kubernetes-and-cloud-security-associate-kcsa- certification-coming-in-q3-2023/)
+- [February 1 CNCF Foundation to launch Kubernetes and Cloud Security (KCSA) certification in Q3](https://www.cncf.io/blog/2023/02/01/kubernetes-and-cloud-security-associate-kcsa-certification-coming-in-q3-2023/)
   
     The KCSA certification exam is designed to provide an entry point for individuals who wish to work in cloud-native security.
     The exam tests candidates on their ability to develop security policies and procedures, identify assess and mitigate security risks and vulnerabilities, assist in incident response and forensic investigations, and test and monitor security systems, among other cloud-native security competencies.

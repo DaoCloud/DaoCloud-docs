@@ -32,6 +32,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Local clustering reduces the risk of application downtime due to network outages in the cloud. During this time, the application remains available and cluster operations can be performed. EKS manages the availability of the K8s control plane on Outposts when connected to the cloud. The Kubernetes running on the local cluster has the same functions as the EKS on the cloud, and supports automatic deployment of the latest security patches.
 
+- [Azure AKS Officially Launches Network Solution Azure CNI Overlay](https://azure.microsoft.com/en-us/blog/announcing-the-general-availability-of-azure-cni-overlay-in-azure-kubernetes-service/)
+
+    Azure CNI Overlay helps simplify the management of cluster nodes and Pods in Azure Virtual Network (VNet) subnets by allowing users to place nodes directly in the VNet subnet and Pods to obtain IP addresses from a separate dedicated CIDR. With this, AKS cluster management, routing configuration, and cluster scaling will be greatly simplified.
+
 - [Azure Launches Kubernetes Application Solution for AKS](https://mp.weixin.qq.com/s/Uk8t5pWoRiWmz1VL4nMOaQ)
 
     The Azure Kubernetes Application Solution is designed to help partners create, publish and manage a "toolbox" of commercially available Kubernetes solutions in the Microsoft Azure Marketplace.
@@ -363,7 +367,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### M
 
-- [Mirantis Container Runtime Container Runtime 23.0 Released](https://www.mirantis.com/blog/announcing-the-23-0-major-release-for-mirantis-container- runtimeand-moby)
+- [Mirantis has released the lightweight Kubernetes distribution k0s v1.27](https://www.mirantis.com/blog/k0s-1-27-released)
+
+    Updates: Kubernetes 1.27 compatible; support for containerd plugins such as WebAssembly (WASM) and gVisor container sandbox; k0s will run all system components with self-built images; support for controlling the installation order of the Helm chart.
+
+- [Mirantis Container Runtime Container Runtime 23.0 Released](https://www.mirantis.com/blog/announcing-the-23-0-major-release-for-mirantis-container-runtimeand-moby)
 
     Updates: Experimental CSI support; Enhanced OCI runtime support for Kata Containers and gVisor; Overhead required to perform health checks no longer counts towards the time threshold, and the time required for health checks does not increase even with high container loads; Image build tool BuildKit is used by default.
 
@@ -623,6 +631,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Calico Runtime Threat Defense combines a combination of signature- and behavior-based techniques to detect known and zero-day threats, enabling detection of MITRE's most common container and network-based attacks.
     Unlike traditional runtime threat detection platforms, Calico Runtime Threat Defense continuously monitors and analyzes network and container behavior for metrics of attack (IOA) without writing complex rules.
+
+- [Traefik Labs Launches Traefik Hub, the Industry's First Kubernetes API Management Solution](https://traefik.io/blog/ushering-in-a-new-generation-of-api-management/)
+
+    Traefik Hub for publishing, securing, and managing APIs supports Traefik and major third-party portal controllers, including NGINX, HAProxy, Ambassador, and more. Supports GitOps, provides strong security features such as Role-Based Access Control (RBAC), and supports authentication and authorization mechanisms such as OAuth 2.0 and JWT.
 
 - [Traefik Labs releases Traefik Enterprise 2.10, a cloud-native API gateway](https://traefik.io/blog/announcing-traefik-enterprise-2-10/)
 
