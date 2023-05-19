@@ -58,7 +58,7 @@
 
 ## 告警中心
 
-参阅[告警中心](../insight/user-guide/alert-center/alert-rule.md)文档页面。
+参阅[告警中心](../insight/user-guide/alert-center/alert-policy.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/alerts.mp4" preload="metadata" poster="../images/insight-alert.png"></video>

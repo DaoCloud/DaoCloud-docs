@@ -232,9 +232,10 @@ nav:
               - Trace Query: insight/user-guide/data-query/trace.md
           - Alert Center:
               - insight/user-guide/alert-center/index.md
-              - Alert Rules: insight/user-guide/alert-center/alert-rule.md
+              - Alert Rules: insight/user-guide/alert-center/alert-policy.md
               - Notification Config: insight/user-guide/alert-center/message.md
-              - Message Template: insight/user-guide/alert-center/message-template.md
+              - Message Template: insight/user-guide/alert-center/msg-template.md
+              - Alert Silence: insight/user-guide/alert-center/silent.md
           - Data Collection:
               - Collection Management: insight/user-guide/collection-manag/collection-manag.md
               - Service Monitor: insight/user-guide/collection-manag/service-monitor.md

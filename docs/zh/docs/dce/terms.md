@@ -49,7 +49,7 @@
 
     当配置了 K8s API 服务器来支持额外的 API 时，您就可以在 K8s API 中增加 `APIService` 对象来申领（Claim）一个 URL 路径。
 
-- Alert Rule, [告警规则](../insight/user-guide/alert-center/alert-rule.md)
+- Alert Rule, [告警规则](../insight/user-guide/alert-center/alert-policy.md)
 
     在 Insight 中，这是基于资源状态创建的告警对象，可以自定义触发规则的条件以及通过何种方式发送通知的规则。
 
