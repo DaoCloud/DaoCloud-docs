@@ -233,9 +233,10 @@ nav:
               - 链路查询: insight/user-guide/data-query/trace.md
           - 告警中心:
               - insight/user-guide/alert-center/index.md
-              - 告警规则: insight/user-guide/alert-center/alert-rule.md
+              - 告警策略: insight/user-guide/alert-center/alert-policy.md
               - 通知配置: insight/user-guide/alert-center/message.md
-              - 消息模板: insight/user-guide/alert-center/message-template.md
+              - 消息模板: insight/user-guide/alert-center/msg-template.md
+              - 告警静默: insight/user-guide/alert-center/silent.md
           - 数据采集:
               - 采集管理: insight/user-guide/collection-manag/collection-manag.md
               - 服务监控: insight/user-guide/collection-manag/service-monitor.md
