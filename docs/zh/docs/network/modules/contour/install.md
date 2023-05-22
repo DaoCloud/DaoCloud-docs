@@ -44,7 +44,7 @@ hide:
 
     - `contour` —> `Contour Settings` —> `Envoy Settings`  —> `Envoy Replica Count`：配置数据面 Envoy 的副本数量。
     - `contour` —> `Contour Settings` —> `Envoy Settings`  —> `Envoy Deploy Kind`：配置 Envoy 的部署类型，可以选择部署为 Deployment 或者是 DaemonSet。
-    - `contour` —> `Contour Settings` —> `Envoy Settings`  —> `Enable HostNetwork` 使用 Host 网络，默认关闭。如没有特殊需求不推荐开启此选项。
+    - `contour` —> `Contour Settings` —> `Envoy Settings`  —> `Enable HostNetwork`: 使用 Host 网络，默认关闭。如没有特殊需求不推荐开启此选项。
     - `contour` —> `Contour Settings` —> `Envoy Settings`  —> `Envoy Access Log Level`：配置 Envoy 访问日志等级。
     - `contour` —> `Contour Settings` —> `Envoy Settings`  —> `Envoy Service` —> `Service Type`：配置 Service 类型。
     - `contour` —> `Contour Settings` —> `Envoy Settings`  —> `Envoy Service` —> `IP Family Policy`：IP 单双栈设置，可以根据需求开启。

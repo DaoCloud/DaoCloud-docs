@@ -1,43 +1,60 @@
-# Install
+# Install Contour
 
-Open the cluster management interface in the browser, click "Helm Apps" in the sidebar navigation, and then click "Helm Charts", as shown below. 
+This page describes how to install Contour.
 
+Please confirm that your cluster has successfully connected to the `Container Management` platform, and then perform the following steps to install Contour.
 
+1. Click `Container Management`->`Cluster List` in the left navigation bar, and then find the cluster name where you want to install Contour.
 
-Enter the keyword "contour" in the search bar and click the "Contour" application card to enter the application preview screen, as shown below.
+    ![contour-cluster](../../images/contour-install-1.png)
 
+2. In the left navigation bar, select `Helm Applications` -> `Helm charts`, find and click `contour`.
 
+    ![contour-helm](../../images/contour-install-2.png)
 
-In the upper right corner, you can select the version by using the drop-down box, and then click the "Install" button. Then you will enter the installation configuration screen, as shown below.
-Enter the name of the deployed application, the namespace, and the deployment options in order.
+3. Select the version you want to install in the `Version selection` and click `Install`.
 
+    ![contour-version](../../images/contour-install-3.png)
 
+4. In the installation page, fill in the required installation parameters.
 
-Configuration Description
+    ![contour-install-1](../../images/contour-install-4.png)
 
-* “Global Image Registry” Set the global image registry.
-* “Manage CRDs” Create Contour CRD during installation.
-* “Controller Replica Count” The number of replicas of Contour controller.
-* "IngressClass Name" Set Ingress Class name，If the cluster deploys multiple sets of Ingress, you can use this Class to differentiate them, and this field will be set when creating the Ingres CR.
-* “Default IngressClass” Set this Ingress instance as the default Ingress.
-* “Enable Debug Log” Enabled to set the control plane Debug level log output.
+    In the screen as above, fill in the `Name`, `Namespace`, `Version`, etc.
 
+    ![contour-install-2](../../images/contour-install-5.png)
 
+    In the screen as above, fill in the following parameters:
 
-* “Envoy Replica Count” The number of replica of Envoy.
-* “Envoy Deploy Kind” Set envoy deploy kind. Default is deployment.
-* “Enable HostNetwork” Enable host network, default is disabled. 
-* “Envoy Access Log Level” Set envoy log level.
-* “Service Type” Set Service Type.
-* “IP Family Policy” Set for IPv4/IPv6 dual-stack.
+    - `contour` -> `Global Settings` -> `Global Image Registry`: the image repository address.
+    - `contour` -> `Contour Settings` -> `Contour Controller` -> `Manage CRDs`: CRDs for Contour.
+    - `contour` -> `Contour Settings` -> `Contour Controller` -> `Controller Replica Count`: the number of replicas for the Contour control plane.
+    - `contour` -> `Contour Settings` -> `IngressClass` -> `IngressClass Name`: the Ingress Class name. If the cluster deploys multiple Ingresses, this class can be used to differentiate them, and this field will be set when creating the Ingres CR.
+    - `contour` -> `Contour Settings` -> `IngressClass` -> `Default IngressClass`: the default Ingress.
+    - `contour` -> `Contour Settings` -> `IngressClass` -> `Enable Debug Log`: debug-level log output at the control plane .
 
+    ![contour-install-3](../../images/contour-install-6.png)
 
+    In the screen as above, fill in the following parameters:
 
-* “Match Expressions” Node affinity is conceptually similar to nodeSelector, allowing you to constrain which nodes your Pod can be scheduled on based on node labels.
-* “Weight” You can specify a weight between 1 and 100 for each instance of the preferredDuringSchedulingIgnoredDuringExecution affinity type. 
-* “ServiceMonitor” Create Service Monitor CR, required Prometheus Operator.
-* “Prometheus Rule” Create PrometheusRule CR, required Prometheus Operator.
+    - `contour` -> `Contour Settings` -> `Envoy Settings` -> `Envoy Replica Count`: the number of replicas of the data plane Envoy.
+    - `contour` -> `Contour Settings` -> `Envoy Settings` -> `Envoy Deploy Kind`: the application type of Envoy, including Deployment or DaemonSet.
+    - `contour` -> `Contour Settings` -> `Envoy Settings` -> `Enable HostNetwork`: enables Host network, and the default is off. It is not recommended to enable this option if you have no special needs.
+    - `contour` -> `Contour Settings` -> `Envoy Settings` -> `Envoy Access Log Level`: Envoy access log level.
+    - `contour` -> `Contour Settings` -> `Envoy Settings` -> `Envoy Service` -> `Service Type`: the Service type.
+    - `contour` -> `Contour Settings` -> `Envoy Settings` -> `Envoy Service` -> `IP Family Policy`: IP single and dual stack setting. You can turn it on according to your requirement.
 
+    ![contour-install-4](../../images/contour-install-7.png)
 
+    In the screen as above, fill in the following parameters:
 
-Click the tab YAML to perform advanced configuration through YAML. Click the "OK" button in the lower right corner to deploy it. 
+    - `contour` -> `Contour Settings` -> `Envoy Settings` -> `Envoy Node Affinity` -> `Match Expressions`: scheduling rules by soft affinity.
+    - `contour` -> `Contour Settings` -> `Envoy Settings` -> `Envoy Node Affinity` -> `Match Expressions` -> `Weight`: the weight of the soft affinity scheduling rule.
+    - `contour` -> `Contour Settings` -> `Metrics` -> `ServiceMonitor`: it requires that the cluster has Prometheus Operator deployed in your cluster.
+    - `contour` -> `Contour Settings` -> `Alert Configurations` -> `Prometheus Rule`: ff enabled, create a Prometheus Rule CR with alert rules. It requires that the cluster has Prometheus Operator installed or that the Insight component is deployed.
+
+5. Click the tab `YAML` to perform advanced configuration via YAML. Then, click the `OK` button in the bottom right corner to complete the creation.
+
+    ![contour-yaml](../../images/contour-install-8.png)
+
+Once created, create the Ingress route and select the Contour instance via `Platform Load Balancing`. For details, refer to: [Create Route](../../../kpanda/user-guide/services-routes/create-ingress.md)
