@@ -72,18 +72,12 @@ DCE 5.0 商业版的安装流程如下图：
 ```mermaid
 flowchart TB
 
-    start([fa:fa-user DCE 5.0 商业版<br>安装流程]) -.- deploy[部署要求]
-    deploy --> tools[在火种节点上安装依赖项]
-    tools --> download[下载离线包]
+    start([fa:fa-user DCE 5.0 商业版<br>安装流程]) -.- arch[部署架构]
+    arch --> deploy[部署要求]
+    deploy --> prepare[准备工作]
+    prepare --> download[下载离线包]
     download --> config[编辑并配置<br>clusterConfig.yaml]
-
-    config -.compactClusterMode: false.-> typical[经典模式<br>多数据中心]
-    typical --> mng2[自动创建 K8s 管理集群<br>安装 Kubean Operator]
-    typical --> gsc2[自动创建<br>K8s 全局服务集群<br>安装 DCE 常规组件]
-
-    config -.compactClusterMode: true.-> simple[简约模式<br>单数据中心]
-    simple --> k8s1[自动创建<br>一个 K8s 管理集群]
-    simple --> gsc1[自动在此集群<br>安装所有 DCE 组件]
+    config --> install[开始安装]
 
 classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:1px,color:#000000, font-size:15px;
 classDef white fill:#ffffff,stroke:#000,stroke-width:1px,color:#000,font-weight:bold
@@ -92,16 +86,15 @@ classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
 classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
-class deploy,tools,download,config cluster
-class typical,k8s,mng2,gsc2,k8s2 k8s
-class simple,start plain
-class gsc1,k8s1 grey
+class arch,deploy,prepare,download,config,install cluster
+class start plain
 
+click arch "https://docs.daocloud.io/install/commercial/deploy-arch/"
 click deploy "https://docs.daocloud.io/install/commercial/deploy-requirements/"
-click tools "https://docs.daocloud.io/install/install-tools/"
-click download "https://docs.daocloud.io/install/commercial/download-file/"
-click config "https://docs.daocloud.io/install/commercial/clusterconfig/"
-click typical,simple "https://docs.daocloud.io/install/commercial/start-install/"
+click prepare "https://docs.daocloud.io/install/commercial/prepare/"
+click download "https://docs.daocloud.io/install/commercial/start-install/#1"
+click config "https://docs.daocloud.io/install/commercial/start-install/#2"
+click install "https://docs.daocloud.io/install/commercial/start-install/#3"
 ```
 
 ## 联系我们

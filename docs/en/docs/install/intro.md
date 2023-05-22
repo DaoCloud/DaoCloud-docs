@@ -72,18 +72,12 @@ The installation process of DCE 5.0 Commercial Release is as follows:
 ```mermaid
 flowchart TB
 
-    start([fa:fa-user DCE 5.0 Commercial Release Installation]) -.- deploy[Deploy requirements]
-    deploy --> tools[Install dependencies on bootstrapping node]
-    tools --> download[Download offline package]
-    download --> config[Edit clusterConfig.yaml]
-
-    config -.compactClusterMode: false.-> typical[Classic mode<br>with multiple data centers]
-    typical --> mng2[Create K8s management cluster<br>and install Kubean Operator]
-    typical --> gsc2[Create k8s global cluster<br>and install DCE components]
-
-    config -.compactClusterMode: true.-> simple[Simple mode with<br>a data center]
-    simple --> k8s1[Create a k8s<br>management cluster]
-    simple --> gsc1[Create k8s global cluster<br>and install DCE components]
+    start([fa:fa-user DCE 5.0 Commercial Release<br>Installation Procedure]) -.- arch[Deployment architecture]
+    arch --> deploy[Deployment requirements]
+    deploy --> prepare[Preparation]
+    prepare --> download[Download offline package]
+    download --> config[Edit and config<br>clusterConfig.yaml]
+    config --> install[Install]
 
 classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:1px,color:#000000, font-size:15px;
 classDef white fill:#ffffff,stroke:#000,stroke-width:1px,color:#000,font-weight:bold
@@ -92,16 +86,15 @@ classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
 classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
-class deploy,tools,download,config cluster
-class typical,k8s,mng2,gsc2,k8s2 k8s
-class simple,start plain
-class gsc1,k8s1 grey
+class arch,deploy,prepare,download,config,install cluster
+class start plain
 
-click deploy "https://docs.daocloud.io/install/commercial/deploy-requirements/"
-click tools "https://docs.daocloud.io/install/install-tools/"
-click download "https://docs.daocloud.io/install/commercial/download-file/"
-click config "https://docs.daocloud.io/install/commercial/clusterconfig/"
-click typical,simple "https://docs.daocloud.io/install/commercial/start-install/"
+click arch "https://docs.daocloud.io/en/install/commercial/deploy-arch/"
+click deploy "https://docs.daocloud.io/en/install/commercial/deploy-requirements/"
+click prepare "https://docs.daocloud.io/en/install/commercial/prepare/"
+click download "https://docs.daocloud.io/en/install/commercial/start-install/#step-1-download-offline-package"
+click config "https://docs.daocloud.io/en/install/commercial/start-install/#step-2-configure-the-cluster-configuration-file"
+click install "https://docs.daocloud.io/en/install/commercial/start-install/#step-3-start-the-installation"
 ```
 
 ## Contact us

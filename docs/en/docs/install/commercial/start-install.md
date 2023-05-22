@@ -73,32 +73,32 @@ The cluster configuration file is located in the `offline/sample` directory of t
 
 !!! note
 
-     Currently, the standard 7-node mode template is provided in the offline image package.
+    Currently, the standard 7-node mode template is provided in the offline image package.
 
 ### Step 3: Start the installation
 
 1. run the following command to start installing DCE 5.0, the location of the installer binary file is `offline/dce5-installer`
 
-     ```shell
-     ./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml
-     ```
+    ```shell
+    ./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml
+    ```
 
-     !!! note
+    !!! note
 
-         Installer script command description:
-        
-         - -c to specify the cluster configuration file, required
-         - The -m parameter specifies the manifest file,
-         - -z minimal install
-         - -dEnable debug mode
-         - For more commands, please use --help query
+        Installer script command description:
+       
+        - -c to specify the cluster configuration file, required
+        - The -m parameter specifies the manifest file,
+        - -z minimal install
+        - -dEnable debug mode
+        - For more commands, please use --help query
 
 1. After the installation is complete, the command line will prompt that the installation is successful. congratulations! Now you can use the default account and password (admin/changeme) to explore the new DCE 5.0 through the URL prompted on the screen!
 
-     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
+    ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
-     !!! success
+    !!! success
 
-         Please record the prompted URL for your next visit.
+        Please record the prompted URL for your next visit.
 
 1. After successfully installing DCE 5.0 commercial version, please contact us for authorization: email info@daocloud.io or call 400 002 6898.
