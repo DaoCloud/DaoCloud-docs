@@ -75,7 +75,7 @@
 
 - Pod 吞吐量
 
-    ![pod](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/cni-perf1.png)
+    ![pod](../../images/network-pod-bandwidth.png)
 
     |测试用例|结论|
     |----|----|
@@ -86,7 +86,7 @@
 
 - Service 吞吐量
 
-    ![service](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/cni-perf2.png)
+    ![service](../../images/network-svc-bandwidth.png)
     
     |测试用例|结论|
     |----|----|
@@ -97,7 +97,7 @@
 
 - Pod 长时延
 
-    ![long](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/cni-perf3.png)
+    ![long](../../images/network-long-connection.png)
 
     |测试用例|结论|
     |----|----|
@@ -108,7 +108,7 @@
 
 - Pod 短链接
 
-    ![short](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/cni-perf4.png)
+    ![short](../../images/network-short-connection.png)
 
     |测试用例|结论|
     |----|----|
