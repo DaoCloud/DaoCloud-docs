@@ -13,7 +13,6 @@ The specific deployment plan is based on business needs, refer to the following 
 ## Single data center single management cluster
 
 
-
 Premise: Prepare a node. The operating system and architecture of the node must be consistent with the node to be created in the cluster.
 
 1. Deploy the installer on the bootstrapping node, and use the installer to install a cluster that includes the two cluster roles of the global service cluster and the management cluster.

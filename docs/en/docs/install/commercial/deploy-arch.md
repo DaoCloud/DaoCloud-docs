@@ -1,6 +1,6 @@
 # Deployment architecture
 
-[all-in-one](#all-in-one)
+DCE 5.0 provides three deployment architectures: all-in-one, 4 nodes, and 7 nodes.
 
 The following table describes the terms involved in the architecture:
 
