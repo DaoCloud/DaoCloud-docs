@@ -3,9 +3,9 @@ hide:
   - toc
 ---
 
-# Permissions of Application Workbench
+# Permissions of App Workbench
 
-[Application Workbench](./what.md) defines three user roles:
+[App Workbench](./what.md) defines three user roles:
 
 - Workspace Admin
 - Workspace Editor

@@ -20,7 +20,7 @@ Both shared resources and cluster resources in resource groups come from [Contai
 1. Binding resources
 
     Make the users/groups in the workspace have full management and usage rights of the cluster, and Workspace Admin will be mapped to Cluster Admin.
-    Workspace Admin can enter [Container Management Module](../../../kpanda/07UserGuide/Permissions/PermissionBrief.md) to manage the cluster.
+    Workspace Admin can enter [Container Management Module](../../../kpanda/user-guide/permissions/permission-brief.md) to manage the cluster.
 
     
 

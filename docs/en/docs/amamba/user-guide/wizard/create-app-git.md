@@ -20,7 +20,7 @@ The application workbench supports building applications in four ways: Git repos
 
 ## Create a microservice application based on Git
 
-1. On `Application Workbench` -> `Wizard` page, click `Build Based on Git Repository`.
+1. On `App Workbench` -> `Wizard` page, click `Build Based on Git Repository`.
 
     <!--![]()screenshots-->
 

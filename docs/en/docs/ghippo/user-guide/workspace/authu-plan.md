@@ -14,11 +14,11 @@ graph TB
     ws-to-ns --> authu[5. Authorize a user with Workspace Editor]
     authu --> complete([End])
     
-click user "https://docs.daocloud.io/en/ghippo/04UserGuide/01UserandAccess/User/"
-click ns "https://docs.daocloud.io/en/kpanda/07UserGuide/Namespaces/createns/"
-click ws "https://docs.daocloud.io/en/ghippo/04UserGuide/02Workspace/Workspaces/"
-click ws-to-ns "https://docs.daocloud.io/en/ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus/"
-click authu "https://docs.daocloud.io/en/ghippo/04UserGuide/02Workspace/wspermission/"
+click user "https://docs.daocloud.io/en/ghippo/user-guide/access-control/user/"
+click ns "https://docs.daocloud.io/en/kpanda/user-guide/namespaces/createns/"
+click ws "https://docs.daocloud.io/en/ghippo/user-guide/workspace/workspace/"
+click ws-to-ns "https://docs.daocloud.io/en/ghippo/user-guide/workspace/ws-to-ns-across-clus/"
+click authu "https://docs.daocloud.io/en/ghippo/user-guide/workspace/wspermission/"
 
  classDef plain fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
  classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;

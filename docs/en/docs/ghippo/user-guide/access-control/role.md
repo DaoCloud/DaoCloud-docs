@@ -70,7 +70,7 @@ You can go to `Container Management` -> `Privilege Management`, select `Add Auth
     You can grant users (groups) different access rights to the same set of resources through "Authorization" in the workspace.
     At the same time, the workspace contains multiple types of resources in different modules, and different types of resources have different presentation methods in the workspace.
 
-    - Module Name: [App Workbench](../../../amamba/intro/what.md), [Microservice Engine](../../../skoala/intro/features.md ), [middleware](../../../middleware/what.md)
+    - Module Name: [App Workbench](../../../amamba/intro/what.md), [Microservice Engine](../../../skoala/intro/what.md ), [middleware](../../../middleware/what.md)
 
         Because these modules do not support the authorization methods of the global management mode and the sub-module management mode, they only rely on the workspace to obtain authorization.
         Therefore, all resources are created under the workspace, and the resources are automatically bound to the workspace after creation to ensure that these resources can be authorized for use after creation.

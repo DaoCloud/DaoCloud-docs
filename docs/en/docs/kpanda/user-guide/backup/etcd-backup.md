@@ -8,7 +8,7 @@ This section will introduce how to realize the etcd backup of the cluster throug
 
 - The container management module [connected to the Kubernetes cluster](../clusters/integrate-cluster.md) or [created the Kubernetes cluster](../clusters/create-cluster.md), and can access the UI interface of the cluster .
 
-- Completed a [namespace creation](../namespaces/createtens.md), [user creation](../../../ghippo/user-guide/access-control/user.md), and grant [`NS Admin`](../permissions/permission-brief.md#ns-admin) or higher permissions to the user. For details, please refer to [Namespace Authorization](../permissions/cluster-ns- auth.md).
+- Completed a [namespace creation](../namespaces/createns.md), [user creation](../../../ghippo/user-guide/access-control/user.md), and grant [`NS Admin`](../permissions/permission-brief.md#ns-admin) or higher permissions to the user. For details, please refer to [Namespace Authorization](../permissions/cluster-ns-auth.md).
 
 - Prepare a MinIO instance. It is recommended to create it through DCE 5.0's MinIO middleware. For specific steps, please refer to [MinIO Object Storage](../../../middleware/minio/user-guide/create.md).
 

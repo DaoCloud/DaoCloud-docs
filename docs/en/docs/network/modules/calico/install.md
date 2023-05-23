@@ -4,7 +4,7 @@ This page describes the configuration of various arguments when installing Calic
 
 ## Prerequisites
 
-To install Calico in DCE 5.0, you need to select `calico` for `Network CNIs` on the `Create Cluster`->`Network Settings` page. For creating a cluster, see [create worker cluster](../../../kpanda/07UserGuide/Clusters/CreateCluster.md).
+To install Calico in DCE 5.0, you need to select `calico` for `Network CNIs` on the `Create Cluster`->`Network Settings` page. For creating a cluster, see [create worker cluster](../../../kpanda/user-guide/clusters/create-cluster.md).
 
 ![calico-install](../../images/calico-install-1.png)
 

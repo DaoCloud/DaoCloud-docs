@@ -1,11 +1,11 @@
-#Introduction to installation
+# Introduction to installation
 
 There are two editions of DCE 5.0: Community Release and Commercial Release.
 
 | Version | Included Modules | Description |
 | ------ | ------------------------------------------ ------------------ | ------------------------------- ------------------- |
-| Community Release| [Global Management](../ghippo/intro/what.md)<br />[Container Management](../kpanda/intro/what.md)<br />[Observability]( ../insight/intro/what.md) | [Permanent free license](../dce/license0.md), the 3 modules will be updated continuously, and you can [download offline packages of submodules](../ download/dce5.md) |
-| Commercial | [Global Management](../ghippo/intro/what.md)<br />[Container Management](../kpanda/intro/what.md)<br />[Observability]( ../insight/intro/what.md)<br />[Application Workbench](../amamba/intro/what.md)<br />[Multi-Cloud Orchestration](../kairship/intro/what. md)<br />[Microservice Engine](../skoala/intro/what.md)<br />[Service Mesh](../mspider/intro/what.md)<br />[Refined Middleware](../middleware/what.md)<br />[container registry](../kangaroo/what.md) | Contact us for authorization: email info@daocloud.io or call 400 002 6898, each Modules can be freely combined as needed, and you can [download the offline package of submodules](../download/dce5.md) at any time |
+| Community Release| [Global Management](../ghippo/intro/what.md)<br />[Container Management](../kpanda/intro/what.md)<br />[Observability](../insight/intro/what.md) | [Permanent free license](../dce/license0.md), the 3 modules will be updated continuously, and you can [download offline packages of submodules](../download/dce5.md) |
+| Commercial | [Global Management](../ghippo/intro/what.md)<br />[Container Management](../kpanda/intro/what.md)<br />[Observability]( ../insight/intro/what.md)<br />[App Workbench](../amamba/intro/what.md)<br />[Multi-Cloud Orchestration](../kairship/intro/what.md)<br />[Microservice Engine](../skoala/intro/what.md)<br />[Service Mesh](../mspider/intro/what.md)<br />[Refined Middleware](../middleware/what.md)<br />[container registry](../kangaroo/what.md) | Contact us for authorization: email info@daocloud.io or call 400 002 6898, each module can be freely combined as needed, and you can [download the offline package of submodules](../download/dce5.md) at any time |
 
 ## Community Release installation process
 
@@ -58,7 +58,7 @@ click kpanda "https://docs.daocloud.io/kpanda/intro/what/"
 click ghippo "https://docs.daocloud.io/ghippo/intro/what/"
 click insight "https://docs.daocloud.io/insight/intro/what/"
 click free "https://docs.daocloud.io/dce/license0/"
-click ask "https://docs.daocloud.io/install/intro/#_4"
+click ask "https://docs.daocloud.io/install/intro/#contact-us"
 ```
 
 !!! tip

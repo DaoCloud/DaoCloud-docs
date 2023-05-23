@@ -9,7 +9,7 @@ Credentials can save sensitive information, such as username and password, acces
 When the pipeline is running, it will interact with third-party websites or applications in most cases, such as Git warehouses, mirror warehouses, etc.
 Corresponding credentials need to be provided during this process, so users are required to configure credentials for the pipeline. After users configure credentials, they can use these credentials to interact with third-party websites or applications.
 
-Currently, you can create the following 3 types of credentials in Application Workbench:
+Currently, you can create the following 3 types of credentials in App Workbench:
 
 - **Username and Password**: Used to store the authentication information of username and password. If the third-party website or application supports username/password access, you can choose this type, such as those of GitHub, GitLab and Docker Hub account.
 

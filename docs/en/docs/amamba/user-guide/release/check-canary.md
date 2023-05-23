@@ -6,7 +6,7 @@ This article mainly introduces related operations involved in viewing canary rel
 
 ## View task details
 
-1. Enter the `Application Workbench` module, click `Grayscale Release` in the left navigation bar, and click the name of the target task.
+1. Enter the `App Workbench` module, click `Grayscale Release` in the left navigation bar, and click the name of the target task.
 
     <!--![]()screenshots-->
 
