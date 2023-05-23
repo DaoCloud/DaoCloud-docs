@@ -12,7 +12,7 @@ This section describes how to install the `kubernetes-cronhpa-controller` plugin
 
 Before installing the `kubernetes-cronhpa-controller` plugin, the following prerequisites need to be met:
 
-- In the [Container Management](../../intro/what.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters /create-cluster.md), and can access the cluster UI interface.
+- In the [Container Management](../../intro/what.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
 
 - Create a [namespace](../namespaces/createns.md).
 

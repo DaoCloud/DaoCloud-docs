@@ -16,7 +16,7 @@
 
 ## Manage Workspaces
 
-See the [Managing Workspaces](../ghippo/user-guide/workspace/Workspaces.md) documentation page.
+See the [Managing Workspaces](../ghippo/user-guide/workspace/workspace.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/workspace.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
@@ -64,7 +64,7 @@ See [how to disable audit log](../ghippo/user-guide/open-audit.md#_4) documentat
 
 ## Custom appearance
 
-See [Custom appearance](../ghippo/user-guide/platform-setting/Appearance.md) documentation page.
+See [Custom appearance](../ghippo/user-guide/platform-setting/appearance.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/appearance.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>

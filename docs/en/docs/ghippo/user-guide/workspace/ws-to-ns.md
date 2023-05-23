@@ -42,11 +42,11 @@ classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 class preparews, preparens, createns, nstows, wsperm cluster;
 class judge plain
 
-click preparews "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus/#_3"
-click prepares "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus/#_4"
-click nstows "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus/#_5"
-click wsperm "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus/#_6"
-click creates "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/ws-to-ns-across-clus/#_4"
+click preparews "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-across-clus/#_3"
+click prepares "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-across-clus/#_4"
+click nstows "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-across-clus/#_5"
+click wsperm "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-across-clus/#_6"
+click creates "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-across-clus/#_4"
 ```
 
 !!! tip

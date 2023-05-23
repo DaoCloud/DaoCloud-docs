@@ -11,27 +11,27 @@ For more details, see [What is IAM](../user-guide/access-control/iam.md).
 
 ### RBAC
 
-RBAC (Role-Based Access Control) assigns the concept of [role](../user-guide/access-control/Role.md) to users and associates users and permissions through roles to realize flexible configuration.
+RBAC (Role-Based Access Control) assigns the concept of [role](../user-guide/access-control/role.md) to users and associates users and permissions through roles to realize flexible configuration.
 The three elements of the RBAC model are users, roles, and permissions. Use RBAC mechanisms to authorize IAM users to access platform resources.
 
 ### User
 
-A [user](../user-guide/access-control/User.md) is the subject of initiating operations. Each user has a unique ID and granted different roles.
+A [user](../user-guide/access-control/user.md) is the subject of initiating operations. Each user has a unique ID and granted different roles.
 By default, the IAM user created does not have any permissions. You need to add it to a group and grant a role or policy to allow the user to obtain corresponding permissions.
 
 Users log in to DCE with usernames and operate platform resources and services according to the granted permissions.
 Therefore, users are the subject of resource ownership and have corresponding permissions for the resources they own.
 
-Users can modify user information, set passwords, access keys, and UI language in [Personal Center](../user-guide/personal-center/SecuritySetting.md).
+Users can modify user information, set passwords, access keys, and UI language in [Personal Center](../user-guide/personal-center/security-setting.md).
 
 ### Group
 
-A [group](../user-guide/access-control/Group.md) is a collection of one or more users. IAM implements user authorization through groups.
+A [group](../user-guide/access-control/group.md) is a collection of one or more users. IAM implements user authorization through groups.
 Usually, you create an IAM user first, join a certain group, and the user will inherit the permissions of this group. When a user joins multiple groups, the user will have the permissions of multiple groups at the same time.
 
 ### Role
 
-A [role](../user-guide/access-control/Role.md) is a bridge connecting users and permissions. A role corresponds to a set of permissions, and different roles have different permissions. Granting a role to a user grants all the permissions included in the role. There are two roles in Global Administration:
+A [role](../user-guide/access-control/role.md) is a bridge connecting users and permissions. A role corresponds to a set of permissions, and different roles have different permissions. Granting a role to a user grants all the permissions included in the role. There are two roles in Global Administration:
 
 - Predefined roles: Created by the system, users can only use and cannot modify. Each submodule has an Admin role.
 
@@ -58,7 +58,7 @@ After obtaining specific permissions, users can operate on resources or services
 
 ### Workspace
 
-[Workspace](../user-guide/workspace/Workspaces.md) coordinates global management and sub-module permission relationships, resolves resource aggregation and mapping hierarchical relationships.
+[Workspace](../user-guide/workspace/workspace.md) coordinates global management and sub-module permission relationships, resolves resource aggregation and mapping hierarchical relationships.
 Usually, a workspace corresponds to a project, and different resources can be assigned to each workspace, and different users and groups can be assigned.
 
 ### Hierarchy

@@ -55,7 +55,7 @@ Advantages of the solution: unified collection of observation data, one control 
 
 The user's application architecture decides to adopt the microservice architecture or has already adopted microservices, and hopes to obtain technical support such as a full range of microservice frameworks and comprehensive operation and maintenance capabilities, or hopes to introduce service mesh technology and achieve smooth transition in the process of technology change.
 
-Modules involved: [Container Management](../kpanda/intro/what.md), [Container Network](../network/intro/what-is-net.md), [Microservice Engine](../skoala/intro/features.md), [Service Mesh](../mspider/intro/what.md), [Observability](../insight/intro/what.md), [App Workbench](../amamba/intro/what.md)
+Modules involved: [Container Management](../kpanda/intro/what.md), [Container Network](../network/intro/what-is-net.md), [Microservice Engine](../skoala/intro/what.md), [Service Mesh](../mspider/intro/what.md), [Observability](../insight/intro/what.md), [App Workbench](../amamba/intro/what.md)
 
 Solution advantages: seamlessly integrate the first-generation microservices represented by SpringCloud and Dubbo with the new-generation microservice technology represented by Istio service mesh, and complete the microservice management of the whole lifecycle from development, deployment, access, external, observation, operation and maintenance ability.
 

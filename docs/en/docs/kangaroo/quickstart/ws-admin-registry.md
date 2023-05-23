@@ -29,7 +29,7 @@ class associate,push,deploy cluster;
 
 click associate "https://docs.daocloud.io/en/kangaroo/related-registry/"
 click push "https://docs.daocloud.io/en/kangaroo/quickstart/push/"
-click deploy "https://docs.daocloud.io/en/kpanda/07UserGuide/Workloads/CreateDeploymentByImage/"
+click deploy "https://docs.daocloud.io/en/kpanda/user-guide/workloads/create-deployment/"
 ```
 
 Expected result: When deploying an application in the namespace under this workspace, you can use the image selector to select the image under this registry space to deploy the application.

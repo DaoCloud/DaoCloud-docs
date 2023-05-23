@@ -12,7 +12,7 @@ For example, if you want to have several departments share different clusters.
 | Department (workspace) A | 50 quota | 10 quota |
 | Department (workspace) B | 100 quota | 20 quota |
 
-You can share the cluster with multiple departments/workspaces/tenants by following the process:
+You can share the cluster with multiple departments/workspace/tenants by following the process:
 
 ```mermaid
 graph TB
@@ -31,9 +31,9 @@ class preparews,preparecs,share, cluster;
 class judge plain
 class modifyns,createns k8s
 
-click preparews "https://docs.daocloud.io/en/ghippo/04UserGuide/02Workspace/a-cluster-to-multi-ws/#_2"
-click preparecs "https://docs.daocloud.io/en/ghippo/04UserGuide/02Workspace/a-cluster-to-multi-ws/#_3"
-click share "https://docs.daocloud.io/en/ghippo/04UserGuide/02Workspace/a-cluster-to-multi-ws/#_4"
+click preparews "https://docs.daocloud.io/en/ghippo/user-guide/workspace/a-cluster-to-multi-ws/#_2"
+click preparecs "https://docs.daocloud.io/en/ghippo/user-guide/workspace/a-cluster-to-multi-ws/#_3"
+click share "https://docs.daocloud.io/en/ghippo/user-guide/workspace/a-cluster-to-multi-ws/#_4"
 click createns "https://docs.daocloud.io/en/amamba/03UserGuide/Namespace/namespace/#_3"
 click modifyns "https://docs.daocloud.io/en/amamba/03UserGuide/Namespace/namespace/#_4"
 ```
@@ -65,7 +65,7 @@ Follow the steps below to prepare a cluster.
 
     
 
-1. Click `Create Cluster`[Create a Cluster](../../../kpanda/07UserGuide/Clusters/CreateCluster.md), or click `Join Cluster`[Join a Cluster](../ ../../kpanda/07UserGuide/Clusters/JoinACluster.md).
+1. Click `Create Cluster`[Create a Cluster](../../../kpanda/user-guide/clusters/create-cluster.md), or click `Join Cluster`[Join a Cluster](../ ../../kpanda/user-guide/clusters/integrate-cluster.md).
 
 ## Add a cluster to the workspace
 

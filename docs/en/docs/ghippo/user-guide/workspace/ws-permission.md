@@ -51,4 +51,4 @@ Generally applicable to the following two scenarios:
      - [Service Mesh Permissions](../../permissions/mspider.md)
      - [Middleware permissions](../../permissions/mcamel.md)
      - [Microservice Engine Permissions](../../permissions/skoala.md)
-     - [Container Management Permissions](../../../kpanda/07UserGuide/Permissions/PermissionBrief.md)
+     - [Container Management Permissions](../../../kpanda/user-guide/permissions/permission-brief.md)

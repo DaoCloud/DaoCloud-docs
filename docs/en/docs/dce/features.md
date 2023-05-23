@@ -68,7 +68,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - Flexible resource division.Resource division and binding based on resource granularity (namespace, cluster, registry, etc.), and unified allocation of container platform resources.
 
-=== "One-stop [Microservice governance](../skoala/intro/features.md)"
+=== "One-stop [Microservice governance](../skoala/intro/what.md)"
 
 - The Microservice registry centrally manages all dynamic Microservices in the cluster.
 
