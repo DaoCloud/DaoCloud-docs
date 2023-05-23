@@ -67,7 +67,7 @@
 
 ## 命名空间独享节点
 
-<!--参阅[集群升级](../kpanda/user-guide/clusters/upgrade-cluster.md)文档页面。-->
+参阅[命名空间独享节点](../kpanda/user-guide/namespaces/exclusive.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/exclusive-node.mp4" preload="metadata" poster="../images/kpanda-exclude.png"></video>
@@ -79,6 +79,14 @@
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/hwa.mp4" preload="metadata" poster="../images/hwacover.png"></video>
+</div>
+
+## 应用跨集群备份与恢复
+
+参阅 [安装 velero 插件](../kpanda/user-guide/backup/install-velero.md)文档页面。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kpanda-velero.mp4" preload="metadata" poster="../images/kpanda-velero.png"></video>
 </div>
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
