@@ -14,7 +14,7 @@ The difference between the two is:
 
 !!! note
 
-    - The current operating user should have [Admin](../../../ghippo/user-guide/access-control/role.md) or [`Kpanda Owner`](../../../ ghippo/user-guide/access-control/global.md) permissions to perform uninstall or remove access operations.
+    - The current operating user should have [Admin](../../../ghippo/user-guide/access-control/role.md) or [`Kpanda Owner`](../../../ghippo/user-guide/access-control/global.md) permissions to perform uninstall or remove access operations.
     - Before uninstalling the cluster, you should turn off `Cluster Deletion Protection` in `Cluster Settings`->`Advanced Configuration`, otherwise the `Uninstall Cluster` option will not be displayed.
 
 1. On the `Cluster List` page, find the cluster that needs to be uninstalled/unconnected, click `...` on the right and click `Uninstall Cluster`/`Unconnect` in the drop-down list.
