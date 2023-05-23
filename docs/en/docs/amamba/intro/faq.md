@@ -15,9 +15,9 @@ error: unexpected error when reading response body. Please retry. Original error
 
 In the pipeline's Jenkinsfile, change the deployment command from `kubectl apply -f` to `kubectl apply -f. --request-timeout=30m`.
 
-## Container cannot access private image registry when building images via Jenkins
+## Container cannot access private container registry when building images via Jenkins
 
-If the container cannot access the private image registry, add the following command to the pipeline's Jenkinsfile:
+If the container cannot access the private container registry, add the following command to the pipeline's Jenkinsfile:
 
 ```bash
 cat > /etc/containers/registries.conf << EOF

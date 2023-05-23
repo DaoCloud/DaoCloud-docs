@@ -17,7 +17,7 @@ If a mirror warehouse exists in the environment, it is recommended to use chart-
 
 1. Create `load-image.yaml` as the chart-syncer profile
 
-    All parameters in the `load-image.yaml` file are mandatory. You need a private image registry and modify configurations as described below. See [Official Doc](https://github.com/bitnami-labs/charts-syncer) for a detailed explanation of the chart-syncer profile.
+    All parameters in the `load-image.yaml` file are mandatory. You need a private container registry and modify configurations as described below. See [Official Doc](https://github.com/bitnami-labs/charts-syncer) for a detailed explanation of the chart-syncer profile.
 
     === "chart repo installed"
 

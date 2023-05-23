@@ -134,7 +134,7 @@ This page lists the Release Notes of the installer, so that you can understand t
 - **Added** Added installation of contour as default ingress-controller for commercial version
 - **Added** New installation of cert-manager in commercial version
 - **Added** Support cluster deployment in private key mode
-- **Added** supports external image registry for deployment
+- **Added** supports external container registry for deployment
 
 #### Optimized
 

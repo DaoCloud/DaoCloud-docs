@@ -34,12 +34,12 @@ Please confirm that your cluster has successfully connected to `container manage
 
      ![HwameistorUI03](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/HwameistorUI03.jpg)
 
-     - `Global Setting` —> `global image Registry`:
+     - `Global Setting` —> `global container registry`:
     
          Set the registry addresses of all mirrors, and the available online registrys have been filled in by default.
          If it is a privatized environment, it can be modified to a private registry address.
         
-     - `Global Setting` —> `K8s image Registry`:
+     - `Global Setting` —> `K8s container registry`:
     
          Set the address of the K8S container registry, and the available online registry has been filled in by default.
          If the environment is privatized, it can be modified to a private registry address.

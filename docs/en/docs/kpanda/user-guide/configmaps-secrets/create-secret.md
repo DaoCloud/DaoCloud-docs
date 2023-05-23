@@ -6,7 +6,7 @@ Key usage scenarios:
 
 - Used as an environment variable of the container to provide some necessary information required during the running of the container.
 - Use secrets as pod data volumes.
-- As the identity authentication credential for the image registry when the kubelet pulls the container image.
+- As the identity authentication credential for the container registry when the kubelet pulls the container image.
 
 Two creation methods are supported:
 
@@ -45,7 +45,7 @@ Two creation methods are supported:
      - Key data: the data stored in the key, the parameters that need to be filled in are different for different data
          - When the key type is default (Opaque)/custom: multiple key-value pairs can be filled in.
          - When the key type is TLS (kubernetes.io/tls): you need to fill in the certificate certificate and private key data. Certificates are self-signed or CA-signed credentials used for authentication. A certificate request is a request for a signature and needs to be signed with a private key.
-         - When the key type is image registry information (kubernetes.io/dockerconfigjson): you need to fill in the account and password of the private image registry.
+         - When the key type is container registry information (kubernetes.io/dockerconfigjson): you need to fill in the account and password of the private container registry.
          - When the key type is username and password (kubernetes.io/basic-auth): Username and password need to be specified.
 
 ## YAML creation

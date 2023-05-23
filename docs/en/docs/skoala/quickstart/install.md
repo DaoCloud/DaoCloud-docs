@@ -170,7 +170,7 @@ If skoala database in common-mysql is empty, log in to skoala database and run t
 
 #### Configure skoala helm repo
 
-After skoala image registry is configured, you can check and get the Helm chart of skoala.
+After skoala container registry is configured, you can check and get the Helm chart of skoala.
 
 ```bash
 ~ helm repo add skoala-release https://release.daocloud.io/chartrepo/skoala
@@ -179,7 +179,7 @@ After skoala image registry is configured, you can check and get the Helm chart 
 
 > install Helm beforehand
 
-Note: After `skoala-release` image registry is added, there are two charts that need to be paid attention to:
+Note: After `skoala-release` container registry is added, there are two charts that need to be paid attention to:
 
 - `skoala` is the control plane of DME
     - After `skoala` is installed, you can see DME in the first-level navigation bar of DCE 5.0

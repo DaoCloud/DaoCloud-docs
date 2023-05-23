@@ -135,11 +135,11 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20221022 | KubeCon 2022 North America Station | DaoCloud Shares Cloud-Native Best Practices with Global Developers](https://mp.weixin.qq.com/s/5Uoq9uuITZJFhJjyRcJX0A)
 
-    On October 20th, 2022, KubeCon North America Station officially kicked off in Los Angeles, California. As a cloud-native technology service provider with many years of experience, DaoCloud was invited to participate in this grand event and shared its insights on cloud-native best practices with global developers. In this article, we will summarize DaoCloud's speeches and interactions during the event, including how to choose the right container image registry, how to optimize Kubernetes cluster performance, and how to implement GitOps-based continuous delivery.
+    On October 20th, 2022, KubeCon North America Station officially kicked off in Los Angeles, California. As a cloud-native technology service provider with many years of experience, DaoCloud was invited to participate in this grand event and shared its insights on cloud-native best practices with global developers. In this article, we will summarize DaoCloud's speeches and interactions during the event, including how to choose the right container container registry, how to optimize Kubernetes cluster performance, and how to implement GitOps-based continuous delivery.
 
-- [20221021 | DaoCloud Launches Container Image Registry Service Based on Alibaba Cloud Object Storage Service (OSS)](https://mp.weixin.qq.com/s/C89eKlFw8nH7QJzPxT4v1g)
+- [20221021 | DaoCloud Launches Container Registry Service Based on Alibaba Cloud Object Storage Service (OSS)](https://mp.weixin.qq.com/s/C89eKlFw8nH7QJzPxT4v1g)
 
-    On October 20th, 2022, DaoCloud officially released its container image registry service based on Alibaba Cloud Object Storage Service (OSS). This service provides users with secure and reliable storage and management of container images, helping them reduce the cost of image storage and improve image access efficiency. Moreover, by using Alibaba Cloud OSS as the underlying storage engine, DaoCloud can provide users with more diversified storage options, such as cold storage and disaster recovery.
+    On October 20th, 2022, DaoCloud officially released its container container registry service based on Alibaba Cloud Object Storage Service (OSS). This service provides users with secure and reliable storage and management of container images, helping them reduce the cost of image storage and improve image access efficiency. Moreover, by using Alibaba Cloud OSS as the underlying storage engine, DaoCloud can provide users with more diversified storage options, such as cold storage and disaster recovery.
 
 - [20221026 | Introduction to Container Management Capability of DCE 5.0](221026-kpanda.md)
 

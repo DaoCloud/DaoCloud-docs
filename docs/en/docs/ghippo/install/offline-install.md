@@ -198,7 +198,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
     1. Execute `helm upgrade`.
 
-        Before upgrading, it is recommended that you overwrite `global.imageRegistry` in bak.yaml to the address of the current image registry.
+        Before upgrading, it is recommended that you overwrite `global.imageRegistry` in bak.yaml to the address of the current container registry.
 
         ```shell
         export imageRegistry={your container registry}

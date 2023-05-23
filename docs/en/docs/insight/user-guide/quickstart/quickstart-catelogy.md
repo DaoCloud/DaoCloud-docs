@@ -10,7 +10,7 @@ The cluster created through `container management` will install insight-agent by
 
 Insight is a unified observation platform for multiple clusters. The resource consumption of some of its components is closely related to the data of the created cluster and the number of connected clusters. When installing insight-agent, the resources of the corresponding components need to be adjusted according to the size of the cluster.
 
-1. Adjust the CPU and memory of the acquisition component `Prometheus` in insight-agent according to the scale of the created cluster or the scale of the access cluster, please refer to: [Prometheus resource planning](../../best-practice/prometheus- res.md)
+1. Adjust the CPU and memory of the acquisition component `Prometheus` in insight-agent according to the scale of the created cluster or the scale of the access cluster, please refer to: [Prometheus resource planning](../../best-practice/prometheus-res.md)
 
 2. Since the index data of multiple clusters will be stored uniformly, the DCE 5.0 platform administrator needs to adjust the vmstorage disk according to the scale of the created cluster and the scale of the access cluster. Please refer to: [vmstorage disk capacity planning](../../best-practice/vms-res-plan.md).
 

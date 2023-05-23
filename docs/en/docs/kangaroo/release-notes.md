@@ -1,6 +1,6 @@
-# Image Registry Release Notes
+# Container Registry Release Notes
 
-This page lists the release notes of the image registry, so that you can understand the evolution path and feature changes of each version.
+This page lists the release notes of the container registry, so that you can understand the evolution path and feature changes of each version.
 
 ## 2023-05-08
 
@@ -74,11 +74,11 @@ This page lists the release notes of the image registry, so that you can underst
 
 - Support for creating managed image registries based on Harbor
 - Support multi-copy deployment
-- Support full life cycle management of image registry
+- Support full life cycle management of container registry
 - Support deploying managed harbor instances in any namespace under any cluster of the platform
-- Support platform access and management of external Harbor, Docker Registry image registry
+- Support platform access and management of external Harbor, Docker Registry container registry
 - Support separate allocation of private image space for platform workspace (tenant)
 - Support for creating public/private image spaces
-- Support workspace (tenant) independent access to external Harbor, Docker Registry image registry
+- Support workspace (tenant) independent access to external Harbor, Docker Registry container registry
 - Support for selecting images through the image selector when deploying applications
 - Support image scanning

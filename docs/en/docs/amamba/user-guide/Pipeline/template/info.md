@@ -75,7 +75,7 @@ parameterDefinitions:
     default: latest
   - name: registryCredential
     displayName: image repository credentials
-    description: The credential to access the image registry
+    description: The credential to access the container registry
     type: credential
     default: ""
 jenkinsfileTemplate: |
