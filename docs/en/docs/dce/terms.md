@@ -7,7 +7,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 - Abstraction
 
     In the context of computing, an abstraction is a representation that
-    hides specifics from a consumer of [services](/service/)
+    hides specifics from a consumer of [services](../kpanda/user-guide/services-routes/create-services.md)
     (a consumer being a computer program or human),
     making a system more generic and thus easily understood.
     A good example is your laptop's operating system (OS).
@@ -58,7 +58,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     The aggregation layer is different from Custom Resources, which are a way to make the kube-apiserver
     recognise new kinds of object.
 
-- [Alert Rule](../insight/user-guide/alert-center/alertrule.md)
+- [Alert Rule](../insight/user-guide/alert-center/alert-policy.md)
 
     In Insight, this is an alert object created based on the resource status. You can customize the conditions
     for triggering rules and sending notifications.
@@ -1571,7 +1571,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - OverridePolicy
 
-    [OverridePolicy](../kairship/07policy/overridepolicy.md) is a differentiated configuration policy that defines the differentiated configuration policy for distributing multi-cloud resource objects to different working clusters, such as using different images and adding different labels in different working clusters. OverridePolicy, as an independent policy API, can automatically handle cluster-related configurations, such as adding different prefixes to images based on the geographical distribution of subsets of clusters and using different StorageClasses based on your cloud provider.
+    [OverridePolicy](../kairship/policy/override-policy.md) is a differentiated configuration policy that defines the differentiated configuration policy for distributing multi-cloud resource objects to different working clusters, such as using different images and adding different labels in different working clusters. OverridePolicy, as an independent policy API, can automatically handle cluster-related configurations, such as adding different prefixes to images based on the geographical distribution of subsets of clusters and using different StorageClasses based on your cloud provider.
 
 ### P
 
@@ -1671,7 +1671,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - PropagationPolicy
 
-    In multi-cloud orchestration, [PropagationPolicy](../kairship/07policy/propagationpolicy.md) defines the distribution strategy for multi-cloud resource objects, supporting planning which workloads to deploy to which working clusters using specified clusters or labels. PropagationPolicy is an independent policy API that can define multi-cluster scheduling methods based on distribution requirements.
+    In multi-cloud orchestration, [PropagationPolicy](../kairship/policy/propagation-policy.md) defines the distribution strategy for multi-cloud resource objects, supporting planning which workloads to deploy to which working clusters using specified clusters or labels. PropagationPolicy is an independent policy API that can define multi-cluster scheduling methods based on distribution requirements.
 
     - Supports 1:n `policy:workload`, and users do not need to repeat the scheduling constraints each time they create a multi-cloud application.
     - When using the default policy, users can interact directly with the Kubernetes API.
@@ -1720,7 +1720,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Resource Template
 
-    In [multi-cloud orchestration](../kairship/intro/what.md), a template called a federated resource is used. This is a multi-cloud resource template based on the native K8s API, which facilitates the integration of all cloud-native tools within the K8s ecosystem. This resource template can be used to centrally manage [multi-cloud services](../kairship/06resource/service.md), [multi-cloud namespaces](../kairship/06resource/ns.md), [multi-cloud configmap](../kairship/06resource/configmap.md), and [multi-cloud secret](../kairship/06resource/secret.md).
+    In [multi-cloud orchestration](../kairship/intro/what.md), a template called a federated resource is used. This is a multi-cloud resource template based on the native K8s API, which facilitates the integration of all cloud-native tools within the K8s ecosystem. This resource template can be used to centrally manage [multi-cloud services](../kairship/resource/service.md), [multi-cloud namespaces](../kairship/resource/ns.md), [multi-cloud configmap](../kairship/resource/configmap.md), and [multi-cloud secret](../kairship/resource/secret.md).
 
 - Role
 

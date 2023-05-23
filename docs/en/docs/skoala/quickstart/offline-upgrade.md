@@ -4,13 +4,13 @@ Components of DCE 5.0 are loosely coupled and can be installed/upgraded independ
 
 ## Synch Image
 
-After downloading the image to your local node, you need to sync the latest image version to your image registry via [chart-syncer ](https://github.com/bitnami-labs/charts-syncer) or a container runtime. chart-syncer is more recommended for its efficiency and convenience.
+After downloading the image to your local node, you need to sync the latest image version to your container registry via [chart-syncer ](https://github.com/bitnami-labs/charts-syncer) or a container runtime. chart-syncer is more recommended for its efficiency and convenience.
 
 ### Sync with chart-syncer
 
 1. Create `load-image.yaml` as the chart-syncer profile
 
-    All parameters in the `load-image.yaml` file are mandatory. You need a private image registry and modify configurations as described below. See [Official Doc](https://github.com/bitnami-labs/charts-syncer) for a detailed explanation of the chart-syncer profile.
+    All parameters in the `load-image.yaml` file are mandatory. You need a private container registry and modify configurations as described below. See [Official Doc](https://github.com/bitnami-labs/charts-syncer) for a detailed explanation of the chart-syncer profile.
 
     === "chart repo installed"
 
@@ -35,13 +35,13 @@ After downloading the image to your local node, you need to sync the latest imag
         ```
 
         1. Relative path to executing chart-syncer command, **not** the relative path between this YAML file and the offline package
-        2. Change to your image registry url
-        3. Change to your image registry
+        2. Change to your container registry url
+        3. Change to your container registry
         4. Can be any of the supported Helm Chart registries
         5. Change to chart repo url
-        6. Your image registry username
-        7. Your image registry password
-        8. Your image registry username
+        6. Your container registry username
+        7. Your container registry password
+        8. Your container registry username
         9. Your image vault password
 
     === "chart repo not installed"
@@ -64,10 +64,10 @@ After downloading the image to your local node, you need to sync the latest imag
         ```
 
         1. Relative path to executing chart-syncer command, **not** the relative path between this YAML file and the offline package
-        2. Change to your image registry url
-        3. Change to your image registry
+        2. Change to your container registry url
+        3. Change to your container registry
         4. chart local path
-        5. Your image registry username
+        5. Your container registry username
         6. Your image vault password
 
 2. Run this command to sync the image.
@@ -163,7 +163,7 @@ After the image is synced, you can start upgrading DME.
 
     6. Run `helm upgrade`.
 
-        Before upgrading, it is recommended to override the `global.imageRegistry` field in `bak.yaml` as the address of the image registry currently in use.
+        Before upgrading, it is recommended to override the `global.imageRegistry` field in `bak.yaml` as the address of the container registry currently in use.
 
         ```shell
         export imageRegistry={your image repo}
@@ -189,7 +189,7 @@ After the image is synced, you can start upgrading DME.
 
     2. Run the `helm upgrade` command.
 
-        Before upgrading, it is recommended that you override `global.imageRegistry` in `bak.yaml` as the address of the image registry currently in use.
+        Before upgrading, it is recommended that you override `global.imageRegistry` in `bak.yaml` as the address of the container registry currently in use.
 
         ```shell
         export imageRegistry={your image repo}

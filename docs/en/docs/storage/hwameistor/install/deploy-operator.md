@@ -111,7 +111,7 @@ Please confirm that your cluster has successfully connected to `container manage
          Set the registry address of the Hwameistor mirror, and the available online registrys have been filled in by default.
          If it is a privatized environment, it can be modified to a private registry address.
 
-     - `K8s image Registry`:
+     - `K8s container registry`:
 
          Set the address of the K8S container registry, and the available online registry has been filled in by default.
          If the environment is privatized, it can be modified to a private registry address.

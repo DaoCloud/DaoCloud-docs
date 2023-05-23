@@ -181,7 +181,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Cluster API Declarative Cluster Lifecycle Management Tool v1.3.0 released (CNCF project)](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.3.0)
 
-     The main new features of this version: support for automatic renewal of machine certificates provided by the Kubeadm control plane provider, the ability to publish and consume cluster API images from the new container image registry registry.k8s.io, allowing the creation of clusters without taints on control plane nodes, clusterctl can now manage IPAM and RuntimeExtension providers.
+     The main new features of this version: support for automatic renewal of machine certificates provided by the Kubeadm control plane provider, the ability to publish and consume cluster API images from the new container container registry registry.k8s.io, allowing the creation of clusters without taints on control plane nodes, clusterctl can now manage IPAM and RuntimeExtension providers.
 
 - [Clusternet Multi-Cloud Multi-Cluster Management Project v0.15.0 Released (CNCF Project)](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.4.0)
 

@@ -21,7 +21,7 @@ In addition to the above preset repositories, you can also add third-party Helm 
 
 ## Introduce third-party Helm repository
 
-The following takes the public image registry of Kubevela as an example to introduce and manage the helm repo.
+The following takes the public container registry of Kubevela as an example to introduce and manage the helm repo.
 
 1. Find the cluster that needs to be imported into the third-party helm repo, click the cluster name, and enter `Cluster Details`.
 

@@ -25,7 +25,7 @@ DCE 5.0 natively supports the DevOps development and operation and maintenance m
 - :material-middleware: **middleware** [ES, Kafka, MinIO, MySQL, etc.](middleware/what.md)
 - :material-warehouse: **Container Registry** [Registry Integration and Hosting Service](kangaroo/what.md)
 - :material-dot-net: **Network** [Multi-CNI fusion solution](network/intro/what-is-net.md)
-- :floppy_disk: **Storage** [Containerized Storage](./storage/what.md)
+- :floppy_disk: **Storage** [Containerized Storage](storage/what.md)
 
 </div>
 
@@ -109,4 +109,4 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
 
 [Download DCE 5.0](download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](install/intro.md){ .md-button .md-button--primary }
-[Free Trial](./license0.md){ .md-button .md-button--primary }
+[Free Trial](dce/license0.md){ .md-button .md-button--primary }

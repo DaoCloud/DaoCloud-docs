@@ -177,7 +177,7 @@ nav:
               - 工作空间绑定命名空间: ghippo/user-guide/workspace/ws-to-ns.md
               - 单集群分配给多个工作空间: ghippo/user-guide/workspace/cluster-for-multiws.md
               - 文件夹最佳实践: ghippo/user-guide/workspace/folder-practice.md
-              - 普通用户授权规划: ghippo/user-guide/workspace/authu-plan.md
+              - 普通用户授权规划: ghippo/user-guide/workspace/authz-plan.md
               - GProduct 对接全局管理:
                   - ghippo/gproduct/intro.md
                   - 接入导航栏: ghippo/gproduct/nav.md
