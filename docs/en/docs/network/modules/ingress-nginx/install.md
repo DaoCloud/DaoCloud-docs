@@ -19,7 +19,7 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
     
 
-3. Select the version you want to install in `version selection` and click `install`.
+3. Select the version you want to install in `Version selection` and click `Install`.
 
     
 
