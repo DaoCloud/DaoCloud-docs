@@ -124,21 +124,21 @@ etcdctl get --prefix cilium/state/nodes/v1
 etcdctl get --prefix cilium/state/services/v1/<clusterName>/<NS>
 ```
 
-See the [Cluster Mesh documentation](https://docs.cilium.io/en/stable/gettingstarted/clustermesh/clustermesh/).
+See the [Cluster Mesh documentation](https://docs.cilium.io/en/v1.9/gettingstarted/clustermesh/#gs-clustermesh).
 
 ## Service Mesh
 
 Currently Cilium does not support directly enabling Service Mesh by modifying certain parameters.
 It can only be enabled via the Cilium CLI or Helm. Therefore, clusters installed with Kubean or Kubespray cannot be enabled by configuring parameters.
 
-See the [Service Mesh documentation](https://docs.cilium.io/en/stable/gettingstarted/servicemesh/ingress/).
+See the [Service Mesh documentation](https://docs.cilium.io/en/stable/network/servicemesh/ingress/).
 
 ## Bandwidth Management
 
 When Kubespray <= v2.20.0, it can only be enabled by setting the "enable-bandwidth-manager" variable to true using the "cilium_config_extra_vars" method.
 Later versions can be enabled directly by "cilium_enable_bandwidth_manager".
 
-See [Bandwidth Manager documentation](https://docs.cilium.io/en/stable/gettingstarted/bandwidth-manager/).
+See [Bandwidth Manager documentation](https://docs.cilium.io/en/v1.9/gettingstarted/bandwidth-manager/#bandwidth-manager).
 
 ## Replace kube-proxy
 
@@ -242,7 +242,7 @@ $ethtool -i eth0 | grep driver
 driver: vmxnet3 # NIC driver
 ```
 
-A list of currently supported drivers can be found at [LoadBalancer & NodePort XDP Acceleration](https://docs.cilium.io/en/stable/gettingstarted/kubeproxy-free/#loadbalancer-nodeport-xdp-acceleration).
+A list of currently supported drivers can be found at [LoadBalancer & NodePort XDP Acceleration](https://docs.cilium.io/en/v1.9/gettingstarted/kubeproxy-free/#loadbalancer-nodeport-xdp-acceleration).
 
 ### Bypass Socket LoadBalancer in Pod namespace
 
@@ -289,4 +289,4 @@ Allows external access to the ClusterIP Service:
 
 Cilium does not allow external access to ClusterIP SVC by default, you can enable it with bpf.lbExternalClusterIP=true. However, you need to break the relevant routes yourself.
 
-See [Replacing kube-proxy advanced configuration](https://docs.cilium.io/en/stable/gettingstarted/kubeproxy-free/) for more details.
+See [Replacing kube-proxy advanced configuration](https://docs.cilium.io/en/v1.9/gettingstarted/kubeproxy-free/#kubeproxy-free) for more details.

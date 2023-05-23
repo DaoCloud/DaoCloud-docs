@@ -6,7 +6,7 @@ If the IP pool is not specified through Annotations: `metallb.universe.tf/addres
 
 !!! note
 
-     The created IP pool must be in the same namespace as `Metallb` component, otherwise `Metallb` cannot recognize it.
+    The created IP pool must be in the same namespace as `Metallb` component, otherwise `Metallb` cannot recognize it.
 
 ## Specify IP pool
 
