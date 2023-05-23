@@ -729,7 +729,7 @@ nav:
           - 镜像空间:              
               - 镜像空间: kangaroo/space/index.md
               - 镜像列表: kangaroo/space/imagelist.md
-              - 镜像回收: kangaroo/reclaim.md
+              - 镜像回收: kangaroo/space/reclaim.md
           - 仓库集成: 
               - 仓库集成(工作空间): kangaroo/integrate/related-registry.md
               - 仓库集成(管理员): kangaroo/integrate/integrate.md
