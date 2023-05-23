@@ -6,7 +6,7 @@
 
 ## 仓库集成
 
-参阅[仓库集成](../kangaroo/related-registry.md)文档页面。
+参阅[仓库集成](../kangaroo/integrate/related-registry.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/join-registry.mp4" preload="metadata" poster="../images/kangaroo-repo.png"></video>
