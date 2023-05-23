@@ -268,12 +268,12 @@ Performance test results (just an FYI):
 
 - The throughput in `IPtables` mode increases dramatically when the number of rules is increased to 1000 or more.
 
-![Throughput](../../images/throughput.svg)
+![Throughput](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/throughput.svg)
 
 - CPU usage in `IPtables` mode increases significantly when the number of rules increases to 1000 or more.
 
-![CPU Usage](../../images/cpu-saturated.svg)
+![CPU Usage](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/cpu-saturated.svg)
 
 - The latency in `IPtables` mode increases significantly when the number of rules increases to 1000 or more.
 
-![Latency](../../images/latency-with-iptables.svg)
+![Latency](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/latency-with-iptables.svg)
