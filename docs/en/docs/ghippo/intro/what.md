@@ -8,7 +8,7 @@ Global Management (Ghippo) is a comprehensive user-centered service that include
 
 - [Audit Logs](../user-guide/audit-log.md): Provides operation logs of resources that allow security analysis, resource changes, problem location, and other essential insights.
 
-- [Platform Settings](../user-guide/platform-setting/MailServer.md): Platform security policy, mail server, appearance customization, and more ensure secure user information and a personalized experience.
+- [Platform Settings](../user-guide/platform-setting/mail-server.md): Platform security policy, mail server, appearance customization, and more ensure secure user information and a personalized experience.
 
 ## Benefits
 
@@ -32,9 +32,9 @@ Global Management (Ghippo) is a comprehensive user-centered service that include
 
 1. Log in to the DCE platform using the DCE platform administrator (Admin) or a user with Admin privileges.
 
-2. Go to `Access Control`. [Create users and authorize](../user-guide/access-control/User.md), then [create groups and authorize](../user-guide/access-control/Group.md), and eventually, [create an identity provider](../user-guide/access-control/idprovider.md).
+2. Go to `Access Control`. [Create users and authorize](../user-guide/access-control/user.md), then [create groups and authorize](../user-guide/access-control/group.md), and eventually, [create an identity provider](../user-guide/access-control/idprovider.md).
 
-3. Go to `Workspace`. [Create enterprise hierarchy relationship](../user-guide/workspace/ws-folder.md), then [create a workspace (tenant)](../user-guide/workspace/Workspaces.md).
+3. Go to `Workspace`. [Create enterprise hierarchy relationship](../user-guide/workspace/ws-folder.md), then [create a workspace (tenant)](../user-guide/workspace/workspace.md).
 
 4. Go to `Audit Logs`. View and [export audit logs](../user-guide/audit-log.md).
 

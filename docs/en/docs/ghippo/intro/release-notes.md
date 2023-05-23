@@ -214,7 +214,7 @@ Release date: 2022-9-25
 - **Added** Keycloak High Availability
 - **Added** mail server configuration -> support Insight and App Workbench to send mail
 - **Added** Meet the Helm specification, support installer and offline
-- **Added** [About Platform](../user-guide/platform-setting/about.md), [Audit Log](../user-guide/audit-log.md), [Access Key](../04UserGuide/ 06PersonalCenter/Password.md), [Language Settings]../user-guide/06PersonalCenter/Language.mdd), [Security Settings]../user-guide/06PersonalCenter/SecuritySetting.mdd) and other documents
+- **Added** [About Platform](../user-guide/platform-setting/about.md), [Audit Log](../user-guide/audit-log.md), [Access Key](../user-guide/ personal-center/accesstoken.md), [Language Settings]../user-guide/personal-center/language.mdd), [Security Settings]../user-guide/personal-center/security-setting.mdd) and other documents
 
 ## v0.8
 
@@ -229,7 +229,7 @@ Release date: 2022-8-21
 - **Added** Workspace -> Shared Cluster Authority Management.
 - **Added** Workspace -> Shared Cluster Quota Management -> Storage
 - **Added** Platform Settings -> Top Navigation Appearance Customization -> Reset Function
-- **Added** Added new pages on the documentation site: [Identity Provider](../user-guide/access-control/idprovider.md), [Mail Server Settings](.../user-guide/platform-setting/MailServer.md, [ Appearance Customization](.../user-guide/platform-setting/Appearance.md, [LDAP](../user-guide/access-control/ldap.md), [OIDC](../user-guide/access-control/oidc.md)
+- **Added** Added new pages on the documentation site: [Identity Provider](../user-guide/access-control/idprovider.md), [Mail Server Settings](.../user-guide/platform-setting/mail-server.md, [ Appearance Customization](.../user-guide/platform-setting/appearance.md, [LDAP](../user-guide/access-control/ldap.md), [OIDC](../user-guide/access-control/oidc.md)
 
 ## v0.7
 
@@ -243,7 +243,7 @@ Release date: 2022-7-23
 - **Added** Identity Provider -> LDAP Connection -> User/group Synchronization Settings (Create/Edit/Delete/View/Sync)
 - **Added** Platform Settings -> Security Policy -> Password Policy Settings
 - **Optimize** workspace -> code structure adjustment
-- **Added** Added new pages on the document site: [Create group and Authorize](../user-guide/access-control/Group.md), [group](../user-guide/access-control/Group.md), [Login](../user-guide/00Login.md), [Password Reset](../user-guide/password.md), [Global Admin Roles](../user-guide/access-control/global.md), [Resources Management (by Workspace)](../../user-guide/workspace/wsbp.md[Resource Management (by Role)](../../user-guide/workspace/quota.md
+- **Added** Added new pages on the document site: [Create group and Authorize](../user-guide/access-control/group.md), [group](../user-guide/access-control/group.md), [Login](../user-guide/00Login.md), [Password Reset](../user-guide/password.md), [Global Admin Roles](../user-guide/access-control/global.md), [Resources Management (by Workspace)](../../user-guide/workspace/wsbp.md[Resource Management (by Role)](../../user-guide/workspace/quota.md
 
 ## v0.6
 
@@ -260,7 +260,7 @@ Release date: 2022-6-21
 - **Added** Added About -> Technical Team (List/Initialize)
 - **Added** License -> Lifecycle Management (Create/Edit/Delete/View/List)
 - **Added** License -> Get ESN serial number
-- **Added** Added new pages in the documentation site: [Common Terminology](glossary.md), [Function Overview](features.md), [Quick Start/Create User and Authorization](../user-guide/access-control/User.md), [What is User Access and Control](../user-guide/access-control/iam.md), [User](../04UserGuide/01UserandAccess/User.md )
+- **Added** Added new pages in the documentation site: [Common Terminology](glossary.md), [Function Overview](features.md), [Quick Start/Create User and Authorization](../user-guide/access-control/user.md), [What is User Access and Control](../user-guide/access-control/iam.md), [User](../user-guide/access-control/user.md )
 
 ## v0.5
 

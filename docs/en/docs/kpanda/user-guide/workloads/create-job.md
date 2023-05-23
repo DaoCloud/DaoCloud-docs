@@ -6,7 +6,7 @@ Task (Job) is suitable for performing one-time tasks. A Job creates one or more 
 
 ## Prerequisites
 
-- In the [Container Management](../../intro/what.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters /create-cluster.md), and can access the cluster UI interface.
+- In the [Container Management](../../intro/what.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
 
 - Create a [namespace](../namespaces/createns.md) and a [user](../../../ghippo/user-guide/access-control/user.md).
 

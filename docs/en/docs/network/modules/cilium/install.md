@@ -4,7 +4,7 @@ This page describes the configuration of various arguments when installing Ciliu
 
 ## Prerequisites
 
-To install Cilium in DCE 5.0, you need to select `cilium` for `Network Plugins` on the `Create Cluster`->`Network Configuration` page. For creating a cluster, see [create worker cluster](../../../kpanda/07UserGuide/Clusters/CreateCluster.md).
+To install Cilium in DCE 5.0, you need to select `cilium` for `Network Plugins` on the `Create Cluster`->`Network Configuration` page. For creating a cluster, see [create worker cluster](../../../kpanda/user-guide/clusters/create-cluster.md).
 
 
 

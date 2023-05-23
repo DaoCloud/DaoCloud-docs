@@ -10,7 +10,7 @@ This page describes the features of Global Management.
 1. Users
 
      Having a user account is a prerequisite for users to access the DCE platform.
-     [User](../user-guide/access-control/User.md) is created by Super Admin or IAM Admin in `Global Management` -> `Access Control` -> `Users` page, or connected via LDAP.
+     [User](../user-guide/access-control/user.md) is created by Super Admin or IAM Admin in `Global Management` -> `Access Control` -> `Users` page, or connected via LDAP.
      Each user has an independent username and password. By granting different permissions to a single or a group of users, users have access to different resources.
 
      ```mermaid
@@ -21,7 +21,7 @@ This page describes the features of Global Management.
          user --> user2[User B]
          user --> user3[User C]
         
-     click user "https://docs.daocloud.io/en/ghippo/04UserGuide/01UserandAccess/User/"
+     click user "https://docs.daocloud.io/en/ghippo/user-guide/access-control/User/"
 
      classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
      classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
@@ -33,7 +33,7 @@ This page describes the features of Global Management.
 
 2. Groups
 
-     [group](../user-guide/access-control/Group.md) is a collection of multiple users.
+     [group](../user-guide/access-control/group.md) is a collection of multiple users.
      Users can inherit the role permissions of the group by joining the group. Authorize users in batches through groups to better manage users and their permissions.
 
      ```mermaid
@@ -44,9 +44,9 @@ This page describes the features of Global Management.
          admin --> group[Create group]
          admin --> add[Add user to group]
         
-     click user "https://docs.daocloud.io/en/ghippo/04UserGuide/01UserandAccess/User/"
-     click group "https://docs.daocloud.io/en/ghippo/04UserGuide/01UserandAccess/Group/"
-     click add "https://docs.daocloud.io/en/ghippo/04UserGuide/01UserandAccess/Group/#_5"
+     click user "https://docs.daocloud.io/en/ghippo/user-guide/access-control/User/"
+     click group "https://docs.daocloud.io/en/ghippo/user-guide/access-control/Group/"
+     click add "https://docs.daocloud.io/en/ghippo/user-guide/access-control/Group/#_5"
 
      classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
      classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
@@ -57,14 +57,14 @@ This page describes the features of Global Management.
 
 3. Roles
 
-     A [role](../user-guide/access-control/Role.md) corresponds to a set of permissions.
+     A [role](../user-guide/access-control/role.md) corresponds to a set of permissions.
      Permissions determine the actions that can be performed on a resource. Granting a role to a user grants all the permissions included in that role.
      You can divide the management rights of different modules to different users,
      For example, user A manages the container management module, user B manages the App Workbench module, and jointly manages the observability module.
 
 4. Workspaces
 
-     [Workspaces](../user-guide/workspace/Workspaces.md) are used to manage resources and consist of two parts: folders and workspaces.
+     [Workspaces](../user-guide/workspace/workspace.md) are used to manage resources and consist of two parts: folders and workspaces.
 
      Levels represent nodes in the resource hierarchy, and each level can contain workspaces, other levels, or both. The hierarchy can be understood as a variety of concepts, such as hierarchical departments, environments, or suppliers.
 
@@ -89,10 +89,10 @@ This page describes the features of Global Management.
          about --> mail[Mail server]
          about --> license[Genuine authorization]
         
-     click about "https://docs.daocloud.io/en/ghippo/04UserGuide/04PlatformSetting/about/"
-     click password "https://docs.daocloud.io/en/ghippo/04UserGuide/password/"
-     click appear "https://docs.daocloud.io/en/ghippo/04UserGuide/04PlatformSetting/Appearance/"
-     click mail "https://docs.daocloud.io/en/ghippo/04UserGuide/04PlatformSetting/MailServer/"
+     click about "https://docs.daocloud.io/en/ghippo/user-guide/04PlatformSetting/about/"
+     click password "https://docs.daocloud.io/en/ghippo/user-guide/password/"
+     click appear "https://docs.daocloud.io/en/ghippo/user-guide/04PlatformSetting/Appearance/"
+     click mail "https://docs.daocloud.io/en/ghippo/user-guide/04PlatformSetting/MailServer/"
      click license "https://docs.daocloud.io/en/dce/license0/"
 
      classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
@@ -107,7 +107,7 @@ This page describes the features of Global Management.
 Below is a list of features available:
 
 1. Access Control
-    1. [Users](../user-guide/access-control/User.md)
+    1. [Users](../user-guide/access-control/user.md)
         - Display username, description, creation time and last login time in the list
         - Support searching users by username
         - Quick authorization to users from the list
@@ -119,7 +119,7 @@ Below is a list of features available:
         - Record user group membership information
         - Admins can help users change passwords
         - Admins can help users create access keys
-    2. [Groups](../user-guide/access-control/Group.md)
+    2. [Groups](../user-guide/access-control/group.md)
         - Display group name, number of users in group, description, and creation time in the list
         - Support searching by group name
         - Quick authorization to groups from the list
@@ -129,7 +129,7 @@ Below is a list of features available:
         - Edit group basic information such as description
         - Record group authorization information
         - Record group member information
-    3. [Roles](../user-guide/access-control/Role.md)
+    3. [Roles](../user-guide/access-control/role.md)
         - Display system role name and description in the list
         - Record role authorization information
         - Supports predefined folder roles: Folder Admin, Folder Editor, and Folder Viewer
@@ -147,7 +147,7 @@ Below is a list of features available:
         - Add users/groups to folders and authorize them
         - Inherit permissions, subfolders, and workspaces inherit the permissions of users/groups in the parent folder
         - Move folders while changing department mappings in the enterprise
-    2. [Workspaces](../user-guide/workspace/Workspaces.md)
+    2. [Workspaces](../user-guide/workspace/workspace.md)
         - Add users to the workspace/usergroup and authorize
         - Add resources to workspace - Resource group, supports 6 resource types
         - Permissions inheritance, resources in the resource group can inherit the roles of the user/group in the workspace and parent folder
@@ -173,11 +173,11 @@ Below is a list of features available:
         - Custom session timeout policy
         - Custom account lock strategy
         - Login and logout strategy
-    2. [Email Settings](../user-guide/platform-setting/MailServer.md)
+    2. [Email Settings](../user-guide/platform-setting/mail-server.md)
         - Configure the mail server
         - Retrieve user passwords by email
         - Receive alarm notifications, etc.
-    3. [Custom Appearance](../user-guide/platform-setting/Appearance.md)
+    3. [Custom Appearance](../user-guide/platform-setting/appearance.md)
         - Custom login page appearance, including platform LOGO, login page icon, tab page icon, etc.
         - One-click restore login page appearance configuration
         - Customize the top navigation bar, including navigation bar icons, tab page icons, etc.
@@ -190,11 +190,11 @@ Below is a list of features available:
         - Support for open source software supported by the demonstration platform
         - Display technical team style
 5. Personal center
-    1. [Security Settings](../user-guide/personal-center/SecuritySetting.md)
+    1. [Security Settings](../user-guide/personal-center/security-setting.md)
         - Update login password
         - Retrieve login password through email
-    2. [Access Keys](../user-guide/personal-center/Password.md)
+    2. [Access Keys](../user-guide/personal-center/accesstoken.md)
         - Each user can create an independent API key
         - API key expiration settings to ensure system security
-    3. [Language Settings](../user-guide/personal-center/Language.md)
+    3. [Language Settings](../user-guide/personal-center/language.md)
         - Supports multiple languages: Simplified Chinese, English, automatically detects browser's preferred language

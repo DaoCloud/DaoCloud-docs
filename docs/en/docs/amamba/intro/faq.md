@@ -1,6 +1,6 @@
 # FAQ
 
-This page provides solutions to some common problems you may encounter when using Application Workbench.
+This page provides solutions to some common problems you may encounter when using App Workbench.
 
 ## Error when running a pipeline
 

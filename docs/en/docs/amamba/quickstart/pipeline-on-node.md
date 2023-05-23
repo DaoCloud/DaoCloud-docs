@@ -72,7 +72,7 @@ First of all, it is necessary to expose the access address of Jenkins Dashbord t
 
 ## Run the pipeline and check if it is on the specified node
 
-1. Create a pipeline job in `Application Workbench`, and edit `Jenkinsfile` as follows:
+1. Create a pipeline job in `App Workbench`, and edit `Jenkinsfile` as follows:
 
     ```bash        
     pipeline {

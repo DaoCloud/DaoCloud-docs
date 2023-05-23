@@ -13,7 +13,7 @@ GProduct is the general term for all other modules in DCE 5.0 except the global 
 
     The entrances are unified on the left navigation bar.
 
-- [Access Routing and AuthN](./route-authn.md)
+- [Access Routing and AuthN](route-auth.md)
 
     Unify the IP or domain name, and unify the routing entry through the globally managed Istio Gateway.
 

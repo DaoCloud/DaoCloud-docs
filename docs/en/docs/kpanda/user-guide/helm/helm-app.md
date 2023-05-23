@@ -8,7 +8,7 @@ This section will take [cert-manager](https://cert-manager.io/docs/) as an examp
 
 - The container management module [connected to the Kubernetes cluster](../clusters/integrate-cluster.md) or [created the Kubernetes cluster](../clusters/create-cluster.md), and can access the UI interface of the cluster .
 
-- Completed a [namespace creation](../namespaces/createtens.md), [user creation](../../../ghippo/user-guide/access-control/user.md), and grant [`NS Admin`](../permissions/permission-brief.md#ns-admin) or higher permissions to the user. For details, please refer to [Namespace Authorization](../permissions/cluster-ns- auth.md).
+- Completed a [namespace creation](../namespaces/createns.md), [user creation](../../../ghippo/user-guide/access-control/user.md), and grant [`NS Admin`](../permissions/permission-brief.md#ns-admin) or higher permissions to the user. For details, please refer to [Namespace Authorization](../permissions/cluster-ns-auth.md).
 
 ## Install the Helm application
 

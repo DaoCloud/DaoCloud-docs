@@ -5,7 +5,7 @@ hide:
 
 # Basic Concept
 
-Application Workbench（Workbench）is your one-stop-shop for deploying DCE 5.0 cloud-native applications, providing lifecycle management for these applications. It lowers the entry barrier for enterprises to use cloud-native apps and improves efficiency of the processes from R&D to delivery.
+App Workbench（Workbench）is your one-stop-shop for deploying DCE 5.0 cloud-native applications, providing lifecycle management for these applications. It lowers the entry barrier for enterprises to use cloud-native apps and improves efficiency of the processes from R&D to delivery.
 
 - Workspace
 

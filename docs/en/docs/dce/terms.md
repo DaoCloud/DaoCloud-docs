@@ -26,7 +26,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     A resource object that extends the functionality of DCE.
     You can install more additional extensions via
-    [Container Management](../kpanda/intro/what.md) -> [Helm chart](../kpanda/07UserGuide/helm/README.md).
+    [Container Management](../kpanda/intro/what.md) -> [Helm chart](../kpanda/user-guide/helm/README.md).
 
 - Admission Controller
 
@@ -65,7 +65,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Annotation
 
-    [Annotation](../kpanda/07UserGuide/Nodes/labels-annotations.md) is a key-value pair that is used to attach
+    [Annotation](../kpanda/user-guide/nodes/labels-annotations.md) is a key-value pair that is used to attach
     arbitrary non-identifying metadata to objects.
 
     The metadata in an annotation can be small or large, structured or unstructured, and can include characters
@@ -514,7 +514,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/)
 
-    [ConfigMap](../kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md) is an API object used to
+    [ConfigMap](../kpanda/user-guide/configmaps-secrets/use-configmap.md) is an API object used to
     store non-sensitive data as key-value pairs. It can be used as environment variables, command-line parameters,
     or configuration files in storage volumes. ConfigMap decouples your environment configuration information
     from container images, making it easier to modify application configurations.
@@ -719,7 +719,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     The control plane is a set of system services that configure the mesh or subnet of the mesh to manage
     communication between workload instances. All instances of the control plane in a single mesh share the same configuration resources.
 
-- [CRD](../kpanda/07UserGuide/CustomResources/create.md), CustomResourceDefinition
+- [CRD](../kpanda/user-guide/custom-resources/create.md), CustomResourceDefinition
 
     CustomResourceDefinition (CRD) allows you to add resource objects to your Kubernetes API server with
     customized code without having to compile a complete custom API server. When the API resources supported
@@ -743,7 +743,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     Container runtime is the component responsible for running containers. Kubernetes supports many container runtime environments, such as containerd, cri-o, and any other implementation of [Kubernetes CRI](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md).
 
-- [CronJob](../kpanda/07UserGuide/Workloads/CreateCronJobByImage.md)
+- [CronJob](../kpanda/user-guide/workloads/create-cronjob.md)
 
     CronJob manages tasks that run periodically. Similar to a line of command in a crontab file, the CronJob object uses the [cron](https://zh.wikipedia.org/wiki/Cron) format to set the schedule.
 
@@ -757,7 +757,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 ### D
 
-- [DaemonSet](../kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md)
+- [DaemonSet](../kpanda/user-guide/workloads/create-daemonset.md)
 
     A DaemonSet ensures that a copy of a Pod is running on each node in a cluster.
     DaemonSets are useful for tasks that need to be performed on every node, such as collecting logs or monitoring system health.
@@ -837,7 +837,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     Developers can use interactive debugging to step through the code at runtime while analyzing the related execution context.
     Once they have identified the source of the failure, they correct the code and create a bug fix or patch.
 
-- [Deployement](../kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md)
+- [Deployement](../kpanda/user-guide/workloads/create-deployment.md)
 
     Deployment is an API object used to manage multi-replica applications, typically achieved by running stateless Pods.
     Each replica is represented by a Pod, which is distributed across nodes in the cluster.
@@ -1169,7 +1169,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Group
 
-    In global management, this refers to a combination of multiple users, that is, a [group](../ghippo/user-guide/access-control/Group.md).
+    In global management, this refers to a combination of multiple users, that is, a [group](../ghippo/user-guide/access-control/group.md).
 
     In the microservice engine, this is a group of configurations in Nacos.
 
@@ -1344,7 +1344,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - [Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
 
-    [Job](../kpanda/07UserGuide/Workloads/CreateJobByImage.md) is a deterministic or batch task that needs to run to completion. It creates one or more Pod objects and ensures that a specified number of Pods terminate successfully. As each Pod completes successfully, the Job tracks the number of successful completions.
+    [Job](../kpanda/user-guide/workloads/create-job.md) is a deterministic or batch task that needs to run to completion. It creates one or more Pod objects and ensures that a specified number of Pods terminate successfully. As each Pod completes successfully, the Job tracks the number of successful completions.
 
 - Kops
 
@@ -1525,7 +1525,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     A string provided by the client that identifies an object in the resource URL, such as `/api/v1/pods/some-name`.
     At any given time, only one object of a given type can have a given name. However, if the object is deleted, a new object with the same name can be created.
 
-- [Namespace](../kpanda/07UserGuide/Namespaces/createns.md)
+- [Namespace](../kpanda/user-guide/namespaces/createns.md)
 
     An abstraction used by Kubernetes to support the isolation of resource groups within a single cluster. Objects within the same namespace must have unique names, but there is no requirement for names to be unique across namespaces. Namespace-based scoping only applies to objects within the namespace, not to cluster-scoped objects.
 
@@ -1535,7 +1535,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Node
 
-    [Node](../kpanda/07UserGuide/Nodes/AddNode.md) is a computer that can work with other computers (or nodes) to complete a common task. In cloud computing, a node can be a physical machine, a virtual machine, or even a container. Nodes provide a unique computing unit (memory, CPU, network) that can be allocated to a cluster.
+    [Node](../kpanda/user-guide/nodes/add-node.md) is a computer that can work with other computers (or nodes) to complete a common task. In cloud computing, a node can be a physical machine, a virtual machine, or even a container. Nodes provide a unique computing unit (memory, CPU, network) that can be allocated to a cluster.
 
 - Node Pressure Eviction
 
@@ -1684,7 +1684,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - RBAC
 
-    Role-Based Access Control (RBAC) allows administrators to dynamically configure access policies through the Kubernetes API. RBAC uses [roles](../ghippo/user-guide/access-control/Role.md) (which contain permission rules) and role bindings (which grant a user group the permissions defined in a role).
+    Role-Based Access Control (RBAC) allows administrators to dynamically configure access policies through the Kubernetes API. RBAC uses [roles](../ghippo/user-guide/access-control/role.md) (which contain permission rules) and role bindings (which grant a user group the permissions defined in a role).
 
 - Registration center
 
@@ -1724,7 +1724,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Role
 
-    A [role](../ghippo/user-guide/access-control/Role.md) is a bridge that connects users and permissions.
+    A [role](../ghippo/user-guide/access-control/role.md) is a bridge that connects users and permissions.
     A role corresponds to a set of permissions, and different roles have different permissions. Granting a
     user a role means granting all the permissions included in that role.
     There are two types of roles in global management:
@@ -1752,7 +1752,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Secret
 
-    [Secret](../kpanda/07UserGuide/ConfigMapsandSecrets/create-secret.md) is used to store sensitive information such as passwords, OAuth tokens, and SSH keys.
+    [Secret](../kpanda/user-guide/configmaps-secrets/create-secret.md) is used to store sensitive information such as passwords, OAuth tokens, and SSH keys.
 
     Secrets allow users to have more control over how sensitive information is used and reduce the risk of accidental exposure. By default, secret values are encoded as base64 strings and stored in unencrypted form, but can be configured for [static encryption (Encrypt at rest)](https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/#ensure-all-secrets-are-encrypted).
 
@@ -1870,7 +1870,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - StatefulSet
 
-    [StatefulSet](../kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md) is used to manage a set of Pods with persistent storage and identifiers. Each Pod has a unique, immutable ID.
+    [StatefulSet](../kpanda/user-guide/workloads/create-statefulset.md) is used to manage a set of Pods with persistent storage and identifiers. Each Pod has a unique, immutable ID.
 
 - Stateless Apps
 
@@ -1896,7 +1896,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Taint
 
-    [Taint](../kpanda/07UserGuide/Nodes/Taints.md) is a core object that contains three required attributes: key, value, and effect. Taints prevent Pods from being scheduled on nodes or node groups. Taints work with tolerations to ensure that Pods are only scheduled on nodes with tolerations that match the taints. One or more taints can be marked on the same node. Nodes should only schedule Pods with tolerations that match the taints.
+    [Taint](../kpanda/user-guide/nodes/taints.md) is a core object that contains three required attributes: key, value, and effect. Taints prevent Pods from being scheduled on nodes or node groups. Taints work with tolerations to ensure that Pods are only scheduled on nodes with tolerations that match the taints. One or more taints can be marked on the same node. Nodes should only schedule Pods with tolerations that match the taints.
 
 - Temporary microservice instance
 
@@ -1933,7 +1933,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - User
 
-    A [user](../ghippo/user-guide/access-control/User.md) is the subject who initiates an operation, each user has a unique ID and is granted different roles. The IAM users created by default have no permissions and need to be added to user groups, granted roles or policies to gain corresponding permissions.
+    A [user](../ghippo/user-guide/access-control/user.md) is the subject who initiates an operation, each user has a unique ID and is granted different roles. The IAM users created by default have no permissions and need to be added to user groups, granted roles or policies to gain corresponding permissions.
 
     Users log in to DCE with their usernames and operate platform resources and services according to the permissions granted to them. Therefore, users are the subjects of resource ownership and have corresponding permissions for the resources they own.
 
@@ -2007,7 +2007,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     A workload is an application running on Kubernetes.
 
-    Various core objects representing different types or parts of workloads include [Deployment](../kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md), [StatefulSet](../kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md), [DaemonSet](../kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md), [Job](../kpanda/07UserGuide/Workloads/CreateJobByImage.md), and ReplicaSet.
+    Various core objects representing different types or parts of workloads include [Deployment](../kpanda/user-guide/workloads/create-deployment.md), [StatefulSet](../kpanda/user-guide/workloads/create-statefulset.md), [DaemonSet](../kpanda/user-guide/workloads/create-daemonset.md), [Job](../kpanda/user-guide/workloads/create-job.md), and ReplicaSet.
 
     For example, a workload with a web server and a database may run the database in a StatefulSet, while the web server runs in a Deployment.
 
@@ -2021,7 +2021,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Workspace
 
-    A [workspace](../ghippo/user-guide/workspace/Workspaces.md) is a resource category that represents a resource hierarchy. A workspace can contain resources such as clusters, [namespaces](../kpanda/07UserGuide/Namespaces/createns.md), and registries. Typically, a workspace corresponds to a project, and different resources can be assigned to each workspace, with different users and user groups assigned.
+    A [workspace](../ghippo/user-guide/workspace/workspace.md) is a resource category that represents a resource hierarchy. A workspace can contain resources such as clusters, [namespaces](../kpanda/user-guide/namespaces/createns.md), and registries. Typically, a workspace corresponds to a project, and different resources can be assigned to each workspace, with different users and user groups assigned.
 
 - Worker Cluster
 

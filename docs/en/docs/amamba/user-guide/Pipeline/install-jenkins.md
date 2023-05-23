@@ -49,7 +49,7 @@
     | eventProxy.imagePullPolicy | Required if enabled=true |
     | eventProxy.configMap.eventroxy.host | Required if enabled=true |
     | eventProxy.configMap.eventroxy.proto | Required if enabled=true |
-    | eventProxy.configMap.eventroxy.token | If enabled=true must be filled in<br />Token acquisition method refers to the global management access key document: https://docs.daocloud.io/ghippo/04UserGuide/06PersonalCenter/Password/ |
+    | eventProxy.configMap.eventroxy.token | If enabled=true must be filled in<br />Token acquisition method refers to the global management access key document: https://docs.daocloud.io/ghippo/user-guide/personal-center/Password/ |
 
 5. Go to the Helm app to view the deployment results.
 
@@ -59,7 +59,7 @@
 
 Note: currently only supports the integration of Jenkins installed through the DCE 5.0 platform.
 
-1. Log in to the web console with a user with the Application Workbench administrator role and enter the Application Workbench
+1. Log in to the web console with a user with the App Workbench administrator role and enter the App Workbench
 
     <!--![]()screenshots-->
 

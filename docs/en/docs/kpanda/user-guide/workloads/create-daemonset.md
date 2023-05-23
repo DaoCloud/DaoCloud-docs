@@ -18,7 +18,7 @@ For simplicity, a DaemonSet can be started on each node for each type of daemon.
 
 Before creating a DaemonSet, the following prerequisites need to be met:
 
-- In the [Container Management](../../intro/what.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters /create-cluster.md), and can access the cluster UI interface.
+- In the [Container Management](../../intro/what.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
 
 - Create a [namespace](../namespaces/createns.md) and a [user](../../../ghippo/user-guide/access-control/user.md).
 

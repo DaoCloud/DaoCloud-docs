@@ -1,6 +1,6 @@
-# What is Application Workbench?
+# What is App Workbench?
 
-Application Workbench (or Workbench for short) is a container-based DevOps platform for cloud-native applications. Workbench serves as a unified entry point for creating applications in DCE 5.0, providing flexible and easy-to-use pipelines, GitOps, progressive delivery, project management, integration of tools about product lifecycle and agile development.
+App Workbench (or Workbench for short) is a container-based DevOps platform for cloud-native applications. Workbench serves as a unified entry point for creating applications in DCE 5.0, providing flexible and easy-to-use pipelines, GitOps, progressive delivery, project management, integration of tools about product lifecycle and agile development.
 
 Workbench focuses on the process of automation application delivery and infrastructure change, providing full lifecycle management for applications from "development -> testing -> deployment -> operation". This can promote digital transformation and improve IT delivery competence and competitiveness.
 

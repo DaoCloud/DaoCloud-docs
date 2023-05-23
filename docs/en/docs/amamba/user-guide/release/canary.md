@@ -13,7 +13,7 @@ Based on the open source project [Argo Rollout](https://argoproj.github.io/argo-
 
 ## Steps
 
-1. Enter the `Application Workbench` module, click `Gray Release` in the left navigation bar, and then click `Create Release Task`->`Canary Release` in the upper right corner of the page.
+1. Enter the `App Workbench` module, click `Gray Release` in the left navigation bar, and then click `Create Release Task`->`Canary Release` in the upper right corner of the page.
 
     <!--![]()screenshots-->
 
