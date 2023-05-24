@@ -29,4 +29,4 @@ After accessing, when members deploy applications in the namespace under the wor
     !!! note
 
         1. If the Docker Registry container registry has not set a password, you can leave it blank, and the Harbor registry must fill in the username/password.
-        1. For a hands-on demo, see [Linked registry Video Demo](../videos/kangaroo.md)
+        1. For a hands-on demo, see [Linked registry Video Demo](../../videos/kangaroo.md)

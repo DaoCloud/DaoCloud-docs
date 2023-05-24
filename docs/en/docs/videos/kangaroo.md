@@ -4,7 +4,7 @@
 
 ## Associated registry
 
-See the [Related Registry](../kangaroo/related-registry.md) documentation page.
+See the [Related Registry](../kangaroo/integrate/related-registry.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/join-registry.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>

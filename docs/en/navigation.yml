@@ -720,25 +720,33 @@ nav:
               - LVM: storage/terms/lvm.md
               - PV and PVC: storage/terms/pv_pvc.md
       - Container Registry:
-          - What is Container Registry: kangaroo/what.md
-          - Image List: kangaroo/imagelist.md
+          - Intro:
+              - What is Container Registry: kangaroo/what.md
+              - Release Notes: kangaroo/release-notes.md
+              - FAQs: kangaroo/faq.md
           - Quick Start:
               - Manage External Registry: kangaroo/quickstart/registry-in-one.md
               - Push Image: kangaroo/quickstart/push.md
               - Admin Quickly Uses Registry: kangaroo/quickstart/admin-registry.md
               - Workspace Admin Quickly Uses Registry: kangaroo/quickstart/ws-admin-registry.md
-          - Registry Integration: 
-              - Registry Integration (Workspace): kangaroo/related-registry.md
-              - Registry Integration (Admin): kangaroo/integrate/integrate.md
+          - Registry Space:              
+              - Registry Space: kangaroo/space/index.md
+              - Image List: kangaroo/space/imagelist.md
+              - Retention: kangaroo/space/reclaim.md
+          - Integrated Registry: 
+              - Integraetd Registry (Workspace): kangaroo/integrate/related-registry.md
+              - Registry Management (Admin): kangaroo/integrate/integrate.md
               - Create Registry Space: kangaroo/integrate/create-space.md
               - Bind/Unbind Workspace: kangaroo/integrate/bind-to-ws.md
-          - Hosted Harbor:
+              - Sync Images: kangaroo/integrate/sync.md
+          - Managed Harbor:
               - kangaroo/hosted/intro.md
               - Install Harbor Operator: kangaroo/hosted/operator.md
-              - Create Hosted Harbor Instances: kangaroo/hosted/harbor.md
-          - Scan Images: kangaroo/scan.md
-          - Release Notes: kangaroo/release-notes.md
-          - Registry FAQs: kangaroo/faq.md
+              - Create Harbor Instance: kangaroo/hosted/harbor.md
+              - Create Registry Space: kangaroo/integrate/create-space.md
+              - Bind/Unbind Workspace: kangaroo/integrate/bind-to-ws.md
+              - Sync Images: kangaroo/integrate/sync.md
+          - Scan Images: kangaroo/scan.md  
       - Cloud Native Security:
           - Intro: security/intro.md
           - Falco:
