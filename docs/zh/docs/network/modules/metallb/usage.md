@@ -46,7 +46,7 @@ spec:
   ...
 ```
 
-![](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/metalLB ip pool02 .jpg)
+![specify ip](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/metalLB ip pool02.jpg)
 
 ## 共享 IP 地址
 
