@@ -29,7 +29,7 @@ With years of leading experience in cloud native field, DaoCloud developed a bra
 
     Workbench provides progressive delivery based on Kubernetes declarative GitOps. You can deploy automated application deployment and lifecycle management with version control tools.
   
-- [Pipeline as code](.. /quickstart/deploy-pipeline.md)
+- [Pipeline as code](../quickstart/deploy-pipeline.md)
 
     Workbench provides declarative pipelines. It is easy to create a pipeline with standardized UI forms. Its configuration also supports version control, modularization, reusability, and declarative syntax.
 

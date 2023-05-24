@@ -4,7 +4,7 @@ The application workbench module supports custom pipeline templates. Users can c
 
 ## prerequisites
 
-- [Create Workspace](../../../../ghippo/user-guide/workspace/workspace.md), [Create User](../../../../ghippo /user-guide/access-control/user.md).
+- [Create Workspace](../../../../ghippo/user-guide/workspace/workspace.md), [Create User](../../../../ghippo/user-guide/access-control/user.md).
 - Add the user to the workspace with `workspace editor` or higher privileges.
 - Configure the [pipeline template file] (info.md).
 

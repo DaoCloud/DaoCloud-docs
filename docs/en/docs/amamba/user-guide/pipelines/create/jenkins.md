@@ -9,10 +9,10 @@ App Workbench Pipelines supports creating pipelines using a Jenkinsfile in a rep
 
 **Prerequisites**
 
-- [Create Workspace](../../../../ghippo/user-guide/workspace/workspace.md), [Create User](../../../../ghippo /user-guide/access-control/user.md).
+- [Create Workspace](../../../../ghippo/user-guide/workspace/workspace.md), [Create User](../../../../ghippo/user-guide/access-control/user.md).
 - Add the user to the workspace with `workspace editor` or higher privileges.
 - Provide a code warehouse, and the source code of the code warehouse has a Jenkinsfile text file.
-- If it is a private warehouse, you need to [create warehouse access credentials](../credentials.md) in advance.
+- If it is a private warehouse, you need to [create warehouse access credentials](../credential.md) in advance.
 
 **The specific operation steps are as follows:**
 
@@ -28,7 +28,7 @@ App Workbench Pipelines supports creating pipelines using a Jenkinsfile in a rep
 
     - name: the name of the pipeline. The pipeline name must be unique under the same workspace.
     - Code warehouse address: fill in the address of the remote code warehouse.
-    - Credentials: For private repositories, you need to [Create Repository Access Credentials](../credentials.md) in advance and select the credential here.
+    - Credentials: For private repositories, you need to [Create Repository Access Credentials](../credential.md) in advance and select the credential here.
     - Branch: Based on the code of which branch to build the pipeline, the default is the master branch.
     - Script path: the absolute path of the Jenkinsfile in the code repository.
 

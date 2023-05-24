@@ -12,7 +12,7 @@ The application workbench pipeline supports the creation of multi-branch pipelin
 - [Create workspace](../../../../ghippo/user-guide/workspace/workspace/), [Create user](../../../../ghippo/user-guide/access-control/user/).
 - Add the user to the workspace with `workspace editor` or higher privileges.
 - Provide a code warehouse, and the source code of the code warehouse has multiple branches, and all have Jenkinsfile text files.
-- If it is a private warehouse, you need to [create warehouse access credentials](../credentials.md) in advance.
+- If it is a private warehouse, you need to [create warehouse access credentials](../credential.md) in advance.
 
 ## Steps
 
@@ -27,7 +27,7 @@ The application workbench pipeline supports the creation of multi-branch pipelin
     - name: the name of the pipeline. The pipeline name must be unique under the same workspace.
     - Description information: The user describes the function of the current pipeline.
     - Code warehouse address: fill in the address of the remote code warehouse.
-    - Credentials: For private warehouses, you need to [create repo access credentials](../credentials.mdh) in advance and select the credentials here.
+    - Credentials: For private warehouses, you need to [create repo access credentials](../credential.md) in advance and select the credentials here.
     - Script path: the absolute path of the Jenkinsfile in the code repository.
 
     <!--![]()screenshots-->

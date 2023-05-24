@@ -25,7 +25,7 @@ If it is Workspace Admin, you can associate the existing container registry with
     !!! note
 
         1. If the Docker Registry container registry has not set a password, you can leave it blank, and the Harbor registry must fill in the username/password.
-        1. For a hands-on demo, see [Associated Registry Video Demo](../videos/kangaroo.md).
+        1. For a hands-on demo, see [Associated Registry Video Demo](../../videos/kangaroo.md).
 
 ## Integrated registry
 

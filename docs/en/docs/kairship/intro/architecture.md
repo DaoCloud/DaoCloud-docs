@@ -83,7 +83,7 @@ All request traffic is passed directly to the multi-cloud orchestration instance
 
 <!--screenshot-->
 
-As shown in the figure above, all requests to access the multi-cloud module will be shunted after multi-cloud orchestration, and all read requests such as get/list will access [container management module](../../kpanda/intro/what. md), write requests will access the Karmada instance. This will cause a problem: After creating a multi-cloud application through multi-cloud orchestration, how can the relevant resource information be obtained through the [container management module](../../kpanda/intro/what.md)?
+As shown in the figure above, all requests to access the multi-cloud module will be shunted after multi-cloud orchestration, and all read requests such as get/list will access [container management module](../../kpanda/intro/what.md), write requests will access the Karmada instance. This will cause a problem: After creating a multi-cloud application through multi-cloud orchestration, how can the relevant resource information be obtained through the [container management module](../../kpanda/intro/what.md)?
 
 Friends who know Karmada know that the essence of Karmada control-plane is a complete Kubernetes control plane, but there are no nodes that carry workloads.
 Therefore, when multi-cloud orchestration creates an instance, it adopts a tricky action, adding the instance itself as a hidden cluster to the [container management module](../../kpanda/intro/what.md) (not in the container management).

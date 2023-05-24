@@ -6,7 +6,7 @@ The application workbench supports building applications in four ways: [Git ware
 
 1. Create a [workspace](../../../ghippo/user-guide/workspace/workspace.md) and a [user](../../../ghippo/user-guide/access-control/user.md), the user needs to join the workspace and have the `Workspace Editor` role.
 
-2. [Create a credential to access the registry](../pipelines/credentials.md), such as `registry`.
+2. [Create a credential to access the registry](../pipelines/credential.md), such as `registry`.
 
 3. Prepare a mirror repository, such as Harbor repository.
 
