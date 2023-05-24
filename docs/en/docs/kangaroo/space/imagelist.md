@@ -25,3 +25,22 @@ The second part is all the public or private images obtained by actively associa
 - Simple and convenient: After the platform administrator creates a managed Harbor or integrates other registrys, if he wants to share it with all workspaces and namespaces, he only needs to make the container registry public.
 - Flexible access: In addition to platform-level registry integration capabilities, it also provides associated registry functions under each workspace. After association, the container registry can only be used by the workspace.
 - Global linkage: The App Workbench and container management provide the "image selector" function for the container registry. When deploying the application, you can click the "select image" button to obtain all visible images with one click, and quickly complete the deployment.
+
+## Push command
+
+You can push an image to current registry space and set the command to push.
+
+1. In the image list, click the `Push command` button on the right.
+
+    ![click button](../img/push00.png)
+
+1. You can `+ Generate login command` and view the command to push images.
+
+    ![push command](../img/push01.png)
+
+Here is a sample command to push image:
+
+```bash
+docker tag [ImageID] 10.6.194.1:30010/kangaroo/REPOSITORY[:TAG]
+docker push 10.6.194.1:30010/kangaroo/REPOSITORY[:TAG]
+```
