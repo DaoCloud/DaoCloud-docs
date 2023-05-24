@@ -6,14 +6,14 @@ You can create image retention rules for the current registry space. All image r
 
 Click on `Registry space` in the left-hand navigation bar, and click a name in the list.
 
-![Switch instances](../img/space01.png)
+![Switch instances](../images/space01.png)
 
 Click on the `Retention list` tab, and then click the `Create retention rule` button.
 
-![Click the button](../img/reclaim01.png)
+![Click the button](../images/reclaim01.png)
 
 Follow the prompts to select images and configure rules.
 
-![Create a rule](../img/reclaim02.png)
+![Create a rule](../images/reclaim02.png)
 
 Return to the image retention list and click on the `⋮` on the right side to disable, edit, or delete retention rules.

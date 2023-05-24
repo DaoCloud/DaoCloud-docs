@@ -32,11 +32,11 @@ You can push an image to current registry space and set the command to push.
 
 1. In the image list, click the `Push command` button on the right.
 
-    ![click button](../img/push00.png)
+    ![click button](../images/push00.png)
 
 1. You can `+ Generate login command` and view the command to push images.
 
-    ![push command](../img/push01.png)
+    ![push command](../images/push01.png)
 
 Here is a sample command to push image:
 
