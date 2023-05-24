@@ -7,12 +7,12 @@ There are two ways to configure API policies:
 - To set policies during API creation, see [Add API](add-api.md).
 - Adjust by [ Update the API policy configuration ](update-api.md) after the API is created.
 
-** Video tutorial **：
+** Video tutorial: **
 
-- [Advanced Configuration of API Policy (1)](.. /.. /.. /videos/skoala.md#api-1)
-- [Advanced Configuration of API Policy (2)](.. /.. /.. /videos/skoala.md#api-2)
+- [Advanced Configuration of API Policy (1)](../../../videos/skoala.md#api-1)
+- [Advanced Configuration of API Policy (2)](../../../videos/skoala.md#api-2)
 
-** The configuration of each policy is described as follows **:
+** The configuration of each policy is described as follows: **
 
 ## Load balancing
 
@@ -50,7 +50,7 @@ When the target back-end service of an API serves multiple instances, you can us
 
 If the exposed API path is inconsistent with the path provided by the back-end service, you can change the API path to be consistent with the path of the back-end service to ensure normal service access. After path rewriting is enabled, the gateway forwards external request traffic to the rewritten path.
 
-Note: ** You need to make sure that the overwritten path is real and that the path is correct, starting with a "/" **.
+Note: ** You need to make sure that the overwritten path is real and that the path is correct, starting with a "/". **
 
 <!--![]()screenshots-->
 
@@ -117,9 +117,6 @@ The microservice gateway supports abundant traffic limiting capabilities, includ
 The configuration shown in the following figure indicates that a maximum of 8 requests are allowed per minute (3+5). The 9th access will return a 429 status code indicating that the number of requests is too many. The response content returned after each successful request will have a `ratelimit：8` response header.
 
 <!--![]()screenshots-->
-
-!!! info
-
 
 ## Health examination
 
