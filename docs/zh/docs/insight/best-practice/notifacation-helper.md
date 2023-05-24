@@ -45,37 +45,37 @@
 
 1. `.` 字符
 
-在当前作用域下渲染指定对象。
+    在当前作用域下渲染指定对象。
 
-示例 1：取顶级作用域下的所有内容，即示例代码中上下文数据的全部内容。
+    示例 1：取顶级作用域下的所有内容，即示例代码中上下文数据的全部内容。
 
-```go
-{{ . }}
-```
+    ```go
+    {{ . }}
+    ```
 
 2. 判断语句 `if / else`
 
-使用if检查数据，如果不满足可以执行else。
+    使用 if 检查数据，如果不满足可以执行else。
 
-```go
-{{if .Labels.namespace }}命名空间: {{ .Labels.namespace }} \n{{ end }}
-```
+    ```go
+    {{if .Labels.namespace }}命名空间: {{ .Labels.namespace }} \n{{ end }}
+    ```
 
 3. 循环函数 `for`
 
-for函数用于重复执行代码内容。
+    for 函数用于重复执行代码内容。
 
-示例1：遍历labels列表，获取告警的所有label内容。
+    示例 1：遍历 labels 列表，获取告警的所有 label 内容。
 
-```go
-{{ for .Labels}} \n {{end}}
-```
+    ```go
+    {{ for .Labels}} \n {{end}}
+    ```
 
 ## 阈值模版说明
 
-Insight 内置 webhook 告警模版如下，其他如邮件、企业微信等内容相同，只是对换行进行相应调整。
+Insight 内置 Webhook 告警模板如下，其他如邮件、企业微信等内容相同，只是对换行进行相应调整。
 
-```
+```text
 规则名称: {{ .Labels.alertname }} \n
 策略名称: {{ .Labels.alertgroup }} \n
 告警级别: {{ .Labels.severity }} \n
@@ -100,7 +100,7 @@ Insight 内置 webhook 告警模版如下，其他如邮件、企业微信等内
 
 其他可作为邮箱主题的字段如下：
 
-```go
+```text
 {{ .status }} 告警消息的触发状态
 {{ .alertgroup }} 告警所属的策略名称
 {{ .alertname }} 告警所属的规则名称
