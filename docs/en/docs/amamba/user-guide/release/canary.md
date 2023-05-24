@@ -4,9 +4,9 @@ Based on the open source project [Argo Rollout](https://argoproj.github.io/argo-
 
 ## prerequisites
 
-1. Create a [workspace](../../../ghippo/user-guide/workspace/workspace.md) and a [user](../../../ghippo/user-guide /access-control/user.md), the user needs to join the workspace and have the `Workspace Editor` role.
+1. Create a [workspace](../../../ghippo/user-guide/workspace/workspace.md) and a [user](../../../ghippo/user-guide/access-control/user.md), the user needs to join the workspace and have the `Workspace Editor` role.
 
-- Create an application and enable `Grayscale Release`, refer to [Build microservice application based on Git repository](../wizard/create-app-git.md), [Deploy Java application based on Jar package](../ wizard/jar-java-app.md).
+- Create an application and enable `Grayscale Release`, refer to [Build microservice application based on Git repository](../wizard/create-app-git.md), [Deploy Java application based on Jar package](../wizard/jar-java-app.md).
 
 - Istiod and Argo Rollout have been installed on the cluster where the object is published. For specific installation methods, refer to [Managing Helm Apps](../../../kpanda/user-guide/helm/helm-app.md).
 

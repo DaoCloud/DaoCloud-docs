@@ -25,4 +25,4 @@ On the right side of the service list, click `⋮` to select the corresponding m
 
 
 
-For how to create and configure services, please refer to [Creating Services](../../../kpanda/user-guide/services-routes/CreatingServices.md).
+For how to create and configure services, please refer to [Creating Services](../../../kpanda/user-guide/services-routes/create-services.md).

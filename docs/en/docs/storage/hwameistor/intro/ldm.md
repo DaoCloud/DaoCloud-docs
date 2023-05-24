@@ -20,7 +20,7 @@ Currently LDM is still in `alpha` stage.
 
 ## Usage
 
-If you want to fully deploy HwameiStor, please refer to [Using Helm Chart to install and deploy](../hwameistor/install/deploy.md).
+If you want to fully deploy HwameiStor, please refer to [Using Helm Chart to install and deploy](../../hwameistor/install/deploy-operator.md).
 
 If you only want to deploy LDM separately, you can refer to the following steps to install it.
 

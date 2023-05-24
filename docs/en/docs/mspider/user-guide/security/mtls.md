@@ -148,7 +148,7 @@ The service mesh automatically upgrades all traffic between the two PEPs to mutu
 then the service mesh will continue to use plain text between PEPs. To override this behavior,
 Please use [Destination Rules](../traffic-governance/destination-rules.md) to explicitly disable mutual TLS mode.
 
-![](../../images/authn.svg)
+![](../../images/authz.svg)
 
 The service mesh outputs these two authentication types, as well as other claims in the credentials (if applicable), to the next layer: [authorize](./authorize.md).
 

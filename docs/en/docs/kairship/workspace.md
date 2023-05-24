@@ -6,7 +6,7 @@ After binding to the workspace, users with relevant permissions can manage these
 **Precautions**
 
 - The current operating user should have Admin or Workspace Admin privileges.
-  For more instructions on permissions, please refer to [Role and Permission Management](../ghippo/user-guide/access-control/role.md) and [Workspace Permissions](../ghippo/user-guide/workspace /ws-permission.md).
+  For more instructions on permissions, please refer to [Role and Permission Management](../ghippo/user-guide/access-control/role.md) and [Workspace Permissions](../ghippo/user-guide/workspace/ws-permission.md).
 - A multi-cloud instance/namespace can only be bound to one workspace.
 
 ## Bind multi-cloud instance and workspace

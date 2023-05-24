@@ -88,7 +88,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
      Adopt heterogeneous cloud-native technology architecture, compatible with domestic chips and servers, support heterogeneous operating system and heterogeneous application ecosystem, shield the complexity of underlying heterogeneous infrastructure, and adapt traditional operating systems from software ecological compatibility that requires long-term accumulation liberated from
      Realize the flexible scheduling of mixed heterogeneous clusters, ensure the stability and reliability of heterogeneous application operating environment, and help heterogeneous process to further speed up.
 
-     **Related modules**: [Global Management](ghippo/intro/what.md), [Container Management](kpanda/intro/what.md), [Cluster Lifecycle Management](community/kubean.md), [heterogeneous Middleware](middleware/what.md), [Cloud Native Network](network/intro/what-is-net.md), [Cloud Native Storage](../storage/what.md)
+     **Related modules**: [Global Management](ghippo/intro/what.md), [Container Management](kpanda/intro/what.md), [Cluster Lifecycle Management](community/kubean.md), [heterogeneous Middleware](middleware/what.md), [Cloud Native Network](network/intro/what-is-net.md), [Cloud Native Storage](storage/what.md)
 
     ![Heterogeneous](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/08xinchuan.jpg)
 

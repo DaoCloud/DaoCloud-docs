@@ -148,7 +148,7 @@ Istiod 提供了 服务网格系统管理的密钥和证书的路径，并将它
 则服务网格将继续在 PEP 之间使用纯文本。要覆盖此行为，
 请使用[目标规则](../traffic-governance/destination-rules.md)显式禁用双向 TLS 模式。
 
-![](../../images/authn.svg)
+![](../../images/authz.svg)
 
 服务网格将这两种认证类型以及凭证中的其他声明（如果适用）输出到下一层：[授权](./authorize.md)。
 

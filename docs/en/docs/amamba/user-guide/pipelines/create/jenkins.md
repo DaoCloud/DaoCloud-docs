@@ -3,30 +3,39 @@ hide:
   - toc
 ---
 
-# Create a custom pipeline
+# Create pipeline based on Jenkinsfile
 
-The application workbench pipeline supports custom creation, and you can visually arrange the pipeline through the pipeline created in this way.
+App Workbench Pipelines supports creating pipelines using a Jenkinsfile in a repository.
 
-## prerequisites
+**Prerequisites**
 
-- [Create Workspace](../../../../ghippo/user-guide/workspace/workspace.md), [Create User](../../../../ghippo /user-guide/access-control/user.md).
+- [Create Workspace](../../../../ghippo/user-guide/workspace/workspace.md), [Create User](../../../../ghippo/user-guide/access-control/user.md).
 - Add the user to the workspace with `workspace editor` or higher privileges.
+- Provide a code warehouse, and the source code of the code warehouse has a Jenkinsfile text file.
+- If it is a private warehouse, you need to [create warehouse access credentials](../credential.md) in advance.
 
-## Steps
-
-The specific operation steps are as follows:
+**The specific operation steps are as follows:**
 
 1. Click `Create Pipeline` on the pipeline list page.
 
     <!--![]()screenshots-->
 
-2. In the pop-up dialog box, select Custom Create Pipeline and click OK.
+2. Select `Create a pipeline based on the Jenkinsfile of the code base` and click `OK`.
 
     <!--![]()screenshots-->
 
-3. Fill in `Basic Information`, `Build Settings`, and `Build Parameters` by referring to the following instructions.
+3. Fill in the basic information and code warehouse information by referring to the instructions below.
 
     - name: the name of the pipeline. The pipeline name must be unique under the same workspace.
+    - Code warehouse address: fill in the address of the remote code warehouse.
+    - Credentials: For private repositories, you need to [Create Repository Access Credentials](../credential.md) in advance and select the credential here.
+    - Branch: Based on the code of which branch to build the pipeline, the default is the master branch.
+    - Script path: the absolute path of the Jenkinsfile in the code repository.
+
+        <!--![]()screenshots-->
+
+4. Fill in the build settings and build parameters with reference to the instructions below.
+
     - Delete expired pipeline records: Delete previous build records to save disk space used by Jenkins.
 
         - Build record retention period: Up to several days of build records are kept, the default value is 7 days, that is, build records older than seven days will be deleted.
@@ -39,7 +48,7 @@ The specific operation steps are as follows:
 
         <!--![]()screenshots-->
 
-4. Fill in the trigger parameters by referring to the following instructions.
+5. Fill in the build trigger by referring to the instructions below.
 
     - Code source trigger: After it is turned on, the system will periodically scan the specific branch in the warehouse code used to build the pipeline according to the `timed warehouse scan plan`, and re-run the pipeline if there is an update.
     - Scheduled warehouse scan schedule: Enter a CRON expression to define the time period for scanning warehouses. **After entering the expression, the meaning of the current expression will be prompted at the bottom**. For detailed expression syntax rules, please refer to [Cron Schedule Syntax](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax).
@@ -47,13 +56,6 @@ The specific operation steps are as follows:
 
         <!--![]()screenshots-->
 
-5. Complete the creation. After confirming that all parameters have been entered, click the `OK` button to complete the creation of the custom pipeline and automatically return to the pipeline list. Click `︙` to the right of the list to perform various actions.
+6. Complete the creation. After confirming that all parameters have been entered, click the `OK` button to complete the creation of the custom pipeline and automatically return to the pipeline list. Click `︙` to the right of the list to perform various actions.
 
     <!--![]()screenshots-->
-
-!!! warning
-
-    - After a custom pipeline is created, the stages of the pipeline need to be manually defined (i.e. edit the pipeline) before the pipeline can be run. If you define the process and run the pipeline directly, there will be a `build failed` error.
-    - If you [create a pipeline based on a template](template.md) or [create a pipeline based on a Jenkinsfile](jenkins.md), you can run it directly without manually editing the pipeline.
-
-Next step: [edit pipeline](../edit.md){ .md-button .md-button--primary }

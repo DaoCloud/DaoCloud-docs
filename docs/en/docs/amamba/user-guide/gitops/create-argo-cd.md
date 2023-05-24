@@ -5,7 +5,7 @@ App Workbench is based on open source software [Argo CD](https://argo-cd.readthe
 ## prerequisites
 
 - Need to create a workspace and a user, the user needs to join the workspace and give `workspace edit` role.
-  Refer to [Creating a workspace](../../../ghippo/user-guide/workspace/workspace.md), [Users and roles](../../../ghippo/user-guide/ access-control/user.md).
+  Refer to [Creating a workspace](../../../ghippo/user-guide/workspace/workspace.md), [Users and roles](../../../ghippo/user-guide/access-control/user.md).
 - Prepare a Git repository.
 
 ## Create the Argo CD application

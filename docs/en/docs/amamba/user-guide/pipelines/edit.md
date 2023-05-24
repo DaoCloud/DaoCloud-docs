@@ -9,7 +9,7 @@ After creating a custom pipeline, the pipeline stages need to be defined manuall
 
 ## prerequisites
 
-- [Create Workspace](../../../ghippo/user-guide/workspace/workspace.md), [Create User](../../../ghippo/user-guide/access -control/user.md).
+- [Create Workspace](../../../ghippo/user-guide/workspace/workspace.md), [Create User](../../../ghippo/user-guide/access-control/user.md).
 - Add the user to the workspace with `workspace editor` or higher privileges.
 - Create three credentials that can access the code warehouse, mirror warehouse, and cluster, please refer to [credential management] (credential.md).
 - [Create a custom pipeline](create/custom.md), and need to add two string parameters in the build parameters. These parameters will be used in the image build command. The parameters are described as follows:
