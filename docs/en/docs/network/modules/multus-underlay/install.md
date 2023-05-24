@@ -1,142 +1,143 @@
-# 安装
+# Install Multus-underlay
 
-## 注意事项
+This page describes how to install Multus-underlay.
 
-- 默认 CNI：安装 Multus-underlay 之前，需要确认当前集群是否存在默认 CNI, 比如 Calico 或者 Cilium，否则 Multus 可能会无法工作。
-- Spiderpool：Multus-underlay 依赖 [spiderpool](https://github.com/spidernet-io/spiderpool) 作为 `ipam`。
-  安装 `Spiderpool` 请参考 [Install Spiderpool](../spiderpool/install.md)。
-- 如需安装 SRIOV-CNI, 需要确认节点是否为物理主机且节点拥有支持 SRIOV 的物理网卡。
-  如果节点为 VM 虚拟机或者没有支持 SRIOV 的网卡，那么 SRIOV 将无法工作。
-  详情参考 [sriov-device-plugin](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin)。
-- 不建议同时安装 MacVLAN 和 SRIOV。
+## Prerequisites
 
-## 安装步骤
+- Default CNI: before installing Multus-underlay, you need to check if there is a default CNI for the current cluster, such as Calico or Cilium, otherwise Multus may not work.
+- Spiderpool: Multus-underlay relies on [Spiderpool](https://github.com/spidernet-io/spiderpool) as `ipam`.
+  To install `Spiderpool`, please refer to [Install Spiderpool](../spiderpool/install.md).
+- To install SRIOV-CNI, verify that the node is a physical host and that the node has a physical NIC that supports SRIOV.
+  If the node is a VM or does not have an SRIOV-capable NIC, then SRIOV will not work.
+  Refer to [sriov-device-plugin](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin) for details.
+- It is not recommended to install both MacVLAN and SRIOV.
 
-1. 通过 Helm 安装, Helm Chart 存放于 system repo 下:
+## How to install Multus-underlay
 
-    
+Make sure your cluster is successfully connected to the `container management` platform, and then perform the following steps to first install Multus-underlay.
 
-2. 装在 kube-system 下, 并开启 就绪等待:
+1. Click `Container Management` -> `Cluster List` in the left navigation bar, then find the cluster name where you want to install Multus-underlay. Then, in the left navigation bar, select `Helm Apps` -> `Helm Charts`, find and click `multus-underlay`.
 
-    
+    ![helm repo](../../images/multus-install-1.png)
 
-3. 为 Multus 配置默认 CNI：
+2. Go to the installation screen and fill in the basic configuration information. Select `kube-system` for the namespace, and enable `Wait`.
 
-    安装 Multus 之前, 必须要先安装一种 CNI 作为默认CNI。注意: 保证选择的 Value 必须与集群目前安装的默认 CNI 保持一致。
+    ![helm install-1](../../images/multus-install-2.png)
 
-    !!! note:
+3. Set Multus as the default CNI:
 
-        如果当前通过 kubean 安装的集群，那么 value 为 calico 或者 cilium 中二选一。
-        或通过查看主机：`/etc/cni/net.d/` 路径，按照字典顺序第一个 CNI 配置文件的 `name` key 所对应的 Value 值就为默认 CNI。比如：
+    Before installing Multus, you must install a CNI as the default CNI. Make sure that the Value selected must be the same as the default CNI currently installed in the cluster.
 
+    !!! Note
+
+        > If the cluster is currently installed via kubean, then the value is either calico or cilium.
+        > Or by looking at the host: `/etc/cni/net.d/` path, the Value corresponding to the `name` key of the first CNI profile in dictionary order is the default CNI. For example:
+        
         ```shell
         root@master:~# ls /etc/cni/net.d/
-        10-calico.conflist  calico-kubeconfig
+        10-calico.conflist calico-kubeconfig
         root@master:~# cat /etc/cni/net.d/10-calico.conflist
         {
-          "name": "k8s-pod-network",
-          "cniVersion": "0.3.1",
+          "name": "k8s-pod-network".
+          "cniVersion": "0.3.1".
         ...
         ```
+        > If the value of `name` is `k8s-pod-network`, then `k8s-pod-network` should be selected here.
+        > ![Default CNI](../../images/multus-install-3.png)        
+        > If the current cluster is a third-party cluster with Calico as CNI, then `k8s-pod-network` should be selected here. Again, this can be confirmed by looking at the `/etc/cni/net.d` file on the host.
 
-        `name` 的值如果为 `k8s-pod-network`，那么这里就应该选中 `k8s-pod-network`。
+4. Configure the CIDR of the current cluster Service and Pod.
 
-        
-         
-        如果当前集群是接入的第三方、calico 为 CNI 的集群, 那么这里应该选择为 `k8s-pod-network`. 同样, 也可以通过查看主机上`/etc/cni/net.d`文件确认。
+    The purpose of this step is to tell [Meta-Plugins](https://github.com/spidernet-io/cni-plugins) the CIDR of the cluster and Meta-Plugins will create the corresponding routing rules to solve the cluster east-west communication problem for Underlay CNI.
 
-5. 配置目前集群 Service 和 Pod 的 CIDR:
+    ![Cluster CIDR](../../images/multus-install-4.png)
 
-    此步骤的目的是告知 [Meta-Plugins](https://github.com/spidernet-io/cni-plugins) 集群的 CIDR，Meta-Plugins 会创建对应的路由规则，解决 Underlay CNI 的集群东西向通信问题。
+    The CIDRs of the Services and Pods in the current cluster can be obtained by looking at `configMap`: `kube-system/kubeadm-config`:
 
-    
+    ![kubeadm-config](../../images/multus-install-5.png)
 
-    可通过查看 `configMap`: `kube-system/kubeadm-config` 获取目前集群中 Service 和 Pod 的 CIDR：
+    !!! Note
 
-    
+        If it is a dual-stack cluster, you also need to fill in the IPv6 address.
+        If the CNI is Calico and there are multiple IP pools, the Pod CIDR can be configured multiple times.
 
-    !!! note
+5. Install MacVLAN (optional, installed by dafault):
 
-        如果为双栈集群, 也需要填写 IPv6 的地址。
-        如果 CNI 为 Calico 且 有多个 IP 池，Pod CIDR 可配置多个。
+    This step creates the Multus CRD instance corresponding to the MacVLAN according to the configuration.
 
-6. 安装 MacVLAN（可选，默认安装）：
+    ![macvlan](../../images/multus-install-6.png)
 
-    此步骤会根据配置创建 MacVLAN 对应的 Multus CRD 实例:
+    - `Install Macvlan CNI`: true/false, whether to create a Multus CRD instance of the MacVLAN.
+    - `Macvlan Type`: macvlan-overlay/macvlan-standalone, the type of MacVLAN CRD instance to install.
 
-    
-
-    - `Install Macvlan CNI`：true/false，是否创建 MacVLAN 的 Multus CRD 实例。
-    - `Macvlan Type`：macvlan-overlay/macvlan-standalone，安装 MacVLAN CRD 实例的类型。
-
-        - `macvlan-overlay`：此类型下，MacVLAN 会与默认 CNI 搭配使用（比如 Calico），这样会在 Pod 中插入两张网卡。
-           分别是默认 CNI 和 MacVLAN 的网卡，前者用于解决 Pod 与集群东西向通信问题；后者用于 Pod 集群南北向通信。
-        - `macvlan-standalone`：此类型下，Pod 中只会插入一张 MacVLAN 的网卡，只由其完成与集群东西向和南北向的通信问题。
+        - `macvlan-overlay`: for this type, MacVLAN is used with the default CNI (e.g. Calico), which will insert two NICs in the Pod: the default NIC and the MacVLAN NIC
+           The former is used to solve the problem of east-west communication between the Pod and the cluster; the latter is used for north-south communication between the Pod clusters.
+        - `macvlan-standalone`: for this type, only one MacVLAN NIC will be inserted in the Pod, and it will only be used for east-west and north-south communication with the cluster.
       
-    - `Multus CR Name`：Multus CRD 实例的名称。
-    - `Master Interface`：MacVLAN 主接口的名称。注意：配置的主接口必须存在于主机上, 否则 MacVLAN 无法工作。
-    - `Vlan ID`：可选，MacVLAN 主接口的 Vlan tag。
+    - `Multus CR Name`: name of the Multus CRD instance.
+    - `Master Interface`: name of the MacVLAN master interface. Note: The configured master interface must exist on the host, otherwise MacVLAN will not work.
+    - `Vlan ID`: optional item, and the Vlan tag of the MacVLAN master interface.
 
-7. 安装 SRIOV（可选，默认不安装）：
+6. Install SRIOV (optional, not installed by default):
 
-    配置 SRIOV Multus CRD：
+    Configure SRIOV Multus CRD:
 
-    
+    ![sriov_install](../../images/multus-install-7.png)
 
-    - `Install SRIOV CNI`：是否安装 SRIOV，默认不安装。
-    - `SRIOV Type`：安装 SRIOV 的 Multus CRD 实例的类型，有以下几种：
-      - `sriov-overlay`：此类型下，SRIOV 会与默认 CNI 搭配使用（比如 Calico），这样会在 Pod 中插入两张网卡。
-          分别是默认 CNI 和 SRIOV 的网卡，前者用于解决 Pod 与集群东西向通信问题；后者用于 Pod 集群南北向通信。
-      - `sriov-standalone`：此类型下，Pod 中只会插入一张 SRIOV 的网卡，只由其完成与集群东西向和南北向的通信问题。
-    - `SRIOV CR Name`：Multus CRD 实例的名称。
-    - `Vlan ID`：可选，SRIOV PF 的 Vlan tag。
-    - `SRIOV Device Plugin Configuration`：用于发现主机上的 SRIOV PF 和 VF device，筛选方式可以为：`vendors`、`devices`、`drivers`、`pfNames`。
-        具体参考 [sriov-device-plugin-readme.md](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin/blob/master/README.md)。
+    - `Install SRIOV CNI`: install SRIOV, which is not installed by default.
+    - `SRIOV Type`: the type of Multus CRD instance for which SRIOV is installed, including:
+      - `sriov-overlay`: SRIOV is used with the default CNI (e.g. Calico), which will insert two NICs in the Pod:  the default NIC and the SRIOV NIC.
+          The former is used to solve the problem of east-west communication between the Pod and the cluster; the latter is used for north-south communication between the Pod and the cluster.
+      - `sriov-standalone`: only one SRIOV NIC will be inserted in the Pod, and serves for the east-west and north-south communication.
+    - `SRIOV CR Name`: the name of the Multus CRD instance.
+    - `Vlan ID`: optional, the Vlan tag of the SRIOV PF.
+    - `SRIOV Device Plugin Configuration`: used to discover SRIOV PF and VF devices on the host by means of filtering: `vendors`, `devices`, `drivers`, `pfNames`.
+        Refer to [sriov-device-plugin-readme.md](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin/blob/master/README.md) for details.
 
-    配置 SRIOV Net-Device Plugin：
+    Configure the SRIOV Net-Device Plugin with:
 
-    - `vendors`：PCI 设备厂商号，如 '8086' 代表 Intel
-    - `devices`：PCI 设备型号，如 '154c'
-    - `drivers`：PCI 设备驱动，如 'mlx5_core'
-    - `pfNames`：PF 设备的名称列表
+    - `vendors`: PCI device vendor number, e.g. '8086' for Intel
+    - `devices`: PCI device model, e.g. '154c'
+    - `drivers`: PCI device drivers, e.g. 'mlx5_core'
+    - `pfNames`: list of PF device names
 
-    
+    ![sriov-net-device](../../images/multus-install-8.png)
 
     !!! note
     
-        不建议同时启用 MacVLAN 和 SRIOV。另外启用 SRIOV 需要硬件支持, 安装前确认物理主机的网卡是否支持 SRIOV。
+        It is not recommended to enable MacVLAN and SRIOV at the same time. In addition, SRIOV requires hardware support, so make sure that the physical host's NIC supports SRIOV before installation.
 
-8. 配置完成，点击`安装`。
+7. When the configuration is complete, click `Install`.
 
-## 验证
+## Verification
 
-1. 检查各组件是否正常 Running：
+1. Check that the components are running properly:
 
-    包括 Multus、Meta-plugins、SRIOV-CNI（如果启用）、SRIOV-Device-Plugins（如果启用）。
+    This includes Multus, Meta-plugins, SRIOV-CNI (if enabled), SRIOV-Device-Plugins (if enabled).
 
-    
+    ![install_finished](../../images/multus-install-9.png)
 
-2. 创建工作负载，以 MacVLAN 为例：
+2. Create a workload, using MacVLAN as an example:
 
-    - 如果 type 为 macvlan-overlay，那么需要在 Pod 的 Annotations 中插入以下的注解：
+    - If the workload type is macvlan-overlay, then the following annotation needs to be entered in the Annotations of the Pod:
 
         ```yaml
           annotations:
             k8s.v1.cni.cncf.io/networks: kube-system/macvlan-vlan0
         ```
 
-        `k8s.v1.cni.cncf.io/networks`：表示会在 Pod 中除默认 CNI 之外再插入一张 MacVLAN 网卡。
+        `k8s.v1.cni.cncf.io/networks`: indicates that a MacVLAN NIC will be inserted in the Pod in addition to the default CNI.
 
-    - 如果 type 为 macvlan-standalone，那么需要在 Pod 的 Annotations 中插入以下的注解：
+    - If the workload type is macvlan-standalone, then the following annotation needs to be entered in the Annotations of the Pod:
 
         ```yaml
-          annotations:
+          annotations.
             v1.multus-cni.io/default-network: kube-system/macvlan-vlan0
         ```
 
-        `v1.multus-cni.io/default-network`：修改 Pod 的默认网卡。如果不指定，将通过集群默认 CNI 为 Pod 分配第一张网卡。
+        ``v1.multus-cni.io/default-network``: specifies the Pod's default NIC. If not specified, the first NIC will be assigned to the Pod via the cluster default CNI.
 
-        以 type 为 macvlan-overlay 为例：
+        Using macvlan-overlay as an example:
 
         ```yaml
         apiVersion: apps/v1
@@ -155,24 +156,24 @@
               annotations:
                 ipam.spidernet.io/ippool: |-
                   {
-                      "interface": "net1",  # 1. 指定 Pod 第二张网卡(net1)从哪一个 IPPool 池中分配 IP. 
-                      "ipv4pools": [
+                      "interface": "net1",  # 1. Specify from which IPPool pool the Pod's second NIC (net1) is assigned an IP.  
+                      "ipv4": [
                         "172-81-0-1"
                       ],
-                      "ipv6pools": [
+                      "ipv6": [
                         "172-81-0-1-v6"
                       ]
                   }
-                k8s.v1.cni.cncf.io/networks: kube-system/macvlan-vlan0  # 2. 设置 Pod 第二张网卡.
+                k8s.v1.cni.cncf.io/networks: kube-system/macvlan-vlan0  # 2. Set the Pod's second NIC.
                 ...
         ```
 
-        `ipam.spidernet.io/ippool`：指定从哪一个 IP 池为 MacVLAN 网卡分配 IP 地址。
-        如果不指定，将会从默认池中分配。更多 Spiderpool 使用说明请参考 [Spiderpool](../spiderpool)。
+        `ipam.spidernet.io/ippool`: specifies from which IP pool the IP address is assigned to the MacVLAN NIC.
+        If not specified, it will be assigned from the default pool. For more Spiderpool instructions, please refer to [Spiderpool](../spiderpool/what.md).
 
-        `k8s.v1.cni.cncf.io/networks`：通过指定 MacVLAN Multus CRD, 为 Pod 再分配一张 MacVLAN 网卡 (net1)。
+        `k8s.v1.cni.cncf.io/networks`: assigns another MacVLAN network card (net1) to the Pod by specifying the MacVLAN Multus CRD.
 
-        创建成功:
+        Created successfully:
 
         ```shell
         root@master:~# kubectl get po  -o wide | grep overlay
@@ -180,9 +181,9 @@
         macvlan-overlay-589d6ddc68-kk798          1/1     Running   0          43s     10.253.255.73    172-17-8-120   <none>           <none>
         ```
 
-3. 测试连通性。
+3. Test connectivity.
 
-    可以看到 Pod 的第一张网卡仍然由 Calico 分配，第二张网卡由 MacVLAN 分配：
+    The first NIC of the Pod is still assigned by Calico and the second NIC is assigned by MacVLAN:
 
     ```shell
     root@master:~# kubectl exec -it macvlan-overlay-589d6ddc68-kk798 sh
@@ -214,11 +215,11 @@
           valid_lft forever preferred_lft forever
     ```
 
-## 测试
+## Test
 
-MacVLAN 网卡的 IP 地址段从宿主机分配，所以在宿主机网络路由可达的情况下，可以直接访问该 Pod 的 MacVLAN 网卡，测试步骤如下：
+The IP address segment of the MacVLAN NIC is assigned from the host, so the Pod's MacVLAN NIC can be accessed directly if the host network route is reachable, as tested below:
 
-1. 在集群节点中访问 `10.253.255.73` 和 `172.17.8.193`。
+1. Access `10.253.255.73` and `172.17.8.193` in the cluster node.
 
     ```shell
     # ping pod eth0
@@ -247,7 +248,7 @@ MacVLAN 网卡的 IP 地址段从宿主机分配，所以在宿主机网络路�
     rtt min/avg/max/mdev = 0.068/0.094/0.115/0.017 ms
     ```
 
-2. 在集群外访问 `172.17.8.193`。
+2. Access `172.17.8.193` outside the cluster.
 
     ```shell
     $ ping 172.17.8.193
@@ -262,7 +263,7 @@ MacVLAN 网卡的 IP 地址段从宿主机分配，所以在宿主机网络路�
     round-trip min/avg/max/stddev = 37.668/40.474/44.025/2.305 ms
     ```
 
-3. 访问集群中的 Calico Pod。
+3. Access the Calico Pod in the cluster.
 
     ```shell
     root@master:~# kubectl get po  -o wide | grep nginx
@@ -290,7 +291,7 @@ MacVLAN 网卡的 IP 地址段从宿主机分配，所以在宿主机网络路�
     round-trip min/avg/max = 0.387/0.470/0.596 ms
     ```
 
-4. 访问 ClusterIP。
+4. Access ClusterIP.
 
     ```shell
     root@master:~# kubectl get svc | grep kubernetes
@@ -326,9 +327,9 @@ MacVLAN 网卡的 IP 地址段从宿主机分配，所以在宿主机网络路�
     </html>
     ```
 
-## 卸载
+## Uninstall
 
-卸载 Multus-underlay 还需要删除每个节点上的 Multus 配置文件：
+Uninstall Multus-underlay requires removing the Multus configuration files on each node:
 
 ```shell
 root@master:~# rm /etc/cni/net.d/00-multus.conf
