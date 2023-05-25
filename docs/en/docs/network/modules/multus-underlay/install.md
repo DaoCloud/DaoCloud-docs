@@ -109,7 +109,7 @@ Make sure your cluster is successfully connected to the `container management` p
 
 7. When the configuration is complete, click `Install`.
 
-## Verification
+## Verify
 
 1. Check that the components are running properly:
 
