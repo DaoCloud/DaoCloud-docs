@@ -52,7 +52,7 @@ nav:
               - Cluster Roles: kpanda/user-guide/clusters/cluster-role.md
               - Cluster Status: kpanda/user-guide/clusters/cluster-status.md
               - Choose Runtime: kpanda/user-guide/clusters/runtime.md
-          - Namespaces: 
+          - Namespaces:
               - Create Namespace: kpanda/user-guide/namespaces/createns.md
               - Exclusive Node to Namespace: kpanda/user-guide/namespaces/exclusive.md
           - Nodes:
@@ -192,11 +192,11 @@ nav:
           - Quick Start:
               - Enable Observability:
                   - insight/user-guide/quickstart/quickstart-catelogy.md
-                  - Online Install insight-agent: insight/user-guide/quickstart/install-agent.md   
-                  - Offline Install insight-agent: insight/user-guide/quickstart/offline-install.md        
+                  - Online Install insight-agent: insight/user-guide/quickstart/install-agent.md
+                  - Offline Install insight-agent: insight/user-guide/quickstart/offline-install.md
                   - Get URL to Upload Data: insight/user-guide/quickstart/gethosturl.md
                   - Upgrade Precautions: insight/user-guide/quickstart/upgrade-note.md
-              - Install insight-agent on distributions: 
+              - Install insight-agent on distributions:
                   - Install insight-aent on DCE 4.0.x: insight/faq/install-agentindce.md
                   - Install insight-agent on OpenShift 4.x: insight/faq/install-agent-on-ocp.md
               - Enable Observability with OTel:
@@ -210,10 +210,10 @@ nav:
                   - Use JMX Exporter to Expose JVM Metrics: insight/user-guide/quickstart/jvm-monitor/jmx-exporter.md
                   - Use OTel Java Agent to Expose JVM Metrics: insight/user-guide/quickstart/jvm-monitor/otel-java-agent.md
                   - How Does a Java App with JVM Metrics Enable Observability: insight/user-guide/quickstart/jvm-monitor/legacy-jvm.md
-              - Resource Planning:              
-                    - Prometheus Resource Planning: insight/best-practice/prometheus-res.md
-                    - vmstorage Disk Planning: insight/best-practice/vms-res-plan.md
-                    - Adjust vmstorage Disk: insight/best-practice/modify-vms-disk.md
+              - Resource Planning:
+                  - Prometheus Resource Planning: insight/best-practice/prometheus-res.md
+                  - vmstorage Disk Planning: insight/best-practice/vms-res-plan.md
+                  - Adjust vmstorage Disk: insight/best-practice/modify-vms-disk.md
           - Dashboard:
               - Overview: insight/user-guide/overview.md
               - Dashboard: insight/user-guide/dashboard/dashboard.md
@@ -301,7 +301,7 @@ nav:
           - Toolchain Integration:
               - Integrated Toolchain: amamba/user-guide/tools/integrated-toolchain.md
               - Manage Toolchain Instances: amamba/user-guide/tools/toolchain-instances.md
-          - FAQ: 
+          - FAQ:
               - amamba/intro/faq.md
           - Best Practices:
               - Quick Start Pipeline: amamba/quickstart/deploy-pipeline.md
@@ -390,7 +390,7 @@ nav:
                   - Add Domain: skoala/ms-gateway/domain/add-domain.md
                   - Update Domain: skoala/ms-gateway/domain/update-domain.md
                   - Domain Policies: skoala/ms-gateway/domain/domain-policy.md
-                  - Delete Domain: skoala/ms-gateway/domain/delete-domain.md          
+                  - Delete Domain: skoala/ms-gateway/domain/delete-domain.md
           - Microservice Governance:
               - Managed Registry:
                   - Registry Management:
@@ -488,7 +488,7 @@ nav:
               - Istio resource management: mspider/user-guide/mesh-config/istio-resources.md
               - TLS key management: mspider/user-guide/mesh-config/tls-secret.md
               - Custom component resource: mspider/user-guide/mesh-config/custom-res.md
-              - Component resoruce HPA: mspider/user-guide/mesh-config/component-hpa.md   
+              - Component resoruce HPA: mspider/user-guide/mesh-config/component-hpa.md
           - Test:
               - Join OCP to mesh: mspider/test/ocp.md
               - Openshift and mesh compatibility test: mspider/test/openshift.md
@@ -559,9 +559,10 @@ nav:
           - Spiderpool:
               - Intro: network/modules/spiderpool/what.md
               - Install: network/modules/spiderpool/install.md
-              - Create IPPool: network/modules/spiderpool/createpool.md
-              - IPPool scenarios: network/modules/spiderpool/ippoolusage.md
-              - Workload uses IPPool: network/modules/spiderpool/usage.md
+              - Create an IP pool: network/modules/spiderpool/createpool.md
+              - IP pool scenarios: network/modules/spiderpool/ippoolusage.md
+              - Workloads uses IP pools: network/modules/spiderpool/usage.md
+              - Third-pary workloads use IP pools: network/modules/spiderpool/cutomizedusage.md
               - Config: network/modules/spiderpool/config.md
               - Commands: network/modules/spiderpool/command.md
               - Release notes: network/modules/spiderpool/releasenotes.md
@@ -728,11 +729,11 @@ nav:
               - Push Image: kangaroo/quickstart/push.md
               - Admin Quickly Uses Registry: kangaroo/quickstart/admin-registry.md
               - Workspace Admin Quickly Uses Registry: kangaroo/quickstart/ws-admin-registry.md
-          - Registry Space:              
+          - Registry Space:
               - Registry Space: kangaroo/space/index.md
               - Image List: kangaroo/space/imagelist.md
               - Retention: kangaroo/space/reclaim.md
-          - Integrated Registry: 
+          - Integrated Registry:
               - Integraetd Registry (Workspace): kangaroo/integrate/related-registry.md
               - Registry Management (Admin): kangaroo/integrate/integrate.md
               - Create Registry Space: kangaroo/integrate/create-space.md
@@ -745,7 +746,7 @@ nav:
               - Create Registry Space: kangaroo/integrate/create-space.md
               - Bind/Unbind Workspace: kangaroo/integrate/bind-to-ws.md
               - Sync Images: kangaroo/integrate/sync.md
-          - Scan Images: kangaroo/scan.md  
+          - Scan Images: kangaroo/scan.md
       - Cloud Native Security:
           - Intro: security/intro.md
           - Falco:

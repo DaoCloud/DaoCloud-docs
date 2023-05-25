@@ -1,4 +1,4 @@
-# Instructions for IPPool use
+# Instructions for IP pool use
 
 ## Cluster default IP pool
 
