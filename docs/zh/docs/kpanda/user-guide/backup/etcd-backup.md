@@ -24,6 +24,29 @@ ETCD 备份是以集群数据为核心的备份，在硬件设备损坏，开发
    
     - 首先选择备份集群，并在终端登陆
     - 填写 ETCD 地址，标准 K8s 集群大多为：`https://节点号:2379`
+
+        ??? note "获取端口号的方式"
+
+            （1）先获取所有 pod
+
+            ```shell
+            kubectl get po -n kube-system | grep etcd
+            ```
+
+            （2）获取对应 pod 的 listen-client-urls 中的端口号
+
+            > `etcd_pod_name` 的值需要替换为实际 pod 名称
+
+            ```shell
+            kubectl get po -n kube-system <etcd_pod_name> -oyaml | grep listen-client-urls
+            ```
+
+            预期输出结果如下，端口号可从下列信息中获取
+
+            ```shell
+            - --listen-client-urls=https://127.0.0.1:2379,https://10.6.229.191:2379
+            ```
+
     - 填写 CA 证书，可通过如下命令查看证书内容并将其复制粘贴到对应位置：
 
         ```shell
@@ -42,7 +65,9 @@ ETCD 备份是以集群数据为核心的备份，在硬件设备损坏，开发
         cat /etc/kubernetes/ssl/apiserver-etcd-client.key
         ```
 
-        ![创建基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd02.png)
+        ![创建基本信息](../../images/etcd-get01.png)
+
+        ![如何获取](../../images/etcd-get02.png)
 
 3. 选择备份方式，分为手动备份和定时备份。
    
