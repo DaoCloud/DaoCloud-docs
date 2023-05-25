@@ -254,6 +254,7 @@ nav:
               - 日志采集排障指南: insight/faq/debug-log.md
               - 链路采集排障指南: insight/faq/debug-trace.md
               - 配置通知模板: insight/best-practice/notify-helper.md
+              - 使用 OpenTelemetry 零代码接收 SkyWalking 链路数据: insight/best-practice/sw-to-otel.md
           - 兼容性测试:
               - K8s 集群兼容性测试: insight/user-guide/quickstart/k8s-compatibility.md
               - Rancher 集群兼容性测试: insight/user-guide/quickstart/rancher-compatibility.md
