@@ -471,7 +471,6 @@ nav:
           - Sidecar management:
               - Namespace sidecars: mspider/user-guide/sidecar-management/ns-sidecar.md
               - Workload sidecars: mspider/user-guide/sidecar-management/workload-sidecar.md
-              - Global sidecars: mspider/user-guide/sidecar-management/global-sidecar.md
               - Traffic passthrough: mspider/user-guide/sidecar-management/passthrough.md
           - Traffic monitor:
               - mspider/user-guide/traffic-monitor/README.md

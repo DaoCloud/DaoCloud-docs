@@ -473,7 +473,6 @@ nav:
           - 边车管理:
               - 命名空间边车管理: mspider/user-guide/sidecar-management/ns-sidecar.md
               - 工作负载边车管理: mspider/user-guide/sidecar-management/workload-sidecar.md
-              - 全局边车管理: mspider/user-guide/sidecar-management/global-sidecar.md
               - 边车流量透传: mspider/user-guide/sidecar-management/passthrough.md
           - 流量监控:
               - mspider/user-guide/traffic-monitor/README.md
