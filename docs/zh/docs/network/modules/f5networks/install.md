@@ -16,7 +16,7 @@
 
 ## F5 设备安装 AS3 服务
 
-1. 登录 F5 设备的管理 WEBUI，点击导航栏的 `Statics -> Dashboard`，获取 F5 设备的版本号。
+1. 登录 F5 设备的管理 Web UI，点击导航栏的 `Statics -> Dashboard`，获取 F5 设备的版本号。
 
     ![f5 bigip version](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/F5-bigipversion.png)
 
@@ -36,7 +36,7 @@
 
 可在 F5 设备上创建一个独立的 partition，供 [k8s bigip ctlr](https://github.com/F5Networks/k8s-bigip-ctlr) 组件对接存储转发规则。具体步骤如下：
 
-1. 登录 F5 设备的管理 WEBUI，进入 `System` -> `Users` -> `Partition List` 界面，点击右上角的 `create`。
+1. 登录 F5 设备的管理 Web UI，进入 `System` -> `Users` -> `Partition List` 界面，点击右上角的 `create`。
 
     ![f5 partition1](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/f5-partiton1.png)
 
@@ -69,7 +69,7 @@
 
     ![f5network install2](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/f5-install2.png)
     
-    在如上界面中:
+    如上界面的参数说明:
 
     - `f5-bigip-ctlr Settings -> Registry`：设置 f5-bigip-ctlr 镜像的仓库地址，默认已经填写了可用的在线仓库，如果是私有化环境，可修改为私有仓库地址。
 
@@ -83,22 +83,22 @@
 
     - `Default ingressClass`：是否设置安装的 ingressClass 作为集群的默认ingressClass。如果希望使用 7 层转发模式，务必开启本选项，如果希望使用 4 层转发模式，可忽略本选项。
     
-    - `BigIP Management Addr`：F5 设备的 WEBUI 登录地址。
+    - `BigIP Management Addr`：F5 设备的 WEB UI 登录地址。
 
     - `BigIP Partition`：使用 F5 设备的上的 Partition 名字，即在 `F5 设备创建 partition` 步骤中创建的 Partition。
 
-        注：若多个集群共用对接同一个 F5 设备，不同集群最好使用独立的 Partition。
+        > 若多个集群共用对接同一个 F5 设备，不同集群最好使用独立的 Partition。
 
     - `Default Ingress IP`：当本组件安装在 7 层负载均衡模式下，本值设置了 F5 上的 ingress 入口 VIP，注意该 IP 应该是 F5 external interface 子网的 IP 地址。
       当本组件安装在 4 层负载均衡模式下，忽略本值。
 
-        注：若多个集群共用对接同一个 F5 设备，不同集群要使用独立的 IP。
+        > 若多个集群共用对接同一个 F5 设备，不同集群要使用独立的 IP。
 
     - `Only Watch F5 CRD`：当打开本选项，本组件只会监控自己的 CRD，适用于工作在 4 层负载均衡模式；否则，会监控全部的 K8S 资源，适用于工作在 7 层负载均衡模式。
 
     - `Node Label Selector`：设置 node label selector，被选择的 node 会作为 nodePort 转发模式下的入口节点，如果不设置本值，F5 会把流量转发到集群所有节点的 nodePort 上。
 
-    - `Forward Method`：设置 F5 转发流量的模式，`nodePort` 和 `cluster` 模式，模式解释，可参考[介绍](./what.md)。
+    - `Forward Method`：设置 F5 转发流量的模式、`nodePort` 和 `cluster` 模式。模式解释，可参考[介绍](./what.md)。
     
     ![f5network install2](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/f5-install3.png)
     

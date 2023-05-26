@@ -4,12 +4,12 @@
 
 ## 前提条件
 
-1. 请确认 操作系统 Kernel 版本号\>= 4.9.17，推荐 5.10+
+1. 请确认 操作系统 Kernel 版本号 >= 4.9.17，推荐 5.10+。
 
 2. DCE 5.0 安装时，选择的网络 CNI 为 Cilium 
    在 DCE 5.0 中安装 Cilium，需要在`创建集群`—>`网络配置`页面下，`网络插件`选择 `cilium`。关于创建集群，请参阅[创建工作集群](../../../kpanda/user-guide/clusters/create-cluster.md)。
 
-   ![](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/cilium-install1.jpg)
+   ![网络设置](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/cilium-install1.jpg)
 
 ## 高级参数
 
@@ -38,9 +38,9 @@
 
     支持的值有 “cluster-pool”、“kubernetes” 及各大公有云定制的模式。
 
-    1. `kubernetes`:  使用Kubernetes自带的 host-scope IPAM。地址分配委托给每个节点进行，per-node的 Pod CIDR存放在v1.Node中。
+    1. `kubernetes`:  使用 Kubernetes 自带的 host-scope IPAM。地址分配委托给每个节点进行，per-node 的 Pod CIDR 存放在 v1.Node中。
 
-    2. `cluster-pool`:默认的 `IPAM` 模式，它分配`per-node`的Pod CIDR，并在每个节点上使用`host-scope`的分配器来分配IP地址。
+    2. `cluster-pool`:默认的 `IPAM` 模式，它分配 `per-node` 的 Pod CIDR，并在每个节点上使用 `host-scope` 的分配器来分配 IP 地址。
 
        此模式和kubernetes 类似，区别在于后者在 v1.Node 资源中存储 per-node 的 Pod CIDR。
 

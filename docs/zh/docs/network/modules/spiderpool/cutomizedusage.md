@@ -68,7 +68,7 @@ hide:
 
 3. 进入`容器平台`-->选择对应集群`-->点击`容器网络`，然后找到对应子网-->进入子网详情， 查看 IP 使用情况：
 
-    ​	![openkruise](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/openkruise.jpg)
+    ​![openkruise](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/openkruise.jpg)
 
 
 
