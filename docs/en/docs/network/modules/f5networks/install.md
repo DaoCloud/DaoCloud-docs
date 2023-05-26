@@ -1,145 +1,145 @@
-# 安装
+# Install F5network
 
-本章节介绍如何安装 F5network 组件
+This page describes how to install F5network.
 
-## 安装须知
+## Installation notes
 
-[AS3](https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/) 是 F5 设备上的一个插件，其提供了 F5 设备远程网络可配置的接口，AS3 版本和 F5 设备的软件版本是有版本匹配要求的。
+The [AS3](https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/) is a plug-in on the F5 device that provides a configurable interface to the remote network of the F5 device. There is a version matching requirement between the AS3 version and the software version of the F5 device.
 
-[k8s bigip ctlr](https://github.com/F5Networks/k8s-bigip-ctlr) 是 K8S 集群上的 F5 控制面组件，该组件与 K8S 之间是有版本匹配要求的，且 [k8s bigip ctlr](https://github.com/F5Networks/k8s-bigip-ctlr) 与 AS3 也有版本匹配要求。
+[k8s bigip ctlr](https://github.com/F5Networks/k8s-bigip-ctlr) is an F5 control plane component on a K8S cluster that has version matching requirements with K8S, and [k8s bigip ctlr](https://github.com/) F5Networks/k8s-bigip-ctlr) also has version matching requirements with AS3.
 
-因此，务必了解 F5 设备的软件版本和 K8S 集群的软件版本，才能正确掌握安装什么版本的 AS3 和 k8s-bigip-ctlr。
+Therefore, it is important to know the versions of both the F5 device and the K8S cluster in order to know what versions of AS3 and k8s-bigip-ctlr to be installed correctly.
 
+![f5network version](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/f5-version.png)
 
+To get the latest version matching relationships, please refer to the [F5 official documentation on Controller/Platform compatibility](https://clouddocs.f5.com/containers/latest/userguide/what-is.html#container-ingress-service-compatibility)
 
-获取最新的版本匹配关系，可参考 [F5 官方文档的适配矩阵](https://clouddocs.f5.com/containers/latest/userguide/what-is.html#container-ingress-service-compatibility)
+## F5 installs AS3 service
 
-## F5 设备安装 AS3 服务
+1. Login to the management Web UI of F5, click `Statics -> Dashboard` in the navigation bar, and get the version number of the F5 device.
 
-1. 登录 F5 设备的管理 WEBUI，点击导航栏的 `Statics -> Dashboard`，获取 F5 设备的版本号。
+    ![f5 bigip version](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/F5-bigipversion.png)
 
+2. Download the AS3 RPM package of the matching version to your local computer <https://github.com/F5Networks/f5-appsvcs-extension/releases> according to the version matching relationship in the `Installation Requirements`.
+
+3. Login to the management web UI of F5, go to `iApps -> Package Management Lx`, and click `import` in the upper right corner.
+
+    ![f5 as3](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/f5-as3.png)
+
+4. In the `import package`, click `browse`, select the AS3 on your local computer, and finish `upload`.
+
+5. After completing the installation, you can view the installation result.
+
+    ![f5 as3](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/f5-as3-1.png)
+
+## F5 creates partition
+
+A separate partition can be created on the F5 device for [k8s bigip ctlr](https://github.com/F5Networks/k8s-bigip-ctlr) to manage the store and forward rules. The steps are as follows:
+
+1. Login to the management web UI of F5, go to `System` -> `Users` -> `Partition List`, and click `create` in the upper right corner.
+
+    ![f5 partition1](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/f5-partiton1.png)
+
+2. In the creation screen, fill in `Partion Name` and you don't need to change the other default values, then click `Finished` to finish the creation.
+
+    ![f5 partition2](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/f5-partiton-create.png)
+
+## Install a storage component in your cluster (optional)
+
+If you want a storage component to be installed in Layer 4 load balancing mode, you need to install [f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller).
+And [f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller) requires the cluster to have the storage component to provide PVC services. You can refer to the relevant storage component installation manual for details.
+
+If you want a storage component to be installed in Layer 7 load balancing mode, you can skip the steps of installing the componanet as it doesn't require the [f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller) to be installed.
+
+## Install F5network in a cluster
+
+1. Prepare a DCE cluster, and login to the Web UI of the global cluster. Go to `Container Management` -> `Cluster List`, login to the cluster where you want to install F5network.
+
+2. In `Helm Apps` -> `Helm Charts`, find and click install `f5network`.
+
+    ![f5network helm](../../images/f5network1.png)
+
+3. In `Version selection`, select the version you want to install, and click `Install`.
+
+4. In the Installation Parameters screen, fill in the following information：
+
+    ![f5network install1](../../images/f5network2.png)
+
+    In the screen as above, fill in `Name`, `Namespace`, and `Version`.
+
+    ![f5network install2](../../images/f5network3.png)
+
+    Parameters description in the screen as above:
+
+    - `f5-bigip-ctlr Settings -> Registry`: the repository address of the f5-bigip-ctlr mirror. the default has been filled with available online repositories. If it is a private environment, you can change it to a private repository address.
+
+    - `f5-bigip-ctlr Settings -> repository`: the f5-bigip-ctlr mirror name.
+
+    - `f5-bigip-ctlr version`: the mirror version of f5-bigip-ctlr. The default value is already set to the latest version number. If you modify it, pay attention to the version compatibility mentioned in `Installation requirements`.
+
+    - `Install ingressClass`: install ingressClass. Enable it if you want to use 7-layer forwarding mode, and disable it if you want to use 4-layer forwarding mode.
+
+    - `IngressClass Name`: the name of the ingressClass. Enable it if you want to use Layer 7 forwarding mode, and disable it if you want to use Layer 4 forwarding mode.
+
+    - `Default ingressClass`: set the installed ingressClass as the default ingressClass for the cluster. Enable it if you want to use Layer 7 forwarding mode, and disable it if you want to use Layer 4 forwarding mode.
+
+    - `BigIP Management Addr`: the WEB UI login address of F5.
+
+    - `BigIP Partition`: the name of the Partition on the F5 device, i.e. the Partition created in the `F5 Device Create Partition` step.
+
+        > If multiple clusters share the same F5 device, it is better to use separate Partitions for different clusters.
+
+    - `Default Ingress IP`: when this component is installed in Layer 7 load balancing mode, this value sets the ingress ingress VIP on F5, note that the IP should be the IP address of F5 external interface subnet.
+      When this component is installed in Layer 4 load balancing mode, this value is ignored.
+
+        > If multiple clusters share the same F5 device, separate IPs should be used for different clusters.
+
+    - `Only Watch F5 CRD`: when this option is turned on, the component will only monitor its own CRD, for working in Layer 4 load balancing mode; otherwise, it will monitor all K8S resources, for working in Layer 7 load balancing mode.
+
+    - `Node Label Selector`: set node label selector. The selected node will be used as the entry node in nodePort forwarding mode. If this value is not set, F5 will forward the traffic to the nodePort of all nodes in the cluster.
+
+    - `Forward Method`:set the mode for F5 to forward traffic, `nodePort` and `cluster` mode. For explanation of the mode, refer to [introduction](what.md).
+   
+    ![f5network install2](../../images/f5network4.png)
+
+    Parameters description in the screen as above:
+
+    - `BigIP Username`: the login account of the F5 device.
     
+    - `BigIP Password`: the login password of the F5 device.
 
-2. 根据`安装需知`中的版本匹配关系，下载匹配版本的 AS3 RPM 包到本地电脑 <https://github.com/F5Networks/f5-appsvcs-extension/releases>。
+    - `install f5-ipam-controller`: install the f5-ipam-controller component. Disable it when you want to work in Layer 7 load balancing mode, and enable it when you want to work in Layer 4 load balancing mode.
 
-3. 登录 F5 设备的管理 Web UI，进入 `iApps -> Package Management Lx` 界面，点击右上角的 `import`。
+    - `F5-ipam-controller Settings -> Registry`: set the repository address of the f5-ipam-controller image. The default has been filled with available online repositories. If it is a private environment, you can change it to a private repository address.
+      This option can be ignored when `install f5-ipam-controller` is turned off.
 
-    
+    - `f5-ipam-controller Settings -> repository`: the f5-ipam-controller image name.
+      This option can be ignored when `install f5-ipam-controller` is turned off.
 
-4. 在 `import package` 界面中，点击`浏览`，选择本地电脑上的 AS3，完成 `upload`。
+    - `F5-ipam-controller version`: the version of the mirror of the F5-ipam-controller. The default value is already set to the latest version number.
+      This option can be ignored when `install f5-ipam-controller` is turned off.
 
-5. 完成安装后，可查看安装结果。
-
-    
-
-## F5 设备创建 partition
-
-可在 F5 设备上创建一个独立的 partition，供 [k8s bigip ctlr](https://github.com/F5Networks/k8s-bigip-ctlr) 组件对接存储转发规则。具体步骤如下：
-
-1. 登录 F5 设备的管理 WEBUI，进入 `System` -> `Users` -> `Partition List` 界面，点击右上角的 `create`。
-
-    
-
-2. 在创建界面中，填写 `Partion Name` 即可，其它按照默认值不需要修改，点击 `Finished` 完成创建。
-
-    
-
-## 集群安装 storage 存储组件（可选）
-
-如果希望本组件安装在 4 层负载均衡模式下，要求安装 [f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller)，
-而 [f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller) 要求集群具备 storage 组件提供 PVC 服务。可参考相关的存储组件安装手册。
-
-如果希望本组件安装在 7 层负载均衡模式下，并不需要要求安装 [f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller)，因此可忽略存储组件的安装。
-
-## 集群安装组件步骤
-
-1. 拥有一个 DCE 集群，登录 global 集群的 Web UI 管理界面，在导航的`容器管理` -> `集群列表`中，登录希望安装本组件的集群。
-
-2. 在 `Helm 应用` -> `Helm 模板`中，选择 `system` 仓库和`网络`组件，点击安装 `f5network`。
-
-    
-
-3. 在`版本选择`中选择希望安装的版本，点击`安装`。
-
-4. 在安装参数界面，填写如下信息。
-
-    
-    
-    在如上界面中，填写`安装名称`、`命名空间`、`版本`。
-
-    
-    
-    在如上界面中:
-
-    - `f5-bigip-ctlr Settings -> Registry`：设置 f5-bigip-ctlr 镜像的仓库地址，默认已经填写了可用的在线仓库，如果是私有化环境，可修改为私有仓库地址。
-
-    - `f5-bigip-ctlr Settings -> repository`：设置 f5-bigip-ctlr 镜像名。
-
-    - `f5-bigip-ctlr version`：设置 f5-bigip-ctlr 的镜像版本，默认值已经设置了最新的版本号。如果进行修改，注意`安装需知`中提到的版本适配问题。
-
-    - `Install ingressClass`：是否安装 ingressClass。如果希望使用 7 层转发模式，务必开启本选项，如果希望使用 4 层转发模式，请关闭本选项。
-
-    - `IngressClass Name`：设置 ingressClass 的名字。如果希望使用 7 层转发模式，务必设置本选项，如果希望使用 4 层转发模式，请忽略本选项。
-
-    - `Default ingressClass`：是否设置安装的 ingressClass 作为集群的默认ingressClass。如果希望使用 7 层转发模式，务必开启本选项，如果希望使用 4 层转发模式，可忽略本选项。
-    
-    - `BigIP Management Addr`：F5 设备的 WEBUI 登录地址。
-
-    - `BigIP Partition`：使用 F5 设备的上的 Partition 名字，即在 `F5 设备创建 partition` 步骤中创建的 Partition。
-
-        注：若多个集群共用对接同一个 F5 设备，不同集群最好使用独立的 Partition。
-
-    - `Default Ingress IP`：当本组件安装在 7 层负载均衡模式下，本值设置了 F5 上的 ingress 入口 VIP，注意该 IP 应该是 F5 external interface 子网的 IP 地址。
-      当本组件安装在 4 层负载均衡模式下，忽略本值。
-
-        注：若多个集群共用对接同一个 F5 设备，不同集群要使用独立的 IP。
-
-    - `Only Watch F5 CRD`：当打开本选项，本组件只会监控自己的 CRD，适用于工作在 4 层负载均衡模式；否则，会监控全部的 K8S 资源，适用于工作在 7 层负载均衡模式。
-
-    - `Node Label Selector`：设置 node label selector，被选择的 node 会作为 nodePort 转发模式下的入口节点，如果不设置本值，F5 会把流量转发到集群所有节点的 nodePort 上。
-
-    - `Forward Method`：设置 F5 转发流量的模式，`nodePort` 和 `cluster` 模式，模式解释，可参考[介绍](./what.md)。
-    
-    
-    
-    在如上界面中:
-
-    - `BigIP Username`：F5 设备的登录账户。
-    
-    - `BigIP Password`：F5 设备的登录密码。
-
-    - `install f5-ipam-controller`：是否安装 f5-ipam-controller 组件。当希望工作在 7 层负载均衡模式下，请关闭本开关，当本希望工作在 4 层负载均衡模式下，请打开本开关。
-
-    - `F5-ipam-controller Settings -> Registry`：设置 f5-ipam-controller 镜像的仓库地址，默认已经填写了可用的在线仓库，如果是私有化环境，可修改为私有仓库地址。
-      当关闭了 `install f5-ipam-controller`，可忽略本选项。
-
-    - `F5-ipam-controller Settings -> repository`：设置 f5-ipam-controller 镜像名。
-      当关闭了 `install f5-ipam-controller`，可忽略本选项。
-
-    - `F5-ipam-controller version`：设置 F5-ipam-controller 的镜像版本，默认值已经设置了最新的版本号。
-      当关闭了 `install f5-ipam-controller`，可忽略本选项。
-
-    - `BIGIP L4 IP Pool`：设置 F5 的 4 层负载均衡的 VIP 地址池，这些 IP 应该是 F5 external interface 子网的 IP 地址。
-      本值的格式类似是 `{ LabelName: 172.16.1.1-172.16.1.5}`， 其中 LabelName 将会用于创建应用 service 时的 annotation 上。
+    - `BIGIP L4 IP Pool`: the VIP address pool for F5's Layer 4 load balancing. These IPs should be the IP addresses of the F5 external interface subnet.
+      The format of this value is similar to `{ LabelName: 172.16.1.1-172.16.1.5}`, where LabelName will be used in the annotation when creating the application service.
       
-        !!! note
+        !!! Note
 
-            创建应用 service 时，只要给 service 打上了 annotation `cis.f5.com/ipamLabel: LabelName`，就会被本组件分配 VIP，最终生效到 F5 设备上。
-            当关闭了 `install f5-ipam-controller`，可忽略本选项。
+            When creating the application service, as long as the annotation `cis.f5.com/ipamLabel: LabelName` is given to the service, the VIP will be assigned by this component and will eventually take effect on the F5 device.
+            This option can be ignored when `install f5-ipam-controller` is turned off.
 
-            若多个集群共用对接同一个 F5 设备，不同集群要使用独立的 IP 池。
+            If multiple clusters share the same F5 device, different clusters should use separate IP pools.
 
-    - `storageClassName`：设置 storageClass Name，f5-ipam-controller 组件将用于常见 PVC 对象。
-      当关闭了 `install f5-ipam-controller`，可忽略本选项。
+    - `storageClassName`: the storageClass Name, which will be used by the f5-ipam-controller component for common PVC objects.
+      When `install f5-ipam-controller` is turned off, this option can be ignored.
 
-    - `storageSize`：设置存储池大小，f5-ipam-controller 组件将用于常见 PVC 对象。
-      当关闭了 `install f5-ipam-controller`，可忽略本选项。
+    - `storageSize`: the storage pool size, which will be used by the f5-ipam-controller component for common PVC objects.
+      This option can be ignored when `install f5-ipam-controller` is turned off.
 
-## Cluster 转发模式下的配置（可选）
+## Configuration in cluster forwarding mode (optional)
 
-当组件安装为 cluster 转发模式时，需要在 F5 和 K8S 集群之间配置 VXLAN 隧道，或者配置 BGP 邻居。
+When the component is installed in cluster forwarding mode, it is necessary to configure VXLAN tunnels between the F5 and K8S clusters, or to configure BGP neighbors.
 
-K8S 的 CNI 组件往往可配置 BGP 及 F5 组件 BPG 邻居，实现网络打通。
-例如在 Calico 场景下，具体可参考 [F5 官方文档](https://clouddocs.f5.com/containers/latest/userguide/calico-config.html)。
+The CNI component of the K8S can often be configured with BGP and BPG neighbors of the F5 component to enable network connectivity.
+For Calico scenario, please refer to the [F5 official documentation](https://clouddocs.f5.com/containers/latest/userguide/calico-config.html).
 
-关于本组件的更多介绍，可参考 [F5 官方文档](https://clouddocs.f5.com/containers/latest/userguide/)。
+For more information about this component, please refer to the [F5 Official Document](https://clouddocs.f5.com/containers/latest/userguide/).
