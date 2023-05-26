@@ -5,7 +5,7 @@ hide:
 
 # 创建托管 Harbor
 
-前提条件：需要先[安装好 Harbor Operator](./operator.md)。
+前提条件：需要先[Cert Manager](https://cert-manager.io/) 和 [安装好 Harbor Operator](./operator.md) 。
 
 1. 使用具有 Admin 角色的用户登录 Web 控制台，从左侧导航栏点击`镜像仓库` -> `托管 Harbor`。
 
