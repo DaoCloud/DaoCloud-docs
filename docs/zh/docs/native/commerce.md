@@ -76,6 +76,10 @@
 
     Azure Kubernetes 舰队管理器将多个群集地视为单个集群来管理。用户可通过创建一个 Fleet 资源来管理多个集群。用户可将现有 AKS 集群当作成员集群，加入到舰队中，然后用这些集群的元数据，编排多个集群场景，如 Kubernetes 资源传播和多集群负载均衡。
 
+- [阿里云容器服务 ACK 4 月产品更新](https://mp.weixin.qq.com/s/z4PBLXxsn691cgYtfBOZaA)
+
+    更新内容：集群删除支持同步删除日志 project、用于托管高可用控制面的标准 Kubernetes 集群服务的 ACK 灵骏托管版集群正式发布、弹性调度可通过 ElasticResource 支持将 Pod 调度到 Arm 节点。
+
 - [阿里云微服务引擎 MSE 4 月产品更新](https://mp.weixin.qq.com/s/hYarQaUdKRY5pHi4dAVosg)
 
     更新内容：Nacos 和服务治理结合，无侵入地实现 Java 应用的注册发现、全链路灰度等功能；云原生网关推出针对容器服务 Nginx Ingress 的迁移工具；微服务治理基础版支持无损上下线、金丝雀发布等功能；Nacos 支持 TLS 链路加密。
@@ -144,6 +148,10 @@
 - [BellSoft 推出 Alpaquita Cloud Native Platform，用于高效运行云原生 Java 应用](https://containerjournal.com/features/bellsoft-optimizes-java-for-cloud-native-platform/)
 
     [Alpaquita Cloud Native Platform](https://bell-sw.com/cloud-native-platform/) 利用适用于 Java 的 Linux 发行版、JVM 优化、多用途框架和原生镜像技术，提供了一个专为在容器中运行的 Java 应用而优化的运行时环境。该平台特性：云成本降低 20%，使用更小的 Pod，所需节点的数量减少；零迁移成本，不需要重构；效率提升 50%，实现低延迟、低成本、快启动。
+
+- [博云容器中间件 BMM v2.1 更新发布](https://mp.weixin.qq.com/s/opPpG0g3wcJV3on133ZSeg)
+
+    更新内容：新增 RabbitMQ 及生命周期管理能力、首页新增中间件概览、支持存储扩容可视化、支持版本升级可视化、支持中间件操作审计、支持事件查询与告警。
 
 - [博云容器云产品 BoCloud Container Platform v3.7 发布](https://mp.weixin.qq.com/s/K68IWq18YWkmMyyRte-OlQ)
 
@@ -335,7 +343,11 @@
 
     [DCP](https://www.volcengine.com/product/dcp) 是面向多云多 Kubernetes 集群场景的企业级云原生统一管理平台，提供多云集群统一管理与运维、应用跨集群分发、统一流量管控等能力。DCP 将火山引擎容器集群、第三方集群、自建集群等统一纳管与运维；基于集群联邦等技术，提供跨集群、跨云的弹性调度能力；提供多集群服务发现、多集群统一入口访问等能力；可基于备份数据进行应用数据恢复及跨集群/云应用迁移。
 
-### K
+### J, K
+
+- [骥步科技多云数据备份恢复产品 YS1000 v3.2 发布](https://mp.weixin.qq.com/s/t64iDKWOQ_wUHRLvmGw8tQ)
+
+    更新内容：增加集群的 etcd 备份支持；支持创建镜像备份仓库；支持可选应用镜像源的镜像备份；支持沙箱恢复，恢复后不影响原业务；支持备份恢复任务使用钩子程序进行灵活的附属功能配置；支持基于备份恢复的数据卷同步方式；持配置容灾实例时同时配置 ingress 映射。
 
 - [Kong 云原生 API 平台 Kong Enterprise 3.2 发布](https://konghq.com/blog/kong-enterprise-3-2)
 
@@ -455,6 +467,10 @@
 
 ### Q
 
+- [青云 Kubernetes 集群巡检 SaaS 服务正式发布](https://mp.weixin.qq.com/s/Xx82SiyMGtBNgjjk34glqw)
+
+    Kubernetes 集群巡检 SaaS 服务通过即时或周期性检查 Kubernetes 多云环境中的集群节点、组件等配置是否符合最佳实践，帮助用户及时发现集群组件、服务、端口中的容器漏洞和暴露（CVE），分析 Kubernetes 中的运行风险，并推送报告，从而保证业务持续稳定运行，尽早地降低企业风险。
+
 - [青云发布 KubeSphere 容器平台企业版 3.4.0](https://mp.weixin.qq.com/s/spjVK8jWtXYb53aYjMWFxw)
 
     更新内容：支持 Prometheus 内部 TLS 认证访问、内置集成 HPA 扩展插件 KEDA、新增企业空间级网关与租户级存储配额、提升资源别名展示权重、支持通过 UI 配置 Whizard 可观测中心。
@@ -497,6 +513,14 @@
 - [Rafay Systems 推出 Service Mesh Manager and Network Policy Manager，提供企业级的 K8s 流量管理和通信安全保障](https://rafay.co/press-release/rafay-launches-service-mesh-manager-and-network-policy-manager-for-enterprise-grade-traffic-management-and-transport-security-for-kubernetes/)
 
     Service Mesh Manager 基于 Istio 构建，为微服务团队提供集中的安全控制和流量管理策略配置。Network Policy Manager 基于 Cilium 构建，提供集中管理以及 pod 和命名空间通信的可见性，以隔离边界并减少集群的横向攻击面。
+
+- [Rainbond 云原生多云应用管理平台 Rainbond 企业版发布](https://mp.weixin.qq.com/s/pmCwyFbcCwXxcO0-rVM5dw)
+
+    Rainbond 企业版拥有全局可观测中心，用于监视、调试和分析运行在 Kubernetes 集群和 rainbond 平台中的基础设施及应用服务。此外，还为 IT 业务系统向国产化信创环境中迁移提供了方案，支持全链路灰度发布和集群巡检，内置 WAF 防火墙和操作审计功能，支持私有化部署应用商店等。
+
+- [Red Hat 发布本地容器管理工具 Podman Desktop 发布 GA 版本 1.0](https://developers.redhat.com/articles/2023/05/23/podman-desktop-now-generally-available)
+
+    Podman Desktop 可在本地环境中安装、配置 Podman 并使 Podman 保持最新版本。提供了一个仪表板来与容器、图像、Pod 和卷进行交互，还可以使用 OCI 注册表和网络设置来配置环境。Podman Desktop 支持多种容器引擎，提供将 Pod 连接和部署到 Kubernetes 环境的功能。
 
 - [Red Hat OpenShift 日志管理方案 Logging 5.6 发布](https://docs.openshift.com/container-platform/4.12/logging/cluster-logging-release-notes.html#cluster-logging-release-notes-5-6_cluster-logging-release-notes-v5x)
 

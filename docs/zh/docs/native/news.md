@@ -20,6 +20,10 @@
   
     本次评估的评估项目包括：一云多芯 IaaS/PaaS 平台能力评估、一云多芯 IaaS/PaaS 平台性能评估、一云多芯云管平台能力评估。评估结果将于 7 月可信云大会上发布。
 
+- [6.25 Linux 基金会正式启动 WasmCon 2023 议题征集（6.25 截止）](https://events.linuxfoundation.org/wasmcon/)
+  
+    WasmCon 2023 是 Linux 基金会面向 WebAssembly 开发者和用户推出一个新的活动。该活动将于今年 9 月 6 日至 7 日在美国华盛顿举行。提交的议题主题可包括：Wasm 介绍、Wasm 性能优化、Wasm 安全、Wasm 和云、使用案例、调试 Wasm 应用程序、Wasm 工具和生态系统等等。
+
 - [6.19 KubeDay 以色列站将于 6 月 19 日举行](https://www.cncf.io/blog/2023/04/06/announcing-kubeday-israel-will-take-place-on-june-19/)
   
     KubeDay 是 CNCF 主办的地区性云原生系列活动，主要针对社区发展活跃和对 Kubernetes 等云原生技术感兴趣的地区。
@@ -37,6 +41,10 @@
   
     金融科技厂商排名评选分为金融科技厂商（Top 100）及综合行业IT服务厂商（Enterprise 25）两个类别，报名截止时间 6 月 23 日。金融行业真实价值案例评选该评选由厂商单独，或联合其行业用户共同申报，截止时间为 6 月 15 日。根据金融科技服务商为金融机构服务的案例实践，对八个金融服务类别进行评估并选出入围案例，并且根据这八个类别的整体评估，评选出整体数字化转型卓越奖。
 
+- [6.15 2023 中国云原生中间件用户调查正式启动](https://mp.weixin.qq.com/s/ssMAkdrr2tDG6VKrTrh1ZQ)
+  
+    为了进一步调研产业现状，探明新周期下的云原生中间件的新特征、新变化、新需求、新趋势，中国信通院正式发起 2023 中国云原生中间件用户调查。调查截止时间为 2023 年 6 月 15 日。
+
 - [6.15 2023 年度中国 DevOps 现状调查优秀实践案例征集正式启动（6.15 申报截止）](https://mp.weixin.qq.com/s/jJIO3T4YB0giW5HAripGEg)
   
     本次 DevOps 优秀实践案例征集活动面向国内各企事业单位，每家单位最多申报2个案例，可由甲乙方单位联合申报。征集案例包含 11 个领域，可任选其一或跨领域申报：敏捷开发、持续交付、技术运营、持续测试、应用设计、安全及风险管理（DevSecOps）、研运效能度量、BizDevOps、系统和工具、平台工程、自主可控工具链。
@@ -48,6 +56,14 @@
 - [6.6 ICT 中国·2023 高层论坛-云原生产业高峰论坛将于 6 月 6 日在北京拉开帷幕](https://mp.weixin.qq.com/s/FTOBYjCZxYMoOM8WJUz8mQ)
   
     云原生产业高峰论坛由工业和信息化部主办，将邀请云原生领域领军智库、政府领导、院士专家、企业高层等重量级嘉宾共话云原生生态，共探云原生未来。
+
+- [6.3 云原生社区重庆站 Meetup 将于 6 月 3 日举行](https://mp.weixin.qq.com/s/pwf5_k5CWXTqZLpoKtGpCg)
+  
+    此次 Meetup 将分享的内容有：如何使用开源软件 pipy 构建轻量级、高性能、高可靠性 web 应用程序；开源软件技术在企业数据解决方案中的应用；如何使用 OpenTelemetry 监控和跟踪云原生应用程序在多个集群中的性能和行为；ChatGPT 和 AIGC 技术在未来的潜力。
+
+- [6.3 KubeSphere 社区云原生技术 Meetup 杭州站火热开启](https://mp.weixin.qq.com/s/UaR40LZvTiINcq1D8dKc_A)
+  
+    此次 Meetup 由 KubeSphere 社区联合极狐 GitLab 及 Curve 社区共同组织，包括 4 个分享以及 1 场 WorkShop，涉及云原生安全、云原生存储、服务网格等话题。
 
 - [6.3 KCD 北京站开放议题征集（5.8 截止）](https://mp.weixin.qq.com/s/iX7Qk8jr7vM13srimYs_rA)
   

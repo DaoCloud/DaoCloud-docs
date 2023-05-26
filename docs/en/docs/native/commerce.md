@@ -76,6 +76,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Azure Kubernetes Fleet Manager treats multiple cluster sites as a single cluster to be managed. Users can manage multiple clusters by creating a Fleet resource. Users can treat existing AKS clusters as member clusters, join them to the fleet, and then orchestrate multiple cluster scenarios such as Kubernetes resource propagation and multi-cluster load balancing using metadata from those clusters.
 
+- [AliCloud Container Service ACK April Product Update](https://mp.weixin.qq.com/s/z4PBLXxsn691cgYtfBOZaA)
+
+    Updates: Cluster deletion supports synchronous deletion of log projects, ACK Lingjun Managed Cluster for hosting the standard Kubernetes cluster service with high availability control plane is officially released, ElasticResource supports Pod dispatching to Arm nodes.
+
 - [AliCloud Microservices Engine MSE April Product Update](https://mp.weixin.qq.com/s/hYarQaUdKRY5pHi4dAVosg)
 
     Updates: Nacos and Service Governance combine to non-intrusively implement Java application registration discovery, full-link grayscale, etc.; Cloud Native Gateway introduces migration tools for container service Nginx Ingress; Microservice Governance Basic Edition supports lossless up and down, canary publishing, etc.; Nacos supports TLS link encryption.
@@ -144,6 +148,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [BellSoft launches Alpaquita Cloud Native Platform for efficiently running cloud-native Java applications](https://containerjournal.com/features/bellsoft-optimizes-java-for-cloud-native-platform/)
 
      [Alpaquita Cloud Native Platform](https://bell-sw.com/cloud-native-platform/) leverages a Linux distribution for Java, JVM optimizations, a multipurpose framework, and native mirroring technology to provide a A runtime environment optimized for Java applications running in containers. Features of the platform: Cloud costs are reduced by 20%, smaller Pods are used, and the number of required nodes is reduced; zero migration costs, no refactoring is required; efficiency is increased by 50%, achieving low latency, low cost, and fast startup.
+
+- [BoCloud BMM v2.1 update released](https://mp.weixin.qq.com/s/opPpG0g3wcJV3on133ZSeg)
+
+    Update: New RabbitMQ and lifecycle management capabilities, new middleware overview on home page, support for storage expansion visualization, support for version upgrade visualization, support for middleware operation auditing, support for event query and alerting.
 
 - [BoCloud Container Platform v3.7 released](https://mp.weixin.qq.com/s/K68IWq18YWkmMyyRte-OlQ)
 
@@ -321,7 +329,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      Bridging the gap between black-box data for performance testing and white-box data inside the system.
      The integration allows correlating k6's test run data with server-side trace data for root cause analysis; aggregates the collected trace data to generate real-time metrics, helping users narrow the search space and quickly spot anomalous behavior.
 
-### H, K
+### H
 
 - [Harness Launches Fully Managed Gitops-as-a-Service](https://harness.io/blog/generally-available-harness-gitops-as-a-service)
 
@@ -331,6 +339,12 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      CCE Turbo can accelerate all aspects of computing, network, and scheduling to achieve extreme elasticity, such as helping customers easily cope with business traffic peaks with an elasticity of 3000 pod/min; UCS provides cross-cloud and cross-region cloud-native application management to achieve a consistent experience.
 
+### J, K
+
+- [Jibudata multi-cloud data backup recovery product YS1000 v3.2 released](https://mp.weixin.qq.com/s/t64iDKWOQ_wUHRLvmGw8tQ)
+
+    Update: add etcd backup support for clusters; support for creating mirror backup repository; support for mirror backup with optional application mirror source; support for sandbox recovery without affecting the original business after recovery; support for flexible subsidiary function configuration using hooks for backup recovery tasks; support for synchronization of data volumes based on backup recovery; support for configuring ingress mapping while configuring disaster recovery instances.
+
 - [KSOC Launches Industry's First Real-Time Kubernetes Security Posture Management Platform](https://www.einnews.com/pr_news/628624388/ksoc-launches-first-real-time-kubernetes-security-posture-management-kspm-platform)
 
     The Kubernetes Security Posture Management Platform pinpoints attack activity with real-time context and current and historical information, while also providing actionable remediation based on the current state of the cluster. Specific capabilities include: real-time posture management to discover event-based misconfigurations; aggregating and finding excessive privileges in Kubernetes RBAC; preventing the deployment of non-compliant workloads and reducing the potential blast radius; and scanning for vulnerabilities and generating SBOMs for running containers.
@@ -339,7 +353,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Kyndryl Cloud Native Services provides an end-to-end lifecycle framework that includes code assets, workflows, specialized fundamentals, consulting management services, and comprehensive services related to automated backups, patching, KPI monitoring, security, alerting, and event management for cloud native application migration and optimization . The solution allows enterprises to move their on-premise applications to cloud service provider environments such as AWS, GCP and Azure.
 
-- [Kong Enterprise 3.2, a Kong cloud native API platform, is released(https://konghq.com/blog/kong-enterprise-3-2)
+- [Kong Enterprise 3.2, a Kong cloud native API platform, is released](https://konghq.com/blog/kong-enterprise-3-2)
 
     Updates: Support for data plane extensions when the control plane fails; New Datadog tracking plugin to work with Datadog Agent without installing Otel collector; Support for latency-based bootstrapping, allowing Kong load balancers to select the "fastest" backend based on total response time when proxying upstream services. " backend when proxying upstream services.
 
@@ -443,6 +457,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### Q
 
+- [QingCloud Kubernetes Cluster Patrol SaaS Service Officially Released](https://mp.weixin.qq.com/s/Xx82SiyMGtBNgjjk34glqw)
+
+    Kubernetes Cluster Inspection SaaS service helps users discover container vulnerabilities and exposures (CVE) in cluster components, services, and ports, analyze operational risks in Kubernetes, and push reports by instantly or periodically checking whether the configuration of cluster nodes and components in Kubernetes multi-cloud environments comply with best practices, thus ensuring business The ACK helps users identify container vulnerabilities and exposures (CVE) in cluster components, services, and ports, analyze operational risks in Kubernetes, and push reports to ensure continuous and stable business operation and reduce enterprise risks as early as possible.
+
 - [QingCloud Releases KubeSphere Container Platform Enterprise Release 3.4.0](https://mp.weixin.qq.com/s/spjVK8jWtXYb53aYjMWFxw)
 
     Updates: Support for Prometheus internal TLS authenticated access, built-in integration with HPA extension plugin KEDA, new enterprise space-level gateway and tenant-level storage quota, improved resource alias display weight, support for Whizard observable center configuration via UI.
@@ -485,6 +503,14 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Rafay Systems launches Service Mesh Manager and Network Policy Manager, providing enterprise-level K8s traffic management and communication security](https://rafay.co/press-release/rafay-launches-service-mesh-manager-and-network-policy-manager-for-enterprise-grade-traffic-management-and-transport-security-for-kubernetes/)
 
      Built on Istio, Service Mesh Manager provides microservice teams with centralized security control and traffic management policy configuration. Built on Cilium, Network Policy Manager provides centralized management and visibility into pod and namespace communication to isolate perimeters and reduce a cluster's lateral attack surface.
+
+- [Rainbond Cloud Native Multi-Cloud Application Management Platform Rainbond Enterprise Edition Released](https://mp.weixin.qq.com/s/pmCwyFbcCwXxcO0-rVM5dw)
+
+    Rainbond Enterprise Edition has a global observable center for monitoring, debugging, and analyzing infrastructure and application services running in Kubernetes clusters and the rainbond platform. In addition, it also provides solutions for IT business system migration to the localized Cintron environment, supports full-link grayscale release and cluster patrol, built-in WAF firewall and operation audit functions, supports private deployment of application stores, etc.
+
+- [Red Hat Releases Local Container Management Tool Podman Desktop Release GA Version 1.0](https://developers.redhat.com/articles/2023/05/23/podman-desktop-now-generally-available )
+
+    Podman Desktop allows you to install and configure Podman in your local environment and keep Podman up to date. Podman Desktop supports multiple container engines and provides the ability to connect and deploy Pods to Kubernetes environments.
 
 - [Red Hat's logging management solution Logging 5.6 was released](https://docs.openshift.com/container-platform/4.12/logging/cluster-logging-release-notes.html#cluster-logging-release-notes-5-6_cluster-logging-release-notes-v5x)
 
