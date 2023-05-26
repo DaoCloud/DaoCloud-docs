@@ -14,6 +14,10 @@
 
     该版本主要新特性：支持 Istio 1.12.x 版本；支持 bRPC（better RPC） 协议，bRPC 是百度开源的工业级 RPC 框架；MetaProtocol 支持流式调用、支持采用 MetaData 设置负载均衡 Hash 策略以及在 Response 中回传服务器真实 IP 等。  
 
+- [Antrea CNI 插件 v1.12.0 发布（CNCF 项目）](https://github.com/antrea-io/antrea/releases/tag/v1.12.0)
+
+    版本特性：拓扑感知功能和节点 IP 地址管理功能从 Alpha 升级到 Beta，且默认启用；支持通过一个新的 Antrea 代理配置参数启用多播功能；在 AntreaProxy 中增加对 ExternalIP 的支持；为多集群增加 WireGuard 隧道模式的支持；为多集群服务增加对 EndpointSlice API 的支持。
+
 - [Antrea CNI 插件 v1.11.0 发布（CNCF 项目）](https://github.com/antrea-io/antrea/releases/tag/v1.11.0)
 
     版本特性：ClusterSet scoped 策略规则支持命名空间字段、L7 策略规则支持流量日志、支持在 TCP 网络包上处理 DNS 请求、AntreaProxy 的端点切片（EndpointSlice）功能升级为 Beta、AntreaProxy 支持处理终止过程中的端点（ProxyTerminatingEndpoint）、Egress 策略支持限制分配到一个节点上的 Egress IP 数量、多集群网关支持多种流量模式。
@@ -118,6 +122,10 @@
     [cdk8s+](https://github.com/cdk8s-team/cdk8s) 允许用户使用熟悉的编程语言和面向对象的 API 来定义 Kubernetes 应用和可复用的抽象。
     相较于去年发布的 beta 版本，正式版本新增功能包括：隔离 pod 网络，只允许指定的通信；改进在同一节点上运行多个 pod的配置机制；集成 [Datree](https://github.com/datreeio/datree-cdk8s) 插件，使用第三方策略执行工具检查 Kubernetes 中的错误配置。
 
+- [Cert-manager 云原生证书管理项目 v1.12.0 发布（CNCF 项目）](https://github.com/cert-manager/cert-manager/releases/tag/v1.12.0)
+
+    版本特性：将二进制文件和测试分离撑独立的 Go 模块、增加对 JSON 日志的支持、支持带有 Vault 的短暂服务账户令牌、支持 ingressClassName 字段、新增标志用于指定哪些资源需要被注入到  Kubernetes 对象中。
+
 - [Cert-manager 云原生证书管理项目 v1.11.0发布（CNCF 项目）](https://github.com/cert-manager/cert-manager/releases/tag/v1.11.0)
 
     该版本主要新特性：支持使用 Azure Workload Identity Federation 进行认证、支持指定 cert-manager 在与 ACME 服务器通信时使用的信任存储、支持 gateway API v1beta1、启用针对 Kubernetes 1.26 的测试。
@@ -145,6 +153,10 @@
 - [Chaos Mesh 混沌工程测试平台 v2.2.0 发布（CNCF 项目）](https://github.com/chaos-mesh/chaos-mesh/releases/tag/v2.2.0)
 
     该版本主要新特性：新增 StatusCheck 功能，用于检查应用程序的健康状况，当应用程序不健康时中止混沌实验；支持使用 `Chaosctl` 进行 outbound 强制恢复、在 dashboard 中新增基于流程图创建工作流的界面等。
+
+- [ChaosMeta：蚂蚁集团开源的云原生自动化混沌工程平台](https://mp.weixin.qq.com/s/QUiWocMwbnSoUyfAu1z-cg)
+
+    [ChaosMeta](https://github.com/traas-stack/chaosmeta) 设计上是包含了完整混沌工程生命周期的一站式演练综合解决方案，涵盖了准入检查、流量注入、故障注入、故障度量、恢复度量和故障恢复等多个阶段。现阶段，ChaosMeta 已经对外开放了丰富的故障注入功能，不仅支持单机部署和 Kubernetes 云原生部署，还支持 Kubernetes 本身和 Operator 等云原生故障场景的实验。
 
 - [Cilium CNI 插件 v1.13.0 发布（CNCF 项目）](https://github.com/cilium/cilium/releases/tag/v1.13.0)
 
@@ -697,6 +709,10 @@
     - 可观测性：添加容器进程/线程指标、优化磁盘使用率指标、支持在命名空间自定义监控中导入 Grafana 模板。
     - 存储：支持 PVC 自动扩展策略、支持对卷快照内容和类型进行管理、支持为存储类型设置授权规则。
     - 边缘：集成 KubeEdge。
+
+- [Kubespray Kubernetes 集群部署工具 v2.22.0 发布](https://github.com/kubernetes-sigs/kubespray/releases/tag/v2.22.0)
+
+    版本特性：同一镜像名称下支持多架构镜像、为 cert-manager 增加 DNS 配置、 kube-scheduler 配置中加入 kube-profile 配置、允许配置镜像垃圾收集、支持自定义 ssh 端口、支持启用 kube-vip 的控制平面负载均衡。
 
 - [Kubespray Kubernetes 集群部署工具 v2.20.0 发布](https://github.com/kubernetes-sigs/kubespray/releases/tag/v2.20.0)
 

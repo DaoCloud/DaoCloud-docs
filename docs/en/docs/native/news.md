@@ -20,6 +20,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     The evaluation items of this assessment include: One Cloud Multi-core IaaS/PaaS platform capability assessment, One Cloud Multi-core IaaS/PaaS platform performance assessment, and One Cloud Multi-core cloud management platform capability assessment. The evaluation results will be released at the Trusted Cloud Conference in July.
 
+- [June 25 Linux Foundation Officially Launches WasmCon 2023 Call for Topics (6.25 deadline)](https://events.linuxfoundation.org/wasmcon/)
+  
+    WasmCon 2023 is a new event from the Linux Foundation for WebAssembly developers and users. The event will be held in Washington, DC, USA on September 6-7 this year. Topics to be submitted may include: Introduction to Wasm, Wasm Performance Optimization, Wasm Security, Wasm and the Cloud, Use Cases, Debugging Wasm Applications, Wasm Tools and Ecosystem, and more.
+
 - [June 15 & June 23 2023 IDC Global FinTech Vendor Ranking and Real Value Case Selection Officially Launched](https://mp.weixin.qq.com/s/0z2h92akTEOVF1hqa3Q9GQ)
   
     FinTech vendor rankings are divided into two categories: FinTech vendors (Top 100) and integrated industry IT service vendors (Enterprise 25), with registration deadline on June 23. The Financial Industry Real Value Case Awards are submitted by vendors alone or jointly with their industry users, with a deadline of June 15. Based on case studies of FinTech service providers serving financial institutions, the eight financial services categories will be evaluated and finalists selected, and the overall digital transformation excellence award will be based on the overall evaluation of the eight categories.
@@ -37,6 +41,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     The summit will be held in Shanghai from 9.25 to 9.27. Topics to be submitted can focus on software development lifecycle, platform engineering, O&M+performance, security, data+processing+storage, network+edge+telecom, service mesh, etc. The topic types include four categories: single talk (30 min), double talk (30 min), panel discussion (30 min, 3 to 5 (30 min), panel discussion (30 min, 3-5 speakers), and tutorial (90 min).
 
+- [June 15 2023 China Cloud Native Middleware User Survey Launched](https://mp.weixin.qq.com/s/ssMAkdrr2tDG6VKrTrh1ZQ)
+  
+    In order to further investigate the current state of the industry and explore the new features, changes, demands and trends of cloud-native middleware in the new cycle, China ICT has officially launched the 2023 China Cloud-Native Middleware User Survey. The deadline for the survey is June 15, 2023.
+
 - [June 15 2023 Annual China DevOps Status Survey Excellent Practice Case Collection Officially Launched (6.15 Application Deadline)](https://mp.weixin.qq.com/s/jJIO3T4YB0giW5HAripGEg)
   
     This DevOps Excellent Practice Case Collection is open to all enterprises and institutions in China, and each unit can declare up to 2 cases, which can be jointly declared by A and B units. The call for cases includes 11 areas, which can be declared in any one of them or across them: agile development, continuous delivery, technical operation, continuous testing, application design, security and risk management (DevSecOps), R&D and operation performance metrics, BizDevOps, system and tools, platform engineering, and autonomous controlled tool chain.
@@ -48,6 +56,14 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [June 6 ICT China-2023 High Level Forum - Cloud Native Industry Summit will kick off on June 6 in Beijing](https://mp.weixin.qq.com/s/FTOBYjCZxYMoOM8WJUz8mQ)
   
     Sponsored by the Ministry of Industry and Information Technology, the Cloud Native Industry Summit Forum will invite leading think tanks, government leaders, academician experts, enterprise executives and other heavyweight guests to discuss the cloud native ecology and explore the cloud native future.
+
+- [June 3 Cloud Native Community Chongqing Meetup to be held on June 3](https://mp.weixin.qq.com/s/pwf5_k5CWXTqZLpoKtGpCg)
+  
+    The Meetup will share topics such as: how to build lightweight, high-performance, high-reliability web applications using open source software pipy; the application of open source software technologies in enterprise data solutions; how to use OpenTelemetry to monitor and track the performance and behavior of cloud-native applications across multiple clusters; the future potential of ChatGPT and AIGC technologies. potential.
+
+- [June 3 KubeSphere Community Cloud Native Meetup Hangzhou](https://mp.weixin.qq.com/s/UaR40LZvTiINcq1D8dKc_A)
+  
+    This Meetup is jointly organized by KubeSphere community and Polar Fox GitLab and Curve community, including 4 sharing sessions and 1 WorkShop session, covering topics such as cloud-native security, cloud-native storage, service grid, etc.
 
 - [June 3 KCD Beijing Open Call for Topics (5.8 deadline)](https://mp.weixin.qq.com/s/iX7Qk8jr7vM13srimYs_rA)
   

@@ -14,6 +14,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support Istio 1.12.x version; support bRPC (better RPC) protocol, bRPC is Baidu's open source industrial-grade RPC framework; Pass the real IP of the server, etc.
 
+- [Antrea CNI Plugin v1.12.0 Released (CNCF Project)](https://github.com/antrea-io/antrea/releases/tag/v1.12.0)
+
+    Release features: Topology-aware and node IP address management features upgraded from Alpha to Beta and enabled by default; support for enabling multicast via a new Antrea proxy configuration parameter; added support for ExternalIP in AntreaProxy; added support for WireGuard tunneling mode for multiclusters; added support for EndpointSlice API for multicluster services. Add support for the EndpointSlice API for multicluster services.
+
 - [Antrea CNI Plugin v1.11.0 Released (CNCF Project)](https://github.com/antrea-io/antrea/releases/tag/v1.11.0)
 
     Release features: ClusterSet scoped policy rules support namespace fields, L7 policy rules support traffic logging, support for handling DNS requests on TCP network packets, AntreaProxy's EndpointSlice feature upgraded to Beta, AntreaProxy supports handling endpoints in the process of termination ( ProxyTerminatingEndpoint), Egress policies support limiting the number of Egress IPs assigned to a node, and multiple traffic patterns are supported for multiple cluster gateways.
@@ -118,6 +122,10 @@ This page lists activity in cloud native open source projects in alphabetical or
      [cdk8s+](https://github.com/cdk8s-team/cdk8s) allows users to define Kubernetes applications and reusable abstractions using familiar programming languages and object-oriented APIs.
      Compared with the beta version released last year, the new features of the official version include: isolate the pod network and only allow specified communication; improve the configuration mechanism for running multiple pods on the same node; integrate [Datree](https://github. com/datreeio/datree-cdk8s) plugin to check for misconfigurations in Kubernetes using third-party policy enforcement tools.
 
+- [Cert-manager Cloud Native Certificate Management Project v1.12.0 Released (CNCF Project)](https://github.com/cert-manager/cert-manager/releases/tag/v1.12.0)
+
+    Release features: separate Go module for binaries and tests, added support for JSON logging, support for ephemeral service account tokens with Vault, support for ingressClassName field, new flags to specify which resources need to be injected into Kubernetes objects.
+
 - [Cert-manager Cloud Native Certificate Management Project v1.11.0 Released (CNCF Project)](https://github.com/cert-manager/cert-manager/releases/tag/v1.11.0)
 
     Major new features in this release: support for authentication using Azure Workload Identity Federation, support for specifying the trust store used by cert-manager when communicating with ACME servers, support for the gateway API v1beta1, and enabling testing against Kubernetes 1.26.
@@ -145,6 +153,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Chaos Mesh Chaos Engineering Test Platform v2.2.0 Release (CNCF Project)](https://github.com/chaos-mesh/chaos-mesh/releases/tag/v2.2.0)
 
      The main new features of this version: Add the StatusCheck function to check the health of the application, and stop the chaos experiment when the application is unhealthy; support the use of `Chaosctl` for outbound forced recovery, and add workflows based on flow charts in the dashboard interface etc.
+
+- [ChaosMeta: Ant Group's open source cloud-native automated chaos engineering platform](https://mp.weixin.qq.com/s/QUiWocMwbnSoUyfAu1z-cg)
+
+    [ChaosMeta](https://github.com/traas-stack/chaosmeta) is designed to be a one-stop walkthrough comprehensive solution that includes the complete chaos engineering lifecycle, covering multiple phases such as admission checking, traffic injection, fault injection, fault metrics, recovery metrics and fault recovery. At this stage, ChaosMeta has opened up rich fault injection features to the public, supporting not only standalone deployments and Kubernetes cloud-native deployments, but also experiments with cloud-native fault scenarios such as Kubernetes itself and Operator.
 
 - [Cilium CNI Plugin v1.13.0 Released (CNCF Project)](https://github.com/cilium/cilium/releases/tag/v1.13.0)
 
@@ -699,6 +711,10 @@ This page lists activity in cloud native open source projects in alphabetical or
      - Observability: Add container process/thread metrics, optimize disk usage metrics, and support importing Grafana templates in namespace custom monitoring.
      - Storage: Support PVC automatic expansion policy, support management of volume snapshot content and type, and support setting authorization rules for storage types.
      - Edge: KubeEdge integrated.
+
+- [Kubespray Kubernetes Cluster Deployment Tool v2.22.0 released](https://github.com/kubernetes-sigs/kubespray/releases/tag/v2.22.0)
+
+    Release features: support for multi-architecture mirroring under the same mirror name, add DNS configuration for cert-manager, add kube-profile configuration to kube-scheduler configuration, allow configuration of mirror garbage collection, support for custom ssh ports, support for control plane load balancing with kube-vip enabled.
 
 - [Kubespray Kubernetes cluster deployment tool v2.20.0 released](https://github.com/kubernetes-sigs/kubespray/releases/tag/v2.20.0)
 
