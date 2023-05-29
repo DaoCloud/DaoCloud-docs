@@ -43,6 +43,7 @@ nav:
               - 基本概念: kpanda/intro/concepts.md
               - Release Notes: kpanda/intro/release-notes.md
               - 功能发布动态: kpanda/intro/news.md
+              - 常见问题: kpanda/intro/faq.md
           - 集群管理:
               - 创建集群: kpanda/user-guide/clusters/create-cluster.md
               - 接入集群: kpanda/user-guide/clusters/integrate-cluster.md
