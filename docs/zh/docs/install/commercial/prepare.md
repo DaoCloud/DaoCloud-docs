@@ -55,7 +55,7 @@
 | kind         | v0.17.0    | -                                 |
 | kubectl      | ≥ 1.25.6     | -                                 |
 | yq           | ≥ 4.31.1     | -                                 |
-| minio client | -            | `mc.RELEASE.2023-02-16T19-20-11Z` |
+| minio client | `mc.RELEASE.2023-02-16T19-20-11Z``mc.RELEASE.2023-02-16T19-20-11Z` |                   |
 
 如果不存在依赖组件，通过脚本进行安装依赖组件，[安装前置依赖](../install-tools.md)。
 
