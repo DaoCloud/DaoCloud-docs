@@ -3,32 +3,34 @@ hide:
   - toc
 ---
 
-# Access registry
+# Integrate Registry
 
-Registry supports access [Nacos Registry](../../../reference/basic-knowledge/registry.md#nacos-Registry), [ The Eureka Registry ](../../../reference/basic-knowledge/registry.md#eureka-Registry), [ Zookeeper Registration Center ](../../../reference/basic-knowledge/registry.md#zookeeper-Registry), [ Kubernetes Registry ](../../../reference/basic-knowledge/registry.md#kubernetes-Registry), [Mesh Registry](../../../reference/basic-knowledge/registry.md#service-mesh-Registry).
+If you want to monitor or trace your existing microservices without creating a new registry, then you can just integrate your registries into the Microservices module of DCE 5.0.
 
-In contrast to managed registries, access registries support only basic operations, such as viewing basic information and monitoring information. To perform more advanced and comprehensive management operations, create [Managed Registry](../managed/registry-lcm/create-registry.md).
+Supported registries: [Nacos Registry](../../../reference/basic-knowledge/registry.md#nacos-registry), [Eureka Registry](../../../reference/basic-knowledge/registry.md#eureka-registry), [Zookeeper Registry](../../../reference/basic-knowledge/registry.md#zookeeper-registry), [Kubernetes Registry](../../../reference/basic-knowledge/registry.md#kubernetes-registry), and [Mesh Registry](../../../reference/basic-knowledge/registry.md#service-mesh-registry).
 
-To access the registry, perform the following steps:
+However, compared with hosted registries, integrated registries can only use some basic features, such as checking basic information, monitoring information, and tracing. To experience more fantastic and surprising boasted features, it is suggested to create a [Hosted Registry](../managed/registry-lcm/create-registry.md).
 
-1. In the left navigation bar click `Microservice Governance` -- > `Integrate Registry`, then at the upper right corner of the page by clicking on the `Integrate Registry`.
+To integrate a registry, follow these steps:
 
-    <!--![]()screenshots-->
+1. Click `Traditional Microservices`-->`Integrated Registry` in the left navigation bar, and then click `Integrate Registry` in the upper right corner of the page.
 
-2. Fill in the configuration information, then click `OK` at the bottom of the page.
+    ![](../../images/integrate01.png)
 
-    Different types of registries require different configurations.
+2. Complete required information and click `OK` at the bottom of the page.
 
-    - Kubernetes/Mesh Registry: Directly select the cluster or mesh service you want to access.
+    Different types of registries requires different information.
 
-        - If you cannot find the Kubernetes cluster you want to add, you can go to the container management module [Integrate Cluster](../../../kpanda/user-guide/clusters/integrate-cluster) or [Create Cluster](../../../kpanda/user-guide/clusters/create-cluster.md).
+    - Kubernetes/Mesh registry: directly select a cluster or service service
 
-        - If you cannot find the mesh service you want to add, you can go to the mesh service module [Create Mesh](../../../mspider/user-guide/service-mesh/README.md).
+        - If your expected cluster doesn't appear in the drop-down list, go to the Container Management module to [Integrate Cluster](../../../kpanda/user-guide/clusters/integrate-cluster) or [Create Cluster]( ../../../kpanda/user-guide/clusters/create-cluster.md).
 
-            <!--![]()screenshots-->
+        - If your expected mesh doesn't appear in the drop-down list, go to the Service Mesh module to [Create Mesh](../../../mspider/user-guide/service-mesh/README.md).
 
-    - Nacos/Zookeeper/Eureka Registry: Fill in the name and address of the registry and click `Test Connectivity`.
+            ![Integrate Mesh/Kubernetes](../../images/integrate02.png)
 
-        If the address bar is gray, the access test is successful. For distributed high availability registries, you can also enter multiple addresses by clicking `+ Add`.
+    - Nacos/Zookeeper/Eureka registries: fill in the name and address of the registry, and click `OK` at the bottom of the page.
 
-        <!--![]()screenshots-->
+        Click `+ Add` to enter multiple addresses.
+
+        ![Nacos/Zookeeper/Eureka](../../images/integrate03.png)

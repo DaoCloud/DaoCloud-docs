@@ -3,20 +3,16 @@ hide:
   - toc
 ---
 
-# Update the registry configuration
+# Update Registry
 
-The microservice engine currently only supports updating the Nacos/Zookeeper/Eureka registry configuration.
+Update Nacos/Zookeeper/Eureka registries with this guide. 
 
-1. In the `Integrated Registry List` page choose need to update the registry, on the right side click ** `⋯` ** and select `Edit`.
+If you want to update Kubernetes/Service Mesh registries, you can either remove it and reintegrate another one, or you can [update the Kubernetes cluster](../../../kpanda/user-guide/clusters/upgrade-cluster.md)/[update the mesh](../../../mspider/user-guide/service-mesh/README.md).
 
-    <!--![]()screenshots-->
+1. In the `Registry List` find registry you need to update, on the right side click **`⋯`** and select `Edit`.
+
+    ![Edit](../../images/integrate-update01.png)
 
 2. Add or remove the registry address, then click `OK` at the bottom of the page.
 
-    <!--![]()screenshots-->
-
-!!! note
-
-
-    - You can [ Example Remove an added registry ](remove-registry.md) and then reconnect to another registry.
-    - You can also go to the container management module [to update the cluster](../../../kpanda/user-guide/clusters/upgrade-cluster.md) or to the Service Mesh module [to update the mesh](../../../mspider/user-guide/service-mesh/README.md).
+    ![Edit](../../images/integrate-update02.png)
