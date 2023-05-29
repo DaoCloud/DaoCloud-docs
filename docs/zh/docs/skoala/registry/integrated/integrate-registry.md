@@ -27,8 +27,6 @@ hide:
 
             ![接入 Mesh/Kubernetes](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/integrated/imgs/integrate03.png)
 
-    - Nacos/Zookeeper/Eureka 注册中心：填写注册中心的名称和地址，点击`接入测试`。
-
-        地址栏变灰则说明接入测试成功。对于分布式的高可用注册中心，还可以点击`+ 添加`可以输入多个地址。
+    - Nacos/Zookeeper/Eureka 注册中心：填写注册中心的名称和地址，点击`确认`。
 
         ![接入 Nacos/Zookeeper/Eureka](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/integrated/imgs/integrate02.png)
