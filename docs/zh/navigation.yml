@@ -506,6 +506,7 @@ nav:
               - 创建的网格异常但无法删除: mspider/troubleshoot/failed-to-delete.md
               - 托管网格纳管集群失败: mspider/troubleshoot/failed-to-add-cluster.md
               - 托管网格纳管集群istio-ingressgateway异常: mspider/troubleshoot/hosted-mesh-errors.md
+              - 网格空间无法正常解绑: mspider/troubleshoot/mesh-space-cannot-unbind.md
       - 云原生网络:
           - 介绍:
               - 什么是云原生网络: network/intro/what.md
