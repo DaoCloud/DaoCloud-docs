@@ -52,7 +52,7 @@ nav:
               - 集群角色: kpanda/user-guide/clusters/cluster-role.md
               - 集群状态: kpanda/user-guide/clusters/cluster-status.md
               - 如何选择运行时: kpanda/user-guide/clusters/runtime.md
-          - 命名空间: 
+          - 命名空间:
               - 创建命名空间: kpanda/user-guide/namespaces/createns.md
               - 命名空间独享节点: kpanda/user-guide/namespaces/exclusive.md
               - 容器组安全策略: kpanda/user-guide/namespaces/podsecurity.md
@@ -193,11 +193,11 @@ nav:
           - 快速入门:
               - 开始观测:
                   - insight/user-guide/quickstart/quickstart-catelogy.md
-                  - 在线安装 insight-agent: insight/user-guide/quickstart/install-agent.md   
-                  - 离线升级 insight-agent: insight/user-guide/quickstart/offline-install.md        
+                  - 在线安装 insight-agent: insight/user-guide/quickstart/install-agent.md
+                  - 离线升级 insight-agent: insight/user-guide/quickstart/offline-install.md
                   - 获取数据上传地址: insight/user-guide/quickstart/gethosturl.md
                   - 升级注意事项: insight/user-guide/quickstart/upgrade-note.md
-              - 在其他发行版安装 insight-agent: 
+              - 在其他发行版安装 insight-agent:
                   - 在 DCE 4.0.x 安装 insight-aent: insight/faq/install-agentindce.md
                   - 在 OpenShift 4.x 安装 insight-agent: insight/faq/install-agent-on-ocp.md
               - 开始采集链路数据:
@@ -211,10 +211,10 @@ nav:
                   - 使用 JMX Exporter 暴露 JVM 监控指标: insight/user-guide/quickstart/jvm-monitor/jmx-exporter.md
                   - 使用 OTel Java Agent 暴露 JVM 监控指标: insight/user-guide/quickstart/jvm-monitor/otel-java-agent.md
                   - 已有 JVM 指标的 Java 应用对接可观测性: insight/user-guide/quickstart/jvm-monitor/legacy-jvm.md
-              - 资源规划:              
-                    - Prometheus 资源规划: insight/best-practice/prometheus-res.md
-                    - vmstorage 磁盘规划: insight/best-practice/vms-res-plan.md
-                    - 调整 vmstorage 磁盘: insight/best-practice/modify-vms-disk.md
+              - 资源规划:
+                  - Prometheus 资源规划: insight/best-practice/prometheus-res.md
+                  - vmstorage 磁盘规划: insight/best-practice/vms-res-plan.md
+                  - 调整 vmstorage 磁盘: insight/best-practice/modify-vms-disk.md
           - 仪表盘:
               - 概览: insight/user-guide/overview.md
               - 仪表盘: insight/user-guide/dashboard/dashboard.md
@@ -303,8 +303,8 @@ nav:
               - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
           - 工具链集成:
               - 集成工具链: amamba/user-guide/tools/integrated-toolchain.md
-              - 管理工具链实例: amamba/user-guide/tools/toolchain-instances.md       
-          - 常见问题: 
+              - 管理工具链实例: amamba/user-guide/tools/toolchain-instances.md
+          - 常见问题:
               - amamba/intro/faq.md
           - 最佳实践:
               - 快速创建流水线: amamba/quickstart/deploy-pipeline.md
@@ -491,7 +491,7 @@ nav:
               - Istio 资源管理: mspider/user-guide/mesh-config/istio-resources.md
               - TLS 密钥管理: mspider/user-guide/mesh-config/tls-secret.md
               - 组件资源自定义: mspider/user-guide/mesh-config/custom-res.md
-              - 组件资源弹性伸缩: mspider/user-guide/mesh-config/component-hpa.md              
+              - 组件资源弹性伸缩: mspider/user-guide/mesh-config/component-hpa.md
           - 测试:
               - OCP 接入网格: mspider/test/ocp.md
               - Openshift 与网格兼容性测试: mspider/test/openshift.md
@@ -731,11 +731,11 @@ nav:
               - 推送镜像: kangaroo/quickstart/push.md
               - Admin 快速使用镜像仓库: kangaroo/quickstart/admin-registry.md
               - Workspace Admin 快速使用镜像仓库: kangaroo/quickstart/ws-admin-registry.md
-          - 镜像空间:              
+          - 镜像空间:
               - 镜像空间: kangaroo/space/index.md
               - 镜像列表: kangaroo/space/imagelist.md
               - 镜像回收: kangaroo/space/reclaim.md
-          - 仓库集成: 
+          - 仓库集成:
               - 仓库集成(工作空间): kangaroo/integrate/related-registry.md
               - 仓库集成(管理员): kangaroo/integrate/integrate.md
               - 创建镜像空间: kangaroo/integrate/create-space.md
@@ -748,7 +748,7 @@ nav:
               - 创建镜像空间: kangaroo/integrate/create-space.md
               - 绑定/解绑工作空间: kangaroo/integrate/bind-to-ws.md
               - 镜像同步: kangaroo/integrate/sync.md
-          - 镜像扫描: kangaroo/scan.md       
+          - 镜像扫描: kangaroo/scan.md
       - 云原生安全:
           - 介绍: security/what.md
           - Falco:
@@ -829,4 +829,3 @@ nav:
       - 商业产品: native/commerce.md
       - 开源项目: native/open.md
       - 知识分享: native/knowledge.md
-

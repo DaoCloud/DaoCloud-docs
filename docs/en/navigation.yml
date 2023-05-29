@@ -547,7 +547,8 @@ nav:
           - Metallb:
               - Intro: network/modules/metallb/what.md
               - Install: network/modules/metallb/install.md
-              - Use: network/modules/metallb/usage.md
+              - Instructions for IP pool use: network/modules/metallb/usage.md
+              - L2 & BGP mode: network/modules/metallb/l2&bgp.md
               - Get client source IPs: network/modules/metallb/source_ip.md
           - Multus-underlay:
               - Intro: network/modules/multus-underlay/what.md
