@@ -3,30 +3,28 @@ hide:
   - toc
 ---
 
-# Multi-cloud instance management
+# View Multicloud Instance
 
-In the multi-cloud instance list, click the name of an instance to enter the overview page.
+In the multicloud instance list, click the name of an instance to enter the overview page.
 
-<!--screenshot-->
+![instance](../images/check-instance01.png)
 
-- instance search
+- Instance Search
 
-    You can currently use the search function at the top of the instance list to quickly retrieve the instance you need;
-    The currently supported search fields are: fuzzy matching of cluster names
+    You can use the search function at the top of the instance list to quickly retrieve the instance you need.
 
-- Instance information display
+    Support fuzzy match of cluster names.
 
-    The overview page displays the basic information of the current instance, multi-cloud workload status, resource information, and working cluster information.
+- Instance Information
 
-    <!--screenshot-->
+    The overview page displays the basic information of the current instance, such as multicloud workload status, resource information, and working cluster information.
 
-    You can view the following instance information through the current page list:
+    To be specific, you can view:
 
-    - the name of the instance
-    - an alias for the instance
-    - the creation time of the instance
-    - The Karmada version of the current instance
-    - instance status
-    - The overall CPU usage of the instance, which is the combined calculation of all working clusters connected to all multi-cloud orchestrations
-    - The overall memory usage of the instance
-    - Current normal number of clusters/current total number of clusters
+    - Instance name and alias
+    - Creation time of the instance
+    - Karmada version of the current instance
+    - Instance status
+    - Overall CPU usage of the instance, which is the combined calculation of all working clusters added into this instance
+    - Overall memory usage of the instance
+    - Number of healthy cluster versus total number of clusters
