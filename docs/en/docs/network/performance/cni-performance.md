@@ -14,7 +14,7 @@ This test report covers the performance testing of CNIs including Cilium, Calico
 ### Test environment
 
 |Model|CPU|Memory|NIC|System|Node IP|
-|--|--|--|--|--|--|--|--|
+|--|--|--|--|--|--|
 |Dell PowerEdge R620|Intel(R) Xeon(R) CPU E5-2620 0 @ 2.00GHz * 2|4G 1333M * 4|Mellanox cx5 Physical NIC Bandwidth|Ubuntu 22.04|10.20.0.11|
 |Dell PowerEdge R620|Intel(R) Xeon(R) CPU E5-2620 0 @ 2.00GHz * 2|4G 1333M * 4|Mellanox cx5|Ubuntu 22.04|10.20.0.12|
 
@@ -124,8 +124,8 @@ For the four test metrics, the test results for different CNI patterns in differ
 - Pod-related throughput (Gbits/sec)
 
     |Test cases|Cilium(vxlan)|Calico(vxlan)|Calico(ipip)|Calico(underlay)|Macvlan-standalone|Sriov-standalone|
-    |--|----|--|----|----|----|----|----|----|
-    |Node to node|9.16|9.16| 9.16| 9.16| 9.16| 9.16| 9.16|
+    |--|----|--|----|----|----|----|
+    |Node to node|9.16|9.16| 9.16| 9.16| 9.16| 9.16|
     |Pod to node（the same node）| 12.6| 13.8| 14.23| 14.2| 16.4| 15.8|
     |Pod to node（different nodes）| 3.02| 1.57| 8.24| 9.2| 9.15| 9.09|
     |Pod to Pod（the same node）| 15.3| 10.2| 10.33| 10.27| 22.2| 14.1|
@@ -134,7 +134,7 @@ For the four test metrics, the test results for different CNI patterns in differ
 - Service related throughput (Gbits/sec)
 
     |Test cases|Cilium(vxlan)|Calico(vxlan)|Calico(ipip)|Calico(underlay)|Macvlan-standalone|Sriov-standalone|
-    |--|----|--|----|----|----|----|----|
+    |--|----|--|----|----|----|----|
     |Service to node（the same node）| 8.30| 12| 11.77| 12.07| 16.6| 15.8|
     |Service to node（different nodes）| 7.41| 1.23| 8.57| 9.037| 9.14| 9.10|
     |Service to Pod（the same node）| 15.8| 10.2| 10| 10.17| 20.2| 15.6|
@@ -143,8 +143,8 @@ For the four test metrics, the test results for different CNI patterns in differ
 - netpref latency (long connection) (Microseconds)
 
     |Test cases|Cilium(vxlan)|Calico(vxlan)|Calico(ipip)|Calico(underlay)|Macvlan-standalone|Sriov-standalone|
-    |--|----|--|----|----|----|----|----|----|
-    |Node to node| 113.27| 113.27| 113.27| 113.27| 113.27| 113.27| 113.27| 113.27|
+    |--|----|--|----|----|----|----|
+    |Node to node| 113.27| 113.27| 113.27| 113.27| 113.27| 113.27| 
     |Pod to node（the same node）| 76.76| 76.81| 74.55| 62.27| 61.25| 74.34|
     |Pod to node（different nodes）| 150.26| 241.46| 225.68| 170.23| 95.76| 109.77|
     |Pod to Pod（the same node）| 65.62| 104.82| 91.44| 103.71| 45.47| 66.74|
@@ -153,9 +153,9 @@ For the four test metrics, the test results for different CNI patterns in differ
 - netpref latency (short connection) (Microseconds)
 
     |Test cases|Cilium(vxlan)|Calico(vxlan)|Calico(ipip)|Calico(underlay)|Macvlan-standalone|Sriov-standalone|
-    |--|----|--|----|----|----|----|----|----|
-    |Node to node| 439.04| 439.04| 439.04| 439.04| 439.04| 439.04| 439.04|
+    |--|----|--|----|----|----|----|
+    |Node to node| 439.04| 439.04| 439.04| 439.04| 439.04| 439.04|
     |Pod to node（the same node）| 259.92| 230.65| 226.26| 203.63 |187.41 |225.66|
     |Pod to node（different nodes）| 613.59| 803.80| 767.08| 587.53| 358.48| 413.77|
     |Pod to Pod（the same node）| 198.99| 982.92| 265.07| 277.75| 127.48| 275.52|
-    |Pod to Pod（different nodes）| 789.32|
+    |Pod to Pod（different nodes）| 789.32|	940.65|	857.6|	628.21|	290.59	|284.16|
