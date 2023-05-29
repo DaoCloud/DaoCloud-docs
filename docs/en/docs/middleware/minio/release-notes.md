@@ -2,11 +2,73 @@
 
 This page lists the Release Notes of MinIO object storage, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-04-27
+
+### v0.5.1
+
+#### new function
+
+- **NEW** `mcamel-minio` details page displays related events
+- **NEW** `mcamel-minio` supports custom roles
+
+#### Optimization
+
+- **Optimize** `mcamel-minio` scheduling strategy adds a sliding button
+
+##v0.4.1
+
+Release date: 2023-03-28
+
+### APIs
+
+- **Fixed** `mcamel-minio` page showing wrong LoadBalancer address.
+- **Fixed** `mcamel-minio` should not verify wild storage configuration when removing MinIO.
+- **FIX** `mcamel-minio` fixed to create Bucket occasionally failed.
+
+### other
+
+- **Upgrade** `mcamel-minio` golang.org/x/net to v0.7.0.
+
+## v0.3.0
+
+Release date: 2023-02-23
+
+### APIs
+
+- **Added** `mcamel-minio` helm-docs template file.
+- **Added** Operators from the `mcamel-minio` app store can only be installed on mcamel-system.
+- **NEW** `mcamel-minio` supports cloud shell.
+- **NEW** `mcamel-minio` supports separate registration of navigation bar.
+- **NEW** `mcamel-minio` supports viewing logs.
+- **Added** `mcamel-minio` Operator docking with chart-syncer.
+- **Fix** the problem that `mcamel-minio` instance name is too long and the custom resource cannot be created.
+- **Fix** `mcamel-minio` workspace Editor users cannot view instance password.
+- **Upgrade** `mcamel-minio` upgrades the offline mirror detection script.
+
+### Documentation
+
+- **Add** log view operation instructions, support custom query, export and other functions.
+
+## v0.2.0
+
+Release date: 2022-12-25
+
+### APIs
+
+- **NEW** `mcamel-minio` NodePort port conflict early detection.
+- **NEW** `mcamel-minio` node affinity configuration.
+- **Fix** `mcamel-minio` fixes the problem that the status display is abnormal when a single instance is used.
+- **FIXED** `mcamel-minio` did not verify name when creating instance.
+
+### UI
+
+- **Optimize** `mcamel-minio` cancels the authentication information input box.
+
 ##v0.1.4
 
 Release date: 2022-11-28
 
-- **Improve** Update the front-end interface and add the sc list to see if it can be expanded
+- **Improve** Update the front-end interface, whether the sc list can be expanded
 - **IMPROVED** Password validation adjusted to MCamel medium password strength
 - **NEW** Configure Bucket when creating MinIO cluster
 - **Add** public field when returning list or details
@@ -14,7 +76,7 @@ Release date: 2022-11-28
 - **Add** Validation Service annotation
 - **Fix** When creating MinIO, the password check is adjusted from between to length
 - **Improved** Improve and optimize the copy function
-- **IMPROVED** Instance details - access settings, remove cluster IPv4
+- **IMPROVED** instance details - access settings, remove cluster IPv4
 - **Improved** Middleware password verification difficulty adjustment
 - **New** minio supports built-in BUCKET creation when creating
 - **NEW** Docking alarm capability

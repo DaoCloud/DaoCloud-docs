@@ -6,7 +6,7 @@ hide:
 # Eth card planning
 
 This page describes how to plan network adapters based on different network solution combinations before creating a workload cluster.
-Please complete [Cluster Deployment Plan](../../install/commercial/deploy-plan.md) and network card planning before cluster deployment.
+Please complete [Cluster Deployment Plan](../../install/commercial/deploy-requirements.md) and network card planning before cluster deployment.
 
 ## Overlay scheme only
 

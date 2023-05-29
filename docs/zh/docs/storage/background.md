@@ -15,7 +15,7 @@
 在边缘场景中，边缘端也存在数据存储需求以及边缘数据预处理需求。
 在边缘端，一般采用存算融合，但边缘的资源有限，如何基于边缘端进行一定的数据存储和数据计算，同样也是云边协同场景中需要解决的问题。
 
-![云边协同场景](./images/storagescenario.png)
+![云边协同场景](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/storagescenario.png)
 
 ## 挑战
 

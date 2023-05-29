@@ -1,4 +1,4 @@
-#imgBaseDiv>img {
+#imgBaseDiv > img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -26,7 +26,7 @@
     max-width: 100%;
 }
 
-iframe:not(.giscus-frame),
+iframe:not(.giscus-frame):not(.swagger-ui-iframe),
 object,
 embed {
     position: absolute;
@@ -42,15 +42,17 @@ embed {
 
 /* Maximum space for text block */
 .md-grid {
-  max-width: 94%; /* or 100%, if you want to stretch to full-width */
+    max-width: 94%; /* or 100%, if you want to stretch to full-width */
 }
 
 
+/*
 img {
-  height: auto;
-  width: auto;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 4px;
-  background-color: #fff;
+    height: auto;
+    width: auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 4px;
+    background-color: #fff;
 }
+*/

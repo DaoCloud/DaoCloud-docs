@@ -15,25 +15,27 @@ hide:
 创建集群之前需要满足一定的前提条件：
 
 - 根据业务需求准备一定数量的节点。
-- Kubernetes 版本 1.22+。
+- 推荐 Kubernetes 版本 1.24.7，具体版本范围，参阅 [DCE 5.0 集群版本支持体系](./cluster-version.md)。
 - 目标主机需要允许 IPv4 转发。如果 Pod 和 Service 使用的是 IPv6，则目标服务器需要允许 IPv6 转发。
 - DCE 暂不提供对防火墙的管理功能，您需要预先自行定义目标主机防火墙规则。为了避免创建集群的过程中出现问题，建议禁用目标主机的防火墙。
 - 参阅[节点可用性检查](../nodes/node-check.md)
+
+  ![创建集群按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create003.png)
 
 ## 操作步骤
 
 1. 在`集群列表`页面中，点击`创建集群`按钮。
 
-    ![创建集群按钮](../../images/createcluster.png)
+    ![创建集群按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create001.png)
 
 2. 参考下列要求填写集群基本信息，并点击`下一步`。
 
     - 集群名称：名称只包含小写字母、数字和连字符（"-"），必须以小写字母或者数字开头和结尾，最长 63 个字符。
     - 被纳管：选择由哪个集群来管理此集群，例如在集群生命周期中创建、升级、节点扩缩容、删除集群等。
-    - 运行时：选择集群的运行时环境，目前支持 containerd 和 docker。
+    - 运行时：选择集群的运行时环境，目前支持 containerd 和 docker，[如何选择容器运行时](runtime.md)。
     - Kubernetes 版本：支持 3 个版本跨度，具体取决于被纳管集群所支持的版本。
 
-        ![填写基本信息](../../images/createcluster01.png)
+        ![填写基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create002.png)
 
 3. 填写节点配置信息，并点击`下一步`。
 
@@ -50,19 +52,26 @@ hide:
     - 节点检查：预先检查节点的连通性。这是非强制性的，可以跳过检查。
     - NTP 时间同步：开启后会自动同步各个节点上的时间。
 
-        ![填写基本信息](../../images/createcluster02.png)
+        ![节点配置1](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew01.png)
+        
+        ![节点配置2](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew02.png)
 
 4. 填写网络配置信息，并点击`下一步`。
 
     - 网络插件：负责为集群内的 Pod 提供网络服务，**创建集群后不可更改网络插件**。支持 [cilium](../../../network/modules/cilium/what.md) 和 [calico](../../../network/modules/calico/what.md)。选择 `none` 表示暂不安装网络插件。
+
+        > 有关网络插件的参数配置，可参考 [cilium 安装参数配置](../../../network/modules/cilium/install.md)或 [calico 安装参数配置](../../../network/modules/calico/install.md)。
+
     - 容器网段：集群下容器使用的网段，决定集群下容器的数量上限。创建后不可修改。
     - 服务网段：同一集群下容器互相访问时使用的 Service 资源的网段，决定 Service 资源的上限。创建后不可修改。
 
-        ![填写网络配置信息](../../images/createcluster03.png)
+        ![网络配置1](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew03.png)
+        
+        ![网络配置2](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew04.png)
 
 5. 填写插件配置信息，并点击`下一步`。
 
-    ![填写插件配置信息](../../images/createcluster04.png)
+    ![插件配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew05.png)
 
 6. 填写高级配置信息，并点击`确定`。
 
@@ -74,7 +83,7 @@ hide:
     - `Insecure_registries`：私有镜像仓库配置。使用私有镜像仓库创建集群时，为了避免证书问题导致容器引擎拒绝访问，需要在这里填写私有镜像仓库地址，以绕过容器引擎的证书认证而获取镜像。
     - `yum_repos`：填写 Yum 源仓库地址。
 
-        ![填写高级配置信息](../../images/createcluster05.png)
+        ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew06.png)
 
 ## 完成创建
 
@@ -85,6 +94,12 @@ hide:
     创建集群耗时较长，需要耐心等待。其间，可以点击`返回集群列表`按钮回到集群列表页面，等待集群创建完成。
     如需查看当前状态，可点击`实时日志`。
 
-![创建成功](../../images/createcluster06.png)
+![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create008.png)
 
-![查看实时日志](../../images/createcluster07.png)
+![查看实时日志](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create009.png)
+
+当集群出现未知状态时，表示当前集群已失联，系统展示数据为失联前缓存数据，不代表真实数据，同时失联状态下执行的任何操作都将不生效，请检查集群网络连通性或主机状态。
+
+![未知状态](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createnew07.png)
+
+![未知状态详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createnew08.png)

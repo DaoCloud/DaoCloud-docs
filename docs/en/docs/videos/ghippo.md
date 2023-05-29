@@ -16,7 +16,7 @@
 
 ## Manage Workspaces
 
-See the [Managing Workspaces](../ghippo/04UserGuide/02Workspace/Workspaces.md) documentation page.
+See the [Managing Workspaces](../ghippo/user-guide/workspace/workspace.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/workspace.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
@@ -24,7 +24,7 @@ See the [Managing Workspaces](../ghippo/04UserGuide/02Workspace/Workspaces.md) d
 
 ## Resource Quotas
 
-See the [Resource Quotas](../ghippo/04UserGuide/02Workspace/quota.md) documentation page.
+See the [Resource Quotas](../ghippo/user-guide/workspace/quota.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/resourcequota.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
@@ -32,7 +32,7 @@ See the [Resource Quotas](../ghippo/04UserGuide/02Workspace/quota.md) documentat
 
 ## Connect LDAP users and groups
 
-See the [LDAP](../ghippo/04UserGuide/01UserandAccess/ldap.md) documentation page.
+See the [LDAP](../ghippo/user-guide/access-control/ldap.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ldap.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
@@ -40,7 +40,7 @@ See the [LDAP](../ghippo/04UserGuide/01UserandAccess/ldap.md) documentation page
 
 ## Connect OIDC users
 
-See the [OIDC](../ghippo/04UserGuide/01UserandAccess/oidc.md) documentation page.
+See the [OIDC](../ghippo/user-guide/access-control/oidc.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oidc.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
@@ -48,7 +48,7 @@ See the [OIDC](../ghippo/04UserGuide/01UserandAccess/oidc.md) documentation page
 
 ## Enable audit log
 
-See [how to enable audit log](../ghippo/04UserGuide/open-audit.md) documentation page.
+See [how to enable audit log](../ghippo/user-guide/open-audit.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-on.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -56,10 +56,18 @@ See [how to enable audit log](../ghippo/04UserGuide/open-audit.md) documentation
 
 ## Disable audit log
 
-See [how to disable audit log](../ghippo/04UserGuide/open-audit.md#_4) documentation page.
+See [how to disable audit log](../ghippo/user-guide/open-audit.md#_4) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-off.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+
+## Custom appearance
+
+See [Custom appearance](../ghippo/user-guide/platform-setting/appearance.md) documentation page.
+
+<div class="responsive-video-container">
+<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/appearance.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }

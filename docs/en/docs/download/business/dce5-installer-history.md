@@ -1,15 +1,14 @@
----
-date: 2022-11-23
-hide:
-  - navigation
----
+# DaoCloud Enterprise 5.0 commercial historical versions
 
-# DaoCloud Enterprise 5.0 commercial version historical version
+## Commercial releases
 
-## Business Edition
-
-| Name | Version | File Size | Downloads | Date Updated |
-| ------------------- | ------- | -------- | ------------ ----------------------------- | ---------- |
-| offline-centos7-v0.3.29-amd64.tar | v0.3.29 | 22.89GB | [:arrow_right: download page](./dce5-installer-v0.3.29.md) | 2022-12-14 |
-| offline-v0.3.28.tar | v0.3.28 | 21 GB | [:arrow_right: Download Page](./dce5-installer-v0.3.28.md) | 2022-11-18 |
-| offline-v0.3.27.tar | v0.3.27 | 20.3 GB | [:arrow_right: Download Page](./dce5-installer-v0.3.27.md) | 2022-11-3 |
+| File Name | Version | Architecture | File Size | Downloads | Date Updated |
+| ------- | --- | ---- | ------ | --- | ------- |
+| offline-v0.7.0-arm64.tar | v0.7.0 | ARM 64 | 15.89GB | [:arrow_right: Go to download page](./dce5-installer-v0.7.0.md) | 2023-05-09 |
+| offline-v0.7.0-amd64.tar | v0.7.0 | AMD 64 | 17.29GB | [:arrow_right: Go to download page](./dce5-installer-v0.7.0.md) | 2023-05-09 |
+| offline-v0.6.1-arm64.tar | v0.6.1 | ARM 64 | 15.15GB | [:arrow_right: Go to download page](./dce5-installer-v0.6.1.md) | 2023-04-12 |
+| offline-v0.6.1-amd64.tar | v0.6.1 | AMD 64 | 16.37GB | [:arrow_right: Go to download page](./dce5-installer-v0.6.1.md) | 2023-04-12 |
+| offline-v0.6.0-arm64.tar | v0.6.0 | ARM 64 | 15.12GB | [:arrow_right: Go to download page](./dce5-installer-v0.6.0.md) | 2023-04-07 |
+| offline-v0.6.0-amd64.tar | v0.6.0 | AMD 64 | 16.36GB | [:arrow_right: Go to download page](./dce5-installer-v0.6.0.md) | 2023-04-07 |
+| offline-v0.5.0-arm64.tar | v0.5.0 | ARM 64 | 14.56GB | [:arrow_right: Go to download page](./dce5-installer-v0.5.0.md) | 2023-03-06 |
+| offline-v0.5.0-amd64.tar | v0.5.0 | AMD 64 | 15.86GB | [:arrow_right: Go to download page](./dce5-installer-v0.5.0.md) | 2023-03-06 |

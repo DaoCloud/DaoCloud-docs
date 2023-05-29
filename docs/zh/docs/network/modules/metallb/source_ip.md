@@ -128,6 +128,6 @@
 
 5. 在`全局管理`—>`审计日志`页面，在任意事件后点击`查看详情`，查看获取到的客户端源 IP：
 
-    ![source-ip-1](../../images/source-ip-1.png)
+    ![source-ip-1](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/source-ip-1.png)
 
-    ![source-ip-2](../../images/source-ip-2.png)
+    ![source-ip-2](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/source-ip-2.png)

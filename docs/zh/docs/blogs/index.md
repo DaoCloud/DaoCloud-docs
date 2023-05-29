@@ -5,31 +5,116 @@ hide:
 
 # 博客文章
 
-本页汇总 DCE 5.0 相关的博客和公众号文章，默认按字母和拼音排序。
+本页汇总 DCE 5.0 及云原生技术相关的博客和公众号文章，默认按时间排序。
 
-- [20230301 | 开源项目 KWOK 介绍](./kwok.md)
+- [20230515 | 边缘场景玩转 seccomp 配置文件](./230518-seccom.md)
+
+    Security Profiles Operator (SPO) 是一个功能丰富的 Kubernetes Operator，
+    相比以往可以简化 seccomp、SELinux 和 AppArmor 配置文件的管理。
+    从头开始记录这些配置文件是该 Operator 的关键特性之一，这通常涉及与大型 CI/CD 系统集成。
+    是否能够在边缘场景中测试 Operator 的记录能力是 SPO 的最新开发工作之一，
+    非常有助于轻松玩转 seccomp 配置文件。
+
+- [20230515 | 云原生混沌工程--Chaos Mesh 实战篇](./230515-chaos-mesh.md)
+
+    安装和使用 Chaos Mesh，了解 Chaos Mesh 的能力。
+
+- [20230509 | 安装 Kubernetes 教程 (KLTS 版)](./230509-k8s-install.md)
+
+    以 DaoCloud 自主维护的 [KLTS (Kubernetes Long Term Support)](https://klts.io/zh/docs/intro/) 为例，
+    简要介绍安装 Kubernetes 的准备工作、安装步骤。
+
+- [20230508 | Cilium 基于 eBPF 实现 socket 加速](./230508-cilium.md)
+
+    随着云原生的不断发展，越来越多的应用部署在云上。其中有些应用对实时性要求非常严苛，这使得我们必须提升这些应用性能，达到更快的服务速度。
+    为了达到更快的服务速度，一个场景是：当两个互相调用的应用部署在同一个节点上的时候，每次请求和返回都需要经过 socket 层、TCP/IP 协议栈、数据链路层、物理层。
+    如果请求和返回绕过 TCP/IP 协议栈，直接在 socket 层将数据包重定向到对端 socket，那将大大减少发送数据包耗时，从而加快服务速度。
+    基于这个思路，eBPF 技术通过映射存储 socket 信息，利用帮助函数实现了将数据包重定向到对端 socket 层的能力。Cilium 正是基于 eBPF 这个能力，实现了 socket 层加速效果。
+
+- [20230428 | Kubernetes 1.27：加快了 Pod 启动速度](./230428-pod-startup.md)
+
+    如何在大型集群中加快节点上的 Pod 启动？这是企业中集群管理员常常会面临的问题。
+    这篇博文重点介绍了从 kubelet 一侧加快 Pod 启动的方法。此方法不涉及通过
+    kube-apiserver 由 controller-manager 创建 Pod 所用的时间段，
+    也不包含 Pod 的调度时间或在其上执行 Webhook 的时间。
+
+- [20230427 | 云原生监控 - VictoriaMetrics 之基础篇](./230427-victoriametrics.md)
+
+    说到云原生监控方案，第一时间基本上都会想到 Prometheus+AlertManager+Grafana 的一套成熟解决方案。
+    Prometheus 作为监控核心，具备强大的数据模型、高效率运作、丰富的监控能力、强大的查询语言 PromQL、
+    简单易用、管理方便等特点。但是 Prometheus 目前在高可用层面上做得还并不完美。为此，在开源社区中，
+    孕育出了许多替代、增强方案，VictoriaMetrics 属于其中较为优异的一个，是一个快速、经济高效且可扩展的监控解决方案和时间序列数据库。
+
+- [20230418 | Karmada Failover 详解](./230418-karmada-failover.md)
+
+    多云时代，如何实现应用跨数据中心，跨可用区和跨集群高可用，成为我们探讨的新话题。
+    在单个集群中，如果集群发生故障，那么在集群中的所有应用将不可被访问。
+    是否有方式帮助我们在集群发生故障时，应用自动迁移到新的集群，保证应用持续的对外访问呢？
+
+- [20230417 | CNCF 平台工程白皮书](230417-cncf-platform-wp.md)
+
+    2022 年，“平台工程”这个概念很火热，也在 Gartner 的炒作周期曲线上。
+    还有言论说“DevOps 已死，平台工程才是未来“。开发者不愿意和基础设施打交道，企业发展又需要自己的基础设施。
+    “平台工程”统一这两个矛盾点，或者说“平台工程”是 DevOps 的下一站。
+
+- [20230412 | 近两年功能增加最多！Kubernetes 1.27 正式发布](230412-k8s-1.27.md)
+
+    Kubernetes 1.27 正式发布。此版本距离上版本发布时隔 4 个月，是 2023 年的第一个版本。
+    新版本中 release 团队跟踪了 **60 个 enhancements**，比之前版本都要多得多。
+
+- [20230411 | Spiderpool：Calico 固定应用 IP 的新选择](230411-spiderpool.md)
+
+    Spiderpool 是一个 Kubernetes 的 IPAM 插件项目，主要针对 Underlay 网络的 IP 地址管理需求而设计，
+    能够为任何兼容第三方 IPAM 插件的 CNI 项目所使用。
+
+- [20230405 | 保姆式安装 DCE 5.0 社区版](230405-step-by-step-dce5.md)
+
+    本文在 3 个节点的集群中完成了从 0 到 1 的 DCE 5.0 社区版安装，
+    包含了 K8s 集群、依赖项、网络、存储等细节及更多注意事项。
+
+- [20230317 | 边缘原生应用准则白皮书](230317-edge-app-wp.md)
+
+    物联网边缘工作组（IOT Edge Working Group）一直在探索边缘原生的定义，
+    以及“云原生”和“边缘原生”之间的异同，并发布了《边缘原生应用准则白皮书》。
+
+- [20230315 | 在 Linux 上安装单机 DCE 5.0 社区版](230315-install-on-linux.md)
+
+    讲述如何在一台 Linux 机器上使用 Docker 和 kind 在线安装 DCE 5.0 社区版。
+    这是一种极简安装方式，便于学习和体验，性能优于 macOS 单机版。
+
+- [20230315 | 在 macOS 上安装单机 DCE 5.0 社区版](230315-install-on-macos.md)
+
+    使用 macOS 笔记本电脑创建单节点的 kind 集群，然后在线安装 DCE 5.0 社区版。
+    适合初学者体验和学习，不适合生产环境。
+
+- [20230301 | 开源项目 KWOK 介绍](230301-kwok.md)
 
     是什么样的开源项目会在发布 5 个月内，就被 Apple、IBM、腾讯、华为纷纷使用？
 
     KWOK 是 Kubernetes WithOut Kubelet 的缩写，即没有 Kubelet 的 Kubernetes。
     帮助你在几秒钟内搭建一个由数千个节点构成的集群，用少量资源模拟几千个真实的节点。
 
-- [20230214 | DCE 5.0 社区版包含多少开源项目](./projects.md)
+- [20230214 | DCE 5.0 社区版包含多少开源项目](230214-open-projects.md)
 
     时常听闻客户、社区成员、贡献者、公司内部的售前、交付、项目组在询问 “DCE 到底涉及了哪些开源项目？”
     这篇博文详细列出了社区版所包含的开源项目。
 
-- [20230214 | 「DaoCloud 道客」与 Kubernetes](./daocloud_k8s.md)
+- [20230214 | 「DaoCloud 道客」与 Kubernetes](230214-daocloud_k8s.md)
 
     讲述「DaoCloud 道客」如何借力 Kubernetes 打造新一代企业级云原生应用云平台 —— DaoCloud Enterprise 5.0，以及如何回馈开源社区，践行云原生信仰。
 
-- [20230201 | DCE 5.0 攻坚语录集](./peter.md)
+- [20230201 | 2023 年云原生预测](230201-forecast.md)
+
+    基于 CNCF 发布的云原生报告畅谈 2023 年云原生领域的各项技术和趋势发展。
+
+- [20230201 | DCE 5.0 攻坚语录集](230201-peter.md)
 
     2022 年，上海，疫情肆虐，封城、管控、居家，程序猿们奔走在病毒 🦠 的缝隙中，那一年是 DCE 5.0 攻坚的日子，也是每个中国人艰难的一年。
 
-- [20221209 | 保姆式安装 DCE 5.0 社区版](dce5-0328.md)
+- [20221209 | K8s 1.26 正式发布](221209-k8s-1.26.md)
 
-    这是从 0 到 1 安装 DCE 5.0 社区版的真实示例，包含了 K8s 集群、依赖项、网络、存储等细节及更多注意事项。
+    Kubernetes 正式发布了主题为 `Electrifying` 的 v1.26。
+    作为 2022 年最后的一个版本，增加了很多新的功能，同时在稳定性上也得到显著提升，本文从多个角度介绍了 1.26 版本的更新。
 
 - [20221130 | Karmada 资源解释器](https://mp.weixin.qq.com/s/DLDmWRmhM_gMVg1qGnj_fA)
 
@@ -60,9 +145,10 @@ hide:
     时光荏苒，岁月如梭。自 2014 年 11 月成立以来，在 DaoClouders 不懈的耕耘中，「DaoCloud 道客」已经走过了八个年头。
     在 11 月 8 日下午，「DaoCloud 道客」全体船员为 「DaoCloud 道客」举办了生日会。让我们一起来看看「DaoCloud 道客」八岁生日会的盛况吧！
 
-- [20221105 | DaoCloud 是 K8s 资深认证服务商](./kcsp.md)
+- [20221105 | DaoCloud 是 K8s 资深认证服务商](221116-kcsp.md)
 
-    DaoCloud 早在 2017 年就首次顺利通过了 Kubernetes 认证，是国内最早涉足并得到 CNCF 官方认可的服务商， 同时也是国内最早获得 Kubernetes Training Partner (KTP) 认证的厂商。
+    DaoCloud 早在 2017 年就首次顺利通过了 Kubernetes 认证，是国内最早涉足并得到 CNCF 官方认可的服务商，
+    同时也是国内最早获得 Kubernetes Training Partner (KTP) 认证的厂商。
     目前经 CNCF 官方认证可支持的 K8s 版本包括：v1.25, v1.24, v1.23, v1.20, v1.18, v1.15, v1.13, v1.9, v1.7
 
 - [20221105 | 原生思维看金融数字化转型](https://mp.weixin.qq.com/s/9BggFRr0aoEzzmemXplRWg)
@@ -73,7 +159,8 @@ hide:
 - [20221104 | HwameiStor 入选 CNCF 全景图：生产可运维的云原生本地存储系统](https://mp.weixin.qq.com/s/QqzU_YeUKmegaMiQ9MVbww)
 
     近日，CNCF（云原生计算基金会）[^1] 发布了最新版的云原生全景图 [^2]。
-    「DaoCloud 道客」自主开源的云原生本地存储系统 HwameiStor，被收录在 CNCF 云原生全景图中的 RunTime（运行时）层的 Cloud Native Storage（云原生存储）象限，成为 CNCF 推荐的云原生本地存储项目。
+    「DaoCloud 道客」自主开源的云原生本地存储系统 HwameiStor，被收录在 CNCF 云原生全景图中的
+    RunTime（运行时）层的 Cloud Native Storage（云原生存储）象限，成为 CNCF 推荐的云原生本地存储项目。
 
 - [20221028 | Kubean 集群生命周期管理](https://mp.weixin.qq.com/s/-NzXmyb-9yQc1ydcsZz0CA)
 
@@ -86,15 +173,15 @@ hide:
     10 月 28 日，由「DaoCloud 道客」主办的「论道原生｜云原生数字生态私享会・上海」成功举办。
     本次活动从云原生思维和技术出发，分享了云原生在医疗和人工智能方面的应用与实践。让我们一起回顾一下本次活动的精彩内容吧。
 
-- [20221026 | DCE 5.0 容器管理能力介绍](./kpanda.md)
+- [20221026 | DCE 5.0 容器管理能力介绍](221026-kpanda.md)
 
     说明 DCE 5.0 容器管理模块提供的能力。
 
-- [20221018 | DCE 5.0 资源管理能力介绍](./resource.md)
+- [20221018 | DCE 5.0 资源管理能力介绍](221018-resource.md)
 
     说明 DCE 5.0 全局管理模块提供的能力。
 
-- [20220925 | DCE 5.0 应用工作台能力介绍](./amamba.md)
+- [20220925 | DCE 5.0 应用工作台能力介绍](220925-amamba.md)
 
     说明 DCE 5.0 应用工作台模块提供的能力。
 
@@ -128,11 +215,11 @@ hide:
     名字源于 Wikipedia，寓意是打造多集群的百科全书，可以与多个集群同步资源，
     并在与 Kubernetes OpenAPI 兼容的基础上，提供更强大的搜索功能，以帮助您快速、简便、有效地获取任何多集群资源。
 
-- [20220808 | DCE 5.0 多云编排能力介绍](./kairship.md)
+- [20220808 | DCE 5.0 多云编排能力介绍](220808-kairship.md)
 
     说明 DCE 5.0 多云编排模块提供的能力。
 
-- [20220708 | DCE 5.0 服务网格能力介绍](./mspider.md)
+- [20220708 | DCE 5.0 服务网格能力介绍](220708-mspider.md)
 
     说明 DCE 5.0 服务网格模块提供的能力。
 
@@ -159,7 +246,7 @@ hide:
     其中最大的问题是不能适配注入 Istio 的 Sidecar Annotation，这就导致 Merbridge 无法排除某些端口或 IP 段的流量等。
     同时，由于之前 Merbridge 只处理 Pod 内部的连接请求，这就导致，如果是外部发送到 Pod 的流量，Merbridge 将无法处理。
 
-- [20220606 | DCE 5.0 研发背景](./blog00.md)
+- [20220606 | DCE 5.0 研发背景](221008-dce-bg.md)
 
     简述新一代云原生操作系统 DaoCloud Enterprise 5.0 诞生的背景。
 

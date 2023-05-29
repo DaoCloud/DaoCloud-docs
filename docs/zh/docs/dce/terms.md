@@ -49,7 +49,7 @@
 
     当配置了 K8s API 服务器来支持额外的 API 时，您就可以在 K8s API 中增加 `APIService` 对象来申领（Claim）一个 URL 路径。
 
-- Alert Rule, [告警规则](../insight/user-guide/alert-center/alert-rule.md)
+- Alert Rule, [告警规则](../insight/user-guide/alert-center/alert-policy.md)
 
     在 Insight 中，这是基于资源状态创建的告警对象，可以自定义触发规则的条件以及通过何种方式发送通知的规则。
 
@@ -65,6 +65,7 @@
     API (即应用程序接口) 是计算机程序间交互的一种方式。
     就像人类可以通过网页与网站进行交互一样，API 允许计算机程序之间进行交互。
     与人类的交互不同，API 可以限制对方可以问什么和不能问什么。对交互的限制有助于在程序之间创建稳定、实用的信息传输。
+    我们提供了完善的 [OpenAPI 文档](../openapi/index.md)供第三方调用和开发。
 
 - API-initiated eviction, API 发起的驱逐
 
@@ -149,6 +150,8 @@
     这样区分在现代计算环境中很重要，因为许多（甚至可以说大部分）服务器都是虚拟机。
     物理服务器通常是一台相当大的计算机，内置强大的硬件。
     直接在该物理硬件上安装操作系统并运行应用程序，无需虚拟化，称为在“裸机”上运行。
+
+    DaoCloud 提供了集成容器化管理平台的[云原生一体机](https://www.daocloud.io/dch)，实现软硬协同多架构融合体。
 
 - Blue Green Deployment，蓝绿部署
 
@@ -359,14 +362,15 @@
 
     DCE 5.0 支持的 CNI 包括但不限于：
 
-    - Calico
-    - Cilium
-    - Contour
-    - F5networks
-    - Ingress-nginx
-    - Metallb
-    - Multus-underlay
-    - Spiderpool
+    - [Calico](../network/modules/calico/what.md)
+    - [Cilium](../network/modules/cilium/what.md)
+    - [Contour](../network/modules/contour/what.md)
+    - [F5networks](../network/modules/f5networks/what.md)
+    - [Ingress-nginx](../network/modules/ingress-nginx/what.md)
+    - [Metallb](../network/modules/metallb/what.md)
+    - [Multus-underlay](../network/modules/multus-underlay/what.md)
+    - [Spiderpool](../network/modules/spiderpool/what.md)
+    - [Submariner](../network/modules/submariner/what.md)
 
 - [ConfigMap](https://kubernetes.io/zh-cn/docs/concepts/configuration/configmap/), 配置项
 
@@ -1739,7 +1743,7 @@
 
 - Rolling update, 滚动更新
 
-    [滚动更新](../mspider/user-guide/upgrade/istio-update.md)指一次只更新一小部分副本、成功后再更新更多的副本、最终完成所有副本的更新。
+    [滚动更新](../mspider/install/istio-update.md)指一次只更新一小部分副本、成功后再更新更多的副本、最终完成所有副本的更新。
     滚动更新的最大的好处是零停机，整个更新过程始终有副本在运行，从而保证了业务的连续性。
 
 - Routing Rule, 路由规则
@@ -1825,7 +1829,7 @@
     为在 Pod 中运行的进程提供标识。
 
     当 Pod 中的进程访问集群时，API 服务器将它们作为特定的服务帐户进行身份验证，例如 `default`。
-    创建 Pod 时，如果您没有指定服务账户，它将自动被赋予同一个{{< glossary_tooltip text="命名空间" term_id="namespace" >}}中的 default 服务账户。
+    创建 Pod 时，如果您没有指定服务账号，它将自动被赋予同一个{{< glossary_tooltip text="命名空间" term_id="namespace" >}}中的 default 服务账号。
 
 - Service Catalog, 服务目录
 
@@ -1962,7 +1966,7 @@
     使用一个应用通常需要多个请求。
     例如，使用网上银行时，您将通过输入密码（请求 #1）来验证自己的身份，
     然后您可以将钱转给某个朋友（请求 #2），最后您需要查看转账详情（请求 #3）。
-    为了保证正常运行，每一步都必须记住前面的步骤，银行需要记住每个人的账户状态。
+    为了保证正常运行，每一步都必须记住前面的步骤，银行需要记住每个人的账号状态。
     今天我们使用的大多数应用至少总有一部分是有状态的，
     因为这些应用会存储诸如偏好和设置之类的东西以改善用户体验。
 

@@ -4,23 +4,23 @@
 
 1. 从左侧导航栏点击`容器管理`—>`集群列表`，然后找到准备安装 Falco 的集群名称。
 
-    ![falco_cluster](./images/falco_cluster.png)
+    ![falco_cluster](https://docs.daocloud.io/daocloud-docs-images/docs/security/images/falco_cluster.png)
 
 2. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `Falco`。
 
-    ![falco_helm-1](./images/falco-install-1.png)
+    ![falco_helm-1](https://docs.daocloud.io/daocloud-docs-images/docs/security/images/falco-install-1.png)
 
 3. 在`版本选择`中选择希望安装的版本，点击`安装`。
 
-    ![falco-helm-2](./images/falco-install-2.png)
+    ![falco-helm-2](https://docs.daocloud.io/daocloud-docs-images/docs/security/images/falco-install-2.png)
 
 4. 在安装界面，填写所需的安装参数。
 
-    ![falco_helm-3](./images/falco-install-3.png)
+    ![falco_helm-3](https://docs.daocloud.io/daocloud-docs-images/docs/security/images/falco-install-3.png)
 
     在如上界面中，填写`应用名称`、`命名空间`、`版本`等。
 
-    ![falco_helm-4](./images/falco-install-4.png)
+    ![falco_helm-4](https://docs.daocloud.io/daocloud-docs-images/docs/security/images/falco-install-4.png)
 
     在如上界面中，填写以下参数：
 

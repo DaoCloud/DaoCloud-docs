@@ -3,386 +3,384 @@ sidebar_position: 3
 sidebar_label: "Minio"
 ---
 
-# MinIO
+#MinIO
 
-## MinIO 简介
+## Introduction to MinIO
 
-MinIO 是一款高性能、分布式、兼容 S3 的多云对象存储系统套件。MinIO 原生支持 Kubernetes，能够支持所有公有云、私有云及边缘计算环境。
-MinIO 是 GNU AGPL v3 开源的软件定义产品，能够很好地运行在标准硬件如 X86 等设备上。
+MinIO is a high-performance, distributed, S3-compatible multi-cloud object storage system suite. MinIO natively supports Kubernetes and can support all public cloud, private cloud and edge computing environments.
+MinIO is a GNU AGPL v3 open source software-defined product that can run well on standard hardware such as x86 and other devices.
 
-![MinIO 架构](minio-design.png)
+![MinIO Architecture](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/minio-design.png)
 
-MinIO 的架构设计从一开始就是针对性能要求很高的私有云标准，在实现对象存储所需要的全部功能的基础上追求极致的性能。
-MinIO 具备易用性、高效性及高性能，能够以更简单的方式提供具有弹性扩缩能力的云原生对象存储服务。
+MinIO's architectural design has been aimed at private cloud standards with high performance requirements from the very beginning, pursuing the ultimate performance on the basis of realizing all the functions required by object storage.
+MinIO is easy to use, efficient, and high-performance, and can provide cloud-native object storage services with elastic scalability in a simpler way.
 
-MinIO 在传统对象存储场景（如辅助存储、灾难恢复和归档）方面表现出色，同时在机器学习、大数据、私有云、混合云等方面的存储技术上也独树一帜，包括数据分析、高性能应用负载、原生云应用等。
+MinIO performs well in traditional object storage scenarios (such as auxiliary storage, disaster recovery, and archiving), and is also unique in storage technologies in machine learning, big data, private cloud, hybrid cloud, etc., including data analysis, high-performance application loads, native cloud applications, etc.
 
-### MinIO 架构设计
+### MinIO architecture design
 
-MinIO 为云原生架构设计，可以作为轻量级容器运行并由外部编排服务如 Kubernetes 管理。
-MinIO 整个服务包约为不到 100 MB 的静态二进制文件，即使在很高负载下也可以高效利用 CPU 和内存资源并可以在共享硬件上共同托管大量租户。
-对应的架构图如下：
+MinIO is designed for a cloud-native architecture that can run as a lightweight container and be managed by an external orchestration service such as Kubernetes.
+MinIO's entire service package is approximately less than 100 MB of static binaries, makes efficient use of CPU and memory resources even under heavy load, and can co-host a large number of tenants on shared hardware.
+The corresponding architecture diagram is as follows:
 
-![架构图](architect.png)
+![Architecture Diagram](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/architect.png)
 
-MinIO 用作云原生应用程序的主要存储，与传统对象存储相比，云原生应用程序需要更高的吞吐量和更低的延迟，而这些都是 MinIO 能够达成的性能指标，读/写速度高达 183 GB/秒和 171 GB/秒。
+MinIO is used as the main storage for cloud-native applications. Compared with traditional object storage, cloud-native applications require higher throughput and lower latency, and these are the performance metrics that MinIO can achieve. The read/write speed is as high as 183 GB/s and 171 GB/s.
 
-MinIO 极致的高性能离不开底层存储基础平台。本地存储在众多的存储协议中具有最高的读写性能无疑能为 MinIO 提供性能保障。
-HwameiStor 正是满足云原生时代要求的储存系统。它具有高性能、高可用、自动化、低成本、快速部署等优点，可以替代昂贵的传统 SAN 存储。
+The ultimate high performance of MinIO is inseparable from the underlying storage platform. Local storage has the highest read and write performance among many storage protocols, which undoubtedly provides performance guarantee for MinIO.
+HwameiStor is exactly the storage system that meets the requirements of the cloud-native era. It has the advantages of high performance, high availability, automation, low cost, and rapid deployment, and can replace expensive traditional SAN storage.
 
-MinIO 可以在带有本地驱动器（JBOD/JBOF）的标准服务器上运行。
-集群为完全对称的体系架构，即所有服务器的功能均相同，没有名称节点或元数据服务器。
+MinIO can run on standard servers with local drives (JBOD/JBOF).
+The cluster is a fully symmetric architecture, meaning that all servers are functionally identical, there are no namenodes or metadata servers.
 
-MinIO 将数据和元数据作为对象一起写入从而无需使用元数据数据库。
-MinIO 以内联、严格一致的操作执行所有功能，包括擦除代码、位 rotrot 检查、加密等。
+MinIO writes data and metadata together as objects eliminating the need for a metadata database.
+MinIO performs all functions in an inline, strictly consistent operation, including erasure codes, bit rotrot checks, encryption, and more.
 
-每个 MinIO 集群都是分布式 MinIO 服务器的集合，每个节点一个进程。
-MinIO 作为单个进程在用户空间中运行，并使用轻量级的协同例程来实现高并发。
-将驱动器分组到擦除集（默认情况下，每组 16 个驱动器），然后使用确定性哈希算法将对象放置在这些擦除集上。
+Each MinIO cluster is a collection of distributed MinIO servers, one process per node.
+MinIO runs as a single process in user space and uses lightweight coroutines to achieve high concurrency.
+Drives are grouped into Scratch Sets (by default, 16 drives per group), and objects are placed on those Scratch Sets using a deterministic hashing algorithm.
 
-MinIO 专为大规模、多数据中心云存储服务而设计。
-每个租户都运行自己的 MinIO 集群，该集群与其他租户完全隔离，从而使租户能够免受升级、更新和安全事件的任何干扰。
-每个租户通过联合跨地理区域的集群来独立扩展。
+MinIO is designed for large-scale, multi-datacenter cloud storage services.
+Each tenant runs its own MinIO cluster that is completely isolated from other tenants, allowing tenants to be immune to any disruptions from upgrades, updates, and security incidents.
+Each tenant scales independently by federating clusters across geographic regions.
 
-![node-distribution-setup](node-setup.png)
+![node-distribution-setup](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/node-setup.png)
 
-### 以 HwameiStor 为底座搭建 MinIO 的优势
+### Advantages of using HwameiStor as the base to build MinIO
 
-以 HwameiStor 为底座搭建 MinIO 存储方案，构建智、稳、敏全面增强本地存储，具备以下优势。
+Using HwameiStor as the base to build a MinIO storage solution to build a smart, stable, and sensitive comprehensive enhanced local storage has the following advantages.
 
-- 自动化运维管理
+- Automated operation and maintenance management
 
-  可以自动发现、识别、管理、分配磁盘。 根据亲和性，智能调度应用和数据。自动监测磁盘状态，并及时预警。
+   It can automatically discover, identify, manage, and allocate disks. Smart scheduling of applications and data based on affinity. Automatically monitor disk status and give timely warning.
 
-- 高可用的数据
+- Highly available data
 
-  使用跨节点副本同步数据， 实现高可用。发生问题时，会自动将应用调度到高可用数据节点上，保证应用的连续性。
+   Use cross-node replicas to synchronize data to achieve high availability. When a problem occurs, the application will be automatically scheduled to the high-availability data node to ensure the continuity of the application.
 
-- 丰富的数据卷类型
+- Abundant data volume types
 
-  聚合 HDD、SSD、NVMe 类型的磁盘，提供非低延时，高吞吐的数据服务。
+   Aggregate HDD, SSD, and NVMe disks to provide low-latency, high-throughput data services.
 
-- 灵活动态的线性扩展
+- Flexible and dynamic linear expansion
 
-  可以根据集群规模大小进行动态的扩容，灵活满足应用的数据持久化需求。
+   It can be dynamically expanded according to the size of the cluster to flexibly meet the data persistence requirements of the application.
 
-- 丰富的应用场景，广泛适配企业需求，适配高可用架构中间件
+- Rich application scenarios, widely adapt to enterprise needs, and adapt to high-availability architecture middleware
 
-  类似 Kafka、ElasticSearch、Redis 等这类中间件自身具备高可用架构，同时对数据的 IO 访问有很高要求。
-  HwameiStor 提供的基于 LVM 的单副本本地数据卷，可以很好地满足它们的要求。
+   Middleware such as Kafka, ElasticSearch, and Redis have their own high-availability architecture, and at the same time have high requirements for IO access to data.
+   The LVM-based single-copy local data volume provided by HwameiStor can well meet their requirements.
 
-- 为应用提供高可用数据卷
+- Provide highly available data volumes for applications
 
-  MySQL 等 OLTP 数据库要求底层存储提供高可用的数据存储，当发生问题时可快速恢复数据，同时也要求保证高性能的数据访问。
-  HwameiStor 提供的双副本的高可用数据卷，可以很好地满足此类需求。
+   OLTP databases such as MySQL require the underlying storage to provide highly available data storage, which can quickly restore data when a problem occurs, and also require high-performance data access.
+   The double-copy high-availability data volume provided by HwameiStor can well meet such needs.
 
-- 自动化运维传统存储软件
+- Automated operation and maintenance of traditional storage software
 
-  MinIO、Ceph 等存储软件，需要使用 Kubernetes 节点上的磁盘，可以采用 PVC/PV 的方式，
-  通过 CSI 驱动自动化地使用 HwameiStor 的单副本本地卷，快速响应业务系统提出的部署、扩容、迁移等需求，实现基于 Kubernetes 的自动化运维。
+   MinIO, Ceph and other storage software need to use the disk on the Kubernetes node, which can be used in PVC/PV mode.
+   Automatically use HwameiStor's single-copy local volume through the CSI driver, quickly respond to the deployment, expansion, migration and other requirements of the business system, and realize automatic operation and maintenance based on Kubernetes.
 
-## 测试环境
+## test environment
 
-按照以下步骤依次部署 Kubernetes 集群、HwameiStor 本地存储和 MinIO。
+Follow the steps below to deploy the Kubernetes cluster, HwameiStor local storage, and MinIO in sequence.
 
-### 部署 Kubernetes 集群
+### Deploy the Kubernetes cluster
 
-本次测试使用了三台虚拟机节点部署了 Kubernetes 集群：1 Master + 2 Worker 节点，kubelet 版本为 1.22.0。
+This test uses three virtual machine nodes to deploy a Kubernetes cluster: 1 Master + 2 Worker nodes, and the kubelet version is 1.22.0.
 
-![k8s-cluster](k8s-cluster.png)
+![k8s-cluster](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/k8s-cluster.png)
 
-### 部署 HwameiStor 本地存储
+### Deploy HwameiStor local storage
 
-在 Kubernetes 上部署 HwameiStor 本地存储。
+Deploy HwameiStor local storage on Kubernetes.
 
-![查看 HwameiStor 本地存储](kubectl-get-hwamei-pod.png)
+![View HwameiStor local storage](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-hwamei-pod.png)
 
-两台 Worker 节点各配置了五块磁盘（SDB、SDC、SDD、SDE、SDF）用于 HwameiStor 本地磁盘管理。
+Each of the two Worker nodes is configured with five disks (SDB, SDC, SDD, SDE, SDF) for HwameiStor local disk management.
 
-![lsblk](lsblk01.png)
+![lsblk](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/lsblk01.png)
 
-![lsblk](lsblk02.png)
+![lsblk](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/lsblk02.png)
 
-查看 local storage node 状态。
+View local storage node status.
 
-![get-lsn](kubectl-get-lsn.png)
+![get-lsn](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-lsn.png)
 
-创建了 storagClass。
+The storageClass is created.
 
-![get-sc](kubectl-get-sc.png)
+![get-sc](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-sc.png)
 
-## 分布式多租户源码部署安装（minio operator）
+## Distributed multi-tenant source deployment and installation (minio operator)
 
-本节说明如何部署 minio operator，如何创建租户，如何配置 HwameiStor 本地卷。
+This section explains how to deploy minio operator, how to create tenants, and how to configure HwameiStor local volumes.
 
-### 部署 minio operator
+### Deploy the minio operator
 
-参照以下步骤部署 minio operator。
+Follow the steps below to deploy minio operator.
 
-1. 复制 minio operator 仓库到本地。
+1. Copy the minio operator repository to the local.
 
-    ```sh
-    git clone <https://github.com/minio/operator.git>
-    ```
+     ```sh
+     git clone <https://github.com/minio/operator.git>
+     ```
 
-    ![helm-repo-list](helm-repo-list.png)
+     ![helm-repo-list](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/helm-repo-list.png)
 
-    ![ls-operator](ls-opeartor.png)
+     ![ls-operator](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/ls-opeartor.png)
 
-2. 进入 helm operator 目录：`/root/operator/helm/operator`。
+2. Enter the helm operator directory: `/root/operator/helm/operator`.
 
-    ![ls-pwd](ls-pwd.png)
+     ![ls-pwd](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/ls-pwd.png)
 
-3. 部署 minio-operator 实例。
+3. Deploy the minio-operator instance.
 
-    ```sh
-    helm install minio-operator \
-    --namespace minio-operator \
-    --create-namespace \
-    --generate-name .
-    --set persistence.storageClass=local-storage-hdd-lvm .
-    ```
+     ```sh
+     helm install minio-operator \
+     --namespace minio-operator \
+     --create-namespace \
+     --generate-name .
+     --set persistence.storageClass=local-storage-hdd-lvm .
+     ```
 
-4. 检查 minio-operator 资源运行情况。
+4. Check the running status of the minio-operator resource.
 
-    ![get-all](kubectl-get-all.png)
+     ![get-all](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-all.png)
 
-### 创建租户
+### Create a tenant
 
-参照以下步骤创建一个租户。
+Follow the steps below to create a tenant.
 
-1. 进入 `/root/operator/examples/kustomization/base` 目录。如下修改 tenant.yaml。
+1. Go to `/root/operator/examples/kustomization/base` directory. Modify tenant.yaml as follows.
 
-    ![git-diff-yaml](git-diff-tenant-yaml.png)
+     ![git-diff-yaml](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/git-diff-tenant-yaml.png)
 
-2. 进入 `/root/operator/helm/tenant/` 目录。如下修改 `values.yaml` 文件。
+2. Enter the `/root/operator/helm/tenant/` directory. Modify the `values.yaml` file as follows.
 
-    ![git-diff-values.yaml](git-diff-values-yaml.png)
+     ![git-diff-values.yaml](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/git-diff-values-yaml.png)
 
-3. 进入 `/root/operator/examples/kustomization/tenant-lite` 目录。如下修改 `kustomization.yaml` 文件。
+3. Go to `/root/operator/examples/kustomization/tenant-lite` directory. Modify the `kustomization.yaml` file as follows.
 
-    ![git-diff-kustomization-yaml](git-diff-kustomization-yaml.png)
+     ![git-diff-kustomization-yaml](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/git-diff-kustomization-yaml.png)
 
-4. 如下修改 `tenant.yaml` 文件。
+4. Modify the `tenant.yaml` file as follows.
 
-    ![git-diff-tenant-yaml02](git-diff-tenant-yaml02.png)
+     ![git-diff-tenant-yaml02](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/git-diff-tenant-yaml02.png)
 
-5. 如下修改 `tenantNamePatch.yaml` 文件。
+5. Modify the `tenantNamePatch.yaml` file as follows.
 
-    ![git-diff-tenant-name-patch-yaml](git-diff-tenant-name-patch-yaml.png)
+     ![git-diff-tenant-name-patch-yaml](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/git-diff-tenant-name-patch -yaml.png)
 
-6. 创建租户：
+6. Create a tenant:
 
-    ```sh
-    kubectl apply –k . 
-    ```
+     ```sh
+     kubectl apply –k .
+     ```
 
-7. 检查租户 minio-t1 资源状态：
+7. Check the tenant minio-t1 resource status:
 
-    ![kubectl-get-all-nminio-tenant](kubectl-get-all-nminio-tenant.png)
+     ![kubectl-get-all-nminio-tenant](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-all-nminio-tenant.png )
 
-8. 如要创建一个新的租户可以在 `/root/operator/examples/kustomization` 目录下建一个新的 `tenant` 目录（本案例为 `tenant-lite-2`）并对相应文件做对应修改。
+8. If you want to create a new tenant, you can create a new `tenant` directory under the `/root/operator/examples/kustomization` directory (this case is `tenant-lite-2`) and make corresponding modifications to the corresponding files .
 
-    ![pwd-ls-ls](pwd-ls-ls.png)
+     ![pwd-ls-ls](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/pwd-ls-ls.png)
 
-9. 执行 `kubectl apply –k .` 创建新的租户 `minio-t2`。
+9. Execute `kubectl apply –k .` to create a new tenant `minio-t2`.
 
-    ![kubectl-get-all-nminio](kubectl-get-all-minio.png)
+     ![kubectl-get-all-nminio](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-all-minio.png)
 
-### 配置 HwameiStor 本地卷
+### Configure HwameiStor local volume
 
-依次运行以下命令来配置本地卷。
+Run the following commands in sequence to configure a local volume.
 
 ```sh
-kubectl get statefulset.apps/minio-t1-pool-0 -nminio-tenant -oyaml
+kubectl get statefulset.apps/minio-t1-pool-0-nminio-tenant-oyaml
 ```
 
-![local-storage-hdd-lvm](local-storage-hdd-lvm.png)
+![local-storage-hdd-lvm](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/local-storage-hdd-lvm.png)
 
 ```sh
 kubectl get pvc –A
 ```
 
-![kubectl-get-pvc](kubectl-get-pvc.png)
+![kubectl-get-pvc](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-pvc.png)
 
 ```sh
 kubectl get pvc export-minio6-0 -nminio-6 -oyaml
 ```
 
-![kubectl-get-pvc-export-oyaml](kubectl-get-pvc-export-oyaml.png)
+![kubectl-get-pvc-export-oyaml](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-pvc-export-oyaml.png )
 
 ```sh
 kubectl get pv
 ```
 
-![kubectl-get-pv](kubectl-get-pv.png)
+![kubectl-get-pv](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-pv.png)
 
 ```sh
-kubectl get pvc data0-minio-t1-pool-0-0 -nminio-tenant -oyaml
+kubectl get pvc data0-minio-t1-pool-0-0-nminio-tenant-oyaml
 ```
 
-![kubectl-get-pvc-oyaml](kubectl-get-pvc-oyaml.png)
+![kubectl-get-pvc-oyaml](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-pvc-oyaml.png)
 
 ```sh
 kubectl get lv
 ```
 
-![kubectl-get-lv](kubectl-get-lv.png)
+![kubectl-get-lv](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-lv.png)
 
 ```sh
 kubect get lvr
 ```
 
-![kubectl-get-lvr](kubectl-get-lvr.png)
+![kubectl-get-lvr](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-lvr.png)
 
-## HwameiStor 与 MinIo 测试验证
+## HwameiStor and MinIo test verification
 
-完成上述配置之后，执行了基本功能测试和多租户隔离测试。
+After completing the above configurations, basic functional tests and multi-tenant isolation tests were performed.
 
-### 基本功能测试
+### Basic functional testing
 
-基本功能测试的步骤如下。
+The steps of the basic function test are as follows.
 
-1. 从浏览器登录 `minio console：10.6.163.52:30401/login`。
+1. Log in to `minio console: 10.6.163.52:30401/login` from the browser.
 
-    ![minio-opeartor-console-login](minio-opeartor-console-login.png)
+     ![minio-opeartor-console-login](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/minio-opeartor-console-login.png)
 
-2. 通过 `kubectl minio proxy -n minio-operator `获取 JWT。
+2. Obtain the JWT through `kubectl minio proxy -n minio-operator`.
 
-    ![minio-opeartor-console-login](kubectl-minio-proxy-jwt.png)
+     ![minio-opeartor-console-login](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-minio-proxy-jwt.png)
 
-3. 浏览及管理创建的租户信息。
+3. Browse and manage the created tenant information.
 
-    ![tenant01](tenant01.png)
+     ![tenant01](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/tenant01.png)
 
-    ![tenant02](tenant02.png)
+     ![tenant02](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/tenant02.png)
 
-    ![tenant03](tenant03.png)
+     ![tenant03](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/tenant03.png)
 
-    ![tenant04](tenant04.png)
+     ![tenant04](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/tenant04.png)
 
-    ![tenant05](tenant05.png)
+     ![tenant05](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/tenant05.png)
 
-    ![tenant06](tenant06.png)
+     ![tenant06](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/tenant06.png)
 
-4. 登录 minio-t1 租户（用户名 minio，密码 minio123）。
+4. Log in to the minio-t1 tenant (username minio, password minio123).
 
-    ![login-minio](login-minio-t1-01.png)
+     ![login-minio](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/login-minio-t1-01.png)
 
-    ![login-minio](login-minio-t1-02.png)
+     ![login-minio](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/login-minio-t1-02.png)
 
-5. 浏览 bucket bk-1。
+5. Browse bucket bk-1.
 
-    ![view-bucket-1](view-bucket-01.png)
+     ![view-bucket-1](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/view-bucket-01.png)
 
-    ![view-bucket-1](view-bucket-02.png)
+     ![view-bucket-1](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/view-bucket-02.png)
 
-    ![view-bucket-1](view-bucket-03.png)
+     ![view-bucket-1](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/view-bucket-03.png)
 
-6. 创建新的 bucket bk-1-1。
+6. Create a new bucket bk-1-1.
 
-    ![create-bucket-1-1](create-bucket-1-1.png)
+     ![create-bucket-1-1](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-bucket-1-1.png)
 
-    ![create-bucket-1-1](create-bucket-1-2.png)
+     ![create-bucket-1-1](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-bucket-1-2.png)
 
-    ![create-bucket-1-1](create-bucket-1-3.png)
+     ![create-bucket-1-1](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-bucket-1-3.png)
 
-7. 创建 path path-1-2。
+7. Create the path path-1-2.
 
-    ![create-path-1-2](create-path-1-2-01.png)
+     ![create-path-1-2](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-path-1-2-01.png)![create-path-1-2](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-path-1-2-02.png)
 
-    ![create-path-1-2](create-path-1-2-02.png)
+8. Uploaded files successfully.
 
-8. 上传文件成功：
+    ![upload-file](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-file-success.png)
 
-    ![upload-file](upload-file-success.png)
+    ![upload-file](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-file-success-02.png)
 
-    ![upload-file](upload-file-success-02.png)
+    ![upload-file](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-file-success-03.png)
 
-    ![upload-file](upload-file-success-03.png)
+9. Uploaded folder successfully.
 
-9. 上传文件夹成功：
+    ![upload-folder](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-folder-success-01.png)
 
-    ![upload-folder](upload-folder-success-01.png)
+    ![upload-folder](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-folder-success-02.png)
 
-    ![upload-folder](upload-folder-success-02.png)
+    ![upload-folder](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-folder-success-03.png)
 
-    ![upload-folder](upload-folder-success-03.png)
+    ![upload-folder](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-folder-success-04.png)
 
-    ![upload-folder](upload-folder-success-04.png)
+10. Create a read-only user:
 
-10. 创建只读用户：
+    ![create-user](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-readonly-user-01.png)
 
-    ![create-user](create-readonly-user-01.png)
+    ![create-user](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-readonly-user-02.png)
 
-    ![create-user](create-readonly-user-02.png)
+### Multi-tenant isolation test
 
-### 多租户隔离测试
+Perform the following steps for multi-tenant isolation testing.
 
-执行以下步骤进行多租户隔离测试。
+1. Log in to the minio-t2 tenant.
 
-1. 登录 minio-t2 租户。
+     ![login-t2](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/login-minio-t2-01.png)
 
-    ![login-t2](login-minio-t2-01.png)
+     ![login-t2](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/login-minio-t2-02.png)
 
-    ![login-t2](login-minio-t2-02.png)
+2. At this time, only the content of minio-t2 can be seen, and the content of minio-t1 is blocked.
 
-2. 此时只能看到 minio-t2 内容，minio-t1 的内容被屏蔽。
+     ![only-t2](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/only-t2.png)
 
-    ![only-t2](only-t2.png)
+3. Create buckets.
 
-3. 创建 bucket。
+     ![create-bucket](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-bucket01.png)
 
-    ![create-bucket](create-bucket01.png)
+     ![create-bucket](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/createbucket02.png)
 
-    ![create-bucket](createbucket02.png)
+4. Create paths.
 
-4. 创建 path。
+     ![create-path](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-path01.png)
 
-    ![create-path](create-path01.png)
+     ![create-path](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-path02.png)
 
-    ![create-path](create-path02.png)
+5. Upload the file.
 
-5. 上传文件。
+     ![upload-file](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-file01.png)
 
-    ![upload-file](upload-file01.png)
+     ![upload-file](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/upload-file02.png)
 
-    ![upload-file](upload-file02.png)
+6. Create users.
 
-6. 创建用户。
+     ![create-user](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-user01.png)
 
-    ![create-user](create-user01.png)
+     ![create-user](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-user02.png)
 
-    ![create-user](create-user02.png)
+     ![create-user](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-user03.png)
 
-    ![create-user](create-user03.png)
+     ![create-user](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-user04.png)
 
-    ![create-user](create-user04.png)
+     ![create-user](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/create-user05.png)
 
-    ![create-user](create-user05.png)
+7. Configure user policy.
 
-7. 配置用户 policy。
+     ![user-policy](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/user-policy01.png)
 
-    ![user-policy](user-policy01.png)
+     ![user-policy](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/user-policy02.png)
 
-    ![user-policy](user-policy02.png)
+8. Delete the bucket.
 
-8. 删除 bucket。
+     ![delete-bucket](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/delete-bk01.png)
 
-    ![delete-bucket](delete-bk01.png)
+     ![delete-bucket](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/delete-bk02.png)
 
-    ![delete-bucket](delete-bk02.png)
+     ![delete-bket](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/delete-bk03.png)
 
-    ![delete-bucket](delete-bk03.png)
+     ![delete-bucket](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/delete-bk04.png)
 
-    ![delete-bucket](delete-bk04.png)
+     ![delete-bucket](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/delete-bk05.png)
 
-    ![delete-bucket](delete-bk05.png)
+     ![delete-bucket](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/delete-bk06.png)
 
-    ![delete-bucket](delete-bk06.png)
+## in conclusion
 
-## 结论
+In this test, MinIO distributed object storage was deployed on the Kubernetes 1.22 platform and connected to HwameiStor local storage. In this environment, the basic ability test, system security test and operation and maintenance management test have been completed.
 
-本次测试是在 Kubernetes 1.22 平台上部署了 MinIO 分布式对象存储并对接 HwameiStor 本地存储。在此环境中完成了基本能力测试、系统安全测试及运维管理测试。
-
-全部测试成功通过，证实了 HwameiStor 能够完美适配 MinIO 存储方案。
+All tests have passed successfully, confirming that HwameiStor can perfectly adapt to the MinIO storage solution.

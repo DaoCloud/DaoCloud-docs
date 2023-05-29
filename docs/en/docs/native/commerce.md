@@ -2,7 +2,11 @@
 
 This page lists, in alphabetical order, updates on some well-known commercial products.
 
-### A, B
+### A
+
+- [ARMO Platform, Kubernetes Security Platform, introduces vulnerability analysis and assessment capabilities based on eBPF technology](https://www.armosec.io/blog/kubernetes-vulnerability-relevancy-and-prioritization/)
+
+    This feature analyzes and evaluates vulnerabilities on the Kubernetes platform, identifies and prioritizes vulnerabilities, and provides users with targeted remediation recommendations. Among other things, relevance and prioritization allows users to deprioritize vulnerabilities in unused packages and components to focus on addressing vulnerabilities that pose a greater threat to the cluster.
 
 - [Aqua cloud-native security platform introduces Lightning Enforcer, a zero-day vulnerability detection tool based on eBPF technology](https://blog.aquasec.com/combat-zero-day-threats-with-aquas-ebpf-lightning-enforcer)
 
@@ -28,6 +32,20 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Local clustering reduces the risk of application downtime due to network outages in the cloud. During this time, the application remains available and cluster operations can be performed. EKS manages the availability of the K8s control plane on Outposts when connected to the cloud. The Kubernetes running on the local cluster has the same functions as the EKS on the cloud, and supports automatic deployment of the latest security patches.
 
+- [Azure AKS Officially Launches Network Solution Azure CNI Overlay](https://azure.microsoft.com/en-us/blog/announcing-the-general-availability-of-azure-cni-overlay-in-azure-kubernetes-service/)
+
+    Azure CNI Overlay helps simplify the management of cluster nodes and Pods in Azure Virtual Network (VNet) subnets by allowing users to place nodes directly in the VNet subnet and Pods to obtain IP addresses from a separate dedicated CIDR. With this, AKS cluster management, routing configuration, and cluster scaling will be greatly simplified.
+
+- [Azure Launches Kubernetes Application Solution for AKS](https://mp.weixin.qq.com/s/Uk8t5pWoRiWmz1VL4nMOaQ)
+
+    The Azure Kubernetes Application Solution is designed to help partners create, publish and manage a "toolbox" of commercially available Kubernetes solutions in the Microsoft Azure Marketplace.
+    Azure Kubernetes Application Solutions supports the creation of bundles for Kubernetes application solutions using existing Helm Chart packages;
+    Create and publish solutions in just 48 hours; automate security scans; and empower incremental sales across the board.
+
+- [Azure Arc Integration with Observable Platform Datadog, an Azure Hybrid Cloud Multi-Cloud Solution](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
+
+    Azure Arc's integration with Datadog provides the following capabilities: monitors connection status and agent versions to ensure Azure Arc-enabled servers, SQL servers, and Kubernetes clusters are connected and secure; integrates hybrid and multi-cloud servers, Kubernetes clusters, and data services into a unified dashboard for seamless cross-environment Simplifies compliance management and tracking, providing rich visualizations and actionable alerts.
+
 - [Azure Serverless container platform Azure Container Apps November update](https://azure.microsoft.com/en-us/updates/?query=azure%20container%20apps)
 
      What's new: Build container images from source code without Dockerfile, use Azure pipeline tasks to build and deploy container applications from Azure DevOps, support building and deploying container applications from GitHub Actions workflows, and support inbound restrictions on Azure container applications by IP flow.
@@ -50,7 +68,35 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates include: Added soft-delete functionality to Azure Container Registry to restore accidentally deleted artifacts; allows aborting any operation on an AKS cluster or proxy pool; supports multi-instance GPU (MIG); extends Azure Network Policy Manager (NPM) AKS cluster to Windows server 2022; integrated API Server VNET for AKS private cluster.
 
-- [AliCloud Container Mirroring Service ACR Officially Launches Cloud Native Product Center](https://mp.weixin.qq.com/s/atQF7WNfeodW3eizw6e1tg)
+- [Azure Lightweight Kubernetes Release AKS Edge Essentials Officially Available](https://azure.microsoft.com/en-us/updates/now-available-azure-kubernetes-service- edge-essentials/)
+
+    AKS Edge Essentials is a native Kubernetes implementation of AKS that can run on resource-limited edge devices. It can be used to deploy single- and multi-node K3s and K8s clusters that can run Linux and Windows workloads on existing Windows devices.
+
+- [Azure Releases AKS Fleet Manager (Public Preview)](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
+
+    Azure Kubernetes Fleet Manager treats multiple cluster sites as a single cluster to be managed. Users can manage multiple clusters by creating a Fleet resource. Users can treat existing AKS clusters as member clusters, join them to the fleet, and then orchestrate multiple cluster scenarios such as Kubernetes resource propagation and multi-cluster load balancing using metadata from those clusters.
+
+- [AliCloud Container Service ACK April Product Update](https://mp.weixin.qq.com/s/z4PBLXxsn691cgYtfBOZaA)
+
+    Updates: Cluster deletion supports synchronous deletion of log projects, ACK Lingjun Managed Cluster for hosting the standard Kubernetes cluster service with high availability control plane is officially released, ElasticResource supports Pod dispatching to Arm nodes.
+
+- [AliCloud Microservices Engine MSE April Product Update](https://mp.weixin.qq.com/s/hYarQaUdKRY5pHi4dAVosg)
+
+    Updates: Nacos and Service Governance combine to non-intrusively implement Java application registration discovery, full-link grayscale, etc.; Cloud Native Gateway introduces migration tools for container service Nginx Ingress; Microservice Governance Basic Edition supports lossless up and down, canary publishing, etc.; Nacos supports TLS link encryption.
+
+- [AliCloud Service Grid ASM March 2023 Product Update](https://mp.weixin.qq.com/s/Yca5J3liIg6oznZDz6fVrA)
+
+    Updates: Gateway support for docking WAF, support for configuring Ingress resources, support for managing Knative services, support for OIDC login for mesh topology, Sidecar proxy support for oversell mode, new egress traffic policy, support for configuring global default HTTP request retry policy.
+
+- [AliCloud ACK February Product Update](https://mp.weixin.qq.com/s/nqW681bqKocpc7AWUV56jg)
+
+    Update: Node pool supports Kubelet parameter customization, AIOps supports Service diagnostics, supports changing cloud disk type, and supports using cloud-auto type cloud disk as dynamic storage volume.
+
+- [AliCloud service mesh ASM February 2023 Update](https://mp.weixin.qq.com/s/jNeC_gMQdCk8b8d3QXSeMQ)
+
+    Update: Support for defining management logs, monitoring and link tracing as Telemetry CRD; support for fine-grained configuration at the mesh global and namespace levels; improved mesh topology loading speed in clusters above 150 Pod size; support for configuring sidecar proxy environment variables, istio-proxy thread count, etc.; support for configuring in multiple clusters Support for intra-cluster traffic retention.
+
+- [AliCloud container imageing Service ACR Officially Launches Cloud Native Product Center](https://mp.weixin.qq.com/s/atQF7WNfeodW3eizw6e1tg)
 
     Cloud Native Products Center provides free secure and trusted container base images from AliCloud and Dragon Lizard community for container developers.
     It includes application containerization base OS image, base language image, AI/Big Data related image categories, covering ARM, ARM 64, x64, x86-64 multiple system architectures.
@@ -59,7 +105,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates: zookeeper support for exporting snapshots and transaction logs, cloud native gateway support for HTTP/3, microservice insight support for lossless log collection during up/down and key node information display.
 
-- [AliCloud Service Grid ASM December 2022 Update](https://mp.weixin.qq.com/s/4lODob6kB7xjYDaKACzmhw)
+- [AliCloud service mesh ASM December 2022 Update](https://mp.weixin.qq.com/s/4lODob6kB7xjYDaKACzmhw)
 
      Updates: support for managed on-demand push xDS configuration, support for self-built Istio community version migration to ASM, ASM gateway support for configuring custom authorization services, enable Service Level Objective SLOs.
 
@@ -77,27 +123,39 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Alibaba Cloud Microservice Engine MSE October Update](https://mp.weixin.qq.com/s/Puud_MYgCMezqKESaAiG-w)
 
-     Updates: The registration configuration center provides migration tools and solutions, the cloud-native gateway service source supports the Serverless application engine, authentication and authentication supports the coexistence of multiple rules, the routing and service details page adds QPS, error, delay and other indicator monitoring, and the whole link Capabilities such as grayscale and label routing support the Consul registry.
+     Updates: The registration configuration center provides migration tools and solutions, the cloud-native gateway service source supports the Serverless application engine, authentication and authentication supports the coexistence of multiple rules, the routing and service details page adds QPS, error, delay and other metric monitoring, and the whole link Capabilities such as grayscale and label routing support the Consul registry.
 
-- [Alibaba Cloud Service Grid ASM September Update](https://mp.weixin.qq.com/s/tx7iHBzoelS-3xB0UWKK2A)
+- [Alibaba Cloud service mesh ASM September Update](https://mp.weixin.qq.com/s/tx7iHBzoelS-3xB0UWKK2A)
 
-     Update content: application service governance supports warm-up function; supports application security policy in trial operation mode; optimizes sidecar proxy configuration; adds a variety of JWT algorithms in "request authentication"; supports access to O1DC protocol services through external authorization; supports K8s 1.24; AHPA Elastic Prediction supports prediction based on GPU indicators; Log Center supports log and large disk display of network components; when Pod mounts OSS storage volumes, it supports I/O observability.
+     Update content: application service governance supports warm-up function; supports application security policy in trial operation mode; optimizes sidecar proxy configuration; adds a variety of JWT algorithms in "request authentication"; supports access to O1DC protocol services through external authorization; supports K8s 1.24; AHPA Elastic Prediction supports prediction based on GPU metrics; Log Center supports log and large disk display of network components; when Pod mounts OSS storage volumes, it supports I/O observability.
 
 - [Alibaba Cloud Container Service ACK September update](https://mp.weixin.qq.com/s/uI5sw-HwCJf56W9wDcmysw)
 
      Updates: Add managed node pools, support configuring network-configured load balancing NLB instances for Services through Annotation, provide resource portrait functions for workloads, and support lifecycle management of object storage OSS Buckets using container network file systems.
 
-- [Alibaba Cloud Service Grid ASM August Update](https://mp.weixin.qq.com/s/BDgNctG90oHpbrRWC0Hxkg)
+- [Alibaba Cloud service mesh ASM August Update](https://mp.weixin.qq.com/s/BDgNctG90oHpbrRWC0Hxkg)
 
      Updates include: compatibility with Istio 1.14 series versions, support for Kubernetes 1.21 - 1.24 versions, enhanced grid diagnostics, support for compatibility of third-party tokens in ACK clusters, support for user-defined EnvoyFilter, and priority for the same availability zone without modifying the code routing.
+
+### B
+
+- [Backslash Security launches cloud-native code visualization tool of the same name](https://www.backslash.security/post/backslash-security-emerges-from-stealth-to-fuse-code-security-with-cloud-native-context)
+
+    Backslash has launched a visualization tool that identifies workflows in cloud-native code that could lead to security vulnerabilities.
+    Specific features include: automatic discovery and mapping of cloud-native application code and its dependencies through contextual visualization dashboards; automatic prioritization of high-risk code based on the state of the application cloud in production; and simplified remediation of vulnerabilities and risks through intelligent, automated risk identification.
+    The tool currently supports AWS environments and GitHub code repositories.
 
 - [BellSoft launches Alpaquita Cloud Native Platform for efficiently running cloud-native Java applications](https://containerjournal.com/features/bellsoft-optimizes-java-for-cloud-native-platform/)
 
      [Alpaquita Cloud Native Platform](https://bell-sw.com/cloud-native-platform/) leverages a Linux distribution for Java, JVM optimizations, a multipurpose framework, and native mirroring technology to provide a A runtime environment optimized for Java applications running in containers. Features of the platform: Cloud costs are reduced by 20%, smaller Pods are used, and the number of required nodes is reduced; zero migration costs, no refactoring is required; efficiency is increased by 50%, achieving low latency, low cost, and fast startup.
 
+- [BoCloud BMM v2.1 update released](https://mp.weixin.qq.com/s/opPpG0g3wcJV3on133ZSeg)
+
+    Update: New RabbitMQ and lifecycle management capabilities, new middleware overview on home page, support for storage expansion visualization, support for version upgrade visualization, support for middleware operation auditing, support for event query and alerting.
+
 - [BoCloud Container Platform v3.7 released](https://mp.weixin.qq.com/s/K68IWq18YWkmMyyRte-OlQ)
 
-    Support mixed management of X86 and ARM architectures, support localized database Damon, support production-grade windows containers, provide unified resource management service for ACK and TKE public cloud container clusters, support simultaneous release of multiple native yaml files, support native ingress capability, manage high-performance virtual machines independently as a new resource type, provide It also provides container resource oversharing capability, and completes the deep integration of container cloud, microservice management, service grid, middleware and other sub-products.
+    Support mixed management of X86 and ARM architectures, support localized database Damon, support production-grade windows containers, provide unified resource management service for ACK and TKE public cloud container clusters, support simultaneous release of multiple native yaml files, support native ingress capability, manage high-performance virtual machines independently as a new resource type, provide It also provides container resource oversharing capability, and completes the deep integration of container cloud, microservice management, service mesh, middleware and other sub-products.
 
 ### C
 
@@ -125,7 +183,22 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates: Provide Sigstore-based keyless signature mode, add an out-of-the-box security policy library, support users to log in through their Gitlab accounts, support CloudEvents, support policies for fine-grained Kubernetes workload objects, and enhance large-scale clusters User stability.
 
-### D
+- [CloudCasa Velero-based Enterprise Kubernetes Data Protection Solution CloudCasa for Velero](https://www.catalogicsoftware.com/press-releases/introducing-cloudcasa-for-velero-to-manage-and-run-kubernetes-backups-at-enterprise-scale/)
+
+    CloudCasa for Velero provides enterprises and service providers with the ability to manage multiple clusters of Velero backups across all Kubernetes distributions as well as hybrid and public cloud environments.
+    Developers and platform engineers can manage and monitor Velero-based backups from the console with policy-driven templates and guided recovery capabilities.
+    Velero users can subscribe to the CloudCasa service and catalog their existing settings for centralized management in minutes.
+
+### D, E
+
+- [D2iQ Enterprise K8s Platform D2iQ Kubernetes Platform v2.5 Released](https://docs.d2iq.com/dkp/2.5/dkp-2-5-0-features-and-enhancements)
+
+    Updates: Support for extending standalone DKP Essential clusters to DKP Enterprise Management clusters for centralized management, support for checking cluster compliance with CIS Kubernetes benchmarks via Kube-bench, alerts now include root cause information and solution recommendations, full support for Istio, support for ARM64 machines, support for external Load Balancer support.
+
+- [D2iQ Launches DKP Gov, a Kubernetes Platform Designed for the Government Sector](https://d2iq.com/blog/dkp-gov-kubernetes-management-platform)
+
+    DKP Gov is based on the D2iQ Kubernetes Platform (DKP), created to meet the needs of government, military, and civilian agencies for innovative technology.
+    DKP Gov supports physically and logically isolated nodes, a centralized multi-cloud platform, multi-node fleet management, Federal Information Processing Standard (FIPS) 140-2 certification, and more.
 
 - [D2iQ Kubernetes Platform v2.4.0 released](https://docs.d2iq.com/dkp/2.4/dkp-2-4-0-features-and-enhancements)
 
@@ -137,7 +210,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [DaoCloud Enterprise 5.0 released](https://mp.weixin.qq.com/s/7UkIwCp78trO126XQxEL6A)
 
-     DaoCloud Enterprise 5.0 is an independent, open, high-performance, scalable next-generation cloud-native operating system. Focusing on the cloud-native base extension capability scenario, break through cloud-side barriers, cross multi-cloud environments, solve the compatibility problem of Xinchuang infrastructure, improve application delivery efficiency, enable agile innovation of applications, enable business systems with rich data services, and integrate microservice governance and Global observability can meet the challenges of operation and maintenance management of huge business systems.
+     DaoCloud Enterprise 5.0 is an independent, open, high-performance, scalable next-generation cloud-native operating system. Focusing on the cloud-native base extension capability scenario, break through cloud-side barriers, cross multi-cloud environments, solve the compatibility problem of Xinchuang infrastructure, improve app delivery efficiency, enable agile innovation of applications, enable business systems with rich data services, and integrate microservice governance and Global observability can meet the challenges of operation and maintenance management of huge business systems.
+
+- [Databend Releases Cloud-Native Data registry Databend Cloud](https://mp.weixin.qq.com/s/LzjRQ8_XA-896AZQj2n3hA)
+
+    Databend Cloud is an elastic cloud data registry based on the open source cloud-native data registry project [Databend](https://github.com/datafuselabs/databend), which consists of 3 layers: storage layer, compute layer and meta information service. The bottom tier is based on object storage, the upper tier compute nodes use different specifications, and the top tier is a metadata and management cluster to achieve multi-tenant isolation and ensure users' data security.
 
 - [Datadog Launches Cloud Security Management to Provide Cloud Security Management](https://www.datadoghq.com/about/latest-news/press-releases/datadog-launches-cloud-security-management-to-provide-cloud-native-application-protection/)
 
@@ -160,21 +237,32 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The Davis AI causal analysis engine provides root cause analysis of Kubernetes performance issues and their impact on business continuity. Specific features: Automated root cause analysis, support for real-time tracking of Kubernetes orchestration processes, linking performance issues to pod evictions, support for identifying the cause of performance degradation issues related to misconfigurations based on changes in workload deployment inventory.
 
-### F, G
+- [Ermetic Cloud Native Application Protection Platform supports Kubernetes security posture management](https://ermetic.com/news/ermetic-adds-kubernetes-security-posture-management-to-cloud-native-application-protection-platform/)
+
+    The Ermetic Cloud Native Application Protection Platform's Kubernetes Security Posture Management feature supports automatic discovery and remediation of misconfigurations, compliance violations, and risky or excessive privileges in Kubernetes clusters.
+    It provides a detailed inventory of all Kubernetes cluster internal resources, the ability to continuously perform security posture assessments and risk prioritization, and provides remediation methods and workflow integration.
+
+### F
 
 - [F5 released the Chinese version of the container Ingress service CIS-C](https://mp.weixin.qq.com/s/4BuiZC8AEnRt-lwT7dNyxg)
 
      CIS-C is a controller software that automatically releases services in a Kubernetes cluster through F5 BIG-IP.
-     Help users connect Kubernetes clusters and external portals, and integrate BIG-IP application delivery capabilities into the cloud environment of the Kubernetes technology stack.
+     Help users connect Kubernetes clusters and external portals, and integrate BIG-IP app delivery capabilities into the cloud environment of the Kubernetes technology stack.
      It enables multi-team collaboration, and users can flexibly and automatically create and change application or service entry policies.
 
 - [Fairwinds Kubernetes Governance and Security Platform Insights November Update](https://www.fairwinds.com/blog/fairwinds-insights-release-notes-10.2-10.6-spotlight-on-workload-cost-allocation)
 
      Update: Added workload cost allocation functionality to allow viewing historical costs for a group of workloads; optimized cost page to refine the categorization of Kubernetes cluster costs; support for viewing the dynamics of costs over time.
 
+- [Finout Launches Agentless Kubernetes Cost Governance Suite](https://www.businesswire.com/news/home/20230413005018/en/Finout-Announces-Agentless-Cost-Governance-Suite-for-Kubernetes)
+
+    This agentless cost governance suite automatically detects and manages cloud waste, predicts spend and stays on budget when using Kubernetes across all major cloud platforms. It provides a unified MegaBill dashboard that manages costs across multiple cloud platforms and provides contextual information on Kubernetes spending; supports setting budgets and future spending for Kubernetes deployments; supports identifying spending anomalies across Kubernetes and cloud services; and provides real-time recommendations for cost optimization.
+
 - [Fortinet releases cloud-native firewall service FortiGate CNF](https://www.fortinet.com/blog/business-and-technology/simplify-cloud-security-with-the-fortigate-cloud-native-firewall-on-aws)
 
      FortiGate CNF is a SaaS product that supports consistent security policies in different AWS environments through deep cloud-native integration with services such as AWS Gateway Load Balancer and AWS Firewall Manager, eliminating the complexity of network security. In addition, it supports the security inspection function of the next-generation firewall, provides deep visibility into the application layer, and can protect multiple accounts, subnets, virtual private clouds, and availability zones.
+
+### G
 
 - [GitLab 15.7 release](https://about.gitlab.com/releases/2022/12/22/gitlab-15-7-released/)
 
@@ -182,11 +270,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [GitLab 15.5 released](https://mp.weixin.qq.com/s/AiRU9pQUxTex0F_XvuHiHg)
 
-     The main new features of this version: run security scanning tools in the merge request pipeline, support Kubernetes container scanning, support importing more relationships when importing projects from GitHub, and add a predefined DORA (indicator for evaluating DevOps effectiveness level) visual comparison report.
+     The main new features of this version: run security scanning tools in the merge request pipeline, support Kubernetes container scanning, support importing more relationships when importing projects from GitHub, and add a predefined DORA (metric for evaluating DevOps effectiveness level) visual comparison report.
 
 - [GitLab 15.4 Released](https://about.gitlab.com/releases/2022/09/22/gitlab-15-4-released/)
 
-     The main new features of this version: improve VSCode CI/CD integration function, support Gitee project import, professional version support test management, support DORA indicators for evaluating enterprise DevOps performance, and integrate Harbor container registry.
+     The main new features of this version: improve VSCode CI/CD integration function, support Gitee project import, professional version support test management, support DORA metrics for evaluating enterprise DevOps performance, and integrate Harbor container registry.
 
 - [Gloo Mesh v2.1 service mesh management platform released](https://www.solo.io/blog/announcing-gloo-mesh-2-1/)
 
@@ -241,7 +329,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      Bridging the gap between black-box data for performance testing and white-box data inside the system.
      The integration allows correlating k6's test run data with server-side trace data for root cause analysis; aggregates the collected trace data to generate real-time metrics, helping users narrow the search space and quickly spot anomalous behavior.
 
-### H, K, L
+### H
 
 - [Harness Launches Fully Managed Gitops-as-a-Service](https://harness.io/blog/generally-available-harness-gitops-as-a-service)
 
@@ -251,21 +339,33 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      CCE Turbo can accelerate all aspects of computing, network, and scheduling to achieve extreme elasticity, such as helping customers easily cope with business traffic peaks with an elasticity of 3000 pod/min; UCS provides cross-cloud and cross-region cloud-native application management to achieve a consistent experience.
 
+### J, K
+
+- [Jibudata multi-cloud data backup recovery product YS1000 v3.2 released](https://mp.weixin.qq.com/s/t64iDKWOQ_wUHRLvmGw8tQ)
+
+    Update: add etcd backup support for clusters; support for creating mirror backup repository; support for mirror backup with optional application mirror source; support for sandbox recovery without affecting the original business after recovery; support for flexible subsidiary function configuration using hooks for backup recovery tasks; support for synchronization of data volumes based on backup recovery; support for configuring ingress mapping while configuring disaster recovery instances.
+
+- [KSOC Launches Industry's First Real-Time Kubernetes Security Posture Management Platform](https://www.einnews.com/pr_news/628624388/ksoc-launches-first-real-time-kubernetes-security-posture-management-kspm-platform)
+
+    The Kubernetes Security Posture Management Platform pinpoints attack activity with real-time context and current and historical information, while also providing actionable remediation based on the current state of the cluster. Specific capabilities include: real-time posture management to discover event-based misconfigurations; aggregating and finding excessive privileges in Kubernetes RBAC; preventing the deployment of non-compliant workloads and reducing the potential blast radius; and scanning for vulnerabilities and generating SBOMs for running containers.
+
 - [Kyndryl introduces Cloud Native Services, a multi-cloud cloud native application migration and optimization solution](https://www.kyndryl.com/gb/en/about-us/news/2022/12/kyndryl-cloud-native-services-digital-modernization)
 
      Kyndryl Cloud Native Services provides an end-to-end lifecycle framework that includes code assets, workflows, specialized fundamentals, consulting management services, and comprehensive services related to automated backups, patching, KPI monitoring, security, alerting, and event management for cloud native application migration and optimization . The solution allows enterprises to move their on-premise applications to cloud service provider environments such as AWS, GCP and Azure.
 
-- [Kong Enterprise 3.2, a Kong cloud native API platform, is released(https://konghq.com/blog/kong-enterprise-3-2)
+- [Kong Enterprise 3.2, a Kong cloud native API platform, is released](https://konghq.com/blog/kong-enterprise-3-2)
 
     Updates: Support for data plane extensions when the control plane fails; New Datadog tracking plugin to work with Datadog Agent without installing Otel collector; Support for latency-based bootstrapping, allowing Kong load balancers to select the "fastest" backend based on total response time when proxying upstream services. " backend when proxying upstream services.
 
-- [Kong Releases Service Grid Product Kong Mesh v2.1](https://konghq.com/blog/kong-mesh-kuma-2-1)
+- [Kong Releases service mesh Product Kong Mesh v2.1](https://konghq.com/blog/kong-mesh-kuma-2-1)
 
      Update: Completed implementation of all next-generation policies, including adding MeshHTTPRoute, MeshCircuitBreaker, MeshFaultInjection, MeshOPA and other policies; added gateway view in the UI; support for configuring ports in eBPF mode.
 
 - [Kong Gateway v3.0 Cloud Native API Gateway released](https://docs.konghq.com/gateway/changelog/#3000)
 
      The main new features of this version: provide federal information processing standard FIPS packages to meet security and compliance requirements, support the execution order of plug-ins, increase native support for WebSocket traffic, add OpenTelemetry plug-ins, introduce new routing engines to handle complex Routing requirements, throughput, latency, and memory consumption are significantly optimized.
+
+### L
 
 - [Lacework Platform Cloud Security Platform November Update](https://docs.lacework.com/releases/2022-11-platform-releases)
 
@@ -279,7 +379,15 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Kubernetes360 unifies logging, Prometheus metrics monitoring, and Jaeger-powered distributed tracing in one platform, enabling DevOps teams to monitor application SLOs in a simple, efficient, and actionable manner.
 
-### M, N, O
+### M
+
+- [Mirantis has released the lightweight Kubernetes distribution k0s v1.27](https://www.mirantis.com/blog/k0s-1-27-released)
+
+    Updates: Kubernetes 1.27 compatible; support for containerd plugins such as WebAssembly (WASM) and gVisor container sandbox; k0s will run all system components with self-built images; support for controlling the installation order of the Helm chart.
+
+- [Mirantis Container Runtime Container Runtime 23.0 Released](https://www.mirantis.com/blog/announcing-the-23-0-major-release-for-mirantis-container-runtimeand-moby)
+
+    Updates: Experimental CSI support; Enhanced OCI runtime support for Kata Containers and gVisor; Overhead required to perform health checks no longer counts towards the time threshold, and the time required for health checks does not increase even with high container loads; Image build tool BuildKit is used by default.
 
 - [Mirantis OpenStack for Kubernetes 22.5, the Mirantis private cloud infrastructure platform, was released](https://www.mirantis.com/blog/mirantis-openstack-for-kubernetes-22-5-released)
 
@@ -289,7 +397,9 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The main new features of this version: support for Kubernetes 1.24, support for Google Cloud Platform GCP, support for cri-dockerd instead of Dockershim, security access control updates (OPA gatekeeper is provided as an optional alternative to PSP).
 
-- Spot by NetApp Introduces Ocean CD, a Kubernetes Application Continuous Delivery Product](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release-notes. pdf) pdf)
+### N
+
+- [Spot by NetApp Introduces Ocean CD, a Kubernetes Application Continuous Delivery Product](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release-notes.pdf)
 
      Ocean CD is a SaaS solution that supports multiple clusters, using Argo rollouts as the engine and overlaying many management features on top. ocean CD allows for rapid enablement of intelligent deployments such as canary, blue-green deployments or simple rolling updates using validation and failure policies; supports continuous validation, correctly executing rollbacks and automated actions based on canary policy definitions; and provides a developer-friendly UI interface.
 
@@ -303,6 +413,12 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      Integrated Lightweight Directory Access Protocol LDAP;
      Support for more Self-managed K8s platforms.
 
+- [Nutanix Launches Nutanix Data Services for Kubernetes (NDK), a Kubernetes Data Management Platform](https://www.nutanix.com/blog/nutanix-announces-early-access-of-ndk)
+
+    NDK provides an application-aware Kubernetes data services solution. nDK provides data protection, recovery, migration, cloning and replication data management capabilities for Kubernetes applications; supports easy reduction of recovery time objectives (RTOs) and recovery point objectives (RPOs) from days to minutes; and provides policy-driven stateful application management; Kubernetes and IT administrators can enable self-service workflows by setting a number of rules and restrictions to manage the infrastructure.
+
+### O
+
 - [Ocean launches Network Cost Analysis, a Kubernetes network cost analysis solution](https://spot.io/blog/dont-sweat-the-network-costs-ocean-provides-application-cost-visibility-to-your-kubernetes-cluster/)
 
      Network Cost Analysis (already in beta support on AWS EKS clusters) not only supports displaying network costs and bandwidth consumption used by Kubernetes applications, but also supports forecasting future spending and usage trends.
@@ -314,6 +430,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Ondat v2.9 Cloud Native Block Storage Platform Launch](https://www.ondat.io/blog/ondat-launches-version-2.9)
 
      The main new features of this version: support for resizing volumes with zero downtime, control the type of storage used by workloads through storage pools, and allow the topology of volumes to be defined.
+
+- [Oracle Kubernetes Release Container Engine for Kubernetes Support for Virtual Node Pools and Virtual Nodes](https://docs.oracle.com/en-us/iaas/releasenotes/changes/c3688114- 0104-40b0-aece-67169868f990/)
+
+    Virtual nodes provide a serverless Kubernetes experience, allowing users to run containerized applications at scale without having to manage, scale, upgrade, and troubleshoot node infrastructure. Virtual nodes provide granular pod-level elasticity and usage-based pricing. Users can create virtual nodes by creating virtual node pools in an enhanced cluster.
 
 - [OutSystems Releases Cloud-Native Low-Code Development Solution OutSystems Developer Cloud (ODC)](https://mp.weixin.qq.com/s/yx63Um3ju1mC-qNF9_GJkw)
 
@@ -337,7 +457,19 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### Q
 
-- [QingCloud releases KubeSphere Enterprise Edition 3.3, a distributed multi-tenant cloud-native operating system](https://mp.weixin.qq.com/s/ZuiY-la34DvHW5bQdc9q7Q)
+- [QingCloud Kubernetes Cluster Patrol SaaS Service Officially Released](https://mp.weixin.qq.com/s/Xx82SiyMGtBNgjjk34glqw)
+
+    Kubernetes Cluster Inspection SaaS service helps users discover container vulnerabilities and exposures (CVE) in cluster components, services, and ports, analyze operational risks in Kubernetes, and push reports by instantly or periodically checking whether the configuration of cluster nodes and components in Kubernetes multi-cloud environments comply with best practices, thus ensuring business The ACK helps users identify container vulnerabilities and exposures (CVE) in cluster components, services, and ports, analyze operational risks in Kubernetes, and push reports to ensure continuous and stable business operation and reduce enterprise risks as early as possible.
+
+- [QingCloud Releases KubeSphere Container Platform Enterprise Release 3.4.0](https://mp.weixin.qq.com/s/spjVK8jWtXYb53aYjMWFxw)
+
+    Updates: Support for Prometheus internal TLS authenticated access, built-in integration with HPA extension plugin KEDA, new enterprise space-level gateway and tenant-level storage quota, improved resource alias display weight, support for Whizard observable center configuration via UI.
+
+- [QingCloud Enterprise Cloud Platform v6.1 version officially released](https://mp.weixin.qq.com/s/tNx1neUN5B9auBqp_Fpy3A)
+
+    Updates; New monitoring patrol function; New enterprise space function, covering organization management, user management, quota management, resource management, process approval and other space management modules; New support for third-party storage; Provides VMware vSphere nano-management tools; QKE container engine supports bare metal servers as cluster workers.
+
+- [QingCloud releases KubeSphere Enterprise Release 3.3, a distributed multi-tenant cloud-native operating system](https://mp.weixin.qq.com/s/ZuiY-la34DvHW5bQdc9q7Q)
 
      Version features: New observable center to aggregate and synchronize data scattered across clusters; Refactored cluster monitoring page to focus on resource allocation; Optimized tenant monitoring to support displaying tenant quota settings, etc.; New support for Spring Cloud, a microservices framework; Integrated Argo CD to support GitOps.
 
@@ -351,13 +483,17 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Qualys Container Security v1.22 released](https://www.qualys.com/docs/release-notes/qualys-container-security-1.22-release-notes.pdf)
 
-    Updates: Mirror vulnerability report supports displaying labels related to mirrors, container vulnerability report supports displaying mirror repository information and Kubernetes object information, support for scanning all mirrors in all registries, software component analysis (SCA) scanning adds support for programming languages PHP, Ruby and Rust.
+    Updates: Mirror vulnerability report supports displaying labels related to mirrors, container vulnerability report supports displaying Container registry information and Kubernetes object information, support for scanning all mirrors in all registries, software component analysis (SCA) scanning adds support for programming languages PHP, Ruby and Rust.
 
 - [Qualys Container Security v1.21 released](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release-notes.pdf)
 
      Updates: Support for sensor profiles for regular and CI/CD sensors, support for defining sensor configurations in sensor profiles, allow scanning of all images during automatic registry scans.
 
 ### R
+
+- [Rafay Systems Launches Environment Manager to Optimize Kubernetes Developer Experience](https://rafay.co/press-release/rafay-introduces-environment-manager-to- automate-environment-provisioning-and-accelerate-modern-application-deployment-from-code-to-cloud/)
+
+    Environment Manager improves the developer experience by providing self-service capabilities for full-stack environments. Developers are able to configure modern application stacks from an environment blueprint that is planned, tested, and continuously managed by the platform team. By integrating with Rafay's Kubernetes Operations Platform, Environment Manager abstracts the complexity of the underlying infrastructure and reduces the time required to configure and access Kubernetes' environments.
 
 - [Rafay Systems Launches Cost Management Service for Kubernetes](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
 
@@ -367,6 +503,14 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Rafay Systems launches Service Mesh Manager and Network Policy Manager, providing enterprise-level K8s traffic management and communication security](https://rafay.co/press-release/rafay-launches-service-mesh-manager-and-network-policy-manager-for-enterprise-grade-traffic-management-and-transport-security-for-kubernetes/)
 
      Built on Istio, Service Mesh Manager provides microservice teams with centralized security control and traffic management policy configuration. Built on Cilium, Network Policy Manager provides centralized management and visibility into pod and namespace communication to isolate perimeters and reduce a cluster's lateral attack surface.
+
+- [Rainbond Cloud Native Multi-Cloud Application Management Platform Rainbond Enterprise Edition Released](https://mp.weixin.qq.com/s/pmCwyFbcCwXxcO0-rVM5dw)
+
+    Rainbond Enterprise Edition has a global observable center for monitoring, debugging, and analyzing infrastructure and application services running in Kubernetes clusters and the rainbond platform. In addition, it also provides solutions for IT business system migration to the localized Cintron environment, supports full-link grayscale release and cluster patrol, built-in WAF firewall and operation audit functions, supports private deployment of application stores, etc.
+
+- [Red Hat Releases Local Container Management Tool Podman Desktop Release GA Version 1.0](https://developers.redhat.com/articles/2023/05/23/podman-desktop-now-generally-available )
+
+    Podman Desktop allows you to install and configure Podman in your local environment and keep Podman up to date. Podman Desktop supports multiple container engines and provides the ability to connect and deploy Pods to Kubernetes environments.
 
 - [Red Hat's logging management solution Logging 5.6 was released](https://docs.openshift.com/container-platform/4.12/logging/cluster-logging-release-notes.html#cluster-logging-release-notes-5-6_cluster-logging-release-notes-v5x)
 
@@ -390,7 +534,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Red Hat OpenShift Service Mesh 2.3 released](https://cloud.redhat.com/blog/introducing-openshift-service-mesh-2.3)
 
-     The main new features of this version: support for Istio v1.14, support for creating and managing gateways by injecting deployment instances, adding cluster-wide topology, adding an OpenShift service grid console operator, and supporting Istio visualization tool Kiali 1.57.
+     The main new features of this version: support for Istio v1.14, support for creating and managing gateways by injecting deployment instances, adding cluster-wide topology, adding an OpenShift service mesh console operator, and supporting Istio visualization tool Kiali 1.57.
 
 - [Red Hat Openshift Logging 5.5 release](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.11/html/logging/release-notes#cluster-logging-release-notes-5-5-0)
 
@@ -401,6 +545,14 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [ServiceNow Releases Unified Query Language Lightstep UQL, Extending the Visibility of Kubernetes Applications](https://lightstep.com/blog/announcing-the-lightstep-unified-query-language)
 
      Lightstep UQL supports unified "observability as code", simplifies the process of migrating from multiple disparate tools to the unified Lightstep platform through a single query language, and also supports querying and correlating metrics, logs and track.
+
+- [Solo.io releases Gloo Platform v2.3, a cloud-native application networking platform](https://www.solo.io/blog/gloo-platform-2-3/)
+
+    Updates: New Gloo Portal to help developers classify, share, and manage APIs; support for handling traffic of GraphQL requests in Istio service mesh, including north-south and east-west traffic; support for Kubernetes 1.25 and Istio 1.17; commercial support for Ambient Mesh.
+
+- [Solo.io Launches Gloo Fabric, a Multi-Cloud Dynamic Resource Discovery Solution](https://www.solo.io/blog/introducing-solo-gloo-fabric/)
+
+    Gloo Fabric provides multi-cloud discovery, connectivity, security, and observability capabilities for the Gloo Platform. gloo Fabric configures and manages all features of the platform through a unified API, manages network and security policies through a unified management control plane, supports dynamic discovery of network and cluster resources, and provides API management and cross-cluster multi-tenant isolation functionality. In addition, Gloo Fabric provides automatic zero-trust security and observable capabilities for platform integration.
 
 - [Solo.io Releases Cloud-Native Gateway Gloo Gateway 1.13](https://www.solo.io/blog/gloo-edge-1-13/)
 
@@ -414,6 +566,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Gloo Gateway is built on Envoy and utilizes the multi-tenancy and federation features of Gloo Platform, allowing users to easily manage gateway access for multiple development teams and multi-cluster traffic management. Gloo Network builds on Cilium and integrates the Kubernetes CNI layer as a component of the Gloo Platform.
 
+- [Spectro Cloud Cloud Native Edge Computing Platform Palette Edge Platform v3.3 Released](https://docs.spectrocloud.com/release-notes#edge)
+
+    Release: Support for loading images from external OCI registry, installers can now include pre-loaded content packages (including packages and artifacts); support for creating custom Edge installer images; support for random production device UUID values.
+
 - [Spectro Cloud Kubernetes SaaS Management Platform Palette v3.1 Released](https://docs.spectrocloud.com/release-notes#december28,2022-release3.1.0)
 
     Updates: Palette IaaS clusters support automatic scaling, provides Federal Information Processing Standards (FIPS) compliant versioning of Kubernetes, supports filtering user access by tag and viewing cluster detail views, supports versioning of application profiles, leverages Helm and OCI registries for custom package management, allows suspending and resuming unused virtual Clusters.
@@ -426,6 +582,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates include: new tamper-resistant features for edge K8s clusters, support for the edge-optimized K8s distribution Palette eXtended Kubernetes Edge, and simplified edge device deployment.
 
+- [StormForge Releases Optimize Live v2.0, an Optimization Solution for Kubernetes Production Environments](https://www.stormforge.io/press-releases/stormforge-launches-v2-optimize-live-kubernetes-resource-optimization/)
+
+    Updates: resizes applications with a single helm deployment; uses machine learning to analyze workload usage patterns and provide CPU and memory recommendations; can automatically detect the presence of HPAs; provides a range of resource usage reports; simplifies deployment of resource recommendations.
+
 - [StormForge K8s optimization platform integrates with Datadog's cloud application monitoring service to simplify Kubernetes observability](https://www.stormforge.io/press-releases/new-integration-couples-datadog-observability-stormforge-machine-learning-deliver-automatic-actionable-insights-for-kubernetes-application-optimization/?utm_source=thenewstack&utm_medium=website)
 
      The StormForge K8s optimization platform analyzes observable data based on machine learning technology and recommends resource settings (CPU, memory, replicas) to improve efficiency, scale, and application performance. The platform can now leverage Datadog as a unified observation platform to view and apply optimization recommendations and identify application parameters that should be recalibrated to reduce cluster size and reclaim and reallocate resources.
@@ -436,18 +596,18 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [SUSE Launches Rancher Prime, an Enterprise Container Management Platform](https://mp.weixin.qq.com/s/iVFsSGlRd4TdJGcRKLQBuQ)
 
-    Rancher Prime is a distribution of Rancher with core code from Rancher Community Edition, but with more emphasis on security and enhanced features and services for enterprise users.
-    The features of Rancher Prime are: improved comprehensive security governance and a trusted mirror repository.
+    Rancher Prime is a distribution of Rancher with core code from Rancher Community Release, but with more emphasis on security and enhanced features and services for enterprise users.
+    The features of Rancher Prime are: improved comprehensive security governance and a trusted Container registry.
     introduce UI extensions; full lifecycle support for hosting clusters on Ali Cloud, Tencent Cloud and Huawei Cloud;
     support openEuler Linux and support for ARM systems.
 
 - [SUSE releases SUSE Edge 2.0, a cloud-native edge management platform](https://mp.weixin.qq.com/s/LszXlp9iKT6FudzWY3EmaQ)
 
-     The main new features of this version: Simplify the operation of adding and updating edge devices, support the management of Kubernetes and the underlying operating system through a unified operation panel, and integrate SUSE Linux Enterprise Micro 5.3, a lightweight operating system specially designed for containerized and virtualized workloads , Provide security protection for all distributed environments.
+     The main new features of this version: Simplify the operation of adding and updating edge devices, support the management of Kubernetes and the underlying operating system through a unified operation panel, and integrate SUSE Linux Enterprise Micro 5.3, a lightweight operating system specially designed for containerized and virtualized workloads, Provide security protection for all distributed environments.
 
 - [Real-time monitoring platform observation cloud update](https://mp.weixin.qq.com/s/RZCpDuNbq0C0SJfWI2E63w)
 
-     Updates include: support for viewing YAML files corresponding to infrastructure containers, new log viewer DQL search mode, optimized application performance monitoring, DataKit supports synchronizing k8s label as a tag to pod indicators and logs, and supports various The yaml information is collected on the corresponding object data, and the Trace collection supports automatic extraction of some key meta information.
+     Updates include: support for viewing YAML files corresponding to infrastructure containers, new log viewer DQL search mode, optimized application performance monitoring, DataKit supports synchronizing k8s label as a tag to pod metrics and logs, and supports various The yaml information is collected on the corresponding object data, and the Trace collection supports automatic extraction of some key meta information.
 
 - [Time Speed Cloud Microservice Governance Platform TMF v5.6.0 released](https://mp.weixin.qq.com/s/8J0uJIKBwR9RIRwn299Acw)
 
@@ -479,6 +639,12 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
   
      The updates include: Added SecurityGroupPolicy enhancement component, which supports binding security groups for pods matching policies; supports business pods to use Service Account Token to access cloud resources such as CVM and VPC; supports modifying CPU and memory requests without restarting pods /limit value; support node/workload resource insight capabilities; add Request intelligent recommendation function; add native node-specific scheduler; optimize native node initialization process.
 
+- [Tetrate Launches TSE, a service mesh Solution Designed for Amazon EKS](https://mp.weixin.qq.com/s/Q4qTLOv8kNn7lf0flHCOzg)
+
+    TSE is built on open source service mesh components such as Istio and Envoy, and is optimized for Amazon EKS to simplify installation, configuration and operation.
+    TSE provides service mesh automation on top of Istio and Envoy.
+    It is used to install and configure open source components on Amazon EKS, integrate with AWS services, and provide a management console for platform operators to quickly configure the service mesh for security, resiliency, and observability.
+
 - [Tetrate Application Connectivity Platform Tetrate Service Bridge v1.6.0 Released](https://docs.tetrate.io/service-bridge/1.6.x/en-us/release_notes_announcements)
 
      Updates: Add security rules such as security domain and service security settings; Add east-west gateway to improve service failover between clusters; User interface optimization to support visualization and monitoring of platform and service activities; New troubleshooting tool to troubleshoot without cluster access privileges; Support multiple Istio environments within clusters; Support WASM extensions across gateways and service agents; Skywalking The backend service OAP replaces Zipkin for collecting and querying traces.
@@ -490,13 +656,26 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Tigera Releases Calico Runtime Threat Defense, a Kubernetes Network and Container Threat Defense Solution](https://www.tigera.io/news/tigera-introduces-calico-runtime-threat-defense-the-most-comprehensive-plug-and-play-defense-against-container-and-network-based-threats/)
 
     Calico Runtime Threat Defense combines a combination of signature- and behavior-based techniques to detect known and zero-day threats, enabling detection of MITRE's most common container and network-based attacks.
-    Unlike traditional runtime threat detection platforms, Calico Runtime Threat Defense continuously monitors and analyzes network and container behavior for indicators of attack (IOA) without writing complex rules.
+    Unlike traditional runtime threat detection platforms, Calico Runtime Threat Defense continuously monitors and analyzes network and container behavior for metrics of attack (IOA) without writing complex rules.
+
+- [Traefik Labs Launches Traefik Hub, the Industry's First Kubernetes API Management Solution](https://traefik.io/blog/ushering-in-a-new-generation-of-api-management/)
+
+    Traefik Hub for publishing, securing, and managing APIs supports Traefik and major third-party portal controllers, including NGINX, HAProxy, Ambassador, and more. Supports GitOps, provides strong security features such as Role-Based Access Control (RBAC), and supports authentication and authorization mechanisms such as OAuth 2.0 and JWT.
+
+- [Traefik Labs releases Traefik Enterprise 2.10, a cloud-native API gateway](https://traefik.io/blog/announcing-traefik-enterprise-2-10/)
+
+    Updates: allows OIDC middleware to check requests in access tokens, allows loading sensitive data from Kubernetes Secret, and supports limiting API access rates.
 
 - [Traefik Labs releases Traefik Hub 1.0, a cloud-native network platform](https://traefik.io/blog/announcing-the-general-availability-of-traefik-hub-1-0/)
 
      Traefik Hub 1.0 allows users to quickly and securely publish Kubernetes or Docker containers using Traefik or Nginx. Traefik Hub provides the centralized control plane needed to network Kubernetes clusters without deploying container sidecars to run networking software. It supports container networking through secure encrypted tunnels and direct private connections, adds access control to services through JWT or OIDC, realizes scale automation through GitOps, and is equipped with workspaces to promote cross-team collaboration.
 
-### V
+### U, V
+
+- [Upbound Launches Managed Control Plane Management Service (MCP) based on Crossplane](https://blog.upbound.io/upbound-general-availability/)
+
+    With MCP, users can scale to thousands of CRDs and use control planes to manage all the cloud service resources they need, allowing them to run dozens or even hundreds of control planes to serve different environments, teams, businesses, and clients.
+    In addition, MCP integrates seamlessly with Git, providing a console for managing and manipulating control planes and all resources, support for installation in any Kubernetes cluster, and support for managing infrastructure and application resources in a GitOps process.
 
 - [Veeam Releases Kasten K10 v5.5, Kubernetes Data Management Platform](https://www.kasten.io/kubernetes/resources/blog/scaling-simplicity-with-kasten-k10-v5.5)
 
@@ -506,6 +685,18 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      TLS Protect for Kubernetes is part of Control Plane for Machine Identities, Venafi's platform for machine identity management.
      Helps security and platform teams manage cloud-native machine identities such as TLS, mTLS, and SPIFFE in multi-cloud and multi-cluster Kubernetes environments, enhancing the observability, control, and automation of machine identity management.
+
+- [Volcano Engine Releases Distributed Cloud Native Platform DCP](https://mp.weixin.qq.com/s/Fz7R8R0keKFEryq8zQKFoA)
+
+    [DCP](https://www.volcengine.com/product/dcp) is an enterprise-level cloud native unified management platform for multi-cloud and multi-Kubernetes cluster scenarios, providing unified management and operation and maintenance of multi-cloud clusters, cross-cluster distribution of applications, unified traffic control and other capabilities, DCP provides unified management and operation and maintenance of Volcano Engine container clusters, third-party clusters and self-built clusters; provides cross-cluster and cross-cloud elastic scheduling capability based on cluster federation and other technologies; provides multi-cluster service discovery, multi-cluster unified portal access and other capabilities; enables application data recovery and cross-cluster/cloud application migration based on backup data.
+
+- [VMware Tanzu Releases Kubernetes DevOps Platform VMware Tanzu Application Platform 1.5](https://tanzu.vmware.com/content/blog/tanzu-application-platform-1-5-ga)
+
+    Updates: Completed Namespace Provisioner with GitOps mode support; Platform engineers can use private Git repositories to reference templated resources; Support for GitOps-based installation process; New panel to display details of workloads in a cluster; New External Secrets Operator; Support for Spring Cloud Gateway for Kubernetes, a distributed API gateway.
+
+- [VMware Tanzu Service Mesh 3.0.3, a Service Mesh solution, was released](https://docs.vmware.com/en/Tanzu/services/rn/vmware-tanzu-service-mesh-global-controller-release-notes/index.html#Past%20Tanzu%20Service%20Mesh%20Releases)
+
+    Update: Tanzu Service Mesh CLI supports GitOps, which can be used to automatically deploy Tanzu Service Mesh environments to clusters; supports selecting the namespace to inject proxy sidecar into; supports enterprise-level proxy communication between client clusters and Tanzu Service Mesh SaaS.
 
 - [VWware Tanzu Multi-Cloud Multi-Cluster Kubernetes Management Solution Tanzu Mission Control Update](https://docs.vmware.com/en/VMware-Tanzu-Mission-Control/services/rn/vmware-tanzu-mission-control-release-notes/index.html)
 
@@ -537,7 +728,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [VMware Spring Cloud Gateway for Kubernetes v1.2.0 release](https://docs.vmware.com/en/VMware-Spring-Cloud-Gateway-for-Kubernetes/1.2/scg-k8s/GUID-release-notes.html)
 
-     The main new features of this version: separate the TLS configuration of client entrance and upstream application service communication, expand the authority of customizing and extending cloud secret management, increase the circuit breaker status indicator, add global and each API route response cache configuration, and add JSON Filters for request translation to gRPC upstream services, podOverrides added to configure K8s pod override on API Gateway instances, API Gateway can now be deployed via a standalone JAR.
+     The main new features of this version: separate the TLS configuration of client entrance and upstream application service communication, expand the authority of customizing and extending cloud secret management, increase the circuit breaker status metric, add global and each API route response cache configuration, and add JSON Filters for request translation to gRPC upstream services, podOverrides added to configure K8s pod override on API Gateway instances, API Gateway can now be deployed via a standalone JAR.
 
 ### W, Z
 

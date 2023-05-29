@@ -5,11 +5,9 @@ hide:
 
 # 什么是 MinIO
 
-MinIO 是一款非常热门的轻量、开源对象存储方案，能够完美兼容 AWS S3 协议，对 K8s 也能够进行非常友好的支持，专为 AI 等云原生工作负载而设计。
-包括构建高性能的云原生数据机器学习、大数据分析、海量存储的基础架构等方面，MinIO 都可以提供数据工作负载。
+[MinIO](https://www.minio.org.cn/) 是一款热门、轻量、开源的对象存储方案，完美兼容 AWS S3 协议，友好支持 K8s。MinIO 是专为 AI 等云原生工作负载而设计的，可以为高性能的云原生数据机器学习、大数据分析、海量存储的基础架构等提供数据工作负载。
 
-DCE 的 MinIO 模块是基于开源 MinIO 构建的对象存储中间件，即插即用。
-DaoCloud 为其开发了简单易用的图形化界面，向用户提供计算、存储和带宽资源独占的 MinIO 专享实例。
+DCE 的 MinIO 模块是基于开源 MinIO 构建的对象存储中间件，即插即用。DaoCloud 为其开发了简单易用的图形化界面，向用户提供计算、存储和带宽资源独占的 MinIO 专享实例。
 
 MinIO 之所以广受欢迎，是因为其具有以下特点：
 
@@ -41,10 +39,8 @@ MinIO 之所以广受欢迎，是因为其具有以下特点：
 
     可以创建数以百万计的实例部署在私有云、公有云和边缘计算环境。
 
-MinIO 为云原生而设计，可以作为轻量级容器运行，由外部编排服务（如 Kubernetes）管理。
-整个服务器约为几十 MB 的静态二进制文件，即使在高负载下也可以高效利用 CPU 和内存资源。
-使得企业可以在共享硬件上共同托管大量租户。
+MinIO 为云原生而设计，可以作为轻量级容器运行，由外部编排服务（如 Kubernetes）管理。整个服务器约为几十 MB 的静态二进制文件，即使在高负载下也可以高效利用 CPU 和内存资源，使得企业可以在共享硬件上共同托管大量租户。
 
-![MinIO 主界面](../images/what01.png)
+![MinIO 主界面](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/what01.png)
 
-[申请社区免费体验](../../../dce/license0.md){ .md-button .md-button--primary }
+[创建 MinIO 实例](../user-guide/create.md){ .md-button .md-button--primary }

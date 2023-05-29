@@ -25,7 +25,7 @@ Even if up to 5 ((n/2)–1) drives are lost (either parity or data), data can st
 The implementation of MinIO ensures that even if multiple devices are lost or unavailable, objects can be read or new ones written.
 Finally, MinIO's erasure code is at the object level and can repair objects one at a time.
 
-![](../images/concept01.png)
+<!--screenshot-->
 
 ## Bitrot Protection
 
@@ -37,7 +37,7 @@ MinIO's optimized implementation of a high-speed hash algorithm ensures that it 
 End-to-end integrity is ensured by hashing on READ and hashing from applications, across the network, and memory/drives on WRITE.
 The implementation is designed for speed and can achieve hash speeds in excess of 10 GB per second on a single core of an Intel CPU.
 
-![](../images/concept02.png)
+<!--screenshot-->
 
 ## encryption
 
@@ -55,7 +55,7 @@ With minimal overhead, automatic encryption can be turned on per application and
 When WORM is enabled, MinIO disables all APIs that might mutate object data and metadata.
 This means that once the data is written it is protected from tampering. This has practical application for many different regulatory requirements.
 
-![](../images/concept03.png)
+<!--screenshot-->
 
 ## Authentication and management
 
@@ -63,7 +63,7 @@ MinIO supports the most advanced standards in identity management and integrates
 This means access is centralized and passwords are temporary and rotated rather than stored in configuration files and databases.
 Additionally, access policies are fine-grained and highly configurable, which means supporting multi-tenant and multi-instance deployments is simple.
 
-![](../images/concept04.png)
+<!--screenshot-->
 
 ## Continuous copy
 
@@ -75,7 +75,7 @@ Lambda notifications ensure that changes propagate immediately, contrary to trad
 Continuous replication means that even with highly dynamic data sets, data loss is kept to a minimum in the event of a failure.
 Finally, like MinIO does, continuous replication is multi-vendor, which means your backup location can be anywhere from NAS to public cloud.
 
-![](../images/concept05.png)
+<!--screenshot-->
 
 ## Global Consistency
 
@@ -88,7 +88,7 @@ MinIO Federation Server supports an unlimited number of distributed schema sets.
 The impact of this approach is that object storage can scale massively for large, geographically dispersed enterprises,
 While retaining the ability to accommodate various applications (S3 Select, MinSQL, Spark, Hive, Presto, TensorFlow, H20) from. Has a single console.
 
-![](../images/concept06.png)
+<!--screenshot-->
 
 ## Multi-Cloud Gateway
 
@@ -103,4 +103,4 @@ What's more, MinIO ensures that you see exactly the same view of your data from 
 MinIO can go a step further and make your existing storage infrastructure compatible with Amazon S3.
 Its impact is far-reaching. Organizations can now truly unify their data infrastructure from files to blocks, all appearing as objects accessible through the Amazon S3 API without migration.
 
-![](../images/concept07.png)
+<!--screenshot-->

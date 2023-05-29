@@ -10,7 +10,7 @@ hide:
 ## 前置条件
 
 - 至少准备两个集群，可将 submariner-k8s-broker 部署在其中一个集群中，也可以单独部署在其他集群，submariner-operator 部署在每个 join 的子集群中。子集群和 submariner-k8s-broke 部署的集群之间应能够正常通讯
-- 不同子集群的子网最好不要重启, 否则需要启用 Globalnet 功能, 而 Globalnet 功能有一定的限制
+- 不同子集群的子网最好不要重叠, 否则需要启用 Globalnet 功能, 而 Globalnet 功能有一定的限制
 - 支持的 CNI 列表为:
     * OpenShift-SDN
     * Weave
@@ -34,35 +34,35 @@ hide:
 
 2. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `submariner-k8s-broker`。
 
-    ![helm](../../images/submariner-k8s-broker-helm-repo.png)
+    ![helm](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-k8s-broker-helm-repo.png)
 
 3. 在版本选择中选择希望安装的版本，点击安装。
 
 4. 推荐安装到 `submariner-k8s-broker` 命名空间下：
 
-    ![broker-ns](../../images/submariner-k8s-broker-ns.png)
+    ![broker-ns](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-k8s-broker-ns.png)
 
 5. 下图所示配置无需更改，保持默认参数即可：
 
-    ![config](../../images/submariner-k8s-broker-config.png)
+    ![config](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-k8s-broker-config.png)
 
 6. 在 Broker 集群成功安装 `submariner-k8s-broker`：
 
-    ![broker](../../images/submariner-k8s-broker-install.png)
+    ![broker](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-k8s-broker-install.png)
 
 7. 切换到其中子集群：master01，安装 `submariner-operator`：
 
-    ![operator](../../images/submariner-operator-helm-repo.png)
+    ![operator](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-operator-helm-repo.png)
 
 8. 在版本选择中选择希望安装的版本，点击安装。
 
 9. 推荐安装到 `submariner-operator` 命名空间下，开启就绪等待：
 
-    ![operator-ns](../../images/submariner-operator-ns.png)
+    ![operator-ns](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-operator-ns.png)
 
 10. 配置 `submariner-operator` 连接 Broker 集群的配置:
 
-    ![operator-broker](../../images/submariner-operator-broker.png)
+    ![operator-broker](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-operator-broker.png)
 
     上面的参数说明:
 
@@ -97,11 +97,11 @@ hide:
 
 11. 配置 `submariner-operator`：
 
-    ![operator-install1](../../images/submariner-operator-install1.png)
+    ![operator-install1](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-operator-install1.png)
 
     以上配置说明:
 
-    * `IPsec Configuration` —> `ceIPSecPSK`：用于建立 IPsec 隧道时所需要的预共享密钥。如果对安全性有较高要求，可以使用下面的方式获取：
+    * `IPsec Configuration` —> `ceIPSecPSK`：建立 IPsec 隧道时所需要的预共享密钥。如果对安全性有较高要求，可以使用下面的方式获取：
 
         ```shell
         [root@broker ~]# LC_CTYPE=C tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w 64 | head -n 1
@@ -109,11 +109,11 @@ hide:
         ```
 
     * `Submariner` —> `clusterId`：用于标识该子集群，填写规范需要满足 DNS-1123 Label。
-    * `Submariner` —> `clusterCidr`：填写子集群 Pod 的 CIDR。
+    * `Submariner` —> `clusterCidr`：子集群 Pod 的 CIDR。
 
-        ![operator-install2](../../images/submariner-opearator-install2.png)
+        ![operator-install2](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-opearator-install2.png)
 
-    * `Submariner` —> `serviceCidr`：填写子集群 Service 的 CIDR。
+    * `Submariner` —> `serviceCidr`：子集群 Service 的 CIDR。
     * `Submariner` —> `globalCidr`：开启 globalnet 功能。
 
         > 注意: 如果不使用  globalnet 功能, 请不要配置该字段。
@@ -121,13 +121,13 @@ hide:
     * `Image Configuration` —> `cableDriver`：隧道模式，支持 `libreswan`(默认)、`wireguard`、`vxlan`。
     * `Image Configuration` —> `natEnabled`：是否打开网关节点之间的 NAT 功能。如果不同子集群的网关节点需要跨公网才能通讯, 则开启。
 
-12. 在子集群 master1 安装完成：
+12. 在子集群 master01 安装完成：
 
-    ![opearator-install-3](../../images/submariner-opearator-install-3.png)
+    ![opearator-install-3](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-opearator-install-3.png)
 
-13. 安装完成后，需要手动设置子集群 master1 其中某个节点为网关节点，需要添加标签 "submariner.io/gateway: true"：
+13. 安装完成后，需要手动设置子集群 master01 其中某个节点为网关节点，需要添加标签 "submariner.io/gateway: true"：
 
-    ![gateway](../../images/submariner-operator-gateway-label.png)
+    ![gateway](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner-operator-gateway-label.png)
 
 14. 查看组件是否正常 running：
 
@@ -144,9 +144,9 @@ hide:
     submariner-routeagent-kh4hp                              1/1     Running     0              31h
     ```
 
-15. 子集群 master1 join 完成，按照同样方式在另一个子集群安装 submariner。
+15. 子集群 master01 join 完成，按照同样方式在另一个子集群安装 submariner。
 
 ## 注意事项
 
 - 安装完之后需要至少给一个节点打上标签："submariner.io/gateway: true"。只有该标签存在, Gateway 组件才会被安装。
-- 如果集群 CNI 为 Calico, 需要做一些额外的操作, 来解决与 Calico 的兼容性问题, 请参考[使用说明](usage.md)。
+- 如果集群 CNI 为 Calico, 需要做一些额外的操作，来解决与 Calico 的兼容性问题，请参考[使用说明](usage.md)。

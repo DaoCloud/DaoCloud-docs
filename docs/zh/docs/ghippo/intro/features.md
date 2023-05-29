@@ -21,7 +21,7 @@ hide:
         user --> user2[用户 B]
         user --> user3[用户 C]
         
-    click user "https://docs.daocloud.io/ghippo/user-guide/01UserandAccess/User/"
+    click user "https://docs.daocloud.io/ghippo/user-guide/access-control/user/"
 
     classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
     classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
@@ -44,9 +44,9 @@ hide:
         admin --> group[创建用户组]
         admin --> add[将用户加入用户组]
         
-    click user "https://docs.daocloud.io/ghippo/user-guide/01UserandAccess/User/"
-    click group "https://docs.daocloud.io/ghippo/user-guide/01UserandAccess/Group/"
-    click add "https://docs.daocloud.io/ghippo/user-guide/01UserandAccess/Group/#_5"
+    click user "https://docs.daocloud.io/ghippo/user-guide/access-control/user/"
+    click group "https://docs.daocloud.io/ghippo/user-guide/access-control/group/"
+    click add "https://docs.daocloud.io/ghippo/user-guide/access-control/group/#_5"
 
     classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
     classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
@@ -62,7 +62,7 @@ hide:
     您可以将不同模块的管理权限划分给不同的用户，
     比如用户 A 管理[容器管理模块](../../kpanda/intro/what.md)，用户 B 管理[应用工作台模块](../../amamba/intro/what.md)，共同管理[可观测性模块](../../insight/intro/what.md)。
 
-    ![角色](../images/role.png)
+    ![角色](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/role.png)
 
 4. 工作空间
 
@@ -75,7 +75,7 @@ hide:
 
     虽然一个层级可以包含多个层级或工作空间，但是给定的层级或者工作空间只能有一个父级。
 
-    ![工作空间](../images/workspace.png)
+    ![工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/workspace.png)
 
 5. 审计日志
 
@@ -85,7 +85,9 @@ hide:
 
 6. 平台设置
 
-    [平台设置](../user-guide/platform-setting/about.md)包括账号安全设置、[外观定制](../user-guide/platform-setting/appearance.md)、[邮件服务器](../user-guide/platform-setting/mail-server.md)等。
+    [平台设置](../user-guide/platform-setting/about.md)包括账号安全设置、
+    [外观定制](../user-guide/platform-setting/appearance.md)、
+    [邮件服务器](../user-guide/platform-setting/mail-server.md)等。
     当需要对账号的安全信息、平台 logo、许可证授权、邮件服务器等平台级设置进行管理时，
     可以通过 `平台设置` 进行操作，平台设置仅平台管理员具有管理权限。
 
@@ -100,8 +102,8 @@ hide:
         
     click about "https://docs.daocloud.io/ghippo/user-guide/platform-setting/about/"
     click password "https://docs.daocloud.io/ghippo/user-guide/password/"
-    click appear "https://docs.daocloud.io/ghippo/user-guide/platform-setting/Appearance/"
-    click mail "https://docs.daocloud.io/ghippo/user-guide/platform-setting/MailServer/"
+    click appear "https://docs.daocloud.io/ghippo/user-guide/platform-setting/appearance/"
+    click mail "https://docs.daocloud.io/ghippo/user-guide/platform-setting/mail-server/"
     click license "https://docs.daocloud.io/dce/license0/"
 
     classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;

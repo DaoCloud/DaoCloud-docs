@@ -12,9 +12,10 @@ DCE 5.0 针对实际应用场景，精选了一些经典的数据服务中间件
 - [Elasticsearch 搜索服务](elasticsearch/intro/what.md)：目前首选的全文搜索引擎
 - [Kafka 消息队列](./kafka/intro/what.md)：常用于消息传输的数据管道
 - [MinIO 对象存储](./minio/intro/what.md)：一款非常热门的轻量对象存储方案
-- [MySQL 数据库](mysql/intro/what.md)：最流行的关系型数据库
+- [MySQL 数据库](mysql/intro/what.md)：最流行的开源关系型数据库之一
 - [RabbitMQ 消息队列](rabbitmq/intro/what.md)：常用于交易数据的传输管道
 - [Redis 缓存服务](./redis/intro/what.md)：一种内存数据库
+- [PostgreSQL 数据库](./postgresql/intro/what.md)：最流行的开源关系型数据库之一
 
 ## 数据服务学习路径
 
@@ -26,21 +27,20 @@ DCE 5.0 针对实际应用场景，精选了一些经典的数据服务中间件
 
 ```mermaid
 graph TD
-    A(通过 Helm 安装) -->B(选择工作空间)
-    B --> C{部署/创建实例}
+    
+    B(选择工作空间) --> C{部署/创建实例}
     C -.->D[更新/删除实例]
     C -.->E[实例概览]
     C -.->F[实例监控]
     C -.->G[数据迁移]
     C -.->H[卸载中间件]
     
-    click A "https://docs.daocloud.io/middleware/rabbitmq/quickstart/install/"
-    click B "https://docs.daocloud.io/middleware/rabbitmq/userguide/login/"
-    click C "https://docs.daocloud.io/middleware/rabbitmq/userguide/create/"
-    click D "https://docs.daocloud.io/middleware/rabbitmq/userguide/update/"
-    click E "https://docs.daocloud.io/middleware/rabbitmq/userguide/view/"
-    click F "https://docs.daocloud.io/middleware/rabbitmq/userguide/insight/"
-    click G "https://docs.daocloud.io/middleware/rabbitmq/userguide/migrate/"
+    click B "https://docs.daocloud.io/middleware/rabbitmq/user-guide/login/"
+    click C "https://docs.daocloud.io/middleware/rabbitmq/user-guide/create/"
+    click D "https://docs.daocloud.io/middleware/rabbitmq/user-guide/update/"
+    click E "https://docs.daocloud.io/middleware/rabbitmq/user-guide/view/"
+    click F "https://docs.daocloud.io/middleware/rabbitmq/user-guide/insight/"
+    click G "https://docs.daocloud.io/middleware/rabbitmq/user-guide/migrate/"
     click H "https://docs.daocloud.io/middleware/rabbitmq/quickstart/install/#_1"
 ```
 
@@ -50,3 +50,4 @@ graph TD
 [MySQL](mysql/intro/what.md){ .md-button .md-button--primary }
 [RabbitMQ](rabbitmq/intro/what.md){ .md-button .md-button--primary }
 [Redis](./redis/intro/what.md){ .md-button .md-button--primary }
+[PostgreSQL](./postgresql/intro/what.md){ .md-button .md-button--primary }

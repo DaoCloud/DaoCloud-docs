@@ -1,32 +1,66 @@
 ---
 hide:
-  - toc
+  - heel
 ---
 
 # Create a microservice gateway
 
-The microservice gateway supports a high-availability architecture of multi-tenant instances, and is compatible with the unified gateway access capability of microservices in various modes. This page describes how to create a microservice gateway instance.
+The micro-service gateway supports the high-availability architecture of multi-tenant instances and is compatible with the unified gateway access capabilities of micro-services in various modes. This page describes how to create a microservice gateway instance.
 
-The steps to create a microservice gateway are as follows:
+To create a microservice gateway, perform the following steps:
 
-1. Click `Microservice Gateway` on the left navigation bar, and click `Create Gateway` in the upper right corner of the `Microservice Gateway List` page to enter the microservice gateway creation page.
+1. In the left navigation bar, click `Cloud-native Gateway`, and in the upper right corner of the `Gateway List` page, click `Create Gateway` to enter the page for creating the micro-service gateway.
 
-    ![Enter creation page](imgs/enter-creation-page.png)
+    <!--![]()screenshots-->
 
-2. Fill in the configuration
+2. Follow the instructions below to complete the basic configuration (required).
 
-    Gateway configuration is divided into two parts: basic configuration (required) and advanced configuration (optional). Note the following when filling in the configuration information:
+    - Gateway name: contains a maximum of 63 letters, digits, and underscores (_). The name cannot be changed after the gateway is created.
+    - Deploy cluster: Select the cluster to deploy the gateway in.
 
-    - Gateway name: the length does not exceed 63 characters, supports letters, numbers, and underscores, and cannot be changed after the gateway is created.
-    - Deployment location: Only one gateway can be deployed in a namespace.
-    - Jurisdiction namespace: the namespace where the default jurisdiction gateway is located. It supports the jurisdiction of multiple namespaces at the same time. The same namespace cannot be governed by two gateways at the same time.
-    - Control the number of nodes: a single copy is unstable and needs to be selected carefully.
+        > If the target cluster does not appear in the optional list, you can go to the [Integrate](../../../kpanda/user-guide/clusters/integrate-cluster.md) or [Create](../../../kpanda/user-guide/clusters/create-cluster.md) cluster in the container management module and set the [The cluster or namespace under the cluster is bound to the current workspace ](../../../ghippo/user-guide/workspace/quota/#_4) through the global management module.
 
-        ![Fill in the basic configuration](imgs/config.png)
-        ![Fill in advanced configuration](imgs/advance-config.png)
+    - Namespace (deployment) : Select the namespace in which to deploy the gateway. Only one gateway can be deployed in a namespace.
+    - Namespace (jurisdiction) : Sets which namespaces can be governed by the new gateway. Specifies the namespace of the default jurisdiction gateway. Supports managing multiple namespaces at the same time. A namespace cannot be managed by two gateways at the same time.
 
-3. Confirm the filled information and click `Confirm` in the lower right corner of the page.
+        <!--![]()screenshots-->
 
-    ![Confirm the information filled in](imgs/confirm.png)
+    - Service entry mode:
 
-After clicking `Confirm`, a message that the gateway is successfully created will pop up in the upper right corner. The system will automatically return to the `Microservice Gateway List` page, and you can see the newly created gateway instance in the list.
+        - Intra-cluster access: Services can be accessed only within the same cluster
+
+            <!--![]()screenshots-->
+
+        - Node port: Access services from outside the cluster through the IP address and static port of a node
+
+            <!--![]()screenshots-->
+
+        - Load balancer: Use a cloud service provider"s load balancer to make services publicly accessible
+
+            - External traffic policy: `Cluster` Indicates that traffic can be forwarded to pods on other nodes in the cluster. `Local` Indicates that traffic can be forwarded only to the Pod on the local node
+            - Load balancing type: MetalLB or other
+            - MetalLB IP pool: Supports automatic selection or assignment of IP pools
+            - Load balancer IP address: You can automatically select or specify an IP address
+
+                <!--![]()screenshots-->
+
+    - Resource configuration: How many control nodes and working nodes are configured for the current gateway. Single copy is unstable, so select it with caution
+    - Component version dependency: Displays the components that are required to create a gateway
+
+        <!--![]()screenshots-->
+
+3. Follow the instructions below to complete the advanced configuration (optional).
+
+    - Log configuration: Sets log levels for working node (envoy) and Pod
+    - Resource configuration: Configure CPU and memory resources for controller and working nodes
+
+        <!--![]()screenshots-->
+
+    - Update mechanism: `Create` indicates that the original gateway is deleted and a new gateway is created. `Rolling Update` indicates that the Pod related to the gateway is updated rolling instead of deleting the gateway
+    - Number of proxy layers before the gateway: Several proxy endpoints must pass through the request from the client to the gateway. Enter this parameter based on the actual situation. For example, `Client-Nginx-Gateway` has one proxy level because only one Nginx proxy endpoint passes between them.
+
+        <!--![]()screenshots-->
+
+4. Click `OK` at the lower right corner of the page to return to the micro-service gateway list page. You can perform the operations [Update Gateway](update-gateway.md) or [Delte Gateway](delete-gateway.md) on the right.
+
+    <!--![]()screenshots-->

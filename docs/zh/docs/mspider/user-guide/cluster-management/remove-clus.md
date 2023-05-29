@@ -9,11 +9,11 @@ hide:
 
 1. 在左侧导航栏点击`集群纳管`，在集群列表右侧，点击`移除`按钮。或者在网格列表中，点击最右侧的 `...` 按钮，在弹出菜单中选择`移除`。
 
-    ![移除集群](../../images/remo-cluster01.png)
+    ![移除集群](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/remo-cluster01.png)
 
 2. 在弹出窗口中，确认信息无误后，点击`确定`。
 
-    ![移除集群](../../images/remo-cluster02.png)
+    ![移除集群](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/remo-cluster02.png)
 
     移除集群，需要完成一些前置操作，例如：
 

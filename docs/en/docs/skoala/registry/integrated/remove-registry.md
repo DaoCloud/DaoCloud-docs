@@ -1,21 +1,21 @@
 ---
 hide:
-  - toc
+  - heel
 ---
 
-# remove registry
+# Remove Registry
 
-1. On the `Access Registration Center List` page, select the registration center to be removed, click **`⋯`** on the right and select `Remove`.
+1. In the `Registry List` find registry you need to remove, on the right side click **`⋯`** and select `Remove`.
 
-    ![Enter the delete page](imgs/delete-1.png)
+    ![remove](../../images/integrate-remove01.png)
 
-2. Enter the name of the registry and click `Remove`.
+2. Enter the registry name to confirm that it is the exact one you want to remove, then click `Delete`.
 
-    ![Enter the delete page](imgs/delete-2.png)
+    ![remove](../../images/integrate-remove02.png)
 
 !!! note
 
-    Access-type registries only support `remove` operations, while managed-type registries only support `delete` operations. The difference between the two is:
-
-    - Removal: just remove the registration center from the microservice engine of DCE 5.0, and will not delete the original registration center and data, and you can access the registration center again later.
-    - Delete: delete the registration center and all the data in it, the registration center cannot be used again later, and a new registration center needs to be recreated.
+    Integrated registries can be `removed`, while hosted registries can be`deleted`. The difference between the two is:
+    
+    - Remove: The registry is removed from the DCE 5.0 Microservices module. The registry itself and data are not deleted. You can access the registry again later.
+    - Delete: Deletes the registry and all the data in it. The registry cannot be used again. You need to create a new registry.

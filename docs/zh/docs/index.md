@@ -19,11 +19,11 @@ DCE 5.0 的各个产品模块独立解耦，灵活升级，业务无感知，开
 <div class="grid cards" markdown>
 
 - :fontawesome-solid-jet-fighter-up: **安装** [安装社区版和商业版](install/intro.md)
-- :octicons-container-16: **容器管理** [管理集群、节点、负载等基础设施](kpanda/intro/what.md)
+- :octicons-container-16: **容器管理** [集群/节点/负载等基础设施](kpanda/intro/what.md)
 - :fontawesome-solid-user-group: **全局管理** [设置登录、访问权限、外观](ghippo/intro/what.md)
 - :material-monitor-dashboard: **可观测性** [一站式图形化仪表盘](insight/intro/what.md)
 - :material-microsoft-azure-devops: **应用工作台** [CI/CD 流水线](amamba/intro/what.md)
-- :material-cloud-check: **多云编排** [管理多云实例/负载/策略](kairship/intro/what.md)
+- :material-cloud-check: **多云编排** [多云实例/负载/策略](kairship/intro/what.md)
 - :material-engine: **微服务引擎** [微服务治理中心和网关](skoala/intro/what.md)
 - :material-table-refresh: **服务网格** [Istio 定制增强版](mspider/intro/what.md)
 - :material-middleware: **中间件** [ES, Kafka, MinIO, MySQL 等](middleware/what.md)
@@ -33,7 +33,7 @@ DCE 5.0 的各个产品模块独立解耦，灵活升级，业务无感知，开
 
 </div>
 
-![模块图](images/dce-modules04.jpg)
+![模块图](https://docs.daocloud.io/daocloud-docs-images/docs/images/dce-modules04.png)
 
 DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，可以应对海量应用场景。
 
@@ -45,7 +45,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/what.md)、[容器管理](kpanda/intro/what.md)、[云原生网络](network/intro/what.md)、[云原生存储](./storage/what.md)、信创异构
 
-    ![多云](images/01multi-cloud.png)
+    ![多云](https://docs.daocloud.io/daocloud-docs-images/docs/images/01multi-cloud.png)
 
 === "数据中间件服务"
 
@@ -54,7 +54,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/what.md)、[容器管理](kpanda/intro/what.md)(network/intro/what.md)、[云原生存储](./storage/what.md)、[精选中间件](./middleware/what.md)
 
-    ![数据](images/02data.png)
+    ![数据](https://docs.daocloud.io/daocloud-docs-images/docs/images/02data.png)
 
 === "微服务治理"
 
@@ -63,7 +63,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/what.md)、[容器管理](kpanda/intro/what.md)、[微服务治理](skoala/intro/what.md)、[服务网格](mspider/intro/what.md)、[可观测性](insight/intro/what.md)、[应用工作台](amamba/intro/what.md)、[云原生网络](./network/intro/what)、[云原生存储](./storage/what.md)
 
-    ![微服务](images/03msgov.png)
+    ![微服务](https://docs.daocloud.io/daocloud-docs-images/docs/images/03msgov.png)
 
 === "可观测性"
 
@@ -72,7 +72,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/what.md)、[容器管理](kpanda/intro/what.md)、[可观测性](insight/intro/what.md)、[云原生网络](network/intro/what.md)、[云原生存储](./storage/what.md)
 
-    ![观测](images/04insight.png)
+    ![观测](https://docs.daocloud.io/daocloud-docs-images/docs/images/04insight.png)
 
 === "应用商店"
 
@@ -87,7 +87,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/what.md)、[容器管理](kpanda/intro/what.md)、[应用工作台](amamba/intro/what.md)、[云原生网络](network/intro/what.md)、[云原生存储](./storage/what.md)、[镜像仓库](./kangaroo/what.md)
 
-    ![应用交付](images/06appdeliv.png)
+    ![应用交付](https://docs.daocloud.io/daocloud-docs-images/docs/images/06appdeliv.png)
 
 === "信创异构"
 
@@ -96,7 +96,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/what.md)、[容器管理](kpanda/intro/what.md)、[集群生命周期管理](community/kubean.md)、[信创中间件](middleware/what.md)、[云原生网络](network/intro/what.md)、[云原生存储](./storage/what.md)
 
-    ![信创](images/08xinchuan.png)
+    ![信创](https://docs.daocloud.io/daocloud-docs-images/docs/images/08xinchuan.png)
 
 === "云边协同"
 
@@ -104,7 +104,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/what.md)、[容器管理](kpanda/intro/what.md)、[云原生网络](network/intro/what.md)、[云原生存储](./storage/what.md)
 
-    ![云边](images/09cloud-edge.png)
+    ![云边](https://docs.daocloud.io/daocloud-docs-images/docs/images/09cloud-edge.png)
 
 === "云原生底座"
 
@@ -113,7 +113,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/what.md)、[容器管理](kpanda/intro/what.md)、[云原生网络](network/intro/what.md)、[云原生存储](./storage/what.md)
 
-    ![云原生底座](images/07base.png)
+    ![云原生底座](https://docs.daocloud.io/daocloud-docs-images/docs/images/07base.png)
 
 [下载 DCE 5.0](./download/dce5.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](./install/intro.md){ .md-button .md-button--primary }

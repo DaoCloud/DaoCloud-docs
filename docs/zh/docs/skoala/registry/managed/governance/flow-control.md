@@ -13,15 +13,15 @@ hide:
 
     > 注意需要治理的微服务在`是否可以治理`一栏应该显示为`是`，才能进行后续步骤。
 
-    ![微服务列表](../imgs/gov00.png)
+    ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/imgs/gov00.png)
 
 2. 选择`流控规则`，然后在右侧点击`创建流控规则`。
 
-    ![微服务列表](../imgs/gov01.png)
+    ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/imgs/gov01.png)
 
 3. 参考下列说明填写规则配置，并在右下角点击`确定`。
 
-    ![微服务列表](../imgs/gov02.png)
+    ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/imgs/gov02.png)
 
     - 资源名：资源的名称，资源是指规则的作用领域，即创建此规则是为了治理哪个服务的流量。<!--必须填写真实存在的资源的名称。-->
 
@@ -35,7 +35,7 @@ hide:
 
 4. 创建完成后可以在流控规则列表中查看新建的规则。在右侧点击更多按钮可以编辑更新规则或者删除该规则。
 
-    ![流控规则列表](../imgs/gov03.png)
+    ![流控规则列表](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/imgs/gov03.png)
 
 <!--
     - 阈值类型：

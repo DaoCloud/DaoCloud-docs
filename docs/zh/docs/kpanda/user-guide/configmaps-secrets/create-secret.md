@@ -23,15 +23,15 @@
 
 1. 在`集群列表`页面点击某个集群的名称，进入`集群详情`。
 
-    ![集群详情](../../images/deploy01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
 2. 在左侧导航栏，点击`配置与密钥`->`密钥`，点击右上角`创建密钥`按钮。
 
-    ![创建密钥](../../images/secret01.png)
+    ![创建密钥](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret01.png)
 
 3. 在`创建密钥`页面中填写配置信息，点击`确定`。
 
-    ![创建密钥](../../images/secret02.png)
+    ![创建密钥](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret02.png)
 
     填写配置时需要注意：
 
@@ -52,17 +52,19 @@
 
 1. 在`集群列表`页面点击某个集群的名称，进入`集群详情`。
 
-    ![集群详情](../../images/deploy01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
 2. 在左侧导航栏，点击`配置与密钥`->`密钥`，点击右上角 `YAML 创建`按钮。
 
-    ![YAML 创建](../../images/secret03.png)
+    ![YAML 创建](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret03.png)
 
 3. 在 `YAML 创建`页面中填写 YAML 配置，点击`确定`。
 
-    ![YAML 创建](../../images/secret04.png)
+    > 支持从本地导入 YAML 文件或将填写好的文件下载保存到本地。
 
-    **密钥示例：**
+    ![YAML 创建](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret04.png)
+
+## 密钥 YAML 示例
 
     ```yaml
     apiVersion: v1

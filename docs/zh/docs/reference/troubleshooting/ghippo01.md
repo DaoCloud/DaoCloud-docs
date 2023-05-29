@@ -2,7 +2,7 @@
 
 报错提示如下图：
 
-![](../images/bug01.png)
+![](https://docs.daocloud.io/daocloud-docs-images/docs/reference/images/bug01.png)
 
 可能原因：RequestAuthentication CR 的 jwtsUri 地址无法访问，
 导致 istiod 无法下发配置给 istio-ingressgateway（Istio 1.15 可以规避这个 bug：

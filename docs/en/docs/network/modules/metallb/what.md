@@ -1,10 +1,10 @@
-#Metallb
+# Metallb
 
 In Kubernetes, for the `LoadBalancer` type, it is necessary to use the cloud provider's load balancer to expose the service to the outside, and the external load balancer can route traffic to the automatically created `NodePort` service and `ClusterIP` service.
 Therefore, for the service of type `LoadBalancer`, it must be supported by `Cloud Provider` to realize it.
 That is to say, services of type `LoadBalancer` cannot be used in bare-metal K8s clusters. Otherwise, you will find that the service of `LoadBalancer` is always in Pending state.
 
-![`metallb`](../../images/lbservice.png)
+
 
 `Metallb` is an open source software that uses standard routing protocols (ARP or BGP) to implement load balancing for bare metal K8s clusters.
 

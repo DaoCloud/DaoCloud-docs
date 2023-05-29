@@ -1,93 +1,93 @@
 # Microservice configuration list
 
-The microservice engine supports group management of microservices based on the microservice namespace, so as to flexibly manage microservices and a large number of configurations of Spring according to the environment, application, and modules according to their own needs. The configuration list mainly provides core management capabilities such as adding, deleting, modifying and querying microservice configurations, viewing historical versions, rolling back, and querying subscribers.
+The micro-service engine supports group management of micro-services based on the micro-service namespace, so that you can flexibly manage micro-services and a large number of configurations of Spring according to your needs by grouping environment, application, module, etc. The configuration list mainly provides core management capabilities, such as adding, deleting, modifying, checking, viewing historical versions, rolling back, and subscriber query of micro-service configurations.
 
 ## New configuration
 
-1. Enter `Microservice Engine` -> `Microservice Governance Center` -> `Hosted Registry` module, click on the name of the target registry.
+1. Enter `Microservice Engine` -- > `Microservice Governance` -- > `Managed Registry` module, click on the name of the target registry.
 
-    ![Click on the registration center name](imgs/config01.png)
+    <!--![]()screenshots-->
 
-2. Click `Microservice Configuration List` in the left navigation bar, and then click `Create` in the upper right corner.
+2. Click `Configuration List` in the left navigation bar, then click `Create` in the upper right corner.
 
-    ![Create the first step](imgs/config02.png)
+    <!--![]()screenshots-->
 
-3. Fill in the configuration information
+3. Enter the configuration information
 
-    ![Fill in configuration](imgs/config03.png)
+    <!--![]()screenshots-->
 
-    - Namespace: Select the microservice namespace to which the current configuration belongs, the default is `public`
+    - Namespace: Select the micro-service namespace to which the current configuration belongs. The default is `public`
 
-        > **Services and configurations under different namespaces are strictly isolated and cannot refer to each other. For example, services under the A namespace cannot reference configurations under the B namespace. **
+        > ** Services and configurations in different namespaces are strictly isolated and cannot reference each other. For example, A service in namespace A cannot reference a configuration in namespace B. **
 
-    - Data ID: Equivalent to the name of the current configuration file. Data IDs under the same group cannot be repeated.
+    - Data ID: indicates the name of the current configuration file. The Data ids in the same group cannot be the same.
 
-        The full format is: `${prefix}-${spring.profiles.active}.${file-extension}`.
+        The full format is `${prefix}-${spring.profiles.active}.${file-extension}`.
 
-        - `prefix` defaults to the value of `spring.application.name`, and can also be configured through the ConfigMap `spring.cloud.nacos.config.prefix`.
-        - `spring.profiles.active` is the profile corresponding to the current environment. For details, please refer to the Spring Boot documentation. Note: When `spring.profiles.active` is empty, the corresponding connector `-` will not exist, and the splicing format of the Data ID becomes `${prefix}.${file-extension}`.
-        - `file-exetension` is the data format of the configuration content, which can be configured through the ConfigMap `spring.cloud.nacos.config.file-extension`.
+        -  `prefix` default to `spring.application.name` value, can also through the configuration items `spring.cloud.nacos.config.prefix` to configure.
+        -  `spring.profiles.active` Indicates the profile of the current environment. For details, see the Spring Boot documentation. Note: When `spring.profiles.active` is empty, the corresponding concatenator `-` also does not exist, and the Data ID concatenation format becomes `${prefix}.${file-extension}`.
+        -  `file-exetension` Indicates the data format of the configuration content. You can configure the configuration item `spring.cloud.nacos.config.file-extension`.
 
-    - Group: Select the group to which the current configuration belongs, the default is `DEFAULT_GROUP`.
+    - Group: Select the group to which the current configuration belongs. The default value is `DEFAULT_GROUP`.
 
-        > **Usually use namespaces to isolate environments, and use groupings to distinguish projects**.
+        > ** Namespaces are typically used to isolate environments and groups to separate projects **。
 
-    - Configuration format: set the format of the current configuration file,
+    - Configuration format: Sets the format of the current configuration file.
 
-    - Configuration content: Enter the ConfigMaps annotated with `@Value` in the service source code.
+    - Configuration content: Enter a configuration item in the service source code with an annotation `@Value`.
 
-        - Supports format verification. If there is a format error in the configuration content, the system will automatically prompt the error.
-        - ConfigMaps annotated with `@RefreshScope` in the service source code support dynamic updates.
+        - Format verification is supported. If the format of the configuration is incorrect, the system automatically displays an error message.
+        - Configuration items in the service source code with annotations `@RefreshScope` support dynamic updates.
 
-    - More Configurations -> Belonging Application (optional): Select the application to which the current configuration belongs.
+    - More Configurations -> Owning Application (Optional) : Select the application to which the current configuration belongs.
 
-        ![Fill in configuration](imgs/config04.png)
+        <!--![]()screenshots-->
 
-4. Click `OK` in the lower right corner of the page.
+4. Click `OK` in the bottom right corner of the page.
 
-## View configuration
+## Viewing configuration
 
-1. Enter `Microservice Engine` -> `Microservice Governance Center` -> `Hosted Registry` module, click on the name of the target registry.
+1. Enter `Microservice Engine` -- > `Microservice Governance` -- > `Managed Registry` module, click on the name of the target registry.
 
-    ![Click on the registration center name](imgs/config01.png)
+    <!--![]()screenshots-->
 
-2. Click `Microservice Configuration List` on the left navigation bar, and click the Data ID of the target configuration.
+2. In the left navigation bar, click `Configuration List` and click the Data ID of the target configuration.
 
-    ![click name](imgs/config05.png)
+    <!--![]()screenshots-->
 
-3. View the basic information, configuration content, historical version, listener, sample code and other information of the configuration.
+3. You can view the basic configuration information, configuration content, historical version, listener, and example code.
 
-    - Novices can use the sample code to quickly use the client programming to consume the configuration, lowering the threshold for novices.
-    - Support querying the currently configured listener and MD5 check value, so as to know the microservices that are using this configuration and whether the configuration changes have been successfully pushed to the client.
+    - Novice users can quickly consume this configuration using client-side programming with the help of sample code, lowering the threshold for novice users.
+    - You can query the listener of the current configuration and the MD5 checksum to learn about the microservice that is using this configuration and whether the configuration changes are successfully pushed to the client.
 
-        ![view](imgs/config06.png)
+        <!--![]()screenshots-->
 
-## Roll back the historical version
+## The historical version is rolled back
 
-The microservice configuration list will record the historical version of the configuration file, and support one-click rollback to a specific historical version, which is convenient for users to quickly recover when changing the wrong configuration, and reduces the risk of configuration availability in the microservice system. When rolling back, it supports version difference comparison, which is convenient for comparing the difference between the current version and the target rollback version, verifying the modified content, and reducing the risk of error correction.
+The micro-service configuration list records the historical version of the configuration file and supports one-click rollback to a specific historical version. This helps users quickly recover incorrect configurations and reduces configuration availability risks in the micro-service system. Comparison between the current version and the target rollback version is supported during the rollback. This helps you verify the changes and reduce risks caused by error correction.
 
-1. Enter `Microservice Engine` -> `Microservice Governance Center` -> `Hosted Registry` module, click on the name of the target registry.
+1. Enter `Microservice Engine` -- > `Microservice Governance`-- > `Managed Registry`module, click on the name of the target registry.
 
-    ![Click on the registration center name](imgs/config01.png)
+    <!--![]()screenshots-->
 
-2. Click `Microservice Configuration List` on the left navigation bar, and click the Data ID of the target configuration.
+2. In the left navigation bar, click `Configuration List` and click the Data ID of the target configuration.
 
-    ![click name](imgs/config05.png)
+    <!--![]()screenshots-->
 
-3. Click the `Historical Version` tab, find the corresponding record, click `ⵗ` on the right side of the record and select `Rollback`.
+3. Click the `Historical Version` TAB to find the corresponding record. Click `ⵗ` on the right of the record and select `Rollback`.
 
-    ![click name](imgs/config07.png)
+    <!--![]()screenshots-->
 
 4. Compare the version differences and confirm, then click `Rollback` in the lower right corner.
 
-    ![rollback](imgs/config08.png)
+    <!--![]()screenshots-->
 
-## update/delete config`
+## The configuration was updated or deleted
 
-1. Enter `Microservice Engine` -> `Microservice Governance Center` -> `Hosted Registry` module, click on the name of the target registry.
+1. Enter `Microservice Engine` -- > `Microservice Governance`-- > `Managed Registry`module, click on the name of the target registry.
 
-    ![Click on the registration center name](imgs/config01.png)
+    <!--![]()screenshots-->
 
-2. Click `Microservice Configuration List` on the left navigation bar, and click the `ⵗ` button on the right side of the target configuration to select update or delete as required.
+2. Click `Configuration List` in the left navigation bar, and click `ⵗ` on the right of the target configuration to update or delete as required.
 
-    ![update/delete](imgs/config07.png)
+    <!--![]()screenshots-->

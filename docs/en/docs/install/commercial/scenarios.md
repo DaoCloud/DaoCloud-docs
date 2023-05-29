@@ -1,8 +1,8 @@
 # Cluster deployment mode usage scenarios
 
-DCE 5.0 provides [four cluster roles](../../kpanda/07UserGuide/Clusters/ClusterRole.md) to meet different usage scenarios. Users can freely combine different cluster deployment combinations based on their own business characteristics and infrastructure scenarios.
+DCE 5.0 provides [four cluster roles](../../kpanda/user-guide/clusters/cluster-role.md) to meet different usage scenarios. Users can freely combine different cluster deployment combinations based on their own business characteristics and infrastructure scenarios.
 
-This article will describe several common usage scenarios.
+This page will describe several common usage scenarios.
 
 ## Single data center scenario
 
@@ -12,7 +12,6 @@ The specific deployment plan is based on business needs, refer to the following 
 
 ## Single data center single management cluster
 
-![Scenario Schematic](../images/scenario01.png)
 
 Premise: Prepare a node. The operating system and architecture of the node must be consistent with the node to be created in the cluster.
 
@@ -24,11 +23,11 @@ Premise: Prepare a node. The operating system and architecture of the node must 
 
 When the user needs to add a management cluster in the current single data center to manage the lifecycle of the new business cluster, there is no need to use the bootstrapping node to install it again, and only need to install the kubean operator on a working cluster that has already been created The component can endow the cluster with the ability and role to manage the cluster. As shown below:
 
-![Scenario Schematic](../images/scenario02.png)
+
 
 Prerequisite: The previous step of deploying a single-data center single-management cluster has been completed.
 
-1. Use the [helm template](../../kpanda/07UserGuide/helm/README.md) to install kubean on a working cluster details interface, and wait for the kubean status to change to running.
+1. Use the [Helm chart](../../kpanda/user-guide/helm/README.md) to install kubean on a working cluster details interface, and wait for the kubean status to change to running.
 
 1. After the kubean is installed in the current working cluster, the cluster role will automatically become the management cluster, and one or more working clusters can be created based on the management cluster on the container management module under the platform as needed.
 
@@ -40,7 +39,7 @@ When a user has multiple data centers, or the networks of different data centers
 
 Premise: Prepare a node. The operating system and architecture of the node must be consistent with the node to be created in the cluster.
 
-![Scenario Schematic](../images/scenario03.png)
+
 
 #### Shanghai Data Center
 

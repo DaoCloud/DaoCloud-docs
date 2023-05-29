@@ -1,224 +1,297 @@
-# Install microservice engine
+# Install Guides
 
-## Preface
+It is recommended to install DaoCloud Microservice Engine (DME) through the installation package of [DCE 5.0 Commercial Release](../../install/commercial/start-install.md), because you can install all modules of DCE 5.0 once a time with that package, no need to worry about incompatibility.
 
-This tutorial is intended to complement the manual installation and upgrade methods.
+This guides is designed for **manual online install of DME alone**. To be clear, `skoala` mentioned below is the internal development code of DME.
 
-Install via the installer first [https://docs.daocloud.io/install/intro/](https://docs.daocloud.io/install/intro/) , please refer to the official tutorial document.
+!!! note
 
-### Installer v0.3.28 and before
+    If you have already deployed DCE 5.0 commercial release, it is recommended to see [Offline Upgrade Microservice Engine](offline-upgrade.md) for DME's offline install and upgrade. 
 
-The default installation does not support; during installation planning, you can modify mainfest.yaml to enable automatic installation of Skoala
+## Install with Commercial Release Package
 
-```bash
-./dce5-installer install-app -m /sample/manifest.yaml
-```
+When the commercial release version **≥ v0.3.29**, DME will be installed by default. However, it is still recommended to check the `mainfest.yaml` file to confirm whether the value of `components/skoala/enable` is `true`, and whether the helm version is specified.
 
-### Installer v0.3.29 and later
+!!! note
 
-> When installing, pay attention to check the current latest version number: [Go to the download page to view the latest version](../../download/dce5.md)
+    The commercial package will install by default the latest version of DME that has passed internal tests. Unless there are special requirements, it is not recommended to modify the default Helm version.
 
-Support for installing Skoala by default; however, it is still recommended to check mainfest.yaml to ensure that Skoala will be installed by the installer.
+??? note "If commercial release ≤ v0.3.28, click to see corresponding actions"
 
-enable needs to be true, and the corresponding helmVersion needs to be specified:
+    This note applies only when commercial release ≤ v0.3.28; in most cases your version will be greater than this.
 
-```yaml
-...
-components:
-   skoala:
-     enable: true
-     helmVersion: v0.12.2
-     variables:
-...
-```
+    When executing the installation command, DME will not be installed by default. You need to change the `mainfest.yaml` according to the configuration below.
 
-Important: The default installer version carries the latest tested version at that time; if there are no special circumstances, it is not recommended to update the default helm installation version.
+    Modify the file:
 
-## Pre-installation detection
+    ```bash
+    ./dce5-installer install-app -m /sample/manifest.yaml
+    ```
 
-### Skoala Deployment Structure
+    Modified content:
 
-![image](../images/install-step.png)
+    ```yaml
+    ...
+    components:
+      skoala:
+        enable: true
+        helmVersion: v0.12.2 # replace with the latest version number
+        variables:
+    ...
+    ```
 
-### Detect skoala installation
+## Manual Separate Install
 
-Check whether there are the following corresponding resources in the namespace skoala-system. If there are no resources, it means that Skoala is indeed not installed.
+DME consists of two components: `skoala` and `skoala-init`. Both are necessary for normal running of DME.
+
+### Deployment Structure
+
+![images](../images/install01.jpg)
+
+Chart in the blue box on the left is the component `skoala`, which needs to be installed in the control plane cluster, namely the global cluster `kpanda-global-clsuter` of DCE 5.0. For details, refer to [Deploy Architecture](../../install/commercial/deploy-arch.md) of DCE 5.0. After installing the `skoala` component, you can see DME module in the navigation bar of DCE 5.0. Note: Before installing `skoala`, install the `common-mysql` component for storage.
+
+Chart in the blue box on the right is the `skoala-init` component that needs to be installed in a worker cluster. After `skoala-init` is installed, various features of DME are available, such as creating registries, gateway instances, and so on. Also note that `skoala-init` relies on the `insight-agent` component of the DCE 5.0 observability module to provide metrics monitoring and tracing. If you want to use observability, install the `insight-agent` component first. For details, see [Install the insight agent component](../../insight/user-guide/quickstart/install-agent.md).
+
+### Pre-install Check
+
+#### If DME is already installed
+
+Check whether the following resources exist in the `skoala-system` namespace. If no resources, it means DME is not installed yet.
 
 ```bash
 ~ kubectl -n skoala-system get pods
-NAME READY STATUS RESTARTS AGE
-hive-8548cd9b59-948j2 2/2 Running 2 (3h48m ago) 3h48m
-sesame-5955c878c6-jz8cd 2/2 Running 0 3h48m
-ui-7c9f5b7b67-9rpzc 2/2 Running 0 3h48m
+NAME                                   READY   STATUS    RESTARTS        AGE
+hive-8548cd9b59-948j2                  2/2     Running   2 (3h48m ago)   3h48m
+sesame-5955c878c6-jz8cd                2/2     Running   0               3h48m
+ui-7c9f5b7b67-9rpzc                    2/2     Running   0               3h48m
  
 ~ helm -n skoala-system list
-NAME NAMESPACE REVISION UPDATED STATUS CHART APP VERSION
-skoala skoala-system 3 2022-12-16 11:17:35.187799553 +0800 CST deployed skoala-0.13.0 0.13.0
+NAME        NAMESPACE       REVISION    UPDATED                                 STATUS      CHART               APP VERSION
+skoala      skoala-system   3           2022-12-16 11:17:35.187799553 +0800 CST deployed    skoala-0.13.0       0.13.0
 ```
 
-### Depends on the installation of common-mysql
+#### If `common-mysql` is installed
 
-skoala needs to use mysql to store the configuration during installation, so the database must exist; in addition, check whether common-mysql has the skoala database.
+The `common-mysql` component is required to store the configuration when installing DME, so make sure it already exists. In addition, you need to see if there is a database named `skoala` in the `common-mysql` namespace.
 
 ```bash
 ~ kubectl -n mcamel-system get statefulset
-NAME READY AGE
-mcamel-common-mysql-cluster-mysql 2/2 7d23h
+NAME                                          READY   AGE
+mcamel-common-mysql-cluster-mysql             2/2     7d23h
 ```
 
-The recommended database information for skoala is as follows:
+It is recommended to set the database configuration as the following:
 
-- host: mcamel-common-mysql-cluster-mysql-master.mcamel-system.svc.cluster.local
+- host: mcamel-common-mysql-cluster-mysql-master.mcamel-system.svc.cluster.local
 - port: 3306
 - database : skoala
 - user: skoala
--password:
+- password:
 
-### About insight-agent
+#### If `insight-agent` is installed
 
-All monitoring information of Skoala needs to rely on the capability of Insight, and the corresponding insight-agent needs to be installed in the cluster;
+DME relies on the capabilities of the [DCE 5.0 Observability](../../insight/intro/what.md) module to provide microservice monitoring. If you want to monitor metrics and trace links, you should install `insight-agent` in the cluster. For details, see [](../../insight/user-guide/quickstart/install-agent.md).
 
-![image](../images/cluster-list.png)
+![images](../images/install02.png)
 
-Impact on Skoala:
+!!! note
 
-- service-monitor will not be installed if skoala-init is installed without first installing insight-agent
-- If you need to install service-monitor, please install insight-agent first, and then install skoala-init.
+    - If `insight-agent` is not install when you install `skoala-init`, `service-monitor` won't be installed.
+    - If you need to install `service-monitor`, you should install `insight-agent` first, and then install `skoala-init`.
 
-## Installation process
+### Start Install
 
-### Initialize the database table
+With everything in place, you can start installing DME. The specific process is as follows:
 
-If the skoala database in common-mysql is empty, please log in to the skoala database and execute the following SQL:
+#### Initialize data table
 
-```sql
-CREATE TABLE `registry` (
-`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-`uid` varchar(32) DEFAULT NULL,
-`name` varchar(50) NOT NULL,
-`type` varchar(50) NOT NULL,
-`addresses` varchar(1000) NOT NULL,
-`namespaces` varchar(2000) NOT NULL,
-`deleted_at` timestamp NULL COMMENT 'Time deleted',
-`created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-`updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-PRIMARY KEY (`id`),
-UNIQUE KEY `idx_uid` (`uid`),
-UNIQUE KEY `idx_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
- 
-CREATE TABLE `book` (
-`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-`uid` varchar(32) DEFAULT NULL,
-`name` varchar(50) NOT NULL,
-`author` varchar(32) NOT NULL,
-`status` int(1) DEFAULT 1 COMMENT '0: off the shelf, 1: on the shelf',
-`isPublished` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '0: unpublished, 1: published',
-`publishedAt` timestamp NULL DEFAULT NULL COMMENT 'publishedAt',
-`deleted_at` timestamp NULL COMMENT 'Time deleted',
-`createdAt` timestamp NOT NULL DEFAULT current_timestamp(),
-`updatedAt` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-PRIMARY KEY (`id`),
-UNIQUE KEY `idx_uid` (`uid`),
-UNIQUE KEY `idx_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
- 
-CREATE TABLE `api` (
-`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-`is_hosted` tinyint DEFAULT 0,
-`registry` varchar(50) NOT NULL,
-`service_name` varchar(200) NOT NULL,
-`nacos_namespace` varchar(200) NOT NULL COMMENT 'Nacos namespace id',
-`nacos_group_name` varchar(200) NOT NULL,
-`data_type` varchar(100) NOT NULL COMMENT 'JSON or YAML.',
-`detail` mediumtext NOT NULL,
-`deleted_at` timestamp NULL COMMENT 'Time deleted',
-`created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-`updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-PRIMARY KEY (`id`),
-UNIQUE KEY `idx_registry_and_service_name` (`registry`, `service_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
- 
-INSERT INTO `book` VALUES (1,'book-init','MicroService Pattern','daocloud',1,1,'2022-03-23 13:50:00',null,now(),now() );
- 
-alter table registry add is_hosted tinyint default 0 not null after namespaces;
-alter table registry add workspace_id varchar(50) not null DEFAULT 'default' after uid;
-alter table registry add ext_id varchar(50) null after workspace_id;
- 
-drop index idx_name on registry;
-create unique index idx_name on registry (name, workspace_id);
-```
+!!! note
 
-  After completing the above operations, there will be 3 tables in the Skoala database. Pay attention to check whether all the corresponding SQLs are valid.
+    If you install skoala v0.17.1 or later, skip this step. The data table will be automatically initialized.
 
-### Configure skoala helm repo
+If skoala database in common-mysql is empty, log in to skoala database and run the following SQL command:
 
-After configuring the skoala registry, you can view and obtain the application chart of skoala
+????? note "If initialization fails, check whether the following three tables exist in the skoala database and whether the corresponding SQL has taken effect."
+
+    ```sql
+    mysql> desc api;
+    +------------------+-----------------+------+-----+-------------------+-----------------------------------------------+
+    | Field            | Type            | Null | Key | Default           | Extra                                         |
+    +------------------+-----------------+------+-----+-------------------+-----------------------------------------------+
+    | id               | bigint unsigned | NO   | PRI | NULL              | auto_increment                                |
+    | is_hosted        | tinyint         | YES  |     | 0                 |                                               |
+    | registry         | varchar(50)     | NO   | MUL | NULL              |                                               |
+    | service_name     | varchar(200)    | NO   |     | NULL              |                                               |
+    | nacos_namespace  | varchar(200)    | NO   |     | NULL              |                                               |
+    | nacos_group_name | varchar(200)    | NO   |     | NULL              |                                               |
+    | data_type        | varchar(100)    | NO   |     | NULL              |                                               |
+    | detail           | mediumtext      | NO   |     | NULL              |                                               |
+    | deleted_at       | timestamp       | YES  |     | NULL              |                                               |
+    | created_at       | timestamp       | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
+    | updated_at       | timestamp       | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
+    +------------------+-----------------+------+-----+-------------------+-----------------------------------------------+
+
+    mysql> desc book;
+    +-------------+------------------+------+-----+-------------------+-----------------------------------------------+
+    | Field       | Type             | Null | Key | Default           | Extra                                         |
+    +-------------+------------------+------+-----+-------------------+-----------------------------------------------+
+    | id          | bigint unsigned  | NO   | PRI | NULL              | auto_increment                                |
+    | uid         | varchar(32)      | YES  | UNI | NULL              |                                               |
+    | name        | varchar(50)      | NO   | UNI | NULL              |                                               |
+    | author      | varchar(32)      | NO   |     | NULL              |                                               |
+    | status      | int              | YES  |     | 1                 |                                               |
+    | isPublished | tinyint unsigned | NO   |     | 1                 |                                               |
+    | publishedAt | timestamp        | YES  |     | NULL              |                                               |
+    | deleted_at  | timestamp        | YES  |     | NULL              |                                               |
+    | createdAt   | timestamp        | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
+    | updatedAt   | timestamp        | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
+    +-------------+------------------+------+-----+-------------------+-----------------------------------------------+
+    10 rows in set (0.00 sec)
+
+    mysql> desc registry;
+    +--------------+-----------------+------+-----+-------------------+-----------------------------------------------+
+    | Field        | Type            | Null | Key | Default           | Extra                                         |
+    +--------------+-----------------+------+-----+-------------------+-----------------------------------------------+
+    | id           | bigint unsigned | NO   | PRI | NULL              | auto_increment                                |
+    | uid          | varchar(32)     | YES  | UNI | NULL              |                                               |
+    | workspace_id | varchar(50)     | NO   |     | default           |                                               |
+    | ext_id       | varchar(50)     | YES  |     | NULL              |                                               |
+    | name         | varchar(50)     | NO   | MUL | NULL              |                                               |
+    | type         | varchar(50)     | NO   |     | NULL              |                                               |
+    | addresses    | varchar(1000)   | NO   |     | NULL              |                                               |
+    | namespaces   | varchar(2000)   | NO   |     | NULL              |                                               |
+    | is_hosted    | tinyint         | NO   |     | 0                 |                                               |
+    | deleted_at   | timestamp       | YES  |     | NULL              |                                               |
+    | created_at   | timestamp       | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
+    | updated_at   | timestamp       | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
+    +--------------+-----------------+------+-----+-------------------+-----------------------------------------------+
+    12 rows in set (0.00 sec)
+    ```
+
+#### Configure skoala helm repo
+
+After skoala container registry is configured, you can check and get the Helm chart of skoala.
 
 ```bash
 ~ helm repo add skoala-release https://release.daocloud.io/chartrepo/skoala
 ~ helm repo update
 ```
 
-> Requires Helm to be installed first
+> install Helm beforehand
 
-Key content: After the Skoala-release is added, there are 2 charts that need attention:
+Note: After `skoala-release` container registry is added, there are two charts that need to be paid attention to:
 
-- Skoala is the console service of Skoala,
-    - After the installation is complete, you can see the entrance of the microservice engine on the web page
-    - Contains 3 components ui, hive, sesame
-    - need to be installed in the global management cluster
-- Skoala-init is the Skoala component Operator
-    - Install only to designated working clusters
-    - Contains components: skoala-agent, nacos, contour, sentinel
-    - When not installed, a missing component will be prompted when creating the registry and gateway
+- `skoala` is the control plane of DME
+    - After `skoala` is installed, you can see DME in the first-level navigation bar of DCE 5.0
+    - `skoala` contains 3 components: ui, hive and sesame
+    - It must be installed in the global management cluster
 
-By default, after installing skoala to kpanda-global-cluster (global management cluster), you can see the entry of the corresponding microservice engine in the sidebar.
+- `skoala-init` is the operator of all components of DME
+    - Install it only to a working cluster
+    - Include four components: skoala-agent, nacos, contour, sentinel
+    - If `skoala-init` is not installed, you are prompted for missing components when creating a registry or gateway
 
-### View the latest version of skoala components
+By default, after installing `skoala` component to the global cluster, you will see the "Microservices" option in the sidebar of DCE 5.0.
 
-Upgrade the deployment script and deploy all components with one click.
+#### Check latest version of DME's components
 
-Manage the cluster globally, view the latest version of Skoala, and update directly through the helm repo to get the latest;
+In the global management cluster, check the latest version of `skoala` directly by this helm command.
 
 ```bash
 ~ helm repo update skoala-release
 ~ helm search repo skoala-release/skoala --versions
-NAME CHART VERSION APP VERSION DESCRIPTION
-skoala-release/skoala 0.13.0 0.13.0 The helm chart for Skoala
-skoala-release/skoala 0.12.2 0.12.2 The helm chart for Skoala
-skoala-release/skoala 0.12.1 0.12.1 The helm chart for Skoala
-skoala-release/skoala 0.12.0 0.12.0 The helm chart for Skoala
- …
+NAME                        CHART VERSION   APP VERSION DESCRIPTION
+skoala-release/skoala       0.13.0          0.13.0      The helm chart for skoala
+skoala-release/skoala       0.12.2          0.12.2      The helm chart for skoala
+skoala-release/skoala       0.12.1          0.12.1      The helm chart for skoala
+skoala-release/skoala       0.12.0          0.12.0      The helm chart for skoala
+......
 ```
 
-> When deploying skoala, it will carry the latest front-end version at that time. If you want to specify the version of the front-end ui,
-> You can go to the front-end code repo to get the corresponding version number:
-
-In the working cluster, check the latest version of Skoala-init, and update directly through the helm repo to get the latest
+In the working cluster, check the latest version of `skoala-init` directly by this helm command.
 
 ```bash
 ~ helm repo update skoala-release
 ~ helm search repo skoala-release/skoala-init --versions
-NAME CHART VERSION APP VERSION DESCRIPTION
-skoala-release/skoala-init 0.13.0 0.13.0 A Helm Chart for Skoala init, it includes Skoala...
-skoala-release/skoala-init 0.12.2 0.12.2 A Helm Chart for Skoala init, it includes Skoala...
-skoala-release/skoala-init 0.12.1 0.12.1 A Helm Chart for Skoala init, it includes Skoala...
-skoala-release/skoala-init 0.12.0 0.12.0 A Helm Chart for Skoala init, it includes Skoala...
- …
+NAME                        CHART VERSION   APP VERSION DESCRIPTION
+skoala-release/skoala-init  0.13.0          0.13.0      A Helm Chart for skoala init, it includes Skoal...
+skoala-release/skoala-init  0.12.2          0.12.2      A Helm Chart for skoala init, it includes Skoal...
+skoala-release/skoala-init  0.12.1          0.12.1      A Helm Chart for skoala init, it includes Skoal...
+skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for skoala init, it includes Skoal...
+......
 ```
 
-### Execute the deployment (also applies to upgrades)
+#### Install/Upgrade `skoala` to the global cluster
 
-Execute the command directly, pay attention to the corresponding version number
+Run the command directly to deploy or upgrade `skoala`. Pay attention to setting a right version.
 
 ```bash
-~ helm upgrade --install skoala --create-namespace -n skoala-system --cleanup-on-fail\
-     --set ui.image.tag=v0.9.0 \
-     --set sweet.enable=true \
-     --set hive.configMap.data.database.host=mcamel-common-mysql-cluster-mysql-master.mcamel-system.svc.cluster.local \
-     --set hive.configMap.data.database.port=3306\
-     --set hive.configMap.data.database.user=root\
-     --set hive.configMap.data.database.password=xxxxxxxx \
-     --set hive.configMap.data
+~ helm upgrade --install skoala --create-namespace -n skoala-system --cleanup-on-fail \
+    --set ui.image.tag=v0.9.0 \
+    --set sweet.enable=true \
+    --set hive.configMap.data.database.host=mcamel-common-mysql-cluster-mysql-master.mcamel-system.svc.cluster.local \
+    --set hive.configMap.data.database.port=3306 \
+    --set hive.configMap.data.database.user=root \
+    --set hive.configMap.data.database.password=xxxxxxxx \
+    --set hive.configMap.data.database.database=skoala \
+    skoala-release/skoala \
+    --version 0.13.0
+```
+
+> Customize and initialize database parameters; the database information needs to be added into the configuration
+> --set sweet. enable=true \
+> --set hive.configMap.data.database. host= \
+> --set hive.configMap.data.database. port= \
+> --set hive.configMap.data.database. user= \
+> --set hive.configMap.data.database. password= \
+> --set hive.configMap.data.database. database= \
+
+Check whether the Pod is successfully started:
+
+```bash
+~ kubectl -n skoala-system get pods
+NAME                                   READY   STATUS    RESTARTS        AGE
+hive-8548cd9b59-948j2                  2/2     Running   2 (3h48m ago)   3h48m
+sesame-5955c878c6-jz8cd                2/2     Running   0               3h48m
+ui-7c9f5b7b67-9rpzc                    2/2     Running   0               3h48m
+```
+
+#### Install/upgrade `skoala-init` to a working cluster
+
+Since DME contains many components, we packaged these components into the same Chart, which is `skoala-init`. This installation command can also be used to upgrade the component.
+
+```bash
+~  helm search repo skoala-release/skoala-init --versions
+NAME                        CHART VERSION   APP VERSION DESCRIPTION
+skoala-release/skoala-init  0.13.0          0.13.0      A Helm Chart for skoala init, it includes Skoal...
+skoala-release/skoala-init  0.12.2          0.12.2      A Helm Chart for skoala init, it includes Skoal...
+skoala-release/skoala-init  0.12.1          0.12.1      A Helm Chart for skoala init, it includes Skoal...
+skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for skoala init, it includes Skoal...
+......
+```
+
+Use the following command to check all Pods are running as expected：
+
+```bash
+~ helm upgrade --install skoala-init --create-namespace -n skoala-system --cleanup-on-fail \
+    skoala-release/skoala-init \
+    --version 0.13.0
+```
+
+In addition to terminal installation, you can also install `skoala-init` by Helm chart in `Container Management` -> `Helm App`.
+
+![](../images/install03.png)
+
+## Upgrade DME
+
+Supports offline upgrade and online upgrade. For details, see [Offline Upgrade](../quickstart/offline-upgrade.md) or [Online Upgrade](online-upgrade.md).
+
+## Unload DME
+
+```bash
+~ helm uninstall skoala-init -n skoala-system
+```
+
+```bash
+~ helm uninstall skoala -n skoala-system
 ```

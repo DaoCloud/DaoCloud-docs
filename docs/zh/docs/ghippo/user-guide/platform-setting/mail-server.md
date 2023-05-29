@@ -12,11 +12,11 @@ DCE 5.0 会在用户忘记密码时，向用户发送电子邮件以验证电子
 
 1. 使用具有 `admin` 角色的用户登录 Web 控制台。点击左侧导航栏底部的`全局管理`。
 
-    ![全局管理](../../images/ws01.png)
+    ![全局管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws01.png)
 
 1. 点击`平台设置`，选择`邮件服务器设置`。
 
-    ![邮件服务器](../../images/mail01.png)
+    ![邮件服务器](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/mail01.png)
 
     填写以下字段配置邮件服务器：
 
@@ -25,17 +25,17 @@ DCE 5.0 会在用户忘记密码时，向用户发送电子邮件以验证电子
     | SMTP 服务器地址   | 能够提供邮件服务的 SMTP 服务器地址                           | smtp.163.com |
     | SMTP 服务器端口   | 发送邮件的端口                                               | 25           |
     | 用户名            | SMTP 用户的名称                                              | test@163.com |
-    | 密码              | SMTP 账户的密码                                              | 123456       |
+    | 密码              | SMTP 账号的密码                                              | 123456       |
     | 发件人邮箱        | 发件人的邮箱地址                                             | test@163.com |
     | 使用 SSL 安全连接 | SSL 可以用于加密邮件，从而提高通过邮件传输的信息的安全性，通常需为邮件服务器配置证书 | 不开启       |
 
 1. 配置完成后点击`保存`，点击`测试邮件服务器`。
 
-    ![测试](../../images/mail02.png)
+    ![测试](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/mail02.png)
 
 1. 屏幕右上角出现成功发送邮件的提示，则表示邮件服务器被成功设置。
 
-    ![成功](../../images/mail03.png)
+    ![成功](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/mail03.png)
 
 ## 常见问题
 

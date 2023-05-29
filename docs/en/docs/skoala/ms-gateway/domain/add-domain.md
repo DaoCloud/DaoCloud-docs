@@ -1,36 +1,32 @@
 # Add domain name
 
-The microservice gateway supports full lifecycle management of domain names hosted in a unified manner, including adding, updating, and deleting domain names. Through domain name management, a domain name can be applied to multiple APIs in the gateway, and gateway policies at the domain name level can be configured. This page describes how to add a domain name.
+The microservice gateway supports the full lifecycle management of domain names, including adding, updating, and deleting domain names. Through domain name management, you can apply a domain name to multiple apis of the gateway and configure gateway policies at the domain name level. This page explains how to add a domain name.
 
-The steps to add a domain name are as follows:
+To add a domain name, perform the following steps:
 
-1. Click the name of the target gateway to enter the gateway overview page, then click `Domain Management` in the left navigation bar, and click `Add Domain Name` in the upper right corner of the page.
+1. Click the name of the target gateway to enter the gateway overview page. Then click `Domain Management` in the left navigation bar and `Add Domain` in the upper right corner of the page.
 
-    ![Add domain name](imgs/add-domain-1.png)
+    <!--![]()screenshots-->
 
 2. Fill in the configuration information
 
-    Domain name configuration information is divided into two parts: `basic information` (required) and `policy configuration` (optional).
+    The domain name configuration information consists of `Basic Info` (mandatory) and `Policy Settings` (optional).
 
-    - Domain name: After the domain name is created, it cannot be modified.
-    - Protocol: HTTP is selected by default. If you choose HTTPS, you need to provide the corresponding HTTPS certificate.
+    - Domain name: cannot be modified after a domain name is created.
+    - Protocol: HTTP is selected by default. If you select HTTPS, you need to provide an HTTPS certificate.
 
-        > At present, only the selection of existing certificates is supported, and the functions of automatically issuing certificates and manually uploading certificates are under development.
+        > Currently, only existing certificates can be selected. Automatic certificate issuance and manual certificate upload functions are being developed.
 
-        ![https](imgs/add-domain-https.png)
+        <!--![]()screenshots-->
 
-    - Local current limit: refer to [Local current limit](../api/api-policy.md#_6)
+    - Local current limiting: refer to [Local Rate Limit](../api/api-policy.md#_6)
     - Cross-domain: refer to [Cross-domain](domain-policy.md#_2)
 
-        ![Fill in configuration](imgs/add-domain-2.png)
+        <!--![]()screenshots-->
 
-    <!--
-    - HTTPS only: When enabled, the gateway will reject HTTP requests for this domain name
-    - Policy configuration: refer to [Configure domain name policy](domain-policy.md)
-    -->
 
 3. Click `OK` in the lower right corner of the page
 
-    After clicking `OK`, it will automatically jump to the `Domain Name Management` page, and you can see the newly created domain name in the domain name list.
+    Click `OK`, and the `Domain Management` page is automatically displayed. You can view the newly created domain name in the domain name list.
 
-    ![Added successfully](imgs/domain-bingo.png)
+    <!--![]()screenshots-->

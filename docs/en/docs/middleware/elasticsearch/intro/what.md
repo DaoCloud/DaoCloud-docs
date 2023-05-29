@@ -1,17 +1,22 @@
+---
+hide:
+  - toc
+---
+
 # What is Elasticsearch
 
-Elasticsearch, the current full-text search engine of the best choice, can quickly store, search, and analyze a sea of data. Elasticsearch is built on top of Lucene that cannot be used directly. It encapsulates Lucene and provides out-of-box REST APIs.
+Elasticsearch (hereinafter referred to as Elastic) is currently the first choice for full-text search engines. It can quickly store, search and analyze massive amounts of data. The bottom layer of Elastic is the open source library Lucene, but Lucene cannot be used directly, and you must write your own code to call its interface. Elastic is a package of Lucene, which provides the operation interface of REST API and is ready to use out of the box.
 
-Based on Elasticsearch, the search service built into DCE 5.0 offers a distributed search service,  provides users with structured and unstructured text as well as AI vector-based multi-criteria search, statistics, and reports. It is fully compatible with Elasticsearch native interface. It can help websites and APPs build search boxes to improve users' search experience; it can also be used to build log analysis platforms to realize data-driven operation and maintenance; its vector search can help users quickly build rich applications such as AI-based image search, recommendation, semantic search and face recognition.
+The built-in search service of DCE 5.0 is based on Elasticsearch, which can provide distributed search services and provide users with structured and unstructured text and AI vector-based multi-condition retrieval, statistics, and reports. Fully compatible with Elasticsearch native interface. It can help websites and APPs to build search boxes to improve users' search experience; it can also be used to build log analysis platforms to help enterprises achieve data-driven operation and maintenance, and data-driven operations; its vector retrieval capabilities can help customers quickly build AI-based Rich applications such as image search, recommendation, semantic search, and face recognition.
 
-![elastic](../images/elastic_intro.png)
+<!--screenshot-->
 
-## Task management for ElasticSearch
+## ElasticSearch job management
 
-Raw data flows into Elasticsearch from a variety of sources, including logs, system metrics, and web applications. Data ingestion is the process by which this raw data is parsed, normalized, and enriched before it is indexed in Elasticsearch. Once indexed in Elasticsearch, users can run complex queries against their data and use aggregations to retrieve complex summaries of their data. From Kibana, users can create powerful visualizations of their data.
+Raw data is fed into Elasticsearch from multiple sources, including logs, system metrics, and web applications. Data ingestion is the process of parsing, normalizing, and enriching this raw data before indexing in Elasticsearch. Once this data is indexed in Elasticsearch, users can run complex queries against the data and use aggregations to retrieve complex summaries of their data. In Kibana, users can create powerful visualizations based on their own data.
 
-## What is Kibana
+## What is Kibana?
 
-Kibana is a data visualization and management tool for Elasticsearch that provides real-time histograms, line graphs, pie charts, and maps. Kibana also includes advanced applications such as Canvas, which allows users to create custom dynamic infographics based on their data, and Elastic Maps for visualizing geospatial data.
+Kibana is a data visualization and management tool for Elasticsearch that provides real-time histograms, line graphs, pie charts, and maps. Kibana also includes advanced applications such as Canvas, which allows users to create custom dynamic infographics based on their own data, and Elastic Maps, which can be used to visualize geospatial data.
 
-[Apply for free community experience](../../../dce/license0.md){ .md-button .md-button--primary }
+[Create an Elasticsearch instance](../user-guide/create.md){ .md-button .md-button--primary }

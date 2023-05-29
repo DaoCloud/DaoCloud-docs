@@ -2,12 +2,79 @@
 
 This page lists the Release Notes of Kafka message queue, so that you can understand the evolution path and feature changes of each version.
 
-##v0.1.6
+## 2023-04-27
 
-Release date: 2022-11-28
+### v0.5.1
+
+#### new function
+
+- **Added** `mcamel-kafka` details page displays related events
+- **NEW** `mcamel-kafka` supports custom roles
+
+#### Optimization
+
+- **Optimize** `mcamel-kafka` scheduling strategy adds a sliding button
+
+## 2023-03-28
+
+### v0.4.0
+
+#### new function
+
+- **NEW** `mcamel-kafka` supports middleware link tracking adaptation.
+- **NEW** Install `mcamel-kafka` to enable link tracking according to parameter configuration.
+
+#### Optimization
+
+- **Optimize** `mcamel-kafka` optimizes Kafka's default configuration.
+- **upgrade** golang.org/x/net to v0.7.0
+- **Upgrade** GHippo SDK to v0.14.0
+
+## 2023-02-23
+
+### v0.3.0
+
+#### new function
+
+- **Added** `mcamel-kafka` helm-docs template file.
+- **Added** The Operator in the `mcamel-kafka` app store can only be installed in mcamel-system.
+- **NEW** `mcamel-kafka` supports cloud shell.
+- **NEW** `mcamel-kafka` supports separate registration of navigation bar.
+- **NEW** `mcamel-kafka` supports viewing logs.
+- **Added** `mcamel-kafka` Operator docking with chart-syncer.
+
+#### Optimization
+
+- **Optimize** `mcamel-kafka` upgrade offline mirror detection script.
+
+#### fix
+
+- **Fixed** the problem that `mcamel-kafka` instance name is too long and the custom resource cannot be created.
+- **Fix** `mcamel-kafka` workspace Editor user cannot view instance password.
+- **Add** log view operation instructions, support custom query, export and other functions.
+
+## 2022-12-25
+
+### v0.2.0
+
+#### new function
+
+- **NEW** `mcamel-kafka` NodePort port conflict early detection.
+- **NEW** `mcamel-kafka` node affinity configuration.
+
+#### Optimization
+
+- **Optimize** `mcamel-kafka` manager removes the probe to prevent kafka from being unable to open the manager when it is not ready.
+- **Optimize** `mcamel-kafka` zooEntrance repackage mirror address to 1.0.0.
+
+## 2022-11-28
+
+### v0.1.6
+
+#### new function
 
 - **Improved** Improve and optimize the copy function
-- **Improved** Instance Details - Access Settings, Remove Cluster IPv4
+- **IMPROVED** instance details - access settings, remove cluster IPv4
 - **Improved** Middleware password verification difficulty adjustment
 - **NEW** Docking alarm capability
 - **New** Added the function of judging whether sc supports capacity expansion and prompting in advance
@@ -15,13 +82,15 @@ Release date: 2022-11-28
 - **Optimize** middleware style walkthrough optimization
 - **Fix** The offline image has numbers and capital letters that cannot be scanned
 
-##v0.1.4
+## 2022-11-08
 
-Release date: 2022-11-08
+### v0.1.4
+
+#### new function
 
 - **FIXED** The correct field cannot be verified when updating, such as managerPass
 - **IMPROVED** Password validation adjusted to MCamel low password strength
-- **NEW** Returns the verification of whether the sc capacity can be updated
+- **NEW** Returns whether the sc capacity can be updated
 - **Add** public field when returning list or details
 - **NEW** Added return alert
 - **Add** Validation Service annotation
@@ -29,9 +98,11 @@ Release date: 2022-11-08
 - **Fix** service address display error
 - **Fix** When Kafka uses NodePort, the creation fails
 
-##v0.1.2
+## 2022-10-28
 
-Release date: 2022-10-28
+### v0.1.2
+
+#### new function
 
 - **NEW** Sync Pod status to instance details page
 - **Optimize** workspace interface logic adjustment
@@ -39,9 +110,11 @@ Release date: 2022-10-28
 - **Optimized** password acquisition logic adjustment
 - **Optimize** cpu&memory request amount should be less than limit logic adjustment
 
-## v0.1.1
+## 2022-9-25
 
-Release date: 2022-9-25
+### v0.1.1
+
+#### new function
 
 - **New** supports kafka list query, status query, creation, deletion and modification
 - **NEW** Support kafka-manager to manage kafka

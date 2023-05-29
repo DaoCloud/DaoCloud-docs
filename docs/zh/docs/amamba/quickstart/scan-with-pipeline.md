@@ -18,7 +18,7 @@
     helm repo add sonarqube <https://SonarSource.github.io/helm-chart-sonarqube>
     helm repo update
     kubectl create namespace sonarqube
-    helm upgrade --install -n sonarqube sonarqube sonarqube/sonarqube -n amamba-system  --create-namespace --set service.type=NodePort
+    helm upgrade --install -n sonarqube sonarqube sonarqube/sonarqube  --create-namespace --set service.type=NodePort
     ```
 
 2. 查看对应 namespace 下的 Pod STATUS 都为 Running，表明 SonarQube 安装成功。
@@ -30,7 +30,7 @@
     sonarqube-sonarqube-0    1/1     Running   0          3h59m
     ```
 
-3. 查看 SonarQube 控制台的访问地址。通常访问地址为 `http://<Node IP>:<NodePort>`，账户和密码为 `admin/admin`。
+3. 查看 SonarQube 控制台的访问地址。通常访问地址为 `http://<Node IP>:<NodePort>`，账号和密码为 `admin/admin`。
 
     ```bash
     export NODE_PORT=$(kubectl get --namespace amamba-system -o jsonpath="{.spec.ports[0].nodePort}" services sonarqube-sonarqube)
@@ -40,49 +40,60 @@
 
 4. 在 SonarQube 生成管理员令牌（Token），操作路径为：`My Account` -> `Profile` -> `Security` -> `Generate` -> `Copy`
 
-    ![scan](../images/scan01.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan01.png)
 
-    ![scan](../images/scan02.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan02.png)
 
-    ![scan](../images/scan03.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan03.png)
 
-5. 在 SonarQube 创建 Webhook 服务器，操作路径：
+5. 将 SonarQube 地址添加至 Jenkins，请确保可以互通，操作路径：
 
-    1. 操作路径为 `Administration` -> `Configuration` -> `Webhooks` -> `Create`。
+    1. 操作路径为 `Manage Jenkins` -> `Configure System` -> `SonarQube servers` -> ` Add SonarQube` 
 
-    2. 在弹出的对话框中输入 `Name` 和 `Jenkins Console URL`（即 SonarQube Webhook 地址，这个地址是前面获取的 SonarQube 地址 + sonarqube-webhook）。
+    2. 在弹出的对话框中输入 `Server URL` 和 `Server authentication token`（即 SonarQube 地址，这个地址是前面获取的 SonarQube 地址 + 管理员令牌）。
 
-    3. 点击 `Create` 完成操作。
+    3. 点击 `Save` 完成操作。
 
-6. 提供一个暴露 Jenkins 地址，这是为了让用户将 SonarQube 服务器添加至 Jenkins。
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan08.png)
 
-7. 为新项目创建 SonarQube Token，操作路径为 `Create new project` -> `Set Up` -> `Generate` -> `Continue`。
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan09.png)
 
-    ![scan](../images/scan04.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan10.png)
 
-    ![scan](../images/scan05.png)
+    !!! note
+
+        如何访问应用工作台部署的 Jenkins Dashboard？
+        
+        - 前往容器管理->全局服务集群->无状态负载，在 amamba-system 下找到负载 amamba-jenkins，通过 NodePort 的方式暴露该服务。
+        - 默认用户名密码为 admin/Admin01
+
+6. 为新项目创建 SonarQube Token，操作路径为 `Create new project` -> `Set Up` -> `Generate` -> `Continue`。
+
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan04.png)
+
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan05.png)
 
 ## 创建流水线
 
 1. 在流水线页面，点击`创建流水线`。
 
-    ![scan](../images/scanp01.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scanp01.png)
 
 2. 选择`自定义创建`。
 
-    ![scan](../images/scanp02.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scanp02.png)
 
 3. 输入名称，其他可使用默认值，点击`确定`。
 
-    ![scan](../images/scanp03.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scanp03.png)
 
 ## 编辑 Jenkinsfile
 
 1. 点击一个流水线进入其详情页面，在右上角点击 `...` -> `编辑 Jenkinsfile`。
 
-    ![scan](../images/scanp04.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scanp04.png)
 
-    ![scan](../images/scanp05.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scanp05.png)
 
 2. 将以下 YAML 代码复制粘贴至 jenkinsfile。
 
@@ -90,7 +101,7 @@
     pipeline {
     agent {
         node {
-        label 'go16'
+        label 'go'
         }
         
     }
@@ -178,4 +189,4 @@
 
 等待流水线运行成功后，前往 SonarQube 查看代码扫描结果。
 
-![scan](../images/scan06.png)
+![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan06.png)

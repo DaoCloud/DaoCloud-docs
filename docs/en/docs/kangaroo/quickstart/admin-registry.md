@@ -7,8 +7,8 @@ hide:
 
 In DCE 5.0, there are two registry management methods: hosting Harbor (self-built Harbor on DCE) and registry integration (integrating external Harbor or Docker Registry):
 
-- [Hosted Harbor](../hosted.md) (recommended)
-- [Repository Integration](../integrate.md)
+- [Hosted Harbor](../hosted/intro.md) (recommended)
+- [Repository Integration](../integrate/integrate.md)
 
 DCE 5.0 mainly promotes Harbor as a registry to provide image services.
 
@@ -30,14 +30,14 @@ DCE 5.0 mainly promotes Harbor as a registry to provide image services.
     click create "https://docs.daocloud.io/en/kangaroo/hosted/"
     click setpublic "https://docs.daocloud.io/en/kangaroo/create-registry/"
     click push "https://docs.daocloud.io/en/kangaroo/quickstart/push/"
-    click deploy "https://docs.daocloud.io/kpanda/07UserGuide/Workloads/CreateDeploymentByImage/"
+    click deploy "https://docs.daocloud.io/kpanda/user-guide/workloads/create-deployment/"
     ```
 
     Expected result: When all users on the platform deploy applications in the namespace, they can select images in the public registry space for deployment through the image selector.
 
-    ![Select Image](../images/admin01.png)
+    
 
-    ![Image Selection](../images/admin02.png)
+    
 
 1. Assuming that you have created a managed Harbor or connected to an external Harbor, follow the steps below to share the private image to the namespace under the specified workspace (tenant) (you can select the private image through the image selector when deploying the application image):
 
@@ -54,8 +54,8 @@ DCE 5.0 mainly promotes Harbor as a registry to provide image services.
 
     class create,bind cluster;
 
-    click create "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/Workspaces/"
-    click bind "https://docs.daocloud.io/ghippo/04UserGuide/02Workspace/quota/#_4"
+    click create "https://docs.daocloud.io/ghippo/user-guide/workspace/workspace/"
+    click bind "https://docs.daocloud.io/ghippo/user-guide/workspace/quota/#_4"
     ```
 
     The operation steps are:
@@ -78,14 +78,14 @@ DCE 5.0 mainly promotes Harbor as a registry to provide image services.
     click setpublic "https://docs.daocloud.io/en/kangaroo/create-registry/"
     click push "https://docs.daocloud.io/en/kangaroo/quickstart/push/"
     click bind "https://docs.daocloud.io/en/kangaroo/bind-to-ws/"
-    click deploy "https://docs.daocloud.io/kpanda/07UserGuide/Workloads/CreateDeploymentByImage/"
+    click deploy "https://docs.daocloud.io/kpanda/user-guide/workloads/create-deployment/"
     ```
 
     Expected result: Only when deploying applications in namespaces under this workspace, you can use the image selector to select private images under this registry space to deploy applications.
 
-    ![Select Image](../images/admin03.png)
+    
 
-    ![Image Selection](../images/admin04.png)
+    
 
 !!! tip
 

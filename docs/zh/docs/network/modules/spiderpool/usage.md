@@ -22,11 +22,11 @@ hide:
 
 1. 登录平台 UI，在左侧导航栏点击`容器管理`->`集群列表`，找到对应集群。然后，在左侧导航栏选择`无状态负载`，点击`镜像创建`。
 
-    ![镜像创建](../../images/useippool.jpg)
+    ![镜像创建](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/useippool.jpg)
 
 2. 在`创建无状态负载`页面，完成`基本信息`、`容器配置`、`服务配置`页面的信息输入。然后，进入`高级配置`，点击配置`容器网卡`。
 
-    ![容器网卡](../../images/useippool02.jpg)
+    ![容器网卡](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/useippool02.jpg)
 
 3. 进入`容器网卡配置`页面，完成以下参数的配置：
 
@@ -52,21 +52,21 @@ hide:
 
     手动选择 IP 池需要提前创建 IP 池，可选择 IP 池范围为：`共享 IP 池`，添加了当前`应用亲和性的 IP 池`，添加了当前`命名空间亲和性的 IP 池`。
 
-    ![手动选择](../../images/useippool05.jpg)
+    ![手动选择](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/useippool05.jpg)
 
     **自动创建固定 IP 池**
 
     仅需要选择对应的子网，即可自动创建固定 IP 池。
 
-    ![自动创建](../../images/useippool03.jpg)
+    ![自动创建](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/useippool03.jpg)
 
-    ![自动创建](../../images/useippool04.jpg)
+    ![自动创建](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/useippool04.jpg)
 
 4. 创建完工作负载后，可点击对应工作负载 `workload01` 查看工作负载 Pod 使用的 IP。
 
-    ![工作负载 IP](../../images/useippool06.jpg)
+    ![工作负载 IP](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/useippool06.jpg)
 
-    ![工作负载 IP](../../images/useippool07.jpg)
+    ![工作负载 IP](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/useippool07.jpg)
 
 ## YAML 使用
 

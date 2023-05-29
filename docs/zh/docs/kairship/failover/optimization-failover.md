@@ -5,9 +5,9 @@
 1. 集群维度：标记集群为不健康的检查时长、集群驱逐容忍时长
 2. 工作负载维度：集群污点容忍时长
 
-### 1.failover 特性介绍
+## Failover 特性介绍
 
-在 Karmada 中启用了 failover 之后，Karmada 提供了几个参数配置选项，分别为：
+在 DCE 5.0 多云编排中启用了 failover 之后，提供了以下一些参数配置选项：
 
 | 参数                               | 定义                           | 描述                                                         | 字段名EN                                             | 字段名ZH                 | 默认值 |
 | ---------------------------------- | ------------------------------ | ------------------------------------------------------------ | ---------------------------------------------------- | ------------------------ | ------ |
@@ -17,20 +17,22 @@
 | FailoverEvictionTimeout            | 驱逐容忍时长                   | 集群被标记为不健康后，超过此时长会给集群打上污点，并进入驱逐状态 （集群会增加驱逐污点） | Eviction tolerance time                              | 驱逐容忍时长             | 30s    |
 | ClusterTaintEvictionRetryFrequency | 优雅驱逐超时时长               | 进入优雅驱逐队列后，最长等待时长，超时后会立即删除           | Graceful ejection timeout duration                   | 优雅驱逐超时时长         | 5s     |
 
-### 2.工作负载被驱逐的时间线
+## 工作负载被驱逐的时间线
 
-简单解释下图：我们规定10s调用一次集群的API 用以记录集群的健康状态，当四次结果均为健康时，我们才认定集群时健康状态。此时我们将 DCE 与集群 APIserver 之间的 TCP 断开，10s-20s之内，若没有获取到集群的健康状态将认为集群异常，指定时间内若集群没有恢复健康，将被标记为非健康状态，同时打上 NoSchedule  的污点，超过指定的驱逐容忍时长后，将被打上 NoExecute 的污点，最终被驱逐。
+简单解释下图：我们规定 10s 调用一次集群的 API 用以记录集群的健康状态，当四次结果均为健康时，我们才认定集群是健康状态。
+此时我们将 DCE 与集群 APIserver 之间的 TCP 断开 10s-20s 之内，若没有获取到集群的健康状态将认为集群异常，
+指定时间内若集群没有恢复健康，将被标记为非健康状态，同时打上 NoSchedule 的污点，超过指定的驱逐容忍时长后，将被打上 NoExecute 的污点，最终被驱逐。
 
-![时间线](../images/you-failover01.png)
+![时间线](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/you-failover01.png)
 
-### 3.多云实例的优化配置
+## 多云实例的优化配置
 
 多云实例需要进入高级设置->故障转移部分，以下配置可参考上图填写参数信息。
 
-![故障转移](../images/you-failover02.png)
+![故障转移](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/you-failover02.png)
 
-### 4.多云工作负载的配置优化
+## 多云工作负载的配置优化
 
 多云工作负载主要和其部署策略（PP）相关，需要在部署策略中修改对应的集群污点容忍时长。
 
-![工作负载](../images/you-failover03.png)
+![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/you-failover03.png)

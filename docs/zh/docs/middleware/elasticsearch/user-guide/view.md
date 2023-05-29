@@ -7,4 +7,4 @@ hide:
 
 本页说明 Elasticsearch 列表。
 
-![列表](../images/list.png)
+![列表](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/list.png)

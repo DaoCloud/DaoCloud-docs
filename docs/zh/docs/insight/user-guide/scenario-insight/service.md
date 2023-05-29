@@ -2,7 +2,7 @@
 
 在 `可观测性 Insight` 中服务是指使用 Opentelemtry SDK 接入链路数据，服务监控能够辅助运维过程中观察应用程序的性能和状态。
 
-如何使用 OpenTelemetry 请参考：[使用 OTel 赋予应用可观测性](https://docs.daocloud.io/insight/06UserGuide/01quickstart/otel/otel/)
+如何使用 OpenTelemetry 请参考：[使用 OTel 赋予应用可观测性](https://docs.daocloud.io/insight/user-guide/quickstart/otel/otel/)
 
 ## 服务列表
 
@@ -14,7 +14,7 @@
 1. 进入`可观测性` 产品模块，
 2. 在左边导航栏选择 `场景监控 -> 服务监控`。
 
-    ![服务监控](../../images/service01.png)
+    ![服务监控](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/service01.png)
 
 !!! attention
 
@@ -29,7 +29,7 @@
 - 在流量指标模块，切换指标的过滤条件。
 - 在操作列表模块，支持基于操作名称和类型对列表中的数据进行查询。
 
-    ![服务监控](../../images/service02.png)
+    ![服务监控](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/service02.png)
 
 ### 服务指标说明
 

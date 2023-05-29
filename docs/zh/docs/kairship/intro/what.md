@@ -7,7 +7,7 @@ hide:
 
 国内的云计算已经发展了近 15 年，随着技术的成熟，企业应用不单单是简单的上云，出现了更多更复杂的多云需求。云计算从单云到多云的发展历程简单示意如下。
 
-![单云到多云](../images/what.png)
+![单云到多云](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/what.png)
 
 企业从最初简单的只要上云就好，到如今开始选择到底上哪个云，或者上哪些云，从而构建专属于企业自身的多云环境。
 
@@ -28,4 +28,3 @@ hide:
 
 [下载 DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }
-[申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

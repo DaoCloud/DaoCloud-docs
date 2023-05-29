@@ -1,13 +1,13 @@
-# update domain name
+# Update domain name
 
-The microservice gateway supports full lifecycle management of domain names hosted in a unified manner, including adding, updating, and deleting domain names. Through domain name management, a domain name can be applied to multiple APIs in the gateway, and gateway policies at the domain name level can be configured.
+The microservice gateway supports the full lifecycle management of domain names, including adding, updating, and deleting domain names. Through domain name management, you can apply a domain name to multiple apis of the gateway and configure gateway policies at the domain name level.
 
-There are two ways to modify the basic information and policy configuration of the domain name.
+You can modify the basic information and policy configuration of a domain name in two ways.
 
-- Find the domain name that needs to be updated on the `Domain Name Management` page, click **`ⵗ`** on the right side and select `Edit Basic Information` or `Edit Policy Configuration`.
+- In the `Domain Management` page find need to update the domain name, on the right side click ** `ⵗ` ** choose `Edit Basic Settings` or `Edit Policy Settings`.
 
-    ![Update basic information on the list page](imgs/update-domain-1.png)
+    <!--![]()screenshots-->
 
-- Click the domain name name to enter the domain name details page, click `Modify Basic Configuration` in the upper right corner of the page to update the basic information, and click `Modify Policy` to update the policy.
+- Click the domain name to go to the domain name details page. Click `Edit Basic Settings` at the upper right corner of the page to update basic information and `Edit Policy Settings` to update policy.
 
-    ![Update on the details page](imgs/update-domain-2.png)
+    <!--![]()screenshots-->

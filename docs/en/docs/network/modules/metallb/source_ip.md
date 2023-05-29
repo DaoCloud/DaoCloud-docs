@@ -135,6 +135,6 @@ node with the one declared by Metallb.
 
 5. On the `Global Management`->`Audit Log` page, click `View Details` in any event to view the obtained client source IP.
 
-    ![source-ip-1](../../images/source-ip-1.png)
+    
 
-    ![source-ip-2](../../images/source-ip-2.png)
+    

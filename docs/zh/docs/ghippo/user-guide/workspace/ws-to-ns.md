@@ -42,11 +42,11 @@ classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 class preparews,preparens,createns,nstows,wsperm cluster;
 class judge plain
 
-click preparews "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-across-clus/#_3"
-click preparens "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-across-clus/#_4"
-click nstows "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-across-clus/#_5"
-click wsperm "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-across-clus/#_6"
-click createns "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-across-clus/#_4"
+click preparews "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns/#_3"
+click preparens "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns/#_4"
+click nstows "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns/#_5"
+click wsperm "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns/#_6"
+click createns "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns/#_4"
 ```
 
 !!! tip
@@ -60,19 +60,19 @@ click createns "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-ac
 
 1. 使用 admin/folder admin 角色的用户登录 Web 控制台，点击左侧导航栏底部的`全局管理`。
 
-    ![全局管理](../../images/ws01.png)
+    ![全局管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws01.png)
 
 1. 点击左侧导航栏的`工作空间与层级`，点击右上角的`创建工作空间`按钮。
 
-    ![创建工作空间](../../images/ws02.png)
+    ![创建工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws02.png)
 
 1. 填写工作空间名称、所属文件夹等信息后，点击`确定`，完成创建工作空间。
 
-    ![确定](../../images/ws03.png)
+    ![确定](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws03.png)
 
 提示：若平台中已存在创建好的命名空间，点击某个工作空间，在`资源组`页签下，点击`绑定资源`，可以直接绑定命名空间。
 
-![弹出菜单绑定](../../images/across02.png)
+![弹出菜单绑定](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/across02.png)
 
 ## 准备命名空间
 
@@ -82,15 +82,15 @@ click createns "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-ac
 
 1. 点击左侧导航栏底部的`容器管理`。
 
-    ![容器管理](../../images/crd00.png)
+    ![容器管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/crd00.png)
 
 1. 点击目标集群的名称，进入`集群详情`。
 
-    ![集群详情](../../../kpanda/images/crd01.png)
+    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd01.png)
 
 1. 在左侧导航栏点击`命名空间`，进入命名空间管理页面，点击页面右侧的`创建`按钮。
 
-    ![创建命名空间](../../../kpanda/images/ns01.png)
+    ![创建命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/ns01.png)
 
 1. 填写命名空间的名称，配置工作空间和标签（可选设置），然后点击`确定`。
 
@@ -98,11 +98,11 @@ click createns "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-ac
 
         工作空间主要用于划分资源组并为用户（用户组）授予对该资源的不同访问权限。有关工作空间的详细说明，可参考[工作空间与层级](workspace.md)。
 
-    ![填写](../../../kpanda/images/ns02.png)
+    ![填写](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/ns02.png)
 
 1. 点击`确定`，完成命名空间的创建。在命名空间列表右侧，点击 `⋮`，可以从弹出菜单中选择`绑定工作空间`。
 
-    ![确定和绑定](../../../kpanda/images/ns03.png)
+    ![确定和绑定](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/ns03.png)
 
 ## 将命名空间绑定到工作空间
 
@@ -110,18 +110,18 @@ click createns "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-ac
 
 1. 依次点击`全局管理` -> `工作空间与层级` -> `资源组`，点击某个工作空间名称后，点击`绑定资源`按钮。
 
-    ![绑定资源](../../images/bind01.png)
+    ![绑定资源](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/bind01.png)
 
 1. 选中要绑定的工作空间（可多选），点击`确定`完成绑定。
 
-    ![确定](../../images/bind02.png)
+    ![确定](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/bind02.png)
 
 ## 为工作空间添加成员并授权
 
 1. 在 `工作空间与层级` -> `授权`中，点击某个工作空间名称后，点击`添加授权`按钮。
 
-    ![添加授权](../../images/wsauth01.png)
+    ![添加授权](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/wsauth01.png)
 
 1. 选择要授权的`用户/用户组`、`角色`后，点击`确定`完成授权。
 
-    ![确定](../../images/bind02.png)
+    ![确定](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/bind02.png)

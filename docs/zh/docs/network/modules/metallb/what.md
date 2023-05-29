@@ -4,7 +4,7 @@
 所以对于 `LoadBancer` 类型的 Service，必须要有 `Cloud Provider` 加持才能实现。
 也就是说在裸机的 K8s 集群无法使用 `LoadBancer` 类型的服务。否则，您会发现 `LoadBancer` 的服务一直处于 Pending 状态。
 
-![`metallb`](../../images/lbservice.png)
+![`metallb`](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/lbservice.png)
 
 `Metallb` 是一款开源软件，它采用标准的路由协议（ARP 或 BGP）实现了裸机 K8s 集群的负载均衡功能。
 

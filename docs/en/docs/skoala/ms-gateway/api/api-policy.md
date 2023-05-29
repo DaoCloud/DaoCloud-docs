@@ -1,134 +1,164 @@
-# 配置 API 策略
+# Configuring API policies
 
-DCE 5.0 微服务网关支持九种 API 策略：负载均衡、路径改写、超时配置、重试机制、请求头重写、响应头重写、Websocket、本地限流、健康检查。可以单独使用某一种策略，也可以组合使用多种策略达到最佳实践。<!--有关 API 策略的组合配置，参考[API 策略配置最佳实践]()-->
+DCE 5.0 Microservice gateway supports nine API policies: load balancing, path rewriting, timeout configuration, retry mechanism, request header rewriting, response header rewriting, Websocket, local traffic limiting, and health check. You can use a single strategy or a combination of strategies to achieve best practices. <! -- For combination configuration of API policies, see [ API policy configuration Best practices ]()-->
 
-有两种方式可以配置 API 策略：
+There are two ways to configure API policies:
 
-- 在创建 API 的过程中设置策略，参考[添加 API](add-api.md)。
-- 在 API 创建完成后通过[更新 API 策略配置](update-api.md)进行调整。
+- To set policies during API creation, see [Add API](add-api.md).
+- Adjust by [ Update the API policy configuration ](update-api.md) after the API is created.
 
-**每一项策略的配置说明如下**:
+** Video tutorial: **
 
-**视频教程**：[API 策略的高级配置](../../../videos/skoala.md#api-1)
+- [Advanced Configuration of API Policy (1)](../../../videos/skoala.md#api-1)
+- [Advanced Configuration of API Policy (2)](../../../videos/skoala.md#api-2)
 
-## 负载均衡
+** The configuration of each policy is described as follows: **
 
-当 API 的目标后端服务为多实例服务时，可以通过负载均衡策略控制流量分发，根据业务场景调整不同服务的实例接收到的流量。
+## Load balancing
 
-- 随机
+When the target back-end service of an API serves multiple instances, you can use load balancing policies to control traffic distribution and adjust the traffic received by instances of different services based on service scenarios.
+
+- random
   
-    默认的负载均衡策略。选择随机规则时，网关会将请求随机分发给后端服务的任意实例。在流量较小时，部分后端服务可能会负载较多。效果参考下图：
+    Default load balancing policy. When a random rule is selected, the gateway randomly distributes the request to any instance of the back-end service. Some back-end services may be overloaded when the traffic is low. The effect is shown in the following figure:
 
-    ![负载均衡](imgs/lb-random.png)
+    <!--![]()screenshots-->
 
-- 轮询
+- polling
   
-    向后端服务的所有实例轮流分发请求，各个服务实例接收到的请求数基本相近。此规则可以在流量较小时保障流量的平均分配。效果参考下图：
+    All instances of the back-end service distribute requests in turn, and each service instance receives roughly the same number of requests. This rule ensures equal distribution of traffic when the traffic volume is small. The effect is shown in the following figure:
 
-    ![负载均衡](imgs/lb-rc.png)
+    <!--![]()screenshots-->
 
-- 权重
+- weight
   
-    根据 API 目标后端服务的权重分发流量，权重数值越大，优先级越高，承担的流量也相对较多。服务权重的配置入口见下图：
+    Traffic is distributed based on the weight of the API target back-end service. A larger weight indicates a higher priority and more traffic is borne. See the following figure for the service weight configuration entry:
 
-    ![负载均衡](imgs/lb-weight.png)
+    <!--![]()screenshots-->
 
 - Cookie
   
-    将来源请求头中属于相同 Cookie 的流量分发到固定的后端服务实例，前提是后端服务能够根据 Cookie 做出不同的响应处理。
+    Traffic belonging to the same Cookie in the source request header is distributed to a fixed back-end service instance, provided that the back-end service can respond differently based on the Cookie.
 
-- 请求 Hash
+- Request Hash
   
-    选择请求 Hash 时，可以通过一些高级策略来进负载均衡分配。当前支持的 Hash 策略为：IP、请求参数。
+    When you select request Hash, you can use some advanced policies to implement load balancing. Currently, the supported Hash policies are IP and request parameters.
 
-    ![负载均衡](imgs/lb.png)
+    <!--![]()screenshots-->
 
-## 路径改写
+## Path rewriting
 
-如果对外暴露的 API 路径与后端服务提供的路径不一致，可以改写 API 路径使其与后端服务的路径一致，确保服务的正常访问。
-启用路径改写后，网关会将外部请求流量转发到重写后的路径。
+If the exposed API path is inconsistent with the path provided by the back-end service, you can change the API path to be consistent with the path of the back-end service to ensure normal service access. After path rewriting is enabled, the gateway forwards external request traffic to the rewritten path.
 
-注意：**需要确保重写的路径是真实存在的，并且路径正确，以 “/” 开头**。
+Note: ** You need to make sure that the overwritten path is real and that the path is correct, starting with a "/". **
 
-![路径改写](imgs/rewrite.png)
+<!--![]()screenshots-->
 
-## 超时配置
+## Timeout configuration
 
-设置请求响应的最大时长，如果超出所设置的最大时长，则直接请求失败。超时时长支持数值类型为 >=1 的整数值，时间单位为“秒（s）”。
+This section describes how to set the maximum response duration. If the maximum response duration is exceeded, the request fails. The timeout period can be an integer whose type is >=1, and the unit of time is seconds (s).
 
-超时配置默认处于关闭状态，开启后必须配置超时时长。开启超时配置有助于减少异常处理导致的阻塞问题。
+The timeout configuration is disabled by default. After it is enabled, you must set a timeout period. Enabling the timeout configuration helps reduce congestion caused by exception handling.
 
-![超时](imgs/timeout.png)
+<!--![]()screenshots-->
 
-## 重试机制
+## Retry mechanism
 
-微服务网关的 API 支持配置非常丰富的重试机制。启用重试机制后，网关会在请求失败时自动重新尝试访问。达到重试超时时间之后自动触发再次重试，当重试次数达到配置的最大重试次数时停止重试。重试机制默认处于关闭状态，开启后必须配置重试次数和重试超时时长。
+The API of the microservice gateway supports a very rich configuration of retry mechanisms. After the retry mechanism is enabled, the gateway automatically retries the access if the request fails. After the retry timeout period is reached, retry is automatically triggered. When the number of retries reaches the upper limit, retry is stopped. The retry mechanism is disabled by default. After it is enabled, you must set the retry times and retry timeout period.
 
-支持通过自定义配置选择不同的重试条件，自定义重试状态码等。
+You can customize retry conditions and retry status codes.
 
-### HTTP 重试
+### HTTP retry
 
-- 5XX 响应错误：后端服务响应 HTTP status_code 大于 500 时进行重试。
-- 网关错误：当响应结果为网关错误提示时，自动进行重试。
-- 请求重置：当响应结果为请求重置消息时，自动进行重试。
-- 连接失败：当响应结果为网络连接失败的返回时，自动进行重试。
-- 拒绝流：当响应结果为后端服务将请求标记为拒绝处理时，自动进行重试。
-- 指定状态码：当后端服务响应 HTTP status_code 为特定状态码时自动进行重试，支持配置特定的状态码。
+- 5XX Response error: Try again when HTTP status_code of the back-end service response is greater than 500.
+- Gateway error: Automatically retry when the response is a gateway error message.
+- Request reset: Automatically retries when the response is a request reset message.
+- Connection failure: Automatically retry when the response is a network connection failure.
+- Denial flow: Automatically retry when the response results in the back-end service marking the request as rejected for processing.
+- Specify status code: Automatically retries when HTTP status_code is specified in the response of the back-end service. You can configure a specific status code.
 
-### GRPC 重试
+### GRPC retry
 
-- 请求被取消：当响应结果为GRPC 请求被后端服务取消时自动进行重试。
-- 响应超时： 当后端服务响应超时，自动进行重试。
-- 服务内部错误：当响应结果为服务内部错误时，自动进行重试。
-- 资源不足：当响应结果为资源不足时，自动进行重试。
-- 服务不可用时：当响应结果为后端不可用时，自动进行重试。
+- Request cancelled: The request is automatically retried when the back-end service cancels the request.
+- Response timeout: When the back-end service response times out, the system automatically tries again.
+- Internal service error: Automatically retries when the response is an internal service error.
+- Insufficient resources: Automatically retry when the response is insufficient resources.
+- When the service is unavailable: Automatically retry when the response is unavailable at the back end.
 
-    ![重试](imgs/retry.png)
+    <!--![]()screenshots-->
 
-## 请求头/响应头改写
+## Request header/response header rewriting
 
-支持添加、修改、删除请求头和响应头及其对应的值。
+Support for adding, modifying, and deleting request and response headers and their corresponding values.
   
-- 增加请求头/响应头：使用`设置`动作，填写新的关键字和新值。
-- 修改请求头/响应头：使用`设置`动作，填写已有的关键字并赋予新值。
-- 移除请求头/响应头，使用`移除`动作，只填写需要移除的关键字即可，无需填写对应的值。
+- Add request header/response header: Use the `Settings` action to fill in the new keyword and new value.
+- Modify the request header/response header: Use the `Settings` action to fill in the existing keywords and assign a new value.
+- To remove the request header or response header, run the `Remove` action and enter only the keyword to be removed.
 
-    ![header 改写](imgs/header-rewrite.png)
+    <!--![]()screenshots-->
 
 ## Websocket
 
-WebSocket 是一种在单个 TCP 连接上进行全双工通信的协议。WebSocket 使得客户端和服务器之间的数据交换变得更加简单，允许服务端主动向客户端推送数据。在 WebSocket API 中，浏览器和服务器只需要完成一次握手，两者之间就直接可以创建持久性的连接，并进行双向数据传输。
+WebSocket is a protocol for full-duplex communication over a single TCP connection. Websockets make it easier to exchange data between the client and server, allowing the server to actively push data to the client. In the WebSocket API, the browser and server only need to complete a handshake to create a persistent connection and two-way data transfer.
 
-启用 Websocket 之后支持通过 Websocket 协议访问 API 的后端服务。
+After Websocket is enabled, you can use Websocket to access API back-end services.
 
-![websocket](imgs/websocket.png)
+<!--![]()screenshots-->
 
-## 本地限流
+## Local current limiting
 
-微服务网关支持丰富的限流能力，支持在 API 层级启用本地限流能力。
+The microservice gateway supports abundant traffic limiting capabilities, including enabling local traffic limiting capabilities at the API level.
 
-- 请求速率：时间窗口（秒/分/时）内允许的最大请求速率，例如每分钟最多允许 3 次请求。支持输入 >=1 的整数。
-- 允许溢出速率：达到预设的请求速率时，仍旧允许额外处理一部分请求，适用于业务突增的流量高峰时段。支持输入 >=1 的整数。
-- 限制返回码：默认返回码为 429，表示请求次数过多。可参考 envoy 官方文档了解[本地限流支持的状态码](https://github.com/envoyproxy/envoy/blob/v1.23.1/api/envoy/type/v3/http_status.proto#L137)。
-- Header 关键字：默认为空，可根据需求自行设置。
+- Request rate: Specifies the maximum request rate allowed in the time window (seconds/minutes/hours), for example, a maximum of three requests per minute. An integer >=1 is supported.
+- Overflow rate: Allows some additional requests to be processed when the preset request rate is reached. This parameter is applicable to traffic surges during peak hours. An integer >=1 is supported.
+- Restricted return code: The default return code is 429, indicating too many requests. Refer to the envoy official documentation [Status Code](https://github.com/envoyproxy/envoy/blob/v1.23.1/api/envoy/type/v3/http_status.proto#L137).
+- Header keyword: This parameter is null by default. You can set this parameter based on requirements.
 
-下图中的配置表示：每分钟最多允许请求 8 次 (3+5)，第 9 次访问时会返回 429 状态码，提示访问次数过多。每次请求成功后返回的响应内容都会带上 `ratelimit：8` 响应头。
+The configuration shown in the following figure indicates that a maximum of 8 requests are allowed per minute (3+5). The 9th access will return a 429 status code indicating that the number of requests is too many. The response content returned after each successful request will have a `ratelimit：8` response header.
 
-![本地限流](imgs/ratelimit.png)
+<!--![]()screenshots-->
 
-!!! info
+## Health examination
 
-    除了在 API 层级的本地限流能力之外，还可以通过[配置域名策略](../domain/domain-policy.md)针对整个域名进行限流处理。当 API 与域名同时配置限流策略时，以 API 层级的限流策略为准。
+By setting the health check address, you can ensure that the gateway automatically adjusts the load balancing when the back-end service is abnormal. Flag an unhealthy back-end service and stop distributing traffic to it. After the back-end service recovers and passes the specified health check conditions, traffic distribution is automatically resumed.
 
-## 健康检查
+- Health check path: Start with a slash (/), and all instances of all back-end services should provide the same health check interface.
+- Specific health check host: After a host address is configured, only the health check is performed on the host.
+- Check interval: Indicates the interval of a health check. The unit is seconds. For example, a health check is performed every 10 seconds.
+- Check timeout period: specifies the maximum timeout period for a health check. If the health check exceeds the specified timeout period, the health check fails.
+- Marking the number of health checks: The service instance is marked as healthy only when the check result is healthy for N consecutive times. When a service instance is marked as healthy, request traffic is automatically distributed to the service instance.
+- Marking the number of unhealthy checks: If the service instance is checked for N consecutive times and the result is unhealthy each time, the service instance is marked as unhealthy. When the service instance is marked as unhealthy, the request traffic to the instance is stopped.
 
-通过设置健康检查地址，可以有效保证当后端服务异常时，网关自动进行负载均衡调整。对不健康的后端服务进行标记，停止向该服务分发流量。当后端服务恢复并通过设定的健康检查条件后，自动恢复流量分发。
+    <!--![]()screenshots-->
 
-- 健康检查路径：以 “/” 开头，并且全部后端服务的所有实例都应提供相同的健康检查接口。
-- 特定健康检查主机：配置主机地址后，仅对该主机进行健康检查。
-- 检查时间间隔：每次健康检查的时间间隔，时间单位为“秒”，例如每隔 10 秒进行一次健康检查。
-- 检查超时时间：健康检查的最大超时时长，当健康检查超过配置的时长时，直接标记健康检查失败。
-- 标记健康检查次数：连续检查 N 次并且每次结果都是健康时，才将服务实例标记为健康状态；当服务实例被标记为健康状态后，请求流量将会自动分发到该服务实例。
-- 标记不健康检查次数：连续检查 N 次并且每次结果都是不健康时，就将服务实例标记为不健康状态，当服务实例被标记为不健康时，停止向该实例分发请求流量。
+## Cookie rewriting
 
-    ![健康检查](imgs/healthcheck.png)
+Configure the cookie rewriting policy by referring to the following instructions:
+
+- Name: You must enter an existing cookie name
+- Domain name: Specifies the domain name of the cookie to be redefined
+- Path: Redefines the path of the cookie
+- Secure: `Enable` Indicates that the secure mode is enabled, and `Disable` indicates that the secure mode is disabled. In secure mode, the request must be a secure connection (HTTPS) for the cookie to be saved. If HTTP is used, cookies are invalid
+- Samesite: Whether to send cookies across domains
+
+    - Strict: The cookies of this website are strictly prohibited for cross-domain requests
+    - Lax: Banned in most cases, except for Get requests that navigate to the target URL.
+    - None: Cross-domain requests are allowed to carry cookies of this site, provided that Secure is set to `Enable`, that is, it can only be used under HTTPS
+
+        <!--![]()screenshots-->
+
+## Access blacklist and whitelist
+
+After `Black List` is enabled, only IP requests in the whitelist are allowed to pass through the gateway and requests from other sources are denied. Or deny blacklisted IP requests through the gateway and allow requests from all other sources.
+
+- Number of proxy layers before the gateway: Several proxy endpoints must pass through the request from the client to the gateway. For example, `**Client-Nginx-Gateway**` has one proxy level because only one Nginx proxy endpoint passes between them.
+
+    > When creating or updating a gateway, you can set the number of proxy layers in `Advanced Settings` of the gateway as required.
+
+- Remote: If the IP source is Remote, whether the whitelist takes effect depends on the number of proxy layers before the gateway. When the number of proxy layers is n, the IP address of the n+1 endpoints from the gateway takes effect. For example, `**Client-Nginx-Gateway**` If the number of proxy layers before the gateway is 1, this parameter takes effect only for the IP address of the second endpoint before the gateway, that is, the IP address of the client. If you fill in the IP address of Nginx, the whitelist will not take effect.
+
+    <!--![]()screenshots-->
+
+- Peer: If the IP source is Peer, the whitelist is valid only for the **direct** peer IP address of the gateway, regardless of the number of proxy layers before the gateway. For example `Client-...-Nginx-Gateway`, no matter how many proxy endpoints there are between the client and Nginx, the whitelist is only valid for the IP of the last Nginx.
+
+    <!--![]()screenshots-->

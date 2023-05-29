@@ -16,7 +16,7 @@
 
 ### 基于容器镜像构建应用
 
-具体操作步骤可参考[基于 Git 仓构建微服务应用](../user-guide/wizard/create-git-based-ms.md)、[基于 Jar 包部署 Java 应用](../user-guide/wizard/jar-java-app.md)。
+具体操作步骤可参考[基于 Git 仓构建微服务应用](../user-guide/wizard/create-app-git.md)、[基于 Jar 包部署 Java 应用](../user-guide/wizard/jar-java-app.md)。
 
 **需要注意**：
 
@@ -24,11 +24,11 @@
 
 - 服务端口：名称为 `http`、容器端口为 `8082`、服务端口为 `8082`。
 
-    ![容器配置](../images/argorollout01.png)
+    ![容器配置](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argorollout01.png)
 
 - 填写高级配置时需要开启灰度发布。
 
-    ![开启灰度发布](../images/argorollout02.png)
+    ![开启灰度发布](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argorollout02.png)
 
 ### Istio 相关资源配置
 
@@ -189,15 +189,15 @@
 
 1. 选择开启灰度发布的应用
 
-    ![选择应用](../images/argorollout03.png)
+    ![选择应用](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argorollout03.png)
 
 2. 修改发布规则（为了更明显的演示效果）
 
-    ![修改规则](../images/argorollout04.png)
+    ![修改规则](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argorollout04.png)
 
 3. 点击创建并更新应用，在弹出的对话框中填写镜像地址：`argoproj/rollouts-demo:yellow`
 
-    ![填写镜像地址](../images/argorollout05.png)
+    ![填写镜像地址](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argorollout05.png)
 
 ### 验证效果
 
@@ -206,8 +206,8 @@
 此界面会并发调用 `http://{istio-ingressgateway LB IP}:8082/color`，将获取到颜色信息填充到方格中。
 在灰度发布对象中，指定的颜色为 **blue、yellow**，会按照定义规则 1:9 的流量比进行展示。
 
-![效果示意](../images/argorollout06.png)
+![效果示意](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argorollout06.png)
 
 此时可以在应用工作台灰度发布模块选择继续发布应用来调整流量比例，直到最终成功发布。
 
-![调整比例](../images/argorollout07.png)
+![调整比例](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argorollout07.png)

@@ -3,7 +3,7 @@
 服务条目可以将外部服务、Web API 或虚拟机添加到服务网格的内部服务注册表中。
 以一个外部服务为例，添加服务条目后，Envoy 代理可以将流量发送到该外部服务，服务网格也可以通过虚拟服务和目标规则对该外部服务进行流量治理，就好像该服务条目是网格中的正常服务一样。
 
-服务网格提供了两种创建方式：YAML 创建和向导创建。
+服务网格提供了两种创建方式：向导创建和 YAML 创建。
 
 ## 图形向导创建
 
@@ -11,33 +11,33 @@
 
 1. 进入所选网格后，在左侧导航栏点击`流量治理` -> `服务条目`，点击右上角的`创建`按钮。
 
-    ![创建](../../images/entry01.png)
+    ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/entry01.png)
 
-1. 在`创建服务条目`页面中，配置各项参数后点击`确定`。具体参数的含义，请参见[参数说明](#parameters)
+1. 在`创建服务条目`页面中，配置各项参数后点击`确定`。具体参数的含义，请参见[参数说明](#_3)。
 
-    ![配置参数](../../images/entry02.png)
+    ![配置参数](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/entry02.png)
 
 1. 返回服务条目列表，屏幕提示创建成功。
 
-    ![创建成功](../../images/entry03.png)
+    ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/entry03.png)
 
 1. 在列表右侧，点击操作一列的 `⋮`，可通过弹出菜单进行更多操作。
 
-    ![更多操作](../../images/entry04.png)
+    ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/entry04.png)
 
 ## YAML 创建
 
 1. 进入所选网格后，在左侧导航栏点击`流量治理` -> `服务条目`，点击右上角的 `YAML 创建`按钮。
 
-    ![YAML 创建](../../images/entry05.png)
+    ![YAML 创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/entry05.png)
 
 1. 选择命名空间，选择模板，修改各个字段参数，或者直接导入现有的 YAML 文件，参数确认无误后点击`确定`。
 
-    ![YAML 参数配置](../../images/entry06.png)
+    ![YAML 参数配置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/entry06.png)
 
 1. 返回服务条目列表，屏幕提示创建成功。
 
-    ![创建成功](../../images/entry07.png)
+    ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/entry07.png)
 
 以下是一个标准的服务条目 YAML 示例：
 
@@ -67,7 +67,7 @@ spec:
 status: {}
 ```
 
-## 概念介绍
+## 字段参数说明
 
 上述 YAML 文件和创建向导中各项参数的含义简单说明如下。
 

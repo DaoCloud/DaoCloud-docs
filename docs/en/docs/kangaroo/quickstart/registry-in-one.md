@@ -16,16 +16,16 @@ If it is Workspace Admin, you can associate the existing container registry with
 
 1. Log in with the Workspace Admin role, click `Associated Registry` from the left navigation bar, and click the `Associated Registry` button in the upper right corner.
 
-    ![Relate Registry](../images/relate02.png)
+    
 
 1. After filling in the form information, click `OK`.
 
-    ![Fill out the form](../images/relate03.png)
+    
 
     !!! note
 
         1. If the Docker Registry container registry has not set a password, you can leave it blank, and the Harbor registry must fill in the username/password.
-        1. For a hands-on demo, see [Associated Registry Video Demo](../videos/kangaroo.md).
+        1. For a hands-on demo, see [Associated Registry Video Demo](../../videos/kangaroo.md).
 
 ## Integrated registry
 
@@ -34,20 +34,20 @@ Registry integration is the entrance to the container registry of the centralize
 
 1. Log in with the Admin role, and click `Registry Integration` on the left navigation bar.
 
-    ![Registry Integration](../images/interg01.jpg)
+    
 
 1. Click the `Registry Integration` button in the upper right corner.
 
-    ![Registry Integration](../images/interg02.jpg)
+    
 
-1. Select the registry type, fill in the integration name, registry address, user name and password, and click `OK`.
+1. Select the registry type, fill in the integration name, registry address, username and password, and click `OK`.
 
-    ![Fill out the form](../images/interg03.jpg)
+    
 
 1. In the integrated registry list, hover the cursor over a certain registry, click the eye icon to view the overview.
 
-    ![View overview](../images/interg04.jpg)
+    
 
 1. The overview page displays the basic information and statistical information of the current registry, and also provides a quick start at the top, which is convenient for managing registry space, workspace, and creating applications.
 
-    ![View overview](../images/interg05.jpg)
+    

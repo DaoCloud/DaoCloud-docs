@@ -16,7 +16,7 @@ Among them, the network is the key to the implementation of the overall plan, an
 
 - To ensure high availability, microservice application loads are mutually active and standby in different clusters. In this scenario, it is also necessary to ensure network connectivity.
 
-![all-in-one](../images/intro01.png)
+
 
 **Traditional application cloud nativeization**
 
@@ -26,7 +26,7 @@ Among them, the network is the key to the implementation of the overall plan, an
 
 - Diversified network types: Based on the strong control requirements for external access IP, users often open some applications to external access in a container cloud platform. For applications that do not require external access, dynamic virtual IPs are still used. For example, some applications use MacVLAN CNI for external access, and some applications use Calico CNI. Therefore, diversification of network types has also gradually become a requirement for applications on the cloud.
 
-![cloud-native](../images/intro02.png)
+
 
 **Database, machine learning and other applications on the cloud**
 

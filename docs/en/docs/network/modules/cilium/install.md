@@ -1,18 +1,20 @@
-# Installation Arguments Configuration
+# Installation parameter configuration
 
-This page describes the configuration of various arguments when installing Cilium with Kubean, as well as the enablement of the main features and related instructions.
+This page describes the configuration of various parameters when installing Cilium with Kubean, as well as the enablement of the main features and related instructions.
 
 ## Prerequisites
 
-To install Cilium in DCE 5.0, you need to select `cilium` for `Network Plugins` on the `Create Cluster`->`Network Configuration` page. For creating a cluster, see [create worker cluster](../../../kpanda/07UserGuide/Clusters/CreateCluster.md).
+1. Make sure the OS Kernel version number >= 4.9.17, 5.10+ is recommended.
 
-![cilium-install](../../images/cilium-install1.png)
+2. To install Cilium in DCE 5.0, you need to select `cilium` for `Network Plugins` on the `Create Cluster`->`Network Configuration` page. For creating a cluster, see [create worker cluster](../../../kpanda/user-guide/clusters/create-cluster.md).
 
-## Argument configuration
+   ![network setting](../../images/cilium-install-1.png)
 
-If you need to configure more features for Cilium, you can install Cilium via Kubean. Add and fill in arguments as needed under `Advanced Configuration`->`Custom arguments` when installing Cilium using Kubean.
+## Parameter configuration
 
-![cilium-arg](../../images/cilium-install2.png)
+If you need to configure more features for Cilium, you can install Cilium via Kubean. Add and fill in parameters as needed under `Advanced Configuration`->`Custom argentums` when installing Cilium using Kubean.
+
+![cilium-arg](../../images/cilium-install-2.png)
 
 The following describes the configuration of each argument when installing Cilium with Kubean：
 
@@ -28,7 +30,7 @@ The following describes the configuration of each argument when installing Ciliu
 
 - IPAM mode
 
-    By default, "Cluster Scope" mode is used, which can be set by the following parameters:
+    IPAM is responsible for assigning and managing the IP addresses of network endpoints (containers or otherwise). Cilium supports several IPAM modes. By default, the "Cluster Scope" mode is used, which can be set with the following parameters:
 
     ```yaml
     cilium_ipam_mode: cluster-pool
@@ -36,16 +38,22 @@ The following describes the configuration of each argument when installing Ciliu
 
     Supported values ​​include "cluster-pool", "kubernetes" and modes customized by major public clouds.
 
+    1. `kubernetes`: uses the host-scope IPAM that comes with Kubernetes. Address assignment is delegated to each node and the Pod CIDR for the per-node is stored in v1.
+
+    2. `cluster-pool`: the default `IPAM` mode, which allocates the Pod CIDRs of the `per-node` and uses the `host-scope` allocator on each node to assign IP addresses.
+
+       This mode is similar to kubernetes, with the difference that the latter stores the Pod CIDR of the per-node in the v1.Node resource.
+
 - IPV4 and IPV6
 
-By default, IPV4 is used, which can be set by the following parameters:
+By default, IPV4 is used, which can be set by the following parameters. If dual stack is enabled through the interface, the default IPv6 parameters are automatically turned on:
 
 ```yaml
 cilium_enable_ipv4: true
 cilium_enable_ipv6: false # true enable IPV6
 ```
 
-- cluster name
+- Cluster name
 
     The default Cilium cluster name is "default", which can be set by the following parameters:
 
@@ -53,15 +61,15 @@ cilium_enable_ipv6: false # true enable IPV6
     cilium_cluster_name: default
     ```
 
-- identity mode
+- Identity mode
+
+    For the cilium id storage structure like `crd` or `kvstore`, it is usually a more convenient choice for storing meta information directly using CRD. But in large clusters, it is more efficient to split a separate set of ETCDs for cilium to use alone.
 
     The "crd" mode is used by default, which can be set by the following parameters:
 
     ```yaml
     cilium_identity_allocation_mode: crd
     ```
-
-    Supported values ​​are "crd" and "kvstore".
 
 - Resource Limits
 
@@ -103,7 +111,7 @@ cilium_enable_ipv6: false # true enable IPV6
     cilium_monitor_aggregation_flags: "all"
     ```
 
-- replace kube-proxy
+- Replace kube-proxy
 
     By default, no replacement is performed, and it can be turned on or off on the interface, or set through the following parameters:
 
@@ -132,7 +140,7 @@ cilium_enable_ipv6: false # true enable IPV6
 
 - Hubble
 
-    Hubble is installed and enabled by default, and how to enable Hubble metrics. The indicators exposed by default are:
+    Hubble is installed and enabled by default, and how to enable Hubble metrics. The metrics exposed by default are:
 
     ```yaml
     - dns

@@ -2,7 +2,7 @@
 
 Local Disk Manager (LDM) is an important functional module of HwameiStor system. `LDM` is designed to simplify managing disks on nodes. It abstracts the disk into a resource that can be managed and monitored. It itself is a DaemonSet object, and each node in the cluster will run the service, through which the existing disks are detected and converted into corresponding LocalDisk resources.
 
-![LDM Architecture Diagram](../hwameistor/img/ldm.png)
+
 
 Currently LDM is still in `alpha` stage.
 
@@ -20,7 +20,7 @@ Currently LDM is still in `alpha` stage.
 
 ## Usage
 
-If you want to fully deploy HwameiStor, please refer to [Using Helm Chart to install and deploy](../hwameistor/install/deploy.md).
+If you want to fully deploy HwameiStor, please refer to [Using Helm Chart to install and deploy](../../hwameistor/install/deploy-operator.md).
 
 If you only want to deploy LDM separately, you can refer to the following steps to install it.
 

@@ -4,7 +4,7 @@ This page describes how to use f5network from the perspective of layer 4 and lay
 
 ## Layer 4 load balancing
 
-When the component is installed in the 4-layer load balancing mode, F5 load balancing services can be created for the services in the cluster. For specific usage, please refer to [F5 official documents](https://clouddocs.f5.com/containers/latest/userguide/ loadbalancer/).
+When the component is installed in the 4-layer load balancing mode, F5 load balancing services can be created for the services in the cluster. For specific usage, please refer to [F5 official documents](https://clouddocs.f5.com/containers/latest/userguide/loadbalancer/).
 
 A simple example is given below:
 
@@ -44,15 +44,15 @@ A simple example is given below:
 
 3. Log in to the F5 Web UI, switch to the partition you are using, and you can observe the delivered forwarding rules.
 
-    ![f5network usage1](../../images/f5-usage1.png)
+    
 
-    ![f5network usage1](../../images/f5-usage2.png)
+    
 
 4. In the cluster, access the VIP assigned by F5 to access the service.
 
 ## Layer 7 load balancing http
 
-When the component is installed in Layer 7 load balancing mode, F5 load balancing services can be created for the ingress in the cluster. For specific usage, please refer to [F5 official documents](https://clouddocs.f5.com/containers/latest/userguide/ ingress.html).
+When the component is installed in Layer 7 load balancing mode, F5 load balancing services can be created for the ingress in the cluster. For specific usage, please refer to [F5 official documents](https://clouddocs.f5.com/containers/latest/userguide/ingress.html).
 
 A simple example is given below:
 
@@ -113,9 +113,9 @@ A simple example is given below:
 
 4. Log in to the F5 Web UI, switch to the partition you are using, and you can observe the delivered forwarding rules.
 
-   ![f5network usage3](../../images/f5-usage3.png)
+   
 
-   ![f5network usage4](../../images/f5-usage4.png)
+   
 
 5. In the outbound cluster, visit F5 and assign it to the URL http://VIP/http-server to access the service.
 

@@ -1,6 +1,6 @@
 # What is F5network
 
-The F5network component integrates the F5 official project [f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller) and [k8s bigip ctlr](https://github.com/F5Networks/k8s-bigip- ctlr),
+The F5network component integrates the F5 official project [f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller) and [k8s bigip ctlr](https://github.com/F5Networks/k8s-bigip-ctlr),
 Complete the control of the F5 device, synchronize the service and ingress configuration in the cluster to the F5 hardware device, and realize the load balancing of the northbound ingress of the cluster.
 
 Among them, the [k8s bigip ctlr](https://github.com/F5Networks/k8s-bigip-ctlr) component is responsible for monitoring service or ingress objects, and realizing the control plane rule delivery to F5 hardware devices;
@@ -16,7 +16,7 @@ F5 devices have two modes to forward traffic to the cluster (for more informatio
 
     Requirement: The loadBalancer service object of the cluster application must be assigned a nodePort.
 
-    ![nodeport](../../images/F5nodeport.png)
+    
 
 2. Cluster forwarding mode: F5 forwards the traffic directly to the Pod IP, and this mode can work in "layer 4 forwarding" and "layer 7 forwarding".
 
@@ -24,7 +24,7 @@ F5 devices have two modes to forward traffic to the cluster (for more informatio
 
     Requirements: The cluster forwards Pod routes to the routers and F5 devices in the network through the BPG protocol, or requires the nodes in the cluster to establish VXLAN tunnels with the F5 devices.
 
-    ![cluster](../../images/F5cluster.png)
+    
 
 ## Function Description
 

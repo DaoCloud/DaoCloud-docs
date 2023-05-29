@@ -7,7 +7,7 @@ date: 2022-12026
 
 After the image is downloaded, it can be used directly, which provides users with a lot of convenience, but it is not necessarily safe, and may be maliciously implanted with a backdoor. Users need to scan the downloaded image to obtain the image security information.
 
-In the (DevOps) CI/CD process, the image is directly pushed to the image registry, which cannot guarantee the security of the image, and there is a need for continuous security integration and automatic scanning.
+In the (DevOps) CI/CD process, the image is directly pushed to the container registry, which cannot guarantee the security of the image, and there is a need for continuous security integration and automatic scanning.
 
 Security scanning is an active preventive measure, which can effectively avoid hacker attacks and prevent problems before they happen. It is recommended to scan the image regularly/manually.
 
@@ -17,7 +17,7 @@ The final scan results should provide more guidance on corrective actions. When 
 
 ## Image scan features
 
-Currently, the image registry module of DCE 5.0 supports the following scanning  images:
+Currently, the container registry module of DCE 5.0 supports the following scanning  images:
 
 - Hosted Harbor repositories support Trivy scanning.
 - Native Harbor repositories support Clair and Trivy scanning, depending on what plugins the user has installed.
@@ -28,21 +28,21 @@ When the user scans the image index, all indexed images will be scanned synchron
 
 For associated and integrated repositories, will appear in the list of images. You can manually scan some  images on demand.
 
-1. Enter the image list in the image registry, select an instance and registry space, and click an image.
+1. Enter the image list in the container registry, select an instance and registry space, and click an image.
 
-    ![image List](./images/scan01.jpg)
+    
 
 2. In the image details list, click `⋮` on the right side of the list, and select `Scan` from the pop-up menu.
 
-    ![Scan](./images/scan02.jpg)
+    
 
 3. The system starts to scan the image, usually the status is `queuing`, `scanning`, `scanning completed`.
 
-    ![Queuing](./images/scan03.jpg)
+    
 
-    ![Scanning](./images/scan04.jpg)
+    
 
-    ![Scan complete](./images/scan05.jpg)
+    
 
     Scan status includes:
 
@@ -55,7 +55,7 @@ For associated and integrated repositories, will appear in the list of images. Y
 
 4. After the scan is complete, hover the cursor over the scale bar of the scan to view the scan details.
 
-    ![Scan complete](./images/scan06.jpg)
+    
 
 ## Scan native Harbor images
 
@@ -63,12 +63,12 @@ Integrated native Harbor repository with support for scanning by Clair or Trivy.
 
 The specific operation steps are:
 
-1. Log in to the image registry as a platform administrator, and click `registry Integration` at the bottom left.
+1. Log in to the container registry as a platform administrator, and click `registry Integration` at the bottom left.
 
-    ![registry Integration](./images/harbor01.jpg)
+    
 
 2. In the list of integrated registries, hover the cursor over a certain registry, and click the `Native Harbor` icon.
 
-    ![registry Integration](./images/harbor02.jpg)
+    
 
 3. Jump to the native Harbor, see [Scanning Harbor images](https://goharbor.io/docs/2.1.0/administration/vulnerability-scanning/scan-individual-artifact/).

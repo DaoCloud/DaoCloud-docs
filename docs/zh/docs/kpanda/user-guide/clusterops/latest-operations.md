@@ -7,7 +7,7 @@ hide:
 
 在该页面可以查看最近的集群操作记录和 Helm 操作记录，以及各项操作的 YAML 文件和日志，也可以删除某一条记录。
 
-![操作记录](../../images/operations01.png)
+![操作记录](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/operations01.png)
 
 设置 Helm 操作的保留条数：
 
@@ -15,8 +15,8 @@ hide:
 
 1. 点击目标集群的名称，在左侧导航栏点击`最近操作`->`Helm 操作`->`设置保留条数`。
 
-    ![保留条数](../../images/operations02.png)
+    ![保留条数](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/operations02.png)
 
 2. 设置需要保留多少条 Helm 操作记录，并点击`确定`。
 
-    ![保留条数](../../images/operations03.png)
+    ![保留条数](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/operations03.png)

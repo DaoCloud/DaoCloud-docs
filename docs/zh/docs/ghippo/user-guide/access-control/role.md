@@ -17,20 +17,20 @@
 
 - 在`全局管理` -> `用户与访问控制` -> `用户`的用户列表中，找到该用户；点击 `...`，选择`授权`，为该用户赋予系统预定义的子模块管理员权限。
 
-    ![用户授权](../../images/role01.png)
+    ![用户授权](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/role01.png)
 
 - 在`全局管理` -> `用户与访问控制` -> `用户组`的用户组列表中创建用户组，将该用户加入用户组，并给用户组授权（具体操作为：在用户组列表找到该用户组，点击 `...`，选择`授权`，为该用户组赋予系统预定义的子模块管理员权限）。
 
-    ![用户组授权](../../images/role02.png)
+    ![用户组授权](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/role02.png)
 
 - 在`全局管理` -> `用户与访问控制` -> `角色`的角色列表中，找到相应的子模块管理员角色，点击角色名称进入详情，点击`关联成员` 按钮，选中该用户或用户所在的用户组，点击`确定`。
 
-    ![角色授权](../../images/role03.png)
+    ![角色授权](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/role03.png)
 
 支持此模式的子模块：用户与访问控制（IAM）、审计日志（Audit）、容器管理（Kpanda）
 同时，平台的管理员角色（admin）也可通过以上方式进行授权
 
-![全局管理模式](../../images/permission1.png)
+![全局管理模式](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/permission1.png)
 
 !!! note
 
@@ -56,7 +56,7 @@ Namespace01 的 Viewer 角色仅能够查看 Namespace01。
 
 您可以在`容器管理` -> `权限管理`，选择`添加授权`，为用户/用户组授予 Cluster 或 Namespace 的权限。
 
-![子模块管理模式](../../images/permission2.png)
+![子模块管理模式](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/permission2.png)
 
 !!! note
 
@@ -94,7 +94,7 @@ Namespace01 的 Viewer 角色仅能够查看 Namespace01。
 
 3. 您可以通过`全局管理` -> `工作空间与层级`，创建工作空间，并在`工作空间-授权`中给用户/用户组授予 Workspace Admin、Workspace Editor、Workspace Viewer 角色。
 
-    ![基于资源的管理模式2](../../images/permission4.png)
+    ![基于资源的管理模式2](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/permission4.png)
 
 !!! note
 

@@ -1,35 +1,36 @@
----
-hide:
-  - navigation
----
-
 # Global management
 
 On this page, you can download the offline installation packages of various versions of the global management module.
 
 ## Download
 
-| file name | version | file size | package | update date |
-| ------------------------------ | ------------------ --------------------------------------- | -------- | ---- -------------------------------------------------- -------------------------------------------------- -- | ---------- |
-| ghippo-0.12.1-amd64.bundle.tar | [v0.12.1](../../ghippo/01ProductBrief/release-notes.md) | 442 MB | [:arrow_down: Download](https:// proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo-0.12.1-amd64.bundle.tar) | 2022-11-29 |
+| Version | Architecture | File Size |
+| -------------------------------------------------- ----- | ----- |-------- | ----------------------------- -------------------------------------------------- --------------------------- | ---------- | ---------- |
+| [v0.16.1](../../ghippo/intro/release-notes.md) | AMD 64 | 10.00KB | [:arrow_down: ghippo_v0.16.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.16.1_amd64.tar) | [:arrow_down: ghippo_v0.16.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.16.1_amd64_checksum.sha512sum ) | 2023-04-27 |
+| [v0.16.0](../../ghippo/intro/release-notes.md) | AMD 64 | 10.00KB | [:arrow_down: ghippo_v0.16.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.16.0_amd64.tar) | [:arrow_down: ghippo_v0.16.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.16.0_amd64_checksum.sha512sum ) | 2023-04-27 |
+| [v0.15.0](../../ghippo/intro/release-notes.md) | AMD 64 | 426.40MB | [:arrow_down: ghippo_v0.15.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.15.0_amd64.tar) | [:arrow_down: ghippo_v0.15.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.15.0_amd64_checksum.sha512sum ) | 2023-03-29 |
+| [v0.14.0](../../ghippo/intro/release-notes.md) | AMD 64 | 10.00KB | [:arrow_down: ghippo_v0.14.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.14.0_amd64.tar) | [:arrow_down: ghippo_v0.14.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.14.0_amd64_checksum.sha512sum ) | 2023-02-27 |
+| [v0.13.2](../../ghippo/intro/release-notes.md) | AMD64 | 439.90MB | [:arrow_down: ghippo_v0.13.2_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.13.2_amd64.tar) | [:arrow_down: ghippo_v0.13.2_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.13.2_amd64_checksum.sha512sum) | 2022-12-29 |
+| [v0.13.0](../../ghippo/intro/release-notes.md) | AMD64 | 439.89MB | [:arrow_down: ghippo_v0.13.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.13.0_amd64.tar) | [:arrow_down: ghippo_v0.13.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.13.0_amd64_checksum.sha512sum) | 2022-12-29 |
+| [v0.12.1](../../ghippo/intro/release-notes.md) | AMD64 | 442 MB | [:arrow_down: ghippo-0.12.1-amd64.bundle.tar](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo-0.12.1-amd64.bundle.tar) | [:arrow_down: ghippo_v0.12.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.12.1_amd64_checksum.sha512sum) | 2022-11-29 |
 
 ## Validation
 
-In the directory where the offline installation package was downloaded, execute the following command to verify the integrity:
+In the directory where the offline installation package and verification file are downloaded, run the following command to verify the integrity:
 
 ```sh
-echo "16f3f5549e3f776d46642e94bb4675ab847f5fa3489ee3b7c65ce9c8d36e451989aada4f7042d4c078ea7dcf321b1920b97c6568d3262e234d8c7ed775f9ac70  dist/offline/ghippo-0.12.1.bundle.tar" | sha512sum -c
+echo "$(cat ghippo_v0.13.2_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
-If the verification is successful, it will print:
+After the validation is successful, the printed result is similar to:
 
 ```none
-ghippo.tar: ok
+ghippo_v0.13.2_amd64.tar: ok
 ```
 
 ## Install
 
-Refer to [Global Management](../../ghippo/install/offlineInstall.md) installation process for installation.
+Refer to [Global Management](../../ghippo/install/offline-install.md) installation process for installation.
 
-If it is the first installation, please [apply for free trial](../../dce/license0.md) or [genuine authorization](https://qingflow.com/f/e3291647).
+If you are installing for the first time, please [apply for a free trial](../../dce/license0.md) or contact us for authorization: email info@daocloud.io or call 400 002 6898.
 If you have any license key related questions, please contact DaoCloud delivery team.

@@ -28,10 +28,10 @@ cloudtty is applicable to the following scenarios:
 
 The demo effect of cloudtty is as follows:
 
-![screenshot_gif](https://github.com/cloudtty/cloudtty/raw/main/docs/snapshot.gif)
+
 
 After the cloudtty is intergated to your own UI, it would look like:
 
-![demo_png](https://github.com/cloudtty/cloudtty/raw/main/docs/demo.png)
+
 
 [Go to cloudtty repo](https://github.com/cloudtty/cloudtty){ .md-button }

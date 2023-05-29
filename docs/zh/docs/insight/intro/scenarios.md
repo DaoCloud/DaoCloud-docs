@@ -13,7 +13,7 @@
 - 可观测性具备日志、指标、分布式链路追踪、事件日志等一站式采集和存储。全栈数据观测实现了数据采集、存储、分析、可视化、告警一体化。
 - 实时监控各种维度资源，包括集群监控、节点监控、工作负载监控、服务监控等。
 
-![安装采集器](../images/scenerio01.png)
+![安装采集器](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/scenerio01.png)
 
 ## 快速故障定位及排查
 
@@ -28,4 +28,4 @@
 - 拓扑图中发现异常应用后，通过调用链一键下钻，故障根因清晰可见。
 - 通过关联工作负载查询错误日志，快速解决故障。
 
-![安装采集器](../images/scenerio02.png)
+![安装采集器](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/scenerio02.png)

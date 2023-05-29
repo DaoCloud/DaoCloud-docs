@@ -107,15 +107,15 @@ calico.yaml linux-amd64 longhorn-1.3.2.tgz rook rook-ceph-image.zip
 
 ## 上传 chart 包至 DCE 5.0 镜像仓库
 
-![dce 镜像仓库-1](../images/registry-1.png)
+![dce 镜像仓库-1](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/registry-1.png)
 
-![dce 镜像仓库-2](../images/registry-2.png)
+![dce 镜像仓库-2](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/registry-2.png)
 
-![dce 应用商店-1](../images/cluster-1.png)
+![dce 应用商店-1](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/cluster-1.png)
 
 ## DCE 5.0 应用商店安装 Longhorn
 
-![dce 应用商店-2](../images/cluster-2.png)
+![dce 应用商店-2](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/cluster-2.png)
 
 ```
 [root@k8s-10-6-162-31 ~]# kubectl get po -n longhorn-system
@@ -158,14 +158,14 @@ longhorn-ui-68bc57db67-46brf 1/1 Running 0 3h20m
 
 修改 Longhorn 前端 service 端口：
 
-![longhorn-svc-1](../images/longhorn-svc-1.png)
+![longhorn-svc-1](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/longhorn-svc-1.png)
 
-![longhorn-svc-2](../images/longhorn-svc-2.png)
+![longhorn-svc-2](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/longhorn-svc-2.png)
 
 进入 Longhorn UI：
 
-![longhorn 界面](../images/longhorn-1.png)
+![longhorn 界面](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/longhorn-1.png)
 
-![longhorn 界面](../images/longhorn-2.png)
+![longhorn 界面](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/longhorn-2.png)
 
 至此，在 DCE 5.0 应用商店成功部署了 Longhorn 存储系统！

@@ -6,26 +6,38 @@
 
 在 DCE 5.0 中安装 Calico，需要在`创建集群`—>`网络配置`页面下，`网络插件`选择 `calico`。关于创建集群，请参阅[创建工作集群](../../../kpanda/user-guide/clusters/create-cluster.md)。
 
-![calico-install](../../images/calico-install.png)
-
 ## 参数配置
 
-如果用户需要为 Calico 配置更多功能，可通过 Kubespray 安装 Calico。关于使用 Kubespray 安装 Calico 时的各项参数配置，请在`高级配置`—>`自定义参数`下根据需要添加并填写。
+进入`创建集群`第三步`网络配置`，配置如下参数：
 
-![calico-install](../../images/calico-arg.png)
+![calico-install](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/calico-install.png)
+
+- `双栈`：是否开启双栈，默认关闭。`enable_dual_stack_networks`：开启后，将为 pod 和 service 提供 IPv4 和 IPv6 网络。
+    
+- `网卡检测模式`： Calico 网卡检测模式，选择后会通过此网卡进行流量通信。
+    - `FIRST FOUND`：默认模式，枚举所有的节点 IP（忽略一些常见的本地网卡，如 docker0，kube-ipvs0 等)，并选择第一个地址。
+    - `KUBERNETES INTERNAL IP`：选择 Node 对象 Status.addresses 字段的第一个内部地址。
+    - `INTERFACE REGEX`：通过网卡名称或者正则表达式指定网卡。
+- `IPtables 模式`：Calico 依赖 IPtables 实现 SNAT 以及网络策略，并且需要和主机的 IPtables 模式保持一致，否则可能会造成通讯问题。支持` Legacy`,`NFT`,`Auto`三种模式，默认为 `Legacy`模式。如果您使用的节点系统版本为 CentOS 8 / RHEL 8 / OracleLinux 8 系列，请选择 NFT 模式。
+- `隧道模式`：Calico 支持两种数据包封装模式: IPIP 和 VXLAN，并都支持 Always 和 CrossSubnet 模式。
+    - `VXLAN Always`：无论节点是否处于同一网段，所有跨节点数据包都将使用 VXLAN 被封装，这满足绝大部分的使用场景。
+    - `VXLAN CrossSubnet`：只有当节点处于不同网段时，跨节点的数据包才会被封装。
+    - `IPIP CrossSubnet`：只有当节点处于不同网段时，跨节点的数据包才会被封装。
+    - ` IPIP Always`：无论节点是否处于同一网段，所有跨节点数据包都将使用 IPIP 被封装，这满足绝大部分的使用场景。
+- `IPv4 容器网段`：`kube_pods_subnet`，默认同 `ipv4_pools` 保持一致。集群下容器使用的网段，决定了集群下容器的数量上限。创建后不可修改。默认值为 10.233.64.0/18。
+- `IPv6 容器网段`：`kube_pods_subnet_ipv6`，默认同 `ipv6_pools` 保持一致。集群下容器使用的网段，决定了集群下容器的数量上限。创建后不可修改。开启双栈后需要输入此网段信息。
+- `服务网段`：同一集群下容器互相访问时使用的 Service 资源的网段决定了 Service 资源的上限。 创建后不可修改。默认为 10.244.0.0/18 。
+
+
 
 以下介绍使用 Kubespray 安装 Calico 时的各项参数配置：
 
-- `enable_dual_stack_networks`： 若设置为`true`，将为 pod 和 service 提供 IPv4 和 IPv6 网络。
+!!! note 
 
-    > 建议根据实际情况开启，可作为安装配置项。
+    如果用户需要为 Calico 配置更多功能，可通过 Kubespray 安装 Calico。关于使用 Kubespray 安装 Calico 时的各项参数配置，请在`高级配置`—>`自定义参数`下根据需要添加并填写。
+    ![calico-install](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/calico-arg.png)
 
-- `ipv4_pools`：默认 IPv4 地址池。由 `calico_pool_cidr` 指定（默认未设置，由全局变量 `kube_pods_subnet` 指定）。
-    > 建议与 `kube_pods_subnet` 保持一致，可在安装时暴露配置项。
-
-- `ipv6_pools`：默认 IPv6 地址池。由 `calico_pool_cidr_ipv6` 指定（默认未设置，由全局变量 `kube_pods_subnet_ipv6` 指定）。
-
-    > 建议与 `kube_pods_subnet_ipv6` 保持一致，可在安装时暴露配置项。
+> 建议根据实际情况开启，可作为安装配置项。
 
 - `calico_pool_blocksize`：默认的 ippool(ipv4) 的 blockSize。
 
@@ -38,18 +50,6 @@
     由 `calico_pool_blocksize_ipv6` 定义，默认为 116。
 
     > 使用默认配置即可，但必须根据集群规模来设定，至少每个节点拥有一个 block，可在安装时暴露配置项。
-
-- `calico_vxlan_mode`：是否启用 VXLAN 隧道模式。
-
-    默认启用。如没特殊要求，默认启用 VXLAN 模式。
-
-    > 可在安装时暴露配置项，默认 always。
-
-- `calico_ipip_mode`：是否启用 IPIP 隧道模式。
-
-    默认关闭。如没特殊要求，默认启用 VXLAN 模式。
-
-    > 可在安装时暴露配置项，默认 Never。
 
 - `calico_felix_prometheusmetricsenabled`：是否暴露 felix metrics。
 
@@ -72,9 +72,3 @@
 - `calico_datastore`：Calico 数据存储引擎、kdd 或 etcd。
 
     默认 kdd，推荐 kdd。
-
-- `calico_iptables_backend`：CentOS 8.0 下的 `calico iptables backend mode` 需要和主机的 iptables 模式保持一致。
-
-    由 `calico_iptables_backend` 配置，默认为 "Auto"。
-
-    > 只针对 CentOS 8.0。

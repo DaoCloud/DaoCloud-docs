@@ -94,7 +94,8 @@ DaoCloud 是经认证的 K8s 服务提供商。目前 DCE 经 CNCF 认证可以�
 
 扫描二维码与开发者畅快交流：
 
-![wechat](./docs/zh/docs/images/assist.png)
+![wechat](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
+
 
 ## 参考链接
 

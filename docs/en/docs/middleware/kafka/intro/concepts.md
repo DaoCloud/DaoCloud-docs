@@ -17,7 +17,7 @@ hide:
 
     Since a Topic contains multiple partitions, the order of messages cannot be guaranteed across the entire Topic, but the order of messages within a single partition can be guaranteed.
 
-    ![](../images/concept01.png)
+    <!--screenshot-->
 
 - producers and consumers
 
@@ -29,23 +29,23 @@ hide:
     The offset is an incrementing number that Kafka adds to the message when it is created, and is unique to each message within a given partition.
     The consumer saves the last read offset of each partition on Zookeeper or Kafka. If the consumer is shut down or restarted, it can also retrieve the offset to ensure that the read state will not be lost.
 
-    ![](../images/concept02.png)
+    <!--screenshot-->
 
     A partition can only be read by one consumer in the same group, but can be read jointly by multiple consumers in different groups.
     When consumers in multiple groups jointly read the same topic, they do not affect each other.
 
-    ![](../images/concept03.png)
+    <!--screenshot-->
 
 -Brokers and Clusters
 
     A standalone Kafka server is called a Broker. Broker receives messages from producers, sets offsets for messages, and commits messages to disk for storage.
     Broker provides services for consumers, responds to requests to read partitions, and returns messages that have been committed to disk.
-    
+
     Broker is an integral part of the cluster (Cluster).
     Each cluster will elect a Broker as the cluster controller (Controller), and the cluster controller is responsible for management, including assigning partitions to Brokers and monitoring Brokers.
-    
+
     In the cluster, a partition (Partition) is subordinate to a Broker, and the Broker is called the leader of the partition (Leader).
     A partition can be assigned to multiple Brokers, and partition replication will occur at this time.
     This replication mechanism provides message redundancy for partitions, and if one Broker fails, other Brokers can take over the leadership.
 
-    ![](../images/concept04.png)
+    <!--screenshot-->

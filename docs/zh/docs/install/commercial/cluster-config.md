@@ -1,321 +1,447 @@
 # 集群配置文件 clusterConfig.yaml
 
 此 YAML 文件包含了集群的各项配置字段，安装之前必须先配置此文件。
-该文件将定义部署的负载均衡类型、部署模式、集群节点信息等关键参数。默认位于 `offline/sample/` 目录。
+该文件将定义部署模式、集群节点信息等关键参数。默认位于 `offline/sample/` 目录。
+
+v0.6.0 版本对配置文件的结构进行了优化，相对之前更加清晰易读。
 
 ## ClusterConfig 示例
 
 以下是一个 ClusterConfig 文件示例。
 
 ```yaml title="clusterConfig.yaml"
-apiVersion: provision.daocloud.io/v1alpha2
+apiVersion: provision.daocloud.io/v1alpha3
 kind: ClusterConfig
-metadata: 
+metadata:
 spec:
-  clusterName: my-cluster # (1)
+  clusterName: my-cluster
+   
+  # 火种节点的域名或IP，默认解析为火种节点默认网关所在网卡的IP；可手动填入IP或域名，若为域名，如果检测到无法解析，将自动建立此域名和火种节点默认IP的映射
+  # bootstrapNode: auto
+ 
   loadBalancer:
-    type: metallb # (2)
-    istioGatewayVip: xx.xx.xx.xx/32 # (3)
-    insightVip: xx.xx.xx.xx/32 # (4)
-
-  # privateKeyPath: /root/.ssh/id_rsa_sample  # (5)
-
+ 
+    # NodePort(default), metallb, cloudLB (Cloud Controller)
+    type: metallb
+    istioGatewayVip: xx.xx.xx.xx/32 # 当 loadBalancer.type 是 metallb 时必填，为 DCE 提供 UI 和 OpenAPI 访问权限
+    insightVip: xx.xx.xx.xx/32 # 别丢弃 /32，当 loadBalancer.type 是 metallb 时必填，用作 global 集群的 Insight 数据采集入口，子集群的 insight-agent 可以向这个 VIP 报告数据
+ 
+  # 指定 ssh 私钥，定义后无需再定义节点的 ansibleUser、ansiblePass
+  # privateKeyPath: /root/.ssh/id_rsa_sample
+ 
   masterNodes:
-    - nodeName: "g-master1" 
+    - nodeName: "g-master1" # nodeName 将覆盖 hostName，应符合 RFC1123 标准
       ip: xx.xx.xx.xx
-      ansibleUser: "***" 
-      ansiblePass: "****"
-    - nodeName: "g-master1" 
+      ansibleUser: "root"
+      ansiblePass: "dangerous"
+    - nodeName: "g-master2"
       ip: xx.xx.xx.xx
-      ansibleUser: "***" 
-      ansiblePass: "****"
-    - nodeName: "g-master1" 
+      ansibleUser: "root"
+      ansiblePass: "dangerous"
+    - nodeName: "g-master3"
       ip: xx.xx.xx.xx
-      ansibleUser: "***" 
-      ansiblePass: "****"
+      ansibleUser: "root"
+      ansiblePass: "dangerous"
   workerNodes:
     - nodeName: "g-worker1"
       ip: xx.xx.xx.xx
-      ansibleUser: "***"
-      ansiblePass: "****"
-      nodeTaints: # (6)
-        - "node.daocloud.io/es-only=true:NoSchedule"
+      ansibleUser: "root"
+      ansiblePass: "dangerous"
+      nodeTaints:                       # 对于 7 节点模式：至少 3 个 worker 节点应打污点（仅 ES 节点）
+       - "node.daocloud.io/es-only=true:NoSchedule"
     - nodeName: "g-worker2"
       ip: xx.xx.xx.xx
-      ansibleUser: "***"
-      ansiblePass: "****"
-      nodeTaints:  # (7)
-        - "node.daocloud.io/es-only=true:NoSchedule"
+      ansibleUser: "root"
+      ansiblePass: "dangerous"
+      nodeTaints:
+       - "node.daocloud.io/es-only=true:NoSchedule"
     - nodeName: "g-worker3"
       ip: xx.xx.xx.xx
-      ansibleUser: "***"
-      ansiblePass: "****"
-      nodeTaints: # (8)
-        - "node.daocloud.io/es-only=true:NoSchedule"
+      ansibleUser: "root"
+      ansiblePass: "dangerous"
+      nodeTaints:
+       - "node.daocloud.io/es-only=true:NoSchedule"
+ 
+  # ntpServer:
+    # - 0.pool.ntp.org
+    # - ntp1.aliyun.com
+    # - ntp.ntsc.ac.cn
+  
+  fullPackagePath: "/root/offline" # 解压后的离线包的路径，离线模式下该字段必填
+  
+  osRepos: # 操作系统软件源
+ 
+    # 支持 official-service(default), builtin
+    type: builtin
+    isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
+    osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
 
-  ntpServer: # (9)
-    - 0.pool.ntp.org
-    - ntp1.aliyun.com
-    - ntp.ntsc.ac.cn
-  registry: 
-
-    type: built-in # (10)
-    # builtinRegistryDomainName: ${跟上述配置仓库地址一致。如果是 built-in，则填写火种节点 IP}。# (11)
-    # type: external  # (12)
-    # externalRegistry: external-registry.daocloud.io # (13)
-    # externalRegistryUsername: admin   # (14)
-    # externalRegistryPassword: Harbor12345  # (15)
-    # externalScheme: https # (16)
-    
-    addonOfflinePackagePath: "Please-replace-with-Your-Real-Addon-Offline-Package-PATH-on-bootstrap-Node" # (17)
-
-  # kubean 所需要的仓库配置
-  imageConfig: 
-    imageRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE} # (18)
-    binaryRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean # (19)
-
-  # RPM 或者 DEB 安装的源头
-  repoConfig: 
-    repoType: centos # (20)
-    isoPath: "Please-replace-with-Your-Real-ISO-PATH-on-bootstrap-Node" # (21) 
-    osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node" # (22)
-    dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos/$releasever/os/$basearch" 
-
-    # dockerRepo: "" # (23)
-    # dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/redhat/$releasever/os/$basearch" # (24)
-
-    extraRepos:
-      - http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos-iso/\$releasever/os/\$basearch  
-      - http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos/\$releasever/os/\$basearch 
-  k8sVersion: v1.24.7
-  auditConfig:
-    logPath: /var/log/audit/kube-apiserver-audit.log
-    logHostPath: /var/log/kubernetes/audit
-    # policyFile: /etc/kubernetes/audit-policy/apiserver-audit-policy.yaml
-    # logMaxAge: 30
-    # logMaxBackups: 10
-    # logMaxSize: 100
-    # policyCustomRules: >
-    #   - level: None
-    #     users: []
-    #     verbs: []
-    #     resources: []
-  network:
-    cni: calico
-    clusterCIDR: 100.96.0.0/11
-    serviceCIDR: 100.64.0.0/13
-  cri:
-    criProvider: containerd
-    # criVersion: 1.6.8 # (25)
+    # type: external
+    # Set the block below only if target is S3-compatible storage which need to upload files automatically(e.g. minio).
+    # isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
+    # osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
+    # externalRepoEndpoint: https://external-repo.daocloud.io
+    # externalRepoUsername: rootuser
+    # externalRepoPassword: rootpass123
+ 
+    # type: external
+    # Set the block below if target is other storage which cannot or does not need to upload automatically(e.g. nginx).
+    # That requires you to import the required packages(iso, os-pkgs) manually if not all the required offline resources exist.
+    # `centos` as CentOS, RedHat, kylin, AlmaLinux, Fedora or Openeuler
+    # `debian` as Debian
+    # `ubuntu` as Ubuntu
+    # externalRepoType: centos
+    # externalRepoURLs: ['https://extertal-repo.daocloud.io/kubean/centos/\$releasever/os/\$basearch/']
+ 
+  imagesAndCharts: # 镜像仓库和 Chart仓库源
+ 
+    # official-service(default), builtin or external
+ 
+    type: builtin
+ 
+    # type: external
+    # IP or domain name
+    # externalImageRepo: https://external-registry.daocloud.io
+    # Set user and password. Optional
+    # externalImageRepoUsername: admin
+    # externalImageRepoPassword: Harbor12345
+    # chartmuseum or harbor
+    # externalChartRepoType: chartmuseum
+    # IP or domain name
+    # externalChartRepo: https://external-charts.daocloud.io:8081
+    # Set user and password. Optional
+    # externalChartRepoUsername: rootuser
+    # externalChartRepoPassword: rootpass123
+ 
+  addonPackage: # 应用商店 addon 离线包，定义后会对 addon 进行离线部署
+    # path: "/root/addon-offline-full-package-v0.4.8-amd64.tar.gz"
+   
+  binaries: # 二进制可执行文件
+ 
+    # official-service(default), builtin
+    type: builtin
+ 
+    # type: external
+    # IP or domain name
+    # externalRepository: https://external-binaries.daocloud.io:9000/kubean
+ 
+ #externalMiddlewares:
+  #  database:
+  #    kpanda:
+  #      - dbDriverName: "mysql"
+  #        # Please refer https://gorm.io/docs/connecting_to_the_database.html
+  #        dataSourceName: "user:password@tcp(localhost:3306)/dbname"
+  #        # readwrite(default) or readonly
+  #        accessType: readwrite
+  #        # The maximum number of open connections to the database.
+  #        #maxOpenConnections: 100
+  #        # The maximum number of connections in the idle connection pool.
+  #        #maxIdleConnections: 10
+  #        # The maximum amount of time a connection may be reused.
+  #        #connectionMaxLifetimeSeconds: 3600
+  #        # The maximum amount of time a connection may be idle.
+  #        #connectionMaxIdleSeconds: 1800
+  #    ghippoApiserver:
+  #      - dbDriverName: "mysql"
+  #        dataSourceName: "user:password@tcp(localhost:3306)/dbname"
+  #    ghippoKeycloak:
+  #      - dbDriverName: "mysql"
+  #        dataSourceName: "user:password@tcp(localhost:3306)/dbname"
+  #    ghippoAuditserver:
+  #      - dbDriverName: "mysql"
+  #        dataSourceName: "user:password@tcp(localhost:3306)/dbname"
+  #  elasticsearch:
+  #    insight:
+  #      endpoint: "https://xx.xx.xx.xx:9200"
+  #      # login with basic auth or bearer auth
+  #      #anonymous: false
+  #      # basic auth
+  #      username: "username"
+  #      password: "password"
+  #  S3Storage:
+  #    default:
+  #      endpoint: "xx.xx.xx.xx:9000"
+  #      # Set if you dont want to verify the certificate.
+  #      insecure: true
+  #      bucket: "bucketname"
+  #      accessKey: "YOUR-ACCESS-KEY-HERE"
+  #      secretKey: "YOUR-SECRET-KEY-HERE"
+  
+  # Examples as below. More refer to kubespray options setting documentations.
+  # kubeanConfig: |-
+  #  # Enable recommended node sysctl settings
+  #  node_sysctl_tuning: true
+  #  # Extra node sysctl settings while node_sysctl_tuning is enabled
+  #  extra_sysctl: [{ name: net.ipv4.tcp_keepalive_time, value: 700 }]
+  # bin_dir: /usr/local/bin
+  # http_proxy: ""
+  # https_proxy: ""
+  # upstream_dns_servers:
+  #   - 8.8.8.8
+  #   - 8.8.4.4
+ 
+  # k8sVersion only take effect in online mode, don't set it in offline mode.
+  # Unless to install a non-latest k8s version with offline pkg in place.
+  # k8sVersion: v1.25.4
+  # auditConfig:
+  #  logPath: /var/log/audit/kube-apiserver-audit.log
+  #  logHostPath: /var/log/kubernetes/audit
+  #  policyFile: /etc/kubernetes/audit-policy/apiserver-audit-policy.yaml
+  #  logMaxAge: 30
+  #  logMaxBackups: 10
+  #  logMaxSize: 100
+  #  policyCustomRules: >
+  #    - level: None
+  #      users: []
+  #      verbs: []
+  #      resources: []
+  # network:
+  #  cni: calico
+  #  clusterCIDR: 10.233.64.0/18
+  #  serviceCIDR: 10.233.0.0/18
+  # cri:
+  #  criProvider: containerd
+  #  criVersion only take effect in online mode, don't set it in offline mode
+  #  criVersion: 1.6.8
 ```
-
-1. 集群名称
-2. 有 3 个可选项：NodePort (default)、metallb、cloudLB (Cloud Controller)，建议生产环境使用 metallb
-3. 当 loadBalancer.type 是 metallb 时必填，为 DCE 提供 UI 和 OpenAPI 访问权限
-4. 别丢弃/32, 当 loadBalancer.type 是 metallb 时必填，用作 GLobal 集群的 Insight 数据采集入口，子集群的 insight-agent 可以向这个 VIP 报告数据
-5. 指定 ssh 私钥，定义后无需再定义节点的 ansibleUser、ansiblePass
-6. 对于 7 节点模式：至少 3 个工作节点应该被打上该污点，仅作为 ES 的工作节点
-7. 对于 7 节点模式：至少 3 个工作节点应该被打上该污点，仅作为 ES 的工作节点
-8. 对于 7 节点模式：至少 3 个工作节点应该被打上该污点，仅作为 ES 的工作节点
-9. 可以使用自己搭建的 ntpServer
-10. 支持 3 个选项：built-in, external, online
-11. 可选。内置镜像仓库的域名，并在每个节点的 /etc/hosts 和 coredns 的 hosts 区域进行域名解析的配置
-12. 使用已有的仓库，需要保证网络联通
-13. 已有镜像仓库的 IP 地址或者域名
-14. 只有 type: external 且推镜像时需要用户名和密码的情况下才需要定义此项
-15. 只有 type: external 且推镜像时需要用户名和密码的情况下才需要定义此项
-16. 这是一个占位符
-17. addon 离线包文件的绝对路径，如果不需要 addon 离线化可以注释掉
-18. 如果选择了已有仓库，需要填写外部镜像仓库地址
-19. 如果选择了已有仓库，需要填写外部 MinIO 地址
-20. `centos` 表示使用 CentOS、RedHat、kylin AlmaLinux 或 Fedora；`debian` 表示使用 Debian；`ubuntu` 表示使用 Ubuntu
-21. 操作系统 ISO 文件的绝对路径，不得为空
-22. 操作系统 osPackage 文件的绝对路径，不得为空
-23. 如果是 kylin，安装器将会选择 containerd，所以需要将 dockerRepo 设置为空
-24. 如果是 redhat
-25. criVersion 仅在 online 模式下生效，请勿将其设置为 offline 模式
 
 ## 关键字段
 
 该 YAML 文件中的关键字段说明，请参阅下表。
 
-| 字段                               | 说明                                                         | 默认值                                                      |
-| ---------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------- |
-| clusterName                        | 在 KuBean Cluster 里的 Global 集群命名                       | -                                                           |
-| loadBalancer.type                  | 所使用的 LoadBalancer 的模式，物理环境用 metallb，POC 用 NodePort，公有云和 SDN CNI 环境用 cloudLB | NodePort (default)、metallb、cloudLB (Cloud Controller)     |
-| loadBalancer.istioGatewayVip       | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 DCE 的 UI 界面和 OpenAPI 访问入口 | -                                                           |
-| loadBalancer.insightVip            | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 GLobal 集群的 insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP | -                                                           |
-| privateKeyPath                     | kuBean 部署集群的 SSH 私钥文件路径，如果填写则不需要定义ansibleUser、ansiblePass | -                                                           |
-| masterNodes                        | Global 集群：Master 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | -                                                           |
-| workerNodes                        | Global 集群：Worker 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | -                                                           |
-| registry.type                      | k8s 组件和 DCE 组件的镜像拉取仓库的类型，有 online (在线环境)、built-in (使用火种节点内置的仓库)、external (使用已有的外置仓库) | online                                                      |
-| registry.builtinRegistryDomainName | 如果使用 built-in (使用火种节点内置的仓库)，如果需要自动化植入仓库域名到各个节点的 /etc/hosts 和 CoreDNS 的 hosts，可指定域名 | -                                                           |
-| registry.externalRegistry          | 如果 registry.type = external 则需要定义该字段需要指定 external 仓库的 IP 或者域名(使用已有的外置仓库)，如果使用 Harbor，需要提前创建相应 Project | -                                                           |
-| registry.externalRegistryUsername  | 如果 registry.type = external 则需要定义该字段外置仓库的用户名，用于推送镜像 | -                                                           |
-| registry.externalRegistryPassword  | 如果 registry.type = external 则需要定义该字段外置仓库的密码，用于推送镜像 | -                                                           |
-| imageConfig.imageRepository        | 如果是离线安装，kuBean 安装集群时的本地镜像仓库来源          | -                                                           |
-| imageConfig.binaryRepository       | 如果是离线安装，kuBean 安装集群时的本地二进制仓库来源        | [https://files.m.daocloud.io](https://files.m.daocloud.io/) |
-| repoConfig                         | RPM 或者 DEB 安装的源头，如果离线模式下,是安装器启动的 MinIO | -                                                           |
-| repoConfig.`repoType`              | 支持 `centos（包含CentOS, RedHat,kylin AlmaLinux or Fedora）、debian、ubuntu` |                                                             |
-| repoConfig.`dockerRepo`            | 如果是 kylin，安装器将会选择 containerd，所以需要将 dockerRepo 设置为空 |                                                             |
-| repoConfig.isoPath                 | 操作系统 ISO 文件的路径 ，离线模式下不能为空                 | -                                                           |
-| k8sVersion                         | kuBean 安装集群的 K8s 版本必须跟 KuBean 和离线包相匹配       | -                                                           |
-| ntpServer                          | 可用的 NTP 服务器，供给新节点同步时间                        | -                                                           |
-| network.cni                        | CNI 选择，比如 Calico、Cilium                                | calico                                                      |
-| network.clusterCIDR                | Cluster CIDR                                                 | -                                                           |
-| network.serviceCIDR                | Service CIDR                                                 | -                                                           |
-| auditConfig                        | k8s api-server 的审计日志配置                                | 默认关闭                                                    |
+| 字段                                                         | 说明                                                         | 默认值                                                  |
+| :----------------------------------------------------------- | :----------------------------------------------------------- | :------------------------------------------------------ |
+| auditConfig                                                  | k8s api-server 的审计日志配置                                | 默认关闭                                                |
+| binaries                                                     | 二进制可执行文件                                             | -                                                       |
+| binaries.externalRepository                                  | 外置二进制可执行文件仓库的访问地址，URL形式                  | -                                                       |
+| binaries.type                                                | 二进制可执行文件的访问模式，取值为 official-service(在线), builtin(火种节点内置的minio) | official-service                                        |
+| clusterName                                                  | 在 KuBean Cluster 里的 Global 集群命名                       | -                                                       |
+| fullPackagePath                                              | 解压后的离线包的路径，离线模式下该字段必填                   | -                                                       |
+| addonPackage.path                                            | 应用商店 addon 包本地文件系统路径                            | -                                                       |
+| imagesAndCharts                                              | 镜像仓库和 Chart仓库源                                       | -                                                       |
+| imagesAndCharts.externalChartRepo                            | 外置Chart仓库的IP或域名                                      | -                                                       |
+| imagesAndCharts.externalChartRepoPassword                    | 外置Chart仓库的密码，用于推送镜像                            | -                                                       |
+| imagesAndCharts.externalChartRepoType                        | 外置Chart仓库的类型，取值为 chartmuseum，harbor              | -                                                       |
+| imagesAndCharts.externalChartRepoUsername                    | 外置Chart仓库的用户名，用于推送镜像                          | -                                                       |
+| imagesAndCharts.externalImageRepo                            | 指定external仓库的IP或者域名(需指定协议头)                   | -                                                       |
+| imagesAndCharts.externalImageRepoPassword                    | 外置镜像仓库的密码，用于推送镜像                             | -                                                       |
+| imagesAndCharts.externalImageRepoUsername                    | 外置镜像仓库的用户名，用于推送镜像                           | -                                                       |
+| imagesAndCharts.type                                         | 镜像与Chart的访问模式，取值为 official-service(在线), buitin(火种内置 registry 和 chartmuseum), external(外置) | official-service                                        |
+| k8sVersion                                                   | kuBean 安装集群的 K8s 版本必须跟 KuBean 和离线包相匹配       | -                                                       |
+| loadBalancer.insightVip                                      | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 GLobal 集群的 insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP | -                                                       |
+| loadBalancer.istioGatewayVip                                 | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 DCE 的 UI 界面和 OpenAPI 访问入口 | -                                                       |
+| loadBalancer.type                                            | 所使用的 LoadBalancer 的模式，物理环境用 metallb，POC 用 NodePort，公有云和 SDN CNI 环境用 cloudLB | NodePort (default)、metallb、cloudLB (Cloud Controller) |
+| masterNodes                                                  | Global 集群：Master 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | -                                                       |
+| network.clusterCIDR                                          | Cluster CIDR                                                 | -                                                       |
+| network.cni                                                  | CNI 选择，比如 Calico、Cilium                                | calico                                                  |
+| network.serviceCIDR                                          | Service CIDR                                                 | -                                                       |
+| ntpServer                                                    | 可用的 NTP 服务器，供给新节点同步时间                        | -                                                       |
+| osRepos                                                      | 操作系统软件源                                               | -                                                       |
+| osRepos.externalRepoType                                     | 外置软件源服务的操作系统类型, 取值为 centos(所有红帽系列), debian, ubuntu | -                                                       |
+| osRepos.externalRepoURLs                                     | 外置软件源的访问地址                                         | -                                                       |
+| osRepos.isoPath                                              | 操作系统 ISO 文件的路径, type 为 builtin 时不能为空          | -                                                       |
+| osRepos.osPackagePath                                        | 系统包文件的路径 ，type 为 builtin 时不能为空                | -                                                       |
+| osRepos.type                                                 | 操作系统软件源的访问模式，取值为 official-service(在线), builtin(火种节点内置的minio) | official-service                                        |
+| privateKeyPath                                               | kuBean 部署集群的 SSH 私钥文件路径，如果填写则不需要定义ansibleUser、ansiblePass | -                                                       |
+| workerNodes                                                  | Global 集群：Worker 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | -                                                       |
+| externalMiddlewares                                          | 外置中间件                                                   | -                                                       |
+| externalMiddlewares.database                                 | 外置数据库                                                   | -                                                       |
+| externalMiddlewares.database.ghippoApiserver                 | ghippoApiserver 外置数据库的配置                             | -                                                       |
+| externalMiddlewares.database.ghippoAuditserver               | ghippoAuditserver 外置数据库的配置                           | -                                                       |
+| externalMiddlewares.database.ghippoKeycloak                  | ghippoKeycloak 外置数据库的配置                              | -                                                       |
+| externalMiddlewares.database.kpanda                          | kpanda 外置数据库的配置                                      | -                                                       |
+| externalMiddlewares.database.kpanda[0].accessType            | kpanda 外置数据库的访问类型，取值：readwrite，readonly       | readwrite                                               |
+| externalMiddlewares.database.kpanda[0].driver                | kpanda 外置数据库的类型，取值：mysql                         | mysql                                                   |
+| externalMiddlewares.database.kpanda[0].dataSourceName        | kpanda 外置数据库的访数据源信息，用于连接数据库，可参考https://gorm.io/docs/connecting_to_the_database.html | -                                                       |
+| externalMiddlewares.database.kpanda[0].maxOpenConnections    | kpanda 外置数据库的最大连接数                                | 10                                                      |
+| externalMiddlewares.database.kpanda[0].maxIdleConnections    | kpanda 外置数据库的最大空闲连接数                            | 10                                                      |
+| externalMiddlewares.database.kpanda[0].connectionMaxLifetimeSeconds | kpanda 外置数据库的最大连接生命周期                          | 0                                                       |
+| externalMiddlewares.database.kpanda[0].connectionMaxIdleTimeSeconds | kpanda 外置数据库的最大空闲连接生命周期                      | 0                                                       |
+| externalMiddleware.elasticsearch                             | 外置 Elasticsearch                                           | -                                                       |
+| externalMiddleware.elasticsearch.insight                     | insight 所使用的外置 Elasticsearch 配置                      | -                                                       |
+| externalMiddleware.elasticsearch.insight.endpoint            | insight 所使用的外置 Elasticsearch 的访问地址                | -                                                       |
+| externalMiddleware.elasticsearch.insight.anonymous           | insight 所使用的外置 Elasticsearch 的匿名访问，取值 true，false，配置为 true时不应再填访问凭证 | false                                                   |
+| externalMiddleware.elasticsearch.insight.username            | insight 所使用的外置 Elasticsearch 的访问用户名              | -                                                       |
+| externalMiddleware.elasticsearch.insight.password            | insight 所使用的外置 Elasticsearch 的访问密码                | -                                                       |
 
-## 场景配置说明
+## 精简配置说明
 
-### 负载均衡选择
-
-支持 3 个选项：NodePort、metallb、cloudLB
+**离线模式下采用 builtin 方式安装**
 
 ```yaml
-  loadBalancer:
-    type: metallb # (1)
-    istioGatewayVip: xx.xx.xx.xx/32 # (2)
-    insightVip: xx.xx.xx.xx/32  # (3)
-
-	  # 如果 loadBalancer 是 NodePort
-    type: NodePort
-
-	  # cloudLB 特性目前处于 todo 状态
-```
-
-1. 支持 3 个选项：NodePort(default), metallb, cloudLB (Cloud Controller)
-2. 如果 loadBalancer != metallb，请移除这一行
-3. 记住要保留 /32
-
-### 1 / 4 / 7 节点模式
-
-```yaml
-  # all in one 模式
+apiVersion: provision.daocloud.io/v1alpha3
+kind: ClusterConfig
+metadata:
+  creationTimestamp: null
+spec:
+  clusterName: my-cluster
   masterNodes:
-    - nodeName: "g-master1" 
-      ip: xx.xx.xx.xx
-      ansibleUser: "root"
-      ansiblePass: "dangerous"
-
-  # 3 节点模式
-  masterNodes:
-    - nodeName: "g-master1" 
-      ip: xx.xx.xx.xx
-      ansibleUser: "root"
-      ansiblePass: "dangerous"
-    - nodeName: "g-master1" 
-      ip: xx.xx.xx.xx
-      ansibleUser: "root"
-      ansiblePass: "dangerous"
-    - nodeName: "g-master1" 
-      ip: xx.xx.xx.xx
-      ansibleUser: "root"
-      ansiblePass: "dangerous"
-
-  # 7 节点模式
-  masterNodes:
-    - nodeName: "g-master1" 
-      ip: xx.xx.xx.xx
-      ansibleUser: "root"
-      ansiblePass: "dangerous"
-    - nodeName: "g-master1" 
-      ip: xx.xx.xx.xx
-      ansibleUser: "root"
-      ansiblePass: "dangerous"
-    - nodeName: "g-master1" 
+    # nodeName 将覆盖 hostName，应符合 RFC1123 标准
+    - nodeName: "g-master1"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
   workerNodes:
-    - nodeName: "g-worker1"
-      ip: xx.xx.xx.xx
-      ansibleUser: "root"
-      ansiblePass: "dangerous"
-      nodeTaints:   # (1)
-        - "node.daocloud.io/es-only=true:NoSchedule"
-    - nodeName: "g-worker2"
-      ip: xx.xx.xx.xx
-      ansibleUser: "root"
-      ansiblePass: "dangerous"
-      nodeTaints:   # (2)
-        - "node.daocloud.io/es-only=true:NoSchedule"
-    - nodeName: "g-worker2"
-      ip: xx.xx.xx.xx
-      ansibleUser: "root"
-      ansiblePass: "dangerous"
-      nodeTaints:   # (3)
-        - "node.daocloud.io/es-only=true:NoSchedule"
+  fullPackagePath: "/root/offline"
+  osRepos:
+    # official-service(if omit or empty), builtin or external
+    type: builtin
+    isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
+    osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
+  imagesAndCharts:
+    # official-service(if omit or empty), builtin or external
+    # 目前还不支持 External S3 ...... FIXME
+    type: builtin
+  addonPackage:
+    path: "/root/addon-offline-full-package-v0.4.8-amd64.tar.gz"
+  binaries:
+    # official-service(if omit or empty), builtin or external
+    type: builtin
 ```
 
-1. 对于 7 节点模式：至少 3 个工作节点应该被打上该污点，仅作为 ES 的工作节点
-2. 对于 7 节点模式：至少 3 个工作节点应该被打上该污点，仅作为 ES 的工作节点
-3. 对于 7 节点模式：至少 3 个工作节点应该被打上该污点，仅作为 ES 的工作节点
-
-### 镜像仓库模式
-
-支持三种模式：online, built-in, external
+**离线模式下采用 external 方式安装**
 
 ```yaml
-  registry: 
-
-    type: online # (1)
-
-    type: built-in # (2)
-    builtinRegistryDomainName: # (3)
-
-    type: external # (4)
-    externalRegistry: external-registry.daocloud.io # (5)
-    externalRegistryUsername: admin      # (6)
-    externalRegistryPassword: Harbor12345  # (7)
-    externalScheme: https # (8)
-```
-
-1. 在线模式，设置为在线模式后，无需定义 spec.imageConfig、spec.repoConfig
-2. 使用内置的仓库，由安装器进行部署安装
-3. 可选。内置镜像仓库的域名，并在每个节点的 /etc/hosts 和 coredns 的 hosts 区域进行域名解析的配置
-4. 使用已有的仓库，需要保证网络联通
-5. 已有镜像仓库的 IP 地址或者域名
-6. 只有 type: external 且推镜像时需要用户名和密码的情况下才需要定义此项
-7. 只有 type: external 且推镜像时需要用户名和密码的情况下才需要定义此项
-8. 这是一个占位符
-
-### Kubean 组件安装集群配置
-
-```yaml
-  # kubean 所需要的仓库配置
-  imageConfig: 
-    imageRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE} 或者 上述“自定义的内置域名”} # (1)
-    binaryRepository: http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean # (2)
-
-  # RPM 或者 DEB 安装的源头
-  repoConfig: 
-    repoType: centos # (3)
-    isoPath: "Please-replace-with-Your-Real-ISO-PATH-on-bootstrap-Node" # (4)
-    osPackagePath: "Please-replace-with-Your-Real-OS-Package-PATH-on-bootstrap-Node" # (5)
-    dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos/$releasever/os/$basearch" 
-
-    # dockerRepo: "" # (6)
-    # dockerRepo: "http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/redhat/$releasever/os/$basearch" # (7)
+apiVersion: provision.daocloud.io/v1alpha3
+kind: ClusterConfig
+metadata:
+  creationTimestamp: null
+spec:
+  clusterName: my-cluster
+  masterNodes:
+    # nodeName 将覆盖 hostName，应符合 RFC1123 标准
+    - nodeName: "g-master1"
+      ip: xx.xx.xx.xx
+      ansibleUser: "root"
+      ansiblePass: "dangerous"
+  workerNodes:
     
-    extraRepos:
-      - http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos-iso/\$releasever/os/\$basearch 
-      - http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/centos/\$releasever/os/\$basearch
- 
-      #  如果系统是 RedHat 8，需要使用以下参数
-      #- http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/redhat-iso/\$releasever/os/\$basearch/AppStream
-      #- http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/redhat-iso/\$releasever/os/\$basearch/BaseOS
-      #- http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/redhat/\$releasever/os/\$basearch
-
-      #  如果系统是 kylin，需要使用以下参数
-      #- http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/kylin-iso/\$releasever/os/\$basearch
-      #- http://${IP_ADDRESS_OF_BOOTSTRAP_NODE}:9000/kubean/kylin/\$releasever/os/\$basearch
+  fullPackagePath: "/root/offline"
+  osRepos:
+    # official-service(if omit or empty), builtin or external
+    type: external
+    # Optional only if external repo already have full required resources
+    isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
+    # Optional only if external repo already have full required resources
+    osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
+    # `centos` as CentOS, RedHat,kylin AlmaLinux or Fedora
+    # `debian` as Debian
+    # `ubuntu` as Ubuntu
+    externalRepoType: centos
+    externalRepoURLs: ["https://extertal-repo.daocloud.io/centos/\$releasever/os/\$basearch/"]
+  imagesAndCharts:
+    # official-service(if omit or empty), builtin or external
+    # Not Support External S3 so far...... FIXME
+    type: external
+    # Optional only if external repo already have full required resources
+    # IP or domain name
+    externalImageRepo: https://external-registry.daocloud.io
+    externalImageRepoUsername: admin
+    externalImageRepoPassword: Harbor12345
+    # chartmuseum or harbor
+    externalChartRepoType: chartmuseum
+    # IP or domain name
+    externalChartRepo: https://external-charts.daocloud.io:8081
+    externalChartUsername: rootuser
+    externalChartMuseumPassword: rootpass123
+  addonPackage:
+    path: "/root/addon-offline-full-package-v0.4.8-amd64.tar.gz"
+  binaries:
+    # official-service(if omit or empty), builtin or external
+    type: external
+    # Optional only if external repo already have full required resources
+    # IP or domain name
+    externalRepository: https://external-binaries.daocloud.io:9000/kubean
 ```
 
-1. 如果选择了已有的仓库，需要填写外部镜像仓库地址
-2. 如果选择了已有的仓库，需要填写外部 MinIO 地址
-3. `centos` 表示使用 CentOS、RedHat、kylin AlmaLinux 或 Fedora；`debian` 表示使用 Debian；`ubuntu` 表示使用 Ubuntu
-4. 操作系统 ISO 文件路径，不得为空
-5. 操作系统 osPackage 文件的绝对路径，不得为空
-6. 如果是 kylin，安装器将会选择 containerd，所以需要将 dockerRepo 设置为空
-7. 如果是 redhat
+**在线模式采用 official-service 方式安装**
+
+```yaml
+apiVersion: provision.daocloud.io/v1alpha3
+kind: ClusterConfig
+metadata:
+  creationTimestamp: null
+spec:
+  clusterName: my-cluster
+  masterNodes:
+    # nodeName 将覆盖 hostName，应符合 RFC1123 标准
+    - nodeName: "g-master1"
+      ip: xx.xx.xx.xx
+      ansibleUser: "root"
+      ansiblePass: "dangerous"
+  workerNodes:
+```
+
+## 通过命令行生成 clusterConfig 配置文件模板
+
+### 全模式 1 节点模式
+
+``` bash
+# 官方在线:
+./dce5-installer generate-config --install-mode=cluster-create --master=1 --access-type=official-service
+# 官方在线简化版：
+./dce5-installer generate-config --master=1
+
+# 内建离线:
+./dce5-installer generate-config --install-mode=cluster-create --master=1 --access-type=builtin
+# 内建离线简化版：
+./dce5-installer generate-config --master=1 --access-type=builtin
+
+# 扩展离线:
+./dce5-installer generate-config --install-mode=cluster-create --master=1 --access-type=external
+# 扩展离线简化版：
+./dce5-installer generate-config --master=1 --access-type=external
+```
+
+### 全模式 4 节点模式
+
+``` bash
+# 官方在线:
+./dce5-installer generate-config --install-mode=cluster-create --master=3 --access-type=official-service
+# 官方在线简化版：
+./dce5-installer generate-config --master=3
+
+# 内建离线:
+./dce5-installer generate-config --install-mode=cluster-create --master=3 --access-type=builtin
+# 内建离线简化版：
+./dce5-installer generate-config --master=3 --access-type=builtin
+
+# 扩展离线:
+./dce5-installer generate-config --install-mode=cluster-create --master=3 --access-type=external
+# 扩展离线简化版：
+./dce5-installer generate-config --master=3 --access-type=external
+```
+
+### 全模式 7节点模式
+
+``` bash
+# 官方在线:
+./dce5-installer generate-config --install-mode=cluster-create --master=3 --worker=3 --access-type=official-service
+# 官方在线简化版：
+./dce5-installer generate-config --master=3 --worker=3
+
+# 内建离线:
+./dce5-installer generate-config --install-mode=cluster-create --master=3 --worker=3 --access-type=builtin
+# 内建离线简化版：
+./dce5-installer generate-config --master=3 --worker=3 --access-type=builtin
+
+# 扩展离线:
+./dce5-installer generate-config --install-mode=cluster-create --master=3 --worker=3 --access-type=external
+# 扩展离线简化版：
+./dce5-installer generate-config --master=3 --worker=3 --access-type=external
+```
+
+### 社区版
+
+``` bash
+# 官方在线
+./dce5-installer generate-config --install-mode=install-app --access-type=official-service
+# 官方在线简化版：
+./dce5-installer generate-config --install-mode=install-app
+
+# 内建离线:
+./dce5-installer generate-config --install-mode=install-app --access-type=builtin
+
+# 扩展离线:
+./dce5-installer generate-config --install-mode=install-app --access-type=external
+```

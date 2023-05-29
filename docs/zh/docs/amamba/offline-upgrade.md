@@ -19,7 +19,7 @@
 
     > 注意：该 YAML 文件中的各项参数均为必填项。您需要一个私有的镜像仓库，并修改相关配置。
 
-    ```yaml
+    ```yaml title="load-image.yaml"
     source:
       intermediateBundlesPath: ghippo-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
     target:
@@ -39,7 +39,7 @@
 
     !!! note "若当前环境未安装 chart repo，也可以通过 chart-syncer 将 chart 导出为 `tgz` 文件，并存放在指定路径。"
 
-        ```yaml
+        ```yaml title="load-image.yaml"
         source:
             intermediateBundlesPath: amamba-offline #  到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
         target:
@@ -56,15 +56,15 @@
 
 2. 执行如下命令同步镜像。
 
-   ```bash
-   charts-syncer sync --config load-image.yaml
-   ```
+    ```bash
+    charts-syncer sync --config load-image.yaml
+    ```
 
 ### 通过 Docker 或 containerd 直接加载镜像
 
 1. 执行下列命令解压镜像。
 
-    ```
+    ```shell
     tar xvf amamba.bundle.tar
     ```
 
@@ -83,41 +83,42 @@
 
 1. 检查应用工作台的 Helm 仓库是否存在。
 
-    ```
+    ```shell
     helm repo list | grep amamba
     ```
 
     若返回结果为空或出现 `Error: no repositories to show` 提示，则执行如下命令添加应用工作台的 Helm 仓库。
 
-    ```
+    ```shell
     heml repo add amamba http://{harbor url}/chartrepo/{project}
     ```
 
 2. 更新应用工作台的 Helm 仓库。
 
-    ```
-    helm repo update amamba # Helm 版本过低会导致失败。若失败，请尝试执行 helm update repo
+    ```shell
+    # Helm 版本过低会导致失败。若失败，请尝试执行 helm update repo
+    helm repo update amamba
     ```
 
 3. 备份 `--set` 参数。在升级全局管理版本之前，建议执行如下命令备份旧版本的 `--set` 参数。
 
-    ```bash
+    ```shell
     helm get values ghippo -n ghippo-system -o yaml > amamba.bak.yaml
     ```
 
 4. 选择想安装的应用工作台版本（建议安装最新版本）。
 
-    ```
-    helm search  repo amamba-release-ci --versions |head
+    ```shell
+    $ helm search  repo amamba-release-ci --versions |head
     NAME                                   CHART VERSION      	APP VERSION        	DESCRIPTION                               
-    amamba-release-ci/amamba                0.14.0  	        0.14.0  	         Amamba is the entrypoint to DCE5.0, provides de...
+    amamba-release-ci/amamba                0.14.0  	        0.14.0  	         Amamba is the entrypoint to DCE 5.0, provides de...
     ```
 
 5. 修改 `amamba.bak.yaml` 文件里的 `registry` 和 `tag`。
 
-    ??? note "点击查看示例的 YAML 文件“
+    ??? note "点击查看示例的 YAML 文件"
 
-        ```
+        ```yaml title="amamba.bak.yaml"
         amambaSyncer:
           resources:
             limits:
@@ -296,7 +297,7 @@
 
 6. 执行如下命令进行升级
 
-    ```
+    ```shell
     helm upgrade amamba . \
       -n amamba-system \
       -f ./amamba.bak.yaml
