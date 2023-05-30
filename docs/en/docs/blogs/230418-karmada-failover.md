@@ -854,7 +854,7 @@ func (c *ResourceBindingController) syncBinding(binding *workv1alpha2.ResourceBi
 
 ![execution controller](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/karmada11.png)
 
-The ability of the execution controller is to create, update, or delete the resources that actually need to be delivered stored in the work of the corresponding execution namespace of the member cluster in the corresponding member cluster. **
+The ability of the execution controller is to create, update, or delete the resources that actually need to be delivered stored in the work of the corresponding execution namespace of the member cluster in the corresponding member cluster.
 Therefore, its execution logic is closely related to the state of the work and the state of the cluster. If the DeletionTimestamp of the work is not empty, that is, the work has been deleted,
 It will continue to judge the cluster status. If the cluster status is Ready, it will try to delete the resources on the member cluster. In the example, when the cluster fails, resources are transferred to the cluster member2
 All replicas on the server are Ready, and the gracefulEviction controller will remove the cluster member1 graceful eviction task, the binding controller thinks

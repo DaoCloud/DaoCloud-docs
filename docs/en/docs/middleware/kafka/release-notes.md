@@ -76,7 +76,7 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 - **Improved** Improve and optimize the copy function
 - **IMPROVED** instance details - access settings, remove cluster IPv4
 - **Improved** Middleware password verification difficulty adjustment
-- **NEW** Docking alarm capability
+- **NEW** Docking alert capability
 - **New** Added the function of judging whether sc supports capacity expansion and prompting in advance
 - **Optimization** Optimize the prompt logic of installation environment detection & adjust its style
 - **Optimize** middleware style walkthrough optimization

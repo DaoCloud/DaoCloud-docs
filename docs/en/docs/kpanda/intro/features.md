@@ -66,7 +66,7 @@ Supports [Namespace Authorization](../user-guide/permissions/cluster-ns-auth.md)
 
 ## Cluster Operation and Maintenance
 
-- All-Round Cluster Monitoring: Comprehensive coverage of cluster and node metric monitoring and alarms, real-time understanding and viewing of cluster and node status, and timely implementation of operation and maintenance measures to ensure business continuity.
+- All-Round Cluster Monitoring: Comprehensive coverage of cluster and node metric monitoring and alerts, real-time understanding and viewing of cluster and node status, and timely implementation of operation and maintenance measures to ensure business continuity.
 - openAPI: Provides native Kubernetes OpenAPI capabilities.
 - [CloudShell](../../community/cloudtty.md) Access to the Cluster: Supports connecting to the cluster through CloudShell and accessing the cluster through Kubectl.
 

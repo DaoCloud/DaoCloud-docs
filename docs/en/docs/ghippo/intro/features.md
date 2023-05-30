@@ -176,7 +176,7 @@ Below is a list of features available:
     2. [Email Settings](../user-guide/platform-setting/mail-server.md)
         - Configure the mail server
         - Retrieve user passwords by email
-        - Receive alarm notifications, etc.
+        - Receive alert notifications, etc.
     3. [Custom Appearance](../user-guide/platform-setting/appearance.md)
         - Custom login page appearance, including platform LOGO, login page icon, tab page icon, etc.
         - One-click restore login page appearance configuration

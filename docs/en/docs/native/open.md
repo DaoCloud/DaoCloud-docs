@@ -899,11 +899,11 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Nightgale v5.10 released](https://github.com/ccfos/nightingale/releases/tag/v5.10.0)
 
-     The main new features of this version: support recording rule management, alarm rules support multi-cluster, dashboard variables support TextBox, alarm masking supports more operators, and more flexible custom alarm content.
+     The main new features of this version: support recording rule management, alert rules support multi-cluster, dashboard variables support TextBox, alert masking supports more operators, and more flexible custom alert content.
 
 - [Notification Manager multi-tenant notification management system 2.0.0 released](https://mp.weixin.qq.com/s/op79OMTp0nxzfxM8fH-nnA)
 
-     [Notification Manager](https://github.com/kubesphere/notification-manager) can receive alarms, events, and audits from Kubernetes, generate notification messages according to templates set by users, and push them to users.
+     [Notification Manager](https://github.com/kubesphere/notification-manager) can receive alerts, events, and audits from Kubernetes, generate notification messages according to templates set by users, and push them to users.
      Main functions of the new version: new routing function, users can send specified notifications to specified users by setting routing rules; new silent function, by configuring silent rules, specific notifications can be blocked in a specific time period; support dynamic update templates Wait.
 
 - [Nydus Container Image Acceleration Service v2.2.0 Released (CNCF Project)](https://github.com/dragonflyoss/image-service/releases/tag/v2.2.0)

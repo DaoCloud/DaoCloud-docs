@@ -81,7 +81,7 @@ Release date: 2022-11-28
 - **NEW** Support to install Redis cluster in active/standby mode in ARM environment
 - **New** sc expansion prompt
 - **Add** public field when returning list or details
-- **NEW** Add return alarm list
+- **NEW** Add return alert list
 - **Add** Validation Service annotation
 - **Fix** service address display error
 

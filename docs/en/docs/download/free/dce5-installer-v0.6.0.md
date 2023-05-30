@@ -76,7 +76,7 @@ DCE 5.0 Community Release includes the following modules by default:
 | -------- | ----------------------------------------- ------------------------- | ------------------------ ------------------------------------- |
 | Global Management | Responsible for user access control, permissions, enterprise space, audit logs, personalized appearance settings, etc. | [0.15.0](../../ghippo/intro/release-notes.md#v0150) |
 | Container Management | Manage K8s core functions such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [0.16.0](../../kpanda/intro/release-notes.md#v0160) |
-| Observability | Provide rich graphic information such as dashboards, scene monitoring, data query, and alarms | [0.15.4](../../insight/intro/releasenote.md#v0154) |
+| Observability | Provide rich graphic information such as dashboards, scene monitoring, data query, and alerts | [0.15.4](../../insight/intro/releasenote.md#v0154) |
 
 ## More
 

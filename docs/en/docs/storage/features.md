@@ -44,7 +44,7 @@
 
 - change disc
 
-     It supports disk replacement after disk alarms, ensuring that business applications are not affected, and production can be maintained.
+     It supports disk replacement after disk alerts, ensuring that business applications are not affected, and production can be maintained.
 
 - One-click expulsion of node data volumes
 
@@ -64,8 +64,8 @@
 
 - Unified Dashboard
 
-     The unified dashboard displays resource usage and distribution, storage resource status, and monitoring alarms.
+     The unified dashboard displays resource usage and distribution, storage resource status, and monitoring alerts.
 
 - Rich Metrics metrics
 
-     All-round data service monitoring and alarming realizes comprehensive monitoring of data disks, storage pools and storage drivers, and comprehensively guarantees data security.
+     All-round data service monitoring and alerting realizes comprehensive monitoring of data disks, storage pools and storage drivers, and comprehensively guarantees data security.

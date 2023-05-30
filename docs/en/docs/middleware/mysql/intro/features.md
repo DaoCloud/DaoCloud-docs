@@ -29,7 +29,7 @@ This page explains about the functional features of MySQL.
 
 - Automatic operation and maintenance
 
-    You can set automatic backup policies, monitoring and alarm policies, automatic capacity expansion policies, etc.
+    You can set automatic backup policies, monitoring and alert policies, automatic capacity expansion policies, etc.
 
 After MySQL is deployed in DCE 5.0, the following features will also be supported:
 

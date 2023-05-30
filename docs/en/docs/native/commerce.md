@@ -26,7 +26,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Users of platforms such as AKS can use the AWS AppConfig Agent to manage the retrieval and caching of container application configuration data, handle polling and caching logic, and more.
      The feature flag and run configuration feature allows users to release new features without deploying new code.
-     In addition, it also has configuration security features, including validators, alarm reminders, automatic rollback configurations, etc.
+     In addition, it also has configuration security features, including validators, alert reminders, automatic rollback configurations, etc.
 
 - [AWS Launches Local Clusters for Running EKS Clusters Locally on Hybrid Cloud Service Outposts](https://aws.amazon.com/about-aws/whats-new/2022/09/amazon-eks-outposts-local-clusters/)
 
@@ -111,7 +111,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Alibaba Cloud distributed cloud container platform ACK One update](https://mp.weixin.qq.com/s/TC1KA_xWpVAwZMFAgVmNfg)
 
-     Update: Integrate ArgoCD to achieve multi-cluster GitOps continuous delivery, optimize multi-cluster application distribution; unified configuration alarm rules, support configuration of cluster-specific differential alarm rules, support automatic synchronization of alarm rules to new associated clusters.
+     Update: Integrate ArgoCD to achieve multi-cluster GitOps continuous delivery, optimize multi-cluster application distribution; unified configuration alert rules, support configuration of cluster-specific differential alert rules, support automatic synchronization of alert rules to new associated clusters.
 
 - [Alibaba Cloud Container Service ACK Yunqi Conference Update](https://mp.weixin.qq.com/s/cOObDVvnTGkX_hiAWv8mVA)
 

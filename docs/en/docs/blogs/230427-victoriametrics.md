@@ -104,7 +104,7 @@ VictoriaMetrics provides the following components at the open source level:
 
 5. vmselect: Responsible for data query, supporting unified data query and multi-tenant data isolation query;
 
-6. vmalert: Responsible for alarms, like Prometheus, supports record and alarm rule configuration and sends alarm notifications, allows Go templates to be used in annotations to format data, iterate or execute expressions, and supports cross-tenant sending of alarms and record rules
+6. vmalert: Responsible for alerts, like Prometheus, supports record and alert rule configuration and sends alert notifications, allows Go templates to be used in annotations to format data, iterate or execute expressions, and supports cross-tenant sending of alerts and record rules
 
 7. vmbackup: Responsible for data backup, supports incremental backup and full backup, can do hourly, daily, weekly and monthly backup, supports local storage, GCS, Azure Blob storage, S3 storage, any storage compatible with S3 ;
 

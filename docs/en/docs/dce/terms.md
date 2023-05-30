@@ -1543,7 +1543,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Notification
 
-    When an alarm is generated due to an abnormality in a resource, the alarm information can be sent to specified users via email, DingTalk, WeCom, webhook, etc.
+    When an alert is generated due to an abnormality in a resource, the alert information can be sent to specified users via email, DingTalk, WeCom, webhook, etc.
 
 ### O
 
