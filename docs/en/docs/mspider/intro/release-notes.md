@@ -95,7 +95,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 #### Fixes
 
 - The interface does not display when the east-west gateway is not Ready.
-- Multi-cloud interconnection will automatically register the east-west gateway LB IP, which may cause internal network abnormalities (remove the east-west gateway instance label: `topology.istio.io/network`. This label will automatically register the east-west gateway).
+- Multicloud interconnection will automatically register the east-west gateway LB IP, which may cause internal network abnormalities (remove the east-west gateway instance label: `topology.istio.io/network`. This label will automatically register the east-west gateway).
 - Cluster migration with east-west gateway enabled may cause incorrect service resolution.
 - Fixed an issue where the control plane cannot be deployed on a single-node Kubernetes cluster.
 - The `istioctl` installation error caused by the `kubectl` version mismatch fixed.
@@ -143,8 +143,8 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 
 #### Features
 
-- Multi-cluster management feature added.
-- Support for multi-cloud interconnection added.
+- Multicluster management feature added.
+- Support for multicloud interconnection added.
 - Service dependency analysis and visualization feature added.
 - New `dial` and `readinessProbe` options added to endpoint slice.
 - Service mesh security audit feature added.

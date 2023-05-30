@@ -14,7 +14,7 @@ hide:
 
 - Cloud-native CD Based on GitOps and Pipelines
 
-    App Workbench incorporates the GitOps concept and Argo CD, an open-source software, to deploy applications in Kubernetes.
+    Workbench incorporates the GitOps concept and Argo CD, an open-source software, to deploy applications in Kubernetes.
     Users only need to submit YAML files to the code repository. GitOps can automatically detect the changes in the YAML files and, with the help of merge requests in the code repository, automatically push these changes to the cluster, without the need to learn the deployment commands of Kubernetes or operate the cluster directly.
 
     ![](../images/scenarios02.png)

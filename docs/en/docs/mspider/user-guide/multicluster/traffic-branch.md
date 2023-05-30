@@ -1,11 +1,11 @@
-# Multi-cloud network traffic distribution configuration under the mesh
+# Multicloud network traffic distribution configuration under the mesh
 
-This page describes how to configure different traffic flows for workloads in a multi-cloud network.
+This page describes how to configure different traffic flows for workloads in a multicloud network.
 
 Preconditions:
 
 - The service `helloworld` runs under the namespace `helloworld` of the mesh `hosted-mesh`
-- Enable multi-cloud network interconnection
+- Enable multicloud network interconnection
 - Mesh provides ingressgatway gateway instance
 
 Configuration steps:
@@ -99,7 +99,7 @@ Configuration steps:
                weight: 70
      ```
 
-1. On the left navigation bar, click `mesh Configuration` -> `Multi-Cloud Network Interconnection` to enable multi-cloud network interconnection.
+1. On the left navigation bar, click `mesh Configuration` -> `multicloud Network Interconnection` to enable multicloud network interconnection.
 
 1. Initiate 1000 get requests through JMeter and set the assertion
 

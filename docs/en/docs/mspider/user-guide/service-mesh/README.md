@@ -7,7 +7,7 @@ hide:
 
 DCE 5.0 service mesh supports 3 meshes:
 
-- **Hosted Mesh** is fully hosted within the DCE 5.0 service mesh. This mesh separates the core control plane components from the working cluster, and the control plane can be deployed in an independent cluster, enabling unified governance of multi-cluster services in the same mesh.
+- **Hosted Mesh** is fully hosted within the DCE 5.0 service mesh. This mesh separates the core control plane components from the working cluster, and the control plane can be deployed in an independent cluster, enabling unified governance of multicluster services in the same mesh.
 - **private mesh** adopts the traditional structure of Istio, supports only one cluster, and has a dedicated control plane in the cluster.
 - **External mesh** means that the existing mesh of the enterprise can be connected to the DCE 5.0 service mesh for unified management. See [Create an external mesh](external-mesh.md).
 

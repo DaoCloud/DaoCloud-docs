@@ -11,7 +11,7 @@
 - :five: [Upgrade Istio](#istio-version-upgrade)
 - :six: [Upgrade sidecar](#sidecar-upgrade)
 - :seven: [Traffic passthrough](#traffic-passthrough)
-- :eight: [Multi-cloud interconnection](#multi-cloud-interconnection)
+- :eight: [Multicloud interconnection](#multicloud-interconnection)
 
 </div>
 
@@ -71,9 +71,9 @@ See the [traffic passthrough](../mspider/user-guide/sidecar-management/passthrou
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/passthrough.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
 </div>
 
-## Multi-cloud interconnection
+## Multicloud interconnection
 
-See the [Multi-cloud interconnection](../mspider/user-guide/multicluster/cluster-interconnect.md) documentation page.
+See the [Multicloud interconnection](../mspider/user-guide/multicluster/cluster-interconnect.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multi-connect.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>

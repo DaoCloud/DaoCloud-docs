@@ -5,7 +5,7 @@ hide:
 
 # System Structure
 
-The service mesh product enables multi-mesh management and multi-cluster service aggregation governance. Users can connect clusters from different sources to the mesh in a multicloud environment for unified traffic and security management.
+The service mesh product enables multi-mesh management and multicluster service aggregation governance. Users can connect clusters from different sources to the mesh in a multicloud environment for unified traffic and security management.
 
 In terms of overall architecture, service mesh products can be divided into three levels: global management module, hosted mesh module, and managed cluster mesh.
 
@@ -21,7 +21,7 @@ In terms of overall architecture, service mesh products can be divided into thre
 
     This module contains the basic components of Istio but is not used as a control plane. It provides a mode similar to a management agent, responsible for sidecar injection, certificate forwarding, xDS forwarding, and other services. It synchronizes policies and service registration information from MCPC and sends them to the business sidecar of the cluster.
 
-Extension modules that run through the overall architecture include the observability, microservice governance, and App Workbench.
+Extension modules that run through the overall architecture include the observability, microservice governance, and Workbench.
 
 - Observability
 
@@ -31,9 +31,9 @@ Extension modules that run through the overall architecture include the observab
 
 The microservice platform empowers microservices with mesh capabilities through the mesh, enabling users to conduct unified management of various microservice systems through a single platform.
 
-- App Workbench
+- Workbench
 
-    App Workbench is a core module of DCE 5.0, which is used to provide users with unified capabilities such as application orchestration, deployment, pipeline management, CICD, application monitoring, and log querying.
+    Workbench is a core module of DCE 5.0, which is used to provide users with unified capabilities such as application orchestration, deployment, pipeline management, CICD, application monitoring, and log querying.
 
 ## Functional Architecture
 

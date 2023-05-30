@@ -64,9 +64,9 @@ This section describes the features supported by the service mesh.
 
     Supports non-intrusive call chain tracing and can pinpoint and locate problems by retrieving call chain data.
 
-## Multi-cluster Mode
+## Multicluster Mode
 
-- Unified management of multi-cluster configuration
+- Unified management of multicluster configuration
 
     Supports mesh configuration and cluster configuration management of multiple clusters under the mesh. Supports sidecar injection policies of different clusters with different granularities and supports unified management of data plane configurations such as cross-cluster traffic policies.
 

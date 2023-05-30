@@ -1,13 +1,13 @@
 # Optimize failover latency sensitivity
 
-Multi-cloud supports automatic failover of applications across clusters, thereby ensuring the stability of applications deployed in multiple clusters. The delay time of failover is mainly affected by the following two dimensions of metrics, and a combination of configurations is required to finally achieve the effect of delay sensitivity.
+Multicloud supports automatic failover of applications across clusters, thereby ensuring the stability of applications deployed in multiple clusters. The delay time of failover is mainly affected by the following two dimensions of metrics, and a combination of configurations is required to finally achieve the effect of delay sensitivity.
 
 1. Cluster dimension: mark the cluster as unhealthy inspection time, cluster eviction tolerance time
 2. Workload dimension: cluster taint tolerance duration
 
 ## Failover feature introduction
 
-After enabling failover in DCE 5.0 multi-cloud orchestration, the following parameter configuration options are available:
+After enabling failover in DCE 5.0 Multicloud Management, the following parameter configuration options are available:
 
 | parameter | definition | description | field name EN | field name ZH | default value |
 | ----------------------------------- | -------------- ---------------- | --------------------------------- --------------------------- | ---------------------- ------------------------------ | ------------------- ----- | ------ |
@@ -25,14 +25,14 @@ If the cluster does not return to health within the specified time, it will be m
 
 <!--screenshot-->
 
-## Optimized configuration for multi-cloud instances
+## Optimized configuration for multicloud instances
 
-For multi-cloud instances, you need to enter the Advanced Settings -> Failover section. For the following configurations, you can refer to the above figure to fill in the parameter information.
+For multicloud instances, you need to enter the Advanced Settings -> Failover section. For the following configurations, you can refer to the above figure to fill in the parameter information.
 
 <!--screenshot-->
 
-## Configuration optimization for multi-cloud workloads
+## Configuration optimization for multicloud workloads
 
-The multi-cloud workload is mainly related to its deployment policy (PP), and the corresponding cluster taint tolerance period needs to be modified in the deployment policy.
+The multicloud workload is mainly related to its deployment policy (PP), and the corresponding cluster taint tolerance period needs to be modified in the deployment policy.
 
 <!--screenshot-->

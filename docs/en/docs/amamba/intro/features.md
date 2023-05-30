@@ -5,7 +5,7 @@ hide:
 
 # Feature Overview
 
-App Workbench provides the following features:
+Workbench provides the following features:
 
 - Application Management
 

@@ -5,7 +5,7 @@ hide:
 
 # Advantages
 
-With years of leading experience in cloud native field, DaoCloud developed a brand-new App Workbench (Workbench) that boasts strong competitiveness:
+With years of leading experience in cloud native field, DaoCloud developed a brand-new Workbench that boasts strong competitiveness:
 
 - Enterprise-level CI/CD
 

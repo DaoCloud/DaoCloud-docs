@@ -212,7 +212,7 @@ Release date: 2022-9-25
 - **Added** Product Navigation -> Homepage is only displayed for admin users
 - **Added** Workspace -> Users can only view the workspace & folder tree structure with permission
 - **Added** Keycloak High Availability
-- **Added** mail server configuration -> support Insight and App Workbench to send mail
+- **Added** mail server configuration -> support Insight and Workbench to send mail
 - **Added** Meet the Helm specification, support installer and offline
 
 ## v0.8

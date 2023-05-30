@@ -13,7 +13,7 @@ DCE 5.0 Community Release provides the following observable features.
 
 | Category | Subcategory | Description |
 | -------- | ----------------------------------------- --------- | ---------------------------------------- --------- |
-| Resource monitoring | Multi-cluster monitoring | Provide multi-cluster business centralized observability<br />The administrator manages multi-cluster alerts in a unified manner, and satisfies cluster and tenant administrator data isolation<br />Supports persistent cluster metrics and log data. |
+| Resource monitoring | Multicluster monitoring | Provide multicluster business centralized observability<br />The administrator manages multicluster alerts in a unified manner, and satisfies cluster and tenant administrator data isolation<br />Supports persistent cluster metrics and log data. |
 | | Scenario monitoring | Provides a monitoring overview of a single cluster, allowing you to view the running status of the cluster, understand the resource usage of the cluster, and the current alerts that are occurring in the cluster |
 | | Node monitoring | Support to view the running status of the node, etc., and understand the changes in the CPU, memory, network and other resources of the node |
 | | Container Monitoring | Supports monitoring of resources such as stateless loads, daemon processes, pods, etc., can monitor the running status of the workload, and can view the number of alerts and the trend chart of resource consumption such as CPU and memory |
@@ -38,7 +38,7 @@ On the basis of the community release, the commercial release of DCE 5.0 provide
 
 | Category | Subcategory | Description |
 | -------------- | -------------- | ---------------- -------------------------------------------- |
-| Resource monitoring | Multi-cluster monitoring | Provide multi-cluster business centralized observability<br />The administrator manages multi-cluster alerts in a unified manner, and satisfies cluster and tenant administrator data isolation<br />Supports persistent cluster metrics and log data. |
+| Resource monitoring | Multicluster monitoring | Provide multicluster business centralized observability<br />The administrator manages multicluster alerts in a unified manner, and satisfies cluster and tenant administrator data isolation<br />Supports persistent cluster metrics and log data. |
 | | Cluster Monitoring | Provides an overview of the monitoring of a single cluster, allowing you to view the running status of the cluster, understand the resource usage of the cluster, and the alerts that are currently occurring in the cluster |
 | | Node monitoring | Support to view the running status of the node, etc., and understand the changes in the CPU, memory, network and other resources of the node |
 | | Container Monitoring | Supports monitoring of resources such as stateless loads, daemon processes, pods, etc., can monitor the running status of the workload, and can view the number of alerts and the trend chart of resource consumption such as CPU and memory |

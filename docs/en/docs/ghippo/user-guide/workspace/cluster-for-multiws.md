@@ -79,4 +79,4 @@ Return to `Global Management` to add clusters for the workspace.
 
     
 
-Next step: After allocating cluster resources to multiple workspaces, users can go to `App Workbench` under these workspaces [create namespace and deploy application](../../../amamba/user-guide/namespace/namespace.md).
+Next step: After allocating cluster resources to multiple workspaces, users can go to `Workbench` under these workspaces [create namespace and deploy application](../../../amamba/user-guide/namespace/namespace.md).

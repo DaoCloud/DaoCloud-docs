@@ -17,4 +17,4 @@ This page introduces the overview information of the clusters managed in `Contai
     - Resource consumption: You can view the resource change trends of TOP5 clusters and nodes in the past hour according to CPU usage, memory usage, and disk usage.
       The default is to sort by CPU usage. You can switch metrics to switch the sorting method of clusters and nodes.
     - Resource change trend: You can view the trend of the number of nodes in the past 15 days and the running trend of Pods in one hour.
-    - Service request ranking: You can view the TOP5 services in the multi-cluster request delay and error rate, as well as their clusters and namespaces.
+    - Service request ranking: You can view the TOP5 services in the multicluster request delay and error rate, as well as their clusters and namespaces.

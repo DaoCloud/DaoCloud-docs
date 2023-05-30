@@ -1,6 +1,6 @@
 # Application scenarios
 
-## Unified collection and observation of multi-cluster data
+## Unified collection and observation of multicluster data
 
 **Pain points**
 

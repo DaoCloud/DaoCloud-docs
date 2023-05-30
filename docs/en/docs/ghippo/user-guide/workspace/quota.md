@@ -30,7 +30,7 @@ Both shared resources and cluster resources in resource groups come from [Contai
 
 2. Add shared resources
 
-    Make the user/group in the workspace have the permission to use the cluster resources, and can use the resource quota to go to [Create a namespace (Namespace) in the App Workbench](#_2).
+    Make the user/group in the workspace have the permission to use the cluster resources, and can use the resource quota to go to [Create a namespace (Namespace) in Workbench](#_2).
 
     
 
@@ -46,7 +46,7 @@ Resource quotas are involved when creating a namespace.
 
     
 
-1. Select the workspace ws01 and the shared cluster in the App Workbench, and create a namespace ns01.
+1. Select the workspace ws01 and the shared cluster in Workbench, and create a namespace ns01.
 
     
 

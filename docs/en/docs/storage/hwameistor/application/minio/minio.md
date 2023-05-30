@@ -7,7 +7,7 @@ sidebar_label: "Minio"
 
 ## Introduction to MinIO
 
-MinIO is a high-performance, distributed, S3-compatible multi-cloud object storage system suite. MinIO natively supports Kubernetes and can support all public cloud, private cloud and edge computing environments.
+MinIO is a high-performance, distributed, S3-compatible multicloud object storage system suite. MinIO natively supports Kubernetes and can support all public cloud, private cloud and edge computing environments.
 MinIO is a GNU AGPL v3 open source software-defined product that can run well on standard hardware such as x86 and other devices.
 
 ![MinIO Architecture](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/minio-design.png)

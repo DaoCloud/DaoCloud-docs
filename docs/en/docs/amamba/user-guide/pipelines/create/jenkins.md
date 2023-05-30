@@ -5,7 +5,7 @@ hide:
 
 # Create pipeline based on Jenkinsfile
 
-App Workbench Pipelines supports creating pipelines using a Jenkinsfile in a repository.
+Workbench Pipelines supports creating pipelines using a Jenkinsfile in a repository.
 
 **Prerequisites**
 
