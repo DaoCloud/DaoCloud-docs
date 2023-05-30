@@ -261,7 +261,8 @@ provisioner: example.com/nfs
 mountOptions:
 - vers=4.1
 ```
-</details>
+</details>+
+
 2. **在节点上使用 kubectl 工具执行 nfs.yaml 文件，命令如下：**
 
 ```bash
