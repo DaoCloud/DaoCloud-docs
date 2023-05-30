@@ -25,11 +25,22 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/VictoriaMetrics
 
 ## insight-agent
 
+### Upgrade from v0.16.x (or lower) to v0.17.x
+
+In v0.17.x, the kube-prometheus-stack chart version was upgraded from 41.9.1 to 45.28.1, and there were also some field upgrades in the CRD used, such as the `attachMetadata` field of servicemonitor. Therefore, the following command needs to be executed before upgrading the insight agent:
+
+```bash
+kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.65.1/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml --force-conflicts
+```
+
+If you are performing an offline installation, you can find the yaml for the above CRD in
+insight-agent/dependency-crds after extracting the insight-agent offline package.
+
 ### Upgrade from v0.11.x (or earlier) to v0.12.x
 
-0.12.x Upgrade kube-prometheus-stack chart from 39.6.0 to 41.9.1, including prometheus-operator to v0.60.1, prometheus-node-exporter chart to 4.3.0, etc.
-  Prometheus-node-exporter uses [Kubernetes recommended label](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/) after upgrading, so you need to delete `node- exporter`s daemonset.
-  prometheus-operator has updated the CRD, so you need to run the following command before upgrading the insight agent:
+v0.12.x upgrades kube-prometheus-stack chart from 39.6.0 to 41.9.1, including prometheus-operator to v0.60.1, prometheus-node-exporter chart to 4.3.0, etc.
+Prometheus-node-exporter uses [Kubernetes recommended label](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/) after upgrading, so you need to delete `node- exporter`s daemonset.
+prometheus-operator has updated the CRD, so you need to run the following command before upgrading the insight agent:
 
 ```shell linenums="1"
 kubectl delete daemonset insight-agent-prometheus-node-exporter -n insight-system

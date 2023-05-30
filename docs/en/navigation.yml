@@ -252,6 +252,8 @@ nav:
               - Collect Container Log with Sidecar: insight/best-practice/tailing-sidecar.md
               - Log Collection Troubleshooting: insight/faq/debug-log.md
               - Trace Collection Troubleshooting: insight/faq/debug-trace.md
+              - Configure Notification Template: insight/best-practice/notify-helper.md
+              - Receive SkyWalking Trace Data with Zero Code using OTel: insight/best-practice/sw-to-otel.md
           - Compatibility Test:
               - K8s Compatibility Test: insight/user-guide/quickstart/k8s-compatibility.md
               - Rancher Compatibility Test: insight/user-guide/quickstart/rancher-compatibility.md
