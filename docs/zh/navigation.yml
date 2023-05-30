@@ -118,6 +118,7 @@ nav:
           - 最佳实践:
               - ETCD 备份还原: kpanda/best-practice/etcd-backup.md
               - 工作集群离线升级指南: kpanda/best-practice/update-offline-cluster.md
+              - 如何为工作集群添加异构节点: kpanda/best-practice/multi-arch.md
       - 全局管理:
           - 介绍:
               - 什么是全局管理: ghippo/intro/what.md
