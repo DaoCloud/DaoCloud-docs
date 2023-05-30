@@ -5,7 +5,7 @@ hide:
 
 # Create a custom pipeline
 
-The application workbench pipeline supports custom creation, and you can visually arrange the pipeline through the pipeline created in this way.
+Workbench pipeline supports custom creation, and you can visually arrange the pipeline through the pipeline created in this way.
 
 ## prerequisites
 

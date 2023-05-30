@@ -1,6 +1,6 @@
 # Create a canary release task
 
-Based on the open source project [Argo Rollout](https://argoproj.github.io/argo-rollouts/), the application workbench provides powerful grayscale publishing capabilities. Grayscale release can release new application versions without affecting the old version. According to the pre-defined rules, the traffic is gradually switched to the new version. When the new version runs without problems, all traffic will be automatically migrated from the old version to the new version.
+Based on the open source project [Argo Rollout](https://argoproj.github.io/argo-rollouts/), Workbench provides powerful grayscale publishing capabilities. Grayscale release can release new application versions without affecting the old version. According to the pre-defined rules, the traffic is gradually switched to the new version. When the new version runs without problems, all traffic will be automatically migrated from the old version to the new version.
 
 ## prerequisites
 
@@ -13,7 +13,7 @@ Based on the open source project [Argo Rollout](https://argoproj.github.io/argo-
 
 ## Steps
 
-1. Enter the `App Workbench` module, click `Gray Release` in the left navigation bar, and then click `Create Release Task`->`Canary Release` in the upper right corner of the page.
+1. Enter the `Workbench` module, click `Gray Release` in the left navigation bar, and then click `Create Release Task`->`Canary Release` in the upper right corner of the page.
 
     <!--![]()screenshots-->
 

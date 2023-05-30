@@ -10,7 +10,7 @@ For pre-preparation, refer to the mesh multi-cloud deployment document to build 
 
 First select a namespace (gray-demo), and enable the namespace sidecar injection on the mesh page.
 
-Deploy the application on the App Workbench, here we take the helloworld of istio as an example.
+Deploy the application on Workbench, here we take the helloworld of istio as an example.
 
 
 

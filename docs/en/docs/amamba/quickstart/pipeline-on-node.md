@@ -1,6 +1,6 @@
 # run the pipeline on the specified node
 
-This article describes how to run the customer's pipeline tasks on the specified nodes in the application workbench.
+This article describes how to run the customer's pipeline tasks on the specified nodes in Workbench.
 
 ## Modify the configuration file jenkins-casc-config
 
@@ -72,7 +72,7 @@ First of all, it is necessary to expose the access address of Jenkins Dashbord t
 
 ## Run the pipeline and check if it is on the specified node
 
-1. Create a pipeline job in `App Workbench`, and edit `Jenkinsfile` as follows:
+1. Create a pipeline job in `Workbench`, and edit `Jenkinsfile` as follows:
 
     ```bash        
     pipeline {

@@ -1,6 +1,6 @@
 # CI/CD is realized based on pipeline and GitOps
 
-This paper introduces how to implement CI/CD based on pipeline of application workbench and GitOps function.
+This paper introduces how to implement CI/CD based on pipeline of Workbench and GitOps function.
 
 ## Overall process
 

@@ -148,7 +148,7 @@ This page provides the Release Notes for container management to help you unders
     - Replicatsets can be managed using the WEB terminal (CloudTTY).
     - Support for viewing Replicatsets monitoring, logs, Yaml, events, and containers.
     - Support for viewing Replicatsets details.
-    - Linkage **App Workbench**, the full life cycle of Replicatsets is managed by grayscale publishing.
+    - Linkage **Workbench**, the full life cycle of Replicatsets is managed by grayscale publishing.
 - **Added** Pod details page.
 - **Added** Namespace details page.
 - **Added** Use the WEB terminal to upload files to the container and download files from the Pod to the local.

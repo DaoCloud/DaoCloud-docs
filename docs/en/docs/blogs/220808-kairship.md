@@ -123,7 +123,7 @@ The multi-cloud orchestration module supports Kubernetes-native workload type de
 
 - **Q: What is the positioning of 5.0 multi-cloud orchestration in the fifth generation of products? **
 
-     Answer: In the fifth-generation product, the multi-cloud orchestration module is at the core of connecting the past and the future. Right: docking with the DCE 5.0 application workbench. For the upper-level scenario-based management module, the multi-cloud orchestration module can expose any standard Kubernetes API, and easily realize cross-cluster application distribution and disaster recovery deployment. For the next: docking container management platform Kpanda, and Kpanda docking Any Kubernetes, such as edge K3S, Xinchuang environment, DCE, DKG, DKE, and external Openshift, Tanzu, CCE, etc., multi-cloud orchestration based on container management module, quick implementation Multi-cluster management.
+     Answer: In the fifth-generation product, the multi-cloud orchestration module is at the core of connecting the past and the future. Right: docking with the DCE 5.0 Workbench. For the upper-level scenario-based management module, the multi-cloud orchestration module can expose any standard Kubernetes API, and easily realize cross-cluster application distribution and disaster recovery deployment. For the next: docking container management platform Kpanda, and Kpanda docking Any Kubernetes, such as edge K3S, Xinchuang environment, DCE, DKG, DKE, and external Openshift, Tanzu, CCE, etc., multi-cloud orchestration based on container management module, quick implementation Multi-cluster management.
 
      ![Positioning](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/kairship03.png)
 

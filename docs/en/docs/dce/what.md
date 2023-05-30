@@ -15,7 +15,7 @@ DCE 5.0 natively supports the DevOps development and operation mode, which can r
 - :octicons-container-16: **Container management** [Cluster/node/workload infrastructure](../kpanda/intro/what.md)
 - :fontawesome-solid-user-group: **Global Management** [Set login/permissions/appearance](../ghippo/intro/what.md)
 - :material-monitor-dashboard: **Observability** [One-stop graphical dashboard](../insight/intro/what.md)
-- :material-microsoft-azure-devops: **App Workbench** [CI/CD pipeline](../amamba/intro/what.md)
+- :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](../amamba/intro/what.md)
 - :material-cloud-check: **Multi-cloud orchestration** [Multi-cloud instance/load/policy](../kairship/intro/what.md)
 - :material-engine: **Microservice Engine** [Microservice Governance and Gateway](../skoala/intro/what.md)
 - :material-table-refresh: **Service Mesh** [Non-intrusive service governance](../mspider/intro/what.md)
@@ -52,7 +52,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
      Provides non-intrusive traffic management functions, supports non-sensing access to traditional microservices, cloud-native microservices, and open source microservice frameworks, and realizes the integrated management of existing microservice systems and old and new microservice systems of enterprises.
      Support the full life cycle management of microservices from development, deployment, access, observation, operation and maintenance, provide high-performance cloud-native microservice gateways, and ensure the continuous availability of microservice applications; introduce the independent open source eBPF mesh acceleration technology to comprehensively improve Traffic forwarding efficiency.
 
-     **Related modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Microservice Engine](../skoala/intro/what.md), [Service Mesh](../mspider/intro/what.md), [Observability](../insight/intro/what.md), [App Workbench](../amamba/intro/what.md), [Cloud Native Network](../network/intro/what-is-net.md), [Cloud Native Storage](../storage/what.md)
+     **Related modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Microservice Engine](../skoala/intro/what.md), [Service Mesh](../mspider/intro/what.md), [Observability](../insight/intro/what.md), [Workbench](../amamba/intro/what.md), [Cloud Native Network](../network/intro/what-is-net.md), [Cloud Native Storage](../storage/what.md)
 
     ![microservie engine](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/03msgov.jpg)
 
@@ -78,7 +78,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
      Realize self-service migration to the cloud through a consistent and scalable app delivery process, support flexible tenant systems, dynamically adapt to user organizational structure planning and real-time resource allocation, based on cloud-native CI/CD pipelines, integrate rich tool chains and support pipelines Efficient concurrent execution flow,
      Automate the construction and deployment of applications, innovatively introduce Gitops and progressive delivery capability systems, and achieve more refined management and operation of applications.
 
-     **Modules involved**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [App Workbench](../amamba/intro/what.md), [container registry](../kangaroo/what.md), [cloud native network](../network/intro/what-is-net.md), [cloud native storage](../storage/what.md)
+     **Modules involved**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Workbench](../amamba/intro/what.md), [container registry](../kangaroo/what.md), [cloud native network](../network/intro/what-is-net.md), [cloud native storage](../storage/what.md)
 
     ![app delivery](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/06appdeliv.jpg)
 

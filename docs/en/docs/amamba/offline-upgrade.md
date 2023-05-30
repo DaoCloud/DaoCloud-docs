@@ -1,10 +1,10 @@
 # Offline upgrade
 
-Workbench supports offline upgrade. This guide will walk you through the Workbench upgrade process.
+Workbench supports offline upgrade. This guide will walk you through Workbench upgrade process.
 
 <!--!!! note
 
-    Fetch the latest image of app workbench.
+    Fetch the latest image of Workbench.
 -->
 
 ## Load image from installation package
