@@ -5,7 +5,7 @@ hide:
 
 # Create a managed registry
 
-The microservices engine supports hosting the Nacos registry, which creates a new NacOS-type registry from scratch in the microservices governance Center and can be fully managed through the microservices Governance Center. The managed registry supports more operations than [Integrated Registry](../../integrated/integrate-registry.md), including viewing the basic information of the registry instance, microservice namespace management, microservice list, microservice configuration list, monitoring alarms, log viewing, plug-in center, and more.
+The microservices engine supports hosting the Nacos registry, which creates a new NacOS-type registry from scratch in the microservices governance Center and can be fully managed through the microservices Governance Center. The managed registry supports more operations than [Integrated Registry](../../integrated/integrate-registry.md), including viewing the basic information of the registry instance, microservice namespace management, microservice list, microservice configuration list, monitoring alerts, log viewing, plug-in center, and more.
 
 !!! note
 

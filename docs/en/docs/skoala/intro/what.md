@@ -39,4 +39,4 @@ The microservice gateway takes the role of managing the north-south traffic of m
 - API policy: add, delete, modify, and check APIs on UI interfaces, and configure API policies, such as load balancing, path rewriting, timeout, retry, request/response header rewriting, WebSocket, local rate limit, health check, cookie rewrite, black/white list, etc. **At the same time, the capabilities of your original APIs will not be damaged.**
 
 - Plugins: provides various plugins about security, traffic control, and caches.
-- Alarms: provide monitoring and alarming for each gateway by default.
+- alerts: provide monitoring and alerting for each gateway by default.

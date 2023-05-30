@@ -220,3 +220,7 @@ status: {}
         注意：没有关联 VirtualService 的 https- 或者 tls- 端口流量会被视为透传 TCP 流量。
 
         Tcp 协议和 tls 的子字段相对简单，仅包含 match 和 route 两部分，并且与 HTTP 相似，不再累述。
+
+## 参考资料
+
+- [什么是虚拟服务？](../../../reference/basic-knowledge/virtual-service.md)

@@ -24,7 +24,7 @@
 
 **Solution**
 
-- Draw a service topology map based on link data to quickly locate abnormal services.
+- Draw a service topology map based on trace data to quickly locate abnormal services.
 - After an abnormal application is found in the topology map, the root cause of the fault can be clearly seen through one-click drill-down through the call chain.
 - Query error logs by associating workloads to quickly resolve faults.
 

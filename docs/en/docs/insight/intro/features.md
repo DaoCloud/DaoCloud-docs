@@ -30,7 +30,7 @@ DCE 5.0 Community Release provides the following observable features.
 | Log collection and query | Unified log collection | Unified collection of log data of nodes, containers, containers, and k8s events<br />Collect the audit operation of the global management platform, and the collection of k8s audit logs is not enabled by default |
 | | Log persistent storage | Logs can be marked and output to middleware such as Elasticsearch for persistence |
 | Metric collection | Metric data collection | Support to use ServiceMonitor to define the namespace scope of Pod discovery and select the listening Service through matchLabel |
-| System configuration | System configuration | System configuration displays the default storage time of metrics, logs, and traces and the default Apdex threshold<br />Support custom modification of the storage time of metrics, logs, and link data |
+| System configuration | System configuration | System configuration displays the default storage time of metrics, logs, and traces and the default Apdex threshold<br />Support custom modification of the storage time of metrics, logs, and trace data |
 
 ## Commercial Release - Observability
 
@@ -59,7 +59,7 @@ On the basis of the community release, the commercial release of DCE 5.0 provide
 | | Persistent storage of logs | Logs can be marked and output to middleware such as Elasticsearch for persistence |
 | Metric collection | Metric data collection | Support to use ServiceMonitor to define the namespace scope of Pod discovery and select the monitored Service through matchLabel |
 | | Component status[^1] | Support to view the status of the pod of the collection component, and jump to the corresponding pod details |
-| Link Collection[^1] | Link Data Collection| Support link data collection by using OTEL SDK in a non-intrusive or less intrusive way<br />Support link collection by injecting Sidecar into mesh applications data |
-| System configuration | System configuration | System configuration displays the default storage time of metrics, logs, and traces and the default Apdex threshold<br />Support custom modification of the storage time of metrics, logs, and link data |
+| Link Collection[^1] | trace data Collection| Support trace data collection by using OTEL SDK in a non-intrusive or less intrusive way<br />Support link collection by injecting Sidecar into mesh applications data |
+| System configuration | System configuration | System configuration displays the default storage time of metrics, logs, and traces and the default Apdex threshold<br />Support custom modification of the storage time of metrics, logs, and trace data |
 
 [^1]: This is a feature only available in the commercial release.

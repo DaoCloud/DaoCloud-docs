@@ -118,7 +118,7 @@ You have permission to use `&check;`, but you don't have permission to use `&cro
 | | Add | &check; | &check; | &cross; |
 | | edit | &check; | &check; | &cross; |
 | | delete | &check; | &check; | &check; |
-| Monitor Alarm | View | &check; | &check; | &check; |
+| Monitor Alert | View | &check; | &check; | &check; |
 
 !!! note
 

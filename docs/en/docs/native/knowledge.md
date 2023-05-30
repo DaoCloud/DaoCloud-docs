@@ -110,7 +110,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Optimization of kube-state-metrics under large scale clusters](https://mp.weixin.qq.com/s/8R55Holzrf0wNVD8DLJnAg)
 
     In small-scale clusters, you only need to ensure kube-state-metrics is highly available for use in production environments.
-    However, for large scale clusters, providing metrics metrics through only one KSM instance is very overwhelming and requires many optimizations.
+    However, for large scale clusters, providing metrics through only one KSM instance is very overwhelming and requires many optimizations.
     For example, filtering unneeded metrics and tags, reducing the pressure on KSM instances by slicing, and using DaemonSet to deploy pod metrics separately.
 
 - [Vivo Self-Developed Jenkins Resource Scheduling System Design and Practice](https://mp.weixin.qq.com/s/wEmheHwTA8m8LHr_5LVSyg)
@@ -226,11 +226,11 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Best Practices of K8s Security Monitoring under Zero Trust Strategy](https://mp.weixin.qq.com/s/wYUNsGaWEnQZ0BVxsQORbA)
 
-    This page introduces how to use K8s-related security data sources and collection technologies in a distributed containerized environment to monitor K8s clusters, discover abnormal API access events, abnormal traffic, abnormal configurations, abnormal logs and other behaviors in a timely manner, and combine reasonable alarm strategies to establish A more proactive security defense system.
+    This page introduces how to use K8s-related security data sources and collection technologies in a distributed containerized environment to monitor K8s clusters, discover abnormal API access events, abnormal traffic, abnormal configurations, abnormal logs and other behaviors in a timely manner, and combine reasonable alert strategies to establish A more proactive security defense system.
 
 - [Best Practices of Container Security Based on DevOps Process](https://mp.weixin.qq.com/s/y42BgaosyIQnA1uDEgqTPA)
 
-    The article shares 14 container security practices applicable to the DevOps workflow summarized by Qingteng Cloud Security, including 6 security left-shift steps in the defense phase, safe running containers in the protection phase, abnormal behavior alarms in the detection phase, and response phase incident response and forensics.
+    The article shares 14 container security practices applicable to the DevOps workflow summarized by Qingteng Cloud Security, including 6 security left-shift steps in the defense phase, safe running containers in the protection phase, abnormal behavior alerts in the detection phase, and response phase incident response and forensics.
 
 - [How to Design a “Golden Path” for Internal Development Platforms](https://cloud.redhat.com/blog/designing-golden-paths)
 
@@ -598,8 +598,8 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Nightingale - Enterprise version of Prometheus](https://mp.weixin.qq.com/s/OXmnH9KsygpB70-NmwxM1w)
 
-    [Nightingale](https://github.com/ccfos/nightingale) is an open source cloud-native monitoring and analysis system, adopting the All-In-One design, integrating data collection, visualization, monitoring and alarming, and data analysis. The cloud-native ecosystem provides out-of-the-box enterprise-level monitoring, analysis and alarm capabilities.
-    The article mainly introduces how Nightingale correlates the three observability metrics, operation and maintenance quantification, alarm noise processing, product positioning, and AIOps applications, etc.
+    [Nightingale](https://github.com/ccfos/nightingale) is an open source cloud-native monitoring and analysis system, adopting the All-In-One design, integrating data collection, visualization, monitoring and alerting, and data analysis. The cloud-native ecosystem provides out-of-the-box enterprise-level monitoring, analysis and alert capabilities.
+    The article mainly introduces how Nightingale correlates the three observability metrics, operation and maintenance quantification, alert noise processing, product positioning, and AIOps applications, etc.
 
 - [Porting eBPF applications to BumbleBee - the easiest way to develop BPF CO-RE programs](https://www.solo.io/blog/porting-ebpf-applications-to-bumblebee/)
 
@@ -731,7 +731,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [How to choose a reliable APM system in a production environment](https://mp.weixin.qq.com/s/3dD0hIuqpXdepLVC6V7aoA)
 
-    The article starts from the introduction of mainstream APM products (compared with Pinpoint, Jaeger, Skywalking, Tingyun, Tencent Cloud + Alibaba Cloud Arms and Datadog), and passes through several important dimensions in the production environment, such as product experience, Agent capability, alarm + DB support, cloud-native support capabilities, large data screens, etc., and give suggestions for APM selection solutions.
+    The article starts from the introduction of mainstream APM products (compared with Pinpoint, Jaeger, Skywalking, Tingyun, Tencent Cloud + Alibaba Cloud Arms and Datadog), and passes through several important dimensions in the production environment, such as product experience, Agent capability, alert + DB support, cloud-native support capabilities, large data screens, etc., and give suggestions for APM selection solutions.
 
 ### Frontier hotspot
 

@@ -15,4 +15,4 @@ Kafka has built-in Prometheus and Grafana monitoring modules.
 
     <!--screenshot-->
 
-<!-- The specific meaning of each monitoring indicator will be added later (@justedennnnn). -->
+<!-- The specific meaning of each monitoring metric will be added later (@justedennnnn). -->

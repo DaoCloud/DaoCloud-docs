@@ -1,8 +1,8 @@
 # Start observing
 
-The DCE 5.0 platform realizes the management of multi-cloud and multi-cluster, and supports the creation of clusters. On this basis, Insight, as a multi-cluster unified observation solution, realizes the collection of multi-cluster observation data by deploying the insight-agent plug-in, and supports the realization of metrics, logs, and link data through DCE 5.0 observability products. Inquire.
+The DCE 5.0 platform realizes the management of multi-cloud and multi-cluster, and supports the creation of clusters. On this basis, Insight, as a multi-cluster unified observation solution, realizes the collection of multi-cluster observation data by deploying the insight-agent plug-in, and supports the realization of metrics, logs, and trace data through DCE 5.0 observability products. Inquire.
 
-`insight-agent` is a tool for observability to realize multi-cluster data collection. After installation, it can realize automatic collection of metrics, logs and link data without any modification.
+`insight-agent` is a tool for observability to realize multi-cluster data collection. After installation, it can realize automatic collection of metrics, logs and trace data without any modification.
 
 The cluster created through `container management` will install insight-agent by default, so here only provides guidance on how to enable the observation capability of the connected cluster.
 

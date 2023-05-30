@@ -1,6 +1,6 @@
 # Optimize failover latency sensitivity
 
-Multi-cloud supports automatic failover of applications across clusters, thereby ensuring the stability of applications deployed in multiple clusters. The delay time of failover is mainly affected by the following two dimensions of indicators, and a combination of configurations is required to finally achieve the effect of delay sensitivity.
+Multi-cloud supports automatic failover of applications across clusters, thereby ensuring the stability of applications deployed in multiple clusters. The delay time of failover is mainly affected by the following two dimensions of metrics, and a combination of configurations is required to finally achieve the effect of delay sensitivity.
 
 1. Cluster dimension: mark the cluster as unhealthy inspection time, cluster eviction tolerance time
 2. Workload dimension: cluster taint tolerance duration

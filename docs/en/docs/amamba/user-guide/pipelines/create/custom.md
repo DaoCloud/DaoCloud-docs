@@ -42,7 +42,7 @@ The specific operation steps are as follows:
 4. Fill in the trigger parameters by referring to the following instructions.
 
     - Code source trigger: After it is turned on, the system will periodically scan the specific branch in the warehouse code used to build the pipeline according to the `timed warehouse scan plan`, and re-run the pipeline if there is an update.
-    - Scheduled warehouse scan schedule: Enter a CRON expression to define the time period for scanning warehouses. **After entering the expression, the meaning of the current expression will be prompted at the bottom**. For detailed expression syntax rules, please refer to [Cron Schedule Syntax](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax).
+    - Scheduled warehouse scan schedule: Enter a CRON expression to define the time period for scanning warehouses. **After entering the expression, the meaning of the current expression will be prompted at the bottom**. For detailed expression syntax rules, please refer to [Cron Schedule Syntax](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax).
     - Timing trigger: Timing triggers the construction pipeline, no matter whether the code warehouse is updated or not, the pipeline will be re-run at the specified time.
 
         <!--![]()screenshots-->
