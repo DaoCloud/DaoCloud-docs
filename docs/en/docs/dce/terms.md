@@ -745,7 +745,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - [CronJob](../kpanda/user-guide/workloads/create-cronjob.md)
 
-    CronJob manages tasks that run periodically. Similar to a line of command in a crontab file, the CronJob object uses the [cron](https://zh.wikipedia.org/wiki/Cron) format to set the schedule.
+    CronJob manages tasks that run periodically. Similar to a line of command in a crontab file, the CronJob object uses the [cron](https://en.wikipedia.org/wiki/Cron) format to set the schedule.
 
 - CSI, Container Storage Interface
 

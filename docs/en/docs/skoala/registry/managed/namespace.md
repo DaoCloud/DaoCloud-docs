@@ -1,6 +1,6 @@
 # Microservice namespace
 
-Microservice namespaces can be used to isolate services, configuration, and other resources in different environments, such as production, development, and testing. The namespace in the microservice engine module refers to the microservice namespace, that is, the namespace in the [Nacos](https://nacos.io/zh-cn/docs/what-is-nacos.html) context, not in the Kubernetes scenario.
+Microservice namespaces can be used to isolate services, configuration, and other resources in different environments, such as production, development, and testing. The namespace in the microservice engine module refers to the microservice namespace, that is, the namespace in the [Nacos](https://nacos.io/docs/what-is-nacos.html) context, not in the Kubernetes scenario.
 
 !!! note
 

@@ -46,11 +46,9 @@ Refer to the following steps to dock the GProduct:
 
 2. The `Kpanda` front-end is integrated into the DCE 5.0 parent application `Anakin` as a micro-frontend.
 
-    DCE 5.0 frontend uses [qiankun](https://qiankun.umijs.org/zh) to connect the sub-applications UI.
+    DCE 5.0 frontend uses [qiankun](https://qiankun.umijs.org) to connect the sub-applications UI.
     See [getting started](https://qiankun.umijs.org/guide/getting-started).
 
-    在注册 GProductNavigator CR 后，接口会生成对应的注册信息，供前端父应用注册使用。
-    例如 `Kpanda` 就会生成以下注册信息：
     After registering the GProductNavigator CR, the corresponding registration information will be generated for the front-end parent application. For example, `Kpanda` will generate the following registration information:
 
     ```go
