@@ -5,7 +5,7 @@ hide:
 
 # What is Container Management
 
-Container management is a cloud-native container management platform for deploying and managing Kubernetes clusters. It is designed to simplify the process of enterprise application deployment to the cloud, reduce operational costs and improve management efficiency, and supports multi-cloud and hybrid cloud environments.
+Container management is a cloud-native container management platform for deploying and managing Kubernetes clusters. It is designed to simplify the process of enterprise application deployment to the cloud, reduce operational costs and improve management efficiency, and supports multicloud and hybrid cloud environments.
 
 Some of the key features of container management include:
 

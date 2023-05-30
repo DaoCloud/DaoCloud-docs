@@ -1,4 +1,4 @@
-# App Workbench Tutorials
+# Workbench Tutorials
 
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 

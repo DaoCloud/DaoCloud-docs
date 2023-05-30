@@ -10,15 +10,15 @@ This page explains how to deploy a service mesh in a multicloud environment.
 2. **Provide reliable IP**: The control plane cluster must provide a reliable IP for other data plane clusters to access the control plane.
 3. **Authorization**: The cluster that joins the mesh needs to provide a remote key with sufficient permissions to allow Mspider to install components on the cluster and the Istio control plane to access the API Server of other clusters.
 
-### Multi-cluster regional planning
+### Multicluster regional planning
 
-In Istio, Regions, Zones, and SubZones are concepts used to maintain service availability in multi-cluster deployments. Specifically:
+In Istio, Regions, Zones, and SubZones are concepts used to maintain service availability in multicluster deployments. Specifically:
 
-- **Region** represents a large region, usually used to represent the data center region of the entire cloud provider; in Kubernetes, the label [`topology.kubernetes.io/region`](https://kubernetes.io/zh -cn/docs/reference/kubernetes-api/labels-annotations-taints/#topologykubernetesioregion) determines the region of the node.
-- **Zone** represents a small zone, usually used to represent a sub-zone in a data center; in Kubernetes, the label [`topology.kubernetes.io/zone`](https://kubernetes.io/zh- cn/docs/reference/kubernetes-api/labels-annotations-taints/#topologykubernetesiozone) to determine the zone of a node.
+- **Region** represents a large region, usually used to represent the data center region of the entire cloud provider; in Kubernetes, the label [`topology.kubernetes.io/region`](https://kubernetes.io/docs/reference/kubernetes-api/labels-annotations-taints/#topologykubernetesioregion) determines the region of the node.
+- **Zone** represents a small zone, usually used to represent a sub-zone in a data center; in Kubernetes, the label [`topology.kubernetes.io/zone`](https://kubernetes.io/docs/reference/kubernetes-api/labels-annotations-taints/#topologykubernetesiozone) to determine the zone of a node.
 - **SubZone** is a smaller area used to represent a smaller part of the Zone. The concept of partitions does not exist in Kubernetes, so Istio introduces custom node labels [`topology.istio.io/subzone`](https://github.com/istio/api/blob/82b9feb5a1c091ad9a28311c62b4f6f07803a9fa/label/labels.yaml# L84) to define partitions.
 
-The role of these concepts is mainly to help Istio manage the availability of services between different regions. For example, in a multi-cluster deployment, if a service fails in Zone A, Istio can be configured to automatically divert service traffic to Zone B to ensure service availability.
+The role of these concepts is mainly to help Istio manage the availability of services between different regions. For example, in a multicluster deployment, if a service fails in Zone A, Istio can be configured to automatically divert service traffic to Zone B to ensure service availability.
 
 The configuration method is to add the corresponding Label to **each node** of the cluster:
 

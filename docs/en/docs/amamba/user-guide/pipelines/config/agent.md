@@ -10,7 +10,7 @@ This Kubernetes plugin will run a special container `jnlp` in the Jenkins Agent 
 
 ## Use the built-in Label
 
-The application workbench declares 6 labels through the podTemplate capability: `base`, `maven`, `go`, `go16`, `node.js` and `python`. You can specify a specific Agent label to use the corresponding podTemplate.
+Workbench declares 6 labels through the podTemplate capability: `base`, `maven`, `go`, `go16`, `node.js` and `python`. You can specify a specific Agent label to use the corresponding podTemplate.
 
 - Can use go podTemplate via `node('go')` in Jenkinsfile.
 

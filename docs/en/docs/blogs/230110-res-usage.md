@@ -29,10 +29,10 @@ But there is still a lot of room for improvement. Therefore, no matter in the pa
 What resources are being wasted?
 
 In order to optimize resources, it is necessary to identify which businesses allocate excess resources.
-Resource usage is usually measured by indicators such as CPU, memory, disk, and incoming and outgoing bandwidth.
-General public cloud or private cloud vendors will provide ready-made solutions for the collection and viewing of these indicators.
+Resource usage is usually measured by metrics such as CPU, memory, disk, and incoming and outgoing bandwidth.
+General public cloud or private cloud vendors will provide ready-made solutions for the collection and viewing of these metrics.
 
-By viewing historical indicators, you can quickly understand the actual utilization rate and periodicity of resources. On this basis, fine-grained resource utilization optimization can be carried out.
+By viewing historical metrics, you can quickly understand the actual utilization rate and periodicity of resources. On this basis, fine-grained resource utilization optimization can be carried out.
 
 ### 1. Reasonably set Request and Limit
 

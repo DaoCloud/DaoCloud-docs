@@ -1,6 +1,6 @@
 # Service topology
 
-On the service topology page, you can view the previous calls and dependencies of services that access link data. Understand the call relationship between services through the visualized topology, and view the calls and performance status of services within a specified time.
+On the service topology page, you can view the previous calls and dependencies of services that access trace data. Understand the call relationship between services through the visualized topology, and view the calls and performance status of services within a specified time.
 
 ## Service Topology
 

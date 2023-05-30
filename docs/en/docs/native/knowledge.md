@@ -93,7 +93,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
     [Flomesh Service Mesh](https://github.com/flomesh-io/fsm) uses Pipy, a programmable agent, to provide east-west and north-south traffic management for the core.
     By breaking through the network isolation between computing environments with L7-based traffic management capabilities, a virtual flat network is created that allows applications in different computing environments to communicate with each other.
-    The article describes the integration of Dapr with the Flomesh service mesh for cross-cluster service calls, enabling "true" multi-cluster interoperability.
+    The article describes the integration of Dapr with the Flomesh service mesh for cross-cluster service calls, enabling "true" multicluster interoperability.
 
 - [How to mitigate container isolation vulnerabilities and monitor kernel critical paths in cloud-native scenarios?](https://mp.weixin.qq.com/s/qlmm2h8RpQnKOnEjlK0pMA)
 
@@ -110,7 +110,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Optimization of kube-state-metrics under large scale clusters](https://mp.weixin.qq.com/s/8R55Holzrf0wNVD8DLJnAg)
 
     In small-scale clusters, you only need to ensure kube-state-metrics is highly available for use in production environments.
-    However, for large scale clusters, providing metrics metrics through only one KSM instance is very overwhelming and requires many optimizations.
+    However, for large scale clusters, providing metrics through only one KSM instance is very overwhelming and requires many optimizations.
     For example, filtering unneeded metrics and tags, reducing the pressure on KSM instances by slicing, and using DaemonSet to deploy pod metrics separately.
 
 - [Vivo Self-Developed Jenkins Resource Scheduling System Design and Practice](https://mp.weixin.qq.com/s/wEmheHwTA8m8LHr_5LVSyg)
@@ -130,7 +130,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [service mesh Security and High Availability Deployment Best Practices](https://mp.weixin.qq.com/s/hFCshQpmF7Vr0jrpugArjA)
 
-    Article on security and high availability best practices when deploying service meshs in a multi-cluster infrastructure, including: how control planes should be deployed near applications; how ingress should be deployed to promote security and agility; how to use Envoy to promote cross-cluster load balancing, and how to use certificates inside the mesh.
+    Article on security and high availability best practices when deploying service meshs in a multicluster infrastructure, including: how control planes should be deployed near applications; how ingress should be deployed to promote security and agility; how to use Envoy to promote cross-cluster load balancing, and how to use certificates inside the mesh.
 
 - [Open Source Strategy Development and Implementation for Medium and Large Technology Enterprises](https://mp.weixin.qq.com/s/9Z4zFPU0uHk6RhrpUDD-tw)
 
@@ -185,9 +185,9 @@ This page shares some technical articles related to cloud native, and we hope th
 
     The article shares how the open source projects and open source communities of 4 top open source commercial companies (HashiCorp, Confluent, Databricks, and CockroachDB) operate, how to find the top 1,000 community users and how long it took, and growth metrics, etc.
 
-- [How to practice DevOps in a container cloud multi-cluster environment](https://mp.weixin.qq.com/s/MW67DhLzUWXm0xHd5LH0Tw)
+- [How to practice DevOps in a container cloud multicluster environment](https://mp.weixin.qq.com/s/MW67DhLzUWXm0xHd5LH0Tw)
 
-    The article introduces how to implement multi-cluster DevOps through GitOps, recommends a multi-cluster GitOps workflow as a reference, and finally introduces the mainstream way to practice GitOps in continuous integration and continuous delivery.
+    The article introduces how to implement multicluster DevOps through GitOps, recommends a multicluster GitOps workflow as a reference, and finally introduces the mainstream way to practice GitOps in continuous integration and continuous delivery.
 
 - [Three Misunderstandings of Kubernetes HPA and Guide to Avoiding Pitfalls](https://mp.weixin.qq.com/s/3eSm0BZSrPUAZQQhG_L_5A)
 
@@ -226,11 +226,11 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Best Practices of K8s Security Monitoring under Zero Trust Strategy](https://mp.weixin.qq.com/s/wYUNsGaWEnQZ0BVxsQORbA)
 
-    This page introduces how to use K8s-related security data sources and collection technologies in a distributed containerized environment to monitor K8s clusters, discover abnormal API access events, abnormal traffic, abnormal configurations, abnormal logs and other behaviors in a timely manner, and combine reasonable alarm strategies to establish A more proactive security defense system.
+    This page introduces how to use K8s-related security data sources and collection technologies in a distributed containerized environment to monitor K8s clusters, discover abnormal API access events, abnormal traffic, abnormal configurations, abnormal logs and other behaviors in a timely manner, and combine reasonable alert strategies to establish A more proactive security defense system.
 
 - [Best Practices of Container Security Based on DevOps Process](https://mp.weixin.qq.com/s/y42BgaosyIQnA1uDEgqTPA)
 
-    The article shares 14 container security practices applicable to the DevOps workflow summarized by Qingteng Cloud Security, including 6 security left-shift steps in the defense phase, safe running containers in the protection phase, abnormal behavior alarms in the detection phase, and response phase incident response and forensics.
+    The article shares 14 container security practices applicable to the DevOps workflow summarized by Qingteng Cloud Security, including 6 security left-shift steps in the defense phase, safe running containers in the protection phase, abnormal behavior alerts in the detection phase, and response phase incident response and forensics.
 
 - [How to Design a “Golden Path” for Internal Development Platforms](https://cloud.redhat.com/blog/designing-golden-paths)
 
@@ -306,7 +306,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Multi-Active Architecture Guide for Hybrid Cloud](https://mp.weixin.qq.com/s/NXXwjxUAGXDD3krKXyJbaQ)
 
-    The article introduces the multi-active architecture of Jobbang Company in a hybrid cloud environment: the network between multi-clouds is a state between single-cloud multi-availability zones and center-edge;
+    The article introduces the multi-active architecture of Jobbang Company in a hybrid cloud environment: the network between multiclouds is a state between single-cloud multi-availability zones and center-edge;
     The normal inter-application call closed-loop is within the single cloud, and only requires independent registration and discovery within the single cloud;
     Cross-cloud calls in some scenarios only require inter-cluster discovery;
     With full cloud deployment, north-south traffic can be prioritized for scheduling through DNS.
@@ -472,9 +472,9 @@ This page shares some technical articles related to cloud native, and we hope th
     The article lists five powerful tools for working with Kubernetes,
     They are the terminal UI [K9s](https://github.com/derailed/k9s), the tool to clean up the Kubernetes cluster [Popeye](https://github.com/derailed/popeye), the Kubernetes cluster deployment inspection tool [Kube -bench](https://github.com/aquasecurity/kube-bench), context and namespace quick switching tool [Kubectx](https://github.com/ahmetb/kubectx), [Kubens](https:/ /github.com/ahmetb/kubectx) and [fzf](https://github.com/junegunn/fzf), log aggregator [Stern](https://github.com/stern/stern), fast from shell Check the file [Bat](https://github.com/sharkdp/bat).
 
-- [Use Open Cluster Management (OCM) Placement to extend multi-cluster scheduling capabilities](https://cloud.redhat.com/blog/extending-the-multicluster-scheduling-capabilities-with-open-cluster-management-placement)
+- [Use Open Cluster Management (OCM) Placement to extend multicluster scheduling capabilities](https://cloud.redhat.com/blog/extending-the-multicluster-scheduling-capabilities-with-open-cluster-management-placement)
 
-    In the K8s multi-cluster management project OCM, the multi-cluster scheduling capability is provided by the [Placement](https://github.com/open-cluster-management-io/placement) controller.
+    In the K8s multicluster management project OCM, the multicluster scheduling capability is provided by the [Placement](https://github.com/open-cluster-management-io/placement) controller.
     Placement provides some default prioritizers for sorting and selecting the most suitable clusters. In some cases, the sorter needs more data to calculate the score of the cluster.
     Therefore, we need a scalable way to support scheduling based on custom scores.
 
@@ -526,7 +526,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Difficulties in implementing zero trust in Kubernetes and related open source solutions](https://thenewstack.io/introducing-open-source-zero-trust-to-kubernetes/)
 
     The complexity of Kubernetes makes standardizing the application of Zero Trust principles a challenge. By default, kubectl does not enable RBAC, and executed commands are not logged by user accounts. Accessing resources through firewalls is difficult, and supervising multiple clusters becomes cumbersome and error-prone.
-    [Paralus](https://github.com/paralus/paralus) is a resource access management, threat identification and response solution designed for multi-cluster environments, supports custom roles, identity providers (IdP), etc., allowing administrators to create Custom rules for different permissions.
+    [Paralus](https://github.com/paralus/paralus) is a resource access management, threat identification and response solution designed for multicluster environments, supports custom roles, identity providers (IdP), etc., allowing administrators to create Custom rules for different permissions.
 
 -[KIntroduction to ubernetes Gateway API and its use cases](https://www.armosec.io/blog/kubernetes-gateway-api/)
 
@@ -554,7 +554,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Using Nocalhost to develop microservice applications on Rainbond](https://mp.weixin.qq.com/s/kC9P7fvMtJvKK7_TM2LbTw)
 
-    [Nocalhost](https://github.com/nocalhost/nocalhost) is an IDE-based cloud-native application development tool, and [Rainbond](https://github.com/goodrain/rainbond) is a cloud-native multi-cloud application management tool platform.
+    [Nocalhost](https://github.com/nocalhost/nocalhost) is an IDE-based cloud-native application development tool, and [Rainbond](https://github.com/goodrain/rainbond) is a cloud-native multicloud application management tool platform.
     Nocalhost can directly develop applications in Kubernetes. Rainbond can quickly deploy microservice projects without writing Yaml. Nocalhost combines Rainbond to accelerate the efficiency of microservice development.
 
 - [Two OCI image build tool introduction builders - melange and apko](https://blog.chainguard.dev/secure-your-software-factory-with-melange-and-apko/)
@@ -562,10 +562,10 @@ This page shares some technical articles related to cloud native, and we hope th
     [apk](https://github.com/alpinelinux/apk-tools) directly uses Alpine's package management tool APK to build images, no need to use Dockerfile, only need to provide a declarative YAML manifest.
     [melange](https://github.com/chainguard-dev/melange) uses a declarative YAML pipeline to build APKs.
 
-- [Application continuous delivery practice based on Flux v2 in multi-cluster scenarios](https://mp.weixin.qq.com/s/a9lRoa36tFl1_1-ESvXJpA)
+- [Application continuous delivery practice based on Flux v2 in multicluster scenarios](https://mp.weixin.qq.com/s/a9lRoa36tFl1_1-ESvXJpA)
 
     [Flux v2](https://github.com/fluxcd/flux2) provides a set of tools that can support the implementation of GitOps, and provides a general solution for the continuous delivery of cloud-native applications.
-    This page mainly starts from deploying cloud-native applications with differentiated configurations in multi-cluster scenarios, and introduces the practice of continuous app delivery based on Flux v2.
+    This page mainly starts from deploying cloud-native applications with differentiated configurations in multicluster scenarios, and introduces the practice of continuous app delivery based on Flux v2.
 
 - [Use Chain-bench to Audit Your Software Supply Chain for CIS Compliance](https://blog.aquasec.com/cis-software-supply-chain-compliance)
 
@@ -598,8 +598,8 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Nightingale - Enterprise version of Prometheus](https://mp.weixin.qq.com/s/OXmnH9KsygpB70-NmwxM1w)
 
-    [Nightingale](https://github.com/ccfos/nightingale) is an open source cloud-native monitoring and analysis system, adopting the All-In-One design, integrating data collection, visualization, monitoring and alarming, and data analysis. The cloud-native ecosystem provides out-of-the-box enterprise-level monitoring, analysis and alarm capabilities.
-    The article mainly introduces how Nightingale correlates the three observability metrics, operation and maintenance quantification, alarm noise processing, product positioning, and AIOps applications, etc.
+    [Nightingale](https://github.com/ccfos/nightingale) is an open source cloud-native monitoring and analysis system, adopting the All-In-One design, integrating data collection, visualization, monitoring and alerting, and data analysis. The cloud-native ecosystem provides out-of-the-box enterprise-level monitoring, analysis and alert capabilities.
+    The article mainly introduces how Nightingale correlates the three observability metrics, operation and maintenance quantification, alert noise processing, product positioning, and AIOps applications, etc.
 
 - [Porting eBPF applications to BumbleBee - the easiest way to develop BPF CO-RE programs](https://www.solo.io/blog/porting-ebpf-applications-to-bumblebee/)
 
@@ -731,7 +731,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [How to choose a reliable APM system in a production environment](https://mp.weixin.qq.com/s/3dD0hIuqpXdepLVC6V7aoA)
 
-    The article starts from the introduction of mainstream APM products (compared with Pinpoint, Jaeger, Skywalking, Tingyun, Tencent Cloud + Alibaba Cloud Arms and Datadog), and passes through several important dimensions in the production environment, such as product experience, Agent capability, alarm + DB support, cloud-native support capabilities, large data screens, etc., and give suggestions for APM selection solutions.
+    The article starts from the introduction of mainstream APM products (compared with Pinpoint, Jaeger, Skywalking, Tingyun, Tencent Cloud + Alibaba Cloud Arms and Datadog), and passes through several important dimensions in the production environment, such as product experience, Agent capability, alert + DB support, cloud-native support capabilities, large data screens, etc., and give suggestions for APM selection solutions.
 
 ### Frontier hotspot
 
@@ -989,7 +989,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Nine Trends Insights into the Container Ecosystem in 2022](https://mp.weixin.qq.com/s/WNanrbCsdWEuyWP8WvO8UQ)
   
     Datadog’s analysis of over 1.5 billion containers run by customers identified key trends in the container ecosystem:
-    The use of serverless container technology in the public cloud continues to rise, multi-cloud usage is positively correlated with the number of containers in an organization, Kubernetes Ingress usage is on the rise, most hosts are using a Kubernetes version older than 18 months, more than 30% are running containerd of hosts use unsupported versions, NGINX, Redis, and Postgres are the most popular container images.
+    The use of serverless container technology in the public cloud continues to rise, multicloud usage is positively correlated with the number of containers in an organization, Kubernetes Ingress usage is on the rise, most hosts are using a Kubernetes version older than 18 months, more than 30% are running containerd of hosts use unsupported versions, NGINX, Redis, and Postgres are the most popular container images.
 
 - [Karmada large-scale test report released, breaking through 100 clusters and 500,000 nodes](https://karmada.io/blog/2022/10/26/test-report/)
 

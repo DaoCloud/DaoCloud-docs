@@ -1,43 +1,30 @@
-# 虚拟服务
+# Virtual Services
 
-此处介绍有关服务网格的虚拟服务。
+Here we introduce virtual services in the context of a service mesh.
 
-虚拟服务（Virtual Service）和目标规则（Destination Rule）是服务网格流量路由功能的关键拼图。
-虚拟服务让您配置如何在服务网格内将请求路由到服务，这基于服务网格和平台提供的基本的连通性和服务发现能力。
-每个虚拟服务包含一组路由规则，服务网格按顺序评估它们，服务网格将每个给定的请求匹配到虚拟服务指定的实际目标地址。
-您的网格可以有多个虚拟服务，也可以没有，取决于您的使用场景。
+Virtual services and destination rules are key pieces of service mesh traffic routing functionality. Virtual services allow you to configure how requests are routed to services within the service mesh, based on the basic connectivity and service discovery capabilities provided by the service mesh and platform. Each virtual service contains a set of routing rules that the service mesh evaluates in order, matching each given request to the actual destination address specified by the virtual service. Your mesh can have multiple virtual services, or none at all, depending on your use case.
 
-## 为什么使用虚拟服务？
+## Why Use Virtual Services?
 
-虚拟服务在增强服务网格流量管理的灵活性和有效性方面，发挥着至关重要的作用，通过对客户端请求的目标地址与真实响应请求的目标工作负载进行解耦来实现。
-虚拟服务同时提供了丰富的方式，为发送至这些工作负载的流量指定不同的路由规则。
+Virtual services play a critical role in enhancing the flexibility and effectiveness of service mesh traffic management, allowing for decoupling of client-requested destination addresses from the actual workload that processes the request. Virtual services also provide rich ways to specify different routing rules for traffic sent to these workloads.
 
-为什么这如此有用？
-如果没有虚拟服务，Envoy 会在所有的服务实例中使用轮询的负载均衡策略分发请求。
-您可以用对工作负载的了解来改善这种行为。例如，有些可能代表不同的版本。
-这在 A/B 测试中可能有用，您可能希望在其中配置基于不同服务版本的流量百分比路由，或指引从内部用户到特定实例集的流量。
+Why is this useful? Without virtual services, Envoy would distribute requests among all service instances using a round-robin load-balancing strategy. You can improve upon this behavior with knowledge of your workloads. For example, some may represent different versions. This could be useful in A/B testing, where you might want to configure traffic percentage routing based on different service versions, or direct traffic from internal users to a specific set of instances.
 
-使用虚拟服务，您可以为一个或多个主机名指定流量行为。
-在虚拟服务中使用路由规则，告诉 Envoy 如何发送虚拟服务的流量到适当的目标。
-路由目标地址可以是同一服务的不同版本，也可以是完全不同的服务。
+With virtual services, you can specify traffic behavior for one or more hostnames. Using routing rules within a virtual service tells Envoy how to send the virtual service's traffic to the appropriate destination. Routing destinations can be different versions of the same service, or completely different services.
 
-虚拟服务可以让您：
+Virtual services enable you to:
 
-- 通过单个虚拟服务处理多个应用程序服务。
+- Handle multiple application services with a single virtual service.
 
-    如果您的网格使用 Kubernetes，可以配置一个虚拟服务处理特定命名空间中的所有服务。
-    映射单一的虚拟服务到多个“真实”服务特别有用，可以在不需要客户适应转换的情况下，将单体应用转换为微服务构建的复合应用系统。
-    您的路由规则可以指定为“对这些 `monolith.com` 的 URI 调用转到`microservice A`”等等。
-    您可以在[下面的一个示例](#路由规则的更多内容)看到它是如何工作的。
+    With Kubernetes, if your mesh is configured to process services within a particular namespace, you can configure a virtual service to handle all the services in that namespace. Mapping a single virtual service to multiple "real" services can be particularly useful in transforming a monolithic application into a composite application system built from microservices without requiring client-side adaptation to the changes. Your routing rules can specify things like "route URIs for these `monolith.com` calls to `microservice A`," and so on. See an example of it below in the section on more about routing rules.
 
-- 和[网关](gateway.md)整合并配置流量规则来控制出入流量。
+- Integrate with [gateways](gateway.md) and configure traffic rules to control ingress and egress traffic.
 
-    在某些情况下，您还需要配置目标规则来使用这些特性，因为这是指定服务子集的地方。
-    在一个单独的对象中指定服务子集和其它特定目标策略，有利于在虚拟服务之间更简洁地重用这些规则。
+    In some cases, you'll also want to configure destination rules to use these features, as this is where subsets of services are specified. Specifying the subset of services and other specific destination policies in a single object is advantageous for more concise reuse of those rules between virtual services.
 
-### 虚拟服务示例
+### Example Virtual Service
 
-下面的虚拟服务根据请求是否来自特定的用户，把它们路由到服务的不同版本。
+The following virtual service routes requests to different versions of a service based on whether the request comes from a specific user.
 
 ```yaml
 apiVersion: networking.istio.io/v1alpha3
@@ -62,30 +49,24 @@ spec:
         subset: v3
 ```
 
-#### hosts 字段
+#### Hosts Field
 
-使用 `hosts` 字段列举虚拟服务的主机——即用户指定的目标或是路由规则设定的目标。
-这是客户端向服务发送请求时使用的一个或多个地址。
+The `hosts` field lists the virtual service's hosts--that is, the targets specified by the user or set by the routing rules. These are one or more addresses used by clients to send requests to the service.
 
 ```yaml
 hosts:
 - reviews
 ```
 
-虚拟服务主机名可以是 IP 地址、DNS 名称，或者依赖于平台的一个简称（例如 Kubernetes 服务的短名称），隐式或显式地指向一个完全限定域名（FQDN）。
-您也可以使用通配符（“*”）前缀，让您创建一组匹配所有服务的路由规则。
-虚拟服务的 `hosts` 字段实际上不必是服务网格服务注册的一部分，它只是虚拟的目标地址。这让您可以为没有路由到网格内部的虚拟主机建模。
+Virtual service host names can be IP addresses, DNS names, or platform-dependent shorthand (such as Kubernetes service short names) that implicitly or explicitly point to a fully qualified domain name (FQDN). You can also use a wildcard ("*") prefix to create a set of routing rules that match all services. The `hosts` field for a virtual service doesn't actually have to be part of the service mesh service registry; it's just a virtual destination address. This lets you model virtual hosts that don't route to anything inside the mesh.
 
-#### 路由规则
+#### Routing Rules
 
-在 `http` 字段包含了虚拟服务的路由规则，用来描述匹配条件和路由行为。
-它们把 HTTP/1.1、HTTP2 和 gRPC 等流量发送到 hosts 字段指定的目标（您也可以用 `tcp` 和 `tls` 片段为 TCP 和未终止的 TLS 流量设置路由规则）。
-一个路由规则包含了指定的请求要流向哪个目标地址，具有 0 或多个匹配条件，取决于您的使用场景。
+The `http` field contains routing rules for the virtual service, describing matching conditions and routing behavior. They send traffic for HTTP/1.1, HTTP2, and gRPC among others to the targets specified by the `hosts` field (you can also use the `tcp` and `tls` sections to set routing rules for TCP and un-terminated TLS traffic). A routing rule specifies which target address to send the given request to, with zero or more matching conditions depending on your use case.
 
-##### 匹配条件
+##### Matching Conditions
 
-示例中的第一个路由规则有一个条件，因此以 `match` 字段开始。
-在本例中，您希望此路由应用于来自 ”jason“ 用户的所有请求，所以使用 `headers`、`end-user` 和 `exact` 字段选择适当的请求。
+The first routing rule in the example has one condition, so it starts with the `match` field. In this instance, you want this route to apply to all requests from the user "jason," so you use the `headers`, `end-user`, and `exact` fields to select the appropriate requests.
 
 ```yaml
 - match:
@@ -96,10 +77,7 @@ hosts:
 
 ##### Destination
 
-route 部分的 `destination` 字段指定了符合此条件的流量的实际目标地址。
-与虚拟服务的 `hosts` 不同，destination 的 host 必须是存在于服务网格服务注册中心的实际目标地址，否则 Envoy 不知道该将请求发送到哪里。
-可以是一个有代理的服务网格，或者是一个通过服务入口被添加进来的非网格服务。
-本示例运行在 Kubernetes 环境中，host 名为一个 Kubernetes 服务名：
+The `destination` field in the `route` section specifies the actual target address for traffic that meets this condition. Unlike the `hosts` of a virtual service, the `host` of the destination must be an actual target address that exists in the service mesh service registry. Otherwise, Envoy does not know where to send the request. It can be a service mesh with a proxy or a non-mesh service added through a service entry. In this example, it runs in a Kubernetes environment, and the host name is a Kubernetes service name:
 
 ```yaml
 route:
@@ -108,21 +86,15 @@ route:
     subset: v2
 ```
 
-请注意，在该示例和本页其它示例中，为了简单，我们使用 Kubernetes 的短名称设置 destination 的 host。
-在评估此规则时，服务网格会添加一个基于虚拟服务命名空间的域后缀，这个虚拟服务包含要获取主机的完全限定名的路由规则。
-在我们的示例中使用短名称也意味着您可以复制并在任何喜欢的命名空间中尝试它们。
+Please note that in this example and other examples on this page, for simplicity, we use the short name of Kubernetes to set the destination host. When evaluating this rule, the service mesh adds a domain suffix based on the virtual service namespace. This virtual service contains routing rules that include the fully qualified name of the host you want to get. Using the short name in our example also means that you can copy and try them in any namespace you like.
 
-只有在目标主机和虚拟服务位于相同的 Kubernetes 命名空间时才可以使用这样的短名称。
-因为使用 Kubernetes 的短名称容易导致配置出错，我们建议您在生产环境中指定完全限定的主机名。
+This type of short name can only be used when the target host and virtual service are in the same Kubernetes namespace. Because using Kubernetes' short names can easily lead to configuration errors, we recommend that you specify fully qualified host names in production environments.
 
-destination 片段还指定了 Kubernetes 服务的子集，将符合此规则条件的请求转入其中。
-在本例中子集名称是 v2。您可以在目标规则章节中看到如何定义服务子集。
+The destination segment also specifies a subset of the Kubernetes service to which requests that meet this rule's conditions will be routed. In this example, the subset name is v2. You can see how to define service subsets in the target rules section.
 
-#### 路由规则优先级
+#### Routing rule priority
 
-**路由规则** 按从上到下的顺序选择，虚拟服务中定义的第一条规则有最高优先级。
-本示例中，不满足第一个路由规则的流量均流向一个默认的目标，该目标在第二条规则中指定。
-因此，第二条规则没有 match 条件，直接将流量导向 v3 子集。
+Routing rules are selected from top to bottom, and the first rule defined in the virtual service has the highest priority. In this example, traffic that does not meet the first routing rule flows to a default target specified in the second rule. Therefore, the second rule has no match conditions and directly routes traffic to the v3 subset.
 
 ```yaml
 - route:
@@ -131,14 +103,14 @@ destination 片段还指定了 Kubernetes 服务的子集，将符合此规则�
       subset: v3
 ```
 
-我们建议提供一个默认的“无条件”或基于权重的规则（见下文）作为每一个虚拟服务的最后一条规则，如案例所示，从而确保流经虚拟服务的流量至少能够匹配一条路由规则。
+We suggest providing a default "unconditional" or weight-based rule (see below) as the last rule for each virtual service to ensure that the traffic flowing through the virtual service can at least match one routing rule.
 
-### 路由规则的更多内容
+### More on Routing Rules
 
-正如上面所看到的，路由规则是将特定流量子集路由到指定目标地址的强大工具。
-您可以在流量端口、header 字段、URI 等内容上设置匹配条件。
-例如，这个虚拟服务让用户发送请求到两个独立的服务：ratings 和 reviews，就好像它们是 `http://bookinfo.com/` 这个更大的虚拟服务的一部分。
-虚拟服务规则根据请求的 URI 和指向适当服务的请求匹配流量。
+As seen above, routing rules are a powerful tool for routing specific subsets of traffic to designated destination addresses.
+You can set matching conditions based on traffic ports, header fields, URIs and more.
+For example, this virtual service allows users to send requests to two independent services, ratings and reviews, as if they were part of a larger virtual service called `http://bookinfo.com/`.
+Virtual service rules match traffic based on the requested URI and direct the traffic to the appropriate service.
 
 ```yaml
 apiVersion: networking.istio.io/v1alpha3
@@ -171,13 +143,13 @@ spec:
 ...
 ```
 
-有些匹配条件可以使用精确的值，如前缀或正则。
+Some matching conditions can use exact values, such as prefix or regular expressions.
 
-您可以使用 AND 向同一个 `match` 块添加多个匹配条件，或者使用 OR 向同一个规则添加多个 `match` 块。
-对于任何给定的虚拟服务也可以有多个路由规则。这可以在单个虚拟服务中使路由条件变得随您所愿的复杂或简单。
+You can use "AND" to add multiple matching conditions to the same `match` block, or use "OR" to add multiple `match` blocks to the same rule.
+There can also be multiple routing rules for any given virtual service. This can make routing conditions as complex or simple as desired within a single virtual service.
 
-您也可以使用路由规则在流量上执行一些操作，例如：
+You can also use routing rules to perform operations on traffic, such as:
 
-- 添加或删除 header
-- 重写 URL
-- 为调用这一目标地址的请求设置重试策略
+- Adding or removing headers
+- Rewriting URLs
+- Setting retry strategies for requests to call this destination address

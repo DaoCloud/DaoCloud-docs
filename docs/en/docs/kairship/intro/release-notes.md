@@ -132,9 +132,9 @@ This page lists the release notes of Multicloud Management module, so that you c
 - list instance API that can display data according to permissions
 - Query cluster resource information based on user permissions
 - Query labels of all member clusters
-- One-click conversion of single-clsuter applications to multi-cluster applications
+- One-click conversion of single-clsuter applications to multicluster applications
 - Query the namespace and deployment resources of the member cluster
-- Added prompts for creating multi-cloud resources
+- Added prompts for creating multicloud resources
 
 #### Enhancement
 

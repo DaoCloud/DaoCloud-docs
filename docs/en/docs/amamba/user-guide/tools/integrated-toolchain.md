@@ -2,14 +2,14 @@
 
 A DevOps toolchain is a set of tools that enables DevOps teams to collaborate and address key DevOps fundamentals throughout the product lifecycle.
 
-The application workbench supports tool chain integration from two perspectives: workspace integration and administrator integration. Instances integrated by administrators can be assigned to workspaces for use in workspaces.
+Workbench supports tool chain integration from two perspectives: workspace integration and administrator integration. Instances integrated by administrators can be assigned to workspaces for use in workspaces.
 
 ## Support for integrated toolchains
 
 | Toolchain Name | Description | Remarks |
 | ---------- | -------------------------------------- -------------------- | ----------------------------- ----------------- |
 | GitLab | Can be used in Pipeline after integrating GitLab repository | - |
-| Jira | Support Jira->Issue tracking by integrating Jira in the application workbench. | - |
+| Jira | Support Jira->Issue tracking by integrating Jira in Workbench. | - |
 | Jenkins | After integrating Jenkins, all workspaces will gain pipeline capability for building. | Only administrator integration is supported, and Jenkins can only be integrated once for all platforms |
 
 ## Steps

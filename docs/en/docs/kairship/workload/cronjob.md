@@ -7,7 +7,7 @@ hide:
 
 Follow the steps below to create a scheduled task (Cronob).
 
-In the left navigation bar, click `Multi-cloud workload` to enter the scheduled task page, and click the `Image creation` button in the upper right corner.
+In the left navigation bar, click `Multicloud workload` to enter the scheduled task page, and click the `Image creation` button in the upper right corner.
 
 <!--screenshot-->
 
@@ -16,7 +16,7 @@ On the `Create Task` page, after configuring the basic information of the load, 
 <!--screenshot-->
 
 - Payload Name: Can contain up to 63 characters, can only contain lowercase letters, numbers, and a separator ("-"), and must start and end with a lowercase letter or number. The name of the same type of workload in the same namespace cannot be repeated, and the name of the workload cannot be changed after the workload is created.
-- Multi-cloud namespace: Select the namespace where the newly created task will be deployed. The default namespace is used by default. If you cannot find the required namespace, you can create a new one according to the prompt on the page.
+- Multicloud namespace: Select the namespace where the newly created task will be deployed. The default namespace is used by default. If you cannot find the required namespace, you can create a new one according to the prompt on the page.
 - Deployment cluster: Provides three options to determine which clusters the workload will be deployed on.
 - Number of Instances: Enter the number of Pod instances for the workload. By default, 1 Pod instance is created.
 - Scheduling strategy: Provides three selection methods to determine how to allocate workload instances.
@@ -51,7 +51,7 @@ On the `Scheduled Task Configuration` page, configure concurrency policies, timi
 
   > The above rules only apply to multiple jobs created by the same CronJob. Multiple tasks created by multiple CronJobs are always allowed to execute concurrently.
 
-- Timing rules: Set the time period for task execution based on minutes, hours, days, weeks, and months. Support custom Cron expressions with numbers and `*`, **after inputting the expression, the meaning of the current expression will be prompted**. For detailed expression syntax rules, please refer to [Cron Schedule Syntax](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax).
+- Timing rules: Set the time period for task execution based on minutes, hours, days, weeks, and months. Support custom Cron expressions with numbers and `*`, **after inputting the expression, the meaning of the current expression will be prompted**. For detailed expression syntax rules, please refer to [Cron Schedule Syntax](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax).
 
 - Task records: Set how many records of successful or failed tasks to keep. `0` means do not keep.
 
@@ -65,7 +65,7 @@ In the `Advanced Configuration` page, you can configure task settings and labels
 
 <!--screenshot-->
 
-If you do not need to configure differentiation after the creation is complete, you can directly use `Confirm` to complete the creation of the multi-cloud task
+If you do not need to configure differentiation after the creation is complete, you can directly use `Confirm` to complete the creation of the multicloud task
 
 On the `Differential Configuration` page, after selecting the personalized container configuration, labels and annotations, click `OK`.
 
@@ -76,6 +76,6 @@ The selectable range of the cluster is only the cluster selected at the beginnin
 
 !!! note
 
-    - When creating a multi-cloud workload through mirroring, if you need to use the advanced capabilities of specifying a location and specifying a label to create, you need to ensure that the corresponding location or label has been set for the working cluster;
+    - When creating a multicloud workload through mirroring, if you need to use the advanced capabilities of specifying a location and specifying a label to create, you need to ensure that the corresponding location or label has been set for the working cluster;
     Adding tags needs to be added within a single cluster, and can be jumped to the corresponding cluster maintenance from the working cluster management list.
     - When configuring the number of replicas, you need to pay attention to the corresponding scheduling strategy. Only when it is repeated, will all the configured replicas be started in multiple clusters.

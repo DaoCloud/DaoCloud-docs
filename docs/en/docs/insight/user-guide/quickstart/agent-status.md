@@ -1,6 +1,6 @@
 # Insight-agent component status description
 
-Insight is a multi-cluster observation product in DCE 5.0. In order to realize the unified collection of multi-cluster observation data, users need to install the Helm application `insight-agent`
+Insight is a multicluster observation product in DCE 5.0. In order to realize the unified collection of multicluster observation data, users need to install the Helm application `insight-agent`
 (Installed in insight-system namespace by default). See [How to install `insight-agent`](./install-agent.md).
 
 ## Status description
@@ -33,4 +33,4 @@ Can be checked by:
 2. Since the storage capacity of the metric storage component vmstorage in the global service cluster is directly proportional to the sum of the number of container groups in each cluster.
 
      - Please contact the platform administrator to adjust the disk capacity of vmstorage according to the cluster size, see [vmstorage disk capacity planning](../../best-practice/vms-res-plan.md)
-     - Adjust vmstorage disk according to multi-cluster size, see [vmstorge disk expansion](../../best-practice/modify-vms-disk.md)
+     - Adjust vmstorage disk according to multicluster size, see [vmstorge disk expansion](../../best-practice/modify-vms-disk.md)

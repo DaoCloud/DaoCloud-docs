@@ -25,7 +25,7 @@ This page provides the Release Notes for container management to help you unders
 - **Optimized** Applying Backup Cluster State
 - **Optimized** Matching the load state in the load detail and the state of the pod under the load
 - **Optimized** Node check interface in offline mode
-- **Optimized** Presentation of multi-cloud applications
+- **Optimized** Presentation of multicloud applications
 
 #### Fixes
 
@@ -148,7 +148,7 @@ This page provides the Release Notes for container management to help you unders
     - Replicatsets can be managed using the WEB terminal (CloudTTY).
     - Support for viewing Replicatsets monitoring, logs, Yaml, events, and containers.
     - Support for viewing Replicatsets details.
-    - Linkage **App Workbench**, the full life cycle of Replicatsets is managed by grayscale publishing.
+    - Linkage **Workbench**, the full life cycle of Replicatsets is managed by grayscale publishing.
 - **Added** Pod details page.
 - **Added** Namespace details page.
 - **Added** Use the WEB terminal to upload files to the container and download files from the Pod to the local.

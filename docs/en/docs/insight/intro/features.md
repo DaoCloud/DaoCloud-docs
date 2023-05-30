@@ -13,7 +13,7 @@ DCE 5.0 Community Release provides the following observable features.
 
 | Category | Subcategory | Description |
 | -------- | ----------------------------------------- --------- | ---------------------------------------- --------- |
-| Resource monitoring | Multi-cluster monitoring | Provide multi-cluster business centralized observability<br />The administrator manages multi-cluster alerts in a unified manner, and satisfies cluster and tenant administrator data isolation<br />Supports persistent cluster metrics and log data. |
+| Resource monitoring | Multicluster monitoring | Provide multicluster business centralized observability<br />The administrator manages multicluster alerts in a unified manner, and satisfies cluster and tenant administrator data isolation<br />Supports persistent cluster metrics and log data. |
 | | Scenario monitoring | Provides a monitoring overview of a single cluster, allowing you to view the running status of the cluster, understand the resource usage of the cluster, and the current alerts that are occurring in the cluster |
 | | Node monitoring | Support to view the running status of the node, etc., and understand the changes in the CPU, memory, network and other resources of the node |
 | | Container Monitoring | Supports monitoring of resources such as stateless loads, daemon processes, pods, etc., can monitor the running status of the workload, and can view the number of alerts and the trend chart of resource consumption such as CPU and memory |
@@ -30,7 +30,7 @@ DCE 5.0 Community Release provides the following observable features.
 | Log collection and query | Unified log collection | Unified collection of log data of nodes, containers, containers, and k8s events<br />Collect the audit operation of the global management platform, and the collection of k8s audit logs is not enabled by default |
 | | Log persistent storage | Logs can be marked and output to middleware such as Elasticsearch for persistence |
 | Metric collection | Metric data collection | Support to use ServiceMonitor to define the namespace scope of Pod discovery and select the listening Service through matchLabel |
-| System configuration | System configuration | System configuration displays the default storage time of metrics, logs, and traces and the default Apdex threshold<br />Support custom modification of the storage time of metrics, logs, and link data |
+| System configuration | System configuration | System configuration displays the default storage time of metrics, logs, and traces and the default Apdex threshold<br />Support custom modification of the storage time of metrics, logs, and trace data |
 
 ## Commercial Release - Observability
 
@@ -38,7 +38,7 @@ On the basis of the community release, the commercial release of DCE 5.0 provide
 
 | Category | Subcategory | Description |
 | -------------- | -------------- | ---------------- -------------------------------------------- |
-| Resource monitoring | Multi-cluster monitoring | Provide multi-cluster business centralized observability<br />The administrator manages multi-cluster alerts in a unified manner, and satisfies cluster and tenant administrator data isolation<br />Supports persistent cluster metrics and log data. |
+| Resource monitoring | Multicluster monitoring | Provide multicluster business centralized observability<br />The administrator manages multicluster alerts in a unified manner, and satisfies cluster and tenant administrator data isolation<br />Supports persistent cluster metrics and log data. |
 | | Cluster Monitoring | Provides an overview of the monitoring of a single cluster, allowing you to view the running status of the cluster, understand the resource usage of the cluster, and the alerts that are currently occurring in the cluster |
 | | Node monitoring | Support to view the running status of the node, etc., and understand the changes in the CPU, memory, network and other resources of the node |
 | | Container Monitoring | Supports monitoring of resources such as stateless loads, daemon processes, pods, etc., can monitor the running status of the workload, and can view the number of alerts and the trend chart of resource consumption such as CPU and memory |
@@ -59,7 +59,7 @@ On the basis of the community release, the commercial release of DCE 5.0 provide
 | | Persistent storage of logs | Logs can be marked and output to middleware such as Elasticsearch for persistence |
 | Metric collection | Metric data collection | Support to use ServiceMonitor to define the namespace scope of Pod discovery and select the monitored Service through matchLabel |
 | | Component status[^1] | Support to view the status of the pod of the collection component, and jump to the corresponding pod details |
-| Link Collection[^1] | Link Data Collection| Support link data collection by using OTEL SDK in a non-intrusive or less intrusive way<br />Support link collection by injecting Sidecar into mesh applications data |
-| System configuration | System configuration | System configuration displays the default storage time of metrics, logs, and traces and the default Apdex threshold<br />Support custom modification of the storage time of metrics, logs, and link data |
+| Link Collection[^1] | trace data Collection| Support trace data collection by using OTEL SDK in a non-intrusive or less intrusive way<br />Support link collection by injecting Sidecar into mesh applications data |
+| System configuration | System configuration | System configuration displays the default storage time of metrics, logs, and traces and the default Apdex threshold<br />Support custom modification of the storage time of metrics, logs, and trace data |
 
 [^1]: This is a feature only available in the commercial release.

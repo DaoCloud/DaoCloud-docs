@@ -133,7 +133,7 @@ nav:
               - Group: ghippo/user-guide/access-control/group.md
           - Roles and Permissions:
               - ghippo/user-guide/access-control/role.md
-              - Global Roles: ghippo/user-guide/access-control/global.md
+              - System Roles: ghippo/user-guide/access-control/global.md
               - Custom Roles: ghippo/user-guide/access-control/custom-role.md
           - ID Provider:
               - ghippo/user-guide/access-control/idprovider.md
@@ -168,7 +168,7 @@ nav:
           - Permissions:
               - Container Management Permissions: kpanda/user-guide/permissions/permission-brief.md
               - Microservice Permissions: ghippo/permissions/skoala.md
-              - App Workbench Permissions: ghippo/permissions/amamba.md
+              - Workbench Permissions: ghippo/permissions/amamba.md
               - Service Mesh Permissions: ghippo/permissions/mspider.md
               - Middleware Permissions: ghippo/permissions/mcamel.md
           - Best Practices:
@@ -252,13 +252,15 @@ nav:
               - Collect Container Log with Sidecar: insight/best-practice/tailing-sidecar.md
               - Log Collection Troubleshooting: insight/faq/debug-log.md
               - Trace Collection Troubleshooting: insight/faq/debug-trace.md
+              - Configure Notification Template: insight/best-practice/notify-helper.md
+              - Receive SkyWalking Trace Data with Zero Code using OTel: insight/best-practice/sw-to-otel.md
           - Compatibility Test:
               - K8s Compatibility Test: insight/user-guide/quickstart/k8s-compatibility.md
               - Rancher Compatibility Test: insight/user-guide/quickstart/rancher-compatibility.md
               - OCP Compatibility Test: insight/user-guide/quickstart/ocp-compatibility.md
-      - App Workbench:
+      - Workbench:
           - Intro:
-              - What is App Workbench?: amamba/intro/what.md
+              - What is Workbench?: amamba/intro/what.md
               - Features: amamba/intro/features.md
               - Advantages: amamba/intro/benefits.md
               - Applicable Scenarios: amamba/intro/scenario.md
@@ -269,8 +271,8 @@ nav:
           - Namespaces: amamba/user-guide/namespace/namespace.md
           - Applications:
               - Build Microservice based on Git Repo: amamba/user-guide/wizard/create-app-git.md
-              - Build Java Applications based on Jar Packages: amamba/user-guide/wizard/jar-java-app.md
-              - Deploy Helm Application based on Helm Template: amamba/user-guide/wizard/helm.md
+              - Build Java Apps based on Jar Packages: amamba/user-guide/wizard/jar-java-app.md
+              - Deploy Helm Apps based on Helm Template: amamba/user-guide/wizard/helm.md
           - Pipelines:
               - Install Jenkins: amamba/user-guide/pipelines/install-jenkins.md
               - Create Pipeline:
@@ -312,42 +314,42 @@ nav:
               - Run the pipeline on the specified node: amamba/quickstart/pipeline-on-node.md
               - Jenkins scenario configuration: amamba/quickstart/scenarios-config.md
               - Using a custom toolchain in Jenkins: amamba/user-guide/tools/jenkins-custom.md
-      - Multi-cloud orchestration:
-          - introduce:
-              - What is multi-cloud orchestration: kairship/intro/what.md
+      - Multicloud Management:
+          - Intro:
+              - What is Multicloud Management: kairship/intro/what.md
               - Feature overview: kairship/intro/features.md
               - Product Architecture: kairship/intro/architecture.md
               - Product Benefits: kairship/intro/benefits.md
               - Basic concepts: kairship/intro/concepts.md
               - Frequently Asked Questions: kairship/intro/faq.md
               - Release Notes: kairship/intro/release-notes.md
-          - Multi-cloud instance management:
-              - Multi-cloud instance introduction: kairship/instance/README.md
+          - Multicloud instance management:
+              - Multicloud instance introduction: kairship/instance/README.md
               - Add instance: kairship/instance/add.md
               - Delete instance: kairship/instance/delete.md
               - Workspace: kairship/instance/workspace.md
           - Worker cluster management:
               - Join the cluster: kairship/cluster/join.md
               - Remove cluster: kairship/cluster/remove.md
-          - Multi-cloud workloads:
+          - Multicloud workloads:
               - Workload Introduction: kairship/workload/README.md
               - Image creation: kairship/workload/deployment.md
               - YAML creation: kairship/workload/yaml.md
-              - Update multi-cloud workload: kairship/workload/update-deployment.md
-              - One-click upgrade to multi-cloud load: kairship/workload/promote.md
+              - Update multicloud workload: kairship/workload/update-deployment.md
+              - One-click upgrade to multicloud load: kairship/workload/promote.md
               - Image creation task: kairship/workload/job.md
               - Mirror creation cron job: kairship/workload/cronjob.md
           - Custom resource management: kairship/crds/crd.md
           - Resource management:
-              - Multi-cloud service: kairship/resource/service.md
-              - Multi-cloud namespace: kairship/resource/ns.md
-              - Multi-cloud configuration item: kairship/resource/configmap.md
-              - Multi-cloud secret: kairship/resource/secret.md
-              - Multi-cloud routing: kairship/resource/ingress.md
-              - Update multi-cloud service: kairship/resource/update-service.md
-              - Update multi-cloud secret: kairship/resource/update-secret.md
-              - Update multi-cloud configuration items: kairship/resource/update-configmap.md
-              - More multi-cloud routing: kairship/resource/update-ingress.md
+              - Multicloud service: kairship/resource/service.md
+              - Multicloud namespace: kairship/resource/ns.md
+              - Multicloud configuration item: kairship/resource/configmap.md
+              - Multicloud secret: kairship/resource/secret.md
+              - Multicloud ingress: kairship/resource/ingress.md
+              - Update multicloud service: kairship/resource/update-service.md
+              - Update multicloud secret: kairship/resource/update-secret.md
+              - Update multicloud configuration items: kairship/resource/update-configmap.md
+              - More multicloud ingress: kairship/resource/update-ingress.md
           - Policy management:
               - Deployment policy: kairship/policy/propagation-policy.md
               - Differentiation strategy: kairship/policy/override-policy.md
@@ -483,8 +485,8 @@ nav:
               - Create mesh gateway: mspider/user-guide/gateway-instance/create.md
               - Delete mesh gateway: mspider/user-guide/gateway-instance/delete.md
           - Mesh config:
-              - Multi-cloud interconnection: mspider/user-guide/multicluster/cluster-interconnect.md
-              - Multi-cloud config: mspider/user-guide/multicluster/traffic-branch.md
+              - Multicloud interconnection: mspider/user-guide/multicluster/cluster-interconnect.md
+              - Multicloud config: mspider/user-guide/multicluster/traffic-branch.md
               - Istio resource management: mspider/user-guide/mesh-config/istio-resources.md
               - TLS key management: mspider/user-guide/mesh-config/tls-secret.md
               - Custom component resource: mspider/user-guide/mesh-config/custom-res.md
@@ -492,9 +494,9 @@ nav:
           - Test:
               - Join OCP to mesh: mspider/test/ocp.md
               - Openshift and mesh compatibility test: mspider/test/openshift.md
-              - Multi-cloud deployment: mspider/user-guide/multicluster/multicluster-install.md
-              - Multi-cloud principle: mspider/user-guide/multicluster/multi-cluster-net.md
-              - Multi-cloud grayscale release: mspider/user-guide/multicluster/gray-scale-release.md
+              - Multicloud deployment: mspider/user-guide/multicluster/multicluster-install.md
+              - Multicloud principle: mspider/user-guide/multicluster/multicluster-net.md
+              - Multicloud grayscale release: mspider/user-guide/multicluster/gray-scale-release.md
           - Troubleshooting:
               - Index: mspider/troubleshoot/index.md
               - Cannot find cluster on mesh creation: mspider/troubleshoot/cannot-find-cluster.md
@@ -797,8 +799,8 @@ nav:
       - 202211 | DaoCloud is Kubernetes Certified Service Provider: blogs/221116-kcsp.md
       - 202210 | What is Container Management: blogs/221026-kpanda.md
       - 202210 | What is Resource Management: blogs/221018-resource.md
-      - 202209 | What is App Workbench: blogs/220925-amamba.md
-      - 202208 | What is Multi-Cloud Orchestration: blogs/220808-kairship.md
+      - 202209 | What is Workbench: blogs/220925-amamba.md
+      - 202208 | What is Multicloud Management: blogs/220808-kairship.md
       - 202207 | What is Service Mesh: blogs/220708-mspider.md
       - 202206 | DCE Dev Background: blogs/221008-dce-bg.md
   - Download:

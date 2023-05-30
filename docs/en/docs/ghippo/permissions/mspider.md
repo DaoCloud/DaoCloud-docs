@@ -85,7 +85,7 @@ The specific permissions for each role are shown in the following table.
 |      | Edit      | ✅    | ✅   | ✅    | ❌    |
 |      | Delete    | ✅    | ✅   | ❌    | ❌    |
 |      | View      | ✅    | ✅   | ✅    | ✅    |
-| Multi-cloud Network Interconnection       | Enable    | ✅    | ✅   | ✅    | ❌    |
+| Multicloud Network Interconnection       | Enable    | ✅    | ✅   | ✅    | ❌    |
 |      | View      | ✅    | ✅   | ✅    | ❌    |
 |      | Edit      | ✅    | ✅   | ✅    | ❌    |
 |      | Delete    | ✅    | ✅   | ❌    | ❌    |

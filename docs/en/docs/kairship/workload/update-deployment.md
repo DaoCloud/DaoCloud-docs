@@ -3,11 +3,11 @@ hide:
   - toc
 ---
 
-# Update multi-cloud workloads
+# Update multicloud workloads
 
 Follow the steps below to update a stateless payload (Deployment).
 
-1. In the left navigation bar, click `Multi-Cloud Workload` to enter the multi-cloud stateless workload page, click `···` to edit YAML or update
+1. In the left navigation bar, click `multicloud Workload` to enter the multicloud stateless workload page, click `···` to edit YAML or update
 
     <!--screenshot-->
 
@@ -15,7 +15,7 @@ Follow the steps below to update a stateless payload (Deployment).
 
     <!--screenshot-->
 
-3. Click `Update` to update the stateless load through the form, and the load name and multi-cloud namespace cannot be updated.
+3. Click `Update` to update the stateless load through the form, and the load name and multicloud namespace cannot be updated.
 
     <!--screenshot-->
 

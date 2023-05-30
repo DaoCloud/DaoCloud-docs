@@ -78,7 +78,7 @@ This page lists the release notes for Application Workspace to help you understa
 
 - Support for cascading delete, allowing you to select the resources you want to delete based on your actual needs
 - Gray release supports editing YAML
-- The Chart for deploying the Workbench no longer includes Jenkins. You can install Jenkins using a separate Helm Chart
+- The Chart for deploying Workbench no longer includes Jenkins. You can install Jenkins using a separate Helm Chart
 
 #### Optimization
 

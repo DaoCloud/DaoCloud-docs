@@ -17,7 +17,7 @@ This release is for the community, welcome to try it for free.
 
 ## Download the commercial release
 
-This release is suitable for building private cloud, hybrid cloud, multi-cloud, micro-service and other scenarios, and can customize a variety of cloud-native modules.
+This release is suitable for building private cloud, hybrid cloud, multicloud, micro-service and other scenarios, and can customize a variety of cloud-native modules.
 
 | Offline Pack | Version | Download | Updated Date |
 | ---------------- | ------- | ------------------------ ----------------- | -------- |

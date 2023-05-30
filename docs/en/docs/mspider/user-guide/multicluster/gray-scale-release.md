@@ -1,8 +1,8 @@
-# Multi-cluster grayscale release
+# Multicluster grayscale release
 
-The implementation logic of multi-cluster grayscale release is to deploy different business applications in different clusters, then configure corresponding policies through the service mesh to realize traffic adjustment between business versions, and then offline the versions according to the running conditions.
+The implementation logic of multicluster grayscale release is to deploy different business applications in different clusters, then configure corresponding policies through the service mesh to realize traffic adjustment between business versions, and then offline the versions according to the running conditions.
 
-For pre-preparation, refer to the mesh multi-cloud deployment document to build the mesh infrastructure.
+For pre-preparation, refer to the mesh multicloud deployment document to build the mesh infrastructure.
 
 ## Create a demo application and verify traffic
 
@@ -10,7 +10,7 @@ For pre-preparation, refer to the mesh multi-cloud deployment document to build 
 
 First select a namespace (gray-demo), and enable the namespace sidecar injection on the mesh page.
 
-Deploy the application on the App Workbench, here we take the helloworld of istio as an example.
+Deploy the application on Workbench, here we take the helloworld of istio as an example.
 
 
 
@@ -55,7 +55,7 @@ The deployment process is the same as above, the main differences are:
 
 ## Deploy grayscale application strategy
 
-### Multi-cluster target rules
+### Multicluster target rules
 
 First create a DestinationRule, and define the business versions of different clusters by defining SubSet.
 

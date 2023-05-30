@@ -1,13 +1,13 @@
-# Multi-cloud configuration items
+# Multicloud configuration items
 
 A configuration item (ConfigMap) is an API object used to save non-confidential data into key-value pairs.
 When used, Pods can use it as an environment variable, as a command-line argument, or as a configuration file in a storage volume.
 
-Multi-cloud configuration items can decouple multi-cloud environment configuration information from container images, making it easy to modify the configuration of multi-cloud applications.
+Multicloud configuration items can decouple multicloud environment configuration information from container images, making it easy to modify the configuration of multicloud applications.
 
 Two creation methods are currently provided: wizard creation and YAML creation. This article takes wizard creation as an example, and follows the steps below.
 
-1. After entering a multi-cloud instance, in the left navigation bar, click `Resource Management` -> `Multi-cloud Configuration Item`, and click the `Create Configuration Item` button in the upper right corner.
+1. After entering a multicloud instance, in the left navigation bar, click `Resource Management` -> `Multicloud Configuration Item`, and click the `Create Configuration Item` button in the upper right corner.
 
     <!--screenshot-->
 
@@ -15,7 +15,7 @@ Two creation methods are currently provided: wizard creation and YAML creation. 
 
     <!--screenshot-->
 
-3. Return to the list of multi-cloud configuration items, and the newly created one will be the first one by default. Click `⋮` on the right side of the list to edit YAML, update, export and delete configuration items.
+3. Return to the list of multicloud configuration items, and the newly created one will be the first one by default. Click `⋮` on the right side of the list to edit YAML, update, export and delete configuration items.
 
     <!--screenshot-->
 
@@ -25,7 +25,7 @@ Two creation methods are currently provided: wizard creation and YAML creation. 
 
 ## YAML example
 
-Here is an example YAML for a multi-cloud configuration item that you can use with a little modification.
+Here is an example YAML for a multicloud configuration item that you can use with a little modification.
 
 ```yaml
 kind: ConfigMap

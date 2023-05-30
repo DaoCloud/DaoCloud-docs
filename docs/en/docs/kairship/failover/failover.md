@@ -4,11 +4,11 @@ When a cluster fails, the pod replicas in the cluster will be automatically migr
 
 **Prerequisites**
 
-The scheduling policy of multi-cloud workloads can only choose aggregation mode or dynamic weight mode, and the failover function can only take effect at this time.
+The scheduling policy of multicloud workloads can only choose aggregation mode or dynamic weight mode, and the failover function can only take effect at this time.
 
 ## Enable failover
 
-1. Enter the multi-cloud orchestration module, click `System Settings`->`Advanced Configuration`, failover can realize copy scheduling between multiple clusters, it is disabled by default, please enable it if necessary.
+1. Enter the Multicloud Management module, click `System Settings`->`Advanced Configuration`, failover can realize copy scheduling between multiple clusters, it is disabled by default, please enable it if necessary.
 
     <!--screenshot-->
 
@@ -24,7 +24,7 @@ The scheduling policy of multi-cloud workloads can only choose aggregation mode 
 
 ## Verify failover
 
-1. Create a multi-cloud stateless load, choose to deploy on multiple clusters, and select the aggregation/dynamic weight mode for the scheduling strategy.
+1. Create a multicloud stateless load, choose to deploy on multiple clusters, and select the aggregation/dynamic weight mode for the scheduling strategy.
 
     <!--screenshot-->
 

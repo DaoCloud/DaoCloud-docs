@@ -4,14 +4,14 @@ Author: [Fish-pro](https://github.com/Fish-pro)
 
 ![karmada failover](images/karmada01.png)
 
-In the multi-cloud era, how to achieve high availability of applications across data centers, availability zones, and clusters has become a new topic we discuss.
+In the multicloud era, how to achieve high availability of applications across data centers, availability zones, and clusters has become a new topic we discuss.
 In a single cluster, if the cluster fails, all applications in the cluster will be inaccessible.
 Is there a way to help us automatically migrate the application to a new cluster when the cluster fails, so as to ensure the continuous external access of the application?
-Obviously, **Karmada, as the most popular multi-cloud project in the community, provides such a capability.**
+Obviously, **Karmada, as the most popular multicloud project in the community, provides such a capability.**
 
 Karmada (Kubernetes Armada) enables users to run cloud-native applications across multiple clusters without changing existing applications.
 Enables a truly open multicloud by providing advanced scheduling capabilities using Kubernetes-native APIs. Karmada
-It aims to provide convenient automation for multi-cluster application management in multi-cloud and hybrid cloud scenarios, with key features such as centralized multi-cloud management, high availability and fault recovery.
+It aims to provide convenient automation for multicluster application management in multicloud and hybrid cloud scenarios, with key features such as centralized multicloud management, high availability and fault recovery.
 **This article is based on Karmada's release version v1.4.2, and we will explore with you how Karmada's cross-cluster fault recovery is realized**,
 Which controllers and schedulers are involved in this process, and what capabilities each controller undertakes in this process, and what capabilities the scheduler undertakes,
 And how to ensure high availability and continuity of user business?
@@ -19,9 +19,9 @@ And how to ensure high availability and continuity of user business?
 If you have not known or used Karmada before reading this article, it is recommended to read:
 
 1. [Karmada Official Documentation](https://karmada.io/docs/)
-2. [Cloud Native Multi-Cloud Application Tool -- Karmada Overview](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273869&idx=1&sn=f6e03df6f34aa6106972193dba1604d8&chksm=8bcbcc1fbc bc4509060f92b3d636c28c6ccaad62fa3aeb4da9f17971b06e655d1d1385ab2f2c&scene=21#wechat_redirect)
-3. [Cloud native multi-cloud application tool -- Karmada controller](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273922&idx=1&sn=f17630589507999fc0690741c22178b9&scene=21#wechat_redirect )
-4. [Cloud Native Multi-Cloud Application Tool -- Karmada Scheduler](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273971&idx=1&sn=2c81b1959c101573b5b185c342495f30&chksm=8bcbcc61bc bc45772270811a23c210e3faa156078e991f56a288bd58be4246e9572badfb1fbc&scene=21&cur_album_id=2687691821095059459#wechat_redirect)
+2. [Cloud Native multicloud Application Tool -- Karmada Overview](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273869&idx=1&sn=f6e03df6f34aa6106972193dba1604d8&chksm=8bcbcc1fbc bc4509060f92b3d636c28c6ccaad62fa3aeb4da9f17971b06e655d1d1385ab2f2c&scene=21#wechat_redirect)
+3. [Cloud native multicloud application tool -- Karmada controller](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273922&idx=1&sn=f17630589507999fc0690741c22178b9&scene=21#wechat_redirect )
+4. [Cloud Native multicloud Application Tool -- Karmada Scheduler](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273971&idx=1&sn=2c81b1959c101573b5b185c342495f30&chksm=8bcbcc61bc bc45772270811a23c210e3faa156078e991f56a288bd58be4246e9572badfb1fbc&scene=21&cur_album_id=2687691821095059459#wechat_redirect)
 
 ## Why failover is needed
 
@@ -347,7 +347,7 @@ This article uses `Divided` as an example:
 
 ## Karmada fault recovery implementation principle
 
-In a multi-cluster scenario, user applications may be deployed in multiple clusters to improve high availability of services.
+In a multicluster scenario, user applications may be deployed in multiple clusters to improve high availability of services.
 In Karmada, when a cluster fails or the user does not want to continue running applications on the cluster, the cluster state is marked as unavailable and two taints are added.
 (images(images
 When a cluster failure is detected, the controller removes the application from the failed cluster. The removed applications will then be scheduled to other clusters that meet the requirements.
@@ -489,13 +489,9 @@ func (c *Controller) taintClusterByCondition(ctx context.Context, cluster *clust
 
 ![clusterStatus controller](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/karmada07.png)
 
-taint-manager controller 控制器随 cluster controller 同步启动，可参数配置是否启动，默认启动。
-它感知 cluster 资源对象的变更事件，当感知到集群拥有 effect 为 NoExecute 的污点时，
-会获取到该集群上的所有命名空间级别和集群级别的 rb (ResourceBinding)，然后放入对应的驱逐处理队列。
-驱逐处理消费者（worker）会判断获取到 rb(ResourceBinding) 对应的 pp (PropagationPolicy)，看
-pp (PropagationPolicy) 中是否存在集群污点容忍，如果 pp (PropagationPolicy) 中的集群污点容忍和集群污点匹配，
-那么直接跳过，认为该集群上的资源不需要驱逐。否则认为需要驱逐。如果需要驱逐，那么此时会判断是否开启了优雅驱逐，
-优雅驱逐默认开启，为 rb (ResourceBinding) 对象写入优雅驱逐任务，即 rb.spec.gracefulEvictionTasks 中增加一条优雅驱逐任务。
+The taint-manager controller starts synchronously with the cluster controller, and can be configured with parameters to decide whether to start or not (default is to start).
+It detects changes in resource objects of the cluster, and when it detects a taint on the cluster with an effect of NoExecute, it will retrieve all namespace-level and cluster-level ResourceBindings (rb) on that cluster and put them into the corresponding eviction processing queue.
+The eviction processing worker will check the PropagationPolicy (pp) of the rb it retrieved to see if there is a cluster taint tolerance. If there is a match, it will skip and consider the resources on that cluster as not needing eviction. Otherwise, it will need to evict the resources. If eviction is necessary, it will then check if graceful eviction is enabled (which is enabled by default), and add a new graceful eviction task for the rb object, meaning adding a new graceful eviction task to rb.spec.gracefulEvictionTasks.
 
 ```go
 needEviction, tolerationTime, err := tc.needEviction(cluster, binding.Annotations)
@@ -527,10 +523,7 @@ if needEviction || tolerationTime == 0 {
 }
 ```
 
-可以发现，写入驱逐任务时，会将优雅驱逐任务对应的集群，从 rb.spec.clusters 中移除，也就是会修改调度结果
-（这里需要特别说明一下，调度结果就是 Karmada 调度器根据传播策略和集群情况为资源选择的调度分发集群，
-调度结果会记录在 rb (ResourceBinding) 的 spec.clusters 属性中）。
-也就是说由于集群故障，会触发调度器重新调度，资源应该从故障的集群上驱逐，在新的集群上创建。
+It can be noticed that when writing an eviction task, the cluster corresponding to the graceful eviction task will be removed from `rb.spec.clusters`, which means that the scheduling result will be modified. (Here it needs to be emphasized that the scheduling result is the scheduling and distribution cluster selected by Karmada scheduler based on the propagation strategy and cluster situation for resources, and the scheduling result will be recorded in the `spec.clusters` attribute of `rb` (ResourceBinding).) This means that due to cluster failures, the scheduler will be triggered to reschedule, and resources should be evicted from the failed cluster and created on the new cluster.
 
 ```go
 // This function no-(images cluster does not exist.
@@ -798,13 +791,12 @@ metadata:
 ...
 ```
 
-以下为 binding controller 的核心代码，核心逻辑是:
+The following is the core code of the binding controller, and its core logic is:
 
-- 移除孤儿 work；
-- 确保 rb (ResourceBinding) 期望 work 符合预期；
-- 聚合 work 的状态，记录到 rb (ResourceBinding) 的状态中；
-- 根据 rb (ResourceBinding) 的聚合状态，更新 resource template 状态，
-  resource template 是指存放在 Karmada 控制平面上的资源模板对象。
+- Remove orphaned work;
+- Ensure that the expected work of rb (ResourceBinding) meets expectations;
+- Aggregate the status of the work and record it in the state of rb (ResourceBinding);
+- Based on the aggregated state of rb (ResourceBinding), update the status of the resource template. The resource template refers to the object of the resource template stored on the Karmada control plane.
 
 ```go
 // syncBinding will sync resourceBinding to Works.
@@ -862,7 +854,7 @@ func (c *ResourceBindingController) syncBinding(binding *workv1alpha2.ResourceBi
 
 ![execution controller](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/karmada11.png)
 
-The ability of the execution controller is to create, update, or delete the resources that actually need to be delivered stored in the work of the corresponding execution namespace of the member cluster in the corresponding member cluster. **
+The ability of the execution controller is to create, update, or delete the resources that actually need to be delivered stored in the work of the corresponding execution namespace of the member cluster in the corresponding member cluster.
 Therefore, its execution logic is closely related to the state of the work and the state of the cluster. If the DeletionTimestamp of the work is not empty, that is, the work has been deleted,
 It will continue to judge the cluster status. If the cluster status is Ready, it will try to delete the resources on the member cluster. In the example, when the cluster fails, resources are transferred to the cluster member2
 All replicas on the server are Ready, and the gracefulEviction controller will remove the cluster member1 graceful eviction task, the binding controller thinks
@@ -920,6 +912,6 @@ With the rapid response from the community, I believe that Karmada will bring us
 
 - [Karmada source code](https://github.com/karmada-io/karmada)
 - [Karmada official document](https://karmada.io/docs/)
-- [Cloud-native multi-cloud booster - Karmada overview](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273869&idx=1&sn=f6e03df6f34aa6106972193dba1604d8&chksm=8bcbcc1fbcbc4509060f92b3d636c28c6ccaad62fa3aeb4da9f17971b06e655d1d1385ab2f2c&scene=21#wechat_redirect)
-- [Cloud-native multi-cloud booster - Karmada controller](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273922&idx=1&sn=f17630589507999fc0690741c22178b9&scene=21#wechat_redirect)
-- [Cloud-native multi-cloud booster - Karmada scheduler](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273971&idx=1&sn=2c81b1959c101573b5b185c342495f30&chksm=8bcbcc61bcbc45772270811a23c210e3faa156078e991f56a288bd58be4246e9572badfb1fbc&scene=21&cur_album_id=2687691821095059459#wechat_redirect)
+- [Cloud-native multicloud booster - Karmada overview](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273869&idx=1&sn=f6e03df6f34aa6106972193dba1604d8&chksm=8bcbcc1fbcbc4509060f92b3d636c28c6ccaad62fa3aeb4da9f17971b06e655d1d1385ab2f2c&scene=21#wechat_redirect)
+- [Cloud-native multicloud booster - Karmada controller](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273922&idx=1&sn=f17630589507999fc0690741c22178b9&scene=21#wechat_redirect)
+- [Cloud-native multicloud booster - Karmada scheduler](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273971&idx=1&sn=2c81b1959c101573b5b185c342495f30&chksm=8bcbcc61bcbc45772270811a23c210e3faa156078e991f56a288bd58be4246e9572badfb1fbc&scene=21&cur_album_id=2687691821095059459#wechat_redirect)

@@ -76,9 +76,9 @@ The DCE 5.0 Commercial Release includes the following modules, which are plug-an
 | -------------------- | ---------------------------- ----------------------------------------------- | ----- -------------------------------------------------- ------ |
 | Global Management | Responsible for user access control, permissions, enterprise space, audit logs, personalized appearance settings, etc. | [0.14.0](../../ghippo/intro/release-notes.md#0140) |
 | Container Management | Manage K8s core functions such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [0.15.1](../../kpanda/intro/release-notes.md#0151) |
-| Observability | Provide rich graphic information such as dashboards, scene monitoring, data query, and alarms | [0.14.6](../../insight/intro/releasenote.md#0146) |
-| App Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [0.14.4](../../amamba/intro/release-notes.md#0144) |
-| Multi-cloud orchestration| Centralized management of application orchestration of multi-cloud, hybrid cloud, and cross-cloud resources, with multi-cloud disaster recovery and fault recovery capabilities| [0.6.2](../../kairship/intro/release-notes.md# 062) |
+| Observability | Provide rich graphic information such as dashboards, scene monitoring, data query, and alerts | [0.14.6](../../insight/intro/releasenote.md#0146) |
+| Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [0.14.4](../../amamba/intro/release-notes.md#0144) |
+| Multicloud Management| Centralized management of application orchestration of multicloud, hybrid cloud, and cross-cloud resources, with multicloud disaster recovery and fault recovery capabilities| [0.6.2](../../kairship/intro/release-notes.md# 062) |
 | Microservice Engine | Provide registration discovery, service governance, configuration management, microservice gateway and other governance capabilities | [0.18.0](../../skoala/intro/release-notes.md#0180) |
 | Service Mesh | A next-generation service mesh for cloud-native applications based on Istio open source technology | [v0.13.1](../../mspider/intro/release-notes.md#v0131) |
 | Middleware Elasticsearch | Currently preferred full-text search engine | [0.5.0](../../middleware/elasticsearch/release-notes.md#050) |

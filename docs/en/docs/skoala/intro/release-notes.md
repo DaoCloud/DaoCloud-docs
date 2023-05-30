@@ -25,7 +25,7 @@ This page lists the release notes of DME to help you learn its feature developme
 
 - Separate display of gateway access internal and external addresses
 - API related to cloud-native microservice governance capability
-- Alarm message list API
+- Alert message list API
 - API related to gateway using plugins
 - Gateway logical API of various plugins
 

@@ -76,7 +76,7 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 - **Improved** Improve and optimize the copy function
 - **IMPROVED** instance details - access settings, remove cluster IPv4
 - **Improved** Middleware password verification difficulty adjustment
-- **NEW** Docking alarm capability
+- **NEW** Docking alert capability
 - **New** Added the function of judging whether sc supports capacity expansion and prompting in advance
 - **Optimization** Optimize the prompt logic of installation environment detection & adjust its style
 - **Optimize** middleware style walkthrough optimization
@@ -118,7 +118,7 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 - **New** supports kafka list query, status query, creation, deletion and modification
 - **NEW** Support kafka-manager to manage kafka
-- **NEW** Support kafka indicator monitoring, check the monitoring chart
+- **NEW** Support kafka metric monitoring, check the monitoring chart
 - **Add** support for ghippo permission linkage
 - **New** `mcamel-elasticsearch` interface to get user list
 - **Optimize** Update the release note script and execute the release-process specification

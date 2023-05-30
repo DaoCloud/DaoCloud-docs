@@ -1,6 +1,6 @@
 # Create a custom pipeline template
 
-The application workbench module supports custom pipeline templates. Users can create pipeline templates based on real business scenarios, and then quickly create pipelines that meet the requirements based on the custom templates.
+Workbench module supports custom pipeline templates. Users can create pipeline templates based on real business scenarios, and then quickly create pipelines that meet the requirements based on the custom templates.
 
 ## prerequisites
 

@@ -73,11 +73,11 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [End of May 2023 Trusted Cloud First Performance Specialized Testing Launch (Registration closes at the end of May)](https://mp.weixin.qq.com/s/9WmnPUeAQP8e-UfWYMg5Hg)
   
-    The Trusted Cloud Performance Special Test covers three major categories, including basic resources, platforms, and tools, including 13 cloud service performance test items such as proprietary cloud, container platform, Cintron cloud management platform, and hybrid multi-cloud management platform, etc. It also provides the ability to provide scenario-based and customized performance tests.
+    The Trusted Cloud Performance Special Test covers three major categories, including basic resources, platforms, and tools, including 13 cloud service performance test items such as proprietary cloud, container platform, Cintron cloud management platform, and hybrid multicloud management platform, etc. It also provides the ability to provide scenario-based and customized performance tests.
 
 - [End of May China Academy of Information and Communications Technology officially launched the assessment of cloud consulting, cloud migration, cloud management and cloud disaster recovery in the first half of 2023 (registration closes at the end of May)](https://mp.weixin.qq.com/s/yZxSP5xb5juE9C-UWRoQAw)
   
-    The cloud consulting assessment system aims to assess the service capabilities provided in enterprise cloud adoption and digital transformation; the cloud migration assessment system aims to assess cloud migration platform capabilities and service capabilities; the cloud management assessment system assessment mainly assesses enterprise-level integrated cloud management platform capabilities, one-cloud multi-core cloud management platform capabilities, and multi-cloud management platform solutions; the cloud disaster recovery assessment system aims to assess cloud multi-live, cloud disaster recovery, and cloud dual-live disaster recovery solutions.
+    The cloud consulting assessment system aims to assess the service capabilities provided in enterprise cloud adoption and digital transformation; the cloud migration assessment system aims to assess cloud migration platform capabilities and service capabilities; the cloud management assessment system assessment mainly assesses enterprise-level integrated cloud management platform capabilities, one-cloud multi-core cloud management platform capabilities, and multicloud management platform solutions; the cloud disaster recovery assessment system aims to assess cloud multi-live, cloud disaster recovery, and cloud dual-live disaster recovery solutions.
 
 - [End of May China Academy of Information and Communications Technology officially launches hybrid and proprietary cloud assessment in the first half of 2023 (registration closes at the end of May)](https://mp.weixin.qq.com/s/qWtNRf5pQ5jpcam4uTSu1w)
   
@@ -146,7 +146,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [April Cloud Cost Optimization Series and Cloud Resource Benefit Metrics Assessment Launched (Registration Deadline in April)](https://mp.weixin.qq.com/s/FGk8x5OaL4gYpnjGHa2Llg)
   
-    The Cost Optimization Series standard assessment aims to evaluate cost optimization services, native cost optimization tools, and hybrid multi-cloud cost optimization tools.
+    The Cost Optimization Series standard assessment aims to evaluate cost optimization services, native cost optimization tools, and hybrid multicloud cost optimization tools.
     The Resource Benefit Metrics Assessment is for cloud platform builders, operators, and users to assess the use and effectiveness of cloud resources. Participating companies can choose one or more of the three categories of cloud resource benefit modules: cost, performance, and security, for assessment.
 
 - [April 22 Observability Summit 2023 to be held in Beijing](https://mp.weixin.qq.com/s/UTLrc97XaPpo1DCrw85xaQ)
@@ -166,7 +166,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [April 21 Edge Native Platform Technology Salon to be held in Beijing](https://mp.weixin.qq.com/s/3uYaLamKdeHAJrQEhWLsPw)
   
-    The Edge Native Platform Technology Salon, hosted by VMware, is a technology sharing and discussion event that takes the edge as the target scenario and enables the combination of multi-cloud/cross-cloud services and edge computing with the help of cloud native technology (Kubernetes).
+    The Edge Native Platform Technology Salon, hosted by VMware, is a technology sharing and discussion event that takes the edge as the target scenario and enables the combination of multicloud/cross-cloud services and edge computing with the help of cloud native technology (Kubernetes).
     The event invites several technical experts in the field of edge computing to share edge-native application platforms, infrastructure, frameworks, use cases and other related technical topics, and the event will also launch the ACE Edge Native Alliance for the first time.
 
 - [April 20 China Academy of Information and Communications Technology launches the 2023 Cloud Native Excellence Case Call (4.20 filing deadline)](https://mp.weixin.qq.com/s/K3awjJQPCnE30bTEER-vcg)
@@ -233,15 +233,15 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [April 6 "2023 Cloud Cost Optimization Capacity Building - Enterprise Sharing Session" will be held in Beijing](https://mp.weixin.qq.com/s/ZD8CTtFsCkxVzVcISai60w)
   
-    This sharing session will release the evaluation results of the first batch of MSPs, native cost optimization tools, and hybrid multi-cloud cost optimization tools (the first batch) in 2023, and announce the latest members of the Cloud Optimization Working Group.
+    This sharing session will release the evaluation results of the first batch of MSPs, native cost optimization tools, and hybrid multicloud cost optimization tools (the first batch) in 2023, and announce the latest members of the Cloud Optimization Working Group.
     In addition, several business users and service experts with best practices in cloud cost optimization will be invited to share their real-world experiences related to cloud cost optimization.
 
 ### 2023-03
 
-- [March The "Multi-Cloud Data Storage White Paper", written by DaoCloud, was officially released](https://mp.weixin.qq.com/s/mbUpKTNI231ehgf3cSaNeQ)
+- [March The "multicloud Data Storage White Paper", written by DaoCloud, was officially released](https://mp.weixin.qq.com/s/mbUpKTNI231ehgf3cSaNeQ)
   
-    The White Paper systematically sorts out the driving forces and data challenges in the multi-cloud era, and proposes measures and development trends for multi-cloud data storage.
-    The white paper emphasizes that the development of multi-cloud data storage focuses on expanding data sharing applications, enhancing data storage intelligent grading capabilities, enabling data flow across clouds, helping transform applications to the cloud through container-oriented storage innovation, and developing new storage and computing architectures to achieve flat hierarchy and flexible assembly of cloud computing infrastructures.
+    The White Paper systematically sorts out the driving forces and data challenges in the multicloud era, and proposes measures and development trends for multicloud data storage.
+    The white paper emphasizes that the development of multicloud data storage focuses on expanding data sharing applications, enhancing data storage intelligent grading capabilities, enabling data flow across clouds, helping transform applications to the cloud through container-oriented storage innovation, and developing new storage and computing architectures to achieve flat hierarchy and flexible assembly of cloud computing infrastructures.
 
 - [March 27-April 2 The 2023 "Workforce Shanghai" Innovation Conference Series will be held from March 27-April 2](https://mp.weixin.qq.com/s/BvxB3K5vWhl2zqy_c6PvBA)
   
@@ -294,7 +294,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     KubeCon + CloudNativeCon Europe 2023 will be held simultaneously offline and online from 4.18-21.
     There will be 303 events, keynotes, lightning talks and breakout sessions, 91 of which will be led by CNCF project maintainers.
-    Session topics included compliance, Pod security, environmental sustainability, hybrid/multi-cloud, CNCF projects, and more.
+    Session topics included compliance, Pod security, environmental sustainability, hybrid/multicloud, CNCF projects, and more.
 
 - [February 6 IDC Officially Launches "China Government Cloud Solution Vendor Assessment, 2023"](https://mp.weixin.qq.com/s/N2DbhxL81M2AUYcPiSy0GQ)
   
@@ -309,7 +309,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [February 2 China Academy of Information and Communications Technology (CAIC) Trusted Cloud-Container Class Assessment Launched in the First Half of 2023 (Registration for Assessment Closed on 3.10)](https://mp.weixin.qq.com/s/V2-v9rPWnXQ5WlN4kEnVVw)
   
-    The Trusted Cloud Container Class Assessment System consists of five aspects: full-stack container cloud solution assessment (including three types of general-purpose containers, edge containers and hybrid multi-cloud containers), component-level container platform performance assessment, component-oriented container platform performance assessment, and container platform performance assessment.
+    The Trusted Cloud Container Class Assessment System consists of five aspects: full-stack container cloud solution assessment (including three types of general-purpose containers, edge containers and hybrid multicloud containers), component-level container platform performance assessment, component-oriented container platform performance assessment, and container platform performance assessment.
     component-level container platform performance assessment, large-scale container platform performance assessment for financial scenarios, container platform security capability assessment, and container security solution assessment.
     The evaluation results will be released in June at ICT China - High-End Forum.
 
@@ -445,7 +445,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [SODACON 2022 will be held in Yokohama, Japan on December 7](https://mp.weixin.qq.com/s/iRAtg8NKKly2VqvPZi-O3g)
   
-     With the theme of "From Containers to Multi-Cloud", SODACON 2022 will discuss the latest trends, innovations, challenges and solutions in cloud native, IoT, big data, and machine learning in the field of storage management. The meeting will be held simultaneously offline and online via ZOOM.
+     With the theme of "From Containers to multicloud", SODACON 2022 will discuss the latest trends, innovations, challenges and solutions in cloud native, IoT, big data, and machine learning in the field of storage management. The meeting will be held simultaneously offline and online via ZOOM.
 
 - [On December 7, CNCF launched a regional cloud-native series event KubeDay, the first event kicked off in Japan](https://www.cncf.io/blog/2022/08/17/introducing-kubeday-event-series-kicking-off-with-kubeday-japan-this-december/)
 
@@ -458,7 +458,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [The CNCF Cloud Native Meetup Hong Kong Station will be held on December 6](https://mp.weixin.qq.com/s/O7w_uTBuWUj-0qyQQvzeCA)
   
-     This Meetup invited the Director of CNCF Foundation China, as well as technical experts from Oracle, ByteDance, Jihu GitLab, Aqua, F5 and other companies, to focus on multi-cloud management, observability/tracking, GitOps, cloud-native security, cloud Topics such as the development of native talents were discussed.
+     This Meetup invited the Director of CNCF Foundation China, as well as technical experts from Oracle, ByteDance, Jihu GitLab, Aqua, F5 and other companies, to focus on multicloud management, observability/tracking, GitOps, cloud-native security, cloud Topics such as the development of native talents were discussed.
 
 - [ICT China Cloud Native Development Forum will kick off in Beijing on December 5](https://mp.weixin.qq.com/s/vMRtNDE0dMgV0I0T2Wf92w)
 
@@ -515,7 +515,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [11-18 Kubernetes Community Days Restart in Chengdu](https://mp.weixin.qq.com/s/DTDfFezLlyOtmVz3gV6bKw)
 
      Kubernetes Community Days Chengdu Station is jointly initiated by CNCF, DaoCloud, Huawei Cloud, etc.
-     Focus on Istio, KubeEdge, middleware, distributed application runtime, storage, multi-cloud management and other cloud-native open source projects and technology practices.
+     Focus on Istio, KubeEdge, middleware, distributed application runtime, storage, multicloud management and other cloud-native open source projects and technology practices.
 
 - [The guest lineup of the OpenSSF Open Source Security China Summit on November 6th is released](https://mp.weixin.qq.com/s/2kf4AuXPG2ec2iUtervgfg)
 
@@ -541,7 +541,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      Experts from DaoCloud, Alibaba, OPPO, Tencent and other vendors discussed cloud native in the special forum on the following topics:
 
      - DevOps, CI/CD
-     - Containers, multi-cloud management
+     - Containers, multicloud management
      - Cloud native security
      - Surveillance, Observability
      - Virtualization, native application cases
@@ -667,7 +667,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [On September 23, iResearch released the "Research Report on China's Financial Cloud Industry in 2022"](https://mp.weixin.qq.com/s/AuuyRsSufke9scPmOeI1MQ)
 
      The report pointed out that the scale of China's financial cloud market will reach 39.4 billion yuan in 2021, and the compound growth rate is expected to be 28.6% in the next four years; the stock market: independent research and development, independent and controllable domestic technology routes have become the adoption trend of financial institutions.
-     Incremental market: cloud-native has become an important strategic technology trend, and multi-cloud strategic deployment and cross-cloud ecological connection have become industry consensus.
+     Incremental market: cloud-native has become an important strategic technology trend, and multicloud strategic deployment and cross-cloud ecological connection have become industry consensus.
 
 - [DaoCloud released the "White Paper on Cloud Native Industry Development" on September 23](https://mp.weixin.qq.com/s/mP0hG1FY-4RfH8NBo9NmPw)
 
@@ -683,7 +683,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [September 15-17 International Open Source Festival, Cloud Native becomes the focus](https://mp.weixin.qq.com/s/wrEzT5xXGCvijZ-sK4v21A)
 
      The 2022 International Open Source Festival is initiated by OSTech in conjunction with the China Academy of Information and Communications Technology and the Linux Foundation. The exhibition will be held in Shenzhen on September 15-17.
-     As one of the important technical forums, CNCF Cloud Native Forum will focus on "DevOps, CI/CD", "Container, Multi-Cloud Management", "Cloud Native Security", "Monitoring, Observability", "Virtualization, Native Application Cases", "Cloud Native and Other Technology Integration (Cloud Native +)" and other topics.
+     As one of the important technical forums, CNCF Cloud Native Forum will focus on "DevOps, CI/CD", "Container, multicloud Management", "Cloud Native Security", "Monitoring, Observability", "Virtualization, Native Application Cases", "Cloud Native and Other Technology Integration (Cloud Native +)" and other topics.
 
      Cooperation application: <http://iosf-world.mikecrm.com/Dd9SsbA>
 
@@ -705,7 +705,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [VMware released the report "Kubernetes Usage Status 2022" on September 11](https://mp.weixin.qq.com/s/6gB6J1GfmD2GvXIqmvrflg)
 
-     The report pointed out that the number of Kubernetes clusters has grown rapidly, and 29% of companies have more than 50 clusters; multi-cloud dominates, and local deployment and single cloud lose their advantages; multi-cluster and multi-cloud security are new frontier issues.
+     The report pointed out that the number of Kubernetes clusters has grown rapidly, and 29% of companies have more than 50 clusters; multicloud dominates, and local deployment and single cloud lose their advantages; multicluster and multicloud security are new frontier issues.
 
      Click to view [full version report](http://vmwzadmin.incloudexpo.com/uploads/docs/2022/0804/VMware_StateOfKubernetes2022_eBook_042522_WEB.pdf)
 
@@ -856,7 +856,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [On July 13, the Cloud Native Technology Practice Alliance and the Cloud Native Technology Community released "(2021-2022) Research on the Implementation of Cloud Native Technology in Traditional Industries - Central State-owned Enterprises"](https://mp.weixin.qq.com/s/0lWnhrlaakpoum3lbgTiQA)
 
      The survey interprets the cloud-native digital transformation of central state-owned enterprises in terms of IT budget, application architecture, technology selection, and transformation results.
-     Among them, more than 60% of the interviewed central state-owned enterprises have or are considering using multi-cloud/hybrid cloud; they are more inclined to adopt one-cloud multi-core, dual-CPU architecture; more than 95% consider or are using cloud-native technologies such as containers, DevOps, and microservices.
+     Among them, more than 60% of the interviewed central state-owned enterprises have or are considering using multicloud/hybrid cloud; they are more inclined to adopt one-cloud multi-core, dual-CPU architecture; more than 95% consider or are using cloud-native technologies such as containers, DevOps, and microservices.
 
      Click to view [full report](https://marketing.alauda.cn/service/extfile/page/d2f59127cba241049f5b48e40aafbdd3?cl_sr=%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7&cl_cp=2022YGQTY)
 

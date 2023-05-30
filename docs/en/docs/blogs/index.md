@@ -42,7 +42,7 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20230418 | Detailed Explanation of Karmada Failover](./230418-karmada-failover.md)
 
-    In the era of multi-cloud, how to achieve cross-data center, cross-AZ, and cross-cluster high availability of applications has become a new topic we are exploring.
+    In the era of multicloud, how to achieve cross-data center, cross-AZ, and cross-cluster high availability of applications has become a new topic we are exploring.
     In a single cluster, if the cluster fails, all applications in the cluster will not be accessible. Is there a way to help us automatically migrate applications to a new cluster when the cluster fails to ensure continuous external access to the application?
 
 - [20230417 | CNCF Platform Engineering White Paper](230417-cncf-platform-wp.md)
@@ -99,7 +99,7 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20221130 | Karmada Resource Interpreter](https://mp.weixin.qq.com/s/DLDmWRmhM_gMVg1qGnj_fA)
 
-    Karmada is increasingly being used by enterprises in multi-cloud and hybrid cloud scenarios. In the actual application process, users often encounter scenarios where various resources are distributed to member clusters through PropagationPolicy. This requires that the distributed resource types not only include common Kubernetes native or well-known extension resources but also support distribution of custom user-defined resources. Therefore, Karmada introduces a built-in interpreter to parse common Kubernetes native or well-known extension resources, as well as a custom interpreter to interpret the structure of custom resources, and has recently proposed a configurable interpreter scheme. For both custom resources and common Kubernetes native resources, more flexible and configurable custom methods can be provided to extract specific information about resources such as replica numbers and status.
+    Karmada is increasingly being used by enterprises in multicloud and hybrid cloud scenarios. In the actual application process, users often encounter scenarios where various resources are distributed to member clusters through PropagationPolicy. This requires that the distributed resource types not only include common Kubernetes native or well-known extension resources but also support distribution of custom user-defined resources. Therefore, Karmada introduces a built-in interpreter to parse common Kubernetes native or well-known extension resources, as well as a custom interpreter to interpret the structure of custom resources, and has recently proposed a configurable interpreter scheme. For both custom resources and common Kubernetes native resources, more flexible and configurable custom methods can be provided to extract specific information about resources such as replica numbers and status.
 
 - [20221125 | KubeCon 2022 North America Station | Highlights Review](https://mp.weixin.qq.com/s/HIxBZjCK8ofCN6C5KRY25w)
 
@@ -171,19 +171,19 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20220810 | Cluster API Retrieval Has Never Been So Easy](https://mp.weixin.qq.com/s/8F20pchW6WhbEdlU56qFsg)
 
-    Clusterpedia is a CNCF sandbox project for cross-cluster complex resource retrieval. It can synchronize resources with multiple clusters and provide more powerful search functions based on Kubernetes OpenAPI compatibility to help you quickly, easily, and effectively obtain any multi-cluster resources.
+    Clusterpedia is a CNCF sandbox project for cross-cluster complex resource retrieval. It can synchronize resources with multiple clusters and provide more powerful search functions based on Kubernetes OpenAPI compatibility to help you quickly, easily, and effectively obtain any multicluster resources.
 
-- [20220808 | Introduction to Multi-Cloud Orchestration Capability of DCE 5.0](220808-kairship.md)
+- [20220808 | Introduction to Multicloud Management Capability of DCE 5.0](220808-kairship.md)
 
-    This article explains the capabilities provided by the multi-cloud orchestration module of DCE 5.0.
+    This article explains the capabilities provided by the Multicloud Management module of DCE 5.0.
 
 - [20220708 | Introduction to Service Mesh Capability of DCE 5.0](220708-mspider.md)
 
     This article explains the capabilities provided by the service mesh module of DCE 5.0.
 
-- [20220622 | Clusterpedia Officially Enters CNCF Sandbox as the First Multi-Cloud Retrieval Open Source Project](https://mp.weixin.qq.com/s/K2jG64msI4j-mWqPF0qkKg)
+- [20220622 | Clusterpedia Officially Enters CNCF Sandbox as the First multicloud Retrieval Open Source Project](https://mp.weixin.qq.com/s/K2jG64msI4j-mWqPF0qkKg)
 
-    On June 15, 2022, the Cloud Native Computing Foundation (CNCF) announced that Clusterpedia had officially joined the CNCF sandbox project. Clusterpedia is an open-source project launched by DaoCloud at the end of 2021. It is a tool that can perform complex resource retrieval across multiple clusters with kubectl, and it is currently the only project in CNCF that focuses on multi-cloud information retrieval and is widely used.
+    On June 15, 2022, the Cloud Native Computing Foundation (CNCF) announced that Clusterpedia had officially joined the CNCF sandbox project. Clusterpedia is an open-source project launched by DaoCloud at the end of 2021. It is a tool that can perform complex resource retrieval across multiple clusters with kubectl, and it is currently the only project in CNCF that focuses on multicloud information retrieval and is widely used.
 
 - [20220611 | CloudTTY: Next-generation Cloud-native Open Source Cloud Shell](https://mp.weixin.qq.com/s/sFjZmvumQNbP6gnlnpglWQ)
 

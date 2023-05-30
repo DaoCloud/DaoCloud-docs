@@ -9,9 +9,9 @@ hide:
 
     Yes, you can upgrade the version by yourself.
 
-2. How to convert single-cluster applications to multi-cloud applications?
+2. How to convert single-cluster applications to multicloud applications?
 
-    See [One-Click Conversion to Multi-Cloud Workloads](../workload/promote.md).
+    See [One-Click Conversion to multicloud Workloads](../workload/promote.md).
 
 3. Can I collect logs of applications deployed in different cluster?
 
@@ -23,11 +23,11 @@ hide:
 
 5. Can workloads communicate across clusters?
 
-    Yes. See [Multi-cloud Network Interconnection](../../mspider/user-guide/multicluster/cluster-interconnect.md)
+    Yes. See [Multicloud Network Interconnection](../../mspider/user-guide/multicluster/cluster-interconnect.md)
 
 6. Can Service realize cross-cluster service discovery?
 
-    Yes. See [Multi-cloud Network Interconnection](../../mspider/user-guide/multicluster/cluster-interconnect.md)
+    Yes. See [Multicloud Network Interconnection](../../mspider/user-guide/multicluster/cluster-interconnect.md)
 
 7. Does Karmada have production level support?
 
@@ -41,7 +41,7 @@ hide:
 
     It uses the existing [permission system of DCE 5.0](../../ghippo/user-guide/access-control/role.md), and bound Karmada instances with workspaces.
 
-10. How to query multi-cluster events?
+10. How to query multicluster events?
 
     Multicloud Management integrates resources at the product level. You can view all Karmada-instance-level events.
 
@@ -59,8 +59,8 @@ hide:
 
 14. Can I delete only the multicloud instance without deleting the corresponding karmada instance?
 
-    Yes. You can set this configuration when creating the multi-cloud instance.
+    Yes. You can set this configuration when creating the multicloud instance.
 
-15. How can working clusters in a multi-cloud instance connect with each other?
+15. How can working clusters in a multicloud instance connect with each other?
 
-    See [Multi-cloud Network Interconnection](../../mspider/user-guide/multicluster/cluster-interconnect.md)
+    See [Multicloud Network Interconnection](../../mspider/user-guide/multicluster/cluster-interconnect.md)

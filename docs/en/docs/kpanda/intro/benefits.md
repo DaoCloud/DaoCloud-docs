@@ -9,7 +9,7 @@ The Container Management module offers the following advantages:
 
 **Unified cluster management**
 
-- Supports unified management of different clusters and includes any Kubernetes cluster within a specific version range in the scope of container management. This enables unified management of on-cloud, off-cloud, multi-cloud, and hybrid cloud container platforms while avoiding vendor lock-in.
+- Supports unified management of different clusters and includes any Kubernetes cluster within a specific version range in the scope of container management. This enables unified management of on-cloud, off-cloud, multicloud, and hybrid cloud container platforms while avoiding vendor lock-in.
 - The web interface allows for one-click upgrade of the Kubernetes cluster.
 - Unified web interface facilitates cluster creation, expansion and contraction of cluster nodes, and other management capabilities.
 - Self-built clusters can implement certificate rotation on the web interface with one-click.
@@ -33,7 +33,7 @@ The Container Management module offers the following advantages:
 
 **Heterogeneous compatibility**
 
-- Provides highly automated and elastic heterogeneous multi-cloud support capabilities, adapting to both x86 and Xinchuang cloud architectures.
+- Provides highly automated and elastic heterogeneous multicloud support capabilities, adapting to both x86 and Xinchuang cloud architectures.
 - Supports unified deployment of x86 and ARM architecture mixed clusters, unified management and support for application operation, and guarantees network interoperability between applications.
 
 **Open and compatible**

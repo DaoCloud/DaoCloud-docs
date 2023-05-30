@@ -35,7 +35,7 @@ MinIO is popular because of the following features:
    
     Minimalism is the guiding design principle of MinIO. Simplicity reduces the chance of error, increases uptime, provides reliability, and is fundamental to performance.
 
-7. Support multi-cloud.
+7. Support multicloud.
 
     Millions of instances can be created and deployed in private cloud, public cloud and edge computing environments.
 

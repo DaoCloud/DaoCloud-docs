@@ -1,6 +1,6 @@
 # How to get the address of data upload?
 
-When [installing insight-agent](install-agent.md), you need to configure the service address to upload the cluster metrics, logs, and link data to `global service cluster`.
+When [installing insight-agent](install-agent.md), you need to configure the service address to upload the cluster metrics, logs, and trace data to `global service cluster`.
 This page outlines the steps on how to obtain the address for data uploads.
 
 ## Parameter Description
@@ -10,7 +10,7 @@ This page outlines the steps on how to obtain the address for data uploads.
 | ${vminsert_host} | metric data upload address, the default is the externally accessible address of the global service cluster vminsert service |
 | ${es_host} | Log data upload address, consistent with the elasticsearch service configuration used by the global service cluster |
 | ${otel_col_auditlog_port} | audit log data upload address, the default is the externally accessible address of the global service cluster opentelemetry-collector service |
-| ${otel_col_host} | link data upload address, the default is the externally accessible address of the global service cluster opentelemetry-collector service |
+| ${otel_col_host} | trace data upload address, the default is the externally accessible address of the global service cluster opentelemetry-collector service |
 
 !!! note
 
@@ -76,7 +76,7 @@ Please confirm that your cluster has installed a load balancer, and follow the s
 	in,
 
 - `lb-vminsert-insight-victoria-metrics-k8s-stack`: URL for uploading metrics data
-- `lb-insight-opentelemetry-collector`: link data upload address
+- `lb-insight-opentelemetry-collector`: trace data upload address
 - `mcamel-es-cluster-masters-es-http`: log data upload address
 
 ### Connect insight-agent via NodePort
@@ -92,7 +92,7 @@ Please confirm that your cluster has installed a load balancer, and follow the s
     
 
 - `vminsert-insight-victoria-metrics-k8s-stack`: index data upload address, set the NodePort corresponding to port 8480
-- `insight-opentelemetry-collector`: link data upload address, set the NodePort corresponding to port 8006
+- `insight-opentelemetry-collector`: trace data upload address, set the NodePort corresponding to port 8006
 - `insight-opentelemetry-collector`: Audit log data upload address, set the NodePort corresponding to port 4317
 - `mcamel-es-cluster-masters-es-http`: log data upload address, set the NodePort corresponding to port 9200
 

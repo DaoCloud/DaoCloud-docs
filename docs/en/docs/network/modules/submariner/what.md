@@ -7,7 +7,7 @@ Date: 2023-05-17
 
 # What is Submariner
 
-As Kubernetes continues to evolve, multi-cluster architectures are becoming increasingly popular. Multi-clusters improve application redundancy, scalability, and fault isolation capabilities, but interconnectivity between clusters is a major issue. Submariner is an open-source multi-cluster networking solution that securely enables cross-cluster communication between Pods and Services, and leverages the Lighthouse component to enable [KMCS](https://github.com/kubernetes/enhancements/tree/master/keps/sig-multicluster/1645-multi-cluster-services-api) that provides cross-cluster service discovery capabilities.
+As Kubernetes continues to evolve, multicluster architectures are becoming increasingly popular. Multiclusters improve application redundancy, scalability, and fault isolation capabilities, but interconnectivity between clusters is a major issue. Submariner is an open-source multicluster networking solution that securely enables cross-cluster communication between Pods and Services, and leverages the Lighthouse component to enable [KMCS](https://github.com/kubernetes/enhancements/tree/master/keps/sig-multicluster/1645-multicluster-services-api) that provides cross-cluster service discovery capabilities.
 
 The **architecture**:
 
