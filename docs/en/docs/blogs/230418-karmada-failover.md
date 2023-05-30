@@ -489,13 +489,9 @@ func (c *Controller) taintClusterByCondition(ctx context.Context, cluster *clust
 
 ![clusterStatus controller](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/karmada07.png)
 
-taint-manager controller 控制器随 cluster controller 同步启动，可参数配置是否启动，默认启动。
-它感知 cluster 资源对象的变更事件，当感知到集群拥有 effect 为 NoExecute 的污点时，
-会获取到该集群上的所有命名空间级别和集群级别的 rb (ResourceBinding)，然后放入对应的驱逐处理队列。
-驱逐处理消费者（worker）会判断获取到 rb(ResourceBinding) 对应的 pp (PropagationPolicy)，看
-pp (PropagationPolicy) 中是否存在集群污点容忍，如果 pp (PropagationPolicy) 中的集群污点容忍和集群污点匹配，
-那么直接跳过，认为该集群上的资源不需要驱逐。否则认为需要驱逐。如果需要驱逐，那么此时会判断是否开启了优雅驱逐，
-优雅驱逐默认开启，为 rb (ResourceBinding) 对象写入优雅驱逐任务，即 rb.spec.gracefulEvictionTasks 中增加一条优雅驱逐任务。
+The taint-manager controller starts synchronously with the cluster controller, and can be configured with parameters to decide whether to start or not (default is to start).
+It detects changes in resource objects of the cluster, and when it detects a taint on the cluster with an effect of NoExecute, it will retrieve all namespace-level and cluster-level ResourceBindings (rb) on that cluster and put them into the corresponding eviction processing queue.
+The eviction processing worker will check the PropagationPolicy (pp) of the rb it retrieved to see if there is a cluster taint tolerance. If there is a match, it will skip and consider the resources on that cluster as not needing eviction. Otherwise, it will need to evict the resources. If eviction is necessary, it will then check if graceful eviction is enabled (which is enabled by default), and add a new graceful eviction task for the rb object, meaning adding a new graceful eviction task to rb.spec.gracefulEvictionTasks.
 
 ```go
 needEviction, tolerationTime, err := tc.needEviction(cluster, binding.Annotations)
@@ -527,10 +523,7 @@ if needEviction || tolerationTime == 0 {
 }
 ```
 
-可以发现，写入驱逐任务时，会将优雅驱逐任务对应的集群，从 rb.spec.clusters 中移除，也就是会修改调度结果
-（这里需要特别说明一下，调度结果就是 Karmada 调度器根据传播策略和集群情况为资源选择的调度分发集群，
-调度结果会记录在 rb (ResourceBinding) 的 spec.clusters 属性中）。
-也就是说由于集群故障，会触发调度器重新调度，资源应该从故障的集群上驱逐，在新的集群上创建。
+It can be noticed that when writing an eviction task, the cluster corresponding to the graceful eviction task will be removed from `rb.spec.clusters`, which means that the scheduling result will be modified. (Here it needs to be emphasized that the scheduling result is the scheduling and distribution cluster selected by Karmada scheduler based on the propagation strategy and cluster situation for resources, and the scheduling result will be recorded in the `spec.clusters` attribute of `rb` (ResourceBinding).) This means that due to cluster failures, the scheduler will be triggered to reschedule, and resources should be evicted from the failed cluster and created on the new cluster.
 
 ```go
 // This function no-(images cluster does not exist.
@@ -798,13 +791,12 @@ metadata:
 ...
 ```
 
-以下为 binding controller 的核心代码，核心逻辑是:
+The following is the core code of the binding controller, and its core logic is:
 
-- 移除孤儿 work；
-- 确保 rb (ResourceBinding) 期望 work 符合预期；
-- 聚合 work 的状态，记录到 rb (ResourceBinding) 的状态中；
-- 根据 rb (ResourceBinding) 的聚合状态，更新 resource template 状态，
-  resource template 是指存放在 Karmada 控制平面上的资源模板对象。
+- Remove orphaned work;
+- Ensure that the expected work of rb (ResourceBinding) meets expectations;
+- Aggregate the status of the work and record it in the state of rb (ResourceBinding);
+- Based on the aggregated state of rb (ResourceBinding), update the status of the resource template. The resource template refers to the object of the resource template stored on the Karmada control plane.
 
 ```go
 // syncBinding will sync resourceBinding to Works.
