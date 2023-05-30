@@ -3,16 +3,16 @@ hide:
   - toc
 ---
 
-# Applicable scene
+# Use Cases
 
-Elasticsearch excels in speed and scalability, and its ability to index many types of content means it can be used in a variety of usage scenarios:
+Elasticsearch excels in both speed and scalability. It can index multiple types of content, which means it can be used in a variety of use cases:
 
-- App search
-- Site search
+- Application search
+- Website search
 - Enterprise search
 - Log processing and analysis
 - Infrastructure metrics and container monitoring
 - Application performance monitoring
 - Geospatial data analysis and visualization
-- Safety analysis
-- business analysis
+- Security analytics
+- Business analytics

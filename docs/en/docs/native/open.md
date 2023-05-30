@@ -1139,7 +1139,7 @@ This page lists activity in cloud native open source projects in alphabetical or
      [SPIFFE](https://github.com/spiffe/spiffe) provides secure identities for various workloads in modern production environments, eliminates the need to share confidential information, and is expected to become the foundation for higher-level platform-neutral security controls Realize the basis.
      [SPIRE](https://github.com/spiffe/spire) (SPIFFE Runtime Environment) is responsible for implementing the SPIFFE specification on various platforms and enforcing multi-factor proof of identity.
 
-- [Spring Cloud Tencent: Tencent Open Source One-Stop Microservice Solution](https://mp.weixin.qq.com/s/A-DcZJY9sJcTQSEoWEibww)
+- [Spring Cloud Tencent: Tencent Open Source One-stop Microservice Solution](https://mp.weixin.qq.com/s/A-DcZJY9sJcTQSEoWEibww)
 
      [Spring Cloud Tencent](https://github.com/Tencent/spring-cloud-tencent) Relying on Polaris, Tencent's open-source one-stop microservice solution, it mainly provides common service registration, discovery, and configuration in the field of microservices Center, service routing, current limiting and fusing, and metadata link transparent transmission capabilities.
 

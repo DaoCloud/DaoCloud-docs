@@ -3,20 +3,20 @@ hide:
   - toc
 ---
 
-# What is Elasticsearch
+# Elasticsearch
 
-Elasticsearch (hereinafter referred to as Elastic) is currently the first choice for full-text search engines. It can quickly store, search and analyze massive amounts of data. The bottom layer of Elastic is the open source library Lucene, but Lucene cannot be used directly, and you must write your own code to call its interface. Elastic is a package of Lucene, which provides the operation interface of REST API and is ready to use out of the box.
+Elasticsearch (shortened as Elastic) is the preferred full-text search engine. It can quickly store, search, and analyze massive amounts of data. The underlying technology of Elastic is the open-source library Lucene. However, Lucene cannot be used directly, and you must write codes to call its interfaces. Elastic is a encapsulation for Lucene, providing REST APIs that are ready to use.
 
-The built-in search service of DCE 5.0 is based on Elasticsearch, which can provide distributed search services and provide users with structured and unstructured text and AI vector-based multi-condition retrieval, statistics, and reports. Fully compatible with Elasticsearch native interface. It can help websites and APPs to build search boxes to improve users' search experience; it can also be used to build log analysis platforms to help enterprises achieve data-driven operation and maintenance, and data-driven operations; its vector retrieval capabilities can help customers quickly build AI-based Rich applications such as image search, recommendation, semantic search, and face recognition.
+The search service built into DCE 5.0 is based on Elasticsearch and can provide distributed search services of structured or unstructured text, and multi-condition retrieval, statistics, and reporting based on AI vectors. It is fully compatible with the Elasticsearch native interface. It can help build search boxes in websites and apps to enhance user's search experience. It can also be used to build log analysis platforms to help enterprises achieve data-driven operations and management. Its vector retrieval capability can help customers quickly build rich applications, such as AI-based image search, recommendation systems, semantic search, face recognition, etc.
 
-<!--screenshot-->
+![welcome page](../images/what01.png)
 
-## ElasticSearch job management
+## ElasticSearch Job Management
 
-Raw data is fed into Elasticsearch from multiple sources, including logs, system metrics, and web applications. Data ingestion is the process of parsing, normalizing, and enriching this raw data before indexing in Elasticsearch. Once this data is indexed in Elasticsearch, users can run complex queries against the data and use aggregations to retrieve complex summaries of their data. In Kibana, users can create powerful visualizations based on their own data.
+Raw data flows into Elasticsearch from multiple sources, including logs, system metrics, and network applications. Data collection aims to parse, standardize, and enrich this raw data in Elasticsearch before indexing it. After these data are indexed in Elasticsearch, users can run complex queries on their data and use aggregation to retrieve complex summaries of their data. In Kibana, users can create powerful visualizations based on their own data.
 
 ## What is Kibana?
 
-Kibana is a data visualization and management tool for Elasticsearch that provides real-time histograms, line graphs, pie charts, and maps. Kibana also includes advanced applications such as Canvas, which allows users to create custom dynamic infographics based on their own data, and Elastic Maps, which can be used to visualize geospatial data.
+Kibana is a data visualization and management tool designed for Elasticsearch. It can provide real-time histograms, line charts, pie charts, and maps. Kibana also includes advanced applications such as Canvas and Elastic Maps, among others. Canvas allows users to create customized dynamic infographics based on their own data, while Elastic Maps can be used to visualize geospatial data.
 
-[Create an Elasticsearch instance](../user-guide/create.md){ .md-button .md-button--primary }
+[Create Elasticsearch Instance](../user-guide/create.md){ .md-button .md-button--primary }
