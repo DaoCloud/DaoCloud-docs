@@ -1,39 +1,44 @@
-# Global management mode
+# System Roles
 
 ## Applicable scenarios
 
-If you need to set up administrators for sub-modules to further manage user/group permissions through administrators, you can use roles in Access Control. Possessing this role means having the highest administrative authority for this submodule.
+DCE 5.0 provides predefined system roles to help users simplify the process of role permission usage.
 
 !!! note
 
-    There are three modes of permission management, currently the global management mode. The role in the access control represents the highest authority of each sub-module. See [Access Management](role.md) for details.
+    DCE 5.0 provides three types of system roles: platform role, workspace role, and folder role.
+    Platform role: has corresponding permissions for all related resources on the platform. Please go to user/user group authorization.
+    Workspace role: has corresponding permissions for a specific workspace. Please go to the specific workspace authorization.
+    Folder role: has corresponding permissions for a specific folder, subfolder, and resources under its workspace. Please go to the specific folder authorization.
 
-```mermaid
-graph TB
+## Platform Roles
 
-gadmin[DCE admin] --> control[Access Control] --> create[Create user/group and authorize roles]
-create --> admin[Admin]
-create --> iam[IAM Owner]
-create --> audit[Audit Owner]
-create --> rm[RM Owner]
-create --> kpanda[Kpanda Owner]
+Five system roles are predefined in Access Control: Admin, IAM Owner, Audit Owner, Kpanda Owner, and Workspace and Folder Owner. These five roles are created by the system and cannot be modified by users. The corresponding permissions of each role are as follows:
 
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+| Role Name | Role Type | Module | Role Permissions |
+| --- | --- | --- | --- |
+| Admin | System role | All | Platform administrator, manages all platform resources, represents the highest authority of the platform. |
+| IAM Owner | System role | Access Control | Administrator of Access Control, has all permissions under this service, such as managing users/user groups and authorization. |
+| Audit Owner | System role | Audit Log | Administrator of Audit Log, has all permissions under this service, such as setting audit log policies and exporting audit logs. |
+| Kpanda Owner | System role | Container Management | Administrator of Container Management, has all permissions under this service, such as creating/accessing clusters, deploying applications, granting cluster/namespace-related permissions to users/user groups. |
+| Workspace and Folder Owner | System role | Workspace and Hierarchy | Administrator of workspace and hierarchy, has all permissions under this service, such as creating folders/workspaces, authorizing folder/workspace-related permissions to users/user groups, using features such as application workbench and microservice engine under the workspace. |
 
-class gadmin,control,create,admin,iam,audit,rm,kpanda k8s
-```
+## Workspace Roles
 
-A role corresponds to a set of permissions. Permissions determine the actions that can be performed on a resource. Granting a role to a user grants all the permissions included in the role.
+Three system roles are predefined in Access Control: Workspace Admin, Workspace Editor, and Workspace Viewer. These three roles are created by the system and cannot be modified by users. The corresponding permissions of each role are as follows:
 
-## Access control roles
+| Role Name | Role Type | Module | Role Permissions |
+| --- | --- | --- | --- |
+| Workspace Admin | System role | Workspace | Administrator of a workspace, with management permission of the workspace. |
+| Workspace Editor | System role | Workspace | Editor of a workspace, with editing permission of the workspace. |
+| Workspace Viewer | System role | Workspace | Viewer of a workspace, with readonly permission of the workspace. |
 
-Four roles are predefined in Access Control, namely: Admin, IAM Owner, Audit Owner, and Kpanda Owner. These 4 roles are created by the system, and users can only use them and cannot modify them. The permissions corresponding to the role are as follows:
+## Folder Roles
 
-| Role Name | Role Type | Belonging Module | Role Permissions |
-| ------------ | -------- | -------------- | ------------ --------------------------------------------------- |
-| Admin | System role | All | Platform administrator, managing all platform resources, representing the highest authority of the platform |
-| IAM Owner | System Role | Access Control | Administrator of Access Control, who has all permissions under the service, such as managing users/groups and authorization |
-| Audit Owner | System Role | Audit Log | The administrator of the audit log has all the permissions under this service, such as setting the audit log policy and exporting the audit log |
-| Kpanda Owner | System Role | Container Management | The administrator of container management has all the permissions under this service, such as creating/accessing clusters, deploying applications, and granting cluster/namespace-related permissions to users/groups |
+Three system roles are predefined in Access Control: Folder Admin, Folder Editor, and Folder Viewer. These three roles are created by the system and cannot be modified by users. The corresponding permissions of each role are as follows:
+
+| Role Name | Role Type | Module | Role Permissions |
+| --- | --- | --- | --- |
+| Folder Admin | System role | Workspace | Administrator of a folder and its subfolders/workspaces, with management permission. |
+| Folder Editor | System role | Workspace | Editor of a folder and its subfolders/workspaces, with editing permission. |
+| Folder Viewer | System role | Workspace | Viewer of a folder and its subfolders/workspaces, with readonly permission. |

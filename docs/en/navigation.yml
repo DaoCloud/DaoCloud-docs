@@ -133,7 +133,7 @@ nav:
               - Group: ghippo/user-guide/access-control/group.md
           - Roles and Permissions:
               - ghippo/user-guide/access-control/role.md
-              - Global Roles: ghippo/user-guide/access-control/global.md
+              - System Roles: ghippo/user-guide/access-control/global.md
               - Custom Roles: ghippo/user-guide/access-control/custom-role.md
           - ID Provider:
               - ghippo/user-guide/access-control/idprovider.md
