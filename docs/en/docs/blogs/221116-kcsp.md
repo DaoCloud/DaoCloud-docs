@@ -83,7 +83,7 @@ DaoCloud's open source community projects around the Kubernetes ecosystem includ
 
 ## CNCF Contribution Ranking
 
-One of the indicators for considering a cloud-native enterprise is community contribution. DaoCloud ranks first in the world in the overall contribution of cloud-native projects in the CNCF community, and is second to none in China.
+One of the metrics for considering a cloud-native enterprise is community contribution. DaoCloud ranks first in the world in the overall contribution of cloud-native projects in the CNCF community, and is second to none in China.
 
 DaoCloud's contribution to the **Kubernetes** community in the last 365 days **#3** in the world**
 

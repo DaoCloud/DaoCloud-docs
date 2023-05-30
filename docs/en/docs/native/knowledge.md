@@ -110,7 +110,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Optimization of kube-state-metrics under large scale clusters](https://mp.weixin.qq.com/s/8R55Holzrf0wNVD8DLJnAg)
 
     In small-scale clusters, you only need to ensure kube-state-metrics is highly available for use in production environments.
-    However, for large scale clusters, providing metrics metrics through only one KSM instance is very overwhelming and requires many optimizations.
+    However, for large scale clusters, providing metrics through only one KSM instance is very overwhelming and requires many optimizations.
     For example, filtering unneeded metrics and tags, reducing the pressure on KSM instances by slicing, and using DaemonSet to deploy pod metrics separately.
 
 - [Vivo Self-Developed Jenkins Resource Scheduling System Design and Practice](https://mp.weixin.qq.com/s/wEmheHwTA8m8LHr_5LVSyg)

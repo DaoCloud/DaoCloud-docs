@@ -215,9 +215,9 @@ VictoriaMetrics returns TSDB statistics on the "/api/v1/status/TSDB" page in a P
 
 5. extra_label=LABEL=VALUE, expand label screening.
 
-### Push indicators
+### Push metrics
 
-When there is a scenario where indicators cannot be pulled, VictoriaMetrics supports indicator push through the push mode in the Prometheus data format:
+When there is a scenario where metrics cannot be pulled, VictoriaMetrics supports metric push through the push mode in the Prometheus data format:
 
 1. -pushmetrics.url, push address, such as "-pushmetrics.url=<http://victoria-metrics:8428/api/v1/import/prometheus";>
 

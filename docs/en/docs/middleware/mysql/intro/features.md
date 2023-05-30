@@ -38,5 +38,5 @@ After MySQL is deployed in DCE 5.0, the following features will also be supporte
 - Support phpmyadmin, provide management page
 - Expose metrics based on mysqld-exporter
 - Use Grafana Operator to integrate MySQL Dashboard to display monitoring data
-- Use ServiceMonitor to connect to Prometheus to capture indicators
+- Use ServiceMonitor to connect to Prometheus to capture metrics
 - Supports backup and recovery (depends on storage that supports the S3 protocol)
