@@ -134,7 +134,7 @@ This page lists the release notes of Multicloud Management module, so that you c
 - Query labels of all member clusters
 - One-click conversion of single-clsuter applications to multi-cluster applications
 - Query the namespace and deployment resources of the member cluster
-- Added prompts for creating multi-cloud resources
+- Added prompts for creating multicloud resources
 
 #### Enhancement
 

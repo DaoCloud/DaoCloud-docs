@@ -35,13 +35,13 @@ Multicloud Management module has the following features:
 
 - Remove Cluster
 
-    You can dynamically remove a cluster from the current multi-cloud instance.
+    You can dynamically remove a cluster from the current multicloud instance.
 
     Removal Verification: to ensure data security, a cluster cannot be removed when there are still resources (deployments, namespaces, secrets, etc.) deploiyed in this cluster under the current multicloud instance.
 
 - kubectl CLI
 
-    You can use kubectl commands in the cloud shell to get the `kubeconfig` information so that users can manage the multi-cloud instance locally.
+    You can use kubectl commands in the cloud shell to get the `kubeconfig` information so that users can manage the multicloud instance locally.
 
 ## Multicloud Workloads
 
@@ -61,7 +61,7 @@ Multicloud Management module has the following features:
 
     Visualized Update: edit the workload through the graphical interface.
 
-    YAML Update: change configuration of the multi-cloud workload by editing its YAML file.
+    YAML Update: change configuration of the multicloud workload by editing its YAML file.
 
 - Delete Multicloud Workload
 

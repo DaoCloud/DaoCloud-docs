@@ -42,9 +42,9 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
     Azure Kubernetes Application Solutions supports the creation of bundles for Kubernetes application solutions using existing Helm Chart packages;
     Create and publish solutions in just 48 hours; automate security scans; and empower incremental sales across the board.
 
-- [Azure Arc Integration with Observable Platform Datadog, an Azure Hybrid Cloud Multi-Cloud Solution](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
+- [Azure Arc Integration with Observable Platform Datadog, an Azure Hybrid Cloud multicloud Solution](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
 
-    Azure Arc's integration with Datadog provides the following capabilities: monitors connection status and agent versions to ensure Azure Arc-enabled servers, SQL servers, and Kubernetes clusters are connected and secure; integrates hybrid and multi-cloud servers, Kubernetes clusters, and data services into a unified dashboard for seamless cross-environment Simplifies compliance management and tracking, providing rich visualizations and actionable alerts.
+    Azure Arc's integration with Datadog provides the following capabilities: monitors connection status and agent versions to ensure Azure Arc-enabled servers, SQL servers, and Kubernetes clusters are connected and secure; integrates hybrid and multicloud servers, Kubernetes clusters, and data services into a unified dashboard for seamless cross-environment Simplifies compliance management and tracking, providing rich visualizations and actionable alerts.
 
 - [Azure Serverless container platform Azure Container Apps November update](https://azure.microsoft.com/en-us/updates/?query=azure%20container%20apps)
 
@@ -198,7 +198,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [D2iQ Launches DKP Gov, a Kubernetes Platform Designed for the Government Sector](https://d2iq.com/blog/dkp-gov-kubernetes-management-platform)
 
     DKP Gov is based on the D2iQ Kubernetes Platform (DKP), created to meet the needs of government, military, and civilian agencies for innovative technology.
-    DKP Gov supports physically and logically isolated nodes, a centralized multi-cloud platform, multi-node fleet management, Federal Information Processing Standard (FIPS) 140-2 certification, and more.
+    DKP Gov supports physically and logically isolated nodes, a centralized multicloud platform, multi-node fleet management, Federal Information Processing Standard (FIPS) 140-2 certification, and more.
 
 - [D2iQ Kubernetes Platform v2.4.0 released](https://docs.d2iq.com/dkp/2.4/dkp-2-4-0-features-and-enhancements)
 
@@ -210,7 +210,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [DaoCloud Enterprise 5.0 released](https://mp.weixin.qq.com/s/7UkIwCp78trO126XQxEL6A)
 
-     DaoCloud Enterprise 5.0 is an independent, open, high-performance, scalable next-generation cloud-native operating system. Focusing on the cloud-native base extension capability scenario, break through cloud-side barriers, cross multi-cloud environments, solve the compatibility problem of Xinchuang infrastructure, improve app delivery efficiency, enable agile innovation of applications, enable business systems with rich data services, and integrate microservice governance and Global observability can meet the challenges of operation and maintenance management of huge business systems.
+     DaoCloud Enterprise 5.0 is an independent, open, high-performance, scalable next-generation cloud-native operating system. Focusing on the cloud-native base extension capability scenario, break through cloud-side barriers, cross multicloud environments, solve the compatibility problem of Xinchuang infrastructure, improve app delivery efficiency, enable agile innovation of applications, enable business systems with rich data services, and integrate microservice governance and Global observability can meet the challenges of operation and maintenance management of huge business systems.
 
 - [Databend Releases Cloud-Native Data registry Databend Cloud](https://mp.weixin.qq.com/s/LzjRQ8_XA-896AZQj2n3hA)
 
@@ -341,7 +341,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### J, K
 
-- [Jibudata multi-cloud data backup recovery product YS1000 v3.2 released](https://mp.weixin.qq.com/s/t64iDKWOQ_wUHRLvmGw8tQ)
+- [Jibudata multicloud data backup recovery product YS1000 v3.2 released](https://mp.weixin.qq.com/s/t64iDKWOQ_wUHRLvmGw8tQ)
 
     Update: add etcd backup support for clusters; support for creating mirror backup repository; support for mirror backup with optional application mirror source; support for sandbox recovery without affecting the original business after recovery; support for flexible subsidiary function configuration using hooks for backup recovery tasks; support for synchronization of data volumes based on backup recovery; support for configuring ingress mapping while configuring disaster recovery instances.
 
@@ -349,7 +349,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     The Kubernetes Security Posture Management Platform pinpoints attack activity with real-time context and current and historical information, while also providing actionable remediation based on the current state of the cluster. Specific capabilities include: real-time posture management to discover event-based misconfigurations; aggregating and finding excessive privileges in Kubernetes RBAC; preventing the deployment of non-compliant workloads and reducing the potential blast radius; and scanning for vulnerabilities and generating SBOMs for running containers.
 
-- [Kyndryl introduces Cloud Native Services, a multi-cloud cloud native application migration and optimization solution](https://www.kyndryl.com/gb/en/about-us/news/2022/12/kyndryl-cloud-native-services-digital-modernization)
+- [Kyndryl introduces Cloud Native Services, a multicloud cloud native application migration and optimization solution](https://www.kyndryl.com/gb/en/about-us/news/2022/12/kyndryl-cloud-native-services-digital-modernization)
 
      Kyndryl Cloud Native Services provides an end-to-end lifecycle framework that includes code assets, workflows, specialized fundamentals, consulting management services, and comprehensive services related to automated backups, patching, KPI monitoring, security, alerting, and event management for cloud native application migration and optimization . The solution allows enterprises to move their on-premise applications to cloud service provider environments such as AWS, GCP and Azure.
 
@@ -444,7 +444,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [PerfectScale Launches Kubernetes Cost Management SaaS Platform of the same name](https://www.perfectscale.io/blog/perfectscales-saas-platform-is-now-available)
 
     PerfectScale is the industry's first continuous optimization solution built specifically to improve the persistence and cost effectiveness of K8s environments.
-    Using artificial intelligence algorithms to evaluate usage patterns and performance and cost metrics, the platform provides multi-cluster, multi-cloud observability, support for elasticity and performance risk detection, resource waste detection, the
+    Using artificial intelligence algorithms to evaluate usage patterns and performance and cost metrics, the platform provides multi-cluster, multicloud observability, support for elasticity and performance risk detection, resource waste detection, the
     supports problem prioritization, provides GitOps-friendly remediation recommendations, supports predicting the impact of system changes on the environment, and more.
 
 - [Portworx Enterprise 2.12 Cloud Native Data Management Platform Release](https://docs.portworx.com/release-notes/portworx/#2-12-0)
@@ -459,7 +459,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [QingCloud Kubernetes Cluster Patrol SaaS Service Officially Released](https://mp.weixin.qq.com/s/Xx82SiyMGtBNgjjk34glqw)
 
-    Kubernetes Cluster Inspection SaaS service helps users discover container vulnerabilities and exposures (CVE) in cluster components, services, and ports, analyze operational risks in Kubernetes, and push reports by instantly or periodically checking whether the configuration of cluster nodes and components in Kubernetes multi-cloud environments comply with best practices, thus ensuring business The ACK helps users identify container vulnerabilities and exposures (CVE) in cluster components, services, and ports, analyze operational risks in Kubernetes, and push reports to ensure continuous and stable business operation and reduce enterprise risks as early as possible.
+    Kubernetes Cluster Inspection SaaS service helps users discover container vulnerabilities and exposures (CVE) in cluster components, services, and ports, analyze operational risks in Kubernetes, and push reports by instantly or periodically checking whether the configuration of cluster nodes and components in Kubernetes multicloud environments comply with best practices, thus ensuring business The ACK helps users identify container vulnerabilities and exposures (CVE) in cluster components, services, and ports, analyze operational risks in Kubernetes, and push reports to ensure continuous and stable business operation and reduce enterprise risks as early as possible.
 
 - [QingCloud Releases KubeSphere Container Platform Enterprise Release 3.4.0](https://mp.weixin.qq.com/s/spjVK8jWtXYb53aYjMWFxw)
 
@@ -504,7 +504,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Built on Istio, Service Mesh Manager provides microservice teams with centralized security control and traffic management policy configuration. Built on Cilium, Network Policy Manager provides centralized management and visibility into pod and namespace communication to isolate perimeters and reduce a cluster's lateral attack surface.
 
-- [Rainbond Cloud Native Multi-Cloud Application Management Platform Rainbond Enterprise Edition Released](https://mp.weixin.qq.com/s/pmCwyFbcCwXxcO0-rVM5dw)
+- [Rainbond Cloud Native multicloud Application Management Platform Rainbond Enterprise Edition Released](https://mp.weixin.qq.com/s/pmCwyFbcCwXxcO0-rVM5dw)
 
     Rainbond Enterprise Edition has a global observable center for monitoring, debugging, and analyzing infrastructure and application services running in Kubernetes clusters and the rainbond platform. In addition, it also provides solutions for IT business system migration to the localized Cintron environment, supports full-link grayscale release and cluster patrol, built-in WAF firewall and operation audit functions, supports private deployment of application stores, etc.
 
@@ -550,9 +550,9 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Updates: New Gloo Portal to help developers classify, share, and manage APIs; support for handling traffic of GraphQL requests in Istio service mesh, including north-south and east-west traffic; support for Kubernetes 1.25 and Istio 1.17; commercial support for Ambient Mesh.
 
-- [Solo.io Launches Gloo Fabric, a Multi-Cloud Dynamic Resource Discovery Solution](https://www.solo.io/blog/introducing-solo-gloo-fabric/)
+- [Solo.io Launches Gloo Fabric, a multicloud Dynamic Resource Discovery Solution](https://www.solo.io/blog/introducing-solo-gloo-fabric/)
 
-    Gloo Fabric provides multi-cloud discovery, connectivity, security, and observability capabilities for the Gloo Platform. gloo Fabric configures and manages all features of the platform through a unified API, manages network and security policies through a unified management control plane, supports dynamic discovery of network and cluster resources, and provides API management and cross-cluster multi-tenant isolation functionality. In addition, Gloo Fabric provides automatic zero-trust security and observable capabilities for platform integration.
+    Gloo Fabric provides multicloud discovery, connectivity, security, and observability capabilities for the Gloo Platform. gloo Fabric configures and manages all features of the platform through a unified API, manages network and security policies through a unified management control plane, supports dynamic discovery of network and cluster resources, and provides API management and cross-cluster multi-tenant isolation functionality. In addition, Gloo Fabric provides automatic zero-trust security and observable capabilities for platform integration.
 
 - [Solo.io Releases Cloud-Native Gateway Gloo Gateway 1.13](https://www.solo.io/blog/gloo-edge-1-13/)
 
@@ -629,7 +629,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Tencent Cloud Container Service TKE Three Capabilities Upgrade](https://mp.weixin.qq.com/s/DfxCQM8KzMioSt6rVq5oHw)
 
-     Update content: node management, the new HouseKeeper operation and maintenance paradigm, the native nodes, super nodes, registered nodes and other on/off cloud resources nano-management; cluster management, support a cluster management any node, while supporting a variety of nodes such as native nodes, super nodes, registered nodes and edge nodes; application management, to create for In terms of application management, it creates an application management platform for multi-cloud and edge scenarios, and realizes unified distribution, deployment and management of multiple clusters.
+     Update content: node management, the new HouseKeeper operation and maintenance paradigm, the native nodes, super nodes, registered nodes and other on/off cloud resources nano-management; cluster management, support a cluster management any node, while supporting a variety of nodes such as native nodes, super nodes, registered nodes and edge nodes; application management, to create for In terms of application management, it creates an application management platform for multicloud and edge scenarios, and realizes unified distribution, deployment and management of multiple clusters.
 
 - [Tencent Cloud Container Service TKE September update](https://mp.weixin.qq.com/s/6_TSSHhU0L8mSbqEMWyu4g)
 
@@ -684,11 +684,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Venafi Launches TLS Protect for Kubernetes, a Cloud-Native Machine Identity Management Service](https://venafi.com/blog/simplify-cloud-native-machine-identity-management-with-tls-protect-for-kubernetes/)
 
      TLS Protect for Kubernetes is part of Control Plane for Machine Identities, Venafi's platform for machine identity management.
-     Helps security and platform teams manage cloud-native machine identities such as TLS, mTLS, and SPIFFE in multi-cloud and multi-cluster Kubernetes environments, enhancing the observability, control, and automation of machine identity management.
+     Helps security and platform teams manage cloud-native machine identities such as TLS, mTLS, and SPIFFE in multicloud and multi-cluster Kubernetes environments, enhancing the observability, control, and automation of machine identity management.
 
 - [Volcano Engine Releases Distributed Cloud Native Platform DCP](https://mp.weixin.qq.com/s/Fz7R8R0keKFEryq8zQKFoA)
 
-    [DCP](https://www.volcengine.com/product/dcp) is an enterprise-level cloud native unified management platform for multi-cloud and multi-Kubernetes cluster scenarios, providing unified management and operation and maintenance of multi-cloud clusters, cross-cluster distribution of applications, unified traffic control and other capabilities, DCP provides unified management and operation and maintenance of Volcano Engine container clusters, third-party clusters and self-built clusters; provides cross-cluster and cross-cloud elastic scheduling capability based on cluster federation and other technologies; provides multi-cluster service discovery, multi-cluster unified portal access and other capabilities; enables application data recovery and cross-cluster/cloud application migration based on backup data.
+    [DCP](https://www.volcengine.com/product/dcp) is an enterprise-level cloud native unified management platform for multicloud and multi-Kubernetes cluster scenarios, providing unified management and operation and maintenance of multicloud clusters, cross-cluster distribution of applications, unified traffic control and other capabilities, DCP provides unified management and operation and maintenance of Volcano Engine container clusters, third-party clusters and self-built clusters; provides cross-cluster and cross-cloud elastic scheduling capability based on cluster federation and other technologies; provides multi-cluster service discovery, multi-cluster unified portal access and other capabilities; enables application data recovery and cross-cluster/cloud application migration based on backup data.
 
 - [VMware Tanzu Releases Kubernetes DevOps Platform VMware Tanzu Application Platform 1.5](https://tanzu.vmware.com/content/blog/tanzu-application-platform-1-5-ga)
 
@@ -698,7 +698,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Update: Tanzu Service Mesh CLI supports GitOps, which can be used to automatically deploy Tanzu Service Mesh environments to clusters; supports selecting the namespace to inject proxy sidecar into; supports enterprise-level proxy communication between client clusters and Tanzu Service Mesh SaaS.
 
-- [VWware Tanzu Multi-Cloud Multi-Cluster Kubernetes Management Solution Tanzu Mission Control Update](https://docs.vmware.com/en/VMware-Tanzu-Mission-Control/services/rn/vmware-tanzu-mission-control-release-notes/index.html)
+- [VWware Tanzu multicloud Multi-Cluster Kubernetes Management Solution Tanzu Mission Control Update](https://docs.vmware.com/en/VMware-Tanzu-Mission-Control/services/rn/vmware-tanzu-mission-control-release-notes/index.html)
 
      Update: Support for Pod-safe mutation policy, support for Tanzu Kubernetes Grid 2.1 (including ClusterClass), support for continuous delivery of cluster groups, and support for installing Helm charts from Git repositories into clusters.
 

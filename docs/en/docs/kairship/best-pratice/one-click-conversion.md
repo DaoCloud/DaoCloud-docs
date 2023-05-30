@@ -1,6 +1,6 @@
 # Realize one-click conversion of DCE4 to DCE5 applications
 
-This section will take the stateless load nginx as an example to introduce how to implement one-click conversion of DCE4 to DCE5 applications through the multi-cloud orchestration interface.
+This section will take the stateless load nginx as an example to introduce how to implement one-click conversion of DCE4 to DCE5 applications through the Multicloud Management interface.
 
 ## prerequisites
 
@@ -9,17 +9,17 @@ This section will take the stateless load nginx as an example to introduce how t
 
 ## One-click transfer
 
-1. Go to `Multi-Cloud Instance - Workload Management`, click `Connect to Cluster` and choose to connect the DCE4 cluster to the multi-cloud instance.
+1. Go to `multicloud Instance - Workload Management`, click `Connect to Cluster` and choose to connect the DCE4 cluster to the multicloud instance.
 
     <!--screenshot-->
 
-2. Enter `Multi-Cloud Workload - Stateless Load`, click Experience Now, select the target application, and its associated service will be automatically selected, and the associated configuration items and keys will also be converted synchronously.
+2. Enter `multicloud Workload - Stateless Load`, click Experience Now, select the target application, and its associated service will be automatically selected, and the associated configuration items and keys will also be converted synchronously.
 
     <!--screenshot-->
 
     <!--screenshot-->
 
-3. After the conversion is successful, click Update, select the target deployment cluster, and enable automatic propagation (by default, resources such as ConfigMap and Secret relied on in the multi-cloud workload configuration will be automatically detected and automatic propagation will be realized).
+3. After the conversion is successful, click Update, select the target deployment cluster, and enable automatic propagation (by default, resources such as ConfigMap and Secret relied on in the multicloud workload configuration will be automatically detected and automatic propagation will be realized).
 
     <!--screenshot-->
 
@@ -27,7 +27,7 @@ This section will take the stateless load nginx as an example to introduce how t
 
     <!--screenshot-->
 
-5. Verify that multi-cloud nginx is running successfully: Pods in both clusters are running successfully and can be accessed normally.
+5. Verify that multicloud nginx is running successfully: Pods in both clusters are running successfully and can be accessed normally.
 
     <!--screenshot-->
 

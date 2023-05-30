@@ -306,7 +306,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Multi-Active Architecture Guide for Hybrid Cloud](https://mp.weixin.qq.com/s/NXXwjxUAGXDD3krKXyJbaQ)
 
-    The article introduces the multi-active architecture of Jobbang Company in a hybrid cloud environment: the network between multi-clouds is a state between single-cloud multi-availability zones and center-edge;
+    The article introduces the multi-active architecture of Jobbang Company in a hybrid cloud environment: the network between multiclouds is a state between single-cloud multi-availability zones and center-edge;
     The normal inter-application call closed-loop is within the single cloud, and only requires independent registration and discovery within the single cloud;
     Cross-cloud calls in some scenarios only require inter-cluster discovery;
     With full cloud deployment, north-south traffic can be prioritized for scheduling through DNS.
@@ -554,7 +554,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Using Nocalhost to develop microservice applications on Rainbond](https://mp.weixin.qq.com/s/kC9P7fvMtJvKK7_TM2LbTw)
 
-    [Nocalhost](https://github.com/nocalhost/nocalhost) is an IDE-based cloud-native application development tool, and [Rainbond](https://github.com/goodrain/rainbond) is a cloud-native multi-cloud application management tool platform.
+    [Nocalhost](https://github.com/nocalhost/nocalhost) is an IDE-based cloud-native application development tool, and [Rainbond](https://github.com/goodrain/rainbond) is a cloud-native multicloud application management tool platform.
     Nocalhost can directly develop applications in Kubernetes. Rainbond can quickly deploy microservice projects without writing Yaml. Nocalhost combines Rainbond to accelerate the efficiency of microservice development.
 
 - [Two OCI image build tool introduction builders - melange and apko](https://blog.chainguard.dev/secure-your-software-factory-with-melange-and-apko/)
@@ -989,7 +989,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Nine Trends Insights into the Container Ecosystem in 2022](https://mp.weixin.qq.com/s/WNanrbCsdWEuyWP8WvO8UQ)
   
     Datadog’s analysis of over 1.5 billion containers run by customers identified key trends in the container ecosystem:
-    The use of serverless container technology in the public cloud continues to rise, multi-cloud usage is positively correlated with the number of containers in an organization, Kubernetes Ingress usage is on the rise, most hosts are using a Kubernetes version older than 18 months, more than 30% are running containerd of hosts use unsupported versions, NGINX, Redis, and Postgres are the most popular container images.
+    The use of serverless container technology in the public cloud continues to rise, multicloud usage is positively correlated with the number of containers in an organization, Kubernetes Ingress usage is on the rise, most hosts are using a Kubernetes version older than 18 months, more than 30% are running containerd of hosts use unsupported versions, NGINX, Redis, and Postgres are the most popular container images.
 
 - [Karmada large-scale test report released, breaking through 100 clusters and 500,000 nodes](https://karmada.io/blog/2022/10/26/test-report/)
 

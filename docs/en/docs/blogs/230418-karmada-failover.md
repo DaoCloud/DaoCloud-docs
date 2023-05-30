@@ -4,14 +4,14 @@ Author: [Fish-pro](https://github.com/Fish-pro)
 
 ![karmada failover](images/karmada01.png)
 
-In the multi-cloud era, how to achieve high availability of applications across data centers, availability zones, and clusters has become a new topic we discuss.
+In the multicloud era, how to achieve high availability of applications across data centers, availability zones, and clusters has become a new topic we discuss.
 In a single cluster, if the cluster fails, all applications in the cluster will be inaccessible.
 Is there a way to help us automatically migrate the application to a new cluster when the cluster fails, so as to ensure the continuous external access of the application?
-Obviously, **Karmada, as the most popular multi-cloud project in the community, provides such a capability.**
+Obviously, **Karmada, as the most popular multicloud project in the community, provides such a capability.**
 
 Karmada (Kubernetes Armada) enables users to run cloud-native applications across multiple clusters without changing existing applications.
 Enables a truly open multicloud by providing advanced scheduling capabilities using Kubernetes-native APIs. Karmada
-It aims to provide convenient automation for multi-cluster application management in multi-cloud and hybrid cloud scenarios, with key features such as centralized multi-cloud management, high availability and fault recovery.
+It aims to provide convenient automation for multi-cluster application management in multicloud and hybrid cloud scenarios, with key features such as centralized multicloud management, high availability and fault recovery.
 **This article is based on Karmada's release version v1.4.2, and we will explore with you how Karmada's cross-cluster fault recovery is realized**,
 Which controllers and schedulers are involved in this process, and what capabilities each controller undertakes in this process, and what capabilities the scheduler undertakes,
 And how to ensure high availability and continuity of user business?
@@ -19,9 +19,9 @@ And how to ensure high availability and continuity of user business?
 If you have not known or used Karmada before reading this article, it is recommended to read:
 
 1. [Karmada Official Documentation](https://karmada.io/docs/)
-2. [Cloud Native Multi-Cloud Application Tool -- Karmada Overview](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273869&idx=1&sn=f6e03df6f34aa6106972193dba1604d8&chksm=8bcbcc1fbc bc4509060f92b3d636c28c6ccaad62fa3aeb4da9f17971b06e655d1d1385ab2f2c&scene=21#wechat_redirect)
-3. [Cloud native multi-cloud application tool -- Karmada controller](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273922&idx=1&sn=f17630589507999fc0690741c22178b9&scene=21#wechat_redirect )
-4. [Cloud Native Multi-Cloud Application Tool -- Karmada Scheduler](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273971&idx=1&sn=2c81b1959c101573b5b185c342495f30&chksm=8bcbcc61bc bc45772270811a23c210e3faa156078e991f56a288bd58be4246e9572badfb1fbc&scene=21&cur_album_id=2687691821095059459#wechat_redirect)
+2. [Cloud Native multicloud Application Tool -- Karmada Overview](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273869&idx=1&sn=f6e03df6f34aa6106972193dba1604d8&chksm=8bcbcc1fbc bc4509060f92b3d636c28c6ccaad62fa3aeb4da9f17971b06e655d1d1385ab2f2c&scene=21#wechat_redirect)
+3. [Cloud native multicloud application tool -- Karmada controller](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273922&idx=1&sn=f17630589507999fc0690741c22178b9&scene=21#wechat_redirect )
+4. [Cloud Native multicloud Application Tool -- Karmada Scheduler](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273971&idx=1&sn=2c81b1959c101573b5b185c342495f30&chksm=8bcbcc61bc bc45772270811a23c210e3faa156078e991f56a288bd58be4246e9572badfb1fbc&scene=21&cur_album_id=2687691821095059459#wechat_redirect)
 
 ## Why failover is needed
 
@@ -912,6 +912,6 @@ With the rapid response from the community, I believe that Karmada will bring us
 
 - [Karmada source code](https://github.com/karmada-io/karmada)
 - [Karmada official document](https://karmada.io/docs/)
-- [Cloud-native multi-cloud booster - Karmada overview](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273869&idx=1&sn=f6e03df6f34aa6106972193dba1604d8&chksm=8bcbcc1fbcbc4509060f92b3d636c28c6ccaad62fa3aeb4da9f17971b06e655d1d1385ab2f2c&scene=21#wechat_redirect)
-- [Cloud-native multi-cloud booster - Karmada controller](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273922&idx=1&sn=f17630589507999fc0690741c22178b9&scene=21#wechat_redirect)
-- [Cloud-native multi-cloud booster - Karmada scheduler](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273971&idx=1&sn=2c81b1959c101573b5b185c342495f30&chksm=8bcbcc61bcbc45772270811a23c210e3faa156078e991f56a288bd58be4246e9572badfb1fbc&scene=21&cur_album_id=2687691821095059459#wechat_redirect)
+- [Cloud-native multicloud booster - Karmada overview](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273869&idx=1&sn=f6e03df6f34aa6106972193dba1604d8&chksm=8bcbcc1fbcbc4509060f92b3d636c28c6ccaad62fa3aeb4da9f17971b06e655d1d1385ab2f2c&scene=21#wechat_redirect)
+- [Cloud-native multicloud booster - Karmada controller](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273922&idx=1&sn=f17630589507999fc0690741c22178b9&scene=21#wechat_redirect)
+- [Cloud-native multicloud booster - Karmada scheduler](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273971&idx=1&sn=2c81b1959c101573b5b185c342495f30&chksm=8bcbcc61bcbc45772270811a23c210e3faa156078e991f56a288bd58be4246e9572badfb1fbc&scene=21&cur_album_id=2687691821095059459#wechat_redirect)

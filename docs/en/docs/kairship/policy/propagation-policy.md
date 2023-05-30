@@ -1,15 +1,15 @@
 # deployment strategy
 
-Multi-cloud orchestration supports viewing the deployment policy list of the current instance and its associated multi-cloud resources on the interface, supports creating and editing deployment policy information in the form of YAML and forms, and only provides a delete button for idle deployment policies.
+Multicloud Management supports viewing the deployment policy list of the current instance and its associated multicloud resources on the interface, supports creating and editing deployment policy information in the form of YAML and forms, and only provides a delete button for idle deployment policies.
 
-Deployment policies define how resources are distributed across multi-cloud and multi-cluster. Deployment policy (PropagationPolicy) is divided into namespace level and cluster level.
+Deployment policies define how resources are distributed across multicloud and multi-cluster. Deployment policy (PropagationPolicy) is divided into namespace level and cluster level.
 
 - Namespace-level deployment policy (PropagationPolicy) represents a policy that propagates a set of resources to one or more member clusters, and can only propagate resources in its own namespace.
 - A cluster-level deployment policy (ClusterPropagationPolicy) represents a cluster-wide policy for propagating a set of resources to one or more member clusters, capable of propagating cluster-level resources and resources in any namespace other than the system-reserved namespace.
 
 ## YAML creation
 
-1. After entering a multi-cloud instance, in the left navigation bar, click `Policy Management` -> `Deployment Policy` -> `Namespace Level`, and click the `YAML Create` button in the upper right corner.
+1. After entering a multicloud instance, in the left navigation bar, click `Policy Management` -> `Deployment Policy` -> `Namespace Level`, and click the `YAML Create` button in the upper right corner.
 
     <!--screenshot-->
 
@@ -60,8 +60,8 @@ spec:
 
 1. Follow the steps below to create a deployment policy.
 
-    - Basic configuration: fill in the name, select the multi-cloud namespace, and add label annotations
-    - Configure resources: select multi-cloud resources and target deployment clusters
+    - Basic configuration: fill in the name, select the multicloud namespace, and add label annotations
+    - Configure resources: select multicloud resources and target deployment clusters
     - Deployment strategy: Scheduling type, taint tolerance, you can choose whether to enable propagation constraints, support filling in priority (deployment strategy can also be created at the same time when creating resources, when the deployment strategy is also created on this page, you can choose according to the priority level to determine which deployment strategy the resource uses)
 
     <!--screenshot-->

@@ -1,8 +1,8 @@
-# Update multi-cloud services
+# Update multicloud services
 
 Currently, two update methods are provided: editing YAML and form update.
 
-1. After entering a multi-cloud instance, in the left navigation bar, click `Resource Management` -> `Multi-cloud Service`, click `···` to update the service.
+1. After entering a multicloud instance, in the left navigation bar, click `Resource Management` -> `Multicloud Service`, click `···` to update the service.
 
     <!--screenshot-->
 
@@ -10,7 +10,7 @@ Currently, two update methods are provided: editing YAML and form update.
 
     <!--screenshot-->
 
-3. Click Update to update the service through the form, but the access type, name, and multi-cloud namespace cannot be updated.
+3. Click Update to update the service through the form, but the access type, name, and multicloud namespace cannot be updated.
 
     <!--screenshot-->
 

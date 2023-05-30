@@ -1,8 +1,8 @@
-# Update multi-cloud routes
+# Update multicloud routes
 
 Currently, two update methods are provided: editing YAML and form update.
 
-1. After entering a multi-cloud instance, in the left navigation bar, click `Resource Management` -> `Multi-cloud Routing`, click `···` to update the route in the form.
+1. After entering a multicloud instance, in the left navigation bar, click `Resource Management` -> `Multicloud Routing`, click `···` to update the route in the form.
 
     <!--screenshot-->
 
@@ -10,7 +10,7 @@ Currently, two update methods are provided: editing YAML and form update.
 
     <!--screenshot-->
 
-3. Click Update to update the route through the form, but the name, multi-cloud namespace, and cluster of Ingress Class cannot be updated.
+3. Click Update to update the route through the form, but the name, multicloud namespace, and cluster of Ingress Class cannot be updated.
 
     <!--screenshot-->
 

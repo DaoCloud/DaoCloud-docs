@@ -1571,7 +1571,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - OverridePolicy
 
-    [OverridePolicy](../kairship/policy/override-policy.md) is a differentiated configuration policy that defines the differentiated configuration policy for distributing multi-cloud resource objects to different working clusters, such as using different images and adding different labels in different working clusters. OverridePolicy, as an independent policy API, can automatically handle cluster-related configurations, such as adding different prefixes to images based on the geographical distribution of subsets of clusters and using different StorageClasses based on your cloud provider.
+    [OverridePolicy](../kairship/policy/override-policy.md) is a differentiated configuration policy that defines the differentiated configuration policy for distributing multicloud resource objects to different working clusters, such as using different images and adding different labels in different working clusters. OverridePolicy, as an independent policy API, can automatically handle cluster-related configurations, such as adding different prefixes to images based on the geographical distribution of subsets of clusters and using different StorageClasses based on your cloud provider.
 
 ### P
 
@@ -1671,9 +1671,9 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - PropagationPolicy
 
-    In multi-cloud orchestration, [PropagationPolicy](../kairship/policy/propagation-policy.md) defines the distribution strategy for multi-cloud resource objects, supporting planning which workloads to deploy to which working clusters using specified clusters or labels. PropagationPolicy is an independent policy API that can define multi-cluster scheduling methods based on distribution requirements.
+    In Multicloud Management, [PropagationPolicy](../kairship/policy/propagation-policy.md) defines the distribution strategy for multicloud resource objects, supporting planning which workloads to deploy to which working clusters using specified clusters or labels. PropagationPolicy is an independent policy API that can define multi-cluster scheduling methods based on distribution requirements.
 
-    - Supports 1:n `policy:workload`, and users do not need to repeat the scheduling constraints each time they create a multi-cloud application.
+    - Supports 1:n `policy:workload`, and users do not need to repeat the scheduling constraints each time they create a multicloud application.
     - When using the default policy, users can interact directly with the Kubernetes API.
 
 - Proxy
@@ -1720,7 +1720,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Resource Template
 
-    In [multi-cloud orchestration](../kairship/intro/what.md), a template called a federated resource is used. This is a multi-cloud resource template based on the native K8s API, which facilitates the integration of all cloud-native tools within the K8s ecosystem. This resource template can be used to centrally manage [multi-cloud services](../kairship/resource/service.md), [multi-cloud namespaces](../kairship/resource/ns.md), [multi-cloud configmap](../kairship/resource/configmap.md), and [multi-cloud secret](../kairship/resource/secret.md).
+    In [Multicloud Management](../kairship/intro/what.md), a template called a federated resource is used. This is a multicloud resource template based on the native K8s API, which facilitates the integration of all cloud-native tools within the K8s ecosystem. This resource template can be used to centrally manage [multicloud services](../kairship/resource/service.md), [multicloud namespaces](../kairship/resource/ns.md), [multicloud configmap](../kairship/resource/configmap.md), and [multicloud secret](../kairship/resource/secret.md).
 
 - Role
 

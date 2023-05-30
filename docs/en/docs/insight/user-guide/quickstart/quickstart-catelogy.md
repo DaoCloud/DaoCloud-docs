@@ -1,6 +1,6 @@
 # Start observing
 
-The DCE 5.0 platform realizes the management of multi-cloud and multi-cluster, and supports the creation of clusters. On this basis, Insight, as a multi-cluster unified observation solution, realizes the collection of multi-cluster observation data by deploying the insight-agent plug-in, and supports the realization of metrics, logs, and trace data through DCE 5.0 observability products. Inquire.
+The DCE 5.0 platform realizes the management of multicloud and multi-cluster, and supports the creation of clusters. On this basis, Insight, as a multi-cluster unified observation solution, realizes the collection of multi-cluster observation data by deploying the insight-agent plug-in, and supports the realization of metrics, logs, and trace data through DCE 5.0 observability products. Inquire.
 
 `insight-agent` is a tool for observability to realize multi-cluster data collection. After installation, it can realize automatic collection of metrics, logs and trace data without any modification.
 
@@ -16,7 +16,7 @@ Insight is a unified observation platform for multiple clusters. The resource co
 
 - How to adjust the vmstorage disk, please refer to: [vmstorge disk expansion](../../best-practice/modify-vms-disk.md).
 
-Since DCE 5.0 supports the management of multi-cloud and multi-clusters, insight-agent has also completed part of the verification. Due to the conflict of monitoring components, there will be problems installing insight-agent in DCE 4.0 clusters and Openshift 4.x clusters. If you encounter For the same problem, please refer to the following documents:
+Since DCE 5.0 supports the management of multicloud and multi-clusters, insight-agent has also completed part of the verification. Due to the conflict of monitoring components, there will be problems installing insight-agent in DCE 4.0 clusters and Openshift 4.x clusters. If you encounter For the same problem, please refer to the following documents:
 
 - [Installing insight-agent on DCE 4.0.x](../../faq/install-agentindce.md)
 - [Installing insight-agent on Openshift 4.x](../../faq/install-agent-on-ocp.md)

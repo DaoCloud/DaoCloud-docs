@@ -2,7 +2,7 @@
 
 The implementation logic of multi-cluster grayscale release is to deploy different business applications in different clusters, then configure corresponding policies through the service mesh to realize traffic adjustment between business versions, and then offline the versions according to the running conditions.
 
-For pre-preparation, refer to the mesh multi-cloud deployment document to build the mesh infrastructure.
+For pre-preparation, refer to the mesh multicloud deployment document to build the mesh infrastructure.
 
 ## Create a demo application and verify traffic
 

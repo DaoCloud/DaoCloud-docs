@@ -1,17 +1,17 @@
-# Multi-cloud network interconnection
+# Multicloud network interconnection
 
-Multi-cloud network interconnection is a set of solutions provided in the multi-cluster mode when the networks between the multi-clusters are not connected to each other (Pods cannot directly establish communication). It can quickly connect the networks of multiple clusters to realize cross-cluster Pods visit each other.
+Multicloud network interconnection is a set of solutions provided in the multi-cluster mode when the networks between the multi-clusters are not connected to each other (Pods cannot directly establish communication). It can quickly connect the networks of multiple clusters to realize cross-cluster Pods visit each other.
 
 ## Application scenarios
 
-If your environment meets the following conditions, you can try to use the multi-cloud network interconnection function:
+If your environment meets the following conditions, you can try to use the multicloud network interconnection function:
 
 1. Multiple clusters on the same mesh
 2. Pod networks in multiple clusters cannot be directly connected (including Pod CIDR conflicts, etc.)
 
 !!! note
 
-     Multi-cloud networking is only available for managed meshs.
+     Multicloud networking is only available for managed meshs.
 
 ## Glossary
 
@@ -112,11 +112,11 @@ The recommended operation process is shown in the figure below
 
      Click `Delete Network Group` in the operation drop-down box of the network group to be deleted to delete the selected network group.
 
-1. Disable `Multi-Cloud Network Interconnection` function
+1. Disable `multicloud Network Interconnection` function
 
-     In the "Basic Settings" area at the top, click the slider of the "Enabled" state, and the prerequisites for disabling multi-cloud interconnection will pop up:
+     In the "Basic Settings" area at the top, click the slider of the "Enabled" state, and the prerequisites for disabling multicloud interconnection will pop up:
 
 
      First remove the network group:
 
-     Enter `Close Basic Settings` in the text box to confirm, and you can turn off the multi-cloud interconnection function:
+     Enter `Close Basic Settings` in the text box to confirm, and you can turn off the multicloud interconnection function:

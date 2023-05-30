@@ -4,7 +4,7 @@ This page describes how to create a stateful load (StatefulSet) through mirrorin
 
 [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) is a common resource in Kubernetes, and [Deployment](create-deployment.md), mainly used to manage the deployment and scaling of Pod collections. The main difference between the two is that Deployment is stateless and does not save data, while StatefulSet is stateful and is mainly used to manage stateful applications. In addition, Pods in a StatefulSet have a persistent ID, which makes it easy to identify the corresponding Pod when matching storage volumes.
 
-Through the container management module of [DCE 5.0](../../../dce/what.md), workloads on multi-cloud and multi-clusters can be easily managed based on corresponding role permissions, including the creation of stateful workloads, update, delete, elastic scaling, restart, version rollback and other full life cycle management.
+Through the container management module of [DCE 5.0](../../../dce/what.md), workloads on multicloud and multi-clusters can be easily managed based on corresponding role permissions, including the creation of stateful workloads, update, delete, elastic scaling, restart, version rollback and other full life cycle management.
 
 ## Prerequisites
 

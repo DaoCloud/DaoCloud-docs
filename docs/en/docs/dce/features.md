@@ -154,9 +154,9 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 === "Hybrid Heterogeneous"
 
-- Multi-cloud heterogeneous, realizing the heterogeneous management capability of clouds and different
+- Multicloud heterogeneous, realizing the heterogeneous management capability of clouds and different
   vendor container cloud platforms.
-- Providing highly automated and elastic heterogeneous multi-cloud support capabilities, adapting to x86
+- Providing highly automated and elastic heterogeneous multicloud support capabilities, adapting to x86
   and ARM cloud system architectures.
 - Supporting mixed-cluster deployment and unified management of x86 and ARM architectures, stably
   supporting application operations, and ensuring network interconnectivity between applications.

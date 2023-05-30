@@ -22,7 +22,7 @@ Specifically, there are five controllers:
 
 - virtual-cluster-sync-controller
 
-    Listen the CRUD actions of multi-cloud management CRDs. Once an instance is created, it will create a corresponding virtual Kubernetes cluster for resource management. The same logic also applies to instance deletion.
+    Listen the CRUD actions of multicloud management CRDs. Once an instance is created, it will create a corresponding virtual Kubernetes cluster for resource management. The same logic also applies to instance deletion.
 
     It uses [Clusterpedia]( ../../community/clusterpedia.md) for resource retrieval. Clusterpedia is an open-source project contributed by DaoCloud for resource management across clusters. It is integrated into the Container Management module of DCE 5.0
 
@@ -30,11 +30,11 @@ Specifically, there are five controllers:
 
 - resource statistics controller
 
-    Collect statistical information (e.g., CPU, memory, nodes) of all clusters added under multi-cloud management instances, and write this info back to the CRD of these multi-cloud management instances.
+    Collect statistical information (e.g., CPU, memory, nodes) of all clusters added under multicloud management instances, and write this info back to the CRD of these multicloud management instances.
 
 - status sync controller
 
-    Collect and Sync status of the multi-cloud management instances.
+    Collect and Sync status of the multicloud management instances.
 
 - instance registry controller
 

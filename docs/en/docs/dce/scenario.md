@@ -75,11 +75,11 @@ Modules involved: [Container Management](../kpanda/intro/what.md), App Store
 
 Solution advantages: Include software products from ten major fields of ecological partners, provide a complete software stack for the actual business needs of enterprises, and easily find, test, and deploy message middleware, data middleware, low-code/no code application etc.
 
-=== "Multi-Cloud Orchestration"
+=== "Multicloud Management"
 
-Multi-cluster and multi-cloud deployments have become the norm among users, and they hope to complete multi-cloud unified release and have the ability of cross-cloud disaster recovery and backup
+Multi-cluster and multicloud deployments have become the norm among users, and they hope to complete multicloud unified release and have the ability of cross-cloud disaster recovery and backup
 
-Involved modules: [Container Management](../kpanda/intro/what.md), [Multi-Cloud Orchestration](../kairship/intro/what.md), [Container Network](../network/intro/what-is-net.md), Edge Cloud Synergy, Xinchuang Cloud
+Involved modules: [Container Management](../kpanda/intro/what.md), [Multicloud Management](../kairship/intro/what.md), [Container Network](../network/intro/what-is-net.md), Edge Cloud Synergy, Xinchuang Cloud
 
 Advantages of the solution: Innovative technology completes cross-cloud disaster recovery, high concurrency performance of cross-cloud resource retrieval, combined with container platform capabilities to adapt to edge and credit creation scenarios.
 

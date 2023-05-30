@@ -19,7 +19,7 @@ DCE 5.0 natively supports the DevOps development and operation and maintenance m
 - :fontawesome-solid-user-group: **Global Management** [Set Login/Access Permissions/Appearance](ghippo/intro/what.md)
 - :material-monitor-dashboard: **Observability** [One-stop graphical dashboard](insight/intro/what.md)
 - :material-microsoft-azure-devops: **Workbench** [CI/CD Pipeline](amamba/intro/what.md)
-- :material-cloud-check: **Multi-cloud orchestration** [Multi-cloud instance/load/policy](kairship/intro/what.md)
+- :material-cloud-check: **Multicloud Management** [Multicloud instance/load/policy](kairship/intro/what.md)
 - :material-engine: **Microservice Engine** [Microservice Governance Center and Gateway](skoala/intro/what.md)
 - :material-table-refresh: **Service Mesh** [Non-intrusive Service Governance](mspider/intro/what.md)
 - :material-middleware: **middleware** [ES, Kafka, MinIO, MySQL, etc.](middleware/what.md)
@@ -31,13 +31,13 @@ DCE 5.0 natively supports the DevOps development and operation and maintenance m
 
 In the past eight years, DaoCloud has invested huge to explore and develop a cloud-native operating system with custom and scalable modules to facilitate your business digitalization. You can use each module like a LEGO brick, with zero downtime while upgrading any module. DCE 5.0 is also easy to integrate with hundreds of cloud-native ecological plugins, so you can simply customize solutions for different scenarios. Things go better with such a kind of modular style to grow day by day.
 
-=== "Multi-Cloud Orchestration"
+=== "Multicloud Management"
 
-     Supports unified and centralized management of multi-cloud and hybrid clouds, provides cross-cloud resource retrieval and cross-cloud application deployment, release, and operation and maintenance capabilities, realizes efficient management and control of multi-cloud applications, provides elastic scaling of applications based on cluster resources, and achieves global load balancing. The fault recovery capability can effectively solve the problem of multi-cloud application disaster recovery, and help enterprises build multi-cloud and hybrid cloud digital infrastructure.
+     Supports unified and centralized management of multicloud and hybrid clouds, provides cross-cloud resource retrieval and cross-cloud application deployment, release, and operation and maintenance capabilities, realizes efficient management and control of multicloud applications, provides elastic scaling of applications based on cluster resources, and achieves global load balancing. The fault recovery capability can effectively solve the problem of multicloud application disaster recovery, and help enterprises build multicloud and hybrid cloud digital infrastructure.
 
-     **Modules involved**: [Global Management](ghippo/intro/what.md), [Container Management](kpanda/intro/what.md), [Multi-Cloud Orchestration](kairship/intro/what.md), [cloud native network](network/intro/what-is-net.md), [cloud native storage](storage/what.md), Heterogeneous architecture
+     **Modules involved**: [Global Management](ghippo/intro/what.md), [Container Management](kpanda/intro/what.md), [Multicloud Management](kairship/intro/what.md), [cloud native network](network/intro/what-is-net.md), [cloud native storage](storage/what.md), Heterogeneous architecture
 
-    ![multi-cloud](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/01multi-cloud.jpg)
+    ![multicloud](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/01multicloud.jpg)
 
 === "Data Middleware Service"
 

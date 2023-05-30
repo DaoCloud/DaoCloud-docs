@@ -25,7 +25,7 @@ This page provides the Release Notes for container management to help you unders
 - **Optimized** Applying Backup Cluster State
 - **Optimized** Matching the load state in the load detail and the state of the pod under the load
 - **Optimized** Node check interface in offline mode
-- **Optimized** Presentation of multi-cloud applications
+- **Optimized** Presentation of multicloud applications
 
 #### Fixes
 

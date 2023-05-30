@@ -2,13 +2,13 @@
 
 The role of the differentiation policy (Override Policy) is to define the configurations delivered to different clusters, which can be different. For example, the addresses of the mirror warehouses corresponding to different clusters are different, so they need to be set in different clusters. The mirroring addresses of the workloads in the server are different. For example, in different environments, different environment variables need to be set. The timing of the differentiation policy (Override Policy) is after the deployment policy (Propagation Policy) and before it is actually delivered to the cluster.
 
-Multi-cloud orchestration supports differentiated strategies, supports viewing the list of differentiated strategies of the current instance and its associated multi-cloud resources on the interface, and can create and update the information of differentiated strategies through forms and YAML. Differentiation policy (Override Policy) is divided into namespace level and cluster level.
+Multicloud Management supports differentiated strategies, supports viewing the list of differentiated strategies of the current instance and its associated multicloud resources on the interface, and can create and update the information of differentiated strategies through forms and YAML. Differentiation policy (Override Policy) is divided into namespace level and cluster level.
 
 ## YAML creation
 
 Follow the steps below to create a differentiation strategy using YAML.
 
-1. After entering a multi-cloud instance, in the left navigation bar, click `Policy Management` -> `Differential Policy`, and click the `YAML Create` button.
+1. After entering a multicloud instance, in the left navigation bar, click `Policy Management` -> `Differential Policy`, and click the `YAML Create` button.
 
      <!--screenshot-->
 
@@ -57,9 +57,9 @@ Follow the steps below to create a differentiation strategy.
 
 2. Enter the form creation page. To create a complete differentiated strategy, you need to configure three parts: basic configuration, resource configuration, and differentiated strategy.
 
-     - Basic configuration: including name, multi-cloud namespace, tags and annotations. Where Name and Multicloud Namespace are required.
+     - Basic configuration: including name, multicloud namespace, tags and annotations. Where Name and Multicloud Namespace are required.
 
-     - Resource configuration: Supports the selection of multi-cloud resources under the selected multi-cloud namespace for differentiated configuration, and multi-cloud resources also support multiple selections.
+     - Resource configuration: Supports the selection of multicloud resources under the selected multicloud namespace for differentiated configuration, and multicloud resources also support multiple selections.
 
      - Differentiation strategy: support for adding mirroring/running parameters/running commands/customization and other differentiated configurations.
       
