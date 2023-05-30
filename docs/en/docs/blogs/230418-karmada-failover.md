@@ -11,7 +11,7 @@ Obviously, **Karmada, as the most popular multicloud project in the community, p
 
 Karmada (Kubernetes Armada) enables users to run cloud-native applications across multiple clusters without changing existing applications.
 Enables a truly open multicloud by providing advanced scheduling capabilities using Kubernetes-native APIs. Karmada
-It aims to provide convenient automation for multi-cluster application management in multicloud and hybrid cloud scenarios, with key features such as centralized multicloud management, high availability and fault recovery.
+It aims to provide convenient automation for multicluster application management in multicloud and hybrid cloud scenarios, with key features such as centralized multicloud management, high availability and fault recovery.
 **This article is based on Karmada's release version v1.4.2, and we will explore with you how Karmada's cross-cluster fault recovery is realized**,
 Which controllers and schedulers are involved in this process, and what capabilities each controller undertakes in this process, and what capabilities the scheduler undertakes,
 And how to ensure high availability and continuity of user business?
@@ -347,7 +347,7 @@ This article uses `Divided` as an example:
 
 ## Karmada fault recovery implementation principle
 
-In a multi-cluster scenario, user applications may be deployed in multiple clusters to improve high availability of services.
+In a multicluster scenario, user applications may be deployed in multiple clusters to improve high availability of services.
 In Karmada, when a cluster fails or the user does not want to continue running applications on the cluster, the cluster state is marked as unavailable and two taints are added.
 (images(images
 When a cluster failure is detected, the controller removes the application from the failed cluster. The removed applications will then be scheduled to other clusters that meet the requirements.

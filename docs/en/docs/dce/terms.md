@@ -710,7 +710,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 - Contour
 
     Contour is deployed as a control node and serves as the control plane for the microservice gateway,
-    providing convenient gateway configuration, dynamic configuration updates, and multi-cluster deployment
+    providing convenient gateway configuration, dynamic configuration updates, and multicluster deployment
     capabilities. Contour also provides the HTTPProxy CRD to enhance the core configuration capabilities of
     Kubernetes Ingress. It is recommended to deploy Contour in multiple replicas to ensure the stability of production services.
 
@@ -1671,7 +1671,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - PropagationPolicy
 
-    In Multicloud Management, [PropagationPolicy](../kairship/policy/propagation-policy.md) defines the distribution strategy for multicloud resource objects, supporting planning which workloads to deploy to which working clusters using specified clusters or labels. PropagationPolicy is an independent policy API that can define multi-cluster scheduling methods based on distribution requirements.
+    In Multicloud Management, [PropagationPolicy](../kairship/policy/propagation-policy.md) defines the distribution strategy for multicloud resource objects, supporting planning which workloads to deploy to which working clusters using specified clusters or labels. PropagationPolicy is an independent policy API that can define multicluster scheduling methods based on distribution requirements.
 
     - Supports 1:n `policy:workload`, and users do not need to repeat the scheduling constraints each time they create a multicloud application.
     - When using the default policy, users can interact directly with the Kubernetes API.

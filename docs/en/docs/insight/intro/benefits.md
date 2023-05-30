@@ -1,8 +1,8 @@
 # Benefits of Insight
 
-- Multi-cluster Management
+- Multicluster Management
 
-    Through the unified storage of metrics, logs and traces data in the Global clusters, the monitoring of multi-cluster can be realized and users can aggregate query of multi-cluster data.
+    Through the unified storage of metrics, logs and traces data in the Global clusters, the monitoring of multicluster can be realized and users can aggregate query of multicluster data.
 
 - Out-of-the-box
 

@@ -495,7 +495,7 @@ nav:
               - Join OCP to mesh: mspider/test/ocp.md
               - Openshift and mesh compatibility test: mspider/test/openshift.md
               - Multicloud deployment: mspider/user-guide/multicluster/multicluster-install.md
-              - Multicloud principle: mspider/user-guide/multicluster/multi-cluster-net.md
+              - Multicloud principle: mspider/user-guide/multicluster/multicluster-net.md
               - Multicloud grayscale release: mspider/user-guide/multicluster/gray-scale-release.md
           - Troubleshooting:
               - Index: mspider/troubleshoot/index.md

@@ -143,7 +143,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 
 #### Features
 
-- Multi-cluster management feature added.
+- Multicluster management feature added.
 - Support for multicloud interconnection added.
 - Service dependency analysis and visualization feature added.
 - New `dial` and `readinessProbe` options added to endpoint slice.

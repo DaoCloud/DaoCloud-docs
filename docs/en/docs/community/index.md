@@ -6,7 +6,7 @@
 
 === "Clusterpedia"
 
-One-stop encyclopedia of Kubernetes multi-cluster resources has been listed in CNCf landscape and selected for CNCF sandbox incubation.
+One-stop encyclopedia of Kubernetes multicluster resources has been listed in CNCf landscape and selected for CNCF sandbox incubation.
 **China Mobile** and more enterprises have deployed Clusterpedia to their production environment. [:octicons-arrow-right-24: Learn more](clusterpedia.md)
 
 === "cloutty"
@@ -15,7 +15,7 @@ So far, this is the first open-source web console developed for Kubernetes commu
 
 === "Ferry"
 
-Ferry is a Kubernetes multi-cluster communication component that eliminates communication differences between clusters as if they were in a single cluster,
+Ferry is a Kubernetes multicluster communication component that eliminates communication differences between clusters as if they were in a single cluster,
 regardless of their network environments. [:octicons-arrow-right-24: Learn more](ferry.md)
 
 === "HwameiStor"

@@ -2,7 +2,7 @@
 
 Multicloud Management supports viewing the deployment policy list of the current instance and its associated multicloud resources on the interface, supports creating and editing deployment policy information in the form of YAML and forms, and only provides a delete button for idle deployment policies.
 
-Deployment policies define how resources are distributed across multicloud and multi-cluster. Deployment policy (PropagationPolicy) is divided into namespace level and cluster level.
+Deployment policies define how resources are distributed across multicloud and multicluster. Deployment policy (PropagationPolicy) is divided into namespace level and cluster level.
 
 - Namespace-level deployment policy (PropagationPolicy) represents a policy that propagates a set of resources to one or more member clusters, and can only propagate resources in its own namespace.
 - A cluster-level deployment policy (ClusterPropagationPolicy) represents a cluster-wide policy for propagating a set of resources to one or more member clusters, capable of propagating cluster-level resources and resources in any namespace other than the system-reserved namespace.

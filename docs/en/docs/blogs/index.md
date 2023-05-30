@@ -171,7 +171,7 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20220810 | Cluster API Retrieval Has Never Been So Easy](https://mp.weixin.qq.com/s/8F20pchW6WhbEdlU56qFsg)
 
-    Clusterpedia is a CNCF sandbox project for cross-cluster complex resource retrieval. It can synchronize resources with multiple clusters and provide more powerful search functions based on Kubernetes OpenAPI compatibility to help you quickly, easily, and effectively obtain any multi-cluster resources.
+    Clusterpedia is a CNCF sandbox project for cross-cluster complex resource retrieval. It can synchronize resources with multiple clusters and provide more powerful search functions based on Kubernetes OpenAPI compatibility to help you quickly, easily, and effectively obtain any multicluster resources.
 
 - [20220808 | Introduction to Multicloud Management Capability of DCE 5.0](220808-kairship.md)
 

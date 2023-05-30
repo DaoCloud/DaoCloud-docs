@@ -5,7 +5,7 @@ hide:
 
 # System Structure
 
-The service mesh product enables multi-mesh management and multi-cluster service aggregation governance. Users can connect clusters from different sources to the mesh in a multicloud environment for unified traffic and security management.
+The service mesh product enables multi-mesh management and multicluster service aggregation governance. Users can connect clusters from different sources to the mesh in a multicloud environment for unified traffic and security management.
 
 In terms of overall architecture, service mesh products can be divided into three levels: global management module, hosted mesh module, and managed cluster mesh.
 

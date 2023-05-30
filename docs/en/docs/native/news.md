@@ -705,7 +705,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [VMware released the report "Kubernetes Usage Status 2022" on September 11](https://mp.weixin.qq.com/s/6gB6J1GfmD2GvXIqmvrflg)
 
-     The report pointed out that the number of Kubernetes clusters has grown rapidly, and 29% of companies have more than 50 clusters; multicloud dominates, and local deployment and single cloud lose their advantages; multi-cluster and multicloud security are new frontier issues.
+     The report pointed out that the number of Kubernetes clusters has grown rapidly, and 29% of companies have more than 50 clusters; multicloud dominates, and local deployment and single cloud lose their advantages; multicluster and multicloud security are new frontier issues.
 
      Click to view [full version report](http://vmwzadmin.incloudexpo.com/uploads/docs/2022/0804/VMware_StateOfKubernetes2022_eBook_042522_WEB.pdf)
 

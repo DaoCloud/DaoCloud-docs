@@ -7,9 +7,9 @@ hide:
 
 DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typical featuers currently supported are as follows.
 
-=== "[Multi-cluster management](../kpanda/intro/what.md)"
+=== "[Multicluster management](../kpanda/intro/what.md)"
 
-- Unified management of multi-cluster, supporting Kubernetes clusters in all version ranges to be included in the container management scope.
+- Unified management of multicluster, supporting Kubernetes clusters in all version ranges to be included in the container management scope.
 
 - Rapid cluster deployment. Rapidly deploys enterprise-level Kubernetes clusters on the Web UI, quickly builds enterprise-level container cloud platform, and adapt to the underlying environment of physical machines and VMs.
 

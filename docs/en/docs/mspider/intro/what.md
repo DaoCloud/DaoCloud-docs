@@ -1,6 +1,6 @@
 # What is Service Mesh?
 
-Service Mesh is a next-generation service mesh for cloud-native applications built on the open-source Istio technology. It is a fully managed product with high performance and usability, providing a complete non-intrusive microservice governance solution that can uniformly manage the complex environment of multicloud and multi-cluster.
+Service Mesh is a next-generation service mesh for cloud-native applications built on the open-source Istio technology. It is a fully managed product with high performance and usability, providing a complete non-intrusive microservice governance solution that can uniformly manage the complex environment of multicloud and multicluster.
 
 Service Mesh offers users service traffic governance, security governance, and service traffic monitoring. It also provides access to traditional microservices (SpringCloud, Dubbo) in the form of infrastructure.
 
@@ -30,7 +30,7 @@ DCE 5.0 Service Mesh offers several advantages compared to other products:
 
 - Enhanced Performance and Increased Reliability: The Service Mesh control plane and data plane are more reliable and performance-optimized based on the community version.
 
-- Multicloud, Multi-cluster, Multi-infrastructure: Provides an O&M-free hosting control plane and offers multicloud and multi-cluster global unified service governance, security, and service operation monitoring capabilities. It also provides unified service discovery and management for multiple infrastructures such as containers and virtual machines (VMs).
+- Multicloud, Multicluster, Multi-infrastructure: Provides an O&M-free hosting control plane and offers multicloud and multicluster global unified service governance, security, and service operation monitoring capabilities. It also provides unified service discovery and management for multiple infrastructures such as containers and virtual machines (VMs).
 
 - Protocol Extensions: Extend the support of Dubbo protocol.
 

@@ -77,7 +77,7 @@ Solution advantages: Include software products from ten major fields of ecologic
 
 === "Multicloud Management"
 
-Multi-cluster and multicloud deployments have become the norm among users, and they hope to complete multicloud unified release and have the ability of cross-cloud disaster recovery and backup
+Multicluster and multicloud deployments have become the norm among users, and they hope to complete multicloud unified release and have the ability of cross-cloud disaster recovery and backup
 
 Involved modules: [Container Management](../kpanda/intro/what.md), [Multicloud Management](../kairship/intro/what.md), [Container Network](../network/intro/what-is-net.md), Edge Cloud Synergy, Xinchuang Cloud
 

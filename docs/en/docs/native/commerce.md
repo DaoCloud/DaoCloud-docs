@@ -74,7 +74,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Azure Releases AKS Fleet Manager (Public Preview)](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
 
-    Azure Kubernetes Fleet Manager treats multiple cluster sites as a single cluster to be managed. Users can manage multiple clusters by creating a Fleet resource. Users can treat existing AKS clusters as member clusters, join them to the fleet, and then orchestrate multiple cluster scenarios such as Kubernetes resource propagation and multi-cluster load balancing using metadata from those clusters.
+    Azure Kubernetes Fleet Manager treats multiple cluster sites as a single cluster to be managed. Users can manage multiple clusters by creating a Fleet resource. Users can treat existing AKS clusters as member clusters, join them to the fleet, and then orchestrate multiple cluster scenarios such as Kubernetes resource propagation and multicluster load balancing using metadata from those clusters.
 
 - [AliCloud Container Service ACK April Product Update](https://mp.weixin.qq.com/s/z4PBLXxsn691cgYtfBOZaA)
 
@@ -111,7 +111,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Alibaba Cloud distributed cloud container platform ACK One update](https://mp.weixin.qq.com/s/TC1KA_xWpVAwZMFAgVmNfg)
 
-     Update: Integrate ArgoCD to achieve multi-cluster GitOps continuous delivery, optimize multi-cluster application distribution; unified configuration alert rules, support configuration of cluster-specific differential alert rules, support automatic synchronization of alert rules to new associated clusters.
+     Update: Integrate ArgoCD to achieve multicluster GitOps continuous delivery, optimize multicluster application distribution; unified configuration alert rules, support configuration of cluster-specific differential alert rules, support automatic synchronization of alert rules to new associated clusters.
 
 - [Alibaba Cloud Container Service ACK Yunqi Conference Update](https://mp.weixin.qq.com/s/cOObDVvnTGkX_hiAWv8mVA)
 
@@ -206,7 +206,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [D2iQ Kubernetes Platform v2.3 release](https://docs.d2iq.com/dkp/2.3/2-3-release-notes)
 
-     The main new features of this version: support for Kubernetes 1.23, support for application configuration and deployment in a multi-cluster environment, support for Amazon EKS and GCP, support for multiple availability zones, support for configuring custom domain names and certificates for each cluster, and adding automaticAssisted troubleshooting capabilities.
+     The main new features of this version: support for Kubernetes 1.23, support for application configuration and deployment in a multicluster environment, support for Amazon EKS and GCP, support for multiple availability zones, support for configuring custom domain names and certificates for each cluster, and adding automaticAssisted troubleshooting capabilities.
 
 - [DaoCloud Enterprise 5.0 released](https://mp.weixin.qq.com/s/7UkIwCp78trO126XQxEL6A)
 
@@ -444,7 +444,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [PerfectScale Launches Kubernetes Cost Management SaaS Platform of the same name](https://www.perfectscale.io/blog/perfectscales-saas-platform-is-now-available)
 
     PerfectScale is the industry's first continuous optimization solution built specifically to improve the persistence and cost effectiveness of K8s environments.
-    Using artificial intelligence algorithms to evaluate usage patterns and performance and cost metrics, the platform provides multi-cluster, multicloud observability, support for elasticity and performance risk detection, resource waste detection, the
+    Using artificial intelligence algorithms to evaluate usage patterns and performance and cost metrics, the platform provides multicluster, multicloud observability, support for elasticity and performance risk detection, resource waste detection, the
     supports problem prioritization, provides GitOps-friendly remediation recommendations, supports predicting the impact of system changes on the environment, and more.
 
 - [Portworx Enterprise 2.12 Cloud Native Data Management Platform Release](https://docs.portworx.com/release-notes/portworx/#2-12-0)
@@ -564,7 +564,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - Solo.io releases cloud native gateway [Gloo Gateway](https://www.solo.io/blog/announcing-gloo-gateway/) and CNI plugin [Gloo Network](https://www.solo.io/blog/announcing-gloo-network/)
 
-     Gloo Gateway is built on Envoy and utilizes the multi-tenancy and federation features of Gloo Platform, allowing users to easily manage gateway access for multiple development teams and multi-cluster traffic management. Gloo Network builds on Cilium and integrates the Kubernetes CNI layer as a component of the Gloo Platform.
+     Gloo Gateway is built on Envoy and utilizes the multi-tenancy and federation features of Gloo Platform, allowing users to easily manage gateway access for multiple development teams and multicluster traffic management. Gloo Network builds on Cilium and integrates the Kubernetes CNI layer as a component of the Gloo Platform.
 
 - [Spectro Cloud Cloud Native Edge Computing Platform Palette Edge Platform v3.3 Released](https://docs.spectrocloud.com/release-notes#edge)
 
@@ -684,11 +684,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Venafi Launches TLS Protect for Kubernetes, a Cloud-Native Machine Identity Management Service](https://venafi.com/blog/simplify-cloud-native-machine-identity-management-with-tls-protect-for-kubernetes/)
 
      TLS Protect for Kubernetes is part of Control Plane for Machine Identities, Venafi's platform for machine identity management.
-     Helps security and platform teams manage cloud-native machine identities such as TLS, mTLS, and SPIFFE in multicloud and multi-cluster Kubernetes environments, enhancing the observability, control, and automation of machine identity management.
+     Helps security and platform teams manage cloud-native machine identities such as TLS, mTLS, and SPIFFE in multicloud and multicluster Kubernetes environments, enhancing the observability, control, and automation of machine identity management.
 
 - [Volcano Engine Releases Distributed Cloud Native Platform DCP](https://mp.weixin.qq.com/s/Fz7R8R0keKFEryq8zQKFoA)
 
-    [DCP](https://www.volcengine.com/product/dcp) is an enterprise-level cloud native unified management platform for multicloud and multi-Kubernetes cluster scenarios, providing unified management and operation and maintenance of multicloud clusters, cross-cluster distribution of applications, unified traffic control and other capabilities, DCP provides unified management and operation and maintenance of Volcano Engine container clusters, third-party clusters and self-built clusters; provides cross-cluster and cross-cloud elastic scheduling capability based on cluster federation and other technologies; provides multi-cluster service discovery, multi-cluster unified portal access and other capabilities; enables application data recovery and cross-cluster/cloud application migration based on backup data.
+    [DCP](https://www.volcengine.com/product/dcp) is an enterprise-level cloud native unified management platform for multicloud and multi-Kubernetes cluster scenarios, providing unified management and operation and maintenance of multicloud clusters, cross-cluster distribution of applications, unified traffic control and other capabilities, DCP provides unified management and operation and maintenance of Volcano Engine container clusters, third-party clusters and self-built clusters; provides cross-cluster and cross-cloud elastic scheduling capability based on cluster federation and other technologies; provides multicluster service discovery, multicluster unified portal access and other capabilities; enables application data recovery and cross-cluster/cloud application migration based on backup data.
 
 - [VMware Tanzu Releases Kubernetes DevOps Platform VMware Tanzu Application Platform 1.5](https://tanzu.vmware.com/content/blog/tanzu-application-platform-1-5-ga)
 
@@ -698,7 +698,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Update: Tanzu Service Mesh CLI supports GitOps, which can be used to automatically deploy Tanzu Service Mesh environments to clusters; supports selecting the namespace to inject proxy sidecar into; supports enterprise-level proxy communication between client clusters and Tanzu Service Mesh SaaS.
 
-- [VWware Tanzu multicloud Multi-Cluster Kubernetes Management Solution Tanzu Mission Control Update](https://docs.vmware.com/en/VMware-Tanzu-Mission-Control/services/rn/vmware-tanzu-mission-control-release-notes/index.html)
+- [VWware Tanzu multicloud Multicluster Kubernetes Management Solution Tanzu Mission Control Update](https://docs.vmware.com/en/VMware-Tanzu-Mission-Control/services/rn/vmware-tanzu-mission-control-release-notes/index.html)
 
      Update: Support for Pod-safe mutation policy, support for Tanzu Kubernetes Grid 2.1 (including ClusterClass), support for continuous delivery of cluster groups, and support for installing Helm charts from Git repositories into clusters.
 
