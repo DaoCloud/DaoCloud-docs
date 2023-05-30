@@ -315,7 +315,7 @@ nav:
               - Jenkins scenario configuration: amamba/quickstart/scenarios-config.md
               - Using a custom toolchain in Jenkins: amamba/user-guide/tools/jenkins-custom.md
       - Multicloud Management:
-          - introduce:
+          - Intro:
               - What is Multicloud Management: kairship/intro/what.md
               - Feature overview: kairship/intro/features.md
               - Product Architecture: kairship/intro/architecture.md
@@ -345,11 +345,11 @@ nav:
               - Multicloud namespace: kairship/resource/ns.md
               - Multicloud configuration item: kairship/resource/configmap.md
               - Multicloud secret: kairship/resource/secret.md
-              - Multicloud routing: kairship/resource/ingress.md
+              - Multicloud ingress: kairship/resource/ingress.md
               - Update multicloud service: kairship/resource/update-service.md
               - Update multicloud secret: kairship/resource/update-secret.md
               - Update multicloud configuration items: kairship/resource/update-configmap.md
-              - More multicloud routing: kairship/resource/update-ingress.md
+              - More multicloud ingress: kairship/resource/update-ingress.md
           - Policy management:
               - Deployment policy: kairship/policy/propagation-policy.md
               - Differentiation strategy: kairship/policy/override-policy.md
