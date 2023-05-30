@@ -19,6 +19,7 @@
 2. 直接使用 [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) 以及 [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) 下的默认镜像。
 
     默认镜像如下：
+    
     - release.daocloud.io/skoala/demo/envoy-authz-java:0.1.0
     - release-ci.daocloud.io/skoala/demo/envoy-authz-java:0.1.0
 
