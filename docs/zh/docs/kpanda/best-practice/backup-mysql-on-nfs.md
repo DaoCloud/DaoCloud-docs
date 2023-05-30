@@ -1,6 +1,11 @@
-# 对 Mysql 应用及数据进行跨集群备份恢复+
+# 对 Mysql 应用及数据进行跨集群备份恢复
 
 在本 demo 中，我们将基于第五代产品的应用备份功能，实现一个有状态应用的跨集群备份迁移。
+
+## 视频教程
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kpanda-velero.mp4" preload="metadata" poster="../images/kpanda-velero.png"></video>
+</div>
 
 ## 前提
 
