@@ -25,13 +25,13 @@ DCE 5.0 服务网格相比其他产品具备以下优势：
 
 - 策略化的智能路由与弹性流量管理
 
-    支持为服务配置负载均衡、服务路由、故障注入、熔断等治理规则。
+    支持为服务配置负载均衡、服务路由、故障注入、离群检测等治理规则。
     结合一站式治理系统；提供实时的、可视化的微服务流量管理；
     支持无侵入智能流量治理，应用无需任何改造，即可进行动态的智能路由和弹性流量管理。
 
     - 权重、内容、TCP/IP 等路由规则。
     - HTTP 会话保持，满足业务处理持续性诉求。
-    - 限流、熔断，实现服务间链路稳定、可靠。
+    - 限流、离群检测，实现服务间链路稳定、可靠。
     - 网络长连接管理降低资源损耗，提升网络吞吐量。
     - 服务安全认证：认证、鉴权、审计等，提供服务安全保障基石。
 
@@ -106,9 +106,9 @@ flowchart TD
     class managed,private,external,global,namespace,workload plain
     class install,service,gateway,traffic,watch,upgrade,security,entry,virtual,peer,cluster,sidecar,sidecarm,watch2 cluster
 
-    click install "https://docs.daocloud.io/mspider/install/"
-    click managed "https://docs.daocloud.io/mspider/user-guide/service-mesh/create-mesh/"
-    click private "https://docs.daocloud.io/mspider/user-guide/service-mesh/create-mesh/"
+    click install "https://docs.daocloud.io/mspider/install/install/"
+    click managed "https://docs.daocloud.io/mspider/user-guide/service-mesh/"
+    click private "https://docs.daocloud.io/mspider/user-guide/service-mesh/"
     click external "https://docs.daocloud.io/mspider/user-guide/service-mesh/external-mesh/"
     click cluster "https://docs.daocloud.io/mspider/user-guide/cluster-management/join-clus/"
     click global "https://docs.daocloud.io/mspider/user-guide/sidecar-management/global-sidecar/"

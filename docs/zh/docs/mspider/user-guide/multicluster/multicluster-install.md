@@ -30,9 +30,9 @@
 
 添加 Label 可以通过容器管理平台找到对应的集群，给相应节点配置 Label
 
-![image-20221214101221559](images/add-node-label.png)
+![image-20221214101221559](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-node-label.png)
 
-![image-20221214101633044](images/add-node-labels2.png)
+![image-20221214101633044](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-node-labels2.png)
 
 ### 网格规划
 
@@ -103,9 +103,9 @@
 
 如果不是通过容器管理平台创建的集群，例如已经存在的集群，或者通过自定义方式（类似 kubeadm 或 Kind 集群）创建的集群都需要将集群接入容器管理平台。
 
-![接入集群](images/kpanda-import-cluster0.png)
+![接入集群](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-import-cluster0.png)
 
-![接入集群](images/kpanda-import-cluster.png)
+![接入集群](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-import-cluster.png)
 
 ### 确认可观测组件（可选）
 
@@ -115,11 +115,11 @@
 
 其他方式需要在容器管理界面中，找到本集群中的 `Helm 应用`，选择 `insight-agent` 安装。
 
-![Helm 应用](images/kpanda-insgiht-agent-check.png)
+![Helm 应用](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-insgiht-agent-check.png)
 
-![安装 insight](images/kpanda-install-insight-agent.png)
+![安装 insight](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-install-insight-agent.png)
 
-![安装 insight](images/kpanda-install-insight-agent1.png)
+![安装 insight](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-install-insight-agent1.png)
 
 ## 网格部署
 
@@ -129,7 +129,7 @@
 
 首先在网格管理页面 -> `创建网格`：
 
-![创建网格](images/create-mesh1.png)
+![创建网格](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-mesh1.png)
 
 创建网格的具体参数如图显示：
 
@@ -140,7 +140,7 @@
 5. 负载均衡 IP：该参数为暴露控制面的 Istiod 所需要的参数，需要预先准备
 6. 镜像仓库：在私有云中，需要将网格所需的镜像上传仓库，公有云建议填入 `release.daocloud.io/mspider`
 
-![上传镜像](images/create-mesh2.png)
+![上传镜像](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-mesh2.png)
 
 网格处于创建中，需要等待网格创建完成后，状态由 `创建中`转变成`运行中`；
 
@@ -150,7 +150,7 @@
 
 确保网格状态正常后，观察控制面集群`mdemo-cluster1`的 `istio-system` 下面的 Service 是否都成功绑定了 LoadBalancer IP。
 
-![绑定 lb ip](images/hosted-istiod-lb-check.png)
+![绑定 lb ip](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/hosted-istiod-lb-check.png)
 
 发现托管网格控制面的服务`istiod-mdemo-cluster-hosted-lb` 的没有分配 LoadBalancer IP 需要额外处理。
 
@@ -178,7 +178,7 @@ curl -I "${hosted_istiod_ip}:443"
 
     在网格 `mdemo-mesh` 控制面集群 `mdemo-cluster1` 中去确认托管网格控制面服务 `istiod-mdemo-mesh-hosted-lb` 已经分配 LoadBalancer IP 以后，并且记录其 IP，示例如下：
 
-    ![确认](images/hosted-istiod-lb-ip.png)
+    ![确认](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/hosted-istiod-lb-ip.png)
 
     确认托管网格控制面服务 `istiod-mdemo-mesh-hosted-lb` `EXTERNAL-IP` 为 `10.64.30.72`。
 
@@ -193,11 +193,11 @@ curl -I "${hosted_istiod_ip}:443"
     - 在 YAML 中 `.spec.ownerConfig.controlPlaneParams` 字段增加 `istio.custom_params.values.global.remotePilotAddress` 参数；
     - 其值为上文中记录的 `istiod-mdemo-mesh-hosted-lb` `EXTERNAL-IP` 地址：`10.64.30.72`。
 
-    ![增加参数](images/get-gm-crd.png)
+    ![增加参数](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/get-gm-crd.png)
 
-    ![增加参数](images/edit-gm-yaml.png)
+    ![增加参数](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/edit-gm-yaml.png)
 
-    ![增加参数](images/edit-gm-yaml1.png)
+    ![增加参数](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/edit-gm-yaml1.png)
 
 ### 添加工作集群
 
@@ -205,15 +205,15 @@ curl -I "${hosted_istiod_ip}:443"
 
 1. 等待网格控制面创建成功后，选中对应网格，进入网格管理页面 -> `集群纳管` -> `添加集群`：
 
-    ![添加集群](images/add-cluster1.png)
+    ![添加集群](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-cluster1.png)
 
 1. 选中所需的工作集群后，等待集群安装网格组件完成；
 
-    ![安装组件](images/add-cluster2.png)
+    ![安装组件](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-cluster2.png)
 
 1. 在接入过程中，集群状态会由`接入中`转变成`接入成功`：
 
-    ![接入成功](images/add-cluster3.png)
+    ![接入成功](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-cluster3.png)
 
 #### 检测多云控制面是否正常
 
@@ -221,7 +221,7 @@ curl -I "${hosted_istiod_ip}:443"
 
 验证工作集群 Istio 相关组件是否能运行正常，需要在工作集群中检查 `istio-system` 命名空间下的 `istio-ingressgateway` 是否能够正常运行：
 
-![验证](images/check-work-istiod.png)
+![验证](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/check-work-istiod.png)
 
 ## 不同网络模式的网格组件安装与配置
 
@@ -255,11 +255,11 @@ Istio 要求用户每个工作集群安装 Istio 时，显示的定义`网络 ID
         - 需要确认集群角色 `global.clusterRole: HOSTED_WORKLOAD_CLUSTER` 是否为工作集群
     - 添加参数 `istio.custom_params.values.global.network`，其值按照最初的[规划表单](#_8)中的网络 ID：`network-c2`
 
-    ![编辑 YAML](images/add-network-id1.png)
+    ![编辑 YAML](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-network-id1.png)
 
-    ![编辑 YAML](images/add-network-id2.png)
+    ![编辑 YAML](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-network-id2.png)
 
-    ![编辑 YAML](images/add-network-id3.png)
+    ![编辑 YAML](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-network-id3.png)
 
 重复上述步骤，给所有工作集群 (`mdemo-cluster1、mdemo-cluster2、mdemo-cluster3`) 加上`网络 ID`。
 
@@ -272,9 +272,9 @@ Istio 要求用户每个工作集群安装 Istio 时，显示的定义`网络 ID
 
 下面以 mdemo-cluster3 为例，找到`命名空间`，选中 `istio-system` -> `修改标签`。
 
-![标识网络 ID](images/edit-istio-system-label.png)
+![标识网络 ID](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/edit-istio-system-label.png)
 
-![标识网络 ID](images/add-istio-system-networkid.png)
+![标识网络 ID](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-istio-system-networkid.png)
 
 ### 手动安装东西网关
 
@@ -355,9 +355,9 @@ EOF
 3. 选中 `istio-system` 命名空间
 4. 点击`创建 YAML`
 
-![创建网关实例](images/create-ew.png)
+![创建网关实例](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-ew.png)
 
-![创建网关实例](images/create-ew2.png)
+![创建网关实例](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-ew2.png)
 
 ### 创建东西网关 Gateway 资源
 
@@ -407,7 +407,7 @@ istio.custom_params.values.global.meshNetworks.network-c3.gateways[0].address: 1
 istio.custom_params.values.global.meshNetworks.network-c3.gateways[0].port: '15443'  # cluster3 东西网关端口
 ```
 
-![增加参数](images/add-gm-meshnetowork0.png)
+![增加参数](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-gm-meshnetowork0.png)
 
 ## 网络连通性 demo 应用与验证
 
@@ -442,13 +442,13 @@ mdemo-cluster1 | :heart: VERSION=vc3 | :heart:
 - **helloworld** 工作负载增加对应的版本**环境变量**
     - SERVICE_VERSION: ${VERSION}
 
-![部署demo](images/create-demo11.png)
+![部署demo](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-demo11.png)
 
-![部署demo](images/create-demo22.png)
+![部署demo](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-demo22.png)
 
-![部署demo](images/create-demo33.png)
+![部署demo](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-demo33.png)
 
-![部署demo](images/create-demo55.png)
+![部署demo](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-demo55.png)
 
 #### 命令行部署 demo
 
@@ -521,25 +521,25 @@ while true; do kubectl exec -n sample -c sleep  \
 
 集群创建可以存在多种方式，推荐使用容器管理中的创建集群功能，但是用户可以选择其他创建方式，本文提供的其他方案可以参考拓展章节的[其他创建集群方式](#_26)
 
-![创建集群](images/kpanda-create-cluster1.png)
+![创建集群](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-create-cluster1.png)
 
-![创建集群](images/kpanda-create-cluster2.png)
+![创建集群](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-create-cluster2.png)
 
-![创建集群](images/kpanda-create-cluster3.png)
+![创建集群](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-create-cluster3.png)
 
-![创建集群](images/kpanda-create-cluster4.png)
+![创建集群](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-create-cluster4.png)
 
 可以灵活的选择集群需要拓展的组件，网格的可观测能力必须依赖 Insight-agent
 
-![安装 insight](images/kpanda-create-cluster5.png)
+![安装 insight](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-create-cluster5.png)
 
 如果集群需要定义更多的集群高级配置，可以在本步骤添加。
 
-![集群高级配置](images/kpanda-create-cluster6.png)
+![集群高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-create-cluster6.png)
 
 创建集群需要等待 30 分钟左右。
 
-![等待](images/kpanda-create-cluster7.png)
+![等待](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-create-cluster7.png)
 
 #### 通过 kubeadm 创建集群
 
@@ -605,9 +605,9 @@ kind create cluster --config kind-cluster2.yaml --name mdemo-kcluster2
 
 推荐使用容器管理平台中 `Helm 应用` -> `Helm 模板` -> 找到 metallb -> `安装`。
 
-![安装 metallb](images/install-metallb-from-helm.png)
+![安装 metallb](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/install-metallb-from-helm.png)
 
-![安装 metallb](images/install-metallb-from-helm1.png)
+![安装 metallb](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/install-metallb-from-helm1.png)
 
 ##### 手动安装
 
@@ -693,4 +693,4 @@ curl -I 10.6.230.71:8080
 
 通过容器管理的集群列表界面，通过搜索`集群角色：全局服务集群`。
 
-![全局服务集群](images/get-kpanda-global-cluster.png)
+![全局服务集群](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/get-kpanda-global-cluster.png)

@@ -5,138 +5,107 @@ hide:
 
 # DaoCloud Enterprise 5.0
 
-DaoCloud Enterprise 5.0 is a high-performance, scalable cloud-native operating system. It can provide a consistent and stable experience in any infrastructure and environment, supporting heterogeneous clouds, edge clouds, and multi-cloud orchestration. DCE 5.0 integrates the latest service mesh and microservice technologies, which can track the entire lifecycle of each traffic, help you understand the detailed metrics of clusters, nodes, applications, and services, and visualize the health status of applications through dynamic dashboards and topology maps.
+DaoCloud Enterprise 5.0 is a high-performance, scalable cloud-native operating system. It can provide a consistent and stable experience in any infrastructure and environment, supporting heterogeneous clouds, edge clouds, and Multicloud Management. DCE 5.0 integrates the latest service mesh and microservice technologies, which can track the entire lifecycle of each traffic, help you understand the detailed metrics of clusters, nodes, applications, and services, and visualize the health status of applications through dynamic dashboards and topology maps.
 
-DCE 5.0 natively supports the DevOps development and operation mode, which can realize the standardization and automation of the entire application delivery process, and integrates various selected databases and middleware to make operation and maintenance governance more efficient. Each product module is independently decoupled, supports flexible upgrades, has no impact on business, and can be docked with many cloud-native ecological products to provide a complete solution system. It has been tested in production scenarios by nearly a thousand industry customers, building a solid and reliable digital foundation, helping enterprises define digital boundaries, and unleashing cloud-native productivity.
+DCE 5.0 natively supports the DevOps development and operation mode, which can realize the standardization and automation of the entire app delivery process, and integrates various selected databases and middleware to make operation and maintenance governance more efficient. Each product module is independently decoupled, supports flexible upgrades, has no impact on business, and can be docked with many cloud-native ecological products to provide a complete solution system. It has been tested in production scenarios by nearly a thousand industry customers, building a solid and reliable digital foundation, helping enterprises define digital boundaries, and unleashing cloud-native productivity.
 
 <div class="grid cards" markdown>
 
-- :fontawesome-solid-jet-fighter-up: **Installation** [Install Community and Commercial releases](../install/intro.md)
-- :octicons-container-16: **Container Management** [Manage multi-cluster containers and pods](../kpanda/intro/WhatisKPanda.md)
-- :fontawesome-solid-user-group: **Global Management** [Login, user and access, appearance](../ghippo/intro/what.md)
-- :material-monitor-dashboard: **Observability** [One-stop graphical dashboard](../insight/intro/WhatisInsight.md)
-- :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](../amamba/intro/WhatisAmamba.md)
-- :material-cloud-check: **Multicloud Orchestration** [Manage multi-cloud instances, workloads, policies](kairship/01product/whatiskairship.md)
-- :material-engine: **Microservice Engine** [Microservice registry and gateway](../skoala/intro/features.md)
-- :material-table-refresh: **Service Mesh** [Non-intrusive service governance](../mspider/intro/WhatismSpider.md)
-- :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](../middleware/midware.md)
-- :material-warehouse: **Container Registry** [Integrate and manage registries](../kangaroo/intro.md)
+- :fontawesome-solid-jet-fighter-up: **Install** [Install Community Release and Commercial Release](../install/intro.md)
+- :octicons-container-16: **Container management** [Cluster/node/workload infrastructure](../kpanda/intro/what.md)
+- :fontawesome-solid-user-group: **Global Management** [Set login/permissions/appearance](../ghippo/intro/what.md)
+- :material-monitor-dashboard: **Observability** [One-stop graphical dashboard](../insight/intro/what.md)
+- :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](../amamba/intro/what.md)
+- :material-cloud-check: **Multicloud Management** [Multicloud instance/load/policy](../kairship/intro/what.md)
+- :material-engine: **Microservice Engine** [Microservice Governance and Gateway](../skoala/intro/what.md)
+- :material-table-refresh: **Service Mesh** [Non-intrusive service governance](../mspider/intro/what.md)
+- :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](../middleware/what.md)
+- :material-warehouse: **Container Registry** [Registry integration and hosting service](../kangaroo/what.md)
 - :material-dot-net: **Network** [Multi-CNI fusion solution](../network/intro/what-is-net.md)
-- :floppy_disk: **Storage** [Comprehensive solution for containerized storage](../storage/intro/what.md)
+- :floppy_disk: **Storage** [Containerized storage](../storage/what.md)
 
 </div>
 
-![modules](../images/dce-modules04.jpg)
+![modules](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/dce-modules04.jpg)
 
 In the past eight years, DaoCloud has invested huge to explore and develop a cloud-native operating system with custom and scalable modules to facilitate your business digitalization. You can use each module like a LEGO brick, with zero downtime while upgrading any module. DCE 5.0 is also easy to integrate with hundreds of cloud-native ecological plugins, so you can simply customize solutions for different scenarios. Things go better with such a kind of modular style to grow day by day.
 
-=== "Multicloud Orchestration"
+=== "Multicloud Management"
 
-    **Applicable scenarios**: The deployment of multicloud and multi-cluster in an enterprise has become the norm, and it is hoped to have the capabilities of multicloud app release and cross-cloud disaster recovery.
+     Supports unified and centralized management of multicloud and hybrid clouds, provides cross-cloud resource retrieval and cross-cloud application deployment, release, and operation and maintenance capabilities, realizes efficient management and control of multicloud applications, provides elastic scaling of applications based on cluster resources, and achieves global load balancing. The fault recovery capability can effectively solve the problem of multicloud application disaster recovery, and help enterprises build multicloud and hybrid cloud digital infrastructure.
 
-    **Benefits**: Using innovative technologies to orchestrate disaster recovery (DR) across clouds, this solution has high concurrent performance of cross-cloud resource retrieval, and can help your IT departments quickly plan and implement DR capabilities in combination with the capabilities of the Container Management to adapt to various scenarios such as edge and Xinchuang.
+     **Modules involved**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Multicloud Management](../kairship/intro/what.md), [cloud native network](../network/intro/what-is-net.md), [cloud native storage](../storage/what.md), Heterogeneous architecture
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [Multi-cloud Orchestration](../kairship/intro/whatiskairship.md), [network](../network/intro/what-is-net.md), [Storage](../storage/intro.md), cloud to edge continuum, Heterogeneous architecture
+    ![multicloud](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/01multicloud.jpg)
 
-    ![multi-cloud](../images/01multi-cloud.jpg)
+=== "Data Middleware Service"
 
-=== "Middleware Service"
+     The cloud-native local storage capability specially designed for stateful applications meets the high I/O storage requirements of middleware and improves the efficiency of operation and maintenance management. Select middleware such as various databases, distributed messages, and log retrieval,
+     It provides middleware management capabilities for the whole life cycle of multi-tenancy, deployment, observation, backup, operation and maintenance operations, etc., and realizes self-service application, elastic expansion, high concurrent processing, and high stability and high availability of data services.
 
-    **Applicable scenarios**: An enterprise has an app architecture that relies on mainstream middleware capabilities. It is hoped to run and maintain middleware in a unified manner and get more professional support capabilities for middleware planning, operation, and maintenance (O&M).
+     **Related modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Cloud Native Network](../network/intro/what-is-net.md), [cloud native storage](../storage/what.md), [selected middleware](../middleware/what.md)
 
-    **Benefits**: This solution has selected middlewares with a consistent UI to manage, with the help of HwameiStor capabilities designed for stateful applications, providing features of multi-tenant, deployment, observation, backup, operation and maintenance of the whole lifecycle of middleware management capabilities.
-
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [network](../network/intro/what-is-net.md), [Storage](../storage/intro.md), [Middleware](../middleware/midware.md)
-
-    ![data](../images/02data.jpg)
+    ![data](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/02data.jpg)
 
 === "Microservice Governance"
 
-    **Applicable scenarios**
+     Provides non-intrusive traffic management functions, supports non-sensing access to traditional microservices, cloud-native microservices, and open source microservice frameworks, and realizes the integrated management of existing microservice systems and old and new microservice systems of enterprises.
+     Support the full life cycle management of microservices from development, deployment, access, observation, operation and maintenance, provide high-performance cloud-native microservice gateways, and ensure the continuous availability of microservice applications; introduce the independent open source eBPF mesh acceleration technology to comprehensively improve Traffic forwarding efficiency.
 
-    An enterprise decides to adopt a microservice architecture or has already adopted microservices, hopes to obtain a full range of technical support and O&M capabilities such as a microservice framework, or hopes to use service mesh technologies, and tries to achieve smoothness in the process of digital transformation.
+     **Related modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Microservice Engine](../skoala/intro/what.md), [Service Mesh](../mspider/intro/what.md), [Observability](../insight/intro/what.md), [Workbench](../amamba/intro/what.md), [Cloud Native Network](../network/intro/what-is-net.md), [Cloud Native Storage](../storage/what.md)
 
-    - The enterprise doesn't want to change anything, but just wants to view various service states via a panoramic view, and hopes to easily troubleshoot faults with traces and logs.
-    - The enterprise has the idea of tranforming from the traditional microservice framework to service mesh, but it is more conservative. It is hoped that there will be a transition period for the gradual transformation. At this time, it is more suitable to use a service mesh solution.
-    - The enterprise hopes to directly tranform to service mesh. In this case, it is a good idea to remove Eureka-related components and directly use the microservice engine and service mesh.
-    - The enterprise does not want to tranform from traditional microservices to mesh, but wants to do east-west traffic management.
+    ![microservie engine](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/03msgov.jpg)
 
-    **Benefits**
+=== "Observability"
 
-    Seamless integrate with legacy and popular microservice technologies, such as the first-generation microservices represented by SpringCloud and Dubbo and the new generation of microservices represented by Istio service mesh, with the lifecycle management capabilities of development, deployment, joining, exposing to external, observation, and O&M. Seamlessly add the existing microservice system of the enterprise, provide the complete capabilities of managed microservice governance, and offer the high-performance cloud-native microservice gateway.
+     Based on logs, traces, metrics, eBPF and other technical means, comprehensive collection of service data, in-depth acquisition of request link information, dynamic observation, multi-dimensional control of real-time changes in clusters, nodes, applications and services,
+     Realize the query of all clusters and load observation data through a unified control plane, introduce topology analysis technology to visualize the application health status, and realize second-level fault location.
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [Microservice Engine](../skoala/intro/features.md), [Service Mesh](../mspider/intro/WhatismSpider.md), [Insight](../insight/intro/WhatisInsight.md), [App Workbench](../amamba/intro/WhatisAmamba.md), [Network](../network/intro/what-is-net.md), Storage
+     *[eBPF]: Extended Berkeley Packet Filter, which is a component of the Linux kernel that can run sandboxed programs in the kernel
 
-    ![microservie engine](../images/03msgov.jpg)
+     **Modules involved**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Observability](../insight/intro/what.md), [cloud-native network](../network/intro/what-is-net.md), [cloud-native storage](../storage/what.md)
 
-=== "Insight"
-
-    **Applicable scenarios**: An enterprise has a weak capability to watch running applications, and hopes to complete the Insight through a lightweight or unmodified method, to get a panaramic view for current apps with logs, metrics, traces.
-
-    **Benefits**: This solution provides in-depth and subtle observation of the current app status. With a comprehensive dashboard, you can query all cluster and workload data. It supports for microservice architecture, service mesh, eBPF-based network, and other observation capabilities.
-
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [Insight](../insight/intro/WhatisInsight.md), [Network](../network/intro/what-is-net.md), Storage
-
-    ![Observability](../images/04insight.jpg)
+    ![Observability](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/04insight.jpg)
 
 === "App Store"
 
-    **Applicable scenarios**: An enterprise wants to obtain out-of-the-box cloud native apps capabilities for some exclusive scenarios
+     Include software products from ecological partners in ten major fields such as big data, AI, middleware, realize the integration of ecological technology, products, operation services and other capabilities, provide out-of-the-box ecological application software, and create a complete solution system.
 
-    **Benefits**: This solution provides the ecological capabilities including software products from partners,  with a complete software stack to meet the actual business needs. Where, you can easily find, test, and deploy middlewares running on DaoCloud Enterprise 5.0 with a development process of low-code or no-code.
-
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [network](../network/intro/what-is-net.md), Storage, App Store, Product Ecosystem
+     **Related modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Cloud Native Network](../network/intro/what-is-net.md), [cloud native storage](../storage/what.md), app store, product ecology
 
 === "App Delivery"
 
-    **Applicable scenarios**: An enterprise adopts cloud-native technology on a large scale, and expects to promote cloud-native technology to a wider range by combining with DevOps concepts.
+     Realize self-service migration to the cloud through a consistent and scalable app delivery process, support flexible tenant systems, dynamically adapt to user organizational structure planning and real-time resource allocation, based on cloud-native CI/CD pipelines, integrate rich tool chains and support pipelines Efficient concurrent execution flow,
+     Automate the construction and deployment of applications, innovatively introduce Gitops and progressive delivery capability systems, and achieve more refined management and operation of applications.
 
-    **Benefits**: With a consistent workflow to deliver apps, this solution supports a hierarchical multi-tenant system, seamlessly adapts to the user's organizational structure to plan resource allocation, automates app build and deployment with the CI/CD pipelines, and innovatively introduces the GitOps progressive delivery capability.
+     **Modules involved**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Workbench](../amamba/intro/what.md), [container registry](../kangaroo/what.md), [cloud native network](../network/intro/what-is-net.md), [cloud native storage](../storage/what.md)
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.md), [workbench](../amamba/intro/WhatisAmamba.md), [Container Registry](../kangaroo/intro.md), [Network](../network/intro/what-is-net.md), Storage
-
-    ![app delivery](../images/06appdeliv.jpg)
-
-=== "Cloud Native Base"
-
-    **Applicable scenarios**: The O&M team of an enterprise needs to undertake tasks to maintain thousands of clusters, and the cluster network needs to meet the traditional network supervision requirements.
-
-    **Benefits**: 
-
-    Breaking through the performance bottleneck of Kubernetes API, this solution supports for ultra-large scale clusters concurrently, and provides full life-cycle management capabilities from deployment, rolling update, certificate management, configuration settings, and garbage collection.
-
-    - MacVLAN solution
-    - SR-IOV smart network acceleration solution
-    - SpiderPool IPAM solution
-    - Clilum eBPF-based network solution
-    - Underlay and Overlay network continuum
-
-    All clusters and workloads are managed through Clusterpedia. This solution is compatible with joining standard Kubernetes clusters, breaking through the performance bottleneck of Kubernetes API and supporting thousands of users using it at the same time.
-
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.md), [container lifecycle manager](../community/kubean.md), [Network](../network/intro/what-is-net.md), Storage
+    ![app delivery](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/06appdeliv.jpg)
 
 === "Heterogeneous architecture"
 
-    **Applicable scenarios**: An enterprise needs to set up heterogeneous infrastructure. For example, the CPU processor must be from one of Loongson, Hygon, Phytium, Kunpeng, Intel; and the operating system must be KirinOS, UOS, OpenEuler, etc.
+     Adopt heterogeneous cloud-native technology architecture, compatible with domestic chips and servers, support heterogeneous operating system and heterogeneous application ecosystem, shield the complexity of underlying heterogeneous infrastructure, and adapt traditional operating systems from software ecological compatibility that requires long-term accumulation liberated from
+     Realize the flexible scheduling of mixed heterogeneous clusters, ensure the stability and reliability of heterogeneous application operating environment, and help heterogeneous process to further speed up.
 
-    **Benefits**: This solution can consolidate heterogeneous cloud-native capabilities for government sectors and state-owned factories, supports domestic chips and servers in the north, and supports heterogeneous operating system and app ecosystem in containers in the south.
+     **Related modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Cluster Lifecycle Management](../community/kubean.md), [heterogeneous Middleware](../middleware/what.md), [Cloud Native Network](../network/intro/what-is-net.md), [Cloud Native Storage](../storage/what.md)
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.md), [Container lifecycle manager](../community/kubean.md), [Middware](../middleware/midware.md), [Network](../network/intro/what-is-net.md), Storage
+    ![Heterogeneous](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/08xinchuan.jpg)
 
-    ![Heterogeneous](../images/08xinchuan.jpg)
+=== "Cloud to Edge Continuum"
 
-=== "Cloud to edge continuum"
+     Extend the cloud-native capabilities to the edge, adopt the edge cluster and edge node mode, move the computing power of the data center down, and move up the computing power of the end device, and unify the control and scheduling of discrete and heterogeneous computing resources to solve the problem of massive edge and end devices. Unify the requirements of large-scale app delivery, operation and maintenance, and management and control on the Internet, and realize the true integration of cloud and edge.
 
-    **Applicable scenarios**: An enterprise designs an edge collaboration solution on the basis of cloud, edge, and terminal. The edge is a general computing platform and has strict computing requirements. The edge supports several deployment modes: edge node, edge cluster, data center computing downwards, edge device computing upwards.
+     **Related modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Cluster Lifecycle Management](../community/kubean.md), [cloud native network](../network/intro/what-is-net.md), [cloud native storage](../storage/what.md), weak network cluster
 
-    **Benefits**: This solution extends the general cloud-native framework, empowers the edge computing capability, uniformly manages and controls all edge clusters and nodes. Based on the traditional three-tier model of cloud, edge, and terminal. To meet the strict edge computing requirements, this solution provides a four-tier model from cloud to edge continuum by adding the edge clusters and nodes.
+    ![Cloud to edge continuum](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/09cloud-edge.jpg)
 
-    **Modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda../kpanda/intro/WhatisKPanda.md), [Container lifecycle manager](../community/kubean.md), [Network](../network/intro/what-is-net.md), Storage, Edge nodes, clusters in a weak network
+=== "Cloud Native Base"
 
-    ![Cloud to edge continuum](../images/09cloud-edge.jpg)
+     Provide cloud native computing, [network](../network/intro/what-is-net.md), storage and other capabilities, compatible with various cluster access, support the whole life of the cluster from deployment, version upgrade, certificate change, configuration change, recycling, etc. Cycle management breaks through K8s API performance bottlenecks and enables large-scale enterprise users to use multiple clusters concurrently.
+     For the enterprise environment, provide scenario-based network solutions to maximize the reuse of the current enterprise network infrastructure and lower the threshold for enterprises to use cloud-native applications.
 
-Just like Lego bricks, it combines dozens of the best open source technologies into a platform. After many dialectical selection, adaptation and running-in, coding debugging, and massive testing, a sword is sharpened in ten years. The new generation of containerized platforms can meet the needs of various scenarios for enterprises migrating to the cloud.
+     **Related modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Cluster Lifecycle Management](../community/kubean.md), [cloud-native full-scenario network](../network/intro/what-is-net.md), [cloud-native storage](../storage/what.md)
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
-[Free Trial](license0.md){ .md-button .md-button--primary }
+[Free Trial](./license0.md){ .md-button .md-button--primary }

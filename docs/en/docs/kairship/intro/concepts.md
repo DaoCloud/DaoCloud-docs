@@ -3,15 +3,15 @@ hide:
   - toc
 ---
 
-# Basic concept
+# Basic Concepts
 
-The glossary in this section defines the core concepts behind multicloud orchestration to help you build a mental model of how multicloud orchestration works.
+This section defines the core concepts behind Multicloud Management to help you build a mental model of how it works.
 
-- Resource templates: Multicloud orchestration software defines Kubernetes Native APIs for federated resource templates, allowing easy integration with existing tools already adopted by Kubernetes.
-- PropagationPolicy: Multicloud orchestration software provides an independent propagation (set) strategy API to define multi-cluster scheduling and propagation requirements.
-    - Mapping and workload support 1:n. Users do not need to specify scheduling constraints every time they create a federated application.
-    - With the default policy, users can directly interact with the Kubernetes API.
+- Resource Template: Multicloud Management uses Kubernetes Native API definitions as united resource templates, making it easy to integrate with existing tools already adopted by Kubernetes.
+- Propogation Policy (PP): Multicloud Management provides an independent propagation strategy API to address multicluster scheduling and propagation requirements.
+    - Mapping and workload support 1:n. Users do not need to specify scheduling constraints at each creation of a multicloud applications.
+    - By using default policies, users can interact directly with the Kubernetes API.
 
-- OverridePolicy: The multicloud orchestration software provides an independent Override Policy API for specifically automating cluster-related configurations.
-    - Override image prefixes based on member cluster regions.
-    - Override StorageClass based on cloud provider used.
+- Override Policy (OP): Multicloud Management provides an independent Override Policy API, specifically for automatiically differentiating cluster-related configurations.
+    - Cover image prefix based on member cluster regions.
+    - Override StorageClass based on the cloud provider used.

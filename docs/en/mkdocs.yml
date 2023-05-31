@@ -96,15 +96,16 @@ plugins:
   
   - redirects:
       redirect_maps:
-        "en/en/install/install-dce.md": "en/install/install-dce-community.md"
+        "en/en/install/install-dce.md": "en/install/intro.md"
 
-  - git-revision-date: #每页底部显示文档最后更新日期，安装 pip install mkdocs-git-revision-date-plugin
+  - git-revision-date: # Display the last update date on the bottom of each page, install with 'pip install mkdocs-git-revision-date-plugin'
       enabled_if_env: "CI"
-  - git-revision-date-localized: #每个页面底部添加本地化更新和创建日期，安装 pip install mkdocs-git-revision-date-localized-plugin
+  - git-revision-date-localized: # Add localized creation and update dates on the bottom of each page, install with 'pip install mkdocs-git-revision-date-localized-plugin'
       timezone: Asia/Shanghai
-      type: timeago #日期格式，有效值为 date、datetime、iso_date、iso_datetimetimeago
-      fallback_to_build_date: true #默认 false，启用则回退到 mkdocs build 执行的时间
-      enable_creation_date: true #最后更新日期旁边显示与页面关联的文件的创建日期
+      type: timeago # Date format, valid values are 'date', 'datetime', 'iso_date', 'iso_datetime' and 'timeago'
+      fallback_to_build_date: true # Default is false, enables fallback to time when mkdocs build was executed
+      enable_creation_date: true # Show the file creation date next to the last update date
+
       exclude:
         - index.md
       enabled: !ENV [ENABLED_GIT_REVISION_DATE, true]

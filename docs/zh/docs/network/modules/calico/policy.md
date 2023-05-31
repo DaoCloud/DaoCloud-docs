@@ -263,12 +263,12 @@ Calico 的 Policy 实现依赖于 `IPtables`。
 
 - 当规则数增加到 1000 条以上时，`IPtables` 模式下的吞吐量大幅度增加。
 
-![Throughput](../../images/throughput.svg)
+![Throughput](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/throughput.svg)
 
 - 当规则数增加到 1000 条以上时，`IPtables` 模式下的 CPU 使用量大幅度增加。
 
-![CPU Usage](../../images/cpu-saturated.svg)
+![CPU Usage](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/cpu-saturated.svg)
 
 - 当规则数增加到 1000 条以上时，`IPtables` 模式下的延迟大幅度增加。
 
-![Latency](../../images/latency-with-iptables.svg)
+![Latency](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/latency-with-iptables.svg)

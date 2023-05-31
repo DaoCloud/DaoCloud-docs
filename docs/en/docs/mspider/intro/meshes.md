@@ -3,83 +3,82 @@ hide:
   - toc
 ---
 
-# Functions supported by the UI interface
+# Features Supported by Graphical User Interface
 
-The DCE service mesh supports three types of meshs: hosted mesh, dedicated mesh, and external mesh.
-On the UI interface, the functions supported by these three meshs are as follows.
+The DCE service mesh supports three types of meshes: hosted mesh, dedicated mesh, and External mesh. The user interface provides the following functions for each type of mesh:
 
-**mesh Management**
+## Mesh Management
 
-| Subclasses | Managed meshs | Proprietary meshs | External meshs |
+| Features | Hosted mesh | Dedicated mesh | External mesh |
 | :--: | :------: | :------: | :------: |
 | Create | √ | √ | √ |
-| Configuration | √ | √ | √ |
+| Configure | √ | √ | √ |
 | Delete | √ | √ | √ |
 
-**mesh Overview**
+## Mesh Overview
 
-| Subclasses | Managed meshs | Proprietary meshs | External meshs |
-| :------: | :------: | :------: | :------: |
-| mesh Overview | √ | √ | √ |
+| Features | Hosted mesh | Dedicated mesh | External mesh |
+| :--: | :------: | :------: | :------: |
+| Overview | √ | √ | √ |
 
-**Cluster Management**
+## Cluster Management
 
-| Subclasses | Managed meshs | Proprietary meshs | External meshs |
+| Features | Hosted mesh | Dedicated mesh | External mesh |
 | :--: | :------: | :------: | :------: |
 | Access | √ | × | × |
 | Remove | √ | × | × |
 
-**Service Management**
+## Service Management
 
-| Subclasses | Managed meshs | Proprietary meshs | External meshs |
+| Features | Hosted mesh | Dedicated mesh | External mesh |
 | :------------------: | :------: | :------: | :------: |
-| Service List | √ | √ | √ |
+| List Services | √ | √ | √ |
 | Service Details | √ | √ | √ |
-| Service Editor | √ | √ | √ |
-| Service entry (addition, deletion, modification and query) | √ | √ | √ |
+| Edit Service | √ | √ | √ |
+| Manage Service Entry (add, delete, modify, query) | √ | √ | √ |
 
-**Traffic management**
+## Traffic Management
 
-| Subclasses | Managed meshs | Proprietary meshs | External meshs |
+| Features | Hosted mesh | Dedicated mesh | External mesh |
 | :------------------: | :------: | :------: | :------: |
-| Virtual service (add, delete, modify, check) | √ | √ | √ |
-| Target rules (add, delete, modify, check) | √ | √ | √ |
-| Gateway rules (add, delete, modify, check) | √ | √ | √ |
+| Virtual Service (add, delete, modify, check) | √ | √ | √ |
+| Target Rules (add, delete, modify, check) | √ | √ | √ |
+| Gateway Rules (add, delete, modify, check) | √ | √ | √ |
 
-**Security Governance**
+## Security Governance
 
-| Subclasses | Managed meshs | Proprietary meshs | External meshs |
+| Features | Hosted mesh | Dedicated mesh | External mesh |
 | ------------------------ | -------- | -------- | ------ -- |
-| Peer-to-peer identity authentication (addition, deletion, modification and query) | √ | √ | √ |
-| Request identity authentication (addition, deletion, modification and query) | √ | √ | √ |
-| Authorization policy (addition, deletion, modification and query) | √ | √ | √ |
+| Peer Authentication (add, delete, modify, query) | √ | √ | √ |
+| Request Authentication (add, delete, modify, query) | √ | √ | √ |
+| Authorization Policy (add, delete, modify, query) | √ | √ | √ |
 
-**data monitoring**
+## Traffic Monitor
 
-| Subclasses | Managed meshs | Proprietary meshs | External meshs |
+| Features | Hosted mesh | Dedicated mesh | External mesh |
 | :--: | :------: | :------: | :------: |
 | Topology | √ | √ | √ |
-| Chart | √ | √ | √ |
+| Charts | √ | √ | √ |
 
-**Sidecar Management**
+## Sidecar Management
 
-| Subclasses | Managed meshs | Proprietary meshs | External meshs |
-| :------: | :------: | :------: | :------: |
+| Features | Hosted mesh | Dedicated mesh | External mesh |
+| :--: | :------: | :------: | :------: |
 | Injection | √ | √ | √ |
 | Uninstall | √ | √ | √ |
 | Resource Limit | √ | √ | × |
 
-**mesh Gateway**
+## Mesh Gateway
 
-| Subclasses | Managed meshs | Proprietary meshs | External meshs |
+| Features | Hosted mesh | Dedicated mesh | External mesh |
 | :--: | :------: | :------: | :------: |
 | Create | √ | √ | × |
 | Delete | √ | √ | × |
 | Settings | √ | √ | × |
 
-**Istio Resource Management**
+## Istio Resource Management
 
-| Subclasses | Managed meshs | Proprietary meshs | External meshs |
+| Features | Hosted mesh | Dedicated mesh | External mesh |
 | :--: | :------: | :------: | :------: |
 | Create | √ | √ | √ |
 | Edit | √ | √ | √ |

@@ -21,15 +21,15 @@ class sdk,workload,otel,jaeger,es cluster
 
 1. 使用 DCE 5.0 平台，进入`可观测性`，选择左侧导航栏的 `仪表盘`。
 
-    ![insight 入口](../images/insight01.png)
+    ![insight 入口](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insight01.png)
 
 2. 点击仪表盘标题`概览`。
 
-    ![概览](../images/insight02.png)
+    ![概览](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insight02.png)
 
 3. 切换到 `insight-system` -> `insight tracing debug` 仪表盘。
 
-    ![tracing debug](../images/insighttrace01.png)
+    ![tracing debug](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insighttrace01.png)
 
 4. 可以看到该仪表盘由三个区块组成，分别负责监控不同集群、不同组件传输链路的数据情况。通过生成的时序图表，检查链路数据传输是否存在问题。
 
@@ -37,7 +37,7 @@ class sdk,workload,otel,jaeger,es cluster
     - global opentelemetry collector
     - global jaeger collector
 
-    ![tracing debug](../images/insighttrace02.png)
+    ![tracing debug](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insighttrace02.png)
 
 ## 区块介绍
 
@@ -45,7 +45,7 @@ class sdk,workload,otel,jaeger,es cluster
 
     展示不同工作集群的 `opentelemetry collector` 在接受 language probe/SDK 链路数据，发送聚合链路数据情况。可以通过左上角的 `Cluster` 选择框选择所在的集群。
 
-    ![tracing debug](../images/insighttrace03.png)
+    ![tracing debug](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insighttrace03.png)
 
     !!! note
 
@@ -55,7 +55,7 @@ class sdk,workload,otel,jaeger,es cluster
 
     展示`全局服务集群`的 `opentelemetry collector` 在接收`工作集群`中 `otel collector` 链路数据以及发送聚合链路数据的情况。
 
-    ![tracing debug](../images/insighttrace04.png)
+    ![tracing debug](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insighttrace04.png)
 
     !!! note
 
@@ -65,4 +65,4 @@ class sdk,workload,otel,jaeger,es cluster
 
     展示`全局管理集群`的 `jaeger collector` 在接收`全局管理集群`中 `otel collector` 的数据，并发送链路数据到 [ElasticSearch 集群](../../middleware/elasticsearch/intro/what.md)的情况。
 
-    ![tracing debug](../images/insighttrace05.png)
+    ![tracing debug](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insighttrace05.png)

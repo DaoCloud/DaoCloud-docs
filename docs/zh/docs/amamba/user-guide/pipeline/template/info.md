@@ -12,8 +12,8 @@
 | name | string | 参数名称 | - | 必填 |
 | displayName | []byte | 表单上显示的名称，长度小于X个字符 | “” | 非必填 |
 | description | string | 参数的描述 | “” | 非必填 |
-| default | json.Value | 默认值，如果填了则该字段是选填，否则是必填 | nil | 非必填 |
-| type | string | 参数的类型支持请看参数类型(需要链接到下面) | string | 必填 |
+| default | json.Value | 为对应的参数设置默认值| nil | 非必填 |
+| type | string | 参数的类型, 支持布尔值、下拉列表、凭证、密码、文本 | string | 必填 |
 
 ## 支持的参数类型
 

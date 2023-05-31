@@ -10,7 +10,7 @@ The cloud-native gateway refers to a gateway developed based on the cloud-native
 The most notable feature of the cloud-native gateway is that the runtime configuration of the gateway can be defined in a declarative manner, and the configuration can be automatically generated through the declaration of the control plane.
 The functions of the cloud-native gateway are basically similar to those of the microservice gateway, such as authentication, routing, monitoring, load balancing, caching, service upgrading and upgrading, static response processing, flow control, logging, retrying, circuit breaking, etc.
 
--Sentinel
+- Sentinel
 
     Sentinel is a flow control component for distributed service architecture. It mainly takes flow as the entry point to ensure the stability of microservices from multiple dimensions such as flow control, fuse degradation, and system adaptive protection.
     Sentinel has a wealth of application scenarios, and has undertaken the core scenarios of Alibaba's Double Eleven traffic promotion in the past 10 years. Sentinel has complete real-time monitoring, and users can see the second-level data of a single machine connected to the application in the console.

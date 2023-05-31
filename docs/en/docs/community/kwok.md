@@ -1,27 +1,27 @@
 # KWOK (`K`ubernetes `W`ith`O`ut `K`ubelet)
 
-{ align=right }
+![kwok](https://docs.daocloud.io/daocloud-docs-images/docs/community/images/kwok.png){ align=right }
 
-[kwok](https://sigs.k8s.io/kwok) is a toolkit that enables setting up a cluster of thousands of Nodes in seconds.
-Under the scene, all Nodes are simulated to behave like real ones, so the overall approach employs
-a pretty low resource footprint that you can easily play around on your laptop.
+KWOK is an open source project independently developed by DaoCloud and managed by the Kubernetes-SIG community.
 
-So far we provide two tools:
+[KWOK](https://sigs.k8s.io/kwok) can build a cluster of thousands of nodes in seconds.
+In this scenario, all simulated nodes behave like real nodes, so the overall footprint is very small, and you can easily do this on a laptop.
 
-- **Kwok:** Core of this repo. It simulates thousands of fake Nodes.
-- **Kwokctl:** A CLI to facilitate creating and managing clusters simulated by Kwok.
+So far, two tools are provided:
 
-Please see [https://kwok.sigs.k8s.io](https://kwok.sigs.k8s.io) for more in-depth information.
+- **kwok:** simulates thousands of fake nodes.
+- **kwokctl:** A CLI to simplify creating and managing KWOK simulated clusters.
 
-![manage clusters](./images/manage-clusters.svg)
+See [https://kwok.sigs.k8s.io/](https://kwok.sigs.k8s.io/) for more in-depth information.
 
-## Community, discussion, contribution, and support
+![Manage Clusters](https://docs.daocloud.io/daocloud-docs-images/docs/community/images/manage-clusters.svg)
 
-Learn how to engage with the Kubernetes community on the [community page](http://kubernetes.io/community/).
+## Community, Discussion, Contribution and Support
 
-You can reach the maintainers of this project at:
+The maintainers of this project can be reached at:
 
 - [Slack](https://kubernetes.slack.com/messages/sig-scheduling)
-- [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling)
+- [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling)
 
-[Go to kwok repo](https://github.com/kubernetes-sigs/kwok){ .md-button }
+[Learn about KWOK](https://github.com/kubernetes-sigs/kwok){ .md-button }
+[KWOK blog post](../blogs/230301-kwok.md){ .md-button }

@@ -1,22 +1,22 @@
-# delete domain name
+# Delete a domain name
 
-The microservice gateway supports full lifecycle management of domain names hosted in a unified manner, including adding, updating, and deleting domain names. Through domain name management, a domain name can be applied to multiple APIs in the gateway, and gateway policies at the domain name level can be configured.
+The microservice gateway supports the full lifecycle management of domain names, including adding, updating, and deleting domain names. Through domain name management, you can apply a domain name to multiple apis of the gateway and configure gateway policies at the domain name level.
 
 !!! danger
 
-    - The domain name being used by the API cannot be deleted. You need to delete the related API before deleting the domain name.
-    - Once a domain name is deleted, it cannot be restored.
+    - A domain name that is being used by the API cannot be deleted. You need to delete the API before deleting the domain name.
+    - The domain name cannot be restored after being deleted.
 
-There are two ways to delete a domain name.
+You can delete a domain name in two ways.
 
-- Find the domain name that needs to be deleted on the `Domain Management` page, click **`ⵗ`** and select `Delete`.
+- In the `Domain Management` page to find the need to delete the domain name, the click ** `ⵗ` ** and select `Delete`.
 
-    
+    <!--![]()screenshots-->
 
-- Click the domain name to enter the details page of the domain name, click the **`ⵗ`** operation in the upper right corner of the page and select `Delete`.
+- Click on the page to enter details of the domain name, domain name at the upper right corner of the page by clicking on the ** `ⵗ` ** hold and select `Delete`.
 
-    
+    <!--![]()screenshots-->
 
-    If the domain name is being used by an API, you need to be prompted on the page to click `View Service Details` to delete the corresponding API. <!--Update the description after the ui is updated-->
+    If the domain name is being used by an API, click `Check Service Details` to delete the corresponding API. 
 
-    
+    <!--![]()screenshots-->

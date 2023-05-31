@@ -1,42 +1,41 @@
 # Automatic management service
 
-The successfully added service will appear on the service list page, and you can also select the service in the list as the target backend service when adding an API. The microservice gateway supports adding services through manual access and automatic management. This page describes how to automatically manage services.
+The services that are successfully added will be displayed on the service list page. You can also select the services in the list as the target back-end services when adding apis. The microservice gateway supports manual access and automatic management to add services. This page describes how to automatically manage services.
 
-After [Gateway instance creation](../gateway/create-gateway.md) is successful, the services in the service source <!--link to be added--> will be automatically added to the service list of the gateway instance, no need to manually Add to.
+After [created a gateway](../gateway/create-gateway.md) succeeds, the services in the service source are automatically added to the service list of the gateway instance without manual addition.
 
-## View automatically managed services
+## View automatic managed services
 
-1. Click the name of the target gateway on the `Microservice Gateway List` page, enter the gateway overview page, and click `Service Access`-->`Service List` in the left navigation bar.
+1. In the `Gateway List` page click on the name of the target gateway, enter the gateway overview page, in the left navigation bar click `Add Service` -- > `Service List`.
 
-    
+    <!--![]()screenshots-->
 
-2. On the `Service List` page, click `Automatic Management`.
+2. On the `Service List` page click `Auto Add`.
 
-    
+    <!--![]()screenshots-->
 
 ## Configure service policy
 
-1. Find the target service on the `Service List`->`Automatic Management` page, click **`ⵗ`** on the right side and select `Policy Configuration`.
+1. In the `Service List` -- > `Auto Add` page to find the target service, on the right side click ** `ⵗ` ** choose `Policy Settings`.
 
-    
+    <!--![]()screenshots-->
 
-2. Adjust the service policy configuration as needed, and click `OK` in the lower right corner of the pop-up box.
+2. To adjust the service policy configuration as required, click `OK` in the lower right corner of the pop-up box.
 
-    - HTTPS certificate verification: After it is enabled, the service must pass the certificate verification to successfully access the service.
-    - Service fusing: When any of the maximum number of connections, maximum number of processed connections, maximum number of parallel requests, and maximum number of parallel retries **any one** indicator reaches the set threshold, the call to the service is automatically cut off to protect the overall system availability. When the indicator drops to the set threshold, the call to the service is automatically resumed.
+    - HTTPS certificate verification: After HTTPS is enabled, you must pass certificate verification to access the service successfully.
+    - Service circuit breaker: When the maximum number of connections, processing connections, parallel requests, and parallel retries ** Any one ** reaches the threshold, service calls are automatically cut off to protect the overall system availability. When the metric drops to a set threshold, calls to the service are automatically resumed.
 
-        
+        <!--![]()screenshots-->
 
-## View service details
+## Viewing service details
 
-1. Find the target service on the `Service List`->`Automatic Management` page, and click the service name.
+1. Locate the target service on the `Service List` -> `Auto Add` page and click on the service name.
 
-    
+    <!--![]()screenshots-->
 
-2. Check the service name, source, associated API and other information. Support installation sorting by `last update time`.
+2. View information such as the service name, source, and associated API. Supports sorting by installing `Last Update`.
 
-    
+    <!--![]()screenshots-->
 
 !!! info
 
-    For automatically managed services, only the above operations are supported, and operations to update and delete services are not supported.

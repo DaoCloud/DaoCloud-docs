@@ -4,38 +4,36 @@ hide:
   - toc
 ---
 
-# 安装组件 insight-agent
+# 在线安装 insight-agent
 
-请确认您的集群已成功接入`容器管理`平台，然后执行以下步骤安装 insight-agent 来采集数据。
+`insight-agent` 是集群观测数据采集的插件，支持对指标、链路、日志数据的统一观测。本文描述了如何在在线环境中为接入集群安装 insight-agent。
 
-1. 从左侧导航栏进入`容器管理`，进入`集群列表`。
+## 前提条件
 
-    ![进入集群列表](../../images/login01.png)
+- 集群已成功接入 `容器管理 模块。如何接入集群，请参考：
 
-1. 点击要安装 insight-agent 的集群名称。
+## 操作步骤
 
-    ![点击集群名称](../../images/login02.png)
+1. 进入`容器管理`模块，在`容器列表`中点击要安装 insight-agent 的集群名称。
 
-1. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到 `insight-agent`，点击该磁贴卡片。
+     ![安装](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insight-agent01.png)
 
-    ![找到 insight-agent](../../images/installagent01.png)
+2. 选择左侧导航栏 `Helm 应用 -> Helm 模版`，在搜索框查询 `insight-agent` ，点击该卡片进入详情。
 
-1. 选择合适的版本，点击`安装`。
+     ![安装](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insight-agent02.png)
 
-    ![安装](../../images/installagent02.png)
+3. 查看 insight-agent 的 Readme，点击`安装` 进入下一步。
 
-1. 填入名称，选择命名空间和版本后，在 yaml 文件中分别填写 logging、metric、audit、trace 上报数据的地址。
+     ![安装](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insight-agent03.png)
 
-    系统默认已填写数据上报的组件的地址，仍请您检查无误后再点击`确定` 进行安装。
-    如需修改数据上报地址，请参考[获取数据上报地址](gethosturl.md)。
+4. 选择安装的版本并在下方表单分别填写全局管理集群中对应数据存储组件的地址，确认填写的信息无误后，点击`确定` 。
 
-    ![填表](../../images/installagent03.png)
+      - insight-agent 默认部署在集群的 insight-system 命名空间下。
+      - 建议安装最新版本的 insight-agent。
+      - 系统默认已填写数据上报的组件的地址，仍请您检查无误后再点击`确定` 进行安装。 如需修改数据上报地址，请参考：[获取数据上报地址](./gethosturl.md)。
 
-1. 系统将自动返回 `Helm 应用`，当应用状态从 `未就绪`变为`已部署` 时，表示 insight-agent 安装成功。
+     ![安装](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insight-agent04.png)
 
-    ![成功](../../images/login03.png)
+5. 系统将自动返回 `Helm 应用` 列表，当应用 insight-agent 的状态从 `未就绪` 变为 `已部署` ，且所有的组件状态为 `运行中` 时，则安装成功。等待一段时间后，可在`可观测性` 模块查看该集群的数据。
 
-    !!! note
-
-        - 点击最右侧的 `⋮`，在弹出菜单中可以执行`更新`、`查看 YAML` 和`删除`等更多操作。
-        - 有关实际安装演示，请观看[安装 insight-agent 的视频演示](../../../videos/insight.md#_6)
+     ![安装](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insight-agent05.png)

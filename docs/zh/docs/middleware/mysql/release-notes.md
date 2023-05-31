@@ -2,6 +2,22 @@
 
 本页列出 MySQL 数据库的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023-04-27
+
+### v0.8.1
+
+#### 新功能
+
+- **新增** `mcamel-mysql` 详情页面展示相关的事件
+- **新增** `mcamel-mysql` openapi 列表接口支持 Cluster 与 Namespace 字段过滤
+- **新增** `mcamel-mysql` 自定义角色
+- **新增** `mcamel-mysql` 对接 HwameiStor，支持存储容量展示（需要手动创建 HwameiStor exporter ServiceMonitor）
+
+#### 升级
+
+- **升级** 优化 调度策略增加滑动按钮
+
+
 ## 2023-03-28
 
 ### v0.7.0

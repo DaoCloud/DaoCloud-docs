@@ -10,8 +10,10 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 离线包           | 版本    | 下载                                          | 更新日期   |
 | ---------------- | ------- | ------------------------------------------- | -------- |
-| offline-community-v0.6.1-arm64.tar | v0.6.1 | [:arrow_right: 下载页](./free/dce5-installer-v0.6.1.md) | 2023-04-12 |
-| offline-community-v0.6.1-amd64.tar | v0.6.1 | [:arrow_right: 下载页](./free/dce5-installer-v0.6.1.md) | 2023-04-12 |
+| offline-community-v0.7.0-arm64.tar | v0.7.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.7.0.md) | 2023-05-09 |
+| offline-community-v0.7.0-amd64.tar | v0.7.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.7.0.md) | 2023-05-09 |
+
+[更多历史版本](./free/dce5-installer-history.md)
 
 ## 下载商业版
 
@@ -19,8 +21,10 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 离线包            | 版本    | 下载                                        | 更新日期   |
 | ---------------- | ------- | ----------------------------------------- | -------- |
-| offline-v0.6.1-arm64.tar | v0.6.1 | [:arrow_right: 下载页](./business/dce5-installer-v0.6.1.md) | 2023-04-12 |
-| offline-v0.6.1-amd64.tar | v0.6.1 | [:arrow_right: 下载页](./business/dce5-installer-v0.6.1.md) | 2023-04-12 |
+| offline-v0.7.0-arm64.tar | v0.7.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.7.0.md) | 2023-05-09 |
+| offline-v0.7.0-amd64.tar | v0.7.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.7.0.md) | 2023-05-09 |
+
+[更多历史版本](./business/dce5-installer-history.md)
 
 ## 下载 Addon 离线包
 
@@ -28,8 +32,8 @@ DCE 5.0 针对不同的应用场景提供了完善的 Addon，您可以按需下
 
 | 离线包            | 版本    | 下载                                        | 更新日期   |
 | ---------------- | ------- | ----------------------------------------- | -------- |
-| addon-offline-full-package-v0.5.2-amd64.tar.gz | v0.5.2 AMD64 | [:arrow_right: 下载页](./addon/v0.5.2.md) | 2023-03-14 |
-| addon-offline-full-package-v0.5.2-arm64.tar.gz | v0.5.2 ARM64 | [:arrow_right: 下载页](./addon/v0.5.2.md) | 2023-03-14 |
+| addon-offline-full-package-v0.7.0-amd64.tar.gz | v0.7.0 AMD64 | [:arrow_right: 下载页](./addon/v0.6.0.md) | 2023-05-09 |
+| addon-offline-full-package-v0.7.0-arm64.tar.gz | v0.7.0 ARM64 | [:arrow_right: 下载页](./addon/v0.6.0.md) | 2023-05-09 |
 
 ## 下载子模块
 
@@ -39,6 +43,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 | -------- | -------- | -------------------------------------------- | ---------- |
 | 全局管理 | 440 MB   | [:arrow_right: 下载页](./modules/ghippo.md)  | 2023-05-31 |
 | 可观测性 | 2.41 GB  | [:arrow_right: 下载页](./modules/insight.md) | 2022-12-30 |
+| 网络 spidernet | 55.47 MB | [:arrow_right: 下载页](./modules/spidernet.md) | 2023-04-26 |
 
 !!! note
 
@@ -47,7 +52,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
     - 若有任何疑问，请[提出反馈](https://github.com/DaoCloud/DaoCloud-docs/issues)。
     - 欢迎扫描二维码，与开发者畅快交流：
 
-    ![社区版交流群](../images/assist.png)
+    ![社区版交流群](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
 
 [安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

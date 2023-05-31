@@ -26,15 +26,15 @@
 
 2. 在工作负载详情页面，点击`弹性伸缩`页签，在 `CronHPA` 右侧点击 `安装`。
 
-    ![工作负载](../../images/installcronhpa.png)
+    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/installcronhpa.png)
 
 3. 阅读该插件的相关介绍，选择版本后点击`安装`按钮。推荐安装 `1.3.0` 或更高版本。
 
-    ![工作负载](../../images/installcronhpa1.png)
+    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/installcronhpa1.png)
 
 4. 参考以下说明配置参数。
 
-    ![工作负载](../../images/installcronhpa2.png)
+    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/installcronhpa2.png)
 
     - 名称：输入插件名称，请注意名称最长 63 个字符，只能包含小写字母、数字及分隔符（“-”），且必须以小写字母或数字开头及结尾，例如 kubernetes-cronhpa-controller。
     - 命名空间：选择将插件安装在哪个命名空间，此处以 `default` 为例。
@@ -57,4 +57,4 @@
 
 6. 回到工作负载详情页面下的`弹性伸缩`页签，可以看到界面显示 `插件已安装`。现在可以开始创建 CronHPA 策略了。
 
-    ![工作负载](../../images/installcronhpa3.png)
+    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/installcronhpa3.png)

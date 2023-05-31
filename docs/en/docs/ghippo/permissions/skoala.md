@@ -1,6 +1,6 @@
 # Description of Microservice Engine Permissions
 
-[Microservice engine](../../skoala/intro/features.md) includes two parts: microservice management center and microservice gateway. The microservice engine supports three user roles:
+[Microservice engine](../../skoala/intro/what.md) includes two parts: microservice management center and microservice gateway. The microservice engine supports three user roles:
 
 - Workspace Admin
 - Workspace Editor
@@ -118,8 +118,8 @@ You have permission to use `&check;`, but you don't have permission to use `&cro
 | | Add | &check; | &check; | &cross; |
 | | edit | &check; | &check; | &cross; |
 | | delete | &check; | &check; | &check; |
-| Monitor Alarm | View | &check; | &check; | &check; |
+| Monitor Alert | View | &check; | &check; | &check; |
 
 !!! note
 
-    For a complete introduction to role and access management, please refer to [Role and Access Management](../04UserGuide/01UserandAccess/Role.md).
+    For a complete introduction to role and access management, please refer to [Role and Access Management](../user-guide/access-control/role.md).

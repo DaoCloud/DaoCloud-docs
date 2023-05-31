@@ -1,6 +1,6 @@
 # Uninstall
 
-Run the following commands in sequence to uninstall DCE 5.0 Community Pacakge from the cluster. 
+Run the following commands in sequence to uninstall DCE 5.0 Community Package from the cluster.
 
 !!! warning
 
@@ -18,4 +18,5 @@ helm -n insight-system uninstall insight-agent insight
 helm -n ipavo-system uninstall ipavo
 helm -n kpanda-system uninstall kpanda
 helm -n istio-system uninstall istio-base istio-ingressgateway istiod
+kubectl delete namespace mcamel-system ghippo-system insight-system ipavo-system kpanda-system istio-system
 ```

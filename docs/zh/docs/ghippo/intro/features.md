@@ -62,7 +62,7 @@ hide:
     您可以将不同模块的管理权限划分给不同的用户，
     比如用户 A 管理[容器管理模块](../../kpanda/intro/what.md)，用户 B 管理[应用工作台模块](../../amamba/intro/what.md)，共同管理[可观测性模块](../../insight/intro/what.md)。
 
-    ![角色](../images/role.png)
+    ![角色](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/role.png)
 
 4. 工作空间
 
@@ -75,7 +75,7 @@ hide:
 
     虽然一个层级可以包含多个层级或工作空间，但是给定的层级或者工作空间只能有一个父级。
 
-    ![工作空间](../images/workspace.png)
+    ![工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/workspace.png)
 
 5. 审计日志
 

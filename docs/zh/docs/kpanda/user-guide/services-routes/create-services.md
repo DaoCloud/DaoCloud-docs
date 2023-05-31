@@ -16,11 +16,11 @@
 
 1. 以 `NS Edit` 用户成功登录后，点击左上角的`集群列表`进入`集群列表`页面。在集群列表中，点击一个集群名称。
 
-    ![集群列表](../../images/service01.png)
+    ![集群列表](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/service01.png)
 
 2. 在左侧导航栏中，点击`容器网络`->`服务`进入服务列表，点击右上角`创建服务`按钮。
 
-    ![服务与路由](../../images/service02.png)
+    ![服务与路由](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/service02.png)
 
     !!! tip
 
@@ -28,7 +28,7 @@
 
 3. 打开`创建服务`页面，选择一种访问类型，参考以下三个参数表进行配置。
 
-    ![创建服务](../../images/service03.jpg)
+    ![创建服务](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/service03.jpg)
 
 ### 创建 ClusterIP 服务
 
@@ -81,4 +81,4 @@
 
 配置完所有参数后，点击`确定`按钮，自动返回服务列表。在列表右侧，点击 `︙`，可以修改或删除所选服务。
 
-![服务列表](../../images/service04.png)
+![服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/service04.png)

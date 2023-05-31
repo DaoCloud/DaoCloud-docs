@@ -25,7 +25,7 @@ If it is Workspace Admin, you can associate the existing container registry with
     !!! note
 
         1. If the Docker Registry container registry has not set a password, you can leave it blank, and the Harbor registry must fill in the username/password.
-        1. For a hands-on demo, see [Associated Registry Video Demo](../videos/kangaroo.md).
+        1. For a hands-on demo, see [Associated Registry Video Demo](../../videos/kangaroo.md).
 
 ## Integrated registry
 
@@ -40,7 +40,7 @@ Registry integration is the entrance to the container registry of the centralize
 
     
 
-1. Select the registry type, fill in the integration name, registry address, user name and password, and click `OK`.
+1. Select the registry type, fill in the integration name, registry address, username and password, and click `OK`.
 
     
 

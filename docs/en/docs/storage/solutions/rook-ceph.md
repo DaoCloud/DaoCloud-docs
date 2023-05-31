@@ -1,6 +1,6 @@
 # Rook-ceph storage solution
 
-DCE 5.0 supports many third-party storage solutions. We have conducted detailed tests on Rook-ceph and finally integrated it into the application store as an Addon.
+DCE 5.0 supports many third-party storage solutions. We have conducted detailed tests on Rook-ceph and finally integrated it into the app store as an Addon.
 The following is a detailed research and evaluation of Rook-ceph.
 
 Instructions for installing, deploying, and uninstalling the graphical interface of the App Store Addon will be provided later.

@@ -21,15 +21,15 @@
 
 1. 在流水线列表页点击`创建流水线`。
 
-    ![pipeline](../images/pipelin01.png)
+    ![pipeline](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipelin01.png)
 
 2. 在弹出的对话框中，选择`自定义创建流水线`，点击`确定`。
 
-    ![pipeline](../images/pipelin02.png)
+    ![pipeline](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipelin02.png)
 
 3. 进入`自定义创建流水页面` ，输入流水线名称`pipeline-demo`。
 
-    ![pipeline](../images/pipelin03.png)
+    ![pipeline](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipelin03.png)
 
 4. 在`构建参数`中添加三个字符串参数，这些参数将用于镜像构建的命令中。
 
@@ -37,7 +37,7 @@
     - project：镜像仓库中的项目名称。示例值：`demo`。
     - name：镜像的名称。示例值：`http-hello`。
 
-    ![pipeline](../images/pipelin04.png)
+    ![pipeline](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipelin04.png)
 
 5. 添加完成后，点击`确定`。
 
@@ -45,19 +45,19 @@
 
 1. 在流水线列表页面点击一个流水线的名称。
 
-    ![pipelisetting](../images/editpipe01.png)
+    ![pipelisetting](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/editpipe01.png)
 
 2. 在右上角点击`编辑流水线`，
 
-    ![pipelisetting](../images/editpipe02.png)
+    ![pipelisetting](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/editpipe02.png)
 
 3. 在右上角点击`全局设置`。
 
-    ![pipelisetting](../images/editpipe03.png)
+    ![pipelisetting](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/editpipe03.png)
 
 4. 类型设为 node，且 label 设为 go，点击`确定`。
 
-    ![pipelisetting](../images/editpipe04.png)
+    ![pipelisetting](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/editpipe04.png)
 
 5. 添加阶段 - 拉取源代码。
 
@@ -67,7 +67,7 @@
         - 分支：不填写默认为 master 分支。
         - 凭证：如果属于私有仓库，则需要提供一个凭证。
 
-    ![quickstart01](../images/quickstart01.png)
+    ![quickstart01](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/quickstart01.png)
 
 6. 添加阶段 - 构建并推送镜像。
 
@@ -75,7 +75,7 @@
 
     - 在步骤模块中选择开启`指定容器`，在弹出的对话框中填写容器名称：go，然后点击`确定`。
 
-        ![container](../images/container.png)
+        ![container](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/container.png)
 
     - 在步骤模块中选择开启`使用凭证`，在弹出的对话框中填写相关参数，然后点击`确定`。
 
@@ -83,7 +83,7 @@
         - 密码变量：PASS
         - 用户名变量：USER
 
-        ![quickstart02](../images/quickstart02.png)
+        ![quickstart02](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/quickstart02.png)
 
     - 点击`添加步骤`进行代码构建，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
 
@@ -115,7 +115,7 @@
 
     - 在步骤模块中选择开启`指定容器`，在弹出的对话框中填写容器名称：go，然后点击`确定`。
 
-        ![container2](../images/container2.png)
+        ![container2](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/container2.png)
 
     - 在步骤模块中选择开启`使用凭证`，在弹出的对话框中填写相关参数，然后点击`确定`。
 
@@ -123,7 +123,7 @@
 
          - kubeconfig 变量：如果您使用的是 kubectl apply 的部署方式，变量值必须为 KUBECONFIG。
 
-         ![quickstart03](../images/quickstart03.png)
+         ![quickstart03](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/quickstart03.png)
 
     - 点击`添加步骤`以进行集群部署操作，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
 
@@ -135,8 +135,8 @@
 
 1. 完成上一步后点击`保存并执行`。
 
-    ![quickstart05](../images/quickstart05.png)
+    ![quickstart05](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/quickstart05.png)
 
 2. 在弹出的对话框中输入步骤二中的示例参数。点击`确定`即可成功运行该流水线。
 
-    ![build-para](../images/build-para.png)
+    ![build-para](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/build-para.png)

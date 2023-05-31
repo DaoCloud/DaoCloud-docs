@@ -5,6 +5,8 @@ hide:
 
 # 使用说明
 
+本页介绍如何使用 Submariner 实现跨集群通讯。
+
 !!! note
 
     当集群的 CNI 为 Calico 时，由于 Calico 插入的 IPTables 规则优先级高于 Submariner 插入的 IPTables 规则，导致跨集群通讯出现问题。
@@ -69,7 +71,7 @@ cat > podwestcluster.yaml <<EOF
 EOF
 ```
 
-> 注意：设置 natOutgoing 为 false !
+> 应设置 natOutgoing 为 false。
 
 ## 使用
 

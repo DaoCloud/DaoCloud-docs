@@ -5,7 +5,7 @@ hide:
 
 # Free Trial
 
-The modules included in DCE 5.0 Community are [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/WhatisKPanda.md), [Workbench](../amamba/intro/WhatisAmamba.md), [Insight](../insight/intro/WhatisInsight.md), and more.
+The modules included in DCE 5.0 Community are [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Workbench](../amamba/intro/what.md), [Insight](../insight/intro/what.md), and more.
 
 Follow the steps below to get a license for your DCE 5.0 Community Package:
 
@@ -27,4 +27,4 @@ Follow the steps below to get a license for your DCE 5.0 Community Package:
     [Apply for a license](https://qingflow.com/f/58604bf8){ .md-button .md-button--primary }
     [View your license](https://license.daocloud.io/dce5-licenses){ .md-button .md-button--primary }
     [Get an offline authorization code](https://license.daocloud.io/dce5-license){ .md-button .md-button--primary }
-    [Install DCE 5.0](../install/install-dce-community.md){ .md-button .md-button--primary }
+    [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

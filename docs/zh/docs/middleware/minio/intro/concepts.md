@@ -25,7 +25,7 @@ MinIO 使用 Reed-Solomon 代码将对象划分为 n/2 个数据和 n/2 个奇�
 MinIO 的实现可确保即使丢失或无法使用多个设备，也可以读取对象或写入新的对象。
 最后，MinIO 的擦除代码位于对象级别，并且可以一次修复一个对象。
 
-![擦除码](../images/concept01.png)
+![擦除码](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/concept01.png)
 
 ## Bitrot 保护
 
@@ -37,7 +37,7 @@ MinIO 对高速哈希算法的优化实现可确保它永远不会读取损坏�
 通过在 READ 上计算哈希值，并在 WRITE 上从应用程序、整个网络以及内存/驱动器的哈希值来确保端到端的完整性。
 该实现旨在提高速度，并且可以在 Intel CPU 的单个内核上实现超过每秒 10 GB 的哈希速度。
 
-![Bitrot 保护](../images/concept02.png)
+![Bitrot 保护](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/concept02.png)
 
 ## 加密
 
@@ -55,7 +55,7 @@ MinIO 使用密钥管理系统（KMS）支持 SSE-S3。
 启用 WORM 后，MinIO 会禁用所有可能会使对象数据和元数据发生变异的 API。
 这意味着一旦写入数据就可以防止篡改。这对于许多不同的法规要求具有实际应用。
 
-![加密](../images/concept03.png)
+![加密](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/concept03.png)
 
 ## 身份认证和管理
 
@@ -63,7 +63,7 @@ MinIO 支持身份管理中最先进的标准，并与 OpenID connect 兼容提�
 这意味着访问是集中的，密码是临时的和轮换的，而不是存储在配置文件和数据库中。
 此外，访问策略是细粒度的且高度可配置的，这意味着支持多租户和多实例部署变得简单。
 
-![身份认证和管理](../images/concept04.png)
+![身份认证和管理](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/concept04.png)
 
 ## 连续复制
 
@@ -75,7 +75,7 @@ Lambda 通知确保与传统的批处理模式相反，更改可以立即传播�
 连续复制意味着即使发生高动态数据集，如果发生故障，数据丢失也将保持在最低水平。
 最后，就像 MinIO 所做的一样，连续复制是多厂商的，这意味着您的备份位置可以是从 NAS 到公共云的任何位置。
 
-![连续复制](../images/concept05.png)
+![连续复制](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/concept05.png)
 
 ## 全局一致性
 
@@ -88,7 +88,7 @@ MinIO Federation Server 支持无限数量的分布式模式集。
 这种方法的影响在于，对象存储可以为大型的、地理上分散的企业进行大规模扩展，
 同时保留从以下位置容纳各种应用程序（S3 Select、MinSQL、Spark、Hive、Presto、TensorFlow、H20）的能力。具有单一控制台。
 
-![全局一致性](../images/concept06.png)
+![全局一致性](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/concept06.png)
 
 ## 多云网关
 
@@ -103,4 +103,4 @@ MinIO 在裸机、网络连接存储和每个公共云上运行。
 MinIO 可以走得更远，使您现有的存储基础架构与 Amazon S3 兼容。
 其影响是深远的。现在，组织可以从文件到块真正统一其数据基础架构，所有这些都显示为可通过 Amazon S3 API 访问的对象，而无需迁移。
 
-![多云网关](../images/concept07.png)
+![多云网关](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/concept07.png)

@@ -1,6 +1,6 @@
 # Ferry
 
-Ferry is a Kubernetes multi-cluster communication component that eliminates communication differences between clusters
+Ferry is a Kubernetes multicluster communication component that eliminates communication differences between clusters
 as if they were in a single cluster, regardless of their network environments.
 
 ### Why ferry

@@ -1,6 +1,6 @@
 # What is F5network
 
-The F5network component integrates the F5 official project [f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller) and [k8s bigip ctlr](https://github.com/F5Networks/k8s-bigip- ctlr),
+The F5network component integrates the F5 official project [f5 ipam controller](https://github.com/F5Networks/f5-ipam-controller) and [k8s bigip ctlr](https://github.com/F5Networks/k8s-bigip-ctlr),
 Complete the control of the F5 device, synchronize the service and ingress configuration in the cluster to the F5 hardware device, and realize the load balancing of the northbound ingress of the cluster.
 
 Among them, the [k8s bigip ctlr](https://github.com/F5Networks/k8s-bigip-ctlr) component is responsible for monitoring service or ingress objects, and realizing the control plane rule delivery to F5 hardware devices;

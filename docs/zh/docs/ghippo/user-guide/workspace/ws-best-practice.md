@@ -9,7 +9,7 @@
 
 工作空间包含三个功能：授权、资源组和共享资源。主要解决资源统一授权、资源分组及资源配额问题。
 
-![工作空间](../../images/quota01.png)
+![工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/quota01.png)
 
 1. 授权：为用户/用户组授予该工作空间的不同角色，并将角色应用到工作空间的资源上。
 

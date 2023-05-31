@@ -2,11 +2,25 @@
 
 This page lists the Release Notes of Elasticsearch indexing service, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-04-27
+
+### v0.5.1
+
+#### new function
+
+- **Add** `mcamel-elasticsearch` details page displays related events
+- **NEW** `mcamel-elasticsearch` supports custom roles
+
+#### Optimization
+
+- **Optimize** `mcamel-elasticsearch` scheduling strategy adds a sliding button
+- **Fix** `mcamel-elasticsearch` may interrupt the retry problem when managing clusters
+
 ## 2023-03-28
 
 ### v0.6.0
 
-#### Features
+#### new function
 
 - **NEW** `mcamel-elasticsearch` supports middleware link tracking adaptation.
 - **NEW** Enable link tracking according to parameter configuration when installing `mcamel-elasticsearch`.
@@ -21,10 +35,10 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 ### v0.5.0
 
-#### Features
+#### new function
 
 - **Added** `mcamel-elasticsearch` helm-docs template file.
-- **Added** The Operator in the `mcamel-elasticsearch` app store can only be installed on mcamel-system.
+- **NEW** The Operator in the `mcamel-elasticsearch` app store can only be installed on mcamel-system.
 - **NEW** `mcamel-elasticsearch` supports cloud shell.
 - **NEW** `mcamel-elasticsearch` supports separate registration of navigation bar.
 - **New** `mcamel-elasticsearch` supports viewing logs.
@@ -48,7 +62,7 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 ### v0.4.0
 
-#### Features
+#### new function
 
 - **NEW** `mcamel-elasticsearch` gets the list of NodePorts allocated by the cluster.
 - **New** `mcamel-elasticsearch` adds status details.
@@ -66,7 +80,7 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Fix** `mcamel-elasticsearch` fixes the bug that the ports information is not returned after the es is successfully created.
 - **Fix** Kibana's service type does not meet expectations when `mcamel-elasticsearch` queries instance list and details.
 
-## v0.3.6
+##v0.3.6
 
 2022-11-28
 
@@ -86,7 +100,7 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 ### v0.3.4
 
-#### Features
+#### new function
 
 - **Add** sync pod status to instance details page
 - **NEW** Add interface to get user list
@@ -108,7 +122,7 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 ### v0.3.2
 
-#### Features
+#### new function
 
 - **NEW** Added pagination function to the list page
 - **NEW** Added the function of modifying the configuration

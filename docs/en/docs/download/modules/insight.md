@@ -10,13 +10,13 @@ On this page, you can download the offline installation packages of each version
 
 ## Validation
 
-In the directory where the offline installation package and verification file are downloaded, execute the following command to verify the integrity:
+In the directory where the offline installation package and verification file are downloaded, run the following command to verify the integrity:
 
 ```sh
 echo "$(cat insight_v0.13.1_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
-After the verification is successful, the printed result is similar to:
+After the validation is successful, the printed result is similar to:
 
 ```none
 insight_v0.13.1_amd64.tar: ok

@@ -2,6 +2,121 @@
 
 本页列出服务网格各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023-05-29
+
+### v0.16.2
+
+#### 升级
+
+- **新增** Ckube 按需加载资源。
+- **新增** IstioResource 字段：`labels` 与 `annotations`，能够更新 Labels 与 Annotations。
+- **新增** MeshCluster 中 ClusterProvider 同步实现.
+- **新增** `mspider.io/protected` Label 定义，用于网格保护能力。
+- **新增** 边车升级支持多工作负载能力，`SidecarUpgrader` 中 `workloads` 同时支持 `workloadshadow.name` 和 `deployment.name`。
+- **新增** 工作负载类型改造成 string 实现。
+- **新增** 工作负载相关接口新增字段 `localized_name`，展示工作负载名称。
+- **新增** 工作负载注入策略清除能力
+- **新增** 获取全局配置接口 `/apis/mspider.io/v3alpha1/settings/global-configs`。
+- **新增** 了 `clusterPhase` 字段，用于标记集群的状态（以前在 phase 字段中标记，现在剥离开）。
+- **新增** 了 `clusterProvider` 字段，用于标记集群提供商。
+- **新增** 流量泳道 CRD 能力实现。
+- **新增** 默认启用 Reg-Proxy 组件。
+- **新增** 实现 Service 的 selector 字段输出。
+- **新增** 通过给 Namespace 加 Network label 解决未注入 Sidecar 跨集群访问问题。
+- **新增** 托管网格 hosted-apiserver 自定义参数配置能力。(该参数只有安装时生效，暂时不支持更新)，(更多参数请参考 helm 参数配置)：
+
+    ```json
+      "hosted-apiserver.global.storageClass":                 "default",
+      "hosted-apiserver.etcd.data_size":                      "10Gi",
+      "hosted-apiserver.etcd.resources.requests.cpu":         "100m",
+      "hosted-apiserver.etcd.resources.limits.cpu":           "500m",
+      "hosted-apiserver.etcd.resources.requests.memory":      "100Mi",
+      "hosted-apiserver.etcd.resources.limits.memory":        "1000Mi",
+      "hosted-apiserver.apiserver.resources.requests.cpu":    "100m",
+      "hosted-apiserver.apiserver.resources.limits.cpu":      "1000m",
+      "hosted-apiserver.apiserver.resources.requests.memory": "100Mi",
+      "hosted-apiserver.apiserver.resources.limits.memory":   "1000Mi",
+    ```
+
+- **新增** 网格控制面组件状态
+- **新增** 网格网格查询接口新增 `loadBalancerStatus` 字段，用于描述实际分配的 LB 地址。
+- **新增** 网格组件进度详情接口 `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/components-progress`。
+- **新增** 为控制面组件增加 HPA。
+- **新增** 新增获取集群 `StorageClass` 接口定义。
+- **新增** 新增获取集群安装组件接口（目前支持 Insight Agent）。
+- **优化** 绑定/解绑工作空间的使用体验。
+- **优化** 工作负载相关接口字段 `workload_kind` 类型从枚举优化为 `string`。
+- **优化** 托管网格情况下，对于集群 k8s 版本检测：除包含工作集群外，也包含对控制面集群的版本检测。
+
+#### 修复
+
+- **修复** CloudShell 权限问题。
+- **修复** MeshCluster Status RemotePilotAddress 无效数据没有及时清理。
+- **修复** MeshCluster 无法被删除的问题。
+- **修复** TrafficLane 的 FailedReason 中缺失内容。
+- **修复** TrafficLaneActionsRequest 中的 action 字段缺失。
+- **修复** 当存在不健康集群时，网格列表无法展示的问题。
+- **修复** 当实例异常时，有效注入实例数不正确。
+- **修复** 当一个服务被多个泳道选择时，WasmPlugin 无法创建多个的问题。
+- **修复** 服务标签可能存在残留旧的工作负载。
+- **修复** 服务列表无法获取工作负载有效的工作负载数，动态获取 ReadyReplicas 的类型解析错误。
+- **修复** 工作负载发生变更时，无法将变更的状态同步到对应的 Service。
+- **修复** 会对未接入网格的集群一直检查状态的问题。
+- **修复** 集群状态不可搜索。
+- **修复** 没有边车时，网格无法移除集群的情况。
+- **修复** 网格名称正则表达式，不允许数字开头。
+- **修复** 网格状态显示不正确，没有边车时有时仍然显示状态为正常。
+- **修复** 修复网格网格的自动注入的模版不生效问题。
+- **修复** 由于集群缺少默认值，导致非 Admin 用户无法获取流量拓扑。
+- **修复** 自动注入服务策略空指针异常。
+
+## 2023-04-27
+
+### v0.15.0
+
+#### 升级
+
+- **新增** 引入 d2 作为绘图工具
+- **新增** 一个新的 wasm 插件，用于根据 trace id，给请求加上不同的 header。
+- **新增** 网格配置托管 Istiod 的 LoadBalancer Annotations 实现
+- **新增** 网格网关配置服务 Annotations 实现
+- **新增** 增加网格字段 load_balancer_annotations，支持自定义负载均衡 Annotations
+- **新增** 在 mspider-api 中，手动执行 pipeline，设置 SYNC_OPENAPI_DOCS 为key，既可触发上传文档站（提 PR）
+- **新增** MCPC Controller 感知到 Service 的中存在 mspider.io/managed 的标签时，将触发自动创建该服务对应的治理策略。
+- **新增** MCPC Controller 多工作负载类型支持。
+- **新增** 健康检查功能，当某个网格 APIServer 代理出现无法连通的情况时，自动重建该代理，
+  防止 PortForward 自身逻辑不可靠（可能和 Istio Sidecar 有关）
+
+#### 修复
+
+- **修复** 未兼容 grpcgateway-accept-language（等价与 HTTP 的 Accept-Language）Header，导致无法正确切换中英文模式模式。
+  当前同时兼容 Accept 与 Accept-Language 两种模式
+- **修复** 同步 OpenAPI 时，由于 shadow clone 代码导致 upstream 无法 push 的问题
+- **修复** 无法更新带 `.` 的 Istio 资源
+- **修复** 在 1.17.1 版本中，istio-proxy 无法正常启动的问题
+- **修复** ingress gateway 缺少 name 导致 merge 失败无法部署的问题
+- **修复** 服务地址无法搜索的问题
+- **修复** 无法更新带 `.` 的 Istio 资源 的问题
+- **修复** 之前 controller 内存泄漏的问题。
+- **修复** add/delete cluster 有时没有正确触发的逻辑。
+- **修复** 了托管模式下 istio-system 可能被误删的情况。
+- **修复** ingress gateway 缺少 name 导致 merge 失败无法部署的问题。
+- **修复** 在开启全局注入情况下，更新网格可能导致 istio-operator pod 被注入，从而使网格创建失败的问题
+- **修复** 服务与 WorkloadShadow 关联的两个部分没有清理逻辑，导致服务被错误绑定在工作负载上
+- **修复** 一个导致虚拟集群被同步到 Mspider 导致接入失败的问题
+- **优化** controller 命名空间、服务资源处理逻辑，减少频繁触发 workloadShadow 资源更新。
+- **优化** workloadShadow 资源频繁获取/更新的问题，现在只对某些发生特定改变的资源进行 reconcile。
+- **优化** 减少 pod 变更不断更新 WorkloadShadow
+- **修复** relok8s 中 wasm 插件镜像地址拼写错误的问题。
+- **修复** TrafficLane 默认 repository 错误。
+- **优化** Helm 镜像渲染模版。镜像结构拆分为三个部分：registry/repository:tag
+
+#### 移除
+
+- **移除** 同步全局集群到网格的逻辑
+- **弃用** 弃用 Deployment Controller 的逻辑
+- **弃用** ui.version 参数，改为 ui.image.tag 参数设定前端版本
+
 ## 2023-03-31
 
 ### v0.14.3
@@ -12,9 +127,9 @@
 
 #### 修复
 
-- **修复**  无法更新带 . 的 Istio 资源
-- **修复**  在 1.17.1 版本中，istio-proxy 无法正常启动的问题
-- **修复**  ingress gateway 缺少 name 导致 merge 失败无法部署的问题。
+- **修复** 无法更新带 `.` 的 Istio 资源
+- **修复** 在 1.17.1 版本中，istio-proxy 无法正常启动的问题
+- **修复** ingress gateway 缺少 name 导致 merge 失败无法部署的问题。
 
 ## 2023-03-30
 
@@ -27,12 +142,12 @@
 - **新增** 服务列表和详情会返回 labels
 - **新增** CloudShell 相关实现
 - **新增** 服务列表支持对服务标签的查询
-- **新增** 了一个新的 API，用于更新服务的标签
+- **新增** 一个新的 API，用于更新服务的标签
 - **新增** istio 1.17.1 支持
-- **新增** 了一个新的 etcd 高可用方案
+- **新增** 一个新的 etcd 高可用方案
 - **新增** 场景化测试框架，用于测试场景化的功能
 - **新增** 选择不同网格规模时，自动调整组件资源配置
-- **新增** 了自定义角色的实现，支持自定义角色的创建、更新、删除、绑定、解绑等操作
+- **新增** 自定义角色的实现，支持自定义角色的创建、更新、删除、绑定、解绑等操作
 
 #### 优化
 
@@ -53,9 +168,9 @@
 - **修复** 由于异常导致虚拟集群中存在游离的命名空间，在启动 mcpc-controller 时增加自检并且清除行为
 - **修复** 由于 controller 更新网格，导致 api 下发网格配置失败
 - **修复** 创建托管网格时，ServicePort 的 TargetPort 未正确设置的问题
-- **修复**  GlobalMesh.Status.MeshVersion 错误覆盖问题
-- **修复**  mcpc-controller 无法开启 debug 模式问题
-- **修复**  mcpc-controller 无法触发集群删除事件
+- **修复** GlobalMesh.Status.MeshVersion 错误覆盖问题
+- **修复** mcpc-controller 无法开启 debug 模式问题
+- **修复** mcpc-controller 无法触发集群删除事件
 - **修复** 删除 Mesh 再重建同名的 Mesh 时，会导致 Mesh 无法正常创建的问题（hosted proxy 无法正常更新）
 - **修复** mcpc controller 在某些情况下没有正确修改 istiod-remote 的 service 的问题
 
@@ -96,7 +211,7 @@
 #### 优化
 
 - **优化** 命名空间边车管理页面中增加“未设置”边车策略，避免命名空间层面的边车策略对工作负载层面产生连带影响；
-- **优化** 发布流水线参数**优化**
+- **优化** 发布流水线参数
 - **优化** 边车注入、边车资源限制逻辑、避免出现不同步现象
 
 #### 修复
@@ -114,7 +229,8 @@
 #### 新功能
 
 - **新增** `密钥管理`相关 API
-- **新增** 在`虚拟服务`、`目标规则`、`网关规则`列表**新增**治理策略标签及相关筛选能力
+- **新增** 在`虚拟服务`、`目标规则`、`网关规则`列表
+- **新增**治理策略标签及相关筛选能力
 - **新增** 网格中集群健康状态检查能力
 - **新增** otel sdk 接入
 - **新增** secret 的多个接口实现

@@ -17,7 +17,7 @@
     kubectl edit deploy insight-agent-kube-prometh-operator -n insight-system
     ```
 
-    ![operatoryaml](../images/promerator.png)
+    ![operatoryaml](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/promerator.png)
 
 !!! note
 

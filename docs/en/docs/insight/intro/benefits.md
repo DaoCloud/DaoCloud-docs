@@ -1,14 +1,14 @@
 # Benefits of Insight
 
-- Multi-cluster Management
+- Multicluster Management
 
-    Through the unified storage of metrics, logs and traces data in the Global clusters, the monitoring of multi-cluster can be realized and users can aggregate query of multi-cluster data.
+    Through the unified storage of metrics, logs and traces data in the Global clusters, the monitoring of multicluster can be realized and users can aggregate query of multicluster data.
 
 - Out-of-the-box
 
     - Dashboard: Insight provides a variety of out-of-the-box prefabricated monitoring dashboards. You can comprehensively monitor clusters, nodes, workloads and other components through the built-in dashboards.
 
-    - Alert rules: Insight provides built-in alarm rules that enable you to monitor cluster resources, system components, and other basic metrics out of the box without configuration.
+    - Alert rules: Insight provides built-in alert rules that enable you to monitor cluster resources, system components, and other basic metrics out of the box without configuration.
 
 - High Availability
 

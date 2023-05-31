@@ -2,7 +2,53 @@
 
 本页列出安装器的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
-## 2022-4-11
+## 2023-4-30
+
+### v0.7.0
+
+#### 新功能
+
+- **新增** 支持 Other Linux 来部署 DCE 5.0，[参考文档](os-install/otherlinux.md)
+- **新增** 支持了操作系统 OpenEuler 22.03
+- **新增** 支持外接 OS Repos，[参考集群配置文件说明](commercial/cluster-config.md)
+- **新增** 支持了内核参数调优，[参考集群配置文件说明](commercial/cluster-config.md)
+- **新增** 支持检测外部 ChartMuseum 和 MinIo 服务是否可用
+
+#### 优化
+
+- **优化** 优化了对 tar 等命令的前置校验
+- **优化** 优化了升级操作命令行参数
+- **优化** 关闭了 Kibana 通过 NodePort 访问，Insight 使用 ES 的 NodePort or VIP 访问
+- **优化** 优化了并发日志展示，终止任务使用 SIGTERM 信号而不是 SIGKILL
+
+#### 修复
+
+- **修复** 修复在线安装时 Kcoral heml chart 无法查到问题
+- **修复** 修复升级时 KubeConfig 无法找到问题
+
+#### 已知问题
+
+- 在线安装 global 集群会失败，需在 clusterConfig.yaml 的 `kubeanConfig` 块里进行如下配置:
+
+    ```yaml
+    kubeanConfig: |- 
+      calico_crds_download_url: "https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/calico-crds-v3.25.1.tar.gz"
+    ```
+
+    同时通过容器管理在线创建工作集群也有相同问题，需在集群创建页面高级配置的自定义参数中添加上述配置，键为 `calico_crds_download_url`，值为上述 calico_crds_download_url 的值
+
+- Kubean 存在低概率无法创建 spray-job 任务，通过手动删除对应的 clusteroperations CR 资源再重新执行安装命令
+- 使用外部 OS Repo 部署 DCE 5.0后，无法通过容器管理离线创建工作集群，通过手动修改 global 集群 kubean-system 命名空间的 configmap kubean-localservice 来解决。
+  在 `yumRepos` 下新增如下配置,需要在 external 内填写 clusterConfig.yaml 中配置的外部OS Repo 地址:
+
+    ```yaml
+    yumRepos:
+      external: []
+    ```
+
+    完成修改后对容器管理创建集群页面的节点配置的yum源选择新配置
+
+## 2023-4-11
 
 ### v0.6.1
 
@@ -11,7 +57,12 @@
 - **优化** 升级了 Kpanda 至 v0.16.1
 - **优化** 升级了 Skoala 至 v0.19.4
 
-## 2022-4-06
+#### 已知问题
+
+- 采用 7 节点模式安装时，es 专属节点未占成功，预计下个版本修复
+- 安装器向火种节点 regsitry 导入镜像时报错 `skopeo copy 500 Internal Error -- "NAME_UNKNOWN","message":"repository name not known to registry`
+
+## 2023-4-06
 
 ### v0.6.0
 
@@ -19,7 +70,7 @@
 
 - **新增** 支持一键升级 Gproduct 组件
 - **新增** 适配了操作系统：UOS V20 1020a / Ubuntu 20.04
-- **新增** 支持 OCP (OpenShift Container Platform)安装 DCE5.0
+- **新增** 支持 OCP (OpenShift Container Platform)安装 DCE 5.0
 - **新增** CLI 支持生成 clusterConfig 模板
 - **新增** all in one 模式默认启动最小化安装模式
 - **新增** Gproduct 组件中新增了 Kcollie 组件
@@ -43,7 +94,7 @@
 - **修复** 修复 Amamba 和 Amamba-jenkins 并发安装时先后顺序依赖的问题
 - **修复** 修复安装器命令行-j参数解析失败问题
 
-## 2022-2-28
+## 2023-2-28
 
 ### v0.5.0
 

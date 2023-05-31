@@ -109,8 +109,8 @@ spec:
 升级参数说明：
 
 - `install-app` 或 `cluster-create`，代表安装 DCE 5.0 的安装模式类型。如果最初的环境是通过 `cluster-create` 来安装的，则升级时也采用这个命令
-- `--upgrade` 可以简写为 `-u`，命令后面需要加执行步骤，目前如果升级 GProduct 需要执行 `4,5,gproduct`，后续我们会进行优化。
+- `--upgrade` 可以简写为 `-u`，命令后面需要加执行步骤，目前如果升级 GProduct 需要执行 `4,5,gproduct`，后续我们会进行优化。v0.7.0 版本后只需要 `--upgrade gproduct`
 
 安装成功结果：
 
-![upgrade](./images/upgrade.png)
+![upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/upgrade.png)

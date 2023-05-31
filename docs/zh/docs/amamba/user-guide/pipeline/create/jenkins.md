@@ -18,11 +18,11 @@ hide:
 
 1. 在流水线列表页点击`创建流水线`。
 
-    ![click-create](../../../images/createpipelinbutton.png)
+    ![click-create](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/createpipelinbutton.png)
 
 2. 选择`基于代码库的 Jenkinsfile 创建流水线`，点击`确定`。
 
-    ![select-type](../../../images/selecttype.png)
+    ![select-type](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/selecttype.png)
 
 3. 参考下方说明填写基本信息和代码仓库信息。
 
@@ -32,7 +32,7 @@ hide:
     - 分支：基于哪个分支的代码构建流水线，默认为 master 分支。
     - 脚本路径：Jenkinsfile 文件在代码仓库中的绝对路径。
 
-        ![pipeline01](../../../images/gitpipeline.png)
+        ![pipeline01](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/gitpipeline.png)
 
 4. 参考下方说明填写构建设置和构建参数。
 
@@ -46,7 +46,7 @@ hide:
     - 构建参数：在开始运行流水线时传入一个或多个构建参数。默认提供五种参数类型：`布尔值`、`字符串`、`多行文本`、`选项`、`密码`、`上传文件`。
     - 添加构建参数后，运行流水线时需要为每个构建参数输入对应的取值。
 
-        ![pipeline02](../../../images/pipeline02.png)
+        ![pipeline02](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline02.png)
 
 5. 参考下方说明填写构建触发器。
 
@@ -54,8 +54,8 @@ hide:
     - 定时仓库扫描计划：输入 CRON 表达式定义扫描仓库的时间周期。**输入表达式后下方会提示当前表达式的含义**。有关详细的表达式语法规则，可参考 [Cron 时间表语法](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax)。
     - 定时触发：定时触发构建流水线，无论代码仓库是否有更新，都会在规定时间重新运行流水线。
 
-        ![pipeline04](../../../images/pipeline04.png)
+        ![pipeline04](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline04.png)
 
 6. 完成创建。确认所有参数输入完成后，点击`确定`按钮，完成自定义流水线创建，自动返回流水线列表。点击列表右侧的 `︙` 可以执行各项操作。
 
-    ![pipeline05](../../../images/pipeline05.png)
+    ![pipeline05](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline05.png)

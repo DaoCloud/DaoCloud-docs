@@ -19,13 +19,13 @@ hide:
 
 1. 在`集群列表`页找到需要卸载/解除接入的集群，点击右侧的 `...` 并在下拉列表中点击`卸载集群`/`解除接入`。
 
-    ![点击删除按钮](../../images/delete001.png)
+    ![点击删除按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/delete001.png)
 
 2. 输入集群名称进行确认，然后点击`删除`。
 
-    ![确认删除](../../images/delete002.png)
-    ![确认删除](../../images/delete003.png)
+    ![确认删除](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/delete002.png)
+    ![确认删除](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/delete003.png)
 
 3. 返回`集群列表`页可以看到该集群的状态已经变成`删除中`。卸载集群可能需要一段时间，请您耐心等候。
 
-    ![删除中状态](../../images/delete004.png)
+    ![删除中状态](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/delete004.png)

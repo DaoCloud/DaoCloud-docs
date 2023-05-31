@@ -32,7 +32,7 @@
 
 1. 进入[镜像创建工作负载](../workloads/create-deployment.md)页面中，在`容器配置`这一步中，选择`环境变量`配置，点击`添加环境变量`按钮。
 
-    ![添加环境变量](../../images/config05.png)
+    ![添加环境变量](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/config05.png)
 
 2. 在环境变量类型处选择`配置项导入`或`配置项键值导入`。
 
@@ -111,7 +111,7 @@ Hello Kpanda
 
 1. 进入[镜像创建工作负载](../workloads/create-deployment.md)页面中，在`容器配置`这一步中，选择`数据存储`配置，在`节点路径映射`列表点击`添加`按钮。
 
-    ![添加环境变量](../../images/config06.png)
+    ![添加环境变量](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/config06.png)
 
 2. 在存储类型处选择`配置项`，并依次输入`容器路径`、`子路径`等信息。
 
