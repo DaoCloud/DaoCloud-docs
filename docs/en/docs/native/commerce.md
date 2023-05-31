@@ -84,7 +84,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Updates: Nacos and Service Governance combine to non-intrusively implement Java application registration discovery, full-link grayscale, etc.; Cloud Native Gateway introduces migration tools for container service Nginx Ingress; Microservice Governance Basic Edition supports lossless up and down, canary publishing, etc.; Nacos supports TLS link encryption.
 
-- [AliCloud Service Grid ASM March 2023 Product Update](https://mp.weixin.qq.com/s/Yca5J3liIg6oznZDz6fVrA)
+- [AliCloud Service Mesh ASM March 2023 Product Update](https://mp.weixin.qq.com/s/Yca5J3liIg6oznZDz6fVrA)
 
     Updates: Gateway support for docking WAF, support for configuring Ingress resources, support for managing Knative services, support for OIDC login for mesh topology, Sidecar proxy support for oversell mode, new egress traffic policy, support for configuring global default HTTP request retry policy.
 
