@@ -1,10 +1,9 @@
-
 ---
 hide:
   - toc
 ---
 
-# Applicable Scenarios
+# Use Cases
 
 - Pipeline for Continuous Delivery
 

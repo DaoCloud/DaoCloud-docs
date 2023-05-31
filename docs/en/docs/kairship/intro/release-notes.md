@@ -2,6 +2,30 @@
 
 This page lists the release notes of Multicloud Management module, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-05-29
+
+### v0.9.1
+
+#### New Features
+
+- Edit Service tags, annotations in Web UI.
+
+#### Fixes
+
+- Overview of expected scheduling clusters on the resource details page.
+- Occasional failure of kairship-proxy.
+- No arm64 vesions of `cffssl` and `kubectl`.
+
+#### Improvements
+
+- Add a cluster column to the Ingress list.
+- Reduce the propagation policy when converting single-cluster deployments to multicloud ones.
+
+#### Upgrades
+
+- `@dao-style/extend` to v1.2.1.
+- `cloudtty` API to v0.5.2.
+
 ## 2023-04-27
 
 ### v0.8.0

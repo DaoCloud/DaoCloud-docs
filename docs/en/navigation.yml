@@ -262,8 +262,8 @@ nav:
           - Intro:
               - What is Workbench?: amamba/intro/what.md
               - Features: amamba/intro/features.md
-              - Advantages: amamba/intro/benefits.md
-              - Applicable Scenarios: amamba/intro/scenario.md
+              - Competitiveness: amamba/intro/benefits.md
+              - Use Cases: amamba/intro/scenario.md
               - Basic Concepts: amamba/intro/concepts.md
               - Permissions: amamba/intro/permission.md
               - Release Notes: amamba/intro/release-notes.md
@@ -317,53 +317,53 @@ nav:
       - Multicloud Management:
           - Intro:
               - What is Multicloud Management: kairship/intro/what.md
-              - Feature overview: kairship/intro/features.md
-              - Product Architecture: kairship/intro/architecture.md
-              - Product Benefits: kairship/intro/benefits.md
-              - Basic concepts: kairship/intro/concepts.md
-              - Frequently Asked Questions: kairship/intro/faq.md
+              - Features: kairship/intro/features.md
+              - Architecture: kairship/intro/architecture.md
+              - Competitiveness: kairship/intro/benefits.md
+              - Basic Concepts: kairship/intro/concepts.md
+              - FAQ: kairship/intro/faq.md
               - Release Notes: kairship/intro/release-notes.md
-          - Multicloud instance management:
-              - Multicloud instance introduction: kairship/instance/README.md
-              - Add instance: kairship/instance/add.md
-              - Delete instance: kairship/instance/delete.md
+          - Multicloud Instances:
+              - Overview: kairship/instance/README.md
+              - Add Instance: kairship/instance/add.md
+              - Delete Instance: kairship/instance/delete.md
               - Workspace: kairship/instance/workspace.md
-          - Worker cluster management:
+          - Worker Clusters:
               - Join the cluster: kairship/cluster/join.md
               - Remove cluster: kairship/cluster/remove.md
-          - Multicloud workloads:
-              - Workload Introduction: kairship/workload/README.md
-              - Image creation: kairship/workload/deployment.md
-              - YAML creation: kairship/workload/yaml.md
-              - Update multicloud workload: kairship/workload/update-deployment.md
-              - One-click upgrade to multicloud load: kairship/workload/promote.md
-              - Image creation task: kairship/workload/job.md
-              - Mirror creation cron job: kairship/workload/cronjob.md
-          - Custom resource management: kairship/crds/crd.md
-          - Resource management:
-              - Multicloud service: kairship/resource/service.md
-              - Multicloud namespace: kairship/resource/ns.md
-              - Multicloud configuration item: kairship/resource/configmap.md
-              - Multicloud secret: kairship/resource/secret.md
-              - Multicloud ingress: kairship/resource/ingress.md
-              - Update multicloud service: kairship/resource/update-service.md
-              - Update multicloud secret: kairship/resource/update-secret.md
-              - Update multicloud configuration items: kairship/resource/update-configmap.md
-              - More multicloud ingress: kairship/resource/update-ingress.md
-          - Policy management:
-              - Deployment policy: kairship/policy/propagation-policy.md
-              - Differentiation strategy: kairship/policy/override-policy.md
-          - Binding workspace: kairship/workspace.md
+          - Multicloud Workloads:
+              - Overview: kairship/workload/README.md
+              - Create from Image: kairship/workload/deployment.md
+              - Create from YAML: kairship/workload/yaml.md
+              - Update Workload: kairship/workload/update-deployment.md
+              - Convert to Multicloud Workload: kairship/workload/promote.md
+              - Image Creation Job: kairship/workload/job.md
+              - Mirror Creation CronJob: kairship/workload/cronjob.md
+          - Custom Resources: kairship/crds/crd.md
+          - Multicloud Resources:
+              - Multicloud Services: kairship/resource/service.md
+              - Multicloud Namespaces: kairship/resource/ns.md
+              - Multicloud ConfigMaps: kairship/resource/configmap.md
+              - Multicloud Secrets: kairship/resource/secret.md
+              - Multicloud Ingress: kairship/resource/ingress.md
+              - Update Multicloud Services: kairship/resource/update-service.md
+              - Update Multicloud Secrets: kairship/resource/update-secret.md
+              - Update Multicloud ConfigMaps: kairship/resource/update-configmap.md
+              - More Multicloud Ingress: kairship/resource/update-ingress.md
+          - Policy Management:
+              - Propagation Policy: kairship/policy/propagation-policy.md
+              - Overview Policy: kairship/policy/override-policy.md
+          - Bind Workspace: kairship/workspace.md
           - Failover:
-              - Failover function introduction: kairship/failover/failover.md
-              - Optimize failover latency sensitivity: kairship/failover/optimization-failover.md
+              - Overview: kairship/failover/failover.md
+              - Optimize Failover Latency Sensitivity: kairship/failover/optimization-failover.md
           - Best Practices:
               - DCE4 to DCE5: kairship/best-pratice/one-click-conversion.md
-      - Microservice Engine:
+      - Microservices:
           - Intro:
               - Features: skoala/intro/what.md
               - Scenarios: skoala/intro/scenarios.md
-              - Advantages: skoala/intro/advantages.md
+              - Competitiveness: skoala/intro/advantages.md
               - Release Notes: skoala/intro/release-notes.md
           - Quick Start:
               - Install: skoala/quickstart/install.md
@@ -375,7 +375,7 @@ nav:
                   - Create Gateway: skoala/ms-gateway/gateway/create-gateway.md
                   - Check Gateway: skoala/ms-gateway/gateway/check-details.md
                   - Update Gateway: skoala/ms-gateway/gateway/update-gateway.md
-                  - Delete gateway: skoala/ms-gateway/gateway/delete-gateway.md
+                  - Delete Gateway: skoala/ms-gateway/gateway/delete-gateway.md
               - API Management:
                   - Add API: skoala/ms-gateway/api/add-api.md
                   - Update API: skoala/ms-gateway/api/update-api.md
@@ -574,40 +574,40 @@ nav:
               - Intro: network/modules/submariner/what.md
               - Install: network/modules/submariner/install.md
               - Use: network/modules/submariner/usage.md
-      - Middleware data service:
-          - introduce:
-              - What is data service: middleware/what.md
-              - Data service version adaptation: middleware/compatibility.md
-              - Data service permission design description: middleware/permission.md
-              - Enter the data service module for the first time: middleware/first-visit.md
-          - Elasticsearch search service:
+      - Data Services:
+          - Intro:
+              - What is Data Service: middleware/what.md
+              - Supported Kubernetes Versions: middleware/compatibility.md
+              - Permissions: middleware/permission.md
+              - Fisrt Use: middleware/first-visit.md
+          - Elasticsearch:
               - What is Elasticsearch: middleware/elasticsearch/intro/what.md
-              - Function description: middleware/elasticsearch/intro/features.md
-              - Competitive Advantages: middleware/elasticsearch/intro/benefits.md
-              - Applicable scenarios: middleware/elasticsearch/intro/scenarios.md
-              - Basic concepts: middleware/elasticsearch/intro/concepts.md
-              - Create an Elasticsearch instance: middleware/elasticsearch/user-guide/create.md
-              - Update Elasticsearch instance: middleware/elasticsearch/user-guide/edit.md
-              - Delete Elasticsearch instance: middleware/elasticsearch/user-guide/delete.md
-              - Elasticsearch cluster capacity planning: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
-              - View instance details: middleware/elasticsearch/user-guide/view.md
+              - Features: middleware/elasticsearch/intro/features.md
+              - Competitiveness: middleware/elasticsearch/intro/benefits.md
+              - Use Cases: middleware/elasticsearch/intro/scenarios.md
+              - Basic Concepts: middleware/elasticsearch/intro/concepts.md
+              - Create Instance: middleware/elasticsearch/user-guide/create.md
+              - Update Instance: middleware/elasticsearch/user-guide/edit.md
+              - Delete Instance: middleware/elasticsearch/user-guide/delete.md
+              - Cluster Capacityg: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
+              - View Instance: middleware/elasticsearch/user-guide/view.md
               - Overview: middleware/elasticsearch/user-guide/basic.md
-              - Instance monitoring: middleware/elasticsearch/user-guide/monitor.md
-              - View Elasticsearch logs: middleware/elasticsearch/user-guide/logs.md
-              - Elasticsearch troubleshooting manual: middleware/elasticsearch/faq/common-question-es.md
-              - Elasticsearch migration practice based on Hwameistor: middleware/elasticsearch/user-guide/migrate-es.md
+              - Instance Monitoring: middleware/elasticsearch/user-guide/monitor.md
+              - View Logs: middleware/elasticsearch/user-guide/logs.md
+              - Troubleshooting Manual: middleware/elasticsearch/faq/common-question-es.md
+              - Elasticsearch Migration Practice Based on Hwameistor: middleware/elasticsearch/user-guide/migrate-es.md
               - Release Notes: middleware/elasticsearch/release-notes.md
-          - Kafka message queue:
+          - Kafka:
               - What is Kafka: middleware/kafka/intro/what.md
-              - Applicable scenarios: middleware/kafka/intro/scenarios.md
-              - Common terms: middleware/kafka/intro/concepts.md
-              - Create a Kafka instance: middleware/kafka/user-guide/create.md
-              - Update Kafka instance: middleware/kafka/user-guide/update.md
-              - Delete Kafka instance: middleware/kafka/user-guide/delete.md
-              - View instance details: middleware/kafka/user-guide/view.md
-              - Instance monitoring: middleware/kafka/user-guide/insight.md
-              - Configuration parameters: middleware/kafka/user-guide/config.md
-              - View Kafka logs: middleware/kafka/user-guide/logs.md
+              - Use Cases: middleware/kafka/intro/scenarios.md
+              - Basic Concepts: middleware/kafka/intro/concepts.md
+              - Create Instance: middleware/kafka/user-guide/create.md
+              - Update Instance: middleware/kafka/user-guide/update.md
+              - Delete Instance: middleware/kafka/user-guide/delete.md
+              - View Instance: middleware/kafka/user-guide/view.md
+              - Instance Monitoring: middleware/kafka/user-guide/insight.md
+              - Configuration Parameters: middleware/kafka/user-guide/config.md
+              - View Logs: middleware/kafka/user-guide/logs.md
               - Release Notes: middleware/kafka/release-notes.md
           - MinIO object storage:
               - What is MinIO: middleware/minio/intro/what.md

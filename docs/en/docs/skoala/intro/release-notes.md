@@ -2,6 +2,77 @@
 
 This page lists the release notes of DME to help you learn its feature development and bug fixing progress.
 
+## 2023-05-29
+
+### V0.22.1
+
+#### Bug Fixes
+
+- Positions of plugin CRDs are not correc.
+- Issue related to OpenAPI publishing process.
+
+#### Enhancement
+
+- Set default values for database of Hive component.
+
+## 2023-05-26
+
+### V0.22.0
+
+#### New Features
+
+- Support for Nacos 2.2.x version.
+- Gateway tracing.
+- Cloud-native microservice path rewrite API.
+- Cloud-native microservice timeout API.
+- Cloud-native microservice fault injection API.
+- Cloud-native microservice retry and other APIs.
+- WASM plugin for Cloud-native microservices.
+- Skoala-init Chart adds JSON Schema.
+- OpenAPI document publishing process.
+- Hive supports database neutrality.
+
+#### Bug Fixes
+
+- NullPointerException in the Nacos related API.
+- Displayed port of Nacos was incorrect.
+- HTTPProxy spelling error in Grafana.
+- SQL scripts in Nacos database initialization.
+- Custom permissions of gateway.
+- NullPointerException when calling Ghippo.
+- Nacos service metadata interface exception.
+- Error in updating domain.
+- Issues when frequently calling Kpanda API.
+- Inaccurate data acquisition through Insight access.
+- Error occurred when querying WASM plugin.
+- Error occurred after updating API routing service.
+- Sentinel Token server resources.
+- ZooKeeper tracing is not closed.
+
+#### Enhancement
+
+- Sentinel monitoring panel structure and data logic.
+- Remove virtualhost CR from Gateway domain management.
+- Sentinel cluster flow control API logic.
+- Upgrade Ghippo to 0.17.0-rc2.
+- Database initialization component "sweet has been deprecated since version 0.22.0 and will be completely removed in versions 0.23.0 and later. The data table will be automatically synchronized and updated starting from version 0.22.0, with no manual intervention required.
+
+## 2023-05-07
+
+### V0.21.2
+
+#### Bug Fixes
+
+- Sentinel monitoring dashboard.
+- Gateway being injected a service mesh sidecar.
+- Format of registry address for traditional microservices with service mesh enabled.
+- Data service instance is not filtered according to the cluster when selecting the hosted registry.
+- Incorrect registry statistics.
+
+#### Enhancement
+
+- Update the Gateway component to the latest community test version.
+
 ## 2023-04-26
 
 ### V0.21.1

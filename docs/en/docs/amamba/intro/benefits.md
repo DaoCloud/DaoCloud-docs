@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Advantages
+# Competitiveness
 
 With years of leading experience in cloud native field, DaoCloud developed a brand-new Workbench that boasts strong competitiveness:
 

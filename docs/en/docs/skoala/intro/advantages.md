@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Advantages
+# Competitiveness
 
 DaoCloud Microservice Engine (DME) provides a set of easy-to-use, practical and high-performance microservice governance capabilities, such as registration and discovery, east-west and north-south traffic governance, configuration management, API management, multiple gateways, etc. DME helps you to steadily and safely upgrade traditional microservice architecture to cloud-native microservice architecture.
 
