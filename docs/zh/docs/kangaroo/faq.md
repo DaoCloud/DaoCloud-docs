@@ -6,21 +6,25 @@
 
 ## 如何在离线环境更新或者导入漏洞库
 1. 数据库位置
-  ```
-  /root/.cache/trivy/db
-  ```
+  
+    ```
+    /root/.cache/trivy/db
+    ```
+    
 2. 查看帮助中也可以获取
-```
-  $ trivy -h | grep 'TRIVY_CACHE_DIR'
-     --cache-dir value  cache directory (default: "/root/.cache/trivy") [$TRIVY_CACHE_DIR]
-```
+
+    ```
+    $ trivy -h | grep 'TRIVY_CACHE_DIR'
+       --cache-dir value  cache directory (default: "/root/.cache/trivy") [$TRIVY_CACHE_DIR]
+    ```
+    
 3. 数据库下载
 
-- `trivy-light-offline.db.tgz`：离线版轻量数据库，解压后约104MB。
-- `trivy-offline.db.tgz`：离线版全量数据库，解压后约221MB。
-- 下载地址: [https://github.com/aquasecurity/trivy-db/releases](https://github.com/aquasecurity/trivy-db/releases)
+    - `trivy-light-offline.db.tgz`：离线版轻量数据库，解压后约104MB。
+    - `trivy-offline.db.tgz`：离线版全量数据库，解压后约221MB。
+    - 下载地址: [https://github.com/aquasecurity/trivy-db/releases](https://github.com/aquasecurity/trivy-db/releases)
    
-## 创建托管harbor时候第一步集群校验通过后创建harbor仍然出错
+## 创建托管 harbor 时候第一步集群校验通过后创建 harbor 仍然出错
 
 目前只校验了集群中是否有`CRD`,没有校验`harbor-operator`服务，可能会出现不存在`harbor-operator`服务的情况，导致不能正确的创建`Harbor`.
 
