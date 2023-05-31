@@ -3,23 +3,23 @@ hide:
   - toc
 ---
 
-# Workspace Admin Quickly use the container registry to serve the workspace
+# Using External Container Registries in Workspaces as a Workspace Admin
 
-In DCE 5.0, Workspace Admin can associate two external container registrys, Harbor and Docker Registry, by associating registrys. After association, members of the workspace can see all images of the associated repository in the image list, and can select the image in the repository for deployment through the image selector when deploying the application in the namespace under the workspace.
+In DCE 5.0, Workspace Admin can associate two external container registries, Harbor and Docker Registry, by associating registries. After association, members of the workspace can see all images of the associated repository in the image list and can select the image in the repository for deployment through the image selector when deploying the application in the namespace under the workspace.
 
-Assuming that you have created an external Harbor or Docker Registry, follow the steps below to share the external Harbor or Docker Registry with workspace members.
+Assuming that you have created an external Harbor or Docker Registry, follow the steps below to share the external Harbor or Docker Registry with workspace members:
 
-The prerequisites are:
+## Prerequisites
 
-1. You are a Workspace Admin, and some namespaces are bound under this workspace
-2. You have one or more external container registrys (Harbor or Docker Registry)
+1. You are a Workspace Admin, and some namespaces are bound under this workspace.
+2. You have one or more external container registries (Harbor or Docker Registry).
 
-The operation steps are:
+## Steps
 
 ```mermaid
 graph TB
 
-associate[Associated registry] --> push[Push image] --> deploy[Deploy app]
+associate[Associating Registry] --> push[Pushing Image] --> deploy[Deploying App]
 
 classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
 classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
@@ -32,7 +32,4 @@ click push "https://docs.daocloud.io/en/kangaroo/quickstart/push/"
 click deploy "https://docs.daocloud.io/en/kpanda/user-guide/workloads/create-deployment/"
 ```
 
-Expected result: When deploying an application in the namespace under this workspace, you can use the image selector to select the image under this registry space to deploy the application.
-
-
-
+The expected result is that when deploying an application in the namespace under this workspace, you can use the image selector to choose the image under this registry space to deploy the application.

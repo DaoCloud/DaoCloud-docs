@@ -61,7 +61,6 @@ This page lists the release notes of the container registry, so that you can und
 - Support page editing `Project` as public or private
 - Support `harbor`, `docker registry` type registry multi-architecture image page display
 
-
 #### Fixes
 
 - Fixed `harbor`, `docker registry` repositories that support associated repositories connected to `https`

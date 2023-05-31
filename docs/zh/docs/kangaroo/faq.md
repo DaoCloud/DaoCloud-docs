@@ -1,10 +1,13 @@
 # 镜像仓库 FAQ
 
 ## 离线环境镜像扫描器失败
+
   镜像扫描因为依赖漏洞数据，默认是去CVE官网获取漏洞数据，如果是纯离线环境，则不能正常的进行漏洞扫描，会执行失败。
+
   ![trivy](./images/trivy-nodb.png)
 
 ## 如何在离线环境更新或者导入漏洞库
+
 1. 数据库位置
   
     ```
@@ -17,22 +20,24 @@
     $ trivy -h | grep 'TRIVY_CACHE_DIR'
        --cache-dir value  cache directory (default: "/root/.cache/trivy") [$TRIVY_CACHE_DIR]
     ```
-    
+
 3. 数据库下载
 
-    - `trivy-light-offline.db.tgz`：离线版轻量数据库，解压后约104MB。
-    - `trivy-offline.db.tgz`：离线版全量数据库，解压后约221MB。
+    - `trivy-light-offline.db.tgz`：离线版轻量数据库，解压后约 104 MB。
+    - `trivy-offline.db.tgz`：离线版全量数据库，解压后约 221 MB。
     - 下载地址: [https://github.com/aquasecurity/trivy-db/releases](https://github.com/aquasecurity/trivy-db/releases)
-   
+
 ## 创建托管 harbor 时候第一步集群校验通过后创建 harbor 仍然出错
 
-目前只校验了集群中是否有`CRD`,没有校验`harbor-operator`服务，可能会出现不存在`harbor-operator`服务的情况，导致不能正确的创建`Harbor`.
+目前只校验了集群中是否有 `CRD`，没有校验 `harbor-operator` 服务，可能会出现不存在`harbor-operator` 服务的情况，导致不能正确的创建 `Harbor`。
 
-## 本地执行`docker login {ip}`之后报错
+## 本地执行 `docker login {ip}` 之后报错
 
-> Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certificate for {ip} because it doesn't contain any IP SANs
+```text
+Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certificate for {ip} because it doesn't contain any IP SANs
+```
 
-出现这个错误是因为`registry`是`https`服务，是使用了非签名证书或者不安全证书，就会提示这个错误，要解决办法就是在`/etc/docker/daemon.json`配置文静中`"insecure-registries"` 加入对应的IP。
+出现这个错误是因为 `registry` 是 `https` 服务，是使用了非签名证书或者不安全证书，就会提示这个错误，要解决办法就是在 `/etc/docker/daemon.json` 配置文件中 `"insecure-registries"` 加入对应的 IP。
 
 ```json
 "insecure-registries": [
@@ -40,9 +45,10 @@
   "registry-1.docker.io"
 ]
 ```
-之后重启`systemctl restart docker`。
 
-## 创建托管harbor接入外部pg、redis，密码含有特殊字符(!@#$%^&*)之类的，服务启动失败。
+之后重启 `systemctl restart docker`。
+
+## 创建托管 harbor 接入外部 pg、redis，密码含有特殊字符 (!@#$%^&*) 之类的，服务启动失败
 
 目前密码中不能有特殊字符，不然会出现服务启动失败的情况，可以使用大小写字母和数字组合的情况。
 
