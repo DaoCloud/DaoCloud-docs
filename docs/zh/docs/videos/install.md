@@ -18,7 +18,7 @@ DCE 5.0 分为社区版和商业版。社区版可免费使用，包括全局管
 参阅[在线安装 DCE 5.0 社区版](../install/intro.md#_2)。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/online-install-community.mp4" preload="metadata" poster="../images/install-online.pngs"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/online-install-community.mp4" preload="metadata" poster="../images/install-online.png"></video>
 </div>
 
 

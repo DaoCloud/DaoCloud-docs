@@ -33,5 +33,5 @@
 ## 如何让传统应用上云后仍通过固定 IP 对外通信？
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/underlay-ip.mp4" preload="metadata" poster="../images/underlay-ip.ong"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/underlay-ip.mp4" preload="metadata" poster="../images/underlay-ip.png"></video>
 </div>
