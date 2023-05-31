@@ -22,22 +22,26 @@
 #### 扫描失败原因分析
 
 1. [FAIL] 1.2.5 Ensure that the --kubelet-certificate-authority argument is set as appropriate (Automated)
-**原因：**CIS 要求 kube-apiserver 必须指定 kubelet 的 CA 证书路径：
+
+    **原因：**CIS 要求 kube-apiserver 必须指定 kubelet 的 CA 证书路径：
 
     ![img](../../kpanda/images/hardening01.png)
 
 2. [FAIL] 1.3.7 Ensure that the --bind-address argument is set to 127.0.0.1 (Automated)
-**原因：**CIS 要求 kube-controller-manager 的 --bing-address=127.0.0.1
+
+    **原因：**CIS 要求 kube-controller-manager 的 --bing-address=127.0.0.1
 
     ![img](../../kpanda/images/hardening02.png)
 
 3. [FAIL] 1.4.1 Ensure that the --profiling argument is set to false (Automated)
-**原因：** CIS 要求 kube-scheduler 设置 --profiling=false
+
+    **原因：** CIS 要求 kube-scheduler 设置 --profiling=false
 
     ![img](../../kpanda/images/hardening03.png)
 
 4. [FAIL] 1.4.2 Ensure that the --bind-address argument is set to 127.0.0.1 (Automated)
-**原因：** CIS 要求 设置 kube-scheduler 的 --bind-address=127.0.0.1
+
+    **原因：** CIS 要求 设置 kube-scheduler 的 --bind-address=127.0.0.1
 
     ![img](../../kpanda/images/hardening04.png)
 
@@ -58,11 +62,11 @@ kubespray 官方为了解决这些安全扫描问题，在 v2.22 的版本中添
     ```
 
 - 在 dce5 中，也提供了通过 UI 来配置高级参数的功能, 在创建集群最后一步添加自定义参数:
-- 
+
     ![img](../../kpanda/images/hardening05.png)
 
 - 设置自定义参数后，在 kubean 的 var-config 的 configmap 中添加了如下参数：
-- 
+
     ![img](../../kpanda/images/hardening06.png)
 
 - 安装集群后进行扫描：
