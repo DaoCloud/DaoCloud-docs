@@ -118,6 +118,7 @@ nav:
           - 最佳实践:
               - ETCD 备份还原: kpanda/best-practice/etcd-backup.md
               - 对 Mysql 应用及数据进行跨集群备份恢复: kpanda/best-practice/backup-mysql-on-nfs.md
+              - 如何加固自建工作集群: kpanda/best-practice/hardening-cluster.md
               - 工作集群离线升级指南: kpanda/best-practice/update-offline-cluster.md
       - 全局管理:
           - 介绍:
@@ -765,6 +766,7 @@ nav:
   - 视频教程:
       - 介绍: videos/index.md
       - 安装教程: videos/install.md
+      - 最佳实践: videos/use-cases.md
       - 容器管理: videos/kpanda.md
       - 全局管理: videos/ghippo.md
       - 可观测性: videos/insight.md
