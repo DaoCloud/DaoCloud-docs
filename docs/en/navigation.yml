@@ -750,6 +750,7 @@ nav:
   - Video Tutorial:
       - Index: videos/index.md
       - Installation: videos/install.md
+      - Best Practices: videos/use-cases.md
       - Container Management: videos/kpanda.md
       - Global Management: videos/ghippo.md
       - Obsevability: videos/insight.md
