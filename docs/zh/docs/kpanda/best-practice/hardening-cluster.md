@@ -1,13 +1,13 @@
 # 如何加固自建工作集群
 
-在 DCE 5.0 中，使用 cisbenchmark(CIS) 扫描使用界面创建的工作集群，有一些扫描项并没有通过扫描。
+在 DCE 5.0 中，使用 cisbenchmark (CIS) 扫描使用界面创建的工作集群，有一些扫描项并没有通过扫描。
 本文将基于不同的 cisbenchmark 版本进行加固说明。
 
 ## cisbenchmark 1.27
 
 扫描环境说明：
 
-- kuberntes version: 1.25.4
+- kubernetes version: 1.25.4
 - containerd: 1.7.0
 - kubean version: 0.4.9
 - kubespary version: v2.22
@@ -47,7 +47,7 @@
 
 #### 加固配置以通过 CIS 扫描
 
-kubespray 官方为了解决这些安全扫描问题，在 v2.22 的版本中添加默认值解决了一部分问题，
+kubespray 官方为了解决这些安全扫描问题，在 v2.22 中添加默认值解决了一部分问题，
 更多细节请参考 [kubespray 加固文档](https://github.com/kubernetes-sigs/kubespray/blob/master/docs/hardening.md)。
 
 - 通过修改 kubean var-config 配置文件来添加参数：
@@ -61,7 +61,7 @@ kubespray 官方为了解决这些安全扫描问题，在 v2.22 的版本中添
     kubelet_rotate_server_certificates: true
     ```
 
-- 在 dce5 中，也提供了通过 UI 来配置高级参数的功能, 在创建集群最后一步添加自定义参数:
+- 在 DCE 5.0 中，也提供了通过 UI 来配置高级参数的功能，在创建集群最后一步添加自定义参数：
 
     ![img](../../kpanda/images/hardening05.png)
 
