@@ -1,63 +1,94 @@
-# Install Dependencies
+# Dependencies of DCE 5.0
 
-After deploying k8s clusters, you shall install some dependencies before you explore the capabilities of DCE 5.0.
+Before you start installing DCE 5.0, you must have these dependencies installed first, otherwise you installation of DCE 5.0 may get failed.
 
-## Install online
+- For the Community package, install the dependencies on the K8s Controller node.
+- For the Enterprise Edition, install the dependencies on the [Spark Node](./commercial/deploy-arch.md).
 
-1. On the k8s control plane (master node), download the dce5-installer binary package.
+!!! note
+    
+    You should install **all** of the following dependencies:
 
-    ```shell
-    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
+    - podman
+    - helm
+    - skopeo
+    - kind
+    - kubectl
+    - yq
+    - minio client
+    
+    If you have already installed lower versions of these tools, just follow these steps and they will be automatically and mandatorily upgrade versions required for DCE 5.0.
+
+## Online Install
+
+1. Download the script.
+
+    ```bash
+    curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
     ```
 
-    Add the executable permission to `install_prerequisite.sh`:
+    Add permission to execute `install_prerequisite.sh`:
 
     ```bash
     chmod +x install_prerequisite.sh
     ```
 
-2. Start to install all prerequisites dependencies.
+2. Execute the install script.
+
+    - For the Community package, run:
+
+        ```bash
+        bash install_prerequisite.sh online community
+        ```
+
+    - For the Enterprise package, run:
+
+        ```bash
+        bash install_prerequisite.sh online full
+        ```
+
+## Offline Install
+
+If the target host is disconnected from the Internet, you can follow these steps to install dependencies offline.
+
+1. Build an offline dependency package on another host that is connected to the Internet.
+
+    - Command for the Community package:
+
+        ```bash
+        bash install_prerequisite.sh export community
+        ```
+
+    - Command for the Enterprise package:
+
+        ```bash
+        bash install_prerequisite.sh export full
+        ```
+
+    After executing the above command, a compressed package named `pre_pkgs.tar.gz` will be generated in the working directory. This file contains all dependencies mentioned above.
+
+2. Upload all the files in the directory to the target host.
 
     ```bash
-    bash install_prerequisite.sh online community
-    ```
-
-    !!! note
-
-        Currently, this script includes the following dependencies:
-
-        - helm 3.9.4
-        - skopeo 1.9.2
-        - kubectl 1.25.0
-        - yq 4.27.5
-
-## Install offline
-
-Offline installation means that your hosts are offline and you cannot download the required dependencies, so you need to make an offline package in an online environment.
-
-1. Make the offline package.
-
-    ```bash
-    bash install_prerequisite.sh export community
-    ```
-
-    !!! note
-
-        When you performed the above command, `pre_pkgs.tar.gz` will be generated in the current directory.
-
-2. Upload all files in the directory to the offline environment.
-
-    ``` bash
-    # The script is in the same folder as the offline package
+    # script and the offline package are located at the same level in the directory.
     $ tree .
     .
     ├── install_prerequisite.sh
     └── pre_pkgs.tar.gz
     ```
 
-3. Perform offline installation.
+3. Install dependencies in the target host.
 
-    ``` bash
-    bash install_prerequisite.sh offline community
-    ```
-    
+    - For the Community package:
+
+        ```bash
+        bash install_prerequisite.sh offline community
+        ```
+
+    - For the Enterprise package:
+
+        ```bash
+        bash install_prerequisite.sh offline full
+        ```
+
+You can now go to [install DCE 5.0 Community package](community/resources.md) or [DCE 5.0 Enterprise package](commercial/deploy-requirements.md)

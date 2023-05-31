@@ -3,24 +3,24 @@ hide:
   - toc
 ---
 
-# Cluster resource planning
+# Cluster Resources for Installing Community Package
 
-You can install DCE 5.0 on a standard Kubernetes cluster, or you can install DCE 5.0 on a kind cluster.
+You can install DCE 5.0 on a standard Kubernetes cluster (production env) or on a kind cluster (test and development env).
 
-The requirements for standard Kubernetes cluster resources are as follows:
+## Install in Standard Kubernetes Cluster
 
-| Resource Items | Requirements |
-| :--------- | :------------------------------------- -------------------------------------------------- ----------------------- |
-| Node hardware | **3 Master + 2 Worker** <br />Master node: 4 Core, 8 G; system disk 100G <br />Worker node: 4 Core, 8 G; system disk 100G |
-| K8s version | The official highest stable version of K8s is recommended, currently v1.24 is recommended, and the minimum support is v1.20 |
-| Supported CRIs | Docker and containerd |
-| CPU architecture | x86_64, ARM is not supported temporarily |
+| Resource Item | Requirements                                                                                                    |
+| :------------ | :-------------------------------------------------------------------------------------------------------------- |
+| Node | **3 Controller + 2 Worker nodes** <br />Controller node: 4 Core, 8 G, system disk 100G <br />Worker node: 4 Core, 8 G, system disk 100G |
+| Kubernetes Version   | Recommended to use the latest stable version. Mminimum supported version: v1.20                                                       |
+| Supported CRIs | Docker and containerd                                                                                            |
+| CPU  | x86_64 and ARM64                                                                                     |
 
-The requirements for kind cluster resources are as follows, and are only recommended for testing and development.
+## Install in kind Cluster
 
-| Resource Items | Requirements |
-| :--------- | :------------------------------------- ------------------- |
-| Node Hardware | CPU > 10 Cores, Memory > 12 GB, Disk Space > 100 GB |
-| K8s version | The official highest stable version of K8s is recommended, currently v1.24 is recommended, and the minimum support is v1.20 |
-| Supported CRIs | Docker and containerd |
-| CPU architecture | x86_64, ARM is not supported temporarily |
+| Resource Item | Requirements                                                      |
+| :------------ | :---------------------------------------------------------------- |
+| Node | CPU > 10 cores, memory > 12 GB, disk > 100 GB                |
+| Kubernetes Version   | Recommended to use the latest stable version。 Minimum supported version v1.20 |
+| Supported CRIs | Docker and containerd                                              |
+| CPU   | x86_64 and ARM64                                    |
