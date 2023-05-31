@@ -62,7 +62,7 @@ Provides a wealth of system plugins to expand the functions of cloud container c
 
 ## Authority Management
 
-Supports [Namespace Authorization](../user-guide/permissions/cluster-ns-auth.md). Through permission settings, different users or user groups can have permission to operate different Kubernetes resources under the specified namespace.
+Supports [Namespace Authorization](../user-guide/permissions/cluster-ns-auth.md). Through permission settings, different users or groups can have permission to operate different Kubernetes resources under the specified namespace.
 
 ## Cluster Operation and Maintenance
 

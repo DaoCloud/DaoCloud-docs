@@ -19,6 +19,6 @@ This section explains how to view a list of MinIO instances.
     - update or delete instance
     - Click the access address to open the console in the web interface and log in with the username and password on the right
     - Can view or create alert rules
-    - Click the container group name to jump to the container management module to view the details of the container group
+    - Click the pod name to jump to the container management module to view the details of the pod
 
         <!--screenshot-->

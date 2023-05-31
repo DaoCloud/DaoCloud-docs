@@ -1258,7 +1258,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - IAM, Identity and access management
 
-    [IAM](../ghippo/user-guide/access-control/iam.md) stands for Identity and Access Management, which is a shorthand for user and access control in global management. An IAM Admin is the administrator with the highest level of permission in this module. Users or user groups assigned as IAM Admin will have full and highest permission for user and access control.
+    [IAM](../ghippo/user-guide/access-control/iam.md) stands for Identity and Access Management, which is a shorthand for user and access control in global management. An IAM Admin is the administrator with the highest level of permission in this module. Users or groups assigned as IAM Admin will have full and highest permission for user and access control.
 
 - Image
 
@@ -1579,7 +1579,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     [Permissions](../ghippo/user-guide/access-control/iam.md) refer to whether a user is allowed to perform a certain operation on a certain resource. In order to reduce the threshold for use, DCE adopts the RBAC model to aggregate permissions into roles. Administrators only need to authorize roles to users, and the user will obtain a set of permissions aggregated under that role.
 
-    By default, IAM users created by administrators have no role permissions. They need to be granted roles individually or added to user groups and granted roles in order to obtain corresponding role permissions. This process is called authorization. After authorization, users can operate on platform resources based on the role permissions granted to them.
+    By default, IAM users created by administrators have no role permissions. They need to be granted roles individually or added to groups and granted roles in order to obtain corresponding role permissions. This process is called authorization. After authorization, users can operate on platform resources based on the role permissions granted to them.
 
 - Persistent Volume Claim, PVC
 
@@ -1684,7 +1684,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - RBAC
 
-    Role-Based Access Control (RBAC) allows administrators to dynamically configure access policies through the Kubernetes API. RBAC uses [roles](../ghippo/user-guide/access-control/role.md) (which contain permission rules) and role bindings (which grant a user group the permissions defined in a role).
+    Role-Based Access Control (RBAC) allows administrators to dynamically configure access policies through the Kubernetes API. RBAC uses [roles](../ghippo/user-guide/access-control/role.md) (which contain permission rules) and role bindings (which grant a group the permissions defined in a role).
 
 - Registration center
 
@@ -1704,7 +1704,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Resource
 
-    Resource refers to the specific data that completes authorization on the DCE platform through various sub-modules. Typically, a resource describes one or more objects of operation, and each sub-module has its own resources and corresponding resource definition details, such as clusters, namespaces, gateways, etc. The owner of the resource is the main account Super Admin. Super Admin has the authority to create/manage/delete resources in each sub-module. Ordinary users do not automatically have access to resource access rights without authorization from Super Admin. The workspace supports cross-sub-module authorization of user (user group) access to resources.
+    Resource refers to the specific data that completes authorization on the DCE platform through various sub-modules. Typically, a resource describes one or more objects of operation, and each sub-module has its own resources and corresponding resource definition details, such as clusters, namespaces, gateways, etc. The owner of the resource is the main account Super Admin. Super Admin has the authority to create/manage/delete resources in each sub-module. Ordinary users do not automatically have access to resource access rights without authorization from Super Admin. The workspace supports cross-sub-module authorization of user (group) access to resources.
 
 - Resource limit
 
@@ -1732,7 +1732,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     - predefined roles created by the system that users can only use and cannot modify, and
     - custom roles that users can create, update, and delete themselves.
 
-    The permissions in custom roles are maintained by the users themselves. At the same time, because global management brings together multiple sub-modules, each sub-module also has a corresponding administrator role, such as IAM Admin, which manages user and access control, i.e., managing users/user groups and authorizations, Workspace Admin, which manages hierarchy and workspace permissions, and only this permission can create hierarchy, and Audit Admin, which manages audit logs.
+    The permissions in custom roles are maintained by the users themselves. At the same time, because global management brings together multiple sub-modules, each sub-module also has a corresponding administrator role, such as IAM Admin, which manages user and access control, i.e., managing users/groups and authorizations, Workspace Admin, which manages hierarchy and workspace permissions, and only this permission can create hierarchy, and Audit Admin, which manages audit logs.
 
 - Rolling update
 
@@ -1933,7 +1933,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - User
 
-    A [user](../ghippo/user-guide/access-control/user.md) is the subject who initiates an operation, each user has a unique ID and is granted different roles. The IAM users created by default have no permissions and need to be added to user groups, granted roles or policies to gain corresponding permissions.
+    A [user](../ghippo/user-guide/access-control/user.md) is the subject who initiates an operation, each user has a unique ID and is granted different roles. The IAM users created by default have no permissions and need to be added to groups, granted roles or policies to gain corresponding permissions.
 
     Users log in to DCE with their usernames and operate platform resources and services according to the permissions granted to them. Therefore, users are the subjects of resource ownership and have corresponding permissions for the resources they own.
 
@@ -2021,7 +2021,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Workspace
 
-    A [workspace](../ghippo/user-guide/workspace/workspace.md) is a resource category that represents a resource hierarchy. A workspace can contain resources such as clusters, [namespaces](../kpanda/user-guide/namespaces/createns.md), and registries. Typically, a workspace corresponds to a project, and different resources can be assigned to each workspace, with different users and user groups assigned.
+    A [workspace](../ghippo/user-guide/workspace/workspace.md) is a resource category that represents a resource hierarchy. A workspace can contain resources such as clusters, [namespaces](../kpanda/user-guide/namespaces/createns.md), and registries. Typically, a workspace corresponds to a project, and different resources can be assigned to each workspace, with different users and groups assigned.
 
 - Worker Cluster
 

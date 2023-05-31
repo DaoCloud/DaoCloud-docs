@@ -63,7 +63,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [June 3 KubeSphere Community Cloud Native Meetup Hangzhou](https://mp.weixin.qq.com/s/UaR40LZvTiINcq1D8dKc_A)
   
-    This Meetup is jointly organized by KubeSphere community and Polar Fox GitLab and Curve community, including 4 sharing sessions and 1 WorkShop session, covering topics such as cloud-native security, cloud-native storage, service grid, etc.
+    This Meetup is jointly organized by KubeSphere community and Polar Fox GitLab and Curve community, including 4 sharing sessions and 1 WorkShop session, covering topics such as cloud-native security, cloud-native storage, service mesh, etc.
 
 - [June 3 KCD Beijing Open Call for Topics (5.8 deadline)](https://mp.weixin.qq.com/s/iX7Qk8jr7vM13srimYs_rA)
   

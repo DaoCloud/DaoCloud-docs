@@ -22,7 +22,7 @@ A platform role refers to a role that can manipulate features related to a certa
 
      
 
-1. After the platform role is successfully created, you can go to [User](user.md)/[User Group](group.md) to authorize to add users and user groups for this role.
+1. After the platform role is successfully created, you can go to [User](user.md)/[group](group.md) to authorize to add users and groups for this role.
 
 ## Create a workspace role
 

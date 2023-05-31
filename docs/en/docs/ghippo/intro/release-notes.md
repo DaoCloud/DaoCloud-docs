@@ -2,6 +2,41 @@
 
 This page lists the Release Notes for global management of each version, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-05-30
+
+### v0.17.0
+
+#### Features
+
+- Access Control： Access Clients (Create/View/List/Update/Delete)
+- Access Control： Webhook API (Create/Edit/Delete/List/View)
+- User CRUD/Login/Logout event triggers webhook
+- Access Control provides permission points
+- Username/group name supports `.` and `@`
+- The default language of the platform is changed to automatically detect browser preferences.
+- Audit logs can be downloaded in Excel and CSV formats
+- Audit log: Two types of logs (system and user) are displayed separately
+- Prevent removing the admin role of the admin user or editing admin permissions
+- Workspace authorization displays the details of the role's permissions
+- Unit test coverage can only rise, not fall.
+- OpenAPI supports versions, and OpenAPI documents support deprecation (other GProduct modules must be updated synchronously to the corresponding version in installer v0.8.0)
+- Operations Management: GMagpie uses database configuration specifications (Helm parameters, DSN) to dock with the installer.
+- Operations Management: Reports can be downloaded in Excel and CSV formats.
+- Operations Management: Supports Workspace reports.
+- Operations Management: Supports Workspace billing reports.
+- Operations Management: Supports pod reports.
+- Operations Management: Supports pod billing reports.
+- Operations Management: Supports Namespace billing reports.
+
+#### Optimize
+
+- Optimize the default sorting of the role list.
+- Modify Workspace Editor permission points.
+
+#### Fix
+
+- Fixed the synchronization time issue of LDAP synchronized groups.
+
 ## 2023-04-28
 
 ### v0.16.1
@@ -22,7 +57,7 @@ This page lists the Release Notes for global management of each version, so that
 - Support modifying the background image of the landing page
 - Support the modification of filing information at the bottom of the home page and login page (update/display)
 - Helm parameter format modification for database connection
-- Access Management - Access Client API (Create/View/List/Update/Delete)
+- Access Control - Access Client API (Create/View/List/Update/Delete)
 - Reverse generation URL supports adding Path in front
 - The Audit Log SDK directly calls the AuditServer API
 - Audit log user and system audits are divided into table storage and API access
