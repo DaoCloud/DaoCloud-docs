@@ -144,7 +144,7 @@ extra:
 # Customization Javascript
 extra_javascript:
   - /stylesheets/zoom_image.js
-  - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+  # - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js # disable fix mermaid not working
 
 # Customization css
 extra_css:
