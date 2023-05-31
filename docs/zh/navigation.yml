@@ -766,6 +766,7 @@ nav:
   - 视频教程:
       - 介绍: videos/index.md
       - 安装教程: videos/install.md
+      - 最佳实践: videos/use-cases.md
       - 容器管理: videos/kpanda.md
       - 全局管理: videos/ghippo.md
       - 可观测性: videos/insight.md
