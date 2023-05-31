@@ -116,7 +116,7 @@ Below is a list of features available:
         - Create users
         - Edit basic user information such as email, description, enable/disable etc.
         - Record user authorization information
-        - Record user group membership information
+        - Record group membership information
         - Admins can help users change passwords
         - Admins can help users create access keys
     2. [Groups](../user-guide/access-control/group.md)

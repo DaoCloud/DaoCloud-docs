@@ -1,11 +1,11 @@
 # Description of container management permissions
 
 Container management permissions are based on a multi-dimensional permission management system created by global permission management and Kubernetes RBAC permission management.
-Supports cluster-level and namespace-level permission control, helping users to conveniently and flexibly set different operation permissions for IAM users and user groups (a collection of users) under a tenant.
+Supports cluster-level and namespace-level permission control, helping users to conveniently and flexibly set different operation permissions for IAM users and groups (a collection of users) under a tenant.
 
 ## Cluster permissions
 
-Cluster permissions are based on the ClusterRolebinding authorization of Kubernetes RBAC. Cluster permission settings allow users/user groups to have cluster-related permissions.
+Cluster permissions are based on the ClusterRolebinding authorization of Kubernetes RBAC. Cluster permission settings allow users/groups to have cluster-related permissions.
 The current default cluster role is `Cluster Admin` (does not have permission to create and delete clusters).
 
 ### `Cluster Admin`
@@ -47,7 +47,7 @@ rules:
 
 ## Namespace permissions
 
-Namespace permissions are based on the authorization of Kubernetes RBAC capabilities, which can enable different users/user groups to have different operation permissions on resources under the namespace (including Kubernetes API permissions, for details, please refer to: [Kubernetes RBAC](https://kubernetes .io/docs/reference/access-authn-authz/rbac/). Currently, the default roles for container management are: NS Admin, NS Edit, NS View.
+Namespace permissions are based on the authorization of Kubernetes RBAC capabilities, which can enable different users/groups to have different operation permissions on resources under the namespace (including Kubernetes API permissions, for details, please refer to: [Kubernetes RBAC](https://kubernetes .io/docs/reference/access-authn-authz/rbac/). Currently, the default roles for container management are: NS Admin, NS Edit, NS View.
 
 ### `NS Admin`
 

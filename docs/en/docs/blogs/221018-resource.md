@@ -19,7 +19,7 @@ At the same time, the workspace and hierarchy module also supports the function 
 
 The resource management module is a hierarchical resource isolation and resource grouping module, which mainly solves the problems of resource unified authorization, resource grouping and resource quota.
 The resource management module has two concepts: hierarchy and workspace.
-In the resource management module, you can build the hierarchical relationship of enterprise business through hierarchy, and manage resources through resource groups and shared resources in the workspace, so that users (user groups) of the resource management module can share resources in the workspace.
+In the resource management module, you can build the hierarchical relationship of enterprise business through hierarchy, and manage resources through resource groups and shared resources in the workspace, so that users (groups) of the resource management module can share resources in the workspace.
 
 Resources are at the lowest level of the resource management module hierarchy, and resources include Cluster, Namespace, Pipeline, and Gateway.
 The parent of all these lower-level resources can only be the workspace, and the workspace is a resource grouping unit as a resource container.
@@ -33,7 +33,7 @@ Hierarchy is a further grouping mechanism based on workspaces and has a hierarch
 Hierarchies allow you to map enterprise business hierarchy relationships and group workspaces by department. Hierarchy is not directly linked to resources, but indirectly implements resource grouping through workspaces.
 A level has one and only one parent level, and the root level is the highest level of the hierarchy, so there is no parent level, and both the level and the workspace are attached to the root level.
 
-At the same time, users (user groups) in the hierarchy can inherit permissions from their parents through the hierarchy.
+At the same time, users (groups) in the hierarchy can inherit permissions from their parents through the hierarchy.
 The authority of each node of the user in the hierarchical structure comes from the combined result of the authority obtained directly at the node and the authority inherited from its parent. The authority is an additive relationship and there is no mutual exclusion.
 
 ![resource](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/resource02.png)
@@ -65,7 +65,7 @@ A workspace has one and only one parent level, and the workspace and the resourc
 In DCE 5.0, due to the different authorization methods of resources, resources that strongly depend on workspace authorization, such as gateways, pipelines, etc., are derived; and resources that can be selectively bound to workspaces, such as Cluster and Namespace.
 
 Since the resources of Workbench, microservice engine, and service mesh take the workspace as the top-level concept, the resources are completely dependent on the workspace for authorization, so the resources will be automatically bound to a certain workspace, and the owner of the workspace is The owner of the resource.
-Such resources do not need to be manually bound, and the resources do not need to be displayed in the resource group of the workspace. The prerequisite for users (user groups) to use resources is to be granted the corresponding permissions in the workspace.
+Such resources do not need to be manually bound, and the resources do not need to be displayed in the resource group of the workspace. The prerequisite for users (groups) to use resources is to be granted the corresponding permissions in the workspace.
 For Cluster and Namespace resources, since container management has an independent authorization module, resource owners have the right to selectively bind.
 The resource is manually bound to the resource group of the workspace, which means that the workspace owner is allowed to manage and use the resource. At this time, the workspace owner is equivalent to the resource owner, and the bound resources will be displayed in the resource group of the workspace , and can be unbound at any time.
 The resource is bound to the shared resource of the workspace, which means that the resource owner is allowed to use the resource within the resource limit. Currently, the only resource type that can be shared is Cluster.

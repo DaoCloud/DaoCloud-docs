@@ -12,7 +12,7 @@ This page lists the Release Notes for global management of each version, so that
 - Access Control： Webhook API (Create/Edit/Delete/List/View)
 - User CRUD/Login/Logout event triggers webhook
 - Access Control provides permission points
-- Username/User Group name supports `.` and `@`
+- Username/group name supports `.` and `@`
 - The default language of the platform is changed to automatically detect browser preferences.
 - Audit logs can be downloaded in Excel and CSV formats
 - Audit log: Two types of logs (system and user) are displayed separately
@@ -24,8 +24,8 @@ This page lists the Release Notes for global management of each version, so that
 - Operations Management: Reports can be downloaded in Excel and CSV formats.
 - Operations Management: Supports Workspace reports.
 - Operations Management: Supports Workspace billing reports.
-- Operations Management: Supports container group reports.
-- Operations Management: Supports container group billing reports.
+- Operations Management: Supports pod reports.
+- Operations Management: Supports pod billing reports.
 - Operations Management: Supports Namespace billing reports.
 
 #### Optimize
@@ -35,7 +35,7 @@ This page lists the Release Notes for global management of each version, so that
 
 #### Fix
 
-- Fixed the synchronization time issue of LDAP synchronized user groups.
+- Fixed the synchronization time issue of LDAP synchronized groups.
 
 ## 2023-04-28
 

@@ -132,7 +132,7 @@ This page provides the Release Notes for container management to help you unders
 
 - **Fixed** Issues with not being able to add new nodes with a password.
 - **Fixed** Error in obtaining the cluster kubeconfig accessed in Token mode.
-- **Fixed** Cannot get full users and user groups when granting permissions.
+- **Fixed** Cannot get full users and groups when granting permissions.
 - **Fixed** Issue unbinding the workspace original permissions when the Bindingsync component is abnormal.
 - **Fixed** Workspace Resync does not properly remove unwanted permissions.
 - **Fixed** Delete the question in which the Namespace can also be selected.
