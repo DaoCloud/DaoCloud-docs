@@ -12,7 +12,7 @@ This article provides a relatively general evaluation method based on actual tes
 
 To do capacity planning for Elasticsearch, the following factors need to be considered:
 
-- Usage scenarios: the main business scenarios used, the amount of data generated in different scenarios is different
+- Usage cases: the main business cases used, the amount of data generated in different cases is different
 - Number of documents: determine the number of documents to store, and the size of each document
 - Storage requirements: determine the storage space required to store all documents and any related data
 - Indexing requirements: choose the appropriate indexing strategy and settings to ensure performance and scalability
@@ -23,7 +23,7 @@ To do capacity planning for Elasticsearch, the following factors need to be cons
 
 ### Basic Requirements Planning
 
-At the beginning of storage capacity planning, two `usage scenarios` and `data requirements` plans need to be confirmed in advance:
+At the beginning of storage capacity planning, two ` use cases` and `data requirements` plans need to be confirmed in advance:
 
 - scenes to be used
 
@@ -62,10 +62,10 @@ If you have `500G` of data storage and need a replica, the minimum storage requi
 
 ### About node disk configuration
 
-The maximum amount of data carried by a single node is different in different usage scenarios, as follows:
+The maximum amount of data carried by a single node is different in different cases, as follows:
 
-- Scenarios such as data acceleration and query aggregation: Maximum capacity of a single-node disk = single-node memory size (GB) * 10
-- Scenarios such as log writing and offline analysis: maximum capacity of a single-node disk = single-node memory size (GB) * 50
+- Cases such as data acceleration and query aggregation: Maximum capacity of a single-node disk = single-node memory size (GB) * 10
+- Cases such as log writing and offline analysis: maximum capacity of a single-node disk = single-node memory size (GB) * 50
 - General scenario: maximum capacity of a single-node disk = single-node memory size (GB) * 30
 
 ## ES cluster instance configuration recommendation
@@ -75,8 +75,8 @@ Deploy the recommended configuration in a production environment: try to have on
 - The maximum number of nodes in the cluster = single node CPU * 5
 - The maximum capacity of a single-node disk
 
-     - Search scenarios: Maximum disk capacity of a single node = memory size of a single node (GB) * 10.
-     - Scenarios such as logs: Maximum capacity of a single-node disk = single-node memory size (GB) * 50.
+     - Search use cases: Maximum disk capacity of a single node = memory size of a single node (GB) * 10.
+     - Cases such as logs: Maximum capacity of a single-node disk = single-node memory size (GB) * 50.
 
 Configuration | Maximum number of nodes | Maximum single-node disk capacity (query) | Maximum single-node disk capacity (log)
 ---|---|--|--
@@ -103,7 +103,7 @@ Each `Elasticsearch` index is divided into multiple shards, and the data is scat
      - A shard that is too small may lead to a lot of shards, because each shard will take up some CPU and memory, resulting in read and write performance and insufficient memory.
   
 - When the number of shards exceeds the number of data nodes, it is recommended that the number of shards be close to an integer multiple of the data nodes, so that the shards can be evenly distributed to the data nodes.
-- For log scenarios, it is recommended to enable the ILM function. When the fragment size is found to be unreasonable, use this function to adjust the number of fragments in time.
+- For log cases, it is recommended to enable the ILM function. When the fragment size is found to be unreasonable, use this function to adjust the number of fragments in time.
 
 ### Index shard resource occupation
 

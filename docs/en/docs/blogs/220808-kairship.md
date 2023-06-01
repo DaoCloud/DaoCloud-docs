@@ -45,7 +45,7 @@ Support deployment policy and differentiated policy management, view the workloa
 ## Graphical user interaction
 
 The Multicloud Management module is an aggregation platform for multicluster management, which supports users to access clusters from different vendors and regions for unified management.
-Help enterprises quickly deploy workloads across clusters, and meet user scenarios such as cross-cluster management and disaster recovery deployment.
+Help enterprises quickly deploy workloads across clusters, and meet Cases such as cross-cluster management and disaster recovery deployment.
 In terms of hierarchical structure, a two-level architecture is adopted. The top layer extracts the list of multicloud clusters. Select to enter the multicloud cluster management center to view overview, work cluster management, multicloud workload, resource management, and policy center.
 
 On the multicloud cluster instance list interface, users can clearly perceive real-time information such as the running status, resource usage, and number of clusters of each multicloud cluster instance.

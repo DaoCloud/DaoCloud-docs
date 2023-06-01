@@ -35,7 +35,7 @@ Click [Online Install Community Package](../../../videos/install.md) to watch a 
 
 2. Customize `clusterConfig.yaml`
 
-    - If Console is exposed via NodePort (recommended only for PoC scenarios), skip this step.
+    - If Console is exposed via NodePort (recommended only for PoC use cases), skip this step.
 
     - In non-public cloud environment (virtual/physical machine), please enable load balancer (metallb) to avoid NodePort instability caused by node IP changes. Plan your network carefully and set up 2 necessary VIPs. Here is an example of `clusterConfig.yaml`:
 
@@ -71,7 +71,7 @@ Click [Online Install Community Package](../../../videos/install.md) to watch a 
             # externalImageRepoPassword: Harbor123456
         ```
 
-     - If Console is exposed via NodePort (recommended only for PoC scenarios), set `clusterConfig.yaml` as follows:
+     - If Console is exposed via NodePort (recommended only for PoC use cases), set `clusterConfig.yaml` as follows:
 
         ```yaml title="clusterConfig.yaml"
         apiVersion: provision.daocloud.io/v1alpha3

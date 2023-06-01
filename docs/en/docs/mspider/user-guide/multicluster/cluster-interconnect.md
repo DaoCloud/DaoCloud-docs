@@ -2,7 +2,7 @@
 
 Multicloud network interconnection is a set of solutions provided in the multicluster mode when the networks between the multiclusters are not connected to each other (Pods cannot directly establish communication). It can quickly connect the networks of multiple clusters to realize cross-cluster Pods visit each other.
 
-## Application scenarios
+## Use cases
 
 If your environment meets the following conditions, you can try to use the multicloud network interconnection function:
 

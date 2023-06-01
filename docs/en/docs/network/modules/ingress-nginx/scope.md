@@ -9,7 +9,7 @@ Date: 2023-02-08
 
 The IngressClass Scope can be used to specify whether the Ingress instance is limited to the cluster level、the namespace level and the workspace level.
 
-**Applicable scenarios**
+**Use cases**
 
 * Platform-level Ingress instances can be set up in the same cluster that shares the same Ingress instance.
 * Namespace-level Ingress instances can be set when a namespace use an exclusive Ingress instance for load isolation.

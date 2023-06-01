@@ -49,7 +49,7 @@ Flexibly add, modify, and delete specified HTTP header fields, including operati
 
 **Fault injection**
 
-Construct fault scenarios by injecting interruption failures and delayed failures into selected services without modifying any code, enabling fault testing.
+Construct fault cases by injecting interruption failures and delayed failures into selected services without modifying any code, enabling fault testing.
 
 ## End-to-End Transparent Security
 
@@ -85,7 +85,7 @@ The service mesh generates detailed telemetry for all service communication in t
 
 **Non-intrusive monitoring data collection** 
 
-In complex application scenarios, the access topology, call chain, and monitoring between services are necessary means for managing the overall operation of services and locating and delineating service access exceptions. An important capability of service mesh technology is to provide non-intrusive collection of these monitoring data in an application, allowing users to focus on their own business development without the need for additional attention to monitoring data generation.
+In complex cases, the access topology, call chain, and monitoring between services are necessary means for managing the overall operation of services and locating and delineating service access exceptions. An important capability of service mesh technology is to provide non-intrusive collection of these monitoring data in an application, allowing users to focus on their own business development without the need for additional attention to monitoring data generation.
 
 **Rich performance monitoring capabilities** 
 

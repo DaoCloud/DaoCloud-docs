@@ -121,7 +121,7 @@ data:
 type: kubernetes.io/tls
 ```
 
-## Scenarios
+## Use Cases
 
 Created TLS keys can be used to:
 

@@ -11,7 +11,7 @@ Obviously, **Karmada, as the most popular multicloud project in the community, p
 
 Karmada (Kubernetes Armada) enables users to run cloud-native applications across multiple clusters without changing existing applications.
 Enables a truly open multicloud by providing advanced scheduling capabilities using Kubernetes-native APIs. Karmada
-It aims to provide convenient automation for multicluster application management in multicloud and hybrid cloud scenarios, with key features such as centralized multicloud management, high availability and fault recovery.
+It aims to provide convenient automation for multicluster application management in multicloud and hybrid cloud cases, with key features such as centralized multicloud management, high availability and fault recovery.
 **This article is based on Karmada's release version v1.4.2, and we will explore with you how Karmada's cross-cluster fault recovery is realized**,
 Which controllers and schedulers are involved in this process, and what capabilities each controller undertakes in this process, and what capabilities the scheduler undertakes,
 And how to ensure high availability and continuity of user business?
@@ -892,7 +892,7 @@ So the state of work is still correct, but the DeletionTimestamp of work is not 
 
 ## Summarize
 
-The current version of Karmada can implement the replica split strategy and the full strategy, but in real business scenarios, for example, how to implement failover for stateful applications?
+The current version of Karmada can implement the replica split strategy and the full strategy, but in real business cases, for example, how to implement failover for stateful applications?
 How to ensure the network and storage of the application after transfer? This needs to be further verified by actual operation, and needs to be analyzed in detail according to the actual situation.
 
 At the same time, in the process of communicating with customers, some customers mentioned whether it is possible to reschedule and return the replica to the recovered cluster after the cluster failure is restored.
@@ -903,7 +903,7 @@ At the same time, in the latest community meeting, there are discussions about *
 The specific discussion will not be launched here, we look forward to it together.
 
 To sum up, **Karmada-based applications can achieve high availability at the cluster level. **
-With the development of multiple clouds at any time, Karmada is used by more and more people. We believe that Karmada will solve practical problems in more and more scenarios.
+With the development of multiple clouds at any time, Karmada is used by more and more people. We believe that Karmada will solve practical problems in more and more use cases.
 Among the CNCF project contributions that the author participated in, Karmada is currently the project with the fastest response to issues and the fastest processing of code merge requests.
 This is due to the good code contribution management mechanism of the community leader. So, based on the growing usage of users,
 With the rapid response from the community, I believe that Karmada will bring us more and more amazing capabilities.

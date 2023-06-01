@@ -20,10 +20,10 @@ In the third step of `Create Cluster`: `network configuration`, configure the fo
     - `INTERFACE REGEX`: specifies the NIC by NIC name or regular expression.
 - `Calico IPtables Backend`: Calico relies on IPtables to implement SNAT and network policies, and needs to be consistent with the host's IPtables mode, otherwise it may cause communication problems. It supports `Legacy`, `NFT`, and `Auto` modes, with `Legacy` mode by default. If you are using CentOS 8 / RHEL 8 / OracleLinux 8 series node system, please select NFT mode.
 - `Tunnel Mode`: Calico supports two packet encapsulation modes: IPIP and VXLAN, and both support Always and CrossSubnet modes.
-    - `VXLAN Always`: all cross-node packets will be encapsulated using VXLAN, regardless of whether the nodes are on the same segment, which satisfies most usage scenarios.
+    - `VXLAN Always`: all cross-node packets will be encapsulated using VXLAN, regardless of whether the nodes are on the same segment, which satisfies most  use cases.
     - `VXLAN CrossSubnet`: cross-node packets are encapsulated only when the nodes are on different network segments.
     - `IPIP CrossSubnet`: cross-node packets are encapsulated only when the nodes are on different network segments.
-    - `IPIP Always`: all cross-node packets are encapsulated using IPIP regardless of whether the nodes are on the same network segment, which satisfies most usage scenarios.
+    - `IPIP Always`: all cross-node packets are encapsulated using IPIP regardless of whether the nodes are on the same network segment, which satisfies most  use cases.
 - `Pod CIDR`—>`IPv4 CIDR`: `kube_pods_subnet`, the same as `ipv4_pools` by default. The network segment used by the containers in a cluster determines the maximum number of containers in that cluster. It cannot be modified after creation. The default is 10.233.64.0/18.
 - `Pod CIDR`—>`IPv6 CIDR`: `kube_pods_subnet_ipv6`, the same as `ipv6_pools` by default. The network segment used by the containers in a cluster determines the maximum number of containers in that cluster. It cannot be modified after creation. You need to enter this network segment information after opening the dual stack.
 - `Service CIDR`: the segment of Service resources used by containers in the same cluster to access each other determines the upper limit of Service resources. It cannot be modified after creation. The default is 10.244.0.0/18.
