@@ -27,7 +27,7 @@ subgraph second[Instructions]
     insight -.- ask[ASK!!!]
 end
 
-subgraph first[Install Community Release]
+subgraph first[Install Community Package]
     direction TB
     S[ ] -.-
     plan[Resource Planning] --> k8s[Prepare K8s Cluster] 
@@ -37,7 +37,7 @@ subgraph first[Install Community Release]
     tools -.-> s2[Offline Install with K8s]
 end
 
-start([fa:fa-user DCE 5.0 Community Release Installation]) --> first
+start([fa:fa-user DCE 5.0 Community Package Installation]) --> first
 start --> second
 
 classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:px,color:#000000, font-size:15px;
@@ -109,7 +109,7 @@ DaoCloud Enterprise 5.0 is still in the early stage of release, and the installa
 
 - Scan the QR code and communicate with developers freely:
 
-     ![Community Release Exchange Group](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
+     ![Community Package Exchange Group](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Free Try](../dce/license0.md){ .md-button .md-button--primary }

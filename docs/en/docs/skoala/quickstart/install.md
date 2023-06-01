@@ -1,6 +1,6 @@
 # Install Guides
 
-It is recommended to install DaoCloud Microservice Engine (DME) through the installation package of [DCE 5.0 Commercial Release](../../install/commercial/start-install.md), because you can install all modules of DCE 5.0 once a time with that package, no need to worry about incompatibility.
+It is recommended to install DaoCloud Microservice Engine (DME) through the installation package of [DCE 5.0 Enterprise Package](../../install/commercial/start-install.md), because you can install all modules of DCE 5.0 once a time with that package, no need to worry about incompatibility.
 
 This guides is designed for **manual online install of DME alone**. To be clear, `skoala` mentioned below is the internal development code of DME.
 
@@ -8,7 +8,7 @@ This guides is designed for **manual online install of DME alone**. To be clear,
 
     If you have already deployed DCE 5.0 commercial release, it is recommended to see [Offline Upgrade Microservice Engine](offline-upgrade.md) for DME's offline install and upgrade. 
 
-## Install with Commercial Release Package
+## Install with Enterprise Package Package
 
 When the commercial release version **≥ v0.3.29**, DME will be installed by default. However, it is still recommended to check the `mainfest.yaml` file to confirm whether the value of `components/skoala/enable` is `true`, and whether the helm version is specified.
 

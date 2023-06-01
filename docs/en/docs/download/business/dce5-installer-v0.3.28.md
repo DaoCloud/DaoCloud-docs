@@ -1,6 +1,6 @@
-# DCE 5.0 Commercial Release v0.3.28
+# DCE 5.0 Enterprise Package v0.3.28
 
-This page can download the offline installation package of DCE 5.0 Commercial Release.
+This page can download the offline installation package of DCE 5.0 Enterprise Package.
 
 ## Download
 
@@ -30,13 +30,13 @@ After successfully verifying the offline package, unpack the tarball:
 tar -zxvf offline-v0.3.28.tar
 ```
 
-Then refer to [Install DCE 5.0 Commercial Release](../../install/intro.md#_3) to install.
+Then refer to [Install DCE 5.0 Enterprise Package](../../install/intro.md#_3) to install.
 For first-time installation, please contact us for authorization: email info@daocloud.io or call 400 002 6898.
 If you have any license key related questions, please contact DaoCloud delivery team.
 
 ## Modules
 
-The DCE 5.0 Commercial Release includes the following modules, which are plug-and-play on-demand to meet various application scenarios:
+The DCE 5.0 Enterprise Package includes the following modules, which are plug-and-play on-demand to meet various application scenarios:
 
 | Modules | Introduction | Module Versions |
 | -------------------- | ---------------------------- ----------------------------------------------- | ----- -------------------------------------------------- ------ |

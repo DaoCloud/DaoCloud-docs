@@ -2,7 +2,7 @@
 date: 2023-04-07
 ---
 
-# DCE 5.0 Commercial Release v0.6.0
+# DCE 5.0 Enterprise Package v0.6.0
 
 This page can download the offline installation package and verification file of DCE 5.0 Commercial release.
 

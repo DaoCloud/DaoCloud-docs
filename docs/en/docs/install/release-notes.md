@@ -82,7 +82,7 @@ This page lists the Release Notes of the installer, so that you can understand t
 - **Optimized** Optimize bootstrapping node inotify parameters
 - **Optimized** Optimize the full-mode online installation experience
 - **Optimized** optimize clusterConfig structure and configuration
-- **Optimized** Community Release allows not to check clusterConfig format and parameters
+- **Optimized** Community Package allows not to check clusterConfig format and parameters
 - **Optimized** Optimize installer execution scheduler log output
 
 #### Fixes

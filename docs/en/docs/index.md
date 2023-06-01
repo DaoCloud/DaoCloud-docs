@@ -14,7 +14,7 @@ DCE 5.0 natively supports the DevOps development and operation and maintenance m
 
 <div class="grid cards" markdown>
 
-- :fontawesome-solid-jet-fighter-up: **Install** [Install Community Release and Commercial Release](install/intro.md)
+- :fontawesome-solid-jet-fighter-up: **Install** [Install Community Package and Enterprise Package](install/intro.md)
 - :octicons-container-16: **Container management** [Cluster/node/load infrastructure](kpanda/intro/what.md)
 - :fontawesome-solid-user-group: **Global Management** [Set Login/Access Permissions/Appearance](ghippo/intro/what.md)
 - :material-monitor-dashboard: **Observability** [One-stop graphical dashboard](insight/intro/what.md)

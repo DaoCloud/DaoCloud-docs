@@ -2,7 +2,7 @@
 date: 2023-03-06
 ---
 
-# DCE 5.0 Commercial Release v0.5.0
+# DCE 5.0 Enterprise Package v0.5.0
 
 This page can download the offline installation package and verification file of DCE 5.0 Commercial release.
 
@@ -70,7 +70,7 @@ After successfully verifying the offline package,
 
 ## Modules
 
-The DCE 5.0 Commercial Release includes the following modules, which are plug-and-play on-demand to meet various application scenarios:
+The DCE 5.0 Enterprise Package includes the following modules, which are plug-and-play on-demand to meet various application scenarios:
 
 | Modules | Introduction | What's New |
 | -------------------- | ---------------------------- ----------------------------------------------- | ----- -------------------------------------------------- ------ |

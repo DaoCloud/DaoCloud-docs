@@ -1,4 +1,4 @@
-# Other Linux Offline Deployment of DCE 5.0 Commercial Release
+# Other Linux Offline Deployment of DCE 5.0 Enterprise Package
 
 This page will introduce how to deploy DCE 5.0 on Other Linux operating system.
 
@@ -209,4 +209,4 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
 
          Please record the prompted URL for your next visit.
 
-8. After successfully installing DCE 5.0 Commercial Release, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.
+8. After successfully installing DCE 5.0 Enterprise Package, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.

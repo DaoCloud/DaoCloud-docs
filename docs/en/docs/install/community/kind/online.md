@@ -192,4 +192,4 @@ precheck pass...
      - As DCE 5.0 Community package is installed, please [apply for a free license](../../../dce/license0.md).
      - If you have any problems about DCE 5.0, please scan the QR code and communicate with the developer freely:
     
-        ![Community Release Exchange Group](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
+        ![Community Package Exchange Group](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
