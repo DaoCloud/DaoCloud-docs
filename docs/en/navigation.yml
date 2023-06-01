@@ -43,6 +43,7 @@ nav:
               - Concepts: kpanda/intro/concepts.md
               - Release Notes: kpanda/intro/release-notes.md
               - Lastest News: kpanda/intro/news.md
+              - FAQs: kpanda/intro/faq.md
           - Clusters:
               - Create Cluster: kpanda/user-guide/clusters/create-cluster.md
               - Join Cluster: kpanda/user-guide/clusters/integrate-cluster.md
