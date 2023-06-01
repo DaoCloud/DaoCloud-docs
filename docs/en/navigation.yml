@@ -147,7 +147,6 @@ nav:
               - Create and Delete Folder: ghippo/user-guide/workspace/folders.md
               - Folder Permissions: ghippo/user-guide/workspace/folder-permission.md
               - Resource Quota: ghippo/user-guide/workspace/quota.md
-              - Resource Limit: ghippo/user-guide/workspace/limitrange.md
           - Audit Log:
               - Enable/disable Capture: ghippo/user-guide/open-audit.md
               - Enable/disable K8s Audit Log: ghippo/user-guide/open-k8s-audit.md
