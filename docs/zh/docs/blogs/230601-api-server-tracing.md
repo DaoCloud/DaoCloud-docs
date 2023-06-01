@@ -1,4 +1,6 @@
-# 增强 K8s 可观测性：特性进阶至 Beta
+# 增强 K8s 可观测性：API Server Tracing 特性进阶至 Beta
+
+> 作者：[mengjiao-liu](https://github.com/mengjiao-liu)
 
 ![图片](./images/trace01.png)
 
@@ -24,7 +26,7 @@
 
 接下来，让我们开始对此特性一探究竟吧。
 
-## **Kubernetes API Server 追踪**
+## Kubernetes API Server 追踪
 
 设计详情：KEP APIServer Tracing #647
 
@@ -45,7 +47,7 @@
 
 追踪的组件：API → etcd tracing
 
-## **演示**
+## 演示
 
 步骤：
 
@@ -76,7 +78,7 @@ docker run -d --name jaeger \
   jaegertracing/all-in-one:1.43
 ```
 
-**详情：** https://www.jaegertracing.io/docs/1.43/getting-started/
+详情： https://www.jaegertracing.io/docs/1.43/getting-started/
 
 ### 启动 Kubernetes API Server tracing
 
@@ -104,7 +106,7 @@ endpoint: %s`, "0.0.0.0:4317")), os.FileMode(0755)); err != nil {
  }
 ```
 
-##### **启动 etcd**
+##### 启动 etcd
 
 需要配置的参数：
 
@@ -181,7 +183,7 @@ spec:
 
 青色行来自 API 服务器，包括对 /api/v1/nodes 的服务请求，并向 ETCD 发出 grpc Range RPC。黄色线来自 ETCD 处理 Range RPC。
 
-## **结语**
+## 结语
 
 SIG instrumentation 正在积极推动 Kubernetes 组件可追踪，现在 APIServer Tracing
 和 kubelet Tracing 在 Kubernetes v1.27 都已到达 Beta 版本，敬请期待！
