@@ -9,13 +9,11 @@ Date: 2022-12-20
 
 This page lists all the Release Notes for each version of Service Mesh, providing convenience for users to learn about the evolution path and feature changes.
 
-# Translation
-
 ## 2023-05-29
 
-### v0.16.2
+### v0.16.1
 
-#### Upgrades
+#### Features
 
 - **Added** Ckube loads resources on demand.
 - **Added** IstioResource field: `labels` and `annotations`, can update Labels and Annotations.
@@ -83,7 +81,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 
 ### v0.15.0
 
-#### Added
+#### Features
 
 - Introduced `d2` as a drawing tool.
 - Added a new wasm plugin that adds different headers to requests according to the trace ID.
@@ -125,7 +123,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 
 ### v0.14.3
 
-#### Upgraded
+#### Features
 
 - Frontend version upgraded to `v0.12.2`.
 
