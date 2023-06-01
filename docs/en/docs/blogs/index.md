@@ -7,6 +7,11 @@ hide:
 
 This page summarizes blogs and public account articles related to DCE 5.0 and cloud-native technology, sorted by date by default.
 
+- [2023061| API Server Tracing feature upgraded to beta](./230601-api-server-tracing.md)
+
+    In Kubernetes, the API Server is the core component responsible for managing and scheduling all cluster resources. It receives and processes requests from various clients
+    and converts them into underlying resource operations. Therefore, the stability and observability of the API Server are crucial to the overall health of Kubernetes.
+
 - [20230518| Having fun with seccomp profiles on the edge](./230518-seccom.md)
 
     The Security Profiles Operator (SPO) is a feature-rich
