@@ -150,7 +150,6 @@ nav:
               - 创建和删除文件夹: ghippo/user-guide/workspace/folders.md
               - 文件夹权限: ghippo/user-guide/workspace/folder-permission.md
               - 资源配额: ghippo/user-guide/workspace/quota.md
-              - 资源限额: ghippo/user-guide/workspace/limitrange.md
           - 审计日志:
               - 开启和关闭采集k8s审计日志: ghippo/user-guide/open-audit.md
               - 开启和关闭k8s审计日志: ghippo/user-guide/open-k8s-audit.md
@@ -814,7 +813,7 @@ nav:
           - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.7.0.md
           - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.7.0.md
           - 子模块和插件:
-              - 下载 Addon 离线包: download/addon/v0.6.0.md
+              - 下载 Addon 离线包: download/addon/v0.8.0.md
               - 下载全局管理: download/modules/ghippo.md
               - 下载 Insight: download/modules/insight.md
               - 下载网络 Spidernet: download/modules/spidernet.md
