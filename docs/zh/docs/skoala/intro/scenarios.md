@@ -20,3 +20,9 @@ hide:
 ## 微服务网关的可视化与高效能
 
 很多开源的网关产品仅支持命令行操作，使用门槛高、难度大。某些情况下，多个微服务共用一个网关，网关资源开销大，而且可能逐渐成为整个系统的资源瓶颈。使用「DaoCloud 道客」微服务引擎在 Contour 的基础上增加界面操作能力，大大降低了使用门槛和维护成本，可以实现多网关管理，在不同集群和不同命名空间下轻松创建多个网关实例。这些网关实例之间互相隔离，因而具有更高的可用性和稳定性。此外，还可以使用网关路由的级联功能，实现微服务的蓝绿部署动态切换。
+
+演示视频: **将微服务接入 DCE 5.0 治理南北向流量**
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/microservice01.mp4" preload="metadata" poster="../images/south-north.png"></video>
+</div>
