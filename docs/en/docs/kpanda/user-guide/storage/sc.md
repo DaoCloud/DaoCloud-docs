@@ -45,7 +45,7 @@ Currently, it supports creating storage pools through YAML and forms. These two 
     - Storage system: Hwameistor storage system.
     - Storage type: support LVM, raw disk type
       - `LVM type`: Hwameistor recommended usage method, which can use highly available data volumes, and the corresponding CSI storage driver is: `lvm.hwameistor.io`.
-      - `Raw disk data volume`: suitable for high availability scenarios, without high availability capability, the corresponding CSI driver is: `hdd.hwameistor.io`
+      - `Raw disk data volume`: suitable for high availability cases, without high availability capability, the corresponding CSI driver is: `hdd.hwameistor.io`
     - High Availability Mode: Before using the high availability capability, please make sure `DRDB component` has been installed. After the high availability mode is turned on, the number of data volume copies can be set to 1 and 2. Convert data volume copy from 1 to 1 if needed
     - Recycling policy: When deleting a data volume, keep the data in the data volume or delete the data in it.
     - Snapshot/Expansion: After it is enabled, the data volume/data volume declaration based on the storage pool can support the expansion and snapshot functions, but **the premise is that the underlying storage driver supports the snapshot and expansion functions**.

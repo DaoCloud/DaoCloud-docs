@@ -2,7 +2,7 @@
 
 A group is a collection of users. By joining a group, a user can inherit the role permissions of the group. Authorize users in batches through groups to better manage users and their permissions.
 
-## Applicable scenarios
+## Use cases
 
 When a user's permission changes, it only needs to be moved to the corresponding group without affecting other users.
 

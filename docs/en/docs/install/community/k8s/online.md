@@ -41,7 +41,7 @@ This page will guide you to install DCE 5.0 Community package online in a standa
 
 2. Customize `clusterConfig.yaml`
 
-    - If Console is exposed via NodePort (recommended only for PoC scenarios), skip this step.
+    - If Console is exposed via NodePort (recommended only for PoC use cases), skip this step.
 
     - In non-public cloud environment (virtual/physical machine), please enable load balancer (metallb) to avoid NodePort instability caused by node IP changes. Plan your network carefully and set up 2 necessary VIPs. Here is an example of `clusterConfig.yaml`:
 

@@ -1,10 +1,10 @@
-# Applicable Scenarios
+# Use Cases
 
 Container management is a versatile platform that can be used for multicloud deployment, cross-cloud disaster recovery, and unified management across cloud clusters. It also supports elastic scaling to handle traffic peaks.
 
 **multicloud Deployment**
 
-Container management allows for multicloud deployment, combining different cloud platforms with varying cost performance and application scenarios to reduce overall costs. For users in security-sensitive industries such as finance, sensitive applications can be deployed in a private cloud environment, while non-sensitive applications can be deployed in cloud clusters for unified management.
+Container management allows for multicloud deployment, combining different cloud platforms with varying cost performance and use cases to reduce overall costs. For users in security-sensitive industries such as finance, sensitive applications can be deployed in a private cloud environment, while non-sensitive applications can be deployed in cloud clusters for unified management.
 
 **Cross-Cloud Disaster Recovery Backup**
 

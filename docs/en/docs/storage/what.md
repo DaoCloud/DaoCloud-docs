@@ -10,4 +10,4 @@
 
 ## DCE Cloud Native Storage
 
-DCE 5.0 cloud-native storage is based on the Kubernetes CSI standard and can be connected to CSI-compliant storage according to different SLA requirements and user scenarios. The cloud-native local storage launched by DaoCloud naturally has cloud-native features and meets the characteristics of high scalability and high availability in container scenarios.
+DCE 5.0 cloud-native storage is based on the Kubernetes CSI standard and can be connected to CSI-compliant storage according to different SLA requirements and use cases. The cloud-native local storage launched by DaoCloud naturally has cloud-native features and meets the characteristics of high scalability and high availability in container use cases.

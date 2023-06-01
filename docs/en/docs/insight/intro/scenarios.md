@@ -1,4 +1,4 @@
-# Application scenarios
+# Use cases
 
 ## Unified collection and observation of multicluster data
 

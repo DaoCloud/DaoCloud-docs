@@ -94,9 +94,9 @@ This page provides the Release Notes for container management to help you unders
 - **Fixed** Workload version records sorted out of order.
 - **Fixed** Kubean upgrade via Helm not working.
 - **Fixed** Last exception promptmissing while creating a cluster.
-- **Fixed** The issue that the workload status is displayed incorrectly or cannot be refreshed in some scenarios.
+- **Fixed** The issue that the workload status is displayed incorrectly or cannot be refreshed in some cases.
 - **Fixed** The issue of missing prompt for Workspace deletion.
-- **Fixed** The issue of incorrect display of resource utilization information in some scenarios.
+- **Fixed** The issue of incorrect display of resource utilization information in some cases.
 - **Fixed** The issue of failed access to DCE 4.X clusters using domain names.
 
 ## 2022-12-29

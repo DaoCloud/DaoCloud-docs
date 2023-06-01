@@ -36,7 +36,7 @@ Both shared resources and cluster resources in resource groups come from [Contai
 
     Unlike resource groups, when a cluster is shared to a workspace, the user's role in the workspace will not be mapped to the resources, so Workspace Admin will not be mapped to Cluster admin.
 
-This section presents 3 scenarios related to resource quotas.
+This section presents 3 use cases related to resource quotas.
 
 ## Create namespace
 

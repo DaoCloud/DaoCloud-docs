@@ -3,7 +3,7 @@
 ![spiderpool](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/spiderpool.png)
 
 **Calico is a set of open source network and network security solutions**, which is also an implementation of Kubernetes container network solution (CNI: Container Network Interface).
-It is implemented based on pure three-layer routing of Linux. In some scenarios, users can announce the route of the Pod subnet to the gateway through the Calico BGP mode.
+It is implemented based on pure three-layer routing of Linux. In some cases, users can announce the route of the Pod subnet to the gateway through the Calico BGP mode.
 Clients from outside the cluster can access the Pod directly via the Pod's IP, while also preserving the client's source IP.
 
 ## Current Pain Points
@@ -12,7 +12,7 @@ In the Calico Underlay network mode, users also hope that the IP addresses of De
 
 - The IP address of the Pod is often controlled by the firewall policy, and the firewall will only allow specific IP or target access within the IP range
 - Traditional microservice applications directly use Pod IP for microservice registration
-- In some scenarios, the service IP is a fixed IP and will not change
+- In some cases, the service IP is a fixed IP and will not change
 
 Calico can achieve Pod-level IP fixation by injecting annotations into Pods: `cni.projectcalico.org/ipAddrs`, but **we found the following deficiencies in use**:
 
@@ -132,7 +132,7 @@ auto-nginx-v4-eth0-452e737e5e12 4 10.244.0.0/16 3 6 false false
 
 ## Manually specify the IP pool
 
-In some scenarios, users want to directly apply IP allocation from a fixed IP range instead of being randomly allocated by Spiderpool. The following will demonstrate this function:
+In some cases, users want to directly apply IP allocation from a fixed IP range instead of being randomly allocated by Spiderpool. The following will demonstrate this function:
 
 Create IP pool:
 

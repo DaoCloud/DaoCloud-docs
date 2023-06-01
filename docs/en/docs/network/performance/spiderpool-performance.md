@@ -85,4 +85,4 @@ Finally, we delete all Deployments and record the time taken for all Pods to com
 
 ## Summary
 
-Although Spiderpool is an IPAM CNI plugin suitable for underlay networks, it faces more complex IP address preemption and conflict issues than mainstream overlay IPAM CNI plugins, but its performance in most scenarios is not inferior to the latter.
+Although Spiderpool is an IPAM CNI plugin suitable for underlay networks, it faces more complex IP address preemption and conflict issues than mainstream overlay IPAM CNI plugins, but its performance in most use cases is not inferior to the latter.

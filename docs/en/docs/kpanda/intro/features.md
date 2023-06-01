@@ -20,7 +20,7 @@ This page lists the main features of container management.
 - One-Stop Application Load Creation: Decouple the underlying Kubernetes platform, and create, operate, and maintain business workloads in one stop.
 - Cross-Cluster Application Load Management: Unified management of cross-cluster loads and efficient retrieval capabilities.
 - Scaling and Shrinking of Application Load: Through the interface, manual/automatic scaling of application load can be realized, and the expansion and shrinking strategy can be customized to cope with traffic peaks.
-- Container Lifecycle Settings: Support for setting callback functions, parameters after startup, and parameters before stopping when creating workloads to meet the needs of specific scenarios.
+- Container Lifecycle Settings: Support for setting callback functions, parameters after startup, and parameters before stopping when creating workloads to meet the needs of specific cases.
 - Container Readiness Check and Survival Check Settings: Support for setting workload readiness check and survival check when deploying applications:
     - Workload readiness check: Used to detect whether the user's business is ready. If it is not ready, the traffic will not be forwarded to the current instance.
     - Workload survival check: The user checks whether the container is normal. If it is abnormal, the cluster will execute the container restart operation.
@@ -40,7 +40,7 @@ Service (Service) is a Kubernetes-native resource that provides cloud-native loa
 ## Namespace Management
 
 - Namespace Management: Supports namespace creation, quota setting, resource limit setting, etc.
-- Cross-Cluster Namespace Management: Supports unified management of cross-cluster namespaces and efficient retrieval capabilities, and realizes namespace management capabilities in multicloud scenarios and disaster recovery scenarios.
+- Cross-Cluster Namespace Management: Supports unified management of cross-cluster namespaces and efficient retrieval capabilities, and realizes namespace management capabilities in multicloud cases and disaster recovery use cases.
 
 ## Container Storage
 

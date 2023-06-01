@@ -7,8 +7,8 @@ hide:
 
 **Multicloud hybrid cloud**
 
-Cloud-native application scenarios are gradually scaled up, cloud-based applications continue to surge, and the scenarios are becoming more and more complex.
-In order to cope with scenarios such as high availability, disaster recovery, and business traffic surge, users gradually adopt multicluster and cross-cloud deployments. During the implementation of the solution, problems such as application distribution, application connectivity, and platform management have gradually become prominent.
+Cloud-native use cases are gradually scaled up, cloud-based applications continue to surge, and the use cases are becoming more and more complex.
+In order to cope with Cases such as high availability, disaster recovery, and business traffic surge, users gradually adopt multicluster and cross-cloud deployments. During the implementation of the solution, problems such as application distribution, application connectivity, and platform management have gradually become prominent.
 
 Among them, the network is the key to the implementation of the overall plan, and the main problems are as follows:
 

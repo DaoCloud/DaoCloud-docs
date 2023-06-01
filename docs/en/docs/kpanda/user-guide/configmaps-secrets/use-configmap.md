@@ -10,7 +10,7 @@ When used, the container can use it as an environment variable, a command-line a
 
 ## scenes to be used
 
-You can use configuration items in Pods. There are many usage scenarios, mainly including:
+You can use configuration items in Pods. There are many  use cases, mainly including:
 
 - Use configuration items to set the environment variables of the container
 

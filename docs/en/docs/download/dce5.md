@@ -17,7 +17,7 @@ This release is for the community, welcome to try it for free.
 
 ## Download the commercial release
 
-This release is suitable for building private cloud, hybrid cloud, multicloud, micro-service and other scenarios, and can customize a variety of cloud-native modules.
+This release is suitable for building private cloud, hybrid cloud, multicloud, micro-service and other use cases, and can customize a variety of cloud-native modules.
 
 | Offline Pack | Version | Download | Updated Date |
 | ---------------- | ------- | ------------------------ ----------------- | -------- |
@@ -28,7 +28,7 @@ This release is suitable for building private cloud, hybrid cloud, multicloud, m
 
 ## Download Addons
 
-DCE 5.0 provides complete Addons for different application scenarios, which you can download and use on demand.
+DCE 5.0 provides complete Addons for different cases, which you can download and use on demand.
 
 | Offline Pack | Version | Download | Updated Date |
 | ---------------- | ------- | ------------------------ ----------------- | -------- |

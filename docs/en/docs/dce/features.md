@@ -132,7 +132,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - Containerized application construction and customizable pipeline creation simplify the delivery process.
 - Based on container technology, applications can be quickly deployed, verified, and circulated in different environments.
-- Compatible with multiple application formats, accommodating diverse deployment and management scenarios.
+- Compatible with multiple application formats, accommodating diverse deployment and management use cases.
 
 === "Safe and Reliable"
 

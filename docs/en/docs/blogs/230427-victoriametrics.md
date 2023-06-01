@@ -73,7 +73,7 @@ In addition to supporting Prometheus as a data source, VictoriaMetrics also supp
 
 ## Architecture
 
-For scenarios where the acquisition rate is lower than one million data points per second, the official recommendation is to use the single-node version instead of the cluster version.
+For use cases where the acquisition rate is lower than one million data points per second, the official recommendation is to use the single-node version instead of the cluster version.
 The single-node version scales perfectly with the number of CPU cores, RAM and available storage space. Compared to the cluster version,
 The single-node version is easier to configure and operate, so think twice before choosing the cluster version.
 

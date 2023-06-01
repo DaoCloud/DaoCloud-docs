@@ -105,11 +105,11 @@ Enterprise users who need to manage K8S, microservice engine, service mesh and o
 
 ## FAQs
 
-1. In what scenarios do you need to use layers?
+1. In what cases do you need to use layers?
 
      Answer: Hierarchy can be mapped to concepts such as enterprise projects, environments, and suppliers, with hierarchical structure and authority inheritance capabilities. It can effectively deal with the resource allocation problems of multi-level suppliers encountered by enterprises.
 
-2. In what scenarios do I need to use the workspace?
+2. In what cases do I need to use the workspace?
 
      A: The resource is directly associated with the workspace, and the resource will inherit the permissions of the workspace.
      When the number of resources is large, the unified authorization of resources through the workspace can effectively reduce the workload of resource operation and maintenance.

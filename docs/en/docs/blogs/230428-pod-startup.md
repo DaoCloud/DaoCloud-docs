@@ -41,7 +41,7 @@ You can find more details in the associated KEP: [Kubelet limit of Parallel Imag
 
 ## Raised default API query-per-second limits for kubelet
 
-To improve pod startup in scenarios with multiple pods on a node, particularly sudden scaling
+To improve pod startup in use cases with multiple pods on a node, particularly sudden scaling
 situations, it is necessary for Kubelet to synchronize the pod status and prepare configmaps,
 secrets, or volumes. This requires a large bandwidth to access kube-apiserver.
 

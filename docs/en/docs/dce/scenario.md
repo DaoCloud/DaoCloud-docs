@@ -3,9 +3,9 @@ hide:
    - toc
 ---
 
-# Applicable scenarios
+# Use cases
 
-DCE 5.0 integrates many of the best technologies in the community, and has tens of thousands of built-in dependencies. After massive commissioning, it has been melted into one furnace, creating a new generation of PaaS service platform, which is easy to use in various usage scenarios.
+DCE 5.0 integrates many of the best technologies in the community, and has tens of thousands of built-in dependencies. After massive commissioning, it has been melted into one furnace, creating a new generation of PaaS service platform, which is easy to use in various  use cases.
 
 === "Production-Grade Container Management"
 
@@ -65,11 +65,11 @@ The user application architecture relies on mainstream middleware capabilities, 
 
 Modules involved: [Container Management](../kpanda/intro/what.md), [Container Network](../network/intro/what-is-net.md), [Container Local Storage](../storage/what.md), [cloud-native middleware](../middleware/what.md), Edge Cloud Synergy, Xinchuang Cloud
 
-Solution advantages: cloud-native local storage capabilities designed for stateful applications, unified platform management cloud-native middleware, providing middleware management capabilities for the full lifecycle of multi-tenancy, deployment, observation, backup, operation and maintenance, combined with the container platform Ability to adapt to edge and innovation scenarios.
+Solution advantages: cloud-native local storage capabilities designed for stateful applications, unified platform management cloud-native middleware, providing middleware management capabilities for the full lifecycle of multi-tenancy, deployment, observation, backup, operation and maintenance, combined with the container platform Ability to adapt to edge and innovation use cases.
 
 === "App Store"
 
-Users hope to obtain out-of-the-box cloud-native application software capabilities for exclusive scenarios.
+Users hope to obtain out-of-the-box cloud-native application software capabilities for exclusive use cases.
 
 Modules involved: [Container Management](../kpanda/intro/what.md), App Store
 
@@ -81,7 +81,7 @@ Multicluster and multicloud deployments have become the norm among users, and th
 
 Involved modules: [Container Management](../kpanda/intro/what.md), [Multicloud Management](../kairship/intro/what.md), [Container Network](../network/intro/what-is-net.md), Edge Cloud Synergy, Xinchuang Cloud
 
-Advantages of the solution: Innovative technology completes cross-cloud disaster recovery, high concurrency performance of cross-cloud resource retrieval, combined with container platform capabilities to adapt to edge and credit creation scenarios.
+Advantages of the solution: Innovative technology completes cross-cloud disaster recovery, high concurrency performance of cross-cloud resource retrieval, combined with container platform capabilities to adapt to edge and credit creation use cases.
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

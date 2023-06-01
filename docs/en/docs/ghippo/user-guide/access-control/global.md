@@ -1,6 +1,6 @@
 # System Roles
 
-## Applicable scenarios
+## Use cases
 
 DCE 5.0 provides predefined system roles to help users simplify the process of role permission usage.
 
