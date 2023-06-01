@@ -97,3 +97,67 @@ hide:
     ![编辑](../images/faq602.png)
 
     ![删除](../images/faq603.png)
+
+    ![正常调度](../images/faq604.png)
+
+7. Kcoral 检测工作集群 Velero 状态的逻辑是什么？
+
+    ![检测](../images/faq701.png)
+
+    - 工作集群在velero命名空间下安装了标准的velero组件
+  
+    - velero 控制面 velero deployment 处于运行状态，并达到期望的副本数
+
+    - velero 数据面 node agent 处于运行状态，并达到期望副本数
+
+    - velero 成功连接到目标 MinIO（BSL 状态为 Available）
+
+8. 在跨集群备份还原的时候，Kcoral 如何获取可用集群？
+
+    在通过Kcoral跨集群备份还原应用的时候，在恢复页面中，Kcoral 会帮助用户筛选可以执行跨集群还原的集群列表，逻辑如下：
+
+    ![筛选](../images/faq801.png)
+
+    - 过滤未安装 Velero 的集群列表
+  
+    - 过滤 Velero 状态异常的集群列表
+
+    - 获取与目标集群对接了相同 MinIO 和 Bucket 的集群列表并返回
+
+    所以只要对接了相同的 MinIO 和 Bucket，Velero 处于运行状态，就可以跨集群备份（需要有写入权限）和还原。
+
+9. 卸载 VPA，HPA，CronHPA 之后，为什么对应弹性伸缩记录依然存在？
+
+    虽然通过 Helm Addon 市场中把对应组件卸载，但是应用弹性伸缩界面相关记依然在，如下图所示:
+
+    ![编辑](../images/faq901.png)
+
+    这是 helm uninstall 的一个问题，它并不会卸载对应的 CRD，因此导致数据残留，此时我们需要手动卸载对应的 CRD , 完成最终清理工作。
+
+10. 为什么低版本集群的控制台打开异常？
+
+    在 kubernetes 低版本（v1.18以下）的集群中，打开控制台出现 csr 资源请求失败。打开控制台的时候，会根据当前登陆用户在目标集群中通过 csr 资源申请证书，如果集群版本太低或者没有开启此功能 controller，会导致证书申请失败，从而无法连接到目标集群。
+
+    申请证书流程请参考：https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
+    
+    解决方案：
+
+    - 如果集群版本大于 v1.18，请检查 kube-controller-manager 是否开启 csr 功能，确保以下的 controller 是否正常开启
+
+        ```shell
+        ttl-after-finished,bootstrapsigner,csrapproving,csrcleaner,csrsigning
+        ```
+
+    - 低版本集群目前解决方案只有升级版本
+
+11. 如何重置创建的集群？
+
+    创建的集群分为两种情况：
+
+    - 创建失败的集群：在创建集群的过程中，因为参数设置错误导致集群创建失败，这种情况可以在安装失败的集群选择重试，然后重新设置参数重新创建。
+
+    - 已经成功创建的集群：这种集群可以先卸载集群，然后重新创建集群。卸载集群需要关闭集群保护的功能才能卸载集群。
+
+        ![关闭集群保护](../images/faq1101.png)
+
+        ![卸载集群](../images/faq1102.png)
