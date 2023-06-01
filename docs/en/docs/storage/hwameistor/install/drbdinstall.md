@@ -24,15 +24,11 @@ Please confirm that your cluster has successfully connected to `container manage
 
 2. In the left navigation bar, select `Helm Application` -> `Helm chart`, find and click `Hwameistor`.
 
-     ![UI Install01](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/hwameistorUI01.jpg)
 
 3. In `Version Selection`, select the version you want to install, and click `Install`.
 
 4. On the installation interface, fill in the required installation parameters. If you need to deploy a production environment, it is recommended to adjust the resource configuration: [Production environment resource requirements](proresource.md).
 
-     ![HwameistorUI02](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/hwameistorUI02.jpg)
-
-     ![HwameistorUI03](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/HwameistorUI03.jpg)
 
      - `Global Setting` —> `global container registry`:
     
@@ -70,7 +66,5 @@ Please confirm that your cluster has successfully connected to `container manage
              2. `Retain`: When deleting a data volume, keep the data.
     
 5. After the parameter input is complete, click `OK` to complete the creation. After the creation is complete, you can click `Helm Application` to view the installation status of `Hwameistor`.
-
-     ![HwameistorUI04](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/HwameistorUI04.jpg)
     
 6. The installation is complete! To verify the installation effect, please refer to the next chapter [Post-check](./post-check.md).

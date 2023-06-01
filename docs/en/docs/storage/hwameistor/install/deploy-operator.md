@@ -23,13 +23,10 @@ Ensure that your cluster has successfully connected to the container management 
 
 2. In the left navigation bar, select `Helm Application` -> `Helm chart`, find and click on `Hwameistor Operator`.
 
-     ![click](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/operator1.jpg)
 
 3. Within the `Version Selection` section, choose the version to install, and then click `Install`.
 
 4. On the installation interface, fill in the required installation parameters.
-
-     ![Operator02](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/operator2.jpg)
 
      The parameters in `Value.yaml` are as follows and can't be modified by default:
 
@@ -116,11 +113,8 @@ Ensure that your cluster has successfully connected to the container management 
 
 5. After confirming that the parameters are correct, click `OK` to complete the installation. After the installation is complete, you can click `Helm Application` to view the installation status of `Hwameistor Operator`.
 
-     ![Operator03](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/operator3.jpg)
-
 6. After the Operator is installed, the Hwameistor components (Local Storage, Local Disk Manager, etc.) will be installed by default!
     You can click `Workload`-->`Stateless Workload`, select the corresponding namespace, and view the status of the Hwameistor component.
 
-     ![hwameistor status](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/operator4.jpg)
 
      To verify the installation effect through the command line, please refer to [Post-installation Check](./post-check.md).

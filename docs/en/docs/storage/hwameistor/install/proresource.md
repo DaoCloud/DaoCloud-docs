@@ -159,4 +159,3 @@ If you deploy Hwameistor in a production environment, please specify the resourc
 
 2. If installing through the UI interface, please manually configure the above resources through the Resource value in YAML, otherwise it will not be configured by default:
 
-     ![pro-Resource](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/hwameistor-resource.jpg)
