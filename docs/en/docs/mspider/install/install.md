@@ -18,21 +18,17 @@ Please confirm that your cluster has successfully connected to the container man
 
 3. Enter the following commands line by line from the console:
 
-     ```sh
-     export VERSION=0.0.0-xxxx
-     helm repo add mspider https://release.daocloud.io/chartrepo/mspider
-     helm repo update
-     helm upgrade --install --create-namespace -n mspider-system mspider mspider/mspider --version=${VERSION} --set global.imageRegistry=release.daocloud.io/mspider
-     ```
+    ```shell
+    export VERSION=0.0.0-xxxx
+    helm repo add mspider https://release.daocloud.io/chartrepo/mspider
+    helm repo update
+    helm upgrade --install --create-namespace -n mspider-system mspider mspider/mspider --version=${VERSION} --set global.imageRegistry=release.daocloud.io/mspider
+    ```
 
+    !!! note
 
-
-     !!! note
-
-         Please replace `0.0.0-xxx` with the version number of the service mesh you plan to install.
+        Please replace `0.0.0-xxx` with the version number of the service mesh you plan to install.
 
 4. Check the Pod information under the namespace `mspider-system`, and see that the relevant Pods have been created and running, indicating that the service mesh is installed successfully.
-
-
 
 Next step: [Create Mesh](../user-guide/service-mesh/README.md)
