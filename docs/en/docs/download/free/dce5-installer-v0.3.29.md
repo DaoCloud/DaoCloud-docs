@@ -1,6 +1,6 @@
-# DCE 5.0 Community Release v0.3.29
+# DCE 5.0 Community Package v0.3.29
 
-This page can download the offline installation package and verification file of DCE 5.0 Community Release.
+This page can download the offline installation package and verification file of DCE 5.0 Community Package.
 
 ## Download
 
@@ -61,12 +61,12 @@ After successfully verifying the offline package,
      tar -zxvf offline-kylin-v10sp2-community-v0.3.29-arm64.tar
      ```
 
-- For installation, please refer to [Community Release Installation Process](../../install/community/k8s/online.md#_2)
+- For installation, please refer to [Community Package Installation Process](../../install/community/k8s/online.md#_2)
 - After successful installation, please [apply for free community experience](../../dce/license0.md)
 
 ## Modules
 
-DCE 5.0 Community Release includes the following modules by default:
+DCE 5.0 Community Package includes the following modules by default:
 
 | Modules | Introduction | What's New |
 | -------- | ----------------------------------------- ------------------------- | ------------------------ ------------------------------------- |

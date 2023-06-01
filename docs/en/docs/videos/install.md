@@ -12,7 +12,7 @@ DCE 5.0 is divided into community release and commercial release. The community 
 
 ## Install the community release online
 
-For related documents, please refer to: [Online Installation of DCE 5.0 Community Release](../install/intro.md#_2).
+For related documents, please refer to: [Online Installation of DCE 5.0 Community Package](../install/intro.md#_2).
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/online-install-community.mp4" scrolling="no" border="0" frameborder="no" framespacing= "0" allowfullscreen="true"> </iframe>

@@ -1,4 +1,4 @@
-# DCE 5.0 Commercial Release v0.3.27
+# DCE 5.0 Enterprise Package v0.3.27
 
 This page can download the offline installation package and verification file of DCE 5.0 Commercial release.
 
@@ -30,7 +30,7 @@ After successful installation, please contact us for authorization: email info@d
 
 ## Modules
 
-The DCE 5.0 Commercial Release includes the following modules, which are plug-and-play on-demand to meet various application scenarios:
+The DCE 5.0 Enterprise Package includes the following modules, which are plug-and-play on-demand to meet various application scenarios:
 
 | Modules | Introduction | What's New |
 | ---------- | -------------------------------------- ---------------------------------- | --------------- ---------------------------------------------- |

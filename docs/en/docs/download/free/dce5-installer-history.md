@@ -1,6 +1,6 @@
-# DaoCloud Enterprise 5.0 Community Release Historical Version
+# DCE 5.0 Community Package Versions
 
-## Community Release
+## Community Package
 
 | File Name | Version | Architecture | File Size | Downloads | Date Updated |
 | ------- | --- | ---- | ------ | --- | ------- |
