@@ -1,6 +1,6 @@
 # DCE 5.0 Enterprise Package v0.3.27
 
-This page can download the offline installation package and verification file of DCE 5.0 Commercial release.
+This page can download the offline installation package and verification file of DCE 5.0 Enterprise Package.
 
 ## Download
 
@@ -24,7 +24,7 @@ offline-v0.3.27.tar: OK
 
 ## Install
 
-After successfully verifying the offline package, please refer to [Commercial release installation process](../../install/commercial/start-install.md) to install.
+After successfully verifying the offline package, please refer to [Enterprise Package installation process](../../install/commercial/start-install.md) to install.
 
 After successful installation, please contact us for authorization: email info@daocloud.io or call 400 002 6898.
 

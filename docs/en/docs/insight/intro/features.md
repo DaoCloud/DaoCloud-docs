@@ -34,7 +34,7 @@ DCE 5.0 Community Package provides the following observable features.
 
 ## Enterprise Package - Observability
 
-On the basis of the community release, the commercial release of DCE 5.0 provides more abundant and customizable observable features.
+On the basis of the Community Package, the Enterprise Package of DCE 5.0 provides more abundant and customizable observable features.
 
 | Category | Subcategory | Description |
 | -------------- | -------------- | ---------------- -------------------------------------------- |
@@ -62,4 +62,4 @@ On the basis of the community release, the commercial release of DCE 5.0 provide
 | Link Collection[^1] | trace data Collection| Support trace data collection by using OTEL SDK in a non-intrusive or less intrusive way<br />Support link collection by injecting Sidecar into mesh applications data |
 | System configuration | System configuration | System configuration displays the default storage time of metrics, logs, and traces and the default Apdex threshold<br />Support custom modification of the storage time of metrics, logs, and trace data |
 
-[^1]: This is a feature only available in the commercial release.
+[^1]: This is a feature only available in the Enterprise Package.
