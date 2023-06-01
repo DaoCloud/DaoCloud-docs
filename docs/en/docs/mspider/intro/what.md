@@ -36,6 +36,77 @@ DCE 5.0 Service Mesh offers several advantages compared to other products:
 
 - Legacy SDK Integration: Provides integrated solutions for traditional microservice SDKs such as Spring Cloud and Dubbo. Businesses developed by traditional microservice SDKs can be quickly migrated to cloud-native mesh operating environments without extensive code modification.
 
+## Learning Path
+
+The learning path for the service mesh is as follows:
+
+```mermaid
+flowchart TD
+
+    install([Installation and Deployment])
+    install --> mesh[Create a Mesh]
+        subgraph mesh[Create a Mesh]
+            managed[Managed Mesh]
+            private[Dedicated Mesh]
+            external[External Mesh]
+            
+        end
+
+    mesh --> cluster[Cluster Management]
+
+    cluster --> inject[Sidecar Injection]
+
+        subgraph inject[Sidecar Injection]
+            global[Global Injection]
+            namespace[Namespace Injection]
+            workload[Workload Injection]
+        end
+
+    
+    inject -.-> service[Service Management]
+    inject -.-> traffic[Traffic Governance]
+    inject -.-> security[Security Governance]
+    inject -.-> sidecar[Sidecar Management]
+    inject -.-> watch[Traffic Monitoring]
+    inject -.-> gateway[Mesh Gateway]
+    inject -.-> upgrade[Version Upgrade]
+    
+
+    service -.-> entry[Service Entry]
+    traffic -.-> virtual[Virtual Service<br>Destination Rule<br>Gateway Rule]
+    security -.-> peer[Peer Authentication<br>Request Authentication<br>Authorization Policy]
+    sidecar -.-> sidecarm[Namespace Sidecar Management<br>Workload Sidecar Management<br>Global Sidecar Management<br>Sidecar Traffic Passthrough]
+    watch -.-> watch2[Traffic Monitoring<br>Traffic Topology]
+
+    classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
+    classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
+    classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+
+    class managed,private,external,global,namespace,workload plain
+    class install,service,gateway,traffic,watch,upgrade,security,entry,virtual,peer,cluster,sidecar,sidecarm,watch2 cluster
+
+    click install "https://docs.daocloud.io/en/mspider/install/install/"
+    click managed "https://docs.daocloud.io/en/mspider/user-guide/service-mesh/"
+    click private "https://docs.daocloud.io/en/mspider/user-guide/service-mesh/"
+    click external "https://docs.daocloud.io/en/mspider/user-guide/service-mesh/external-mesh/"
+    click cluster "https://docs.daocloud.io/en/mspider/user-guide/cluster-management/join-clus/"
+    click global "https://docs.daocloud.io/en/mspider/user-guide/sidecar-management/global-sidecar/"
+    click namespace "https://docs.daocloud.io/en/mspider/user-guide/sidecar-management/ns-sidecar/"
+    click workload "https://docs.daocloud.io/en/mspider/user-guide/sidecar-management/workload-sidecar/"
+    click gateway "https://docs.daocloud.io/en/mspider/user-guide/gateway-instance/create/"
+    click service "https://docs.daocloud.io/en/mspider/user-guide/service-list/"
+    click traffic "https://docs.daocloud.io/en/mspider/user-guide/traffic-governance/"
+    click security "https://docs.daocloud.io/en/mspider/user-guide/security/"
+    click watch "https://docs.daocloud.io/en/mspider/user-guide/traffic-monitor/"
+    click upgrade "https://docs.daocloud.io/en/mspider/user-guide/upgrade/istio-update/"
+    click entry "https://docs.daocloud.io/en/mspider/user-guide/service-list/service-entry/"
+    click virtual "https://docs.daocloud.io/en/mspider/user-guide/traffic-governance/virtual-service/"
+    click peer "https://docs.daocloud.io/en/mspider/user-guide/security/peer/"
+    click sidecar "https://docs.daocloud.io/en/mspider/user-guide/sidecar-management/ns-sidecar/"
+    click sidecarm "https://docs.daocloud.io/en/mspider/user-guide/sidecar-management/passthrough/"
+    click watch2 "https://docs.daocloud.io/en/mspider/user-guide/traffic-monitor/conn-topo/"
+```
+
 [Download DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }
 [Free Trial](../../dce/license0.md){ .md-button .md-button--primary }
