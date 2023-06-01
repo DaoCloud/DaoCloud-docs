@@ -70,7 +70,7 @@ After successfully verifying the offline package,
 
 ## Modules
 
-The DCE 5.0 commercial release includes the following modules, which are plug-and-play on-demand to meet various application scenarios:
+The DCE 5.0 commercial release includes the following modules, which are plug-and-play on-demand to meet various use cases:
 
 | Modules | Introduction | What's New |
 | -------------------- | ---------------------------- ----------------------------------------------- | ----- -------------------------------------------------- ------ |

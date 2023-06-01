@@ -55,7 +55,7 @@ click creates "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-acr
 
 ## Prepare workspace
 
-In order to meet the multi-tenant usage scenarios, the workspace forms an isolated resource environment based on multiple resources such as clusters, cluster namespaces, meshs, mesh namespaces, multicloud, and multicloud namespaces.
+In order to meet the multi-tenant  use cases, the workspace forms an isolated resource environment based on multiple resources such as clusters, cluster namespaces, meshs, mesh namespaces, multicloud, and multicloud namespaces.
 Workspaces can be mapped to various concepts such as projects, tenants, enterprises, and suppliers.
 
 1. Log in to the web console as a user with the admin/folder admin role, and click `Global Management` at the bottom of the left navigation bar.

@@ -1,6 +1,6 @@
-# Applicable Scenarios
+# Use Cases
 
-This section introduces the specific scenarios where the service mesh is applicable.
+This section introduces the specific cases where the service mesh is applicable.
 
 ## Service Traffic Governance
 
@@ -22,7 +22,7 @@ The service mesh can provide non-intrusive traffic management capabilities, and 
 
 - HTTP Header: Flexibly add, modify, and delete specified HTTP headers, including manipulating headers before forwarding HTTP requests to target services. It is also possible to manipulate the header before replying to the HTTP response to the client to manage the request content in a non-intrusive manner.
 
-- Fault Injection: Construct fault scenarios by injecting interruption faults and delay faults into selected services, and perform fault testing without modifying codes.
+- Fault Injection: Construct fault cases by injecting interruption faults and delay faults into selected services, and perform fault testing without modifying codes.
 
 ## End-to-End Transparent Security
 
@@ -42,6 +42,6 @@ Operating a containerized infrastructure presents a new set of challenges, inclu
 
 ### Scenario Advantages
 
-- Non-Intrusive Surveillance Data Collection: In complex application scenarios, access topology, call chain, and monitoring between services are necessary for positioning and demarcating when service access is abnormal. An important capability of the service mesh technology is to provide the collection of these monitoring data non-intrusively. Users only need to pay attention to their own business development and do not need to pay extra attention to the generation of monitoring data.
+- Non-Intrusive Surveillance Data Collection: In complex cases, access topology, call chain, and monitoring between services are necessary for positioning and demarcating when service access is abnormal. An important capability of the service mesh technology is to provide the collection of these monitoring data non-intrusively. Users only need to pay attention to their own business development and do not need to pay extra attention to the generation of monitoring data.
 
 - Rich Performance Monitoring Capabilities: Generate service access data based on the mesh, integrate various performance monitoring services, and provide cross-cluster intelligent service operation management. This includes cross-cluster service call chains, service access topology and service running health status, associating access status between services through a cross-cluster global view, etc.

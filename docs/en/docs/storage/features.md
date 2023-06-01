@@ -4,7 +4,7 @@
 
 - Hybrid Storage Access
    
-    Hwameistor provides unified CSI standardized access to enable multiple data access types such as NFS, block storage, and local storage. This feature meets the needs of different scenarios.
+    Hwameistor provides unified CSI standardized access to enable multiple data access types such as NFS, block storage, and local storage. This feature meets the needs of different cases.
 
 - Dynamic Memory Management
 
@@ -22,7 +22,7 @@
 
 - Multiple Types of Data Volumes
 
-    Hwameistor Cloud Native Local Storage supports LVM type and raw disk type data volumes to meet different disk demand scenarios.
+    Hwameistor Cloud Native Local Storage supports LVM type and raw disk type data volumes to meet different disk demand use cases.
 
 - CSI Standards
    

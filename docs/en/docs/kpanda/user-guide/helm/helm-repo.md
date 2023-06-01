@@ -6,7 +6,7 @@ The Helm repository is a repository for storing and publishing Charts. The Helm 
 | --------- | --------------------------------------- --------------------- | ------------ |
 | partner | Various high-quality features provided by ecological partners Chart | tidb |
 | system | Chart that must be relied upon by system core functional components and some advanced functions. For example, insight-agent must be installed to obtain cluster monitoring information | Insight |
-| addon | Common Chart in business scenarios | cert-manager |
+| addon | Common Chart in business cases | cert-manager |
 | community | The most popular open source components in the Kubernetes community Chart | Istio |
 
 In addition to the above preset repositories, you can also add third-party Helm repositories yourself. This page will introduce how to add and update third-party Helm repositories.

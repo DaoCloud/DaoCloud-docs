@@ -1,6 +1,6 @@
 # etcd backup
 
-ETCD backup is based on cluster data as the core backup. In scenarios such as hardware device damage, development and test configuration errors, etc., the backup cluster data can be restored.
+ETCD backup is based on cluster data as the core backup. In Cases such as hardware device damage, development and test configuration errors, etc., the backup cluster data can be restored.
 
 This section will introduce how to realize the etcd backup of the cluster through the container management interface.
 

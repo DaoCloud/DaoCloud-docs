@@ -119,4 +119,4 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **NEW** RabbitMQ data migration
 - **New** instance monitoring
 - **NEW** Enter RabbitMQ for the first time
-- **Added** Applicable scenarios
+- **Added** Use cases

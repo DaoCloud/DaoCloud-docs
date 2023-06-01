@@ -1,6 +1,6 @@
 # Applicable scene
 
-RabbitMQ is applicable to a wide range of scenarios, and this section lists several typical scenarios.
+RabbitMQ is applicable to a wide range of use cases, and this section lists several typical use cases.
 
 ## Asynchronous processing
 

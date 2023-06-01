@@ -5,7 +5,7 @@ hide:
 
 # Data Service
 
-DCE 5.0 selected and integrated some classic data services for actual application scenarios, to provide a unified and comprehensive management platform for users.
+DCE 5.0 selected and integrated some classic data services for actual use cases, to provide a unified and comprehensive management platform for users.
 
 You can install/enable the following data services on demand:
 

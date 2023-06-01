@@ -1,6 +1,6 @@
 # Create a pipeline based on a built-in template
 
-Workbench module supports quick creation of pipelines based on built-in templates or user-defined [custom templates](../template/custom-template.md). According to common usage scenarios, Workbench module has built-in Golang, Nodejs, and Maven templates.
+Workbench module supports quick creation of pipelines based on built-in templates or user-defined [custom templates](../template/custom-template.md). According to common use cases, Workbench module has built-in Golang, Nodejs, and Maven templates.
 
 ## Steps
 

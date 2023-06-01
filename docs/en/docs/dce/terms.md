@@ -250,7 +250,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     No matter how thorough the testing strategy, there are always some bugs discovered in production.
     Shifting 100% of traffic from one version of an app to another can lead to more impactful failures.
 
-    Canary deployments allow organizations to see how new software behaves in real-world scenarios
+    Canary deployments allow organizations to see how new software behaves in real-world use cases
     before moving significant traffic to the new version.
     This strategy enables organizations to minimize downtime and quickly rollback in case of issues with the new deployment.
     It also allows more in-depth production application testing without a significant impact on the overall user experience.
@@ -1474,7 +1474,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Master cluster
 
-    A master cluster is a cluster with a control plane. A mesh can have more than one master cluster for HA or low-latency scenarios. A master cluster can serve as the control plane for a working cluster.
+    A master cluster is a cluster with a control plane. A mesh can have more than one master cluster for HA or low-latency use cases. A master cluster can serve as the control plane for a working cluster.
 
 - [Metric](https://opentelemetry.io/docs/concepts/signals/metrics/)
 

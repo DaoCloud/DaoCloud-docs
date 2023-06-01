@@ -7,7 +7,7 @@ nav:
           - K8s Certified Service Provider: dce/kcsp.md
           - Free Trial: dce/license0.md
           - Features and Benefits: dce/features.md
-          - Scenarios: dce/scenario.md
+          - Use Cases: dce/scenario.md
           - Glossary: dce/terms.md
       - Installation:
           - Overview: install/intro.md
@@ -22,7 +22,7 @@ nav:
               - Deployment Requirements: install/commercial/deploy-requirements.md
               - Preparation: install/commercial/prepare.md
               - Offline Install: install/commercial/start-install.md
-              - Scenarios: install/commercial/scenarios.md
+              - Use Cases: install/commercial/scenarios.md
               - Edit clusterConfig.yaml: install/commercial/cluster-config.md
           - Upgrade/Uninstall/FAQ:
               - Upgrade DCE 5.0 Submodule: install/upgrade.md
@@ -39,7 +39,7 @@ nav:
               - What is Container Management: kpanda/intro/what.md
               - Features: kpanda/intro/features.md
               - Benefits: kpanda/intro/benefits.md
-              - Scenarios: kpanda/intro/scenarios.md
+              - Use Cases: kpanda/intro/scenarios.md
               - Concepts: kpanda/intro/concepts.md
               - Release Notes: kpanda/intro/release-notes.md
               - Lastest News: kpanda/intro/news.md
@@ -362,7 +362,7 @@ nav:
       - Microservices:
           - Intro:
               - Features: skoala/intro/what.md
-              - Scenarios: skoala/intro/scenarios.md
+              - Use Cases: skoala/intro/scenarios.md
               - Competitiveness: skoala/intro/advantages.md
               - Release Notes: skoala/intro/release-notes.md
           - Quick Start:
@@ -436,7 +436,7 @@ nav:
           - Intro:
               - What is service mesh: mspider/intro/what.md
               - Features: mspider/intro/features.md
-              - Scenarios: mspider/intro/scenarios.md
+              - Use Cases: mspider/intro/scenarios.md
               - Features supported on UI: mspider/intro/meshes.md
               - Permissions: ghippo/permissions/mspider.md
               - Architecture: mspider/intro/architect.md
@@ -564,7 +564,7 @@ nav:
               - Intro: network/modules/spiderpool/what.md
               - Install: network/modules/spiderpool/install.md
               - Create an IP pool: network/modules/spiderpool/createpool.md
-              - IP pool scenarios: network/modules/spiderpool/ippoolusage.md
+              - IP pool use cases: network/modules/spiderpool/ippoolusage.md
               - Workloads uses IP pools: network/modules/spiderpool/usage.md
               - Third-pary workloads use IP pools: network/modules/spiderpool/cutomizedusage.md
               - Config: network/modules/spiderpool/config.md
@@ -611,7 +611,7 @@ nav:
               - Release Notes: middleware/kafka/release-notes.md
           - MinIO object storage:
               - What is MinIO: middleware/minio/intro/what.md
-              - Applicable scenarios: middleware/minio/intro/scenarios.md
+              - Use cases: middleware/minio/intro/scenarios.md
               - Common terms: middleware/minio/intro/concepts.md
               - Create a MinIO instance: middleware/minio/user-guide/create.md
               - Update MinIO instance: middleware/minio/user-guide/update.md
@@ -637,7 +637,7 @@ nav:
               - What is RabbitMQ: middleware/rabbitmq/intro/what.md
               - Function description: middleware/rabbitmq/intro/features.md
               - Competitive advantage: middleware/rabbitmq/intro/benefits.md
-              - Applicable scenarios: middleware/rabbitmq/intro/scenarios.md
+              - Use cases: middleware/rabbitmq/intro/scenarios.md
               - Basic concepts: middleware/rabbitmq/intro/concepts.md
               - Create a RabbitMQ instance: middleware/rabbitmq/user-guide/create.md
               - Update RabbitMQ instance: middleware/rabbitmq/user-guide/update.md
@@ -650,7 +650,7 @@ nav:
               - Release Notes: middleware/rabbitmq/release-notes.md
           - Redis cache service:
               - What is Redis: middleware/redis/intro/what.md
-              - Applicable scenarios: middleware/redis/intro/scenarios.md
+              - Use cases: middleware/redis/intro/scenarios.md
               - Create a Redis instance: middleware/redis/user-guide/create.md
               - Update Redis instance: middleware/redis/user-guide/update.md
               - Delete Redis instance: middleware/redis/user-guide/delete.md
@@ -698,7 +698,7 @@ nav:
                   - Volume expansion: storage/hwameistor/resources/expand.md
                   - Disk expansion: storage/hwameistor/resources/disk-expansion.md
                   - Disk reservation: storage/hwameistor/resources/reserveddisk.md
-              - Scenarios:
+              - Use Cases:
                   - Overview: storage/hwameistor/application/overview.md
                   - Deploy StatefulSets:
                       - Deploy via local volume: storage/hwameistor/application/local.md

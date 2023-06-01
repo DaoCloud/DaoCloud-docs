@@ -156,7 +156,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [ChaosMeta: Ant Group's open source cloud-native automated chaos engineering platform](https://mp.weixin.qq.com/s/QUiWocMwbnSoUyfAu1z-cg)
 
-    [ChaosMeta](https://github.com/traas-stack/chaosmeta) is designed to be a one-stop walkthrough comprehensive solution that includes the complete chaos engineering lifecycle, covering multiple phases such as admission checking, traffic injection, fault injection, fault metrics, recovery metrics and fault recovery. At this stage, ChaosMeta has opened up rich fault injection features to the public, supporting not only standalone deployments and Kubernetes cloud-native deployments, but also experiments with cloud-native fault scenarios such as Kubernetes itself and Operator.
+    [ChaosMeta](https://github.com/traas-stack/chaosmeta) is designed to be a one-stop walkthrough comprehensive solution that includes the complete chaos engineering lifecycle, covering multiple phases such as admission checking, traffic injection, fault injection, fault metrics, recovery metrics and fault recovery. At this stage, ChaosMeta has opened up rich fault injection features to the public, supporting not only standalone deployments and Kubernetes cloud-native deployments, but also experiments with cloud-native fault cases such as Kubernetes itself and Operator.
 
 - [Cilium CNI Plugin v1.13.0 Released (CNCF Project)](https://github.com/cilium/cilium/releases/tag/v1.13.0)
 
@@ -203,7 +203,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     On March 8, [Clusternet](https://github.com/clusternet/clusternet) was selected by the CNCF Foundation TOC Committee as a CNCF Sandbox project.
     Clusternet extends the powerful single-cluster capability of Kubernetes to multiple clusters in a component-based, non-intrusive and lightweight way, and is well compatible with the cloud-native ecosystem.
-    In the future, Clusternet will explore richer multicluster scenarios and promote a fully functional and standardized multicluster framework.
+    In the future, Clusternet will explore richer multicluster use cases and promote a fully functional and standardized multicluster framework.
 
 - [Clusternet multicloud multicluster management project v0.13.0 released](https://github.com/clusternet/clusternet/releases/tag/v0.13.0)
 
@@ -277,7 +277,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [CubeFS distributed storage system upgraded from CNCF sandbox to incubation project](https://mp.weixin.qq.com/s/sAVaCa-yGEsJk3bUaJizmA)
   
      [CubeFS](https://github.com/cubefs) is the first cloud-native storage product in China with complete object and file storage capabilities.
-     CubeFS supports multiple copies and erasure code engines, and provides features such as multi-tenant, multi-AZ deployment, and cross-region replication; it is suitable for a wide range of scenarios such as big data, AI, container platforms, databases, and middleware separation of storage and computing.
+     CubeFS supports multiple copies and erasure code engines, and provides features such as multi-tenant, multi-AZ deployment, and cross-region replication; it is suitable for a wide range of Cases such as big data, AI, container platforms, databases, and middleware separation of storage and computing.
 
 ### D
 
@@ -633,7 +633,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [KubeEdge cloud-native edge computing platform v1.11.0 release (CNCF project)](https://github.com/kubeedge/kubeedge/blob/master/CHANGELOG/CHANGELOG-1.11.md)
 
-     The main new features of this version: new node group management function; edge device Mapper SDK is provided to reduce the workload of developing Mapper; Keadm subcommands such as containerized deployment and offline security are officially supported; edge node agent Edged is applicable to more scenarios.
+     The main new features of this version: new node group management function; edge device Mapper SDK is provided to reduce the workload of developing Mapper; Keadm subcommands such as containerized deployment and offline security are officially supported; edge node agent Edged is applicable to more use cases.
 
 - [KubeKey Cluster Deployment Tool v3.0 released](https://github.com/kubesphere/kubekey/releases/tag/v3.0.0)
 
@@ -727,7 +727,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [KubeVela Upgrades to CNCF Incubation Program](https://mp.weixin.qq.com/s/mhH9u4aXJT2-qVwf06xn5Q)
 
     [KubeVela](https://github.com/kubevela/kubevela) is built with the Kubernetes control plane, making it easier, faster, and more reliable to deploy and operate applications across hybrid and multicloud environments.
-    Going forward, the KubeVela community plans to improve the user experience of cloud resource creation and consumption through delivery workflows that enhance the security of the entire CI/CD delivery process in hybrid/multicluster scenarios.
+    Going forward, the KubeVela community plans to improve the user experience of cloud resource creation and consumption through delivery workflows that enhance the security of the entire CI/CD delivery process in hybrid/multicluster use cases.
     Support for the KubeVela Dynamic API that allows users to easily integrate with third-party APIs, and more.
 
 - [KubeVela hybrid multicloud environment app delivery platform v1.6.0 release (CNCF project)](https://github.com/kubevela/kubevela/releases/tag/v1.6.0)
@@ -764,7 +764,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [KubeWharf: Bytedance Open Source Cloud Native Project Collection](https://mp.weixin.qq.com/s/uNbT3Ss0rBYc9pqlZe3n8Q)
 
-     [KubeWharf](https://github.com/kubewharf) is a distributed operating system based on Kubernetes, which consists of a set of cloud-native components, focusing on improving system scalability, resource utilization, and scalability. Observability, security, etc., support scenarios such as large-scale multi-tenant clusters, offline mixing, and storage.
+     [KubeWharf](https://github.com/kubewharf) is a distributed operating system based on Kubernetes, which consists of a set of cloud-native components, focusing on improving system scalability, resource utilization, and scalability. Observability, security, etc., support Cases such as large-scale multi-tenant clusters, offline mixing, and storage.
      The first batch of KubeWharf plans to open source three projects: KubeBrain, a high-performance meta-information storage system, KubeGateway, a seven-layer gateway for kube-apiserver, and KubeZoo, a lightweight multi-tenant solution.
 
 - [Kuma service mesh Project v2.2.0 Released (CNCF Project)](https://github.com/kumahq/kuma/releases/tag/2.2.0)
@@ -1262,7 +1262,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Volcano Cloud Native Batch Computing Project v1.7.0 Released (CNCF Project)](https://github.com/volcano-sh/volcano/releases/tag/v1.7.0)
 
-    The main new features of this version: add Pytorch job plugin, support batch scheduling for Ray, a distributed high-performance AI computing framework, enrich scheduling policies to support more long-running service application scenarios, support Kubernetes v1.25, support multi-architecture mirroring, and support real-time view of resource allocation information of queues.
+    The main new features of this version: add Pytorch job plugin, support batch scheduling for Ray, a distributed high-performance AI computing framework, enrich scheduling policies to support more long-running service use cases, support Kubernetes v1.25, support multi-architecture mirroring, and support real-time view of resource allocation information of queues.
 
 - [Volcano Cloud Native Batch Computing Project v1.6.0 release (CNCF project)](https://github.com/volcano-sh/volcano/releases/tag/v1.6.0)
 
@@ -1290,7 +1290,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Xline is open sourced by DatenLord: Achieving data consistency management across data centers](https://mp.weixin.qq.com/s/NqScUOjUA1t4gdNeLEcPwg)
 
-     [Xline](https://github.com/datenlord/Xline) aims to solve the problem that etcd cannot fully meet the needs of cross-cloud and cross-data center scenarios. Xline is a distributed KV storage, which is used to manage a small amount of critical data, and still ensure high performance and strong data consistency in cross-cloud and cross-data center scenarios. It is compatible with the etcd interface, allowing users to use and migrate more smoothly.
+     [Xline](https://github.com/datenlord/Xline) aims to solve the problem that etcd cannot fully meet the needs of cross-cloud and cross-data center use cases. Xline is a distributed KV storage, which is used to manage a small amount of critical data, and still ensure high performance and strong data consistency in cross-cloud and cross-data center use cases. It is compatible with the etcd interface, allowing users to use and migrate more smoothly.
 
 - [Zadig cloud-native continuous delivery tool v1.12.0 released](https://github.com/koderover/zadig/releases/tag/v1.12.0)
 

@@ -13,7 +13,7 @@ The functions of the cloud-native gateway are basically similar to those of the 
 - Sentinel
 
     Sentinel is a flow control component for distributed service architecture. It mainly takes flow as the entry point to ensure the stability of microservices from multiple dimensions such as flow control, fuse degradation, and system adaptive protection.
-    Sentinel has a wealth of application scenarios, and has undertaken the core scenarios of Alibaba's Double Eleven traffic promotion in the past 10 years. Sentinel has complete real-time monitoring, and users can see the second-level data of a single machine connected to the application in the console.
+    Sentinel has a wealth of use cases, and has undertaken the core use cases of Alibaba's Double Eleven traffic promotion in the past 10 years. Sentinel has complete real-time monitoring, and users can see the second-level data of a single machine connected to the application in the console.
     Sentinel provides integration modules with other open source frameworks/libraries, such as integration with Spring Cloud, Dubbo, and gRPC, which can be used out of the box.
     In addition, Sentinel can also provide an easy-to-use and complete SPI extension interface, and users can quickly customize logic by implementing the extension interface.
 

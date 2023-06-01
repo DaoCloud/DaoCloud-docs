@@ -74,7 +74,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Azure Releases AKS Fleet Manager (Public Preview)](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
 
-    Azure Kubernetes Fleet Manager treats multiple cluster sites as a single cluster to be managed. Users can manage multiple clusters by creating a Fleet resource. Users can treat existing AKS clusters as member clusters, join them to the fleet, and then orchestrate multiple cluster scenarios such as Kubernetes resource propagation and multicluster load balancing using metadata from those clusters.
+    Azure Kubernetes Fleet Manager treats multiple cluster sites as a single cluster to be managed. Users can manage multiple clusters by creating a Fleet resource. Users can treat existing AKS clusters as member clusters, join them to the fleet, and then orchestrate multiple cluster Cases such as Kubernetes resource propagation and multicluster load balancing using metadata from those clusters.
 
 - [AliCloud Container Service ACK April Product Update](https://mp.weixin.qq.com/s/z4PBLXxsn691cgYtfBOZaA)
 
@@ -119,7 +119,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Alibaba Cloud releases CNStack 2.0 of cloud-native technology platform](https://mp.weixin.qq.com/s/5q8i_BSL8DbdwOUHmBkQ8Q)
 
-     CNStack 2.0 supports mixed management of different vendors, different architectures, different regions and CPU/GPU computing power. Provide one-stop management of the entire lifecycle of application development, testing, and operation and maintenance, and the scenarios cover container services, distributed applications, cloud edge, and DevOps. In addition, the platform also provides a complete technology stack support, including built-in, out-of-the-box product components and middleware, as well as products and components provided by the original factory and partners.
+     CNStack 2.0 supports mixed management of different vendors, different architectures, different regions and CPU/GPU computing power. Provide one-stop management of the entire lifecycle of application development, testing, and operation and maintenance, and the use cases cover container services, distributed applications, cloud edge, and DevOps. In addition, the platform also provides a complete technology stack support, including built-in, out-of-the-box product components and middleware, as well as products and components provided by the original factory and partners.
 
 - [Alibaba Cloud Microservice Engine MSE October Update](https://mp.weixin.qq.com/s/Puud_MYgCMezqKESaAiG-w)
 
@@ -629,7 +629,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Tencent Cloud Container Service TKE Three Capabilities Upgrade](https://mp.weixin.qq.com/s/DfxCQM8KzMioSt6rVq5oHw)
 
-     Update content: node management, the new HouseKeeper operation and maintenance paradigm, the native nodes, super nodes, registered nodes and other on/off cloud resources nano-management; cluster management, support a cluster management any node, while supporting a variety of nodes such as native nodes, super nodes, registered nodes and edge nodes; application management, to create for In terms of application management, it creates an application management platform for multicloud and edge scenarios, and realizes unified distribution, deployment and management of multiple clusters.
+     Update content: node management, the new HouseKeeper operation and maintenance paradigm, the native nodes, super nodes, registered nodes and other on/off cloud resources nano-management; cluster management, support a cluster management any node, while supporting a variety of nodes such as native nodes, super nodes, registered nodes and edge nodes; application management, to create for In terms of application management, it creates an application management platform for multicloud and edge use cases, and realizes unified distribution, deployment and management of multiple clusters.
 
 - [Tencent Cloud Container Service TKE September update](https://mp.weixin.qq.com/s/6_TSSHhU0L8mSbqEMWyu4g)
 
@@ -688,7 +688,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Volcano Engine Releases Distributed Cloud Native Platform DCP](https://mp.weixin.qq.com/s/Fz7R8R0keKFEryq8zQKFoA)
 
-    [DCP](https://www.volcengine.com/product/dcp) is an enterprise-level cloud native unified management platform for multicloud and multi-Kubernetes cluster scenarios, providing unified management and operation and maintenance of multicloud clusters, cross-cluster distribution of applications, unified traffic control and other capabilities, DCP provides unified management and operation and maintenance of Volcano Engine container clusters, third-party clusters and self-built clusters; provides cross-cluster and cross-cloud elastic scheduling capability based on cluster federation and other technologies; provides multicluster service discovery, multicluster unified portal access and other capabilities; enables application data recovery and cross-cluster/cloud application migration based on backup data.
+    [DCP](https://www.volcengine.com/product/dcp) is an enterprise-level cloud native unified management platform for multicloud and multi-Kubernetes cluster use cases, providing unified management and operation and maintenance of multicloud clusters, cross-cluster distribution of applications, unified traffic control and other capabilities, DCP provides unified management and operation and maintenance of Volcano Engine container clusters, third-party clusters and self-built clusters; provides cross-cluster and cross-cloud elastic scheduling capability based on cluster federation and other technologies; provides multicluster service discovery, multicluster unified portal access and other capabilities; enables application data recovery and cross-cluster/cloud application migration based on backup data.
 
 - [VMware Tanzu Releases Kubernetes DevOps Platform VMware Tanzu Application Platform 1.5](https://tanzu.vmware.com/content/blog/tanzu-application-platform-1-5-ga)
 

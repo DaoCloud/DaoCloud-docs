@@ -14,7 +14,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [June 30 China Academy of Information and Communications Technology launches the registration of digital service capability assessment of smart marketing in the first half of 2023 (registration closes on 6.30)](https://mp.weixin.qq.com/s/yQfz9X3oPKWDSeqgxwzs8g)
   
-    Smart marketing digital service capability assessment includes six modules: digital scenarios, digital governance, platform-based products, digital service operations, trustworthy and compatible ecology and digital trust security service capabilities. Among them, the platform-based product capability focuses on whether it has the ability of customer insight, marketing planning, customer reach, customer conversion, customer operation and other smart marketing whole-chain traces.
+    Smart marketing digital service capability assessment includes six modules: digital use cases, digital governance, platform-based products, digital service operations, trustworthy and compatible ecology and digital trust security service capabilities. Among them, the platform-based product capability focuses on whether it has the ability of customer insight, marketing planning, customer reach, customer conversion, customer operation and other smart marketing whole-chain traces.
 
 - [Late June: China Academy of Information and Communications Technology (CAICT) officially launches the first batch of evaluation of the first half of the One Cloud, Many Cores series of standards (registration closes in mid-late June)](https://mp.weixin.qq.com/s/XKpcv_QdP2lQX_a-eq_TuA)
   
@@ -82,7 +82,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [End of May China Academy of Information and Communications Technology officially launches hybrid and proprietary cloud assessment in the first half of 2023 (registration closes at the end of May)](https://mp.weixin.qq.com/s/qWtNRf5pQ5jpcam4uTSu1w)
   
     The Trusted Cloud Proprietary Cloud Assessment aims to assess the comprehensive level of proprietary cloud capabilities (including self-built and dedicated models), maturity (general), industry capabilities (financial), and special capabilities (compatibility) of the participating units.
-    The hybrid cloud assessment evaluates the basic platform capabilities (including public cloud part, private cloud part, hyper-converged platform, and Cintron compatibility), special capabilities (security), application scenarios (data analysis, R&D operation), and comprehensive capabilities of the participating units.
+    The hybrid cloud assessment evaluates the basic platform capabilities (including public cloud part, private cloud part, hyper-converged platform, and Cintron compatibility), special capabilities (security), use cases (data analysis, R&D operation), and comprehensive capabilities of the participating units.
 
 - [May 31 China ICT launches the first batch of service quality evaluation of large-scale edge container clusters (5.31 deadline)](https://mp.weixin.qq.com/s/8TjJBIFp46vscKBMILZBUg)
   
@@ -116,11 +116,11 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [May 15 "Cloud Native Application Engine Technology Development White Paper" Released](https://mp.weixin.qq.com/s/oHEZE3RtcdAsU2Ck95eK2w)
   
-    The white paper provides an in-depth analysis of the current situation and future of cloud-native application engine technology development in China from the definition of cloud-native application engines, product forms, industry application scenarios and future trends, as well as how to achieve a breakthrough in cloud-native "root" technology through application engines and drive the construction of cloud-native industrial ecology.
+    The white paper provides an in-depth analysis of the current situation and future of cloud-native application engine technology development in China from the definition of cloud-native application engines, product forms, industry use cases and future trends, as well as how to achieve a breakthrough in cloud-native "root" technology through application engines and drive the construction of cloud-native industrial ecology.
 
 - [May 12 China ICT officially launched the first batch of assessments for cloud computing storage category in the first half of the year](https://mp.weixin.qq.com/s/4rZJKe5uQIFZREQzjZvCgg)
   
-    The evaluation items of this assessment include: assessment of the effectiveness of distributed storage platform construction, assessment of the effectiveness of hyper-converged platform construction, and assessment of the effectiveness of hyper-converged platform implementation in cloud-native and Trustworthy scenarios. The evaluation results will be released at the Trusted Cloud Conference in July.
+    The evaluation items of this assessment include: assessment of the effectiveness of distributed storage platform construction, assessment of the effectiveness of hyper-converged platform construction, and assessment of the effectiveness of hyper-converged platform implementation in cloud-native and Trustworthy use cases. The evaluation results will be released at the Trusted Cloud Conference in July.
 
 - [May 12 2023 Trusted Edge Computing Innovation and Practice Cases and Industry Panorama Collection Launch (5.12 Filing Deadline)](https://mp.weixin.qq.com/s/KM2hnAoJ1KXJ6J0eovPzcw)
   
@@ -208,7 +208,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [April 12 IDC Officially Launches Cloud Native Research Series](https://mp.weixin.qq.com/s/Sj5OFKy0Shyk1XSwZvAQfw)
   
-    This research will start from six major areas and business scenarios of cloud native, deeply analyze cloud native technologies, and conduct relevant research on technology development trends, market space situation, key vendor products and solutions, and excellent practices.
+    This research will start from six major areas and business cases of cloud native, deeply analyze cloud native technologies, and conduct relevant research on technology development trends, market space situation, key vendor products and solutions, and excellent practices.
 
 - [April 8 KubeSphere Meetup Shenzhen Station has been launched](https://mp.weixin.qq.com/s/QGFS8nO6qMClUBdn2Bav3g)
   
@@ -310,7 +310,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [February 2 China Academy of Information and Communications Technology (CAIC) Trusted Cloud-Container Class Assessment Launched in the First Half of 2023 (Registration for Assessment Closed on 3.10)](https://mp.weixin.qq.com/s/V2-v9rPWnXQ5WlN4kEnVVw)
   
     The Trusted Cloud Container Class Assessment System consists of five aspects: full-stack container cloud solution assessment (including three types of general-purpose containers, edge containers and hybrid multicloud containers), component-level container platform performance assessment, component-oriented container platform performance assessment, and container platform performance assessment.
-    component-level container platform performance assessment, large-scale container platform performance assessment for financial scenarios, container platform security capability assessment, and container security solution assessment.
+    component-level container platform performance assessment, large-scale container platform performance assessment for financial use cases, container platform security capability assessment, and container security solution assessment.
     The evaluation results will be released in June at ICT China - High-End Forum.
 
 - [February 1 CNCF Foundation to launch Kubernetes and Cloud Security (KCSA) certification in Q3](https://www.cncf.io/blog/2023/02/01/kubernetes-and-cloud-security-associate-kcsa-certification-coming-in-q3-2023/)
@@ -873,7 +873,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [On July 4th, the international analysis agency Sullivan and Toubao Research Institute released the "Cloud Native Market Research Report - Containers" (2022)](https://zhuanlan.zhihu.com/p/537223598)
 
-     The report points out that the key to the current competition of cloud-native vendors' container products lies in "the capabilities of products in corresponding scenarios, and the key to product capabilities lies in the construction of an open ecosystem."
+     The report points out that the key to the current competition of cloud-native vendors' container products lies in "the capabilities of products in corresponding use cases, and the key to product capabilities lies in the construction of an open ecosystem."
      In addition, the report evaluates the core competitive advantages and comprehensive barriers of mainstream container vendors such as Huawei Cloud, Alibaba Cloud, and Tencent Cloud based on the three dimensions of application, product, and ecosystem.
 
      Click [View the full report PDF](https://pdf.dfcfw.com/pdf/H3_AP202207041575792777_1.pdf?1656970762000.pdf)
@@ -894,8 +894,8 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [On June 22, CAICT and Tencent Cloud released the industry's first "White Paper on Distributed Cloud Development (2022)"](https://mp.weixin.qq.com/s/0EI2rvL8Xmd0TlnwjthaFQ)
 
-     The white paper first clarifies the definition of distributed cloud standards, the difference and connection with hybrid cloud and edge computing; then introduces the key technologies and application scenarios of distributed cloud,
-     The challenges and future prospects of distributed cloud in terms of basic technology, application scenarios and standards are proposed; finally, multi-industry practice cases are deeply analyzed to provide reference for enterprises to implement distributed cloud.
+     The white paper first clarifies the definition of distributed cloud standards, the difference and connection with hybrid cloud and edge computing; then introduces the key technologies and use cases of distributed cloud,
+     The challenges and future prospects of distributed cloud in terms of basic technology, use cases and standards are proposed; finally, multi-industry practice cases are deeply analyzed to provide reference for enterprises to implement distributed cloud.
 
      Read the white paper: <https://share.weiyun.com/brailKaS>
 
@@ -1019,10 +1019,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [On June 1, the Kube-OVN team released "2022 Cloud Native Network Trends"](https://mp.weixin.qq.com/s/1MmzDfYyglzhqEtXxZF_3g)
 
-     The cloud-native network trend in 2022 has the following characteristics: it is difficult for a single CNI to meet the needs of all scenarios, and specific network plug-ins will appear in different scenarios;
+     The cloud-native network trend in 2022 has the following characteristics: it is difficult for a single CNI to meet the needs of all use cases, and specific network plug-ins will appear in different cases;
      Network helper components such as Submariner or Clusternet that do not rely on a specific CNI will continue to emerge;
      Some new software and hardware technologies such as eBPF and smart network cards will continue to integrate with K8s. In addition, traditional cloud-native technologies will continue to enhance the capabilities of the entire cloud-native network;
-     The combination of software and hardware may play a huge advantage in different fields and specific scenarios.
+     The combination of software and hardware may play a huge advantage in different fields and specific cases.
 
 - [On June 1, CNCF released "kubernetes 2021Annual Report"](https://www.cncf.io/reports/kubernetes-annual-report-2021/)
 
@@ -1189,7 +1189,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [April 10: 2021 Research Report on Smart Marketing Under Cloud Native](https://mp.weixin.qq.com/s/XHKCFq3Gm1tr22anbSnzNQ)
 
-     As one of the core scenarios of digital industrialization, intelligent marketing has been widely implemented in the digital transformation of enterprises.
+     As one of the core use cases of digital industrialization, intelligent marketing has been widely implemented in the digital transformation of enterprises.
      Facing the current situation of fragmentation of market solutions and improvement of customer demands, the integration of cloud native and intelligent marketing provides enterprises with better solutions.
 
      Click to download [full report](https://www.iresearch.com.cn/Detail/report?id=3892&isfree=0)

@@ -16,7 +16,7 @@ There are two ways to configure API policies:
 
 ## Load balancing
 
-When the target back-end service of an API serves multiple instances, you can use load balancing policies to control traffic distribution and adjust the traffic received by instances of different services based on service scenarios.
+When the target back-end service of an API serves multiple instances, you can use load balancing policies to control traffic distribution and adjust the traffic received by instances of different services based on service use cases.
 
 - random
   

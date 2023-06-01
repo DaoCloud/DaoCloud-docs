@@ -13,7 +13,7 @@ And extract it to each node. When multus-underlay is installed, only the Multus 
 
 ## Illustrate
 
-Multus + Macvlan generally has two usage scenarios:
+Multus + Macvlan generally has two  use cases:
 
 -macvlan-standalone
 

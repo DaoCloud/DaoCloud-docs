@@ -5,10 +5,10 @@ On the other hand, we also hope to reduce costs through multicluster hybrid clou
 The most essential problem is that there is an upper limit to the carrying capacity in the single cluster mode, and when the cluster fails, it cannot fail over quickly.
 
 It is for these various reasons that multicluster has almost become a new trend in cloud computing.
-With the birth of the new architecture, new problems have emerged one after another, especially in multicluster scenarios, where business governance, monitoring, and network communication are also facing severe challenges.
-At this time, I have to mention service mesh. Theoretically speaking, this technology has the ability to solve the above problems from its design genes in multicloud and multicluster scenarios.
+With the birth of the new architecture, new problems have emerged one after another, especially in multicluster use cases, where business governance, monitoring, and network communication are also facing severe challenges.
+At this time, I have to mention service mesh. Theoretically speaking, this technology has the ability to solve the above problems from its design genes in multicloud and multicluster use cases.
 
-Why is it said that service mesh can support complex multicloud scenarios?
+Why is it said that service mesh can support complex multicloud cases?
 The service mesh sinks its own capabilities to the infrastructure level, so in theory, in a multicloud environment, it can naturally perceive various information of its own cloud business, such as service address, link relationship between services, etc. information,
 The mesh aggregates the perceived information into a complete multicloud network topology. In a known and controllable multicloud topology, users can observe and control business communications from a high latitude.
 
@@ -45,13 +45,13 @@ When the team has multicloud capabilities, it only needs to manage its own relat
 
 In single-cluster mode, users can only know the business operation status in the current cluster, and the business communication between each cluster is opaque and independent. Users cannot perceive the business communication traces outside the cluster.
 
-However, in multicloud scenarios, as long as they belong to the same mesh, the mesh can aggregate and analyze the communication between different clusters under the same network, and draw it into a complete multicloud network topology.
+However, in multicloud cases, as long as they belong to the same mesh, the mesh can aggregate and analyze the communication between different clusters under the same network, and draw it into a complete multicloud network topology.
 Just like the original single cluster is just a 2D photo, in the multicloud scene, the service mesh can provide a 3D topological network.
 It's not just an increase in scope, but an increase in dimensional levels.
 
 ## Principles of network communication under multicloud
 
-After understanding the huge advantages of multicloud scenarios, we return to reality. What problems are there in multicloud scenarios?
+After understanding the huge advantages of multicloud cases, we return to reality. What problems are there in multicloud cases?
 Which of these issues is the most fundamental?
 First of all, let's understand this literally, multiple cloud environments? Multiple cloud vendors?
 Multiple cloud clusters? The multiple here means that there are differences.
@@ -165,7 +165,7 @@ After authorization, the control plane can perform service discovery for multipl
 Under the multicluster mesh deployment model, the default strategy for multicluster services is: each cluster balances the load.
 But in a complex and huge production environment, in fact, many services only need to communicate with traffic in certain areas. At this time, the local priority load balancing strategy can be adopted (for specific methods, refer to [Locality Load Balancing mentioned by Istio official](https ://istio.io/latest/docs/tasks/traffic-management/locality-load-balancing/)).
 
-In some scenarios, we will find that the cross-cluster traffic load capacity is not frequently operated, and the cross-cluster load all the time is not what we expected.
+In some cases, we will find that the cross-cluster traffic load capacity is not frequently operated, and the cross-cluster load all the time is not what we expected.
 For example, we just need blue-green deployment, and its versions are located in different clusters;
 For example, when a service of a certain cluster fails, it can be switched to the service of the standby cluster.
 These scenes are incidental. The frequency of occurrence is very low, but it is just needed.
@@ -184,7 +184,7 @@ How can we achieve this through the mesh? Under the Istio service mesh, there ar
 In the above chapters, we briefly focus on the three core dimensions of the service mesh (networkmodel, control plane architecture, and data plane service discovery) to analyze its related principles and advantages.
 But at this time, we will find that there are multiple solutions in the introduction of the network model and control plane architecture, so how do we choose the specific solution?
 
-DaoCloud has been deeply involved in service mesh products for many years, has actual landing customers, and has experience in evolving from single cluster to multicluster customer solutions. Our products have also undergone verification and practice of various solutions, collecting scenarios of multiple customers, Finally, the architecture selection scheme of our multicluster service mesh product is as follows: free network model + multicluster single control plane.
+DaoCloud has been deeply involved in service mesh products for many years, has actual landing customers, and has experience in evolving from single cluster to multicluster customer solutions. Our products have also undergone verification and practice of various solutions, collecting use cases of multiple customers, Finally, the architecture selection scheme of our multicluster service mesh product is as follows: free network model + multicluster single control plane.
 
 ### Network Model
 

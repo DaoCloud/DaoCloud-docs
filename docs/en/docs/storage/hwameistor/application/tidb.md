@@ -1,6 +1,6 @@
 # TiDB
 
-TiDB is a converged distributed database product that supports both online transaction processing (OLTP) and online analytical processing (OATP). A native distributed database, compatible with important features such as the MySQL 5.7 protocol and the MySQL ecosystem. The goal of TiDB is to provide users with one-stop OLTP, OLAP, and HTAP solutions, which are suitable for various application scenarios such as high availability, high requirements for strong consistency, and large data scale.
+TiDB is a converged distributed database product that supports both online transaction processing (OLTP) and online analytical processing (OATP). A native distributed database, compatible with important features such as the MySQL 5.7 protocol and the MySQL ecosystem. The goal of TiDB is to provide users with one-stop OLTP, OLAP, and HTAP solutions, which are suitable for various Cases such as high availability, high requirements for strong consistency, and large data scale.
 
 ## Overall structure of TiDB
 
@@ -20,7 +20,7 @@ The TiDB distributed database splits the overall architecture into multiple modu
 
 - TiKV Server: Responsible for storing data. From the outside, TiKV is a distributed Key-Value storage engine that provides transactions. The basic unit for storing data is Region, and each Region is responsible for storing data of a Key Range (the left-closed right-open interval from StartKey to EndKey), and each TiKV node is responsible for multiple Regions. TiKV's API provides native support for distributed transactions at the KV key-value pair level, and provides the isolation level of SI (Snapshot Isolation) by default, which is also the core of TiDB's support for distributed transactions at the SQL level. After the SQL layer of TiDB completes the SQL parsing, it will convert the SQL execution plan into an actual call to the TiKV API. Therefore, the data is stored in TiKV. In addition, the data in TiKV will automatically maintain multiple copies (the default is three copies), which naturally supports high availability and automatic failover.
 
-- TiFlash: TiFlash is a special type of storage node. Different from ordinary TiKV nodes, inside TiFlash, data is stored in the form of columns, and its main function is to accelerate analytical scenarios.
+- TiFlash: TiFlash is a special type of storage node. Different from ordinary TiKV nodes, inside TiFlash, data is stored in the form of columns, and its main function is to accelerate analytical use cases.
 
 ## Storage of TiDB database
 

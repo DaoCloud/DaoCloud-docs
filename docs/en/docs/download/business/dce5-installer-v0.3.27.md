@@ -30,7 +30,7 @@ After successful installation, please contact us for authorization: email info@d
 
 ## Modules
 
-The DCE 5.0 Enterprise Package includes the following modules, which are plug-and-play on-demand to meet various application scenarios:
+The DCE 5.0 Enterprise Package includes the following modules, which are plug-and-play on-demand to meet various use cases:
 
 | Modules | Introduction | What's New |
 | ---------- | -------------------------------------- ---------------------------------- | --------------- ---------------------------------------------- |

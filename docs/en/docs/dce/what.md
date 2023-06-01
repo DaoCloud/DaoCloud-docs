@@ -7,7 +7,7 @@ hide:
 
 DaoCloud Enterprise 5.0 is a high-performance, scalable cloud-native operating system. It can provide a consistent and stable experience in any infrastructure and environment, supporting heterogeneous clouds, edge clouds, and Multicloud Management. DCE 5.0 integrates the latest service mesh and microservice technologies, which can track the entire lifecycle of each traffic, help you understand the detailed metrics of clusters, nodes, applications, and services, and visualize the health status of applications through dynamic dashboards and topology maps.
 
-DCE 5.0 natively supports the DevOps development and operation mode, which can realize the standardization and automation of the entire app delivery process, and integrates various selected databases and middleware to make operation and maintenance governance more efficient. Each product module is independently decoupled, supports flexible upgrades, has no impact on business, and can be docked with many cloud-native ecological products to provide a complete solution system. It has been tested in production scenarios by nearly a thousand industry customers, building a solid and reliable digital foundation, helping enterprises define digital boundaries, and unleashing cloud-native productivity.
+DCE 5.0 natively supports the DevOps development and operation mode, which can realize the standardization and automation of the entire app delivery process, and integrates various selected databases and middleware to make operation and maintenance governance more efficient. Each product module is independently decoupled, supports flexible upgrades, has no impact on business, and can be docked with many cloud-native ecological products to provide a complete solution system. It has been tested in production cases by nearly a thousand industry customers, building a solid and reliable digital foundation, helping enterprises define digital boundaries, and unleashing cloud-native productivity.
 
 <div class="grid cards" markdown>
 
@@ -28,7 +28,7 @@ DCE 5.0 natively supports the DevOps development and operation mode, which can r
 
 ![modules](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/dce-modules04.jpg)
 
-In the past eight years, DaoCloud has invested huge to explore and develop a cloud-native operating system with custom and scalable modules to facilitate your business digitalization. You can use each module like a LEGO brick, with zero downtime while upgrading any module. DCE 5.0 is also easy to integrate with hundreds of cloud-native ecological plugins, so you can simply customize solutions for different scenarios. Things go better with such a kind of modular style to grow day by day.
+In the past eight years, DaoCloud has invested huge to explore and develop a cloud-native operating system with custom and scalable modules to facilitate your business digitalization. You can use each module like a LEGO brick, with zero downtime while upgrading any module. DCE 5.0 is also easy to integrate with hundreds of cloud-native ecological plugins, so you can simply customize solutions for different cases. Things go better with such a kind of modular style to grow day by day.
 
 === "Multicloud Management"
 

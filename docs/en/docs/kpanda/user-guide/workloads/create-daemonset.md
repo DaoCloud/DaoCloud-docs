@@ -4,7 +4,7 @@ This page introduces how to create a daemon process (DaemonSet) through mirrorin
 
 DaemonSet is connected to [taint](https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes-using-node-affinity/) through [node affinity]( ://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) feature ensures that a replica of a Pod is running on all or some of the nodes. For new nodes that join the cluster, DaemonSet automatically deploys the corresponding Pod on the new node and tracks the running status of the Pod. When a node is removed, the DaemonSet deletes all Pods it created.
 
-Common use cases for daemons include:
+Common cases for daemons include:
 
 - Run cluster daemons on each node.
 
@@ -125,7 +125,7 @@ Advanced configuration includes four parts: load network configuration, upgrade 
 
 === "Network Configuration"
 
-     In some scenarios, the application will have redundant DNS queries. Kubernetes provides DNS-related configuration options for applications, which can effectively reduce redundant DNS queries and increase business concurrency in certain scenarios.
+     In some cases, the application will have redundant DNS queries. Kubernetes provides DNS-related configuration options for applications, which can effectively reduce redundant DNS queries and increase business concurrency in certain cases.
 
      
 

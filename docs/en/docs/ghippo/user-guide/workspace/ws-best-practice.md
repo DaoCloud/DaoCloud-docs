@@ -70,7 +70,7 @@ A workspace consists of three functions: authorization, resource groups, and sha
 
     For Mesh and Mesh-Namespace resources, you can manually bind them in the resource list of the service mesh.
 
-## Usage Scenarios of Workspace
+## Use Cases of Workspace
 
 - Mapping to concepts such as different departments, projects, organizations, etc. At the same time, the roles of Workspace Admin, Workspace Edit, and Workspace View in the workspace can be mapped to different roles in departments, projects, and organizations
 - Add resources for different purposes to different workspaces for separate management and use

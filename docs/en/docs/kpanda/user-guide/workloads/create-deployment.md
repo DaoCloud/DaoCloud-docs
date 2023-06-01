@@ -118,7 +118,7 @@ Advanced configuration includes four parts: load network configuration, upgrade 
 
      1. For container NIC configuration, please refer to [Workload Usage IP Pool](../../../network/modules/spiderpool/usage.md)
      2. DNS configuration
-     In some scenarios, the application will have redundant DNS queries. Kubernetes provides DNS-related configuration options for applications, which can effectively reduce redundant DNS queries and increase business concurrency in certain scenarios.
+     In some cases, the application will have redundant DNS queries. Kubernetes provides DNS-related configuration options for applications, which can effectively reduce redundant DNS queries and increase business concurrency in certain cases.
     
      
     

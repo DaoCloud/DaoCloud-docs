@@ -15,7 +15,7 @@ MinIO is a GNU AGPL v3 open source software-defined product that can run well on
 MinIO's architectural design has been aimed at private cloud standards with high performance requirements from the very beginning, pursuing the ultimate performance on the basis of realizing all the functions required by object storage.
 MinIO is easy to use, efficient, and high-performance, and can provide cloud-native object storage services with elastic scalability in a simpler way.
 
-MinIO performs well in traditional object storage scenarios (such as auxiliary storage, disaster recovery, and archiving), and is also unique in storage technologies in machine learning, big data, private cloud, hybrid cloud, etc., including data analysis, high-performance application loads, native cloud applications, etc.
+MinIO performs well in traditional object storage use cases (such as auxiliary storage, disaster recovery, and archiving), and is also unique in storage technologies in machine learning, big data, private cloud, hybrid cloud, etc., including data analysis, high-performance application loads, native cloud applications, etc.
 
 ### MinIO architecture design
 
@@ -66,7 +66,7 @@ Using HwameiStor as the base to build a MinIO storage solution to build a smart,
 
    It can be dynamically expanded according to the size of the cluster to flexibly meet the data persistence requirements of the application.
 
-- Rich application scenarios, widely adapt to enterprise needs, and adapt to high-availability architecture middleware
+- Rich use cases, widely adapt to enterprise needs, and adapt to high-availability architecture middleware
 
    Middleware such as Kafka, ElasticSearch, and Redis have their own high-availability architecture, and at the same time have high requirements for IO access to data.
    The LVM-based single-copy local data volume provided by HwameiStor can well meet their requirements.

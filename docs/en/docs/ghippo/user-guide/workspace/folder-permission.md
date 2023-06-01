@@ -9,7 +9,7 @@ If a Namespace is bound in `Workspace and Hierarchy` -> `Resource Group`, the us
 
     The permission mapping capability of folders will not be applied to shared resources, because sharing is to share the use permissions of the cluster to multiple workspaces, rather than assigning management permissions to workspaces, so permission inheritance and role mapping will not be implemented.
 
-## Application scenarios
+## Use cases
 
 Folders have hierarchical capabilities, so when folders are mapped to departments/suppliers/projects in the enterprise,
 
