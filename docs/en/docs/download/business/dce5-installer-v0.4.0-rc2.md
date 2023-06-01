@@ -4,7 +4,7 @@ date: 2023-01-05
 
 # DCE 5.0 Enterprise Package v0.4.0-rc2
 
-This page can download the offline installation package and verification file of DCE 5.0 Commercial release.
+This page can download the offline installation package and verification file of DCE 5.0 Enterprise Package.
 
 ## Download
 
@@ -65,7 +65,7 @@ After successfully verifying the offline package,
      tar -zxvf offline-kylin-v10sp2-v0.4.0-rc2-arm64.tar
      ```
 
-- For installation, please refer to [Commercial release installation process](../../install/commercial/start-install.md)
+- For installation, please refer to [Enterprise Package installation process](../../install/commercial/start-install.md)
 - After successful installation, please contact us for authorization: email info@daocloud.io or call 400 002 6898
 
 ## Modules

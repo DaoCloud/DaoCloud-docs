@@ -4,9 +4,9 @@ DaoCloud Enterprise 5.0 has two editions: Community Package and Enterprise Packa
 
 Currently, the download center only provides offline installation packages. For online installation method, please refer to [Online Installation](../install/intro.md).
 
-## Download the community release
+## Download Community Package
 
-This release is for the community, welcome to try it for free.
+This package is for the community, welcome to try it for free.
 
 | Offline Pack | Version | Download | Updated Date |
 | ---------------- | ------- | ------------------------ ------------------- | -------- |
@@ -15,9 +15,9 @@ This release is for the community, welcome to try it for free.
 
 [See more historical revisions](./free/dce5-installer-history.md)
 
-## Download the commercial release
+## Download the Enterprise Package
 
-This release is suitable for building private cloud, hybrid cloud, multicloud, micro-service and other scenarios, and can customize a variety of cloud-native modules.
+This package is suitable for building private cloud, hybrid cloud, multicloud, micro-service and other scenarios, and can customize a variety of cloud-native modules.
 
 | Offline Pack | Version | Download | Updated Date |
 | ---------------- | ------- | ------------------------ ----------------- | -------- |

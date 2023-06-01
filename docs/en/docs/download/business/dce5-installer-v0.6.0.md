@@ -4,7 +4,7 @@ date: 2023-04-07
 
 # DCE 5.0 Enterprise Package v0.6.0
 
-This page can download the offline installation package and verification file of DCE 5.0 Commercial release.
+This page can download the offline installation package and verification file of DCE 5.0 Enterprise Package.
 
 ## Download
 
@@ -65,12 +65,12 @@ After successfully verifying the offline package,
     tar -zxvf offline-v0.6.0-arm64.tar
     ```
 
-- For installation, please refer to [Commercial release installation process](../../install/commercial/start-install.md)
+- For installation, please refer to [Enterprise Package installation process](../../install/commercial/start-install.md)
 - After successful installation, please contact us for authorization: email info@daocloud.io or call 400 002 6898
 
 ## Modules
 
-The DCE 5.0 commercial release includes the following modules, which are plug-and-play on-demand to meet various application scenarios:
+The DCE 5.0 Enterprise Package includes the following modules, which are plug-and-play on-demand to meet various application scenarios:
 
 | Modules | Introduction | What's New |
 | -------------------- | ---------------------------- ----------------------------------------------- | ----- -------------------------------------------------- ------ |

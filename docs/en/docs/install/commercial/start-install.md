@@ -2,7 +2,7 @@
 
 Please make sure you read and understand [Deployment Requirements](deploy-requirements.md), [Deployment Architecture](deploy-arch.md), [Preparation](prepare.md) before installation
 
-Please see the [Product Release Notes](../release-notes.md) to avoid known issues with your installed version and to see what's new
+Please see the [Release Notes](../release-notes.md) to avoid known issues with your installed version and to see what's new
 
 ## Offline installation steps
 
