@@ -15,19 +15,19 @@ hide:
 
 - If `LVM2` is not installed, please refer to the appropriate installation method below:
 
-     === "CentOS/RHEL, Rocky and Kylin"
+=== "CentOS/RHEL, Rocky and Kylin"
   
-         ```console
-         yum install -y lvm2
-         yum install -y kernel-devel-$(uname -r)
-         ```
+    ```console
+    yum install -y lvm2
+    yum install -y kernel-devel-$(uname -r)
+    ```
   
-     === "Ubuntu"
+=== "Ubuntu"
   
-         ```console
-         apt-get install -y lvm2
-         apt-get install -y linux-headers-$(uname -r)
-         ```
+    ```console
+    apt-get install -y lvm2
+    apt-get install -y linux-headers-$(uname -r)
+    ```
 
 ## Node Configuration
 
