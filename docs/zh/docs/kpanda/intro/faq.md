@@ -17,28 +17,28 @@ hide:
         - 找到对应集群，本文以 skoala-dev 为例,获取对应的 skoala-dev-setting configmap
         - 更新 configmap 之后即可生效
 
-        ```shell
-        kubectl get cm -n kpanda-system skoala-dev-setting -o yaml
-        apiVersion: v1
-        data:
-        clusterSetting: '{"plugins":[{"name":1,"intelligent_detection":true},{"name":2,"enabled":true,"intelligent_detection":true},{"name":3},{"name":6,"intelligent_detection":true},{"name":7,"intelligent_detection":true},{"name":8,"intelligent_detection":true},{"name":9,"intelligent_detection":true}],"network":[{"name":4,"enabled":true,"intelligent_detection":true},{"name":5,"intelligent_detection":true},{"name":10},{"name":11}],"addon_setting":{"helm_operation_history_limit":100,"helm_repo_refresh_interval":600,"helm_operation_base_image":"release-ci.daocloud.io/kpanda/kpanda-shell:v0.0.6","helm_operation_job_template_resources":{"limits":{"cpu":"50m","memory":"120Mi"},"requests":{"cpu":"50m","memory":"120Mi"}}},"clusterlcm_setting":{"enable_deletion_protection":true},"etcd_backup_restore_setting":{"base_image":"release.daocloud.io/kpanda/etcdbrctl:v0.22.0"}}'
-        kind: ConfigMap
-            metadata:
-            labels:
-                kpanda.io/cluster-plugins: ""
-            name: skoala-dev-setting
-            namespace: kpanda-system
-            ownerReferences:
-            - apiVersion: cluster.kpanda.io/v1alpha1
-                blockOwnerDeletion: true
-                controller: true
-                kind: Cluster
-                name: skoala-dev
-                uid: f916e461-8b6d-47e4-906e-5e807bfe63d4
-            uid: 8a25dfa9-ef32-46b4-bc36-b37b775a9632
+            ```shell
+            kubectl get cm -n kpanda-system skoala-dev-setting -o yaml
+            apiVersion: v1
+            data:
+            clusterSetting: '{"plugins":[{"name":1,"intelligent_detection":true},{"name":2,"enabled":true,"intelligent_detection":true},{"name":3},{"name":6,"intelligent_detection":true},{"name":7,"intelligent_detection":true},{"name":8,"intelligent_detection":true},{"name":9,"intelligent_detection":true}],"network":[{"name":4,"enabled":true,"intelligent_detection":true},{"name":5,"intelligent_detection":true},{"name":10},{"name":11}],"addon_setting":{"helm_operation_history_limit":100,"helm_repo_refresh_interval":600,"helm_operation_base_image":"release-ci.daocloud.io/kpanda/kpanda-shell:v0.0.6","helm_operation_job_template_resources":{"limits":{"cpu":"50m","memory":"120Mi"},"requests":{"cpu":"50m","memory":"120Mi"}}},"clusterlcm_setting":{"enable_deletion_protection":true},"etcd_backup_restore_setting":{"base_image":"release.daocloud.io/kpanda/etcdbrctl:v0.22.0"}}'
+            kind: ConfigMap
+                metadata:
+                labels:
+                    kpanda.io/cluster-plugins: ""
+                name: skoala-dev-setting
+                namespace: kpanda-system
+                ownerReferences:
+                - apiVersion: cluster.kpanda.io/v1alpha1
+                    blockOwnerDeletion: true
+                    controller: true
+                    kind: Cluster
+                    name: skoala-dev
+                    uid: f916e461-8b6d-47e4-906e-5e807bfe63d4
+                uid: 8a25dfa9-ef32-46b4-bc36-b37b775a9632
 
-            修改 clusterSetting-> helm_operation_job_template_resources 到合适的值即可，v0.6.1 版本对应的值为 cpu: 100m,memory: 400Mi
-            ```
+                修改 clusterSetting-> helm_operation_job_template_resources 到合适的值即可，v0.6.1 版本对应的值为 cpu: 100m,memory: 400Mi
+                ```
 
 2. 容器管理模块和全局管理模块的权限问题
 

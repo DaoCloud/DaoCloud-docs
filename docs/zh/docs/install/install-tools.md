@@ -51,7 +51,7 @@
 
 离线安装意味着目标主机的网络处于离线状态，无法下载所需依赖项，所以需先在一个在线环境中制作好离线包。
 
-1. 制作离线包。
+1. 在可以连接到网络的其他主机中制作依赖项的离线包。
 
     - 社区版制作命令
 
@@ -93,4 +93,4 @@
         bash install_prerequisite.sh offline full
         ```
 
-接下来就可以安装 DCE 5.0 了。
+接下来就可以安装 DCE 5.0 [社区版](ommunity/resources.md)或 [商业版](commercial/deploy-requirements.md) 了。

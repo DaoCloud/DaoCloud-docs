@@ -14,7 +14,7 @@ hide:
 | 节点硬件   | **3 Master + 2 Worker** <br />Master 节点：4 Core，8 G；系统盘 100G <br />Worker 节点：4 Core，8 G；系统盘 100G |
 | K8s 版本   | 推荐 K8s 官方最高稳定版本，目前推荐 v1.24，最低支持 v1.20                                                       |
 | 支持的 CRI | Docker 和 containerd                                                                                            |
-| CPU 架构   | x86_64，暂时不支持 ARM                                                                                          |
+| CPU 架构   | x86_64 和 ARM64                                                                                          |
 
 kind 集群资源的要求如下，仅推荐用于测试和开发。
 
@@ -23,4 +23,4 @@ kind 集群资源的要求如下，仅推荐用于测试和开发。
 | 节点硬件   | CPU > 10 核、内存 > 12 GB、磁盘空间 > 100 GB              |
 | K8s 版本   | 推荐 K8s 官方最高稳定版本，目前推荐 v1.24，最低支持 v1.20 |
 | 支持的 CRI | Docker 和 containerd                                      |
-| CPU 架构   | x86_64，暂时不支持 ARM                                    |
+| CPU 架构   | x86_64 和 ARM64                                    |
