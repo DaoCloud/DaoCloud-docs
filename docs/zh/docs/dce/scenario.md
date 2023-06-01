@@ -14,7 +14,7 @@ DCE 5.0 集成社区最优秀的众多技术，内置依赖项数以万计，经
 涉及模块：[容器管理](../kpanda/intro/what.md)、[容器网络](../network/intro/what.md)、容器集群生命周期管理
 
 方案优势：提供集群从部署、升级、证书变更、配置变更、回收等全集群生命周期管理管理能力。
-尽可能复用当前企业环境中网络基础设施，针对其环境针实施最佳方案：MacVLAN 网络方案、SR-IOV 智能网卡加速方案、[SpiderPool](../network/modules/spiderpool/what.md) 云原生 IPAM 方案、[Clilum](../network/modules/cilium/what.md) eBPF 网络加速方案、Underlay 和 Overlay 协同网络方案。
+尽可能复用当前企业环境中网络基础设施，针对不同的环境，可以实施的最佳方案有：MacVLAN 网络方案、SR-IOV 智能网卡加速方案、[SpiderPool](../network/modules/spiderpool/what.md) 云原生 IPAM 方案、[Clilum](../network/modules/cilium/what.md) eBPF 网络加速方案、Underlay 和 Overlay 协同网络方案。
 
 通过自主开源的 [Clusterpedia](../community/clusterpedia.md) 统一控制平面管理所有集群及负载信息，兼容标准 Kubernetes 集群接入，突破 Kubernetes API 性能瓶颈，支持上千人同时使用。
 
@@ -48,7 +48,7 @@ DCE 5.0 集成社区最优秀的众多技术，内置依赖项数以万计，经
 
 === "云边协同"
 
-用户按照云、边、端方案设计边缘协同方案，边缘端为通用算力平台，且边缘端有较强的算力需求。边缘端支持三种部署模式边缘节点、边缘集群模式，边缘集群叠加边缘节点四层架构模式。
+用户按照云、边、端方案设计边缘协同方案，边缘端为通用算力平台，且边缘端有较强的算力需求。边缘端支持三种部署模式: 边缘节点、边缘集群模式，边缘集群叠加边缘节点四层架构模式。
 
 涉及模块：[容器管理](../kpanda/intro/what.md)、[容器网络](../network/intro/what.md)、容器集群生命周期管理、边缘节点
 
