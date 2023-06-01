@@ -11,16 +11,14 @@
 
 - 准备一个 K8s 集群，集群配置请参考文档[集群资源规划](../resources.md)。
 
-    !!! note
-
-        - 存储：需要提前准备好 StorageClass，并设置为默认 SC
-        - 确保集群已安装 CoreDNS
-        - 如果是单节点集群，请确保您已移除该节点的污点
+    - 提前准备好 StorageClass，并设置为默认 SC
+    - 确保集群已安装 CoreDNS
+    - 如果是单节点集群，确保已移除该节点的污点
 
 - [安装依赖项](../../install-tools.md)。
 
     如果集群中已安装所有依赖项，请确保依赖项版本符合要求：
-          
+
     - helm ≥ 3.11.1
     - skopeo ≥ 1.11.1
     - kubectl ≥ 1.25.6
@@ -28,17 +26,21 @@
 
 ## 下载和安装
 
-1. 在 K8s 集群控制平面节点（Master 节点）下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../../download/dce5.md)）。
+1. 在 K8s 集群控制平面节点（Controller Node）下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../../download/dce5.md)）。
 
-    假定 VERSION 为 v0.6.0
+    假定 VERSION 为 v0.7.0
 
     ```shell
-    export VERSION=v0.6.0
+    export VERSION=v0.7.0
+
+    ## 如果是 arm 架构请更新 `dce5-installer-$VERSION` 为 `dce5-installer-$VERSION-linux-arm64`
+    
     curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
+
     chmod +x ./dce5-installer
     ```
 
-2. 设置配置文件 clusterConfig.yaml
+2. 设置配置文件 `clusterConfig.yaml`
 
     - 如果使用 NodePort 暴露控制台（仅推荐 PoC 使用），直接执行下一步。
 
@@ -75,7 +77,7 @@
 
     !!! note
 
-        - 参数 -p 指定解压离线包的 offline 目录。
+        - 参数 `-p` 指定解压离线包的 offline 目录。
         - 有关 clusterConfig.yaml 文件设置，请参考[在线安装第 2 步](online.md#_2)。
         - `-z` 最小化安装
         - `-c` 指定集群配置文件。使用 NodePort 暴露控制台时不需要指定 `-c`。
@@ -85,7 +87,7 @@
 4. 安装完成后，命令行会提示安装成功。恭喜您！
    现在可以通过屏幕提示的 URL 使用 **默认的账号和密码（admin/changeme）** 探索全新的 DCE 5.0 啦！
 
-    ![安装成功](../../images/success.png)
+    ![安装成功](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
     !!! success
 

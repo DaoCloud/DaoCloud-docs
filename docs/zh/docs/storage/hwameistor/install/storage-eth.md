@@ -1,8 +1,3 @@
----
-hide:
-  - toc
----
-
 # 存储网卡配置
 
 HwameiStor 支持使用单独的网卡进行数据卷同步，可以避免使用通信网卡带来流量阻塞问题。
@@ -13,10 +8,9 @@ HwameiStor 支持使用单独的网卡进行数据卷同步，可以避免使用
     - 【运行中配置】：如果 HwameiStor 已经部署，后面进行上述配置修改，那么**对之前已经创建出来的数据卷不会生效**，也就是还会使用之前的网卡进行数据卷同步。
     -  如需要修改多个节点存储网卡，请逐个配置，目前无法批量配置
 
-
 ## 前提条件
 
-已经提前完成存储网卡规划，请参考[网卡规划](../../../network/plans/ethplan.md)
+已经提前完成存储网卡规划，请参考[网卡规划](../../../network/plans/ethplan.md)。
 
 ## 配置步骤
 
@@ -31,14 +25,14 @@ HwameiStor 支持使用单独的网卡进行数据卷同步，可以避免使用
 
 2. 在左侧导航栏中选择 `自定义资源`，找到 `localdisknodes.hwameistor.io`，点击进入详情。
 
-    ![Ethedit01](../../images/ethEdit01.jpg)
+    ![Ethedit01](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/ethEdit01.jpg)
 
 3. 找到`待修改节点`并点击`编辑 YAML`，修改 `spec` 中的 `storage-ipv4=172.30.40.12` 参数，
-    指定 IP 地址为已规划网卡 IP [网卡规划](../../../network/plans/ethplan.md)。
+   指定 IP 地址为已规划网卡 IP [网卡规划](../../../network/plans/ethplan.md)。
     
-    ![ethedit02](../../images/ethedit02.jpg)
+    ![ethedit02](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/ethedit02.jpg)
     
-    ![ethedit03](../../images/editeth03.jpg)
+    ![ethedit03](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/editeth03.jpg)
 
 4. 完成后点击`保存`，并选择下一个节点进行修改。
 
@@ -47,7 +41,7 @@ HwameiStor 支持使用单独的网卡进行数据卷同步，可以避免使用
 1. 查看 local-storage 的 ENV: **NODE_ANNOTATION_KEY_STORAGE_IPV4** 的值，默认是
     **[localstorage.hwameistor.io/storage-ipv4](http://localstorage.hwameistor.io/storage-ipv4)**
 
-2. 将节点上的**存储网卡地址通过注释的方式标记**
+2. 将节点上的 **存储网卡地址通过注释的方式标记**
 
     ```sh
     kubectl annotate node <your_storage_node> localstorage.hwameistor.io``/storage-ipv4``=172.30.46.12

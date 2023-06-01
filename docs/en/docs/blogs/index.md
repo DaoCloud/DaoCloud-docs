@@ -3,55 +3,216 @@ hide:
   - toc
 ---
 
-# Blogs
+# Blog Posts
 
-This page is a collection of blog posts and public articles related to DCE 5.0, sorted by alphabet and Pinyin.
+This page summarizes blogs and public account articles related to DCE 5.0 and cloud-native technology, sorted by date by default.
 
-- [20230301 | KWOK Introduction](./kwok.md)
+- [2023061| API Server Tracing feature upgraded to beta](./230601-api-server-tracing.md)
 
-    What kind of open source project can be popularly used by Apple, IBM, Tencent, and Huawei within 5 months of its release?
+    In Kubernetes, the API Server is the core component responsible for managing and scheduling all cluster resources. It receives and processes requests from various clients
+    and converts them into underlying resource operations. Therefore, the stability and observability of the API Server are crucial to the overall health of Kubernetes.
 
-    KWOK stands for Kubernetes WithOut Kubelet.
-    KWOK can help you set up a cluster of thousands of nodes just in seconds,
-    simulate real nodes with a low resource footprint, and test your Kubernetes
-    controller at scale without spending much on infrastructure?
+- [20230518| Having fun with seccomp profiles on the edge](./230518-seccom.md)
 
-- [20230214 | DaoCloud and Kubernetes](./daocloud_k8s.md)
+    The Security Profiles Operator (SPO) is a feature-rich
+    operator for Kubernetes to make managing seccomp, SELinux and
+    AppArmor profiles easier than ever. Recording those profiles from scratch is one
+    of the key features of this operator, which usually involves the integration
+    into large CI/CD systems. Being able to test the recording capabilities of the
+    operator in edge cases is one of the recent development efforts of the SPO and
+    makes it excitingly easy to play around with seccomp profiles.
 
-    This blog shares the story of how DaoCloud Enterprise was continually refined with Kubernetes and how does DaoCloud contribute to the cloud native undertakings.
+- [20230509 | Kubernetes Installation Tutorial (KLTS Version)](./230509-k8s-install.md)
 
-- [20230201 | DCE 5.0 Quotations Collection](./peter.md)
+    Using the DaoCloud-maintained [KLTS (Kubernetes Long Term Support)](https://klts.io/docs/intro/) as an example,
+    this article briefly introduces the preparation work and installation steps for installing Kubernetes.
 
-    In 2022, in Shanghai, the epidemic is raging, the city is locked and under control. Everyone were working at home, and programmers were running around in the cracks of the virus 🦠. That year is when DCE 5.0 is developing in tough, and it is also a difficult year for every Chinese.
+- [20230508 | Cilium Accelerates Sockets with eBPF](./230508-cilium.md)
 
-- 20221209 | [DCE 5.0 Community Edition Installation Guide](./dce5-install1209.md)
+    With the continuous development of cloud-native technology, more and more applications are deployed on the cloud. Some of these applications have very strict real-time requirements, which requires us to improve their performance to achieve faster service speeds.
+    To achieve faster service speeds, a scenario is that when two applications that call each other are deployed on the same node, each request and response must pass through the socket layer, TCP/IP protocol stack, data link layer, and physical layer. 
+    If requests and responses bypass the TCP/IP protocol stack and directly redirect data packets to the peer socket at the socket layer, it will greatly reduce the time consumed for sending data packets and increase the speed of the service.
+    Based on this idea, eBPF technology maps and stores socket information, and uses helper functions to achieve the ability to redirect data packets to the peer socket layer. Cilium is based on this ability of eBPF to achieve socket acceleration effects.
 
-    This is a real-life example of installing DCE 5.0 Community Edition from scratch, including details about the K8s cluster, dependencies, network, storage, and more.
+- [20230428 | Kubernetes 1.27: Speed Up Pod Startup](./230428-pod-startup.md)
 
-- 20221130 | [Karmada Resource Interpreter](https://mp.weixin.qq.com/s/DLDmWRmhM_gMVg1qGnj_fA)
+    How to speed up Pod startup on nodes in a large cluster? This is a problem that cluster administrators often face in enterprises.
+    This article focuses on methods to speed up Pod startup on the kubelet side. This method does not involve the time period for controller-manager to create Pods through kube-apiserver, 
+    nor does it include the scheduling time of Pods or the time to execute Webhooks on them.
 
-    Karmada has been adopted by more and more enterprises for use in multicloud and hybrid cloud scenarios. In actual use, users often encounter scenarios where PropagationPolicy is used to distribute various resources to member clusters. This requires that the resource types being distributed not only include common Kubernetes native or well-known extension resources, but also support the distribution of custom resources defined by users. Therefore, Karmada introduces a built-in interpreter to parse common Kubernetes native or well-known extension resources, and also designs a custom interpreter to interpret the structure of custom resources, and recently proposed a configurable interpreter solution. Both custom resources and common Kubernetes native resources can be provided with more flexible and configurable custom methods to extract specified information from resources, such as replica numbers and status.
+- [20230427 | Cloud-Native Monitoring - Basics of VictoriaMetrics](./230427-victoriametrics.md)
 
-- 20221125 | [KubeCon 2022 North America | Highlights Review](https://mp.weixin.qq.com/s/HIxBZjCK8ofCN6C5KRY25w)
+    When it comes to cloud-native monitoring solutions, the first thing that comes to mind is basically a mature solution set of Prometheus+AlertManager+Grafana. 
+    As a monitoring core, Prometheus has powerful features such as strong data modeling, efficient operation, rich monitoring capabilities, powerful query language PromQL, simplicity, and easy management. However, Prometheus is currently not perfect in terms of high availability. For this reason, many alternative and enhanced solutions have emerged in the open source community, and VictoriaMetrics is one of the more outstanding ones. It is a fast, cost-effective, and scalable monitoring solution and time-series database.
 
-    At the 2022 KubeCon North America conference, which took place in November 2022, cloud native technology experts, product or solution providers, and users from all over the world gathered together to share the latest developments, trends, and insights in the cloud native field. This article will review some of the highlights of the conference.
+- [20230418 | Detailed Explanation of Karmada Failover](./230418-karmada-failover.md)
 
-- 20221123 | [Entering the Digital Native Journey of Automobile Manufacturers | A Review of the Roundtable](https://mp.weixin.qq.com/s/1leu7b8KQw9pcqma8A_cuw)
+    In the era of multicloud, how to achieve cross-data center, cross-AZ, and cross-cluster high availability of applications has become a new topic we are exploring.
+    In a single cluster, if the cluster fails, all applications in the cluster will not be accessible. Is there a way to help us automatically migrate applications to a new cluster when the cluster fails to ensure continuous external access to the application?
 
-    On November 18th, "Daocloud" hosted the "Roundtable on Cloud Native | Cloud Native Digital Ecology Private Sharing Meeting, Entering the Automobile Industry" successfully. This event, starting from specific cases of automobile manufacturers, mainly shares the application and practice of cloud native in the automotive industry. Let's review the highlights of this event together.
+- [20230417 | CNCF Platform Engineering White Paper](230417-cncf-platform-wp.md)
 
-- 20221115 | [SpiderPool - Cloud Native Container Network IPAM Plugin](https://mp.weixin.qq.com/s/r6YiuUBGD2KmmMOxl26X6A)
+    In 2022, the concept of "platform engineering" is very popular and also on Gartner's hype cycle curve. There are also comments that "DevOps is dead, platform engineering is the future". Developers are unwilling to deal with infrastructure, but enterprise development also needs its own infrastructure. "Platform engineering" unifies these two contradictory points, or "platform engineering" is the next stop of DevOps.
 
-    SpiderPool originated from the accumulation of experience in the implementation of container networks, and is an open-source cloud native container network IPAM plugin ("Daocloud": https://github.com/spidernet-io/spiderpool) mainly used in conjunction with Underlay CNI to achieve fine-grained management and allocation of IP for container cloud platforms.
+- [20230412 | The feature that has increased the most in the past two years! Kubernetes 1.27 officially released](230412-k8s-1.27.md)
 
-- 20221110 | [From Love, Beginning with Persistence, Remembering the Original Intention - Happy 8th Birthday to "Daocloud"!](https://mp.weixin.qq.com/s/4cYUXtZFc3tIjzphVRCSLg)
+    Kubernetes 1.27 has officially been released. This version is the first version of 2023 and has been released four months after the previous version. In this new version, the release team tracked 60 enhancements, which is much more than previous versions.
 
-    Time flies, and years pass by like a shuttle. Since its establishment in November 2014, "Daocloud" has been through eight years of unremitting efforts by DaoClouders. On the afternoon of November 8th, all the crew members of "Daocloud" held a birthday party for "Daocloud". Let's take a look at the scenes of "Daocloud's" 8th birthday party together!
+- [20230411 | Spiderpool: A new choice for Calico fixed application IP](230411-spiderpool.md)
 
-- 20221105 | [DaoCloud is a Senior Certified Kubernetes Service Provider](./kcsp.md)
+    Spiderpool is a Kubernetes IPAM plugin project designed primarily for the IP address management needs of underlay networks. It can be used by any CNI project compatible with third-party IPAM plugins.
 
-    DaoCloud successfully passed the Kubernetes certification as early as 2017, making it the earliest domestic service provider recognized by the CNCF, and also the earliest domestic manufacturer to obtain the Kubernetes Training Partner (KTP) certification. Currently, DaoCloud has been recognized as a Kubernetes Conformance Certified Service Provider (KCSP) by the CNCF, and can support the following K8s versions: v1.25, v1.24, v1.23, v1.20, v1.18, v1.15, v1.13, v1.9, v1.7.
+- [20230405 | Step-by-Step Installation of DCE 5.0 Community Edition](230405-step-by-step-dce5.md)
 
-- 20221105 | [Cloud Native Thinking on the Digital Transformation of Finance](https://mp.weixin.qq.com/s/9BggFRr0aoEzzmemXplRWg)
+    This article completes the installation of DCE 5.0 Community Edition from 0 to 1 in a cluster of three nodes, including details of K8s clusters, dependencies, networks, storage, and more.
 
-    From November 5th to 6th, 2022, the 5th International Financial Technology Forum 2022, jointly hosted by Southwest University of Finance and Economics, Chengdu Local Financial Supervision and Administration Bureau, and Chengdu Wenjiang District People's Government, was successfully held in Chengdu. On the afternoon of the 5th, the forum invited Mr. Chen Qiyuan, founder and CEO of "Daocloud" and ambassador of the Cloud Native Computing Foundation
+- [20230317 | Edge Native Application Guidelines White Paper](230317-edge-app-wp.md)
+
+    The IoT Edge Working Group has been exploring the definition of edge-native, as well as the similarities and differences between "cloud-native" and "edge-native", and has released the "Edge Native Application Guidelines White Paper".
+
+- [20230315 | Installing DCE 5.0 Community Edition on Linux](230315-install-on-linux.md)
+
+    Describes how to use Docker and kind to install DCE 5.0 Community Edition online on a single Linux machine. This is an extremely simple installation method that is easy to learn and experience, and has better performance than the macOS standalone version.
+
+- [20230315 | Installing DCE 5.0 Community Edition on macOS](230315-install-on-macos.md)
+
+    Create a single-node kind cluster using a macOS laptop and then install DCE 5.0 Community Edition online. Suitable for beginners to experience and learn, but not suitable for production environments.
+
+- [20230301 | Introduction to the open-source project KWOK](230301-kwok.md)
+
+    What kind of open-source project would be used by Apple, IBM, Tencent, and Huawei within five months of its release? KWOK stands for Kubernetes WithOut Kubelet, which means Kubernetes without Kubelet. It helps you build a cluster consisting of thousands of nodes in seconds and simulates thousands of real nodes with minimal resources.
+
+- [20230214 | How many open source projects are included in DCE 5.0 Community Edition?](230214-open-projects.md)
+
+    Often, customers, community members, contributors, and sales, delivery, and project teams within the company ask, "Which open-source projects does DCE really involve?" This article details the open-source projects included in the Community Edition.
+
+- [20230214 | "DaoCloud Dao Ke" and Kubernetes](230214-daocloud_k8s.md)
+
+    Describes how "DaoCloud Dao Ke" leverages Kubernetes to create a new generation of enterprise-level cloud-native application cloud platforms - DaoCloud Enterprise 5.0, and how to give back to the open-source community and practice cloud-native beliefs.
+
+- [20230201 | 2023 Cloud-Native Predictions](230201-forecast.md)
+
+    Based on CNCF's Cloud-Native Report, this article talks about the development of various technologies and trends in the cloud-native field in 2023.
+
+- [20230201 | DCE 5.0 Struggle Quotations Collection](230201-peter.md)
+
+    In 2022, in Shanghai, ravaged by the epidemic, lockdowns, controls, and home stays, programmers ran between the cracks of the virus 🦠. That year was the time when DCE 5.0 struggled, and it was also a difficult year for every Chinese person.
+
+- [20221209 | K8s 1.26 officially released](221209-k8s-1.26.md)
+
+    Kubernetes has officially released version v1.26, titled "Electrifying". As the last version of 2022, it adds many new features and significantly improves stability. This article introduces the updates in version 1.26
+
+- [20221130 | Karmada Resource Interpreter](https://mp.weixin.qq.com/s/DLDmWRmhM_gMVg1qGnj_fA)
+
+    Karmada is increasingly being used by enterprises in multicloud and hybrid cloud cases. In the actual application process, users often encounter use cases where various resources are distributed to member clusters through PropagationPolicy. This requires that the distributed resource types not only include common Kubernetes native or well-known extension resources but also support distribution of custom user-defined resources. Therefore, Karmada introduces a built-in interpreter to parse common Kubernetes native or well-known extension resources, as well as a custom interpreter to interpret the structure of custom resources, and has recently proposed a configurable interpreter scheme. For both custom resources and common Kubernetes native resources, more flexible and configurable custom methods can be provided to extract specific information about resources such as replica numbers and status.
+
+- [20221125 | KubeCon 2022 North America Station | Highlights Review](https://mp.weixin.qq.com/s/HIxBZjCK8ofCN6C5KRY25w)
+
+    The top cloud-native conference, 2022 KubeCon North America Station, which ended in November 2022, brought together more than 300 exciting speeches from cloud-native technology experts, product or solution providers, and users from around the world. The themes covered include Kubernetes, GitOps, observability, eBPF, networking, service mesh, and security, among others. This article carefully selects several hot topic speeches from this conference for a brief introduction, to feel the cloud-native trends behind each speech and discussion.
+
+- [20221123 | On the Digital Native Road of Auto Enterprises | Review of the Forum](https://mp.weixin.qq.com/s/1leu7b8KQw9pcqma8A_cuw)
+
+    On November 18th, the "Native Road Forum | Cloud-Native Digital Ecosystem Private Sharing Meeting for Auto Enterprises" hosted by DaoCloud was successfully held. Starting from specific cases of auto enterprises, this event mainly shared the application and practice of cloud-native in the automotive industry. Let's review the wonderful content of this event together.
+
+- [20221115 | SpiderPool - Cloud-Native Container Network IPAM Plugin](https://mp.weixin.qq.com/s/r6YiuUBGD2KmmMOxl26X6A)
+
+    SpiderPool comes from the experience accumulation of container network landing practice and is an open-source native container network IPAM plugin (github: https://github.com/spidernet-io/spiderpool) developed by DaoCloud. It is mainly used with Underlay CNI to achieve fine-grained management and distribution of IP for container cloud platforms.
+
+- [20221110 | Originating from Passion, Insisting on Beginning with the Original Intention - Happy 8th Birthday to DaoCloud!](https://mp.weixin.qq.com/s/4cYUXtZFc3tIjzphVRCSLg)
+
+    Time flies, and years pass by. Since its establishment in November 2014, DaoCloud has gone through eight years of unremitting efforts by DaoClouders. On the afternoon of November 8th, all the crew members of DaoCloud held a birthday party for DaoCloud. Let's take a look at the grand occasion of DaoCloud eighth birthday party together!
+
+- [20221105 | DaoCloud is a Senior Certified Service Provider for K8s](221116-kcsp.md)
+
+    As early as 2017, DaoCloud successfully passed Kubernetes certification, becoming the earliest service provider in China to enter and be recognized by CNCF. It is also the earliest vendor in China to obtain Kubernetes Training Partner (KTP) certification. Currently, K8s versions that have been officially certified by CNCF include: v1.25, v1.24, v1.23, v1.20, v1.18, v1.15, v1.13, v1.9, and v1.7.
+
+- [20221105 | Financial Digital Transformation from a Native Thinking Perspective](https://mp.weixin.qq.com/s/9BggFRr0aoEzzmemXplRWg)
+
+    On November 5th to 6th, 2022, the 5th International Forum on Financial Technology was successfully held in Chengdu, jointly organized by Southwest University of Finance and Economics, Chengdu Local Financial Supervision and Administration Bureau, and Wenchuan District People's Government of Chengdu. On the afternoon of November 5th, DaoCloud founder and CEO, cloud-native computing foundation ambassador Chen Qiyuan, gave a keynote speech on the theme of "Digital Economy Empowers Financial Technology Innovation." Thisspeech mainly discusses the importance of cloud-native technology in the financial industry's digital transformation. Chen Qiyuan points out that when promoting digital transformation, companies should not only focus on technology but also pay attention to native thinking, which means understanding the needs of the business and users, and providing personalized solutions based on cloud-native technology. The speech also introduces several successful cases of cloud-native technology application in the financial industry, such as real-time risk control, intelligent investment advisory, and intelligent customer service.
+
+- [20221103 | DaoCloud Empowers Digital Transformation of Small and Medium-sized Enterprises and Smart Agriculture](https://mp.weixin.qq.com/s/G2nT3DIvWUaCk0aNZmAs1A)
+
+    On November 2nd, 2022, the "Smart Agriculture and Cross-border E-commerce Summit Forum" was held in Chengdu. At the forum, DaoCloud founder and CEO, cloud-native computing foundation ambassador Chen Qiyuan gave a speech on "DaoCloud Empowers Digital Transformation of Small and Medium-sized Enterprises and Smart Agriculture." In this speech, Chen Qiyuan shared his insights on digital transformation and introduced how DaoCloud can help small and medium-sized enterprises and smart agriculture through cloud-native technology solutions. He emphasized that the key to digital transformation lies in "people-oriented", and only by focusing on the user experience can technology bring real value.
+
+- [20221025 | Openyurt Goes to Europe! Openyurt Community Organizes Meetup in Germany](https://mp.weixin.qq.com/s/EBL-r8LZfGJydEi28N8jYw)
+
+    Openyurt, an open-source project for running Kubernetes workloads on edge nodes, organized a meetup in Frankfurt, Germany, on October 18th. This event brought together experts from the Openyurt community and Kubernetes users from various industries to share their experiences in the field of edge computing. The main topics discussed at the event include Openyurt's latest developments, edge computing architecture design, and practical cases of edge computing deployment.
+
+- [20221022 | KubeCon 2022 North America Station | DaoCloud Shares Cloud-Native Best Practices with Global Developers](https://mp.weixin.qq.com/s/5Uoq9uuITZJFhJjyRcJX0A)
+
+    On October 20th, 2022, KubeCon North America Station officially kicked off in Los Angeles, California. As a cloud-native technology service provider with many years of experience, DaoCloud was invited to participate in this grand event and shared its insights on cloud-native best practices with global developers. In this article, we will summarize DaoCloud's speeches and interactions during the event, including how to choose the right container container registry, how to optimize Kubernetes cluster performance, and how to implement GitOps-based continuous delivery.
+
+- [20221021 | DaoCloud Launches Container Registry Service Based on Alibaba Cloud Object Storage Service (OSS)](https://mp.weixin.qq.com/s/C89eKlFw8nH7QJzPxT4v1g)
+
+    On October 20th, 2022, DaoCloud officially released its container container registry service based on Alibaba Cloud Object Storage Service (OSS). This service provides users with secure and reliable storage and management of container images, helping them reduce the cost of image storage and improve image access efficiency. Moreover, by using Alibaba Cloud OSS as the underlying storage engine, DaoCloud can provide users with more diversified storage options, such as cold storage and disaster recovery.
+
+- [20221026 | Introduction to Container Management Capability of DCE 5.0](221026-kpanda.md)
+
+    This article explains the capabilities provided by the container management module of DCE 5.0.
+
+- [20221018 | Introduction to Resource Management Capability of DCE 5.0](221018-resource.md)
+
+    This article explains the capabilities provided by the global management module of DCE 5.0.
+
+- [20220925 | Introduction to Application Workspace Capability of DCE 5.0](220925-amamba.md)
+
+    This article explains the capabilities provided by the application workspace module of DCE 5.0.
+
+- [20220914 | Merbridge Selected in eBPF Panorama](https://mp.weixin.qq.com/s/Ia9Oi3pKuLcrFJwazmpEjg)
+
+    In April 2022, Merbridge was successfully selected for CNCF Cloud Native Landscape and recommended as a cloud-native service mesh accelerator.
+
+- [20220909 | Experience Using Clusterpedia](https://mp.weixin.qq.com/s/GAcBIshuaOXUrDgzIguWHg)
+
+    With the increasing scale of business applications running on Kubernetes platforms, the number of clusters is also increasing, and internal resource management and retrieval are becoming more and more complex. In the era of multiple clusters, we can use Cluster-api to create and manage clusters in batches, and use Karmada/Clusternet to deploy applications. However, there seems to be a lack of functionality. How can we view resources in multiple clusters in a unified way?
+
+- [20220908 | Huawei and DaoCloud Launch Cloud-Edge Collaborative Superconverged All-in-One Machine for Metaverse](https://mp.weixin.qq.com/s/r8vfFofBy7v1VcUMInp_Iw)
+
+    On September 2, 2022, at the World Artificial Intelligence Conference, Huawei and Shanghai DaoCloud Network Technology jointly launched a "cloud-edge collaborative superconverged all-in-one machine" for innovative businesses in the metaverse, bringing cloud-native capabilities to the edge to provide real-time virtual digital world experiences and achieve true cloud-edge integration in the metaverse.
+
+- [20220905 | How to Build a Storage Foundation and Create a Cloud-Native Application Base? | Discussion on Native](https://mp.weixin.qq.com/s/vrBAjdCkI2BKxG7SsSX2Uw)
+
+    The cloud-native transformation of applications greatly improves their core capabilities such as availability, stability, scalability, and performance, while also profoundly changing all aspects of applications. As the cornerstone of application running, storage is inevitably affected. In the context of the cloud-native era, what challenges has it brought to storage, and how can we respond to them? In the eleventh issue of Discussion on Native, DaoCloud and Huawei will share their cloud-native storage solutions.
+
+- [20220810 | Cluster API Retrieval Has Never Been So Easy](https://mp.weixin.qq.com/s/8F20pchW6WhbEdlU56qFsg)
+
+    Clusterpedia is a CNCF sandbox project for cross-cluster complex resource retrieval. It can synchronize resources with multiple clusters and provide more powerful search functions based on Kubernetes OpenAPI compatibility to help you quickly, easily, and effectively obtain any multicluster resources.
+
+- [20220808 | Introduction to Multicloud Management Capability of DCE 5.0](220808-kairship.md)
+
+    This article explains the capabilities provided by the Multicloud Management module of DCE 5.0.
+
+- [20220708 | Introduction to Service Mesh Capability of DCE 5.0](220708-mspider.md)
+
+    This article explains the capabilities provided by the service mesh module of DCE 5.0.
+
+- [20220622 | Clusterpedia Officially Enters CNCF Sandbox as the First multicloud Retrieval Open Source Project](https://mp.weixin.qq.com/s/K2jG64msI4j-mWqPF0qkKg)
+
+    On June 15, 2022, the Cloud Native Computing Foundation (CNCF) announced that Clusterpedia had officially joined the CNCF sandbox project. Clusterpedia is an open-source project launched by DaoCloud at the end of 2021. It is a tool that can perform complex resource retrieval across multiple clusters with kubectl, and it is currently the only project in CNCF that focuses on multicloud information retrieval and is widely used.
+
+- [20220611 | CloudTTY: Next-generation Cloud-native Open Source Cloud Shell](https://mp.weixin.qq.com/s/sFjZmvumQNbP6gnlnpglWQ)
+
+    CloudTTY is a cloud-native open-source project based on Kubernetes, which solves a series of functional requirements under "web command line" permission control on the cluster.
+
+- [20220609 | Hot Cloud-native Technology Sharing at KubeCon EU | Highlights Review](https://mp.weixin.qq.com/s/2ukrV3M6dGdwzRPnigovkw)
+
+    At the recently concluded flagship cloud-native conference KubeCon + CloudNativeCon Europe 2022, global cloud-native technology experts, product or solution providers, and users exchanged and discussed extensively on cloud-native technology. This article shares some of the popular cloud-native open-source projects at the conference from three aspects: external integration, self-evolution, and internal related functional features, so let's dive into the cloud-native world together.
+
+- [20220606 | Merbridge CNI Mode](https://mp.weixin.qq.com/s/3t2FshkQpVHQ44zbBIQDRQ)
+
+    The emergence of Merbridge CNI mode aims to better adapt to the functions of service mesh. When there was no CNI mode before, Merbridge could do relatively little. The biggest problem was that it couldn't adapt to the Sidecar Annotation injected by Istio, which made Merbridge unable to exclude traffic from certain ports or IP ranges. At the same time, because Merbridge only processed connection requests within the Pod before, it meant that if it was external traffic sent to the Pod, Merbridge would not be able to handle it.
+
+- [20220606 | DCE 5.0 Development Background](221008-dce-bg.md)
+
+    Describes the background of the birth of DaoCloud Enterprise 5.0, the new generation of cloud-native operating system.
+
+- [20220530 | Cloud-Native Layout Speeds up, What is the Market Prospect? Take a Look at This Guide](https://mp.weixin.qq.com/s/S6CUDwCDZh-I4e5D1SZa4A)
+
+    This article uses an infographic to illustrate the fast-developing cloud-native and cloud computing trends currently.
+
+- [20220520 | Into Observability | Discussion on Native](https://mp.weixin.qq.com/s/f0oZV5nWfc42b-b0cLkh2g)
+
+    Since 2018, observability has been introduced into the IT field, and the CNCF-Landscape organization created a subgroup for observability. Since then, observability has gradually replaced traditional system monitoring and shifted from passive monitoring to active observation of various data related to application associations, becoming one of the hottest topics in the cloud-native field.
+
+[^1]: CNCF: Cloud Native Computing Foundation, affiliated with the Linux Foundation, was established in December 2015 as a non-profit organization dedicated to cultivating and maintaining a vendor-neutral open-source ecosystem to promote cloud-native technology and popularize cloud-native applications.
+[^2]: Cloud-native landscape: Maintained by CNCF since December 2016, it summarizes mature and widely used products and solutions in the community, classifies them, and provides references for enterprises to build a cloud-native system. It has extensive influence in the development and operation and maintenance fields of the cloud ecosystem.

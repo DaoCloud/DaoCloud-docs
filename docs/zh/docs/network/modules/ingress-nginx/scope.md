@@ -12,7 +12,7 @@ IngressClass Scope 用于指定 Ingress 实例的使用范围为集群级、命�
 
 ## 平台级 Ingress 实例
 
-创建 Ingress 实例时，如果启用 `Ingress Scope`，创建后的 IngressClass 资源在以下两种情况下， Ingress 实例的使用范围都为`集群级`：
+创建 Ingress 实例时，如果启用 `Ingress Scope`，创建后的 IngressClass 资源在以下两种情况下， Ingress 实例的使用范围都为`平台级`：
 
 1. 仅设置了 `parameters` 但是未设置 ` .spec.parameters.scope` 
 2. 设置了 ` .spec.parameters.scope` 为 `cluster`
@@ -56,7 +56,7 @@ spec:
 
 ## 租户级 Ingress 实例
 
-当创建 Ingress 实例时，如果启用 `Ingress Scope`，IngressClass 设置了 `.spec.parameters`，并且设置 `.spec.parameters.scope` 为 `namespaceSelector`，并输入的 Label 为 `workspace.ghippo.io/alias=workspace01`(需要给 workspace01 中的 namespace 打上 label workspace.ghippo.io/alias:default，其中 workspace01 为指定的工作空间)，那么 Ingress 实例的 Ingress Class 指向为`租户级`，适用范围为`workspace01`中所有在当前集群的命名空间。
+当创建 Ingress 实例时，如果启用 `Ingress Scope`，IngressClass 设置了 `.spec.parameters`，并且设置 `.spec.parameters.scope` 为 `namespaceSelector`，并输入的 Label 为 `workspace.ghippo.io/id: '1235'`(其中 `12345` 为指定的工作空间 workspace  ID)，那么 Ingress 实例的 Ingress Class 指向为`租户级`，适用范围为`workspace01`中所有在当前集群的命名空间。
 
 租户级的 Ingress 实例，相当于管理员将 Ingress 的使用权限下发给到某个工作空间，从而实现租户资源隔离。
 
@@ -72,7 +72,7 @@ spec:
     scope: Namespace # 指定 Ingress 实例范围为 Namespace
     apiGroup: k8s.example.com
     kind: IngressParameter # 指定 Ingress 实例 Kind 为 IngressParameter
-    namespaceSelector: kubernetes.io/metadata.name:workspace01 # 指定待使用的工作空间
+    namespaceSelector: workspace.ghippo.io/id: '1235' # 指定待使用的工作空间 ID
     name: external-config
 ```
 
@@ -88,11 +88,11 @@ spec:
 
 如下示例，创建的 Ingress-nginx 为 Default 独享：
 
-![scope01](../../images/scope01.jpg)
+![scope01](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/scope01.jpg)
 
 对应的 `value.yaml` 中的配置信息：
 
-![scope02](../../images/scope02.jpg)
+![scope02](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/scope02.jpg)
 
 ## 如何部署租户级 Ingress 实例？
 
@@ -100,11 +100,11 @@ spec:
 
 部署 Ingress-Ngnix 时 指定 在 `Namespace Selector` 中输入 `kubernetes.io/metadata.name :workspace01`,创建后的 Ingress 实例为 工作空间 `workspace01` 独享。
 
-![工作空间Ingress](../../images/workspaceingress.jpg)
+![工作空间Ingress](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/workspaceingress.jpg)
 
 对应的 `value.yaml` 中的配置信息：
 
-![workspaceingress02](../../images/workspaceingress02.jpg)
+![workspaceingress02](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/workspaceingress02.jpg)
 
 Ingress 实例部署后，可在对应的命名空间中[创建 Ingress 规则](../../../kpanda/user-guide/services-routes/create-ingress.md)，并选择对应实例的 Ingress Class 进行使用。
 

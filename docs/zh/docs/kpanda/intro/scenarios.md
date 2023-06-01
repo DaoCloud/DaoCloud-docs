@@ -6,13 +6,13 @@
 
 根据不同性价比的云平台组合，结合不同应用场景，进行多云组合，降低总体成本。对于金融等安全性要求高的行业用户，基于业务数据的安全性和敏感性要求，将部分业务应用部署在私有云环境中，而将非敏感性应用部署在云上集群中，并进行统一管理。
 
-![场景一](../images/sce1.jpg)
+![场景一](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/sce1.jpg)
 
 **跨云容灾备份**
 
 为保证业务高可用，同时将业务部署在不同地域的多个云容器平台上，帮助应用实现多地域的流量分发，并且实现跨云应用在同一平台管理，减少运维成本。另外当某个云容器平台发生故障时，通过统一流量分发的机制，自动的将业务流量切换到其他云容器平台上。
 
-![场景二](../images/sce2.jpg)
+![场景二](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/sce2.jpg)
 
 ## 跨云集群统一管理
 
@@ -26,7 +26,7 @@
 
 不同的云容器提供商基于不同的 Kubernetes 发行版为客户提供不同云平台监控，实现统一平台监控运维难度大，无法便捷地了解整体运行状况，掌控故障处理进程和结果，基于容器管理模块，可基于集群的统一纳管实现一体化监控服务，实现多维度、跨云的统一监控运维。
 
-![场景三](../images/sce3.jpg)
+![场景三](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/sce3.jpg)
 
 ## 弹性扩缩应对流量高峰
 

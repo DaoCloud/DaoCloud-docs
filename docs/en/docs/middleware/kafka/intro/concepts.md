@@ -3,49 +3,44 @@ hide:
   - toc
 ---
 
-# Kafka common terms
+# Basic Concepts
 
-- messages and batches
+## Messages and Batches
 
-    The basic data unit of Kafka is called message (message). In order to reduce network overhead and improve efficiency, multiple messages will be put into the same batch (Batch) and then written.
+The smallest data unit in Kafka is called a message. To reduce network overhead and improve efficiency, multiple messages are batched together before being written to storage space.
 
-- Topics and partitions
+## Topics and Partitions
 
-    Kafka's messages are classified by Topic. A topic can be divided into several Partitions. A partition is a commit log.
-    Messages are written to partitions in an append fashion and read in first-in first-out order.
-    Kafka achieves data redundancy and scalability through partitions. Partitions can be distributed on different servers, which means that a topic can span multiple servers to provide more powerful performance than a single server.
+Kafka messages are classified by topic, and a topic can be divided into multiple partitions, with each partition representing a commit log. Messages are written to the partition in append mode and read in first-in-first-out order.
 
-    Since a Topic contains multiple partitions, the order of messages cannot be guaranteed across the entire Topic, but the order of messages within a single partition can be guaranteed.
+Kafka uses partitioning to achieve data redundancy and scalability. Partitions can be distributed across different servers. This means that a topic can span multiple servers to provide more powerful performance than a single server.
 
-    
+Because a topic contains multiple partitions, message ordering cannot be guaranteed across the entire topic scope, but it can be guaranteed within a single partition.
 
-- producers and consumers
+![Topics and Partitions](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/concept01.png)
 
-    Producers are responsible for creating messages. In general, the producer distributes messages evenly to all partitions in the topic, and does not care which partition the message will be written to.
-    If we want to write the message to the specified partition, we can do it by customizing the partitioner.
+## Producers and Consumers
 
-    A consumer is part of a consumer group, and the consumer is responsible for consuming messages. Consumers can subscribe to one or more topics and read messages in the order they were generated.
-    Consumers distinguish read messages by checking their offsets.
-    The offset is an incrementing number that Kafka adds to the message when it is created, and is unique to each message within a given partition.
-    The consumer saves the last read offset of each partition on Zookeeper or Kafka. If the consumer is shut down or restarted, it can also retrieve the offset to ensure that the read state will not be lost.
+Producers are responsible for creating messages. In general, producers distribute messages evenly across all partitions in a topic without caring about which partition a message is written to. If you want to write messages to a specific partition, it can be achieved by customizing a partitioner.
 
-    
+Consumers are part of a consumer group and are responsible for processing messages. Consumers can subscribe to one or more topics and read them in the order they were generated.
 
-    A partition can only be read by one consumer in the same group, but can be read jointly by multiple consumers in different groups.
-    When consumers in multiple groups jointly read the same topic, they do not affect each other.
+Consumers distinguish if messages have been read or not by checking their offsets. Offset are constantly increasing values. They are added to messages when the messages are created. The offset of each message in a given partition is unique.
 
-    
+Consumers save the latest offsets in each partition in Zookeeper or Kafka. If a consumer is closed or restarted, it can reacquire the offset to ensure that the read status is not lost.
 
--Brokers and Clusters
+![Consumers](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/concept02.png)
 
-    A standalone Kafka server is called a Broker. Broker receives messages from producers, sets offsets for messages, and commits messages to disk for storage.
-    Broker provides services for consumers, responds to requests to read partitions, and returns messages that have been committed to disk.
-    
-    Broker is an integral part of the cluster (Cluster).
-    Each cluster will elect a Broker as the cluster controller (Controller), and the cluster controller is responsible for management, including assigning partitions to Brokers and monitoring Brokers.
-    
-    In the cluster, a partition (Partition) is subordinate to a Broker, and the Broker is called the leader of the partition (Leader).
-    A partition can be assigned to multiple Brokers, and partition replication will occur at this time.
-    This replication mechanism provides message redundancy for partitions, and if one Broker fails, other Brokers can take over the leadership.
+A partition can only be read by one consumer in the same group, but it can be read by multiple consumers in different groups. When consumers in different groups read the same topic, they do not affect each other.
 
-    
+![Consumers](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/concept03.png)
+
+## Broker and Cluster
+
+An independent Kafka server is called a Broker. Brokers receive messages from producers, set offsets for messages, and commit messages to disk. Brokers respond to requests from consumers to read partitions and return messages that have been committed to disk.
+
+Brokers are part of a cluster. Each cluster elects one broker as the cluster controller, which is responsible for managing tasks such as partition assignment and broker monitoring.
+
+In a cluster, a partition belongs to a broker, which is called the leader of the partition. A partition can be assigned to multiple brokers, which triggers partition replication to provide message redundancy. If one broker fails, other brokers can take over leadership.
+
+![broker and cluster](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/concept04.png)

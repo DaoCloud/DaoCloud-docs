@@ -2,11 +2,24 @@
 
 This page lists the Release Notes of Kafka message queue, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-04-27
+
+### v0.5.1
+
+#### new function
+
+- **Added** `mcamel-kafka` details page displays related events
+- **NEW** `mcamel-kafka` supports custom roles
+
+#### Optimization
+
+- **Optimize** `mcamel-kafka` scheduling strategy adds a sliding button
+
 ## 2023-03-28
 
 ### v0.4.0
 
-#### Features
+#### new function
 
 - **NEW** `mcamel-kafka` supports middleware link tracking adaptation.
 - **NEW** Install `mcamel-kafka` to enable link tracking according to parameter configuration.
@@ -21,7 +34,7 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 ### v0.3.0
 
-#### Features
+#### new function
 
 - **Added** `mcamel-kafka` helm-docs template file.
 - **Added** The Operator in the `mcamel-kafka` app store can only be installed in mcamel-system.
@@ -44,7 +57,7 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 ### v0.2.0
 
-#### Features
+#### new function
 
 - **NEW** `mcamel-kafka` NodePort port conflict early detection.
 - **NEW** `mcamel-kafka` node affinity configuration.
@@ -58,12 +71,12 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 ### v0.1.6
 
-#### Features
+#### new function
 
 - **Improved** Improve and optimize the copy function
 - **IMPROVED** instance details - access settings, remove cluster IPv4
 - **Improved** Middleware password verification difficulty adjustment
-- **NEW** Docking alarm capability
+- **NEW** Docking alert capability
 - **New** Added the function of judging whether sc supports capacity expansion and prompting in advance
 - **Optimization** Optimize the prompt logic of installation environment detection & adjust its style
 - **Optimize** middleware style walkthrough optimization
@@ -73,7 +86,7 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 ### v0.1.4
 
-#### Features
+#### new function
 
 - **FIXED** The correct field cannot be verified when updating, such as managerPass
 - **IMPROVED** Password validation adjusted to MCamel low password strength
@@ -89,7 +102,7 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 ### v0.1.2
 
-#### Features
+#### new function
 
 - **NEW** Sync Pod status to instance details page
 - **Optimize** workspace interface logic adjustment
@@ -101,11 +114,11 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 ### v0.1.1
 
-#### Features
+#### new function
 
 - **New** supports kafka list query, status query, creation, deletion and modification
 - **NEW** Support kafka-manager to manage kafka
-- **NEW** Support kafka indicator monitoring, check the monitoring chart
+- **NEW** Support kafka metric monitoring, check the monitoring chart
 - **Add** support for ghippo permission linkage
 - **New** `mcamel-elasticsearch` interface to get user list
 - **Optimize** Update the release note script and execute the release-process specification

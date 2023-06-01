@@ -9,5 +9,5 @@ Contour supports dynamic configuration updates and a multi-team ingress agent ou
 - Easy to manage
 - Performance advantage
 - Easier to use declarative syntax
-- More comprehensive monitoring indicators
+- More comprehensive monitoring metrics
 - Support for Gateway API

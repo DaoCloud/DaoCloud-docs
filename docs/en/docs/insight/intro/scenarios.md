@@ -1,6 +1,6 @@
-# Application scenarios
+# Use cases
 
-## Unified collection and observation of multi-cluster data
+## Unified collection and observation of multicluster data
 
 **Pain points**
 
@@ -10,7 +10,7 @@
 **Solution** 
 
 - Supports one-click installation of Helm, supports graphical configuration management, does not limit the release version of Kubernetes, and realizes Insight on Any Kubernetes.
-- Observability has one-stop collection and storage of logs, indicators, distributed link tracking, and event logs. Full-stack data observation realizes the integration of data collection, storage, analysis, visualization and alarm.
+- Observability has one-stop collection and storage of logs, metrics, distributed link tracking, and event logs. Full-stack data observation realizes the integration of data collection, storage, analysis, visualization and alert.
 - Real-time monitoring of resources in various dimensions, including cluster monitoring, node monitoring, workload monitoring, service monitoring, etc.
 
 
@@ -24,7 +24,7 @@
 
 **Solution**
 
-- Draw a service topology map based on link data to quickly locate abnormal services.
+- Draw a service topology map based on trace data to quickly locate abnormal services.
 - After an abnormal application is found in the topology map, the root cause of the fault can be clearly seen through one-click drill-down through the call chain.
 - Query error logs by associating workloads to quickly resolve faults.
 

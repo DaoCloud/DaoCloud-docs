@@ -24,15 +24,15 @@
 
 1. 进入[镜像创建工作负载](../workloads/create-deployment.md)页面。
 
-    ![创建 deployment](../../images/secret05.png)
+    ![创建 deployment](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret05.png)
 
 2. 在`容器配置`选择`环境变量`配置，点击`添加环境变量`按钮。
 
-    ![添加环境变量](../../images/secret06.png)
+    ![添加环境变量](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret06.png)
 
 3. 在环境变量类型处选择`密钥导入`或`密钥键值导入`。
 
-    ![密钥导入](../../images/secret07.png)
+    ![密钥导入](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret07.png)
 
     - 当环境变量类型选择为`密钥导入`时，依次输入`变量名`、`前缀`、`密钥`的名称。
 
@@ -78,11 +78,11 @@ spec:
 
 1. 进入[镜像创建工作负载](../workloads/create-deployment.md)页面。
 
-    ![创建deployment](../../images/secret05.png)
+    ![创建deployment](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret05.png)
 
 2. 在`容器配置`选择`数据存储`配置，在`节点路径映射`列表点击`添加`按钮。
 
-    ![创建deployment](../../images/secret08.png)
+    ![创建deployment](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret08.png)
 
 3. 在存储类型处选择`密钥`，并依次输入`容器路径`、`子路径`等信息。
 
@@ -124,15 +124,15 @@ spec:
 
 1. 进入[镜像创建工作负载](../workloads/create-deployment.md)页面。
 
-    ![创建deployment](../../images/secret05.png)
+    ![创建deployment](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret05.png)
 
 2. 在第二步`容器配置`时选择`基本信息`配置，点击`选择镜像`按钮。
 
-    ![选择镜像](../../images/secret09.png)
+    ![选择镜像](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret09.png)
 
 3. 在弹框的`镜像仓库`下拉选择私有镜像仓库名称。关于私有镜像密钥创建请查看[创建密钥](create-secret.md)了解详情。
 
-    ![选择镜像](../../images/secret10.png)
+    ![选择镜像](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret10.png)
 
 4. 输入私有仓库内的镜像名称，点击`确定`，完成镜像选择。
 

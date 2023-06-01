@@ -20,7 +20,7 @@ hide:
 
 1. 登录 DCE UI 后，在左侧导航栏点击 `容器管理` —> `集群列表`，找到对应集群。然后在左侧导航栏点击`容器网络` —> `网络配置`。
 
-    ![网络配置](../../images/networkconfig01.jpg)
+    ![网络配置](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/networkconfig01.jpg)
 
 1. 进入`网络配置`，确认待使用子网是否已创建。
 
@@ -28,7 +28,7 @@ hide:
 
     - 如待使用子网没有默认创建，可进入页面点击`创建子网`。
 
-    ![创建子网](../../images/subnetcreate.jpg)
+    ![创建子网](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/subnetcreate.jpg)
 
     参数说明：
 
@@ -42,11 +42,11 @@ hide:
 
 1. 点击`下一步`进入 `IP 选择`，输入待使用的 IP 段（输入上述子网内 IP）。点击`确定`，完成子网创建。
 
-    ![创建子网](../../images/subnetcreate02.jpg)
+    ![创建子网](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/subnetcreate02.jpg)
 
 1. 点击待使用的`子网名称`，进入子网详情页面。
 
-    ![子网详情](../../images/subnetlist.jpg)
+    ![子网详情](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/subnetlist.jpg)
 
 1. 在子网详情页，点击`创建 IP 池`。
 
@@ -59,7 +59,7 @@ hide:
 
     进入创建页面，输入如下参数：
 
-    ![创建 IP 池](../../images/createippool01.jpg)
+    ![创建 IP 池](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/createippool01.jpg)
 
     - `网关`：`网关`默认继承`子网网关`，可修改。
 
@@ -79,7 +79,7 @@ hide:
 
     `获取 IP 规则`：从 `IP 开始地址`依次获取输入对应数量的 IP，IP 段如不是连续的 IP，则跳过中间断档 IP，依次往后获取。
 
-    ![添加 IP](../../images/createippool02.jpg)
+    ![添加 IP](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/createippool02.jpg)
 
 1. 创建完成后[工作负载即可使用 IP 池](../../modules/spiderpool/usage.md)。
 

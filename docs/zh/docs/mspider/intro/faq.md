@@ -9,7 +9,7 @@ hide:
 
     可以，但不建议。用户单独安装的 Istio 控制面组件可通过外接网格的方式接入服务网格，但相比于其他模式，只提供基础的 Istio 具备的功能。
 
-1. 服务网格中的 Istio 组件版本？
+1. 服务网格中的 Istio 组件版本是多少？
 
     有多个版本，用户可以在创建网格时选择。
 
@@ -32,8 +32,8 @@ hide:
     - 如果二者有一个设置为禁用，则禁用边车注入
     - 如果二者有一个设置为启用，则启用边车注入
     - 如果二者都没有设置，将执行网格全局边车注入策略（values.sidecarInjectorWebhook.enableNamespacesByDefault）
-    
-    详细情况可参考 [安装 Sidecar](https://istio.io/latest/zh/docs/setup/additional-setup/sidecar-injection/)
+
+    详细情况可参考[安装边车](https://istio.io/latest/zh/docs/setup/additional-setup/sidecar-injection/)
 
 1. 传统微服务加入服务网格有什么不同？
 

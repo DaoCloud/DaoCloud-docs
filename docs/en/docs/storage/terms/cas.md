@@ -2,13 +2,13 @@
 
 Container Attached Storage (CAS) is a microservice storage controller-based software storage system orchestrated by Kubernetes. Its storage controllers are managed and run in containers as part of a Kubernetes cluster. This makes CAS portable and can run on any Kubernetes platform, including any cloud platform, bare metal server, or traditional shared storage system. Crucially, the data itself is also accessible through the container rather than being stored in a non-platform shared scale-out storage system. I/O access times are reduced as CAS leverages a microservices architecture that keeps the storage solution closely tied to the application bound to the physical storage device.
 
-The CAS pattern fits well with the trend towards distributed data and is also suitable for small autonomous teams with micro loosely coupled workloads. For example, one team might need Postgres to provide microservices, while another team might rely on Redis and MongoDB for their R&D data. Some use cases may be performance demanding, some may die in 20 minutes, some are write/read intensive, etc. In a large enterprise, as the enterprise grows in size, the enterprise trusts each team more and more to choose the tools they use, and the technology that each team relies on will become more and more different.
+The CAS pattern fits well with the trend towards distributed data and is also suitable for small autonomous teams with micro loosely coupled workloads. For example, one team might need Postgres to provide microservices, while another team might rely on Redis and MongoDB for their R&D data. some cases may be performance demanding, some may die in 20 minutes, some are write/read intensive, etc. In a large enterprise, as the enterprise grows in size, the enterprise trusts each team more and more to choose the tools they use, and the technology that each team relies on will become more and more different.
 
 CAS means that developers can work without worrying about the underlying requirements of the enterprise storage architecture. For CAS, cloud disk is no different from SAN, bare metal or virtual machine. Developers and platform SRE engineers don't have to meet to decide on the next storage vendor, or go back and forth on how to set it up to support a use case. Developers remain autonomous and can spin up their own CAS containers using whatever storage is available to the Kubernetes cluster.
 
 CAS reflects a broader trend of solutions, many of which are CNCF projects, built on top of Kubernetes and microservices, resulting in a thriving cloud-native ecosystem. Today, CNCF's cloud-native ecosystem includes security, DNS, networking, network policy management, messaging, tracking, logging, and many other projects.
 
-## Benefitss of CAS
+## Benefits of CAS
 
 ### Agility
 

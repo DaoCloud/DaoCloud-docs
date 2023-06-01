@@ -11,7 +11,7 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :one:{ .lg .middle } __CloudTTY__
+-   :one:{ .lg .middle } __cloudtty__
 
     ---
 
@@ -19,7 +19,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./cloudtty.md)
 
--   :two:{ .lg .middle } __Clusterpedia__
+-   :two:{ .lg .middle } __Clusterpedia__ :simple-cncf: in Sandbox and Landscape
 
     ---
 
@@ -39,11 +39,11 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./ferry.md)
 
--   :four:{ .lg .middle } __HwameiStor__
+-   :four:{ .lg .middle } __HwameiStor__ :simple-cncf: in Landscape
 
     ---
 
-    高可用的本地存储方案，更快、更强、更可靠，已入选 CNCF 全景图
+    高可用的本地存储方案，更快、更强、更可靠，已入选 CNCF 全景图，正在申请 Sandbox
 
     [:octicons-arrow-right-24: 了解更多](./hwameistor.md)
 
@@ -63,7 +63,7 @@ hide:
 
     ---
 
-    容器化集群的全生命周期管理工具
+    容器化集群的全生命周期管理工具，正在申请 Landscape
 
     [:octicons-arrow-right-24: 了解更多](./kubean.md)
 
@@ -71,7 +71,7 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :seven:{ .lg .middle } __Kwok__
+-   :seven:{ .lg .middle } __KWOK__ :simple-cncf: one of K8s-sigs projects
 
     ---
 
@@ -79,11 +79,11 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./kwok.md)
 
--   :eight:{ .lg .middle } __Merbridge__
+-   :eight:{ .lg .middle } __Merbridge__ :simple-cncf: in Sandbox and Landscape
 
     ---
 
-    使用 eBPF 加速您的服务网格，就像利用虫洞在网络世界中穿梭，已入选 CNCF 全景图
+    使用 eBPF 加速您的服务网格，就像利用虫洞在网络世界中穿梭，已入选 CNCF 全景图和 Sandbox
 
     [:octicons-arrow-right-24: 了解更多](./merbridge.md)
 
@@ -95,7 +95,7 @@ hide:
 
     ---
 
-    云原生网络 IPAM 自动化管理软件，建议作为插件用于 Underlay CNI
+    云原生网络 IPAM 自动化管理软件，建议作为插件用于 Underlay CNI，正在申请 Landscape 和 Sandbox
 
     [:octicons-arrow-right-24: 了解更多](./spiderpool.md)
 

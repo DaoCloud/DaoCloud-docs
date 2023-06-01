@@ -8,17 +8,17 @@
 
 1. 在流水线列表页点击`创建流水线`。
 
-    ![click-create](../../../images/createpipelinbutton.png)
+    ![click-create](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/createpipelinbutton.png)
 
 2. 在弹出的对话框中，选择`模板创建`，点击`确定`。
 
-    ![select-type](../../../images/template01.png)
+    ![select-type](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/template01.png)
 
 3. 选择合适的流水线模板，然后点击`下一步`。
 
     > `推荐模板`标题下列出了所有的内置模板，`自定义模板`标题下列出了用户创建的所有自定义模板。
 
-    ![选择模板](../../../images/template02.png)
+    ![选择模板](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/template02.png)
 
 4. 参考[自定义创建流水线](custom.md)填写流水线配置，然后点击`下一步`。
 
@@ -39,8 +39,8 @@
     - tag：为运行此流水线后新生成的镜像添加 tag
     - 像仓库凭证：访问镜像仓库的凭证。如果是私有仓库，需要提前[创建凭证](../credential.md)并在此处选择该凭证
 
-        ![golang](../../../images/golang.png)
+        ![golang](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/golang.png)
 
 6. 完成创建后，可以在流水线列表查看新建的流水线。在流水线右侧点击更多操作按钮，可以进行执行、编辑、复制流水线等操作。
 
-    ![actions](../../../images/template03.png)
+    ![actions](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/template03.png)

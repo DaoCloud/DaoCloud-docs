@@ -14,15 +14,15 @@ LDAP 英文全称为 Lightweight Directory Access Protocol，即轻型目录访�
 
 1. 使用具有 `admin` 角色的用户登录 Web 控制台。点击左侧导航栏的左上角的`全局管理`。
 
-    ![global](../../images/ws01.png)
+    ![global](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws01.png)
 
-1. 导航至`全局管理`下的`用户与访问控制`，选择`创建身份提供商`。
+2. 导航至`全局管理`下的`用户与访问控制`，选择`创建身份提供商`。
 
-    ![身份提供商](../../images/ldap00.png)
+    ![身份提供商](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ldap00.png)
 
-1. 在 `LDAP` 页签中，填写以下字段后点击`保存`，建立与身份提供商的信任关系及用户的映射关系。
+3. 在 `LDAP` 页签中，填写以下字段后点击`保存`，建立与身份提供商的信任关系及用户的映射关系。
 
-    ![ldap](../../images/ldap01.png)
+    ![ldap](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ldap01.png)
 
     | 字段           | 描述                                                         | 举例值                              |
     | -------------- | ------------------------------------------------------------ | ----------------------------------- |
@@ -36,9 +36,9 @@ LDAP 英文全称为 Lightweight Directory Access Protocol，即轻型目录访�
     | 全名映射       | 姓-sn；名-cn                                                 | 不可更改                            |
     | 邮箱映射       | mail                                                         | 不可更改                            |
 
-1. 在`同步用户组`页签中，填写以下字段配置用户组的映射关系后，再次点击`保存`。
+4. 在`同步用户组`页签中，填写以下字段配置用户组的映射关系后，再次点击`保存`。
 
-    ![身份提供商](../../images/ldap02.png)
+    ![身份提供商](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ldap02.png)
 
     | 字段             | 描述                                                         | 举例值                      |
     | ---------------- | ------------------------------------------------------------ | --------------------------- |

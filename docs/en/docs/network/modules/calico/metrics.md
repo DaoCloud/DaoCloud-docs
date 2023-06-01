@@ -1,4 +1,4 @@
-# Monitoring indicators
+# Monitoring metrics
 
 This page explains how to enable `calico_prometheus_metrics` in Calico to access Prometheus monitoring metrics.
 
@@ -116,7 +116,7 @@ spec:
       role: metrics
 ```
 
-## List of important indicators
+## List of important metrics
 
 | No. | Index | Explanation | Value Index | Other Explanations | Associated Issues |
 |---------|-------------|------------------------- ----------------|----------|--------|------|

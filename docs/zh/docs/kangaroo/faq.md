@@ -1,13 +1,91 @@
 # 镜像仓库 FAQ
 
+## 离线环境镜像扫描器失败
+
+  镜像扫描因为依赖漏洞数据，默认是去CVE官网获取漏洞数据，如果是纯离线环境，则不能正常的进行漏洞扫描，会执行失败。
+
+  ![trivy](./images/trivy-nodb.png)
+
+## 如何在离线环境更新或者导入漏洞库
+
+1. 数据库位置
+  
+    ```
+    /root/.cache/trivy/db
+    ```
+    
+2. 查看帮助中也可以获取
+
+    ```
+    $ trivy -h | grep 'TRIVY_CACHE_DIR'
+       --cache-dir value  cache directory (default: "/root/.cache/trivy") [$TRIVY_CACHE_DIR]
+    ```
+
+3. 数据库下载
+
+    - `trivy-light-offline.db.tgz`：离线版轻量数据库，解压后约 104 MB。
+    - `trivy-offline.db.tgz`：离线版全量数据库，解压后约 221 MB。
+    - 下载地址: [https://github.com/aquasecurity/trivy-db/releases](https://github.com/aquasecurity/trivy-db/releases)
+
+## 创建托管 harbor 时候第一步集群校验通过后创建 harbor 仍然出错
+
+目前只校验了集群中是否有 `CRD`，没有校验 `harbor-operator` 服务，可能会出现不存在`harbor-operator` 服务的情况，导致不能正确的创建 `Harbor`。
+
+## 本地执行 `docker login {ip}` 之后报错
+
+```text
+Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certificate for {ip} because it doesn't contain any IP SANs
+```
+
+出现这个错误是因为 `registry` 是 `https` 服务，是使用了非签名证书或者不安全证书，就会提示这个错误，要解决办法就是在 `/etc/docker/daemon.json` 配置文件中 `"insecure-registries"` 加入对应的 IP。
+
+```json
+"insecure-registries": [
+  "{ip}",
+  "registry-1.docker.io"
+]
+```
+
+之后重启 `systemctl restart docker`。
+
+## 创建托管 harbor 接入外部 pg、redis，密码含有特殊字符 (!@#$%^&*) 之类的，服务启动失败
+
+目前密码中不能有特殊字符，不然会出现服务启动失败的情况，可以使用大小写字母和数字组合的情况。
+
+## Harbor Operator 安装不成功
+
+`Harbor Operator` 安装不成功需要检查这几点，`cert-manager`是否安装成功，`installCRDs` 是否设置为`true`。
+安装`Harbor operator` 的 `helm` 任务是否成功。
+
+## 创建托管 Harbor 可以使用 redis cluster 模式吗
+
+目前 `Harbor` 仍然不能使用 `redis` cluster 模式。
+
+## 私有镜像在非镜像仓库模块能看到吗？
+
+镜像仓库是严格按照 DEC 5.0 的权限来执行的，在镜像仓库中某个用户必须要属于某个租户，才能看到当前租户下的私有镜像空间，否则即使管理员也不能看到。
+
+## 私有镜像绑定工作空间后不能查询到
+
+私有镜像绑定工作空间后程序需要异步执行很多逻辑，所以不会马上能看到。
+这个过程会受到系统的影响，如果系统响应较快，则异步执行较快，1 分钟内能看到。最长应该不会超过 5 分钟。
+
+## 托管Harbor创建后能访问了但是状态依然不健康
+
+目前托管 Harbor 页面上的状态和仓库集成的状态是二合一的，当两个状态都为健康的时候才是健康，
+因此可能出现托管 `Harbor` 已经可以访问了，但是状态依然不健康，这种情况需要等一个服务探测周期，一个探测周期是 10 分钟，在一个周期后就会恢复如初。
+
 ## 创建的托管仓库状态为不健康
 
-![仓库不健康](./img/img.png)
+![仓库不健康](images/img.png)
 
 - A1：用户输入的数据库、Redis、S3 存储等信息有误，导致无法连接，可通过查看日志文件进行排查。现象主要是几个核心服务有 Pod 启动失败，可以通过查看日志进一步确认原因。
 
     ```shell
-    $ kubectl -n kangaroo-lrf04 get pods
+    kubectl -n kangaroo-lrf04 get pods
+    ```
+
+    ```none
     NAME                                                         READY   STATUS    RESTARTS   AGE
     trust-node-port-harbor-harbor-chartmuseum-57fdfb9cdc-qznwc   1/1     Running   0          20h
     trust-node-port-harbor-harbor-core-855f8df46c-cgqb9          1/1     Running   0          20h
@@ -21,20 +99,29 @@
 - A2：如果 A1 排查无误，排查 `harborcluster` 资源是否健康，如下命令查看 `harborcluster` 资源状态。
 
     ```shell
-    $ kubectl -n kangaroo-lrf04 get harborclusters.goharbor.io
+    kubectl -n kangaroo-lrf04 get harborclusters.goharbor.io
+    ```
+
+    ```none
     NAME              PUBLIC URL                 STATUS
     trust-node-port   https://10.6.232.5:30010   healthy
     ```
 
 - A3：如果 A2 排查无误，在 `kpanda-global-cluster` 集群上排查 `registrysecrets.kangaroo.io` 资源是否创建，以及 `status` 情况。
 
+    提示: namespace 默认为 kangaroo-system。
+
     ```shell
-    # 提示: namespace 默认为 kangaroo-system
-    $ kubectl -n kangaroo-system get registrysecrets.kangaroo.io
+    kubectl -n kangaroo-system get registrysecrets.kangaroo.io
+    ```
+
+    ```none
     NAME                        AGE
     inte-bz-harbor-1            34d
+    ```
 
-    $ kubectl -n kangaroo-system describe registrysecrets.kangaroo.io inte-bz-harbor-1
+    ```shell
+    kubectl -n kangaroo-system describe registrysecrets.kangaroo.io inte-bz-harbor-1
     ```
 
 !!! tip
@@ -48,18 +135,28 @@
 
 ## 仓库集成后但状态为不健康
 
-![仓库集成不健康](./img/img_1.png)
+![仓库集成不健康](images/img_1.png)
 
 首先确认实例是否真的健康，如果实例不健康，则需要排查实例的问题；
-如果实例健康，则通过在 `kpanda-global-cluster` 集群上排查 `registrysecrets.kangaroo.io` 资源是否创建，并排查 `status` 情况，这样可以初步确认问题所在。
+如果实例健康，则通过在 `kpanda-global-cluster` 集群上排查 `registrysecrets.kangaroo.io`
+资源是否创建，并排查 `status` 情况，这样可以初步确认问题所在。
+
+提示：namespace 默认为 kangaroo-system。
 
 ```shell
-# 提示：namespace 默认为 kangaroo-system
-$ kubectl -n kangaroo-system get registrysecrets.kangaroo.io
-NAME                        AGE
-trust-test-xjw           34d
+kubectl -n kangaroo-system get registrysecrets.kangaroo.io
+```
 
-$ kubectl -n kangaroo-system get registrysecrets.kangaroo.io trust-test-xjw -o yaml
+```none
+NAME                     AGE
+trust-test-xjw           34d
+```
+
+```shell
+kubectl -n kangaroo-system get registrysecrets.kangaroo.io trust-test-xjw -o yaml
+```
+
+```yaml
 apiVersion: kangaroo.io/v1alpha1
 kind: RegistrySecret
 metadata:
@@ -77,16 +174,21 @@ status:
     type: HealthCheckFail
 ```
 
-## 仓库集成、关联仓库后，在镜像列表页面实例中不可查看
+## 仓库集成后，在镜像列表页面实例中不可查看
 
-请确认仓库集成或者关联仓库的资源是否健康，如果不健康是不会在镜像列表页面的实例列表中显示的。确认方式请参考[仓库集成后不健康的确认方法](#_2)。
+请确认仓库集成的资源是否健康，如果不健康是不会在镜像列表页面的实例列表中显示的。
+确认方式请参考[仓库集成后不健康的确认方法](#_2)。
 
 ## 在 `Kpanda` 镜像选择器中选中一个私有 `Project` 镜像但部署时提示镜像拉取失败
 
-- A1：能在镜像选择器中看到私有 `Project` 表明 `Project` 和 `Workspace` 已经进行了绑定，此时需要去镜像部署的目标集群 `namespace` 中确认是否生成名为 `registry-secret` 的 `secret`。
+- A1：能在镜像选择器中看到私有 `Project` 表明 `Project` 和 `Workspace` 已经进行了绑定，
+  此时需要去镜像部署的目标集群 `namespace` 中确认是否生成名为 `registry-secret` 的 `secret`。
 
     ```shell
-    $ kubectl -n default get secret registry-secret
+    kubectl -n default get secret registry-secret
+    ```
+
+    ```none
     NAME              TYPE                             DATA   AGE
     registry-secret   kubernetes.io/dockerconfigjson   1      78d
     ```
@@ -94,7 +196,10 @@ status:
 - A2：如果确认已经生成名为 `registry-secret` 的 `secret`，则需要确认 `secret` 中的 `dockerconfigjson` 是否正确。
 
     ```shell
-    $ kubectl get secret registry-secret -o jsonpath='{.data.*}'| base64 -d | jq
+    kubectl get secret registry-secret -o jsonpath='{.data.*}'| base64 -d | jq
+    ```
+
+    ```none
     {
       "auths": {
         "127.0.0.1:5000": {
@@ -102,6 +207,12 @@ status:
         }
       }
     }
-    $ echo "YWRtaW46SGFyYm9yMTIzNDU=" | base64 -d
+    ```
+
+    ```shell
+    echo "YWRtaW46SGFyYm9yMTIzNDU=" | base64 -d
+    ```
+
+    ```none
     admin:Harbor12345
     ```

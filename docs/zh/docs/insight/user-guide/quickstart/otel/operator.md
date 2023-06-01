@@ -8,7 +8,7 @@
 
 - 为 Insight-agent 开启 trace 功能
 - trace 数据的地址以及端口是否填写正确
-- deployment/opentelemetry-operator-controller-manager 和 deployment/insight-agent-opentelemetry-collector 对应的 Pod 已经准备就绪
+- deployment/insight-agent-opentelemetry-operator 和 deployment/insight-agent-opentelemetry-collector 对应的 Pod 已经准备就绪
 
 ## 安装 Instrumentation CR
 
@@ -87,8 +87,8 @@ EOF
     4. Dotnet 应用
 
         ```bash
-       暂不支持，社区bug修复中... 
-       ```
+        instrumentation.opentelemetry.io/inject-dotnet: "insight-system/insight-opentelemetry-autoinstrumentation"
+        ```
 
 ## 自动注入示例 Demo
 

@@ -4,7 +4,7 @@ This page describes how to use f5network from the perspective of layer 4 and lay
 
 ## Layer 4 load balancing
 
-When the component is installed in the 4-layer load balancing mode, F5 load balancing services can be created for the services in the cluster. For specific usage, please refer to [F5 official documents](https://clouddocs.f5.com/containers/latest/userguide/ loadbalancer/).
+When the component is installed in the 4-layer load balancing mode, F5 load balancing services can be created for the services in the cluster. For specific usage, please refer to [F5 official documents](https://clouddocs.f5.com/containers/latest/userguide/loadbalancer/).
 
 A simple example is given below:
 
@@ -52,7 +52,7 @@ A simple example is given below:
 
 ## Layer 7 load balancing http
 
-When the component is installed in Layer 7 load balancing mode, F5 load balancing services can be created for the ingress in the cluster. For specific usage, please refer to [F5 official documents](https://clouddocs.f5.com/containers/latest/userguide/ ingress.html).
+When the component is installed in Layer 7 load balancing mode, F5 load balancing services can be created for the ingress in the cluster. For specific usage, please refer to [F5 official documents](https://clouddocs.f5.com/containers/latest/userguide/ingress.html).
 
 A simple example is given below:
 

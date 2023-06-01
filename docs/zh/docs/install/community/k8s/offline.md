@@ -27,13 +27,13 @@
 
 ## 下载和安装
 
-1. 在 k8s 集群控制平面节点（Master 节点）下载社区版的对应离线包并解压，或者从[下载中心](../../../download/dce5.md)下载离线包并解压。
+1. 在 k8s 集群控制平面节点（Controller Node）下载社区版的对应离线包并解压，或者从[下载中心](../../../download/dce5.md)下载离线包并解压。
 
-    假定版本 VERSION=0.6.1
+    假定版本 VERSION=0.7.0
 
     ```bash
-    export VERSION=v0.6.1
-    wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION-amd64.tar
+    export VERSION=v0.7.0
+    wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION-amd64.tar
     tar -xvf offline-community-$VERSION-amd64.tar
     ```
 
@@ -49,7 +49,7 @@
             type: metallb
             istioGatewayVip: 10.6.229.10/32
             insightVip: 10.6.229.11/32      
-          fullPackagePath: absolute-path-of-the-offline-directory ## 解压离线包后的路径
+          fullPackagePath: absolute-path-of-the-offline-directory # 解压离线包后的路径
           imagesAndCharts:        # 镜像仓库
             type: external 
             externalImageRepo: your-external-registry # 镜像仓库地址，必须是 http 或者 https
@@ -65,7 +65,7 @@
         spec:
           loadBalancer:
             type: cloudLB
-          fullPackagePath: absolute-path-of-the-offline-directory ## 解压离线包后的路径
+          fullPackagePath: absolute-path-of-the-offline-directory # 解压离线包后的路径
           imagesAndCharts:        # 镜像仓库
             type: external 
             externalImageRepo: your-external-registry # 镜像仓库地址，必须是 http 或者 https
@@ -81,7 +81,7 @@
         spec:
           loadBalancer:
             type: NodePort
-          fullPackagePath: absolute-path-of-the-offline-directory ## 解压离线包后的路径
+          fullPackagePath: absolute-path-of-the-offline-directory # 解压离线包后的路径
           imagesAndCharts:        # 镜像仓库
             type: external 
             externalImageRepo: your-external-registry # 镜像仓库地址，必须是 http 或者 https
@@ -106,7 +106,7 @@
 1. 安装完成后，命令行会提示安装成功。恭喜您！
    现在可以通过屏幕提示的 URL 使用默认的账号和密码（admin/changeme）探索全新的 DCE 5.0 啦！
 
-   ![安装成功](../../images/success.png)
+   ![安装成功](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
     !!! success
 

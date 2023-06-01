@@ -6,7 +6,7 @@ hide:
 # 网卡规划
 
 本页介绍在创建工作负载集群前，如何基于不同网络方案组合进行网卡规划。
-请在集群部署之前完成[集群部署要求](../../install/commercial/commercial/deploy-requirements.md)及网卡规划。
+请在集群部署之前完成[集群部署要求](../../install/commercial/deploy-requirements.md)及网卡规划。
 
 ## 仅 Overlay 方案
 

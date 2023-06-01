@@ -7,6 +7,52 @@ Date: 2023-04-12
 
 This page lists the Release Notes of the installer, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-4-30
+
+### v0.7.0
+
+#### Features
+
+- **Added** Added support for Other Linux to deploy DCE5.0, [Reference Documentation](os-install/otherlinux.md)
+- **Added** Added support for operating system OpenEuler 22.03
+- **Added** supports external OS Repos, [refer to cluster configuration file description](commercial/cluster-config.md)
+- **Added** supports kernel parameter tuning, [refer to cluster configuration file description](commercial/cluster-config.md)
+- **Added** support for detecting whether external ChartMuseum and MinIo services are available
+
+#### Optimization
+
+- **Optimized** Optimized the pre-verification of tar and other commands
+- **Optimized** Optimized the command line parameters of the upgrade operation
+- **Optimized** closed Kibana's access through NodePort, Insight uses ES's NodePort or VIP access
+- **Optimized** Optimized the display of concurrent logs, terminate tasks using SIGTERM signal instead of SIGKILL
+
+#### Fixes
+
+- **Fixed** Fix the problem that the Kcoral helm chart cannot be found during online installation
+- **Fixed** Fix KubeConfig can't find problem when upgrading
+
+#### Known Issues
+
+- Online installation of the global cluster will fail, and the following configuration needs to be performed in the `kubeanConfig` block of clusterConfig.yaml:
+
+     ```yaml
+     kubeanConfig: |-
+       calico_crds_download_url: "https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/calico-crds-v3.25.1.tar.gz"
+     ```
+
+     At the same time, creating a working cluster online through container management also has the same problem. You need to add the above configuration in the custom parameters of the advanced configuration on the cluster creation page. The key is `calico_crds_download_url`, and the value is the value of the above calico_crds_download_url
+
+- There is a low probability that Kubean cannot create a spray-job task. Manually delete the corresponding clusteroperations CR resource and execute the installation command again
+- After deploying DCE5.0 using an external OS Repo, the working cluster cannot be created offline through container management, which can be solved by manually modifying the configmap kubean-localservice of the kubean-system namespace of the global cluster.
+   Add the following configuration under `yumRepos`, you need to fill in the external OS Repo address configured in clusterConfig.yaml in external:
+
+     ```yaml
+     yumRepos:
+       external: []
+     ```
+
+     After the modification is complete, select the new configuration for the yum source of the node configuration on the container management creation cluster page
+
 ## 2022-4-11
 
 ### v0.6.1
@@ -22,31 +68,31 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 #### Features
 
-- **NEW** Added support for one-click upgrade of Gproduct components
-- **NEW** Adapted operating system: UOS V20 1020a / Ubuntu 20.04
-- **NEW** Support OCP (OpenShift Container Platform) to install DCE5.0
-- **NEW** CLI supports generating clusterConfig templates
-- **NEW** All in one mode starts the minimal installation mode by default
-- **NEW** Added Kcollie component in Gproduct component
-- **NEW** Support community version to sync image to external repository
+- **Added** Added support for one-click upgrade of Gproduct components
+- **Added** Adapted operating system: UOS V20 1020a / Ubuntu 20.04
+- **Added** Support OCP (OpenShift Container Platform) to install DCE5.0
+- **Added** CLI supports generating clusterConfig templates
+- **Added** All in one mode starts the minimal installation mode by default
+- **Added** Added Kcollie component in Gproduct component
+- **Added** Support community version to sync image to external repository
 
 #### Optimization
 
-- **Optimize** Decouple the code for generating offline packages and the code required for the installation process
-- **Optimize** Optimize tinder node inotify parameters
-- **Optimize** Optimize the full-mode online installation experience
-- **Optimize** optimize clusterConfig structure and configuration
-- **Optimized** Community Edition allows not to check clusterConfig format and parameters
-- **Optimize** Optimize installer execution scheduler log output
+- **Optimized** Decouple the code for generating offline packages and the code required for the installation process
+- **Optimized** Optimize bootstrapping node inotify parameters
+- **Optimized** Optimize the full-mode online installation experience
+- **Optimized** optimize clusterConfig structure and configuration
+- **Optimized** Community Package allows not to check clusterConfig format and parameters
+- **Optimized** Optimize installer execution scheduler log output
 
-#### fix
+#### Fixes
 
-- **FIX** Removed dependency on wget
-- **Fix** Fix the problem of installation failure after repeated decompression of offline packages
-- **FIX** Fix MinIo non-reentrant issue
-- **Fix** Fix redis pvc that continues to be left behind when middleware Redis CR is removed
-- **Fix** Fix the problem of sequence dependency when Amamba and Amamba-jenkins are installed concurrently
-- **Fix** Fix the problem that the installer command line -j parameter parsing fails
+- **Fixed** Removed dependency on wget
+- **Fixed** Fix the problem of installation failure after repeated decompression of offline packages
+- **Fixed** Fix MinIo non-reentrant issue
+- **Fixed** Fix redis pvc that continues to be left behind when middleware Redis CR is removed
+- **Fixed** Fix the problem of sequence dependency when Amamba and Amamba-jenkins are installed concurrently
+- **Fixed** Fix the problem that the installer command line -j parameter parsing fails
 
 ## 2022-2-28
 
@@ -54,20 +100,20 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 #### Features
 
-- **NEW** Offline package separation osPackage, needs to define `osPackagePath` in the cluster configuration file
-- **NEW** Support addon offline, you need to define `addonOfflinePackagePath` in the cluster configuration file
-- **NEW** Offline installation supports operating systems REHL 8.4, REHL 7.9
+- **Added** Offline package separation osPackage, needs to define `osPackagePath` in the cluster configuration file
+- **Added** Support addon offline, you need to define `addonOfflinePackagePath` in the cluster configuration file
+- **Added** Offline installation supports operating systems REHL 8.4, REHL 7.9
 
 #### Optimization
 
-- **Optimization** Upgraded the version of pre-dependent tools
+- **Optimized** Upgraded the version of pre-dependent tools
 
-#### fix
+#### Fixes
 
-- **Fix** installer command line `-j` parameter validity detection problem
-- **Fix** The installation path problem of pre-dependent tools
-- **Fix** the problem that the host list password is invalid for pure numbers
-- **Fix** When the runtime is Docker, the built-in warehouse image cannot be pulled
+- **Fixed** installer command line `-j` parameter validity detection problem
+- **Fixed** The installation path problem of pre-dependent tools
+- **Fixed** the problem that the host list password is invalid for pure numbers
+- **Fixed** When the runtime is Docker, the built-in registry image cannot be pulled
 
 #### Known Issues
 
@@ -80,27 +126,27 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 ### v0.4.0
 
-#### New features
+#### Features
 
-- **NEW** The syntax of clusterConfig has been upgraded from v1alpha1 to v1alpha2, the syntax has incompatible changes, you can check the documentation
-- **NEW** No longer install permanent Harbor and permanent MinIO on the global service cluster
-- **NEW** bootstrapping nodes need to exist permanently, users install minio, chart museum, registry
-- **NEW** Added installation of contour as default ingress-controller for commercial version
-- **NEW** New installation of cert-manager in commercial version
-- **NEW** Support cluster deployment in private key mode
-- **NEW** supports external image registry for deployment
+- **Added** The syntax of clusterConfig has been upgraded from v1alpha1 to v1alpha2, the syntax has incompatible changes, you can check the documentation
+- **Added** No longer install permanent Harbor and permanent MinIO on the global service cluster
+- **Added** bootstrapping nodes need to exist permanently, users install minio, chart museum, registry
+- **Added** Added installation of contour as default ingress-controller for commercial version
+- **Added** New installation of cert-manager in commercial version
+- **Added** Support cluster deployment in private key mode
+- **Added** supports external container registry for deployment
 
 #### Optimized
 
-- **Optimization** The offline package no longer includes the ISO of the operating system, which needs to be downloaded separately. In the case of pure offline, the absolute path of the ISO needs to be defined in the clusterConfig file
+- **Optimized** The offline package no longer includes the ISO of the operating system, which needs to be downloaded separately. In the case of pure offline, the absolute path of the ISO needs to be defined in the clusterConfig file
 - **Optimized** Commercial version uses Contour as default ingress-controller
 - **Optimized** MinIO supports using VIP
-- **Optimize** coredns automatically inject registry VIP analysis
-- **Optimization** Optimize the offline package production process and speed up the packaging of Docker images
+- **Optimized** coredns automatically inject registry VIP analysis
+- **Optimized** Optimize the offline package production process and speed up the packaging of Docker images
 - **Optimized** Optimized the offline package size
 - **Optimized** infrastructure support 1.25: upgrade redis-operator, eck-operator, hwameiStor
 - **optimized** upgrade to keycloakX
-- **Optimize** istio version upgrade v1.16.1
+- **Optimized** istio version upgrade v1.16.1
 
 #### Known Issues
 
@@ -118,27 +164,27 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 ### v0.3.29
 
-#### New features
+#### Features
 
-- **NEW** ARM64 support: build arm64 offline packages.
-- **NEW** Added support for kylin v10 sp2 offline package.
-- **NEW** Infrastructure Support 1.25: Upgrade redis-operator, eck-operator, hwameiStor and other components.
-- **NEW** Added support for cluster deployment in private key mode.
-- **New** The workload is elastically scaled based on custom indicators, which is closer to the user's actual business elastic expansion and contraction needs.
+- **Added** ARM64 support: build arm64 offline packages.
+- **Added** Added support for kylin v10 sp2 offline package.
+- **Added** Infrastructure Support 1.25: Upgrade redis-operator, eck-operator, hwameiStor and other components.
+- **Added** Added support for cluster deployment in private key mode.
+- **Added** The workload is elastically scaled based on custom metrics, which is closer to the user's actual business elastic expansion and contraction needs.
 
 #### Optimized
 
-- **Optimize** Create permanent harbor with operator, enable HTTPS, and use Postgressql operator.
+- **Optimized** Create permanent harbor with operator, enable HTTPS, and use Postgressql operator.
 - **Optimized** Commercial version uses contour as default ingress-controller.
 - **Optimized** MinIO supports using VIP.
 - **Optimized** coredns is automatically injected into registry VIP resolution.
-- **Optimization** Optimize the offline package production process and speed up the packaging of docker images.
+- **Optimized** Optimize the offline package production process and speed up the packaging of docker images.
 
-#### Bug fixes
+#### Fixes
 
-- **FIX** Fixed issues with fair cloud service.
-- **FIX** Fixed issues with image and helm for various submodules.
-- **FIXED** Bug fixes for offline package loading.
+- **Fixed** Fixed issues with fair cloud service.
+- **Fixed** Fixed issues with image and helm for various submodules.
+- **Fixed** Bug fixes for offline package loading.
 
 #### Known issues
 

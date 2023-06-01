@@ -50,7 +50,7 @@ Multus + Macvlan 一般会有两种使用场景：
 
 使用 macvlan 一个比较常见的网络场景：
 
-![](../../images/vlan.png)
+![](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/vlan.png)
 
 如图所示，将主机上两个物理接口（ens224、ens256）组成一个 bond0，然后根据 bond0 创建两个 VLAN 子接口，分别是 bond0.100 和 bond0.200。
 然后将 bond0（也就是 ens224 和 ens256）与交换机 trunk 相连。并且在交换机上配置允许 vlan100 和 vlan200 通过。

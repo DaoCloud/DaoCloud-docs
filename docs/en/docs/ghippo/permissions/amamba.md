@@ -3,9 +3,9 @@ hide:
   - toc
 ---
 
-# Application workbench permission description
+# Workbench permission description
 
-[Application Workbench](../../amamba/intro/WhatisAmamba.md) supports three user roles:
+[Workbench](../../amamba/intro/what.md) supports three user roles:
 
 - Workspace Admin
 - Workspace Editor
@@ -69,4 +69,4 @@ You have permission to use `&check;`, but you don't have permission to use `&cro
 
 !!! note
 
-    For a complete introduction to role and access management, please refer to [Role and Access Management](../04UserGuide/01UserandAccess/Role.md).
+    For a complete introduction to role and access management, please refer to [Role and Access Management](../user-guide/access-control/role.md).

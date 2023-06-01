@@ -91,8 +91,8 @@ EOF
 - `cidr`: IP address range can be determined by the actual environment.
 
 - `blockSize`: The default is 26, determined by the actual cluster size. Reducing `blockSize` means more addresses in each Block, but the total number of Blocks will be reduced.
-    This is suitable for scenarios where the number of nodes is small but there are more Pods on each node. Increasing `blockSize` means that there are fewer addresses in each Block, but the total number of Blocks will increase.
-    This is suitable for scenarios with a large number of nodes. But in general, as long as the CIDR of `IPPool` is large enough, you can leave `blockSize` untuned (just leave the default).
+    This is suitable for use cases where the number of nodes is small but there are more Pods on each node. Increasing `blockSize` means that there are fewer addresses in each Block, but the total number of Blocks will increase.
+    This is suitable for use cases with a large number of nodes. But in general, as long as the CIDR of `IPPool` is large enough, you can leave `blockSize` untuned (just leave the default).
 
 - `vxlanMode`: `vxlan` mode is used for cross-subnet communication
 
@@ -209,7 +209,7 @@ How to change `BlockSize`:
 
 4. Delete all previous Pods
 
-    !!! Note
+    !!! note
     
         This step needs to delete all Pods under `default-ipv4-ippool`, so the connectivity of Pods will be temporarily interrupted, please do this operation at the right time.
 

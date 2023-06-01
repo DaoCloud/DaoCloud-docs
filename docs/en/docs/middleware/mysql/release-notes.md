@@ -2,11 +2,27 @@
 
 This page lists the Release Notes of the MySQL database, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-04-27
+
+### v0.8.1
+
+#### new function
+
+- **NEW** `mcamel-mysql` details page displays related events
+- **NEW** `mcamel-mysql` openapi list interface supports Cluster and Namespace field filtering
+- **Add** `mcamel-mysql` custom role
+- **Added** `mcamel-mysql` is connected to HwameiStor and supports storage capacity display (you need to manually create HwameiStor exporter ServiceMonitor)
+
+#### upgrade
+
+- **Upgrade** Optimize the scheduling strategy to add a sliding button
+
+
 ## 2023-03-28
 
 ### v0.7.0
 
-#### Features
+#### new function
 
 - **NEW** `mcamel-mysql` supports middleware link tracking adaptation.
 - **NEW** Install `mcamel-mysql` to enable link tracking according to parameter configuration.
@@ -55,7 +71,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 ### v0.5.0
 
-#### Features
+#### new function
 
 - **NEW** Added early detection of NodePort port conflicts.
 - **New** node affinity configuration.
@@ -110,7 +126,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 ### v0.3
 
-#### Features
+#### new function
 
 - **NEW** Added MySQL lifecycle management interface function
 - **NEW** Added MySQL details interface function

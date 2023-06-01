@@ -2,6 +2,20 @@
 
 This page lists the Release Notes of the RabbitMQ message queue, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-04-27
+
+### v0.10.1
+
+#### new function
+
+- **Add** `mcamel-rabbitmq` details page displays related events
+- **NEW** `mcamel-rabbitmq` supports custom roles
+- **NEW** `mcamel-rabbitmq` supports access link tracking
+
+#### Optimization
+
+- **Optimize** `mcamel-rabbitmq` scheduling strategy adds a sliding button
+
 ## 2023-03-30
 
 ### v0.9.1
@@ -14,7 +28,7 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 
 ### v0.9.0
 
-#### Features
+#### new function
 
 - **NEW** `mcamel-rabbitmq` supports middleware link tracking adaptation.
 - **New** Enable link tracking according to parameter configuration when installing `mcamel-rabbitmq`.
@@ -23,7 +37,7 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 
 ### v0.8.0
 
-#### Features
+#### new function
 
 - **Added** `mcamel-rabbitmq` helm-docs template file.
 - **NEW** The Operator in the `mcamel-rabbitmq` app store can only be installed in mcamel-system.
@@ -46,7 +60,7 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 
 ### v0.7.0
 
-#### Features
+#### new function
 
 - **NEW** `mcamel-rabbitmq` NodePort port conflict detection in advance.
 - **NEW** `mcamel-rabbitmq` node affinity configuration.
@@ -59,7 +73,7 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 
 ### v0.6.4
 
-#### Features
+#### new function
 
 - **NEW** Add interface to get user list
 - **New** supports multi-architecture images, the configuration method is `depend.arm64-img.rabbitClusterImageFormat: xxxx`
@@ -80,7 +94,7 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 
 ### v0.6.1
 
-#### Features
+#### new function
 
 - **NEW** Added to increase coverage
 - **Add** front-end UI registration function
@@ -105,4 +119,4 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **NEW** RabbitMQ data migration
 - **New** instance monitoring
 - **NEW** Enter RabbitMQ for the first time
-- **Added** Applicable scenarios
+- **Added** Use cases

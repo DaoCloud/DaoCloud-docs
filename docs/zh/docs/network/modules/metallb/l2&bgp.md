@@ -1,6 +1,6 @@
 # L2&BGP 模式说明
 
-## Metallb L2 模式
+## MetalLB L2 模式
 
 L2 模式下，`Metallb` 将会通过 ARP（for ipv4）、NDP（for ipv6）宣告 `LoadBalancerIP` 的地址。
 在 `Metallb` < `v0.13.2` 之前，只能通过 `configMap` 来配置 `Metallb`。
@@ -16,11 +16,11 @@ L2 模式下，`Metallb` 将会通过 ARP（for ipv4）、NDP（for ipv6）宣�
 2. 如果该服务的 endpoint 分布在同一个节点，那么筛选此节点作为该服务 IP 的 `arp` 响应者
 3. 如果该服务的 endpoint 分布在不同的节点，那么通过 `sha256` 计算 `节点 + # + externalIP` 后，按照字典顺序取第一个
 
-这样，Metallb 就会为每个 Service 选择一个节点作为暴露的主机。
+这样，MetalLB 就会为每个 Service 选择一个节点作为暴露的主机。
 `metallb` 会将这单个 Service 的流量，全部导向某个节点，所以这个节点可能会成为限制性能的瓶颈。
 Service 的带宽限制也会取决于单个节点的带宽，这也是使用 ARP 或 NDP 最主要的限制。
 
-此外，当此节点发生故障时，Metallb 需要为服务重新选择一个新的节点。
+此外，当此节点发生故障时，MetalLB 需要为服务重新选择一个新的节点。
 然后 `Metallb` 会给客户端发送一个"免费"的 `arp`，告知客户端需要更新他们的 Mac 地址缓存。
 在客户端更新缓存前，流量仍会转发到故障节点。因此从某种程度来看：故障转移的时间，依赖于客户端更新 Mac 地址缓存的速度。
 
@@ -138,7 +138,7 @@ Service 的带宽限制也会取决于单个节点的带宽，这也是使用 AR
                                       ------------------------------------------------------------------------——————————————————
     ```
 
-## Metallb BGP 模式(L3)
+## MetalLB BGP 模式(L3)
 
 `Layer2` 模式局限在一个二层网络中，流向 Service 的流量都会先转发到某一个特定的节点，这并不算真正意义上的负载均衡。
 BGP 模式不局限于一个二层网络，集群中每个节点都会跟 BGP Router 建立 BGP 会话，宣告 Service 的 `ExternalIP` 的下一跳为集群节点本身。
@@ -147,7 +147,7 @@ BGP 模式不局限于一个二层网络，集群中每个节点都会跟 BGP Ro
 
 ### 使用
 
-- 创建 `ippool`
+- 创建 IP 池
 
     ```yaml
     apiVersion: metallb.io/v1beta1

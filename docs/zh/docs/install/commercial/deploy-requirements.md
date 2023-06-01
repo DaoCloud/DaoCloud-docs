@@ -2,17 +2,24 @@
 
 部署 DCE 5.0 时需要先做好软件规划、硬件规划、网络规划。
 
-## 操作系统和 CPU 要求
+## 操作系统要求
 
-操作系统及 CPU 型号：
+!!! note
+
+    统信 UOS V20（1020a）安装指导文档，请参考[UOS V20 (1020a) 操作系统上部署 DCE 5.0 商业版](../os-install/uos-v20-install-dce5.0.md)
+
+    下表中其他操作系统使用统一安装指导文档，请参考[离线安装 DCE 5.0 商业版](start-install.md)
+
+    非下表中的操作系统安装指导文档，请参考[Other Linux 离线部署 DCE 5.0 商业版](../os-install/otherlinux.md)
 
 | **架构** | **操作系统**        | **内核版本**                               | 备注                             |
 | -------- | ------------------- | ------------------------------------------ | -------------------------------- |
 | AMD 64   | centos 7.X          | Kernel 3.10.0-1127.el7.x86_64 on an x86_64 | 操作系统推荐 CentOS 7.9          |
 |          | Redhat 8.X          | 4.18.0-305.el8.x86_64                      | 操作系统推荐 Redhat 8.4          |
 |          | Redhat 7.X          | 3.10.0-1160.e17.x86                        | 操作系统推荐 Redhat 7.9          |
-|          | Ubuntu 20.04        | 4.19.0-91.82.42.uelc20.x86 64              | 操作系统推荐 Ubuntu20.04         |
-|          | 统信UOS V20         | 5.4.0-125-generic                          | 操作系统推荐统信UOS V20（1020a） |
+|          | Ubuntu 20.04        | 5.10.104                                   | 操作系统推荐 Ubuntu20.04         |
+|          | 统信UOS V20         | 5.4.0-125-generic                          | 操作系统推荐统信 UOS V20（1020a） |
+|          | openEuler 22.03     | 5.10.0-60.18.0.50.oe2203.x86_64            | 操作系统推荐 openEuler 22.03     |
 | ARM 64   | 银河麒麟 OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64            | -                                |
 
 ## 硬件要求
@@ -31,7 +38,7 @@
 
 假设使用 VIP 作为全局集群的负载均衡方式：
 
-![Network-Topology](./images/Network-Topology.png)
+![Network-Topology](https://docs.daocloud.io/daocloud-docs-images/docs/install/commercial/images/Network-Topology.png)
 
 ### 网络要求
 
@@ -53,14 +60,12 @@
 
 ### 火种节点
 
-
 | Protocol | Port   | Description     |
 |----------|--------| ------------    |
 | TCP      | 443    | Docker Registry  |
 | TCP      | 8081   | Chart Museum
 | TCP      | 9000   | Minio API  |
 | TCP      | 9001   | Minio UI |
-
 
 ### Kube集群（包括 全局集群 和 工作集群）
 
@@ -110,8 +115,8 @@
 
 当启用 MetalLB 建 VIP 的时候， **全部 k8s 节点** 都需要打开。
 
-| Protocol | Port       | Description   | 
-|----------|--------    | ------------  | 
+| Protocol | Port       | Description   |
+|----------|--------    | ------------  |
 | TCP/UDP  | 7472       | metallb metrics ports |
 | TCP/UDP  | 7946       | metallb L2 operating mode |
 
@@ -130,7 +135,6 @@
 | TCP      | 9964     | Cilium-proxy Prometheus metrics  |
 | UDP      | 51871    | WireGuard encryption tunnel endpoint  |
 | ICMP     | -        | health checks  |
-
 
 参考: [Cilium Docs](https://docs.cilium.io/en/v1.13/operations/system_requirements/)
 
@@ -155,10 +159,9 @@
 
 当启用 KubeVIP 建 Kube API VIP 的时候， **全部 Control Plane 节点** 都需要打开。
 
-| Protocol | Port       | Description   | 
-|----------|--------    | ------------  | 
+| Protocol | Port       | Description   |
+|----------|--------    | ------------  |
 | TCP  | 2112           | kube-vip metrics ports |
-
 
 <!--
 #### 其他 Addon, 如 kube-vip
@@ -168,15 +171,15 @@
 
 #### Istio-Gateway VIP
 
-| Protocol | Port       | Description   | Used By | 
-|----------|--------    | ------------  | ------- | 
+| Protocol | Port       | Description   | Used By |
+|----------|--------    | ------------  | ------- |
 | TCP      | 80         | Istio-Gateway HTTP   | Web Browser or API Client |
 | TCP      | 443        | Istio-Gateway HTTPS  | Web Browser or API Client |
 
 #### Insight VIP
 
-| Protocol | Port       | Description   |  Used By | 
-|----------|--------    | ------------  | -------  | 
+| Protocol | Port       | Description   |  Used By |
+|----------|--------    | ------------  | -------  |
 | TCP      | 8480       | Insight VIP for Metrics  | 所有节点 |
 | TCP      | 9200       | Insight VIP for Log      | 所有节点 |
 | TCP      | 4317       | Insight VIP for Trace    | 所有节点 |
@@ -186,8 +189,8 @@
 
 工作集群需要开放 k8s API 的 6443 端口，给到全局管理集群访问。如果要是用部署功能，还要开放 22 端口，给全局集群访问。
 
-| Protocol | Port       | Description   | Used By | 
-|----------|--------    | ------------  | ------- | 
+| Protocol | Port       | Description   | Used By |
+|----------|--------    | ------------  | ------- |
 | TCP      | 22         | 各节点 SSH (for ansible) | 全局管理集群 |
 | TCP      | 6443       | k8s API 访问入口(如VIP) |  全局管理集群 |
 
@@ -195,8 +198,8 @@
 
 #### 镜像仓库
 
-| Protocol | Port       | Description   | Used By | 
-|----------|--------    | ------------  | ------- | 
+| Protocol | Port       | Description   | Used By |
+|----------|--------    | ------------  | ------- |
 | TCP      | 443        | 访问入口(如VIP) 的端口 | 所有节点 |
 
 <!--

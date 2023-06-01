@@ -49,7 +49,7 @@
 
     当配置了 K8s API 服务器来支持额外的 API 时，您就可以在 K8s API 中增加 `APIService` 对象来申领（Claim）一个 URL 路径。
 
-- Alert Rule, [告警规则](../insight/user-guide/alert-center/alert-rule.md)
+- Alert Rule, [告警规则](../insight/user-guide/alert-center/alert-policy.md)
 
     在 Insight 中，这是基于资源状态创建的告警对象，可以自定义触发规则的条件以及通过何种方式发送通知的规则。
 
@@ -65,7 +65,7 @@
     API (即应用程序接口) 是计算机程序间交互的一种方式。
     就像人类可以通过网页与网站进行交互一样，API 允许计算机程序之间进行交互。
     与人类的交互不同，API 可以限制对方可以问什么和不能问什么。对交互的限制有助于在程序之间创建稳定、实用的信息传输。
-    我们提供了完善的 [OpenAPI 文档](../openapi/ghippo/index.md)供第三方调用和开发。
+    我们提供了完善的 [OpenAPI 文档](../openapi/index.md)供第三方调用和开发。
 
 - API-initiated eviction, API 发起的驱逐
 

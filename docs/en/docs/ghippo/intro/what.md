@@ -1,43 +1,43 @@
-# What is Global Management (Ghippo)？
+# What is Global Management (Ghippo)?
 
-Global Management (Ghippo) is a comprehensive user-centered service, including access control, enterprise space, audit log, platform configuration and other basic modules.
+Global Management (Ghippo) is a comprehensive user-centered service that includes access control, enterprise space, audit logs, platform settings, and other fundamental modules.
 
-- [Access control](../04UserGuide/01UserandAccess/global.md)：Help users manage access to resources. Users are allowed to create, manage, and delete users/groups, and flexibly configure user/group permissions to divide users' functional rights.
+- [Access Control](../user-guide/access-control/global.md): Helps users manage access to resources. Users can create, manage, and delete users/groups, and configure user/group permissions to divide users' functional rights flexibly.
 
-- [Enterprise space](../04UserGuide/02Workspace/ws-folder.md)：A resource isolation unit with hierarchical structure and capability of access control. Users are allowed to set hierarchical structure depending on the enterprise development environment, department structure, etc., and control who has access to which resources.
+- [Enterprise Space](../user-guide/workspace/ws-folder.md): A resource isolation unit with a hierarchical structure and capability of access control. Users can set up a hierarchical structure depending on the development environment, department structure, etc., and control who has access to which resources.
 
-- [Audit log](../04UserGuide/03AuditLog.md)：Provide operation logs of resources, which allows security analysis, resource changes, problem location, etc.
+- [Audit Logs](../user-guide/audit-log.md): Provides operation logs of resources that allow security analysis, resource changes, problem location, and other essential insights.
 
-- [Platform configuration](../04UserGuide/04PlatformSetting/MailServer.md)：Through platform security policy, mail server, appearance customization, etc., you can ensure secure user information and a personalized platform.
+- [Platform Settings](../user-guide/platform-setting/mail-server.md): Platform security policy, mail server, appearance customization, and more ensure secure user information and a personalized experience.
 
-## Benefitss
+## Benefits
 
-- All services under one menu
+- All Services Under One Menu
 
     The basic service modules of the platform are brought together to reduce the troubles caused by menu switching and function scattering. Platform administrators can complete basic settings and user management under one menu.
 
-- Combination of users and tenants
+- Combination of Users and Tenants
 
     Flat management of users and groups as well as hierarchical tenant (workspace) collaboration enable multi-dimensional and multi-scenario access control based on the platform and resource-based function division.
 
 - Personalization
 
-    Support personalized platform appearance, including custom login page and top navigation bar. Easily configure a unique platform through visual pages.
+    Support personalized platform appearance, including custom login page, and top navigation bar. Easily configure a unique platform through visual pages.
 
-- Beginner friendly
+- Beginner Friendly
   
-    Most of the configuration has been done for users in advance, including password rule, session timeout policy, etc., simplifying user operations and being ready to use.
+    Most of the configuration has been done for users in advance, including password rules, session timeout policies, etc., simplifying user operations and making it ready to use.
 
-## Operations
+## Procedure
 
-1. Log in to the DCE platform using the DCE platform administrator (Admin) or a user with Admin privileges
+1. Log in to the DCE platform using the DCE platform administrator (Admin) or a user with Admin privileges.
 
-2. Go to`Access control`.  [Create users and authorize](../04UserGuide/01UserandAccess/User.md), and then [create groups and authorize](../04UserGuide/01UserandAccess/Group.md), and eventually [create identity provider](../04UserGuide/01UserandAccess/idprovider.md).
+2. Go to `Access Control`. [Create users and authorize](../user-guide/access-control/user.md), then [create groups and authorize](../user-guide/access-control/group.md), and eventually, [create an identity provider](../user-guide/access-control/idprovider.md).
 
-3. Go to`Workspace`. [Create hierarchy (enterprise hierarchy relationship)](../04UserGuide/02Workspace/ws-folder.md), and then [create workspace (tenant)](../04UserGuide/02Workspace/Workspaces.md).
+3. Go to `Workspace`. [Create enterprise hierarchy relationship](../user-guide/workspace/ws-folder.md), then [create a workspace (tenant)](../user-guide/workspace/workspace.md).
 
-4. Go to`Audit log`. View and [export audit log](../04UserGuide/03AuditLog.md).
+4. Go to `Audit Logs`. View and [export audit logs](../user-guide/audit-log.md).
 
-5. Go to `Platform configuration`. Configure security policy, mail server, appearance, and genuine license.
+5. Go to `Platform Settings`. Configure security policy, mail server, appearance, and genuine license.
 
-[Free Trial Now](../../dce/license0.md){ .md-button .md-button--primary }
+[Start Free Trial Now](../../dce/license0.md){ .md-button .md-button--primary }

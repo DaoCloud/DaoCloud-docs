@@ -1,20 +1,20 @@
 ---
 hide:
-  - toc
+  - heel
 ---
 
 # Update the microservice gateway
 
-The microservice gateway supports a high-availability architecture of multi-tenant instances, and is compatible with the unified gateway access capability of microservices in various modes. This page describes how to update a Microservice Gateway instance.
+The micro-service gateway supports the high-availability architecture of multi-tenant instances and is compatible with the unified gateway access capabilities of micro-services in various modes. This page describes how to update a microservice gateway instance.
 
 ## Update gateway configuration
 
 There are two ways to update the gateway configuration.
 
-- Select the gateway instance to be updated on the `Microservice Gateway List` page, click **`⋯`** on the right side of the instance and select `Edit`.
+- In the `Gateway List` page choose the gateway instance needs to be updated, at the instance of right click ** `⋯` ** and select `Edit`.
 
-    
+    <!--![]()screenshots-->
 
-- Click on the gateway name to enter the overview page, and click `Edit` in the upper right corner.
+- Click the gateway name to access the overview page. In the upper right corner, click `Edit`.
 
-    
+    <!--![]()screenshots-->

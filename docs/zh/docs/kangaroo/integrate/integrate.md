@@ -1,6 +1,6 @@
-# 仓库集成
+# 仓库集成(管理员)
 
-仓库集成是集中管理平台镜像仓库的入口，既支持集成外部镜像仓库，如 Harbor Registry、Docker Registry；
+仓库集成(管理员)是集中管理平台镜像仓库的入口，既支持集成外部镜像仓库，如 Harbor Registry、Docker Registry；
 又能够自动集成平台创建的托管 Harbor。仓库集成后，平台管理员可以通过将镜像空间与工作空间绑定的方式，将某个私有镜像空间分配给一个或者多个工作空间（工作空间下的命名空间）。
 或者将镜像空间设置为公开，供平台所有命名空间使用。
 
@@ -23,17 +23,17 @@
 
 可以参阅[视频教程](../../videos/kangaroo.md#_3)熟悉以下操作步骤：
 
-1. 使用具有 Admin 角色的用户登录 Web 控制台，从左侧导航栏点击`镜像仓库` -> `仓库集成`。
+1. 使用具有 Admin 角色的用户登录 Web 控制台，从左侧导航栏点击`镜像仓库` -> `仓库集成(工作空间)`。
 
-    ![仓库集成](../images/integrated01.png)
+    ![仓库集成](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/integrated01.png)
 
 1. 点击右上角的`仓库集成`按钮。
 
-    ![点击按钮](../images/integrated02.png)
+    ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/integrated02.png)
 
 1. 选择仓库类型，填写集成名称、仓库地址、用户名和密码，点击`确定`。
 
-    ![填写参数](../images/integrated03.png)
+    ![填写参数](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/integrated03.png)
 
     !!! note
 
@@ -41,6 +41,6 @@
 
 1. 返回仓库集成列表。集成的仓库将带有`集成`、`健康`或`不健康`等标签。光标悬浮到某个磁贴上，可以执行`删除集成`、`编辑`等操作。
 
-    ![更多操作](../images/integrated04.png)
+    ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/integrated04.png)
 
 下一步：[创建镜像空间](./create-space.md)

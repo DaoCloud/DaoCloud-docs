@@ -1,15 +1,17 @@
 ---
-MTPE: TODO
+MTPE: Jeanine-tw
 Revised: Jeanine-tw
 Pics: N/A
-Date: 2023-02-27
+Date: 2023-05-18
 ---
 
-# Instructions
+# Usage notes
 
-## Precautions
+This page introduces how to use Submariner to enable cross-cluster communication.
 
-- When the CNI of the cluster is Calico, the IPTables rule inserted by Calico has a higher priority than the IPTables rule inserted by Submariner. As a result, inter-cluster communication fails. So we had to manually configure Calico's IPPool to get around this problem:
+!!! note
+
+    When the CNI of the cluster is Calico, the IPTables rule inserted by Calico has a higher priority than the IPTables rule inserted by Submariner. As a result, cross-cluster communication fails. So we had to manually configure Calico's IPPool to get around this problem:
 
 For example:
 
@@ -44,7 +46,7 @@ disabled: true
 EOF
 ```
 
-Do the same in Cluster B:
+Do the same operations in Cluster B:
 
 ```shell
 cat &gt;  clusterb-cidr.yaml &lt; &lt; EOF
@@ -70,11 +72,11 @@ disabled: true
 EOF
 ```
 
-> Set natOutgoing to false!
+> natOutgoing should be false.
 
-## Use
+## Use Submariner
 
-- Use the Subctl tool to export Service, verify, and troubleshoot problems
+- Use Subctl to export Service as well as verify and troubleshoot problems
 
 To download Subctl:
 
@@ -121,7 +123,7 @@ submariner-operator             quay.m.daocloud.io/submariner                   
 service-discovery               quay.m.daocloud.io/submariner                         0.14.0
 ```
 
-2. If inter-cluster communication fails, run the following command to rectify the fault:
+1. If cross-cluster communication fails, run the following command to troubleshoot:
 
 ```shell
 root@controller:~# subctl diagnose all
@@ -187,9 +189,9 @@ root@controller:~# subctl gather
 
 - Service discovery across clusters:
 
-If you want to use cross-cluster Service discovery, you need to manually export services to other clusters, as shown in the following way:
+If you want to use cross-cluster Service discovery, you need to manually export Services to other clusters, as shown in the following way:
 
-Export this service at ClusterA:
+Export this Service at ClusterA:
 
 ```shell
 root@controller:~# kubectl get svc
@@ -199,7 +201,7 @@ test                                          ClusterIP      10.233.21.143   <no
 root@controller:~# subctl export service test
 ```
 
-The above command will export a Service named test in the default command space. After the export is complete, check the status:
+The above command will export a Service named test in the default namespace. After the export is complete, check the status:
 
 ```shell
 root@controller:~# kubectl get serviceexports.multicluster.x-k8s.io

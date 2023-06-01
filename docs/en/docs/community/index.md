@@ -6,7 +6,7 @@
 
 === "Clusterpedia"
 
-One-stop encyclopedia of Kubernetes multi-cluster resources has been listed in CNCf landscape and selected for CNCF sandbox incubation.
+One-stop encyclopedia of Kubernetes multicluster resources has been listed in CNCf landscape and selected for CNCF sandbox incubation.
 **China Mobile** and more enterprises have deployed Clusterpedia to their production environment. [:octicons-arrow-right-24: Learn more](clusterpedia.md)
 
 === "cloutty"
@@ -15,7 +15,7 @@ So far, this is the first open-source web console developed for Kubernetes commu
 
 === "Ferry"
 
-Ferry is a Kubernetes multi-cluster communication component that eliminates communication differences between clusters as if they were in a single cluster,
+Ferry is a Kubernetes multicluster communication component that eliminates communication differences between clusters as if they were in a single cluster,
 regardless of their network environments. [:octicons-arrow-right-24: Learn more](ferry.md)
 
 === "HwameiStor"
@@ -53,8 +53,8 @@ The Spiderpool is an IP Address Management (IPAM) CNI plugin that assigns IP add
 <p align="center">
 <img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
 <br/><br/>
-Clusterpedia and Merbridge have been selected and listed in the <a href="https://landscape.cncf.io/?selected=merbridge">CNCF Landscape</a>.
+Clusterpedia and Merbridge have been selected and listed in the <a href="https://landscape.cncf.io">CNCF Landscape</a> and <a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a>.
 </p>
 
 [Free Trial Now](../dce/license0.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/install-dce-community.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

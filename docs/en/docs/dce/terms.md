@@ -7,7 +7,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 - Abstraction
 
     In the context of computing, an abstraction is a representation that
-    hides specifics from a consumer of [services](/service/)
+    hides specifics from a consumer of [services](../kpanda/user-guide/services-routes/create-services.md)
     (a consumer being a computer program or human),
     making a system more generic and thus easily understood.
     A good example is your laptop's operating system (OS).
@@ -26,7 +26,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     A resource object that extends the functionality of DCE.
     You can install more additional extensions via
-    [Container Management](../kpanda/intro/WhatisKPanda.md) -> [Helm Template](../kpanda/07UserGuide/helm/README.md).
+    [Container Management](../kpanda/intro/what.md) -> [Helm chart](../kpanda/user-guide/helm/README.md).
 
 - Admission Controller
 
@@ -58,14 +58,14 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     The aggregation layer is different from Custom Resources, which are a way to make the kube-apiserver
     recognise new kinds of object.
 
-- [Alert Rule](../insight/user-guide/05alertcenter/alertrule.md)
+- [Alert Rule](../insight/user-guide/alert-center/alert-policy.md)
 
     In Insight, this is an alert object created based on the resource status. You can customize the conditions
     for triggering rules and sending notifications.
 
 - Annotation
 
-    [Annotation](../kpanda/07UserGuide/Nodes/labels-annotations.md) is a key-value pair that is used to attach
+    [Annotation](../kpanda/user-guide/nodes/labels-annotations.md) is a key-value pair that is used to attach
     arbitrary non-identifying metadata to objects.
 
     The metadata in an annotation can be small or large, structured or unstructured, and can include characters
@@ -158,11 +158,11 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Audit log, audit log
 
-    [Audit Log](../ghippo/04UserGuide/03AuditLog.md) provides a historical record of changes made to objects in the system.
+    [Audit Log](../ghippo/user-guide/audit-log.md) provides a historical record of changes made to objects in the system.
 
 - Authorization
 
-    [Authorization](../ghippo/04UserGuide/01UserandAccess/iam.md) refers to granting users the permissions
+    [Authorization](../ghippo/user-guide/access-control/iam.md) refers to granting users the permissions
     required to complete specific tasks, and the authorization takes effect through the permissions of system roles or custom roles.
     After obtaining specific permissions, users can operate on resources or services.
 
@@ -250,7 +250,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     No matter how thorough the testing strategy, there are always some bugs discovered in production.
     Shifting 100% of traffic from one version of an app to another can lead to more impactful failures.
 
-    Canary deployments allow organizations to see how new software behaves in real-world scenarios
+    Canary deployments allow organizations to see how new software behaves in real-world use cases
     before moving significant traffic to the new version.
     This strategy enables organizations to minimize downtime and quickly rollback in case of issues with the new deployment.
     It also allows more in-depth production application testing without a significant impact on the overall user experience.
@@ -514,7 +514,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/)
 
-    [ConfigMap](../kpanda/07UserGuide/ConfigMapsandSecrets/UsedConfigMap.md) is an API object used to
+    [ConfigMap](../kpanda/user-guide/configmaps-secrets/use-configmap.md) is an API object used to
     store non-sensitive data as key-value pairs. It can be used as environment variables, command-line parameters,
     or configuration files in storage volumes. ConfigMap decouples your environment configuration information
     from container images, making it easier to modify application configurations.
@@ -710,7 +710,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 - Contour
 
     Contour is deployed as a control node and serves as the control plane for the microservice gateway,
-    providing convenient gateway configuration, dynamic configuration updates, and multi-cluster deployment
+    providing convenient gateway configuration, dynamic configuration updates, and multicluster deployment
     capabilities. Contour also provides the HTTPProxy CRD to enhance the core configuration capabilities of
     Kubernetes Ingress. It is recommended to deploy Contour in multiple replicas to ensure the stability of production services.
 
@@ -719,7 +719,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     The control plane is a set of system services that configure the mesh or subnet of the mesh to manage
     communication between workload instances. All instances of the control plane in a single mesh share the same configuration resources.
 
-- [CRD](../kpanda/07UserGuide/CustomResources/create.md), CustomResourceDefinition
+- [CRD](../kpanda/user-guide/custom-resources/create.md), CustomResourceDefinition
 
     CustomResourceDefinition (CRD) allows you to add resource objects to your Kubernetes API server with
     customized code without having to compile a complete custom API server. When the API resources supported
@@ -743,9 +743,9 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     Container runtime is the component responsible for running containers. Kubernetes supports many container runtime environments, such as containerd, cri-o, and any other implementation of [Kubernetes CRI](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md).
 
-- [CronJob](../kpanda/07UserGuide/Workloads/CreateCronJobByImage.md)
+- [CronJob](../kpanda/user-guide/workloads/create-cronjob.md)
 
-    CronJob manages tasks that run periodically. Similar to a line of command in a crontab file, the CronJob object uses the [cron](https://zh.wikipedia.org/wiki/Cron) format to set the schedule.
+    CronJob manages tasks that run periodically. Similar to a line of command in a crontab file, the CronJob object uses the [cron](https://en.wikipedia.org/wiki/Cron) format to set the schedule.
 
 - CSI, Container Storage Interface
 
@@ -757,7 +757,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 ### D
 
-- [DaemonSet](../kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md)
+- [DaemonSet](../kpanda/user-guide/workloads/create-daemonset.md)
 
     A DaemonSet ensures that a copy of a Pod is running on each node in a cluster.
     DaemonSets are useful for tasks that need to be performed on every node, such as collecting logs or monitoring system health.
@@ -837,7 +837,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     Developers can use interactive debugging to step through the code at runtime while analyzing the related execution context.
     Once they have identified the source of the failure, they correct the code and create a bug fix or patch.
 
-- [Deployement](../kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md)
+- [Deployement](../kpanda/user-guide/workloads/create-deployment.md)
 
     Deployment is an API object used to manage multi-replica applications, typically achieved by running stateless Pods.
     Each replica is represented by a Pod, which is distributed across nodes in the cluster.
@@ -1112,7 +1112,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Folder
 
-    In DCE, `Folder` is a [hierarchical concept](../ghippo/04UserGuide/02Workspace/folders.md) that corresponds to different departments, and each level can contain one or more workspaces to meet the branch division of various departments within the enterprise.
+    In DCE, `Folder` is a [hierarchical concept](../ghippo/user-guide/workspace/folders.md) that corresponds to different departments, and each level can contain one or more workspaces to meet the branch division of various departments within the enterprise.
 
 ### G
 
@@ -1132,7 +1132,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Gateway Rule
 
-    In a service mesh, [Gateway Rules](../mspider/03UserGuide/02TrafficGovernance/GatewayRules.md) define the load balancer for north-south connection operations in the mesh, used to establish inbound and outbound HTTP/TCP access connections. It describes a set of ports, service domain names, protocol types, and SNI configurations for the load balancer that need to be exposed.
+    In a service mesh, [Gateway Rules](../mspider/user-guide/traffic-governance/gateway-rules.md) define the load balancer for north-south connection operations in the mesh, used to establish inbound and outbound HTTP/TCP access connections. It describes a set of ports, service domain names, protocol types, and SNI configurations for the load balancer that need to be exposed.
 
 - Gauge
 
@@ -1169,7 +1169,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Group
 
-    In global management, this refers to a combination of multiple users, that is, a [group](../ghippo/04UserGuide/01UserandAccess/Group.md).
+    In global management, this refers to a combination of multiple users, that is, a [group](../ghippo/user-guide/access-control/group.md).
 
     In the microservice engine, this is a group of configurations in Nacos.
 
@@ -1258,7 +1258,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - IAM, Identity and access management
 
-    [IAM](../ghippo/04UserGuide/01UserandAccess/iam.md) stands for Identity and Access Management, which is a shorthand for user and access control in global management. An IAM Admin is the administrator with the highest level of permission in this module. Users or user groups assigned as IAM Admin will have full and highest permission for user and access control.
+    [IAM](../ghippo/user-guide/access-control/iam.md) stands for Identity and Access Management, which is a shorthand for user and access control in global management. An IAM Admin is the administrator with the highest level of permission in this module. Users or groups assigned as IAM Admin will have full and highest permission for user and access control.
 
 - Image
 
@@ -1344,7 +1344,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - [Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
 
-    [Job](../kpanda/07UserGuide/Workloads/CreateJobByImage.md) is a deterministic or batch task that needs to run to completion. It creates one or more Pod objects and ensures that a specified number of Pods terminate successfully. As each Pod completes successfully, the Job tracks the number of successful completions.
+    [Job](../kpanda/user-guide/workloads/create-job.md) is a deterministic or batch task that needs to run to completion. It creates one or more Pod objects and ensures that a specified number of Pods terminate successfully. As each Pod completes successfully, the Job tracks the number of successful completions.
 
 - Kops
 
@@ -1440,7 +1440,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - [Log](https://opentelemetry.io/docs/concepts/signals/logs/)
 
-    In Insight, [logs](../insight/user-guide/04dataquery/logquery.md) are a list of events recorded by the cluster or application. They are an abstract data type that changes during system operation and consists of an ordered collection of operations and their operation results for a specified object over time.
+    In Insight, [logs](../insight/user-guide/data-query/log.md) are a list of events recorded by the cluster or application. They are an abstract data type that changes during system operation and consists of an ordered collection of operations and their operation results for a specified object over time.
 
     Application and system logs can help you understand what is happening inside the cluster. Logs are useful for debugging issues and monitoring cluster activity.
 
@@ -1474,7 +1474,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Master cluster
 
-    A master cluster is a cluster with a control plane. A mesh can have more than one master cluster for HA or low-latency scenarios. A master cluster can serve as the control plane for a working cluster.
+    A master cluster is a cluster with a control plane. A mesh can have more than one master cluster for HA or low-latency use cases. A master cluster can serve as the control plane for a working cluster.
 
 - [Metric](https://opentelemetry.io/docs/concepts/signals/metrics/)
 
@@ -1525,7 +1525,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     A string provided by the client that identifies an object in the resource URL, such as `/api/v1/pods/some-name`.
     At any given time, only one object of a given type can have a given name. However, if the object is deleted, a new object with the same name can be created.
 
-- [Namespace](../kpanda/07UserGuide/Namespaces/createns.md)
+- [Namespace](../kpanda/user-guide/namespaces/createns.md)
 
     An abstraction used by Kubernetes to support the isolation of resource groups within a single cluster. Objects within the same namespace must have unique names, but there is no requirement for names to be unique across namespaces. Namespace-based scoping only applies to objects within the namespace, not to cluster-scoped objects.
 
@@ -1535,7 +1535,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Node
 
-    [Node](../kpanda/07UserGuide/Nodes/AddNode.md) is a computer that can work with other computers (or nodes) to complete a common task. In cloud computing, a node can be a physical machine, a virtual machine, or even a container. Nodes provide a unique computing unit (memory, CPU, network) that can be allocated to a cluster.
+    [Node](../kpanda/user-guide/nodes/add-node.md) is a computer that can work with other computers (or nodes) to complete a common task. In cloud computing, a node can be a physical machine, a virtual machine, or even a container. Nodes provide a unique computing unit (memory, CPU, network) that can be allocated to a cluster.
 
 - Node Pressure Eviction
 
@@ -1543,7 +1543,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Notification
 
-    When an alarm is generated due to an abnormality in a resource, the alarm information can be sent to specified users via email, DingTalk, WeChat Work, webhook, etc.
+    When an alert is generated due to an abnormality in a resource, the alert information can be sent to specified users via email, DingTalk, WeCom, webhook, etc.
 
 ### O
 
@@ -1557,7 +1557,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Observability
 
-    [Observability](../insight/intro/WhatisInsight.md) refers to the ability to collect signals from an observed system, continuously generate and discover actionable insights. In other words, observability allows users to gain insight into the state of a system from external outputs and take corrective action. The measuring mechanism of a computer system observes low-level signals such as CPU time, memory, and disk space, as well as high-level signals and business signals such as API response rate per second, error rate per second, and number of transactions processed per second.
+    [Observability](../insight/intro/what.md) refers to the ability to collect signals from an observed system, continuously generate and discover actionable insights. In other words, observability allows users to gain insight into the state of a system from external outputs and take corrective action. The measuring mechanism of a computer system observes low-level signals such as CPU time, memory, and disk space, as well as high-level signals and business signals such as API response rate per second, error rate per second, and number of transactions processed per second.
 
     The observability of a system has a significant impact on its operational and development costs. An observable system provides meaningful and actionable data to operators, enabling them to achieve favorable results (i.e., faster event response, higher development efficiency) and fewer difficult moments and shorter downtime.
 
@@ -1571,15 +1571,15 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - OverridePolicy
 
-    [OverridePolicy](../kairship/07policy/overridepolicy.md) is a differentiated configuration policy that defines the differentiated configuration policy for distributing multi-cloud resource objects to different working clusters, such as using different images and adding different labels in different working clusters. OverridePolicy, as an independent policy API, can automatically handle cluster-related configurations, such as adding different prefixes to images based on the geographical distribution of subsets of clusters and using different StorageClasses based on your cloud provider.
+    [OverridePolicy](../kairship/policy/override-policy.md) is a differentiated configuration policy that defines the differentiated configuration policy for distributing multicloud resource objects to different working clusters, such as using different images and adding different labels in different working clusters. OverridePolicy, as an independent policy API, can automatically handle cluster-related configurations, such as adding different prefixes to images based on the geographical distribution of subsets of clusters and using different StorageClasses based on your cloud provider.
 
 ### P
 
 - Permission
 
-    [Permissions](../ghippo/04UserGuide/01UserandAccess/iam.md) refer to whether a user is allowed to perform a certain operation on a certain resource. In order to reduce the threshold for use, DCE adopts the RBAC model to aggregate permissions into roles. Administrators only need to authorize roles to users, and the user will obtain a set of permissions aggregated under that role.
+    [Permissions](../ghippo/user-guide/access-control/iam.md) refer to whether a user is allowed to perform a certain operation on a certain resource. In order to reduce the threshold for use, DCE adopts the RBAC model to aggregate permissions into roles. Administrators only need to authorize roles to users, and the user will obtain a set of permissions aggregated under that role.
 
-    By default, IAM users created by administrators have no role permissions. They need to be granted roles individually or added to user groups and granted roles in order to obtain corresponding role permissions. This process is called authorization. After authorization, users can operate on platform resources based on the role permissions granted to them.
+    By default, IAM users created by administrators have no role permissions. They need to be granted roles individually or added to groups and granted roles in order to obtain corresponding role permissions. This process is called authorization. After authorization, users can operate on platform resources based on the role permissions granted to them.
 
 - Persistent Volume Claim, PVC
 
@@ -1671,9 +1671,9 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - PropagationPolicy
 
-    In multi-cloud orchestration, [PropagationPolicy](../kairship/07policy/propagationpolicy.md) defines the distribution strategy for multi-cloud resource objects, supporting planning which workloads to deploy to which working clusters using specified clusters or labels. PropagationPolicy is an independent policy API that can define multi-cluster scheduling methods based on distribution requirements.
+    In Multicloud Management, [PropagationPolicy](../kairship/policy/propagation-policy.md) defines the distribution strategy for multicloud resource objects, supporting planning which workloads to deploy to which working clusters using specified clusters or labels. PropagationPolicy is an independent policy API that can define multicluster scheduling methods based on distribution requirements.
 
-    - Supports 1:n `policy:workload`, and users do not need to repeat the scheduling constraints each time they create a multi-cloud application.
+    - Supports 1:n `policy:workload`, and users do not need to repeat the scheduling constraints each time they create a multicloud application.
     - When using the default policy, users can interact directly with the Kubernetes API.
 
 - Proxy
@@ -1684,7 +1684,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - RBAC
 
-    Role-Based Access Control (RBAC) allows administrators to dynamically configure access policies through the Kubernetes API. RBAC uses [roles](../ghippo/04UserGuide/01UserandAccess/Role.md) (which contain permission rules) and role bindings (which grant a user group the permissions defined in a role).
+    Role-Based Access Control (RBAC) allows administrators to dynamically configure access policies through the Kubernetes API. RBAC uses [roles](../ghippo/user-guide/access-control/role.md) (which contain permission rules) and role bindings (which grant a group the permissions defined in a role).
 
 - Registration center
 
@@ -1704,7 +1704,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Resource
 
-    Resource refers to the specific data that completes authorization on the DCE platform through various sub-modules. Typically, a resource describes one or more objects of operation, and each sub-module has its own resources and corresponding resource definition details, such as clusters, namespaces, gateways, etc. The owner of the resource is the main account Super Admin. Super Admin has the authority to create/manage/delete resources in each sub-module. Ordinary users do not automatically have access to resource access rights without authorization from Super Admin. The workspace supports cross-sub-module authorization of user (user group) access to resources.
+    Resource refers to the specific data that completes authorization on the DCE platform through various sub-modules. Typically, a resource describes one or more objects of operation, and each sub-module has its own resources and corresponding resource definition details, such as clusters, namespaces, gateways, etc. The owner of the resource is the main account Super Admin. Super Admin has the authority to create/manage/delete resources in each sub-module. Ordinary users do not automatically have access to resource access rights without authorization from Super Admin. The workspace supports cross-sub-module authorization of user (group) access to resources.
 
 - Resource limit
 
@@ -1712,7 +1712,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Resource Quota
 
-    [Resource quotas](../ghippo/04UserGuide/02Workspace/quota.md) provide constraints on the total resource consumption of each namespace. They limit the number of objects that can be created in a namespace and also limit the total amount of computing resources that can be used by resource objects in the project.
+    [Resource quotas](../ghippo/user-guide/workspace/quota.md) provide constraints on the total resource consumption of each namespace. They limit the number of objects that can be created in a namespace and also limit the total amount of computing resources that can be used by resource objects in the project.
 
 - Resource request
 
@@ -1720,11 +1720,11 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Resource Template
 
-    In [multi-cloud orchestration](../kairship/intro/whatiskairship.md), a template called a federated resource is used. This is a multi-cloud resource template based on the native K8s API, which facilitates the integration of all cloud-native tools within the K8s ecosystem. This resource template can be used to centrally manage [multi-cloud services](../kairship/06resource/service.md), [multi-cloud namespaces](../kairship/06resource/ns.md), [multi-cloud configmap](../kairship/06resource/configmap.md), and [multi-cloud secret](../kairship/06resource/secret.md).
+    In [Multicloud Management](../kairship/intro/what.md), a template called a federated resource is used. This is a multicloud resource template based on the native K8s API, which facilitates the integration of all cloud-native tools within the K8s ecosystem. This resource template can be used to centrally manage [multicloud services](../kairship/resource/service.md), [multicloud namespaces](../kairship/resource/ns.md), [multicloud configmap](../kairship/resource/configmap.md), and [multicloud secret](../kairship/resource/secret.md).
 
 - Role
 
-    A [role](../ghippo/04UserGuide/01UserandAccess/Role.md) is a bridge that connects users and permissions.
+    A [role](../ghippo/user-guide/access-control/role.md) is a bridge that connects users and permissions.
     A role corresponds to a set of permissions, and different roles have different permissions. Granting a
     user a role means granting all the permissions included in that role.
     There are two types of roles in global management:
@@ -1732,15 +1732,15 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     - predefined roles created by the system that users can only use and cannot modify, and
     - custom roles that users can create, update, and delete themselves.
 
-    The permissions in custom roles are maintained by the users themselves. At the same time, because global management brings together multiple sub-modules, each sub-module also has a corresponding administrator role, such as IAM Admin, which manages user and access control, i.e., managing users/user groups and authorizations, Workspace Admin, which manages hierarchy and workspace permissions, and only this permission can create hierarchy, and Audit Admin, which manages audit logs.
+    The permissions in custom roles are maintained by the users themselves. At the same time, because global management brings together multiple sub-modules, each sub-module also has a corresponding administrator role, such as IAM Admin, which manages user and access control, i.e., managing users/groups and authorizations, Workspace Admin, which manages hierarchy and workspace permissions, and only this permission can create hierarchy, and Audit Admin, which manages audit logs.
 
 - Rolling update
 
-    [Rolling update](../mspider/03UserGuide/upgrade/IstioUpdate.md) refers to updating a small portion of replicas at a time, then updating more replicas after success, and finally completing the update of all replicas. The biggest advantage of rolling updates is zero downtime, with replicas running throughout the update process, ensuring business continuity.
+    [Rolling update](../mspider/install/istio-update.md) refers to updating a small portion of replicas at a time, then updating more replicas after success, and finally completing the update of all replicas. The biggest advantage of rolling updates is zero downtime, with replicas running throughout the update process, ensuring business continuity.
 
 - Routing Rule
 
-    In the virtual service configured in the service mesh's [virtual service](../mspider/03UserGuide/02TrafficGovernance/VirtualService.md), the routing rules follow the path defined by the service mesh for requests. Using routing rules, you can define the workload to which traffic addressed to the virtual service host is routed. Routing rules allow you to control traffic to achieve tasks such as phased traffic distribution by percentage.
+    In the virtual service configured in the service mesh's [virtual service](../mspider/user-guide/traffic-governance/virtual-service.md), the routing rules follow the path defined by the service mesh for requests. Using routing rules, you can define the workload to which traffic addressed to the virtual service host is routed. Routing rules allow you to control traffic to achieve tasks such as phased traffic distribution by percentage.
 
 ### S
 
@@ -1752,7 +1752,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Secret
 
-    [Secret](../kpanda/07UserGuide/ConfigMapsandSecrets/create-secret.md) is used to store sensitive information such as passwords, OAuth tokens, and SSH keys.
+    [Secret](../kpanda/user-guide/configmaps-secrets/create-secret.md) is used to store sensitive information such as passwords, OAuth tokens, and SSH keys.
 
     Secrets allow users to have more control over how sensitive information is used and reduce the risk of accidental exposure. By default, secret values are encoded as base64 strings and stored in unencrypted form, but can be configured for [static encryption (Encrypt at rest)](https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/#ensure-all-secrets-are-encrypted).
 
@@ -1870,7 +1870,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - StatefulSet
 
-    [StatefulSet](../kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md) is used to manage a set of Pods with persistent storage and identifiers. Each Pod has a unique, immutable ID.
+    [StatefulSet](../kpanda/user-guide/workloads/create-statefulset.md) is used to manage a set of Pods with persistent storage and identifiers. Each Pod has a unique, immutable ID.
 
 - Stateless Apps
 
@@ -1896,7 +1896,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Taint
 
-    [Taint](../kpanda/07UserGuide/Nodes/Taints.md) is a core object that contains three required attributes: key, value, and effect. Taints prevent Pods from being scheduled on nodes or node groups. Taints work with tolerations to ensure that Pods are only scheduled on nodes with tolerations that match the taints. One or more taints can be marked on the same node. Nodes should only schedule Pods with tolerations that match the taints.
+    [Taint](../kpanda/user-guide/nodes/taints.md) is a core object that contains three required attributes: key, value, and effect. Taints prevent Pods from being scheduled on nodes or node groups. Taints work with tolerations to ensure that Pods are only scheduled on nodes with tolerations that match the taints. One or more taints can be marked on the same node. Nodes should only schedule Pods with tolerations that match the taints.
 
 - Temporary microservice instance
 
@@ -1933,19 +1933,19 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - User
 
-    A [user](../ghippo/04UserGuide/01UserandAccess/User.md) is the subject who initiates an operation, each user has a unique ID and is granted different roles. The IAM users created by default have no permissions and need to be added to user groups, granted roles or policies to gain corresponding permissions.
+    A [user](../ghippo/user-guide/access-control/user.md) is the subject who initiates an operation, each user has a unique ID and is granted different roles. The IAM users created by default have no permissions and need to be added to groups, granted roles or policies to gain corresponding permissions.
 
     Users log in to DCE with their usernames and operate platform resources and services according to the permissions granted to them. Therefore, users are the subjects of resource ownership and have corresponding permissions for the resources they own.
 
     Users can modify user information, set passwords, access keys, and UI languages in the personal center.
 
-- User namespace
+- user namespace
 
     A Linux kernel feature that simulates superuser privileges for non-privileged users. It is used to simulate the kernel feature of the root user to support "Rootless containers".
 
-    User Namespace is a Linux kernel feature that allows non-root users to simulate the privileges of the superuser ("root"), for example, to run containers without having to be a superuser outside the container.
+    user namespace is a Linux kernel feature that allows non-root users to simulate the privileges of the superuser ("root"), for example, to run containers without having to be a superuser outside the container.
 
-    User namespaces are effective in mitigating potential container escape attacks.
+    user namespaces are effective in mitigating potential container escape attacks.
 
     In the context of user namespaces, namespaces are a Linux kernel feature rather than the namespace concept in Kubernetes.
 
@@ -2007,7 +2007,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     A workload is an application running on Kubernetes.
 
-    Various core objects representing different types or parts of workloads include [Deployment](../kpanda/07UserGuide/Workloads/CreateDeploymentByImage.md), [StatefulSet](../kpanda/07UserGuide/Workloads/CreateStatefulSetByImage.md), [DaemonSet](../kpanda/07UserGuide/Workloads/CreateDaemonSetByImage.md), [Job](../kpanda/07UserGuide/Workloads/CreateJobByImage.md), and ReplicaSet.
+    Various core objects representing different types or parts of workloads include [Deployment](../kpanda/user-guide/workloads/create-deployment.md), [StatefulSet](../kpanda/user-guide/workloads/create-statefulset.md), [DaemonSet](../kpanda/user-guide/workloads/create-daemonset.md), [Job](../kpanda/user-guide/workloads/create-job.md), and ReplicaSet.
 
     For example, a workload with a web server and a database may run the database in a StatefulSet, while the web server runs in a Deployment.
 
@@ -2021,7 +2021,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Workspace
 
-    A [workspace](../ghippo/04UserGuide/02Workspace/Workspaces.md) is a resource category that represents a resource hierarchy. A workspace can contain resources such as clusters, [namespaces](../kpanda/07UserGuide/Namespaces/createns.md), and registries. Typically, a workspace corresponds to a project, and different resources can be assigned to each workspace, with different users and user groups assigned.
+    A [workspace](../ghippo/user-guide/workspace/workspace.md) is a resource category that represents a resource hierarchy. A workspace can contain resources such as clusters, [namespaces](../kpanda/user-guide/namespaces/createns.md), and registries. Typically, a workspace corresponds to a project, and different resources can be assigned to each workspace, with different users and groups assigned.
 
 - Worker Cluster
 

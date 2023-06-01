@@ -9,15 +9,15 @@ hide:
 
 1. 在 MinIO 实例列表中，找到想要查看日志的实例，点击实例名称进入详情页面。
 
-    ![image](../images/log01.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/log01.png)
 
 2. 在左侧菜单栏点击`日志查看`。
 
-    ![image](../images/log02.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/log02.png)
 
 3. 根据需要调整日志查询的时间范围和刷新周期，具体可参考[日志查询](../../../insight/user-guide/data-query/log.md)。
 
-    ![image](../images/log04.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/log04.png)
 
 !!! note "常用操作"
 
@@ -27,4 +27,4 @@ hide:
     * 查看日志的上下文：在日志最右侧点击 `查看上下文` 即可
     * 导出日志：在柱状图下方点击`下载`即可
 
-    ![image](../images/log03.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/log03.png)

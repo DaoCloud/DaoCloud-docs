@@ -10,11 +10,11 @@ hide:
 
 1. 从左侧导航栏点击`容器管理`，进入`集群列表`，点击准备安装服务网格的集群名称。
 
-    ![安装采集器](../images/login01.jpg)
+    ![安装采集器](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/login01.jpg)
 
 2. 在`集群概览`页面中点击`控制台`。
 
-    ![安装采集器](../images/login02.jpg)
+    ![安装采集器](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/login02.jpg)
 
 3. 自控制台中逐行输入如下命令：
 
@@ -25,7 +25,7 @@ hide:
     helm upgrade --install --create-namespace -n mspider-system mspider mspider/mspider --version=${VERSION} --set global.imageRegistry=release.daocloud.io/mspider
     ```
 
-    ![安装采集器](../images/install01.jpg)
+    ![安装采集器](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/install01.jpg)
 
     !!! note
 
@@ -33,6 +33,6 @@ hide:
 
 4. 查看命名空间 `mspider-system` 下 Pod 信息，看到相关 Pod 已创建并运行，表示服务网格安装成功。
 
-    ![安装采集器](../images/install02.jpg)
+    ![安装采集器](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/install02.jpg)
 
 下一步：[创建网格](../user-guide/service-mesh/README.md)

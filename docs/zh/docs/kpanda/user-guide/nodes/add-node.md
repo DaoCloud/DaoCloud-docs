@@ -13,17 +13,17 @@ hide:
 
     若`集群角色`中带有`接入集群`的标签，则说明该集群不支持节点扩缩容。
 
-    ![进入集群列表页面](../../images/addnode01.png)
+    ![进入集群列表页面](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/addnode01.png)
 
 2. 在左侧导航栏点击`节点管理`，然后在页面右上角点击`接入节点`。
 
-    ![节点管理](../../images/addnode02.png)
+    ![节点管理](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/addnode02.png)
 
 3. 输入主机名称和节点 IP 并点击`确定`。
 
     点击 `➕ 添加工作节点`可以继续接入更多节点。
 
-    ![节点管理](../../images/addnode03.png)
+    ![节点管理](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/addnode03.png)
 
 !!! note
 

@@ -17,19 +17,19 @@ hide:
 
 在多云实例列表，可以看到工作空间的管理入口：
 
-![管理入口.png](../images/20221128014958.png)
+![管理入口.png](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/20221128014958.png)
 
 ## 工作空间管理界面
 
 通过界面中，我们可以非常方便地看到每个多云实例或者多云命名空间所属的工作空间。
 
-![管理界面](../images/20221128014948.png)
+![管理界面](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/20221128014948.png)
 
 ## 绑定/解绑工作空间
 
 点击多云资源列表的尾部按钮，可以触发绑定/解绑操作。
 
-![绑定/解绑](../images/20221128015020.png)
+![绑定/解绑](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/20221128015020.png)
 
 > 绑定成功后，即可在全局管理模块查看对应的多云资源。
 

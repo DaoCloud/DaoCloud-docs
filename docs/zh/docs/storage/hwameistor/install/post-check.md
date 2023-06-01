@@ -1,8 +1,3 @@
----
-hide:
-  - toc
----
-
 # 安装后检查
 
 下文的示例来自一个 4 节点的 Kubernetes 集群。
@@ -106,18 +101,6 @@ k8s-worker-3-sdc   k8s-worker-3           Unclaimed
 ```
 
 ## （可选）检查 DRBD 的安装
-
-`drbd-adapter` Pod 需要在每个 Worker 节点上运行：
-
-```console
-$ kubectl -n hwameistor get po -l k8s-app=drbd-adapter -o wide
-NAME                 READY   STATUS    RESTARTS   AGE   IP            NODE        
-drbd-adapter-4rndg   1/1     Running   0          9h    10.6.254.22   k8s-worker-2   
-drbd-adapter-bpprj   1/1     Running   0          9h    10.6.254.21   k8s-worker-1
-drbd-adapter-n52w4   1/1     Running   0          9h    10.6.254.24   k8s-worker-4
-drbd-adapter-rs9zk   1/1     Running   0          9h    10.6.254.25   k8s-worker-5
-drbd-adapter-zc882   1/1     Running   0          9h    10.6.254.23   k8s-worker-3
-```
 
 在每个 Worker 节点上，DRBD 的内核模块必须被加载，例如在节点 `k8s-worker-1` 上：
 

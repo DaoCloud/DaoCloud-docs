@@ -10,11 +10,11 @@
 
 1. 进入某一个多云实例后，在左侧导航栏中，点击`策略管理` -> `差异化策略`，点击 `YAML 创建`按钮。
 
-    ![命名空间级别](../images/op001.png)
+    ![命名空间级别](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op001.png)
 
 2. 在 `YAML 创建`页面中，输入正确的 YAML 语句后，点击`确定`。
 
-    ![yaml创建](../images/op002.png)
+    ![yaml创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op002.png)
 
 3. 返回部署策略列表，新创建的默认位于第一个。点击列表右侧的 `⋮`，可以编辑 YAML 和执行删除操作。
 
@@ -64,7 +64,7 @@ spec:
     - 差异化策略：支持添加镜像/运行参数/运行命令/自定义等的差异化配置。
       
 
-    ![表单创建](../images/op003.png)
+    ![表单创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op003.png)
 
 3. 填写完成后点击确定则创建成功，支持对一条差异化策略进行 YAML 更新、表单更新、删除操作。
 
@@ -80,7 +80,7 @@ spec:
 
         === ClusterNames：直接选择指定的集群名称
 
-        ![指定集群名称](../images/op004.png)
+        ![指定集群名称](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op004.png)
 
         === FieldSelector：通过字段来选择集群，包括：
 
@@ -89,11 +89,11 @@ spec:
         - zone（可用区：是区域内的部署区域，例如上海可用区1、上海可用区2······）
         - 还支持从已选集群中排除某指定集群。
 
-        ![从已选集群排除](../images/op005.png)
+        ![从已选集群排除](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op005.png)
 
         === LabelSelector：通过标签来选择集群，支持自定义标签，同时也支持排除指定集群。
 
-        ![标签](../images/op006.png)
+        ![标签](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op006.png)
 
     2. 对选中集群进行镜像的差异化配置
 
@@ -141,7 +141,7 @@ spec:
 
 5. 当选择 LabelsOverrider：标签的差异化配置。
 
-    ![标签差异化](../images/op007.png)
+    ![标签差异化](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op007.png)
 
     1. 选择部署集群
 
@@ -155,7 +155,7 @@ spec:
 
 6. 当选择 AnnotationsOverrider：注解的差异化配置。
 
-    ![注解差异化](../images/op008.png)
+    ![注解差异化](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op008.png)
 
     1. 选择部署集群
 

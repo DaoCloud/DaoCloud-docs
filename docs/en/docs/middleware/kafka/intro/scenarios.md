@@ -1,6 +1,6 @@
 # scenes to be used
 
-Compared with [RabbitMQ](../../rabbitmq/intro/what. md), Kafka message queue is suitable for scenarios such as building real-time data pipelines, streaming data processing, third-party decoupling, and traffic peak shaving and valley removal. It has the characteristics of large-scale, high reliability, high concurrent access, scalability, and full hosting.
+Compared with [RabbitMQ](../../rabbitmq/intro/what.md), Kafka message queue is suitable for Cases such as building real-time data pipelines, streaming data processing, third-party decoupling, and traffic peak shaving and valley removal. It has the characteristics of large-scale, high reliability, high concurrent access, scalability, and full hosting.
 
 ## Comparison with RabbitMQ
 
@@ -16,11 +16,11 @@ As the saying goes, there is no best technology, only the most suitable technolo
 | Service Availability | Using cluster deployment, partition and multi-copy design, using a single agent downtime has no impact on services, and supports linear increase in message capacity | Supports cluster deployment, and the number of cluster agents has various specifications |
 | Others| Message accumulation<br />Flow control: support client and user levels, flow control can be applied to producers or consumers through active settings| Message tracking<br />Message accumulation<br />Multi-tenancy<br /> >Flow control: Flow control is based on the Credit-based algorithm, which is an internal passively triggered protection mechanism and acts on the producer level |
 
-In short, Kafka uses the pull method to consume messages, which has a relatively higher throughput and is suitable for massive data collection and delivery scenarios, such as log collection and centralized analysis.
+In short, Kafka uses the pull method to consume messages, which has a relatively higher throughput and is suitable for massive data collection and delivery cases, such as log collection and centralized analysis.
 
-However, RabbitMQ is developed based on the Erlang language, which is not conducive to secondary development and maintenance. It is suitable for scenarios that have high requirements for routing, load balancing, data consistency, stability and reliability, but not so high requirements for performance and throughput.
+However, RabbitMQ is developed based on the Erlang language, which is not conducive to secondary development and maintenance. It is suitable for use cases that have high requirements for routing, load balancing, data consistency, stability and reliability, but not so high requirements for performance and throughput.
 
-## Typical scenario
+## Typical scene
 
 As a popular message queue middleware, Kafka has an efficient and reliable message asynchronous delivery mechanism, mainly used for data exchange and delivery between different systems, in enterprise solutions, financial payment, telecommunications, e-commerce, social networking, instant messaging, Video, Internet of Things, Internet of Vehicles and many other fields have a wide range of applications.
 
@@ -36,12 +36,12 @@ As a popular message queue middleware, Kafka has an efficient and reliable messa
     When traffic floods such as e-commerce sales promotions suddenly hit, queue services can be used to accumulate and cache orders and other information, and then process them when the downstream system is capable of processing the messages, so as to avoid the downstream subscription system from collapsing due to sudden traffic.
     The message queue provides hundreds of millions of message accumulation capabilities, with a default retention period of 3 days, and the message consumption system can process messages during off-peak hours.
 
-    In addition, in scenarios where traffic surges in a short period of time, such as commodity flash sales and panic buying, in order to prevent back-end applications from being overwhelmed, Kafka message queues can be used to transmit requests between front-end and back-end systems.
+    In addition, in cases where traffic surges in a short period of time, such as commodity flash sales and panic buying, in order to prevent back-end applications from being overwhelmed, Kafka message queues can be used to transmit requests between front-end and back-end systems.
 
 3. Log synchronization
 
     In the design of large-scale business systems, in order to quickly locate problems, track logs across the entire link, and monitor faults in a timely manner, it is usually necessary to centrally analyze and process the logs of each system application.
 
-    The original intention of Kafka design is to cope with a large number of log transmission scenarios. The application synchronizes log messages to the message service in a reliable and asynchronous manner, and then uses other components to analyze the logs in real time or offline. It can also be used to collect key log information for application monitoring.
+    The original intention of Kafka design is to cope with a large number of log transmission cases. The application synchronizes log messages to the message service in a reliable and asynchronous manner, and then uses other components to analyze the logs in real time or offline. It can also be used to collect key log information for application monitoring.
 
     Log synchronization has three key parts: the log collection client, the Kafka message queue, and the backend log processing application.

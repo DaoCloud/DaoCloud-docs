@@ -1,15 +1,15 @@
 ---
 hide:
-  - toc
+  - heel
 ---
 
-# Microservice Governance
+# Microservice governance
 
-Microservice governance mainly refers to Istio-based mesh service traffic governance. The [Service mesh](../../../mspider/intro/WhatismSpider.md) module of DCE 5.0 is integrated in the microservice engine, which supports three ways to govern the mesh through virtual services, target rules, and gateway rules Serve.
+Microservice governance mainly refers to mesh service traffic governance based on Istio. The micro-service engine integrates the [Service Mesh](../../../mspider/intro/what.md) module of DCE 5.0, and supports mesh service governance through virtual service, target rule, and gateway rule.
 
 !!! note
 
-    - This feature is only supported for Mesh-type registries.
-    - Registries of the Kubernetes/Zookeeper/Nacos/Eureka type will not display the `Microservice Governance` operation on the left navigation bar.
+    - Only registries of the Mesh type support this feature.
+    - Kubernetes/Zookeeper/Nacos/Eureka type of registry will not be shown in the left navigation bar `Microservice Governance` operation.
 
-For more information about microservice governance, please refer to [Service Mesh --> Traffic Governance](../../../mspider/03UserGuide/02TrafficGovernance/README.md).
+For more on micro-service governance, see [Service Mesh-->Traffic Governance](../../../mspider/user-guide/traffic-governance/README.md).

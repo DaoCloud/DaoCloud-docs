@@ -1,11 +1,16 @@
-# Basic concept
+---
+hide:
+  - toc
+---
+
+# basic concept
 
 This section lists the proper nouns and terms involved in RabbitMQ, so that you can better understand related concepts and use RabbitMQ message queues.
 
 - Message
 
     Messages are generally divided into two parts: message body and tags. Labels are also called message headers and are mainly used to describe the message. The message body is the content of the message, which is a json body or data.
-    
+
     The message body is opaque, while the message header consists of a series of optional attributes, including routing-key (routing key), priority (priority relative to other messages), delivery-mode (indicating that the message may require persistent storage), etc.
 
     Producers publish messages, consumers consume messages, and producers and consumers have no direct relationship with each other.
@@ -31,7 +36,7 @@ This section lists the proper nouns and terms involved in RabbitMQ, so that you 
     A producer of messages is also a client application that publishes messages to an exchange. That is, the party that publishes a message to the queue. The ultimate purpose of publishing a message is to pass the content of the message to other systems/modules, so that the other party can process the message according to the agreement.
 
 - Consumer
-    
+
     The consumer of the message represents a client application program that obtains messages from the message queue. Consumers subscribe to RabbitMQ queues. When a consumer consumes a message, it only consumes the message body. During message routing, tags are discarded, and only the message body is queued.
 
 - Broker

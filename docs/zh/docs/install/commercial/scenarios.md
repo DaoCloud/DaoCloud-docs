@@ -12,7 +12,7 @@ DCE 5.0 提供了[四种集群角色](../../kpanda/user-guide/clusters/cluster-r
 
 ## 单数据中心单管理集群
 
-![模式示意图](../images/scenario01.png)
+![模式示意图](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/scenario01.png)
 
 前提：准备一台节点，节点的操作系统和架构需与待创建集群的节点保持一致。
 
@@ -24,7 +24,7 @@ DCE 5.0 提供了[四种集群角色](../../kpanda/user-guide/clusters/cluster-r
 
 当用户需要在当前单数据中心内新增一个管理集群用于管理新业务集群的生命周期，此时无需再次使用火种节点的方式进行安装，只需要在已经创建的某个工作集群上安装 kubean Operator 组件即可赋予这个集群管理集群的能力和角色。如下图：
 
-![模式示意图](../images/scenario02.png)
+![模式示意图](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/scenario02.png)
 
 前提：已经完成上一步单数据中心单管理集群的部署。
 
@@ -40,13 +40,13 @@ DCE 5.0 提供了[四种集群角色](../../kpanda/user-guide/clusters/cluster-r
 
 前提：准备一台节点，节点的操作系统和架构需与待创建集群的节点保持一致。
 
-![模式示意图](../images/scenario03.png)
+![模式示意图](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/scenario03.png)
 
 #### 上海数据中心
 
 1. 在火种节点部署安装器，使用安装器安装一个管理集群。
 
-1. 管理集群安装完成后将基于集群配置问价<!--待补充链接-->自动创建一个全局服务集群。
+1. 管理集群安装完成后将基于集群配置文件<!--待补充链接-->自动创建一个全局服务集群。
 
 1. 按需在平台下的容器管理模块上基于管理集群创建一个或多个工作集群。
 

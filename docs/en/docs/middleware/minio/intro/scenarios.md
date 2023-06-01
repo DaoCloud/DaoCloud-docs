@@ -9,7 +9,7 @@ MinIO is an object storage service based on the Apache License v2.0 open source 
 It is compatible with the AWS S3 cloud storage service interface and is very suitable for storing large-capacity unstructured data.
 Examples include pictures, videos, log files, backup data, and container/virtual machine images, while an object file can be of any size, ranging from KB to a maximum of TB.
 
-Common usage scenarios are:
+common use cases are:
 
 - Network disk: massive files
 - Social networking sites: massive pictures

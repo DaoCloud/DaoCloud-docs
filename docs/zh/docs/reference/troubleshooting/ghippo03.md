@@ -4,7 +4,7 @@
 
 MySQL 已就绪，无报错。在安装全局管理后 keycloak 无法启动（> 10 次）。
 
-![img](../images/restart01.png)
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/reference/images/restart01.png)
 
 ## 检查项
 
@@ -14,7 +14,7 @@ MySQL 已就绪，无报错。在安装全局管理后 keycloak 无法启动（>
 
 ## 解决步骤
 
-![img](../images/restart02.png)
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/reference/images/restart02.png)
 
 1. 检查 MySQL 资源占用是否到达 limit 限制
 2. 检查 MySQL 中 database keycloak table 的数量是不是 92

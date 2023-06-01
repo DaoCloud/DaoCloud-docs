@@ -1,6 +1,6 @@
-# 常见问题
+# 安装排障
 
-本页汇总了常见的安装器问题及其解决方案，便于用户快速解决安装过程中遇到的问题。
+本页汇总了常见的安装器问题及其排障方案，便于用户快速解决安装过程中遇到的问题。
 
 ## 火种节点重启后 Podman 无法自动恢复
 
@@ -54,6 +54,32 @@ Podman 相关 issue 地址：https://github.com/containers/podman/issues/13388
 
 ## 在 CentOS 7.6 安装时报错
 
-![FAQ1](images/FAQ1.png)
+![FAQ1](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/FAQ1.png)
 
 在安装全局服务集群的每个节点上执行 `modprobe br_netfilter`，将 `br_netfilter` 加载之后就好了。
+
+## CentOS 环境准备问题
+
+运行 `yum install docker` 时报错：
+
+```text
+Failed to set locale, defaulting to C.UTF-8
+CentOS Linux 8 - AppStream                                                                    93  B/s |  38  B     00:00    
+Error: Failed to download metadata for repo 'appstream': Cannot prepare internal mirrorlist: No URLs in mirrorlist
+```
+
+可以尝试以下述方法来解决：
+
+- 安装 `glibc-langpack-en`
+
+    ```bash
+    sudo yum install -y glibc-langpack-en
+    ```
+
+- 如果问题依然存在，尝试：
+
+    ```bash
+    sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+    sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+    sudo yum update -y
+    ```

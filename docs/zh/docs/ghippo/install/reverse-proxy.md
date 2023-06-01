@@ -1,16 +1,5 @@
 # 自定义 DCE 5.0 反向代理服务器地址
 
-## 前置条件
-
-要求 DCE 5.0 管理集群上的 ghippo-apiserver pod 必须能够访问通该反向代理入口地址，可在管理集群节点上 curl 反向代理入口地址来验证其连通性：
-
-```shell
-# 假设准备设置的反向代理入口地址为 https://demo-alpha.daocloud.io
-curl -k "https://demo-alpha.daocloud.io"
-```
-
-如不满足连通性要求，则下述设置步骤无效
-
 ## 设置步骤
 
 1.  设置环境变量，方便在下文中使用。

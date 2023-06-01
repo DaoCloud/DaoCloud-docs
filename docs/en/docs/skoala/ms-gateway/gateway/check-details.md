@@ -1,40 +1,32 @@
-# View gateway details
+# Gateway overview
 
-You can check the detailed information of the gateway on the `Overview` page, including the name, deployment location, gateway running status, service entry method, health status of the control node/worker node, API, plug-ins and other information.
+You can view the gateway details on `Overview`, including the name, deployment location, gateway running status, service entry mode, controller/working node health status, API, and plug-in information.
 
-## Enter the gateway details page
+## The gateway details page is displayed
 
-On the `Gateway List` page, select the gateway instance to view, click `⋯` and select `Gateway Details` from the drop-down list.
+On the `Gateway List` page, select the name of the target gateway to access the gateway overview page ".
 
+<!--![]()screenshots-->
 
+## Gateway details
 
-## Gateway Details
+Gateway details are divided into basic information, network information, TOP10 popular apis, resource information, resource load, and plug-in information.
 
-Gateway details are divided into: basic information, network information, gateway data, resource status, resource load, plug-in information and other parts.
+Some of the data are described as follows:
 
-The description of some data is as follows:
+- Control/Working Node Instances: Displays the total number and health of node instances. `/` The number on the left represents the number of instances currently online, and the number on the right represents the total number of node instances.
 
-- Number of manual service access: refers to the number of services manually added to the current gateway through the `Add Service` on the `Service List` page.
-- Number of automatic service access: refers to the number of services that are automatically added to the current gateway through the `Managed Service` on the `Service List` page.
-- Domain name management: refers to the number of domain names under the current gateway.
-- Number of APIs: Refers to the number of APIs used in the current gateway.
-- Number of Control/Worker Node Instances: Displays the total number and health of node instances. The number on the left of `/` indicates the number of instances currently online, and the number on the right indicates the total number of node instances.
+    - If the online node `/left no.` is equal to all the online nodes `/right no.`, it is displayed in green.
+    - If the online node `/left no.` is less than all the nodes that should be online `/right no.`, it is displayed in red.
 
-    - If the online node `/left number` is equal to all should be online nodes `/right number`, it will be displayed in green.
-    - If the online node `/number on the left` is smaller than all nodes `/number on the right` that should be online, it will be displayed in red.
+- Top 10 APIs: The top 10 apis in descending order by number of API response codes (2xx, 4xx, and 5xx) are in descending order by default by number of response codes (200). You can view the data of the past 15 minutes, 1 hour, or 24 hours.
+- Resource load: The CPU usage and Memory usage of the gateway control node and the working node in the last 1 hour or the last 3 hours are displayed as line charts.
+- Plug-in information: Displays the start and stop of the current gateway plug-in and other available plug-ins.
 
-- Top 10 APIs: The top 10 APIs are arranged in descending order according to the number of API response codes 2xx, 4xx, and 5xx. By default, they are arranged in descending order according to the number of response codes 200. You can view the data of the past 15 minutes, the past 1 hour, and the past 24 hours.
-- Resource Load: Displays the CPU usage and Memory usage of the gateway control node and worker nodes in the past 1 hour or the past 3 hours in the form of a line graph.
-- Plug-in information: Display the current gateway plug-in startup and stop status and other available plug-ins.
+## Related operation
 
+In addition to viewing the gateway details, you can update the gateway configuration, delete the gateway, and diagnose the gateway on the gateway details page.
 
-## Related operations
-
-In addition to viewing gateway details, you can also perform operations such as updating gateway configuration, deleting gateways, and diagnosing gateways through the gateway details page.
-
-- Update Gateway: Click `Edit` at the top of the page to jump to the page for updating the gateway configuration, see [Update Gateway Configuration](update-gateway.md) for specific steps.
-- Delete gateway: Click `⋯` at the top of the page and select `Delete` to jump to the page for deleting a gateway. For details, see [Delete Gateway](delete-gateway.md).
-- Diagnose Gateway: Click `Diagnose Mode` at the top of the page to enter the gateway debugging mode, see [Diagnose Gateway](diagnose-gateway.md) for specific steps.
-- Access service: Click "Manual/Automatic Service Access Number" in the "Gateway Data" section to enter the service access page. For specific steps, see [Manual Access Service](../service/manual-integrate.md) or [Automatic Management Service](../service/auto-manage.md).
-- Manage APIs: Click "API Quantity" in the "Gateway Data" section to enter the API list, and perform operations such as adding, deleting, modifying, and checking.
-- Domain name management: Click "Domain Name Management" in the "Gateway Data" section to enter the domain name list, and perform operations such as adding, deleting, modifying, and checking.
+- Update gateway: Click `Edit` at the top of the page to jump to the page for updating gateway configuration. For details, see [Update Gateway Settings](update-gateway.md).
+- Delete gateway: Click `⋯` at the top of the page and select `Delete` to go to the page for deleting gateway. For details, see [Delete Gateway](delete-gateway.md).
+<! -- Management API: Click API Quantity in the Gateway Data section to enter the API list. You can add, delete, modify, and query apis. -->

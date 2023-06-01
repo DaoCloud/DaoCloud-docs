@@ -75,18 +75,19 @@
 
 - Pod 吞吐量
 
-    ![pod](../images/cni-perf1.png)
+    ![pod](../../images/network-pod-bandwidth.png)
 
     |测试用例|结论|
     |----|----|
     |Pod 和节点间，位于同节点| macvlan-standalone 吞吐量最大，cilium vxlan 最小|
-    |Pod 和节点间，位于不同节点|caico-ipip、calico-underlay 和 macvlan-standalone 性能较好，calico-vxlan、cilium-vxlan 较差|
+    |Pod 和节点间，位于不同节点|Calico-ipip、calico-underlay 和 macvlan-standalone 性能较好，calico-vxlan、cilium-vxlan 较差|
     |Pod 和 Pod 间，位于同节点|macvlan 性能最好，cilium 次之，calico 三种模式表现相近，性能都较差|
     |Pod 和 Pod 间，位于不同节点|macvlan 性能最好，cilium-vxlan 次之，calico 较差|
 
 - Service 吞吐量
 
-    ![service](../images/cni-perf2.png)
+    ![service](../../images/network-svc-bandwidth.png)
+    
     |测试用例|结论|
     |----|----|
     |Service 和节点间, 位于同节点|macvlan 性能最好，cilium 次之，calico 三种模式表现相近，性能都较差|
@@ -96,7 +97,7 @@
 
 - Pod 长时延
 
-    ![long](../images/cni-perf3.png)
+    ![long](../../images/network-long-connection.png)
 
     |测试用例|结论|
     |----|----|
@@ -107,7 +108,7 @@
 
 - Pod 短链接
 
-    ![short](../images/cni-perf4.png)
+    ![short](../../images/network-short-connection.png)
 
     |测试用例|结论|
     |----|----|

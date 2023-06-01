@@ -17,7 +17,7 @@ ingress-nginx:
       load-balance: ewma
 ```
 
-![set-load-balancer](../../images/ingress-nginx-helm-set-load-balancer.png) 
+![set-load-balancer](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/ingress-nginx-helm-set-load-balancer.png) 
 
 ## 基于域名的流量负载
 

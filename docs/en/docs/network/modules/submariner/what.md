@@ -1,30 +1,30 @@
 ---
-MTPE: TODO
+MTPE: Jeanine-tw
 Revised: Jeanine-tw
 Pics: N/A
-Date: 2023-02-27
+Date: 2023-05-17
 ---
 
 # What is Submariner
 
-As Kubernetes continues to evolve, multi-clustering is becoming more and more popular. Submariner is an open source multicluster networking solution that enables inter-cluster Pod and Service connectivity in a secure way, and is implemented through the Lighthouse component [KMCS](https://). github.com/kubernetes/enhancements/tree/master/keps/sig-multicluster/1645-multi-cluster-services-api) to provide cross-cluster service discovery capabilities.
+As Kubernetes continues to evolve, multicluster architectures are becoming increasingly popular. Multiclusters improve application redundancy, scalability, and fault isolation capabilities, but interconnectivity between clusters is a major issue. Submariner is an open-source multicluster networking solution that securely enables cross-cluster communication between Pods and Services, and leverages the Lighthouse component to enable [KMCS](https://github.com/kubernetes/enhancements/tree/master/keps/sig-multicluster/1645-multicluster-services-api) that provides cross-cluster service discovery capabilities.
 
-The **architecture diagram** is as follows:
+The **architecture**:
 
-
+![submariner](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/submariner.png)
 
 It includes the following **important components**:
 
 - Broker: has no actual Pod and Service, but only provides credentials for subclusters to access the Broker cluster API-Server. Based on this, it enables the exchange of Metadata information between sub-clusters for discovering each other.
-- Gateway Engine: Establishes and maintains tunnels between clusters to open up network communication across clusters.
-- Route Agent: Establishes Vxlan tunnels between Gateway nodes and worker nodes so that cross-cluster traffic on worker nodes is first forwarded to Gateway nodes and then sent from Gateway nodes to the other side via cross-cluster tunnels.
-- Service Discover: Includes the Lighthouse-agent and Lighthouse-dns-server components that implement the KMCS API to provide cross-cluster service discovery.
+- Gateway Engine: establishes and maintains tunnels between clusters to establish network communication across clusters.
+- Route Agent: establishes Vxlan tunnels between Gateway nodes and worker nodes so that cross-cluster traffic on worker nodes is first forwarded to Gateway nodes and then sent from Gateway nodes to the other side via cross-cluster tunnels.
+- Service Discover: includes the Lighthouse-agent and Lighthouse-dns-server components that implement the KMCS API to provide cross-cluster service discovery.
 
-**Optional Components**:
+**Optional components**:
 
-- Globalnet Controller: Supports inter-cluster interconnection of overlapping subnets.
+- Globalnet Controller: supports cross-cluster interconnection of overlapping subnets.
 
-**Important CRD** List:
+**Important CRD** lists:
 
 ```shell
 
@@ -45,13 +45,13 @@ submariners.submariner.io 2023-02-22T13:56:30Z
 - submariners.submariner.io: used by the submariner-operator component to create all Submariner components
 - clusters.submariner.io: stores information about each subcluster, including the subnetting information of its Pods and Services
 - endpoints.submariner.io: basic information about each subcluster gateway node, including private/public IP/tunnel mode/status, etc.
-- serviceexports.multicluster.x-k8s.io: export each Service, corresponding to a serviceexports object, used for service discovery
-- serviceimports.multicluster.x-k8s.io: for each serviceexports object, the Lighthouse-agent creates a corresponding serviceimports object for consumption by other clusters
-- clusterglobalegressips.submariner.io: global CIDR to resolve subcluster subnet overlap when globalnet is enabled
+- serviceexports.multicluster.x-k8s.io: export each Service corresponding to a serviceexports object for service discovery
+- serviceimports.multicluster.x-k8s.io: the Lighthouse-agent creates a corresponding serviceimports object for consumption by other clusters
+- clusterglobalegressips.submariner.io: global CIDR to resolve overlapped subcluster subnets when globalnet is enabled
 
 ## Installation
 
-Installation reference [Submariner installation](install.md)
+Refer to [Submariner installation](install.md)
 
 ## Basic usage
 

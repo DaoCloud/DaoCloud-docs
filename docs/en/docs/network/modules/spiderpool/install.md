@@ -39,7 +39,7 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
     - `namespace`: namespace where SpiderPool is deployed, and the default is `kube-system`. If you change to another Namespace, the interface might not be available.
 
-    - `Global Setting` —> `global image Registry`: set the registry address of all images. The available online registry has been filled in by defaul. If it is a private environment, it can be modified to a private registry address.
+    - `Global Setting` —> `global container registry`: set the registry address of all images. The available online registry has been filled in by defaul. If it is a private environment, it can be modified to a private registry address.
 
     - `Spiderpool Agent Setting` —> `Spiderpool Agent Image` —>  `repository`: set the image name and just keep the default.
 
