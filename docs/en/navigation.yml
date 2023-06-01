@@ -670,7 +670,7 @@ nav:
               - Benefits: storage/benefits.md
               - Features: storage/features.md
               - Release Notes: storage/hwameistor/releasenotes.md
-          - HwameiStor local storage:
+          - HwameiStor storage:
               - Intro: storage/hwameistor/intro/what.md
               - Modules:
                   - Local disk manager: storage/hwameistor/intro/ldm.md

@@ -12,9 +12,9 @@ HwameiStor supports the use of a separate network card for data volume synchroni
 
 The storage NIC planning has been completed in advance, please refer to [Network Card Planning](../../../network/plans/ethplan.md).
 
-## Configuration steps
+## Steps
 
-There are 2 configuration methods:
+You can use two methods to configure it:
 
 1. Configuration via LocalStorage CR
 2. Mark by node annotation
@@ -25,14 +25,10 @@ There are 2 configuration methods:
 
 2. Select `Custom Resources` in the left navigation bar, find `localdisknodes.hwameistor.io`, and click to enter the details.
 
-     ![Ethedit01](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/ethEdit01.jpg)
 
 3. Find the `node to be modified` and click `Edit YAML` to modify `storage-ipv4=172.30.40.12` parameter in `spec`,
     Specify the IP address as the planned network card IP [network card plan](../../../network/plans/ethplan.md).
     
-     ![ethedit02](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/ethedit02.jpg)
-    
-     ![ethedit03](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/editeth03.jpg)
 
 4. Click `Save` when finished, and select the next node to modify.
 

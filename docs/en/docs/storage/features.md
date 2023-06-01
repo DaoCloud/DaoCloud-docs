@@ -2,70 +2,70 @@
 
 ## Cloud Native Unified Management
 
-- Hybrid storage access
+- Hybrid Storage Access
+   
+    Hwameistor provides unified CSI standardized access to enable multiple data access types such as NFS, block storage, and local storage. This feature meets the needs of different scenarios.
 
-     Unified CSI standardized access to realize multiple data access types (NFS, block storage, local storage) access to meet the needs of different scenarios.
+- Dynamic Memory Management
 
-- Dynamic memory management
+    Supports dynamic allocation of storage pool resources, eliminating the need for administrators to manually manage, operate, and maintain data volumes.
 
-     Supports dynamic allocation of storage pool resources, eliminating the need for administrators to manually manage, operate and maintain data volumes.
+- Creation of Multiple Data Volumes
 
-- How to create multiple data volumes
-
-     Data volumes can be dynamically created through storage pools, and snapshots can be used to create data volumes.
+    Data volumes can be dynamically created through storage pools, and snapshots can be used to create data volumes.
 
 ## Cloud Native Local Storage (Hwameistor)
 
-- High performance local volumes
+- High Performance Local Volumes
 
-     No need for external storage devices, IO localization, no network overhead, high-performance local throughput, and support for applications with high performance requirements such as databases and middleware on the cloud.
+    Hwameistor Cloud Native Local Storage eliminates the need for external storage devices and ensures high-performance local throughput through IO localization with no network overhead. It supports applications with high performance requirements such as databases and middleware on the cloud.
 
-- Multiple types of data volumes
+- Multiple Types of Data Volumes
 
-     Supports LVM type and raw disk type data volumes to meet different disk demand scenarios.
+    Hwameistor Cloud Native Local Storage supports LVM type and raw disk type data volumes to meet different disk demand scenarios.
 
-- CSI standards
+- CSI Standards
+   
+    Hwameistor connects to local storage through standard CSI standards, and postures are used uniformly.
 
-     Connect to Hwameistor local storage through standard CSI standards, and use postures uniformly.
+- Active and Standby High Availability
 
-- Active and standby high availability
+    Multi-copy redundancy mechanisms of data volumes ensure high availability of data and improve the reliability of data reading and writing.
 
-     Realize the multi-copy redundancy mechanism of data volumes to ensure high availability of data and improve the reliability of data reading and writing.
+- Data Volume Expansion
 
-- Data volume expansion
+    Business-insensitive expansion is supported, enabling elastic expansion of mounted data volumes during application running.
 
-     Business-insensitive expansion, supports elastic expansion of mounted data volumes during application running.
+## Production Operability and Maintainability
 
-## Production can be operated and maintained
+- Non-Disruptive Upgrade
 
-- Non-disruptive upgrade (does not affect business data)
+    The separation of the data plane and control plane enables zero perception of business data when the control plane upgrades/expands nodes.
 
-     The data plane and the control plane are separated, and when the control plane upgrades/expands nodes, the read and write of business application data has zero perception.
+- Disk Replacement
 
-- change disc
+    Hwameistor supports disk replacement after disk alerts without affecting business applications, ensuring production operability and maintainability.
 
-     It supports disk replacement after disk alerts, ensuring that business applications are not affected, and production can be maintained.
+- One-Click Expulsion of Node Data Volumes
 
-- One-click expulsion of node data volumes
+    Manually expel the data volume of a certain node with one click to realize production operation and maintenance.
 
-     Manually expel the data volume of a certain node with one click to realize production operation and maintenance.
+- Automatic Expulsion of Node Data Volumes
 
-- Automatically expel node data volumes
+    Hwameistor supports automatic detection and eviction of data volumes on nodes through Kubernetes eviction behavior.
 
-     Combined with Kubernetes eviction behavior to automatically detect and evict data volumes on nodes.
+- Single Disk Dimension (LD) Data Migration
 
-- Single disk dimension (LD) data migration
+    Hwameistor supports disk replacement when an early warning occurs, ensuring that all data is migrated without business application data loss.
 
-     It supports disk replacement when an early warning occurs and all data is migrated to ensure that business application data is not lost.
+- Data Migration of Application Load Dimension
 
-- Data migration of application load dimension
-
-     When stateful application rescheduling is supported, data migration is implemented with the application as the dimension, ensuring successful scheduling of business application Pods and data consistency after scheduling.
+    Hwameistor supports data migration with the application as the dimension during stateful application rescheduling, ensuring successful scheduling of business application Pods and data consistency after scheduling.
 
 - Unified Dashboard
 
-     The unified dashboard displays resource usage and distribution, storage resource status, and monitoring alerts.
+    The unified dashboard displays resource usage and distribution, storage resource status, and monitoring alerts.
 
 - Rich Metrics
 
-     All-round data service monitoring and alerting realizes comprehensive monitoring of data disks, storage pools and storage drivers, and comprehensively guarantees data security.
+    Hwameistor provides all-around data service monitoring and alerting, realizing comprehensive monitoring of data disks, storage pools, and storage drivers, and comprehensively guarantees data security.

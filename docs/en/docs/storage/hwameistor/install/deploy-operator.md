@@ -5,35 +5,33 @@ hide:
 
 # Install via Operator
 
-This page introduces how to install Hwameistor through the Hwameistor Operator.
-After the Operator is installed, it will automatically start Hwameistor related components.
+This page explains how to install Hwameistor using the Hwameistor Operator. Once installed, the Operator automatically starts the necessary Hwameistor components.
 
 ## Prerequisites
 
-- Free HDD and SSD disks have been prepared on the nodes to be used
-- Completed the items in [Preparation](prereq.md)
-- If you need to use highly available data volumes, please complete [DRDB installation](drbdinstall.md) in advance
-- If the deployment environment is a production environment, please read [Resource Requirements for Production Environment](proresource.md) in advance
-- If your Kubernetes distribution uses a different `kubelet` directory, please confirm `kubeletRootDir` in advance.
-  For details, please refer to [Customize Kubelet root directory](customized-kubelet.md)
+- Nodes intended for use with Hwameistor must have sufficient free HDD and SSD disks.
+- Ensure that all prerequisites in the [Preparation](prereq.md) documentation are met.
+- If you plan to use highly available data volumes, complete the [DRBD installation](drbdinstall.md) process beforehand.
+- If deploying to a production environment, please review the [Resource Requirements for Production Environment](proresource.md) documentation beforehand.
+- If your Kubernetes distribution uses a different `kubelet` directory, confirm the `kubeletRootDir` parameter beforehand. For more details, refer to [Customize Kubelet root directory](customized-kubelet.md).
 
-## Steps
+## Installation Steps
 
-Please confirm that your cluster has successfully connected to `container management` platform, and then perform the following steps to install Hwameistor.
+Ensure that your cluster has successfully connected to the container management platform before proceeding with the following steps to install Hwameistor.
 
-1. On the left navigation bar, click `Container Management` —> `Cluster List`, and find the name of the cluster where Hwameistor is to be installed.
+1. In the left navigation bar, click `Container Management` -> `Cluster List`, and find the name of the cluster where Hwameistor will be installed.
 
-2. In the left navigation bar, select `Helm Application` -> `Helm chart`, find and click `Hwameistor Operator`.
+2. In the left navigation bar, select `Helm Application` -> `Helm chart`, find and click on `Hwameistor Operator`.
 
      ![click](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/operator1.jpg)
 
-3. In `Version Selection`, select the version you want to install, and click `Install`.
+3. Within the `Version Selection` section, choose the version to install, and then click `Install`.
 
 4. On the installation interface, fill in the required installation parameters.
 
      ![Operator02](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/operator2.jpg)
 
-     **`Value.yaml`** parameters are as follows, the default can not be modified:
+     The parameters in `Value.yaml` are as follows and can't be modified by default:
 
      ```yaml
      global:

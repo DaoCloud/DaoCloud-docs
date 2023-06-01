@@ -8,7 +8,7 @@ This page lists the Release Notes related to Hwameistor, so that you can underst
 
 #### Optimization
 
-- **Optimized** Populate disk owner information during use phase.
+- **Optimized** Populate disk owner information during use phase
 - **Optimized** Merge the properties of the disk itself when the udev event is triggered
 - **Optimized** Add tags to svc
 - **Optimized** Separate disk allocation and disk status update process
@@ -18,7 +18,7 @@ This page lists the Release Notes related to Hwameistor, so that you can underst
 #### Fixes
 
 - **Fixed** LD bound, but no capacity in LSN
-- **Fixed** Metrics port listening issue.
+- **Fixed** Metrics port listening issue
 - **Fixed** May occur `not found` issue
 - **Fixed** UI tag issue in Helm
 
@@ -50,7 +50,7 @@ This page lists the Release Notes related to Hwameistor, so that you can underst
 
 - **Added** disk used capacity [Issue #681](https://github.com/hwameistor/hwameistor/pull/681)
 - **Optimized** Skip scoring mechanism when no available disk is found [Issue #724](https://github.com/hwameistor/hwameistor/pull/724)
-- **SET** DRDB port defaults to 43001 [Issue #723](https://github.com/hwameistor/hwameistor/pull/723)
+- **Set** DRDB port defaults to 43001 [Issue #723](https://github.com/hwameistor/hwameistor/pull/723)
 
 ## 2023-1-30
 
@@ -60,8 +60,8 @@ This page lists the Release Notes related to Hwameistor, so that you can underst
 
 - **Optimized** Chinese documentation
 - **optimized** value.yaml file
-- **UPDATE** Roadmap
-- **Optimization** When the installation fails, set the default failure policy
+- **Optimized** Roadmap
+- **Optimized** When the installation fails, set the default failure policy
 
 ## 2022-12-30
 
