@@ -10,7 +10,7 @@
 helm delete -n hwameistor hwameistor
 ```
 
-## Cleanup
+## Clean up
 
 1. Remove the namespace
 
