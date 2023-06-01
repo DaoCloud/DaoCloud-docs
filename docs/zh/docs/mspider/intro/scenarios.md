@@ -1,6 +1,12 @@
 # 适用场景
 
-此处介绍服务网格适用的具体场景。
+演示视频: **借助服务网格治理传统微服务东西向流量**
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/microservice02.mp4" preload="metadata" poster="../images/west-east.png"></video>
+</div>
+
+服务网格适用的场景如下：
 
 ## 服务流量治理
 

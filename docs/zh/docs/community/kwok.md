@@ -7,7 +7,7 @@ hide:
 
 ![kwok](https://docs.daocloud.io/daocloud-docs-images/docs/community/images/kwok.png){ align=right }
 
-KWOK 是 DaoCloud 自主开源并被 Kubernetes 社区接纳和管理一个开源项目。
+KWOK 是 DaoCloud 自主开源并被 Kubernetes 社区接纳和管理一个开源项目，目前 star 数 1600+，已被苹果、IBM、阿里云、腾讯云等运用于测试等场景。
 
 [KWOK](https://sigs.k8s.io/kwok) 可以在几秒钟内搭建由数千个节点组成的集群。
 在此场景下，所有模拟节点与真实的节点行为一样，所以整体上占用的资源很少，你可以轻松在一台笔记本电脑实现这点。

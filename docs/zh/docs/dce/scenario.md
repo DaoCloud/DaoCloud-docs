@@ -18,6 +18,34 @@ DCE 5.0 集成社区最优秀的众多技术，内置依赖项数以万计，经
 
 通过自主开源的 [Clusterpedia](../community/clusterpedia.md) 统一控制平面管理所有集群及负载信息，兼容标准 Kubernetes 集群接入，突破 Kubernetes API 性能瓶颈，支持上千人同时使用。
 
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/failover-zh.mp4" preload="metadata" poster="../images/hybrid-expansion.png"></video>
+</div>
+
+=== "多云编排"
+
+用户中多集群、多云部署成为常态，希望能完成多云统一发布，并且拥有跨云容灾备份的能力
+
+涉及模块：[容器管理](../kpanda/intro/what.md)、[多云编排](../kairship/intro/what.md)、[容器网络](../network/intro/what.md)、边云协同、信创云
+
+方案优势：创新性技术完成跨云容灾，跨云资源检索并发性能高，结合容器平台的能力适配边缘、信创场景。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/crosscloud-migrate-zh.mp4" preload="metadata" poster="../images/multicloud-convert.png"></video>
+</div>
+
+=== "融合微服务"
+
+用户应用架构决定采用微服务架构或已经采用微服务，希望得到全方位的微服务框架等技术支持及运维兜底能力，或希望引入服务网格技术，并且在技术更迭的过程中实现平滑过度。
+
+涉及模块：[容器管理](../kpanda/intro/what.md)、[容器网络](../network/intro/what.md)、[微服务引擎](../skoala/intro/what.md)、[服务网格](../mspider/intro/what.md)、[可观测性](../insight/intro/what.md)、[应用工作台](../amamba/intro/what.md)
+
+方案优势：无缝融合以 SpringCloud、Dubbo 为代表的初代微服务与 Istio 服务网格代表的新一代微服务技术，完成从开发、部署、接入、对外、观测、运维全生命周期微服务管理能力。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/microservice01.mp4" preload="metadata" poster="../images/south-north.png"></video>
+</div>
+
 === "云边协同"
 
 用户按照云、边、端方案设计边缘协同方案，边缘端为通用算力平台，且边缘端有较强的算力需求。边缘端支持三种部署模式边缘节点、边缘集群模式，边缘集群叠加边缘节点四层架构模式。
@@ -51,14 +79,6 @@ CI/CD 流水线能力自动化完成应用构建、部署工作。创新性引�
 
 方案优势：观测数据统一汇总，一个控制面板就能查询到所有集群及负载观测数据，并且深入支持微服务架构、[服务网格](../mspider/intro/what.md)、网络 EBPF 观测能力。
 
-=== "融合微服务"
-
-用户应用架构决定采用微服务架构或已经采用微服务，希望得到全方位的微服务框架等技术支持及运维兜底能力，或希望引入服务网格技术，并且在技术更迭的过程中实现平滑过度。
-
-涉及模块：[容器管理](../kpanda/intro/what.md)、[容器网络](../network/intro/what.md)、[微服务引擎](../skoala/intro/what.md)、[服务网格](../mspider/intro/what.md)、[可观测性](../insight/intro/what.md)、[应用工作台](../amamba/intro/what.md)
-
-方案优势：无缝融合以 SpringCloud、Dubbo 为代表的初代微服务与 Istio 服务网格代表的新一代微服务技术，完成从开发、部署、接入、对外、观测、运维全生命周期微服务管理能力。
-
 === "数据服务"
 
 用户应用架构依赖主流中间件能力，希望能统一运行维护中间件，并且得到较为专业的关于中间件规划、运维的支持能力。
@@ -75,13 +95,7 @@ CI/CD 流水线能力自动化完成应用构建、部署工作。创新性引�
 
 方案优势：收录来自生态伙伴十大领域的软件产品，面向企业实际业务需求提供完整软件堆栈，可轻松查找、测试、和部署在 DaoCloud Enterprise 上运行的消息中间件、数据中间件、低代码/无代码应用等。
 
-=== "多云编排"
 
-用户中多集群、多云部署成为常态，希望能完成多云统一发布，并且拥有跨云容灾备份的能力
-
-涉及模块：[容器管理](../kpanda/intro/what.md)、[多云编排](../kairship/intro/what.md)、[容器网络](../network/intro/what.md)、边云协同、信创云
-
-方案优势：创新性技术完成跨云容灾，跨云资源检索并发性能高，结合容器平台的能力适配边缘、信创场景。
 
 [下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

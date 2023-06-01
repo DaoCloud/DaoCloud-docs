@@ -19,7 +19,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./cloudtty.md)
 
--   :two:{ .lg .middle } __Clusterpedia__ :simple-cncf: in Sandbox and Landscape
+-   :two:{ .lg .middle } __Clusterpedia__ :simple-cncf: 位列 CNCF Sandbox 和 Landscape
 
     ---
 
@@ -79,7 +79,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./kwok.md)
 
--   :eight:{ .lg .middle } __Merbridge__ :simple-cncf: in Sandbox and Landscape
+-   :eight:{ .lg .middle } __Merbridge__ :simple-cncf: 位列 CNCF Sandbox 和 Landscape
 
     ---
 
@@ -91,11 +91,11 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :nine:{ .lg .middle } __Spiderpool__
+-   :nine:{ .lg .middle } __Spiderpool__  :simple-cncf: 位列 CNCF Landscape
 
     ---
 
-    云原生网络 IPAM 自动化管理软件，建议作为插件用于 Underlay CNI，正在申请 Landscape 和 Sandbox
+    云原生网络 IPAM 自动化管理软件，建议作为插件用于 Underlay CNI，已入选 CNCF Landscape
 
     [:octicons-arrow-right-24: 了解更多](./spiderpool.md)
 
