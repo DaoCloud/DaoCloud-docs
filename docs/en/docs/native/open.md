@@ -101,6 +101,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### C
 
+- [Calico CNI Plugin v3.26.0 Released (CNCF Project)](https://github.com/projectcalico/calico/blob/v3.26.0/release-notes/v3.26.0-release-notes.md)
+
+    Release features: separates calico-node and calico-cni-plugin service accounts, reduces CPU usage on the system with kernel-level route filtering, supports Windows Server 2022, supports OpenStack Yoga.
+
 - [Calico CNI Plugin v3.25.0 release (CNCF project)](https://github.com/projectcalico/calico/blob/v3.25.0/calico/_includes/release-notes/v3.25.0- release-notes.md)
 
     Key new features in this release: Optimization of the eBPF data plane to ensure that Connect Time Load Balancing works in larger, rapidly changing environments; Felix component support for overriding the internal readiness/liveness watchdog timeout; Typha component support for graceful shutdown.
@@ -509,6 +513,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: can access LeaderElection through environment variables, support the OpenTelemetry tracing scheme, support the creation of Grafana dashboard samples of K8GB metrics, and implement a consistent polling load balancing strategy.
 
+- [Karmada Multi-Cloud Multi-Cluster Container Orchestration Platform v1.6.0 Released (CNCF Project)](https://github.com/karmada-io/karmada/releases/tag/v1.6.0)
+
+    Release features: Introduces FederatedHPA API to address the requirement of scaling workloads across clusters; supports automatic migration of unhealthy applications to other available clusters; introduces new declarative deployment method Karmada operator; supports third-party resource interpreters.
+
 - [Karmada multicloud Multicluster Container Orchestration Platform v1.5.0 Released (CNCF Project)](https://github.com/karmada-io/karmada/releases/tag/v1.5.0)
 
     Release features: multiple scheduling groups support, default scheduler compatible with any third-party scheduler, built-in interpreter support for StatefulSet, default interpreter support for CronJob aggregation state, and PodDisruptionBudget.
@@ -795,6 +803,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support for specifying services or hosts to verify authentication headers, support for rate limiting policies, simplify the complexity of HTTP caching by annotating in the OpenAPI specification, and handle all mocking locally by Envoy.
 
+- [Kyverno Cloud Native Policy Engine v1.10.0 Released (CNCF Project)](https://github.com/kyverno/kyverno/releases/tag/v1.10.0)
+
+    Release features: split Kyverno into 3 separate controllers/deployments, support for intra-cluster service calls, support for verifying Notary v2 signatures, update generation and change of existing policies.
+
 - [Kyverno Cloud Native Policy Engine v1.8.0 release (CNCF project)](https://github.com/kyverno/kyverno/releases/tag/v1.8.0)
 
      The main new features of this version: add podSecurity verification sub-rules, integrate Pod Security Admission library; support YAML manifest signature verification; allow generation rules to generate multiple resources in a single rule; support OpenTelemetry; support test generation policies; support Kubernetes 1.25.
@@ -1033,6 +1045,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      [Phlare](https://github.com/grafana/phlare) is a horizontally scalable, highly available, multi-tenant continuous analysis data aggregation system, fully integrated with Grafana, and can be related to observation metrics such as metrics, logs and traces couplet. Installation requires only one binary and no other dependencies.
      Phlare uses object storage for long-term data storage and is compatible with multiple object storage implementations. Its native multi-tenancy and isolation feature set allows multiple independent teams or business units to run a single database.
+
+- [PipeCD becomes a CNCF sandbox project](https://pipecd.dev/blog/2023/05/19/cncf-sandbox-admission/)
+
+    [PipeCD](https://github.com/pipe-cd/pipecd) provides a unified continuous delivery solution for multi-cloud applications, providing a consistent deployment and operational experience for any application.PipeCD is a GitOps tool that enables deployment operations via pr requests on Git.
 
 - [Pisanix: SphereEx Open Source Solution for Database Mesh](https://mp.weixin.qq.com/s/p8bi14s8FWdp7GlqQxKzzw)
 

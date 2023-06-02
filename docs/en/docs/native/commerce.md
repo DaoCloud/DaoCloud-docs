@@ -32,6 +32,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Local clustering reduces the risk of application downtime due to network outages in the cloud. During this time, the application remains available and cluster operations can be performed. EKS manages the availability of the K8s control plane on Outposts when connected to the cloud. The Kubernetes running on the local cluster has the same functions as the EKS on the cloud, and supports automatic deployment of the latest security patches.
 
+- [Azure released public preview of Azure Container Storage](https://azure.microsoft.com/en-us/blog/transforming-containerized-applications-with-azure-container-storage-now-in-preview/)
+
+    Azure Container Storage is a volume management service built for containers that provides a consistent management experience across different storage products, including managed options (powered by Azure Elastic SAN), Azure disks, and temporary disks on container services. Users can easily create and manage block storage volumes for production-scale stateful applications running on Kubernetes.
+
 - [Azure AKS Officially Launches Network Solution Azure CNI Overlay](https://azure.microsoft.com/en-us/blog/announcing-the-general-availability-of-azure-cni-overlay-in-azure-kubernetes-service/)
 
     Azure CNI Overlay helps simplify the management of cluster nodes and Pods in Azure Virtual Network (VNet) subnets by allowing users to place nodes directly in the VNet subnet and Pods to obtain IP addresses from a separate dedicated CIDR. With this, AKS cluster management, routing configuration, and cluster scaling will be greatly simplified.
@@ -329,7 +333,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      Bridging the gap between black-box data for performance testing and white-box data inside the system.
      The integration allows correlating k6's test run data with server-side trace data for root cause analysis; aggregates the collected trace data to generate real-time metrics, helping users narrow the search space and quickly spot anomalous behavior.
 
-### H
+### H, I
 
 - [Harness Launches Fully Managed Gitops-as-a-Service](https://harness.io/blog/generally-available-harness-gitops-as-a-service)
 
@@ -338,6 +342,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Huawei Cloud Releases Distributed Cloud Native Products - Container CCE Turbo and Distributed Cloud Native UCS (Ubiquitous Cloud Native Service)](https://mp.weixin.qq.com/s/Bm_kFuyK3uLaSb4AvcYdmA)
 
      CCE Turbo can accelerate all aspects of computing, network, and scheduling to achieve extreme elasticity, such as helping customers easily cope with business traffic peaks with an elasticity of 3000 pod/min; UCS provides cross-cloud and cross-region cloud-native application management to achieve a consistent experience.
+
+- [Isovalent's eBPF-based cloud-native networking, security and observable platform Isovalent Enterprise for Cilium 1.13 released](https://isovalent.com/blog/post/isovalent-enterprise-1-13/)
+
+    Updates: New FQDN Ingress network policy, users can not hard-code CIDR in the network policy; Support SRv6 L3VPN beta, users can cross-connect Kubernetes worker nodes with other services and Kubernetes clusters via SRv6; New Phantom Service, the LoadBalancer IP address in Service The Phantom Service is added, and the LoadBalancer IP address in the Service can be accessed from all clusters in Cluster Mesh; Cluster Mesh supports overlapping PodCIDR; and supports enabling both endpoint routing and BPF host routing.
 
 ### J, K
 
@@ -507,6 +515,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Rainbond Cloud Native multicloud Application Management Platform Rainbond Enterprise Edition Released](https://mp.weixin.qq.com/s/pmCwyFbcCwXxcO0-rVM5dw)
 
     Rainbond Enterprise Edition has a global observable center for monitoring, debugging, and analyzing infrastructure and application services running in Kubernetes clusters and the rainbond platform. In addition, it also provides solutions for IT business system migration to the localized Cintron environment, supports full-link grayscale release and cluster patrol, built-in WAF firewall and operation audit functions, supports private deployment of application stores, etc.
+
+- [Red Hat OpenShift Container Platform 4.13 Released](https://mp.weixin.qq.com/s/gzxlg2ki1-oJyHKE62fCTA)
+
+    Updates: cert-manager operator provides application certificate lifecycle management; Kubernetes Advanced Cluster Security version 4.0; OpenShift Service on AWS adds hosting control panel; custom metrics autoscaling operator; NUMA aware scheduling and NUMA resource operator; support for compact three-node cluster deployments on AWS, Azure, Google Cloud Platform and vSphere.
 
 - [Red Hat Releases Local Container Management Tool Podman Desktop Release GA Version 1.0](https://developers.redhat.com/articles/2023/05/23/podman-desktop-now-generally-available )
 
@@ -685,6 +697,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      TLS Protect for Kubernetes is part of Control Plane for Machine Identities, Venafi's platform for machine identity management.
      Helps security and platform teams manage cloud-native machine identities such as TLS, mTLS, and SPIFFE in multicloud and multicluster Kubernetes environments, enhancing the observability, control, and automation of machine identity management.
+
+- [Volcano Engine Launches Managed Prometheus Service VMP](https://mp.weixin.qq.com/s/ft_aoz5Kyaurs3lFLQL6Jg)
+
+    Volcano Engine VMP is an out-of-the-box product solution based on the open source Prometheus monitoring engine. VMP uses a single AZ multi-copy, cross-AZ high availability solution, supports access to public cloud VKE and other products, and can scan up to 300 million data samples in a single query. It supports comprehensive Kubernetes cluster monitoring scenarios, custom monitoring scenarios, and open source ecological metrics observation scenarios.
 
 - [Volcano Engine Releases Distributed Cloud Native Platform DCP](https://mp.weixin.qq.com/s/Fz7R8R0keKFEryq8zQKFoA)
 

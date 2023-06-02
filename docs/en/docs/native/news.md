@@ -41,6 +41,14 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     The summit will be held in Shanghai from 9.25 to 9.27. Topics to be submitted can focus on software development lifecycle, platform engineering, O&M+performance, security, data+processing+storage, network+edge+telecom, service mesh, etc. The topic types include four categories: single talk (30 min), double talk (30 min), panel discussion (30 min, 3 to 5 (30 min), panel discussion (30 min, 3-5 speakers), and tutorial (90 min).
 
+- [6.18 2023 Trusted Cloud Technology/Industry Service/User Best Practices Call Launch (6.18 Registration Deadline)](https://mp.weixin.qq.com/s/GHIU1ftOoGbbzytxIJKfGw)
+  
+    This registration is open to all service providers and user companies that have passed and are participating in the Trusted Cloud evaluation, and each of them can declare up to four options in all categories. The scope of the call is divided into three categories: technical best practices, industry service best practices, and user case best practices.
+
+- [6.17 KCD Beijing will be held on 6.17](https://mp.weixin.qq.com/s/ZOTstisfzACFg_Sxt8K90Q)
+  
+    The conference invites cloud-native technology experts from DaoCloud, Microsoft, AliCloud, Huawei Cloud, IBM, Intel, Geberit, Flomesh, VMware and other companies to discuss service grids, supply chain security, observability, machine learning, Kubernetes, eBPF, multi-cluster management technologies and more.
+
 - [June 15 2023 China Cloud Native Middleware User Survey Launched](https://mp.weixin.qq.com/s/ssMAkdrr2tDG6VKrTrh1ZQ)
   
     In order to further investigate the current state of the industry and explore the new features, changes, demands and trends of cloud-native middleware in the new cycle, China ICT has officially launched the 2023 China Cloud-Native Middleware User Survey. The deadline for the survey is June 15, 2023.
@@ -48,6 +56,14 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [June 15 2023 Annual China DevOps Status Survey Excellent Practice Case Collection Officially Launched (6.15 Application Deadline)](https://mp.weixin.qq.com/s/jJIO3T4YB0giW5HAripGEg)
   
     This DevOps Excellent Practice Case Collection is open to all enterprises and institutions in China, and each unit can declare up to 2 cases, which can be jointly declared by A and B units. The call for cases includes 11 areas, which can be declared in any one of them or across them: agile development, continuous delivery, technical operation, continuous testing, application design, security and risk management (DevSecOps), R&D and operation performance metrics, BizDevOps, system and tools, platform engineering, and autonomous controlled tool chain.
+
+- [6.10 EdgeX+OpenVINO Developer Ecology Conference to be held in Shanghai on 6.10](https://mp.weixin.qq.com/s/fPHHx_i36of_ZqiaWKyX-Q)
+  
+    The conference will bring together top experts and innovative companies from two major fields, including Daoq Cloud, Ali Cloud, Intel, Lenovo, VMware, Centric, EMQ, and others, in the areas of edge computing and visual reasoning. Focusing on the latest advances and innovative applications of edge computing and visual reasoning, the conference will discuss how to leverage EdgeX and OpenVINO technologies to drive the development of smart edge for smarter and more efficient edge computing applications.
+
+- [6.6 Cloud Native Industry Development Forum Full Agenda Announced](https://mp.weixin.qq.com/s/sGHXKRqf6JdHAoKP5gjHzg)
+  
+    ICT China-2023 High Level Forum - Cloud Native Industry Development Forum, hosted by the Ministry of Industry and Information Technology and organized by the China Academy of Information and Communication Technology, will focus on the theme of "New Base of Cloud Wisdom and Native, New Journey of Digital and Real Integration". A series of cloud-native technology and service evaluation and excellent case results, white papers, etc. will be released, and the development of cloud-native industry will be interpreted.
 
 - [June 6 ASF Conference Asia 2023 opens Call for Topics (6.6 deadline)](https://apachecon.com/acasia2023/index.html)
   
@@ -92,6 +108,14 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     The scope of the "Cloud Management Products and Services Atlas (2023)" collection includes two categories of solutions and products and services.
     Among them, solutions are divided into industry solutions, intelligent application solutions and general solutions on the cloud; product services are divided into consulting planning, migration implementation, operation management, value-added development and optimization governance.
+
+- [5.26 SRE R&D Operation System Reliability and Continuity Assessment Registration Officially Opened](https://mp.weixin.qq.com/s/FT4lGZzWTqkf6L7mh20AKA)
+  
+    The assessment is completed on site by the engineers of China Academy of Information and Communications Technology (CAIC) and is divided into two major parts: reliability and continuity assurance capability of R&D process and reliability and continuity assurance capability of technology operation process. The assessment results are divided into five levels: initial, robust, optimized, leading and excellent based on the maturity of the capability.
+
+- [5.26 "Cloud Service Stability Operation Capability Standard System Part V Cloud Network Service Stability" First Assessment Officially Opened](https://mp.weixin.qq.com/s/uOFAQ08M65vlIc6FmIyErg)
+  
+    The assessment is oriented to cloud network service providers, and with the help of chaos engineering technology, the stability level of cloud network services provided by service providers is comprehensively assessed from two aspects of network product service stability and special capabilities.
 
 - [May 19 China Academy of Information and Communication Technology Enterprise Digital Development Common Construction and Sharing Platform opened the latest batch of members of the "Digital Business Safety Production Promotion Center" recruitment (5.19 recruitment deadline)](https://mp.weixin.qq.com/s/ZNlJ76nTw4nj_z174Sqg0Q)
   
