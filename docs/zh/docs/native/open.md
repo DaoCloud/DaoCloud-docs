@@ -101,6 +101,10 @@
 
 ### C
 
+- [Calico CNI 插件 v3.26.0 发布（CNCF 项目）](https://github.com/projectcalico/calico/blob/v3.26.0/release-notes/v3.26.0-release-notes.md)
+
+    版本特性：将 calico-node 和 calico-cni-plugin 服务账户分开、利用内核级路由过滤减少在系统的 CPU 使用率、支持 Windows Server 2022、支持 OpenStack Yoga。
+
 - [Calico CNI 插件 v3.25.0 发布（CNCF 项目）](https://github.com/projectcalico/calico/blob/v3.25.0/calico/_includes/release-notes/v3.25.0-release-notes.md)
 
     该版本主要新特性：优化 eBPF 数据平面，确保连接时间负载均衡（Connect Time Load Balancing）在规模更大的、快速变化的环境中工作；Felix 组件支持重写内部 readiness/liveness watchdog 的超时；Typha 组件支持优雅关闭。
@@ -513,6 +517,10 @@
 
     该版本主要新特性：可以通过环境变量访问 LeaderElection、支持 OpenTelemetry 的 tracing 方案、支持创建 K8GB 指标的Grafana 仪表盘样本、实现一致的轮询负载均衡策略。
 
+- [Karmada 多云多集群容器编排平台 v1.6.0 发布（CNCF 项目）](https://github.com/karmada-io/karmada/releases/tag/v1.6.0)
+
+    版本特性：引入 FederatedHPA API，以解决跨集群扩展工作负载的要求；支持自动将不健康的应用程序迁移到其他可用的集群；引入新的声明式部署方式 Karmada operator；支持第三方资源解释器。
+
 - [Karmada 多云多集群容器编排平台 v1.5.0 发布（CNCF 项目）](https://github.com/karmada-io/karmada/releases/tag/v1.5.0)
 
     版本特性：支持多个调度组、默认调度器兼容与任何第三方调度器、内置解释器支持 StatefulSet、默认解释器支持 CronJob 聚合状态以及 Pod 中断预算（PodDisruptionBudget）。
@@ -793,6 +801,10 @@
 
     该版本主要新特性：支持指定服务或主机验证 authentication header、支持速率限制策略、通过在 OpenAPI 规范中注释简化 HTTP 缓存的复杂性、由 Envoy 本地处理所有 mocking。
 
+- [Kyverno 云原生策略引擎 v1.10.0 发布（CNCF 项目）](https://github.com/kyverno/kyverno/releases/tag/v1.10.0)
+
+    版本特性：将 Kyverno 分成 3 个独立的控制器/Deployment、支持集群内服务调用、支持验证 Notary v2 签名、更新生成和变更现有策略。
+
 - [Kyverno 云原生策略引擎 v1.8.0 发布（CNCF 项目）](https://github.com/kyverno/kyverno/releases/tag/v1.8.0)
 
     该版本主要新特性：新增 podSecurity 验证子规则，集成 Pod Security Admission 库；支持 YAML 清单签名验证；允许生成规则在单个规则中生成多个资源；支持OpenTelemetry；支持测试生成策略；支持 Kubernetes 1.25。
@@ -1031,6 +1043,10 @@
 
     [Phlare](https://github.com/grafana/phlare) 是一个水平可扩展、高可用、多租户的持续分析数据聚合系统，与 Grafana 完全集成，可以与指标、日志和追踪等观测指标相关联。安装只需一个二进制文件，无需其他依赖项。
     Phlare 使用对象存储进行长期数据存储，并兼容多种对象存储实现。其原生多租户和隔离功能集允许多个独立团队或业务部门运行一个数据库。
+
+- [PipeCD 成为 CNCF 沙箱项目](https://pipecd.dev/blog/2023/05/19/cncf-sandbox-admission/)
+
+    [PipeCD](https://github.com/pipe-cd/pipecd) 为多云应用提供了一个统一的持续交付解决方案，为任何应用程序提供一致的部署和操作体验.PipeCD 是一个 GitOps 工具，能够通过 Git 上的 pr 请求进行部署操作。
 
 - [Pisanix：SphereEx 开源面向 Database Mesh 的解决方案](https://mp.weixin.qq.com/s/p8bi14s8FWdp7GlqQxKzzw)  
 

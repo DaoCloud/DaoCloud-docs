@@ -32,6 +32,10 @@
 
     本地集群减少了因云端网络中断而导致的应用停机风险。在此期间，应用程序仍然可用，并且可以执行集群操作。当连接到云时，EKS 管理 Outposts 上 K8s 控制平面的可用性。本地集群运行的 Kubernetes 与云上 EKS 功能相同，支持自动部署最新的安全补丁。
 
+- [Azure Container Storage 的公共预览版发布](https://azure.microsoft.com/en-us/blog/transforming-containerized-applications-with-azure-container-storage-now-in-preview/)
+
+    Azure Container Storage 是一种为容器构建的卷管理服务，提供了跨不同存储产品的一致管理体验，包括托管选项（由 Azure Elastic SAN 支持）、Azure 磁盘和容器服务上的临时磁盘。用户可以为生产规模的有状态应用轻松创建和管理块存储卷，并在 Kubernetes 上运行。
+
 - [Azure AKS 正式推出网络方案 Azure CNI Overlay](https://azure.microsoft.com/en-us/blog/announcing-the-general-availability-of-azure-cni-overlay-in-azure-kubernetes-service/)
 
     Azure CNI Overlay 有助于简化 Azure 虚拟网络（VNet）子网中的集群节点和 Pod 管理工作，用户可将节点直接放置在 VNet 子网中，Pod 则可从一个单独的专用 CIDR 处获得 IP 地址。借此，AKS 集群管理、路由的配置以及集群的扩展工作都将得以大幅简化。
@@ -329,7 +333,7 @@
     缩小性能测试的黑盒数据和系统内部白盒数据之间的差距。
     该集成允许关联 k6 的测试运行数据和服务器端的追踪数据，从而进行根本原因分析；汇总收集的追踪数据以生成实时指标，帮助用户缩小搜索空间并快速发现异常行为。
 
-### H
+### H, I
 
 - [Harness 推出全托管 GitOps-as-a-Service](https://harness.io/blog/generally-available-harness-gitops-as-a-service)
 
@@ -339,9 +343,17 @@
 
     CCE Turbo 可通过计算、网络、调度全方位加速，实现极致弹性，如帮助客户以 3000 pod/min 的弹性轻松应对业务流量洪峰；UCS 提供跨云、跨地域的云原生应用管理，实现一致体验。
 
+- [火山引擎推出托管 Prometheus 服务 VMP](https://mp.weixin.qq.com/s/ft_aoz5Kyaurs3lFLQL6Jg)
+
+    火山引擎 VMP 是一套基于开源 Prometheus 监控引擎开发的开箱即用的产品方案。VMP 采用单 AZ 多副本、跨 AZ 高可用的方案，支持接入公有云 VKE 等产品，单条 query 扫描样本可多达 3 亿条数据。支持全面的 Kubernetes 集群监控场景、自定义监控场景以及开源生态指标观测场景。
+
 - [火山引擎发布分布式云原生平台 DCP](https://mp.weixin.qq.com/s/Fz7R8R0keKFEryq8zQKFoA)
 
     [DCP](https://www.volcengine.com/product/dcp) 是面向多云多 Kubernetes 集群场景的企业级云原生统一管理平台，提供多云集群统一管理与运维、应用跨集群分发、统一流量管控等能力。DCP 将火山引擎容器集群、第三方集群、自建集群等统一纳管与运维；基于集群联邦等技术，提供跨集群、跨云的弹性调度能力；提供多集群服务发现、多集群统一入口访问等能力；可基于备份数据进行应用数据恢复及跨集群/云应用迁移。
+
+- [Isovalent 基于 eBPF 的云原生网络、安全和可观测平台 Isovalent Enterprise for Cilium 1.13 发布](https://isovalent.com/blog/post/isovalent-enterprise-1-13/)
+
+    更新内容：新增 FQDN Ingress 网络策略，用户可以不在网络策略中硬编码 CIDR；支持 SRv6 L3VPN 测试版，用户能够通过 SRv6 将 Kubernetes 工作节点与其他服务和 Kubernetes 集群交叉连接；新增 Phantom Service，Service 中的 LoadBalancer IP 地址可以从 Cluster Mesh 的所有集群中访问；Cluster Mesh 支持重叠的 PodCIDR；支持同时启用端点路由和 BPF 主机路由。
 
 ### J, K
 
@@ -521,6 +533,10 @@
 - [Red Hat 发布本地容器管理工具 Podman Desktop 发布 GA 版本 1.0](https://developers.redhat.com/articles/2023/05/23/podman-desktop-now-generally-available)
 
     Podman Desktop 可在本地环境中安装、配置 Podman 并使 Podman 保持最新版本。提供了一个仪表板来与容器、图像、Pod 和卷进行交互，还可以使用 OCI 注册表和网络设置来配置环境。Podman Desktop 支持多种容器引擎，提供将 Pod 连接和部署到 Kubernetes 环境的功能。
+
+- [Red Hat OpenShift Container Platform 4.13 发布](https://mp.weixin.qq.com/s/gzxlg2ki1-oJyHKE62fCTA)
+
+    更新内容：cert-manager operator 提供应用证书生命周期管理；推出 Kubernetes 高级集群安全防护 4.0 版本；OpenShift Service on AWS 增加托管控制面板；推出自定义指标自动缩放 operator；推出 NUMA 感知调度与 NUMA 资源 operator；支持在 AWS、Azure、Google Cloud Platform 和 vSphere 上支持部署紧凑型三节点集群。
 
 - [Red Hat OpenShift 日志管理方案 Logging 5.6 发布](https://docs.openshift.com/container-platform/4.12/logging/cluster-logging-release-notes.html#cluster-logging-release-notes-5-6_cluster-logging-release-notes-v5x)
 
