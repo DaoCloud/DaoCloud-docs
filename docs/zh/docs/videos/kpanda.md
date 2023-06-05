@@ -14,6 +14,7 @@
 - :six: [集群升级](#_5)
 - :seven: [命名空间独享节点](#_6)
 - :eight: [HwameiStor 存储](#hwameistor)
+- :nine: [应用跨集群备份与恢复](#_7)
 
 </div>
 
