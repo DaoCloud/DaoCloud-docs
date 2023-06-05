@@ -23,8 +23,8 @@
 
 #### 升级
 
-- **升级** 升级 @dao-style/extend 至 v1.2.1
-- **升级** 升级 cloudtty API 到 v0.5.2
+- **升级** @dao-style/extend 至 v1.2.1
+- **升级** cloudtty API 到 v0.5.2
 
 ## 2023-04-27
 
