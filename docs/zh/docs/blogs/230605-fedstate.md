@@ -88,95 +88,99 @@ Mongo-Manager：可以理解成 MongoDB 数据面的 Operator，主要负责真�
 设置需要的存储，开启监控，密码配置等，创建成功后，会在状态中展示 MongoDB 在各个成员集群上的部署拓扑以及访问地址。
 这种模式适合联邦集群下，使用控制平面和数据平面的 MongoDB Operator 安装和管理跨集群的 MongoDB 集群的场景。
 
-```yaml
-apiVersion: middleware.fedstate.io/v1alpha1
-kind: MultiCloudMongoDB
-metadata:
-  name: multicloudmongodb-sample
-spec:
-  replicaset: 5 # 副本数
-  export: # 监控配置
-    enable: true
-    resource:
-      limits:
-        cpu: "500m"
-        memory: 512Mi
-      requests:
-        cpu: "200m"
-        memory: 256Mi
-  resource: # 有状态服务资源配置
-    limits:
-      cpu: "2"
-      memory: 512Mi
-    requests:
-      cpu: "1"
-      memory: 512Mi
-  storage: # 存储设置
-    storageClass: managed-nfs-storage
-    storageSize: 1Gi
-  imageSetting: # 镜像设置
-    image: mongo:3.6
-    imagePullPolicy: Always
-    imagePullSecret: "my-image-secret"
-  auth: # 密码设置
-    rootPasswd: "mypasswd"
-  config: # 有状态服务配置设置
-    arbiter: false
-    configRef: "my-custome-configmap"
-  scheduler: # 调度设置，调度模型等配置
-    schedulerMode: Uniform
-  spreadConstraints: # 调度配置，节点选择等相关配置
-    nodeSelect:
-      deploy: mongo
-```
+??? note "点击查看 MultiCloudMongoDB YAML 示例"
+
+    ```yaml
+    apiVersion: middleware.fedstate.io/v1alpha1
+    kind: MultiCloudMongoDB
+    metadata:
+      name: multicloudmongodb-sample
+    spec:
+      replicaset: 5 # 副本数
+      export: # 监控配置
+        enable: true
+        resource:
+          limits:
+            cpu: "500m"
+            memory: 512Mi
+          requests:
+            cpu: "200m"
+            memory: 256Mi
+      resource: # 有状态服务资源配置
+        limits:
+          cpu: "2"
+          memory: 512Mi
+        requests:
+          cpu: "1"
+          memory: 512Mi
+      storage: # 存储设置
+        storageClass: managed-nfs-storage
+        storageSize: 1Gi
+      imageSetting: # 镜像设置
+        image: mongo:3.6
+        imagePullPolicy: Always
+        imagePullSecret: "my-image-secret"
+      auth: # 密码设置
+        rootPasswd: "mypasswd"
+      config: # 有状态服务配置设置
+        arbiter: false
+        configRef: "my-custome-configmap"
+      scheduler: # 调度设置，调度模型等配置
+        schedulerMode: Uniform
+      spreadConstraints: # 调度配置，节点选择等相关配置
+        nodeSelect:
+          deploy: mongo
+    ```
 
 ### 单集群模式下的 MongoDB 集群
 
 创建和管理有状态服务的资源对象，这种模式适合单集群下，使用数据平面的 MongoDB Operator 直接安装和管理 MongoDB 集群的场景。
 
-```yaml
-apiVersion: middleware.fedstate.io/v1alpha1
-kind: MongoDB
-metadata:
-  name: mongodb-sample
-spec:
-  members: 1 # 副本数
-  image: mongo:3.6 # 可以指定某个mongo版本进行部署，默认为mongo 6.0版本
-  imagePullSecret: # 镜像拉取认证信息
-    username: admin
-    password: admin
-  imagePullPolicy: Always # 镜像拉取策略
-  config: # 参考mongo的配置进行填入
-     - name: LOG_LEVEL
-       value: info
-  customConfigRef: mongo-operator-mongo-default-config # 自定义mongo config, 指定cm name, 默认为mongo-default-config
-  rootPassword: "123456" # 指定初始密码
-  resources:
-    limits:
-      cpu: "1"
-      memory: 512Mi
-    requests:
-      cpu: "1"
-      memory: 512Mi
-  persistence: # 持久化参数
-    storage: 1Gi
-    storageClassName: "" # 存储类型，默认为空，使用默认sc
-  metricsExporterSpec:
-    enable: true # 监控是否开启，默认为true
-    resources:
-      limits:
-        cpu: "0.1"
-        memory: 128Mi
-      requests:
-        cpu: "0.1"
-        memory: 128Mi
-  podSpec:
-    nodeSelector: # 节点选择器
-    securityContext: # pod安全上下文
-    topologySpreadConstraints: # 拓扑分布约束
-    affinity: # 亲和和反亲和
-    tolerations: # 污点容忍
-```
+??? note "点击查看 MongoDB YAML 示例"
+
+    ```yaml
+    apiVersion: middleware.fedstate.io/v1alpha1
+    kind: MongoDB
+    metadata:
+      name: mongodb-sample
+    spec:
+      members: 1 # 副本数
+      image: mongo:3.6 # 可以指定某个mongo版本进行部署，默认为mongo 6.0版本
+      imagePullSecret: # 镜像拉取认证信息
+        username: admin
+        password: admin
+      imagePullPolicy: Always # 镜像拉取策略
+      config: # 参考mongo的配置进行填入
+         - name: LOG_LEVEL
+           value: info
+      customConfigRef: mongo-operator-mongo-default-config # 自定义mongo config, 指定cm name, 默认为mongo-default-config
+      rootPassword: "123456" # 指定初始密码
+      resources:
+        limits:
+          cpu: "1"
+          memory: 512Mi
+        requests:
+          cpu: "1"
+          memory: 512Mi
+      persistence: # 持久化参数
+        storage: 1Gi
+        storageClassName: "" # 存储类型，默认为空，使用默认sc
+      metricsExporterSpec:
+        enable: true # 监控是否开启，默认为true
+        resources:
+          limits:
+            cpu: "0.1"
+            memory: 128Mi
+          requests:
+            cpu: "0.1"
+            memory: 128Mi
+      podSpec:
+        nodeSelector: # 节点选择器
+        securityContext: # pod 安全上下文
+        topologySpreadConstraints: # 拓扑分布约束
+        affinity: # 亲和和反亲和
+        tolerations: # 污点容忍
+    ```
 
 ## 案例介绍
 
@@ -210,201 +214,205 @@ spec:
 
 ### 查看控制平面的 MongoDB CR 实例状态
 
-```yaml
-apiVersion: middleware.fedstate.io/v1alpha1
-kind: MultiCloudMongoDB
-metadata:
-  annotations:
-    kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"middleware.fedstate.io/v1alpha1","kind":"MultiCloudMongoDB","metadata":{"annotations":{},"name":"multicloudmongodb-sample","namespace":"federation-mongo-operator"},"spec":{"export":{"enable":false},"imageSetting":{"image":"mongo:3.6","imagePullPolicy":"Always"},"replicaset":5,"resource":{"limits":{"cpu":"2","memory":"512Mi"},"requests":{"cpu":"1","memory":"512Mi"}},"storage":{"storageClass":"managed-nfs-storage","storageSize":"1Gi"}}}
-    schedulerResult: '{"ClusterWithReplicaset":[{"cluster":"10-29-14-21","replicaset":4},{"cluster":"10-29-14-25","replicaset":1}]}'
-  creationTimestamp: "2023-05-25T07:06:26Z"
-  finalizers:
-  - multiCloudMongoDB.finalizers.middleware.fedstate.io
-  generation: 1
-  name: multicloudmongodb-sample
-  namespace: federation-mongo-operator
-  resourceVersion: "72770747"
-  uid: 56c69f88-6c52-4886-a922-9ebf7c156ba5
-spec:
-  auth:
-    rootPasswd: 39nZzksAmXE=
-  config: {}
-  export:
-    resource: {}
-  imageSetting:
-    image: mongo:3.6
-    imagePullPolicy: Always
-    imagePullSecret: {}
-  member: {}
-  replicaset: 5
-  resource:
-    limits:
-      cpu: "2"
-      memory: 512Mi
-    requests:
-      cpu: "1"
-      memory: 512Mi
-  scheduler:
-    schedulerMode: Uniform
-    schedulerName: multicloud-middleware-scheduler
-  spreadConstraints: {}
-  storage:
-    storageClass: managed-nfs-storage
-    storageSize: 1Gi
-status:
-  conditions:
-  - lastTransitionTime: "2023-05-25T07:07:57Z"
-    message: Service Dispatch Successful And Ready For External Service
-    reason: ServerReady
-    status: "True"
-    type: ServerReady
-  - lastTransitionTime: "2023-05-25T07:06:26Z"
-    message: 'The number of member clusters is the same as the number of control plane
-      copies, check, SpecReplicaset: 5'
-    reason: CheckSuccess
-    status: "True"
-    type: ServerCheck
-  - lastTransitionTime: "2023-05-25T07:06:26Z"
-    message: 'Get Scheduler Result From MultiCloudMongoDB Annotations Success (federation-mongo-operator/multicloudmongodb-sample):
-      {"ClusterWithReplicaset":[{"cluster":"10-29-14-21","replicaset":4},{"cluster":"10-29-14-25","replicaset":1}]}'
-    reason: GetSchedulerSuccess
-    status: "True"
-    type: ServerScheduledResult
-  externalAddr: 10.29.5.103:33498,10.29.5.103:38640,10.29.5.103:37661,10.29.5.103:35880,10.29.5.107:38640
-  result:
-  - applied: true
-    cluster: 10-29-14-21
-    connectAddrWithRole:
-      10.29.5.103:33498: SECONDARY
-      10.29.5.103:35880: SECONDARY
-      10.29.5.103:37661: SECONDARY
-      10.29.5.103:38640: PRIMARY
-    currentRevision: multicloudmongodb-sample-666cb9cb8
-    replicasetSpec: 4
-    replicasetStatus: 4
-    state: Running
-  - applied: true
-    cluster: 10-29-14-25
-    connectAddrWithRole:
-      10.29.5.107:38640: SECONDARY
-    currentRevision: multicloudmongodb-sample-866554df84
-    replicasetSpec: 1
-    replicasetStatus: 1
-    state: Running
-  state: Health
-```
+??? note "点击查看 MultiCloudMongoDB YAML 示例"
+
+    ```yaml
+    apiVersion: middleware.fedstate.io/v1alpha1
+    kind: MultiCloudMongoDB
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"middleware.fedstate.io/v1alpha1","kind":"MultiCloudMongoDB","metadata":{"annotations":{},"name":"multicloudmongodb-sample","namespace":"federation-mongo-operator"},"spec":{"export":{"enable":false},"imageSetting":{"image":"mongo:3.6","imagePullPolicy":"Always"},"replicaset":5,"resource":{"limits":{"cpu":"2","memory":"512Mi"},"requests":{"cpu":"1","memory":"512Mi"}},"storage":{"storageClass":"managed-nfs-storage","storageSize":"1Gi"}}}
+        schedulerResult: '{"ClusterWithReplicaset":[{"cluster":"10-29-14-21","replicaset":4},{"cluster":"10-29-14-25","replicaset":1}]}'
+      creationTimestamp: "2023-05-25T07:06:26Z"
+      finalizers:
+      - multiCloudMongoDB.finalizers.middleware.fedstate.io
+      generation: 1
+      name: multicloudmongodb-sample
+      namespace: federation-mongo-operator
+      resourceVersion: "72770747"
+      uid: 56c69f88-6c52-4886-a922-9ebf7c156ba5
+    spec:
+      auth:
+        rootPasswd: 39nZzksAmXE=
+      config: {}
+      export:
+        resource: {}
+      imageSetting:
+        image: mongo:3.6
+        imagePullPolicy: Always
+        imagePullSecret: {}
+      member: {}
+      replicaset: 5
+      resource:
+        limits:
+          cpu: "2"
+          memory: 512Mi
+        requests:
+          cpu: "1"
+          memory: 512Mi
+      scheduler:
+        schedulerMode: Uniform
+        schedulerName: multicloud-middleware-scheduler
+      spreadConstraints: {}
+      storage:
+        storageClass: managed-nfs-storage
+        storageSize: 1Gi
+    status:
+      conditions:
+      - lastTransitionTime: "2023-05-25T07:07:57Z"
+        message: Service Dispatch Successful And Ready For External Service
+        reason: ServerReady
+        status: "True"
+        type: ServerReady
+      - lastTransitionTime: "2023-05-25T07:06:26Z"
+        message: 'The number of member clusters is the same as the number of control plane
+          copies, check, SpecReplicaset: 5'
+        reason: CheckSuccess
+        status: "True"
+        type: ServerCheck
+      - lastTransitionTime: "2023-05-25T07:06:26Z"
+        message: 'Get Scheduler Result From MultiCloudMongoDB Annotations Success (federation-mongo-operator/multicloudmongodb-sample):
+          {"ClusterWithReplicaset":[{"cluster":"10-29-14-21","replicaset":4},{"cluster":"10-29-14-25","replicaset":1}]}'
+        reason: GetSchedulerSuccess
+        status: "True"
+        type: ServerScheduledResult
+      externalAddr: 10.29.5.103:33498,10.29.5.103:38640,10.29.5.103:37661,10.29.5.103:35880,10.29.5.107:38640
+      result:
+      - applied: true
+        cluster: 10-29-14-21
+        connectAddrWithRole:
+          10.29.5.103:33498: SECONDARY
+          10.29.5.103:35880: SECONDARY
+          10.29.5.103:37661: SECONDARY
+          10.29.5.103:38640: PRIMARY
+        currentRevision: multicloudmongodb-sample-666cb9cb8
+        replicasetSpec: 4
+        replicasetStatus: 4
+        state: Running
+      - applied: true
+        cluster: 10-29-14-25
+        connectAddrWithRole:
+         10.29.5.107:38640: SECONDARY
+        currentRevision: multicloudmongodb-sample-866554df84
+        replicasetSpec: 1
+        replicasetStatus: 1
+        state: Running
+      state: Health
+    ```
 
 ### 查看数据平面派生出来的 MongoDB CR 实例
 
-```yaml
-apiVersion: middleware.fedstate.io/v1alpha1
-kind: MongoDB
-metadata:
-  annotations:
-    resourcebinding.karmada.io/name: multicloudmongodb-sample-mongodb
-    resourcebinding.karmada.io/namespace: federation-mongo-operator
-    resourcetemplate.karmada.io/uid: 66c5d156-88f7-445f-b068-15dcb327e452
-  creationTimestamp: "2023-05-25T07:06:26Z"
-  finalizers:
-  - mongodb.finalizers.middleware.fedstate.io
-  generation: 1
-  labels:
-    app.kubernetes.io/instance: multicloudmongodb-sample
-    app.multicloudmongodb.io/vip: 10.29.5.103
-    propagationpolicy.karmada.io/name: multicloudmongodb-sample
-    propagationpolicy.karmada.io/namespace: federation-mongo-operator
-    resourcebinding.karmada.io/key: 8484fbdb6f
-    work.karmada.io/name: multicloudmongodb-sample-8484fbdb6f
-    work.karmada.io/namespace: karmada-es-10-29-14-21
-  name: multicloudmongodb-sample
-  namespace: federation-mongo-operator
-  resourceVersion: "232973338"
-  selfLink: /apis/middleware.fedstate.io/v1alpha1/namespaces/federation-mongo-operator/mongodbs/multicloudmongodb-sample
-  uid: f53b0751-ba6e-4172-b52a-e4ba611b522f
-spec:
-  dbUserSpec: {}
-  image: mongo:3.6
-  imagePullPolicy: IfNotPresent
-  imagePullSecret: {}
-  memberConfigRef: multicloudmongodb-sample-hostconf
-  members: 4
-  metricsExporterSpec:
-    enable: false
-  persistence:
-    storage: 1Gi
-  resources:
-    limits:
-      cpu: "2"
-      memory: 512Mi
-    requests:
-      cpu: "1"
-      memory: 512Mi
-  rootPassword: 39nZzksAmXE=
-  rsInit: true
-  type: ReplicaSet
-status:
-  conditions:
-  - lastTransitionTime: "2023-05-25T07:07:25Z"
-    message: replset-0
-    status: "True"
-    type: rsInit
-  - lastTransitionTime: "2023-05-25T07:07:38Z"
-    message: replset-0
-    status: "True"
-    type: userRoot
-  - lastTransitionTime: "2023-05-25T07:07:38Z"
-    message: replset-0
-    status: "True"
-    type: userClusterAdmin
-  currentInfo:
-    members: 4
-    resources:
-      limits:
-        cpu: "2"
-        memory: 512Mi
-      requests:
-        cpu: "1"
-        memory: 512Mi
-  currentRevision: multicloudmongodb-sample-666cb9cb8
-  replset:
-  - _id: 0
-    health: 1
-    name: 10.29.5.103:33498
-    state: 2
-    stateStr: SECONDARY
-    syncSourceHost: 10.29.5.107:38640
-    syncingTo: 10.29.5.107:38640
-  - _id: 1
-    health: 1
-    name: 10.29.5.103:38640
-    state: 1
-    stateStr: PRIMARY
-    syncSourceHost: ""
-    syncingTo: ""
-  - _id: 2
-    health: 1
-    name: 10.29.5.107:38640
-    state: 2
-    stateStr: SECONDARY
-    syncSourceHost: 10.29.5.103:38640
-    syncingTo: 10.29.5.103:38640
-  - _id: 3
-    health: 1
-    name: 10.29.5.103:37661
-    state: 2
-    stateStr: SECONDARY
-    syncSourceHost: 10.29.5.107:38640
-    syncingTo: 10.29.5.107:38640
-  - _id: 4
-    health: 1
-    name: 10.29.5.103:35880
-    state: 2
-    stateStr: SECONDARY
-    syncSourceHost: 10.29.5.107:38640
-    syncingTo: 10.29.5.107:38640
-  state: Running
-```
+??? note "点击查看 MongoDB YAML 示例"
+
+    ```yaml
+    apiVersion: middleware.fedstate.io/v1alpha1
+    kind: MongoDB
+    metadata:
+      annotations:
+        resourcebinding.karmada.io/name: multicloudmongodb-sample-mongodb
+        resourcebinding.karmada.io/namespace: federation-mongo-operator
+        resourcetemplate.karmada.io/uid: 66c5d156-88f7-445f-b068-15dcb327e452
+      creationTimestamp: "2023-05-25T07:06:26Z"
+      finalizers:
+      - mongodb.finalizers.middleware.fedstate.io
+      generation: 1
+      labels:
+        app.kubernetes.io/instance: multicloudmongodb-sample
+        app.multicloudmongodb.io/vip: 10.29.5.103
+        propagationpolicy.karmada.io/name: multicloudmongodb-sample
+        propagationpolicy.karmada.io/namespace: federation-mongo-operator
+        resourcebinding.karmada.io/key: 8484fbdb6f
+        work.karmada.io/name: multicloudmongodb-sample-8484fbdb6f
+        work.karmada.io/namespace: karmada-es-10-29-14-21
+      name: multicloudmongodb-sample
+      namespace: federation-mongo-operator
+      resourceVersion: "232973338"
+      selfLink: /apis/middleware.fedstate.io/v1alpha1/namespaces/federation-mongo-operator/mongodbs/multicloudmongodb-sample
+      uid: f53b0751-ba6e-4172-b52a-e4ba611b522f
+    spec:
+      dbUserSpec: {}
+      image: mongo:3.6
+      imagePullPolicy: IfNotPresent
+      imagePullSecret: {}
+      memberConfigRef: multicloudmongodb-sample-hostconf
+      members: 4
+      metricsExporterSpec:
+        enable: false
+      persistence:
+        storage: 1Gi
+      resources:
+        limits:
+          cpu: "2"
+          memory: 512Mi
+        requests:
+          cpu: "1"
+          memory: 512Mi
+      rootPassword: 39nZzksAmXE=
+      rsInit: true
+      type: ReplicaSet
+    status:
+      conditions:
+      - lastTransitionTime: "2023-05-25T07:07:25Z"
+        message: replset-0
+        status: "True"
+        type: rsInit
+      - lastTransitionTime: "2023-05-25T07:07:38Z"
+        message: replset-0
+        status: "True"
+        type: userRoot
+      - lastTransitionTime: "2023-05-25T07:07:38Z"
+        message: replset-0
+        status: "True"
+        type: userClusterAdmin
+      currentInfo:
+        members: 4
+        resources:
+          limits:
+            cpu: "2"
+            memory: 512Mi
+          requests:
+            cpu: "1"
+            memory: 512Mi
+      currentRevision: multicloudmongodb-sample-666cb9cb8
+      replset:
+      - _id: 0
+        health: 1
+        name: 10.29.5.103:33498
+        state: 2
+        stateStr: SECONDARY
+        syncSourceHost: 10.29.5.107:38640
+        syncingTo: 10.29.5.107:38640
+      - _id: 1
+        health: 1
+        name: 10.29.5.103:38640
+        state: 1
+        stateStr: PRIMARY
+        syncSourceHost: ""
+        syncingTo: ""
+      - _id: 2
+        health: 1
+        name: 10.29.5.107:38640
+        state: 2
+        stateStr: SECONDARY
+        syncSourceHost: 10.29.5.103:38640
+        syncingTo: 10.29.5.103:38640
+      - _id: 3
+        health: 1
+        name: 10.29.5.103:37661
+        state: 2
+        stateStr: SECONDARY
+        syncSourceHost: 10.29.5.107:38640
+        syncingTo: 10.29.5.107:38640
+      - _id: 4
+        health: 1
+        name: 10.29.5.103:35880
+        state: 2
+        stateStr: SECONDARY
+        syncSourceHost: 10.29.5.107:38640
+        syncingTo: 10.29.5.107:38640
+      state: Running
+    ```
 
 ## 社区
 
