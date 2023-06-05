@@ -35,6 +35,8 @@ DCE 5.0 针对不同的应用场景提供了完善的 Addon，您可以按需下
 | addon-offline-full-package-v0.8.0-arm64.tar.gz | v0.8.0 | [:arrow_right: 下载页](./addon/v0.8.0.md) | 2023-06-01 |
 | addon-offline-full-package-v0.8.0-amd64.tar.gz | v0.8.0 | [:arrow_right: 下载页](./addon/v0.8.0.md) | 2023-06-01 |
 
+[更多历史版本](./addon/history.md)
+
 ## 下载子模块
 
 DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行升级。
