@@ -1,6 +1,31 @@
 # 镜像仓库 Release Notes
 
 本页列出镜像仓库 Release Notes，便于您了解各版本的演进路径和特性变化。
+## 2023-06-05
+
+### v0.8
+
+#### 新功能
+
+- `harbor`类型仓库增加镜像描述信息
+- 镜像空间列表增加实例状态
+- 创建harbor支持随机生成`nodeport`端口号
+- 创建harbor校验`redis`、`postgresql`、`s3`是否重复使用
+- `project`支持镜像回收功能
+
+#### 修复
+
+- 修复离线部署托管`harbor`镜像地址拼接错误
+- 修复`docker registry` 类型`project`列表分页问题
+- 修复`docker registry` 类型`repository`搜索问题
+- 修复机器人账号创建时已存在问题
+
+#### 优化
+
+- 添加job清除逻辑
+- 去除获取临时登陆指令接口中`project`字段
+- 登录指令优化
+- 镜像扫描判断逻辑优化
 
 ## 2023-05-08
 
