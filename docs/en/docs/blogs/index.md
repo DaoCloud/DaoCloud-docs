@@ -7,6 +7,10 @@ hide:
 
 This page summarizes blogs and public account articles related to DCE 5.0 and cloud-native technology, sorted by date by default.
 
+- [20230605 | Cloud Native Federation Middleware - FedState Officially Open Sourced](./230605-fedstate.md)
+
+    In the cloud-native scenario, there has been great development of stateful services. In a multi-cloud/federation environment, how to design and implement the scheduling, deployment, and automated operation and maintenance of stateful services based on multiple clusters, multiple data centers, and hybrid cloud scenarios? The newly open-sourced FedState project is trying to solve such situation problems.
+
 - [2023061| API Server Tracing feature upgraded to beta](./230601-api-server-tracing.md)
 
     In Kubernetes, the API Server is the core component responsible for managing and scheduling all cluster resources. It receives and processes requests from various clients

@@ -777,6 +777,7 @@ nav:
       - Container Registry: videos/kangaroo.md
   - Blogs:
       - Index: blogs/index.md
+      - 202306 | Cloud-native Federation Middleware FedState: blogs/230605-fedstate.md
       - 202306 | API Server Tracing upgraded to beta: blogs/230601-api-server-tracing.md
       - 202305 | Having fun with seccomp profiles on the edge: blogs/230518-seccom.md
       - 202305 | Install K8s (KLTS): blogs/230509-k8s-install.md
