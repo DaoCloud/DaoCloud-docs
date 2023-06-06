@@ -121,6 +121,7 @@ nav:
               - 对 Mysql 应用及数据进行跨集群备份恢复: kpanda/best-practice/backup-mysql-on-nfs.md
               - 如何加固自建工作集群: kpanda/best-practice/hardening-cluster.md
               - 工作集群离线升级指南: kpanda/best-practice/update-offline-cluster.md
+              - 为工作集群添加异构节点: kpanda/best-practice/multi-arch.md
       - 全局管理:
           - 介绍:
               - 什么是全局管理: ghippo/intro/what.md
