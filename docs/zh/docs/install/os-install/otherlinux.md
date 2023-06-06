@@ -1,6 +1,6 @@
 # Other Linux 离线部署 DCE 5.0 商业版
 
-本文将介绍如何在 Other Linux 操作系统上部署 DCE 5.0，v0.7.0及以上支持。
+本文将介绍如何在 Other Linux 操作系统上部署 DCE 5.0，v0.7.0 及以上支持。
 
 Other Linux 本质上是由于 DCE 对某些 Linux 操作系统没有提供安装系统离线包（OS package），需要客户自己去制作。
 
