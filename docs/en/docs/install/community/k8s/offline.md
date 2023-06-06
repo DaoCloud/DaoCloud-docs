@@ -106,8 +106,10 @@ Click [Online Install Community Package](../../../videos/install.md) to watch a 
     
     Now you can use the **default account and password (admin/changeme)** to explore the new DCE 5.0 through the URL prompted on the screen!
 
-    Please write down the prompted URL for your next visit.
+    ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
-        ![安装成功](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
+    !!! success
 
-5. Before fully explore the features of DCE 5.0, you need to apply for a license. The Community package is provided for free. All you need to do is [apply for a free license](../../../dce/license0.md).
+        Please write down the prompted URL for your next visit.
+
+5. Before fully explore the features of DCE 5.0, you need to apply for a license. The Community package is provided for free. All you need to do is to [apply for a free license](../../../dce/license0.md).
