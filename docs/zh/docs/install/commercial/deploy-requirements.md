@@ -10,8 +10,8 @@
 |          | Redhat 8.X          | 4.18.0-305.el8.x86_64                      | 操作系统推荐 Redhat 8.4<br />[离线安装 DCE 5.0 商业版](start-install.md) |
 |          | Redhat 7.X          | 3.10.0-1160.e17.x86                        | 操作系统推荐 Redhat 7.9<br />[离线安装 DCE 5.0 商业版](start-install.md) |
 |          | Ubuntu 20.04        | 5.10.104                                   | [离线安装 DCE 5.0 商业版](start-install.md) |
-|          | 统信UOS V20 （1020a） | 5.4.0-125-generic                          | [UOS V20 (1020a) 操作系统上部署 DCE 5.0 商业版](../os-install/uos-v20-install-dce5.0.md) |
-| | 统信UOS V20 （1050d） | 4.19.0-server-amd64 | [Other Linux 离线部署 DCE 5.0 商业版](../os-install/otherlinux.md) |
+|          | 统信 UOS V20 （1020a） | 5.4.0-125-generic                          | [UOS V20 (1020a) 操作系统上部署 DCE 5.0 商业版](../os-install/uos-v20-install-dce5.0.md) |
+| | 统信 UOS V20 （1050d） | 4.19.0-server-amd64 | [Other Linux 离线部署 DCE 5.0 商业版](../os-install/otherlinux.md) |
 |          | openEuler 22.03     | 5.10.0-60.18.0.50.oe2203.x86_64            | [离线安装 DCE 5.0 商业版](start-install.md) |
 | | Oracle Linux R9 U1 | 5.15.0-3.60.5.1.el9uek.x86_64 | [Oracle Linux R9 U1 操作系统上部署 DCE 5.0 商业版](../os-install/oracleLinux-install-dce5.0.md) |
 | ARM 64   | 银河麒麟 OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64            | [离线安装 DCE 5.0 商业版](start-install.md) |
