@@ -1,6 +1,6 @@
 # Oracle Linux R9 U1 操作系统上部署 DCE 5.0 商业版
 
-本文将介绍如何在 Oracle Linux R9 U1 操作系统上部署 DCE 5.0，v0.8.0及以上支持。
+本文将介绍如何在 Oracle Linux R9 U1 操作系统上部署 DCE 5.0，v0.8.0 及以上支持。
 
 ## 前提条件
 
