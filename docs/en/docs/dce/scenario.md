@@ -3,9 +3,9 @@ hide:
    - toc
 ---
 
-# Applicable scenarios
+# Use cases
 
-DCE 5.0 integrates many of the best technologies in the community, and has tens of thousands of built-in dependencies. After massive commissioning, it has been melted into one furnace, creating a new generation of PaaS service platform, which is easy to use in various usage scenarios.
+DCE 5.0 integrates many of the best technologies in the community, and has tens of thousands of built-in dependencies. After massive commissioning, it has been melted into one furnace, creating a new generation of PaaS service platform, which is easy to use in various  use cases.
 
 === "Production-Grade Container Management"
 
@@ -38,7 +38,7 @@ Solution advantages: Northbound supports domestic chips and servers, and southbo
 
 Users adopt cloud-native technology on a large scale, and expect standardization and process-based integration with the DevOps concept to promote cloud-native technology to a wider range of application project groups.
 
-Modules involved: [Container Management](../kpanda/intro/what.md), [App Workbench](../amamba/intro/what.md), [Container Network](../network/intro/what-is-net.md), container registry, Edge Cloud Collaboration, Xinchuang Cloud
+Modules involved: [Container Management](../kpanda/intro/what.md), [Workbench](../amamba/intro/what.md), [Container Network](../network/intro/what-is-net.md), container registry, Edge Cloud Collaboration, Xinchuang Cloud
 
 Solution advantages: support hierarchical multi-tenant system, seamlessly adapt to user organization structure planning resource allocation.
 CI/CD pipeline capability automates application construction and deployment. Innovatively introduce GitOps and progressive delivery capability systems to help applications perform more detailed delivery management capabilities.
@@ -55,7 +55,7 @@ Advantages of the solution: unified collection of observation data, one control 
 
 The user's application architecture decides to adopt the microservice architecture or has already adopted microservices, and hopes to obtain technical support such as a full range of microservice frameworks and comprehensive operation and maintenance capabilities, or hopes to introduce service mesh technology and achieve smooth transition in the process of technology change.
 
-Modules involved: [Container Management](../kpanda/intro/what.md), [Container Network](../network/intro/what-is-net.md), [Microservice Engine](../skoala/intro/what.md), [Service Mesh](../mspider/intro/what.md), [Observability](../insight/intro/what.md), [App Workbench](../amamba/intro/what.md)
+Modules involved: [Container Management](../kpanda/intro/what.md), [Container Network](../network/intro/what-is-net.md), [Microservice Engine](../skoala/intro/what.md), [Service Mesh](../mspider/intro/what.md), [Observability](../insight/intro/what.md), [Workbench](../amamba/intro/what.md)
 
 Solution advantages: seamlessly integrate the first-generation microservices represented by SpringCloud and Dubbo with the new-generation microservice technology represented by Istio service mesh, and complete the microservice management of the whole lifecycle from development, deployment, access, external, observation, operation and maintenance ability.
 
@@ -65,23 +65,23 @@ The user application architecture relies on mainstream middleware capabilities, 
 
 Modules involved: [Container Management](../kpanda/intro/what.md), [Container Network](../network/intro/what-is-net.md), [Container Local Storage](../storage/what.md), [cloud-native middleware](../middleware/what.md), Edge Cloud Synergy, Xinchuang Cloud
 
-Solution advantages: cloud-native local storage capabilities designed for stateful applications, unified platform management cloud-native middleware, providing middleware management capabilities for the full lifecycle of multi-tenancy, deployment, observation, backup, operation and maintenance, combined with the container platform Ability to adapt to edge and innovation scenarios.
+Solution advantages: cloud-native local storage capabilities designed for stateful applications, unified platform management cloud-native middleware, providing middleware management capabilities for the full lifecycle of multi-tenancy, deployment, observation, backup, operation and maintenance, combined with the container platform Ability to adapt to edge and innovation use cases.
 
 === "App Store"
 
-Users hope to obtain out-of-the-box cloud-native application software capabilities for exclusive scenarios.
+Users hope to obtain out-of-the-box cloud-native application software capabilities for exclusive use cases.
 
 Modules involved: [Container Management](../kpanda/intro/what.md), App Store
 
 Solution advantages: Include software products from ten major fields of ecological partners, provide a complete software stack for the actual business needs of enterprises, and easily find, test, and deploy message middleware, data middleware, low-code/no code application etc.
 
-=== "Multi-Cloud Orchestration"
+=== "Multicloud Management"
 
-Multi-cluster and multi-cloud deployments have become the norm among users, and they hope to complete multi-cloud unified release and have the ability of cross-cloud disaster recovery and backup
+Multicluster and multicloud deployments have become the norm among users, and they hope to complete multicloud unified release and have the ability of cross-cloud disaster recovery and backup
 
-Involved modules: [Container Management](../kpanda/intro/what.md), [Multi-Cloud Orchestration](../kairship/intro/what.md), [Container Network](../network/intro/what-is-net.md), Edge Cloud Synergy, Xinchuang Cloud
+Involved modules: [Container Management](../kpanda/intro/what.md), [Multicloud Management](../kairship/intro/what.md), [Container Network](../network/intro/what-is-net.md), Edge Cloud Synergy, Xinchuang Cloud
 
-Advantages of the solution: Innovative technology completes cross-cloud disaster recovery, high concurrency performance of cross-cloud resource retrieval, combined with container platform capabilities to adapt to edge and credit creation scenarios.
+Advantages of the solution: Innovative technology completes cross-cloud disaster recovery, high concurrency performance of cross-cloud resource retrieval, combined with container platform capabilities to adapt to edge and credit creation use cases.
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }

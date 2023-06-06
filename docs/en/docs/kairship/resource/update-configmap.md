@@ -1,8 +1,8 @@
-# Update multi-cloud configuration items
+# Update multicloud configuration items
 
 Currently, two update methods are provided: editing YAML and form update.
 
-1. After entering a multi-cloud instance, in the left navigation bar, click `Resource Management` -> `Multi-cloud configuration items`, click `···` to edit YAML or update configuration items.
+1. After entering a multicloud instance, in the left navigation bar, click `Resource Management` -> `Multicloud configuration items`, click `···` to edit YAML or update configuration items.
 
     <!--screenshot-->
 
@@ -10,7 +10,7 @@ Currently, two update methods are provided: editing YAML and form update.
 
     <!--screenshot-->
 
-3. Click Update to update the configuration items through the form, but the load name and multi-cloud namespace cannot be updated.
+3. Click Update to update the configuration items through the form, but the load name and multicloud namespace cannot be updated.
 
     <!--screenshot-->
 

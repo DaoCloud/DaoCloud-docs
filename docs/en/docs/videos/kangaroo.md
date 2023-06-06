@@ -18,9 +18,9 @@ See the [registry integration](../kangaroo/integrate/integrate.md) documentation
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-harbor.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 </div>
 
-## Hosted Harbor
+## managed Harbor
 
-See the [Hosted Harbor](../kangaroo/hosted/harbor.md) documentation page.
+See the [managed Harbor](../kangaroo/hosted/harbor.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/harbor.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>

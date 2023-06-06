@@ -1,6 +1,6 @@
 # UOS V20 (1020a) 操作系统上部署 DCE 5.0 商业版
 
-本文将介绍如何在 UOS V20(1020a) 操作系统上部署 DCE 5.0。
+本文将介绍如何在 UOS V20(1020a) 操作系统上部署 DCE 5.0，v0.6.0 及以上支持。
 
 ## 前提条件
 
@@ -33,7 +33,7 @@
     tar -xvf offline-v0.6.1-amd64.tar
     ```
 
-3. 下载 UnionTech Server V20 1020a ISO 镜像。
+3. 下载 UnionTech Server V20 1020a ISO 镜像文件。
 
     ```bash
     curl -LO https://cdimage-download.chinauos.com/uniontechos-server-20-1020a-amd64.iso
@@ -65,11 +65,15 @@
     metadata:
     spec:
       clusterName: my-cluster
+      loadBalancer:
+        type: metallb
+        istioGatewayVip: 172.30.41.XXX/32
+        insightVip: 172.30.41.XXX/32
       masterNodes:
         - nodeName: "g-master1"
-          ip: 10.5.14.XX
+          ip: 10.5.14.XXX
           ansibleUser: "root"
-          ansiblePass: "XXXX"
+          ansiblePass: "******"
       fullPackagePath: "/home/offline"
       osRepos:
         type: builtin

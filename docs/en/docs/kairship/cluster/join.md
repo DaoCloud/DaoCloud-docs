@@ -3,11 +3,11 @@ hide:
   - toc
 ---
 
-# access cluster
+# Join cluster
 
-After creating a multi-cloud instance, you need to connect to the working cluster first.
+After creating a multicloud instance, you need to connect to the working cluster first.
 
-1. Click `Working Cluster Management` on the left navigation bar to enter the multi-cloud cluster management page. The list includes all working clusters in the current multi-cloud instance. If you want to connect to other working clusters, click `Access Cluster` in the upper right corner ` button. If you need to connect the network between the working clusters, please create a grid instance on the service grid page and manage the following working clusters; for details, please [view document](https://docs.daocloud.io/mspider/ user-guide/multicluster/cluster-interconnect/).
+1. Click `Working Cluster Management` on the left navigation bar to enter the multicloud cluster management page. The list includes all working clusters in the current multicloud instance. If you want to connect to other working clusters, click `Join Cluster` in the upper right corner ` button. If you need to connect the network between the working clusters, please create a grid instance on the service mesh page and manage the following working clusters; for details, please [view document](https://docs.daocloud.io/mspider/ user-guide/multicluster/cluster-interconnect/).
 
     <!--screenshot-->
 

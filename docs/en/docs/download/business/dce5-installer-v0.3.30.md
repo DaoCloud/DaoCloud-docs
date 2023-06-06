@@ -2,9 +2,9 @@
 date: 2023-01-03
 ---
 
-# DCE 5.0 Commercial Release v0.3.30
+# DCE 5.0 Enterprise Package v0.3.30
 
-This page can download the offline installation package and verification file of DCE 5.0 Commercial release.
+This page can download the offline installation package and verification file of DCE 5.0 Enterprise Package.
 
 ## Download
 
@@ -65,20 +65,20 @@ After successfully verifying the offline package,
      tar -zxvf offline-kylin-v10sp2-v0.3.30-arm64.tar
      ```
 
-- For installation, please refer to [Commercial release installation process](../../install/commercial/start-install.md)
+- For installation, please refer to [Enterprise Package installation process](../../install/commercial/start-install.md)
 - After successful installation, please contact us for authorization: email info@daocloud.io or call 400 002 6898
 
 ## Modules
 
-The DCE 5.0 Commercial Release includes the following modules, which are plug-and-play on-demand to meet various application scenarios:
+The DCE 5.0 Enterprise Package includes the following modules, which are plug-and-play on-demand to meet various use cases:
 
 | Modules | Introduction | What's New |
 | -------------------- | ---------------------------- ----------------------------------------------- | ----- -------------------------------------------------- ------ |
 | Global Management | Responsible for user access control, permissions, enterprise space, audit logs, personalized appearance settings, etc. | [v0.13](../../ghippo/intro/release-notes.md#v013) |
 | Container Management | Manage K8s core functions such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [v0.14](../../kpanda/intro/release-notes.md#v014) |
-| Observability | Provide rich graphic information such as dashboards, scene monitoring, data query, and alarms | [v0.13](../../insight/intro/releasenote.md#v013) |
-| App Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [v0.12](../../amamba/intro/release-notes.md#v012) |
-| Multi-cloud orchestration | Centralized management of application orchestration of multi-cloud, hybrid cloud, and cross-cloud resources, with multi-cloud disaster recovery and fault recovery capabilities | [v0.5](../../kairship/intro/release-notes.md# v05) |
+| Observability | Provide rich graphic information such as dashboards, scene monitoring, data query, and alerts | [v0.13](../../insight/intro/releasenote.md#v013) |
+| Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [v0.12](../../amamba/intro/release-notes.md#v012) |
+| Multicloud Management | Centralized management of application orchestration of multicloud, hybrid cloud, and cross-cloud resources, with multicloud disaster recovery and fault recovery capabilities | [v0.5](../../kairship/intro/release-notes.md# v05) |
 | Microservice Engine | Provide registration discovery, service governance, configuration management, microservice gateway and other governance capabilities | [v0.16](../../skoala/intro/release-notes.md#v016) |
 | Service Mesh | A next-generation service mesh for cloud-native applications based on Istio open source technology | [v0.12](../../mspider/intro/release-notes.md#v012) |
 | middleware Elasticsearch | current preferred full-text search engine | [v0.4](../../middleware/elasticsearch/release-notes.md#v04) |

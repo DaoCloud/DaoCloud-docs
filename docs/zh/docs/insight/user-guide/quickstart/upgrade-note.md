@@ -27,7 +27,7 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/VictoriaMetrics
 
 ### 从 v0.16.x（或更低版本）升级到 v0.17.x
 
-在 v0.17.x 版本中将 kube-prometheus-stack chart 版本从 41.9.1 升级至 45.28.1, 其中使用的 CRD 也存在一些字段的升级，如 servicemonitor 的 `attachMetadata` field，因此需要在升级 insight agent 前执行如下命令：
+在 v0.17.x 版本中将 kube-prometheus-stack chart 版本从 41.9.1 升级至 45.28.1, 其中使用的 CRD 也存在一些字段的升级，如 servicemonitor 的 `attachMetadata` 字段，因此需要在升级 insight agent 前执行如下命令：
 
 ```bash
 kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.65.1/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml --force-conflicts

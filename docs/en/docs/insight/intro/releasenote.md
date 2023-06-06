@@ -224,7 +224,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 - Updated the default tracking sample strategy in the global OTel column
 - Change sumo (for audit logs) exporter port 8080 to 80
 - Use go-migrate to manage database migration versions
-- Fix multi-cluster and multi-namespace filters not working properly in graph API
+- Fix multicluster and multi-namespace filters not working properly in graph API
 - Support for building ARM images
 
 #### Install

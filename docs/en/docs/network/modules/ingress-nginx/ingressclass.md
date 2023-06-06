@@ -7,9 +7,9 @@ Date: 2023-02-08
 
 # IngressClass
 
-IngressClass represents the class of the Ingress instance that can be referenced in the Ingress spec when an Ingress rule is created. The main applicable scenarios are as follows.
+IngressClass represents the class of the Ingress instance that can be referenced in the Ingress spec when an Ingress rule is created. The main cases are as follows.
 
-**Applicable scenarios**
+**Use cases**
 
 * Need both internal Ingress and external Ingress in the same cluster
 * Different teams deploy different applications in the same cluster with different Ingress instances in the same namespace

@@ -15,4 +15,4 @@ Enter the name of the cluster in the pop-up window, and click `Confirm to remove
 
 !!! note
 
-    After the working cluster is removed, the cluster workload will no longer be managed by the multi-cloud orchestrator, and all the multi-cloud workloads currently distributed to this cluster will be automatically loaded on other managed clusters.
+    After the working cluster is removed, the cluster workload will no longer be managed by the multicloud orchestrator, and all the multicloud workloads currently distributed to this cluster will be automatically loaded on other managed clusters.

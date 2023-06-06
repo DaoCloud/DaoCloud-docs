@@ -8,7 +8,7 @@ DCE 5.0 supports the creation of three scopes of custom roles:
 
 ## Create a platform role
 
-A platform role refers to a role that can manipulate features related to a certain module of DCE 5.0 (such as container management, microservice engine, multi-cloud orchestration, service mesh, Container registry, App Workbench, and global management, etc.).
+A platform role refers to a role that can manipulate features related to a certain module of DCE 5.0 (such as container management, microservice engine, Multicloud Management, service mesh, Container registry, Workbench, and global management, etc.).
 
 1. From the left navigation bar, click `Global Management` -> `Access Control` -> `Roles`, and click `Create Custom Role`.
 
@@ -22,11 +22,11 @@ A platform role refers to a role that can manipulate features related to a certa
 
      
 
-1. After the platform role is successfully created, you can go to [User](user.md)/[User Group](group.md) to authorize to add users and user groups for this role.
+1. After the platform role is successfully created, you can go to [User](user.md)/[group](group.md) to authorize to add users and groups for this role.
 
 ## Create a workspace role
 
-A workspace role refers to a role that can manipulate features related to a module (such as container management, microservice engine, multi-cloud orchestration, service mesh, container registry, App Workbench, and global management) according to the workspace.
+A workspace role refers to a role that can manipulate features related to a module (such as container management, microservice engine, Multicloud Management, service mesh, container registry, Workbench, and global management) according to the workspace.
 
 1. From the left navigation bar, click `Global Management` -> `Access Control` -> `Roles`, and click `Create Custom Role`.
 
@@ -44,7 +44,7 @@ A workspace role refers to a role that can manipulate features related to a modu
 
 ## Create Folder Role
 
-The folder role refers to the ability to manipulate the relevant features of a module of DCE 5.0 (such as container management, microservice engine, multi-cloud orchestration, service mesh, container registry, App Workbench and global management, etc.) according to folders and subfolders. Role.
+The folder role refers to the ability to manipulate the relevant features of a module of DCE 5.0 (such as container management, microservice engine, Multicloud Management, service mesh, container registry, Workbench and global management, etc.) according to folders and subfolders. Role.
 
 1. From the left navigation bar, click `Global Management` -> `Access Control` -> `Roles`, and click `Create Custom Role`.
 

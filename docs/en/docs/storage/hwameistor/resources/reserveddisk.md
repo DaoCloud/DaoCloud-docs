@@ -1,6 +1,6 @@
 # reserve disk
 
-This chapter introduces how to reserve a disk on the interface. The usage scenarios of this function are as follows:
+This chapter introduces how to reserve a disk on the interface. the use cases of this function are as follows:
 
 The operation and maintenance administrator has disk planning requirements, and needs to reserve some disks not to be used by Hwameistor, and needs to perform the Reserved operation by himself
 

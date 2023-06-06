@@ -28,7 +28,7 @@
     ![角色授权](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/role03.png)
 
 支持此模式的子模块：用户与访问控制（IAM）、审计日志（Audit）、容器管理（Kpanda）
-同时，平台的管理员角色（Admin）也可通过以上方式进行授权
+同时，平台的管理员角色（admin）也可通过以上方式进行授权
 
 ![全局管理模式](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/permission1.png)
 

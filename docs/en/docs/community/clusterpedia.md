@@ -1,10 +1,10 @@
 # Clusterpedia, The Encyclopedia of Kubernetes Clusters
 
-This name Clusterpedia is inspired by Wikipedia. It is an encyclopedia of clusters to synchronize, search for, and easily control multi-cluster resources.
+This name Clusterpedia is inspired by Wikipedia. It is an encyclopedia of clusters to synchronize, search for, and easily control multicluster resources.
 
 Clusterpedia can synchronize resources with multiple clusters.
 It also provides more powerful search features on the basis of compatibility with Kubernetes OpenAPI.
-It helps you effectively get any multi-cluster resource that you are looking for in a quick and easy way.
+It helps you effectively get any multicluster resource that you are looking for in a quick and easy way.
 
 !!! info
 

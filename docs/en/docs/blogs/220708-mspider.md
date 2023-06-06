@@ -49,7 +49,7 @@ Flexibly add, modify, and delete specified HTTP header fields, including operati
 
 **Fault injection**
 
-Construct fault scenarios by injecting interruption failures and delayed failures into selected services without modifying any code, enabling fault testing.
+Construct fault cases by injecting interruption failures and delayed failures into selected services without modifying any code, enabling fault testing.
 
 ## End-to-End Transparent Security
 
@@ -67,9 +67,9 @@ In the face of these needs, a service mesh provides a comprehensive security sol
 
 The service mesh provides transparent security capabilities to users in the form of secure infrastructure, enabling code that does not involve security issues to run securely, allowing people who are not familiar with security to develop and operate secure services, and providing service access security without modifying business code. The application service mesh provides a transparent distributed security layer and provides a bottom-level secure communication channel, managing authentication, authorization, and encryption for service communication, and providing communication security from Pod to Pod and service to service. Developers only need to focus on application-level security on this security infrastructure layer.
 
-**Multi-cluster security**
+**Multicluster security**
 
-In a multi-cluster scenario, the service mesh provides global service access security. Multiple clusters share a set of root certificates, distribute key pairs and certificates to data plane service instances, and regularly replace key certificates and revoke them as needed. When accessing services between services, the data plane proxy of the mesh will proxy local services and peers for mutual authentication and channel encryption. Here, the two-way authentication of the service can come from two different clusters, achieving transparent end-to-end two-way authentication across clusters.
+In a multicluster scenario, the service mesh provides global service access security. Multiple clusters share a set of root certificates, distribute key pairs and certificates to data plane service instances, and regularly replace key certificates and revoke them as needed. When accessing services between services, the data plane proxy of the mesh will proxy local services and peers for mutual authentication and channel encryption. Here, the two-way authentication of the service can come from two different clusters, achieving transparent end-to-end two-way authentication across clusters.
 
 **Fine-grained authorization**
 
@@ -85,7 +85,7 @@ The service mesh generates detailed telemetry for all service communication in t
 
 **Non-intrusive monitoring data collection** 
 
-In complex application scenarios, the access topology, call chain, and monitoring between services are necessary means for managing the overall operation of services and locating and delineating service access exceptions. An important capability of service mesh technology is to provide non-intrusive collection of these monitoring data in an application, allowing users to focus on their own business development without the need for additional attention to monitoring data generation.
+In complex cases, the access topology, call chain, and monitoring between services are necessary means for managing the overall operation of services and locating and delineating service access exceptions. An important capability of service mesh technology is to provide non-intrusive collection of these monitoring data in an application, allowing users to focus on their own business development without the need for additional attention to monitoring data generation.
 
 **Rich performance monitoring capabilities** 
 

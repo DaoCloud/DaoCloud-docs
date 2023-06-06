@@ -7,6 +7,17 @@ hide:
 
 本页汇总 DCE 5.0 及云原生技术相关的博客和公众号文章，默认按时间排序。
 
+- [20230605 | 云原生联邦中间件--FedState 正式开源上线](./230605-fedstate.md)
+
+    在云原生的场景下，有状态的服务，也有了很大的发展。在多云/联邦的环境下，
+    怎么设计和实现基于多集群、多数据中心以及混合云场景下，有状态服务的编排、调度、部署和自动化运维等能力？
+    最新开源的 FedState 项目正是在尝试解决这样的场景问题。
+
+- [20230601 | API Server Tracing 特性进阶至 Beta](./230601-api-server-tracing.md)
+
+    在 Kubernetes 中，API Server 是管理和调度所有集群资源的核心组件，它接收和处理来自各种客户端的请求，
+    并将它们转化为底层资源操作。因此，API Server 的稳定性和可观测性对 Kubernetes 的整体健康状态至关重要。
+
 - [20230515 | 边缘场景玩转 seccomp 配置文件](./230518-seccom.md)
 
     Security Profiles Operator (SPO) 是一个功能丰富的 Kubernetes Operator，

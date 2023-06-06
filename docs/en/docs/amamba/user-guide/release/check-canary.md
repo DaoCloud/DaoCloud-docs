@@ -1,12 +1,12 @@
 # View canary release tasks
 
-After creating the grayscale publishing task and associating the workload, modify the image of the workload, resource configuration, startup parameters, etc. so that when the container group restarts, the grayscale publishing task update version will be automatically triggered, and traffic scheduling will be performed according to the defined publishing rules.
+After creating the grayscale publishing task and associating the workload, modify the image of the workload, resource configuration, startup parameters, etc. so that when the pod restarts, the grayscale publishing task update version will be automatically triggered, and traffic scheduling will be performed according to the defined publishing rules.
 
 This article mainly introduces related operations involved in viewing canary release tasks, such as viewing task details, updating version, updating release task, rolling back version, etc.
 
 ## View task details
 
-1. Enter the `App Workbench` module, click `Grayscale Release` in the left navigation bar, and click the name of the target task.
+1. Enter the `Workbench` module, click `Grayscale Release` in the left navigation bar, and click the name of the target task.
 
     <!--![]()screenshots-->
 

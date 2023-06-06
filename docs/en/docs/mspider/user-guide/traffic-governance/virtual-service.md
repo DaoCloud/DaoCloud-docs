@@ -117,4 +117,6 @@ Service mesh provides two creation methods: wizard and YAML. The specific steps 
 
 5. On the right side of the list, click `⋮` in the operation column to perform more operations through the pop-up menu.
 
-    
+## Reference
+
+- [What is virtual service](../../../reference/basic-knowledge/virtual-service.md)

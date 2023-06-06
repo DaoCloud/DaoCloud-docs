@@ -29,10 +29,10 @@ But there is still a lot of room for improvement. Therefore, no matter in the pa
 What resources are being wasted?
 
 In order to optimize resources, it is necessary to identify which businesses allocate excess resources.
-Resource usage is usually measured by indicators such as CPU, memory, disk, and incoming and outgoing bandwidth.
-General public cloud or private cloud vendors will provide ready-made solutions for the collection and viewing of these indicators.
+Resource usage is usually measured by metrics such as CPU, memory, disk, and incoming and outgoing bandwidth.
+General public cloud or private cloud vendors will provide ready-made solutions for the collection and viewing of these metrics.
 
-By viewing historical indicators, you can quickly understand the actual utilization rate and periodicity of resources. On this basis, fine-grained resource utilization optimization can be carried out.
+By viewing historical metrics, you can quickly understand the actual utilization rate and periodicity of resources. On this basis, fine-grained resource utilization optimization can be carried out.
 
 ### 1. Reasonably set Request and Limit
 
@@ -116,7 +116,7 @@ Not only does it not need to apply for too many resources in advance to launch t
 Kubernetes staggered peak scheduling is a policy that can be implemented by setting a Pod scheduling policy to control the number of jobs that run at the same time.
 The goal is to avoid running a large number of jobs when the system load is too high, and to allow more jobs to run during times when the system load is lower.
 This approach makes efficient use of computing resources and balances the load among the nodes in the cluster.
-You can use the Kubernetes scheduler or a third-party scheduler to implement off-peak scheduling. Peak shift scheduling is usually used in the following scenarios:
+You can use the Kubernetes scheduler or a third-party scheduler to implement off-peak scheduling. Peak shift scheduling is usually used in the following cases:
 
 - Run more jobs during times of low system load to improve resource utilization.
 - Avoid running a large number of jobs when the system load is too high, so as not to cause system paralysis.
@@ -154,7 +154,7 @@ It can effectively utilize the resources in the cluster while ensuring the avail
 
 Kubernetes can improve resource utilization in several ways. By setting resource requests and limits for Pods, using auto-scaling, staggered peak scheduling strategies, and hybrid deployment techniques,
 It can effectively optimize the computing resources of the Kubernetes cluster, better meet business needs and save costs.
-Of course, in practical applications, we can also perform more optimizations according to specific business scenarios.
+Of course, in practical applications, we can also perform more optimizations according to specific business cases.
 In general, to improve the resource utilization of Kubernetes, it is only necessary to conduct a comprehensive analysis of the running mode and resource usage of the application.
 And using appropriate tools and methods to improve resource utilization can make the Kubernetes cluster run more efficiently.
 

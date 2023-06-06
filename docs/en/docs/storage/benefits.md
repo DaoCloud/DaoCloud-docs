@@ -5,27 +5,27 @@ hide:
 
 # Benefits
 
-## Hwameistor cloud-native local storage
+## Hwameistor Cloud-Native Local Storage
 
-**IO localization**
+**IO Localization**
 
-100% local throughput, no network overhead, Pod starts on the replica node when the node fails, and uses the replica data volume for local IO read and write.
+Hwameistor cloud-native local storage ensures 100% local throughput, with no network overhead. In case of node failure, the Pod starts on the replica node and uses the replica data volume for local IO read and write.
 
 **High Performance, High Availability**
 
-- 100% IO localization to achieve high-performance local throughput
-- 2 copies of data volume redundant backup to ensure high availability of data
+- Achieve high-performance local throughput through 100% IO localization
+- Ensure high data availability through two copies of data volume redundant backup
 
-**Linear expansion**
+**Linear Expansion**
 
-- Independent node unit, minimum 1 node, unlimited number of extensions
-- Separation of control plane and data plane, node expansion, does not affect business application data I/O
+- Independent node unit, with a minimum of one node and an unlimited number of extensions
+- Separation of control plane and data plane, node expansion does not affect business application data I/O
 
-**Small CPU and memory overhead**
+**Small CPU and Memory Overhead**
 
-IO localization, the same IO read and write, CPU is stable, no large fluctuations, memory resource overhead is small
+Hwameistor cloud-native local storage ensures that CPU is stable with no large fluctuations in the same IO read and write, while memory resource overhead is minimal due to IO localization.
 
-**Production can be operated and maintained**
+**Operational Manageability**
 
-- Support node, disk, data volume group (VG) dimension migration
-- Support operation and maintenance behaviors such as disk replacement
+- Supports node, disk, and data volume group (VG) migration.
+- Supports operation and maintenance behaviors such as disk replacement.

@@ -47,7 +47,7 @@ EOF
 sudo sysctl --system
 ```
 
-For more details, please refer to the [Network Plugin Requirements](https://kubernetes.io/zh-cn/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/#network-plugin-requirements) page.
+For more details, please refer to the [Network Plugin Requirements](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/#network-plugin-requirements) page.
 
 ### Check required ports
 
@@ -68,7 +68,7 @@ For more details, please refer to the [Network Plugin Requirements](https://kube
 | TCP | Inbound | 10250 | Kubelet API | kubelet itself, control plane components |
 | TCP | Inbound | 30000-32767 | NodePort Service | All Components |
 
-The above is the default port range of [NodePort service](https://kubernetes.io/zh-cn/docs/concepts/services-networking/service/).
+The above is the default port range of [NodePort service](https://kubernetes.io/docs/concepts/services-networking/service/).
 
 Any port number marked with * can be overridden, so you need to make sure the custom port is open.
 
@@ -531,7 +531,7 @@ Usage: ./install.sh [OPTIONS]
 ## More ways to install
 
 - [Nanny deployment three-node K8s cluster](./230405-step-by-step-dce5.md#k8s)
-- [Using kubeadm to create a cluster](https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
-- [Install K8s with kOps](https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kops/)
-- [Install K8s using Kubespray](https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubespray/)
+- [Using kubeadm to create a cluster](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
+- [Install K8s with kOps](https://kubernetes.io/docs/setup/production-environment/tools/kops/)
+- [Install K8s using Kubespray](https://kubernetes.io/docs/setup/production-environment/tools/kubespray/)
 

@@ -1,14 +1,15 @@
 # Other Linux 离线部署 DCE 5.0 商业版
 
-本文将介绍如何在 Other Linux 操作系统上部署 DCE 5.0。
+本文将介绍如何在 Other Linux 操作系统上部署 DCE 5.0，v0.7.0 及以上支持。
 
 Other Linux 本质上是由于 DCE 对某些 Linux 操作系统没有提供安装系统离线包（OS package），需要客户自己去制作。
 
 ## 已验证操作系统
 
-| 架构  | 发行版                       | 所属系统族   | 推荐内核            |
+| 架构  | 操作系统                       | 所属系统族   | 推荐内核            |
 | ----- | ---------------------------- | ------------ | ------------------- |
-| AMD64 | UnionTech OS Server 20 1050d | Debian 10.10 | 4.19.0-server-amd64 |
+| AMD64 | 统信 UOS V20 (1050d) | Debian | 4.19.0-server-amd64 |
+| AMD64 | AnolisOS 8.8 GA  | Redhat | 5.10.134-13.an8.x86_64 |
 
 备注：没有验证的操作系统，可以尝试通过本文档的教程尝试部署。
 
@@ -126,7 +127,7 @@ Other Linux 本质上是由于 DCE 对某些 Linux 操作系统没有提供安�
 
 5. 设置[集群配置文件 clusterConfig.yaml](../commercial/cluster-config.md)，可以在离线包 `offline/sample` 下获取该文件并按需修改。
 
-    以 `UnionTech OS Server 20 1050d` 为例，参考配置为：
+    === "UnionTech OS Server 20 1050d"
 
     ```yaml
     apiVersion: provision.daocloud.io/v1alpha3
@@ -136,13 +137,13 @@ Other Linux 本质上是由于 DCE 对某些 Linux 操作系统没有提供安�
       clusterName: test-cluster
       loadBalancer:
         type: metallb
-        istioGatewayVip: 172.30.41.179/32
-        insightVip: 172.30.41.178/32
+        istioGatewayVip: 172.30.41.XXX/32
+        insightVip: 172.30.41.XXX/32
       masterNodes:
         - nodeName: "g-master1"
           ip: 172.30.41.xxx
           ansibleUser: "root"
-          ansiblePass: "dangerous"
+          ansiblePass: "******"
       fullPackagePath: "/root/offline"
       osRepos:
         type: none
@@ -154,6 +155,36 @@ Other Linux 本质上是由于 DCE 对某些 Linux 操作系统没有提供安�
       allow_unsupported_distribution_setup: true
         debian_os_family_extensions:
           - "UnionTech OS Server 20\" "
+    ```
+
+    === "AnolisOS 8.8 GA"
+
+    ```yaml
+    apiVersion: provision.daocloud.io/v1alpha3
+    kind: ClusterConfig
+    metadata:
+    spec:
+      clusterName: test-cluster
+      loadBalancer:
+        type: metallb
+        istioGatewayVip: 172.30.41.XXX/32
+        insightVip: 172.30.41.XXX/32
+      masterNodes:
+        - nodeName: "g-master1"
+          ip: 172.30.41.xxx
+          ansibleUser: "root"
+          ansiblePass: "******"
+      fullPackagePath: "/root/offline"
+      osRepos:
+        type: none
+      imagesAndCharts:
+        type: builtin
+      binaries:
+        type: builtin
+      kubeanConfig: |-
+      allow_unsupported_distribution_setup: true
+        redhat_os_family_extensions:
+          - "Anolis OS"
     ```
 
     配置参数说明：

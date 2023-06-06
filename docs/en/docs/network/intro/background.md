@@ -7,12 +7,12 @@ hide:
 
 **Multicloud hybrid cloud**
 
-Cloud-native application scenarios are gradually scaled up, cloud-based applications continue to surge, and the scenarios are becoming more and more complex.
-In order to cope with scenarios such as high availability, disaster recovery, and business traffic surge, users gradually adopt multi-cluster and cross-cloud deployments. During the implementation of the solution, problems such as application distribution, application connectivity, and platform management have gradually become prominent.
+Cloud-native use cases are gradually scaled up, cloud-based applications continue to surge, and the use cases are becoming more and more complex.
+In order to cope with Cases such as high availability, disaster recovery, and business traffic surge, users gradually adopt multicluster and cross-cloud deployments. During the implementation of the solution, problems such as application distribution, application connectivity, and platform management have gradually become prominent.
 
 Among them, the network is the key to the implementation of the overall plan, and the main problems are as follows:
 
-- The demand for multi-cluster management increases, and the underlying infrastructure is diversified, so different public clouds, private clouds, and cross-regional environments need to be considered. Therefore, in the scenario of a heterogeneous environment, the interconnection of heterogeneous cluster networks is required, and the ability to discover public services across clusters is required.
+- The demand for multicluster management increases, and the underlying infrastructure is diversified, so different public clouds, private clouds, and cross-regional environments need to be considered. Therefore, in the scenario of a heterogeneous environment, the interconnection of heterogeneous cluster networks is required, and the ability to discover public services across clusters is required.
 
 - To ensure high availability, microservice application loads are mutually active and standby in different clusters. In this scenario, it is also necessary to ensure network connectivity.
 

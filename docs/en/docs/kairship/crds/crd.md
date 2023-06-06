@@ -3,11 +3,11 @@ hide:
   - toc
 ---
 
-# Manage multi-cloud custom resources
+# Manage multicloud custom resources
 
-Follow the steps below to create a multi-cloud custom resource (CRD).
+Follow the steps below to create a multicloud custom resource (CRD).
 
-1. In the left navigation bar, click `Multi-Cloud Custom Resources` to enter the custom resource page, and click the `YAML Create` button in the upper right corner.
+1. In the left navigation bar, click `multicloud Custom Resources` to enter the custom resource page, and click the `YAML Create` button in the upper right corner.
 
     <!--screenshot-->
 

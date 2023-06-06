@@ -72,14 +72,14 @@ Release date: 2022-11-28
 - **IMPROVED** Password validation adjusted to MCamel medium password strength
 - **NEW** Configure Bucket when creating MinIO cluster
 - **Add** public field when returning list or details
-- **NEW** Return to alarm list
+- **NEW** Return to alert list
 - **Add** Validation Service annotation
 - **Fix** When creating MinIO, the password check is adjusted from between to length
 - **Improved** Improve and optimize the copy function
 - **IMPROVED** instance details - access settings, remove cluster IPv4
 - **Improved** Middleware password verification difficulty adjustment
 - **New** minio supports built-in BUCKET creation when creating
-- **NEW** Docking alarm capability
+- **NEW** Docking alert capability
 - **New** Added the function of judging whether sc supports capacity expansion and prompting in advance
 - **Optimize** Optimize the prompt logic of installation environment detection & adjust its style
 - **Optimize** middleware style walkthrough optimization

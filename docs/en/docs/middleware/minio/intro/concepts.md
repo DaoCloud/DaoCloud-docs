@@ -90,9 +90,9 @@ While retaining the ability to accommodate various applications (S3 Select, MinS
 
 <!--screenshot-->
 
-## Multi-Cloud Gateway
+## multicloud Gateway
 
-All enterprises are adopting a multi-cloud strategy, and this includes private clouds as well.
+All enterprises are adopting a multicloud strategy, and this includes private clouds as well.
 Therefore, your bare-metal virtualized containers and public cloud services (including non-S3 providers like Google, Microsoft, and Alibaba) must look identical.
 While modern applications are highly portable, the data that powers them is not.
 

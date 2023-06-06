@@ -1,71 +1,70 @@
 # Preparation
 
-This page describes the preparations necessary for deploying DCE 5.0.
+This page explains the preparation required for deploying DCE 5.0 Enterprise package.
 
-## Machine Preparation
+## Host Requirements
 
-### all-in-one mode
+### All-in-One Mode
 
-| **Quantity** | **Server Role** | **Server Use**                                    | **CPU Count** | **Memory Capacity** | **System Disk** | **Unpartitioned Disk** |
-| ------------ | --------------- | ------------------------------------------------- | ------------- | ------------------ | --------------- | ---------------------- |
-| 1            | all in one      | image repository, chart museum, global cluster itself | 16 core       | 32G                | 200G            | 400G                   |
+Refer to [All-in-One Mode](./deploy-arch.md#all-in-one).
 
-Refer to [all-in-one mode](./deploy-arch.md#all-in-one)
+| **Number** | **Server Role** | **Server Purpose**                               | **CPU Cores** | **Memory** | **System Disk** | **Unpartitioned Disk** |
+| ---------- | --------------- | ------------------------------------------------ | ------------- | ---------- | -------------- | ---------------------- |
+| 1          | all in one      | image repository, chart museum, global cluster | 16            | 32G        | 200G           | 400G                   |
 
-### 4 node mode
+### 4-Nodes Mode
 
-| **Quantity** | **Server Role** | **Server Use**                                                                 | **CPU Count** | **Memory Capacity** | **System Disk** | **Unpartitioned Disk** |
-| ------------ | --------------- | ------------------------------------------------------------------------------ | ------------- | ------------------ | --------------- | ---------------------- |
-| 1            | Bootstrapping Node        | 1. Executes installation deployment program<br />2. Runs the image repository and chart museum required by the platform | 2             | 4G                 | 200G            | -                      |
-| 3            | Master          | 1. Runs DCE 5.0 components<br /> 2. Runs Kubernetes system components                   | 8             | 16G                | 100G            | 200G                   |
+Refer to [4 Nodes Mode](./deploy-arch.md#4).
 
-Refer to [4 node mode](./deploy-arch.md#4)
+| **Number** | **Server Role** | **Server Purpose**                                             | **CPU Cores** | **Memory** | **System Disk** | **Unpartitioned Disk** |
+| ---------- | --------------- | -------------------------------------------------------------- | ------------- | ---------- | -------------- | ---------------------- |
+| 1          | Bootstraping Node       | 1. Run installation and deployment procesures<br />2. Host image registry and chart museum required by DCE 5.0 | 2             | 4G         | 200G           | -                      |
+| 3          | Controller Node          | 1. Run DCE 5.0 submodules<br />2. Run Kubernetes system components | 8             | 16G        | 100G           | 200G                   |
 
-### 7 node mode
+### 7-Nodes Mode
 
-| **Quantity** | **Server Role** | **Server Use**                                                                 | **CPU Count** | **Memory Capacity** | **System Disk** | **Unpartitioned Disk** |
-| ------------ | --------------- | ------------------------------------------------------------------------------ | ------------- | ------------------ | --------------- | ---------------------- |
-| 1            | Bootstrapping Node        | 1. Executes installation deployment program<br />2. Runs the image repository and chart museum required by the platform | 2             | 4G                 | 200G            | -                      |
-| 3            | Master          | 1. Runs DCE 5.0 components<br /> 2. Runs Kubernetes system components                   | 8             | 16G                | 100G            | 200G                   |
-| 3            | Worker          | Runs log-related components alone                                           | 8             | 16G                | 100G            | -                      |
+Refer to [7 Nodes Mode](./deploy-arch.md#7-1-6).
 
-Refer to [7 node mode](./deploy-arch.md#7-1-6)
+| **Number** | **Server Role** | **Server Purpose**                                             | **CPU Cores** | **Memory** | **System Disk** | **Unpartitioned Disk** |
+| ---------- | --------------- | -------------------------------------------------------------- | ------------- | ---------- | -------------- | ---------------------- |
+| 1          | Bootstraping Node       | 1. Run installation and deployment procedures<br />2. Host image registry and chart museum required by DCE 5.0 | 2             | 4G         | 200G           | -                      |
+| 3          | Controller Node          | 1. Run DCE 5.0 submodules<br />2. Run Kubernetes system components   | 8             | 16G        | 100G           | 200G
 
-## Pre-check
+## Prerequisites Check
 
-### Machine check
+### Machine Check
 
-| **Check Item** | **Specific Requirements** | **Explanation**                                                                                               |
-| -------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| User permission | root                     | Deployment must be done using the root user, and each server must allow root user ssh login.                  |
-| Swap           | Disabled                 | If not satisfied, there is a chance of I/O spikes in the system, which can cause the container runtime to freeze. |
-| Firewall       | Off (not mandatory)      | -                                                                                                            |
-| Selinux        | Off (not mandatory)      | -                                                                                                            |
-| Time Sync      | All cluster nodes must have synchronized time | This is a requirement of Docker and Kubernetes. Otherwise, kube.conf will report an error "Unable to connect to the server: x509: certificate has expired or is not yet" |
-| Timezone       | All servers must have the same timezone | It is recommended to set it to Asia/Shanghai. <br />Reference command: timedatectl set-timezone Asia/Shanghai |
-| Nameserver     | /etc/resolv.conf must have at least one nameserver | Required by coredns, otherwise there will be errors. This nameserver can be a non-existent IP address in a pure offline environment. The default Centos8minial operating system does not have the /etc/resolv file, and it needs to be created manually. |
+| **Check Item** | **Requirements**               | **Description**                                                                                                                                                                                                                                                               |
+| -------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| User Permissions | root                                      | Use root root account to install DCE 5.0, and the root user must be allowed to log into all all servers by SSH.                                                                                                                                                                 |
+| Swap             | Turn off                                  | If it's turned on, the system may experience an I/O surge, causing the container runtime crash.                                                                                                                                        |
+| Firewall        | Turn off (not mandatory)                  | -                                                                                                                                                                                                                                                                             |
+| Selinux         | Turn off (not mandatory)                  | -                                                                                                                                                                                                                                                                             |
+| Time syn| All nodes must have synchronized time. | This is explicitly required by Docker and Kubernetes. Otherwise, `kube.conf` will report an error of`Unable to connect to the server: x509: certificate has expired or is not yet`.                                                                                               |
+| Time zone       | The time zone of all servers must be consistent. | It is recommended to set as Asia/Shanghai. <br />Command: timedatectl set-timezone Asia/Shanghai                                                                                                                                                              |
+| Nameserver      | `/etc/resolv.conf` must have at least one nameserver. | Required for CoreDNS, otherwise there will be an error. This nameserver can be a non-existent IP address in a pure offline environment. Centos8minial does not have the `/etc/resolv` file by default and needs to be created manually. |
 
-### Starter Machine Dependency Component Check
+### Bootstraping Node Dependency Check
 
-| **Check Item**   | **Version Requirement** | **Explanation**                                                                 |
-| ---------------- | ---------------------- | ------------------------------------------------------------------------------ |
-| podman           | v4.4.1                 | -                                                                              |
-| helm             | ≥ 3.11.1               | -                                                                              |
-| skopeo           | ≥ 1.11.1               | -                                                                              |
-| kind             | v0.17.0                | -                                                                              |
-| kubectl          | ≥ 1.25.6               | -                                                                              |
-| yq               | ≥ 4.31.1               | -                                                                              |
-| minio client     | -                      | `mc.RELEASE.2023-02-16T19-20-11Z`                                                |
+| **Check Item**   | **Versions** | **Description** |
+| ---------------- | ------------------------ | --------------- |
+| podman           | v4.4.1                   | -               |
+| helm             | ≥ 3.11.1                  | -               |
+| skopeo           | ≥ 1.11.1                  | -               |
+| kind             | v0.17.0                | -               |
+| kubectl          | ≥ 1.25.6                 | -               |
+| yq               | ≥ 4.31.1                 | -               |
+| MinIO client     | -                        | `mc.RELEASE.2023-02-16T
 
-If the dependent components do not exist, install them using the script [Install Prerequisites](../install-tools.md).
+If these dependencies have not been installed, refer to [Install Dependencies](../install-tools.md)。
 
 ```bash
-# Download script
+# download install script
 curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
 
-# Add execution permission
+# add execution permission
 chmod +x install_prerequisite.sh
 
-# Start with installation
+# start install
 bash install_prerequisite.sh online full
 ```

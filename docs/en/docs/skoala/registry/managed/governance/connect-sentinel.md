@@ -30,4 +30,4 @@ The format of the project.name parameter should be: `{{nacos_namespace_id}}@@{{n
         1. Download [Console](https://github.com/alibaba/Sentinel/tree/master/sentinel-dashboard) project
         2. Package the code into a fat jar using the following command: `mvn clean package`
 
-    Refer to the official document: [Launch Console](https://sentinelguard.io/zh-cn/docs/dashboard.html)
+    Refer to the official document: [Launch Console](https://sentinelguard.io/docs/dashboard.html)

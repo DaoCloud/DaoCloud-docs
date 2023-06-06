@@ -31,7 +31,7 @@
 参阅[管理文件夹](../ghippo/user-guide/workspace/folders.md)文档页面。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/manage-folder.mp4" preload="metadata" poster="../images/ghipppo-folder.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/manage-folder.mp4" preload="metadata" poster="../images/ghippo-folder.png"></video>
 </div>
 
 ## 管理工作空间 (Workspace)
@@ -47,7 +47,7 @@
 参阅[资源限额](../ghippo/user-guide/workspace/quota.md)文档页面。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/resourcequota.mp4" preload="metadata" poster="../images/ghippo-resource.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/resourcequota.mp4" preload="metadata" poster="../images/ghippo-resources.png"></video>
 </div>
 
 ## 对接 LDAP 用户和用户组

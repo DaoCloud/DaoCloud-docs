@@ -1,6 +1,6 @@
-# Applicable Scenarios
+# Use Cases
 
-This section introduces the specific scenarios where the service mesh is applicable.
+This section introduces the specific cases where the service mesh is applicable.
 
 ## Service Traffic Governance
 
@@ -22,7 +22,7 @@ The service mesh can provide non-intrusive traffic management capabilities, and 
 
 - HTTP Header: Flexibly add, modify, and delete specified HTTP headers, including manipulating headers before forwarding HTTP requests to target services. It is also possible to manipulate the header before replying to the HTTP response to the client to manage the request content in a non-intrusive manner.
 
-- Fault Injection: Construct fault scenarios by injecting interruption faults and delay faults into selected services, and perform fault testing without modifying codes.
+- Fault Injection: Construct fault cases by injecting interruption faults and delay faults into selected services, and perform fault testing without modifying codes.
 
 ## End-to-End Transparent Security
 
@@ -32,7 +32,7 @@ Splitting traditional monolithic applications into microservices brings various 
 
 - Non-Intrusive Security: The service mesh provides users with transparent security capabilities in the form of a security infrastructure, allowing codes that do not involve security issues to run safely. People who do not understand security can develop and operate secure services without modifying business code, providing service access security. The application service mesh provides a transparent distributed security layer, manages the authentication, authorization, and encryption of service communication, and provides Pod-to-Pod, service-to-service communication security. Developers only need to focus on application-level security on top of this security infrastructure layer.
 
-- Multi-Cluster Security: The service mesh provides global service access security in a multi-cluster scenario. Meshes of multiple clusters share a set of root certificates, distribute key and certificate pairs to service instances on the data plane, replace key certificates regularly, and revoke key certificates as needed. When accessing between services, the data plane agent of the mesh will act as a proxy for the local service and the peer to perform two-way authentication and channel encryption.
+- Multicluster Security: The service mesh provides global service access security in a multicluster scenario. Meshes of multiple clusters share a set of root certificates, distribute key and certificate pairs to service instances on the data plane, replace key certificates regularly, and revoke key certificates as needed. When accessing between services, the data plane agent of the mesh will act as a proxy for the local service and the peer to perform two-way authentication and channel encryption.
 
 - Fine-Grained Authorization: On the basis of authentication, access authorization management between services can be performed, and a certain service or a specific interface of a service can be controlled for authorization management. For example, it is only open to services under a specific Namespace or a specific service. The source service and the target service can be in different clusters, even different instances of the source service are in different clusters, and different instances of the target service are in different clusters.
 
@@ -42,6 +42,6 @@ Operating a containerized infrastructure presents a new set of challenges, inclu
 
 ### Scenario Advantages
 
-- Non-Intrusive Surveillance Data Collection: In complex application scenarios, access topology, call chain, and monitoring between services are necessary for positioning and demarcating when service access is abnormal. An important capability of the service mesh technology is to provide the collection of these monitoring data non-intrusively. Users only need to pay attention to their own business development and do not need to pay extra attention to the generation of monitoring data.
+- Non-Intrusive Surveillance Data Collection: In complex cases, access topology, call chain, and monitoring between services are necessary for positioning and demarcating when service access is abnormal. An important capability of the service mesh technology is to provide the collection of these monitoring data non-intrusively. Users only need to pay attention to their own business development and do not need to pay extra attention to the generation of monitoring data.
 
 - Rich Performance Monitoring Capabilities: Generate service access data based on the mesh, integrate various performance monitoring services, and provide cross-cluster intelligent service operation management. This includes cross-cluster service call chains, service access topology and service running health status, associating access status between services through a cross-cluster global view, etc.

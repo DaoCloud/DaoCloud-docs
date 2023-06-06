@@ -1,12 +1,12 @@
 # Cluster and Namespace Authorization
 
-Container management implements authorization based on global authority management and global user/user group management. If you need to grant users the highest authority for container management (can create, manage, and delete all clusters), please refer to [What are Access Control](../../../ghippo/user-guide/access-control/iam.md).
+Container management implements authorization based on global authority management and global user/group management. If you need to grant users the highest authority for container management (can create, manage, and delete all clusters), please refer to [What are Access Control](../../../ghippo/user-guide/access-control/iam.md).
 
 ## Prerequisites
 
-Before authorizing users/user groups, complete the following preparations:
+Before authorizing users/groups, complete the following preparations:
 
-- The user/user group to be authorized has been created in the global management, please refer to [User](../../../ghippo/user-guide/access-control/user.md).
+- The user/group to be authorized has been created in the global management, please refer to [User](../../../ghippo/user-guide/access-control/user.md).
 
 - Only [`Kpanda Owner`](../../../ghippo/user-guide/access-control/global.md) and [`Cluster Admin`](permission-brief.md) of the current cluster have Cluster authorization capability. For details, please refer to [Permission Description](permission-brief.md).
 
@@ -22,9 +22,9 @@ Before authorizing users/user groups, complete the following preparations:
 
     
 
-3. On the `Add Cluster Permission` page, select the target cluster, the user/user group to be authorized, and click `OK`.
+3. On the `Add Cluster Permission` page, select the target cluster, the user/group to be authorized, and click `OK`.
 
-    Currently, the only cluster role supported is `Cluster Admin`. For details about permissions, please refer to [Permission Description](permission-brief.md). If you need to authorize multiple users/user groups at the same time, you can click `Add User Permissions` to add multiple times.
+    Currently, the only cluster role supported is `Cluster Admin`. For details about permissions, please refer to [Permission Description](permission-brief.md). If you need to authorize multiple users/groups at the same time, you can click `Add User Permissions` to add multiple times.
 
     
 
@@ -38,9 +38,9 @@ Before authorizing users/user groups, complete the following preparations:
 
     
 
-2. Click the `Add Authorization` button. On the `Add Namespace Permission` page, select the target cluster, target namespace, and user/user group to be authorized, and click `OK`.
+2. Click the `Add Authorization` button. On the `Add Namespace Permission` page, select the target cluster, target namespace, and user/group to be authorized, and click `OK`.
 
-    The currently supported namespace roles are NS Admin, NS Edit, and NS View. For details about permissions, please refer to [Permission Description](permission-brief.md). If you need to authorize multiple users/user groups at the same time, you can click `Add User Permission` to add multiple times. Click `OK` to complete the permission authorization.
+    The currently supported namespace roles are NS Admin, NS Edit, and NS View. For details about permissions, please refer to [Permission Description](permission-brief.md). If you need to authorize multiple users/groups at the same time, you can click `Add User Permission` to add multiple times. Click `OK` to complete the permission authorization.
 
     
 

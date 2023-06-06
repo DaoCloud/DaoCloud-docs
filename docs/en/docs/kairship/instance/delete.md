@@ -3,22 +3,18 @@ hide:
   - toc
 ---
 
-# delete instance
+# Delete Multicloud Instance
 
-If an instance is no longer used, you can delete it by referring to the following steps.
+If an instance is no longer used, you can delete it with the following steps.
 
-1. In the multi-cloud instance list, click the `...` button on the right, and select `Delete` from the pop-up menu.
+1. Find the instance that you want to delete, click the `...` button on the right, and select `Delete` from the pop-up menu.
 
-    <!--screenshot-->
+    ![delete](../images/delete-instance01.png)
 
-2. Enter the name of the instance in the pop-up window, and click the `Delete` button after confirming that it is correct.
+2. Enter the instance name to avoid misoperation, and click the `Delete` button.
 
-    <!--screenshot-->
-
-!!! note
-
-    To delete an instance, first delete the clusters, workloads, and services related to the instance. After an instance is deleted, all information related to the instance will also be deleted. Please proceed with caution.
+    ![delete](../images/delete-instance02.png)
 
 !!! note
 
-    In order to ensure that resource scheduling will not remain in the working cluster when deleting, we will restrict you to disassociate all working clusters; after you disassociate, the deletion at this time will be regarded as a safe deletion action .
+    To ensure data security, you must clear all resources under the instance and then delete it. Otherwise, you will be remind of the resources that are still under the instance. You cannot delete it until these resources have been cleared.

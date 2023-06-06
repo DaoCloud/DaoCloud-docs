@@ -1,6 +1,6 @@
 # Build microservice applications based on Git repository
 
-The application workbench supports building applications in four ways: Git repository, [Jar package](jar-java-app.md), container image, and Helm template. This article introduces how to build a traditional microservice application through the source code of the Git warehouse, so as to manage the traffic of the application, view logs, monitor, link tracking and other functions.
+Workbench supports building applications in four ways: Git repository, [Jar package](jar-java-app.md), container image, and Helm template. This article introduces how to build a traditional microservice application through the source code of the Git warehouse, so as to manage the traffic of the application, view logs, monitor, link tracking and other functions.
 
 ## prerequisites
 
@@ -20,7 +20,7 @@ The application workbench supports building applications in four ways: Git repos
 
 ## Create a microservice application based on Git
 
-1. On `App Workbench` -> `Wizard` page, click `Build Based on Git Repository`.
+1. On `Workbench` -> `Wizard` page, click `Build Based on Git Repository`.
 
     <!--![]()screenshots-->
 

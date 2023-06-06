@@ -1,8 +1,8 @@
-# update the multi-cloud key
+# update the multicloud key
 
 Currently, two update methods are provided: editing YAML and form update.
 
-1. After entering a multi-cloud instance, in the left navigation bar, click `Resource Management` -> `Multi-Cloud Key`, click `···` to edit YAML or update the key.
+1. After entering a multicloud instance, in the left navigation bar, click `Resource Management` -> `multicloud Key`, click `···` to edit YAML or update the key.
 
     <!--screenshot-->
 
@@ -10,7 +10,7 @@ Currently, two update methods are provided: editing YAML and form update.
 
     <!--screenshot-->
 
-3. Click Update, you can update it through the form, but the name, multi-cloud namespace, and key type cannot be updated.
+3. Click Update, you can update it through the form, but the name, multicloud namespace, and key type cannot be updated.
 
     <!--screenshot-->
 

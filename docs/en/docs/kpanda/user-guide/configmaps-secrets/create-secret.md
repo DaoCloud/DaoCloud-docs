@@ -2,7 +2,7 @@
 
 A secret is a resource object used to store and manage sensitive information such as passwords, OAuth tokens, SSH, TLS credentials, etc. Using keys means you don't need to include sensitive secrets in your application code.
 
-Key usage scenarios:
+Key  use cases:
 
 - Used as an environment variable of the container to provide some necessary information required during the running of the container.
 - Use secrets as pod data volumes.

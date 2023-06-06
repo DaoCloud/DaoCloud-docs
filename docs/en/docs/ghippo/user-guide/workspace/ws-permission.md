@@ -7,11 +7,11 @@ If the user/group has the Workspace Admin role in the workspace and the resource
 
     The permission mapping capability of the workspace will not be applied to shared resources, because sharing is to share the cluster usage permissions to multiple workspaces, rather than assigning management permissions to the workspaces, so permission inheritance and role mapping will not be implemented.
 
-## Application scenarios
+## Use cases
 
 Resource isolation is achieved by binding resources to different workspaces. Therefore, resources can be flexibly allocated to each workspace (tenant) with the help of permission mapping, resource isolation, and resource sharing capabilities.
 
-Generally applicable to the following two scenarios:
+Generally applicable to the following two use cases:
 
 - Cluster one-to-one
 

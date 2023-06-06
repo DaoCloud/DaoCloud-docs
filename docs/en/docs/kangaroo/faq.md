@@ -1,33 +1,86 @@
-# container registry FAQ
+# Container Registry FAQ
+
+## Offline environment image scanner failure
+
+The image scanner relies on vulnerability data, which is obtained by default from the CVE official website. In a pure offline environment, vulnerability scanning cannot be performed, and the process will fail.
+
+![trivy](./images/trivy-nodb.png)
+
+## Updating or importing vulnerability database in an offline environment
+
+1. Database Location:
+
+    ```
+    /root/.cache/trivy/db
+    ```
+
+2. Help Information:
+    
+    ```
+    $ trivy -h | grep 'TRIVY_CACHE_DIR'
+       --cache-dir value  cache directory (default: "/root/.cache/trivy") [$TRIVY_CACHE_DIR]
+    ```
+
+3. Database Download:
+
+    - `trivy-light-offline.db.tgz`: Lightweight offline database, approximately 104 MB after decompression.
+    - `trivy-offline.db.tgz`: Full offline database, approximately 221 MB after decompression.
+    - Download link: [https://github.com/aquasecurity/trivy-db/releases](https://github.com/aquasecurity/trivy-db/releases)
+
+## Error occurs when creating Harbor after cluster verification passes in the first step
+
+Currently, only the existence of `CRD` is being verified in the cluster, and the `harbor-operator` service is not being checked. This may result in failures to create `Harbor` correctly when the `harbor-operator` service does not exist.
+
+## Error occurs after executing `docker login {ip}` locally
+
+```text
+Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certificate for {ip} because it doesn't contain any IP SANs
+```
+
+This error occurs because the `registry` is an `https` service that uses an unsigned or insecure certificate. To resolve this issue, add the corresponding IP to `"insecure-registries"` in the `/etc/docker/daemon.json` configuration file.
+
+```json
+"insecure-registries": [
+  "{ip}",
+  "registry-1.docker.io"
+]
+```
+
+Then, restart the service with `systemctl restart docker`.
+
+## Failure to start services shen creating Harbor and accessing external PG and Redis with passwords containing special characters (!@#$%^&*)
+
+Currently, passwords cannot contain special characters; otherwise, the services will fail to start. You can use a combination of uppercase and lowercase letters and numbers instead.
 
 ## Harbor Operator installation failed
 
-If the installation of `Harbor Operator` is unsuccessful, you need to check these points, whether `cert-manager` is installed successfully, and whether `installCRDs` is set to `true`.
-Whether the `helm` task to install `Harbor operator` was successful.
+If the installation of `Harbor Operator` is unsuccessful, you should check the following:
 
-## Create managed Harbor can use redis cluster mode
+- Ensure that `cert-manager` has been successfully installed.
+- Verify that the `installCRDs` setting is set to `true`.
+- Confirm that the `helm` job for installing the `Harbor operator` was successful.
 
-Currently `Harbor` still cannot use `redis` cluster mode.
+## Can I use redis cluster mode when creating a managed Harbor?
 
-## Can private images be seen in non-container registry modules?
+Currently, `Harbor` does not support the use of `redis` cluster mode.
 
-The container registry is implemented strictly according to the authority of DEC 5.0. In the container registry, a user must belong to a certain tenant to see the private registry space under the current tenant, otherwise even the administrator cannot see it.
+## Can private images be seen in a module other than container registry?
 
-## After the private image is bound to the workspace, it cannot be queried
+The container registry strictly follows the authority of DEC 5.0. To view private registry space under the current tenant, users must belong to a specific tenant. Even administrators cannot view it without belonging to the tenant.
 
-After the private image is bound to the workspace, the program needs to execute a lot of logic asynchronously, so it will not be visible immediately.
-This process will be affected by the system. If the system responds faster, the asynchronous execution will be faster and can be seen within 1 minute. It should be no longer than 5 minutes.
+## Unable to query private images after binding to workspace
 
-## Managed Harbor can be accessed after creation, but the status is still unhealthy
+After binding a private image to a workspace, the program executes several asynchronous logic processes, and it may not be immediately visible. The process duration is dependent on the system's speed and may take up to 5 minutes to appear.
 
-Currently, the status on the hosted Harbor page and the status of the registry integration are two in one. When both statuses are healthy, it is healthy.
-Therefore, it may happen that the managed `Harbor` is already accessible, but the state is still unhealthy. In this case, you need to wait for a service detection cycle. A detection cycle is 10 minutes, and it will return to the original state after a cycle.
+## Managed Harbor accessible but status remains unhealthy
 
-## The status of the created managed registry is unhealthy
+Currently, the status on the managed Harbor page and the status of the registry integration are combined. When both statuses are healthy, the Harbor is considered healthy. It's possible that the managed `Harbor` is already accessible, but the state remains unhealthy. In this case, wait for a service detection cycle, which occurs every 10 minutes, and it will return to the original state after the cycle.
 
+## The status of managed registry you created just now is unhealthy
 
-
-- A1: The database, Redis, S3 storage and other information entered by the user are incorrect, resulting in the failure to connect. You can check the log files for troubleshooting. The phenomenon is mainly that several core services have Pod startup failures, and the cause can be further confirmed by viewing the logs.
+- A1: Incorrect user entries for the database, Redis, S3 storage, or other information may
+  result in a connection failure. Troubleshoot by checking log files. You may notice that
+  several core services have Pod startup failures. Review the logs to determine the cause of the failure.
 
      ```shell
      kubectl -n kangaroo-lrf04 get pods
@@ -44,7 +97,8 @@ Therefore, it may happen that the managed `Harbor` is already accessible, but th
      trust-node-port-nginx-deployment-677c74576-7kmh4 1/1 Running 0 20h
      ```
 
-- A2: If the troubleshooting in A1 is correct, check whether the `harborcluster` resource is healthy, and check the `harborcluster` resource status with the following command.
+- A2: If the troubleshooting in A1 is correct, check whether the `harborcluster` resource is
+  healthy, and check the `harborcluster` resource status with the following command.
 
      ```shell
      kubectl -n kangaroo-lrf04 get harborclusters.goharbor.io
@@ -55,9 +109,10 @@ Therefore, it may happen that the managed `Harbor` is already accessible, but th
      trust-node-port https://10.6.232.5:30010 healthy
      ```
 
-- A3: If the troubleshooting in A2 is correct, check whether the `registrysecrets.kangaroo.io` resource is created and the status of `status` on the `kpanda-global-cluster` cluster.
+- A3: If the troubleshooting in A2 is correct, check whether the `registrysecrets.kangaroo.io`
+  resource is created and the status of `status` on the `kpanda-global-cluster` cluster.
 
-     Tip: The default namespace is kangaroo-system.
+     Tip: The default namespace is `kangaroo-system`.
 
      ```shell
      kubectl -n kangaroo-system get registrysecrets.kangaroo.io
@@ -74,22 +129,24 @@ Therefore, it may happen that the managed `Harbor` is already accessible, but th
 
 !!! tip
 
-     - The above A1 and A2 are all troubleshooting on the cluster hosting Harbor, and the target cluster can be viewed through the following page path: `registry Instance` -> `Overview` -> `Deployment Location`
+     - The above A1 and A2 are all troubleshooting on the cluster hosting Harbor,
+       and the target cluster can be viewed through the following page path: 
+       `registry Instance` -> `Overview` -> `Deployment Location`.
      - The above A3 was verified on `kpanda-global-cluster` cluster.
 
-## After creating a `Project` or uploading an image, it is found that the image space and available storage on the page have not increased
+## Issue with image space and storage after creating a Project or uploading an image
 
-This is because the statistical information on the `Hosted Harbor` home page and registry integration details on the UI page is asynchronously obtained data, and there will be a certain delay, the longest delay is `10` minutes.
+If you have created a `Project` or uploaded an image, but found that there has been no increase in the image space or available storage on the page, this might be due to the asynchronous nature of obtaining statistical information on the `managed Harbor` home page and registry integration details on the UI page. The data retrieval process can take up to `10` minutes, causing a certain delay before any changes are reflected.
 
-## The registry is integrated but the status is unhealthy
+## Registry integration status is unhealthy
 
+If you encounter an issue where the registry integration status is unhealthy, follow these steps:
 
+1. First, check whether the instance is healthy. If it's not, then troubleshoot the instance.
+2. If the instance is healthy, verify whether the resource `registrysecrets.kangaroo.io` on the `kpanda-global-cluster` cluster has been created or not.
+3. Check the status of the resource `status` to identify the problem initially.
 
-First confirm whether the instance is really healthy. If the instance is not healthy, you need to troubleshoot the instance;
-If the instance is healthy, check `registrysecrets.kangaroo.io` on the `kpanda-global-cluster` cluster
-Whether the resource is created, and check the status of `status`, so that you can initially confirm the problem.
-
-Tip: The default namespace is kangaroo-system.
+**Note:** Ensure to check the default namespace, which is `kangaroo-system`.
 
 ```shell
 kubectl -n kangaroo-system get registrysecrets.kangaroo.io
@@ -122,15 +179,13 @@ status:
      type: HealthCheckFail
 ```
 
-## After the registry is integrated, it cannot be viewed in the instance of the image list page
+## After integrating the registry, it cannot be viewed in the instance list page of the image
 
-Please confirm whether the resources integrated in the registry are healthy. If they are unhealthy, they will not be displayed in the instance list on the image list page.
-For the confirmation method, please refer to [Unhealthy Confirmation Method after registry Integration](#_2).
+Please confirm if the resources integrated into the registry are healthy. If they are unhealthy, they won't appear in the instance list on the image page. For the confirmation method, please refer to [Unhealthy Confirmation Method after Registry Integration](#_2).
 
-## Select a private `Project` image in the `Kpanda` image selector, but when deploying, it prompts that the image pull failed
+## Selecting a Private `Project` Image in the `Kpanda` Image Selector results in a failed image pull prompt during deployment
 
-- A1: You can see the private `Project` in the image selector, which means that `Project` and `Workspace` have been bound,
-   At this point, you need to check whether a `secret` named `registry-secret` is generated in the `namespace` of the target cluster for image deployment.
+- A1: If you can see the private `Project` in the image selector, which means that `Project` and `Workspace` have already been bound. At this point, check if a `secret` named `registry-secret` has been generated in the target cluster's `namespace` for image deployment.
 
      ```shell
      kubectl -n default get secret registry-secret

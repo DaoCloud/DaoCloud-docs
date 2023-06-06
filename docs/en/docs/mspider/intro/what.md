@@ -1,6 +1,6 @@
 # What is Service Mesh?
 
-Service Mesh is a next-generation service mesh for cloud-native applications built on the open-source Istio technology. It is a fully managed product with high performance and usability, providing a complete non-intrusive microservice governance solution that can uniformly manage the complex environment of multicloud and multi-cluster.
+Service Mesh is a next-generation service mesh for cloud-native applications built on the open-source Istio technology. It is a fully managed product with high performance and usability, providing a complete non-intrusive microservice governance solution that can uniformly manage the complex environment of multicloud and multicluster.
 
 Service Mesh offers users service traffic governance, security governance, and service traffic monitoring. It also provides access to traditional microservices (SpringCloud, Dubbo) in the form of infrastructure.
 
@@ -30,55 +30,53 @@ DCE 5.0 Service Mesh offers several advantages compared to other products:
 
 - Enhanced Performance and Increased Reliability: The Service Mesh control plane and data plane are more reliable and performance-optimized based on the community version.
 
-- Multicloud, Multi-cluster, Multi-infrastructure: Provides an O&M-free hosting control plane and offers multicloud and multi-cluster global unified service governance, security, and service operation monitoring capabilities. It also provides unified service discovery and management for multiple infrastructures such as containers and virtual machines (VMs).
+- Multicloud, Multicluster, Multi-infrastructure: Provides an O&M-free hosting control plane and offers multicloud and multicluster global unified service governance, security, and service operation monitoring capabilities. It also provides unified service discovery and management for multiple infrastructures such as containers and virtual machines (VMs).
 
 - Protocol Extensions: Extend the support of Dubbo protocol.
 
 - Legacy SDK Integration: Provides integrated solutions for traditional microservice SDKs such as Spring Cloud and Dubbo. Businesses developed by traditional microservice SDKs can be quickly migrated to cloud-native mesh operating environments without extensive code modification.
 
-## To use service mesh
+## Learning Path
 
-The service mesh learning path is as follows:
+The learning path for the service mesh is as follows:
 
 ```mermaid
 flowchart TD
 
-    install([install deployment])
-    install --> mesh[create mesh]
-        subgraph mesh[create mesh]
-            managed[managed mesh]
-            private[proprietary mesh]
-            external [external mesh]
+    install([Installation and Deployment])
+    install --> mesh[Create a Mesh]
+        subgraph mesh[Create a Mesh]
+            managed[Managed Mesh]
+            private[Dedicated Mesh]
+            external[External Mesh]
             
         end
 
-    mesh --> cluster[management cluster]
+    mesh --> cluster[Cluster Management]
 
-    cluster --> inject[inject sidecar]
+    cluster --> inject[Sidecar Injection]
 
-        subgraph inject[inject sidecar]
-            global [global injection]
-            namespace[namespace injection]
-            workload [workload injection]
+        subgraph inject[Sidecar Injection]
+            global[Global Injection]
+            namespace[Namespace Injection]
+            workload[Workload Injection]
         end
 
     
-    inject -.-> service[service management]
-    inject -.-> gateway [gateway]
-    inject -.-> traffic[traffic management]
-    inject -.-> watch[traffic monitoring]
-    inject -.-> upgrade[version upgrade]
+    inject -.-> service[Service Management]
+    inject -.-> traffic[Traffic Governance]
     inject -.-> security[Security Governance]
+    inject -.-> sidecar[Sidecar Management]
+    inject -.-> watch[Traffic Monitoring]
+    inject -.-> gateway[Mesh Gateway]
+    inject -.-> upgrade[Version Upgrade]
+    
 
-    service -.-> entry[service entry]
-
-    traffic -.-> virtual[virtual service]
-    traffic -.-> target[target rule]
-    traffic -.-> gaterule[gateway rule]
-
-    security -.-> peer [peer authentication]
-    security -.-> request[request authentication]
-    security -.-> authorize[authorization policy]
+    service -.-> entry[Service Entry]
+    traffic -.-> virtual[Virtual Service<br>Destination Rule<br>Gateway Rule]
+    security -.-> peer[Peer Authentication<br>Request Authentication<br>Authorization Policy]
+    sidecar -.-> sidecarm[Namespace Sidecar Management<br>Workload Sidecar Management<br>Global Sidecar Management<br>Sidecar Traffic Passthrough]
+    watch -.-> watch2[Traffic Monitoring<br>Traffic Topology]
 
     classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
     classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;

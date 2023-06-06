@@ -114,21 +114,21 @@ mc [GLOBALFLAGS] admin user svcacct add \
 
 For details about MinIO users, please refer to [User Management](http://docs.minio.org.cn/minio/baremetal/security/minio-identity-management/user-management.html)
 
-## user group
+## group
 
-A user group, as the name implies, is a collection of multiple users. By combining user groups with authorization policies, the permissions of a group of users can be managed in batches. Authorization policies can be used to assign resource permissions to user groups, and users in this group will inherit the resource permissions of the user group.
+A group, as the name implies, is a collection of multiple users. By combining groups with authorization policies, the permissions of a group of users can be managed in batches. Authorization policies can be used to assign resource permissions to groups, and users in this group will inherit the resource permissions of the group.
 
-The permissions of MinIO users are divided into two parts: the original permissions of the user + the permissions inherited from the user group. In the context of MinIO, users only have the authorizations they are explicitly granted or inherited from usergroups. If a user has not been explicitly granted (either directly granted or inherited) permissions to a resource, they cannot access that resource.
+The permissions of MinIO users are divided into two parts: the original permissions of the user + the permissions inherited from the group. In the context of MinIO, users only have the authorizations they are explicitly granted or inherited from usergroups. If a user has not been explicitly granted (either directly granted or inherited) permissions to a resource, they cannot access that resource.
 
-For details about MinIO user groups, please refer to [Group Management](http://docs.minio.org.cn/minio/baremetal/security/minio-identity-management/group-management.html)
+For details about MinIO groups, please refer to [Group Management](http://docs.minio.org.cn/minio/baremetal/security/minio-identity-management/group-management.html)
 
 ## Authorization Policy
 
-MinIO uses policy-based access control (PBAC) to manage which permissions users have on which resources. Each policy limits the permissions that users and user groups have by specifying some actions or conditions.
+MinIO uses policy-based access control (PBAC) to manage which permissions users have on which resources. Each policy limits the permissions that users and groups have by specifying some actions or conditions.
 
 ### Built-in Strategies
 
-MinIO has four built-in policies that can be directly assigned to users or user groups. When authorizing users/user groups, you need to use the `mc admin policy set` command. For details, please refer to [mc admin policy](http://docs.minio.org.cn/minio/baremetal/reference/minio-cli/minio- mc-admin/mc-admin-policy.html#mc-admin-policy-set)
+MinIO has four built-in policies that can be directly assigned to users or groups. When authorizing users/groups, you need to use the `mc admin policy set` command. For details, please refer to [mc admin policy](http://docs.minio.org.cn/minio/baremetal/reference/minio-cli/minio- mc-admin/mc-admin-policy.html#mc-admin-policy-set)
 
 - readonly: **read-only** permission to all buckets and storage objects in the MinIO replica
 

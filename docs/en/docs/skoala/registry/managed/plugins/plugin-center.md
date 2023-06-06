@@ -1,6 +1,6 @@
 # Plug-in center
 
-The plug-in Center provides two plug-ins, Sentinel governance and Mesh governance, and supports visual configuration through the user interface. After the plug-in is installed, the micro-service governance capability can be expanded to meet service requirements in different scenarios.
+The plug-in Center provides two plug-ins, Sentinel governance and Mesh governance, and supports visual configuration through the user interface. After the plug-in is installed, the micro-service governance capability can be expanded to meet service requirements in different cases.
 
 !!! info
 

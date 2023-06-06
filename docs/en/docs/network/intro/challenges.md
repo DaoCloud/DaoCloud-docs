@@ -5,18 +5,18 @@ hide:
 
 # Challenges facing the network
 
-**Network connectivity under multicloud and multi-cluster**
+**Network connectivity under multicloud and multicluster**
 
-In a multi-cluster environment, it is not only necessary to consider the use of different network CNIs by each cluster, but also to realize the interconnection of each cluster.
+In a multicluster environment, it is not only necessary to consider the use of different network CNIs by each cluster, but also to realize the interconnection of each cluster.
 Therefore, issues such as Cluster IP intercommunication and DNS intercommunication need to be resolved.
 
-**Unified IP resource management under multicloud and multi-cluster**
+**Unified IP resource management under multicloud and multicluster**
 
-To achieve network interoperability in a multicloud and multi-cluster environment, the IPs within the cluster and within the cluster cannot be duplicated or conflicted. Therefore, IP management and planning should be based on the multi-cluster perspective to avoid IP conflicts and network segment conflicts (Underlay IP, Service IP, etc.).
+To achieve network interoperability in a multicloud and multicluster environment, the IPs within the cluster and within the cluster cannot be duplicated or conflicted. Therefore, IP management and planning should be based on the multicluster perspective to avoid IP conflicts and network segment conflicts (Underlay IP, Service IP, etc.).
 
-**Single CNI is difficult to meet the needs of diverse scenarios**
+**Single CNI is difficult to meet the needs of diverse use cases**
 
-Faced with diverse network scenarios, different types of applications currently have different network requirements. It is difficult for a single network CNI to meet the needs of diverse scenarios. Therefore, specific CNI needs to be used to meet business requirements in specific scenarios, and CNI combination is also required in more complex scenarios.
+Faced with diverse network use cases, different types of applications currently have different network requirements. It is difficult for a single network CNI to meet the needs of diverse use cases. Therefore, specific CNI needs to be used to meet business requirements in specific cases, and CNI combination is also required in more complex cases.
 
 **There is a strong demand for fixed and externally accessible IP, but there is a lack of flexible and efficient IPAM mechanism**
 

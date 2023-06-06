@@ -40,7 +40,7 @@ According to Atlassian [1](https://www.atlassian.com/devops/frameworks/team-topo
 
 According to Martin Fowler and Evan Bottcher [2](https://martinfowler.com/articles/talk-about-platforms.html), “a digital platform is a foundation of self-service APIs, tools, services, knowledge and support which are arranged as a compelling internal product. Autonomous delivery teams can make use of the platform to deliver product features at a higher pace, with reduced coordination.”
 
-The specific set of capabilities and scenarios supported by a platform should be determined by the needs of stakeholders and users. And while platforms *provide* these required capabilities, it’s critical to note that platform teams should not always *implement* them themselves. Managed service providers or dedicated internal teams can maintain backing implementations while platforms are the thinnest reasonable layer that provides consistency across provided implementations and meets an organization’s requirements. For example, a very simple “platform” could be a wiki page with traces to standard operating procedures to provision capabilities from providers, as described in [3](https://teamtopologies.com/key-concepts-content/what-is-a-thinnest-viable-platform-tvp).
+The specific set of capabilities and use cases supported by a platform should be determined by the needs of stakeholders and users. And while platforms *provide* these required capabilities, it’s critical to note that platform teams should not always *implement* them themselves. Managed service providers or dedicated internal teams can maintain backing implementations while platforms are the thinnest reasonable layer that provides consistency across provided implementations and meets an organization’s requirements. For example, a very simple “platform” could be a wiki page with traces to standard operating procedures to provision capabilities from providers, as described in [3](https://teamtopologies.com/key-concepts-content/what-is-a-thinnest-viable-platform-tvp).
 
 Because these platforms target no more and no less than an enterprise’s internal users we often refer to them as *internal* platforms.
 
@@ -48,14 +48,14 @@ Platforms are particularly relevant for cloud-native architectures because they 
 
 ### Platform maturity
 
-At their most basic, internal platforms provide consistent experiences for acquiring and using individual services such as a pipeline runner, a database system or a secret store. As they mature internal platforms also offer *compositions* of such services as self-serviceable templates for key scenarios like web application development or data analysis, aka MLOps.
+At their most basic, internal platforms provide consistent experiences for acquiring and using individual services such as a pipeline runner, a database system or a secret store. As they mature internal platforms also offer *compositions* of such services as self-serviceable templates for key cases like web application development or data analysis, aka MLOps.
 
 Use cases an enterprise could meet with platforms might progress through the following:
 
 1. Product developers can provision capabilities on demand and immediately use them to run systems, such as compute, storage, databases or identities.
 2. Product developers can provision service spaces on demand and use them to run pipelines and tasks, to store artifacts and configuration, and/or to collect telemetry.
 3. Administrators of third-party software can provision required dependencies like databases on demand and easily install and run that software.
-4. Product developers can provision complete environments from templates combining run-time and development-time services required for specific scenarios, such as web development or MLOps.
+4. Product developers can provision complete environments from templates combining run-time and development-time services required for specific cases, such as web development or MLOps.
 5. Product developers and managers can observe functionality, performance, and cost of deployed services through automatic instrumentation and standard dashboards.
 
 By offering consistent, compliant experiences for individual capabilities or sets of them, internal platforms ultimately make it easier and more efficient for their users to deliver valuable products.
@@ -64,7 +64,7 @@ By offering consistent, compliant experiences for individual capabilities or set
 
 After defining what a platform is and why an organization might want to build one, let’s identify some key attributes that affect the success of a platform.
 
-1. **Platform as a product**. A platform exists to serve the requirements of its users and it should be designed and evolved based on those requirements, similar to any other software products. Platforms should provide the necessary capabilities to support the most common use cases across product teams, and prioritize those over more specific capabilities that are only used by a single team to maximize the value delivered.
+1. **Platform as a product**. A platform exists to serve the requirements of its users and it should be designed and evolved based on those requirements, similar to any other software products. Platforms should provide the necessary capabilities to support the most common cases across product teams, and prioritize those over more specific capabilities that are only used by a single team to maximize the value delivered.
 2. **User experience**. A platform should offer its capabilities through consistent interfaces and focus on the user experience. Platforms should endeavor to meet their users where they are, which may mean a combination of GUIs, APIs, command-line tools, IDEs, and portals. For example, a platform typically offers the capability of deploying an application. Developers might consume such a capability via the IDE, testers might use a command-line tool, whereas a product owner might use a GUI-based web portal.
 3. **Documentation and onboarding**. Documentation is a key aspect of a successful software product. To be able to use a platform’s offerings, users require documentation and examples. A platform should be delivered with proper documentation addressing the needs of its users. It should also provide tools to accelerate the onboarding of new projects that can help users consume the necessary platform services in a quick and simple way. For example, the platform could offer a reusable supply chain workflow for building, scanning, testing, deploying, and observing a web application on Kubernetes. Such a workflow could be offered with an initial project template and documentation, a bundle often described as a *golden path*.
 4. **Self-service**. A platform should be self-serviceable. Users must be able to request and receive capabilities autonomously and automatically. This property is key to allowing a platform team to enable multiple product teams and scale as needed. The platform capabilities should be available on demand and with minimal manual intervention via the interfaces described above. For example, it should be possible for a user to request a database and receive its locator and credentials by running a command-line tool or filling out a form on a web portal.
@@ -197,7 +197,7 @@ The following table is intended to help readers grasp each capability by loosely
 
 See also https://glossary.cncf.io/
 
-A **platform** aggregates capabilities to serve developers and operators in development and delivery of products, services and apps. In reference to the scenarios it aims to support, a platform may be named a “Developer Platform”, a “Delivery Platform”, an “App Platform” or even a “Cloud Platform.” The connotations of the older term “Platform-as-a-Service”, or PaaS, are also influential.
+A **platform** aggregates capabilities to serve developers and operators in development and delivery of products, services and apps. In reference to the use cases it aims to support, a platform may be named a “Developer Platform”, a “Delivery Platform”, an “App Platform” or even a “Cloud Platform.” The connotations of the older term “Platform-as-a-Service”, or PaaS, are also influential.
 
 **Platforms** enable developers and operators to deliver applications and services faster by providing and managing common capabilities. Platforms bridge between platform users and platform capability providers, and are built and maintained by platform teams.
 

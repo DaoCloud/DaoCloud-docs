@@ -34,31 +34,37 @@ spec:
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
+      #ansibleSSHPort: "22"
     - nodeName: "g-master2"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
+      #ansibleSSHPort: "22"
     - nodeName: "g-master3"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
+      #ansibleSSHPort: "22"
   workerNodes:
     - nodeName: "g-worker1"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
+      #ansibleSSHPort: "22"
       nodeTaints:                       # 对于 7 节点模式：至少 3 个 worker 节点应打污点（仅 ES 节点）
        - "node.daocloud.io/es-only=true:NoSchedule"
     - nodeName: "g-worker2"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
+      #ansibleSSHPort: "22"
       nodeTaints:
        - "node.daocloud.io/es-only=true:NoSchedule"
     - nodeName: "g-worker3"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
+      #ansibleSSHPort: "22"
       nodeTaints:
        - "node.daocloud.io/es-only=true:NoSchedule"
  
@@ -169,6 +175,8 @@ spec:
   
   # Examples as below. More refer to kubespray options setting documentations.
   # kubeanConfig: |-
+  #  this config will set the timezone of nodes , and it won't change timezone if this config is commented out.
+  #  ntp_timezone: Asia/Shanghai
   #  # Enable recommended node sysctl settings
   #  node_sysctl_tuning: true
   #  # Extra node sysctl settings while node_sysctl_tuning is enabled
@@ -211,27 +219,34 @@ spec:
 
 | 字段                                                         | 说明                                                         | 默认值                                                  |
 | :----------------------------------------------------------- | :----------------------------------------------------------- | :------------------------------------------------------ |
-| auditConfig                                                  | k8s api-server 的审计日志配置                                | 默认关闭                                                |
-| binaries                                                     | 二进制可执行文件                                             | -                                                       |
-| binaries.externalRepository                                  | 外置二进制可执行文件仓库的访问地址，URL形式                  | -                                                       |
-| binaries.type                                                | 二进制可执行文件的访问模式，取值为 official-service(在线), builtin(火种节点内置的minio) | official-service                                        |
 | clusterName                                                  | 在 KuBean Cluster 里的 Global 集群命名                       | -                                                       |
-| fullPackagePath                                              | 解压后的离线包的路径，离线模式下该字段必填                   | -                                                       |
-| addonPackage.path                                            | 应用商店 addon 包本地文件系统路径                            | -                                                       |
-| imagesAndCharts                                              | 镜像仓库和 Chart仓库源                                       | -                                                       |
-| imagesAndCharts.externalChartRepo                            | 外置Chart仓库的IP或域名                                      | -                                                       |
-| imagesAndCharts.externalChartRepoPassword                    | 外置Chart仓库的密码，用于推送镜像                            | -                                                       |
-| imagesAndCharts.externalChartRepoType                        | 外置Chart仓库的类型，取值为 chartmuseum，harbor              | -                                                       |
-| imagesAndCharts.externalChartRepoUsername                    | 外置Chart仓库的用户名，用于推送镜像                          | -                                                       |
-| imagesAndCharts.externalImageRepo                            | 指定external仓库的IP或者域名(需指定协议头)                   | -                                                       |
-| imagesAndCharts.externalImageRepoPassword                    | 外置镜像仓库的密码，用于推送镜像                             | -                                                       |
-| imagesAndCharts.externalImageRepoUsername                    | 外置镜像仓库的用户名，用于推送镜像                           | -                                                       |
-| imagesAndCharts.type                                         | 镜像与Chart的访问模式，取值为 official-service(在线), buitin(火种内置 registry 和 chartmuseum), external(外置) | official-service                                        |
+| masterNodes                                                  | Global 集群：Master 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | -                                                       |
+| masterNodes.nodeName                                         | 节点名称，将覆盖 hostName                                    | -                                                       |
+| masterNodes.ip                                               | 节点 IP                                                      | -                                                       |
+| masterNodes.ansibleUser                                      | 节点账号                                                     | -                                                       |
+| masterNodes.ansiblePass                                      | 节点密码                                                     | -                                                       |
+| masterNodes.ansibleSSHPort                                   | ssh 的端口，默认为22                                         | 22                                                      |
+| workerNodes                                                  | Global 集群：Worker 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | -                                                       |
+| privateKeyPath                                               | kuBean 部署集群的 SSH 私钥文件路径，如果填写则不需要定义 ansibleUser、ansiblePass | -                                                       |
 | k8sVersion                                                   | kuBean 安装集群的 K8s 版本必须跟 KuBean 和离线包相匹配       | -                                                       |
 | loadBalancer.insightVip                                      | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 GLobal 集群的 insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP | -                                                       |
 | loadBalancer.istioGatewayVip                                 | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 DCE 的 UI 界面和 OpenAPI 访问入口 | -                                                       |
 | loadBalancer.type                                            | 所使用的 LoadBalancer 的模式，物理环境用 metallb，POC 用 NodePort，公有云和 SDN CNI 环境用 cloudLB | NodePort (default)、metallb、cloudLB (Cloud Controller) |
-| masterNodes                                                  | Global 集群：Master 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | -                                                       |
+| fullPackagePath                                              | 解压后的离线包的路径，离线模式下该字段必填                   | -                                                       |
+| addonPackage.path                                            | 应用商店 addon 包本地文件系统路径                            | -                                                       |
+| imagesAndCharts                                              | 镜像仓库和 Chart仓库源                                       | -                                                       |
+| imagesAndCharts.externalChartRepo                            | 外置 Chart 仓库的 IP 或域名                                      | -                                                       |
+| imagesAndCharts.externalChartRepoPassword                    | 外置 Chart 仓库的密码，用于推送镜像                            | -                                                       |
+| imagesAndCharts.externalChartRepoType                        | 外置 Chart 仓库的类型，取值为 chartmuseum，harbor              | -                                                       |
+| imagesAndCharts.externalChartRepoUsername                    | 外置 Chart 仓库的用户名，用于推送镜像                          | -                                                       |
+| imagesAndCharts.externalImageRepo                            | 指定 external 仓库的 IP 或者域名(需指定协议头)                   | -                                                       |
+| imagesAndCharts.externalImageRepoPassword                    | 外置镜像仓库的密码，用于推送镜像                             | -                                                       |
+| imagesAndCharts.externalImageRepoUsername                    | 外置镜像仓库的用户名，用于推送镜像                           | -                                                       |
+| imagesAndCharts.type                                         | 镜像与 Chart 的访问模式，取值为 official-service(在线), buitin(火种内置 registry 和 chartmuseum), external(外置) | official-service                                        |
+| auditConfig                                                  | k8s api-server 的审计日志配置                                | 默认关闭                                                |
+| binaries                                                     | 二进制可执行文件                                             | -                                                       |
+| binaries.externalRepository                                  | 外置二进制可执行文件仓库的访问地址，URL 形式                  | -                                                       |
+| binaries.type                                                | 二进制可执行文件的访问模式，取值为 official-service(在线), builtin(火种节点内置的minio) | official-service                                        |
 | network.clusterCIDR                                          | Cluster CIDR                                                 | -                                                       |
 | network.cni                                                  | CNI 选择，比如 Calico、Cilium                                | calico                                                  |
 | network.serviceCIDR                                          | Service CIDR                                                 | -                                                       |
@@ -242,8 +257,9 @@ spec:
 | osRepos.isoPath                                              | 操作系统 ISO 文件的路径, type 为 builtin 时不能为空          | -                                                       |
 | osRepos.osPackagePath                                        | 系统包文件的路径 ，type 为 builtin 时不能为空                | -                                                       |
 | osRepos.type                                                 | 操作系统软件源的访问模式，取值为 official-service(在线), builtin(火种节点内置的minio) | official-service                                        |
-| privateKeyPath                                               | kuBean 部署集群的 SSH 私钥文件路径，如果填写则不需要定义ansibleUser、ansiblePass | -                                                       |
-| workerNodes                                                  | Global 集群：Worker 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | -                                                       |
+| kubeanConfig.ntp_timezone                                    | 设置节点的时区，如果不配置该参数，默认按照节点中的时区       | -                                                       |
+| kubeanConfig.node_sysctl_tuning                              | 开启后默认调整 Global 集群的 Systemctl 内核参数              | false                                                   |
+| kubeanConfig.extra_sysctl                                    | 设置额外的 Systemctl 内核参数                                | /usr/local/bin                                          |
 | externalMiddlewares                                          | 外置中间件                                                   | -                                                       |
 | externalMiddlewares.database                                 | 外置数据库                                                   | -                                                       |
 | externalMiddlewares.database.ghippoApiserver                 | ghippoApiserver 外置数据库的配置                             | -                                                       |

@@ -86,4 +86,4 @@
         bash install_prerequisite.sh offline full
         ```
 
-接下来就可以安装 DCE 5.0 了。
+接下来就可以安装 DCE 5.0 [社区版](ommunity/resources.md)或 [商业版](commercial/deploy-requirements.md) 了。

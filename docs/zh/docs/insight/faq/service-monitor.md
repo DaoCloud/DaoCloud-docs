@@ -102,6 +102,8 @@ metadata:
   name: redis-exporter # 填写一个唯一名称
   namespace: cm-prometheus  # namespace 固定，不需要修改
 # 描述抓取目标 Pod 的选取及抓取任务的配置
+  label:
+    operator.insight.io/managed-by: insight # Insight 管理的标签标识
 spec:
   # 填写对应 Pod 的 label，pod monitor 会取对应的值作为 job label 的值。
   # 如果查看的是 Pod Yaml，取 pod.metadata.labels 中的值。
@@ -138,6 +140,8 @@ kind: PodMonitor
 metadata:
   name: redis-exporter # 填写一个唯一名称
   namespace: cm-prometheus # namespace 固定，不要修改
+  label:
+    operator.insight.io/managed-by: insight  # Insight 管理的标签标识，必填。
 spec:
   podMetricsEndpoints:
     - interval: 30s
@@ -188,6 +192,8 @@ metadata:
   name: redis-exporter # 填写一个唯一名称
   namespace: cm-prometheus  # namespace 固定，不需要修改
 # 描述抓取目标 Pod 的选取及抓取任务的配置
+  label:
+    operator.insight.io/managed-by: insight  # Insight 管理的标签标识，必填。
 spec:
   # 填写对应 Pod 的 label(metadata/labels)，service monitor 会取对应的值作为 job label 的值
   [ jobLabel: string ]
@@ -224,6 +230,8 @@ kind: ServiceMonitor
 metadata:
   name: go-demo # 填写一个唯一名称
   namespace: cm-prometheus # namespace 固定，不要修改
+  label:
+    operator.insight.io/managed-by: insight  # Insight 管理的标签标识，必填。
 spec:
   endpoints:
     - interval: 30s

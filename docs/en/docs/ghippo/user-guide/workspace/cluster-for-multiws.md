@@ -40,7 +40,7 @@ click modifyns "https://docs.daocloud.io/en/amamba/03UserGuide/Namespace/namespa
 
 ## Prepare a workspace
 
-In order to meet the multi-tenant usage scenarios, the workspace forms an isolated resource environment based on multiple resources such as clusters, cluster namespaces, meshs, mesh namespaces, multicloud, and multicloud namespaces.
+In order to meet the multi-tenant  use cases, the workspace forms an isolated resource environment based on multiple resources such as clusters, cluster namespaces, meshs, mesh namespaces, multicloud, and multicloud namespaces.
 Workspaces can be mapped to various concepts such as projects, tenants, enterprises, and suppliers.
 
 1. Log in to the web console as a user with the admin/folder admin role, and click `Global Management` at the bottom of the left navigation bar.
@@ -57,7 +57,7 @@ Workspaces can be mapped to various concepts such as projects, tenants, enterpri
 
 ## Prepare a cluster
 
-The workspace is to meet the multi-tenant usage scenarios. It forms an isolated resource environment based on multiple resources such as clusters, cluster namespaces, meshs, mesh namespaces, multiclouds, and multicloud namespaces. Workspaces can be mapped to projects and tenants., business, supplier and many other concepts.
+The workspace is to meet the multi-tenant  use cases. It forms an isolated resource environment based on multiple resources such as clusters, cluster namespaces, meshs, mesh namespaces, multiclouds, and multicloud namespaces. Workspaces can be mapped to projects and tenants., business, supplier and many other concepts.
 
 Follow the steps below to prepare a cluster.
 
@@ -79,4 +79,4 @@ Return to `Global Management` to add clusters for the workspace.
 
     
 
-Next step: After allocating cluster resources to multiple workspaces, users can go to `App Workbench` under these workspaces [create namespace and deploy application](../../../amamba/user-guide/namespace/namespace.md).
+Next step: After allocating cluster resources to multiple workspaces, users can go to `Workbench` under these workspaces [create namespace and deploy application](../../../amamba/user-guide/namespace/namespace.md).

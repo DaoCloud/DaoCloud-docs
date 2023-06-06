@@ -42,7 +42,7 @@ DCE 5.0 container registry allows users to create synchronization policies and a
 
 ## Add destination registry
 
-1. From the integrated or hosted Harbor page, click a registry name.
+1. From the integrated or managed Harbor page, click a registry name.
 
     ![Select a registry](../images/sync00.png)
 

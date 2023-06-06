@@ -3,30 +3,29 @@ hide:
   - toc
 ---
 
-# What is a container registry
+# What is a Container Registry
 
-Container registry is a cloud-native image hosting service that supports multi-instance lifecycle management. It supports the deployment of container registry instances to any cloud-native basic environment, and supports the integration of external container registrys (Harbor Registry and Docker Registry).
-Through the container registry service, you can assign the private registry space to one or more workspaces (tenants) to ensure the security of the private image, and you can also expose the registry space to all Kubernetes namespaces. The container registry cooperates with [Container Management](../kpanda/intro/what.md) service helps users quickly deploy applications.
+A container registry is a cloud-native image hosting service that supports multi-instance lifecycle management. It allows deploying container registry instances to any cloud-native basic environment and integrating external container registries such as Harbor Registry and Docker Registry.
 
-**Features**
+Through the container registry service, you can assign private registry space to one or more workspaces (tenants) to ensure the security of private images. You can also expose the registry space to all Kubernetes namespaces. The container registry cooperates with the [Container Management](../kpanda/intro/what.md) service to help users quickly deploy applications.
 
-- Container registry full lifecycle management
+## Features
 
-    Provide full lifecycle management of container registrys by hosting Harbor, including creation, editing, deletion, etc. of container registrys.
+- Container Registry Full Lifecycle Management
 
-- Tenant-based application deployment
+    The container registry provides full lifecycle management for Harbor, including creating, editing, and deleting container registries.
 
-    Supports the allocation of registry space to one or more workspaces (tenants); supports independent association of workspaces (tenants) with external container registrys.
+- Tenant-Based Application Deployment
 
-- Image scan
+    The registry supports allocating registry space to one or more workspaces (tenants) and independently associating workspaces (tenants) with external container registries.
 
-    Support image scanning function to identify image security risks
+- Image Scan
 
-- Image selection
+    The registry supports an image scanning function to identify image security risks.
 
-    Linked with the container management module, the image can be quickly selected through the "select image" function to complete application deployment.
+- Image Selection
 
-**Product logical architecture**
+    Linked with the container management module, the registry can quickly select images using the "select image" function to complete application deployment.
 
 
 

@@ -9,17 +9,22 @@
 
 ## 配置认证服务器
 ### 使用默认的认证服务器
+
 1. 将认证服务器的代码模版克隆到本地。
 
     ```
     git clone https://github.com/projectsesame/envoy-authz-java
     ```
+    
 2. 直接使用 [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) 以及 [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) 下的默认镜像。
 
-    默认镜像如下:
+    默认镜像如下：
+    
     - release.daocloud.io/skoala/demo/envoy-authz-java:0.1.0
     - release-ci.daocloud.io/skoala/demo/envoy-authz-java:0.1.0
+
 3. 模版为简单的路径判断，当访问路径为 `/` 时通过认证，其余路径为拒绝访问。
+
 ### 使用自定义的认证服务器
 
 1. 将认证服务器的代码模版克隆到本地。

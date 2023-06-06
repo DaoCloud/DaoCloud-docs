@@ -3,9 +3,9 @@ hide:
   - toc
 ---
 
-# App Workbench permission description
+# Workbench permission description
 
-[App Workbench](../../amamba/intro/what.md) supports three user roles:
+[Workbench](../../amamba/intro/what.md) supports three user roles:
 
 - Workspace Admin
 - Workspace Editor

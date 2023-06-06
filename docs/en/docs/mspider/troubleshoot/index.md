@@ -20,3 +20,4 @@ If you encounter problems with the use of the service mesh, please review this t
 - [The mesh created is abnormal, but the mesh cannot be deleted](./failed-to-delete.md)
 - [Failed to add cluster to managed mesh](./failed-to-add-cluster.md)
 - [The istio-ingressgateway is abnormal when hosting the mesh management cluster](./hosted-mesh-errors.md)
+- [Unable to unbind mesh space](./mesh-space-cannot-unbind.md)

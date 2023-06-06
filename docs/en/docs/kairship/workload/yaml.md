@@ -1,10 +1,10 @@
-# Create multi-cloud workloads via YAML
+# Create multicloud workloads via YAML
 
 In addition to creating workloads through images, they can also be created by entering YAML statements.
 
 The steps for this creation method are relatively simple, as described below.
 
-1. In the left navigation bar, click `Multi-Cloud Workloads`, and click the `YAML Create` button in the upper right corner.
+1. In the left navigation bar, click `multicloud Workloads`, and click the `YAML Create` button in the upper right corner.
 
     <!--screenshot-->
 
@@ -20,13 +20,13 @@ The steps for this creation method are relatively simple, as described below.
 
     <!--screenshot-->
 
-5. Automatically return to the list of multi-cloud workloads, click `⋮` on the right side of the list, you can edit and modify the YAML, and you can also pause, restart, and delete the workload.
+5. Automatically return to the list of multicloud workloads, click `⋮` on the right side of the list, you can edit and modify the YAML, and you can also pause, restart, and delete the workload.
 
     <!--screenshot-->
 
 ## YAML example
 
-The YAML editor that comes with the multi-cloud orchestration module will automatically detect the YAML syntax, and if there is an error, a relevant prompt will appear.
+The YAML editor that comes with the Multicloud Management module will automatically detect the YAML syntax, and if there is an error, a relevant prompt will appear.
 Here are some common examples that you can use with a little modification.
 
 ### Deployment example

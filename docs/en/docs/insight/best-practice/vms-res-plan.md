@@ -1,6 +1,6 @@
 # vmstorage disk capacity planning
 
-vmstorage is responsible for storing multi-cluster metrics for observability.
+vmstorage is responsible for storing multicluster metrics for observability.
 In order to ensure the stability of vmstorage, it is necessary to adjust the disk capacity
 of vmstorage according to the number of clusters and the size of the cluster.
 For more information, please refer to [vmstorage retention period and disk space](https://docs.victoriametrics.com/guides/understand-your-setup-size.html?highlight=datapoint#retention-perioddisk-space).
@@ -37,7 +37,7 @@ amount of metrics it stored and the disk usage of individual data points.
 
 The data in the table is calculated based on the default storage time of one month (30 days),
 and the disk usage of a single data point (datapoint) is calculated as 0.9.
-In a multi-cluster scenario, the number of Pods represents the sum of the number of Pods in the multi-cluster.
+In a multicluster scenario, the number of Pods represents the sum of the number of Pods in the multicluster.
 
 ### When the service mesh is not enabled
 

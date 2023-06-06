@@ -26,5 +26,7 @@ hide:
 多云编排 Kairship（Kubernetes Airship）是一个以应用为中心、开箱即用的多云应用编排平台。
 多云编排实现了多云和混合云的集中管理，提供跨云的应用部署、发布和运维的能力；支持基于集群资源的应用弹性扩缩，实现全局负载均衡；提供了故障恢复的能力，彻底解决多云应用灾备的问题。
 
+[演示视频：如何将单云应用一键转换为多云应用](../../videos/use-cases.md#_2)
+
 [下载 DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }

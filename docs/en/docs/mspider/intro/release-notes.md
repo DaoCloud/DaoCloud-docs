@@ -9,11 +9,79 @@ Date: 2022-12-20
 
 This page lists all the Release Notes for each version of Service Mesh, providing convenience for users to learn about the evolution path and feature changes.
 
+## 2023-05-29
+
+### v0.16.1
+
+#### Features
+
+- **Added** Ckube loads resources on demand.
+- **Added** IstioResource field: `labels` and `annotations`, can update Labels and Annotations.
+- **Added** ClusterProvider synchronization implementation in MeshCluster.
+- **Added** Definition of the `mspider.io/protected` label for mesh protection.
+- **Added** Edge car upgrade supports multiple workload capabilities, `SidecarUpgrader` simultaneously supports `workloadshadow.name` and `deployment.name`.
+- **Added** Workload type is re-implemented as a string.
+- **Added** The `localized_name` field is added to the workload-related interface to display workload names.
+- **Added** Workload injection policy clearing capability
+- **Added** Get global configuration interface `/apis/mspider.io/v3alpha1/settings/global-configs`.
+- **Added** `clusterPhase` field is added to mark the cluster's status (previously marked in the phase field, now separated).
+- **Added** `clusterProvider` field is added to mark the cluster provider.
+- **Added** Traffic lane CRD capability implementation.
+- **Added** Reg-Proxy component is enabled by default.
+- **Added** Implementation of Service selector field output.
+- **Added** Solving cross-cluster access problems when Sidecars are not injected by adding a Network label to Namespace.
+- **Added** Custom parameter configuration capability for managed mesh hosted-apiserver. (This parameter only takes effect during installation and does not support updates for the time being), (for more parameters, please refer to helm parameter configuration):
+
+    ```
+      "hosted-apiserver.global.storageClass":                 "default",
+      "hosted-apiserver.etcd.data_size":                      "10Gi",
+      "hosted-apiserver.etcd.resources.requests.cpu":         "100m",
+      "hosted-apiserver.etcd.resources.limits.cpu":           "500m",
+      "hosted-apiserver.etcd.resources.requests.memory":      "100Mi",
+      "hosted-apiserver.etcd.resources.limits.memory":        "1000Mi",
+      "hosted-apiserver.apiserver.resources.requests.cpu":    "100m",
+      "hosted-apiserver.apiserver.resources.limits.cpu":      "1000m",
+      "hosted-apiserver.apiserver.resources.requests.memory": "100Mi",
+      "hosted-apiserver.apiserver.resources.limits.memory":   "1000Mi",
+    ```
+
+- **Added** Mesh control plane component status
+- **Added** The mesh query interface adds the `loadBalancerStatus` field to describe the actual assigned LB address.
+- **Added** Component progress detail interface `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/components-progress`.
+- **Added** HPA is added for control plane components.
+- **Added** New API definition to get cluster `StorageClass`.
+- **Added** New API definition to get installed components in the cluster (currently supports Insight Agent).
+- **Optimization:** Improved user experience for binding/unbinding workspaces.
+- **Optimization:** The `workload_kind` field type in the workload-related interface is optimized from enumeration to `string`.
+- **Optimization:** When hosting a mesh, version detection of the control plane cluster is included along with the working cluster.
+
+#### Fixes
+
+- **Fixed:** CloudShell permissions issue.
+- **Fixed:** MeshCluster Status RemotePilotAddress invalid data not cleared promptly.
+- **Fixed:** Problem where MeshCluster cannot be deleted.
+- **Fixed:** Insufficient content in FailedReason of TrafficLane.
+- **Fixed:** Missing action field in TrafficLaneActionsRequest.
+- **Fixed:** The mesh list cannot be displayed when there are unhealthy clusters.
+- **Fixed:** Incorrect number of effectively injected instances when an instance is abnormal.
+- **Fixed:** WasmPlugin cannot create multiple instances when a service is selected by multiple lanes.
+- **Fixed:** The service label may have residual old workloads.
+- **Fixed:** The service list cannot obtain the effective number of workloads, and the type parsing error of Dynamic ReadyReplicas.
+- **Fixed:** When the workload changes, the changed status cannot be synchronized to the corresponding Service.
+- **Fixed:** Checking the status of a cluster that is not connected to the mesh.
+- **Fixed:** Cluster status is not searchable.
+- **Fixed:** Mesh cannot remove the cluster when there is no edge car.
+- **Fixed:** Regular expression for mesh name does not allow numbers to start.
+- **Fixed:** Mesh status display is incorrect, and status is sometimes displayed as normal when there is no edge car.
+- **Fixed:** Fixed the problem that the automatic injection template of the mesh is not effective.
+- **Fixed** the issue where non-admin users cannot obtain traffic topology due to the lack of default values in the cluster.
+- **Fixed** the null pointer exception in the automatic injection service policy.
+
 ## 2023-04-27
 
 ### v0.15.0
 
-#### Added
+#### Features
 
 - Introduced `d2` as a drawing tool.
 - Added a new wasm plugin that adds different headers to requests according to the trace ID.
@@ -55,7 +123,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 
 ### v0.14.3
 
-#### Upgraded
+#### Features
 
 - Frontend version upgraded to `v0.12.2`.
 
@@ -95,7 +163,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 #### Fixes
 
 - The interface does not display when the east-west gateway is not Ready.
-- Multi-cloud interconnection will automatically register the east-west gateway LB IP, which may cause internal network abnormalities (remove the east-west gateway instance label: `topology.istio.io/network`. This label will automatically register the east-west gateway).
+- Multicloud interconnection will automatically register the east-west gateway LB IP, which may cause internal network abnormalities (remove the east-west gateway instance label: `topology.istio.io/network`. This label will automatically register the east-west gateway).
 - Cluster migration with east-west gateway enabled may cause incorrect service resolution.
 - Fixed an issue where the control plane cannot be deployed on a single-node Kubernetes cluster.
 - The `istioctl` installation error caused by the `kubectl` version mismatch fixed.
@@ -143,8 +211,8 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 
 #### Features
 
-- Multi-cluster management feature added.
-- Support for multi-cloud interconnection added.
+- Multicluster management feature added.
+- Support for multicloud interconnection added.
 - Service dependency analysis and visualization feature added.
 - New `dial` and `readinessProbe` options added to endpoint slice.
 - Service mesh security audit feature added.

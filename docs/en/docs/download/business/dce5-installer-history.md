@@ -1,6 +1,6 @@
 # DaoCloud Enterprise 5.0 commercial historical versions
 
-## Commercial releases
+## Enterprise Package
 
 | File Name | Version | Architecture | File Size | Downloads | Date Updated |
 | ------- | --- | ---- | ------ | --- | ------- |

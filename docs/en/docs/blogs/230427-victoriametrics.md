@@ -73,7 +73,7 @@ In addition to supporting Prometheus as a data source, VictoriaMetrics also supp
 
 ## Architecture
 
-For scenarios where the acquisition rate is lower than one million data points per second, the official recommendation is to use the single-node version instead of the cluster version.
+For use cases where the acquisition rate is lower than one million data points per second, the official recommendation is to use the single-node version instead of the cluster version.
 The single-node version scales perfectly with the number of CPU cores, RAM and available storage space. Compared to the cluster version,
 The single-node version is easier to configure and operate, so think twice before choosing the cluster version.
 
@@ -104,7 +104,7 @@ VictoriaMetrics provides the following components at the open source level:
 
 5. vmselect: Responsible for data query, supporting unified data query and multi-tenant data isolation query;
 
-6. vmalert: Responsible for alarms, like Prometheus, supports record and alarm rule configuration and sends alarm notifications, allows Go templates to be used in annotations to format data, iterate or execute expressions, and supports cross-tenant sending of alarms and record rules
+6. vmalert: Responsible for alerts, like Prometheus, supports record and alert rule configuration and sends alert notifications, allows Go templates to be used in annotations to format data, iterate or execute expressions, and supports cross-tenant sending of alerts and record rules
 
 7. vmbackup: Responsible for data backup, supports incremental backup and full backup, can do hourly, daily, weekly and monthly backup, supports local storage, GCS, Azure Blob storage, S3 storage, any storage compatible with S3 ;
 
@@ -215,9 +215,9 @@ VictoriaMetrics returns TSDB statistics on the "/api/v1/status/TSDB" page in a P
 
 5. extra_label=LABEL=VALUE, expand label screening.
 
-### Push indicators
+### Push metrics
 
-When there is a scenario where indicators cannot be pulled, VictoriaMetrics supports indicator push through the push mode in the Prometheus data format:
+When there is a scenario where metrics cannot be pulled, VictoriaMetrics supports metric push through the push mode in the Prometheus data format:
 
 1. -pushmetrics.url, push address, such as "-pushmetrics.url=<http://victoria-metrics:8428/api/v1/import/prometheus";>
 

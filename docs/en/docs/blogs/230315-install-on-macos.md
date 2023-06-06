@@ -163,12 +163,12 @@ fire-kind-cluster-control-plane Ready control-plane 18h v1.25.3
 
 ## Experience using
 
-After applying for a license, you will enter the main interface of DCE 5.0, displaying information such as currently installed components, clusters/nodes/resources, and alarms.
+After applying for a license, you will enter the main interface of DCE 5.0, displaying information such as currently installed components, clusters/nodes/resources, and alerts.
 
 You can try:
 
 - create a [user](../ghippo/user-guide/access-control/user.md),
-   Join a [user group](../ghippo/user-guide/access-control/group.md),
+   Join a [group](../ghippo/user-guide/access-control/group.md),
    Grant [role permission](../ghippo/user-guide/access-control/role.md)
 - [Customized software interface](../ghippo/user-guide/platform-setting/appearance.md)
 - [Integrate a cluster](../kpanda/user-guide/clusters/integrate-cluster.md)

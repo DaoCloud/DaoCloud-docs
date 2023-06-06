@@ -1,12 +1,12 @@
-# 升级 DCE 5.0 GProduct
+# 升级 DCE 5.0 子模块
 
-GProduct 是 DCE 5.0 所有产品模块的统称。
+DCE 5.0 由容器管理、全局管理、可观测性等十几个子模块构成。每个子模块可以独立升级。
 
 本文将介绍如何使用 dce5-installer 离线升级 DCE 5.0 GProduct。
 
 ## 前提条件
 
-- 您需要有一个 DCE 5.0 的集群环境，参阅[离线化部署全模式](commercial/start-install.md)
+- 您需要有一个 DCE 5.0 的集群环境，参阅[离线化部署商业版](commercial/start-install.md)
 - 请确保您的火种机器还存活
 - 请确认您想要升级的版本，参阅[版本发布说明](release-notes.md)
 
@@ -33,9 +33,7 @@ tar -xvf offline-v0.6.0-amd64.tar
 
 !!! note
 
-    离线安装 DCE 5.0 时，集群配置文件采用的是什么配置，升级时也需要一致。
-    
-    由于 v0.6.0 版本更新了集群配置文件的结构，[集群配置文件说明](commercial/cluster-config.md)，所以需要保证要与 v0.5.0 用的参数一致，但是结构要与 v0.6.0 的一致。
+    由于 v0.6.0 版本更新了集群配置文件的结构，见[集群配置文件说明](commercial/cluster-config.md)，所以更新时需要确保参数与 v0.5.0 使用的参数一致，文件结构要与 v0.6.0 的结构一致。
     
     目前仅对 imagesAndCharts 的 builtin 方式进行了测试。
 

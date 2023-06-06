@@ -13,7 +13,7 @@ Report management is one of the core tasks of IT operations management. It colle
 
 First, by centrally displaying various types of reports, enterprises can more accurately understand the utilization and usage of IT resources. For example, in the cluster report, administrators can view information such as the number of nodes and resource utilization rates in different clusters; in the node report, administrators can view information such as IP addresses, types, belonging clusters, and resource utilization rates for each node. With these reports, administrators can better partition and schedule computing resources.
 
-Secondly, through audit reports, enterprises can understand user operations and operations performed on resources, making it easy for enterprises to grasp resource utilization and track user operation traces. Through alarm reports, enterprises can generate cluster inspection reports, quickly diagnose problems and handle them.
+Secondly, through audit reports, enterprises can understand user operations and operations performed on resources, making it easy for enterprises to grasp resource utilization and track user operation traces. Through alert reports, enterprises can generate cluster inspection reports, quickly diagnose problems and handle them.
 
 Finally, the report management module also supports customized time ranges and searches, helping administrators better understand the usage of enterprise IT resources. In addition, it provides the function of exporting/downloading data, allowing administrators to conduct in-depth analysis of the data.
 

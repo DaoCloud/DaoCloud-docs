@@ -9,10 +9,10 @@ This page shares some technical articles related to cloud native, and we hope th
     The poor scaling of standalone storage is a widely criticized problem with Prometheus. The article gives 3 clustering solutions to this problem.
     Prometheus federal cluster, remote storage solution, Prometheus own build cluster, these three solutions can solve the storage problem of Prometheus well.
 
-- [How can nettrace quickly perform network troubleshooting in cloud-native scenarios?](https://mp.weixin.qq.com/s/0n7kbOhHr6m5JClTrSIysA)
+- [How can nettrace quickly perform network troubleshooting in cloud-native use cases?](https://mp.weixin.qq.com/s/0n7kbOhHr6m5JClTrSIysA)
 
     [nettrace](https://github.com/OpenCloudOS/nettrace) is an eBPF-based network toolset that integrates network message tracing (fault location), network troubleshooting, and network anomaly monitoring.
-    It provides a more efficient and easy-to-use method to solve network problems in complex scenarios.
+    It provides a more efficient and easy-to-use method to solve network problems in complex cases.
 
 - [Istio Operations Practice: How to Avoid 503 UC Errors](https://mp.weixin.qq.com/s/4YIYPIszyKyWVMKXnXtHbg)
 
@@ -41,7 +41,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [K8s: 13 Abnormalities of Pod](https://mp.weixin.qq.com/s/cEEdH7npkSHmVHSXLbH6uQ)
 
-    The article summarizes 13 common abnormal scenarios of K8s Pod, gives the common error status of each scenario, analyzes its causes and troubleshooting ideas.
+    The article summarizes 13 common abnormal use cases of K8s Pod, gives the common error status of each scenario, analyzes its causes and troubleshooting ideas.
 
 - [K8s: Everything you need to know](https://enterprisersproject.com/sites/default/files/2022-11/tep_white-paper_kubernetes-what-you-need-to-know%2Brev2.pdf)
 
@@ -93,9 +93,9 @@ This page shares some technical articles related to cloud native, and we hope th
 
     [Flomesh Service Mesh](https://github.com/flomesh-io/fsm) uses Pipy, a programmable agent, to provide east-west and north-south traffic management for the core.
     By breaking through the network isolation between computing environments with L7-based traffic management capabilities, a virtual flat network is created that allows applications in different computing environments to communicate with each other.
-    The article describes the integration of Dapr with the Flomesh service mesh for cross-cluster service calls, enabling "true" multi-cluster interoperability.
+    The article describes the integration of Dapr with the Flomesh service mesh for cross-cluster service calls, enabling "true" multicluster interoperability.
 
-- [How to mitigate container isolation vulnerabilities and monitor kernel critical paths in cloud-native scenarios?](https://mp.weixin.qq.com/s/qlmm2h8RpQnKOnEjlK0pMA)
+- [How to mitigate container isolation vulnerabilities and monitor kernel critical paths in cloud-native use cases?](https://mp.weixin.qq.com/s/qlmm2h8RpQnKOnEjlK0pMA)
 
     This page introduces two solutions developed by the OpenCloudOS community: CgroupFS and SLI, for mitigating container isolation vulnerabilities and monitoring kernel critical paths.
     The CgroupFS scheme provides a kernel-state container view of the VM file system (/proc, /sys), which enhances container resource view isolation.
@@ -110,7 +110,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Optimization of kube-state-metrics under large scale clusters](https://mp.weixin.qq.com/s/8R55Holzrf0wNVD8DLJnAg)
 
     In small-scale clusters, you only need to ensure kube-state-metrics is highly available for use in production environments.
-    However, for large scale clusters, providing metrics metrics through only one KSM instance is very overwhelming and requires many optimizations.
+    However, for large scale clusters, providing metrics through only one KSM instance is very overwhelming and requires many optimizations.
     For example, filtering unneeded metrics and tags, reducing the pressure on KSM instances by slicing, and using DaemonSet to deploy pod metrics separately.
 
 - [Vivo Self-Developed Jenkins Resource Scheduling System Design and Practice](https://mp.weixin.qq.com/s/wEmheHwTA8m8LHr_5LVSyg)
@@ -130,7 +130,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [service mesh Security and High Availability Deployment Best Practices](https://mp.weixin.qq.com/s/hFCshQpmF7Vr0jrpugArjA)
 
-    Article on security and high availability best practices when deploying service meshs in a multi-cluster infrastructure, including: how control planes should be deployed near applications; how ingress should be deployed to promote security and agility; how to use Envoy to promote cross-cluster load balancing, and how to use certificates inside the mesh.
+    Article on security and high availability best practices when deploying service meshs in a multicluster infrastructure, including: how control planes should be deployed near applications; how ingress should be deployed to promote security and agility; how to use Envoy to promote cross-cluster load balancing, and how to use certificates inside the mesh.
 
 - [Open Source Strategy Development and Implementation for Medium and Large Technology Enterprises](https://mp.weixin.qq.com/s/9Z4zFPU0uHk6RhrpUDD-tw)
 
@@ -155,7 +155,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Interpretation of how to choose K8s elastic strategy from the perspective of microservice application](https://mp.weixin.qq.com/s/jfpF3WUs4YvtlJ8Q4zsuxg)
 
     For cluster resource elasticity, the K8s community has given two solutions, Cluster Autoscaler (CA) and Virtual Kubelet (VK).
-    The article focuses on the form and characteristics of microservice applications, analyzes the applicable scenarios of CA and VK, and summarizes how to choose cluster resource elasticity for applications under the microservice architecture.
+    The article focuses on the form and characteristics of microservice applications, analyzes the use cases of CA and VK, and summarizes how to choose cluster resource elasticity for applications under the microservice architecture.
 
 - [Introduction to the components of the GitOps software delivery pipeline](https://www.weave.works/blog/infographic-gitops-pipeline)
 
@@ -185,9 +185,9 @@ This page shares some technical articles related to cloud native, and we hope th
 
     The article shares how the open source projects and open source communities of 4 top open source commercial companies (HashiCorp, Confluent, Databricks, and CockroachDB) operate, how to find the top 1,000 community users and how long it took, and growth metrics, etc.
 
-- [How to practice DevOps in a container cloud multi-cluster environment](https://mp.weixin.qq.com/s/MW67DhLzUWXm0xHd5LH0Tw)
+- [How to practice DevOps in a container cloud multicluster environment](https://mp.weixin.qq.com/s/MW67DhLzUWXm0xHd5LH0Tw)
 
-    The article introduces how to implement multi-cluster DevOps through GitOps, recommends a multi-cluster GitOps workflow as a reference, and finally introduces the mainstream way to practice GitOps in continuous integration and continuous delivery.
+    The article introduces how to implement multicluster DevOps through GitOps, recommends a multicluster GitOps workflow as a reference, and finally introduces the mainstream way to practice GitOps in continuous integration and continuous delivery.
 
 - [Three Misunderstandings of Kubernetes HPA and Guide to Avoiding Pitfalls](https://mp.weixin.qq.com/s/3eSm0BZSrPUAZQQhG_L_5A)
 
@@ -226,11 +226,11 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Best Practices of K8s Security Monitoring under Zero Trust Strategy](https://mp.weixin.qq.com/s/wYUNsGaWEnQZ0BVxsQORbA)
 
-    This page introduces how to use K8s-related security data sources and collection technologies in a distributed containerized environment to monitor K8s clusters, discover abnormal API access events, abnormal traffic, abnormal configurations, abnormal logs and other behaviors in a timely manner, and combine reasonable alarm strategies to establish A more proactive security defense system.
+    This page introduces how to use K8s-related security data sources and collection technologies in a distributed containerized environment to monitor K8s clusters, discover abnormal API access events, abnormal traffic, abnormal configurations, abnormal logs and other behaviors in a timely manner, and combine reasonable alert strategies to establish A more proactive security defense system.
 
 - [Best Practices of Container Security Based on DevOps Process](https://mp.weixin.qq.com/s/y42BgaosyIQnA1uDEgqTPA)
 
-    The article shares 14 container security practices applicable to the DevOps workflow summarized by Qingteng Cloud Security, including 6 security left-shift steps in the defense phase, safe running containers in the protection phase, abnormal behavior alarms in the detection phase, and response phase incident response and forensics.
+    The article shares 14 container security practices applicable to the DevOps workflow summarized by Qingteng Cloud Security, including 6 security left-shift steps in the defense phase, safe running containers in the protection phase, abnormal behavior alerts in the detection phase, and response phase incident response and forensics.
 
 - [How to Design a “Golden Path” for Internal Development Platforms](https://cloud.redhat.com/blog/designing-golden-paths)
 
@@ -244,7 +244,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Microservice Full Link Grayscale New Capabilities](https://mp.weixin.qq.com/s/JL7Ru4nIiP2XuXwNiw2TtA)
 
-    This page mainly introduces the application scenarios and pain points of Alibaba Cloud MSE service governance based on the full-link grayscale capability and two new capabilities: white screen at runtime and configuration grayscale.
+    This page mainly introduces the use cases and pain points of Alibaba Cloud MSE service governance based on the full-link grayscale capability and two new capabilities: white screen at runtime and configuration grayscale.
     The white screen at runtime is used to gain insight into the traffic matching and running behavior of the whole link grayscale; the configuration grayscale refers to the grayscale capability that the ConfigMaps in the microservice application should have, so as to deal with the grayscale application’s special configuration value appeal.
 
 - [Kubernetes Cluster Utilization Improvement Practice](https://mp.weixin.qq.com/s/IAo41AZ0aAkIxY-JzonXMQ)
@@ -272,9 +272,9 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Observability: Sampling Scenes and Implementation Cases (Part 1)](https://mp.weixin.qq.com/s/tnYUOHJT0TOh4iYBHlP4aA)
 
-    The article successively introduces the usage scenarios of sampling, the position of sampling in the call chain system architecture, the main schemes (head coherent sampling, unit sampling and tail coherent sampling), sampling implementation of mainstream open source and commercial systems, landing cases, etc.
+    The article successively introduces the use cases of sampling, the position of sampling in the call chain system architecture, the main schemes (head coherent sampling, unit sampling and tail coherent sampling), sampling implementation of mainstream open source and commercial systems, landing cases, etc.
 
-- [Observability sampling scenarios and landing cases (Part 2)](https://mp.weixin.qq.com/s/nxnz37VJydNHFMaEywu9KA)
+- [Observability sampling use cases and landing cases (Part 2)](https://mp.weixin.qq.com/s/nxnz37VJydNHFMaEywu9KA)
 
     The author shared some thoughts on the sampling design of observable systems around some landing cases.
     First analyze the necessity of full sampling and the traces suitable for full sampling, and then share the complete sampling solutions in the industry such as Ali Eagle Eye and ByteDance and the sampling case of OpenTelemetry production environment.
@@ -287,7 +287,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Kubernetes resource topology-aware scheduling optimization](https://mp.weixin.qq.com/s/CgW1zqfQBdUQo8qDtV-57Q)
 
-    The article first introduces the business scenarios of Tencent Star Computing Power and the knowledge related to refined scheduling, and then conducts research on the K8s and Volcano communities, and finds that the existing solutions have limitations.
+    The article first introduces the business cases of Tencent Star Computing Power and the knowledge related to refined scheduling, and then conducts research on the K8s and Volcano communities, and finds that the existing solutions have limitations.
     Finally, through the pain point problem analysis, the corresponding solution is given.
     After optimization, the training speed of the original test task is increased to 3 times, and the eviction rate of CPU preemption is greatly reduced to the physical machine level.
 
@@ -306,9 +306,9 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Multi-Active Architecture Guide for Hybrid Cloud](https://mp.weixin.qq.com/s/NXXwjxUAGXDD3krKXyJbaQ)
 
-    The article introduces the multi-active architecture of Jobbang Company in a hybrid cloud environment: the network between multi-clouds is a state between single-cloud multi-availability zones and center-edge;
+    The article introduces the multi-active architecture of Jobbang Company in a hybrid cloud environment: the network between multiclouds is a state between single-cloud multi-availability zones and center-edge;
     The normal inter-application call closed-loop is within the single cloud, and only requires independent registration and discovery within the single cloud;
-    Cross-cloud calls in some scenarios only require inter-cluster discovery;
+    Cross-cloud calls in some cases only require inter-cluster discovery;
     With full cloud deployment, north-south traffic can be prioritized for scheduling through DNS.
 
 - [How to Harden Kubernetes in 2022?](https://elastisys.com/nsa-cisa-kubernetes-security-hardening-guide-and-beyond-for-2022/)
@@ -318,7 +318,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Application of Chaos Engineering in Microservice Scenario](https://mp.weixin.qq.com/s/dEA3g3JnAKloW6K7cUskYQ)
 
-    Hangzhou Mike Technology introduced Chaos Mesh, a cloud-native chaos engineering testing platform, to solve the pain points encountered in the robustness testing of microservices in cloud financial scenarios.
+    Hangzhou Mike Technology introduced Chaos Mesh, a cloud-native chaos engineering testing platform, to solve the pain points encountered in the robustness testing of microservices in cloud financial use cases.
 
 - [Baidu Cloud Native Mixed Department Large-scale Implementation Road](https://mp.weixin.qq.com/s/OgU2uRGhIy7r6WucvdrPzg)
 
@@ -379,7 +379,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 ### Tool recommendation
 
-- [Kubernetes Exploration for Solving Noisy Neighbor Scenarios](https://mp.weixin.qq.com/s/g28ett0Z5LR0sHTyOljCRg)
+- [Kubernetes Exploration for Solving Noisy Neighbor Use Cases](https://mp.weixin.qq.com/s/g28ett0Z5LR0sHTyOljCRg)
 
     The noisy neighbor problem occurs when one tenant's performance degrades due to another tenant's activity.
     While Kubernetes provides a CPU manager, device plug-in manager, and topology manager to coordinate resource allocation and ensure optimal performance of critical workloads, it does not fundamentally address the problem.
@@ -472,9 +472,9 @@ This page shares some technical articles related to cloud native, and we hope th
     The article lists five powerful tools for working with Kubernetes,
     They are the terminal UI [K9s](https://github.com/derailed/k9s), the tool to clean up the Kubernetes cluster [Popeye](https://github.com/derailed/popeye), the Kubernetes cluster deployment inspection tool [Kube -bench](https://github.com/aquasecurity/kube-bench), context and namespace quick switching tool [Kubectx](https://github.com/ahmetb/kubectx), [Kubens](https:/ /github.com/ahmetb/kubectx) and [fzf](https://github.com/junegunn/fzf), log aggregator [Stern](https://github.com/stern/stern), fast from shell Check the file [Bat](https://github.com/sharkdp/bat).
 
-- [Use Open Cluster Management (OCM) Placement to extend multi-cluster scheduling capabilities](https://cloud.redhat.com/blog/extending-the-multicluster-scheduling-capabilities-with-open-cluster-management-placement)
+- [Use Open Cluster Management (OCM) Placement to extend multicluster scheduling capabilities](https://cloud.redhat.com/blog/extending-the-multicluster-scheduling-capabilities-with-open-cluster-management-placement)
 
-    In the K8s multi-cluster management project OCM, the multi-cluster scheduling capability is provided by the [Placement](https://github.com/open-cluster-management-io/placement) controller.
+    In the K8s multicluster management project OCM, the multicluster scheduling capability is provided by the [Placement](https://github.com/open-cluster-management-io/placement) controller.
     Placement provides some default prioritizers for sorting and selecting the most suitable clusters. In some cases, the sorter needs more data to calculate the score of the cluster.
     Therefore, we need a scalable way to support scheduling based on custom scores.
 
@@ -526,7 +526,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Difficulties in implementing zero trust in Kubernetes and related open source solutions](https://thenewstack.io/introducing-open-source-zero-trust-to-kubernetes/)
 
     The complexity of Kubernetes makes standardizing the application of Zero Trust principles a challenge. By default, kubectl does not enable RBAC, and executed commands are not logged by user accounts. Accessing resources through firewalls is difficult, and supervising multiple clusters becomes cumbersome and error-prone.
-    [Paralus](https://github.com/paralus/paralus) is a resource access management, threat identification and response solution designed for multi-cluster environments, supports custom roles, identity providers (IdP), etc., allowing administrators to create Custom rules for different permissions.
+    [Paralus](https://github.com/paralus/paralus) is a resource access management, threat identification and response solution designed for multicluster environments, supports custom roles, identity providers (IdP), etc., allowing administrators to create Custom rules for different permissions.
 
 -[KIntroduction to ubernetes Gateway API and its use cases](https://www.armosec.io/blog/kubernetes-gateway-api/)
 
@@ -554,7 +554,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Using Nocalhost to develop microservice applications on Rainbond](https://mp.weixin.qq.com/s/kC9P7fvMtJvKK7_TM2LbTw)
 
-    [Nocalhost](https://github.com/nocalhost/nocalhost) is an IDE-based cloud-native application development tool, and [Rainbond](https://github.com/goodrain/rainbond) is a cloud-native multi-cloud application management tool platform.
+    [Nocalhost](https://github.com/nocalhost/nocalhost) is an IDE-based cloud-native application development tool, and [Rainbond](https://github.com/goodrain/rainbond) is a cloud-native multicloud application management tool platform.
     Nocalhost can directly develop applications in Kubernetes. Rainbond can quickly deploy microservice projects without writing Yaml. Nocalhost combines Rainbond to accelerate the efficiency of microservice development.
 
 - [Two OCI image build tool introduction builders - melange and apko](https://blog.chainguard.dev/secure-your-software-factory-with-melange-and-apko/)
@@ -562,10 +562,10 @@ This page shares some technical articles related to cloud native, and we hope th
     [apk](https://github.com/alpinelinux/apk-tools) directly uses Alpine's package management tool APK to build images, no need to use Dockerfile, only need to provide a declarative YAML manifest.
     [melange](https://github.com/chainguard-dev/melange) uses a declarative YAML pipeline to build APKs.
 
-- [Application continuous delivery practice based on Flux v2 in multi-cluster scenarios](https://mp.weixin.qq.com/s/a9lRoa36tFl1_1-ESvXJpA)
+- [Application continuous delivery practice based on Flux v2 in multicluster use cases](https://mp.weixin.qq.com/s/a9lRoa36tFl1_1-ESvXJpA)
 
     [Flux v2](https://github.com/fluxcd/flux2) provides a set of tools that can support the implementation of GitOps, and provides a general solution for the continuous delivery of cloud-native applications.
-    This page mainly starts from deploying cloud-native applications with differentiated configurations in multi-cluster scenarios, and introduces the practice of continuous app delivery based on Flux v2.
+    This page mainly starts from deploying cloud-native applications with differentiated configurations in multicluster use cases, and introduces the practice of continuous app delivery based on Flux v2.
 
 - [Use Chain-bench to Audit Your Software Supply Chain for CIS Compliance](https://blog.aquasec.com/cis-software-supply-chain-compliance)
 
@@ -598,8 +598,8 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Nightingale - Enterprise version of Prometheus](https://mp.weixin.qq.com/s/OXmnH9KsygpB70-NmwxM1w)
 
-    [Nightingale](https://github.com/ccfos/nightingale) is an open source cloud-native monitoring and analysis system, adopting the All-In-One design, integrating data collection, visualization, monitoring and alarming, and data analysis. The cloud-native ecosystem provides out-of-the-box enterprise-level monitoring, analysis and alarm capabilities.
-    The article mainly introduces how Nightingale correlates the three observability metrics, operation and maintenance quantification, alarm noise processing, product positioning, and AIOps applications, etc.
+    [Nightingale](https://github.com/ccfos/nightingale) is an open source cloud-native monitoring and analysis system, adopting the All-In-One design, integrating data collection, visualization, monitoring and alerting, and data analysis. The cloud-native ecosystem provides out-of-the-box enterprise-level monitoring, analysis and alert capabilities.
+    The article mainly introduces how Nightingale correlates the three observability metrics, operation and maintenance quantification, alert noise processing, product positioning, and AIOps applications, etc.
 
 - [Porting eBPF applications to BumbleBee - the easiest way to develop BPF CO-RE programs](https://www.solo.io/blog/porting-ebpf-applications-to-bumblebee/)
 
@@ -704,9 +704,9 @@ This page shares some technical articles related to cloud native, and we hope th
 
     The article sorts out the concept of cloud native storage step by step, and briefly introduces and compares Longhorn, OpenEBS, Rook+Ceph, and finally chooses a representative Longhorn to demonstrate its installation and use.
 
-- [Discussion on K8s CNI plug-in selection and application scenarios](https://mp.weixin.qq.com/s/GG7GX_E1oyZf-cmjk80OYg)
+- [Discussion on K8s CNI plug-in selection and use cases](https://mp.weixin.qq.com/s/GG7GX_E1oyZf-cmjk80OYg)
 
-    This page introduces seven common network application scenarios in the container environment and the implementation of the Kubernetes CNI plug-in function for the corresponding scenarios.
+    This page introduces seven common network use cases in the container environment and the implementation of the Kubernetes CNI plug-in function for the corresponding use cases.
 
 - [The Way of DevOps Platform Design in the Cloud Native Era (Rancher vs KubeSphere vs Rainbond)](https://mp.weixin.qq.com/s/oxeNq4GHE85NUBIDcgixcg)
 
@@ -731,7 +731,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [How to choose a reliable APM system in a production environment](https://mp.weixin.qq.com/s/3dD0hIuqpXdepLVC6V7aoA)
 
-    The article starts from the introduction of mainstream APM products (compared with Pinpoint, Jaeger, Skywalking, Tingyun, Tencent Cloud + Alibaba Cloud Arms and Datadog), and passes through several important dimensions in the production environment, such as product experience, Agent capability, alarm + DB support, cloud-native support capabilities, large data screens, etc., and give suggestions for APM selection solutions.
+    The article starts from the introduction of mainstream APM products (compared with Pinpoint, Jaeger, Skywalking, Tingyun, Tencent Cloud + Alibaba Cloud Arms and Datadog), and passes through several important dimensions in the production environment, such as product experience, Agent capability, alert + DB support, cloud-native support capabilities, large data screens, etc., and give suggestions for APM selection solutions.
 
 ### Frontier hotspot
 
@@ -774,13 +774,13 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [From PingCAP's TiDB database product to see the model of domestic technology going abroad](https://mp.weixin.qq.com/s/3y9pafdEy8rD5H2OtgPwEw)
 
-    The article introduces the technical, compliance, and commercialization optimizations of TiDB made by PingCAP to realize technology going abroad. Technically, to achieve cost reduction and efficiency, operation and maintenance automation, multi-tenant management, and meet the needs of specific regional scenarios; compliance, to consider data security and regulatory rules; commercially, to consider billing models, commercialization strategies, etc. In addition, TiDB can attract overseas customers with several factors: TiDB is open source and has an active open source community; customer data is stored on public clouds such as AWS and GCP; remote support, not relying on local technical teams, can effectively solve the problem of expensive human resources in some regions.
+    The article introduces the technical, compliance, and commercialization optimizations of TiDB made by PingCAP to realize technology going abroad. Technically, to achieve cost reduction and efficiency, operation and maintenance automation, multi-tenant management, and meet the needs of specific regional use cases; compliance, to consider data security and regulatory rules; commercially, to consider billing models, commercialization strategies, etc. In addition, TiDB can attract overseas customers with several factors: TiDB is open source and has an active open source community; customer data is stored on public clouds such as AWS and GCP; remote support, not relying on local technical teams, can effectively solve the problem of expensive human resources in some regions.
 
 - [Explore K8s new feature Container Checkpointing](https://sysdig.com/blog/forensic-container-checkpointing-dfir-kubernetes/)
 
     The container checkpoint feature (K8s 1.25 alpha) creates a snapshot of a running container's state and saves it to disk.
     You can then use this checkpoint to start the container, restore state, or migrate the container to another machine.
-    The article introduces how this function works, Podman's checkpoint function, CRIU and forensic analysis and other application scenarios.
+    The article introduces how this function works, Podman's checkpoint function, CRIU and forensic analysis and other use cases.
 
 - [OCI Container and Wasm First Experience](https://mp.weixin.qq.com/s/4oFErzG65b-0FfpHQB941A)
 
@@ -812,7 +812,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Design and Implementation of Next Generation Cloud Native Edge Device Management Standard DMI](https://mp.weixin.qq.com/s/T3TnKXhBefqavP4rni59Sg)
 
-    DMI integrates device management interfaces to optimize device management capabilities in edge computing scenarios;
+    DMI integrates device management interfaces to optimize device management capabilities in edge computing use cases;
     At the same time, a unified connection entry between EdgeCore and Mapper is defined, and EdgeCore and Mapper implement the server and client of the upstream data flow and downstream data flow respectively, and carry the specific functions of DMI.
 
 - [Using eBPF LSM to hot fix Linux kernel vulnerabilities](https://mp.weixin.qq.com/s/UJEC8nmfQbdsWdJMfju0ig)
@@ -872,7 +872,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [OPLG: New Generation Cloud Native Observable Best Practices](https://mp.weixin.qq.com/s/Bf6nmOymcG9bk91VxLL_Kw)
 
-    OPLG refers to the unified display of OpenTelemetry Traces, Prometheus Metrics, and Loki Logs through Grafana Dashboards to meet most scenarios of enterprise-level monitoring and analysis.
+    OPLG refers to the unified display of OpenTelemetry Traces, Prometheus Metrics, and Loki Logs through Grafana Dashboards to meet most use cases of enterprise-level monitoring and analysis.
     Based on the OPLG system, a unified observable platform covering the full stack of cloud-native applications can be quickly built to comprehensively monitor infrastructure, containers, middleware, applications, and end-user experience.
 
 - [Four Essential Elements of Kubernetes Software Supply Chain Security](https://www.cncf.io/blog/2022/04/12/a-map-for-kubernetes-supply-chain-security/)
@@ -952,7 +952,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [From construction to governance, the industry's first white paper on microservice governance technology is officially released](https://mp.weixin.qq.com/s/mG0jX66BLOHY0TWTqYO50A)
 
     Alibaba Cloud's cloud-native microservice team recently released ["White Paper on Microservice Governance Technology"](https://developer.aliyun.com/ebook/read/7565?spm=a2c6h.26392459.ebook-detail.4.12d9775enBrpOH).
-    This white paper focuses on the business domain of microservice governance, covering the whole process of microservice implementation including technical principles, business scenarios, solutions, and best practices.
+    This white paper focuses on the business domain of microservice governance, covering the whole process of microservice implementation including technical principles, business cases, solutions, and best practices.
 
 ### Other
 
@@ -989,12 +989,12 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Nine Trends Insights into the Container Ecosystem in 2022](https://mp.weixin.qq.com/s/WNanrbCsdWEuyWP8WvO8UQ)
   
     Datadog’s analysis of over 1.5 billion containers run by customers identified key trends in the container ecosystem:
-    The use of serverless container technology in the public cloud continues to rise, multi-cloud usage is positively correlated with the number of containers in an organization, Kubernetes Ingress usage is on the rise, most hosts are using a Kubernetes version older than 18 months, more than 30% are running containerd of hosts use unsupported versions, NGINX, Redis, and Postgres are the most popular container images.
+    The use of serverless container technology in the public cloud continues to rise, multicloud usage is positively correlated with the number of containers in an organization, Kubernetes Ingress usage is on the rise, most hosts are using a Kubernetes version older than 18 months, more than 30% are running containerd of hosts use unsupported versions, NGINX, Redis, and Postgres are the most popular container images.
 
 - [Karmada large-scale test report released, breaking through 100 clusters and 500,000 nodes](https://karmada.io/blog/2022/10/26/test-report/)
 
     Recently, the Karmada community has carried out large-scale testing of Karmada. According to the analysis of test results, the cluster federation with Karmada as the core can stably support 100 clusters and 500,000 nodes online at the same time, and manage more than 2 million Pods.
-    In terms of usage scenarios, the Push mode is suitable for managing Kubernetes clusters on public clouds, while the Pull mode covers private cloud and edge-related scenarios relative to the Push mode.
+    In terms of  use cases, the Push mode is suitable for managing Kubernetes clusters on public clouds, while the Pull mode covers private cloud and edge-related use cases relative to the Push mode.
     In terms of performance and security, the overall performance of the Pull mode is better than that of the Push mode.
 
 - [ToB application privatization delivery technology development history and comparison](https://mp.weixin.qq.com/s/JcDZxabHImljPCEus_inlg)

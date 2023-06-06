@@ -4,7 +4,7 @@ This page lists the main features of container management.
 
 ## Cluster Lifecycle Management
 
-- Unified Management of Clusters: Support for any Kubernetes cluster within a specific version range to be included in the scope of container management, and to realize unified management of on-cloud, off-cloud, multi-cloud, and hybrid cloud container cloud platforms.
+- Unified Management of Clusters: Support for any Kubernetes cluster within a specific version range to be included in the scope of container management, and to realize unified management of on-cloud, off-cloud, multicloud, and hybrid cloud container cloud platforms.
 - Quick Creation of Clusters:
     - Based on DaoCloud's independent open-source project [Kubean](https://github.com/kubean-io/kubean), it supports the rapid deployment of enterprise-level Kubernetes clusters through the Web UI interface, quickly builds enterprise-level container platforms, and adapts to physical machines and the underlying environment of the virtual machine.
     - Supports access/creation of clusters to help users build a one-stop infrastructure management platform.
@@ -20,7 +20,7 @@ This page lists the main features of container management.
 - One-Stop Application Load Creation: Decouple the underlying Kubernetes platform, and create, operate, and maintain business workloads in one stop.
 - Cross-Cluster Application Load Management: Unified management of cross-cluster loads and efficient retrieval capabilities.
 - Scaling and Shrinking of Application Load: Through the interface, manual/automatic scaling of application load can be realized, and the expansion and shrinking strategy can be customized to cope with traffic peaks.
-- Container Lifecycle Settings: Support for setting callback functions, parameters after startup, and parameters before stopping when creating workloads to meet the needs of specific scenarios.
+- Container Lifecycle Settings: Support for setting callback functions, parameters after startup, and parameters before stopping when creating workloads to meet the needs of specific cases.
 - Container Readiness Check and Survival Check Settings: Support for setting workload readiness check and survival check when deploying applications:
     - Workload readiness check: Used to detect whether the user's business is ready. If it is not ready, the traffic will not be forwarded to the current instance.
     - Workload survival check: The user checks whether the container is normal. If it is abnormal, the cluster will execute the container restart operation.
@@ -40,7 +40,7 @@ Service (Service) is a Kubernetes-native resource that provides cloud-native loa
 ## Namespace Management
 
 - Namespace Management: Supports namespace creation, quota setting, resource limit setting, etc.
-- Cross-Cluster Namespace Management: Supports unified management of cross-cluster namespaces and efficient retrieval capabilities, and realizes namespace management capabilities in multi-cloud scenarios and disaster recovery scenarios.
+- Cross-Cluster Namespace Management: Supports unified management of cross-cluster namespaces and efficient retrieval capabilities, and realizes namespace management capabilities in multicloud cases and disaster recovery use cases.
 
 ## Container Storage
 
@@ -62,11 +62,11 @@ Provides a wealth of system plugins to expand the functions of cloud container c
 
 ## Authority Management
 
-Supports [Namespace Authorization](../user-guide/permissions/cluster-ns-auth.md). Through permission settings, different users or user groups can have permission to operate different Kubernetes resources under the specified namespace.
+Supports [Namespace Authorization](../user-guide/permissions/cluster-ns-auth.md). Through permission settings, different users or groups can have permission to operate different Kubernetes resources under the specified namespace.
 
 ## Cluster Operation and Maintenance
 
-- All-Round Cluster Monitoring: Comprehensive coverage of cluster and node metric monitoring and alarms, real-time understanding and viewing of cluster and node status, and timely implementation of operation and maintenance measures to ensure business continuity.
+- All-Round Cluster Monitoring: Comprehensive coverage of cluster and node metric monitoring and alerts, real-time understanding and viewing of cluster and node status, and timely implementation of operation and maintenance measures to ensure business continuity.
 - openAPI: Provides native Kubernetes OpenAPI capabilities.
 - [CloudShell](../../community/cloudtty.md) Access to the Cluster: Supports connecting to the cluster through CloudShell and accessing the cluster through Kubectl.
 

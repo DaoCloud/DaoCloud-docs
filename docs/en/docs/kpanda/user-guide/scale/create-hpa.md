@@ -14,7 +14,7 @@ This page describes how to configure auto scaling based on built-in metrics and 
 
 ## Built-in metric elastic scaling strategy
 
-The system has two built-in elastic scaling metrics of CPU and memory to meet users' basic business usage scenarios.
+The system has two built-in elastic scaling metrics of CPU and memory to meet users' basic business cases.
 
 ### Prerequisites
 

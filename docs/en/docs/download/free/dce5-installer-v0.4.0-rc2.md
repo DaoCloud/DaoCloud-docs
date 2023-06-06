@@ -2,9 +2,9 @@
 date: 2023-01-05
 ---
 
-# DCE 5.0 Community Release v0.4.0-rc2
+# DCE 5.0 Community Package v0.4.0-rc2
 
-This page can download the offline installation package and verification file of DCE 5.0 Community Release.
+This page can download the offline installation package and verification file of DCE 5.0 Community Package.
 
 ## Download
 
@@ -65,18 +65,18 @@ After successfully verifying the offline package,
      tar -zxvf offline-community-v0.4.0-rc2-arm64.tar
      ```
 
-- For installation, please refer to [Community Release Installation Process](../../install/community/k8s/online.md#_2)
+- For installation, please refer to [Community Package Installation Process](../../install/community/k8s/online.md#_2)
 - After successful installation, please [apply for free community experience](../../dce/license0.md)
 
 ## Modules
 
-DCE 5.0 Community Release includes the following modules by default:
+DCE 5.0 Community Package includes the following modules by default:
 
 | Modules | Introduction | What's New |
 | -------- | ----------------------------------------- ------------------------- | ------------------------ ------------------------------------- |
 | Global Management | Responsible for user access control, permissions, enterprise space, audit logs, personalized appearance settings, etc. | [v0.11](../../ghippo/intro/release-notes.md#v011) |
 | Container Management | Manage K8s core functions such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [v0.12](../../kpanda/intro/release-notes.md#v012) |
-| Observability | Provide rich graphic information such as dashboards, scene monitoring, data query, and alarms | [v0.11](../../insight/intro/releasenote.md#v011) |
+| Observability | Provide rich graphic information such as dashboards, scene monitoring, data query, and alerts | [v0.11](../../insight/intro/releasenote.md#v011) |
 
 ## More
 

@@ -2,6 +2,82 @@
 
 本页列出服务网格各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023-05-31
+
+### v0.16.2
+
+#### 升级
+
+- **新增** Ckube 按需加载资源。
+- **新增** IstioResource 字段：`labels` 与 `annotations`，能够更新 Labels 与 Annotations。
+- **新增** MeshCluster 中 ClusterProvider 同步实现.
+- **新增** `mspider.io/protected` Label 定义，用于网格保护能力。
+- **新增** 边车升级支持多工作负载能力，`SidecarUpgrader` 中 `workloads` 同时支持 `workloadshadow.name` 和 `deployment.name`。
+- **新增** 工作负载类型改造成 string 实现。
+- **新增** 工作负载相关接口新增字段 `localized_name`，展示工作负载名称。
+- **新增** 工作负载注入策略清除能力
+- **新增** 获取全局配置接口 `/apis/mspider.io/v3alpha1/settings/global-configs`。
+- **新增** 了 `clusterPhase` 字段，用于标记集群的状态（以前在 phase 字段中标记，现在剥离开）。
+- **新增** 了 `clusterProvider` 字段，用于标记集群提供商。
+- **新增** 流量泳道 CRD 能力实现。
+- **新增** 默认启用 Reg-Proxy 组件。
+- **新增** 实现 Service 的 selector 字段输出。
+- **新增** 通过给 Namespace 加 Network label 解决未注入 Sidecar 跨集群访问问题。
+- **新增** 托管网格 hosted-apiserver 自定义参数配置能力。(该参数只有安装时生效，暂时不支持更新)，(更多参数请参考 helm 参数配置)：
+
+    ```json
+      "hosted-apiserver.global.storageClass":                 "default",
+      "hosted-apiserver.etcd.data_size":                      "10Gi",
+      "hosted-apiserver.etcd.resources.requests.cpu":         "100m",
+      "hosted-apiserver.etcd.resources.limits.cpu":           "500m",
+      "hosted-apiserver.etcd.resources.requests.memory":      "100Mi",
+      "hosted-apiserver.etcd.resources.limits.memory":        "1000Mi",
+      "hosted-apiserver.apiserver.resources.requests.cpu":    "100m",
+      "hosted-apiserver.apiserver.resources.limits.cpu":      "1000m",
+      "hosted-apiserver.apiserver.resources.requests.memory": "100Mi",
+      "hosted-apiserver.apiserver.resources.limits.memory":   "1000Mi",
+    ```
+
+- **新增** 网格控制面组件状态
+- **新增** 网格网格查询接口新增 `loadBalancerStatus` 字段，用于描述实际分配的 LB 地址。
+- **新增** 网格组件进度详情接口 `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/components-progress`。
+- **新增** 为控制面组件增加 HPA。
+- **新增** 新增获取集群 `StorageClass` 接口定义。
+- **新增** 新增获取集群安装组件接口（目前支持 Insight Agent）。
+- **优化** 绑定/解绑工作空间的使用体验。
+- **优化** 工作负载相关接口字段 `workload_kind` 类型从枚举优化为 `string`。
+- **优化** 托管网格情况下，对于集群 k8s 版本检测：除包含工作集群外，也包含对控制面集群的版本检测。
+- **升级** 升级 Cloudtty 到 `0.5.3` 版本。
+- **升级** WorkloadShadow controller watcher 创建逻辑。
+- 
+
+#### 修复
+
+- **修复** `helm chart` 中的描述信息
+- **修复** RegProxy watcher 不重建。
+- **修复** `traffic-lane` 插件会给流量打上错误的标签，导致流量泳道无法工作。
+- **修复** 修复网格删除或者移除集群过程中，无法正常移除组件问题。
+- **修复** 修复网格不存在时应该返回 404 错误.
+- **修复** CloudShell 权限问题。
+- **修复** MeshCluster Status RemotePilotAddress 无效数据没有及时清理。
+- **修复** MeshCluster 无法被删除的问题。
+- **修复** TrafficLane 的 FailedReason 中缺失内容。
+- **修复** TrafficLaneActionsRequest 中的 action 字段缺失。
+- **修复** 当存在不健康集群时，网格列表无法展示的问题。
+- **修复** 当实例异常时，有效注入实例数不正确。
+- **修复** 当一个服务被多个泳道选择时，WasmPlugin 无法创建多个的问题。
+- **修复** 服务标签可能存在残留旧的工作负载。
+- **修复** 服务列表无法获取工作负载有效的工作负载数，动态获取 ReadyReplicas 的类型解析错误。
+- **修复** 工作负载发生变更时，无法将变更的状态同步到对应的 Service。
+- **修复** 会对未接入网格的集群一直检查状态的问题。
+- **修复** 集群状态不可搜索。
+- **修复** 没有边车时，网格无法移除集群的情况。
+- **修复** 网格名称正则表达式，不允许数字开头。
+- **修复** 网格状态显示不正确，没有边车时有时仍然显示状态为正常。
+- **修复** 修复网格网格的自动注入的模版不生效问题。
+- **修复** 由于集群缺少默认值，导致非 Admin 用户无法获取流量拓扑。
+- **修复** 自动注入服务策略空指针异常。
+
 ## 2023-04-27
 
 ### v0.15.0

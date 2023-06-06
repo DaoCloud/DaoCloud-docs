@@ -1,6 +1,6 @@
 # Installation Troubleshooting
 
-This page summarizes common installer problems and their troubleshooting solutions, so that users can quickly solve problems encountered during the installation process.
+This page summarizes some troubles that you may encounter when installing DCE 5.0 and provides corresponding solutions, to help you quickly solve problems.
 
 ## Podman cannot auto-recover after bootstrapping node restart
 
@@ -10,55 +10,71 @@ After the bootstrapping node restarts, wait for kind to start successfully:
 2. `sed -i 's/server: .*:6443/server: https://127.0.0.1:6443/g' /etc/kubernetes/controller-manager.conf`
 3. `sed -i 's/server: .*:6443/server: https://127.0.0.1:6443/g ' /etc/kubernetes/scheduler.conf`
 
-## Podman fails to create containers when installing after disabling IPv6
+## Podman fails to create containers after disabling `IPv6`
 
-The error message is as follows:
+**Error message**:
 
 ```bash
 ERROR: failed to create cluster: command "podman run --name kind-control-plane...  
 ```
 
-Solution: Re-enable IPv6 or update bootstrapping node base to Docker.
+**Solutions**
 
-Podman-related issue address: https://github.com/containers/podman/issues/13388
+Re-enable IPv6 or change bootstrapping node base to Docker.
 
-## Redis stuck when reinstalling DCE 5.0 in Kind cluster
+Podman-related issues: <https://github.com/containers/podman/issues/13388>
 
-Problem: Redis Pod has 0/4 running for a long time, prompting: primary ClusterIP can not unset
+## Redis get stuck when reinstalling DCE 5.0 in kind cluster
 
-1. Delete rfs-mcamel-common-redis under the mcamel-system namespace
+**Error**:
 
-     ```shell
-     kubectl delete svc rfs-mcamel-common-redis -n mcamel-system
-     ```
+Redis Pod has `0/4 running` status for a long time, prompting: `primary ClusterIP can not unset`
 
-1. Then re-execute the installation command
+**Solutions**:
 
-## When using Metallb, the VIP access is blocked and the DCE login interface cannot be opened
+Delete `rfs-mcamel-common-redis` under the `mcamel-system` namespace, and then try again.
 
-1. Check whether the address of the VIP is in the same network segment as the host. In Metallb L2 mode, it is necessary to ensure that they are in the same network segment
-2. If a new network card is added to the control node in the global cluster and the access fails, you need to manually declare and configure L2Advertisement.
-    Please refer to [Metallb documentation for this issue](https://metallb.universe.tf/configuration/_advanced_l2_configuration/#specify-network-interfaces-that-lb-ip-can-be-announced-from)
+    ```shell
+    kubectl delete svc rfs-mcamel-common-redis -n mcamel-system
+    ```
 
-## community edition fluent-bit installation failed
+## When using Metallb, the VIP access is blocked and cannot log into DCE
 
-Error: `DaemonSet is not ready: insight-system/insight-agent-fluent-bit. 0 out of 2 expected pods are ready`
+1. Check whether the VIP is in the same network segment as the host. In Metallb L2 mode, they should be in the same network segment.
 
-Check to see if the following key information appears in the Pod log:
+2. If this error occurs after you added a new NIC to the control node in the global cluster, you need to manually declare and configure `L2Advertisement`.
+
+    Refer to related [Metallb issues](https://metallb.universe.tf/configuration/_advanced_l2_configuration/#specify-network-interfaces-that-lb-ip-can-be-announced-from)
+
+## Community package: `fluent-bit` installation failed
+
+**Error**:
+
+`DaemonSet is not ready: insight-system/insight-agent-fluent-bit. 0 out of 2 expected pods are ready`
+
+**Solutions**:
+
+Check if the following key information appears in the Pod log:
 
 ```bash
   [ warn] [net] getaddrinfo(host='mcamel-common-es-cluster-masters-es-http.mcamel-system.svc.cluster.local',errt11):Could not contact DNS servers
 ```
 
-The above problem is a fluent-bit bug, you can refer to: https://github.com/aws/aws-for-fluent-bit/issues/233
+If yes, it is a known bug of `fluent-bit` bug`, Refer to: <https://github.com/aws/aws-for-fluent-bit/issues/233>
 
 ## Error reported during CentOS 7.6 installation
 
+**Error**:
+
 ![FAQ1](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/FAQ1.png)
 
-Execute `modprobe br_netfilter` on each node where the global service cluster is installed, and it will be fine after loading `br_netfilter`.
+**Solutions**:
+
+Execute `modprobe br_netfilter` on each node where the global service cluster is installed, and wait until `br_netfilter` is loaded.
 
 ## CentOS environment preparation issues
+
+**Error**:
 
 Running `yum install docker` reports an error:
 
@@ -68,7 +84,7 @@ CentOS Linux 8 - AppStream 93 B/s | 38 B 00:00
 Error: Failed to download metadata for repo 'appstream': Cannot prepare internal mirrorlist: No URLs in mirrorlist
 ```
 
-You can try to solve it in the following ways:
+**Solutions**:
 
 - Install `glibc-langpack-en`
 
@@ -76,7 +92,7 @@ You can try to solve it in the following ways:
      sudo yum install -y glibc-langpack-en
      ```
 
-- If the problem persists, try:
+- If the error persists, try:
 
      ```bash
      sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*

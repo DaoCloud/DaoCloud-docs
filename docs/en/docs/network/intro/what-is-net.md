@@ -6,9 +6,9 @@ Based on open source projects, DCE 5.0 Cloud Native Networking provides not only
 
 ## Solution 1: Cilium + MacVLAN/SpiderFlat + SpiderPool + Multus
 
-This solution is suitable for Linux OS with high kernel version (4.19.57+), using Multus as the scheduling core and multiple CNIs to meet different network scenarios and create cross-cloud and cross-cluster network connectivity.  
+This solution is suitable for Linux OS with high kernel version (4.19.57+), using Multus as the scheduling core and multiple CNIs to meet different network use cases and create cross-cloud and cross-cluster network connectivity.  
 Moreover, SpiderFlat and SpiderPool is employed to strengthen the IP management allocation and IP recovery of Underlay network, realizing flexible IPAM management.  
-Different IP pools meets various scenarios of application communication. The main features of this portfolio are as follows:
+Different IP pools meets various use cases of application communication. The main features of this portfolio are as follows:
 
 1. With Multus as the scheduling core, it achieves multi CNI IP allocation to Pod and polymorphic network communication for an application. Open source solutions are used to realize cross CNI Pod communication within the cluster.
    The installation of Multus is not a must, if the application does not require multiple Pod NICs and different network modes.
@@ -23,7 +23,7 @@ Different IP pools meets various scenarios of application communication. The mai
 
 ## Solution 2：Calico + MacVLAN/SpiderFlat + SpiderPool + Multus
 
-This solution is suitable for low kernel versions of Linux OS, and applicable for cross-cluster connectivity, multiple CNIs and other diversified scenarios.
+This solution is suitable for low kernel versions of Linux OS, and applicable for cross-cluster connectivity, multiple CNIs and other diversified use cases.
 
 1. With Multus as the scheduling core in the same way, it achieves multi CNI IP allocation and polymorphic network communication. Open source solutions are used to realize cross CNI Pod communication within the cluster.
    The installation of Multus is not a must, if the application does not require multiple Pod NICs and different network modes.

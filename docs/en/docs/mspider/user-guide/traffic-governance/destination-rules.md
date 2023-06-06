@@ -21,8 +21,8 @@ Several important fields are as follows:
 
 - Subsets
 
-    `subsets` is a collection of service endpoints, which can be used in scenarios such as A/B testing or version routing.
-    The traffic of a service can be divided into N shares for the client to use in different scenarios.
+    `subsets` is a collection of service endpoints, which can be used in Cases such as A/B testing or version routing.
+    The traffic of a service can be divided into N shares for the client to use in different cases.
     `name` field is mainly used by `destination` in VirtualService after definition.
     Each subset is defined based on one or more `labels`, which in Kubernetes are key/value pairs attached to objects like Pods, based on the services corresponding to the `host`.
     These labels are applied to the Deployment of the Kubernetes service and serve as metadata information (Metadata) to identify different versions.

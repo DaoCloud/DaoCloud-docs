@@ -59,7 +59,7 @@
 
 Note: currently only supports the integration of Jenkins installed through the DCE 5.0 platform.
 
-1. Log in to the web console with a user with the App Workbench administrator role and enter the App Workbench
+1. Log in to the web console with a user with Workbench administrator role and enter Workbench
 
     <!--![]()screenshots-->
 

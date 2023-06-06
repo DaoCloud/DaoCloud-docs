@@ -5,7 +5,7 @@ hide:
 
 # Network components
 
-The network solution provided by DCE 5.0 is an optimized combination of current mainstream open source network components, which can meet the needs of various complex scenarios.
+The network solution provided by DCE 5.0 is an optimized combination of current mainstream open source network components, which can meet the needs of various complex cases.
 
 
 

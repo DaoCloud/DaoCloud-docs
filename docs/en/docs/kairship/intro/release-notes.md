@@ -1,185 +1,206 @@
-# Multi-cloud Orchestration Release Notes
+# Release Notes
 
-This page lists the Release Notes of multi-cloud orchestration, so that you can understand the evolution path and feature changes of each version.
+This page lists the release notes of Multicloud Management module, so that you can understand the evolution path and feature changes of each version.
+
+## 2023-05-29
+
+### v0.9.1
+
+#### New Features
+
+- Edit Service tags, annotations in Web UI.
+
+#### Fixes
+
+- Overview of expected scheduling clusters on the resource details page.
+- Occasional failure of kairship-proxy.
+- No arm64 vesions of `cffssl` and `kubectl`.
+
+#### Improvements
+
+- Add a cluster column to the Ingress list.
+- Reduce the propagation policy when converting single-cluster deployments to multicloud ones.
+
+#### Upgrades
+
+- `@dao-style/extend` to v1.2.1.
+- `cloudtty` API to v0.5.2.
 
 ## 2023-04-27
 
 ### v0.8.0
 
-#### new function
+#### New Features
 
-- **NEW** supports cluster scheduling group
-- **NEW** Support mirror selector selection
-- **NEW** advanced settings, new scheduled rescheduling
-- **New** advanced settings, new cluster health status threshold setting
+- Cluster scheduling group
+- Image selector selection
+- Scheduled rescheduling
+- Threshold for defining cluster health status
 
-#### fix
+#### Bug Fixes
 
-- **Fix** When the deployment strategy selects the CR resource type, the kind is not automatically filled
-- **Fix** Instance deletion pop-up window, whether to delete the Karmada instance synchronously to adjust the prompt information
+- If the deployment policy is the CR resource type, `kind` is not automatically filled
 
-#### remove
+#### Others
 
-- **Remove** istio's sidecar injection for controller-manager and proxy
+- Remove Istio sidecar injection for controller-manager and proxy
+- Enhance warning message for deleting a multicloud instance
 
 ## 2023-03-29
 
 ### v0.7.4
 
-#### new function
+#### New Features
 
-- **NEW** support custom management cluster
-- **NEW** Load form supports data storage
-- **NEW** Added support for carrying Service when upgrading the load with one key
-- **NEW** Multi-cloud routing supports differentiated configuration of IngressClass
-- **New** supports cluster-level deployment strategies and differentiated strategies
-- **NEW** Added support for configuring LabelsOverrider and AnnotationsOverrider
-- **Add** custom role permissions
+- Custom cluster management
+- Data storage for workloads
+- Convert Services into multicloud resources when converting a single-cluster application to multicloud application
+- Differentiated configuration of multicloud IngressClass
+- Cluster-level deployment policies and override policies
+- Custom permissions of roles
 
-#### Optimization
+#### Enhancement
 
-- **Optimize** instance form, support hiding annotations prefixed with 'kairship.io/'
-- **Optimized** load form, differentiated configuration guides users to select clusters
+- Choice to hide annotations prefixed with 'kairship.io/'
+- Guide users to select cluster when setting override policies
 
-#### fix
+#### Bug Fixes
 
-- **Fix** Fix the problem that one-click propagation service fails
-- **FIX** fix grid jump link style
-- **FIX** Incorrect front-end version
-- **Fix** One-click upgrade workload automatically propagates dependent services
-- **Fix** filter subcluster LB type service for one-click upgrade
-- **FIX** Upgrade karmada version to v1.5.0
+- Services cannot be converted to multicloud resources when converting the applications
+- Wrong link to Service Mesh module
+- Incorrect front-end version
+- Filter LB Service in clusters added into a multicloud instance when converting applications to multicloud applications
+- Upgrade karmada version to v1.5.0
 
 ## 2023-02-27
 
 ### v0.6.3
 
-#### new function
+#### New Features
 
-- **New** Add multi-cloud custom resource module, support addition, deletion, modification, query, and distribution functions
-- **NEW** Add multi-cloud routing module, support addition, deletion, modification, query and distribution functions
+- Management of multicloud custom resources, supporting CRUD and deployment actions
+- Management of multicloud Services, supporting CRUD and deployment actions
 
-#### Optimization
+#### Enhancement
 
-- **Optimized** Load form supports auto-propagation fields
-- **Optimized** Multi-cloud Service supports specifying the deployment cluster function
-- **Optimized** load details, support clusters showing expected scheduling
+- Auto-propagation fields when creating a multicloud workload
+- Specify the deployment position of multicloud Services
+- Display expected clusters for scheduling in Workload Overview page
 
-#### fix
+#### Bug Fixes
 
-- **Fix** Fix the problem that the one-click upgrade of multi-cloud resources cannot display the member cluster
-- **Fix** cronjob calculation of the total number of tasks and the number of current tasks is incorrect
-- **Fix** Generate pp resource name issue
-- **FIX** Cronjob not updating via yaml
-- **Fix** Custom resource details page, deployment policy usage status display problem
-- **FIXED** no mirror for kairship-ui in offline package
+- Clusters cannot be displayed when converting single-cluster applications into multicloud applications
+- Counting error of total CronJobs and Active CronJobs
+- Issues related to generating propagation policy names
+- Cronjobs cannot be updated via YAML files
+- Status error of propagation policies in the overview page of custom resource
+- There is no mirror for kairship-ui in offline package
 
 ## 2022-12-25
 
 ### v0.5
 
-#### new function
+#### New Features
 
-- **NEW** Add cronjob related interfaces such as adding, deleting, modifying and checking
-- **NEW** Add related interfaces such as adding, deleting, modifying and checking jobs
-- **NEW** Added one-click migration of multi-cluster applications for single-cluster applications, automatic upgrade of dependent resources
-- **NEW** Add job and cronjob types to ListPropagationPolicies and ListInstanceOverridePolicies interfaces
-- **NEW** ETCD high availability
-- **NEW** Added priority field to deployment policy
-- **NEW** New support for differentiation strategy imageOverride, CommandOverrider ArgsOverrider LabelsOverrider AnnotationsOverrider
-- **NEW** If the deployment strategy has been used and associated with the workload, the deployment strategy does not support deletion
-- **NEW** multi-cloud workload, new support for Job, CronJob
-- **NEW** Differentiation strategy supports form-based creation and update
-- **NEW** Deployment strategy supports form-based creation and update
-- **NEW** Worker cluster supports displaying eviction status
+- Add APIs for CronJob CRUD actions
+- Add APIs for Job CRUD actions
+- Convert single-cluster applications to multicloud clusters and related resources
+- Add Job and CronJob types to ListPropagationPolicies and ListInstanceOverridePolicies interfaces
+- ETCD high availability
+- Added priority field to propagation policy
+- imageOverride, CommandOverrider ArgsOverrider LabelsOverrider AnnotationsOverrider in override policies
+- Delete protection: if a propagation policy has been used and associated with a workload, it cannot be deleted
+- New types of multicloud workload: Job, CronJob
+- Create and update override policies with graphical forms
+- Create and update propagation policies with graphical forms
+- Display eviction status of worker clusters
 
-#### Optimization
+#### Enhancement
 
-- **Optimized** Deployment policy form, new enable and disable switches for propagation constraints
-- **Upgrade** the version of karmada-operator to v0.1.9, to solve the problem of pod anti-affinity of multiple instances of etcd
+- Add Enable/Disenable slider for propagation constraints when creating propagation policies
+- Upgrade the version of karmada-operator to v0.1.9, solving the problem of pod anti-affinity of multiple instances of etcd
 
-#### fix
+#### Bug Fixes
 
-- **FIXED** A user who is not associated with any role can view all instance information
-- **Fix** When the scheduling algorithm is Duplicated, the total number of workload instances is incorrectly counted
-- **Fix** When the scheduling algorithm is Duplicated, the total number of workload instances is incorrectly counted
-- **FIXED** Data in ghippo was not deleted when instance was deleted
-- **FIXED** When the instance is deleted, the labels of the working cluster are not removed
-- **Fix** When removing a cluster, you can see the cluster being removed in the single-cluster application multi-cloud interface, and you can add the cluster being removed
-- **Fix** Fix that in the process of removing the member cluster, one-click upgrade of the resources of the member cluster cannot be performed
-- **FIX** unhealthy pair member cluster cannot be removed
+- A user who is not associated with any role can view all instance information
+- When the scheduling algorithm is Duplicated, the total number of workload instances is incorrectly counted
+- Data in ghippo was not deleted when instance was deleted
+- When the instance is deleted, the labels of the working cluster are not removed
+- When a cluster is removed, it can still be added into a multicloud instance
+- Unable to update resources when removing a cluster
+- Unhealthy clusters cannot be removed
 
 ## 2022-11-25
 
 ### v0.4
 
-#### new function
+#### New Features
 
-- **Add** prometheus metrics, opentelemetry link trace
-- **NEW** Displays the corresponding cluster list after creating a workload in a specified region
-- **NEW** Displays the corresponding cluster list after creating a specified workload tag
-- **NEW** Productization of failover failover
+- Prometheus metrics and Opentelemetry traces
+- Filter clusters if the users specified a region when creating a deployment
+- Filter clusters if the users specified a label when creating a deployment
+- Failover
 
-#### fix
+#### Bug Fixes
 
-- **Fix** estimator is not suitable for offline installation
-- **Fixed** the problem that the stateless load display on the instance details page is abnormal
+- estimator is not suitable for offline installation
+- Status error of deployments in overview page
 
 ## 2022-10-21
 
 ### v0.3
 
-#### new function
+#### New Features
 
-- **Add** multi-cloud orchestration enable permission verification
-- **New** multi-cloud orchestration list instance interface, display data according to permissions
-- **NEW** Multi-cloud orchestration query cluster resource overview information based on user permissions
-- **NEW** multi-cloud orchestration to query the labels of all member clusters
-- **NEW** One-click conversion of multi-cloud orchestration stand-alone cluster applications to multi-cluster applications
-- **Add** multi-cloud orchestration to query the namespace and deployment resources of the member cluster
-- **NEW** Added prompts for creating multi-cloud resources
+- Enable permission verification
+- list instance API that can display data according to permissions
+- Query cluster resource information based on user permissions
+- Query labels of all member clusters
+- One-click conversion of single-clsuter applications to multicluster applications
+- Query the namespace and deployment resources of the member cluster
+- Added prompts for creating multicloud resources
 
-#### Optimization
+#### Enhancement
 
-- **Optimize** multi-cloud orchestration optimizes the protobuf data structure of karmada PropagationPolicy and OverridePolicy
+- The protobuf data structure of karmada PropagationPolicy and OverridePolicy
 
-#### fix
+#### Bug Fixes
 
-- **Fix** Multi-cloud orchestration fixes the problem that the sorting of all PropagationPolicy resources under the instance does not take effect
-- **Fix** multi-cloud orchestration fixes the problem of removing member clusters
-- **FIX** Several bug fixes
+- Sorting all PropagationPolicy resources under the instance does not take effect
+- Issues related removing member clusters
+- Other bugs
 
 ## 2022-9-25
 
 ### v0.2
 
-#### new function
+#### New Features
 
-- **Add** query interface for scheduling time
-- **Add** multi-cloud service ConfigMap management interface
-- **New** Create multiple resources and policy resources in batches
-- **NEW** Service adds workload tags
-- **NEW** Get the interface of Service under all namespaces
-- **NEW** Added istio sidecar injection
-- **New** When accessing the cluster, deploy the karmada estimator
-- **New** multi-cloud secret interface
-- **NEW** Added resource data collection of instance cpu and memery
-- **NEW** Added event query API for instance
+- API to query scheduling time
+- API to manage configmaps of multicloud services
+- Batch creation of resources and policies
+- Add workload labels for Services
+- API to get Service under all namespaces
+- Istio sidecar injection
+- Deploy the karmada estimator when adding a cluster into a multicloud instance
+- API for multicloud secrets
+- Collect CPU/Memory usage info of instances
+- API to query instance events
 
 ## 2022-8-21
 
 ### v0.1
 
-#### new function
+#### New Features
 
-- **NEW** Added cloudshell API to manage karmada cluster through cloudshell
-- **NEW** Added management interface for multi-cloud namespaces
-- **Add** multi-cloud service management interface
-- **Add** multi-cloud workload details related interface
-- **NEW** Added support for setting cluster taint and tolerance
-- **NEW** Download kubeconfig interface for karmada instance
-- **NEW** Provide instance update API to support modification of instance alias and label
+- Cloudshell API to manage Karmada clusters through cloudshell
+- API to manage multicloud namespaces
+- API to manage multicloud Services
+- API to manage multicloud workload details
+- Cluster taints and tolerance
+- API to download kubeconfig of for Karmada instances
+- API to update instance's alias and labels
 
-#### Optimization
+#### Enhancement
 
-- **Optimize** Optimize instance API and collect resource statistics of karmada instance
+- Enhance instance API and collect resource statistics of Karmada instances

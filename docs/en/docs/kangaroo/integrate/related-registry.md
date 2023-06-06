@@ -10,7 +10,7 @@ After accessing, when members deploy applications in the namespace under the wor
 ## Benefits
 
 - Flexible and convenient: Workspace administrators can independently access one or more Harbor/Docker type container registrys for use by workspace members.
-- Global linkage: After accessing, when deploying applications on the App Workbench, you can press the `Select Image` button to select the image in the registry with one click to achieve rapid application deployment.
+- Global linkage: After accessing, when deploying applications on Workbench, you can press the `Select Image` button to select the image in the registry with one click to achieve rapid application deployment.
 
 ## Steps
 

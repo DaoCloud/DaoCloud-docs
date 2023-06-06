@@ -1,6 +1,6 @@
 # CI/CD is realized based on pipeline and GitOps
 
-This paper introduces how to implement CI/CD based on pipeline of application workbench and GitOps function.
+This paper introduces how to implement CI/CD based on pipeline of Workbench and GitOps function.
 
 ## Overall process
 
@@ -13,10 +13,10 @@ Based on the overall process, we need to prepare the following information:
 1. Prepare two code repositories on gitlab, one as a repository for business code and one as a repository for application configuration files (yaml).
 
     ```bash
-    可以参考 github 中的配置：
+    Refer to github config:
    
-    业务代码：<https://github.com/jzhupup/dao-2048.git>
-    应用配置：<https://github.com/jzhupup/argocd-example-apps.git>
+    Business code: <https://github.com/jzhupup/dao-2048.git>
+    App config: <https://github.com/jzhupup/argocd-example-apps.git>
     ```
 
 2. Prepare a Harbor mirror warehouse
@@ -27,11 +27,11 @@ Based on the overall process, we need to prepare the following information:
 
 This example includes the following steps: pull the service code, build an image, and update the application configuration file
 
-After the `更新应用配置文件` step is successfully executed, Argo CD detects the change and triggers the update to synchronize the latest configuration file and deploy it to the cluster.
+After the `Update app profile` step is successfully executed, Argo CD detects the change and triggers the update to synchronize the latest configuration file and deploy it to the cluster.
 
-1. For details about how to create a pipeline, see [创建流水线](../user-guide/pipelines/create/custom.md).
+1. For details about how to create a pipeline, see [crate pipeline](../user-guide/pipelines/create/custom.md).
 
-2. After successful creation, select the pipeline operation: `编辑 Jenkinsfile`
+2. After successful creation, select the pipeline operation: `Edit Jenkinsfile`
 
     ????? note "The following Jenkinsfile parameters can be updated as required"
 
@@ -43,8 +43,8 @@ After the `更新应用配置文件` step is successfully executed, Argo CD dete
             }
           }
           parameters {
-            string(name: 'DOCKER_REPO', defaultValue: 'release-ci.daocloud.io/test-jzh/dao-2048', description: '镜像名称')
-            string(name: 'DOCKER_IMAGE_VERSION', defaultValue: 'v2.0', description: '镜像版本')
+            string(name: 'DOCKER_REPO', defaultValue: 'release-ci.daocloud.io/test-jzh/dao-2048', description: 'image name')
+            string(name: 'DOCKER_IMAGE_VERSION', defaultValue: 'v2.0', description: 'image version')
           }
           stages {
             stage('git clone') {
@@ -87,13 +87,13 @@ After the `更新应用配置文件` step is successfully executed, Argo CD dete
 
 ## Create continuous deployment applications
 
-1. Import argocd-example-apps repository in Http mode, [参考步骤](../user-guide/gitops/import-repo.md)
+1. Import argocd-example-apps repository in Http mode, [refer to steps](../user-guide/gitops/import-repo.md)
 
 2. Create a continuously deployed application
 
     <!--![]()screenshots-->
 
-3. After the creation is complete, a record is generated, and the synchronization status is displayed `未同步`
+3. After the creation is complete, a record is generated, and the synchronization status is displayed `Not synced`
 
     <!--![]()screenshots-->
 
@@ -115,13 +115,13 @@ After the `更新应用配置文件` step is successfully executed, Argo CD dete
 
     <!--![]()screenshots-->
 
-4. Continue to verify the continuous deployment application and find that the status is `未同步`. See that Deployment resources are not synchronized and jump to `容器管理` to confirm the current image version.
+4. Continue to verify the continuous deployment application and find that the status is `Not synced`. See that Deployment resources are not synchronized and jump to `Container Management` to confirm the current image version.
 
     <!--![]()screenshots-->
 
     <!--![]()screenshots-->
 
-5. Click `同步`, wait until the synchronization is successful, view Deployment resources and confirm the current image version.
+5. Click `Sync`, wait until the synchronization is successful, view Deployment resources and confirm the current image version.
 
     <!--![]()screenshots-->
 

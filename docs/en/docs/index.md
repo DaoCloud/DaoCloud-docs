@@ -10,16 +10,16 @@ On the occasion of the golden Autumn of 2022, DaoCloud gladly launches the next-
 
 DaoCloud Enterprise 5.0 is a high-performance, scalable cloud-native operating system that provides a consistent and stable experience on any infrastructure and in any environment. It supports hybrid, edge, and multicloud orchestration. DCE 5.0 integrates the latest service mesh and microservice technologies to track every flow and help you gain insight into the detailed metrics of clusters, nodes, applications, and services, and visualize the health status of applications through dynamic dashboards and topology maps.
 
-DCE 5.0 natively supports the DevOps development and operation and maintenance mode, which can realize the full process standardization and automation of app delivery, and integrate various selected databases and middleware to make operation and maintenance governance more efficient. The various product modules of DCE 5.0 are independently decoupled and support flexible upgrades without affecting the business, and can be docked with many cloud-native ecological products to provide a complete solution system. It has been tested by nearly a thousand industry customers' production scenarios, and has built a solid and reliable digital foundation to help enterprises define digital boundaries and release cloud-native productivity.
+DCE 5.0 natively supports the DevOps development and operation and maintenance mode, which can realize the full process standardization and automation of app delivery, and integrate various selected databases and middleware to make operation and maintenance governance more efficient. The various product modules of DCE 5.0 are independently decoupled and support flexible upgrades without affecting the business, and can be docked with many cloud-native ecological products to provide a complete solution system. It has been tested by nearly a thousand industry customers' production cases, and has built a solid and reliable digital foundation to help enterprises define digital boundaries and release cloud-native productivity.
 
 <div class="grid cards" markdown>
 
-- :fontawesome-solid-jet-fighter-up: **Install** [Install Community Release and Commercial Release](install/intro.md)
+- :fontawesome-solid-jet-fighter-up: **Install** [Install Community Package and Enterprise Package](install/intro.md)
 - :octicons-container-16: **Container management** [Cluster/node/load infrastructure](kpanda/intro/what.md)
 - :fontawesome-solid-user-group: **Global Management** [Set Login/Access Permissions/Appearance](ghippo/intro/what.md)
 - :material-monitor-dashboard: **Observability** [One-stop graphical dashboard](insight/intro/what.md)
-- :material-microsoft-azure-devops: **App Workbench** [CI/CD Pipeline](amamba/intro/what.md)
-- :material-cloud-check: **Multi-cloud orchestration** [Multi-cloud instance/load/policy](kairship/intro/what.md)
+- :material-microsoft-azure-devops: **Workbench** [CI/CD Pipeline](amamba/intro/what.md)
+- :material-cloud-check: **Multicloud Management** [Multicloud instance/load/policy](kairship/intro/what.md)
 - :material-engine: **Microservice Engine** [Microservice Governance Center and Gateway](skoala/intro/what.md)
 - :material-table-refresh: **Service Mesh** [Non-intrusive Service Governance](mspider/intro/what.md)
 - :material-middleware: **middleware** [ES, Kafka, MinIO, MySQL, etc.](middleware/what.md)
@@ -29,15 +29,15 @@ DCE 5.0 natively supports the DevOps development and operation and maintenance m
 
 </div>
 
-In the past eight years, DaoCloud has invested huge to explore and develop a cloud-native operating system with custom and scalable modules to facilitate your business digitalization. You can use each module like a LEGO brick, with zero downtime while upgrading any module. DCE 5.0 is also easy to integrate with hundreds of cloud-native ecological plugins, so you can simply customize solutions for different scenarios. Things go better with such a kind of modular style to grow day by day.
+In the past eight years, DaoCloud has invested huge to explore and develop a cloud-native operating system with custom and scalable modules to facilitate your business digitalization. You can use each module like a LEGO brick, with zero downtime while upgrading any module. DCE 5.0 is also easy to integrate with hundreds of cloud-native ecological plugins, so you can simply customize solutions for different cases. Things go better with such a kind of modular style to grow day by day.
 
-=== "Multi-Cloud Orchestration"
+=== "Multicloud Management"
 
-     Supports unified and centralized management of multi-cloud and hybrid clouds, provides cross-cloud resource retrieval and cross-cloud application deployment, release, and operation and maintenance capabilities, realizes efficient management and control of multi-cloud applications, provides elastic scaling of applications based on cluster resources, and achieves global load balancing. The fault recovery capability can effectively solve the problem of multi-cloud application disaster recovery, and help enterprises build multi-cloud and hybrid cloud digital infrastructure.
+     Supports unified and centralized management of multicloud and hybrid clouds, provides cross-cloud resource retrieval and cross-cloud application deployment, release, and operation and maintenance capabilities, realizes efficient management and control of multicloud applications, provides elastic scaling of applications based on cluster resources, and achieves global load balancing. The fault recovery capability can effectively solve the problem of multicloud application disaster recovery, and help enterprises build multicloud and hybrid cloud digital infrastructure.
 
-     **Modules involved**: [Global Management](ghippo/intro/what.md), [Container Management](kpanda/intro/what.md), [Multi-Cloud Orchestration](kairship/intro/what.md), [cloud native network](network/intro/what-is-net.md), [cloud native storage](storage/what.md), Heterogeneous architecture
+     **Modules involved**: [Global Management](ghippo/intro/what.md), [Container Management](kpanda/intro/what.md), [Multicloud Management](kairship/intro/what.md), [cloud native network](network/intro/what-is-net.md), [cloud native storage](storage/what.md), Heterogeneous architecture
 
-    ![multi-cloud](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/01multi-cloud.jpg)
+    ![multicloud](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/01multicloud.jpg)
 
 === "Data Middleware Service"
 
@@ -53,13 +53,13 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
      Provides non-intrusive traffic management functions, supports non-sensing access to traditional microservices, cloud-native microservices, and open source microservice frameworks, and realizes the integrated management of existing microservice systems and old and new microservice systems of enterprises.
      Support the full life cycle management of microservices from development, deployment, access, observation, operation and maintenance, provide high-performance cloud-native microservice gateways, and ensure the continuous availability of microservice applications; introduce the independent open source eBPF mesh acceleration technology to comprehensively improve Traffic forwarding efficiency.
 
-     **Related modules**: [Global Management](ghippo/intro/what.md), [Container Management](kpanda/intro/what.md), [Microservice Engine](skoala/intro/what.md), [Service Mesh](mspider/intro/what.md), [Observability](insight/intro/what.md), [App Workbench ](amamba/intro/what.md), [Cloud Native Network](network/intro/what-is-net.md), [Cloud Native Storage](storage/what.md)
+     **Related modules**: [Global Management](ghippo/intro/what.md), [Container Management](kpanda/intro/what.md), [Microservice Engine](skoala/intro/what.md), [Service Mesh](mspider/intro/what.md), [Observability](insight/intro/what.md), [Workbench ](amamba/intro/what.md), [Cloud Native Network](network/intro/what-is-net.md), [Cloud Native Storage](storage/what.md)
 
     ![microservie engine](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/03msgov.jpg)
 
 === "Observability"
 
-     Based on logs, traces, metrics, eBPF and other technical means, comprehensive collection of service data, in-depth acquisition of request link information, dynamic observation, multi-dimensional control of real-time changes in clusters, nodes, applications and services,
+     Based on logs, traces, metrics, eBPF and other technical means, comprehensive collection of service data, in-depth acquisition of request trace information, dynamic observation, multi-dimensional control of real-time changes in clusters, nodes, applications and services,
      Realize the query of all clusters and load observation data through a unified control plane, introduce topology analysis technology to visualize the application health status, and realize second-level fault location.
 
      *[eBPF]: Extended Berkeley Packet Filter, which is a component of the Linux kernel that can run sandboxed programs in the kernel
@@ -79,7 +79,7 @@ In the past eight years, DaoCloud has invested huge to explore and develop a clo
      Realize self-service migration to the cloud through a consistent and scalable app delivery process, support flexible tenant systems, dynamically adapt to user organizational structure planning and real-time resource allocation, based on cloud-native CI/CD pipelines, integrate rich tool chains and support pipelines Efficient concurrent execution flow,
      Automate the construction and deployment of applications, innovatively introduce Gitops and progressive delivery capability systems, and achieve more refined management and operation of applications.
 
-     **Modules involved**: [Global Management](ghippo/intro/what.md), [Container Management](kpanda/intro/what.md), [App Workbench](amamba/intro/what.md), [container registry](kangaroo/what.md), [cloud native network](network/intro/what-is-net.md), [cloud native storage](storage/what.md)
+     **Modules involved**: [Global Management](ghippo/intro/what.md), [Container Management](kpanda/intro/what.md), [Workbench](amamba/intro/what.md), [container registry](kangaroo/what.md), [cloud native network](network/intro/what-is-net.md), [cloud native storage](storage/what.md)
 
     ![app delivery](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/06appdeliv.jpg)
 

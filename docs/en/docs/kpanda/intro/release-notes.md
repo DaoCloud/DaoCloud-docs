@@ -25,7 +25,7 @@ This page provides the Release Notes for container management to help you unders
 - **Optimized** Applying Backup Cluster State
 - **Optimized** Matching the load state in the load detail and the state of the pod under the load
 - **Optimized** Node check interface in offline mode
-- **Optimized** Presentation of multi-cloud applications
+- **Optimized** Presentation of multicloud applications
 
 #### Fixes
 
@@ -94,9 +94,9 @@ This page provides the Release Notes for container management to help you unders
 - **Fixed** Workload version records sorted out of order.
 - **Fixed** Kubean upgrade via Helm not working.
 - **Fixed** Last exception promptmissing while creating a cluster.
-- **Fixed** The issue that the workload status is displayed incorrectly or cannot be refreshed in some scenarios.
+- **Fixed** The issue that the workload status is displayed incorrectly or cannot be refreshed in some cases.
 - **Fixed** The issue of missing prompt for Workspace deletion.
-- **Fixed** The issue of incorrect display of resource utilization information in some scenarios.
+- **Fixed** The issue of incorrect display of resource utilization information in some cases.
 - **Fixed** The issue of failed access to DCE 4.X clusters using domain names.
 
 ## 2022-12-29
@@ -132,7 +132,7 @@ This page provides the Release Notes for container management to help you unders
 
 - **Fixed** Issues with not being able to add new nodes with a password.
 - **Fixed** Error in obtaining the cluster kubeconfig accessed in Token mode.
-- **Fixed** Cannot get full users and user groups when granting permissions.
+- **Fixed** Cannot get full users and groups when granting permissions.
 - **Fixed** Issue unbinding the workspace original permissions when the Bindingsync component is abnormal.
 - **Fixed** Workspace Resync does not properly remove unwanted permissions.
 - **Fixed** Delete the question in which the Namespace can also be selected.
@@ -148,7 +148,7 @@ This page provides the Release Notes for container management to help you unders
     - Replicatsets can be managed using the WEB terminal (CloudTTY).
     - Support for viewing Replicatsets monitoring, logs, Yaml, events, and containers.
     - Support for viewing Replicatsets details.
-    - Linkage **App Workbench**, the full life cycle of Replicatsets is managed by grayscale publishing.
+    - Linkage **Workbench**, the full life cycle of Replicatsets is managed by grayscale publishing.
 - **Added** Pod details page.
 - **Added** Namespace details page.
 - **Added** Use the WEB terminal to upload files to the container and download files from the Pod to the local.

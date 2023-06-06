@@ -21,7 +21,7 @@ Generally, no business load is carried.
 
 This cluster is used to manage the working cluster and generally does not carry business load.
 
-- [Classic Mode](../../../install/commercial/deploy-requirements.md) deploys the global service cluster and the management cluster in different clusters, which is suitable for enterprise multi-data center and multi-architecture scenarios.
+- [Classic Mode](../../../install/commercial/deploy-requirements.md) deploys the global service cluster and the management cluster in different clusters, which is suitable for enterprise multi-data center and multi-architecture use cases.
 - [Simple mode](../../../install/commercial/deploy-requirements.md) deploys the management cluster and the global service cluster in the same cluster.
 
 | Supported Features | Description |

@@ -3,13 +3,13 @@ hide:
   - toc
 ---
 
-# Enter the middleware data service for the first time
+# First Use of Data Services
 
-[Elasticsearch search service](elasticsearch/intro/what.md), [Kafka message queue](./kafka/intro/what.md), [MinIO object storage](./minio/intro/what.md) using DCE 5.0 for the first time .md), [MySQL Database](mysql/intro/what.md), [RabbitMQ Message Queue](rabbitmq/intro/what.md), [PostgreSQL Database](postgresql/intro/what.md), or [Redis Cache Service](./redis/intro/what.md) component, you need to select a workspace. For an introduction to the concept of workspace, please refer to [Workspace and Hierarchy](../ghippo/user-guide/workspace/ws-folder.md).
+If this is the first time you enter the Data Services module of DCE 5.0, you must select a workspace before any other actions. For details about the concept of workspace, see [Workspace and Folder](../ghippo/user-guide/workspace/ws-folder.md).
 
-The following uses MinIO as an example to introduce how to select a workspace, and the same applies to other data service components.
+Take MinIO as an example, you can select a workspace with the following steps.
 
-1. Select `Middleware` -> `MinIO Storage` in the left navigation bar.
+1. Select `Data Services` -> `MinIO` in the left navigation bar.
 
     <!--screenshot-->
 

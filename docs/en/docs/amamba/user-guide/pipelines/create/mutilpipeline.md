@@ -5,7 +5,7 @@ hide:
 
 # Create a multi-branch pipeline
 
-The application workbench pipeline supports the creation of multi-branch pipelines based on code repositories.
+Workbench pipeline supports the creation of multi-branch pipelines based on code repositories.
 
 ## prerequisites
 

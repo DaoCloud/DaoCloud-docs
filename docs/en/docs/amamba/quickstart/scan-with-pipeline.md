@@ -62,7 +62,7 @@ If you already have a SonarQube environment, you can skip this step, but you nee
 
     !!! note
 
-        How do I access the Jenkins Dashboard for an App Workbench deployment?
+        How do I access the Jenkins Dashboard for an Workbench deployment?
         
          - Go to Container Management -> Global Service Cluster -> Stateless Load, find the load amamba-jenkins under amamba-system, and expose the service through NodePort.
          - The default username and password are admin/Admin01

@@ -80,4 +80,4 @@ This page describes how to install DCE 5.0 on OCP.
 
          Please record the prompted URL for your next visit.
 
-7. After successfully installing DCE 5.0 Commercial Release, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.
+7. After successfully installing DCE 5.0 Enterprise Package, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.

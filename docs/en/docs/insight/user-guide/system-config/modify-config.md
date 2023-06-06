@@ -119,9 +119,9 @@ Refer to the following steps to modify the log data retention period:
 
     
 
-## How to modify the link data storage duration
+## How to modify the trace data storage duration
 
-Refer to the following steps to modify the link data retention period:
+Refer to the following steps to modify the trace data retention period:
 
 ### Method 1: Modify the Json file
 

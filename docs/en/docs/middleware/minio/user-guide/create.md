@@ -53,7 +53,7 @@ hide:
     ??? note "Click to view advanced configuration instructions"
 
         - Bucket name: create a new bucket under this instance, and set the name of the new bucket
-        - Scheduling policy/condition: set the node affinity of Pod scheduling, refer to the official Kubernetes document [node affinity](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/assign-pod -node/#affinity-and-anti-affinity)
+        - Scheduling policy/condition: set the node affinity of Pod scheduling, refer to the official Kubernetes document [node affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod -node/#affinity-and-anti-affinity)
 
             - Satisfy as much as possible: try to schedule to the nodes that meet the rules first. Pod scheduling is also performed if no matching node is found
             - Must be satisfied: Pod scheduling is only performed when a node satisfying the rules is found

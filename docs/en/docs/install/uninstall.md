@@ -1,6 +1,6 @@
 # Uninstall
 
-Run the following commands in sequence to uninstall DCE 5.0 Community Package from the cluster.
+Run the following commands in order to uninstall DCE 5.0 from your environment.
 
 !!! warning
 

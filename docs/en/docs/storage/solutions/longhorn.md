@@ -47,7 +47,7 @@ Longhorn and DCE can be used together to deploy high-availability persistent blo
      - Support Prometheus and Grafana to monitor Longhorn
      - Longhorn metrics can be integrated into DCE monitoring system
      - Support Kubelete Metrics monitoring
-     - Support Longhorn alarm strategy
+     - Support Longhorn alert strategy
 
 1. Advanced features
 

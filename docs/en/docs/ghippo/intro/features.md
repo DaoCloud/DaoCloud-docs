@@ -60,7 +60,7 @@ This page describes the features of Global Management.
      A [role](../user-guide/access-control/role.md) corresponds to a set of permissions.
      Permissions determine the actions that can be performed on a resource. Granting a role to a user grants all the permissions included in that role.
      You can divide the management rights of different modules to different users,
-     For example, user A manages the container management module, user B manages the App Workbench module, and jointly manages the observability module.
+     For example, user A manages the container management module, user B manages Workbench module, and jointly manages the observability module.
 
 4. Workspaces
 
@@ -116,7 +116,7 @@ Below is a list of features available:
         - Create users
         - Edit basic user information such as email, description, enable/disable etc.
         - Record user authorization information
-        - Record user group membership information
+        - Record group membership information
         - Admins can help users change passwords
         - Admins can help users create access keys
     2. [Groups](../user-guide/access-control/group.md)
@@ -176,7 +176,7 @@ Below is a list of features available:
     2. [Email Settings](../user-guide/platform-setting/mail-server.md)
         - Configure the mail server
         - Retrieve user passwords by email
-        - Receive alarm notifications, etc.
+        - Receive alert notifications, etc.
     3. [Custom Appearance](../user-guide/platform-setting/appearance.md)
         - Custom login page appearance, including platform LOGO, login page icon, tab page icon, etc.
         - One-click restore login page appearance configuration

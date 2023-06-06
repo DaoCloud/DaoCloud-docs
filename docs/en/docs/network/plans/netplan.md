@@ -17,4 +17,4 @@ Based on the best practice of Overlay CNI + Underlay CNI [network card planning]
    The main uses are: communication between nodes, K8s management network card, Calico Pod communication.
 - eth1 is the underlay service network card, no need to set an IP address.
    Create VLAN subinterfaces (eth1.1, eth1.2) based on eth1, corresponding to network segments such as 172.16.15.0/24 and 172.16.16.0/24.
-   The created business application Pod uses the address of the corresponding network segment, which can meet the multi-VLAN and multi-subnet scenarios.
+   The created business application Pod uses the address of the corresponding network segment, which can meet the multi-VLAN and multi-subnet use cases.
