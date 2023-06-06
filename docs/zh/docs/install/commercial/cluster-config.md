@@ -227,7 +227,7 @@ spec:
 | masterNodes.ansiblePass                                      | 节点密码                                                     | -                                                       |
 | masterNodes.ansibleSSHPort                                   | ssh 的端口，默认为22                                         | 22                                                      |
 | workerNodes                                                  | Global 集群：Worker 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | -                                                       |
-| privateKeyPath                                               | kuBean 部署集群的 SSH 私钥文件路径，如果填写则不需要定义ansibleUser、ansiblePass | -                                                       |
+| privateKeyPath                                               | kuBean 部署集群的 SSH 私钥文件路径，如果填写则不需要定义 ansibleUser、ansiblePass | -                                                       |
 | k8sVersion                                                   | kuBean 安装集群的 K8s 版本必须跟 KuBean 和离线包相匹配       | -                                                       |
 | loadBalancer.insightVip                                      | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 GLobal 集群的 insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP | -                                                       |
 | loadBalancer.istioGatewayVip                                 | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 DCE 的 UI 界面和 OpenAPI 访问入口 | -                                                       |
@@ -235,17 +235,17 @@ spec:
 | fullPackagePath                                              | 解压后的离线包的路径，离线模式下该字段必填                   | -                                                       |
 | addonPackage.path                                            | 应用商店 addon 包本地文件系统路径                            | -                                                       |
 | imagesAndCharts                                              | 镜像仓库和 Chart仓库源                                       | -                                                       |
-| imagesAndCharts.externalChartRepo                            | 外置Chart仓库的IP或域名                                      | -                                                       |
-| imagesAndCharts.externalChartRepoPassword                    | 外置Chart仓库的密码，用于推送镜像                            | -                                                       |
-| imagesAndCharts.externalChartRepoType                        | 外置Chart仓库的类型，取值为 chartmuseum，harbor              | -                                                       |
-| imagesAndCharts.externalChartRepoUsername                    | 外置Chart仓库的用户名，用于推送镜像                          | -                                                       |
-| imagesAndCharts.externalImageRepo                            | 指定external仓库的IP或者域名(需指定协议头)                   | -                                                       |
+| imagesAndCharts.externalChartRepo                            | 外置 Chart 仓库的 IP 或域名                                      | -                                                       |
+| imagesAndCharts.externalChartRepoPassword                    | 外置 Chart 仓库的密码，用于推送镜像                            | -                                                       |
+| imagesAndCharts.externalChartRepoType                        | 外置 Chart 仓库的类型，取值为 chartmuseum，harbor              | -                                                       |
+| imagesAndCharts.externalChartRepoUsername                    | 外置 Chart 仓库的用户名，用于推送镜像                          | -                                                       |
+| imagesAndCharts.externalImageRepo                            | 指定 external 仓库的 IP 或者域名(需指定协议头)                   | -                                                       |
 | imagesAndCharts.externalImageRepoPassword                    | 外置镜像仓库的密码，用于推送镜像                             | -                                                       |
 | imagesAndCharts.externalImageRepoUsername                    | 外置镜像仓库的用户名，用于推送镜像                           | -                                                       |
-| imagesAndCharts.type                                         | 镜像与Chart的访问模式，取值为 official-service(在线), buitin(火种内置 registry 和 chartmuseum), external(外置) | official-service                                        |
+| imagesAndCharts.type                                         | 镜像与 Chart 的访问模式，取值为 official-service(在线), buitin(火种内置 registry 和 chartmuseum), external(外置) | official-service                                        |
 | auditConfig                                                  | k8s api-server 的审计日志配置                                | 默认关闭                                                |
 | binaries                                                     | 二进制可执行文件                                             | -                                                       |
-| binaries.externalRepository                                  | 外置二进制可执行文件仓库的访问地址，URL形式                  | -                                                       |
+| binaries.externalRepository                                  | 外置二进制可执行文件仓库的访问地址，URL 形式                  | -                                                       |
 | binaries.type                                                | 二进制可执行文件的访问模式，取值为 official-service(在线), builtin(火种节点内置的minio) | official-service                                        |
 | network.clusterCIDR                                          | Cluster CIDR                                                 | -                                                       |
 | network.cni                                                  | CNI 选择，比如 Calico、Cilium                                | calico                                                  |
