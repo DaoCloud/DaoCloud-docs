@@ -45,9 +45,10 @@ ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置�
 | :------- | :-------------------------------------------------- | :----------------------------------------------------------- |
 | AMD64    | Centos 7                                            | <https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso> |
 |          | Redhat 7、8                                         | <https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451> <br />注意：Redhat 操作系统需要 Redhat 的账号才可以下载 |
-|          | Ubuntu20.04                                         | <https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso> |
+|          | Ubuntu 20.04                                        | <https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso> |
 |          | 统信UOS V20（1020a）                                | <https://cdimage-download.chinauos.com/uniontechos-server-20-1020a-amd64.iso> |
-|          | openEuler22.03                                      | <https://mirrors.nju.edu.cn/openeuler/openEuler-22.03-LTS-SP1/ISO/x86_64/openEuler-22.03-LTS-SP1-x86_64-dvd.iso> |
+|          | openEuler 22.03                                     | <https://mirrors.nju.edu.cn/openeuler/openEuler-22.03-LTS-SP1/ISO/x86_64/openEuler-22.03-LTS-SP1-x86_64-dvd.iso> |
+|          | OracleLinux R9 U1                                   | https://yum.oracle.com/ISOS/OracleLinux/OL9/u1/x86_64/OracleLinux-R9-U1-x86_64-dvd.iso |
 | ARM64    | Kylin Linux Advanced Server release V10 (Sword) SP2 | 申请地址：<https://www.kylinos.cn/scheme/server/1.html> <br />注意：麒麟操作系统需要提供个人信息才能下载使用，下载时请选择 V10 (Sword) SP2 |
 
 #### osPackage 离线包（必需）
@@ -64,6 +65,7 @@ ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置�
 | Kylin Linux Advanced Server release V10 (Sword) SP2 | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.9-rc1/os-pkgs-kylinv10-v0.4.9-rc1.tar.gz> |
 | Ubuntu20.04                                         | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.9-rc1/os-pkgs-ubuntu2004-v0.4.9-rc1.tar.gz> |
 | openEuler 22.03                                     | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.4.9-rc1/os-pkgs-openeuler22.03-v0.4.9-rc1.tar.gz> |
+| OracleLinux R9 U1                                   | https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.0/os-pkgs-oracle9-v0.5.0.tar.gz |
 
 统信UOS V20（1020a）osPackage 部署请参考[UOS V20 (1020a) 操作系统上部署 DCE 5.0](../os-install/uos-v20-install-dce5.0.md)
 
