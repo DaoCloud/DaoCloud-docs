@@ -2,6 +2,58 @@
 
 本页列出安装器的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023-5-31
+
+### v0.8.0
+
+#### 新功能
+
+- **新增** Other Linux 模式支持操作系统 OpenAnolis 8.8 GA
+- **新增** 支持操作系统 OracleLinux R9 U1
+- **新增** 增加节点状态检测
+- **新增** 增加对系统包(OS PKGs)的文件校验
+- **新增** 支持节点非 22 端口安装集群
+- **新增** 外接文件服务支持 k8s 二进制资源
+- **新增** 支持外接 JFrog 镜像及 charts 仓库
+- **新增** 支持混合架构部署方案
+- **新增** 支持外接 Redis 组件
+
+#### 优化
+
+- **优化** 部署 nacos 实例报镜像缺失
+- **优化** 升级集群模块时，重复执行集群安装任务
+
+#### 已知问题
+
+- Addon 离线包暂不支持上传到 JFrog 外接服务
+- 容器管理平台离线模式暂无法支持工作集群添加节点
+- 离线场景下使用外置OS Repo仓库时，即 clusterConfig.yaml 中定义 `osRepos.type=external`，部署 DCE5.0 成功后无法在容器管理中创建工作集群，临时解决方案如下：
+  global集群安装完成后立即更新global集群 kubean-system 命名空间的configmap kubean-localservice，将 `yumRepos.external` 值中所有双引号改为单引号。如下示例，将文件内的双引号都替换为单引号：
+
+  ```yaml
+  yumRepos:
+    external: [ "http://10.5.14.100:8081/centos/\$releasever/os/\$basearch","http://10.5.14.100:8081/centos-iso/\$releasever/os/\$basearch" ]
+  ```
+
+  替换为：
+
+  ```yaml
+  yumRepos:
+    external: [ 'http://10.5.14.100:8081/centos/\$releasever/os/\$basearch','http://10.5.14.100:8081/centos-iso/\$releasever/os/\$basearch' ]
+  ```
+
+## 2023-5-30
+
+### v0.7.1
+
+#### 优化
+
+- **优化** 升级了监控组件版本
+
+#### 修复
+
+- **修复** 二进制输出社区版 manifest 有误
+
 ## 2023-4-30
 
 ### v0.7.0

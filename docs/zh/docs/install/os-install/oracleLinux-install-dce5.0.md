@@ -14,12 +14,12 @@
 
     | CPU 架构 | 版本   | 下载地址                                                                                          |
     | -------- | ------ | ------------------------------------------------------------------------------------------------- |
-    | AMD64    | v0.8.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-amd64.tar> |
+    | AMD64    | v0.8.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.8.0-amd64.tar> |
 
     下载完毕后解压离线包：
 
     ```bash
-    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-amd64.tar
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.8.0-amd64.tar
     tar -xvf offline-v0.6.1-amd64.tar
     ```
 
@@ -34,7 +34,7 @@
     下载制作脚本
 
      ```bash
-    curl -LO https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.0/os-pkgs-oracle9-v0.5.0.tar.gz
+    curl -LO https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.4/os-pkgs-oracle9-v0.5.4.tar.gz
     ```
 
 4. 下载 addon 离线包，可以在[下载中心](../../download/dce5.md)下载最新版本（可选）
@@ -61,7 +61,7 @@
       osRepos:
         type: builtin
         isoPath: "/root/workspace/iso/OracleLinux-R9-U1-x86_64-dvd.iso"
-        osPackagePath: "/root/workspace/os-pkgs/os-pkgs-oracle9-v0.0.4.tar.gz"
+        osPackagePath: "/root/workspace/os-pkgs/os-pkgs-oracle9-v0.5.4.tar.gz"
       imagesAndCharts:
         type: builtin
       binaries:
