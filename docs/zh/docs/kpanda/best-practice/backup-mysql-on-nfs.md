@@ -2,11 +2,6 @@
 
 在本 demo 中，我们将基于第五代产品的应用备份功能，实现一个有状态应用的跨集群备份迁移。
 
-## 视频教程
-<div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kpanda-velero.mp4" preload="metadata" poster="../images/kpanda-velero.png"></video>
-</div>
-
 ## 前提
 
 1. 已完成 DCE 5.0 平台的部署，且具有DCE 5.0 平台管理员权限的账号
