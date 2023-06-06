@@ -5,19 +5,20 @@ hide:
 
 # K8s Certified Service Provider
 
-DaoCloud is a Kubernetes provider officially certified by CNCF, that is, Kubernetes Certified Service Provider (KCSP). As early as 2017, DaoCloud successfully passed the official Kubernetes certification. It is the earliest provider in China to set foot in and be officially recognized by CNCF.
-We actively participate in CNCF-related community contributions all year round, leading the technology trend of the community. Every time a new version of Kubernetes is released, it will be the first to adapt and enhance new features, and push them to the actual production environment.
+DaoCloud is a CNCF-certified Kubernetes service provider, officially known as a Kubernetes Certified Service Provider (KCSP). As early as 2017, DaoCloud successfully obtained official certification from Kubernetes, making it the first provider in China to gain recognition from CNCF.
 
-As an official and strictly audited Kubernetes service provider, DaoCloud has deep experience in helping enterprises successfully deploy large-scale clusters using Kubernetes.
+We actively participate in CNCF-related community contributions throughout the year, leading technological trends in the community. Whenever a new version of Kubernetes is released, we are among the first to adapt to and enhance new features, pushing them to actual production environments.
 
-DaoCloud being a certified KCSP means:
+As an officially certified KCSP, DaoCloud has extensive experience in helping enterprises deploy large-scale clusters using Kubernetes successfully.
 
-- DaoCloud is a [Kubernetes officially recommended senior partner](https://kubernetes.io/partners/)
-- DaoCloud is recognized by the CNCF community as an excellent company that has expert qualifications and is fully competent for the professional work of Kubernetes cluster deployment
-- When end users choose Kubernetes to deploy clusters, DaoCloud is a brand supplier recognized and recommended by the CNCF cloud native community
-- DaoCloud, which has been ranked in the KCSP for many years, has mastered the leading technology in the field of cloud native, and always leads the development direction of the cloud native community
+Being a certified KCSP means that:
 
-The currently authorized and compliant Kubernetes versions of DaoCloud include but are not limited to:
+- DaoCloud is a recommended senior partner of Kubernetes officially.
+- DaoCloud is recognized by the CNCF community as an excellent company with expert qualifications and fully competent for the professional work of Kubernetes cluster deployment.
+- When end-users choose Kubernetes to deploy clusters, DaoCloud is a brand supplier recognized and recommended by the CNCF cloud-native community.
+- After being ranked in the KCSP for many years, DaoCloud has mastered the leading technology in the field of cloud-native and always leads the development direction of the cloud-native community.
+
+Currently, authorized and compliant Kubernetes versions of DaoCloud include but are not limited to:
 
 Current versions:
 
