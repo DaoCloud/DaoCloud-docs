@@ -4,9 +4,9 @@
 
 ## 2023-5-26
 
-#### 优化
-
 ### v0.10.3
+
+#### 优化
 
 **优化** Helm 模板中权限功相关内容
 
@@ -16,7 +16,7 @@
 
 #### 优化
 
-**优化** Node Name `.`自动转成`-`问题，影响 LDM 心跳检测
+**优化** Node Name `.` 自动转成 `-` 问题，影响 LDM 心跳检测
 
 **新增** Admin 权限功能
 
@@ -26,11 +26,11 @@
 
 #### 优化
 
-- **新增** 识别并设置本地磁盘 Manager Owner 信息。
-- **优化** 当接收到 移除时间，将磁盘状态标记为'inactive'。
-- **优化** 磁盘 Smart 指标仪表盘。
-- **新增** 本地存储池。
-- **优化** UI 组件状态展示。
+- **新增** 识别并设置本地磁盘 Manager Owner 信息
+- **优化** 当接收到 移除时间，将磁盘状态标记为 'inactive'
+- **优化** 磁盘 Smart 指标仪表盘
+- **新增** 本地存储池
+- **优化** UI 组件状态展示
 - **优化** 分离磁盘分配和磁盘状态更新过程
 - **优化** 将Exportor端口重命名为 http-metrics
 - **优化** 在exporter service中添加端口名称
@@ -38,7 +38,7 @@
 #### 缺陷
 
 - **修复** LD bound，但是LSN中没有容量的问题
-- **修复** Metrics 端口监听问题。
+- **修复** Metrics 端口监听问题
 - **修复** May occur `not found`的问题
 - **修复** Helm 中UI tag 的问题
 
@@ -46,7 +46,7 @@
 
 #### 优化
 
-- **优化** 在使用阶段填充磁盘所有者信息。
+- **优化** 在使用阶段填充磁盘所有者信息
 - **优化** udev事件触发时合并磁盘自身属性
 - **优化** 给svc添加标签
 - **优化** 分离磁盘分配和磁盘状态更新过程
@@ -56,7 +56,7 @@
 #### 缺陷
 
 - **修复** LD bound，但是LSN中没有容量的问题
-- **修复** Metrics 端口监听问题。
+- **修复** Metrics 端口监听问题
 - **修复** May occur `not found`的问题
 - **修复** Helm 中UI tag 的问题
 
@@ -72,7 +72,7 @@
 
 #### 优化
 
-- **新增** Volume Status 监控 [Issue#741](https://github.com/hwameistor/hwameistor/pull/741)
+- **新增** Volume Status 监控 [Issue #741](https://github.com/hwameistor/hwameistor/pull/741)
 - **修复** Local Storage 部署参数 [Issue #742](https://github.com/hwameistor/hwameistor/pull/742)
 
 ### v0.9.0
