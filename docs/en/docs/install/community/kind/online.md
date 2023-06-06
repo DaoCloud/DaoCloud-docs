@@ -30,7 +30,7 @@ precheck pass...
 
 ## Install Docker
 
-!!! note 
+!!! note
 
     - If you have installed Docker v1.18+, skip this step.
     - Use domestic source to accelerate: <https://developer.aliyun.com/mirror/docker-ce>
@@ -184,7 +184,11 @@ precheck pass...
 
     Now you can use the **default account and password (admin/changeme)** to explore the new DCE 5.0 through the URL prompted on the screen!
 
-     ![Installation succeeded](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
+    ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
+
+    !!! success
+
+        Please write down the prompted URL for your next visit.
 
 !!! success
 
