@@ -24,7 +24,7 @@
 1. 下载脚本。
 
     ```bash
-    curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
     ```
 
     为 `install_prerequisite.sh` 添加可执行权限：
@@ -51,33 +51,26 @@
 
 离线安装意味着目标主机的网络处于离线状态，无法下载所需依赖项，所以需先在一个在线环境中制作好离线包。
 
-1. 在可以连接到网络的其他主机中制作依赖项的离线包。
+1. 下载脚本。
 
-    - 社区版制作命令
+    ```bash
+    export VERSION=v0.8.0
+    curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
+    ```
 
-        ```bash
-        bash install_prerequisite.sh export community
-        ```
+2. 下载前置依赖组件离线包。
 
-    - 商业版制作命令
+    ```bash
+    export VERSION=v0.8.0
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_$VERSION_amd64.tar.gz
 
-        ```bash
-        bash install_prerequisite.sh export full
-        ```
+    tar -xvf 
+    ```
 
     !!! note
 
-        当上述命令执行完成后，会在当前目录生成名为 pre_pkgs.tar.gz 的压缩包，该压缩包中会包含安装所需的所有文件。
-
-2. 上传目录中的所有文件到离线环境。
-
-    ```bash
-    # 脚本与离线包都位于同一目录层级
-    $ tree .
-    .
-    ├── install_prerequisite.sh
-    └── pre_pkgs.tar.gz
-    ```
+        - 如果是 arm 架构，下载地址为：https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_$VERSION_arm64.tar.gz
+        - 确保离线包与脚本在同一个目录层级
 
 3. 执行离线安装。
 

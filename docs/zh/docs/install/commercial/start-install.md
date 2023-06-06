@@ -69,6 +69,22 @@ ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置�
 
 统信UOS V20（1020a）osPackage 部署请参考[UOS V20 (1020a) 操作系统上部署 DCE 5.0](../os-install/uos-v20-install-dce5.0.md)
 
+#### 一键下载所需离线包
+
+我们提供了脚本来[一键下载安装 DCE5.0 所需的离线包](../air-tag-download.md)。
+
+以下是包含的离线包：
+
+- 前置依赖工具离线包
+- osPackage 离线包
+- 安装器离线包
+
+!!! note
+
+    ```
+    由于不同的 ISO 操作系统下载方式不一致，所以暂不支持。
+    ```
+
 ### 第 2 步：配置集群配置文件
 
 集群配置文件位于离线镜像包 `offline/sample` 目录下，具体的参数介绍请参考 [clusterConfig.yaml](cluster-config.md)。
