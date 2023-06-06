@@ -22,8 +22,4 @@ GProduct 是 DCE 5.0 中除全局管理外的所有其他模块的统称，这�
     登录统一使用全局管理 (Keycloak) 登录页，API authn token 验证使用 Istio Gateway。
     GProduct 对接全局管理后不需要关注如何实现登录和认证。
 
-## DCE 5.0 嵌入客户平台演示
-
-<div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oem-out.mp4" preload="metadata" poster="../images/oem-out.png"></video>
-</div>
+[DCE 5.0 对接客户平台视频演示](../../videos/use-cases.md#dce-50_2)
