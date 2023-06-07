@@ -7,6 +7,58 @@ Date: 2023-04-12
 
 This page lists the Release Notes of the installer, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-5-31
+
+### v0.8.0
+
+#### New Features
+
+- **New** Other Linux mode supports the OpenAnolis 8.8 GA operating system
+- **New** Supports the OracleLinux R9 U1 operating system
+- **New** Added node status detection
+- **New** Added file verification for OS PKGs
+- **New** Supports cluster installation on non-22 ports
+- **New** External file service supports k8s binary resources
+- **New** Supports external JFrog image and charts repositories
+- **New** Supports mixed architecture deployment solutions
+- **New** Supports external Redis components
+
+#### Improvements
+
+- **Improved** Fixed issue of missing images when deploying Nacos instances
+- **Improved** Fixed issue of repeated execution of cluster installation task during cluster module upgrade
+
+#### Known Issues
+
+- Addon offline package does not currently support uploading to external JFrog services
+- The container management platform offline mode currently does not support adding nodes to working clusters
+- When using an external OS Repo repository in an offline scenario, i.e. defining `osRepos.type=external` in clusterConfig.yaml, after successfully deploying DCE5.0, you cannot create working clusters in the container management. A temporary solution is as follows:
+After installing the global cluster, immediately update the configmap kubean-localservice in the kubean-system namespace of the global cluster to replace all double quotes with single quotes in the value of `yumRepos.external`. For example, replace all double quotes in the file with single quotes:
+
+  ```yaml
+  yumRepos:
+    external: [ "http://10.5.14.100:8081/centos/\$releasever/os/\$basearch","http://10.5.14.100:8081/centos-iso/\$releasever/os/\$basearch" ]
+  ```
+
+  with:
+
+  ```yaml
+  yumRepos:
+    external: [ 'http://10.5.14.100:8081/centos/\$releasever/os/\$basearch','http://10.5.14.100:8081/centos-iso/\$releasever/os/\$basearch' ]
+  ```
+
+## 2023-5-30
+
+### v0.7.1
+
+#### Improvements
+
+- **Improved** Upgrade of monitoring components version
+
+#### Bug Fixes
+
+- **Fixed** Binary output of Community Package manifest was incorrect
+
 ## 2023-4-30
 
 ### v0.7.0

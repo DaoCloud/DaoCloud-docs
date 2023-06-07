@@ -1,6 +1,6 @@
 # Elasticsearch Troubleshooting Manual
 
-This article will continue to count and sort out common Elasticsearch abnormal faults and repair methods. If you encounter problems in use, please check this troubleshooting manual first.
+This page will continue to count and sort out common Elasticsearch abnormal faults and repair methods. If you encounter problems in use, please check this troubleshooting manual first.
 
 > If you find that the problem you encounter is not included in this manual, you can quickly jump to the bottom of the page and submit your problem.
 

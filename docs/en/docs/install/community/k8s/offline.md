@@ -25,10 +25,10 @@ Click [Online Install Community Package](../../../videos/install.md) to watch a 
 
 1. Download and decompress the offline package of DCE 5.0 Community on the controller node of your kubernetes cluster, or download and decompress the offline package from [Download Center](../../../download/dce5.md).
 
-    Take VERSION=0.7.0 as an example
+    Take VERSION=0.8.0 as an example
 
     ```bash
-    export VERSION=v0.7.0
+    export VERSION=v0.8.0
     wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION-amd64.tar
     tar -xvf offline-community-$VERSION-amd64.tar
     ```
