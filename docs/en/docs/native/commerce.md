@@ -86,7 +86,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [AliCloud Microservices Engine MSE April Product Update](https://mp.weixin.qq.com/s/hYarQaUdKRY5pHi4dAVosg)
 
-    Updates: Nacos and Service Governance combine to non-intrusively implement Java application registration discovery, full-link grayscale, etc.; Cloud Native Gateway introduces migration tools for container service Nginx Ingress; Microservice Governance Basic Edition supports lossless up and down, canary publishing, etc.; Nacos supports TLS link encryption.
+    Updates: Nacos and Service Governance combine to non-intrusively implement Java application registration discovery, full-link grayscale, etc.; Cloud Native Gateway introduces migration tools for container service Nginx Ingress; Microservice Governance Basic Package supports lossless up and down, canary publishing, etc.; Nacos supports TLS link encryption.
 
 - [AliCloud Service Mesh ASM March 2023 Product Update](https://mp.weixin.qq.com/s/Yca5J3liIg6oznZDz6fVrA)
 
@@ -512,9 +512,9 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Built on Istio, Service Mesh Manager provides microservice teams with centralized security control and traffic management policy configuration. Built on Cilium, Network Policy Manager provides centralized management and visibility into pod and namespace communication to isolate perimeters and reduce a cluster's lateral attack surface.
 
-- [Rainbond Cloud Native multicloud Application Management Platform Rainbond Enterprise Edition Released](https://mp.weixin.qq.com/s/pmCwyFbcCwXxcO0-rVM5dw)
+- [Rainbond Cloud Native multicloud Application Management Platform Rainbond Enterprise Package Released](https://mp.weixin.qq.com/s/pmCwyFbcCwXxcO0-rVM5dw)
 
-    Rainbond Enterprise Edition has a global observable center for monitoring, debugging, and analyzing infrastructure and application services running in Kubernetes clusters and the rainbond platform. In addition, it also provides solutions for IT business system migration to the localized Cintron environment, supports full-link grayscale release and cluster patrol, built-in WAF firewall and operation audit functions, supports private deployment of application stores, etc.
+    Rainbond Enterprise Package has a global observable center for monitoring, debugging, and analyzing infrastructure and application services running in Kubernetes clusters and the rainbond platform. In addition, it also provides solutions for IT business system migration to the localized Cintron environment, supports full-link grayscale release and cluster patrol, built-in WAF firewall and operation audit functions, supports private deployment of application stores, etc.
 
 - [Red Hat OpenShift Container Platform 4.13 Released](https://mp.weixin.qq.com/s/gzxlg2ki1-oJyHKE62fCTA)
 

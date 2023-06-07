@@ -65,7 +65,7 @@ After verifying the offline package,
     tar -zxvf offline-v0.8.0-arm64.tar
     ```
 
-- For installation, please refer to [Commercial Edition Installation Process](../../install/commercial/start-install.md).
+- For installation, please refer to [Enterprise Package Installation Process](../../install/commercial/start-install.md).
 - After successful installation, please contact us for authorization by email info@daocloud.io or call 400 002 6898.
 
 ## Modules

@@ -1,6 +1,6 @@
 # MySQL Troubleshooting Manual
 
-This article will continue to count and sort out common MySQL abnormal faults and repair methods. If you encounter problems in use, please read this troubleshooting manual first.
+This page will continue to count and sort out common MySQL abnormal faults and repair methods. If you encounter problems in use, please read this troubleshooting manual first.
 
 > If you find a problem that is not included in this manual, you can quickly jump to the bottom of the page and submit your problem.
 

@@ -1,6 +1,6 @@
-# Linux stand-alone online experience DCE 5.0 Community Edition
+# Linux stand-alone online experience DCE 5.0 Community Package
 
-This page explains how to install a stand-alone DCE 5.0 Community Edition online on a Linux machine via Docker and kind.
+This page explains how to install a stand-alone DCE 5.0 Community Package online on a Linux machine via Docker and kind.
 
 !!! tip
 
@@ -152,7 +152,7 @@ If you already have Docker on the host, and the version is higher than 1.18, you
      fire-kind-cluster
      ```
 
-## Install DCE 5.0 Community Edition
+## Install DCE 5.0 Community Package
 
 1. Install dependencies, see also [Dependency Installation Instructions](../install/install-tools.md)
 

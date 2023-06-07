@@ -69,14 +69,14 @@ click ask "https://docs.daocloud.io/en/install/intro/#contact-us"
 
      Click the blue text in the diagram, you can go to the corresponding page for details.
 
-## Install Commercial Package
+## Install Enterprise Package
 
 The installation process of DCE 5.0 Commercial package is as follows:
 
 ```mermaid
 flowchart TB
 
-    start([fa:fa-user DCE 5.0 Commercial Package<br>Installation Procedure]) -.- arch[Deployment Architecture]
+    start([fa:fa-user DCE 5.0 Enterprise Package<br>Installation Procedure]) -.- arch[Deployment Architecture]
     arch --> deploy[Deployment Requirements]
     deploy --> prepare[Preparation]
     prepare --> download[Download Offline Package]

@@ -3,7 +3,7 @@
 Before you start installing DCE 5.0, you must have these dependencies installed first, otherwise you installation of DCE 5.0 may get failed.
 
 - For the Community package, install the dependencies on the K8s Controller node.
-- For the Enterprise Edition, install the dependencies on the [Spark Node](./commercial/deploy-arch.md).
+- For the Enterprise Package, install the dependencies on the [Spark Node](./commercial/deploy-arch.md).
 
 !!! note
     

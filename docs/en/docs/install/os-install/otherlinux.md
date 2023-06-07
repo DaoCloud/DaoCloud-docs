@@ -8,7 +8,8 @@ Other Linux is essentially because DCE does not provide the installation system 
 
 | Architecture | Release | System Family | Recommended Kernel |
 | ----- | ---------------------------- | ------------ | - ------------------ |
-| AMD64 | UnionTech OS Server 20 1050d | Debian 10.10 | 4.19.0-server-amd64 |
+| AMD64 | UOS V20 (1050d) | Debian | 4.19.0-server-amd64 |
+| AMD64 | AnolisOS 8.8 GA  | Redhat | 5.10.134-13.an8.x86_64 |
 
 Remarks: If there is no verified operating system, you can try to deploy it through the tutorials in this document.
 
@@ -24,11 +25,11 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
 
 1. Download the authoring tool.
 
-     ```bash
-     cd /home
-     curl -Lo ./pkgs.yml https://raw.githubusercontent.com/kubean-io/kubean/main/build/os-packages/others/pkgs.yml
-     curl -Lo ./other_os_pkgs.sh https://raw.githubusercontent.com/kubean-io/kubean/main/build/os-packages/others/other_os_pkgs.sh && chmod +x other_os_pkgs.sh
-     ```
+    ```bash
+    cd /home
+    curl -Lo ./pkgs.yml https://raw.githubusercontent.com/kubean-io/kubean/main/build/os-packages/others/pkgs.yml
+    curl -Lo ./other_os_pkgs.sh https://raw.githubusercontent.com/kubean-io/kubean/main/build/os-packages/others/other_os_pkgs.sh && chmod +x other_os_pkgs.sh
+    ```
 
 2. Build the operating system offline package
 
@@ -57,32 +58,32 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
 
 4. After the installation is successful, the following log will be output:
 
-     ```bash
-     [root@master test]# cat log.txt |egrep 'INFO|WARN'
-     [WARN] skip install yq...
-     [INFO] succeeded to install package 'python-apt'
-     [INFO] succeeded to install package 'python3-apt'
-     [INFO] succeeded to install package 'aufs-tools'
-     [INFO] succeeded to install package 'apt-transport-https'
-     [INFO] succeeded to install package 'software-properties-common'
-     [INFO] succeeded to install package 'conntrack'
-     [INFO] succeeded to install package 'apparmor'
-     [WARN] The package 'libseccomp2' has been installed
-     [INFO] succeeded to install package 'ntp'
-     [WARN] The package 'openssl' has been installed
-     [INFO] succeeded to install package 'curl'
-     [INFO] succeeded to install package 'rsync'
-     [INFO] succeeded to install package 'socat'
-     [WARN] The package 'unzip' has been installed
-     [WARN] the package 'e2fsprogs' has been installed
-     [WARN] the package 'xfsprogs' has been installed
-     [INFO] succeeded to install package 'ebtables'
-     [WARN] The package 'bash-completion' has been installed
-     [WARN] the package 'tar' has been installed
-     [INFO] succeeded to install package 'ipvsadm'
-     [INFO] succeeded to install package 'ipset'
-     [INFO] All packages for Node (192.168.10.11) have been installed.
-     ```
+    ```bash
+    [root@master test]# cat log.txt |egrep 'INFO|WARN'
+    [WARN]   skip install yq ...
+    [INFO]   succeed to install package 'python-apt'
+    [INFO]   succeed to install package 'python3-apt'
+    [INFO]   succeed to install package 'aufs-tools'
+    [INFO]   succeed to install package 'apt-transport-https'
+    [INFO]   succeed to install package 'software-properties-common'
+    [INFO]   succeed to install package 'conntrack'
+    [INFO]   succeed to install package 'apparmor'
+    [WARN]   the package 'libseccomp2' has been installed
+    [INFO]   succeed to install package 'ntp'
+    [WARN]   the package 'openssl' has been installed
+    [INFO]   succeed to install package 'curl'
+    [INFO]   succeed to install package 'rsync'
+    [INFO]   succeed to install package 'socat'
+    [WARN]   the package 'unzip' has been installed
+    [WARN]   the package 'e2fsprogs' has been installed
+    [WARN]   the package 'xfsprogs' has been installed
+    [INFO]   succeed to install package 'ebtables'
+    [WARN]   the package 'bash-completion' has been installed
+    [WARN]   the package 'tar' has been installed
+    [INFO]   succeed to install package 'ipvsadm'
+    [INFO]   succeed to install package 'ipset'
+    [INFO]   All packages for Node (192.168.10.11) have been installed.
+    ```
 
 ### Notice
 
@@ -124,67 +125,97 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
 
 4. Download the addon offline package, you can download the latest version in [Download Center](../../download/dce5.md) (optional)
 
-5. Set [cluster configuration file clusterConfig.yaml](../commercial/cluster-config.md), which can be obtained under the offline package `offline/sample` and modified as needed.
+5. Set [clusterConfig.yaml](../commercial/cluster-config.md), which can be obtained under the offline package `offline/sample` and modified as needed.
 
-     Taking `UnionTech OS Server 20 1050d` as an example, the reference configuration is:
+    === "UnionTech OS Server 20 1050d"
 
-     ```yaml
-     apiVersion: provision.daocloud.io/v1alpha3
-     kind: ClusterConfig
-     metadata:
-     spec:
-       clusterName: test-cluster
-       loadBalancer:
-         type: metallb
-         istioGatewayVip: 172.30.41.179/32
-         insightVip: 172.30.41.178/32
-       masterNodes:
-         - nodeName: "g-master1"
-           ip: 172.30.41.xxx
-           ansibleUser: "root"
-           ansiblePass: "dangerous"
-       fullPackagePath: "/root/offline"
-       osRepos:
-         type: none
-       imagesAndCharts:
-         type: builtin
-       binaries:
-         type: builtin
-       kubeanConfig: |-
-       allow_unsupported_distribution_setup: true
-         debian_os_family_extensions:
-           - "UnionTech OS Server 20\" "
-     ```
+    ```yaml
+    apiVersion: provision.daocloud.io/v1alpha3
+    kind: ClusterConfig
+    metadata:
+    spec:
+      clusterName: test-cluster
+      loadBalancer:
+        type: metallb
+        istioGatewayVip: 172.30.41.XXX/32
+        insightVip: 172.30.41.XXX/32
+      masterNodes:
+        - nodeName: "g-master1"
+          ip: 172.30.41.xxx
+          ansibleUser: "root"
+          ansiblePass: "******"
+      fullPackagePath: "/root/offline"
+      osRepos:
+        type: none
+      imagesAndCharts:
+        type: builtin
+      binaries:
+        type: builtin
+      kubeanConfig: |-
+      allow_unsupported_distribution_setup: true
+        debian_os_family_extensions:
+          - "UnionTech OS Server 20\" "
+    ```
 
-     Description of configuration parameters:
+    === "AnolisOS 8.8 GA"
 
-     | Parameter | Description | Required |
-     | -------------------------------------------------- ----- | ----------------------------------------- | ------ -------------------- |
-     | spec.kubeanConfig.allow_unsupported_distribution_setup | Whether to skip supported distribution detection | required |
-     | spec.kubeanConfig.debian_os_family_extensions | Can be filled by looking at `ansible_os_family` | Required for Debian system family |
-     | spec.kubeanConfig.redhat_os_family_extensions | Can be filled in by checking `ansible_os_family` | Required for Redhat system family |
+    ```yaml
+    apiVersion: provision.daocloud.io/v1alpha3
+    kind: ClusterConfig
+    metadata:
+    spec:
+      clusterName: test-cluster
+      loadBalancer:
+        type: metallb
+        istioGatewayVip: 172.30.41.XXX/32
+        insightVip: 172.30.41.XXX/32
+      masterNodes:
+        - nodeName: "g-master1"
+          ip: 172.30.41.xxx
+          ansibleUser: "root"
+          ansiblePass: "******"
+      fullPackagePath: "/root/offline"
+      osRepos:
+        type: none
+      imagesAndCharts:
+        type: builtin
+      binaries:
+        type: builtin
+      kubeanConfig: |-
+      allow_unsupported_distribution_setup: true
+        redhat_os_family_extensions:
+          - "Anolis OS"
+    ```
 
-     How to view the system family ID of the current release environment:
+    Parameter description:
 
-     ```bash
-     export USER=root
-     export PASS=xxxx
-     export ADDR=192.168.10.xxx
-     export ANSIBLE_HOST_KEY_CHECKING=False
-     ansible -m setup -a 'filter=ansible_os_family' -e "ansible_user=${USER} ansible_password=${PASS}" -i ${ADDR}, all
-     ```
+    | Parameter                                               | Description                                | Required |
+    | ------------------------------------------------------- | ------------------------------------------ | -------- |
+    | spec.kubeanConfig.allow_unsupported_distribution_setup | Whether to skip detection of supported OS   | Yes      |
+    | spec.kubeanConfig.debian_os_family_extensions           | Can be filled by viewing `ansible_os_family` | Required if the system is Debian |
+    | spec.kubeanConfig.redhat_os_family_extensions           | Can be filled by viewing `ansible_os_family` | Required if the system is Redhat |
 
-     After successful execution, the following information will be output:
+    How to view the system family identifier for the current distribution environment:
 
-     ```bash
-     192.168.10.xxx | SUCCESS => {
-         "ansible_facts": {
-             "ansible_os_family": "UnionTech OS Server 20\" ",
-             "discovered_interpreter_python": "/usr/bin/python"
-         },
-         "changed": false
-     }
-     ```
+    ```bash
+    export USER=root
+    export PASS=xxxx
+    export ADDR=192.168.10.xxx
+    export ANSIBLE_HOST_KEY_CHECKING=False
+    ansible -m setup -a 'filter=ansible_os_family' -e "ansible_user=${USER} ansible_password=${PASS}" -i ${ADDR}, all
+    ```
+
+    After successful execution, the following information will be output:
+
+    ```bash
+    192.168.10.xxx | SUCCESS => {
+        "ansible_facts": {
+            "ansible_os_family": "UnionTech OS Server 20\" ",
+            "discovered_interpreter_python": "/usr/bin/python"
+        },
+        "changed": false
+    }
+    ```
 
 6. Start the installation of DCE 5.0.
 
