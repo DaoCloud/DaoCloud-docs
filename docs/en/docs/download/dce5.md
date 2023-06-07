@@ -1,58 +1,60 @@
 # DaoCloud Enterprise 5.0
 
-DaoCloud Enterprise 5.0 has two editions: Community Package and Enterprise Package.
+DaoCloud Enterprise 5.0 has two versions: Community Package and Enterprise Package.
 
-Currently, the download center only provides offline installation packages. For online installation method, please refer to [Online Installation](../install/intro.md).
+Currently, only offline installation packages are provided in the download center. For online installation methods, please refer to [Online Installation](../install/intro.md).
 
 ## Download Community Package
 
-This package is for the community, welcome to try it for free.
+This package is dedicated to the community and is available for free trial.
 
-| Offline Pack | Version | Download | Updated Date |
-| ---------------- | ------- | ------------------------ ------------------- | -------- |
-| offline-community-v0.7.0-arm64.tar | v0.7.0 | [:arrow_right: go to download Page](./free/dce5-installer-v0.7.0.md) | 2023-05-10 |
-| offline-community-v0.7.0-amd64.tar | v0.7.0 | [:arrow_right: go to download Page](./free/dce5-installer-v0.7.0.md) | 2023-05-10 |
+| Offline Package | Version | Download                                      | Update Date |
+| --------------- | ------- | --------------------------------------------- | ----------- |
+| offline-community-v0.8.0-arm64.tar | v0.8.0 | [:arrow_right: Download Page](./free/dce5-installer-v0.8.0.md) | 2023-06-06 |
+| offline-community-v0.8.0-amd64.tar | v0.8.0 | [:arrow_right: Download Page](./free/dce5-installer-v0.8.0.md) | 2023-06-06 |
 
-[See more historical revisions](./free/dce5-installer-history.md)
+[More Historical Versions](./free/dce5-installer-history.md)
 
-## Download the Enterprise Package
+## Download Enterprise Package
 
-This package is suitable for building private cloud, hybrid cloud, multicloud, micro-service and other use cases, and can customize a variety of cloud-native modules.
+This package is suitable for private cloud, hybrid cloud, multicloud, microservices and other scenarios, providing a variety of customizable cloud-native modules.
 
-| Offline Pack | Version | Download | Updated Date |
-| ---------------- | ------- | ------------------------ ----------------- | -------- |
-| offline-v0.7.0-arm64.tar | v0.7.0 | [:arrow_right: Go to download page](./business/dce5-installer-v0.7.0.md) | 2023-05-10 |
-| offline-v0.7.0-amd64.tar | v0.7.0 | [:arrow_right: Go to download page](./business/dce5-installer-v0.7.0.md) | 2023-05-10 |
+| Offline Package | Version | Download                                     | Update Date |
+| --------------- | ------- | -------------------------------------------- | ----------- |
+| offline-v0.8.0-arm64.tar | v0.8.0 | [:arrow_right: Download Page](./business/dce5-installer-v0.8.0.md) | 2023-06-06 |
+| offline-v0.8.0-amd64.tar | v0.8.0 | [:arrow_right: Download Page](./business/dce5-installer-v0.8.0.md) | 2023-06-06 |
 
-[See more historical revisions](./business/dce5-installer-history.md)
+[More Historical Versions](./business/dce5-installer-history.md)
 
-## Download Addons
+## Download Addon Offline Package
 
-DCE 5.0 provides complete Addons for different cases, which you can download and use on demand.
+DCE 5.0 provides comprehensive Addons for different use cases, which can be downloaded and used as needed.
 
-| Offline Pack | Version | Download | Updated Date |
-| ---------------- | ------- | ------------------------ ----------------- | -------- |
-| addon-offline-full-package-v0.6.0-amd64.tar.gz | v0.6.0 AMD64 | [:arrow_right: Go to download page](./addon/v0.6.0.md) | 2023-04-14 |
-| addon-offline-full-package-v0.6.0-arm64.tar.gz | v0.6.0 ARM64 | [:arrow_right: Go to download page](./addon/v0.6.0.md) | 2023-04-14 |
+| Offline Package | Version | Download                                | Update Date |
+| --------------- | ------- | --------------------------------------- | ----------- |
+| addon-offline-full-package-v0.8.0-arm64.tar.gz | v0.8.0 | [:arrow_right: Download Page](./addon/v0.8.0.md) | 2023-06-01 |
+| addon-offline-full-package-v0.8.0-amd64.tar.gz | v0.8.0 | [:arrow_right: Download Page](./addon/v0.8.0.md) | 2023-06-01 |
 
-## Download submodule
+[More Historical Versions](./addon/history.md)
 
-The many submodules included in DCE 5.0 can be downloaded individually, and each module can be upgraded as needed.
+## Download modules
 
-| Modules | File Size | Downloads | Date Updated |
-| -------- | -------- | ------------------------------- ------------- | ---------- |
-| Global Management | 440 MB | [:arrow_right: Go to download page](./modules/ghippo.md) | 2023-04-27 |
-| Observability | 2.41 GB | [:arrow_right: Go to download page](./modules/insight.md) | 2022-12-30 |
-| Spidernet | 55.47 MB | [:arrow_right: Go to download page](./modules/spidernet.md) | 2023-04-26 |
+The numerous modules included in DCE 5.0 can be downloaded separately to upgrade each module on demand.
+
+| Module       | File Size | Download                                  | Update Date |
+| ------------ | --------- | ----------------------------------------- | ----------- |
+| Global Manage| 440 MB    | [:arrow_right: Download Page](./modules/ghippo.md)  | 2023-05-31 |
+| Observability| 2.41 GB   | [:arrow_right: Download Page](./modules/insight.md) | 2022-12-30 |
+| Network Spidernet| 55.47 MB | [:arrow_right: Download Page](./modules/spidernet.md) | 2023-04-26 |
 
 !!! note
 
-     - After upgrading the submodule, it may be necessary to refill the license and activate it.
-     - DaoCloud Enterprise 5.0 is still in the early stages of release, and offline packages for each sub-module will be added successively.
-     - If you have any questions, please [give feedback](https://github.com/DaoCloud/DaoCloud-docs/issues).
-     - Welcome to scan the QR code and communicate with developers freely:
+    - After upgrading the module, you may need to re-import the license and activate it.
+    - DaoCloud Enterprise 5.0 is still in the early stage of release, and offline packages for various modules will be added gradually.
+    - If you have any questions, please [provide feedback](https://github.com/DaoCloud/DaoCloud-docs/issues).
+    - Welcome to scan the QR code to communicate with developers:
 
-     ![Chat about Community Package](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/assist.png)
+    ![Community Package WeCom](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
 
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
-[Free Trial Now](../dce/license0.md){ .md-button .md-button--primary }
+[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
