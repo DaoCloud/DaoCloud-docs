@@ -19,7 +19,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Added** IstioResource field: `labels` and `annotations`, can update Labels and Annotations.
 - **Added** ClusterProvider synchronization implementation in MeshCluster.
 - **Added** Definition of the `mspider.io/protected` label for mesh protection.
-- **Added** Edge car upgrade supports multiple workload capabilities, `SidecarUpgrader` simultaneously supports `workloadshadow.name` and `deployment.name`.
+- **Added** Sidecar upgrade supports multiple workload capabilities, `SidecarUpgrader` simultaneously supports `workloadshadow.name` and `deployment.name`.
 - **Added** Workload type is re-implemented as a string.
 - **Added** The `localized_name` field is added to the workload-related interface to display workload names.
 - **Added** Workload injection policy clearing capability
@@ -70,9 +70,9 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Fixed:** When the workload changes, the changed status cannot be synchronized to the corresponding Service.
 - **Fixed:** Checking the status of a cluster that is not connected to the mesh.
 - **Fixed:** Cluster status is not searchable.
-- **Fixed:** Mesh cannot remove the cluster when there is no edge car.
+- **Fixed:** Mesh cannot remove the cluster when there is no sidecar.
 - **Fixed:** Regular expression for mesh name does not allow numbers to start.
-- **Fixed:** Mesh status display is incorrect, and status is sometimes displayed as normal when there is no edge car.
+- **Fixed:** Mesh status display is incorrect, and status is sometimes displayed as normal when there is no sidecar.
 - **Fixed:** Fixed the problem that the automatic injection template of the mesh is not effective.
 - **Fixed** the issue where non-admin users cannot obtain traffic topology due to the lack of default values in the cluster.
 - **Fixed** the null pointer exception in the automatic injection service policy.
