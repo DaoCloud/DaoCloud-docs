@@ -9,6 +9,7 @@ nav:
           - Features and Benefits: dce/features.md
           - Use Cases: dce/scenario.md
           - Glossary: dce/terms.md
+          - DCE 5.0 Release Notes: dce/dce-rn.md
       - Installation:
           - Overview: install/intro.md
           - Install Dependencies: install/install-tools.md

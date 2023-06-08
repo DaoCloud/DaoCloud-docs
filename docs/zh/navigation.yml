@@ -9,6 +9,7 @@ nav:
           - 功能和优势: dce/features.md
           - 适用场景: dce/scenario.md
           - 云原生词汇: dce/terms.md
+          - DCE 5.0 Release Notes: dce/dce-rn.md
       - 安装:
           - 安装简介: install/intro.md
           - 安装依赖项: install/install-tools.md
