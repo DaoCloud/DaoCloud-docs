@@ -5,7 +5,7 @@ included in DCE 5.0-20230531 Enterprise Package. Additionally, each product modu
 DCE 5.0 is independent and decoupled, and the product module versions involved in this
 release are included in the DCE 5.0 installer by default.
 
-If you need to independently upgrade or replace each module, please contact Daocloud's
+If you need to independently upgrade or replace a module, please contact Daocloud's
 after-sales support personnel to download the corresponding version and upgrade.
 Also, please refer to [Enterprise Package Deployment Requirements](../install/commercial/deploy-requirements.md).
 
@@ -35,12 +35,12 @@ Also, please refer to [Enterprise Package Deployment Requirements](../install/co
 
 ## New Features and Optimizations
 
-Detailed feature descriptions are reflected in the Release Notes of each version in
+Detailed feature descriptions are included in the Release Notes of each version in
 the table above. Here is a brief description of some new features and optimizations.
 
 ### Installer v0.8.0
 
-- **Added** support for external JFrog mirror and charts repository
+- **Added** support for external JFrog images and charts repository
 - **Added** support for Other Linux (OpenAnolis 8.8 GA) with Yum-type package management
 - **Added** support for hybrid architecture deployment solutions
 
@@ -114,7 +114,8 @@ the table above. Here is a brief description of some new features and optimizati
 - **Added** access management function, supporting the use of DCE5.0 as a user source to connect to other platforms
 - **Added** workspace/folder authorization supports displaying role permission details
 - **Added** support for downloading audit logs in Excel and CSV formats
-- **Added** billing reports for container group, namespace, and workspace. All reports support download in Excel and CSV formats
+- **Added** billing reports for container group, namespace, and workspace.
+  All reports support to download in Excel and CSV formats.
 - **Optimized** username/user group name to support `.` and `@`
 - **Optimized** the default platform language to automatically detect browser preference
 - **Optimized** audit logs: system and user logs are displayed separately
@@ -151,7 +152,7 @@ the table above. Here is a brief description of some new features and optimizati
 !!! note
 
     Global Management: Once global management is upgraded to v0.17.0 or v0.16.0 and above versions,
-    other modules must be upgraded to the corresponding version, otherwise the interface cannot be accessed normally!**
+    other modules must be upgraded to the corresponding version, otherwise the UI cannot be accessed properly!**
 
 | Modules Supported by Global Management v0.17.0 | Modules Supported by Global Management v0.16.0 |
 | :--------------------------------------------- | :--------------------------------------------- |
