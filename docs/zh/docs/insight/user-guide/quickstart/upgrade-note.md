@@ -21,7 +21,7 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/VictoriaMetrics
     
     ```shell
     kubectl apply --server-side -f insight/dependency-crds --force-conflicts 
-    ````
+    ```
 
 ## insight-agent
 
