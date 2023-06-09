@@ -19,7 +19,7 @@ which is covered by cloudtty. You are welcome to try cloudtty :tada:.
 cloudtty is applicable to the following cases:
 
 1. Many enterprises use a cloud platform to manage Kubernetes, but due to security reasons,
-   you cannot use SSH to connect the node host to execute `kubectl` commands.
+   you cannot use SSH to connect the node host to run `kubectl` commands.
    In this case, you may require a cloud shell capability.
 
 2. A running container on Kubernetes can be "entered" (via `Kubectl exec`) on a browser web page.

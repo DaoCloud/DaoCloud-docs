@@ -92,7 +92,7 @@ Make sure your cluster is successfully connected to the `container management` p
         eyJhbGciOiJSUzI1NiIsImtpZCI6Ik1kUWpXalIwUVV0RmtTcjJXdElvMW1WWHdZbU5Md2pRN0tFeVZSbUpINTgifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJzdWJtYXJpbmVyLWs4cy1icm9rZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlY3JldC5uYW1lIjoic3VibWFyaW5lci1rOHMtYnJva2VyLWNsaWVudC10b2tlbiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJzdWJtYXJpbmVyLWs4cy1icm9rZXItY2xpZW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiYzM0MzQ0MTItOTEyNi00NmFjLTk5ODUtZDgwYWI3MDAxOTdkIiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50OnN1Ym1hcmluZXItazhzLWJyb2tlcjpzdWJtYXJpbmVyLWs4cy1icm9rZXItY2xpZW50In0.quC7a3hTctbgaRKHmzAvlP16EspwtTzWzirgj0o2d9XYfVe6bPX29Wg4XHh3ZzetaMYmvj_toukQJcQ6bO1CG7xv4mOFFkLF2ECrQNPGKYa5A2LHgQCFiWteWjU7wcisW3lugMTC6a5OrbK4optvVjseLwqI-BClm8nsgjGocBTrv1qqDp-4aiPkLtgcZRV2bsgE3yLsyc7Mhuncs7gDmI2NuBXoYRGfXtAjd6XIbnXd5Tp5sAV_k92xruNqKDpzQZI32K6I7It1WNQvtGOTYHa9sks0gxgUmQu8Z9Pikke5LCFOMNcBbjwlCCxzg6jKWJH87ReMtenRqcfG2jNeTQ
         ```
 
-        > You need to execute decode
+        > You need to run decode
 
     * `Broker` -> `brokerK8sRemoteNamespace`: namespace of the submariner-k8s-broker component, with submariner-k8s-broker by default (refer to step 4).
     * `Broker` -> `enableGloablnet`: enable the Globalnet feature. You can enable it if subclusters overlap with each other.

@@ -71,12 +71,12 @@ static_configs:
 cvm_sd_configs:
    [ - <cvm_sd_config> ... ]
 
-# After capturing the data, rewrite the corresponding label on the target through the relabel mechanism, and execute multiple relabel rules in sequence.
+# After capturing the data, rewrite the corresponding label on the target through the relabel mechanism, and run multiple relabel rules in sequence.
 # relabel_config See below for details.
 relabel_configs:
    [ - <relabel_config> ... ]
 
-# Before the data is captured and written, rewrite the value corresponding to the label through the relabel mechanism, and execute multiple relabel rules in sequence.
+# Before the data is captured and written, rewrite the value corresponding to the label through the relabel mechanism, and run multiple relabel rules in sequence.
 # relabel_config See below for details.
 metric_relabel_configs:
    [ - <relabel_config> ... ]
@@ -276,11 +276,11 @@ The corresponding ConfigMaps are described as follows:
 [ basicAuth: BasicAuth ]
 # Use the proxy service to capture the metrics on the target, and fill in the corresponding proxy service address
 [ proxyUrl: string ]
-# After capturing the data, rewrite the corresponding label on the target through the relabel mechanism, and execute multiple relabel rules in order.
+# After capturing the data, rewrite the corresponding label on the target through the relabel mechanism, and run multiple relabel rules in order.
 # relabel_config See below for details
 relabelings:
 [-<relabel_config>...]
-# Before the data is captured and written, rewrite the value corresponding to the label through the relabel mechanism, and execute multiple relabel rules in order.
+# Before the data is captured and written, rewrite the value corresponding to the label through the relabel mechanism, and run multiple relabel rules in order.
 # relabel_config See below for details
 metricRelabelings:
 [-<relabel_config>...]

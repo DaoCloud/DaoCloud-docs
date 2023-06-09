@@ -34,7 +34,7 @@ To specify multiple values ​​for a field, the following operators can be use
 
 In order for regularly scheduled tasks to create an even load on the system, the symbol H (for "hash") should be used whenever possible.
 For example, using `0 0 * * *` for a dozen daily jobs will result in a large spike at midnight, possibly straining resources.
-In contrast, using `H H * * *` will still execute each job once a day, but not all at once, which makes better use of limited resources.
+In contrast, using `H H * * *` will still run each job once a day, but not all at once, which makes better use of limited resources.
 
 H can be used with ranges. For example, `H H(0-7) * * *` means some time between 00:00 and 7:59.
 

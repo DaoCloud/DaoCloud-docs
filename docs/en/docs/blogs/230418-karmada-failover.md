@@ -861,7 +861,7 @@ All replicas on the server are Ready, and the gracefulEviction controller will r
 The work on member1 is orphaned, so the work will be deleted. At this time, the work DeletionTimestamp under the cluster member1 execution namespace is not empty,
 At the same time, the cluster is Not Ready, so it will enter the judgment branch of cluster.DeletionTimestamp.IsZero() to re-enter the queue, work finalizer
 will not be removed, so work always exists in the example. When the cluster recovers, it will enter the util.IsClusterReady(&cluster.Status) branch,
-At this time, it will try to delete the resource corresponding to the work on the member cluster. After the deletion is successful, execute removeFinalizer to remove the finalizer on the work.
+At this time, it will try to delete the resource corresponding to the work on the member cluster. After the deletion is successful, run removeFinalizer to remove the finalizer on the work.
 The work will then be deleted. Therefore, after the cluster recovery in the example, the work under the cluster member1 execution namespace and the deployment on the member cluster are removed.
 
 ```go

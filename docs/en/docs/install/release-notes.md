@@ -94,7 +94,7 @@ After installing the global cluster, immediately update the configmap kubean-loc
 
      At the same time, creating a working cluster online through container management also has the same problem. You need to add the above configuration in the custom parameters of the advanced configuration on the cluster creation page. The key is `calico_crds_download_url`, and the value is the value of the above calico_crds_download_url
 
-- There is a low probability that Kubean cannot create a spray-job task. Manually delete the corresponding clusteroperations CR resource and execute the installation command again
+- There is a low probability that Kubean cannot create a spray-job task. Manually delete the corresponding clusteroperations CR resource and run the installation command again
 - After deploying DCE5.0 using an external OS Repo, the working cluster cannot be created offline through container management, which can be solved by manually modifying the configmap kubean-localservice of the kubean-system namespace of the global cluster.
    Add the following configuration under `yumRepos`, you need to fill in the external OS Repo address configured in clusterConfig.yaml in external:
 
@@ -169,8 +169,8 @@ After installing the global cluster, immediately update the configmap kubean-loc
 
 #### Known Issues
 
-- The installer installation fails due to the pre-installed runc on REHL8 with non-minimal installation. Temporary solution: execute `rpm -qa | grep runc && yum remove -y runc` on each of the above nodes before installation
-- Illegal kernel parameter settings on REHL8 with non-minimal installation, temporary solution; execute on each of the above nodes before installation
+- The installer installation fails due to the pre-installed runc on REHL8 with non-minimal installation. Temporary solution: run `rpm -qa | grep runc && yum remove -y runc` on each of the above nodes before installation
+- Illegal kernel parameter settings on REHL8 with non-minimal installation, temporary solution; run on each of the above nodes before installation
    `eval $(grep -i 'vm.maxmapcount' /etc/sysctl.conf -r /etc/sysctl.d | xargs -L1 | awk -F ':' '{printf("sed -i -r \"s /(%s)/#\\1/\" %s; ", $2, $1)}') && sysctl --system`
 - There are potential risks in the concurrent installation of helm, and the installation cannot continue after failure
 

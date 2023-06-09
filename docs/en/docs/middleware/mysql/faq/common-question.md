@@ -83,7 +83,7 @@ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep mast
      E0209 05:38:56.223635 1 deleg.go:144] sidecar "msg"="failed waiting for xtrabackup to finish" "error"="exit status 1"
      ```
 
-Log in to `MySQL` of the `master` node, and execute `alter` table structure:
+Log in to `MySQL` of the `master` node, and run `alter` table structure:
 
 ```bash
 [root@master-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep master
@@ -206,7 +206,7 @@ If you use other tools, you can modify the corresponding fields in `value.yaml` 
 
 ### There is no error from the library, but the synchronization delay is large
 
-If there is no error `ERROR` message in the log, it means `False` is only because the delay of master-slave synchronization is too large, you can execute the following command on the slave library for further investigation:
+If there is no error `ERROR` message in the log, it means `False` is only because the delay of master-slave synchronization is too large, you can run the following command on the slave library for further investigation:
 
 1. Find the Pod of the slave node
 
@@ -317,7 +317,7 @@ If there is no error `ERROR` message in the log, it means `False` is only becaus
      kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'set global sync_binlog=1';
      ```
 
-6. If there is still no relief at this time, you can check whether the host load or IO of the slave library is too high, and execute the following command:
+6. If there is still no relief at this time, you can check whether the host load or IO of the slave library is too high, and run the following command:
 
      ```bash
      [root@master-01 ~]$ uptime
@@ -378,7 +378,7 @@ The reconstruction operation is as follows:
 
      ```bash
      [root@demo-alpha-master-01 /]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' | xargs -I {} kubectl logs { } -n mcamel-system -c mysql | grep ERROR
-     2023-02-08T18:43:21.991730Z 116 [ERROR] [MY-010557] [Repl] Could notexecute Write_rows event on table dr_brower_db.dr_user_info; Duplicate entry '24' for key 'PRIMARY', Error_code:1062 ; handler error HA_ERR_FOUND_DUPP_KEY ; the event's master logmysql-bin.000010, end_log_pos 5295916
+     2023-02-08T18:43:21.991730Z 116 [ERROR] [MY-010557] [Repl] Could notrun Write_rows event on table dr_brower_db.dr_user_info; Duplicate entry '24' for key 'PRIMARY', Error_code:1062 ; handler error HA_ERR_FOUND_DUPP_KEY ; the event's master logmysql-bin.000010, end_log_pos 5295916
      ```
 
 If you see in the error log: `Duplicate entry '24' for key 'PRIMARY', Error_code:1062; handler error HA_ERR_FOUND_DUPP_KEY;`,
@@ -424,7 +424,7 @@ Execute the following command to view the master-slave delay status field `Secon
 mysql> show slave status\G;
 ```
 
-After confirming the master-slave synchronization (Seconds_Behind_Master is less than 30s), execute the following command to set MySQL strict mode:
+After confirming the master-slave synchronization (Seconds_Behind_Master is less than 30s), run the following command to set MySQL strict mode:
 
 ```bash
 [root@master-01 ~]$ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB - e 'stop slave;set global slave_exec_mode="STRICT";set global sync_binlog=10086;start slave;
@@ -556,7 +556,7 @@ After confirming the master-slave synchronization (Seconds_Behind_Master is less
      mysql> start slave;
      ```
 
-7. If the master-slave has not established a connection, execute in the mysql shell of the slave:
+7. If the master-slave has not established a connection, run in the mysql shell of the slave:
 
      ```sql
      -- Pay attention to replace {master-host-pod-index}
@@ -565,7 +565,7 @@ After confirming the master-slave synchronization (Seconds_Behind_Master is less
 
 ### Inconsistent primary and secondary data - active data synchronization
 
-When the master-slave instance data is inconsistent, you can execute the following command to complete the master-slave consistency synchronization:
+When the master-slave instance data is inconsistent, you can run the following command to complete the master-slave consistency synchronization:
 
 ```sql
 pt-table-sync --execute --charset=utf8 --ignore-databases=mysql,sys,percona --databases=amamba,audit,ghippo,insight,ipavo,keycloak,kpanda,skoala dsn=u=root,p =xxx,h=mcamel-common-kpanda-mysql-cluster-mysql-0.mysql.mcamel-system,P=3306 dsn=u=root,p=xxx,h=mcamel-common-kpanda-mysql-cluster- mysql.mysql.mcamel-system,P=3306 --print

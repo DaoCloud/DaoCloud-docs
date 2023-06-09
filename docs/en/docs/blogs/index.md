@@ -49,7 +49,7 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
     How to speed up Pod startup on nodes in a large cluster? This is a problem that cluster administrators often face in enterprises.
     This article focuses on methods to speed up Pod startup on the kubelet side. This method does not involve the time period for controller-manager to create Pods through kube-apiserver, 
-    nor does it include the scheduling time of Pods or the time to execute Webhooks on them.
+    nor does it include the scheduling time of Pods or the time to run Webhooks on them.
 
 - [20230427 | Cloud-Native Monitoring - Basics of VictoriaMetrics](./230427-victoriametrics.md)
 

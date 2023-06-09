@@ -102,13 +102,13 @@ View the alias `rollover_alias corresponding value` used in the business index t
 
 <!--screenshot-->
 
-Temporary processing method: enter the es pod container and execute the following script:
+Temporary processing method: enter the es pod container and run the following script:
 
 1. Modify the corresponding value of TEMPLATE_NAME
 
 2. Modify the corresponding value of INDEX_ALIAS
 
-3. You need to enter the elasticsearch pod to execute the script
+3. You need to enter the elasticsearch pod to run the script
 
 4. Modify the password value of the elastic user inside (ES_PASSWORD=xxxx)
 
@@ -126,7 +126,7 @@ curl -XPUT -u elastic:${ES_PASSWORD} -k "$ES_URL/${TEMPLATE_NAME}-000001" -H 'Co
 
 > Note: This script has a certain chance of failure, depending on the data writing speed, as a temporary solution.
 
-In the real situation, it is necessary to stop the writing of the data source, and then execute the above method.
+In the real situation, it is necessary to stop the writing of the data source, and then run the above method.
 
 ## Error reporting `Error setting GoMAXPROCS for operator`
 

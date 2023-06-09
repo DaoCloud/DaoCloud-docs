@@ -367,7 +367,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Split the three separate application questions: What, When, How](https://dzone.com/articles/split-the-monolith-what-when-how)
 
-    In the design of microservice architecture, how to split the monomer is a very important thing but a headache for architects. This post presents some ideas and steps on how to prepare and execute monolithic application splits.
+    In the design of microservice architecture, how to split the monomer is a very important thing but a headache for architects. This post presents some ideas and steps on how to prepare and run monolithic application splits.
 
 - [K8s Security Policy Best Practices](https://mp.weixin.qq.com/s/ZDqchROixZT4enVYH6UIfw)
 

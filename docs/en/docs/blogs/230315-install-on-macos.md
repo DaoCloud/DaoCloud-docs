@@ -140,7 +140,7 @@ fire-kind-cluster-control-plane Ready control-plane 18h v1.25.3
 
          If the error `zsh: command not found: ip` is reported, there are 2 solutions:
 
-         - execute `myIP=$(ifconfig en0| grep "inet[ ]" | awk '{print $2}')`
+         - run `myIP=$(ifconfig en0| grep "inet[ ]" | awk '{print $2}')`
          - Or install iproute2mac with a command like `brew install iproute2mac` and try again.
 
      1. Start the installation, it will take about 30 minutes, depending on the network speed of the image pull

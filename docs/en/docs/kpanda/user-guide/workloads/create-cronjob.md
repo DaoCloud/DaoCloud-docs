@@ -2,7 +2,7 @@
 
 This page introduces how to create a cron job (CronJob) through mirror images and YAML files.
 
-Scheduled tasks (CronJob) are suitable for performing periodic operations, such as backup and report generation. These tasks can be configured to repeat periodically (for example: daily/weekly/monthly), and the time interval at which the task starts to execute can be defined.
+Scheduled tasks (CronJob) are suitable for performing periodic operations, such as backup and report generation. These tasks can be configured to repeat periodically (for example: daily/weekly/monthly), and the time interval at which the task starts to run can be defined.
 
 ## Prerequisites
 
@@ -99,13 +99,13 @@ Container configuration is divided into six parts: basic information, life cycle
 
 
 
-- Concurrency strategy: Whether to allow multiple Job tasks to execute in parallel.
+- Concurrency strategy: Whether to allow multiple Job tasks to run in parallel.
 
      - `Allow`: A new scheduled task can be created before the previous task is completed, and multiple tasks can be parallelized. Too many tasks may occupy cluster resources.
      - `Forbid`: Before the previous task is completed, a new task cannot be created. If the execution time of the new task is up and the previous task has not been completed, CronJob will ignore the execution of the new task.
      - `Replace`: If the execution time of the new task is up, but the previous task has not been completed, the new task will replace the previous task.
 
-     > The above rules only apply to multiple jobs created by the same CronJob. Multiple tasks created by multiple CronJobs are always allowed to execute concurrently.
+     > The above rules only apply to multiple jobs created by the same CronJob. Multiple tasks created by multiple CronJobs are always allowed to run concurrently.
 
 - Timing rules: Set the time period for task execution based on minutes, hours, days, weeks, and months. Support custom Cron expressions with numbers and `*`, **after inputting the expression, the meaning of the current expression will be prompted**. For detailed expression syntax rules, please refer to [Cron Schedule Syntax](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax).
 - Task records: Set how many records of successful or failed tasks to keep. `0` means do not keep.

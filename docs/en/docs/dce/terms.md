@@ -1143,7 +1143,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     GitOps is a set of best practices based on shared principles,
     applied to a workflow that depends on software agents that
     enable automation to reconcile a declared system state or configuration in a git repository.
-    These software agents and practices are used to execute a cohesive workflow that
+    These software agents and practices are used to run a cohesive workflow that
     leverages a source control system like Git as the “single source of truth” and
     extends this practice to applications, infrastructure, and operational procedures.
 
@@ -1531,7 +1531,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Network Policy
 
-    A specification that defines how communication can occur between Pod groups and between Pods and other network endpoints. Network policies help you declaratively configure which Pods and namespaces are allowed to communicate with each other, and which port numbers are used to execute each policy.
+    A specification that defines how communication can occur between Pod groups and between Pods and other network endpoints. Network policies help you declaratively configure which Pods and namespaces are allowed to communicate with each other, and which port numbers are used to run each policy.
 
 - Node
 

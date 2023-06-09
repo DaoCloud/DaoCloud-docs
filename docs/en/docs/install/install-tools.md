@@ -27,7 +27,7 @@ Before you start installing DCE 5.0, you must have these dependencies installed 
     curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
     ```
 
-    Add permission to execute `install_prerequisite.sh`:
+    Add permission to run `install_prerequisite.sh`:
 
     ```bash
     chmod +x install_prerequisite.sh

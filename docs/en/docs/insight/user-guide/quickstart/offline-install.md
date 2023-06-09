@@ -24,7 +24,7 @@ You can load the image in one of the following two ways. When there is a contain
 
          ```yaml
          source:
-           intermediateBundlesPath: insight-offline # The relative path to execute the charts-syncer command, not the relative path between this YAML file and the offline bundle
+           intermediateBundlesPath: insight-offline # The relative path to run the charts-syncer command, not the relative path between this YAML file and the offline bundle
          target:
            containerRegistry: 10.16.10.111 # need to be changed to your container registry url
            containerRepository: release.daocloud.io/insight # need to be changed to your image repository
@@ -46,7 +46,7 @@ You can load the image in one of the following two ways. When there is a contain
 
          ```yaml
          source:
-           intermediateBundlesPath: insight-offline # The relative path to execute the charts-syncer command, not the relative path between this YAML file and the offline bundle
+           intermediateBundlesPath: insight-offline # The relative path to run the charts-syncer command, not the relative path between this YAML file and the offline bundle
          target:
            containerRegistry: 10.16.10.111 # need to be changed to your container registry url
            containerRepository: release.daocloud.io/insight # need to be changed to your image repository
@@ -126,7 +126,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
      1. Update the globally managed helm repository.
 
          ```shell
-         helm repo update insight # If the helm version is too low, it will fail. If it fails, please try to execute helm update repo
+         helm repo update insight # If the helm version is too low, it will fail. If it fails, please try to run helm update repo
          ```
 
      1. Select the version of Global Management you want to install (the latest version is recommended).
