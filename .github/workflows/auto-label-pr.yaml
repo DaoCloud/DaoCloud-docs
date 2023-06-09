@@ -3,8 +3,7 @@ name: Auto Labels PR
 # how usage: https://github.com/marketplace/actions/labeler
 
 on:
-  pull_request:
-    types: [opened]
+- pull_request_target
 
 jobs:
   triage:
