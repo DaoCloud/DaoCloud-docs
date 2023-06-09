@@ -22,7 +22,7 @@ This page will introduce how to integrate Harbor in the pipeline and implement i
 
      <!--![]()screenshots-->
 
-1. Wait for the pipeline to execute successfully.
+1. Wait for the pipeline to run successfully.
 
 ## View image security scan information in Harbor
 

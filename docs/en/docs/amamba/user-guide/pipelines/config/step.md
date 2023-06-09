@@ -12,7 +12,7 @@ The following is a description of the parameters of the graphical pipeline task 
 
 ## Shell
 
-Choose this template if you want to execute shell commands, multiple lines are supported.
+Choose this template if you want to run shell commands, multiple lines are supported.
 
 ## print message
 

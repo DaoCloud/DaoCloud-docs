@@ -359,7 +359,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Finch: AWS Open Source Container Development Client Command Line Tool](https://aws.amazon.com/cn/blogs/opensource/introducing-finch-an-open-source-client-for-container-development/)
 
-     [Finch](https://github.com/runfinch/finch) can be used to build, run and distribute Linux containers. It provides native, extensible macOS client installers for open source tools such as Lima, nerdctl, containerd, and BuildKit, simplifying the use of Containerd on macOS. users can use Finch to create and execute containers on the local side, and to publish OCI container image files.
+     [Finch](https://github.com/runfinch/finch) can be used to build, run and distribute Linux containers. It provides native, extensible macOS client installers for open source tools such as Lima, nerdctl, containerd, and BuildKit, simplifying the use of Containerd on macOS. users can use Finch to create and run containers on the local side, and to publish OCI container image files.
 
 - [Flagger Progressive Delivery Project v1.31.0 Released (CNCF Project)](https://github.com/fluxcd/flagger/blob/main/CHANGELOG.md#1310)
 
@@ -832,7 +832,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Linkerd Service Mesh Project v2.12.0 Release (CNCF Project)](https://github.com/linkerd/linkerd2/releases/tag/stable-2.12.0)
 
-     The main new features of this version: allow users to define and execute authorization policies based on HTTP routes in a completely zero-trust manner; support configuration using the Kubernetes Gateway API; add support for `iptables-nft` to the initialization container.
+     The main new features of this version: allow users to define and run authorization policies based on HTTP routes in a completely zero-trust manner; support configuration using the Kubernetes Gateway API; add support for `iptables-nft` to the initialization container.
 
 - [Litmus Chaos Engineering Framework v2.14.0 release (CNCF project)](https://github.com/litmuschaos/litmus/releases/tag/2.14.0)
 
@@ -855,7 +855,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Merbridge: The service mesh accelerator open sourced by DaoCloud has officially entered the CNCF sandbox](https://mp.weixin.qq.com/s/Ht1HuLxQ2RngrVD92TBl4Q)
 
      On December 14, the CNCF Foundation announced that Merbridge was officially included in the CNCF sandbox project. [Merbridge](https://github.com/merbridge/merbridge) is currently the only open source project in CNCF focused on using eBPF to accelerate service mesh.
-     Through Merbridge, you only need to execute a command in the Istio cluster, and you can directly use eBPF instead of iptables to achieve network acceleration and improve service performance.
+     Through Merbridge, you only need to run a command in the Istio cluster, and you can directly use eBPF instead of iptables to achieve network acceleration and improve service performance.
 
 - [MetalLB Kubernetes Load Balancer v1.3.2 release (CNCF project)](https://metallb.universe.tf/release-notes/#version-0-13-2)
 

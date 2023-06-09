@@ -231,7 +231,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Docker Desktop v4.12.0 released](https://www.docker.com/blog/integrated-terminal-for-running-containers-extended-integration-with-containerd-and-more-in-docker-desktop-4-12/)
 
-     The main new features of this version: integrate containerd, use containerd to manage and store images; allow to execute commands in running containers directly through the Docker dashboard.
+     The main new features of this version: integrate containerd, use containerd to manage and store images; allow to run commands in running containers directly through the Docker dashboard.
 
 - [Dynatrace SaaS v1.250 Cloud Monitoring Platform Release](https://www.dynatrace.com/support/help/whats-new/release-notes/saas/sprint-250)
 

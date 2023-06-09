@@ -249,7 +249,7 @@ To enable audit logging, follow these steps:
 
     Restart the FluentBit Pods of all master nodes, and the restarted FluentBit will collect logs under `/var/log/kubernetes/audit`.
 
-    In addition, if you want to stop the collection of audit logs for global management, you can execute `kubectl edit cm insight-agent-fluent-bit-config -n insight-system` and delete the following INPUT:
+    In addition, if you want to stop the collection of audit logs for global management, you can run `kubectl edit cm insight-agent-fluent-bit-config -n insight-system` and delete the following INPUT:
 
     ```console
     [INPUT]

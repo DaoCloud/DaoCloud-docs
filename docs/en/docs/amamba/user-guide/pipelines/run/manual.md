@@ -1,4 +1,4 @@
-# Manually execute the pipeline
+# Manually run the pipeline
 
 This page describes manual pipeline execution on the GUI, including immediate execution, rerun, and cancel run.
 

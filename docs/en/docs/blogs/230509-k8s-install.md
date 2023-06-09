@@ -30,7 +30,7 @@ We recommend that you pre-add IP routing rules so that Kubernetes clusters can b
 ### Allow iptables to inspect bridged traffic
 
 Make sure the `br_netfilter` module is loaded. This can be done by running `lsmod | grep br_netfilter`
-To be done. To explicitly load this module, execute the command `sudo modprobe br_netfilter`.
+To be done. To explicitly load this module, run the command `sudo modprobe br_netfilter`.
 
 In order for iptables on your Linux nodes to properly see bridged traffic, you need to ensure that the
 Set `net.bridge.bridge-nf-call-iptables` to 1 in `sysctl` configuration. For example:

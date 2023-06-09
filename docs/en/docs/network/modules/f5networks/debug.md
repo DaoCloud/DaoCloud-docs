@@ -25,5 +25,5 @@ Some common installation problems are summarized below.
 
 1. F5 traffic cannot be forwarded to the nodePort of the cluster node.
 
-    Please execute `kubectl describe pod <f5Name>-f5-bigip-ctlr-<xxx> -n <namespace>` to check if --node-label-selector is set.
+    Please run `kubectl describe pod <f5Name>-f5-bigip-ctlr-<xxx> -n <namespace>` to check if --node-label-selector is set.
     If it is set, but the relevant node does not have a corresponding label, F5 will not know how to forward it.

@@ -121,4 +121,4 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 - **NEW** Support kafka metric monitoring, check the monitoring chart
 - **Add** support for ghippo permission linkage
 - **New** `mcamel-elasticsearch` interface to get user list
-- **Optimize** Update the release note script and execute the release-process specification
+- **Optimize** Update the release note script and run the release-process specification

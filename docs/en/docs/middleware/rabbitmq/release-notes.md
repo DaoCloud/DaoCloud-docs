@@ -113,7 +113,7 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **NEW** Docking insight injected into dashboard through crd
 - **Add** uniformly adjust the timestamp api field to int64
 - **NEW** Increased single-test coverage to 53%
-- **Optimize** Update the release note script and execute the release-process specification
+- **Optimize** Update the release note script and run the release-process specification
 - **NEW** New function description
 - **NEW** Create RabbitMQ
 - **NEW** RabbitMQ data migration

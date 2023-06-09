@@ -172,7 +172,7 @@
 
 1. Case 1: The managed cluster does not have metalLB installed, resulting in a cluster network failure, ingressgateway cannot normally allocate endpoints and CrashLoopBackoff
 
-2. Case 2: The endpoint allocation of the istio-remote component is wrong, execute `kubectl get ep -n istio-system` to view the details
+2. Case 2: The endpoint allocation of the istio-remote component is wrong, run `kubectl get ep -n istio-system` to view the details
 
 ## Solution
 
