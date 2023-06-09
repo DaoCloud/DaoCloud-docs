@@ -664,6 +664,7 @@ nav:
               - Release Notes: middleware/redis/release-notes.md
           - PostgreSQL 数据库:
               - 什么是 PostgreSQL: middleware/postgresql/intro/what.md
+              - 技术特性及基本概念: middleware/postgresql/intro/concepts.md
               - 创建 PostgreSQL: middleware/postgresql/user-guide/create.md
               - 更新 PostgreSQL: middleware/postgresql/user-guide/update.md
               - 删除 PostgreSQL: middleware/postgresql/user-guide/delete.md
