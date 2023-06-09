@@ -345,6 +345,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### F, G
 
+- [Falco Runtime Security Project v0.35.0 released (CNCF project)](https://github.com/falcosecurity/falco/releases/tag/0.35.0)
+
+    Release features: introduces metrics snapshot option and new metrics configuration, supports signing of published container images with cosign, allows custom CA certificates and storage, supports managing Talos pre-build drivers, Mesos no longer supports metadata enhancements.
+
 - [Falco 2023 Security Audit Results Released](https://mp.weixin.qq.com/s/Uae58tOQpqOfV0vCoXBsqw)
 
     The [Audit Report](https://github.com/falcosecurity/falco/blob/master/audits/SECURITY_AUDIT_2023_01_23-01-1097-LIV.pdf) found one medium severity vulnerability and several low severity and information severity vulnerabilities, with no high severity vulnerabilities. All issues have been fixed in the Falco 0.34.0 and 0.34.1 patch releases.
@@ -458,6 +462,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     Version features: support for golang 1.20, removal of support for Kubernetes 1.23, integration with OpenTelemetry module.
 
+- [Istio Service Mesh v1.18 Released (CNCF Project)](https://istio.io/latest/news/releases/1.18.x/announcing-1.18/)
+
+    Release features: release of Ambient Mesh, a data plane schema; several Kubernetes Gateway API improvements, including support for v1beta1 release, automatic deployment logic no longer relies on pod injection; concurrent configuration consistency across deployment types; Istioctl enhancements.
+
 - [Istio Service Mesh v1.17 Released (CNCF Project)](https://istio.io/latest/news/releases/1.17.x/announcing-1.17/)
 
     Release features: Revision tag for Canary upgrade upgraded to Beta, Helm-based installation of Istio upgraded to Beta, full compatibility with the latest version of Kubernetes Gateway API (0.6.1), optimized IPv4/IPv6 dual-stack support, added support for listener filter patches, support for using the encryption and decryption technology QuickAssist Technology (QAT) PrivateKeyProvider.
@@ -489,6 +497,10 @@ This page lists activity in cloud native open source projects in alphabetical or
      - Extension: Support WasmPlugin to pull images from private repositories via `imagePullSecret`.
 
 ### J
+
+- [Jaeger Distributed Tracking System v1.46.0 Released (CNCF Project)](https://github.com/jaegertracing/jaeger/releases/tag/v1.46.0)
+
+    Version features: OTLP receivers enabled by default, added support for OpenTelemetry SpanMetrics connector.
 
 - [Jaeger Distributed Tracing System v1.36.0 release (CNCF project)](https://github.com/jaegertracing/jaeger/releases/tag/v1.36.0)
 
@@ -802,6 +814,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Kusk Gateway Self Service API Gateway v1.1.0 Release](https://github.com/kubeshop/kusk-gateway/releases/tag/v1.1.0)
 
      The main new features of this version: support for specifying services or hosts to verify authentication headers, support for rate limiting policies, simplify the complexity of HTTP caching by annotating in the OpenAPI specification, and handle all mocking locally by Envoy.
+
+- [Kyma Cloud Native Application Development Platform and Runtime v2.15.0 Released](https://github.com/kyma-project/kyma/releases/tag/2.15.0)
+
+    Release features: plan to reorganize telemetry components into one module; keep webhook CA bundles stable during Pod restarts and webhook modifications; added default timeout for HTTP requests; simplified Serverless configuration for internal Docker registry; support for otel-collector 0.77.0.
 
 - [Kyverno Cloud Native Policy Engine v1.10.0 Released (CNCF Project)](https://github.com/kyverno/kyverno/releases/tag/v1.10.0)
 

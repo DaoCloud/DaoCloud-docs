@@ -347,6 +347,10 @@
 
 ### F, G
 
+- [Falco 运行时安全项目 v0.35.0 发布（CNCF 项目）](https://github.com/falcosecurity/falco/releases/tag/0.35.0)
+
+    版本特性：引入指标快照选项和新的指标配置、支持使用 cosign 对发布的容器镜像进行签名、允许自定义 CA 证书和存储、支持管理 Talos 预构建驱动程序、Mesos 不再支持元数据增强功能。
+
 - [Falco 2023 年安全审计结果发布](https://mp.weixin.qq.com/s/Uae58tOQpqOfV0vCoXBsqw)
 
     [审计报告](https://github.com/falcosecurity/falco/blob/master/audits/SECURITY_AUDIT_2023_01_23-01-1097-LIV.pdf)发现了一个中等严重程度的漏洞和若干低严重程度和信息严重程度的漏洞，不存在严重程度高的漏洞。所有问题已在 Falco 0.34.0 和 0.34.1 补丁版本中修复。
@@ -462,6 +466,10 @@
 
     版本特性：支持 golang 1.20、移除对 Kubernetes 1.23 的支持、集成 OpenTelemetry 模块。
 
+- [Istio 服务网格 v1.18 发布（CNCF 项目）](https://istio.io/latest/news/releases/1.18.x/announcing-1.18/)
+
+    版本特性：发布数据平面模式 —— Ambient Mesh（环境网格）；多项 Kubernetes Gateway API 改进，包括支持 v1beta1 版本、自动部署逻辑不再依赖 pod 注入；实现跨部署类型的并发配置一致性；Istioctl 增强。
+
 - [Istio 服务网格 v1.17 发布（CNCF 项目）](https://istio.io/latest/news/releases/1.17.x/announcing-1.17/)
 
     版本特性：金丝雀升级的修订标签升级为 Beta、基于 Helm 安装 Istio 升级为 Beta、完全兼容最新版 Kubernetes Gateway API（0.6.1）、优化 IPv4/IPv6 双栈支持、增加对监听器过滤器补丁的支持、支持使用加解密技术 QuickAssist Technology (QAT) PrivateKeyProvider。
@@ -493,6 +501,10 @@
     - 扩展：支持 WasmPlugin 通过 `imagePullSecret` 从私有仓库中拉取镜像。
 
 ### J
+
+- [Jaeger 分布式追踪系统 v1.46.0 发布（CNCF 项目）](https://github.com/jaegertracing/jaeger/releases/tag/v1.46.0)
+
+    版本特性：默认启用 OTLP 接收器、增加对 OpenTelemetry SpanMetrics 连接器的支持。
 
 - [Jaeger 分布式追踪系统 v1.36.0 发布（CNCF 项目）](https://github.com/jaegertracing/jaeger/releases/tag/v1.36.0)  
 
@@ -800,6 +812,10 @@
 - [Kusk Gateway 自助式 API 网关 v1.1.0 发布](https://github.com/kubeshop/kusk-gateway/releases/tag/v1.1.0)
 
     该版本主要新特性：支持指定服务或主机验证 authentication header、支持速率限制策略、通过在 OpenAPI 规范中注释简化 HTTP 缓存的复杂性、由 Envoy 本地处理所有 mocking。
+
+- [Kyma 云原生应用开发平台和运行时 v2.15.0 发布](https://github.com/kyma-project/kyma/releases/tag/2.15.0)
+
+    版本特性：计划将遥测组件重构成一个模块；在 Pod 重启和 webhook 修改的过程中，保持webhook CA 捆绑稳定；新增 HTTP 请求的默认超时；简化了内部 Docker 注册中心的 Serverless 配置；支持 otel-collector 0.77.0。
 
 - [Kyverno 云原生策略引擎 v1.10.0 发布（CNCF 项目）](https://github.com/kyverno/kyverno/releases/tag/v1.10.0)
 
