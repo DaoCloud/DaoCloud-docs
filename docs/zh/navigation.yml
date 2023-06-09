@@ -782,6 +782,7 @@ nav:
       - 云原生网络: videos/network.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 202306 | Istio 1.18 正式发布: blogs/230609-istio118.md
       - 202306 | 云原生联邦中间件FedState: blogs/230605-fedstate.md
       - 202306 | API Server Tracing进阶: blogs/230601-api-server-tracing.md
       - 202305 | 边缘场景玩转seccomp配置文件: blogs/230518-seccom.md
