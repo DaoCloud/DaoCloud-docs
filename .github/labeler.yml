@@ -1,14 +1,14 @@
 kpanda:
-  - "docs/en/kpanda/**/*"
-  - "docs/zh/kpanda/**/*"
+  - "docs/en/docs/kpanda/**/*"
+  - "docs/zh/docskpanda/**/*"
 
 skoala:
-  - "docs/en/skoala/**/*"
-  - "docs/zh/skoala/**/*"
+  - "docs/en/docsskoala/**/*"
+  - "docs/zh/docsskoala/**/*"
 
 mspider:
-  - "docs/en/mspider/**/*"
-  - "docs/zh/mspider/**/*"
+  - "docs/en/docsmspider/**/*"
+  - "docs/zh/docsmspider/**/*"
 
 en:
   - "docs/en/**/*"
