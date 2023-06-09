@@ -123,7 +123,7 @@ spec:
 | 1 | `felix_ipset_errors`| Execution `ipset-restore` failed times | ** | Consider collection | Times +1 does not necessarily cause problems
 | 2 | `felix_iptables_restore_calls` | Number of iptables-restore executions | ***** | Collection | NA
 | 3 | `felix_iptables_restore_errors` | Number of iptables-restore failures | *****| Collection | Restore failure may cause Pod access failure. The restore failure may be due to the failure of `xtables_lock` competition, please check whether the number of iptables on the host is too large
-| 4 | `felix_iptables_save_calls` | Number of times to execute iptables-save | **** | Can consider collecting | NA
+| 4 | `felix_iptables_save_calls` | Number of times to run iptables-save | **** | Can consider collecting | NA
 | 5 | `felix_iptables_save_errors`| Number of failed iptables-save operations | ***** | Collection |
 | 6 | `felix_log_errors` | The number of times the log reports an error | ***** | Recommended collection
 | 7 | `ipam_allocations_per_node` | Number of IP allocations on each node | **** | Suggested collection

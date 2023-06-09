@@ -36,7 +36,7 @@ DCE 5.0 container registry allows users to create synchronization policies and a
     
     Destination registry: if not filled in, the images will be placed in the same registry space as the source registry.
 
-4. Return to the sync rule list, the newly created rule is enabled by default. Click on the `⋮` on the right-hand side to execute sync, edit, disable, delete.
+4. Return to the sync rule list, the newly created rule is enabled by default. Click on the `⋮` on the right-hand side to run sync, edit, disable, delete.
 
     ![More operations](../images/sync03.png)
 

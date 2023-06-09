@@ -17,7 +17,7 @@ Probably because of gsc-controller syncing cluster exception from container mana
 
 ### Case 2
 
-To remove the cluster from the created mesh, execute the above command. The state of the `meshcluster` found for this cluster may be in one of the following states:
+To remove the cluster from the created mesh, run the above command. The state of the `meshcluster` found for this cluster may be in one of the following states:
 
 - MANAGED_RECONCILING
 - MANAGED_SUCCEED

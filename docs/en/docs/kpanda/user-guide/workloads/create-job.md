@@ -2,7 +2,7 @@
 
 This page introduces how to create a task (Job) through mirror image and YAML file.
 
-Task (Job) is suitable for performing one-time tasks. A Job creates one or more Pods, and the Job keeps retrying to execute Pods until a certain number of Pods are successfully terminated. A Job ends when the specified number of Pods are successfully terminated. When a Job is deleted, all Pods created by the Job will be cleared. When a Job is paused, all active Pods in the Job are deleted until the Job is resumed. For more information about tasks (Job), please refer to [Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/).
+Task (Job) is suitable for performing one-time tasks. A Job creates one or more Pods, and the Job keeps retrying to run Pods until a certain number of Pods are successfully terminated. A Job ends when the specified number of Pods are successfully terminated. When a Job is deleted, all Pods created by the Job will be cleared. When a Job is paused, all active Pods in the Job are deleted until the Job is resumed. For more information about tasks (Job), please refer to [Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/).
 
 ## Prerequisites
 

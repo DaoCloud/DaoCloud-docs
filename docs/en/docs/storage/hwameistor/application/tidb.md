@@ -237,7 +237,7 @@ Test results: Support creating different schemas to achieve object isolation
 
 Test purpose: Test whether it supports creating, deleting and modifying table data, DML, columns, and partition tables
 
-Test steps: execute the test script step by step after connecting to the database
+Test steps: run the test script step by step after connecting to the database
 
 Test script:
 
@@ -501,7 +501,7 @@ Test steps:
 
 1. Adjust the slow query threshold to 100ms
 
-2. execute sql
+2. Run sql
 
 3. Check the slow query information in log/system table/dashboard
 

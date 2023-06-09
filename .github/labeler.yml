@@ -1,0 +1,77 @@
+amamba:
+  - "docs/en/docs/amamba/**/*"
+  - "docs/zh/docs/amamba/**/*"
+
+blogs:
+  - "docs/en/docs/blogs/**/*"
+  - "docs/zh/docs/blogs/**/*"
+
+dce:
+  - "docs/en/docs/dce/**/*"
+  - "docs/zh/docs/dce/**/*"
+
+download:
+  - "docs/en/docs/download/**/*"
+  - "docs/zh/docs/download/**/*"
+
+eco:
+  - "docs/en/docs/community/**/*"
+  - "docs/zh/docs/community/**/*"
+
+ghippo:
+  - "docs/en/docs/ghippo/**/*"
+  - "docs/zh/docs/ghippo/**/*"
+
+insight:
+  - "docs/en/docs/insight/**/*"
+  - "docs/zh/docs/insight/**/*"
+
+installer:
+  - "docs/en/docs/install/**/*"
+  - "docs/zh/docs/install/**/*"
+
+kairship:
+  - "docs/en/docs/kairship/**/*"
+  - "docs/zh/docs/kairship/**/*"
+
+kangaroo:
+  - "docs/en/docs/kangaroo/**/*"
+  - "docs/zh/docs/kangaroo/**/*"
+
+kpanda:
+  - "docs/en/docs/kpanda/**/*"
+  - "docs/zh/docs/kpanda/**/*"
+
+midware:
+  - "docs/en/docs/middleware/**/*"
+  - "docs/zh/docs/middleware/**/*"
+
+mspider:
+  - "docs/en/docs/mspider/**/*"
+  - "docs/zh/docs/mspider/**/*"
+
+native:
+  - "docs/en/docs/native/**/*"
+  - "docs/zh/docs/native/**/*"
+
+network:
+  - "docs/en/docs/network/**/*"
+  - "docs/zh/docs/network/**/*"
+
+skoala:
+  - "docs/en/docs/skoala/**/*"
+  - "docs/zh/docs/skoala/**/*"
+
+storage:
+  - "docs/en/docs/storage/**/*"
+  - "docs/zh/docs/storage/**/*"
+
+videos:
+  - "docs/en/docs/videos/**/*"
+  - "docs/zh/docs/videos/**/*"
+
+en:
+  - "docs/en/**/*"
+
+zh:
+  - "docs/zh/**/*"

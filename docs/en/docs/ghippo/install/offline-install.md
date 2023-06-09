@@ -146,7 +146,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
     1. Update the globally managed helm repository.
 
         ```shell
-        helm repo update ghippo # If the helm version is too low, it will fail. If it fails, please try to execute helm update repo
+        helm repo update ghippo # If the helm version is too low, it will fail. If it fails, please try to run helm update repo
         ```
 
     1. Select the version of Global Management you want to install (the latest version is recommended).

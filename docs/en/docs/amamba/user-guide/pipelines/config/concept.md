@@ -27,5 +27,5 @@ Regardless of the graphical or text type, the editor is essentially used to faci
 
 - steps
 
-    The `step list` describes what to do in a `stage` and what commands to execute. For example, there is a `step (step)` that requires the system to print a message of `Building...`, that is, execute the command `echo 'Building...'`.
+    The `step list` describes what to do in a `stage` and what commands to execute. For example, there is a `step (step)` that requires the system to print a message of `Building...`, that is, run the command `echo 'Building...'`.
     See [Choosing a Jenkins Step](https://www.jenkins.io/doc/book/pipeline/#stage) for more information.

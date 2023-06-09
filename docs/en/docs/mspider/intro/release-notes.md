@@ -88,7 +88,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - Hosted Istiod's LoadBalancer Annotations implementation in mesh configuration.
 - Implemented mesh gateway configuration service Annotations.
 - Added `load_balancer_annotations` field to mesh, supporting custom load balancing annotations.
-- In `mspider-api`, manually execute the pipeline and set `SYNC_OPENAPI_DOCS` as the key to trigger the upload of the document site (raise PR).
+- In `mspider-api`, manually run the pipeline and set `SYNC_OPENAPI_DOCS` as the key to trigger the upload of the document site (raise PR).
 - When the MCPC Controller perceives that the `mspider.io/managed` label exists in the Service, it will trigger the automatic creation of a governance policy corresponding to the service.
 - MCPC Controller multiple workload type support.
 - Added health check function, which automatically rebuilds proxy when mesh APIServer fails to connect to prevent PortForward's own logic from being unreliable (may be related to Istio Sidecar).
