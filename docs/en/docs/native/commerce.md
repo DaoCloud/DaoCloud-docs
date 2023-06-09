@@ -4,6 +4,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### A
 
+- [Alauda MLOps, an enterprise-class cloud-native MLOps solution, and its open source version, kubeflow-chart, have been released by Alauda](https://mp.weixin.qq.com/s/RdD1yb81ua9vy645XA_2PQ)
+
+    Kubeflow-chart customizes the way Kubeflow is installed using the Helm Chart approach, making it easy to run a single command to complete Kubeflow and its dependencies. Alauda MLOps builds on this foundation, supporting non-intrusive visual workflow orchestration of development environments, visual distribution, multi-tenancy and quotas, virtual GPUs, and integrated MLFlow, Alauda MLOps builds on this foundation with support for non-intrusive visual workflow orchestration development environments, visual distribution, multi-tenancy and quota, virtual GPUs, and integrated MLFlow.
+
 - [ARMO Platform, Kubernetes Security Platform, introduces vulnerability analysis and assessment capabilities based on eBPF technology](https://www.armosec.io/blog/kubernetes-vulnerability-relevancy-and-prioritization/)
 
     This feature analyzes and evaluates vulnerabilities on the Kubernetes platform, identifies and prioritizes vulnerabilities, and provides users with targeted remediation recommendations. Among other things, relevance and prioritization allows users to deprioritize vulnerabilities in unused packages and components to focus on addressing vulnerabilities that pose a greater threat to the cluster.
@@ -31,6 +35,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [AWS Launches Local Clusters for Running EKS Clusters Locally on Hybrid Cloud Service Outposts](https://aws.amazon.com/about-aws/whats-new/2022/09/amazon-eks-outposts-local-clusters/)
 
      Local clustering reduces the risk of application downtime due to network outages in the cloud. During this time, the application remains available and cluster operations can be performed. EKS manages the availability of the K8s control plane on Outposts when connected to the cloud. The Kubernetes running on the local cluster has the same functions as the EKS on the cloud, and supports automatic deployment of the latest security patches.
+
+- [Azure Kubernetes Release AKS May Update](https://mp.weixin.qq.com/s/d-xcAQ-6sV38pSJIZV676w)
+
+    Updates: Support for automated deployments and integration with GitHub Actions; new AKS Fleet Manager and the introduction of features such as update groups, phases, and runtimes to help developers effectively manage multiple AKS clusters; support for Windows node configuration and Gen 2 VMs; support for Azure Linux, an operating system designed for container workloads; Launched managed Prometheus and Grafana.
 
 - [Azure released public preview of Azure Container Storage](https://azure.microsoft.com/en-us/blog/transforming-containerized-applications-with-azure-container-storage-now-in-preview/)
 
@@ -79,6 +87,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Azure Releases AKS Fleet Manager (Public Preview)](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
 
     Azure Kubernetes Fleet Manager treats multiple cluster sites as a single cluster to be managed. Users can manage multiple clusters by creating a Fleet resource. Users can treat existing AKS clusters as member clusters, join them to the fleet, and then orchestrate multiple cluster Cases such as Kubernetes resource propagation and multicluster load balancing using metadata from those clusters.
+
+- [AliCloud Serverless Container Service ASK Update](https://mp.weixin.qq.com/s/DPDhEzkWvW0s_UERpHWoQA)
+
+    Update: Added support for more than 10 K8s core components, providing dynamic capacity planning capability; added intelligent risk identification capability, supporting automated upgrade of K8s version; provided AI large image pulling capability based on container image cache, reducing startup time by 90%; enhanced intelligent elastic prediction AHPA capability, compared with manual configuration, elasticity accuracy rate increased by 80%; also added Support for GPU.
 
 - [AliCloud Container Service ACK April Product Update](https://mp.weixin.qq.com/s/z4PBLXxsn691cgYtfBOZaA)
 
@@ -516,6 +528,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Rainbond Enterprise Package has a global observable center for monitoring, debugging, and analyzing infrastructure and application services running in Kubernetes clusters and the rainbond platform. In addition, it also provides solutions for IT business system migration to the localized Cintron environment, supports full-link grayscale release and cluster patrol, built-in WAF firewall and operation audit functions, supports private deployment of application stores, etc.
 
+- [Red Hat Releases Service Interconnect, a Service Connectivity Product for Hybrid and Multi-Cloud Environments](https://www.redhat.com/en/blog/introducing-red-hat-service-interconnect)
+
+    Red Hat Service Interconnect, created based on the open source project Skupper.io, enables application and service connectivity between Red Hat platforms, including Red Hat Enterprise Linux, Red Hat OpenShift and non-Red Hat environments, including Kubernetes clusters, public clouds, virtual machines or bare metal hosts, without the need for complex network reconfiguration or elevated security privileges.
+
 - [Red Hat OpenShift Container Platform 4.13 Released](https://mp.weixin.qq.com/s/gzxlg2ki1-oJyHKE62fCTA)
 
     Updates: cert-manager operator provides application certificate lifecycle management; Kubernetes Advanced Cluster Security version 4.0; OpenShift Service on AWS adds hosting control panel; custom metrics autoscaling operator; NUMA aware scheduling and NUMA resource operator; support for compact three-node cluster deployments on AWS, Azure, Google Cloud Platform and vSphere.
@@ -557,6 +573,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [ServiceNow Releases Unified Query Language Lightstep UQL, Extending the Visibility of Kubernetes Applications](https://lightstep.com/blog/announcing-the-lightstep-unified-query-language)
 
      Lightstep UQL supports unified "observability as code", simplifies the process of migrating from multiple disparate tools to the unified Lightstep platform through a single query language, and also supports querying and correlating metrics, logs and track.
+
+- [SmartX Releases SMTX Kubernetes Service (SKS) 1.0, a production-grade Kubernetes build and management service product](https://mp.weixin.qq.com/s/Uecg_YwFK7fNd4x55xOZfg)
+
+    SKS automatically creates multiple virtual machines to build highly available Kubernetes clusters based on SmartX hyperconverged virtualization, with built-in SmartX production-grade distributed storage and CSI plug-ins to provide persistent volumes for stateful applications; SmartX network and security products and CNI plug-ins enable interconnection of virtual machines and containers and unified network security The SmartX network and security product and CNI plug-in enable interoperability of virtual machines and containers and unified network security management.
 
 - [Solo.io releases Gloo Platform v2.3, a cloud-native application networking platform](https://www.solo.io/blog/gloo-platform-2-3/)
 

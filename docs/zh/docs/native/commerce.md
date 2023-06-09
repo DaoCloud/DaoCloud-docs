@@ -32,6 +32,10 @@
 
     本地集群减少了因云端网络中断而导致的应用停机风险。在此期间，应用程序仍然可用，并且可以执行集群操作。当连接到云时，EKS 管理 Outposts 上 K8s 控制平面的可用性。本地集群运行的 Kubernetes 与云上 EKS 功能相同，支持自动部署最新的安全补丁。
 
+- [Azure Kubernetes 发行版 AKS 5 月更新](https://mp.weixin.qq.com/s/d-xcAQ-6sV38pSJIZV676w)
+
+    更新内容：支持自动化部署和集成 GitHub Actions；新增 AKS Fleet Manager 以及引入更新组、阶段和运行方式等功能帮助开发者有效管理多个 AKS 集群；支持 Windows 节点配置和 Gen 2 VM；支持专为容器工作负载设计的操作系统 Azure Linux；推出托管的 Prometheus 和 Grafana。
+
 - [Azure Container Storage 的公共预览版发布](https://azure.microsoft.com/en-us/blog/transforming-containerized-applications-with-azure-container-storage-now-in-preview/)
 
     Azure Container Storage 是一种为容器构建的卷管理服务，提供了跨不同存储产品的一致管理体验，包括托管选项（由 Azure Elastic SAN 支持）、Azure 磁盘和容器服务上的临时磁盘。用户可以为生产规模的有状态应用轻松创建和管理块存储卷，并在 Kubernetes 上运行。
@@ -79,6 +83,10 @@
 - [Azure 发布 AKS 舰队管理器（公开预览版）](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
 
     Azure Kubernetes 舰队管理器将多个群集地视为单个集群来管理。用户可通过创建一个 Fleet 资源来管理多个集群。用户可将现有 AKS 集群当作成员集群，加入到舰队中，然后用这些集群的元数据，编排多个集群场景，如 Kubernetes 资源传播和多集群负载均衡。
+
+- [阿里云 Serverless 容器服务 ASK 更新](https://mp.weixin.qq.com/s/DPDhEzkWvW0s_UERpHWoQA)
+
+    更新内容：新增对十多个 K8s 核心组件的托管支持，提供动态容量规划能力；新增智能化风险识别能力，支持自动化升级 K8s 版本；提供基于容器镜像缓存的 AI 大镜像秒级拉取能力，启动时间降低 90%；增强智能弹性预测  AHPA 能力，相比人工配置，弹性准确率提升 80%；同时新增对于 GPU 的支持。
 
 - [阿里云容器服务 ACK 4 月产品更新](https://mp.weixin.qq.com/s/z4PBLXxsn691cgYtfBOZaA)
 
@@ -398,6 +406,10 @@
 
     Kubernetes360 将日志、Prometheus 指标监控和 Jaeger 支持的分布式追踪统一在一个平台中，使 DevOps 团队能够以简单、高效和可操作的方式监控应用 SLO。
 
+- [灵雀云发布企业级云原生 MLOps 解决方案 Alauda MLOps 以及其开源版本 kubeflow-chart](https://mp.weixin.qq.com/s/RdD1yb81ua9vy645XA_2PQ)
+
+    Kubeflow-chart 使用 Helm Chart 方式定制了 Kubeflow 的安装方式，只需运行一个命令，即可轻松完成 Kubeflow 及其依赖组件。Alauda MLOps 在此基础上进行了强化，支持非侵入式的可视化工作流编排开发环境、可视化分布式、多租户和配额、虚拟 GPU 以及集成 MLFlow 等。
+
 ### M
 
 - [Mirantis 发布轻量级 Kubernetes 发行版 k0s v1.27](https://www.mirantis.com/blog/k0s-1-27-released)
@@ -530,6 +542,10 @@
 
     Rainbond 企业版拥有全局可观测中心，用于监视、调试和分析运行在 Kubernetes 集群和 rainbond 平台中的基础设施及应用服务。此外，还为 IT 业务系统向国产化信创环境中迁移提供了方案，支持全链路灰度发布和集群巡检，内置 WAF 防火墙和操作审计功能，支持私有化部署应用商店等。
 
+- [Red Hat 发布混合云和多云环境服务连接产品——服务互连](https://www.redhat.com/en/blog/introducing-red-hat-service-interconnect)
+
+    红帽服务互连基于开源项目 Skupper.io 创建，它能够在红帽平台（包括红帽企业 Linux、红帽 OpenShift 和非红帽环境（包括 Kubernetes 集群、公共云、虚拟机或裸机主机）之间实现应用和服务连接，而无需进行复杂的网络重新配置或提升安全权限。
+
 - [Red Hat 发布本地容器管理工具 Podman Desktop 发布 GA 版本 1.0](https://developers.redhat.com/articles/2023/05/23/podman-desktop-now-generally-available)
 
     Podman Desktop 可在本地环境中安装、配置 Podman 并使 Podman 保持最新版本。提供了一个仪表板来与容器、图像、Pod 和卷进行交互，还可以使用 OCI 注册表和网络设置来配置环境。Podman Desktop 支持多种容器引擎，提供将 Pod 连接和部署到 Kubernetes 环境的功能。
@@ -571,6 +587,10 @@
 - [ServiceNow 发布统一查询语言 Lightstep UQL，扩展 Kubernetes 应用的可见性](https://lightstep.com/blog/announcing-the-lightstep-unified-query-language)
 
     Lightstep UQL 支持统一的“可观测性即代码”，通过单一查询语言简化从多个不同工具迁移到统一 Lightstep 平台的过程，还支持跨多个 Kubernetes 节点、服务器或 serverless 函数查询和关联指标、日志和跟踪。
+
+- [SmartX 发布生产级 Kubernetes 构建与管理服务产品 SMTX Kubernetes Service （SKS） 1.0](https://mp.weixin.qq.com/s/Uecg_YwFK7fNd4x55xOZfg)
+
+    SKS 可基于 SmartX 超融合虚拟化自动创建多台虚拟机以构建高可用的 Kubernetes 集群，内置 SmartX 生产级分布式存储和 CSI 插件，可为有状态应用提供持久卷；通过 SmartX 网络与安全产品和 CNI 插件，实现虚拟机和容器的互联互通以及统一的网络安全策略管理。
 
 - [Solo.io 发布云原生应用网络平台 Gloo Platform v2.3](https://www.solo.io/blog/gloo-platform-2-3/)
 
