@@ -1,0 +1,17 @@
+kpanda:
+  - "docs/en/kpanda/**/*"
+  - "docs/zh/kpanda/**/*"
+
+skoala:
+  - "docs/en/skoala/**/*"
+  - "docs/zh/skoala/**/*"
+
+mspider:
+  - "docs/en/mspider/**/*"
+  - "docs/zh/mspider/**/*"
+
+en:
+  - "docs/en/**/*"
+
+zh:
+  - "docs/zh/**/*"
