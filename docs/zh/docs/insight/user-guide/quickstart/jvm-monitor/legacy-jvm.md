@@ -9,3 +9,27 @@ annatation:
   insight.opentelemetry.io/metric-path: "/"      # 采集指标的路径
   insight.opentelemetry.io/metric-port: "9464"   # 采集指标的端口
 ```
+
+例如为 `my-deployment-app` 添加注解： 
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment-app
+spec:
+  selector:
+    matchLabels:
+      app: my-deployment-app
+      app.kubernetes.io/name: my-deployment-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: my-deployment-app
+        app.kubernetes.io/name: my-deployment-app
+      annotations:
+        insight.opentelemetry.io/metric-scrape: "true" # 是否采集
+        insight.opentelemetry.io/metric-path: "/"      # 采集指标的路径
+        insight.opentelemetry.io/metric-port: "9464"   # 采集指标的端口
+```

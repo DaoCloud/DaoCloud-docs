@@ -9,3 +9,27 @@ annatation:
    insight.opentelemetry.io/metric-path: "/" # path to collect metrics
    insight.opentelemetry.io/metric-port: "9464" # port for collecting metrics
 ```
+
+example adding annotations for `my-deployment-app` workload： 
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment-app
+spec:
+  selector:
+    matchLabels:
+      app: my-deployment-app
+      app.kubernetes.io/name: my-deployment-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: my-deployment-app
+        app.kubernetes.io/name: my-deployment-app
+      annotations:
+        insight.opentelemetry.io/metric-scrape: "true" # whether to collect
+        insight.opentelemetry.io/metric-path: "/" # path to collect metrics
+        insight.opentelemetry.io/metric-port: "9464" # port for collecting metrics
+```
