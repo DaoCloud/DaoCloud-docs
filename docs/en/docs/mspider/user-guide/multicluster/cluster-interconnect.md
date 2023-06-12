@@ -11,7 +11,7 @@ If your environment meets the following conditions, you can try to use the multi
 
 !!! note
 
-     Multicloud networking is only available for managed meshs.
+     Multicloud networking is only available for hosted meshs.
 
 ## Glossary
 

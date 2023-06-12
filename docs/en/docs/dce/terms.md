@@ -1454,7 +1454,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     A managed control plane is a control plane that is managed for customers. It reduces the complexity of customer deployments and typically guarantees a certain level of performance and availability.
 
-- Managed Mesh
+- Hosted Mesh
 
     A control plane created and managed by a service mesh in a selected cluster. It is characterized by simplicity, low cost, high availability, and no separate operation and maintenance management.
 

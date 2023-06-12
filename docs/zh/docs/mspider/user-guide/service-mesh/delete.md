@@ -21,7 +21,7 @@ hide:
 
         ![外接网格](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/deletemesh02.png)
 
-    - 删除专有网格。需要按提示移除边车、清除网关、移除集群后，输入网格名称确认删除操作。
+    - 删除专有网格。需要按提示关闭网格删除保护、移除边车、清除网关后，输入网格名称确认删除操作。
 
         ![专有网格](../../images/deletemesh03.png)
 

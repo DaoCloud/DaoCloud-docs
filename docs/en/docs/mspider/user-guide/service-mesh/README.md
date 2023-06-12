@@ -11,32 +11,42 @@ DCE 5.0 service mesh supports 3 meshes:
 - **dedicated mesh** adopts the traditional structure of Istio, supports only one cluster, and has a dedicated control plane in the cluster.
 - **External mesh** means that the existing mesh of the enterprise can be connected to the DCE 5.0 service mesh for unified management. See [Create an external mesh](external-mesh.md).
 
-The steps to create a managed mesh/dedicated mesh are as follows:
+The following explains the steps to create a Hosted Mesh/Dedicated Mesh:
 
-1. In the upper right corner of the service mesh list page, click `Create mesh`.
+1. On the right corner of the mesh list, click the `Create Mesh` button and select the type of mesh from the dropdown list.
 
+    ![Create Mesh](../../images/create-mesh01.png)
 
-1. Select `Hosted mesh` or `dedicated mesh`, fill in the basic information and click `Next`.
+2. The system will automatically detect the installation environment. After successful detection, fill in the following basic information and click `Next`.
 
-     - mesh Name: Start with a lowercase letter, consist of lowercase letters, numbers, dashes (-), and cannot end with a dash (-)
-     - Istio version: In case of a managed mesh, all managed clusters will use this version of Istio.
-     - Control Plane Cluster: The cluster used to run the mesh management plane, with a refresh icon and `Create Cluster` button. Click `Create Cluster` to jump to the `Container Management` platform to create a new cluster. After the creation is complete, return to this page and click the refresh icon to update the cluster list.
-     - Control Plane Address: Enter the IP address of the control plane.
-     - mesh component registry: Enter the address of the container registry that contains the data surface component mirror, such as `release.daocloud.io/mspider`.
-  
+    - Name: Can contain lowercase letters, numbers, and hyphens ('-'), and must start with a lowercase letter and end with a letter or number.
+    - Istio version: For Hosted Mesh, this version will be used by all member clusters in the mesh.
+    - Cluster: This is the cluster where the mesh control plane runs. The drop-down list displays the version and health status of each cluster.
+    - Entry of control plane: Supports load balancer and custom.
+    - Mesh component repo: Enter the address of the image repository that contains the data plane components, such as `release-ci.daocloud.io/mspider`.
 
-1. System settings. Configure whether to enable observability, set the mesh size and click `Next`.
+    ![Basic Information](../../images/create-mesh02.png)
 
+3. System settings. Configure whether to enable observability, set the scale of the mesh, select StorageClass, and click `Next`.
 
-1. Governance settings. Set outbound traffic policies, location-aware load balancing, request retries, and more.
+    ![System Settings](../../images/create-mesh03.png)
 
-1. Sidecar setup. After setting the global sidecar, resource limit, and log, click `OK`.
+    !!! note
 
+        - StorageClass is only applicable to Hosted Mesh, not Dedicated Mesh or External Mesh.
+        - When the cluster where the control plane resides is OCP, you can choose to install OCP components.
 
-1. Automatically return to the mesh list, the newly created mesh is at the first place by default, and the status will change from `creating` to `running` after a period of time. Click `...` on the right to edit basic mesh information, add clusters, etc.
+4. Governance settings. Set outbound traffic policies, locality load balancing, and request retries. See [Request Retry Parameters Description](./params.md#max-retries).
 
+    ![Governance Settings](../../images/create-mesh04.png)
+
+5. Sidecar settings. Set global sidecar, sidecar resource limits, default sidecar log level, and click `OK`. See [Log Level Description](./params.md#_2).
+
+    ![Sidecar Settings](../../images/create-mesh05.png)
+
+6. You will automatically return to the Mesh List page, and the newly created mesh will be listed at the top. After some time, the status will change from `Creating` to `Running`. Click on the `...` on the right to perform operations such as editing mesh basic information, adding clusters, accessing the console, etc.
 
 !!! info
 
-     After the managed mesh is created, no managed cluster has been connected, and the mesh is in the state of `not ready`.
-     Users can [add cluster](../cluster-management/README.md), wait for the cluster access to complete, and select the cluster access that requires service management.
+     After the hosted mesh is created, no managed cluster has been connected, and the mesh is in the state of `not ready`.
+     Users can [add cluster](../cluster-management/README.md), wait for the cluster joined successfully, and select the cluster that requires service management.

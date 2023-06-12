@@ -30,7 +30,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Added** Reg-Proxy component is enabled by default.
 - **Added** Implementation of Service selector field output.
 - **Added** Solving cross-cluster access problems when Sidecars are not injected by adding a Network label to Namespace.
-- **Added** Custom parameter configuration capability for managed mesh hosted-apiserver. (This parameter only takes effect during installation and does not support updates for the time being), (for more parameters, please refer to helm parameter configuration):
+- **Added** Custom parameter configuration capability for hosted mesh hosted-apiserver. (This parameter only takes effect during installation and does not support updates for the time being), (for more parameters, please refer to helm parameter configuration):
 
     ```
       "hosted-apiserver.global.storageClass":                 "default",

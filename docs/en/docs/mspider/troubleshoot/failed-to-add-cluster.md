@@ -1,8 +1,8 @@
-# Managed mesh is failed
+# Hosted mesh is failed
 
 ## Question
 
-- istio-ingressgateway does not work properly when managed mesh is connected to new cluster.
+- istio-ingressgateway does not work properly when hosted mesh is connected to new cluster.
 
      ??? note "Click to see the full error log"
 
@@ -162,9 +162,9 @@
          Warning  Unhealthy  19s (x22 over 59s)  kubelet            Readiness probe failed: Get "http://10.244.0.17:15021/healthz/ready": dial tcp 10.244.0.17:15021: connect: connection refused
          ```
 
-- The istiod-remote ep ip assignment is wrong in the case where the control plane and data plane of the managed mesh are deployed together.
+- The istiod-remote ep ip assignment is wrong in the case where the control plane and data plane of the hosted mesh are deployed together.
 
-     When the managed cluster is connected to the managed mesh as a workload cluster, the istiod-remote ep ip is allocated as metalLB IP, which should be PodIP (mspider-mcpc-ckube-remote-xxx)
+     When the managed cluster is connected to the hosted mesh as a workload cluster, the istiod-remote ep ip is allocated as metalLB IP, which should be PodIP (mspider-mcpc-ckube-remote-xxx)
 
     ![istiod-remote](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/add-cluster01.png)
 

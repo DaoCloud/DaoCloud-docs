@@ -46,7 +46,7 @@ flowchart TD
     install([Installation and Deployment])
     install --> mesh[Create a Mesh]
         subgraph mesh[Create a Mesh]
-            managed[Managed Mesh]
+            managed[Hosted Mesh]
             private[Dedicated Mesh]
             external[External Mesh]
             
