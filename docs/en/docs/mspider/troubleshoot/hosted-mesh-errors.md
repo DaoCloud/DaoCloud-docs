@@ -2,7 +2,7 @@
 
 ## Situation analysis
 
-It is common to see `istio-ingressgateway` components become unhealthy when managed meshs host workload clusters.
+It is common to see `istio-ingressgateway` components become unhealthy when hosted meshs host workload clusters.
 
 As shown below:
 
@@ -58,7 +58,7 @@ It can be seen here that the `endpoint` address assigned by `istio-remote` is `i
 
 !!! note
 
-     When the workload cluster is connected to the managed mesh, the endpoint address of istiod-remote should be allocated as
+     When the workload cluster is connected to the hosted mesh, the endpoint address of istiod-remote should be allocated as
      loadBalancer IP of istiod-xxxx-hosted-lb service: 15012,
      But here it is assigned as the istiod-xxxx-hosted-xxxx Pod IP of the control plane cluster.
 

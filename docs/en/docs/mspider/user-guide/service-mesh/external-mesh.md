@@ -5,29 +5,24 @@ hide:
 
 # Create the external mesh
 
-External mesh means that the existing mesh of the enterprise can be connected to the DCE 5.0 service mesh for unified management.
+External mesh means that the existing mesh can be connected to the DCE 5.0 service mesh for management.
 
-1. In the upper right corner of the service mesh list page, click `Create mesh`.
+1. On the right corner of the mesh list, click the `Create Mesh` button and select `Create external mesh` from the dropdown list.
 
-1. Select `External mesh`, fill in the basic information of the mesh and click `Next`.
+    ![Create External Mesh](../../images/external01.png)
 
-     - mesh name: start with a lowercase letter, consist of lowercase letters, numbers, dashes (-), and cannot end with a dash (-)
-     - Cluster: The cluster used to run the mesh management plane, the list contains the clusters that the current mesh platform can access and are in normal state.
-       Click `Create Cluster` to jump to `Container Management` to create a new cluster. After the creation is complete, return to this page and click the refresh icon to update the list.
-     - Istio root namespace: The Istio root namespace where the mesh resides.
-     - mesh component repository: Enter the URL address of the Container registry.
-  
+2. The system will automatically detect the installation environment. After successful detection, fill in the following basic information and click `OK`.
 
-1. System settings. After setting observability and mesh size, click `Next`.
+    - Name: It can only contain lowercase letters, numbers, and hyphens ('-'), and must start with a lowercase letter and end with a letter or number.
+    - Istio version: This version will be used by all member clusters in the mesh.
+    - Cluster: This is the cluster where the mesh control plane runs. The drop-down list displays the version and health status of each cluster.
+    - Entry of control plane: Supports load balancer and custom.
+    - Mesh component repo: Enter the address of the image repository that contains the data plane components, such as `release-ci.daocloud.io/mspider`.
 
+    ![Basic Information](../../images/external02.png)
 
-1. Governance settings. Set outbound traffic policies, location-aware load balancing, request retries, and more.
+3. You will automatically return to the Mesh List page, and the newly created mesh will be listed at the top. After some time, the status will change from `Creating` to `Running`. Click on the `...` on the right to perform operations such as editing basic information, adding clusters, accessing the console, and deleting.
 
-
-1. Sidecar setup. After setting the global sidecar, resource limit, and log, click `OK`.
-
-
-1. Automatically return to the mesh list, the newly created mesh is at the first place by default, and the status will change from `creating` to `running` after a period of time. Click `...` on the right to perform operations such as editing and deleting.
-
+    ![Mesh List](../../images/external03.png)
 
 Next step: [Service Management](../service-list/README.md)

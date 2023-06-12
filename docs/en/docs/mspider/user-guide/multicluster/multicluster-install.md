@@ -130,7 +130,7 @@ First in the mesh management page -> `Create mesh`:
 
 The specific parameters for creating the mesh are shown in the figure:
 
-1. Select a managed mesh: In a multicloud environment, only the managed mesh mode can manage multiple clusters
+1. Select a hosted mesh: In a multicloud environment, only the hosted mesh mode can manage multiple clusters
 2. Enter a unique mesh name
 3. According to the pre-condition environment, select the pre-selected mesh version that meets the requirements
 4. Select the cluster where the managed control plane resides
@@ -143,7 +143,7 @@ The mesh is being created, you need to wait for the mesh to be created, and the 
 
 ### Expose Mesh Hosted Control Surface Hosted Istiod
 
-#### Confirm managed mesh control plane service
+#### Confirm hosted mesh control plane service
 
 After ensuring that the mesh status is normal, observe whether the Services under `istio-system` of the control plane cluster `mdemo-cluster1` are successfully bound to the LoadBalancer IP.
 
@@ -171,7 +171,7 @@ curl -I "${hosted_istiod_ip}:443"
 
 #### Confirm and configure mesh hosting control plane Istiod parameters
 
-1. Get Managed mesh Control Plane Service `EXTERNAL IP`
+1. Get Hosted mesh Control Plane Service `EXTERNAL IP`
 
      In the mesh `mdemo-mesh` control plane cluster `mdemo-cluster1`, confirm that the hosted mesh control plane service `istiod-mdemo-mesh-hosted-lb` has been allocated LoadBalancer IP, and record its IP, as follows:
 
