@@ -8,7 +8,7 @@ Opentelemetry Agent 也针对常见的 Java Server 或框架内置了一些监�
 
 如果你的应用已经集成了 Opentelemetry Agent 去采集应用链路，那么你不再需要另外引入其他 Agent 去为我们的应用暴露 JMX 指标。Opentelemetry Agent 通过检测应用程序中本地可用的 MBean 公开的指标，现在可以本地收集并暴露指标接口。
 
-但是，截至目前版本，你仍然需要手动为你的应用部署文件加上相应注解之后，JVM 数据才会被 Insight 采集到，具体注解内容请参考 [已有 JVM 指标的 Java 应用对接可观测性](./legacy-jvm.md)。
+但是，截至目前版本，你仍然需要手动为应用加上相应注解之后，JVM 数据才会被 Insight 采集到，具体注解内容请参考 [已有 JVM 指标的 Java 应用对接可观测性](./legacy-jvm.md)。
 
 ## 为 Java 中间件暴露指标
 
