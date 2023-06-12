@@ -12,7 +12,9 @@ Make sure insight-agent is ready. If not, please refer to [Install insight-agent
 
 ## Install Instrumentation CR
 
-Install under the Insight-System namespace, if it is already installed, you can skip this step (Insight 0.13.0+ can also skip this step):
+Install under the Insight-System namespace, there are some minor differences between versions
+
+### Insight v0.18.x
 
 ```bash
 kubectl apply -f - <<EOF
@@ -32,7 +34,7 @@ spec:
     # Enum: always_on, always_off, traceidratio, parentbased_always_on, parentbased_always_off, parentbased_traceidratio, jaeger_remote, xray
     type: always_on
   java:
-    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:1.17.0
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:1.25.0
     env:
       - name: OTEL_JAVAAGENT_DEBUG
         value: "false"
@@ -40,10 +42,102 @@ spec:
         value: "true"
       - name: SPLUNK_PROFILER_ENABLED
         value: "false"
+      - name: OTEL_METRICS_EXPORTER
+        value: "prometheus"
+      - name: OTEL_METRICS_EXPORTER_PORT
+        value: "9464"
   nodejs:
-    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.31.0
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.37.0
+  python:
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.38b0
+  dotnet:
+    repository: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.6.0
+  go:
+    # Must set the default value manually for now.
+    # See https://github.com/open-telemetry/opentelemetry-operator/issues/1756 for details.
+    repository: ghcr.m.daocloud.io/open-telemetry/opentelemetry-go-instrumentation/autoinstrumentation-go:v0.2.1-alpha
+EOF
+```
+
+### Insight v0.17.x
+
+```bash
+kubectl apply -f - <<EOF
+apiVersion: opentelemetry.io/v1alpha1
+kind: Instrumentation
+metadata:
+  name: insight-opentelemetry-autoinstrumentation
+  namespace: insight-system
+spec:
+  # https://github.com/open-telemetry/opentelemetry-operator/blob/main/docs/api.md#instrumentationspecresource
+  resource:
+    addK8sUIDAttributes: true
+  env:
+    - name: OTEL_EXPORTER_OTLP_ENDPOINT
+      value: http://insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317
+  sampler:
+    # Enum: always_on, always_off, traceidratio, parentbased_always_on, parentbased_always_off, parentbased_traceidratio, jaeger_remote, xray
+    type: always_on
+  java:
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:1.23.0
+    env:
+      - name: OTEL_JAVAAGENT_DEBUG
+        value: "false"
+      - name: OTEL_INSTRUMENTATION_JDBC_ENABLED
+        value: "true"
+      - name: SPLUNK_PROFILER_ENABLED
+        value: "false"
+      - name: OTEL_METRICS_EXPORTER
+        value: "prometheus"
+      - name: OTEL_METRICS_EXPORTER_PORT
+        value: "9464"
+  nodejs:
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.34.0
   python:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.33b0
+  dotnet:
+    repository: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.6.0
+EOF
+```
+
+### Insight v0.16.x
+
+```bash
+kubectl apply -f - <<EOF
+apiVersion: opentelemetry.io/v1alpha1
+kind: Instrumentation
+metadata:
+  name: insight-opentelemetry-autoinstrumentation
+  namespace: insight-system
+spec:
+  # https://github.com/open-telemetry/opentelemetry-operator/blob/main/docs/api.md#instrumentationspecresource
+  resource:
+    addK8sUIDAttributes: true
+  env:
+    - name: OTEL_EXPORTER_OTLP_ENDPOINT
+      value: http://insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317
+  sampler:
+    # Enum: always_on, always_off, traceidratio, parentbased_always_on, parentbased_always_off, parentbased_traceidratio, jaeger_remote, xray
+    type: always_on
+  java:
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:1.23.0
+    env:
+      - name: OTEL_JAVAAGENT_DEBUG
+        value: "false"
+      - name: OTEL_INSTRUMENTATION_JDBC_ENABLED
+        value: "true"
+      - name: SPLUNK_PROFILER_ENABLED
+        value: "false"
+      - name: OTEL_METRICS_EXPORTER
+        value: "prometheus"
+      - name: OTEL_METRICS_EXPORTER_PORT
+        value: "9464"
+  nodejs:
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.34.0
+  python:
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.33b0
+  dotnet:
+    repository: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.6.0
 EOF
 ```
 
