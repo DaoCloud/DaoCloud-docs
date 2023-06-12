@@ -12,7 +12,7 @@ Make sure insight-agent is ready. If not, please refer to [Install insight-agent
 
 ## Install Instrumentation CR
 
-Install under the Insight-System namespace, there are some minor differences between versions
+Install under the Insight-System namespace, there are some differences between versions:
 
 ### Insight v0.18.x
 
