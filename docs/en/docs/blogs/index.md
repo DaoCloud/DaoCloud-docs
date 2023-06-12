@@ -7,6 +7,10 @@ hide:
 
 This page summarizes blogs and public account articles related to DCE 5.0 and cloud-native technology, sorted by date by default.
 
+- [20230612 | The Exploration of Ray Core in Cloud-Native Computing for AIGC - Ray Core](./230612-ray.md)
+
+    This article introduces how Ray Core, a distributed computing framework, works as the foundation of Ray.
+
 - [20230609 | Istio 1.18 Released: Officially Announcing Ambient Mode](./230609-istio118.md)
 
     The 1.18 release is the second release of Istio in 2023 and the first to support Ambient mode.
