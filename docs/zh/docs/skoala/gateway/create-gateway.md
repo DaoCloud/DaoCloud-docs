@@ -18,7 +18,7 @@ hide:
     - 网关名称：长度不超过 63 个字符，支持字母、数字、下划线。名称在网关创建完成后不可更改。
     - 部署集群：选择将网关部署在哪个集群。
 
-        > 如果可选列表中没有出现目标集群，可以去容器管理模块中[接入](../../../kpanda/user-guide/clusters/integrate-cluster.md)或[创建](../../../kpanda/user-guide/clusters/create-cluster.md)集群并通过全局管理模块将该[集群或集群下的命名空间绑定到当前工作空间](../../../ghippo/user-guide/workspace/quota/#_4)。
+        > 如果可选列表中没有出现目标集群，可以去容器管理模块中[接入](../../kpanda/user-guide/clusters/integrate-cluster.md)或[创建](../../kpanda/user-guide/clusters/create-cluster.md)集群并通过全局管理模块将该[集群或集群下的命名空间绑定到当前工作空间](../../../ghippo/user-guide/workspace/quota/#_4)。
 
     - 命名空间（部署）：选择将网关部署在哪个命名空间。一个命名空间中只能部署一个网关。
     - 命名空间（管辖）：设置新建的网关可以管辖哪些命名空间。默认管辖网关所在的命名空间。支持同时管辖多个命名空间。同一个命名空间不能被两个网关同时管辖。

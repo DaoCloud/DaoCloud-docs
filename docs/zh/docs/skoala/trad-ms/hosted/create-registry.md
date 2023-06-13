@@ -5,12 +5,12 @@ hide:
 
 # 创建托管注册中心
 
-微服务引擎支持托管 Nacos 注册中心，即在微服务治理中心从零创建一个 Nacos 类型的全新注册中心，并且可以通过微服务治理中心全面管理该注册中心。相对于[接入型注册中心](../../integrated/integrate-registry.md)而言，托管型注册中心支持更多操作，包括查看注册中心实例的基础信息、微服务命名空间管理、微服务列表、微服务配置列表、监控告警、日志查看、插件中心等。
+微服务引擎支持托管 Nacos 注册中心，即在微服务治理中心从零创建一个 Nacos 类型的全新注册中心，并且可以通过微服务治理中心全面管理该注册中心。相对于[接入型注册中心](../integrated/integrate-registry.md)而言，托管型注册中心支持更多操作，包括查看注册中心实例的基础信息、微服务命名空间管理、微服务列表、微服务配置列表、监控告警、日志查看、插件中心等。
 
 !!! note
 
-    - 需要事先在目标集群的 **skoala-system** 命名空间中安装 skoala-init 组件，具体步骤可参考[管理 Helm 应用](../../../../kpanda/user-guide/helm/helm-app.md)。
-    - 如果所选集群中没有 **skoala-system** 命名空间，可参考[创建命名空间](../../../../kpanda/user-guide/namespaces/createns.md)创建一个名为 **skoala-system** 的命名空间。
+    - 需要事先在目标集群的 **skoala-system** 命名空间中安装 skoala-init 组件，具体步骤可参考[管理 Helm 应用](../../../kpanda/user-guide/helm/helm-app.md)。
+    - 如果所选集群中没有 **skoala-system** 命名空间，可参考[创建命名空间](../../../kpanda/user-guide/namespaces/createns.md)创建一个名为 **skoala-system** 的命名空间。
 
 创建托管注册中心的步骤如下。
 
