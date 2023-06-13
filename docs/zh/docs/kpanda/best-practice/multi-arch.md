@@ -70,7 +70,7 @@ tar -xvf offline-v0.8.0-arm64.tar
     - `-c clusterConfig.yaml` 指定之前部署 DCE5.0 时使用的 clusterConfig.yaml 文件
     - `--target-arch`  指定架构，支持 arm64、amd64
     - `--offline-path` 指定下载的离线镜像包文件地址
-    - `--iso-path` 指定下载的 ISO 操作系统镜像文件 地址
+    - `--iso-path` 指定下载的 ISO 操作系统镜像文件地址
     - `--os-pkgs-path` 指定下载的 osPackage 离线包文件地址
 
 导入命令执行成功后，会将离线包上传到火种节点的 Minio 中。
