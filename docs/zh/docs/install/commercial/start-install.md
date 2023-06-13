@@ -12,6 +12,8 @@
 
 #### 离线镜像包 （必需）
 
+离线镜像包包含安装 DCE5.0 各个产品模块所需的配置文件、镜像资源以及 chart 包。
+
 可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
 
 | CPU 架构 | 版本   | 下载地址                                                     |
@@ -28,6 +30,8 @@ tar -xvf offline-v0.8.0-amd64.tar
 
 #### addon 离线包 （可选）
 
+addon 离线包包含一些常用的组件的 Helm Chart 离线包，具体清单请参考[addon](https://docs.daocloud.io/download/addon/v0.8.0/#_2)。
+
 安装器从 v0.5.0 版本，支持了 addon 的离线包导入能力，如果需要支持 addon 中所有的 helm chart 离线化。可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
 
 首先需要事先下载好离线包，并在[集群配置文件（clusterConfig.yaml）](./cluster-config.md)中定义 `addonOfflinePackagePath`。
@@ -37,9 +41,11 @@ tar -xvf offline-v0.8.0-amd64.tar
 | AMD64    | v0.8.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.8.0-amd64.tar.gz> |
 | ARM64    | v0.8.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.8.0-arm64.tar.gz> |
 
-#### ISO 离线包 （必需）
+#### ISO 操作系统镜像文件 （必需）
 
-ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置，请根据操作系统进行下载。
+ISO 格式的操作系统镜像文件，安装过程中请根据不同操作系统是来下载对应的 ISO 文件。
+
+ISO 操作系统镜像文件需要在[集群配置文件](./cluster-config.md)中进行配置，请根据操作系统进行下载。
 
 | CPU 架构 | 操作系统版本                                        | 下载地址                                                     |
 | :------- | :-------------------------------------------------- | :----------------------------------------------------------- |
@@ -52,6 +58,8 @@ ISO 离线包需要在[集群配置文件](./cluster-config.md)中进行配置�
 | ARM64    | Kylin Linux Advanced Server release V10 (Sword) SP2 | 申请地址：<https://www.kylinos.cn/scheme/server/1.html> <br />注意：麒麟操作系统需要提供个人信息才能下载使用，下载时请选择 V10 (Sword) SP2 |
 
 #### osPackage 离线包（必需）
+
+osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源项目为 Linux 操作系统离线软件源做的补充内容，例如 openEuler 22.03 中缺少了selinux-policy-35.5-15.oe2203.noarch.rpm。
 
 安装器从 v0.5.0 版本，需要提供操作系统的 osPackage 离线包，并在[集群配置文件（clusterConfig.yaml）](./cluster-config.md)中定义 `osPackagePath`。
 
