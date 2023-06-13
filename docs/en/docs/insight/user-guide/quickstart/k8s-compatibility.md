@@ -19,7 +19,7 @@
 | Batch query node CPU, memory usage, total node CPU, node memory usage | | E2E | ✅ | ✅ | ✅ | ✅ | ✅ | ✅| ✅| ✅| | |
 | Batch query cluster CPU, memory usage, total cluster CPU, cluster memory usage, and total number of cluster nodes within a period of time | | E2E | ✅ | ✅ | ✅ | ✅ | ✅ | ✅| ✅| ✅| | |
 | Batch query to query metrics api field function verification within a period of time | | E2E | ✅ | ✅ | ✅ | ✅ | ✅ | ✅| ✅| ✅ | |
-| Query POD log | | E2E | ✅ | ✅ | ✅ | ✅ | ✅ | ✅| ✅| ✅| | |
+| Query Pod log | | E2E | ✅ | ✅ | ✅ | ✅ | ✅ | ✅| ✅| ✅| | |
 | Query SVC log | | E2E | ✅ | ✅ | ✅ | ✅ | ✅ | ✅| ✅| ✅| | |
 | Query statefulset logs | | E2E | ✅ | ✅ | ✅ | ✅ | ✅ | ✅| ✅| ✅| | |
 | Query Deployment Logs | | E2E | ✅ | ✅ | ✅ | ✅ | ✅ | ✅| ✅| ✅| | |

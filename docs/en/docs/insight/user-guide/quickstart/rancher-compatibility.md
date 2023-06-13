@@ -19,7 +19,7 @@
 | Batch query node CPU, memory usage, total node CPU, node memory usage | | Manual | ✅| |
 | Batch query cluster CPU, memory usage, total cluster CPU, cluster memory usage, and total number of cluster nodes within a period of time | | Manual | ✅| |
 | Batch query to query the function verification of the index api field within a period of time | | Manual | ✅ ||
-| Query POD log | | Manual | ✅| |
+| Query Pod log | | Manual | ✅| |
 | Query SVC Logs | | Manual | ✅| |
 | Query statefulset logs | | Manually | ✅| |
 | Query Deployment Logs | | Manual | ✅| |
