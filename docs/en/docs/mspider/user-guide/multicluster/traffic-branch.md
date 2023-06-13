@@ -19,7 +19,7 @@ Configuration steps:
      | yl-cluster10 | version | v1 |
      | yl-cluster20 | version | v2 |
 
-1. Click `Sidecar Management` -> `Workload Sidecar Management` in the left navigation bar to inject the sidecar into the helloworld workload of the two clusters.
+1. Click `Mesh Sidecar` -> `Workload Sidecar Management` in the left navigation bar to inject the sidecar into the helloworld workload of the two clusters.
 
 1. On the left navigation bar, click `Traffic Governance` -> `Target Rules` -> `Create` to create two service versions.
 
