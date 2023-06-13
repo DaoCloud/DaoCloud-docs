@@ -306,6 +306,7 @@ nav:
           - 灰度发布:
               - 创建金丝雀发布任务: amamba/user-guide/release/canary.md
               - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
+              - 创建蓝绿发布任务: amamba/user-guide/release/blue-green.md
           - 工具链集成:
               - 集成工具链: amamba/user-guide/tools/integrated-toolchain.md
               - 管理工具链实例: amamba/user-guide/tools/toolchain-instances.md
