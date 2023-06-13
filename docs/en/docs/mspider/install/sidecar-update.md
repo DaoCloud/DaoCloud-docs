@@ -5,7 +5,7 @@ After upgrading the Istio version of the mesh, the sidecar upgrade function will
 - Hot upgrade: The customized version of Daoke's lower sidecar can complete the upgrade without restarting the user's Pod to achieve uninterrupted business.
 - Restart upgrade: The community-native Istio upgrade method or the customized version of Istio that does not meet the hot upgrade environment requirements requires restarting the user Pod.
 
-After the Istio version upgrade is completed, go to the `Workload Sidecar Management` interface. Workloads that meet the upgrade conditions will display an exclamation mark prompt message. Select the workload you want to upgrade, and the `Sidecar Upgrade` button will appear.
+After the Istio version upgrade is completed, go to the `Workload` interface. Workloads that meet the upgrade conditions will display an exclamation mark prompt message. Select the workload you want to upgrade, and the `Sidecar Upgrade` button will appear.
 
 Click the `Sidecar Upgrade` button to enter the `Sidecar Upgrade Version` wizard, which has three steps: `Environment Detection`, `Select Target Version`, and `Execute Upgrade`. Differences in operation between "Hot Upgrade" and "Restart Upgrade" exist.
 

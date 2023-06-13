@@ -48,7 +48,7 @@ You can select one or more namespaces and disable sidecar injection using the fo
 
 ## Cleanup Policy
 
-You can select one or more namespaces and clean up the namespace-level sidecar policy. After cleanup, the sidecar status of workloads in the namespace will only be controlled by `Workload Sidecar Management`. The following steps can be used:
+You can select one or more namespaces and clean up the namespace-level sidecar policy. After cleanup, the sidecar status of workloads in the namespace will only be controlled by `Workload`. The following steps can be used:
 
 1. Select one or more namespaces that have sidecar injection enabled and click on `Cleanup Policy`.
 
