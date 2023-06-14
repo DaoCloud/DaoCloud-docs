@@ -14,6 +14,4 @@ After [microservices](service.md) are imported, different east-west traffic poli
 
 3. Configure the traffic policy as needed, and click `OK` to confirm.
 
-    <!--![](../images/cloudms-traffic03.png)-->
-
 <!-- Specific descriptions of each policy will be added later -->

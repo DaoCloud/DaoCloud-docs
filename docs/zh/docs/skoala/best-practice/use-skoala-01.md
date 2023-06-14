@@ -29,7 +29,7 @@
 
     ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/addhelmrepo.png)
 
-- 在微服务引擎中[创建 Nacos 注册中心实例](../trad-ms/managed/registry-lcm/create-registry.md)
+- 在微服务引擎中[创建 Nacos 注册中心实例](../trad-ms/hosted/create-registry.md)
 
     > 注意记录注册中心的地址信息，后续安装应用时需要用到。
 
@@ -111,7 +111,7 @@
 
 开始使用微服务治理功能之前，需要在对应注册中心下的插件中心开启对应的治理插件。插件中心提供 Sentinel 治理和 Mesh 治理两种插件，支持通过用户界面实现可视化配置。安装插件后可以扩展微服务治理能力，满足不同场景下的业务诉求。
 
-本次实践采用传统微服务治理，即开启 Sentinel 治理插件。如需了解详细步骤，可参考[启用 Sentinel 治理插件](../trad-ms/managed/plugins/sentinel.md)。
+本次实践采用传统微服务治理，即开启 Sentinel 治理插件。如需了解详细步骤，可参考[启用 Sentinel 治理插件](../trad-ms/hosted/plugins/sentinel.md)。
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/plugins/imgs/plugincenter01.png)
 
@@ -137,7 +137,7 @@
 
 ### 创建云原生网关
 
-首先需要创建一个云原生网关，具体操作步骤可以参考： [创建云原生网关](../gateway/gateway/create-gateway.md)
+首先需要创建一个云原生网关，具体操作步骤可以参考： [创建云原生网关](../gateway/create-gateway.md)
 
 !!! note
 

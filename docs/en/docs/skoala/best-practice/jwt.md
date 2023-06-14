@@ -5,7 +5,7 @@ The microservice engine gateway supports JWT validation. Here"s how to use this 
 ## prerequisite
 
 - [Create a cluster](../../kpanda/user-guide/clusters/create-cluster.md) OR [Integrate a cluster](../../kpanda/user-guide/clusters/integrate-cluster.md)
-- [Create a gateway](.. /ms-gateway/gateway/create-gateway.md)
+- [Create a gateway](../gateway/create-gateway.md)
 - Prepare a Token and the JWKS application used to validate the Token. If you do not already have a JWKS application, see [Create JWKS App](#jwks) to create one.
 
 ## Operation procedure
