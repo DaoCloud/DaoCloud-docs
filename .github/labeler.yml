@@ -75,3 +75,7 @@ en:
 
 zh:
   - "docs/zh/**/*"
+
+develop:
+  - "scripts/**/*"
+  - ".github/**/*"
