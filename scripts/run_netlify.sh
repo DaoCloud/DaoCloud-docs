@@ -1,11 +1,6 @@
 #!/bin/bash
 
-
-# check os type
-
-# install python3
-
-# install pip
+# run pull request preview site with netlify
 
 # install required packages
 pip install mkdocs-material \
