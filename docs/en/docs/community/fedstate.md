@@ -12,7 +12,7 @@ so that they can work normally and provide some advanced operation and maintenan
 
 ## Architecture
 
-![architecture](config/structure.png)
+![architecture](./images/structure.png)
 
 FedState consists of the following components:
 

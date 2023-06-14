@@ -145,7 +145,7 @@ the table above. Here is a brief description of some new features and optimizati
 - Installer: In the offline scenario, when an external OS Repo repository is used, that is,
   `osRepos.type=external` is defined in `clusterConfig.yaml`, it is not possible to create a
   working cluster in container management after the successful deployment of DCE5.0.
-  Please refer to the [documentation](../install/release-notes.md#_3) for solutions.
+  Please refer to the [documentation](../install/release-notes.md#known-issues) for solutions.
 
 ## Compatibility
 
