@@ -10,7 +10,7 @@ DaoCloud 是经 CNCF 官方认证的 Kubernetes 提供商，即 Kubernetes Certi
 
 作为一家经过官方严格审核的 Kubernetes 服务提供商，DaoCloud 在帮助企业采用 Kubernetes 成功部署大规模集群方面有深厚的经验。
 
-DaoCloud 作为一家久经认证的 KCSP 意味着：
+DaoCloud 作为一家经验丰富的 KCSP 意味着：
 
 - DaoCloud 是 [Kubernetes 官方推荐的资深合作伙伴](https://kubernetes.io/partners/)
 - DaoCloud 是经 CNCF 社区公认、有专家资质、能充分胜任 Kubernetes 集群部署专业工作的优良企业
