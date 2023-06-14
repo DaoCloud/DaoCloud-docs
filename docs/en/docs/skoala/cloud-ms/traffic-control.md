@@ -1,19 +1,19 @@
-# 服务治理
+# Service Governance
 
-服务治理指基于 Service Mesh 对 [DCE 5.0 服务网格](../../mspider/intro/what.md)中的服务进行东西向流量治理。
+Service governance allows you to manage the east-west traffic of microservices imported from the [DCE 5.0 Service Mesh](../../mspider/intro/what.md) based on features of Service Mesh.
 
-将[网格服务导入](service.md)云原生微服务引擎之后，就可以针对服务暴露的不同端口设置不同的东西向流量策略。
+After [microservices](service.md) are imported, different east-west traffic policies can be set individually for each exposed port of the service.
 
-1. 点击服务名称
+1. Click on the service name.
 
-    ![](../images/cloudms-traffic01.png)
+    <!--![](../images/cloudms-traffic01.png)-->
 
-2. 选择目标端口
+2. Select the target port.
 
-    ![](../images/cloudms-traffic02.png)
+    <!--![](../images/cloudms-traffic02.png)-->
 
-3. 根据需要配置流量策略，最后点击`确定`即可
-  
-    ![](../images/cloudms-traffic03.png)
+3. Configure the traffic policy as needed, and click `OK` to confirm.
 
-<!--关于各个策略的具体说明，待后续补充-->
+    <!--![](../images/cloudms-traffic03.png)-->
+
+<!-- Specific descriptions of each policy will be added later -->

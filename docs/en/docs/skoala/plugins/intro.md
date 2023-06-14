@@ -1,10 +1,9 @@
-# 插件中心介绍
+# Plugin Center
 
-微服务引擎支持接入 Auth、JWT、全局限流、Wasm 插件。
+You can add Auth, JWT, Global Rate Limiting, and Wasm plugins into DaoCloud Microservice Engine.
 
-- Auth：接入该插件后，才能在创建域名时配置安全认证策略。
-- JWT：接入该插件后，才能在创建域名时配置安全认证策略。
-- 全局限流：接入该插件后，才能在创建云原生网关实例时启用全局限流插件。
-- Wasm：接入该插件后，才能在云原生微服务治理页面
+- Auth/JWT: with this added, you can enable and configure security authentication policies for domains.
+- Global Rate Limit: with this added, you can enable and configure rate limit for cloud native gateways.
+- Wasm: with this added, you can have more options when setting flow control of cloud native microservices.
 
-![](../images/plugin01.png)
+<!--![](../images/plugin01.png)-->

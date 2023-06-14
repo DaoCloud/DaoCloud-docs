@@ -258,6 +258,7 @@ envoy 固定为 1 副本，contour 配置为 1 核 1 G，被测试服务 nginx �
 !!! success
 
     综上：
+    
     - envoy 的 CPU 配置对吞吐量起决定性因素。
     - 在当前压测资源下，通过 envoy 访问 nginx 的吞吐量能够达到直接访问 nginx 的吞吐量的 80% 以上。
 

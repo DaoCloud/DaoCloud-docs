@@ -18,7 +18,7 @@ To create a microservice gateway, perform the following steps:
     - Gateway name: contains a maximum of 63 letters, digits, and underscores (_). The name cannot be changed after the gateway is created.
     - Deploy cluster: Select the cluster to deploy the gateway in.
 
-        > If the target cluster does not appear in the optional list, you can go to the [Integrate](../../../kpanda/user-guide/clusters/integrate-cluster.md) or [Create](../../../kpanda/user-guide/clusters/create-cluster.md) cluster in the container management module and set the [The cluster or namespace under the cluster is bound to the current workspace ](../../../ghippo/user-guide/workspace/quota/#_4) through the global management module.
+        > If the target cluster does not appear in the optional list, you can go to the [Integrate](../../kpanda/user-guide/clusters/integrate-cluster.md) or [Create](../../kpanda/user-guide/clusters/create-cluster.md) cluster in the container management module and set the [The cluster or namespace under the cluster is bound to the current workspace ](../../../ghippo/user-guide/workspace/quota/#_4) through the global management module.
 
     - Namespace (deployment) : Select the namespace in which to deploy the gateway. Only one gateway can be deployed in a namespace.
     - Namespace (jurisdiction) : Sets which namespaces can be governed by the new gateway. Specifies the namespace of the default jurisdiction gateway. Supports managing multiple namespaces at the same time. A namespace cannot be managed by two gateways at the same time.

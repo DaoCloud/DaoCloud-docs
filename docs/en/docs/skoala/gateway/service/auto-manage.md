@@ -2,7 +2,7 @@
 
 The services that are successfully added will be displayed on the service list page. You can also select the services in the list as the target back-end services when adding apis. The microservice gateway supports manual access and automatic management to add services. This page describes how to automatically manage services.
 
-After [created a gateway](../gateway/create-gateway.md) succeeds, the services in the service source are automatically added to the service list of the gateway instance without manual addition.
+After [created a gateway](../create-gateway.md) succeeds, the services in the service source are automatically added to the service list of the gateway instance without manual addition.
 
 ## View automatic managed services
 

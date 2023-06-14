@@ -5,12 +5,12 @@ hide:
 
 # Create a managed registry
 
-The microservices engine supports hosting the Nacos registry, which creates a new NacOS-type registry from scratch in the microservices governance Center and can be fully managed through the microservices Governance Center. The managed registry supports more operations than [Integrated Registry](../../integrated/integrate-registry.md), including viewing the basic information of the registry instance, microservice namespace management, microservice list, microservice configuration list, monitoring alerts, log viewing, plug-in center, and more.
+The microservices engine supports hosting the Nacos registry, which creates a new NacOS-type registry from scratch in the microservices governance Center and can be fully managed through the microservices Governance Center. The managed registry supports more operations than [Integrated Registry](../integrated/integrate-registry.md), including viewing the basic information of the registry instance, microservice namespace management, microservice list, microservice configuration list, monitoring alerts, log viewing, plug-in center, and more.
 
 !!! note
 
-    - Install the skoala-init component in the ** skoala-system ** namespace of the target cluster. For details, see [Manage Helm App](../../../../kpanda/user-guide/helm/helm-app.md).
-    - If the selected group does not have a ** skoala-system ** namespace, refer to [Create Namespace](../../../../kpanda/user-guide/namespaces/createns.md) to create a namespace named ** skoala-system **.
+    - Install the skoala-init component in the ** skoala-system ** namespace of the target cluster. For details, see [Manage Helm App](../../../kpanda/user-guide/helm/helm-app.md).
+    - If the selected group does not have a ** skoala-system ** namespace, refer to [Create Namespace](../../../kpanda/user-guide/namespaces/createns.md) to create a namespace named ** skoala-system **.
 
 The steps to create a managed registry are as follows.
 

@@ -10,7 +10,7 @@ The microservice engine gateway supports JWT validation. Here"s how to use this 
 
 ## Operation procedure
 
-1. Reference [Create Domain](../ms-gateway/domain/add-domain.md) create a protocol for `https` domain, in the domain security policy enabled `JWT Auth`.
+1. Reference [Create Domain](../gateway/domain/add-domain.md) create a protocol for `https` domain, in the domain security policy enabled `JWT Auth`.
 
     - JWKS name: Unique JWKS name that identifies a specific JWT policy. This parameter is mandatory
     - JWKS Server Address: Returns the full FQDN address of the JWT service for the JWKS content. This parameter is mandatory
@@ -22,7 +22,7 @@ The microservice engine gateway supports JWT validation. Here"s how to use this 
 
         <!--![]()screenshots-->
 
-2. See [Add API](../ms-gateway/api/add-api.md) to create the API and enable the JWT authentication security policy.
+2. See [Add API](../gateway/api/add-api.md) to create the API and enable the JWT authentication security policy.
 
     <!--![]()screenshots-->
 
