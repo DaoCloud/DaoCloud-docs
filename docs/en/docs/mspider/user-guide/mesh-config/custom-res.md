@@ -10,7 +10,7 @@ The control plane components of the service mesh are as follows:
 | mspider-ckube-remote | Global Management Cluster | Used to call Kubernetes of remote clusters, aggregate multicluster resources, and accelerate | requests: CPU: not set; memory: not set<br/> limits: CPU: not set; memory : not set |
 | mspider-gsc-controller | Global management cluster | Service mesh management component, used for mesh creation, mesh configuration and other mesh control plane lifecycle management, and Mspider control plane capabilities such as permission management | requests: CPU: Not set ;memory: not set<br/>limits: CPU: not set; memory: not set |
 | mspider-api-service | Global management cluster | Provide interface for Mspider background API interaction and other control behaviors | requests: CPU: not set; memory: not set <br/>limits: CPU: not set; memory: not set |
-| Managed mesh | | | |
+| Hosted mesh | | | |
 | istiod-{meshID}-hosted | control plane cluster | policy management for hosted mesh | requests: CPU: 100m; memory: 100m <br/>limits: CPU: not set; memory: not set |
 | mspider-mcpc-ckube-remote | Control plane cluster | Invoke remote mesh work clusters to accelerate and aggregate multicluster resources | requests: CPU: 100m; memory: 50m<br/>limits: CPU: 500m; memory: 500m |
 | mspider-mcpc-mcpc-controller | Control plane cluster | Aggregate mesh multicluster related data plane information | requests: CPU: 100m; memory: 0<br/> limits: CPU: 300m; memory: 1.56G |
@@ -33,9 +33,9 @@ The login account has the admin or editor authority of the namespace istio-syste
 
 ## set operation
 
-Take istiod on the working cluster under the managed mesh as an example, the specific operations are as follows:
+Take istiod on the working cluster under the hosted mesh as an example, the specific operations are as follows:
 
-1. View the managed mesh nicole-dsm-mesh access cluster under the service mesh is nicole-dsm-c2, as shown in the figure below.
+1. View the hosted mesh nicole-dsm-mesh access cluster under the service mesh is nicole-dsm-c2, as shown in the figure below.
 
 
 2. Click on the cluster name, jump to the cluster page in the `Container Management` module, click to enter the `Workload` -> `Stateless Load` page to find istiod;

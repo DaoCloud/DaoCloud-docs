@@ -5,7 +5,7 @@ hide:
 
 # Add cluster
 
-After the user creates a managed mesh, but has not yet connected to any managed cluster, the mesh is in the `not ready` state, and the user needs to add one or more clusters.
+After the user creates a hosted mesh, but has not yet connected to any managed cluster, the mesh is in the `not ready` state, and the user needs to add one or more clusters.
 
 The specific operation steps are as follows:
 

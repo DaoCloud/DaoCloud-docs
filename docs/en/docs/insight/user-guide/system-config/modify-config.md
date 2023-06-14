@@ -93,7 +93,7 @@ Refer to the following steps to modify the log data retention period:
     }
     ```
 
-2. After modification, execute the above command. It will print out the content as shown below, then the modification is successful.
+2. After modification, run the above command. It will print out the content as shown below, then the modification is successful.
 
     ```json
     {
@@ -163,7 +163,7 @@ Refer to the following steps to modify the trace data retention period:
     }
     ```
 
-2. After modification, execute the above command on the console. It will print out the content as shown below, then the modification is successful.
+2. After modification, run the above command on the console. It will print out the content as shown below, then the modification is successful.
 
     ```json
     {

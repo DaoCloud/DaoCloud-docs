@@ -17,7 +17,7 @@
 
 ## 接入注册中心
 
-参阅 [接入注册中心](../skoala/registry/integrated/integrate-registry.md)文档页面。
+参阅 [接入注册中心](../skoala/trad-ms/integrated/integrate-registry.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-registry.mp4" preload="metadata" poster="../images/skoala-integrate.png"></video>
@@ -31,7 +31,7 @@
 
 ## 管理网关和 API
 
-参阅[管理网关和 API](../skoala/ms-gateway/api/add-api.md)文档页面。
+参阅[管理网关和 API](../skoala/gateway/api/add-api.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gateway%26api.mp4" preload="metadata" poster="../images/skoala-gateway.png"></video>
@@ -39,7 +39,7 @@
 
 ## API 策略的高级配置（1）
 
-参阅 [API 策略配置](../skoala/ms-gateway/api/api-policy.md)文档页面。
+参阅 [API 策略配置](../skoala/gateway/api/api-policy.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/apipolicy1.mp4" preload="metadata" poster="../images/skoala-api1.png"></video>
@@ -47,7 +47,7 @@
 
 ## API 策略的高级配置（2）
 
-参阅 [API 策略配置](../skoala/ms-gateway/api/api-policy.md)文档页面。
+参阅 [API 策略配置](../skoala/gateway/api/api-policy.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/api-policy2.mp4" preload="metadata" poster="../images/skoala-api2.png"></video>

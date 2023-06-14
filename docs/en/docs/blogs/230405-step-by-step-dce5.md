@@ -266,7 +266,7 @@ The following operations are required on all three nodes:
 
 ### Connect to other worker nodes
 
-Finally execute the join command on other worker nodes.
+Finally run the join command on other worker nodes.
 When the above master node executes `kubeadm init`, it will be printed on the screen at the end (note that the three parameters are related to the environment, please do not copy them directly)
 
 ```bash
@@ -337,7 +337,7 @@ chmod +x ./dce5-installer
 
 ### Execute the installation
 
-1. If your browser is directly connected to the IP of the master node, execute directly
+1. If your browser is directly connected to the IP of the master node, run directly
 
      ```bash
      ./dce5-installer install-app -z -k

@@ -17,16 +17,14 @@ hide:
 
 1. 按照网格类型，系统将自动检测是否满足删除条件。
 
-    - 删除外接网格。
+    - 删除外接网格。只需输入网格名称确认，就能完成删除操作。
 
         ![外接网格](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/deletemesh02.png)
 
-    - 删除专有网格。需要按提示移除边车、清除网关、移除集群。
+    - 删除专有网格。需要按提示关闭网格删除保护、移除边车、清除网关后，输入网格名称确认删除操作。
 
-        ![专有网格](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/deletemesh03.png)
+        ![专有网格](../../images/deletemesh03.png)
 
-    - 删除托管网格。需要按提示移除边车、清除网关、移除集群。
+    - 删除托管网格。需要按提示关闭网格删除保护、移除已注入的边车、清除网关、移除网格下的集群后，输入网格名称确认删除操作。
 
-        ![托管网格](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/deletemesh04.png)
-
-1. 清除所有依赖项之后，输入屏幕提示的确认码，`删除`按钮被激活，点击`删除`按钮删除网格。
+        ![托管网格](../../images/deletemesh04.png)

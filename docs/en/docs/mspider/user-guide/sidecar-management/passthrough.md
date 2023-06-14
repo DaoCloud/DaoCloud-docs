@@ -20,7 +20,7 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
 
 This section explains how to enable/disable traffic passthrough on the DCE GUI.
 
-1. Enter a mesh, click `Sidecar Management` -> `Workload Sidecar Management`.
+1. Enter a mesh, click `Mesh Sidecar` -> `Workload`.
 
     
 

@@ -1143,7 +1143,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     GitOps is a set of best practices based on shared principles,
     applied to a workflow that depends on software agents that
     enable automation to reconcile a declared system state or configuration in a git repository.
-    These software agents and practices are used to execute a cohesive workflow that
+    These software agents and practices are used to run a cohesive workflow that
     leverages a source control system like Git as the “single source of truth” and
     extends this practice to applications, infrastructure, and operational procedures.
 
@@ -1454,7 +1454,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     A managed control plane is a control plane that is managed for customers. It reduces the complexity of customer deployments and typically guarantees a certain level of performance and availability.
 
-- Managed Mesh
+- Hosted Mesh
 
     A control plane created and managed by a service mesh in a selected cluster. It is characterized by simplicity, low cost, high availability, and no separate operation and maintenance management.
 
@@ -1531,7 +1531,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Network Policy
 
-    A specification that defines how communication can occur between Pod groups and between Pods and other network endpoints. Network policies help you declaratively configure which Pods and namespaces are allowed to communicate with each other, and which port numbers are used to execute each policy.
+    A specification that defines how communication can occur between Pod groups and between Pods and other network endpoints. Network policies help you declaratively configure which Pods and namespaces are allowed to communicate with each other, and which port numbers are used to run each policy.
 
 - Node
 

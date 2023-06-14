@@ -29,7 +29,7 @@
     - 名称：填写应用的名称。
     - 资源类型：支持无状态负载、有状态负载，本演示选择无状态负载。
     - 输入或选择应用组。
-    - 部署位置：选择将应用部署到哪个集群下的哪个命名空间。如果要接入微服务，请确保当前工作空间下已经[创建了注册中心](../../../skoala/registry/managed/registry-lcm/create-registry.md)。
+    - 部署位置：选择将应用部署到哪个集群下的哪个命名空间。如果要接入微服务，请确保当前工作空间下已经[创建了注册中心](../../../skoala/trad-ms/hosted/registry-lcm/create-registry.md)。
     - 实例数：填写实例的数量，Pod 的数量。
 
         ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms02.png)
@@ -75,11 +75,11 @@
 5. 在`高级配置`页面点击`开启接入微服务`，参考以下说明配置参数，然后点击`确定`。
 
     - 选择框架：支持`Spring Cloud`、`Dubbo`，此处选择 `Spring Cloud` 。
-    - 注册中心实例：目前仅支持选择[微服务引擎中的托管 Nacos 注册中心实例](../../../skoala/registry/managed/registry-lcm/create-registry.md)。
+    - 注册中心实例：目前仅支持选择[微服务引擎中的托管 Nacos 注册中心实例](../../../skoala/trad-ms/hosted/registry-lcm/create-registry.md)。
     - 注册中心命名空间：微服务应用的 nacos 命名空间
     - 注册中心服务分组：微服务应用的服务分组
     - 用户名/密码：如果该注册中心实例被认证，则需要填写用户名密码
-    - 开启微服务治理：所选择的注册中心实例应[开启了 Sentinel 或 Mesh 治理插件](../../../skoala/registry/managed/plugins/plugin-center.md)
+    - 开启微服务治理：所选择的注册中心实例应[开启了 Sentinel 或 Mesh 治理插件](../../../skoala/trad-ms/hosted/plugins/plugin-center.md)
     - 监控：选择开启，开启后可查看服务相关监控信息
     - 日志：默认开启
     - 链路追踪：开启后可查看服务的链路追踪信息，目前仅支持 Java 语言

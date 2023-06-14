@@ -8,6 +8,8 @@ Using the OpenTelemetry Java Agent also needs to consider how to mount the JAR i
 
 If your application has integrated Opentelemetry Agent to collect application traces, then you no longer need to introduce other Agents to expose JMX metrics for our application. The Opentelemetry Agent can now natively collect and expose metrics interfaces by instrumenting metrics exposed by MBeans available locally in the application.
 
+However, for current version, you still need to manually add the [corresponding annotations](./legacy-jvm.md) to workload before the JVM data will be collected by Insight.
+
 ## Expose metrics for Java middleware
 
 Opentelemetry Agent also has some built-in middleware monitoring samples, please refer to [Predefined Metrics](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/instrumentation/jmx-metrics/javaagent /README.md#predefined-metrics).

@@ -23,7 +23,7 @@ This page lists the main features of container management.
 - Container Lifecycle Settings: Support for setting callback functions, parameters after startup, and parameters before stopping when creating workloads to meet the needs of specific cases.
 - Container Readiness Check and Survival Check Settings: Support for setting workload readiness check and survival check when deploying applications:
     - Workload readiness check: Used to detect whether the user's business is ready. If it is not ready, the traffic will not be forwarded to the current instance.
-    - Workload survival check: The user checks whether the container is normal. If it is abnormal, the cluster will execute the container restart operation.
+    - Workload survival check: The user checks whether the container is normal. If it is abnormal, the cluster will run the container restart operation.
 - Container Environment Variable Settings: Specify environment variables for business container runtime environment settings.
 - Automatic Scheduling of Containers: Support for application service scheduling management, automatically schedule containers according to host resource usage, specify specific deployment hosts, and schedule containers through label policies.
 - Affinity and Anti-Affinity: Supports the definition of affinity and anti-affinity for scheduling between pods; and affinity and anti-affinity between pods and nodes to meet business custom scheduling requirements.

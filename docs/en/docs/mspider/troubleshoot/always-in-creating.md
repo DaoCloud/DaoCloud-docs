@@ -102,7 +102,7 @@ The mcpc-remote-kube-api-server configmap waited for a long time without being c
 
 ## Cause Analysis
 
-1. Case 1: The managed mesh fails to create a highly available ETCD because the control plane cluster has not deployed `StorageClass` in advance.
+1. Case 1: The hosted mesh fails to create a highly available ETCD because the control plane cluster has not deployed `StorageClass` in advance.
 
      xxxxx-etcd-0 is always pending, etcd pvc cannot be bound to sc causing pvc pending,
      In turn, the etcd pod cannot be bound to pvc. You can try the following steps to solve the problem:
@@ -140,7 +140,7 @@ the
 2. Case 2: The abnormality of this component may cause the network failure due to the fact that metalLB is not deployed in the control plane cluster.
     istiod-xxxx-hosed-lb failed to allocate endpoint. metalLB can be deployed for this cluster in the addon.
 
-3. Case 3: In the environment where the original managed mesh is removed and the managed mesh is created again, it is easy to cause the control plane to be not delivered in time.
+3. Case 3: In the environment where the original hosted mesh is removed and the hosted mesh is created again, it is easy to cause the control plane to be not delivered in time.
     The "mspider-mcpc-remote-kube-api-server" ConfigMap was not created in time. You can restart the global cluster gsc controller:
 
      ```bash

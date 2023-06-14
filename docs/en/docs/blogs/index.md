@@ -7,6 +7,10 @@ hide:
 
 This page summarizes blogs and public account articles related to DCE 5.0 and cloud-native technology, sorted by date by default.
 
+- [20230612 | The Exploration of Ray Core in Cloud-Native Computing for AIGC - Ray Core](./230612-ray.md)
+
+    This article introduces how Ray Core, a distributed computing framework, works as the foundation of Ray.
+
 - [20230609 | Istio 1.18 Released: Officially Announcing Ambient Mode](./230609-istio118.md)
 
     The 1.18 release is the second release of Istio in 2023 and the first to support Ambient mode.
@@ -49,7 +53,7 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
     How to speed up Pod startup on nodes in a large cluster? This is a problem that cluster administrators often face in enterprises.
     This article focuses on methods to speed up Pod startup on the kubelet side. This method does not involve the time period for controller-manager to create Pods through kube-apiserver, 
-    nor does it include the scheduling time of Pods or the time to execute Webhooks on them.
+    nor does it include the scheduling time of Pods or the time to run Webhooks on them.
 
 - [20230427 | Cloud-Native Monitoring - Basics of VictoriaMetrics](./230427-victoriametrics.md)
 

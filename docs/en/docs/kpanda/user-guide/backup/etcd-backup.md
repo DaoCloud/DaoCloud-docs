@@ -64,7 +64,7 @@ Follow the steps below to create an etcd backup.
    
         
 
-5. After the creation is successful, a piece of data will be generated in the backup policy list. `Operations` include log, view YAML, update policy, stop, execute now. When the backup method is manual, you can click `Immediately` to back up. When the backup method is scheduled backup, the backup will be performed according to the configured time.
+5. After the creation is successful, a piece of data will be generated in the backup policy list. `Operations` include log, view YAML, update policy, stop, run now. When the backup method is manual, you can click `Immediately` to back up. When the backup method is scheduled backup, the backup will be performed according to the configured time.
 
     
 

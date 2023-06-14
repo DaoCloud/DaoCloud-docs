@@ -131,7 +131,7 @@ This section describes how to create an pipeline by compiling, constructing, and
         kubectl apply -f deploy.yaml
         ```
 
-## Save and execute the assembly line
+## Save and run the assembly line
 
 1. Click `Save & Run` after finishing the previous step.
 

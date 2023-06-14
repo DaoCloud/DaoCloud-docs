@@ -10,7 +10,7 @@
 
 ## Manage gateways and APIs
 
-See the [Management Gateway and API](../skoala/ms-gateway/api/add-api.md) documentation page.
+See the [Management Gateway and API](../skoala/gateway/api/add-api.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gateway%26api.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
@@ -18,7 +18,7 @@ See the [Management Gateway and API](../skoala/ms-gateway/api/add-api.md) docume
 
 ## Advanced Configuration of API Policy (1)
 
-See the [API Policy Configuration](../skoala/ms-gateway/api/api-policy.md) documentation page.
+See the [API Policy Configuration](../skoala/gateway/api/api-policy.md) documentation page.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/apipolicy1.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>

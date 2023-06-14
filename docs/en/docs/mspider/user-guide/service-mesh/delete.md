@@ -11,22 +11,20 @@ When the user no longer uses the mesh management service, the delete operation c
 
     After the delete operation is performed, the mesh cannot be restored. If you need to manage it again, you need to recreate the mesh.
 
-1. On the right side of the mesh list, click the `...` button, and select `Delete` from the pop-up menu.
+1. On the right side of the Mesh List, click the `...` button, and select `Delete` from the pop-up menu.
 
-    
+    ![Delete Mesh](../../images/deletemesh01.png)
 
-1. According to the mesh type, the system will automatically detect whether the deletion condition is met.
+2. Depending on the mesh type, the system will automatically detect whether the deletion conditions are met.
 
-    - Delete the circumscribed mesh.
+    - Delete External Mesh. Only need to confirm the mesh name to complete the deletion operation.
 
-        
+        ![External Mesh](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/deletemesh02.png)
 
-    - Removed proprietary meshes. You need to follow the prompts to remove the sidecar, clear the gateway, and remove the cluster.
+    - Delete Dedicated Mesh. Follow the prompts to disable mesh deletion protection, uninstall injected sidecars, clean up gateways, and then confirm the deletion operation by entering the mesh name.
 
-        
+        ![Dedicated Mesh](../../images/deletemesh03.png)
 
-    - Delete managed mesh. You need to follow the prompts to remove the sidecar, clear the gateway, and remove the cluster.
+    - Delete Managed Mesh. Follow the prompts to disable mesh deletion protection, uninstall injected sidecars, clean up gateways, remove clusters under the mesh, and then confirm the deletion operation by entering the mesh name.
 
-        
-
-1. After clearing all dependencies, enter the confirmation code prompted on the screen, the `Delete` button is activated, click the `Delete` button to delete the mesh.
+        ![Hosted Mesh](../../images/deletemesh04.png)

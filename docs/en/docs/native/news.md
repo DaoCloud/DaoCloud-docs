@@ -6,11 +6,19 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 ### 2023-07
 
+- [July "cloud service stable operation capability standard system" first evaluation registration channel opened (July registration deadline)](https://mp.weixin.qq.com/s/dP6JExm6wsqFb20qv6zxSQ)
+  
+    The assessment is open to cloud service operators for cloud hosting, cloud storage, cloud network services, message middleware, container services, distributed caching, content distribution CDN, converged cloud DNS services and other eight cloud services to start the first assessment of stable operation capacity. The first evaluation results will be announced at the Trusted Cloud Conference 2023.
+
 - [July 21-July 22 2023 ArchSummit Global Architect Summit - Shenzhen Presentation Topics Wanted](https://mp.weixin.qq.com/s/oxtXzu3Nme1QvSgYjiT5zQ)
   
     The ArchSummit Global Architect Summit is a technical conference focused on high-end technical managers and architects, launched by the InfoQ China team. The Shenzhen Summit will feature topics such as Microservice Architecture, Sustainable Software Architecture, ChatGPT + Big Data Exploration, Digital Transformation Exploration in the Financial Industry, and Business Going Abroad. Each presentation will be 45 minutes long, including a 5-minute Q&A session at the end.
 
 ### 2023-06
+
+- [June 30 Notice of the General Office of the Ministry of Industry and Information Technology on Organizing the Selection of Typical Products, Applications and Service Cases of New Generation Information Technology in 2023](https://mp.weixin.qq.com/s/qAfOPlNvcM3OMjeSyPqgbg)
+  
+    Typical product directory collection of industrial software products; typical application cases collection of industrial Internet platform, block chain, enterprises on the cloud with the cloud and other cases; typical service model collection of school-enterprise talent training services, standardization workstations and other cases. Typical cases include manufacturing enterprises, information technology enterprises, Internet enterprises, research institutes, colleges and universities or their consortia.
 
 - [June 30 China Academy of Information and Communications Technology launches the registration of digital service capability assessment of smart marketing in the first half of 2023 (registration closes on 6.30)](https://mp.weixin.qq.com/s/yQfz9X3oPKWDSeqgxwzs8g)
   
@@ -32,6 +40,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     KubeDay is a regional cloud-native event series hosted by CNCF, targeting regions with active communities and interest in cloud-native technologies such as Kubernetes.
     After kicking off in Japan last December, KubeDay makes its second stop in Tel Aviv, Israel. Applications for speaker proposals are now open (until 4.30), and speakers need to be present in person.
+
+- [June 17-June 18 RustChinaConf 2023 Conference Schedule Released](https://mp.weixin.qq.com/s/scm7k9vE7uLdjBmRe12VWQ)
+  
+    The conference will be held in Shanghai from 6.17 to 6.18, with two main forums (morning) and six breakout sessions (afternoon). The six sessions focus on Rust language and high-performance practices, databases, embedded and operating systems, cloud-native, blockchain, cryptography and security, WebAssembly, and more.
 
 - [June 18 KubeCon + CloudNativeCon North America 2023 Open Call for Proposal (6.18 Deadline)](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/cfp/)
   
@@ -72,6 +84,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [June 6 ICT China-2023 High Level Forum - Cloud Native Industry Summit will kick off on June 6 in Beijing](https://mp.weixin.qq.com/s/FTOBYjCZxYMoOM8WJUz8mQ)
   
     Sponsored by the Ministry of Industry and Information Technology, the Cloud Native Industry Summit Forum will invite leading think tanks, government leaders, academician experts, enterprise executives and other heavyweight guests to discuss the cloud native ecology and explore the cloud native future.
+
+- [June 5 Notice on the collection of 2023 Shanghai Software Industry Association group standard project declaration](https://mp.weixin.qq.com/s/8LUr4OXjIkkdAic3FH8HnA)
+  
+    Group standards focus on new products, new technologies, new industries and new models, including product standards, technical standards, management standards, service standards, etc.; the main direction is to focus on the urgent needs of industry development and participation in domestic and international market competition; mature enterprise standard projects are encouraged to be upgraded and transformed into group standards. Group standard declaration for the whole year collection.
 
 - [June 3 Cloud Native Community Chongqing Meetup to be held on June 3](https://mp.weixin.qq.com/s/pwf5_k5CWXTqZLpoKtGpCg)
   

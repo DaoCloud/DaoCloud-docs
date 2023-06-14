@@ -11,3 +11,4 @@ __pycache__
 .VSCodeCounter
 docs/zh/site/
 docs/en/site/
+*.docx
