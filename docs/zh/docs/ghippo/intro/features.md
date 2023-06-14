@@ -201,5 +201,5 @@ hide:
     1. [安全设置](../user-guide/personal-center/security-setting.md)
         - 支持用户更新登录密码
         - 支持通过邮箱找回登录密码
-    2. [访问密钥](../user-guide/personal-center/password.md)：支持每个用户创建独立的 API 密钥，支持进行 API 密钥过期设置，以确保系统安全
+    2. [访问密钥](../user-guide/personal-center/accesstoken.md)：支持每个用户创建独立的 API 密钥，支持进行 API 密钥过期设置，以确保系统安全
     3. [语言设置](../user-guide/personal-center/language.md)：支持多语言，支持简体中文、英文、自动检测您的浏览器首选语言三种方式确定语言
