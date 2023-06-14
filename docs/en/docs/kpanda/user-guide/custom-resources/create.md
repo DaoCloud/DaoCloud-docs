@@ -1,4 +1,4 @@
-# Create Custom Resource (CRD)
+# CustomResourceDefinition (CRD)
 
 In Kubernetes, all objects are abstracted as resources, such as Pod, Deployment, Service, Volume, etc. are the default resources provided by Kubernetes.
 This provides important support for our daily operation and maintenance and management work, but in some special cases, the existing preset resources cannot meet the needs of the business.
