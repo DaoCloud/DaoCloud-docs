@@ -377,60 +377,65 @@ nav:
               - 在线升级: skoala/quickstart/online-upgrade.md
               - 离线升级: skoala/quickstart/offline-upgrade.md
               - 选择工作空间: skoala/quickstart/select-workspace.md
-          - 微服务治理中心:
-              - 托管型注册中心:
-                  - 注册中心管理:
-                      - 创建注册中心: skoala/registry/managed/registry-lcm/create-registry.md
-                      - 更新注册中心: skoala/registry/managed/registry-lcm/update-registry.md
-                      - 查看注册中心: skoala/registry/managed/registry-lcm/check-registry.md
-                      - 删除注册中心: skoala/registry/managed/registry-lcm/delete-registry.md
-                  - 微服务命名空间: skoala/registry/managed/namespace.md
-                  - 微服务列表:
-                      - 介绍: skoala/registry/managed/servicelist/intro.md
-                      - 查看微服务详情: skoala/registry/managed/servicelist/check-details.md
-                  - 微服务治理:
-                      - 应用接入 Sentinel 规范: skoala/registry/managed/governance/connect-sentinel.md
-                      - 规则介绍: skoala/registry/managed/governance/governance-policy.md
-                      - 流控规则: skoala/registry/managed/governance/flow-control.md
-                  - 微服务配置列表: skoala/registry/managed/configcenter.md
-                  - 监控:
-                      - 微服务监控: skoala/registry/managed/monitor/microservices.md
-                      - 组件监控: skoala/registry/managed/monitor/components.md
-                      - 链路追踪: skoala/registry/managed/monitor/traces.md
-                  - 插件中心:
-                      - skoala/registry/managed/plugins/plugin-center.md
-                      - 启用 Sentinel 治理: skoala/registry/managed/plugins/sentinel.md
-                      - 启用 Mesh 治理: skoala/registry/managed/plugins/mesh.md
-              - 接入型注册中心:
-                  - 接入注册中心: skoala/registry/integrated/integrate-registry.md
-                  - 更新注册中心: skoala/registry/integrated/update-registry.md
-                  - 移除注册中心: skoala/registry/integrated/remove-registry.md
-                  - 微服务管理: skoala/registry/integrated/manage-service.md
-                  - 微服务治理: skoala/registry/integrated/traffic-control.md
-                  - 链路追踪: skoala/registry/integrated/trace.md
-          - 微服务网关:
+          - 云原生网关:
               - 网关管理:
-                  - 创建网关: skoala/ms-gateway/gateway/create-gateway.md
-                  - 查看网关: skoala/ms-gateway/gateway/check-details.md
-                  - 更新网关: skoala/ms-gateway/gateway/update-gateway.md
-                  - 删除网关: skoala/ms-gateway/gateway/delete-gateway.md
+                  - 创建网关: skoala/gateway/create-gateway.md
+                  - 查看网关: skoala/gateway/check-details.md
+                  - 更新网关: skoala/gateway/update-gateway.md
+                  - 删除网关: skoala/gateway/delete-gateway.md
               - API 管理:
-                  - 添加 API: skoala/ms-gateway/api/add-api.md
-                  - 更新 API: skoala/ms-gateway/api/update-api.md
-                  - 配置 API 策略: skoala/ms-gateway/api/api-policy.md
-                  - 移除 API: skoala/ms-gateway/api/delete-api.md
+                  - 添加 API: skoala/gateway/api/add-api.md
+                  - 更新 API: skoala/gateway/api/update-api.md
+                  - 配置 API 策略: skoala/gateway/api/api-policy.md
+                  - 移除 API: skoala/gateway/api/delete-api.md
               - 服务接入:
-                  - 手动接入: skoala/ms-gateway/service/manual-integrate.md
-                  - 自动纳管: skoala/ms-gateway/service/auto-manage.md
-              - 监控告警: skoala/ms-gateway/alert.md
+                  - 手动接入: skoala/gateway/service/manual-integrate.md
+                  - 自动纳管: skoala/gateway/service/auto-manage.md
+              - 监控告警: skoala/gateway/alert.md
               - 日志查看:
-                  - 请求日志: skoala/ms-gateway/logs/reqlog.md
-                  - 实例日志: skoala/ms-gateway/logs/inslog.md
+                  - 请求日志: skoala/gateway/logs/reqlog.md
+                  - 实例日志: skoala/gateway/logs/inslog.md
               - 域名管理:
-                  - 添加域名: skoala/ms-gateway/domain/add-domain.md
-                  - 更新域名: skoala/ms-gateway/domain/update-domain.md
-                  - 配置域名策略: skoala/ms-gateway/domain/domain-policy.md
-                  - 删除域名: skoala/ms-gateway/domain/delete-domain.md
+                  - 添加域名: skoala/gateway/domain/add-domain.md
+                  - 更新域名: skoala/gateway/domain/update-domain.md
+                  - 配置域名策略: skoala/gateway/domain/domain-policy.md
+                  - 删除域名: skoala/gateway/domain/delete-domain.md
+          - 云原生微服务:
+              - 导入/移除服务: skoala/cloud-ms/service.md
+              - 服务治理: skoala/cloud-ms/traffic-control.md
+          - 传统微服务:
+              - 注册配置中心:
+                  - 创建注册配置中心: skoala/trad-ms/hosted/create-registry.md
+                  - 更新注册配置中心: skoala/trad-ms/hosted/update-registry.md
+                  - 查看注册配置中心: skoala/trad-ms/hosted/check-registry.md
+                  - 删除注册配置中心: skoala/trad-ms/hosted/delete-registry.md
+                  - 微服务命名空间: skoala/trad-ms/hosted/namespace.md
+                  - 微服务列表:
+                      - 介绍: skoala/trad-ms/hosted/servicelist/intro.md
+                      - 接入微服务: skoala/trad-ms/hosted/servicelist/connect-sentinel.md
+                      - 查看微服务详情: skoala/trad-ms/hosted/servicelist/check-details.md
+                      - 规则介绍: skoala/trad-ms/hosted/servicelist/governance-policy.md
+                      - 流控规则: skoala/trad-ms/hosted/servicelist/flow-control.md
+                  - 配置管理: 
+                      - skoala/trad-ms/hosted/configcenter.md
+                  - 监控:
+                      - 微服务监控: skoala/trad-ms/hosted/monitor/microservices.md
+                      - 组件监控: skoala/trad-ms/hosted/monitor/components.md
+                      - 链路追踪: skoala/trad-ms/hosted/monitor/traces.md
+                  - 资源信息:
+                      - skoala/trad-ms/hosted/resource-info.md
+                  - 治理能力:
+                      - 介绍: skoala/trad-ms/hosted/plugins/plugin-center.md
+                      - 启用 Sentinel 治理: skoala/trad-ms/hosted/plugins/sentinel.md
+                      - 启用 Mesh 治理: skoala/trad-ms/hosted/plugins/mesh.md
+              - 接入注册中心:
+                  - 接入注册中心: skoala/trad-ms/integrated/integrate-registry.md
+                  - 更新注册中心: skoala/trad-ms/integrated/update-registry.md
+                  - 移除注册中心: skoala/trad-ms/integrated/remove-registry.md
+                  - 微服务管理: skoala/trad-ms/integrated/manage-service.md
+                  - 链路追踪: skoala/trad-ms/integrated/trace.md
+          - 插件中心:
+              - 介绍: skoala/plugins/intro.md
           - 最佳实践:
               - 示例应用体验微服务治理: skoala/best-practice/use-skoala-01.md
               - 微服务网关 JWT 功能: skoala/best-practice/jwt.md

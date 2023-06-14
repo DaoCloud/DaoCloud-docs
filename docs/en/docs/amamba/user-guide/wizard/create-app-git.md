@@ -29,7 +29,7 @@ Workbench supports building applications in four ways: Git repository, [Jar pack
     - Name: Fill in the name of the application.
     - Resource type: supports stateless load and stateful load. This demo chooses stateless load.
     - Enter or select an application group.
-    - Deployment location: Select which namespace under which cluster to deploy the application to. If you want to access microservices, please make sure that you have [created a registry](../../../skoala/registry/managed/registry-lcm/create-registry.md) under the current workspace.
+    - Deployment location: Select which namespace under which cluster to deploy the application to. If you want to access microservices, please make sure that you have [created a registry](../../../skoala/trad-ms/hosted/create-registry.md) under the current workspace.
     - Number of instances: Fill in the number of instances and the number of Pods.
 
         <!--![]()screenshots-->
@@ -75,11 +75,11 @@ Workbench supports building applications in four ways: Git repository, [Jar pack
 5. On the `Advanced Configuration` page, click `Enable Microservice Access`, refer to the following instructions to configure parameters, and then click `OK`.
 
     - Select framework: support `Spring Cloud`, `Dubbo`, here choose `Spring Cloud`.
-    - Registry instance: currently only supports the selection of [managed Nacos registry instance in the microservice engine](../../../skoala/registry/managed/registry-lcm/create-registry.md).
+    - Registry instance: currently only supports the selection of [managed Nacos registry instance in the microservice engine](../../../skoala/trad-ms/hosted/create-registry.md).
     - Registry namespace: nacos namespace for microservice applications
     - Registry service grouping: service grouping of microservice applications
     - Username/Password: If the registry instance is authenticated, you need to fill in the username and password
-    - Enable microservice governance: The selected registry instance should [enable the Sentinel or Mesh governance plugin](../../../skoala/registry/managed/plugins/plugin-center.md)
+    - Enable microservice governance: The selected registry instance should [enable the Sentinel or Mesh governance plugin](../../../skoala/trad-ms/hosted/plugins/plugin-center.md)
     - Monitoring: Select Enable, and you can view service-related monitoring information after enabling it
     - Log: enabled by default
     - Link tracking: After opening, you can view the link tracking information of the service, currently only supports Java language

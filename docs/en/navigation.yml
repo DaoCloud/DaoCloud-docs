@@ -372,68 +372,76 @@ nav:
               - Online Upgrade: skoala/quickstart/online-upgrade.md
               - Offline Upgrade: skoala/quickstart/offline-upgrade.md
               - Select Workspace: skoala/quickstart/select-workspace.md
-          - Microservice Gateway:
+          - Cloud Native Gateway:
               - Gateway Management:
-                  - Create Gateway: skoala/ms-gateway/gateway/create-gateway.md
-                  - Check Gateway: skoala/ms-gateway/gateway/check-details.md
-                  - Update Gateway: skoala/ms-gateway/gateway/update-gateway.md
-                  - Delete Gateway: skoala/ms-gateway/gateway/delete-gateway.md
+                  - Create Gateway: skoala/gateway/create-gateway.md
+                  - Check Gateway: skoala/gateway/check-details.md
+                  - Update Gateway: skoala/gateway/update-gateway.md
+                  - Delete Gateway: skoala/gateway/delete-gateway.md
               - API Management:
-                  - Add API: skoala/ms-gateway/api/add-api.md
-                  - Update API: skoala/ms-gateway/api/update-api.md
-                  - API Policies: skoala/ms-gateway/api/api-policy.md
-                  - Delete API: skoala/ms-gateway/api/delete-api.md
+                  - Add API: skoala/gateway/api/add-api.md
+                  - Update API: skoala/gateway/api/update-api.md
+                  - API Policies: skoala/gateway/api/api-policy.md
+                  - Delete API: skoala/gateway/api/delete-api.md
               - Service Management:
-                  - Manual Add: skoala/ms-gateway/service/manual-integrate.md
-                  - Auto Add: skoala/ms-gateway/service/auto-manage.md
-              - Monitoring & Alarming: skoala/ms-gateway/alert.md
+                  - Manual Add: skoala/gateway/service/manual-integrate.md
+                  - Auto Add: skoala/gateway/service/auto-manage.md
+              - Monitoring & Alarming: skoala/gateway/alert.md
               - Logs:
-                  - Request Logs: skoala/ms-gateway/logs/reqlog.md
-                  - Instance Logs: skoala/ms-gateway/logs/inslog.md
+                  - Request Logs: skoala/gateway/logs/reqlog.md
+                  - Instance Logs: skoala/gateway/logs/inslog.md
               - Domain Management:
-                  - Add Domain: skoala/ms-gateway/domain/add-domain.md
-                  - Update Domain: skoala/ms-gateway/domain/update-domain.md
-                  - Domain Policies: skoala/ms-gateway/domain/domain-policy.md
-                  - Delete Domain: skoala/ms-gateway/domain/delete-domain.md
-          - Microservice Governance:
-              - Managed Registry:
-                  - Registry Management:
-                      - Create Registry: skoala/registry/managed/registry-lcm/create-registry.md
-                      - Update Registry: skoala/registry/managed/registry-lcm/update-registry.md
-                      - Check Registry: skoala/registry/managed/registry-lcm/check-registry.md
-                      - Delete Registry: skoala/registry/managed/registry-lcm/delete-registry.md
-                  - Microservice Namespace: skoala/registry/managed/namespace.md
+                  - Add Domain: skoala/gateway/domain/add-domain.md
+                  - Update Domain: skoala/gateway/domain/update-domain.md
+                  - Domain Policies: skoala/gateway/domain/domain-policy.md
+                  - Delete Domain: skoala/gateway/domain/delete-domain.md
+          - Cloud Native Microservices:
+              - Import/Remove Service: skoala/cloud-ms/service.md
+              - Traffic Control: skoala/cloud-ms/traffic-control.md
+          - Traditional Microservices:
+              - Hostsed Nacos:
+                  - Create Naocs: skoala/trad-ms/hosted/create-registry.md
+                  - Update Nacos: skoala/trad-ms/hosted/update-registry.md
+                  - Check Nacos: skoala/trad-ms/hosted/check-registry.md
+                  - Delete Nacos: skoala/trad-ms/hosted/delete-registry.md
+                  - Microservice Namespace: skoala/trad-ms/hosted/namespace.md
                   - Microservice List:
-                      - Intro: skoala/registry/managed/servicelist/intro.md
-                      - Microservice Details: skoala/registry/managed/servicelist/check-details.md
-                  - Microservice Governance:
-                      - Sentinel Specification: skoala/registry/managed/governance/connect-sentinel.md
-                      - Rules: skoala/registry/managed/governance/governance-policy.md
-                      - Flow Control: skoala/registry/managed/governance/flow-control.md
-                  - Microservice Configuration List: skoala/registry/managed/configcenter.md
+                      - Intro: skoala/trad-ms/hosted/servicelist/intro.md
+                      - Add Microservice: skoala/trad-ms/hosted/servicelist/connect-sentinel.md
+                      - Check Microservice: skoala/trad-ms/hosted/servicelist/check-details.md
+                      - Traffic Rules: skoala/trad-ms/hosted/servicelist/governance-policy.md
+                      - Flow Control: skoala/trad-ms/hosted/servicelist/flow-control.md
+                  - Configurations: 
+                      - skoala/trad-ms/hosted/configcenter.md
                   - Monitoring:
-                      - Microservices: skoala/registry/managed/monitor/microservices.md
-                      - Components: skoala/registry/managed/monitor/components.md
-                      - Traces: skoala/registry/managed/monitor/traces.md
-                  - Plugin Center:
-                      - skoala/registry/managed/plugins/plugin-center.md
-                      - Sentinel Governance: skoala/registry/managed/plugins/sentinel.md
-                      - Mesh Governance: skoala/registry/managed/plugins/mesh.md
+                      - Monitor Microservices: skoala/trad-ms/hosted/monitor/microservices.md
+                      - Monitor Components: skoala/trad-ms/hosted/monitor/components.md
+                      - Tracing: skoala/trad-ms/hosted/monitor/traces.md
+                  - Resoruce Info:
+                      - skoala/trad-ms/hosted/resource-info.md
+                  - Governance Plugin:
+                      - Intro: skoala/trad-ms/hosted/plugins/plugin-center.md
+                      - Enable Sentinel: skoala/trad-ms/hosted/plugins/sentinel.md
+                      - Enable Mesh: skoala/trad-ms/hosted/plugins/mesh.md
               - Integrated Registry:
-                  - Integrate Registry: skoala/registry/integrated/integrate-registry.md
-                  - Update Registry: skoala/registry/integrated/update-registry.md
-                  - Remove Registry: skoala/registry/integrated/remove-registry.md
-                  - Microservice Management: skoala/registry/integrated/manage-service.md
-                  - Microservice Governance: skoala/registry/integrated/traffic-control.md
-                  - Traces: skoala/registry/integrated/trace.md
+                  - Integrate Registry: skoala/trad-ms/integrated/integrate-registry.md
+                  - Update Registry: skoala/trad-ms/integrated/update-registry.md
+                  - Remove Registry: skoala/trad-ms/integrated/remove-registry.md
+                  - Microservice Management: skoala/trad-ms/integrated/manage-service.md
+                  - Traces: skoala/trad-ms/integrated/trace.md
           - Best Practices:
               - Complete Process of Microservice Governance: skoala/best-practice/use-skoala-01.md
               - Microservice Gateway JWT: skoala/best-practice/jwt.md
               - Microservice Gateway Authentication Server: skoala/best-practice/auth-server.md
+          - Plugins:
+              - Intro: skoala/plugins/intro.md          
+          - Performance Tests:
+              - Gateway RPS: skoala/tests/gateway-stress-test.md
           - General Reference:
               - Microservice: reference/basic-knowledge/microservice.md
               - Registry: reference/basic-knowledge/registry.md
               - Cloud Native Gateway: reference/basic-knowledge/gateway.md
+
       - Service Mesh:
           - Intro:
               - What is service mesh: mspider/intro/what.md
