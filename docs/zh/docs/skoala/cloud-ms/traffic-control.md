@@ -13,7 +13,5 @@
     ![](../images/cloudms-traffic02.png)
 
 3. 根据需要配置流量策略，最后点击`确定`即可
-  
-    ![](../images/cloudms-traffic03.png)
 
 <!--关于各个策略的具体说明，待后续补充-->
