@@ -837,9 +837,11 @@ nav:
       - 社区索引: community/index.md
       - cloudtty: community/cloudtty.md
       - Clusterpedia: community/clusterpedia.md
+      - egressgateway: community/egress-gw.md
       - FedState: community/fedstate.md
       - Ferry: community/ferry.md
       - HwameiStor: community/hwameistor.md
+      - kdoctor: community/kdoctor.md
       - KLTS: community/klts.md
       - Kubean: community/kubean.md
       - KWOK: community/kwok.md
