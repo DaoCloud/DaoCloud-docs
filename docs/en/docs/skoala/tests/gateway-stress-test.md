@@ -49,7 +49,7 @@ Before starting the test, it is necessary to deploy DCE 5.0, download and instal
       def test(self):
         header = {"Host": "external.nginx"}
         self.client.get("/", headers=header)
-   ```
+    ```
 
 ## Test Nginx Throughput: Three Replicas, No Resource Limitations
 
@@ -90,18 +90,18 @@ Before starting the test, it is necessary to deploy DCE 5.0, download and instal
 
 - Concurrent Users = 4
 
-    ![](../../../../zh/docs/skoala/images/test-gateway01.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway02.png)
+    ![](../images/test-gateway01.png)
+    ![](../images/test-gateway02.png)
 
 - Concurrent Users = 8
 
-    ![](../../../../zh/docs/skoala/images/test-gateway03.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway04.png)
+    ![](../images/test-gateway03.png)
+    ![](../images/test-gateway04.png)
 
 - Concurrent Users = 12
-    
-    ![](../../../../zh/docs/skoala/images/test-gateway05.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway06.png)
+ 
+    ![](../images/test-gateway05.png)
+    ![](../images/test-gateway06.png)
 
 ## Investigating the Impact of Contour Resource Configuration on Envoy Performance
 
@@ -148,18 +148,18 @@ To ensure normal resource load on the stress-testing machine, the Locust users a
 
 - contour: 1 core 1 G
 
-    ![](../../../../zh/docs/skoala/images/test-gateway07.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway08.png)
+    ![](../images/test-gateway07.png)
+    ![](../images/test-gateway08.png)
 
 - contour: 2 core 1 G
 
-    ![](../../../../zh/docs/skoala/images/test-gateway09.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway10.png)
+    ![](../images/test-gateway09.png)
+    ![](../images/test-gateway10.png)
 
 - contour: 3 core 2 G
     
-    ![](../../../../zh/docs/skoala/images/test-gateway11.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway12.png)
+    ![](../images/test-gateway11.png)
+    ![](../images/test-gateway12.png)
 
 ## Investigating the Impact of Envoy Resource Configuration on Throughput
 
@@ -267,75 +267,75 @@ Envoy is fixed to 1 replica, Contour is configured with 1 core and 1 G, and the 
 
 - Concurrent Users = 4
 
-    ![](../../../../zh/docs/skoala/images/test-gateway13.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway14.png)
+    ![](../images/test-gateway13.png)
+    ![](../images/test-gateway14.png)
 
 - Concurrent Users = 8
 
-    ![](../../../../zh/docs/skoala/images/test-gateway14.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway16.png)
+    ![](../images/test-gateway15.png)
+    ![](../images/test-gateway16.png)
 
 - Concurrent Users = 16
 
-    ![](../../../../zh/docs/skoala/images/test-gateway17.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway18.png)
+    ![](../images/test-gateway17.png)
+    ![](../images/test-gateway18.png)
 
 #### Envoy 2 core 1 G
 
 - Concurrent Users = 4
 
-    ![](../../../../zh/docs/skoala/images/test-gateway19.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway20.png)
+    ![](../images/test-gateway19.png)
+    ![](../images/test-gateway20.png)
 
 - Concurrent Users = 8
 
-    ![](../../../../zh/docs/skoala/images/test-gateway21.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway22.png)
+    ![](../images/test-gateway21.png)
+    ![](../images/test-gateway22.png)
 
 #### Envoy 3 core 1 G
 
 - Concurrent Users = 8
 
-    ![](../../../../zh/docs/skoala/images/test-gateway23.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway24.png)
+    ![](../images/test-gateway23.png)
+    ![](../images/test-gateway24.png)
 
 - Concurrent Users = 12
-
-    ![](../../../../zh/docs/skoala/images/test-gateway25.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway26.png)
+    
+    ![](../images/test-gateway25.png)
+    ![](../images/test-gateway26.png)
 
 #### Envoy 4 core 2 G
 
 - Concurrent Users = 8
 
-    ![](../../../../zh/docs/skoala/images/test-gateway27.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway28.png)
+    ![](../images/test-gateway27.png)
+    ![](../images/test-gateway28.png)
 
 - Concurrent Users = 12
 
-    ![](../../../../zh/docs/skoala/images/test-gateway29.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway30.png)
+    ![](../images/test-gateway29.png)
+    ![](../images/test-gateway30.png)
 
 #### Envoy 5 core 2 G
 
 - Concurrent Users = 8
 
-    ![](../../../../zh/docs/skoala/images/test-gateway31.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway32.png)
+    ![](../images/test-gateway31.png)
+    ![](../images/test-gateway32.png)
 
 - Concurrent Users = 12
 
-    ![](../../../../zh/docs/skoala/images/test-gateway33.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway34.png)
+    ![](../images/test-gateway33.png)
+    ![](../images/test-gateway34.png)
 
 #### Envoy 6 core 2 G
 
 - Concurrent Users = 12
 
-    ![](../../../../zh/docs/skoala/images/test-gateway35.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway36.png)
+    ![](../images/test-gateway35.png)
+    ![](../images/test-gateway36.png)
 
 - Concurrent Users = 16
 
-    ![](../../../../zh/docs/skoala/images/test-gateway37.png)
-    ![](../../../../zh/docs/skoala/images/test-gateway38.png)
+    ![](../images/test-gateway37.png)
+    ![](../images/test-gateway38.png)
