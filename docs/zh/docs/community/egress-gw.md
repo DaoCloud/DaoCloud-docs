@@ -1,7 +1,5 @@
 # egressgateway
 
-## 背景
-
 ![background](./images/egress01.png)
 
 从 2021 年开始，我们收到了以下反馈。
@@ -53,3 +51,5 @@
 
 EgressGateway 在 Apache 许可证第 2 版下获得许可。有关完整的许可证文本，
 请参见 [LICENSE](https://github.com/spidernet-io/spiderpool/blob/main/LICENSE)。
+
+[了解 egressgateway 社区](https://github.com/spidernet-io/egressgateway){ .md-button }

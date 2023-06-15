@@ -23,3 +23,5 @@ kdoctor 是一个 kubernetes 数据面测试项目，来源于生产运维过程
 - 生产环境的部署检查、日常运维等场景，能避免了人工巡检的工作负担。
 
 - 能应用 E2E 测试、bug 复现、混沌测试等，减少编程工作。
+
+[了解 kdoctor 社区](https://github.com/kdoctor-io/kdoctor){ .md-button }

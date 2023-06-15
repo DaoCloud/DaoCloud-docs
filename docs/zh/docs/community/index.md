@@ -19,7 +19,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./cloudtty.md)
 
--   :simple-wikipedia:{ .lg .middle } __Clusterpedia__ :simple-cncf: 位列 CNCF Sandbox 和 Landscape
+-   :simple-wikipedia:{ .lg .middle } __Clusterpedia__ :simple-cncf: 已入选 CNCF Sandbox 和 Landscape
 
     ---
 
@@ -59,7 +59,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./ferry.md)
 
--   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: 已入选 CNCF 全景图
+-   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: 已入选 CNCF Landscape
 
     ---
 
@@ -77,7 +77,7 @@ hide:
 
     通过压力注入的方式，实现对集群功能、性能的主动式巡检
 
-    [:octicons-arrow-right-24: 了解更多](./klts.md)
+    [:octicons-arrow-right-24: 了解更多](./kdoctor.md)
 
 -   :simple-kubernetes:{ .lg .middle } __KLTS__
 
@@ -91,7 +91,7 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :nine:{ .lg .middle } __Kubean__
+-   :peanuts:{ .lg .middle } __Kubean__
 
     ---
 
@@ -99,7 +99,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./kubean.md)
 
--   :ten:{ .lg .middle } __KWOK__ :simple-cncf: K8s-sigs 项目之一
+-   :material-forest:{ .lg .middle } __KWOK__ :simple-cncf: K8s-sigs 项目之一
 
     ---
 
@@ -111,7 +111,7 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :eleven:{ .lg .middle } __Merbridge__ :simple-cncf: 位列 CNCF Sandbox 和 Landscape
+-   :fontawesome-solid-bridge:{ .lg .middle } __Merbridge__ :simple-cncf: 已入选 CNCF Sandbox 和 Landscape
 
     ---
 
@@ -119,7 +119,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./merbridge.md)
 
--   :twelve:{ .lg .middle } __Spiderpool__  :simple-cncf: 位列 CNCF Landscape
+-   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: 已入选 CNCF Landscape
 
     ---
 
@@ -131,7 +131,7 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :thirteen:{ .lg .middle } __公开镜像加速__
+-   :speedboat:{ .lg .middle } __公开镜像加速__
 
     ---
 

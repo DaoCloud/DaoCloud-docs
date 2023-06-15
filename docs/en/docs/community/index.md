@@ -4,43 +4,137 @@
 
     DaoCloud ecosystem is growing up!
 
-=== "Clusterpedia"
+<div class="grid cards" markdown>
 
-One-stop encyclopedia of Kubernetes multicluster resources has been listed in CNCf landscape and selected for CNCF sandbox incubation.
-**China Mobile** and more enterprises have deployed Clusterpedia to their production environment. [:octicons-arrow-right-24: Learn more](clusterpedia.md)
+-   :fontawesome-solid-tty:{ .lg .middle } __cloudtty__
 
-=== "cloutty"
+    ---
 
-So far, this is the first open-source web console developed for Kubernetes community, easy to use. 👍 [:octicons-arrow-right-24: Learn more](cloudtty.md)
+    So far, the community's first open-source Kubernetes web-based console is very easy to use 👍
 
-=== "Ferry"
+    [:octicons-arrow-right-24: Learn more](./cloudtty.md)
 
-Ferry is a Kubernetes multicluster communication component that eliminates communication differences between clusters as if they were in a single cluster,
-regardless of their network environments. [:octicons-arrow-right-24: Learn more](ferry.md)
+-   :simple-wikipedia:{ .lg .middle } __Clusterpedia__ :simple-cncf: Listed in CNCF Sandbox and Landscape
 
-=== "HwameiStor"
+    ---
 
-Hwameistor is an HA local storage system for cloud-native stateful workloads. [:octicons-arrow-right-24: Learn more](hwameistor.md)
+    Kubernetes multi-cluster resource one-stop encyclopedia, deployed in production by **China Mobile** and others
 
-=== "KLTS"
+    [:octicons-arrow-right-24: Learn more](./clusterpedia.md)
 
-KLTS offers production distributions for earlier versions of Kubernetes, which are fully open source distributions that include complete Kubernetes environment and dependencies. [:octicons-arrow-right-24: Learn more](klts.md)
+</div>
 
-=== "Kubean"
+<div class="grid cards" markdown>
 
-Kubean is a cluster lifecycle management tool based on kubespray. [:octicons-arrow-right-24: Learn more](kubean.md)
+-   :simple-amazonapigateway:{ .lg .middle } __egressgateway__
 
-=== "kwok"
+    ---
 
-Simulate thousands of fake kubelets, on a laptop with minimum resource footprint. [:octicons-arrow-right-24: Learn more](kwok.md)
+    A gateway that provides network egress capability for Kubernetes clusters.
 
-=== "Merbridge"
+    [:octicons-arrow-right-24: Learn more](./egress-gw.md)
 
-Merbridge replaces iptables rules with eBPF to intercept traffic. It also combines msg_redirect to reduce latency with a shortened datapath between sidecars and services. [:octicons-arrow-right-24: Learn more](merbridge.md)
+-   :fontawesome-brands-trade-federation:{ .lg .middle } __FedState__
 
-=== "Spiderpool"
+    ---
 
-The Spiderpool is an IP Address Management (IPAM) CNI plugin that assigns IP addresses for kubernetes clusters. [:octicons-arrow-right-24: Learn more](spiderpool.md)
+    Empowering automatic operation and maintenance under multi-cloud, multi-cluster, and multi-data center scenarios.
+
+    [:octicons-arrow-right-24: Learn more](./fedstate.md)
+
+</div>
+
+<div class="grid cards" markdown>
+
+-   :material-ferry:{ .lg .middle } __Ferry__
+
+    ---
+
+    Kubernetes multi-cluster communication component that eliminates multi-cluster complexity and allows you to manage it like a single cluster.
+
+    [:octicons-arrow-right-24: Learn more](./ferry.md)
+
+-   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: Listed in CNCF Landscape
+
+    ---
+
+    Highly available local storage solution that is faster, stronger, and more reliable.
+
+    [:octicons-arrow-right-24: Learn more](./hwameistor.md)
+
+</div>
+
+<div class="grid cards" markdown>
+
+-   :material-doctor:{ .lg .middle } __kdoctor__
+
+    ---
+
+    Actively inspect the function and performance of clusters through pressure injection.
+
+    [:octicons-arrow-right-24: Learn more](./kdoctor.md)
+
+-   :simple-kubernetes:{ .lg .middle } __KLTS__
+
+    ---
+
+    Continuous maintenance of more than 10 versions such as k8s (latest version - 0.03).
+
+    [:octicons-arrow-right-24: Learn more](./klts.md)
+
+</div>
+
+<div class="grid cards" markdown>
+
+-   :peanuts:{ .lg .middle } __Kubean__
+
+    ---
+
+    A full life cycle management tool for containerized clusters that is applying for Landscape.
+
+    [:octicons-arrow-right-24: Learn more](./kubean.md)
+
+-   :material-forest:{ .lg .middle } __KWOK__ :simple-cncf: One of the K8s-sigs projects
+
+    ---
+
+    Simulating thousands of kubelets with minimal resources has been used by OpenAI, Apple, IBM, Alibaba Cloud, and others for testing environments.
+
+    [:octicons-arrow-right-24: Learn more](./kwok.md)
+
+</div>
+
+<div class="grid cards" markdown>
+
+-   :fontawesome-solid-bridge:{ .lg .middle } __Merbridge__ :simple-cncf: Listed in CNCF Sandbox and Landscape
+
+    ---
+
+    Use eBPF to accelerate your service mesh, just like using a wormhole to shuttle in the network world.
+
+    [:octicons-arrow-right-24: Learn more](./merbridge.md)
+
+-   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: Listed in CNCF Landscape
+
+    ---
+
+    Cloud native network IPAM automation software, recommended as a plug-in for Underlay CNI.
+
+    [:octicons-arrow-right-24: Learn more](./spiderpool.md)
+
+</div>
+
+<div class="grid cards" markdown>
+
+-   :speedboat:{ .lg .middle } __Public Mirror Acceleration__
+
+    ---
+
+    Many mirrors are overseas, such as gcr. Downloading in China is very slow and requires acceleration.
+
+    [:octicons-arrow-right-24: Learn more](./mirror.md)
+
+</div>
 
 !!! success
 
@@ -53,8 +147,9 @@ The Spiderpool is an IP Address Management (IPAM) CNI plugin that assigns IP add
 <p align="center">
 <img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
 <br/><br/>
-Clusterpedia and Merbridge have been selected and listed in the <a href="https://landscape.cncf.io">CNCF Landscape</a> and <a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a>.
+Clusterpedia, Merbridge, and HwameiStor have been selected for the <a href="https://landscape.cncf.io">CNCF Cloud Native Landscape</a>, and Clusterpedia has entered <a href="https://www.cncf.io/projects/clusterpedia/">CNCF Sandbox incubation</a>.
 </p>
 
-[Free Trial Now](../dce/license0.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Free Trial](../dce/license0.md){ .md-button .md-button--primary }

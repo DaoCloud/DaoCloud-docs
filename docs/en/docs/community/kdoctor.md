@@ -30,3 +30,5 @@ kdoctor is a practical solution based on production operation and maintenance ex
 with kdoctor, you can perform active inspections to ensure proper cluster performance and
 functionality. It is suitable for various scenarios, including creating new clusters,
 daily operations and maintenance, E2E testing, bug reproduction, and chaos testing.
+
+[kdoctor on GitHub](https://github.com/kdoctor-io/kdoctor){ .md-button }

@@ -1,7 +1,5 @@
 # egressgateway
 
-## Background
-
 ![background](./images/egress01.png)
 
 Starting with 2021, we received some feedback as follows.
@@ -53,3 +51,5 @@ Refer to [develop](https://github.com/spidernet-io/egressgateway/blob/main/docs/
 
 EgressGateway is licensed under the Apache License, Version 2.0.
 See [LICENSE](https://github.com/spidernet-io/spiderpool/blob/main/LICENSE) for the full license text.
+
+[egressgateway on GitHub](https://github.com/spidernet-io/egressgateway){ .md-button }
