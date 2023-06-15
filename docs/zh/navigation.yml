@@ -240,6 +240,7 @@ nav:
               - insight/user-guide/alert-center/index.md
               - 告警策略: insight/user-guide/alert-center/alert-policy.md
               - 通知配置: insight/user-guide/alert-center/message.md
+              - 配置通知服务器: insight/user-guide/alert-center/sms-provider.md
               - 消息模板: insight/user-guide/alert-center/msg-template.md
               - 告警静默: insight/user-guide/alert-center/silent.md
           - 数据采集:
