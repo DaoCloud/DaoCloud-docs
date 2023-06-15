@@ -147,7 +147,7 @@
 <p align="center">
 <img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
 <br/><br/>
-Clusterpedia, Merbridge, and HwameiStor have been selected for the <a href="https://landscape.cncf.io">CNCF Cloud Native Landscape</a>, and Clusterpedia has entered <a href="https://www.cncf.io/projects/clusterpedia/">CNCF Sandbox incubation</a>.
+[Clusterpedia](./clusterpedia.md), [Merbridge](./merbridge.md), [HwameiStor](./hwameistor.md), and [Spiderpool](./spiderpool.md) have been selected for the <a href="https://landscape.cncf.io">CNCF Cloud Native Landscape</a>. [Clusterpedia](./clusterpedia.md) and [Merbridge](./merbridge.md) has been incubated in <a href="https://www.cncf.io/projects/clusterpedia/">CNCF Sandbox</a>.
 </p>
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
