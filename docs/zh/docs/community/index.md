@@ -11,7 +11,7 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :one:{ .lg .middle } __cloudtty__
+-   :fontawesome-solid-tty:{ .lg .middle } __cloudtty__
 
     ---
 
@@ -19,7 +19,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./cloudtty.md)
 
--   :two:{ .lg .middle } __Clusterpedia__ :simple-cncf: 位列 CNCF Sandbox 和 Landscape
+-   :simple-wikipedia:{ .lg .middle } __Clusterpedia__ :simple-cncf: 位列 CNCF Sandbox 和 Landscape
 
     ---
 
@@ -31,7 +31,27 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :three:{ .lg .middle } __Ferry__
+-   :simple-amazonapigateway:{ .lg .middle } __egressgateway__
+
+    ---
+
+    为 Kubernetes 集群提供网络 Egress 功能的一种网关
+
+    [:octicons-arrow-right-24: 了解更多](./egress-gw.md)
+
+-   :fontawesome-brands-trade-federation:{ .lg .middle } __FedState__
+
+    ---
+
+    赋能多云、多集群、多数据中心场景下的自动运维
+
+    [:octicons-arrow-right-24: 了解更多](./fedstate.md)
+
+</div>
+
+<div class="grid cards" markdown>
+
+-   :material-ferry:{ .lg .middle } __Ferry__
 
     ---
 
@@ -39,11 +59,11 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./ferry.md)
 
--   :four:{ .lg .middle } __HwameiStor__ :simple-cncf: in Landscape
+-   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: 已入选 CNCF 全景图
 
     ---
 
-    高可用的本地存储方案，更快、更强、更可靠，已入选 CNCF 全景图，正在申请 Sandbox
+    高可用的本地存储方案，更快、更强、更可靠，已入选 CNCF 全景图
 
     [:octicons-arrow-right-24: 了解更多](./hwameistor.md)
 
@@ -51,7 +71,15 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :five:{ .lg .middle } __KLTS__
+-   :material-doctor:{ .lg .middle } __kdoctor__
+
+    ---
+
+    通过压力注入的方式，实现对集群功能、性能的主动式巡检
+
+    [:octicons-arrow-right-24: 了解更多](./klts.md)
+
+-   :simple-kubernetes:{ .lg .middle } __KLTS__
 
     ---
 
@@ -59,7 +87,11 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./klts.md)
 
--   :six:{ .lg .middle } __Kubean__
+</div>
+
+<div class="grid cards" markdown>
+
+-   :nine:{ .lg .middle } __Kubean__
 
     ---
 
@@ -67,19 +99,19 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./kubean.md)
 
+-   :ten:{ .lg .middle } __KWOK__ :simple-cncf: K8s-sigs 项目之一
+
+    ---
+
+    以最小资源模拟成千上万的 kubelet，已被 OpenAI、苹果、IBM、阿里云等用于测试环境
+
+    [:octicons-arrow-right-24: 了解更多](./kwok.md)
+
 </div>
 
 <div class="grid cards" markdown>
 
--   :seven:{ .lg .middle } __KWOK__ :simple-cncf: one of K8s-sigs projects
-
-    ---
-
-    用一台笔记本以最小资源模拟成千上万的 kubelet
-
-    [:octicons-arrow-right-24: 了解更多](./kwok.md)
-
--   :eight:{ .lg .middle } __Merbridge__ :simple-cncf: 位列 CNCF Sandbox 和 Landscape
+-   :eleven:{ .lg .middle } __Merbridge__ :simple-cncf: 位列 CNCF Sandbox 和 Landscape
 
     ---
 
@@ -87,11 +119,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./merbridge.md)
 
-</div>
-
-<div class="grid cards" markdown>
-
--   :nine:{ .lg .middle } __Spiderpool__  :simple-cncf: 位列 CNCF Landscape
+-   :twelve:{ .lg .middle } __Spiderpool__  :simple-cncf: 位列 CNCF Landscape
 
     ---
 
@@ -99,7 +127,11 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./spiderpool.md)
 
--   :keycap_ten:{ .lg .middle } __公开镜像加速__
+</div>
+
+<div class="grid cards" markdown>
+
+-   :thirteen:{ .lg .middle } __公开镜像加速__
 
     ---
 
