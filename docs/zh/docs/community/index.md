@@ -152,7 +152,7 @@ hide:
 <p align="center">
 <img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
 <br/><br/>
-Clusterpedia、Merbridge 和 HwameiStor 已入选 <a href="https://landscape.cncf.io">CNCF 云原生全景图</a>，而 Clusterpedia 已进入 <a href="https://www.cncf.io/projects/clusterpedia/">CNCF 沙箱孵化</a>。
+Clusterpedia、Merbridge、HwameiStor 和 Spiderpool 已入选 <a href="https://landscape.cncf.io">CNCF 云原生全景图</a>，而 Clusterpedia 和 Merbridge 已进入 <a href="https://www.cncf.io/projects/clusterpedia/">CNCF 沙箱孵化</a>。
 </p>
 
 [下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }

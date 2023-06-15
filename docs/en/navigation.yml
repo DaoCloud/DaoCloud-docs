@@ -841,6 +841,7 @@ nav:
       - Kubean: community/kubean.md
       - KWOK: community/kwok.md
       - Merbridge: community/merbridge.md
+      - Mirror Acceleration: community/mirror.md
       - Spiderpool: community/spiderpool.md
   - Cloud Native Institute:
       - Cloud Native News: native/news.md
