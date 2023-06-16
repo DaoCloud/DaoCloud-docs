@@ -372,10 +372,14 @@ DCE 5.0 云原生网关支持支持负载均衡、超时重试、黑白名单等
 
 1. 启用 Cookie 重写策略。
 
-    在没有设置路径改写的情况下，正常访问的是服务的根路径 `/`。但如果将检查路径设置为 `/test`，预期会健康检查失败，导致服务无法访问。
+    重写时需要确保 cookie 名称与已有 cookie 的名称相同，才能确保原先的属性被新设置的属性覆盖。
 
     ![rewrite](../images/br-gw42.png)
 
-2. 修改为正确的检查路径。预期会通过健康检查，服务可以正常访问。
+2. 使用测试专用接口 `/cookie-set` 设置请求时的 cookie 属性，并在响应头中携带实际生效的 cookie 属性。
 
-    ![rewrite](../images/br-gw40.png)
+    网关请求时设置的 cookie 为 `Cookie{name='cookie-name', value='cookie-value', maxAge=PT-1S, domain='test.domain', path='/path', secure=false, httpOnly=false, sameSite='Lax'}`
+
+    而在响应头中 set-cookie 展示了实际生效的 cookie: `cookie-name=cookie-value; Secure; Domain=rewrite.domain; SameSite=Strict; Path=/rewrite/path`
+
+    ![rewrite](../images/br-gw43.png)
