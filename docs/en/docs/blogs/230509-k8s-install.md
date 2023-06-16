@@ -10,7 +10,7 @@ This article takes [KLTS (Kubernetes Long Term Support)](https://klts.io/docs/in
 - CPU 2 cores or more
 - Network connectivity of all hosts in the cluster (public and intranet)
 - No duplicate hostname, MAC address or product_uuid on a single node, see [Ensure uniqueness of MAC address and product_uuid on each node](#mac-product-uuid)
-- Open some ports on the host, see [Check Required Ports](#_3).
+- Open some ports on the host, see [Check Required Ports](#check-required-ports).
 - Disable swap partition. In order for the kubelet to work properly, you must disable swap.
 
 ### Ensure the uniqueness of the MAC address and product_uuid on the node

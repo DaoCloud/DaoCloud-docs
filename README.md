@@ -91,12 +91,12 @@ For more details refer to [DaoCloud Style Guide of Writing](./style.md).
 
 ## References
 
+- [docs.daocloud.io Release v1.0](docs/README.md)
 - [DaoCloud Style Guide of Writing](./style.md)
 - [Contribution Guideline](./CONTRIBUTING.md)
-- [Docsite Release v1.0](docs/README.md)
-- [Download DCE 5.0](./docs/zh/docs/download/dce5.md)
-- [Install DCE 5.0](./docs/zh/docs/install/intro.md)
-- [Free Trial](./docs/zh/docs/dce/license0.md)
+- [Citizen Code of Conduct](./CODE_OF_CONDUCT.md)
+- [Export Word and PDF](./scripts/generate_pdf.md)
+- [Automatic Page Translation](./scripts/README.md); ChatGPT is recommended to use for better translation
 
 ## Thanks to all contributors ❤
 

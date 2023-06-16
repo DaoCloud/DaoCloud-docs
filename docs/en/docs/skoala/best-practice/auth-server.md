@@ -5,7 +5,7 @@ The microservice gateway supports access to a third-party authentication server.
 ## prerequisite
 
 - [Create a cluster](../../kpanda/user-guide/clusters/create-cluster.md) OR [Integrate a cluster](../../kpanda/user-guide/clusters/integrate-cluster.md)
-- [Create a gateway](.. /ms-gateway/gateway/create-gateway.md)
+- [Create a gateway](../gateway/create-gateway.md)
 
 ## Configuring the authentication Server
 

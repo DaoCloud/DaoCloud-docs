@@ -5,7 +5,7 @@
 ## 前提条件
 
 - [创建一个集群](../../kpanda/user-guide/clusters/create-cluster.md)或[接入一个集群](../../kpanda/user-guide/clusters/integrate-cluster.md)
-- [创建一个网关](../gateway/gateway/create-gateway.md)
+- [创建一个网关](../gateway/create-gateway.md)
 - 准备一个 Token 和用于验证 Token 的 JWKS 应用。如果尚且没有 JWKS 应用，可以参考[创建 JWKS 应用](#jwks)创建一个。
 
 ## 操作步骤

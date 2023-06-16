@@ -10,15 +10,15 @@ The image scanner relies on vulnerability data, which is obtained by default fro
 
 1. Database Location:
 
-    ```
+    ```console
     /root/.cache/trivy/db
     ```
 
 2. Help Information:
     
     ```
-    $ trivy -h | grep 'TRIVY_CACHE_DIR'
-       --cache-dir value  cache directory (default: "/root/.cache/trivy") [$TRIVY_CACHE_DIR]
+    trivy -h | grep 'TRIVY_CACHE_DIR'
+      --cache-dir value  cache directory (default: "/root/.cache/trivy") [$TRIVY_CACHE_DIR]
     ```
 
 3. Database Download:
@@ -181,7 +181,7 @@ status:
 
 ## After integrating the registry, it cannot be viewed in the instance list page of the image
 
-Please confirm if the resources integrated into the registry are healthy. If they are unhealthy, they won't appear in the instance list on the image page. For the confirmation method, please refer to [Unhealthy Confirmation Method after Registry Integration](#_2).
+Please confirm if the resources integrated into the registry are healthy. If they are unhealthy, they won't appear in the instance list on the image page. For the confirmation method, please refer to [Unhealthy Confirmation Method after Registry Integration](#registry-integration-status-is-unhealthy).
 
 ## Selecting a Private `Project` Image in the `Kpanda` Image Selector results in a failed image pull prompt during deployment
 
@@ -202,7 +202,7 @@ Please confirm if the resources integrated into the registry are healthy. If the
      kubectl get secret registry-secret -o jsonpath='{.data.*}'| base64 -d | jq
      ```
 
-     ```none
+     ```json
      {
        "auths": {
          "127.0.0.1:5000": {

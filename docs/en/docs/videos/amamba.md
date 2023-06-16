@@ -16,7 +16,7 @@ See the [Namespace Management](../amamba/user-guide/namespace/namespace.md) docu
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-ns.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
 </div>
 
-## Create a microservice app based on a Git repository
+## Create a git-based microservice app
 
 <!--Refer to [Create microservice application based on Git repository]() documentation page. -->
 
@@ -30,6 +30,14 @@ See the [Creating an Argo CD Application](../amamba/user-guide/gitops/create-arg
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gitops.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
+</div>
+
+## Progressive Delivery with Argo Rollout
+
+Refer to the [Creating a Canary Release Task](../amamba/user-guide/release/canary.md) document page.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/canary.mp4" preload="metadata" poster="../images/amamba-canary.png"></video>
 </div>
 
 ## CICD based on Pipeline and GitOps

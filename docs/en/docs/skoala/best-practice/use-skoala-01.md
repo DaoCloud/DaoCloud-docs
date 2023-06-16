@@ -29,7 +29,7 @@ Before deploying applications, the following conditions must be met:
 
     <!--![]()screenshots-->
 
-- [ Create the Nacos registry instance ](../trad-ms/managed/registry-lcm/create-registry.md)
+- [ Create the Nacos registry instance ](../trad-ms/hosted/create-registry.md)
 
     > Notice Record the address of the registry for subsequent application installation.
 
@@ -110,7 +110,7 @@ If you choose to deploy applications based on container images, you can directly
 
 Before using the micro-service governance function, you need to enable the corresponding governance plug-in in the plug-in center under the corresponding registry. The plug-in Center provides two plug-ins, Sentinel governance and Mesh governance, and supports visual configuration through the user interface. After the plug-in is installed, the micro-service governance capability can be expanded to meet service requirements in different cases.
 
-In this practice, traditional micro-service governance is adopted, namely, Sentinel governance plug-in is opened. For details, see [ Enable the Sentinel governance plug-in ](../trad-ms/managed/plugins/sentinel.md).
+In this practice, traditional micro-service governance is adopted, namely, Sentinel governance plug-in is opened. For details, see [ Enable the Sentinel governance plug-in ](../trad-ms/hosted/plugins/sentinel.md).
 
 <!--![]()screenshots-->
 
@@ -136,7 +136,7 @@ After the deployment of a micro-service application is complete, the application
 
 ### Create a cloud native gateway
 
-Create a cloud native gateway. For details, see [Create Gateway](../gateway/gateway/create-gateway.md).
+Create a cloud native gateway. For details, see [Create Gateway](../gateway/create-gateway.md).
 
 !!! note
 

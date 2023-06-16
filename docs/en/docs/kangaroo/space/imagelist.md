@@ -5,13 +5,14 @@ hide:
 
 # Image list
 
-The image list takes the workspace as the dimension and displays all available public images and private images under the tenant.
-There are two main sources of images. The first part is all public images in the container registry integrated or hosted by the platform, as well as private images that are individually assigned to the workspace through the binding of registry space and workspace.
-The second part is all the public or private images obtained by actively associating the workspace with a container registry.
+The image list is displayed based on the workspace, showing all available public and private images under the tenant. There are two main sources of images:
 
-[](images/list01.png)
+1. The first part includes all public images in the integrated or hosted image repository of the platform, as well as private images assigned to the workspace separately through image space and workspace binding.
+2. The second part includes all public or private images obtained by the workspace actively associating with a specific image repository.
 
-**The main function**
+![space](../images/space02.png)
+
+**The main features**
 
 - Rapid application deployment: Both the image list and Workbench take the workspace as the dimension, so when you select the same workspace to deploy the application under Workbench, you can click the `Select Image` button to obtain the image list under the workspace with one click All visible images in, quickly complete the deployment.
 - Fine-grained allocation: After integrating the platform or creating a managed Harbor instance, the administrator can assign different registry spaces to different workspaces by binding the registry space to the workspace to achieve fine-grained allocation.
