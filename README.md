@@ -55,7 +55,7 @@ See [MkDocs documents to install](https://squidfunk.github.io/mkdocs-material/ge
    2. Enable venv: `poetry env use 3.9`
 2. Install dependencies: `poetry install`
 3. Run `poetry run mkdocs serve -f mkdocs.yml` in the repo folder locally
-4. Preview with http://0.0.0.0:8000/
+4. Preview with <http://0.0.0.0:8000/>
 
 ## Naming conventions
 
@@ -63,9 +63,9 @@ This section lists some conventions about a file or folder name for your referen
 
 - **Only contain** English lower cases and hyphens (`-`)
 - **Do not** contain any of these characters like:
-  - Chinese chars
-  - spaces
-  - special chars like `*`, `?`, `\`, `/`, `:`, `#`, `%`, `~`, `{`, `}`
+    - Chinese chars
+    - spaces
+    - special chars like `*`, `?`, `\`, `/`, `:`, `#`, `%`, `~`, `{`, `}`
 - Connect words with a hyphen (`-`)
 - Keep short：up to 5 English words, avoid repetition, use abbreviations
 - Be descriptive: easy to understand and reflect the doc's subject
@@ -103,3 +103,11 @@ For more details refer to [DaoCloud Style Guide of Writing](./style.md).
 <a href="https://github.com/daocloud/daocloud-docs/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=daocloud/daocloud-docs" />
 </a>
+
+## Proudly using Netlify
+
+[![Netlify](https://www.netlify.com/img/global/badges/netlify-color-accent.svg)](https://www.netlify.com)
+
+| Site | Status
+|------|-------
+| daocloud-docs | [![Netlify Status](https://api.netlify.com/api/v1/badges/d193c503-c2f6-4c8f-99ee-db0371f90ceb/deploy-status)](https://app.netlify.com/sites/daocloud-docs/deploys)
