@@ -96,13 +96,14 @@ DaoCloud 是经认证的 K8s 服务提供商。目前 DCE 经 CNCF 认证可以�
 
 ![wechat](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
 
-
 ## 参考链接
 
 - [文档站发布说明 v1.0](docs/README.md)
-- [下载 DCE 5.0](./docs/zh/docs/download/dce5.md)
-- [安装 DCE 5.0](./docs/zh/docs/install/intro.md)
-- [申请永久免费体验](./docs/zh/docs/dce/license0.md)
+- [DaoCloud 文档编写风格](./style.md)
+- [社区贡献指南](./CONTRIBUTING.md)
+- [社区行为准则](./CODE_OF_CONDUCT.md)
+- [导出 Word 和 PDF](./scripts/generate_pdf.md)
+- [页面自动翻译](./scripts/README.md)；推荐使用质量更高的 ChatGPT 翻译
 
 ## 感谢所有贡献者 ❤
 

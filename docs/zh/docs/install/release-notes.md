@@ -2,6 +2,25 @@
 
 本页列出安装器的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023-6-15
+
+### v0.8.0
+
+#### 优化
+
+- **优化** ipavo 组件升级到 v0.9.3
+- **优化** amamba 组件升级到 v0.17.4
+- **优化** hwameistor-operator 组件升级到 v0.10.4
+- **优化** kangaroo 组件升级到 v0.8.2
+- **优化** insight 组件升级到 v0.17.3
+
+#### 修复
+
+- **修复** 修复外接 http 的 Harbor 仓库同步镜像失败的问题
+- **修复** 修复 `clusterConfig.yaml` 配置文件缩进错误的问题
+- **修复** 修复基于外接 yum repo 时渲染 localService 配置错误的问题
+- **修复** 修复对接外部 jfrog charts 仓库的问题
+
 ## 2023-5-31
 
 ### v0.8.0
@@ -28,7 +47,7 @@
 - 离线包解压后的 `offline/sample/clusterConfig.yaml` 文件存在缩进问题，导致离线部署时会变成在线安装，离线安装前如果要使用 `offline/sample/clusterConfig.yaml` 文件的话需要手动修改缩进问题，请查看[集群配置文件](commercial/cluster-config.md)
 - Addon 离线包暂不支持上传到 JFrog 外接服务
 - 容器管理平台离线模式暂无法支持工作集群添加节点
-- 离线场景下使用外置OS Repo仓库时，即 clusterConfig.yaml 中定义 `osRepos.type=external`，部署 DCE5.0 成功后无法在容器管理中创建工作集群，临时解决方案如下：
+- 离线场景下使用外置 OS Repo 仓库时，即 clusterConfig.yaml 中定义 `osRepos.type=external`，部署 DCE5.0 成功后无法在容器管理中创建工作集群，临时解决方案如下：
   global集群安装完成后立即更新global集群 kubean-system 命名空间的configmap kubean-localservice，将 `yumRepos.external` 值中所有双引号改为单引号。如下示例，将文件内的双引号都替换为单引号：
 
     ```yaml

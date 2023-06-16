@@ -273,7 +273,7 @@ envoy 固定为 1 副本，contour 配置为 1 核 1 G，被测试服务 nginx �
 
 - 并发用户数为 8
 
-    ![](../images/test-gateway14.png)
+    ![](../images/test-gateway15.png)
     ![](../images/test-gateway16.png)
 
 - 并发用户数为 16

@@ -30,6 +30,14 @@ See the [Kafka Message Instance Management](../middleware/kafka/user-guide/creat
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kafka.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
 </div>
 
+## Managing MinIO Storage Instances
+
+Refer to the [MinIO Instance Management](../middleware/minio/user-guide/create.md) document page.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/minio.mp4" preload="metadata" poster="../images/mcamel-minio.png"></video>
+</div>
+
 ## Redis cache management
 
 See the [Redis Cache Service](../middleware/redis/intro/what.md) documentation page.
