@@ -101,13 +101,14 @@ spec:
 执行升级命令
 
 ```bash
-./offline/dce5-installer cluster-create -c sample/clusterconfig.yaml -m sample/manifest.yaml --upgrade 4,5,gproduct
+./offline/dce5-installer cluster-create -c ./offline/sample/clusterconfig.yaml -m ./offline/sample/manifest.yaml --upgrade 4,5,gproduct
 ```
 
 升级参数说明：
 
 - `install-app` 或 `cluster-create`，代表安装 DCE 5.0 的安装模式类型。如果最初的环境是通过 `cluster-create` 来安装的，则升级时也采用这个命令
-- `--upgrade` 可以简写为 `-u`，命令后面需要加执行步骤，目前如果升级 GProduct 需要执行 `4,5,gproduct`，后续我们会进行优化。v0.7.0 版本后只需要 `--upgrade gproduct`
+- `--upgrade` 可以简写为 `-u`，目前仅支持升级 DCE5.0 子模块（Gproduct）
+- v0.6.0 升级 GProduct 需要执行 `--upgrade 4,5,gproduct`，v0.7.0 版本后只需要执行 `--upgrade gproduct` 即可
 
 安装成功结果：
 
