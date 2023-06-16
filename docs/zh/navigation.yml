@@ -442,6 +442,7 @@ nav:
               - 微服务网关 JWT 功能: skoala/best-practice/jwt.md
               - 微服务网关接入认证服务器: skoala/best-practice/auth-server.md
               - 网关 API 策略: skoala/best-practice/gateway02.md
+              - 通过网关访问微服务: skoala/best-practice/gateway01.md
           - 性能测试:
               - 云原生网关吞吐量测试: skoala/tests/gateway-stress-test.md
           - 通用参考:
