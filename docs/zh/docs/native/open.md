@@ -285,6 +285,10 @@
 
 ### D
 
+- [Dapr 分布式应用运行时 v1.11.0 发布（CNCF 项目）](https://github.com/dapr/dapr/releases/tag/v1.11.0)
+
+    版本特性：配置构件现在是一个 v1 版稳定的 API；服务调用支持调用非 Dapr 端点；支持在管理 API 中暂停、重启和清除工作流；引入密码学构建块；现在有两个可用的构建版本（包含所有的组件和只包含稳定组件）；Dapr 仪表板不再与控制平面一起安装；提供用于 Windows Server 2022 的容器镜像；应用程序健康检查升级为 stable。
+
 - [Dapr 分布式应用运行时 v1.10.0 发布（CNCF 项目）](https://github.com/dapr/dapr/releases/tag/v1.10.0)
 
     版本特性：新增 Dapr Workflows 用于跨多个应用建立长期运行的进程或数据流、支持批量发布和订阅信息、允许创建可用任何语言编写的可插拔组件 SDK、新增 Multi-App Run 功能改善本地开发、弹性策略升级为 stable、新增服务调用指标。
@@ -528,6 +532,10 @@
 - [k8gb Kubernetes 全局负载均衡器  v0.10.0 发布（CNCF 项目）](https://github.com/k8gb-io/k8gb/releases/tag/v0.10.0)
 
     该版本主要新特性：可以通过环境变量访问 LeaderElection、支持 OpenTelemetry 的 tracing 方案、支持创建 K8GB 指标的Grafana 仪表盘样本、实现一致的轮询负载均衡策略。
+
+- [KapacityStack：由蚂蚁集团开源的云原生智能容量技术](https://mp.weixin.qq.com/s/Wm4wj1OTANLYZaziRH2sDw)
+
+    [KapacityStack](https://github.com/traas-stack/kapacity) 提供了 IHPA（Intelligent Horizontal Pod Autoscaler）能力：支持在不同场景因地制宜地使用不同的算法进行扩缩容；支持在整个弹性过程中精细化地控制工作负载下每一个 Pod 的状态；在执行扩缩容时支持采用自定义灰度分批的变更策略；支持用户自定义的变更期稳定性检查；整个 IHPA 能力就拆分为了管控、决策、执行三大模块，任一模块都可以做替换或扩展。
 
 - [Karmada 多云多集群容器编排平台 v1.6.0 发布（CNCF 项目）](https://github.com/karmada-io/karmada/releases/tag/v1.6.0)
 
@@ -1152,6 +1160,10 @@
 
     [Serverless Devs](https://github.com/Serverless-Devs/Serverless-Devs) 由阿里云开源，致力于为开发者提供强大的工具链体系。借此，开发者不仅可以一键体验多云 Serverless 产品，极速部署 Serverless 项目，还可以在 Serverless 应用全生命周期进行项目管理，与其他工具/平台集成，提升研发运维效能。
 
+- [Skywalking 应用性能监控系统 v9.5.0 发布](https://github.com/apache/skywalking/releases/tag/v9.5.0)
+
+    版本特性：新的拓扑结构布局图、支持对 Elasticsearch 服务器监控、支持持续分析功能、支持收集进程级相关指标、支持跨线程跟踪分析、支持监控 k8s StatefulSet 和 DaemonSet 的总数量指标、支持 Redis 和 RabbitMQ 监控。
+
 - [Skywalking 应用性能监控系统 v9.3.0 发布](https://github.com/apache/skywalking/releases/tag/v9.3.0)
 
     该版本主要新特性：增加指标关联功能、可使用 Sharding MySQL 作为数据库、可视化虚拟缓存和消息队列的性能、使用 Skywalking OpenTelemetry 接收器代替 prometheus-fetcher 插件来抓取 Prometheus 指标。
@@ -1203,6 +1215,10 @@
 - [Tekton 云原生 CI/CD 框架 v0.40.0 发布](https://github.com/tektoncd/pipeline/releases/tag/v0.40.0)
 
     该版本主要新特性：添加任务运行模板、支持在 pipelinerun 中传播 workspace 以简化规范编写、优化 git 远程解析支持、添加集群远程解析器、合并 podtempalte 和 affinity-assistant 的亲和力参数。
+
+- [Telepresence K8s 本地开发工具 v2.14.0 发布（CNCF 项目）](https://www.getambassador.io/docs/telepresence-oss/latest/release-notes#2.14.0)
+
+    版本特性：DNS 配置新增排除字段和映射字段、支持排除环境变量、支持检测和报告客户端计算机上运行的其他 VPN 软件之间的路由冲突。
 
 - [Telepresence K8s 本地开发工具 v2.10.0 发布（CNCF 项目）](https://www.getambassador.io/docs/telepresence/latest/release-notes#2.10.0)
 

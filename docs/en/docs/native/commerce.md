@@ -80,7 +80,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates include: Added soft-delete functionality to Azure Container Registry to restore accidentally deleted artifacts; allows aborting any operation on an AKS cluster or proxy pool; supports multi-instance GPU (MIG); extends Azure Network Policy Manager (NPM) AKS cluster to Windows server 2022; integrated API Server VNET for AKS private cluster.
 
-- [Azure Lightweight Kubernetes Release AKS Edge Essentials Officially Available](https://azure.microsoft.com/en-us/updates/now-available-azure-kubernetes-service- edge-essentials/)
+- [Azure Lightweight Kubernetes Release AKS Edge Essentials Officially Available](https://azure.microsoft.com/en-us/updates/now-available-azure-kubernetes-service-edge-essentials/)
 
     AKS Edge Essentials is a native Kubernetes implementation of AKS that can run on resource-limited edge devices. It can be used to deploy single- and multi-node K3s and K8s clusters that can run Linux and Windows workloads on existing Windows devices.
 
@@ -175,7 +175,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### C
 
-- [Calico Enterprise 3.16, Calico's cloud-native security platform, was released](https://www.tigera.io/blog/whats-new-in-calico-enterprise-3-16-egress-gateway-on-aks- service-graph-optimizations-and-more/)
+- [Calico Enterprise 3.16, Calico's cloud-native security platform, was released](https://www.tigera.io/blog/whats-new-in-calico-enterprise-3-16-egress-gateway-on-aks-service-graph-optimizations-and-more/)
 
     Updates: egress gateway support for Azure and AKS, support for deploying egress gateways via Tigera operators, new Manager UI for enabling and configuring workload-based web application firewalls, extended visualization of Kubernetes workloads to over 100 namespaces, allowing pod egress from different namespaces to different pod egress from different namespaces to different external networks.
 
@@ -198,6 +198,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Chainguard Enforce Cloud Native Supply Chain Security Platform Update](https://www.chainguard.dev/unchained/chainguard-enforce-announces-new-software-signing-capability)
 
      Updates: Provide Sigstore-based keyless signature mode, add an out-of-the-box security policy library, support users to log in through their Gitlab accounts, support CloudEvents, support policies for fine-grained Kubernetes workload objects, and enhance large-scale clusters User stability.
+
+- [Cisco Releases Full Stack Observation Platform FSO](https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2023/m06/cisco-launches-full-stack-observability-platform.html)
+
+    FSO brings together data from applications, networks, infrastructure, security, cloud, sustainability, and business to provide contextual and predictive observability. fso leverages OpenTelemetry to unify the collection of metrics, events, logs, and traces, with a focus on cloud-native application observability. It provides cost observability, offers optimized measures of Kubernetes workload resources, supports the generation of application-based business risk scores, and more.
 
 - [CloudCasa Velero-based Enterprise Kubernetes Data Protection Solution CloudCasa for Velero](https://www.catalogicsoftware.com/press-releases/introducing-cloudcasa-for-velero-to-manage-and-run-kubernetes-backups-at-enterprise-scale/)
 
@@ -570,6 +574,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### S
 
+- [Sealos Cloud Operating System Officially Released](https://mp.weixin.qq.com/s/s9SjjnNNZG_OPh9ciEiXDA)
+
+    Sealos is a cloud operating system distribution with Kubernetes as the kernel. It ditches traditional cloud computing architectures in a cloud-native way, enabling organizations to use the cloud as simply as they would a personal computer. With Sealos, you can run any Kubernetes-compatible application; run a nginx demo on Sealos in 30 seconds that automatically scales; start a variety of databases in 30 seconds, connect directly to databases on your business system intranet; launch your business directly in any programming language you write, and more.
+
 - [ServiceNow Releases Unified Query Language Lightstep UQL, Extending the Visibility of Kubernetes Applications](https://lightstep.com/blog/announcing-the-lightstep-unified-query-language)
 
      Lightstep UQL supports unified "observability as code", simplifies the process of migrating from multiple disparate tools to the unified Lightstep platform through a single query language, and also supports querying and correlating metrics, logs and track.
@@ -709,6 +717,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
     With MCP, users can scale to thousands of CRDs and use control planes to manage all the cloud service resources they need, allowing them to run dozens or even hundreds of control planes to serve different environments, teams, businesses, and clients.
     In addition, MCP integrates seamlessly with Git, providing a console for managing and manipulating control planes and all resources, support for installation in any Kubernetes cluster, and support for managing infrastructure and application resources in a GitOps process.
 
+- [Veeam Releases Kubernetes Data Management Platform Kasten K10 v6.0](https://docs.kasten.io/latest/releasenotes.html#relnotes-6-0-0)
+
+    Updates: provides a way to store reusable metadata transformations; supports sharing licenses across multiple clusters; supports application fingerprinting, where newly deployed stateful applications can be automatically mapped to the correct blueprint; integrates with the Veeam Data Platform, allowing centralized viewing and management in Veeam Backup & Replication V12 Kubernetes backups; support for instant recovery capabilities.
+
 - [Veeam Releases Kasten K10 v5.5, Kubernetes Data Management Platform](https://www.kasten.io/kubernetes/resources/blog/scaling-simplicity-with-kasten-k10-v5.5)
 
      The main new features of this version: the new backup window allows users to choose the time interval for policy operation, supports automatic arrangement of the order of underlying backup work, supports the definition of multiple protection policies to set parameters such as backup frequency and location, provides a visual Helm wizard program, supports IPv6, integrated GitOps pipeline, new storage types, enhanced backup security with OpenSSF and Azure Managed Identity.
@@ -725,6 +737,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Volcano Engine Releases Distributed Cloud Native Platform DCP](https://mp.weixin.qq.com/s/Fz7R8R0keKFEryq8zQKFoA)
 
     [DCP](https://www.volcengine.com/product/dcp) is an enterprise-level cloud native unified management platform for multicloud and multi-Kubernetes cluster use cases, providing unified management and operation and maintenance of multicloud clusters, cross-cluster distribution of applications, unified traffic control and other capabilities, DCP provides unified management and operation and maintenance of Volcano Engine container clusters, third-party clusters and self-built clusters; provides cross-cluster and cross-cloud elastic scheduling capability based on cluster federation and other technologies; provides multicluster service discovery, multicluster unified portal access and other capabilities; enables application data recovery and cross-cluster/cloud application migration based on backup data.
+
+- [VMware Releases API Gateway Spring Cloud Gateway for Kubernetes 2.0](https://mp.weixin.qq.com/s/pDtHlp-a-XR_mw5L0DGMXQ)
+
+    Updates: support for managing shared state between API gateway instances using Redis, Tracing implementation using Zipkin, support for configuring API gateway instances to perform health checks on upstream applications, support for configuring Cross-Origin Resource Sharing (CORS) on a per API route basis using metadata, support for Kubernetes 1.23+.
 
 - [VMware Tanzu Releases Kubernetes DevOps Platform VMware Tanzu Application Platform 1.5](https://tanzu.vmware.com/content/blog/tanzu-application-platform-1-5-ga)
 

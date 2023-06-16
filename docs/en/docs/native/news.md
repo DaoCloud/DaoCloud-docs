@@ -16,6 +16,14 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 ### 2023-06
 
+- [June 30-7.1 Juejin Developer Conference 2023 will be held in Beijing from 6.30-7.1](https://conf.juejin.cn/xdc2023/?utm_source=gzh)
+  
+    This year's Juejin Developer Conference invites industry experts from Byte, Tencent, Intel, Ali, B-site, Little Red Book and other companies to give presentations and share, covering 12 sub-forums including "Big Model and AIGC, Front-end Future, Low-Code Technology Practice and Innovative Applications, Cloud Native Practice, Front-end Engineering Practice, Distributed Cloud and Edge Computing, Observability Exploration, Architecture Design and Evolution, Audio and Video Technology Frontier, R&D Effectiveness and team management, offshore business exploration, and 12 other sub-forums.
+
+- [June 30 2023 Cloud Edge Collaboration Conference will be held in Beijing on 6.30](https://mp.weixin.qq.com/s/pIh5JYfhLW2QA7zn9sPNvQ)
+  
+    The third "Cloud Edge Collaboration Conference" is organized by China Academy of Information and Communication Technology and China Communications Standards Association, with the theme of "Cloud Intelligence, Edge Computing", focusing on the frontier focus of distributed cloud, edge computing, AIoT platform and other fields. The research results such as "Edge Computing Industry Development Research Report (2023)" and "Edge Computing Industry Panorama (2023)" will be released, as well as innovative practices such as "Edge Computing Technology Innovation and Best Practice Pioneer Cases (2023)" and the latest evaluation results of "Trusted Edge Computing".
+
 - [June 30 Notice of the General Office of the Ministry of Industry and Information Technology on Organizing the Selection of Typical Products, Applications and Service Cases of New Generation Information Technology in 2023](https://mp.weixin.qq.com/s/qAfOPlNvcM3OMjeSyPqgbg)
   
     Typical product directory collection of industrial software products; typical application cases collection of industrial Internet platform, block chain, enterprises on the cloud with the cloud and other cases; typical service model collection of school-enterprise talent training services, standardization workstations and other cases. Typical cases include manufacturing enterprises, information technology enterprises, Internet enterprises, research institutes, colleges and universities or their consortia.
@@ -27,6 +35,18 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [Late June: China Academy of Information and Communications Technology (CAICT) officially launches the first batch of evaluation of the first half of the One Cloud, Many Cores series of standards (registration closes in mid-late June)](https://mp.weixin.qq.com/s/XKpcv_QdP2lQX_a-eq_TuA)
   
     The evaluation items of this assessment include: One Cloud Multi-core IaaS/PaaS platform capability assessment, One Cloud Multi-core IaaS/PaaS platform performance assessment, and One Cloud Multi-core cloud management platform capability assessment. The evaluation results will be released at the Trusted Cloud Conference in July.
+
+- [June 27-June 28 Amazon CloudTech China Summit will be held in Shanghai from 6.27-6.28](https://mp.weixin.qq.com/s/sMb7VYFfWQHJ0kGgtOI6CA)
+  
+    The 2023 Amazon CloudTech China Summit features four technology forums: Next Generation Cloud Infrastructure, High Performance Computing, Cloud Native Applications, and Cloud Networking and Cloud Edge. In the Cloud Native Application Forum, it will introduce how Amazon Cloud Technologies provides a secure, reliable and easily scalable experience for large-scale container cluster management, and will detail Amazon Cloud Technologies Serverless, containers and other core cloud native application development services.
+
+- [June 25 Shanghai Industrial Internet Professional Service Provider Recommended Directory Declaration (6.25 Declaration Deadline)](https://mp.weixin.qq.com/s/MYPgcyK0TsfM0YzTqpg6FQ)
+  
+    The declaration work focuses on key industries such as advanced materials, electronic information, biomedicine, energy, fashionable consumer goods, major equipment and automobiles, and supports service providers that provide third-party digital transformation professional services such as cloud network services, logo resolution services, consulting services, industrial data services, system integration services, industrial information security services and industrial software services for the whole country and the Yangtze River Delta region.
+
+- [June 25 Trusted Cloud - Cloud Native Security Hosting Service (MSS) Capability First Assessment Officially Launched (6.25 Registration Deadline)](https://mp.weixin.qq.com/s/xf4R90G_2rf7fPOb7uryyA)
+  
+    Cloud Native Security Hosting Service (MSS) capability assessment includes six basic parts: service operation capability, platform capability, service assurance capability, cloud data access capability, specification requirements, and personnel capability, and two optional parts: environment adaptation capability and local access capability, which provide a comprehensive assessment of cloud native security hosting service from multiple dimensions such as service security operation, event management, and vulnerability management.
 
 - [June 25 Linux Foundation Officially Launches WasmCon 2023 Call for Topics (6.25 deadline)](https://events.linuxfoundation.org/wasmcon/)
   
