@@ -285,7 +285,7 @@
 
 ### D
 
-- [Dapr 分布式应用运行时 v1.11.0 发布（CNCF 项目）](https://github.com/jaegertracing/jaeger/releases/tag/v1.46.0)
+- [Dapr 分布式应用运行时 v1.11.0 发布（CNCF 项目）](https://github.com/dapr/dapr/releases/tag/v1.11.0)
 
     版本特性：配置构件现在是一个 v1 版稳定的 API；服务调用支持调用非 Dapr 端点；支持在管理 API 中暂停、重启和清除工作流；引入密码学构建块；现在有两个可用的构建版本（包含所有的组件和只包含稳定组件）；Dapr 仪表板不再与控制平面一起安装；提供用于 Windows Server 2022 的容器镜像；应用程序健康检查升级为 stable。
 

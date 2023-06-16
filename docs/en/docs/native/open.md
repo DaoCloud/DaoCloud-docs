@@ -285,7 +285,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### D
 
-- [Dapr Distributed Application Runtime v1.11.0 Released (CNCF Project)](https://github.com/jaegertracing/jaeger/releases/tag/v1.46.0)
+- [Dapr Distributed Application Runtime v1.11.0 Released (CNCF Project)](https://github.com/dapr/dapr/releases/tag/v1.11.0)
 
     Release features: configuration artifacts are now a v1 stable API; service calls support calling non-Dapr endpoints; support for suspending, restarting, and clearing workflows in the management API; introduction of cryptography building blocks; two build versions now available (with all components and with only stable components); Dapr dashboards are no longer installed with the control plane; container images are available for Windows Server 2022 container images; application health checks upgraded to stable.
 
