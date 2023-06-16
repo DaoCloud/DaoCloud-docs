@@ -18,8 +18,8 @@
 
 - **修复** 修复外接 http 的 Harbor 仓库同步镜像失败的问题
 - **修复** 修复 `clusterConfig.yaml` 配置文件缩进错误的问题
-- **修复** 修复基于外接yum repo时渲染localService配置错误的问题
-- **修复** 修复对接外部jfrog charts仓库的问题
+- **修复** 修复基于外接 yum repo 时渲染 localService 配置错误的问题
+- **修复** 修复对接外部 jfrog charts 仓库的问题
 
 ## 2023-5-31
 
