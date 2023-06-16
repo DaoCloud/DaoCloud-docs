@@ -195,6 +195,10 @@
 
     更新内容：提供基于 Sigstore 的无密钥签名模式、增加一个开箱即用的安全策略库、支持用户通过其 Gitlab 账号登录、支持 CloudEvents、支持细粒度的 Kubernetes 工作负载对象的策略、增强大规模集群用户的稳定性。
 
+- [Cisco 发布全栈观测平台 FSO](https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2023/m06/cisco-launches-full-stack-observability-platform.html)
+
+    FSO 能够将来自应用、网络、基础设施、安全、云、可持续性和业务的数据汇集在一起，提供上下文和预测性的观测能力。FSO 利用 OpenTelemetry 来统一收集指标、事件、日志和跟踪，重点关注云原生应用的可观测性。其提供成本可观测性，提供对 Kubernetes 工作负载资源的优化措施，支持生成基于应用的业务风险评分等。
+
 - [CloudCasa 基于 Velero 的企业级 Kubernetes 数据保护方案 CloudCasa for Velero](https://www.catalogicsoftware.com/press-releases/introducing-cloudcasa-for-velero-to-manage-and-run-kubernetes-backups-at-enterprise-scale/)
 
     CloudCasa for Velero 为企业和服务提供商提供了在所有 Kubernetes 发行版以及混合云和公有云环境中对 Velero 备份进行多集群管理的能力。
@@ -584,6 +588,10 @@
 
 ### S
 
+- [Sealos 云操作系统正式发布](https://mp.weixin.qq.com/s/s9SjjnNNZG_OPh9ciEiXDA)
+
+    Sealos 是一款以 Kubernetes 为内核的云操作系统发行版。它以云原生的方式，抛弃了传统的云计算架构，使企业能够像使用个人电脑一样简单地使用云。借助 Sealos,你可以运行任何兼容 Kubernetes 的应用；30 秒在 Sealos 上跑个 nginx demo，自动伸缩；30 秒起各种数据库，业务系统内网直接连接数据库；直接启动你写的各种编程语言业务等等。
+
 - [ServiceNow 发布统一查询语言 Lightstep UQL，扩展 Kubernetes 应用的可见性](https://lightstep.com/blog/announcing-the-lightstep-unified-query-language)
 
     Lightstep UQL 支持统一的“可观测性即代码”，通过单一查询语言简化从多个不同工具迁移到统一 Lightstep 平台的过程，还支持跨多个 Kubernetes 节点、服务器或 serverless 函数查询和关联指标、日志和跟踪。
@@ -726,6 +734,10 @@
     用户可以可以通过 MCP 扩展到数千个 CRD，使用控制平面来管理其所需的所有云服务资源，从而允许用户运行数十个甚至数百个控制平面来为不同的环境、团队、业务和客户服务。
     此外，MCP 与 Git 无缝集成，提供用于管理和操作控制平面以及所有资源的控制台，支持安装在任何 Kubernetes 集群中，并支持在 GitOps 流程中管理基础设施和应用程序资源。
 
+- [Veeam 发布 Kubernetes 数据管理平台 Kasten K10 v6.0](https://docs.kasten.io/latest/releasenotes.html#relnotes-6-0-0)
+
+    更新内容：提供一种存储可重复使用元数据转换的方法；支持多集群间共享许可证；支持应用指纹识别，即新部署的有状态应用程序可以自动映射到正确的蓝图；与 Veeam 数据平台集成，允许在 Veeam Backup＆Replication V12 中集中查看和管理 Kubernetes 备份；支持即时恢复能力。
+
 - [Veeam 发布 Kubernetes 数据管理平台 Kasten K10 v5.5](https://www.kasten.io/kubernetes/resources/blog/scaling-simplicity-with-kasten-k10-v5.5)
 
     该版本主要新特性：新增备份窗口允许用户选择策略运行的时间间隔、支持自动安排底层备份工作的顺序、支持定义多个保护策略以设置备份频率和位置等参数、提供可视化 Helm 向导程序、支持 IPv6、集成 GitOps 流水线、新增存储类型、通过 OpenSSF 和 Azure Managed Identity 增强备份安全性。
@@ -734,6 +746,10 @@
 
     TLS Protect for Kubernetes 是 Venafi 机器身份管理平台 Control Plane for Machine Identities 的一部分，
     帮助安全和平台团队在多云和多集群 Kubernetes 环境中管理云原生机器身份，如 TLS、mTLS 和 SPIFFE，增强机器身份管理的可观测性、控制和自动化。
+
+- [VMware 发布 API 网关 Spring Cloud Gateway for Kubernetes 2.0](https://mp.weixin.qq.com/s/pDtHlp-a-XR_mw5L0DGMXQ)
+
+    更新内容：支持使用 Redis 管理 API 网关实例之间的共享状态、使用 Zipkin 实现 Tracing、支持配置 API 网关实例从而执行上游应用程序的健康检查、支持使用元数据根据每个 API 路由配置跨源资源共享（CORS）、支持 Kubernetes 1.23+。
 
 - [VMware Tanzu 发布 Kubernetes DevOps 平台 VMware Tanzu Application Platform 1.5](https://tanzu.vmware.com/content/blog/tanzu-application-platform-1-5-ga)
 

@@ -105,7 +105,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     Release features: separates calico-node and calico-cni-plugin service accounts, reduces CPU usage on the system with kernel-level route filtering, supports Windows Server 2022, supports OpenStack Yoga.
 
-- [Calico CNI Plugin v3.25.0 release (CNCF project)](https://github.com/projectcalico/calico/blob/v3.25.0/calico/_includes/release-notes/v3.25.0- release-notes.md)
+- [Calico CNI Plugin v3.25.0 release (CNCF project)](https://github.com/projectcalico/calico/blob/v3.25.0/calico/_includes/release-notes/v3.25.0-release-notes.md)
 
     Key new features in this release: Optimization of the eBPF data plane to ensure that Connect Time Load Balancing works in larger, rapidly changing environments; Felix component support for overriding the internal readiness/liveness watchdog timeout; Typha component support for graceful shutdown.
 
@@ -124,7 +124,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [cdk8s+: AWS open source Kubernetes development framework officially available](https://aws.amazon.com/blogs/containers/announcing-general-availablecity-of-cdk8s-plus-and-support-for-manifest-validation/)
 
      [cdk8s+](https://github.com/cdk8s-team/cdk8s) allows users to define Kubernetes applications and reusable abstractions using familiar programming languages and object-oriented APIs.
-     Compared with the beta version released last year, the new features of the official version include: isolate the pod network and only allow specified communication; improve the configuration mechanism for running multiple pods on the same node; integrate [Datree](https://github. com/datreeio/datree-cdk8s) plugin to check for misconfigurations in Kubernetes using third-party policy enforcement tools.
+     Compared with the beta version released last year, the new features of the official version include: isolate the pod network and only allow specified communication; improve the configuration mechanism for running multiple pods on the same node; integrate [Datree](https://github.com/datreeio/datree-cdk8s) plugin to check for misconfigurations in Kubernetes using third-party policy enforcement tools.
 
 - [Cert-manager Cloud Native Certificate Management Project v1.12.0 Released (CNCF Project)](https://github.com/cert-manager/cert-manager/releases/tag/v1.12.0)
 
@@ -284,6 +284,10 @@ This page lists activity in cloud native open source projects in alphabetical or
      CubeFS supports multiple copies and erasure code engines, and provides features such as multi-tenant, multi-AZ deployment, and cross-region replication; it is suitable for a wide range of Cases such as big data, AI, container platforms, databases, and middleware separation of storage and computing.
 
 ### D
+
+- [Dapr Distributed Application Runtime v1.11.0 Released (CNCF Project)](https://github.com/jaegertracing/jaeger/releases/tag/v1.46.0)
+
+    Release features: configuration artifacts are now a v1 stable API; service calls support calling non-Dapr endpoints; support for suspending, restarting, and clearing workflows in the management API; introduction of cryptography building blocks; two build versions now available (with all components and with only stable components); Dapr dashboards are no longer installed with the control plane; container images are available for Windows Server 2022 container images; application health checks upgraded to stable.
 
 - [Dapr Distributed Application Runtime v1.10.0 Released (CNCF Project)](https://github.com/dapr/dapr/releases/tag/v1.10.0)
 
@@ -524,6 +528,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [k8gb Kubernetes Global Load Balancer v0.10.0 release (CNCF project)](https://github.com/k8gb-io/k8gb/releases/tag/v0.10.0)
 
      The main new features of this version: can access LeaderElection through environment variables, support the OpenTelemetry tracing scheme, support the creation of Grafana dashboard samples of K8GB metrics, and implement a consistent polling load balancing strategy.
+
+- [KapacityStack: Cloud-native intelligent capacity technology open sourced by Ant Group](https://mp.weixin.qq.com/s/Wm4wj1OTANLYZaziRH2sDw)
+
+    [KapacityStack](https://github.com/traas-stack/kapacity) provides IHPA (Intelligent Horizontal Pod Autoscaler) capabilities: supports scaling up and down using different algorithms for different scenarios; supports fine-grained control of each Pod's state throughout the The entire IHPA capability is split into three modules: control, decision, and execution, any of which can be replaced or extended.
 
 - [Karmada Multi-Cloud Multi-Cluster Container Orchestration Platform v1.6.0 Released (CNCF Project)](https://github.com/karmada-io/karmada/releases/tag/v1.6.0)
 
@@ -1154,6 +1162,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      [Serverless Devs](https://github.com/Serverless-Devs/Serverless-Devs) is open sourced by Alibaba Cloud and is committed to providing developers with a powerful tool chain system. In this way, developers can not only experience multicloud serverless products with one click, quickly deploy serverless projects, but also carry out project management in the whole lifecycle of serverless applications, integrate with other tools/platforms, and improve the efficiency of R & D and operation and maintenance.
 
+- [Skywalking Application Performance Monitoring System v9.5.0 Released](https://github.com/apache/skywalking/releases/tag/v9.5.0)
+
+    Release features: new topology layout, support for Elasticsearch server monitoring, support for continuous analysis, support for collecting process-level related metrics, support for cross-thread trace analysis, support for monitoring the total number of metrics in k8s StatefulSet and DaemonSet, support for Redis and RabbitMQ monitoring.
+
 - [Skywalking application performance monitoring system v9.3.0 released](https://github.com/apache/skywalking/releases/tag/v9.3.0)
 
      The main new features of this version: increase the metric correlation function, use Sharding MySQL as the database, visualize the performance of virtual cache and message queue, use Skywalking OpenTelemetry receiver instead of prometheus-fetcher plug-in to grab Prometheus metrics.
@@ -1205,6 +1217,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Tekton Cloud Native CI/CD Framework v0.40.0 released](https://github.com/tektoncd/pipeline/releases/tag/v0.40.0)
 
      The main new features of this version: add task running templates, support for propagating workspace in pipelinerun to simplify specification writing, optimize git remote resolution support, add cluster remote resolvers, merge affinity parameters of podtempalte and affinity-assistant.
+
+- [Telepresence K8s Native Development Tool v2.14.0 Released (CNCF Project)](https://www.getambassador.io/docs/telepresence-oss/latest/release-notes#2.14.0)
+
+    Release features: new exclusion fields and mapping fields for DNS configuration, support for excluding environment variables, support for detecting and reporting routing conflicts between other VPN software running on client computers.
 
 - [Telepresence K8s Native Development Tool v2.10.0 Release (CNCF Project)](https://www.getambassador.io/docs/telepresence/latest/release-notes#2.10.0)
 
