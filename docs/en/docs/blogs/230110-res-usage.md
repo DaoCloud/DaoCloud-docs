@@ -80,7 +80,7 @@ When CPU usage falls below 50%, HPA reduces the number of replicas.
 
 HPA can effectively improve the resource utilization of Pods in Deployment, ReplicationController, ReplicaSet, or StatefulSet.
 
-####VPA
+#### VPA
 
 Unlike HPA, VPA means that more resources (for example: memory or CPU) are allocated to running Pods.
 VPA monitors the resource usage of Pods and automatically adjusts the resource requests and limits of containers according to the set target usage.

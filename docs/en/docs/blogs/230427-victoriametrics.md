@@ -245,7 +245,7 @@ VictoriaMetrics uses various in-memory caches to speed up data ingestion and que
 
 Support for viewing cache metrics on the Grafana dashboard, which shows the current memory usage of each type of cache, as well as the cache hit ratio. If the hit rate is close to 100%, the cache is already very efficient and no tuning is needed.
 
-### other
+### Other
 
 Support many functions that Prometheus has, such as Prometheus's label rewriting, federation and other functions.
 

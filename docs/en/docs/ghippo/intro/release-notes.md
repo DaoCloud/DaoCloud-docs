@@ -229,11 +229,11 @@ Release date: 2022-10-21
 - **Added** Login -> background theme supports animation
 - **Added** Authorization Authentication -> Provide the front-end with the permission list of the currently logged-in user
 - **Added** Added About -> Software Version -> Module Support Chinese Name
-- **Optimize** authorization authentication -> provide a job to ensure the synchronization of db and cr
+- **Optimized** authorization authentication -> provide a job to ensure the synchronization of db and cr
 - **Optimized** LDAP -> configuration error checking
-- **Optimization** The operation feedback and prompts for each function support Chinese and English
-- **Optimize** Workspace and Hierarchy -> Check whether there are sub-resources before deleting
-- **Optimize** Optimize keycloak jvm parameters
+- **Optimized** The operation feedback and prompts for each function support Chinese and English
+- **Optimized** Workspace and Hierarchy -> Check whether there are sub-resources before deleting
+- **Optimized** Optimize keycloak jvm parameters
 
 ## v0.9
 
@@ -275,7 +275,7 @@ Release date: 2022-7-23
 - **Added** audit log -> batch insert
 - **Added** Identity Provider -> LDAP Connection -> User/group Synchronization Settings (Create/Edit/Delete/View/Sync)
 - **Added** Platform Settings -> Security Policy -> Password Policy Settings
-- **Optimize** workspace -> code structure adjustment
+- **Optimized** workspace -> code structure adjustment
 
 ## v0.6
 

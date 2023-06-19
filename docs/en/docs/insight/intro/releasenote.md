@@ -25,10 +25,10 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 #### Optimization
 
-- **Optimize** the content of the built-in message template.
-- **Optimization** Adjust the built-in alert rules to the corresponding policies.
-- **Optimization** The filter display problem when the service namespace is empty.
-- **Optimize** Add cache to service list.
+- **Optimized** the content of the built-in message template.
+- **Optimized** Adjust the built-in alert rules to the corresponding policies.
+- **Optimized** The filter display problem when the service namespace is empty.
+- **Optimized** Add cache to service list.
 
 #### Fixes
 
@@ -43,8 +43,8 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 #### Optimization
 
-- **Optimization** Update the default number of primary shards for ES index to match the default number of ES nodes in the middleware.
-- **Optimization** Modify the JVM information API response body structure.
+- **Optimized** Update the default number of primary shards for ES index to match the default number of ES nodes in the middleware.
+- **Optimized** Modify the JVM information API response body structure.
 
 #### Fixes
 
@@ -68,7 +68,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 #### Optimization
 
-- **Optimize** the style of the topology map virtual node
+- **Optimized** the style of the topology map virtual node
 - **Optimized** service topology virtual node increase switch
 
 #### Fixes
@@ -96,13 +96,13 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 #### Optimization
 
-- **Optimize** filter conditions in trace query and view traces with Error
+- **Optimized** filter conditions in trace query and view traces with Error
 - **Optimized** The scatter diagram of the trace query is updated to a bubble diagram
 - **Optimized** reduce Prometheus's metrics retention time to 2 hours
-- **Optimize** The default parameter of retentionPeriod of VMStorage is adjusted to 1 month
+- **Optimized** The default parameter of retentionPeriod of VMStorage is adjusted to 1 month
 - **Upgrade** fluentbit helm chart version to 0.24.0
-- **updated** `tailing-sidecar/operator` mirror
-- **UPDATE** Global collection rule interval is 60 seconds
+- **Updated** `tailing-sidecar/operator` mirror
+- **Updated** Global collection rule interval is 60 seconds
 
 #### Fixes
 
@@ -148,7 +148,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 ### Optimization
 
 - **Optimized** log list field display
-- **Optimize** the judgment logic of insight-agent
+- **Optimized** the judgment logic of insight-agent
 - **Upgrade** Jaeger Chart version upgraded from v0.62.1 to 0.65.1
 
 ### fix
@@ -172,11 +172,11 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 #### Optimization
 
 - **Optimized** PromQL queries support raw metrics
-- **Optimize** the style of the topology map
+- **Optimized** the style of the topology map
 - **Upgrade** Built-in MySQL image version, upgraded from v5.7.34 to v8.0.29.
 - **Upgrade** Fluentbit ARM architecture helm Chart version from
 - **Upgrade** kube-prometheus-stack helm Chart version upgraded from v39.6.0 to v41.9.1
-- **updated** used Bitnami mirror, including grafana-operator, grafana, kubernetes-event-exporter
+- **Updated** used Bitnami mirror, including grafana-operator, grafana, kubernetes-event-exporter
 - **Update** prometheus-related API proxy address, change `/prometheus` to `/apis/insight.io/prometheus`
 
 #### Fixes
@@ -198,7 +198,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 - **Added** link troubleshooting and monitoring dashboard for component `Jaeger`
 - **Optimized** The alert list and message template list support sorting
 - **optimized** to filter out clusters without `insight-agent` installed
-- **Optimize** sort by span start time by default when trace query
+- **Optimized** sort by span start time by default when trace query
 
 #### Bugfixes
 
@@ -206,7 +206,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 - **Fixed** the problem that there is no content under some log paths
 - **Fixed** delete wrong alert rule: KubeletPodStartUpLatencyHigh
 
-#### other
+#### Other
 
 - `victoria-metrics-k8s-stack` helm chart updated to v0.12.6
 - `opentelemetry-collector` helm chart upgraded from v0.23.0 to v0.37.2
@@ -240,7 +240,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 - Jaeger supports elasticsearch output to skip TLS verification
 - Disable jaeger components in A-mode
 
-#### other
+#### Other
 
 - Added OTel collector grafana dashboard
 - Add Insight overview Chinese page
