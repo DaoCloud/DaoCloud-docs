@@ -13,7 +13,7 @@ There are two concepts in the workspace and hierarchy module: hierarchy and work
 Hierarchy can be mapped to concepts such as project, environment, and supplier in the enterprise, so that you can build an enterprise hierarchical relationship that reflects resource relationships based on the business or ecological environment of the enterprise.
 At the same time, the hierarchy has the ability to inherit permissions. The upper-level administrators can create and manage lower-level levels and workspaces, effectively solving the problem of one-time authorization in the hierarchical structure.
 The workspace is directly associated with resources, supports multi-dimensional resources such as exclusive resource sharing and resource sharing, and cross-cluster resource management capabilities to meet the needs of rapid resource authorization and flexible resource allocation under hundreds of clusters.
-At the same time, the workspace and hierarchy module also supports the function of mobile hierarchy and mobile workspace, and can respond to resource adjustments brought about by the adjustment of enterprise hierarchy at any time.
+At the same time, the workspace and hierarchy module also supports the feature of mobile hierarchy and mobile workspace, and can respond to resource adjustments brought about by the adjustment of enterprise hierarchy at any time.
 
 ## User interaction for resource management
 

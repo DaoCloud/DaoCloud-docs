@@ -6,35 +6,35 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 
 ### v0.1.2
 
-#### new function
+#### New features
 
-- **NEW** `Mcamel-PostgreSQL` UI module is online, support interface management
-- **NEW** Added ability to install `Mcamel-PostgreSQL` PgAdmin offline mirror version.
-- **NEW** `Mcamel-PostgreSQL` PgAdmin supports LoadBalancer type.
+- **Added** `Mcamel-PostgreSQL` UI module is online, support interface management
+- **Added** Added ability to install `Mcamel-PostgreSQL` PgAdmin offline mirror version.
+- **Added** `Mcamel-PostgreSQL` PgAdmin supports LoadBalancer type.
 
 #### upgrade
 
-- **Optimize** `Mcamel-PostgreSQL` Exporter does not have permission to connect to PostgreSQL in the case of IPV6
-- **Optimize** `Mcamel-PostgreSQL` scheduling strategy adds a sliding button
+- **Optimized** `Mcamel-PostgreSQL` Exporter does not have permission to connect to PostgreSQL in the case of IPV6
+- **Optimized** `Mcamel-PostgreSQL` scheduling strategy adds a sliding button
 
 ## 2023-04-20
 
 ### v0.1.1
 
-### new function
+### New features
 
-- **NEW** `Mcamel-PostgreSQL` supports fast start PostgreSQL cluster
-- **NEW** `Mcamel-PostgreSQL` supports deployment in ARM environment
-- **NEW** `Mcamel-PostgreSQL` supports custom roles
-- **NEW** `Mcamel-PostgreSQL` supports PostgreSQL lifecycle management backend interface
-- **NEW** `Mcamel-PostgreSQL` support view log
-- **NEW** `Mcamel-PostgreSQL` supports PostgreSQL 15
-- **NEW** `Mcamel-PostgreSQL` supports PostgreSQL UI management interface
+- **Added** `Mcamel-PostgreSQL` supports fast start PostgreSQL cluster
+- **Added** `Mcamel-PostgreSQL` supports deployment in ARM environment
+- **Added** `Mcamel-PostgreSQL` supports custom roles
+- **Added** `Mcamel-PostgreSQL` supports PostgreSQL lifecycle management backend interface
+- **Added** `Mcamel-PostgreSQL` support view log
+- **Added** `Mcamel-PostgreSQL` supports PostgreSQL 15
+- **Added** `Mcamel-PostgreSQL` supports PostgreSQL UI management interface
 
 ## 2023-03-29
 
 ### v0.0.2
 
-### new function
+### New features
 
-- **NEW** `Mcamel-PostgreSQL` supports PostgreSQL instance creation
+- **Added** `Mcamel-PostgreSQL` supports PostgreSQL instance creation

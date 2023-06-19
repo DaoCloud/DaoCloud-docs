@@ -1,6 +1,6 @@
 # Build microservice applications based on Git repository
 
-Workbench supports building applications in four ways: Git repository, [Jar package](jar-java-app.md), container image, and Helm template. This article introduces how to build a traditional microservice application through the source code of the Git warehouse, so as to manage the traffic of the application, view logs, monitor, link tracking and other functions.
+Workbench supports building applications in four ways: Git repository, [Jar package](jar-java-app.md), container image, and Helm template. This article introduces how to build a traditional microservice application through the source code of the Git warehouse, so as to manage the traffic of the application, view logs, monitor, traces and other features.
 
 ## prerequisites
 
@@ -82,7 +82,7 @@ Workbench supports building applications in four ways: Git repository, [Jar pack
     - Enable microservice governance: The selected registry instance should [enable the Sentinel or Mesh governance plugin](../../../skoala/trad-ms/hosted/plugins/plugin-center.md)
     - Monitoring: Select Enable, and you can view service-related monitoring information after enabling it
     - Log: enabled by default
-    - Link tracking: After opening, you can view the link tracking information of the service, currently only supports Java language
+    - Traces: After enabled, you can view the traces information of the service, currently only supports Java language
 
         <!--![]()screenshots-->
 

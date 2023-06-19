@@ -4,13 +4,15 @@
 
 ## Multicloud Module Introduction
 
+See [What's Multicloud Management](../kairship/intro/what.md) for reference.
+
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-intro.mp4" preload="metadata" poster="../images/kairship-intro.png"></video>
 </div>
 
 ## Creating Multicloud Instances
 
-Refer to the [Creating Multicloud Instances](../kairship/instance/add.md) document page.
+See [Creating Multicloud Instances](../kairship/instance/add.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-instance.mp4" preload="metadata" poster="../images/kairship-instance.png"></video>
@@ -18,7 +20,7 @@ Refer to the [Creating Multicloud Instances](../kairship/instance/add.md) docume
 
 ## Creating Multicloud Workloads
 
-Refer to the [Creating Multicloud Workloads](../kairship/workload/README.md) document page.
+See [Creating Multicloud Workloads](../kairship/workload/README.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/workloads.mp4" preload="metadata" poster="../images/kairship-workload.png"></video>
@@ -26,7 +28,7 @@ Refer to the [Creating Multicloud Workloads](../kairship/workload/README.md) doc
 
 ## Creating Multicloud Jobs and CronJobs
 
-Refer to the [Creating Multicloud Jobs](../kairship/workload/job.md) and [Creating Multicloud CronJobs](../kairship/workload/cronjob.md) document pages.
+See [Creating Multicloud Jobs](../kairship/workload/job.md) and [Creating Multicloud CronJobs](../kairship/workload/cronjob.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/job-cronjob.mp4" preload="metadata" poster="../images/kairship-job.png"></video>
@@ -34,13 +36,13 @@ Refer to the [Creating Multicloud Jobs](../kairship/workload/job.md) and [Creati
 
 ## Managing Multicloud Resources
 
-Refer to the [Multicloud Services](../kairship/resource/service.md), [Multicloud Namespaces](../kairship/resource/ns.md), [Multicloud Configuration Items](../kairship/resource/configmap.md), and [Multicloud Secrets](../kairship/resource/secret.md) document pages.
+See [Multicloud Services](../kairship/resource/service.md), [Multicloud Namespaces](../kairship/resource/ns.md), [Multicloud Configuration Items](../kairship/resource/configmap.md), and [Multicloud Secrets](../kairship/resource/secret.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-resoruces.mp4" preload="metadata" poster="../images/kairship-resource.png"></video>
 </div>
 
-## Upgrading DCE4 Applications to DCE5 Applications
+## Migrating Applications from DCE 4.0 to DCE 5.0
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-migrate.mp4" preload="metadata" poster="../images/kairship-migrate.png"></video>

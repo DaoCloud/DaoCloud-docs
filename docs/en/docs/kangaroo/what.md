@@ -21,11 +21,11 @@ Through the container registry service, you can assign private registry space to
 
 - Image Scan
 
-    The registry supports an image scanning function to identify image security risks.
+    The registry supports an image scanning feature to identify image security risks.
 
 - Image Selection
 
-    Linked with the container management module, the registry can quickly select images using the "select image" function to complete application deployment.
+    Linked with the container management module, the registry can quickly select images using the "select image" feature to complete application deployment.
 
 
 

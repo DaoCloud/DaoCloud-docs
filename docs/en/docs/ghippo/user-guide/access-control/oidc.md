@@ -2,7 +2,7 @@
 
 OIDC (OpenID Connect) is an identity layer based on OAuth 2.0 and an identity authentication standard protocol based on the OAuth2 protocol.
 
-If your enterprise or organization already has its own account system, and your enterprise user management system supports the OIDC protocol, you can use the OIDC protocol-based identity provider function provided by the global management instead of creating an account for each organization in DCE 5.0. Members create username/password.
+If your enterprise or organization already has its own account system, and your enterprise user management system supports the OIDC protocol, you can use the OIDC protocol-based identity provider feature provided by the global management instead of creating an account for each organization in DCE 5.0. Members create username/password.
 You can grant permissions to use DCE 5.0 resources to these external user identities.
 
 The specific operation steps are as follows.

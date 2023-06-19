@@ -6,7 +6,7 @@ At present, only Java, NodeJs, Python, and .Net support the non-intrusive access
 
 Make sure insight-agent is ready. If not, please refer to [Install insight-agent to collect data](../install-agent.md) and make sure the following three items are in place:
 
-- Enable trace function for insight-agent
+- Enable trace feature for insight-agent
 - Whether the address and port of the trace data are filled in correctly
 - Pods corresponding to deployment/insight-agent-opentelemetry-operator and deployment/insight-agent-opentelemetry-collector are ready
 
@@ -143,7 +143,7 @@ EOF
 
 ## Add annotations to automatically access traces
 
-After the above is ready, you can access link tracking for the application through annotations (Annotation). Otel currently supports accessing traces through annotations. Depending on the service language, different pod annotations need to be added.
+After the above is ready, you can access traces for the application through annotations (Annotation). Otel currently supports accessing traces through annotations. Depending on the service language, different pod annotations need to be added.
 Each service can add one of two types of annotations:
 
 - Only inject environment variable annotations

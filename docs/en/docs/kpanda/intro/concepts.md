@@ -24,7 +24,7 @@ Workloads refer to applications running on Kubernetes. Whether the workload is a
 
 There are several workload resources built into Kubernetes:
 
-- **Stateless service** (Deployment): pods are completely independent and have the same functions, with features such as flexible expansion and rolling upgrade. It is often used to deploy stateless applications to achieve rapid scaling. Compared with stateful services, the number of instances can be flexibly scaled. For example, Nginx, WordPress. Please refer to [create deployment](../user-guide/workloads/create-deployment.md).
+- **Stateless service** (Deployment): pods are completely independent and have the same features, with features such as flexible expansion and rolling upgrade. It is often used to deploy stateless applications to achieve rapid scaling. Compared with stateful services, the number of instances can be flexibly scaled. For example, Nginx, WordPress. Please refer to [create deployment](../user-guide/workloads/create-deployment.md).
 
 - **Stateful service** (StatefulSet): pods are not completely independent. They have stable persistent storage and network identification, as well as orderly deployment, scaling and deletion. Because the container can be migrated between different hosts, the data is not saved on the host. By mounting the storage volume on the container, the data persistence of stateful set services, such as mysql-HA and etcd, is realized. Please refer to [create statefulset](../user-guide/workloads/create-statefulset.md).
 
@@ -38,7 +38,7 @@ A service consists of one or more pods. A pod consists of one or more containers
 
 ## Helm charts
 
-Helm charts enable unified resource management and scheduling of standard charts, along with expanding related functions. You can manage and deploy community standard application charts based on helm charts, as well as customize business application charts.
+Helm charts enable unified resource management and scheduling of standard charts, along with expanding related features. You can manage and deploy community standard application charts based on helm charts, as well as customize business application charts.
 
 ## Image
 

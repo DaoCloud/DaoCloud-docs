@@ -28,7 +28,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Antrea CNI plugin v1.9.0 release (CNCF project)](https://github.com/antrea-io/antrea/releases/tag/v1.9.0)
 
-     Added multiple multicluster functions, including inter-cluster Pod connections, node controllers supporting Gateway high availability, and allowing Pod IPs to serve as endpoints for multicluster services;
+     Added multiple multicluster features, including inter-cluster Pod connections, node controllers supporting Gateway high availability, and allowing Pod IPs to serve as endpoints for multicluster services;
      Add service health check similar to kube-proxy; add rule name to audit log; a service supports 800+ endpoints.
 
 - [Antrea CNI Plugin v1.8.0 released (CNCF project)](https://github.com/antrea-io/antrea/releases/tag/v1.8.0)
@@ -37,7 +37,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Antrea CNI plugin v1.7.0 release (CNCF project)](https://github.com/antrea-io/antrea/releases/tag/v1.7.0)
   
-     The main new features of this version: increase the TrafficControl function to control the transmission of Pod traffic; support IPsec certificate authentication; enrich Antrea-native policies; enrich multicast functions; increase multicluster gateway functions; enrich secondary network IPAM functions.
+     The main new features of this version: increase the TrafficControl feature to control the transmission of Pod traffic; support IPsec certificate authentication; enrich Antrea-native policies; enrich multicast features; increase multicluster gateway features; enrich secondary network IPAM features.
 
 - [APISIX Cloud Native Gateway v3.2.0 Released](https://github.com/apache/apisix/releases/tag/3.2.0)
 
@@ -156,7 +156,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Chaos Mesh Chaos Engineering Test Platform v2.2.0 Release (CNCF Project)](https://github.com/chaos-mesh/chaos-mesh/releases/tag/v2.2.0)
 
-     The main new features of this version: Add the StatusCheck function to check the health of the application, and stop the chaos experiment when the application is unhealthy; support the use of `Chaosctl` for outbound forced recovery, and add workflows based on flow charts in the dashboard interface etc.
+     The main new features of this version: Add the StatusCheck feature to check the health of the application, and stop the chaos experiment when the application is unhealthy; support the use of `Chaosctl` for outbound forced recovery, and add workflows based on flow charts in the dashboard interface etc.
 
 - [ChaosMeta: Ant Group's open source cloud-native automated chaos engineering platform](https://mp.weixin.qq.com/s/QUiWocMwbnSoUyfAu1z-cg)
 
@@ -211,7 +211,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Clusternet multicloud multicluster management project v0.13.0 released](https://github.com/clusternet/clusternet/releases/tag/v0.13.0)
 
-     The main new features of this version: increase the routing function from the parent cluster to the sub-cluster pod, add scheduler configuration and support custom scheduler plug-ins, support discovery v1beta1, only provide support for discovering endpointslices for k8s v1.21.0 and later versions, Aggregate worker node labels using thresholds, support scheduling by cluster subgroup, update RBAC rules for clusternet-agent running in capi.
+     The main new features of this version: increase the routing feature from the parent cluster to the sub-cluster pod, add scheduler configuration and support custom scheduler plug-ins, support discovery v1beta1, only provide support for discovering endpointslices for k8s v1.21.0 and later versions, Aggregate worker node labels using thresholds, support scheduling by cluster subgroup, update RBAC rules for clusternet-agent running in capi.
 
 - [Constellation: Edgeless Systems Open Sources First Confidential Computing Kubernetes](https://blog.edgeless.systems/hi-open-source-community-confidential-kubernetes-is-now-on-github-2347dedd8b0c)
 
@@ -251,7 +251,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Cortex Distributed Prometheus Service v1.13.0 Release (CNCF Project)](https://github.com/cortexproject/cortex/releases/tag/v1.13.0)
 
-     The main new features of this version: Add the streaming function of the metadata API queryer, provide experimental shuffle sharding support for compactor, fix the memory leak of Distributor and Ruler, add a jitter to reset the initial value of each pod when distributing requests time.
+     The main new features of this version: Add the streaming feature of the metadata API queryer, provide experimental shuffle sharding support for compactor, fix the memory leak of Distributor and Ruler, add a jitter to reset the initial value of each pod when distributing requests time.
 
 - [Crane cost optimization tool launches an open source cloud native application carbon emission calculation optimizer](https://mp.weixin.qq.com/s/D46-7S20kaMF4CH_H5oTuA)
 
@@ -309,7 +309,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [DevSpace K8s development tools v6.0 released](https://github.com/loft-sh/devspace/releases/tag/v6.0.0)
 
-     The main new features of this version: the introduction of pipeline to manage tasks in devspace.yaml, the new import function to merge different devspace.yaml files together, and the new proxy command to run commands executed in the container on the local computer.
+     The main new features of this version: the introduction of pipeline to manage tasks in devspace.yaml, the new import feature to merge different devspace.yaml files together, and the new proxy command to run commands executed in the container on the local computer.
 
 ### E
 
@@ -395,7 +395,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Gatekeeper Policy Engine v3.10.0 release (CNCF project)](https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.10.0)
 
-     The main new features of this version are: removing Pod security policy and migrating to Pod security admission, upgrading Mutation function to stable, introducing workload resource verification (alpha), and performance improvement.
+     The main new features of this version are: removing Pod security policy and migrating to Pod security admission, upgrading Mutation feature to stable, introducing workload resource verification (alpha), and performance improvement.
 
 - [Gatekeeper policy engine v3.9.0 release (CNCF project)](https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.9.0)
 
@@ -459,7 +459,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [iLogtail: all codes of iLogtail observable data collector open source](https://mp.weixin.qq.com/s/Cam_OjPWhcEj77kqC0Q1SA)
 
-     Recently, Alibaba Cloud officially released the community version of [iLogtail](https://github.com/alibaba/ilogtail) with full functions.
+     Recently, Alibaba Cloud officially released the community version of [iLogtail](https://github.com/alibaba/ilogtail) with full features.
      This update open-sources all C++ core codes, and this version aligns with the enterprise version for the first time in terms of core capabilities. Added many important features such as log file collection, container file collection, lock-free event processing, multi-tenant isolation, and new configuration methods based on Pipeline.
 
 - [Ingress-NGINX Controller v1.7.0 Released](https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.7.0)
@@ -480,7 +480,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Istio v1.16 Announcement (CNCF project)](https://istio.io/latest/news/releases/1.16.x/announcing-1.16/)
 
-     The main new features of this version: Three functions are upgraded to beta: external authorization function, Kubernetes Gateway API implementation, route-based JWT statement; add experimental support for HBONE protocol of sidecar and ingress gateway, support MAGLEV load balancing algorithm, and pass Telemetry The API supports the OpenTelemetry tracing provider.
+     The main new features of this version: Three features are upgraded to beta: external authorization function, Kubernetes Gateway API implementation, route-based JWT statement; add experimental support for HBONE protocol of sidecar and ingress gateway, support MAGLEV load balancing algorithm, and pass Telemetry The API supports the OpenTelemetry tracing provider.
 
 - [Istio officially became a CNCF incubation project](https://istio.io/latest/blog/2022/istio-accepted-into-cncf/)
 
@@ -623,7 +623,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Knative Kubernetes-based serverless architecture solution v1.8.0 release (CNCF project)](https://github.com/knative/serving/releases/tag/knative-v1.8.0)
 
-     The main new features of this version: modify the default domain, upgrade HPA to version v2, allow setting seccompProfile to enable the use of restricted security profiles, the minimum k8s support version is upgraded to v1.23, the reconciliation timeout is increased to 30 seconds, and EmptyDir is enabled by default Volume function parameters.
+     The main new features of this version: modify the default domain, upgrade HPA to version v2, allow setting seccompProfile to enable the use of restricted security profiles, the minimum k8s support version is upgraded to v1.23, the reconciliation timeout is increased to 30 seconds, and EmptyDir is enabled by default Volume feature parameters.
 
 - [Koordinator cloud-native hybrid system v1.0 released](https://github.com/koordinator-sh/koordinator/releases/tag/v1.0.0)
 
@@ -673,7 +673,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [KubeKey cluster deployment tool v2.1.0 released (KubeSphere community open source)](https://github.com/kubesphere/kubekey/releases/tag/v2.1.0)
 
-     The main new features of this version: According to the OCI standard, the image pulling, uploading, archiving and saving functions are realized, so that it does not rely on additional container runtimes when making and using KubeKey products; it supports the initialization of the operating system command (kk init os) Use products to install operating system dependencies from offline local sources; support both ARM64 nodes and AMD64 nodes in the same K8s cluster.
+     The main new features of this version: According to the OCI standard, the image pulling, uploading, archiving and saving features are realized, so that it does not rely on additional container runtimes when making and using KubeKey products; it supports the initialization of the operating system command (kk init os) Use products to install operating system dependencies from offline local sources; support both ARM64 nodes and AMD64 nodes in the same K8s cluster.
 
 - [Kube-OVN CNI Plugin v1.11.0 Released (CNCF Project)](https://github.com/kubeovn/kube-ovn/releases/tag/v1.11.0)
 
@@ -727,7 +727,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [KubeSkoop: Kubernetes network monitoring tool open sourced by Alicloud](https://mp.weixin.qq.com/s/zbAcZCNT5vyzGvp7uTDB1w)
 
-     [KubeSkoop](https://github.com/alibaba/kubeskoop) supports functions including: Pod-level network monitoring, including traffic, application-level connection information, socket memory allocation status, etc.; Pod-level monitoring of metrics for abnormal network status, such as the wait time for a Pod process to perform a socket Pod-level network abnormal state metrics monitoring, such as the number of times a process within a Pod waits more than 100ms for a read or write operation, etc.; Pod-level network abnormal events on site, providing detailed observation of the events that occur.
+     [KubeSkoop](https://github.com/alibaba/kubeskoop) supports features including: Pod-level network monitoring, including traffic, application-level connection information, socket memory allocation status, etc.; Pod-level monitoring of metrics for abnormal network status, such as the wait time for a Pod process to perform a socket Pod-level network abnormal state metrics monitoring, such as the number of times a process within a Pod waits more than 100ms for a read or write operation, etc.; Pod-level network abnormal events on site, providing detailed observation of the events that occur.
 
 - [KubeSphere v3.3.0 release (CNCF project)](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.md)
 
@@ -776,7 +776,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [KubeVirt Virtual Machine Management Plugin v0.57.0 released (CNCF project)](https://github.com/kubevirt/kubevirt/releases/tag/v0.57.0)
 
-     The main new features of this version: deprecated SR-IOV live migration function gate, deprecated virtual machine instance preset resources, added support for virtual machine output resource types, supported DataVolume garbage collection, and allowed support for configuring virtual machine topology distribution constraints .
+     The main new features of this version: deprecated SR-IOV live migration feature gate, deprecated virtual machine instance preset resources, added support for virtual machine output resource types, supported DataVolume garbage collection, and allowed support for configuring virtual machine topology distribution constraints .
 
 - [KubeVirt virtual machine running project v0.55.0 release (CNCF project)](https://github.com/kubevirt/kubevirt/releases/tag/v0.55.0)
 
@@ -940,7 +940,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Notification Manager multi-tenant notification management system 2.0.0 released](https://mp.weixin.qq.com/s/op79OMTp0nxzfxM8fH-nnA)
 
      [Notification Manager](https://github.com/kubesphere/notification-manager) can receive alerts, events, and audits from Kubernetes, generate notification messages according to templates set by users, and push them to users.
-     Main functions of the new version: new routing function, users can send specified notifications to specified users by setting routing rules; new silent function, by configuring silent rules, specific notifications can be blocked in a specific time period; support dynamic update templates Wait.
+     Main features of the new version: new routing function, users can send specified notifications to specified users by setting routing rules; new silent function, by configuring silent rules, specific notifications can be blocked in a specific time period; support dynamic update templates Wait.
 
 - [Nydus Container Image Acceleration Service v2.2.0 Released (CNCF Project)](https://github.com/dragonflyoss/image-service/releases/tag/v2.2.0)
 
@@ -954,7 +954,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [OPA Generic Policy Engine v0.50.0 Released (CNCF Project)](https://github.com/open-policy-agent/opa/releases/tag/v0.50.0)
 
-     Release features: New built-in function to validate JSON Schema; package scoped schema comments can be applied across modules; support for starting OPA with a remote bundle via a simple command; introduction of a new EditTree data structure to improve the performance of json.patch; support for exposing decision logs via the status API errors; all published OPA images now run with a non-root uid/gid.
+     Release features: New built-in feature to validate JSON Schema; package scoped schema comments can be applied across modules; support for starting OPA with a remote bundle via a simple command; introduction of a new EditTree data structure to improve the performance of json.patch; support for exposing decision logs via the status API errors; all published OPA images now run with a non-root uid/gid.
 
 - [OPA Common Policy Engine v0.44.0 release (CNCF project)](https://github.com/open-policy-agent/opa/releases/tag/v0.44.0)
 
@@ -966,7 +966,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [OPA Common Policy Engine v0.41.0 release (CNCF project)](https://github.com/open-policy-agent/opa/releases/tag/v0.41.0)
 
-     The main new features of this version: a new set of built-in functions for validating, parsing, and verifying GraphQL queries and schemas; built-in function declarations support specifying the names and descriptions of function parameters and return values ​​through metadata; support skipping based on the summary of OCI artifacts Bundle reload; delete empty list in bundle signature; unit resolution and token update, etc.
+     The main new features of this version: a new set of built-in features for validating, parsing, and verifying GraphQL queries and schemas; built-in feature declarations support specifying the names and descriptions of feature parameters and return values ​​through metadata; support skipping based on the summary of OCI artifacts Bundle reload; delete empty list in bundle signature; unit resolution and token update, etc.
 
 - [OpenClusterManagement (OCM) multicluster management platform v0.7 release (CNCF project)](https://mp.weixin.qq.com/s/EQgdnZVOqzfvuxOzg-Q0cQ)
 
@@ -982,7 +982,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [OpenFunction Function as a Service Project v1.0.0 Released (CNCF Project)](https://github.com/OpenFunction/OpenFunction/releases/tag/v1.0.0)
 
-     Release features: integration with wasmedge, support for building from local source code, multiple functions supported in a single Pod, support for detecting changes to source code or images and rebuilding/redeploying newly built images.
+     Release features: integration with wasmedge, support for building from local source code, multiple features supported in a single Pod, support for detecting changes to source code or images and rebuilding/redeploying newly built images.
 
 - [OpenKruise upgraded to CNCF Incubation Program](https://mp.weixin.qq.com/s/9knMn8eKJBNdXUU-TcmTQg)
 
@@ -990,7 +990,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [OpenKruise Cloud Native Application Automation Management Suite v1.4.0 Released (CNCF Project)](https://github.com/openkruise/kruise/releases/tag/v1.4.0)
 
-    Release features: new JobSidecarTerminator function to terminate sidecar containers after the main container exits; new field to immediately recreate containers; support for attaching metadata to the PullImage CRI interface during ImagePullJob; sidecarSet controller support for namespace selectors ; change Kubernetes image address reference from "k8s.gcr.io" to "registry.k8s.io".
+    Release features: new JobSidecarTerminator feature to terminate sidecar containers after the main container exits; new field to immediately recreate containers; support for attaching metadata to the PullImage CRI interface during ImagePullJob; sidecarSet controller support for namespace selectors ; change Kubernetes image address reference from "k8s.gcr.io" to "registry.k8s.io".
 
 - [OpenKruise Cloud Native Application Automation Management Suite v1.3.0 release (CNCF project)](https://github.com/openkruise/kruise/releases/tag/v1.3.0)
 
@@ -1038,7 +1038,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Openyurt Cloud Native Edge Computing Project v1.1.0 release (CNCF project)](https://github.com/openyurtio/openyurt/releases/tag/v1.1.0)
 
-     The main new features of this version: support OTA/automatic upgrade mode of DaemonSet workload, support autonomous function verification of e2e test, enable data filtering function, add suggestions for unified cloud computing edge communication solution, and improve health checker.
+     The main new features of this version: support OTA/automatic upgrade mode of DaemonSet workload, support autonomous feature verification of e2e test, enable data filtering function, add suggestions for unified cloud computing edge communication solution, and improve health checker.
 
 - [Openyurt Cloud Native Edge Computing Project v1.0.0 release (CNCF project)](https://github.com/openyurtio/openyurt/releases/tag/v1.0.0)
 
@@ -1063,7 +1063,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Paralus: The industry's first open-source zero-trust access service for Kubernetes by Rafay Systems](https://rafay.co/the-kubernetes-current/paralus-industrys-first-open-source-zero-trust-access-service-for-kubernetes/)
 
-     The main functions of [Paralus](https://github.com/paralus/paralus) are: it can handle the access management of multiple clusters in a unified way, allows integration with existing RBAC policies and SSO providers, and supports recording of user actions performed by users in the organization. Each kubectl command supports OIDC, supports creating custom roles with specific permissions, and allows dynamic revoking of permissions, etc.
+     The main features of [Paralus](https://github.com/paralus/paralus) are: it can handle the access management of multiple clusters in a unified way, allows integration with existing RBAC policies and SSO providers, and supports recording of user actions performed by users in the organization. Each kubectl command supports OIDC, supports creating custom roles with specific permissions, and allows dynamic revoking of permissions, etc.
 
 - [Phlare: Grafana open source large-scale continuous profiling database](https://grafana.com/blog/2022/11/02/announcing-grafana-phlare-oss-continuous-profiling-database/)
 
@@ -1130,7 +1130,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Rainbond Cloud Native multicloud Application Management Platform v5.14.0 Released](https://github.com/goodrain/rainbond/releases/tag/v5.14.0-release)
 
-    Version features: upgrade the source code builder version of each language; support one-click deletion of applications and related resources under applications; reasonable recycling mechanism for Pods created using cluster command line; add search function or prioritize matching certificates with the same domain name when configuring https certificates for domain names; support configuration of log storage path.
+    Version features: upgrade the source code builder version of each language; support one-click deletion of applications and related resources under applications; reasonable recycling mechanism for Pods created using cluster command line; add search feature or prioritize matching certificates with the same domain name when configuring https certificates for domain names; support configuration of log storage path.
 
 - [Rainbond Cloud Native multicloud Application Management Platform v5.12.0 Released](https://github.com/goodrain/rainbond/releases/tag/v5.12.0-release)
 
@@ -1172,7 +1172,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Skywalking application performance monitoring system v9.2.0 released](https://github.com/apache/skywalking/releases/tag/v9.2.0)
 
-     The main new features of this version: Added eBPF network analysis function of K8s Pod, support for MySQL and PostgreSQL monitoring, correlation event component and tracking, and log component.
+     The main new features of this version: Added eBPF network analysis feature of K8s Pod, support for MySQL and PostgreSQL monitoring, correlation event component and tracking, and log component.
 
 - [Skywalking application performance monitoring system v9.1.0 release (CNCF project)](https://github.com/apache/skywalking/releases/tag/v9.1.0)
 
@@ -1197,7 +1197,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Sylva cloud-native infrastructure stack launched by Linux Foundation Europe to lay a cloud-native foundation for telecom services](https://www.prnewswire.com/news-releases/linux-foundation-europe-announces-project-sylva-to-create-open-source-telco-cloud-software-framework-to-complement-open-networking-momentum-301678955.html)
 
-     [Sylva](https://gitlab.com/sylva-projects/sylva) Leverages container network functions (CNF) and cloud-native platforms such as Kubernetes to create a telecom cloud technology stack to reduce the fragmentation of cloud infrastructure for telecom and edge services sex.
+     [Sylva](https://gitlab.com/sylva-projects/sylva) Leverages container network features (CNF) and cloud-native platforms such as Kubernetes to create a telecom cloud technology stack to reduce the fragmentation of cloud infrastructure for telecom and edge services sex.
      The technology stack provided by Sylva consists of 5 components: network performance (SRIOV, DPDK, designated CNI, etc.), distributed cloud (multicluster Kubernetes, bare metal automation), energy efficiency, security (hardening and compliance), and openness and standardized API.
 
 ### T
@@ -1212,7 +1212,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Tekton Cloud Native CI/CD Framework v0.42.0 released](https://github.com/tektoncd/pipeline/releases/tag/v0.42.0)
 
-     The main new features of this version: support for configuring the Webhook port number, support for setting source values for cluster resources, add a new feature flag related to the status governance field, support for recording the source of remote resources, and add verification functions in reconciler.
+     The main new features of this version: support for configuring the Webhook port number, support for setting source values for cluster resources, add a new feature flag related to the status governance field, support for recording the source of remote resources, and add verification features in reconciler.
 
 - [Tekton Cloud Native CI/CD Framework v0.40.0 released](https://github.com/tektoncd/pipeline/releases/tag/v0.40.0)
 
@@ -1228,7 +1228,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Tetragon Security Observable and Runtime Enhancement Platform v0.9.0 Released](https://github.com/cilium/tetragon/releases/tag/v0.9.0)
 
-    Release features: add logging function for loading BPF programs, support container image signing with cosign, support basic Cgroups tracing function, support pprof http, gRPC support using unix socket.
+    Release features: add logging feature for loading BPF programs, support container image signing with cosign, support basic Cgroups tracing function, support pprof http, gRPC support using unix socket.
 
 - [Tetragon: Isovalent open source eBPF-based security observability and runtime enhancement platform](https://isovalent.com/blog/post/2022-05-16-tetragon)
 
@@ -1239,7 +1239,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [ThreatMapper Cloud Native Security Observation Platform v1.4.0 release](https://github.com/deepfence/ThreatMapper/releases/tag/v1.4.0)
 
-     The main new features of this version: the new function ThreatGraph can combine the network and other runtime environments to determine the priority of threat scanning results, support agentless cloud security situation management for cloud assets, and integrate cloud-native environment malicious program scanning tools [YaraHunter]( https://github.com/deepfence/YaraHunter).
+     The main new features of this version: the new feature ThreatGraph can combine the network and other runtime environments to determine the priority of threat scanning results, support agentless cloud security situation management for cloud assets, and integrate cloud-native environment malicious program scanning tools [YaraHunter]( https://github.com/deepfence/YaraHunter).
 
 - [Trivy Container Vulnerability Scanning Tool v0.41.0 Released (CNCF Project)](https://github.com/aquasecurity/trivy/discussions/4135)
 
@@ -1286,7 +1286,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Vcluster virtual Kubernetes cluster implementation v0.13.0 released](https://github.com/loft-sh/vcluster/releases/tag/v0.13.0)
 
-     The main new features of this version: adding log and backup functions, adding high availability support for k3s with external data storage, and automatically synchronizing CSI resources when the vcluster scheduler is turned on.
+     The main new features of this version: adding log and backup features, adding high availability support for k3s with external data storage, and automatically synchronizing CSI resources when the vcluster scheduler is turned on.
 
 - [Velero Backup Disaster Recovery Tool v1.11.0 Released (CNCF Project)](https://github.com/vmware-tanzu/velero/releases/tag/v1.11.0)
 

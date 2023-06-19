@@ -155,7 +155,7 @@ A control plane in the context of OpenEBS refers to a set of tools or components
 - Integrate into other tools for debugging, troubleshooting or log management
 
 The OpenEBS control plane consists of a set of microservices that are themselves managed by Kubernetes, making OpenEBS truly Kubernetes-native.
-Configurations managed by the OpenEBS control plane are saved as Kubernetes custom resources. The function of the control plane can be broken down into the following stages:
+Configurations managed by the OpenEBS control plane are saved as Kubernetes custom resources. The feature of the control plane can be broken down into the following stages:
 
 ![openebs-4](../images/openebs-4.svg)
 
@@ -223,6 +223,6 @@ Examples of such actions include:
 
 #### CLI command line
 
-All administrative functions on OpenEBS can be performed through kubectl, since OpenEBS uses custom resources to manage all its configuration and report the status of components.
+All administrative features on OpenEBS can be performed through kubectl, since OpenEBS uses custom resources to manage all its configuration and report the status of components.
 
 Additionally, OpenEBS has released an alpha kubectl plugin to help provide information about pools and volumes using a single command that aggregates information obtained through multiple kubectl commands.

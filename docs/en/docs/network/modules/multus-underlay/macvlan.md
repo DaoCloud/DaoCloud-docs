@@ -46,7 +46,7 @@ Multus + Macvlan generally has two  use cases:
 
         The value of `v1.multus-cni.io/default-network` cannot be a CRD of macvlan-overlay type, that is, macvlan-overlay cannot be used as the first NIC of a Pod.
 
-## other
+## Other
 
 A common network scenario using macvlan:
 

@@ -25,7 +25,7 @@ Workbench pipeline supports the creation of multi-branch pipelines based on code
 3. Fill in the basic information and code warehouse information by referring to the instructions below.
 
     - name: the name of the pipeline. The pipeline name must be unique under the same workspace.
-    - Description information: The user describes the function of the current pipeline.
+    - Description information: The user describes the feature of the current pipeline.
     - Code warehouse address: fill in the address of the remote code warehouse.
     - Credentials: For private warehouses, you need to [create repo access credentials](../credential.md) in advance and select the credentials here.
     - Script path: the absolute path of the Jenkinsfile in the code repository.
@@ -37,7 +37,7 @@ Workbench pipeline supports the creation of multi-branch pipelines based on code
     - Open discovery branch: the default value is `.*`, and the branch is filtered by regular expression.
     - Turn on multi-branch scanning: After it is turned on, once there is a branch change in the code warehouse, it will be synchronized.
     - Scanning interval: Scan the code warehouse according to the preset interval to check whether it is updated again.
-    - Delete old branches: After opening, old branches and pipelines will be deleted according to the policy
+    - Delete old branches: After enabled, old branches and pipelines will be deleted according to the policy
     - Days to keep: the number of days to keep the old branch and the pipeline of the old branch, and delete it after expiration.
     - Number of reservations: the number of old branches and pipeline reservations of old branches.
     - Shallow clone: ​​When enabled, pull the latest version of the code repository. Supports setting the clone depth, generally the default is 1 to speed up the pull.

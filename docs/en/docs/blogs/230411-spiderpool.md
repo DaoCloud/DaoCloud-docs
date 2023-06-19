@@ -41,7 +41,7 @@ The Calico BGP mode is matched with the Spiderpool environment, and the topology
 
 ![spiderpool](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/spiderpool01.png)
 
-Create a SpiderSubnet instance according to your own environment: nginx-subnet-v4, and experience Spiderpool's fixed IP and other functions.
+Create a SpiderSubnet instance according to your own environment: nginx-subnet-v4, and experience Spiderpool's fixed IP and other features.
 
 ```none
 [root@master ~]# kubectl get ss
@@ -51,7 +51,7 @@ nginx-subnet-v4 4 10.244.0.0/16 0 25602
 
 ## Automatically fix the IP pool for the application
 
-This feature supports automatically creating an IP pool from the SpiderSubnet(10.244.0.0/16) subnet and binding it to the application Pod. It also supports functions such as fixed Pod IP and automatic expansion and contraction of the number of IP pools according to the number of replicas.
+This feature supports automatically creating an IP pool from the SpiderSubnet(10.244.0.0/16) subnet and binding it to the application Pod. It also supports features such as fixed Pod IP and automatic expansion and contraction of the number of IP pools according to the number of replicas.
 
 Using the Spiderpool automatic pool function, create two copies of the Nginx Deployment application:
 
@@ -202,7 +202,7 @@ nginx-v4-ippool 4 10.244.0.0/16 2 11 false false
 After testing: clients outside the cluster can directly access through the IP of Nginx Pod normally, and the internal communication of Nginx Pod within the cluster also communicates normally across nodes (including across Calico subnets).
 In the Calico underlay scenario, we can use Spiderpool to easily help us realize the fixed IP requirements of Deployment and other types of applications, which also provides a new option for this scenario.
 
-For more functions, please refer to [Spiderpool Official Documentation](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/).
+For more features, please refer to [Spiderpool Official Documentation](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/).
 
 [Learn about DCE 5.0 Cloud Native Networking](../network/intro/what-is-net.md){ .md-button }
 

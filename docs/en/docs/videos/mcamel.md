@@ -16,7 +16,7 @@
 
 ## Elasticsearch search service management
 
-See the [Elasticsearch Search Service Instance Management](../middleware/elasticsearch/user-guide/create.md) documentation page.
+See [Elasticsearch Search Service Instance Management](../middleware/elasticsearch/user-guide/create.md) for reference.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/es.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
@@ -24,7 +24,7 @@ See the [Elasticsearch Search Service Instance Management](../middleware/elastic
 
 ## Kafka message management
 
-See the [Kafka Message Instance Management](../middleware/kafka/user-guide/create.md) documentation page.
+See [Kafka Message Instance Management](../middleware/kafka/user-guide/create.md) for reference.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kafka.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
@@ -32,7 +32,7 @@ See the [Kafka Message Instance Management](../middleware/kafka/user-guide/creat
 
 ## Managing MinIO Storage Instances
 
-Refer to the [MinIO Instance Management](../middleware/minio/user-guide/create.md) document page.
+See [MinIO Instance Management](../middleware/minio/user-guide/create.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/minio.mp4" preload="metadata" poster="../images/mcamel-minio.png"></video>
@@ -40,7 +40,7 @@ Refer to the [MinIO Instance Management](../middleware/minio/user-guide/create.m
 
 ## Redis cache management
 
-See the [Redis Cache Service](../middleware/redis/intro/what.md) documentation page.
+See [Redis Cache Service](../middleware/redis/intro/what.md) for reference.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/redis.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>

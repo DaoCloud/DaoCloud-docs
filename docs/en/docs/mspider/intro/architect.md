@@ -39,4 +39,4 @@ Extension modules that run through the overall architecture include observabilit
 
 ![architecture](../images/architect.png)
 
-As shown in the figure above, the service mesh provides nine modules and twelve sub-module functions, realizing the ability of diversified cluster access and mesh management in multiple modes.
+As shown in the figure above, the service mesh provides nine modules and twelve sub-module features, realizing the ability of diversified cluster access and mesh management in multiple modes.

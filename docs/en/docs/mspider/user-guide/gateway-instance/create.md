@@ -5,7 +5,7 @@ hide:
 
 # Manage mesh gateways
 
-The mesh gateway function provides the creation and management functions of mesh gateway instances. Users can manage mesh gateway instances in the current mesh on this page.
+The mesh gateway feature provides the creation and management features of mesh gateway instances. Users can manage mesh gateway instances in the current mesh on this page.
 
 There are two types of mesh gateways: Ingress (inbound) and Egress (outbound).
 The Ingress gateway is used to define the traffic entry of the application in the service mesh. All traffic entering the application in the service mesh should pass through the Ingress gateway.

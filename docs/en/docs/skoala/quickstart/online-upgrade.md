@@ -5,7 +5,7 @@ Before you begin, understanding the deployment architecture of the microservice 
 The microservice engine consists of two components:
 
 - The `skoala` component is installed in the control plane cluster and is used to load the microservice engine module in the level 1 navigation bar of DCE 5.0
--  `skoala-init` Components are installed in the working cluster and are used to provide the core functions of the microservice engine, such as creating registries, gateway instances, and so on
+-  `skoala-init` Components are installed in the working cluster and are used to provide the core features of the microservice engine, such as creating registries, gateway instances, and so on
 
 !!! note
 

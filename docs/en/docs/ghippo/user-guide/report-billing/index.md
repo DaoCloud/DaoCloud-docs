@@ -5,7 +5,7 @@ hide:
 
 # Operations Management
 
-IT operations management is an important part of the entire enterprise information construction. DCE 5.0 provides two operational management functions, [`Report Management`](./report.md) and [`Billing and Metering`](./billing.md), aimed at helping enterprises better understand their IT infrastructure usage and the value of IT services provided.
+IT operations management is an important part of the entire enterprise information construction. DCE 5.0 provides two operational management features, [`Report Management`](./report.md) and [`Billing and Metering`](./billing.md), aimed at helping enterprises better understand their IT infrastructure usage and the value of IT services provided.
 
 ## Report Management
 
@@ -15,7 +15,7 @@ First, by centrally displaying various types of reports, enterprises can more ac
 
 Secondly, through audit reports, enterprises can understand user operations and operations performed on resources, making it easy for enterprises to grasp resource utilization and track user operation traces. Through alert reports, enterprises can generate cluster inspection reports, quickly diagnose problems and handle them.
 
-Finally, the report management module also supports customized time ranges and searches, helping administrators better understand the usage of enterprise IT resources. In addition, it provides the function of exporting/downloading data, allowing administrators to conduct in-depth analysis of the data.
+Finally, the report management module also supports customized time ranges and searches, helping administrators better understand the usage of enterprise IT resources. In addition, it provides the feature of exporting/downloading data, allowing administrators to conduct in-depth analysis of the data.
 
 ## Billing and Metering
 

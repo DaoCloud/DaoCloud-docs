@@ -39,7 +39,7 @@ This page lists the release notes of the container registry, so that you can und
 
 #### Optimization
 
-- Optimize the performance of the image list function page, and propose a separate `Project` list page
+- Optimize the performance of the image list feature page, and propose a separate `Project` list page
 
 ## 2023-03-15
 

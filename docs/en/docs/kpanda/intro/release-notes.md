@@ -43,9 +43,9 @@ This page provides the Release Notes for container management to help you unders
 - **Added** ability to query PVC events using the interface.
 - **Added** configuration of parameters such as backofflimit, completions, parallelism, and activeDeadlineSeconds while creating a task
 - **Added** integration of self-developed open source storage component Hwameistor and support for viewing local storage resource overview and other information in the `container storage` module
-- **Added** cluster patrol function supporting second-level patrol (Alpha) of the cluster
-- **Added** application backup function supporting quick backup and recovery (Alpha)
-- **Added** platform backup function supporting backup and recovery (Alpha) of ETCD data
+- **Added** cluster patrol feature supporting second-level patrol (Alpha) of the cluster
+- **Added** application backup feature supporting quick backup and recovery (Alpha)
+- **Added** platform backup feature supporting backup and recovery (Alpha) of ETCD data
 - **Added** support for Ghippo’s custom role management cluster
 
 #### Optimizations
@@ -181,7 +181,7 @@ This page provides the Release Notes for container management to help you unders
 
 #### Features
 
-- **Added** NetworkPolicy policy management functions, including the creation, update, and deletion of NetworkPolicy policies, as well as the display of NetworkPolicy policy details, to help users configure network traffic policies for the Pod.
+- **Added** NetworkPolicy policy management features, including the creation, update, and deletion of NetworkPolicy policies, as well as the display of NetworkPolicy policy details, to help users configure network traffic policies for the Pod.
 - **Added** Workload supports multi-network card configuration and supports IP Pool display to meet the user’s requirement of configuring multiple network cards separately for workload configuration.
 - **Added** Support to view the operation log of the creation process after the failure of cluster creation, to help users quickly locate the fault.
 - **Added** Stateful workloads support the use of dynamic data volume templates.
@@ -194,7 +194,7 @@ This page provides the Release Notes for container management to help you unders
 - **Optimized** The default icon when the Helm chart icon is empty.
 - **Optimized** Select the network mode as None when creating the cluster to allow the user to install the network plug-in after the cluster is created.
 - **Optimized** Cluster Operations Information Architecture:
-    - Adjust the cluster upgrade operation on the cluster list and cluster overview page to the cluster operation and maintenance function in the cluster details.
+    - Adjust the cluster upgrade operation on the cluster list and cluster overview page to the cluster operation and maintenance feature in the cluster details.
     - When a management cluster is removed from the cluster list, the cluster created based on this management cluster will hide the operations of upgrading the cluster, accepting managed nodes, and deleting nodes in the interface.
 
 #### Fixes

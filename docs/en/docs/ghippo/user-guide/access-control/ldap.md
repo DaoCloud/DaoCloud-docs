@@ -7,7 +7,7 @@ hide:
 
 The full name of LDAP in English is Lightweight Directory Access Protocol, that is, Lightweight Directory Access Protocol, which is an open and neutral industry-standard application protocol that provides access control and maintains directory information for distributed information through the IP protocol.
 
-If your enterprise or organization has its own account system, and your enterprise user management system supports the LDAP protocol, you can use the identity provider function based on the LDAP protocol provided by the global Organization members create usernames/passwords.
+If your enterprise or organization has its own account system, and your enterprise user management system supports the LDAP protocol, you can use the identity provider feature based on the LDAP protocol provided by the global Organization members create usernames/passwords.
 You can grant permissions to use DCE 5.0 resources to these external user identities.
 
 In global management, the operation steps are as follows:

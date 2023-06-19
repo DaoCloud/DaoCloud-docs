@@ -111,10 +111,10 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     An API gateway is a tool that
     aggregates unique application APIs, making them all available in one place.
-    It allows organizations to move key functions,
+    It allows organizations to move key features,
     such as authentication and authorization or limiting the number of requests between applications,
     to a centrally managed location.
-    An API gateway functions as a common interface to (often external) API consumers.
+    An API gateway features as a common interface to (often external) API consumers.
 
     If you’re making APIs available to external consumers,
     you'll want one entry point to manage and control all access.
@@ -609,7 +609,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     This service can be deployed on-premises or in the cloud.
 
     CaaS providers offer a framework or orchestration platform that
-    automates key IT functions on which containers are deployed and managed.
+    automates key IT features on which containers are deployed and managed.
     It helps developers build secure and scalable containerized apps.
     Because users only buy the resources they need (scheduling capabilities, load balancing, etc.),
     they save money and increase efficiency.
@@ -648,7 +648,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     that tests and deploys the software using various deployment strategies
     such as canary or blue-green releases.
     This allows developers to deploy code frequently,  giving them peace of mind that the new revision has been tested.
-    Typically, trunk-based development is used in CD strategies as opposed to feature branching or pull requests.
+    Typically, trunk-based development is used in CD strategies as opposed To function branching or pull requests.
 
 - Continuous Deployment
 
@@ -789,7 +789,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
     Database-as-a-Service (DBaaS) is a service managed by a cloud operator (public or private)
     that supports applications without requiring the application team to
-    perform traditional database administration functions.
+    perform traditional database administration features.
     DBaaS allows app developers to leverage databases without being experts or
     hiring a database administrator (DBA) to keep the database up to date.
 
@@ -1128,7 +1128,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Gateway node
 
-    A Gateway node is a worker node that mainly runs the Envoy open-source application, providing high-performance reverse proxy capabilities, supporting load balancing, routing, caching, custom routing, and other functions. The number and performance of worker nodes will directly affect the performance of the gateway, so it is recommended to deploy enough worker nodes according to needs.
+    A Gateway node is a worker node that mainly runs the Envoy open-source application, providing high-performance reverse proxy capabilities, supporting load balancing, routing, caching, custom routing, and other features. The number and performance of worker nodes will directly affect the performance of the gateway, so it is recommended to deploy enough worker nodes according to needs.
 
 - Gateway Rule
 
@@ -1446,7 +1446,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Loosely coupled architecture
 
-    A loosely coupled architecture (the opposite paradigm of tightly coupled architecture) is an architectural style in which the various components of an application are built independently of each other. Each component, sometimes called a microservice, is built to perform a specific function so that it can be used by any number of other services. Implementing this pattern is usually slower than tightly coupled architecture. But there are many benefits, especially as the application continues to scale. Loosely coupled applications allow teams to develop, deploy, and scale independently, which allows organizations to iterate quickly on individual components. Application development is faster, and team structures can be built around the capabilities of the application.
+    A loosely coupled architecture (the opposite paradigm of tightly coupled architecture) is an architectural style in which the various components of an application are built independently of each other. Each component, sometimes called a microservice, is built to perform a specific feature so that it can be used by any number of other services. Implementing this pattern is usually slower than tightly coupled architecture. But there are many benefits, especially as the application continues to scale. Loosely coupled applications allow teams to develop, deploy, and scale independently, which allows organizations to iterate quickly on individual components. Application development is faster, and team structures can be built around the capabilities of the application.
 
 ### M
 
@@ -1486,7 +1486,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Microservice
 
-    A microservice is an architectural style that builds a single application by combining multiple small services. In a microservice engine, a microservice refers to the various small services obtained by splitting a complete application according to business functions.
+    A microservice is an architectural style that builds a single application by combining multiple small services. In a microservice engine, a microservice refers to the various small services obtained by splitting a complete application according to business features.
 
     Microservices are a modern approach to application development using cloud-native technologies. Although modern applications like Netflix appear to be a single application, they are actually a collection of smaller services that work closely together. For example, a single page that allows you to access, search, and preview videos is likely provided by smaller services, each of which handles one aspect (such as search, authentication, and running previews in the browser). In short, microservices refer to an application architecture pattern that is typically contrasted with monolithic applications.
 
@@ -1779,7 +1779,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
     Cloud providers handle the daily work of configuring, maintaining, and scaling server infrastructure. Developers
     can simply package their code in containers for deployment. After deployment, the Serverless application responds
     to demands and automatically scales up and down as needed. Public cloud providers' Serverless products typically
-    meter on an event-driven execution model. Therefore, when the serverless function is idle, it does not incur any costs.
+    meter on an event-driven execution model. Therefore, when the serverless feature is idle, it does not incur any costs.
 
     In the standard infrastructure as a service (IaaS) cloud computing model, users purchase capacity units in advance,
     which means that you need to pay the public cloud provider for the cost of the server components that are always
@@ -1858,7 +1858,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Site Reliability Engineering
 
-    Site Reliability Engineering (SRE) is a discipline that combines operations and software engineering, particularly for infrastructure and operational issues. SRE engineers build systems to run applications rather than building product features. They ensure that applications run reliably by monitoring performance, setting up alerts, debugging, and troubleshooting. Without these functions, operators can only react to problems rather than proactively avoiding them, and downtime is only a matter of time. SRE continuously measures and monitors infrastructure and application components. When problems arise, the system prompts SRE engineers when, where, and how to fix them. This approach helps create highly scalable and reliable software systems through automated tasks.
+    Site Reliability Engineering (SRE) is a discipline that combines operations and software engineering, particularly for infrastructure and operational issues. SRE engineers build systems to run applications rather than building product features. They ensure that applications run reliably by monitoring performance, setting up alerts, debugging, and troubleshooting. Without these features, operators can only react to problems rather than proactively avoiding them, and downtime is only a matter of time. SRE continuously measures and monitors infrastructure and application components. When problems arise, the system prompts SRE engineers when, where, and how to fix them. This approach helps create highly scalable and reliable software systems through automated tasks.
 
 - Software as a service
 
@@ -1866,7 +1866,7 @@ This page lists some terms common to DEC 5.0 in alphabetical order.
 
 - Stateful Apps
 
-    When we talk about stateful (and stateless) applications, state refers to any data that the application needs to store to function as designed. For example, any online store that remembers your shopping cart is a stateful application. Using an application typically requires multiple requests. For example, when using online banking, you will verify your identity by entering a password (request #1), then transfer money to a friend (request #2), and finally view the transfer details (request #3). To function properly, each step must remember the previous steps, and the bank needs to remember each person's account status. There are several ways to store state for stateful applications. The simplest is to store the state in memory rather than persisting it anywhere else. The problem with this approach is that all state is lost every time the application must restart. To prevent this, state is persisted locally (on disk) or in a database system.
+    When we talk about stateful (and stateless) applications, state refers to any data that the application needs to store To function as designed. For example, any online store that remembers your shopping cart is a stateful application. Using an application typically requires multiple requests. For example, when using online banking, you will verify your identity by entering a password (request #1), then transfer money to a friend (request #2), and finally view the transfer details (request #3). To function properly, each step must remember the previous steps, and the bank needs to remember each person's account status. There are several ways to store state for stateful applications. The simplest is to store the state in memory rather than persisting it anywhere else. The problem with this approach is that all state is lost every time the application must restart. To prevent this, state is persisted locally (on disk) or in a database system.
 
 - StatefulSet
 

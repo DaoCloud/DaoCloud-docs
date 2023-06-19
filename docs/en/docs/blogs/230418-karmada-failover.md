@@ -526,7 +526,7 @@ if needEviction || tolerationTime == 0 {
 It can be noticed that when writing an eviction task, the cluster corresponding to the graceful eviction task will be removed from `rb.spec.clusters`, which means that the scheduling result will be modified. (Here it needs to be emphasized that the scheduling result is the scheduling and distribution cluster selected by Karmada scheduler based on the propagation strategy and cluster situation for resources, and the scheduling result will be recorded in the `spec.clusters` attribute of `rb` (ResourceBinding).) This means that due to cluster failures, the scheduler will be triggered to reschedule, and resources should be evicted from the failed cluster and created on the new cluster.
 
 ```go
-// This function no-(images cluster does not exist.
+// This feature no-(images cluster does not exist.
 func (s *ResourceBindingSpec) GracefulEvictCluster(name, producer, reason, message string) {
    // find the cluster index
    var i int

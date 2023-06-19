@@ -4,26 +4,42 @@
 
 ## Create a Pod multi-NIC scenario
 
-See the [multus-underlay](../network/modules/multus-underlay/what.md) documentation page.
+See [multus-underlay](../network/modules/multus-underlay/what.md) for reference.
 
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/pod-cnis.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/pod-cnis.mp4" preload="metadata" poster="../images/net-cnis.png"></video>
 </div>
 
 ## Installation and use of F5network
 
-See the [F5 installation](../network/modules/f5networks/install.md) documentation page.
+See [F5 installation](../network/modules/f5networks/install.md) for reference.
 
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/f5network.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/f5network.mp4" preload="metadata" poster="../images/net-f5.png"></video>
 </div>
 
 ## Installation and use of SR-IOV
 
-See the [SR-IOV](../network/modules/multus-underlay/sriov.md) documentation page.
+See [SR-IOV](../network/modules/multus-underlay/sriov.md) for reference.
 
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/SR-IOV.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/SR-IOV.mp4" preload="metadata" poster="../images/net-sriov.png"></video>
+</div>
+
+## Installation and use of Ingress Nginx
+
+See [Ingress Nginx](../network/modules/ingress-nginx/what.md) for reference.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ingress-nginx.mp4" preload="metadata" poster="../images/net-nginx.png"></video>
+</div>
+
+## Installation and use of MetalLB
+
+See [MetalLB](../network/modules/metallb/what.md) for reference.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/MetalLB.mp4" preload="metadata" poster="../images/net-metallb.png"></video>
 </div>
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }

@@ -14,11 +14,11 @@ Global Management (Ghippo) is a comprehensive user-centered service that include
 
 - All Services Under One Menu
 
-    The basic service modules of the platform are brought together to reduce the troubles caused by menu switching and function scattering. Platform administrators can complete basic settings and user management under one menu.
+    The basic service modules of the platform are brought together to reduce the troubles caused by menu switching and feature scattering. Platform administrators can complete basic settings and user management under one menu.
 
 - Combination of Users and Tenants
 
-    Flat management of users and groups as well as hierarchical tenant (workspace) collaboration enable multi-dimensional and multi-scenario access control based on the platform and resource-based function division.
+    Flat management of users and groups as well as hierarchical tenant (workspace) collaboration enable multi-dimensional and multi-scenario access control based on the platform and resource-based feature division.
 
 - Personalization
 

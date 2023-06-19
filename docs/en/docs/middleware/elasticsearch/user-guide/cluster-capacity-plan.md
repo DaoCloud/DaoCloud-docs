@@ -103,7 +103,7 @@ Each `Elasticsearch` index is divided into multiple shards, and the data is scat
      - A shard that is too small may lead to a lot of shards, because each shard will take up some CPU and memory, resulting in read and write performance and insufficient memory.
   
 - When the number of shards exceeds the number of data nodes, it is recommended that the number of shards be close to an integer multiple of the data nodes, so that the shards can be evenly distributed to the data nodes.
-- For log cases, it is recommended to enable the ILM function. When the fragment size is found to be unreasonable, use this function to adjust the number of fragments in time.
+- For log cases, it is recommended to enable the ILM function. When the fragment size is found to be unreasonable, use this feature to adjust the number of fragments in time.
 
 ### Index shard resource occupation
 

@@ -281,9 +281,9 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [How to extend K8s Descheduler strategy](https://mp.weixin.qq.com/s/pkDxexvrzmtuLMWwzi0p_g)
 
-    The functions of the community Descheduler are far from meeting the needs of the company's internal production environment.
+    The features of the community Descheduler are far from meeting the needs of the company's internal production environment.
     The article describes extensions to the LowNodeUtilization and HighNodeUtilization strategies.
-    When using Descheduler to migrate pods, it is necessary to take some measures to ensure the stability of the business. After improving the component functions, it is also necessary to evaluate the effect of the service itself.
+    When using Descheduler to migrate pods, it is necessary to take some measures to ensure the stability of the business. After improving the component features, it is also necessary to evaluate the effect of the service itself.
 
 - [Kubernetes resource topology-aware scheduling optimization](https://mp.weixin.qq.com/s/CgW1zqfQBdUQo8qDtV-57Q)
 
@@ -326,7 +326,7 @@ This page shares some technical articles related to cloud native, and we hope th
     The Baidu cloud-native hybrid system is mainly divided into three parts: stand-alone management layer, scheduling layer, and operation layer.
     The stand-alone layer provides resource quality management, kernel-level QoS isolation, resource view reporting and policy enforcement, and eBPF fine-grained metric collection capabilities;
     The scheduling layer is responsible for the perception of resource dynamic source view and providing the best scheduling strategy;
-    The operation layer provides functions such as resource portrait, resource operation, water level setting, and hot spot management.
+    The operation layer provides features such as resource portrait, resource operation, water level setting, and hot spot management.
 
 - [6 Best Practices for Kubernetes Security Compliance](https://mp.weixin.qq.com/s/MQh16-PQYsjaGCjwyxIk_A)
 
@@ -355,7 +355,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Alibaba Cloud Releases Enterprise Cloud Native IT Cost Governance Solution: Five Capabilities Accelerate Enterprise FinOps Process](https://mp.weixin.qq.com/s/hAHNlAi8c0OAO7zSq31J1w)
 
     Enterprise cloud-native IT cost governance has problems such as the lifecycle mismatch between business units and billing units, the contradiction between dynamic resource delivery and static capacity planning, and the adaptation of enterprise IT cost governance models to cloud-native architectures.
-    As a result, Alibaba Cloud Container Service has launched an enterprise cloud-native IT cost governance solution, which provides functions such as enterprise IT cost management, cost visualization, and cost optimization.
+    As a result, Alibaba Cloud Container Service has launched an enterprise cloud-native IT cost governance solution, which provides features such as enterprise IT cost management, cost visualization, and cost optimization.
 
 - [DevOps Trends and Best Practices to Watch in 2022](https://technostacks.com/blog/devops-trends)
 
@@ -442,11 +442,11 @@ This page shares some technical articles related to cloud native, and we hope th
     The article shares a sample architecture. On the GKE cluster, use Traffic Director to configure the Envoy gateway proxy, and use TLS routing rules to route client traffic outside the cluster to workloads deployed on the cluster.
     In addition, it demonstrates how to use the Envoy proxy as an ingress gateway to enable north-south traffic into the service mesh, and use the [Service Routing API](https://cloud.google.com/traffic-director/docs/service-routing-overview#:~:text=The%20service%20routing%20APIs%20let,two%20HTTPRoute%20resources%20configure%20routing.) to route these traffic, and finally shared some troubleshooting tips.
 
-- [How is the Java framework of Quarkus used for serverless function development?](https://mp.weixin.qq.com/s/oeJjQtqK8h2JSGy4wOlQ6w)
+- [How is the Java framework of Quarkus used for serverless feature development?](https://mp.weixin.qq.com/s/oeJjQtqK8h2JSGy4wOlQ6w)
 
     [Quarkus](https://github.com/quarkusio/quarkus) solves the problem of large memory consumption of traditional frameworks and the expansion of container environments.
-    With Quarkus, developers can build cloud-native microservices and serverless functions using familiar technologies.
-    Articles explaining how to get started with Quarkus develops serverless functions, how to optimize functions and achieve continuous testing, and make portable functions across serverless platforms, etc.
+    With Quarkus, developers can build cloud-native microservices and serverless features using familiar technologies.
+    Articles explaining how to get started with Quarkus develops serverless features, how to optimize features and achieve continuous testing, and make portable features across serverless platforms, etc.
 
 - [GitLab + Jenkins + Harbor Toolchain Quick Landing Guide](https://mp.weixin.qq.com/s/fA38H5up9VqZ3zEBy1eXnA)
 
@@ -506,7 +506,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [K8S Operation and Maintenance Development and Debugging Artifact Telepresence Practice Guide](https://mp.weixin.qq.com/s/Yu5z9w26rqgVHkEYhg1t2g)
 
     [Telepresence](https://github.com/telepresenceio/telepresence) can be used to run a single service locally while connecting that service to a remote Kubernetes cluster.
-    Telepresence provides three very important functions: cluster domain name resolution, cluster traffic proxy and cluster traffic interception.
+    Telepresence provides three very important features: cluster domain name resolution, cluster traffic proxy and cluster traffic interception.
 
 - [Use Containerlab + kind to quickly deploy Cilium BGP environment](https://mp.weixin.qq.com/s/FBkln02REVMByhdzaZhj7w)
 
@@ -620,7 +620,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Crane-scheduler: Scheduling based on real load](https://mp.weixin.qq.com/s/s0usEAA3pFemER97HS5G-Q)
 
     The native Kubernetes scheduler can only schedule based on the resource request of the resource. However, the actual resource usage of the Pod is often very different from the request/limit of the requested resource.
-    Crane-scheduler is a scheduling plug-in of the cost-optimized open source project Crane, which realizes the scheduling function based on real load, acts on the Filter and Score stages in the scheduling process, and provides a flexible scheduling policy configuration method, thereby effectively alleviating the kubernetes cluster The problem of uneven load of various resources in the network.
+    Crane-scheduler is a scheduling plug-in of the cost-optimized open source project Crane, which realizes the scheduling feature based on real load, acts on the Filter and Score stages in the scheduling process, and provides a flexible scheduling policy configuration method, thereby effectively alleviating the kubernetes cluster The problem of uneven load of various resources in the network.
 
 - [How to use Multus CNI to use Kubernetes services on secondary networks](https://cloud.redhat.com/blog/how-to-use-kubernetes-services-on-secondary-networks-with-multus-cni)
 
@@ -629,7 +629,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Use vmagent instead of Prometheus to collect monitoring metrics](https://mp.weixin.qq.com/s/jGf1L-8c8id8umB72b3AsQ)
 
     vmagent is a component in the open source time series database VictoriaMetrics (VM), which helps us collect metrics from various sources and store them in VM or any other Prometheus-compatible storage system that supports the remote write protocol.
-    vmagent can implement many functions of Prometheus, but index capture is more flexible, supports pulling and pushing metrics, and uses less memory, CPU, disk I/O, and network bandwidth.
+    vmagent can implement many features of Prometheus, but index capture is more flexible, supports pulling and pushing metrics, and uses less memory, CPU, disk I/O, and network bandwidth.
 
 - [In-depth Interpretation: Distributed System Resilience Architecture Ballast Stone OpenChaos](https://mp.weixin.qq.com/s/x-aRajL_ThKgVpOwV5GgXA)
 
@@ -706,7 +706,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Discussion on K8s CNI plug-in selection and use cases](https://mp.weixin.qq.com/s/GG7GX_E1oyZf-cmjk80OYg)
 
-    This page introduces seven common network use cases in the container environment and the implementation of the Kubernetes CNI plug-in function for the corresponding use cases.
+    This page introduces seven common network use cases in the container environment and the implementation of the Kubernetes CNI plug-in feature for the corresponding use cases.
 
 - [The Way of DevOps Platform Design in the Cloud Native Era (Rancher vs KubeSphere vs Rainbond)](https://mp.weixin.qq.com/s/oxeNq4GHE85NUBIDcgixcg)
 
@@ -780,7 +780,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
     The container checkpoint feature (K8s 1.25 alpha) creates a snapshot of a running container's state and saves it to disk.
     You can then use this checkpoint to start the container, restore state, or migrate the container to another machine.
-    The article introduces how this function works, Podman's checkpoint function, CRIU and forensic analysis and other use cases.
+    The article introduces how this feature works, Podman's checkpoint function, CRIU and forensic analysis and other use cases.
 
 - [OCI Container and Wasm First Experience](https://mp.weixin.qq.com/s/4oFErzG65b-0FfpHQB941A)
 
@@ -813,7 +813,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Design and Implementation of Next Generation Cloud Native Edge Device Management Standard DMI](https://mp.weixin.qq.com/s/T3TnKXhBefqavP4rni59Sg)
 
     DMI integrates device management interfaces to optimize device management capabilities in edge computing use cases;
-    At the same time, a unified connection entry between EdgeCore and Mapper is defined, and EdgeCore and Mapper implement the server and client of the upstream data flow and downstream data flow respectively, and carry the specific functions of DMI.
+    At the same time, a unified connection entry between EdgeCore and Mapper is defined, and EdgeCore and Mapper implement the server and client of the upstream data flow and downstream data flow respectively, and carry the specific features of DMI.
 
 - [Using eBPF LSM to hot fix Linux kernel vulnerabilities](https://mp.weixin.qq.com/s/UJEC8nmfQbdsWdJMfju0ig)
 
@@ -828,13 +828,13 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Pinpointing Service Mesh Critical Performance Impacts Using eBPF](https://www.tetrate.io/blog/pinpoint-service-mesh-critical-performance-impact-by-using-ebpf/)
 
-    [SkyWalking Rover](https://github.com/apache/skywalking-rover) is the eBPF profiling function introduced in the SkyWalking ecosystem, which can realize CPU profiling, off-CPU profiling, etc.
+    [SkyWalking Rover](https://github.com/apache/skywalking-rover) is the eBPF profiling feature introduced in the SkyWalking ecosystem, which can realize CPU profiling, off-CPU profiling, etc.
     The article discusses how eBPF technology can be used to improve profiling in SkyWalking and to analyze performance impact in a service mesh.
 
 - [coolbpf technology practice, improve the efficiency of BPF program development by a hundred times](https://www.infoq.cn/article/IielSpCwjf6Owd6jMBef)
 
     [coolbpf](https://github.com/aliyun/coolbpf) is a one-stop BPF development and compilation platform open sourced by the Longli community, aiming to solve the problems of BPF operation and productivity improvement on different system platforms.
-    The six major functions of coolbpf: local compilation service, basic library encapsulation; remote compilation service; features of high version are supplemented to low version through kernel module; automatic generation of BTF; automatic function test of each kernel version; Python, Rust, Go, C, etc. Advanced language support.
+    The six major features of coolbpf: local compilation service, basic library encapsulation; remote compilation service; features of high version are supplemented to low version through kernel module; automatic generation of BTF; automatic feature test of each kernel version; Python, Rust, Go, C, etc. Advanced language support.
 
 - [Thinking of the person in charge of Alibaba Cloud Container Service on cloud native and software supply chain security](https://mp.weixin.qq.com/s/jz8sBMeHTSFm8sndHakddw)
 
@@ -1010,7 +1010,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
     The article analyzes in detail the latest versions of two API gateway projects APISIX and Kong, trying to gain insight into valuable technical trends from update details.
     Kong 3.0 began to gradually lean towards the enterprise version, focusing on the government, financial industry, and large enterprises that pay more attention to security compliance.
-    All the functions launched by APISIX 3.0 are open source. While ensuring performance, it is also actively expanding the surrounding ecology.
+    All the features launched by APISIX 3.0 are open source. While ensuring performance, it is also actively expanding the surrounding ecology.
 
 - [Kubernetes Node component index combing](https://mp.weixin.qq.com/s/nrKk7tuARnvfnH0VOF7q9Q)
 

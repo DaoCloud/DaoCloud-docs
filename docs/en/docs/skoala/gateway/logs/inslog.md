@@ -21,5 +21,5 @@ Click the name of the target gateway to enter the gateway overview page, and the
 
 !!! info
 
-    If you want to view more logs or download logs, you can go to [Observability Module](../../../insight/intro/what.md) through [Log Query](../../../insight/06UserGuide/04dataquery/logquery.md) function to query or download logs of a specific cluster, namespace, workload, or pod.
+    If you want to view more logs or download logs, you can go to [Observability Module](../../../insight/intro/what.md) through [Log Query](../../../insight/06UserGuide/04dataquery/logquery.md) feature to query or download logs of a specific cluster, namespace, workload, or pod.
 

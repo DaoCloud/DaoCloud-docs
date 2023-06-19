@@ -107,7 +107,7 @@ This page lists some frequently asked questions that may arise in container mana
 
 1. Why is the console of a lower version cluster opened abnormally?
 
-    In Kubernetes clusters with versions below v1.18, opening the console will result in csr resource request failure. When opening the console, certificates are requested through csr resources in the target cluster according to the currently logged-in user. If the cluster version is too low or this function is not enabled in the controller, certificate application will fail and it will be impossible to connect to the target cluster.
+    In Kubernetes clusters with versions below v1.18, opening the console will result in csr resource request failure. When opening the console, certificates are requested through csr resources in the target cluster according to the currently logged-in user. If the cluster version is too low or this feature is not enabled in the controller, certificate application will fail and it will be impossible to connect to the target cluster.
 
     Please refer to the certificate signing request process: https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
 

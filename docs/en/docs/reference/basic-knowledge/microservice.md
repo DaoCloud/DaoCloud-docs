@@ -36,5 +36,5 @@ However, as the business continues to expand, the business logic becomes more an
     The Apache Dubbo microservice development framework provides two key capabilities of RPC communication and microservice governance.
     This means that microservices developed using Dubbo will have the ability to remotely discover and communicate with each other.
     At the same time, using Dubbo's rich service governance capabilities, service governance demands such as service discovery, load balancing, and traffic scheduling can be realized.
-    Dubbo is highly scalable, and users can customize their own implementation at almost any function point, thereby changing the default behavior of the framework to meet their own business needs.
+    Dubbo is highly scalable, and users can customize their own implementation at almost any feature point, thereby changing the default behavior of the framework to meet their own business needs.
     Dubbo currently supports various open source components such as Consul, Nacos, ZooKeeper, and Redis as registry centers.

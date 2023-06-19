@@ -122,6 +122,6 @@ On the data volume declaration list page, find the data to be deleted, and selec
     
 
 3. If the storage pool (SC) used by the data volume declaration is not enabled for snapshots, snapshots cannot be made, and the page will not display the "Make Snapshot" option.
-4. If the storage pool (SC) used by the data volume declaration does not have the capacity expansion function enabled, the data volume does not support capacity expansion, and the page will not display the capacity expansion option.
+4. If the storage pool (SC) used by the data volume declaration does not have the capacity expansion feature enabled, the data volume does not support capacity expansion, and the page will not display the capacity expansion option.
 
     

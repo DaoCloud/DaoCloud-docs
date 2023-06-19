@@ -4,7 +4,7 @@
 
 !!! note
 
-     The test functions in the table are not comprehensive.
+     The test features in the table are not comprehensive.
 
 | case | Test method | ocp4.10(k8s 1.23.0) | Remarks |
 | ------------ | ---------------- |--------- |--------- |
@@ -12,13 +12,13 @@
 | Add custom metric collection | Manual | ✅| |
 | Query real-time metrics | Manual | ✅| |
 | Instantaneous index query | Manual | ✅| |
-| Instantaneous metric api field function verification | Manual | ✅| |
+| Instantaneous metric api field feature verification | Manual | ✅| |
 | Query metrics over a period of time | Manual | ✅| |
-| Query the API field function verification of metrics within a period of time | Manual | ✅| |
+| Query the API field feature verification of metrics within a period of time | Manual | ✅| |
 | Batch query cluster CPU, memory usage, total cluster CPU, cluster memory usage, and total number of cluster nodes | Manual | ✅| |
 | Batch query node CPU, memory usage, total node CPU, node memory usage | Manual | ✅| |
 | Batch query cluster CPU, memory usage, total cluster CPU, cluster memory usage, and total number of cluster nodes within a period of time | Manual | ✅| |
-| Batch query to query the function verification of the index api field within a period of time | Manual | ✅ ||
+| Batch query to query the feature verification of the index api field within a period of time | Manual | ✅ ||
 | Query Pod logs | Manual | ✅| |
 | Query SVC logs | Manual | ✅| |
 | Query statefulset logs | Manual | ✅| |
@@ -30,7 +30,7 @@
 | Log Fuzzy Query-containerSearch | Manual | ✅| |
 | Log precise query-cluster | Manual | ✅| |
 | Log precise query-namespace | Manual | ✅| |
-| Log query api field function verification | Manual | ✅| |
+| Log query api field feature verification | Manual | ✅| |
 | alert rules - addition, deletion, modification and query | Manual | ✅ ||
 | alert template - addition, deletion, modification and query | Manual | ✅ ||
 | Notification method - addition, deletion, modification and query | Manual | ✅ ||

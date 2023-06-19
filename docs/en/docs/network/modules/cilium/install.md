@@ -163,7 +163,7 @@ cilium_enable_ipv6: false # true enable IPV6
 
 - Automatic mount of cgroup2 file system
 
-    By default, the automatic mounting function of the cgroup2 file system is enabled, and the default mounting path is "/run/cilium/cgroupv2".
+    By default, the automatic mounting feature of the cgroup2 file system is enabled, and the default mounting path is "/run/cilium/cgroupv2".
 
     It can be set by the following parameters:
 

@@ -15,7 +15,7 @@ Documents stored in Elasticsearch are distributed across containers (called shar
 
 **Rich Features**
 
-In addition to advantages in terms of speed, scalability, and elasticity, Elasticsearch also has a large number of powerful built-in functions (such as data aggregation and index lifecycle management), which can facilitate users to store and search data more efficiently.
+In addition to advantages in terms of speed, scalability, and elasticity, Elasticsearch also has a large number of powerful built-in features (such as data aggregation and index lifecycle management), which can facilitate users to store and search data more efficiently.
 
 **Simplified Data Acquisition, Visualization and Reporting**
 

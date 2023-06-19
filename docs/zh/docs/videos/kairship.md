@@ -17,6 +17,8 @@
 
 ## 多云模块介绍
 
+参阅[多云介绍](../kairship/intro/what.md)文档页面。
+
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-intro.mp4" preload="metadata" poster="../images/kairship-intro.png"></video>
 </div>
@@ -53,7 +55,7 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-resoruces.mp4" preload="metadata" poster="../images/kairship-resource.png"></video>
 </div>
 
-## DCE4 应用升级为 DCE5 应用
+## DCE 4.0 应用升级为 DCE 5.0 应用
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-migrate.mp4" preload="metadata" poster="../images/kairship-migrate.png"></video>

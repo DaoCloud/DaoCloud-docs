@@ -4,7 +4,7 @@ DCE 5.0 has two versions: Community package and Enterprise package.
 
 The Community package includes Container Management, Global Management, and Insight modules, which can be used for free permanently. 
 
-The Enterprise package can be purchased on demand with advanced modules such as Service Mesh, Microservice Engine, Multi-Cloud Orchestration, Data Middleware, Image Repository, etc. in addtion to those modules contained in the Community package. It has more comprehensive functions and can better meet the needs of production environments.
+The Enterprise package can be purchased on demand with advanced modules such as Service Mesh, Microservice Engine, Multi-Cloud Orchestration, Data Middleware, Image Repository, etc. in addtion to those modules contained in the Community package. It has more comprehensive features and can better meet the needs of production environments.
 
 | Package         | Included Modules                                                                                                                                                                | Description                                                                                                                                                                                                         |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

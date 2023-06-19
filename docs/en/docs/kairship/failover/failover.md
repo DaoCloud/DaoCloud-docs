@@ -4,7 +4,7 @@ When a cluster fails, the pod replicas in the cluster will be automatically migr
 
 **Prerequisites**
 
-The scheduling policy of multicloud workloads can only choose aggregation mode or dynamic weight mode, and the failover function can only take effect at this time.
+The scheduling policy of multicloud workloads can only choose aggregation mode or dynamic weight mode, and the failover feature can only take effect at this time.
 
 ## Enable failover
 

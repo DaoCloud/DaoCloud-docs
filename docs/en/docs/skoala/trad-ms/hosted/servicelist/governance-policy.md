@@ -28,10 +28,10 @@ The micro-service engine supports east-west traffic governance via a service mes
 
 ## Mesh governance rules
 
-Traffic governance provides users with three resource configurations: virtual service, target rule, and gateway rule. By configuring corresponding rules, you can implement multiple traffic governance functions, such as routing, redirection, circuit breaker, and traffic diversion. Users can create and edit governance policies through wizards or YAML.
+Traffic governance provides users with three resource configurations: virtual service, target rule, and gateway rule. By configuring corresponding rules, you can implement multiple traffic governance features, such as routing, redirection, circuit breaker, and traffic diversion. Users can create and edit governance policies through wizards or YAML.
 
 - Virtual services are used to customize routing rules for request traffic and perform data flow diversion, redirection, and timeout return.
-- The target rules pay more attention to the governance of traffic itself, and provide more powerful functions such as load balancing, connection survival search, and circuit breaker for the requested traffic.
+- The target rules pay more attention to the governance of traffic itself, and provide more powerful features such as load balancing, connection survival search, and circuit breaker for the requested traffic.
 - Gateway rules provide ways for Istio gateways to expose services on the gateway.
 
 See [Traffic Governance](../../../../mspider/user-guide/traffic-governance/README.md) for detailed descriptions of these three governance rules.

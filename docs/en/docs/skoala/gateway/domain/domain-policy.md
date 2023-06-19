@@ -20,7 +20,7 @@ For details about configuring local traffic limiting, see [Local Rate Limit](../
 
 ## cross-domain
 
-<! -- To be added: Explain what is cross-domain, cross-domain functions, effects, etc. -->
+<! -- To be added: Explain what is cross-domain, cross-domain features, effects, etc. -->
 
 Note the following when filling in the configuration:
 

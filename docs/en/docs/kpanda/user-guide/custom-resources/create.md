@@ -4,7 +4,7 @@ In Kubernetes, all objects are abstracted as resources, such as Pod, Deployment,
 This provides important support for our daily operation and maintenance and management work, but in some special cases, the existing preset resources cannot meet the needs of the business.
 Therefore, we hope to expand the capabilities of the Kubernetes API, and CustomResourceDefinition (CRD) was born based on this requirement.
 
-The container management module supports interface-based management of custom resources, and its main functions are as follows:
+The container management module supports interface-based management of custom resources, and its main features are as follows:
 
 - Obtain the list and detailed information of custom resources under the cluster
 - Create custom resources based on YAML

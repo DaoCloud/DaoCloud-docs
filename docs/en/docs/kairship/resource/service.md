@@ -19,7 +19,7 @@ Follow the steps below to manage multicloud services.
 
     <!--screenshot-->
 
-3. The new function is an early adopter. It supports one-click conversion of sub-cluster services to multicloud services. Click `Experience Now` on the list page, select the service under the specified working cluster and namespace, and click OK.
+3. The new feature is an early adopter. It supports one-click conversion of sub-cluster services to multicloud services. Click `Experience Now` on the list page, select the service under the specified working cluster and namespace, and click OK.
 
     <!--screenshot-->
 

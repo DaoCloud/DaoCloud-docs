@@ -1,6 +1,6 @@
 # etcd Backup Restore
 
-Using the ETCD backup function to create a backup policy, you can back up the etcd data of a specified cluster to S3 storage on a scheduled basis. This page focuses on how to restore the data that has been backed up to the current cluster.
+Using the ETCD backup feature to create a backup policy, you can back up the etcd data of a specified cluster to S3 storage on a scheduled basis. This page focuses on how to restore the data that has been backed up to the current cluster.
 
 !!! note
 

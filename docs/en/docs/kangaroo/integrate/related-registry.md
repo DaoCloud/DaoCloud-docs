@@ -1,6 +1,6 @@
 # Associated registry
 
-The associated registry is a convenient registry access function provided for the workspace.
+The associated registry is a convenient registry access feature provided for the workspace.
 The workspace administrator (Workspace Admin) can flexibly access the container registry for the workspace as needed for use by workspace members.
 After accessing, when members deploy applications in the namespace under the workspace, they can pull all public and private images under the workspace with one click through the `Select Image` button to achieve rapid application deployment.
 

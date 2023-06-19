@@ -17,13 +17,15 @@
 
 ## 接入注册中心
 
-参阅 [接入注册中心](../skoala/trad-ms/integrated/integrate-registry.md)文档页面。
+参阅[接入注册中心](../skoala/trad-ms/integrated/integrate-registry.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-registry.mp4" preload="metadata" poster="../images/skoala-integrate.png"></video>
 </div>
 
 ## 微服务配置列表
+
+参阅[微服务配置列表](../skoala/trad-ms/hosted/configcenter.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-config.mp4" preload="metadata" poster="../images/skoala-config.png"></video>

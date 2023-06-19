@@ -18,7 +18,7 @@ Non-highly available LVM local data volumes are suitable for the following cases
 - A **database** with high availability features, such as MongoDB, etc.
 - **Message middleware** with high availability features, such as Kafka, RabbitMQ, etc.
 - A **key-value storage system** with high availability features, such as Redis, etc.
-- Other applications with high availability functions
+- Other applications with high availability features
 
 Highly available LVM local data volume, suitable for the following cases and applications:
 

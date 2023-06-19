@@ -4,37 +4,39 @@
 
 ## Pipeline management
 
+See [Pipeline Management](../amamba/user-guide/pipeline/create/custom.md) for reference.
+
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-pipeline.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-pipeline.mp4" preload="metadata" poster="../images/amamba-pipeline.png"></video>
 </div>
 
 ## Create namespace
 
-See the [Namespace Management](../amamba/user-guide/namespace/namespace.md) documentation page.
+See [Namespace Management](../amamba/user-guide/namespace/namespace.md) for reference.
 
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-ns.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-ns.mp4" preload="metadata" poster="../images/amamba-ns.png"></video>
 </div>
 
 ## Create a git-based microservice app
 
-<!--Refer to [Create microservice application based on Git repository]() documentation page. -->
+See [Create a git-based microservice app](../amamba/user-guide/wizard/create-app-git.md) for reference.
 
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/createservice-gitrepo.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/createservice-gitrepo.mp4" preload="metadata" poster="../images/amamba-git.png"></video>
 </div>
 
 ## Continuous deployment based on Argo CD
 
-See the [Creating an Argo CD Application](../amamba/user-guide/gitops/create-argo-cd.md) documentation page.
+See [Creating an Argo CD Application](../amamba/user-guide/gitops/create-argo-cd.md) for reference.
 
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gitops.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gitops.mp4" preload="metadata" poster="../images/amamba-gitops.png"></video>
 </div>
 
 ## Progressive Delivery with Argo Rollout
 
-Refer to the [Creating a Canary Release Task](../amamba/user-guide/release/canary.md) document page.
+See [Creating a Canary Release Task](../amamba/user-guide/release/canary.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/canary.mp4" preload="metadata" poster="../images/amamba-canary.png"></video>
