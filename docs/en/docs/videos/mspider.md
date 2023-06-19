@@ -17,66 +17,66 @@
 
 ## Create mesh
 
-See the [Create mesh](../mspider/user-guide/service-mesh/README.md) documentation page.
+See [Create mesh](../mspider/user-guide/service-mesh/README.md) for reference.
 
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-mesh.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-mesh.mp4" preload="metadata" poster="../images/mspider-create-mesh.png"></video>
 </div>
 
 ## Create mesh gateway
 
-See the [Create mesh gateway](../mspider/user-guide/gateway-instance/create.md) documentation page.
+See [Create mesh gateway](../mspider/user-guide/gateway-instance/create.md) for reference.
 
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-mesh-gateway.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-mesh-gateway.mp4" preload="metadata" poster="../images/mspider-create-gateway.png"></video>
 </div>
 
 ## Access mesh services from external applications
 
-See [External Application Access to In-mesh Services](../mspider/user-guide/service-list/out-to-in.md) documentation page.
+See [External Application Access to In-mesh Services](../mspider/user-guide/service-list/out-to-in.md) for reference.
 
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/visit-from-external.mp4" scrolling="no" border="0" frameborder="no" framespacing= "0" allowfullscreen="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/visit-from-external.mp4" preload="metadata" poster="../images/mspider-external.png"></video>
 </div>
 
 ## Security Governance
 
-See the [Security Governance](../mspider/user-guide/security/README.md) documentation page.
+See [Security Governance](../mspider/user-guide/security/README.md) for reference.
 
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/mesh-security.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/mesh-security.mp4" preload="metadata" poster="../images/mspider-safety.png"></video>
 </div>
 
 ## Istio version upgrade
 
-See the [Istio Version Upgrade](../mspider/install/istio-update.md) documentation page.
+See [Istio Version Upgrade](../mspider/install/istio-update.md) for reference.
 
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/istio-upgrade.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/istio-upgrade.mp4" preload="metadata" poster="../images/mspider-version.png"></video>
 </div>
 
 ## Sidecar upgrade
 
-See the [Sidecar Upgrade](../mspider/install/sidecar-update.md) documentation page.
+See [Sidecar Upgrade](../mspider/install/sidecar-update.md) for reference.
 
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sidecarup.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sidecarup.mp4" preload="metadata" poster="../images/mspider-sidecar.png"></video>
 </div>
 
 ## Traffic passthrough
 
-See the [traffic passthrough](../mspider/user-guide/sidecar-management/passthrough.md) documentation page.
+See [traffic passthrough](../mspider/user-guide/sidecar-management/passthrough.md) for reference.
 
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/passthrough.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/passthrough.mp4" preload="metadata" poster="../images/mspider-passthrough.png"></video>
 </div>
 
 ## Multicloud interconnection
 
-See the [Multicloud interconnection](../mspider/user-guide/multicluster/cluster-interconnect.md) documentation page.
+See [Multicloud interconnection](../mspider/user-guide/multicluster/cluster-interconnect.md) for reference.
 
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multi-connect.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multi-connect.mp4" preload="metadata" poster="../images/mspider-connect.png"></video>
 </div>
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }

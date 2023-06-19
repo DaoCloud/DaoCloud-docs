@@ -4,7 +4,7 @@
 
 ## Accessing the Registry Center
 
-See to the [Accessing the Registry Center](../skoala/trad-ms/integrated/integrate-registry.md) document page.
+See to the [Accessing the Registry Center](../skoala/trad-ms/integrated/integrate-registry.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-registry.mp4" preload="metadata" poster="../images/skoala-integrate.png"></video>
@@ -12,29 +12,31 @@ See to the [Accessing the Registry Center](../skoala/trad-ms/integrated/integrat
 
 ## Microservice configuration list
 
+See [Microservice configuration list](../skoala/trad-ms/hosted/configcenter.md) for reference.
+
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-config.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-config.mp4" preload="metadata" poster="../images/skoala-config.png"></video>
 </div>
 
 ## Manage gateways and APIs
 
-See the [Management Gateway and API](../skoala/gateway/api/add-api.md) documentation page.
+See [Management Gateway and API](../skoala/gateway/api/add-api.md) for reference.
 
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gateway%26api.mp4" scrolling="no" border="0" frameborder="no" framespacing="0 " allowfullscreen="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gateway%26api.mp4" preload="metadata" poster="../images/skoala-gateway.png"></video>
 </div>
 
 ## Advanced Configuration of API Policy (1)
 
-See the [API Policy Configuration](../skoala/gateway/api/api-policy.md) documentation page.
+See [API Policy Configuration](../skoala/gateway/api/api-policy.md) for reference.
 
 <div class="responsive-video-container">
-<iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/apipolicy1.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/apipolicy1.mp4" preload="metadata" poster="../images/skoala-api1.png"></video>
 </div>
 
 ## Advanced Configuration of API Policies (2)
 
-Refer to the [API Policy Configuration](../skoala/gateway/api/api-policy.md) document page.
+See [API Policy Configuration](../skoala/gateway/api/api-policy.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/api-policy2.mp4" preload="metadata" poster="../images/skoala-api2.png"></video>
@@ -42,7 +44,7 @@ Refer to the [API Policy Configuration](../skoala/gateway/api/api-policy.md) doc
 
 ## Governing Microservice Traffic with Service Mesh
 
-Refer to the [Microservice Traffic Governance](../mspider/user-guide/traffic-governance/README.md) document page.
+See [Microservice Traffic Governance](../mspider/user-guide/traffic-governance/README.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/traffic-governance.mp4" preload="metadata" poster="../images/skoala-mesh.png"></video>
