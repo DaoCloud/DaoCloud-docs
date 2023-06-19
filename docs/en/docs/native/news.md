@@ -821,7 +821,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [August 13 Lundao Native Cloud Native Meetup Nanjing station registration opens](https://mp.weixin.qq.com/s/f5I4hn_lHf9x9oDBUgAIIQ)
 
-     LunDaoNative Meetup Nanjing Station is hosted by DaoKe and Pengyun Network, focusing on topics such as service mesh, cloud-native storage, cloud-native security and related open source projects.
+     LunDaoNative Meetup Nanjing Station is hosted by DaoCloud and Pengyun Network, focusing on topics such as service mesh, cloud-native storage, cloud-native security and related open source projects.
      The event will be held on August 13, in the form of offline + online live broadcast.
 
 - [CloudNativeDay 2022 held online on August 10th](https://www.techstrongevents.com/cloud-native-days-2022?ref=in-article-ad&utm_source=Container+Journal&utm_medium=Referral&utm_campaign=in-article-ad)

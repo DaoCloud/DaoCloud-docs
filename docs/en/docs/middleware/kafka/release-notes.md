@@ -78,7 +78,7 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 - **Improved** Middleware password verification difficulty adjustment
 - **NEW** Docking alert capability
 - **New** Added the function of judging whether sc supports capacity expansion and prompting in advance
-- **Optimization** Optimize the prompt logic of installation environment detection & adjust its style
+- **Optimization** Optimize the prompt logic of installation environment check & adjust its style
 - **Optimize** middleware style walkthrough optimization
 - **Fix** The offline image has numbers and capital letters that cannot be scanned
 

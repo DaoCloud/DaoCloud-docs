@@ -15,7 +15,7 @@ The upgrade process for these two types of versions is the same, but mixed upgra
 
 When a newer Istio version is available in the system image repository, an exclamation mark icon will appear on the upgradable mesh card in the `Mesh List`. Click the `Upgrade Now` button to enter the upgrade wizard.
 
-The Istio upgrade wizard includes three steps: `Select Target Version`, `Environment Detection`, and `Execute Upgrade`. After the upgrade is completed, the mesh can go online immediately. The specific steps are as follows:
+The Istio upgrade wizard includes three steps: `Select Target Version`, `Environment Check`, and `Execute Upgrade`. After the upgrade is completed, the mesh can go online immediately. The specific steps are as follows:
 
 1. **Select target version**: Select the version you want to upgrade from the list. After the upgrade, you will not be able to roll back to a lower version. It is recommended to choose carefully.
 

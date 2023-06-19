@@ -81,7 +81,7 @@ Release date: 2022-11-28
 - **New** minio supports built-in BUCKET creation when creating
 - **NEW** Docking alert capability
 - **New** Added the function of judging whether sc supports capacity expansion and prompting in advance
-- **Optimize** Optimize the prompt logic of installation environment detection & adjust its style
+- **Optimize** Optimize the prompt logic of installation environment check & adjust its style
 - **Optimize** middleware style walkthrough optimization
 
 ##v0.1.2

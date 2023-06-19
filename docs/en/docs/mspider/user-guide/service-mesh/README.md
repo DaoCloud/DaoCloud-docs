@@ -3,12 +3,12 @@ hide:
    - toc
 ---
 
-# create managed/dedicated mesh
+# Create hosted/dedicated mesh
 
-DCE 5.0 service mesh supports 3 meshes:
+DCE 5.0 service mesh supports three kinds of meshes:
 
 - **Hosted Mesh** is fully hosted within the DCE 5.0 service mesh. This mesh separates the core control plane components from the working cluster, and the control plane can be deployed in an independent cluster, enabling unified governance of multicluster services in the same mesh.
-- **dedicated mesh** adopts the traditional structure of Istio, supports only one cluster, and has a dedicated control plane in the cluster.
+- **Dedicated mesh** adopts the traditional structure of Istio, supports only one cluster, and has a dedicated control plane in the cluster.
 - **External mesh** means that the existing mesh of the enterprise can be connected to the DCE 5.0 service mesh for unified management. See [Create an external mesh](external-mesh.md).
 
 The following explains the steps to create a Hosted Mesh/Dedicated Mesh:
@@ -48,5 +48,5 @@ The following explains the steps to create a Hosted Mesh/Dedicated Mesh:
 
 !!! info
 
-     After the hosted mesh is created, no managed cluster has been connected, and the mesh is in the state of `not ready`.
+     After the hosted mesh is created, no hosted cluster has been connected, and the mesh is in the state of `not ready`.
      Users can [add cluster](../cluster-management/README.md), wait for the cluster joined successfully, and select the cluster that requires service management.

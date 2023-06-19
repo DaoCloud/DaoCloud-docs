@@ -16,7 +16,7 @@ hide:
 
     ![安装采集器](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/login02.jpg)
 
-3. 自控制台中逐行输入如下命令：
+3. 自控制台中逐行输入如下命令（请修改对应的 VERSION 版本号）：
 
     ```sh
     export VERSION=0.0.0-xxxx

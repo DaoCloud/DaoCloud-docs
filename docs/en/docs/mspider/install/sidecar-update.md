@@ -2,16 +2,18 @@
 
 After upgrading the Istio version of the mesh, the sidecar upgrade function will be triggered. The sidecar upgrade can be divided into two methods: `hot upgrade` and `restart upgrade`.
 
-- Hot upgrade: The customized version of Daoke's lower sidecar can complete the upgrade without restarting the user's Pod to achieve uninterrupted business.
+- Hot upgrade: The customized version of DaoCloud's lower sidecar can complete the upgrade without restarting the user's Pod to achieve uninterrupted business.
 - Restart upgrade: The community-native Istio upgrade method or the customized version of Istio that does not meet the hot upgrade environment requirements requires restarting the user Pod.
 
 After the Istio version upgrade is completed, go to the `Workload` interface. Workloads that meet the upgrade conditions will display an exclamation mark prompt message. Select the workload you want to upgrade, and the `Sidecar Upgrade` button will appear.
 
-Click the `Sidecar Upgrade` button to enter the `Sidecar Upgrade Version` wizard, which has three steps: `Environment Detection`, `Select Target Version`, and `Execute Upgrade`. Differences in operation between "Hot Upgrade" and "Restart Upgrade" exist.
+![workload sidecars](../images/sidecar-update01.png)
+
+Click the `Sidecar Upgrade` button to enter the `Sidecar Upgrade Version` wizard, which has three steps: `Environment Check`, `Select Target Version`, and `Upgrade`. Differences in operation between "Hot Upgrade" and "Restart Upgrade" exist.
 
 ## Hot Upgrade
 
-1. **Environment detection**: In this step, it will detect whether the cluster environment meets the hot upgrade requirements. The detection items include:
+1. **Environment Check**: In this step, it will detect whether the cluster environment meets the hot upgrade requirements. The detection items include:
 
 - Istio version: whether it is a customized version (version suffix: -mspider)
 - K8s version: whether it meets the hot upgrade requirement range
@@ -21,16 +23,25 @@ After meeting the above requirements, proceed to the next step for hot upgrade.
 
 2. **Sidecar upgrade version**: During the hot upgrade process, you can select the sidecar version you want to upgrade. The default is the latest version. If you select another version, the relevant Pod will be automatically upgraded to the latest version after restarting.
 
-3. **Execute upgrade**: The selected workload and related sidecar information are displayed on the upgrade page. Click `One-click upgrade` to start the upgrade process.
+3. **Execute upgrade**: The selected workload and related sidecar information are displayed on the upgrade page. Click `Upgrade with one-click` to start the upgrade process.
 
 ## Restart to Upgrade
 
 1. **Environmental testing**: If the detected items do not meet the hot upgrade requirements during the testing phase, proceed to the next two steps for restart upgrade.
 
+    ![env check](../images/SidecarUpdate05.png)
+
 2. **Sidecar upgrade version**: In the restart upgrade process, only the latest version is supported and cannot be selected.
 
-3. **Execute upgrade**: The upgrade page displays the basic information of the selected workload and sidecar version information. Clicking `One-click Upgrade` will immediately restart the Pod. Please be careful.
+	![select target version](../images/SidecarUpdate06.png)
+
+3. **Upgrade**: The upgrade page displays the basic information of the selected workload and sidecar version information. Clicking `Upgrade with one-click` will immediately restart the Pod. Please be careful.
+
+	![upgrade](../images/SidecarUpdate07.png)
+
+	![upgrade](../images/SidecarUpdate08.png)
 
 !!! note
 
-    Closing the upgrade wizard during the upgrade will not interrupt the current upgrade task.
+    - Closing the upgrade wizard during the upgrade will not interrupt the current upgrade task.
+    - If you want to abort the upgrade, directly click `Disabled` at the bottom.
