@@ -11,8 +11,10 @@ hide:
 
 ```shell linenums="1"
 kubectl -n mcamel-system delete mysql mcamel-common-mysql-cluster
+kubectl -n mcamel-system delete mysql mcamel-common-kpanda-mysql-cluster
 kubectl -n mcamel-system delete elasticsearches mcamel-common-es-cluster-masters
 kubectl -n mcamel-system delete redisfailover mcamel-common-redis-cluster
+kubectl -n mcamel-system delete tenant mcamel-common-minio-cluster
 kubectl -n ghippo-system delete gateway ghippo-gateway
 kubectl -n istio-system delete requestauthentications ghippo
 helm -n mcamel-system uninstall eck-operator mysql-operator redis-operator
