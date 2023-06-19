@@ -80,7 +80,7 @@ You can go to `Container Management` -> `Privilege Management`, select `Add Auth
     - [Container Management](../../../kpanda/intro/what.md)
 
         Container management supports three authorization modes: global management mode, sub-module management mode and resource-based management.
-        Therefore, in the container management module, you can choose to grant the user/group the Kpanda Owner role through the access control module, or grant the user/group the corresponding permission for a resource through the permission management function of the container management module itself, or by assigning the resource ( Cluster or Namespace) is bound to the workspace to inherit the role permissions of the user/group in the workspace.
+        Therefore, in the container management module, you can choose to grant the user/group the Kpanda Owner role through the access control module, or grant the user/group the corresponding permission for a resource through the permission management feature of the container management module itself, or by assigning the resource ( Cluster or Namespace) is bound to the workspace to inherit the role permissions of the user/group in the workspace.
         Since there are two states of bound and unbound workspace for resources in container management, in order to distinguish the two different states, the resources bound to the workspace will be presented in the workspace-resource group, and the workspace - Both the resource group and the resource list managed by the container provide the resource binding/unbinding entry.
         (Admin role or Workspace admin + Kpanda Owner role can perform resource binding)
 

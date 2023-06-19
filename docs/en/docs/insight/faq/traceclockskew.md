@@ -8,7 +8,7 @@ hide:
 In a distributed system, due to [Clock Skew (clock skew adjustment)](https://en.wikipedia.org/wiki/Clock_skew) influence,
 Time drift exists between different hosts. Generally speaking, the system time of different hosts at the same time has a slight deviation.
 
-The link tracking system is a typical distributed system, and it is also affected by this phenomenon in terms of time data collection. For example, in a link, the start time of the server-side span is earlier than that of the client-side span.
+The traces system is a typical distributed system, and it is also affected by this phenomenon in terms of time data collection. For example, in a link, the start time of the server-side span is earlier than that of the client-side span.
 This phenomenon does not exist logically, but due to the influence of clock skew, there is a deviation in the system time between the hosts at the moment when the trace data is collected in each service, which eventually leads to the phenomenon shown in the following figure:
 
 

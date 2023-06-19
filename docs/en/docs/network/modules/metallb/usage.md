@@ -52,7 +52,7 @@ spec:
 
 Before `k8s v1.20`, `LoadBalancer Service` does not support configuring multiple protocols (`v1.24` supports it, it has become a Beta function), refer to [#issue 23880](https://github.com/kubernetes/kubernetes/issues/23880).
 
-`Metalb` indirectly supports this function by creating different services and sharing the service IP.
+`Metalb` indirectly supports this feature by creating different services and sharing the service IP.
 
 Create two Services:
 
@@ -100,4 +100,4 @@ spec:
      Of course, you can also specify ipv4/ipv6 addresses through Annotations (`metallb.universe.tf/loadBalancerIPs`), or specify through `.spec.loadBalancerIP` (only supports ipv4).
      Editing an Annotation after creation has no effect.
 
-Another function of shared IP is that the `LoadBalancer IP` address is insufficient, and multiple Services need to share the same IP, but note that the protocols and ports of different Services should be different, otherwise the connection cannot be distinguished.
+Another feature of shared IP is that the `LoadBalancer IP` address is insufficient, and multiple Services need to share the same IP, but note that the protocols and ports of different Services should be different, otherwise the connection cannot be distinguished.

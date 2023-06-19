@@ -32,7 +32,7 @@ DaoCloud was founded to help traditional enterprises to move their applications 
 
 However, as applications and containers increase in number, coordinating and scheduling these containers became a bottleneck that restricted product performance. DaoCloud Enterprise 2.0 used Docker Swarm to manage containers, but the increasingly complex container scheduling system gradually went beyond the competence of Docker Swarm.
 
-Fortunately, Kubernetes began to stand out at this time. It rapidly grew into the industrial standard for container orchestration with its competitive rich functions, stable performance, timely community support, and strong compatibility. Paco Xu said, "Enterprise container platforms need container orchestration to standardize the process of moving to the cloud. Kubernetes was accepted as the de facto standard for container orchestration around 2016 and 2017. Our products started to support it in 2017."
+Fortunately, Kubernetes began to stand out at this time. It rapidly grew into the industrial standard for container orchestration with its competitive rich features, stable performance, timely community support, and strong compatibility. Paco Xu said, "Enterprise container platforms need container orchestration to standardize the process of moving to the cloud. Kubernetes was accepted as the de facto standard for container orchestration around 2016 and 2017. Our products started to support it in 2017."
 
 After thorough comparisons and evaluations, DaoCloud Enterprise 2.8, debuted in 2017, officially adopted Kubernetes (v1.6.7) as its container orchestration tool. Since then, DaoCloud Enterprise 3.0 (2018) used Kubernetes v1.10, and DaoCloud Enterprise 4.0 (2021) adopted Kubernetes v1.18. The latest version, DaoCloud Enterprise 5.0 (2022), supports Kubernetes v1.23 to v1.26.
 
@@ -46,7 +46,7 @@ Kubernetes served as an inseparable part of these four releases over six years, 
 
     Vice President of Product Innovation of DaoCloud
 
-On the one hand, Kubernetes makes our products more performant and competitive. DaoCloud integrates relevant practices and technologies around Kubernetes to polish its flagship offering – DaoCloud Enterprise. The latest 5th version, released in 2022, covers application stores, application delivery, microservice governance, observability, data services, multicloud management, cloud-edge collaboration, and other functions. DaoCloud Enterprise 5.0 is an inclusive integration of cloud-native technologies.
+On the one hand, Kubernetes makes our products more performant and competitive. DaoCloud integrates relevant practices and technologies around Kubernetes to polish its flagship offering – DaoCloud Enterprise. The latest 5th version, released in 2022, covers application stores, application delivery, microservice governance, observability, data services, multicloud management, cloud-edge collaboration, and other features. DaoCloud Enterprise 5.0 is an inclusive integration of cloud-native technologies.
 
 DaoCloud deployed a Kubernetes platform for SPD Bank, improving its application deployment efficiency by 82%, shortening its delivery cycle from half a year to one month, and promoting its transaction success rate to 99.999%.
 
@@ -76,13 +76,13 @@ In addition, DaoCloud continue to practice its cloud-native beliefs and contribu
 
 In particular:
 
-- Clusterpedia, compatible with Kubernetes OpenAPIs, is designed for resource synchronization across clusters and powerful search function that allows quick, easy and effective retrieval of all resources in clusters.
+- Clusterpedia, compatible with Kubernetes OpenAPIs, is designed for resource synchronization across clusters and powerful search feature that allows quick, easy and effective retrieval of all resources in clusters.
 - Kubean makes it possible to quickly create production-ready Kubernetes clusters and integrate clusters from other providers.
 - CloudTTY is a web terminal and cloud shell operator for Kubernetes cloud-native environment. It can manage Kubernetes clusters on a web page, anytime and anywhere.
 - KLTS provides long-term free maintenance for earlier versions of Kubernetes.
 - Piraeus is an easy and secure storage solution for Kubernetes with high performance and availability.
 
-DaoCloud utilizes its practical experience across industries to contribute to Kubernetes-related open source projects, with an aim of making cloud native technologies, represented by Kubernetes, better function in production environment.
+DaoCloud utilizes its practical experience across industries to contribute to Kubernetes-related open source projects, with an aim of making cloud native technologies, represented by Kubernetes, better feature in production environment.
 
 !!! note ""
 
@@ -92,7 +92,7 @@ DaoCloud utilizes its practical experience across industries to contribute to Ku
 
     Technology GM of DaoCloud
 
-Enterprise users need a global optimal solution, which can be understood as an inclusive platform that can maximize the advantages of multicloud management, application delivery, observability, cloud-edge collaboration, microservice governance, application store, and data services. In today's cloud native ecosystem, these functions cannot be achieved without Kubernetes as the underlying container orchestration tool. Therefore, Kubernetes is crucial to DaoCloud's mission of finding the optimal solution in the digital world, and all future product development will continue to be based on Kubernetes.
+Enterprise users need a global optimal solution, which can be understood as an inclusive platform that can maximize the advantages of multicloud management, application delivery, observability, cloud-edge collaboration, microservice governance, application store, and data services. In today's cloud native ecosystem, these features cannot be achieved without Kubernetes as the underlying container orchestration tool. Therefore, Kubernetes is crucial to DaoCloud's mission of finding the optimal solution in the digital world, and all future product development will continue to be based on Kubernetes.
 
 Kubernetes training and promotion activities have always been attached great importance in DaoCloud. In 2017, the company took the lead in passing CNCF's Certified Kubernetes Conformance Program by virtue of its featured product – DaoCloud Enterprise. In 2018, it became a CNCF-certified Kubernetes service provider and training partner.
 

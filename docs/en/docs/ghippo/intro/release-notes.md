@@ -78,8 +78,8 @@ This page lists the Release Notes for global management of each version, so that
 
 #### Features
 
-- Custom role function (create/edit/delete/view/list)
-- Support GProduct permission point and custom role function docking
+- Custom role feature (create/edit/delete/view/list)
+- Support GProduct permission point and custom role feature docking
 - Disconnected cluster resource processing
 - GHippo OpenAPI documentation implementation
 - Provide GProduct with insert audit log SDK
@@ -98,7 +98,7 @@ This page lists the Release Notes for global management of each version, so that
 - Platform Settings->Appearance Customization->Advanced Customization->Login Page Customization and Post-Login Page Customization
 - Support the keycloak quarkus architecture to run in a dual-stack environment
 - A job is added to the CI process to detect whether there are non-compliant images in the helm chart package and whether the installation parameters are correct
-- Set the switch in helm values, you can switch audit related functions with one click
+- Set the switch in helm values, you can switch audit related features with one click
 - Audit log supports recording kpanda page operations
 
 #### Optimization
@@ -127,7 +127,7 @@ This page lists the Release Notes for global management of each version, so that
 #### Features
 
 - Support deploying a national secret gateway in front of DCE 5.0, and use a national secret browser to access DCE 5.0
-- Set the switch in helm values, you can switch the istio sidecar function with one click
+- Set the switch in helm values, you can switch the istio sidecar feature with one click
 - Add Workspace and Folder Owner role to workspace and hierarchy
 - Only users with `Workspace Admin`, `Folder Admin`, and `Kpanda Owner` permissions can perform resource binding
 - Scan the open source license for the library used
@@ -229,11 +229,11 @@ Release date: 2022-10-21
 - **Added** Login -> background theme supports animation
 - **Added** Authorization Authentication -> Provide the front-end with the permission list of the currently logged-in user
 - **Added** Added About -> Software Version -> Module Support Chinese Name
-- **Optimize** authorization authentication -> provide a job to ensure the synchronization of db and cr
+- **Optimized** authorization authentication -> provide a job to ensure the synchronization of db and cr
 - **Optimized** LDAP -> configuration error checking
-- **Optimization** The operation feedback and prompts for each function support Chinese and English
-- **Optimize** Workspace and Hierarchy -> Check whether there are sub-resources before deleting
-- **Optimize** Optimize keycloak jvm parameters
+- **Optimized** The operation feedback and prompts for each feature support Chinese and English
+- **Optimized** Workspace and Hierarchy -> Check whether there are sub-resources before deleting
+- **Optimized** Optimize keycloak jvm parameters
 
 ## v0.9
 
@@ -275,7 +275,7 @@ Release date: 2022-7-23
 - **Added** audit log -> batch insert
 - **Added** Identity Provider -> LDAP Connection -> User/group Synchronization Settings (Create/Edit/Delete/View/Sync)
 - **Added** Platform Settings -> Security Policy -> Password Policy Settings
-- **Optimize** workspace -> code structure adjustment
+- **Optimized** workspace -> code structure adjustment
 
 ## v0.6
 

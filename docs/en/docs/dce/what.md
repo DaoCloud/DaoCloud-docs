@@ -83,7 +83,7 @@ day by day, making things better over time.
 
 === "Microservice Governance"
 
-     DCE 5.0 provides non-intrusive traffic management functions, supporting non-sensing access to
+     DCE 5.0 provides non-intrusive traffic management features, supporting non-sensing access to
      traditional microservices, cloud-native microservices, and open-source microservice frameworks.
      It achieves integrated management of existing microservice systems and old and new microservice systems of enterprises.
 

@@ -191,7 +191,7 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20220810 | Cluster API Retrieval Has Never Been So Easy](https://mp.weixin.qq.com/s/8F20pchW6WhbEdlU56qFsg)
 
-    Clusterpedia is a CNCF sandbox project for cross-cluster complex resource retrieval. It can synchronize resources with multiple clusters and provide more powerful search functions based on Kubernetes OpenAPI compatibility to help you quickly, easily, and effectively obtain any multicluster resources.
+    Clusterpedia is a CNCF sandbox project for cross-cluster complex resource retrieval. It can synchronize resources with multiple clusters and provide more powerful search features based on Kubernetes OpenAPI compatibility to help you quickly, easily, and effectively obtain any multicluster resources.
 
 - [20220808 | Introduction to Multicloud Management Capability of DCE 5.0](220808-kairship.md)
 
@@ -215,7 +215,7 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20220606 | Merbridge CNI Mode](https://mp.weixin.qq.com/s/3t2FshkQpVHQ44zbBIQDRQ)
 
-    The emergence of Merbridge CNI mode aims to better adapt to the functions of service mesh. When there was no CNI mode before, Merbridge could do relatively little. The biggest problem was that it couldn't adapt to the Sidecar Annotation injected by Istio, which made Merbridge unable to exclude traffic from certain ports or IP ranges. At the same time, because Merbridge only processed connection requests within the Pod before, it meant that if it was external traffic sent to the Pod, Merbridge would not be able to handle it.
+    The emergence of Merbridge CNI mode aims to better adapt to the features of service mesh. When there was no CNI mode before, Merbridge could do relatively little. The biggest problem was that it couldn't adapt to the Sidecar Annotation injected by Istio, which made Merbridge unable to exclude traffic from certain ports or IP ranges. At the same time, because Merbridge only processed connection requests within the Pod before, it meant that if it was external traffic sent to the Pod, Merbridge would not be able to handle it.
 
 - [20220606 | DCE 5.0 Development Background](221008-dce-bg.md)
 

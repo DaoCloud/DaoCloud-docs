@@ -5,7 +5,7 @@ hide:
 
 # Features Supported by Graphical User Interface
 
-The DCE service mesh supports three types of meshes: hosted mesh, dedicated mesh, and External mesh. The user interface provides the following functions for each type of mesh:
+The DCE service mesh supports three types of meshes: hosted mesh, dedicated mesh, and External mesh. The user interface provides the following features for each type of mesh:
 
 ## Mesh Management
 

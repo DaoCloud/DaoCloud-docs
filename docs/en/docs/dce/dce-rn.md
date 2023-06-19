@@ -72,7 +72,7 @@ the table above. Here is a brief description of some new features and optimizati
 
 ### Multicloud Management v0.9.1
 
-- **Added** support for tag and annotation form editing function for Service
+- **Added** support for tag and annotation form editing feature for Service
 
 ### Container Management v0.18.1
 

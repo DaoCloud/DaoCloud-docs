@@ -7,7 +7,7 @@ hide:
 
 Labels are identifying key-value pairs added to Kubernetes objects such as Pods, nodes, and clusters, which can be combined with label selectors to find and filter Kubernetes objects that meet certain conditions. Each key must be unique for a given object.
 
-Annotations, like tags, are key/value pairs, but they do not have identification or filtering functions.
+Annotations, like tags, are key/value pairs, but they do not have identification or filtering features.
 Annotations can be used to add arbitrary metadata to nodes.
 Annotation keys usually use the format `prefix(optional)/name(required)`, for example `nfd.node.kubernetes.io/extended-resources`.
 If the prefix is ​​omitted, it means that the annotation key is private to the user.

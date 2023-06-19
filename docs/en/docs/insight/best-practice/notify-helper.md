@@ -61,9 +61,9 @@ The template will be rendered based on the following data.
     {{if .Labels.namespace }}Namespace: {{ .Labels.namespace }} \n{{ end }}
     ```
 
-3. Loop function `for`
+3. Loop feature `for`
 
-    The `for` function is used to repeat the code content.
+    The `for` feature is used to repeat the code content.
 
     Example 1: Traverse the labels list to obtain all label content for alerts.
 

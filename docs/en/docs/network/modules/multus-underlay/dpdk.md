@@ -5,7 +5,7 @@ This page mainly introduces how to quickly create the first DPDK application in 
 ## pre-dependency
 
 - Install Multus-underlay, and enable the installation of SRIOV components, refer to [Install](install.md)
-- Hardware support is required: have a network card that supports SR-IOV series and set up a virtual function (VF), refer to [SR-IOV](sriov.md)
+- Hardware support is required: have a network card that supports SR-IOV series and set up a virtual feature (VF), refer to [SR-IOV](sriov.md)
 - Need to switch the network card driver to user mode driver
 
 ```shell

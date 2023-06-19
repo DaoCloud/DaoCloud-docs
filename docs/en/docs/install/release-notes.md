@@ -13,20 +13,20 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 #### New Features
 
-- **New** Other Linux mode supports the OpenAnolis 8.8 GA operating system
-- **New** Supports the OracleLinux R9 U1 operating system
-- **New** Added node status detection
-- **New** Added file verification for OS PKGs
-- **New** Supports cluster installation on non-22 ports
-- **New** External file service supports k8s binary resources
-- **New** Supports external JFrog image and charts repositories
-- **New** Supports mixed architecture deployment solutions
-- **New** Supports external Redis components
+- **Added** Other Linux mode supports the OpenAnolis 8.8 GA operating system
+- **Added** Supports the OracleLinux R9 U1 operating system
+- **Added** Added node status detection
+- **Added** Added file verification for OS PKGs
+- **Added** Supports cluster installation on non-22 ports
+- **Added** External file service supports k8s binary resources
+- **Added** Supports external JFrog image and charts repositories
+- **Added** Supports mixed architecture deployment solutions
+- **Added** Supports external Redis components
 
 #### Improvements
 
-- **Improved** Fixed issue of missing images when deploying Nacos instances
-- **Improved** Fixed issue of repeated execution of cluster installation task during cluster module upgrade
+- **Optimized** Fixed issue of missing images when deploying Nacos instances
+- **Optimized** Fixed issue of repeated execution of cluster installation task during cluster module upgrade
 
 #### Known Issues
 
@@ -53,7 +53,7 @@ After installing the global cluster, immediately update the configmap kubean-loc
 
 #### Improvements
 
-- **Improved** Upgrade of monitoring components version
+- **Optimized** Upgrade of monitoring components version
 
 #### Bug Fixes
 

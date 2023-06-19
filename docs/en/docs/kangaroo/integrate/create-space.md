@@ -5,7 +5,7 @@ hide:
 
 # registry space
 
-Harbor provides the image isolation function based on the image space (project). There are two types of registry spaces: public and private:
+Harbor provides the image isolation feature based on the image space (project). There are two types of registry spaces: public and private:
 
 - Public container registry: All users can access, usually store public images, there is a public registry space by default.
 - Private container registry: Only authorized users can access it, usually storing the image image of the registry space itself.

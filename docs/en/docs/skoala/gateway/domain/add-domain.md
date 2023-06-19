@@ -15,7 +15,7 @@ To add a domain name, perform the following steps:
     - Domain name: cannot be modified after a domain name is created.
     - Protocol: HTTP is selected by default. If you select HTTPS, you need to provide an HTTPS certificate.
 
-        > Currently, only existing certificates can be selected. Automatic certificate issuance and manual certificate upload functions are being developed.
+        > Currently, only existing certificates can be selected. Automatic certificate issuance and manual certificate upload features are being developed.
 
         <!--![]()screenshots-->
 

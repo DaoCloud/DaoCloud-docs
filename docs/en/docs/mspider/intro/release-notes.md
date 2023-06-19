@@ -147,7 +147,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - New API added for updating a service's tags.
 - Istio 1.17.1 support added.
 - A new etcd high availability solution added.
-- Scenario-based testing framework for testing scenario-based functions added.
+- Scenario-based testing framework for testing scenario-based features added.
 - When selecting different mesh sizes, automatically adjust component resource configuration.
 - Implementation of custom roles added, supporting operations such as creation, update, deletion, binding, and unbinding of custom roles.
 

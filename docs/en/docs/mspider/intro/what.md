@@ -12,7 +12,7 @@ Service Mesh is compatible with the community's native Istio open-source service
 
 DCE 5.0 Service Mesh offers several advantages compared to other products:
 
-- Easy to Use: Users do not need to modify any business code or manually install agents. They can enable Service Mesh function and experience rich non-intrusive service governance capabilities.
+- Easy to Use: Users do not need to modify any business code or manually install agents. They can enable Service Mesh feature and experience rich non-intrusive service governance capabilities.
 
 - Strategic Intelligent Routing and Elastic Traffic Management: Supports configuring load balancing, service routing, fault injection, circuit breaking, and other governance rules for services. Combined with a one-stop management system, it provides real-time, visualized micro-service traffic management that supports non-intrusive intelligent traffic management. It can perform dynamic intelligent routing and elastic traffic management without modifying the application. The following are additional features:
 

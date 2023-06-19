@@ -9,7 +9,7 @@ This feature is currently in the review stage of donating to the OpenTelemetry c
 
 Make sure Insight Agent is ready. If not, see [Install insight-agent to collect data](../install-agent.md) and make sure the following three items are in place:
 
-- Enable trace function for Insight-agent
+- Enable trace feature for Insight-agent
 - Whether the address and port of the trace data are filled in correctly
 - Pods corresponding to deployment/opentelemetry-operator-controller-manager and deployment/insight-agent-opentelemetry-collector are ready
 

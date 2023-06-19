@@ -4,7 +4,7 @@ The application Insight is a new generation cloud native Insight platform that f
 
 The insight implements the unified collection of metrics, logs and traces, which supports multi-dimensions alerting on metrics, logs, and provides you a web UI.
 
-The main functions as following:
+The main features as following:
 
 - Provide multi-dimensional monitoring of containers, services, nodes and clusters.
 - CPU, memory, storage, network monitoring.

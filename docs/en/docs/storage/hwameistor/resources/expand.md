@@ -1,6 +1,6 @@
 # Volume expansion
 
-HwameiStor supports `CSI volume expansion`. This function implements online volume expansion by modifying the size of `PVC`.
+HwameiStor supports `CSI volume expansion`. This feature implements online volume expansion by modifying the size of `PVC`.
 
 In the example below, we expand the PVC `data-sts-mysql-local-0` from 1GiB to 2GiB.
 

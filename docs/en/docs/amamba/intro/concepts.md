@@ -17,7 +17,7 @@ Workbench is your one-stop-shop for deploying DCE 5.0 cloud-native applications,
 
 - Pipeline
 
-    Use [Pipeline](../quickstart/deploy-pipeline.md) to create a customizable, visualized, and automatic delivery pipeline that helps shorten the delivery cycle and improve efficiency. The pipeline function in Workbench is based on Jenkins implementation.
+    Use [Pipeline](../quickstart/deploy-pipeline.md) to create a customizable, visualized, and automatic delivery pipeline that helps shorten the delivery cycle and improve efficiency. The pipeline feature in Workbench is based on Jenkins implementation.
 
 - Credential
 
@@ -29,7 +29,7 @@ Workbench is your one-stop-shop for deploying DCE 5.0 cloud-native applications,
 
 - Canary Release
 
-    Canary Release allows you to progressively update applications, enabling the co-existence of multiple versions, release suspension, traffic percentage switching, among other functions. It automates the process and eliminates manual operations in canary release.
+    Canary Release allows you to progressively update applications, enabling the co-existence of multiple versions, release suspension, traffic percentage switching, among other features. It automates the process and eliminates manual operations in canary release.
 
 - Toolchain Integration
 

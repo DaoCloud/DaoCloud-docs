@@ -4,7 +4,7 @@ Follow the steps below to configure the National Secret Gateway for DCE 5.0.
 
 ## Software Introduction
 
-**[Tengine](https://github.com/alibaba/tengine):** Tengine is a web server project initiated by Taobao.com. Based on Nginx, it adds many advanced functions and features for the needs of high-traffic websites.
+**[Tengine](https://github.com/alibaba/tengine):** Tengine is a web server project initiated by Taobao.com. Based on Nginx, it adds many advanced features and features for the needs of high-traffic websites.
 
 **[Tongsuo](https://github.com/Tongsuo-Project/Tongsuo):** Tongsuo/Tongsuo (formerly BabaSSL) is an open source basic cryptographic library that provides modern cryptographic algorithms and secure communication protocols for storage, network, key management, privacy computing and many other business cases provide the basic capabilities of underlying cryptography to realize the privacy, integrity and authenticity of data in the process of transmission, use and storage, and provide privacy protection in the data life cycle. and security protection capabilities.
 

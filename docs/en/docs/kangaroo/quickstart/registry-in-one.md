@@ -7,7 +7,7 @@ If you have one or more Harbor or Docker container registries, you can use the D
 
 ## Associated Registry
 
-If you are a Workspace Admin, you can associate the existing container registry with the DCE platform through the associated registry function for use by members of the workspace. The simple operation steps are as follows:
+If you are a Workspace Admin, you can associate the existing container registry with the DCE platform through the associated registry feature for use by members of the workspace. The simple operation steps are as follows:
 
 1. Log in with the Workspace Admin role, click "Associated Registry" from the left navigation bar, and click the "Associated Registry" button in the upper right corner.
 

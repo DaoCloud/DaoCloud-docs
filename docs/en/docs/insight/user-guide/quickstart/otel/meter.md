@@ -21,7 +21,7 @@ go get go.opentelemetry.io/otel\
   go.opentelemetry.io/otel/sdk/metric
 ```
 
-### Create an initialization function using the OpenTelemetry SDK
+### Create an initialization feature using the OpenTelemetry SDK
 
 ```golang
 import (

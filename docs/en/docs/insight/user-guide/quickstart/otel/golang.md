@@ -20,9 +20,9 @@ go get go.opentelemetry.io/otel@v1.8.0 \
   go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc@v1.4.1
 ```
 
-### Create an initialization function using the OpenTelemetry SDK
+### Create an initialization feature using the OpenTelemetry SDK
 
-In order for an application to be able to send data, a function is required to initialize OpenTelemetry. Add the following code snippet to the `main.go` file:
+In order for an application to be able to send data, a feature is required to initialize OpenTelemetry. Add the following code snippet to the `main.go` file:
 
 ```golang
 import (
@@ -106,7 +106,7 @@ func handleErr(err error, message string) {
 
 ### Initialize tracker in main.go
 
-Modify the main function to initialize the tracker in main.go. Also when your service shuts down, you should call `TracerProvider.Shutdown()` to ensure all spans are exported. The service makes the call as a deferred function in the main function:
+Modify the main feature to initialize the tracker in main.go. Also when your service shuts down, you should call `TracerProvider.Shutdown()` to ensure all spans are exported. The service makes the call as a deferred feature in the main function:
 
 ```golang
 func main() {
@@ -262,11 +262,11 @@ Everywhere you pass http.Handler to ServeMux you will wrap the handler function.
 + mux.Handle("/path", otelhttp.NewHandler(http.HandlerFunc(f), "description of path"))
 ```
 
-In this way, you can ensure that each function wrapped with othttp will automatically collect its metadata and start the corresponding trace.
+In this way, you can ensure that each feature wrapped with othttp will automatically collect its metadata and start the corresponding trace.
 
 ## Custom Span
 
-In many cases, the middleware provided by OpenTelemetry cannot help us record more internally called functions, and we need to customize Span to record
+In many cases, the middleware provided by OpenTelemetry cannot help us record more internally called features, and we need to customize Span to record
 
 ```golang
  ······

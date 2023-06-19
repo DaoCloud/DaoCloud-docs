@@ -19,7 +19,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Aqua launched the first end-to-end software supply chain security solution to protect the security of the cloud-native application supply chain](https://mp.weixin.qq.com/s/8GHg5onYiuzrDvF5a64GxQ)
 
-     The solution is part of the Aqua cloud-native application protection platform and provides capabilities including: code scanning, CI/CD posture management, pipeline security management, optimization of SBOM functions, assessment of open source code health and reputation.
+     The solution is part of the Aqua cloud-native application protection platform and provides capabilities including: code scanning, CI/CD posture management, pipeline security management, optimization of SBOM features, assessment of open source code health and reputation.
 
 - [AtomicJar releases integration testing tool Testcontainers Cloud](https://containerjournal.com/topics/container-management/atomicjar-unveils-testcontainers-cloud-service/)
 
@@ -34,7 +34,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [AWS Launches Local Clusters for Running EKS Clusters Locally on Hybrid Cloud Service Outposts](https://aws.amazon.com/about-aws/whats-new/2022/09/amazon-eks-outposts-local-clusters/)
 
-     Local clustering reduces the risk of application downtime due to network outages in the cloud. During this time, the application remains available and cluster operations can be performed. EKS manages the availability of the K8s control plane on Outposts when connected to the cloud. The Kubernetes running on the local cluster has the same functions as the EKS on the cloud, and supports automatic deployment of the latest security patches.
+     Local clustering reduces the risk of application downtime due to network outages in the cloud. During this time, the application remains available and cluster operations can be performed. EKS manages the availability of the K8s control plane on Outposts when connected to the cloud. The Kubernetes running on the local cluster has the same features as the EKS on the cloud, and supports automatic deployment of the latest security patches.
 
 - [Azure Kubernetes Release AKS May Update](https://mp.weixin.qq.com/s/d-xcAQ-6sV38pSJIZV676w)
 
@@ -147,7 +147,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Alibaba Cloud Container Service ACK September update](https://mp.weixin.qq.com/s/uI5sw-HwCJf56W9wDcmysw)
 
-     Updates: Add managed node pools, support configuring network-configured load balancing NLB instances for Services through Annotation, provide resource portrait functions for workloads, and support lifecycle management of object storage OSS Buckets using container network file systems.
+     Updates: Add managed node pools, support configuring network-configured load balancing NLB instances for Services through Annotation, provide resource portrait features for workloads, and support lifecycle management of object storage OSS Buckets using container network file systems.
 
 - [Alibaba Cloud service mesh ASM August Update](https://mp.weixin.qq.com/s/BDgNctG90oHpbrRWC0Hxkg)
 
@@ -280,7 +280,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Fortinet releases cloud-native firewall service FortiGate CNF](https://www.fortinet.com/blog/business-and-technology/simplify-cloud-security-with-the-fortigate-cloud-native-firewall-on-aws)
 
-     FortiGate CNF is a SaaS product that supports consistent security policies in different AWS environments through deep cloud-native integration with services such as AWS Gateway Load Balancer and AWS Firewall Manager, eliminating the complexity of network security. In addition, it supports the security inspection function of the next-generation firewall, provides deep visibility into the application layer, and can protect multiple accounts, subnets, virtual private clouds, and availability zones.
+     FortiGate CNF is a SaaS product that supports consistent security policies in different AWS environments through deep cloud-native integration with services such as AWS Gateway Load Balancer and AWS Firewall Manager, eliminating the complexity of network security. In addition, it supports the security inspection feature of the next-generation firewall, provides deep visibility into the application layer, and can protect multiple accounts, subnets, virtual private clouds, and availability zones.
 
 ### G
 
@@ -304,11 +304,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      GraphQL for Gloo Gateway seamlessly adds GraphQL APIs to Gloo Gateway. Users can use this to perform joint GraphQL queries on the API without the need to create additional servers, resolvers and resolver mode libraries for GraphQL; all policies and requests can be managed in the Envoy Proxy filter; while supporting declarative configuration, Fully compatible with CI/CD and GitOps workflows.
 
-- [Google Cloud GKE introduces Network Function Optimizer to help telcos adopt cloud-native network functions](https://cloud.google.com/blog/topics/telecommunications/network-function-optimizer-for-gke-and-gdc-edge)
+- [Google Cloud GKE introduces Network Function Optimizer to help telcos adopt cloud-native network features](https://cloud.google.com/blog/topics/telecommunications/network-function-optimizer-for-gke-and-gdc-edge)
 
     Network Function Optimizer on GKE provides three main capabilities.
     Modernization of cloud networks through Kubernetes-native multi-networking, defining a network catalog for Kubernetes clusters and allowing Pods to attach an interface to one or more networks based on connectivity or performance requirements.
-    Software-based high-performance data plane acceleration, with cloud-native network functions (CNFs) that can be scheduled on any Pod, eliminating dependencies between network functions and the underlying NIC.
+    Software-based high-performance data plane acceleration, with cloud-native network features (CNFs) that can be scheduled on any Pod, eliminating dependencies between network features and the underlying NIC.
     Traffic targeting capabilities to simplify traffic classification and support for defining a group of Pods as the next hop (nexthop).
 
 - [Google Cloud Kubernetes Release GKE December Update](https://cloud.google.com/kubernetes-engine/docs/release-notes)
@@ -322,13 +322,13 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Google releases Filestore Multishares for GKE, a cloud-native file storage service](https://cloud.google.com/filestore/docs/multishares)
 
      Filestore is a file storage hosting service, and a Filestore instance is a Network Attached Storage (NAS) hosting system.
-     Filestore Multishares for GKE provides file storage services for GKE instances. Its main functions include: supporting regional storage to prevent regional failures;
+     Filestore Multishares for GKE provides file storage services for GKE instances. Its main features include: supporting regional storage to prevent regional failures;
      Up to 10 shares can be allocated on a Filestore Enterprise instance, and each share is mapped to a unique persistent volume in GKE; dynamic volume configuration is supported, and the capacity of shares and instances can be increased or decreased as needed.
 
 - [Google releases GKE Gateway Controller, enterprise-grade implementation of Kubernetes Gateway API](https://cloud.google.com/blog/products/containers-kubernetes/google-kubernetes-engine-gateway-controller-is-now-ga)
 
      GKE Gateway Controller GKE provides an extensible API to manage internal and external HTTP(S) load balancing.
-     Its main functions include: providing a multi-routing/tenant-sharing gateway, providing two GatewayClasses by default, namely Global external and Regional Internal load balancing, supporting large-scale end-to-end encryption, supporting custom back-end service attributes, and providing advanced traffic management Wait.
+     Its main features include: providing a multi-routing/tenant-sharing gateway, providing two GatewayClasses by default, namely Global external and Regional Internal load balancing, supporting large-scale end-to-end encryption, supporting custom back-end service attributes, and providing advanced traffic management Wait.
 
 - [Google Service Mesh Anthos Service Mesh Update](https://cloud.google.com/release-notes#September_07_2022)
   
@@ -367,7 +367,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Jibudata multicloud data backup recovery product YS1000 v3.2 released](https://mp.weixin.qq.com/s/t64iDKWOQ_wUHRLvmGw8tQ)
 
-    Update: add etcd backup support for clusters; support for creating mirror backup repository; support for mirror backup with optional application mirror source; support for sandbox recovery without affecting the original business after recovery; support for flexible subsidiary function configuration using hooks for backup recovery tasks; support for synchronization of data volumes based on backup recovery; support for configuring ingress mapping while configuring disaster recovery instances.
+    Update: add etcd backup support for clusters; support for creating mirror backup repository; support for mirror backup with optional application mirror source; support for sandbox recovery without affecting the original business after recovery; support for flexible subsidiary feature configuration using hooks for backup recovery tasks; support for synchronization of data volumes based on backup recovery; support for configuring ingress mapping while configuring disaster recovery instances.
 
 - [KSOC Launches Industry's First Real-Time Kubernetes Security Posture Management Platform](https://www.einnews.com/pr_news/628624388/ksoc-launches-first-real-time-kubernetes-security-posture-management-kspm-platform)
 
@@ -473,7 +473,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Portworx Enterprise 2.12 Cloud Native Data Management Platform Release](https://docs.portworx.com/release-notes/portworx/#2-12-0)
 
-     The main new features of this version: Local users can enable the PX-Fast function and use high-performance storage as persistent storage for Kubernetes; allow storage administrators to use custom Kubernetes objects to provide various support services for object storage buckets; automatically generate Vault commands Tokens, which store encrypted secrets and cloud credentials in Vault; allow Kubernetes resources to be modified before they are migrated to the target cluster.
+     The main new features of this version: Local users can enable the PX-Fast feature and use high-performance storage as persistent storage for Kubernetes; allow storage administrators to use custom Kubernetes objects to provide various support services for object storage buckets; automatically generate Vault commands Tokens, which store encrypted secrets and cloud credentials in Vault; allow Kubernetes resources to be modified before they are migrated to the target cluster.
 
 - [Portworx Backup v2.3 data backup product announcement](https://portworx.com/blog/announcing-portworx-backup-2-3-for-simpler-backup-management-and-flexible-licensing/)
 
@@ -530,7 +530,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Rainbond Cloud Native multicloud Application Management Platform Rainbond Enterprise Package Released](https://mp.weixin.qq.com/s/pmCwyFbcCwXxcO0-rVM5dw)
 
-    Rainbond Enterprise Package has a global observable center for monitoring, debugging, and analyzing infrastructure and application services running in Kubernetes clusters and the rainbond platform. In addition, it also provides solutions for IT business system migration to the localized Cintron environment, supports full-link grayscale release and cluster patrol, built-in WAF firewall and operation audit functions, supports private deployment of application stores, etc.
+    Rainbond Enterprise Package has a global observable center for monitoring, debugging, and analyzing infrastructure and application services running in Kubernetes clusters and the rainbond platform. In addition, it also provides solutions for IT business system migration to the localized Cintron environment, supports full-link grayscale release and cluster patrol, built-in WAF firewall and operation audit features, supports private deployment of application stores, etc.
 
 - [Red Hat Releases Service Interconnect, a Service Connectivity Product for Hybrid and Multi-Cloud Environments](https://www.redhat.com/en/blog/introducing-red-hat-service-interconnect)
 
@@ -655,7 +655,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Shuche Software released SEAL 0.3: the first full-link software supply chain security management platform in China](https://mp.weixin.qq.com/s/H_bjMbH_7DJEVOpvzGEMoQ)
 
-     New features of this version: support for integrating any OCI container registry, and scan the container image in it; support for integrating any Kubernetes cluster, and scan the workload configuration and image in it; support for scanning third-party software bill of material files; support for any CI/CD pipeline Integrates the security scanning function of SEAL; can aggregate and manage resources at all stages of the whole link to provide full link security insights; supports automatic generation of multi-policy repair suggestions, priority ranking of vulnerabilities, and timely handling of security issues.
+     New features of this version: support for integrating any OCI container registry, and scan the container image in it; support for integrating any Kubernetes cluster, and scan the workload configuration and image in it; support for scanning third-party software bill of material files; support for any CI/CD pipeline Integrates the security scanning feature of SEAL; can aggregate and manage resources at all stages of the whole link to provide full link security insights; supports automatic generation of multi-policy repair suggestions, priority ranking of vulnerabilities, and timely handling of security issues.
 
 ### T
 
@@ -665,7 +665,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Tencent Cloud Native API Gateway Update](https://cloud.tencent.com/product/events)
 
-    Updates: Support for docking to cloud function SCF and microservice platform TSF, support for regular elastic expansion and shrinkage, support for Annotation-style configuration of Kong Ingress, grayscale capability productization, support for docking to cloud WAF and cloud SSL, and support for mTLS.
+    Updates: Support for docking to cloud feature SCF and microservice platform TSF, support for regular elastic expansion and shrinkage, support for Annotation-style configuration of Kong Ingress, grayscale capability productization, support for docking to cloud WAF and cloud SSL, and support for mTLS.
 
 - [Tencent Cloud Container Service TKE Three Capabilities Upgrade](https://mp.weixin.qq.com/s/DfxCQM8KzMioSt6rVq5oHw)
 
@@ -673,7 +673,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Tencent Cloud Container Service TKE September update](https://mp.weixin.qq.com/s/6_TSSHhU0L8mSbqEMWyu4g)
 
-     Updates: support for trustworthy verification of signature images in registries, fully open kubelet custom parameter functions, provide descriptions of error codes for abnormal Service/Ingress event information, the ability to run Daemonset on grayscale online super nodes, and add configuration and management according to Label Capabilities of Pod Security Groups.
+     Updates: support for trustworthy verification of signature images in registries, fully open kubelet custom parameter features, provide descriptions of error codes for abnormal Service/Ingress event information, the ability to run Daemonset on grayscale online super nodes, and add configuration and management according to Label Capabilities of Pod Security Groups.
 
 - [Tencent Cloud K8s release version TKE August update](https://mp.weixin.qq.com/s/t6yGrxcn4JZdd9877raXhA)
   
@@ -760,7 +760,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [VMware Tanzu Kubernetes Grid 2.1 released](https://tanzu.vmware.com/content/blog/tanzu-kubernetes-grid-2-1)
 
-     The main new features of this version: introduce new Cluster API functions ClusterClass and Carvel tools, use a unified, declarative API to create and manage clusters; support public cloud Oracle Cloud infrastructure.
+     The main new features of this version: introduce new Cluster API features ClusterClass and Carvel tools, use a unified, declarative API to create and manage clusters; support public cloud Oracle Cloud infrastructure.
 
 - [VMware Tanzu releases Application Service Adapter for Tanzu Application Platform v1.0, aiming to bridge the development experience gap between Cloud Foundry and Kubernetes](https://tanzu.vmware.com/content/blog/application-service-adapter-for-vmware-tanzu-application-platform-1-0)
 
@@ -772,7 +772,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [VMware Tanzu Application Platform v1.3 (K8s DevOps platform) released](https://tanzu.vmware.com/content/blog/tanzu-application-platform-1-3)
 
-     Updates: support for running in a physically isolated environment, integrated supply chain threat scanning tools, a new unified threat monitoring dashboard, support for SBOM, support for dynamic registration of API specifications, integration of Jenkins CI/CD, and support for custom certificate authorities (CA) Certificates, new runtime resource monitoring plugin, added support for Java and Python function workloads (beta), available on OpenShift.
+     Updates: support for running in a physically isolated environment, integrated supply chain threat scanning tools, a new unified threat monitoring dashboard, support for SBOM, support for dynamic registration of API specifications, integration of Jenkins CI/CD, and support for custom certificate authorities (CA) Certificates, new runtime resource monitoring plugin, added support for Java and Python feature workloads (beta), available on OpenShift.
 
 - [VMware Tanzu Kubernetes Grid v1.6 Release](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.6/vmware-tanzu-kubernetes-grid-16/GUID-release-notes.html)
 
@@ -786,8 +786,8 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Weave Gitops Update](https://www.weave.works/blog/weave-gitops-2022-09)
 
-     Updates include: optimize Trusted Delivery, add policy as code and progressive delivery functions; add Team Workspaces, optimize multi-tenant working methods; add ClickOps function in the user interface to simplify microservice deployment; add GitOps Run's technology preview feature, which provides near real-time iterative development, checks against Kubernetes as soon as the local manifest file is saved.
+     Updates include: optimize Trusted Delivery, add policy as code and progressive delivery features; add Team Workspaces, optimize multi-tenant working methods; add ClickOps feature in the user interface to simplify microservice deployment; add GitOps Run's technology preview feature, which provides near real-time iterative development, checks against Kubernetes as soon as the local manifest file is saved.
 
 - [Comprehensive upgrade of China Unicom's cloud native architecture](https://mp.weixin.qq.com/s/QJIU0UQ48hfl3RPsMVpyCw)
 
-     Upgrade highlights: support a variety of domestic chips and domestic operating systems; compatible with CNM and CNI dual standards; newly added DVR distributed gateway, VPC interconnection, VPC elastic network card direct network (based on IPVLAN), VPC routed direct network (compatible with Flannel/ Calico plug-in), policy routing, VPC network multi-exit/entry, IPv4/6, layer 4/7 load separation and other functions; single cluster capacity supports carrying over 10W+ containers; integrates a complete set of visual automatic operation and maintenance capabilities.
+     Upgrade highlights: support a variety of domestic chips and domestic operating systems; compatible with CNM and CNI dual standards; newly added DVR distributed gateway, VPC interconnection, VPC elastic network card direct network (based on IPVLAN), VPC routed direct network (compatible with Flannel/ Calico plug-in), policy routing, VPC network multi-exit/entry, IPv4/6, layer 4/7 load separation and other features; single cluster capacity supports carrying over 10W+ containers; integrates a complete set of visual automatic operation and maintenance capabilities.

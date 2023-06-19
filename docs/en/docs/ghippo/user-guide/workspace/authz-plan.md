@@ -1,6 +1,6 @@
 # Ordinary user authorization plan
 
-Ordinary users refer to those who can use most of DCE's product modules and functions (except management functions), have certain operation rights to resources within the scope of authority, and can independently use resources to deploy applications.
+Ordinary users refer to those who can use most of DCE's product modules and features (except management features), have certain operation rights to resources within the scope of authority, and can independently use resources to deploy applications.
 
 The authorization and resource planning process for such users is shown in the following figure.
 

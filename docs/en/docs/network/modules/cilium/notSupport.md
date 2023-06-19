@@ -271,7 +271,7 @@ Cilium kube-proxy also implements the K8s Service Topology Aware Hints feature, 
 ### Neighbor Discovery
 
 With Cilium version 1.11, the neighbor discovery library has been removed and relies entirely on the Linux kernel to implement neighbor discovery.
-In kernels 5.16 and above, this is done with the "managed" function and with "extern_learn" to mark arp records in case they are garbage collected by the kernel.
+In kernels 5.16 and above, this is done with the "managed" feature and with "extern_learn" to mark arp records in case they are garbage collected by the kernel.
 For lower kernel versions, the IP address of the new node is periodically written to the Linux kernel via the cilium-agent for dynamic resolution.
 The default is 30s, which can be set with the following parameters:
 

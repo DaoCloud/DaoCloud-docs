@@ -47,7 +47,7 @@ The virtual service provides routing support for HTTP, TCP, and TLS protocols.
 
 - Http
 
-    An ordered list of rules. This field contains all routing configuration functions for the http protocol. For service ports whose names are prefixed with `http-`, `http2-`, `grpc-`, or whose protocols are HTTP, HTTP2, GRPC and terminated TLS,
+    An ordered list of rules. This field contains all routing configuration features for the http protocol. For service ports whose names are prefixed with `http-`, `http2-`, `grpc-`, or whose protocols are HTTP, HTTP2, GRPC and terminated TLS,
     In addition, ServiceEntry using HTTP, HTTP2, and GRPC protocols are all valid.
     Traffic will use the first rule that matches.
 

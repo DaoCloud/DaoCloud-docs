@@ -12,7 +12,7 @@ MinIO is a GNU AGPL v3 open source software-defined product that can run well on
 
 ![MinIO Architecture](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/minio-design.png)
 
-MinIO's architectural design has been aimed at private cloud standards with high performance requirements from the very beginning, pursuing the ultimate performance on the basis of realizing all the functions required by object storage.
+MinIO's architectural design has been aimed at private cloud standards with high performance requirements from the very beginning, pursuing the ultimate performance on the basis of realizing all the features required by object storage.
 MinIO is easy to use, efficient, and high-performance, and can provide cloud-native object storage services with elastic scalability in a simpler way.
 
 MinIO performs well in traditional object storage use cases (such as auxiliary storage, disaster recovery, and archiving), and is also unique in storage technologies in machine learning, big data, private cloud, hybrid cloud, etc., including data analysis, high-performance application loads, native cloud applications, etc.
@@ -34,7 +34,7 @@ MinIO can run on standard servers with local drives (JBOD/JBOF).
 The cluster is a fully symmetric architecture, meaning that all servers are functionally identical, there are no namenodes or metadata servers.
 
 MinIO writes data and metadata together as objects eliminating the need for a metadata database.
-MinIO performs all functions in an inline, strictly consistent operation, including erasure codes, bit rotrot checks, encryption, and more.
+MinIO performs all features in an inline, strictly consistent operation, including erasure codes, bit rotrot checks, encryption, and more.
 
 Each MinIO cluster is a collection of distributed MinIO servers, one process per node.
 MinIO runs as a single process in user space and uses lightweight coroutines to achieve high concurrency.
@@ -241,7 +241,7 @@ After completing the above configurations, basic functional tests and multi-tena
 
 ### Basic functional testing
 
-The steps of the basic function test are as follows.
+The steps of the basic feature test are as follows.
 
 1. Log in to `minio console: 10.6.163.52:30401/login` from the browser.
 

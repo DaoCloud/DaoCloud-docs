@@ -1,12 +1,12 @@
 # CRD and CR
 
-##CRD
+## CRD
 
 `CRD` is the abbreviation of `Custom Resource Definition`, which is a built-in native resource type of `Kubernetes`. It is the definition of a custom resource (CR), which describes what a custom resource is.
 
 CRD can register a new resource with the `Kubernetes` cluster to extend the capabilities of the `Kubernetes` cluster. With `CRD`, you can customize the abstraction of the underlying infrastructure, customize resource types according to business needs, and use the existing resources and capabilities of `Kubernetes` to define higher-level abstractions through the pattern of Lego blocks.
 
-##CR
+## CR
 
 `CR` is the abbreviation of `Custom Resource`, it is actually an instance of `CRD`, and it is a resource description conforming to the field format definition in `CRD`.
 

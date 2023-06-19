@@ -12,7 +12,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [July 21-July 22 2023 ArchSummit Global Architect Summit - Shenzhen Presentation Topics Wanted](https://mp.weixin.qq.com/s/oxtXzu3Nme1QvSgYjiT5zQ)
   
-    The ArchSummit Global Architect Summit is a technical conference focused on high-end technical managers and architects, launched by the InfoQ China team. The Shenzhen Summit will feature topics such as Microservice Architecture, Sustainable Software Architecture, ChatGPT + Big Data Exploration, Digital Transformation Exploration in the Financial Industry, and Business Going Abroad. Each presentation will be 45 minutes long, including a 5-minute Q&A session at the end.
+    The ArchSummit Global Architect Summit is a technical conference focused on high-end technical managers and architects, launched by the InfoQ China team. The Shenzhen Summit will function topics such as Microservice Architecture, Sustainable Software Architecture, ChatGPT + Big Data Exploration, Digital Transformation Exploration in the Financial Industry, and Business Going Abroad. Each presentation will be 45 minutes long, including a 5-minute Q&A session at the end.
 
 ### 2023-06
 
@@ -189,7 +189,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [May 8-9 cdCon + GitOpsCon North America 2023 Conference Agenda Released](https://events.linuxfoundation.org/cdcon-gitopscon/program/schedule/)
   
-    This session will feature 60+ presentations sharing topics including but not limited to
+    This session will function 60+ presentations sharing topics including but not limited to
     The difference between DevOps and GitOps, security/compliance practices for software delivery platforms, static configuration, advanced deployment, and more.
 
 - [May 8-9 cdCon + GitOpsCon 2023 Call for Topics (2.10 deadline)](https://events.linuxfoundation.org/cdcon-gitopscon/program/cfp/)
@@ -647,9 +647,9 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      Click to view [Online Participation Method](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/register/)
 
-- [On October 24, CNCF announced the first batch of products that passed the cloud native network function certification program](https://mp.weixin.qq.com/s/2AJi1d-Edwjq-Bm7knRbPw)
+- [On October 24, CNCF announced the first batch of products that passed the cloud native network feature certification program](https://mp.weixin.qq.com/s/2AJi1d-Edwjq-Bm7knRbPw)
 
-     The CNCF announced the first cloud-native network function (CNF) certified products, including F5, Juniper Networks, MATRIXX Software, and PANTHEON.tech.
+     The CNCF announced the first cloud-native network feature (CNF) certified products, including F5, Juniper Networks, MATRIXX Software, and PANTHEON.tech.
 
      Launched in May of this year, the CNF certification program leverages the [CNF Test Suite](https://github.com/cncf/cnf-testsuite/) to help communications service providers and other telecom organizations identify which network equipment providers follow cloud-native Best Practices.
 
@@ -821,7 +821,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [August 13 Lundao Native Cloud Native Meetup Nanjing station registration opens](https://mp.weixin.qq.com/s/f5I4hn_lHf9x9oDBUgAIIQ)
 
-     LunDaoNative Meetup Nanjing Station is hosted by DaoKe and Pengyun Network, focusing on topics such as service mesh, cloud-native storage, cloud-native security and related open source projects.
+     LunDaoNative Meetup Nanjing Station is hosted by DaoCloud and Pengyun Network, focusing on topics such as service mesh, cloud-native storage, cloud-native security and related open source projects.
      The event will be held on August 13, in the form of offline + online live broadcast.
 
 - [CloudNativeDay 2022 held online on August 10th](https://www.techstrongevents.com/cloud-native-days-2022?ref=in-article-ad&utm_source=Container+Journal&utm_medium=Referral&utm_campaign=in-article-ad)
@@ -842,9 +842,9 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
      This Meetup was initiated by the KubeSphere community and the SOFAStack community, and the theme is still "Cloud Native Technology Exchange".
      The event includes lightning speeches (10 minutes) and single/double speeches (40 minutes). Topics can include projects in the cloud native field and cloud native technology practices.
 
-- [August 2 CNCF Telecom Industry Micro-Survey: Three-quarters of Respondents Say They Will Adopt Cloud Native Network Functions (CNF)](https://www.cncf.io/blog/2022/08/02/cncf-telco-microsurvey-cloud-native-network-functions-with-kubernetes-are-coming-but-interoperability-and-portability-are-priorities/)
+- [August 2 CNCF Telecom Industry Micro-Survey: Three-quarters of Respondents Say They Will Adopt Cloud Native Network Functions (CNF)](https://www.cncf.io/blog/2022/08/02/cncf-telco-microsurvey-cloud-native-network-features-with-kubernetes-are-coming-but-interoperability-and-portability-are-priorities/)
 
-     Three-quarters of respondents to the micro-survey are converting services running as physical network functions (PNFs) or virtual network functions (VNFs) to cloud-native network functions (CNFs) based on containers and Kubernetes.
+     Three-quarters of respondents to the micro-survey are converting services running as physical network features (PNFs) or virtual network features (VNFs) to cloud-native network features (CNFs) based on containers and Kubernetes.
      As for the biggest challenges when using Kubernetes, the top three are: network (57.14%), interoperability between products (42.86%), cluster management and complexity (both 33.33%).
 
 - [August 2nd China DevOps Status Survey Report (2022)](https://mp.weixin.qq.com/s/XPu2D9wsRDbbWQ9k72oXgA)
@@ -878,7 +878,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      As shown in the radar chart, vendors in the lower right quadrant see persistent storage as their competitive differentiator.
      What this group has in common is to combine storage platforms with Kubernetes distributions and cluster management products to provide Kubernetes users with a highly integrated overall solution.
-     Vendors in the lower left quadrant are more oriented toward specific functions, deployment models, or personalized use cases.
+     Vendors in the lower left quadrant are more oriented toward specific features, deployment models, or personalized use cases.
 
      
 
@@ -1043,7 +1043,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [On June 6, Kubecost, a Kubernetes cost management company, joined forces with AWS and Google to submit a cost management open source project to CNCF—OpenCost](https://thenewstack.io/opencost-open-source-collaboration-on-kubernetes-cost-standards/)
 
      OpenCost aims to standardize cost tracking, allocation, and quantification, helping Kubernetes teams understand their infrastructure costs.
-     The main functions of OpenCost: Real-time allocation of costs according to various objects of Kubernetes, support for internal enterprise k8s clusters with custom pricing tables, support for resource allocation within the cluster, support for exporting pricing data to Prometheus, etc.
+     The main features of OpenCost: Real-time allocation of costs according to various objects of Kubernetes, support for internal enterprise k8s clusters with custom pricing tables, support for resource allocation within the cluster, support for exporting pricing data to Prometheus, etc.
 
      Project address: <https://github.com/kubecost/opencost>
 
@@ -1057,14 +1057,14 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [Serverless report June 2: Over 50% of AWS, Azure, and Google Cloud Platform users are using Serverless](https://www.datadoghq.com/about/latest-news/press-releases/datadog-s-2022-state-of-serverless-report-finds-serverless-reaching-mainstream-adoption/)
 
      Datadog's recently released "Serverless Report 2022" found that serverless is in the mainstream adoption stage.
-     As the product matures and more functions and serverless container products are released, more and more organizations will adopt serverless.
+     As the product matures and more features and serverless container products are released, more and more organizations will adopt serverless.
      The report also found that nearly 40% of Datadog customers running on Google Cloud use Google Cloud Run, GCP's serverless container offering, a 4x increase from January 2020.
 
      Full report: <https://www.datadoghq.com/state-of-serverless/>
 
 - [On June 2, the NextArch Foundation's microservice standardization solution has been open source: support for different development languages and technical frameworks](https://mp.weixin.qq.com/s/PE0UexUAK-cg4CgMzQm3Jw)
 
-     The solution to the standardization of microservice governance consists of two parts: one part is the standardized function definition and best practices of service governance, and the other part is the standardized protocol and interface of the service governance plane and data plane.
+     The solution to the standardization of microservice governance consists of two parts: one part is the standardized feature definition and best practices of service governance, and the other part is the standardized protocol and interface of the service governance plane and data plane.
      The standardized implementation consists of three parts: service governance control plane, data plane and development framework. The standardized solution is divided into eight parts:
      Standardized Spec construction, control plane support (PolarisMesh), data plane support (PolarisMesh), development framework support, go-zero, CloudWeGo/Kitex, GoFrame and Spring Cloud Tencent.
 
@@ -1132,7 +1132,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
      Click to read [full report](https://www.iresearch.com.cn/Detail/report?id=3997&isfree=0)
 
-- [On May 18, CNCF launched the cloud native network function certification program](https://www.cncf.io/announcements/2022/05/18/cncf-launches-cloud-native-network-function-certification-program/)
+- [On May 18, CNCF launched the cloud native network feature certification program](https://www.cncf.io/announcements/2022/05/18/cncf-launches-cloud-native-network-function-certification-program/)
 
      The Cloud Native Network Function (CNF) certification program is designed to help communications service providers and other telecommunications organizations identify which network equipment providers follow cloud-native best practices.
      The CNF certification program runs using CNCF's CNF test suite and supports any product running in a certified Kubernetes environment.
