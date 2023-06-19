@@ -33,7 +33,7 @@ After the `Update app profile` step is successfully executed, Argo CD detects th
 
 2. After successful creation, select the pipeline operation: `Edit Jenkinsfile`
 
-    ????? note "The following Jenkinsfile parameters can be updated as required"
+    ??? note "The following Jenkinsfile parameters can be updated as required"
 
         ```yaml
         pipeline {

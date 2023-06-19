@@ -111,7 +111,7 @@ With everything in place, you can start installing DME. The specific process is 
 
 If skoala database in common-mysql is empty, log in to skoala database and run the following SQL command:
 
-????? note "If initialization fails, check whether the following three tables exist in the skoala database and whether the corresponding SQL has taken effect."
+??? note "If initialization fails, check whether the following three tables exist in the skoala database and whether the corresponding SQL has taken effect."
 
     ```sql
     mysql> desc api;

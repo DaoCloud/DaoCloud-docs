@@ -73,7 +73,7 @@ If no JWKS application exists in the current environment, follow the following s
 
         <!--![]()screenshots-->
 
-    ????? note "The YAML file configured in this example is shown below"
+    ??? note "The YAML file configured in this example is shown below"
 
         ```yaml
         apiVersion: apps/v1

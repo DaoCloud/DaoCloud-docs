@@ -5,7 +5,15 @@ hide:
 
 # Create Multicloud Instance
 
-To use fantasitc features provided by Multicloud Management module, you must create a multicloud instance first and then manage resources under this instance.
+To use the fantastic features provided by Multicloud Management module, you must create a multicloud instance at the first step. Then, you can manage resources under this instance.
+
+!!! note
+
+    - DCE 5.0 Multicloud Management is developed based on the open source project [Karmada](https://karmada.io/), so a Karmada instance will be automatically created when you create a multicloud instance.
+
+    - The newly-created multicloud instance is deployed in the global management cluster by default, in the form of a virtual cluster, which is transparent to users.
+    
+    - To distinguish from real clusters, all virtual clusters have a `k-` prefix in their names.
 
 1. Click `Create Multicloud Instance` in the upper right corner.
 
@@ -13,13 +21,7 @@ To use fantasitc features provided by Multicloud Management module, you must cre
 
 2. Fill in information and click "OK".
 
-    - Management Cluster: When choosing the control plane cluster, it is recommended to use a cluster that is running normally and has a PVC installed, otherwise the creation may fail due to no storage resources.
-    - Delete Instance: If checked，the Karmada instance will also be deleted when you delete the multicloud management instance. If not checked, the Karmada instance will remain and you can use it in any other places.
+    - Management Cluster: available clusters come from those integrated or crated in DCE 5.0 [Container Management]((../../kpanda/intro/what.md)) module. If no target cluster is found, go to Container Management module [integrate](../../kpanda/user-guide/clusters/integrate-cluster.md) or [create](../../kpanda/user-guide/clusters/create-cluster.md) a cluster.
+    - Delete Instance: If checked，the Karmada instance will also be deleted when you delete the multicloud management instance. If not checked, the Karmada instance will remain and you can use it in terminal, but not in DCE 5.0 Multicloud Management anymore.
 
     ![add](../images/create-instance02.png)
-
-!!! note
-
-    - A virtual Kubernetes cluster will be automatically created in Container Management module when a multicloud instance is created. This is designed to manage resources across clusters as if in a single cluster. The virtual cluster will not be listed in Container Management module, but it does exist.
-    
-    - Because of the above reason, the name of each multicloud instance must start with "k-" to keep it separated from other real cluster.
