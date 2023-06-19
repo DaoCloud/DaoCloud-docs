@@ -21,7 +21,7 @@ The format of the project.name parameter should be: `{{nacos_namespace_id}}@@{{n
 !!! note
 
 
-????? note "How to Get the Sentinel Console"
+??? note "How to Get the Sentinel Console"
 
     - Download the latest version of the console jar package from the [release](https://github.com/alibaba/Sentinel/releases) page, or
 
