@@ -12,7 +12,7 @@ In the face of complex multicloud environments, 5.0 Multicloud Management will b
 
 ## Features
 
-The main functions of Multicloud Management are as follows:
+The main features of Multicloud Management are as follows:
 
 **Multicloud cluster instance management**
 
@@ -40,7 +40,7 @@ The main functions of Multicloud Management are as follows:
 
 **Strategy Center**
 
-Support deployment policy and differentiated policy management, view the workload associated with the policy, and provide the function of deleting idle deployment policies and differentiated policies.
+Support deployment policy and differentiated policy management, view the workload associated with the policy, and provide the feature of deleting idle deployment policies and differentiated policies.
 
 ## Graphical user interaction
 
@@ -97,7 +97,7 @@ The Multicloud Management module supports Kubernetes-native workload type deploy
 
 - **Strategy Center**
 
-     In the policy center, users can manage deployment policies and differentiated policies created through workload association, and provide the function of deleting idle policies. It also supports maintaining, creating and editing deployment strategies and differentiation strategies in YAML.
+     In the policy center, users can manage deployment policies and differentiated policies created through workload association, and provide the feature of deleting idle policies. It also supports maintaining, creating and editing deployment strategies and differentiation strategies in YAML.
 
 ## Frequently Asked Questions
 

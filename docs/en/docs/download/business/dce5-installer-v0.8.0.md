@@ -75,7 +75,7 @@ DCE 5.0 Enterprise Package includes the following modules, which can be used on 
 | Module               | Introduction                                                                 | Latest Release                                              |
 | -------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------ |
 | Global Management    | Responsible for user access control, permissions, enterprise space, audit logs, personalized appearance settings, etc. | [0.17.1](../../ghippo/intro/release-notes.md#0171)         |
-| Container Management | Manage Kubernetes core functions such as clusters, nodes, workloads, Helm applications, CRD, namespaces, etc.        | [0.18.1](../../kpanda/intro/release-notes.md#0181)         |
+| Container Management | Manage Kubernetes core features such as clusters, nodes, workloads, Helm applications, CRD, namespaces, etc.        | [0.18.1](../../kpanda/intro/release-notes.md#0181)         |
 | Observability        | Provide rich dashboard, scenario monitoring, data query, alarm and other graphical information.                      | [0.17.2](../../insight/intro/releasenote.md#0172)          |
 | Application Workspace| Container-based DevOps application platform, supporting pipeline jobs such as Jenkins, Tekton, GitOps, etc.          | [0.17.3](../../amamba/intro/release-notes.md#0173)         |
 | Multicloud MOrchestration| Centralized management of multicloud, hybrid cloud, cross-cloud resources' application orchestration, with multicloud disaster recovery, fault recovery and other capabilities.| [0.9.1](../../kairship/intro/release-notes.md#091)           |

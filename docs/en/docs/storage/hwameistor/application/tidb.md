@@ -20,7 +20,7 @@ The TiDB distributed database splits the overall architecture into multiple modu
 
 - TiKV Server: Responsible for storing data. From the outside, TiKV is a distributed Key-Value storage engine that provides transactions. The basic unit for storing data is Region, and each Region is responsible for storing data of a Key Range (the left-closed right-open interval from StartKey to EndKey), and each TiKV node is responsible for multiple Regions. TiKV's API provides native support for distributed transactions at the KV key-value pair level, and provides the isolation level of SI (Snapshot Isolation) by default, which is also the core of TiDB's support for distributed transactions at the SQL level. After the SQL layer of TiDB completes the SQL parsing, it will convert the SQL execution plan into an actual call to the TiKV API. Therefore, the data is stored in TiKV. In addition, the data in TiKV will automatically maintain multiple copies (the default is three copies), which naturally supports high availability and automatic failover.
 
-- TiFlash: TiFlash is a special type of storage node. Different from ordinary TiKV nodes, inside TiFlash, data is stored in the form of columns, and its main function is to accelerate analytical use cases.
+- TiFlash: TiFlash is a special type of storage node. Different from ordinary TiKV nodes, inside TiFlash, data is stored in the form of columns, and its main feature is to accelerate analytical use cases.
 
 ## Storage of TiDB database
 
@@ -329,7 +329,7 @@ Test results: support for execution plan parsing
 
 #### Execution plan binding
 
-Test purpose: Verify the execution plan binding function of the distributed database
+Test purpose: Verify the execution plan binding feature of the distributed database
 
 Test steps:
 
@@ -352,9 +352,9 @@ Test result: It may not be hash_join when no hint is used, but it must be hash_j
 
 #### Common Functions
 
-Test purpose: to verify the standard database functions of distributed databases (supported function types)
+Test purpose: to verify the standard database features of distributed databases (supported feature types)
 
-Test results: support standard database functions
+Test results: support standard database features
 
 #### Explicit/Implicit Transactions
 
@@ -384,7 +384,7 @@ Test results: support si isolation level, support rc isolation level (4.0 GA ver
 
 Test purpose: to verify the distributed complex query capabilities of distributed databases
 
-Test results: support distributed complex queries and operations such as cross-node join, support window functions, and hierarchical queries
+Test results: support distributed complex queries and operations such as cross-node join, support window features, and hierarchical queries
 
 ### System Security Test
 
@@ -450,7 +450,7 @@ Test results: Database data is controlled by granting access rights for basic ad
 
 #### whitelist
 
-Test purpose: verify the whitelist function of the distributed database
+Test purpose: verify the whitelist feature of the distributed database
 
 Test script:
 

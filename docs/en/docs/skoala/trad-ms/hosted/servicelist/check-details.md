@@ -28,7 +28,7 @@ Log in to the target registry, click `Microservice List` in the left navigation 
 
     - Instance monitoring
 
-        The instance monitoring function monitors the status of the service instance, such as the time sequence curves of the request number, error rate, response time, request rate, CPU metric, memory metric, read/write rate, and receive/send rate of the service instance.
+        The instance monitoring feature monitors the status of the service instance, such as the time sequence curves of the request number, error rate, response time, request rate, CPU metric, memory metric, read/write rate, and receive/send rate of the service instance.
 
         > In response time, p95 represents that 95% of online requests take less than a certain time.
 

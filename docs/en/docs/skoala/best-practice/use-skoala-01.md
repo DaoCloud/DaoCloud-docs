@@ -1,6 +1,6 @@
 # Sample application experience microservice governance
 
-The micro service engine is a function of DCE 5.0 Advanced edition, which includes registry center, configuration center, micro service governance (traditional micro service, cloud native micro service), cloud native gateway and other functions. This page will walk you through the microservice governance capabilities of a sample application.
+The micro service engine is a feature of DCE 5.0 Advanced edition, which includes registry center, configuration center, micro service governance (traditional micro service, cloud native micro service), cloud native gateway and other features. This page will walk you through the microservice governance capabilities of a sample application.
 
 The full process of this best practice is as follows:
 

@@ -11,7 +11,7 @@ Follow the steps below to create a multicloud custom resource (CRD).
 
     <!--screenshot-->
 
-2. On the `YAML Creation` page, fill in the YAML statement and click `OK`. Download and import functions are also supported.
+2. On the `YAML Creation` page, fill in the YAML statement and click `OK`. Download and import features are also supported.
 
     <!--screenshot-->
 
@@ -66,7 +66,7 @@ spec:
 
     <!--screenshot-->
 
-2. On the `YAML Creation` page, first fill in the YAML information of the CR, which supports download and import functions.
+2. On the `YAML Creation` page, first fill in the YAML information of the CR, which supports download and import features.
 
     <!--screenshot-->
 

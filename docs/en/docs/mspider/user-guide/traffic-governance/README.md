@@ -6,10 +6,10 @@ hide:
 # traffic management
 
 Traffic governance provides users with three resource configurations, virtual services, target rules, and gateway rules.
-By configuring the corresponding rules, multiple traffic management functions such as routing, redirection, circuit breaker, and diversion can be realized. Users can create and edit governance policies through wizards or YAML.
+By configuring the corresponding rules, multiple traffic management features such as routing, redirection, circuit breaker, and diversion can be realized. Users can create and edit governance policies through wizards or YAML.
 
 - The virtual service is mainly used to customize the routing rules of the request traffic, and can process the data flow such as diversion, redirection, and timeout return
-- The target rule pays more attention to the governance of the traffic itself, and provides more powerful functions such as load balancing, connection survival detection, and circuit breaker for request traffic
+- The target rule pays more attention to the governance of the traffic itself, and provides more powerful features such as load balancing, connection survival detection, and circuit breaker for request traffic
 - Gateway rules provide the way the Istio gateway services are exposed on the gateway
 
 In practice, three types of strategies need to be used together:

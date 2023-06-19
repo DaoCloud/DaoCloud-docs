@@ -32,4 +32,4 @@ If you really need to delete multiple gateways at once, you can use this operati
 
 !!! warning
     
-    Do not use the batch delete function unless necessary. Deleted gateways cannot be recovered, so please operate with caution.
+    Do not use the batch delete feature unless necessary. Deleted gateways cannot be recovered, so please operate with caution.

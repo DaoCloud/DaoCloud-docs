@@ -74,7 +74,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 #### Fixes
 
 - **Fixed** display style of pod running status
-- **Fixed** When the link function is not enabled, hide related configuration parameters
+- **Fixed** When the link feature is not enabled, hide related configuration parameters
 - **Fixed** Some front-end styles do not take effect
 - **Fixed** collection pod metrics no data problem
 - **Fixed** Unable to install insight-agent in OpenShift cluster

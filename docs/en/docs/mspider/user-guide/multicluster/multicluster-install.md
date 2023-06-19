@@ -516,7 +516,7 @@ while true; do kubectl exec -n sample -c sleep \
 
 #### Create a cluster through container management
 
-There are many ways to create a cluster. It is recommended to use the cluster creation function in container management, but users can choose other creation methods. For other solutions provided in This page, please refer to [Other ways to create clusters] in the extended chapter (#_26)
+There are many ways to create a cluster. It is recommended to use the cluster creation feature in container management, but users can choose other creation methods. For other solutions provided in This page, please refer to [Other ways to create clusters] in the extended chapter (#_26)
 
 
 

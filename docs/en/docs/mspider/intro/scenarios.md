@@ -6,7 +6,7 @@ This section introduces the specific cases where the service mesh is applicable.
 
 Traffic governance is a broad topic that includes dynamically modifying the load balancing strategy for inter-service access, maintaining sessions based on specific request characteristics, cutting part of the traffic to a certain version of the same service online, and protecting services by limiting the number of concurrent connections, requests, and isolating faulty service instances. Additionally, this includes the ability to modify service content and simulate service failures. 
 
-The service mesh can provide non-intrusive traffic management capabilities, and these service governance functions can be realized without modifying any business code. It provides strategic and scenario-based network connection management according to the service agreement, allowing different governance rules to be configured for specific ports of specific services as needed.
+The service mesh can provide non-intrusive traffic management capabilities, and these service governance features can be realized without modifying any business code. It provides strategic and scenario-based network connection management according to the service agreement, allowing different governance rules to be configured for specific ports of specific services as needed.
 
 ### Scenario Advantages
 

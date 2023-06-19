@@ -1,6 +1,6 @@
 # Sidecar Version Upgrade
 
-After upgrading the Istio version of the mesh, the sidecar upgrade function will be triggered. The sidecar upgrade can be divided into two methods: `hot upgrade` and `restart upgrade`.
+After upgrading the Istio version of the mesh, the sidecar upgrade feature will be triggered. The sidecar upgrade can be divided into two methods: `hot upgrade` and `restart upgrade`.
 
 - Hot upgrade: The customized version of DaoCloud's lower sidecar can complete the upgrade without restarting the user's Pod to achieve uninterrupted business.
 - Restart upgrade: The community-native Istio upgrade method or the customized version of Istio that does not meet the hot upgrade environment requirements requires restarting the user Pod.

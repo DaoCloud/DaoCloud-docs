@@ -11,7 +11,7 @@ In the multicloud instance list, click the name of an instance to enter the over
 
 - Instance Search
 
-    You can use the search function at the top of the instance list to quickly retrieve the instance you need.
+    You can use the search feature at the top of the instance list to quickly retrieve the instance you need.
 
     Support fuzzy match of cluster names.
 

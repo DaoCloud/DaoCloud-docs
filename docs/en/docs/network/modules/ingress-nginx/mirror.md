@@ -1,6 +1,6 @@
 # Mirror Traffic
 
-Traffic mirroring is a powerful tool to verify service functions and performance. It can copy real-time traffic and send it to the mirroring service without creating data and without affecting online access.
+Traffic mirroring is a powerful tool to verify service features and performance. It can copy real-time traffic and send it to the mirroring service without creating data and without affecting online access.
 
 | Configuration item | Description | Default value |
 | -------------------------------------------------- | -------------------------------------------------- ----------- | ------ |

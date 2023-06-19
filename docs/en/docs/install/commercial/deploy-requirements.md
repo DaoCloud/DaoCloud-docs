@@ -55,7 +55,7 @@ Assuming that VIP is used as the load balancing method of the global cluster:
 
 ## Port requirements
 
-In order to function properly, some ports need to be open. If your network is configured with firewall rules, you need to ensure that infrastructure components can communicate with each other over specific ports.
+In order To function properly, some ports need to be open. If your network is configured with firewall rules, you need to ensure that infrastructure components can communicate with each other over specific ports.
 Make sure the required following ports are open on the network and configured to allow access between hosts. Some ports are optional based on configuration and usage.
 
 ### bootstrapping node

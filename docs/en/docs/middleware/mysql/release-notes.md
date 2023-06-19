@@ -24,8 +24,8 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 #### New features
 
-- **Added** `mcamel-mysql` supports middleware link tracking adaptation.
-- **Added** Install `mcamel-mysql` to enable link tracking according to parameter configuration.
+- **Added** `mcamel-mysql` supports middleware traces adaptation.
+- **Added** Install `mcamel-mysql` to enable traces according to parameter configuration.
 - **Added** `mcamel-mysql` PhpMyAdmin supports LoadBalancer type.
 
 #### upgrade
@@ -53,7 +53,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Added** `mcamel-mysql` supports Operator docking with chart-syncer.
 - **Added** `mcamel-mysql` Operator finalizers permission to support openshift.
 - **Added** `UI` adds MySQL master-slave replication delay display
-- **Added** `Documentation` adds log viewing operation instructions, supports custom query, export and other functions.
+- **Added** `Documentation` adds log viewing operation instructions, supports custom query, export and other features.
 
 #### Optimization
 

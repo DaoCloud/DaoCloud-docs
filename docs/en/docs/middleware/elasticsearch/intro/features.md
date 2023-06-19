@@ -16,7 +16,7 @@ The following are the general features supported by Elasticsearch:
 | Category        | Features                                                      | Description                                            |
 | --------------- | ------------------------------------------------------------- | ------------------------------------------------------ |
 | Distributed cluster    | Cluster deployment and monitoring                        | Monitor data of clusters, nodes, and indexes |
-| Search management | Index configuration management, structure definition, index rebuilding | Provides configuration functions |
+| Search management | Index configuration management, structure definition, index rebuilding | Provides configuration features |
 | Full-text search | Search, sorting, statistical analysis | Provided through RESTful APIs                          |
 | Data collection  | Elasticsearch data import API,MaxCompute data import tool, full/incremental acquisition method | Rich native interfaces for data collection, integrates Maxcompute data import tools |
 | Service authentication | Service-level user authentication | Unified user authentication settings |

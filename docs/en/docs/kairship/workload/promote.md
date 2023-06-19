@@ -10,7 +10,7 @@ Multicloud Management supports one-click conversion of sub-cluster workloads to 
 
 ## Operation Guide
 
-Click the `Try Now` button above to quickly convert the sub-cluster application to a multicloud application; this function is currently in the trial version, if you encounter any problems, you can give feedback in the button below. When a subcluster is converted, you can choose whether to convert its services synchronously. By default, it will be converted synchronously.
+Click the `Try Now` button above to quickly convert the sub-cluster application to a multicloud application; this feature is currently in the trial version, if you encounter any problems, you can give feedback in the button below. When a subcluster is converted, you can choose whether to convert its services synchronously. By default, it will be converted synchronously.
 
 <!--screenshot-->
 

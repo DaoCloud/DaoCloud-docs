@@ -82,11 +82,11 @@ Adapted to **Spiderpool version** : `v0.4.1`
 
 #### Features
 
-- **Added** Added functions such as interface-based IP reservation and IP release reservation.
+- **Added** Added features such as interface-based IP reservation and IP release reservation.
 
 - **Added** IP pool management, which can be created, edited, and deleted based on the interface.
 
-- **Added** The workload uses the multi-NIC function of the container, and the IP pool can be selected and fixed.
+- **Added** The workload uses the multi-NIC feature of the container, and the IP pool can be selected and fixed.
 
 - **Added** Check the number of available IPs/total IPs in the application fixed IP pool.
 

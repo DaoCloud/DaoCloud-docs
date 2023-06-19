@@ -53,7 +53,7 @@ RequiresFSResize() bool
 
 ### Implement the volume driver
 
-Finally, to abstract implementation complexity, separate storage provider management logic should be hardcoded into the following functions, which are clearly defined in the CSI specification:
+Finally, to abstract implementation complexity, separate storage provider management logic should be hardcoded into the following features, which are clearly defined in the CSI specification:
 
 -CreateVolume
 -DeleteVolume

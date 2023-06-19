@@ -28,7 +28,7 @@ Traditional service registration and discovery are mainly supported by tradition
 - Zookeeper Registry
 
     Apache ZooKeeper is an open source distributed application coordination component, software that provides consistent services for distributed applications.
-    The functions provided by Zookeeper include configuration maintenance, domain name service, distributed synchronization, group service, etc.
+    The features provided by Zookeeper include configuration maintenance, domain name service, distributed synchronization, group service, etc.
     In the development of microservice projects, ZooKeeper is often used in conjunction with Dubbo to act as a service registry.
 
 ## Cloud native service registration and discovery

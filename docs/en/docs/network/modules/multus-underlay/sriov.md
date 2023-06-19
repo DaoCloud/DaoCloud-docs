@@ -4,7 +4,7 @@
 
 To use SR-IOV CNI, you need to confirm whether the node is a physical host and the node has a physical network card that supports SR-IOV.
 SR-IOV will not work if the node is a VM or does not have an SR-IOV capable NIC.
-You can check whether the node has a network card that supports SR-IOV function in the following way.
+You can check whether the node has a network card that supports SR-IOV feature in the following way.
 
 ### Check if SR-IOV is supported
 

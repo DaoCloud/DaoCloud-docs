@@ -22,8 +22,8 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 #### New features
 
-- **Added** `mcamel-elasticsearch` supports middleware link tracking adaptation.
-- **Added** Enable link tracking according to parameter configuration when installing `mcamel-elasticsearch`.
+- **Added** `mcamel-elasticsearch` supports middleware traces adaptation.
+- **Added** Enable traces according to parameter configuration when installing `mcamel-elasticsearch`.
 - **Added** `mcamel-elasticsearch` Kibana supports LoadBalancer type.
 
 #### upgrade
@@ -45,7 +45,7 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Added** `mcamel-elasticsearch` Operator docking with chart-syncer.
 - **Added** `mcamel-elasticsearch` supports LB.
 
-- **Added** log view operation instructions, support custom query, export and other functions.
+- **Added** log view operation instructions, support custom query, export and other features.
 
 #### upgrade
 
@@ -124,11 +124,11 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 #### New features
 
-- **Added** Added pagination function to the list page
-- **Added** Added the function of modifying the configuration
+- **Added** Added pagination feature to the list page
+- **Added** Added the feature of modifying the configuration
 - **Added** Added the ability to return modifiable configuration items
 - **Added** Change the limitation of creating instances to the cluster level instead of the namespace level
-- **Added** Added splicing function of monitoring address
+- **Added** Added splicing feature of monitoring address
 - **Added** Added the ability to modify the version number
 - **Added** Modify the underlying update logic to patch logic
 - **Added** uniformly adjust the timestamp api field to int64
@@ -139,7 +139,7 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Added** Support helm deploy eck-operator
 - **Added** Support helm to deploy mcamel-elasticsearch service
 - **Added** First release of documentation website
-- **Added** function description
+- **Added** feature description
 - **Added** Product Advantages
 - **Added** What is Elasticsearch
 - **Added** Basic concept

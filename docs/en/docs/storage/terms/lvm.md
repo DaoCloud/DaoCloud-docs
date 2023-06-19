@@ -61,6 +61,6 @@ $ vgextend vg-sdb1 /dev/sdb3
 
 ## LV Snapshot
 
-The LVM mechanism provides the function of taking a snapshot of the LV to obtain a state-consistent backup of the file system. LVM adopts Copy-On-Write (COW) technology, which can be backed up without stopping the service or setting the logical volume to read-only. Using the LVM snapshot function can obtain consistent backup without affecting the availability of the server.
+The LVM mechanism provides the feature of taking a snapshot of the LV to obtain a state-consistent backup of the file system. LVM adopts Copy-On-Write (COW) technology, which can be backed up without stopping the service or setting the logical volume to read-only. Using the LVM snapshot feature can obtain consistent backup without affecting the availability of the server.
 
 The copy-on-write adopted by LVM means that when an LVM snapshot is created, only the metadata of the data in the original volume is copied. In other words, when creating an LVM logical volume, no physical copying of data occurs. In other words, only metadata is copied, not physical data, so snapshots are created almost in real time. When a write operation is performed on the original volume, the snapshot will track the changes of the blocks in the original volume. At this time, the data to be changed on the original volume will be copied to the space reserved by the snapshot before the change.

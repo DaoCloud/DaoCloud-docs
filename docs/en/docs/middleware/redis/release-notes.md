@@ -32,7 +32,7 @@ Release date: 2023-03-29
 
 ### Documentation
 
-- **Added** Added backup function documentation.
+- **Added** Added backup feature documentation.
 
 ## v0.5.0
 
@@ -56,7 +56,7 @@ Release date: 2023-02-23
 
 ### Documentation
 
-- **Added** log view operation instructions, support custom query, export and other functions.
+- **Added** log view operation instructions, support custom query, export and other features.
 
 ## v0.4.0
 

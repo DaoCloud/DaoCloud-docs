@@ -12,7 +12,7 @@ In the case that the mesh is not enabled, the test statistics show that the rela
 between the system Job index and Pod is: **Series number = 800\*Pod number**
 
 When the service mesh is enabled, the magnitude of the Istio-related metrics generated
-by the Pod after the function is enabled is: **Series number = 768\*Pod number**
+by the Pod after the feature is enabled is: **Series number = 768\*Pod number**
 
 ### When the service mesh is not enabled
 
@@ -30,7 +30,7 @@ The following resource planning is recommended by Prometheus when the service me
 | 2000 | 160w | Request: 3.5<br>Limit: 7 | Request: 20GB<br>Limit: 40GB |
 | 3000 | 240w | Request: 4<br>Limit: 8 | Request: 33GB<br>Limit: 66GB |
 
-### When the service mesh function is enabled
+### When the service mesh feature is enabled
 
 The following resource planning is recommended by Prometheus in the scenario of **starting the service mesh**:
 

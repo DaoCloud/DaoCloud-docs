@@ -17,7 +17,7 @@ Currently, two creation methods are provided: form creation and YAML creation. T
 
     <!--screenshot-->
 
-3. The new function is an early adopter. It supports one-click conversion of sub-cluster services to multicloud ingress. Click `Experience Now` on the list page, select the ingress under the specified working cluster and namespace, and click OK to convert successfully.
+3. The new feature is an early adopter. It supports one-click conversion of sub-cluster services to multicloud ingress. Click `Experience Now` on the list page, select the ingress under the specified working cluster and namespace, and click OK to convert successfully.
 
     <!--screenshot-->
 

@@ -92,7 +92,7 @@ No data is shared either. This is a shared-nothing architecture, which increases
 
 VictoriaMetrics provides the following components at the open source level:
 
-1. vmui: Responsible for vm page display, providing data query, index and cardinality query, query analysis, link analysis, job analysis panel and other functions;
+1. vmui: Responsible for vm page display, providing data query, index and cardinality query, query analysis, link analysis, job analysis panel and other features;
 
 2. vmagent: responsible for data collection, relabeling and filtering collection, and storing data to VictoriaMetrics through the Prometheus protocol
     Or other storage systems that support the Prometheus protocol. Supports simultaneous replication of multiple remote storage systems after aggregating samples by time and label,
@@ -247,7 +247,7 @@ Support for viewing cache metrics on the Grafana dashboard, which shows the curr
 
 ### Other
 
-Support many functions that Prometheus has, such as Prometheus's label rewriting, federation and other functions.
+Support many features that Prometheus has, such as Prometheus's label rewriting, federation and other features.
 
 ## Comparison with Prometheus
 

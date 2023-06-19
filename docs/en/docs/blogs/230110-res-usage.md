@@ -61,7 +61,7 @@ The workload of the application, the size of the cluster, and other factors need
 To determine resource requests and limits for Pods, use Kubernetes resource monitoring tools such as the kubectl top command or Prometheus and Grafana.
 These tools can help enterprises understand the resource usage of pods and nodes, and adjust resource requests and limits according to actual needs.
 
-In addition, you can also use the auto-scaling function to dynamically adjust the number of replicas according to the resource usage of Pods, which can ensure that the resources in the cluster are effectively used.
+In addition, you can also use the auto-scaling feature to dynamically adjust the number of replicas according to the resource usage of Pods, which can ensure that the resources in the cluster are effectively used.
 
 ### 2. Automatic expansion and contraction
 
@@ -71,7 +71,7 @@ Kubernetes provides three automatic expansion and contraction methods by default
 - Vertical Pod Autoscaler (VPA): vertical automatic scaling
 - Cluster Autoscaler (CA): automatic expansion and contraction of cluster nodes
 
-####HPA
+#### HPA
 
 HPA is an auto-scaling feature that dynamically adjusts the number of Pod replicas based on actual load.
 HPA regularly monitors the resource usage of Pods in Deployment, ReplicationController, ReplicaSet or StatefulSet,
@@ -95,9 +95,9 @@ Using VPA has the following advantages:
 
 It should be noted that: VPA is not yet ready for production, and you need to understand the impact of resource adjustment on applications before using it.
 
-####CA
+#### CA
 
-CA is also an automatic scaling function in Kubernetes, which can dynamically adjust the number of nodes according to the resource usage of the cluster.
+CA is also an automatic scaling feature in Kubernetes, which can dynamically adjust the number of nodes according to the resource usage of the cluster.
 CA monitors the resource usage of the cluster and automatically adjusts the number of nodes according to the set threshold.
 For example, if the CPU usage of the cluster exceeds a threshold, the CA will increase the number of nodes;
 If the CPU usage of the cluster falls below a threshold, the CA reduces the number of nodes.

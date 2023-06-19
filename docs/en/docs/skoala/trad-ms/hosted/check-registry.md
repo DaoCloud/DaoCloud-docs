@@ -7,7 +7,7 @@ hide:
 
 On the Managed Registry list page, locate the registry instance for which you want to view details and click the instance name to go to the Basic information page.
 
-In basic information page to view the registry `Basic Info`, `Governance Info` (need to open service governance functions), `Node List`, `Data Persistence` information, etc. Health Status is the part of the registry instance information that reflects the status of the registry instance.
+In basic information page to view the registry `Basic Info`, `Governance Info` (need to open service governance features), `Node List`, `Data Persistence` information, etc. Health Status is the part of the registry instance information that reflects the status of the registry instance.
 
 ** Related operation **：
 

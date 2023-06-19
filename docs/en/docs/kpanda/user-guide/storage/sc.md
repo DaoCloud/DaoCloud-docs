@@ -37,7 +37,7 @@ Currently, it supports creating storage pools through YAML and forms. These two 
 
         - For how to fill in the CSI drivers provided by different vendors, please refer to the official Kubernetes document [Storage Class](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner).
     - Recycling policy: When deleting a data volume, keep the data in the data volume or delete the data in it.
-    - Snapshot/Expansion: After it is enabled, the data volume/data volume declaration based on the storage pool can support the expansion and snapshot functions, but **the premise is that the underlying storage driver supports the snapshot and expansion functions**.
+    - Snapshot/Expansion: After it is enabled, the data volume/data volume declaration based on the storage pool can support the expansion and snapshot features, but **the premise is that the underlying storage driver supports the snapshot and expansion features**.
 
     **Hwameistor storage system**
 
@@ -48,7 +48,7 @@ Currently, it supports creating storage pools through YAML and forms. These two 
       - `Raw disk data volume`: suitable for high availability cases, without high availability capability, the corresponding CSI driver is: `hdd.hwameistor.io`
     - High Availability Mode: Before using the high availability capability, please make sure `DRDB component` has been installed. After the high availability mode is turned on, the number of data volume copies can be set to 1 and 2. Convert data volume copy from 1 to 1 if needed
     - Recycling policy: When deleting a data volume, keep the data in the data volume or delete the data in it.
-    - Snapshot/Expansion: After it is enabled, the data volume/data volume declaration based on the storage pool can support the expansion and snapshot functions, but **the premise is that the underlying storage driver supports the snapshot and expansion functions**.
+    - Snapshot/Expansion: After it is enabled, the data volume/data volume declaration based on the storage pool can support the expansion and snapshot features, but **the premise is that the underlying storage driver supports the snapshot and expansion features**.
 
     
 

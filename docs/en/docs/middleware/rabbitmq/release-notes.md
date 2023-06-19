@@ -10,7 +10,7 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 
 - **Added** `mcamel-rabbitmq` details page displays related events
 - **Added** `mcamel-rabbitmq` supports custom roles
-- **Added** `mcamel-rabbitmq` supports access link tracking
+- **Added** `mcamel-rabbitmq` supports access traces
 
 #### Optimization
 
@@ -30,8 +30,8 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 
 #### New features
 
-- **Added** `mcamel-rabbitmq` supports middleware link tracking adaptation.
-- **Added** Enable link tracking according to parameter configuration when installing `mcamel-rabbitmq`.
+- **Added** `mcamel-rabbitmq` supports middleware traces adaptation.
+- **Added** Enable traces according to parameter configuration when installing `mcamel-rabbitmq`.
 
 ## 2023-02-23
 
@@ -44,7 +44,7 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **Added** `mcamel-rabbitmq` supports cloud shell.
 - **Added** `mcamel-rabbitmq` supports separate registration of navigation bar.
 
-- **Added** log view operation instructions, support custom query, export and other functions.
+- **Added** log view operation instructions, support custom query, export and other features.
 
 #### upgrade
 
@@ -99,11 +99,11 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **Added** Added to increase coverage
 - **Added** front-end UI registration function
 - **Added** Performance enhancements
-- **Added** Added pagination function to the list page
-- **Added** Added the function of modifying the configuration
+- **Added** Added pagination feature to the list page
+- **Added** Added the feature of modifying the configuration
 - **Added** Added the ability to return modifiable configuration items
 - **Added** Change the limitation of creating instances to the cluster level instead of the namespace level
-- **Added** Added splicing function of monitoring address
+- **Added** Added splicing feature of monitoring address
 - **Added** Added the ability to modify the version number
 - **Added** Modify the underlying update logic to patch logic
 - **Added** RabbitMQ e2e test coverage is about 17.24%
@@ -114,7 +114,7 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **Added** uniformly adjust the timestamp api field to int64
 - **Added** Increased single-test coverage to 53%
 - **Optimized** Update the release note script and run the release-process specification
-- **Added** New function description
+- **Added** New feature description
 - **Added** Create RabbitMQ
 - **Added** RabbitMQ data migration
 - **Added** instance monitoring

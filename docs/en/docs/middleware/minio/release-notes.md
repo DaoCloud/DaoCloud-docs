@@ -47,7 +47,7 @@ Release date: 2023-02-23
 
 ### Documentation
 
-- **Added** log view operation instructions, support custom query, export and other functions.
+- **Added** log view operation instructions, support custom query, export and other features.
 
 ## v0.2.0
 
@@ -80,7 +80,7 @@ Release date: 2022-11-28
 - **Optimized** Middleware password verification difficulty adjustment
 - **Added** minio supports built-in BUCKET creation when creating
 - **Added** Docking alert capability
-- **Added** Added the function of judging whether sc supports capacity expansion and prompting in advance
+- **Added** Added the feature of judging whether sc supports capacity expansion and prompting in advance
 - **Optimized** Optimize the prompt logic of installation environment check & adjust its style
 - **Optimized** middleware style walkthrough optimization
 
@@ -100,4 +100,4 @@ Release date: 2022-11-08
 - **Added** mcamel-minio-ui create/list/modify/delete/view
 - **Added** APIServer/UI supports mtls
 - **Fixed** In singleton mode, there is only one pod, fix the problem that grafana cannot obtain data
-- **Optimized** Improve the function of the calculator
+- **Optimized** Improve the feature of the calculator

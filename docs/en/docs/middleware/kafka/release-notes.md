@@ -21,8 +21,8 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 #### New features
 
-- **Added** `mcamel-kafka` supports middleware link tracking adaptation.
-- **Added** Install `mcamel-kafka` to enable link tracking according to parameter configuration.
+- **Added** `mcamel-kafka` supports middleware traces adaptation.
+- **Added** Install `mcamel-kafka` to enable traces according to parameter configuration.
 
 #### Optimization
 
@@ -51,7 +51,7 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 - **Fixed** the problem that `mcamel-kafka` instance name is too long and the custom resource cannot be created.
 - **Fixed** `mcamel-kafka` workspace Editor user cannot view instance password.
-- **Added** log view operation instructions, support custom query, export and other functions.
+- **Added** log view operation instructions, support custom query, export and other features.
 
 ## 2022-12-25
 
@@ -77,7 +77,7 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 - **Optimized** instance details - access settings, remove cluster IPv4
 - **Optimized** Middleware password verification difficulty adjustment
 - **Added** Docking alert capability
-- **Added** Added the function of judging whether sc supports capacity expansion and prompting in advance
+- **Added** Added the feature of judging whether sc supports capacity expansion and prompting in advance
 - **Optimized** Optimize the prompt logic of installation environment check & adjust its style
 - **Optimized** middleware style walkthrough optimization
 - **Fixed** The offline image has numbers and capital letters that cannot be scanned

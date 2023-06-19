@@ -1,7 +1,7 @@
 # resource limit
 
 Sharing resources does not mean that the sharers can use the shared resources without restriction.
-Admin, Kpanda Owner and Workspace Admin can limit the maximum usage of a user through the `Resource Quota` function in shared resources.
+Admin, Kpanda Owner and Workspace Admin can limit the maximum usage of a user through the `Resource Quota` feature in shared resources.
 Unrestricted means unlimited use.
 
 - CPU request (Core)

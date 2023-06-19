@@ -1,4 +1,4 @@
-# JWT function of the microservice gateway
+# JWT feature of the microservice gateway
 
 The microservice engine gateway supports JWT validation. Here"s how to use this feature.
 

@@ -5,15 +5,15 @@ The workspace can realize the binding relationship between users and roles throu
 
 Through the workspace, you can easily manage teams and resources, and solve cross-module and cross-cluster resource authorization issues.
 
-## Functions of the workspace
+## Workspace features
 
-A workspace consists of three functions: authorization, resource groups, and shared resources. It mainly solves the problems of unified authorization of resources, resource grouping and resource quota.
+A workspace consists of three features: authorization, resource groups, and shared resources. It mainly solves the problems of unified authorization of resources, resource grouping and resource quota.
 
 
 
 1. Authorization: Grant users/groups different roles in the workspace, and apply the roles to the resources in the workspace.
 
-    Best practice: When ordinary users want to use Workbench, microservice engine, service mesh, and middleware module functions, or need to have permission to use container management and some resources in the service mesh, the administrator needs to grant the workspace permissions (Workspace Admin, Workspace Edit, Workspace View).
+    Best practice: When ordinary users want to use Workbench, microservice engine, service mesh, and middleware module features, or need to have permission to use container management and some resources in the service mesh, the administrator needs to grant the workspace permissions (Workspace Admin, Workspace Edit, Workspace View).
     The administrator here can be the Admin role, the Workspace Admin role of the workspace, or the Folder Admin role above the workspace.
     See [Relationship between Folder and Workspace](ws-folder.md).
 
@@ -30,9 +30,9 @@ A workspace consists of three functions: authorization, resource groups, and sha
     | Department Core Members | Workspace Edit | &check; | &cross; | &check; | &cross; |
     | Other Members | Workspace View | &check; | &cross; | &cross; | &cross; |
 
-3. Shared resources: The shared resource function is mainly for cluster resources.
+3. Shared resources: The shared resource feature is mainly for cluster resources.
 
-    A cluster can be shared by multiple workspaces (referring to the shared resource function in the workspace); a workspace can also use the resources of multiple clusters at the same time.
+    A cluster can be shared by multiple workspaces (referring to the shared resource feature in the workspace); a workspace can also use the resources of multiple clusters at the same time.
     However, resource sharing does not mean that the sharer (workspace) can use the shared resource (cluster) without restriction, so the resource quota that the sharer (workspace) can use is usually limited.
 
     At the same time, unlike resource groups, workspace members are only users of shared resources and can use resources in the cluster under resource quotas. For example, go to Workbench to create a namespace, deploy applications, etc., but do not have the management authority of the cluster. After the restriction, the total resource quota of the namespace created/bound under this workspace cannot exceed the resources set by the cluster in this workspace Use cap.
@@ -52,7 +52,7 @@ A workspace consists of three functions: authorization, resource groups, and sha
 
 1. Module name: [Workbench](../../../amamba/intro/what.md), [Microservice Engine](../../../skoala/intro/what.md), [Service Mesh](../../../mspider/intro/what.md)[mdeware](../../../middleware/what.md)
 
-    The premise of entering the above modules is to have the permission of a certain workspace, so you must have the Admin role or have certain role permissions of a certain workspace before using the module functions.
+    The premise of entering the above modules is to have the permission of a certain workspace, so you must have the Admin role or have certain role permissions of a certain workspace before using the module features.
 
     - The roles of the workspace are automatically applied to the resources contained in the workspace. For example, if you have the Workspace Admin role of workspace A, then you are the Admin role for all resources in this workspace;
     - If you are a Workspace Edit, you are the Edit role for all resources in the workspace;
