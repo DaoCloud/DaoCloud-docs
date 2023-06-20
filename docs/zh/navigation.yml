@@ -57,7 +57,7 @@ nav:
               - 如何选择运行时: kpanda/user-guide/clusters/runtime.md
           - 命名空间:
               - 创建命名空间: kpanda/user-guide/namespaces/createns.md
-              - 命名空间独享节点: kpanda/user-guide/namespaces/exclusive.md
+              - 启用命名空间独享节点: kpanda/user-guide/namespaces/exclusive.md
               - 容器组安全策略: kpanda/user-guide/namespaces/podsecurity.md
           - 节点管理:
               - 节点可用性检查: kpanda/user-guide/nodes/node-check.md
