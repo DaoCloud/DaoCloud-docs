@@ -4,7 +4,7 @@ DCE 5.0 container registry provides a feature of isolating images based on regis
 Registry spaces are divided into two types: public and private.
 
 - Public registry: accessible by all users, usually storing public images. There is a default public registry space.
-- Private registry: only authorized users can access, usually storing images of the image space itself.
+- Private registry: only authorized users can access, usually storing images of the registry space itself.
 
 You can choose different instances to view all registry spaces underneath.
 

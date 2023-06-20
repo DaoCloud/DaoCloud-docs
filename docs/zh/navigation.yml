@@ -57,7 +57,7 @@ nav:
               - 如何选择运行时: kpanda/user-guide/clusters/runtime.md
           - 命名空间:
               - 创建命名空间: kpanda/user-guide/namespaces/createns.md
-              - 命名空间独享节点: kpanda/user-guide/namespaces/exclusive.md
+              - 启用命名空间独享节点: kpanda/user-guide/namespaces/exclusive.md
               - 容器组安全策略: kpanda/user-guide/namespaces/podsecurity.md
           - 节点管理:
               - 节点可用性检查: kpanda/user-guide/nodes/node-check.md
@@ -754,6 +754,7 @@ nav:
           - 镜像空间:
               - 镜像空间: kangaroo/space/index.md
               - 镜像列表: kangaroo/space/imagelist.md
+              - Artifacts和描述信息: kangaroo/space/desc.md
               - 镜像回收: kangaroo/space/reclaim.md
           - 仓库集成:
               - 仓库集成(工作空间): kangaroo/integrate/related-registry.md

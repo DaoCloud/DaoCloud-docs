@@ -21,7 +21,7 @@ When the user scans the image index, all indexed images will be scanned synchron
 
 ## Manually Scan Images
 
-For associated and integrated repositories, images appear on the list. You can manually scan images on demand.
+For integrated repositories, images appear on the list. You can manually scan images on demand.
 
 1. Go to the container registry, enter the image list, select an instance and registry space, and click an image.
 

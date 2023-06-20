@@ -2,21 +2,21 @@
 
 If you have one or more Harbor or Docker container registries, you can use the DCE 5.0 container registries for unified management. Depending on the role permissions of the operator, two methods can be used:
 
-- Associated Registry
+- Integrated Registry
 - Integrated Registry
 
-## Associated Registry
+## Integrated Registry
 
-If you are a Workspace Admin, you can associate the existing container registry with the DCE platform through the associated registry feature for use by members of the workspace. The simple operation steps are as follows:
+If you are a Workspace Admin, you can integrate the existing container registry with the DCE platform through the integrated registry feature for use by members of the workspace. The simple operation steps are as follows:
 
-1. Log in with the Workspace Admin role, click "Associated Registry" from the left navigation bar, and click the "Associated Registry" button in the upper right corner.
+1. Log in with the Workspace Admin role, click "Integrated Registry" from the left navigation bar, and click the "Integrated Registry" button in the upper right corner.
 
 2. Fill in the form information, and click "OK".
 
     !!! note
 
         - If the Docker Registry container registry has not set a password, you can leave it blank, but the Harbor registry must fill in the username/password.
-        - For a hands-on demo, see [Associated Registry Video Demo](../../videos/kangaroo.md).
+        - For a hands-on demo, see [Integrated Registry Video Demo](../../videos/kangaroo.md).
 
 ## Integrated Registry
 
