@@ -27,11 +27,11 @@
 
 1. 为 Global 集群的 kube-apiserver 启用了 `PodNodeSelector` 和 `PodTolerationRestriction` 准入控制器
 
-!!! note
+    !!! note
 
-    如果集群已启用了上述的两个准入控制器，请跳过此步，直接前往配置系统组件容忍。
+        如果集群已启用了上述的两个准入控制器，请跳过此步，直接前往配置系统组件容忍。
 
-前往当前集群下任意一个 Master 节点上修改 `kube-apiserver.yaml` 配置文件，也可以在 Master 节点上执行执行如下命令进行配置：
+    前往当前集群下任意一个 Master 节点上修改 `kube-apiserver.yaml` 配置文件，也可以在 Master 节点上执行执行如下命令进行配置：
 
     ```bash
     [root@g-master1 ~]# vi /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -56,7 +56,7 @@
         ......
     ```
 
-找到 `--enable-admission-plugins` 参数，加入（以英文逗号分隔的）`PodNodeSelector` 和 `PodTolerationRestriction` 准入控制器。参考如下：
+    找到 `--enable-admission-plugins` 参数，加入（以英文逗号分隔的）`PodNodeSelector` 和 `PodTolerationRestriction` 准入控制器。参考如下：
 
     ```bash
     # 加入`,PodNodeSelector,PodTolerationRestriction`
@@ -65,59 +65,60 @@
 
 2. 为平台组件所在的命名空间添加容忍注解
 
-完成准入控制器的开启后，您需要为平台组件所在的命名空间添加容忍注解，以保证平台组件的高可用。
+    完成准入控制器的开启后，您需要为平台组件所在的命名空间添加容忍注解，以保证平台组件的高可用。
 
-目前 DCE 5.0 的系统组件命名空间如下表：
+    目前 DCE 5.0 的系统组件命名空间如下表：
 
-| 命名空间            | 所包含的系统组件                                             |
-| ------------------- | ------------------------------------------------------------ |
-| kpanda-system       | kpanda                                                       |
-| hwameiStor-system   | hwameiStor                                                   |
-| istio-system        | istio                                                        |
-| metallb-system      | metallb                                                      |
-| cert-manager-system | cert-manager                                                 |
-| contour-system      | contour                                                      |
-| kubean-system       | kubean                                                       |
-| ghippo-system       | ghippo                                                       |
-| kcoral-system       | kcoral                                                       |
-| kcollie-system      | kcollie                                                      |
-| insight-system      | insight、insight-agent:                                      |
-| ipavo-system        | ipavo                                                        |
-| kairship-system     | kairship                                                     |
-| karmada-system      | karmada                                                      |
-| amamba-system       | amamba、jenkins                                              |
-| skoala-system       | skoala                                                       |
-| mspider-system      | mspider                                                      |
-| mcamel-system       | mcamel-rabbitmq、mcamel-elasticsearch、mcamel-mysql、mcamel-redis、mcamel-kafka、mcamel-minio、mcamel-postgresql |
-| spidernet-system    | spidernet                                                    |
-| kangaroo-system     | kangaroo                                                     |
-| gmagpie-system      | gmagpie                                                      |
-| dowl-system         | dowl                                                         |
+    | 命名空间            | 所包含的系统组件                                             |
+    | ------------------- | ------------------------------------------------------------ |
+    | kpanda-system       | kpanda                                                       |
+    | hwameiStor-system   | hwameiStor                                                   |
+    | istio-system        | istio                                                        |
+    | metallb-system      | metallb                                                      |
+    | cert-manager-system | cert-manager                                                 |
+    | contour-system      | contour                                                      |
+    | kubean-system       | kubean                                                       |
+    | ghippo-system       | ghippo                                                       |
+    | kcoral-system       | kcoral                                                       |
+    | kcollie-system      | kcollie                                                      |
+    | insight-system      | insight、insight-agent:                                      |
+    | ipavo-system        | ipavo                                                        |
+    | kairship-system     | kairship                                                     |
+    | karmada-system      | karmada                                                      |
+    | amamba-system       | amamba、jenkins                                              |
+    | skoala-system       | skoala                                                       |
+    | mspider-system      | mspider                                                      |
+    | mcamel-system       | mcamel-rabbitmq、mcamel-elasticsearch、mcamel-mysql、mcamel-redis、mcamel-kafka、mcamel-minio、mcamel-postgresql |
+    | spidernet-system    | spidernet                                                    |
+    | kangaroo-system     | kangaroo                                                     |
+    | gmagpie-system      | gmagpie                                                      |
+    | dowl-system         | dowl                                                         |
 
-检查当前集群中所有命名空间是否存在上述的命名空间，执行如下命令，分别为每个命名空间添加注解：`scheduler.alpha.kubernetes.io/defaultTolerations: '[{"operator": "Exists", "effect": "NoSchedule", "key": "ExclusiveNamespace"}]'`。
+    检查当前集群中所有命名空间是否存在上述的命名空间，执行如下命令，分别为每个命名空间添加注解：`scheduler.alpha.kubernetes.io/defaultTolerations:     '[{"operator": "Exists", "effect": "NoSchedule", "key": "ExclusiveNamespace"}]'`。
 
-```bash
-kubectl annotate ns <namespace-name> scheduler.alpha.kubernetes.io/defaultTolerations: '[{"operator": "Exists", "effect": "NoSchedule", "key": "ExclusiveNamespace"}]'
-```
-请确保将 `<namespace-name>` 替换为要添加注解的平台命名空间名称。
+    ```bash
+    kubectl annotate ns <namespace-name> scheduler.alpha.kubernetes.io/defaultTolerations: '[{"operator": "Exists", "effect": 
+    "NoSchedule", "key": "ExclusiveNamespace"}]'
+    ```
+    请确保将 `<namespace-name>` 替换为要添加注解的平台命名空间名称。
 
 3. 使用界面为命名空间设置独享节点
 
-当您确认集群 API 服务器上的 `PodNodeSelector` 和 `PodTolerationRestriction` 两个特性准入控制器已经开启后，请参考如下步骤使用 DCE 5.0 的 UI 管理界面为命名空间设置独享节点了。
+    当您确认集群 API 服务器上的 `PodNodeSelector` 和 `PodTolerationRestriction` 两个特性准入控制器已经开启后，请参考如下步骤使用 DCE 5.0 的 UI 管理界面为命名空间设置独享节点了。
 
-    3.1. 在集群列表页面点击集群名称，然后在左侧导航栏点击`命名空间`。
+    1. 在集群列表页面点击集群名称，然后在左侧导航栏点击`命名空间`。
 
         ![命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive01.png)
 
-    3.2. 点击命名空间名称，然后点击`独享节点` 页签，在下方右侧点击`添加节点`。
+    2. 点击命名空间名称，然后点击`独享节点` 页签，在下方右侧点击`添加节点`。
 
         ![命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive02.png)
 
-    3.3. 在页面左侧选择让该命名空间独享哪些节点，在右侧可以清空或删除某个已选节点，最后在底部点击`确定`。
+    3. 在页面左侧选择让该命名空间独享哪些节点，在右侧可以清空或删除某个已选节点，最后在底部点击`确定`。
 
         ![命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive03.png)
 
-    3.4. 可以在列表中查看此命名空间的已有的独享节点，在节点右侧可以选择`取消独享`。
+    4. 可以在列表中查看此命名空间的已有的独享节点，在节点右侧可以选择`取消独享`。
 
         > 取消独享之后，其他命名空间下的 Pod 也可以被调度到该节点上。
 
@@ -129,11 +130,11 @@ kubectl annotate ns <namespace-name> scheduler.alpha.kubernetes.io/defaultTolera
 
 1. 为当前集群的 kube-apiserver 启用了 `PodNodeSelector` 和 `PodTolerationRestriction` 准入控制器
 
-!!! note
+    !!! note
 
-    如果集群已启用了上述的两个准入控制器，请跳过此步，直接前往界面为命名空间设置独享节点
+        如果集群已启用了上述的两个准入控制器，请跳过此步，直接前往界面为命名空间设置独享节点
 
-前往当前集群下任意一个 Master 节点上修改 `kube-apiserver.yaml` 配置文件，也可以在 Master 节点上执行执行如下命令进行配置：
+    前往当前集群下任意一个 Master 节点上修改 `kube-apiserver.yaml` 配置文件，也可以在 Master 节点上执行执行如下命令进行配置：
 
     ```bash
     [root@g-master1 ~]# vi /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -158,7 +159,7 @@ kubectl annotate ns <namespace-name> scheduler.alpha.kubernetes.io/defaultTolera
         ......
     ```
 
-找到 `--enable-admission-plugins` 参数，加入（以英文逗号分隔的）`PodNodeSelector` 和 `PodTolerationRestriction` 准入控制器。参考如下：
+    找到 `--enable-admission-plugins` 参数，加入（以英文逗号分隔的）`PodNodeSelector` 和 `PodTolerationRestriction` 准入控制器。参考如下：
 
     ```bash
     # 加入`,PodNodeSelector,PodTolerationRestriction`
@@ -167,21 +168,21 @@ kubectl annotate ns <namespace-name> scheduler.alpha.kubernetes.io/defaultTolera
 
 2. 使用界面为命名空间设置独享节点
 
-当您确认集群 API 服务器上的 `PodNodeSelector` 和 `PodTolerationRestriction` 两个特性准入控制器已经开启后，请参考如下步骤使用 DCE 5.0 的 UI 管理界面为命名空间设置独享节点了。
+    当您确认集群 API 服务器上的 `PodNodeSelector` 和 `PodTolerationRestriction` 两个特性准入控制器已经开启后，请参考如下步骤使用 DCE 5.0 的 UI 管理界面为命名空间设置独享节点了。
 
-    3.1. 在集群列表页面点击集群名称，然后在左侧导航栏点击`命名空间`。
+    1. 在集群列表页面点击集群名称，然后在左侧导航栏点击`命名空间`。
 
         ![命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive01.png)
 
-    3.2. 点击命名空间名称，然后点击`独享节点` 页签，在下方右侧点击`添加节点`。
+    2. 点击命名空间名称，然后点击`独享节点` 页签，在下方右侧点击`添加节点`。
 
         ![命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive02.png)
 
-    3.3. 在页面左侧选择让该命名空间独享哪些节点，在右侧可以清空或删除某个已选节点，最后在底部点击`确定`。
+    3. 在页面左侧选择让该命名空间独享哪些节点，在右侧可以清空或删除某个已选节点，最后在底部点击`确定`。
 
         ![命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive03.png)
 
-    3.4. 可以在列表中查看此命名空间的已有的独享节点，在节点右侧可以选择`取消独享`。
+    4. 可以在列表中查看此命名空间的已有的独享节点，在节点右侧可以选择`取消独享`。
 
         > 取消独享之后，其他命名空间下的 Pod 也可以被调度到该节点上。
 
@@ -189,9 +190,12 @@ kubectl annotate ns <namespace-name> scheduler.alpha.kubernetes.io/defaultTolera
 
 3. 为需要高可用的组件所在的命名空间添加容忍注解（可选）
 
-执行如下命令，需要高可用的组件所在的命名空间添加注解：`scheduler.alpha.kubernetes.io/defaultTolerations: '[{"operator": "Exists", "effect": "NoSchedule", "key": "ExclusiveNamespace"}]'`。
+    执行如下命令，需要高可用的组件所在的命名空间添加注解：`scheduler.alpha.kubernetes.io/defaultTolerations: '[{"operator": "Exists", "effect": 
+    "NoSchedule", "key": "ExclusiveNamespace"}]'`。
 
-```bash
-kubectl annotate ns <namespace-name> scheduler.alpha.kubernetes.io/defaultTolerations: '[{"operator": "Exists", "effect": "NoSchedule", "key": "ExclusiveNamespace"}]'
-```
-请确保将 `<namespace-name>` 替换为要添加注解的平台命名空间名称。
+    ```bash
+    kubectl annotate ns <namespace-name> scheduler.alpha.kubernetes.io/defaultTolerations: '[{"operator": "Exists", "effect": 
+    "NoSchedule", "key": "ExclusiveNamespace"}]'
+    ```
+   
+    请确保将 `<namespace-name>` 替换为要添加注解的平台命名空间名称。
