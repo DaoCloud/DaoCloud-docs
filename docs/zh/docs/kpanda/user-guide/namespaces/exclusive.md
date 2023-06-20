@@ -6,7 +6,9 @@
 
     在节点被设置为独享节点前已经运行在此节点上的应用和服务将不会受影响，依然会正常运行在该节点上，仅当这些 Pod 被删除或重建时，才会调度到其它非独享节点上。
 
-## 检查当前集群的 kube-apiserver 是否启用了 `PodNodeSelector` 和 `PodTolerationRestriction` 准入控制器
+## 准备工作
+
+检查当前集群的 kube-apiserver 是否启用了 `PodNodeSelector` 和 `PodTolerationRestriction` 准入控制器。
 
 使用命名空间独享节点功能需要用户启用 kube-apiserver 上的 `PodNodeSelector` 和 `PodTolerationRestriction` 两个特性准入控制器（Admission Controllers），关于准入控制器更多说明请参阅 [kubernetes Admission Controllers Reference](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/)。
 
