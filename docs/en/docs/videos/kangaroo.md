@@ -4,7 +4,7 @@
 
 ## Integrate registry (workspace)
 
-See [Related Registry](../kangaroo/integrate/related-registry.md) for reference.
+See [Related Registry](../kangaroo/integrate/integrate-ws.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/join-registry.mp4" preload="metadata" poster="../images/kangaroo-repo.png"></video>
@@ -12,7 +12,7 @@ See [Related Registry](../kangaroo/integrate/related-registry.md) for reference.
 
 ## Integrate registry (Admin)
 
-See [registry integration](../kangaroo/integrate/integrate.md) for reference.
+See [registry integration](../kangaroo/integrate/integrate-admin.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-harbor.mp4" preload="metadata" poster="../images/kangaroo-integrate.png"></video>
@@ -20,7 +20,7 @@ See [registry integration](../kangaroo/integrate/integrate.md) for reference.
 
 ## Managed Harbor
 
-See [Managed Harbor](../kangaroo/hosted/harbor.md) for reference.
+See [Managed Harbor](../kangaroo/managed/harbor.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/harbor.mp4" preload="metadata" poster="../images/kangaroo-harbor.png"></video>

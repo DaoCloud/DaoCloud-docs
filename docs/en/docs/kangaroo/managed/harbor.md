@@ -49,4 +49,4 @@ Prerequisite: You need to [install Harbor Operator](./operator.md) first.
 
      
 
-Next step: [Create registry space](../integrate/create-space.md)
+Next step: [Create registry space](../integrate/registry-space.md)

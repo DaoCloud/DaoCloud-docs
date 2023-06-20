@@ -3,7 +3,7 @@ hide:
    - toc
 ---
 
-# registry space
+# Registry space
 
 Harbor provides the image isolation feature based on the registry space (project). There are two types of registry spaces: public and private:
 
@@ -12,7 +12,7 @@ Harbor provides the image isolation feature based on the registry space (project
 
 Prerequisite: An external Harbor repository has been created or integrated.
 
-1. Log in to the web console as a user with the Admin role, and click `container registry` -> `Repository Integration (Administrator)` from the left navigation bar.
+1. Log in to the web console as a user with the Admin role, and click `Container Registry` -> `Integrated Registry (Admin)` from the left navigation bar.
 
      
 
@@ -20,7 +20,7 @@ Prerequisite: An external Harbor repository has been created or integrated.
 
      
 
-1. Click `registry space` in the left navigation bar, and click `Create registry space` in the upper right corner.
+1. Click `Registry Space` in the left navigation bar, and click `Create registry space` in the upper right corner.
 
      
 

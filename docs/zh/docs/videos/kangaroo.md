@@ -6,7 +6,7 @@
 
 ## 仓库集成（工作空间）
 
-参阅[仓库集成](../kangaroo/integrate/related-registry.md)文档页面。
+参阅[仓库集成](../kangaroo/integrate/integrate-ws.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/join-registry.mp4" preload="metadata" poster="../images/kangaroo-repo.png"></video>
@@ -14,7 +14,7 @@
 
 ## 仓库集成（管理员）
 
-参阅[仓库集成](../kangaroo/integrate/integrate.md)文档页面。
+参阅[仓库集成](../kangaroo/integrate/integrate-admin.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-harbor.mp4" preload="metadata" poster="../images/kangaroo-integrate.png"></video>
@@ -22,7 +22,7 @@
 
 ## 托管 Harbor
 
-参阅[托管 Harbor](../kangaroo/hosted/harbor.md)文档页面。
+参阅[托管 Harbor](../kangaroo/managed/harbor.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/harbor.mp4" preload="metadata" poster="../images/kangaroo-harbor.png"></video>

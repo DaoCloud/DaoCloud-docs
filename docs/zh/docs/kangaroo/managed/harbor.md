@@ -49,4 +49,4 @@ hide:
 
     ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/hosted07.png)
 
-下一步：[创建镜像空间](../integrate/create-space.md)
+下一步：[创建镜像空间](../integrate/registry-space.md)

@@ -1,6 +1,6 @@
-# Registry integration
+# Integrated Registry
 
-Registry integration is the entrance to the container registry of the centralized management platform, which supports the integration of external container registrys, such as Harbor Registry and Docker Registry;
+Integrated Registry is the entrance to the container registry of the centralized management platform, which supports the integration of external container registrys, such as Harbor Registry and Docker Registry;
 It can also automatically integrate the managed Harbor created by the platform. After the repository is integrated, the platform administrator can assign a private registry space to one or more workspaces (namespaces under the workspace) by binding the registry space to the workspace.
 Or set the registry space as public for use by all namespaces of the platform.
 
