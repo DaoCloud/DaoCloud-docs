@@ -757,24 +757,24 @@ nav:
           - 快速入门:
               - 管理外部镜像仓库: kangaroo/quickstart/registry-in-one.md
               - 推送镜像: kangaroo/quickstart/push.md
-              - Admin 快速使用镜像仓库: kangaroo/quickstart/admin-registry.md
-              - Workspace Admin 快速使用镜像仓库: kangaroo/quickstart/ws-admin-registry.md
+              - Admin 上手指南: kangaroo/quickstart/admin-registry.md
+              - Workspace Admin 上手指南: kangaroo/quickstart/ws-admin-registry.md
           - 镜像空间:
               - 镜像空间: kangaroo/space/index.md
               - 镜像列表: kangaroo/space/imagelist.md
               - Artifacts和描述信息: kangaroo/space/desc.md
               - 镜像回收: kangaroo/space/reclaim.md
           - 仓库集成:
-              - 仓库集成(工作空间): kangaroo/integrate/related-registry.md
-              - 仓库集成(管理员): kangaroo/integrate/integrate.md
-              - 创建镜像空间: kangaroo/integrate/create-space.md
+              - 仓库集成(工作空间): kangaroo/integrate/integrate-ws.md
+              - 仓库集成(管理员): kangaroo/integrate/integrate-admin.md
+              - 创建镜像空间: kangaroo/integrate/registry-space.md
               - 绑定/解绑工作空间: kangaroo/integrate/bind-to-ws.md
               - 镜像同步: kangaroo/integrate/sync.md
           - 托管 Harbor:
-              - kangaroo/hosted/intro.md
-              - 安装 Harbor Operator: kangaroo/hosted/operator.md
-              - 创建托管 Harbor 实例: kangaroo/hosted/harbor.md
-              - 创建镜像空间: kangaroo/integrate/create-space.md
+              - kangaroo/managed/intro.md
+              - 安装 Harbor Operator: kangaroo/managed/operator.md
+              - 创建托管 Harbor 实例: kangaroo/managed/harbor.md
+              - 创建镜像空间: kangaroo/integrate/registry-space.md
               - 绑定/解绑工作空间: kangaroo/integrate/bind-to-ws.md
               - 镜像同步: kangaroo/integrate/sync.md
           - 镜像扫描: kangaroo/scan.md
