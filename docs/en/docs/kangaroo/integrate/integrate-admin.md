@@ -1,30 +1,53 @@
-# Integrated Registry
+# Integrated Registry (Admin)
 
-Integrated Registry is the entrance to the container registry of the centralized management platform, which supports the integration of external container registrys, such as Harbor Registry and Docker Registry;
-It can also automatically integrate the managed Harbor created by the platform. After the repository is integrated, the platform administrator can assign a private registry space to one or more workspaces (namespaces under the workspace) by binding the registry space to the workspace.
-Or set the registry space as public for use by all namespaces of the platform.
+The Integrated Registry (Admin) is the entrance for central management of platform image repositories.
+It supports integrating external image repositories such as Harbor Registry and Docker Registry,
+as well as automatically integrating managed Harbors created by the platform. After integrated registry,
+platform administrators can assign a private registry space to one or more workspaces (namespaces under workspaces)
+by binding the registry space to the workspace, or set the registry space as public for all namespaces on the platform to use.
 
-## Main features
+## Main Features
 
-- Supports the integration of mainstream container registrys, such as Harbor Registry and Docker Registry, to help you centrally manage platform-level container registrys.
-- Support quick viewing of data such as registry address, number of registry spaces, and storage usage through the overview page.
-- Support creating and setting registry space status as public or private. If the status of the registry space is public, the images under it can be used by all namespaces of the platform.
-  If the status of the registry space is private, after binding the registry space to one or more workspaces, only the namespaces under the bound workspace can use the private image to ensure the security of the private image.
-- Automatic integration of managed Harbor, after the platform creates a managed Harbor instance, it will be automatically integrated into the list of integrated registrys for unified management.
+- Support integration with mainstream image repositories such as Harbor Registry and Docker Registry, helping you centrally manage platform-level image repositories.
+- Supports quickly viewing registry addresses, number of registry spaces, storage usage data, etc. through the overview page.
+- Supports creating and setting the registry space status as public or private. If the registry space status is public,
+  its images can be used by all namespaces on the platform. If the registry space status is private, only namespaces under
+  workspaces that have been bound to the registry space can use the private images, ensuring their security.
+- Automatically integrate managed Harbors, which will be automatically integrated into the integration registry list
+  after a managed Harbor instance is created, for unified management.
 
-## Functional advantages
+## Advantages
 
-- Unified management portal for unified management of integrated container registrys and managed Harbor instances.
-- High security, private images can only be pulled when deploying applications by binding the registry space to the workspace.
-- Convenient and fast, once the registry space is set to public, all namespaces within the platform can pull the public images under it when deploying applications.
-- Support mainstream container registry types: Harbor Registry, Docker Registry.
+- Unified management entrance for unified management of integrated image repositories and managed Harbor instances.
+- High security: private images can only be pulled when deployed by binding the registry space to the workspace.
+- Convenient and efficient: Once a registry space is set as public, all namespaces within the platform can pull
+  the public images under it when deploying applications.
+- Supports main types of image repositories: Harbor Registry, Docker Registry.
 
-## Steps
+## Operating Steps
 
-1. Log in to the web console as a user with the Admin role, and click `container registry` from the left navigation bar.
+Refer to [Video Tutorial](../../videos/kangaroo.md#_3) to familiarize yourself with the following operating steps:
 
-    
+1. Log in to DCE 5.0 as a user with the Admin role, click `Container Registry` -> `Integrated Registry (Admin)`
+  from the left navigation bar.
 
-1. Click `registry Integration` on the left navigation bar, and click the `registry Integration` button in the upper right corner.
+    ![Integration](../images/integrated01.png)
 
-1. Select the registry type, fill in the integration name, registry address, username and password to integrate the external container registry into the platform.
+1. Click the `Integrated Registry` button in the upper right corner.
+
+    ![Click Button](../images/integrated02.png)
+
+1. Select the registry type, fill in the integration name, registry address, username, and password, and click `OK`.
+
+    ![Fill Parameters](../images/integrated03.png)
+
+    !!! note
+
+        For a Harbor registry, an Admin-level username/password must be provided.
+
+1. Return to the integrated registry list. The integrated repositories will have labels such as
+  `Integrated`, `Healthy`, or `Unhealthy`. Hovering over a tile allows you to perform operations such as `Unbind` and `Edit`.
+
+    ![More Operations](../images/integrated04.png)
+
+Next step: [Create registry space](registry-space.md)

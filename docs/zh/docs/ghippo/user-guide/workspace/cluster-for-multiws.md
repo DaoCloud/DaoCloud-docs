@@ -43,7 +43,7 @@ click modifyns "https://docs.daocloud.io/amamba/user-guide/namespace/namespace/#
 工作空间是为了满足多租户的使用场景，基于集群、集群命名空间、网格、网格命名空间、多云、多云命名空间等多种资源形成相互隔离的资源环境，
 工作空间可以映射为项目、租户、企业、供应商等多种概念。
 
-1. 使用 admin/folder admin 角色的用户登录 Web 控制台，点击左侧导航栏底部的`全局管理`。
+1. 使用 admin/folder admin 角色的用户登录 DCE 5.0，点击左侧导航栏底部的`全局管理`。
 
     ![全局管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws01.png)
 

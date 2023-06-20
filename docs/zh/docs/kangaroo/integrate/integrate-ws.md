@@ -16,13 +16,13 @@
 
 可以参阅[视频教程](../../videos/kangaroo.md#_2)熟悉以下操作步骤：
 
-1. 使用具有 Workspace Admin 角色的用户登录 Web 控制台，从左侧导航栏点击`镜像仓库` -> `仓库集成(工作空间)`。
+1. 使用具有 Workspace Admin 角色的用户登录 DCE 5.0，从左侧导航栏点击`镜像仓库` -> `仓库集成(工作空间)`。
 
     ![镜像仓库](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/related01.png)
 
-1. 点击右上角的`仓库集成(工作空间)`按钮。
+1. 点击右上角的`仓库集成`按钮。
 
-    ![仓库集成(工作空间)](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/relate02.png)
+    ![仓库集成](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/relate02.png)
 
 1. 填写表单信息后点击`确定`。
 

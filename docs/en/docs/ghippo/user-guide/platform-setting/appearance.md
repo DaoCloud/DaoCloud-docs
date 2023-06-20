@@ -9,7 +9,7 @@ In DCE 5.0, you have the option to customize the appearance of the login page, t
 
 ## Customizing Login Page and Top Navigation Bar
 
-1. To get started, log in to the web console as an `admin` user and navigate to `Global Management` -> `Settings` found at the bottom of the left navigation bar.
+1. To get started, log in to DCE 5.0 as a user with the `admin` role and navigate to `Global Management` -> `Settings` found at the bottom of the left navigation bar.
 
     ![settings](../../images/appear01.png)
 

@@ -1,30 +1,35 @@
-# Integrated Registry
+# Integrated Registry (Workspace)
 
-The integrated registry is a convenient registry access feature provided for the workspace.
-The workspace administrator (Workspace Admin) can flexibly access the container registry for the workspace as needed for use by workspace members.
-After accessing, when members deploy applications in the namespace under the workspace, they can pull all public and private images under the workspace with one click through the `Select Image` button to achieve rapid application deployment.
+Integrated Registry (Workspace) is a convenient way to access registries for workspaces.
+Workspace admin can flexibly integrate registry for their workspace members as needed.
+Once integrated, members can use all public and private images under the workspace by
+clicking the `Choose Image` button when deploying applications in namespaces under the
+workspace, achieving quick application deployment.
 
 - Support for associating Harbor and Docker registry instances
-- For Harbor instances, in addition to accessing the administrator account, you can also access the robot account to achieve the same access effect
+- For Harbor instances, in addition to accessing the administrator account,
+  you can also access the robot account to achieve the same access effect
 
 ## Benefits
 
-- Flexible and convenient: Workspace administrators can independently access one or more Harbor/Docker type container registrys for use by workspace members.
-- Global linkage: After accessing, when deploying applications on Workbench, you can press the `Select Image` button to select the image in the registry with one click to achieve rapid application deployment.
+- Flexible and convenient: Workspace administrators can independently access one or more
+  Harbor/Docker type container registrys for use by workspace members.
+- Global linkage: After accessing, when deploying applications on Workbench,
+  you can press the `Choose Image` button to choose the image in the registry with one click to achieve rapid application deployment.
 
 ## Steps
 
-1. Log in to the web console as a user with the Workspace Admin role, and click `Container Registry` -> `Integrated Registry` from the left navigation bar.
+1. Log in to DCE 5.0 as a user with the Workspace Admin role, and click `Container Registry` -> `Integrated Registry (Workspace)` from the left navigation bar.
 
-    
+    ![Integrated Registry (Workspace)](../images/integrated01.png)
 
 1. Click the `Integrate Registry` button in the upper right corner.
 
-    
+    ![click button](../images/integrated02.png)
 
 1. After filling in the form information, click `OK`.
 
-    
+    ![filling](../images/integrated03.png)
 
     !!! note
 

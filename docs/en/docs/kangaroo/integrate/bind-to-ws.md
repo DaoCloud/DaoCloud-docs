@@ -1,40 +1,61 @@
-# Bind a registry space to workspace
+# Bind/Unbind Workspace
 
-There are two types of registry spaces: public and private.
-Images in the public registry space are public images, and images in the private registry space are private images.
+There are two types of registry spaces: public and private. The images in a public registry space are public, while the images in a private registry space are private.
 
-For public images, when deploying applications in the container management module, users can click the `Select Image` button to select `container registry` - `registry Integration` in all the images in the public registry space to deploy applications without any configuration.
+- For public images, users can deploy applications through the `Choose Image` button in the container management module,
+  selecting and deploying images from all public registry spaces in `Container Registry` -> `Integrated Registry `section without any other configuration.
+- For private images, however, the workspace (tenant) needs to be assigned the private registry space
+  by an administrator before members under the workspace can use them, ensuring the security of private images.
 
-For a private image, the administrator must allocate the private registry space to the workspace (tenant) before it can be used by members under the workspace to ensure the security of the private image.
+**Prerequisites:** An external Harbor registry has been created or integrated, and a registry space has been created.
 
-Prerequisite: An external Harbor registry has been created or integrated, and one or more registry spaces have been created.
+## Binding Steps
 
-## Binding steps
+Generally, for private registry spaces, binding to a workspace is helpful to allow members to use the images.
 
-1. Log in to the web console as a user with the Admin role, and click `container registry` from the left navigation bar.
+1. Log in to DCE 5.0 as a user with the Admin role, click `Container Registry` -> `Integrated Registry (Admin)` from the left navigation bar.
 
-    
+    ![Integration](../images/bind01.png)
 
-1. Click `registry Integration` on the left navigation bar, click a registry name to enter the registry, and navigate to the displayed `registry Space` menu.
+1. Click a registry name.
 
-1. Click the `Bind Workspace` button on the right side of a registry space entry, and select the workspace to be bound.
+    ![Click Name](../images/bind02.png)
 
-1. Click `OK` to finish binding the workspace.
+1. Click `Registry space` in the left navigation bar, then click the `⋮` on the far right of a specific registry space, and select `Bind/unbind workspace`.
 
-    
+    ![Bind/Unbind](../images/bind03.png)
 
-## FAQ
+    If no workspace is bound, the `Workspace` column will display `No binding`.
 
-1. When deploying an application in the Kubernetes namespace, the image in the registry space cannot be selected through the "Select Image" button.
+1. In the pop-up window, select one or more workspaces, and then click `OK`.
 
-    - Check whether the Kubernetes namespace is bound to a workspace (binding is required).
-    - Check whether the registry space is bound to the workspace where the Kubernetes namespace is located (binding is required).
-    - To check whether the status of the registry space is private or public, switch to the following tab to find out.
+    ![Binding](../images/bind04.png)
 
-    
+    To unbind a workspace, simply click on the `x` in the selected workspaces list.
 
-2. What is the difference between assigning a registry space to a workspace and associating a registry under a workspace?
+1. The prompt message "Bound/Unbound workspace successfully" will be displayed,
+   and the `Workspace` column will display the bound workspace when you move the cursor over it.
 
-    The platform administrator Admin can manage in a unified manner, and assign a registry space to multiple workspaces in batches without having to integrate them separately.
+    ![Binding](../images/bind05.png)
 
-    Workspace Admin Workspace Admin can integrate external container registrys for members to use according to needs, without relying on platform administrators, which is more flexible to use.
+    Users under this workspace (tenant) can pull images from this registry space.
+
+## FAQs
+
+1. When deploying an application in a Kubernetes namespace and clicking the "Choose Image" button, you are unable to Choose Images from the registry space.
+
+    - Check whether the Kubernetes namespace is bound to a workspace (it needs to be bound).
+    - Check whether the registry space is bound to the workspace where the Kubernetes namespace is located (it needs to be bound).
+    - Check whether the registry space status is private or public, and switch tabs as necessary.
+
+    ![Image registry](../images/bind06.png)
+
+2. What is the difference between assigning a registry space to a workspace for use and integrating a registry under the workspace?
+
+    Platform administrators can centrally manage and assign a registry space to multiple workspaces
+    at once without having to associate each one separately.
+
+    Workspace administrators can integrate external image repositories for their members to use as needed,
+    without relying entirely on platform administrators, making it more flexible to use.
+
+Next step: [Deploy Applications](../../amamba/user-guide/wizard/create-app-git.md)

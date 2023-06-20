@@ -7,7 +7,7 @@ You can grant permissions to use DCE 5.0 resources to these external user identi
 
 The specific operation steps are as follows.
 
-1. Log in to the web console as a user with `admin` role. Click `Global Management` at the bottom of the left navigation bar.
+1. Log in to DCE 5.0 as a user with `admin` role. Click `Global Management` at the bottom of the left navigation bar.
 
     
 

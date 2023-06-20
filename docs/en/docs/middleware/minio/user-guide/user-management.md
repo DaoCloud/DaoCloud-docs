@@ -4,7 +4,7 @@ The MinIO service provided by DCE 5.0 comes with a web console (Web Console). Un
 
 This article briefly introduces MinIO's identity management rules. For more details, please refer to [MinIO's official documentation](http://docs.minio.org.cn/minio/baremetal/index.html).
 
-## users
+## Users
 
 By default, MinIO uses the built-in IDentity Provider (IDP) for identity management. In addition to IDP, it also supports third-party [OIDC] (http://docs.minio.org.cn/minio/baremetal/security/openid-external-identity-management/external-authentication-with-openid-identity-provider.html #minio-external-identity-management-openid) and [LDAP](http://docs.minio.org.cn/minio/baremetal/security/ad-ldap-external-identity-management/external-authentication-with- ad-ldap-identity-provider.html#minio-external-identity-management-ad-ldap ).
 
@@ -21,9 +21,9 @@ The root user has all operation permissions on all resources.
 
 > Note: If you want to change the root user, you need to restart all nodes in the MinIO cluster.
 
-### general user
+### Normal users
 
-There are three ways to create common users:
+There are three ways to create normal users:
 
 - Web Console, created through the form in the UI interface
 - mc, created using the CLI command line
@@ -59,7 +59,7 @@ Granted permission:
 mc admin policy set ALIAS readwrite user=USERNAME
 ```
 
-#### operator CR Create
+#### Create operator CR
 
 If you install MinIO through cr, you can also specify the secret of a common user through the users field:
 
