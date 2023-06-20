@@ -7,7 +7,7 @@ hide:
 
 Prerequisite: You need to [install Harbor Operator](./operator.md) first.
 
-1. Log in to the web console as a user with the Admin role, and click `container registry` -> `Managed Harbor` from the left navigation bar.
+1. Log in to DCE 5.0 as a user with the Admin role, and click `container registry` -> `Managed Harbor` from the left navigation bar.
 
      
 

@@ -12,7 +12,7 @@ Harbor 提供了基于镜像空间（project）的镜像隔离功能。镜像空
 
 前提条件：已经创建或集成了一个外部 Harbor 仓库。
 
-1. 使用具有 Admin 角色的用户登录 Web 控制台，从左侧导航栏点击`镜像仓库` -> `仓库集成(管理员)`。
+1. 使用具有 Admin 角色的用户登录 DCE 5.0，从左侧导航栏点击`镜像仓库` -> `仓库集成(管理员)`。
 
     ![仓库集成](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/integrated01.png)
 

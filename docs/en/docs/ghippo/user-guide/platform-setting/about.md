@@ -9,7 +9,7 @@ The `About` page primarily showcases the latest versions of each module, highlig
 
 A simple step to view is as follows:
 
-1. Log in to the web console as a user with `Admin` role. Click `Global Management` at the bottom of the left navigation bar.
+1. Log in to DCE 5.0 as a user with `Admin` role. Click `Global Management` at the bottom of the left navigation bar.
 
     ![about](../../images/about01.png)
 

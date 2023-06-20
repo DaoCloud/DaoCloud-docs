@@ -17,7 +17,7 @@ The audit log feature has the following characteristics:
 
 ## Download and export audit logs
 
-1. Log in to the web console as a user with `Admin` or `Audit Owner` role.
+1. Log in to DCE 5.0 as a user with `Admin` or `Audit Owner` role.
 
     
 

@@ -9,7 +9,7 @@ Folders have permission mapping capabilities, which can map the permissions of u
 
 Follow the steps below to create a folder.
 
-1. Log in to the web console as a user with the admin/folder admin role, and click `Global Management` at the bottom of the left navigation bar.
+1. Log in to DCE 5.0 as a user with the admin/folder admin role, and click `Global Management` at the bottom of the left navigation bar.
 
     
 

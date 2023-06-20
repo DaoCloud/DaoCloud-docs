@@ -17,9 +17,9 @@
 
 ## 下载和导出审计日志
 
-1. 使用具有 `admin` 或 `Audit Owner` 角色的用户登录 Web 控制台。
+1. 使用具有 `admin` 或 `Audit Owner` 角色的用户登录 DCE 5.0。
 
-    ![登录 web 控制台](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/lang00.png)
+    ![登录 DCE 5.0](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/lang00.png)
 
 2. 点击左侧导航栏底部的`全局管理`。
 

@@ -14,7 +14,7 @@ The platform provides three ways to switch languages: Chinese, English-English, 
 
 The operation steps are as follows.
 
-1. Log in to the web console with your username/password. Click `Global Management` at the bottom of the left navigation bar.
+1. Log in to the DCE 5.0 with your username/password. Click `Global Management` at the bottom of the left navigation bar.
 
     
 

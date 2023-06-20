@@ -23,7 +23,7 @@
 
 可以参阅[视频教程](../../videos/kangaroo.md#_3)熟悉以下操作步骤：
 
-1. 使用具有 Admin 角色的用户登录 Web 控制台，从左侧导航栏点击`镜像仓库` -> `仓库集成(工作空间)`。
+1. 使用具有 Admin 角色的用户登录 DCE 5.0，从左侧导航栏点击`镜像仓库` -> `仓库集成(工作空间)`。
 
     ![仓库集成](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/integrated01.png)
 

@@ -59,7 +59,7 @@
 
 说明：目前仅支持集成通过 DCE 5.0 平台安装的 Jenkins。
 
-1. 使用具有应用工作台管理员角色的用户登录 Web 控制台并进入应用工作台
+1. 使用具有应用工作台管理员角色的用户登录 DCE 5.0 并进入应用工作台
 
     ![完成创建](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/install-jenkins16.png)
 
@@ -67,7 +67,8 @@
 
     ![完成创建](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/install-jenkins17.png)
 
-3. 选择工具链类型 `Jenkins`，填写集成名称，Jenkins 地址，用户名和密码。如果 Jenkins 地址为 https 协议时，需要提供证书。通过helm 部署出来的 jenkins 默认账户密码为 `admin/Admin01` 。
+3. 选择工具链类型 `Jenkins`，填写集成名称、Jenkins 地址、用户名和密码。
+   如果 Jenkins 地址为 https 协议时，需要提供证书。通过 Helm 部署出来的 Jenkins 默认账户密码为 `admin/Admin01`。
 
     ![完成创建](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/install-jenkins18.png)
 

@@ -12,7 +12,7 @@ LDAP 英文全称为 Lightweight Directory Access Protocol，即轻型目录访�
 
 在全局管理中，其操作步骤如下：
 
-1. 使用具有 `admin` 角色的用户登录 Web 控制台。点击左侧导航栏的左上角的`全局管理`。
+1. 使用具有 `admin` 角色的用户登录 DCE 5.0。点击左侧导航栏的左上角的`全局管理`。
 
     ![global](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws01.png)
 

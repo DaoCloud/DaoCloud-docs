@@ -12,7 +12,7 @@
 
 通常对私有的镜像空间，执行工作空间绑定，便于租户或成员使用其下的镜像。
 
-1. 使用具有 Admin 角色的用户登录 Web 控制台，从左侧导航栏点击`镜像仓库` -> `仓库集成(管理员)`。
+1. 使用具有 Admin 角色的用户登录 DCE 5.0，从左侧导航栏点击`镜像仓库` -> `仓库集成(管理员)`。
 
     ![仓库集成](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/integrated01.png)
 
@@ -26,7 +26,7 @@
 
     若没有绑定任何工作空间，`工作空间`一栏将显示`待分配`。
 
-1. 可以选择一个或多个工作空间，点击`确定`。
+1. 在弹窗中，选择一个或多个工作空间，点击`确定`。
 
     ![绑定](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/bind01.png)
 
