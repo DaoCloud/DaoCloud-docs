@@ -35,6 +35,6 @@ Prerequisite: An external Harbor registry has been created or integrated, and on
 
 2. What is the difference between assigning a registry space to a workspace and associating a registry under a workspace?
 
-    The platform administrator Admin can manage in a unified manner, and assign a registry space to multiple workspaces in batches without having to associate them separately.
+    The platform administrator Admin can manage in a unified manner, and assign a registry space to multiple workspaces in batches without having to integrate them separately.
 
-    Workspace Admin Workspace Admin can associate external container registrys for members to use according to needs, without relying on platform administrators, which is more flexible to use.
+    Workspace Admin Workspace Admin can integrate external container registrys for members to use according to needs, without relying on platform administrators, which is more flexible to use.

@@ -54,16 +54,16 @@ This page lists the release notes of the container registry, so that you can und
 - Support for creating hosted `harbor` instances of `redis` that support deployment using middleware modules
 - Support to create managed `harbor`, support to modify `Admin` password, resource quota, `Redis` instance, access type
 - Support for creating hosted `harbor` Support for automatic creation of image scanners
-- Support registry integration, associate registrys to verify user passwords and user permissions
+- Support registry integration, integrate registrys to verify user passwords and user permissions
      - Support registry integration to verify that the username and password are correct, and ensure that the user has administrator privileges
-     - Support associated registrys to verify that the username and password are correct
+     - Support integrated registrys to verify that the username and password are correct
 - Add fuzzy query to support registry integration list
 - Support page editing `Project` as public or private
 - Support `harbor`, `docker registry` type registry multi-architecture image page display
 
 #### Fixes
 
-- Fixed `harbor`, `docker registry` repositories that support associated repositories connected to `https`
+- Fixed `harbor`, `docker registry` repositories that support integrated repositories connected to `https`
 
 ## 2022-12-30
 
@@ -76,8 +76,8 @@ This page lists the release notes of the container registry, so that you can und
 - Support full life cycle management of container registry
 - Support deploying managed harbor instances in any namespace under any cluster of the platform
 - Support platform access and management of external Harbor, Docker Registry container registry
-- Support separate allocation of private image space for platform workspace (tenant)
-- Support for creating public/private image spaces
+- Support separate allocation of private registry space for platform workspace (tenant)
+- Support for creating public/private registry spaces
 - Support workspace (tenant) independent access to external Harbor, Docker Registry container registry
 - Support for selecting images through the image selector when deploying applications
 - Support image scanning

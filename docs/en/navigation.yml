@@ -746,6 +746,7 @@ nav:
           - Registry Space:
               - Registry Space: kangaroo/space/index.md
               - Image List: kangaroo/space/imagelist.md
+              - Artifacts and Description: kangaroo/space/desc.md
               - Retention: kangaroo/space/reclaim.md
           - Integrated Registry:
               - Integraetd Registry (Workspace): kangaroo/integrate/related-registry.md

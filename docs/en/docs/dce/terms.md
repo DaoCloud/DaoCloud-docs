@@ -1,6 +1,6 @@
 # Glossary
 
-This page lists some terms common to DEC 5.0 in alphabetical order.
+This page lists some terms common to DCE 5.0 in alphabetical order.
 
 ### A
 
