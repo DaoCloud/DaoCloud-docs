@@ -31,8 +31,8 @@ DCE 5.0 container registry allows users to create synchronization policies and a
     - Overwrite: specify whether to overwrite if there are resources with the same name.
     
     Filter:
-    - Name: filter the resources under the current image space by name. Leave blank or use `**` to match all resources.
-    - Tag: filter the resources under the current image space by tag/version. Leave blank or use `**` to match all resources.
+    - Name: filter the resources under the current registry space by name. Leave blank or use `**` to match all resources.
+    - Tag: filter the resources under the current registry space by tag/version. Leave blank or use `**` to match all resources.
     
     Destination registry: if not filled in, the images will be placed in the same registry space as the source registry.
 

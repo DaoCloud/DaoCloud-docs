@@ -2,7 +2,8 @@
 
 ## Offline environment image scanner failure
 
-The image scanner relies on vulnerability data, which is obtained by default from the CVE official website. In a pure offline environment, vulnerability scanning cannot be performed, and the process will fail.
+The image scanner relies on vulnerability data, which is obtained by default from the CVE official website.
+In a pure offline environment, vulnerability scanning cannot be performed, and the process will fail.
 
 ![trivy](./images/trivy-nodb.png)
 
@@ -29,7 +30,8 @@ The image scanner relies on vulnerability data, which is obtained by default fro
 
 ## Error occurs when creating Harbor after cluster verification passes in the first step
 
-Currently, only the existence of `CRD` is being verified in the cluster, and the `harbor-operator` service is not being checked. This may result in failures to create `Harbor` correctly when the `harbor-operator` service does not exist.
+Currently, only the existence of `CRD` is being verified in the cluster, and the `harbor-operator` service
+is not being checked. This may result in failures to create `Harbor` correctly when the `harbor-operator` service does not exist.
 
 ## Error occurs after executing `docker login {ip}` locally
 
@@ -37,7 +39,8 @@ Currently, only the existence of `CRD` is being verified in the cluster, and the
 Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certificate for {ip} because it doesn't contain any IP SANs
 ```
 
-This error occurs because the `registry` is an `https` service that uses an unsigned or insecure certificate. To resolve this issue, add the corresponding IP to `"insecure-registries"` in the `/etc/docker/daemon.json` configuration file.
+This error occurs because the `registry` is an `https` service that uses an unsigned or insecure certificate.
+To resolve this issue, add the corresponding IP to `"insecure-registries"` in the `/etc/docker/daemon.json` configuration file.
 
 ```json
 "insecure-registries": [
@@ -48,9 +51,12 @@ This error occurs because the `registry` is an `https` service that uses an unsi
 
 Then, restart the service with `systemctl restart docker`.
 
-## Failure to start services shen creating Harbor and accessing external PG and Redis with passwords containing special characters (!@#$%^&*)
+## Failed to start services when passwords contain special chars
 
-Currently, passwords cannot contain special characters; otherwise, the services will fail to start. You can use a combination of uppercase and lowercase letters and numbers instead.
+Failure to start services when creating Harbor and accessing external PG and Redis with passwords containing special characters (!@#$%^&*)
+
+Currently, passwords cannot contain special characters; otherwise, the services will fail to start.
+You can use a combination of uppercase and lowercase letters and numbers instead.
 
 ## Harbor Operator installation failed
 
@@ -66,15 +72,22 @@ Currently, `Harbor` does not support the use of `redis` cluster mode.
 
 ## Can private images be seen in a module other than container registry?
 
-The container registry strictly follows the authority of DEC 5.0. To view private registry space under the current tenant, users must belong to a specific tenant. Even administrators cannot view it without belonging to the tenant.
+The container registry strictly follows the authority of DCE 5.0.
+To view private registry space under the current tenant, users must belong to a specific tenant.
+Even administrators cannot view it without belonging to the tenant.
 
 ## Unable to query private images after binding to workspace
 
-After binding a private image to a workspace, the program executes several asynchronous logic processes, and it may not be immediately visible. The process duration is dependent on the system's speed and may take up to 5 minutes to appear.
+After binding a private image to a workspace, the program executes several asynchronous logic processes,
+and it may not be immediately visible. The process duration is dependent on the system's speed and
+may take up to 5 minutes to appear.
 
 ## Managed Harbor accessible but status remains unhealthy
 
-Currently, the status on the managed Harbor page and the status of the registry integration are combined. When both statuses are healthy, the Harbor is considered healthy. It's possible that the managed `Harbor` is already accessible, but the state remains unhealthy. In this case, wait for a service detection cycle, which occurs every 10 minutes, and it will return to the original state after the cycle.
+Currently, the status on the managed Harbor page and the status of the registry integration are combined.
+When both statuses are healthy, the Harbor is considered healthy. It's possible that the managed `Harbor`
+is already accessible, but the state remains unhealthy. In this case, wait for a service detection cycle,
+which occurs every 10 minutes, and it will return to the original state after the cycle.
 
 ## The status of managed registry you created just now is unhealthy
 
@@ -134,16 +147,21 @@ Currently, the status on the managed Harbor page and the status of the registry 
        `registry Instance` -> `Overview` -> `Deployment Location`.
      - The above A3 was verified on `kpanda-global-cluster` cluster.
 
-## Issue with image space and storage after creating a Project or uploading an image
+## Issue with registry space and storage after creating a Project or uploading an image
 
-If you have created a `Project` or uploaded an image, but found that there has been no increase in the image space or available storage on the page, this might be due to the asynchronous nature of obtaining statistical information on the `managed Harbor` home page and registry integration details on the UI page. The data retrieval process can take up to `10` minutes, causing a certain delay before any changes are reflected.
+If you have created a `Project` or uploaded an image, but found that there has been no increase
+in the registry space or available storage on the page, this might be due to the asynchronous nature
+of obtaining statistical information on the `managed Harbor` home page and registry integration details
+on the UI page. The data retrieval process can take up to `10` minutes, causing a certain delay before
+any changes are reflected.
 
 ## Registry integration status is unhealthy
 
 If you encounter an issue where the registry integration status is unhealthy, follow these steps:
 
 1. First, check whether the instance is healthy. If it's not, then troubleshoot the instance.
-2. If the instance is healthy, verify whether the resource `registrysecrets.kangaroo.io` on the `kpanda-global-cluster` cluster has been created or not.
+2. If the instance is healthy, verify whether the resource `registrysecrets.kangaroo.io`
+   on the `kpanda-global-cluster` cluster has been created or not.
 3. Check the status of the resource `status` to identify the problem initially.
 
 **Note:** Ensure to check the default namespace, which is `kangaroo-system`.
@@ -181,11 +199,15 @@ status:
 
 ## After integrating the registry, it cannot be viewed in the instance list page of the image
 
-Please confirm if the resources integrated into the registry are healthy. If they are unhealthy, they won't appear in the instance list on the image page. For the confirmation method, please refer to [Unhealthy Confirmation Method after Registry Integration](#registry-integration-status-is-unhealthy).
+Please confirm if the resources integrated into the registry are healthy. If they are unhealthy,
+they won't appear in the instance list on the image page. For the confirmation method,
+please refer to [Unhealthy Confirmation Method after Registry Integration](#registry-integration-status-is-unhealthy).
 
 ## Selecting a Private `Project` Image in the `Kpanda` Image Selector results in a failed image pull prompt during deployment
 
-- A1: If you can see the private `Project` in the image selector, which means that `Project` and `Workspace` have already been bound. At this point, check if a `secret` named `registry-secret` has been generated in the target cluster's `namespace` for image deployment.
+- A1: If you can see the private `Project` in the image selector, which means that `Project`
+  and `Workspace` have already been bound. At this point, check if a `secret` named `registry-secret`
+  has been generated in the target cluster's `namespace` for image deployment.
 
      ```shell
      kubectl -n default get secret registry-secret
@@ -196,7 +218,8 @@ Please confirm if the resources integrated into the registry are healthy. If the
      registry-secret kubernetes.io/dockerconfigjson 1 78d
      ```
 
-- A2: If you confirm that the `secret` named `registry-secret` has been generated, you need to confirm whether the `dockerconfigjson` in the `secret` is correct.
+- A2: If you confirm that the `secret` named `registry-secret` has been generated,
+  you need to confirm whether the `dockerconfigjson` in the `secret` is correct.
 
      ```shell
      kubectl get secret registry-secret -o jsonpath='{.data.*}'| base64 -d | jq

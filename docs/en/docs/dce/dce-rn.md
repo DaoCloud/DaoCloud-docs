@@ -106,7 +106,7 @@ the table above. Here is a brief description of some new features and optimizati
 - **Added** support for image recycling, supporting manual/timed/simulated recycling
 - **Added** support for adding description information to images
 - **Optimized** generated login instructions to support switching image instances on the instruction generation page
-- **Optimized** the image space list to add instance status
+- **Optimized** the registry space list to add instance status
 - **Optimized** support for randomly generating nodeport port numbers when creating hosted Harbor
 
 ### Global Management v0.17.1

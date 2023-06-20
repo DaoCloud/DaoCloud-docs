@@ -46,3 +46,5 @@ hide:
 docker tag [ImageID] 10.6.194.1:30010/kangaroo/REPOSITORY[:TAG]
 docker push 10.6.194.1:30010/kangaroo/REPOSITORY[:TAG]
 ```
+
+下一步：[Artifacts 和描述信息](./desc.md)

@@ -1,6 +1,6 @@
-# Associated registry
+# Integrated Registry
 
-The associated registry is a convenient registry access feature provided for the workspace.
+The integrated registry is a convenient registry access feature provided for the workspace.
 The workspace administrator (Workspace Admin) can flexibly access the container registry for the workspace as needed for use by workspace members.
 After accessing, when members deploy applications in the namespace under the workspace, they can pull all public and private images under the workspace with one click through the `Select Image` button to achieve rapid application deployment.
 
@@ -14,11 +14,11 @@ After accessing, when members deploy applications in the namespace under the wor
 
 ## Steps
 
-1. Log in to the web console as a user with the Workspace Admin role, and click `container registry` -> `Associated registry` from the left navigation bar.
+1. Log in to the web console as a user with the Workspace Admin role, and click `Container Registry` -> `Integrated Registry` from the left navigation bar.
 
     
 
-1. Click the `Associate registry` button in the upper right corner.
+1. Click the `Integrate Registry` button in the upper right corner.
 
     
 
@@ -28,5 +28,5 @@ After accessing, when members deploy applications in the namespace under the wor
 
     !!! note
 
-        1. If the Docker Registry container registry has not set a password, you can leave it blank, and the Harbor registry must fill in the username/password.
-        1. For a hands-on demo, see [Linked registry Video Demo](../../videos/kangaroo.md)
+        1. If the Docker Registry has not set a password, you can leave it blank, and the Harbor registry must fill in the username/password.
+        1. For a hands-on demo, see [Integrated Registry Video Demo](../../videos/kangaroo.md)
