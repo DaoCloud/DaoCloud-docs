@@ -120,9 +120,9 @@ nav:
           - 安全管理:
               - 安全扫描类型: kpanda/user-guide/security/intro.md
               - 合规性扫描: 
-                  - 添加扫描配置: kpanda/user-guide/security/cis/config.md
-                  - 设置扫描策略: kpanda/user-guide/security/cis/policy.md
-                  - 查看扫描报告: kpanda/user-guide/security/cis/report.md
+                  - 扫描配置: kpanda/user-guide/security/cis/config.md
+                  - 扫描策略: kpanda/user-guide/security/cis/policy.md
+                  - 扫描报告: kpanda/user-guide/security/cis/report.md
               - 权限扫描: kpanda/user-guide/security/audit.md
               - 漏洞扫描: kpanda/user-guide/security/hunter.md
           - 最佳实践:
