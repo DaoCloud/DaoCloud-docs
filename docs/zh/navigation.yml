@@ -110,13 +110,21 @@ nav:
               - 最近操作: kpanda/user-guide/clusterops/latest-operations.md
               - 集群升级: kpanda/user-guide/clusters/upgrade-cluster.md
               - 集群设置: kpanda/user-guide/clusterops/cluster-settings.md
-          - 权限管理:
-              - 权限说明: kpanda/user-guide/permissions/permission-brief.md
-              - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
           - 备份恢复:
               - ETCD 备份: kpanda/user-guide/backup/etcd-backup.md
               - 安装 velero 插件: kpanda/user-guide/backup/install-velero.md
-              - 备份无状态工作负载: kpanda/user-guide/backup/deployment.md
+              - 备份无状态工作负载: kpanda/user-guide/backup/deployment.md          
+          - 权限管理:
+              - 权限说明: kpanda/user-guide/permissions/permission-brief.md
+              - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
+          - 安全管理:
+              - 安全扫描类型: kpanda/user-guide/security/intro.md
+              - 合规性扫描: 
+                  - 扫描配置: kpanda/user-guide/security/cis/config.md
+                  - 扫描策略: kpanda/user-guide/security/cis/policy.md
+                  - 扫描报告: kpanda/user-guide/security/cis/report.md
+              - 权限扫描: kpanda/user-guide/security/audit.md
+              - 漏洞扫描: kpanda/user-guide/security/hunter.md
           - 最佳实践:
               - ETCD 备份还原: kpanda/best-practice/etcd-backup.md
               - 对 Mysql 应用及数据进行跨集群备份恢复: kpanda/best-practice/backup-mysql-on-nfs.md
