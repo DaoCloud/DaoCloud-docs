@@ -15,31 +15,53 @@ The audit log feature has the following characteristics:
 
 - Convenient and reliable: The audit log supports manual cleaning and automatic cleaning, and the cleaning strategy can be configured according to your storage size.
 
-## Download and export audit logs
+## View Audit Logs
 
-1. Log in to DCE 5.0 as a user with `Admin` or `Audit Owner` role.
+1. Log in to DCE 5.0 with a user account that has the `admin` or `Audit Owner` role.
 
-    
+    ![Log in to DCE 5.0](../../images/lang00.png)
 
-2. Click `Global Management` at the bottom of the left navigation bar.
+2. At the bottom of the left navigation bar, click on `Global Management` -> `Audit Logs`.
 
-    
+    ![Audit Logs](../../images/audit01.png)
 
-3. Select `Audit Logs`.
+## User operations
 
-    
+On the `User Operations` tab, you can search for user operation events by time range, or by using fuzzy or exact search.
 
-4. Under `Audit Log`, select the time range and click `Export` to download the audit log to the local.
+Click the `⋮` icon on the right side of an event to view its details.
 
-    
+![User audit logs](../../images/audit02.png)
 
-5. Under `Audit Log`, click `Settings` and configure the following information to complete the configuration of the audit log cleanup policy.
+The event details are shown in the following figure.
 
-    
+![User event details](../../images/audit03.png)
 
-    - Click the `Clear Now` button, enter the number of days to clean up, and click the `Clear Now` button, the system will automatically clean up the audit logs before that number of days. It is recommended to export and save before cleaning.
+Click the `Export` button in the upper right corner to export the user operation logs within the selected time range in CSV or Excel format.
 
-    - Click the `Settings` button, enter the maximum storage time, and click `OK`, the system will automatically clear all logs outside this time. It is recommended to export and save before cleaning.
+![Export](../../images/audit04.png)
 
-6. The Kubernetes-related log records in the audit log are provided by the observability module. In order to reduce the storage pressure of the audit log, the global management does not collect Kubernetes-related logs by default.
-   If you need to record, please go to xxxxx to enable the service. The cleaning feature after enabling is the same as that of the global management, but they do not affect each other.
+## System operations
+
+On the `System operations` tab, you can search for system operation events by time range, or by using fuzzy or exact search.
+
+Similarly, click the `⋮` icon on the right side of an event to view its details.
+
+![System event details](../../images/audit05.png)
+
+Click the `Export` button in the upper right corner to export the system operation logs within the selected time range in CSV or Excel format.
+
+![Export](../../images/audit06.png)
+
+## Settings
+
+On the `Settings` tab, you can clean up audit logs for user operations and system operations.
+
+![Clean up](../../images/audit07.png)
+
+You can manually clean up the logs, but it is recommended to export and save them before cleaning. You can also set the maximum retention time for the logs to automatically clean them up.
+
+!!! note
+
+    The audit logs related to Kubernetes in the auditing module are provided by the observability module. To reduce the storage pressure of the audit logs, DCE 5.0 by default does not collect Kubernetes-related logs.
+    If you need to record them, please refer to [Enabling K8s Audit Logs](./open-k8s-audit.md). Once enabled, the cleanup function is consistent with the global management cleanup function, but they do not affect each other.
