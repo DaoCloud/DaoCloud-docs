@@ -665,7 +665,7 @@ nav:
                   - MySQL Pod: middleware/mysql/faq/faq-pod.md
                   - MySQL Operator: middleware/mysql/faq/faq-operator.md
                   - MySQL 主备关系: middleware/mysql/faq/faq-master-slave.md
-                  - MySQL 其他故障: middleware/mysql/faq/faq-master-slave.md
+                  - MySQL 其他故障: middleware/mysql/faq/faq-others.md
               - Release Notes: middleware/mysql/release-notes.md
           - RabbitMQ 消息队列:
               - 什么是 RabbitMQ: middleware/rabbitmq/intro/what.md
