@@ -79,7 +79,7 @@ hide:
 
 5. 审计日志
 
-    [审计日志](../user-guide/audit-log.md)完整地记录用户的各项操作行为，
+    [审计日志](../user-guide/audit/audit-log.md)完整地记录用户的各项操作行为，
     包括用户通过页面或 API 接口发起的操作以及各服务内部自触发的操作。
     支持通过事件来源、资源类型、操作状态等多个维度进行组合查询，支持审计日志导出。
 
@@ -166,7 +166,7 @@ hide:
         - 支持添加资源到工作空间 - 共享资源，将一个集群资源共享给多个工作空间使用
         - 支持针对每个共享的集群资源进行资源限额
         - 支持通过 CPU Limit、CPU Request 、内存 Limit、内存 Request、存储请求总量 Request Storage、存储卷声明 PersistentVolumeClaim 六个维度进行资源限额
-3. [审计日志](../user-guide/audit-log.md)
+3. [审计日志](../user-guide/audit/audit-log.md)
     - 列表展示事件名称、资源类型、资源名称、状态、操作人、操作时间
     - 列表支持查看审计日志详情
     - 列表支持展示最近一天或自定义时间内的审计日志

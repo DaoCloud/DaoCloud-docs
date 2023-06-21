@@ -9,7 +9,7 @@
 
 - 社区版安装管理集群过程中未操作 k8s 审计日志开关
 - 商业版管理集群的 k8s 审计日志开关默认开启
-    - 如需设置成默认关闭，可[修改安装器 clusterConfigt.yaml](../../install/commercial/cluster-config.md) 来配置（logPath 设置为空 ”“）
+    - 如需设置成默认关闭，可[修改安装器 clusterConfigt.yaml](../../../install/commercial/cluster-config.md) 来配置（logPath 设置为空 ”“）
 - 管理集群的采集 k8s 审计日志开关默认关闭
     - 默认设置不支持配置
 
@@ -26,7 +26,7 @@
 ls /var/log/kubernetes/audit
 ```
 
-若未开启，请参考[文档的开启关闭 k8s 审计日志](./open-k8s-audit.md)。
+若未开启，请参考[文档的开启关闭 k8s 审计日志](../open-k8s-audit.md)。
 
 #### 开启采集 k8s 审计日志流程
 
@@ -81,7 +81,7 @@ helm upgrade --install --create-namespace --version ${insight_version_code} --cl
 ls /var/log/kubernetes/audit
 ```
 
-若未开启，请参考[文档的开启关闭 k8s 审计日志](./open-k8s-audit.md)。
+若未开启，请参考[文档的开启关闭 k8s 审计日志](../open-k8s-audit.md)。
 
 #### 开启采集 k8s 审计日志流程
 
@@ -156,7 +156,7 @@ helm upgrade --install --create-namespace --version ${insight_version_code} --cl
 ls /var/log/kubernetes/audit
 ```
 
-若未开启，请参考[文档的开启关闭 k8s 审计日志](./open-k8s-audit.md)
+若未开启，请参考[文档的开启关闭 k8s 审计日志](../open-k8s-audit.md)
 
 #### 开启采集 k8s 审计日志
 
@@ -167,7 +167,7 @@ ls /var/log/kubernetes/audit
     ![选中集群](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker04.png)
 
 2. 进入 helm 应用管理页面，更新 insight-agent 配置
-   （若未安装 insight-agent，可以[安装 insight-agent](../../insight/user-guide/quickstart/install-agent.md)）
+   （若未安装 insight-agent，可以[安装 insight-agent](../../../insight/user-guide/quickstart/install-agent.md)）
 
     ![进入 Helm 应用页面](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker05.png)
 

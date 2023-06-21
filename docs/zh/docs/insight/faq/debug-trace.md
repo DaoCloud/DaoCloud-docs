@@ -59,7 +59,7 @@ class sdk,workload,otel,jaeger,es cluster
 
     !!! note
 
-        `全局管理集群`的 `opentelemetry collector` 还负责发送所有工作集群的[全局管理模块](../../ghippo/intro/what.md)的[审计日志](../../ghippo/user-guide/audit-log.md)以及 Kubernetes 审计日志（默认不采集）到全局管理模块的 `audit server` 组件。
+        `全局管理集群`的 `opentelemetry collector` 还负责发送所有工作集群的[全局管理模块](../../ghippo/intro/what.md)的[审计日志](../../ghippo/user-guide/audit/audit-log.md)以及 Kubernetes 审计日志（默认不采集）到全局管理模块的 `audit server` 组件。
 
 3. **global jaeger collector**
 

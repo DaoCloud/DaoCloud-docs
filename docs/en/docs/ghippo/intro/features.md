@@ -74,7 +74,7 @@ This page describes the features of Global Management.
 
 5. Audit Logs
 
-     [Audit Logs](../user-guide/audit-log.md) completely records users' various operations, including operations initiated by users through pages or API interfaces and self-triggered operations within each service. It enables combined queries through multiple dimensions, such as event source, resource type, and operation status, and supports audit log export.
+     [Audit Logs](../user-guide/audit/audit-log.md) completely records users' various operations, including operations initiated by users through pages or API interfaces and self-triggered operations within each service. It enables combined queries through multiple dimensions, such as event source, resource type, and operation status, and supports audit log export.
 
 6. Platform Settings
 
@@ -155,7 +155,7 @@ Below is a list of features available:
         - Add resources to the workspace - Share resources, share a cluster resource with multiple workspaces
         - Resource quotas for each shared cluster resource
         - Resource quotas through six dimensions: CPU Limit, CPU Request, Memory Limit, Memory Request, total storage request Request Storage, and storage volume statement PersistentVolumeClaim
-3. [Audit Logs](../user-guide/audit-log.md)
+3. [Audit Logs](../user-guide/audit/audit-log.md)
     - Display event name, resource type, resource name, status, operator, and operation time in the list
     - View audit log details from the list
     - Display audit logs of the latest day or custom time
