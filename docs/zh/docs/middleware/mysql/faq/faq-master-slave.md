@@ -20,8 +20,9 @@ MySQL 的主备关系故障相对比较复杂，基于不同现象，会有不�
     ```bash
     [root@master-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' | xargs -I {} kubectl logs {} -n mcamel-system -c mysql | grep ERROR
     ```
+当实例状态为 `False` 时，可能存在以下几类故障，可以结合库日志信息排查修复。
 
-## 从库无报错
+## 实例状态为 `false` 但日志无报错信息
 
 如果从库的日志中没有任何错误 `ERROR` 信息，说明 `False` 只是因为主从同步的延迟过大，可对从库执行以下命令进一步排查：
 
