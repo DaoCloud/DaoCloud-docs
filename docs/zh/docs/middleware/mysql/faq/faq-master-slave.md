@@ -1,189 +1,6 @@
-# MySQL 排障手册
+# MySQL 主备关系
 
-本文将持续统计和梳理常见的 MySQL 异常故障以及修复方式，若遇到使用问题，请优先查看此排障手册。
-
-> 如果您发现遇到的问题，未包含在本手册，可以快速跳转到页面底部，提交您的问题。
-
-## MySQL 健康检查
-
-可以通过一句命令查看 MySQL 健康状态:
-
-```none
-kubectl get pod -n mcamel-system -Lhealthy,role | grep mysql
-```
-
-输出类似于：
-
-```
-mcamel-common-mysql-cluster-auto-2023-03-28t00-00-00-backujgg9m   0/1     Completed          0               27h              
-mcamel-common-mysql-cluster-auto-2023-03-29t00-00-00-backusgf59   0/1     Completed          0               3h43m            
-mcamel-common-mysql-cluster-mysql-0                               4/4     Running            6 (11h ago)     25h     yes       master
-mcamel-common-mysql-cluster-mysql-1                               4/4     Running            690 (11h ago)   4d20h   yes       replica
-mcamel-mysql-apiserver-9797c7f76-bvf5n                            2/2     Running            0               22h              
-mcamel-mysql-ui-7ffd9dd8db-d5jfm                                  2/2     Running            0               25m              
-mysql-operator-0                                                  2/2     Running            109 (47m ago)   2d21h  
-```
-
-如上所示，如果主备节点（`master` `replica`）的状态均为 `yes`,说明 MySQL 为正常状态。
-
-## MySQL Pod
-
-可以通过以下命令快速的查看当前集群上所有 `MySQL` 实例的健康状态：
-
-```bash
-kubectl get mysql -A
-```
-
-输出类似于：
-
-```bash
-NAMESPACE       NAME                          READY   REPLICAS   AGE
-ghippo-system   test                          True    1          3d
-mcamel-system   mcamel-common-mysql-cluster   False   2          62d
-```
-
-### Pod running = 0/4，状态为 `Init:Error`
-
-遇到此类问题时，首先应该查看 `master` 节点的（sidecar）日志信息。
-
-```bash
-kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep master | awk '{print $1}' | xargs -I {} kubectl logs -f {} -n mcamel-system -c sidecar
-```
-
-??? note "输出内容示例"
-
-    ```none
-    2023-02-09T05:38:56.208445-00:00 0 [Note] [MY-011825] [Xtrabackup] perl binary not found. Skipping the version check
-    2023-02-09T05:38:56.208521-00:00 0 [Note] [MY-011825] [Xtrabackup] Connecting to MySQL server host: 127.0.0.1, user: sys_replication, password: set, port: not set, socket: not set
-    2023-02-09T05:38:56.212595-00:00 0 [Note] [MY-011825] [Xtrabackup] Using server version 8.0.29
-    2023-02-09T05:38:56.217325-00:00 0 [Note] [MY-011825] [Xtrabackup] Executing LOCK INSTANCE FOR BACKUP ...
-    2023-02-09T05:38:56.219880-00:00 0 [ERROR] [MY-011825] [Xtrabackup] Found tables with row versions due to INSTANT ADD/DROP columns
-    2023-02-09T05:38:56.219931-00:00 0 [ERROR] [MY-011825] [Xtrabackup] This feature is not stable and will cause backup corruption.
-    2023-02-09T05:38:56.219940-00:00 0 [ERROR] [MY-011825] [Xtrabackup] Please check https://docs.percona.com/percona-xtrabackup/8.0/em/instant.html for more details.
-    2023-02-09T05:38:56.219945-00:00 0 [ERROR] [MY-011825] [Xtrabackup] Tables found:
-    2023-02-09T05:38:56.219951-00:00 0 [ERROR] [MY-011825] [Xtrabackup] keycloak/USER_SESSION
-    2023-02-09T05:38:56.219956-00:00 0 [ERROR] [MY-011825] [Xtrabackup] keycloak/AUTHENTICATION_EXECUTION
-    2023-02-09T05:38:56.219960-00:00 0 [ERROR] [MY-011825] [Xtrabackup] keycloak/AUTHENTICATION_FLOW
-    2023-02-09T05:38:56.219968-00:00 0 [ERROR] [MY-011825] [Xtrabackup] keycloak/AUTHENTICATOR_CONFIG
-    2023-02-09T05:38:56.219984-00:00 0 [ERROR] [MY-011825] [Xtrabackup] keycloak/CLIENT_SESSION
-    2023-02-09T05:38:56.219991-00:00 0 [ERROR] [MY-011825] [Xtrabackup] keycloak/IDENTITY_PROVIDER
-    2023-02-09T05:38:56.219998-00:00 0 [ERROR] [MY-011825] [Xtrabackup] keycloak/PROTOCOL_MAPPER
-    2023-02-09T05:38:56.220005-00:00 0 [ERROR] [MY-011825] [Xtrabackup] keycloak/RESOURCE_SERVER_SCOPE
-    2023-02-09T05:38:56.220012-00:00 0 [ERROR] [MY-011825] [Xtrabackup] keycloak/REQUIRED_ACTION_PROVIDER
-    2023-02-09T05:38:56.220018-00:00 0 [ERROR] [MY-011825] [Xtrabackup] keycloak/COMPONENT
-    2023-02-09T05:38:56.220027-00:00 0 [ERROR] [MY-011825] [Xtrabackup] keycloak/RESOURCE_SERVER
-    2023-02-09T05:38:56.220036-00:00 0 [ERROR] [MY-011825] [Xtrabackup] keycloak/CREDENTIAL
-    2023-02-09T05:38:56.220043-00:00 0 [ERROR] [MY-011825] [Xtrabackup] keycloak/FED_USER_CREDENTIAL
-    2023-02-09T05:38:56.220049-00:00 0 [ERROR] [MY-011825] [Xtrabackup] keycloak/MIGRATION_MODEL
-    2023-02-09T05:38:56.220054-00:00 0 [ERROR] [MY-011825] [Xtrabackup] keycloak/REALM
-    2023-02-09T05:38:56.220062-00:00 0 [ERROR] [MY-011825] [Xtrabackup] keycloak/CLIENT
-    2023-02-09T05:38:56.220069-00:00 0 [ERROR] [MY-011825] [Xtrabackup] keycloak/REALM_ATTRIBUTE
-    2023-02-09T05:38:56.220075-00:00 0 [ERROR] [MY-011825] [Xtrabackup] keycloak/OFFLINE_USER_SESSION
-    2023-02-09T05:38:56.220084-00:00 0 [ERROR] [MY-011825] [Xtrabackup] Please run OPTIMIZE TABLE or ALTER TABLE ALGORITHM=COPY on all listed tables to fix this issue.
-    E0209 05:38:56.223635       1 deleg.go:144] sidecar "msg"="failed waiting for xtrabackup to finish" "error"="exit status 1"
-    ```
-
-登录 `master` 节点的 `MySQL`，执行 `alter` 表结构：
-
-```bash
-[root@master-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep master
-mcamel-common-mysql-cluster-mysql-0
-
-#获取密码
-[root@master-01 ~]$ kubectl get secret -n mcamel-system mcamel-common-mysql-cluster-secret -o=jsonpath='{.data.ROOT_PASSWORD}' | base64 -d
-
-[root@master-01 ~]$ kubectl exec -it mcamel-common-mysql-cluster-mysql-0 -n mcamel-system -c mysql -- /bin/bash
-
-# 注意：修改表结构需要root权限登录
-~bash:mysql -uroot -p
-```
-
-??? note "SQL 语句如下"
-
-    ```sql
-    use keycloak;
-    ALTER TABLE USER_SESSION ALGORITHM=COPY;
-    ALTER TABLE AUTHENTICATION_EXECUTION ALGORITHM=COPY;
-    ALTER TABLE AUTHENTICATION_FLOW ALGORITHM=COPY;
-    ALTER TABLE AUTHENTICATOR_CONFIG ALGORITHM=COPY;
-    ALTER TABLE CLIENT_SESSION ALGORITHM=COPY;
-    ALTER TABLE IDENTITY_PROVIDER ALGORITHM=COPY;
-    ALTER TABLE PROTOCOL_MAPPER ALGORITHM=COPY;
-    ALTER TABLE RESOURCE_SERVER_SCOPE ALGORITHM=COPY;
-    ALTER TABLE REQUIRED_ACTION_PROVIDER ALGORITHM=COPY;
-    ALTER TABLE COMPONENT ALGORITHM=COPY;
-    ALTER TABLE RESOURCE_SERVER ALGORITHM=COPY;
-    ALTER TABLE CREDENTIAL ALGORITHM=COPY;
-    ALTER TABLE FED_USER_CREDENTIAL ALGORITHM=COPY;
-    ALTER TABLE MIGRATION_MODEL ALGORITHM=COPY;
-    ALTER TABLE REALM ALGORITHM=COPY;
-    ALTER TABLE CLIENT ALGORITHM=COPY;
-    ALTER TABLE REALM_ATTRIBUTE ALGORITHM=COPY;
-    ALTER TABLE OFFLINE_USER_SESSION ALGORITHM=COPY
-    ```
-
-### Pod running = 2/4
-
-此类问题很可能是因为 MySQL 实例使用的磁盘用量达到了 100%，可以在 `master` 节点上运行以下命令检测磁盘用量。
-
-```bash
-kubectl get pod -n mcamel-system | grep cluster-mysql | awk '{print $1}' | xargs -I {} kubectl exec {} -n mcamel-system -c sidecar -- df -h | grep /var/lib/mysql
-```
-
-输出类似于：
-
-```console
-/dev/drbd43001            50G   30G   21G  60% /var/lib/mysql
-/dev/drbd43005            80G   29G   52G  36% /var/lib/mysql
-```
-
-如果发现某个  PVC 满了，则需要为 PVC 扩容。
-
-```bash
-kubectl edit pvc data-mcamel-common-mysql-cluster-mysql-0 -n mcamel-system # 修改request大小即可
-```
-
-### Pod running = 3/4
-
-![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/mysql/images/faq-mysql-1.png)
-
-使用 `kubectl describe` 上图中框起来的 Pod，发现异常提示： `Warning Unhealthy 4m50s (x7194 over 3h58m) kubelet Readiness probe failed: `
-
-此时需要手工进行修复，这是目前开源 `mysql-operator` 版本的 [Bug](https://github.com/bitpoke/mysql-operator/pull/857)
-
-修复方式有两种：
-
-- 重启 `mysql-operator`，或者
-- 手工更新 `sys_operator` 的配置状态
-
-```bash
-kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'update sys_operator.status set value="1"  WHERE name="configured"'
-```
-
-## MySQL Operator
-
-### 未指定 `storageClass`
-
-由于没有指定 `storageClass`，导致 `mysql-operator` 无法获取 PVC 而处于 `pending` 状态。
-
-如果采用 Helm 启动，可以做如下设置：
-
-1. 关闭 PVC 的申请
-
-    ```bash
-    orchestrator.persistence.enabled=false 
-    ```
-
-2. 指定 storageClass 去获取 PVC
-
-    ```bash
-    orchestrator.persistence.storageClass={storageClassName} 
-    ```
-
-如果使用其他工具，可以修改 `value.yaml` 内对应字段，即可达到和 Helm 启动一样的效果。
-
-## MySQL 主从关系
-
+MySQL 的主备关系故障相对比较复杂，基于不同现象，会有不同的解决方案。
 1. 执行以下命令确认 MySQL 状态:
 
     ```bash
@@ -203,10 +20,11 @@ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- my
     ```bash
     [root@master-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' | xargs -I {} kubectl logs {} -n mcamel-system -c mysql | grep ERROR
     ```
+当实例状态为 `False` 时，可能存在以下几类故障，可以结合库日志信息排查修复。
 
-### 从库无报错，但同步延迟较大
+## 实例状态为 `false` 但日志无报错信息
 
-如果日志中没有任何错误 `ERROR` 信息，说明 `False` 只是因为主从同步的延迟过大，可对从库执行以下命令进一步排查：
+如果从库的日志中没有任何错误 `ERROR` 信息，说明 `False` 只是因为主从同步的延迟过大，可对从库执行以下命令进一步排查：
 
 1. 寻找到从节点的 Pod
 
@@ -326,11 +144,11 @@ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- my
 
     `load averages` 在正常情况下 3 个数值都不应长期超过 10；如果超过 30 以上，请合理调配下该节点的 Pod 和磁盘。
 
-### 从库日志出现`复制错误`
+## 从库日志出现`复制错误`
 
-如果在查看从库 Pod 日志中出现从库复制错误，可能有多种情况，可以根据同时出现的其他错误信息，确认修复方法。
+如果从库 Pod 日志中出现从库复制错误，可能由多种原因引起，下文将针对不同情况介绍判断及修复方法。
 
-#### purged binlog 错误
+### purged binlog 错误
 
 注意以下示例，如果出现关键字 `purged binlog`，通常需要对从库执行重建处理。
 
@@ -372,7 +190,7 @@ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- my
     pod "mcamel-common-mysql-cluster-mysql-1" deleted
     ```
 
-#### 主键冲突错误
+### 主键冲突错误
 
 ??? note "错误实例"
 
@@ -430,7 +248,8 @@ mysql> show slave status\G;
 [root@master-01 ~]$ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'stop slave;set global slave_exec_mode="STRICT";set global sync_binlog=10086;start slave;
 ```
 
-#### 从库 `[Note] Slave: MTS group recovery relay log info based on Worker-Id 0, group_r` 类似错误
+### 主从库复制错误
+当从库出现类似 `[Note] Slave: MTS group recovery relay log info based on Worker-Id 0, group_r` 的错误信息，可以执行如下操作：
 
 1. 寻找到从节点的 Pod
 
@@ -451,7 +270,7 @@ mysql> show slave status\G;
 
 >2.此种类型错误也可以重做从库。
 
-### 主备 Pod 均为 `replica`
+## 主备 Pod 均为 `replica`
 
 1. 通过以下命令，发现两个 MySQL 的 Pod均为 `replica` 角色，需修正其中一个为 `master`。
 
@@ -564,7 +383,7 @@ mysql> show slave status\G;
     mysql > change master to master_host='mcamel-common-mysql-cluster-mysql-{master-host-pod-index}.mysql.mcamel-system',master_port=3306,master_user='root',master_password='{password}',master_auto_position=1,MASTER_HEARTBEAT_PERIOD=2,MASTER_CONNECT_RETRY=1, MASTER_RETRY_COUNT=86400;
     ```
 
-### 主备数据不一致——主动数据同步
+## 主备数据不一致
 
 当主从实例数据不一致时，可以执行以下命令完成主从一致性同步：
 
@@ -579,45 +398,3 @@ pt-table-sync --execute --charset=utf8 --ignore-databases=mysql,sys,percona --da
 这种场景往往适用于主从切换，发现新从库有多余的已执行的 gtid 在重做之前补充数据。
 
 这种补充数据只能保证数据不丢失，如果新主库已经删除的数据会被重新补充回去，是一个潜在的风险，如果是新主库有数据，会被替换成老数据，也是一个风险。
-
-## 其他故障
-
-### CR 创建数据库失败报错
-
-数据库运行正常，使用 CR 创建数据库出现了报错，此类问题的原因有：`mysql root` 密码有特殊字符
-
-![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/mysql/images/faq-mysql-2.png)
-
-1. 获取查看原密码：
-
-    ```bash
-    [root@master-01 ~]$ kubectl get secret -n mcamel-system mcamel-common-mysql-cluster-secret -o=jsonpath='{.data.ROOT_PASSWORD}' | base64 -d
-    ```
-
-2. 如果密码含有特殊字符 `-` ，进入 MySQL 的 shell 输入原密码出现以下错误
-
-    ```bash
-    bash-4.4# mysql -uroot -p
-    Enter password:
-    ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
-    ```
-
-3. 清理重建：
-
-    - 方法一：清理数据目录，删除 Pod 等待 sidecar running 以后，再删除一次数据目录，再删除 Pod 即可恢复:
-
-    ```bash
-    [root@master-01 ~]# kubectl exec -it mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c sidecar -- /bin/sh
-    sh-4.4# cd /var/lib/mysql
-    sh-4.4# ls | xargs rm -rf
-    ```
-
-    - 方法二：删除 PVC 再删除 Pod，只需要处理一次,即可恢复：
-
-    ```bash
-    kubectl delete pvc data-mcamel-common-mysql-cluster-mysql-1 -n mcamel-system
-    ```
-
-    ```bash
-    kubectl delete pod mcamel-common-mysql-cluster-mysql-1 -n mcamel-system
-    ```

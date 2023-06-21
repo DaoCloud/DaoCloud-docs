@@ -650,15 +650,22 @@ nav:
               - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
               - Release Notes: middleware/minio/release-notes.md
           - MySQL 数据库:
-              - 什么是 MySQL: middleware/mysql/intro/what.md
-              - 功能说明: middleware/mysql/intro/features.md
-              - 竞争优势: middleware/mysql/intro/benefits.md
-              - 基本概念: middleware/mysql/intro/concepts.md
-              - 创建 MySQL: middleware/mysql/user-guide/create.md
-              - 更新 MySQL: middleware/mysql/user-guide/update.md
-              - 删除 MySQL: middleware/mysql/user-guide/delete.md
-              - 查看 MySQL 日志: middleware/mysql/user-guide/logs.md
-              - MySQL 排障手册: middleware/mysql/faq/common-question.md
+              - 介绍: 
+                  - 什么是 MySQL: middleware/mysql/intro/what.md
+                  - 功能说明: middleware/mysql/intro/features.md
+                  - 竞争优势: middleware/mysql/intro/benefits.md
+                  - 基本概念: middleware/mysql/intro/concepts.md
+              - 快速入门: 
+                  - 创建 MySQL: middleware/mysql/user-guide/create.md
+                  - 更新 MySQL: middleware/mysql/user-guide/update.md
+                  - 删除 MySQL: middleware/mysql/user-guide/delete.md
+                  - 查看 MySQL 日志: middleware/mysql/user-guide/logs.md
+              - 故障排查: 
+                  - MySQL 健康检查: middleware/mysql/faq/quick-check.md
+                  - MySQL Pod: middleware/mysql/faq/faq-pod.md
+                  - MySQL Operator: middleware/mysql/faq/faq-operator.md
+                  - MySQL 主备关系: middleware/mysql/faq/faq-master-slave.md
+                  - MySQL 其他故障: middleware/mysql/faq/faq-others.md
               - Release Notes: middleware/mysql/release-notes.md
           - RabbitMQ 消息队列:
               - 什么是 RabbitMQ: middleware/rabbitmq/intro/what.md
