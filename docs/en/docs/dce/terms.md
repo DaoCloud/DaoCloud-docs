@@ -158,7 +158,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - Audit log, audit log
 
-    [Audit Log](../ghippo/user-guide/audit-log.md) provides a historical record of changes made to objects in the system.
+    [Audit Log](../ghippo/user-guide/audit/audit-log.md) provides a historical record of changes made to objects in the system.
 
 - Authorization
 

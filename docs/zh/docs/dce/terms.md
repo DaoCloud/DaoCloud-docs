@@ -120,7 +120,7 @@
 
 - Audit log, 审计日志
 
-    [审计日志](../ghippo/user-guide/audit-log.md)提供了对系统中对象所做更改的历史记录。
+    [审计日志](../ghippo/user-guide/audit/audit-log.md)提供了对系统中对象所做更改的历史记录。
 
 - Authorization, 授权
 

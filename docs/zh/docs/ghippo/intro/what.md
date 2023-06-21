@@ -6,7 +6,7 @@
 
 - [企业空间](../user-guide/workspace/ws-folder.md)：具有层级结构和访问权限控制的资源隔离单元。您可以按照企业开发环境、部门结构等设置层级结构，并控制哪些人对哪些资源具有访问权限。
 
-- [审计日志](../user-guide/audit-log.md)：提供资源的操作记录。通过操作记录您可以快速实现安全分析、资源变更、问题定位等。
+- [审计日志](../user-guide/audit/audit-log.md)：提供资源的操作记录。通过操作记录您可以快速实现安全分析、资源变更、问题定位等。
 
 - [平台设置](../user-guide/platform-setting/mail-server.md)：通过平台安全策略、邮件服务器、外观定制等，实现用户信息的安全性和平台的个性化。
 
@@ -36,7 +36,7 @@
 
 3. 进入`工作空间`，[创建层级（企业层级关系）](../user-guide/workspace/ws-folder.md)，[创建工作空间（租户）](../user-guide/workspace/workspace.md)
 
-4. 进入`审计日志`，查看并[导出审计日志](../user-guide/audit-log.md)
+4. 进入`审计日志`，查看并[导出审计日志](../user-guide/audit/audit-log.md)
 
 5. 进入`平台设置`，设置安全策略、邮件服务器、外观定制、正版授权
 

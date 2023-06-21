@@ -6,7 +6,7 @@ Global Management (Ghippo) is a comprehensive user-centered service that include
 
 - [Enterprise Space](../user-guide/workspace/ws-folder.md): A resource isolation unit with a hierarchical structure and capability of access control. Users can set up a hierarchical structure depending on the development environment, department structure, etc., and control who has access to which resources.
 
-- [Audit Logs](../user-guide/audit-log.md): Provides operation logs of resources that allow security analysis, resource changes, problem location, and other essential insights.
+- [Audit Logs](../user-guide/audit/audit-log.md): Provides operation logs of resources that allow security analysis, resource changes, problem location, and other essential insights.
 
 - [Platform Settings](../user-guide/platform-setting/mail-server.md): Platform security policy, mail server, appearance customization, and more ensure secure user information and a personalized experience.
 
@@ -36,7 +36,7 @@ Global Management (Ghippo) is a comprehensive user-centered service that include
 
 3. Go to `Workspace`. [Create enterprise hierarchy relationship](../user-guide/workspace/ws-folder.md), then [create a workspace (tenant)](../user-guide/workspace/workspace.md).
 
-4. Go to `Audit Logs`. View and [export audit logs](../user-guide/audit-log.md).
+4. Go to `Audit Logs`. View and [export audit logs](../user-guide/audit/audit-log.md).
 
 5. Go to `Platform Settings`. Configure security policy, mail server, appearance, and genuine license.
 
