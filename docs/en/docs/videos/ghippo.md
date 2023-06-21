@@ -52,7 +52,7 @@ See [OIDC](../ghippo/user-guide/access-control/oidc.md) for reference.
 
 ## Enable audit log
 
-See [how to enable audit log](../ghippo/user-guide/open-audit.md) for reference.
+See [how to enable audit log](../ghippo/user-guide/audit/open-audit.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-on.mp4" preload="metadata" poster="../images/ghippo-audit.png"></video>
@@ -60,7 +60,7 @@ See [how to enable audit log](../ghippo/user-guide/open-audit.md) for reference.
 
 ## Disable audit log
 
-See [how to disable audit log](../ghippo/user-guide/open-audit.md#_4) for reference.
+See [how to disable audit log](../ghippo/user-guide/audit/open-audit.md#_4) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-off.mp4" preload="metadata" poster="../images/ghippo-auditoff.png"></video>

@@ -68,7 +68,7 @@
 
 ## 开启审计日志
 
-参阅[开启审计日志](../ghippo/user-guide/open-audit.md)文档页面。
+参阅[开启审计日志](../ghippo/user-guide/audit/open-audit.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-on.mp4" preload="metadata" poster="../images/ghippo-audit.png"></video>
@@ -76,7 +76,7 @@
 
 ## 关闭审计日志
 
-参阅[关闭审计日志](../ghippo/user-guide/open-audit.md#_4)文档页面。
+参阅[关闭审计日志](../ghippo/user-guide/audit/open-audit.md#_4)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-off.mp4" preload="metadata" poster="../images/ghippo-auditoff.png"></video>

@@ -51,5 +51,5 @@ Here are some plugins for `Fluent Bit`.
 | Output Plugin          | Plugin Description              |
 | ------------------------ | ---------------------------------- |
 | es.kube.kubeevent.syslog | Write Kubernetes audit logs, event logs, and syslog logs to [ElasticSearch cluster](../../middleware/elasticsearch/intro/what.md) |
-| forward.audit_log | Send Kubernetes audit logs and [global management audit logs](../../ghippo/user-guide/audit-log.md) to `Global Management` |
+| forward.audit_log | Send Kubernetes audit logs and [global management audit logs](../../ghippo/user-guide/audit/audit-log.md) to `Global Management` |
 | es.skoala | Write [request logs](../../skoala/gateway/logs/reqlog.md) and [instance logs](../../skoala/gateway/logs/inslog.md) of microservice gateway to ElasticSearch cluster
