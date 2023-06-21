@@ -650,7 +650,7 @@ nav:
               - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
               - Release Notes: middleware/minio/release-notes.md
           - MySQL 数据库:
-             - 介绍: 
+              - 介绍: 
                   - 什么是 MySQL: middleware/mysql/intro/what.md
                   - 功能说明: middleware/mysql/intro/features.md
                   - 竞争优势: middleware/mysql/intro/benefits.md
