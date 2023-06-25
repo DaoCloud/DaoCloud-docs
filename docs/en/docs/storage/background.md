@@ -10,7 +10,7 @@
 
 **Storage Solution in Cloud-side Collaboration Scenario**
 
-In Garner's top ten cloud trend predictions for 2021, edge computing becomes the new cloud. Edge use cases also require data storage and preprocessing capabilities. On the edge side, storage-computing integration is generally adopted, but edge resources are limited. How to perform certain data storage and computation based on the edge side poses a problem to be solved in cloud-edge collaboration use cases.
+In Garner's top ten cloud trend predictions for 2021, edge computing becomes the new cloud. Edge use cases also require data storage and preprocessing capabilities. On the edge side, storage-computing integration is generally adopted, but edge resources are limited. How to perform certain data storage and computation based on the edge side poses a problem to be solved in cloud edge collaboration use cases.
 
 ## Challenges
 

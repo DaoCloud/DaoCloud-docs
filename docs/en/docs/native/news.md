@@ -1023,8 +1023,8 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [The full agenda of the Cloud Edge Synergy Conference on June 14 was officially released](https://mp.weixin.qq.com/s/86KJTR5N9LIXYb1D-3jJ9g)
 
-     China Academy of Information and Communications Technology and China Communications Standards Association will hold the "2022 Cloud-edge Collaboration Conference" online on June 14.
-     At the meeting, distributed cloud evaluation results, edge computing industry application evaluation results, cloud-edge collaboration practice cases, etc. will be released, and speeches will focus on cloud-edge collaboration, Internet of Things, industry applications and other topics.
+     China Academy of Information and Communications Technology and China Communications Standards Association will hold the "2022 cloud edge collaboration Conference" online on June 14.
+     At the meeting, distributed cloud evaluation results, edge computing industry application evaluation results, cloud edge collaboration practice cases, etc. will be released, and speeches will focus on cloud edge collaboration, Internet of Things, industry applications and other topics.
 
 - [On June 11, CNCF, Microsoft, and Intel jointly launched the Open Source Cloud Native Developer Day, focusing on microservices, continuous integration delivery, and chaos engineering (registration method is attached)](https://mp.weixin.qq.com/s/khNo4BuPXeydiGeXMTNAjg)
 
