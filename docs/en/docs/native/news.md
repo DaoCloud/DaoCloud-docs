@@ -14,11 +14,27 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     The ArchSummit Global Architect Summit is a technical conference focused on high-end technical managers and architects, launched by the InfoQ China team. The Shenzhen Summit will function topics such as Microservice Architecture, Sustainable Software Architecture, ChatGPT + Big Data Exploration, Digital Transformation Exploration in the Financial Industry, and Business Going Abroad. Each presentation will be 45 minutes long, including a 5-minute Q&A session at the end.
 
+- [7.20 IstioCon 2023 Call for Proposals Open (7.20 deadline)](https://sessionize.com/istiocon-2023)
+  
+    IstioCon 2023 will be held in Shanghai from 9.25-9.26. Recommended topics include: case studies, new features, Istio configuration and project updates, etc. Presentation types include single presentations (30 minutes), dual presentations (30 minutes), and panel discussions (30 minutes). The summit supports both live and online presentations.
+
+- [7.15 The 7th Global Edge Computing Conference will be held in Shenzhen on 7.15](https://mp.weixin.qq.com/s/xMEPFjaVRds4PlwoEc0WHw)
+  
+    The conference invites more active industry opinion leaders and A-side enterprises in edge computing to share more than 20 topics to discuss edge computing landing practices, application cases, edge cloud, AI, open source, computing power, chips, audio and video, going to sea, industrial IoT, investment, etc.
+
 ### 2023-06
 
 - [June 30-7.1 Juejin Developer Conference 2023 will be held in Beijing from 6.30-7.1](https://conf.juejin.cn/xdc2023/?utm_source=gzh)
   
     This year's Juejin Developer Conference invites industry experts from Byte, Tencent, Intel, Ali, B-site, Little Red Book and other companies to give presentations and share, covering 12 sub-forums including "Big Model and AIGC, Front-end Future, Low-Code Technology Practice and Innovative Applications, Cloud Native Practice, Front-end Engineering Practice, Distributed Cloud and Edge Computing, Observability Exploration, Architecture Design and Evolution, Audio and Video Technology Frontier, R&D Effectiveness and team management, offshore business exploration, and 12 other sub-forums.
+
+- [6.30 IDC Perspective: China Container Security Market Insights, 2023" report research officially launched (6.30 application deadline)](https://mp.weixin.qq.com/s/xrCrRW6Nqwunpso-2VjAQQ)
+  
+    To further showcase the Chinese container security product market in 2023, IDC officially launched the "IDC Perspective: China Container Security Market Insight, 2023" report to showcase the performance of security technology providers in the container security market, and to discuss the current state and future trends of container security technology development.
+
+- [6.30 IDC MarketScape: China Hybrid Cloud Infrastructure Vendor Assessment study officially launched (6.30 application deadline)](https://mp.weixin.qq.com/s/nk5uoSBYs9_ViHBeYlwuDQ)
+  
+    IDC will analyze the market position and product technologies of different vendors across the market by providing strategic and capability dimensions of infrastructure services, infrastructure platforms, security, monitoring and management based on public cloud, private cloud/hyperconverged, and hybrid cloud/edge computing deployment forms from different levels of technology perspectives. Based on the analysis of this market, IDC will select 8-10 mainstream vendors in the market as participants in this vendor assessment.
 
 - [June 30 2023 Cloud Edge Collaboration Conference will be held in Beijing on 6.30](https://mp.weixin.qq.com/s/pIh5JYfhLW2QA7zn9sPNvQ)
   
@@ -104,6 +120,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [June 6 ICT China-2023 High Level Forum - Cloud Native Industry Summit will kick off on June 6 in Beijing](https://mp.weixin.qq.com/s/FTOBYjCZxYMoOM8WJUz8mQ)
   
     Sponsored by the Ministry of Industry and Information Technology, the Cloud Native Industry Summit Forum will invite leading think tanks, government leaders, academician experts, enterprise executives and other heavyweight guests to discuss the cloud native ecology and explore the cloud native future.
+
+- [6.5 IDC Releases "China Software-Defined Computing Software Market Tracker, 2022" Report](https://mp.weixin.qq.com/s/ON9EozhX6ksyL_q2bk_r4Q)
+  
+    IDC defines the software-defined computing software market as consisting of three main submarkets: virtualization software, cloud systems software, and container infrastructure software. In the 2022 container infrastructure software market, three of the top five vendors in terms of revenue are those providing public cloud services (Huawei, Alibaba, and Tencent). IBM/Red Hat ranks third in this market in terms of revenue due to its relatively large presence in the market and rich product portfolio. Boyun's revenue was ranked fifth.
 
 - [June 5 Notice on the collection of 2023 Shanghai Software Industry Association group standard project declaration](https://mp.weixin.qq.com/s/8LUr4OXjIkkdAic3FH8HnA)
   

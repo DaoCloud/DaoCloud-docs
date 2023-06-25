@@ -10,9 +10,17 @@ This page lists activity in cloud native open source projects in alphabetical or
      As a result, developers can move locally developed applications to production without switching tools or technology stacks.
      Acorn images are created by describing the application's configuration in an Acornfile, eliminating the boilerplate of Kubernetes YAML.
 
+- [Aeraki Mesh Service Grid v1.3.0 Released](https://github.com/aeraki-mesh/aeraki/releases/tag/1.3.0)
+
+    Updates: Support for Istio version 1.16.x, support for multiplexing, support for MetaProtocol Layer 7 routing capability on Gateway, support for application-level service governance for Dubbo services, support for Redis traffic management.
+
 - [Aeraki Mesh service mesh project v1.1.0 released (CNCF project)](https://www.aeraki.net/blog/2022/announcing-1.1.0/)
 
      The main new features of this version: support Istio 1.12.x version; support bRPC (better RPC) protocol, bRPC is Baidu's open source industrial-grade RPC framework; Pass the real IP of the server, etc.
+
+- [AlterShield: change control platform open sourced by Ant Group](https://mp.weixin.qq.com/s/8L2LqxeRK9LCtfSkKG94wg)
+
+    [AlterShield](https://github.com/traas-stack/altershield) is a one-stop control platform that integrates change awareness, change defense and change analysis. It aims to define change standard protocols and standardize change control processes, enabling users to quickly identify problems in changes and reduce the impact of failures in a timely manner. For cloud-native scenarios, AlterShield provides Operator to connect various CI/CD tools to OCMS (Open Change Management Specification) SDK, and Operator itself provides change flow control and exception rollback policy control.
 
 - [Antrea CNI Plugin v1.12.0 Released (CNCF Project)](https://github.com/antrea-io/antrea/releases/tag/v1.12.0)
 
@@ -573,6 +581,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     The main features of [Katalyst](https://github.com/kubewharf/katalyst-core) include: fully incubated in the mega-mixed-part practice and synchronously take over the resource control link in the byte service cloud-native process; equipped with ByteBeat's internal Kubernetes distribution Enhanced Kubernetes is synchronized with open source; the system is built based on plug-in model, and users can customize various scheduling, control, policy, data and other module plug-ins on Katalyst Framework.
 
+- [KEDA Event Driven Auto Scaler v2.11.0 Released (CNCF Project)](https://github.com/kedacore/keda/releases/tag/v2.11.0)
+
+    Updates: New Solr Scaler; support for pause autoscaling; improved and extended Promethean metrics; ability to scale multiple scalers with CPU and memory scalers to zero if they are available.
+
 - [KEDA Announces Security Audit Results Based on Kubernetes Event-Driven Autoscaling Project](https://mp.weixin.qq.com/s/ZwCg-qCeC2CMm7EbxJbi9w)
 
     The audit identified a significant flaw in Redis Scalers that could affect the confidentiality, integrity, or availability of the system.
@@ -1094,6 +1106,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support for GitLab Runner, new commands for creating copies of existing pods, new commands for synchronizing state changes between the database and any volume plugins, new exit policies for pods, and automatic cleanup of unused pods Caches Podman virtual machine images, allowing multiple overlay volumes of different containers to reuse the same workdir or upperdir.
 
+- [Prometheus v2.45.0 Released (CNCF Project)](https://github.com/prometheus/prometheus/releases/tag/v2.45.0)
+
+    Update: Support limit the number of returns per TSDB statistic, add limit in global configuration, support ingesting both classic histogram and native histogram, native histogram support limit the size of storage bucket.
+
 - [Prometheus v2.44.0 released (CNCF project)](https://github.com/prometheus/prometheus/releases/tag/v2.44.0)
 
     Release features: default number of samples per send increased to 2,000, support for handling native histogram data, added functionality for checking Prometheus server health status and availability at the command line, added metrics for total number of samples loaded for all queries.
@@ -1127,6 +1143,10 @@ This page lists activity in cloud native open source projects in alphabetical or
      The main new features of this version: Vultr integration, Linode SD failure count metric and `prometheus_ready` metric added, `stripDomain` added to the template function, promtool supports using matchers when querying label values, and proxy pattern identifiers added.
 
 ### R
+
+- [Rainbond IT innovation version of cloud-native multi-cloud application management platform released](https://mp.weixin.qq.com/s/eelPIhoCQdAfBnQOm_YDAg)
+
+    Rainbond Cintron Edition supports deployment and management of multiple single-architecture clusters. It supports one-click deployment and management of amd64 clusters, arm64 clusters, and amd64 & arm64 hybrid architecture clusters. Compatible with mainstream localized CPUs and adapted to multiple localized operating systems. Supports rapid migration of legacy applications to Cintron environment. Cloud native app store supports publishing and installation of arm64 architecture apps.
 
 - [Rainbond Cloud Native multicloud Application Management Platform v5.14.0 Released](https://github.com/goodrain/rainbond/releases/tag/v5.14.0-release)
 
@@ -1335,6 +1355,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Wolfi: Chainguard Releases First Linux Distribution to Secure Software Supply Chain, Designed for Containers and Cloud-Native Environments](https://www.chainguard.dev/unchained/introducing-wolfi-the-first-linux-un-distro)
 
      [Wolfi](https://github.com/wolfi-dev) is a stripped-down Linux distribution designed for cloud-native, but it does not have a Linux kernel, instead relying on the environment (such as a container runtime) to provide the kernel. Main features: Provide high-quality build-time SBOM as a standard for all packages; packages are fine-grained and independent of each other to support lightweight mirroring; use mature and reliable apk package format, fully declarative, repeatable Build system, supports glibc and musl.
+
+- [Xline Cross-Cloud Metadata KV Storage into CNCF Sandbox Project](https://mp.weixin.qq.com/s/Pj8TOStT_oEABZGqFkCVaA)
+
+    [Xline](https://github.com/datenlord/Xline) is an open source distributed KV storage for managing small amounts of critical data and still guaranteeing high performance and strong data consistency in cross-cloud and cross-data center scenarios. Xline is etcd-compatible, providing a KV interface, multi-version concurrency control, while Xline is compatible with K8S for smooth user usage and migration.
 
 - [Xline is open sourced by DatenLord: Achieving data consistency management across data centers](https://mp.weixin.qq.com/s/NqScUOjUA1t4gdNeLEcPwg)
 
