@@ -84,6 +84,10 @@
 
     Azure Kubernetes 舰队管理器将多个群集地视为单个集群来管理。用户可通过创建一个 Fleet 资源来管理多个集群。用户可将现有 AKS 集群当作成员集群，加入到舰队中，然后用这些集群的元数据，编排多个集群场景，如 Kubernetes 资源传播和多集群负载均衡。
 
+- [阿里云容器服务 ACK 5 月动态](https://mp.weixin.qq.com/s/qdWU_lSdHov6JxdO3nsRtQ)
+
+    更新内容：支持 Kubernetes 1.26、支持 Flexvolume 组件和 CSI 组件共存于一个集群内、Serverless 版 ACK支持成本洞察、ASM 支持集成 KServe、ASM 网关支持 Serverless 形态、ASM 支持全局证书管理。
+
 - [阿里云 Serverless 容器服务 ASK 更新](https://mp.weixin.qq.com/s/DPDhEzkWvW0s_UERpHWoQA)
 
     更新内容：新增对十多个 K8s 核心组件的托管支持，提供动态容量规划能力；新增智能化风险识别能力，支持自动化升级 K8s 版本；提供基于容器镜像缓存的 AI 大镜像秒级拉取能力，启动时间降低 90%；增强智能弹性预测  AHPA 能力，相比人工配置，弹性准确率提升 80%；同时新增对于 GPU 的支持。
@@ -546,6 +550,10 @@
 
     Rainbond 企业版拥有全局可观测中心，用于监视、调试和分析运行在 Kubernetes 集群和 rainbond 平台中的基础设施及应用服务。此外，还为 IT 业务系统向国产化信创环境中迁移提供了方案，支持全链路灰度发布和集群巡检，内置 WAF 防火墙和操作审计功能，支持私有化部署应用商店等。
 
+- [Red Hat 服务网格 OpenShift Service Mesh 2.4 发布](https://cloud.redhat.com/blog/introducing-openshift-service-mesh-2.4)
+
+    更新内容：支持 Istio 1.16 和 Kiali 1.65、正式支持集群范围的部署拓扑架构、集成 Cert-Manager、正式支持外部授权、支持单栈 IPv6、新增用于 OpenShift 监控或外部 Prometheus 的 Prometheus 扩展 provider。
+
 - [Red Hat 发布混合云和多云环境服务连接产品——服务互连](https://www.redhat.com/en/blog/introducing-red-hat-service-interconnect)
 
     红帽服务互连基于开源项目 Skupper.io 创建，它能够在红帽平台（包括红帽企业 Linux、红帽 OpenShift 和非红帽环境（包括 Kubernetes 集群、公共云、虚拟机或裸机主机）之间实现应用和服务连接，而无需进行复杂的网络重新配置或提升安全权限。
@@ -595,6 +603,10 @@
 - [ServiceNow 发布统一查询语言 Lightstep UQL，扩展 Kubernetes 应用的可见性](https://lightstep.com/blog/announcing-the-lightstep-unified-query-language)
 
     Lightstep UQL 支持统一的“可观测性即代码”，通过单一查询语言简化从多个不同工具迁移到统一 Lightstep 平台的过程，还支持跨多个 Kubernetes 节点、服务器或 serverless 函数查询和关联指标、日志和跟踪。
+
+- [SmartX 推出国内首款 K8s 原生的企业级分布式存储 IOMesh](https://mp.weixin.qq.com/s/BT6P-PvGqmA8llQ42i2Y9w)
+
+    IOMesh 对基础设施及 Kubernetes 平台无依赖，可充分利用 Kubernetes Worker 节点的硬件资源融合部署，支持小规模起步，可根据业务发展按需投资可为有状态应用提供 Kubernetes 原生、高性能、高可靠、高可扩展的持久化存储能力。
 
 - [SmartX 发布生产级 Kubernetes 构建与管理服务产品 SMTX Kubernetes Service （SKS） 1.0](https://mp.weixin.qq.com/s/Uecg_YwFK7fNd4x55xOZfg)
 

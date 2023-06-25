@@ -10,9 +10,17 @@
     因此，开发人员无需切换工具或技术栈就能够将在本地开发应用转移到生产中。
     Acorn 镜像通过在 Acornfile 中描述应用程序的配置来创建，无需 Kubernetes YAML 的样板文件。
 
+- [Aeraki Mesh 服务网格 v1.3.0 发布](https://github.com/aeraki-mesh/aeraki/releases/tag/1.3.0)
+
+    更新内容：支持 Istio 1.16.x 版本、支持多路复用、支持在 Gateway 上提供 MetaProtocol 七层路由能力、Dubbo 服务支持应用级服务治理、支持 Redis 流量管理。
+
 - [Aeraki Mesh 服务网格项目 v1.1.0 发布（CNCF 项目）](https://www.aeraki.net/zh/blog/2022/announcing-1.1.0/)
 
     该版本主要新特性：支持 Istio 1.12.x 版本；支持 bRPC（better RPC） 协议，bRPC 是百度开源的工业级 RPC 框架；MetaProtocol 支持流式调用、支持采用 MetaData 设置负载均衡 Hash 策略以及在 Response 中回传服务器真实 IP 等。  
+
+- [AlterShield：由蚂蚁集团开源的变更管控平台](https://mp.weixin.qq.com/s/8L2LqxeRK9LCtfSkKG94wg)
+
+    [AlterShield](https://github.com/traas-stack/altershield) 是一款集变更感知、变更防御、变更分析于一身的一站式管控平台。旨在通过定义变更标准协议，规范变更管控流程，使用户快速发现变更中的问题，并及时降低故障影响面。对于云原生场景，AlterShield 提供了 Operator，连接各类 CI/CD 工具到 OCMS（Open Change Management Specification）SDK。同时，Operator 本身也提供了变更流速控制、异常回滚策略控制等能力。
 
 - [Antrea CNI 插件 v1.12.0 发布（CNCF 项目）](https://github.com/antrea-io/antrea/releases/tag/v1.12.0)
 
@@ -577,6 +585,10 @@
 
     [Katalyst](https://github.com/kubewharf/katalyst-core) 的主要特点包括：完全孵化于超大规模混部实践，并在字节服务云原生化的进程中同步接管资源管控链路；搭载字节跳动内部的 Kubernetes 发行版 Enhanced Kubernetes 同步开源；系统基于插件化模式构建，用户可以在 Katalyst Framework 之上自定制各类调度、管控、策略、数据等模块插件等。
 
+- [KEDA 事件驱动自动伸缩器 v2.11.0 发布（CNCF 项目）](https://github.com/kedacore/keda/releases/tag/v2.11.0)
+
+    更新内容：新增 Solr Scaler；支持暂停自动缩放；改进和扩展普罗米修斯指标；如果有多个带有 CPU 和内存扩展器的扩展器，能够将其扩展为零。
+
 - [KEDA 基于 Kubernetes 事件驱动自动缩放项目公布安全审计结果](https://mp.weixin.qq.com/s/ZwCg-qCeC2CMm7EbxJbi9w)
 
     审计发现了 Redis Scalers 中的一个重大缺陷，该缺陷可能会影响系统的机密性、完整性或可用性。
@@ -1092,6 +1104,10 @@
 
     该版本主要新特性：支持 GitLab Runner、新增命令用于创建现有 pod 的副本、新增命令用于同步数据库和任何卷插件之间的状态变化、pod 新增退出策略、自动清理未使用的缓存 Podman 虚拟机镜像、允许不同容器的多个 overlay 卷重复使用同一个 workdir 或 upperdir。
 
+- [Prometheus v2.45.0 发布（CNCF 项目）](https://github.com/prometheus/prometheus/releases/tag/v2.45.0)
+
+    更新内容：支持限制每个 TSDB 统计项的返回数量、在全局配置中增加限制、支持同时摄入 classic 直方图和 native 直方图、native 直方图支持限制存储桶的大小。
+
 - [Prometheus v2.44.0 发布（CNCF 项目）](https://github.com/prometheus/prometheus/releases/tag/v2.44.0)
 
     版本特性：每次发送的默认样本数提高到 2,000、支持处理原生直方图数据、在命令行中添加用于检查 Prometheus 服务器健康状态和可用性的功能、添加所有查询加载的样本总数指标。
@@ -1125,6 +1141,10 @@
     该版本主要新特性：集成 Vultr、添加 Linode SD 故障计数指标和 `prometheus_ready` 指标、在模板 function 中添加 `stripDomain`、promtool 支持在查询标签值时使用匹配器、增加代理模式标识符。
 
 ### R
+
+- [Rainbond 信创版本的云原生多云应用管理平台发布](https://mp.weixin.qq.com/s/eelPIhoCQdAfBnQOm_YDAg)
+
+    Rainbond 信创版支持部署和管理多个单架构集群。支持 amd64 集群、arm64 集群、amd64 & arm64 混合架构集群的一键部署和管理。兼容主流国产化 CPU，同时与多个国产化操作系统进行了适配。支持传统应用快速迁移到信创环境。云原生应用商店支持发布和安装 arm64 架构的应用。
 
 - [Rainbond 云原生多云应用管理平台 v5.14.0 发布](https://github.com/goodrain/rainbond/releases/tag/v5.14.0-release)
 
@@ -1333,6 +1353,10 @@
 - [Wolfi：Chainguard 发布首个保障软件供应链安全的 Linux 发行版，专为容器和云原生环境设计](https://www.chainguard.dev/unchained/introducing-wolfi-the-first-linux-un-distro)  
 
     [Wolfi](https://github.com/wolfi-dev) 是一个为云原生设计的精简版 Linux 发行版，但其没有 Linux 内核，而是依靠环境（如容器运行时）来提供内核。主要功能：为所有软件包提供高质量构建时的 SBOM 作为标准；软件包是细粒度和相互独立的，以支持轻量级镜像；使用成熟可靠的 apk 包格式、完全声明性的、可重复的构建系统、支持 glibc 和 musl。
+
+- [Xline 跨云元数据 KV 存储 进入 CNCF 沙箱项目](https://mp.weixin.qq.com/s/Pj8TOStT_oEABZGqFkCVaA)
+
+    [Xline](https://github.com/datenlord/Xline) 是一个开源的分布式的 KV 存储，用来管理少量的关键性数据，并在跨云跨数据中心的场景下仍然保证高性能和数据强一致性。Xline 兼容 etcd 接口，提供 KV 接口，多版本并发控制，同时与 K8S 兼容，让用户使用和迁移更加流畅。
 
 - [Xline 由 DatenLord 开源：实现跨数据中心数据一致性管理](https://mp.weixin.qq.com/s/NqScUOjUA1t4gdNeLEcPwg)
 

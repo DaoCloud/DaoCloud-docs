@@ -88,6 +88,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Azure Kubernetes Fleet Manager treats multiple cluster sites as a single cluster to be managed. Users can manage multiple clusters by creating a Fleet resource. Users can treat existing AKS clusters as member clusters, join them to the fleet, and then orchestrate multiple cluster Cases such as Kubernetes resource propagation and multicluster load balancing using metadata from those clusters.
 
+- [AliCloud Container Service ACK May Update](https://mp.weixin.qq.com/s/qdWU_lSdHov6JxdO3nsRtQ)
+
+    Updates: Kubernetes 1.26 support, Flexvolume component and CSI component coexist in a cluster, Serverless version of ACK supports cost insight, ASM supports integrated KServe, ASM gateway supports Serverless form factor, ASM supports global certificate management.
+
 - [AliCloud Serverless Container Service ASK Update](https://mp.weixin.qq.com/s/DPDhEzkWvW0s_UERpHWoQA)
 
     Update: Added support for more than 10 K8s core components, providing dynamic capacity planning capability; added intelligent risk identification capability, supporting automated upgrade of K8s version; provided AI large image pulling capability based on container image cache, reducing startup time by 90%; enhanced intelligent elastic prediction AHPA capability, compared with manual configuration, elasticity accuracy rate increased by 80%; also added Support for GPU.
@@ -532,6 +536,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Rainbond Enterprise Package has a global observable center for monitoring, debugging, and analyzing infrastructure and application services running in Kubernetes clusters and the rainbond platform. In addition, it also provides solutions for IT business system migration to the localized Cintron environment, supports full-link grayscale release and cluster patrol, built-in WAF firewall and operation audit features, supports private deployment of application stores, etc.
 
+- [Red Hat Service Mesh OpenShift Service Mesh 2.4 Released](https://cloud.redhat.com/blog/introducing-openshift-service-mesh-2.4)
+
+    Updates: Support for Istio 1.16 and Kiali 1.65, formal support for cluster-wide deployment topologies, integration with Cert-Manager, formal support for external licensing, support for single-stack IPv6, new Prometheus extension provider for OpenShift monitoring or external Prometheus.
+
 - [Red Hat Releases Service Interconnect, a Service Connectivity Product for Hybrid and Multi-Cloud Environments](https://www.redhat.com/en/blog/introducing-red-hat-service-interconnect)
 
     Red Hat Service Interconnect, created based on the open source project Skupper.io, enables application and service connectivity between Red Hat platforms, including Red Hat Enterprise Linux, Red Hat OpenShift and non-Red Hat environments, including Kubernetes clusters, public clouds, virtual machines or bare metal hosts, without the need for complex network reconfiguration or elevated security privileges.
@@ -581,6 +589,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [ServiceNow Releases Unified Query Language Lightstep UQL, Extending the Visibility of Kubernetes Applications](https://lightstep.com/blog/announcing-the-lightstep-unified-query-language)
 
      Lightstep UQL supports unified "observability as code", simplifies the process of migrating from multiple disparate tools to the unified Lightstep platform through a single query language, and also supports querying and correlating metrics, logs and track.
+
+- [SmartX launches IOMesh, the first K8s native enterprise distributed storage in China](https://mp.weixin.qq.com/s/BT6P-PvGqmA8llQ42i2Y9w)
+
+    IOMesh has no dependency on infrastructure and the Kubernetes platform, can fully utilize the hardware resources of Kubernetes Worker nodes for converged deployments, supports small-scale start-ups, and can provide Kubernetes native, high-performance, highly reliable, and highly scalable persistent storage capabilities for stateful applications with on-demand investments based on business development.
 
 - [SmartX Releases SMTX Kubernetes Service (SKS) 1.0, a production-grade Kubernetes build and management service product](https://mp.weixin.qq.com/s/Uecg_YwFK7fNd4x55xOZfg)
 
