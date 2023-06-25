@@ -785,6 +785,13 @@ nav:
               - 绑定/解绑工作空间: kangaroo/integrate/bind-to-ws.md
               - 镜像同步: kangaroo/integrate/sync.md
           - 镜像扫描: kangaroo/scan.md
+      - 云边协同:
+          - 什么是云边协同: kant/intro/what.md
+          - 功能特性: kant/intro/features.md
+          - 产品优势: kant/intro/benefits.md
+          - 应用场景: kant/intro/use-cases.md
+          - 边缘节点接入要求: kant/intro/join-rqmt.md
+          - 基本概念: kant/intro/concepts.md
       - 云原生安全:
           - 介绍: security/what.md
           - Falco:
