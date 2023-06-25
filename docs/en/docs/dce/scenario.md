@@ -24,7 +24,7 @@ Users design edge collaboration solutions according to the cloud, edge, and end 
 
 Involved modules: [Container Management](../kpanda/intro/what.md), [Container Network](../network/intro/what-is-net.md), container cluster lifecycle management, edge nodes
 
-Advantages of the solution: The cloud centrally manages and controls all edge nodes and cluster information. Based on the traditional cloud-edge-end three-tier model, in response to strong edge computing power requirements, an edge cluster iterative edge node solution is added to form a four-tier cloud-edge collaboration solution.
+Advantages of the solution: The cloud centrally manages and controls all edge nodes and cluster information. Based on the traditional cloud-edge-end three-tier model, in response to strong edge computing power requirements, an edge cluster iterative edge node solution is added to form a four-tier cloud edge collaboration solution.
 
 === "Xinchuang Cloud Native"
 

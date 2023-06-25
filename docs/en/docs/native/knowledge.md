@@ -579,7 +579,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Enable support for LoadBalancer type service on OpenYurt edge side through MetalLB](https://openyurt.io/blog/Enable-MetalLB-in-OpenYurt/)
 
-    In the cloud-edge collaboration scenario, since the edge side does not have the cloud SLB service capability, edge Ingress or edge applications cannot expose LoadBalancer-type services for access outside the cluster.
+    In the cloud edge collaboration scenario, since the edge side does not have the cloud SLB service capability, edge Ingress or edge applications cannot expose LoadBalancer-type services for access outside the cluster.
     In this scenario, This page discusses how to implement support for LoadBalancer type service on the edge side of OpenYurt through MetalLB.
 
 - [Implementing Hot Reloading in Kubernetes](https://loft.sh/blog/implementing-hot-reloading-in-kubernetes/?utm_medium=reader&utm_source=rss&utm_campaign=blog_implementing-hot-reloading-in-kubernetes?utm_source=thenewstack&utm_medium=website)

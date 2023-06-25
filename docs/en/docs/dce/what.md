@@ -153,7 +153,7 @@ day by day, making things better over time.
 
     ![Heterogeneous](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/08xinchuan.jpg)
 
-=== "Cloud to Edge Continuum"
+=== "Cloud Edge Collaboration"
 
      DCE 5.0 extends cloud-native capabilities to the edge by adopting the edge cluster
      and edge node mode. It moves the computing power of the data center down, while
@@ -166,7 +166,7 @@ day by day, making things better over time.
 
      **Related modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Cluster Lifecycle Management](../community/kubean.md), [cloud native network](../network/intro/what-is-net.md), [cloud native storage](../storage/what.md), weak network cluster
 
-    ![Cloud to edge continuum](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/09cloud-edge.jpg)
+    ![Cloud edge collaboration](../images/09cloud-edge.png)
 
 === "Cloud Native Base"
 

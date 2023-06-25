@@ -106,7 +106,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[云边协同](../kant/intro/what.md)、[全局管理](../ghippo/intro/what.md)、[容器管理](../kpanda/intro/what.md)、[集群生命周期管理](../community/kubean.md)、[云原生网络](../network/intro/what.md)、[云原生存储](../storage/what.md)、弱网集群
 
-    ![云边](https://docs.daocloud.io/daocloud-docs-images/docs/images/09cloud-edge.png)
+    ![云边](../images/09cloud-edge.png)
 
 === "云原生底座"
 
