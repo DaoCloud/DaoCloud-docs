@@ -34,7 +34,7 @@ nav:
           - 在不同操作系统上安装:
               - 在 UOS V20 (1020a) 上安装 DCE 5.0 商业版: install/os-install/uos-v20-install-dce5.0.md
               - Oracle Linux R9 U1 操作系统上部署 DCE 5.0 商业版: install/os-install/oracleLinux-install-dce5.0.md
-              - Other Linux 离线部署 DCE 5.0 商业版: install/os-install/otherlinux.md
+              - 其他 Linux 离线部署 DCE 5.0 商业版: install/os-install/otherlinux.md
           - Release Notes: install/release-notes.md
       - 容器管理:
           - 介绍:
@@ -127,11 +127,11 @@ nav:
               - 漏洞扫描: kpanda/user-guide/security/hunter.md
           - 最佳实践:
               - 对 ETCD 进行备份还原: kpanda/best-practice/etcd-backup.md
-              - 对 Mysql 应用及数据进行跨集群备份恢复: kpanda/best-practice/backup-mysql-on-nfs.md
+              - 对 MySQL 应用及数据进行跨集群备份恢复: kpanda/best-practice/backup-mysql-on-nfs.md
               - 加固自建工作集群: kpanda/best-practice/hardening-cluster.md
               - 工作集群离线升级指南: kpanda/best-practice/update-offline-cluster.md
               - 为工作集群添加异构节点: kpanda/best-practice/multi-arch.md
-              - 在 centos 管理平台上创建 ubuntu 工作集群: kpanda/best-practice/create-ubuntu-on-centos-platform.md
+              - 在 CentOS 管理平台上创建 Ubuntu 工作集群: kpanda/best-practice/create-ubuntu-on-centos-platform.md
       - 全局管理:
           - 介绍:
               - 什么是全局管理: ghippo/intro/what.md
@@ -162,6 +162,7 @@ nav:
               - 创建和删除文件夹: ghippo/user-guide/workspace/folders.md
               - 文件夹权限: ghippo/user-guide/workspace/folder-permission.md
               - 资源配额: ghippo/user-guide/workspace/quota.md
+              - 资源组与共享资源的区别: ghippo/user-guide/workspace/res-gp-and-shared-res.md
           - 审计日志:
               - 开启和关闭采集k8s审计日志: ghippo/user-guide/audit/open-audit.md
               - 开启和关闭k8s审计日志: ghippo/user-guide/audit/open-k8s-audit.md

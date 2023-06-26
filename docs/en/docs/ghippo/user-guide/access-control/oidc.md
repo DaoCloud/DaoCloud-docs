@@ -7,17 +7,14 @@ You can grant permissions to use DCE 5.0 resources to these external user identi
 
 The specific operation steps are as follows.
 
-1. Log in to DCE 5.0 as a user with `admin` role. Click `Global Management` at the bottom of the left navigation bar.
+1. Log in to DCE 5.0 as a user with `admin` role. Click `Global Management` -> `Access Control` at the bottom of the left navigation bar.
 
-    
+    ![access control](../../images/ws01.png)
 
-2. Navigate to `Access Control` under `Global Management`, select `Identity Providers` -> `OIDC`, click `Create Identity Provider`.
+2. On the left nav bar select `Identity Providers`, click the `OIDC` tab.
+   After completing the form fields and establishing a trust relationship with the identity provider, click `Save`.
 
-    
-
-3. After completing the form fields and establishing a trust relationship with the identity provider, click `Save`.
-
-    
+    ![oidc](../../images/oidc02.png)
 
     | Field | Description |
     | ---------- | -------------------------------------- ---------------------- |

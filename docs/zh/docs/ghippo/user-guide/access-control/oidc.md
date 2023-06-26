@@ -7,17 +7,13 @@ OIDC（OpenID Connect）是建立在 OAuth 2.0 基础上的一个身份层，是
 
 具体操作步骤如下。
 
-1. 使用具有 `admin` 角色的用户登录 DCE 5.0。点击左侧导航栏底部的`全局管理`。
+1. 使用具有 `admin` 角色的用户登录 DCE 5.0。点击左侧导航栏底部的`全局管理` -> `用户与访问控制`。
 
-    ![全局管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws01.png)
+    ![全局管理](../../images/ws01.png)
 
-2. 导航至`全局管理`下的`用户与访问控制`，选择`身份提供商` -> `OIDC`，点击`创建身份提供商`。
+2. 在左侧导航栏选择`身份提供商`，点击 `OIDC` 页签。填写表单字段，建立与身份提供商的信任关系后，点击`保存`。
 
-    ![身份提供商](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/oidc02.png)
-
-3. 填写表单字段，建立与身份提供商的信任关系后，点击`保存`。
-
-    ![身份提供商](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/oidc03.png)
+    ![身份提供商](../../images/oidc02.png)
 
     | 字段       | 描述                                                         |
     | ---------- | ------------------------------------------------------------ |

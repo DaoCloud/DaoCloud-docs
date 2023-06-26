@@ -92,7 +92,7 @@ Namespace01 的 Viewer 角色仅能够查看 Namespace01。
 
 2. 支持此模式的子模块：应用工作台、微服务引擎、中间件、容器管理、服务网格。
 
-3. 您可以通过`全局管理` -> `工作空间与层级`，创建工作空间，并在`工作空间-授权`中给用户/用户组授予 Workspace Admin、Workspace Editor、Workspace Viewer 角色。
+3. 您可以通过`全局管理` -> `工作空间与层级`，创建工作空间，并在`工作空间` -> `授权`中给用户/用户组授予 Workspace Admin、Workspace Editor、Workspace Viewer 角色。
 
     ![基于资源的管理模式2](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/permission4.png)
 
