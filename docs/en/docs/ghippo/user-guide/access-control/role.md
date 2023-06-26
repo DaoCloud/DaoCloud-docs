@@ -15,22 +15,20 @@ The platform predefines an administrator role for each sub-module, which is used
 For example, the IAM Owner of access control, the Kpanda Owner of container management, etc., each sub-module administrator has the highest authority of the module.
 The submodule administrator role needs to be configured in the global management module, which can be obtained in the following ways:
 
-- Find the user in the user list of `Global Management` -> `Access Control` -> `User`; click `...`, select `Authorization`, and assign the user a predefined submodule of the system Administrator privileges.
+- Find the user in the user list of `Global Management` -> `Access Control` -> `User`; click `...`, select `Authorization`, and assign the user a predefined submodule of the system Administrator permissions.
 
-    
+    ![user authorization](../../images/role01.png)
 
 - Create a group in the group list of `Global Management` -> `Access Control` -> `group`, add the user to the group, and authorize the group (the specific operation is: in the group list Find the group, click `...`, select `Authorization`, and give the group the pre-defined sub-module administrator rights of the system).
 
-    
+    ![group authorization](../../images/role02.png)
 
 - In the role list of `Global Management` -> `Access Control` -> `Roles`, find the corresponding submodule administrator role, click the role name to enter the details, click the `Associate Member` button, select the user or The group to which the user belongs, click `OK`.
 
-    
+    ![role authorization](../../images/role03.png)
 
 Submodules that support this mode: Access Control (IAM), Audit Log (Audit), Container Management (Kpanda)
 At the same time, the administrator role (Admin) of the platform can also be authorized through the above methods
-
-
 
 !!! note
 
@@ -56,48 +54,30 @@ Submodules that support this mode: [Container Management](../../../kpanda/intro/
 
 You can go to `Container Management` -> `Privilege Management`, select `Add Authorization` to grant Cluster or Namespace permissions to users/groups.
 
-
-
 !!! note
 
     In this manual, Cluster refers to cluster; NS is the abbreviation of Namespace, that is, namespace.
 
-## Resource-based management mode
+## Resource-Based Management Mode
 
-1. The resource-based management mode depends on the workspace. Through the centralized and unified access control strategy, the role authority of the user/group in the workspace is applied to the resources under the workspace, and the cross-submodule authorization user (group) is realized. ) for resource access.
-    For example, user A has the role of Workspace Editor in workspace 01, then user A has Editor permission for all resources under workspace 01.
-    Workspaces are often used to refer to a project or environment, and the resources in each workspace are physically isolated from those in other workspaces.
-    You can grant users (groups) different access rights to the same set of resources through "Authorization" in the workspace.
-    At the same time, the workspace contains multiple types of resources in different modules, and different types of resources have different presentation methods in the workspace.
+1. The resource-based management mode depends on the workspace and applies the role permissions of users/user groups in the workspace to the resources under the workspace through a centralized and unified access control policy, achieving cross-submodule authorization for users (user groups) to access resources. For example, if user A is a Workspace Editor role in Workspace 01, they have Editor permissions for all resources under Workspace 01. A workspace usually refers to a project or environment, and the resources in each workspace are physically isolated from those in other workspaces. You can grant different access permissions to users (user groups) for the same group of resources through "Authorization" in the workspace. At the same time, the workspace contains various types of resources in different modules, and different types of resources are presented differently in the workspace.
 
-    - Module Name: [Workbench](../../../amamba/intro/what.md), [Microservice Engine](../../../skoala/intro/what.md ), [middleware](../../../middleware/what.md)
+    - Module Name: [Application Workspace](../../../amamba/intro/what.md), [Microservice Engine](../../../skoala/intro/what.md)
 
-        Because these modules do not support the authorization methods of the global management mode and the sub-module management mode, they only rely on the workspace to obtain authorization.
-        Therefore, all resources are created under the workspace, and the resources are automatically bound to the workspace after creation to ensure that these resources can be authorized for use after creation.
-        After these resources are created, they will not be automatically displayed in the resource group or shared resources in the workspace, but can only be displayed in the resource list of each module.
-        (Any role with Workspace can enter the above modules)
+        Because these modules do not support the authorization modes of global management mode and submodule management mode, they rely solely on the workspace for authorization. Therefore, all resources are created under the workspace. After creation, the resources are automatically bound to the workspace to ensure that they can be authorized and used after creation. After these resources are created, they will not be automatically displayed in the resource group or shared resources of the workspace and can only be presented in the resource list of each module. (Any role with a Workspace role can enter the above modules)
 
     - [Container Management](../../../kpanda/intro/what.md)
 
-        Container management supports three authorization modes: global management mode, sub-module management mode and resource-based management.
-        Therefore, in the container management module, you can choose to grant the user/group the Kpanda Owner role through the access control module, or grant the user/group the corresponding permission for a resource through the permission management feature of the container management module itself, or by assigning the resource ( Cluster or Namespace) is bound to the workspace to inherit the role permissions of the user/group in the workspace.
-        Since there are two states of bound and unbound workspace for resources in container management, in order to distinguish the two different states, the resources bound to the workspace will be presented in the workspace-resource group, and the workspace - Both the resource group and the resource list managed by the container provide the resource binding/unbinding entry.
-        (Admin role or Workspace admin + Kpanda Owner role can perform resource binding)
+        Container Management supports three authorization modes: global management mode, submodule management mode, and resource-based management mode. Therefore, in the Container Management module, you can choose to grant users/user groups the Kpanda Owner role through the User and Access Control module, or grant users/user groups the corresponding permissions for a resource through the permission management function of the Container Management module, or inherit the role permissions of users/user groups in the workspace by binding resources (clusters or Namespaces) to the workspace. Because there are two states of bound and unbound workspaces for resources in Container Management, to distinguish between the two different states, resources bound to the workspace will be presented in the workspace-resource group, and both the workspace-resource group and the resource list of Container Management provide binding/unbinding entry points for resources. (Admin role or Workspace Admin + Kpanda Owner role can perform resource binding)
 
     - [Service Mesh](../../../mspider/intro/what.md)
 
-        Due to the particularity of its own resources, the service mesh also has two states: bound and unbound.
-        Therefore, you can manage the resources in the service mesh through the Admin role, or bind the resources (Mesh or Mesh-Namespace) to the workspace, so that users/groups can obtain the permissions of the resources in the service mesh through the workspace, and are bound The specified resources will be displayed in the resource group of the workspace.
-        Currently only the service mesh module provides a resource binding entry. (Admin role can perform resource binding)
+        Due to the special nature of its own resources, Service Mesh also has two states of bound and unbound. Therefore, you can manage the resources in Service Mesh through the Admin role, or bind resources (Mesh or Mesh-Namespace) to the workspace to enable users/user groups to obtain permissions for resources in Service Mesh through the workspace. The bound resources will be displayed in the resource group of the workspace. Currently, only the Service Mesh module provides a resource binding entry point. (Admin role can perform resource binding)
 
-2. Sub-modules that support this mode: Workbench, microservice engine, middleware, container management, and service mesh.
+2. Submodules that support this mode: Application Workspace, Microservice Engine, Middleware, Container Management, Service Mesh.
 
-3. You can create a workspace through `Global Management` -> `Workspace and Hierarchy`, and grant users/groups Workspace Admin, Workspace Editor, and Workspace Viewer roles in `Workspace-Authorization`.
-
-    
+3. You can create a workspace through `Global Management` -> `Workspace and Folders`, and grant users/user groups Workspace Admin, Workspace Editor, Workspace Viewer roles in `Workspace` -> `Authorization`.
 
 !!! note
 
-    Resource (Resource) generally refers to the resources created by each sub-module on the DCE platform, which is the specific data to complete the authorization. Usually a resource describes one or more operation objects, and each sub-module has its own resource and corresponding resource definition details.
-    Such as cluster, Namespace, gateway, etc. The owner of the resource is the main account Admin. Admin has the authority to create/manage/delete resources in each sub-module. Ordinary users will not automatically have access to resources without authorization, and need to be authorized by the resource owner.
-    Usually, the resource owner adds a group of resources to a certain workspace, and then authorizes users (groups) through the workspace, so that the user/group can obtain the operation authority of certain resources.
+    Resource refers to the specific data created on the DCE platform through various submodules. Typically, a resource describes one or more objects to be operated on, and each submodule has its own resources and corresponding resource definition details, such as clusters, Namespaces, and gateways. The owner of the resource is the Super Admin account, which has the permission to create/manage/delete resources in each submodule. Ordinary users will not automatically have access permissions to resources without authorization by the resource owner. Usually, the resource owner will add a group of resources to a workspace and then authorize users (user groups) through the workspace to grant them operating permissions for certain resources.
