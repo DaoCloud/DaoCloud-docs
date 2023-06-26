@@ -34,17 +34,17 @@ Not less than 1GB.
 
 1. Currently supports Nvidia Tesla series P4, P40, T4 and other GPU models.
 
-   Machines with GPU hardware can be used as edge nodes without GPUs.
+    Machines with GPU hardware can be used as edge nodes without GPUs.
 
-   If the edge node uses a GPU, you need to install the GPU driver and Nvidia Docker adaptation (nvidia-docker2) before registration.
+    If the edge node uses a GPU, you need to install the GPU driver and Nvidia Docker adaptation (nvidia-docker2) before registration.
 
-   You need to set the default runtime of the container engine to nvidia.
+    You need to set the default runtime of the container engine to nvidia.
 
     ```sh
     /etc/docker/daemon.json
     ```
 
-   ```json
+    ```json
     {
       "default-runtime": "nvidia",
       "runtimes": {

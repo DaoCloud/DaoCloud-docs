@@ -38,6 +38,10 @@ kangaroo:
   - "docs/en/docs/kangaroo/**/*"
   - "docs/zh/docs/kangaroo/**/*"
 
+kant:
+  - "docs/en/docs/kant/**/*"
+  - "docs/zh/docs/kant/**/*"
+
 kpanda:
   - "docs/en/docs/kpanda/**/*"
   - "docs/zh/docs/kpanda/**/*"
