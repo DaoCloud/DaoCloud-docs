@@ -162,6 +162,7 @@ nav:
               - 创建和删除文件夹: ghippo/user-guide/workspace/folders.md
               - 文件夹权限: ghippo/user-guide/workspace/folder-permission.md
               - 资源配额: ghippo/user-guide/workspace/quota.md
+              - 资源组与共享资源的区别: ghippo/user-guide/workspace/res-gp-and-shared-res.md
           - 审计日志:
               - 开启和关闭采集k8s审计日志: ghippo/user-guide/audit/open-audit.md
               - 开启和关闭k8s审计日志: ghippo/user-guide/audit/open-k8s-audit.md
