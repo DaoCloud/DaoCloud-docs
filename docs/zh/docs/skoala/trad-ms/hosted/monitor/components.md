@@ -2,7 +2,7 @@
 
 !!! note
 
-    集群中需要[安装 insight-agent 组件](../../../../insight/user-guide/quickstart/install-agent.md)后才能使用监控功能。
+    集群中需要[安装 insight-agent 组件](../../../../insight/quickstart/install/install-agent.md)后才能使用监控功能。
 
 
 微服务引擎通过内置 Grafana 提供全方位的监控功能，覆盖各个微服务、系统组件、以及服务调用链路等监控对象。其中，组件监控功能可以提供对 Nacos 和 Sentinel 的监控信息，包括节点数、服务数、CPU/内存用量、JVM 线程数、http 请求总耗时等多个维度的信息。

@@ -1,6 +1,6 @@
 # 日志采集排障指南
 
-在集群中[安装 insight-agent](../user-guide/quickstart/install-agent.md) 后，`insight-agent` 中的 `Fluent Bit` 会默认采集集群中的日志，包括 Kubernetes 事件日志、节点日志、容器日志等。
+在集群中[安装 insight-agent](../quickstart/install/install-agent.md) 后，`insight-agent` 中的 `Fluent Bit` 会默认采集集群中的日志，包括 Kubernetes 事件日志、节点日志、容器日志等。
 `Fluent Bit` 已配置好各种日志采集插件、相关的过滤器插件及日志输出插件。
 这些插件的工作状态决定了日志采集是否正常。
 下面是一个针对 `Fluent Bit` 的仪表盘，它用来监控各个集群中 `Fluent Bit` 的工作情况和插件的采集、处理、导出日志的情况。

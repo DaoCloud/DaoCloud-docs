@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-请确保 Insight Agent 已经就绪。如若没有，请参考[安装 insight-agent 采集数据](../install-agent.md)并确保以下三项就绪：
+请确保 Insight Agent 已经就绪。如若没有，请参考[安装 insight-agent 采集数据](../install/install-agent.md)并确保以下三项就绪：
 
 - 为 Insight-agent 开启 trace 功能
 - trace 数据的地址以及端口是否填写正确
@@ -421,4 +421,4 @@ spec:
 
 ## 链路查询
 
-如何查询已经接入的服务，参考[链路查询](../../data-query/trace.md)。
+如何查询已经接入的服务，参考[链路查询](../../user-guide/data-query/trace.md)。

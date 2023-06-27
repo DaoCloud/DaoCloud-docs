@@ -50,7 +50,7 @@
 
 左侧蓝色框内的 chart 即 `skoala` 组件，需要安装在控制面集群，即 DCE 5.0 的全局集群 `kpanda-global-clsuter`，详情可参考 DCE 5.0 的[部署架构](../../install/commercial/deploy-arch.md)。安装 `skoala` 组件之后即可以在 DCE 5.0 的一级导航栏中看到微服务引擎模块。另外需要注意：安装 `skoala` 之前需要安装好其依赖的 `common-mysql` 组件用于存储资源。
 
-右侧蓝色框内的 chart 即 `skoala-init` 组件，需要安装在工作集群。安装 `skoala-init` 组件之后即可以使用微服务引擎的各项功能，例如创建注册中心、网关实例等。另外需要注意，`skoala-init` 组件依赖  DCE 5.0 可观测模块的 `insight-agent` 组件提供指标监控和链路追踪等功能。如您需要使用该项功能，则需要事先安装好 `insight-agent` 组件，具体步骤可参考[安装组件 insight-agent](../../insight/user-guide/quickstart/install-agent.md)。
+右侧蓝色框内的 chart 即 `skoala-init` 组件，需要安装在工作集群。安装 `skoala-init` 组件之后即可以使用微服务引擎的各项功能，例如创建注册中心、网关实例等。另外需要注意，`skoala-init` 组件依赖  DCE 5.0 可观测模块的 `insight-agent` 组件提供指标监控和链路追踪等功能。如您需要使用该项功能，则需要事先安装好 `insight-agent` 组件，具体步骤可参考[安装组件 insight-agent](../../insight/quickstart/install/install-agent.md)。
 
 ### 检测微服务引擎是否已安装
 
@@ -88,7 +88,7 @@ mcamel-common-mysql-cluster-mysql             2/2     7d23h
 
 ### 检测依赖的监控组件
 
-微服务引擎依赖 [DCE 5.0 可观测性](../../insight/intro/what.md)模块的能力。如您需要监控微服务的各项指标、追踪链路，则需要在集群中安装对应的 `insight-agent`，具体说明可参考[](../../insight/user-guide/quickstart/install-agent.md)。
+微服务引擎依赖 [DCE 5.0 可观测性](../../insight/intro/what.md)模块的能力。如您需要监控微服务的各项指标、追踪链路，则需要在集群中安装对应的 `insight-agent`，具体说明可参考[](../../insight/quickstart/install/install-agent.md)。
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/cluster-list.png)
 

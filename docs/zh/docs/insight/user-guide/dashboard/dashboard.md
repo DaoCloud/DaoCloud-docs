@@ -27,4 +27,4 @@ Grafana 是一跨平台的开源的可视化分析工具。可观测性 Insight 
 
     访问原生 Grafana 请参考：[以管理员身份登录 Grafana](../../user-guide/dashboard/login-grafana.md)
     
-    导入自定义仪表盘请参考：[导入自定义仪表盘](../../faq/import-dashboard.md)
+    导入自定义仪表盘请参考：[导入自定义仪表盘](./import-dashboard.md)

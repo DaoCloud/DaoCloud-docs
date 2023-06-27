@@ -1,7 +1,7 @@
 # vmstorge 磁盘扩容
 
 本文描述了 vmstorge 磁盘扩容的方法，
-vmstorge 磁盘规范请参考 [vmstorage 磁盘容量规划](./vms-res-plan.md)。
+vmstorge 磁盘规范请参考 [vmstorage 磁盘容量规划](../res-plan/vms-res-plan.md)。
 
 ## 操作步骤
 
