@@ -451,7 +451,6 @@ nav:
               - Microservice: reference/basic-knowledge/microservice.md
               - Registry: reference/basic-knowledge/registry.md
               - Cloud Native Gateway: reference/basic-knowledge/gateway.md
-
       - Service Mesh:
           - Intro:
               - What is service mesh: mspider/intro/what.md
@@ -459,6 +458,7 @@ nav:
               - Use Cases: mspider/intro/scenarios.md
               - Features supported on UI: mspider/intro/meshes.md
               - Permissions: ghippo/permissions/mspider.md
+              - Spec for App Integration: mspider/intro/app-spec.md
               - Architecture: mspider/intro/architect.md
               - Control Plane Components: mspider/intro/cp-component.md
               - FAQs: mspider/intro/faq.md
