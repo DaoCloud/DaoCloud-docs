@@ -1,8 +1,8 @@
 # 流水线模板文件
 
-流水线模版文件主要包含两部分：`parameterDefinitions` 和 `jenkinsfileTemplate`。
+流水线模板文件主要包含两部分：`parameterDefinitions` 和 `jenkinsfileTemplate`。
 
-- `parameterDefinitions` 区域：定义流水线模版暴露哪些参数。支持布尔值、下拉列表、凭证、密码、文本等多种参数类型。
+- `parameterDefinitions` 区域：定义流水线模板暴露哪些参数。支持布尔值、下拉列表、凭证、密码、文本等多种参数类型。
 - `jenkinsfileTemplate` 区域：定义 Jenkins 流水线的 `jenkinsfile`，可以引用 `parameterDefinitions` 中暴露的参数。
 
 ## `parameterDefinitions` 区域
@@ -31,7 +31,7 @@
 - password：密码
 - text：文本，输入框
 
-## 模版文件示例
+## 模板文件示例
 
 ```yaml
 parameterDefinitions:

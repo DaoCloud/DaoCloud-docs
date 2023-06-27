@@ -18,7 +18,7 @@ hide:
 
      ![安装](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insight-agent01.png)
 
-2. 选择左侧导航栏 `Helm 应用 -> Helm 模版`，在搜索框查询 `insight-agent` ，点击该卡片进入详情。
+2. 选择左侧导航栏 `Helm 应用 -> Helm 模板`，在搜索框查询 `insight-agent` ，点击该卡片进入详情。
 
      ![安装](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insight-agent02.png)
 
