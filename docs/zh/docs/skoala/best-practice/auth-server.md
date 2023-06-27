@@ -10,7 +10,7 @@
 ## 配置认证服务器
 ### 使用默认的认证服务器
 
-1. 将认证服务器的代码模版克隆到本地。
+1. 将认证服务器的代码模板克隆到本地。
 
     ```
     git clone https://github.com/projectsesame/envoy-authz-java
@@ -23,11 +23,11 @@
     - release.daocloud.io/skoala/demo/envoy-authz-java:0.1.0
     - release-ci.daocloud.io/skoala/demo/envoy-authz-java:0.1.0
 
-3. 模版为简单的路径判断，当访问路径为 `/` 时通过认证，其余路径为拒绝访问。
+3. 模板为简单的路径判断，当访问路径为 `/` 时通过认证，其余路径为拒绝访问。
 
 ### 使用自定义的认证服务器
 
-1. 将认证服务器的代码模版克隆到本地。
+1. 将认证服务器的代码模板克隆到本地。
 
     ```
     git clone https://github.com/projectsesame/envoy-authz-java
@@ -48,7 +48,7 @@
 3. 成功编译之后，在 check 方法中编写自定义的认证逻辑。
 
     - check 方法在 envoy-authz-java/authz-grpc-server/src/main/java/envoy/projectsesame/io/authzgrpcserver/AuthzService.java  
-    - 模版为简单的路径判断，当访问路径为 `/` 时通过认证，其余路径为拒绝访问。
+    - 模板为简单的路径判断，当访问路径为 `/` 时通过认证，其余路径为拒绝访问。
 
 4. 代码编写完成之后，使用 Docker 打包镜像。
 

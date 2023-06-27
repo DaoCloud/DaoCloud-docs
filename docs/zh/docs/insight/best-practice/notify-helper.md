@@ -1,10 +1,10 @@
-# 配置通知模版
+# 配置通知模板
 
 ## 模板语法（Go Template）说明
 
 告警通知模板采用了 [Go Template](https://pkg.go.dev/text/template) 语法来渲染模板。
 
-模版会基于下面的数据进行渲染。
+模板会基于下面的数据进行渲染。
 
 ```json
 {

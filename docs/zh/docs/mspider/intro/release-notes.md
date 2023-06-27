@@ -9,7 +9,7 @@
 #### 升级
 
 - **新增** Ckube 按需加载资源。
-- **新增** IstioResource 字段：`labels` 与 `annotations`，能够更新 Labels 与 Annotations。
+- **新增** IstioResource 字段：`labels` 与 `annotations`，能够更新 Label 与 Annotation。
 - **新增** MeshCluster 中 ClusterProvider 同步实现.
 - **新增** `mspider.io/protected` Label 定义，用于网格保护能力。
 - **新增** 边车升级支持多工作负载能力，`SidecarUpgrader` 中 `workloads` 同时支持 `workloadshadow.name` 和 `deployment.name`。
@@ -17,27 +17,13 @@
 - **新增** 工作负载相关接口新增字段 `localized_name`，展示工作负载名称。
 - **新增** 工作负载注入策略清除能力
 - **新增** 获取全局配置接口 `/apis/mspider.io/v3alpha1/settings/global-configs`。
-- **新增** 了 `clusterPhase` 字段，用于标记集群的状态（以前在 phase 字段中标记，现在剥离开）。
-- **新增** 了 `clusterProvider` 字段，用于标记集群提供商。
+- **新增** `clusterPhase` 字段，用于标记集群的状态（以前在 phase 字段中标记，现在剥离开）。
+- **新增** `clusterProvider` 字段，用于标记集群提供商。
 - **新增** 流量泳道 CRD 能力实现。
 - **新增** 默认启用 Reg-Proxy 组件。
 - **新增** 实现 Service 的 selector 字段输出。
 - **新增** 通过给 Namespace 加 Network label 解决未注入 Sidecar 跨集群访问问题。
 - **新增** 托管网格 hosted-apiserver 自定义参数配置能力。(该参数只有安装时生效，暂时不支持更新)，(更多参数请参考 helm 参数配置)：
-
-    ```json
-      "hosted-apiserver.global.storageClass":                 "default",
-      "hosted-apiserver.etcd.data_size":                      "10Gi",
-      "hosted-apiserver.etcd.resources.requests.cpu":         "100m",
-      "hosted-apiserver.etcd.resources.limits.cpu":           "500m",
-      "hosted-apiserver.etcd.resources.requests.memory":      "100Mi",
-      "hosted-apiserver.etcd.resources.limits.memory":        "1000Mi",
-      "hosted-apiserver.apiserver.resources.requests.cpu":    "100m",
-      "hosted-apiserver.apiserver.resources.limits.cpu":      "1000m",
-      "hosted-apiserver.apiserver.resources.requests.memory": "100Mi",
-      "hosted-apiserver.apiserver.resources.limits.memory":   "1000Mi",
-    ```
-
 - **新增** 网格控制面组件状态
 - **新增** 网格网格查询接口新增 `loadBalancerStatus` 字段，用于描述实际分配的 LB 地址。
 - **新增** 网格组件进度详情接口 `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/components-progress`。
@@ -49,7 +35,6 @@
 - **优化** 托管网格情况下，对于集群 k8s 版本检测：除包含工作集群外，也包含对控制面集群的版本检测。
 - **升级** 升级 Cloudtty 到 `0.5.3` 版本。
 - **升级** WorkloadShadow controller watcher 创建逻辑。
-- 
 
 #### 修复
 
@@ -74,7 +59,7 @@
 - **修复** 没有边车时，网格无法移除集群的情况。
 - **修复** 网格名称正则表达式，不允许数字开头。
 - **修复** 网格状态显示不正确，没有边车时有时仍然显示状态为正常。
-- **修复** 修复网格网格的自动注入的模版不生效问题。
+- **修复** 修复网格网格的自动注入的模板不生效问题。
 - **修复** 由于集群缺少默认值，导致非 Admin 用户无法获取流量拓扑。
 - **修复** 自动注入服务策略空指针异常。
 
@@ -117,7 +102,7 @@
 - **优化** 减少 pod 变更不断更新 WorkloadShadow
 - **修复** relok8s 中 wasm 插件镜像地址拼写错误的问题。
 - **修复** TrafficLane 默认 repository 错误。
-- **优化** Helm 镜像渲染模版。镜像结构拆分为三个部分：registry/repository:tag
+- **优化** Helm 镜像渲染模板。镜像结构拆分为三个部分：registry/repository:tag
 
 #### 移除
 
