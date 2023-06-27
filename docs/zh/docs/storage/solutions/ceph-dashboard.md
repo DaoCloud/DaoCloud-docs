@@ -16,7 +16,7 @@
 
 ## 在工作集群中部署 Insight Agent
 
-采集 rook-ceph-cluster 的监控指标需要先[安装 Insight Agent](../../insight/user-guide/quickstart/install-agent.md)，
+采集 rook-ceph-cluster 的监控指标需要先[安装 Insight Agent](../../insight/quickstart/install/install-agent.md)，
 然后创建 CR ServiceMonitor 来采集 rook-ceph-cluster 的监控信息。
 
 1. rook-ceph-cluster 的监控指标通过 9283 端口暴露。
@@ -49,7 +49,7 @@
 
 参考 [Dashboard 模板](https://grafana.com/grafana/dashboards/2842-ceph-cluster/)部署 GrafanaDashboard。
 
-导入模板时请参阅 [Insight 导入仪表盘](../../insight/faq/import-dashboard.md)。
+导入模板时请参阅 [Insight 导入仪表盘](../../insight/best-practice/import-dashboard.md)。
 
 ```yaml
 apiVersion: integreatly.org/v1alpha1

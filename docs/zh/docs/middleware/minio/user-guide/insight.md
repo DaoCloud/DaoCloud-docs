@@ -17,7 +17,7 @@ MinIO 内置了 Prometheus 和 Grafana 监控模块。
 
     !!! note
 
-        如果提示监控组件异常，请按提示[安装 insight-agent 插件](../../../insight/user-guide/quickstart/install-agent.md)。
+        如果提示监控组件异常，请按提示[安装 insight-agent 插件](../../../insight/quickstart/install/install-agent.md)。
 
 3. 查看实例的监控信息。点击红框里的信息符号可查看每个指标的含义说明。
 

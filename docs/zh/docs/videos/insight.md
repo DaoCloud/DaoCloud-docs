@@ -18,7 +18,7 @@
 
 ## 安装 insight-agent
 
-参阅[安装 insight-agent](../insight/user-guide/quickstart/install-agent.md)文档页面。
+参阅[安装 insight-agent](../insight/quickstart/install/install-agent.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/insight-agent.mp4" preload="metadata" poster="../images/insight-agent.png"></video>
@@ -42,7 +42,7 @@
 
 ## 场景监控和链路追踪
 
-参阅文档页面：[安装 Insight Agent](../insight/user-guide/quickstart/install-agent.md)、[通过 Operator 实现应用无侵入增强](../insight/user-guide/quickstart/otel/operator.md)、[链路追踪](../insight/user-guide/data-query/trace.md)
+参阅文档页面：[安装 Insight Agent](../insight/quickstart/install/install-agent.md)、[通过 Operator 实现应用无侵入增强](../insight/quickstart/otel/operator.md)、[链路追踪](../insight/user-guide/data-query/trace.md)
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/trace.mp4" preload="metadata" poster="../images/insight-trace.png"></video>

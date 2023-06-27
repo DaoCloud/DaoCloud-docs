@@ -117,7 +117,7 @@
 
 - 可观测性：当 **insight agent** 从 v0.16.x（或更低版本）升级到 v0.17.x 时，
   由于 kube-prometheus-stack chart 版本从 41.9.1 升级至 45.28.1，其中使用的 CRD 存在部分字段的升级，
-  需要手动进行更新，请参考 [Insight 升级注意事项](../insight/user-guide/quickstart/upgrade-note.md)。
+  需要手动进行更新，请参考 [Insight 升级注意事项](../insight/quickstart/install/upgrade-note.md)。
 
 - 微服务引擎：数据库初始化组件 sweet 已于 0.22.0 版废弃，将在 0.23.0 及之后版本彻底移除，
   从 0.22.0 版开始数据表将自动同步更新，无需人工干预。
