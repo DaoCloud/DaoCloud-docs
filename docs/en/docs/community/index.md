@@ -54,7 +54,7 @@
 
     [:octicons-arrow-right-24: Learn more](./ferry.md)
 
--   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: Listed in CNCF Landscape
+-   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: Listed in CNCF Sandbox and Landscape
 
     ---
 

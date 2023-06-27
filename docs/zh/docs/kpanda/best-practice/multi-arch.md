@@ -116,7 +116,7 @@ tar -xvf offline-v0.8.0-arm64.tar
                 children:
                     kube_control_plane: 
                     kube_node: 
-```
+    ```
 
 === "新增节点后"
 
@@ -160,7 +160,7 @@ tar -xvf offline-v0.8.0-arm64.tar
                 children:
                     kube_control_plane: 
                     kube_node: 
-```
+    ```
 
 按照上述的配置注释，添加新增的工作节点信息
 

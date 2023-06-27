@@ -7,6 +7,10 @@ hide:
 
 Hwameistor 是针对云原生有状态负载构建的高可用本地存储系统，隶属于 [CNCF 全景图 -> 云原生存储 -> 运行时](https://landscape.cncf.io/?selected=hwamei-stor)。
 
+<img src="https://github.com/cncf/artwork/blob/master/other/illustrations/ashley-mcnamara/transparent/cncf-cloud-gophers-transparent.png" style="width:600px;" />
+
+**HwameiStor 是一个 [CNCF](https://cncf.io/) Sandbox 项目。**
+
 HwameiStor 是一款 Kubernetes 原生的容器附加存储 (CAS) 解决方案，将 HDD、SSD 和 NVMe 磁盘形成本地存储资源池进行统一管理，使用 CSI 架构提供分布式的本地数据卷服务，为有状态的云原生应用或组件提供数据持久化能力。
 
 ![系统架构](https://docs.daocloud.io/daocloud-docs-images/docs/community/images/hwa.png)
@@ -22,3 +26,9 @@ HwameiStor 有 5 个组件：
 [了解 HwameiStor 社区](https://github.com/hwameistor/hwameistor){ .md-button }
 
 [查阅 HwameiStor 官网](https://hwameistor.io/){ .md-button }
+
+<p align="center">
+<img src="https://landscape.cncf.io/images/left-logo.svg" width="300"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="350"/>
+<br/><br/>
+HwameiStor 位列 <a href="https://landscape.cncf.io/?selected=hwamei-stor">CNCF 云原生全景图。</a>
+</p>
