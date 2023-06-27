@@ -26,7 +26,7 @@
 
 ![外部访问](../../images/network-cross-cluster3.png)
 
-## 二. 修改集群配置
+## 修改集群配置
 
 1.通过 `vi`命令开始编辑集群一的 `kubeconfig` 文件:
 
@@ -100,7 +100,7 @@ users:
 - 在 contexts 下面添加集群一和集群二；
 - 在 users 下面也要添加两个集群，注意：集群一需要复制集群一中 kubeconfig 的证书信息。
 
-## 三.配置集群连通性
+## 配置集群连通性
 
 执行如下命令验证集群的连通性：
 
@@ -124,7 +124,7 @@ cilium clustermesh connect --context cluster01 --destination-context cluster02
 
 4.集群一出现 `connected cluster1 and cluster2!` ，集群二出现 `ClusterMesh enabled!`说明两个集群通了。
 
-## 四.创建演示应用
+## 创建演示应用
 
 1.使用 cilium 官方文档中提供的 [rebel-base](https://github.com/cilium/cilium/blob/main/examples/kubernetes/clustermesh/global-service-example/cluster1.yaml) 应用，复制如下 yaml 文件：
 
@@ -229,7 +229,7 @@ spec:
 
 ![集群二service](../../images/network-cross-cluster6.png)
 
-五.跨集群通信
+跨集群通信
 
 1.先查看集群二中应用的 Pod IP。
 
