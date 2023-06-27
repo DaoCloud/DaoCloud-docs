@@ -59,11 +59,11 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./ferry.md)
 
--   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: 已入选 CNCF Landscape
+-   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: 已入选 CNCF Sandbox 和 Landscape
 
     ---
 
-    高可用的本地存储方案，更快、更强、更可靠，已入选 CNCF 全景图
+    高可用的本地存储方案，更快、更强、更可靠，已入选 CNCF 全景图和沙箱孵化
 
     [:octicons-arrow-right-24: 了解更多](./hwameistor.md)
 
