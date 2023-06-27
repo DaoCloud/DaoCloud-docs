@@ -12,7 +12,7 @@ hide:
 ## 前提条件
 
 - 准备一个待接入的集群，确保容器管理集群和待接入集群之间网络通畅，并且集群的 Kubernetes 版本 1.22+。
-- 当前操作用户应具有 [`NS Edit`](../permissions/permission-brief.md) 或更高权限。
+- 当前操作用户应具有 [`kpanda owner`](../permissions/permission-brief.md) 或更高权限。
 
 ## 操作步骤
 
