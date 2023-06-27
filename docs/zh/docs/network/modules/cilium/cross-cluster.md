@@ -6,13 +6,14 @@
 
 ## 创建集群
 
-1.创建两个名称不同的集群，集群一的网络插件选择cilium，添加两个参数 `cluster-id` 和 `cluster-name`，便于标识集群确保唯一性，避免跨集群通信时出现冲突，其他均使用默认配置项。
+1.创建两个名称不同的集群，集群一的网络插件选择 cilium，添加两个参数 `cluster-id` 和 `cluster-name`，便于标识集群确保唯一性，避免跨集群通信时出现冲突，其他均使用默认配置项。
 
 2.以同样的步骤创建集群二。
 注意：两个集群使用的容器网段和服务网段一定不能冲突，两个参数的值不能冲突。
 
 ![创建集群](../../images/network-cross-cluster1.png)
-4.集群创建成功后，在两个集群上分别创建一个 Service，对外暴露该集群的API server。
+
+3.集群创建成功后，在两个集群上分别创建一个 Service，对外暴露该集群的API server。
 
 - 选择 NodePort 访问类型便于外部访问
 - 命名空间必须选择 kube-system
@@ -22,7 +23,7 @@
 
 ![创建服务](../../images/network-cross-cluster2.png)
 
-5.再以同样方式在集群二为 API Server 创建 Service，且配置信息完全一致，最后可以从外部成功访问。
+4.再以同样方式在集群二为 API Server 创建 Service，且配置信息完全一致，最后可以从外部成功访问。
 
 ![外部访问](../../images/network-cross-cluster3.png)
 
@@ -36,8 +37,8 @@ vi $HOME/.kube/config
 
 2.添加两个集群的 API Server 访问地址：
 
-- CA 证书直接复制已有的证书内容；
-- name 改为集群一的名称；
+- CA 证书直接复制已有的证书内容
+- name 改为集群一的名称
 - server 地址改为：集群一 API Server 的 Service 地址，可以从 DCE5.0 的页面查看或复制。注意：需要使用 https 协议。
 - 添加集群二的 API Server 访问地址，name 改为集群二的名称，server 地址改为集群二 API Server 的 Service 地址。
 
@@ -54,7 +55,7 @@ vi $HOME/.kube/config
 
 3.在 context 中分别添加集群一和集群二：
 
-- 将 context 中的 name、user、cluster 三个字段的值均修改为集群一的名称；
+- 将 context 中的 name、user、cluster 三个字段的值均修改为集群一的名称。
 - 同样地，将 context 中的 name、user、cluster三个字段的值均修改为集群二的名称。
 - 如下为操作过程中的 yaml 示例：
 
@@ -78,7 +79,7 @@ current-context: kubernetes-admin@cluster.local
 4.在 users 下面分别添加集群一和集群二。
 
 - 集群一复制原有的证书信息，将 name 改为集群一的名称。
-- 接着添加集群二。注意：集群二需要复制集群二中 kubeconfig 的证书信息，将 name 值改为集群二的名称。
+- 接着添加集群二，注意：集群二需要复制集群二中 kubeconfig 的证书信息，将 name 值改为集群二的名称。
 - 如下为操作过程中的 yaml 示例：
 
 ```bash
@@ -96,8 +97,8 @@ users:
 
 5.进入集群二的控制节点，以同样的步骤修改 kubeconfig 文件：
 
-- 在 clusters 下面分别添加两个集群的 API Server 地址；
-- 在 contexts 下面添加集群一和集群二；
+- 在 clusters 下面分别添加两个集群的 API Server 地址。
+- 在 contexts 下面添加集群一和集群二。
 - 在 users 下面也要添加两个集群，注意：集群一需要复制集群一中 kubeconfig 的证书信息。
 
 ## 配置集群连通性
@@ -223,22 +224,22 @@ spec:
 
 3.以同样的方式在集群二中创建应用。
 
-（1）修改 ConfigMap，使得访问集群二中的服务时，返回的数据带有集群二名称的标签；
+（1）修改 ConfigMap，使得访问集群二中的服务时，返回的数据带有集群二名称的标签。
 
 （2）再创建对应的 Service，注意：集群二 Service 的名称必须与集群一中对应 Service 的名称完全一致、并位于相同的命名空间、拥有相同的端口名称和相同的 global 注解。
 
 ![集群二service](../../images/network-cross-cluster6.png)
 
-跨集群通信
+## 跨集群通信
 
 1.先查看集群二中应用的 Pod IP。
 
 ![集群二Pod IP](../../images/network-cross-cluster7.png)
 
-2.在集群一中进入应用 Pod 控制台，‘curl‘集群二应用的 Pod IP，成功返回了集群二的配置项内容，说明两个集群中的 Pod 可以相互通信。
+2.在集群一中进入应用 Pod 控制台，`curl`集群二应用的 Pod IP，成功返回集群二的配置项内容，说明两个集群中的 Pod 可以相互通信。
 
 ![Pod 互相通信](../../images/network-cross-cluster8.png)
 
-3.查看集群一的 Service 名称，进入集群二的应用 Pod 控制台，‘curl’ 对应的 Service 名称，有些返回内容来自集群一，说明两个集群中的Pod 和 Service 也可以互相通信。
+3.查看集群一的 Service 名称，进入集群二的应用 Pod 控制台，`curl`对应的 Service 名称，有些返回内容来自集群一，说明两个集群中的Pod 和 Service 也可以互相通信。
 
 ![Pod和Service通信 ](../../images/network-cross-cluster9.png)
