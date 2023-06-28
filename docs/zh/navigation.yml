@@ -113,13 +113,13 @@ nav:
           - 备份恢复:
               - ETCD 备份: kpanda/user-guide/backup/etcd-backup.md
               - 安装 velero 插件: kpanda/user-guide/backup/install-velero.md
-              - 备份无状态工作负载: kpanda/user-guide/backup/deployment.md          
+              - 备份无状态工作负载: kpanda/user-guide/backup/deployment.md
           - 权限管理:
               - 权限说明: kpanda/user-guide/permissions/permission-brief.md
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
           - 安全管理:
               - 安全扫描类型: kpanda/user-guide/security/intro.md
-              - 合规性扫描: 
+              - 合规性扫描:
                   - 扫描配置: kpanda/user-guide/security/cis/config.md
                   - 扫描策略: kpanda/user-guide/security/cis/policy.md
                   - 扫描报告: kpanda/user-guide/security/cis/report.md
@@ -429,7 +429,7 @@ nav:
                       - 查看微服务详情: skoala/trad-ms/hosted/servicelist/check-details.md
                       - 规则介绍: skoala/trad-ms/hosted/servicelist/governance-policy.md
                       - 流控规则: skoala/trad-ms/hosted/servicelist/flow-control.md
-                  - 配置管理: 
+                  - 配置管理:
                       - skoala/trad-ms/hosted/configcenter.md
                   - 监控:
                       - 微服务监控: skoala/trad-ms/hosted/monitor/microservices.md
@@ -559,6 +559,7 @@ nav:
               - 介绍: network/modules/cilium/what.md
               - 安装参数配置: network/modules/cilium/install.md
               - 未支持功能说明: network/modules/cilium/not-support.md
+              - 应用跨集群通信: network/modules/cilium/cross-cluster.md
           - Contour:
               - 介绍: network/modules/contour/what.md
               - 安装: network/modules/contour/install.md
@@ -655,17 +656,17 @@ nav:
               - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
               - Release Notes: middleware/minio/release-notes.md
           - MySQL 数据库:
-              - 介绍: 
+              - 介绍:
                   - 什么是 MySQL: middleware/mysql/intro/what.md
                   - 功能说明: middleware/mysql/intro/features.md
                   - 竞争优势: middleware/mysql/intro/benefits.md
                   - 基本概念: middleware/mysql/intro/concepts.md
-              - 快速入门: 
+              - 快速入门:
                   - 创建 MySQL: middleware/mysql/user-guide/create.md
                   - 更新 MySQL: middleware/mysql/user-guide/update.md
                   - 删除 MySQL: middleware/mysql/user-guide/delete.md
                   - 查看 MySQL 日志: middleware/mysql/user-guide/logs.md
-              - 故障排查: 
+              - 故障排查:
                   - MySQL 健康检查: middleware/mysql/faq/quick-check.md
                   - MySQL Pod: middleware/mysql/faq/faq-pod.md
                   - MySQL Operator: middleware/mysql/faq/faq-operator.md
