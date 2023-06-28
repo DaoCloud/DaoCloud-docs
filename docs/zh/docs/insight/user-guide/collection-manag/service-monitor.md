@@ -13,7 +13,7 @@
 
     ![集群列表](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/collectmanage02.png)
 
-2. 点击列表`集群名称`进入采集配置详情。
+2. 点击列表中的某个集群名称进入采集配置详情。
 
     ![集群列表](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/service-discover.png)
 

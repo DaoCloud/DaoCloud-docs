@@ -865,6 +865,7 @@ nav:
               - 下载全局管理: download/modules/ghippo.md
               - 下载 Insight: download/modules/insight.md
               - 下载网络 Spidernet: download/modules/spidernet.md
+              - 下载运营管理: download/modules/gmagpie.md
   - DaoCloud 开源生态:
       - 社区索引: community/index.md
       - cloudtty: community/cloudtty.md
