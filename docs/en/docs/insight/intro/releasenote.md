@@ -1,6 +1,52 @@
 # Insight Release Notes
 
-This page lists the Release Notes of Insight Observability, so that you can understand the evolution path and feature changes of each version.
+This page lists the Release Notes of Insight Observability, so that you can understand
+the evolution path and feature changes of each version.
+
+## 2023.06.01
+
+### v0.17.0
+
+!!! warning
+
+    In version v0.17.x, the kube-prometheus-stack chart version has been upgraded from 41.9.1 to 45.28.1.
+    There are also some field upgrades in the used CRDs, such as the `attachMetadata` field of servicemonitor.
+    Before upgrading Insight agent, please refer to:
+    [Upgrading from v0.16.x (or lower) to v0.17.x](../quickstart/install/upgrade-note.md#v016x-v017x).
+
+#### Added
+
+- **Added** support for viewing active alarm and history alarm details.
+- **Added** support for quickly creating silent rules through alarms.
+- **Added** support for SMS notifications in alarms.
+- **Added** support for sending test messages in email notifications.
+- **Added** support for customizing email subjects in message templates for email notifications.
+- **Added** variable explanations to message templates.
+- **Added** default high availability support for Insight Server component.
+
+#### Improvements
+
+- **Improved** display full TraceID in trace query.
+- **Improved** added prompt when service is empty in trace query.
+- **Improved** added no data prompt for JVM monitoring.
+- **Improved** alarm policy details do not show other parameters if not notified.
+- **Improved** added resource limits for OpenTelemetry Operator.
+- **Improved** upgraded Grafana version to v9.3.14.
+- **Improved** upgraded tailing sidecar version from v0.5.6 to v0.7.0.
+- **Improved** upgraded kube-prometheus-stack version to v45.28.1.
+- **Improved** upgraded prometheus version to v2.44.0.
+
+#### Bug Fixes
+
+- **Fixed** issue where service topology was effective when namespace was empty.
+- **Fixed** issue with invalid documentation link in service topology status description.
+- **Fixed** duplication of namespace and stateless workload in displayed namespace when creating alarm policies.
+- **Fixed** missing trigger value data in alarm list and alarm policy in alarms.
+- **Fixed** validation error in required fields for type, keyword, and value when adding silence conditions in alarm silencing.
+- **Fixed** time zone not being effective in alarm silencing time range.
+- **Fixed** issue where no alarm object was created for promQL rules for workload types.
+- **Fixed** issue where modifications to built-in alarm rules could not be saved.
+- **Fixed** issue with hardcoded time zone in components.
 
 ## 2023.04.28
 
@@ -8,7 +54,8 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 
 !!! warning
 
-     Insight v0.16.0 uses the new feature parameter `disableRouteContinueEnforce` of vmalertmanagers CRD, before upgrading insight server, please refer to: [Upgrade from v0.15.x (or earlier) to v0.16.x](../user-guide/quickstart/upgrade-note.md)
+     Insight v0.16.0 uses the new feature parameter `disableRouteContinueEnforce` of vmalertmanagers CRD,
+     before upgrading insight server, please refer to [Upgrade from v0.15.x (or earlier) to v0.16.x](../quickstart/upgrade-note.md)
 
 #### New
 
@@ -405,7 +452,7 @@ This page lists the Release Notes of Insight Observability, so that you can unde
 - Added documentation station glossary
 - Added 4 pages of basic concept tasks and examples, data model, query language, etc. of the document station
 - Added user guides - documents such as scene monitoring, data query, alert center, etc.
-- New additions to the document site: [Product Benefits](../intro/benefits.md), [Metric Query](../user-guide/data-query/metric.md), [trace query](../user-guide/data-query/trace.md), dashboard, [overview](../user-guide/overview.md)
+- New additions to the document site: [Product Benefits](../intro/benefits.md), [Metric Query](../user-guide/data-query/metric.md), [trace query](../user-guide/data-query/trace.md), dashboard, [overview](../user-guide/dashboard/overview.md)
 
 ## 2022-4-22
 

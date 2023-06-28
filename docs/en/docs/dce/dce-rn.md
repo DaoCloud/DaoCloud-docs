@@ -126,7 +126,7 @@ the table above. Here is a brief description of some new features and optimizati
 - Insight: When upgrading the **insight agent** from v0.16.x (or lower) to v0.17.x,
   since the kube-prometheus-stack chart version has been upgraded from 41.9.1 to 45.28.1,
   and some fields in the used CRD need to be upgraded manually,
-  please refer to [Insight upgrade notes](../insight/user-guide/quickstart/upgrade-note.md) for details.
+  please refer to [Insight upgrade notes](../insight/quickstart/upgrade-note.md) for details.
 
 - Microservice Engine: The database initialization component sweet has been deprecated
   since v0.22.0 and will be completely removed in version 0.23.0 and later.
