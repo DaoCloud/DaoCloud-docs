@@ -159,9 +159,9 @@ nav:
               - Resource Quota: ghippo/user-guide/workspace/quota.md
               - Difference between Resource Groups and Shared Resources: ghippo/user-guide/workspace/res-gp-and-shared-res.md
           - Audit Log:
-              - Enable/disable Capture: ghippo/user-guide/open-audit.md
-              - Enable/disable K8s Audit Log: ghippo/user-guide/open-k8s-audit.md
-              - Download and Export: ghippo/user-guide/audit-log.md
+              - Enable/disable Capture: ghippo/user-guide/audit/open-audit.md
+              - Enable/disable K8s Audit Log: ghippo/user-guide/audit/open-k8s-audit.md
+              - Download and Export: ghippo/user-guide/audit/audit-log.md
           - Operation Management:
               - ghippo/user-guide/report-billing/index.md
               - Reports: ghippo/user-guide/report-billing/report.md
@@ -202,34 +202,34 @@ nav:
               - Release Notes: insight/intro/releasenote.md
           - Quick Start:
               - Enable Observability:
-                  - insight/user-guide/quickstart/quickstart-catelogy.md
-                  - Online Install insight-agent: insight/user-guide/quickstart/install-agent.md
-                  - Offline Install insight-agent: insight/user-guide/quickstart/offline-install.md
-                  - Get URL to Upload Data: insight/user-guide/quickstart/gethosturl.md
-                  - Upgrade Precautions: insight/user-guide/quickstart/upgrade-note.md
-              - Install insight-agent on distributions:
-                  - Install insight-aent on DCE 4.0.x: insight/faq/install-agentindce.md
-                  - Install insight-agent on OpenShift 4.x: insight/faq/install-agent-on-ocp.md
+                  - insight/quickstart/install/quickstart-catelogy.md
+                  - Online Install insight-agent: insight/quickstart/install/install-agent.md
+                  - Offline Install insight-agent: insight/quickstart/install/offline-install.md
+                  - Get URL to Upload Data: insight/quickstart/install/gethosturl.md
+                  - Upgrade Notes: insight/quickstart/install/upgrade-note.md
+              - Install insight-agent on other distributions:
+                  - Install insight-agent on DCE 4.0.x: insight/quickstart/other/install-agentindce.md
+                  - Install insight-agent on OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
               - Enable Observability with OTel:
-                  - insight/user-guide/quickstart/otel/otel.md
-                  - Non-intrusive Enhancement with Operator: insight/user-guide/quickstart/otel/operator.md
-                  - Enhance GO Apps with OTel SDK: insight/user-guide/quickstart/otel/golang.md
-                  - Expose Metrics with OTel SDK: insight/user-guide/quickstart/otel/meter.md
-                  - Enhance Go Apps with OTel Auto-Instrumentation: insight/user-guide/quickstart/otel/golang-ebpf.md
+                  - insight/quickstart/otel/otel.md
+                  - Non-intrusive Enhancement with Operator: insight/quickstart/otel/operator.md
+                  - Enhance GO Apps with OTel SDK: insight/quickstart/otel/golang.md
+                  - Expose Metrics with OTel SDK: insight/quickstart/otel/meter.md
+                  - Enhance Go Apps with OTel Auto-Instrumentation: insight/quickstart/otel/golang-ebpf.md
               - Enable Observability for Java Apps:
-                  - insight/user-guide/quickstart/jvm-monitor/jvm-catelogy.md
-                  - Use JMX Exporter to Expose JVM Metrics: insight/user-guide/quickstart/jvm-monitor/jmx-exporter.md
-                  - Use OTel Java Agent to Expose JVM Metrics: insight/user-guide/quickstart/jvm-monitor/otel-java-agent.md
-                  - How Does a Java App with JVM Metrics Enable Observability: insight/user-guide/quickstart/jvm-monitor/legacy-jvm.md
+                  - insight/quickstart/jvm-monitor/jvm-catelogy.md
+                  - Use JMX Exporter to Expose JVM Metrics: insight/quickstart/jvm-monitor/jmx-exporter.md
+                  - Use OTel Java Agent to Expose JVM Metrics: insight/quickstart/jvm-monitor/otel-java-agent.md
+                  - How Does a Java App with JVM Metrics Enable Observability: insight/quickstart/jvm-monitor/legacy-jvm.md
               - Resource Planning:
-                  - Prometheus Resource Planning: insight/best-practice/prometheus-res.md
-                  - vmstorage Disk Planning: insight/best-practice/vms-res-plan.md
-                  - Adjust vmstorage Disk: insight/best-practice/modify-vms-disk.md
+                  - Prometheus Resource Planning: insight/quickstart/res-plan/prometheus-res.md
+                  - vmstorage Disk Planning: insight/quickstart/res-plan/vms-res-plan.md
+                  - Adjust vmstorage Disks: insight/quickstart/res-plan/modify-vms-disk.md
           - Dashboard:
-              - Overview: insight/user-guide/overview.md
+              - Overview: insight/user-guide/dashboard/overview.md
               - Dashboard: insight/user-guide/dashboard/dashboard.md
               - Log in to Grafana with Admin: insight/user-guide/dashboard/login-grafana.md
-              - Import Custom Dashboard: insight/faq/import-dashboard.md
+              - Import Custom Dashboard: insight/dashboard/import-dashboard.md
           - Cloud Insight:
               - Cluster Insight: insight/user-guide/scenario-insight/cluster.md
               - Node Insight: insight/user-guide/scenario-insight/node.md
@@ -245,13 +245,14 @@ nav:
               - insight/user-guide/alert-center/index.md
               - Alert Rules: insight/user-guide/alert-center/alert-policy.md
               - Notification Config: insight/user-guide/alert-center/message.md
+              - Configure Notification Server: insight/user-guide/alert-center/sms-provider.md
               - Message Template: insight/user-guide/alert-center/msg-template.md
               - Alert Silence: insight/user-guide/alert-center/silent.md
           - Data Collection:
               - Collection Management: insight/user-guide/collection-manag/collection-manag.md
               - Service Monitor: insight/user-guide/collection-manag/service-monitor.md
-              - Collection Metrics: insight/faq/service-monitor.md
-              - insight-agent Status: insight/user-guide/quickstart/agent-status.md
+              - Collection Metrics: insight/user-guide/collection-manag/metric-collect.md
+              - insight-agent Status: insight/user-guide/collection-manag/agent-status.md
           - System Config:
               - System Components: insight/user-guide/system-config/system-component.md
               - System Config: insight/user-guide/system-config/system-config.md
@@ -261,15 +262,15 @@ nav:
               - Alert Notification Flow: insight/faq/alertnotification.md
           - Best Practice:
               - Collect Container Log with Sidecar: insight/best-practice/tailing-sidecar.md
-              - Log Collection Troubleshooting: insight/faq/debug-log.md
-              - Trace Collection Troubleshooting: insight/faq/debug-trace.md
+              - Log Collection Troubleshooting: insight/best-practice/debug-log.md
+              - Trace Collection Troubleshooting: insight/best-practice/debug-trace.md
               - Configure Notification Template: insight/best-practice/notify-helper.md
               - Receive SkyWalking Trace Data with Zero Code using OTel: insight/best-practice/sw-to-otel.md
               - Use Insight to find service's problems: insight/best-practice/find_root_cause.md
           - Compatibility Test:
-              - K8s Compatibility Test: insight/user-guide/quickstart/k8s-compatibility.md
-              - Rancher Compatibility Test: insight/user-guide/quickstart/rancher-compatibility.md
-              - OCP Compatibility Test: insight/user-guide/quickstart/ocp-compatibility.md
+              - K8s Compatibility Test: insight/compati-test/k8s-compatibility.md
+              - Rancher Compatibility Test: insight/compati-test/rancher-compatibility.md
+              - OCP Compatibility Test: insight/compati-test/ocp-compatibility.md
       - Workbench:
           - Intro:
               - What is Workbench?: amamba/intro/what.md

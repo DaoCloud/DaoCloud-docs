@@ -53,7 +53,7 @@ tar -xvf os-pkgs-ubuntu1804-v0.6.6.tar.gz
 $ MINIO_USER=rootuser MINIO_PASS=rootpass123 ./import_ospkgs.sh  http://127.0.0.1:9000 os-pkgs-ubuntu1804-v0.6.6.tar.gz
 ```
 
-!!!note
+!!! note
 
     上述命令仅仅适用于火种节点内置的 Minio 服务，如果使用外部 Minio 请将“http://127.0.0.1:9000” 替换为外部 Minio 的访问地址。 “rootuser” 和 “rootpass123”是火种节点内置的 Minio 服务的默认账户和密码。“os-pkgs-ubuntu1804-v0.6.6.tar.gz“ 为所下载的 os package 离线包的名称。
 
@@ -64,7 +64,7 @@ $ MINIO_USER=rootuser MINIO_PASS=rootpass123 ./import_ospkgs.sh  http://127.0.0.
 ```bash
 $ MINIO_USER=rootuser MINIO_PASS=rootpass123 ./import_iso.sh http://127.0.0.1:9000 ubuntu-16.04.7-server-amd64.iso
 ```
-!!!note
+!!! note
 
     上述命令仅仅适用于火种节点内置的 Minio 服务，如果使用外部 Minio 请将“http://127.0.0.1:9000” 替换为外部 Minio 的访问地址。 “rootuser” 和 “rootpass123”是火种节点内置的 Minio 服务的默认账户和密码。“ubuntu-16.04.7-server-amd64.iso“ 为所下载的 ISO 离线包。
 
