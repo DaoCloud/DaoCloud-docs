@@ -63,8 +63,6 @@
     ```bash
     export VERSION=v0.8.0
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_amd64.tar.gz
-
-    tar -xvf 
     ```
 
     !!! note
