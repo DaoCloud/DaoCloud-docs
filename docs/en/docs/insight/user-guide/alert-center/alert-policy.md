@@ -14,29 +14,29 @@ You can see that some alert rules have been set under it. You can add more rules
 
 1. Select `Alert Center` -> `Alert Policies`, and click the `Create Alert Policy` button.
 
-   ![alert policy](../../images/alert-policy01.png)
+    ![alert policy](../../images/alert-policy01.png)
 
 2. Fill in the basic information, select one or more clusters, nodes, or workloads as the alert objects, and click `Next`.
 
-   ![basic information](../../images/alert-policy03.png)
+    ![basic information](../../images/alert-policy03.png)
 
 3. The list must have at least one rule. If the list is empty, please `Add Rule`.
 
-   ![add rule](../../images/alert-policy04.png)
+    ![add rule](../../images/alert-policy04.png)
 
-   Create an alert rule in the pop-up window, fill in the parameters, and click `OK`.
+    Create an alert rule in the pop-up window, fill in the parameters, and click `OK`.
 
-   ![create rule](../../images/alert-policy05.png)
+    ![create rule](../../images/alert-policy05.png)
 
-   - Template rules: Pre-defined basic metrics that can monitor CPU, memory, disk, network, etc.
-   - PromQL rules: Input a PromQL expression, please [query Prometheus expressions](https://prometheus.io/docs/prometheus/latest/querying/basics/).
-   - Duration: After the alert is triggered and the duration reaches the set value, the alert policy will become a triggered state.
-   - Alert level: Including emergency, warning, and information levels.
-   - Advanced settings: Custom tags and annotations.
+    - Template rules: Pre-defined basic metrics that can monitor CPU, memory, disk, network, etc.
+    - PromQL rules: Input a PromQL expression, please [query Prometheus expressions](https://prometheus.io/docs/prometheus/latest/querying/basics/).
+    - Duration: After the alert is triggered and the duration reaches the set value, the alert policy will become a triggered state.
+    - Alert level: Including emergency, warning, and information levels.
+    - Advanced settings: Custom tags and annotations.
 
 4. After clicking `Next`, configure notifications.
 
-   ![notification configuration](../../images/alert-policy06.png)
+    ![notification configuration](../../images/alert-policy06.png)
 
 5. After the configuration is complete, click the `OK` button to return to the Alert Policy list.
 
