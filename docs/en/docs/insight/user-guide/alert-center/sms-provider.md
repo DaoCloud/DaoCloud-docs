@@ -24,7 +24,7 @@ Insight supports SMS notifications and currently sends alert messages using inte
         - `Template CODE`: The SMS template is the specific content of the SMS to be sent.
         - `Parameter Template`: The SMS body template can contain variables. Users can use variables to customize the SMS content.
 
-        Please refer to: [Alibaba Cloud Variable Specification](https://help.aliyun.com/document_detail/463270.html).
+        Please refer to [Alibaba Cloud Variable Specification](https://help.aliyun.com/document_detail/463270.html).
 
         ![Notification Server](../../images/sms02.png)
 
