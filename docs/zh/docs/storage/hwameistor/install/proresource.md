@@ -19,7 +19,7 @@ hide:
         requests:
           cpu: 1m
           memory: 20Mi
-
+    
     admission:
       replicas: 3
       resources:
@@ -29,7 +29,7 @@ hide:
         requests:
           cpu: 1m
           memory: 20Mi
-
+    
     evictor:
       replicas: 2
       resources:
@@ -39,7 +39,7 @@ hide:
         requests:
           cpu: 1m
           memory: 20Mi
-
+    
     metrics:
       replicas: 2
       resources:
@@ -49,7 +49,7 @@ hide:
         requests:
           cpu: 1m
           memory: 20Mi
-
+    
     apiserver:
       replicas: 2
       resources:
@@ -59,7 +59,7 @@ hide:
         requests:
           cpu: 1m
           memory: 20Mi
-
+    
     localDiskManager:
       tolerationsOnMaster: false
       registrar:
@@ -78,7 +78,7 @@ hide:
           requests:
             cpu: 1m
             memory: 20Mi
-
+    
     localDiskManagerCSIController:
       replicas: 3
       priorityClassName: system-node-critical
@@ -98,7 +98,7 @@ hide:
           requests:
             cpu: 1m
             memory: 20Mi
-
+    
     localStorage:
       tolerationsOnMaster: false
       priorityClassName: system-node-critical
@@ -118,7 +118,7 @@ hide:
           requests:
             cpu: 1m
             memory: 20Mi
-
+    
     localStorageCSIController:
       replicas: 3
       priorityClassName: system-node-critical
@@ -148,7 +148,7 @@ hide:
             memory: 20Mi
     ```
 
-1. 如通过 Helm 创建时可通过如下方式创建：
+1. 如通过 Helm 创建时可通过如下方式修改资源：
 
     ```console
     helm install hwameistor ./hwameistor \

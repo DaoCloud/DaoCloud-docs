@@ -11,7 +11,22 @@ hide:
 
 - 已部署 CoreDNS
 
-- 高可用功能需要安装和当前运行的 Kernel 版本一致的 `kernel-devel`
+- 高可用功能需要安装和当前运行的 Kernel 版本一致的 `kernel-devel`，可通过命令检查：
+
+    ```console
+    uname -r
+    3.10.0-1160.el7.x86_64
+    yum list installed |grep kernel
+    kernel.x86_64                        3.10.0-1160.el7                @anaconda   
+    kernel-tools.x86_64                  3.10.0-1160.el7                @anaconda   
+    kernel-tools-libs.x86_64             3.10.0-1160.el7                @anaconda  
+    ```
+
+    如不一致，可通过如下方式安装：
+
+    ```console
+    yum install -y kernel-devel-$(uname -r) # 安装 kernel-devel
+    ```
 
 - 已安装 `LVM2`，如未安装请参考如下安装方式:
 
@@ -19,24 +34,35 @@ hide:
   
         ```console
         yum install -y lvm2
-        yum install -y kernel-devel-$(uname -r)
         ```
-  
-    === "Ubuntu"
-  
-        ```console
+    
+  === "Ubuntu"
+    
+      ```console
         apt-get install -y lvm2
         apt-get install -y linux-headers-$(uname -r)
         ```
 
-## 节点配置
+## 支持的操作系统
 
 | **架构** | **操作系统**        | **内核版本**                               | 备注                    |
 | -------- | ------------------- | ------------------------------------------ | ----------------------- |
-| AMD 64   | centos 7.X          | Kernel 3.10.0-1127.el7.x86_64 on an x86_64 | 操作系统推荐 CentOS 7.9 |
-|          | Redhat 8.X          | 4.18.0-305.el8.x86_64                      | 操作系统推荐 Redhat 8.4 |
-|          | Redhat 7.X          | 3.10.0-1160.e17.x86                        | 操作系统推荐 Redhat 7.9 |
+| AMD 64   | centos 7.4+         | Kernel 3.10.0-1127.el7.x86_64 on an x86_64 | 操作系统推荐 CentOS 7.9 |
+|          | Redhat 8.4+         | 4.18.0-305.el8.x86_64                      | 操作系统推荐 Redhat 8.4 |
+|          | Redhat 7.4+         | 3.10.0-1160.e17.x86                        | 操作系统推荐 Redhat 7.9 |
 | ARM 64   | 银河麒麟 OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64            | -                       |
+
+## Secure Boot
+
+高可用功能暂时不支持 `Secure Boot`，确认 `Secure Boot` 是 `disabled` 状态：
+
+```console
+$ mokutil --sb-state
+SecureBoot disabled
+
+$ dmesg | grep secureboot
+[    0.000000] secureboot: Secure boot disabled
+```
 
 ## 磁盘类型
 
