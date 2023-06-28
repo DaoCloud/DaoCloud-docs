@@ -5,7 +5,20 @@ hide:
 
 # Install via Operator
 
-This page explains how to install Hwameistor using the Hwameistor Operator. Once installed, the Operator automatically starts the necessary Hwameistor components.
+This article introduces how to install Hwameistor through the Hwameistor Operator on the platform interface. After installing the Operator, it will automatically launch the Hwameistor-related components. The HwameiStor Operator is responsible for the following:
+
+- Full lifecycle management (LCM) of all components:
+    - LocalDiskManager
+    - LocalStorage
+    - Scheduler
+    - AdmissionController
+    - VolumeEvictor
+    - Exporter
+    - Apiserver
+    - Graph UI
+- Configuring node disks for different purposes and use cases
+- Automatically discovering the type of node disks and creating HwameiStor storage pools accordingly
+- Automatically creating corresponding StorageClasses based on the configuration and features of the HwameiStor system
 
 ## Prerequisites
 
@@ -14,6 +27,14 @@ This page explains how to install Hwameistor using the Hwameistor Operator. Once
 - If you plan to use highly available data volumes, complete the [DRBD installation](drbdinstall.md) process beforehand.
 - If deploying to a production environment, please review the [Resource Requirements for Production Environment](proresource.md) documentation beforehand.
 - If your Kubernetes distribution uses a different `kubelet` directory, confirm the `kubeletRootDir` parameter beforehand. For more details, refer to [Customize Kubelet root directory](customized-kubelet.md).
+
+!!! info
+
+    If there are no available clean disks, the Operator will not automatically create a StorageClass.
+    During the installation process, the Operator will automatically manage the disks and add available disks to the pool of LocalStorage.
+    If the available disks are provided after the installation, you need to manually issue a LocalDiskClaim to manage the disks in LocalStorageNode.
+    Once there are disks in the pool of LocalStorageNode, the Operator will automatically create the StorageClass.
+    In other words, if there is no capacity, the StorageClass will not be created automatically.
 
 ## Installation Steps
 

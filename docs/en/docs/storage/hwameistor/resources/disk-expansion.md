@@ -1,35 +1,46 @@
 # Data disk expansion
 
-When the storage capacity of a node in the storage system is insufficient, you can expand the capacity by adding disks to the node.
-In HwameiStor, you can add disks (data disks) to nodes through the following steps.
+When the storage capacity of a node in the storage system is insufficient, you can increase the capacity by adding disks to that node. In HwameiStor, you can follow the steps below to add disks (data disks) to a node:
+
+Here are the specific steps:
 
 ## Steps
 
-### 1. Prepare new storage disk
+### Prepare the new storage disk
 
-Select the node to be expanded from HwameiStor, and insert the new disk into the disk slot of the node.
-In this example, the new storage node and disk information used are as follows:
+Add a new node to the Kubernetes cluster or select an existing cluster node (non-HwameiStor node). This node must meet all the requirements listed in the [Prerequisites](/../install/prereq.md) section. In this example, the details of the new storage node and disk used are as follows:
 
-- name: k8s-worker-4
-- devPath: /dev/sdc
-- diskType: SSD
+- Name: k8s-worker-4
+- Device path: /dev/sdb
+- Disk type: SSD disk
 
-After the new disk is inserted into the HwameiStor storage node `k8s-worker-4`, check the status of the new disk on this node, as follows:
+After inserting the new disk into the HwameiStor storage node `k8s-worker-4`, check the status of the new disk on that node as follows:
 
-```console
-# 1. Check whether the newly added disk is successfully inserted into the node and is correctly identified
-$ ssh root@k8s-worker-4
-$ lsblk | grep sdc
-sdc 8:32 0 20G 1 disk
+1. Verify if the new disk has been successfully inserted into the node and correctly recognized.
 
-# 2. Check whether HwameiStor has correctly created the resource LocalDisk for the newly added disk, and the status is `Unclaimed`
-$ kubectl get localdisk | grep k8s-worker-4 | grep sdc
-k8s-worker-4-sdc k8s-worker-4 Unclaimed
-```
+    ```shell
+    # 1. Check if the new disk has been successfully inserted into the node and correctly recognized.
+    $ ssh root@k8s-worker-4
+    $ lsblk | grep sdc
+    sdc        8:32     0     20G  1 disk
+    
+    # 2. Check if HwameiStor has correctly created the LocalDisk resource for the new disk and its status is 'Unclaimed'.
+    $ kubectl get localdisk | grep k8s-worker-4 | grep sdc
+    k8s-worker-4-sdc   k8s-worker-4       Unclaimed 
+    ```
 
-### 2. Add the new disk to the storage pool of the node
+2. Check if HwameiStor has correctly created the LocalDisk resource for the new disk and its status is 'Unclaimed'.
 
-By creating a resource LocalDiskClaim, add the new disk to the storage pool of the node. As follows. After completing the following operations, the new disk should be automatically added to the node's SSD storage pool. If there is no SSD storage pool on this node, HwameiStor will automatically create it and add new disks to it.
+    ```shell
+    kubectl get localdisk | grep k8s-worker-4 | grep sdc
+    ```
+    ```none
+    k8s-worker-4-sdc   k8s-worker-4       Unclaimed 
+    ```
+
+### Add the new disk to the node's storage pool
+
+To add the new disk to the node's storage pool, create a LocalDiskClaim resource. After performing the following steps, the new disk should be automatically added to the SSD storage pool of the node. If there is no SSD storage pool on that node, HwameiStor will create one automatically and add the new disk to it.
 
 ```console
 $ kubectl apply -f - <<EOF
@@ -44,11 +55,13 @@ spec:
 EOF
 ```
 
-### 3. Follow-up inspection
+## Post check
 
-After completing the above steps, check the status of the newly added disk and its storage pool to ensure the normal operation of the node and the HwameiStor system. details as follows:
+After completing the above steps, you should check the status of the
+newly added disk and its storage pool to ensure the normal operation
+of both the node and the HwameiStor system. Here are the specific steps:
 
-```console
+```yaml
 apiVersion: hwameistor.io/v1alpha1
 kind: LocalStorageNode
 metadata:
