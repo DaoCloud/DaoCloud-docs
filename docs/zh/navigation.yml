@@ -609,6 +609,7 @@ nav:
           - 介绍:
               - 什么是数据服务: middleware/what.md
               - 数据服务版本适配: middleware/compatibility.md
+              - 安装/升级数据服务: middleware/install-Middleware.md
               - 数据服务权限设计说明: middleware/permission.md
               - 数据服务自定义角色权限说明: middleware/customize-permission.md
               - 首次进入数据服务模块: middleware/first-visit.md
