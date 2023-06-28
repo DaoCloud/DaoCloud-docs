@@ -5,27 +5,32 @@
 
 具体操作步骤如下：
 
-## 准备新的存储磁盘
+## 步骤
 
-从 HwameiStor 中选择需要扩容的节点，将新增磁盘插入该节点的磁盘槽位。
-本例中，所用的新增存储节点和磁盘信息如下所示：
+### 准备新的存储磁盘
+
+在 Kubernetes 集群中新增一个节点，或者，选择一个已有的集群节点（非 HwameiStor 节点）。 该节点必须满足 [Prerequisites](/../install/prereq.md) 要求的所有条件。 本例中，所用的新增存储节点和磁盘信息如下所示：
 
 - name: k8s-worker-4
-- devPath: /dev/sdc
-- diskType: SSD
+- devPath: /dev/sdb
+- diskType: SSD disk
 
 在新增磁盘被插入到 HwameiStor 存储节点 `k8s-worker-4` 后，检查该节点上的新磁盘状态，如下：
 
 1. 检查新增磁盘是否成功插入节点，并被正确识别
 
     ```shell
-    ssh root@k8s-worker-4
-    lsblk | grep sdc
+    # 1. 检查新增磁盘是否成功插入节点，并被正确识别
+    $ ssh root@k8s-worker-4
+    $ lsblk | grep sdc
+    sdc        8:32     0     20G  1 disk
+    
+    # 2. 检查 HwameiStor 是否为新增磁盘正确创建资源 LocalDisk，并且状态为 `Unclaimed`
+    $ kubectl get localdisk | grep k8s-worker-4 | grep sdc
+    k8s-worker-4-sdc   k8s-worker-4       Unclaimed 
     ```
 
-    ```none
-    sdc        8:32     0     20G  1 disk
-    ```
+    
 
 2. 检查 HwameiStor 是否为新增磁盘正确创建资源 LocalDisk，并且状态为 `Unclaimed`
 
@@ -36,7 +41,7 @@
     k8s-worker-4-sdc   k8s-worker-4       Unclaimed 
     ```
 
-## 将新增磁盘加入到节点的存储池
+### 将新增磁盘加入到节点的存储池
 
 通过创建资源 LocalDiskClaim，将新增磁盘加入节点的存储池。
 完成下列操作后，新磁盘应该被自动加入节点的 SSD 存储池中。如果该节点上没有 SSD 存储池，HwameiStor 会为其自动创建，并将新磁盘加入其中。
