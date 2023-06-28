@@ -30,18 +30,18 @@ hide:
 
 - 已安装 `LVM2`，如未安装请参考如下安装方式:
 
-    === "CentOS/RHEL、Rocky 和 Kylin"
+=== "CentOS/RHEL、Rocky 和 Kylin"
   
-        ```console
-        yum install -y lvm2
-        ```
+    ```console
+    yum install -y lvm2
+    ```
     
-  === "Ubuntu"
+=== "Ubuntu"
     
-      ```console
-        apt-get install -y lvm2
-        apt-get install -y linux-headers-$(uname -r)
-        ```
+    ```console
+    apt-get install -y lvm2
+    apt-get install -y linux-headers-$(uname -r)
+    ```
 
 ## 支持的操作系统
 
