@@ -2,7 +2,7 @@
 
 ## Offline environment image scanner failure
 
-The image scanner relies on vulnerability data, which is obtained by default from the CVE official website.
+The image scanner relies on vulnerability data, which is obtained by default from the [CVE official website](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=kubernetes).
 In a pure offline environment, vulnerability scanning cannot be performed, and the process will fail.
 
 ![trivy](./images/trivy-nodb.png)
@@ -95,57 +95,57 @@ which occurs every 10 minutes, and it will return to the original state after th
   result in a connection failure. Troubleshoot by checking log files. You may notice that
   several core services have Pod startup failures. Review the logs to determine the cause of the failure.
 
-     ```shell
-     kubectl -n kangaroo-lrf04 get pods
-     ```
+    ```shell
+    kubectl -n kangaroo-lrf04 get pods
+    ```
 
-     ```none
-     NAME READY STATUS RESTARTS AGE
-     trust-node-port-harbor-harbor-chartmuseum-57fdfb9cdc-qznwc 1/1 Running 0 20h
-     trust-node-port-harbor-harbor-core-855f8df46c-cgqb9 1/1 Running 0 20h
-     trust-node-port-harbor-harbor-jobservice-6b958dbc57-ks997 1/1 Running 0 20h
-     trust-node-port-harbor-harbor-portal-5cf6bf659b-kj6gd 1/1 Running 0 20h
-     trust-node-port-harbor-harbor-registry-5ccbf457c5-qrtx5 2/2 Running 0 20h
-     trust-node-port-harbor-harbor-trivy-dbdc8945-xh6rv 1/1 Running 0 20h
-     trust-node-port-nginx-deployment-677c74576-7kmh4 1/1 Running 0 20h
-     ```
+    ```none
+    NAME READY STATUS RESTARTS AGE
+    trust-node-port-harbor-harbor-chartmuseum-57fdfb9cdc-qznwc 1/1 Running 0 20h
+    trust-node-port-harbor-harbor-core-855f8df46c-cgqb9 1/1 Running 0 20h
+    trust-node-port-harbor-harbor-jobservice-6b958dbc57-ks997 1/1 Running 0 20h
+    trust-node-port-harbor-harbor-portal-5cf6bf659b-kj6gd 1/1 Running 0 20h
+    trust-node-port-harbor-harbor-registry-5ccbf457c5-qrtx5 2/2 Running 0 20h
+    trust-node-port-harbor-harbor-trivy-dbdc8945-xh6rv 1/1 Running 0 20h
+    trust-node-port-nginx-deployment-677c74576-7kmh4 1/1 Running 0 20h
+    ```
 
 - A2: If the troubleshooting in A1 is correct, check whether the `harborcluster` resource is
   healthy, and check the `harborcluster` resource status with the following command.
 
-     ```shell
-     kubectl -n kangaroo-lrf04 get harborclusters.goharbor.io
-     ```
+    ```shell
+    kubectl -n kangaroo-lrf04 get harborclusters.goharbor.io
+    ```
 
-     ```none
-     NAME PUBLIC URL STATUS
-     trust-node-port https://10.6.232.5:30010 healthy
-     ```
+    ```none
+    NAME PUBLIC URL STATUS
+    trust-node-port https://10.6.232.5:30010 healthy
+    ```
 
 - A3: If the troubleshooting in A2 is correct, check whether the `registrysecrets.kangaroo.io`
   resource is created and the status of `status` on the `kpanda-global-cluster` cluster.
 
-     Tip: The default namespace is `kangaroo-system`.
+    Tip: The default namespace is `kangaroo-system`.
 
-     ```shell
-     kubectl -n kangaroo-system get registrysecrets.kangaroo.io
-     ```
+    ```shell
+    kubectl -n kangaroo-system get registrysecrets.kangaroo.io
+    ```
 
-     ```none
-     NAME AGE
-     inte-bz-harbor-1 34d
-     ```
+    ```none
+    NAME AGE
+    inte-bz-harbor-1 34d
+    ```
 
-     ```shell
-     kubectl -n kangaroo-system describe registrysecrets.kangaroo.io inte-bz-harbor-1
-     ```
+    ```shell
+    kubectl -n kangaroo-system describe registrysecrets.kangaroo.io inte-bz-harbor-1
+    ```
 
 !!! tip
 
-     - The above A1 and A2 are all troubleshooting on the cluster hosting Harbor,
-       and the target cluster can be viewed through the following page path: 
-       `registry Instance` -> `Overview` -> `Deployment Location`.
-     - The above A3 was verified on `kpanda-global-cluster` cluster.
+    - The above A1 and A2 are all troubleshooting on the cluster hosting Harbor,
+      and the target cluster can be viewed through the following page path: 
+      `registry Instance` -> `Overview` -> `Deployment Location`.
+    - The above A3 was verified on `kpanda-global-cluster` cluster.
 
 ## Issue with registry space and storage after creating a Project or uploading an image
 
@@ -209,36 +209,36 @@ please refer to [Unhealthy Confirmation Method after Registry Integration](#regi
   and `Workspace` have already been bound. At this point, check if a `secret` named `registry-secret`
   has been generated in the target cluster's `namespace` for image deployment.
 
-     ```shell
-     kubectl -n default get secret registry-secret
-     ```
+    ```shell
+    kubectl -n default get secret registry-secret
+    ```
 
-     ```none
-     NAME TYPE DATA AGE
-     registry-secret kubernetes.io/dockerconfigjson 1 78d
-     ```
+    ```none
+    NAME TYPE DATA AGE
+    registry-secret kubernetes.io/dockerconfigjson 1 78d
+    ```
 
 - A2: If you confirm that the `secret` named `registry-secret` has been generated,
   you need to confirm whether the `dockerconfigjson` in the `secret` is correct.
 
-     ```shell
-     kubectl get secret registry-secret -o jsonpath='{.data.*}'| base64 -d | jq
-     ```
+    ```shell
+    kubectl get secret registry-secret -o jsonpath='{.data.*}'| base64 -d | jq
+    ```
 
-     ```json
-     {
-       "auths": {
-         "127.0.0.1:5000": {
-           "auth": "YWRtaW46SGFyYm9yMTIzNDU="
-         }
-       }
-     }
-     ```
+    ```json
+    {
+      "auths": {
+        "127.0.0.1:5000": {
+          "auth": "YWRtaW46SGFyYm9yMTIzNDU="
+        }
+      }
+    }
+    ```
 
-     ```shell
-     echo "YWRtaW46SGFyYm9yMTIzNDU=" | base64 -d
-     ```
+    ```shell
+    echo "YWRtaW46SGFyYm9yMTIzNDU=" | base64 -d
+    ```
 
-     ```none
-     admin:Harbor12345
-     ```
+    ```none
+    admin:Harbor12345
+    ```

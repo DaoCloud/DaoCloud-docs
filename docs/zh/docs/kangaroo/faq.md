@@ -2,9 +2,9 @@
 
 ## 离线环境镜像扫描器失败
 
-  镜像扫描因为依赖漏洞数据，默认是去CVE官网获取漏洞数据，如果是纯离线环境，则不能正常的进行漏洞扫描，会执行失败。
+镜像扫描因为依赖漏洞数据，默认是去 [CVE 官网](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=kubernetes)获取漏洞数据，如果是纯离线环境，则不能正常的进行漏洞扫描，会执行失败。
 
-  ![trivy](./images/trivy-nodb.png)
+![trivy](./images/trivy-nodb.png)
 
 ## 如何在离线环境更新或者导入漏洞库
 
@@ -27,7 +27,7 @@
     - `trivy-offline.db.tgz`：离线版全量数据库，解压后约 221 MB。
     - 下载地址: [https://github.com/aquasecurity/trivy-db/releases](https://github.com/aquasecurity/trivy-db/releases)
 
-## 创建托管 harbor 时候第一步集群校验通过后创建 harbor 仍然出错
+## 创建托管 Harbor 时第一步集群校验通过后创建 Harbor 仍然出错
 
 目前只校验了集群中是否有 `CRD`，没有校验 `harbor-operator` 服务，可能会出现不存在`harbor-operator` 服务的情况，导致不能正确的创建 `Harbor`。
 

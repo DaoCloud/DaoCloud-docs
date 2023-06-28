@@ -8,33 +8,34 @@ hide:
 本文介绍在平台界面通过 Hwameistor Operator 安装 Hwameistor，Operator 安装后会自动将 Hwameistor 相关组件拉起。HwameiStor Operator 负责如下事项：
 
 - 所有组件的全生命周期管理 (LCM)：
-  - LocalDiskManager
-  - LocalStorage
-  - Scheduler
-  - AdmissionController
-  - VolumeEvictor
-  - Exporter
-  - Apiserver
-  - Graph UI
+    - LocalDiskManager
+    - LocalStorage
+    - Scheduler
+    - AdmissionController
+    - VolumeEvictor
+    - Exporter
+    - Apiserver
+    - Graph UI
 - 根据不同目的和用途配置节点磁盘
 - 自动发现节点磁盘的类型，并以此自动创建 HwameiStor 存储池
 - 根据 HwameiStor 系统的配置和功能自动创建相应的 StorageClass
 
 ## 前提条件
 
-- 待使用节点上已准备空闲 HDD、SSD 磁盘
-- 已完成[准备工作](prereq.md)中事项
-- 如需要使用高可用数据卷，请提前完成[DRDB 安装](drbdinstall.md)
-- 如部署环境为生产环境，请提前阅读[生产环境资源要求](proresource.md)
+- 待使用节点上已准备空闲 HDD、SSD 磁盘。
+- 已完成[准备工作](prereq.md)中事项。
+- 如需要使用高可用数据卷，请提前完成[DRDB 安装](drbdinstall.md)。
+- 如部署环境为生产环境，请提前阅读[生产环境资源要求](proresource.md)。
 - 如果您的 Kubernetes 发行版使用不同的 `kubelet` 目录，请提前确认 `kubeletRootDir`。
-  详细信息请参考[自定义 Kubelet 根目录](customized-kubelet.md)
+  详细信息请参考[自定义 Kubelet 根目录](customized-kubelet.md)。
 
 !!! info
 
-```
-注意
-如果没有可用的干净磁盘，Operator 不会自动创建 StorageClass。 Operator 会在安装过程中自动纳管磁盘，可用的磁盘会被添加到 LocalStorage 的 pool 里。 如果可用磁盘是在安装后提供的，则需要手动下发 LocalDiskClaim 将磁盘纳管到 LocalStorageNode 里。 一旦 LocalStorageNode 的 pool 里有磁盘，Operator 就会自动创建 StorageClass。 也就是说，如果没有容量，就不会自动创建 StorageClass。
-```
+  如果没有可用的干净磁盘，Operator 不会自动创建 StorageClass。
+  Operator 会在安装过程中自动纳管磁盘，可用的磁盘会被添加到 LocalStorage 的 pool 里。
+  如果可用磁盘是在安装后提供的，则需要手动下发 LocalDiskClaim 将磁盘纳管到 LocalStorageNode 里。
+  一旦 LocalStorageNode 的 pool 里有磁盘，Operator 就会自动创建 StorageClass。
+  也就是说，如果没有容量，就不会自动创建 StorageClass。
 
 ## 安装步骤
 

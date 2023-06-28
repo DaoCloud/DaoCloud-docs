@@ -30,8 +30,6 @@
     k8s-worker-4-sdc   k8s-worker-4       Unclaimed 
     ```
 
-    
-
 2. 检查 HwameiStor 是否为新增磁盘正确创建资源 LocalDisk，并且状态为 `Unclaimed`
 
     ```shell

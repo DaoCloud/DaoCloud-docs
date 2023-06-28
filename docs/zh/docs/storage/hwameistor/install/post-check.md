@@ -41,11 +41,11 @@ hwameistor-volume-evictor-56df755847-m4h8b                1/1     Running     0 
 
     `local-disk-manager` 和 `local-storage` 是 `DaemonSet`。在每个 Kubernetes 节点上都应该有一个 DaemonSet Pod。
 
-## 查看 HwameiStor CRDs (i.e. APIs)
+## 查看 HwameiStor CRD（即 API）
 
 以下 HwameiStor CRD 必须安装在系统上。
 
-```
+```console
 $ kubectl api-resources --api-group hwameistor.io
 NAME                       SHORTNAMES   APIVERSION               NAMESPACED   KIND
 localdiskclaims            ldc          hwameistor.io/v1alpha1   false        LocalDiskClaim
@@ -65,7 +65,7 @@ localvolumes               lv           hwameistor.io/v1alpha1   false        Lo
 
 ## 查看 `LocalDiskNode` 和 `localDisks`
 
-```
+```console
 $ kubectl get localdisknodes
 NAME          TOTALDISK   FREEDISK
 10-6-234-40   1
@@ -93,11 +93,10 @@ NAME              NODEMATCH     PHASE
 10-6-234-42-sdh   10-6-234-42   Bound
 ```
 
+## 查看 `LocalStorageNodes` 及存储池
 
-
-## 查看 `LocalStorageNodes` 及 存储池
-
-HwameiStor 为每个存储节点创建一个 CRD 资源 `LocalStorageNode (LSN)`。 每个 LSN 将会记录该存储节点的状态，及节点上的所有存储资源，包括存储池、数据卷、及相关配置信息。
+HwameiStor 为每个存储节点创建一个 CRD 资源 `LocalStorageNode (LSN)`。
+每个 LSN 将会记录该存储节点的状态，及节点上的所有存储资源，包括存储池、数据卷、及相关配置信息。
 
 ```console
 $ kubectl get lsn
@@ -164,7 +163,8 @@ status:
 
 ## 查看 StorageClass
 
-HwameiStor Operator 在完成 HwameiStor 系统组件安装和系统初始化之后，会根据系统配置 （例如：是否开启 HA 模块、磁盘类型等）自动创建相应的 `StorageClass` 用于创建数据卷。
+HwameiStor Operator 在完成 HwameiStor 系统组件安装和系统初始化之后，
+会根据系统配置（例如：是否开启 HA 模块、磁盘类型等）自动创建相应的 `StorageClass` 用于创建数据卷。
 
 ```sh
 $ kubectl get sc
