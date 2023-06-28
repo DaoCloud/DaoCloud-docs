@@ -86,7 +86,6 @@
 - 支持页面编辑 `Project` 为公开或者私有
 - 支持`harbor`、`docker registry` 类型的仓库多架构镜像页面显示
 
-
 #### 修复
 
 - 修复支持关联仓库接入 `https` 的 `harbor`、`docker registry` 仓库
