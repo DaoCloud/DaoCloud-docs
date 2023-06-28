@@ -10,7 +10,7 @@ It is always welcome if you can output some diagrams about architecture, modules
 
 All images in a book or on a website shall have a consistent style and:
 
-- Show all text cleary
+- Show all text clearly
 - Fill in with all parameters rather than keep those fields blank
 - Do not give a big blank space on your screenshot
 - A mermaid image is prefered, which can provide much convenience for translation and localization
