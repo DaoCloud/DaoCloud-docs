@@ -159,9 +159,9 @@ nav:
               - Resource Quota: ghippo/user-guide/workspace/quota.md
               - Difference between Resource Groups and Shared Resources: ghippo/user-guide/workspace/res-gp-and-shared-res.md
           - Audit Log:
-              - Enable/disable Capture: ghippo/user-guide/open-audit.md
-              - Enable/disable K8s Audit Log: ghippo/user-guide/open-k8s-audit.md
-              - Download and Export: ghippo/user-guide/audit-log.md
+              - Enable/disable Capture: ghippo/user-guide/audit/open-audit.md
+              - Enable/disable K8s Audit Log: ghippo/user-guide/audit/open-k8s-audit.md
+              - Download and Export: ghippo/user-guide/audit/audit-log.md
           - Operation Management:
               - ghippo/user-guide/report-billing/index.md
               - Reports: ghippo/user-guide/report-billing/report.md

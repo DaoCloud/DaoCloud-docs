@@ -39,42 +39,42 @@ $ kubectl -n hwameistor get pod
 
     2. 删除数据卷 PVCs
 
-       相关的 PVs，LVs，LVRs，LVGs 都将被删除.
+        相关的 PVs，LVs，LVRs，LVGs 都将被删除.
 
 2. 清理 HwameiStor 系统组件
 
     1. 删除 HwameiStor 组件
 
-        ```
-        $ kubectl delete clusters.hwameistor.io  hwameistor-cluster
+        ```shell
+        kubectl delete clusters.hwameistor.io  hwameistor-cluster
         ```
 
     2. 删除 HwameiStor 系统空间
 
-       ```
-       kubectl delete ns hwameistor
-       ```
+        ```shell
+        kubectl delete ns hwameistor
+        ```
 
     3. 删除 CRD, Hook, 以及 RBAC
 
-       ```
-       kubectl get crd,mutatingwebhookconfiguration,clusterrolebinding,clusterrole -o name \
-         | grep hwameistor \
-         | xargs -t kubectl delete
-       ```
+        ```shell
+        kubectl get crd,mutatingwebhookconfiguration,clusterrolebinding,clusterrole -o name \
+          | grep hwameistor \
+          | xargs -t kubectl delete
+        ```
 
     4. 删除 StorageClass
 
-       ```
-       kubectl get sc -o name \
-         | grep hwameistor-storage-lvm- \
-         | xargs -t kubectl delete
-       ```
+        ```shell
+        kubectl get sc -o name \
+          | grep hwameistor-storage-lvm- \
+          | xargs -t kubectl delete
+        ```
 
     5. 删除 hwameistor Operator
 
-       ```
-       helm uninstall hwameistor-operator -n hwameistor
-       ```
+        ```shell
+        helm uninstall hwameistor-operator -n hwameistor
+        ```
 
-    最后，你仍然需要清理每个节点上的 LVM 配置，并采用额外的系统工具（例如：wipefs）清除磁盘上的所有数据。
+最后，你仍然需要清理每个节点上的 LVM 配置，并采用额外的系统工具（例如：wipefs）清除磁盘上的所有数据。
