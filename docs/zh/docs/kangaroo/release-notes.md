@@ -1,6 +1,7 @@
 # 镜像仓库 Release Notes
 
 本页列出镜像仓库 Release Notes，便于您了解各版本的演进路径和特性变化。
+
 ## 2023-06-05
 
 ### v0.8
@@ -16,7 +17,7 @@
 #### 修复
 
 - 修复离线部署托管 `harbor` 镜像地址拼接错误
-- 修复 `docker registry`  类型 `project` 列表分页问题
+- 修复 `docker registry` 类型 `project` 列表分页问题
 - 修复 `docker registry` 类型 `repository` 搜索问题
 - 修复机器人账号创建时已存在问题
 
@@ -39,7 +40,7 @@
 
 #### 修复
 
-- 修复仓库集成URL修改后不能被更新的问题
+- 修复仓库集成 URL 修改后不能被更新的问题
 - 修复 `Project` 从原生 `Harbor` 页面删除后逻辑不兼容情况
 
 #### 优化
@@ -85,7 +86,6 @@
 - 支持仓库集成列表新增模糊查询
 - 支持页面编辑 `Project` 为公开或者私有
 - 支持`harbor`、`docker registry` 类型的仓库多架构镜像页面显示
-
 
 #### 修复
 

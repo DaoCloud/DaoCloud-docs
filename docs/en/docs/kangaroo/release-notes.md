@@ -2,6 +2,32 @@
 
 This page lists the release notes of the container registry, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-06-05
+
+### v0.8
+
+#### New Features
+
+- Added image description information to the `harbor` type repository.
+- Added instance status to the image space list.
+- Added support for randomly generating `nodeport` port numbers when creating a `harbor`.
+- Added validation for duplicate usage of `redis`, `postgresql`, and `s3` in the creation of `harbor`.
+- Added image recycling feature to the `project`.
+
+#### Fixes
+
+- Fixed the concatenation error in the offline deployment of managed `harbor` image addresses.
+- Fixed pagination issue in the `docker registry` type `project` list.
+- Fixed search issue in the `docker registry` type `repository`.
+- Fixed existing account problem when creating robot accounts.
+
+#### Improvements
+
+- Added job cleanup logic.
+- Removed the `project` field from the interface for obtaining temporary login instructions.
+- Improved login instructions.
+- Optimized logic for image scanning judgment.
+
 ## 2023-05-08
 
 ### v0.7
