@@ -19,14 +19,14 @@ DaoCloud 作为一家经验丰富的 KCSP 意味着：
 
 目前 DaoCloud 经授权合规的 Kubernetes 版本包括但不限于：
 
-当前版本：
+K8s 官方维护的当前 4 个版本：
 
-[![1.23](../images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
 [![1.24](../images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
 [![1.25](../images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
 [![1.26](../images/1.26.png)](https://github.com/cncf/k8s-conformance/pull/2451)
+[![1.27](../images/1.27.png)](https://github.com/cncf/k8s-conformance/pull/2666)
 
-历史版本：
+K8s 官方不再维护（但 DaoCloud [KLTS](https://klts.io/) 会持续维护）的历史版本：
 
 [![1.7](../images/1.7.png)](https://github.com/cncf/k8s-conformance/pull/68)
 [![1.9](../images/1.9.png)](https://github.com/cncf/k8s-conformance/pull/210)
@@ -34,6 +34,7 @@ DaoCloud 作为一家经验丰富的 KCSP 意味着：
 [![1.15](../images/1.15.png)](https://github.com/cncf/k8s-conformance/pull/794)
 [![1.18](../images/1.18.png)](https://github.com/cncf/k8s-conformance/pull/1144)
 [![1.20](../images/1.20.png)](https://github.com/cncf/k8s-conformance/pull/1463)
+[![1.23](../images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
 
 <!--
 Source: https://github.com/cncf/artwork/tree/master/projects/kubernetes/certified-kubernetes
