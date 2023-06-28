@@ -11,17 +11,15 @@ The specific operation steps are as follows:
 
 1. Log in to the console to access native Grafana.
 
-     Access address: http://ip:access port/ui/insight-grafana
+    Access address: http://ip:access port/ui/insight-grafana
 
-     For example: http://10.6.10.233:30209/ui/insight-grafana
+    For example: http://10.6.10.233:30209/ui/insight-grafana
 
 2. Click Login in the lower right corner, and use the default username and password to log in.
 
-     - Default username: admin
+    - Default username: admin
 
-     - Default password: admin
-
-     
+    - Default password: admin
 
 3. Click `Log in` to complete the login.
 

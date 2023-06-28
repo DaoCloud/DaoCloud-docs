@@ -4,7 +4,7 @@ At present, only Java, NodeJs, Python, and .Net support the non-intrusive access
 
 ## Prerequisites
 
-Make sure insight-agent is ready. If not, please refer to [Install insight-agent to collect data](../install-agent.md) and make sure the following three items are in place:
+Make sure insight-agent is ready. If not, please refer to [Install insight-agent to collect data](../install/install-agent.md) and make sure the following three items are in place:
 
 - Enable trace feature for insight-agent
 - Whether the address and port of the trace data are filled in correctly
