@@ -8,7 +8,10 @@
 
 !!! warning
 
-    在 v0.17.x 版本中将 kube-prometheus-stack chart 版本从 41.9.1 升级至 45.28.1, 其中使用的 CRD 也存在一些字段的升级，如 servicemonitor 的 `attachMetadata` 字段，升级 insight agent 前，请参考：[从 v0.16.x（或更低版本）升级到 v0.17.x](../user-guide/quickstart/upgrade-note.md/#从-v016x或更低版本升级到-v017x)。
+    在 v0.17.x 版本中将 kube-prometheus-stack chart 版本从 41.9.1 升级至 45.28.1, 
+    其中使用的 CRD 也存在一些字段的升级，如 servicemonitor 的 `attachMetadata` 字段，
+    升级 insight agent 前，请参考：
+    [从 v0.16.x（或更低版本）升级到 v0.17.x](../quickstart/install/upgrade-note.md#v016x-v017x)。
 
 #### 新增
 
@@ -50,7 +53,8 @@
 
 !!! warning
 
-    可观测性 Insight v0.16.0 使用了 vmalertmanagers CRD 的新特性参数 `disableRouteContinueEnforce`, 升级 insight server 前，请参考：[从 v0.15.x（或更低版本）升级到 v0.16.x](../user-guide/quickstart/upgrade-note.md/#从-v015x或更低版本升级到-v016x)
+    可观测性 Insight v0.16.0 使用了 vmalertmanagers CRD 的新特性参数 `disableRouteContinueEnforce`, 
+    升级 insight server 前，请参考[从 v0.15.x（或更低版本）升级到 v0.16.x](../quickstart/upgrade-note.md/#v015x-v016x)
 
 #### 新增
 

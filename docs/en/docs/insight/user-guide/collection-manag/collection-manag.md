@@ -3,20 +3,29 @@ hide:
   - toc
 ---
 
-# collection management
+# Data Collection
 
-`Acquisition Management` is mainly to centrally manage and display the entrance of the cluster installation collection plug-in `insight-agent`, which helps users quickly view the health status of the cluster collection plug-in, and provides a quick entry to configure collection rules.
+`Data Collection` is mainly to centrally manage and display the entrance of the
+cluster installation collection plug-in `insight-agent`, which helps users quickly
+view the health status of the cluster collection plug-in, and provides a quick entry
+to configure collection rules.
 
 The specific operation steps are as follows:
 
-1. Click in the upper left corner and select `Observability`.
+1. Click in the upper left corner and select `Insight` -> `Data Collection`.
 
-    
+    ![Data Collection](../../images/collectmanage01.png)
 
-2. Select `Acquisition Management` on the left navigation bar to view the status of all cluster collection plug-ins.
+2. You can View the status of all cluster collection plug-ins.
 
-    
+    ![Data Collection](../../images/collectmanage02.png)
 
-3. When the cluster is connected to `insight-agent` and is running, click `cluster name` to enter the details, click the shortcut link to jump to `container management` -> `custom resource` to add service discovery rules.
+3. When the cluster is connected to `insight-agent` and is running, click a cluster name
+   to enter the details。
 
-    
+    ![Data Collection](../../images/collectmanage03.png)
+
+4. In the `Service Monitor` tab, click the shortcut link to jump to `Container Management` -> `CRD`
+   to add service discovery rules.
+
+    ![Data Collection](../../images/collectmanage04.png)

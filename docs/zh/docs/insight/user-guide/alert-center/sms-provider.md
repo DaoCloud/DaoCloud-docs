@@ -14,7 +14,7 @@
 
     - 配置阿里云服务器。
 
-        > 申请阿里云短信服务，请参考[阿里云短信服务](https://help.aliyun.com/document_detail/108062.html?spm=a2c4g.57535.0.0.2cec637ffna8ye)
+        > 申请阿里云短信服务，请参考[阿里云短信服务](https://help.aliyun.com/document_detail/108062.html?spm=a2c4g.57535.0.0.2cec637ffna8ye)。
 
         字段说明：
 
@@ -24,13 +24,13 @@
         - `模板 CODE`：短信模板是发送短信的具体内容。
         - `参数模板`：短信正文模板可以包含变量，用户可通过变量实现自定义短信内容。
 
-        请参考：[阿里云变量规范](https://help.aliyun.com/document_detail/463270.html)。
+        请参考[阿里云变量规范](https://help.aliyun.com/document_detail/463270.html)。
 
-            ![通知服务器](../../images/sms02.png)
+        ![通知服务器](../../images/sms02.png)
 
-            !!! note
+        !!! note
 
-                举例：在阿里云定义的模板内容为：${severity}：${alertname} 在 ${startat} 被触发。参数模板中的配置参考上图。
+            举例：在阿里云定义的模板内容为：${severity}：${alertname} 在 ${startat} 被触发。参数模板中的配置参考上图。
 
     - 配置腾讯云服务器。
 
@@ -45,8 +45,8 @@
         - `SdkAppId`：短信 SdkAppId，在腾讯云短信控制台添加应用后生成的实际 SdkAppId。
         - `参数模板`：短信正文模板可以包含变量，用户可通过变量实现自定义短信内容。请参考：[腾讯云变量规范](https://cloud.tencent.com/document/product/382/39023#.E5.8F.98.E9.87.8F.E8.A7.84.E8.8C.83.3Ca-id.3D.22variable.22.3E.3C.2Fa.3E)。
 
-            ![通知服务器](../../images/sms03.png)
+        ![通知服务器](../../images/sms03.png)
 
-            !!! note
+        !!! note
 
-                举例：在腾讯云定义的模板内容为：{1}：{2} 在 {3} 被触发。参数模板中的配置参考上图。
+            举例：在腾讯云定义的模板内容为：{1}：{2} 在 {3} 被触发。参数模板中的配置参考上图。

@@ -26,7 +26,7 @@ amount of metrics it stored and the disk usage of individual data points.
 3. The default collection time of Prometheus in Insight Agent is 30s, so twice the amount of metrics
     will be generated within 1 minute.
 4. The default storage duration in vmstorage is 1 month, please refer to
-    [Modify System Configuration](../user-guide/system-config/modify-config.md) to modify the configuration.
+    [Modify System Configuration](../../user-guide/system-config/modify-config.md) to modify the configuration.
 
 !!! warning
 
@@ -80,4 +80,4 @@ Then the current vmstorage disk usage should be set to (784000+80000)x2x0.9x60x2
 !!! note
 
     For the relationship between the number of metrics and the number of Pods in the cluster,
-    please refer to [Prometheus Resource Planning](./prometheus-res.md).
+    please refer to [Prometheus Resource Planning](../quickstart/res-plan/prometheus-res.md).

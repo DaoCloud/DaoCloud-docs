@@ -27,7 +27,7 @@ Please confirm that your cluster has successfully connected to the container man
 1. Fill in the name, select the namespace and version, and fill in the addresses of logging, metric, audit, and trace reporting data in the yaml file.
 
     The system has filled in the address of the component for data reporting by default, please check it before clicking `OK` to install.
-    If you need to modify the data reporting address, please refer to [Get Data Reporting Address](gethosturl.md).
+    If you need to modify the data reporting address, please refer to [Get Data Reporting Address](install/gethosturl.md).
 
     
 
