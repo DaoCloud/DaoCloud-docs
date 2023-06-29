@@ -13,14 +13,14 @@ hide:
 服务网格对各集群的服务做了聚合处理，同一个命名空间下的同名服务将聚合为一个服务，这样有利于对跨集群协同服务进行统一的流量治理。
 
 `服务管理`会对列表内服务状态做`诊断配置`检测，检测结果及含义如下：
-- 正常：服务在各集群的 POD 均已注入边车，并且各项设置完全相同
-- 告警：该服务下工作负载的部分 POD 没有注入边车
-- 异常：当服务存在以下任一问题时，都会显示为`异常`状态
 
-	- 所有 POD 均未注入边车；
-	- 服务在各集群的端口设置不一致；
-	- 服务在各集群的工作负载选择器标签设置不一致；
-	- 服务在各集群的访问方式不一致
+- 正常：服务在各集群的 Pod 均已注入边车，并且各项设置完全相同
+- 告警：该服务下工作负载的部分 Pod 没有注入边车
+- 异常：当服务存在以下任一问题时，都会显示为`异常`状态
+    - 所有 Pod 均未注入边车
+    - 服务在各集群的端口设置不一致
+    - 服务在各集群的工作负载选择器标签设置不一致
+    - 服务在各集群的访问方式不一致
 
 !!! note
 
@@ -28,11 +28,9 @@ hide:
 
 服务列表中也标注了来自其他微服务注册中心的服务，如下图所示。
 
-![某个名称](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/servicelist06.png)
+![其他微服务注册中心的服务](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/servicelist06.png)
 
 您可以点击某个服务名称，进入详情页查看各集群的服务地址、端口等具体信息，还可以在`地址信息`页签中修改通信协议。
-
-![某个名称](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/servicelist02.png)
 
 ![地址信息](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/servicelist03.png)
 

@@ -9,7 +9,7 @@ Date: 2022-12-20
 
 This page lists all the Release Notes for each version of Service Mesh, providing convenience for users to learn about the evolution path and feature changes.
 
-## 2023-05-29
+## 2023-05-31
 
 ### v0.16.1
 
@@ -31,20 +31,6 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Added** Implementation of Service selector field output.
 - **Added** Solving cross-cluster access problems when Sidecars are not injected by adding a Network label to Namespace.
 - **Added** Custom parameter configuration capability for hosted mesh hosted-apiserver. (This parameter only takes effect during installation and does not support updates for the time being), (for more parameters, please refer to helm parameter configuration):
-
-    ```
-      "hosted-apiserver.global.storageClass":                 "default",
-      "hosted-apiserver.etcd.data_size":                      "10Gi",
-      "hosted-apiserver.etcd.resources.requests.cpu":         "100m",
-      "hosted-apiserver.etcd.resources.limits.cpu":           "500m",
-      "hosted-apiserver.etcd.resources.requests.memory":      "100Mi",
-      "hosted-apiserver.etcd.resources.limits.memory":        "1000Mi",
-      "hosted-apiserver.apiserver.resources.requests.cpu":    "100m",
-      "hosted-apiserver.apiserver.resources.limits.cpu":      "1000m",
-      "hosted-apiserver.apiserver.resources.requests.memory": "100Mi",
-      "hosted-apiserver.apiserver.resources.limits.memory":   "1000Mi",
-    ```
-
 - **Added** Mesh control plane component status
 - **Added** The mesh query interface adds the `loadBalancerStatus` field to describe the actual assigned LB address.
 - **Added** Component progress detail interface `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/components-progress`.
