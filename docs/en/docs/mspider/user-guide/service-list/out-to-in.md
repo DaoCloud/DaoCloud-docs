@@ -3,27 +3,27 @@ hide:
   - toc
 ---
 
-# Access from external applications to services in the mesh
+# Accessing Services Inside the Mesh from External Applications
 
-This page explains how external applications can be configured to access services within the mesh.
+This page explains how external applications can access services inside the mesh through configuration.
 
-precondition:
+**Prerequisites:**
 
-- The service `bookinfo.com` runs under the `default` namespace of the mesh `global-service`
+- The service `bookinfo.com` is running in the `default` namespace of the mesh `global-service`.
 
-- Mesh provides `ingressgateway` gateway instance
+- The mesh provides an `ingressgateway` gateway instance.
 
-Configuration goal: realize the external exposure of the internal service `bookinfo.com`.
+**Objective:** Expose the internal service `bookinfo.com` to the outside.
 
-1. Through the URI matching method, realize the access routing of the specified page of the service `bookinfo.com` by external applications.
+1. Use URI matching to route external application access to specific pages of the `bookinfo.com` service.
 
-    
+    ![Access Route](../../images/out-to-in01.png)
 
-2. Click `Traffic Governance` -> `Gateway Rules` -> `Create` to create a gateway rule for the istio gateway, and expose the service and port to the outside.
+2. Click `Traffic Management` -> `Gateway Rules` -> `Create` to create a gateway rule for the Istio gateway and expose the service and ports externally.
 
-    
+    ![Create Rule](../../images/out-to-in02.png)
 
-    The YAML example after configuration is as follows:
+    Here is an example YAML after completing the configuration:
 
     ```yaml
     apiVersion: networking.istio.io/v1beta1
@@ -32,23 +32,23 @@ Configuration goal: realize the external exposure of the internal service `booki
       name: bookinfo-gateway
     spec:
       selector:
-        istio: ingressgateway # use the default controller
+        istio: ingressgateway # Use the default controller
       servers:
       - port:
           number: 80
           name: http
           protocol: HTTP
         hosts:
-        -bookinfo.com
+        - bookinfo.com
     ```
 
-3. Click `OK` to return to the list of gateway rules, and you can see the prompt of successful creation.
+3. Click `OK` to return to the gateway rule list, where you will see a successful creation message.
 
-4. Click `Traffic Governance` -> `Virtual Service` -> `Create` to create routing rules to route to specified pages based on the URI in the request.
+4. Click `Traffic Management` -> `Virtual Services` -> `Create` to create a routing rule that routes based on the URI in the request to the specified pages.
 
-    
+    ![Create Routing Rule](../../images/out-to-in04.png)
 
-    The YAML example after configuration is as follows:
+    Here is an example YAML after completing the configuration:
 
     ```yaml
     apiVersion: networking.istio.io/v1beta1
@@ -57,9 +57,9 @@ Configuration goal: realize the external exposure of the internal service `booki
       name: bookinfo
     spec:
       hosts:
-      -bookinfo.com
+      - bookinfo.com
       gateways:
-      -bookinfo-gateway
+      - bookinfo-gateway
       http:
       - match:
           - uri:
@@ -71,14 +71,14 @@ Configuration goal: realize the external exposure of the internal service `booki
           - uri:
               prefix: /api/v1/products
         route:
-        -destination:
+        - destination:
             host: productpage
             port:
               number: 9080
     ```
 
-5. Click `OK` to return to the virtual service list, and you can see the prompt that the creation is successful.
+5. Click `OK` to return to the virtual service list, where you will see a successful creation message.
 
 !!! info
 
-    For a more intuitive operation demonstration, please refer to [Video Tutorial](../../../videos/mspider.md).
+    For more detailed instructions, you can refer to the [video tutorial](../../../videos/mspider.md).
