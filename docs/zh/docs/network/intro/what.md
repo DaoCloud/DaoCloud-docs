@@ -2,11 +2,11 @@
 
 DCE 5.0 云原生网络基于多个开源技术构建，不仅提供单个 CNI 网络支持，也提供多个 CNI 网络的组合方案。具体方案如下：
 
-## 方案一：Cilium + MacVLAN/SpiderFlat + SpiderPool + Multus
+## 方案一：Cilium + MacVLAN/SRIOV/IPVLAN + SpiderPool + Multus
 
 此方案适用于高内核版本（4.19.57+）的 Linux 操作系统。
 方案以 Multus 为调度核心，搭配多 CNI，满足不同的网络场景需求，实现跨云跨集群的网络连通性。
-同时还具备灵活的 IPAM 管理能力，基于 SpiderFlat 及 SpiderPool 加强 Underlay 网络的 IP 管理分配及 IP 回收能力。
+同时还具备灵活的 IPAM 管理能力，基于 SpiderPool 加强 Underlay 网络的 IP 管理分配及 IP 回收能力。
 不同 IP 池的使用满足了不同应用通信场景的需求。
 此网络组合的主要功能如下：
 
@@ -22,14 +22,14 @@ DCE 5.0 云原生网络基于多个开源技术构建，不仅提供单个 CNI �
 
     > 在此方案组合中，Cilium 为必备的网络 CNI。
 
-4. 通过 SpiderFlat / MacVLAN CNI / SR-IOV CNI 提供对外访问 IP，实现 Pod 二层对外通信能力。
+4. 通过 MacVLAN / SRIOV / IPVLAN CNI 提供对外访问 IP，实现 Pod 二层对外通信能力。
 搭配 Calico 动态虚拟网络，降低网络运维难度，并节省 IP 资源。
 
     > 如果在应用落地场景中没有对外访问需求，可以不安装 Underlay CNI。
 
 ![solution01](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/solution01.png)
 
-## 方案二：Calico + MacVLAN/SpiderFlat + SpiderPool + Multus
+## 方案二：Calico + MacVLAN/SRIOV/IPVLAN + SpiderPool + Multus
 
 此方案适用于低内核版本的 Linux 操作系统，在用户有跨集群连通以及多 CNI 等需求时，可以采用此方案。
 
@@ -41,7 +41,7 @@ DCE 5.0 云原生网络基于多个开源技术构建，不仅提供单个 CNI �
 
     > 如果在应用落地场景中，未安装 Underlay CNI，可以不安装 SpiderPool。
 
-3. 通过 SpiderFlat / MacVLAN CNI / SR-IOV CNI 提供对外访问 IP，实现 Pod 二层对外通信能力。
+3. 通过  MacVLAN / SRIOV / IPVLAN CNI 提供对外访问 IP，实现 Pod 二层对外通信能力。
    搭配 Calico 动态虚拟网络，降低网络运维难度，节省 IP 资源。
 
     > 在此方案组合中，Calico 为必备的网络 CNI。如果在应用落地场景中，没有对外访问需求，可以不安装 Underlay CNI。
