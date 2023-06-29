@@ -76,7 +76,8 @@ This page will introduce how to deploy DCE 5.0 on Oracle Linux R9 U1 operating s
 
     !!! note
 
-      Because the `kpanda-controller-manager` component reports an error `failed to create fsnotify watcher: too many open files.` during the installation process, you need to set `node_sysctl_tuning: true` in the `clusterConfig.yaml` file.
+        Because the `kpanda-controller-manager` component reports an error `failed to create fsnotify watcher: too many open files.` 、
+        during the installation process, you need to set `node_sysctl_tuning: true` in the `clusterConfig.yaml` file.
 
 7. Start installing DCE 5.0.
 

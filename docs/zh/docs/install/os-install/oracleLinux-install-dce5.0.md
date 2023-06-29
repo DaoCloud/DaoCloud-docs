@@ -75,7 +75,8 @@
 
     !!! note
 
-      由于安装过程中 `kpanda-controller-manager` 组件报错 `failed to create fsnotify watcher: too many open files.`，所以需要在 `clusterConfig.yaml` 文件中设置 `node_sysctl_tuning: true`。
+        由于安装过程中 `kpanda-controller-manager` 组件报错 `failed to create fsnotify watcher: too many open files.`，
+        所以需要在 `clusterConfig.yaml` 文件中设置 `node_sysctl_tuning: true`。
 
 7. 开始安装 DCE 5.0。
 

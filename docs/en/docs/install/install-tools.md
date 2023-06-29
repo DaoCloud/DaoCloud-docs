@@ -3,7 +3,7 @@
 Before you start installing DCE 5.0, you must have these dependencies installed first, otherwise you installation of DCE 5.0 may get failed.
 
 - For the Community package, install the dependencies on the K8s Controller node.
-- For the Enterprise Package, install the dependencies on the [Spark Node](./commercial/deploy-arch.md).
+- For the Enterprise Package, install the dependencies on the [Bootstrapping Node](./commercial/deploy-arch.md).
 
 !!! note
     
@@ -49,43 +49,37 @@ Before you start installing DCE 5.0, you must have these dependencies installed 
 
 ## Offline Install
 
-If the target host is disconnected from the Internet, you can follow these steps to install dependencies offline.
+Offline installation means that the target host is not connected to the network and cannot download the required dependencies. Therefore, it is necessary to create the offline package in an online environment first.
 
-1. Build an offline dependency package on another host that is connected to the Internet.
-
-    - Command for the Community package:
-
-        ```bash
-        bash install_prerequisite.sh export community
-        ```
-
-    - Command for the Enterprise package:
-
-        ```bash
-        bash install_prerequisite.sh export full
-        ```
-
-    After executing the above command, a compressed package named `pre_pkgs.tar.gz` will be generated in the working directory. This file contains all dependencies mentioned above.
-
-2. Upload all the files in the directory to the target host.
+1. Download the script.
 
     ```bash
-    # script and the offline package are located at the same level in the directory.
-    $ tree .
-    .
-    ├── install_prerequisite.sh
-    └── pre_pkgs.tar.gz
+    curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
     ```
 
-3. Install dependencies in the target host.
+2. Download the prerequisite components' offline package.
 
-    - For the Community package:
+    ```bash
+    export VERSION=v0.8.0
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_amd64.tar.gz
+
+    tar -xvf prerequisite_${VERSION}_amd64.tar.gz
+    ```
+
+    !!! note
+
+        - If you are using an arm architecture, the download address will be: https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_arm64.tar.gz
+        - Make sure the offline package and the script are in the same directory level.
+
+3. Perform the offline installation.
+
+    - For the community package:
 
         ```bash
         bash install_prerequisite.sh offline community
         ```
 
-    - For the Enterprise package:
+    - For the enterprise package:
 
         ```bash
         bash install_prerequisite.sh offline full

@@ -57,14 +57,14 @@ The installer from version v0.5.0 needs to provide the osPackage offline package
 Among them, [Kubean](https://github.com/kubean-io/kubean) provides osPackage offline packages for different operating systems. You can visit <https://github.com/kubean-io/kubean/releases> to view them.
 
 | OS version | Download url |
-| :------------------------------------------------ -- | :---------------------------------------------- ------------- |
-| Centos 7                                            | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.4/os-pkgs-centos7-v0.5.4.tar.gz> |
-| Redhat 8                                            | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.4/os-pkgs-redhat8-v0.5.4.tar.gz> |
-| Redhat 7                                            | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.4/os-pkgs-redhat7-v0.5.4.tar.gz> |
-| Kylin Linux Advanced Server release V10 (Sword) SP2 | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.4/os-pkgs-kylinv10-v0.5.4.tar.gz> |
-| Ubuntu20.04                                         | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.4/os-pkgs-ubuntu2004-v0.5.4.tar.gz> |
-| openEuler 22.03                                     | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.4/os-pkgs-openeuler22.03-v0.5.4.tar.gz> |
-| OracleLinux R9 U1                                   | https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.4/os-pkgs-oracle9-v0.5.4.tar.gz |
+| :-------------------------------------------------- | :----------------------------------------------------------- |
+| Centos 7                                            | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.2/os-pkgs-centos7-v0.5.2.tar.gz> |
+| Redhat 8                                            | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.2/os-pkgs-redhat8-v0.5.2.tar.gz> |
+| Redhat 7                                            | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.2/os-pkgs-redhat7-v0.5.2.tar.gz> |
+| Kylin Linux Advanced Server release V10 (Sword) SP2 | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.2/os-pkgs-kylinv10-v0.5.2.tar.gz> |
+| Ubuntu20.04                                         | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.2/os-pkgs-ubuntu2004-v0.5.2.tar.gz> |
+| openEuler 22.03                                     | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.2/os-pkgs-openeuler22.03-v0.5.2.tar.gz> |
+| OracleLinux R9 U1                                   | https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.2/os-pkgs-oracle9-v0.5.2.tar.gz |
 
 For UOS V20 (1020a) osPackage deployment, please refer to [Deploying DCE 5.0 on UOS V20 (1020a) operating system](../os-install/uos-v20-install-dce5.0.md)
 
