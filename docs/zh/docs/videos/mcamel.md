@@ -63,4 +63,12 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/redis.mp4" preload="metadata" poster="../images/mcamel-redis.png"></video>
 </div>
 
+## 工作负载反亲和性
+
+<!--参阅[RabbitMQ 消息服务实例管理](../middleware/rabbitmq/user-guide/create.md)文档页面。-->
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/anti-affinity.mp4" preload="metadata" poster="../images/mcamel-anti-affinity.png"></video>
+</div>
+
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
