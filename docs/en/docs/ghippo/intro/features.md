@@ -9,98 +9,98 @@ This page describes the features of Global Management.
 
 1. Users
 
-     Having a user account is a prerequisite for users to access the DCE platform.
-     [User](../user-guide/access-control/user.md) is created by Super Admin or IAM Admin in `Global Management` -> `Access Control` -> `Users` page, or connected via LDAP.
-     Each user has an independent username and password. By granting different permissions to a single or a group of users, users have access to different resources.
+    Having a user account is a prerequisite for users to access the DCE platform.
+    [User](../user-guide/access-control/user.md) is created by Super Admin or IAM Admin in `Global Management` -> `Access Control` -> `Users` page, or connected via LDAP.
+    Each user has an independent username and password. By granting different permissions to a single or a group of users, users have access to different resources.
 
-     ```mermaid
-     graph LR
+    ```mermaid
+    graph LR
 
-         admin([Admin or<br>user and access administrator]) --> |create and manage users|user[User]
-         user --> user1[User A]
-         user --> user2[User B]
-         user --> user3[User C]
+        admin([Admin or<br>user and access administrator]) --> |create and manage users|user[User]
+        user --> user1[User A]
+        user --> user2[User B]
+        user --> user3[User C]
         
-     click user "https://docs.daocloud.io/en/ghippo/user-guide/access-control/User/"
+    click user "https://docs.daocloud.io/en/ghippo/user-guide/access-control/User/"
 
-     classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
-     classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
-     classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
-     class admin plain;
-     class user1,user2,user3 k8s;
-     class user cluster
-     ```
+    classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
+    classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
+    classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
+    class admin plain;
+    class user1,user2,user3 k8s;
+    class user cluster
+    ```
 
 2. Groups
 
-     [group](../user-guide/access-control/group.md) is a collection of multiple users.
-     Users can inherit the role permissions of the group by joining the group. Authorize users in batches through groups to better manage users and their permissions.
+    [group](../user-guide/access-control/group.md) is a collection of multiple users.
+    Users can inherit the role permissions of the group by joining the group. Authorize users in batches through groups to better manage users and their permissions.
 
-     ```mermaid
-     graph LR
+    ```mermaid
+    graph LR
 
-         admin([Admin or<br>User and Access Administrator])
-         admin --> user[Create user]
-         admin --> group[Create group]
-         admin --> add[Add user to group]
+        admin([Admin or<br>User and Access Administrator])
+        admin --> user[Create user]
+        admin --> group[Create group]
+        admin --> add[Add user to group]
         
-     click user "https://docs.daocloud.io/en/ghippo/user-guide/access-control/User/"
-     click group "https://docs.daocloud.io/en/ghippo/user-guide/access-control/Group/"
-     click add "https://docs.daocloud.io/en/ghippo/user-guide/access-control/Group/#_5"
+    click user "https://docs.daocloud.io/en/ghippo/user-guide/access-control/User/"
+    click group "https://docs.daocloud.io/en/ghippo/user-guide/access-control/Group/"
+    click add "https://docs.daocloud.io/en/ghippo/user-guide/access-control/Group/#_5"
 
-     classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
-     classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
-     classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
-     class admin plain;
-     class user,group,add cluster
-     ```
+    classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
+    classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
+    classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
+    class admin plain;
+    class user,group,add cluster
+    ```
 
 3. Roles
 
-     A [role](../user-guide/access-control/role.md) corresponds to a set of permissions.
-     Permissions determine the actions that can be performed on a resource. Granting a role to a user grants all the permissions included in that role.
-     You can divide the management rights of different modules to different users,
-     For example, user A manages the container management module, user B manages Workbench module, and jointly manages the observability module.
+    A [role](../user-guide/access-control/role.md) corresponds to a set of permissions.
+    Permissions determine the actions that can be performed on a resource. Granting a role to a user grants all the permissions included in that role.
+    You can divide the management rights of different modules to different users,
+    For example, user A manages the container management module, user B manages Workbench module, and jointly manages the observability module.
 
 4. Workspaces
 
-     [Workspaces](../user-guide/workspace/workspace.md) are used to manage resources and consist of two parts: folders and workspaces.
+    [Workspaces](../user-guide/workspace/workspace.md) are used to manage resources and consist of two parts: folders and workspaces.
 
-     Levels represent nodes in the resource hierarchy, and each level can contain workspaces, other levels, or both. The hierarchy can be understood as a variety of concepts, such as hierarchical departments, environments, or suppliers.
+    Levels represent nodes in the resource hierarchy, and each level can contain workspaces, other levels, or both. The hierarchy can be understood as a variety of concepts, such as hierarchical departments, environments, or suppliers.
 
-     Workspaces can be thought of as projects under their respective department, and administrators can map the hierarchical relationship within the enterprise using the hierarchy and workspaces.
+    Workspaces can be thought of as projects under their respective department, and administrators can map the hierarchical relationship within the enterprise using the hierarchy and workspaces.
 
-     Although a hierarchy may contain multiple hierarchies or workspaces, a given hierarchy or workspace can only have one parent.
+    Although a hierarchy may contain multiple hierarchies or workspaces, a given hierarchy or workspace can only have one parent.
 
 5. Audit Logs
 
-     [Audit Logs](../user-guide/audit/audit-log.md) completely records users' various operations, including operations initiated by users through pages or API interfaces and self-triggered operations within each service. It enables combined queries through multiple dimensions, such as event source, resource type, and operation status, and supports audit log export.
+    [Audit Logs](../user-guide/audit/audit-log.md) completely records users' various operations, including operations initiated by users through pages or API interfaces and self-triggered operations within each service. It enables combined queries through multiple dimensions, such as event source, resource type, and operation status, and supports audit log export.
 
 6. Platform Settings
 
-     [Platform Settings](../user-guide/platform-setting/about.md) include account security settings, appearance customization, and mail server settings. When it is necessary to manage platform-level settings, such as account security information, platform logos, license authorization, and mail server, Admins can operate through `Platform Settings`. Admins have exclusive management rights for platform settings.
+    [Platform Settings](../user-guide/platform-setting/about.md) include account security settings, appearance customization, and mail server settings. When it is necessary to manage platform-level settings, such as account security information, platform logos, license authorization, and mail server, Admins can operate through `Platform Settings`. Admins have exclusive management rights for platform settings.
 
-     ```mermaid
-     graph LR
+    ```mermaid
+    graph LR
 
-         admin([Admin]) --> |management|about[Platform settings]
-         about --> password[User password and other security policies]
-         about --> appear[Platform appearance customization]
-         about --> mail[Mail server]
-         about --> license[Genuine authorization]
+        admin([Admin]) --> |management|about[Platform settings]
+        about --> password[User password and other security policies]
+        about --> appear[Platform appearance customization]
+        about --> mail[Mail server]
+        about --> license[Genuine authorization]
         
-     click about "https://docs.daocloud.io/en/ghippo/user-guide/04PlatformSetting/about/"
-     click password "https://docs.daocloud.io/en/ghippo/user-guide/password/"
-     click appear "https://docs.daocloud.io/en/ghippo/user-guide/04PlatformSetting/Appearance/"
-     click mail "https://docs.daocloud.io/en/ghippo/user-guide/04PlatformSetting/MailServer/"
-     click license "https://docs.daocloud.io/en/dce/license0/"
+    click about "https://docs.daocloud.io/en/ghippo/user-guide/04PlatformSetting/about/"
+    click password "https://docs.daocloud.io/en/ghippo/user-guide/password/"
+    click appear "https://docs.daocloud.io/en/ghippo/user-guide/04PlatformSetting/Appearance/"
+    click mail "https://docs.daocloud.io/en/ghippo/user-guide/04PlatformSetting/MailServer/"
+    click license "https://docs.daocloud.io/en/dce/license0/"
 
-     classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
-     classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
-     classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
-     class admin plain;
-     class about,password,appear,mail,license cluster
-     ```
+    classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
+    classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
+    classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
+    class admin plain;
+    class about,password,appear,mail,license cluster
+    ```
 
 ## List of Features
 
