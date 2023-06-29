@@ -32,7 +32,7 @@
 3. 下载 TencentOS Server 3.1 osPackage 离线包。
 
      ```bash
-    curl -LO https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.1/os-pkgs-tencent31-v0.6.1.tar.gz
+    curl -LO https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-tencent31-v0.6.6.tar.gz
     ```
 
 4. 下载 addon 离线包，可以在[下载中心](../../download/dce5.md)下载最新版本（可选）
@@ -65,7 +65,6 @@
       binaries:
         type: builtin
       kubeanConfig: |-
-        # 啥意思
         allow_unsupported_distribution_setup: true
         redhat_os_family_extensions:
           - "TencentOS"

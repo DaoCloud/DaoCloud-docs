@@ -16,7 +16,6 @@ global:
 infrastructures:
   hwameiStor:
     enable: true
-    # version: v0.9.3
     version: v0.10.4
     policy: drbd-disabled
   istio:

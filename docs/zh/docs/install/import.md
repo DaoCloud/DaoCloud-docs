@@ -2,7 +2,7 @@
 
 ## 概述
 
-安装器 dce5-installer 支持了 `import-artifact` 命令来导入离线资源。目前可被导入的离线资源包括：
+安装器 dce5-installer (仅支持 v0.9.0 版本及以上) 支持了 `import-artifact` 命令来导入离线资源。目前可被导入的离线资源包括：
 
 - `*.iso` 操作系统 ISO 镜像文件
 
