@@ -2,6 +2,69 @@
 
 本页列出服务网格各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023-06-29
+
+### v0.17.0
+
+#### 升级
+
+- **新增** 新增 `mspider.io/mesh-gateway-name` Label 规范，用于定义网格网关名称。
+- **新增** 命名空间新增字段 `injectionStatus`，用于列表搜索。
+- **新增** 在拓扑查询中，新增字段 `label_selectors`,条件查询拓扑结果。
+- **新增** 边车工作负载信息新增字段 `Labels` 和 `PodLabels`。
+- **新增** 服务工作负载信息新增字段 `Labels` 和 `PodLabels`。
+- **新增** 集群信息新增组件信息（components）与 Istio 版本（meshVersion）字段。
+- **新增** 集群列表与网格管理集群列表新增 `include_components` 字段，用于选择是否需要展示集群组件信息，例如 Insight 等外部组件。
+- **新增** 为所有需要的接口，增加审计信息。
+- **新增** 工作负载注入策略清除策略操作。
+- **新增** 命名空间列表新增索引搜索实现。
+- **新增** 审计日志能力。
+- **新增** 工作负载注入策略清除能力。
+- **新增** 集群列表新增组件状态实现。
+- **新增** 新增 `mspider.io/mesh-gateway-name` Label 规范，用于定义网关网关名称。
+- **新增** `MCPC Controller` 实现纳管服务自动注入能力。
+- **新增** Ghippo 资源上报功能，按照规范自动创建并且更新 `GProductResource` 资源。
+- **新增** `MCPC Controller` 新增配置 `global.config.enableAutoInitPolicies`，用于是否开启纳管服务自动初始化治理策略。
+- **新增** `MCPC Controller` 新增配置 `global.config.enableAutoInjectedSidecar`，用于是否开启纳管服务自动注入策略。
+- **新增** K8s 各版本兼容性测试。
+- **优化** 新增 cache 优化查询集群 `Insight Agent` 状态接口过慢问题。
+- **优化** 网格创建时对托管集群检测加强，避免创建冲突网格。
+- **优化** 网格网关更新操作将忽略名称 (Name)、命名空间 (Namespace)、标签 (Labels) 更新，避免更新触发异常。
+- **优化** Kpanda 集群 kubeconfig 同步方式。
+- **优化** `WorkloadShadow controller watcher` 创建逻辑。
+- **升级** 支持查询集群与集群组件，允许不传 MeshID，独立获取信息。
+- **升级** go package istio.io/istio 到 `v0.0.0-20230131034922-50fb2905d9f5` 版本。
+- **升级** Cloudtty 到 `v0.5.3` 版本。
+- **升级** 前端版本至 `v0.15.0` 版本。
+
+#### 修复
+
+- **修复** 创建集群东西网关的审计日志描述不准确的问题。
+- **修复** 东西网关副本数不生效问题。
+- **修复** 网格删除检测边车部分无效。
+- **修复** 监控拓扑无法筛选命名空间。
+- **修复** 监控拓扑服务错误率数据不准确问题。
+- **修复** 修复网格不存在时应该返回 404 错误。
+- **修复** Audit 存在 `nil pointer` 导致 panic 的问题。
+- **修复** 审计日志中，Enum 类型的资源类型显示为数字的问题。
+- **修复** GRPC 请求带用户认证信息时，行为和 HTTP 请求不一致的情况。
+- **修复** 创建专有网格时，`Telemetry` 资源没有被正确创建。
+- **修复** `RegProxy watcher` 不重建。
+- **修复** `traffic-lane` 插件会给流量打上错误的标签，导致流量泳道无法工作。
+- **修复** 删除网格时，没有正确清理集群配置。
+- **修复** `MCPC Controller` 接入不健康集群，运行不正常的问题。
+- **修复** 修复网格删除或者移除集群过程中，无法正常移除组件问题。
+- **修复** GlobalMesh 和 MeshCluster 一直处于删除状态，无法强制删除的逻辑。
+- **修复** 默认不注入的系统命名空间注入状态不正确的问题。
+- **修复** 代理 `HostedAPIServe`r 的时候，选择到了没就绪的 Pod，导致网格无法就绪。
+- **修复** 网格删除时，Telemetry 删除失败导致网格删除流程失败的问题。因该资源在卸载 Istio / 移除 `Hosted ApiServer` 时会被清理，所以不需要在删除网格流程中进行删除。
+- **修复** `HostedAPIServer` 因为权限问题无法再 OCP 上安装的问题。
+- **修复** helm chart 中的描述信息。
+
+#### 移除
+
+- **移除** 托管网格模式下，`istiod-[meshID]-hosted-lb` 服务中 443 端口。
+
 ## 2023-05-31
 
 ### v0.16.2
@@ -10,7 +73,7 @@
 
 - **新增** Ckube 按需加载资源。
 - **新增** IstioResource 字段：`labels` 与 `annotations`，能够更新 Label 与 Annotation。
-- **新增** MeshCluster 中 ClusterProvider 同步实现.
+- **新增** MeshCluster 中 ClusterProvider 同步实现。
 - **新增** `mspider.io/protected` Label 定义，用于网格保护能力。
 - **新增** 边车升级支持多工作负载能力，`SidecarUpgrader` 中 `workloads` 同时支持 `workloadshadow.name` 和 `deployment.name`。
 - **新增** 工作负载类型改造成 string 实现。
@@ -42,7 +105,7 @@
 - **修复** RegProxy watcher 不重建。
 - **修复** `traffic-lane` 插件会给流量打上错误的标签，导致流量泳道无法工作。
 - **修复** 修复网格删除或者移除集群过程中，无法正常移除组件问题。
-- **修复** 修复网格不存在时应该返回 404 错误.
+- **修复** 修复网格不存在时应该返回 404 错误。
 - **修复** CloudShell 权限问题。
 - **修复** MeshCluster Status RemotePilotAddress 无效数据没有及时清理。
 - **修复** MeshCluster 无法被删除的问题。
@@ -74,7 +137,7 @@
 - **新增** 网格配置托管 Istiod 的 LoadBalancer Annotations 实现
 - **新增** 网格网关配置服务 Annotations 实现
 - **新增** 增加网格字段 load_balancer_annotations，支持自定义负载均衡 Annotations
-- **新增** 在 mspider-api 中，手动执行 pipeline，设置 SYNC_OPENAPI_DOCS 为key，既可触发上传文档站（提 PR）
+- **新增** 在 mspider-api 中，手动执行 pipeline，设置 SYNC_OPENAPI_DOCS 为 key，既可触发上传文档站（提 PR）
 - **新增** MCPC Controller 感知到 Service 的中存在 mspider.io/managed 的标签时，将触发自动创建该服务对应的治理策略。
 - **新增** MCPC Controller 多工作负载类型支持。
 - **新增** 健康检查功能，当某个网格 APIServer 代理出现无法连通的情况时，自动重建该代理，
