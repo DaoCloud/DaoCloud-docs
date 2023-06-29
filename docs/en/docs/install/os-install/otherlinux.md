@@ -58,7 +58,7 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
 
 4. After the installation is successful, the following log will be output:
 
-    ```bash
+    ```console
     [root@master test]# cat log.txt |egrep 'INFO|WARN'
     [WARN]   skip install yq ...
     [INFO]   succeed to install package 'python-apt'
@@ -89,37 +89,37 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
 
 1. Check the installation status by `cat log.txt |egrep 'INFO|WARN'`:
 
-     If the `failed to install package` keyword appears, it means that the installation is not successful, and when it finally fails, `the packages that failed to install are: ipset ipvsadm xfsprogs` will be output.
+    If the `failed to install package` keyword appears, it means that the installation is not successful, and when it finally fails, `the packages that failed to install are: ipset ipvsadm xfsprogs` will be output.
 
 2. The package names corresponding to different versions (major version) of the same system family (os family) are different:
 
-     | system family | version | package name |
-     | -------------------- | ----- | ------------------ |
-     | Debian | < 11 | python-apt |
-     | | >= 11 | python3-apt |
-     | Redhat Major Version | < 8 | libselinux-python |
-     | | \>= 8 | python3-libselinux |
+    | OS family | Version | Package |
+    | -------------------- | ----- | ------------------ |
+    | Debian | < 11 | python-apt |
+    | | >= 11 | python3-apt |
+    | Redhat Major Version | < 8 | libselinux-python |
+    | | \>= 8 | python3-libselinux |
 
 ## Start offline installation
 
 1. Download the full mode offline package, you can download the latest version in [Download Center](https://docs.daocloud.io/download/dce5/).
 
-     | CPU Architecture | Version | Download URL |
-     | -------- | ------ | ------------------------------ -------------------------------------------------- -------------- |
-     | AMD64 | v0.6.1 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-amd64.tar> |
+    | CPU Architecture | Version | Download URL |
+    | -------- | ------ | ------------------------------ -------------------------------------------------- -------------- |
+    | AMD64 | v0.6.1 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-amd64.tar> |
 
-     Unzip the offline package after downloading:
+    Unzip the offline package after downloading:
 
-     ```bash
-     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-amd64.tar
-     tar -xvf offline-v0.6.1-amd64.tar
-     ```
+    ```bash
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-amd64.tar
+    tar -xvf offline-v0.6.1-amd64.tar
+    ```
 
 2. Download the image of the Other Linux operating system, here we take `UnionTech OS Server 20 1050d` as an example:
 
-     ```bash
-     curl -LO https://cdimage-download.chinauos.com/uniontechos-server-20-1050d-amd64.iso
-     ```
+    ```bash
+    curl -LO https://cdimage-download.chinauos.com/uniontechos-server-20-1050d-amd64.iso
+    ```
 
 3. Refer to the previous step `Making the offline package of the operating system`.
 
@@ -219,25 +219,25 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
 
 6. Start the installation of DCE 5.0.
 
-     ```bash
-     ./dce5-installer cluster-create -m ./sample/mainfest.yaml -c ./sample/clusterConfig.yaml
-     ```
+    ```bash
+    ./dce5-installer cluster-create -m ./sample/mainfest.yaml -c ./sample/clusterConfig.yaml
+    ```
 
-     !!! note
+    !!! note
 
-         Some parameters are introduced, and more parameters can be viewed through `./dce5-installer --help`:
+        Some parameters are introduced, and more parameters can be viewed through `./dce5-installer --help`:
 
-         - `-z` minimal install
-         - `-c` specifies the cluster configuration file, and does not need to specify `-c` when using NodePort to expose the console
-         - `-d` enable debug mode
-         - `--serial` specifies that all installation tasks are executed serially
+        - `-z` minimal install
+        - `-c` specifies the cluster configuration file, and does not need to specify `-c` when using NodePort to expose the console
+        - `-d` enable debug mode
+        - `--serial` specifies that all installation tasks are executed serially
 
 7. After the installation is complete, the command line will prompt that the installation is successful. congratulations! :smile: Now you can use the default account and password (admin/changeme) to explore the new DCE 5.0 through the URL prompted on the screen!
 
-     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
+    ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
-     !!! success
+    !!! success
 
-         Please record the prompted URL for your next visit.
+        Please record the prompted URL for your next visit.
 
 8. After successfully installing DCE 5.0 Enterprise Package, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.

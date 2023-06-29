@@ -58,7 +58,7 @@ Other Linux 本质上是由于 DCE 对某些 Linux 操作系统没有提供安�
 
 4. 安装成功后，会输出如下日志：
 
-    ```bash
+    ```console
     [root@master test]# cat log.txt |egrep 'INFO|WARN'
     [WARN]   skip install yq ...
     [INFO]   succeed to install package 'python-apt'
