@@ -13,7 +13,7 @@
 |          | 统信 UOS V20 （1020a） | 5.4.0-125-generic                          | [UOS V20 (1020a) 操作系统上部署 DCE 5.0 商业版](../os-install/uos-v20-install-dce5.0.md) |
 |          | openEuler 22.03     | 5.10.0-60.18.0.50.oe2203.x86_64            | [离线安装 DCE 5.0 商业版](start-install.md) |
 | | Oracle Linux R9 U1 | 5.15.0-3.60.5.1.el9uek.x86_64 | [Oracle Linux R9 U1 操作系统上部署 DCE 5.0 商业版](../os-install/oracleLinux-install-dce5.0.md) |
-| | TencentOS Server 3.1 | 5.4.119-19.0009.14 | [TencentOS Server 3.1 操作系统上部署 DCE 5.0 商业版](../os-install/TencentOS 3.1-install-dce5.0.md) |
+| | TencentOS Server 3.1 | 5.4.119-19.0009.14 | [TencentOS Server 3.1 操作系统上部署 DCE 5.0 商业版](../os-install/TencentOS-install-dce5.0.md) |
 | ARM 64   | 银河麒麟 OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64            | [离线安装 DCE 5.0 商业版](start-install.md) |
 
 !!! note
