@@ -9,32 +9,11 @@ Date: 2022-12-29
 
 ## Background
 
-With Metallb ARP mode, users can view the real IP of the operator in `Global Management`->`Audit Log`, instead of the IP address after SNAT. The main idea of getting the client source IP through Metallb + istio-ingressgateway is to connect the istio-gateway pod-deployed
-node with the one declared by Metallb.
+With Metallb ARP mode, users can view the real IP of the operator in `Global Management`->`Audit Log`, instead of the IP address after SNAT. The key step is to set the `spec.externalTrafficPolicy` of the Service to `Local` mode.
 
 ## How to get client source IPs
 
-1. Label the specified node.
-
-    ```shell
-    kubectl label nodes demo-dev-worker-03 loadbalancerIPs.metallb.io=arp
-    kubectl label nodes demo-dev-worker-04 loadbalancerIPs.metallb.io=arp
-    ```
-
-2. Makes the istio-ingressgateway Pod scheduled to the above node.
-
-    ```shell
-          nodeSelector:
-            loadbalancerIPs.metallb.io: arp
-    ```
-
-    ```shell
-    [root@demo-dev-master-01 ~]# kubectl get po -n istio-system -o wide
-    NAME                                           READY   STATUS             RESTARTS           AGE     IP                NODE                 NOMINATED NODE   READINESS GATES
-    istio-ingressgateway-9b8c76bfc-rr5lg           1/1     Running            0                  2d9h    192.168.138.159   demo-dev-worker-03   <none>           <none>
-    ```
-
-3. Configure Metallb to declare the above node as the next hop for LB IPs.
+1. Configure Metallb to declare the above node as the next hop for LB IPs.
 
     ```shell
     [root@demo-dev-master-01 ~]# kubectl get l2advertisements.metallb.io -n metallb-system default-l2advertisement -o yaml
@@ -62,14 +41,11 @@ node with the one declared by Metallb.
           l2.ipaddress-pool.metallb.io: default-pool
       ipAddressPools:
       - default-pool
-      nodeSelectors: 
-      - matchLabels:
-          loadbalancerIPs.metallb.io: arp
     ```
 
     Binding is achieved by configuring `spec.nodeSelectors`.
 
-4. Modify `spec.externalTrafficPolicy` = `Local` for service: istio-ingressgateway. This mode can keep the real source IP:
+2. Change the field `spec.externalTrafficPolicy` = `Local` in the Service named `istio-ingressgateway`. This mode preserves the real source IP.
 
     ```shell
     [root@demo-dev-master-01 ~]# kubectl get svc -n istio-system istio-ingressgateway -o yaml
@@ -77,10 +53,6 @@ node with the one declared by Metallb.
     kind: Service
     metadata:
       annotations:
-        ckube.daocloud.io/indexes: '{"cluster":"kpanda-global-cluster","createdAt":"2022-11-25T08:27:35Z","importedAt":"","is_deleted":"false","labels":"{\"app\":\"istio-ingressgateway\",\"app.kubernetes.io/managed-by\":\"Helm\",\"app.kubernetes.io/name\":\"istio-ingressgateway\",\"app.kubernetes.io/version\":\"1.15.0\",\"helm.sh/chart\":\"gateway-1.15.0\",\"istio\":\"ingressgateway\"}","name":"istio-ingressgateway","namespace":"istio-system"}'
-        ckube.doacloud.io/cluster: kpanda-global-cluster
-        controller.mspider.io/workload-id: kpanda-global-cluster-deployment-istio-system-istio-ingressgateway
-        controller.mspider.io/workload-status: '{"workloads":{"kpanda-global-cluster-deployment-istio-system-istio-ingressgateway":{"workload_id":"kpanda-global-cluster-deployment-istio-system-istio-ingressgateway","replicas":3,"available_replicas":3,"available_injected_replicas":3,"injected":true,"needs_restart":false,"running":true}},"diag_messages":{"injection":{"message_type":"injection","ready":true,"message":""},"need-restart":{"message_type":"need-restart","ready":true,"message":""},"running":{"message_type":"running","ready":true,"message":""}}}'
         meta.helm.sh/release-name: istio-ingressgateway
         meta.helm.sh/release-namespace: istio-system
       creationTimestamp: "2022-11-25T08:27:35Z"
@@ -133,8 +105,4 @@ node with the one declared by Metallb.
         - ip: 10.6.229.180
     ```
 
-5. On the `Global Management`->`Audit Log` page, click `View Details` in any event to view the obtained client source IP.
-
-    
-
-    
+3. On the `Global Management`->`Audit Log` page, click `View Details` in any event to view the obtained client source IP.
