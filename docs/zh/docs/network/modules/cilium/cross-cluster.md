@@ -27,7 +27,7 @@ rpm -Uvh https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
 yum --enablerepo=elrepo-kernel install kernel-ml
 ```
 
-`注意`kernel-ml`是最新文档版内核，您可以根据需要选择其他版本。`
+>注意:`kernel-ml` 是最新文档版内核，您可以根据需要选择其他版本。
 
 4.更新 GRUB 配置，以便在启动时使用新内核版本：
 
@@ -45,13 +45,14 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 ![创建集群1](../../images/network-cross-cluster1.png)
 
 2.以同样的步骤创建集群 cluster02。
-`注意：两个集群使用的容器网段和服务网段一定不能冲突。两个参数的值不能冲突，便于标识集群确保唯一性，避免跨集群通信时出现冲突。`
+
+>注意：两个集群使用的容器网段和服务网段一定不能冲突。两个参数的值不能冲突，便于标识集群确保唯一性，避免跨集群通信时出现冲突。
 
 ![创建集群2](../../images/network-cross-cluster2.png)
 
 ## 为API Server 创建 Service
 
-1. 集群创建成功后，在两个集群上分别创建一个 Service，用于将该集群的 API server 对外暴露。
+1.集群创建成功后，在两个集群上分别创建一个 Service，用于将该集群的 API server 对外暴露。
 
 - 集群 cluster01 访问类型选择 NodePort， 便于外部访问
 - 命名空间选择 `kube-system`，即 API Server 所在命名空间
@@ -61,7 +62,6 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 ![创建service](../../images/network-cross-cluster3.png)
 
 ![创建service](../../images/network-cross-cluster4.png)
-
 2.再以同样方式在集群 cluster02 上为 API Server 创建 Service。
 ![创建service](../../images/network-cross-cluster5.png)
 
@@ -77,13 +77,13 @@ vi $HOME/.kube/config
 
 1.在两个集群 cluster01 和 cluster02 里分别添加新的 `cluster`、`context`、`user` 信息。
 
-（1）在`clusters`下面添加新的`cluster`信息：两个集群原有的 CA 颁发机构不变；新的 `server`  地址改为上述创建的 API Server Service 地址；`name` 改为两个集群本身的名称：cluster01 和 cluster02。
+- 在`clusters`下面添加新的`cluster`信息：两个集群原有的 CA 颁发机构不变；新的 `server`  地址改为上述创建的 API Server Service 地址；`name` 改为两个集群本身的名称：cluster01 和 cluster02。
 
-`注意：API Server Service 的地址可以从 DCE5.0 的页面查看或复制，需要使用 https 协议。`
+>注意：API Server Service 的地址可以从 DCE5.0 的页面查看或复制，需要使用 https 协议。
 
-（2）在`contexts`下面添加新的`context` 信息：将`context`中集群的 `name` 、`user`、`cluster` 三个字段的值均修改为两个集群本身的名称：cluster01 和 cluster02 。
+- 在`contexts`下面添加新的`context` 信息：将`context`中集群的 `name` 、`user`、`cluster` 三个字段的值均修改为两个集群本身的名称：cluster01 和 cluster02 。
 
-（3）在`users`下面添加新的`user` 信息：两个集群 cluster01 和 cluster02 分别复制本身原有的证书信息，将 name 改为两个集群本身的名称：cluster01 和 cluster02。
+- 在`users`下面添加新的`user` 信息：两个集群 cluster01 和 cluster02 分别复制本身原有的证书信息，将 name 改为两个集群本身的名称：cluster01 和 cluster02。
 
 2.在对端集群中分别互相添加已经创建好的 `cluster` 、`context`、`user` 信息。
 
@@ -252,7 +252,7 @@ spec:
 - 添加注解，使当前的 Service 在全局生效
   ![创建service应用](../../images/network-cross-cluster10.png)
 
-`注意：在创建集群 cluster02 的 Service 时，两个集群的 service name 必须相同，并位于相同的命名空间、拥有相同的端口名称和相同的 global 注解。`
+>注意：在创建集群 cluster02 的 Service 时，两个集群的 service name 必须相同，并位于相同的命名空间，拥有相同的端口名称和相同的 global 注解。
 
 ![创建service应用](../../images/network-cross-cluster11.png)
 
