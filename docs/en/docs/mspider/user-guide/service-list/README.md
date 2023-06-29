@@ -3,26 +3,43 @@ hide:
   - toc
 ---
 
-# service management
+# Service Management
 
-Service management lists all the services that have been injected into the sidecar in the cluster under the current mesh, and you can filter services based on the namespace.
+Service management displays all the services that have been injected with sidecars in the clusters under the current mesh. You can filter services based on namespaces.
 
+![Service List](../../images/servicelist01.png)
 
+The service mesh aggregates services in each cluster. Services with the same name in the same namespace are aggregated into one service. This facilitates unified traffic management for cross-cluster collaborative services.
 
-The service mesh aggregates the services of each cluster, and the services with the same name under the same namespace will be aggregated into one service, which is conducive to unified traffic management for cross-cluster collaborative services.
+The `Service Management` performs `Diagnostic Configuration` checks on the status of services in the list. The results and their meanings are as follows:
 
-You can click a service name to enter the details page to view specific information such as the service address and port of each cluster. You can also modify the communication protocol in the `Address Information` tab.
+- Normal: All pods of the service in each cluster have been injected with sidecars, and all settings are identical.
+- Warning: Some pods of the workloads under this service have not been injected with sidecars.
+- Abnormal: The service will be displayed as `Abnormal` if any of the following problems exist:
 
+    - None of the pods have been injected with sidecars.
+	  - The port settings of the service are inconsistent across clusters.
+	  - The workload selector labels of the service are inconsistent across clusters.
+	  - The access methods of the service are inconsistent across clusters.
 
+!!! note
 
+    It is recommended to ensure that services with the same name in different clusters have identical configurations; otherwise, some workloads may not function properly.
 
+The service list also indicates services from other microservice registries.
 
-Pay special attention to the `Diagnostic Configuration` column in the list of services. When the diagnostic information is `abnormal`, hovering the cursor over `ⓘ` will display the cause of the exception. The abnormal state will affect mesh-related capabilities such as service traffic governance in the next stage.
+![other microservice registries](../../images/servicelist02.png)
 
+You can click on a service name to enter the details page and view specific information such as service addresses and ports in each cluster. You can also modify the communication protocol in the `Address` tab.
 
+![Address](../../images/servicelist03.png)
 
-On the right side of the service list, click `⋮` to select the corresponding menu item, and you can jump to traffic management and security management.
+Pay special attention to the `Diagnostic Configuration` column in the service list. When the diagnostic information is `Abnormal`, hovering over the `ⓘ` will display the reason for the abnormality. Abnormal status will affect grid-related capabilities such as traffic management in the next phase.
 
+![Abnormal Prompt](../../images/servicelist04.png)
 
+On the right side of the service list, click on `⋮` and select the corresponding menu item to navigate to traffic management and security governance.
 
-For how to create and configure services, please refer to [Creating Services](../../../kpanda/user-guide/services-routes/create-services.md).
+![Menu Items](../../images/servicelist05.png)
+
+For information on how to create and configure services, please refer to [Create Services](../../../kpanda/user-guide/services-routes/create-services.md).

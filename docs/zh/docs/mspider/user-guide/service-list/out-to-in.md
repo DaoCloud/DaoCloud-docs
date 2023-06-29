@@ -7,17 +7,17 @@ hide:
 
 本页说明外部应用如何通过配置来访问网格内的服务。
 
-前置条件：
+**前置条件：**
 
 - 服务 `bookinfo.com` 运行于网格 `global-service` 的 `default` 命名空间下
 
 - 网格提供 `ingressgateway` 网关实例
 
-配置目标：实现内部服务 `bookinfo.com` 对外暴露。
+**配置目标：** 实现内部服务 `bookinfo.com` 对外暴露。
 
 1. 通过 URI 匹配方式，实现外部应用对服务 `bookinfo.com` 的指定页面访问路由。
 
-    ![访问路由](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/out-to-in01.png)
+    ![访问路由](../../images/out-to-in01.png)
 
 2. 点击`流量治理` -> `网关规则` -> `创建`为 istio 网关创建网关规则，对外暴露服务及端口。
 
