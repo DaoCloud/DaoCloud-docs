@@ -35,3 +35,15 @@
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/underlay-ip.mp4" preload="metadata" poster="../images/underlay-ip.png"></video>
 </div>
+
+## 如何利用可观测性快速定位异常并排障？
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/insight.mp4" preload="metadata" poster="../images/insight.png"></video>
+</div>
+
+## 如何利用 CICD 快速交付应用
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/app-release.mp4" preload="metadata" poster="../images/amamba-app-release.png"></video>
+</div>
