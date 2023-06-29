@@ -1,129 +1,158 @@
 # 应用跨集群通信
 
+## 介绍
+
+随着微服务进程发展，为了满足应用隔离、高可用/容灾以及运维管理的需求，许多企业选择部署多个 Kubernetes（K8s）集群。然而，这种多集群部署带来了一个问题：一些应用依赖于其他 K8s 集群中的微服务，需要实现集群间的通信。具体而言，需要从一个集群的 Pod 去访问另外一个集群的 Pod 或者 Service。
+
 ## 前提条件
 
-创建集群所有节点上的 kernel 版本升级至少大于 5.0。
+请确认操作系统 Kernel 版本号 >= 4.9.17，推荐 5.10+。查看并安装升级最新的 Linux 内核版本，您可以按照如下命令进行操作：
+
+1.查看当前内核版本：
+
+```bash
+uname -r
+```
+
+2.安装 ELRepo 存储库，ELRepo 存储库中提供的最新 Linux 内核版本：
+
+```bash
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+rpm -Uvh https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
+```
+
+3.安装最新的 Linux 内核版本：
+
+```bash
+yum --enablerepo=elrepo-kernel install kernel-ml
+```
+
+`注意`kernel-ml`是最新文档版内核，您可以根据需要选择其他版本。`
+
+4.更新 GRUB 配置，以便在启动时使用新内核版本：
+
+```bash
+grub2-mkconfig -o /boot/grub2/grub.cfg
+```
 
 ## 创建集群
 
-1.创建两个名称不同的集群，集群一的网络插件选择 cilium，添加两个参数 `cluster-id` 和 `cluster-name`，便于标识集群确保唯一性，避免跨集群通信时出现冲突，其他均使用默认配置项。
+1.创建两个名称不同的集群分别为 cluster01 和 cluster02 。
 
-2.以同样的步骤创建集群二。
-注意：两个集群使用的容器网段和服务网段一定不能冲突，两个参数的值不能冲突。
+- 集群 cluster01 的网络插件选择 cilium
+- 添加两个参数 `cluster-id`和 `cluster-name`
+- 其他均使用默认配置项
+![创建集群1](../../images/network-cross-cluster1.png)
 
-![创建集群](../../images/network-cross-cluster1.png)
+2.以同样的步骤创建集群 cluster02。
+`注意：两个集群使用的容器网段和服务网段一定不能冲突。两个参数的值不能冲突，便于标识集群确保唯一性，避免跨集群通信时出现冲突。`
 
-3.集群创建成功后，在两个集群上分别创建一个 Service，对外暴露该集群的API server。
+![创建集群2](../../images/network-cross-cluster2.png)
 
-- 选择 NodePort 访问类型便于外部访问
-- 命名空间必须选择 kube-system
-- 通过标签选择器筛选 API Server组件
-- 配置 Service 的访问端口
-- 点击该 Service 的外部访问链接
+## 为API Server 创建 Service
 
-![创建服务](../../images/network-cross-cluster2.png)
+1. 集群创建成功后，在两个集群上分别创建一个 Service，用于将该集群的 API server 对外暴露。
 
-4.再以同样方式在集群二为 API Server 创建 Service，且配置信息完全一致，最后可以从外部成功访问。
+- 集群 cluster01 访问类型选择 NodePort， 便于外部访问
+- 命名空间选择 `kube-system`，即 API Server 所在命名空间
+- 标签选择器筛选 API Server 组件，可返回查看 API Server 的选择器
+- 配置 Service 的访问端口，容器端口为 6443
+- 获取该 Service 的外部访问链接
+![创建service](../../images/network-cross-cluster3.png)
 
-![外部访问](../../images/network-cross-cluster3.png)
+![创建service](../../images/network-cross-cluster4.png)
+
+2.再以同样方式在集群 cluster02 上为 API Server 创建 Service。
+![创建service](../../images/network-cross-cluster5.png)
+
+![创建service](../../images/network-cross-cluster6.png)
 
 ## 修改集群配置
 
-1.通过 `vi`命令开始编辑集群一的 `kubeconfig` 文件:
+通过` vi `命令开始编辑 集群 cluster01 和集群  cluster02 的 `kubeconfig`文件:
 
 ```bash
 vi $HOME/.kube/config
 ```
 
-2.添加两个集群的 API Server 访问地址：
+1.在两个集群 cluster01 和 cluster02 里分别添加新的 `cluster`、`context`、`user` 信息。
 
-- CA 证书直接复制已有的证书内容
-- name 改为集群一的名称
-- server 地址改为：集群一 API Server 的 Service 地址，可以从 DCE5.0 的页面查看或复制。注意：需要使用 https 协议。
-- 添加集群二的 API Server 访问地址，name 改为集群二的名称，server 地址改为集群二 API Server 的 Service 地址。
+（1）在`clusters`下面添加新的`cluster`信息：两个集群原有的 CA 颁发机构不变；新的 `server`  地址改为上述创建的 API Server Service 地址；`name` 改为两个集群本身的名称：cluster01 和 cluster02。
+
+`注意：API Server Service 的地址可以从 DCE5.0 的页面查看或复制，需要使用 https 协议。`
+
+（2）在`contexts`下面添加新的`context` 信息：将`context`中集群的 `name` 、`user`、`cluster` 三个字段的值均修改为两个集群本身的名称：cluster01 和 cluster02 。
+
+（3）在`users`下面添加新的`user` 信息：两个集群 cluster01 和 cluster02 分别复制本身原有的证书信息，将 name 改为两个集群本身的名称：cluster01 和 cluster02。
+
+2.在对端集群中分别互相添加已经创建好的 `cluster` 、`context`、`user` 信息。
+
+如下为操作过程中的 yaml 示例：
 
 ```bash
-- cluster:
-    certificate-authority-data: {{cluster1 ca}}
-    server: https://{{api server1}}
-  name: {{cluster1 }}
-- cluster:
-    certificate-authority-data: {{cluster2 ca}}
-    server: https://{{api server2}}
-  name: {{cluster2}}
+clusters:
+- cluster: #添加本集群 cluster01 `cluster`信息
+    certificate-authority-data: {{cluster01}}
+    server: https://{{https://10.6.124.66:31936}}
+  name: {{cluster01 }}
+- cluster: #添加对端集群 cluster02`cluster`信息
+    certificate-authority-data: {{cluster02}}
+    server: https://{{https://10.6.124.67:31466}}
+  name: {{cluster02}}
 ```
-
-3.在 context 中分别添加集群一和集群二：
-
-- 将 context 中的 name、user、cluster 三个字段的值均修改为集群一的名称。
-- 同样地，将 context 中的 name、user、cluster三个字段的值均修改为集群二的名称。
-- 如下为操作过程中的 yaml 示例：
 
 ```bash
 contexts:
-- context:
-    cluster: cluster.local
-    user: kubernetes-admin
-  name: kubernetes-admin@cluster.local
-- context:
-    cluster: {{cluster1 name}}
-    user: {{cluster1 name}}
-  name: {{cluster1 name}}
-- context:
-    cluster: {{cluster2 name}}
-    user: {{cluster2 name}}
-  name: {{cluster2 name}}
+- context: #添加本集群 cluster01 `context信息
+    cluster: {{cluster01 name}}
+    user: {{cluster01 name}}
+  name: {{cluster01 name}}
+- context: #添加对端集群 cluster02`context`信息
+    cluster: {{cluster02 name}}
+    user: {{cluster02 name}}
+  name: {{cluster02 name}}
 current-context: kubernetes-admin@cluster.local
 ```
 
-4.在 users 下面分别添加集群一和集群二。
-
-- 集群一复制原有的证书信息，将 name 改为集群一的名称。
-- 接着添加集群二，注意：集群二需要复制集群二中 kubeconfig 的证书信息，将 name 值改为集群二的名称。
-- 如下为操作过程中的 yaml 示例：
-
 ```bash
 users:
-- name: {{cluster1}}
+- name: {{cluster01}} #添加本集群 cluster01 `user`信息
   user:
-    client-certificate-data: {{cluster1 certificate-data}}
-    client-key-data: {{cluster1 key-data}}
-- name: {{cluster2}}
+    client-certificate-data: {{cluster01 certificate-data}}
+    client-key-data: {{cluster01 key-data}}
+- name: {{cluster02}} #添加对端集群 cluster02 `user`信息
   user:
-    client-certificate-data: {{cluster2 certificate-data}}
-    client-key-data: {{cluster2 key-data}}
-
+    client-certificate-data: {{cluster02 certificate-data}}
+    client-key-data: {{cluster02 key-data}}
 ```
-
-5.进入集群二的控制节点，以同样的步骤修改 kubeconfig 文件：
-
-- 在 clusters 下面分别添加两个集群的 API Server 地址。
-- 在 contexts 下面添加集群一和集群二。
-- 在 users 下面也要添加两个集群，注意：集群一需要复制集群一中 kubeconfig 的证书信息。
 
 ## 配置集群连通性
 
 执行如下命令验证集群的连通性：
 
-1.在集群一上输入：
+1.在集群 cluster01 上输入：
 
 ```bash
 cilium clustermesh enable --create-ca --context cluster01 --service-type NodePort
 ```
 
-2.集群二开启 `clustermesh` 执行如下命令：
+2.集群 cluster02 开启 `clustermesh` 执行如下命令：
 
 ```bash
 cilium clustermesh enable --create-ca --context cluster02 --service-type NodePort
 ```
 
-3.在集群一上建立连接：
+3.在集群 cluster01 上建立连接：
 
 ```bash
 cilium clustermesh connect --context cluster01 --destination-context cluster02
 ```
 
-4.集群一出现 `connected cluster1 and cluster2!` ，集群二出现 `ClusterMesh enabled!`说明两个集群通了。
+4.集群 cluster01 出现 `connected cluster1 and cluster2!` ，集群 cluster02 出现 `ClusterMesh enabled!`说明两个集群通了。
+
+![联通](../../images/network-cross-cluster7.png)
+
+![联通](../../images/network-cross-cluster8.png)
 
 ## 创建演示应用
 
@@ -209,37 +238,34 @@ spec:
             - localhost
 ```
 
-2.在 DCE 5.0中通过 yaml 文件快速创建集群一的应用。
+2.在 DCE 5.0 中通过 yaml 文件快速分别创建两个集群 cluster01 和 cluster02 的应用。
 
-（1）修改 ConfigMap 的内容，使得访问集群一中的服务时，返回的数据带有集群一名称的标签。可在 rebel-base 应用中查看容器组标签。
-![容器组标签](../../images/network-cross-cluster4.png)
+分别修改 `ConfigMap` 的内容，使得访问集群 cluster01 和集群 cluster02 中的 Service 时，返回的数据带有分别带有 cluster01 和 cluster02 名称的标签。可在 `rebel-base` 应用中查看容器组标签。
 
-（2）创建集群一 Service，指向创建的 rebel-base 应用：
+![创建应用](../../images/network-cross-cluster9.png)
+
+3.在两个集群 cluster01 和 cluster02 中分别创建一个 global service video 的 Service，指向的是已创建的 `rebel-base` 应用。
 
 - Service 类型为 ClusterIP
 - 添加应用的容器组标签筛选对应的应用
 - 配置端口
-- 添加注解，使当前的 Service在全局生效
-![集群一service](../../images/network-cross-cluster5.png)
+- 添加注解，使当前的 Service 在全局生效
+  ![创建service应用](../../images/network-cross-cluster10.png)
 
-3.以同样的方式在集群二中创建应用。
+`注意：在创建集群 cluster02 的 Service 时，两个集群的 service name 必须相同，并位于相同的命名空间、拥有相同的端口名称和相同的 global 注解。`
 
-（1）修改 ConfigMap，使得访问集群二中的服务时，返回的数据带有集群二名称的标签。
-
-（2）再创建对应的 Service，注意：集群二 Service 的名称必须与集群一中对应 Service 的名称完全一致、并位于相同的命名空间、拥有相同的端口名称和相同的 global 注解。
-
-![集群二service](../../images/network-cross-cluster6.png)
+![创建service应用](../../images/network-cross-cluster11.png)
 
 ## 跨集群通信
 
-1.先查看集群二中应用的 Pod IP。
+1.先查看集群 cluster02 中应用的 Pod IP。
 
-![集群二Pod IP](../../images/network-cross-cluster7.png)
+![查看pod ip](../../images/network-cross-cluster12.png)
 
-2.在集群一中进入应用 Pod 控制台，`curl`集群二应用的 Pod IP，成功返回集群二的配置项内容，说明两个集群中的 Pod 可以相互通信。
+2.进入集群 cluster01 详情，点击应用`rebel-base`  Pod 控制台，`curl`集群 cluster02 应用`rebel-base` 的 Pod IP，成功返回 cluster02 信息，说明两个集群中的 Pod 可以相互通信。
 
-![Pod 互相通信](../../images/network-cross-cluster8.png)
+![pod 通信](../../images/network-cross-cluster13.png)
 
-3.查看集群一的 Service 名称，进入集群二的应用 Pod 控制台，`curl`对应的 Service 名称，有些返回内容来自集群一，说明两个集群中的Pod 和 Service 也可以互相通信。
+3.查看集群 cluster01 的 Service 名称，进入集群 cluster02 的应用`rebel-base`  Pod 控制台，`curl` 对应的 cluster01 的 Service 名称，有些返回内容来自 cluster01，说明两个集群中的 Pod 和 Service 也可以互相通信。
 
-![Pod和Service通信 ](../../images/network-cross-cluster9.png)
+![Pod 和 Service通信](../../images/network-cross-cluster14.png)
