@@ -75,7 +75,7 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 | openEuler 22.03                                     | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.2/os-pkgs-openeuler22.03-v0.5.2.tar.gz> |
 | OracleLinux R9 U1                                   | https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.2/os-pkgs-oracle9-v0.5.2.tar.gz |
 
-统信UOS V20（1020a）osPackage 部署请参考 [UOS V20 (1020a) 操作系统上部署 DCE 5.0](../os-install/uos-v20-install-dce5.0.md)
+统信 UOS V20（1020a）osPackage 部署请参考 [UOS V20 (1020a) 操作系统上部署 DCE 5.0](../os-install/uos-v20-install-dce5.0.md)
 
 #### 一键下载所需离线包
 

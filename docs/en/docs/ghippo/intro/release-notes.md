@@ -2,6 +2,41 @@
 
 This page lists the Release Notes for global management of each version, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-06-29
+
+### v0.18.0
+
+##### Features
+
+- Workspace migration
+- Access management - Webhook (create/edit/delete/list/view)
+- Automatic cleanup of Webhook records in the background
+- Reminder before license expiration
+- Disabled functionality after license expiration
+- Users need to enter old password when changing their password
+- Resource groups can be bound to service mesh resources
+- Support for external Postgres database
+- Operational management - Reports support more types of currencies
+- High availability support for istio-ingressgateway and istiod
+
+#### Improvements
+
+- Backend configuration passwords are stored in secrets
+
+#### Fixes
+
+- Fixed timezone issue in audit logs
+- Fixed role list display issue during workspace authorization
+
+## 2023-06-02
+
+### v0.17.1
+
+#### Fixes
+
+- Fixed migration failure caused by incorrect file migration
+- Fixed issue where only the Workspace Admin role could be selected when creating a workspace
+
 ## 2023-05-30
 
 ### v0.17.0

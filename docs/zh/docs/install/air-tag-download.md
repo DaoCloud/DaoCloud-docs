@@ -27,5 +27,5 @@
 
 !!! note
 
-    amd64 支持的操作系统：centos7、redhat8、ubuntu2004
-    arm64 支持的操作系统：kylinv10
+    - amd64 支持的操作系统：centos7、redhat8、ubuntu2004
+    - arm64 支持的操作系统：kylinv10
