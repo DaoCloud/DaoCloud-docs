@@ -12,7 +12,9 @@ nav:
           - DCE 5.0 Release Notes: dce/dce-rn.md
       - Installation:
           - Overview: install/intro.md
-          - Install Dependencies: install/install-tools.md
+          - Install Dependencies: 
+              - Online/Offline Installation: install/install-tools.md
+              - One-click Download of All Offline Packages: install/air-tag-download.md
           - Install Community Package:
               - Resource Planning: install/community/resources.md
               - Online Install in kind: install/community/kind/online.md

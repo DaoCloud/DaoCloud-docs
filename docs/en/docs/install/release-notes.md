@@ -1,11 +1,30 @@
 ---
-MTPE: todo
-Date: 2023-04-12
+MTPE: windsonsea
+Date: 2023-06-29
 ---
 
 # Installer Release Notes
 
 This page lists the Release Notes of the installer, so that you can understand the evolution path and feature changes of each version.
+
+## 2023-6-15
+
+### v0.8.0
+
+#### Improvements
+
+- **Improved** Upgraded ipavo component to v0.9.3
+- **Improved** Upgraded amamba component to v0.17.4
+- **Improved** Upgraded hwameistor-operator component to v0.10.4
+- **Improved** Upgraded kangaroo component to v0.8.2
+- **Improved** Upgraded insight component to v0.17.3
+
+#### Fixes
+
+- **Fixed** Fixed the issue of failed image synchronization for Harbor repositories using external HTTP.
+- **Fixed** Fixed indentation error in `clusterConfig.yaml` configuration file.
+- **Fixed** Fixed rendering error in localService configuration when using an external yum repo.
+- **Fixed** Fixed integration issue with external JFrog charts repository.
 
 ## 2023-5-31
 
