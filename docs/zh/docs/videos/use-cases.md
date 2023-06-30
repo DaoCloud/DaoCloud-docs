@@ -47,3 +47,9 @@
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/app-release.mp4" preload="metadata" poster="../images/amamba-app-release.png"></video>
 </div>
+
+## 如何实现应用加速与跨集群通信
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/network-cross-cluster.mp4" preload="metadata" poster="../images/network-cross-cluster.png"></video>
+</div>
