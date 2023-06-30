@@ -18,7 +18,7 @@
   
     IstioCon 2023 将于 9.25-9.26 在上海举行。推荐议题内容包括：案例研究、新功能、Istio 配置及项目更新等。演讲类型包括单人演讲（30 分钟）、双人演讲（30 分钟）和小组讨论（30 分钟）三种形式。本次峰会支持现场演讲和线上演讲。
 
-- [7.15 Harbor & Narrows & Velero 开源项目技术沙龙将于 7 月 15 日举行](https://mp.weixin.qq.com/s/ZFSOrVuAVczfRN08D_LzDQ)
+- [7.15 Harbor & Narrows & Velero 开源项目技术沙龙将于 7 月 15 日举行](https://mp.weixin.qq.com/s/HSVLUfDZpYSWyNakP60CJQ)
   
     本次云原生技术沙龙由 VMware 主办，聚焦于 Harbor、Narrows、Velero 三个开源项目的技术分享活动。本次活动汇集了来自 VMware、蚂蚁集团、微软、骥步科技、雅克云的多位云原生领域技术专家现场分享全栈式的开源项目讲解和云原生应用的落地与实践。
 

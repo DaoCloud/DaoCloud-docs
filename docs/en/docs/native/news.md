@@ -18,7 +18,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     IstioCon 2023 will be held in Shanghai from 9.25-9.26. Recommended topics include: case studies, new features, Istio configuration and project updates, etc. Presentation types include single presentations (30 minutes), dual presentations (30 minutes), and panel discussions (30 minutes). The summit supports both live and online presentations.
 
-- [7.15 Harbor & Narrows & Velero Open Source Project Technical Salon to be held on July 15](https://mp.weixin.qq.com/s/ZFSOrVuAVczfRN08D_LzDQ)
+- [7.15 Harbor & Narrows & Velero Open Source Project Technical Salon to be held on July 15](https://mp.weixin.qq.com/s/HSVLUfDZpYSWyNakP60CJQ)
   
     The Cloud Native Technology Salon, hosted by VMware, will focus on the technical sharing activities of the Harbor, Narrows, and Velero open source projects. The event brings together a number of cloud-native technical experts from VMware, Ant Group, Microsoft, Geberit, and Yak Cloud to share full-stack open source projects and the implementation and practice of cloud-native applications.
 
