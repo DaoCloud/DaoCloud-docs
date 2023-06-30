@@ -1,6 +1,6 @@
 # 在非主流操作系统上创建集群
 
-本文介绍离线模式下如何在**未声明支持的 OS** 上创建工作集群。DCE 5.0 声明支持的 OS 范围请参考 [DCE 5.0 支持的操作系统](../../install/commercial/deploy-requirements.md)
+本文介绍离线模式下如何在 **未声明支持的 OS** 上创建工作集群。DCE 5.0 声明支持的 OS 范围请参考 [DCE 5.0 支持的操作系统](../../install/commercial/deploy-requirements.md)
 
 离线模式下在未声明支持的 OS 上创建工作集群，主要的流程如下图：
 
