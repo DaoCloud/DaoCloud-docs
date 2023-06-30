@@ -1,6 +1,6 @@
 # 在非主流操作系统上创建集群
 
-本文介绍离线模式下如何在**未声明支持的 OS** 上创建工作集群。DCE 5.0 声明支持的 OS 范围请参考 [DCE 5.0 支持的操作系统](../user-guide/clusters/cluster-role.md)
+本文介绍离线模式下如何在**未声明支持的 OS** 上创建工作集群。DCE 5.0 声明支持的 OS 范围请参考 [DCE 5.0 支持的操作系统](../../install/commercial/deploy-requirements.md)
 
 离线模式下在未声明支持的 OS 上创建工作集群，主要的流程如下图：
 
@@ -28,12 +28,12 @@ $ ./other_os_pkgs.sh build #构建离线包
 
 执行完上述命令后，预期将在当前路径下生成一个名为 **`os-pkgs-anolis-8.8.tar.gz`** 的压缩包。当前路径下文件目录大概如下：
 
-!!! note
-
+```bash
     .
     ├── other_os_pkgs.sh
     ├── pkgs.yml
     └── os-pkgs-anolis-8.8.tar.gz
+```
 
 #### 2.离线节点——安装离线包
 
@@ -55,4 +55,4 @@ $ ./other_os_pkgs.sh install #安装离线包
 
 #### 3.前往界面创建集群
 
-参考文档[创建工作集群](../user-guide/clusters/create-cluster.md)，创建 ubuntu 集群。
+参考文档[创建工作集群](../user-guide/clusters/create-cluster.md)，创建 openAnolis 集群。
