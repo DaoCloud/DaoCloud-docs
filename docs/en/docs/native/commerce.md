@@ -26,6 +26,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      Testcontainers Cloud is built on the lightweight open source testing framework [Testcontainers](https://github.com/testcontainers), which creates a more realistic testing environment through Docker containers.
      Developers can test applications themselves before moving code to production via a continuous integration (CI) platform, allowing cloud-native application developers to test dependencies without the help of a dedicated application testing team.
 
+- [AWS Container Application Monitoring Service Amazon Managed Service for Prometheus Integrated Cost Management Tool Kubecost](https://aws.amazon.com/cn/blogs/containers/multi-cluster-cost-monitoring-using-kubecost-with-amazon-eks-and-amazon-managed-service-for-prometheus/)
+
+    Amazon Managed Service for Prometheus with Kubecost performs cost allocation calculations, provides a unified view of Kubernetes costs across multiple EKS clusters, and provides recommendations for optimizing Kubernetes clusters.
+
 - [AWS AppConfig, an application configuration tool for AWS, launches a proxy for container runtimes to simplify configuration of feature flags and runtimes](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
 
      Users of platforms such as AKS can use the AWS AppConfig Agent to manage the retrieval and caching of container application configuration data, handle polling and caching logic, and more.
@@ -381,6 +385,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Kyndryl Cloud Native Services provides an end-to-end lifecycle framework that includes code assets, workflows, specialized fundamentals, consulting management services, and comprehensive services related to automated backups, patching, KPI monitoring, security, alerting, and event management for cloud native application migration and optimization . The solution allows enterprises to move their on-premise applications to cloud service provider environments such as AWS, GCP and Azure.
 
+- [Kong Service Mesh product Kong Mesh v2.3 released](https://konghq.com/blog/product-releases/kong-mesh-2-3)
+
+    Updates: support for Envoy 1.26, least privilege security default configuration in Kubernetes, support for TLS gateway listeners, allow fine-grained control over how the mesh is installed, support for sending changes in configuration updates only to the global control plane, GitOps workflow support for customizing/disabling default policy creation, support for init container sorting, support for GAMMA initiative.
+
 - [Kong Enterprise 3.2, a Kong cloud native API platform, is released](https://konghq.com/blog/kong-enterprise-3-2)
 
     Updates: Support for data plane extensions when the control plane fails; New Datadog tracking plugin to work with Datadog Agent without installing Otel collector; Support for latency-based bootstrapping, allowing Kong load balancers to select the "fastest" backend based on total response time when proxying upstream services. " backend when proxying upstream services.
@@ -426,6 +434,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      The main new features of this version: support for Kubernetes 1.24, support for Google Cloud Platform GCP, support for cri-dockerd instead of Dockershim, security access control updates (OPA gatekeeper is provided as an optional alternative to PSP).
 
 ### N
+
+- [Spot by NetApp Officially Launches Ocean CD, a Kubernetes Continuous Delivery Product](https://spot.io/blog/announcing-ocean-cd-availability/)
+
+    Ocean CD provides out-of-the-box processes for DevOps and infrastructure teams, allowing developers to automate common and reliable continuous delivery using progressive deployment strategies such as Canary deployment, continuous validation, failure policies, and observability. Service owners are able to roll out service changes to production without having to write code or redevelop deployment policies.
 
 - [Spot by NetApp Introduces Ocean CD, a Kubernetes Application Continuous Delivery Product](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release-notes.pdf)
 

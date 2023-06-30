@@ -207,6 +207,10 @@
 
     该版本主要新特性：支持自动更新由Kubeadm 控制平面提供商提供的机器证书、可以从新的容器镜像注册中心 registry.k8s.io 发布和消费集群 API 镜像、允许在控制平面节点上创建没有污点的集群、clusterctl 现在可以管理 IPAM 和 RuntimeExtension 提供者。
 
+- [Clusternet 多云多集群管理项目 v0.16.0 发布（CNCF 项目）](https://github.com/clusternet/clusternet/releases/tag/v0.16.0)
+
+    更新内容：支持将工作负载从未就绪的集群迁移到健康的备用集群上、支持为未就绪集群添加污点、可配置集群得分的百分比来进行调度、添加许可证扫描报告和状态、支持记录健康检查的指标数据。
+
 - [Clusternet 多云多集群管理项目 v0.15.0 发布（CNCF 项目）](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.4.0)
 
     版本特性：将所有控制器从 clusternet-hub 中移出，放入一个名为 “clusternet-controller-manager”的新组件中；增加多集群服务发现的功能门；为调度器迁移验证添加单元测试。
@@ -466,6 +470,10 @@
     [Horizon](https://github.com/horizoncd/horizon) 是一个基于 Kubernetes 的云原生持续部署平台，并且全面践行 GitOps。
     平台团队可以自定义创建版本化的服务模板，为业务应用程序和中间件定义符合统一标准的部署和运维。
     开发团队可以选择预先定义的模板，进行自动化的服务部署，确保基于 Kubernetes 的统一最佳实践。通过 Horizon GitOps 机制，确保任意变更（代码、配置、环境）持久化、可回滚、可审计。
+
+- [HwameiStor 云原生本地存储成为 CNCF 沙箱项目](https://mp.weixin.qq.com/s/KvoQq24M8Pv4hDloVLtYVQ)
+
+    6 月 23 日，由「DaoCloud 道客」开源的云原生本地存储 [HwameiStor](https://github.com/hwameistor/hwameistor) 高票入选 CNCF 沙箱项目。HwameiStor 将系统节点上的所有本地磁盘进行统一管理，形成不同类型的本地存储资源池，并通过 CSI 标准接口提供本地数据卷服务，为有状态的云原生应用或组件提供数据持久化能力。
 
 ### I
 
@@ -817,6 +825,10 @@
 
     该版本主要新特性：跨网格网关支持多区域运行、网格网关/内置网关增加可观测性功能、重写 CNI、网格网关支持路径重写和报头添加/删除、支持过滤代理的指标、简化 TCP 流量日志实现、支持 Projected Service Account Tokens。
 
+- [Kurator 分布式云原生平台 v0.3.0 发布](https://github.com/kurator-dev/kurator/releases/tag/v0.4.0)
+
+    更新内容：新增模块 application manager，通过 GitOps 方式在整个 Fleet 中分发应用/配置；增加指标插件，支持多集群统一监控；新增策略管理器，提供一致的安全策略。
+
 - [Kurator 分布式云原生平台 v0.3.0 发布](https://github.com/kurator-dev/kurator/releases/tag/v0.3.0)
 
     版本特性：在 Cluster API 的基础上增加了一个 CRD 集群，用户只需声明一个 API 对象即可管理 kubernetes 集群的生命周期；支持 kubernetes 集群升级；支持 kubernetes 集群扩缩容；支持在本地设置高可用 kubernetes 集群。
@@ -894,6 +906,10 @@
 - [MetalLB Kubernetes 负载均衡器 v1.3.2 发布（CNCF 项目）](https://metallb.universe.tf/release-notes/#version-0-13-2)  
 
     该版本主要新特性：支持通过 CRD 进行配置（不再支持 ConfigMap）；可以在 L2 或 BGP 模式中广播地址，或者只分配 IP 不广播地址；为 L2 Announcement 和 BGP Announcement 增加节点选择器支持；新增 BGPPeer 选择器；支持使用 kustomize 进行更灵活的部署；增加 LoadBalancerClass 支持；支持多协议 BGP。
+
+- [Microcks API 模拟和测试项目成为 CNCF 沙箱项目](https://mp.weixin.qq.com/s/cdbf_1LUVwb4euldblV14w)
+
+    [Microcks](https://github.com/microcks) 为不同 API 风格和协议 提供了一个事实标准，来加速和确保 API 的交付。Microcks 支持在创建 API contract 之前，使用 “后端即服务”功能测试新的 API，并且支持 REST API、gRPC、GraphQL 和事件驱动的 API 等，无缝集成持续构建或流水线。
 
 - [MicroK8s 轻量级 Kubernetes 发行版 v1.25 发布](https://github.com/canonical/microk8s/releases/tag/v1.25)
 
@@ -1334,7 +1350,11 @@
 
     该版本主要新特性：支持基于真实节点负载的动态调度和重调度、支持弹性作业调度、新增 MPI job 插件、允许任务失败时不重试、支持查看 pod 请求的开销、支持在 pod group 入列过程中考虑资源配额、默认特权容器通过 admission webhook 的验证。
 
-### W, X, Z
+### W
+
+- [WasmEdge WebAssembly 运行时 v0.13.0 发布（CNCF 项目）](https://github.com/WasmEdge/WasmEdge/releases/tag/0.13.0)
+
+    更新内容：统一 wasmedge CLI 工具、将 WasmEdge 扩展移植为插件、引入 wasi_logging 插件、编译时支持启用未定义行为检测器、引入了将数据包含到模块实例的新 API、支持异步调用 WASM 函数、引入统一的工具 API。
 
 - [WasmEdge WebAssembly 运行时 v0.12.0 发布（CNCF 项目）](https://github.com/WasmEdge/WasmEdge/releases/tag/0.12.0)
 
@@ -1353,6 +1373,8 @@
 - [Wolfi：Chainguard 发布首个保障软件供应链安全的 Linux 发行版，专为容器和云原生环境设计](https://www.chainguard.dev/unchained/introducing-wolfi-the-first-linux-un-distro)  
 
     [Wolfi](https://github.com/wolfi-dev) 是一个为云原生设计的精简版 Linux 发行版，但其没有 Linux 内核，而是依靠环境（如容器运行时）来提供内核。主要功能：为所有软件包提供高质量构建时的 SBOM 作为标准；软件包是细粒度和相互独立的，以支持轻量级镜像；使用成熟可靠的 apk 包格式、完全声明性的、可重复的构建系统、支持 glibc 和 musl。
+
+### X, Z
 
 - [Xline 跨云元数据 KV 存储 进入 CNCF 沙箱项目](https://mp.weixin.qq.com/s/Pj8TOStT_oEABZGqFkCVaA)
 

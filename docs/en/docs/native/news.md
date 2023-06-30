@@ -18,9 +18,21 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     IstioCon 2023 will be held in Shanghai from 9.25-9.26. Recommended topics include: case studies, new features, Istio configuration and project updates, etc. Presentation types include single presentations (30 minutes), dual presentations (30 minutes), and panel discussions (30 minutes). The summit supports both live and online presentations.
 
+- [7.15 Harbor & Narrows & Velero Open Source Project Technical Salon to be held on July 15](https://mp.weixin.qq.com/s/ZFSOrVuAVczfRN08D_LzDQ)
+  
+    The Cloud Native Technology Salon, hosted by VMware, will focus on the technical sharing activities of the Harbor, Narrows, and Velero open source projects. The event brings together a number of cloud-native technical experts from VMware, Ant Group, Microsoft, Geberit, and Yak Cloud to share full-stack open source projects and the implementation and practice of cloud-native applications.
+
 - [7.15 The 7th Global Edge Computing Conference will be held in Shenzhen on 7.15](https://mp.weixin.qq.com/s/xMEPFjaVRds4PlwoEc0WHw)
   
     The conference invites more active industry opinion leaders and A-side enterprises in edge computing to share more than 20 topics to discuss edge computing landing practices, application cases, edge cloud, AI, open source, computing power, chips, audio and video, going to sea, industrial IoT, investment, etc.
+
+- [7.6-7.8 2023 World Congress on Artificial Intelligence to be Held in Shanghai, July 6-8](https://mp.weixin.qq.com/s/LlDOc9R2_1o31AuWzlPPFA)
+  
+    This year's conference focuses on the frontier of science and industrial development, around the three major topics of technology, industry and humanities, focusing on the ten frontier winds of big models, smart chips, scientific intelligence, robotics, brain-like intelligence, metaverse, autonomous driving, data forum, rule of law and security, blockchain, etc.
+
+- [7.7 China Academy of ICT "Cloud Optimization Capability Enhancement Program" Fourth Batch of Member Units Recruitment Opened (7.7 Application Deadline)](https://mp.weixin.qq.com/s/pnHwqln-JujuJxfD-6u-xA)
+  
+    Members of the "Cloud Optimization Capability Enhancement Program" can participate in the discussion and preparation of standards, research reports, white papers, and other group documents, and can obtain the working documents and official documents, as well as participate in various salons, trainings, industry conferences and other activities organized by the Enhancement Program, and enjoy priority display opportunities in various activities. The list of the fourth batch of members will be officially announced at the Trusted Cloud Conference on July 25.
 
 ### 2023-06
 
@@ -47,6 +59,14 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [June 30 China Academy of Information and Communications Technology launches the registration of digital service capability assessment of smart marketing in the first half of 2023 (registration closes on 6.30)](https://mp.weixin.qq.com/s/yQfz9X3oPKWDSeqgxwzs8g)
   
     Smart marketing digital service capability assessment includes six modules: digital use cases, digital governance, platform-based products, digital service operations, trustworthy and compatible ecology and digital trust security service capabilities. Among them, the platform-based product capability focuses on whether it has the ability of customer insight, marketing planning, customer reach, customer conversion, customer operation and other smart marketing whole-chain traces.
+
+- [6.28 "2022-2023 Container Network Usage Research Report" released](https://mp.weixin.qq.com/s/68crXAGMfPfBrFKAGRZGsw)
+  
+    The report shows that the percentage of containers running in public clouds and virtual machines is still the highest, but the percentage running on bare metal at the same time is increasing year by year, from 45% to 50%. Among open source container networking solutions, Calico has the highest adoption rate. In addition, the use of IPv6 or dual-stack container networks in production environments has increased significantly, reaching 30.21%.
+
+- [6.28 2023 CCF China Software Conference Special Issue Call for Papers](https://mp.weixin.qq.com/s/ZFSOrVuAVczfRN08D_LzDQ)
+  
+    CCF ChinaSoft, organized by the Chinese Computer Society (CCF), is a national academic conference with the highest specifications, the largest number of participants, the widest influence and the most comprehensive coverage in the field of software science and engineering in China. At present, the call for manuscripts for special issues of Journal of Software, Journal of Computer Science and other journals is in full swing.
 
 - [Late June: China Academy of Information and Communications Technology (CAICT) officially launches the first batch of evaluation of the first half of the One Cloud, Many Cores series of standards (registration closes in mid-late June)](https://mp.weixin.qq.com/s/XKpcv_QdP2lQX_a-eq_TuA)
   
@@ -120,6 +140,12 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [June 6 ICT China-2023 High Level Forum - Cloud Native Industry Summit will kick off on June 6 in Beijing](https://mp.weixin.qq.com/s/FTOBYjCZxYMoOM8WJUz8mQ)
   
     Sponsored by the Ministry of Industry and Information Technology, the Cloud Native Industry Summit Forum will invite leading think tanks, government leaders, academician experts, enterprise executives and other heavyweight guests to discuss the cloud native ecology and explore the cloud native future.
+
+- [6.5 Gartner Releases First Magic Quadrant for DevOps Platforms Report](https://www.gartner.com/doc/reprints?id=1-2DW4I0FF&ct=230601&st=sb)
+  
+    In addition to public cloud vendors (Microsoft, Amazon Web Services, Google Cloud Platform) and traditional DevOps vendors (Gitlab, Atlassian), cloud-native vendors (Red Hat, VMware, LingQun Alauda) also feature in the report, signaling that Cloud-native has become a core technology for building the next generation of DevOps value chain platforms.
+
+    ![devops](../native/images/Figure_1_Magic_Quadrant_for_DevOps_Platforms.png)
 
 - [6.5 IDC Releases "China Software-Defined Computing Software Market Tracker, 2022" Report](https://mp.weixin.qq.com/s/ON9EozhX6ksyL_q2bk_r4Q)
   

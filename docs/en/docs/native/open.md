@@ -207,6 +207,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support for automatic renewal of machine certificates provided by the Kubeadm control plane provider, the ability to publish and consume cluster API images from the new container container registry registry.k8s.io, allowing the creation of clusters without taints on control plane nodes, clusterctl can now manage IPAM and RuntimeExtension providers.
 
+- [Clusternet Multi-Cloud Multi-Cluster Management Project v0.16.0 Released (CNCF Project)](https://github.com/clusternet/clusternet/releases/tag/v0.16.0)
+
+    Updates: support for migrating workloads from non-ready clusters to healthy standby clusters, support for adding taint to non-ready clusters, configurable cluster score percentages for scheduling, add license scan reports and status, support for logging metrics data for health checks.
+
 - [Clusternet multicloud Multicluster Management Project v0.15.0 Released (CNCF Project)](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.4.0)
 
     Release features: move all controllers out of clusternet-hub into a new component called "clusternet-controller-manager"; add functional gate for multicluster service discovery; add unit tests for scheduler migration validation.
@@ -462,6 +466,10 @@ This page lists activity in cloud native open source projects in alphabetical or
     [Horizon](https://github.com/horizoncd/horizon) is a cloud-native continuous deployment platform based on Kubernetes and fully practices GitOps.
     Platform teams can customize and create versioned service templates to define uniform standards-compliant deployment and operations for business applications and middleware.
     Development teams can select pre-defined templates to automate service deployments and ensure uniform Kubernetes-based best practices. Ensure that any change (code, configuration, environment) is persistent, rollbackable, and auditable through Horizon GitOps mechanism.
+
+- [HwameiStor Cloud Native Local Storage Becomes CNCF Sandbox Project](https://mp.weixin.qq.com/s/KvoQq24M8Pv4hDloVLtYVQ)
+
+    On June 23, [HwameiStor](https://github.com/hwameistor/hwameistor), a cloud-native local storage open-sourced by "DaoCloud", was selected as a CNCF sandbox project with high votes. HwameiStor unifies the management of all local disks on system nodes to form a pool of different types of local storage resources and provides local data volume services through CSI standard interface to provide data persistence capability for stateful cloud-native applications or components.
 
 ### I
 
@@ -819,6 +827,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     The main new features of this version: cross-mesh gateway supports multi-region operation, mesh gateway/built-in gateway adds observability function, rewrites CNI, mesh gateway supports path rewriting and header addition/deletion, supports filtering proxy metrics, Simplify the implementation of TCP traffic logs and support Projected Service Account Tokens.
 
+- [Kurator Distributed Cloud Native Platform v0.3.0 Released](https://github.com/kurator-dev/kurator/releases/tag/v0.4.0)
+
+    Update: New module application manager to distribute applications/configurations across Fleet via GitOps; add metrics plugin to support unified monitoring of multiple clusters; new policy manager to provide consistent security policies.
+
 - [Kurator Distributed Cloud Native Platform v0.3.0 Released](https://github.com/kurator-dev/kurator/releases/tag/v0.3.0)
 
     Release Features: Adds a CRD cluster to the Cluster API, allowing users to manage the lifecycle of a kubernetes cluster by simply declaring an API object; supports kubernetes cluster upgrades; supports kubernetes cluster scaling; supports setting up a highly available kubernetes cluster locally.
@@ -896,6 +908,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [MetalLB Kubernetes Load Balancer v1.3.2 release (CNCF project)](https://metallb.universe.tf/release-notes/#version-0-13-2)
 
      The main new features of this version: support for configuration through CRD (no longer supports ConfigMap); can broadcast addresses in L2 or BGP mode, or only assign IP without broadcasting addresses; add node selector support for L2 Announcement and BGP Announcement; add BGPPeer selector; support for more flexible deployment using kustomize; add LoadBalancerClass support; support multi-protocol BGP.
+
+- [Microcks API Simulation and Testing Project Becomes CNCF Sandbox Project](https://mp.weixin.qq.com/s/cdbf_1LUVwb4euldblV14w)
+
+    [Microcks](https://github.com/microcks) provides a de facto standard for different API styles and protocols to accelerate and ensure API delivery. Microcks supports testing of new APIs before creating API contracts using the "Backend as a Service " feature to test new APIs before creating an API contract, and supports REST APIs, gRPC, GraphQL, and event-driven APIs, among others, seamlessly integrated with continuous builds or pipelines.
 
 - [MicroK8s lightweight Kubernetes distribution v1.25 released](https://github.com/canonical/microk8s/releases/tag/v1.25)
 
@@ -1336,7 +1352,11 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support dynamic scheduling and rescheduling based on real node load, support elastic job scheduling, add MPI job plug-ins, allow tasks not to retry when they fail, support checking the overhead of pod requests, and support enqueueing in pod groups Resource quotas are considered in the process, and the default privileged container passes the verification of admission webhook.
 
-### W, X, Z
+### W
+
+- [WasmEdge WebAssembly Runtime v0.13.0 Released (CNCF Project)](https://github.com/WasmEdge/WasmEdge/releases/tag/0.13.0)
+
+    Updates: unified wasmedge CLI tools, ported WasmEdge extensions as plugins, introduced wasi_logging plugin, compile-time support for enabling undefined behavior detectors, introduced new API for including data to module instances, support for asynchronous calls to WASM functions, introduced unified tools API.
 
 - [WasmEdge WebAssembly Runtime v0.12.0 Released (CNCF Project)](https://github.com/WasmEdge/WasmEdge/releases/tag/0.12.0)
 
@@ -1355,6 +1375,8 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Wolfi: Chainguard Releases First Linux Distribution to Secure Software Supply Chain, Designed for Containers and Cloud-Native Environments](https://www.chainguard.dev/unchained/introducing-wolfi-the-first-linux-un-distro)
 
      [Wolfi](https://github.com/wolfi-dev) is a stripped-down Linux distribution designed for cloud-native, but it does not have a Linux kernel, instead relying on the environment (such as a container runtime) to provide the kernel. Main features: Provide high-quality build-time SBOM as a standard for all packages; packages are fine-grained and independent of each other to support lightweight mirroring; use mature and reliable apk package format, fully declarative, repeatable Build system, supports glibc and musl.
+
+### X, Z
 
 - [Xline Cross-Cloud Metadata KV Storage into CNCF Sandbox Project](https://mp.weixin.qq.com/s/Pj8TOStT_oEABZGqFkCVaA)
 
