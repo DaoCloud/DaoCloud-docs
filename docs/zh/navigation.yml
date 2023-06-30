@@ -12,9 +12,7 @@ nav:
           - DCE 5.0 Release Notes: dce/dce-rn.md
       - 安装:
           - 安装简介: install/intro.md
-          - 安装依赖项: 
-              - 在线/离线安装: install/install-tools.md
-              - 一键下载所有离线包: install/air-tag-download.md
+          - 安装依赖项: install/install-tools.md
           - 安装社区版:
               - 资源规划: install/community/resources.md
               - kind 集群在线安装: install/community/kind/online.md
