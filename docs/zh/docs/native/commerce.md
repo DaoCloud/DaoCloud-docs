@@ -22,6 +22,10 @@
     Testcontainers Cloud 基于轻量级开源测试框架 [Testcontainers](https://github.com/testcontainers) 构建，通过 Docker 容器创建更真实的测试环境，
     开发人员可以在将代码通过持续集成（CI）平台转移到生产环境之前自己测试应用程序，这使得云原生应用开发者无需专门应用测试团队的帮助即可测试依赖关系。
 
+- [AWS 容器应用监控服务 Amazon Managed Service for Prometheus 集成成本管理工具 Kubecost](https://aws.amazon.com/cn/blogs/containers/multi-cluster-cost-monitoring-using-kubecost-with-amazon-eks-and-amazon-managed-service-for-prometheus/)
+
+    Amazon Managed Service for Prometheus with Kubecost 能够执行成本分配计算，提供跨多个 EKS 集群的统一 Kubernetes 成本视图，并为优化 Kubernetes 集群提供建议。
+
 - [AWS 应用配置工具 AWS AppConfig 推出一个用于容器运行时的代理，简化 feature flag 和运行时的配置](https://rafay.co/press-release/rafay-launches-cost-management-service-to-deliver-real-time-visibility-and-allocation-of-kubernetes-cloud-costs/)
 
     AKS 等平台的用户可以使用 AWS AppConfig Agent 管理容器应用配置数据的检索和缓存，以及处理轮询和缓存逻辑等。
@@ -377,6 +381,10 @@
 
     更新内容：增加集群的 etcd 备份支持；支持创建镜像备份仓库；支持可选应用镜像源的镜像备份；支持沙箱恢复，恢复后不影响原业务；支持备份恢复任务使用钩子程序进行灵活的附属功能配置；支持基于备份恢复的数据卷同步方式；持配置容灾实例时同时配置 ingress 映射。
 
+- [Kong 服务网格产品 Kong Mesh v2.3 发布](https://konghq.com/blog/product-releases/kong-mesh-2-3)
+
+    更新内容：支持 Envoy 1.26、在 Kubernetes 中采用最小权限的安全默认配置、支持 TLS 网关监听器、允许细粒度控制网格的安装方式、支持只向全局控制平面发送配置更新中的变化、GitOps 工作流支持定制/禁用默认策略创建、支持 init 容器排序、支持 GAMMA 倡议。
+
 - [Kong 云原生 API 平台 Kong Enterprise 3.2 发布](https://konghq.com/blog/kong-enterprise-3-2)
 
     更新内容：当控制平面出现故障时，支持数据平面扩展；新增 Datadog 追踪插件，无需安装 Otel 收集器即可与 Datadog Agent 协同工作；支持基于时延的引导，允许 Kong 负载均衡器在代理上游服务时根据总响应时间选择“最快”的后端。
@@ -441,6 +449,10 @@
 - [Nutanix 推出 Kubernetes 数据管理平台 Nutanix Data Services for Kubernetes (NDK)](https://www.nutanix.com/blog/nutanix-announces-early-access-of-ndk)
 
     NDK 提供了一个应用感知的 Kubernetes 数据服务方案。NDK 为 Kubernetes 应用提供数据保护、恢复、迁移、克隆和复制数据管理功能；支持轻松将恢复时间目标（RTO）和恢复点目标（RPO）从几天缩短到几分钟；提供策略驱动的有状态应用管理；Kubernetes 和 IT 管理员可以通过设置一些规则和限制来管理基础设施，启用自助服务工作流程。
+
+- [Spot by NetApp 正式推出 Kubernetes 持续交付产品 Ocean CD](https://spot.io/blog/announcing-ocean-cd-availability/)
+
+    Ocean CD 为 DevOps 和基础设施团队提供了开箱即用的流程，允许开发人员使用渐进式部署策略，如 Canary 部署、持续验证、故障策略和可观测性，实现通用和可靠的持续交付自动化。服务所有者能够将服务变更推广到生产中，而无需编写代码或重新制定部署策略。
 
 - [Spot by NetApp 推出 Kubernetes 应用持续交付产品 Ocean CD](https://www.qualys.com/docs/release-notes/qualys-container-security-1.21-release-notes.pdf)
 
