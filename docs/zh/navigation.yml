@@ -295,6 +295,7 @@ nav:
               - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-app-git.md
               - 基于 Jar 包构建 Java 应用: amamba/user-guide/wizard/jar-java-app.md
               - 基于 Helm 模板部署 Helm 应用: amamba/user-guide/wizard/helm.md
+              - 通过原生应用部署传统微服务: amamba/user-guide/wizard/dce-native-app.md
           - 流水线:
               - 安装 Jenkins: amamba/user-guide/pipeline/install-jenkins.md
               - 创建流水线:
