@@ -27,25 +27,25 @@ ETCD 备份是以集群数据为核心的备份，在硬件设备损坏，开发
 
         ??? note "获取端口号的方式"
 
-            （1）先获取所有 pod
+            1. 先获取所有 pod
 
-            ```shell
-            kubectl get po -n kube-system | grep etcd
-            ```
+                ```shell
+                kubectl get po -n kube-system | grep etcd
+                ```
 
-            （2）获取对应 pod 的 listen-client-urls 中的端口号
+            2. 获取对应 Pod 的 listen-client-urls 中的端口号
 
-            > `etcd_pod_name` 的值需要替换为实际 pod 名称
+                > `etcd_pod_name` 的值需要替换为实际 pod 名称
 
-            ```shell
-            kubectl get po -n kube-system <etcd_pod_name> -oyaml | grep listen-client-urls
-            ```
+                ```shell
+                kubectl get po -n kube-system <etcd_pod_name> -oyaml | grep listen-client-urls
+                ```
 
-            预期输出结果如下，端口号可从下列信息中获取
+                预期输出结果如下，端口号可从下列信息中获取
 
-            ```shell
-            - --listen-client-urls=https://127.0.0.1:2379,https://10.6.229.191:2379
-            ```
+                ```shell
+                - --listen-client-urls=https://127.0.0.1:2379,https://10.6.229.191:2379
+                ```
 
     - 填写标准 K8s 的 CA 证书，可通过如下命令查看证书内容并将其复制粘贴到对应位置：
 
@@ -53,7 +53,7 @@ ETCD 备份是以集群数据为核心的备份，在硬件设备损坏，开发
         cat  /etc/kubernetes/ssl/etcd/ca.crt
         ```
 
-        dce4集群获取 CA 证书的方式：
+        DCE 4.0 集群获取 CA 证书的方式：
 
         ```shell
         cat  /etc/daocloud/dce/certs/ca.crt
@@ -65,11 +65,11 @@ ETCD 备份是以集群数据为核心的备份，在硬件设备损坏，开发
         cat /etc/kubernetes/ssl/apiserver-etcd-client.crt
         ```
 
-        dce4集群获取 Cert 证书的方式：
+        DCE 4.0 集群获取 Cert 证书的方式：
 
-            ```shell
-            cat /etc/daocloud/dce/certs/etcd/server.crt
-            ```
+        ```shell
+        cat /etc/daocloud/dce/certs/etcd/server.crt
+        ```
 
     - 填写标准 K8s 的 Key，可通过如下命令查看证书内容并将其复制粘贴到对应位置：
 
@@ -77,11 +77,11 @@ ETCD 备份是以集群数据为核心的备份，在硬件设备损坏，开发
         cat /etc/kubernetes/ssl/apiserver-etcd-client.key
         ```
 
-        dce4集群获取 key 的方式：
+        DCE 4.0 集群获取 key 的方式：
 
-            ```shell
-            cat /etc/daocloud/dce/certs/etcd/server.key
-            ```
+        ```shell
+        cat /etc/daocloud/dce/certs/etcd/server.key
+        ```
 
         ![创建基本信息](../../images/etcd-get01.png)
 
