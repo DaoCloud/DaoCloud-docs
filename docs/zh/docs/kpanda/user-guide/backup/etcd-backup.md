@@ -22,47 +22,65 @@ ETCD 备份是以集群数据为核心的备份，在硬件设备损坏，开发
 
 2. 填写基础信息，填写完毕后点击下一步，将自动校验 ETCD 的联通性，校验通过则进行下一步。
    
-    - 首先选择备份集群，并在终端登陆
-    - 填写 ETCD 地址，标准 K8s 集群大多为：`https://节点号:2379`
+    - 首先选择备份集群，并在终端登录
+    - 填写 ETCD 地址，标准 K8s 集群大多为 `https://节点号:2379`；而 DCE 4.0 集群大多为 `https://节点号:12379`
 
         ??? note "获取端口号的方式"
 
-            （1）先获取所有 pod
+            1. 先获取所有 Pod
 
-            ```shell
-            kubectl get po -n kube-system | grep etcd
-            ```
+                ```shell
+                kubectl get po -n kube-system | grep etcd
+                ```
 
-            （2）获取对应 pod 的 listen-client-urls 中的端口号
+            2. 获取对应 Pod 的 listen-client-urls 中的端口号
 
-            > `etcd_pod_name` 的值需要替换为实际 pod 名称
+                > `etcd_pod_name` 的值需要替换为实际 pod 名称
 
-            ```shell
-            kubectl get po -n kube-system <etcd_pod_name> -oyaml | grep listen-client-urls
-            ```
+                ```shell
+                kubectl get po -n kube-system <etcd_pod_name> -oyaml | grep listen-client-urls
+                ```
 
-            预期输出结果如下，端口号可从下列信息中获取
+                预期输出结果如下，端口号可从下列信息中获取
 
-            ```shell
-            - --listen-client-urls=https://127.0.0.1:2379,https://10.6.229.191:2379
-            ```
+                ```shell
+                - --listen-client-urls=https://127.0.0.1:2379,https://10.6.229.191:2379
+                ```
 
-    - 填写 CA 证书，可通过如下命令查看证书内容并将其复制粘贴到对应位置：
+    - 填写标准 K8s 的 CA 证书，可通过如下命令查看证书内容并将其复制粘贴到对应位置：
 
         ```shell
-        cat  /etc/kubernetes/ssl/etcd/ca.crt
+        cat /etc/kubernetes/ssl/etcd/ca.crt
         ```
 
-    - 填写 Cert 证书，可通过如下命令查看证书内容并将其复制粘贴到对应位置：
+        DCE 4.0 集群获取 CA 证书的方式：
+
+        ```shell
+        cat /etc/daocloud/dce/certs/ca.crt
+        ```
+
+    - 填写标准 K8s 的 Cert 证书，可通过如下命令查看证书内容并将其复制粘贴到对应位置：
 
         ```shell
         cat /etc/kubernetes/ssl/apiserver-etcd-client.crt
         ```
 
-    - 填写 Key，可通过如下命令查看证书内容并将其复制粘贴到对应位置：
+        DCE 4.0 集群获取 Cert 证书的方式：
+
+        ```shell
+        cat /etc/daocloud/dce/certs/etcd/server.crt
+        ```
+
+    - 填写标准 K8s 的 Key，可通过如下命令查看证书内容并将其复制粘贴到对应位置：
 
         ```shell
         cat /etc/kubernetes/ssl/apiserver-etcd-client.key
+        ```
+
+        DCE 4.0 集群获取 key 的方式：
+
+        ```shell
+        cat /etc/daocloud/dce/certs/etcd/server.key
         ```
 
         ![创建基本信息](../../images/etcd-get01.png)
@@ -84,8 +102,8 @@ ETCD 备份是以集群数据为核心的备份，在硬件设备损坏，开发
     - 存储供应商：默认选择 S3 存储
     - 对象存储访问地址：MinIO 的访问地址
     - 存储桶：在 MinIO 中创建一个 Bucket，填写名称
-    - 用户名：MinIO 的登陆用户名
-    - 密码：MinIO 的登陆密码
+    - 用户名：MinIO 的登录用户名
+    - 密码：MinIO 的登录密码
    
         ![存储位置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd05.png)
 
@@ -93,7 +111,7 @@ ETCD 备份是以集群数据为核心的备份，在硬件设备损坏，开发
 
     ![成功创建](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd06.png)
 
-6. 点击`查看日志`，将展示日志内容，默认展示100行，若想查看更多日志信息或者下载日志请前往[可观测性](https://demo-dev.daocloud.io/insight/logs?filterType=workload&cluster=chenwen-test&namespace=kpanda-system&workloadKind=deployment&workload=chenwen-test-etcd-backup&pod=chenwen-test-etcd-backup-5cf6d6bdfc-xstkx&container=backup-restore)
+6. 点击`查看日志`，将展示日志内容，默认展示 100 行，若想查看更多日志信息或者下载日志请前往[可观测性](https://demo-dev.daocloud.io/insight/logs?filterType=workload&cluster=chenwen-test&namespace=kpanda-system&workloadKind=deployment&workload=chenwen-test-etcd-backup&pod=chenwen-test-etcd-backup-5cf6d6bdfc-xstkx&container=backup-restore)
 
     ![查看日志](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd07.png)
 
