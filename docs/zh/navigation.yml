@@ -564,6 +564,7 @@ nav:
               - 安装参数配置: network/modules/cilium/install.md
               - 未支持功能说明: network/modules/cilium/not-support.md
               - 应用跨集群通信: network/modules/cilium/cross-cluster.md
+              - Cilium 网络通信加速: network/modules/cilium/cilium-speedup.md
           - Contour:
               - 介绍: network/modules/contour/what.md
               - 安装: network/modules/contour/install.md
