@@ -23,7 +23,7 @@ ETCD 备份是以集群数据为核心的备份，在硬件设备损坏，开发
 2. 填写基础信息，填写完毕后点击下一步，将自动校验 ETCD 的联通性，校验通过则进行下一步。
    
     - 首先选择备份集群，并在终端登陆
-    - 填写 ETCD 地址，标准 K8s 集群大多为：`https://节点号:2379`
+    - 填写 ETCD 地址，标准 K8s 集群大多为：`https://节点号:2379`;DCE4 集群大多为：`https://节点号:12379`
 
         ??? note "获取端口号的方式"
 
@@ -47,23 +47,41 @@ ETCD 备份是以集群数据为核心的备份，在硬件设备损坏，开发
             - --listen-client-urls=https://127.0.0.1:2379,https://10.6.229.191:2379
             ```
 
-    - 填写 CA 证书，可通过如下命令查看证书内容并将其复制粘贴到对应位置：
+    - 填写标准 K8s 的 CA 证书，可通过如下命令查看证书内容并将其复制粘贴到对应位置：
 
         ```shell
         cat  /etc/kubernetes/ssl/etcd/ca.crt
         ```
 
-    - 填写 Cert 证书，可通过如下命令查看证书内容并将其复制粘贴到对应位置：
+        dce4集群获取 CA 证书的方式：
+
+        ```shell
+        cat  /etc/daocloud/dce/certs/ca.crt
+        ```
+
+    - 填写标准 K8s 的 Cert 证书，可通过如下命令查看证书内容并将其复制粘贴到对应位置：
 
         ```shell
         cat /etc/kubernetes/ssl/apiserver-etcd-client.crt
         ```
 
-    - 填写 Key，可通过如下命令查看证书内容并将其复制粘贴到对应位置：
+        dce4集群获取 Cert 证书的方式：
+
+            ```shell
+            cat /etc/daocloud/dce/certs/etcd/server.crt
+            ```
+
+    - 填写标准 K8s 的 Key，可通过如下命令查看证书内容并将其复制粘贴到对应位置：
 
         ```shell
         cat /etc/kubernetes/ssl/apiserver-etcd-client.key
         ```
+
+        dce4集群获取 key 的方式：
+
+            ```shell
+            cat /etc/daocloud/dce/certs/etcd/server.key
+            ```
 
         ![创建基本信息](../../images/etcd-get01.png)
 
