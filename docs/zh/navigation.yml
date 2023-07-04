@@ -894,3 +894,5 @@ nav:
       - 商业产品: native/commerce.md
       - 开源项目: native/open.md
       - 知识分享: native/knowledge.md
+  - 体验社区版:
+      - 体验社区版: trial/index.md
