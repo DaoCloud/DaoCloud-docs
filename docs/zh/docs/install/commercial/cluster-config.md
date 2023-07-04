@@ -62,7 +62,7 @@ spec:
       ansibleUser: "root"
       ansiblePass: "dangerous"
       #ansibleSSHPort: "22"
-      nodeTaints:                       # 对于 7 节点模式：至少 3 个 worker 节点应打污点（仅 ES 节点）
+      nodeTaints:                       # 对于 7 节点模式：至少 3 个 worker 节点应打污点（仅 ES 节点），如果使用外接 ES 则不需要添加该污点
        - "node.daocloud.io/es-only=true:NoSchedule"
       # nodeLabels:
       #   daocloud.io/hostname: g-worker1
