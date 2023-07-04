@@ -875,10 +875,11 @@ nav:
               - 下载网络 Spidernet: download/modules/spidernet.md
               - 下载运营管理: download/modules/gmagpie.md
   - DaoCloud 开源生态:
-      - 社区索引: community/index.md
+      - 开源项目索引: community/index.md
       - cloudtty: community/cloudtty.md
       - Clusterpedia: community/clusterpedia.md
       - egressgateway: community/egress-gw.md
+      - Fast: community/fast.md
       - FedState: community/fedstate.md
       - Ferry: community/ferry.md
       - HwameiStor: community/hwameistor.md
@@ -886,6 +887,7 @@ nav:
       - KLTS: community/klts.md
       - Kubean: community/kubean.md
       - KWOK: community/kwok.md
+      - MirageDebug: community/miragedebug.md
       - Merbridge: community/merbridge.md
       - Spiderpool: community/spiderpool.md
       - 公开镜像加速: community/mirror.md
