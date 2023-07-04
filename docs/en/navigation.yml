@@ -852,6 +852,7 @@ nav:
       - cloudtty: community/cloudtty.md
       - Clusterpedia: community/clusterpedia.md
       - egressgateway: community/egress-gw.md
+      - Fast: community/fast.md
       - FedState: community/fedstate.md
       - Ferry: community/ferry.md
       - HwameiStor: community/hwameistor.md
@@ -859,6 +860,7 @@ nav:
       - KLTS: community/klts.md
       - Kubean: community/kubean.md
       - KWOK: community/kwok.md
+      - MirageDebug: community/miragedebug.md
       - Merbridge: community/merbridge.md
       - Mirror Acceleration: community/mirror.md
       - Spiderpool: community/spiderpool.md
