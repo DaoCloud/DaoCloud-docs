@@ -1,46 +1,54 @@
-# Sentinel 应用监控接入文档
+# 服务接入 Sentinel 监控
 
-1. 应用 sentinel metric exporter sdk 版本 >=  [v2.0.0-alpha](https://github.com/alibaba/Sentinel/releases/tag/2.0.0-alpha)
+本文介绍如何为传统观念微服务接入 Sentinel 监控功能。
 
-   ```xml
-   <dependency>
-     <groupId>com.alibaba.csp</groupId>
-     <artifactId>sentinel-metric-exporter</artifactId>
-     <version>v2.0.0-alpha</version>
-   </dependency>
-   ```
+1. 添加依赖项
 
-   原因可参考：https://github.com/alibaba/Sentinel/pull/2976
+    `sentinel metric exporter` SDK 的版本需要 >=  [v2.0.0-alpha](https://github.com/alibaba/Sentinel/releases/tag/2.0.0-alpha)
 
-2. 应用启动添加 javaagent 参数（-javaagent:/jmx_prometheus_javaagent-0.17.0.jar=12345:/prometheus-jmx-config.yaml），且 jmx 端口固定为：12345
+    ```xml
+    <dependency>
+      <groupId>com.alibaba.csp</groupId>
+      <artifactId>sentinel-metric-exporter</artifactId>
+      <version>v2.0.0-alpha</version>
+    </dependency>
+    ```
 
-   jmx 使用可参考：https://docs.daocloud.io/en/insight/user-guide/quickstart/jvm-monitor/jmx-exporter/
+    如需了解相关原因，可参考：https://github.com/alibaba/Sentinel/pull/2976
 
-3. 应用创建 kubernetes service，核心包括
+2. 启动服务时添加 `javaagent` 参数，且 JMX 端口固定为 `12345`
 
-   - labels 字段，固定为：skoala.io/type: sentinel
+    ```
+    -javaagent:/jmx_prometheus_javaagent-0.17.0.jar=12345:/prometheus-jmx-config.yaml
+    ```
 
-   - port 字段，固定为：name: jmx-metrics，port: 12345，targetPort: 12345
+   有关 JMX 的详细说明，可参考[使用 JMX Exporter 暴露 JVM 监控指标](../../insight/quickstart/jvm-monitor/jmx-exporter.md)。
 
-   ```yaml
-   apiVersion: v1
-   kind: Service
-   metadata:
-     labels:
-       skoala.io/type: sentinel
-     name: sentinel-demo
-     namespace: skoala-jia
-   spec:
-     ports:
-     - name: jmx-metrics
-       port: 12345
-       protocol: TCP
-       targetPort: 12345
-     selector:
-       app.kubernetes.io/name: sentinel-demo
-   ```
+3. 为服务创建 Kubernetes Service。重点包括以下参数：
 
-   原因可参考系统 ServiceMonitor CR定义：
+    - labels 字段：固定为 `skoala.io/type: sentinel`
+
+    - port 字段：固定为 `name: jmx-metrics`，`port: 12345`，`targetPort: 12345`
+
+        ```yaml
+        apiVersion: v1
+        kind: Service
+        metadata:
+          labels:
+            skoala.io/type: sentinel
+          name: sentinel-demo
+          namespace: skoala-jia
+        spec:
+          ports:
+          - name: jmx-metrics
+            port: 12345
+            protocol: TCP
+            targetPort: 12345
+          selector:
+            app.kubernetes.io/name: sentinel-demo
+        ```
+
+!!! note "如需了解相关原因，可参考 ServiceMonitor CR 的定义"
 
    ```yaml
    apiVersion: monitoring.coreos.com/v1
@@ -61,4 +69,3 @@
        matchLabels:
          skoala.io/type: sentinel
    ```
-
