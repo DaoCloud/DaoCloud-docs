@@ -7,38 +7,38 @@
 1. 在 `pom.xml` 文件中添加依赖项。目前的最新版本为 `2.2.2`
 
     ```xml
-        <dependency>
-            <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-client</artifactId>
-            <version>${latest.version}</version>
-        </dependency>
+    <dependency>
+        <groupId>com.alibaba.nacos</groupId>
+        <artifactId>nacos-client</artifactId>
+        <version>${latest.version}</version>
+    </dependency>
     ```
 
 2. 在服务中添加服务注册和服务发现的代码：
 
     ```java
-            //添加配置变量 serverAddr: Nacos 的地址, e.g,: 192.168.0.0:8848. namespace: Nacos 中的命名空间
-            Properties properties = new Properties();
-            properties.setProperty("serverAddr", System.getProperty("serverAddr"));
-            properties.setProperty("namespace", System.getProperty("namespace"));
+    //添加配置变量 serverAddr: Nacos 的地址, e.g,: 192.168.0.0:8848. namespace: Nacos 中的命名空间
+    Properties properties = new Properties();
+    properties.setProperty("serverAddr", System.getProperty("serverAddr"));
+    properties.setProperty("namespace", System.getProperty("namespace"));
             
-            NamingService naming = NamingFactory.createNamingService(properties);
-            //注册实例: 注册时带上服务的 IP 和端口
-            naming.registerInstance("sentinel-demo", "11.11.11.11", 8888, "DEFAULT");
+    NamingService naming = NamingFactory.createNamingService(properties);
+    //注册实例: 注册时带上服务的 IP 和端口
+    naming.registerInstance("sentinel-demo", "11.11.11.11", 8888, "DEFAULT");
 
-            System.out.println(naming.getAllInstances("sentinel-demo"));
+    System.out.println(naming.getAllInstances("sentinel-demo"));
 
-            naming.deregisterInstance("sentinel-demo", "11.11.11.11", 8888, "DEFAULT");
+    naming.deregisterInstance("sentinel-demo", "11.11.11.11", 8888, "DEFAULT");
 
-            System.out.println(naming.getAllInstances("sentinel-demo"));
-            //添加对服务的订阅，在变更时获取事件通知
-            naming.subscribe("sentinel-demo", new EventListener() {
-                @Override
-                public void onEvent(Event event) {
-                    System.out.println(((NamingEvent)event).getServiceName());
-                    System.out.println(((NamingEvent)event).getInstances());
-                }
-            });
+    System.out.println(naming.getAllInstances("sentinel-demo"));
+    //添加对服务的订阅，在变更时获取事件通知
+    naming.subscribe("sentinel-demo", new EventListener() {
+        @Override
+        public void onEvent(Event event) {
+            System.out.println(((NamingEvent)event).getServiceName());
+            System.out.println(((NamingEvent)event).getInstances());
+            }
+        });
     ```
 
 3. 如需添加 Nacos 的更多特性，可参考[更多使用方式](https://github.com/nacos-group/nacos-examples/tree/master/nacos-client-example)
@@ -48,11 +48,11 @@
 1. 在 `pom.xml` 文件中添加依赖项
 
     ```xml
-      <dependency>
-          <groupId>com.alibaba.boot</groupId>
-          <artifactId>nacos-config-spring-boot-starter</artifactId>
-          <version>${latest.version}</version>
-      </dependency>
+    <dependency>
+        <groupId>com.alibaba.boot</groupId>
+        <artifactId>nacos-config-spring-boot-starter</artifactId>
+        <version>${latest.version}</version>
+    </dependency>
     ```
 
     !!! note
@@ -80,12 +80,12 @@
         namespace: public # Nacos 的命名空间
     ```
 
-3. 在服务添加 Nacos 某项功能的代码
+3. 在服务添加 Nacos 功能代码
 
     - 服务注册：无需添加额外代码，直接启动项目就能在服务列表看到启动的服务。
-    - 配置实现： 登录 Nacos 控制台添加配置文件。然后在控制器代码中添加如下代码：
+    - 服务配置：登录 Nacos 控制台添加配置文件。然后在控制器代码中添加如下代码：
 
-        ![screenshot](../images/standard01.png)
+        <img src="../images/standard01.png" alt="screenshot" style="border: 1px solid  gray;">
 
         ```java
         @RestController
@@ -125,7 +125,7 @@
 
 2. 在项目中添加 `bootstrap.yaml` 配置文件
 
-    ```
+    ```java
     spring:
       application:
         name: demo
@@ -151,7 +151,7 @@
 
     在启动类上添加 `@EnableDiscoveryClient` 注解开启服务注册
 
-    ```
+    ```java
     @SpringBootApplication
     @EnableDiscoveryClient
     public class NacosProviderApplication {
@@ -165,14 +165,14 @@
 4. 添加动态配置的代码
 
     1. 在 Nacos 控制台添加配置文件
-        
-        ![screenshot](../images/standard01.png)
+
+        <img src="../images/standard01.png" alt="screenshot" style="border: 1px solid  gray;">
     
     2. 在控制器中添加 `@RefreshScope` 和 `@Value` 注解
 
         通过 springcloud 的 `@RefreshScope` 注解可以实现自动配置
 
-        ```
+        ```java
         @RestController
         @RequestMapping("config")
         @RefreshScope
@@ -196,6 +196,8 @@
 - Go 版本 1.15 以上
 - Nacos 版本 2.x 以上
 
+具体操作步骤如下：
+
 1. 获取依赖
 
     ```go
@@ -205,94 +207,94 @@
 2. 在服务中添加服务注册的代码
 
     ```go
-      //create ServerConfig,配置 Nacos 服务器的地址
-      sc := []constant.ServerConfig{
-        *constant.NewServerConfig("127.0.0.1", 8848, constant.WithContextPath("/nacos")),
-      }
+    //create ServerConfig,配置 Nacos 服务器的地址
+    sc := []constant.ServerConfig{
+      *constant.NewServerConfig("127.0.0.1", 8848, constant.WithContextPath("/nacos")),
+    }
 
-      //create ClientConfig，配置客户端的链接配置
-      cc := *constant.NewClientConfig(
-        constant.WithNamespaceId("public"), //命名空间 ID
-        constant.WithTimeoutMs(5000), // 超时时间
-        constant.WithLogDir("/tmp/nacos/log"), //日志地址
-        constant.WithCacheDir("/tmp/nacos/cache"), // Nacos 服务缓存的地址
-        constant.WithLogLevel("debug"), // 日志级别
-      )
+    //create ClientConfig，配置客户端的链接配置
+    cc := *constant.NewClientConfig(
+      constant.WithNamespaceId("public"), //命名空间 ID
+      constant.WithTimeoutMs(5000), // 超时时间
+      constant.WithLogDir("/tmp/nacos/log"), //日志地址
+      constant.WithCacheDir("/tmp/nacos/cache"), // Nacos 服务缓存的地址
+      constant.WithLogLevel("debug"), // 日志级别
+    )
 
-      // 通过 ServerConfig 和 ClientConfig 创建 nacosclient 链接
-      client, err := clients.NewNamingClient(
-        vo.NacosClientParam{
-          ClientConfig:  &cc,
-          ServerConfigs: sc,
-        },
-      )
+    // 通过 ServerConfig 和 ClientConfig 创建 nacosclient 链接
+    client, err := clients.NewNamingClient(
+      vo.NacosClientParam{
+        ClientConfig:  &cc,
+        ServerConfigs: sc,
+      },
+    )
 
-      //Register 注册服务
-      registerServiceInstance(client, vo.RegisterInstanceParam{
-        Ip:          "10.0.0.10",
-        Port:        8848,
-        ServiceName: "demo.go",
-        GroupName:   "group-a",
-        ClusterName: "cluster-a",
-        Weight:      10,
-        Enable:      true,
-        Healthy:     true,
-        Ephemeral:   true,
-        Metadata:    map[string]string{"idc": "shanghai"},
-      })
+    //Register 注册服务
+    registerServiceInstance(client, vo.RegisterInstanceParam{
+      Ip:          "10.0.0.10",
+      Port:        8848,
+      ServiceName: "demo.go",
+      GroupName:   "group-a",
+      ClusterName: "cluster-a",
+      Weight:      10,
+      Enable:      true,
+      Healthy:     true,
+      Ephemeral:   true,
+      Metadata:    map[string]string{"idc": "shanghai"},
+    })
 
-      //DeRegister 注销服务
-      deRegisterServiceInstance(client, vo.DeregisterInstanceParam{
-        Ip:          "10.0.0.10",
-        Port:        8848,
-        ServiceName: "demo.go",
-        GroupName:   "group-a",
-        Cluster:     "cluster-a",
-        Ephemeral:   true, //must be true
-      })
+    //DeRegister 注销服务
+    deRegisterServiceInstance(client, vo.DeregisterInstanceParam{
+      Ip:          "10.0.0.10",
+      Port:        8848,
+      ServiceName: "demo.go",
+      GroupName:   "group-a",
+      Cluster:     "cluster-a",
+      Ephemeral:   true, //must be true
+    })
 
     ```
 
 3. 配置加载
 
     ```go
-      //create ServerConfig,配置 Nacos 服务器的地址
-      sc := []constant.ServerConfig{
-        *constant.NewServerConfig("127.0.0.1", 8848, constant.WithContextPath("/nacos")),
-      }
+    //create ServerConfig,配置 Nacos 服务器的地址
+    sc := []constant.ServerConfig{
+      *constant.NewServerConfig("127.0.0.1", 8848, constant.WithContextPath("/nacos")),
+    }
 
-      //create ClientConfig，配置客户端的链接配置
-      cc := *constant.NewClientConfig(
-        constant.WithNamespaceId("public"), //命名空间 ID
-        constant.WithTimeoutMs(5000), // 超时时间
-        constant.WithLogDir("/tmp/nacos/log"), //日志地址
-        constant.WithCacheDir("/tmp/nacos/cache"), // Nacos 服务缓存的地址
-        constant.WithLogLevel("debug"), // 日志级别
-      )
+    //create ClientConfig，配置客户端的链接配置
+    cc := *constant.NewClientConfig(
+      constant.WithNamespaceId("public"), //命名空间 ID
+      constant.WithTimeoutMs(5000), // 超时时间
+      constant.WithLogDir("/tmp/nacos/log"), //日志地址
+      constant.WithCacheDir("/tmp/nacos/cache"), // Nacos 服务缓存的地址
+      constant.WithLogLevel("debug"), // 日志级别
+    )
 
-      // 通过 ServerConfig 和 ClientConfig 创建 nacosclient 链接
-      client, err := clients.NewNamingClient(
-        vo.NacosClientParam{
-          ClientConfig:  &cc,
-          ServerConfigs: sc,
-        },
-      )
+    // 通过 ServerConfig 和 ClientConfig 创建 nacosclient 链接
+    client, err := clients.NewNamingClient(
+      vo.NacosClientParam{
+        ClientConfig:  &cc,
+        ServerConfigs: sc,
+      },
+    )
 
-      //get config 获取配置
-      content, err := client.GetConfig(vo.ConfigParam{
-        DataId: "test-data",
-        Group:  "test-group",
-      })
-      fmt.Println("GetConfig,config :" + content)
+    //get config 获取配置
+    content, err := client.GetConfig(vo.ConfigParam{
+      DataId: "test-data",
+      Group:  "test-group",
+    })
+    fmt.Println("GetConfig,config :" + content)
 
-      //Listen config change,key=dataId+group+namespaceId. 监听配置改变
-      err = client.ListenConfig(vo.ConfigParam{
-        DataId: "test-data",
-        Group:  "test-group",
-        OnChange: func(namespace, group, dataId, data string) {
-          fmt.Println("config changed group:" + group + ", dataId:" + dataId + ", content:" + data)
-        },
-      })
+    //Listen config change,key=dataId+group+namespaceId. 监听配置改变
+    err = client.ListenConfig(vo.ConfigParam{
+      DataId: "test-data",
+      Group:  "test-group",
+      OnChange: func(namespace, group, dataId, data string) {
+        fmt.Println("config changed group:" + group + ", dataId:" + dataId + ", content:" + data)
+      },
+    })
 
     ```
 

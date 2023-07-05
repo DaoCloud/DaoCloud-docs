@@ -453,10 +453,10 @@ nav:
           - 插件中心:
               - 介绍: skoala/plugins/intro.md
           - 服务对接规范:
-              - 服务接入 Sentinel: skoala/standard/sentinel.md
-              - 服务接入 Nacos SDK: skoala/standard/nacos.md
-              - 服务接入 Sentinel 监控能力: skoala/standard/monitor.md
-              - 服务接入 Sentinel 集群流控能力: skoala/standard/flow-control.md
+              - 接入 Sentinel: skoala/standard/sentinel.md
+              - 接入 Nacos SDK: skoala/standard/nacos.md
+              - 接入 Sentinel 监控能力: skoala/standard/monitor.md
+              - 接入 Sentinel 集群流控能力: skoala/standard/flow-control.md
           - 最佳实践:
               - 示例应用体验微服务治理: skoala/best-practice/use-skoala-01.md
               - 微服务网关 JWT 功能: skoala/best-practice/jwt.md
