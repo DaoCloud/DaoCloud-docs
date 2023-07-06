@@ -1,6 +1,11 @@
-# 应用接入 Sentinel 规范
+---
+hide:
+    - toc
+---
 
-为了正常使用 DCE 5.0 微服务引擎提供的 [Sentinel 流量治理](../plugins/sentinel.md)和查看 [Sentinel 数据监控](../monitor/components.md)，需要将应用接入 Sentinel 控制台，并且传递应用参数时需要满足一定规范。
+# 服务接入 Sentinel 规范
+
+为了正常使用 DCE 5.0 微服务引擎提供的 [Sentinel 流量治理](../trad-ms/hosted/plugins/sentinel.md)和查看 [Sentinel 数据监控](../trad-ms/hosted/monitor/components.md)，需要将应用接入 Sentinel 控制台，并且传递应用参数时需要满足一定规范。
 
 ## project.name 参数
 
@@ -22,7 +27,7 @@ project.name 参数的格式应为：`{{nacos_namespace_id}}@@{{nacos_group}}@@{
 
     为了正常显示 Sentinel 监控数据，应使用 Sentinel 官方 SDK v1.8.6 **以上** 的版本。
 
-??? note "如何获取 Sentinel 控制台"
+??? note "如何获取最新的 Sentinel 控制台"
 
     - 从 [release](https://github.com/alibaba/Sentinel/releases)页面下载最新版本的控制台 jar 包，或者
 

@@ -429,7 +429,6 @@ nav:
                   - 微服务命名空间: skoala/trad-ms/hosted/namespace.md
                   - 微服务列表:
                       - 介绍: skoala/trad-ms/hosted/servicelist/intro.md
-                      - 接入微服务: skoala/trad-ms/hosted/servicelist/connect-sentinel.md
                       - 查看微服务详情: skoala/trad-ms/hosted/servicelist/check-details.md
                       - 规则介绍: skoala/trad-ms/hosted/servicelist/governance-policy.md
                       - 流控规则: skoala/trad-ms/hosted/servicelist/flow-control.md
@@ -453,6 +452,11 @@ nav:
                   - 链路追踪: skoala/trad-ms/integrated/trace.md
           - 插件中心:
               - 介绍: skoala/plugins/intro.md
+          - 服务对接规范:
+              - 接入 Sentinel: skoala/standard/sentinel.md
+              - 接入 Nacos SDK: skoala/standard/nacos.md
+              - 接入 Sentinel 监控能力: skoala/standard/monitor.md
+              - 接入 Sentinel 集群流控能力: skoala/standard/flow-control.md
           - 最佳实践:
               - 示例应用体验微服务治理: skoala/best-practice/use-skoala-01.md
               - 微服务网关 JWT 功能: skoala/best-practice/jwt.md

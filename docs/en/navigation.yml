@@ -418,7 +418,6 @@ nav:
                   - Microservice Namespace: skoala/trad-ms/hosted/namespace.md
                   - Microservice List:
                       - Intro: skoala/trad-ms/hosted/servicelist/intro.md
-                      - Add Microservice: skoala/trad-ms/hosted/servicelist/connect-sentinel.md
                       - Check Microservice: skoala/trad-ms/hosted/servicelist/check-details.md
                       - Traffic Rules: skoala/trad-ms/hosted/servicelist/governance-policy.md
                       - Flow Control: skoala/trad-ms/hosted/servicelist/flow-control.md
@@ -440,6 +439,11 @@ nav:
                   - Remove Registry: skoala/trad-ms/integrated/remove-registry.md
                   - Microservice Management: skoala/trad-ms/integrated/manage-service.md
                   - Traces: skoala/trad-ms/integrated/trace.md
+          - Service Standards:
+              - Enable Sentinel: skoala/standard/sentinel.md
+              - Enable Nacos: skoala/standard/nacos.md
+              - Enable Sentinel Monitoring: skoala/standard/monitor.md
+              - Enable Sentinel Flow Control: skoala/standard/flow-control.md
           - Best Practices:
               - Complete Process of Microservice Governance: skoala/best-practice/use-skoala-01.md
               - Microservice Gateway JWT: skoala/best-practice/jwt.md
