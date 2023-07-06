@@ -1,29 +1,30 @@
-# 服务接入 Nacos SDK
+# Service Integration with Nacos SDK
 
-本文介绍不同框架的传统微服务如何接入 Nacos 的原生 SDK。
+This article explains how traditional microservices in different frameworks can integrate with the native Nacos SDK.
 
-## JAVA（无框架）
+## Java (No Framework)
 
-1. 在 `pom.xml` 文件中添加依赖项。目前的最新版本为 `2.2.2`
+1. Add the dependency in your `pom.xml` file. The latest version currently is `2.2.2`.
 
-    ```xml
-    <dependency>
-        <groupId>com.alibaba.nacos</groupId>
-        <artifactId>nacos-client</artifactId>
-        <version>${latest.version}</version>
-    </dependency>
-    ```
+   ```xml
+   <dependency>
+       <groupId>com.alibaba.nacos</groupId>
+       <artifactId>nacos-client</artifactId>
+       <version>${latest.version}</version>
+   </dependency>
+   ```
 
-2. 在服务中添加服务注册和服务发现的代码：
+2. Add the code for service registration and discovery in your service:
 
     ```java
-    //添加配置变量 serverAddr: Nacos 的地址, e.g,: 192.168.0.0:8848. namespace: Nacos 中的命名空间
+    // Add configuration variables: serverAddr (Nacos address, e.g., 192.168.0.0:8848) and namespace (Nacos namespace)
     Properties properties = new Properties();
     properties.setProperty("serverAddr", System.getProperty("serverAddr"));
     properties.setProperty("namespace", System.getProperty("namespace"));
-            
+
     NamingService naming = NamingFactory.createNamingService(properties);
-    //注册实例: 注册时带上服务的 IP 和端口
+
+    // Register an instance: provide the service name, IP, port, and group
     naming.registerInstance("sentinel-demo", "11.11.11.11", 8888, "DEFAULT");
 
     System.out.println(naming.getAllInstances("sentinel-demo"));
@@ -31,21 +32,22 @@
     naming.deregisterInstance("sentinel-demo", "11.11.11.11", 8888, "DEFAULT");
 
     System.out.println(naming.getAllInstances("sentinel-demo"));
-    //添加对服务的订阅，在变更时获取事件通知
+
+    // Subscribe to a service to receive event notifications on changes
     naming.subscribe("sentinel-demo", new EventListener() {
         @Override
         public void onEvent(Event event) {
             System.out.println(((NamingEvent)event).getServiceName());
             System.out.println(((NamingEvent)event).getInstances());
-            }
-        });
+        }
+    });
     ```
 
-3. 如需添加 Nacos 的更多特性，可参考[更多使用方式](https://github.com/nacos-group/nacos-examples/tree/master/nacos-client-example)
+3. If you need to add more features of Nacos, you can refer to [more usage methods](https://github.com/nacos-group/nacos-examples/tree/master/nacos-client-example).
 
-## JAVA (SpringBoot) 框架
+## Java (Spring Boot) Framework
 
-1. 在 `pom.xml` 文件中添加依赖项
+1. Add the dependencies in your `pom.xml` file:
 
     ```xml
     <dependency>
@@ -57,10 +59,10 @@
 
     !!! note
 
-        - 版本 [0.2.x.RELEASE](https://mvnrepository.com/artifact/com.alibaba.boot/nacos-config-spring-boot-starter) 对应的是 Spring Boot 2.x 版本。
-        - 版本 [0.1.x.RELEASE](https://mvnrepository.com/artifact/com.alibaba.boot/nacos-config-spring-boot-starter) 对应的是 Spring Boot 1.x 版本。
+        - Version [0.2.x.RELEASE](https://mvnrepository.com/artifact/com.alibaba.boot/nacos-config-spring-boot-starter) corresponds to Spring Boot 2.x.
+        - Version [0.1.x.RELEASE](https://mvnrepository.com/artifact/com.alibaba.boot/nacos-config-spring-boot-starter) corresponds to Spring Boot 1.x.
 
-2. 在项目中添加 `bootstrap.yaml` 配置文件
+2. Add the `bootstrap.yaml` configuration file in your project:
 
     ```yaml
     spring:
@@ -68,48 +70,45 @@
         name: demo
     nacos:
       config:
-        data-id: test # Nacos 配置的 data-id
-        server-addr: 127.0.0.1:8848 # Nacos 服务器地址
-        group: DEFAULT_GROUP # 配置文件 Group
-        namespace: public # 命名空间 ID
-        type: yaml # Nacos 配置文件类型
-        auto-refresh: true # 是否启用动态刷新配置
+        data-id: test # Nacos configuration data ID
+        server-addr: 127.0.0.1:8848 # Nacos server address
+        group: DEFAULT_GROUP # Configuration file group
+        namespace: public # Namespace ID
+        type: yaml # Nacos configuration file type
+        auto-refresh: true # Enable dynamic configuration refresh
       discovery:
-        server-addr: 127.0.0.1:8848 # Nacos 服务器地址
-        group: DEFAULT_GROUP # 注册应用的 Group
-        namespace: public # Nacos 的命名空间
+        server-addr: 127.0.0.1:8848 # Nacos server address
+        group: DEFAULT_GROUP # Group for application registration
+        namespace: public # Nacos namespace
     ```
 
-3. 服务注册功能无需改动代码，直接启动项目就能在服务列表看到启动的服务。
-4. 添加服务配置的代码
+3. Service Registration: No additional code is needed. Simply start the project and you will see the service listed in the service registry.
+4. Add codes for Nacos configuration feature in service.
 
-    1. 登录 Nacos 控制台添加配置文件。
+    1. Login to the Nacos console and add a configuration file.
+    2. Add the following code to your controller:
 
-        ![screenshot](../images/standard01.png)
+      ```java
+      @RestController
+      @RequestMapping("config")
+      public class Controller {
+          @NacosValue(value = "${a.test}", autoRefreshed = true)
+          private String name;
 
-    2. 然后在控制器代码中添加如下代码：
+          @GetMapping("get")
+          public String get() {
+              return this.name;
+          }
+      }
+      ```
 
-        ```java
-        @RestController
-        @RequestMapping("config")
-        public class Controller {
-            @NacosValue(value = "${a.test}", autoRefreshed = true)
-            private String name;
+5. If you need to add more features of Nacos, you can refer to [more usage methods](https://github.com/nacos-group/nacos-examples/tree/master/nacos-spring-boot-example).
 
-            @GetMapping("get")
-            public String get() {
-                return this.name;
-            }
-        }
-        ```
+## Java (Spring Cloud) Framework
 
-5. 如需添加 Nacos 的更多特性，可参考[更多使用方式](https://github.com/nacos-group/nacos-examples/tree/master/nacos-spring-boot-example)
+1. Add the dependencies in your `pom.xml` file.
 
-## JAVA (SpringCloud) 框架
-
-1. 在 `pom.xml` 文件中添加依赖项。
-
-    版本对应关系参考：[版本说明](https://github.com/spring-cloud-incubator/spring-cloud-alibaba/wiki/版本说明)
+   Please refer to the version compatibility table: [Version Compatibility](https://github.com/spring-cloud-incubator/spring-cloud-alibaba/wiki/版本说明)
 
     ```xml
     <dependency>
@@ -125,33 +124,36 @@
     </dependency>
     ```
 
-2. 在项目中添加 `bootstrap.yaml` 配置文件
+2. Add the `bootstrap.yaml` configuration file in your project:
 
-    ```java
+    ```yaml
     spring:
       application:
         name: demo
+
     ---
     spring:
       cloud:
         nacos:
           config:
             enabled: true
-            server-addr: 127.0.0.1:8848 # nacos 服务器地址
-            name: test # nacos 配置的 data-id
-            group: DEFAULT_GROUP # 配置文件 Group
-            namespace: public # 命名空间ID
-            file-extension: yaml # 配置文件后缀
+            server-addr: 127.0.0.1:8848 # Nacos server address
+            name: test # Nacos configuration data ID
+            group: DEFAULT_GROUP # Configuration file group
+            namespace: public # Namespace ID
+            file-extension: yaml # Configuration file extension
           discovery:
-            enabled: true 
-            server-addr: 127.0.0.1:8848 # nacos 服务器地址
-            namespace: public # 命名空间ID      
-            group: DEFAULT_GROUP # 应用分组名
+            enabled: true
+            server-addr: 127.0.0.1:8848 # Nacos server address
+            namespace: public # Namespace ID
+            group: DEFAULT_GROUP # Application group name
     ```
 
-3. 在服务添加 Nacos 服务注册的代码
+    Note: Make sure to adjust the `server-addr`, `group`, and `namespace` values according to your Nacos setup.
 
-    在启动类上添加 `@EnableDiscoveryClient` 注解开启服务注册
+3. Add the code for Nacos service registration in your service:
+
+    Add the `@EnableDiscoveryClient` annotation on your startup class to enable service registration with Nacos.
 
     ```java
     @SpringBootApplication
@@ -164,15 +166,15 @@
     }
     ```
 
-4. 添加动态配置的代码
+4. Add the code for dynamic configuration:
 
-    1. 在 Nacos 控制台添加配置文件
+    1. Add a configuration file in the Nacos console.
 
         ![screenshot](../images/standard01.png)
 
-    2. 在控制器中添加 `@RefreshScope` 和 `@Value` 注解
+    2. Add the `@RefreshScope` and `@Value` annotations to your controller.
 
-        通过 springcloud 的 `@RefreshScope` 注解可以实现自动配置
+        Using the `@RefreshScope` annotation from Spring Cloud enables auto-configuration.
 
         ```java
         @RestController
@@ -189,41 +191,43 @@
         }
         ```
 
-5. 如需添加 Nacos 的更多特性，可参考[更多使用方式](https://github.com/nacos-group/nacos-examples/tree/master/nacos-spring-cloud-example)
+        Now, whenever the configuration is updated in the Nacos server, the `value` field will reflect the updated value without restarting the application.
 
-## Go 框架
+5. If you need to add more features of Nacos, you can refer to [more usage methods](https://github.com/nacos-group/nacos-examples/tree/master/nacos-spring-cloud-example).
 
-在 Go 框架微服务中添加 Nacos SDK 时，需要满足以下两个前提条件：
+## Go Framework
 
-- Go 版本 1.15 以上
-- Nacos 版本 2.x 以上
+To add the Nacos SDK to a Go microservice framework, you need to meet the following prerequisites:
 
-具体操作步骤如下：
+- Go version 1.15 or above
+- Nacos version 2.x or above
 
-1. 获取依赖
+Here are the steps to add the Nacos SDK:
+
+1. Get the dependencies
 
     ```go
     $ go get -u github.com/nacos-group/nacos-sdk-go/v2
     ```
 
-2. 在服务中添加服务注册的代码
+2. Add the code for service registration in your service:
 
     ```go
-    //create ServerConfig,配置 Nacos 服务器的地址
+    // Create ServerConfig, configure Nacos server address
     sc := []constant.ServerConfig{
       *constant.NewServerConfig("127.0.0.1", 8848, constant.WithContextPath("/nacos")),
     }
 
-    //create ClientConfig，配置客户端的链接配置
+    // Create ClientConfig, configure client connection settings
     cc := *constant.NewClientConfig(
-      constant.WithNamespaceId("public"), //命名空间 ID
-      constant.WithTimeoutMs(5000), // 超时时间
-      constant.WithLogDir("/tmp/nacos/log"), //日志地址
-      constant.WithCacheDir("/tmp/nacos/cache"), // Nacos 服务缓存的地址
-      constant.WithLogLevel("debug"), // 日志级别
+      constant.WithNamespaceId("public"), // Namespace ID
+      constant.WithTimeoutMs(5000), // Timeout duration
+      constant.WithLogDir("/tmp/nacos/log"), // Log directory
+      constant.WithCacheDir("/tmp/nacos/cache"), // Nacos service cache directory
+      constant.WithLogLevel("debug"), // Log level
     )
 
-    // 通过 ServerConfig 和 ClientConfig 创建 nacosclient 链接
+    // Create NacosClient by providing ServerConfig and ClientConfig
     client, err := clients.NewNamingClient(
       vo.NacosClientParam{
         ClientConfig:  &cc,
@@ -231,7 +235,7 @@
       },
     )
 
-    //Register 注册服务
+    // Register service
     registerServiceInstance(client, vo.RegisterInstanceParam{
       Ip:          "10.0.0.10",
       Port:        8848,
@@ -245,36 +249,37 @@
       Metadata:    map[string]string{"idc": "shanghai"},
     })
 
-    //DeRegister 注销服务
+    // Deregister service
     deRegisterServiceInstance(client, vo.DeregisterInstanceParam{
       Ip:          "10.0.0.10",
       Port:        8848,
       ServiceName: "demo.go",
       GroupName:   "group-a",
       Cluster:     "cluster-a",
-      Ephemeral:   true, //must be true
+      Ephemeral:   true, // must be true
     })
-
     ```
 
-3. 配置加载
+    Make sure to adjust the IP address, port, service name, group name, cluster name, and other parameters according to your setup.
+
+3. Configuration Loading
 
     ```go
-    //create ServerConfig,配置 Nacos 服务器的地址
+    // Create ServerConfig, configure Nacos server address
     sc := []constant.ServerConfig{
       *constant.NewServerConfig("127.0.0.1", 8848, constant.WithContextPath("/nacos")),
     }
 
-    //create ClientConfig，配置客户端的链接配置
+    // Create ClientConfig, configure client connection settings
     cc := *constant.NewClientConfig(
-      constant.WithNamespaceId("public"), //命名空间 ID
-      constant.WithTimeoutMs(5000), // 超时时间
-      constant.WithLogDir("/tmp/nacos/log"), //日志地址
-      constant.WithCacheDir("/tmp/nacos/cache"), // Nacos 服务缓存的地址
-      constant.WithLogLevel("debug"), // 日志级别
+      constant.WithNamespaceId("public"), // Namespace ID
+      constant.WithTimeoutMs(5000), // Timeout duration
+      constant.WithLogDir("/tmp/nacos/log"), // Log directory
+      constant.WithCacheDir("/tmp/nacos/cache"), // Nacos service cache directory
+      constant.WithLogLevel("debug"), // Log level
     )
 
-    // 通过 ServerConfig 和 ClientConfig 创建 nacosclient 链接
+    // Create NacosClient by providing ServerConfig and ClientConfig
     client, err := clients.NewNamingClient(
       vo.NacosClientParam{
         ClientConfig:  &cc,
@@ -282,82 +287,83 @@
       },
     )
 
-    //get config 获取配置
+    // Get config
     content, err := client.GetConfig(vo.ConfigParam{
       DataId: "test-data",
       Group:  "test-group",
     })
-    fmt.Println("GetConfig,config :" + content)
+    fmt.Println("GetConfig, config: " + content)
 
-    //Listen config change,key=dataId+group+namespaceId. 监听配置改变
+    // Listen for config change, key = dataId + group + namespaceId
     err = client.ListenConfig(vo.ConfigParam{
       DataId: "test-data",
       Group:  "test-group",
       OnChange: func(namespace, group, dataId, data string) {
-        fmt.Println("config changed group:" + group + ", dataId:" + dataId + ", content:" + data)
+        fmt.Println("Config changed, group: " + group + ", dataId: " + dataId + ", content: " + data)
       },
     })
-
     ```
 
-4. 如需添加 Nacos 的更多特性，可参考[更多使用方式](https://github.com/nacos-group/nacos-sdk-go)
+    Make sure to adjust the `DataId` and `Group` values according to your setup.
 
-## Python 框架
+4. To add more features of Nacos, you can refer to [more usage methods](https://github.com/nacos-group/nacos-sdk-go).
 
-1. 获取依赖
+## Python Framework
+
+1. Get the dependencies
 
     ```sh
     pip install nacos-sdk-python
     ```
 
-2. 代码接入
+2. Add codes
 
     ```python
     import nacos
 
-    # Nacos server地址
+    # Nacos server address
     SERVER_ADDRESSES = "127.0.0.1:8848"
-    # 命名空间 ID
+    # Namespace ID
     NAMESPACE = "public"
 
     client = nacos.NacosClient(SERVER_ADDRESSES, namespace=NAMESPACE)
 
-    # 注册服务
+    # Register service
     client.add_naming_instance("test.service1", "1.0.0.7", 8080, "testCluster2", 0.2, "{}", False, True)
-    # 发送心跳
+    # Send heartbeat
     client.send_heartbeat("test.service", "1.0.0.7", 8080, "testCluster2", 0.1, "{}")
 
 
-    # get config
+    # Get config
     data_id = "dev-config"
     group = "DEFAULT_GROUP"
 
-    # 全局服务配置
+    # Global service configuration
     server_config = json.loads(client.get_config(data_id, group))
 
-    # 当服务配置发生变化
+    # When the service configuration changes
     def config_update(data):
         global server_config
         server_config = json.loads(data['content'])
         print('new data->', server_config)
 
-    # 监听服务配置变化
+    # Listen for service configuration changes
     client.add_config_watcher(data_id, group, config_update)
     ```
 
-3. 如需添加 Nacos 的更多特性，可参考[更多使用方式](https://github.com/nacos-group/nacos-sdk-python)
+3. If you need to add more features of Nacos, please refer to [more usage methods](https://github.com/nacos-group/nacos-sdk-python).
 
-## Node.js 框架
+## Node.js Framework
 
-1. 添加依赖
+1. Add dependencies
 
-    需要使用 `2.x` 以上的版本
+    User version of `2.x` or higher
 
     ```shell
     npm install nacos --save
     ```
 
-2. 添加服务发现的代码逻辑
+2. Add code for service discovery
 
     ```js
     'use strict';
@@ -367,14 +373,14 @@
 
     const client = new NacosNamingClient({
       logger,
-      serverList: '127.0.0.1:8848', // Nacos 服务地址
-      namespace: 'public', //命名空间ID
+      serverList: '127.0.0.1:8848', // Nacos server address
+      namespace: 'public', // Namespace ID
     });
     await client.ready();
 
     const serviceName = 'nodejs.test.domain';
 
-    // 注册服务
+    // Register service
     await client.registerInstance(serviceName, {
       ip: '1.1.1.1',
       port: 8080,
@@ -384,19 +390,19 @@
       port: 8080,
     });
 
-    // 订阅服务
+    // Subscribe to service
     client.subscribe(serviceName, hosts => {
       console.log(hosts);
     });
 
-    // 注销服务
+    // Deregister service
     await client.deregisterInstance(serviceName, {
       ip: '1.1.1.1',
       port: 8080,
     });
     ```
 
-3. 添加动态配置的代码逻辑
+3. Add codes for dynamic configuration
 
     ```js
     import {NacosConfigClient} from 'nacos';   // ts
@@ -405,14 +411,14 @@
 
     const configClient = new NacosConfigClient({
       serverAddr: '127.0.0.1:8848',
-      namespace: 'public', //命名空间 ID
+      namespace: 'public', //namespace ID
     });
 
-    // 获取配置文件
+    // get config file
     const content= await configClient.getConfig('test', 'DEFAULT_GROUP'); //dataID: test,group: DEFAULT_GROUP
     console.log('getConfig = ',content);
 
-    // 监听配置变化
+    // listen to config changes
     configClient.subscribe({
       dataId: 'test',
       group: 'DEFAULT_GROUP',
@@ -421,13 +427,13 @@
     });
     ```
 
-4. 如需添加 Nacos 的更多特性，可参考[更多使用方式](https://github.com/nacos-group/nacos-sdk-nodejs)
+4. If you need to add more features of Nacos, please refer to [more usage methods](https://github.com/nacos-group/nacos-sdk-nodejs).
 
-## C++ 框架
+## C++ Framework
 
-1. 下载依赖
+1. Download Dependencies
 
-    下载工程[源代码](https://github.com/nacos-group/nacos-sdk-cpp)并执行下述命令:
+    Download the project [source code](https://github.com/nacos-group/nacos-sdk-cpp) and follow the instructions below:
 
     ```sh
     cd nacos-sdk-cpp
@@ -435,11 +441,11 @@
     make
     ```
 
-    执行命令后会产生一个 l`ibnacos-cli.so` 和一个 `nacos-cli.out` 文件
+    After executing the command, you will get a `libnacos-cli.so` and a `nacos-cli.out` file.
 
-2. 运行 `make install` 将 `libnacos-cli` 安装到 `lib` 目录
+2. Run `make install` to install `libnacos-cli` into the `lib` directory.
 
-3. 在服务代码中添加服务注册的代码逻辑
+3. Add code logic for service registration in your service code.
 
     ```c++
     #include <iostream>
@@ -451,8 +457,8 @@
 
     int main() {
         Properties configProps;
-        configProps[PropertyKeyConst::SERVER_ADDR] = "127.0.0.1"; // nacos 服务地址
-        configProps[PropertyKeyConst::NAMESPACE] = "public"; // 命名空间ID
+        configProps[PropertyKeyConst::SERVER_ADDR] = "127.0.0.1"; // nacos server ip
+        configProps[PropertyKeyConst::NAMESPACE] = "public"; // namespace ID
         NacosServiceFactory *factory = new NacosServiceFactory(configProps);
         ResourceGuard <NacosServiceFactory> _guardFactory(factory);
         NamingService *namingSvc = factory->CreateNamingService();
@@ -464,7 +470,7 @@
         instance.instanceId = "1";
         instance.ephemeral = true;
 
-        //模拟注册5个服务
+        // Simulate Registering 5 Services
         try {
             for (int i = 0; i < 5; i++) {
                 NacosString serviceName = "TestNamingService" + NacosStringOps::valueOf(i);
@@ -477,7 +483,7 @@
             return -1;
         }
         sleep(30);
-        //注销服务
+        // deregister services
         try {
             for (int i = 0; i < 5; i++) {
                 NacosString serviceName = "TestNamingService" + NacosStringOps::valueOf(i);
@@ -496,7 +502,7 @@
     }
     ```
 
-4. 添加动态配置的代码逻辑
+4. Add codes for dynamic configuration
 
     ```c++
     #include <iostream>
@@ -531,16 +537,16 @@
         ResourceGuard <ConfigService> _serviceFactory(n);
 
         MyListener *theListener = new MyListener(1);//You don't need to free it, since it will be deleted by the function removeListener
-        n->addListener("dqid", "DEFAULT_GROUP", theListener);//dataID为"dqid"并且group为"DEFAULT_GROUP"的配置改变都将监听到
+        n->addListener("dqid", "DEFAULT_GROUP", theListener);//dataID is "dqid", and group is "DEFAULT_GROUP". config changes will be watched
 
         cout << "Input a character to continue" << endl;
         getchar();
         cout << "remove listener" << endl;
-        n->removeListener("dqid", NULLSTR, theListener);//取消监听
+        n->removeListener("dqid", NULLSTR, theListener);//cancel listener
         getchar();
 
         return 0;
     }
     ```
 
-5. 如需添加 Nacos 的更多特性，可参考[更多使用方式](https://github.com/nacos-group/nacos-sdk-cpp/blob/master/README_zh_CN.md)
+5. If you need to add more features of Nacos, please refer to [more usage methods](https://github.com/nacos-group/nacos-sdk-cpp/blob/master/README.md).
