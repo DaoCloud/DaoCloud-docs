@@ -16,7 +16,7 @@ This page describes how to create subnets and IP pools before creating workloads
 ## Prerequisites
 
 1. [SpiderPool successfully deployed.](../../modules/spiderpool/install.md)
-2. [Multus with Macvlan /SRI-OV has been successfully deployed.](../../modules/multus-underlay/install.md)
+2. [Multus with Macvlan/SR-IOV has been successfully deployed.](../../modules/multus-underlay/install.md)
 
 ## Interface operation
 

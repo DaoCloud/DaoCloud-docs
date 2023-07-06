@@ -12,7 +12,7 @@ Spiderpool 是一个 IP 地址管理 (IPAM) 插件，可为容器云平台分配
 [IPVLAN CNI](https://github.com/containernetworking/plugins/tree/main/plugins/main/ipvlan)等）进行 IP 的精细化管理。
 
 Spiderpool 适用于任何能够对接第三方 IPAM 的 CNI 插件，尤其适合于一些缺失 IPAM 的 CNI，
-包括 [SRI-OV](https://github.com/k8snetworkplumbingwg/sriov-cni)、
+包括 [SR-IOV](https://github.com/k8snetworkplumbingwg/sriov-cni)、
 [MacVLAN](https://github.com/containernetworking/plugins/tree/main/plugins/main/macvlan)、
 [IPVLAN](https://github.com/containernetworking/plugins/tree/main/plugins/main/ipvlan)、
 [OVS-CNI](https://github.com/k8snetworkplumbingwg/ovs-cni) 等。
