@@ -13,7 +13,7 @@ hide:
 ## 前提条件
 
 - [SpiderPool 已成功部署](./install.md)。
-- [Multus 搭配 Macvlan / SRI-OV 已成功部署](../multus-underlay/install.md)。
+- [Multus 搭配 Macvlan/SR-IOV 已成功部署](../multus-underlay/install.md)。
 - 创建子网及 IP 池前建议做好子网和 IP 规划，并充分了解 [IP 池的使用方式](ippoolusage.md)。
 
 ## 界面操作
