@@ -179,7 +179,7 @@ precheck pass..
     !!! note
 
         - kind 集群仅支持 NodePort 模式。
-        - 如果是公有云机器，则只能手动指定公网IP ./dce5-installer install-app -z -k {公网IP}:8888
+        - 如果是公有云机器，则只能手动指定公网 IP：`./dce5-installer install-app -z -k {公网IP}:8888`
 
 1. 安装完成后，命令行会提示安装成功。恭喜您！
 
