@@ -1,25 +1,27 @@
+---
+hide:
+  - toc
+---
+
 # Application access Sentinel specification
 
-In order to normally use [ Sentinel traffic management ](../plugins/sentinel.md) and view [ Sentinel data monitoring ](../monitor/components.md) provided by the DCE 5.0 micro-service engine, the application needs to be connected to the Sentinel console and certain specifications need to be met when the application parameters are passed.
+In order to normally use [Sentinel traffic management](../plugins/sentinel.md) and view [Sentinel data monitoring](../monitor/components.md) provided by the DCE 5.0 micro-service engine, the application needs to be connected to the Sentinel console and certain specifications need to be met when the application parameters are passed.
 
 ## project.name parameter
 
 The format of the project.name parameter should be: `{{nacos_namespace_id}}@@{{nacos_group}}@@{{appName}}`.
 
-** One thing to note is that **：
+**Note**：
 
 - When this specification is met, the Sentinel governance rules will be pushed to the configuration center under the configuration group in the corresponding namespace.
 
 - If this specification is not met, such as only `appName` or `{{nacos_group}}@@{{appName}}`, all governance rules are pushed to the `SENTINEL_GROUP` configuration center in the `public` namespace.
 
-- The first part `{{nacos_namespace_id}}` refers to ** ID ** of the Nacos namespace, not the name of the namespace.
+- The first part `{{nacos_namespace_id}}` refers to **ID** of the Nacos namespace, not the name of the namespace.
 
-- Nacos"s `public` namespace has an ID corresponding to the null character "".
+- Nacos `public` namespace has an ID corresponding to the null character "".
 
 - If you want to add applications to the `public` namespace, you must use an empty string, for example, `@@A@@appA`.
-
-!!! note
-
 
 ??? note "How to Get the Sentinel Console"
 
