@@ -16,7 +16,7 @@
 
 - 实例上下线
 
-    提供服务实例的上下线操作，在实例列表的操作列，可以点击实例的`上线`或者`下线`按钮。下线的实例不会被包含在健康的实例列表里。
+    提供服务实例的上下线操作，在实例列表的操作列，可以点击实例的`上线`或者`下线`按钮。实例下线后状态会变为离线且不会被服务发现。
 
     ![上下线](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/servicelist/imgs/detail03.png)
 
