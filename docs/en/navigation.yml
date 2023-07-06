@@ -810,7 +810,8 @@ nav:
       - Container Registry: videos/kangaroo.md
   - Blogs:
       - Index: blogs/index.md
-      - 202306 | Exploring the Cloud-Native Path of Ray Core: blogs/230612-ray.md
+      - 202306 | Exploring the Cloud-Native Path of Ray Core (II): blogs/230615-ray.md
+      - 202306 | Exploring the Cloud-Native Path of Ray Core (I): blogs/230612-ray.md
       - 202306 | Istio 1.18 Officially Released: blogs/230609-istio118.md
       - 202306 | Cloud-native Federation Middleware FedState: blogs/230605-fedstate.md
       - 202306 | API Server Tracing upgraded to beta: blogs/230601-api-server-tracing.md
@@ -873,3 +874,5 @@ nav:
       - Business Products: native/commerce.md
       - Open Source Projects: native/open.md
       - Knowledge Sharing: native/knowledge.md
+  - Try Community Package:
+      - Try Community Package: trial/index.md
