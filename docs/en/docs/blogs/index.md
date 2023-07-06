@@ -7,6 +7,10 @@ hide:
 
 This page summarizes blogs and public account articles related to DCE 5.0 and cloud-native technology, sorted by date by default.
 
+- [20230612 | AIGC Sharp Tools: Exploring Ray's Cloud-Native Journey - Ray Core Part II](./230615-ray.md)
+
+    This article provides a detailed explanation of Ray's capabilities and parameters, as well as practical application operations.
+
 - [20230612 | The Exploration of Ray Core in Cloud-Native Computing for AIGC - Ray Core](./230612-ray.md)
 
     This article introduces how Ray Core, a distributed computing framework, works as the foundation of Ray.
