@@ -146,7 +146,7 @@ components:
 
 | 字段                            | 说明                              |
 | :------------------------------ | :-------------------------------- |
-| infrastructures                 | DCE5.0 产品基础设施               |
+| infrastructures                 | DCE 5.0 产品基础设施               |
 | infrastructures.xxx.enable      | 是否开启当前模块，默认为 true     |
 | infrastructures.xxx.helmVersion | 当前模块的 chart 包版本           |
 | infrastructures.hwameiStor      | HwameiStor 本地存储               |
@@ -156,7 +156,7 @@ components:
 | infrastructures.cert-manager    | Cert Manager 证书管理             |
 | infrastructures.mysql           | Mysql 数据库                      |
 | infrastructures.redis           | Redis 数据库                      |
-| components                      | DCE5.0 产品功能模块               |
+| components                      | DCE 5.0 产品功能模块               |
 | components.kubean               | 集群声明周期管理                  |
 | components.ghippo               | 全局管理                          |
 | components.kpanda               | 容器管理                          |

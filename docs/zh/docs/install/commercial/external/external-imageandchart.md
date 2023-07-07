@@ -32,4 +32,4 @@
 
         - Chart 仓库仅支持 chartmuseum、harbor、jfrog 三种
 
-2. 完成上述配置后，可以继续执行[部署 DCE5.0 商业版](../start-install.md)。
+2. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。

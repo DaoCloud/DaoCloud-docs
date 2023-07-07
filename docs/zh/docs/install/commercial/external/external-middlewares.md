@@ -6,9 +6,10 @@
 
 ### 前置说明
 
-- DCE5.0 产品模块中使用了 MySQL 数据库来存储数据，所以仅支持 MySQL 数据库外接
+- DCE 5.0 产品模块中使用了 MySQL 数据库来存储数据，所以仅支持 MySQL 数据库外接
 
-- 下述示例脚本仅用于演示目的，实际应用中应该根据具体的需求进行修改，例如数据库名称、用户名、密码等，并且可以将以下语句拆分至不同的 DBMS 执行
+- 下述示例脚本仅用于演示目的，实际应用中应该根据具体的需求进行修改，例如数据库名称、用户名、密码等，
+  并且可以将以下语句拆分至不同的 DBMS 执行
 
 ### 操作步骤
 
@@ -77,7 +78,9 @@
     GRANT ALL PRIVILEGES ON dowl.* TO 'dowl';
     ```
 
-3. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `externalMiddlewares.database` 参数，假设数据库访问地址为 localhost:3306；不同的数据库类型有不同的 dataSourceName 配置格式，详见文档 https://gorm.io/docs/connecting_to_the_database.html。
+3. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `externalMiddlewares.database` 参数，
+   假设数据库访问地址为 localhost:3306；不同的数据库类型有不同的 dataSourceName 配置格式，
+   详见文档 https://gorm.io/docs/connecting_to_the_database.html
 
     ```yaml
     apiVersion: provision.daocloud.io/v1alpha3
@@ -134,13 +137,13 @@
               dataSourceName: "dowl:password@tcp(172.30.41.0:3308)/dowl"
     ```
 
-4. 完成上述配置后，可以继续执行[部署 DCE5.0 商业版](../start-install.md)。
+4. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。
 
 ## 使用外接 Redis
 
-### 操作步骤
+操作步骤如下：
 
-1. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `externalMiddlewares.redis` 参数，如下：
+1. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `externalMiddlewares.redis` 参数：
 
     ```yaml
     apiVersion: provision.daocloud.io/v1alpha3
@@ -158,21 +161,21 @@
 
         - 支持 Redis Standalone、Redis Sentinel、Redis Cluster 三种模式
 
-        - Standalone URL 格式为：redis://[[user]:password@]host[:port][/db-number][?option=value]
+        - Standalone URL 格式为：`redis://[[user]:password@]host[:port][/db-number][?option=value]`
 
-        - Sentinel URL 格式为：redis+sentinel://[[user]:password@]host1[:port1][,host2[:port2]]/master-name[/db-number][?option=value]
+        - Sentinel URL 格式为：`redis+sentinel://[[user]:password@]host1[:port1][,host2[:port2]]/master-name[/db-number][?option=value]`
 
-        - Cluste rURL 格式为：redis://[[user]:password@]host1[:port1]?addr=host2[:port2][&addr=host3:[port3][&option=value]] 或 rediss://[[user]:password@]host1[:port1]?addr=host2[:port2][&addr=host3:[port3][&option=value]]
+        - Cluster URL 格式为：`redis://[[user]:password@]host1[:port1]?addr=host2[:port2][&addr=host3:[port3][&option=value]] 或 rediss://[[user]:password@]host1[:port1]?addr=host2[:port2][&addr=host3:[port3][&option=value]]`
 
         - 目前仅有容器管理产品模块使用到了 Redis 组件
 
-2. 完成上述配置后，可以继续执行[部署 DCE5.0 商业版](../start-install.md)。
+2. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。
 
 ## 使用外接 Elasticsearch
 
-### 操作步骤
+操作步骤如下：
 
-1. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `externalMiddlewares.elasticsearch` 参数，如下：
+1. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `externalMiddlewares.elasticsearch` 参数：
 
     ```yaml
     apiVersion: provision.daocloud.io/v1alpha3
@@ -192,15 +195,15 @@
 
     !!! note
 
-        - 目前仅有可观测产品模块使用到了 Elasticsearch 组件
+        目前仅有可观测产品模块使用到了 Elasticsearch 组件。
 
-2. 完成上述配置后，可以继续执行[部署 DCE5.0 商业版](../start-install.md)。
+2. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。
 
 ## 使用外接 S3Storage
 
-### 操作步骤
+操作步骤如下：
 
-1. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `externalMiddlewares.S3Storage` 参数，如下：
+1. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `externalMiddlewares.S3Storage` 参数：
 
     ```yaml
     apiVersion: provision.daocloud.io/v1alpha3
@@ -220,4 +223,4 @@
       ..........
     ```
 
-2. 完成上述配置后，可以继续执行[部署 DCE5.0 商业版](../start-install.md)。
+2. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。

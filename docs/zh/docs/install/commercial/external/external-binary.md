@@ -66,11 +66,9 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
     2. 如果是普通方式部署的 nginx 服务，则选定导入路径为 `/usr/share/nginx/html`
 
     3. 如果是容器部署的 nginx 服务，需要挂载宿主机路径至容器，且挂载的宿主机路径对应着映射了 http 服务的容器本地路径，
-       即存在这样的关系： `http-path -> container-path -> host-path`。则导入路径应为 host-path。host-path 需要手动按照附录 1 确认。
+       即存在这样的关系： `http-path -> container-path -> host-path`。则导入路径应为 host-path。host-path 需要手动按照附录确认。
 
-4. 导入离线 binaries 离线包
-
-    执行如下命令：
+4. 执行如下命令导入离线 binaries 离线包：
 
     ```bash
     cat > import.sh << "EOF"
@@ -83,9 +81,9 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
     bash ./import.sh
     ```
 
-    其中环境变量 MAPPING_PATH 代表步骤3中提及的导入路径
+    其中环境变量 `MAPPING_PATH` 代表步骤 3 中提及的导入路径。
 
-5. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `binaries` 相关的参数
+5. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `binaries` 相关的参数。
 
     ```yaml
     apiVersion: provision.daocloud.io/v1alpha3
@@ -99,17 +97,17 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
       ..........
     ```
 
-6. 完成上述配置后，可以继续执行[部署 DCE5.0 商业版](../start-install.md)。
+6. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。
 
 ### 附录
 
 查看容器卷挂载列表：
 
-  | CLI tool | Command |
-  | --- | --- |
-  |docker|`docker inspect ${CONTAINER_ID} -f '{{range .Mounts}}{{printf "hostPath: %s containerPath: %s\n" .Source .Destination}}{{end}}'`|
-  |nerdctl|`nerdctl inspect ${CONTAINER_ID} -f '{{range .Mounts}}{{printf "hostPath: %s containerPath: %s\n" .Source .Destination}}{{end}}'`|
-  |podman| `podman inspect ${CONTAINER_ID} -f '{{range .Mounts}}{{printf "hostPath: %s containerPath: %s\n" .Source .Destination}}{{end}}'`|
-  |crictl| `crictl inspect -o go-template --template '{{range .status.mounts}}{{printf "hostPath: %s containerPath: %s\n" .hostPath .containerPath }}{{end}}' ${CONTAINER_ID}`|
-  |ctr| `ctr c info ${CONTAINER_ID} --spec` 检查mouts字段 |
-  |kubectl|`kubectl -n ${NAMESPACE} get pod ${POD_NAME} -oyaml` 检查 volumes 和 volumeMounts 字段 |
+| CLI tool | Command |
+| --- | --- |
+|docker|`docker inspect ${CONTAINER_ID} -f '{{range .Mounts}}{{printf "hostPath: %s containerPath: %s\n" .Source .Destination}}{{end}}'`|
+|nerdctl|`nerdctl inspect ${CONTAINER_ID} -f '{{range .Mounts}}{{printf "hostPath: %s containerPath: %s\n" .Source .Destination}}{{end}}'`|
+|podman| `podman inspect ${CONTAINER_ID} -f '{{range .Mounts}}{{printf "hostPath: %s containerPath: %s\n" .Source .Destination}}{{end}}'`|
+|crictl| `crictl inspect -o go-template --template '{{range .status.mounts}}{{printf "hostPath: %s containerPath: %s\n" .hostPath .containerPath }}{{end}}' ${CONTAINER_ID}`|
+|ctr| `ctr c info ${CONTAINER_ID} --spec` 检查 mounts 字段 |
+|kubectl|`kubectl -n ${NAMESPACE} get pod ${POD_NAME} -oyaml` 检查 volumes 和 volumeMounts 字段 |
