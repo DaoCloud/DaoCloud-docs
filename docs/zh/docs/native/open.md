@@ -401,6 +401,10 @@
 
     该版本主要新特性：支持设置日志收集的速率限制规则、支持处理 YAML 配置格式、允许设置重启 worker 的时间间隔。
 
+- [Flux 持续交付工具 v2.0 发布（CNCF 项目）](https://github.com/fluxcd/flux2/releases/tag/v2.0.0)
+
+    版本特性：GitOps 相关的 API 升级为 v1；Flux 控制器增加水平扩展和分片功能；Git bootstrap 功能升级为稳定；Flux项目供应链的构建、发布和证明部分暂时符合 SLSA Build Level 3；与Kubernetes Workload Identity for AWS、Azure和 Google Cloud 完全集成；警报功能优化。
+
 - [Flux 持续交付工具成为 CNCF 毕业项目](https://mp.weixin.qq.com/s/3F3DHuKEZqqd7M6-im6B-A)
 
     [Flux](https://github.com/fluxcd/flux2) 是一套面向 Kubernetes 的持续渐进交付解决方案，支持开发者和基础设施团队的 GitOps 和渐进交付。自 2021 年 3 月成为 CNCF 孵化项目以来，Flux 及其子项目 Flagger 在用户群、集成、软件使用、用户参与度、贡献等方面增长了 200-500%。
@@ -615,6 +619,10 @@
 
     该版本主要新特性：支持通过 ScaledObject 注释暂停自动缩放、新增基于 ARM 的容器镜像、支持以非 root 身份运行 KEDA 的默认安全模式、CPU、内存、Datadog 扩展器使用全局 `metricType` 代替 `metadata.type`等。
 
+- [Kelemetry：字节跳动开源的面向 Kubernetes 控制面的全局追踪系统](https://mp.weixin.qq.com/s/qgiladzN-l6jGaSwiWZ-_Q)
+
+    [Kelemetry](https://github.com/kubewharf/kelemetry) 从全局视角串联起多个 Kubernetes 组件的行为，追踪单个 Kubernetes 对象的完整生命周期以及不同对象之间的相互影响。通过可视化 K8s 系统内的事件链路，它使得 Kubernetes 系统更容易观测、更容易理解、更容易 Debug。
+
 - [Keptn 云原生应用程序生命周期编排项目 v0.19.0 发布（CNCF 项目）](https://github.com/keptn/keptn/releases/tag/0.19.0)
 
     该版本主要新特性：Helm-service 和 Jmeter-service 移到 keptn 贡献仓库、支持验证入站事件、引入签名的 Keptn Helm chart、支持通过 sigstore/cosign 签名所有发布/预发布的容器镜像。
@@ -661,9 +669,21 @@
 
     该版本主要新特性：支持 Gateway API、支持有状态应用的分批发布、新增了“Pod 批次打标”能力、集成到 KubeVela 之中实现 Helm Charts 金丝雀发布能力。
 
+- [KSOC Labs 发布第一个 Kubernetes 物料清单 (KBOM)](https://www.infoq.com/news/2023/06/kubernetes-bill-of-materials/?topicPageSponsorship=6dafd62c-9925-4408-bfda-e96bc971c941)
+
+    [KBOM](https://github.com/ksoclabs/kbom) 是一款开源标准和命令行工具，可帮助安全团队快速分析集群配置并应对 CVE。该项目包含一份初始规范和实施方案，可跨云供应商、企业内部(on-premise) 及自定义环境使用。安全和规范团队可通过使用 KBOM 对其 Kubernetes 集群（尤其是三方插件）获得更高的可见性，从而快速识别漏洞和维系。
+
 - [Kuasar：由华为云联合多家单位正式开源的多沙箱容器运行时](https://mp.weixin.qq.com/s/pXBZ-U1KF0_bNU8u6MOv8A)
 
     [Kuasar](https://github.com/kuasar-io/kuasar) 在保留传统容器运行时功能的基础上，通过全面 Rust 化以及优化管理模型和框架等手段，进一步降低管理开销、简化调用链路，扩展对业界主流沙箱技术的支持。此外，通过支持多安全沙箱共节点部署，Kuasar 可以充分利用节点资源，实现降本增效。
+
+- [KubeAdmiral 字节跳动开源的基于 K8s 的新一代多集群编排调度引擎](https://mp.weixin.qq.com/s/aS18urPF8UB4K2I_9ECbHg)
+
+    [KubeAdmiral](https://github.com/kubewharf/kubeadmiral) 是基于 Kubernetes Federation v2 迭代演进而来，旨在提供云原生多云多集群的管理和应用分发能力。KubeAdmiral 在其基础上做了增强：兼容原生 Kubernetes API；提供更灵活的调度框架，支持丰富的调度分发策略；差异化策略；依赖调度/跟随调度；提供状态收集的框架，提供更灵活的状态收集。
+
+- [KubeClipper K8S 集群生命周期管理服务成为 CNCF 沙箱项目](https://mp.weixin.qq.com/s/UEFtUZR8BZX9pK_PYsAWlA)
+
+    [KubeClipper](https://github.com/kubeclipper/kubeclipper) 基于 Kubeadm 封装，用户可以通过 Web 界面、API，或命令行工具（kcctl）来管理主机节点，可以快速创建和删除 K8S 集群，并可以对已存在的 K8S 集群进行纳管、升级、配置变更、应用部署，以及扩、缩容等操作。
 
 - [KubeClipper：九州云开源的 K8s 多集群全生命周期管理工具](https://mp.weixin.qq.com/s/RVUB5Pw6-A5zZAQktl8AcQ)  
 
@@ -787,6 +807,10 @@
 - [KubeVela v1.4.0 发布（CNCF 项目）](https://github.com/kubevela/kubevela/releases/tag/v1.4.0)  
 
     该版本主要新特性：支持多集群认证、使用 kubeconfig 的控制器自动登录、支持更多的授权方式；允许在 GC 策略中按资源类型选择资源、新增策略控制器为 VelaUX 和 CLI 参数生成 OpenAPI 模式；CLI 支持显示资源拓扑结构等。
+
+- [KubeVirt 虚拟机运行项目 v1.0 发布（CNCF 项目）](https://github.com/kubevirt/kubevirt/releases/tag/v1.0.0)
+
+    版本特性：移除热插拔 VMI API、引入 CPU 热拔插、实验性支持 AMD 的安全加密虚拟化 (SEV) 、支持在偏好中设置 CPU 和内存最低资源需求、支持 VirtualMachine 对象上网络接口的热拔插、支持指定集群级别的虚拟机行为、增加多架构支持、 允许指定创建的虚拟机的内存、 允许在创建虚拟机时指定卷的启动顺序、克隆和导出虚拟机支持 RBAC 配置。
 
 - [KubeVirt 虚拟机管理插件 v0.58.0 发布（CNCF 项目）](https://github.com/kubevirt/kubevirt/releases/tag/v0.58.0)
 

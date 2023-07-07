@@ -397,6 +397,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support for setting rate limit rules for log collection, support for processing YAML configuration formats, and allow setting the time interval for restarting workers.
 
+- [Flux Continuous Delivery Tool v2.0 Released (CNCF Project)](https://github.com/fluxcd/flux2/releases/tag/v2.0.0)
+
+    Release features: GitOps-related API upgraded to v1; Flux controller adds horizontal scaling and sharding features; Git bootstrap feature upgraded to stable; build, release and proof parts of Flux project supply chain temporarily conform to SLSA Build Level 3; with Kubernetes Workload Identity Full integration with Kubernetes Workload Identity for AWS, Azure, and Google Cloud; Alerts feature optimization.
+
 - [Flux continuous delivery tool becomes CNCF graduation project](https://mp.weixin.qq.com/s/3F3DHuKEZqqd7M6-im6B-A)
 
      [Flux](https://github.com/fluxcd/flux2) is a continuous progressive delivery solution for Kubernetes that supports GitOps and progressive delivery for developers and infrastructure teams. Since becoming a CNCF incubation project in March 2021, Flux and its sub-project Flagger have grown 200-500% in terms of user base, integrations, software usage, user engagement, contributions, etc.
@@ -611,6 +615,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      Major new features in this release: support for pausing autoscaling via ScaledObject annotations, new ARM-based container images, support for non-root KEDA default security mode, CPU, memory, Datadog extenders use global `metricType` instead of `metadata. type` etc.
 
+- [Kelemetry: ByteBeat's open source global tracking system for Kubernetes control plane](https://mp.weixin.qq.com/s/qgiladzN-l6jGaSwiWZ-_Q)
+
+    [Kelemetry](https://github.com/kubewharf/kelemetry) ties together the behavior of multiple Kubernetes components from a global perspective, tracing the complete lifecycle of a single Kubernetes object and the interactions between different objects. By visualizing event chains within a K8s system, it makes Kubernetes systems easier to observe, easier to understand, and easier to debug.
+
 - [Keptn Cloud Native Application Lifecycle Orchestration Project v0.19.0 release (CNCF project)](https://github.com/keptn/keptn/releases/tag/0.19.0)
 
      The main new features of this version: Helm-service and Jmeter-service moved to the keptn contribution repository, support for verifying inbound events, introduction of signed Keptn Helm charts, and support for signing all released/pre-released container images through sigstore/cosign.
@@ -657,9 +665,21 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version are: support for Gateway API, support for batch release of stateful applications, new "Pod batch marking" capability, integration into KubeVela to realize Helm Charts canary release capability.
 
+- [KSOC Labs Releases First Kubernetes Bill of Materials (KBOM)](https://www.infoq.com/news/2023/06/kubernetes-bill-of-materials/?topicPageSponsorship=6dafd62c-9925-4408-bfda-e96bc971c941)
+
+    [KBOM](https://github.com/ksoclabs/kbom) is an open source standard and command line tool that helps security teams quickly analyze cluster configurations and respond to CVEs. The project includes an initial specification and implementation plan that can be used across cloud providers, on-premise, and custom environments. Security and specification teams can gain greater visibility into their Kubernetes clusters (especially the three-party plug-in) using KBOM to quickly identify vulnerabilities and maintain them.
+
 - [Kuasar: a multi-sandbox container runtime officially open-sourced by Huawei Cloud in association with several units](https://mp.weixin.qq.com/s/pXBZ-U1KF0_bNU8u6MOv8A)
 
     [Kuasar](https://github.com/kuasar-io/kuasar) further reduces management overhead, simplifies invocation traces, and extends support for mainstream sandbox technologies by retaining traditional container runtime functionality through comprehensive Rustification and optimizing management models and frameworks. In addition, by supporting multi-security sandbox co-node deployment, Kuasar can fully utilize node resources to achieve cost reduction and efficiency.
+
+- [KubeAdmiral byte-jumping open source K8s-based next-generation multi-cluster orchestration scheduling engine](https://mp.weixin.qq.com/s/aS18urPF8UB4K2I_9ECbHg)
+
+    [KubeAdmiral](https://github.com/kubewharf/kubeadmiral) is based on the Kubernetes Federation v2 iterative evolution, designed to provide cloud-native multi-cloud multi-cluster management and application distribution capabilities. KubeAdmiral builds on its enhancements KubeAdmiral: compatible with native Kubernetes API; provides a more flexible scheduling framework and supports rich scheduling distribution policies; differentiated policies; dependent scheduling/following scheduling; provides a framework for state collection and provides more flexible state collection.
+
+- [KubeClipper K8S Cluster Lifecycle Management Service Becomes CNCF Sandbox Project](https://mp.weixin.qq.com/s/UEFtUZR8BZX9pK_PYsAWlA)
+
+    [KubeClipper](https://github.com/kubeclipper/kubeclipper) is based on the Kubeadm package, which allows users to manage host nodes through a web interface, API, or command line tool (kcctl), to quickly create and delete K8S clusters, and to perform nano-management of existing K8S clusters can be quickly created and deleted, and existing K8S clusters can be managed, upgraded, configured, deployed, and scaled up or down.
 
 - [KubeClipper: K8s multicluster lifecycle management tool open sourced by Kyushu Cloud](https://mp.weixin.qq.com/s/RVUB5Pw6-A5zZAQktl8AcQ)
 
@@ -789,6 +809,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [KubeVela v1.4.0 release (CNCF project)](https://github.com/kubevela/kubevela/releases/tag/v1.4.0)
 
      The main new features of this version: support multicluster authentication, automatic login of controllers using kubeconfig, support for more authorization methods; allow resources to be selected by resource type in GC policies, and new policy controllers to generate OpenAPI patterns for VelaUX and CLI parameters ; CLI supports displaying resource topology, etc.
+
+- [KubeVirt Virtual Machine Operations Project v1.0 Released (CNCF Project)](https://github.com/kubevirt/kubevirt/releases/tag/v1.0.0)
+
+    Release features: removes hot-plugging VMI API, introduces CPU hot-plugging, experimental support for AMD's Secure Encryption Virtualization (SEV), supports setting minimum resource requirements for CPU and memory in preferences, supports hot-plugging of network interfaces on VirtualMachine objects, supports specifying cluster-level VM behavior, adds multi-architecture support, allows specifying the memory of created VMs, allows specifying the memory of created VMs, allows specifying the memory of created VMs, and allows specifying the memory of created VMs when creating VMs. The support for cloning and exporting virtual machines supports RBAC configuration.
 
 - [KubeVirt Virtual Machine Management Plugin v0.58.0 released (CNCF project)](https://github.com/kubevirt/kubevirt/releases/tag/v0.58.0)
 

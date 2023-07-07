@@ -18,6 +18,18 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     IstioCon 2023 will be held in Shanghai from 9.25-9.26. Recommended topics include: case studies, new features, Istio configuration and project updates, etc. Presentation types include single presentations (30 minutes), dual presentations (30 minutes), and panel discussions (30 minutes). The summit supports both live and online presentations.
 
+- [7.16 China's first Platform Engineering Summit will be held in Beijing on September 2, the call for presentations has been opened (7.16 deadline)](https://mp.weixin.qq.com/s/jnQXmVuv7wrIg4Tnxy9fIg)
+  
+    The first Platform Engineering Summit in China will feature 10 presentations covering topics such as cloud-native, DevOps, platform engineering, and R&D effectiveness, with technical experts invited to share technical insights and implementation practices. The recommended topics include: cutting-edge trends of cloud-native technologies, case sharing of platform engineering, R&D performance improvement practices, cloud-native-enabled platform engineering, and DevOps implementation practices.
+
+- [7.15 IDC launches two major reports on cloud-native infrastructure and low-code/no-code research (research collaboration application deadline 7.15)](https://mp.weixin.qq.com/s/d4u24cNjQxYtILftHMoYJA)
+  
+    The Cloud Native Infrastructure Technical Capabilities Assessment report study will provide an in-depth assessment of the key capabilities and characteristics of various cloud native infrastructure solutions in the market, as well as insight into their strengths and challenges in dimensions such as runtime, cloud native storage, cloud native networking, mirroring, and orchestration scheduling. The low-code/no-code development platform vendor assessment will combine both capability and strategy dimensions to provide a comprehensive assessment of the mainstream low-code/no-code development platform vendors in the market and explore the optimal solution in the cloud-native development model.
+
+- [7.15 Cloud Native Open Source Project Application Practice Session 3rd Registration Open](https://mp.weixin.qq.com/s/3YO0RvsCfQLZLCo2PyTVUg)
+  
+    On July 15, the third stop of "Cloud Native Open Source Project Application Practice Session" will come to Shenzhen. "DaoCloud will join hands with Tencent Cloud, Microsoft, OpenCloudOS community, WasmEdge community, and DCE community to share the most cutting-edge cloud-native technologies, open source projects, solutions, and typical cases.
+
 - [7.15 Harbor & Narrows & Velero Open Source Project Technical Salon to be held on July 15](https://mp.weixin.qq.com/s/HSVLUfDZpYSWyNakP60CJQ)
   
     The Cloud Native Technology Salon, hosted by VMware, will focus on the technical sharing activities of the Harbor, Narrows, and Velero open source projects. The event brings together a number of cloud-native technical experts from VMware, Ant Group, Microsoft, Geberit, and Yak Cloud to share full-stack open source projects and the implementation and practice of cloud-native applications.
@@ -26,6 +38,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     The conference invites more active industry opinion leaders and A-side enterprises in edge computing to share more than 20 topics to discuss edge computing landing practices, application cases, edge cloud, AI, open source, computing power, chips, audio and video, going to sea, industrial IoT, investment, etc.
 
+- [7.14 Financial, Telecom and Pan-Industry Classes "Industry Cloud Platform Operation and Management Capability Maturity Part 1: Tenant Operations" First Assessment Open for Registration (7.14 Deadline)](https://mp.weixin.qq.com/s/3DqBclaA2h3uQyHsLi-vIQ)
+  
+    Industry Cloud Platform Operation and Management Capability Maturity Part 1: Tenant Operations" focuses on three dimensions: enterprise qualification, tenant operation and management capabilities, and tenant technical support, and examines the operational capabilities provided by industry cloud platform operators to tenants for financial-grade and telecom-grade scenarios.
+
 - [7.6-7.8 2023 World Congress on Artificial Intelligence to be Held in Shanghai, July 6-8](https://mp.weixin.qq.com/s/LlDOc9R2_1o31AuWzlPPFA)
   
     This year's conference focuses on the frontier of science and industrial development, around the three major topics of technology, industry and humanities, focusing on the ten frontier winds of big models, smart chips, scientific intelligence, robotics, brain-like intelligence, metaverse, autonomous driving, data forum, rule of law and security, blockchain, etc.
@@ -33,6 +49,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [7.7 China Academy of ICT "Cloud Optimization Capability Enhancement Program" Fourth Batch of Member Units Recruitment Opened (7.7 Application Deadline)](https://mp.weixin.qq.com/s/pnHwqln-JujuJxfD-6u-xA)
   
     Members of the "Cloud Optimization Capability Enhancement Program" can participate in the discussion and preparation of standards, research reports, white papers, and other group documents, and can obtain the working documents and official documents, as well as participate in various salons, trainings, industry conferences and other activities organized by the Enhancement Program, and enjoy priority display opportunities in various activities. The list of the fourth batch of members will be officially announced at the Trusted Cloud Conference on July 25.
+
+- [7.3 China Academy of Information and Communications Technology officially launches the preparation of "Distributed Storage Industry Development White Paper 2023"](https://mp.weixin.qq.com/s/943mhXE46Ht79BsurGI_Sw)
+  
+    The White Paper on Distributed Storage Industry Development 2023 will focus on the development environment of distributed storage industry, research path of distributed storage technology, analysis of application scenarios of distributed storage technology, challenges and response strategies, industry development trend and sharing of excellent application cases. Currently, the call for units and experts to participate in the preparation of the white paper is open. After the examination and approval, qualified units and experts will have the opportunity to participate in the preparation and discussion of the white paper.
 
 ### 2023-06
 
