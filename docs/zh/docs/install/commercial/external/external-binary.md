@@ -1,6 +1,7 @@
 # 使用外接服务存储 Binaries 资源
 
-本文描述如何使用第三方存储服务存储 Binaries 资源并且在安装器安装时进行指定。支持两种类型：S3 兼容服务(如 minio)，非S3兼容服务(如 nginx)
+本文描述如何使用第三方存储服务存储 Binaries 资源并且在安装器安装时进行指定。
+支持两种类型：S3 兼容服务（如 minio）、非 S3 兼容服务（如 nginx）。
 
 ## 操作步骤
 
@@ -30,9 +31,11 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
 
 ### 使用非 S3 兼容服务
 
-非 S3 兼容的服务需要先手动将下载好的[镜像离线包](../start-install.md/#_1) 目录下的 `offline/kubespray-binary/offline-files.tar.gz` binaries 离线包导入，然后在[集群配置文件 clusterConfig.yaml](../cluster-config.md) 中配置相关参数。
+非 S3 兼容的服务需要先手动将下载好的[镜像离线包](../start-install.md/#_1) 目录下的 `offline/kubespray-binary/offline-files.tar.gz` binaries 离线包导入，
+然后在[集群配置文件 clusterConfig.yaml](../cluster-config.md) 中配置相关参数。
 
-以下内容以 CentOS 7.9 x86_64 作为集群节点，使用 nignx 作为 http server，理论上其他通用http server也能支持，需要注意 URL 访问路径和文件路径的映射关系。
+以下内容以 CentOS 7.9 x86_64 作为集群节点，使用 nignx 作为 http server，
+理论上其他通用 http server 也能支持，需要注意 URL 访问路径和文件路径的映射关系。
 
 1. 确保有一个可用的 nginx 服务，及服务所在节点的登录和文件写入权限；
 2. 将 binaries 离线包从火种节点拷贝至 nginx 服务所在节点；
@@ -43,7 +46,7 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
 
 3. 确定需要导入的路径;
 
-    1. 通过 nginx.conf 检测 nginx 服务所在节点的文件路径和 URL 路径的映射关系，下方示例供参考：
+    1. 通过 `nginx.conf` 检测 nginx 服务所在节点的文件路径和 URL 路径的映射关系，下方示例供参考：
 
         ```bash
         http {
@@ -58,11 +61,12 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
         }
         ```
 
-       上方配置说明 nginx http服务的访问根路径映射本地目录 /usr/share/nginx/html
+        上方配置说明 nginx http服务的访问根路径映射本地目录 `/usr/share/nginx/html`
 
-    2. 如果是普通方式部署的 nginx 服务，则选定导入路径为 /usr/share/nginx/html
+    2. 如果是普通方式部署的 nginx 服务，则选定导入路径为 `/usr/share/nginx/html`
 
-    3. 如果是容器部署的 nginx 服务，需要挂载宿主机路径至容器，且挂载的宿主机路径对应着映射了 http 服务的容器本地路径，即存在这样的关系： `http-path -> container-path -> host-path`。则导入路径应为 host-path，host-path 需要手动按照附录 1 确认
+    3. 如果是容器部署的 nginx 服务，需要挂载宿主机路径至容器，且挂载的宿主机路径对应着映射了 http 服务的容器本地路径，
+       即存在这样的关系： `http-path -> container-path -> host-path`。则导入路径应为 host-path。host-path 需要手动按照附录 1 确认。
 
 4. 导入离线 binaries 离线包
 
@@ -99,7 +103,7 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
 
 ### 附录
 
-#### 1. 容器卷挂载列表查看
+查看容器卷挂载列表：
 
   | CLI tool | Command |
   | --- | --- |
@@ -108,4 +112,4 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
   |podman| `podman inspect ${CONTAINER_ID} -f '{{range .Mounts}}{{printf "hostPath: %s containerPath: %s\n" .Source .Destination}}{{end}}'`|
   |crictl| `crictl inspect -o go-template --template '{{range .status.mounts}}{{printf "hostPath: %s containerPath: %s\n" .hostPath .containerPath }}{{end}}' ${CONTAINER_ID}`|
   |ctr| `ctr c info ${CONTAINER_ID} --spec` 检查mouts字段 |
-  |kubectl|`kubectl -n ${NAMESPACE} get pod ${POD_NAME} -oyaml` 检查volumes和volumeMounts字段 |
+  |kubectl|`kubectl -n ${NAMESPACE} get pod ${POD_NAME} -oyaml` 检查 volumes 和 volumeMounts 字段 |
