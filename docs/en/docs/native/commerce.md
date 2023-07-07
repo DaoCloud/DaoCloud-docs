@@ -40,6 +40,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Local clustering reduces the risk of application downtime due to network outages in the cloud. During this time, the application remains available and cluster operations can be performed. EKS manages the availability of the K8s control plane on Outposts when connected to the cloud. The Kubernetes running on the local cluster has the same features as the EKS on the cloud, and supports automatic deployment of the latest security patches.
 
+- [Azure Releases Network Observability Add-On for AKS](https://azure.microsoft.com/en-us/blog/enhance-kubernetes-troubleshooting-with-network-observability- add-on-in-aks/)
+
+     The Network Observability Add-on for AKS is a distributed monitoring solution for Linux and Windows host environments. This component provides insight into the network infrastructure by collecting real-time data, leveraging Linux's eBPF, the Virtual Filtering Platform, and host network services in Windows, and making this data available to Prometheus and Grafana.
+
 - [Azure Kubernetes Release AKS May Update](https://mp.weixin.qq.com/s/d-xcAQ-6sV38pSJIZV676w)
 
     Updates: Support for automated deployments and integration with GitHub Actions; new AKS Fleet Manager and the introduction of features such as update groups, phases, and runtimes to help developers effectively manage multiple AKS clusters; support for Windows node configuration and Gen 2 VMs; support for Azure Linux, an operating system designed for container workloads; Launched managed Prometheus and Grafana.
@@ -91,6 +95,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Azure Releases AKS Fleet Manager (Public Preview)](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
 
     Azure Kubernetes Fleet Manager treats multiple cluster sites as a single cluster to be managed. Users can manage multiple clusters by creating a Fleet resource. Users can treat existing AKS clusters as member clusters, join them to the fleet, and then orchestrate multiple cluster Cases such as Kubernetes resource propagation and multicluster load balancing using metadata from those clusters.
+
+- [AliCloud Microservice Engine MSE June Product Update](https://mp.weixin.qq.com/s/WEFBZcKlzSM5r_gJ0If_Ag)
+
+     Registration&Configuration Center provides migration of availability zones, gateway logs compatible with NginxIngressSLS format, WAF plug-in for ModSecurity protection engine based implementation, OAuth authentication plug-in, behavior management of RPC services supports customization.The gateway logs are compatible with the NginxIngressSLS format, the WAF plug-in for ModSecurity protection engine, the OAuth authentication plug-in, and the behavior management support for RPC services.
 
 - [AliCloud Container Service ACK May Update](https://mp.weixin.qq.com/s/qdWU_lSdHov6JxdO3nsRtQ)
 
@@ -761,6 +769,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Volcano Engine Releases Distributed Cloud Native Platform DCP](https://mp.weixin.qq.com/s/Fz7R8R0keKFEryq8zQKFoA)
 
     [DCP](https://www.volcengine.com/product/dcp) is an enterprise-level cloud native unified management platform for multicloud and multi-Kubernetes cluster use cases, providing unified management and operation and maintenance of multicloud clusters, cross-cluster distribution of applications, unified traffic control and other capabilities, DCP provides unified management and operation and maintenance of Volcano Engine container clusters, third-party clusters and self-built clusters; provides cross-cluster and cross-cloud elastic scheduling capability based on cluster federation and other technologies; provides multicluster service discovery, multicluster unified portal access and other capabilities; enables application data recovery and cross-cluster/cloud application migration based on backup data.
+
+- [VMware Launches Tanzu Mission Control Self-Managed Version of Kubernetes Resource Unified Management Product for Multi-Hybrid Cloud Environments](https://mp.weixin.qq.com/s/_Nsc94wsxOBR7rRE9LoAmQ)
+
+     VMware Tanzu Mission Control Self-managed (TMC Self-managed) brings TMC to market as a local deployment, enabling users who were previously unable to use the TMC SaaS service to try out the Kubernetes management platform, or legacy SaaS users in In some special cases (e.g., disconnection), it can be used as a high-availability backup to the management platform.
 
 - [VMware Releases API Gateway Spring Cloud Gateway for Kubernetes 2.0](https://mp.weixin.qq.com/s/pDtHlp-a-XR_mw5L0DGMXQ)
 

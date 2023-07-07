@@ -36,6 +36,10 @@
 
     本地集群减少了因云端网络中断而导致的应用停机风险。在此期间，应用程序仍然可用，并且可以执行集群操作。当连接到云时，EKS 管理 Outposts 上 K8s 控制平面的可用性。本地集群运行的 Kubernetes 与云上 EKS 功能相同，支持自动部署最新的安全补丁。
 
+- [Azure 发布 AKS 的网络可观测性附加组件](https://azure.microsoft.com/en-us/blog/enhance-kubernetes-troubleshooting-with-network-observability-add-on-in-aks/)
+
+    AKS 的网络可观测性附加组件是一个分布式监控解决方案，适用于 Linux 和 Windows 主机环境。这个组件通过收集实时数据，利用 Linux 的 eBPF、虚拟过滤平台和 Windows 中的主机网络服务来深入了解网络基础设施，并将这些数据提供给 Prometheus 和 Grafana 使用。
+
 - [Azure Kubernetes 发行版 AKS 5 月更新](https://mp.weixin.qq.com/s/d-xcAQ-6sV38pSJIZV676w)
 
     更新内容：支持自动化部署和集成 GitHub Actions；新增 AKS Fleet Manager 以及引入更新组、阶段和运行方式等功能帮助开发者有效管理多个 AKS 集群；支持 Windows 节点配置和 Gen 2 VM；支持专为容器工作负载设计的操作系统 Azure Linux；推出托管的 Prometheus 和 Grafana。
@@ -87,6 +91,10 @@
 - [Azure 发布 AKS 舰队管理器（公开预览版）](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
 
     Azure Kubernetes 舰队管理器将多个群集地视为单个集群来管理。用户可通过创建一个 Fleet 资源来管理多个集群。用户可将现有 AKS 集群当作成员集群，加入到舰队中，然后用这些集群的元数据，编排多个集群场景，如 Kubernetes 资源传播和多集群负载均衡。
+
+- [阿里云微服务引擎 MSE 6 月产品更新](https://mp.weixin.qq.com/s/WEFBZcKlzSM5r_gJ0If_Ag)
+
+    注册&配置中心提供迁移可用区功能、网关日志兼容 NginxIngressSLS 格式、供基于 ModSecurity 防护引擎实现的 WAF 插件、提供 OAuth 认证插件、RPC 服务的行为管理支持自定义。
 
 - [阿里云容器服务 ACK 5 月动态](https://mp.weixin.qq.com/s/qdWU_lSdHov6JxdO3nsRtQ)
 
@@ -770,6 +778,10 @@
 
     TLS Protect for Kubernetes 是 Venafi 机器身份管理平台 Control Plane for Machine Identities 的一部分，
     帮助安全和平台团队在多云和多集群 Kubernetes 环境中管理云原生机器身份，如 TLS、mTLS 和 SPIFFE，增强机器身份管理的可观测性、控制和自动化。
+
+- [VMware 推出面向多云/混合云环境的 Kubernetes 资源统一管理产品 Tanzu Mission Control 自管理版本](https://mp.weixin.qq.com/s/_Nsc94wsxOBR7rRE9LoAmQ)
+
+    VMware Tanzu Mission Control 自管理版本（TMC Self-managed）将 TMC 作为本地部署的方式推向市场，使原先无法使用 TMC SaaS 服务的用户能够尝试使用该 Kubernetes 管理平台，或者原有 SaaS 用户在一些特殊情况下（比如断网）能够作为管理平台的高可用性备份。
 
 - [VMware 发布 API 网关 Spring Cloud Gateway for Kubernetes 2.0](https://mp.weixin.qq.com/s/pDtHlp-a-XR_mw5L0DGMXQ)
 
