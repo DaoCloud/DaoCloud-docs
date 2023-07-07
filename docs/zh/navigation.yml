@@ -24,16 +24,19 @@ nav:
               - 准备工作: install/commercial/prepare.md
               - 离线安装步骤: install/commercial/start-install.md
               - 使用场景示例: install/commercial/scenarios.md
-              - 修改集群配置文件: install/commercial/cluster-config.md
-          - 升级/卸载/FAQ:
-              - 升级 DCE 5.0 GProduct: install/upgrade.md
+              - 集群配置文件 clusterConfig.yaml: install/commercial/cluster-config.md
+              - 产品清单文件 manifest.yaml: install/commercial/manifest.md
+          - 升级/卸载/导入/FAQ:
+              - 升级 DCE 5.0 产品功能模块: install/upgrade.md
               - 卸载: install/uninstall.md
+              - 导入离线资源: install/import.md
               - 安装排障: install/faq.md
           - 在不同 K8s 发行版上安装:
               - 在 OpenShift OCP 上安装 DCE 5.0 商业版: install/k8s-install/ocp-install-dce5.0.md
           - 在不同操作系统上安装:
               - 在 UOS V20 (1020a) 上安装 DCE 5.0 商业版: install/os-install/uos-v20-install-dce5.0.md
               - Oracle Linux R9 U1 操作系统上部署 DCE 5.0 商业版: install/os-install/oracleLinux-install-dce5.0.md
+              - TencentOS Server 3.1 操作系统上部署 DCE 5.0 商业版: install/os-install/TencentOS-install-dce5.0.md
               - 其他 Linux 离线部署 DCE 5.0 商业版: install/os-install/otherlinux.md
           - Release Notes: install/release-notes.md
       - 容器管理:
