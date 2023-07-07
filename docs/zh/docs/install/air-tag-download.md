@@ -1,6 +1,6 @@
 # 一键下载所有离线包
 
-本页提供了脚本来一键下载安装 DCE5.0 所需的离线包。
+本页提供了脚本来一键下载安装 DCE 5.0 所需的离线包。
 
 ## 下载脚本
 
@@ -21,7 +21,7 @@
 | 参数 | 默认值 | 有效值范围 |
 |  ----  | ----  | ----  |
 | VERSION | 当前下载脚本版本 | 目前仅 v0.8.0 版本支持 |
-| INSTALLER_VERSION | 指定下载 DCE5.0 的版本 | 有效 DCE5.0 的发行版本即可 |
+| INSTALLER_VERSION | 指定下载 DCE 5.0 的版本 | 有效 DCE 5.0 的发行版本即可 |
 | DISTRO | `centos7` | `centos7` `kylinv10` `redhat8` `ubuntu2004` |
 | ARCH | `amd64` | `amd64` `arm64` |
 

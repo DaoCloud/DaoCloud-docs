@@ -12,7 +12,7 @@
 
 #### 离线镜像包 （必需）
 
-离线镜像包包含安装 DCE5.0 各个产品模块所需的配置文件、镜像资源以及 chart 包。
+离线镜像包包含安装 DCE 5.0 各个产品模块所需的配置文件、镜像资源以及 chart 包。
 
 可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
 
@@ -79,7 +79,7 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 
 #### 一键下载所需离线包
 
-我们提供了脚本来[一键下载安装 DCE5.0 所需的离线包](../air-tag-download.md)。
+我们提供了脚本来[一键下载安装 DCE 5.0 所需的离线包](../air-tag-download.md)。
 
 以下是包含的离线包：
 

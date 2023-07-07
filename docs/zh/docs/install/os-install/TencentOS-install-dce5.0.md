@@ -72,18 +72,18 @@
 
     !!! note
 
-      - TencentOS Server 3.1 操作系统属于 Redhat 系统族，所以需要在 kubeanConfig 中定义 `redhat_os_family_extensions` 参数。
-      - 执行如下命令查看 TencentOS Server 3.1 操作系统的 OS Family 标识，输出结果为 `TencentOS`。
+        - TencentOS Server 3.1 操作系统属于 Redhat 系统族，所以需要在 kubeanConfig 中定义 `redhat_os_family_extensions` 参数。
+        - 执行如下命令查看 TencentOS Server 3.1 操作系统的 OS Family 标识，输出结果为 `TencentOS`。
 
-        ```bash
-        export USER=root
-        export PASS=dangerous
-        export ADDR=172.30.41.166
-        export ANSIBLE_HOST_KEY_CHECKING=False
-        ansible -m setup -a 'filter=ansible_os_family' -e "ansible_user=${USER} ansible_password=${PASS}" -i ${ADDR}, all
-        ```
+            ```bash
+            export USER=root
+            export PASS=dangerous
+            export ADDR=172.30.41.166
+            export ANSIBLE_HOST_KEY_CHECKING=False
+            ansible -m setup -a 'filter=ansible_os_family' -e "ansible_user=${USER} ansible_password=${PASS}" -i ${ADDR}, all
+            ```
 
-7. 开始安装 DCE 5.0。
+6. 开始安装 DCE 5.0。
 
     ```bash
     ./dce5-installer cluster-create -m ./sample/mainfest.yaml -c ./sample/clusterConfig.yaml
@@ -98,7 +98,7 @@
         - `-d` 开启 debug 模式
         - `--serial` 指定后所有安装任务串行执行
 
-8. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
+7. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -106,4 +106,4 @@
 
         请记录好提示的 URL，方便下次访问。
 
-9. 成功安装 DCE 5.0 商业版之后，请联系我们授权：电邮 [info@daocloud.io](mailto:info@daocloud.io) 或致电 400 002 6898。
+8. 成功安装 DCE 5.0 商业版之后，请联系我们授权：电邮 [info@daocloud.io](mailto:info@daocloud.io) 或致电 400 002 6898。

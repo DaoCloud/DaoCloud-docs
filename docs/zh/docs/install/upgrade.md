@@ -107,8 +107,8 @@ spec:
 升级参数说明：
 
 - `install-app` 或 `cluster-create`，代表安装 DCE 5.0 的安装模式类型。如果最初的环境是通过 `cluster-create` 来安装的，则升级时也采用这个命令
-- `--upgrade` 可以简写为 `-u`，目前仅支持升级 DCE5.0 产品功能模块
-- v0.6.0 升级 DCE5.0 产品功能模块需要执行 `--upgrade 4,5,gproduct`，v0.7.0 版本后只需要执行 `--upgrade gproduct` 即可
+- `--upgrade` 可以简写为 `-u`，目前仅支持升级 DCE 5.0 产品功能模块
+- v0.6.0 升级 DCE 5.0 产品功能模块需要执行 `--upgrade 4,5,gproduct`，v0.7.0 版本后只需要执行 `--upgrade gproduct` 即可
 
 安装成功结果：
 

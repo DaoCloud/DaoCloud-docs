@@ -74,8 +74,10 @@
 - 离线包解压后的 `offline/sample/clusterConfig.yaml` 文件存在缩进问题，导致离线部署时会变成在线安装，离线安装前如果要使用 `offline/sample/clusterConfig.yaml` 文件的话需要手动修改缩进问题，请查看[集群配置文件](commercial/cluster-config.md)
 - Addon 离线包暂不支持上传到 JFrog 外接服务
 - 容器管理平台离线模式暂无法支持工作集群添加节点
-- 离线场景下使用外置 OS Repo 仓库时，即 clusterConfig.yaml 中定义 `osRepos.type=external`，部署 DCE5.0 成功后无法在容器管理中创建工作集群，临时解决方案如下：
-  global集群安装完成后立即更新global集群 kubean-system 命名空间的configmap kubean-localservice，将 `yumRepos.external` 值中所有双引号改为单引号。如下示例，将文件内的双引号都替换为单引号：
+- 离线场景下使用外置 OS Repo 仓库时，即 clusterConfig.yaml 中定义 `osRepos.type=external`，
+  部署 DCE 5.0 成功后无法在容器管理中创建工作集群，临时解决方案如下：
+  global 集群安装完成后立即更新 global 集群 kubean-system 命名空间的 configmap kubean-localservice，
+  将 `yumRepos.external` 值中所有双引号改为单引号。如下示例，将文件内的双引号都替换为单引号：
 
     ```yaml
     yumRepos:
@@ -119,7 +121,7 @@
 
 - **优化** 优化了对 tar 等命令的前置校验
 - **优化** 优化了升级操作命令行参数
-- **优化** 关闭了 Kibana 通过 NodePort 访问，Insight 使用 ES 的 NodePort or VIP 访问
+- **优化** 关闭了 Kibana 通过 NodePort 访问，Insight 使用 ES 的 NodePort 或 VIP 访问
 - **优化** 优化了并发日志展示，终止任务使用 SIGTERM 信号而不是 SIGKILL
 
 #### 修复
@@ -129,7 +131,7 @@
 
 #### 已知问题
 
-- 在线安装 global 集群会失败，需在 clusterConfig.yaml 的 `kubeanConfig` 块里进行如下配置:
+- 在线安装 global 集群会失败，需在 clusterConfig.yaml 的 `kubeanConfig` 块里进行如下配置：
 
     ```yaml
     kubeanConfig: |- 
@@ -139,15 +141,16 @@
     同时通过容器管理在线创建工作集群也有相同问题，需在集群创建页面高级配置的自定义参数中添加上述配置，键为 `calico_crds_download_url`，值为上述 calico_crds_download_url 的值
 
 - Kubean 存在低概率无法创建 spray-job 任务，通过手动删除对应的 clusteroperations CR 资源再重新执行安装命令
-- 使用外部 OS Repo 部署 DCE 5.0后，无法通过容器管理离线创建工作集群，通过手动修改 global 集群 kubean-system 命名空间的 configmap kubean-localservice 来解决。
-  在 `yumRepos` 下新增如下配置,需要在 external 内填写 clusterConfig.yaml 中配置的外部OS Repo 地址:
+- 使用外部 OS Repo 部署 DCE 5.0后，无法通过容器管理离线创建工作集群，通过手动修改 global 集群 kubean-system
+  命名空间的 configmap kubean-localservice 来解决。在 `yumRepos` 下新增如下配置，需要在 external 内填写
+  clusterConfig.yaml 中配置的外部 OS Repo 地址：
 
     ```yaml
     yumRepos:
       external: []
     ```
 
-    完成修改后对容器管理创建集群页面的节点配置的yum源选择新配置
+    完成修改后对容器管理创建集群页面的节点配置的 yum 源选择新配置
 
 ## 2023-4-11
 
