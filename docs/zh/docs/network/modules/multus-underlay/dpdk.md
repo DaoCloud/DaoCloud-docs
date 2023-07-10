@@ -4,7 +4,7 @@
 
 ## 前置依赖
 
-- 安装 Multus-underlay，并启用安装 SRIOV 组件，参考[安装](install.md)
+- 安装 Multus-underlay，并启用安装 SR-IOV 组件，参考[安装](install.md)
 - 需要硬件支持：拥有支持 SR-IOV 系列的网卡并设置虚拟功能（VF），参考[SR-IOV](sriov.md)
 - 需要切换网卡驱动为用户态驱动
 

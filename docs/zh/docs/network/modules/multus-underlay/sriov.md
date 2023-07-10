@@ -117,7 +117,7 @@ Allocatable:
   ephemeral-storage:             881675818368
   hugepages-1Gi:                 0
   hugepages-2Mi:                 0
-  intel.com/sriov-netdevice:     8      # 此行表示 SR-IOV CNI 成功的发现了该主机上的 VFs 
+  intel.com/-netdevice:     8      # 此行表示 SR-IOV CNI 成功的发现了该主机上的 VFs 
   memory:                        16250260Ki
   pods:                          110
 ```

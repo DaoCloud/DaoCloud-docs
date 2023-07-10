@@ -1258,7 +1258,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Sylva cloud-native infrastructure stack launched by Linux Foundation Europe to lay a cloud-native foundation for telecom services](https://www.prnewswire.com/news-releases/linux-foundation-europe-announces-project-sylva-to-create-open-source-telco-cloud-software-framework-to-complement-open-networking-momentum-301678955.html)
 
      [Sylva](https://gitlab.com/sylva-projects/sylva) Leverages container network features (CNF) and cloud-native platforms such as Kubernetes to create a telecom cloud technology stack to reduce the fragmentation of cloud infrastructure for telecom and edge services sex.
-     The technology stack provided by Sylva consists of 5 components: network performance (SRIOV, DPDK, designated CNI, etc.), distributed cloud (multicluster Kubernetes, bare metal automation), energy efficiency, security (hardening and compliance), and openness and standardized API.
+     The technology stack provided by Sylva consists of 5 components: network performance (SR-IOV, DPDK, designated CNI, etc.), distributed cloud (multicluster Kubernetes, bare metal automation), energy efficiency, security (hardening and compliance), and openness and standardized API.
 
 ### T
 

@@ -20,7 +20,7 @@ Multus-underlay consists of the following components:
 ### Meta-plugins
 
 [Meta-plugins](https://github.com/spidernet-io/cni-plugins) contains two Meta plugins.
-They are `Veth` and `Router`, which are called by CRI in the form of CNI-Chain. Called after the MacVLAN/SRIOV-type plug-in calls are completed,
+They are `Veth` and `Router`, which are called by CRI in the form of CNI-Chain. Called after the MacVLAN/SR-IOV-type plug-in calls are completed,
 Solve various communication problems by setting some rules in the Pod's NetNs.
 
 ### Veth-Plugin
