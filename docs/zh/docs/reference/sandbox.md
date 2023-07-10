@@ -30,7 +30,7 @@ Spiderpool can work well with any CNI project that is compatible with third-part
 - [macvlan CNI](https://github.com/containernetworking/plugins/tree/main/plugins/main/macvlan)
 - [vlan CNI](https://github.com/containernetworking/plugins/tree/main/plugins/main/vlan)
 - [ipvlan CNI](https://github.com/containernetworking/plugins/tree/main/plugins/main/ipvlan)
-- [sriov CNI](https://github.com/k8snetworkplumbingwg/sriov-cni)
+- [SR-IOV CNI](https://github.com/k8snetworkplumbingwg/sriov-cni)
 - [ovs CNI](https://github.com/k8snetworkplumbingwg/ovs-cni)
 - [Multus CNI](https://github.com/k8snetworkplumbingwg/multus-cni)
 - [calico CNI](https://github.com/projectcalico/calico)
@@ -105,7 +105,7 @@ Spiderpool provides many exciting features to support:
     such as [macvlan CNI](https://github.com/containernetworking/plugins/tree/main/plugins/main/macvlan),
     [vlan CNI](https://github.com/containernetworking/plugins/tree/main/plugins/main/vlan),
     [ipvlan CNI](https://github.com/containernetworking/plugins/tree/main/plugins/main/ipvlan),
-    [sriov CNI](https://github.com/k8snetworkplumbingwg/sriov-cni),
+    [SR-IOV CNI](https://github.com/k8snetworkplumbingwg/sriov-cni),
     [ovs CNI](https://github.com/k8snetworkplumbingwg/ovs-cni).
     See [an example](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/get-started-macvlan.md) for details.
 
@@ -180,7 +180,7 @@ We believe that our community will contribute significantly to the advancements 
   especially for CNIs without IPAM capabilities,
   such as [vlan](https://github.com/containernetworking/plugins/tree/main/plugins/main/vlan),
   [ipvlan](https://github.com/containernetworking/plugins/tree/main/plugins/main/ipvlan),
-  [sriov](https://github.com/k8snetworkplumbingwg/sriov-cni),
+  [SR-IOV](https://github.com/k8snetworkplumbingwg/sriov-cni),
   [ovs](https://github.com/k8snetworkplumbingwg/ovs-cni),
   [macvlan](https://github.com/containernetworking/plugins/tree/main/plugins/main/macvlan),
 
@@ -211,7 +211,7 @@ like [macvlan](https://github.com/containernetworking/plugins/tree/main/plugins/
 [weave](https://github.com/weaveworks/weave),
 [vlan](https://github.com/containernetworking/plugins/tree/main/plugins/main/vlan),
 [ipvlan](https://github.com/containernetworking/plugins/tree/main/plugins/main/ipvlan),
-[sriov](https://github.com/k8snetworkplumbingwg/sriov-cni),
+[SR-IOV](https://github.com/k8snetworkplumbingwg/sriov-cni),
 [ovs](https://github.com/k8snetworkplumbingwg/ovs-cni),
 [Multus](https://github.com/k8snetworkplumbingwg/multus-cni).
 

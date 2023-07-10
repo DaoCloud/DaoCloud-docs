@@ -2,7 +2,7 @@
 
 DCE 5.0 云原生网络基于多个开源技术构建，不仅提供单个 CNI 网络支持，也提供多个 CNI 网络的组合方案。具体方案如下：
 
-## 方案一：Cilium + MacVLAN/SRIOV/IPVLAN + SpiderPool + Multus
+## 方案一：Cilium + MacVLAN/SR-IOV/IPVLAN + SpiderPool + Multus
 
 此方案适用于高内核版本（4.19.57+）的 Linux 操作系统。
 方案以 Multus 为调度核心，搭配多 CNI，满足不同的网络场景需求，实现跨云跨集群的网络连通性。
@@ -29,7 +29,7 @@ DCE 5.0 云原生网络基于多个开源技术构建，不仅提供单个 CNI �
 
 ![solution01](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/solution01.png)
 
-## 方案二：Calico + MacVLAN/SRIOV/IPVLAN + SpiderPool + Multus
+## 方案二：Calico + MacVLAN/SR-IOV/IPVLAN + SpiderPool + Multus
 
 此方案适用于低内核版本的 Linux 操作系统，在用户有跨集群连通以及多 CNI 等需求时，可以采用此方案。
 

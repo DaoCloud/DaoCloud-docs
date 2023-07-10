@@ -19,7 +19,7 @@ hide:
 
 ## Overlay + Underlay 方案
 
-当集群部署应用需要使用多 CNI 组合，并需要使用 Underlay CNI（Macvlan/SR-IOV）IP 提供对外通信时，可采用的网络组件组合为 `Calico + SpiderPool + Multus + Macvlan/SRIOV`（同一集群可同时部署 Macvlan 和 SRIOV CNI）。具体的网卡规划如下：
+当集群部署应用需要使用多 CNI 组合，并需要使用 Underlay CNI（Macvlan/SR-IOV）IP 提供对外通信时，可采用的网络组件组合为 `Calico + SpiderPool + Multus + Macvlan/SR-IOV`（同一集群可同时部署 Macvlan 和 SR-IOV CNI）。具体的网卡规划如下：
 
 | 部署环境       | 基础设施             | 网卡数             | 网卡说明                 | 用途           |
 | -------------- | ----------------- | ----------------- | ----------------------- | ------------- |

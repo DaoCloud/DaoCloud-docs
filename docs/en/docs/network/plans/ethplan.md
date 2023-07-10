@@ -19,7 +19,7 @@ When the application Pod in the cluster only needs to use a single CNI and does 
 
 ## Overlay + Underlay scheme
 
-When the cluster deployment application needs to use a combination of multiple CNIs and Underlay CNI (Macvlan/SR-IOV) IP to provide external communication, the network component combination that can be used is `Calico + SpiderPool + Multus + Macvlan/SRIOV` (the same cluster can Deploy Macvlan and SRIOV CNI at the same time). The specific network card planning is as follows:
+When the cluster deployment application needs to use a combination of multiple CNIs and Underlay CNI (Macvlan/SR-IOV) IP to provide external communication, the network component combination that can be used is `Calico + SpiderPool + Multus + Macvlan/SR-IOV` (the same cluster can Deploy Macvlan and SR-IOV CNI at the same time). The specific network card planning is as follows:
 
 | Deployment Environment | Infrastructure | Number of NICs | NIC Description | Purpose |
 | -------------- | ----------------- | ---------------- - | ----------------------- | ------------- |

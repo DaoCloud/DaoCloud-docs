@@ -4,7 +4,7 @@ Based on open source projects, DCE 5.0 Cloud Native Networking provides not only
 
 [Free Trial Now](../../dce/license0.md){ .md-button .md-button--primary }
 
-## Solution 1: Cilium + Macvlan/Ipvlan/SRIOV + SpiderPool + Multus
+## Solution 1: Cilium + Macvlan/Ipvlan/SR-IOV + SpiderPool + Multus
 
 This solution is suitable for Linux OS with high kernel version (4.19.57+), using Multus as the scheduling core and multiple CNIs to meet different network use cases and create cross-cloud and cross-cluster network connectivity.  
 Moreover, SpiderPool is employed to strengthen the IP management allocation and IP recovery of Underlay network, realizing flexible IPAM management.  
