@@ -84,14 +84,14 @@
 
     ![sriov_install](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/sriov_install.png)
 
-    - `Install SR-IOV CNI`：是否安装 SR-IOV，默认不安装。
-    - `SR-IOV Type`：安装 SR-IOV 的 Multus CRD 实例的类型，有以下几种：
+    - `Install SRIOV CNI`：是否安装 SR-IOV，默认不安装。
+    - `SRIOV Type`：安装 SR-IOV 的 Multus CRD 实例的类型，有以下几种：
       - `sriov-overlay`：此类型下，SR-IOV 会与默认 CNI 搭配使用（比如 Calico），这样会在 Pod 中插入两张网卡。
           分别是默认 CNI 和 SR-IOV 的网卡，前者用于解决 Pod 与集群东西向通信问题；后者用于 Pod 集群南北向通信。
       - `sriov-standalone`：此类型下，Pod 中只会插入一张 SR-IOV 的网卡，只由其完成与集群东西向和南北向的通信问题。
-    - `SR-IOV CR Name`：Multus CRD 实例的名称。
+    - `SRIOV CR Name`：Multus CRD 实例的名称。
     - `Vlan ID`：可选，SR-IOV PF 的 Vlan tag。
-    - `SR-IOV Device Plugin Configuration`：用于发现主机上的 SR-IOV PF 和 VF device，筛选方式可以为：`vendors`、`devices`、`drivers`、`pfNames`。
+    - `SRIOV Device Plugin Configuration`：用于发现主机上的 SR-IOV PF 和 VF device，筛选方式可以为：`vendors`、`devices`、`drivers`、`pfNames`。
         具体参考 [sriov-device-plugin-readme.md](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin/blob/master/README.md)。
 
     配置 SR-IOV Net-Device Plugin：

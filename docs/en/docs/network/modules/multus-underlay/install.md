@@ -84,14 +84,14 @@ Make sure your cluster is successfully connected to the `container management` p
 
     ![sriov_install](../../images/multus-install-7.png)
 
-    - `Install SR-IOV CNI`: install SR-IOV, which is not installed by default.
-    - `SR-IOV Type`: the type of Multus CRD instance for which SR-IOV is installed, including:
+    - `Install SRIOV CNI`: install SR-IOV, which is not installed by default.
+    - `SRIOV Type`: the type of Multus CRD instance for which SR-IOV is installed, including:
       - `sriov-overlay`: SR-IOV is used with the default CNI (e.g. Calico), which will insert two NICs in the Pod:  the default NIC and the SR-IOV NIC.
           The former is used to solve the problem of east-west communication between the Pod and the cluster; the latter is used for north-south communication between the Pod and the cluster.
       - `sriov-standalone`: only one SR-IOV NIC will be inserted in the Pod, and serves for the east-west and north-south communication.
-    - `SR-IOV CR Name`: the name of the Multus CRD instance.
+    - `SRIOV CR Name`: the name of the Multus CRD instance.
     - `Vlan ID`: optional, the Vlan tag of the SRIOV PF.
-    - `SR-IOV Device Plugin Configuration`: used to discover SR-IOV PF and VF devices on the host by means of filtering: `vendors`, `devices`, `drivers`, `pfNames`.
+    - `SRIOV Device Plugin Configuration`: used to discover SR-IOV PF and VF devices on the host by means of filtering: `vendors`, `devices`, `drivers`, `pfNames`.
         Refer to [sriov-device-plugin-readme.md](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin/blob/master/README.md) for details.
 
     Configure the SR-IOV Net-Device Plugin with:
