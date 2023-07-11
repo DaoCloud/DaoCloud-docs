@@ -622,10 +622,10 @@ nav:
       - 中间件数据服务:
           - 介绍:
               - 什么是数据服务: middleware/what.md
-              - 数据服务版本适配: middleware/compatibility.md
-              - 数据服务权限设计说明: middleware/permission.md
-              - 数据服务自定义角色权限说明: middleware/customize-permission.md
-              - 首次进入数据服务模块: middleware/first-visit.md
+              - 版本适配: middleware/compatibility.md
+              - 权限设计说明: middleware/permission.md
+              - 自定义角色权限说明: middleware/customize-permission.md
+              - 首次进入: middleware/first-visit.md
           - 通用功能:
               - 工作负载反亲和性: middleware/common/workload-antiaffinity.md
           - Elasticsearch 搜索服务:
@@ -641,8 +641,7 @@ nav:
                   - 更新 Elasticsearch 实例: middleware/elasticsearch/user-guide/edit.md
                   - 删除 Elasticsearch 实例: middleware/elasticsearch/user-guide/delete.md
                   - Elasticsearch 集群容量规划: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
-                  - 查看实例详情: middleware/elasticsearch/user-guide/view.md
-                  - 概览: middleware/elasticsearch/user-guide/basic.md
+                  - 实例概览: middleware/elasticsearch/user-guide/basic.md
                   - 实例监控: middleware/elasticsearch/user-guide/monitor.md
                   - 查看 Elasticsearch 日志: middleware/elasticsearch/user-guide/logs.md
                   - 基于 Hwameistor 的 Elasticsearch 迁移实践: middleware/elasticsearch/user-guide/migrate-es.md  
