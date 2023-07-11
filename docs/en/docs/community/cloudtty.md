@@ -28,10 +28,16 @@ cloudtty is applicable to the following cases:
 
 The demo effect of cloudtty is as follows:
 
-
+![screenshot_gif](https://github.com/cloudtty/cloudtty/raw/main/docs/snapshot.gif)
 
 After the cloudtty is intergated to your own UI, it would look like:
 
-
+![demo_png](https://github.com/cloudtty/cloudtty/raw/main/docs/demo.png)
 
 [Go to cloudtty repo](https://github.com/cloudtty/cloudtty){ .md-button }
+
+<p align="center">
+<img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
+<br/><br/>
+CloudTTY enriches <a href="https://landscape.cncf.io/?selected=cloud-tty">CNCF Landscape.</a>
+</p>

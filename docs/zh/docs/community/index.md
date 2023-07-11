@@ -11,7 +11,7 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :fontawesome-solid-tty:{ .lg .middle } __cloudtty__
+-   :fontawesome-solid-tty:{ .lg .middle } __cloudtty__ :simple-cncf: 已入选 CNCF Landscape
 
     ---
 
