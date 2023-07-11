@@ -118,12 +118,12 @@ nav:
               - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md
           - Security Management:
               - Scan Types: kpanda/user-guide/security/intro.md
-              - CIS: 
+              - CIS:
                   - Scan Configuration: kpanda/user-guide/security/cis/config.md
                   - Scan Policies: kpanda/user-guide/security/cis/policy.md
                   - Scan Report: kpanda/user-guide/security/cis/report.md
               - Kube-audit: kpanda/user-guide/security/audit.md
-              - Kube-hunter: kpanda/user-guide/security/hunter.md          
+              - Kube-hunter: kpanda/user-guide/security/hunter.md
           - Best Practices:
               - ETCD Backup and Restore: kpanda/best-practice/etcd-backup.md
               - Offline Upgrade Worker Cluster: kpanda/best-practice/update-offline-cluster.md
@@ -421,7 +421,7 @@ nav:
                       - Check Microservice: skoala/trad-ms/hosted/servicelist/check-details.md
                       - Traffic Rules: skoala/trad-ms/hosted/servicelist/governance-policy.md
                       - Flow Control: skoala/trad-ms/hosted/servicelist/flow-control.md
-                  - Configurations: 
+                  - Configurations:
                       - skoala/trad-ms/hosted/configcenter.md
                   - Monitoring:
                       - Monitor Microservices: skoala/trad-ms/hosted/monitor/microservices.md
@@ -449,7 +449,7 @@ nav:
               - Microservice Gateway JWT: skoala/best-practice/jwt.md
               - Microservice Gateway Authentication Server: skoala/best-practice/auth-server.md
           - Plugins:
-              - Intro: skoala/plugins/intro.md          
+              - Intro: skoala/plugins/intro.md
           - Performance Tests:
               - Gateway RPS: skoala/tests/gateway-stress-test.md
           - General Reference:
@@ -553,6 +553,7 @@ nav:
               - Intro: network/modules/cilium/what.md
               - Args Config: network/modules/cilium/install.md
               - Unsupported Features: network/modules/cilium/notSupport.md
+              - Cilium Network Communication Acceleration: network/modules/cilium/cross-cluster.md
           - Contour:
               - Intro: network/modules/contour/what.md
               - Install: network/modules/contour/install.md

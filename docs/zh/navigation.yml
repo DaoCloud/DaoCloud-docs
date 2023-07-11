@@ -571,8 +571,8 @@ nav:
               - 介绍: network/modules/cilium/what.md
               - 安装参数配置: network/modules/cilium/install.md
               - 未支持功能说明: network/modules/cilium/not-support.md
-              - 应用跨集群通信: network/modules/cilium/cross-cluster.md
-              - Cilium 网络通信加速: network/modules/cilium/cilium-speedup.md
+              - Cilium 网络通信加速: network/modules/cilium/cross-cluster.md
+              - 应用跨集群通信: network/modules/cilium/cilium-speedup.md
           - Contour:
               - 介绍: network/modules/contour/what.md
               - 安装: network/modules/contour/install.md
@@ -645,8 +645,8 @@ nav:
                   - 概览: middleware/elasticsearch/user-guide/basic.md
                   - 实例监控: middleware/elasticsearch/user-guide/monitor.md
                   - 查看 Elasticsearch 日志: middleware/elasticsearch/user-guide/logs.md
-                  - 基于 Hwameistor 的 Elasticsearch 迁移实践: middleware/elasticsearch/user-guide/migrate-es.md  
-                  - Elasticsearch 排障手册: middleware/elasticsearch/faq/common-question-es.md      
+                  - 基于 Hwameistor 的 Elasticsearch 迁移实践: middleware/elasticsearch/user-guide/migrate-es.md
+                  - Elasticsearch 排障手册: middleware/elasticsearch/faq/common-question-es.md
           - Kafka 消息队列:
               - 介绍:
                   - 什么是 Kafka: middleware/kafka/intro/what.md
@@ -660,7 +660,7 @@ nav:
                   - 查看实例详情: middleware/kafka/user-guide/view.md
                   - 实例监控: middleware/kafka/user-guide/insight.md
                   - 配置参数: middleware/kafka/user-guide/config.md
-                  - 查看 Kafka 日志: middleware/kafka/user-guide/logs.md        
+                  - 查看 Kafka 日志: middleware/kafka/user-guide/logs.md
           - MinIO 对象存储:
               - 介绍:
                   - 什么是 MinIO: middleware/minio/intro/what.md
@@ -676,7 +676,7 @@ nav:
                   - 实例监控: middleware/minio/user-guide/insight.md
                   - 配置参数: middleware/minio/user-guide/config.md
                   - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
-           
+
           - MySQL 数据库:
               - 介绍:
                   - 什么是 MySQL: middleware/mysql/intro/what.md
@@ -694,7 +694,7 @@ nav:
                   - MySQL Pod: middleware/mysql/faq/faq-pod.md
                   - MySQL Operator: middleware/mysql/faq/faq-operator.md
                   - MySQL 主备关系: middleware/mysql/faq/faq-master-slave.md
-                  - MySQL 其他故障: middleware/mysql/faq/faq-others.md           
+                  - MySQL 其他故障: middleware/mysql/faq/faq-others.md
           - RabbitMQ 消息队列:
               - 介绍:
                   - 什么是 RabbitMQ: middleware/rabbitmq/intro/what.md
@@ -703,7 +703,7 @@ nav:
                   - 适用场景: middleware/rabbitmq/intro/scenarios.md
                   - 基本概念: middleware/rabbitmq/intro/concepts.md
                   - Release Notes: middleware/rabbitmq/release-notes.md
-              - 快速入门:  
+              - 快速入门:
                   - 创建 RabbitMQ 实例: middleware/rabbitmq/user-guide/create.md
                   - 更新 RabbitMQ 实例: middleware/rabbitmq/user-guide/update.md
                   - 删除 RabbitMQ 实例: middleware/rabbitmq/user-guide/delete.md
@@ -711,36 +711,36 @@ nav:
                   - 数据迁移: middleware/rabbitmq/user-guide/migrate.md
                   - 实例监控: middleware/rabbitmq/user-guide/insight.md
                   - 查看 RabbitMQ 日志: middleware/rabbitmq/user-guide/logs.md
-                  - 为 RabbitMQ 添加自定义插件: middleware/rabbitmq/faq/add-plugin.md     
+                  - 为 RabbitMQ 添加自定义插件: middleware/rabbitmq/faq/add-plugin.md
           - Redis 缓存服务:
               - 介绍:
                   - 什么是 Redis: middleware/redis/intro/what.md
                   - 适用场景: middleware/redis/intro/scenarios.md
                   - Release Notes: middleware/redis/release-notes.md
-              - 快速入门:  
+              - 快速入门:
                   - 创建 Redis 实例: middleware/redis/user-guide/create.md
                   - 更新 Redis 实例: middleware/redis/user-guide/update.md
                   - 删除 Redis 实例: middleware/redis/user-guide/delete.md
-                  - 查看 Redis 日志: middleware/redis/user-guide/logs.md        
+                  - 查看 Redis 日志: middleware/redis/user-guide/logs.md
           - PostgreSQL 数据库:
               - 介绍:
                   - 什么是 PostgreSQL: middleware/postgresql/intro/what.md
                   - 技术特性及基本概念: middleware/postgresql/intro/concepts.md
                   - Release Notes: middleware/postgresql/release-notes.md
-              - 快速入门:  
+              - 快速入门:
                   - 创建 PostgreSQL: middleware/postgresql/user-guide/create.md
                   - 更新 PostgreSQL: middleware/postgresql/user-guide/update.md
                   - 删除 PostgreSQL: middleware/postgresql/user-guide/delete.md
-                  - 查看 PostgreSQL 日志: middleware/postgresql/user-guide/logs.md     
+                  - 查看 PostgreSQL 日志: middleware/postgresql/user-guide/logs.md
           - MongoDB 数据库:
               - 介绍:
                   - 什么是 MongoDB: middleware/mongodb/intro/what.md
                   - 技术特性: middleware/mongodb/intro/features.md
                   - Release Notes: middleware/mongodb/release-notes.md
-              - 快速入门:  
+              - 快速入门:
                   - 创建 MongoDB: middleware/mongodb/user-guide/create.md
-                  - 更新 MongoDB: middleware/mongodb/user-guide/update.md  
-                  - 删除 MongoDB: middleware/mongodb/user-guide/delete.md            
+                  - 更新 MongoDB: middleware/mongodb/user-guide/update.md
+                  - 删除 MongoDB: middleware/mongodb/user-guide/delete.md
       - 云原生存储:
           - 介绍:
               - 什么是云原生存储: storage/what.md
