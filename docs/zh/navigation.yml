@@ -627,7 +627,7 @@ nav:
               - 数据服务自定义角色权限说明: middleware/customize-permission.md
               - 首次进入数据服务模块: middleware/first-visit.md
           - 通用功能:
-              - 工作负载反亲和性: middleware/workload-antiaffinity.md
+              - 工作负载反亲和性: middleware/common/workload-antiaffinity.md
           - Elasticsearch 搜索服务:
               - 介绍:
                   - 什么是 Elasticsearch: middleware/elasticsearch/intro/what.md

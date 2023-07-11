@@ -40,12 +40,12 @@
 
 ### 基本信息
 
-![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/state01.png)
-
 - 负载名称：最多包含 63 个字符，只能包含小写字母、数字及分隔符（“-”），且必须以小写字母或数字开头及结尾，例如 deployment-01。同一命名空间内同一类型工作负载的名称不得重复，而且负载名称在工作负载创建好之后不可更改。
 - 命名空间：选择将新建的负载部署在哪个命名空间，默认使用 default 命名空间。找不到所需的命名空间时可以根据页面提示去[创建新的命名空间](../namespaces/createns.md)。
 - 实例数：输入负载的 Pod 实例数量，默认创建 1 个 Pod 实例。
 - 描述：输入负载的描述信息，内容自定义。字符数不超过 512。
+
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/state01.png)
 
 ### 容器配置
 
@@ -54,8 +54,6 @@
 > 容器配置仅针对单个容器进行配置，如需在一个容器组中添加多个容器，可点击右侧的 `+` 添加多个容器。
 
 === "基本信息（必填）"
-
-    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/state11.png)
     
     在配置容器相关参数时，必须正确填写容器的名称、镜像参数，否则将无法进入下一步。参考以下要求填写配置后，点击`确认`。
     
@@ -67,6 +65,8 @@
     - GPU 独享：为容器配置 GPU 用量，仅支持输入正整数。GPU 配额设置支持为容器设置独享整张 GPU 卡或部分 vGPU。例如，对于一张 8 核心的 GPU 卡，输入数字 `8` 表示让容器独享整长卡，输入数字 `1` 表示为容器配置 1 核心的 vGPU。
     
         > 设置 GPU 独享之前，需要管理员预先在集群节点上安装 GPU 卡及驱动插件，并在[集群设置](../clusterops/cluster-settings.md)中开启 GPU 特性。
+
+        ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/state11.png)
 
 === "生命周期（选填）"
 
@@ -118,11 +118,9 @@
 
 === "网络配置"
 
-    1. 容器网卡配置，请参考[工作负载使用 IP 池](../../../network/modules/spiderpool/usage.md)
-    2. DNS 配置
-    应用在某些场景下会出现冗余的 DNS 查询。Kubernetes 为应用提供了与 DNS 相关的配置选项，能够在某些场景下有效地减少冗余的 DNS 查询，提升业务并发量。
+    - 如在集群中部署了 [SpiderPool](../../../network/modules/spiderpool/what.md) 和 [Multus](../../../network/modules/multus-underlay/what.md) 组件，则可以在网络配置中配置容器网卡。详情参考[工作负载使用 IP 池](../../../network/modules/spiderpool/usage.md)。
     
-    ![DNS 配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy17.png)
+    - DNS 配置：应用在某些场景下会出现冗余的 DNS 查询。Kubernetes 为应用提供了与 DNS 相关的配置选项，能够在某些场景下有效地减少冗余的 DNS 查询，提升业务并发量。
     
     - DNS 策略
     
@@ -136,9 +134,9 @@
     - Options：DNS 的配置选项，其中每个对象可以具有 name 属性（必需）和 value 属性（可选）。该字段中的内容将合并到基于 dnsPolicy 生成的域名解析文件的 options 字段中，dnsConfig 的 options 的某些选项如果与基于 dnsPolicy 生成的域名解析文件的选项冲突，则会被 dnsConfig 所覆盖。
     - 主机别名：为主机设置的别名。
 
-=== "升级策略"
+        ![DNS 配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy17.png)
 
-    ![升级策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy14.png)
+=== "升级策略"
     
     - 升级方式：`滚动升级`指逐步用新版本的实例替换旧版本的实例，升级的过程中，业务流量会同时负载均衡分布到新老的实例上，因此业务不会中断。`重建升级`指先删除老版本的负载实例，再安装指定的新版本，升级过程中业务会中断。
     - 最大无效 Pod 数：指定负载更新过程中不可用 Pod 的最大值或比率，默认 25%。如果等于实例数有服务中断的风险。
@@ -148,9 +146,9 @@
     - 升级最大持续时间：如果超过所设置的时间仍未部署成功，则将该负载标记为失败。默认 600 秒。
     - 缩容时间窗：负载停止前命令的执行时间窗（0-9,999秒），默认 30 秒。
 
-=== "容器管理策略"
+        ![升级策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy14.png)
 
-    ![容器管理策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/state05.png)
+=== "容器管理策略"
     
     Kubernetes v1.7 及其之后的版本可以通过 `.spec.podManagementPolicy` 设置 Pod 的管理策略，支持以下两种方式：
     
@@ -158,9 +156,9 @@
     
     - `并行策略（Parallel）`：并行创建或删除容器，和 Deployment 类型的 Pod 一样。StatefulSet 控制器并行地启动或终止所有的容器。启动或者终止其他 Pod 前，无需等待 Pod 进入 Running 和 ready 或者完全停止状态。 这个选项只会影响扩缩操作的行为，不影响更新时的顺序。
 
-=== "调度策略"
+        ![容器管理策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/state05.png)
 
-    ![调度策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy15.png)
+=== "调度策略"
     
     - 容忍时间：负载实例所在的节点不可用时，将负载实例重新调度到其它可用节点的时间，默认为 300 秒。
     - 节点亲和性：根据节点上的标签来约束 Pod 可以调度到哪些节点上。
@@ -169,6 +167,8 @@
     - 拓扑域：即 topologyKey，用于指定可以调度的一组节点。例如，`kubernetes.io/os` 表示只要某个操作系统的节点满足 labelSelector 的条件就可以调度到该节点。
     
     > 具体详情请参考[调度策略](pod-config/scheduling-policy.md)。
+
+        ![调度策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy15.png)
 
 === "标签与注解"
 
