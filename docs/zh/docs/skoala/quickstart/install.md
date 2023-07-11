@@ -46,7 +46,7 @@
 
 ### 微服务引擎部署结构
 
-![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/install-step.png)
+![image](../images/install-arch.png)
 
 左侧蓝色框内的 chart 即 `skoala` 组件，需要安装在控制面集群，即 DCE 5.0 的全局集群 `kpanda-global-clsuter`，详情可参考 DCE 5.0 的[部署架构](../../install/commercial/deploy-arch.md)。安装 `skoala` 组件之后即可以在 DCE 5.0 的一级导航栏中看到微服务引擎模块。另外需要注意：安装 `skoala` 之前需要安装好其依赖的 `common-mysql` 组件用于存储资源。
 
@@ -101,13 +101,11 @@ mcamel-common-mysql-cluster-mysql             2/2     7d23h
 
 一切就绪之后，就可以开始正式安装微服务引擎了。具体的流程如下：
 
-~~### 初始化数据库表~~
-
 !!! note
 
-    如果安装 skoala-release/skoala 版本 v0.17.1 及更高版本，直接跳过此步骤执行下一步。系统会自动完成表格初始化，无需手动进行。
+    - 如果安装的是 skoala-release/skoala v0.17.1 以下的版本，则需要手动初始化数据库表。
 
-~~如果在 common-mysql 内的 skoala 数据库为空，请登录到 skoala 数据库后，执行以下 SQL：~~
+    - 如果安装的是 skoala-release/skoala v0.17.1 或更高版本，系统会自动初始化数据库表，无需手动进行。
 
 ??? note "如果初始化失败，请检查 skoala 数据库内是否有下方 3 张数据表以及对应的 SQL 是否全部生效。"
 

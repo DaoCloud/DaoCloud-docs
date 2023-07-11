@@ -28,6 +28,7 @@ hide:
     ![哨兵模式](/images/anti-affinity-Replica.jpg)
 
 1. 在`服务设置`页面启用`工作负载反亲和性`；
+   
    - 操作符选择 `In`,标识该条规则必须被满足`；
    - `拓扑域`即为节点标签，用于划分一个使用该反亲和策略的节点范围，这里采用默认值；
    - `Pod 选择器`用于选择执行该反亲和策略的 Pod，这里设置为工作负载名称，该标签默认存在于所有 Redis pod 中。
@@ -38,7 +39,7 @@ hide:
 
     ![反亲和](/images/anti-affinity-finish.jpg)
 
-切换至容器管理，查看相关 `Pod` 信息， 可见两个 Redis `Pod` 分别运行于不同的集群节点上，第三个 Pod 则处于等待状态；
+切换至[容器管理]模块查看相关 `Pod` 信息， 可见两个 Redis `Pod` 分别运行于不同的集群节点上，第三个 Pod 则处于等待状态；
 
     ![查看 Pod](/images/anti-affinity-checkpod.jpg)
 
