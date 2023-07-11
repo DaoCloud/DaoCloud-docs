@@ -11,9 +11,11 @@ hide:
 
     ![新建实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/create01.png)
 
-2. 在创建 Elasticsearch 实例页面中，输入实例的基本信息后，点击`下一步`。
+2. 填写实例名称和部署位置。通过`安装环境检测`后，点击`下一步`。
 
-    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/create02.png)
+    > 如未通过安装环境检测，页面会给出失败原因和操作建议。常见原因是缺少相关组件，根据页面提示安装对应的组件即可。
+
+    ![基本信息](../images/create02.png)
 
 3. 选择一个版本，配置实例的以下规格后，点击`下一步`。可以视情况选择启用/禁用数据节点、Kibana 节点、专用主节点和冷数据节点。
 

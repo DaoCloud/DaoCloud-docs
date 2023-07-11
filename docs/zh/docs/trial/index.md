@@ -10,7 +10,7 @@ hide:
   <p style="font-size: 28px; color: green;">DaoCloud Enterprise 社区版 <img src="./images/hu02.gif" alt="Image" width="80"></p>
 </div>
 
-DCE 5.0 以云原生底座为核心，自研开源组件加持，提供云原生计算、网络、存储等能力，支持多云、多集群全生命周期统一纳管，
+DCE 社区版以云原生底座为核心，自研开源组件加持，提供云原生计算、网络、存储等能力，支持多云、多集群全生命周期统一纳管，
 屏蔽底层基础设施复杂性，降低企业使用云原生应用门槛，提高应用开发效率。
 
 <div style="text-align: center;">
@@ -27,30 +27,30 @@ DCE 5.0 以云原生底座为核心，自研开源组件加持，提供云原生
 
 ### 在线安装
 
-=== "kind 集群"
+=== "All-in-one"
 
     **适用范围:** 云原生小白和爱好者，在机器资源不充裕，并且对 Kubernetes 集群的了解还不够深入的情况下使用
 
     **预计时间:** 10-30 分钟
 
-    **前情描述:** Kind 是一个用来快速创建和测试 Kubernetes 的工具，它把环境的依赖降低到最小，
-    仅需要机器安装了 Docker 即可使用。需要注意的是，该方式安装的特点仅支持通过节点端口的方式暴露
-    DaoCloud Enterprise 社区版来访问服务。
+    **前情描述:** All-in-one 安装模式能够帮助您零配置快速部署 DaoCloud Enterprise 社区版和 Kubernetes，
+    对于刚接触 DaoCloud Enterprise 社区版并想快速上手的用户，是绝佳的选择。需要注意的是，
+    该方式安装的特点仅支持通过节点端口的方式暴露 DaoCloud Enterprise 社区版来访问服务。
 
-    :material-run: [开始 kind 集群在线安装](../install/community/kind/online.md)
+    :material-run: [开始零门槛在线安装](../install/community/kind/online.md)
 
-=== "标准 Kubernetes 集群"
+=== "已有 Kubernetes 集群"
 
     **适用范围:** 适合已经成功搭建过标准的 Kubernetes 集群的技术人员，在机器资源充足并且能够搭建 Kubernetes 集群的情况下使用。
 
     **预计时间:** 10-30 分钟
 
-    **前情描述:** 需要对 Kubernetes 有一定了解，搭建一个标准 Kubernetes 集群即可开始安装。
+    **前情描述:** 在已有的集群环境中，搭建一个 Kubernetes 集群即可开始安装。
     该方式安装的特点是支持通过节点端口、VIP 的方式暴露 DaoCloud Enterprise 社区版来访问服务。
 
-    :material-run: [开始标准 K8s 集群在线安装](../install/community/k8s/online.md)
+    :material-run: [开始使用已有 K8s 集群在线安装](../install/community/k8s/online.md)
 
-=== "公有云 Kubernetes 集群"
+=== "已有公有云 Kubernetes 集群"
 
     **适用范围:** 适合已经在多种云上部署业务，面临多云管理问题的用户使用。
 
@@ -60,7 +60,7 @@ DCE 5.0 以云原生底座为核心，自研开源组件加持，提供云原生
     该方式安装的特点是支持通过公有云厂商提供的 CLB 方式暴露 DaoCloud Enterprise 社区版来访问服务，
     且支持接入和管理市面上主流的 Kubernetes 发行版。
 
-    :material-run: [开始公有云 K8s 集群在线安装](../install/community/k8s/online.md)
+    :material-run: [开始使用已有公有云 K8s 集群在线安装](../install/community/k8s/online.md)
 
 ### 离线安装
 
@@ -76,7 +76,7 @@ DCE 5.0 以云原生底座为核心，自研开源组件加持，提供云原生
 
 ## <font color="green"><strong>2nd</strong> 申请许可证密钥</font>
 
-1. 点击[此处免费申请「DCE 5.0 社区版」许可证密钥](https://qingflow.com/f/58604bf8)，许可证密钥将发送至您的邮箱
+1. 点击[此处免费申请「DCE 社区版」许可证密钥](https://qingflow.com/f/58604bf8)，许可证密钥将发送至您的邮箱
   （很多邮箱可能会拦截许可证密钥的邮件，如长时间未收到，可查看是否归为垃圾邮件）。
 
     ![check mail](./images/license01.png)
@@ -99,7 +99,7 @@ DCE 5.0 以云原生底座为核心，自研开源组件加持，提供云原生
     ![get offline](./images/license04.png)
 
 5. 复制并粘贴上一步换取的离线授权码，再次回到 ESN 编码的获取页面，
-   在下方代码块输入离线授权码，点击`立即激活`。恭喜您！现在可以探索全新的 DCE 5.0 啦！
+   在下方代码块输入离线授权码，点击`立即激活`。恭喜您！现在可以探索全新的 DCE 社区版啦！
 
 !!! note
 
