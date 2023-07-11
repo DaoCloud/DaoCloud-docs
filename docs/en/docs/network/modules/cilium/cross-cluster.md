@@ -44,7 +44,7 @@ Please make sure the Linux Kernel version >= 4.9.17 with 5.10+ recommended. To v
 
     - Add `other parameters` as follows:
 
-        ```
+        ```yaml
         # Auto direct node routes must be set to be true, otherwise cross-node traffic cannot be routed
         auto-direct-node-routes: "true" 
         # If masquerading is used, it will replace the iptables implementation based on eBPF.
