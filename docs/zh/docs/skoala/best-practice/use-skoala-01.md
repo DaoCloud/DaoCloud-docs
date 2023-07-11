@@ -11,7 +11,9 @@
 
 ## 示例应用介绍
 
-本次实践使用的示例应用基于 OpenTelemetry 的标准演示应用，由 DaoCloud 大微服务团队根据 DCE 5.0 的功能加以优化，以便更好地体现云原生以及可观测能力，呈现微服务治理效果。示例应用已经在 Github 开源，访问该应用的 [Github 仓库地址](https://github.com/openinsight-proj/openinsight-helm-charts)可以获取详细信息。
+本次实践使用的示例应用基于 OpenTelemetry 的标准演示应用，由 DaoCloud 大微服务团队根据 DCE 5.0 的功能加以优化，以便更好地体现云原生以及可观测能力，呈现微服务治理效果。
+
+示例应用已经在 Github 开源，访问该应用的 [Github 仓库地址](https://github.com/openinsight-proj/openinsight-helm-charts)可以获取详细信息。
 
 示例应用的架构图如下：
 
@@ -69,9 +71,9 @@
         -Dspring.cloud.sentinel.transport.dashboard=nacos-test-sentinel.skoala-test:8080  # 修改，以配置 Sentinel 控制台地址
     ```
 
-> 获取集群 ID、集群名称、命名空间名称的方法可参考: `kubectl get cluster <clusername> -o json | jq .metadata.uid`
+   > 获取集群 ID、集群名称、命名空间名称的方法可参考: `kubectl get cluster <clusername> -o json | jq .metadata.uid`
 
-1. 应用创建成功后，会显示在应用工作台的 Helm 应用列表。
+3. 应用创建成功后，会显示在应用工作台的 Helm 应用列表。
 
     ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/helmapplist.png)
 
@@ -143,7 +145,7 @@
 
     创建网关时，应该将网关部署在示例应用所在的集群，并且该网关需要管辖示例应用所在的命名空间。
 
-![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/gatewaylist.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/gatewaylist.png)
 
 ### 接入服务
 
