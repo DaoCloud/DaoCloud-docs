@@ -45,13 +45,23 @@ Please make sure the Linux Kernel version >= 4.9.17 with 5.10+ recommended. To v
     - Add `other parameters` as follows:
 
         ```
-        auto-direct-node-routes: "true" #Auto direct node routes must be set to be true, otherwise cross-node traffic cannot be routed
-        enable-bpf-masquerade: "true" #If masquerading is used, it will replace the iptables implementation based on eBPF, which requires kernel 5.10 and later, otherwise it will be downgraded to the iptables implementation even if enabled
-        enable-ipv6-masquerade: "false" # When doing source address translation for POD access to outside traffic, enable it if using tunnel mode, and disable it if BGP is used to connect to the physical network
-        install-no-conntrack-iptables-rules: "true" # Distribute no-ct iptables rules for the pod to improve performance
-        enable-host-legacy-routing: "false" # Disable the ability for hosts to bypass their kernel stack when processing packets to speed up data forwarding. Enable it by default, but fallback to legacy behavior if the host kernel does not support it
+        auto-direct-node-routes: "true" 
+        # Auto direct node routes must be set to be true, otherwise cross-node traffic cannot be routed
+        enable-bpf-masquerade: "true" 
+        # If masquerading is used, it will replace the iptables implementation based on eBPF.
+        # Require kernel 5.10 and later.
+        # Otherwise it will be downgraded to the iptables implementation even if enabled
+        enable-ipv6-masquerade: "false" 
+        # When doing source address translation for Pod access to outside traffic, enable it if using tunnel mode.
+        # Disable it if BGP is used to connect to the physical network.
+        install-no-conntrack-iptables-rules: "true" 
+        # Distribute no-ct iptables rules for the pod to improve performance.
+        enable-host-legacy-routing: "false" 
+        # Disable the ability for hosts to bypass their kernel stack when processing packets to speed up data forwarding. 
+        # Enable it by default, but fallback to legacy behavior if the host kernel does not support it.
         enable-bandwidth-manager: "true # Turn on bandwidth-manager to improve the performance of tcp, udp
-        kube-proxy-replacement: strict # Kube-proxy replacement feature can be enabled after removing kube-proxy component
+        kube-proxy-replacement: strict 
+        # Kube-proxy replacement feature can be enabled after removing kube-proxy component
         tunnel: disabled # Disable tunnel mode
         enable-bbr: "true" # (optional) bbr network blocking control, with the requirement of kernel > 5.18
         ```
