@@ -60,7 +60,7 @@ Please make sure the Linux Kernel version >= 4.9.17 with 5.10+ recommended. To v
         # Enable it by default, but fallback to legacy behavior if the host kernel does not support it.
         enable-host-legacy-routing: "false"
         # Turn on bandwidth-manager to improve the performance of tcp, udp
-        enable-bandwidth-manager: "true 
+        enable-bandwidth-manager: "true"
         # Kube-proxy replacement feature can be enabled after removing kube-proxy component
         kube-proxy-replacement: strict 
         # Disable tunnel mode
