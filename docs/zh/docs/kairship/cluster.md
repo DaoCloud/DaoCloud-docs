@@ -35,9 +35,9 @@
 
 系统会自动返回工作集群列表。在集群右侧点击 `…` 按钮可以执行`暂停/恢复调度`、`编辑集群标签`、`修改集群污点`等操作。
 
-    ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/joincluster03.png)
+![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/joincluster03.png)
 
-## 暂停/恢复调度
+### 暂停/恢复调度
 
 1. 点击`暂停调度`可以让集群暂停调度，即新的多云资源不会再被分发到该集群。但之前已经分发到该集群的多云资源则不受影响。
 
@@ -45,9 +45,9 @@
 
     > 若想恢复调度也可以点击`恢复调度`，或者手动去除对应的集群污点。
 
-        ![暂停调度](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/joincluster04.png)
+    ![暂停调度](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/joincluster04.png)
 
-## 修改集群污点
+### 修改集群污点
 
 1. 点击`修改集群污点`，可以控制集群可以部署的工作负载、容器等资源。
 2. 在弹框内输入污点的键值信息，值可以为空。
