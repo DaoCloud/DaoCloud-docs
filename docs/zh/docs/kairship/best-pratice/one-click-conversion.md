@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-- 容器管理模块接入集群厂商为 DaoCloud DCE 的集群，可参考[已接入 Kubernetes 集群](../cluster/join.md)，且能够访问集群的 UI 界面。
+- 容器管理模块接入集群厂商为 DaoCloud DCE 的集群，可参考[已接入 Kubernetes 集群](../cluster.md)，且能够访问集群的 UI 界面。
 - DCE4 集群中工作负载能够正常运行。
 
 ## 一键转移
