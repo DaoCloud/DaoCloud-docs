@@ -25,15 +25,4 @@ project.name 参数的格式应为：`{{nacos_namespace_id}}@@{{nacos_group}}@@{
 
 !!! note
 
-    为了正常显示 Sentinel 监控数据，应使用 Sentinel 官方 SDK v1.8.6 **以上** 的版本。
-
-??? note "如何获取最新的 Sentinel 控制台"
-
-    - 从 [release](https://github.com/alibaba/Sentinel/releases)页面下载最新版本的控制台 jar 包，或者
-
-    - 从最新版本的源码自行构建 Sentinel 控制台
-
-        1. 下载[控制台](https://github.com/alibaba/Sentinel/tree/master/sentinel-dashboard)工程
-        2. 使用以下命令将代码打包成一个 fat jar: `mvn clean package`
-
-    具体可参考官方文档：[启动控制台](https://sentinelguard.io/zh-cn/docs/dashboard.html)
+    为了正常显示 Sentinel 监控数据，应使用 Sentinel 官方 SDK v1.8.6 **以上** 的版本。如未能显示监控数据，可查看 Sentinel 的版本是否符合要求。
