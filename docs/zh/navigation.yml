@@ -355,9 +355,7 @@ nav:
               - 添加实例: kairship/instance/add.md
               - 删除实例: kairship/instance/delete.md
               - 工作空间: kairship/instance/workspace.md
-          - 工作集群管理:
-              - 接入集群: kairship/cluster/join.md
-              - 移除集群: kairship/cluster/remove.md
+          - 管理工作集群: kairship/cluster.md
           - 多云工作负载:
               - 工作负载简介: kairship/workload/README.md
               - 镜像创建: kairship/workload/deployment.md
