@@ -73,6 +73,10 @@ helm upgrade --install --create-namespace --version ${insight_version_code} --cl
 
 ### 社区版在线安装环境
 
+!!! note
+
+    若在 Kind 集群中安装社区版 DCE5.0 社区版，需要在 Kind 容器内进行以下操作。
+
 #### 确认开启 k8s 审计日志
 
 执行以下命令查看`/var/log/kubernetes/audit` 目录下是否有审计日志生成，若有，则表示 k8s 审计日志成功开启。
