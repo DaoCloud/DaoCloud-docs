@@ -4,7 +4,7 @@ This section will take the stateless load nginx as an example to introduce how t
 
 ## prerequisites
 
-- The container management module is connected to the cluster whose cluster manufacturer is DaoCloud DCE, please refer to [Connected to Kubernetes cluster](../cluster/join.md), and can access the UI interface of the cluster.
+- The container management module is connected to the cluster whose cluster manufacturer is DaoCloud DCE, please refer to [Connected to Kubernetes cluster](../cluster.md), and can access the UI interface of the cluster.
 - The workload in the DCE4 cluster can run normally.
 
 ## One-click transfer
