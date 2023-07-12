@@ -809,6 +809,18 @@ nav:
       - Middleware: videos/mcamel.md
       - Network: videos/network.md
       - Container Registry: videos/kangaroo.md
+  - Download:
+      - DaoCloud Enterprise 5.0:
+          - Index: download/dce5.md
+          - Download DCE 5.0 Community Package: download/free/dce5-installer-v0.8.0.md
+          - Download DCE 5.0 Enterprise Package: download/business/dce5-installer-v0.8.0.md
+          - Modules and Addons:
+              - Download Addon Offline Package: download/addon/v0.8.0.md
+              - Download Global Management: download/modules/ghippo.md
+              - Download Insight: download/modules/insight.md
+              - Download Spidernet: download/modules/spidernet.md
+  - Try Community Package:
+      - Try Community Package: trial/index.md
   - Blogs:
       - Index: blogs/index.md
       - 202306 | Exploring the Cloud-Native Path of Ray Core (II): blogs/230615-ray.md
@@ -843,16 +855,6 @@ nav:
       - 202208 | What is Multicloud Management: blogs/220808-kairship.md
       - 202207 | What is Service Mesh: blogs/220708-mspider.md
       - 202206 | DCE Dev Background: blogs/221008-dce-bg.md
-  - Download:
-      - DaoCloud Enterprise 5.0:
-          - Index: download/dce5.md
-          - Download DCE 5.0 Community Package: download/free/dce5-installer-v0.8.0.md
-          - Download DCE 5.0 Enterprise Package: download/business/dce5-installer-v0.8.0.md
-          - Modules and Addons:
-              - Download Addon Offline Package: download/addon/v0.8.0.md
-              - Download Global Management: download/modules/ghippo.md
-              - Download Insight: download/modules/insight.md
-              - Download Spidernet: download/modules/spidernet.md
   - DaoCloud Ecosystem:
       - Index: community/index.md
       - cloudtty: community/cloudtty.md
@@ -875,5 +877,3 @@ nav:
       - Business Products: native/commerce.md
       - Open Source Projects: native/open.md
       - Knowledge Sharing: native/knowledge.md
-  - Try Community Package:
-      - Try Community Package: trial/index.md
