@@ -7,12 +7,13 @@ hide:
 
 网格的 Istio 版本可持续升级，DaoCloud 提供了原生版本和定制版本两类升级版本。
 
-- 原生版本：社区原生 Istio，无任何定制化修改；
-- 定制版本：基于社区版本定制化（版本后缀：-mspider），在通信性能、治理能力、热升级能力等各方面做了功能增强及创新。
+- 原生版本：社区原生 Istio，无任何定制化修改。
+- 定制版本：基于 Istio 做了部分功能定制（后缀为：-mspider），例如集成
+  [Merbridge](../../community/merbridge.md) 提高网格通信，支持 SpringCloud、Dubbo 等传统微服务的展示，赋予边车热升级能力等。
 
 这两类版本升级过程相同，但不支持不同类型的混合升级。
 
-当系统镜像仓库存在更新的 Istio 版本时，`网格列表`中可升级的网格卡片会出现叹号提示图标，点击`立即升级`按钮即可进入升级向导；
+当系统镜像仓库存在更新的 Istio 版本时，`网格列表`中可升级的网格卡片会出现叹号提示图标，点击`立即升级`按钮即可进入升级向导。
 
 ![立即升级](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/IstioUpdate01.png)
 
