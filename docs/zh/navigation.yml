@@ -409,8 +409,8 @@ nav:
                   - 配置 API 策略: skoala/gateway/api/api-policy.md
                   - 移除 API: skoala/gateway/api/delete-api.md
               - 服务接入:
-                  - 手动接入: skoala/gateway/service/manual-integrate.md
-                  - 自动纳管: skoala/gateway/service/auto-manage.md
+                  - 手动管理: skoala/gateway/service/manual-integrate.md
+                  - 自动管理: skoala/gateway/service/auto-manage.md
               - 监控告警: skoala/gateway/alert.md
               - 日志查看:
                   - 请求日志: skoala/gateway/logs/reqlog.md
