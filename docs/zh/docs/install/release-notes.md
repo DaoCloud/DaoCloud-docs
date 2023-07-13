@@ -33,21 +33,21 @@
 
 - 从 v0.8.x 升级到 v0.9.0 时需要执行如下命令进行检查：
 
-  - 检查 `istio-ingressgateway` 端口是 `80` 还是 `8080`
+    - 检查 `istio-ingressgateway` 端口是 `80` 还是 `8080`
 
-      ```bash
-         kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].targetPort}'
-      ```
+        ```bash
+        kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].targetPort}'
+        ```
 
-  - 检查 `istio-ingressgateway` 端口是 `443` 还是 `8443`
+    - 检查 `istio-ingressgateway` 端口是 `443` 还是 `8443`
 
-      ```bash
-         kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].targetPort}'
-      ```
+        ```bash
+        kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].targetPort}'
+        ```
   
-  输出结果为 `80` 或 `443` 时，升级命令需要增加 `infrastructure` 参数，示例：`./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
+    输出结果为 `80` 或 `443` 时，升级命令需要增加 `infrastructure` 参数，示例：`./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
 
-  输出结果非上述情况时，升级操作直接参考文档[升级 DCE 5.0 产品功能模块](upgrade.md)
+    输出结果非上述情况时，升级操作直接参考文档[升级 DCE 5.0 产品功能模块](upgrade.md)
 
 ## 2023-6-15
 
