@@ -1,7 +1,8 @@
 # Spidernet Release Notes
 
 本页列出 Spidernet 的 Release Notes，便于您了解各版本的演进路径和特性变化。
-Spiderpool Release Notes 请参考：[Spiderpool Release Notes](https://github.com/spidernet-io/spiderpool/releases)
+
+其中包含的 Spiderpool 是 DaoCloud 自研开源的 IPAM 模块，请参考 [Spiderpool Release Notes](https://github.com/spidernet-io/spiderpool/releases)。
 
 ## 2023-06-28
 
@@ -12,9 +13,9 @@ Spiderpool Release Notes 请参考：[Spiderpool Release Notes](https://github.c
 #### 优化
 
 - **新增** `spidernet` 定义 Multus API
-  - **优化** `spidernet` e2e 稳定性
-  - **修复** `spidernet` `goproduct` Proxy Config
-  - |**优化** `spidernet` 默认采用 2 副本
+- **优化** `spidernet` e2e 稳定性
+- **修复** `spidernet` `goproduct` Proxy Config
+- **优化** `spidernet` 默认采用 2 副本
 
 
 
