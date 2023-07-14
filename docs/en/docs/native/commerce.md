@@ -26,6 +26,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      Testcontainers Cloud is built on the lightweight open source testing framework [Testcontainers](https://github.com/testcontainers), which creates a more realistic testing environment through Docker containers.
      Developers can test applications themselves before moving code to production via a continuous integration (CI) platform, allowing cloud-native application developers to test dependencies without the help of a dedicated application testing team.
 
+- [AWS Fault Injection Simulator (FIS) support for chaos engineering experiments on EKS Pods](https://aws.amazon.com/cn/blogs/containers/aws-fault-injection-simulator-supports-chaos-engineering-experiments-on-amazon-eks-pods/)
+
+    AWS FIS is for running Chaos Engineering Experiments to test and validate application resiliency.FIS adds 7 new fault injection actions for EKS Pods. You can apply CPU, memory, or I/O stress to target Pods and containers to evaluate application performance under load. You can also inject a variety of network faults, including increasing network traffic latency and dropping all or some network packets. You can also evaluate the resiliency of an application by terminating the Pod.
+
 - [AWS Container Application Monitoring Service Amazon Managed Service for Prometheus Integrated Cost Management Tool Kubecost](https://aws.amazon.com/cn/blogs/containers/multi-cluster-cost-monitoring-using-kubecost-with-amazon-eks-and-amazon-managed-service-for-prometheus/)
 
     Amazon Managed Service for Prometheus with Kubecost performs cost allocation calculations, provides a unified view of Kubernetes costs across multiple EKS clusters, and provides recommendations for optimizing Kubernetes clusters.
@@ -265,6 +269,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The main new features of this version: integrate containerd, use containerd to manage and store images; allow to run commands in running containers directly through the Docker dashboard.
 
+- [Dynatrace Managed v1.270, the all-in-one performance monitoring solution for Dynatrace, is released](https://www.dynatrace.com/support/help/whats-new/release-notes/managed/sprint-270)
+
+    Updates: Support for viewing entry point information for code-level vulnerabilities, new security events during code iterations (including number of affected nodes), support for init containers, new OTLP log ingestion endpoints, and added conditions for triggering Kubernetes alerts.
+
 - [Dynatrace SaaS v1.250 Cloud Monitoring Platform Release](https://www.dynatrace.com/support/help/whats-new/release-notes/saas/sprint-250)
 
      The main new features of this version: support for detecting third-party vulnerabilities in Go applications, add a "Kubernetes services" column in the Kubernetes namespace page, and support filtering pods by service, service name or service type.
@@ -479,7 +487,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The main new features of this version: support for resizing volumes with zero downtime, control the type of storage used by workloads through storage pools, and allow the topology of volumes to be defined.
 
-- [Oracle Kubernetes Release Container Engine for Kubernetes Support for Virtual Node Pools and Virtual Nodes](https://docs.oracle.com/en-us/iaas/releasenotes/changes/c3688114- 0104-40b0-aece-67169868f990/)
+- [Oracle Kubernetes Release Container Engine for Kubernetes Support for Virtual Node Pools and Virtual Nodes](https://docs.oracle.com/en-us/iaas/releasenotes/changes/c3688114-0104-40b0-aece-67169868f990/)
 
     Virtual nodes provide a serverless Kubernetes experience, allowing users to run containerized applications at scale without having to manage, scale, upgrade, and troubleshoot node infrastructure. Virtual nodes provide granular pod-level elasticity and usage-based pricing. Users can create virtual nodes by creating virtual node pools in an enhanced cluster.
 
@@ -602,6 +610,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### S
 
+- [Seal AppManager v0.2, a unified deployment management platform for applications, is released](https://mp.weixin.qq.com/s/aZUSIHW31CZbT5VftwMmjQ)
+
+    Updates: supports comparison of service configuration change history; supports batch and cross-environment cloning of services; optimizes service and resource operation interactions; supports project-level environment/connector management; supports displaying environment dependency graphs; supports cloning of environments; supports multi-tier variable configuration; Kubernetes high-availability installation and deployment, RBAC, and multi-tenant management.
+
 - [Sealos Cloud Operating System Officially Released](https://mp.weixin.qq.com/s/s9SjjnNNZG_OPh9ciEiXDA)
 
     Sealos is a cloud operating system distribution with Kubernetes as the kernel. It ditches traditional cloud computing architectures in a cloud-native way, enabling organizations to use the cloud as simply as they would a personal computer. With Sealos, you can run any Kubernetes-compatible application; run a nginx demo on Sealos in 30 seconds that automatically scales; start a variety of databases in 30 seconds, connect directly to databases on your business system intranet; launch your business directly in any programming language you write, and more.
@@ -609,6 +621,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [ServiceNow Releases Unified Query Language Lightstep UQL, Extending the Visibility of Kubernetes Applications](https://lightstep.com/blog/announcing-the-lightstep-unified-query-language)
 
      Lightstep UQL supports unified "observability as code", simplifies the process of migrating from multiple disparate tools to the unified Lightstep platform through a single query language, and also supports querying and correlating metrics, logs and track.
+
+- [SmartX Partners with Spirit Sparrow Cloud to Launch Joint Full-Stack Cloud Native Solution](https://mp.weixin.qq.com/s/_mhgQ3YsGdWgWCbQyuT9xA)
+
+    In this solution, SmartX provides customers with a production-ready IaaS tier base based on the hyper-converged software SMTX OS, and helps create and manage production-grade Kubernetes clusters through the Kubernetes build and management service tool, SMTX Kubernetes Service. The ACP container cloud platform helps customers realize the full lifecycle platform management of business applications from development, testing to deployment and operation and maintenance.
 
 - [SmartX launches IOMesh, the first K8s native enterprise distributed storage in China](https://mp.weixin.qq.com/s/BT6P-PvGqmA8llQ42i2Y9w)
 

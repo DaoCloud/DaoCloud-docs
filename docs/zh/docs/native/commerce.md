@@ -22,6 +22,10 @@
     Testcontainers Cloud 基于轻量级开源测试框架 [Testcontainers](https://github.com/testcontainers) 构建，通过 Docker 容器创建更真实的测试环境，
     开发人员可以在将代码通过持续集成（CI）平台转移到生产环境之前自己测试应用程序，这使得云原生应用开发者无需专门应用测试团队的帮助即可测试依赖关系。
 
+- [AWS 故障注入模拟器（FIS）支持在 EKS Pod 上开展混沌工程实验](https://aws.amazon.com/cn/blogs/containers/aws-fault-injection-simulator-supports-chaos-engineering-experiments-on-amazon-eks-pods/)
+
+    AWS FIS 是用于运行混沌工程实验，以测试和验证应用程序的弹性。FIS 新增了 7 个针对 EKS Pod 的故障注入动作。你可以对目标 Pod 和容器施加 CPU、内存或 I/O 压力，从而评估应用程序在负载情况下的性能。你也可以注入多种网络故障，包括增加网络流量延迟、丢弃全部或部分网络数据包。还能通过终止 Pod，以评估应用程序的弹性。
+
 - [AWS 容器应用监控服务 Amazon Managed Service for Prometheus 集成成本管理工具 Kubecost](https://aws.amazon.com/cn/blogs/containers/multi-cluster-cost-monitoring-using-kubecost-with-amazon-eks-and-amazon-managed-service-for-prometheus/)
 
     Amazon Managed Service for Prometheus with Kubecost 能够执行成本分配计算，提供跨多个 EKS 集群的统一 Kubernetes 成本视图，并为优化 Kubernetes 集群提供建议。
@@ -260,6 +264,10 @@
 - [Docker Desktop v4.12.0 发布](https://www.docker.com/blog/integrated-terminal-for-running-containers-extended-integration-with-containerd-and-more-in-docker-desktop-4-12/)
 
     该版本主要新特性：集成 containerd，使用 containerd 来管理和存储镜像；允许直接通过 Docker 仪表盘在运行的容器中执行命令。
+
+- [Dynatrace 一体化性能监控解决方案 Dynatrace Managed v1.270 发布](https://www.dynatrace.com/support/help/whats-new/release-notes/managed/sprint-270)
+
+    更新内容：支持查看代码级漏洞的入口点信息、新增代码迭代过程中的安全事件（包括受影响节点的数量）、支持 init 容器、新增 OTLP 日志摄取端点、增加触发 Kubernetes 警报的条件。
 
 - [Dynatrace SaaS v1.250 云监控平台发布](https://www.dynatrace.com/support/help/whats-new/release-notes/saas/sprint-250)
 
@@ -616,6 +624,10 @@
 
 ### S
 
+- [Seal 应用统一部署管理平台 Seal AppManager v0.2 发布](https://mp.weixin.qq.com/s/aZUSIHW31CZbT5VftwMmjQ)
+
+    更新内容：支持服务配置变更历史的比较；支持批量以及跨环境克隆服务；优化服务和资源的操作交互；支持项目级别的环境/连接器管理；支持展示环境依赖图；支持克隆环境；支持多层级的变量配置；Kubernetes 高可用性安装部署、RBAC 和多租户管理。
+
 - [Sealos 云操作系统正式发布](https://mp.weixin.qq.com/s/s9SjjnNNZG_OPh9ciEiXDA)
 
     Sealos 是一款以 Kubernetes 为内核的云操作系统发行版。它以云原生的方式，抛弃了传统的云计算架构，使企业能够像使用个人电脑一样简单地使用云。借助 Sealos,你可以运行任何兼容 Kubernetes 的应用；30 秒在 Sealos 上跑个 nginx demo，自动伸缩；30 秒起各种数据库，业务系统内网直接连接数据库；直接启动你写的各种编程语言业务等等。
@@ -623,6 +635,10 @@
 - [ServiceNow 发布统一查询语言 Lightstep UQL，扩展 Kubernetes 应用的可见性](https://lightstep.com/blog/announcing-the-lightstep-unified-query-language)
 
     Lightstep UQL 支持统一的“可观测性即代码”，通过单一查询语言简化从多个不同工具迁移到统一 Lightstep 平台的过程，还支持跨多个 Kubernetes 节点、服务器或 serverless 函数查询和关联指标、日志和跟踪。
+
+- [SmartX 携手灵雀云推出全栈云原生联合解决方案](https://mp.weixin.qq.com/s/_mhgQ3YsGdWgWCbQyuT9xA)
+
+    在该方案中，SmartX 基于超融合软件 SMTX OS 为客户提供生产就绪的 IaaS 层底座，并通过 Kubernetes 构建与管理服务工具 SMTX Kubernetes Service 帮助创建并管理生产级 Kubernetes 集群。灵雀云 ACP 容器云平台帮助客户实现业务应用从开发、测试到部署、运维的全生命周期平台化管理。
 
 - [SmartX 推出国内首款 K8s 原生的企业级分布式存储 IOMesh](https://mp.weixin.qq.com/s/BT6P-PvGqmA8llQ42i2Y9w)
 
