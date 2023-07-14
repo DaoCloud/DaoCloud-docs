@@ -17,8 +17,6 @@
 - **修复** `spidernet` `goproduct` Proxy Config
 - **优化** `spidernet` 默认采用 2 副本
 
-
-
 ## 2023-05-28
 
 ### v0.7.0
