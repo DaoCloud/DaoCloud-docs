@@ -915,7 +915,7 @@ nav:
       - 202206 | DCE 开发背景: blogs/221008-dce-bg.md
   - DaoCloud 开源生态:
       - 开源项目索引: community/index.md
-      - cloudtty: community/cloudtty.md
+      - <span style="color: red;">cloudtty</span>: community/cloudtty.md
       - Clusterpedia: community/clusterpedia.md
       - egressgateway: community/egress-gw.md
       - Fast: community/fast.md
