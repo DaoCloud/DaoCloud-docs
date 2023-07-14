@@ -486,6 +486,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     Version features: support for golang 1.20, removal of support for Kubernetes 1.23, integration with OpenTelemetry module.
 
+- [Istio Project Officially Graduates from CNCF](https://mp.weixin.qq.com/s/QaHU3OtLVFKPCz69z8176Q)
+
+    Less than a year after entering the CNCF as an incubator project, Istio has become a CNCF graduate, the fastest project to graduate in CNCF history. Graduation from the CNCF means that Istio has become a key component of the modern application network, demonstrating that it is a proven, mature project that can be used to scale critical applications in production.
+
 - [Istio Service Mesh v1.18 Released (CNCF Project)](https://istio.io/latest/news/releases/1.18.x/announcing-1.18/)
 
     Release features: release of Ambient Mesh, a data plane schema; several Kubernetes Gateway API improvements, including support for v1beta1 release, automatic deployment logic no longer relies on pod injection; concurrent configuration consistency across deployment types; Istioctl enhancements.
@@ -914,6 +918,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: add HTTP chaos experiments for Kubernetes applications; introduce m-agent (machine agent), which can now implement chaos on non-k8s objects; optimize the recovery of node warning line experiments when application status checks fail during chaos; Added support for Envoy proxy when using frontend nginx; optimized logging, etc. Litmusctl updates.
 
+- [Longhorn Cloud Native Distributed Block Storage v1.5.0 Released (CNCF Project)](https://github.com/longhorn/longhorn/releases/tag/v1.5.0)
+
+    Updates: Launched V2 data engine based on SPDK (Storage Performance Development Kit), upgraded Cluster Autoscaler feature to GA, merged Instance Manager engine and Replica, supported different volume backup compression methods, automated volume deletion operations, managed backup images via CSI VolumeSnapshot, added snapshot cleanup and deletion jobs, supported CIFS and CIFS. and delete jobs, support for CIFS backup storage and Azure backup storage protocols, and a new Kubernetes upgrade node exhaustion policy.
+
 - [Longhorn Cloud Native Distributed Block Storage v1.4.0 Released (CNCF Project)](https://github.com/longhorn/longhorn/releases/tag/v1.4.0)
 
      Main new features in this release: Kubernetes 1.25 support, ARM64 support upgraded to GA, network file system NFS support upgraded to GA, volume snapshot checksum support, volume Bit-rot protection support, improved rebuild speed for volume replication, support for reclaiming space by deleting old snapshots, online volume expansion support, allowing users to Create a replica volume that stays in a consistent location, increase I/O metrics for volumes, and support backup and restore of Longhorn systems.
@@ -981,6 +989,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      This version features: experimental support for reading Kubernetes container logs, improved compilation error messages, allows running Host Process containers on Windows, adds Windows HyperV container mode.
 
+- [NeuVector Container Security Platform v5.2.0 released](https://github.com/neuvector/neuvector/releases/tag/v5.2.0)
+
+    Release features: adds search SaaS service for CVE queries, supports NeuVector API access tokens, supports image signing for access control, adds support for custom access control criteria such as resource limits, supports calling NeuVector scanners from the Harbor registry via the pluggable scanner interface, allows users to disable network protection, supports scanning of golang dependencies.
+
 - [NeuVector Container Security Platform v5.0Release](https://mp.weixin.qq.com/s/nZ_a7JiryZJskJEPPIEmcw)
 
      The main new features of this version: integration with SUSE Rancher, and can also be docked with other enterprise-level container management platforms such as Amazon EKS, Google GKE, and Microsoft AKS; support for web application firewall detection; support for automated container protection; support for zero-drift process and file protection And the network, process/file segmentation strategy mode protection, etc.
@@ -1023,6 +1035,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [OpenClusterManagement (OCM) multicluster management platform v0.7 release (CNCF project)](https://mp.weixin.qq.com/s/EQgdnZVOqzfvuxOzg-Q0cQ)
 
      The main new features of this version: Add the "DefaultClusterSet" function, all managed clusters registered in the OCM environment will be registered in the ClusterSet named "default" by default; support multicluster scheduling based on Taint / Toleration semantics; deployment architecture Adjust to the "Hosted deployment" mode, that is, no other components need to be deployed in the managed cluster, and all proxy controllers are executed remotely.
+
+- [OpenCost supports FinOps Open Cost and Usage Specification (FOCUS)](https://www.opencost.io/blog/focus)
+
+    The FinOps Open Cost and Usage Specification (FOCUS) released the first version of its specification to define an open standard for cloud cost, usage, and billing data.The OpenCost project has announced support for this standard and has already begun using it to support initial patches.
 
 - [OpenEBS Cloud Native Storage v3.4.0 Released (CNCF Project)](https://github.com/openebs/openebs/releases/tag/v3.4.0)
 

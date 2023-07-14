@@ -490,6 +490,10 @@
 
     版本特性：支持 golang 1.20、移除对 Kubernetes 1.23 的支持、集成 OpenTelemetry 模块。
 
+- [Istio 项目正式从 CNCF 毕业](https://mp.weixin.qq.com/s/QaHU3OtLVFKPCz69z8176Q)
+
+    作为一个孵化项目进入 CNCF 不到一年的时间，Istio 就成为了 CNCF 的毕业项目，创下 CNCF 历史上最快毕业的项目记录。从 CNCF 毕业意味着，Istio 已经成为现代应用程序网络的关键组件，表明它是一个经过验证的成熟项目，可用于在生产中扩展关键应用程序。
+
 - [Istio 服务网格 v1.18 发布（CNCF 项目）](https://istio.io/latest/news/releases/1.18.x/announcing-1.18/)
 
     版本特性：发布数据平面模式 —— Ambient Mesh（环境网格）；多项 Kubernetes Gateway API 改进，包括支持 v1beta1 版本、自动部署逻辑不再依赖 pod 注入；实现跨部署类型的并发配置一致性；Istioctl 增强。
@@ -912,6 +916,10 @@
 
     该版本主要新特性：为 Kubernetes 应用增加 HTTP 混沌实验；引入 m-agent（机器代理），现在能够在非 k8s 对象上实施混沌；对混沌期间 应用状态检查失败时 节点警戒线实验的恢复 进行优化；在使用前端 nginx 时增加了对 Envoy 代理的支持；优化日志记录等 Litmusctl 更新。
 
+- [Longhorn 云原生分布式块存储 v1.5.0 发布（CNCF 项目）](https://github.com/longhorn/longhorn/releases/tag/v1.5.0)
+
+    更新内容：推出基于 SPDK（存储性能开发工具包）的 V2 数据引擎、Cluster Autoscaler 功能升级成为 GA、实例管理器引擎和 Replica 合并、支持不同的卷备份压缩方法、自动化卷删除操作、通过 CSI VolumeSnapshot 管理备份镜像、新增快照清理和删除 job、支持 CIFS 备份存储和 Azure 备份存储协议、新增 Kubernetes 升级节点耗尽策略。
+
 - [Longhorn 云原生分布式块存储 v1.4.0 发布（CNCF 项目）](https://github.com/longhorn/longhorn/releases/tag/v1.4.0)
 
     该版本主要新特性：支持 Kubernetes 1.25、ARM64 的支持升级为 GA、网络文件系统 NFS 的支持升级为 GA、支持卷快照校验、支持卷 Bit-rot 保护、提高卷复制的重建速度、支持通过删除旧快照来回收空间、支持在线卷扩展、允许用户创建一个停留在一致位置的副本卷、增加卷的 I/O 指标、支持备份和恢复 Longhorn 系统。
@@ -979,6 +987,10 @@
 
     该版本特性：实验性支持读取 Kubernetes 容器日志、改进编译错误信息、允许在 Windows 上运行 Host Process 容器、添加 Windows HyperV 容器模式。
 
+- [NeuVector 容器安全平台 v5.2.0 发布](https://github.com/neuvector/neuvector/releases/tag/v5.2.0)
+
+    版本特性：新增用于 CVE 查询的搜索 SaaS 服务、支持 NeuVector API 访问令牌、支持针对准入控制的镜像签名、增加对资源限制等自定义准入控制标准的支持、支持通过可插拔扫描仪接口从 Harbor 注册表调用 NeuVector 扫描仪、允许用户禁用网络保护、支持扫描 golang 依赖。
+
 - [NeuVector 容器安全平台 v5.0 发布](https://mp.weixin.qq.com/s/nZ_a7JiryZJskJEPPIEmcw)
 
     该版本主要新特性：与 SUSE Rancher 集成，也能够与 Amazon EKS、Google GKE 和 Microsoft AKS 等其他企业级容器管理平台对接；支持 Web 应用程序防火墙检测；支持自动化容器保护；支持零漂移进程和文件保护以及对网络、进程/文件进行分割策略模式保护等。
@@ -1021,6 +1033,10 @@
 - [OpenClusterManagement（OCM）多集群管理平台 v0.7 发布（CNCF 项目）](https://mp.weixin.qq.com/s/EQgdnZVOqzfvuxOzg-Q0cQ)
 
     该版本主要新特性：新增“DefaultClusterSet”功能，所有注册进 OCM 环境中的托管集群都会被默认注册进名叫“default” 的 ClusterSet 中；支持基于 Taint / Toleration 的语义的多集群调度；部署架构调整为“Hosted 部署”模式，即托管集群内将不需要再部署其他的组件，所有的代理控制器均在远端执行。
+
+- [OpenCost 支持 FinOps 开放成本和使用规范（FOCUS)](https://www.opencost.io/blog/focus)
+
+    FinOps 开放成本和使用规范（FinOps Open Cost and Usage Specification，FOCUS）发布了其规范的第一个版本，以定义云成本、使用和计费数据的开放标准。OpenCost 项目宣布支持这个标准，并已经开始使用这个标准支持初始补丁。
 
 - [OpenEBS 云原生存储 v3.4.0 发布（CNCF 项目）](https://github.com/openebs/openebs/releases/tag/v3.4.0)
 

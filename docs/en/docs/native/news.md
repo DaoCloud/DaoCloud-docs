@@ -4,11 +4,29 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 > We will maintain regularly to ensure the validity of all traces and the timeliness of news.
 
+### 2023-08
+
+- [8.10 IDC China 2023 Open Source Peak Case Selection is officially launched (8.10 deadline)](https://mp.weixin.qq.com/s/wklB0eWIgQeQcXgmp_R3Bw)
+  
+    Open Source Peak Case Awards are divided into: "Open Source People", "Open Source Projects", "Open Source Communities", "Open Source Enterprises", "Open Source Technologies", "Open Source Projects", "Open Source Projects", "Open Source Communities", "Open Source Enterprises" and "Open Source Technology". "Open source technology innovation (commercial products)" five areas. The results will be announced on September 21, 2023 at the OSCAR Open Source Industry Conference.
+
+- [8.5 Call for Papers | KubeSphere Meetup Shanghai Starts August 5](https://mp.weixin.qq.com/s/4BX9U60biHdp_gsNkMJShg)
+  
+    This Meetup will focus on AI + Serverless, but topics related to KubeSphere and Cloud Native are also welcome. The Meetup will continue to use an open call for speakers and topics. The event will include lightning talks (10 min) and single/double keynotes (40 min).
+
 ### 2023-07
 
 - [July "cloud service stable operation capability standard system" first evaluation registration channel opened (July registration deadline)](https://mp.weixin.qq.com/s/dP6JExm6wsqFb20qv6zxSQ)
   
     The assessment is open to cloud service operators for cloud hosting, cloud storage, cloud network services, message middleware, container services, distributed caching, content distribution CDN, converged cloud DNS services and other eight cloud services to start the first assessment of stable operation capacity. The first evaluation results will be announced at the Trusted Cloud Conference 2023.
+
+- [7.31 China Federation of Electronic Information Industry (CFEI) Launches Declaration of "2023 Software and Information Technology Service Famous Brand Enterprises" (Deadline: 7.31)](https://mp.weixin.qq.com/s/iTx4al1i8D1Vk-NRab10wQ)
+  
+    The declaration is open to enterprises engaged in basic software, industrial software, application software, emerging platform software and embedded software. Enterprises are required to have made outstanding contributions in the current year, such as owning key core technologies and products, and effectively solving the pain points and difficulties in the industry. The final results will be announced at the 25th China International Software Expo to be held in Tianjin on August 31st.
+
+- [7.22 Shanghai DevOps Community 14th Meetup Online Event Registration Open](https://mp.weixin.qq.com/s/mGucjsKsh3uOzHBy6Kzsbg)
+  
+    The 14th Shanghai DevOps Community Meetup will be held online on 7.22, inviting experts from Huawei Cloud and Shunfeng Technology to share topics on improving R&D organizational effectiveness.
 
 - [July 21-July 22 2023 ArchSummit Global Architect Summit - Shenzhen Presentation Topics Wanted](https://mp.weixin.qq.com/s/oxtXzu3Nme1QvSgYjiT5zQ)
   
@@ -41,6 +59,14 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [7.14 Financial, Telecom and Pan-Industry Classes "Industry Cloud Platform Operation and Management Capability Maturity Part 1: Tenant Operations" First Assessment Open for Registration (7.14 Deadline)](https://mp.weixin.qq.com/s/3DqBclaA2h3uQyHsLi-vIQ)
   
     Industry Cloud Platform Operation and Management Capability Maturity Part 1: Tenant Operations" focuses on three dimensions: enterprise qualification, tenant operation and management capabilities, and tenant technical support, and examines the operational capabilities provided by industry cloud platform operators to tenants for financial-grade and telecom-grade scenarios.
+
+- [7.12 "IDC Perspective: China Cloud Backup Market Analysis" and "IDC Perspective: China Cloud Storage Market Analysis" studies officially launched](https://mp.weixin.qq.com/s/C2m-3LE04DvrrSwGv121kw)
+  
+    Cloud Backup Market Analysis and Cloud Storage Market Analysis will start from the business needs of cloud platform users, and provide a comprehensive analysis of the current market status and development trends, as well as the products and solutions of mainstream vendors, summarizing the core viewpoints of the cloud backup and cloud storage markets, as well as providing actionable recommendations for technology buyers, and additionally describing and presenting the industry's best practices and the core competencies of mainstream vendors.
+
+- [7.10 "IDC China Container Market Share, 2022" Research Report Officially Launched](https://mp.weixin.qq.com/s/-avYYKsjf4INqAN2DAzmLw)
+  
+    How big is the container market space in China today? What changes are different players bringing to the market? How will the Containers market evolve in the future? How do technology buyers view the container market? The report "IDC China Containers Market Share, 2022" will decipher these questions.
 
 - [7.6-7.8 2023 World Congress on Artificial Intelligence to be Held in Shanghai, July 6-8](https://mp.weixin.qq.com/s/LlDOc9R2_1o31AuWzlPPFA)
   
