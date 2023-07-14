@@ -1494,7 +1494,7 @@
 
 - OverridePolicy, 差异化策略
 
-    [差异化策略](../kairship/policy/override-policy.md)是定义多云资源对象分发到不同工作集群时的差异化配置策略，
+    [差异化策略](../kairship/policy/override.md)是定义多云资源对象分发到不同工作集群时的差异化配置策略，
     例如在不同的工作集群中，可以使用不同的镜像，增加不同的标签等。
 
     OverridePolicy 作为一个独立的策略 API 能够自动处理集群相关的配置，例如：
@@ -1638,7 +1638,7 @@
 
 - PropagationPolicy, 部署策略
 
-    在多云编排中，[PropagationPolicy](../kairship/policy/propagation-policy.md) 是定义多云资源对象的分发策略，支持使用指定集群、指定标签等方式来规划将资源部署到哪些工作集群。
+    在多云编排中，[PropagationPolicy](../kairship/policy/propagation.md) 是定义多云资源对象的分发策略，支持使用指定集群、指定标签等方式来规划将资源部署到哪些工作集群。
 
     PropagationPolicy 是一种独立的策略 API，可以根据分发要求来定义多集群调度方式。
 
