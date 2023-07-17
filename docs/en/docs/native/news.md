@@ -161,7 +161,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 - [6.17 KCD Beijing will be held on 6.17](https://mp.weixin.qq.com/s/ZOTstisfzACFg_Sxt8K90Q)
   
-    The conference invites cloud-native technology experts from DaoCloud, Microsoft, AliCloud, Huawei Cloud, IBM, Intel, Geberit, Flomesh, VMware and other companies to discuss service grids, supply chain security, observability, machine learning, Kubernetes, eBPF, multi-cluster management technologies and more.
+    The conference invites cloud-native technology experts from DaoCloud, Microsoft, AliCloud, Huawei Cloud, IBM, Intel, Geberit, Flomesh, VMware and other companies to discuss service meshes, supply chain security, observability, machine learning, Kubernetes, eBPF, multi-cluster management technologies and more.
 
 - [June 15 2023 China Cloud Native Middleware User Survey Launched](https://mp.weixin.qq.com/s/ssMAkdrr2tDG6VKrTrh1ZQ)
   
