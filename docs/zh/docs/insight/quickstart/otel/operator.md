@@ -50,8 +50,6 @@ spec:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.37.0
   python:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.38b0
-  dotnet:
-    repository: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.6.0
   go:
     # Must set the default value manually for now.
     # See https://github.com/open-telemetry/opentelemetry-operator/issues/1756 for details.
