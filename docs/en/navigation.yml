@@ -875,7 +875,7 @@ nav:
       - 202206 | DCE Dev Background: blogs/221008-dce-bg.md
   - DaoCloud Ecosystem:
       - Index: community/index.md
-      - cloudtty: community/cloudtty.md
+      - CloudTTY: community/cloudtty.md
       - Clusterpedia: community/clusterpedia.md
       - egressgateway: community/egress-gw.md
       - Fast: community/fast.md

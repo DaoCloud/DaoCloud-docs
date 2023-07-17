@@ -49,7 +49,7 @@ Help enterprises quickly deploy workloads across clusters, and meet Cases such a
 In terms of hierarchical structure, a two-level architecture is adopted. The top layer extracts the list of multicloud clusters. Select to enter the multicloud cluster management center to view overview, work cluster management, multicloud workload, resource management, and policy center.
 
 On the multicloud cluster instance list interface, users can clearly perceive real-time information such as the running status, resource usage, and number of clusters of each multicloud cluster instance.
-And can enter details based on multicloud cluster instance name. At the same time, if users want to use kubectl to manage the cluster, they can also use the Cloudtty desktop console tool on the interface.
+And can enter details based on multicloud cluster instance name. At the same time, if users want to use kubectl to manage the cluster, they can also use the CloudTTY desktop console tool on the interface.
 
 On the `Overview` interface, users can view detailed cluster overview information, health status of cross-cluster workloads, resource information, etc.
 
