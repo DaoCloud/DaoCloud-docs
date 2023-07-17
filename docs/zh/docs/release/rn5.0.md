@@ -261,7 +261,7 @@
 
 **新增** `kpanda` 利用 fake clusterpedia 增加单元测试
 
-**改进** 使用 cloudtty 的 virtualService 模式来暴露服务
+**改进** 使用 CloudTTY 的 virtualService 模式来暴露服务
 
 **新增**  权限调整有一个 ns 权限就要返回这个 cluster
 
@@ -275,7 +275,7 @@
 
 **修复** `kpanda`修复 ListNamespaceSummary
 
-**改进** 升级 cloudtty，增加 readiness 的功能
+**改进** 升级 CloudTTY，增加 readiness 的功能
 
 **修复** `kpanda` 下载证书优化（支持集群 Pod 外部访问）
 

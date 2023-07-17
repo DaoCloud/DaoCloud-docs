@@ -34,7 +34,7 @@
 - **优化** `WorkloadShadow controller watcher` 创建逻辑。
 - **升级** 支持查询集群与集群组件，允许不传 MeshID，独立获取信息。
 - **升级** go package istio.io/istio 到 `v0.0.0-20230131034922-50fb2905d9f5` 版本。
-- **升级** Cloudtty 到 `v0.5.3` 版本。
+- **升级** CloudTTY 到 `v0.5.3` 版本。
 - **升级** 前端版本至 `v0.15.0` 版本。
 
 #### 修复
@@ -96,7 +96,7 @@
 - **优化** 绑定/解绑工作空间的使用体验。
 - **优化** 工作负载相关接口字段 `workload_kind` 类型从枚举优化为 `string`。
 - **优化** 托管网格情况下，对于集群 k8s 版本检测：除包含工作集群外，也包含对控制面集群的版本检测。
-- **升级** 升级 Cloudtty 到 `0.5.3` 版本。
+- **升级** 升级 CloudTTY 到 `0.5.3` 版本。
 - **升级** WorkloadShadow controller watcher 创建逻辑。
 
 #### 修复
