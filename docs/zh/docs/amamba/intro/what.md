@@ -58,7 +58,7 @@
 
 ```bash
 export VERSION=**** # 修改为实际部署的版本。
-helm repo add mspider-release https://release.daocloud.io/chartrepo/amamba
+helm repo add amamba-release https://release.daocloud.io/chartrepo/amamba
 helm repo update amamba
 helm upgrade --install --create-namespace --cleanup-on-fail amamba amamba-release/amamba -n amamba-system --version=${VERSION}
 ```
