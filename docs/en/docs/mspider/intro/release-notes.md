@@ -41,7 +41,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Optimized** Created logic for `WorkloadShadow controller watcher`.
 - **Upgraded** Supported querying cluster and cluster component information independently without passing MeshID.
 - **Upgraded** go package istio.io/istio to `v0.0.0-20230131034922-50fb2905d9f5` version.
-- **Upgraded** Cloudtty to `v0.5.3` version.
+- **Upgraded** CloudTTY to `v0.5.3` version.
 - **Upgraded** front-end version to `v0.15.0`.
 
 #### Fixes

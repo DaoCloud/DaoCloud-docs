@@ -6,7 +6,7 @@
 
 <div class="grid cards" markdown>
 
--   :fontawesome-solid-tty:{ .lg .middle } __cloudtty__ :simple-cncf: Listed in CNCF Landscape
+-   :fontawesome-solid-tty:{ .lg .middle } __CloudTTY__ :simple-cncf: Listed in CNCF Landscape
 
     ---
 
