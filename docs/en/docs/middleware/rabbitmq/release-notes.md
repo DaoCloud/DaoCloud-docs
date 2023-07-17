@@ -2,6 +2,18 @@
 
 This page lists the Release Notes of the RabbitMQ message queue, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-06-30
+
+### v0.11.0
+
+#### New Features
+
+- **Added** `LoadBalancer` service type.
+
+#### Optimization
+
+- **Optimized** the monitoring charts by removing distracting elements and adding a time range selection.
+
 ## 2023-04-27
 
 ### v0.10.1

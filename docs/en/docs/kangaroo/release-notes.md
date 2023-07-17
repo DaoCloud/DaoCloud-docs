@@ -2,6 +2,18 @@
 
 This page lists the release notes of the container registry, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-07-02
+
+### v0.9
+
+- **Added**: Added support for selecting the middleware `minio` instance when creating managed `harbor`.
+- **Added**: Added support for key auditing functionality in `Ghippo`.
+- **Improved**: Validated image repository resources under a workspace (WS) when deleting the WS.
+- **Improved**: Handled abnormal states of managed `harbor` after unbinding clusters.
+- **Fixed**: Fixed the issue where `Ghippo workspace` resources could not be unbound.
+- **Fixed**: Fixed the issue with `Sidecar` injection.
+- **Fixed**: Fixed the issue where images could not be pushed when selecting `minio` during `harbor` creation.
+
 ## 2023-06-05
 
 ### v0.8

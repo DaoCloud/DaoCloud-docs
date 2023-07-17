@@ -7,6 +7,53 @@ Date: 2023-06-29
 
 This page lists the Release Notes of the installer, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-6-30
+
+### v0.9.0
+
+#### New Features
+
+- **Added**: Added support for configuring the exposed seed kind address and port in clusterConfig.yaml.
+- **Added**: Added a pre-check in the installer to verify if lvm2 is installed on each node when enabling eyebrow storage.
+- **Added**: Upgraded the default built-in k8s version to v1.26.5 in the installer.
+- **Added**: Added support for specifying the local file mount path for the seed kind in clusterConfig.yaml.
+- **Added**: Integrated ISO image file import script into the installer binary.
+
+#### Improvements
+
+- **Improved**: Optimized download scripts.
+- **Improved**: Optimized logic and functionality of the `import-artifact` command.
+- **Improved**: Made `isoPath` and `osPackagePath` optional fields in clusterConfig.yaml during the upgrade process.
+- **Improved**: Enhanced temporary file cleanup mechanism in the installer.
+- **Improved**: Enhanced reuse functionality of the seed node.
+
+#### Fixes
+
+- **Fixed**: Fixed the issue where the ES component could not start in OCP.
+- **Fixed**: Fixed the issue where the UI interface was inaccessible after installing DCE in TencentOS.
+- **Fixed**: Fixed the high probability of failed database creation for middleware databases in arm64 environments.
+- **Fixed**: Fixed shell expansion error in the image upload success check process.
+
+#### Known Issues
+
+- When upgrading from v0.8.x to v0.9.0, the following commands need to be executed for verification:
+
+    - Check if the `istio-ingressgateway` port is `80` or `8080`
+
+        ```bash
+        kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].targetPort}'
+        ```
+
+    - Check if the `istio-ingressgateway` port is `443` or `8443`
+
+        ```bash
+        kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].targetPort}'
+        ```
+  
+    If the output is `80` or `443`, the upgrade command needs to include the `infrastructure` parameter. Example: `./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
+
+    If the output is different from the above cases, please follow the upgrade instructions in the document [Upgrade DCE 5.0 Product Modules](upgrade.md).
+
 ## 2023-6-15
 
 ### v0.8.0
