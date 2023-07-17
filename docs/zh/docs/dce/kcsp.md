@@ -24,7 +24,7 @@ K8s 官方维护的当前 4 个版本：
 [![1.24](../images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
 [![1.25](../images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
 [![1.26](../images/1.26.png)](https://github.com/cncf/k8s-conformance/pull/2451)
-[![1.27](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.27.png)](https://github.com/cncf/k8s-conformance/pull/2666)
+[![1.27](../images/1.27.png)](https://github.com/cncf/k8s-conformance/pull/2666)
 
 K8s 官方不再维护（但 DaoCloud [KLTS](https://klts.io/) 会持续维护）的历史版本：
 
