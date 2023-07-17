@@ -544,6 +544,7 @@ nav:
               - Background: network/intro/background.md
               - Challenges: network/intro/challenges.md
               - Components: network/modules/modules.md
+              - Release notes: network/intro/releasenotes.md
           - Plan:
               - Eth card plan: network/plans/ethplan.md
               - Network plan: network/plans/netplan.md
@@ -603,7 +604,6 @@ nav:
               - Third-pary workloads use IP pools: network/modules/spiderpool/cutomizedusage.md
               - Config: network/modules/spiderpool/config.md
               - Commands: network/modules/spiderpool/command.md
-              - Release notes: network/modules/spiderpool/releasenotes.md
           - Submariner:
               - Intro: network/modules/submariner/what.md
               - Install: network/modules/submariner/install.md
@@ -697,6 +697,15 @@ nav:
               - Delete PostgreSQL: middleware/postgresql/user-guide/delete.md
               - View PostgreSQL logs: middleware/postgresql/user-guide/logs.md
               - Release Notes: middleware/postgresql/release-notes.md
+          - MongoDB Database:
+              - Intro:
+                  - What is MongoDB: middleware/mongodb/intro/what.md
+                  - Features: middleware/mongodb/intro/features.md
+                  - Release Notes: middleware/mongodb/release-notes.md
+              - Quick Start:
+                  - Create MongoDB: middleware/mongodb/user-guide/create.md
+                  - Update MongoDB: middleware/mongodb/user-guide/update.md
+                  - Delete MongoDB: middleware/mongodb/user-guide/delete.md
       - Cloud-native Storage:
           - Intro:
               - What is storage: storage/what.md

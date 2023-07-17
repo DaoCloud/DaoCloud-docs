@@ -2,6 +2,82 @@
 
 This page lists the release notes of DME to help you learn its feature development and bug fixing progress.
 
+## 2023-07-05
+
+### V0.24.1
+
+#### Fixes
+
+- **Fixed** the issue of outdated versions in Skoala-init Chart form
+- **Fixed** page experience improvements and issues
+
+## 2023-06-30
+
+### V0.24.0
+
+#### New Features
+
+- **Added** API for cloud-native microservices plugins
+- **Added** cascading selection capability for permissions associated with middleware operations
+
+#### Fixes
+
+- **Fixed** data exception in Insight integration
+- **Fixed** abnormal filtering results for gateway status
+
+#### Improvements
+
+- **Improved** chain validation for gateway and related resource changes
+
+## 2023-06-26
+
+### V0.23.0
+
+#### New Features
+
+- **Added** batch online/offline interface for gateway API
+- **Added** enhanced health check configuration for engine components
+- **Added** support for tag caching in cache logic
+- **Added** mandatory injection option for mesh sidecar during gateway creation and update
+- **Added** support for filtering gateway list by status
+- **Added** integration of audit logs
+- **Added** license check in continuous integration
+- **Added** storage of sensitive information in Secret in Charts
+- **Upgraded** managed Nacos version to 2.2.3
+- **Upgraded** Sentinel version to 0.10.5
+
+#### Fixes
+
+- **Fixed** alignment of Insight integration data metrics with raw data
+- **Fixed** permission inheritance issue when integrating with mSpider module
+- **Fixed** missing governance status in Nacos instance list
+- **Fixed** cluster flow control name issue in Sentinel
+- **Fixed** query data not being aggregated by workspace in overall overview
+- **Fixed** issue where gateway can enable HTTPS even if it is disabled
+- **Fixed** default value issue in Skoala-init Chart form data
+
+#### Improvements
+
+- **Improved** user experience and issues with Sentinel Grafana
+- **Improved** display of relevant resource alerts in managed resource alarms
+- **Refactored** configuration structure of global management module
+- **Improved** reading of managed Nacos information through Clusterpedia
+- **Upgraded** Insight integration to version 0.17.3
+- **Improved** flexibility of database-related configuration
+
+## 2023-05-31
+
+### V0.22.2
+
+#### Fixes
+
+- **Fixed** issues with Sentinel cluster flow control API
+- **Fixed** issues with fuzzy query API for Sentinel rules
+
+#### Improvements
+
+- **Improved** default values for connecting to the database to increase fault tolerance
+
 ## 2023-05-29
 
 ### V0.22.1

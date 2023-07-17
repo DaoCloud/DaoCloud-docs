@@ -2,6 +2,31 @@
 
 This page lists the Release Notes of Spidernet, so that you can understand the evolution path and feature changes of each version.
 
+The included Spiderpool is an IPAM module developed by DaoCloud. Please refer to the [Spiderpool Release Notes](https://github.com/spidernet-io/spiderpool/releases) for more information.
+
+## 2023-06-28
+
+### v0.8.0
+
+Compatible with Spiderpool version: `v0.5.0`
+
+#### Enhancements
+
+- **Added** definition of Multus API in `spidernet`
+- **Improved** stability of `spidernet` e2e
+- **Fixed** `spidernet` `goproduct` Proxy Config
+- **Optimized** default replication to 2 in `spidernet`
+
+## 2023-05-28
+
+### v0.7.0
+
+Compatible with Spiderpool version: `v0.4.1`
+
+#### Fixes
+
+- **Fixed** subnet sorting issue based on IP in `spidernet`
+
 ## 2022-04-28
 
 ### v0.6.0

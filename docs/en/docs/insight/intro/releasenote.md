@@ -3,6 +3,37 @@
 This page lists the Release Notes of Insight Observability, so that you can understand
 the evolution path and feature changes of each version.
 
+## 2023.07.01
+
+### v0.18.0
+
+#### New Features
+
+- **Added**: Added log alerts.
+- **Added**: Added cluster status to collection management.
+- **Added**: Added silence conditions to the silent rule list.
+- **Added**: Added email configuration detection.
+- **Added**: Added support for PostgreSQL and Kingbase as system databases.
+- **Added**: Added Nvidia GPU monitoring dashboard.
+
+#### Improvements
+
+- **Improved**: Updated the legend for updating service topology.
+- **Improved**: Added average value of metrics and sorting support to operation metrics in service details.
+- **Improved**: Added sorting by span, latency, occurrence time, etc. to link queries.
+- **Improved**: Added search functionality to the dropdown menu for notification configuration in alert policies.
+- **Improved**: Added timezone formatting support to alert templates.
+- **Improved**: Upgraded `opentelemetry collector` Chart version from `0.50.1` to `0.59.3`.
+- **Improved**: Upgraded `opentelemetry Operator` Chart version from `0.26.1` to `0.30.1`.
+
+#### Fixes
+
+- **Fixed**: Fixed the issue where the previewed silent alerts did not match the actual silenced alerts.
+- **Fixed**: Fixed the issue with incorrect component versions in system components.
+- **Fixed**: Fixed the error in the title of the list in the dashboard.
+- **Fixed**: Fixed the issue where no data was returned when previewing matching alerts while creating silence through the alert list.
+- **Fixed**: Fixed the issue where Fluentbit could not start for the first time in some environments.
+
 ## 2023.06.01
 
 ### v0.17.0

@@ -2,6 +2,18 @@
 
 This page lists the Release Notes for global management of each version, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-07-06
+
+### v0.18.1
+
+#### Fixes
+
+- Fixed the issue where workspace cluster names could be empty.
+- Fixed the permission issue with Folder Admin role workspace authorization list.
+- Fixed the upgrade failure from GHippo 0.17 to 0.18.
+- Fixed the issue where the options for selecting cluster types were the same when adding shared resources.
+- Fixed the problem in the resource group list where grid-type resources could not be unbound.
+
 ## 2023-06-29
 
 ### v0.18.0
