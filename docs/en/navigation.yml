@@ -829,13 +829,14 @@ nav:
   - Download:
       - DaoCloud Enterprise 5.0:
           - Index: download/dce5.md
-          - Download DCE 5.0 Community Package: download/free/dce5-installer-v0.8.0.md
-          - Download DCE 5.0 Enterprise Package: download/business/dce5-installer-v0.8.0.md
+          - Download DCE 5.0 Community Package: download/free/dce5-installer-v0.9.0.md
+          - Download DCE 5.0 Enterprise Package: download/business/dce5-installer-v0.9.0.md
           - Modules and Addons:
-              - Download Addon Offline Package: download/addon/v0.8.0.md
+              - Download Addon Offline Package: download/addon/v0.9.0.md
               - Download Global Management: download/modules/ghippo.md
               - Download Insight: download/modules/insight.md
               - Download Spidernet: download/modules/spidernet.md
+              - Download Operation Management: download/modules/gmagpie.md
   - Try Community Package:
       - Try Community Package: trial/index.md
   - Blogs:
