@@ -11,6 +11,13 @@ hide:
 
 project.name 参数的格式应为：`{{nacos_namespace_id}}@@{{nacos_group}}@@{{appName}}`。
 
+```
+---
+project:
+  # 服务注册在sentinel中的名称, 建议与nacos注册服务名相同
+  name: ${spring.cloud.nacos.discovery.namespace}@@${spring.cloud.nacos.discovery.group}@@${spring.application.name}
+```
+
 **需要注意的是**：
 
 - 符合此规范时，Sentinel 的治理规则会被推送到对应命名空间下，对应配置分组下的配置中心。
@@ -22,6 +29,59 @@ project.name 参数的格式应为：`{{nacos_namespace_id}}@@{{nacos_group}}@@{
 - Nacos 的 `public` 命名空间对应的 ID 是空字符 “”。
 
 - 如果想把应用接入 `public` 命名空间，必须使用空字符串，例如 `@@A@@appA`。
+
+## Sentinel 接入配置
+
+```
+---
+spring:
+  cloud:
+    sentinel:
+      enabled: false
+      # 是否开启预加载, 设置为true时实例启动后自动在sentinel dashboard中展示, 设置为false, 需要实例有流量后该实例才会出现在sentinel dashboard中
+      eager: true
+      transport:
+        # 配置sentinel dashboard地址
+        dashboard: 10.6.222.24:31165
+      # 以下配置为规则存放在nacos配置中心的相关参数
+      datasource:
+        flow:
+          nacos:
+            server-addr: ${spring.cloud.nacos.config.server-addr}
+            dataId: ${spring.application.name}-flow-rules
+            groupId: ${spring.cloud.nacos.discovery.group}
+            namespace: ${spring.cloud.nacos.discovery.namespace}
+            ruleType: flow
+        degrade:
+          nacos:
+            server-addr: ${spring.cloud.nacos.config.server-addr}
+            dataId: ${spring.application.name}-degrade-rules
+            groupId: ${spring.cloud.nacos.discovery.group}
+            namespace: ${spring.cloud.nacos.discovery.namespace}
+            rule-type: degrade
+        system:
+          nacos:
+            server-addr: ${spring.cloud.nacos.config.server-addr}
+            dataId: ${spring.application.name}-system-rules
+            groupId: ${spring.cloud.nacos.discovery.group}
+            namespace: ${spring.cloud.nacos.discovery.namespace}
+            rule-type: system
+        authority:
+          nacos:
+            server-addr: ${spring.cloud.nacos.config.server-addr}
+            dataId: ${spring.application.name}-authority-rules
+            groupId: ${spring.cloud.nacos.discovery.group}
+            namespace: ${spring.cloud.nacos.discovery.namespace}
+            rule-type: authority
+        param-flow:
+          nacos:
+            server-addr: ${spring.cloud.nacos.config.server-addr}
+            dataId: ${spring.application.name}-param-flow-rules
+            groupId: ${spring.cloud.nacos.discovery.group}
+            namespace: ${spring.cloud.nacos.discovery.namespace}
+            rule-type: param-flow
+
+```
 
 !!! note
 
