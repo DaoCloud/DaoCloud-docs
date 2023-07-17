@@ -8,11 +8,12 @@
 
 #### 新增
 
-- **优化** 支持在 clusterConfig.yaml 中配置暴露 火种 kind 地址及端口
-- **优化** 安装器在启用画眉存储时，新增前置检查各个节点是否安装 lvm2
-- **优化** 安装器内置默认 k8s 版本升级到 v1.26.5
-- **优化** 支持在 clusterConfig.yaml 中指定火种 kind 的本地文件挂载路径
-- **优化** 整合 ISO 镜像文件导入脚本到安装器二进制中
+- **新增** `istio-ingressgateway` 支持了高可用模式，从 v0.8.x 及以前升级到 v0.9.0 时必须执行如下命令：`./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
+- **新增** 支持在 clusterConfig.yaml 中配置暴露 火种 kind 地址及端口
+- **新增** 安装器在启用画眉存储时，新增前置检查各个节点是否安装 lvm2
+- **新增** 安装器内置默认 k8s 版本升级到 v1.26.5
+- **新增** 支持在 clusterConfig.yaml 中指定火种 kind 的本地文件挂载路径
+- **新增** 整合 ISO 镜像文件导入脚本到安装器二进制中
 
 #### 优化
 
