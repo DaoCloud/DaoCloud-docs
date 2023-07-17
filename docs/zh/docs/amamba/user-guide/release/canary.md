@@ -31,7 +31,7 @@
     - 命名空间：选择发布对象所在的命名空间，且该命名空间中已经部署了的工作负载并且开启了服务网格。
     - 无状态负载：选择具体的发布对象。
 
-        ![基本信息](../../images/canary10.png)
+        ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/canary10.png)
 
 3. 参考下列说明配置发布规则。
     - 实例数量：进行灰度发布任务时应用的副本数量。
@@ -48,7 +48,7 @@
 
                 > 如果设置为 0 或不填写，发布任务执行到此步骤时会永久暂停。
 
-            ![副本数](../../images/canary11.png)
+            ![副本数](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/canary11.png)
 
     === "基于 Istio"
 
@@ -61,7 +61,7 @@
 
                 > 如果设置为 0 或不填写，发布任务执行到此步骤时会永久暂停。
         - 监控分析：开启后即可利用 Prometheus 的能力进行监控。根据预先定义的监控指标以及采集间隔，在整个发布过程中自动执行监控分析。如果不满足定义的规则，则自动回滚至旧版本，灰度发布失败。
-            ![副本数](../../images/canary12.png)
+            ![副本数](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/canary12.png)
 
     === "基于 Nginx"
 
@@ -78,14 +78,14 @@
 
                 > 如果设置为 0 或不填写，发布任务执行到此步骤时会永久暂停。
 
-            ![副本数](../../images/canary14.png)
+            ![副本数](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/canary14.png)
 
 4. 在页面底部点击`创建并更新应用`，然后在弹框中设置灰度版本的镜像地址并点击`确定`。
 
     此时原工作负载的副本数会被设置为 0。
 
-    ![填写镜像地址](../../images/canary15.png)
+    ![填写镜像地址](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/canary15.png)
 
 5. 系统自动跳转至灰度发布的任务列表页面，提示`更新版本成功`。
 
-    ![返回列表](../../images/canary16.png)
+    ![返回列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/canary16.png)

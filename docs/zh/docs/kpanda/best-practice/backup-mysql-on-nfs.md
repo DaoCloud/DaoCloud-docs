@@ -542,10 +542,10 @@ persistentvolumeclaim/mydata labeled
 
 - 登陆 DCE 5.0，在左侧导航选择 【容器管理】->【集群列表】进入容器管理界面后，选择【备份恢复】->【应用备份】进入DCE 5.0 应用备份页面。如下图：
 
-    ![img](../../kpanda/images/mysql01.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql01.png)
 
 - 在左侧功能栏选择【备份】，进入备份计划页面后，点击右侧 备份计划按钮，前往创建备份页面。
-    ![img](../../kpanda/images/mysql02.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql02.png)
 
 - 在创建备份集群页面填写基础配置参数，配置如下：
     - **名称：**`backup-mysql`(可以自定义)
@@ -554,15 +554,15 @@ persistentvolumeclaim/mydata labeled
     - 资源过滤-指定资源标签：**键**：backup，**值**：mysql
 
     如下图：
-    ![img](../../kpanda/images/mysql03.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql03.png)
 
 - 完成上述基本信息配置后，点击 `下一步`进入备份策略界面
     **留存时间**：30天
     **备份数据卷**：直接复制（用于备份 PVC 内的数据）
-    ![img](../../kpanda/images/mysql04.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql04.png)
 
 - 点击确定完成备份计划的创建后，返回备份计划列表页，找到我们刚刚创建的备份计划：`backup-mysq`，在列表右侧找到更多操作按钮 `...`，点击 `立即执行`执行新建的备份计划。
-    ![img](../../kpanda/images/mysql05.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql05.png)
 - 刷新备份计划列表，等待备份计划执行完成。
 
 # 将 main-cluster 集群上的 mysql 服务跨集群恢复至 recovery-cluster 集群上
@@ -841,11 +841,11 @@ nfs-provisioner-7dfb9bcc45-74ws2   1/1     Running   0          4m45s   10.6.175
 
 - 登陆 DCE 5.0，在左侧导航选择 【容器管理】->【集群列表】进入容器管理界面后，选择【备份恢复】->【应用备份】进入DCE 5.0 应用备份页面。如下图：
 
-    ![img](../../kpanda/images/mysql06.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql06.png)
 
 - 在左侧功能栏选择【恢复】，进入恢复备份页面后，点击右侧 `恢复备份`按钮，前往创建恢复备份页面。
 
-    ![img](../../kpanda/images/mysql07.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql07.png)
 
 - 在创建备份集群页面填写配置参数，配置如下：
   - **名称：**`restore-mysql`(可以自定义)
@@ -856,7 +856,7 @@ nfs-provisioner-7dfb9bcc45-74ws2   1/1     Running   0          4m45s   10.6.175
 
     如下图：
 
-    ![img](../../kpanda/images/mysql08.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql08.png)
   
 - 刷新备份计划列表，等待备份计划执行完成。
 

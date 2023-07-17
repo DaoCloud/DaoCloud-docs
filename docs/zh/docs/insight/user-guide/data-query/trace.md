@@ -20,7 +20,7 @@
 2. 在左边导航栏选择 `数据查询 -> 链路查询`。
 3. 通过多种条件查询链路或通过 TraceID 精确查询链路。
 
-    ![jaeger](../../images/trace01.png)
+    ![jaeger](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/trace01.png)
 
     !!! note
 

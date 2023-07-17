@@ -15,4 +15,4 @@ privacy, maintenance convenience, and other issues when deploying IoT on the gro
 industries' digitization, such as agile connections, real-time business, data optimization, smart applications,
 security, and privacy protection.
 
-![Edge Status](../images/what.png)
+![Edge Status](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/images/what.png)

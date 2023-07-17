@@ -64,7 +64,7 @@ day by day, making things better over time.
 
      **Modules involved**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Multicloud Management](../kairship/intro/what.md), [cloud native network](../network/intro/what-is-net.md), [cloud native storage](../storage/what.md), Heterogeneous architecture
 
-    ![multicloud](../images/01multi-cloud.png)
+    ![multicloud](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/01multi-cloud.png)
 
 === "Data Middleware Service"
 
@@ -166,7 +166,7 @@ day by day, making things better over time.
 
      **Related modules**: [Global Management](../ghippo/intro/what.md), [Container Management](../kpanda/intro/what.md), [Cluster Lifecycle Management](../community/kubean.md), [cloud native network](../network/intro/what-is-net.md), [cloud native storage](../storage/what.md), weak network cluster
 
-    ![Cloud edge collaboration](../images/09cloud-edge.png)
+    ![Cloud edge collaboration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/09cloud-edge.png)
 
 === "Cloud Native Base"
 

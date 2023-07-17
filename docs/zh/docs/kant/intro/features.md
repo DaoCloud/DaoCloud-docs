@@ -6,7 +6,7 @@
 
 边缘计算平台的功能架构如下图：
 
-![功能架构](../images/features01.png)
+![功能架构](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/features01.png)
 
 ## 功能特性
 

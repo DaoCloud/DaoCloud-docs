@@ -85,7 +85,7 @@
 
     1. 登录 Nacos 控制台添加配置文件。
 
-        ![screenshot](../images/standard01.png)
+        ![screenshot](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/standard01.png)
 
     2. 然后在控制器代码中添加如下代码：
 
@@ -168,7 +168,7 @@
 
     1. 在 Nacos 控制台添加配置文件
 
-        ![screenshot](../images/standard01.png)
+        ![screenshot](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/standard01.png)
 
     2. 在控制器中添加 `@RefreshScope` 和 `@Value` 注解
 

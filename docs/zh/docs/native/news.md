@@ -191,7 +191,7 @@
   
     除了公有云厂商（Microsoft、Amazon Web Services、Google Cloud Platform）和传统 DevOps 厂商（Gitlab、Atlassian），云原生厂商（Red Hat、VMware、灵雀云 Alauda）也在报告中崭露头角，这标志着云原生已成为构建下一代 DevOps 价值链平台的核心技术。
 
-    ![devops](../native/images/Figure_1_Magic_Quadrant_for_DevOps_Platforms.png)
+    ![devops](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/images/Figure_1_Magic_Quadrant_for_DevOps_Platforms.png)
 
 - [6.5 IDC 发布《中国软件定义计算软件市场跟踪，2022》报告](https://mp.weixin.qq.com/s/ON9EozhX6ksyL_q2bk_r4Q)
   

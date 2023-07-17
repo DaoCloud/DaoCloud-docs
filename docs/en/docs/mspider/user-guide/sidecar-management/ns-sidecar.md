@@ -10,7 +10,7 @@ In the left navigation menu, click on `Mesh Sidecar` -> `Namespace`, to view the
 
 When there are many namespaces, you can sort them by name and search for them using the search function.
 
-![View Sidecar Injection](../../images/ns-sidecar01.png)
+![View Sidecar Injection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar01.png)
 
 ## Enable Sidecar Injection
 
@@ -18,17 +18,17 @@ You can select one or more namespaces and enable sidecar injection using the fol
 
 1. Select one or more namespaces that have not had sidecars injected and click on `Enable injection`.
 
-    ![Click Enable Injection](../../images/ns-sidecar02.png)
+    ![Click Enable Injection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar02.png)
 
 2. In the pop-up dialog, confirm the selected namespace(s) and click on `OK`.
 
-    ![Confirm](../../images/ns-sidecar03.png)
+    ![Confirm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar03.png)
 
     Please follow the on-screen instructions to restart the corresponding Pods.
 
 3. Return to the sidecar list of the namespace, and you can see that the `Injection Policy` status of the selected namespace has been changed to `Enabled`. After the user completes the restart of the workloads, the sidecar injection will be completed, and the relevant injection progress can be viewed in the `Sidecar Injections` column.
 
-    ![Enabled](../../images/ns-sidecar03-01.png)
+    ![Enabled](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar03-01.png)
 
 ## Disable Sidecar Injection
 
@@ -36,11 +36,11 @@ You can select one or more namespaces and disable sidecar injection using the fo
 
 1. Select one or more namespaces that have sidecar injection enabled and click on `Disable injection`.
 
-    ![Disable Injection](../../images/ns-sidecar04.png)
+    ![Disable Injection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar04.png)
 
 2. In the pop-up dialog, confirm the selected namespace(s) and click on `OK`.
 
-    ![Confirm](../../images/ns-sidecar05.png)
+    ![Confirm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar05.png)
 
     Please follow the on-screen instructions to restart the corresponding Pods.
 
@@ -52,14 +52,14 @@ You can select one or more namespaces and clean up the namespace-level sidecar p
 
 1. Select one or more namespaces that have sidecar injection enabled and click on `Cleanup Policy`.
 
-    ![Cleanup Policy](../../images/ns-sidecar04.png)
+    ![Cleanup Policy](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar04.png)
 
 2. In the pop-up dialog, confirm the selected namespace(s) and click on `OK`.
 
-    ![Confirm](../../images/ns-sidecar07.png)
+    ![Confirm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar07.png)
 
 3. Return to the sidecar list of the namespace, and you can see that the `Injection Policy` status of the selected namespace has been changed to `Not Set`. At this point, users can set sidecar injection policies for specific workloads using `Mesh Sidecar` -> `Workload`.
 
-    ![Not Set](../../images/ns-sidecar07-01.png)
+    ![Not Set](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar07-01.png)
 
 Next: [Workload Sidecar Management](./workload-sidecar.md)

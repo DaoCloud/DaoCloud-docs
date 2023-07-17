@@ -31,7 +31,7 @@ First, let's look at how to construct OpenTelemetry's TraceId and SpanId. Both S
 
 Specifically, all possible formats of SkyWalking TraceId and SegmentId are as follows:
 
-![sw2otel-01](../images/sw2otel-01.png)
+![sw2otel-01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/sw2otel-01.png)
 
 In the OpenTelemetry protocol, Span is unique in all Traces. In SkyWalking, Span is only unique in each Segment. This means that SegmentId and SpanId must be combined to uniquely identify Span in SkyWalking and convert it to OpenTelemetry's SpanId.
 
@@ -53,7 +53,7 @@ Finally, let's look at how to retain SkyWalking's original TraceId, SegmentId, a
 
 After this series of conversions, we have transformed the complete SkyWalking Segment Object into an OpenTelmetry Trace, as shown below:
 
-![sw2otel-02](../images/sw2otel-02.png)
+![sw2otel-02](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/sw2otel-02.png)
 
 # Deploying Demo
 
@@ -94,12 +94,12 @@ Next, modify the SkyWalking OAP Service (e.g., oap:11800) that the business appl
 
 We use the SkyWalking-showcase Demo as an example to show the entire effect. It uses the SkyWalking Agent for tracing, and after standardized processing by OpenTelemetry, Jaeger is used to present the final effect:
 
-![sw2otel-03](../images/sw2otel-03.png)
+![sw2otel-03](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/sw2otel-03.png)
 
 From the architecture diagram of SkyWalking Showcase, we can see that the data of SkyWalking is still complete after being standardized by OpenTelemetry. In this trace, the request starts from app/homepage, then two requests /rcmd/ and/songs/top are initiated simultaneously in app, distributed to the recommendation/songs two services, and finally reach the database for querying, thus completing the entire request chain.
 
-![sw2otel-04](../images/sw2otel-04.png)
+![sw2otel-04](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/sw2otel-04.png)
 
 In addition, we can also view the original SkyWalking Id information from the Jaeger page, which is convenient for correlation with application logs:
 
-![sw2otel-05](../images/sw2otel-05.png)
+![sw2otel-05](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/sw2otel-05.png)

@@ -18,11 +18,11 @@ Make sure your cluster is successfully connected to the `container management` p
 
 1. Click `Container Management` -> `Cluster List` in the left navigation bar, then find the cluster name where you want to install Multus-underlay. Then, in the left navigation bar, select `Helm Apps` -> `Helm Charts`, find and click `multus-underlay`.
 
-    ![helm repo](../../images/multus-install-1.png)
+    ![helm repo](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-1.png)
 
 2. Go to the installation screen and fill in the basic configuration information. Select `kube-system` for the namespace, and enable `Wait`.
 
-    ![helm install-1](../../images/multus-install-2.png)
+    ![helm install-1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-2.png)
 
 3. Set Multus as the default CNI:
 
@@ -43,18 +43,18 @@ Make sure your cluster is successfully connected to the `container management` p
         ...
         ```
         > If the value of `name` is `k8s-pod-network`, then `k8s-pod-network` should be selected here.
-        > ![Default CNI](../../images/multus-install-3.png)        
+        > ![Default CNI](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-3.png)        
         > If the current cluster is a third-party cluster with Calico as CNI, then `k8s-pod-network` should be selected here. Again, this can be confirmed by looking at the `/etc/cni/net.d` file on the host.
 
 4. Configure the CIDR of the current cluster Service and Pod.
 
     The purpose of this step is to tell [Meta-Plugins](https://github.com/spidernet-io/cni-plugins) the CIDR of the cluster and Meta-Plugins will create the corresponding routing rules to solve the cluster east-west communication problem for Underlay CNI.
 
-    ![Cluster CIDR](../../images/multus-install-4.png)
+    ![Cluster CIDR](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-4.png)
 
     The CIDRs of the Services and Pods in the current cluster can be obtained by looking at `configMap`: `kube-system/kubeadm-config`:
 
-    ![kubeadm-config](../../images/multus-install-5.png)
+    ![kubeadm-config](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-5.png)
 
     !!! Note
 
@@ -65,7 +65,7 @@ Make sure your cluster is successfully connected to the `container management` p
 
     This step creates the Multus CRD instance corresponding to the MacVLAN according to the configuration.
 
-    ![macvlan](../../images/multus-install-6.png)
+    ![macvlan](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-6.png)
 
     - `Install Macvlan CNI`: true/false, whether to create a Multus CRD instance of the MacVLAN.
     - `Macvlan Type`: macvlan-overlay/macvlan-standalone, the type of MacVLAN CRD instance to install.
@@ -82,7 +82,7 @@ Make sure your cluster is successfully connected to the `container management` p
 
     Configure SR-IOV Multus CRD:
 
-    ![sriov_install](../../images/multus-install-7.png)
+    ![sriov_install](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-7.png)
 
     - `Install SRIOV CNI`: install SR-IOV, which is not installed by default.
     - `SRIOV Type`: the type of Multus CRD instance for which SR-IOV is installed, including:
@@ -101,7 +101,7 @@ Make sure your cluster is successfully connected to the `container management` p
     - `drivers`: PCI device drivers, e.g. 'mlx5_core'
     - `pfNames`: list of PF device names
 
-    ![sriov-net-device](../../images/multus-install-8.png)
+    ![sriov-net-device](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-8.png)
 
     !!! note
     
@@ -115,7 +115,7 @@ Make sure your cluster is successfully connected to the `container management` p
 
     This includes Multus, Meta-plugins, SR-IOV CNI (if enabled), SRIOV-Device-Plugins (if enabled).
 
-    ![install_finished](../../images/multus-install-9.png)
+    ![install_finished](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-9.png)
 
 2. Create a workload, using MacVLAN as an example:
 

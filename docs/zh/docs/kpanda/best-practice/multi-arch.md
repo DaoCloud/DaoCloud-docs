@@ -236,8 +236,8 @@ kubectl -n kubean-system get pod | grep add-worker-node
 
 1. 前往 `容器管理`->`选择集群`->`节点管理`
 
-![节点管理](../images/arm02.png)
+![节点管理](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/arm02.png)
 
 2. 点击新增的节点，查看详情
 
-![节点详情](../images/arm01.png)
+![节点详情](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/arm01.png)

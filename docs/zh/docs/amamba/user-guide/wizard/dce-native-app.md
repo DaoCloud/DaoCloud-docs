@@ -2,7 +2,7 @@
 
 原生应用旨在为客户提供由多个 Kubernets 资源关联组成的应用，并提供统一视图。本文介绍如何通过原生应用部署传统的微服务应用。本文用到的两个示例微服务应用名为 `adservice` 和 `dataservice`。
 
-![示意图](../../images/native01.png)
+![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native01.png)
 
 ## 前提条件
 
@@ -15,7 +15,7 @@
 
 1. 在`应用工作台` -> `概览`页面中，点击`原生应用`页签，然后在右上角点击`创建应用`。
 
-    ![示意图](../../images/native02.png)
+    ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native02.png)
 
 2. 参考以下说明填写基本信息，然后点击`下一步`。
 
@@ -23,7 +23,7 @@
     - 别名：原生应用的别名。
     - 部署位置：选择将原生应用部署到哪个集群下的哪个命名空间。
 
-        ![示意图](../../images/native03.png)
+        ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native03.png)
 
 3. 参考以下说明添加传统微服务。
 
@@ -35,7 +35,7 @@
         - 容器镜像：填写微服务的镜像地址
         - 服务配置：端口配置取决于服务代码。就此处的演示应用 `adservice` 而言，需要填写如下信息：
 
-            ![示意图](../../images/native04.png)
+            ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native04.png)
 
     - 高级配置
 
@@ -47,15 +47,15 @@
         - 用户名/密码：如果该注册中心实例被认证，则需要填写用户名密码
         - 开启微服务治理：所选的注册中心实例应开启 [Sentinel 或 Mesh 治理能力](../../../skoala/trad-ms/hosted/plugins/plugin-center.md)
 
-            ![示意图](../../images/native05.png)
+            ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native05.png)
 
     !!! note "如需添加更多微服务，点击屏幕右侧的 `➕` 即可。"
 
-        ![示意图](../../images/native06.png)
+        ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native06.png)
 
 4. 根据需要配置路由并在右下角点击`确定`。
 
-    ![示意图](../../images/native07.png)
+    ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native07.png)
 
 ## 查看原生应用下的微服务
 
@@ -63,26 +63,26 @@
 
     > 点击弹出的黑色链接可以跳转到微服务引擎下的服务详情页面。
 
-    ![示意图](../../images/native08.png)
+    ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native08.png)
 
 2. 也可以前往`微服务引擎`模块，在对应的工作空间和注册中心下查看所添加的服务。
 
-    ![示意图](../../images/native09.png)
+    ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native09.png)
 
 ## 模拟服务调用
 
 1. 首先在`容器管理平台`将 `adservice` 的服务的访问类型更改为 `NodePort`。
 
-    ![示意图](../../images/native10.png)
+    ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native10.png)
 
 2. 在服务详情页面点击服务端口为 `8081` 的外部访问地址。
 
-    ![示意图](../../images/native11.png)
+    ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native11.png)
 
 3. 浏览器新开标签出现如下页面，表示 `adservice` 部署成功。
 
-    ![示意图](../../images/native12.png)
+    ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native12.png)
 
 4. 在 URL 地址后增加 `/ad/all` 进行访问，出现下图表示调用 `dataservice` 服务成功。
 
-    ![示意图](../../images/native13.png)
+    ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native13.png)

@@ -4,7 +4,7 @@
 
 离线模式下在未声明支持的 OS 上创建工作集群，主要的流程如下图：
 
-![流程](../images/otherlinux.png)
+![流程](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/otherlinux.png)
 
 接下来，本文将以 openAnolis 操作系统为例，介绍如何在非主流操作系统上创建集群。
 

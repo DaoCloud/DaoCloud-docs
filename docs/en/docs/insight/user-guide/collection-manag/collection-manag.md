@@ -23,9 +23,9 @@ The specific operation steps are as follows:
 3. When the cluster is connected to `insight-agent` and is running, click a cluster name
    to enter the details。
 
-    ![Data Collection](../../images/collectmanage03.png)
+    ![Data Collection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/collectmanage03.png)
 
 4. In the `Service Monitor` tab, click the shortcut link to jump to `Container Management` -> `CRD`
    to add service discovery rules.
 
-    ![Data Collection](../../images/collectmanage04.png)
+    ![Data Collection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/collectmanage04.png)

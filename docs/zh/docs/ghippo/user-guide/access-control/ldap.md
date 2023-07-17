@@ -16,15 +16,15 @@ LDAP 协议的身份提供商功能，而不必在 DCE 5.0 中为每一位组织
 
 1. 使用具有 `admin` 角色的用户登录 DCE 5.0。点击左侧导航栏左下角的`全局管理` -> `用户与访问控制`。
 
-    ![global](../../images/ws01.png)
+    ![global](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/ws01.png)
 
 2. 在左侧导航栏点击`身份提供商`，点击`创建身份提供商`按钮。
 
-    ![身份提供商](../../images/ldap00.png)
+    ![身份提供商](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/ldap00.png)
 
 3. 在 `LDAP` 页签中，填写以下字段后点击`保存`，建立与身份提供商的信任关系及用户的映射关系。
 
-    ![ldap](../../images/ldap01.png)
+    ![ldap](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/ldap01.png)
 
     | 字段           | 描述                                                         | 举例值                              |
     | -------------- | ------------------------------------------------------------ | ----------------------------------- |

@@ -8,7 +8,7 @@ Registry spaces are divided into two types: public and private.
 
 You can choose different instances to view all registry spaces underneath.
 
-![Switch instances](../images/space01.png)
+![Switch instances](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/space01.png)
 
 Click on the name of a registry space to view the current image list and reclaim rules for that space. You can create reclaim rules for the current registry space. All reclaim rules are calculated independently and apply to all qualified images, with a maximum of 15 reclaim rules supported.
 

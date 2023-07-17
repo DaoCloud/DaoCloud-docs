@@ -22,7 +22,7 @@
 
 5. 点击`高级定制`，可以用 CSS 样式设置登录页、导航栏、底部版权及备案信息。
 
-    ![高级定制](../../images/appear05.png)
+    ![高级定制](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/appear05.png)
 
 ## 高级定制
 

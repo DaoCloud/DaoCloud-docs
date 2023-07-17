@@ -10,7 +10,7 @@
 
 2. 在左侧导航栏点击`漏洞扫描`，点击`扫描策略`页签，在右侧点击`创建扫描策略`。
 
-    ![安全管理](../images/security16.png)
+    ![安全管理](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/images/security16.png)
 
 3. 参考下列说明填写配置，最后点击`确定`即可。
 
@@ -22,7 +22,7 @@
 
     - 扫描报告保留数量：设置最多保留多少扫描报告。超过指定的保留数量时，从最早的报告开始删除。
 
-        ![安全管理](../images/security17.png)
+        ![安全管理](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/images/security17.png)
 
 ## 更新/删除扫描策略
 
@@ -39,7 +39,7 @@
 
 - 对于一次性的扫描策略：仅支持`删除`操作。
 
-    ![创建扫描配置](../images/security18.png)
+    ![创建扫描配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/images/security18.png)
 
 ## 查看扫描报告
 
@@ -47,7 +47,7 @@
 
     > 在报告右侧点击`删除`可以手动删除报告。
 
-    ![创建扫描配置](../images/security19.png)
+    ![创建扫描配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/images/security19.png)
 
 2. 查看扫描报告内容，包括：
 
@@ -58,4 +58,4 @@
     - 扫描时间
     - 检查详情，例如漏洞 ID、漏洞类型、漏洞名称、漏洞描述等
 
-        ![创建扫描配置](../images/security20.png)
+        ![创建扫描配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/images/security20.png)

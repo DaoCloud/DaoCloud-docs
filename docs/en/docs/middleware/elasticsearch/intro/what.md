@@ -9,7 +9,7 @@ Elasticsearch (shortened as Elastic) is the preferred full-text search engine. I
 
 The search service built into DCE 5.0 is based on Elasticsearch and can provide distributed search services of structured or unstructured text, and multi-condition retrieval, statistics, and reporting based on AI vectors. It is fully compatible with the Elasticsearch native interface. It can help build search boxes in websites and apps to enhance user's search experience. It can also be used to build log analysis platforms to help enterprises achieve data-driven operations and management. Its vector retrieval capability can help customers quickly build rich applications, such as AI-based image search, recommendation systems, semantic search, face recognition, etc.
 
-![welcome page](../images/what01.png)
+![welcome page](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/middleware/elasticsearch/images/what01.png)
 
 ## ElasticSearch Job Management
 

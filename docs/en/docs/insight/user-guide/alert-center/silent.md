@@ -8,11 +8,11 @@ On the Alert Silence page, users can see two tabs: Active Rules and Expired Rule
 
 1. In the left navigation bar, select `Alert Center` -> `Alert Silence`, and click the `New silence rule` button.
 
-    ![click button](../../images/silent01.png)
+    ![click button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/silent01.png)
 
 2. Fill in the parameters for the silent rule, such as cluster, namespace, tags, and time, to define the scope and effective time of the rule, and then click `OK`.
 
-    ![silent rule](../../images/silent02.png)
+    ![silent rule](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/silent02.png)
 
 3. Return to the rule list, and on the right side of the list, click `︙` to edit or delete a silent rule.
 

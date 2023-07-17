@@ -32,10 +32,10 @@ hide:
 
     - 在管理面集群详情页面中，选择`kairship-system`命名空间下的`kairship-apiserver`无状态负载，并进行更新操作。
 
-        ![更新无状态负载](../images/update-deployment.png)
+        ![更新无状态负载](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/update-deployment.png)
 
     - 进入更新页面后，修改容器配置-生命周期的启动命令，可根据管理面集群的真实情况更新。
 
-        ![更新启动命令](../images/update-setting.png)
+        ![更新启动命令](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/update-setting.png)
 
     - 如果管理面集群中不存在存储卷声明（PVC），而是使用 hostPath，尽管可以成功安装，但无法实现高可用功能。

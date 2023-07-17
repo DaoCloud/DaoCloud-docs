@@ -9,11 +9,11 @@ hide:
 
 1. 在 MongDB 实例列表中，点击右侧的 `...` 按钮，在弹出菜单中选择`删除实例`。
 
-    ![删除实例](../images/delete1.jpg)
+    ![删除实例](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mongodb/images/delete1.jpg)
 
 2. 在弹窗中输入该实例的名称，确认无误后，点击`删除`按钮。
 
-    ![删除实例](../images/delete2.jpg)
+    ![删除实例](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mongodb/images/delete2.jpg)
 
     !!! warning
 

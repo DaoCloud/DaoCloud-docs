@@ -13,7 +13,7 @@ OIDC（OpenID Connect）是建立在 OAuth 2.0 基础上的一个身份层，是
 
 2. 在左侧导航栏选择`身份提供商`，点击 `OIDC` 页签。填写表单字段，建立与身份提供商的信任关系后，点击`保存`。
 
-    ![身份提供商](../../images/oidc02.png)
+    ![身份提供商](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/oidc02.png)
 
     | 字段       | 描述                                                         |
     | ---------- | ------------------------------------------------------------ |

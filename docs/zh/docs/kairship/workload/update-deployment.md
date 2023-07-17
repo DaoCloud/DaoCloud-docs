@@ -12,7 +12,7 @@ hide:
     - 选择`编辑 YAML` 可以通过 YAML 更新无状态工作负载
     - 选择`更新`可以通过表单更新无状态工作负载
 
-        ![更新无状态负载](../images/deploy17.png)
+        ![更新无状态负载](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/deploy17.png)
 
 2. 修改配置后点击`确定`即可完成更新。
 

@@ -33,7 +33,7 @@ OpenTelemetry 与 SkyWalking 有一些共同点：都是使用 Trace 来定义�
 
 具体来讲，SkyWalking TraceId 和 SegmentId 所有可能的格式如下：
 
-![sw2otel-01](../images/sw2otel-01.png)
+![sw2otel-01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/sw2otel-01.png)
 
 其中，在 OpenTelemetry 协议里，Span 在所有 Trace 中都是唯一的，而在 SkyWalking 中，Span 仅在每个 Segment 里是唯一的，这说明要通过 SegmentId 与 SpanId 结合才能在 SkyWalking 中对 Span 做唯一标识，并转换为 OpenTelemetry 的 SpanId。
 
@@ -55,7 +55,7 @@ OpenTelemetry 与 SkyWalking 有一些共同点：都是使用 Trace 来定义�
 
 经过上述一系列转换后，我们将 SkyWalking Segment Object 完整的转换为了 OpenTelmetry Trace，如下图：
 
-![sw2otel-02](../images/sw2otel-02.png)
+![sw2otel-02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/sw2otel-02.png)
 
 ## 部署 Demo
 
@@ -96,12 +96,12 @@ spec:
 
 我们以 SkyWalking-showcase Demo 为例展示整个效果。它使用 SkyWalking Agent 做追踪，通过 OpenTelemetry 标准化处理后使用 Jaeger 来呈现最终效果：
 
-![sw2otel-03](../images/sw2otel-03.png)
+![sw2otel-03](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/sw2otel-03.png)
 
 通过 SkyWalking Showcase 的架构图，可知 SkyWalking 的数据经过 OpenTelemetry 标准化后，依然完整。在这个 Trace 里，请求从 app/homepage 发起，之后在 app 同时发起两个请求 /rcmd/与/songs/top，分发到 recommandation/songs 两个服务中，并最终到达数据库进行查询，从而完成整个请求链路。
 
-![sw2otel-04](../images/sw2otel-04.png)
+![sw2otel-04](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/sw2otel-04.png)
 
 另外，我们也可从 Jaeger 页面中查看到原始 SkyWalking Id 信息，便于与应用日志关联：
 
-![sw2otel-05](../images/sw2otel-05.png)
+![sw2otel-05](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/sw2otel-05.png)

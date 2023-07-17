@@ -11,7 +11,7 @@ hide:
 
 1. 在网格列表页面的右上角，点击`创建网格`按钮，在下拉列表中选择`创建外接网格`。
 
-    ![创建外接网格](../../images/external01.png)
+    ![创建外接网格](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/external01.png)
 
 1. 系统会自动检测安装环境，检测成功后填写以下基本信息，点击`确定`。
 
@@ -21,11 +21,11 @@ hide:
     - 控制面入口方式：支持负载均衡和自定义。
     - 网格组件仓库：输入包含数据面组件镜像的镜像仓库地址，例如 `release-ci.daocloud.io/mspider`。
   
-    ![基本信息](../../images/create-mesh02.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/create-mesh02.png)
 
 1. 自动返回网格列表，新创建的网格默认位于第一个，一段时间后状态将从`创建中`变为`运行中`。
    点击右侧的 `...`，可以编辑基本信息、添加集群、进入控制台以及删除等操作。
 
-    ![网格列表](../../images/external02.png)
+    ![网格列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/external02.png)
 
 下一步：[服务管理](../service-list/README.md)
