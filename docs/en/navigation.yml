@@ -192,6 +192,13 @@ nav:
                   - ghippo/gproduct/intro.md
                   - Join Nav Bar: ghippo/gproduct/nav.md
                   - Join Ingress and Login Authentication: ghippo/gproduct/route-auth.md
+              - OEM IN and OUT: 
+                  - OEM IN: ghippo/oem/oem-in.md
+                  - OEM OUT: ghippo/oem/oem-out.md
+                  - Customize DCE 5.0 to Sync IdP: ghippo/oem/custom-idp.md
+                  - Use Two DCE 5.0 to Simulate OEM OUT: ghippo/oem/dce5-dce5.md
+                  - Customize IdP with Keycloak: ghippo/oem/keycloak-idp.md
+                  - Automatically Set Reverse Proxy: ghippo/oem/reverse.md
       - Insight:
           - Intro:
               - What is Insight: insight/intro/what.md

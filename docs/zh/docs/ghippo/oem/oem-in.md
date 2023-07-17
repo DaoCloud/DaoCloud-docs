@@ -40,8 +40,8 @@ AnyProduct：当客户系统需要使用 DCE 5.0 作为身份提供商（用户�
 
         ![var](./images/oem-in01.png)
 
-1. 假设 nginx 入口地址为 10.6.165.50，按[设置 DCE5 反向代理步骤](../install/reverse-proxy.md)把
-   DCE_PROXY 设置为 http://10.6.165.50/ ，按[DX ARCH 自动化设置反代](./reverse.md) 把 DX-ARCH 反代设为 http://10.6.165.50/dx-arch
+1. 假设 nginx 入口地址为 10.6.165.50，按[设置 DCE 5.0 反向代理步骤](../install/reverse-proxy.md)把
+   DCE_PROXY 设置为 http://10.6.165.50/ ，按 [DX ARCH 自动化设置反代](./reverse.md) 把 DX-ARCH 反代设为 http://10.6.165.50/dx-arch
 
 1. 参考[全局管理 GProduct 对接参考文档](../gproduct/intro.md)来实现一个空壳的 GProduct 前端子应用，把 DX-ARCH 以 iframe 形式放进该空壳应用里。
 
