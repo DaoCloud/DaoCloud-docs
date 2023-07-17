@@ -37,10 +37,10 @@ OEM OUT 是指 DCE 5.0 作为子模块接入其他产品，出现在其他产品
    参见 [/etc/nginx/conf.d/default.conf 示例](./examples/default2.conf)。
 
 1. 假设 nginx 入口地址为 10.6.165.50，参照[设置 DCE 5.0 反向代理步骤](../install/reverse-proxy.md)把
-   DCE_PROXY 设置为 http://10.6.165.50/dce5/
+   DCE_PROXY 设置为 http://10.6.165.50/dce5/。
 
 1. 访问 http://10.6.165.50/dce5/。在 DCE 5.0 中，通过`平台设置` –> `外观定制` -> `高级定制`来更改 DCE 5.0
-   的页面样式，尽量使其和客户系统样式一致
+   的页面样式，尽量使其和客户系统样式一致。
 
 1. 把 DCE 5.0 的访问地址 (http://10.6.165.50/dce5/) 编码到客户系统的 iframe src 里，可在 iframe 中通过编写
    css 修改被嵌入的页面样式。参阅 [App.vue 代码示例](./examples/App.vue)。
