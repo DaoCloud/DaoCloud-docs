@@ -10,11 +10,11 @@ This page lists activity in cloud native open source projects in alphabetical or
      As a result, developers can move locally developed applications to production without switching tools or technology stacks.
      Acorn images are created by describing the application's configuration in an Acornfile, eliminating the boilerplate of Kubernetes YAML.
 
-- [Aeraki Mesh Service Grid v1.3.0 Released](https://github.com/aeraki-mesh/aeraki/releases/tag/1.3.0)
+- [Aeraki Service Mesh v1.3.0 Released](https://github.com/aeraki-mesh/aeraki/releases/tag/1.3.0)
 
     Updates: Support for Istio version 1.16.x, support for multiplexing, support for MetaProtocol Layer 7 routing capability on Gateway, support for application-level service governance for Dubbo services, support for Redis traffic management.
 
-- [Aeraki Mesh service mesh project v1.1.0 released (CNCF project)](https://www.aeraki.net/blog/2022/announcing-1.1.0/)
+- [Aeraki service mesh project v1.1.0 released (CNCF project)](https://www.aeraki.net/blog/2022/announcing-1.1.0/)
 
      The main new features of this version: support Istio 1.12.x version; support bRPC (better RPC) protocol, bRPC is Baidu's open source industrial-grade RPC framework; Pass the real IP of the server, etc.
 

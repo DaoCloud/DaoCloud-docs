@@ -19,7 +19,7 @@ Navigate to the directory where the offline installation package is downloaded.
 
 === "AMD64"
 
-Execute the following command to verify the package:
+Run the following command to verify the package:
 
 ```sh
 echo "520ef719605042cd2b9289de795d609cde7f0aff9f7189d43e31bbe016b33debc715f8e0de24c8f3c3685d54f7d6b2595651bcfa9695c9b98210d161cfddc241  offline-v0.9.0-amd64.tar" | sha512sum -c
@@ -33,7 +33,7 @@ offline-v0.9.0-amd64.tar: OK
 
 === "ARM64"
 
-Execute the following command to verify the package:
+Run the following command to verify the package:
 
 ```sh
 echo "ae541aa5c2150af45b6dc3c3e432205683211d1b5d8ec816b37344c2234f3c05fbe2be7526b4b5832c5db0439c7d501ce2f1c1492aa5cfe045bbdd321d662e22  offline-v0.9.0-arm64.tar" | sha512sum -c
@@ -51,7 +51,7 @@ After successfully verifying the offline package,
 
 === "AMD64"
 
-Execute the following command to extract the tar file:
+Run the following command to extract the tar file:
 
 ```sh
 tar -zxvf offline-v0.9.0-amd64.tar
@@ -59,7 +59,7 @@ tar -zxvf offline-v0.9.0-amd64.tar
 
 === "ARM64"
 
-Execute the following command to extract the tar file:
+Run the following command to extract the tar file:
 
 ```sh
 tar -zxvf offline-v0.9.0-arm64.tar
@@ -76,9 +76,9 @@ DCE 5.0 Enterprise Package includes the following modules that can be used on-de
 | --------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------- |
 | Global Management     | Responsible for user access control, permissions, enterprise spaces, etc.    | [0.18.1](../../ghippo/intro/release-notes.md#0181)    |
 | Container Management  | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, etc.| [0.19.0](../../kpanda/intro/release-notes.md#0190)    |
-| Observability         | Provides rich dashboards, scene monitoring, data queries, alerts, etc.       | [0.18.2](../../insight/intro/releasenote.md#0182)     |
+| Insight         | Provides rich dashboards, scene monitoring, data queries, alerts, etc.       | [0.18.2](../../insight/intro/releasenote.md#0182)     |
 | Application Workplace | Container-based DevOps application platform, supporting Jenkins, Tekton, GitOps, and more pipeline jobs. | [0.18.1](../../amamba/intro/release-notes.md#0181)      |
-| Multi-Cloud Orchestration | Centralized management of multi-cloud, hybrid cloud, cross-cloud resources for application orchestration, with multi-cloud disaster recovery and fault recovery capabilities. | [0.10.3](../../kairship/intro/release-notes.md#0103)   |
+| MultiCloud Management | Centralized management of multi-cloud, hybrid cloud, cross-cloud resources for application orchestration, with multi-cloud disaster recovery and fault recovery capabilities. | [0.10.3](../../kairship/intro/release-notes.md#0103)   |
 | Microservice Engine   | Provides governance capabilities such as service registration and discovery, service governance, configuration management, and microservice gateway  |
 | Service Mesh          | Next-generation service mesh built on Istio open-source technology for cloud-native applications. | [v0.17.0](../../mspider/intro/release-notes.md#v0170)    |
 | Middleware Elasticsearch | Currently the preferred full-text search engine.                                      | [0.9.0](../../middleware/elasticsearch/release-notes.md#090) |
@@ -87,7 +87,7 @@ DCE 5.0 Enterprise Package includes the following modules that can be used on-de
 | Middleware MySQL        | The most widely used open-source relational database.                                  | [0.10.0](../../middleware/mysql/release-notes.md#0100)           |
 | Middleware RabbitMQ     | Open-source message broker software that implements the Advanced Message Queuing Protocol (AMQP). | [0.12.0](../../middleware/rabbitmq/release-notes.md#0120)        |
 | Middleware Redis        | An in-memory database caching service.                                                | [0.9.0](../../middleware/redis/release-notes.md#090)           |
-| Image Repository       | Used to store images for K8s, DevOps, and container application development.            | [0.9.1](../../release/rn5.0.md)                            |
+| Container Registry       | Used to store images for K8s, DevOps, and container application development.            | [0.9.1](../../release/rn5.0.md)                            |
 | Network                | Supports various CNI combinations for different Linux kernels.                        | [0.8.0](../../release/rn5.0.md)                            |
 | Storage                | Provides unified data storage services, supporting file, object, block, and local storage, easily integrates with storage vendors' solutions. | [v0.10.4](../../release/rn5.0.md)                            |
 
