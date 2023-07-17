@@ -8,7 +8,7 @@ Insight supports SMS notifications and currently sends alert messages using inte
 
 1. Go to `Alert Center` -> `Notification Settings` -> `Notification Server`.
 
-    ![Notification Server](../../images/sms01.png)
+    ![Notification Server](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/sms01.png)
 
 2. Click on `Add Notification Server`.
 
@@ -26,7 +26,7 @@ Insight supports SMS notifications and currently sends alert messages using inte
 
         Please refer to [Alibaba Cloud Variable Specification](https://help.aliyun.com/document_detail/463270.html).
 
-        ![Notification Server](../../images/sms02.png)
+        ![Notification Server](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/sms02.png)
 
         !!! note
 
@@ -45,7 +45,7 @@ Insight supports SMS notifications and currently sends alert messages using inte
         - `SdkAppId`: SMS SdkAppId, the actual SdkAppId generated after adding the application in the Tencent Cloud SMS console.
         - `Parameter Template`: The SMS body template can contain variables. Users can use variables to customize the SMS content. Please refer to: [Tencent Cloud Variable Specification](https://cloud.tencent.com/document/product/382/39023#.E5.8F.98.E9.87.8F.E8.A7.84.E8.8C.83.3Ca-id.3D.22variable.22.3E.3C.2Fa.3E).
 
-        ![Notification Server](../../images/sms03.png)
+        ![Notification Server](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/sms03.png)
 
         !!! note
 

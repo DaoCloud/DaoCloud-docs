@@ -7,7 +7,7 @@ hide:
 
 首先通过计费配置来实现 CPU、内存、存储、进出站流量的单价以及货币种类的设置。目前支持人民币和美元两种货币。
 
-![计费配置](../../images/biling01.png)
+![计费配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/biling01.png)
 
 目前支持针对集群、节点、Pod、命名空间和工作空间实现计费统计。
 管理员启用某种计费后，计费都会在 20 分钟内开始采集数据并展示计费信息。

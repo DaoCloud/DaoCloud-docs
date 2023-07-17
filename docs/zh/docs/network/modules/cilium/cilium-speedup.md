@@ -39,7 +39,7 @@
 
 1. 创建两个名称不同的集群分别为 cluster01 和 cluster02。
 
-    ![创建集群1](../../images/network-cross-cluster1.png)
+    ![创建集群1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster1.png)
 
     - 集群 cluster01 的网络插件选择 cilium
     - 添加两个参数 `cluster-id`和 `cluster-name`
@@ -47,7 +47,7 @@
 
 2. 以同样的步骤创建集群 cluster02。
 
-    ![创建集群2](../../images/network-cross-cluster2.png)
+    ![创建集群2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster2.png)
 
     > 两个集群使用的容器网段和服务网段一定不能冲突。两个参数的值不能冲突，便于标识集群确保唯一性，避免跨集群通信时出现冲突。
 
@@ -55,9 +55,9 @@
 
 1. 集群创建成功后，在两个集群上分别创建一个 Service，用于将该集群的 API server 对外暴露。
 
-	![创建service](../../images/network-cross-cluster3.png)
+	![创建service](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster3.png)
 
-    ![创建service](../../images/network-cross-cluster4.png)
+    ![创建service](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster4.png)
 
     - 集群 cluster01 访问类型选择 NodePort， 便于外部访问
     - 命名空间选择 `kube-system`，即 API Server 所在命名空间
@@ -67,9 +67,9 @@
 
 2. 再以同样方式在集群 cluster02 上为 API Server 创建 Service。
 
-    ![创建service](../../images/network-cross-cluster5.png)
+    ![创建service](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster5.png)
 
-    ![创建service](../../images/network-cross-cluster6.png)
+    ![创建service](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster6.png)
 
 ## 修改集群配置
 
@@ -154,9 +154,9 @@ cilium clustermesh connect --context cluster01 --destination-context cluster02
 
 4. 集群 cluster01 出现 `connected cluster1 and cluster2!` ，集群 cluster02 出现 `ClusterMesh enabled!` 说明两个集群通了。
 
-    ![联通](../../images/network-cross-cluster7.png)
+    ![联通](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster7.png)
 
-    ![联通](../../images/network-cross-cluster8.png)
+    ![联通](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster8.png)
 
 ## 创建演示应用
 
@@ -244,15 +244,15 @@ cilium clustermesh connect --context cluster01 --destination-context cluster02
 
 2. 在 DCE 5.0 中通过 yaml 文件快速分别创建两个集群 cluster01 和 cluster02 的应用。
 
-    ![创建应用](../../images/network-cross-cluster9.png)
+    ![创建应用](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster9.png)
 
     分别修改 `ConfigMap` 的内容，使得访问集群 cluster01 和集群 cluster02 中的 Service 时，返回的数据带有分别带有 cluster01 和 cluster02 名称的标签。可在 `rebel-base` 应用中查看容器组标签。
 
 3. 在两个集群 cluster01 和 cluster02 中分别创建一个 global service video 的 Service，指向的是已创建的 `rebel-base` 应用。
 
-    ![创建service应用](../../images/network-cross-cluster10.png)
+    ![创建service应用](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster10.png)
 
-    ![创建service应用](../../images/network-cross-cluster11.png)
+    ![创建service应用](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster11.png)
 
     - Service 类型为 ClusterIP
     - 添加应用的容器组标签筛选对应的应用
@@ -265,12 +265,12 @@ cilium clustermesh connect --context cluster01 --destination-context cluster02
 
 1. 先查看集群 cluster02 中应用的 Pod IP。
 
-    ![查看pod ip](../../images/network-cross-cluster12.png)
+    ![查看pod ip](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster12.png)
 
 2. 进入集群 cluster01 详情，点击应用 `rebel-base`  Pod 控制台，`curl` 集群 cluster02 应用 `rebel-base` 的 Pod IP，成功返回 cluster02 信息，说明两个集群中的 Pod 可以相互通信。
 
-    ![pod 通信](../../images/network-cross-cluster13.png)
+    ![pod 通信](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster13.png)
 
 3. 查看集群 cluster01 的 Service 名称，进入集群 cluster02 的应用 `rebel-base` Pod 控制台，`curl` 对应的 cluster01 的 Service 名称，有些返回内容来自 cluster01，说明两个集群中的 Pod 和 Service 也可以互相通信。
 
-    ![Pod 和 Service通信](../../images/network-cross-cluster14.png)
+    ![Pod 和 Service通信](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster14.png)

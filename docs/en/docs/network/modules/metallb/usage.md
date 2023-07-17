@@ -26,7 +26,7 @@ spec:
    ...
 ```
 
-Create `LoadBalancer Service`, please refer to: [Create Service](../../../kpanda/user-guide/services-routes/create-services.md).![metallb ip pool](../../images/metallb-use-1.png)
+Create `LoadBalancer Service`, please refer to: [Create Service](../../../kpanda/user-guide/services-routes/create-services.md).![metallb ip pool](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/metallb-use-1.png)
 
 ### Specify the IP address
 
@@ -46,7 +46,7 @@ spec:
    ...
 ```
 
-![specify ip](../../images/metallb-use-2.png)
+![specify ip](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/metallb-use-2.png)
 
 ## Shared IP address
 

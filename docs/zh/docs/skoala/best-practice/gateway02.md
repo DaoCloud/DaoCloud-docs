@@ -53,73 +53,73 @@ DCE 5.0 云原生网关支持支持负载均衡、超时重试、黑白名单等
 
 4. 随机负载均衡的效果如下。每个副本随机接受流量，导致个别副本压力过大。
 
-    ![random](../images/br-gw11.png)
+    ![random](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw11.png)
 
 5. 轮询负载均衡的效果如下。每个副本轮流接受流量，因此各个副本处理的流量总数基本相同。
 
-    ![random](../images/br-gw12.png)
+    ![random](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw12.png)
 
 ## 路径改写
 
 1. 初始状态下，访问的是服务根路径，返回内容如图。
 
-    ![rewrite](../images/br-gw09.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw09.png)
 
 2. 配置路径改写策略，原先访问服务根路径，改为访问 `/test2` 接口。
 
-    ![rewrite](../images/br-gw13.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw13.png)
 
 3. 效果如图。从返回内容可以看出，现在访问的接口已经改变了，返回的数据也变了。
 
-    ![rewrite](../images/br-gw14.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw14.png)
 
 ## 超时配置
 
 1. 启用超时配置，设置响应超过 3 秒时判断访问失败。
 
-    ![rewrite](../images/br-gw15.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw15.png)
 
 2. 通过测试专用接口 `timeout` 让请求响应 1 秒，预期可以成功访问。
 
     下图说明访问成功，接口返回了所设置的请求时间
 
-    ![rewrite](../images/br-gw16.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw16.png)
 
 3. 通过测试专用接口 `timeout` 让请求响应 4 秒，预期会访问失败
 
     下图说明访问失败，接口返回上游请求超时的信息。
     
-    ![rewrite](../images/br-gw17.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw17.png)
 
 ## 重试机制
 
 1. 启用重试配置，访问失败时最多重试 6 次，重试响应时间超过 1 秒时视为重试失败。
 
-    ![rewrite](../images/br-gw18.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw18.png)
 
 2. 通过测试专用接口 `set-retry-count` 使得服务的 `/retry` 接口必须请求 3 次才能访问成功。
 
-    ![rewrite](../images/br-gw19.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw19.png)
 
     访问 `retry` 接口。
 
     在重试次数为 6 的情况下，预期可以访问成功。
     
-    ![rewrite](../images/br-gw20.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw20.png)
 
 3. 通过测试专用接口 `set-retry-count` 使得服务的 `/retry` 接口必须请求 7 次才能访问成功。
 
-    ![rewrite](../images/br-gw21.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw21.png)
 
     访问 `retry` 接口。
 
     在重试次数为 6 的情况下，预期也能访问成功。因为首次正常访问加失败后的 6 次重试，正好达到了所需的 7 次访问。
     
-    ![rewrite](../images/br-gw22.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw22.png)
 
 4. 通过测试专用接口 `set-retry-count` 使得服务的 `/retry` 接口必须请求 8 次才能访问成功。
 
-    ![rewrite](../images/br-gw23.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw23.png)
 
     访问 `retry` 接口。
 
@@ -127,45 +127,45 @@ DCE 5.0 云原生网关支持支持负载均衡、超时重试、黑白名单等
     
     但此时手动再次访问该接口，就会显示访问成功，因此此时累计的访问次数已经达到了 8 次。
     
-    ![rewrite](../images/br-gw24.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw24.png)
 
 ## 请求头重写
 
 1. 启用请求头重写策略，在请求服务时移除 `user-agent` （不区分大小写，并添加 `demo-req`。
 
-    ![rewrite](../images/br-gw25.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw25.png)
 
 2. 使用 postman 工具查看服务初始状态下带有的请求头。可以看到存在 `user-agent`，但没有 `demo-req`。
 
-    ![rewrite](../images/br-gw28.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw28.png)
 
 3. 通过测试专用接口 `/request-header` 查看请求服务时是否带上了 `user-agent`。
 
     返回 `user-agent` 的值为 null，说明该请求头被移除了，重写策略生效。
 
-    ![rewrite](../images/br-gw26.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw26.png)
 
 4. 通过测试专用接口 `/request-header` 查看请求服务时是否带上了 `user-agent`。
 
     返回了预先设置的值，说明添加了该请求头，重写策略生效。
 
-    ![rewrite](../images/br-gw27.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw27.png)
 
 ## 响应头重写
 
 1. 启用响应头重写策略，在服务响应头中移除 `x-envoy-upstream-service-time` （不区分大小写）响应头，并添加 `demo-res`。
 
-    ![rewrite](../images/br-gw29.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw29.png)
 
 2. 使用 postman 工具查看初始状态下的响应头。可以看到存在 `x-envoy-upstream-service-time`，但没有 `demo-res`。
 
-    ![rewrite](../images/br-gw30.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw30.png)
 
 3. 直接访问该服务
 
     响应头中没有 `x-envoy-upstream-service-time`，但出现了 `demo-res` ，说明重写策略生效。
 
-    ![rewrite](../images/br-gw31.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw31.png)
 
 ## WebSocket
 
@@ -322,19 +322,19 @@ DCE 5.0 云原生网关支持支持负载均衡、超时重试、黑白名单等
 
 2. 在上述脚本保存为 html 文件，双击打开该文件。
 
-    ![rewrite](../images/br-gw32.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw32.png)
 
 3. 在未开启 WebSocket 策略，点击`连接`，会显示访问失败。
 
-    ![rewrite](../images/br-gw33.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw33.png)
 
 4. 开启 WebSocket 策略。
 
-    ![rewrite](../images/br-gw35.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw35.png)
 
 5. 再次点击`连接`，显示访问成功，说明 WebSocket 策略生效。
 
-    ![rewrite](../images/br-gw34.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw34.png)
 
 ## 本地限流
 
@@ -342,7 +342,7 @@ DCE 5.0 云原生网关支持支持负载均衡、超时重试、黑白名单等
 
     下图设置的含义是：每分钟只能正常请求 3 次，但允许溢出访问 2 次，所以每分钟累计允许访问 5 次。超过 5 次的访问会返回 `429` 代码，并附上 `ratelimit=done` 和 `ratelimit1= done1` 的响应头。
 
-    ![rewrite](../images/br-gw36.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw36.png)
 
 2. 通过 curl 命令访问服务。
 
@@ -350,7 +350,7 @@ DCE 5.0 云原生网关支持支持负载均衡、超时重试、黑白名单等
 
     并且返回内容也出现了 429 代码以及新增的两个响应头
 
-    ![rewrite](../images/br-gw37.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw37.png)
 
 ## 健康检查
 
@@ -358,15 +358,15 @@ DCE 5.0 云原生网关支持支持负载均衡、超时重试、黑白名单等
 
     在没有设置路径改写的情况下，正常访问的是服务的根路径 `/`。但如果将检查路径设置为 `/test`，预期会健康检查失败，导致服务无法访问。
 
-    ![rewrite](../images/br-gw38.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw38.png)
    
-    ![rewrite](../images/br-gw39.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw39.png)
 
 2. 修改为正确的检查路径。预期会通过健康检查，服务可以正常访问。
 
-    ![rewrite](../images/br-gw40.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw40.png)
    
-    ![rewrite](../images/br-gw41.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw41.png)
 
 ## Cookie 重写
 
@@ -374,7 +374,7 @@ DCE 5.0 云原生网关支持支持负载均衡、超时重试、黑白名单等
 
     重写时需要确保 cookie 名称与已有 cookie 的名称相同，才能确保原先的属性被新设置的属性覆盖。
 
-    ![rewrite](../images/br-gw42.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw42.png)
 
 2. 使用测试专用接口 `/cookie-set` 设置请求时的 cookie 属性，并在响应头中携带实际生效的 cookie 属性。
 
@@ -382,4 +382,4 @@ DCE 5.0 云原生网关支持支持负载均衡、超时重试、黑白名单等
 
     而在响应头中 set-cookie 展示了实际生效的 cookie: `cookie-name=cookie-value; Secure; Domain=rewrite.domain; SameSite=Strict; Path=/rewrite/path`
 
-    ![rewrite](../images/br-gw43.png)
+    ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw43.png)

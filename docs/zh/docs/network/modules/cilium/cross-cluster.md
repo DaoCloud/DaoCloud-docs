@@ -37,7 +37,7 @@
 
 ## 方式一：创建集群时配置
 
-1. 点击`容器管理`-->`集群列表`，点击`创建集群`，输入集群`基本信息`，`节点配置`信息后，进入`网络配置`进行如下配置。	![cilium-speedup01](../../images/cilium-speedup01.jpg)
+1. 点击`容器管理`-->`集群列表`，点击`创建集群`，输入集群`基本信息`，`节点配置`信息后，进入`网络配置`进行如下配置。	![cilium-speedup01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/cilium-speedup01.jpg)
 
     - 集群的网络插件选择 `cilium`
 
@@ -65,9 +65,9 @@
 
 点击`容器管理`-->`集群列表`，点击已创建的`集群名称`，进入详情后，点击`配置与秘钥`，选择`配置项`，找到`cilium-config`	点击编辑，输入上述加速参数：
 
-![cilium-sppedup02](../../images/cilium-speedup02.jpg)
+![cilium-sppedup02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/cilium-speedup02.jpg)
 
-![speed-up03](../../images/cilium-sppedup03.jpg)
+![speed-up03](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/cilium-sppedup03.jpg)
 
 
 

@@ -14,7 +14,7 @@ DaoCloud Enterprise 5.0 is a high-performance, scalable cloud-native operating s
 
 Based on the Cloud Native Foundation of DCE 5.0 for container, permission, and resource management, Workbench can create applications, pipelines, GitOps processes, canary release jobs, and toolchains, functioning as a underlying infrastructure of higher-level modules, such as Microservice Engine, Servie Mesh, Multicloud Management, etc.
 
-![Workbench Role in DCE 5.0](../images/what01.png)
+![Workbench Role in DCE 5.0](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/what01.png)
 
 ## Separate Install
 

@@ -22,13 +22,13 @@
 
 3. 在 Envoy 的启动参数中增加 `--base-id 10`，允许同一个命名空间中存在两个 envoy 实例，防止冲突。
 
-    ![参数示意图](../images/br-gw-mesh01.png)
+    ![参数示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw-mesh01.png)
 
 4. 在网关下[添加 API](../gateway/api/add-api.md)时，设置 `Host` 请求头。
 
     这样可以让网关在多集群场景下，通过 Sidecar 访问其他集群的服务，实现服务的跨集群负载均衡。
 
-    ![参数示意图](../images/br-gw-mesh02.png)
+    ![参数示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw-mesh02.png)
 
 5. 在服务网格模块为网关 Sidecar 配置资源，不低于云原生网关的默认资源配置 1 核 1 G。
 
@@ -36,4 +36,4 @@
 
 完成上述配置之后，通过网关域名访问服务。可以看到每次请求的是不同集群中的服务，说明网关可以跨集群访问服务。
 
-![参数示意图](../images/br-gw-mesh03.png)
+![参数示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw-mesh03.png)

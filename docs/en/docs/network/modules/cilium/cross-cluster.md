@@ -38,7 +38,7 @@ Please make sure the Linux Kernel version >= 4.9.17 with 5.10+ recommended. To v
 ## First method：configure when creating the cluster
 
 1. Click `Container Management` --> `Cluster List`. On the page of `Create Cluster`, enter the cluster's `basic information` and `node configuration`, then go to `Network Configuration` to configure as follows:
-![cilium-speedup01](../../images/cilium-speedup1.png)
+![cilium-speedup01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-speedup1.png)
 
     - Select `cilium` for the cluster's CNI plugin
 
@@ -79,8 +79,8 @@ If the cluster has been created and you need to enable acceleration parameters, 
 
 Click `Container Management`--> `Cluster List`. Go to the created cluster and click `ConfigMaps & Secrets`. Select `Config Items`, find `Cilium-config`, and then click Edit to enter the following acceleration parameters:
 
-![cilium-sppedup02](../../images/cilium-speedup2.png)
+![cilium-sppedup02](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-speedup2.png)
 
-![speed-up03](../../images/cilium-speedup3.png)
+![speed-up03](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-speedup3.png)
 
 Once the parameters are written, click `OK` to achieve Pod communication acceleration.

@@ -21,7 +21,7 @@ java -jar -Xms2g -Xmx2g -Dnacos.server=10.6.222.21:30168 -Dthead.count=100 -Dser
 
 ## 测试过程截图
 
-![process](../images/test-nacos01.png)
+![process](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-nacos01.png)
 
 ## 测试结果
 

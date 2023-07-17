@@ -40,13 +40,13 @@ DCE 5.0 Cloud Native Gateway supports two methods for importing services: manual
 
     In this demo, the IP address of the node where the gateway is located is `10.6.222.24`.
 
-    ![ping](../images/br-gw06.png)
+    ![ping](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/br-gw06.png)
 
 3. Use the `kubectl get svc -n $Namespace` command to view the port exposed by the gateway.
 
     The Service corresponding to the gateway starts with `envoy` and ends with `gtw`. In this demo, the port of the gateway Service is `30040`.
 
-    ![nodeport](../images/br-gw07.png)
+    ![nodeport](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/br-gw07.png)
 
 4. Based on the above information, the access address of the gateway is `10.6.222.24:30040`.
 
@@ -54,7 +54,7 @@ DCE 5.0 Cloud Native Gateway supports two methods for importing services: manual
 
 Use the command `vim /etc/hosts` to modify the local hosts file and configure a local domain name for the gateway access address.
 
-![hosts](../images/br-gw08.png)
+![hosts](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/br-gw08.png)
 
 ## Accessing Services
 
@@ -64,7 +64,7 @@ After configuring the local domain name, you can use the domain name to access t
 
 In this demo, you can use `curl adservice.virtualhost:30040/`.
 
-![public visit](../images/br-gw09.png)
+![public visit](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/br-gw09.png)
 
 ### Internal Access
 
@@ -72,4 +72,4 @@ You can access the `adservice` service through the gateway from any node in the 
 
 In this demo, there are three worker nodes in the gateway cluster named `dev-worker1`, `dev-worker2`, and `dev-worker3`. On these three nodes, you can use their internal
 
-![internal visit](../images/br-gw10.png)
+![internal visit](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/br-gw10.png)

@@ -15,15 +15,15 @@ DCE 5.0 container registry allows users to create synchronization policies and a
 
 1. From the integrated or managed Harbor page, click a registry name.
 
-    ![Select a registry](../images/sync00.png)
+    ![Select a registry](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/sync00.png)
 
 2. In the left-hand navigation bar, click `Sync images` -> `Sync policy`, and then click the `Create sync policy` button.
 
-    ![Click the button](../images/sync01.png)
+    ![Click the button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/sync01.png)
 
 3. Fill in the parameters and click `OK`.
 
-    ![Configure parameters](../images/sync02.png)
+    ![Configure parameters](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/sync02.png)
 
     Sync mode:
     - Push: synchronize the image to the destination registry.
@@ -38,22 +38,22 @@ DCE 5.0 container registry allows users to create synchronization policies and a
 
 4. Return to the sync rule list, the newly created rule is enabled by default. Click on the `⋮` on the right-hand side to run sync, edit, disable, delete.
 
-    ![More operations](../images/sync03.png)
+    ![More operations](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/sync03.png)
 
 ## Add destination registry
 
 1. From the integrated or managed Harbor page, click a registry name.
 
-    ![Select a registry](../images/sync00.png)
+    ![Select a registry](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/sync00.png)
 
 2. In the left-hand navigation bar, click `Sync images` -> `Destination registry`, and then click the `Add destination registry` button.
 
-    ![Click the button](../images/target01.png)
+    ![Click the button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/target01.png)
 
 3. Add a destination registry.
 
-    ![Select](../images/target02.png)
+    ![Select](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/target02.png)
 
-    ![Customize](../images/target03.png)
+    ![Customize](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/target03.png)
 
 4. Return to the destination registry list, click on the `⋮` on the right-side to perform edit or delete.

@@ -10,4 +10,4 @@
 解决物联网落地时响应实时性、数据隐私性、维护便利性等问题，从而满足行业数字化在敏捷联接、实时业务、数据优化、
 应用智能、安全与隐私保护等方面的关键需求。
 
-![边缘地位](../images/what.png)
+![边缘地位](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/what.png)

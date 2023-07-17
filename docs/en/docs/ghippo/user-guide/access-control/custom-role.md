@@ -12,15 +12,15 @@ A platform role refers to a role that can manipulate features related to a certa
 
 1. From the left navigation bar, click `Global Management` -> `Access Control` -> `Roles`, and click `Create Custom Role`.
 
-    ![button](../../images/custom01.png)
+    ![button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom01.png)
 
 1. Enter the name and description, select `Platform Role`, check the role permissions and click `OK`.
 
-    ![fill](../../images/custom02.png)
+    ![fill](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom02.png)
 
 1. Return to the role list, search for the custom role you just created, and click `⋮` on the right to perform operations such as copying, editing, and deleting.
 
-    ![other](../../images/custom03.png)
+    ![other](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom03.png)
 
 1. After the platform role is successfully created, you can go to [User](user.md)/[group](group.md) to add users and groups for this role.
 
@@ -30,15 +30,15 @@ A workspace role refers to a role that can manipulate features related to a modu
 
 1. From the left navigation bar, click `Global Management` -> `Access Control` -> `Roles`, and click `Create Custom Role`.
 
-    ![button](../../images/custom01.png)
+    ![button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom01.png)
 
 1. Enter the name and description, select `Workspace role`, check the role permissions and click `OK`.
 
-    ![workspace](../../images/custom04.png)
+    ![workspace](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom04.png)
 
 1. Return to the role list, search for the custom role you just created, and click `⋮` on the right to perform operations such as copying, editing, and deleting.
 
-    ![other](../../images/custom05.png)
+    ![other](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom05.png)
 
 1. After the workspace role is successfully created, you can go to [Workspace](../workspace/workspace.md) to authorize and set which workspaces this role can manage.
 
@@ -48,14 +48,14 @@ The folder role refers to the ability to manipulate the relevant features of a m
 
 1. From the left navigation bar, click `Global Management` -> `Access Control` -> `Roles`, and click `Create Custom Role`.
 
-    ![button](../../images/custom01.png)
+    ![button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom01.png)
 
 1. Enter the name and description, select `Folder Role`, check the role permissions and click `OK`.
 
-    ![folder](../../images/custom06.png)
+    ![folder](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom06.png)
 
 1. Return to the role list, search for the custom role you just created, and click `⋮` on the right to perform operations such as copying, editing, and deleting.
 
-    ![other](../../images/custom07.png)
+    ![other](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom07.png)
 
 1. After the folder role is successfully created, you can go to [Folder](../workspace/folders.md) to authorize and set which folders this role can manage.

@@ -18,7 +18,7 @@ Follow the steps below to get a license for your DCE 5.0 Community Package:
     ESN is the unique device code of the cluster system.
     Follow the steps to get your ESN: Open DCE, click `Global Management`->`Settings`->`Licensing`, click `Manage License` to open the `Manage License` page, and copy the ESN code.
 
-    ![esn](../images/license02.jpg)
+    ![esn](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/license02.jpg)
 
 4. Copy and paste the offline authorization code exchanged in the previous step, and click `Activate Now`. Congratulations! :smile: It's time to explore the new DCE 5.0 now!
 

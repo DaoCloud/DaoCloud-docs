@@ -91,7 +91,7 @@ ETCD 备份是以集群数据为核心的备份。在硬件设备损坏，开发
             cat /etc/daocloud/dce/certs/etcd/server.key
             ```
 
-        ![创建基本信息](../../images/etcd-get01.png)
+        ![创建基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/etcd-get01.png)
 
     !!! note
 

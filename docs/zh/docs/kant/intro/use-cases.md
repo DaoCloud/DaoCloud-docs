@@ -11,7 +11,7 @@
 - 边缘侧实时感知环境风险并监控生产过程，快速响应决策
 - 实现统一应用、模型下发，节点状态统一监控
 
-![use case](../images/use-case01.png)
+![use case](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/use-case01.png)
 
 ## 智慧门店
 
@@ -21,7 +21,7 @@
 - 复杂网络环境下，门店营销视频自主播控，稳定性高
 - 边缘节点和应用监控、日志云端统一管理、分析，故障快速定位，提升运维效率
 
-![use case](../images/use-case02.png)
+![use case](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/use-case02.png)
 
 ## 智慧农业
 
@@ -31,4 +31,4 @@
 - 云端对设备进行管理、监控和控制
 - 边缘测实时响应温湿度变化，智能调节设备运行
 
-![use case](../images/use-case03.png)
+![use case](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/use-case03.png)

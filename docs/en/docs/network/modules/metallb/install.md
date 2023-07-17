@@ -21,11 +21,11 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
 1. Click `Container Management`->`Cluster List` in the left navigation bar, and then find the cluster name where you want to install MetalLB.
 
-    ![metallb_cluster](../../images/metallb-install-1.png)
+    ![metallb_cluster](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/metallb-install-1.png)
 
 2. In the left navigation bar, select `Helm Apps` -> `Helm Charts`, and then find and click `metallb`.
 
-    ![metallb_repo](../../images/metallb-install-2.png)
+    ![metallb_repo](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/metallb-install-2.png)
 
 3. Select the version you want to install in `Version` and click `Install`.
 
@@ -48,13 +48,13 @@ Please confirm that your cluster has successfully connected to the `Container Ma
         
         - The IP pool is created with enabling address pool parameter `autoAssign: true` by default. For parameter details, refer to [Instructions for IPPool use](usage.md)
 
-    ![metallb_ippool](../../images/metallb-install-3.png)
+    ![metallb_ippool](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/metallb-install-3.png)
 
 5. Configure `L2Advertisement Setting` -> `NodeSelectors`.
 
     By default, all nodes will be the next hop for the LoadBalancer IP, but you can restrict only certain nodes to be the next hop for the LoadBalancer IP via NodeSelector:
 
-    ![node_list](../../images/metallb-install-4.png)
+    ![node_list](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/metallb-install-4.png)
 
     As shown above, only the node matching Label "kubernetes.io/os: linux" will be the next hop for the LoadBalancer IP.
 
@@ -62,7 +62,7 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
     By default, MetalLB declares LB IPs from all NICs of the node, but we can configure specific network interfaces to declare them.
 
-    ![metallb-interface](../../images/metallb-install-5.png)
+    ![metallb-interface](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/metallb-install-5.png)
 
 7. MetalLB is installed.
 

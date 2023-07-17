@@ -6,7 +6,7 @@
 
 1. 在`安全管理`->`合规性扫描`页面的`扫描策略`页签下，在右侧点击创建扫描策略。
 
-    ![创建扫描配置](../../images/security05.png)
+    ![创建扫描配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/images/security05.png)
 
 2. 参考下列说明填写配置后，点击`确定`。
 
@@ -19,7 +19,7 @@
 
     - 扫描报告保留数量：设置最多保留多少扫描报告。超过指定的保留数量时，从最早的报告开始删除。
 
-        ![创建扫描配置](../../images/security06.png)
+        ![创建扫描配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/images/security06.png)
 
 ## 更新/删除扫描策略
 
@@ -36,4 +36,4 @@
 
 - 对于一次性的扫描策略：仅支持`删除`操作。
 
-    ![创建扫描配置](../../images/security07.png)
+    ![创建扫描配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/images/security07.png)

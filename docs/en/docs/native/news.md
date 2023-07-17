@@ -191,7 +191,7 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
   
     In addition to public cloud vendors (Microsoft, Amazon Web Services, Google Cloud Platform) and traditional DevOps vendors (Gitlab, Atlassian), cloud-native vendors (Red Hat, VMware, LingQun Alauda) also feature in the report, signaling that Cloud-native has become a core technology for building the next generation of DevOps value chain platforms.
 
-    ![devops](../native/images/Figure_1_Magic_Quadrant_for_DevOps_Platforms.png)
+    ![devops](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/native/images/Figure_1_Magic_Quadrant_for_DevOps_Platforms.png)
 
 - [6.5 IDC Releases "China Software-Defined Computing Software Market Tracker, 2022" Report](https://mp.weixin.qq.com/s/ON9EozhX6ksyL_q2bk_r4Q)
   

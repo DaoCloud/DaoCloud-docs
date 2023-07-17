@@ -18,6 +18,6 @@ Currently supported features include:
 - Localization of multiple languages
 - User-friendly graphical interface
 
-![kafka page](../images/what01.png)
+![kafka page](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/middleware/kafka/images/what01.png)
 
 [Create Kafka Instance](../user-guide/create.md){ .md-button .md-button--primary }

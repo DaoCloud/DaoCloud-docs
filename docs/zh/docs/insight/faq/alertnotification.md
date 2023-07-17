@@ -61,4 +61,4 @@ groups:
 - 如果在 5 分钟内接收到了更多相同标签和内容的告警，则这些新告警也将被添加到先前的通知中并一起发送。如果在 15分钟后仍有未发送的告警，则 Alertmanager 将重新开始一个新的计时周期，并等待更多的告警，直到再次达到 5 分钟或收到新告警。
 - 如果在 1 小时内持续收到相同标签和内容的告警，则 Alertmanager 将重复发送之前已经发送过的警报通知。
 
-     ![安装](../images/alertnotifacation.png)
+     ![安装](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/alertnotifacation.png)

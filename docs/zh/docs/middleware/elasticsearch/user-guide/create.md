@@ -15,7 +15,7 @@ hide:
 
     > 如未通过安装环境检测，页面会给出失败原因和操作建议。常见原因是缺少相关组件，根据页面提示安装对应的组件即可。
 
-    ![基本信息](../images/create02.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/elasticsearch/images/create02.png)
 
 3. 选择版本：选择基于哪个 Elasticsearch 版本创建实例，目前仅支持 `7.16.3`
 

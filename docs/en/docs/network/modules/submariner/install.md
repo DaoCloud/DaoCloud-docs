@@ -36,35 +36,35 @@ Make sure your cluster is successfully connected to the `container management` p
 
 2. In the left navigation bar, select `Helm Applications` -> `Helm Charts`, find and click `submariner-k8s-broker`.
 
-    ![helm](../../images/submariner-install-1.png)
+    ![helm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/submariner-install-1.png)
 
 3. Select the version you want to install in the version selection, and click Install. 
 
 4. It is recommended to install `submariner-k8s-broker` under the `submariner-k8s-broker` namespace.
 
-    ![broker-ns](../../images/submariner-install-2.png)
+    ![broker-ns](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/submariner-install-2.png)
 
 5. The configuration shown below does not need to be changed, just leave the default parameters as they are:
 
-    ![config](../../images/submariner-install-3.png)
+    ![config](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/submariner-install-3.png)
 
 6. Successfully install `submariner-k8s-broker` in the Broker cluster.
 
-    ![broker](../../images/submariner-install-4.png)
+    ![broker](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/submariner-install-4.png)
 
 7. Switch to its subcluster: master01, and install `submariner-operator`:
 
-    ![operator](../../images/submariner-install-5.png)
+    ![operator](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/submariner-install-5.png)
 
 8. Select the version you want to install in the version selection, and click Install.
 
 9. Recommend install `submariner-operator` under the `submariner-operator` namespace, and enable `Wait`:
 
-    ![operator-ns](../../images/submariner-install-6.png)
+    ![operator-ns](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/submariner-install-6.png)
 
 10. Configure `submariner-operator` to connect to the Broker cluster:
 
-    ![operator-broker](../../images/submariner-install-7.png)
+    ![operator-broker](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/submariner-install-7.png)
 
     The above parameters description:
 
@@ -99,7 +99,7 @@ Make sure your cluster is successfully connected to the `container management` p
 
 11. Configure `submariner-operator`.
 
-    ![submariner-operator](../../images/submariner-install-8.png)
+    ![submariner-operator](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/submariner-install-8.png)
 
     The above parameters description:
 
@@ -113,7 +113,7 @@ Make sure your cluster is successfully connected to the `container management` p
     * `Submariner` -> `clusterId`: the identity of a subcluster, which should be filled to meet specification of the  DNS-1123 Label.
     * `Submariner` -> `clusterCidr`: the CIDR of the subcluster Pod.
 
-        ![operator-install2](../../images/submariner-install-9.png)        
+        ![operator-install2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/submariner-install-9.png)        
 
     * `Submariner` -> `serviceCidr`: the CIDR of the subcluster Service.
     * `Submariner` -> `globalCidr`: enable the globalnet feature.
@@ -125,11 +125,11 @@ Make sure your cluster is successfully connected to the `container management` p
 
 12. Successfully install `submariner-operator` in subcluster master01:
 
-    ![opearator-install-3](../../images/submariner-install-10.png)
+    ![opearator-install-3](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/submariner-install-10.png)
 
 13. After the installation is complete, you need to manually set one of the nodes of subcluster master01 as a gateway node and add the tag "submariner.io/gateway: true":
 
-    ![gateway](../../images/submariner-install-11.png)
+    ![gateway](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/submariner-install-11.png)
     
 14. Check if `submariner-operator` is running:
 

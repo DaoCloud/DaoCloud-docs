@@ -17,15 +17,15 @@ The submodule administrator role needs to be configured in the global management
 
 - Find the user in the user list of `Global Management` -> `Access Control` -> `User`; click `...`, select `Authorization`, and assign the user a predefined submodule of the system Administrator permissions.
 
-    ![user authorization](../../images/role01.png)
+    ![user authorization](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/role01.png)
 
 - Create a group in the group list of `Global Management` -> `Access Control` -> `group`, add the user to the group, and authorize the group (the specific operation is: in the group list Find the group, click `...`, select `Authorization`, and give the group the pre-defined sub-module administrator rights of the system).
 
-    ![group authorization](../../images/role02.png)
+    ![group authorization](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/role02.png)
 
 - In the role list of `Global Management` -> `Access Control` -> `Roles`, find the corresponding submodule administrator role, click the role name to enter the details, click the `Associate Member` button, select the user or The group to which the user belongs, click `OK`.
 
-    ![role authorization](../../images/role03.png)
+    ![role authorization](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/role03.png)
 
 Submodules that support this mode: Access Control (IAM), Audit Log (Audit), Container Management (Kpanda)
 At the same time, the administrator role (Admin) of the platform can also be authorized through the above methods

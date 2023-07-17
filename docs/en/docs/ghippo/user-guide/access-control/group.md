@@ -14,11 +14,11 @@ Prerequisite: Super Admin or IAM Admin.
 
 1. Enters `Access Control`, selects `Groups`, enters the list of groups, and clicks `Create a group` on the upper right.
 
-    ![group button](../../images/group00.png)
+    ![group button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/group00.png)
 
 2. Fill in the group information on the `Create group` page.
 
-    ![fill](../../images/group01.png)
+    ![fill](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/group01.png)
 
 3. Click `OK`, the group is created successfully, and you will return to the group list page. The first line in the list is the newly created group.
 
@@ -28,25 +28,25 @@ Prerequisite: The group already exists.
 
 1. Enters `Access Control`, selects `Groups`, enters the list of groups, and clicks `⋮` -> `Add permissions`.
 
-    ![add permissions](../../images/group02.png)
+    ![add permissions](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/group02.png)
 
 2. On the `Add permissions` page, check the required role permissions (multiple choices are allowed).
 
-    ![button](../../images/group03.png)
+    ![button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/group03.png)
 
 3. Click `Confirm` to add permissions to the group. Automatically return to the group list, click a group to view the permissions granted to the group.
 
-    ![view](../../images/group04.png)
+    ![view](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/group04.png)
 
 ## Add users to a group
 
 1. Enters `Access Control`, selects `Groups` to display the group list, and on the right side of a group, click `⋮` -> `Add Members`.
 
-    ![members](../../images/group05.png)
+    ![members](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/group05.png)
 
 2. On the `Add Group Members` page, click the user to be added (multiple choices are allowed). If there is no user available, click `Create a new user`, first go to create a user, and then return to this page and click the refresh icon to display the newly created user.
 
-    ![new user](../../images/group06.png)
+    ![new user](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/group06.png)
 
 3. Click `Confirm` to finish adding users to the group.
 
@@ -60,15 +60,15 @@ Note: Deleting a group will not delete the users in the group, but the users in 
 
 1. The administrator enters `Access Control`, selects `group` to enter the group list, and on the right side of a group, click `⋮` -> `Delete`.
 
-    ![delete](../../images/deletegroup01.png)
+    ![delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/deletegroup01.png)
 
 2. Click `Delete` to delete the group.
 
-    ![confirm](../../images/deletegroup02.png)
+    ![confirm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/deletegroup02.png)
 
 3. Return to the group list, and the screen will prompt that the deletion is successful.
 
-    ![success](../../images/deletegroup03.png)
+    ![success](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/deletegroup03.png)
 
 !!! note
 

@@ -15,16 +15,16 @@ After the binding, users of that workspace can operate instances or namespaces w
 
 1. Click `Workspace` in the upper-right corner of the homepage of the Multicloud Management module.
 
-    ![Management entrance.png](../images/ws01.png)
+    ![Management entrance.png](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/ws01.png)
 
 2. Check the binding status of multicloud instances/namespaces, then click the `ⵗ` action button and select `Bind Workspace` or `Unbind Workspace` as needed.
 
-    ![Management interface](../images/ws02.png)
+    ![Management interface](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/ws02.png)
 
 3. Select which workspace to bind when binding, or just confirm your action when unbinding.
 
-    ![Binding/Unbinding](../images/ws03.png)
-    ![Binding/Unbinding](../images/ws04.png)
+    ![Binding/Unbinding](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/ws03.png)
+    ![Binding/Unbinding](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/ws04.png)
 
 !!! note
 

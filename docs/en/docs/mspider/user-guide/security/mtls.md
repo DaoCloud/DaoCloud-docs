@@ -25,7 +25,7 @@ Service mesh PKI (Public Key Infrastructure) uses X.509 certificates to provide 
 `istio-agent` runs with every Envoy agent, with `istiod`
 Work together to automate key and certificate rotation at scale. The figure below shows the operation flow of this mechanism.
 
-![workflow](../../images/id-prov.svg)
+![workflow](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/id-prov.svg)
 
 The service mesh provides keys and certificates through the following process:
 
@@ -148,7 +148,7 @@ The service mesh automatically upgrades all traffic between the two PEPs to mutu
 then the service mesh will continue to use plain text between PEPs. To override this behavior,
 Please use [Destination Rules](../traffic-governance/destination-rules.md) to explicitly disable mutual TLS mode.
 
-![](../../images/authz.svg)
+![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/authz.svg)
 
 The service mesh outputs these two authentication types, as well as other claims in the credentials (if applicable), to the next layer: [authorize](./authorize.md).
 

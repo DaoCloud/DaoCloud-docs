@@ -7,7 +7,7 @@
 
 完成 Istio 版本升级后，进入`工作负载边车管理`界面，具备升级条件的工作负载将出现叹号提示信息，选中期望升级的工作负载，将出现`边车升级`按钮。
 
-![边车升级](../images/sidecar-update01.png)
+![边车升级](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/sidecar-update01.png)
 
 点击`边车升级`按钮将进入`边车升级版本`向导，该向导分为`环境检测`、`选择目标版本`、`执行升级`三个步骤，在“热升级”和“重启升级”两种方式下，操作会有一定差别。
 

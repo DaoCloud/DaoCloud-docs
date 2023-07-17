@@ -23,8 +23,8 @@ hide:
 
     - 删除专有网格。需要按提示关闭网格删除保护、移除边车、清除网关后，输入网格名称确认删除操作。
 
-        ![专有网格](../../images/deletemesh03.png)
+        ![专有网格](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/deletemesh03.png)
 
     - 删除托管网格。需要按提示关闭网格删除保护、移除已注入的边车、清除网关、移除网格下的集群后，输入网格名称确认删除操作。
 
-        ![托管网格](../../images/deletemesh04.png)
+        ![托管网格](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/deletemesh04.png)

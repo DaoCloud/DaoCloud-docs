@@ -37,6 +37,6 @@ Extension modules that run through the overall architecture include observabilit
 
 ## Functional Architecture
 
-![architecture](../images/architect.png)
+![architecture](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/architect.png)
 
 As shown in the figure above, the service mesh provides nine modules and twelve sub-module features, realizing the ability of diversified cluster access and mesh management in multiple modes.

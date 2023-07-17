@@ -19,4 +19,4 @@ MongoDB 是一种面向文档的 NoSQL 数据库管理系统，它以灵活的�
 
 MongoDB 被广泛应用于 Web 应用、大数据分析、物联网、实时数据处理等领域，它的灵活性和可扩展性使得开发人员能够更高效地处理和存储不断增长的数据。
 
-![创建](../images/what.jpg)
+![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mongodb/images/what.jpg)

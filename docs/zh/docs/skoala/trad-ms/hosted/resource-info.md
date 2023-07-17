@@ -5,4 +5,4 @@
 - 与当前注册配置中心同名的工作负载就是该注册配置中心自身。
 - 如果启用了 Mesh 或 Sentinel 治理能力，则会出现另外一个实例，代表对应的服务网格实例或 Sentinel 实例。
 
-![](../../images/trad-resource-info.png)
+![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/trad-resource-info.png)

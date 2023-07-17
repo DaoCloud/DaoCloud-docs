@@ -7,7 +7,7 @@ hide:
 
 Cloud computing has been developing in China for nearly 15 years, and with the maturity of technology, enterprise are not satisfied with simply moving their applications to the cloud. Instead, more complex multicloud requirements have emerged. The development process of cloud computing from single cloud to multicloud is illustrated below:
 
-![evolution](../images/what01.png)
+![evolution](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/what01.png)
 
 At the early stage, enterprises simply migrated their applications to the cloud. However, now they want to select clouds and customize their own multicloud environment.
 

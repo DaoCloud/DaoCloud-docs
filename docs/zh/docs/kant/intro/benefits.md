@@ -2,7 +2,7 @@
 
 云边协同提供六大核心优势能力，为用户解决不同类型的场景业务需求，更高效协同云边算力资源和数据。
 
-![benefits](../images/benefit01.png)
+![benefits](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/benefit01.png)
 
 - 边缘自治
     - 边缘侧自为一套完整的体系，具有不依赖云端的离线处理能力

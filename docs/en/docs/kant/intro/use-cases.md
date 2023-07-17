@@ -10,7 +10,7 @@ Help users quickly build a cloud-edge collaboration platform close to the data s
 - Real-time perception of environmental risks on the edge side and monitoring of production processes, and rapid response decision-making.
 - Implement unified application and model deployment, and monitor node status uniformly.
 
-![use case](../images/use-case01.png)
+![use case](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/images/use-case01.png)
 
 ## Smart Store
 
@@ -20,7 +20,7 @@ Rebuild the management of people, goods, and scenes (consumption scenarios) with
 - Under complex network environments, store marketing videos can be independently controlled and have high stability.
 - Edge nodes and application monitoring, log cloud-based unified management and analysis, quick fault location, and improved operation and maintenance efficiency.
 
-![use case](../images/use-case02.png)
+![use case](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/images/use-case02.png)
 
 ## Smart Agriculture
 
@@ -29,4 +29,4 @@ The cloud-edge collaboration platform can precisely control agricultural equipme
 - Manage, monitor, and control devices on the cloud side.
 - Real-time response to changes in temperature and humidity on the edge side, and intelligent adjustment of device operation.
 
-![use case](../images/use-case03.png)
+![use case](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/images/use-case03.png)
