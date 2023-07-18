@@ -211,6 +211,7 @@ nav:
                   - 用两套 DCE 5.0 模拟 OEM OUT: ghippo/oem/dce5-dce5.md
                   - Keycloak 自定义 IdP: ghippo/oem/keycloak-idp.md
                   - 自动设置反向代理: ghippo/oem/reverse.md
+                  - Webhook 消息通知: ghippo/oem/webhook.md
       - 可观测性:
           - 介绍:
               - 可观测性: insight/intro/what.md
