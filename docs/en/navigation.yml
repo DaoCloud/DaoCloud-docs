@@ -92,32 +92,33 @@ nav:
               - Helm Charts: kpanda/user-guide/helm/README.md
               - Helm Apps: kpanda/user-guide/helm/helm-app.md
               - Helm Registries: kpanda/user-guide/helm/helm-repo.md
-          - Network:
+          - Container Network:
               - Create Service: kpanda/user-guide/services-routes/create-services.md
               - Create Ingress: kpanda/user-guide/services-routes/create-ingress.md
               - Network Policies: kpanda/user-guide/services-routes/network-policy.md
           - CRDs: kpanda/user-guide/custom-resources/create.md
-          - Storage:
+          - Container Storage:
               - Volume Claim: kpanda/user-guide/storage/pvc.md
               - Volume: kpanda/user-guide/storage/pv.md
               - Storage Pool: kpanda/user-guide/storage/sc.md
               - Shared Storage Pool: kpanda/user-guide/storage/sc-share.md
-          - ConfigMaps and Secrets:
+          - ConfigMaps & Secrets:
               - Create ConfigMap: kpanda/user-guide/configmaps-secrets/create-configmap.md
               - Use ConfigMap: kpanda/user-guide/configmaps-secrets/use-configmap.md
               - Create Secret: kpanda/user-guide/configmaps-secrets/create-secret.md
               - Use Secret: kpanda/user-guide/configmaps-secrets/use-secret.md
-          - Cluster Operation & Maintenance:
+          - Operation & Maintenance:
               - Recent Operations: kpanda/user-guide/clusterops/latest-operations.md
               - Upgrade Cluster: kpanda/user-guide/clusters/upgrade-cluster.md
               - Cluster Settings: kpanda/user-guide/clusterops/cluster-settings.md
-          - Backup and Restore:
+          - Cluster Inspection:
+              - Create Inspection Settings: kpanda/user-guide/inspect/config.md
+              - Start Inspection: kpanda/user-guide/inspect/inspect.md
+              - Check Inspection Reports: kpanda/user-guide/inspect/report.md          
+          - Backup Recovery:
               - ETCD Backup: kpanda/user-guide/backup/etcd-backup.md
               - Install Velero: kpanda/user-guide/backup/install-velero.md
               - Back up Deployment: kpanda/user-guide/backup/deployment.md
-          - Permissions:
-              - Permission Brief: kpanda/user-guide/permissions/permission-brief.md
-              - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md
           - Security Management:
               - Scan Types: kpanda/user-guide/security/intro.md
               - CIS:
@@ -126,6 +127,9 @@ nav:
                   - Scan Report: kpanda/user-guide/security/cis/report.md
               - Kube-audit: kpanda/user-guide/security/audit.md
               - Kube-hunter: kpanda/user-guide/security/hunter.md
+          - Permissions:
+              - Permission Brief: kpanda/user-guide/permissions/permission-brief.md
+              - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md          
           - Best Practices:
               - ETCD Backup and Restore: kpanda/best-practice/etcd-backup.md
               - Offline Upgrade Worker Cluster: kpanda/best-practice/update-offline-cluster.md
