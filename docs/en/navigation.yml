@@ -92,30 +92,30 @@ nav:
               - Helm Charts: kpanda/user-guide/helm/README.md
               - Helm Apps: kpanda/user-guide/helm/helm-app.md
               - Helm Registries: kpanda/user-guide/helm/helm-repo.md
-          - Network:
+          - Container Network:
               - Create Service: kpanda/user-guide/services-routes/create-services.md
               - Create Ingress: kpanda/user-guide/services-routes/create-ingress.md
               - Network Policies: kpanda/user-guide/services-routes/network-policy.md
           - CRDs: kpanda/user-guide/custom-resources/create.md
-          - Storage:
+          - Container Storage:
               - Volume Claim: kpanda/user-guide/storage/pvc.md
               - Volume: kpanda/user-guide/storage/pv.md
               - Storage Pool: kpanda/user-guide/storage/sc.md
               - Shared Storage Pool: kpanda/user-guide/storage/sc-share.md
-          - ConfigMaps and Secrets:
+          - ConfigMaps & Secrets:
               - Create ConfigMap: kpanda/user-guide/configmaps-secrets/create-configmap.md
               - Use ConfigMap: kpanda/user-guide/configmaps-secrets/use-configmap.md
               - Create Secret: kpanda/user-guide/configmaps-secrets/create-secret.md
               - Use Secret: kpanda/user-guide/configmaps-secrets/use-secret.md
-          - Cluster Operation & Maintenance:
+          - Operation & Maintenance:
               - Recent Operations: kpanda/user-guide/clusterops/latest-operations.md
               - Upgrade Cluster: kpanda/user-guide/clusters/upgrade-cluster.md
               - Cluster Settings: kpanda/user-guide/clusterops/cluster-settings.md
           - Cluster Inspection:
               - Create Inspection Settings: kpanda/user-guide/inspect/config.md
               - Start Inspection: kpanda/user-guide/inspect/inspect.md
-              - Checkt Inspection Reports: kpanda/user-guide/inspect/report.md          
-          - Backup and Restore:
+              - Check Inspection Reports: kpanda/user-guide/inspect/report.md          
+          - Backup Recovery:
               - ETCD Backup: kpanda/user-guide/backup/etcd-backup.md
               - Install Velero: kpanda/user-guide/backup/install-velero.md
               - Back up Deployment: kpanda/user-guide/backup/deployment.md
