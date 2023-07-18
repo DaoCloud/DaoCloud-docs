@@ -1,6 +1,6 @@
 # 在线安装微服务引擎
 
-如需安装微服务引擎，推荐通过 [DCE 5.0 商业版](../../install/commercial/start-install.md) 的安装包进行安装；通过商业版可以一次性同时安装 DCE 的所有模块。
+如需安装微服务引擎（DaoCloud Microservice Engine, DME），推荐通过 [DCE 5.0 商业版](../../install/commercial/start-install.md) 的安装包进行安装；通过商业版可以一次性同时安装 DCE 的所有模块。
 
 本教程旨在补充需要手工 **单独在线安装** 微服务引擎模块的场景。下文出现的 `skoala` 是微服务引擎的内部开发代号，代指微服务引擎。
 
