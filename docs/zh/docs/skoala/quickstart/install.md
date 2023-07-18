@@ -1,6 +1,6 @@
 # 在线安装微服务引擎
 
-如需安装微服务引擎，推荐通过 [DCE 5.0 商业版](../../install/commercial/start-install.md) 的安装包进行安装；通过商业版可以一次性同时安装 DCE 的所有模块。
+如需安装微服务引擎（DaoCloud Microservice Engine, DME），推荐通过 [DCE 5.0 商业版](../../install/commercial/start-install.md) 的安装包进行安装；通过商业版可以一次性同时安装 DCE 的所有模块。
 
 本教程旨在补充需要手工 **单独在线安装** 微服务引擎模块的场景。下文出现的 `skoala` 是微服务引擎的内部开发代号，代指微服务引擎。
 
@@ -179,7 +179,7 @@ mcamel-common-mysql-cluster-mysql             2/2     7d23h
 
 - `Skoala` 是 DME 的控制端的服务，
     - 安装完成后，可以在 DCE 5.0 平台看到微服务引擎的入口
-    - 包含 3 个组件 ui、hive、sesame
+    - 包含 3 个组件 skoala-ui、hive、sesame
     - 需要安装在全局管理集群
 - Skoala-init 是 DME 所有的组件 Operator
     - 仅安装到工作集群即可
@@ -222,24 +222,12 @@ skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for Skoala 
 
 ```bash
 ~ helm upgrade --install skoala --create-namespace -n skoala-system --cleanup-on-fail \
-    --set ui.image.tag=v0.9.0 \
-    --set sweet.enable=true \
-    --set hive.configMap.data.database.host=mcamel-common-mysql-cluster-mysql-master.mcamel-system.svc.cluster.local \
-    --set hive.configMap.data.database.port=3306 \
-    --set hive.configMap.data.database.user=root \
-    --set hive.configMap.data.database.password=xxxxxxxx \
-    --set hive.configMap.data.database.database=skoala \
-    skoala-release/skoala \
-    --version 0.13.0
+    --set ui.image.tag=v0.17.0 \
+    --set hive.configMap.database[0].driver="mysql" \
+    --set hive.configMap.database[0].dsn="skoala:xxx@tcp(mcamel-common-mysql-cluster-mysql-master.mcamel-system.svc.cluster.local:3306)/skoala?charset=utf8&parseTime=true&loc=Local&timeout=10s" \
+    skoala-release/skoala \ 
+    --version 0.24.2
 ```
-
-> 自定义并初始化数据库参数；需要将数据库信息做配置添加进去
-> --set sweet.enable=true \
-> --set hive.configMap.data.database.host= \
-> --set hive.configMap.data.database.port= \
-> --set hive.configMap.data.database.user= \
-> --set hive.configMap.data.database.password= \
-> --set hive.configMap.data.database.database= \
 
 查看 Pod 是否启动成功
 
@@ -248,7 +236,7 @@ skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for Skoala 
 NAME                                   READY   STATUS    RESTARTS        AGE
 hive-8548cd9b59-948j2                  2/2     Running   2 (3h48m ago)   3h48m
 sesame-5955c878c6-jz8cd                2/2     Running   0               3h48m
-ui-7c9f5b7b67-9rpzc                    2/2     Running   0               3h48m
+skoala-ui-7c9f5b7b67-9rpzc             2/2     Running   0               3h48m
 ```
 
 ### 安装 skoala-init 到工作集群
@@ -257,11 +245,11 @@ ui-7c9f5b7b67-9rpzc                    2/2     Running   0               3h48m
 
 ```bash
 ~  helm search repo skoala-release/skoala-init --versions
-NAME                        CHART VERSION   APP VERSION DESCRIPTION
-skoala-release/skoala-init  0.13.0          0.13.0      A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.2          0.12.2      A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.1          0.12.1      A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for Skoala init, it includes Skoal...
+NAME                      	CHART VERSION	APP VERSION	DESCRIPTION
+skoala-release/skoala-init	0.24.2       	0.24.2     	A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.24.1       	0.24.1     	A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.24.0       	0.24.0     	A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.23.0       	0.23.0     	A Helm Chart for Skoala init, it includes Skoal...
 ......
 ```
 
@@ -270,7 +258,7 @@ skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for Skoala 
 ```bash
 ~ helm upgrade --install skoala-init --create-namespace -n skoala-system --cleanup-on-fail \
     skoala-release/skoala-init \
-    --version 0.13.0
+    --version 0.24.2
 ```
 
 除了通过终端安装，也可以在 `容器管理`->`Helm 应用` 内找到 `skoala-init` 进行安装。
