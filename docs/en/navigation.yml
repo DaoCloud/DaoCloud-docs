@@ -111,13 +111,14 @@ nav:
               - Recent Operations: kpanda/user-guide/clusterops/latest-operations.md
               - Upgrade Cluster: kpanda/user-guide/clusters/upgrade-cluster.md
               - Cluster Settings: kpanda/user-guide/clusterops/cluster-settings.md
+          - Cluster Inspection:
+              - Create Inspection Settings: kpanda/user-guide/inspect/config.md
+              - Start Inspection: kpanda/user-guide/inspect/inspect.md
+              - Checkt Inspection Reports: kpanda/user-guide/inspect/report.md          
           - Backup and Restore:
               - ETCD Backup: kpanda/user-guide/backup/etcd-backup.md
               - Install Velero: kpanda/user-guide/backup/install-velero.md
               - Back up Deployment: kpanda/user-guide/backup/deployment.md
-          - Permissions:
-              - Permission Brief: kpanda/user-guide/permissions/permission-brief.md
-              - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md
           - Security Management:
               - Scan Types: kpanda/user-guide/security/intro.md
               - CIS:
@@ -126,6 +127,9 @@ nav:
                   - Scan Report: kpanda/user-guide/security/cis/report.md
               - Kube-audit: kpanda/user-guide/security/audit.md
               - Kube-hunter: kpanda/user-guide/security/hunter.md
+          - Permissions:
+              - Permission Brief: kpanda/user-guide/permissions/permission-brief.md
+              - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md          
           - Best Practices:
               - ETCD Backup and Restore: kpanda/best-practice/etcd-backup.md
               - Offline Upgrade Worker Cluster: kpanda/best-practice/update-offline-cluster.md
