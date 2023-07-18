@@ -23,7 +23,9 @@ Webhook 的工作原理如下：
 - 电子商务平台中，当订单状态发生变化时，向物流系统发送更新通知。
 - 聊天机器人平台中，当接收到用户消息时，通过 Webhook 将消息推送到目标服务器进行处理。
 
-在 DCE 5.0 的操作步骤如下。
+## 配置步骤
+
+DCE 5.0 图形化配置 Webhook 的操作步骤如下：
 
 1. 先接入一个客户系统，即完成 [OEM IN](./oem-in.md) 的操作。
 
@@ -54,3 +56,32 @@ Webhook 的工作原理如下：
 1. 用户创建成功，可以看到企业微信群收到了一条消息。
 
     ![message](./images/webh06.png)
+
+## 高级配置示例
+
+**系统默认的消息体**
+
+DCE 5.0 预先定义了一些变量，您可以根据自己情况在消息体中使用这些变量。
+
+```json
+{
+  "id": "{{$$.ID$$}}",
+  "email": "{{$$.Email$$}}",
+  "username": "{{$$.Name$$}}",
+  "last_name": "{{$$.LastName$$}}",
+  "first_name": "{{$$.FirstName$$}}",
+  "created_at": "{{$$.CreatedAt$$}}",
+  "enabled": "{{$$.Enabled$$}}"
+}
+```
+
+**企业微信群机器人的 Message Body**
+
+```json
+{
+    "msgtype": "text",
+    "text": {
+      "content": "{{$$.Name$$}} hello world"
+    }
+}
+```
