@@ -6,21 +6,21 @@
 
 - x86_64 架构
 
-    Ubuntu 16.04 LTS (Xenial Xerus)、Ubuntu 18.04 LTS (Bionic Beaver) 、CentOS 7.x
+    Ubuntu LTS (Xenial Xerus)、Ubuntu LTS (Bionic Beaver) 、CentOS、EulerOS、RHEL、银河麒麟、中兴新支点、中标麒麟、openEuler
 
 - armv7i（arm32）架构
 
-    Raspbian GNU/Linux 9 (stretch)
+    Raspbian GNU/Linux (stretch)
 
 - aarch64（arm64）架构
 
-    Ubuntu 18.04.2 LTS (Bionic Beaver)
+    Ubuntu LTS (Bionic Beaver)、CentOS、EulerOS、openEuler
 
 ## 内存
 
-边缘软件常规开销约 700MB，具体视边缘管理压力适当增加。
+边缘软件常规开销约 150MB，具体视边缘管理压力适当增加。
 
-为保证业务的正常运行，建议边缘节点的内存大于 1GB
+为保证业务的正常运行，建议边缘节点的内存大于 256MB。
 
 ## CPU
 
@@ -92,13 +92,3 @@ ubuntu：ldd --version
 ## 时间同步
 
 边缘节点时间需要与云端服务器时间保持一致，建议 UTC 标准时间。
-
-## Python
-
-版本：>=3.6
-
-查看方法：
-
-```sh
-python -V
-```
