@@ -36,7 +36,7 @@ class create,setpublic,push,deploy cluster;
 click create "https://docs.daocloud.io/en/kangaroo/hosted/"
 click setpublic "https://docs.daocloud.io/en/kangaroo/create-registry/"
 click push "https://docs.daocloud.io/en/kangaroo/quickstart/push/"
-click deploy "https://docs.daocloud.io/kpanda/user-guide/workloads/create-deployment/"
+click deploy "https://docs.daocloud.io/en/kpanda/user-guide/workloads/create-deployment/"
 ```
 ## Sharing Private Images
 
@@ -75,7 +75,7 @@ click create "https://docs.daocloud.io/en/kangaroo/hosted/"
 click setpublic "https://docs.daocloud.io/en/kangaroo/create-registry/"
 click push "https://docs.daocloud.io/en/kangaroo/quickstart/push/"
 click bind "https://docs.daocloud.io/en/kangaroo/bind-to-ws/"
-click deploy "https://docs.daocloud.io/kpanda/user-guide/workloads/create-deployment/"
+click deploy "https://docs.daocloud.io/en/kpanda/user-guide/workloads/create-deployment/"
 ```
 
 !!! tip

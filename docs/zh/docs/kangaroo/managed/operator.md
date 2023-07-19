@@ -8,7 +8,7 @@ hide:
 托管 `Harbor` 使用的是 `Harbor Operator` 技术来进行 `Harbor` 创建、升级、删除等全生命周期管理。
 在创建托管 `Harbor` 之前，需要先在容器管理中安装 `Harbor Operator`，版本要求最低 1.4.0。
 
-> Tips: Harbor Operator 依赖Cert Manager，所以需要先安装Cert Manager成功。
+> 提示：Harbor Operator 依赖 Cert Manager，所以需要先安装好 Cert Manager。
 
 1. 如果在创建 Harbor 实例时，出现以下异常提示，请点击`前往安装`。
 
@@ -30,10 +30,11 @@ hide:
 
     ![安装](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/operator04.png)
 
+## 参数值
 
-## Values
-`Harbor Operator` 在安装过程中有较多参数可以填写和控制，具体参数请参考如下表格内容,:
-> 其中`minio-operator.enabled`和`postgres-operator.enabled`和`redis-operator.enabled`只能为`false`。
+`Harbor Operator` 在安装过程中有较多参数可以填写和控制，具体参数请参考如下表格内容：
+
+> 其中 `minio-operator.enabled`、`postgres-operator.enabled` 和 `redis-operator.enabled` 只能为 `false`。
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
