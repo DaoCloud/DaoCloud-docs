@@ -62,7 +62,7 @@
     执行如下命令，使用 `ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.4.8` 镜像生成离线包。
 
     更多关于 `ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.4.8` 镜像的信息，
-    请前往 [kubean](https://github.com/kubean-io/kubean/pkgs/container/kubean-operator)。
+    请前往 [kubean](https://github.com/orgs/kubean-io/packages)。
 
     ```bash
     docker run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.4.8
