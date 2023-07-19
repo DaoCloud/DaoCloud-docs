@@ -1,6 +1,6 @@
 ---
-  hide:
-    - toc
+hide:
+  - toc
 ---
 
 # Check Inspection Reports
