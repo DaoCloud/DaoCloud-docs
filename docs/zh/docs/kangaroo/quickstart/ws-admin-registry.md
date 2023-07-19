@@ -35,6 +35,6 @@ click deploy "https://docs.daocloud.io/kpanda/user-guide/workloads/create-deploy
 
 预期结果：在该工作空间下的命名空间部署应用时能够通过镜像选择器，选择该镜像空间下的镜像进行部署应用。
 
-![选择镜像](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/wsadmin01.png)
+![按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/wsadmin01.png)
 
 ![镜像选择](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/wsadmin02.png)
