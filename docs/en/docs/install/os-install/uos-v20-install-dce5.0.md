@@ -56,7 +56,7 @@ This page will introduce how to deploy DCE 5.0 on UOS V20(1020a) operating syste
 
 5. Download the addon offline package, you can download the latest version in [Download Center](../../download/dce5.md) (optional)
 
-6. Set [cluster configuration file clusterConfig.yaml](../commercial/cluster-config.md), which can be obtained under the offline package `offline/sample` and modified as needed.
+6. Set [clusterConfig.yaml](../commercial/cluster-config.md), which can be obtained under the offline package `offline/sample` and modified as needed.
     The reference configuration is:
 
     ```yaml

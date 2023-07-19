@@ -42,7 +42,6 @@ dce5-installer import-artifact --iso-path=/home/iso/TencentOS-Server-3.1-TK4-x86
 
 # 采用 external 外接模式部署火种集群时，我们需要指定 clusterConfig.yml 配置文件
 dce5-installer import-artifact -c clusterConfig.yml --iso-path=/home/iso/TencentOS-Server-3.1-TK4-x86_64-minimal-2209.3.iso
-
 ```
 
 ### 导入 Kubean 提供的 osPackage 离线包
@@ -55,7 +54,6 @@ dce5-installer import-artifact --os-pkgs-path=/home/os-pkgs/os-pkgs-tencent31-v0
 
 # 采用 external 外接模式部署火种集群时，我们需要指定 clusterConfig.yml 配置文件
 dce5-installer import-artifact -c clusterConfig.yml --os-pkgs-path=/home/os-pkgs/os-pkgs-tencent31-v0.6.2.tar.gz
-
 ```
 
 ### 导入安装器离线镜像包 Offline 目录内容
@@ -66,7 +64,6 @@ dce5-installer import-artifact --offline-path=/home/offline/
 
 # 采用 external 外接模式部署火种集群时，我们需要指定 clusterConfig.yml 配置文件
 dce5-installer import-artifact -c clusterConfig.yml --offline-path=/home/offline/
-
 ```
 
 ### 同时指定导入多中离线资源
@@ -83,5 +80,4 @@ dce5-installer import-artifact -c clusterConfig.yml \
       --offline-path=/home/offline/ \
       --os-pkgs-path=/home/os-pkgs/os-pkgs-tencent31-v0.6.2.tar.gz \
       --iso-path=/home/iso/TencentOS-Server-3.1-TK4-x86_64-minimal-2209.3.iso
-
 ```

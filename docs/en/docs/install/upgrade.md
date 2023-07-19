@@ -1,8 +1,8 @@
-# Upgrade DCE 5.0 Submodules
+# Upgrade DCE 5.0 Modules
 
-DCE 5.0 consists of more than ten sub-modules, such as container management, global management, observability, etc. Each sub-module can be independently upgraded.
+DCE 5.0 consists of more than ten modules, such as container management, global management, observability, etc.
 
-This guide will introduce how to use `dce5-installer` package to upgrade any of these submodules offline.
+This guide will introduce how to use `dce5-installer` package to upgrade these submodules offline in batch.
 
 ## Prerequisites
 
@@ -106,9 +106,11 @@ This section demonstrates how to upgrade a submodule from v0.5.0 to v0.6.0.
 
     Upgrade parameters:
 
-    - `install-app` or `cluster-create`: means the mode used when you installed DCE 5.0. If the original submodules were installed with `cluster-create`, also use this command when upgrading
-    - `--upgrade` can be abbreviated as `-u`.
-    - After v0.7.0, you can only use `--upgrade gproduct`, instead of `--upgrade 4,5,gproduct`
+    - `install-app` or `cluster-create` represents the installation mode type for installing DCE 5.0.
+      If the initial environment was installed using `cluster-create`, then this command should also be used for upgrades.
+    - `--upgrade` can be abbreviated as `-u` and currently only supports upgrading the product modules of DCE 5.0.
+    - To upgrade the product modules of DCE 5.0 from v0.6.0, you need to run `--upgrade 4,5,gproduct`.
+      From version v0.7.0 onwards, you only need to run `--upgrade gproduct`.
 
     When you succeeded, you will see:
 

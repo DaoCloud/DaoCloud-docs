@@ -68,3 +68,15 @@ chmod +x install_prerequisite.sh
 # start install
 bash install_prerequisite.sh online full
 ```
+
+## External Component Preparation
+
+If you need to use existing components from the customer, you can refer to the following documents for preparation:
+
+- [Using External Service to Store Binary Resources](external/external-binary.md)
+
+- [Using External Image and Chart Repositories to Store Images and Chart Packages](external/external-imageandchart.md)
+
+- [Using External Middleware Services](external/external-middlewares.md)
+
+- [Using External Service to Store OS Repo Resources](external/external-os.md)
