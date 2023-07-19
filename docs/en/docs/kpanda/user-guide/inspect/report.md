@@ -1,4 +1,9 @@
-# Viewing Inspection Report
+---
+hide:
+  - toc
+---
+
+# Check Inspection Reports
 
 After the [inspection execution](inspect.md) is completed, you can view the inspection records and detailed inspection reports.
 
@@ -7,7 +12,7 @@ After the [inspection execution](inspect.md) is completed, you can view the insp
 - [Create an inspection configuration](config.md).
 - Perform at least one inspection [execution](inspect.md).
 
-## Procedure
+## Steps
 
 1. Go to the Cluster Inspection page and click on the name of the target inspection cluster.
 

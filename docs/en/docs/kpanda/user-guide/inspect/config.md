@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Creating Inspection Configuration
 
 DCE 5.0 Container Management module provides cluster inspection functionality, which supports inspection at the cluster, node, and container group levels.
