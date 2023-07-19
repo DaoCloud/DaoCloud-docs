@@ -27,7 +27,7 @@ This page describes how to install DCE 5.0 on OCP.
      tar -xvf offline-v0.6.1-amd64.tar
      ```
 
-3. Set [cluster configuration file clusterConfig.yaml](../commercial/cluster-config.md), which can be obtained under the offline package `offline/sample` and modified as needed.
+3. Set [clusterConfig.yaml](../commercial/cluster-config.md), which can be obtained under the offline package `offline/sample` and modified as needed.
 
      The reference configuration is:
 

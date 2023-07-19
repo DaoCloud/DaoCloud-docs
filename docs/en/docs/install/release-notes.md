@@ -13,10 +13,11 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 #### New Features
 
-- **Added**: Added support for configuring the exposed seed kind address and port in clusterConfig.yaml.
-- **Added**: Added a pre-check in the installer to verify if lvm2 is installed on each node when enabling eyebrow storage.
-- **Added**: Upgraded the default built-in k8s version to v1.26.5 in the installer.
-- **Added**: Added support for specifying the local file mount path for the seed kind in clusterConfig.yaml.
+- **Added**: The `istio-ingressgateway` now supports high availability mode. When upgrading from v0.8.x or earlier to v0.9.0, the following command must be executed: `./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
+- **Added**: Support configuring the exposed bootstrapping kind address and port in the clusterConfig.yaml file.
+- **Added**: The installer now performs a pre-check on each node to verify if lvm2 is installed when using eyebrow storage.
+- **Added**: The installer includes an embedded default upgrade of the k8s version to v1.26.5.
+- **Added**: Support specifying the local file mount path for the bootstrapping kind in the clusterConfig.yaml file.
 - **Added**: Integrated ISO image file import script into the installer binary.
 
 #### Improvements
@@ -25,7 +26,7 @@ This page lists the Release Notes of the installer, so that you can understand t
 - **Improved**: Optimized logic and functionality of the `import-artifact` command.
 - **Improved**: Made `isoPath` and `osPackagePath` optional fields in clusterConfig.yaml during the upgrade process.
 - **Improved**: Enhanced temporary file cleanup mechanism in the installer.
-- **Improved**: Enhanced reuse functionality of the seed node.
+- **Improved**: Enhanced reuse functionality of the bootstrapping node.
 
 #### Fixes
 
