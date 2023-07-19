@@ -6,21 +6,21 @@ The edge nodes need to meet the specifications in the table below.
 
 - x86_64 architecture
 
-    Ubuntu 16.04 LTS (Xenial Xerus), Ubuntu 18.04 LTS (Bionic Beaver), CentOS 7.x
+    Ubuntu LTS (Xenial Xerus), Ubuntu LTS (Bionic Beaver), CentOS, RHEL, Kylin, NewStart, NeoKylin, and EulerOS
 
 - armv7i (arm32) architecture
 
-    Raspbian GNU/Linux 9 (stretch)
+    Raspbian GNU/Linux (stretch)
 
 - aarch64 (arm64) architecture
 
-    Ubuntu 18.04.2 LTS (Bionic Beaver)
+    Ubuntu LTS (Bionic Beaver), CentOS, and EulerOS
 
 ## Memory
 
-The general overhead of edge software is about 700MB, and it may increase appropriately depending on the pressure of edge management.
+The general overhead of edge software is about 150MB, and it may increase appropriately depending on the pressure of edge management.
 
-To ensure the normal operation of business, it is recommended that the memory of edge nodes should be more than 1GB.
+To ensure the normal operation of business, it is recommended that the memory of edge nodes should be more than 256MB.
 
 ## CPU
 
@@ -92,13 +92,3 @@ The edge nodes need to use the following ports, please make sure these ports can
 ## Time Synchronization
 
 The time of the edge node needs to be consistent with the time of the cloud server, and UTC standard time is recommended.
-
-## Python
-
-Version: >=3.6
-
-To check the version:
-
-```sh
-python -V
-```
