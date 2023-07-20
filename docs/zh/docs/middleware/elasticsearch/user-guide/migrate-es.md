@@ -51,7 +51,7 @@
 
 使用如下命令查找演示应用 `esdata-1` 对应的 `PV` 磁盘，明确需要迁移哪个 `PV`。
 
-1. 查看演示应用绑定的 PVC:
+1. 查看演示应用绑定的 PVC
 
     ```bash
     [root@prod-master1 ~]# kubectl -n mcamel-system get pod mcamel-common-es-cluster-masters-es-data-1 -ojson | jq .spec.volumes[0]
@@ -63,14 +63,15 @@
     }
     ```
 
-2. 查看该 PVC 绑定的 PV:
+2. 查看该 PVC 绑定的 PV
 
     ```
     [root@prod-master1 ~]# kubectl -n mcamel-system get pvc elasticsearch-data-mcamel-common-es-cluster-masters-es-data-1
     NAME                                                            STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                 AGE
     elasticsearch-data-mcamel-common-es-cluster-masters-es-data-1   Bound    pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c   35Gi       RWO            hwameistor-storage-lvm-hdd   17h
     ```
-3. 确认该 PV 绑定的应用是否为需要迁移的应用，即此文中的掩饰应用 `esdata-1`：
+
+3. 确认该 PV 绑定的应用是否为需要迁移的应用，即此文中的演示应用 `esdata-1`
 
     [root@prod-master1 ~]# kubectl -n mcamel-system get pv pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c
     NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                                                         STORAGECLASS                 REASON   AGE
@@ -95,7 +96,7 @@
     rfr-mcamel-common-redis-cluster            3/3     20h
     ```
 
-2. 停止运行 ES operator:
+2. 停止运行 ES operator
 
     ```
     [root@prod-master1 ~]# kubectl -n mcamel-system scale --replicas=0 sts elastic-operator
@@ -108,7 +109,7 @@
     # --- wait about 3 mins ----
     ```
 
-4. 确认 ES 已经停止运行：
+4. 确认 ES 已经停止运行
 
     ```
     [root@prod-master1 ~]# kubectl -n mcamel-system get sts
@@ -227,7 +228,7 @@ java.lang.IllegalStateException: failed to obtain node locks, tried [[/usr/share
 
 ### 解决故障
 
-1. 运行下命令修改 ES 的 CR：
+1. 运行下命令修改 ES 的 CR
 
     ```bash
     kubectl -n mcamel-system edit elasticsearches.elasticsearch.k8s.elastic.co mcamel-common-es-cluster-masters
