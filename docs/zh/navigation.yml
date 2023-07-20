@@ -630,7 +630,7 @@ nav:
               - 介绍: network/modules/submariner/what.md
               - 安装: network/modules/submariner/install.md
               - 使用说明: network/modules/submariner/usage.md
-      - 中间件数据服务:
+      - 数据服务:
           - 介绍:
               - 什么是数据服务: middleware/what.md
               - 版本适配: middleware/compatibility.md
@@ -647,16 +647,16 @@ nav:
                   - 适用场景: middleware/elasticsearch/intro/scenarios.md
                   - 基本概念: middleware/elasticsearch/intro/concepts.md
                   - Release Notes: middleware/elasticsearch/release-notes.md
+              - ES 集群容量规划: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
               - 快速入门:
-                  - 创建 Elasticsearch 实例: middleware/elasticsearch/user-guide/create.md
-                  - 更新 Elasticsearch 实例: middleware/elasticsearch/user-guide/edit.md
-                  - 删除 Elasticsearch 实例: middleware/elasticsearch/user-guide/delete.md
-                  - Elasticsearch 集群容量规划: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
+                  - 创建 ES 实例: middleware/elasticsearch/user-guide/create.md
+                  - 更新 ES 实例: middleware/elasticsearch/user-guide/edit.md
+                  - 删除 ES 实例: middleware/elasticsearch/user-guide/delete.md
                   - 实例概览: middleware/elasticsearch/user-guide/basic.md
                   - 实例监控: middleware/elasticsearch/user-guide/monitor.md
-                  - 查看 Elasticsearch 日志: middleware/elasticsearch/user-guide/logs.md
-                  - 基于 Hwameistor 的 Elasticsearch 迁移实践: middleware/elasticsearch/user-guide/migrate-es.md
-                  - Elasticsearch 排障手册: middleware/elasticsearch/faq/common-question-es.md
+                  - 查看 ES 日志: middleware/elasticsearch/user-guide/logs.md
+              - 基于 Hwameistor 的 ES 迁移实践: middleware/elasticsearch/user-guide/migrate-es.md
+              - ES 故障排查: middleware/elasticsearch/faq/common-question-es.md
           - Kafka 消息队列:
               - 介绍:
                   - 什么是 Kafka: middleware/kafka/intro/what.md
@@ -721,7 +721,7 @@ nav:
                   - 数据迁移: middleware/rabbitmq/user-guide/migrate.md
                   - 实例监控: middleware/rabbitmq/user-guide/insight.md
                   - 查看 RabbitMQ 日志: middleware/rabbitmq/user-guide/logs.md
-                  - 为 RabbitMQ 添加自定义插件: middleware/rabbitmq/faq/add-plugin.md
+              - 为 RabbitMQ 添加自定义插件: middleware/rabbitmq/faq/add-plugin.md
           - Redis 缓存服务:
               - 介绍:
                   - 什么是 Redis: middleware/redis/intro/what.md
