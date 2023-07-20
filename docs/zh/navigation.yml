@@ -655,7 +655,7 @@ nav:
                   - 实例概览: middleware/elasticsearch/user-guide/basic.md
                   - 实例监控: middleware/elasticsearch/user-guide/monitor.md
                   - 查看 ES 日志: middleware/elasticsearch/user-guide/logs.md
-              - 基于 Hwameistor 的 ES 迁移实践: middleware/elasticsearch/user-guide/migrate-es.md
+              - 跨节点迁移 ES: middleware/elasticsearch/user-guide/migrate-es.md
               - ES 故障排查: middleware/elasticsearch/faq/common-question-es.md
           - Kafka 消息队列:
               - 介绍:
