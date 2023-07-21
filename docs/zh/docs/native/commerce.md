@@ -211,6 +211,10 @@
 
     更新内容：集群再平衡后可以配置最小节点数、为 EKS 用户增加使用存储优化节点进行自动缩放的支持、节点模板支持备选（Fallback）功能、增加对 EKS 和 GKE 集群的 ARM 节点支持。
 
+- [Chainguard 云原生供应链安全平台 Chainguard Enforce 产品更新](https://www.chainguard.dev/unchained/chainguard-announces-availability-of-new-sbom-vulnerability-analysis-and-software-signing-capabilities-in-enforce)
+
+    更新内容：支持对容器镜像自动生成和摄取 SBOM、支持每日对云原生工作负载进行漏洞扫描并生成报告、新增用于过滤和搜索整个环境中的 SBOM 和漏洞的中央控制台、支持通过私人管理的签名基础架构提供无密钥签名。
+
 - [Chainguard 云原生供应链安全平台  Chainguard Enforce 更新](https://www.chainguard.dev/unchained/chainguard-enforce-announces-new-software-signing-capability)
 
     更新内容：提供基于 Sigstore 的无密钥签名模式、增加一个开箱即用的安全策略库、支持用户通过其 Gitlab 账号登录、支持 CloudEvents、支持细粒度的 Kubernetes 工作负载对象的策略、增强大规模集群用户的稳定性。
@@ -371,6 +375,10 @@
 
 ### H, I
 
+- [Harness 软件交付平台 Harness Platform 7 月产品更新](https://www.harness.io/blog/july-2023-product-updates)
+
+    更新内容：支持在运行流水线时灵活切换分支、支持 HPA、支持针对蓝绿部署和金丝雀发布执行策略的 Pod 中断预算。
+
 - [Harness 推出全托管 GitOps-as-a-Service](https://harness.io/blog/generally-available-harness-gitops-as-a-service)
 
     Harness GitOps-as-a-Service 基于 Argo CD 构建，集成 OPA，支持审计跟踪，提供细粒度的 RBAC，支持不同部署的统一单点登录，支持声明式设置，提供集中的 GitOps 控制中心用于管理和查看多个环境中的部署情况，支持与已有的 Argo CD 实例集成。
@@ -378,6 +386,10 @@
 - [华为云发布分布式云原生产品——容器 CCE Turbo 和分布式云原生 UCS (Ubiquitous Cloud Native Service)](https://mp.weixin.qq.com/s/Bm_kFuyK3uLaSb4AvcYdmA)
 
     CCE Turbo 可通过计算、网络、调度全方位加速，实现极致弹性，如帮助客户以 3000 pod/min 的弹性轻松应对业务流量洪峰；UCS 提供跨云、跨地域的云原生应用管理，实现一致体验。
+
+- [火山引擎容器服务 VKE 第二季度产品更新](https://mp.weixin.qq.com/s/iGlKHiR8dSU35CFvitUcCg)
+
+    更新内容：支持 NodeLocal DNS 能力、支持 Kubernetes v1.24、新增 Prometheus 监控模块、支持 veLinux CentOS 兼容版镜像、新增 P2P 加速功能、支持 mGPU 多卡共享。
 
 - [火山引擎推出托管 Prometheus 服务 VMP](https://mp.weixin.qq.com/s/ft_aoz5Kyaurs3lFLQL6Jg)
 
@@ -516,6 +528,10 @@
     PerfectScale 是业界首个专门为提高 K8s 环境的持久性和成本效益而建立的持续优化方案。
     通过人工智能算法来评估使用模式和性能和成本指标，该平台提供了多集群、多云的可观测性，支持弹性和性能风险检测、资源浪费检测，
     支持问题优先级排序，提供 GitOps 友好的的补救措施建议，支持预测系统变化对环境的影响等。
+
+- [Portworx 云原生数据管理平台 Portworx Enterprise v3.0 发布](https://portworx.com/blog/portworx-enterprise-3-0-overview/)
+
+    更新内容：异步模式下的灾难恢复迁移时间缩短了 50%、新增用于蓝绿升级的许可证扩展、利用基于 NVMe 的存储为 AWS 用户提供低且一致的 I/O 延迟、可使用客户管理的密钥为 Oracle 云以及 AWS、GCP 和 Azure 的云驱动器进行加密、FlashArray 云驱动器新增 CSI 拓扑结构。
 
 - [Portworx Enterprise 2.12 云原生数据管理平台发布](https://docs.portworx.com/release-notes/portworx/#2-12-0)
 
