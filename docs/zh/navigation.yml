@@ -635,9 +635,9 @@ nav:
               - 什么是数据服务: middleware/what.md
               - 版本适配: middleware/compatibility.md
               - 权限设计说明: middleware/permission.md
-              - 自定义角色权限说明: middleware/customize-permission.md
-              - 首次进入: middleware/first-visit.md
-          - 通用功能:
+          - 通用配置:
+              - 首次进入: middleware/common/first-visit.md              
+              - 自定义角色权限说明: middleware/common/customize-permission.md
               - 工作负载反亲和性: middleware/common/workload-antiaffinity.md
           - Elasticsearch 搜索服务:
               - 介绍:
