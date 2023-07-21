@@ -215,6 +215,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      What's new: The minimum number of nodes can be configured after cluster rebalancing, support for autoscaling with storage-optimized nodes for EKS users, support for fallback in node templates, and support for ARM nodes for EKS and GKE clusters.
 
+- [Chainguard Cloud Native Supply Chain Security Platform Chainguard Enforce Product Update](https://www.chainguard.dev/unchained/chainguard-announces-availability-of-new-sbom-vulnerability-analysis-and-software-signing-capabilities-in-enforce)
+
+    Updates: Support for automated SBOM generation and ingestion for container images, support for daily vulnerability scanning and reporting of cloud-native workloads, new centralized console for filtering and searching for SBOMs and vulnerabilities across the entire environment, and support for keyless signing via a privately managed signing infrastructure.
+
 - [Chainguard Enforce Cloud Native Supply Chain Security Platform Update](https://www.chainguard.dev/unchained/chainguard-enforce-announces-new-software-signing-capability)
 
      Updates: Provide Sigstore-based keyless signature mode, add an out-of-the-box security policy library, support users to log in through their Gitlab accounts, support CloudEvents, support policies for fine-grained Kubernetes workload objects, and enhance large-scale clusters User stability.
@@ -375,6 +379,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### H, I
 
+
+- [Harness Software Delivery Platform Harness Platform July Product Update](https://www.harness.io/blog/july-2023-product-updates)
+
+    Updates: Support for flexible branch switching while running pipelines, support for HPA, support for Pod Interruption Budgeting for Blue-Green Deployments and Canary Release Enforcement Policies.
+
 - [Harness Launches Fully Managed Gitops-as-a-Service](https://harness.io/blog/generally-available-harness-gitops-as-a-service)
 
      Harness GitOps-as-a-Service builds on Argo CD, integrates OPA, supports audit trails, provides fine-grained RBAC, supports unified single sign-on for different deployments, supports declarative settings, and provides a centralized GitOps control center for management and View deployments in multiple environments and support integration with existing Argo CD instances.
@@ -388,6 +397,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
     Updates: New FQDN Ingress network policy, users can not hard-code CIDR in the network policy; Support SRv6 L3VPN beta, users can cross-connect Kubernetes worker nodes with other services and Kubernetes clusters via SRv6; New Phantom Service, the LoadBalancer IP address in Service The Phantom Service is added, and the LoadBalancer IP address in the Service can be accessed from all clusters in Cluster Mesh; Cluster Mesh supports overlapping PodCIDR; and supports enabling both endpoint routing and BPF host routing.
 
 ### J, K
+
+- [Jibudata's multi-cloud data backup and recovery products YS1000 v3.3 & v3.4 released](https://mp.weixin.qq.com/s/lW4ZgiX3aZ39OgAiqLHIlQ)
+
+    Updates: Multi-user self-service based on tenant segregation for private cloud, third-party login support, migration task hooks, migration policy support, image pre-pulling to shorten disaster recovery time, support for external mysql database during installation, set taint-tolerant nodes during installation, support for adding logical database backups to backup plans, support for selecting pvc resources but not including them in backup templates, and support for selecting only pvc resources but not including pvc resources in backup templates. In the backup template, it supports selecting only the pvc resource but not the corresponding data volume.
 
 - [Jibudata multicloud data backup recovery product YS1000 v3.2 released](https://mp.weixin.qq.com/s/t64iDKWOQ_wUHRLvmGw8tQ)
 
@@ -502,6 +515,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
     PerfectScale is the industry's first continuous optimization solution built specifically to improve the persistence and cost effectiveness of K8s environments.
     Using artificial intelligence algorithms to evaluate usage patterns and performance and cost metrics, the platform provides multicluster, multicloud observability, support for elasticity and performance risk detection, resource waste detection, the
     supports problem prioritization, provides GitOps-friendly remediation recommendations, supports predicting the impact of system changes on the environment, and more.
+
+- [Portworx Enterprise v3.0, Portworx's cloud-native data management platform, released](https://portworx.com/blog/portworx-enterprise-3-0-overview/)
+
+    Updates: 50% reduction in disaster recovery migration time in asynchronous mode, new license extensions for blue-green upgrades, low and consistent I/O latency for AWS users with NVMe-based storage, ability to encrypt Oracle Cloud and cloud drives for AWS, GCP, and Azure with customer-managed keys, new CSI topology for FlashArray cloud drives. CSI topology added to FlashArray Cloud Drive.
 
 - [Portworx Enterprise 2.12 Cloud Native Data Management Platform Release](https://docs.portworx.com/release-notes/portworx/#2-12-0)
 
@@ -777,6 +794,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      TLS Protect for Kubernetes is part of Control Plane for Machine Identities, Venafi's platform for machine identity management.
      Helps security and platform teams manage cloud-native machine identities such as TLS, mTLS, and SPIFFE in multicloud and multicluster Kubernetes environments, enhancing the observability, control, and automation of machine identity management.
+
+- [Volcano Engine Container Service VKE Q2 Product Update](https://mp.weixin.qq.com/s/iGlKHiR8dSU35CFvitUcCg)
+
+    Updates: Support NodeLocal DNS capability, support Kubernetes v1.24, add Prometheus monitoring module, support veLinux CentOS-compatible version of mirrors, add P2P acceleration, support mGPU multi-card sharing.
 
 - [Volcano Engine Launches Managed Prometheus Service VMP](https://mp.weixin.qq.com/s/ft_aoz5Kyaurs3lFLQL6Jg)
 

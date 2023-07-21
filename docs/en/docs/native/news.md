@@ -6,6 +6,10 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 
 ### 2023-08
 
+- [8.11-8.12 SECon Global Software Engineering Innovation Summit will be held on August 11-12 in Shanghai](http://www.secon.com.cn/)
+  
+    SECon covers one main forum and fifteen vertical sub-forums, which invite frontline experts from Tencent, NetEase, Ali, Baidu, and major banks to deliver 60 in-depth technical presentations covering the following topics: cloud-native architecture, big data mainstream frameworks and practices, AIGC, platform engineering, Java innovation and practices, digital transformation, and financial-grade architecture.
+
 - [8.10 IDC China 2023 Open Source Peak Case Selection is officially launched (8.10 deadline)](https://mp.weixin.qq.com/s/wklB0eWIgQeQcXgmp_R3Bw)
   
     Open Source Peak Case Awards are divided into: "Open Source People", "Open Source Projects", "Open Source Communities", "Open Source Enterprises", "Open Source Technologies", "Open Source Projects", "Open Source Projects", "Open Source Communities", "Open Source Enterprises" and "Open Source Technology". "Open source technology innovation (commercial products)" five areas. The results will be announced on September 21, 2023 at the OSCAR Open Source Industry Conference.
@@ -35,6 +39,18 @@ This page lists the more popular news, events, activities, etc. in the cloud nat
 - [7.20 IstioCon 2023 Call for Proposals Open (7.20 deadline)](https://sessionize.com/istiocon-2023)
   
     IstioCon 2023 will be held in Shanghai from 9.25-9.26. Recommended topics include: case studies, new features, Istio configuration and project updates, etc. Presentation types include single presentations (30 minutes), dual presentations (30 minutes), and panel discussions (30 minutes). The summit supports both live and online presentations.
+
+- [7.20 2023 NJSD Global Software Conference & IAS National Internet Architecture Summit Call for Session Topics](https://mp.weixin.qq.com/s/RDXGL3ux4GQ1ysaIYVSuXQ)
+  
+    This year's NJSD conference content will be held in Nanjing on October 20-21, focusing on large model training and application development of generative AI, including the technical practices and changing software engineering therein.The IAS Summit will be held in Nanjing on November 25, with the topic of Platform Architecture Technology and Engineering Practices.
+
+- [7.18 "China DevOps Status Survey Report (2023)" officially released](https://mp.weixin.qq.com/s/mKKHYAmhpZdCG3xVNg02hA)
+  
+    The survey report shows that: 60% of domestic enterprises have reached DevOps maturity full-scale level, 60% of the interviewed enterprises have carried out pipeline construction, the defect escape rate of most of the projects focuses on the range of 2%~5.9%, and the enterprises practicing DevSecOps have exceeded 70% for the first time.
+
+- [7.16 2023 Trusted Cloud Conference - Cloud Native Technology and Practice Sub-forum will be held on 7.26 in Beijing](https://mp.weixin.qq.com/s/uDEjlAQ7v4Pm8h6_IFcm_g)
+  
+    2023 Trusted Cloud Conference will be held on July 25-26, 2023 at Beijing International Convention Center. This year's conference will feature "Cloud Native Technology and Practice Sub-forum", which will present the sharing of application modernization and construction methodology, release the survey results of 2023 China Cloud Native Middleware Users, and discuss the best path of cloud native technology practice.
 
 - [7.16 China's first Platform Engineering Summit will be held in Beijing on September 2, the call for presentations has been opened (7.16 deadline)](https://mp.weixin.qq.com/s/jnQXmVuv7wrIg4Tnxy9fIg)
   

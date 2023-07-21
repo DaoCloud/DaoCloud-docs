@@ -270,6 +270,10 @@
     碳排放计算优化器基于运行在 Kubernetes 平台上的应用的实际资源消耗，计算对应服务器功耗，进而计算出应用运行所产生的碳排放量。
     此外，还支持提供 Pod 资源配置、workload 副本数、HPA 参数配置等的优化建议，以及优化后的功耗和碳排放推算结果。
 
+- [CRI-O：CNCF 宣布容器运行时项目 CRI-O 毕业](https://mp.weixin.qq.com/s/p7ogT3pAtbj17qrDh7acHQ)
+
+    CRI-O 为 Kubelet 提供了一个安全、高效和稳定的容器运行时接口实现，用于在生产 Kubernetes 环境中编排 Open Container Initiative（OCI）容器。未来，CRI-O 计划改进上游文档、自动化发布过程、增加节点上的 Pod 密度等等。该项目还正在努力将某些部分移动到 Rust 语言。
+
 - [CRI-O 容器运行时 v1.26.0 发布（CNCF 项目）](https://github.com/cri-o/cri-o/releases/tag/v1.26.0)
 
     该版本主要新特性：移除对 CRI v1alpha2 的支持（支持 v1）、增加对 OTLP 追踪支持、为 OTel 追踪添加日志和 GRPC 错误代码支持、支持 Evented PLEG、增加 seccomp 通知器功能、对没有基础设施的容器增加检查点和恢复容器的支持、允许完全更新运行时配置、允许在重载配置时添加其他运行时以及改变默认运行时。
@@ -657,6 +661,10 @@
 
     该版本主要新特性：在 cpu 事件中增加 tracing span 数据、增加 Trace Profiling 的调试工具、支持 RocketMQ 协议。
 
+- [Knative 模糊测试审计结果公布](https://mp.weixin.qq.com/s/CeGpRJCwYkhrrfwgMR7AFw)
+
+    [Knative 模糊测试报告](https://github.com/knative/docs/blob/main/reports/ADA-knative-fuzzing-audit-22-23.pdf)中披露，此次模糊测试安全审计为 3 个 Knative 子项目编写了 29 个模糊测试器。这些模糊测试器发现了一个第三方依赖项中的问题，该问题目前已得到修复。
+
 - [Knative 基于 Kubernetes 的 serverless 架构方案 v1.8.0 发布（CNCF 项目）](https://github.com/knative/serving/releases/tag/knative-v1.8.0)
 
     该版本主要新特性：修改默认域、升级 HPA 到 v2 版本、允许设置 seccompProfile 以启用使用受限的安全配置文件、最低 k8s 支持版本升至 v1.23、调和超时时间提高到 30 秒、默认启用 EmptyDir 卷功能参数。
@@ -770,6 +778,10 @@
 - [KubeSkoop：由阿里云开源的 Kubernetes 网络监控工具](https://mp.weixin.qq.com/s/zbAcZCNT5vyzGvp7uTDB1w)
 
     [KubeSkoop](https://github.com/alibaba/kubeskoop) 支持功能包括：Pod 级别的网络监控，包括流量，应用层连接信息， socket 内存分配状态等；Pod 级别的网络异常状态的指标监控，例如 Pod 内进程对 socket 进行读写操作的等待时间超过 100ms 的次数等；Pod 级别的网络异常事件的现场，提供事件发生的详细信息的观测。
+
+- [KubeSphere 多租户容器平台 v3.4.0 发布（CNCF 项目）](https://github.com/kubesphere/kubesphere/releases/tag/v3.4.0)
+
+    版本特性：添加 golangci-lint 工作流用于节点检查、集成 opensearch v1/v2、为 rulegroup 添加 admission webhook、添加 alerting v2beta1 api、支持使用标签选择器过滤工作区角色、为缓存添加动态选项、添加 helm 执行器通用包、生成 CRD 支持多个版本、支持 gitlab 身份提供者、支持节点和工作负载范围的全局规则、支持支持可插拔的通知功能。
 
 - [KubeSphere v3.3.0 发布（CNCF 项目）](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.md)
 
@@ -1218,6 +1230,10 @@
 
     该版本主要新特性：支持一键导入 Kubernetes 集群中已存在的应用、支持直接通过 Jar、War 包或 Yaml 文件部署组件、支持创建 Job/CronJob 类型任务、支持扩展应用和组件支持的属性、支持 Dockerfile 使用私有镜像构建。
 
+- [Rook 云原生存储项目 v1.12.0 发布（CNCF 项目）](https://github.com/rook/rook/releases/tag/v1.12.0)
+
+    版本特性：支持 Kubernetes v1.22+、默认使用 Ceph CSI v3.9、支持 Ceph Reef（v18）、增加用于配置存储桶的 Ceph COSI 驱动程序（实验性）、节点丢失后自动恢复 RBD (RWO) 卷、引入 Multus 网络验证工具、通过放弃容器特权来改进安全性、支持 RGW 作为 CephNFS 后端（实验性）。
+
 - [Rook 云原生存储项目 v1.11.0 发布（CNCF 项目）](https://github.com/rook/rook/releases/tag/v1.11.0)
 
     版本特性：支持 K8s v1.21 及以上版本、Ceph-CSI v3.8 成为默认部署的版本、移除对机器中断预算（MachineDisruptionBudgets）的支持、对象存储桶的通知和主题功能升至稳定状态、支持在具有重叠 CIDR 的多个集群间进行数据镜像、Ceph exporter 成为 Ceph 性能计数器（performance counter）的指标来源。
@@ -1299,6 +1315,10 @@
 - [Telepresence K8s 本地开发工具 v2.10.0 发布（CNCF 项目）](https://www.getambassador.io/docs/telepresence/latest/release-notes#2.10.0)
 
     该版本主要新特性：流量管理器支持被团队模式和单用户模式、在 Helm Chart 中添加拉取镜像的 secret、OSS Helm chart 将被推送到 telepresence 专有仓库（原先为 datawire Helm 仓库）。
+
+- [Tetragon 安全可观测和运行时增强平台 v0.10.0 发布](https://github.com/cilium/tetragon/releases/tag/v0.10.0)
+
+    版本特性：支持在 configmap 更改时重新创建 daemonset Pod、添加用于跟踪策略指标的事件、Pod 标签过滤器支持跟踪策略、支持加载 Linux 安全模块 LSM 和跟踪程序、 启用 bpf 对象的并行构建、为事件添加速率限制、添加套接字跟踪、为文件监控添加策略。
 
 - [Tetragon 安全可观测和运行时增强平台 v0.9.0 发布](https://github.com/cilium/tetragon/releases/tag/v0.9.0)
 
