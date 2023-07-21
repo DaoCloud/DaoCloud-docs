@@ -37,32 +37,32 @@ import (
     processor "go.opentelemetry.io/otel/sdk/metric/processor/basic"
     selector "go.opentelemetry.io/otel/sdk/metric/selector/simple"
 )
-func (s *insightServer) initMeter() *otelPrometheus. Exporter {
+func (s *insightServer) initMeter() *otelPrometheus.Exporter {
     s.meter = global.Meter("xxx")
 
-    config := otelPrometheus. Config{
+    config := otelPrometheus.Config{
         DefaultHistogramBoundaries: []float64{1, 2, 5, 10, 20, 50},
-        Gatherer: prometheus. Default Gatherer,
-        Registry: prometheus. NewRegistry(),
-        Registerer: prometheus. DefaultRegisterer,
+        Gatherer:                   prometheus.DefaultGatherer,
+        Registry:                   prometheus.NewRegistry(),
+        Registerer:                 prometheus.DefaultRegisterer,
     }
 
-    c := controller. New(
-        processor. NewFactory(
+    c := controller.New(
+        processor.NewFactory(
             selector.NewWithHistogramDistribution(
                 histogram.WithExplicitBoundaries(config.DefaultHistogramBoundaries),
             ),
             aggregation.CumulativeTemporalitySelector(),
-            processor. WithMemory(true),
+            processor.WithMemory(true),
         ),
     )
 
-    exporter, err := otelPrometheus. New(config, c)
+    exporter, err := otelPrometheus.New(config, c)
     if err != nil {
         zap.S().Panicf("failed to initialize prometheus exporter %v", err)
     }
 
-    global. SetMeterProvider(exporter. MeterProvider())
+    global.SetMeterProvider(exporter.MeterProvider())
 
     http.HandleFunc("/metrics", exporter.ServeHTTP)
 
@@ -236,7 +236,8 @@ The recommended way to expose metrics is via [servicemonitor](https://github.com
 
 ### Create servicemonitor/podmonitor
 
-The added servicemonitor/podmonitor needs to be marked with `label: "operator.insight.io/managed-by": "insight"` to be recognized by the Operator:
+The added servicemonitor/podmonitor needs to be marked with `label: "operator.insight.io/managed-by": "insight"`
+to be recognized by the Operator:
 
 ```yaml
 apiVersion: monitoring.coreos.com/v1
