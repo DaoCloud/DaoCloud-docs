@@ -50,8 +50,6 @@ spec:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.37.0
   python:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.38b0
-  dotnet:
-    repository: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.6.0
   go:
     # Must set the default value manually for now.
     # See https://github.com/open-telemetry/opentelemetry-operator/issues/1756 for details.
@@ -95,8 +93,6 @@ spec:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.34.0
   python:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.33b0
-  dotnet:
-    repository: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.6.0
 EOF
 ```
 
@@ -223,7 +219,7 @@ Each service can add one of two types of annotations:
     1. Java application
 
         ```bash
-        instrumentation.opentelemetry.io/inject-java: "insight-system/insight-opentelemetry-autoinstrumentation"
+          instrumentation.opentelemetry.io/inject-java: "insight-system/insight-opentelemetry-autoinstrumentation"
         ```
 
     2. NodeJs application
@@ -241,8 +237,8 @@ Each service can add one of two types of annotations:
     4. Dotnet application
 
         ```bash
-       Not supported yet, community bug fixes...
-       ```
+        instrumentation.opentelemetry.io/inject-dotnet: "insight-system/insight-opentelemetry-autoinstrumentation"
+        ```
 
 ## Automatic injection example Demo
 
@@ -268,7 +264,7 @@ spec:
         instrumentation.opentelemetry.io/inject-java: "insight-system/insight-opentelemetry-autoinstrumentation"
     spec:
       containers:
-      -name: myapp
+      - name: myapp
         image: jaegertracing/vertx-create-span:operator-e2e-tests
         ports:
           - containerPort: 8080
@@ -323,7 +319,7 @@ spec:
       image: >-
         ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java
       command:
-        -cp
+        - cp
         - /javaagent.jar
         - /otel-auto-instrumentation/javaagent.jar
       resources: {}
@@ -337,7 +333,7 @@ spec:
       terminationMessagePolicy: File
       imagePullPolicy: Always
   containers:
-    -name: myapp
+    - name: myapp
       image: ghcr.io/pavolloffay/spring-petclinic:latest
       env:
         - name: OTEL_JAVAAGENT_DEBUG
@@ -347,7 +343,7 @@ spec:
         - name: SPLUNK_PROFILER_ENABLED
           value: 'false'
         - name: JAVA_TOOL_OPTIONS
-          value: '-javaagent:/otel-auto-instrumentation/javaagent.jar'
+          value: ' -javaagent:/otel-auto-instrumentation/javaagent.jar'
         - name: OTEL_TRACES_EXPORTER
           value: otlp
         - name: OTEL_EXPORTER_OTLP_ENDPOINT
@@ -379,9 +375,9 @@ spec:
               fieldPath: spec.nodeName
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: >-
-            k8s.container.name=myapp,k8s.deployment.name=my-deployment-with-sidecar,k8s.deployment.uid=8de6929d-dda0-436c-bca1-604e9ca7ea4e,k8s.namespace.name=default,k8s.node. name=$(OTEL_RESOURCE_ATTRIBUTES_NODE_NAME),k8s.pod.name=$(OTEL_RESOURCE_ATTRIBUTES_POD_NAME),k8s.pod.uid=$(OTEL_RESOURCE_ATTRIBUTES_POD_UID),k8s.replicaset.name=my-deployment-with-sidecar-565bd877pld,k8 =190d5f6e-ba7f-4794-b2e6-390b5879a6c4
+            k8s.container.name=myapp,k8s.deployment.name=my-deployment-with-sidecar,k8s.deployment.uid=8de6929d-dda0-436c-bca1-604e9ca7ea4e,k8s.namespace.name=default,k8s.node.name=$(OTEL_RESOURCE_ATTRIBUTES_NODE_NAME),k8s.pod.name=$(OTEL_RESOURCE_ATTRIBUTES_POD_NAME),k8s.pod.uid=$(OTEL_RESOURCE_ATTRIBUTES_POD_UID),k8s.replicaset.name=my-deployment-with-sidecar-565bd877dd,k8s.replicaset.uid=190d5f6e-ba7f-4794-b2e6-390b5879a6c4
         - name: OTEL_PROPAGATORS
-          value: jaeger, b3
+          value: jaeger,b3
       resources: {}
       volumeMounts:
         - name: kube-api-access-sp2mz

@@ -1,7 +1,5 @@
 # Enhance Go apps with OTel auto-instrumentation
 
-This is an experimental feature.
-
 If you don't want to manually change the application code, you can try This page's eBPF-based automatic enhancement method.
 This feature is currently in the review stage of donating to the OpenTelemetry community, and does not support Operator injection through annotations (it will be supported in the future), so you need to manually change the Deployment YAML or use a patch.
 
@@ -77,8 +75,8 @@ EOF
       name: voting
       namespace: emojivoto
       labels:
-        app.kubernetes.io/name:voting
-        app.kubernetes.io/part-of:emojivoto
+        app.kubernetes.io/name: voting
+        app.kubernetes.io/part-of: emojivoto
         app.kubernetes.io/version: v11
     spec:
       replicas: 1
@@ -92,15 +90,15 @@ EOF
             app: voting-svc
             version: v11
           annotations:
-            instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation" # The operator will add OpenTelemetry-related environment variables
+            instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation" # (1)
         spec:
           containers:
-            -env:
+            - env:
                 - name: GRPC_PORT
                   value: "8080"
                 - name: PROM_PORT
                   value: "8801"
-              image: docker.l5d.io/buoyantio/emojivoto-voting-svc:v11 # Assuming this is your Golang application
+              image: docker.l5d.io/buoyantio/emojivoto-voting-svc:v11 # (2)
               name: voting-svc
               command:
                 - /usr/local/bin/emojivoto-voting-svc
@@ -116,7 +114,7 @@ EOF
               image: docker.m.daocloud.io/keyval/otel-go-agent:v0.6.0
               env:
                 - name: OTEL_TARGET_EXE
-                  value: /usr/local/bin/emojivoto-voting-svc # Be consistent with the above /usr/local/bin/emojivoto-voting-svc
+                  value: /usr/local/bin/emojivoto-voting-svc # (3)
               securityContext:
                 runAsUser: 0
                 capabilities:
@@ -131,6 +129,11 @@ EOF
               hostPath:
                 path: /sys/kernel/debug
     ```
+
+    1. Used to add environment variables related to OpenTelemetry.
+    2. Assuming this is your Golang application.
+    3. Note that it should be consistent with the content of the `command` mentioned above:
+       `/usr/local/bin/emojivoto-voting-svc`.
 
 The final generated Yaml content is as follows:
 
@@ -224,12 +227,12 @@ spec:
               apiVersion: v1
               fieldPath: spec.nodeName
         - name: OTEL_PROPAGATORS
-          value: jaeger, b3
+          value: jaeger,b3
         - name: OTEL_TRACES_SAMPLER
           value: always_on
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: >-
-            k8s.container.name=voting-svc, k8s.deployment.name=voting, k8s.deployment.uid=79e015e2-4643-44c0-993c-e486aebaba10, k8s.namespace.name=default, k8s.node.name=$( OTEL_RESOURCE_ATTRIBUTES_NODE_NAME),k8s.pod.name=$(OTEL_RESOURCE_ATTRIBUTES_POD_NAME),k8s.pod.uid=$(OTEL_RESOURCE_ATTRIBUTES_POD_UID),k8s.replicaset.name=voting-84b696c897,k8s.replicaset.uid=63f56167-6632-415d-8b01-43a3db9891ff
+            k8s.container.name=voting-svc,k8s.deployment.name=voting,k8s.deployment.uid=79e015e2-4643-44c0-993c-e486aebaba10,k8s.namespace.name=default,k8s.node.name=$(OTEL_RESOURCE_ATTRIBUTES_NODE_NAME),k8s.pod.name=$(OTEL_RESOURCE_ATTRIBUTES_POD_NAME),k8s.pod.uid=$(OTEL_RESOURCE_ATTRIBUTES_POD_UID),k8s.replicaset.name=voting-84b696c897,k8s.replicaset.uid=63f56167-6632-415d-8b01-43a3db9891ff
       resources:
         requests:
           cpu: 100m
@@ -270,7 +273,7 @@ spec:
 ······
 ```
 
-## For more information, please refer to
+## Reference
 
 - [Getting Started with Go OpenTelemetry Automatic Instrumentation](https://github.com/keyval-dev/opentelemetry-go-instrumentation/blob/master/docs/getting-started/README.md)
 - [Donating ebpf based instrumentation](https://github.com/open-telemetry/opentelemetry-go-instrumentation/pull/4)

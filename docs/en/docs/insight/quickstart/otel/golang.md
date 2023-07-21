@@ -8,7 +8,7 @@ OpenTelemetry, also known simply as OTel, is an open-source observability framew
 
 ### Install related dependencies
 
-Dependencies related to the OpenTelemetry exporter and SDK must be installed first. If you are using another request router, please refer to [request routing](#request routing).
+Dependencies related to the OpenTelemetry exporter and SDK must be installed first. If you are using another request router, please refer to [request routing](#request-routing).
 After switching/going into the application source folder run the following command:
 
 ```golang
