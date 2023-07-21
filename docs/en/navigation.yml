@@ -621,7 +621,10 @@ nav:
               - What is Data Service: middleware/what.md
               - Supported Kubernetes Versions: middleware/compatibility.md
               - Permissions: middleware/permission.md
-              - Fisrt Use: middleware/first-visit.md
+          - Common Features:
+              - Fisrt-time Use: middleware/common/first-visit.md
+              - Customize Permissions: middleware/common/customize-permission.md
+              - Workload Antiaffinity: middleware/common/workload-antiaffinity.md
           - Elasticsearch:
               - What is Elasticsearch: middleware/elasticsearch/intro/what.md
               - Features: middleware/elasticsearch/intro/features.md

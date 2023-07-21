@@ -1,6 +1,6 @@
 # Custom Role Permissions for Data Services
 
-The Data Services module allows users to customize role permissions. Users can create [custom roles](../ghippo/user-guide/access-control/custom-role.md) in the `Global Management` section and specify the permissions for each middleware.
+The Data Services module allows users to customize role permissions. Users can create [custom roles](../../ghippo/user-guide/access-control/custom-role.md) in the `Global Management` section and specify the permissions for each middleware.
 
 When creating a custom role, you can assign one of three types of permissions: Create/Edit, View, and Delete.
 

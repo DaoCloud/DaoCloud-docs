@@ -5,7 +5,7 @@ hide:
 
 # 数据服务自定义角色权限说明
 
-数据服务模块允许用户自定义角色权限，用户可以在 `全局管理`中创建[自定义角色](../ghippo/user-guide/access-control/custom-role.md)并为角色指定各中间件的权限。
+数据服务模块允许用户自定义角色权限，用户可以在 `全局管理`中创建[自定义角色](../../ghippo/user-guide/access-control/custom-role.md)并为角色指定各中间件的权限。
 
 创建自定义角色时可以为角色指定三种权限：创建/编辑、查看、删除。
 
