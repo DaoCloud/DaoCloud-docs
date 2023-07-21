@@ -1,48 +1,53 @@
----
-hide:
-  - toc
----
+# Workload Anti-Affinity
 
-# 工作负载反亲和性
+When creating instances of [Elasticsearch search service](../elasticsearch/intro/what.md), [Kafka message queue](../kafka/intro/what.md), [MinIO object storage](../minio/intro/what.md), [MySQL database](../mysql/intro/what.md), [RabbitMQ message queue](../rabbitmq/intro/what.md), [PostgreSQL database](../postgresql/intro/what.md), [Redis cache service](../redis/intro/what.md), or [MongoDB database](../mongodb/intro/what.md), you can configure workload anti-affinity in the service settings page.
 
-在中间件的实例管理中，`工作负载反亲和性`可以提供以下几方面的作用：
+The principle of workload anti-affinity is that within a certain topology domain (scope), if it detects that there is already a workload with a label added in the anti-affinity configuration, the newly created workload will not be deployed to that topology domain. The benefits of this approach are:
 
-- **性能优化** 通过使用工作负载反亲和，可以将中间件的实例分配到不同的工作负载上，避免资源竞争和争用。这样可以确保每个实例都有足够的资源可用，提高性能和可靠性。
+- Performance Optimization: By using workload anti-affinity, multiple replicas of the instance can be deployed to different nodes/availability zones/regions, avoiding resource contention between replicas and ensuring that each replica has sufficient available resources, thereby improving application performance and reliability.
 
-- **故障隔离** 如果某个中间件工作负载上的实例发生故障或性能下降，工作负载反亲和可以确保其他工作负载上的实例不受影响。通过将中间件实例分散在不同的工作负载上，可以限制故障的扩散范围，避免单点故障，并提高系统的鲁棒性。
+- Fault Isolation: The replicas of the instance are distributed across different nodes/availability zones/regions, effectively avoiding single point of failure. When a replica in one environment fails, the replicas in other environments are not affected, thereby ensuring the overall availability of the service.
 
-- **扩展性和弹性** 工作负载反亲和可以使中间件实例在不同的工作负载上快速扩展和收缩。当负载增加时，新的实例可以动态地分配到可用的工作负载上，从而实现水平扩展。而当负载下降时，实例可以被移除，以节省资源。
+## Steps
 
-- **资源隔离** 通过使用工作负载反亲和，可以将中间件实例分配到不同的工作负载上，避免实例之间的资源竞争。这样可以确保每个实例都有足够的资源可用，避免因为一个实例的资源占用过高影响其他实例。
+Take `Redis` as an example to demonstrate how to configure "Workload Anti-Affinity".
 
-综上所述，通过合理配置`工作负载反亲和性`规则，可以有效提升中间件在系统中的可靠性和性能表现。
+!!! note
 
-下面以 `Redis` 为例，展示`工作负载反亲和性`的效果。
+    This article focuses on how to configure "Workload Anti-Affinity". For detailed instructions on how to create a `Redis` instance, please refer to [Create Instance](../redis/user-guide/create.md).
 
-1. 创建一个新的 `Redis` 实例；
+1. During the creation process of a `Redis` instance, enable "Workload Anti-Affinity" in "Service Settings" -> "Advanced Settings".
 
-    ![创建](images/anti-affinity-createinstance.jpg)
+    ![create](images/anti-affinity01.png)
 
-1. 设置为三副本的`哨兵模式`；
+2. Fill in the configuration for "Workload Anti-Affinity" according to the following instructions.
 
-    ![哨兵模式](images/anti-affinity-Replica.jpg)
+    - Condition: There are two types, "Preferred" and "Required".
+        - Preferred: Try to satisfy the anti-affinity requirement, but the final deployment result may not meet the anti-affinity requirement.
+        - Required: Must satisfy the anti-affinity requirement. If no schedulable node/availability zone/region is found, the Pod will remain in the Pending state.
+    - Weight: When the condition is set to "Must Satisfy", there is no need to set the weight. When the condition is set to "Try to Satisfy", set a weight value for the anti-affinity rule, and rules with higher weights are given priority.
+    - Topology Domain: The topology domain defines the scope of the anti-affinity. It can be a node label, zone label, region label, or user-defined label.
+    - Pod Selector: Set the Pod labels. **Within the same topology domain, there can only be one Pod with this label**.
+    - For more details about anti-affinity and various operators, please refer to [Operators](../../kpanda/user-guide/workloads/pod-config/scheduling-policy.md#_4).
 
-1. 在`服务设置`页面启用`工作负载反亲和性`；
+    ![create](images/anti-affinity02.png)
 
-   - 操作符选择 `In`,标识该条规则必须被满足`；
-   - `拓扑域`即为节点标签，用于划分一个使用该反亲和策略的节点范围，这里采用默认值；
-   - `Pod 选择器`用于选择执行该反亲和策略的 Pod，这里设置为工作负载名称，该标签默认存在于所有 Redis pod 中。
+    !!! note
 
-      ![反亲和](images/anti-affinity-switch.jpg)
+        The configuration in the above image means that there can only be one Pod with the `app.kubernetes.io/name` label and the value of `redis-test` on the same node. If there is no node that meets the criteria, the Pod will remain in the Pending state.
 
-1. 完成创建。
+3. Follow the steps in [Create Instance](../redis/user-guide/create.md) to complete the remaining operations.
 
-    ![反亲和](images/anti-affinity-finish.jpg)
+## Verification
 
-切换至[容器管理]模块查看相关 `Pod` 信息， 可见两个 Redis `Pod` 分别运行于不同的集群节点上，第三个 Pod 则处于等待状态；
+After configuring workload anti-affinity and successfully creating the instance, go to the Container Management module to view the Pod scheduling information.
 
-![查看 Pod](images/anti-affinity-checkpod.jpg)
+<!--![View Pod](images/anti-affinity04.jpg)-->
 
-查看 Pod: rfr-redis-test-2 的事件日志，可见由于反亲和规则，第三个 Pod 无法创建。
+You can see that there are a total of 3 Pods, with two of them running normally and distributed on different nodes.
 
-![事件日志](images/anti-affinity-eventlog.jpg)
+The third Pod is in the waiting state. Click on the Pod name to view the details, and it is found that it cannot be deployed due to taints and the anti-affinity rule.
+
+<!--![Event Log](images/anti-affinity03.jpg)-->
+
+This indicates that the previously configured workload anti-affinity is effective, which means that there can only be one Pod with the `app.kubernetes.io/name` label and the value of `redis-test` on a node. If there is no node that meets the criteria, the Pod will remain in the Pending state.

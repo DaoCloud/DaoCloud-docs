@@ -622,7 +622,7 @@ nav:
               - Supported Kubernetes Versions: middleware/compatibility.md
               - Permissions: middleware/permission.md
           - Common Features:
-              - Fisrt Use: middleware/common/first-visit.md
+              - Fisrt-time Use: middleware/common/first-visit.md
               - Customize Permissions: middleware/common/customize-permission.md
               - Workload Antiaffinity: middleware/common/workload-antiaffinity.md
           - Elasticsearch:

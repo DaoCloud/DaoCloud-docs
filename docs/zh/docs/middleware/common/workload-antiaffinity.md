@@ -1,8 +1,3 @@
----
-hide:
-  - toc
----
-
 # 工作负载反亲和性
 
 创建[Elasticsearch 搜索服务](../elasticsearch/intro/what.md)、[Kafka 消息队列](../kafka/intro/what.md)、[MinIO 对象存储](../minio/intro/what.md)、[MySQL 数据库](../mysql/intro/what.md)、[RabbitMQ 消息队列](../rabbitmq/intro/what.md)、[PostgreSQL 数据库](../postgresql/intro/what.md)、[Redis 缓存服务](../redis/intro/what.md)或 [MongoDB 数据库](../mongodb/intro/what.md)实例时，可以在服务设置页面配置工作负载反亲和性。
@@ -59,4 +54,6 @@ hide:
 
 ![事件日志](images/anti-affinity03.jpg)
 
-这说明前面配置的工作负载反亲和性已经生效，即一个节点上之后只能有一个带有 `app.kubernetes.io/name` 标签且值为 `redis-test` 的 Pod。如果没有满足条件的节点，则 Pod 一直处于 Pending 状态。
+!!! success
+
+    这说明前面配置的工作负载反亲和性已经生效，即一个节点上之后只能有一个带有 `app.kubernetes.io/name` 标签且值为 `redis-test` 的 Pod。如果没有满足条件的节点，则 Pod 一直处于 Pending 状态。

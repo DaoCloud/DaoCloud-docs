@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# First Use of Data Services
+# First-time Use of Data Services
 
 If this is the first time you enter the Data Services module of DCE 5.0, you must select a workspace before any other actions. For details about the concept of workspace, see [Workspace and Folder](../../ghippo/user-guide/workspace/ws-folder.md).
 
