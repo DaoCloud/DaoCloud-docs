@@ -63,4 +63,5 @@ to notify the custom module of every user login event through webhooks. The cust
 
 ## Reference Documentation
 
-[OEM IN Reference Documentation](oem-in.md)
+- Refer to [OEM IN Documentation](oem-in.md)
+- Refer to [GProduct-demo integration tar package](./examples/gproduct-demo-main.tar.gz)

@@ -54,4 +54,5 @@ OEM OUT 是指 DCE 5.0 作为子模块接入其他产品，出现在其他产品
 
 ## 参考文档
 
-[OEM IN 参考文档](oem-in.md)
+- [参考 OEM IN 文档](oem-in.md)
+- 参阅 [GProduct-demo 对接 tar 包](./examples/gproduct-demo-main.tar.gz)
