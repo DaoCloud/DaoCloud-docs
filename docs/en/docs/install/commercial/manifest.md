@@ -2,6 +2,8 @@
 
 This YAML file contains information about all modules of DCE 5.0, which are mainly divided into the base configuration module and product feature modules.
 
+For upgrading instructions, please refer to the [Upgrade DCE 5.0](../upgrade.md) documentation.
+
 ## Manifest Example
 
 Here is an example of a ClusterConfig file.
@@ -142,7 +144,8 @@ components:
 
 ## Key Fields
 
-The following table explains the key fields in this YAML file.
+Please refer to the table below for an explanation of the key fields in this YAML file.
+It includes components related to the infrastructure and products involved in the functionality modules of the product.
 
 | Field                            | Description                                      |
 | :------------------------------- | :----------------------------------------------- |
