@@ -1,10 +1,10 @@
-# 升级 DCE5.0
+# 升级 DCE 5.0
 
-DCE5.0 的升级包含升级 DCE5.0 产品功能模块、升级 DCE5.0 基础设施模块
+DCE 5.0 的升级包含升级 DCE 5.0 产品功能模块、升级 DCE 5.0 基础设施模块
 
 其中 DCE 5.0 由容器管理、全局管理、可观测性等十几个子模块构成，主要指 [mainfest.yaml](commercial/manifest.md) 文件中的 `components` 部分。
-DCE5.0 基础设施
 
+DCE 5.0 基础设施模块的组件特指 [mainfest.yaml](commercial/manifest.md) 文件中的 `infrastructures` 部分。
 
 ## 前提条件
 
@@ -14,7 +14,7 @@ DCE5.0 基础设施
 
 ## 离线升级操作步骤
 
-本次操作步骤演示如何从 v0.8.0 升级到 v0.9.0。目前升级到从低版本升级到 v0.9.0 时，需要同时升级 DCE5.0 产品功能模块和 DCE5.0 基础设施模块，从而使用到 `istio-gateway` 组件的高可用功能。
+本次操作步骤演示如何从 v0.8.0 升级到 v0.9.0。目前升级到从低版本升级到 v0.9.0 时，需要同时升级 DCE 5.0 产品功能模块和 DCE 5.0 基础设施模块，从而使用到 `istio-gateway` 组件的高可用功能。
 
 ### 第 1 步：下载 v0.9.0 离线包
 
@@ -85,9 +85,10 @@ spec:
 
 文件在解压后的离线包 `offline/sample` 目录下。
 
-#### DCE5.0 产品功能模块配置
+#### DCE 5.0 产品功能模块配置
 
-DCE5.0 产品功能模块的组件特指 [mainfest.yaml](commercial/manifest.md) 文件中的 `components` 部分，如果有些产品组件不需要升级，可以在对应组件下选择关闭，如下配置，更新时将不会对 Kpanda 进行升级：
+DCE 5.0 产品功能模块的组件特指 [mainfest.yaml](commercial/manifest.md) 文件中的 `components` 部分。
+如果有些产品组件不需要升级，可以在对应组件下选择关闭。如果采用以下配置，更新时将不会对 Kpanda（容器管理）进行升级：
 
 ```yaml
   components:
@@ -97,9 +98,9 @@ DCE5.0 产品功能模块的组件特指 [mainfest.yaml](commercial/manifest.md)
       variables:
 ```
 
-#### DCE5.0 基础设施模块配置
+#### DCE 5.0 基础设施模块配置
 
-DCE5.0 基础设施模块的组件特指 [mainfest.yaml](commercial/manifest.md) 文件中的 `infrastructures` 部分，如下配置就是基础设施中的 `hwameiStor` 组件：
+DCE 5.0 基础设施模块的组件特指 [mainfest.yaml](commercial/manifest.md) 文件中的 `infrastructures` 部分，如下配置就是基础设施中的 `hwameiStor` 组件：
 
 ```yaml
   infrastructures:
@@ -115,7 +116,7 @@ DCE5.0 基础设施模块的组件特指 [mainfest.yaml](commercial/manifest.md)
 
 ### 第 4 步：开始升级
 
-#### DCE5.0 产品功能模块升级
+#### DCE 5.0 产品功能模块升级
 
 执行升级命令
 
@@ -123,7 +124,7 @@ DCE5.0 基础设施模块的组件特指 [mainfest.yaml](commercial/manifest.md)
 ./offline/dce5-installer cluster-create -c ./offline/sample/clusterconfig.yaml -m ./offline/sample/manifest.yaml --upgrade gproduct
 ```
 
-#### DCE5.0 基础设施模块升级
+#### DCE 5.0 基础设施模块升级
 
 执行升级命令
 
