@@ -10,8 +10,8 @@ nav:
           - Use Cases: dce/scenario.md
           - Glossary: dce/terms.md
           - DCE 5.0 Release Notes:
-              - 20230531 Release: dce/dce-rn/230531.md
               - 20230630 Release: dce/dce-rn/230630.md
+              - 20230531 Release: dce/dce-rn/230531.md
       - Installation:
           - Overview: install/intro.md
           - Install Dependencies: install/install-tools.md
