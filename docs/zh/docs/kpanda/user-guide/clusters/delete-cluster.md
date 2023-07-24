@@ -47,9 +47,9 @@ hide:
 
 1. 删除 kpanda-system、insight-system 命名空间
 
-```
-kubectl delete ns kpanda-system insight-system
-```
+    ```
+    kubectl delete ns kpanda-system insight-system
+    ```
 
 2. 如果为当前集群启用了服务网格能力，请参考[删除网格](../../../mspider/user-guide/service-mesh/delete.md)文档删除当前集群中的网格实例。
 
