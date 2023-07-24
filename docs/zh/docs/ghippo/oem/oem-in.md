@@ -99,4 +99,5 @@ AnyProduct：当客户系统需要使用 DCE 5.0 作为身份提供商（用户�
 
 ## 参考资料
 
-- [OEM OUT 参考文档](./oem-out.md)
+- [参考 OEM OUT 文档](./oem-out.md)
+- 参阅 [GProduct-demo 对接 tar 包](./examples/gproduct-demo-main.tar.gz)

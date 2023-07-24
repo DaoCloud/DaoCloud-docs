@@ -100,4 +100,5 @@ Approach: Use DCE 5.0's [OpenAPI](https://docs.daocloud.io/openapi/) to make API
 
 ## Reference
 
-- [OEM OUT Reference Documentation](./oem-out.md)
+- Refer to [OEM OUT documentation](./oem-out.md)
+- Refer to [GProduct-demo integration tar package](./examples/gproduct-demo-main.tar.gz)
