@@ -97,11 +97,11 @@
 
     [:octicons-arrow-right-24: Learn more](./klts.md)
 
--   :peanuts:{ .lg .middle } __Kubean__
+-   :peanuts:{ .lg .middle } __Kubean__ :simple-cncf: Listed in CNCF Landscape
 
     ---
 
-    A full life cycle management tool for containerized clusters that is applying for Landscape.
+    A full life cycle management tool for containerized clusters that is applying for Sandbox.
 
     [:octicons-arrow-right-24: Learn more](./kubean.md)
 
@@ -170,7 +170,7 @@
 <p align="center">
 <img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
 <br/><br/>
-[Clusterpedia](./clusterpedia.md), [Merbridge](./merbridge.md), [HwameiStor](./hwameistor.md), and [Spiderpool](./spiderpool.md) have been selected for the <a href="https://landscape.cncf.io">CNCF Cloud Native Landscape</a>. [Clusterpedia](./clusterpedia.md), [HwameiStor](./hwameistor.md) and [Merbridge](./merbridge.md) have been listed in <a href="https://www.cncf.io/projects/clusterpedia/">CNCF Sandbox</a>.
+[Clusterpedia](./clusterpedia.md), [HwameiStor](./hwameistor.md) and [Merbridge](./merbridge.md) have been listed in <a href="https://www.cncf.io/projects/clusterpedia/">CNCF Sandbox</a>.
 </p>
 
 [Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
