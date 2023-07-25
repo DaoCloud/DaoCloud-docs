@@ -299,10 +299,12 @@ nav:
               - Release Notes: amamba/intro/release-notes.md
           - Offline Upgrade: amamba/offline-upgrade.md
           - Namespaces: amamba/user-guide/namespace/namespace.md
-          - Applications:
+          - Wizard:
               - Build Microservice based on Git Repo: amamba/user-guide/wizard/create-app-git.md
               - Build Java Apps based on Jar Packages: amamba/user-guide/wizard/jar-java-app.md
               - Deploy Helm Apps based on Helm Template: amamba/user-guide/wizard/helm.md
+          - OAM Application:
+              - OAM Concepts: amamba/user-guide/oam/concept.md
           - Pipelines:
               - Install Jenkins: amamba/user-guide/pipelines/install-jenkins.md
               - Create Pipeline:
