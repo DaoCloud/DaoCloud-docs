@@ -306,11 +306,17 @@ nav:
               - Release Notes: amamba/intro/release-notes.md
           - 离线升级: amamba/offline-upgrade.md
           - 命名空间管理: amamba/user-guide/namespace/namespace.md
-          - 应用创建:
+          - 向导:
               - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-app-git.md
               - 基于 Jar 包构建 Java 应用: amamba/user-guide/wizard/jar-java-app.md
               - 基于 Helm 模板部署 Helm 应用: amamba/user-guide/wizard/helm.md
-              - 通过原生应用部署传统微服务: amamba/user-guide/wizard/dce-native-app.md
+          - 原生应用:
+              - 管理原生应用: amamba/user-guide/native/manage.md
+              - 通过原生应用部署传统微服务: amamba/user-guide/native/native-app.md
+          - OAM 应用:
+              - OAM 概念: amamba/user-guide/oam/concept.md
+              - 创建 OAM 应用: amamba/user-guide/oam/create.md
+              - 管理 OAM 应用: amamba/user-guide/oam/manage.md
           - 流水线:
               - 安装 Jenkins: amamba/user-guide/pipeline/install-jenkins.md
               - 创建流水线:
