@@ -186,9 +186,9 @@ curl -I "${hosted_istiod_ip}:443"
 
     首先，在容器管理平台进入全局控制面集群 `kpanda-global-cluster`（如果无法确认相关集群的位置，可以询问相应负责人或者通过[查询全局服务集群](#_30)）
 
-    -> `自定义资源模块` 搜索资源 `GlobalMesh`
-    -> 接下来在`mspider-system` 找到对应的网格`mdemo-mesh`
-    -> 然后编辑 YAML
+    - `自定义资源模块` 搜索资源 `GlobalMesh`
+    - 接下来在`mspider-system` 找到对应的网格`mdemo-mesh`
+    - 然后编辑 YAML
 
     - 在 YAML 中 `.spec.ownerConfig.controlPlaneParams` 字段增加 `istio.custom_params.values.global.remotePilotAddress` 参数；
     - 其值为上文中记录的 `istiod-mdemo-mesh-hosted-lb` `EXTERNAL-IP` 地址：`10.64.30.72`。
