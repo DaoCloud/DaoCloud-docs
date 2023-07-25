@@ -2,8 +2,6 @@
 
 本页介绍 Cilium 在 nodePort 场景下的访问加速测试结果。
 
-http://arthurchiao.art/blog/ebpf-and-k8s-zh/
-
 ## 测试对象
 
 在本测试中，对如下几个方案进行了 Kubernetes nodePort 的转发性能比较：
