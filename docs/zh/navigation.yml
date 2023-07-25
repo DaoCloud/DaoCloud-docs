@@ -572,9 +572,9 @@ nav:
               - 网络 CNI 性能测试报告: network/performance/cni-performance.md
               - Spiderpool 性能测试报告: network/performance/spiderpool-performance.md
               - Cilium 性能测试报告:
-                  - Cilium 对于 Pod 访问 Service 的加速: network/performance/cilium-performance/cilium-service
+                  - Cilium 对于 Pod 访问 Service 的加速: network/performance/cilium-performance/cilium-service.md
                   - Cilium 在 Pod 跨节点通信场景下的性能测试: network/performance/cilium-performance/cilium-crossnode.md
-                  - Cilium 在 nodePort 场景下的访问加速测试: network/performance/cilium-performance/cilium-nodeport
+                  - Cilium 在 nodePort 场景下的访问加速测试: network/performance/cilium-performance/cilium-nodeport.md
           - Calico:
               - 介绍: network/modules/calico/what.md
               - 安装参数配置: network/modules/calico/install.md
@@ -946,7 +946,7 @@ nav:
           - 2022 云原生社区要闻: native/news/news-2022.md
       - 商业产品: native/commerce.md
       - 开源项目: native/open.md
-      - 知识分享: 
+      - 知识分享:
           - 索引: native/knowledge/knowledge.md
           - 排障方案: native/knowledge/troubleshoot.md
           - 最佳实践: native/knowledge/best-practice.md
@@ -956,4 +956,3 @@ nav:
           - 安全漏洞: native/knowledge/bugs.md
           - 电子书: native/knowledge/ebooks.md
           - 其他: native/knowledge/other.md
-
