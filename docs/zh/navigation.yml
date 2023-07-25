@@ -133,7 +133,7 @@ nav:
               - 漏洞扫描: kpanda/user-guide/security/hunter.md
           - 权限管理:
               - 权限说明: kpanda/user-guide/permissions/permission-brief.md
-              - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md         
+              - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
           - 最佳实践:
               - 对 ETCD 进行备份还原: kpanda/best-practice/etcd-backup.md
               - 对 MySQL 应用及数据进行跨集群备份恢复: kpanda/best-practice/backup-mysql-on-nfs.md
@@ -208,7 +208,7 @@ nav:
                   - ghippo/gproduct/intro.md
                   - 接入导航栏: ghippo/gproduct/nav.md
                   - 接入路由和登录认证: ghippo/gproduct/route-auth.md
-              - OEM IN 和 OUT: 
+              - OEM IN 和 OUT:
                   - OEM IN: ghippo/oem/oem-in.md
                   - OEM OUT: ghippo/oem/oem-out.md
                   - 定制 DCE 5.0 对接 IdP: ghippo/oem/custom-idp.md
@@ -306,11 +306,17 @@ nav:
               - Release Notes: amamba/intro/release-notes.md
           - 离线升级: amamba/offline-upgrade.md
           - 命名空间管理: amamba/user-guide/namespace/namespace.md
-          - 应用创建:
+          - 向导:
               - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-app-git.md
               - 基于 Jar 包构建 Java 应用: amamba/user-guide/wizard/jar-java-app.md
               - 基于 Helm 模板部署 Helm 应用: amamba/user-guide/wizard/helm.md
-              - 通过原生应用部署传统微服务: amamba/user-guide/wizard/dce-native-app.md
+          - 原生应用:
+              - 管理原生应用: amamba/user-guide/native/manage.md
+              - 通过原生应用部署传统微服务: amamba/user-guide/native/native-app.md
+          - OAM 应用:
+              - OAM 概念: amamba/user-guide/oam/concept.md
+              - 创建 OAM 应用: amamba/user-guide/oam/create.md
+              - 管理 OAM 应用: amamba/user-guide/oam/manage.md
           - 流水线:
               - 安装 Jenkins: amamba/user-guide/pipeline/install-jenkins.md
               - 创建流水线:
@@ -364,7 +370,7 @@ nav:
               - 基本概念: kairship/intro/concepts.md
               - 常见问题: kairship/intro/faq.md
               - Release Notes: kairship/intro/release-notes.md
-          - 工作空间: kairship/instance/workspace.md          
+          - 工作空间: kairship/instance/workspace.md
           - 多云实例:
               - 多云实例介绍: kairship/instance/README.md
               - 添加实例: kairship/instance/add.md
@@ -559,6 +565,8 @@ nav:
               - 托管网格纳管集群istio-ingressgateway异常: mspider/troubleshoot/hosted-mesh-errors.md
               - 网格空间无法正常解绑: mspider/troubleshoot/mesh-space-cannot-unbind.md
               - DCE 4.0 接入问题追踪: mspider/troubleshoot/dce4.0-issues.md
+          - 最佳实践:
+              - 使用网格完成定向服务访问限制: mspider/best-practice/use-egress-and-authorized-policy.md
       - 云原生网络:
           - 介绍:
               - 什么是云原生网络: network/intro/what.md
@@ -571,6 +579,10 @@ nav:
           - 性能测试:
               - 网络 CNI 性能测试报告: network/performance/cni-performance.md
               - Spiderpool 性能测试报告: network/performance/spiderpool-performance.md
+              - Cilium 性能测试报告:
+                  - Cilium 对于 Pod 访问 Service 的加速: network/performance/cilium-performance/cilium-service.md
+                  - Cilium 在 Pod 跨节点通信场景下的性能测试: network/performance/cilium-performance/cilium-crossnode.md
+                  - Cilium 在 nodePort 场景下的访问加速测试: network/performance/cilium-performance/cilium-nodeport.md
           - Calico:
               - 介绍: network/modules/calico/what.md
               - 安装参数配置: network/modules/calico/install.md
@@ -636,7 +648,7 @@ nav:
               - 版本适配: middleware/compatibility.md
               - 权限设计说明: middleware/permission.md
           - 通用配置:
-              - 首次进入: middleware/common/first-visit.md              
+              - 首次进入: middleware/common/first-visit.md
               - 自定义角色权限说明: middleware/common/customize-permission.md
               - 工作负载反亲和性: middleware/common/workload-antiaffinity.md
           - Elasticsearch 搜索服务:
@@ -942,7 +954,7 @@ nav:
           - 2022 云原生社区要闻: native/news/news-2022.md
       - 商业产品: native/commerce.md
       - 开源项目: native/open.md
-      - 知识分享: 
+      - 知识分享:
           - 索引: native/knowledge/knowledge.md
           - 排障方案: native/knowledge/troubleshoot.md
           - 最佳实践: native/knowledge/best-practice.md
@@ -952,4 +964,3 @@ nav:
           - 安全漏洞: native/knowledge/bugs.md
           - 电子书: native/knowledge/ebooks.md
           - 其他: native/knowledge/other.md
-

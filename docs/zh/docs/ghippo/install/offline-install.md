@@ -258,7 +258,7 @@
         helm upgrade ghippo ghippo/ghippo \
           -n ghippo-system \
           -f ./bak.yaml \
-          --set global.imageRegistry=$imageRegistry
+          --set global.imageRegistry=$imageRegistry \
           --version 0.9.0
         ```
 
