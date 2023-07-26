@@ -777,13 +777,17 @@ nav:
                   - 自定义 Kubelet 根目录: storage/hwameistor/install/customized-kubelet.md
                   - 升级: storage/hwameistor/install/upgrade.md
                   - 卸载: storage/hwameistor/install/uninstall.md
-              - 运维管理:
-                  - 存储池管理: storage/hwameistor/resources/storagepool.md
-                  - 存储节点扩展: storage/hwameistor/resources/node-expansion.md
-                  - 数据卷迁移: storage/hwameistor/resources/migrate.md
-                  - 数据卷扩容: storage/hwameistor/resources/expand.md
+              - 节点&磁盘:
+                  - LVM 节点扩展: storage/hwameistor/resources/lvm-nodes.md
+                  - 磁盘节点扩展: storage/hwameistor/resources/disk-nodes.md
                   - 磁盘扩展: storage/hwameistor/resources/disk-expansion.md
                   - 磁盘预留: storage/hwameistor/resources/reserveddisk.md
+              - 存储池 :
+                  - 存储池管理: storage/hwameistor/resources/storagepool.md
+              - 数据卷:  
+                  - 数据卷迁移: storage/hwameistor/resources/migrate.md
+                  - 数据卷扩容: storage/hwameistor/resources/expand.md
+                  - 数据卷 IO 限速: storage/hwameistor/resources/volume-ProvisionedIO.md
               - 应用场景:
                   - 应用场景概述: storage/hwameistor/application/overview.md
                   - 部署有状态应用:
