@@ -1,6 +1,6 @@
-# 节点扩展
+# 裸磁盘节点扩容
 
-存储系统可以通过增加存储节点实现扩容。在 HwameiStor 里，通过下列步骤可以添加新的存储节点。
+裸磁盘存储节点为应用提供裸磁盘类型的数据卷，并且维护了该存储节点上面的裸磁盘和裸磁盘数据卷的对应关系。
 
 ## 步骤
 
@@ -9,40 +9,44 @@
 在 Kubernetes 集群中新增一个节点，或者，选择一个已有的集群节点（非 HwameiStor 节点）。该节点必须满足 [Prerequisites](../install/prereq.md) 要求的所有条件。
 本例中，所用的新增存储节点和磁盘信息如下所示：
 
-- name: k8s-worker-4
+- name: k8s-worker-2
 - devPath: /dev/sdb
 - diskType: SSD disk
 
 新增节点已经成功加入 Kubernetes 集群之后，检查并确保下列 Pod 正常运行在该节点上，以及相关资源存在于集群中：
 
-```shell
-kubectl get node
-```
-```none
+```console
+$ kubectl get node
 NAME           STATUS   ROLES            AGE     VERSION
 k8s-master-1   Ready    master           96d     v1.24.3-2+63243a96d1c393
 k8s-worker-1   Ready    worker           96h     v1.24.3-2+63243a96d1c393
 k8s-worker-2   Ready    worker           96h     v1.24.3-2+63243a96d1c393
-k8s-worker-3   Ready    worker           96d     v1.24.3-2+63243a96d1c393
-k8s-worker-4   Ready    worker           1h      v1.24.3-2+63243a96d1c393
-```
-```shell
-kubectl -n hwameistor get pod -o wide | grep k8s-worker-4
-```
-```none
-hwameistor-local-disk-manager-c86g5     2/2     Running   0     19h   10.6.182.105      k8s-worker-4   <none>  <none>
-hwameistor-local-storage-s4zbw          2/2     Running   0     19h   192.168.140.82    k8s-worker-4   <none>  <none>
-```
-检查 LocalStorageNode 资源
-```shell
-kubectl get localstoragenode k8s-worker-4
-```
-```none
-NAME                 IP           ZONE      REGION    STATUS   AGE
-k8s-worker-4   10.6.182.103       default   default   Ready    8d
+
+$ kubectl -n hwameistor get pod -o wide | grep k8s-worker-2
+hwameistor-local-disk-manager-sfsf1     2/2     Running   0     19h   10.6.128.150      k8s-worker-2   <none>  <none>
+
+# 检查 LocalDiskNode 资源
+$ kubectl get localdisknode k8s-worker-2
+NAME           FREECAPACITY   TOTALCAPACITY   TOTALDISK   STATUS   AGE
+k8s-worker-2                                              Ready    21d
 ```
 
 ### 2. 添加新增存储节点到 HwameiStor 系统
+
+首先，需要将磁盘 sdb 的 `owner` 信息修改成 local-disk-manager，具体如下：
+
+```console
+$ kubectl edit ld k8s-worker-2-sdb
+apiVersion: hwameistor.io/v1alpha1
+kind: LocalDisk
+metadata:
+  name: k8s-worker-2-sdb
+spec:
+  devicePath: /dev/sdb
+  nodeName: k8s-worker-2
++ owner: local-disk-manager
+...
+```
 
 为增加存储节点创建资源 LocalStorageClaim，以此为新增存储节点构建存储池。这样，节点就已经成功加入 HwameiStor 系统。具体如下：
 
@@ -51,9 +55,10 @@ $ kubectl apply -f - <<EOF
 apiVersion: hwameistor.io/v1alpha1
 kind: LocalDiskClaim
 metadata:
-  name: k8s-worker-4
+  name: k8s-worker-2
 spec:
-  nodeName: k8s-worker-4
+  nodeName: k8s-worker-2
+  owner: local-disk-manager
   description:
     diskType: SSD
 EOF
@@ -63,34 +68,27 @@ EOF
 
 完成上述步骤后，检查新增存储节点及其存储池的状态，确保节点和 HwameiStor 系统的正常运行。具体如下：
 
-```shell
-kubectl get localstoragenode k8s-worker-4
-```
-```yaml
+```console
+$ kubectl get localdisknode k8s-worker-2 -o yaml
 apiVersion: hwameistor.io/v1alpha1
-kind: LocalStorageNode
+kind: LocalDiskNode
 metadata:
-  name: k8s-worker-4
+  name: k8s-worker-2
 spec:
-  hostname: k8s-worker-4
-  storageIP: 10.6.182.103
-  topogoly:
-    region: default
-    zone: default
-status:
+  nodeName: k8s-worker-2  
+status:  
   pools:
-    LocalStorage_PoolSSD:
+    LocalDisk_PoolSSD:
       class: SSD
       disks:
       - capacityBytes: 214744170496
         devPath: /dev/sdb
-        state: InUse
+        state: Available
         type: SSD
       freeCapacityBytes: 214744170496
-      freeVolumeCount: 1000
-      name: LocalStorage_PoolSSD
+      freeVolumeCount: 1     
       totalCapacityBytes: 214744170496
-      totalVolumeCount: 1000
+      totalVolumeCount: 1
       type: REGULAR
       usedCapacityBytes: 0
       usedVolumeCount: 0
