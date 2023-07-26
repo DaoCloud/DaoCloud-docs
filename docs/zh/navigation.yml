@@ -583,6 +583,8 @@ nav:
                   - Cilium 对于 Pod 访问 Service 的加速: network/performance/cilium-performance/cilium-service.md
                   - Cilium 在 Pod 跨节点通信场景下的性能测试: network/performance/cilium-performance/cilium-crossnode.md
                   - Cilium 在 nodePort 场景下的访问加速测试: network/performance/cilium-performance/cilium-nodeport.md
+                  - Cilium 基于 eBPF 技术实施 Pod 带宽管控场景下的性能测试: network/performance/cilium-performance/cilium-bandwidth.md
+              - 基于 eBPF 技术实施网络策略场景下的性能测试: network/performance/ebpf-performance.md
           - Calico:
               - 介绍: network/modules/calico/what.md
               - 安装参数配置: network/modules/calico/install.md
