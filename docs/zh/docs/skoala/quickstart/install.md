@@ -1,6 +1,6 @@
 # 在线安装微服务引擎
 
-如需安装微服务引擎（DaoCloud Microservice Engine, DME），推荐通过 [DCE 5.0 商业版](../../install/commercial/start-install.md) 的安装包进行安装；通过商业版可以一次性同时安装 DCE 的所有模块。
+如需安装微服务引擎，推荐通过 [DCE 5.0 商业版](../../install/commercial/start-install.md) 的安装包进行安装；通过商业版可以一次性同时安装 DCE 的所有模块。
 
 本教程旨在补充需要手工 **单独在线安装** 微服务引擎模块的场景。下文出现的 `skoala` 是微服务引擎的内部开发代号，代指微服务引擎。
 
@@ -177,18 +177,18 @@ mcamel-common-mysql-cluster-mysql             2/2     7d23h
 
 注意：添加 Skoala-release 仓库之后，通常需要关注的有 2 个 Chart：
 
-- `Skoala` 是 DME 的控制端的服务，
+- `Skoala` 是 微服务引擎 的控制端的服务，
     - 安装完成后，可以在 DCE 5.0 平台看到微服务引擎的入口
     - 包含 3 个组件 skoala-ui、hive、sesame
     - 需要安装在全局管理集群
-- Skoala-init 是 DME 所有的组件 Operator
+- Skoala-init 是 微服务引擎 所有的组件 Operator
     - 仅安装到工作集群即可
     - 包含组件有：skoala-agent, nacos, contour, sentinel
     - 未安装时，创建注册中心和网关时会提示缺少组件
 
 默认情况下，安装完成 skoala 到 kpanda-global-cluster(全局管理集群)，就可以在侧边栏看到对应的微服务引擎的入口了。
 
-### 查看 DME 最新版本
+### 查看微服务引擎最新版本
 
 在全局管理集群，查看 Skoala 的最新版本，直接通过 helm 命令获取版本信息；
 
@@ -265,11 +265,11 @@ skoala-release/skoala-init	0.23.0       	0.23.0     	A Helm Chart for Skoala ini
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/skoala-init.png)
 
-## 更新 DME
+## 更新微服务引擎
 
 支持离线升级和在线升级两种方式，具体可参考[离线升级](../quickstart/offline-upgrade.md)或[在线升级](online-upgrade.md)
 
-## 卸载 DME
+## 卸载微服务引擎
 
 ```bash
 ~ helm uninstall skoala-init -n skoala-system
