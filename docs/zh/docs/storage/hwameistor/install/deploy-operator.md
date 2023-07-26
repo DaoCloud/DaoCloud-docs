@@ -24,7 +24,6 @@ hide:
 
 - 待使用节点上已准备空闲 HDD、SSD 磁盘。
 - 已完成[准备工作](prereq.md)中事项。
-- 如需要使用高可用数据卷，请提前完成[DRDB 安装](drbdinstall.md)。
 - 如部署环境为生产环境，请提前阅读[生产环境资源要求](proresource.md)。
 - 如果您的 Kubernetes 发行版使用不同的 `kubelet` 目录，请提前确认 `kubeletRootDir`。
   详细信息请参考[自定义 Kubelet 根目录](customized-kubelet.md)。
@@ -135,6 +134,13 @@ hide:
 
         设置 K8S 镜像仓库地址，默认已经填写可用在线仓库。
         如果私有化环境，可修改为私有仓库地址。
+        
+    - `DRDB`：
+
+        如果需要使用 高可用数据卷，请开启 `DRDB`模块，如安装时未开启，请参考 [开启 DRDB](drbdinstall.md)
+
+    - `replicas`:
+        各组件副本数量，建议使用 `2 ` 副本。
 
 5. 确认参数无误后，点击`确定`完成安装，完成安装后可点击 `Helm 应用`查看 `Hwameistor Operator` 安装状态。
 
