@@ -5,15 +5,19 @@ hide:
 
 # 网格 Istio 版本升级
 
+!!! warning "更新提示"
+
+    网格更新时尽量不要进行配置等相关变更，请合理安排升级计划。
+
 网格的 Istio 版本可持续升级，DaoCloud 提供了原生版本和定制版本两类升级版本。
 
 - 原生版本：社区原生 Istio，无任何定制化修改。
 - 定制版本：基于 Istio 做了部分功能定制（后缀为：-mspider），例如集成
-  [Merbridge](../../community/merbridge.md) 提高网格通信，支持 SpringCloud、Dubbo 等传统微服务的展示，赋予边车热升级能力等。
+  [Merbridge](../../community/merbridge.md) 提高网格通信性能，支持 SpringCloud、Dubbo 等传统微服务的智能识别，支持边车热升级能力等。
 
-这两类版本升级过程相同，但不支持不同类型的混合升级。
+这两类版本升级过程相同，但不支持不同类型的混合升级；所以，在创建网格实例时务必确认所需的版本。
 
-当系统镜像仓库存在更新的 Istio 版本时，`网格列表`中可升级的网格卡片会出现叹号提示图标，点击`立即升级`按钮即可进入升级向导。
+DaoCloud 会持续提供 Istio 新版本适配工作，当系统检测存在新的 Istio 版本时，`网格列表` 会对可升级的网格实例进行提示（卡片会出现叹号提示图标），查看图标内容并点击`立即升级`按钮即可进入升级向导。
 
 ![立即升级](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/IstioUpdate01.png)
 
@@ -35,15 +39,15 @@ Istio 升级向导包含`选择目标版本`、`环境检测`、`执行升级`�
 
 3. **执行升级**：环境检测通过后，将进入升级阶段，该过程包含`升级`和`健康检测`两阶段。
 
-	- Istio 升级：Istio镜像拉取和控制面组件升级
+	- Istio 升级：Istio 镜像拉取和控制面组件升级
 
 	- Istio 健康检测：Istio 控制面组件运行状态检查
 
-    ![执行升级](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/IstioUpdate05.png)
+	![执行升级](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/IstioUpdate05.png)
 
 升级完成后，回到网格列表页面，可以看到网格的 Istio 版本已变更。
 
-    ![执行升级](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/IstioUpdate06.png)
+![执行升级](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/IstioUpdate06.png)
 
 !!! note
 
