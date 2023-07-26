@@ -265,6 +265,7 @@ nav:
               - 日志查询: insight/user-guide/data-query/log.md
               - 指标查询: insight/user-guide/data-query/metric.md
               - 链路查询: insight/user-guide/data-query/trace.md
+              - 事件查询: insight/user-guide/data-query/event.md
           - 告警中心:
               - insight/user-guide/alert-center/index.md
               - 告警策略: insight/user-guide/alert-center/alert-policy.md
@@ -291,6 +292,7 @@ nav:
               - 配置通知模板: insight/best-practice/notify-helper.md
               - 使用 OpenTelemetry 零代码接收 SkyWalking 链路数据: insight/best-practice/sw-to-otel.md
               - 使用 Insight 定位应用异常根因: insight/best-practice/find_root_cause.md
+              - Kafka + ES 流式架构应对超大规模日志方案: insight/best-practice/insight-kafka.md
           - 兼容性测试:
               - K8s 集群兼容性测试: insight/compati-test/k8s-compatibility.md
               - Rancher 集群兼容性测试: insight/compati-test/rancher-compatibility.md
