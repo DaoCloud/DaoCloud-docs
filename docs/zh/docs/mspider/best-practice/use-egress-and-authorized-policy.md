@@ -5,10 +5,7 @@ hide:
    - toc
 ---
 
-
 # 使用网格完成定向服务访问限制
-
-## 前言
 
 在业务场景中，我们需要限制只允许服务来访问某些特定的服务，这里可以组合 Istio 能力来进行统一的管理。
 
@@ -23,11 +20,13 @@ hide:
 配置网格启用仅出口流量，请修改网格的治理信息，查看下方的截图介绍，注意修改了之后，我们的服务对集群外的访问需要配合 `Service Entry` 来使用。
 
 ![image](../images/egress-and-authorized-03.png)
+
 ![image](../images/egress-and-authorized-04.png)
 
 ### 创建一个 Egress 网关
 
 ![image](../images/egress-and-authorized-01.png)
+
 ![image](../images/egress-and-authorized-02.png)
 
 ### 准备测试应用
@@ -49,6 +48,7 @@ hide:
 这里我们首先创建一个允许的出口访问地址，这里我们使用了 **baidu** 的地址，可以安装如图进行操作
 
 ![image](../images/egress-and-authorized-05.png)
+
 ![image](../images/egress-and-authorized-05-2.png)
 
 ### 创建 Virtual Service
