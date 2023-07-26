@@ -30,48 +30,11 @@ Not less than 1 core.
 
 Not less than 1GB.
 
-## GPU (optional)
-
-1. Currently supports Nvidia Tesla series P4, P40, T4 and other GPU models.
-
-    Machines with GPU hardware can be used as edge nodes without GPUs.
-
-    If the edge node uses a GPU, you need to install the GPU driver and Nvidia Docker adaptation (nvidia-docker2) before registration.
-
-    You need to set the default runtime of the container engine to nvidia.
-
-    ```sh
-    /etc/docker/daemon.json
-    ```
-
-    ```json
-    {
-      "default-runtime": "nvidia",
-      "runtimes": {
-        "nvidia": {
-          "path": "nvidia-container-runtime",
-          "runtimeArgs": []
-        }
-      }
-    }
-    ```
-
-2. Other requirements for NVIDIA GPU on ARM64 architecture:
-
-    - It is recommended that the system be installed with Jetpack4.5+.
-    - The image needs to be built using the [base image](https://catalog.ngc.nvidia.com/containers) hosted on NVIDIA L4T.
-
-3. Environment verification:
-
-    ```sh
-    nvidia-container-cli -k -d /dev/tty info
-    ```
-
-    When the above command is successful, you can access it (The above tool comes with nvidia-docker2 after installation).
-
 ## Container Runtime
 
 Docker version must be higher than 19.0, and it is recommended to use version 19.03.6.
+
+Note: If the KubeEdge version is higher than or equal to 1.14 and the cloud Kubernetes version is higher than 1.24, you need to install CRI-Dockerd in addition to Docker.
 
 ## glibc
 
