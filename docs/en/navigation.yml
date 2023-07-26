@@ -467,6 +467,7 @@ nav:
               - Intro: skoala/plugins/intro.md
           - Performance Tests:
               - Gateway RPS: skoala/tests/gateway-stress-test.md
+              - Nacos TPS: skoala/tests/nacos-stress-test.md
           - General Reference:
               - Microservice: reference/basic-knowledge/microservice.md
               - Registry: reference/basic-knowledge/registry.md
