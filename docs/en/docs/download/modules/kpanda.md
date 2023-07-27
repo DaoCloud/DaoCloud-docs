@@ -1,6 +1,6 @@
 # Container Management
 
-This page provides offline installation packages for different versions of the observability module.
+This page provides offline installation packages for different versions of the Container Management module.
 
 ## Download
 
