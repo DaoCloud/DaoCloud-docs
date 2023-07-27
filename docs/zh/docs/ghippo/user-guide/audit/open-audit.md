@@ -38,6 +38,10 @@ ls /var/log/kubernetes/audit
 
     这条命令中的 IP 需要修改为火种节点的 IP 地址。
 
+!!! note
+
+    使用自建harbor仓库的情况下，请修改第一步中的 chart repo 地址为自建仓库的 insight-agent chart 地址。
+
 2. 保存当前 insight-agent helm value
 
     ```shell
