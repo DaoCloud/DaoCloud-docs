@@ -191,7 +191,7 @@ EOF
 
 以下的示例 Yaml 中，会创建 2 组 daemonSet 应用和 1 个 `type` 为 ClusterIP 的 service ，其中：
 
-- `v1.multus-cni.io/default-network`：用于指定应用所使用的子网，示例中的应用分别使用了不同的子网。
+`v1.multus-cni.io/default-network`：用于指定应用所使用的子网，示例中的应用分别使用了不同的子网。
 
 ```shell
 cat <<EOF | kubectl create -f -
@@ -435,16 +435,16 @@ CCM（Cloud Controller Manager）是阿里云提供的一个用于 Kubernetes �
     EOF
     ```
 
-5. 获取 Yaml ，并通过 `kubectl apply -f cloud-controller-manager.yaml` 方式安装 CCM，本文中安装的版本为 v2.5.0
+5. 获取 Yaml ，并通过 `kubectl apply -f cloud-controller-manager.yaml` 方式安装 CCM，本文中安装的版本为 v2.5.0。
 
-    - 使用如下命令，获取 cloud-controller-manager.yaml，并替换其中 `<<cluster_cidr>>` 为您真实集群的 cluster cidr 。
+    使用如下命令，获取 cloud-controller-manager.yaml，并替换其中 `<<cluster_cidr>>` 为您真实集群的 cluster cidr 。
 
     ```bash
     ~# wget https://raw.githubusercontent.com/spidernet-io/spiderpool/main/docs/example/alicloud/cloud-controller-manager.yaml
     ~# kubectl apply -f cloud-controller-manager.yaml
     ```
 
-6. 检查 CCM 安装完成。
+1. 检查 CCM 安装完成。
 
     ```bash
     ~# kubectl get po -n kube-system | grep cloud-controller-manager
@@ -453,84 +453,84 @@ CCM（Cloud Controller Manager）是阿里云提供的一个用于 Kubernetes �
     cloud-controller-manager-k7jpn           1/1     Running     0               27s
     ```
 
-如下的 Yaml 将创建 `spec.type` 为 `LoadBalancer` 的 2 组 service，一组为 tcp （四层负载均衡），一组为 http （七层负载均衡）。
+    如下的 Yaml 将创建 `spec.type` 为 `LoadBalancer` 的 2 组 service，一组为 tcp （四层负载均衡），一组为 http （七层负载均衡）。
 
-- `service.beta.kubernetes.io/alibaba-cloud-loadbalancer-protocol-port`：CCM 提供的创建七层负载均衡注解。可以通过它自定义暴露端口。更多用法参考 [CCM 使用文档](https://github.com/kubernetes/cloud-provider-alibaba-cloud/blob/master/docs/usage.md) 。
+    `service.beta.kubernetes.io/alibaba-cloud-loadbalancer-protocol-port`：CCM 提供的创建七层负载均衡注解。可以通过它自定义暴露端口。更多用法参考 [CCM 使用文档](https://github.com/kubernetes/cloud-provider-alibaba-cloud/blob/master/docs/usage.md) 。
 
-```bash
-~# cat <<EOF | kubectl apply -f -
-apiVersion: v1
-kind: Service
-metadata:
-  name: tcp-service
-  namespace: default
-spec:
-  ports:
-  - name: tcp
-    port: 999
-    protocol: TCP
-    targetPort: 80
-  selector:
-    app: test-app-1
-  type: LoadBalancer
----
-apiVersion: v1
-kind: Service
-metadata:
-  annotations:
-    service.beta.kubernetes.io/alibaba-cloud-loadbalancer-protocol-port: "http:80"
-  name: http-service
-  namespace: default
-spec:
-  ports:
-  - port: 80
-    protocol: TCP
-    targetPort: 80
-  selector:
-    app: test-app-2
-  type: LoadBalancer
-EOF
-```
+    ```bash
+    ~# cat <<EOF | kubectl apply -f -
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: tcp-service
+      namespace: default
+    spec:
+      ports:
+      - name: tcp
+        port: 999
+        protocol: TCP
+        targetPort: 80
+      selector:
+        app: test-app-1
+      type: LoadBalancer
+    ---
+    apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        service.beta.kubernetes.io/alibaba-cloud-loadbalancer-protocol-port: "http:80"
+      name: http-service
+      namespace: default
+    spec:
+      ports:
+      - port: 80
+        protocol: TCP
+        targetPort: 80
+      selector:
+        app: test-app-2
+      type: LoadBalancer
+    EOF
+    ```
 
-创建完成后，您可以查看到如下内容：
+    创建完成后，您可以查看到如下内容：
 
-```bash
-~# kubectl get svc |grep service
-NAME           TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)         AGE
-http-service   LoadBalancer   10.233.1.108    121.41.165.119   80:30698/TCP    11s
-tcp-service    LoadBalancer   10.233.4.245    47.98.137.75     999:32635/TCP   15s
-```
+    ```bash
+    ~# kubectl get svc |grep service
+    NAME           TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)         AGE
+    http-service   LoadBalancer   10.233.1.108    121.41.165.119   80:30698/TCP    11s
+    tcp-service    LoadBalancer   10.233.4.245    47.98.137.75     999:32635/TCP   15s
+    ```
 
-CCM 将自动在 IaaS 层创建四层与七层的负载均衡器，可以通过阿里云界面进行查看，如下：
+    CCM 将自动在 IaaS 层创建四层与七层的负载均衡器，可以通过阿里云界面进行查看，如下：
 
-![alicloud-loadbalancer](../../images/alicloud-loadbalancer.png)
+    ![alicloud-loadbalancer](../../images/alicloud-loadbalancer.png)
 
-在集群外的客户端，通过负载均衡器的`公网 IP + 端口`实现流量入口访问
+    在集群外的客户端，通过负载均衡器的`公网 IP + 端口`实现流量入口访问
 
-```bash
-# 访问四层负载均衡
-$ curl 47.98.137.75:999 -I
-HTTP/1.1 200 OK
-Server: nginx/1.10.1
-Date: Fri, 21 Jul 2023 09:24:00 GMT
-Content-Type: text/html
-Content-Length: 4086
-Last-Modified: Fri, 21 Jul 2023 06:38:41 GMT
-Connection: keep-alive
-ETag: "64ba27f1-ff6"
-Accept-Ranges: bytes
+    ```bash
+    # 访问四层负载均衡
+    $ curl 47.98.137.75:999 -I
+    HTTP/1.1 200 OK
+    Server: nginx/1.10.1
+    Date: Fri, 21 Jul 2023 09:24:00 GMT
+    Content-Type: text/html
+    Content-Length: 4086
+    Last-Modified: Fri, 21 Jul 2023 06:38:41 GMT
+    Connection: keep-alive
+    ETag: "64ba27f1-ff6"
+    Accept-Ranges: bytes
 
-# 访问七层负载均衡
-$ curl 121.41.165.119:80 -I
-HTTP/1.1 200 OK
-Date: Fri, 21 Jul 2023 09:24:53 GMT
-Content-Type: text/html
-Content-Length: 615
-Connection: keep-alive
-Last-Modified: Tue, 13 Jun 2023 15:08:10 GMT
-ETag: "6488865a-267"
-Accept-Ranges: bytes
-```
+    # 访问七层负载均衡
+    $ curl 121.41.165.119:80 -I
+    HTTP/1.1 200 OK
+    Date: Fri, 21 Jul 2023 09:24:53 GMT
+    Content-Type: text/html
+    Content-Length: 615
+    Connection: keep-alive
+    Last-Modified: Tue, 13 Jun 2023 15:08:10 GMT
+    ETag: "6488865a-267"
+    Accept-Ranges: bytes
+    ```
 
 ## 总结
 
