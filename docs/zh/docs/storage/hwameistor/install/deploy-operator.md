@@ -30,11 +30,11 @@ hide:
 
 !!! info
 
-  如果没有可用的干净磁盘，Operator 不会自动创建 StorageClass。
-  Operator 会在安装过程中自动纳管磁盘，可用的磁盘会被添加到 LocalStorage 的 pool 里。
-  如果可用磁盘是在安装后提供的，则需要手动下发 LocalDiskClaim 将磁盘纳管到 LocalStorageNode 里。
-  一旦 LocalStorageNode 的 pool 里有磁盘，Operator 就会自动创建 StorageClass。
-  也就是说，如果没有容量，就不会自动创建 StorageClass。
+    如果没有可用的干净磁盘，Operator 不会自动创建 StorageClass。
+    Operator 会在安装过程中自动纳管磁盘，可用的磁盘会被添加到 LocalStorage 的 pool 里。
+    如果可用磁盘是在安装后提供的，则需要手动下发 LocalDiskClaim 将磁盘纳管到 LocalStorageNode 里。
+    一旦 LocalStorageNode 的 pool 里有磁盘，Operator 就会自动创建 StorageClass。
+    也就是说，如果没有容量，就不会自动创建 StorageClass。
 
 ## 安装步骤
 
@@ -52,7 +52,7 @@ hide:
 
     ![Operator02](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/operator2.jpg)
 
-    **`Value.yaml`**参数如下，默认可不进行修改：
+    `Value.yaml` 参数如下，默认可不进行修改：
 
     ```yaml
     global:

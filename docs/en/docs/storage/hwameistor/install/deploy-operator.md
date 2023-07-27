@@ -44,7 +44,6 @@ Ensure that your cluster has successfully connected to the container management 
 
 2. In the left navigation bar, select `Helm Application` -> `Helm chart`, find and click on `Hwameistor Operator`.
 
-
 3. Within the `Version Selection` section, choose the version to install, and then click `Install`.
 
 4. On the installation interface, fill in the required installation parameters.
@@ -136,6 +135,5 @@ Ensure that your cluster has successfully connected to the container management 
 
 6. After the Operator is installed, the Hwameistor components (Local Storage, Local Disk Manager, etc.) will be installed by default!
     You can click `Workload`-->`Stateless Workload`, select the corresponding namespace, and view the status of the Hwameistor component.
-
 
      To verify the installation effect through the command line, please refer to [Post-installation Check](./post-check.md).
