@@ -176,7 +176,7 @@ nav:
               - 资源组与共享资源的区别: ghippo/user-guide/workspace/res-gp-and-shared-res.md
           - 审计日志:
               - 开启和关闭采集k8s审计日志: ghippo/user-guide/audit/open-audit.md
-              - 开启和关闭k8s审计日志: ghippo/user-guide/audit/open-k8s-audit.md
+              - 开启和关闭k8s输出审计日志: ghippo/user-guide/audit/open-k8s-audit.md
               - 下载和导出审计日志: ghippo/user-guide/audit/audit-log.md
           - 运营管理:
               - ghippo/user-guide/report-billing/index.md
