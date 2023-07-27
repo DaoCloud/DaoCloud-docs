@@ -24,13 +24,13 @@ Before starting the test, it is necessary to deploy DCE 5.0, download and instal
 
 ## Test Script
 
-- Execute the following command on the Locust Web machine to collect the stress-testing results:
+- Run the following command on the Locust Web machine to collect the stress-testing results:
 
     ```
     docker run -p 8089:8089 --network=host -v $PWD:/mnt/locust locustio/locust -f /mnt/locust/gateway-external-nginx.py --master
     ```
 
-- Execute the following command on the Locust stress-testing machine to simulate user access and perform stress testing:
+- Run the following command on the Locust stress-testing machine to simulate user access and perform stress testing:
 
     ```
     docker run -p 8089:8089 --network=host -v $PWD:/mnt/locust locustio/locust -f /mnt/locust/gateway-external-nginx.py --worker --master-host=172.30.120.210

@@ -184,7 +184,7 @@ If you use other tools, you can modify the corresponding fields in `value.yaml` 
 
 ## MySQL master-slave relationship
 
-1. Execute the following command to confirm the MySQL status:
+1. Run the following command to confirm the MySQL status:
 
      ```bash
      kubectl get mysql -A
@@ -418,7 +418,7 @@ After performing the above operations, observe the progress of rebuilding from t
 [root@master-01 ~]$ kubectl exec -it mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf
 ```
 
-Execute the following command to view the master-slave delay status field `Seconds_Behind_Master` of the slave library. If the value is 0~30, it means that there is no master-slave delay, and the master library and the slave library are basically in sync.
+Run the following command to view the master-slave delay status field `Seconds_Behind_Master` of the slave library. If the value is 0~30, it means that there is no master-slave delay, and the master library and the slave library are basically in sync.
 
 ```sql
 mysql> show slave status\G;

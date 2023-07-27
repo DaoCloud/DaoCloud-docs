@@ -66,7 +66,7 @@ In theory, other generic HTTP servers can also be supported, but pay attention t
     3. If Nginx is deployed in a container, you need to mount the host path to the container, and the mounted host path corresponds to the mapped local path of the HTTP service in the container.
        That is, there is such a relationship: `http-path -> container-path -> host-path`. Therefore, the import path should be the host-path. The host-path needs to be confirmed manually according to the appendix.
 
-4. Execute the following command to import the offline binaries package:
+4. Run the following command to import the offline binaries package:
 
     ```bash
     cat > import.sh << "EOF"

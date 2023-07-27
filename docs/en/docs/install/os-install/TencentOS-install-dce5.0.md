@@ -73,7 +73,7 @@ This document will guide you on how to deploy DCE 5.0 on TencentOS Server 3.1, s
     !!! note
 
         - TencentOS Server 3.1 belongs to the Redhat system family, so you need to define the `redhat_os_family_extensions` parameter in kubeanConfig.
-        - Execute the following command to check the OS Family identifier for TencentOS Server 3.1. The output should be `TencentOS`.
+        - Run the following command to check the OS Family identifier for TencentOS Server 3.1. The output should be `TencentOS`.
 
             ```bash
             export USER=root

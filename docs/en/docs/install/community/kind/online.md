@@ -11,7 +11,7 @@ This page explains how to install DCE 5.0 Community package on a kind cluster on
 - A node with CPU > 8 cores, memory > 12 GB, disk > 100 GB.
 - Ensure that the node can access the Internet.
 
-Execute the following script to check the system resources and network connectivity:
+Run the following script to check the system resources and network connectivity:
 
 ```shell
 set -e
