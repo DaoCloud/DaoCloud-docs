@@ -899,6 +899,7 @@ nav:
           - 子模块和插件:
               - 下载 Addon 离线包: download/addon/v0.9.0.md
               - 下载全局管理: download/modules/ghippo.md
+              - 下载容器管理: download/modules/kpanda.md
               - 下载 Insight: download/modules/insight.md
               - 下载网络 Spidernet: download/modules/spidernet.md
               - 下载运营管理: download/modules/gmagpie.md
