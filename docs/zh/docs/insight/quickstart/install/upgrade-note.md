@@ -59,7 +59,7 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/VictoriaMetrics
 由于 0.18.x 中更新了 Jaeger 相关部署文件，因此需要在升级 insight agent 前需要注意参数的改动。
 
 ```diff
-+  --set global.tracing.enable=true \
++  --set global.exporters.trace.enable=true \
 -  --set opentelemetry-collector.enabled=true \
 -  --set opentelemetry-operator.enabled=true \
 ```
