@@ -1,6 +1,11 @@
-# Turn on/off k8s audit log
+# Enable/Disable the output of k8s audit logs
 
-By default, the Kubernetes cluster does not output audit log information. Through the following configuration, you can enable the audit log feature of Kubernetes.
+By default, the Kubernetes cluster does not output audit log information.
+Through the following configuration, you can enable the audit log feature of Kubernetes.
+
+!!! note
+
+    In a public cloud environment, it may not be possible to control the output and output path of Kubernetes audit logs.
 
 1. Prepare the Policy file for the audit log
 2. Configure the API server and enable audit logs

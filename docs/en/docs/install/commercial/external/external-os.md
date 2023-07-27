@@ -94,7 +94,7 @@ The following content assumes that CentOS 7.9 x86_64 is used as the cluster node
 
 5. Verify the successful import
 
-   Log in to a node in the global service cluster. Assuming the Nginx access address is `http://10.0.1.1:8080`, refer to Appendix 1 for configuration and execute the following command:
+   Log in to a node in the global service cluster. Assuming the Nginx access address is `http://10.0.1.1:8080`, refer to Appendix 1 for configuration and run the following command:
 
     ```bash
     cat > /etc/yum.repos.d/test.repo << "EOF"

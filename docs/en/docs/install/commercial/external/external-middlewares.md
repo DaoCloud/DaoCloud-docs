@@ -14,7 +14,7 @@ This document describes how to use third-party middleware services, including My
 
 1. Prepare a MySQL database with permissions to create databases, users, and grant access.
 
-2. Connect to the MySQL database and execute the following SQL statements to create databases, users, and grant corresponding permissions:
+2. Connect to the MySQL database and run the following SQL statements to create databases, users, and grant corresponding permissions:
 
     ```sql
     # ghippo apiserver

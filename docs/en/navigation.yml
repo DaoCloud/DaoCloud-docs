@@ -168,8 +168,8 @@ nav:
               - Resource Quota: ghippo/user-guide/workspace/quota.md
               - Difference between Resource Groups and Shared Resources: ghippo/user-guide/workspace/res-gp-and-shared-res.md
           - Audit Log:
-              - Enable/disable Capture: ghippo/user-guide/audit/open-audit.md
-              - Enable/disable K8s Audit Log: ghippo/user-guide/audit/open-k8s-audit.md
+              - Enable/Disable Collection of K8s Audit Logs: ghippo/user-guide/audit/open-audit.md
+              - Enable/Disable Output of K8s Audit Logs: ghippo/user-guide/audit/open-k8s-audit.md
               - Download and Export: ghippo/user-guide/audit/audit-log.md
           - Operation Management:
               - ghippo/user-guide/report-billing/index.md
@@ -852,6 +852,7 @@ nav:
           - Modules and Addons:
               - Download Addon Offline Package: download/addon/v0.9.0.md
               - Download Global Management: download/modules/ghippo.md
+              - Download Container Management: download/modules/kpanda.md
               - Download Insight: download/modules/insight.md
               - Download Spidernet: download/modules/spidernet.md
               - Download Operation Management: download/modules/gmagpie.md

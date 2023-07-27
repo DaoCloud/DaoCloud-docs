@@ -28,7 +28,7 @@ mirage-debug server
 
 ### Initialize Debugging Application
 
-Execute the following command in the project root directory to initialize the debugging application, and fill in the relevant information as prompted.
+Run the following command in the project root directory to initialize the debugging application, and fill in the relevant information as prompted.
 
 ```bash
 mirage-debug init
