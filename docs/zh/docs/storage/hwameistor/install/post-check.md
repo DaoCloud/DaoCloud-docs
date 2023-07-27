@@ -166,7 +166,7 @@ status:
 HwameiStor Operator 在完成 HwameiStor 系统组件安装和系统初始化之后，
 会根据系统配置（例如：是否开启 HA 模块、磁盘类型等）自动创建相应的 `StorageClass` 用于创建数据卷。
 
-```sh
+```console
 $ kubectl get sc
 NAME                                     PROVISIONER         RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
 hwameistor-storage-lvm-hdd               lvm.hwameistor.io   Delete          WaitForFirstConsumer   false                  23h

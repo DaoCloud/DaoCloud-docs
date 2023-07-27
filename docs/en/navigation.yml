@@ -105,12 +105,12 @@ nav:
               - Volume: kpanda/user-guide/storage/pv.md
               - Storage Pool: kpanda/user-guide/storage/sc.md
               - Shared Storage Pool: kpanda/user-guide/storage/sc-share.md
-          - ConfigMaps & Secrets:
+          - ConfigMaps and Secrets:
               - Create ConfigMap: kpanda/user-guide/configmaps-secrets/create-configmap.md
               - Use ConfigMap: kpanda/user-guide/configmaps-secrets/use-configmap.md
               - Create Secret: kpanda/user-guide/configmaps-secrets/create-secret.md
               - Use Secret: kpanda/user-guide/configmaps-secrets/use-secret.md
-          - Operation & Maintenance:
+          - Operation and Maintenance:
               - Recent Operations: kpanda/user-guide/clusterops/latest-operations.md
               - Upgrade Cluster: kpanda/user-guide/clusters/upgrade-cluster.md
               - Cluster Settings: kpanda/user-guide/clusterops/cluster-settings.md
@@ -416,7 +416,7 @@ nav:
               - Service Management:
                   - Manual Add: skoala/gateway/service/manual-integrate.md
                   - Auto Add: skoala/gateway/service/auto-manage.md
-              - Monitoring & Alarming: skoala/gateway/alert.md
+              - Monitoring and Alarming: skoala/gateway/alert.md
               - Logs:
                   - Request Logs: skoala/gateway/logs/reqlog.md
                   - Instance Logs: skoala/gateway/logs/inslog.md
@@ -601,7 +601,7 @@ nav:
               - Intro: network/modules/metallb/what.md
               - Install: network/modules/metallb/install.md
               - Instructions for IP pool use: network/modules/metallb/usage.md
-              - L2 & BGP mode: network/modules/metallb/l2&bgp.md
+              - L2 and BGP mode: network/modules/metallb/l2-bgp.md
               - Get client source IPs: network/modules/metallb/source_ip.md
           - Multus-underlay:
               - Intro: network/modules/multus-underlay/what.md
@@ -752,30 +752,37 @@ nav:
                   - Custom Kubelet root directory: storage/hwameistor/install/customized-kubelet.md
                   - Upgrade: storage/hwameistor/install/upgrade.md
                   - Uninstall: storage/hwameistor/install/uninstall.md
-              - O&M:
-                  - Storage pools: storage/hwameistor/resources/storagepool.md
-                  - Node expansion: storage/hwameistor/resources/node-expansion.md
-                  - Volume migration: storage/hwameistor/resources/migrate.md
-                  - Volume expansion: storage/hwameistor/resources/expand.md
+              - Nodes and Disks:
+                  - LVM node expansion: storage/hwameistor/resources/lvm-nodes.md
+                  - Disk node expansion: storage/hwameistor/resources/disk-nodes.md
                   - Disk expansion: storage/hwameistor/resources/disk-expansion.md
                   - Disk reservation: storage/hwameistor/resources/reserveddisk.md
+              - Storage Pool:
+                  - Storage pool management: storage/hwameistor/resources/storagepool.md
+              - Volume:
+                  - Volume migration: storage/hwameistor/resources/migrate.md
+                  - Volume expansion: storage/hwameistor/resources/expand.md
+                  - Volume IO rate limit: storage/hwameistor/resources/volume-ProvisionedIO.md
               - Use Cases:
                   - Overview: storage/hwameistor/application/overview.md
                   - Deploy StatefulSets:
                       - Deploy via local volume: storage/hwameistor/application/local.md
                       - Deploy via ha volume: storage/hwameistor/application/ha.md
-                  - TiDB: storage/hwameistor/application/tidb.md
-                  - MinIO: storage/hwameistor/application/minio/minio.md
               - FAQs: storage/hwameistor/faqs.md
-          - Solutions to integrate:
-              - Rook-Ceph intro: storage/solutions/rook-ceph.md
-              - Deploy Rook-Ceph via app store: storage/solutions/dce-rook-ceph.md
-              - Deploy Rook-Ceph via Helm: storage/solutions/helm-rook-ceph.md
-              - Join Ceph Dashboard: storage/solutions/ceph-dashboard.md
-              - Longhorn intro: storage/solutions/longhorn.md
-              - Deploy Longhorn via app store: storage/solutions/dce-longhorn.md
-              - OpenEBS intro: storage/solutions/openebs.md
-              - Deploy OpenEBS via helm: storage/solutions/openebs-helm.md
+          - Solutions to Integrate Open Source:
+              - Rook-Ceph:
+                  - Rook-Ceph intro: storage/solutions/rook-ceph.md
+                  - Deploy Rook-Ceph with app store: storage/solutions/dce-rook-ceph.md
+                  - Deploy Rook-Ceph with Helm: storage/solutions/helm-rook-ceph.md
+                  - How to connect Ceph Dashboard: storage/solutions/ceph-dashboard.md
+              - Longhorn:
+                  - Longhorn intro: storage/solutions/longhorn.md
+                  - Deploy Longhorn with app store: storage/solutions/dce-longhorn.md
+              - OpenEBS:
+                  - OpenEBS intro: storage/solutions/openebs.md
+                  - Deploy OpenEBS with Helm: storage/solutions/openebs-helm.md
+              - TiDB: storage/hwameistor/application/tidb.md
+              - MinIO: storage/hwameistor/application/minio/minio.md
           - Concepts:
               - Kubernetes storage: storage/terms/k8s_storage.md
               - CAS: storage/terms/cas.md

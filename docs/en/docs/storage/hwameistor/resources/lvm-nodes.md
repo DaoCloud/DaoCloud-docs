@@ -1,19 +1,18 @@
-# LVM 节点扩展
+# LVM Node Expansion
 
-存储系统可以通过增加存储节点实现扩容。在 HwameiStor 里，通过下列步骤可以添加新的存储节点。
+The storage system can be expanded by adding storage nodes. In HwameiStor, new storage nodes can be added by following these steps.
 
-## 步骤
+## Steps
 
-### 1. 准备新的存储节点
+### 1. Prepare the New Storage Node
 
-在 Kubernetes 集群中新增一个节点，或者，选择一个已有的集群节点（非 HwameiStor 节点）。该节点必须满足 [Prerequisites](../install/prereq.md) 要求的所有条件。
-本例中，所用的新增存储节点和磁盘信息如下所示：
+Add a new node to the Kubernetes cluster or select an existing cluster node (non-HwameiStor node). The node must meet all the prerequisites mentioned in the [Prerequisites](../install/prereq.md) document. In this example, the details of the new storage node and disk are as follows:
 
 - name: k8s-worker-4
 - devPath: /dev/sdb
 - diskType: SSD disk
 
-新增节点已经成功加入 Kubernetes 集群之后，检查并确保下列 Pod 正常运行在该节点上，以及相关资源存在于集群中：
+After successfully adding the new node to the Kubernetes cluster, check and ensure that the following pods are running on that node and the related resources exist in the cluster:
 
 ```shell
 kubectl get node
@@ -37,7 +36,7 @@ hwameistor-local-disk-manager-c86g5     2/2     Running   0     19h   10.6.182.1
 hwameistor-local-storage-s4zbw          2/2     Running   0     19h   192.168.140.82    k8s-worker-4   <none>  <none>
 ```
 
-检查 LocalStorageNode 资源
+Check the LocalStorageNode resource:
 
 ```shell
 kubectl get localstoragenode k8s-worker-4
@@ -48,9 +47,9 @@ NAME                 IP           ZONE      REGION    STATUS   AGE
 k8s-worker-4   10.6.182.103       default   default   Ready    8d
 ```
 
-### 2. 添加新增存储节点到 HwameiStor 系统
+### 2. Add the New Storage Node to the HwameiStor System
 
-为增加存储节点创建资源 LocalStorageClaim，以此为新增存储节点构建存储池。这样，节点就已经成功加入 HwameiStor 系统。具体如下：
+To add a storage node, create a LocalStorageClaim resource to build a storage pool for the new storage node. By doing this, the node will be successfully added to the HwameiStor system. Follow the steps below:
 
 ```console
 $ kubectl apply -f - <<EOF
@@ -65,9 +64,9 @@ spec:
 EOF
 ```
 
-### 3. 后续检查
+### 3. Post-check
 
-完成上述步骤后，检查新增存储节点及其存储池的状态，确保节点和 HwameiStor 系统的正常运行。具体如下：
+After completing the above steps, check the status of the new storage node and its storage pool to ensure the normal operation of the node and HwameiStor system. Follow the steps below:
 
 ```shell
 kubectl get localstoragenode k8s-worker-4

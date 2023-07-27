@@ -623,7 +623,7 @@ nav:
               - 介绍: network/modules/metallb/what.md
               - 安装: network/modules/metallb/install.md
               - IPPool 使用说明: network/modules/metallb/usage.md
-              - L2&BGP 模式说明: network/modules/metallb/l2&bgp.md
+              - L2和BGP 模式说明: network/modules/metallb/l2-bgp.md
               - 获取客户端源 IP: network/modules/metallb/source_ip.md
           - Multus-underlay:
               - 介绍: network/modules/multus-underlay/what.md
@@ -794,7 +794,7 @@ nav:
                   - 自定义 Kubelet 根目录: storage/hwameistor/install/customized-kubelet.md
                   - 升级: storage/hwameistor/install/upgrade.md
                   - 卸载: storage/hwameistor/install/uninstall.md
-              - 节点&磁盘:
+              - 节点和磁盘:
                   - LVM 节点扩展: storage/hwameistor/resources/lvm-nodes.md
                   - 磁盘节点扩展: storage/hwameistor/resources/disk-nodes.md
                   - 磁盘扩展: storage/hwameistor/resources/disk-expansion.md
