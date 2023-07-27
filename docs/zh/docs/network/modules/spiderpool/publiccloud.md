@@ -19,6 +19,7 @@
     根据上述分配 IP 的特点，Spiderpool 的 CRD：`SpiderIPPool` 可以设置 nodeName，multusName 实现节点拓扑的功能，通过 IP 池与节点、IPvlan Multus 配置的亲和性，能最大化的利用与管理节点可用的 IP 地址，给应用分配到合法的 IP 地址，让应用在 VPC 网络内自由通信，包括 Pod 与 Pod 通信，Pod 与云服务器通信等。
 
 !!! note
+    
     在 service 中，字段 `.spec.externalTrafficPolicy` 表示此 Service 是否希望将外部流量路由到节点本地或集群范围的端点。它有两个可用选项：Cluster（默认）和 Local。但 Spiderpool 暂不支持 `.spec.externalTrafficPolicy` 设置为 `Local`，在这种模式下的 nodePort 转发时，会导致访问不通。因此，在公有云场景下使用平台的 Loadbalancer 组件时，不能对接基于 `spec.externalTrafficPolicy` 为 Local 模式的 service。
 
 ## 实施要求
