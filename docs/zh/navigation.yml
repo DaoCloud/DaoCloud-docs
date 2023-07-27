@@ -810,18 +810,21 @@ nav:
                   - 部署有状态应用:
                       - 使用本地卷部署: storage/hwameistor/application/local.md
                       - 使用高可用卷部署: storage/hwameistor/application/ha.md
-                  - TiDB: storage/hwameistor/application/tidb.md
-                  - MinIO: storage/hwameistor/application/minio/minio.md
               - 常见问题: storage/hwameistor/faqs.md
           - 开源存储方案集成:
-              - Rook-Ceph 介绍: storage/solutions/rook-ceph.md
-              - Rook-Ceph 部署 - 应用商店: storage/solutions/dce-rook-ceph.md
-              - Rook-Ceph 部署 - Helm: storage/solutions/helm-rook-ceph.md
-              - 如何接入 Ceph Dashboard: storage/solutions/ceph-dashboard.md
-              - Longhorn 介绍: storage/solutions/longhorn.md
-              - Longhorn 部署 - 应用商店: storage/solutions/dce-longhorn.md
-              - OpenEBS 介绍: storage/solutions/openebs.md
-              - 通过 Helm 部署 OpenEBS: storage/solutions/openebs-helm.md
+              - Rook-Ceph:
+                  - Rook-Ceph 介绍: storage/solutions/rook-ceph.md
+                  - Rook-Ceph 部署 - 应用商店: storage/solutions/dce-rook-ceph.md
+                  - Rook-Ceph 部署 - Helm: storage/solutions/helm-rook-ceph.md
+                  - 如何接入 Ceph Dashboard: storage/solutions/ceph-dashboard.md
+              - Longhorn:
+                  - Longhorn 介绍: storage/solutions/longhorn.md
+                  - Longhorn 部署 - 应用商店: storage/solutions/dce-longhorn.md
+              - OpenEBS:
+                  - OpenEBS 介绍: storage/solutions/openebs.md
+                  - 通过 Helm 部署 OpenEBS: storage/solutions/openebs-helm.md
+              - TiDB: storage/hwameistor/application/tidb.md
+              - MinIO: storage/hwameistor/application/minio/minio.md
           - 存储基本概念:
               - Kubernetes 存储: storage/terms/k8s_storage.md
               - CAS 存储: storage/terms/cas.md
