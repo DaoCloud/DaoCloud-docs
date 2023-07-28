@@ -535,6 +535,7 @@ nav:
               - 命名空间边车管理: mspider/user-guide/sidecar-management/ns-sidecar.md
               - 工作负载边车管理: mspider/user-guide/sidecar-management/workload-sidecar.md
               - 边车流量透传: mspider/user-guide/sidecar-management/passthrough.md
+              - 更改边车日志级别: mspider/user-guide/sidecar-management/sidecar-log-level.md
           - 流量监控:
               - mspider/user-guide/traffic-monitor/README.md
               - 流量拓扑: mspider/user-guide/traffic-monitor/conn-topo.md
