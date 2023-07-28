@@ -1,13 +1,71 @@
 ---
 MTPE: windsonsea
-Revised: todo
+Revised: done
 Pics: NA
-Date: 2022-12-20
+Date: 2023-07-28
 ---
 
 # Service Mesh Release Notes
 
 This page lists all the Release Notes for each version of Service Mesh, providing convenience for users to learn about the evolution path and feature changes.
+
+## 2023-07-28
+
+### v0.18.0
+
+#### Upgrades
+
+- **Added** Recommended versions will be included in the `Istio` version list.
+- **Added** Detection condition for joining the interconnection network pool: `CLUSTER_EXIST_NET_POOLS`.
+- **Added** Interface to get the namespace list in a cluster.
+- **Added** Support for filtering system namespaces in `filter_system_namespaces`.
+- **Added** Interface to get the list of sidecar-injected workloads in a cluster.
+- **Added** New field `graph_type` in the workload view of the monitoring topology,
+  currently supporting `SERVICE_SCOPE` and `WORKLOAD_SCOPE`, defaulting to `SERVICE_SCOPE`.
+- **Added** Detection condition for removing network groups: whether they exist in the network interconnection pool (`NET_EXISTS_NET_POOLS`).
+- **Added** Support for searching by `PodLabels` in the sidecar workload list using `page.search`.
+- **Added** Interface to query the list of multi-cluster workloads:
+  `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/clusters/-/sidecar-management/workloads`, also supports searching by `PodLabels`.
+- **Added** Design of service diagnosis interface.
+- **Added** Implementation of detection condition for removing clusters from the mesh: whether they have joined the interconnection network pool (`CLUSTER_EXIST_NET_POOLS`).
+- **Added** Implementation of interface for checking the validity of gateway names in the mesh.
+- **Added** Field `filter_system_namespaces` to the namespace list in a cluster.
+- **Added** Field `filter_system_namespaces` to the list of sidecar-injected workloads in a cluster.
+- **Added** Support for workload dimension in monitoring topology.
+- **Added** Implementation of service diagnosis interface (with automatic repair for some issues).
+- **Added** Detection of diagnostic items requiring manual repair.
+- **Added** Implementation of service repair interface.
+- **Added** New tag `k8s.pod.name` in `Trace Tags` to indicate the name of the `Pod`.
+- **Added** Platform administrators and workspace administrators can manage multi-cloud network interconnections for meshes under their workspace.
+- **Upgraded** `Istio api` to fix the issue where `WasmPlugin` cannot set priority.
+- **Upgraded** `ckube` to `v1.3.5` to resolve the issue where the service mesh list might be empty.
+
+#### Fixes
+
+- **Fixed** Inconsistency between `sidecar` and `sidecarResources`.
+- **Fixed** Disorder of sorting indexes in the workload list.
+- **Fixed** `ListClusterNamespace` interface to support querying namespace information by cluster.
+- **Fixed** Issue where globally bound mesh resources may not be displayed internally in the mesh.
+- **Fixed** Inability to modify `portName` for empty port protocols.
+- **Fixed** Issue where diagnostic items for `Workload` were missing `Service`.
+- **Fixed** Permanent failure in synchronization of service configuration sync diagnostics.
+- **Fixed** Inaccuracy in audit logs for some batch operation interfaces.
+- **Fixed** Unreachable clusters are still attempted to be probed with `livez`.
+- **Fixed** Incorrect status of workloads when namespace injection status changes in dedicated mesh mode.
+- **Fixed** Failure in successful synchronization of `leaderelection`.
+- **Fixed** Incorrect total count of `Pods` in the mesh in some cases.
+- **Fixed** Typo in error messages, changing `mot` to `not`.
+- **Fixed** Inability to repair sidecar injection status for certain services.
+- **Fixed** Failure of interface `/apis/mspider.io/v3alpha1/clusters/{name}/components` and `/apis/mspider.io/v3alpha1/clusters/{name}` when `mesh_id` is not passed for non-admin users.
+- **Fixed** Name validation of `Istio CRD`, allowing the first letter of all operation names to be a number.
+- **Fixed** Incorrect comment about `label_selectors` in the `Graph` interface.
+- **Fixed** Lack of message body description for service diagnosis repair interface.
+- **Optimized** Description of the `namespaces` field in the `Istio` resource interface.
+- **Optimized** Detection process of mesh control plane, ignoring control plane clusters.
+- **Optimized** Consistency of different permissions for different roles with the latest permission design.
+- **Optimized** Permission design, separating multi-cloud network interconnection permission from mesh management.
+- **Optimized** Meaning of the `global.high_available` parameter.
+- **Optimized** Usage of `CHART.replicas`, changing default value to empty.
 
 ## 2023-06-29
 
