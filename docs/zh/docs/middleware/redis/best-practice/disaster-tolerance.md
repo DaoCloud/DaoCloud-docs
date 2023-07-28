@@ -12,13 +12,14 @@ Redis-Shake 是一个用于合并、过滤和迁移Redis数据的工具。它支
 
 本方案将采用 Redis-Shake 实现跨集群的 Redis 实例数据同步。
 
-    ![架构](../images/tole00.png)
+![架构](../images/tole00.png)
 
 github 仓库地址: https://github.com/tair-opensource/RedisShake
 
 ### 同步模式简要说明
 
 - 哨兵模式：
+  
   1. 在源端的 `master` 节点创建一个 `NodePort` 服务. 
 
   2. 编辑 Redis-Shake 的同步配置文件，使用目标实例对源实例的配置方式
