@@ -372,7 +372,7 @@ nav:
               - 基本概念: kairship/intro/concepts.md
               - 常见问题: kairship/intro/faq.md
               - Release Notes: kairship/intro/release-notes.md
-          - 工作空间: kairship/instance/workspace.md
+          - 工作空间: kairship/workspace.md
           - 多云实例:
               - 多云实例介绍: kairship/instance/README.md
               - 添加实例: kairship/instance/add.md
