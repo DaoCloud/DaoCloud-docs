@@ -11,7 +11,7 @@
 - **新增** `Istio` 版本列表会包含推荐版本。
 - **新增** 是否加入互联网络池检测条件 `CLUSTER_EXIST_NET_POOLS`。
 - **新增** 获取集群命名空间列表接口。
-- **新增** `filter_system_namespaces`, 支持过滤系统命名空间。
+- **新增** `filter_system_namespaces` 支持过滤系统命名空间。
 - **新增** 获取集群中工作负载边车注入列表接口。
 - **新增** 监控拓扑为工作负载视图功能新增字段：`graph_type`，当前只支持 `SERVICE_SCOPE` 与 `WORKLOAD_SCOPE`，默认为 `SERVICE_SCOPE`。
 - **新增** 删除网络分组检测新增检测条件，是否存在在网络互联池中（`NET_EXISTS_NET_POOLS`）。
@@ -49,7 +49,7 @@
 - **修复** 无法修复某些服务的 `Sidecar` 注入状态。
 - **修复** 非 `admin` 用户情况下，接口 `/apis/mspider.io/v3alpha1/clusters/{name}/components` 和 `/apis/mspider.io/v3alpha1/clusters/{name}` 在 `mesh_id` 不传时将调用失败。
 - **修复** `Istio CRD` 名称校验，统一为所有操作的名称首字母允许为数字。
-- **修复** `Graph` 接口关于 `label_selectors` 提供的 `reporter` 注释有误。 
+- **修复** `Graph` 接口关于 `label_selectors` 提供的 `reporter` 注释有误。
 - **修复** 服务诊断修复接口缺少消息体说明。
 - **优化** `Istio` 资源接口中，`namespaces` 字段的描述。
 - **优化** 网格控制面检测流程，忽略控制面集群。
