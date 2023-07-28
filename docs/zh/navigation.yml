@@ -750,6 +750,8 @@ nav:
                   - 更新 Redis 实例: middleware/redis/user-guide/update.md
                   - 删除 Redis 实例: middleware/redis/user-guide/delete.md
                   - 查看 Redis 日志: middleware/redis/user-guide/logs.md
+              - 最佳实践:
+                  - Redis 容灾部署方案: middleware/redis/best-practice/disaster-tolerance.md
           - PostgreSQL 数据库:
               - 介绍:
                   - 什么是 PostgreSQL: middleware/postgresql/intro/what.md
