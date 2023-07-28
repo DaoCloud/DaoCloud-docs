@@ -2,6 +2,27 @@
 
 This page lists the Release Notes for global management of each version, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-07-28
+
+### v0.19.0
+
+#### Features
+
+- Support automatic login for IDP integration with project groups.
+- Resource group binding for mesh/mesh-namespace.
+- Add tips to custom role permissions.
+- Platform settings - Security policies - Restrict multiple concurrent sessions for individual users.
+- Platform settings - Security policies - Limit maximum concurrent session connections for the system.
+
+#### Improvements
+
+- Custom parameters support for Webhook URL.
+
+#### Fixes
+
+- Fixed error when filling in email server details.
+- Fixed issue with LDAP users failing to join user groups.
+
 ## 2023-07-06
 
 ### v0.18.1
