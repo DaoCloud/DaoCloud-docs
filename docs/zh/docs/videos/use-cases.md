@@ -41,10 +41,16 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/microservice02.mp4" preload="metadata" poster="../images/west-east.png"></video>
 </div>
 
-## 如何将 DCE 5.0 嵌入客户平台？
+## 如何将 DCE 5.0 集成到客户平台？
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oem-out.mp4" preload="metadata" poster="../images/oem-out.png"></video>
+</div>
+
+## 如何将客户平台集成到 DCE 5.0？
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oem-in.mp4" preload="metadata" poster="../images/oem-in.png"></video>
 </div>
 
 ## 如何让传统应用上云后仍通过固定 IP 对外通信？
@@ -53,7 +59,7 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/underlay-ip.mp4" preload="metadata" poster="../images/underlay-ip.png"></video>
 </div>
 
-## 如何实现应用加速与跨集群通信
+## 如何实现应用加速与跨集群通信？
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/network-cross-cluster.mp4" preload="metadata" poster="../images/network-cross-cluster.png"></video>
@@ -65,13 +71,13 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/insight.mp4" preload="metadata" poster="../images/insight.png"></video>
 </div>
 
-## 如何利用 CICD 快速交付应用
+## 如何利用 CICD 快速交付应用？
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/app-release.mp4" preload="metadata" poster="../images/amamba-app-release.png"></video>
 </div>
 
-## 如何利用 GitOps 持续部署云原生应用
+## 如何利用 GitOps 持续部署云原生应用？
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gitops.mp4" preload="metadata" poster="../images/gitops.png"></video>
