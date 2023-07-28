@@ -231,6 +231,10 @@
 
 ### D, E
 
+- [D2iQ 推出自然语言 AI 助手 DKP AI Navigator，用于简化 Kubernetes 管理](https://d2iq.com/press-release/dkp-ai-navigator)
+
+    DKP AI Navigator 是在 D2iQ 的内部知识库中训练出来的，知识库中包含了用户在生产中遇到的最棘手问题的解决方案。D2iQ 用户可以通过该工具，即时获得这些专业知识，并通过单一窗口管理 Kubernetes 集群。DKP AI Navigator 将在 DKP 2.6 中正式可用。
+
 - [D2iQ 企业级 K8s 平台 D2iQ Kubernetes Platform v2.5 发布](https://docs.d2iq.com/dkp/2.5/dkp-2-5-0-features-and-enhancements)
 
     更新内容：支持将独立的 DKP Essential 集群扩展到 DKP 企业管理集群下进行集中管理、支持通过 Kube-bench 检查集群是否符合 CIS Kubernetes 基准、警报内容现在包括根因信息和解决方案建议、完全支持 Istio、支持 ARM64 机器、支持外部 Load Balancer。
@@ -387,6 +391,10 @@
 
     CCE Turbo 可通过计算、网络、调度全方位加速，实现极致弹性，如帮助客户以 3000 pod/min 的弹性轻松应对业务流量洪峰；UCS 提供跨云、跨地域的云原生应用管理，实现一致体验。
 
+- [火山引擎云原生 PaaS 平台 veStack 敏捷版第二季度产品更新](https://mp.weixin.qq.com/s/t_38mWzGurd0QrgdQg6O_A)
+
+    更新内容：新增地域管理功能；支持 Ingress-nginx 多实例管理；支持 kube-APIServer、kube-controller-manager 等核心组件自定义参数；支持控制面节点故障轮转；API 网关新增 Upstream 抽象、IP 黑白名单、按流量权重路由；微服务引擎新增泳道管理、支持通过同步任务将 Nacos 注册中心中的服务导入微服务引擎。
+
 - [火山引擎容器服务 VKE 第二季度产品更新](https://mp.weixin.qq.com/s/iGlKHiR8dSU35CFvitUcCg)
 
     更新内容：支持 NodeLocal DNS 能力、支持 Kubernetes v1.24、新增 Prometheus 监控模块、支持 veLinux CentOS 兼容版镜像、新增 P2P 加速功能、支持 mGPU 多卡共享。
@@ -528,6 +536,10 @@
     PerfectScale 是业界首个专门为提高 K8s 环境的持久性和成本效益而建立的持续优化方案。
     通过人工智能算法来评估使用模式和性能和成本指标，该平台提供了多集群、多云的可观测性，支持弹性和性能风险检测、资源浪费检测，
     支持问题优先级排序，提供 GitOps 友好的的补救措施建议，支持预测系统变化对环境的影响等。
+
+- [Portworx K8s 数据备份产品 Portworx Backup v2.5 发布](https://backup.docs.portworx.com/release-notes/#2-5-0)
+
+    更新内容：支持将 Kubernetes 备份数据存储在 NFS v4 对象中；支持使用 IBM Cloud Block Storage VPC CSI Driver 5.0.0 或更高版本，在 IBM Cloud Kubernetes Cluster 集群上进行 CSI-native 备份和恢复。
 
 - [Portworx 云原生数据管理平台 Portworx Enterprise v3.0 发布](https://portworx.com/blog/portworx-enterprise-3-0-overview/)
 
